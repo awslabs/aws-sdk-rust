@@ -72,6 +72,10 @@ impl VCpuInfoBuilder {
         self.default_v_cpus = input;
         self
     }
+    /// <p>The default number of vCPUs for the instance type.</p>
+    pub fn get_default_v_cpus(&self) -> &::std::option::Option<i32> {
+        &self.default_v_cpus
+    }
     /// <p>The default number of cores for the instance type.</p>
     pub fn default_cores(mut self, input: i32) -> Self {
         self.default_cores = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl VCpuInfoBuilder {
         self.default_cores = input;
         self
     }
+    /// <p>The default number of cores for the instance type.</p>
+    pub fn get_default_cores(&self) -> &::std::option::Option<i32> {
+        &self.default_cores
+    }
     /// <p>The default number of threads per core for the instance type.</p>
     pub fn default_threads_per_core(mut self, input: i32) -> Self {
         self.default_threads_per_core = ::std::option::Option::Some(input);
@@ -91,6 +99,10 @@ impl VCpuInfoBuilder {
     pub fn set_default_threads_per_core(mut self, input: ::std::option::Option<i32>) -> Self {
         self.default_threads_per_core = input;
         self
+    }
+    /// <p>The default number of threads per core for the instance type.</p>
+    pub fn get_default_threads_per_core(&self) -> &::std::option::Option<i32> {
+        &self.default_threads_per_core
     }
     /// Appends an item to `valid_cores`.
     ///
@@ -107,6 +119,10 @@ impl VCpuInfoBuilder {
     pub fn set_valid_cores(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.valid_cores = input;
         self
+    }
+    /// <p>The valid number of cores that can be configured for the instance type.</p>
+    pub fn get_valid_cores(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.valid_cores
     }
     /// Appends an item to `valid_threads_per_core`.
     ///
@@ -126,6 +142,10 @@ impl VCpuInfoBuilder {
     ) -> Self {
         self.valid_threads_per_core = input;
         self
+    }
+    /// <p>The valid number of threads per core that can be configured for the instance type.</p>
+    pub fn get_valid_threads_per_core(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.valid_threads_per_core
     }
     /// Consumes the builder and constructs a [`VCpuInfo`](crate::types::VCpuInfo).
     pub fn build(self) -> crate::types::VCpuInfo {

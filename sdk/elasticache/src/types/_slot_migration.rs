@@ -40,6 +40,10 @@ impl SlotMigrationBuilder {
         self.progress_percentage = input;
         self
     }
+    /// <p>The percentage of the slot migration that is complete.</p>
+    pub fn get_progress_percentage(&self) -> &::std::option::Option<f64> {
+        &self.progress_percentage
+    }
     /// Consumes the builder and constructs a [`SlotMigration`](crate::types::SlotMigration).
     pub fn build(self) -> crate::types::SlotMigration {
         crate::types::SlotMigration {

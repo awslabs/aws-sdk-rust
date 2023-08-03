@@ -87,6 +87,10 @@ impl SetPermissionInputBuilder {
         self.stack_id = input;
         self
     }
+    /// <p>The stack ID.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_id
+    }
     /// <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
     pub fn iam_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_user_arn = ::std::option::Option::Some(input.into());
@@ -96,6 +100,10 @@ impl SetPermissionInputBuilder {
     pub fn set_iam_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_user_arn = input;
         self
+    }
+    /// <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
+    pub fn get_iam_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_user_arn
     }
     /// <p>The user is allowed to use SSH to communicate with the instance.</p>
     pub fn allow_ssh(mut self, input: bool) -> Self {
@@ -107,6 +115,10 @@ impl SetPermissionInputBuilder {
         self.allow_ssh = input;
         self
     }
+    /// <p>The user is allowed to use SSH to communicate with the instance.</p>
+    pub fn get_allow_ssh(&self) -> &::std::option::Option<bool> {
+        &self.allow_ssh
+    }
     /// <p>The user is allowed to use <b>sudo</b> to elevate privileges.</p>
     pub fn allow_sudo(mut self, input: bool) -> Self {
         self.allow_sudo = ::std::option::Option::Some(input);
@@ -116,6 +128,10 @@ impl SetPermissionInputBuilder {
     pub fn set_allow_sudo(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_sudo = input;
         self
+    }
+    /// <p>The user is allowed to use <b>sudo</b> to elevate privileges.</p>
+    pub fn get_allow_sudo(&self) -> &::std::option::Option<bool> {
+        &self.allow_sudo
     }
     /// <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p>
     /// <ul>
@@ -142,6 +158,18 @@ impl SetPermissionInputBuilder {
     pub fn set_level(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.level = input;
         self
+    }
+    /// <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p>
+    /// <ul>
+    /// <li> <p> <code>deny</code> </p> </li>
+    /// <li> <p> <code>show</code> </p> </li>
+    /// <li> <p> <code>deploy</code> </p> </li>
+    /// <li> <p> <code>manage</code> </p> </li>
+    /// <li> <p> <code>iam_only</code> </p> </li>
+    /// </ul>
+    /// <p>For more information about the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    pub fn get_level(&self) -> &::std::option::Option<::std::string::String> {
+        &self.level
     }
     /// Consumes the builder and constructs a [`SetPermissionInput`](crate::operation::set_permission::SetPermissionInput).
     pub fn build(

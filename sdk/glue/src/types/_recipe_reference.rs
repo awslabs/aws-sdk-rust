@@ -48,6 +48,10 @@ impl RecipeReferenceBuilder {
         self.recipe_arn = input;
         self
     }
+    /// <p>The ARN of the DataBrew recipe.</p>
+    pub fn get_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recipe_arn
+    }
     /// <p>The RecipeVersion of the DataBrew recipe.</p>
     pub fn recipe_version(
         mut self,
@@ -63,6 +67,10 @@ impl RecipeReferenceBuilder {
     ) -> Self {
         self.recipe_version = input;
         self
+    }
+    /// <p>The RecipeVersion of the DataBrew recipe.</p>
+    pub fn get_recipe_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recipe_version
     }
     /// Consumes the builder and constructs a [`RecipeReference`](crate::types::RecipeReference).
     pub fn build(self) -> crate::types::RecipeReference {

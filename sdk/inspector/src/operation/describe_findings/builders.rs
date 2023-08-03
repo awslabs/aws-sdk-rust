@@ -36,6 +36,12 @@ impl DescribeFindingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeFindings as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_findings::builders::DescribeFindingsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,12 @@ impl DescribeFindingsFluentBuilder {
         self.inner = self.inner.set_finding_arns(input);
         self
     }
+    /// <p>The ARN that specifies the finding that you want to describe.</p>
+    pub fn get_finding_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_finding_arns()
+    }
     /// <p>The locale into which you want to translate a finding description, recommendation, and the short description that identifies the finding.</p>
     pub fn locale(mut self, input: crate::types::Locale) -> Self {
         self.inner = self.inner.locale(input);
@@ -142,5 +154,9 @@ impl DescribeFindingsFluentBuilder {
     pub fn set_locale(mut self, input: ::std::option::Option<crate::types::Locale>) -> Self {
         self.inner = self.inner.set_locale(input);
         self
+    }
+    /// <p>The locale into which you want to translate a finding description, recommendation, and the short description that identifies the finding.</p>
+    pub fn get_locale(&self) -> &::std::option::Option<crate::types::Locale> {
+        self.inner.get_locale()
     }
 }

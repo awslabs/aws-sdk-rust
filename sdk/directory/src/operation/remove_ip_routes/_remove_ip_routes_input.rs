@@ -47,6 +47,10 @@ impl RemoveIpRoutesInputBuilder {
         self.directory_id = input;
         self
     }
+    /// <p>Identifier (ID) of the directory from which you want to remove the IP addresses.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
     /// Appends an item to `cidr_ips`.
     ///
     /// To override the contents of this collection use [`set_cidr_ips`](Self::set_cidr_ips).
@@ -65,6 +69,10 @@ impl RemoveIpRoutesInputBuilder {
     ) -> Self {
         self.cidr_ips = input;
         self
+    }
+    /// <p>IP address blocks that you want to remove.</p>
+    pub fn get_cidr_ips(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.cidr_ips
     }
     /// Consumes the builder and constructs a [`RemoveIpRoutesInput`](crate::operation::remove_ip_routes::RemoveIpRoutesInput).
     pub fn build(

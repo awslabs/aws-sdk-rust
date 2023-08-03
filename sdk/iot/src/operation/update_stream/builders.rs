@@ -37,6 +37,10 @@ impl UpdateStreamFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateStream as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_stream::builders::UpdateStreamInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl UpdateStreamFluentBuilder {
         self.inner = self.inner.set_stream_id(input);
         self
     }
+    /// <p>The stream ID.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_id()
+    }
     /// <p>The description of the stream.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -128,6 +136,10 @@ impl UpdateStreamFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the stream.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `files`.
     ///
@@ -146,6 +158,10 @@ impl UpdateStreamFluentBuilder {
         self.inner = self.inner.set_files(input);
         self
     }
+    /// <p>The files associated with the stream.</p>
+    pub fn get_files(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamFile>> {
+        self.inner.get_files()
+    }
     /// <p>An IAM role that allows the IoT service principal assumes to access your S3 files.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -155,5 +171,9 @@ impl UpdateStreamFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>An IAM role that allows the IoT service principal assumes to access your S3 files.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
 }

@@ -65,6 +65,10 @@ impl StartReadSetActivationJobInputBuilder {
         self.sequence_store_id = input;
         self
     }
+    /// <p>The read set's sequence store ID.</p>
+    pub fn get_sequence_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sequence_store_id
+    }
     /// <p>To ensure that jobs don't run multiple times, specify a unique token for each job.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl StartReadSetActivationJobInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>To ensure that jobs don't run multiple times, specify a unique token for each job.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Appends an item to `sources`.
     ///
@@ -95,6 +103,13 @@ impl StartReadSetActivationJobInputBuilder {
     ) -> Self {
         self.sources = input;
         self
+    }
+    /// <p>The job's source files.</p>
+    pub fn get_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StartReadSetActivationJobSourceItem>>
+    {
+        &self.sources
     }
     /// Consumes the builder and constructs a [`StartReadSetActivationJobInput`](crate::operation::start_read_set_activation_job::StartReadSetActivationJobInput).
     pub fn build(

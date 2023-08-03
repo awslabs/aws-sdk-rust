@@ -41,6 +41,13 @@ impl BatchExecuteStatementFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchExecuteStatement as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_execute_statement::builders::BatchExecuteStatementInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +138,10 @@ impl BatchExecuteStatementFluentBuilder {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
+    }
     /// <p>The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
     /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -143,6 +154,11 @@ impl BatchExecuteStatementFluentBuilder {
         self.inner = self.inner.set_secret_arn(input);
         self
     }
+    /// <p>The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
+    /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
+    pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_secret_arn()
+    }
     /// <p>The SQL statement to run. Don't include a semicolon (;) at the end of the SQL statement.</p>
     pub fn sql(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sql(input.into());
@@ -153,6 +169,10 @@ impl BatchExecuteStatementFluentBuilder {
         self.inner = self.inner.set_sql(input);
         self
     }
+    /// <p>The SQL statement to run. Don't include a semicolon (;) at the end of the SQL statement.</p>
+    pub fn get_sql(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sql()
+    }
     /// <p>The name of the database.</p>
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database(input.into());
@@ -162,6 +182,10 @@ impl BatchExecuteStatementFluentBuilder {
     pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database(input);
         self
+    }
+    /// <p>The name of the database.</p>
+    pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_database()
     }
     /// <p>The name of the database schema.</p> <note>
     /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
@@ -176,6 +200,12 @@ impl BatchExecuteStatementFluentBuilder {
     pub fn set_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schema(input);
         self
+    }
+    /// <p>The name of the database schema.</p> <note>
+    /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
+    /// </note>
+    pub fn get_schema(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schema()
     }
     /// Appends an item to `parameterSets`.
     ///
@@ -208,6 +238,19 @@ impl BatchExecuteStatementFluentBuilder {
         self.inner = self.inner.set_parameter_sets(input);
         self
     }
+    /// <p>The parameter set for the batch operation.</p>
+    /// <p>The SQL statement is executed as many times as the number of parameter sets provided. To execute a SQL statement with no parameters, use one of the following options:</p>
+    /// <ul>
+    /// <li> <p>Specify one or more empty parameter sets.</p> </li>
+    /// <li> <p>Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code> operation.</p> </li>
+    /// </ul> <note>
+    /// <p>Array parameters are not supported.</p>
+    /// </note>
+    pub fn get_parameter_sets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::SqlParameter>>> {
+        self.inner.get_parameter_sets()
+    }
     /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
     /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
     pub fn transaction_id(
@@ -225,5 +268,10 @@ impl BatchExecuteStatementFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_transaction_id(input);
         self
+    }
+    /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
+    /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_transaction_id()
     }
 }

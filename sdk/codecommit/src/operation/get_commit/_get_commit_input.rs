@@ -54,6 +54,10 @@ impl GetCommitInputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository to which the commit was made.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The commit ID. Commit IDs are the full SHA ID of the commit.</p>
     pub fn commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.commit_id = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl GetCommitInputBuilder {
     pub fn set_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.commit_id = input;
         self
+    }
+    /// <p>The commit ID. Commit IDs are the full SHA ID of the commit.</p>
+    pub fn get_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.commit_id
     }
     /// Consumes the builder and constructs a [`GetCommitInput`](crate::operation::get_commit::GetCommitInput).
     pub fn build(

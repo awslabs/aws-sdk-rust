@@ -62,6 +62,10 @@ impl HumanLoopConfigBuilder {
         self.human_loop_name = input;
         self
     }
+    /// <p>The name of the human review used for this image. This should be kept unique within a region.</p>
+    pub fn get_human_loop_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.human_loop_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the flow definition. You can create a flow definition by using the Amazon Sagemaker <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html">CreateFlowDefinition</a> Operation. </p>
     pub fn flow_definition_arn(
         mut self,
@@ -78,6 +82,10 @@ impl HumanLoopConfigBuilder {
         self.flow_definition_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the flow definition. You can create a flow definition by using the Amazon Sagemaker <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html">CreateFlowDefinition</a> Operation. </p>
+    pub fn get_flow_definition_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_definition_arn
+    }
     /// <p>Sets attributes of the input data.</p>
     pub fn data_attributes(mut self, input: crate::types::HumanLoopDataAttributes) -> Self {
         self.data_attributes = ::std::option::Option::Some(input);
@@ -90,6 +98,12 @@ impl HumanLoopConfigBuilder {
     ) -> Self {
         self.data_attributes = input;
         self
+    }
+    /// <p>Sets attributes of the input data.</p>
+    pub fn get_data_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::HumanLoopDataAttributes> {
+        &self.data_attributes
     }
     /// Consumes the builder and constructs a [`HumanLoopConfig`](crate::types::HumanLoopConfig).
     pub fn build(self) -> crate::types::HumanLoopConfig {

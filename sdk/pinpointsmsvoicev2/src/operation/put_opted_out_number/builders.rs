@@ -37,6 +37,12 @@ impl PutOptedOutNumberFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutOptedOutNumber as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_opted_out_number::builders::PutOptedOutNumberInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl PutOptedOutNumberFluentBuilder {
         self.inner = self.inner.set_opt_out_list_name(input);
         self
     }
+    /// <p>The OptOutListName or OptOutListArn to add the phone number to.</p>
+    pub fn get_opt_out_list_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_opt_out_list_name()
+    }
     /// <p>The phone number to add to the OptOutList in E.164 format.</p>
     pub fn opted_out_number(
         mut self,
@@ -148,5 +158,9 @@ impl PutOptedOutNumberFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_opted_out_number(input);
         self
+    }
+    /// <p>The phone number to add to the OptOutList in E.164 format.</p>
+    pub fn get_opted_out_number(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_opted_out_number()
     }
 }

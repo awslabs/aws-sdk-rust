@@ -47,6 +47,10 @@ impl GetSolNetworkInstanceInputBuilder {
         self.ns_instance_id = input;
         self
     }
+    /// <p>ID of the network instance.</p>
+    pub fn get_ns_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ns_instance_id
+    }
     /// Consumes the builder and constructs a [`GetSolNetworkInstanceInput`](crate::operation::get_sol_network_instance::GetSolNetworkInstanceInput).
     pub fn build(
         self,

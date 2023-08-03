@@ -78,6 +78,12 @@ impl AssignIpv6AddressesOutputBuilder {
         self.assigned_ipv6_addresses = input;
         self
     }
+    /// <p>The new IPv6 addresses assigned to the network interface. Existing IPv6 addresses that were assigned to the network interface before the request are not included.</p>
+    pub fn get_assigned_ipv6_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.assigned_ipv6_addresses
+    }
     /// Appends an item to `assigned_ipv6_prefixes`.
     ///
     /// To override the contents of this collection use [`set_assigned_ipv6_prefixes`](Self::set_assigned_ipv6_prefixes).
@@ -100,6 +106,12 @@ impl AssignIpv6AddressesOutputBuilder {
         self.assigned_ipv6_prefixes = input;
         self
     }
+    /// <p>The IPv6 prefixes that are assigned to the network interface.</p>
+    pub fn get_assigned_ipv6_prefixes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.assigned_ipv6_prefixes
+    }
     /// <p>The ID of the network interface.</p>
     pub fn network_interface_id(
         mut self,
@@ -115,6 +127,10 @@ impl AssignIpv6AddressesOutputBuilder {
     ) -> Self {
         self.network_interface_id = input;
         self
+    }
+    /// <p>The ID of the network interface.</p>
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_interface_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

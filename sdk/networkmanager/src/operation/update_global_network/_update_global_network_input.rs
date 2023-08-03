@@ -57,6 +57,10 @@ impl UpdateGlobalNetworkInputBuilder {
         self.global_network_id = input;
         self
     }
+    /// <p>The ID of your global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_network_id
+    }
     /// <p>A description of the global network.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -68,6 +72,11 @@ impl UpdateGlobalNetworkInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the global network.</p>
+    /// <p>Constraints: Maximum length of 256 characters.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`UpdateGlobalNetworkInput`](crate::operation::update_global_network::UpdateGlobalNetworkInput).
     pub fn build(

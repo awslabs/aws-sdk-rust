@@ -40,6 +40,10 @@ impl BusinessReportRecurrenceBuilder {
         self.start_date = input;
         self
     }
+    /// <p>The start date.</p>
+    pub fn get_start_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_date
+    }
     /// Consumes the builder and constructs a [`BusinessReportRecurrence`](crate::types::BusinessReportRecurrence).
     pub fn build(self) -> crate::types::BusinessReportRecurrence {
         crate::types::BusinessReportRecurrence {

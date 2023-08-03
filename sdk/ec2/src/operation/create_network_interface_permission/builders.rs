@@ -37,6 +37,10 @@ impl CreateNetworkInterfacePermissionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateNetworkInterfacePermission as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_network_interface_permission::builders::CreateNetworkInterfacePermissionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -107,6 +111,10 @@ impl CreateNetworkInterfacePermissionFluentBuilder {
         self.inner = self.inner.set_network_interface_id(input);
         self
     }
+    /// <p>The ID of the network interface.</p>
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_network_interface_id()
+    }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn aws_account_id(
         mut self,
@@ -123,6 +131,10 @@ impl CreateNetworkInterfacePermissionFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The Amazon Web Service. Currently not supported.</p>
     pub fn aws_service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_service(input.into());
@@ -132,6 +144,10 @@ impl CreateNetworkInterfacePermissionFluentBuilder {
     pub fn set_aws_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_service(input);
         self
+    }
+    /// <p>The Amazon Web Service. Currently not supported.</p>
+    pub fn get_aws_service(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_service()
     }
     /// <p>The type of permission to grant.</p>
     pub fn permission(mut self, input: crate::types::InterfacePermissionType) -> Self {
@@ -146,6 +162,10 @@ impl CreateNetworkInterfacePermissionFluentBuilder {
         self.inner = self.inner.set_permission(input);
         self
     }
+    /// <p>The type of permission to grant.</p>
+    pub fn get_permission(&self) -> &::std::option::Option<crate::types::InterfacePermissionType> {
+        self.inner.get_permission()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -155,5 +175,9 @@ impl CreateNetworkInterfacePermissionFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

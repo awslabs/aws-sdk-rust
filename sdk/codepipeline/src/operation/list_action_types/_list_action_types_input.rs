@@ -59,6 +59,10 @@ impl ListActionTypesInputBuilder {
         self.action_owner_filter = input;
         self
     }
+    /// <p>Filters the list of action types to those created by a specified entity.</p>
+    pub fn get_action_owner_filter(&self) -> &::std::option::Option<crate::types::ActionOwner> {
+        &self.action_owner_filter
+    }
     /// <p>An identifier that was returned from the previous list action types call, which can be used to return the next set of action types in the list.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl ListActionTypesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>An identifier that was returned from the previous list action types call, which can be used to return the next set of action types in the list.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The Region to filter on for the list of action types.</p>
     pub fn region_filter(
@@ -84,6 +92,10 @@ impl ListActionTypesInputBuilder {
     ) -> Self {
         self.region_filter = input;
         self
+    }
+    /// <p>The Region to filter on for the list of action types.</p>
+    pub fn get_region_filter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region_filter
     }
     /// Consumes the builder and constructs a [`ListActionTypesInput`](crate::operation::list_action_types::ListActionTypesInput).
     pub fn build(

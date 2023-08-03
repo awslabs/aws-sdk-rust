@@ -65,6 +65,12 @@ impl VoiceMessageContentBuilder {
         self.call_instructions_message = input;
         self
     }
+    /// An object that defines a message that contains text formatted using Amazon Pinpoint Voice Instructions markup.
+    pub fn get_call_instructions_message(
+        &self,
+    ) -> &::std::option::Option<crate::types::CallInstructionsMessageType> {
+        &self.call_instructions_message
+    }
     /// An object that defines a message that contains unformatted text.
     pub fn plain_text_message(mut self, input: crate::types::PlainTextMessageType) -> Self {
         self.plain_text_message = ::std::option::Option::Some(input);
@@ -78,6 +84,12 @@ impl VoiceMessageContentBuilder {
         self.plain_text_message = input;
         self
     }
+    /// An object that defines a message that contains unformatted text.
+    pub fn get_plain_text_message(
+        &self,
+    ) -> &::std::option::Option<crate::types::PlainTextMessageType> {
+        &self.plain_text_message
+    }
     /// An object that defines a message that contains SSML-formatted text.
     pub fn ssml_message(mut self, input: crate::types::SsmlMessageType) -> Self {
         self.ssml_message = ::std::option::Option::Some(input);
@@ -90,6 +102,10 @@ impl VoiceMessageContentBuilder {
     ) -> Self {
         self.ssml_message = input;
         self
+    }
+    /// An object that defines a message that contains SSML-formatted text.
+    pub fn get_ssml_message(&self) -> &::std::option::Option<crate::types::SsmlMessageType> {
+        &self.ssml_message
     }
     /// Consumes the builder and constructs a [`VoiceMessageContent`](crate::types::VoiceMessageContent).
     pub fn build(self) -> crate::types::VoiceMessageContent {

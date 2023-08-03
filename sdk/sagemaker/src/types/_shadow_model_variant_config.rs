@@ -54,6 +54,10 @@ impl ShadowModelVariantConfigBuilder {
         self.shadow_model_variant_name = input;
         self
     }
+    /// <p>The name of the shadow variant.</p>
+    pub fn get_shadow_model_variant_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shadow_model_variant_name
+    }
     /// <p> The percentage of inference requests that Amazon SageMaker replicates from the production variant to the shadow variant. </p>
     pub fn sampling_percentage(mut self, input: i32) -> Self {
         self.sampling_percentage = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl ShadowModelVariantConfigBuilder {
     pub fn set_sampling_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.sampling_percentage = input;
         self
+    }
+    /// <p> The percentage of inference requests that Amazon SageMaker replicates from the production variant to the shadow variant. </p>
+    pub fn get_sampling_percentage(&self) -> &::std::option::Option<i32> {
+        &self.sampling_percentage
     }
     /// Consumes the builder and constructs a [`ShadowModelVariantConfig`](crate::types::ShadowModelVariantConfig).
     pub fn build(self) -> crate::types::ShadowModelVariantConfig {

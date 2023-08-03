@@ -77,6 +77,10 @@ impl GetEvidenceByEvidenceFolderInputBuilder {
         self.assessment_id = input;
         self
     }
+    /// <p> The identifier for the assessment. </p>
+    pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_id
+    }
     /// <p> The identifier for the control set. </p>
     pub fn control_set_id(
         mut self,
@@ -92,6 +96,10 @@ impl GetEvidenceByEvidenceFolderInputBuilder {
     ) -> Self {
         self.control_set_id = input;
         self
+    }
+    /// <p> The identifier for the control set. </p>
+    pub fn get_control_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_set_id
     }
     /// <p> The unique identifier for the folder that the evidence is stored in. </p>
     pub fn evidence_folder_id(
@@ -109,6 +117,10 @@ impl GetEvidenceByEvidenceFolderInputBuilder {
         self.evidence_folder_id = input;
         self
     }
+    /// <p> The unique identifier for the folder that the evidence is stored in. </p>
+    pub fn get_evidence_folder_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evidence_folder_id
+    }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -119,6 +131,10 @@ impl GetEvidenceByEvidenceFolderInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -128,6 +144,10 @@ impl GetEvidenceByEvidenceFolderInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p> Represents the maximum number of results on a page or for an API request call. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`GetEvidenceByEvidenceFolderInput`](crate::operation::get_evidence_by_evidence_folder::GetEvidenceByEvidenceFolderInput).
     pub fn build(

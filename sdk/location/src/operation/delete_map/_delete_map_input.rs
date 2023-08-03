@@ -39,6 +39,10 @@ impl DeleteMapInputBuilder {
         self.map_name = input;
         self
     }
+    /// <p>The name of the map resource to be deleted.</p>
+    pub fn get_map_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.map_name
+    }
     /// Consumes the builder and constructs a [`DeleteMapInput`](crate::operation::delete_map::DeleteMapInput).
     pub fn build(
         self,

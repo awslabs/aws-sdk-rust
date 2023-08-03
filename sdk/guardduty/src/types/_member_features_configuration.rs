@@ -60,6 +60,10 @@ impl MemberFeaturesConfigurationBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the feature.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::OrgFeature> {
+        &self.name
+    }
     /// <p>The status of the feature.</p>
     pub fn status(mut self, input: crate::types::FeatureStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl MemberFeaturesConfigurationBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FeatureStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the feature.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::FeatureStatus> {
+        &self.status
     }
     /// Appends an item to `additional_configuration`.
     ///
@@ -91,6 +99,12 @@ impl MemberFeaturesConfigurationBuilder {
     ) -> Self {
         self.additional_configuration = input;
         self
+    }
+    /// <p>Additional configuration of the feature for the member account.</p>
+    pub fn get_additional_configuration(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberAdditionalConfiguration>> {
+        &self.additional_configuration
     }
     /// Consumes the builder and constructs a [`MemberFeaturesConfiguration`](crate::types::MemberFeaturesConfiguration).
     pub fn build(self) -> crate::types::MemberFeaturesConfiguration {

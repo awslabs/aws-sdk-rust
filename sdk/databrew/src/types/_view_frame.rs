@@ -80,6 +80,10 @@ impl ViewFrameBuilder {
         self.start_column_index = input;
         self
     }
+    /// <p>The starting index for the range of columns to return in the view frame.</p>
+    pub fn get_start_column_index(&self) -> &::std::option::Option<i32> {
+        &self.start_column_index
+    }
     /// <p>The number of columns to include in the view frame, beginning with the <code>StartColumnIndex</code> value and ignoring any columns in the <code>HiddenColumns</code> list.</p>
     pub fn column_range(mut self, input: i32) -> Self {
         self.column_range = ::std::option::Option::Some(input);
@@ -89,6 +93,10 @@ impl ViewFrameBuilder {
     pub fn set_column_range(mut self, input: ::std::option::Option<i32>) -> Self {
         self.column_range = input;
         self
+    }
+    /// <p>The number of columns to include in the view frame, beginning with the <code>StartColumnIndex</code> value and ignoring any columns in the <code>HiddenColumns</code> list.</p>
+    pub fn get_column_range(&self) -> &::std::option::Option<i32> {
+        &self.column_range
     }
     /// Appends an item to `hidden_columns`.
     ///
@@ -112,6 +120,12 @@ impl ViewFrameBuilder {
         self.hidden_columns = input;
         self
     }
+    /// <p>A list of columns to hide in the view frame.</p>
+    pub fn get_hidden_columns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.hidden_columns
+    }
     /// <p>The starting index for the range of rows to return in the view frame.</p>
     pub fn start_row_index(mut self, input: i32) -> Self {
         self.start_row_index = ::std::option::Option::Some(input);
@@ -122,6 +136,10 @@ impl ViewFrameBuilder {
         self.start_row_index = input;
         self
     }
+    /// <p>The starting index for the range of rows to return in the view frame.</p>
+    pub fn get_start_row_index(&self) -> &::std::option::Option<i32> {
+        &self.start_row_index
+    }
     /// <p>The number of rows to include in the view frame, beginning with the <code>StartRowIndex</code> value.</p>
     pub fn row_range(mut self, input: i32) -> Self {
         self.row_range = ::std::option::Option::Some(input);
@@ -131,6 +149,10 @@ impl ViewFrameBuilder {
     pub fn set_row_range(mut self, input: ::std::option::Option<i32>) -> Self {
         self.row_range = input;
         self
+    }
+    /// <p>The number of rows to include in the view frame, beginning with the <code>StartRowIndex</code> value.</p>
+    pub fn get_row_range(&self) -> &::std::option::Option<i32> {
+        &self.row_range
     }
     /// <p>Controls if analytics computation is enabled or disabled. Enabled by default.</p>
     pub fn analytics(mut self, input: crate::types::AnalyticsMode) -> Self {
@@ -144,6 +166,10 @@ impl ViewFrameBuilder {
     ) -> Self {
         self.analytics = input;
         self
+    }
+    /// <p>Controls if analytics computation is enabled or disabled. Enabled by default.</p>
+    pub fn get_analytics(&self) -> &::std::option::Option<crate::types::AnalyticsMode> {
+        &self.analytics
     }
     /// Consumes the builder and constructs a [`ViewFrame`](crate::types::ViewFrame).
     pub fn build(self) -> crate::types::ViewFrame {

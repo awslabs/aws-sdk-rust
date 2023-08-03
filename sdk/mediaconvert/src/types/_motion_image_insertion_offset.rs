@@ -48,6 +48,10 @@ impl MotionImageInsertionOffsetBuilder {
         self.image_x = input;
         self
     }
+    /// Set the distance, in pixels, between the overlay and the left edge of the video frame.
+    pub fn get_image_x(&self) -> &::std::option::Option<i32> {
+        &self.image_x
+    }
     /// Set the distance, in pixels, between the overlay and the top edge of the video frame.
     pub fn image_y(mut self, input: i32) -> Self {
         self.image_y = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl MotionImageInsertionOffsetBuilder {
     pub fn set_image_y(mut self, input: ::std::option::Option<i32>) -> Self {
         self.image_y = input;
         self
+    }
+    /// Set the distance, in pixels, between the overlay and the top edge of the video frame.
+    pub fn get_image_y(&self) -> &::std::option::Option<i32> {
+        &self.image_y
     }
     /// Consumes the builder and constructs a [`MotionImageInsertionOffset`](crate::types::MotionImageInsertionOffset).
     pub fn build(self) -> crate::types::MotionImageInsertionOffset {

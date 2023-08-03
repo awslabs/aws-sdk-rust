@@ -56,6 +56,12 @@ impl DescribePiiEntitiesDetectionJobOutputBuilder {
         self.pii_entities_detection_job_properties = input;
         self
     }
+    /// <p>Provides information about a PII entities detection job.</p>
+    pub fn get_pii_entities_detection_job_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::PiiEntitiesDetectionJobProperties> {
+        &self.pii_entities_detection_job_properties
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

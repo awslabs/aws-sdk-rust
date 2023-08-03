@@ -36,6 +36,10 @@ impl CreateConfigurationSetEventDestinationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateConfigurationSetEventDestination as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_configuration_set_event_destination::builders::CreateConfigurationSetEventDestinationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl CreateConfigurationSetEventDestinationFluentBuilder {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }
+    /// ConfigurationSetName
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_set_name()
+    }
     /// An object that defines a single event destination.
     pub fn event_destination(mut self, input: crate::types::EventDestinationDefinition) -> Self {
         self.inner = self.inner.event_destination(input);
@@ -118,6 +126,12 @@ impl CreateConfigurationSetEventDestinationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_event_destination(input);
         self
+    }
+    /// An object that defines a single event destination.
+    pub fn get_event_destination(
+        &self,
+    ) -> &::std::option::Option<crate::types::EventDestinationDefinition> {
+        self.inner.get_event_destination()
     }
     /// A name that identifies the event destination.
     pub fn event_destination_name(
@@ -134,5 +148,9 @@ impl CreateConfigurationSetEventDestinationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_event_destination_name(input);
         self
+    }
+    /// A name that identifies the event destination.
+    pub fn get_event_destination_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_destination_name()
     }
 }

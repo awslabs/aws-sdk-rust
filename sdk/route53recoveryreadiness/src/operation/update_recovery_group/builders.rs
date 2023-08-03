@@ -36,6 +36,12 @@ impl UpdateRecoveryGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateRecoveryGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_recovery_group::builders::UpdateRecoveryGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl UpdateRecoveryGroupFluentBuilder {
         self.inner = self.inner.set_cells(input);
         self
     }
+    /// <p>A list of cell Amazon Resource Names (ARNs). This list completely replaces the previous list.</p>
+    pub fn get_cells(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_cells()
+    }
     /// <p>The name of a recovery group.</p>
     pub fn recovery_group_name(
         mut self,
@@ -148,5 +158,9 @@ impl UpdateRecoveryGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_recovery_group_name(input);
         self
+    }
+    /// <p>The name of a recovery group.</p>
+    pub fn get_recovery_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_recovery_group_name()
     }
 }

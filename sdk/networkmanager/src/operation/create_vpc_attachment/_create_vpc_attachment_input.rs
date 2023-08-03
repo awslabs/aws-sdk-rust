@@ -87,6 +87,10 @@ impl CreateVpcAttachmentInputBuilder {
         self.core_network_id = input;
         self
     }
+    /// <p>The ID of a core network for the VPC attachment.</p>
+    pub fn get_core_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_network_id
+    }
     /// <p>The ARN of the VPC.</p>
     pub fn vpc_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_arn = ::std::option::Option::Some(input.into());
@@ -96,6 +100,10 @@ impl CreateVpcAttachmentInputBuilder {
     pub fn set_vpc_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_arn = input;
         self
+    }
+    /// <p>The ARN of the VPC.</p>
+    pub fn get_vpc_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_arn
     }
     /// Appends an item to `subnet_arns`.
     ///
@@ -116,6 +124,12 @@ impl CreateVpcAttachmentInputBuilder {
         self.subnet_arns = input;
         self
     }
+    /// <p>The subnet ARN of the VPC attachment.</p>
+    pub fn get_subnet_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_arns
+    }
     /// <p>Options for the VPC attachment.</p>
     pub fn options(mut self, input: crate::types::VpcOptions) -> Self {
         self.options = ::std::option::Option::Some(input);
@@ -125,6 +139,10 @@ impl CreateVpcAttachmentInputBuilder {
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::VpcOptions>) -> Self {
         self.options = input;
         self
+    }
+    /// <p>Options for the VPC attachment.</p>
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::VpcOptions> {
+        &self.options
     }
     /// Appends an item to `tags`.
     ///
@@ -145,6 +163,10 @@ impl CreateVpcAttachmentInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The key-value tags associated with the request.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The client token associated with the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -154,6 +176,10 @@ impl CreateVpcAttachmentInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>The client token associated with the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateVpcAttachmentInput`](crate::operation::create_vpc_attachment::CreateVpcAttachmentInput).
     pub fn build(

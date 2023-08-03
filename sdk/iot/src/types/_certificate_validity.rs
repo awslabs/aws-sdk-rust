@@ -51,6 +51,10 @@ impl CertificateValidityBuilder {
         self.not_before = input;
         self
     }
+    /// <p>The certificate is not valid before this date.</p>
+    pub fn get_not_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.not_before
+    }
     /// <p>The certificate is not valid after this date.</p>
     pub fn not_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.not_after = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl CertificateValidityBuilder {
     ) -> Self {
         self.not_after = input;
         self
+    }
+    /// <p>The certificate is not valid after this date.</p>
+    pub fn get_not_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.not_after
     }
     /// Consumes the builder and constructs a [`CertificateValidity`](crate::types::CertificateValidity).
     pub fn build(self) -> crate::types::CertificateValidity {

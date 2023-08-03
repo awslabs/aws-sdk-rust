@@ -57,6 +57,12 @@ impl BundleInformationBuilder {
         self.bundle_names = input;
         self
     }
+    /// <p>The bundle names.</p>
+    pub fn get_bundle_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.bundle_names
+    }
     /// <p>The pricing tier.</p>
     pub fn pricing_tier(mut self, input: crate::types::PricingTier) -> Self {
         self.pricing_tier = ::std::option::Option::Some(input);
@@ -69,6 +75,10 @@ impl BundleInformationBuilder {
     ) -> Self {
         self.pricing_tier = input;
         self
+    }
+    /// <p>The pricing tier.</p>
+    pub fn get_pricing_tier(&self) -> &::std::option::Option<crate::types::PricingTier> {
+        &self.pricing_tier
     }
     /// Consumes the builder and constructs a [`BundleInformation`](crate::types::BundleInformation).
     pub fn build(self) -> crate::types::BundleInformation {

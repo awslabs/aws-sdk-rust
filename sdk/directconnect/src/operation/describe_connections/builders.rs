@@ -36,6 +36,12 @@ impl DescribeConnectionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeConnections as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_connections::builders::DescribeConnectionsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl DescribeConnectionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_connection_id(input);
         self
+    }
+    /// <p>The ID of the connection.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connection_id()
     }
 }

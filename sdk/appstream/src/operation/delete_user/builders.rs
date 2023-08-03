@@ -36,6 +36,10 @@ impl DeleteUserFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteUser as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_user::builders::DeleteUserInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -122,6 +126,12 @@ impl DeleteUserFluentBuilder {
         self.inner = self.inner.set_user_name(input);
         self
     }
+    /// <p>The email address of the user.</p> <note>
+    /// <p>Users' email addresses are case-sensitive.</p>
+    /// </note>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_name()
+    }
     /// <p>The authentication type for the user. You must specify USERPOOL.</p>
     pub fn authentication_type(mut self, input: crate::types::AuthenticationType) -> Self {
         self.inner = self.inner.authentication_type(input);
@@ -134,5 +144,11 @@ impl DeleteUserFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_authentication_type(input);
         self
+    }
+    /// <p>The authentication type for the user. You must specify USERPOOL.</p>
+    pub fn get_authentication_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthenticationType> {
+        self.inner.get_authentication_type()
     }
 }

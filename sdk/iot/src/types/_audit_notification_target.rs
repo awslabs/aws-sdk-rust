@@ -56,6 +56,10 @@ impl AuditNotificationTargetBuilder {
         self.target_arn = input;
         self
     }
+    /// <p>The ARN of the target (SNS topic) to which audit notifications are sent.</p>
+    pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_arn
+    }
     /// <p>The ARN of the role that grants permission to send notifications to the target.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl AuditNotificationTargetBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The ARN of the role that grants permission to send notifications to the target.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>True if notifications to the target are enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl AuditNotificationTargetBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>True if notifications to the target are enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// Consumes the builder and constructs a [`AuditNotificationTarget`](crate::types::AuditNotificationTarget).
     pub fn build(self) -> crate::types::AuditNotificationTarget {

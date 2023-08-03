@@ -54,6 +54,10 @@ impl RollbackApplicationInputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The name of the application.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>The current application version ID. You can retrieve the application version ID using <code>DescribeApplication</code>.</p>
     pub fn current_application_version_id(mut self, input: i64) -> Self {
         self.current_application_version_id = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl RollbackApplicationInputBuilder {
     pub fn set_current_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.current_application_version_id = input;
         self
+    }
+    /// <p>The current application version ID. You can retrieve the application version ID using <code>DescribeApplication</code>.</p>
+    pub fn get_current_application_version_id(&self) -> &::std::option::Option<i64> {
+        &self.current_application_version_id
     }
     /// Consumes the builder and constructs a [`RollbackApplicationInput`](crate::operation::rollback_application::RollbackApplicationInput).
     pub fn build(

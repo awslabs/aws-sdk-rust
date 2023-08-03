@@ -79,6 +79,10 @@ impl DescribeHubOutputBuilder {
         self.hub_arn = input;
         self
     }
+    /// <p>The ARN of the Hub resource that was retrieved.</p>
+    pub fn get_hub_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hub_arn
+    }
     /// <p>The date and time when Security Hub was enabled in the account.</p>
     pub fn subscribed_at(
         mut self,
@@ -95,6 +99,10 @@ impl DescribeHubOutputBuilder {
         self.subscribed_at = input;
         self
     }
+    /// <p>The date and time when Security Hub was enabled in the account.</p>
+    pub fn get_subscribed_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscribed_at
+    }
     /// <p>Whether to automatically enable new controls when they are added to standards that are enabled.</p>
     /// <p>If set to <code>true</code>, then new controls for enabled standards are enabled automatically. If set to <code>false</code>, then new controls are not enabled.</p>
     pub fn auto_enable_controls(mut self, input: bool) -> Self {
@@ -106,6 +114,11 @@ impl DescribeHubOutputBuilder {
     pub fn set_auto_enable_controls(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_enable_controls = input;
         self
+    }
+    /// <p>Whether to automatically enable new controls when they are added to standards that are enabled.</p>
+    /// <p>If set to <code>true</code>, then new controls for enabled standards are enabled automatically. If set to <code>false</code>, then new controls are not enabled.</p>
+    pub fn get_auto_enable_controls(&self) -> &::std::option::Option<bool> {
+        &self.auto_enable_controls
     }
     /// <p>Specifies whether the calling account has consolidated control findings turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control check even when the check applies to multiple enabled standards.</p>
     /// <p>If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for a control check when the check applies to multiple enabled standards.</p>
@@ -126,6 +139,14 @@ impl DescribeHubOutputBuilder {
     ) -> Self {
         self.control_finding_generator = input;
         self
+    }
+    /// <p>Specifies whether the calling account has consolidated control findings turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control check even when the check applies to multiple enabled standards.</p>
+    /// <p>If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for a control check when the check applies to multiple enabled standards.</p>
+    /// <p>The value for this field in a member account matches the value in the administrator account. For accounts that aren't part of an organization, the default value of this field is <code>SECURITY_CONTROL</code> if you enabled Security Hub on or after February 23, 2023.</p>
+    pub fn get_control_finding_generator(
+        &self,
+    ) -> &::std::option::Option<crate::types::ControlFindingGenerator> {
+        &self.control_finding_generator
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

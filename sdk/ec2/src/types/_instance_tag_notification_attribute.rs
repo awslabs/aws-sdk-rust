@@ -60,6 +60,12 @@ impl InstanceTagNotificationAttributeBuilder {
         self.instance_tag_keys = input;
         self
     }
+    /// <p>The registered tag keys.</p>
+    pub fn get_instance_tag_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.instance_tag_keys
+    }
     /// <p>Indicates wheter all tag keys in the current Region are registered to appear in scheduled event notifications. <code>true</code> indicates that all tag keys in the current Region are registered.</p>
     pub fn include_all_tags_of_instance(mut self, input: bool) -> Self {
         self.include_all_tags_of_instance = ::std::option::Option::Some(input);
@@ -69,6 +75,10 @@ impl InstanceTagNotificationAttributeBuilder {
     pub fn set_include_all_tags_of_instance(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_all_tags_of_instance = input;
         self
+    }
+    /// <p>Indicates wheter all tag keys in the current Region are registered to appear in scheduled event notifications. <code>true</code> indicates that all tag keys in the current Region are registered.</p>
+    pub fn get_include_all_tags_of_instance(&self) -> &::std::option::Option<bool> {
+        &self.include_all_tags_of_instance
     }
     /// Consumes the builder and constructs a [`InstanceTagNotificationAttribute`](crate::types::InstanceTagNotificationAttribute).
     pub fn build(self) -> crate::types::InstanceTagNotificationAttribute {

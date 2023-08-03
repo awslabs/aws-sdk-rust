@@ -55,6 +55,10 @@ impl DeleteUserDefinedFunctionInputBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The ID of the Data Catalog where the function to be deleted is located. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p>The name of the catalog database where the function is located.</p>
     pub fn database_name(
         mut self,
@@ -71,6 +75,10 @@ impl DeleteUserDefinedFunctionInputBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The name of the catalog database where the function is located.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>The name of the function definition to be deleted.</p>
     pub fn function_name(
         mut self,
@@ -86,6 +94,10 @@ impl DeleteUserDefinedFunctionInputBuilder {
     ) -> Self {
         self.function_name = input;
         self
+    }
+    /// <p>The name of the function definition to be deleted.</p>
+    pub fn get_function_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_name
     }
     /// Consumes the builder and constructs a [`DeleteUserDefinedFunctionInput`](crate::operation::delete_user_defined_function::DeleteUserDefinedFunctionInput).
     pub fn build(

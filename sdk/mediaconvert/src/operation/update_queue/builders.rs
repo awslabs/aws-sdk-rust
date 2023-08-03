@@ -36,6 +36,10 @@ impl UpdateQueueFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateQueue as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_queue::builders::UpdateQueueInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdateQueueFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// The new description for the queue, if you are changing it.
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// The name of the queue that you are modifying.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -127,6 +135,10 @@ impl UpdateQueueFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// The name of the queue that you are modifying.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// The new details of your pricing plan for your reserved queue. When you set up a new pricing plan to replace an expired one, you enter into another 12-month commitment. When you add capacity to your queue by increasing the number of RTS, you extend the term of your commitment to 12 months from when you add capacity. After you make these commitments, you can't cancel them.
     pub fn reservation_plan_settings(
@@ -144,6 +156,12 @@ impl UpdateQueueFluentBuilder {
         self.inner = self.inner.set_reservation_plan_settings(input);
         self
     }
+    /// The new details of your pricing plan for your reserved queue. When you set up a new pricing plan to replace an expired one, you enter into another 12-month commitment. When you add capacity to your queue by increasing the number of RTS, you extend the term of your commitment to 12 months from when you add capacity. After you make these commitments, you can't cancel them.
+    pub fn get_reservation_plan_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReservationPlanSettings> {
+        self.inner.get_reservation_plan_settings()
+    }
     /// Pause or activate a queue by changing its status between ACTIVE and PAUSED. If you pause a queue, jobs in that queue won't begin. Jobs that are running when you pause the queue continue to run until they finish or result in an error.
     pub fn status(mut self, input: crate::types::QueueStatus) -> Self {
         self.inner = self.inner.status(input);
@@ -153,5 +171,9 @@ impl UpdateQueueFluentBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::QueueStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// Pause or activate a queue by changing its status between ACTIVE and PAUSED. If you pause a queue, jobs in that queue won't begin. Jobs that are running when you pause the queue continue to run until they finish or result in an error.
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::QueueStatus> {
+        self.inner.get_status()
     }
 }

@@ -36,6 +36,12 @@ impl CreateStreamingURLFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateStreamingURL as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_streaming_url::builders::CreateStreamingUrlInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateStreamingURLFluentBuilder {
         self.inner = self.inner.set_stack_name(input);
         self
     }
+    /// <p>The name of the stack.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_name()
+    }
     /// <p>The name of the fleet.</p>
     pub fn fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet_name(input.into());
@@ -136,6 +146,10 @@ impl CreateStreamingURLFluentBuilder {
         self.inner = self.inner.set_fleet_name(input);
         self
     }
+    /// <p>The name of the fleet.</p>
+    pub fn get_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fleet_name()
+    }
     /// <p>The identifier of the user.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
@@ -145,6 +159,10 @@ impl CreateStreamingURLFluentBuilder {
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
         self
+    }
+    /// <p>The identifier of the user.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_id()
     }
     /// <p>The name of the application to launch after the session starts. This is the name that you specified as <b>Name</b> in the Image Assistant. If your fleet is enabled for the <b>Desktop</b> stream view, you can also choose to launch directly to the operating system desktop. To do so, specify <b>Desktop</b>.</p>
     pub fn application_id(
@@ -162,6 +180,10 @@ impl CreateStreamingURLFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The name of the application to launch after the session starts. This is the name that you specified as <b>Name</b> in the Image Assistant. If your fleet is enabled for the <b>Desktop</b> stream view, you can also choose to launch directly to the operating system desktop. To do so, specify <b>Desktop</b>.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 60 seconds.</p>
     pub fn validity(mut self, input: i64) -> Self {
         self.inner = self.inner.validity(input);
@@ -171,6 +193,10 @@ impl CreateStreamingURLFluentBuilder {
     pub fn set_validity(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_validity(input);
         self
+    }
+    /// <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 60 seconds.</p>
+    pub fn get_validity(&self) -> &::std::option::Option<i64> {
+        self.inner.get_validity()
     }
     /// <p>The session context. For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters">Session Context</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub fn session_context(
@@ -187,5 +213,9 @@ impl CreateStreamingURLFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_session_context(input);
         self
+    }
+    /// <p>The session context. For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters">Session Context</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    pub fn get_session_context(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_session_context()
     }
 }

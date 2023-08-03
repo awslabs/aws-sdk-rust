@@ -36,6 +36,12 @@ impl DescribeBackupPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeBackupPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_backup_policy::builders::DescribeBackupPolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl DescribeBackupPolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_file_system_id(input);
         self
+    }
+    /// <p>Specifies which EFS file system to retrieve the <code>BackupPolicy</code> for.</p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_file_system_id()
     }
 }

@@ -50,6 +50,10 @@ impl GetDedicatedIpOutputBuilder {
         self.dedicated_ip = input;
         self
     }
+    /// <p>An object that contains information about a dedicated IP address.</p>
+    pub fn get_dedicated_ip(&self) -> &::std::option::Option<crate::types::DedicatedIp> {
+        &self.dedicated_ip
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

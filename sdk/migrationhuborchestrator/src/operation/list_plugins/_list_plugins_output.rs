@@ -54,6 +54,10 @@ impl ListPluginsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `plugins`.
     ///
     /// To override the contents of this collection use [`set_plugins`](Self::set_plugins).
@@ -72,6 +76,12 @@ impl ListPluginsOutputBuilder {
     ) -> Self {
         self.plugins = input;
         self
+    }
+    /// <p>Migration Hub Orchestrator plugins.</p>
+    pub fn get_plugins(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PluginSummary>> {
+        &self.plugins
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

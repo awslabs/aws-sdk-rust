@@ -51,6 +51,10 @@ impl TransformSortCriteriaBuilder {
         self.column = input;
         self
     }
+    /// <p>The column to be used in the sorting criteria that are associated with the machine learning transform.</p>
+    pub fn get_column(&self) -> &::std::option::Option<crate::types::TransformSortColumnType> {
+        &self.column
+    }
     /// <p>The sort direction to be used in the sorting criteria that are associated with the machine learning transform.</p>
     pub fn sort_direction(mut self, input: crate::types::SortDirectionType) -> Self {
         self.sort_direction = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl TransformSortCriteriaBuilder {
     ) -> Self {
         self.sort_direction = input;
         self
+    }
+    /// <p>The sort direction to be used in the sorting criteria that are associated with the machine learning transform.</p>
+    pub fn get_sort_direction(&self) -> &::std::option::Option<crate::types::SortDirectionType> {
+        &self.sort_direction
     }
     /// Consumes the builder and constructs a [`TransformSortCriteria`](crate::types::TransformSortCriteria).
     pub fn build(self) -> crate::types::TransformSortCriteria {

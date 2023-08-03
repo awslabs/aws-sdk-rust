@@ -47,6 +47,10 @@ impl MoveByoipCidrToIpamOutputBuilder {
         self.byoip_cidr = input;
         self
     }
+    /// <p>The BYOIP CIDR.</p>
+    pub fn get_byoip_cidr(&self) -> &::std::option::Option<crate::types::ByoipCidr> {
+        &self.byoip_cidr
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

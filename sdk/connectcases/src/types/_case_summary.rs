@@ -48,6 +48,10 @@ impl CaseSummaryBuilder {
         self.case_id = input;
         self
     }
+    /// <p>A unique identifier of the case.</p>
+    pub fn get_case_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.case_id
+    }
     /// <p>A unique identifier of a template.</p>
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl CaseSummaryBuilder {
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_id = input;
         self
+    }
+    /// <p>A unique identifier of a template.</p>
+    pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_id
     }
     /// Consumes the builder and constructs a [`CaseSummary`](crate::types::CaseSummary).
     pub fn build(self) -> crate::types::CaseSummary {

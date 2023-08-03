@@ -65,6 +65,10 @@ impl DescribeLdapsSettingsInputBuilder {
         self.directory_id = input;
         self
     }
+    /// <p>The identifier of the directory.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
     /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
     pub fn r#type(mut self, input: crate::types::LdapsType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl DescribeLdapsSettingsInputBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::LdapsType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::LdapsType> {
+        &self.r#type
     }
     /// <p>The type of next token used for pagination.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -85,6 +93,10 @@ impl DescribeLdapsSettingsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The type of next token used for pagination.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>Specifies the number of items that should be displayed on one page.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -94,6 +106,10 @@ impl DescribeLdapsSettingsInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>Specifies the number of items that should be displayed on one page.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// Consumes the builder and constructs a [`DescribeLdapsSettingsInput`](crate::operation::describe_ldaps_settings::DescribeLdapsSettingsInput).
     pub fn build(

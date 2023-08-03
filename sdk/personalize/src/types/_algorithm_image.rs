@@ -48,6 +48,10 @@ impl AlgorithmImageBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the algorithm image.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The URI of the Docker container for the algorithm image.</p>
     pub fn docker_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.docker_uri = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl AlgorithmImageBuilder {
     pub fn set_docker_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.docker_uri = input;
         self
+    }
+    /// <p>The URI of the Docker container for the algorithm image.</p>
+    pub fn get_docker_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.docker_uri
     }
     /// Consumes the builder and constructs a [`AlgorithmImage`](crate::types::AlgorithmImage).
     pub fn build(self) -> crate::types::AlgorithmImage {

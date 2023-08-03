@@ -66,6 +66,10 @@ impl DataItemBuilder {
         self.override_format = input;
         self
     }
+    /// <p> The overrideFormat is optional and is specified only if a particular row of data has a different format for the data than the default format defined on the screen or the table. </p>
+    pub fn get_override_format(&self) -> &::std::option::Option<crate::types::Format> {
+        &self.override_format
+    }
     /// <p>The raw value of the data. e.g. jsmith@example.com</p>
     pub fn raw_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.raw_value = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl DataItemBuilder {
     pub fn set_raw_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.raw_value = input;
         self
+    }
+    /// <p>The raw value of the data. e.g. jsmith@example.com</p>
+    pub fn get_raw_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.raw_value
     }
     /// <p>The formatted value of the data. e.g. John Smith.</p>
     pub fn formatted_value(
@@ -91,6 +99,10 @@ impl DataItemBuilder {
     ) -> Self {
         self.formatted_value = input;
         self
+    }
+    /// <p>The formatted value of the data. e.g. John Smith.</p>
+    pub fn get_formatted_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.formatted_value
     }
     /// Consumes the builder and constructs a [`DataItem`](crate::types::DataItem).
     pub fn build(self) -> crate::types::DataItem {

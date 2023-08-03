@@ -48,6 +48,10 @@ impl GenerateAccessLogsOutputBuilder {
         self.log_url = input;
         self
     }
+    /// <p> The pre-signed URL for the requested access logs. </p>
+    pub fn get_log_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_url
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

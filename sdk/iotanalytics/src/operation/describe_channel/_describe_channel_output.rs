@@ -54,6 +54,10 @@ impl DescribeChannelOutputBuilder {
         self.channel = input;
         self
     }
+    /// <p>An object that contains information about the channel.</p>
+    pub fn get_channel(&self) -> &::std::option::Option<crate::types::Channel> {
+        &self.channel
+    }
     /// <p>Statistics about the channel. Included if the <code>includeStatistics</code> parameter is set to <code>true</code> in the request.</p>
     pub fn statistics(mut self, input: crate::types::ChannelStatistics) -> Self {
         self.statistics = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl DescribeChannelOutputBuilder {
     ) -> Self {
         self.statistics = input;
         self
+    }
+    /// <p>Statistics about the channel. Included if the <code>includeStatistics</code> parameter is set to <code>true</code> in the request.</p>
+    pub fn get_statistics(&self) -> &::std::option::Option<crate::types::ChannelStatistics> {
+        &self.statistics
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -70,6 +70,12 @@ impl EncryptionConfigurationBuilder {
         self.s3_encryption = input;
         self
     }
+    /// <p>The encryption configuration for Amazon Simple Storage Service (Amazon S3) data.</p>
+    pub fn get_s3_encryption(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::S3Encryption>> {
+        &self.s3_encryption
+    }
     /// <p>The encryption configuration for Amazon CloudWatch.</p>
     pub fn cloud_watch_encryption(mut self, input: crate::types::CloudWatchEncryption) -> Self {
         self.cloud_watch_encryption = ::std::option::Option::Some(input);
@@ -83,6 +89,12 @@ impl EncryptionConfigurationBuilder {
         self.cloud_watch_encryption = input;
         self
     }
+    /// <p>The encryption configuration for Amazon CloudWatch.</p>
+    pub fn get_cloud_watch_encryption(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudWatchEncryption> {
+        &self.cloud_watch_encryption
+    }
     /// <p>The encryption configuration for job bookmarks.</p>
     pub fn job_bookmarks_encryption(mut self, input: crate::types::JobBookmarksEncryption) -> Self {
         self.job_bookmarks_encryption = ::std::option::Option::Some(input);
@@ -95,6 +107,12 @@ impl EncryptionConfigurationBuilder {
     ) -> Self {
         self.job_bookmarks_encryption = input;
         self
+    }
+    /// <p>The encryption configuration for job bookmarks.</p>
+    pub fn get_job_bookmarks_encryption(
+        &self,
+    ) -> &::std::option::Option<crate::types::JobBookmarksEncryption> {
+        &self.job_bookmarks_encryption
     }
     /// Consumes the builder and constructs a [`EncryptionConfiguration`](crate::types::EncryptionConfiguration).
     pub fn build(self) -> crate::types::EncryptionConfiguration {

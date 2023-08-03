@@ -47,6 +47,10 @@ impl DeleteKnowledgeBaseInputBuilder {
         self.knowledge_base_id = input;
         self
     }
+    /// <p>The knowledge base to delete content from. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.knowledge_base_id
+    }
     /// Consumes the builder and constructs a [`DeleteKnowledgeBaseInput`](crate::operation::delete_knowledge_base::DeleteKnowledgeBaseInput).
     pub fn build(
         self,

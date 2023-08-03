@@ -67,6 +67,12 @@ impl DescribeVolumeAttributeOutputBuilder {
         self.auto_enable_io = input;
         self
     }
+    /// <p>The state of <code>autoEnableIO</code> attribute.</p>
+    pub fn get_auto_enable_io(
+        &self,
+    ) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
+        &self.auto_enable_io
+    }
     /// Appends an item to `product_codes`.
     ///
     /// To override the contents of this collection use [`set_product_codes`](Self::set_product_codes).
@@ -86,6 +92,12 @@ impl DescribeVolumeAttributeOutputBuilder {
         self.product_codes = input;
         self
     }
+    /// <p>A list of product codes.</p>
+    pub fn get_product_codes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductCode>> {
+        &self.product_codes
+    }
     /// <p>The ID of the volume.</p>
     pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_id = ::std::option::Option::Some(input.into());
@@ -95,6 +107,10 @@ impl DescribeVolumeAttributeOutputBuilder {
     pub fn set_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_id = input;
         self
+    }
+    /// <p>The ID of the volume.</p>
+    pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

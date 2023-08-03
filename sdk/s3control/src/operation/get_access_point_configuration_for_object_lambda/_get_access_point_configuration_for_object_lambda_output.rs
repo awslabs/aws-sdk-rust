@@ -49,6 +49,12 @@ impl GetAccessPointConfigurationForObjectLambdaOutputBuilder {
         self.configuration = input;
         self
     }
+    /// <p>Object Lambda Access Point configuration document.</p>
+    pub fn get_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ObjectLambdaConfiguration> {
+        &self.configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

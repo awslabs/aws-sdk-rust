@@ -47,6 +47,10 @@ impl DescribeLabelingJobInputBuilder {
         self.labeling_job_name = input;
         self
     }
+    /// <p>The name of the labeling job to return information for.</p>
+    pub fn get_labeling_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.labeling_job_name
+    }
     /// Consumes the builder and constructs a [`DescribeLabelingJobInput`](crate::operation::describe_labeling_job::DescribeLabelingJobInput).
     pub fn build(
         self,

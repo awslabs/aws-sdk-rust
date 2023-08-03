@@ -49,6 +49,10 @@ impl QueriesConfigBuilder {
         self.queries = input;
         self
     }
+    /// <p></p>
+    pub fn get_queries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Query>> {
+        &self.queries
+    }
     /// Consumes the builder and constructs a [`QueriesConfig`](crate::types::QueriesConfig).
     pub fn build(self) -> crate::types::QueriesConfig {
         crate::types::QueriesConfig {

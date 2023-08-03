@@ -37,6 +37,10 @@ impl PutConfigurationSetVdmOptionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutConfigurationSetVdmOptions as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_configuration_set_vdm_options::builders::PutConfigurationSetVdmOptionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl PutConfigurationSetVdmOptionsFluentBuilder {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }
+    /// <p>The name of the configuration set.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_set_name()
+    }
     /// <p>The VDM options to apply to the configuration set.</p>
     pub fn vdm_options(mut self, input: crate::types::VdmOptions) -> Self {
         self.inner = self.inner.vdm_options(input);
@@ -145,5 +153,9 @@ impl PutConfigurationSetVdmOptionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_vdm_options(input);
         self
+    }
+    /// <p>The VDM options to apply to the configuration set.</p>
+    pub fn get_vdm_options(&self) -> &::std::option::Option<crate::types::VdmOptions> {
+        self.inner.get_vdm_options()
     }
 }

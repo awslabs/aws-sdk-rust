@@ -51,6 +51,10 @@ impl TemplateParameterConfigurationBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of the job template parameter. Allowed values are: ‘STRING’, ‘NUMBER’.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::TemplateParameterDataType> {
+        &self.r#type
+    }
     /// <p>The default value for the job template parameter.</p>
     pub fn default_value(
         mut self,
@@ -66,6 +70,10 @@ impl TemplateParameterConfigurationBuilder {
     ) -> Self {
         self.default_value = input;
         self
+    }
+    /// <p>The default value for the job template parameter.</p>
+    pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_value
     }
     /// Consumes the builder and constructs a [`TemplateParameterConfiguration`](crate::types::TemplateParameterConfiguration).
     pub fn build(self) -> crate::types::TemplateParameterConfiguration {

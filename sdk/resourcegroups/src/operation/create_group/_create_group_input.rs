@@ -88,6 +88,10 @@ impl CreateGroupInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the group, which is the identifier of the group in other operations. You can't change the name of a resource group after you create it. A resource group name can consist of letters, numbers, hyphens, periods, and underscores. The name cannot start with <code>AWS</code> or <code>aws</code>; these are reserved. A resource group name must be unique within each Amazon Web Services Region in your Amazon Web Services account.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the resource group. Descriptions can consist of letters, numbers, hyphens, underscores, periods, and spaces.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -97,6 +101,10 @@ impl CreateGroupInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the resource group. Descriptions can consist of letters, numbers, hyphens, underscores, periods, and spaces.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The resource query that determines which Amazon Web Services resources are members of this group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>. </p> <note>
     /// <p>A resource group can contain either a <code>ResourceQuery</code> or a <code>Configuration</code>, but not both.</p>
@@ -114,6 +122,12 @@ impl CreateGroupInputBuilder {
     ) -> Self {
         self.resource_query = input;
         self
+    }
+    /// <p>The resource query that determines which Amazon Web Services resources are members of this group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>. </p> <note>
+    /// <p>A resource group can contain either a <code>ResourceQuery</code> or a <code>Configuration</code>, but not both.</p>
+    /// </note>
+    pub fn get_resource_query(&self) -> &::std::option::Option<crate::types::ResourceQuery> {
+        &self.resource_query
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -140,6 +154,14 @@ impl CreateGroupInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags to add to the group. A tag is key-value pair string.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// Appends an item to `configuration`.
     ///
     /// To override the contents of this collection use [`set_configuration`](Self::set_configuration).
@@ -162,6 +184,14 @@ impl CreateGroupInputBuilder {
     ) -> Self {
         self.configuration = input;
         self
+    }
+    /// <p>A configuration associates the resource group with an Amazon Web Services service and specifies how the service can interact with the resources in the group. A configuration is an array of <code>GroupConfigurationItem</code> elements. For details about the syntax of service configurations, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p> <note>
+    /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
+    /// </note>
+    pub fn get_configuration(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupConfigurationItem>> {
+        &self.configuration
     }
     /// Consumes the builder and constructs a [`CreateGroupInput`](crate::operation::create_group::CreateGroupInput).
     pub fn build(

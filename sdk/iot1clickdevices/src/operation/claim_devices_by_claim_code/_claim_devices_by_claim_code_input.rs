@@ -41,6 +41,10 @@ impl ClaimDevicesByClaimCodeInputBuilder {
         self.claim_code = input;
         self
     }
+    /// <p>The claim code, starting with "C-", as provided by the device manufacturer.</p>
+    pub fn get_claim_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.claim_code
+    }
     /// Consumes the builder and constructs a [`ClaimDevicesByClaimCodeInput`](crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeInput).
     pub fn build(
         self,

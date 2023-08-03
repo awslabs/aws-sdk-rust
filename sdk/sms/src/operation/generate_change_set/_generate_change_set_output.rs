@@ -50,6 +50,10 @@ impl GenerateChangeSetOutputBuilder {
         self.s3_location = input;
         self
     }
+    /// <p>The location of the Amazon S3 object.</p>
+    pub fn get_s3_location(&self) -> &::std::option::Option<crate::types::S3Location> {
+        &self.s3_location
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

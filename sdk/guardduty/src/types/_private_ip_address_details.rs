@@ -54,6 +54,10 @@ impl PrivateIpAddressDetailsBuilder {
         self.private_dns_name = input;
         self
     }
+    /// <p>The private DNS name of the EC2 instance.</p>
+    pub fn get_private_dns_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_dns_name
+    }
     /// <p>The private IP address of the EC2 instance.</p>
     pub fn private_ip_address(
         mut self,
@@ -69,6 +73,10 @@ impl PrivateIpAddressDetailsBuilder {
     ) -> Self {
         self.private_ip_address = input;
         self
+    }
+    /// <p>The private IP address of the EC2 instance.</p>
+    pub fn get_private_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_ip_address
     }
     /// Consumes the builder and constructs a [`PrivateIpAddressDetails`](crate::types::PrivateIpAddressDetails).
     pub fn build(self) -> crate::types::PrivateIpAddressDetails {

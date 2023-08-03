@@ -56,6 +56,10 @@ impl ListSequenceStoresOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A pagination token that's included if more results are available.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `sequence_stores`.
     ///
     /// To override the contents of this collection use [`set_sequence_stores`](Self::set_sequence_stores).
@@ -74,6 +78,12 @@ impl ListSequenceStoresOutputBuilder {
     ) -> Self {
         self.sequence_stores = input;
         self
+    }
+    /// <p>A list of sequence stores.</p>
+    pub fn get_sequence_stores(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SequenceStoreDetail>> {
+        &self.sequence_stores
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

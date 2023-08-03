@@ -40,6 +40,10 @@ impl GetDatasetInputBuilder {
         self.dataset_id = input;
         self
     }
+    /// <p>The unique identifier for a Dataset.</p>
+    pub fn get_dataset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_id
+    }
     /// Consumes the builder and constructs a [`GetDatasetInput`](crate::operation::get_dataset::GetDatasetInput).
     pub fn build(
         self,

@@ -47,6 +47,10 @@ impl DeleteModelInputBuilder {
         self.api_id = input;
         self
     }
+    /// <p>The API identifier.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
+    }
     /// <p>The model ID.</p>
     pub fn model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_id = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DeleteModelInputBuilder {
     pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_id = input;
         self
+    }
+    /// <p>The model ID.</p>
+    pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_id
     }
     /// Consumes the builder and constructs a [`DeleteModelInput`](crate::operation::delete_model::DeleteModelInput).
     pub fn build(

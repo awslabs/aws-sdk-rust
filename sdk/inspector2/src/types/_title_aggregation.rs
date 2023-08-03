@@ -90,6 +90,12 @@ impl TitleAggregationBuilder {
         self.titles = input;
         self
     }
+    /// <p>The finding titles to aggregate on.</p>
+    pub fn get_titles(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.titles
+    }
     /// Appends an item to `vulnerability_ids`.
     ///
     /// To override the contents of this collection use [`set_vulnerability_ids`](Self::set_vulnerability_ids).
@@ -109,6 +115,12 @@ impl TitleAggregationBuilder {
         self.vulnerability_ids = input;
         self
     }
+    /// <p>The vulnerability IDs of the findings.</p>
+    pub fn get_vulnerability_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.vulnerability_ids
+    }
     /// <p>The resource type to aggregate on.</p>
     pub fn resource_type(mut self, input: crate::types::AggregationResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -122,6 +134,12 @@ impl TitleAggregationBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The resource type to aggregate on.</p>
+    pub fn get_resource_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::AggregationResourceType> {
+        &self.resource_type
+    }
     /// <p>The order to sort results by.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -132,6 +150,10 @@ impl TitleAggregationBuilder {
         self.sort_order = input;
         self
     }
+    /// <p>The order to sort results by.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.sort_order
+    }
     /// <p>The value to sort results by.</p>
     pub fn sort_by(mut self, input: crate::types::TitleSortBy) -> Self {
         self.sort_by = ::std::option::Option::Some(input);
@@ -141,6 +163,10 @@ impl TitleAggregationBuilder {
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::TitleSortBy>) -> Self {
         self.sort_by = input;
         self
+    }
+    /// <p>The value to sort results by.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::TitleSortBy> {
+        &self.sort_by
     }
     /// <p>The type of finding to aggregate on.</p>
     pub fn finding_type(mut self, input: crate::types::AggregationFindingType) -> Self {
@@ -154,6 +180,10 @@ impl TitleAggregationBuilder {
     ) -> Self {
         self.finding_type = input;
         self
+    }
+    /// <p>The type of finding to aggregate on.</p>
+    pub fn get_finding_type(&self) -> &::std::option::Option<crate::types::AggregationFindingType> {
+        &self.finding_type
     }
     /// Consumes the builder and constructs a [`TitleAggregation`](crate::types::TitleAggregation).
     pub fn build(self) -> crate::types::TitleAggregation {

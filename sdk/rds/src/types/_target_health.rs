@@ -60,6 +60,11 @@ impl TargetHealthBuilder {
         self.state = input;
         self
     }
+    /// <p>The current state of the connection health lifecycle for the RDS Proxy target. The following is a typical lifecycle example for the states of an RDS Proxy target:</p>
+    /// <p> <code>registering</code> &gt; <code>unavailable</code> &gt; <code>available</code> &gt; <code>unavailable</code> &gt; <code>available</code> </p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::TargetState> {
+        &self.state
+    }
     /// <p>The reason for the current health <code>State</code> of the RDS Proxy target.</p>
     pub fn reason(mut self, input: crate::types::TargetHealthReason) -> Self {
         self.reason = ::std::option::Option::Some(input);
@@ -73,6 +78,10 @@ impl TargetHealthBuilder {
         self.reason = input;
         self
     }
+    /// <p>The reason for the current health <code>State</code> of the RDS Proxy target.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<crate::types::TargetHealthReason> {
+        &self.reason
+    }
     /// <p>A description of the health of the RDS Proxy target. If the <code>State</code> is <code>AVAILABLE</code>, a description is not included.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -82,6 +91,10 @@ impl TargetHealthBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the health of the RDS Proxy target. If the <code>State</code> is <code>AVAILABLE</code>, a description is not included.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`TargetHealth`](crate::types::TargetHealth).
     pub fn build(self) -> crate::types::TargetHealth {

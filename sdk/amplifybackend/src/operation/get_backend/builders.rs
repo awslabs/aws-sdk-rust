@@ -36,6 +36,10 @@ impl GetBackendFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetBackend as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_backend::builders::GetBackendInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl GetBackendFluentBuilder {
         self.inner = self.inner.set_app_id(input);
         self
     }
+    /// <p>The app ID.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_id()
+    }
     /// <p>The name of the backend environment.</p>
     pub fn backend_environment_name(
         mut self,
@@ -133,5 +141,9 @@ impl GetBackendFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_backend_environment_name(input);
         self
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn get_backend_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_backend_environment_name()
     }
 }

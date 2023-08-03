@@ -72,6 +72,10 @@ impl CreateRecommenderInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the recommender.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) of the destination domain dataset group for the recommender.</p>
     pub fn dataset_group_arn(
         mut self,
@@ -88,6 +92,10 @@ impl CreateRecommenderInputBuilder {
         self.dataset_group_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the destination domain dataset group for the recommender.</p>
+    pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_group_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the recipe that the recommender will use. For a recommender, a recipe is a Domain dataset group use case. Only Domain dataset group use cases can be used to create a recommender. For information about use cases see <a href="https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html">Choosing recommender use cases</a>. </p>
     pub fn recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recipe_arn = ::std::option::Option::Some(input.into());
@@ -97,6 +105,10 @@ impl CreateRecommenderInputBuilder {
     pub fn set_recipe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recipe_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the recipe that the recommender will use. For a recommender, a recipe is a Domain dataset group use case. Only Domain dataset group use cases can be used to create a recommender. For information about use cases see <a href="https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html">Choosing recommender use cases</a>. </p>
+    pub fn get_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recipe_arn
     }
     /// <p>The configuration details of the recommender.</p>
     pub fn recommender_config(mut self, input: crate::types::RecommenderConfig) -> Self {
@@ -110,6 +122,12 @@ impl CreateRecommenderInputBuilder {
     ) -> Self {
         self.recommender_config = input;
         self
+    }
+    /// <p>The configuration details of the recommender.</p>
+    pub fn get_recommender_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecommenderConfig> {
+        &self.recommender_config
     }
     /// Appends an item to `tags`.
     ///
@@ -129,6 +147,10 @@ impl CreateRecommenderInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the recommender.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateRecommenderInput`](crate::operation::create_recommender::CreateRecommenderInput).
     pub fn build(

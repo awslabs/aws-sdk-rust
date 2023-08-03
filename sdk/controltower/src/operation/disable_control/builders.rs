@@ -36,6 +36,12 @@ impl DisableControlFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisableControl as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::disable_control::builders::DisableControlInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl DisableControlFluentBuilder {
         self.inner = self.inner.set_control_identifier(input);
         self
     }
+    /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> guardrail.</p>
+    pub fn get_control_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_control_identifier()
+    }
     /// <p>The ARN of the organizational unit.</p>
     pub fn target_identifier(
         mut self,
@@ -139,5 +149,9 @@ impl DisableControlFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_target_identifier(input);
         self
+    }
+    /// <p>The ARN of the organizational unit.</p>
+    pub fn get_target_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_identifier()
     }
 }

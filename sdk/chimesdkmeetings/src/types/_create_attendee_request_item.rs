@@ -68,6 +68,12 @@ impl CreateAttendeeRequestItemBuilder {
         self.external_user_id = input;
         self
     }
+    /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
+    /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p>
+    /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case insensitive.</p>
+    pub fn get_external_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_user_id
+    }
     /// <p>A list of one or more capabilities.</p>
     pub fn capabilities(mut self, input: crate::types::AttendeeCapabilities) -> Self {
         self.capabilities = ::std::option::Option::Some(input);
@@ -80,6 +86,10 @@ impl CreateAttendeeRequestItemBuilder {
     ) -> Self {
         self.capabilities = input;
         self
+    }
+    /// <p>A list of one or more capabilities.</p>
+    pub fn get_capabilities(&self) -> &::std::option::Option<crate::types::AttendeeCapabilities> {
+        &self.capabilities
     }
     /// Consumes the builder and constructs a [`CreateAttendeeRequestItem`](crate::types::CreateAttendeeRequestItem).
     pub fn build(self) -> crate::types::CreateAttendeeRequestItem {

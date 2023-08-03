@@ -37,6 +37,12 @@ impl ConfigureAccessPointFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ConfigureAccessPoint as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::configure_access_point::builders::ConfigureAccessPointInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl ConfigureAccessPointFluentBuilder {
         self.inner = self.inner.set_access_point_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
+    pub fn get_access_point_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_access_point_arn()
+    }
     /// <p>The position of the network resource.</p>
     pub fn position(mut self, input: crate::types::Position) -> Self {
         self.inner = self.inner.position(input);
@@ -142,6 +152,10 @@ impl ConfigureAccessPointFluentBuilder {
     pub fn set_position(mut self, input: ::std::option::Option<crate::types::Position>) -> Self {
         self.inner = self.inner.set_position(input);
         self
+    }
+    /// <p>The position of the network resource.</p>
+    pub fn get_position(&self) -> &::std::option::Option<crate::types::Position> {
+        self.inner.get_position()
     }
     /// <p>The CPI user name of the CPI user who is certifying the coordinates of the radio unit.</p>
     pub fn cpi_username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -153,6 +167,10 @@ impl ConfigureAccessPointFluentBuilder {
         self.inner = self.inner.set_cpi_username(input);
         self
     }
+    /// <p>The CPI user name of the CPI user who is certifying the coordinates of the radio unit.</p>
+    pub fn get_cpi_username(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cpi_username()
+    }
     /// <p>The CPI user ID of the CPI user who is certifying the coordinates of the network resource. </p>
     pub fn cpi_user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cpi_user_id(input.into());
@@ -162,6 +180,10 @@ impl ConfigureAccessPointFluentBuilder {
     pub fn set_cpi_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cpi_user_id(input);
         self
+    }
+    /// <p>The CPI user ID of the CPI user who is certifying the coordinates of the network resource. </p>
+    pub fn get_cpi_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cpi_user_id()
     }
     /// <p>The CPI password associated with the CPI certificate in <code>cpiSecretKey</code>.</p>
     pub fn cpi_user_password(
@@ -179,6 +201,10 @@ impl ConfigureAccessPointFluentBuilder {
         self.inner = self.inner.set_cpi_user_password(input);
         self
     }
+    /// <p>The CPI password associated with the CPI certificate in <code>cpiSecretKey</code>.</p>
+    pub fn get_cpi_user_password(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cpi_user_password()
+    }
     /// <p>A Base64 encoded string of the CPI certificate associated with the CPI user who is certifying the coordinates of the network resource. </p>
     pub fn cpi_secret_key(
         mut self,
@@ -194,5 +220,9 @@ impl ConfigureAccessPointFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cpi_secret_key(input);
         self
+    }
+    /// <p>A Base64 encoded string of the CPI certificate associated with the CPI user who is certifying the coordinates of the network resource. </p>
+    pub fn get_cpi_secret_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cpi_secret_key()
     }
 }

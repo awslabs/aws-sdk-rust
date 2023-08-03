@@ -51,6 +51,12 @@ impl LabelingJobDataAttributesBuilder {
         self.content_classifiers = input;
         self
     }
+    /// <p>Declares that your content is free of personally identifiable information or adult content. SageMaker may restrict the Amazon Mechanical Turk workers that can view your task based on this information.</p>
+    pub fn get_content_classifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContentClassifier>> {
+        &self.content_classifiers
+    }
     /// Consumes the builder and constructs a [`LabelingJobDataAttributes`](crate::types::LabelingJobDataAttributes).
     pub fn build(self) -> crate::types::LabelingJobDataAttributes {
         crate::types::LabelingJobDataAttributes {

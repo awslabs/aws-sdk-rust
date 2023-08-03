@@ -63,6 +63,10 @@ impl ListFlywheelIterationHistoryInputBuilder {
         self.flywheel_arn = input;
         self
     }
+    /// <p>The ARN of the flywheel.</p>
+    pub fn get_flywheel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flywheel_arn
+    }
     /// <p>Filter the flywheel iteration history based on creation time.</p>
     pub fn filter(mut self, input: crate::types::FlywheelIterationFilter) -> Self {
         self.filter = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl ListFlywheelIterationHistoryInputBuilder {
         self.filter = input;
         self
     }
+    /// <p>Filter the flywheel iteration history based on creation time.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::FlywheelIterationFilter> {
+        &self.filter
+    }
     /// <p>Next token</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -86,6 +94,10 @@ impl ListFlywheelIterationHistoryInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Next token</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>Maximum number of iteration history results to return</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -95,6 +107,10 @@ impl ListFlywheelIterationHistoryInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>Maximum number of iteration history results to return</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListFlywheelIterationHistoryInput`](crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryInput).
     pub fn build(

@@ -40,6 +40,10 @@ impl ConversationRetentionSettingsBuilder {
         self.retention_days = input;
         self
     }
+    /// <p>The number of days for which to retain conversation messages.</p>
+    pub fn get_retention_days(&self) -> &::std::option::Option<i32> {
+        &self.retention_days
+    }
     /// Consumes the builder and constructs a [`ConversationRetentionSettings`](crate::types::ConversationRetentionSettings).
     pub fn build(self) -> crate::types::ConversationRetentionSettings {
         crate::types::ConversationRetentionSettings {

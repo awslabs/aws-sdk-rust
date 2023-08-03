@@ -100,6 +100,10 @@ impl EndpointSummaryBuilder {
         self.endpoint_name = input;
         self
     }
+    /// <p>The name of the endpoint.</p>
+    pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
     pub fn endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_arn = ::std::option::Option::Some(input.into());
@@ -109,6 +113,10 @@ impl EndpointSummaryBuilder {
     pub fn set_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
+    pub fn get_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_arn
     }
     /// <p>A timestamp that shows when the endpoint was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -123,6 +131,10 @@ impl EndpointSummaryBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>A timestamp that shows when the endpoint was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>A timestamp that shows when the endpoint was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -135,6 +147,10 @@ impl EndpointSummaryBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>A timestamp that shows when the endpoint was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// <p>The status of the endpoint.</p>
     /// <ul>
@@ -170,6 +186,21 @@ impl EndpointSummaryBuilder {
     ) -> Self {
         self.endpoint_status = input;
         self
+    }
+    /// <p>The status of the endpoint.</p>
+    /// <ul>
+    /// <li> <p> <code>OutOfService</code>: Endpoint is not available to take incoming requests.</p> </li>
+    /// <li> <p> <code>Creating</code>: <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a> is executing.</p> </li>
+    /// <li> <p> <code>Updating</code>: <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpoint.html">UpdateEndpoint</a> or <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html">UpdateEndpointWeightsAndCapacities</a> is executing.</p> </li>
+    /// <li> <p> <code>SystemUpdating</code>: Endpoint is undergoing maintenance and cannot be updated or deleted or re-scaled until it has completed. This maintenance operation does not change any customer-specified values such as VPC config, KMS encryption, model, instance type, or instance count.</p> </li>
+    /// <li> <p> <code>RollingBack</code>: Endpoint fails to scale up or down or change its variant weight and is in the process of rolling back to its previous configuration. Once the rollback completes, endpoint returns to an <code>InService</code> status. This transitional status only applies to an endpoint that has autoscaling enabled and is undergoing variant weight or capacity changes as part of an <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html">UpdateEndpointWeightsAndCapacities</a> call or when the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html">UpdateEndpointWeightsAndCapacities</a> operation is called explicitly.</p> </li>
+    /// <li> <p> <code>InService</code>: Endpoint is available to process incoming requests.</p> </li>
+    /// <li> <p> <code>Deleting</code>: <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html">DeleteEndpoint</a> is executing.</p> </li>
+    /// <li> <p> <code>Failed</code>: Endpoint could not be created, updated, or re-scaled. Use <code>DescribeEndpointOutput$FailureReason</code> for information about the failure. <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html">DeleteEndpoint</a> is the only operation that can be performed on a failed endpoint.</p> </li>
+    /// </ul>
+    /// <p>To get a list of endpoints with a specified status, use the <code>StatusEquals</code> filter with a call to <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListEndpoints.html">ListEndpoints</a>.</p>
+    pub fn get_endpoint_status(&self) -> &::std::option::Option<crate::types::EndpointStatus> {
+        &self.endpoint_status
     }
     /// Consumes the builder and constructs a [`EndpointSummary`](crate::types::EndpointSummary).
     pub fn build(self) -> crate::types::EndpointSummary {

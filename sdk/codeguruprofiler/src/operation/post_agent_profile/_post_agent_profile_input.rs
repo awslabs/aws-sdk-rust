@@ -79,6 +79,10 @@ impl PostAgentProfileInputBuilder {
         self.profiling_group_name = input;
         self
     }
+    /// <p> The name of the profiling group with the aggregated profile that receives the submitted profiling data. </p>
+    pub fn get_profiling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profiling_group_name
+    }
     /// <p> The submitted profiling data. </p>
     pub fn agent_profile(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.agent_profile = ::std::option::Option::Some(input);
@@ -91,6 +95,10 @@ impl PostAgentProfileInputBuilder {
     ) -> Self {
         self.agent_profile = input;
         self
+    }
+    /// <p> The submitted profiling data. </p>
+    pub fn get_agent_profile(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.agent_profile
     }
     /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental submission of duplicate profiling data if there are failures and retries. </p>
     pub fn profile_token(
@@ -107,6 +115,10 @@ impl PostAgentProfileInputBuilder {
     ) -> Self {
         self.profile_token = input;
         self
+    }
+    /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental submission of duplicate profiling data if there are failures and retries. </p>
+    pub fn get_profile_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_token
     }
     /// <p> The format of the submitted profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default . </p>
     /// <ul>
@@ -125,6 +137,14 @@ impl PostAgentProfileInputBuilder {
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
+    }
+    /// <p> The format of the submitted profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default . </p>
+    /// <ul>
+    /// <li> <p> <code>application/json</code> — standard JSON format </p> </li>
+    /// <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li>
+    /// </ul>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
     }
     /// Consumes the builder and constructs a [`PostAgentProfileInput`](crate::operation::post_agent_profile::PostAgentProfileInput).
     pub fn build(

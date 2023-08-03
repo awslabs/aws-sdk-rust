@@ -130,6 +130,10 @@ impl VcenterClientBuilder {
         self.vcenter_client_id = input;
         self
     }
+    /// <p>ID of vCenter client.</p>
+    pub fn get_vcenter_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vcenter_client_id
+    }
     /// <p>Arn of vCenter client.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -139,6 +143,10 @@ impl VcenterClientBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>Arn of vCenter client.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>Hostname of vCenter client .</p>
     pub fn hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -150,6 +158,10 @@ impl VcenterClientBuilder {
         self.hostname = input;
         self
     }
+    /// <p>Hostname of vCenter client .</p>
+    pub fn get_hostname(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hostname
+    }
     /// <p>Vcenter UUID of vCenter client.</p>
     pub fn vcenter_uuid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vcenter_uuid = ::std::option::Option::Some(input.into());
@@ -159,6 +171,10 @@ impl VcenterClientBuilder {
     pub fn set_vcenter_uuid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vcenter_uuid = input;
         self
+    }
+    /// <p>Vcenter UUID of vCenter client.</p>
+    pub fn get_vcenter_uuid(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vcenter_uuid
     }
     /// <p>Datacenter name of vCenter client.</p>
     pub fn datacenter_name(
@@ -176,6 +192,10 @@ impl VcenterClientBuilder {
         self.datacenter_name = input;
         self
     }
+    /// <p>Datacenter name of vCenter client.</p>
+    pub fn get_datacenter_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.datacenter_name
+    }
     /// <p>Last seen time of vCenter client.</p>
     pub fn last_seen_datetime(
         mut self,
@@ -191,6 +211,10 @@ impl VcenterClientBuilder {
     ) -> Self {
         self.last_seen_datetime = input;
         self
+    }
+    /// <p>Last seen time of vCenter client.</p>
+    pub fn get_last_seen_datetime(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_seen_datetime
     }
     /// Adds a key-value pair to `source_server_tags`.
     ///
@@ -217,6 +241,14 @@ impl VcenterClientBuilder {
         self.source_server_tags = input;
         self
     }
+    /// <p>Tags for Source Server of vCenter client.</p>
+    pub fn get_source_server_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.source_server_tags
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -241,6 +273,14 @@ impl VcenterClientBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Tags for vCenter client.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`VcenterClient`](crate::types::VcenterClient).
     pub fn build(self) -> crate::types::VcenterClient {

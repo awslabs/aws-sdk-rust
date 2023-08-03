@@ -84,6 +84,10 @@ impl S3BucketDestinationBuilder {
         self.format = input;
         self
     }
+    /// <p></p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::Format> {
+        &self.format
+    }
     /// <p>The schema version of the export file.</p>
     pub fn output_schema_version(mut self, input: crate::types::OutputSchemaVersion) -> Self {
         self.output_schema_version = ::std::option::Option::Some(input);
@@ -97,6 +101,12 @@ impl S3BucketDestinationBuilder {
         self.output_schema_version = input;
         self
     }
+    /// <p>The schema version of the export file.</p>
+    pub fn get_output_schema_version(
+        &self,
+    ) -> &::std::option::Option<crate::types::OutputSchemaVersion> {
+        &self.output_schema_version
+    }
     /// <p>The account ID of the owner of the S3 Storage Lens metrics export bucket.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -106,6 +116,10 @@ impl S3BucketDestinationBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>The account ID of the owner of the S3 Storage Lens metrics export bucket.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>The Amazon Resource Name (ARN) of the bucket. This property is read-only and follows the following format: <code> arn:aws:s3:<i>us-east-1</i>:<i>example-account-id</i>:bucket/<i>your-destination-bucket-name</i> </code> </p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -117,6 +131,10 @@ impl S3BucketDestinationBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the bucket. This property is read-only and follows the following format: <code> arn:aws:s3:<i>us-east-1</i>:<i>example-account-id</i>:bucket/<i>your-destination-bucket-name</i> </code> </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The prefix of the destination bucket where the metrics export will be delivered.</p>
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix = ::std::option::Option::Some(input.into());
@@ -126,6 +144,10 @@ impl S3BucketDestinationBuilder {
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix = input;
         self
+    }
+    /// <p>The prefix of the destination bucket where the metrics export will be delivered.</p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
     }
     /// <p>The container for the type encryption of the metrics exports in this bucket.</p>
     pub fn encryption(mut self, input: crate::types::StorageLensDataExportEncryption) -> Self {
@@ -139,6 +161,12 @@ impl S3BucketDestinationBuilder {
     ) -> Self {
         self.encryption = input;
         self
+    }
+    /// <p>The container for the type encryption of the metrics exports in this bucket.</p>
+    pub fn get_encryption(
+        &self,
+    ) -> &::std::option::Option<crate::types::StorageLensDataExportEncryption> {
+        &self.encryption
     }
     /// Consumes the builder and constructs a [`S3BucketDestination`](crate::types::S3BucketDestination).
     pub fn build(self) -> crate::types::S3BucketDestination {

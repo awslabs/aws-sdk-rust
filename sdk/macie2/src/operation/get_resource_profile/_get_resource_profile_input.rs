@@ -40,6 +40,10 @@ impl GetResourceProfileInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Consumes the builder and constructs a [`GetResourceProfileInput`](crate::operation::get_resource_profile::GetResourceProfileInput).
     pub fn build(
         self,

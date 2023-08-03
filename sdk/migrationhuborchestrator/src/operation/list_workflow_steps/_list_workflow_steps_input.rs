@@ -64,6 +64,10 @@ impl ListWorkflowStepsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results that can be returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl ListWorkflowStepsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results that can be returned.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The ID of the migration workflow.</p>
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl ListWorkflowStepsInputBuilder {
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_id = input;
         self
+    }
+    /// <p>The ID of the migration workflow.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_id
     }
     /// <p>The ID of the step group.</p>
     pub fn step_group_id(
@@ -99,6 +111,10 @@ impl ListWorkflowStepsInputBuilder {
     ) -> Self {
         self.step_group_id = input;
         self
+    }
+    /// <p>The ID of the step group.</p>
+    pub fn get_step_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.step_group_id
     }
     /// Consumes the builder and constructs a [`ListWorkflowStepsInput`](crate::operation::list_workflow_steps::ListWorkflowStepsInput).
     pub fn build(

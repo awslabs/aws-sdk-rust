@@ -56,6 +56,10 @@ impl AlgorithmStatusItemBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the algorithm for which the overall status is being reported.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The current status.</p>
     pub fn status(mut self, input: crate::types::DetailedAlgorithmStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl AlgorithmStatusItemBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DetailedAlgorithmStatus> {
+        &self.status
     }
     /// <p>if the overall status is <code>Failed</code>, the reason for the failure.</p>
     pub fn failure_reason(
@@ -84,6 +92,10 @@ impl AlgorithmStatusItemBuilder {
     ) -> Self {
         self.failure_reason = input;
         self
+    }
+    /// <p>if the overall status is <code>Failed</code>, the reason for the failure.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     /// Consumes the builder and constructs a [`AlgorithmStatusItem`](crate::types::AlgorithmStatusItem).
     pub fn build(self) -> crate::types::AlgorithmStatusItem {

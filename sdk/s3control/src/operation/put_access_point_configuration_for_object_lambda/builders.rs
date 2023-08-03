@@ -40,6 +40,10 @@ impl PutAccessPointConfigurationForObjectLambdaFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutAccessPointConfigurationForObjectLambda as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_access_point_configuration_for_object_lambda::builders::PutAccessPointConfigurationForObjectLambdaInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -104,6 +108,10 @@ impl PutAccessPointConfigurationForObjectLambdaFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p>The name of the Object Lambda Access Point.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -113,6 +121,10 @@ impl PutAccessPointConfigurationForObjectLambdaFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the Object Lambda Access Point.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>Object Lambda Access Point configuration document.</p>
     pub fn configuration(mut self, input: crate::types::ObjectLambdaConfiguration) -> Self {
@@ -126,5 +138,11 @@ impl PutAccessPointConfigurationForObjectLambdaFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
+    }
+    /// <p>Object Lambda Access Point configuration document.</p>
+    pub fn get_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ObjectLambdaConfiguration> {
+        self.inner.get_configuration()
     }
 }

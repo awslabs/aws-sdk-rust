@@ -49,6 +49,10 @@ impl ExportKeyOutputBuilder {
         self.wrapped_key = input;
         self
     }
+    /// <p>The key material under export as a TR-34 or TR-31 wrapped key block.</p>
+    pub fn get_wrapped_key(&self) -> &::std::option::Option<crate::types::WrappedKey> {
+        &self.wrapped_key
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

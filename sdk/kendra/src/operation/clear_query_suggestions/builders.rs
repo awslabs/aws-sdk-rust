@@ -38,6 +38,13 @@ impl ClearQuerySuggestionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ClearQuerySuggestions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::clear_query_suggestions::builders::ClearQuerySuggestionsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,5 +134,9 @@ impl ClearQuerySuggestionsFluentBuilder {
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_index_id(input);
         self
+    }
+    /// <p>The identifier of the index you want to clear query suggestions from.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_index_id()
     }
 }

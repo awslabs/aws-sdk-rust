@@ -36,6 +36,12 @@ impl ListProtectionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListProtections as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_protections::builders::ListProtectionsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +149,13 @@ impl ListProtectionsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
+    /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+    /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
+    /// <p>On your first call to a list operation, leave this setting empty.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value in the response.</p>
     /// <p>The default setting is 20.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -154,6 +167,11 @@ impl ListProtectionsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value in the response.</p>
+    /// <p>The default setting is 20.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>Narrows the set of protections that the call retrieves. You can retrieve a single protection by providing its name or the ARN (Amazon Resource Name) of its protected resource. You can also retrieve all protections for a specific resource type. You can provide up to one criteria per filter type. Shield Advanced returns protections that exactly match all of the filter criteria that you provide.</p>
     pub fn inclusion_filters(mut self, input: crate::types::InclusionProtectionFilters) -> Self {
@@ -167,5 +185,11 @@ impl ListProtectionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_inclusion_filters(input);
         self
+    }
+    /// <p>Narrows the set of protections that the call retrieves. You can retrieve a single protection by providing its name or the ARN (Amazon Resource Name) of its protected resource. You can also retrieve all protections for a specific resource type. You can provide up to one criteria per filter type. Shield Advanced returns protections that exactly match all of the filter criteria that you provide.</p>
+    pub fn get_inclusion_filters(
+        &self,
+    ) -> &::std::option::Option<crate::types::InclusionProtectionFilters> {
+        self.inner.get_inclusion_filters()
     }
 }

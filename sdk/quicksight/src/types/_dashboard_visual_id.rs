@@ -62,6 +62,10 @@ impl DashboardVisualIdBuilder {
         self.dashboard_id = input;
         self
     }
+    /// <p>The ID of the dashboard that has the visual that you want to embed. The <code>DashboardId</code> can be found in the <code>IDs for developers</code> section of the <code>Embed visual</code> pane of the visual's on-visual menu of the Amazon QuickSight console. You can also get the <code>DashboardId</code> with a <code>ListDashboards</code> API operation.</p>
+    pub fn get_dashboard_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dashboard_id
+    }
     /// <p>The ID of the sheet that the has visual that you want to embed. The <code>SheetId</code> can be found in the <code>IDs for developers</code> section of the <code>Embed visual</code> pane of the visual's on-visual menu of the Amazon QuickSight console.</p>
     pub fn sheet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sheet_id = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl DashboardVisualIdBuilder {
         self.sheet_id = input;
         self
     }
+    /// <p>The ID of the sheet that the has visual that you want to embed. The <code>SheetId</code> can be found in the <code>IDs for developers</code> section of the <code>Embed visual</code> pane of the visual's on-visual menu of the Amazon QuickSight console.</p>
+    pub fn get_sheet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sheet_id
+    }
     /// <p>The ID of the visual that you want to embed. The <code>VisualID</code> can be found in the <code>IDs for developers</code> section of the <code>Embed visual</code> pane of the visual's on-visual menu of the Amazon QuickSight console.</p>
     pub fn visual_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.visual_id = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl DashboardVisualIdBuilder {
     pub fn set_visual_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.visual_id = input;
         self
+    }
+    /// <p>The ID of the visual that you want to embed. The <code>VisualID</code> can be found in the <code>IDs for developers</code> section of the <code>Embed visual</code> pane of the visual's on-visual menu of the Amazon QuickSight console.</p>
+    pub fn get_visual_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.visual_id
     }
     /// Consumes the builder and constructs a [`DashboardVisualId`](crate::types::DashboardVisualId).
     pub fn build(self) -> crate::types::DashboardVisualId {

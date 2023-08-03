@@ -94,6 +94,10 @@ impl LifeCycleBuilder {
         self.added_to_service_date_time = input;
         self
     }
+    /// <p>Lifecycle added to service data and time.</p>
+    pub fn get_added_to_service_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.added_to_service_date_time
+    }
     /// <p>Lifecycle replication initiation date and time.</p>
     pub fn first_byte_date_time(
         mut self,
@@ -109,6 +113,10 @@ impl LifeCycleBuilder {
     ) -> Self {
         self.first_byte_date_time = input;
         self
+    }
+    /// <p>Lifecycle replication initiation date and time.</p>
+    pub fn get_first_byte_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.first_byte_date_time
     }
     /// <p>Lifecycle elapsed time and duration.</p>
     pub fn elapsed_replication_duration(
@@ -126,6 +134,12 @@ impl LifeCycleBuilder {
         self.elapsed_replication_duration = input;
         self
     }
+    /// <p>Lifecycle elapsed time and duration.</p>
+    pub fn get_elapsed_replication_duration(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.elapsed_replication_duration
+    }
     /// <p>Lifecycle last seen date and time.</p>
     pub fn last_seen_by_service_date_time(
         mut self,
@@ -142,6 +156,12 @@ impl LifeCycleBuilder {
         self.last_seen_by_service_date_time = input;
         self
     }
+    /// <p>Lifecycle last seen date and time.</p>
+    pub fn get_last_seen_by_service_date_time(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.last_seen_by_service_date_time
+    }
     /// <p>Lifecycle last Test.</p>
     pub fn last_test(mut self, input: crate::types::LifeCycleLastTest) -> Self {
         self.last_test = ::std::option::Option::Some(input);
@@ -154,6 +174,10 @@ impl LifeCycleBuilder {
     ) -> Self {
         self.last_test = input;
         self
+    }
+    /// <p>Lifecycle last Test.</p>
+    pub fn get_last_test(&self) -> &::std::option::Option<crate::types::LifeCycleLastTest> {
+        &self.last_test
     }
     /// <p>Lifecycle last Cutover.</p>
     pub fn last_cutover(mut self, input: crate::types::LifeCycleLastCutover) -> Self {
@@ -168,6 +192,10 @@ impl LifeCycleBuilder {
         self.last_cutover = input;
         self
     }
+    /// <p>Lifecycle last Cutover.</p>
+    pub fn get_last_cutover(&self) -> &::std::option::Option<crate::types::LifeCycleLastCutover> {
+        &self.last_cutover
+    }
     /// <p>Lifecycle state.</p>
     pub fn state(mut self, input: crate::types::LifeCycleState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -177,6 +205,10 @@ impl LifeCycleBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::LifeCycleState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>Lifecycle state.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::LifeCycleState> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`LifeCycle`](crate::types::LifeCycle).
     pub fn build(self) -> crate::types::LifeCycle {

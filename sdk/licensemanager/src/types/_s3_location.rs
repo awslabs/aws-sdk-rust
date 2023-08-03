@@ -48,6 +48,10 @@ impl S3LocationBuilder {
         self.bucket = input;
         self
     }
+    /// <p>Name of the S3 bucket reports are published to.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>Prefix of the S3 bucket reports are published to.</p>
     pub fn key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_prefix = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl S3LocationBuilder {
     pub fn set_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_prefix = input;
         self
+    }
+    /// <p>Prefix of the S3 bucket reports are published to.</p>
+    pub fn get_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_prefix
     }
     /// Consumes the builder and constructs a [`S3Location`](crate::types::S3Location).
     pub fn build(self) -> crate::types::S3Location {

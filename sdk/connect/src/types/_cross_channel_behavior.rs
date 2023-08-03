@@ -43,6 +43,10 @@ impl CrossChannelBehaviorBuilder {
         self.behavior_type = input;
         self
     }
+    /// <p>Specifies the other channels that can be routed to an agent handling their current channel.</p>
+    pub fn get_behavior_type(&self) -> &::std::option::Option<crate::types::BehaviorType> {
+        &self.behavior_type
+    }
     /// Consumes the builder and constructs a [`CrossChannelBehavior`](crate::types::CrossChannelBehavior).
     pub fn build(self) -> crate::types::CrossChannelBehavior {
         crate::types::CrossChannelBehavior {

@@ -64,6 +64,10 @@ impl RepositorySyncEventBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of event.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p>The external ID of the sync event.</p>
     pub fn external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.external_id = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl RepositorySyncEventBuilder {
     pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.external_id = input;
         self
+    }
+    /// <p>The external ID of the sync event.</p>
+    pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_id
     }
     /// <p>The time that the sync event occurred.</p>
     pub fn time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -84,6 +92,10 @@ impl RepositorySyncEventBuilder {
         self.time = input;
         self
     }
+    /// <p>The time that the sync event occurred.</p>
+    pub fn get_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.time
+    }
     /// <p>Event detail for a repository sync attempt.</p>
     pub fn event(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl RepositorySyncEventBuilder {
     pub fn set_event(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event = input;
         self
+    }
+    /// <p>Event detail for a repository sync attempt.</p>
+    pub fn get_event(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event
     }
     /// Consumes the builder and constructs a [`RepositorySyncEvent`](crate::types::RepositorySyncEvent).
     pub fn build(self) -> crate::types::RepositorySyncEvent {

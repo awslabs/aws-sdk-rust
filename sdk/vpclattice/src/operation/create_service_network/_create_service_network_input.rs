@@ -80,6 +80,10 @@ impl CreateServiceNetworkInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The name of the service network. The name must be unique to the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl CreateServiceNetworkInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the service network. The name must be unique to the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The type of IAM policy.</p>
     /// <ul>
@@ -107,6 +115,14 @@ impl CreateServiceNetworkInputBuilder {
     pub fn set_auth_type(mut self, input: ::std::option::Option<crate::types::AuthType>) -> Self {
         self.auth_type = input;
         self
+    }
+    /// <p>The type of IAM policy.</p>
+    /// <ul>
+    /// <li> <p> <code>NONE</code>: The resource does not use an IAM policy. This is the default.</p> </li>
+    /// <li> <p> <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.</p> </li>
+    /// </ul>
+    pub fn get_auth_type(&self) -> &::std::option::Option<crate::types::AuthType> {
+        &self.auth_type
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -132,6 +148,14 @@ impl CreateServiceNetworkInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags for the service network.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateServiceNetworkInput`](crate::operation::create_service_network::CreateServiceNetworkInput).
     pub fn build(

@@ -52,6 +52,10 @@ impl GetFirewallRuleGroupPolicyOutputBuilder {
         self.firewall_rule_group_policy = input;
         self
     }
+    /// <p>The Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule group. You can use the policy to share the rule group using Resource Access Manager (RAM). </p>
+    pub fn get_firewall_rule_group_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.firewall_rule_group_policy
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

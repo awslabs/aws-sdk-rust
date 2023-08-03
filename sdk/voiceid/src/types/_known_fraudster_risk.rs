@@ -48,6 +48,10 @@ impl KnownFraudsterRiskBuilder {
         self.risk_score = input;
         self
     }
+    /// <p>The score indicating the likelihood the speaker is a known fraudster.</p>
+    pub fn get_risk_score(&self) -> &::std::option::Option<i32> {
+        &self.risk_score
+    }
     /// <p>The identifier of the fraudster that is the closest match to the speaker. If there are no fraudsters registered in a given domain, or if there are no fraudsters with a non-zero RiskScore, this value is <code>null</code>.</p>
     pub fn generated_fraudster_id(
         mut self,
@@ -63,6 +67,10 @@ impl KnownFraudsterRiskBuilder {
     ) -> Self {
         self.generated_fraudster_id = input;
         self
+    }
+    /// <p>The identifier of the fraudster that is the closest match to the speaker. If there are no fraudsters registered in a given domain, or if there are no fraudsters with a non-zero RiskScore, this value is <code>null</code>.</p>
+    pub fn get_generated_fraudster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.generated_fraudster_id
     }
     /// Consumes the builder and constructs a [`KnownFraudsterRisk`](crate::types::KnownFraudsterRisk).
     pub fn build(self) -> crate::types::KnownFraudsterRisk {

@@ -39,6 +39,10 @@ impl DeleteRolePermissionsBoundaryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteRolePermissionsBoundary as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_role_permissions_boundary::builders::DeleteRolePermissionsBoundaryInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,5 +132,9 @@ impl DeleteRolePermissionsBoundaryFluentBuilder {
     pub fn set_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_name(input);
         self
+    }
+    /// <p>The name (friendly name, not ARN) of the IAM role from which you want to remove the permissions boundary.</p>
+    pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_name()
     }
 }

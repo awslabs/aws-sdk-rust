@@ -62,6 +62,10 @@ impl ListExecutionsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p> <code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional executions.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>A unique identifier for the workflow.</p>
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl ListExecutionsOutputBuilder {
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_id = input;
         self
+    }
+    /// <p>A unique identifier for the workflow.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_id
     }
     /// Appends an item to `executions`.
     ///
@@ -90,6 +98,12 @@ impl ListExecutionsOutputBuilder {
     ) -> Self {
         self.executions = input;
         self
+    }
+    /// <p>Returns the details for each execution, in a <code>ListedExecution</code> array.</p>
+    pub fn get_executions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedExecution>> {
+        &self.executions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

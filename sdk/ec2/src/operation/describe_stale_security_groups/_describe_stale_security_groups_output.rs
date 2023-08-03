@@ -58,6 +58,10 @@ impl DescribeStaleSecurityGroupsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to include in another request to get the next page of items. If there are no additional items to return, the string is empty.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `stale_security_group_set`.
     ///
     /// To override the contents of this collection use [`set_stale_security_group_set`](Self::set_stale_security_group_set).
@@ -76,6 +80,12 @@ impl DescribeStaleSecurityGroupsOutputBuilder {
     ) -> Self {
         self.stale_security_group_set = input;
         self
+    }
+    /// <p>Information about the stale security groups.</p>
+    pub fn get_stale_security_group_set(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StaleSecurityGroup>> {
+        &self.stale_security_group_set
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

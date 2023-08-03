@@ -95,6 +95,10 @@ impl DescribeClientVpnTargetNetworksInputBuilder {
         self.client_vpn_endpoint_id = input;
         self
     }
+    /// <p>The ID of the Client VPN endpoint.</p>
+    pub fn get_client_vpn_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_vpn_endpoint_id
+    }
     /// Appends an item to `association_ids`.
     ///
     /// To override the contents of this collection use [`set_association_ids`](Self::set_association_ids).
@@ -117,6 +121,12 @@ impl DescribeClientVpnTargetNetworksInputBuilder {
         self.association_ids = input;
         self
     }
+    /// <p>The IDs of the target network associations.</p>
+    pub fn get_association_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.association_ids
+    }
     /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the nextToken value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -127,6 +137,10 @@ impl DescribeClientVpnTargetNetworksInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the nextToken value.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -136,6 +150,10 @@ impl DescribeClientVpnTargetNetworksInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to retrieve the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `filters`.
     ///
@@ -166,6 +184,15 @@ impl DescribeClientVpnTargetNetworksInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>One or more filters. Filter names and values are case-sensitive.</p>
+    /// <ul>
+    /// <li> <p> <code>association-id</code> - The ID of the association.</p> </li>
+    /// <li> <p> <code>target-network-id</code> - The ID of the subnet specified as the target network.</p> </li>
+    /// <li> <p> <code>vpc-id</code> - The ID of the VPC in which the target network is located.</p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -175,6 +202,10 @@ impl DescribeClientVpnTargetNetworksInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`DescribeClientVpnTargetNetworksInput`](crate::operation::describe_client_vpn_target_networks::DescribeClientVpnTargetNetworksInput).
     pub fn build(

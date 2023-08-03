@@ -40,6 +40,10 @@ impl ImportSourceBuilder {
         self.s3 = input;
         self
     }
+    /// <p> The source S3 bucket. </p>
+    pub fn get_s3(&self) -> &::std::option::Option<crate::types::S3ImportSource> {
+        &self.s3
+    }
     /// Consumes the builder and constructs a [`ImportSource`](crate::types::ImportSource).
     pub fn build(self) -> crate::types::ImportSource {
         crate::types::ImportSource { s3: self.s3 }

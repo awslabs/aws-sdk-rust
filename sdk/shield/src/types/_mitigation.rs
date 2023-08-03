@@ -46,6 +46,10 @@ impl MitigationBuilder {
         self.mitigation_name = input;
         self
     }
+    /// <p>The name of the mitigation taken for this attack.</p>
+    pub fn get_mitigation_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mitigation_name
+    }
     /// Consumes the builder and constructs a [`Mitigation`](crate::types::Mitigation).
     pub fn build(self) -> crate::types::Mitigation {
         crate::types::Mitigation {

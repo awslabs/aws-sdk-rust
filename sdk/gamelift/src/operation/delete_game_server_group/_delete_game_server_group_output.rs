@@ -51,6 +51,10 @@ impl DeleteGameServerGroupOutputBuilder {
         self.game_server_group = input;
         self
     }
+    /// <p>An object that describes the deleted game server group resource, with status updated to <code>DELETE_SCHEDULED</code>. </p>
+    pub fn get_game_server_group(&self) -> &::std::option::Option<crate::types::GameServerGroup> {
+        &self.game_server_group
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

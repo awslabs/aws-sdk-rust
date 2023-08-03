@@ -68,6 +68,12 @@ impl ListCustomLineItemsOutputBuilder {
         self.custom_line_items = input;
         self
     }
+    /// <p> A list of <code>FreeFormLineItemListElements</code> received. </p>
+    pub fn get_custom_line_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomLineItemListElement>> {
+        &self.custom_line_items
+    }
     /// <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -77,6 +83,10 @@ impl ListCustomLineItemsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

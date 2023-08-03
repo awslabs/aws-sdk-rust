@@ -40,6 +40,10 @@ impl TraceConfigurationBuilder {
         self.vendor = input;
         self
     }
+    /// <p>The implementation provider chosen for tracing App Runner services.</p>
+    pub fn get_vendor(&self) -> &::std::option::Option<crate::types::TracingVendor> {
+        &self.vendor
+    }
     /// Consumes the builder and constructs a [`TraceConfiguration`](crate::types::TraceConfiguration).
     pub fn build(self) -> crate::types::TraceConfiguration {
         crate::types::TraceConfiguration {

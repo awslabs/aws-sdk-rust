@@ -80,6 +80,10 @@ impl ContextSummaryBuilder {
         self.context_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the context.</p>
+    pub fn get_context_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.context_arn
+    }
     /// <p>The name of the context.</p>
     pub fn context_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.context_name = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl ContextSummaryBuilder {
     pub fn set_context_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.context_name = input;
         self
+    }
+    /// <p>The name of the context.</p>
+    pub fn get_context_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.context_name
     }
     /// <p>The source of the context.</p>
     pub fn source(mut self, input: crate::types::ContextSource) -> Self {
@@ -100,6 +108,10 @@ impl ContextSummaryBuilder {
         self.source = input;
         self
     }
+    /// <p>The source of the context.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::ContextSource> {
+        &self.source
+    }
     /// <p>The type of the context.</p>
     pub fn context_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.context_type = ::std::option::Option::Some(input.into());
@@ -109,6 +121,10 @@ impl ContextSummaryBuilder {
     pub fn set_context_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.context_type = input;
         self
+    }
+    /// <p>The type of the context.</p>
+    pub fn get_context_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.context_type
     }
     /// <p>When the context was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -123,6 +139,10 @@ impl ContextSummaryBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>When the context was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>When the context was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -135,6 +155,10 @@ impl ContextSummaryBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>When the context was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// Consumes the builder and constructs a [`ContextSummary`](crate::types::ContextSummary).
     pub fn build(self) -> crate::types::ContextSummary {

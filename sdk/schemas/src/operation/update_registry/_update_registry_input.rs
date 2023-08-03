@@ -48,6 +48,10 @@ impl UpdateRegistryInputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the registry to update.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The name of the registry.</p>
     pub fn registry_name(
         mut self,
@@ -63,6 +67,10 @@ impl UpdateRegistryInputBuilder {
     ) -> Self {
         self.registry_name = input;
         self
+    }
+    /// <p>The name of the registry.</p>
+    pub fn get_registry_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_name
     }
     /// Consumes the builder and constructs a [`UpdateRegistryInput`](crate::operation::update_registry::UpdateRegistryInput).
     pub fn build(

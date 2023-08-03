@@ -70,6 +70,10 @@ impl CreateDeploymentInputBuilder {
         self.environment_id = input;
         self
     }
+    /// <p>The identifier of the runtime environment where you want to deploy this application.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
+    }
     /// <p>The application identifier.</p>
     pub fn application_id(
         mut self,
@@ -86,6 +90,10 @@ impl CreateDeploymentInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The application identifier.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The version of the application to deploy.</p>
     pub fn application_version(mut self, input: i32) -> Self {
         self.application_version = ::std::option::Option::Some(input);
@@ -96,6 +104,10 @@ impl CreateDeploymentInputBuilder {
         self.application_version = input;
         self
     }
+    /// <p>The version of the application to deploy.</p>
+    pub fn get_application_version(&self) -> &::std::option::Option<i32> {
+        &self.application_version
+    }
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request to create a deployment. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires. </p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -105,6 +117,10 @@ impl CreateDeploymentInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request to create a deployment. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires. </p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateDeploymentInput`](crate::operation::create_deployment::CreateDeploymentInput).
     pub fn build(

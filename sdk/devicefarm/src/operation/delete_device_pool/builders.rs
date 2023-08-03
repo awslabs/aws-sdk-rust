@@ -36,6 +36,12 @@ impl DeleteDevicePoolFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteDevicePool as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_device_pool::builders::DeleteDevicePoolInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +131,9 @@ impl DeleteDevicePoolFluentBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
+    }
+    /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm device pool to delete.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
     }
 }

@@ -36,6 +36,12 @@ impl GetUsageStatisticsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetUsageStatistics as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_usage_statistics::builders::GetUsageStatisticsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -144,6 +150,12 @@ impl GetUsageStatisticsFluentBuilder {
         self.inner = self.inner.set_filter_by(input);
         self
     }
+    /// <p>An array of objects, one for each condition to use to filter the query results. If you specify more than one condition, Amazon Macie uses an AND operator to join the conditions.</p>
+    pub fn get_filter_by(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageStatisticsFilter>> {
+        self.inner.get_filter_by()
+    }
     /// <p>The maximum number of items to include in each page of the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -154,6 +166,10 @@ impl GetUsageStatisticsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of items to include in each page of the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -163,6 +179,10 @@ impl GetUsageStatisticsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The criteria to use to sort the query results.</p>
     pub fn sort_by(mut self, input: crate::types::UsageStatisticsSortBy) -> Self {
@@ -177,6 +197,10 @@ impl GetUsageStatisticsFluentBuilder {
         self.inner = self.inner.set_sort_by(input);
         self
     }
+    /// <p>The criteria to use to sort the query results.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::UsageStatisticsSortBy> {
+        self.inner.get_sort_by()
+    }
     /// <p>The inclusive time period to query usage data for. Valid values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value, Amazon Macie provides usage data for the preceding 30 days.</p>
     pub fn time_range(mut self, input: crate::types::TimeRange) -> Self {
         self.inner = self.inner.time_range(input);
@@ -186,5 +210,9 @@ impl GetUsageStatisticsFluentBuilder {
     pub fn set_time_range(mut self, input: ::std::option::Option<crate::types::TimeRange>) -> Self {
         self.inner = self.inner.set_time_range(input);
         self
+    }
+    /// <p>The inclusive time period to query usage data for. Valid values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value, Amazon Macie provides usage data for the preceding 30 days.</p>
+    pub fn get_time_range(&self) -> &::std::option::Option<crate::types::TimeRange> {
+        self.inner.get_time_range()
     }
 }

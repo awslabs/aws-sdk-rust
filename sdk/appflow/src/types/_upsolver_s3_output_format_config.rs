@@ -56,6 +56,10 @@ impl UpsolverS3OutputFormatConfigBuilder {
         self.file_type = input;
         self
     }
+    /// <p> Indicates the file type that Amazon AppFlow places in the Upsolver Amazon S3 bucket. </p>
+    pub fn get_file_type(&self) -> &::std::option::Option<crate::types::FileType> {
+        &self.file_type
+    }
     /// <p>Specifies elements that Amazon AppFlow includes in the file and folder names in the flow destination.</p>
     pub fn prefix_config(mut self, input: crate::types::PrefixConfig) -> Self {
         self.prefix_config = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl UpsolverS3OutputFormatConfigBuilder {
         self.prefix_config = input;
         self
     }
+    /// <p>Specifies elements that Amazon AppFlow includes in the file and folder names in the flow destination.</p>
+    pub fn get_prefix_config(&self) -> &::std::option::Option<crate::types::PrefixConfig> {
+        &self.prefix_config
+    }
     /// <p> The aggregation settings that you can use to customize the output format of your flow data. </p>
     pub fn aggregation_config(mut self, input: crate::types::AggregationConfig) -> Self {
         self.aggregation_config = ::std::option::Option::Some(input);
@@ -81,6 +89,12 @@ impl UpsolverS3OutputFormatConfigBuilder {
     ) -> Self {
         self.aggregation_config = input;
         self
+    }
+    /// <p> The aggregation settings that you can use to customize the output format of your flow data. </p>
+    pub fn get_aggregation_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AggregationConfig> {
+        &self.aggregation_config
     }
     /// Consumes the builder and constructs a [`UpsolverS3OutputFormatConfig`](crate::types::UpsolverS3OutputFormatConfig).
     pub fn build(self) -> crate::types::UpsolverS3OutputFormatConfig {

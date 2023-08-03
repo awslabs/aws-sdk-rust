@@ -63,6 +63,11 @@ impl ListPricesInputBuilder {
         self.tld = input;
         self
     }
+    /// <p>The TLD for which you want to receive the pricing information. For example. <code>.net</code>.</p>
+    /// <p>If a <code>Tld</code> value is not provided, a list of prices for all TLDs supported by Route&nbsp;53 is returned.</p>
+    pub fn get_tld(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tld
+    }
     /// <p>For an initial request for a list of prices, omit this element. If the number of prices that are not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional prices. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element. </p>
     /// <p>Used only for all TLDs. If you specify a TLD, don't specify a <code>Marker</code>.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -75,6 +80,11 @@ impl ListPricesInputBuilder {
         self.marker = input;
         self
     }
+    /// <p>For an initial request for a list of prices, omit this element. If the number of prices that are not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional prices. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element. </p>
+    /// <p>Used only for all TLDs. If you specify a TLD, don't specify a <code>Marker</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>Number of <code>Prices</code> to be returned.</p>
     /// <p>Used only for all TLDs. If you specify a TLD, don't specify a <code>MaxItems</code>.</p>
     pub fn max_items(mut self, input: i32) -> Self {
@@ -86,6 +96,11 @@ impl ListPricesInputBuilder {
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_items = input;
         self
+    }
+    /// <p>Number of <code>Prices</code> to be returned.</p>
+    /// <p>Used only for all TLDs. If you specify a TLD, don't specify a <code>MaxItems</code>.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        &self.max_items
     }
     /// Consumes the builder and constructs a [`ListPricesInput`](crate::operation::list_prices::ListPricesInput).
     pub fn build(

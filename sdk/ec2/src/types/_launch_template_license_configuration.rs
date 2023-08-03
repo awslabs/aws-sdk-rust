@@ -46,6 +46,10 @@ impl LaunchTemplateLicenseConfigurationBuilder {
         self.license_configuration_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the license configuration.</p>
+    pub fn get_license_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_configuration_arn
+    }
     /// Consumes the builder and constructs a [`LaunchTemplateLicenseConfiguration`](crate::types::LaunchTemplateLicenseConfiguration).
     pub fn build(self) -> crate::types::LaunchTemplateLicenseConfiguration {
         crate::types::LaunchTemplateLicenseConfiguration {

@@ -36,6 +36,13 @@ impl CreateBackupSelectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateBackupSelection as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_backup_selection::builders::CreateBackupSelectionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl CreateBackupSelectionFluentBuilder {
         self.inner = self.inner.set_backup_plan_id(input);
         self
     }
+    /// <p>Uniquely identifies the backup plan to be associated with the selection of resources.</p>
+    pub fn get_backup_plan_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_backup_plan_id()
+    }
     /// <p>Specifies the body of a request to assign a set of resources to a backup plan.</p>
     pub fn backup_selection(mut self, input: crate::types::BackupSelection) -> Self {
         self.inner = self.inner.backup_selection(input);
@@ -144,6 +155,10 @@ impl CreateBackupSelectionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_backup_selection(input);
         self
+    }
+    /// <p>Specifies the body of a request to assign a set of resources to a backup plan.</p>
+    pub fn get_backup_selection(&self) -> &::std::option::Option<crate::types::BackupSelection> {
+        self.inner.get_backup_selection()
     }
     /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional.</p>
     /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
@@ -162,5 +177,10 @@ impl CreateBackupSelectionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_creator_request_id(input);
         self
+    }
+    /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional.</p>
+    /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
+    pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_creator_request_id()
     }
 }

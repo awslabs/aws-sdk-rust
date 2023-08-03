@@ -61,6 +61,12 @@ impl InputDeviceConfigurableSettingsBuilder {
         self.configured_input = input;
         self
     }
+    /// The input source that you want to use. If the device has a source connected to only one of its input ports, or if you don't care which source the device sends, specify Auto. If the device has sources connected to both its input ports, and you want to use a specific source, specify the source.
+    pub fn get_configured_input(
+        &self,
+    ) -> &::std::option::Option<crate::types::InputDeviceConfiguredInput> {
+        &self.configured_input
+    }
     /// The maximum bitrate in bits per second. Set a value here to throttle the bitrate of the source video.
     pub fn max_bitrate(mut self, input: i32) -> Self {
         self.max_bitrate = ::std::option::Option::Some(input);
@@ -71,6 +77,10 @@ impl InputDeviceConfigurableSettingsBuilder {
         self.max_bitrate = input;
         self
     }
+    /// The maximum bitrate in bits per second. Set a value here to throttle the bitrate of the source video.
+    pub fn get_max_bitrate(&self) -> &::std::option::Option<i32> {
+        &self.max_bitrate
+    }
     /// The Link device's buffer size (latency) in milliseconds (ms).
     pub fn latency_ms(mut self, input: i32) -> Self {
         self.latency_ms = ::std::option::Option::Some(input);
@@ -80,6 +90,10 @@ impl InputDeviceConfigurableSettingsBuilder {
     pub fn set_latency_ms(mut self, input: ::std::option::Option<i32>) -> Self {
         self.latency_ms = input;
         self
+    }
+    /// The Link device's buffer size (latency) in milliseconds (ms).
+    pub fn get_latency_ms(&self) -> &::std::option::Option<i32> {
+        &self.latency_ms
     }
     /// Consumes the builder and constructs a [`InputDeviceConfigurableSettings`](crate::types::InputDeviceConfigurableSettings).
     pub fn build(self) -> crate::types::InputDeviceConfigurableSettings {

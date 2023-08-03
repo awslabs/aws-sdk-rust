@@ -144,6 +144,10 @@ impl DestinationDescriptionBuilder {
         self.destination_id = input;
         self
     }
+    /// <p>The ID of the destination.</p>
+    pub fn get_destination_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_id
+    }
     /// <p>[Deprecated] The destination in Amazon S3.</p>
     pub fn s3_destination_description(
         mut self,
@@ -159,6 +163,12 @@ impl DestinationDescriptionBuilder {
     ) -> Self {
         self.s3_destination_description = input;
         self
+    }
+    /// <p>[Deprecated] The destination in Amazon S3.</p>
+    pub fn get_s3_destination_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3DestinationDescription> {
+        &self.s3_destination_description
     }
     /// <p>The destination in Amazon S3.</p>
     pub fn extended_s3_destination_description(
@@ -176,6 +186,12 @@ impl DestinationDescriptionBuilder {
         self.extended_s3_destination_description = input;
         self
     }
+    /// <p>The destination in Amazon S3.</p>
+    pub fn get_extended_s3_destination_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExtendedS3DestinationDescription> {
+        &self.extended_s3_destination_description
+    }
     /// <p>The destination in Amazon Redshift.</p>
     pub fn redshift_destination_description(
         mut self,
@@ -191,6 +207,12 @@ impl DestinationDescriptionBuilder {
     ) -> Self {
         self.redshift_destination_description = input;
         self
+    }
+    /// <p>The destination in Amazon Redshift.</p>
+    pub fn get_redshift_destination_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::RedshiftDestinationDescription> {
+        &self.redshift_destination_description
     }
     /// <p>The destination in Amazon ES.</p>
     pub fn elasticsearch_destination_description(
@@ -208,6 +230,12 @@ impl DestinationDescriptionBuilder {
         self.elasticsearch_destination_description = input;
         self
     }
+    /// <p>The destination in Amazon ES.</p>
+    pub fn get_elasticsearch_destination_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::ElasticsearchDestinationDescription> {
+        &self.elasticsearch_destination_description
+    }
     /// <p>The destination in Amazon OpenSearch Service.</p>
     pub fn amazonopensearchservice_destination_description(
         mut self,
@@ -223,6 +251,12 @@ impl DestinationDescriptionBuilder {
     ) -> Self {
         self.amazonopensearchservice_destination_description = input;
         self
+    }
+    /// <p>The destination in Amazon OpenSearch Service.</p>
+    pub fn get_amazonopensearchservice_destination_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::AmazonopensearchserviceDestinationDescription> {
+        &self.amazonopensearchservice_destination_description
     }
     /// <p>The destination in Splunk.</p>
     pub fn splunk_destination_description(
@@ -240,6 +274,12 @@ impl DestinationDescriptionBuilder {
         self.splunk_destination_description = input;
         self
     }
+    /// <p>The destination in Splunk.</p>
+    pub fn get_splunk_destination_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::SplunkDestinationDescription> {
+        &self.splunk_destination_description
+    }
     /// <p>Describes the specified HTTP endpoint destination.</p>
     pub fn http_endpoint_destination_description(
         mut self,
@@ -255,6 +295,12 @@ impl DestinationDescriptionBuilder {
     ) -> Self {
         self.http_endpoint_destination_description = input;
         self
+    }
+    /// <p>Describes the specified HTTP endpoint destination.</p>
+    pub fn get_http_endpoint_destination_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::HttpEndpointDestinationDescription> {
+        &self.http_endpoint_destination_description
     }
     /// <p>The destination in the Serverless offering for Amazon OpenSearch Service.</p>
     pub fn amazon_open_search_serverless_destination_description(
@@ -274,6 +320,13 @@ impl DestinationDescriptionBuilder {
     ) -> Self {
         self.amazon_open_search_serverless_destination_description = input;
         self
+    }
+    /// <p>The destination in the Serverless offering for Amazon OpenSearch Service.</p>
+    pub fn get_amazon_open_search_serverless_destination_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationDescription>
+    {
+        &self.amazon_open_search_serverless_destination_description
     }
     /// Consumes the builder and constructs a [`DestinationDescription`](crate::types::DestinationDescription).
     pub fn build(self) -> crate::types::DestinationDescription {

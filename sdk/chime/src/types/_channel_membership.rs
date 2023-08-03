@@ -80,6 +80,10 @@ impl ChannelMembershipBuilder {
         self.invited_by = input;
         self
     }
+    /// <p>The identifier of the member who invited another member.</p>
+    pub fn get_invited_by(&self) -> &::std::option::Option<crate::types::Identity> {
+        &self.invited_by
+    }
     /// <p>The membership type set for the channel member.</p>
     pub fn r#type(mut self, input: crate::types::ChannelMembershipType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -93,6 +97,10 @@ impl ChannelMembershipBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The membership type set for the channel member.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ChannelMembershipType> {
+        &self.r#type
+    }
     /// <p>The data of the channel member.</p>
     pub fn member(mut self, input: crate::types::Identity) -> Self {
         self.member = ::std::option::Option::Some(input);
@@ -103,6 +111,10 @@ impl ChannelMembershipBuilder {
         self.member = input;
         self
     }
+    /// <p>The data of the channel member.</p>
+    pub fn get_member(&self) -> &::std::option::Option<crate::types::Identity> {
+        &self.member
+    }
     /// <p>The ARN of the member's channel.</p>
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
@@ -112,6 +124,10 @@ impl ChannelMembershipBuilder {
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_arn = input;
         self
+    }
+    /// <p>The ARN of the member's channel.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
     }
     /// <p>The time at which the channel membership was created.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -126,6 +142,10 @@ impl ChannelMembershipBuilder {
         self.created_timestamp = input;
         self
     }
+    /// <p>The time at which the channel membership was created.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
+    }
     /// <p>The time at which a channel membership was last updated.</p>
     pub fn last_updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_timestamp = ::std::option::Option::Some(input);
@@ -138,6 +158,12 @@ impl ChannelMembershipBuilder {
     ) -> Self {
         self.last_updated_timestamp = input;
         self
+    }
+    /// <p>The time at which a channel membership was last updated.</p>
+    pub fn get_last_updated_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_timestamp
     }
     /// Consumes the builder and constructs a [`ChannelMembership`](crate::types::ChannelMembership).
     pub fn build(self) -> crate::types::ChannelMembership {

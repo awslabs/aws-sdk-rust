@@ -59,6 +59,10 @@ impl BatchGetObjectAttributesBuilder {
         self.object_reference = input;
         self
     }
+    /// <p>Reference that identifies the object whose attributes will be retrieved.</p>
+    pub fn get_object_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
+        &self.object_reference
+    }
     /// <p>Identifier for the facet whose attributes will be retrieved. See <code>SchemaFacet</code> for details.</p>
     pub fn schema_facet(mut self, input: crate::types::SchemaFacet) -> Self {
         self.schema_facet = ::std::option::Option::Some(input);
@@ -71,6 +75,10 @@ impl BatchGetObjectAttributesBuilder {
     ) -> Self {
         self.schema_facet = input;
         self
+    }
+    /// <p>Identifier for the facet whose attributes will be retrieved. See <code>SchemaFacet</code> for details.</p>
+    pub fn get_schema_facet(&self) -> &::std::option::Option<crate::types::SchemaFacet> {
+        &self.schema_facet
     }
     /// Appends an item to `attribute_names`.
     ///
@@ -93,6 +101,12 @@ impl BatchGetObjectAttributesBuilder {
     ) -> Self {
         self.attribute_names = input;
         self
+    }
+    /// <p>List of attribute names whose values will be retrieved.</p>
+    pub fn get_attribute_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.attribute_names
     }
     /// Consumes the builder and constructs a [`BatchGetObjectAttributes`](crate::types::BatchGetObjectAttributes).
     pub fn build(self) -> crate::types::BatchGetObjectAttributes {

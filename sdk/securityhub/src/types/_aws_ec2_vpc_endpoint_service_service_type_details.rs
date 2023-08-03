@@ -40,6 +40,10 @@ impl AwsEc2VpcEndpointServiceServiceTypeDetailsBuilder {
         self.service_type = input;
         self
     }
+    /// <p>The type of service.</p>
+    pub fn get_service_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_type
+    }
     /// Consumes the builder and constructs a [`AwsEc2VpcEndpointServiceServiceTypeDetails`](crate::types::AwsEc2VpcEndpointServiceServiceTypeDetails).
     pub fn build(self) -> crate::types::AwsEc2VpcEndpointServiceServiceTypeDetails {
         crate::types::AwsEc2VpcEndpointServiceServiceTypeDetails {

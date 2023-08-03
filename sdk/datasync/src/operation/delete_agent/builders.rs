@@ -36,6 +36,10 @@ impl DeleteAgentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteAgent as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_agent::builders::DeleteAgentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -117,5 +121,9 @@ impl DeleteAgentFluentBuilder {
     pub fn set_agent_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the agent to delete. Use the <code>ListAgents</code> operation to return a list of agents for your account and Amazon Web Services Region.</p>
+    pub fn get_agent_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_agent_arn()
     }
 }

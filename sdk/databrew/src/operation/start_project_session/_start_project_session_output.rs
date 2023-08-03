@@ -63,6 +63,10 @@ impl StartProjectSessionOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the project to be acted upon.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A system-generated identifier for the session.</p>
     pub fn client_session_id(
         mut self,
@@ -78,6 +82,10 @@ impl StartProjectSessionOutputBuilder {
     ) -> Self {
         self.client_session_id = input;
         self
+    }
+    /// <p>A system-generated identifier for the session.</p>
+    pub fn get_client_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_session_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -66,6 +66,10 @@ impl RegisterResourceInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the resource that you want to register.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p>Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles for Lake Formation</a>.</p>
     pub fn use_service_linked_role(mut self, input: bool) -> Self {
@@ -78,6 +82,11 @@ impl RegisterResourceInputBuilder {
         self.use_service_linked_role = input;
         self
     }
+    /// <p>Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles for Lake Formation</a>.</p>
+    pub fn get_use_service_linked_role(&self) -> &::std::option::Option<bool> {
+        &self.use_service_linked_role
+    }
     /// <p>The identifier for the role that registers the resource.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -88,6 +97,10 @@ impl RegisterResourceInputBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The identifier for the role that registers the resource.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>Whether or not the resource is a federated resource.</p>
     pub fn with_federation(mut self, input: bool) -> Self {
         self.with_federation = ::std::option::Option::Some(input);
@@ -97,6 +110,10 @@ impl RegisterResourceInputBuilder {
     pub fn set_with_federation(mut self, input: ::std::option::Option<bool>) -> Self {
         self.with_federation = input;
         self
+    }
+    /// <p>Whether or not the resource is a federated resource.</p>
+    pub fn get_with_federation(&self) -> &::std::option::Option<bool> {
+        &self.with_federation
     }
     /// Consumes the builder and constructs a [`RegisterResourceInput`](crate::operation::register_resource::RegisterResourceInput).
     pub fn build(

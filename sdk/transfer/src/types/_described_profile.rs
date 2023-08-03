@@ -80,6 +80,10 @@ impl DescribedProfileBuilder {
         self.arn = input;
         self
     }
+    /// <p>The unique Amazon Resource Name (ARN) for the profile.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>A unique identifier for the local or partner AS2 profile.</p>
     pub fn profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_id = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl DescribedProfileBuilder {
     pub fn set_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_id = input;
         self
+    }
+    /// <p>A unique identifier for the local or partner AS2 profile.</p>
+    pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_id
     }
     /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
     pub fn profile_type(mut self, input: crate::types::ProfileType) -> Self {
@@ -103,6 +111,10 @@ impl DescribedProfileBuilder {
         self.profile_type = input;
         self
     }
+    /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
+    pub fn get_profile_type(&self) -> &::std::option::Option<crate::types::ProfileType> {
+        &self.profile_type
+    }
     /// <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages sent from the partner. For outbound connectors, this is the <code>AS2-To</code> header for the AS2 messages sent to the partner using the <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
     pub fn as2_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.as2_id = ::std::option::Option::Some(input.into());
@@ -112,6 +124,10 @@ impl DescribedProfileBuilder {
     pub fn set_as2_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.as2_id = input;
         self
+    }
+    /// <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages sent from the partner. For outbound connectors, this is the <code>AS2-To</code> header for the AS2 messages sent to the partner using the <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
+    pub fn get_as2_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.as2_id
     }
     /// Appends an item to `certificate_ids`.
     ///
@@ -135,6 +151,12 @@ impl DescribedProfileBuilder {
         self.certificate_ids = input;
         self
     }
+    /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
+    pub fn get_certificate_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.certificate_ids
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -153,6 +175,10 @@ impl DescribedProfileBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Key-value pairs that can be used to group and search for profiles.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`DescribedProfile`](crate::types::DescribedProfile).
     pub fn build(self) -> crate::types::DescribedProfile {

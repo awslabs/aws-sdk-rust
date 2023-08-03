@@ -46,6 +46,10 @@ impl DescribeTunnelOutputBuilder {
         self.tunnel = input;
         self
     }
+    /// <p>The tunnel being described.</p>
+    pub fn get_tunnel(&self) -> &::std::option::Option<crate::types::Tunnel> {
+        &self.tunnel
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

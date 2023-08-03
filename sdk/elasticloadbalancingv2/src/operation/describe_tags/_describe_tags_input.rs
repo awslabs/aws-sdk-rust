@@ -51,6 +51,12 @@ impl DescribeTagsInputBuilder {
         self.resource_arns = input;
         self
     }
+    /// <p>The Amazon Resource Names (ARN) of the resources. You can specify up to 20 resources in a single call.</p>
+    pub fn get_resource_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_arns
+    }
     /// Consumes the builder and constructs a [`DescribeTagsInput`](crate::operation::describe_tags::DescribeTagsInput).
     pub fn build(
         self,

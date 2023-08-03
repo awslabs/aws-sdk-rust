@@ -71,6 +71,10 @@ impl CreateJobTemplateOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>This output display the created job template ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>This output displays the name of the created job template.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl CreateJobTemplateOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>This output displays the name of the created job template.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>This output display the ARN of the created job template.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -90,6 +98,10 @@ impl CreateJobTemplateOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>This output display the ARN of the created job template.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>This output displays the date and time when the job template was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -103,6 +115,10 @@ impl CreateJobTemplateOutputBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>This output displays the date and time when the job template was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

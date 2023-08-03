@@ -71,6 +71,10 @@ impl OrganizationStatusBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The ID of an Amazon Web Services Organization.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>The status of the organization's AWS service access. This will be <code>ENABLED</code> or <code>DISABLED</code>.</p>
     pub fn organization_aws_service_access_status(
         mut self,
@@ -87,6 +91,12 @@ impl OrganizationStatusBuilder {
         self.organization_aws_service_access_status = input;
         self
     }
+    /// <p>The status of the organization's AWS service access. This will be <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    pub fn get_organization_aws_service_access_status(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.organization_aws_service_access_status
+    }
     /// <p>The status of the SLR deployment for the account. This will be either <code>SUCCEEDED</code> or <code>IN_PROGRESS</code>.</p>
     pub fn slr_deployment_status(
         mut self,
@@ -102,6 +112,10 @@ impl OrganizationStatusBuilder {
     ) -> Self {
         self.slr_deployment_status = input;
         self
+    }
+    /// <p>The status of the SLR deployment for the account. This will be either <code>SUCCEEDED</code> or <code>IN_PROGRESS</code>.</p>
+    pub fn get_slr_deployment_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.slr_deployment_status
     }
     /// Appends an item to `account_status_list`.
     ///
@@ -121,6 +135,12 @@ impl OrganizationStatusBuilder {
     ) -> Self {
         self.account_status_list = input;
         self
+    }
+    /// <p>The current service-linked role (SLR) deployment status for an Amazon Web Services Organization's accounts. This will be either <code>SUCCEEDED</code> or <code>IN_PROGRESS</code>.</p>
+    pub fn get_account_status_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountStatus>> {
+        &self.account_status_list
     }
     /// Consumes the builder and constructs a [`OrganizationStatus`](crate::types::OrganizationStatus).
     pub fn build(self) -> crate::types::OrganizationStatus {

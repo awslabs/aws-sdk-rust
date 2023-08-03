@@ -36,6 +36,10 @@ impl DeleteMonitoringSubscriptionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteMonitoringSubscription as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_monitoring_subscription::builders::DeleteMonitoringSubscriptionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +135,9 @@ impl DeleteMonitoringSubscriptionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_distribution_id(input);
         self
+    }
+    /// <p>The ID of the distribution that you are disabling metrics for.</p>
+    pub fn get_distribution_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_distribution_id()
     }
 }

@@ -49,6 +49,10 @@ impl CreateBackupOutputBuilder {
         self.backup_details = input;
         self
     }
+    /// <p>Contains the details of the backup created for the table.</p>
+    pub fn get_backup_details(&self) -> &::std::option::Option<crate::types::BackupDetails> {
+        &self.backup_details
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

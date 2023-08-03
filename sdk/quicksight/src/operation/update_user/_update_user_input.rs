@@ -152,6 +152,10 @@ impl UpdateUserInputBuilder {
         self.user_name = input;
         self
     }
+    /// <p>The Amazon QuickSight user name that you want to update.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
+    }
     /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub fn aws_account_id(
         mut self,
@@ -168,6 +172,10 @@ impl UpdateUserInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
@@ -178,6 +186,10 @@ impl UpdateUserInputBuilder {
         self.namespace = input;
         self
     }
+    /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
+    }
     /// <p>The email address of the user that you want to update.</p>
     pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email = ::std::option::Option::Some(input.into());
@@ -187,6 +199,10 @@ impl UpdateUserInputBuilder {
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email = input;
         self
+    }
+    /// <p>The email address of the user that you want to update.</p>
+    pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email
     }
     /// <p>The Amazon QuickSight role of the user. The role can be one of the following default security cohorts:</p>
     /// <ul>
@@ -209,6 +225,16 @@ impl UpdateUserInputBuilder {
     pub fn set_role(mut self, input: ::std::option::Option<crate::types::UserRole>) -> Self {
         self.role = input;
         self
+    }
+    /// <p>The Amazon QuickSight role of the user. The role can be one of the following default security cohorts:</p>
+    /// <ul>
+    /// <li> <p> <code>READER</code>: A user who has read-only access to dashboards.</p> </li>
+    /// <li> <p> <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p> </li>
+    /// <li> <p> <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p> </li>
+    /// </ul>
+    /// <p>The name of the Amazon QuickSight role is invisible to the user except for the console screens dealing with permissions.</p>
+    pub fn get_role(&self) -> &::std::option::Option<crate::types::UserRole> {
+        &self.role
     }
     /// <p>(Enterprise edition only) The name of the custom permissions profile that you want to assign to this user. Customized permissions allows you to control a user's access by restricting access the following operations:</p>
     /// <ul>
@@ -244,6 +270,19 @@ impl UpdateUserInputBuilder {
         self.custom_permissions_name = input;
         self
     }
+    /// <p>(Enterprise edition only) The name of the custom permissions profile that you want to assign to this user. Customized permissions allows you to control a user's access by restricting access the following operations:</p>
+    /// <ul>
+    /// <li> <p>Create and update data sources</p> </li>
+    /// <li> <p>Create and update datasets</p> </li>
+    /// <li> <p>Create and update email reports</p> </li>
+    /// <li> <p>Subscribe to email reports</p> </li>
+    /// </ul>
+    /// <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight user. </p>
+    /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader).</p>
+    /// <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
+    pub fn get_custom_permissions_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_permissions_name
+    }
     /// <p>A flag that you use to indicate that you want to remove all custom permissions from this user. Using this parameter resets the user to the state it was in before a custom permissions profile was applied. This parameter defaults to NULL and it doesn't accept any other value.</p>
     pub fn unapply_custom_permissions(mut self, input: bool) -> Self {
         self.unapply_custom_permissions = ::std::option::Option::Some(input);
@@ -253,6 +292,10 @@ impl UpdateUserInputBuilder {
     pub fn set_unapply_custom_permissions(mut self, input: ::std::option::Option<bool>) -> Self {
         self.unapply_custom_permissions = input;
         self
+    }
+    /// <p>A flag that you use to indicate that you want to remove all custom permissions from this user. Using this parameter resets the user to the state it was in before a custom permissions profile was applied. This parameter defaults to NULL and it doesn't accept any other value.</p>
+    pub fn get_unapply_custom_permissions(&self) -> &::std::option::Option<bool> {
+        &self.unapply_custom_permissions
     }
     /// <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. The type of supported external login provider can be one of the following.</p>
     /// <ul>
@@ -280,6 +323,17 @@ impl UpdateUserInputBuilder {
         self.external_login_federation_provider_type = input;
         self
     }
+    /// <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. The type of supported external login provider can be one of the following.</p>
+    /// <ul>
+    /// <li> <p> <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.</p> </li>
+    /// <li> <p> <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p> </li>
+    /// <li> <p> <code>NONE</code>: This clears all the previously saved external login information for a user. Use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeUser.html">DescribeUser</a> </code> API operation to check the external login information.</p> </li>
+    /// </ul>
+    pub fn get_external_login_federation_provider_type(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.external_login_federation_provider_type
+    }
     /// <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. This parameter should only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
     pub fn custom_federation_provider_url(
         mut self,
@@ -296,6 +350,12 @@ impl UpdateUserInputBuilder {
         self.custom_federation_provider_url = input;
         self
     }
+    /// <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. This parameter should only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
+    pub fn get_custom_federation_provider_url(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.custom_federation_provider_url
+    }
     /// <p>The identity ID for a user in the external login provider.</p>
     pub fn external_login_id(
         mut self,
@@ -311,6 +371,10 @@ impl UpdateUserInputBuilder {
     ) -> Self {
         self.external_login_id = input;
         self
+    }
+    /// <p>The identity ID for a user in the external login provider.</p>
+    pub fn get_external_login_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_login_id
     }
     /// Consumes the builder and constructs a [`UpdateUserInput`](crate::operation::update_user::UpdateUserInput).
     pub fn build(

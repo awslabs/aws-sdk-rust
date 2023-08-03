@@ -40,6 +40,10 @@ impl SchedulingPolicyListingDetailBuilder {
         self.arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the scheduling policy.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`SchedulingPolicyListingDetail`](crate::types::SchedulingPolicyListingDetail).
     pub fn build(self) -> crate::types::SchedulingPolicyListingDetail {
         crate::types::SchedulingPolicyListingDetail { arn: self.arn }

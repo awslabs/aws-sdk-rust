@@ -56,6 +56,12 @@ impl RemoveAttributesFromFindingsInputBuilder {
         self.finding_arns = input;
         self
     }
+    /// <p>The ARNs that specify the findings that you want to remove attributes from.</p>
+    pub fn get_finding_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.finding_arns
+    }
     /// Appends an item to `attribute_keys`.
     ///
     /// To override the contents of this collection use [`set_attribute_keys`](Self::set_attribute_keys).
@@ -77,6 +83,12 @@ impl RemoveAttributesFromFindingsInputBuilder {
     ) -> Self {
         self.attribute_keys = input;
         self
+    }
+    /// <p>The array of attribute keys that you want to remove from specified findings.</p>
+    pub fn get_attribute_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.attribute_keys
     }
     /// Consumes the builder and constructs a [`RemoveAttributesFromFindingsInput`](crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsInput).
     pub fn build(

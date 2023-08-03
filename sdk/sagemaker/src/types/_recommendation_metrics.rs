@@ -94,6 +94,10 @@ impl RecommendationMetricsBuilder {
         self.cost_per_hour = input;
         self
     }
+    /// <p>Defines the cost per hour for the instance. </p>
+    pub fn get_cost_per_hour(&self) -> &::std::option::Option<f32> {
+        &self.cost_per_hour
+    }
     /// <p>Defines the cost per inference for the instance .</p>
     pub fn cost_per_inference(mut self, input: f32) -> Self {
         self.cost_per_inference = ::std::option::Option::Some(input);
@@ -103,6 +107,10 @@ impl RecommendationMetricsBuilder {
     pub fn set_cost_per_inference(mut self, input: ::std::option::Option<f32>) -> Self {
         self.cost_per_inference = input;
         self
+    }
+    /// <p>Defines the cost per inference for the instance .</p>
+    pub fn get_cost_per_inference(&self) -> &::std::option::Option<f32> {
+        &self.cost_per_inference
     }
     /// <p>The expected maximum number of requests per minute for the instance.</p>
     pub fn max_invocations(mut self, input: i32) -> Self {
@@ -114,6 +122,10 @@ impl RecommendationMetricsBuilder {
         self.max_invocations = input;
         self
     }
+    /// <p>The expected maximum number of requests per minute for the instance.</p>
+    pub fn get_max_invocations(&self) -> &::std::option::Option<i32> {
+        &self.max_invocations
+    }
     /// <p>The expected model latency at maximum invocation per minute for the instance.</p>
     pub fn model_latency(mut self, input: i32) -> Self {
         self.model_latency = ::std::option::Option::Some(input);
@@ -123,6 +135,10 @@ impl RecommendationMetricsBuilder {
     pub fn set_model_latency(mut self, input: ::std::option::Option<i32>) -> Self {
         self.model_latency = input;
         self
+    }
+    /// <p>The expected model latency at maximum invocation per minute for the instance.</p>
+    pub fn get_model_latency(&self) -> &::std::option::Option<i32> {
+        &self.model_latency
     }
     /// <p>The expected CPU utilization at maximum invocations per minute for the instance.</p>
     /// <p> <code>NaN</code> indicates that the value is not available.</p>
@@ -136,6 +152,11 @@ impl RecommendationMetricsBuilder {
         self.cpu_utilization = input;
         self
     }
+    /// <p>The expected CPU utilization at maximum invocations per minute for the instance.</p>
+    /// <p> <code>NaN</code> indicates that the value is not available.</p>
+    pub fn get_cpu_utilization(&self) -> &::std::option::Option<f32> {
+        &self.cpu_utilization
+    }
     /// <p>The expected memory utilization at maximum invocations per minute for the instance.</p>
     /// <p> <code>NaN</code> indicates that the value is not available.</p>
     pub fn memory_utilization(mut self, input: f32) -> Self {
@@ -148,6 +169,11 @@ impl RecommendationMetricsBuilder {
         self.memory_utilization = input;
         self
     }
+    /// <p>The expected memory utilization at maximum invocations per minute for the instance.</p>
+    /// <p> <code>NaN</code> indicates that the value is not available.</p>
+    pub fn get_memory_utilization(&self) -> &::std::option::Option<f32> {
+        &self.memory_utilization
+    }
     /// <p>The time it takes to launch new compute resources for a serverless endpoint. The time can vary depending on the model size, how long it takes to download the model, and the start-up time of the container.</p>
     /// <p> <code>NaN</code> indicates that the value is not available.</p>
     pub fn model_setup_time(mut self, input: i32) -> Self {
@@ -159,6 +185,11 @@ impl RecommendationMetricsBuilder {
     pub fn set_model_setup_time(mut self, input: ::std::option::Option<i32>) -> Self {
         self.model_setup_time = input;
         self
+    }
+    /// <p>The time it takes to launch new compute resources for a serverless endpoint. The time can vary depending on the model size, how long it takes to download the model, and the start-up time of the container.</p>
+    /// <p> <code>NaN</code> indicates that the value is not available.</p>
+    pub fn get_model_setup_time(&self) -> &::std::option::Option<i32> {
+        &self.model_setup_time
     }
     /// Consumes the builder and constructs a [`RecommendationMetrics`](crate::types::RecommendationMetrics).
     pub fn build(self) -> crate::types::RecommendationMetrics {

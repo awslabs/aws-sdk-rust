@@ -51,6 +51,10 @@ impl VpcAttachmentBuilder {
         self.state = input;
         self
     }
+    /// <p>The current state of the attachment.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::AttachmentStatus> {
+        &self.state
+    }
     /// <p>The ID of the VPC.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl VpcAttachmentBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The ID of the VPC.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Consumes the builder and constructs a [`VpcAttachment`](crate::types::VpcAttachment).
     pub fn build(self) -> crate::types::VpcAttachment {

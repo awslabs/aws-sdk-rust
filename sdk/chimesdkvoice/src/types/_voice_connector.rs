@@ -102,6 +102,10 @@ impl VoiceConnectorBuilder {
         self.voice_connector_id = input;
         self
     }
+    /// <p>The Voice Connector's ID.</p>
+    pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_connector_id
+    }
     /// <p>The AWS Region in which the Voice Connector is created. Default: us-east-1.</p>
     pub fn aws_region(mut self, input: crate::types::VoiceConnectorAwsRegion) -> Self {
         self.aws_region = ::std::option::Option::Some(input);
@@ -115,6 +119,10 @@ impl VoiceConnectorBuilder {
         self.aws_region = input;
         self
     }
+    /// <p>The AWS Region in which the Voice Connector is created. Default: us-east-1.</p>
+    pub fn get_aws_region(&self) -> &::std::option::Option<crate::types::VoiceConnectorAwsRegion> {
+        &self.aws_region
+    }
     /// <p>The Voice Connector's name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -124,6 +132,10 @@ impl VoiceConnectorBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The Voice Connector's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The outbound host name for the Voice Connector.</p>
     pub fn outbound_host_name(
@@ -141,6 +153,10 @@ impl VoiceConnectorBuilder {
         self.outbound_host_name = input;
         self
     }
+    /// <p>The outbound host name for the Voice Connector.</p>
+    pub fn get_outbound_host_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.outbound_host_name
+    }
     /// <p>Enables or disables encryption for the Voice Connector.</p>
     pub fn require_encryption(mut self, input: bool) -> Self {
         self.require_encryption = ::std::option::Option::Some(input);
@@ -150,6 +166,10 @@ impl VoiceConnectorBuilder {
     pub fn set_require_encryption(mut self, input: ::std::option::Option<bool>) -> Self {
         self.require_encryption = input;
         self
+    }
+    /// <p>Enables or disables encryption for the Voice Connector.</p>
+    pub fn get_require_encryption(&self) -> &::std::option::Option<bool> {
+        &self.require_encryption
     }
     /// <p>The Voice Connector's creation timestamp, in ISO 8601 format.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -164,6 +184,10 @@ impl VoiceConnectorBuilder {
         self.created_timestamp = input;
         self
     }
+    /// <p>The Voice Connector's creation timestamp, in ISO 8601 format.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
+    }
     /// <p>The Voice Connector's updated timestamp, in ISO 8601 format.</p>
     pub fn updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_timestamp = ::std::option::Option::Some(input);
@@ -176,6 +200,10 @@ impl VoiceConnectorBuilder {
     ) -> Self {
         self.updated_timestamp = input;
         self
+    }
+    /// <p>The Voice Connector's updated timestamp, in ISO 8601 format.</p>
+    pub fn get_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_timestamp
     }
     /// <p>The ARN of the Voice Connector.</p>
     pub fn voice_connector_arn(
@@ -192,6 +220,10 @@ impl VoiceConnectorBuilder {
     ) -> Self {
         self.voice_connector_arn = input;
         self
+    }
+    /// <p>The ARN of the Voice Connector.</p>
+    pub fn get_voice_connector_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_connector_arn
     }
     /// Consumes the builder and constructs a [`VoiceConnector`](crate::types::VoiceConnector).
     pub fn build(self) -> crate::types::VoiceConnector {

@@ -120,6 +120,10 @@ impl ProductViewSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The product view identifier.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The product identifier.</p>
     pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_id = ::std::option::Option::Some(input.into());
@@ -129,6 +133,10 @@ impl ProductViewSummaryBuilder {
     pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product_id = input;
         self
+    }
+    /// <p>The product identifier.</p>
+    pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_id
     }
     /// <p>The name of the product.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -140,6 +148,10 @@ impl ProductViewSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the product.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The owner of the product. Contact the product administrator for the significance of this value.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner = ::std::option::Option::Some(input.into());
@@ -149,6 +161,10 @@ impl ProductViewSummaryBuilder {
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner = input;
         self
+    }
+    /// <p>The owner of the product. Contact the product administrator for the significance of this value.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
     }
     /// <p>Short description of the product.</p>
     pub fn short_description(
@@ -166,6 +182,10 @@ impl ProductViewSummaryBuilder {
         self.short_description = input;
         self
     }
+    /// <p>Short description of the product.</p>
+    pub fn get_short_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.short_description
+    }
     /// <p>The product type. Contact the product administrator for the significance of this value. If this value is <code>MARKETPLACE</code>, the product was created by Amazon Web Services Marketplace.</p>
     pub fn r#type(mut self, input: crate::types::ProductType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -175,6 +195,10 @@ impl ProductViewSummaryBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ProductType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The product type. Contact the product administrator for the significance of this value. If this value is <code>MARKETPLACE</code>, the product was created by Amazon Web Services Marketplace.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ProductType> {
+        &self.r#type
     }
     /// <p>The distributor of the product. Contact the product administrator for the significance of this value.</p>
     pub fn distributor(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -186,6 +210,10 @@ impl ProductViewSummaryBuilder {
         self.distributor = input;
         self
     }
+    /// <p>The distributor of the product. Contact the product administrator for the significance of this value.</p>
+    pub fn get_distributor(&self) -> &::std::option::Option<::std::string::String> {
+        &self.distributor
+    }
     /// <p>Indicates whether the product has a default path. If the product does not have a default path, call <code>ListLaunchPaths</code> to disambiguate between paths. Otherwise, <code>ListLaunchPaths</code> is not required, and the output of <code>ProductViewSummary</code> can be used directly with <code>DescribeProvisioningParameters</code>.</p>
     pub fn has_default_path(mut self, input: bool) -> Self {
         self.has_default_path = ::std::option::Option::Some(input);
@@ -195,6 +223,10 @@ impl ProductViewSummaryBuilder {
     pub fn set_has_default_path(mut self, input: ::std::option::Option<bool>) -> Self {
         self.has_default_path = input;
         self
+    }
+    /// <p>Indicates whether the product has a default path. If the product does not have a default path, call <code>ListLaunchPaths</code> to disambiguate between paths. Otherwise, <code>ListLaunchPaths</code> is not required, and the output of <code>ProductViewSummary</code> can be used directly with <code>DescribeProvisioningParameters</code>.</p>
+    pub fn get_has_default_path(&self) -> &::std::option::Option<bool> {
+        &self.has_default_path
     }
     /// <p>The email contact information to obtain support for this Product.</p>
     pub fn support_email(
@@ -212,6 +244,10 @@ impl ProductViewSummaryBuilder {
         self.support_email = input;
         self
     }
+    /// <p>The email contact information to obtain support for this Product.</p>
+    pub fn get_support_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.support_email
+    }
     /// <p>The description of the support for this Product.</p>
     pub fn support_description(
         mut self,
@@ -228,6 +264,10 @@ impl ProductViewSummaryBuilder {
         self.support_description = input;
         self
     }
+    /// <p>The description of the support for this Product.</p>
+    pub fn get_support_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.support_description
+    }
     /// <p>The URL information to obtain support for this Product.</p>
     pub fn support_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.support_url = ::std::option::Option::Some(input.into());
@@ -237,6 +277,10 @@ impl ProductViewSummaryBuilder {
     pub fn set_support_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.support_url = input;
         self
+    }
+    /// <p>The URL information to obtain support for this Product.</p>
+    pub fn get_support_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.support_url
     }
     /// Consumes the builder and constructs a [`ProductViewSummary`](crate::types::ProductViewSummary).
     pub fn build(self) -> crate::types::ProductViewSummary {

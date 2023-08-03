@@ -36,6 +36,13 @@ impl UpdateNetworkSitePlanFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateNetworkSitePlan as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_network_site_plan::builders::UpdateNetworkSitePlanInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl UpdateNetworkSitePlanFluentBuilder {
         self.inner = self.inner.set_network_site_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the network site.</p>
+    pub fn get_network_site_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_network_site_arn()
+    }
     /// <p>The pending plan.</p>
     pub fn pending_plan(mut self, input: crate::types::SitePlan) -> Self {
         self.inner = self.inner.pending_plan(input);
@@ -145,6 +156,10 @@ impl UpdateNetworkSitePlanFluentBuilder {
         self.inner = self.inner.set_pending_plan(input);
         self
     }
+    /// <p>The pending plan.</p>
+    pub fn get_pending_plan(&self) -> &::std::option::Option<crate::types::SitePlan> {
+        self.inner.get_pending_plan()
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -154,5 +169,9 @@ impl UpdateNetworkSitePlanFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

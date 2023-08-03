@@ -59,6 +59,12 @@ impl GetMessagingStreamingConfigurationsOutputBuilder {
         self.streaming_configurations = input;
         self
     }
+    /// <p>The streaming settings.</p>
+    pub fn get_streaming_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamingConfiguration>> {
+        &self.streaming_configurations
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

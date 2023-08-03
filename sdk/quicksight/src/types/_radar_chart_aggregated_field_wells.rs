@@ -65,6 +65,12 @@ impl RadarChartAggregatedFieldWellsBuilder {
         self.category = input;
         self
     }
+    /// <p>The aggregated field well categories of a radar chart.</p>
+    pub fn get_category(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+        &self.category
+    }
     /// Appends an item to `color`.
     ///
     /// To override the contents of this collection use [`set_color`](Self::set_color).
@@ -84,6 +90,12 @@ impl RadarChartAggregatedFieldWellsBuilder {
         self.color = input;
         self
     }
+    /// <p>The color that are assigned to the aggregated field wells of a radar chart.</p>
+    pub fn get_color(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+        &self.color
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -102,6 +114,12 @@ impl RadarChartAggregatedFieldWellsBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>The values that are assigned to the aggregated field wells of a radar chart.</p>
+    pub fn get_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`RadarChartAggregatedFieldWells`](crate::types::RadarChartAggregatedFieldWells).
     pub fn build(self) -> crate::types::RadarChartAggregatedFieldWells {

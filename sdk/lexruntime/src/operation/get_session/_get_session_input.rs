@@ -65,6 +65,10 @@ impl GetSessionInputBuilder {
         self.bot_name = input;
         self
     }
+    /// <p>The name of the bot that contains the session data.</p>
+    pub fn get_bot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_name
+    }
     /// <p>The alias in use for the bot that contains the session data.</p>
     pub fn bot_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_alias = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl GetSessionInputBuilder {
         self.bot_alias = input;
         self
     }
+    /// <p>The alias in use for the bot that contains the session data.</p>
+    pub fn get_bot_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_alias
+    }
     /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. </p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
@@ -84,6 +92,10 @@ impl GetSessionInputBuilder {
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
+    }
+    /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. </p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     /// <p>A string used to filter the intents returned in the <code>recentIntentSummaryView</code> structure. </p>
     /// <p>When you specify a filter, only intents with their <code>checkpointLabel</code> field set to that string are returned.</p>
@@ -102,6 +114,11 @@ impl GetSessionInputBuilder {
     ) -> Self {
         self.checkpoint_label_filter = input;
         self
+    }
+    /// <p>A string used to filter the intents returned in the <code>recentIntentSummaryView</code> structure. </p>
+    /// <p>When you specify a filter, only intents with their <code>checkpointLabel</code> field set to that string are returned.</p>
+    pub fn get_checkpoint_label_filter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.checkpoint_label_filter
     }
     /// Consumes the builder and constructs a [`GetSessionInput`](crate::operation::get_session::GetSessionInput).
     pub fn build(

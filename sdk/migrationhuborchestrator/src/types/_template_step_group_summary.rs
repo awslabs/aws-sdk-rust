@@ -64,6 +64,10 @@ impl TemplateStepGroupSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the step group.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the step group.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl TemplateStepGroupSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the step group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `previous`.
     ///
@@ -93,6 +101,10 @@ impl TemplateStepGroupSummaryBuilder {
         self.previous = input;
         self
     }
+    /// <p>The previous step group.</p>
+    pub fn get_previous(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.previous
+    }
     /// Appends an item to `next`.
     ///
     /// To override the contents of this collection use [`set_next`](Self::set_next).
@@ -111,6 +123,10 @@ impl TemplateStepGroupSummaryBuilder {
     ) -> Self {
         self.next = input;
         self
+    }
+    /// <p>The next step group.</p>
+    pub fn get_next(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.next
     }
     /// Consumes the builder and constructs a [`TemplateStepGroupSummary`](crate::types::TemplateStepGroupSummary).
     pub fn build(self) -> crate::types::TemplateStepGroupSummary {

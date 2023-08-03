@@ -54,6 +54,10 @@ impl BranchDiffSourceCodeTypeBuilder {
         self.source_branch_name = input;
         self
     }
+    /// <p>The source branch for a diff in an associated repository.</p>
+    pub fn get_source_branch_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_branch_name
+    }
     /// <p>The destination branch for a diff in an associated repository.</p>
     pub fn destination_branch_name(
         mut self,
@@ -69,6 +73,10 @@ impl BranchDiffSourceCodeTypeBuilder {
     ) -> Self {
         self.destination_branch_name = input;
         self
+    }
+    /// <p>The destination branch for a diff in an associated repository.</p>
+    pub fn get_destination_branch_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_branch_name
     }
     /// Consumes the builder and constructs a [`BranchDiffSourceCodeType`](crate::types::BranchDiffSourceCodeType).
     pub fn build(self) -> crate::types::BranchDiffSourceCodeType {

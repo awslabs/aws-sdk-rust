@@ -50,6 +50,10 @@ impl UpdateDomainEndpointOptionsInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>A string that represents the name of a domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>Whether to require that all requests to the domain arrive over HTTPS. We recommend Policy-Min-TLS-1-2-2019-07 for TLSSecurityPolicy. For compatibility with older clients, the default is Policy-Min-TLS-1-0-2019-07. </p>
     pub fn domain_endpoint_options(mut self, input: crate::types::DomainEndpointOptions) -> Self {
         self.domain_endpoint_options = ::std::option::Option::Some(input);
@@ -62,6 +66,12 @@ impl UpdateDomainEndpointOptionsInputBuilder {
     ) -> Self {
         self.domain_endpoint_options = input;
         self
+    }
+    /// <p>Whether to require that all requests to the domain arrive over HTTPS. We recommend Policy-Min-TLS-1-2-2019-07 for TLSSecurityPolicy. For compatibility with older clients, the default is Policy-Min-TLS-1-0-2019-07. </p>
+    pub fn get_domain_endpoint_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::DomainEndpointOptions> {
+        &self.domain_endpoint_options
     }
     /// Consumes the builder and constructs a [`UpdateDomainEndpointOptionsInput`](crate::operation::update_domain_endpoint_options::UpdateDomainEndpointOptionsInput).
     pub fn build(

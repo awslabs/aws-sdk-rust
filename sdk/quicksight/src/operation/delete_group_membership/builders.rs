@@ -36,6 +36,13 @@ impl DeleteGroupMembershipFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteGroupMembership as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_group_membership::builders::DeleteGroupMembershipInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl DeleteGroupMembershipFluentBuilder {
         self.inner = self.inner.set_member_name(input);
         self
     }
+    /// <p>The name of the user that you want to delete from the group membership.</p>
+    pub fn get_member_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_member_name()
+    }
     /// <p>The name of the group that you want to delete the user from.</p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_name(input.into());
@@ -135,6 +146,10 @@ impl DeleteGroupMembershipFluentBuilder {
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_name(input);
         self
+    }
+    /// <p>The name of the group that you want to delete the user from.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_name()
     }
     /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub fn aws_account_id(
@@ -152,6 +167,10 @@ impl DeleteGroupMembershipFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The namespace of the group that you want to remove a user from.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace(input.into());
@@ -161,5 +180,9 @@ impl DeleteGroupMembershipFluentBuilder {
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace(input);
         self
+    }
+    /// <p>The namespace of the group that you want to remove a user from.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace()
     }
 }

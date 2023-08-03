@@ -36,6 +36,10 @@ impl UpdateApplicationSettingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateApplicationSettings as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_application_settings::builders::UpdateApplicationSettingsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl UpdateApplicationSettingsFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The ID of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// Appends an item to `CredentialsToAddOrUpdate`.
     ///
     /// To override the contents of this collection use [`set_credentials_to_add_or_update`](Self::set_credentials_to_add_or_update).
@@ -152,6 +160,12 @@ impl UpdateApplicationSettingsFluentBuilder {
         self.inner = self.inner.set_credentials_to_add_or_update(input);
         self
     }
+    /// <p>The credentials to be added or updated.</p>
+    pub fn get_credentials_to_add_or_update(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>> {
+        self.inner.get_credentials_to_add_or_update()
+    }
     /// Appends an item to `CredentialsToRemove`.
     ///
     /// To override the contents of this collection use [`set_credentials_to_remove`](Self::set_credentials_to_remove).
@@ -169,6 +183,12 @@ impl UpdateApplicationSettingsFluentBuilder {
         self.inner = self.inner.set_credentials_to_remove(input);
         self
     }
+    /// <p>The credentials to be removed.</p>
+    pub fn get_credentials_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>> {
+        self.inner.get_credentials_to_remove()
+    }
     /// <p>Installation of AWS Backint Agent for SAP HANA.</p>
     pub fn backint(mut self, input: crate::types::BackintConfig) -> Self {
         self.inner = self.inner.backint(input);
@@ -181,5 +201,9 @@ impl UpdateApplicationSettingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_backint(input);
         self
+    }
+    /// <p>Installation of AWS Backint Agent for SAP HANA.</p>
+    pub fn get_backint(&self) -> &::std::option::Option<crate::types::BackintConfig> {
+        self.inner.get_backint()
     }
 }

@@ -86,6 +86,10 @@ impl DescribeUserOutputBuilder {
         self.broker_id = input;
         self
     }
+    /// <p>Required. The unique ID that Amazon MQ generates for the broker.</p>
+    pub fn get_broker_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.broker_id
+    }
     /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
     pub fn console_access(mut self, input: bool) -> Self {
         self.console_access = ::std::option::Option::Some(input);
@@ -95,6 +99,10 @@ impl DescribeUserOutputBuilder {
     pub fn set_console_access(mut self, input: ::std::option::Option<bool>) -> Self {
         self.console_access = input;
         self
+    }
+    /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
+    pub fn get_console_access(&self) -> &::std::option::Option<bool> {
+        &self.console_access
     }
     /// Appends an item to `groups`.
     ///
@@ -115,6 +123,10 @@ impl DescribeUserOutputBuilder {
         self.groups = input;
         self
     }
+    /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.groups
+    }
     /// <p>The status of the changes pending for the ActiveMQ user.</p>
     pub fn pending(mut self, input: crate::types::UserPendingChanges) -> Self {
         self.pending = ::std::option::Option::Some(input);
@@ -128,6 +140,10 @@ impl DescribeUserOutputBuilder {
         self.pending = input;
         self
     }
+    /// <p>The status of the changes pending for the ActiveMQ user.</p>
+    pub fn get_pending(&self) -> &::std::option::Option<crate::types::UserPendingChanges> {
+        &self.pending
+    }
     /// <p>Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
@@ -138,6 +154,10 @@ impl DescribeUserOutputBuilder {
         self.username = input;
         self
     }
+    /// <p>Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
+    }
     /// <p>Describes whether the user is intended for data replication</p>
     pub fn replication_user(mut self, input: bool) -> Self {
         self.replication_user = ::std::option::Option::Some(input);
@@ -147,6 +167,10 @@ impl DescribeUserOutputBuilder {
     pub fn set_replication_user(mut self, input: ::std::option::Option<bool>) -> Self {
         self.replication_user = input;
         self
+    }
+    /// <p>Describes whether the user is intended for data replication</p>
+    pub fn get_replication_user(&self) -> &::std::option::Option<bool> {
+        &self.replication_user
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

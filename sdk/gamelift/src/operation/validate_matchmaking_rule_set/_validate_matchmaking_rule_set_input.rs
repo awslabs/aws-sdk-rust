@@ -45,6 +45,10 @@ impl ValidateMatchmakingRuleSetInputBuilder {
         self.rule_set_body = input;
         self
     }
+    /// <p>A collection of matchmaking rules to validate, formatted as a JSON string.</p>
+    pub fn get_rule_set_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_set_body
+    }
     /// Consumes the builder and constructs a [`ValidateMatchmakingRuleSetInput`](crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetInput).
     pub fn build(
         self,

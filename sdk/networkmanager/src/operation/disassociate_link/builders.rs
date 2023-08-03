@@ -36,6 +36,12 @@ impl DisassociateLinkFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateLink as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::disassociate_link::builders::DisassociateLinkInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl DisassociateLinkFluentBuilder {
         self.inner = self.inner.set_global_network_id(input);
         self
     }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_global_network_id()
+    }
     /// <p>The ID of the device.</p>
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_id(input.into());
@@ -142,6 +152,10 @@ impl DisassociateLinkFluentBuilder {
         self.inner = self.inner.set_device_id(input);
         self
     }
+    /// <p>The ID of the device.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_id()
+    }
     /// <p>The ID of the link.</p>
     pub fn link_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.link_id(input.into());
@@ -151,5 +165,9 @@ impl DisassociateLinkFluentBuilder {
     pub fn set_link_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_link_id(input);
         self
+    }
+    /// <p>The ID of the link.</p>
+    pub fn get_link_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_link_id()
     }
 }

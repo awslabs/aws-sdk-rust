@@ -74,6 +74,10 @@ impl ListResolverQueryLogConfigsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If there are more than <code>MaxResults</code> query logging configurations, you can submit another <code>ListResolverQueryLogConfigs</code> request to get the next group of configurations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The total number of query logging configurations that were created by the current account in the specified Region. This count can differ from the number of query logging configurations that are returned in a <code>ListResolverQueryLogConfigs</code> response, depending on the values that you specify in the request.</p>
     pub fn total_count(mut self, input: i32) -> Self {
         self.total_count = ::std::option::Option::Some(input);
@@ -84,6 +88,10 @@ impl ListResolverQueryLogConfigsOutputBuilder {
         self.total_count = input;
         self
     }
+    /// <p>The total number of query logging configurations that were created by the current account in the specified Region. This count can differ from the number of query logging configurations that are returned in a <code>ListResolverQueryLogConfigs</code> response, depending on the values that you specify in the request.</p>
+    pub fn get_total_count(&self) -> &::std::option::Option<i32> {
+        &self.total_count
+    }
     /// <p>The total number of query logging configurations that were created by the current account in the specified Region and that match the filters that were specified in the <code>ListResolverQueryLogConfigs</code> request. For the total number of query logging configurations that were created by the current account in the specified Region, see <code>TotalCount</code>.</p>
     pub fn total_filtered_count(mut self, input: i32) -> Self {
         self.total_filtered_count = ::std::option::Option::Some(input);
@@ -93,6 +101,10 @@ impl ListResolverQueryLogConfigsOutputBuilder {
     pub fn set_total_filtered_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_filtered_count = input;
         self
+    }
+    /// <p>The total number of query logging configurations that were created by the current account in the specified Region and that match the filters that were specified in the <code>ListResolverQueryLogConfigs</code> request. For the total number of query logging configurations that were created by the current account in the specified Region, see <code>TotalCount</code>.</p>
+    pub fn get_total_filtered_count(&self) -> &::std::option::Option<i32> {
+        &self.total_filtered_count
     }
     /// Appends an item to `resolver_query_log_configs`.
     ///
@@ -115,6 +127,12 @@ impl ListResolverQueryLogConfigsOutputBuilder {
     ) -> Self {
         self.resolver_query_log_configs = input;
         self
+    }
+    /// <p>A list that contains one <code>ResolverQueryLogConfig</code> element for each query logging configuration that matches the values that you specified for <code>Filter</code>.</p>
+    pub fn get_resolver_query_log_configs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResolverQueryLogConfig>> {
+        &self.resolver_query_log_configs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

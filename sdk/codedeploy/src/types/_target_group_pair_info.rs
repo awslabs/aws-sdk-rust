@@ -65,6 +65,12 @@ impl TargetGroupPairInfoBuilder {
         self.target_groups = input;
         self
     }
+    /// <p> One pair of target groups. One is associated with the original task set. The second is associated with the task set that serves traffic after the deployment is complete. </p>
+    pub fn get_target_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetGroupInfo>> {
+        &self.target_groups
+    }
     /// <p> The path used by a load balancer to route production traffic when an Amazon ECS deployment is complete. </p>
     pub fn prod_traffic_route(mut self, input: crate::types::TrafficRoute) -> Self {
         self.prod_traffic_route = ::std::option::Option::Some(input);
@@ -78,6 +84,10 @@ impl TargetGroupPairInfoBuilder {
         self.prod_traffic_route = input;
         self
     }
+    /// <p> The path used by a load balancer to route production traffic when an Amazon ECS deployment is complete. </p>
+    pub fn get_prod_traffic_route(&self) -> &::std::option::Option<crate::types::TrafficRoute> {
+        &self.prod_traffic_route
+    }
     /// <p> An optional path used by a load balancer to route test traffic after an Amazon ECS deployment. Validation can occur while test traffic is served during a deployment. </p>
     pub fn test_traffic_route(mut self, input: crate::types::TrafficRoute) -> Self {
         self.test_traffic_route = ::std::option::Option::Some(input);
@@ -90,6 +100,10 @@ impl TargetGroupPairInfoBuilder {
     ) -> Self {
         self.test_traffic_route = input;
         self
+    }
+    /// <p> An optional path used by a load balancer to route test traffic after an Amazon ECS deployment. Validation can occur while test traffic is served during a deployment. </p>
+    pub fn get_test_traffic_route(&self) -> &::std::option::Option<crate::types::TrafficRoute> {
+        &self.test_traffic_route
     }
     /// Consumes the builder and constructs a [`TargetGroupPairInfo`](crate::types::TargetGroupPairInfo).
     pub fn build(self) -> crate::types::TargetGroupPairInfo {

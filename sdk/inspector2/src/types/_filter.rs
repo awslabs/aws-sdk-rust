@@ -120,6 +120,10 @@ impl FilterBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Number (ARN) associated with this filter.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The Amazon Web Services account ID of the account that created the filter.</p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_id = ::std::option::Option::Some(input.into());
@@ -130,6 +134,10 @@ impl FilterBuilder {
         self.owner_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID of the account that created the filter.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
+    }
     /// <p>The name of the filter.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -139,6 +147,10 @@ impl FilterBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the filter.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Details on the filter criteria associated with this filter.</p>
     pub fn criteria(mut self, input: crate::types::FilterCriteria) -> Self {
@@ -153,6 +165,10 @@ impl FilterBuilder {
         self.criteria = input;
         self
     }
+    /// <p>Details on the filter criteria associated with this filter.</p>
+    pub fn get_criteria(&self) -> &::std::option::Option<crate::types::FilterCriteria> {
+        &self.criteria
+    }
     /// <p>The action that is to be applied to the findings that match the filter.</p>
     pub fn action(mut self, input: crate::types::FilterAction) -> Self {
         self.action = ::std::option::Option::Some(input);
@@ -162,6 +178,10 @@ impl FilterBuilder {
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::FilterAction>) -> Self {
         self.action = input;
         self
+    }
+    /// <p>The action that is to be applied to the findings that match the filter.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::FilterAction> {
+        &self.action
     }
     /// <p>The date and time this filter was created at.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -176,6 +196,10 @@ impl FilterBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The date and time this filter was created at.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The date and time the filter was last updated at.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -189,6 +213,10 @@ impl FilterBuilder {
         self.updated_at = input;
         self
     }
+    /// <p>The date and time the filter was last updated at.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
+    }
     /// <p>A description of the filter.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -199,6 +227,10 @@ impl FilterBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the filter.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The reason for the filter.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
@@ -208,6 +240,10 @@ impl FilterBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>The reason for the filter.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -233,6 +269,14 @@ impl FilterBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags attached to the filter.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     pub fn build(self) -> crate::types::Filter {

@@ -43,6 +43,10 @@ impl InventoryScheduleBuilder {
         self.frequency = input;
         self
     }
+    /// <p>Specifies how frequently inventory results are produced.</p>
+    pub fn get_frequency(&self) -> &::std::option::Option<crate::types::InventoryFrequency> {
+        &self.frequency
+    }
     /// Consumes the builder and constructs a [`InventorySchedule`](crate::types::InventorySchedule).
     pub fn build(self) -> crate::types::InventorySchedule {
         crate::types::InventorySchedule {

@@ -48,6 +48,10 @@ impl BatchGetViewInputBuilder {
         self.view_arns = input;
         self
     }
+    /// <p>A list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource names (ARNs)</a> that identify the views you want details for.</p>
+    pub fn get_view_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.view_arns
+    }
     /// Consumes the builder and constructs a [`BatchGetViewInput`](crate::operation::batch_get_view::BatchGetViewInput).
     pub fn build(
         self,

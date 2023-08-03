@@ -51,6 +51,12 @@ impl CreateTopicRuleDestinationOutputBuilder {
         self.topic_rule_destination = input;
         self
     }
+    /// <p>The topic rule destination.</p>
+    pub fn get_topic_rule_destination(
+        &self,
+    ) -> &::std::option::Option<crate::types::TopicRuleDestination> {
+        &self.topic_rule_destination
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

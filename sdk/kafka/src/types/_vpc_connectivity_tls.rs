@@ -40,6 +40,10 @@ impl VpcConnectivityTlsBuilder {
         self.enabled = input;
         self
     }
+    /// <p>TLS authentication is on or off for VPC connectivity.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Consumes the builder and constructs a [`VpcConnectivityTls`](crate::types::VpcConnectivityTls).
     pub fn build(self) -> crate::types::VpcConnectivityTls {
         crate::types::VpcConnectivityTls {

@@ -48,6 +48,10 @@ impl AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetailsBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of environment file. The valid value is <code>s3</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p>The ARN of the S3 object that contains the environment variable file.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetailsBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The ARN of the S3 object that contains the environment variable file.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails).
     pub fn build(

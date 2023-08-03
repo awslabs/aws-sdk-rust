@@ -40,6 +40,10 @@ impl QueryFilterBuilder {
         self.delta_time = input;
         self
     }
+    /// <p>Used to limit data to that which has arrived since the last execution of the action.</p>
+    pub fn get_delta_time(&self) -> &::std::option::Option<crate::types::DeltaTime> {
+        &self.delta_time
+    }
     /// Consumes the builder and constructs a [`QueryFilter`](crate::types::QueryFilter).
     pub fn build(self) -> crate::types::QueryFilter {
         crate::types::QueryFilter {

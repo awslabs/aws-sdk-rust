@@ -63,6 +63,10 @@ impl CreateImageRecipeOutputBuilder {
         self.request_id = input;
         self
     }
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
+    }
     /// <p>The idempotency token used to make this request idempotent.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl CreateImageRecipeOutputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>The idempotency token used to make this request idempotent.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>The Amazon Resource Name (ARN) of the image recipe that was created by this request.</p>
     pub fn image_recipe_arn(
@@ -88,6 +96,10 @@ impl CreateImageRecipeOutputBuilder {
     ) -> Self {
         self.image_recipe_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the image recipe that was created by this request.</p>
+    pub fn get_image_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_recipe_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -96,6 +96,10 @@ impl BrokerSummaryBuilder {
         self.broker_arn = input;
         self
     }
+    /// <p>The broker's Amazon Resource Name (ARN).</p>
+    pub fn get_broker_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.broker_arn
+    }
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     pub fn broker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.broker_id = ::std::option::Option::Some(input.into());
@@ -106,6 +110,10 @@ impl BrokerSummaryBuilder {
         self.broker_id = input;
         self
     }
+    /// <p>The unique ID that Amazon MQ generates for the broker.</p>
+    pub fn get_broker_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.broker_id
+    }
     /// <p>The broker's name. This value is unique in your Amazon Web Services account, 1-50 characters long, and containing only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
     pub fn broker_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.broker_name = ::std::option::Option::Some(input.into());
@@ -115,6 +123,10 @@ impl BrokerSummaryBuilder {
     pub fn set_broker_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.broker_name = input;
         self
+    }
+    /// <p>The broker's name. This value is unique in your Amazon Web Services account, 1-50 characters long, and containing only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
+    pub fn get_broker_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.broker_name
     }
     /// <p>The broker's status.</p>
     pub fn broker_state(mut self, input: crate::types::BrokerState) -> Self {
@@ -129,6 +141,10 @@ impl BrokerSummaryBuilder {
         self.broker_state = input;
         self
     }
+    /// <p>The broker's status.</p>
+    pub fn get_broker_state(&self) -> &::std::option::Option<crate::types::BrokerState> {
+        &self.broker_state
+    }
     /// <p>The time when the broker was created.</p>
     pub fn created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created = ::std::option::Option::Some(input);
@@ -141,6 +157,10 @@ impl BrokerSummaryBuilder {
     ) -> Self {
         self.created = input;
         self
+    }
+    /// <p>The time when the broker was created.</p>
+    pub fn get_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created
     }
     /// <p>The broker's deployment mode.</p>
     pub fn deployment_mode(mut self, input: crate::types::DeploymentMode) -> Self {
@@ -155,6 +175,10 @@ impl BrokerSummaryBuilder {
         self.deployment_mode = input;
         self
     }
+    /// <p>The broker's deployment mode.</p>
+    pub fn get_deployment_mode(&self) -> &::std::option::Option<crate::types::DeploymentMode> {
+        &self.deployment_mode
+    }
     /// <p>The type of broker engine.</p>
     pub fn engine_type(mut self, input: crate::types::EngineType) -> Self {
         self.engine_type = ::std::option::Option::Some(input);
@@ -167,6 +191,10 @@ impl BrokerSummaryBuilder {
     ) -> Self {
         self.engine_type = input;
         self
+    }
+    /// <p>The type of broker engine.</p>
+    pub fn get_engine_type(&self) -> &::std::option::Option<crate::types::EngineType> {
+        &self.engine_type
     }
     /// <p>The broker's instance type.</p>
     pub fn host_instance_type(
@@ -183,6 +211,10 @@ impl BrokerSummaryBuilder {
     ) -> Self {
         self.host_instance_type = input;
         self
+    }
+    /// <p>The broker's instance type.</p>
+    pub fn get_host_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_instance_type
     }
     /// Consumes the builder and constructs a [`BrokerSummary`](crate::types::BrokerSummary).
     pub fn build(self) -> crate::types::BrokerSummary {

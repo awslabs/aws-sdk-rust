@@ -39,6 +39,10 @@ impl GetProfileInputBuilder {
         self.profile_id = input;
         self
     }
+    /// <p>The unique identifier of the profile.</p>
+    pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_id
+    }
     /// Consumes the builder and constructs a [`GetProfileInput`](crate::operation::get_profile::GetProfileInput).
     pub fn build(
         self,

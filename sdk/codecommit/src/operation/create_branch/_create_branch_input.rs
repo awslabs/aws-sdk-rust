@@ -62,6 +62,10 @@ impl CreateBranchInputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository in which you want to create the new branch.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The name of the new branch to create.</p>
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch_name = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl CreateBranchInputBuilder {
         self.branch_name = input;
         self
     }
+    /// <p>The name of the new branch to create.</p>
+    pub fn get_branch_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.branch_name
+    }
     /// <p>The ID of the commit to point the new branch to.</p>
     pub fn commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.commit_id = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl CreateBranchInputBuilder {
     pub fn set_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.commit_id = input;
         self
+    }
+    /// <p>The ID of the commit to point the new branch to.</p>
+    pub fn get_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.commit_id
     }
     /// Consumes the builder and constructs a [`CreateBranchInput`](crate::operation::create_branch::CreateBranchInput).
     pub fn build(

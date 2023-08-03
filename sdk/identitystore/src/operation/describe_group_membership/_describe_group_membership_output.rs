@@ -78,6 +78,10 @@ impl DescribeGroupMembershipOutputBuilder {
         self.identity_store_id = input;
         self
     }
+    /// <p>The globally unique identifier for the identity store.</p>
+    pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_store_id
+    }
     /// <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
     pub fn membership_id(
         mut self,
@@ -94,6 +98,10 @@ impl DescribeGroupMembershipOutputBuilder {
         self.membership_id = input;
         self
     }
+    /// <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
+    pub fn get_membership_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.membership_id
+    }
     /// <p>The identifier for a group in the identity store.</p>
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
@@ -104,6 +112,10 @@ impl DescribeGroupMembershipOutputBuilder {
         self.group_id = input;
         self
     }
+    /// <p>The identifier for a group in the identity store.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
+    }
     /// <p>An object containing the identifier of a group member.</p>
     pub fn member_id(mut self, input: crate::types::MemberId) -> Self {
         self.member_id = ::std::option::Option::Some(input);
@@ -113,6 +125,10 @@ impl DescribeGroupMembershipOutputBuilder {
     pub fn set_member_id(mut self, input: ::std::option::Option<crate::types::MemberId>) -> Self {
         self.member_id = input;
         self
+    }
+    /// <p>An object containing the identifier of a group member.</p>
+    pub fn get_member_id(&self) -> &::std::option::Option<crate::types::MemberId> {
+        &self.member_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

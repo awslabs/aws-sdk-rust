@@ -54,6 +54,10 @@ impl ColumnMetadataBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the column.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The format of the column.</p>
     pub fn format(mut self, input: crate::types::Format) -> Self {
         self.format = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl ColumnMetadataBuilder {
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::Format>) -> Self {
         self.format = input;
         self
+    }
+    /// <p>The format of the column.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::Format> {
+        &self.format
     }
     /// Consumes the builder and constructs a [`ColumnMetadata`](crate::types::ColumnMetadata).
     pub fn build(self) -> crate::types::ColumnMetadata {

@@ -73,6 +73,12 @@ impl DescribeProvisionedProductPlanOutputBuilder {
         self.provisioned_product_plan_details = input;
         self
     }
+    /// <p>Information about the plan.</p>
+    pub fn get_provisioned_product_plan_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProvisionedProductPlanDetails> {
+        &self.provisioned_product_plan_details
+    }
     /// Appends an item to `resource_changes`.
     ///
     /// To override the contents of this collection use [`set_resource_changes`](Self::set_resource_changes).
@@ -92,6 +98,12 @@ impl DescribeProvisionedProductPlanOutputBuilder {
         self.resource_changes = input;
         self
     }
+    /// <p>Information about the resource changes that will occur when the plan is executed.</p>
+    pub fn get_resource_changes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceChange>> {
+        &self.resource_changes
+    }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub fn next_page_token(
         mut self,
@@ -107,6 +119,10 @@ impl DescribeProvisionedProductPlanOutputBuilder {
     ) -> Self {
         self.next_page_token = input;
         self
+    }
+    /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_page_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

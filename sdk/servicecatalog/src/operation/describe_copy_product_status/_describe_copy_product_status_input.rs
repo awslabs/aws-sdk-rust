@@ -69,6 +69,14 @@ impl DescribeCopyProductStatusInputBuilder {
         self.accept_language = input;
         self
     }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accept_language
+    }
     /// <p>The token for the copy product operation. This token is returned by <code>CopyProduct</code>.</p>
     pub fn copy_product_token(
         mut self,
@@ -84,6 +92,10 @@ impl DescribeCopyProductStatusInputBuilder {
     ) -> Self {
         self.copy_product_token = input;
         self
+    }
+    /// <p>The token for the copy product operation. This token is returned by <code>CopyProduct</code>.</p>
+    pub fn get_copy_product_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.copy_product_token
     }
     /// Consumes the builder and constructs a [`DescribeCopyProductStatusInput`](crate::operation::describe_copy_product_status::DescribeCopyProductStatusInput).
     pub fn build(

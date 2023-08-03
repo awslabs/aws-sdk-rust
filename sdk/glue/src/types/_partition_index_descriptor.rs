@@ -78,6 +78,10 @@ impl PartitionIndexDescriptorBuilder {
         self.index_name = input;
         self
     }
+    /// <p>The name of the partition index.</p>
+    pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_name
+    }
     /// Appends an item to `keys`.
     ///
     /// To override the contents of this collection use [`set_keys`](Self::set_keys).
@@ -96,6 +100,12 @@ impl PartitionIndexDescriptorBuilder {
     ) -> Self {
         self.keys = input;
         self
+    }
+    /// <p>A list of one or more keys, as <code>KeySchemaElement</code> structures, for the partition index.</p>
+    pub fn get_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>> {
+        &self.keys
     }
     /// <p>The status of the partition index. </p>
     /// <p>The possible statuses are:</p>
@@ -124,6 +134,17 @@ impl PartitionIndexDescriptorBuilder {
         self.index_status = input;
         self
     }
+    /// <p>The status of the partition index. </p>
+    /// <p>The possible statuses are:</p>
+    /// <ul>
+    /// <li> <p>CREATING: The index is being created. When an index is in a CREATING state, the index or its table cannot be deleted.</p> </li>
+    /// <li> <p>ACTIVE: The index creation succeeds.</p> </li>
+    /// <li> <p>FAILED: The index creation fails. </p> </li>
+    /// <li> <p>DELETING: The index is deleted from the list of indexes.</p> </li>
+    /// </ul>
+    pub fn get_index_status(&self) -> &::std::option::Option<crate::types::PartitionIndexStatus> {
+        &self.index_status
+    }
     /// Appends an item to `backfill_errors`.
     ///
     /// To override the contents of this collection use [`set_backfill_errors`](Self::set_backfill_errors).
@@ -142,6 +163,12 @@ impl PartitionIndexDescriptorBuilder {
     ) -> Self {
         self.backfill_errors = input;
         self
+    }
+    /// <p>A list of errors that can occur when registering partition indexes for an existing table.</p>
+    pub fn get_backfill_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BackfillError>> {
+        &self.backfill_errors
     }
     /// Consumes the builder and constructs a [`PartitionIndexDescriptor`](crate::types::PartitionIndexDescriptor).
     pub fn build(self) -> crate::types::PartitionIndexDescriptor {

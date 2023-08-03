@@ -39,6 +39,10 @@ impl DescribeTrackerInputBuilder {
         self.tracker_name = input;
         self
     }
+    /// <p>The name of the tracker resource.</p>
+    pub fn get_tracker_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tracker_name
+    }
     /// Consumes the builder and constructs a [`DescribeTrackerInput`](crate::operation::describe_tracker::DescribeTrackerInput).
     pub fn build(
         self,

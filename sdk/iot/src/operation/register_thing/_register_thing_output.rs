@@ -68,6 +68,10 @@ impl RegisterThingOutputBuilder {
         self.certificate_pem = input;
         self
     }
+    /// <p>The certificate data, in PEM format.</p>
+    pub fn get_certificate_pem(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_pem
+    }
     /// Adds a key-value pair to `resource_arns`.
     ///
     /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
@@ -92,6 +96,14 @@ impl RegisterThingOutputBuilder {
     ) -> Self {
         self.resource_arns = input;
         self
+    }
+    /// <p>ARNs for the generated resources.</p>
+    pub fn get_resource_arns(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.resource_arns
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

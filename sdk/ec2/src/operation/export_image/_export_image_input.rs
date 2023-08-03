@@ -98,6 +98,10 @@ impl ExportImageInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>Token to enable idempotency for export image requests.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>A description of the image being exported. The maximum length is 255 characters.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -107,6 +111,10 @@ impl ExportImageInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the image being exported. The maximum length is 255 characters.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The disk image format.</p>
     pub fn disk_image_format(mut self, input: crate::types::DiskImageFormat) -> Self {
@@ -121,6 +129,10 @@ impl ExportImageInputBuilder {
         self.disk_image_format = input;
         self
     }
+    /// <p>The disk image format.</p>
+    pub fn get_disk_image_format(&self) -> &::std::option::Option<crate::types::DiskImageFormat> {
+        &self.disk_image_format
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -131,6 +143,10 @@ impl ExportImageInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The ID of the image.</p>
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
@@ -140,6 +156,10 @@ impl ExportImageInputBuilder {
     pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_id = input;
         self
+    }
+    /// <p>The ID of the image.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_id
     }
     /// <p>The Amazon S3 bucket for the destination image. The destination bucket must exist.</p>
     pub fn s3_export_location(mut self, input: crate::types::ExportTaskS3LocationRequest) -> Self {
@@ -154,6 +174,12 @@ impl ExportImageInputBuilder {
         self.s3_export_location = input;
         self
     }
+    /// <p>The Amazon S3 bucket for the destination image. The destination bucket must exist.</p>
+    pub fn get_s3_export_location(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExportTaskS3LocationRequest> {
+        &self.s3_export_location
+    }
     /// <p>The name of the role that grants VM Import/Export permission to export images to your Amazon S3 bucket. If this parameter is not specified, the default role is named 'vmimport'.</p>
     pub fn role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_name = ::std::option::Option::Some(input.into());
@@ -163,6 +189,10 @@ impl ExportImageInputBuilder {
     pub fn set_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_name = input;
         self
+    }
+    /// <p>The name of the role that grants VM Import/Export permission to export images to your Amazon S3 bucket. If this parameter is not specified, the default role is named 'vmimport'.</p>
+    pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_name
     }
     /// Appends an item to `tag_specifications`.
     ///
@@ -182,6 +212,12 @@ impl ExportImageInputBuilder {
     ) -> Self {
         self.tag_specifications = input;
         self
+    }
+    /// <p>The tags to apply to the export image task during creation.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
     }
     /// Consumes the builder and constructs a [`ExportImageInput`](crate::operation::export_image::ExportImageInput).
     pub fn build(

@@ -73,6 +73,12 @@ impl DescribeCertificateAuthorityAuditReportOutputBuilder {
         self.audit_report_status = input;
         self
     }
+    /// <p>Specifies whether report creation is in progress, has succeeded, or has failed.</p>
+    pub fn get_audit_report_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuditReportStatus> {
+        &self.audit_report_status
+    }
     /// <p>Name of the S3 bucket that contains the report.</p>
     pub fn s3_bucket_name(
         mut self,
@@ -89,6 +95,10 @@ impl DescribeCertificateAuthorityAuditReportOutputBuilder {
         self.s3_bucket_name = input;
         self
     }
+    /// <p>Name of the S3 bucket that contains the report.</p>
+    pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_name
+    }
     /// <p>S3 <b>key</b> that uniquely identifies the report file in your S3 bucket.</p>
     pub fn s3_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_key = ::std::option::Option::Some(input.into());
@@ -98,6 +108,10 @@ impl DescribeCertificateAuthorityAuditReportOutputBuilder {
     pub fn set_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_key = input;
         self
+    }
+    /// <p>S3 <b>key</b> that uniquely identifies the report file in your S3 bucket.</p>
+    pub fn get_s3_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_key
     }
     /// <p>The date and time at which the report was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -111,6 +125,10 @@ impl DescribeCertificateAuthorityAuditReportOutputBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The date and time at which the report was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

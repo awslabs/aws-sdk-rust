@@ -36,6 +36,12 @@ impl StartImageBuilderFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartImageBuilder as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_image_builder::builders::StartImageBuilderInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl StartImageBuilderFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the image builder.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
     pub fn appstream_agent_version(
         mut self,
@@ -141,5 +151,9 @@ impl StartImageBuilderFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_appstream_agent_version(input);
         self
+    }
+    /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
+    pub fn get_appstream_agent_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_appstream_agent_version()
     }
 }

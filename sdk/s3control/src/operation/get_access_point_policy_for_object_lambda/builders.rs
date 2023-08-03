@@ -41,6 +41,10 @@ impl GetAccessPointPolicyForObjectLambdaFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetAccessPointPolicyForObjectLambda as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_access_point_policy_for_object_lambda::builders::GetAccessPointPolicyForObjectLambdaInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -105,6 +109,10 @@ impl GetAccessPointPolicyForObjectLambdaFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p>The name of the Object Lambda Access Point.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -114,5 +122,9 @@ impl GetAccessPointPolicyForObjectLambdaFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the Object Lambda Access Point.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
 }

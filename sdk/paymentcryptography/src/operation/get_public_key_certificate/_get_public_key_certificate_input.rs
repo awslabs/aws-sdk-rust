@@ -47,6 +47,10 @@ impl GetPublicKeyCertificateInputBuilder {
         self.key_identifier = input;
         self
     }
+    /// <p>The <code>KeyARN</code> of the asymmetric key pair.</p>
+    pub fn get_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_identifier
+    }
     /// Consumes the builder and constructs a [`GetPublicKeyCertificateInput`](crate::operation::get_public_key_certificate::GetPublicKeyCertificateInput).
     pub fn build(
         self,

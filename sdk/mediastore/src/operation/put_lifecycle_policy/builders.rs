@@ -37,6 +37,12 @@ impl PutLifecyclePolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutLifecyclePolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_lifecycle_policy::builders::PutLifecyclePolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl PutLifecyclePolicyFluentBuilder {
         self.inner = self.inner.set_container_name(input);
         self
     }
+    /// <p>The name of the container that you want to assign the object lifecycle policy to.</p>
+    pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_container_name()
+    }
     /// <p>The object lifecycle policy to apply to the container.</p>
     pub fn lifecycle_policy(
         mut self,
@@ -148,5 +158,9 @@ impl PutLifecyclePolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_lifecycle_policy(input);
         self
+    }
+    /// <p>The object lifecycle policy to apply to the container.</p>
+    pub fn get_lifecycle_policy(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_lifecycle_policy()
     }
 }

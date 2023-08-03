@@ -63,6 +63,10 @@ impl TopicNumericRangeFilterBuilder {
         self.inclusive = input;
         self
     }
+    /// <p>A Boolean value that indicates whether the endpoints of the numeric range are included in the filter. If set to true, topics whose numeric field value is equal to the endpoint values will be included in the filter. If set to false, topics whose numeric field value is equal to the endpoint values will be excluded from the filter.</p>
+    pub fn get_inclusive(&self) -> &::std::option::Option<bool> {
+        &self.inclusive
+    }
     /// <p>The constant used in a numeric range filter.</p>
     pub fn constant(mut self, input: crate::types::TopicRangeFilterConstant) -> Self {
         self.constant = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl TopicNumericRangeFilterBuilder {
         self.constant = input;
         self
     }
+    /// <p>The constant used in a numeric range filter.</p>
+    pub fn get_constant(&self) -> &::std::option::Option<crate::types::TopicRangeFilterConstant> {
+        &self.constant
+    }
     /// <p>An aggregation function that specifies how to calculate the value of a numeric field for a topic, Valid values for this structure are <code>NO_AGGREGATION</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MAX</code>, <code>MEDIAN</code>, <code>MIN</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, and <code>VARP</code>.</p>
     pub fn aggregation(mut self, input: crate::types::NamedFilterAggType) -> Self {
         self.aggregation = ::std::option::Option::Some(input);
@@ -88,6 +96,10 @@ impl TopicNumericRangeFilterBuilder {
     ) -> Self {
         self.aggregation = input;
         self
+    }
+    /// <p>An aggregation function that specifies how to calculate the value of a numeric field for a topic, Valid values for this structure are <code>NO_AGGREGATION</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MAX</code>, <code>MEDIAN</code>, <code>MIN</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, and <code>VARP</code>.</p>
+    pub fn get_aggregation(&self) -> &::std::option::Option<crate::types::NamedFilterAggType> {
+        &self.aggregation
     }
     /// Consumes the builder and constructs a [`TopicNumericRangeFilter`](crate::types::TopicNumericRangeFilter).
     pub fn build(self) -> crate::types::TopicNumericRangeFilter {

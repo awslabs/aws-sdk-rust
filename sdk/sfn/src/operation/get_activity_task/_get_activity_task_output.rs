@@ -62,6 +62,10 @@ impl GetActivityTaskOutputBuilder {
         self.task_token = input;
         self
     }
+    /// <p>A token that identifies the scheduled task. This token must be copied and included in subsequent calls to <code>SendTaskHeartbeat</code>, <code>SendTaskSuccess</code> or <code>SendTaskFailure</code> in order to report the progress or completion of the task.</p>
+    pub fn get_task_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_token
+    }
     /// <p>The string that contains the JSON input data for the task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn input(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl GetActivityTaskOutputBuilder {
     pub fn set_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input = input;
         self
+    }
+    /// <p>The string that contains the JSON input data for the task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    pub fn get_input(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

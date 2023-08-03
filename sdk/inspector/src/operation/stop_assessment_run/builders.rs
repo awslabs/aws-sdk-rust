@@ -36,6 +36,12 @@ impl StopAssessmentRunFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopAssessmentRun as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::stop_assessment_run::builders::StopAssessmentRunInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl StopAssessmentRunFluentBuilder {
         self.inner = self.inner.set_assessment_run_arn(input);
         self
     }
+    /// <p>The ARN of the assessment run that you want to stop.</p>
+    pub fn get_assessment_run_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assessment_run_arn()
+    }
     /// <p>An input option that can be set to either START_EVALUATION or SKIP_EVALUATION. START_EVALUATION (the default value), stops the AWS agent from collecting data and begins the results evaluation and the findings generation process. SKIP_EVALUATION cancels the assessment run immediately, after which no findings are generated.</p>
     pub fn stop_action(mut self, input: crate::types::StopAction) -> Self {
         self.inner = self.inner.stop_action(input);
@@ -144,5 +154,9 @@ impl StopAssessmentRunFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_stop_action(input);
         self
+    }
+    /// <p>An input option that can be set to either START_EVALUATION or SKIP_EVALUATION. START_EVALUATION (the default value), stops the AWS agent from collecting data and begins the results evaluation and the findings generation process. SKIP_EVALUATION cancels the assessment run immediately, after which no findings are generated.</p>
+    pub fn get_stop_action(&self) -> &::std::option::Option<crate::types::StopAction> {
+        self.inner.get_stop_action()
     }
 }

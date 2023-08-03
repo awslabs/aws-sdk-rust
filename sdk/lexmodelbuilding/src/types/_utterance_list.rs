@@ -48,6 +48,10 @@ impl UtteranceListBuilder {
         self.bot_version = input;
         self
     }
+    /// <p>The version of the bot that processed the list.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_version
+    }
     /// Appends an item to `utterances`.
     ///
     /// To override the contents of this collection use [`set_utterances`](Self::set_utterances).
@@ -66,6 +70,12 @@ impl UtteranceListBuilder {
     ) -> Self {
         self.utterances = input;
         self
+    }
+    /// <p>One or more <code>UtteranceData</code> objects that contain information about the utterances that have been made to a bot. The maximum number of object is 100.</p>
+    pub fn get_utterances(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UtteranceData>> {
+        &self.utterances
     }
     /// Consumes the builder and constructs a [`UtteranceList`](crate::types::UtteranceList).
     pub fn build(self) -> crate::types::UtteranceList {

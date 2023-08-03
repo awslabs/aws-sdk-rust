@@ -51,6 +51,12 @@ impl IcebergInputBuilder {
         self.metadata_operation = input;
         self
     }
+    /// <p>A required metadata operation. Can only be set to <code>CREATE</code>.</p>
+    pub fn get_metadata_operation(
+        &self,
+    ) -> &::std::option::Option<crate::types::MetadataOperation> {
+        &self.metadata_operation
+    }
     /// <p>The table version for the Iceberg table. Defaults to 2.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -60,6 +66,10 @@ impl IcebergInputBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The table version for the Iceberg table. Defaults to 2.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`IcebergInput`](crate::types::IcebergInput).
     pub fn build(self) -> crate::types::IcebergInput {

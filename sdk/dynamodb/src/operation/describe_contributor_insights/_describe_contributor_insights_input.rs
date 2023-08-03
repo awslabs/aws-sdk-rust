@@ -47,6 +47,10 @@ impl DescribeContributorInsightsInputBuilder {
         self.table_name = input;
         self
     }
+    /// <p>The name of the table to describe.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
+    }
     /// <p>The name of the global secondary index to describe, if applicable.</p>
     pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_name = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DescribeContributorInsightsInputBuilder {
     pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.index_name = input;
         self
+    }
+    /// <p>The name of the global secondary index to describe, if applicable.</p>
+    pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_name
     }
     /// Consumes the builder and constructs a [`DescribeContributorInsightsInput`](crate::operation::describe_contributor_insights::DescribeContributorInsightsInput).
     pub fn build(

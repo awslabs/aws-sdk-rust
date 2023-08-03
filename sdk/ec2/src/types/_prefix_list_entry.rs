@@ -48,6 +48,10 @@ impl PrefixListEntryBuilder {
         self.cidr = input;
         self
     }
+    /// <p>The CIDR block.</p>
+    pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr
+    }
     /// <p>The description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl PrefixListEntryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`PrefixListEntry`](crate::types::PrefixListEntry).
     pub fn build(self) -> crate::types::PrefixListEntry {

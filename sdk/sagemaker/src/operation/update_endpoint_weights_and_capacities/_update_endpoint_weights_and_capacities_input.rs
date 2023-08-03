@@ -57,6 +57,10 @@ impl UpdateEndpointWeightsAndCapacitiesInputBuilder {
         self.endpoint_name = input;
         self
     }
+    /// <p>The name of an existing SageMaker endpoint.</p>
+    pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_name
+    }
     /// Appends an item to `desired_weights_and_capacities`.
     ///
     /// To override the contents of this collection use [`set_desired_weights_and_capacities`](Self::set_desired_weights_and_capacities).
@@ -78,6 +82,12 @@ impl UpdateEndpointWeightsAndCapacitiesInputBuilder {
     ) -> Self {
         self.desired_weights_and_capacities = input;
         self
+    }
+    /// <p>An object that provides new capacity and weight values for a variant.</p>
+    pub fn get_desired_weights_and_capacities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DesiredWeightAndCapacity>> {
+        &self.desired_weights_and_capacities
     }
     /// Consumes the builder and constructs a [`UpdateEndpointWeightsAndCapacitiesInput`](crate::operation::update_endpoint_weights_and_capacities::UpdateEndpointWeightsAndCapacitiesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_endpoint_weights_and_capacities::UpdateEndpointWeightsAndCapacitiesInput, ::aws_smithy_http::operation::error::BuildError>{

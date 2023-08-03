@@ -54,6 +54,11 @@ impl ModifyDbSubnetGroupOutputBuilder {
         self.db_subnet_group = input;
         self
     }
+    /// <p>Contains the details of an Amazon RDS DB subnet group.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.</p>
+    pub fn get_db_subnet_group(&self) -> &::std::option::Option<crate::types::DbSubnetGroup> {
+        &self.db_subnet_group
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

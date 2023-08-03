@@ -58,6 +58,12 @@ impl SendBulkTemplatedEmailOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code> action.</p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BulkEmailDestinationStatus>> {
+        &self.status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

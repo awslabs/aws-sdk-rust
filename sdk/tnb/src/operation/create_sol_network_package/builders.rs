@@ -40,6 +40,13 @@ impl CreateSolNetworkPackageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSolNetworkPackage as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_sol_network_package::builders::CreateSolNetworkPackageInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -142,5 +149,13 @@ impl CreateSolNetworkPackageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

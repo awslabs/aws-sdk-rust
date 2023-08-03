@@ -50,6 +50,10 @@ impl DeleteEventStreamOutputBuilder {
         self.event_stream = input;
         self
     }
+    /// <p>Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.</p>
+    pub fn get_event_stream(&self) -> &::std::option::Option<crate::types::EventStream> {
+        &self.event_stream
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

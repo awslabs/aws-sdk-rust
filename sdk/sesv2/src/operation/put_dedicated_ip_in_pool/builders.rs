@@ -39,6 +39,13 @@ impl PutDedicatedIpInPoolFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutDedicatedIpInPool as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_dedicated_ip_in_pool::builders::PutDedicatedIpInPoolInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +136,10 @@ impl PutDedicatedIpInPoolFluentBuilder {
         self.inner = self.inner.set_ip(input);
         self
     }
+    /// <p>The IP address that you want to move to the dedicated IP pool. The value you specify has to be a dedicated IP address that's associated with your Amazon Web Services account.</p>
+    pub fn get_ip(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ip()
+    }
     /// <p>The name of the IP pool that you want to add the dedicated IP address to. You have to specify an IP pool that already exists.</p>
     pub fn destination_pool_name(
         mut self,
@@ -144,5 +155,9 @@ impl PutDedicatedIpInPoolFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destination_pool_name(input);
         self
+    }
+    /// <p>The name of the IP pool that you want to add the dedicated IP address to. You have to specify an IP pool that already exists.</p>
+    pub fn get_destination_pool_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_pool_name()
     }
 }

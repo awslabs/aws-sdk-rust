@@ -56,6 +56,10 @@ impl InventoryFilterBuilder {
         self.name = input;
         self
     }
+    /// <p>Name of the filter.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Condition of the filter.</p>
     pub fn condition(mut self, input: crate::types::InventoryFilterCondition) -> Self {
         self.condition = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl InventoryFilterBuilder {
         self.condition = input;
         self
     }
+    /// <p>Condition of the filter.</p>
+    pub fn get_condition(&self) -> &::std::option::Option<crate::types::InventoryFilterCondition> {
+        &self.condition
+    }
     /// <p>Value of the filter.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -78,6 +86,10 @@ impl InventoryFilterBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>Value of the filter.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`InventoryFilter`](crate::types::InventoryFilter).
     pub fn build(self) -> crate::types::InventoryFilter {

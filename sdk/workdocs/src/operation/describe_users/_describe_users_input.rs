@@ -143,6 +143,10 @@ impl DescribeUsersInputBuilder {
         self.authentication_token = input;
         self
     }
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication_token
+    }
     /// <p>The ID of the organization.</p>
     pub fn organization_id(
         mut self,
@@ -159,6 +163,10 @@ impl DescribeUsersInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The ID of the organization.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>The IDs of the users.</p>
     pub fn user_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_ids = ::std::option::Option::Some(input.into());
@@ -168,6 +176,10 @@ impl DescribeUsersInputBuilder {
     pub fn set_user_ids(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_ids = input;
         self
+    }
+    /// <p>The IDs of the users.</p>
+    pub fn get_user_ids(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_ids
     }
     /// <p>A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p>
     /// <ul>
@@ -191,6 +203,16 @@ impl DescribeUsersInputBuilder {
         self.query = input;
         self
     }
+    /// <p>A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p>
+    /// <ul>
+    /// <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li>
+    /// <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li>
+    /// <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li>
+    /// <li> <p>The <code>Query</code> parameter runs a "prefix" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href="https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li>
+    /// </ul>
+    pub fn get_query(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query
+    }
     /// <p>The state of the users. Specify "ALL" to include inactive users.</p>
     pub fn include(mut self, input: crate::types::UserFilterType) -> Self {
         self.include = ::std::option::Option::Some(input);
@@ -204,6 +226,10 @@ impl DescribeUsersInputBuilder {
         self.include = input;
         self
     }
+    /// <p>The state of the users. Specify "ALL" to include inactive users.</p>
+    pub fn get_include(&self) -> &::std::option::Option<crate::types::UserFilterType> {
+        &self.include
+    }
     /// <p>The order for the results.</p>
     pub fn order(mut self, input: crate::types::OrderType) -> Self {
         self.order = ::std::option::Option::Some(input);
@@ -213,6 +239,10 @@ impl DescribeUsersInputBuilder {
     pub fn set_order(mut self, input: ::std::option::Option<crate::types::OrderType>) -> Self {
         self.order = input;
         self
+    }
+    /// <p>The order for the results.</p>
+    pub fn get_order(&self) -> &::std::option::Option<crate::types::OrderType> {
+        &self.order
     }
     /// <p>The sorting criteria.</p>
     pub fn sort(mut self, input: crate::types::UserSortType) -> Self {
@@ -224,6 +254,10 @@ impl DescribeUsersInputBuilder {
         self.sort = input;
         self
     }
+    /// <p>The sorting criteria.</p>
+    pub fn get_sort(&self) -> &::std::option::Option<crate::types::UserSortType> {
+        &self.sort
+    }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -233,6 +267,10 @@ impl DescribeUsersInputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// <p>The maximum number of items to return.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -244,6 +282,10 @@ impl DescribeUsersInputBuilder {
         self.limit = input;
         self
     }
+    /// <p>The maximum number of items to return.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
+    }
     /// <p>A comma-separated list of values. Specify "STORAGE_METADATA" to include the user storage quota and utilization information.</p>
     pub fn fields(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fields = ::std::option::Option::Some(input.into());
@@ -253,6 +295,10 @@ impl DescribeUsersInputBuilder {
     pub fn set_fields(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fields = input;
         self
+    }
+    /// <p>A comma-separated list of values. Specify "STORAGE_METADATA" to include the user storage quota and utilization information.</p>
+    pub fn get_fields(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fields
     }
     /// Consumes the builder and constructs a [`DescribeUsersInput`](crate::operation::describe_users::DescribeUsersInput).
     pub fn build(

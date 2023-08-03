@@ -73,6 +73,12 @@ impl AthenaIntegrationBuilder {
         self.integration_result_s3_destination_arn = input;
         self
     }
+    /// <p>The location in Amazon S3 to store the generated CloudFormation template.</p>
+    pub fn get_integration_result_s3_destination_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.integration_result_s3_destination_arn
+    }
     /// <p>The schedule for adding new partitions to the table.</p>
     pub fn partition_load_frequency(mut self, input: crate::types::PartitionLoadFrequency) -> Self {
         self.partition_load_frequency = ::std::option::Option::Some(input);
@@ -85,6 +91,12 @@ impl AthenaIntegrationBuilder {
     ) -> Self {
         self.partition_load_frequency = input;
         self
+    }
+    /// <p>The schedule for adding new partitions to the table.</p>
+    pub fn get_partition_load_frequency(
+        &self,
+    ) -> &::std::option::Option<crate::types::PartitionLoadFrequency> {
+        &self.partition_load_frequency
     }
     /// <p>The start date for the partition.</p>
     pub fn partition_start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -99,6 +111,10 @@ impl AthenaIntegrationBuilder {
         self.partition_start_date = input;
         self
     }
+    /// <p>The start date for the partition.</p>
+    pub fn get_partition_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.partition_start_date
+    }
     /// <p>The end date for the partition.</p>
     pub fn partition_end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.partition_end_date = ::std::option::Option::Some(input);
@@ -111,6 +127,10 @@ impl AthenaIntegrationBuilder {
     ) -> Self {
         self.partition_end_date = input;
         self
+    }
+    /// <p>The end date for the partition.</p>
+    pub fn get_partition_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.partition_end_date
     }
     /// Consumes the builder and constructs a [`AthenaIntegration`](crate::types::AthenaIntegration).
     pub fn build(self) -> crate::types::AthenaIntegration {

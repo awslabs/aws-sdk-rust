@@ -48,6 +48,10 @@ impl SourceFilesBuilder {
         self.source1 = input;
         self
     }
+    /// <p>The location of the first file in Amazon S3.</p>
+    pub fn get_source1(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source1
+    }
     /// <p>The location of the second file in Amazon S3.</p>
     pub fn source2(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source2 = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl SourceFilesBuilder {
     pub fn set_source2(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source2 = input;
         self
+    }
+    /// <p>The location of the second file in Amazon S3.</p>
+    pub fn get_source2(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source2
     }
     /// Consumes the builder and constructs a [`SourceFiles`](crate::types::SourceFiles).
     pub fn build(self) -> crate::types::SourceFiles {

@@ -42,6 +42,12 @@ impl CreateVirtualNodeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateVirtualNode as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_virtual_node::builders::CreateVirtualNodeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +144,10 @@ impl CreateVirtualNodeFluentBuilder {
         self.inner = self.inner.set_virtual_node_name(input);
         self
     }
+    /// <p>The name to use for the virtual node.</p>
+    pub fn get_virtual_node_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_virtual_node_name()
+    }
     /// <p>The name of the service mesh to create the virtual node in.</p>
     pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.mesh_name(input.into());
@@ -148,6 +158,10 @@ impl CreateVirtualNodeFluentBuilder {
         self.inner = self.inner.set_mesh_name(input);
         self
     }
+    /// <p>The name of the service mesh to create the virtual node in.</p>
+    pub fn get_mesh_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_mesh_name()
+    }
     /// <p>The virtual node specification to apply.</p>
     pub fn spec(mut self, input: crate::types::VirtualNodeSpec) -> Self {
         self.inner = self.inner.spec(input);
@@ -157,6 +171,10 @@ impl CreateVirtualNodeFluentBuilder {
     pub fn set_spec(mut self, input: ::std::option::Option<crate::types::VirtualNodeSpec>) -> Self {
         self.inner = self.inner.set_spec(input);
         self
+    }
+    /// <p>The virtual node specification to apply.</p>
+    pub fn get_spec(&self) -> &::std::option::Option<crate::types::VirtualNodeSpec> {
+        self.inner.get_spec()
     }
     /// Appends an item to `tags`.
     ///
@@ -175,6 +193,10 @@ impl CreateVirtualNodeFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Optional metadata that you can apply to the virtual node to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagRef>> {
+        self.inner.get_tags()
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -185,6 +207,10 @@ impl CreateVirtualNodeFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.mesh_owner(input.into());
@@ -194,5 +220,9 @@ impl CreateVirtualNodeFluentBuilder {
     pub fn set_mesh_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_mesh_owner(input);
         self
+    }
+    /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn get_mesh_owner(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_mesh_owner()
     }
 }

@@ -54,6 +54,10 @@ impl ContainerLogRotationConfigurationBuilder {
         self.rotation_size = input;
         self
     }
+    /// <p>The file size at which to rotate logs. Minimum of 2KB, Maximum of 2GB.</p>
+    pub fn get_rotation_size(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rotation_size
+    }
     /// <p>The number of files to keep in container after rotation.</p>
     pub fn max_files_to_keep(mut self, input: i32) -> Self {
         self.max_files_to_keep = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl ContainerLogRotationConfigurationBuilder {
     pub fn set_max_files_to_keep(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_files_to_keep = input;
         self
+    }
+    /// <p>The number of files to keep in container after rotation.</p>
+    pub fn get_max_files_to_keep(&self) -> &::std::option::Option<i32> {
+        &self.max_files_to_keep
     }
     /// Consumes the builder and constructs a [`ContainerLogRotationConfiguration`](crate::types::ContainerLogRotationConfiguration).
     pub fn build(self) -> crate::types::ContainerLogRotationConfiguration {

@@ -66,6 +66,10 @@ impl RegionalConfigurationBuilder {
         self.replication_group_id = input;
         self
     }
+    /// <p>The name of the secondary cluster</p>
+    pub fn get_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_group_id
+    }
     /// <p>The Amazon region where the cluster is stored</p>
     pub fn replication_group_region(
         mut self,
@@ -81,6 +85,10 @@ impl RegionalConfigurationBuilder {
     ) -> Self {
         self.replication_group_region = input;
         self
+    }
+    /// <p>The Amazon region where the cluster is stored</p>
+    pub fn get_replication_group_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_group_region
     }
     /// Appends an item to `resharding_configuration`.
     ///
@@ -103,6 +111,12 @@ impl RegionalConfigurationBuilder {
     ) -> Self {
         self.resharding_configuration = input;
         self
+    }
+    /// <p>A list of <code>PreferredAvailabilityZones</code> objects that specifies the configuration of a node group in the resharded cluster. </p>
+    pub fn get_resharding_configuration(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReshardingConfiguration>> {
+        &self.resharding_configuration
     }
     /// Consumes the builder and constructs a [`RegionalConfiguration`](crate::types::RegionalConfiguration).
     pub fn build(self) -> crate::types::RegionalConfiguration {

@@ -55,6 +55,10 @@ impl AssociateTrialComponentInputBuilder {
         self.trial_component_name = input;
         self
     }
+    /// <p>The name of the component to associated with the trial.</p>
+    pub fn get_trial_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trial_component_name
+    }
     /// <p>The name of the trial to associate with.</p>
     pub fn trial_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trial_name = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl AssociateTrialComponentInputBuilder {
     pub fn set_trial_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trial_name = input;
         self
+    }
+    /// <p>The name of the trial to associate with.</p>
+    pub fn get_trial_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trial_name
     }
     /// Consumes the builder and constructs a [`AssociateTrialComponentInput`](crate::operation::associate_trial_component::AssociateTrialComponentInput).
     pub fn build(

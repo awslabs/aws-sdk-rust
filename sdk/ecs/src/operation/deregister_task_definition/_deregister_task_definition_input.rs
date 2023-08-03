@@ -47,6 +47,10 @@ impl DeregisterTaskDefinitionInputBuilder {
         self.task_definition = input;
         self
     }
+    /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition to deregister. You must specify a <code>revision</code>.</p>
+    pub fn get_task_definition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_definition
+    }
     /// Consumes the builder and constructs a [`DeregisterTaskDefinitionInput`](crate::operation::deregister_task_definition::DeregisterTaskDefinitionInput).
     pub fn build(
         self,

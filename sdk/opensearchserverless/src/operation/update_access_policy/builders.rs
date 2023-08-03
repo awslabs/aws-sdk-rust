@@ -36,6 +36,12 @@ impl UpdateAccessPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAccessPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_access_policy::builders::UpdateAccessPolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl UpdateAccessPolicyFluentBuilder {
         self.inner = self.inner.set_type(input);
         self
     }
+    /// <p>The type of policy.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::AccessPolicyType> {
+        self.inner.get_type()
+    }
     /// <p>The name of the policy.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -138,6 +148,10 @@ impl UpdateAccessPolicyFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the policy.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The version of the policy being updated.</p>
     pub fn policy_version(
@@ -155,6 +169,10 @@ impl UpdateAccessPolicyFluentBuilder {
         self.inner = self.inner.set_policy_version(input);
         self
     }
+    /// <p>The version of the policy being updated.</p>
+    pub fn get_policy_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_version()
+    }
     /// <p>A description of the policy. Typically used to store information about the permissions defined in the policy.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -164,6 +182,10 @@ impl UpdateAccessPolicyFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the policy. Typically used to store information about the permissions defined in the policy.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The JSON policy document to use as the content for the policy.</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -175,6 +197,10 @@ impl UpdateAccessPolicyFluentBuilder {
         self.inner = self.inner.set_policy(input);
         self
     }
+    /// <p>The JSON policy document to use as the content for the policy.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy()
+    }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -184,5 +210,9 @@ impl UpdateAccessPolicyFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

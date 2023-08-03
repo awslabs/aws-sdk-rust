@@ -109,6 +109,10 @@ impl UpdateContentInputBuilder {
         self.knowledge_base_id = input;
         self
     }
+    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN</p>
+    pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.knowledge_base_id
+    }
     /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn content_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_id = ::std::option::Option::Some(input.into());
@@ -118,6 +122,10 @@ impl UpdateContentInputBuilder {
     pub fn set_content_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_id = input;
         self
+    }
+    /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn get_content_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_id
     }
     /// <p>The <code>revisionId</code> of the content resource to update, taken from an earlier call to <code>GetContent</code>, <code>GetContentSummary</code>, <code>SearchContent</code>, or <code>ListContents</code>. If included, this argument acts as an optimistic lock to ensure content was not modified since it was last read. If it has been modified, this API throws a <code>PreconditionFailedException</code>.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -129,6 +137,10 @@ impl UpdateContentInputBuilder {
         self.revision_id = input;
         self
     }
+    /// <p>The <code>revisionId</code> of the content resource to update, taken from an earlier call to <code>GetContent</code>, <code>GetContentSummary</code>, <code>SearchContent</code>, or <code>ListContents</code>. If included, this argument acts as an optimistic lock to ensure content was not modified since it was last read. If it has been modified, this API throws a <code>PreconditionFailedException</code>.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_id
+    }
     /// <p>The title of the content.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
@@ -138,6 +150,10 @@ impl UpdateContentInputBuilder {
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
+    }
+    /// <p>The title of the content.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
     }
     /// <p>The URI for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content. To remove an existing <code>overrideLinkOurUri</code>, exclude this argument and set <code>removeOverrideLinkOutUri</code> to true.</p>
     pub fn override_link_out_uri(
@@ -155,6 +171,10 @@ impl UpdateContentInputBuilder {
         self.override_link_out_uri = input;
         self
     }
+    /// <p>The URI for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content. To remove an existing <code>overrideLinkOurUri</code>, exclude this argument and set <code>removeOverrideLinkOutUri</code> to true.</p>
+    pub fn get_override_link_out_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.override_link_out_uri
+    }
     /// <p>Unset the existing <code>overrideLinkOutUri</code> if it exists.</p>
     pub fn remove_override_link_out_uri(mut self, input: bool) -> Self {
         self.remove_override_link_out_uri = ::std::option::Option::Some(input);
@@ -164,6 +184,10 @@ impl UpdateContentInputBuilder {
     pub fn set_remove_override_link_out_uri(mut self, input: ::std::option::Option<bool>) -> Self {
         self.remove_override_link_out_uri = input;
         self
+    }
+    /// <p>Unset the existing <code>overrideLinkOutUri</code> if it exists.</p>
+    pub fn get_remove_override_link_out_uri(&self) -> &::std::option::Option<bool> {
+        &self.remove_override_link_out_uri
     }
     /// Adds a key-value pair to `metadata`.
     ///
@@ -190,6 +214,14 @@ impl UpdateContentInputBuilder {
         self.metadata = input;
         self
     }
+    /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
+    pub fn get_metadata(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.metadata
+    }
     /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>. </p>
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upload_id = ::std::option::Option::Some(input.into());
@@ -199,6 +231,10 @@ impl UpdateContentInputBuilder {
     pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.upload_id = input;
         self
+    }
+    /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>. </p>
+    pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.upload_id
     }
     /// Consumes the builder and constructs a [`UpdateContentInput`](crate::operation::update_content::UpdateContentInput).
     pub fn build(

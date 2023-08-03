@@ -61,6 +61,12 @@ impl TableFieldOptionsBuilder {
         self.selected_field_options = input;
         self
     }
+    /// <p>The selected field options for the table field options.</p>
+    pub fn get_selected_field_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TableFieldOption>> {
+        &self.selected_field_options
+    }
     /// Appends an item to `order`.
     ///
     /// To override the contents of this collection use [`set_order`](Self::set_order).
@@ -79,6 +85,10 @@ impl TableFieldOptionsBuilder {
     ) -> Self {
         self.order = input;
         self
+    }
+    /// <p>The order of field IDs of the field options for a table visual.</p>
+    pub fn get_order(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.order
     }
     /// Consumes the builder and constructs a [`TableFieldOptions`](crate::types::TableFieldOptions).
     pub fn build(self) -> crate::types::TableFieldOptions {

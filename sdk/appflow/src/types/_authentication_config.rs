@@ -81,6 +81,10 @@ impl AuthenticationConfigBuilder {
         self.is_basic_auth_supported = input;
         self
     }
+    /// <p>Indicates whether basic authentication is supported by the connector.</p>
+    pub fn get_is_basic_auth_supported(&self) -> &::std::option::Option<bool> {
+        &self.is_basic_auth_supported
+    }
     /// <p>Indicates whether API key authentication is supported by the connector</p>
     pub fn is_api_key_auth_supported(mut self, input: bool) -> Self {
         self.is_api_key_auth_supported = ::std::option::Option::Some(input);
@@ -90,6 +94,10 @@ impl AuthenticationConfigBuilder {
     pub fn set_is_api_key_auth_supported(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_api_key_auth_supported = input;
         self
+    }
+    /// <p>Indicates whether API key authentication is supported by the connector</p>
+    pub fn get_is_api_key_auth_supported(&self) -> &::std::option::Option<bool> {
+        &self.is_api_key_auth_supported
     }
     /// <p>Indicates whether OAuth 2.0 authentication is supported by the connector.</p>
     pub fn is_o_auth2_supported(mut self, input: bool) -> Self {
@@ -101,6 +109,10 @@ impl AuthenticationConfigBuilder {
         self.is_o_auth2_supported = input;
         self
     }
+    /// <p>Indicates whether OAuth 2.0 authentication is supported by the connector.</p>
+    pub fn get_is_o_auth2_supported(&self) -> &::std::option::Option<bool> {
+        &self.is_o_auth2_supported
+    }
     /// <p>Indicates whether custom authentication is supported by the connector</p>
     pub fn is_custom_auth_supported(mut self, input: bool) -> Self {
         self.is_custom_auth_supported = ::std::option::Option::Some(input);
@@ -110,6 +122,10 @@ impl AuthenticationConfigBuilder {
     pub fn set_is_custom_auth_supported(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_custom_auth_supported = input;
         self
+    }
+    /// <p>Indicates whether custom authentication is supported by the connector</p>
+    pub fn get_is_custom_auth_supported(&self) -> &::std::option::Option<bool> {
+        &self.is_custom_auth_supported
     }
     /// <p>Contains the default values required for OAuth 2.0 authentication.</p>
     pub fn o_auth2_defaults(mut self, input: crate::types::OAuth2Defaults) -> Self {
@@ -123,6 +139,10 @@ impl AuthenticationConfigBuilder {
     ) -> Self {
         self.o_auth2_defaults = input;
         self
+    }
+    /// <p>Contains the default values required for OAuth 2.0 authentication.</p>
+    pub fn get_o_auth2_defaults(&self) -> &::std::option::Option<crate::types::OAuth2Defaults> {
+        &self.o_auth2_defaults
     }
     /// Appends an item to `custom_auth_configs`.
     ///
@@ -142,6 +162,12 @@ impl AuthenticationConfigBuilder {
     ) -> Self {
         self.custom_auth_configs = input;
         self
+    }
+    /// <p>Contains information required for custom authentication.</p>
+    pub fn get_custom_auth_configs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomAuthConfig>> {
+        &self.custom_auth_configs
     }
     /// Consumes the builder and constructs a [`AuthenticationConfig`](crate::types::AuthenticationConfig).
     pub fn build(self) -> crate::types::AuthenticationConfig {

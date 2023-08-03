@@ -48,6 +48,10 @@ impl EdiPartyNameBuilder {
         self.party_name = input;
         self
     }
+    /// <p>Specifies the party name.</p>
+    pub fn get_party_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.party_name
+    }
     /// <p>Specifies the name assigner.</p>
     pub fn name_assigner(
         mut self,
@@ -63,6 +67,10 @@ impl EdiPartyNameBuilder {
     ) -> Self {
         self.name_assigner = input;
         self
+    }
+    /// <p>Specifies the name assigner.</p>
+    pub fn get_name_assigner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name_assigner
     }
     /// Consumes the builder and constructs a [`EdiPartyName`](crate::types::EdiPartyName).
     pub fn build(self) -> crate::types::EdiPartyName {

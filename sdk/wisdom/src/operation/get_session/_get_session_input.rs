@@ -47,6 +47,10 @@ impl GetSessionInputBuilder {
         self.assistant_id = input;
         self
     }
+    /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn get_assistant_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assistant_id
+    }
     /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl GetSessionInputBuilder {
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_id = input;
         self
+    }
+    /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
     }
     /// Consumes the builder and constructs a [`GetSessionInput`](crate::operation::get_session::GetSessionInput).
     pub fn build(

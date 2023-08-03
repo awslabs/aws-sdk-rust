@@ -36,6 +36,10 @@ impl GetSubscriptionAttributesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetSubscriptionAttributes as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_subscription_attributes::builders::GetSubscriptionAttributesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +135,9 @@ impl GetSubscriptionAttributesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_subscription_arn(input);
         self
+    }
+    /// <p>The ARN of the subscription whose properties you want to get.</p>
+    pub fn get_subscription_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_subscription_arn()
     }
 }

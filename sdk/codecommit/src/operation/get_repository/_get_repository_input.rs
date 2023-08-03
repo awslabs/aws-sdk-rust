@@ -46,6 +46,10 @@ impl GetRepositoryInputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository to get information about.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// Consumes the builder and constructs a [`GetRepositoryInput`](crate::operation::get_repository::GetRepositoryInput).
     pub fn build(
         self,

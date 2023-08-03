@@ -79,6 +79,10 @@ impl ListWorkflowsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results that can be returned.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl ListWorkflowsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The ID of the template.</p>
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_id = ::std::option::Option::Some(input.into());
@@ -98,6 +106,10 @@ impl ListWorkflowsInputBuilder {
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_id = input;
         self
+    }
+    /// <p>The ID of the template.</p>
+    pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_id
     }
     /// <p>The name of the application configured in Application Discovery Service.</p>
     pub fn ads_application_configuration_name(
@@ -115,6 +127,12 @@ impl ListWorkflowsInputBuilder {
         self.ads_application_configuration_name = input;
         self
     }
+    /// <p>The name of the application configured in Application Discovery Service.</p>
+    pub fn get_ads_application_configuration_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.ads_application_configuration_name
+    }
     /// <p>The status of the migration workflow.</p>
     pub fn status(mut self, input: crate::types::MigrationWorkflowStatusEnum) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -128,6 +146,10 @@ impl ListWorkflowsInputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the migration workflow.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::MigrationWorkflowStatusEnum> {
+        &self.status
+    }
     /// <p>The name of the migration workflow.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -137,6 +159,10 @@ impl ListWorkflowsInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the migration workflow.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`ListWorkflowsInput`](crate::operation::list_workflows::ListWorkflowsInput).
     pub fn build(

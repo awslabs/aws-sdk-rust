@@ -57,6 +57,10 @@ impl StartGeneratedCodeJobInputBuilder {
         self.game_name = input;
         self
     }
+    /// <p>The name of the game.</p>
+    pub fn get_game_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.game_name
+    }
     /// <p>The identifier of the snapshot for which to generate code.</p>
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_id = ::std::option::Option::Some(input.into());
@@ -67,6 +71,10 @@ impl StartGeneratedCodeJobInputBuilder {
         self.snapshot_id = input;
         self
     }
+    /// <p>The identifier of the snapshot for which to generate code.</p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_id
+    }
     /// <p>Properties of the generator to use for the job.</p>
     pub fn generator(mut self, input: crate::types::Generator) -> Self {
         self.generator = ::std::option::Option::Some(input);
@@ -76,6 +84,10 @@ impl StartGeneratedCodeJobInputBuilder {
     pub fn set_generator(mut self, input: ::std::option::Option<crate::types::Generator>) -> Self {
         self.generator = input;
         self
+    }
+    /// <p>Properties of the generator to use for the job.</p>
+    pub fn get_generator(&self) -> &::std::option::Option<crate::types::Generator> {
+        &self.generator
     }
     /// Consumes the builder and constructs a [`StartGeneratedCodeJobInput`](crate::operation::start_generated_code_job::StartGeneratedCodeJobInput).
     pub fn build(

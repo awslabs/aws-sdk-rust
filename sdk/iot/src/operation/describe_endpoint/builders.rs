@@ -37,6 +37,12 @@ impl DescribeEndpointFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeEndpoint as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_endpoint::builders::DescribeEndpointInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -158,5 +164,22 @@ impl DescribeEndpointFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_endpoint_type(input);
         self
+    }
+    /// <p>The endpoint type. Valid endpoint types include:</p>
+    /// <ul>
+    /// <li> <p> <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p> <code>iot:Data-ATS</code> - Returns an ATS signed data endpoint.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p> <code>iot:CredentialProvider</code> - Returns an IoT credentials provider API endpoint.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p> <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p> </li>
+    /// </ul>
+    /// <p>We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint type to avoid issues related to the widespread distrust of Symantec certificate authorities.</p>
+    pub fn get_endpoint_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_endpoint_type()
     }
 }

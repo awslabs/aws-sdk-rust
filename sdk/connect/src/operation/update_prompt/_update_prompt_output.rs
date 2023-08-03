@@ -54,6 +54,10 @@ impl UpdatePromptOutputBuilder {
         self.prompt_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the prompt.</p>
+    pub fn get_prompt_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prompt_arn
+    }
     /// <p>A unique identifier for the prompt.</p>
     pub fn prompt_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prompt_id = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl UpdatePromptOutputBuilder {
     pub fn set_prompt_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prompt_id = input;
         self
+    }
+    /// <p>A unique identifier for the prompt.</p>
+    pub fn get_prompt_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prompt_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

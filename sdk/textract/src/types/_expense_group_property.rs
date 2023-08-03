@@ -57,6 +57,10 @@ impl ExpenseGroupPropertyBuilder {
         self.types = input;
         self
     }
+    /// <p>Informs you on whether the expense group is a name or an address.</p>
+    pub fn get_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.types
+    }
     /// <p>Provides a group Id number, which will be the same for each in the group.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl ExpenseGroupPropertyBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>Provides a group Id number, which will be the same for each in the group.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`ExpenseGroupProperty`](crate::types::ExpenseGroupProperty).
     pub fn build(self) -> crate::types::ExpenseGroupProperty {

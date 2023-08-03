@@ -46,6 +46,10 @@ impl StopNotebookInstanceInputBuilder {
         self.notebook_instance_name = input;
         self
     }
+    /// <p>The name of the notebook instance to terminate.</p>
+    pub fn get_notebook_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notebook_instance_name
+    }
     /// Consumes the builder and constructs a [`StopNotebookInstanceInput`](crate::operation::stop_notebook_instance::StopNotebookInstanceInput).
     pub fn build(
         self,

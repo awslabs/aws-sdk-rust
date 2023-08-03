@@ -48,6 +48,10 @@ impl StorageLocationBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The name of the S3 bucket.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>The key.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl StorageLocationBuilder {
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
+    }
+    /// <p>The key.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
     }
     /// Consumes the builder and constructs a [`StorageLocation`](crate::types::StorageLocation).
     pub fn build(self) -> crate::types::StorageLocation {

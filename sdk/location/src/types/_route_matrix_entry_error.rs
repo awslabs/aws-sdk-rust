@@ -70,6 +70,10 @@ impl RouteMatrixEntryErrorBuilder {
         self.code = input;
         self
     }
+    /// <p>The type of error which occurred for the route calculation.</p>
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::RouteMatrixErrorCode> {
+        &self.code
+    }
     /// <p>A message about the error that occurred for the route calculation.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl RouteMatrixEntryErrorBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>A message about the error that occurred for the route calculation.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`RouteMatrixEntryError`](crate::types::RouteMatrixEntryError).
     pub fn build(self) -> crate::types::RouteMatrixEntryError {

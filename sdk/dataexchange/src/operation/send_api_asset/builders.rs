@@ -36,6 +36,12 @@ impl SendApiAssetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SendApiAsset as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::send_api_asset::builders::SendApiAssetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl SendApiAssetFluentBuilder {
         self.inner = self.inner.set_body(input);
         self
     }
+    /// <p>The request body.</p>
+    pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_body()
+    }
     /// Adds a key-value pair to `QueryStringParameters`.
     ///
     /// To override the contents of this collection use [`set_query_string_parameters`](Self::set_query_string_parameters).
@@ -141,6 +151,14 @@ impl SendApiAssetFluentBuilder {
         self.inner = self.inner.set_query_string_parameters(input);
         self
     }
+    /// <p>Attach query string parameters to the end of the URI (for example, /v1/examplePath?exampleParam=exampleValue).</p>
+    pub fn get_query_string_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_query_string_parameters()
+    }
     /// <p>Asset ID value for the API request.</p>
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.asset_id(input.into());
@@ -151,6 +169,10 @@ impl SendApiAssetFluentBuilder {
         self.inner = self.inner.set_asset_id(input);
         self
     }
+    /// <p>Asset ID value for the API request.</p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_asset_id()
+    }
     /// <p>Data set ID value for the API request.</p>
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_set_id(input.into());
@@ -160,6 +182,10 @@ impl SendApiAssetFluentBuilder {
     pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_set_id(input);
         self
+    }
+    /// <p>Data set ID value for the API request.</p>
+    pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_data_set_id()
     }
     /// Adds a key-value pair to `RequestHeaders`.
     ///
@@ -184,6 +210,14 @@ impl SendApiAssetFluentBuilder {
         self.inner = self.inner.set_request_headers(input);
         self
     }
+    /// <p>Any header value prefixed with x-amzn-dataexchange-header- will have that stripped before sending the Asset API request. Use this when you want to override a header that AWS Data Exchange uses. Alternatively, you can use the header without a prefix to the HTTP request.</p>
+    pub fn get_request_headers(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_request_headers()
+    }
     /// <p>HTTP method value for the API request. Alternatively, you can use the appropriate verb in your request.</p>
     pub fn method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.method(input.into());
@@ -193,6 +227,10 @@ impl SendApiAssetFluentBuilder {
     pub fn set_method(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_method(input);
         self
+    }
+    /// <p>HTTP method value for the API request. Alternatively, you can use the appropriate verb in your request.</p>
+    pub fn get_method(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_method()
     }
     /// <p>URI path value for the API request. Alternatively, you can set the URI path directly by invoking /v1/{pathValue}.</p>
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -204,6 +242,10 @@ impl SendApiAssetFluentBuilder {
         self.inner = self.inner.set_path(input);
         self
     }
+    /// <p>URI path value for the API request. Alternatively, you can set the URI path directly by invoking /v1/{pathValue}.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_path()
+    }
     /// <p>Revision ID value for the API request.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.revision_id(input.into());
@@ -213,5 +255,9 @@ impl SendApiAssetFluentBuilder {
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_revision_id(input);
         self
+    }
+    /// <p>Revision ID value for the API request.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_revision_id()
     }
 }

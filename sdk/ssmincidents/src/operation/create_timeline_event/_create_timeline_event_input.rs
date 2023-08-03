@@ -82,6 +82,10 @@ impl CreateTimelineEventInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>A token that ensures that a client calls the action only once with the specified details.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The Amazon Resource Name (ARN) of the incident record that the action adds the incident to.</p>
     pub fn incident_record_arn(
         mut self,
@@ -98,6 +102,10 @@ impl CreateTimelineEventInputBuilder {
         self.incident_record_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the incident record that the action adds the incident to.</p>
+    pub fn get_incident_record_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.incident_record_arn
+    }
     /// <p>The time that the event occurred.</p>
     pub fn event_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.event_time = ::std::option::Option::Some(input);
@@ -111,6 +119,10 @@ impl CreateTimelineEventInputBuilder {
         self.event_time = input;
         self
     }
+    /// <p>The time that the event occurred.</p>
+    pub fn get_event_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.event_time
+    }
     /// <p>The type of event. You can create timeline events of type <code>Custom Event</code>.</p>
     pub fn event_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_type = ::std::option::Option::Some(input.into());
@@ -121,6 +133,10 @@ impl CreateTimelineEventInputBuilder {
         self.event_type = input;
         self
     }
+    /// <p>The type of event. You can create timeline events of type <code>Custom Event</code>.</p>
+    pub fn get_event_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_type
+    }
     /// <p>A short description of the event.</p>
     pub fn event_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_data = ::std::option::Option::Some(input.into());
@@ -130,6 +146,10 @@ impl CreateTimelineEventInputBuilder {
     pub fn set_event_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_data = input;
         self
+    }
+    /// <p>A short description of the event.</p>
+    pub fn get_event_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_data
     }
     /// Appends an item to `event_references`.
     ///
@@ -149,6 +169,12 @@ impl CreateTimelineEventInputBuilder {
     ) -> Self {
         self.event_references = input;
         self
+    }
+    /// <p>Adds one or more references to the <code>TimelineEvent</code>. A reference is an Amazon Web Services resource involved or associated with the incident. To specify a reference, enter its Amazon Resource Name (ARN). You can also specify a related item associated with a resource. For example, to specify an Amazon DynamoDB (DynamoDB) table as a resource, use the table's ARN. You can also specify an Amazon CloudWatch metric associated with the DynamoDB table as a related item.</p>
+    pub fn get_event_references(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventReference>> {
+        &self.event_references
     }
     /// Consumes the builder and constructs a [`CreateTimelineEventInput`](crate::operation::create_timeline_event::CreateTimelineEventInput).
     pub fn build(

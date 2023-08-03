@@ -68,6 +68,10 @@ impl SyncResourceOutputBuilder {
         self.application_arn = input;
         self
     }
+    /// <p>The Amazon resource name (ARN) that specifies the application.</p>
+    pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_arn
+    }
     /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -77,6 +81,10 @@ impl SyncResourceOutputBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// <p>The results of the output if an application is associated with an ARN value, which could be <code>syncStarted</code> or None.</p>
     pub fn action_taken(mut self, input: crate::types::SyncAction) -> Self {
@@ -90,6 +98,10 @@ impl SyncResourceOutputBuilder {
     ) -> Self {
         self.action_taken = input;
         self
+    }
+    /// <p>The results of the output if an application is associated with an ARN value, which could be <code>syncStarted</code> or None.</p>
+    pub fn get_action_taken(&self) -> &::std::option::Option<crate::types::SyncAction> {
+        &self.action_taken
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

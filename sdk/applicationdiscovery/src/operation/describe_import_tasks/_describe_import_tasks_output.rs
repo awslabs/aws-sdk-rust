@@ -56,6 +56,10 @@ impl DescribeImportTasksOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to request the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `tasks`.
     ///
     /// To override the contents of this collection use [`set_tasks`](Self::set_tasks).
@@ -74,6 +78,10 @@ impl DescribeImportTasksOutputBuilder {
     ) -> Self {
         self.tasks = input;
         self
+    }
+    /// <p>A returned array of import tasks that match any applied filters, up to the specified number of maximum results.</p>
+    pub fn get_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportTask>> {
+        &self.tasks
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

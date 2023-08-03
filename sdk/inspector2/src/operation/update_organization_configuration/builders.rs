@@ -36,6 +36,10 @@ impl UpdateOrganizationConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateOrganizationConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -102,5 +106,9 @@ impl UpdateOrganizationConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_auto_enable(input);
         self
+    }
+    /// <p>Defines which scan types are enabled automatically for new members of your Amazon Inspector organization.</p>
+    pub fn get_auto_enable(&self) -> &::std::option::Option<crate::types::AutoEnable> {
+        self.inner.get_auto_enable()
     }
 }

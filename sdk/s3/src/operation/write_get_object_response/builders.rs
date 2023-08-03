@@ -44,6 +44,13 @@ impl WriteGetObjectResponseFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the WriteGetObjectResponse as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::write_get_object_response::builders::WriteGetObjectResponseInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +147,10 @@ impl WriteGetObjectResponseFluentBuilder {
         self.inner = self.inner.set_request_route(input);
         self
     }
+    /// <p>Route prefix to the HTTP URL generated.</p>
+    pub fn get_request_route(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_request_route()
+    }
     /// <p>A single use encrypted token that maps <code>WriteGetObjectResponse</code> to the end user <code>GetObject</code> request.</p>
     pub fn request_token(
         mut self,
@@ -156,6 +167,10 @@ impl WriteGetObjectResponseFluentBuilder {
         self.inner = self.inner.set_request_token(input);
         self
     }
+    /// <p>A single use encrypted token that maps <code>WriteGetObjectResponse</code> to the end user <code>GetObject</code> request.</p>
+    pub fn get_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_request_token()
+    }
     /// <p>The object data.</p>
     pub fn body(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
         self.inner = self.inner.body(input);
@@ -168,6 +183,10 @@ impl WriteGetObjectResponseFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_body(input);
         self
+    }
+    /// <p>The object data.</p>
+    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+        self.inner.get_body()
     }
     /// <p>The integer status code for an HTTP response of a corresponding <code>GetObject</code> request. The following is a list of status codes.</p>
     /// <ul>
@@ -211,6 +230,26 @@ impl WriteGetObjectResponseFluentBuilder {
         self.inner = self.inner.set_status_code(input);
         self
     }
+    /// <p>The integer status code for an HTTP response of a corresponding <code>GetObject</code> request. The following is a list of status codes.</p>
+    /// <ul>
+    /// <li> <p> <code>200 - OK</code> </p> </li>
+    /// <li> <p> <code>206 - Partial Content</code> </p> </li>
+    /// <li> <p> <code>304 - Not Modified</code> </p> </li>
+    /// <li> <p> <code>400 - Bad Request</code> </p> </li>
+    /// <li> <p> <code>401 - Unauthorized</code> </p> </li>
+    /// <li> <p> <code>403 - Forbidden</code> </p> </li>
+    /// <li> <p> <code>404 - Not Found</code> </p> </li>
+    /// <li> <p> <code>405 - Method Not Allowed</code> </p> </li>
+    /// <li> <p> <code>409 - Conflict</code> </p> </li>
+    /// <li> <p> <code>411 - Length Required</code> </p> </li>
+    /// <li> <p> <code>412 - Precondition Failed</code> </p> </li>
+    /// <li> <p> <code>416 - Range Not Satisfiable</code> </p> </li>
+    /// <li> <p> <code>500 - Internal Server Error</code> </p> </li>
+    /// <li> <p> <code>503 - Service Unavailable</code> </p> </li>
+    /// </ul>
+    pub fn get_status_code(&self) -> &::std::option::Option<i32> {
+        self.inner.get_status_code()
+    }
     /// <p>A string that uniquely identifies an error condition. Returned in the <code> tag of the error XML response for a corresponding <code>GetObject</code> call. Cannot be used with a successful <code>StatusCode</code> header or when the transformed object is provided in the body. All error codes from S3 are sentence-cased. The regular expression (regex) value is <code>"^[A-Z][a-zA-Z]+$"</code>.</code></p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.error_code(input.into());
@@ -220,6 +259,10 @@ impl WriteGetObjectResponseFluentBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_error_code(input);
         self
+    }
+    /// <p>A string that uniquely identifies an error condition. Returned in the <code> tag of the error XML response for a corresponding <code>GetObject</code> call. Cannot be used with a successful <code>StatusCode</code> header or when the transformed object is provided in the body. All error codes from S3 are sentence-cased. The regular expression (regex) value is <code>"^[A-Z][a-zA-Z]+$"</code>.</code></p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_error_code()
     }
     /// <p>Contains a generic description of the error condition. Returned in the <message>
     /// tag of the error XML response for a corresponding
@@ -245,6 +288,14 @@ impl WriteGetObjectResponseFluentBuilder {
         self.inner = self.inner.set_error_message(input);
         self
     }
+    /// <p>Contains a generic description of the error condition. Returned in the <message>
+    /// tag of the error XML response for a corresponding
+    /// <code>GetObject</code> call. Cannot be used with a successful
+    /// <code>StatusCode</code> header or when the transformed object is provided in body.
+    /// </message></p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_error_message()
+    }
     /// <p>Indicates that a range of bytes was specified.</p>
     pub fn accept_ranges(
         mut self,
@@ -260,6 +311,10 @@ impl WriteGetObjectResponseFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_accept_ranges(input);
         self
+    }
+    /// <p>Indicates that a range of bytes was specified.</p>
+    pub fn get_accept_ranges(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_accept_ranges()
     }
     /// <p>Specifies caching behavior along the request/reply chain.</p>
     pub fn cache_control(
@@ -277,6 +332,10 @@ impl WriteGetObjectResponseFluentBuilder {
         self.inner = self.inner.set_cache_control(input);
         self
     }
+    /// <p>Specifies caching behavior along the request/reply chain.</p>
+    pub fn get_cache_control(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cache_control()
+    }
     /// <p>Specifies presentational information for the object.</p>
     pub fn content_disposition(
         mut self,
@@ -292,6 +351,10 @@ impl WriteGetObjectResponseFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_content_disposition(input);
         self
+    }
+    /// <p>Specifies presentational information for the object.</p>
+    pub fn get_content_disposition(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_content_disposition()
     }
     /// <p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field.</p>
     pub fn content_encoding(
@@ -309,6 +372,10 @@ impl WriteGetObjectResponseFluentBuilder {
         self.inner = self.inner.set_content_encoding(input);
         self
     }
+    /// <p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field.</p>
+    pub fn get_content_encoding(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_content_encoding()
+    }
     /// <p>The language the content is in.</p>
     pub fn content_language(
         mut self,
@@ -325,6 +392,10 @@ impl WriteGetObjectResponseFluentBuilder {
         self.inner = self.inner.set_content_language(input);
         self
     }
+    /// <p>The language the content is in.</p>
+    pub fn get_content_language(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_content_language()
+    }
     /// <p>The size of the content body in bytes.</p>
     pub fn content_length(mut self, input: i64) -> Self {
         self.inner = self.inner.content_length(input);
@@ -334,6 +405,10 @@ impl WriteGetObjectResponseFluentBuilder {
     pub fn set_content_length(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_content_length(input);
         self
+    }
+    /// <p>The size of the content body in bytes.</p>
+    pub fn get_content_length(&self) -> &::std::option::Option<i64> {
+        self.inner.get_content_length()
     }
     /// <p>The portion of the object returned in the response.</p>
     pub fn content_range(
@@ -351,6 +426,10 @@ impl WriteGetObjectResponseFluentBuilder {
         self.inner = self.inner.set_content_range(input);
         self
     }
+    /// <p>The portion of the object returned in the response.</p>
+    pub fn get_content_range(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_content_range()
+    }
     /// <p>A standard MIME type describing the format of the object data.</p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.content_type(input.into());
@@ -360,6 +439,10 @@ impl WriteGetObjectResponseFluentBuilder {
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_content_type(input);
         self
+    }
+    /// <p>A standard MIME type describing the format of the object data.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_content_type()
     }
     /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This specifies the base64-encoded, 32-bit CRC32 checksum of the object returned by the Object Lambda function. This may not match the checksum for the object stored in Amazon S3. Amazon S3 will perform validation of the checksum values only when the original <code>GetObject</code> request required checksum validation. For more information about checksums, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>Only one checksum header can be specified at a time. If you supply multiple checksum headers, this request will fail.</p>
@@ -381,6 +464,12 @@ impl WriteGetObjectResponseFluentBuilder {
         self.inner = self.inner.set_checksum_crc32(input);
         self
     }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This specifies the base64-encoded, 32-bit CRC32 checksum of the object returned by the Object Lambda function. This may not match the checksum for the object stored in Amazon S3. Amazon S3 will perform validation of the checksum values only when the original <code>GetObject</code> request required checksum validation. For more information about checksums, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Only one checksum header can be specified at a time. If you supply multiple checksum headers, this request will fail.</p>
+    /// <p></p>
+    pub fn get_checksum_crc32(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_checksum_crc32()
+    }
     /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This specifies the base64-encoded, 32-bit CRC32C checksum of the object returned by the Object Lambda function. This may not match the checksum for the object stored in Amazon S3. Amazon S3 will perform validation of the checksum values only when the original <code>GetObject</code> request required checksum validation. For more information about checksums, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>Only one checksum header can be specified at a time. If you supply multiple checksum headers, this request will fail.</p>
     pub fn checksum_crc32_c(
@@ -398,6 +487,11 @@ impl WriteGetObjectResponseFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_checksum_crc32_c(input);
         self
+    }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This specifies the base64-encoded, 32-bit CRC32C checksum of the object returned by the Object Lambda function. This may not match the checksum for the object stored in Amazon S3. Amazon S3 will perform validation of the checksum values only when the original <code>GetObject</code> request required checksum validation. For more information about checksums, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Only one checksum header can be specified at a time. If you supply multiple checksum headers, this request will fail.</p>
+    pub fn get_checksum_crc32_c(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_checksum_crc32_c()
     }
     /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This specifies the base64-encoded, 160-bit SHA-1 digest of the object returned by the Object Lambda function. This may not match the checksum for the object stored in Amazon S3. Amazon S3 will perform validation of the checksum values only when the original <code>GetObject</code> request required checksum validation. For more information about checksums, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>Only one checksum header can be specified at a time. If you supply multiple checksum headers, this request will fail.</p>
@@ -417,6 +511,11 @@ impl WriteGetObjectResponseFluentBuilder {
         self.inner = self.inner.set_checksum_sha1(input);
         self
     }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This specifies the base64-encoded, 160-bit SHA-1 digest of the object returned by the Object Lambda function. This may not match the checksum for the object stored in Amazon S3. Amazon S3 will perform validation of the checksum values only when the original <code>GetObject</code> request required checksum validation. For more information about checksums, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Only one checksum header can be specified at a time. If you supply multiple checksum headers, this request will fail.</p>
+    pub fn get_checksum_sha1(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_checksum_sha1()
+    }
     /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This specifies the base64-encoded, 256-bit SHA-256 digest of the object returned by the Object Lambda function. This may not match the checksum for the object stored in Amazon S3. Amazon S3 will perform validation of the checksum values only when the original <code>GetObject</code> request required checksum validation. For more information about checksums, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>Only one checksum header can be specified at a time. If you supply multiple checksum headers, this request will fail.</p>
     pub fn checksum_sha256(
@@ -435,6 +534,11 @@ impl WriteGetObjectResponseFluentBuilder {
         self.inner = self.inner.set_checksum_sha256(input);
         self
     }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This specifies the base64-encoded, 256-bit SHA-256 digest of the object returned by the Object Lambda function. This may not match the checksum for the object stored in Amazon S3. Amazon S3 will perform validation of the checksum values only when the original <code>GetObject</code> request required checksum validation. For more information about checksums, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Only one checksum header can be specified at a time. If you supply multiple checksum headers, this request will fail.</p>
+    pub fn get_checksum_sha256(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_checksum_sha256()
+    }
     /// <p>Specifies whether an object stored in Amazon S3 is (<code>true</code>) or is not (<code>false</code>) a delete marker. </p>
     pub fn delete_marker(mut self, input: bool) -> Self {
         self.inner = self.inner.delete_marker(input);
@@ -445,6 +549,10 @@ impl WriteGetObjectResponseFluentBuilder {
         self.inner = self.inner.set_delete_marker(input);
         self
     }
+    /// <p>Specifies whether an object stored in Amazon S3 is (<code>true</code>) or is not (<code>false</code>) a delete marker. </p>
+    pub fn get_delete_marker(&self) -> &::std::option::Option<bool> {
+        self.inner.get_delete_marker()
+    }
     /// <p>An opaque identifier assigned by a web server to a specific version of a resource found at a URL. </p>
     pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.e_tag(input.into());
@@ -454,6 +562,10 @@ impl WriteGetObjectResponseFluentBuilder {
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_e_tag(input);
         self
+    }
+    /// <p>An opaque identifier assigned by a web server to a specific version of a resource found at a URL. </p>
+    pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_e_tag()
     }
     /// <p>The date and time at which the object is no longer cacheable.</p>
     pub fn expires(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -468,6 +580,10 @@ impl WriteGetObjectResponseFluentBuilder {
         self.inner = self.inner.set_expires(input);
         self
     }
+    /// <p>The date and time at which the object is no longer cacheable.</p>
+    pub fn get_expires(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_expires()
+    }
     /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the <code>expiry-date</code> and <code>rule-id</code> key-value pairs that provide the object expiration information. The value of the <code>rule-id</code> is URL-encoded. </p>
     pub fn expiration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.expiration(input.into());
@@ -477,6 +593,10 @@ impl WriteGetObjectResponseFluentBuilder {
     pub fn set_expiration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_expiration(input);
         self
+    }
+    /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the <code>expiry-date</code> and <code>rule-id</code> key-value pairs that provide the object expiration information. The value of the <code>rule-id</code> is URL-encoded. </p>
+    pub fn get_expiration(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_expiration()
     }
     /// <p>The date and time that the object was last modified.</p>
     pub fn last_modified(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -491,6 +611,10 @@ impl WriteGetObjectResponseFluentBuilder {
         self.inner = self.inner.set_last_modified(input);
         self
     }
+    /// <p>The date and time that the object was last modified.</p>
+    pub fn get_last_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_last_modified()
+    }
     /// <p>Set to the number of metadata entries not returned in <code>x-amz-meta</code> headers. This can happen if you create metadata using an API like SOAP that supports more flexible metadata than the REST API. For example, using SOAP, you can create metadata whose values are not legal HTTP headers.</p>
     pub fn missing_meta(mut self, input: i32) -> Self {
         self.inner = self.inner.missing_meta(input);
@@ -500,6 +624,10 @@ impl WriteGetObjectResponseFluentBuilder {
     pub fn set_missing_meta(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_missing_meta(input);
         self
+    }
+    /// <p>Set to the number of metadata entries not returned in <code>x-amz-meta</code> headers. This can happen if you create metadata using an API like SOAP that supports more flexible metadata than the REST API. For example, using SOAP, you can create metadata whose values are not legal HTTP headers.</p>
+    pub fn get_missing_meta(&self) -> &::std::option::Option<i32> {
+        self.inner.get_missing_meta()
     }
     /// Adds a key-value pair to `Metadata`.
     ///
@@ -524,6 +652,14 @@ impl WriteGetObjectResponseFluentBuilder {
         self.inner = self.inner.set_metadata(input);
         self
     }
+    /// <p>A map of metadata to store with the object in S3.</p>
+    pub fn get_metadata(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_metadata()
+    }
     /// <p>Indicates whether an object stored in Amazon S3 has Object Lock enabled. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html">Object Lock</a>.</p>
     pub fn object_lock_mode(mut self, input: crate::types::ObjectLockMode) -> Self {
         self.inner = self.inner.object_lock_mode(input);
@@ -536,6 +672,10 @@ impl WriteGetObjectResponseFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_object_lock_mode(input);
         self
+    }
+    /// <p>Indicates whether an object stored in Amazon S3 has Object Lock enabled. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html">Object Lock</a>.</p>
+    pub fn get_object_lock_mode(&self) -> &::std::option::Option<crate::types::ObjectLockMode> {
+        self.inner.get_object_lock_mode()
     }
     /// <p>Indicates whether an object stored in Amazon S3 has an active legal hold.</p>
     pub fn object_lock_legal_hold_status(
@@ -553,6 +693,12 @@ impl WriteGetObjectResponseFluentBuilder {
         self.inner = self.inner.set_object_lock_legal_hold_status(input);
         self
     }
+    /// <p>Indicates whether an object stored in Amazon S3 has an active legal hold.</p>
+    pub fn get_object_lock_legal_hold_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ObjectLockLegalHoldStatus> {
+        self.inner.get_object_lock_legal_hold_status()
+    }
     /// <p>The date and time when Object Lock is configured to expire.</p>
     pub fn object_lock_retain_until_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.object_lock_retain_until_date(input);
@@ -566,6 +712,12 @@ impl WriteGetObjectResponseFluentBuilder {
         self.inner = self.inner.set_object_lock_retain_until_date(input);
         self
     }
+    /// <p>The date and time when Object Lock is configured to expire.</p>
+    pub fn get_object_lock_retain_until_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_object_lock_retain_until_date()
+    }
     /// <p>The count of parts this object has.</p>
     pub fn parts_count(mut self, input: i32) -> Self {
         self.inner = self.inner.parts_count(input);
@@ -575,6 +727,10 @@ impl WriteGetObjectResponseFluentBuilder {
     pub fn set_parts_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_parts_count(input);
         self
+    }
+    /// <p>The count of parts this object has.</p>
+    pub fn get_parts_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_parts_count()
     }
     /// <p>Indicates if request involves bucket that is either a source or destination in a Replication rule. For more information about S3 Replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html">Replication</a>.</p>
     pub fn replication_status(mut self, input: crate::types::ReplicationStatus) -> Self {
@@ -589,6 +745,12 @@ impl WriteGetObjectResponseFluentBuilder {
         self.inner = self.inner.set_replication_status(input);
         self
     }
+    /// <p>Indicates if request involves bucket that is either a source or destination in a Replication rule. For more information about S3 Replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html">Replication</a>.</p>
+    pub fn get_replication_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReplicationStatus> {
+        self.inner.get_replication_status()
+    }
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub fn request_charged(mut self, input: crate::types::RequestCharged) -> Self {
         self.inner = self.inner.request_charged(input);
@@ -602,6 +764,10 @@ impl WriteGetObjectResponseFluentBuilder {
         self.inner = self.inner.set_request_charged(input);
         self
     }
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+    pub fn get_request_charged(&self) -> &::std::option::Option<crate::types::RequestCharged> {
+        self.inner.get_request_charged()
+    }
     /// <p>Provides information about object restoration operation and expiration time of the restored object copy.</p>
     pub fn restore(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.restore(input.into());
@@ -611,6 +777,10 @@ impl WriteGetObjectResponseFluentBuilder {
     pub fn set_restore(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_restore(input);
         self
+    }
+    /// <p>Provides information about object restoration operation and expiration time of the restored object copy.</p>
+    pub fn get_restore(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_restore()
     }
     /// <p> The server-side encryption algorithm used when storing requested object in Amazon S3 (for example, AES256, <code>aws:kms</code>).</p>
     pub fn server_side_encryption(mut self, input: crate::types::ServerSideEncryption) -> Self {
@@ -624,6 +794,12 @@ impl WriteGetObjectResponseFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_server_side_encryption(input);
         self
+    }
+    /// <p> The server-side encryption algorithm used when storing requested object in Amazon S3 (for example, AES256, <code>aws:kms</code>).</p>
+    pub fn get_server_side_encryption(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServerSideEncryption> {
+        self.inner.get_server_side_encryption()
     }
     /// <p>Encryption algorithm used if server-side encryption with a customer-provided encryption key was specified for object stored in Amazon S3.</p>
     pub fn sse_customer_algorithm(
@@ -641,6 +817,10 @@ impl WriteGetObjectResponseFluentBuilder {
         self.inner = self.inner.set_sse_customer_algorithm(input);
         self
     }
+    /// <p>Encryption algorithm used if server-side encryption with a customer-provided encryption key was specified for object stored in Amazon S3.</p>
+    pub fn get_sse_customer_algorithm(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sse_customer_algorithm()
+    }
     /// <p> If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key that was used for stored in Amazon S3 object. </p>
     pub fn ssekms_key_id(
         mut self,
@@ -656,6 +836,10 @@ impl WriteGetObjectResponseFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ssekms_key_id(input);
         self
+    }
+    /// <p> If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key that was used for stored in Amazon S3 object. </p>
+    pub fn get_ssekms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ssekms_key_id()
     }
     /// <p> 128-bit MD5 digest of customer-provided encryption key used in Amazon S3 to encrypt data stored in S3. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html">Protecting data using server-side encryption with customer-provided encryption keys (SSE-C)</a>.</p>
     pub fn sse_customer_key_md5(
@@ -673,6 +857,10 @@ impl WriteGetObjectResponseFluentBuilder {
         self.inner = self.inner.set_sse_customer_key_md5(input);
         self
     }
+    /// <p> 128-bit MD5 digest of customer-provided encryption key used in Amazon S3 to encrypt data stored in S3. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html">Protecting data using server-side encryption with customer-provided encryption keys (SSE-C)</a>.</p>
+    pub fn get_sse_customer_key_md5(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sse_customer_key_md5()
+    }
     /// <p>Provides storage class information of the object. Amazon S3 returns this header for all objects except for S3 Standard storage class objects.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a>.</p>
     pub fn storage_class(mut self, input: crate::types::StorageClass) -> Self {
@@ -688,6 +876,11 @@ impl WriteGetObjectResponseFluentBuilder {
         self.inner = self.inner.set_storage_class(input);
         self
     }
+    /// <p>Provides storage class information of the object. Amazon S3 returns this header for all objects except for S3 Standard storage class objects.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a>.</p>
+    pub fn get_storage_class(&self) -> &::std::option::Option<crate::types::StorageClass> {
+        self.inner.get_storage_class()
+    }
     /// <p>The number of tags, if any, on the object.</p>
     pub fn tag_count(mut self, input: i32) -> Self {
         self.inner = self.inner.tag_count(input);
@@ -697,6 +890,10 @@ impl WriteGetObjectResponseFluentBuilder {
     pub fn set_tag_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_tag_count(input);
         self
+    }
+    /// <p>The number of tags, if any, on the object.</p>
+    pub fn get_tag_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_tag_count()
     }
     /// <p>An ID used to reference a specific version of the object.</p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -708,6 +905,10 @@ impl WriteGetObjectResponseFluentBuilder {
         self.inner = self.inner.set_version_id(input);
         self
     }
+    /// <p>An ID used to reference a specific version of the object.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version_id()
+    }
     /// <p> Indicates whether the object stored in Amazon S3 uses an S3 bucket key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
     pub fn bucket_key_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.bucket_key_enabled(input);
@@ -717,5 +918,9 @@ impl WriteGetObjectResponseFluentBuilder {
     pub fn set_bucket_key_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_bucket_key_enabled(input);
         self
+    }
+    /// <p> Indicates whether the object stored in Amazon S3 uses an S3 bucket key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
+    pub fn get_bucket_key_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_bucket_key_enabled()
     }
 }

@@ -55,6 +55,10 @@ impl CreateStageOutputBuilder {
         self.stage = input;
         self
     }
+    /// <p>The stage that was created.</p>
+    pub fn get_stage(&self) -> &::std::option::Option<crate::types::Stage> {
+        &self.stage
+    }
     /// Appends an item to `participant_tokens`.
     ///
     /// To override the contents of this collection use [`set_participant_tokens`](Self::set_participant_tokens).
@@ -73,6 +77,12 @@ impl CreateStageOutputBuilder {
     ) -> Self {
         self.participant_tokens = input;
         self
+    }
+    /// <p>Participant tokens attached to the stage. These correspond to the <code>participants</code> in the request.</p>
+    pub fn get_participant_tokens(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParticipantToken>> {
+        &self.participant_tokens
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

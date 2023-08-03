@@ -69,6 +69,10 @@ impl UpdateServiceInputBuilder {
         self.service_identifier = input;
         self
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    pub fn get_service_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_identifier
+    }
     /// <p>The Amazon Resource Name (ARN) of the certificate. </p>
     pub fn certificate_arn(
         mut self,
@@ -84,6 +88,10 @@ impl UpdateServiceInputBuilder {
     ) -> Self {
         self.certificate_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the certificate. </p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_arn
     }
     /// <p>The type of IAM policy.</p>
     /// <ul>
@@ -102,6 +110,14 @@ impl UpdateServiceInputBuilder {
     pub fn set_auth_type(mut self, input: ::std::option::Option<crate::types::AuthType>) -> Self {
         self.auth_type = input;
         self
+    }
+    /// <p>The type of IAM policy.</p>
+    /// <ul>
+    /// <li> <p> <code>NONE</code>: The resource does not use an IAM policy. This is the default.</p> </li>
+    /// <li> <p> <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.</p> </li>
+    /// </ul>
+    pub fn get_auth_type(&self) -> &::std::option::Option<crate::types::AuthType> {
+        &self.auth_type
     }
     /// Consumes the builder and constructs a [`UpdateServiceInput`](crate::operation::update_service::UpdateServiceInput).
     pub fn build(

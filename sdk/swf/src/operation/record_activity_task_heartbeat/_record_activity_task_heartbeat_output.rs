@@ -47,6 +47,10 @@ impl RecordActivityTaskHeartbeatOutputBuilder {
         self.cancel_requested = input;
         self
     }
+    /// <p>Set to <code>true</code> if cancellation of the task is requested.</p>
+    pub fn get_cancel_requested(&self) -> &::std::option::Option<bool> {
+        &self.cancel_requested
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

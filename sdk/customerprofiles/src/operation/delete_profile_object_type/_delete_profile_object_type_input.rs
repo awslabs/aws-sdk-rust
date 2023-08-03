@@ -49,6 +49,10 @@ impl DeleteProfileObjectTypeInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The unique name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The name of the profile object type.</p>
     pub fn object_type_name(
         mut self,
@@ -64,6 +68,10 @@ impl DeleteProfileObjectTypeInputBuilder {
     ) -> Self {
         self.object_type_name = input;
         self
+    }
+    /// <p>The name of the profile object type.</p>
+    pub fn get_object_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_type_name
     }
     /// Consumes the builder and constructs a [`DeleteProfileObjectTypeInput`](crate::operation::delete_profile_object_type::DeleteProfileObjectTypeInput).
     pub fn build(

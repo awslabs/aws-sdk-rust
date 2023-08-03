@@ -63,6 +63,12 @@ impl BatchCreateDelegationByAssessmentInputBuilder {
         self.create_delegation_requests = input;
         self
     }
+    /// <p> The API request to batch create delegations in Audit Manager. </p>
+    pub fn get_create_delegation_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateDelegationRequest>> {
+        &self.create_delegation_requests
+    }
     /// <p> The identifier for the assessment. </p>
     pub fn assessment_id(
         mut self,
@@ -78,6 +84,10 @@ impl BatchCreateDelegationByAssessmentInputBuilder {
     ) -> Self {
         self.assessment_id = input;
         self
+    }
+    /// <p> The identifier for the assessment. </p>
+    pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_id
     }
     /// Consumes the builder and constructs a [`BatchCreateDelegationByAssessmentInput`](crate::operation::batch_create_delegation_by_assessment::BatchCreateDelegationByAssessmentInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::batch_create_delegation_by_assessment::BatchCreateDelegationByAssessmentInput, ::aws_smithy_http::operation::error::BuildError>{

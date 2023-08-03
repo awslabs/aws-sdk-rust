@@ -71,6 +71,10 @@ impl ListDevicesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The response from the last list when returning a list large enough to need tokening.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>Maximum number of results to select.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -80,6 +84,10 @@ impl ListDevicesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>Maximum number of results to select.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>Select fleets where the job was updated after X</p>
     pub fn latest_heartbeat_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -94,6 +102,12 @@ impl ListDevicesInputBuilder {
         self.latest_heartbeat_after = input;
         self
     }
+    /// <p>Select fleets where the job was updated after X</p>
+    pub fn get_latest_heartbeat_after(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.latest_heartbeat_after
+    }
     /// <p>A filter that searches devices that contains this name in any of their models.</p>
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
@@ -103,6 +117,10 @@ impl ListDevicesInputBuilder {
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_name = input;
         self
+    }
+    /// <p>A filter that searches devices that contains this name in any of their models.</p>
+    pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_name
     }
     /// <p>Filter for fleets containing this name in their device fleet name.</p>
     pub fn device_fleet_name(
@@ -119,6 +137,10 @@ impl ListDevicesInputBuilder {
     ) -> Self {
         self.device_fleet_name = input;
         self
+    }
+    /// <p>Filter for fleets containing this name in their device fleet name.</p>
+    pub fn get_device_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_fleet_name
     }
     /// Consumes the builder and constructs a [`ListDevicesInput`](crate::operation::list_devices::ListDevicesInput).
     pub fn build(

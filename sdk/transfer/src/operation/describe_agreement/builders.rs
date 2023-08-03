@@ -36,6 +36,12 @@ impl DescribeAgreementFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeAgreement as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_agreement::builders::DescribeAgreementInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DescribeAgreementFluentBuilder {
         self.inner = self.inner.set_agreement_id(input);
         self
     }
+    /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
+    pub fn get_agreement_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_agreement_id()
+    }
     /// <p>The server identifier that's associated with the agreement.</p>
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.server_id(input.into());
@@ -135,5 +145,9 @@ impl DescribeAgreementFluentBuilder {
     pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_server_id(input);
         self
+    }
+    /// <p>The server identifier that's associated with the agreement.</p>
+    pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_server_id()
     }
 }

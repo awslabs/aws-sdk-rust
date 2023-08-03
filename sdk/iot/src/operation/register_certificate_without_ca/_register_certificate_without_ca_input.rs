@@ -53,6 +53,10 @@ impl RegisterCertificateWithoutCaInputBuilder {
         self.certificate_pem = input;
         self
     }
+    /// <p>The certificate data, in PEM format.</p>
+    pub fn get_certificate_pem(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_pem
+    }
     /// <p>The status of the register certificate request.</p>
     pub fn status(mut self, input: crate::types::CertificateStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl RegisterCertificateWithoutCaInputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the register certificate request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CertificateStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`RegisterCertificateWithoutCaInput`](crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCaInput).
     pub fn build(

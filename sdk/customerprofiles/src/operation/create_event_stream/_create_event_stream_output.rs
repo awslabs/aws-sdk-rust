@@ -69,6 +69,10 @@ impl CreateEventStreamOutputBuilder {
         self.event_stream_arn = input;
         self
     }
+    /// <p>A unique identifier for the event stream.</p>
+    pub fn get_event_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_stream_arn
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -93,6 +97,14 @@ impl CreateEventStreamOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

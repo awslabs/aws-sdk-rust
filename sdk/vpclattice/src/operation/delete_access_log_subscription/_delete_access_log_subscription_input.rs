@@ -45,6 +45,12 @@ impl DeleteAccessLogSubscriptionInputBuilder {
         self.access_log_subscription_identifier = input;
         self
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
+    pub fn get_access_log_subscription_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.access_log_subscription_identifier
+    }
     /// Consumes the builder and constructs a [`DeleteAccessLogSubscriptionInput`](crate::operation::delete_access_log_subscription::DeleteAccessLogSubscriptionInput).
     pub fn build(
         self,

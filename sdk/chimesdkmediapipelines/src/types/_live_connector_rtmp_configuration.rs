@@ -63,6 +63,10 @@ impl LiveConnectorRtmpConfigurationBuilder {
         self.url = input;
         self
     }
+    /// <p>The URL of the RTMP configuration.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
+    }
     /// <p>The audio channels set for the RTMP configuration</p>
     pub fn audio_channels(mut self, input: crate::types::AudioChannelsOption) -> Self {
         self.audio_channels = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl LiveConnectorRtmpConfigurationBuilder {
     ) -> Self {
         self.audio_channels = input;
         self
+    }
+    /// <p>The audio channels set for the RTMP configuration</p>
+    pub fn get_audio_channels(&self) -> &::std::option::Option<crate::types::AudioChannelsOption> {
+        &self.audio_channels
     }
     /// <p>The audio sample rate set for the RTMP configuration. Default: 48000.</p>
     pub fn audio_sample_rate(
@@ -91,6 +99,10 @@ impl LiveConnectorRtmpConfigurationBuilder {
     ) -> Self {
         self.audio_sample_rate = input;
         self
+    }
+    /// <p>The audio sample rate set for the RTMP configuration. Default: 48000.</p>
+    pub fn get_audio_sample_rate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.audio_sample_rate
     }
     /// Consumes the builder and constructs a [`LiveConnectorRtmpConfiguration`](crate::types::LiveConnectorRtmpConfiguration).
     pub fn build(self) -> crate::types::LiveConnectorRtmpConfiguration {

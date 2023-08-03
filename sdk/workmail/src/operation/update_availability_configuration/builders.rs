@@ -36,6 +36,10 @@ impl UpdateAvailabilityConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAvailabilityConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_availability_configuration::builders::UpdateAvailabilityConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl UpdateAvailabilityConfigurationFluentBuilder {
         self.inner = self.inner.set_organization_id(input);
         self
     }
+    /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be updated.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
+    }
     /// <p>The domain to which the provider applies the availability configuration.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
@@ -115,6 +123,10 @@ impl UpdateAvailabilityConfigurationFluentBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_name(input);
         self
+    }
+    /// <p>The domain to which the provider applies the availability configuration.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
     }
     /// <p>The EWS availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>. The previously stored provider will be overridden by the one provided.</p>
     pub fn ews_provider(mut self, input: crate::types::EwsAvailabilityProvider) -> Self {
@@ -129,6 +141,12 @@ impl UpdateAvailabilityConfigurationFluentBuilder {
         self.inner = self.inner.set_ews_provider(input);
         self
     }
+    /// <p>The EWS availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>. The previously stored provider will be overridden by the one provided.</p>
+    pub fn get_ews_provider(
+        &self,
+    ) -> &::std::option::Option<crate::types::EwsAvailabilityProvider> {
+        self.inner.get_ews_provider()
+    }
     /// <p>The Lambda availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>. The previously stored provider will be overridden by the one provided.</p>
     pub fn lambda_provider(mut self, input: crate::types::LambdaAvailabilityProvider) -> Self {
         self.inner = self.inner.lambda_provider(input);
@@ -141,5 +159,11 @@ impl UpdateAvailabilityConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_lambda_provider(input);
         self
+    }
+    /// <p>The Lambda availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>. The previously stored provider will be overridden by the one provided.</p>
+    pub fn get_lambda_provider(
+        &self,
+    ) -> &::std::option::Option<crate::types::LambdaAvailabilityProvider> {
+        self.inner.get_lambda_provider()
     }
 }

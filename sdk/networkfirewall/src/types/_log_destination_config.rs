@@ -75,6 +75,10 @@ impl LogDestinationConfigBuilder {
         self.log_type = input;
         self
     }
+    /// <p>The type of log to send. Alert logs report traffic that matches a <code>StatefulRule</code> with an action setting that sends an alert log message. Flow logs are standard network traffic flow logs. </p>
+    pub fn get_log_type(&self) -> &::std::option::Option<crate::types::LogType> {
+        &self.log_type
+    }
     /// <p>The type of storage destination to send these logs to. You can send logs to an Amazon S3 bucket, a CloudWatch log group, or a Kinesis Data Firehose delivery stream.</p>
     pub fn log_destination_type(mut self, input: crate::types::LogDestinationType) -> Self {
         self.log_destination_type = ::std::option::Option::Some(input);
@@ -87,6 +91,12 @@ impl LogDestinationConfigBuilder {
     ) -> Self {
         self.log_destination_type = input;
         self
+    }
+    /// <p>The type of storage destination to send these logs to. You can send logs to an Amazon S3 bucket, a CloudWatch log group, or a Kinesis Data Firehose delivery stream.</p>
+    pub fn get_log_destination_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::LogDestinationType> {
+        &self.log_destination_type
     }
     /// Adds a key-value pair to `log_destination`.
     ///
@@ -122,6 +132,19 @@ impl LogDestinationConfigBuilder {
     ) -> Self {
         self.log_destination = input;
         self
+    }
+    /// <p>The named location for the logs, provided in a key:value mapping that is specific to the chosen destination type. </p>
+    /// <ul>
+    /// <li> <p>For an Amazon S3 bucket, provide the name of the bucket, with key <code>bucketName</code>, and optionally provide a prefix, with key <code>prefix</code>. The following example specifies an Amazon S3 bucket named <code>DOC-EXAMPLE-BUCKET</code> and the prefix <code>alerts</code>: </p> <p> <code>"LogDestination": { "bucketName": "DOC-EXAMPLE-BUCKET", "prefix": "alerts" }</code> </p> </li>
+    /// <li> <p>For a CloudWatch log group, provide the name of the CloudWatch log group, with key <code>logGroup</code>. The following example specifies a log group named <code>alert-log-group</code>: </p> <p> <code>"LogDestination": { "logGroup": "alert-log-group" }</code> </p> </li>
+    /// <li> <p>For a Kinesis Data Firehose delivery stream, provide the name of the delivery stream, with key <code>deliveryStream</code>. The following example specifies a delivery stream named <code>alert-delivery-stream</code>: </p> <p> <code>"LogDestination": { "deliveryStream": "alert-delivery-stream" }</code> </p> </li>
+    /// </ul>
+    pub fn get_log_destination(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.log_destination
     }
     /// Consumes the builder and constructs a [`LogDestinationConfig`](crate::types::LogDestinationConfig).
     pub fn build(self) -> crate::types::LogDestinationConfig {

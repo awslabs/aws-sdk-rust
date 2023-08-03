@@ -63,6 +63,12 @@ impl S3JobDefinitionBuilder {
         self.bucket_criteria = input;
         self
     }
+    /// <p>The property- and tag-based conditions that determine which S3 buckets to include or exclude from the analysis. Each time the job runs, the job uses these criteria to determine which buckets contain objects to analyze. A job's definition can contain a bucketCriteria object or a bucketDefinitions array, not both.</p>
+    pub fn get_bucket_criteria(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3BucketCriteriaForJob> {
+        &self.bucket_criteria
+    }
     /// Appends an item to `bucket_definitions`.
     ///
     /// To override the contents of this collection use [`set_bucket_definitions`](Self::set_bucket_definitions).
@@ -82,6 +88,12 @@ impl S3JobDefinitionBuilder {
         self.bucket_definitions = input;
         self
     }
+    /// <p>An array of objects, one for each Amazon Web Services account that owns specific S3 buckets to analyze. Each object specifies the account ID for an account and one or more buckets to analyze for that account. A job's definition can contain a bucketDefinitions array or a bucketCriteria object, not both.</p>
+    pub fn get_bucket_definitions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::S3BucketDefinitionForJob>> {
+        &self.bucket_definitions
+    }
     /// <p>The property- and tag-based conditions that determine which S3 objects to include or exclude from the analysis. Each time the job runs, the job uses these criteria to determine which objects to analyze.</p>
     pub fn scoping(mut self, input: crate::types::Scoping) -> Self {
         self.scoping = ::std::option::Option::Some(input);
@@ -91,6 +103,10 @@ impl S3JobDefinitionBuilder {
     pub fn set_scoping(mut self, input: ::std::option::Option<crate::types::Scoping>) -> Self {
         self.scoping = input;
         self
+    }
+    /// <p>The property- and tag-based conditions that determine which S3 objects to include or exclude from the analysis. Each time the job runs, the job uses these criteria to determine which objects to analyze.</p>
+    pub fn get_scoping(&self) -> &::std::option::Option<crate::types::Scoping> {
+        &self.scoping
     }
     /// Consumes the builder and constructs a [`S3JobDefinition`](crate::types::S3JobDefinition).
     pub fn build(self) -> crate::types::S3JobDefinition {

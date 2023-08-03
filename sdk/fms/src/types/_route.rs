@@ -67,6 +67,10 @@ impl RouteBuilder {
         self.destination_type = input;
         self
     }
+    /// <p>The type of destination for the route.</p>
+    pub fn get_destination_type(&self) -> &::std::option::Option<crate::types::DestinationType> {
+        &self.destination_type
+    }
     /// <p>The type of target for the route.</p>
     pub fn target_type(mut self, input: crate::types::TargetType) -> Self {
         self.target_type = ::std::option::Option::Some(input);
@@ -80,6 +84,10 @@ impl RouteBuilder {
         self.target_type = input;
         self
     }
+    /// <p>The type of target for the route.</p>
+    pub fn get_target_type(&self) -> &::std::option::Option<crate::types::TargetType> {
+        &self.target_type
+    }
     /// <p>The destination of the route.</p>
     pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination = ::std::option::Option::Some(input.into());
@@ -90,6 +98,10 @@ impl RouteBuilder {
         self.destination = input;
         self
     }
+    /// <p>The destination of the route.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination
+    }
     /// <p>The route's target.</p>
     pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target = ::std::option::Option::Some(input.into());
@@ -99,6 +111,10 @@ impl RouteBuilder {
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target = input;
         self
+    }
+    /// <p>The route's target.</p>
+    pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target
     }
     /// Consumes the builder and constructs a [`Route`](crate::types::Route).
     pub fn build(self) -> crate::types::Route {

@@ -73,6 +73,10 @@ impl GetDataLakeSourcesOutputBuilder {
         self.data_lake_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more information about ARNs and how to use them in policies, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/subscriber-management.html">Amazon Security Lake User Guide</a>.</p>
+    pub fn get_data_lake_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_lake_arn
+    }
     /// Appends an item to `data_lake_sources`.
     ///
     /// To override the contents of this collection use [`set_data_lake_sources`](Self::set_data_lake_sources).
@@ -92,6 +96,12 @@ impl GetDataLakeSourcesOutputBuilder {
         self.data_lake_sources = input;
         self
     }
+    /// <p>The list of enabled accounts and enabled sources.</p>
+    pub fn get_data_lake_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakeSource>> {
+        &self.data_lake_sources
+    }
     /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -103,6 +113,11 @@ impl GetDataLakeSourcesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
+    /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

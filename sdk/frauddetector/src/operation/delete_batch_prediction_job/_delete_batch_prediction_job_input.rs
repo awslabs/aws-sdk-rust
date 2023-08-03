@@ -41,6 +41,10 @@ impl DeleteBatchPredictionJobInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The ID of the batch prediction job to delete.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// Consumes the builder and constructs a [`DeleteBatchPredictionJobInput`](crate::operation::delete_batch_prediction_job::DeleteBatchPredictionJobInput).
     pub fn build(
         self,

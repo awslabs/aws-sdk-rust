@@ -64,6 +64,10 @@ impl StreamSessionSummaryBuilder {
         self.stream_id = input;
         self
     }
+    /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_id
+    }
     /// <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl StreamSessionSummaryBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>Time when the channel went offline. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. For live streams, this is <code>NULL</code>.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -90,6 +98,10 @@ impl StreamSessionSummaryBuilder {
         self.end_time = input;
         self
     }
+    /// <p>Time when the channel went offline. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. For live streams, this is <code>NULL</code>.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>If <code>true</code>, this stream encountered a quota breach or failure.</p>
     pub fn has_error_event(mut self, input: bool) -> Self {
         self.has_error_event = ::std::option::Option::Some(input);
@@ -99,6 +111,10 @@ impl StreamSessionSummaryBuilder {
     pub fn set_has_error_event(mut self, input: ::std::option::Option<bool>) -> Self {
         self.has_error_event = input;
         self
+    }
+    /// <p>If <code>true</code>, this stream encountered a quota breach or failure.</p>
+    pub fn get_has_error_event(&self) -> &::std::option::Option<bool> {
+        &self.has_error_event
     }
     /// Consumes the builder and constructs a [`StreamSessionSummary`](crate::types::StreamSessionSummary).
     pub fn build(self) -> crate::types::StreamSessionSummary {

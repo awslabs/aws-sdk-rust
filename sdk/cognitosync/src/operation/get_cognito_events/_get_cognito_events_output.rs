@@ -71,6 +71,14 @@ impl GetCognitoEventsOutputBuilder {
         self.events = input;
         self
     }
+    /// <p>The Cognito Events returned from the GetCognitoEvents request</p>
+    pub fn get_events(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.events
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

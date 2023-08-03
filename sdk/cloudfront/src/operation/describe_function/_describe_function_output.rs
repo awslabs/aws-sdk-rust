@@ -58,6 +58,10 @@ impl DescribeFunctionOutputBuilder {
         self.function_summary = input;
         self
     }
+    /// <p>Contains configuration information and metadata about a CloudFront function.</p>
+    pub fn get_function_summary(&self) -> &::std::option::Option<crate::types::FunctionSummary> {
+        &self.function_summary
+    }
     /// <p>The version identifier for the current version of the CloudFront function.</p>
     pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.e_tag = ::std::option::Option::Some(input.into());
@@ -67,6 +71,10 @@ impl DescribeFunctionOutputBuilder {
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.e_tag = input;
         self
+    }
+    /// <p>The version identifier for the current version of the CloudFront function.</p>
+    pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.e_tag
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -51,6 +51,12 @@ impl PutRetentionConfigurationOutputBuilder {
         self.retention_configuration = input;
         self
     }
+    /// <p>Returns a retention configuration object.</p>
+    pub fn get_retention_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::RetentionConfiguration> {
+        &self.retention_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

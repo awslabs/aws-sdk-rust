@@ -43,6 +43,10 @@ impl MultiplexOutputSettingsBuilder {
         self.destination = input;
         self
     }
+    /// Destination is a Multiplex.
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::OutputLocationRef> {
+        &self.destination
+    }
     /// Consumes the builder and constructs a [`MultiplexOutputSettings`](crate::types::MultiplexOutputSettings).
     pub fn build(self) -> crate::types::MultiplexOutputSettings {
         crate::types::MultiplexOutputSettings {

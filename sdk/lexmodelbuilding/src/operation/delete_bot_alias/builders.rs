@@ -37,6 +37,12 @@ impl DeleteBotAliasFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteBotAlias as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_bot_alias::builders::DeleteBotAliasInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl DeleteBotAliasFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the alias to delete. The name is case sensitive. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The name of the bot that the alias points to.</p>
     pub fn bot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_name(input.into());
@@ -136,5 +146,9 @@ impl DeleteBotAliasFluentBuilder {
     pub fn set_bot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bot_name(input);
         self
+    }
+    /// <p>The name of the bot that the alias points to.</p>
+    pub fn get_bot_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_name()
     }
 }

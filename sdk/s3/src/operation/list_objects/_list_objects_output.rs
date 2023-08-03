@@ -145,6 +145,10 @@ impl ListObjectsOutputBuilder {
         self.is_truncated = input;
         self
     }
+    /// <p>A flag that indicates whether Amazon S3 returned all of the results that satisfied the search criteria.</p>
+    pub fn get_is_truncated(&self) -> &::std::option::Option<bool> {
+        &self.is_truncated
+    }
     /// <p>Indicates where in the bucket listing begins. Marker is included in the response if it was sent with the request.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -154,6 +158,10 @@ impl ListObjectsOutputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>Indicates where in the bucket listing begins. Marker is included in the response if it was sent with the request.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// <p>When the response is truncated (the <code>IsTruncated</code> element value in the response is <code>true</code>), you can use the key name in this field as the <code>marker</code> parameter in the subsequent request to get the next set of objects. Amazon S3 lists objects in alphabetical order. </p> <note>
     /// <p>This element is returned only if you have the <code>delimiter</code> request parameter specified. If the response does not include the <code>NextMarker</code> element and it is truncated, you can use the value of the last <code>Key</code> element in the response as the <code>marker</code> parameter in the subsequent request to get the next set of object keys.</p>
@@ -168,6 +176,12 @@ impl ListObjectsOutputBuilder {
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_marker = input;
         self
+    }
+    /// <p>When the response is truncated (the <code>IsTruncated</code> element value in the response is <code>true</code>), you can use the key name in this field as the <code>marker</code> parameter in the subsequent request to get the next set of objects. Amazon S3 lists objects in alphabetical order. </p> <note>
+    /// <p>This element is returned only if you have the <code>delimiter</code> request parameter specified. If the response does not include the <code>NextMarker</code> element and it is truncated, you can use the value of the last <code>Key</code> element in the response as the <code>marker</code> parameter in the subsequent request to get the next set of object keys.</p>
+    /// </note>
+    pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_marker
     }
     /// Appends an item to `contents`.
     ///
@@ -188,6 +202,10 @@ impl ListObjectsOutputBuilder {
         self.contents = input;
         self
     }
+    /// <p>Metadata about each object returned.</p>
+    pub fn get_contents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Object>> {
+        &self.contents
+    }
     /// <p>The bucket name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -197,6 +215,10 @@ impl ListObjectsOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The bucket name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Keys that begin with the indicated prefix.</p>
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -208,6 +230,10 @@ impl ListObjectsOutputBuilder {
         self.prefix = input;
         self
     }
+    /// <p>Keys that begin with the indicated prefix.</p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
+    }
     /// <p>Causes keys that contain the same string between the prefix and the first occurrence of the delimiter to be rolled up into a single result element in the <code>CommonPrefixes</code> collection. These rolled-up keys are not returned elsewhere in the response. Each rolled-up result counts as only one return against the <code>MaxKeys</code> value.</p>
     pub fn delimiter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delimiter = ::std::option::Option::Some(input.into());
@@ -218,6 +244,10 @@ impl ListObjectsOutputBuilder {
         self.delimiter = input;
         self
     }
+    /// <p>Causes keys that contain the same string between the prefix and the first occurrence of the delimiter to be rolled up into a single result element in the <code>CommonPrefixes</code> collection. These rolled-up keys are not returned elsewhere in the response. Each rolled-up result counts as only one return against the <code>MaxKeys</code> value.</p>
+    pub fn get_delimiter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delimiter
+    }
     /// <p>The maximum number of keys returned in the response body.</p>
     pub fn max_keys(mut self, input: i32) -> Self {
         self.max_keys = ::std::option::Option::Some(input);
@@ -227,6 +257,10 @@ impl ListObjectsOutputBuilder {
     pub fn set_max_keys(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_keys = input;
         self
+    }
+    /// <p>The maximum number of keys returned in the response body.</p>
+    pub fn get_max_keys(&self) -> &::std::option::Option<i32> {
+        &self.max_keys
     }
     /// Appends an item to `common_prefixes`.
     ///
@@ -255,6 +289,16 @@ impl ListObjectsOutputBuilder {
         self.common_prefixes = input;
         self
     }
+    /// <p>All of the keys (up to 1,000) rolled up in a common prefix count as a single return when calculating the number of returns. </p>
+    /// <p>A response can contain <code>CommonPrefixes</code> only if you specify a delimiter.</p>
+    /// <p> <code>CommonPrefixes</code> contains all (if there are any) keys between <code>Prefix</code> and the next occurrence of the string specified by the delimiter.</p>
+    /// <p> <code>CommonPrefixes</code> lists keys that act like subdirectories in the directory specified by <code>Prefix</code>.</p>
+    /// <p>For example, if the prefix is <code>notes/</code> and the delimiter is a slash (<code>/</code>), as in <code>notes/summer/july</code>, the common prefix is <code>notes/summer/</code>. All of the keys that roll up into a common prefix count as a single return when calculating the number of returns.</p>
+    pub fn get_common_prefixes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CommonPrefix>> {
+        &self.common_prefixes
+    }
     /// <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
     pub fn encoding_type(mut self, input: crate::types::EncodingType) -> Self {
         self.encoding_type = ::std::option::Option::Some(input);
@@ -268,6 +312,10 @@ impl ListObjectsOutputBuilder {
         self.encoding_type = input;
         self
     }
+    /// <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
+    pub fn get_encoding_type(&self) -> &::std::option::Option<crate::types::EncodingType> {
+        &self.encoding_type
+    }
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub fn request_charged(mut self, input: crate::types::RequestCharged) -> Self {
         self.request_charged = ::std::option::Option::Some(input);
@@ -280,6 +328,10 @@ impl ListObjectsOutputBuilder {
     ) -> Self {
         self.request_charged = input;
         self
+    }
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+    pub fn get_request_charged(&self) -> &::std::option::Option<crate::types::RequestCharged> {
+        &self.request_charged
     }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
         self._extended_request_id = Some(extended_request_id.into());

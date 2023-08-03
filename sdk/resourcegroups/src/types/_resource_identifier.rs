@@ -48,6 +48,10 @@ impl ResourceIdentifierBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The ARN of a resource.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p>The resource type of a resource, such as <code>AWS::EC2::Instance</code>.</p>
     pub fn resource_type(
         mut self,
@@ -63,6 +67,10 @@ impl ResourceIdentifierBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The resource type of a resource, such as <code>AWS::EC2::Instance</code>.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
     }
     /// Consumes the builder and constructs a [`ResourceIdentifier`](crate::types::ResourceIdentifier).
     pub fn build(self) -> crate::types::ResourceIdentifier {

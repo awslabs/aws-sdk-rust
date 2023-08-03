@@ -55,6 +55,10 @@ impl UpdateAttendeeCapabilitiesInputBuilder {
         self.meeting_id = input;
         self
     }
+    /// <p>The ID of the meeting associated with the update request.</p>
+    pub fn get_meeting_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.meeting_id
+    }
     /// <p>The ID of the attendee associated with the update request.</p>
     pub fn attendee_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attendee_id = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl UpdateAttendeeCapabilitiesInputBuilder {
     pub fn set_attendee_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attendee_id = input;
         self
+    }
+    /// <p>The ID of the attendee associated with the update request.</p>
+    pub fn get_attendee_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attendee_id
     }
     /// <p>The capabilities that you want to update.</p>
     pub fn capabilities(mut self, input: crate::types::AttendeeCapabilities) -> Self {
@@ -77,6 +85,10 @@ impl UpdateAttendeeCapabilitiesInputBuilder {
     ) -> Self {
         self.capabilities = input;
         self
+    }
+    /// <p>The capabilities that you want to update.</p>
+    pub fn get_capabilities(&self) -> &::std::option::Option<crate::types::AttendeeCapabilities> {
+        &self.capabilities
     }
     /// Consumes the builder and constructs a [`UpdateAttendeeCapabilitiesInput`](crate::operation::update_attendee_capabilities::UpdateAttendeeCapabilitiesInput).
     pub fn build(

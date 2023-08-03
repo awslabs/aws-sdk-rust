@@ -109,6 +109,10 @@ impl ListAggregatedUtterancesInputBuilder {
         self.bot_id = input;
         self
     }
+    /// <p>The unique identifier of the bot associated with this request.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
     /// <p>The identifier of the bot alias associated with this request. If you specify the bot alias, you can't specify the bot version.</p>
     pub fn bot_alias_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_alias_id = ::std::option::Option::Some(input.into());
@@ -118,6 +122,10 @@ impl ListAggregatedUtterancesInputBuilder {
     pub fn set_bot_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_alias_id = input;
         self
+    }
+    /// <p>The identifier of the bot alias associated with this request. If you specify the bot alias, you can't specify the bot version.</p>
+    pub fn get_bot_alias_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_alias_id
     }
     /// <p>The identifier of the bot version associated with this request. If you specify the bot version, you can't specify the bot alias.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -129,6 +137,10 @@ impl ListAggregatedUtterancesInputBuilder {
         self.bot_version = input;
         self
     }
+    /// <p>The identifier of the bot version associated with this request. If you specify the bot version, you can't specify the bot alias.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_version
+    }
     /// <p>The identifier of the language and locale where the utterances were collected. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
@@ -138,6 +150,10 @@ impl ListAggregatedUtterancesInputBuilder {
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.locale_id = input;
         self
+    }
+    /// <p>The identifier of the language and locale where the utterances were collected. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale_id
     }
     /// <p>The time window for aggregating the utterance information. You can specify a time between one hour and two weeks.</p>
     pub fn aggregation_duration(
@@ -155,6 +171,12 @@ impl ListAggregatedUtterancesInputBuilder {
         self.aggregation_duration = input;
         self
     }
+    /// <p>The time window for aggregating the utterance information. You can specify a time between one hour and two weeks.</p>
+    pub fn get_aggregation_duration(
+        &self,
+    ) -> &::std::option::Option<crate::types::UtteranceAggregationDuration> {
+        &self.aggregation_duration
+    }
     /// <p>Specifies sorting parameters for the list of utterances. You can sort by the hit count, the missed count, or the number of distinct sessions the utterance appeared in.</p>
     pub fn sort_by(mut self, input: crate::types::AggregatedUtterancesSortBy) -> Self {
         self.sort_by = ::std::option::Option::Some(input);
@@ -167,6 +189,10 @@ impl ListAggregatedUtterancesInputBuilder {
     ) -> Self {
         self.sort_by = input;
         self
+    }
+    /// <p>Specifies sorting parameters for the list of utterances. You can sort by the hit count, the missed count, or the number of distinct sessions the utterance appeared in.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::AggregatedUtterancesSortBy> {
+        &self.sort_by
     }
     /// Appends an item to `filters`.
     ///
@@ -187,6 +213,12 @@ impl ListAggregatedUtterancesInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>Provides the specification of a filter used to limit the utterances in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregatedUtterancesFilter>> {
+        &self.filters
+    }
     /// <p>The maximum number of utterances to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned. If you don't specify the <code>maxResults</code> parameter, 1,000 results are returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -197,6 +229,10 @@ impl ListAggregatedUtterancesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of utterances to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned. If you don't specify the <code>maxResults</code> parameter, 1,000 results are returned.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>If the response from the <code>ListAggregatedUtterances</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -206,6 +242,10 @@ impl ListAggregatedUtterancesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the response from the <code>ListAggregatedUtterances</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListAggregatedUtterancesInput`](crate::operation::list_aggregated_utterances::ListAggregatedUtterancesInput).
     pub fn build(

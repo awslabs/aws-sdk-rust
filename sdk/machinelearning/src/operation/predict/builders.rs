@@ -37,6 +37,10 @@ impl PredictFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the Predict as a reference.
+    pub fn as_input(&self) -> &crate::operation::predict::builders::PredictInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl PredictFluentBuilder {
         self.inner = self.inner.set_ml_model_id(input);
         self
     }
+    /// <p>A unique identifier of the <code>MLModel</code>.</p>
+    pub fn get_ml_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ml_model_id()
+    }
     /// Adds a key-value pair to `Record`.
     ///
     /// To override the contents of this collection use [`set_record`](Self::set_record).
@@ -142,6 +150,14 @@ impl PredictFluentBuilder {
         self.inner = self.inner.set_record(input);
         self
     }
+    /// <p>A map of variable name-value pairs that represent an observation.</p>
+    pub fn get_record(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_record()
+    }
     #[allow(missing_docs)] // documentation missing in model
     pub fn predict_endpoint(
         mut self,
@@ -157,5 +173,9 @@ impl PredictFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_predict_endpoint(input);
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_predict_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_predict_endpoint()
     }
 }

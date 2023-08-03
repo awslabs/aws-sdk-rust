@@ -86,6 +86,21 @@ impl DeleteInterconnectOutputBuilder {
         self.interconnect_state = input;
         self
     }
+    /// <p>The state of the interconnect. The following are the possible values:</p>
+    /// <ul>
+    /// <li> <p> <code>requested</code>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+    /// <li> <p> <code>pending</code>: The interconnect is approved, and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is up, and the interconnect is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The interconnect is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li>
+    /// </ul>
+    pub fn get_interconnect_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::InterconnectState> {
+        &self.interconnect_state
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

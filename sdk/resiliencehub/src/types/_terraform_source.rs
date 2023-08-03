@@ -46,6 +46,10 @@ impl TerraformSourceBuilder {
         self.s3_state_file_url = input;
         self
     }
+    /// <p> The URL of the Terraform s3 state file you need to import. </p>
+    pub fn get_s3_state_file_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_state_file_url
+    }
     /// Consumes the builder and constructs a [`TerraformSource`](crate::types::TerraformSource).
     pub fn build(self) -> crate::types::TerraformSource {
         crate::types::TerraformSource {

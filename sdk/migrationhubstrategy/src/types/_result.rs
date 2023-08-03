@@ -72,6 +72,10 @@ impl ResultBuilder {
         self
     }
     /// <p>The error in server analysis.</p>
+    pub fn get_analysis_type(&self) -> &::std::option::Option<crate::types::AnalysisType> {
+        &self.analysis_type
+    }
+    /// <p>The error in server analysis.</p>
     pub fn analysis_status(mut self, input: crate::types::AnalysisStatusUnion) -> Self {
         self.analysis_status = ::std::option::Option::Some(input);
         self
@@ -83,6 +87,10 @@ impl ResultBuilder {
     ) -> Self {
         self.analysis_status = input;
         self
+    }
+    /// <p>The error in server analysis.</p>
+    pub fn get_analysis_status(&self) -> &::std::option::Option<crate::types::AnalysisStatusUnion> {
+        &self.analysis_status
     }
     /// <p>The error in server analysis.</p>
     pub fn status_message(
@@ -99,6 +107,10 @@ impl ResultBuilder {
     ) -> Self {
         self.status_message = input;
         self
+    }
+    /// <p>The error in server analysis.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// Appends an item to `antipattern_report_result_list`.
     ///
@@ -121,6 +133,12 @@ impl ResultBuilder {
     ) -> Self {
         self.antipattern_report_result_list = input;
         self
+    }
+    /// <p>The error in server analysis.</p>
+    pub fn get_antipattern_report_result_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AntipatternReportResult>> {
+        &self.antipattern_report_result_list
     }
     /// Consumes the builder and constructs a [`Result`](crate::types::Result).
     pub fn build(self) -> crate::types::Result {

@@ -62,6 +62,10 @@ impl ValidateConfigurationInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The application ID.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The configuration profile ID.</p>
     pub fn configuration_profile_id(
         mut self,
@@ -78,6 +82,10 @@ impl ValidateConfigurationInputBuilder {
         self.configuration_profile_id = input;
         self
     }
+    /// <p>The configuration profile ID.</p>
+    pub fn get_configuration_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_profile_id
+    }
     /// <p>The version of the configuration to validate.</p>
     pub fn configuration_version(
         mut self,
@@ -93,6 +101,10 @@ impl ValidateConfigurationInputBuilder {
     ) -> Self {
         self.configuration_version = input;
         self
+    }
+    /// <p>The version of the configuration to validate.</p>
+    pub fn get_configuration_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_version
     }
     /// Consumes the builder and constructs a [`ValidateConfigurationInput`](crate::operation::validate_configuration::ValidateConfigurationInput).
     pub fn build(

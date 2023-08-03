@@ -54,6 +54,10 @@ impl DisableAvailabilityZonesForLoadBalancerInputBuilder {
         self.load_balancer_name = input;
         self
     }
+    /// <p>The name of the load balancer.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.load_balancer_name
+    }
     /// Appends an item to `availability_zones`.
     ///
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
@@ -75,6 +79,12 @@ impl DisableAvailabilityZonesForLoadBalancerInputBuilder {
     ) -> Self {
         self.availability_zones = input;
         self
+    }
+    /// <p>The Availability Zones.</p>
+    pub fn get_availability_zones(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.availability_zones
     }
     /// Consumes the builder and constructs a [`DisableAvailabilityZonesForLoadBalancerInput`](crate::operation::disable_availability_zones_for_load_balancer::DisableAvailabilityZonesForLoadBalancerInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::disable_availability_zones_for_load_balancer::DisableAvailabilityZonesForLoadBalancerInput, ::aws_smithy_http::operation::error::BuildError>{

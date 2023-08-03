@@ -48,6 +48,10 @@ impl TransferDomainToAnotherAwsAccountInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The name of the domain that you want to transfer from the current Amazon Web Services account to another account.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The account ID of the Amazon Web Services account that you want to transfer the domain to, for example, <code>111122223333</code>.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl TransferDomainToAnotherAwsAccountInputBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>The account ID of the Amazon Web Services account that you want to transfer the domain to, for example, <code>111122223333</code>.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// Consumes the builder and constructs a [`TransferDomainToAnotherAwsAccountInput`](crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountInput, ::aws_smithy_http::operation::error::BuildError>{

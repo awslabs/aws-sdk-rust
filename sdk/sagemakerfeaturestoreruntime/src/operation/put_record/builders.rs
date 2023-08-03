@@ -39,6 +39,10 @@ impl PutRecordFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutRecord as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_record::builders::PutRecordInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl PutRecordFluentBuilder {
         self.inner = self.inner.set_feature_group_name(input);
         self
     }
+    /// <p>The name or Amazon Resource Name (ARN) of the feature group that you want to insert the record into.</p>
+    pub fn get_feature_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_feature_group_name()
+    }
     /// Appends an item to `Record`.
     ///
     /// To override the contents of this collection use [`set_record`](Self::set_record).
@@ -154,6 +162,17 @@ impl PutRecordFluentBuilder {
         self.inner = self.inner.set_record(input);
         self
     }
+    /// <p>List of FeatureValues to be inserted. This will be a full over-write. If you only want to update few of the feature values, do the following:</p>
+    /// <ul>
+    /// <li> <p>Use <code>GetRecord</code> to retrieve the latest record.</p> </li>
+    /// <li> <p>Update the record returned from <code>GetRecord</code>. </p> </li>
+    /// <li> <p>Use <code>PutRecord</code> to update feature values.</p> </li>
+    /// </ul>
+    pub fn get_record(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureValue>> {
+        self.inner.get_record()
+    }
     /// Appends an item to `TargetStores`.
     ///
     /// To override the contents of this collection use [`set_target_stores`](Self::set_target_stores).
@@ -171,6 +190,12 @@ impl PutRecordFluentBuilder {
         self.inner = self.inner.set_target_stores(input);
         self
     }
+    /// <p>A list of stores to which you're adding the record. By default, Feature Store adds the record to all of the stores that you're using for the <code>FeatureGroup</code>.</p>
+    pub fn get_target_stores(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetStore>> {
+        self.inner.get_target_stores()
+    }
     /// <p>Time to live duration, where the record is hard deleted after the expiration time is reached; <code>ExpiresAt</code> = <code>EventTime</code> + <code>TtlDuration</code>. For information on HardDelete, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html">DeleteRecord</a> API in the Amazon SageMaker API Reference guide.</p>
     pub fn ttl_duration(mut self, input: crate::types::TtlDuration) -> Self {
         self.inner = self.inner.ttl_duration(input);
@@ -183,5 +208,9 @@ impl PutRecordFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ttl_duration(input);
         self
+    }
+    /// <p>Time to live duration, where the record is hard deleted after the expiration time is reached; <code>ExpiresAt</code> = <code>EventTime</code> + <code>TtlDuration</code>. For information on HardDelete, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html">DeleteRecord</a> API in the Amazon SageMaker API Reference guide.</p>
+    pub fn get_ttl_duration(&self) -> &::std::option::Option<crate::types::TtlDuration> {
+        self.inner.get_ttl_duration()
     }
 }

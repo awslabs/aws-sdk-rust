@@ -73,6 +73,10 @@ impl AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetailsBuilder {
         self.device_name = input;
         self
     }
+    /// <p> The device name. </p>
+    pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_name
+    }
     /// <p> Parameters used to automatically set up Amazon EBS volumes when the instance is launched. </p>
     pub fn ebs(
         mut self,
@@ -91,6 +95,13 @@ impl AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetailsBuilder {
         self.ebs = input;
         self
     }
+    /// <p> Parameters used to automatically set up Amazon EBS volumes when the instance is launched. </p>
+    pub fn get_ebs(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails>
+    {
+        &self.ebs
+    }
     /// <p> Omits the device from the block device mapping when an empty string is specified. </p>
     pub fn no_device(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.no_device = ::std::option::Option::Some(input.into());
@@ -101,6 +112,10 @@ impl AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetailsBuilder {
         self.no_device = input;
         self
     }
+    /// <p> Omits the device from the block device mapping when an empty string is specified. </p>
+    pub fn get_no_device(&self) -> &::std::option::Option<::std::string::String> {
+        &self.no_device
+    }
     /// <p> The virtual device name (ephemeralN). Instance store volumes are numbered starting from 0. An instance type with 2 available instance store volumes can specify mappings for <code>ephemeral0</code> and <code>ephemeral1</code>. The number of available instance store volumes depends on the instance type. </p>
     pub fn virtual_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_name = ::std::option::Option::Some(input.into());
@@ -110,6 +125,10 @@ impl AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetailsBuilder {
     pub fn set_virtual_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_name = input;
         self
+    }
+    /// <p> The virtual device name (ephemeralN). Instance store volumes are numbered starting from 0. An instance type with 2 available instance store volumes can specify mappings for <code>ephemeral0</code> and <code>ephemeral1</code>. The number of available instance store volumes depends on the instance type. </p>
+    pub fn get_virtual_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_name
     }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails`](crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails {

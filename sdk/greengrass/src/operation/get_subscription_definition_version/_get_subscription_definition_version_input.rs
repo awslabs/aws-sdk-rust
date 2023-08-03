@@ -55,6 +55,10 @@ impl GetSubscriptionDefinitionVersionInputBuilder {
         self.next_token = input;
         self
     }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// The ID of the subscription definition.
     pub fn subscription_definition_id(
         mut self,
@@ -71,6 +75,10 @@ impl GetSubscriptionDefinitionVersionInputBuilder {
         self.subscription_definition_id = input;
         self
     }
+    /// The ID of the subscription definition.
+    pub fn get_subscription_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscription_definition_id
+    }
     /// The ID of the subscription definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListSubscriptionDefinitionVersions'' requests. If the version is the last one that was associated with a subscription definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
     pub fn subscription_definition_version_id(
         mut self,
@@ -86,6 +94,12 @@ impl GetSubscriptionDefinitionVersionInputBuilder {
     ) -> Self {
         self.subscription_definition_version_id = input;
         self
+    }
+    /// The ID of the subscription definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListSubscriptionDefinitionVersions'' requests. If the version is the last one that was associated with a subscription definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
+    pub fn get_subscription_definition_version_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.subscription_definition_version_id
     }
     /// Consumes the builder and constructs a [`GetSubscriptionDefinitionVersionInput`](crate::operation::get_subscription_definition_version::GetSubscriptionDefinitionVersionInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_subscription_definition_version::GetSubscriptionDefinitionVersionInput, ::aws_smithy_http::operation::error::BuildError>{

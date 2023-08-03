@@ -63,6 +63,10 @@ impl LaunchTemplateSpecificationBuilder {
         self.launch_template_id = input;
         self
     }
+    /// <p>A unique identifier for an existing Amazon EC2 launch template.</p>
+    pub fn get_launch_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_template_id
+    }
     /// <p>A readable identifier for an existing Amazon EC2 launch template. </p>
     pub fn launch_template_name(
         mut self,
@@ -79,6 +83,10 @@ impl LaunchTemplateSpecificationBuilder {
         self.launch_template_name = input;
         self
     }
+    /// <p>A readable identifier for an existing Amazon EC2 launch template. </p>
+    pub fn get_launch_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_template_name
+    }
     /// <p>The version of the Amazon EC2 launch template to use. If no version is specified, the default version will be used. With Amazon EC2, you can specify a default version for a launch template. If none is set, the default is the first version created.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -88,6 +96,10 @@ impl LaunchTemplateSpecificationBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version of the Amazon EC2 launch template to use. If no version is specified, the default version will be used. With Amazon EC2, you can specify a default version for a launch template. If none is set, the default is the first version created.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`LaunchTemplateSpecification`](crate::types::LaunchTemplateSpecification).
     pub fn build(self) -> crate::types::LaunchTemplateSpecification {

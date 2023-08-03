@@ -257,6 +257,10 @@ impl JobBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account that owns the job.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the user who created the job.</p>
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
@@ -266,6 +270,10 @@ impl JobBuilder {
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user who created the job.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by
     }
     /// <p>The date and time that the job was created.</p>
     pub fn create_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -280,6 +288,10 @@ impl JobBuilder {
         self.create_date = input;
         self
     }
+    /// <p>The date and time that the job was created.</p>
+    pub fn get_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_date
+    }
     /// <p>A dataset that the job is to process.</p>
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_name = ::std::option::Option::Some(input.into());
@@ -289,6 +301,10 @@ impl JobBuilder {
     pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_name = input;
         self
+    }
+    /// <p>A dataset that the job is to process.</p>
+    pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_name
     }
     /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job output. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html">Encrypting data written by DataBrew jobs</a> </p>
     pub fn encryption_key_arn(
@@ -305,6 +321,10 @@ impl JobBuilder {
     ) -> Self {
         self.encryption_key_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job output. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html">Encrypting data written by DataBrew jobs</a> </p>
+    pub fn get_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encryption_key_arn
     }
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
@@ -327,6 +347,14 @@ impl JobBuilder {
         self.encryption_mode = input;
         self
     }
+    /// <p>The encryption mode for the job, which can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
+    /// </ul>
+    pub fn get_encryption_mode(&self) -> &::std::option::Option<crate::types::EncryptionMode> {
+        &self.encryption_mode
+    }
     /// <p>The unique name of the job.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -336,6 +364,10 @@ impl JobBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The unique name of the job.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The job type of the job, which must be one of the following:</p>
     /// <ul>
@@ -355,6 +387,14 @@ impl JobBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The job type of the job, which must be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>PROFILE</code> - A job to analyze a dataset, to determine its size, data types, data distribution, and more.</p> </li>
+    /// <li> <p> <code>RECIPE</code> - A job to apply one or more transformations to a dataset.</p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::JobType> {
+        &self.r#type
+    }
     /// <p>The Amazon Resource Name (ARN) of the user who last modified the job.</p>
     pub fn last_modified_by(
         mut self,
@@ -371,6 +411,10 @@ impl JobBuilder {
         self.last_modified_by = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the user who last modified the job.</p>
+    pub fn get_last_modified_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_by
+    }
     /// <p>The modification date and time of the job.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input);
@@ -383,6 +427,10 @@ impl JobBuilder {
     ) -> Self {
         self.last_modified_date = input;
         self
+    }
+    /// <p>The modification date and time of the job.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_date
     }
     /// <p>The current status of Amazon CloudWatch logging for the job.</p>
     pub fn log_subscription(mut self, input: crate::types::LogSubscription) -> Self {
@@ -397,6 +445,10 @@ impl JobBuilder {
         self.log_subscription = input;
         self
     }
+    /// <p>The current status of Amazon CloudWatch logging for the job.</p>
+    pub fn get_log_subscription(&self) -> &::std::option::Option<crate::types::LogSubscription> {
+        &self.log_subscription
+    }
     /// <p>The maximum number of nodes that can be consumed when the job processes data.</p>
     pub fn max_capacity(mut self, input: i32) -> Self {
         self.max_capacity = ::std::option::Option::Some(input);
@@ -407,6 +459,10 @@ impl JobBuilder {
         self.max_capacity = input;
         self
     }
+    /// <p>The maximum number of nodes that can be consumed when the job processes data.</p>
+    pub fn get_max_capacity(&self) -> &::std::option::Option<i32> {
+        &self.max_capacity
+    }
     /// <p>The maximum number of times to retry the job after a job run fails.</p>
     pub fn max_retries(mut self, input: i32) -> Self {
         self.max_retries = ::std::option::Option::Some(input);
@@ -416,6 +472,10 @@ impl JobBuilder {
     pub fn set_max_retries(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_retries = input;
         self
+    }
+    /// <p>The maximum number of times to retry the job after a job run fails.</p>
+    pub fn get_max_retries(&self) -> &::std::option::Option<i32> {
+        &self.max_retries
     }
     /// Appends an item to `outputs`.
     ///
@@ -436,6 +496,10 @@ impl JobBuilder {
         self.outputs = input;
         self
     }
+    /// <p>One or more artifacts that represent output from running the job.</p>
+    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Output>> {
+        &self.outputs
+    }
     /// Appends an item to `data_catalog_outputs`.
     ///
     /// To override the contents of this collection use [`set_data_catalog_outputs`](Self::set_data_catalog_outputs).
@@ -454,6 +518,12 @@ impl JobBuilder {
     ) -> Self {
         self.data_catalog_outputs = input;
         self
+    }
+    /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
+    pub fn get_data_catalog_outputs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataCatalogOutput>> {
+        &self.data_catalog_outputs
     }
     /// Appends an item to `database_outputs`.
     ///
@@ -474,6 +544,12 @@ impl JobBuilder {
         self.database_outputs = input;
         self
     }
+    /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
+    pub fn get_database_outputs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DatabaseOutput>> {
+        &self.database_outputs
+    }
     /// <p>The name of the project that the job is associated with.</p>
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
@@ -483,6 +559,10 @@ impl JobBuilder {
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_name = input;
         self
+    }
+    /// <p>The name of the project that the job is associated with.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
     }
     /// <p>A set of steps that the job runs.</p>
     pub fn recipe_reference(mut self, input: crate::types::RecipeReference) -> Self {
@@ -497,6 +577,10 @@ impl JobBuilder {
         self.recipe_reference = input;
         self
     }
+    /// <p>A set of steps that the job runs.</p>
+    pub fn get_recipe_reference(&self) -> &::std::option::Option<crate::types::RecipeReference> {
+        &self.recipe_reference
+    }
     /// <p>The unique Amazon Resource Name (ARN) for the job.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -506,6 +590,10 @@ impl JobBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p>The unique Amazon Resource Name (ARN) for the job.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the role to be assumed for this job.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -517,6 +605,10 @@ impl JobBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the role to be assumed for this job.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
     pub fn timeout(mut self, input: i32) -> Self {
         self.timeout = ::std::option::Option::Some(input);
@@ -526,6 +618,10 @@ impl JobBuilder {
     pub fn set_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timeout = input;
         self
+    }
+    /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
+    pub fn get_timeout(&self) -> &::std::option::Option<i32> {
+        &self.timeout
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -552,6 +648,14 @@ impl JobBuilder {
         self.tags = input;
         self
     }
+    /// <p>Metadata tags that have been applied to the job.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>A sample configuration for profile jobs only, which determines the number of rows on which the profile job is run. If a <code>JobSample</code> value isn't provided, the default value is used. The default value is CUSTOM_ROWS for the mode parameter and 20,000 for the size parameter.</p>
     pub fn job_sample(mut self, input: crate::types::JobSample) -> Self {
         self.job_sample = ::std::option::Option::Some(input);
@@ -561,6 +665,10 @@ impl JobBuilder {
     pub fn set_job_sample(mut self, input: ::std::option::Option<crate::types::JobSample>) -> Self {
         self.job_sample = input;
         self
+    }
+    /// <p>A sample configuration for profile jobs only, which determines the number of rows on which the profile job is run. If a <code>JobSample</code> value isn't provided, the default value is used. The default value is CUSTOM_ROWS for the mode parameter and 20,000 for the size parameter.</p>
+    pub fn get_job_sample(&self) -> &::std::option::Option<crate::types::JobSample> {
+        &self.job_sample
     }
     /// Appends an item to `validation_configurations`.
     ///
@@ -583,6 +691,12 @@ impl JobBuilder {
     ) -> Self {
         self.validation_configurations = input;
         self
+    }
+    /// <p>List of validation configurations that are applied to the profile job.</p>
+    pub fn get_validation_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationConfiguration>> {
+        &self.validation_configurations
     }
     /// Consumes the builder and constructs a [`Job`](crate::types::Job).
     pub fn build(self) -> crate::types::Job {

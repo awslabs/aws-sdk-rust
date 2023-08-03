@@ -78,6 +78,12 @@ impl LakeFormationDataPermissionAssetBuilder {
         self.lake_formation_data_permission_details = input;
         self
     }
+    /// <p>Details about the AWS Lake Formation data permission.</p>
+    pub fn get_lake_formation_data_permission_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::LakeFormationDataPermissionDetails> {
+        &self.lake_formation_data_permission_details
+    }
     /// <p>The data permission type.</p>
     pub fn lake_formation_data_permission_type(
         mut self,
@@ -93,6 +99,12 @@ impl LakeFormationDataPermissionAssetBuilder {
     ) -> Self {
         self.lake_formation_data_permission_type = input;
         self
+    }
+    /// <p>The data permission type.</p>
+    pub fn get_lake_formation_data_permission_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::LakeFormationDataPermissionType> {
+        &self.lake_formation_data_permission_type
     }
     /// Appends an item to `permissions`.
     ///
@@ -113,6 +125,12 @@ impl LakeFormationDataPermissionAssetBuilder {
         self.permissions = input;
         self
     }
+    /// <p>The permissions granted to the subscribers on the resource.</p>
+    pub fn get_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LfPermission>> {
+        &self.permissions
+    }
     /// <p>The IAM role's ARN that allows AWS Data Exchange to assume the role and grant and revoke permissions to AWS Lake Formation data permissions.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -122,6 +140,10 @@ impl LakeFormationDataPermissionAssetBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The IAM role's ARN that allows AWS Data Exchange to assume the role and grant and revoke permissions to AWS Lake Formation data permissions.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`LakeFormationDataPermissionAsset`](crate::types::LakeFormationDataPermissionAsset).
     pub fn build(self) -> crate::types::LakeFormationDataPermissionAsset {

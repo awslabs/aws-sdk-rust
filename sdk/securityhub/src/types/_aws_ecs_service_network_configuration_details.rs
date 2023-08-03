@@ -56,6 +56,14 @@ impl AwsEcsServiceNetworkConfigurationDetailsBuilder {
         self.aws_vpc_configuration = input;
         self
     }
+    /// <p>The VPC subnet and security group configuration.</p>
+    pub fn get_aws_vpc_configuration(
+        &self,
+    ) -> &::std::option::Option<
+        crate::types::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails,
+    > {
+        &self.aws_vpc_configuration
+    }
     /// Consumes the builder and constructs a [`AwsEcsServiceNetworkConfigurationDetails`](crate::types::AwsEcsServiceNetworkConfigurationDetails).
     pub fn build(self) -> crate::types::AwsEcsServiceNetworkConfigurationDetails {
         crate::types::AwsEcsServiceNetworkConfigurationDetails {

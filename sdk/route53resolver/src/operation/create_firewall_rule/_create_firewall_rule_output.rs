@@ -50,6 +50,10 @@ impl CreateFirewallRuleOutputBuilder {
         self.firewall_rule = input;
         self
     }
+    /// <p>The firewall rule that you just created. </p>
+    pub fn get_firewall_rule(&self) -> &::std::option::Option<crate::types::FirewallRule> {
+        &self.firewall_rule
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

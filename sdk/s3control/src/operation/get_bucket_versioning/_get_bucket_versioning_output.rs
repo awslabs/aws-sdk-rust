@@ -59,6 +59,10 @@ impl GetBucketVersioningOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The versioning state of the S3 on Outposts bucket.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::BucketVersioningStatus> {
+        &self.status
+    }
     /// <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This element is returned only if the bucket has been configured with MFA delete. If MFA delete has never been configured for the bucket, this element is not returned.</p>
     pub fn mfa_delete(mut self, input: crate::types::MfaDeleteStatus) -> Self {
         self.mfa_delete = ::std::option::Option::Some(input);
@@ -71,6 +75,10 @@ impl GetBucketVersioningOutputBuilder {
     ) -> Self {
         self.mfa_delete = input;
         self
+    }
+    /// <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This element is returned only if the bucket has been configured with MFA delete. If MFA delete has never been configured for the bucket, this element is not returned.</p>
+    pub fn get_mfa_delete(&self) -> &::std::option::Option<crate::types::MfaDeleteStatus> {
+        &self.mfa_delete
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

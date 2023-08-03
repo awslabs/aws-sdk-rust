@@ -46,6 +46,10 @@ impl GreengrassV2Builder {
         self.core_device_thing_name = input;
         self
     }
+    /// <p>The name of the IoT thing for your IoT Greengrass V2 core device.</p>
+    pub fn get_core_device_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_device_thing_name
+    }
     /// Consumes the builder and constructs a [`GreengrassV2`](crate::types::GreengrassV2).
     pub fn build(self) -> crate::types::GreengrassV2 {
         crate::types::GreengrassV2 {

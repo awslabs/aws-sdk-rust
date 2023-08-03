@@ -48,6 +48,10 @@ impl S3DestinationBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The name of the bucket in which Evidently stores evaluation events.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>The bucket prefix in which Evidently stores evaluation events.</p>
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl S3DestinationBuilder {
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix = input;
         self
+    }
+    /// <p>The bucket prefix in which Evidently stores evaluation events.</p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
     }
     /// Consumes the builder and constructs a [`S3Destination`](crate::types::S3Destination).
     pub fn build(self) -> crate::types::S3Destination {

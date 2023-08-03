@@ -45,6 +45,10 @@ impl DeleteAppInstanceStreamingConfigurationsInputBuilder {
         self.app_instance_arn = input;
         self
     }
+    /// <p>The ARN of the streaming configurations being deleted.</p>
+    pub fn get_app_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_instance_arn
+    }
     /// Consumes the builder and constructs a [`DeleteAppInstanceStreamingConfigurationsInput`](crate::operation::delete_app_instance_streaming_configurations::DeleteAppInstanceStreamingConfigurationsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_app_instance_streaming_configurations::DeleteAppInstanceStreamingConfigurationsInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

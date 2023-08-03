@@ -49,6 +49,10 @@ impl EstimatedMonthlySavingsBuilder {
         self.currency = input;
         self
     }
+    /// <p>The currency of the estimated monthly savings.</p>
+    pub fn get_currency(&self) -> &::std::option::Option<crate::types::Currency> {
+        &self.currency
+    }
     /// <p>The value of the estimated monthly savings.</p>
     pub fn value(mut self, input: f64) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -58,6 +62,10 @@ impl EstimatedMonthlySavingsBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of the estimated monthly savings.</p>
+    pub fn get_value(&self) -> &::std::option::Option<f64> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`EstimatedMonthlySavings`](crate::types::EstimatedMonthlySavings).
     pub fn build(self) -> crate::types::EstimatedMonthlySavings {

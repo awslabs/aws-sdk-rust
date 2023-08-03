@@ -97,6 +97,12 @@ impl UpdateLaunchConfigurationTemplateInputBuilder {
         self.launch_configuration_template_id = input;
         self
     }
+    /// <p>Launch Configuration Template ID.</p>
+    pub fn get_launch_configuration_template_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.launch_configuration_template_id
+    }
     /// <p>Launch disposition.</p>
     pub fn launch_disposition(mut self, input: crate::types::LaunchDisposition) -> Self {
         self.launch_disposition = ::std::option::Option::Some(input);
@@ -109,6 +115,12 @@ impl UpdateLaunchConfigurationTemplateInputBuilder {
     ) -> Self {
         self.launch_disposition = input;
         self
+    }
+    /// <p>Launch disposition.</p>
+    pub fn get_launch_disposition(
+        &self,
+    ) -> &::std::option::Option<crate::types::LaunchDisposition> {
+        &self.launch_disposition
     }
     /// <p>Target instance type right-sizing method.</p>
     pub fn target_instance_type_right_sizing_method(
@@ -126,6 +138,12 @@ impl UpdateLaunchConfigurationTemplateInputBuilder {
         self.target_instance_type_right_sizing_method = input;
         self
     }
+    /// <p>Target instance type right-sizing method.</p>
+    pub fn get_target_instance_type_right_sizing_method(
+        &self,
+    ) -> &::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod> {
+        &self.target_instance_type_right_sizing_method
+    }
     /// <p>Copy private IP.</p>
     pub fn copy_private_ip(mut self, input: bool) -> Self {
         self.copy_private_ip = ::std::option::Option::Some(input);
@@ -135,6 +153,10 @@ impl UpdateLaunchConfigurationTemplateInputBuilder {
     pub fn set_copy_private_ip(mut self, input: ::std::option::Option<bool>) -> Self {
         self.copy_private_ip = input;
         self
+    }
+    /// <p>Copy private IP.</p>
+    pub fn get_copy_private_ip(&self) -> &::std::option::Option<bool> {
+        &self.copy_private_ip
     }
     /// <p>Copy tags.</p>
     pub fn copy_tags(mut self, input: bool) -> Self {
@@ -146,6 +168,10 @@ impl UpdateLaunchConfigurationTemplateInputBuilder {
         self.copy_tags = input;
         self
     }
+    /// <p>Copy tags.</p>
+    pub fn get_copy_tags(&self) -> &::std::option::Option<bool> {
+        &self.copy_tags
+    }
     /// <p>Licensing.</p>
     pub fn licensing(mut self, input: crate::types::Licensing) -> Self {
         self.licensing = ::std::option::Option::Some(input);
@@ -155,6 +181,10 @@ impl UpdateLaunchConfigurationTemplateInputBuilder {
     pub fn set_licensing(mut self, input: ::std::option::Option<crate::types::Licensing>) -> Self {
         self.licensing = input;
         self
+    }
+    /// <p>Licensing.</p>
+    pub fn get_licensing(&self) -> &::std::option::Option<crate::types::Licensing> {
+        &self.licensing
     }
     /// <p>S3 bucket ARN to export Source Network templates.</p>
     pub fn export_bucket_arn(
@@ -171,6 +201,10 @@ impl UpdateLaunchConfigurationTemplateInputBuilder {
     ) -> Self {
         self.export_bucket_arn = input;
         self
+    }
+    /// <p>S3 bucket ARN to export Source Network templates.</p>
+    pub fn get_export_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.export_bucket_arn
     }
     /// Consumes the builder and constructs a [`UpdateLaunchConfigurationTemplateInput`](crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateInput, ::aws_smithy_http::operation::error::BuildError>{

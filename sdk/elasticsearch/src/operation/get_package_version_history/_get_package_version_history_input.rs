@@ -58,6 +58,10 @@ impl GetPackageVersionHistoryInputBuilder {
         self.package_id = input;
         self
     }
+    /// <p>Returns an audit history of versions of the package.</p>
+    pub fn get_package_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_id
+    }
     /// <p>Limits results to a maximum number of versions.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl GetPackageVersionHistoryInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>Limits results to a maximum number of versions.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -77,6 +85,10 @@ impl GetPackageVersionHistoryInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`GetPackageVersionHistoryInput`](crate::operation::get_package_version_history::GetPackageVersionHistoryInput).
     pub fn build(

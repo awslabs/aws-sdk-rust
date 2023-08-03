@@ -51,6 +51,10 @@ impl ModelMetadataFilterBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the of the model to filter by.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::ModelMetadataFilterType> {
+        &self.name
+    }
     /// <p>The value to filter the model metadata.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl ModelMetadataFilterBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value to filter the model metadata.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`ModelMetadataFilter`](crate::types::ModelMetadataFilter).
     pub fn build(self) -> crate::types::ModelMetadataFilter {

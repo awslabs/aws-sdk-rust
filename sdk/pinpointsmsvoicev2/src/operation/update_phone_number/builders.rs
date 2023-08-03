@@ -37,6 +37,12 @@ impl UpdatePhoneNumberFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdatePhoneNumber as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_phone_number::builders::UpdatePhoneNumberInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl UpdatePhoneNumberFluentBuilder {
         self.inner = self.inner.set_phone_number_id(input);
         self
     }
+    /// <p>The unique identifier of the phone number. Valid values for this field can be either the PhoneNumberId or PhoneNumberArn.</p>
+    pub fn get_phone_number_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_phone_number_id()
+    }
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
     pub fn two_way_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.two_way_enabled(input);
@@ -142,6 +152,10 @@ impl UpdatePhoneNumberFluentBuilder {
     pub fn set_two_way_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_two_way_enabled(input);
         self
+    }
+    /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
+    pub fn get_two_way_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_two_way_enabled()
     }
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
     pub fn two_way_channel_arn(
@@ -159,6 +173,10 @@ impl UpdatePhoneNumberFluentBuilder {
         self.inner = self.inner.set_two_way_channel_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
+    pub fn get_two_way_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_two_way_channel_arn()
+    }
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
     pub fn self_managed_opt_outs_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.self_managed_opt_outs_enabled(input);
@@ -168,6 +186,10 @@ impl UpdatePhoneNumberFluentBuilder {
     pub fn set_self_managed_opt_outs_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_self_managed_opt_outs_enabled(input);
         self
+    }
+    /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
+    pub fn get_self_managed_opt_outs_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_self_managed_opt_outs_enabled()
     }
     /// <p>The OptOutList to add the phone number to. Valid values for this field can be either the OutOutListName or OutOutListArn.</p>
     pub fn opt_out_list_name(
@@ -185,6 +207,10 @@ impl UpdatePhoneNumberFluentBuilder {
         self.inner = self.inner.set_opt_out_list_name(input);
         self
     }
+    /// <p>The OptOutList to add the phone number to. Valid values for this field can be either the OutOutListName or OutOutListArn.</p>
+    pub fn get_opt_out_list_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_opt_out_list_name()
+    }
     /// <p>By default this is set to false. When set to true the phone number can't be deleted. </p>
     pub fn deletion_protection_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.deletion_protection_enabled(input);
@@ -194,5 +220,9 @@ impl UpdatePhoneNumberFluentBuilder {
     pub fn set_deletion_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_deletion_protection_enabled(input);
         self
+    }
+    /// <p>By default this is set to false. When set to true the phone number can't be deleted. </p>
+    pub fn get_deletion_protection_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_deletion_protection_enabled()
     }
 }

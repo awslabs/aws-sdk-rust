@@ -39,6 +39,12 @@ impl PutConformancePackFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutConformancePack as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_conformance_pack::builders::PutConformancePackInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +141,10 @@ impl PutConformancePackFluentBuilder {
         self.inner = self.inner.set_conformance_pack_name(input);
         self
     }
+    /// <p>The unique name of the conformance pack you want to deploy.</p>
+    pub fn get_conformance_pack_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_conformance_pack_name()
+    }
     /// <p>The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same Region as the conformance pack. </p> <note>
     /// <p>You must have access to read Amazon S3 bucket.</p>
     /// </note>
@@ -154,6 +164,12 @@ impl PutConformancePackFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_template_s3_uri(input);
         self
+    }
+    /// <p>The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same Region as the conformance pack. </p> <note>
+    /// <p>You must have access to read Amazon S3 bucket.</p>
+    /// </note>
+    pub fn get_template_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_s3_uri()
     }
     /// <p>A string containing the full conformance pack template body. The structure containing the template body has a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
     /// <p>You can use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>
@@ -175,6 +191,12 @@ impl PutConformancePackFluentBuilder {
         self.inner = self.inner.set_template_body(input);
         self
     }
+    /// <p>A string containing the full conformance pack template body. The structure containing the template body has a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
+    /// <p>You can use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>
+    /// </note>
+    pub fn get_template_body(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_body()
+    }
     /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
@@ -194,6 +216,12 @@ impl PutConformancePackFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_delivery_s3_bucket(input);
         self
+    }
+    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
+    /// <p>This field is optional.</p>
+    /// </note>
+    pub fn get_delivery_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_delivery_s3_bucket()
     }
     /// <p>The prefix for the Amazon S3 bucket. </p> <note>
     /// <p>This field is optional.</p>
@@ -215,6 +243,12 @@ impl PutConformancePackFluentBuilder {
         self.inner = self.inner.set_delivery_s3_key_prefix(input);
         self
     }
+    /// <p>The prefix for the Amazon S3 bucket. </p> <note>
+    /// <p>This field is optional.</p>
+    /// </note>
+    pub fn get_delivery_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_delivery_s3_key_prefix()
+    }
     /// Appends an item to `ConformancePackInputParameters`.
     ///
     /// To override the contents of this collection use [`set_conformance_pack_input_parameters`](Self::set_conformance_pack_input_parameters).
@@ -235,6 +269,12 @@ impl PutConformancePackFluentBuilder {
         self.inner = self.inner.set_conformance_pack_input_parameters(input);
         self
     }
+    /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
+    pub fn get_conformance_pack_input_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConformancePackInputParameter>> {
+        self.inner.get_conformance_pack_input_parameters()
+    }
     /// <p>An object of type <code>TemplateSSMDocumentDetails</code>, which contains the name or the Amazon Resource Name (ARN) of the Amazon Web Services Systems Manager document (SSM document) and the version of the SSM document that is used to create a conformance pack.</p>
     pub fn template_ssm_document_details(
         mut self,
@@ -250,5 +290,11 @@ impl PutConformancePackFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_template_ssm_document_details(input);
         self
+    }
+    /// <p>An object of type <code>TemplateSSMDocumentDetails</code>, which contains the name or the Amazon Resource Name (ARN) of the Amazon Web Services Systems Manager document (SSM document) and the version of the SSM document that is used to create a conformance pack.</p>
+    pub fn get_template_ssm_document_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::TemplateSsmDocumentDetails> {
+        self.inner.get_template_ssm_document_details()
     }
 }

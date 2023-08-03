@@ -36,6 +36,10 @@ impl PutFirewallRuleGroupPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutFirewallRuleGroupPolicy as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_firewall_rule_group_policy::builders::PutFirewallRuleGroupPolicyInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl PutFirewallRuleGroupPolicyFluentBuilder {
         self.inner = self.inner.set_arn(input);
         self
     }
+    /// <p>The ARN (Amazon Resource Name) for the rule group that you want to share.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
+    }
     /// <p>The Identity and Access Management (Amazon Web Services IAM) policy to attach to the rule group.</p>
     pub fn firewall_rule_group_policy(
         mut self,
@@ -141,5 +149,9 @@ impl PutFirewallRuleGroupPolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_firewall_rule_group_policy(input);
         self
+    }
+    /// <p>The Identity and Access Management (Amazon Web Services IAM) policy to attach to the rule group.</p>
+    pub fn get_firewall_rule_group_policy(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_firewall_rule_group_policy()
     }
 }

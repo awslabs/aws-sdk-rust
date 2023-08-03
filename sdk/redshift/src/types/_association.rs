@@ -69,6 +69,12 @@ impl AssociationBuilder {
         self.custom_domain_certificate_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the certificate associated with the custom domain.</p>
+    pub fn get_custom_domain_certificate_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.custom_domain_certificate_arn
+    }
     /// <p>The expiration date for the certificate.</p>
     pub fn custom_domain_certificate_expiry_date(
         mut self,
@@ -84,6 +90,12 @@ impl AssociationBuilder {
     ) -> Self {
         self.custom_domain_certificate_expiry_date = input;
         self
+    }
+    /// <p>The expiration date for the certificate.</p>
+    pub fn get_custom_domain_certificate_expiry_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.custom_domain_certificate_expiry_date
     }
     /// Appends an item to `certificate_associations`.
     ///
@@ -103,6 +115,12 @@ impl AssociationBuilder {
     ) -> Self {
         self.certificate_associations = input;
         self
+    }
+    /// <p>A list of all associated clusters and domain names tied to a specific certificate.</p>
+    pub fn get_certificate_associations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateAssociation>> {
+        &self.certificate_associations
     }
     /// Consumes the builder and constructs a [`Association`](crate::types::Association).
     pub fn build(self) -> crate::types::Association {

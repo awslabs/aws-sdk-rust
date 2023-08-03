@@ -47,6 +47,10 @@ impl GetLaunchInputBuilder {
         self.project = input;
         self
     }
+    /// <p>The name or ARN of the project that contains the launch.</p>
+    pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project
+    }
     /// <p>The name of the launch that you want to see the details of.</p>
     pub fn launch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl GetLaunchInputBuilder {
     pub fn set_launch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launch = input;
         self
+    }
+    /// <p>The name of the launch that you want to see the details of.</p>
+    pub fn get_launch(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch
     }
     /// Consumes the builder and constructs a [`GetLaunchInput`](crate::operation::get_launch::GetLaunchInput).
     pub fn build(

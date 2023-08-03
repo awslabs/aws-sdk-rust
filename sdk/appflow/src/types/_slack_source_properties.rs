@@ -40,6 +40,10 @@ impl SlackSourcePropertiesBuilder {
         self.object = input;
         self
     }
+    /// <p> The object specified in the Slack flow source. </p>
+    pub fn get_object(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object
+    }
     /// Consumes the builder and constructs a [`SlackSourceProperties`](crate::types::SlackSourceProperties).
     pub fn build(self) -> crate::types::SlackSourceProperties {
         crate::types::SlackSourceProperties {

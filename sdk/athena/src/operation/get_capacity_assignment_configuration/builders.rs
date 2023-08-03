@@ -36,6 +36,10 @@ impl GetCapacityAssignmentConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetCapacityAssignmentConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_capacity_assignment_configuration::builders::GetCapacityAssignmentConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -105,5 +109,9 @@ impl GetCapacityAssignmentConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_capacity_reservation_name(input);
         self
+    }
+    /// <p>The name of the capacity reservation to retrieve the capacity assignment configuration for.</p>
+    pub fn get_capacity_reservation_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_capacity_reservation_name()
     }
 }

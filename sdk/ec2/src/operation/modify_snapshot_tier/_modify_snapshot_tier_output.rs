@@ -55,6 +55,10 @@ impl ModifySnapshotTierOutputBuilder {
         self.snapshot_id = input;
         self
     }
+    /// <p>The ID of the snapshot.</p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_id
+    }
     /// <p>The date and time when the archive process was started.</p>
     pub fn tiering_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.tiering_start_time = ::std::option::Option::Some(input);
@@ -67,6 +71,10 @@ impl ModifySnapshotTierOutputBuilder {
     ) -> Self {
         self.tiering_start_time = input;
         self
+    }
+    /// <p>The date and time when the archive process was started.</p>
+    pub fn get_tiering_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.tiering_start_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

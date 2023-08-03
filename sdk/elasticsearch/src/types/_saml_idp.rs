@@ -54,6 +54,10 @@ impl SamlIdpBuilder {
         self.metadata_content = input;
         self
     }
+    /// <p>The Metadata of the SAML application in xml format.</p>
+    pub fn get_metadata_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metadata_content
+    }
     /// <p>The unique Entity ID of the application in SAML Identity Provider.</p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl SamlIdpBuilder {
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entity_id = input;
         self
+    }
+    /// <p>The unique Entity ID of the application in SAML Identity Provider.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_id
     }
     /// Consumes the builder and constructs a [`SamlIdp`](crate::types::SamlIdp).
     pub fn build(self) -> crate::types::SamlIdp {

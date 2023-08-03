@@ -41,6 +41,12 @@ impl UpdateApplicationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateApplication as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_application::builders::UpdateApplicationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl UpdateApplicationFluentBuilder {
         self.inner = self.inner.set_application_name(input);
         self
     }
+    /// <p>Name of the Amazon Kinesis Analytics application to update.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_name()
+    }
     /// <p>The current application version ID. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get this value.</p>
     pub fn current_application_version_id(mut self, input: i64) -> Self {
         self.inner = self.inner.current_application_version_id(input);
@@ -146,6 +156,10 @@ impl UpdateApplicationFluentBuilder {
     pub fn set_current_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_current_application_version_id(input);
         self
+    }
+    /// <p>The current application version ID. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get this value.</p>
+    pub fn get_current_application_version_id(&self) -> &::std::option::Option<i64> {
+        self.inner.get_current_application_version_id()
     }
     /// <p>Describes application updates.</p>
     pub fn application_update(mut self, input: crate::types::ApplicationUpdate) -> Self {
@@ -159,5 +173,11 @@ impl UpdateApplicationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_application_update(input);
         self
+    }
+    /// <p>Describes application updates.</p>
+    pub fn get_application_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationUpdate> {
+        self.inner.get_application_update()
     }
 }

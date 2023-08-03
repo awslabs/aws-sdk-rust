@@ -47,6 +47,10 @@ impl GetLaunchConfigurationInputBuilder {
         self.source_server_id = input;
         self
     }
+    /// <p>The ID of the Source Server that we want to retrieve a Launch Configuration for.</p>
+    pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_server_id
+    }
     /// Consumes the builder and constructs a [`GetLaunchConfigurationInput`](crate::operation::get_launch_configuration::GetLaunchConfigurationInput).
     pub fn build(
         self,

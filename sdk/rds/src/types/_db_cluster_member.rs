@@ -70,6 +70,10 @@ impl DbClusterMemberBuilder {
         self.db_instance_identifier = input;
         self
     }
+    /// <p>Specifies the instance identifier for this member of the DB cluster.</p>
+    pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_identifier
+    }
     /// <p>Value that is <code>true</code> if the cluster member is the primary instance for the DB cluster and <code>false</code> otherwise.</p>
     pub fn is_cluster_writer(mut self, input: bool) -> Self {
         self.is_cluster_writer = ::std::option::Option::Some(input);
@@ -79,6 +83,10 @@ impl DbClusterMemberBuilder {
     pub fn set_is_cluster_writer(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_cluster_writer = input;
         self
+    }
+    /// <p>Value that is <code>true</code> if the cluster member is the primary instance for the DB cluster and <code>false</code> otherwise.</p>
+    pub fn get_is_cluster_writer(&self) -> &::std::option::Option<bool> {
+        &self.is_cluster_writer
     }
     /// <p>Specifies the status of the DB cluster parameter group for this member of the DB cluster.</p>
     pub fn db_cluster_parameter_group_status(
@@ -96,6 +104,12 @@ impl DbClusterMemberBuilder {
         self.db_cluster_parameter_group_status = input;
         self
     }
+    /// <p>Specifies the status of the DB cluster parameter group for this member of the DB cluster.</p>
+    pub fn get_db_cluster_parameter_group_status(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_parameter_group_status
+    }
     /// <p>A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure of the existing primary instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"> Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn promotion_tier(mut self, input: i32) -> Self {
         self.promotion_tier = ::std::option::Option::Some(input);
@@ -105,6 +119,10 @@ impl DbClusterMemberBuilder {
     pub fn set_promotion_tier(mut self, input: ::std::option::Option<i32>) -> Self {
         self.promotion_tier = input;
         self
+    }
+    /// <p>A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure of the existing primary instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"> Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn get_promotion_tier(&self) -> &::std::option::Option<i32> {
+        &self.promotion_tier
     }
     /// Consumes the builder and constructs a [`DbClusterMember`](crate::types::DbClusterMember).
     pub fn build(self) -> crate::types::DbClusterMember {

@@ -40,6 +40,12 @@ impl GetRegexPatternSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetRegexPatternSet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_regex_pattern_set::builders::GetRegexPatternSetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,5 +141,9 @@ impl GetRegexPatternSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_regex_pattern_set_id(input);
         self
+    }
+    /// <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to get. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
+    pub fn get_regex_pattern_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_regex_pattern_set_id()
     }
 }

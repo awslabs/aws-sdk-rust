@@ -78,6 +78,10 @@ impl MetricInfoBuilder {
         self.metric_namespace = input;
         self
     }
+    /// <p>The namespace of the metric.</p>
+    pub fn get_metric_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_namespace
+    }
     /// <p>The name of the metric.</p>
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_name = ::std::option::Option::Some(input.into());
@@ -87,6 +91,10 @@ impl MetricInfoBuilder {
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_name = input;
         self
+    }
+    /// <p>The name of the metric.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
     }
     /// Adds a key-value pair to `metric_dimensions`.
     ///
@@ -113,6 +121,14 @@ impl MetricInfoBuilder {
         self.metric_dimensions = input;
         self
     }
+    /// <p>The metric dimension. This is a name/value pair that is part of the identity of a metric.</p>
+    pub fn get_metric_dimensions(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.metric_dimensions
+    }
     /// <p>The metric statistic that we recommend you use when determining quota usage.</p>
     pub fn metric_statistic_recommendation(
         mut self,
@@ -128,6 +144,12 @@ impl MetricInfoBuilder {
     ) -> Self {
         self.metric_statistic_recommendation = input;
         self
+    }
+    /// <p>The metric statistic that we recommend you use when determining quota usage.</p>
+    pub fn get_metric_statistic_recommendation(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.metric_statistic_recommendation
     }
     /// Consumes the builder and constructs a [`MetricInfo`](crate::types::MetricInfo).
     pub fn build(self) -> crate::types::MetricInfo {

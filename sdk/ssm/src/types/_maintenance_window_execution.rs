@@ -80,6 +80,10 @@ impl MaintenanceWindowExecutionBuilder {
         self.window_id = input;
         self
     }
+    /// <p>The ID of the maintenance window.</p>
+    pub fn get_window_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.window_id
+    }
     /// <p>The ID of the maintenance window execution.</p>
     pub fn window_execution_id(
         mut self,
@@ -96,6 +100,10 @@ impl MaintenanceWindowExecutionBuilder {
         self.window_execution_id = input;
         self
     }
+    /// <p>The ID of the maintenance window execution.</p>
+    pub fn get_window_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.window_execution_id
+    }
     /// <p>The status of the execution.</p>
     pub fn status(mut self, input: crate::types::MaintenanceWindowExecutionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -108,6 +116,12 @@ impl MaintenanceWindowExecutionBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the execution.</p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::MaintenanceWindowExecutionStatus> {
+        &self.status
     }
     /// <p>The details explaining the status. Not available for all status values.</p>
     pub fn status_details(
@@ -125,6 +139,10 @@ impl MaintenanceWindowExecutionBuilder {
         self.status_details = input;
         self
     }
+    /// <p>The details explaining the status. Not available for all status values.</p>
+    pub fn get_status_details(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_details
+    }
     /// <p>The time the execution started.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -138,6 +156,10 @@ impl MaintenanceWindowExecutionBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The time the execution started.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The time the execution finished.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -150,6 +172,10 @@ impl MaintenanceWindowExecutionBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The time the execution finished.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// Consumes the builder and constructs a [`MaintenanceWindowExecution`](crate::types::MaintenanceWindowExecution).
     pub fn build(self) -> crate::types::MaintenanceWindowExecution {

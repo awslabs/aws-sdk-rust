@@ -129,6 +129,21 @@ impl TrainingJobDefinitionBuilder {
         self.training_input_mode = input;
         self
     }
+    /// <p>The training input mode that the algorithm supports. For more information about input modes, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
+    /// <p> <b>Pipe mode</b> </p>
+    /// <p>If an algorithm supports <code>Pipe</code> mode, Amazon SageMaker streams data directly from Amazon S3 to the container.</p>
+    /// <p> <b>File mode</b> </p>
+    /// <p>If an algorithm supports <code>File</code> mode, SageMaker downloads the training data from S3 to the provisioned ML storage volume, and mounts the directory to the Docker volume for the training container.</p>
+    /// <p>You must provision the ML storage volume with sufficient capacity to accommodate the data downloaded from S3. In addition to the training data, the ML storage volume also stores the output model. The algorithm container uses the ML storage volume to also store intermediate information, if any.</p>
+    /// <p>For distributed algorithms, training data is distributed uniformly. Your training duration is predictable if the input data objects sizes are approximately the same. SageMaker does not split the files any further for model training. If the object sizes are skewed, training won't be optimal as the data distribution is also skewed when one host in a training cluster is overloaded, thus becoming a bottleneck in training.</p>
+    /// <p> <b>FastFile mode</b> </p>
+    /// <p>If an algorithm supports <code>FastFile</code> mode, SageMaker streams data directly from S3 to the container with no code changes, and provides file system access to the data. Users can author their training script to interact with these files as if they were stored on disk.</p>
+    /// <p> <code>FastFile</code> mode works best when the data is read sequentially. Augmented manifest files aren't supported. The startup time is lower when there are fewer files in the S3 bucket provided.</p>
+    pub fn get_training_input_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::TrainingInputMode> {
+        &self.training_input_mode
+    }
     /// Adds a key-value pair to `hyper_parameters`.
     ///
     /// To override the contents of this collection use [`set_hyper_parameters`](Self::set_hyper_parameters).
@@ -154,6 +169,14 @@ impl TrainingJobDefinitionBuilder {
         self.hyper_parameters = input;
         self
     }
+    /// <p>The hyperparameters used for the training job.</p>
+    pub fn get_hyper_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.hyper_parameters
+    }
     /// Appends an item to `input_data_config`.
     ///
     /// To override the contents of this collection use [`set_input_data_config`](Self::set_input_data_config).
@@ -173,6 +196,12 @@ impl TrainingJobDefinitionBuilder {
         self.input_data_config = input;
         self
     }
+    /// <p>An array of <code>Channel</code> objects, each of which specifies an input source.</p>
+    pub fn get_input_data_config(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Channel>> {
+        &self.input_data_config
+    }
     /// <p>the path to the S3 bucket where you want to store model artifacts. SageMaker creates subfolders for the artifacts.</p>
     pub fn output_data_config(mut self, input: crate::types::OutputDataConfig) -> Self {
         self.output_data_config = ::std::option::Option::Some(input);
@@ -186,6 +215,10 @@ impl TrainingJobDefinitionBuilder {
         self.output_data_config = input;
         self
     }
+    /// <p>the path to the S3 bucket where you want to store model artifacts. SageMaker creates subfolders for the artifacts.</p>
+    pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::OutputDataConfig> {
+        &self.output_data_config
+    }
     /// <p>The resources, including the ML compute instances and ML storage volumes, to use for model training.</p>
     pub fn resource_config(mut self, input: crate::types::ResourceConfig) -> Self {
         self.resource_config = ::std::option::Option::Some(input);
@@ -198,6 +231,10 @@ impl TrainingJobDefinitionBuilder {
     ) -> Self {
         self.resource_config = input;
         self
+    }
+    /// <p>The resources, including the ML compute instances and ML storage volumes, to use for model training.</p>
+    pub fn get_resource_config(&self) -> &::std::option::Option<crate::types::ResourceConfig> {
+        &self.resource_config
     }
     /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
     /// <p>To stop a job, SageMaker sends the algorithm the SIGTERM signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts.</p>
@@ -213,6 +250,13 @@ impl TrainingJobDefinitionBuilder {
     ) -> Self {
         self.stopping_condition = input;
         self
+    }
+    /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
+    /// <p>To stop a job, SageMaker sends the algorithm the SIGTERM signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts.</p>
+    pub fn get_stopping_condition(
+        &self,
+    ) -> &::std::option::Option<crate::types::StoppingCondition> {
+        &self.stopping_condition
     }
     /// Consumes the builder and constructs a [`TrainingJobDefinition`](crate::types::TrainingJobDefinition).
     pub fn build(self) -> crate::types::TrainingJobDefinition {

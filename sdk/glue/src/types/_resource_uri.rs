@@ -51,6 +51,10 @@ impl ResourceUriBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The type of the resource.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
+    }
     /// <p>The URI for accessing the resource.</p>
     pub fn uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.uri = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl ResourceUriBuilder {
     pub fn set_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.uri = input;
         self
+    }
+    /// <p>The URI for accessing the resource.</p>
+    pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uri
     }
     /// Consumes the builder and constructs a [`ResourceUri`](crate::types::ResourceUri).
     pub fn build(self) -> crate::types::ResourceUri {

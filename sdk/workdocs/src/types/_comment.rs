@@ -117,6 +117,10 @@ impl CommentBuilder {
         self.comment_id = input;
         self
     }
+    /// <p>The ID of the comment.</p>
+    pub fn get_comment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment_id
+    }
     /// <p>The ID of the parent comment.</p>
     pub fn parent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_id = ::std::option::Option::Some(input.into());
@@ -126,6 +130,10 @@ impl CommentBuilder {
     pub fn set_parent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_id = input;
         self
+    }
+    /// <p>The ID of the parent comment.</p>
+    pub fn get_parent_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_id
     }
     /// <p>The ID of the root comment in the thread.</p>
     pub fn thread_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -137,6 +145,10 @@ impl CommentBuilder {
         self.thread_id = input;
         self
     }
+    /// <p>The ID of the root comment in the thread.</p>
+    pub fn get_thread_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thread_id
+    }
     /// <p>The text of the comment.</p>
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
@@ -147,6 +159,10 @@ impl CommentBuilder {
         self.text = input;
         self
     }
+    /// <p>The text of the comment.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
+    }
     /// <p>The details of the user who made the comment.</p>
     pub fn contributor(mut self, input: crate::types::User) -> Self {
         self.contributor = ::std::option::Option::Some(input);
@@ -156,6 +172,10 @@ impl CommentBuilder {
     pub fn set_contributor(mut self, input: ::std::option::Option<crate::types::User>) -> Self {
         self.contributor = input;
         self
+    }
+    /// <p>The details of the user who made the comment.</p>
+    pub fn get_contributor(&self) -> &::std::option::Option<crate::types::User> {
+        &self.contributor
     }
     /// <p>The time that the comment was created.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -170,6 +190,10 @@ impl CommentBuilder {
         self.created_timestamp = input;
         self
     }
+    /// <p>The time that the comment was created.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
+    }
     /// <p>The status of the comment.</p>
     pub fn status(mut self, input: crate::types::CommentStatusType) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -182,6 +206,10 @@ impl CommentBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the comment.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CommentStatusType> {
+        &self.status
     }
     /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is visible only to the comment author and document owner and co-owners, or PUBLIC, where the comment is visible to document owners, co-owners, and contributors.</p>
     pub fn visibility(mut self, input: crate::types::CommentVisibilityType) -> Self {
@@ -196,6 +224,10 @@ impl CommentBuilder {
         self.visibility = input;
         self
     }
+    /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is visible only to the comment author and document owner and co-owners, or PUBLIC, where the comment is visible to document owners, co-owners, and contributors.</p>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::CommentVisibilityType> {
+        &self.visibility
+    }
     /// <p>If the comment is a reply to another user's comment, this field contains the user ID of the user being replied to.</p>
     pub fn recipient_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recipient_id = ::std::option::Option::Some(input.into());
@@ -205,6 +237,10 @@ impl CommentBuilder {
     pub fn set_recipient_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recipient_id = input;
         self
+    }
+    /// <p>If the comment is a reply to another user's comment, this field contains the user ID of the user being replied to.</p>
+    pub fn get_recipient_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recipient_id
     }
     /// Consumes the builder and constructs a [`Comment`](crate::types::Comment).
     pub fn build(self) -> crate::types::Comment {

@@ -48,6 +48,10 @@ impl EncryptionAtRestOptionsBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Specifies the option to enable Encryption At Rest.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p> Specifies the KMS Key ID for Encryption At Rest options.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl EncryptionAtRestOptionsBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p> Specifies the KMS Key ID for Encryption At Rest options.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// Consumes the builder and constructs a [`EncryptionAtRestOptions`](crate::types::EncryptionAtRestOptions).
     pub fn build(self) -> crate::types::EncryptionAtRestOptions {

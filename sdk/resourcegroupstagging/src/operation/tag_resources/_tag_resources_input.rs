@@ -71,6 +71,13 @@ impl TagResourcesInputBuilder {
         self.resource_arn_list = input;
         self
     }
+    /// <p>Specifies the list of ARNs of the resources that you want to apply tags to.</p>
+    /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn get_resource_arn_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_arn_list
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -95,6 +102,14 @@ impl TagResourcesInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Specifies a list of tags that you want to add to the specified resources. A tag consists of a key and a value that you define.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`TagResourcesInput`](crate::operation::tag_resources::TagResourcesInput).
     pub fn build(

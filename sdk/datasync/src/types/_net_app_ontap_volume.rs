@@ -157,6 +157,10 @@ impl NetAppOntapVolumeBuilder {
         self.volume_name = input;
         self
     }
+    /// <p>The name of the volume.</p>
+    pub fn get_volume_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_name
+    }
     /// <p>The universally unique identifier (UUID) of the volume.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -167,6 +171,10 @@ impl NetAppOntapVolumeBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The universally unique identifier (UUID) of the volume.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>The number of CIFS shares in the volume.</p>
     pub fn cifs_share_count(mut self, input: i64) -> Self {
         self.cifs_share_count = ::std::option::Option::Some(input);
@@ -176,6 +184,10 @@ impl NetAppOntapVolumeBuilder {
     pub fn set_cifs_share_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.cifs_share_count = input;
         self
+    }
+    /// <p>The number of CIFS shares in the volume.</p>
+    pub fn get_cifs_share_count(&self) -> &::std::option::Option<i64> {
+        &self.cifs_share_count
     }
     /// <p>The volume's security style (such as Unix or NTFS).</p>
     pub fn security_style(
@@ -193,6 +205,10 @@ impl NetAppOntapVolumeBuilder {
         self.security_style = input;
         self
     }
+    /// <p>The volume's security style (such as Unix or NTFS).</p>
+    pub fn get_security_style(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_style
+    }
     /// <p>The UUID of the storage virtual machine (SVM) associated with the volume.</p>
     pub fn svm_uuid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.svm_uuid = ::std::option::Option::Some(input.into());
@@ -202,6 +218,10 @@ impl NetAppOntapVolumeBuilder {
     pub fn set_svm_uuid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.svm_uuid = input;
         self
+    }
+    /// <p>The UUID of the storage virtual machine (SVM) associated with the volume.</p>
+    pub fn get_svm_uuid(&self) -> &::std::option::Option<::std::string::String> {
+        &self.svm_uuid
     }
     /// <p>The name of the SVM associated with the volume.</p>
     pub fn svm_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -213,6 +233,10 @@ impl NetAppOntapVolumeBuilder {
         self.svm_name = input;
         self
     }
+    /// <p>The name of the SVM associated with the volume.</p>
+    pub fn get_svm_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.svm_name
+    }
     /// <p>The storage space that's being used in the volume.</p>
     pub fn capacity_used(mut self, input: i64) -> Self {
         self.capacity_used = ::std::option::Option::Some(input);
@@ -222,6 +246,10 @@ impl NetAppOntapVolumeBuilder {
     pub fn set_capacity_used(mut self, input: ::std::option::Option<i64>) -> Self {
         self.capacity_used = input;
         self
+    }
+    /// <p>The storage space that's being used in the volume.</p>
+    pub fn get_capacity_used(&self) -> &::std::option::Option<i64> {
+        &self.capacity_used
     }
     /// <p>The total storage space that's available in the volume.</p>
     pub fn capacity_provisioned(mut self, input: i64) -> Self {
@@ -233,6 +261,10 @@ impl NetAppOntapVolumeBuilder {
         self.capacity_provisioned = input;
         self
     }
+    /// <p>The total storage space that's available in the volume.</p>
+    pub fn get_capacity_provisioned(&self) -> &::std::option::Option<i64> {
+        &self.capacity_provisioned
+    }
     /// <p>The storage space that's being used in the volume without accounting for compression or deduplication.</p>
     pub fn logical_capacity_used(mut self, input: i64) -> Self {
         self.logical_capacity_used = ::std::option::Option::Some(input);
@@ -242,6 +274,10 @@ impl NetAppOntapVolumeBuilder {
     pub fn set_logical_capacity_used(mut self, input: ::std::option::Option<i64>) -> Self {
         self.logical_capacity_used = input;
         self
+    }
+    /// <p>The storage space that's being used in the volume without accounting for compression or deduplication.</p>
+    pub fn get_logical_capacity_used(&self) -> &::std::option::Option<i64> {
+        &self.logical_capacity_used
     }
     /// <p>The number of NFS volumes in the volume.</p>
     pub fn nfs_exported(mut self, input: bool) -> Self {
@@ -253,6 +289,10 @@ impl NetAppOntapVolumeBuilder {
         self.nfs_exported = input;
         self
     }
+    /// <p>The number of NFS volumes in the volume.</p>
+    pub fn get_nfs_exported(&self) -> &::std::option::Option<bool> {
+        &self.nfs_exported
+    }
     /// <p>The amount of storage in the volume that's being used for snapshots.</p>
     pub fn snapshot_capacity_used(mut self, input: i64) -> Self {
         self.snapshot_capacity_used = ::std::option::Option::Some(input);
@@ -262,6 +302,10 @@ impl NetAppOntapVolumeBuilder {
     pub fn set_snapshot_capacity_used(mut self, input: ::std::option::Option<i64>) -> Self {
         self.snapshot_capacity_used = input;
         self
+    }
+    /// <p>The amount of storage in the volume that's being used for snapshots.</p>
+    pub fn get_snapshot_capacity_used(&self) -> &::std::option::Option<i64> {
+        &self.snapshot_capacity_used
     }
     /// <p>The performance data that DataSync Discovery collects about the volume.</p>
     pub fn max_p95_performance(mut self, input: crate::types::MaxP95Performance) -> Self {
@@ -275,6 +319,12 @@ impl NetAppOntapVolumeBuilder {
     ) -> Self {
         self.max_p95_performance = input;
         self
+    }
+    /// <p>The performance data that DataSync Discovery collects about the volume.</p>
+    pub fn get_max_p95_performance(
+        &self,
+    ) -> &::std::option::Option<crate::types::MaxP95Performance> {
+        &self.max_p95_performance
     }
     /// Appends an item to `recommendations`.
     ///
@@ -295,6 +345,12 @@ impl NetAppOntapVolumeBuilder {
         self.recommendations = input;
         self
     }
+    /// <p>The Amazon Web Services storage services that DataSync Discovery recommends for the volume. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-recommendations.html">Recommendations provided by DataSync Discovery</a>.</p>
+    pub fn get_recommendations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Recommendation>> {
+        &self.recommendations
+    }
     /// <p>Indicates whether DataSync Discovery recommendations for the volume are ready to view, incomplete, or can't be determined.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#recommendation-statuses-table">Recommendation statuses</a>.</p>
     pub fn recommendation_status(mut self, input: crate::types::RecommendationStatus) -> Self {
@@ -310,6 +366,13 @@ impl NetAppOntapVolumeBuilder {
         self.recommendation_status = input;
         self
     }
+    /// <p>Indicates whether DataSync Discovery recommendations for the volume are ready to view, incomplete, or can't be determined.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#recommendation-statuses-table">Recommendation statuses</a>.</p>
+    pub fn get_recommendation_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecommendationStatus> {
+        &self.recommendation_status
+    }
     /// <p>The number of LUNs (logical unit numbers) in the volume.</p>
     pub fn lun_count(mut self, input: i64) -> Self {
         self.lun_count = ::std::option::Option::Some(input);
@@ -319,6 +382,10 @@ impl NetAppOntapVolumeBuilder {
     pub fn set_lun_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.lun_count = input;
         self
+    }
+    /// <p>The number of LUNs (logical unit numbers) in the volume.</p>
+    pub fn get_lun_count(&self) -> &::std::option::Option<i64> {
+        &self.lun_count
     }
     /// Consumes the builder and constructs a [`NetAppOntapVolume`](crate::types::NetAppOntapVolume).
     pub fn build(self) -> crate::types::NetAppOntapVolume {

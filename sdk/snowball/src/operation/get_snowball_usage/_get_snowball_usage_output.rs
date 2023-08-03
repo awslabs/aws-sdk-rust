@@ -55,6 +55,10 @@ impl GetSnowballUsageOutputBuilder {
         self.snowball_limit = input;
         self
     }
+    /// <p>The service limit for number of Snow devices this account can have at once. The default service limit is 1 (one).</p>
+    pub fn get_snowball_limit(&self) -> &::std::option::Option<i32> {
+        &self.snowball_limit
+    }
     /// <p>The number of Snow devices that this account is currently using.</p>
     pub fn snowballs_in_use(mut self, input: i32) -> Self {
         self.snowballs_in_use = ::std::option::Option::Some(input);
@@ -64,6 +68,10 @@ impl GetSnowballUsageOutputBuilder {
     pub fn set_snowballs_in_use(mut self, input: ::std::option::Option<i32>) -> Self {
         self.snowballs_in_use = input;
         self
+    }
+    /// <p>The number of Snow devices that this account is currently using.</p>
+    pub fn get_snowballs_in_use(&self) -> &::std::option::Option<i32> {
+        &self.snowballs_in_use
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

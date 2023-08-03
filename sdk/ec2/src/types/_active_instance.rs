@@ -64,6 +64,10 @@ impl ActiveInstanceBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The ID of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The instance type.</p>
     pub fn instance_type(
         mut self,
@@ -79,6 +83,10 @@ impl ActiveInstanceBuilder {
     ) -> Self {
         self.instance_type = input;
         self
+    }
+    /// <p>The instance type.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
     }
     /// <p>The ID of the Spot Instance request.</p>
     pub fn spot_instance_request_id(
@@ -96,6 +104,10 @@ impl ActiveInstanceBuilder {
         self.spot_instance_request_id = input;
         self
     }
+    /// <p>The ID of the Spot Instance request.</p>
+    pub fn get_spot_instance_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.spot_instance_request_id
+    }
     /// <p>The health status of the instance. If the status of either the instance status check or the system status check is <code>impaired</code>, the health status of the instance is <code>unhealthy</code>. Otherwise, the health status is <code>healthy</code>.</p>
     pub fn instance_health(mut self, input: crate::types::InstanceHealthStatus) -> Self {
         self.instance_health = ::std::option::Option::Some(input);
@@ -108,6 +120,12 @@ impl ActiveInstanceBuilder {
     ) -> Self {
         self.instance_health = input;
         self
+    }
+    /// <p>The health status of the instance. If the status of either the instance status check or the system status check is <code>impaired</code>, the health status of the instance is <code>unhealthy</code>. Otherwise, the health status is <code>healthy</code>.</p>
+    pub fn get_instance_health(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceHealthStatus> {
+        &self.instance_health
     }
     /// Consumes the builder and constructs a [`ActiveInstance`](crate::types::ActiveInstance).
     pub fn build(self) -> crate::types::ActiveInstance {

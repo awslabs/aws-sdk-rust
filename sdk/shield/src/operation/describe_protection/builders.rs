@@ -36,6 +36,12 @@ impl DescribeProtectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeProtection as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_protection::builders::DescribeProtectionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl DescribeProtectionFluentBuilder {
         self.inner = self.inner.set_protection_id(input);
         self
     }
+    /// <p>The unique identifier (ID) for the <code>Protection</code> object to describe. You must provide either the <code>ResourceArn</code> of the protected resource or the <code>ProtectionID</code> of the protection, but not both.</p>
+    pub fn get_protection_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_protection_id()
+    }
     /// <p>The ARN (Amazon Resource Name) of the protected Amazon Web Services resource. You must provide either the <code>ResourceArn</code> of the protected resource or the <code>ProtectionID</code> of the protection, but not both.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
@@ -141,5 +151,9 @@ impl DescribeProtectionFluentBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
+    }
+    /// <p>The ARN (Amazon Resource Name) of the protected Amazon Web Services resource. You must provide either the <code>ResourceArn</code> of the protected resource or the <code>ProtectionID</code> of the protection, but not both.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
     }
 }

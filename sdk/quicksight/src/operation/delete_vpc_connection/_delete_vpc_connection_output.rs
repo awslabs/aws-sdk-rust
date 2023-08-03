@@ -93,6 +93,10 @@ impl DeleteVpcConnectionOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the deleted VPC connection.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The ID of the VPC connection that you're creating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.</p>
     pub fn vpc_connection_id(
         mut self,
@@ -109,6 +113,10 @@ impl DeleteVpcConnectionOutputBuilder {
         self.vpc_connection_id = input;
         self
     }
+    /// <p>The ID of the VPC connection that you're creating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.</p>
+    pub fn get_vpc_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_connection_id
+    }
     /// <p>The deletion status of the VPC connection.</p>
     pub fn deletion_status(mut self, input: crate::types::VpcConnectionResourceStatus) -> Self {
         self.deletion_status = ::std::option::Option::Some(input);
@@ -121,6 +129,12 @@ impl DeleteVpcConnectionOutputBuilder {
     ) -> Self {
         self.deletion_status = input;
         self
+    }
+    /// <p>The deletion status of the VPC connection.</p>
+    pub fn get_deletion_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::VpcConnectionResourceStatus> {
+        &self.deletion_status
     }
     /// <p>The availability status of the VPC connection.</p>
     pub fn availability_status(
@@ -138,6 +152,12 @@ impl DeleteVpcConnectionOutputBuilder {
         self.availability_status = input;
         self
     }
+    /// <p>The availability status of the VPC connection.</p>
+    pub fn get_availability_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::VpcConnectionAvailabilityStatus> {
+        &self.availability_status
+    }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_id = ::std::option::Option::Some(input.into());
@@ -148,6 +168,10 @@ impl DeleteVpcConnectionOutputBuilder {
         self.request_id = input;
         self
     }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
+    }
     /// <p>The HTTP status of the request.</p>
     pub fn status(mut self, input: i32) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -157,6 +181,10 @@ impl DeleteVpcConnectionOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<i32> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -47,6 +47,10 @@ impl DeleteFlowInputBuilder {
         self.flow_name = input;
         self
     }
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
+    pub fn get_flow_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_name
+    }
     /// <p> Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use. </p>
     pub fn force_delete(mut self, input: bool) -> Self {
         self.force_delete = ::std::option::Option::Some(input);
@@ -56,6 +60,10 @@ impl DeleteFlowInputBuilder {
     pub fn set_force_delete(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force_delete = input;
         self
+    }
+    /// <p> Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use. </p>
+    pub fn get_force_delete(&self) -> &::std::option::Option<bool> {
+        &self.force_delete
     }
     /// Consumes the builder and constructs a [`DeleteFlowInput`](crate::operation::delete_flow::DeleteFlowInput).
     pub fn build(

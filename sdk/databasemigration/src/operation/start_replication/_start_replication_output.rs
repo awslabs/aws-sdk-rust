@@ -51,6 +51,10 @@ impl StartReplicationOutputBuilder {
         self.replication = input;
         self
     }
+    /// <p>The replication that DMS started.</p>
+    pub fn get_replication(&self) -> &::std::option::Option<crate::types::Replication> {
+        &self.replication
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

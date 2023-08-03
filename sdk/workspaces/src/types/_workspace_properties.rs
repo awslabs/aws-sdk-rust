@@ -103,6 +103,12 @@ impl WorkspacePropertiesBuilder {
         self.running_mode = input;
         self
     }
+    /// <p>The running mode. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running Mode</a>.</p> <note>
+    /// <p>The <code>MANUAL</code> value is only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use this value. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
+    /// </note>
+    pub fn get_running_mode(&self) -> &::std::option::Option<crate::types::RunningMode> {
+        &self.running_mode
+    }
     /// <p>The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60-minute intervals.</p>
     pub fn running_mode_auto_stop_timeout_in_minutes(mut self, input: i32) -> Self {
         self.running_mode_auto_stop_timeout_in_minutes = ::std::option::Option::Some(input);
@@ -116,6 +122,10 @@ impl WorkspacePropertiesBuilder {
         self.running_mode_auto_stop_timeout_in_minutes = input;
         self
     }
+    /// <p>The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60-minute intervals.</p>
+    pub fn get_running_mode_auto_stop_timeout_in_minutes(&self) -> &::std::option::Option<i32> {
+        &self.running_mode_auto_stop_timeout_in_minutes
+    }
     /// <p>The size of the root volume. For important information about how to modify the size of the root and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a WorkSpace</a>.</p>
     pub fn root_volume_size_gib(mut self, input: i32) -> Self {
         self.root_volume_size_gib = ::std::option::Option::Some(input);
@@ -126,6 +136,10 @@ impl WorkspacePropertiesBuilder {
         self.root_volume_size_gib = input;
         self
     }
+    /// <p>The size of the root volume. For important information about how to modify the size of the root and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a WorkSpace</a>.</p>
+    pub fn get_root_volume_size_gib(&self) -> &::std::option::Option<i32> {
+        &self.root_volume_size_gib
+    }
     /// <p>The size of the user storage. For important information about how to modify the size of the root and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a WorkSpace</a>.</p>
     pub fn user_volume_size_gib(mut self, input: i32) -> Self {
         self.user_volume_size_gib = ::std::option::Option::Some(input);
@@ -135,6 +149,10 @@ impl WorkspacePropertiesBuilder {
     pub fn set_user_volume_size_gib(mut self, input: ::std::option::Option<i32>) -> Self {
         self.user_volume_size_gib = input;
         self
+    }
+    /// <p>The size of the user storage. For important information about how to modify the size of the root and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a WorkSpace</a>.</p>
+    pub fn get_user_volume_size_gib(&self) -> &::std::option::Option<i32> {
+        &self.user_volume_size_gib
     }
     /// <p>The compute type. For more information, see <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.</p>
     pub fn compute_type_name(mut self, input: crate::types::Compute) -> Self {
@@ -148,6 +166,10 @@ impl WorkspacePropertiesBuilder {
     ) -> Self {
         self.compute_type_name = input;
         self
+    }
+    /// <p>The compute type. For more information, see <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.</p>
+    pub fn get_compute_type_name(&self) -> &::std::option::Option<crate::types::Compute> {
+        &self.compute_type_name
     }
     /// Appends an item to `protocols`.
     ///
@@ -179,6 +201,16 @@ impl WorkspacePropertiesBuilder {
     ) -> Self {
         self.protocols = input;
         self
+    }
+    /// <p>The protocol. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html"> Protocols for Amazon WorkSpaces</a>.</p> <note>
+    /// <ul>
+    /// <li> <p>Only available for WorkSpaces created with PCoIP bundles.</p> </li>
+    /// <li> <p>The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>WSP</code>.</p> </li>
+    /// <li> <p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p> </li>
+    /// </ul>
+    /// </note>
+    pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Protocol>> {
+        &self.protocols
     }
     /// Consumes the builder and constructs a [`WorkspaceProperties`](crate::types::WorkspaceProperties).
     pub fn build(self) -> crate::types::WorkspaceProperties {

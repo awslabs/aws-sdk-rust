@@ -48,6 +48,10 @@ impl RelatedFindingBuilder {
         self.product_arn = input;
         self
     }
+    /// <p>The ARN of the product that generated a related finding.</p>
+    pub fn get_product_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_arn
+    }
     /// <p>The product-generated identifier for a related finding.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl RelatedFindingBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The product-generated identifier for a related finding.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`RelatedFinding`](crate::types::RelatedFinding).
     pub fn build(self) -> crate::types::RelatedFinding {

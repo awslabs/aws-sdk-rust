@@ -63,6 +63,10 @@ impl CreatePartitionInputBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID of the catalog in which the partition is to be created.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p>The name of the metadata database in which the partition is to be created.</p>
     pub fn database_name(
         mut self,
@@ -79,6 +83,10 @@ impl CreatePartitionInputBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The name of the metadata database in which the partition is to be created.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>The name of the metadata table in which the partition is to be created.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
@@ -88,6 +96,10 @@ impl CreatePartitionInputBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
+    }
+    /// <p>The name of the metadata table in which the partition is to be created.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// <p>A <code>PartitionInput</code> structure defining the partition to be created.</p>
     pub fn partition_input(mut self, input: crate::types::PartitionInput) -> Self {
@@ -101,6 +113,10 @@ impl CreatePartitionInputBuilder {
     ) -> Self {
         self.partition_input = input;
         self
+    }
+    /// <p>A <code>PartitionInput</code> structure defining the partition to be created.</p>
+    pub fn get_partition_input(&self) -> &::std::option::Option<crate::types::PartitionInput> {
+        &self.partition_input
     }
     /// Consumes the builder and constructs a [`CreatePartitionInput`](crate::operation::create_partition::CreatePartitionInput).
     pub fn build(

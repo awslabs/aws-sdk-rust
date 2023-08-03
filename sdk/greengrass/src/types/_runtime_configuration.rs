@@ -45,6 +45,12 @@ impl RuntimeConfigurationBuilder {
         self.telemetry_configuration = input;
         self
     }
+    /// Configuration for telemetry service.
+    pub fn get_telemetry_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::TelemetryConfiguration> {
+        &self.telemetry_configuration
+    }
     /// Consumes the builder and constructs a [`RuntimeConfiguration`](crate::types::RuntimeConfiguration).
     pub fn build(self) -> crate::types::RuntimeConfiguration {
         crate::types::RuntimeConfiguration {

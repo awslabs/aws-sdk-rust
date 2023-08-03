@@ -64,6 +64,10 @@ impl DatabaseShortInfoResponseBuilder {
         self.database_id = input;
         self
     }
+    /// <p>The ID of a database in a Fleet Advisor collector inventory.</p>
+    pub fn get_database_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_id
+    }
     /// <p>The name of a database in a Fleet Advisor collector inventory.</p>
     pub fn database_name(
         mut self,
@@ -79,6 +83,10 @@ impl DatabaseShortInfoResponseBuilder {
     ) -> Self {
         self.database_name = input;
         self
+    }
+    /// <p>The name of a database in a Fleet Advisor collector inventory.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
     }
     /// <p>The IP address of a database in a Fleet Advisor collector inventory.</p>
     pub fn database_ip_address(
@@ -96,6 +104,10 @@ impl DatabaseShortInfoResponseBuilder {
         self.database_ip_address = input;
         self
     }
+    /// <p>The IP address of a database in a Fleet Advisor collector inventory.</p>
+    pub fn get_database_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_ip_address
+    }
     /// <p>The database engine of a database in a Fleet Advisor collector inventory, for example <code>PostgreSQL</code>.</p>
     pub fn database_engine(
         mut self,
@@ -111,6 +123,10 @@ impl DatabaseShortInfoResponseBuilder {
     ) -> Self {
         self.database_engine = input;
         self
+    }
+    /// <p>The database engine of a database in a Fleet Advisor collector inventory, for example <code>PostgreSQL</code>.</p>
+    pub fn get_database_engine(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_engine
     }
     /// Consumes the builder and constructs a [`DatabaseShortInfoResponse`](crate::types::DatabaseShortInfoResponse).
     pub fn build(self) -> crate::types::DatabaseShortInfoResponse {

@@ -45,6 +45,10 @@ impl GetAssignmentInputBuilder {
         self.assignment_id = input;
         self
     }
+    /// <p>The ID of the Assignment to be retrieved.</p>
+    pub fn get_assignment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assignment_id
+    }
     /// Consumes the builder and constructs a [`GetAssignmentInput`](crate::operation::get_assignment::GetAssignmentInput).
     pub fn build(
         self,

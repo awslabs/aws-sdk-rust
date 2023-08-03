@@ -93,6 +93,10 @@ impl ListEventPredictionsInputBuilder {
         self.event_id = input;
         self
     }
+    /// <p> The event ID. </p>
+    pub fn get_event_id(&self) -> &::std::option::Option<crate::types::FilterCondition> {
+        &self.event_id
+    }
     /// <p> The event type associated with the detector. </p>
     pub fn event_type(mut self, input: crate::types::FilterCondition) -> Self {
         self.event_type = ::std::option::Option::Some(input);
@@ -105,6 +109,10 @@ impl ListEventPredictionsInputBuilder {
     ) -> Self {
         self.event_type = input;
         self
+    }
+    /// <p> The event type associated with the detector. </p>
+    pub fn get_event_type(&self) -> &::std::option::Option<crate::types::FilterCondition> {
+        &self.event_type
     }
     /// <p> The detector ID. </p>
     pub fn detector_id(mut self, input: crate::types::FilterCondition) -> Self {
@@ -119,6 +127,10 @@ impl ListEventPredictionsInputBuilder {
         self.detector_id = input;
         self
     }
+    /// <p> The detector ID. </p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<crate::types::FilterCondition> {
+        &self.detector_id
+    }
     /// <p> The detector version ID. </p>
     pub fn detector_version_id(mut self, input: crate::types::FilterCondition) -> Self {
         self.detector_version_id = ::std::option::Option::Some(input);
@@ -131,6 +143,10 @@ impl ListEventPredictionsInputBuilder {
     ) -> Self {
         self.detector_version_id = input;
         self
+    }
+    /// <p> The detector version ID. </p>
+    pub fn get_detector_version_id(&self) -> &::std::option::Option<crate::types::FilterCondition> {
+        &self.detector_version_id
     }
     /// <p> The time period for when the predictions were generated. </p>
     pub fn prediction_time_range(mut self, input: crate::types::PredictionTimeRange) -> Self {
@@ -145,6 +161,12 @@ impl ListEventPredictionsInputBuilder {
         self.prediction_time_range = input;
         self
     }
+    /// <p> The time period for when the predictions were generated. </p>
+    pub fn get_prediction_time_range(
+        &self,
+    ) -> &::std::option::Option<crate::types::PredictionTimeRange> {
+        &self.prediction_time_range
+    }
     /// <p> Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -155,6 +177,10 @@ impl ListEventPredictionsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p> Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p> The maximum number of predictions to return for the request. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -164,6 +190,10 @@ impl ListEventPredictionsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p> The maximum number of predictions to return for the request. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListEventPredictionsInput`](crate::operation::list_event_predictions::ListEventPredictionsInput).
     pub fn build(

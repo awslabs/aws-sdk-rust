@@ -36,6 +36,13 @@ impl ImportDocumentationPartsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ImportDocumentationParts as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::import_documentation_parts::builders::ImportDocumentationPartsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl ImportDocumentationPartsFluentBuilder {
         self.inner = self.inner.set_rest_api_id(input);
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rest_api_id()
+    }
     /// <p>A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing DocumentationParts definition or to merge (<code>MERGE</code>) the new definition into the existing one. The default value is <code>MERGE</code>.</p>
     pub fn mode(mut self, input: crate::types::PutMode) -> Self {
         self.inner = self.inner.mode(input);
@@ -135,6 +146,10 @@ impl ImportDocumentationPartsFluentBuilder {
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::PutMode>) -> Self {
         self.inner = self.inner.set_mode(input);
         self
+    }
+    /// <p>A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing DocumentationParts definition or to merge (<code>MERGE</code>) the new definition into the existing one. The default value is <code>MERGE</code>.</p>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::PutMode> {
+        self.inner.get_mode()
     }
     /// <p>A query parameter to specify whether to rollback the documentation importation (<code>true</code>) or not (<code>false</code>) when a warning is encountered. The default value is <code>false</code>.</p>
     pub fn fail_on_warnings(mut self, input: bool) -> Self {
@@ -146,6 +161,10 @@ impl ImportDocumentationPartsFluentBuilder {
         self.inner = self.inner.set_fail_on_warnings(input);
         self
     }
+    /// <p>A query parameter to specify whether to rollback the documentation importation (<code>true</code>) or not (<code>false</code>) when a warning is encountered. The default value is <code>false</code>.</p>
+    pub fn get_fail_on_warnings(&self) -> &::std::option::Option<bool> {
+        self.inner.get_fail_on_warnings()
+    }
     /// <p>Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file, this is a JSON object.</p>
     pub fn body(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.body(input);
@@ -155,5 +174,9 @@ impl ImportDocumentationPartsFluentBuilder {
     pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_body(input);
         self
+    }
+    /// <p>Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file, this is a JSON object.</p>
+    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        self.inner.get_body()
     }
 }

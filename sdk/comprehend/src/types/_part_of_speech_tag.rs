@@ -51,6 +51,10 @@ impl PartOfSpeechTagBuilder {
         self.tag = input;
         self
     }
+    /// <p>Identifies the part of speech that the token represents.</p>
+    pub fn get_tag(&self) -> &::std::option::Option<crate::types::PartOfSpeechTagType> {
+        &self.tag
+    }
     /// <p>The confidence that Amazon Comprehend has that the part of speech was correctly identified.</p>
     pub fn score(mut self, input: f32) -> Self {
         self.score = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl PartOfSpeechTagBuilder {
     pub fn set_score(mut self, input: ::std::option::Option<f32>) -> Self {
         self.score = input;
         self
+    }
+    /// <p>The confidence that Amazon Comprehend has that the part of speech was correctly identified.</p>
+    pub fn get_score(&self) -> &::std::option::Option<f32> {
+        &self.score
     }
     /// Consumes the builder and constructs a [`PartOfSpeechTag`](crate::types::PartOfSpeechTag).
     pub fn build(self) -> crate::types::PartOfSpeechTag {

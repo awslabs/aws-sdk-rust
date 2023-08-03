@@ -36,6 +36,13 @@ impl DisassociatePricingRulesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociatePricingRules as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::disassociate_pricing_rules::builders::DisassociatePricingRulesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl DisassociatePricingRulesFluentBuilder {
         self.inner = self.inner.set_arn(input);
         self
     }
+    /// <p> The pricing plan Amazon Resource Name (ARN) to disassociate pricing rules from. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
+    }
     /// Appends an item to `PricingRuleArns`.
     ///
     /// To override the contents of this collection use [`set_pricing_rule_arns`](Self::set_pricing_rule_arns).
@@ -145,5 +156,11 @@ impl DisassociatePricingRulesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_pricing_rule_arns(input);
         self
+    }
+    /// <p> A list containing the Amazon Resource Name (ARN) of the pricing rules that will be disassociated. </p>
+    pub fn get_pricing_rule_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_pricing_rule_arns()
     }
 }

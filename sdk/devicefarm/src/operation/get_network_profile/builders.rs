@@ -36,6 +36,12 @@ impl GetNetworkProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetNetworkProfile as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_network_profile::builders::GetNetworkProfileInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +131,9 @@ impl GetNetworkProfileFluentBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
+    }
+    /// <p>The ARN of the network profile to return information about.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
     }
 }

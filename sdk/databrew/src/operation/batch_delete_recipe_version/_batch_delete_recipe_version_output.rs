@@ -55,6 +55,10 @@ impl BatchDeleteRecipeVersionOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the recipe that was modified.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `errors`.
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
@@ -73,6 +77,12 @@ impl BatchDeleteRecipeVersionOutputBuilder {
     ) -> Self {
         self.errors = input;
         self
+    }
+    /// <p>Errors, if any, that occurred while attempting to delete the recipe versions.</p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecipeVersionErrorDetail>> {
+        &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

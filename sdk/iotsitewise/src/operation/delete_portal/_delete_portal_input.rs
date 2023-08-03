@@ -47,6 +47,10 @@ impl DeletePortalInputBuilder {
         self.portal_id = input;
         self
     }
+    /// <p>The ID of the portal to delete.</p>
+    pub fn get_portal_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portal_id
+    }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DeletePortalInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`DeletePortalInput`](crate::operation::delete_portal::DeletePortalInput).
     pub fn build(

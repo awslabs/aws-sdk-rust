@@ -64,6 +64,15 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupOutputBuilder {
         self.global_replication_group = input;
         self
     }
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
+    /// <ul>
+    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
+    /// </ul>
+    pub fn get_global_replication_group(
+        &self,
+    ) -> &::std::option::Option<crate::types::GlobalReplicationGroup> {
+        &self.global_replication_group
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

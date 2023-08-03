@@ -104,6 +104,10 @@ impl S3DestinationUpdateBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The ARN of the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
     pub fn bucket_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_arn = ::std::option::Option::Some(input.into());
@@ -114,6 +118,10 @@ impl S3DestinationUpdateBuilder {
         self.bucket_arn = input;
         self
     }
+    /// <p>The ARN of the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
+    pub fn get_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_arn
+    }
     /// <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon S3 files. You can also specify a custom prefix, as described in <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3 Objects</a>.</p>
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix = ::std::option::Option::Some(input.into());
@@ -123,6 +131,10 @@ impl S3DestinationUpdateBuilder {
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix = input;
         self
+    }
+    /// <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon S3 files. You can also specify a custom prefix, as described in <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3 Objects</a>.</p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
     }
     /// <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix appears immediately following the bucket name. For information about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3 Objects</a>.</p>
     pub fn error_output_prefix(
@@ -140,6 +152,10 @@ impl S3DestinationUpdateBuilder {
         self.error_output_prefix = input;
         self
     }
+    /// <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix appears immediately following the bucket name. For information about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3 Objects</a>.</p>
+    pub fn get_error_output_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_output_prefix
+    }
     /// <p>The buffering option. If no value is specified, <code>BufferingHints</code> object default values are used.</p>
     pub fn buffering_hints(mut self, input: crate::types::BufferingHints) -> Self {
         self.buffering_hints = ::std::option::Option::Some(input);
@@ -152,6 +168,10 @@ impl S3DestinationUpdateBuilder {
     ) -> Self {
         self.buffering_hints = input;
         self
+    }
+    /// <p>The buffering option. If no value is specified, <code>BufferingHints</code> object default values are used.</p>
+    pub fn get_buffering_hints(&self) -> &::std::option::Option<crate::types::BufferingHints> {
+        &self.buffering_hints
     }
     /// <p>The compression format. If no value is specified, the default is <code>UNCOMPRESSED</code>.</p>
     /// <p>The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified for Amazon Redshift destinations because they are not supported by the Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket.</p>
@@ -167,6 +187,13 @@ impl S3DestinationUpdateBuilder {
     ) -> Self {
         self.compression_format = input;
         self
+    }
+    /// <p>The compression format. If no value is specified, the default is <code>UNCOMPRESSED</code>.</p>
+    /// <p>The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified for Amazon Redshift destinations because they are not supported by the Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket.</p>
+    pub fn get_compression_format(
+        &self,
+    ) -> &::std::option::Option<crate::types::CompressionFormat> {
+        &self.compression_format
     }
     /// <p>The encryption configuration. If no value is specified, the default is no encryption.</p>
     pub fn encryption_configuration(
@@ -184,6 +211,12 @@ impl S3DestinationUpdateBuilder {
         self.encryption_configuration = input;
         self
     }
+    /// <p>The encryption configuration. If no value is specified, the default is no encryption.</p>
+    pub fn get_encryption_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+        &self.encryption_configuration
+    }
     /// <p>The CloudWatch logging options for your delivery stream.</p>
     pub fn cloud_watch_logging_options(
         mut self,
@@ -199,6 +232,12 @@ impl S3DestinationUpdateBuilder {
     ) -> Self {
         self.cloud_watch_logging_options = input;
         self
+    }
+    /// <p>The CloudWatch logging options for your delivery stream.</p>
+    pub fn get_cloud_watch_logging_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudWatchLoggingOptions> {
+        &self.cloud_watch_logging_options
     }
     /// Consumes the builder and constructs a [`S3DestinationUpdate`](crate::types::S3DestinationUpdate).
     pub fn build(self) -> crate::types::S3DestinationUpdate {

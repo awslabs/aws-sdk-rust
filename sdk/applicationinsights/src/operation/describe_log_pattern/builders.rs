@@ -36,6 +36,12 @@ impl DescribeLogPatternFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeLogPattern as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_log_pattern::builders::DescribeLogPatternInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl DescribeLogPatternFluentBuilder {
         self.inner = self.inner.set_resource_group_name(input);
         self
     }
+    /// <p>The name of the resource group.</p>
+    pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_group_name()
+    }
     /// <p>The name of the log pattern set.</p>
     pub fn pattern_set_name(
         mut self,
@@ -148,6 +158,10 @@ impl DescribeLogPatternFluentBuilder {
         self.inner = self.inner.set_pattern_set_name(input);
         self
     }
+    /// <p>The name of the log pattern set.</p>
+    pub fn get_pattern_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pattern_set_name()
+    }
     /// <p>The name of the log pattern.</p>
     pub fn pattern_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pattern_name(input.into());
@@ -157,5 +171,9 @@ impl DescribeLogPatternFluentBuilder {
     pub fn set_pattern_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pattern_name(input);
         self
+    }
+    /// <p>The name of the log pattern.</p>
+    pub fn get_pattern_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pattern_name()
     }
 }

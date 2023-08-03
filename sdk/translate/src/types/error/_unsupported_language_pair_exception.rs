@@ -85,6 +85,10 @@ impl UnsupportedLanguagePairExceptionBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The language code for the language of the input text. </p>
     pub fn source_language_code(
         mut self,
@@ -101,6 +105,10 @@ impl UnsupportedLanguagePairExceptionBuilder {
         self.source_language_code = input;
         self
     }
+    /// <p>The language code for the language of the input text. </p>
+    pub fn get_source_language_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_language_code
+    }
     /// <p>The language code for the language of the translated text. </p>
     pub fn target_language_code(
         mut self,
@@ -116,6 +124,10 @@ impl UnsupportedLanguagePairExceptionBuilder {
     ) -> Self {
         self.target_language_code = input;
         self
+    }
+    /// <p>The language code for the language of the translated text. </p>
+    pub fn get_target_language_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_language_code
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

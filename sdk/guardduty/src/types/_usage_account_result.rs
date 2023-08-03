@@ -48,6 +48,10 @@ impl UsageAccountResultBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Account ID that generated usage.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>Represents the total of usage for the Account ID.</p>
     pub fn total(mut self, input: crate::types::Total) -> Self {
         self.total = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl UsageAccountResultBuilder {
     pub fn set_total(mut self, input: ::std::option::Option<crate::types::Total>) -> Self {
         self.total = input;
         self
+    }
+    /// <p>Represents the total of usage for the Account ID.</p>
+    pub fn get_total(&self) -> &::std::option::Option<crate::types::Total> {
+        &self.total
     }
     /// Consumes the builder and constructs a [`UsageAccountResult`](crate::types::UsageAccountResult).
     pub fn build(self) -> crate::types::UsageAccountResult {

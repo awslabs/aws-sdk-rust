@@ -77,6 +77,10 @@ impl SearchUsersInputBuilder {
         self.collection_id = input;
         self
     }
+    /// <p>The ID of an existing collection containing the UserID, used with a UserId or FaceId. If a FaceId is provided, UserId isn’t required to be present in the Collection.</p>
+    pub fn get_collection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collection_id
+    }
     /// <p>ID for the existing User.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
@@ -86,6 +90,10 @@ impl SearchUsersInputBuilder {
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
+    }
+    /// <p>ID for the existing User.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     /// <p>ID for the existing face.</p>
     pub fn face_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -97,6 +105,10 @@ impl SearchUsersInputBuilder {
         self.face_id = input;
         self
     }
+    /// <p>ID for the existing face.</p>
+    pub fn get_face_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.face_id
+    }
     /// <p>Optional value that specifies the minimum confidence in the matched UserID to return. Default value of 80.</p>
     pub fn user_match_threshold(mut self, input: f32) -> Self {
         self.user_match_threshold = ::std::option::Option::Some(input);
@@ -107,6 +119,10 @@ impl SearchUsersInputBuilder {
         self.user_match_threshold = input;
         self
     }
+    /// <p>Optional value that specifies the minimum confidence in the matched UserID to return. Default value of 80.</p>
+    pub fn get_user_match_threshold(&self) -> &::std::option::Option<f32> {
+        &self.user_match_threshold
+    }
     /// <p>Maximum number of identities to return.</p>
     pub fn max_users(mut self, input: i32) -> Self {
         self.max_users = ::std::option::Option::Some(input);
@@ -116,6 +132,10 @@ impl SearchUsersInputBuilder {
     pub fn set_max_users(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_users = input;
         self
+    }
+    /// <p>Maximum number of identities to return.</p>
+    pub fn get_max_users(&self) -> &::std::option::Option<i32> {
+        &self.max_users
     }
     /// Consumes the builder and constructs a [`SearchUsersInput`](crate::operation::search_users::SearchUsersInput).
     pub fn build(

@@ -48,6 +48,10 @@ impl AdminAccountBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account identifier of the Security Hub administrator account.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The current status of the Security Hub administrator account. Indicates whether the account is currently enabled as a Security Hub administrator.</p>
     pub fn status(mut self, input: crate::types::AdminStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl AdminAccountBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AdminStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the Security Hub administrator account. Indicates whether the account is currently enabled as a Security Hub administrator.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AdminStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`AdminAccount`](crate::types::AdminAccount).
     pub fn build(self) -> crate::types::AdminAccount {

@@ -67,6 +67,10 @@ impl DataQualityMetricBuilder {
         self.metric_type = input;
         self
     }
+    /// <p>The name of the data quality metric.</p>
+    pub fn get_metric_type(&self) -> &::std::option::Option<crate::types::DataQualityMetricType> {
+        &self.metric_type
+    }
     /// <p>A description of the data quality metric.</p>
     pub fn metric_description(
         mut self,
@@ -82,6 +86,10 @@ impl DataQualityMetricBuilder {
     ) -> Self {
         self.metric_description = input;
         self
+    }
+    /// <p>A description of the data quality metric.</p>
+    pub fn get_metric_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_description
     }
     /// <p>The column that is being monitored.</p>
     pub fn related_column_name(
@@ -99,6 +107,10 @@ impl DataQualityMetricBuilder {
         self.related_column_name = input;
         self
     }
+    /// <p>The column that is being monitored.</p>
+    pub fn get_related_column_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.related_column_name
+    }
     /// <p>The value of the data quality metric.</p>
     pub fn metric_value(mut self, input: f64) -> Self {
         self.metric_value = ::std::option::Option::Some(input);
@@ -108,6 +120,10 @@ impl DataQualityMetricBuilder {
     pub fn set_metric_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.metric_value = input;
         self
+    }
+    /// <p>The value of the data quality metric.</p>
+    pub fn get_metric_value(&self) -> &::std::option::Option<f64> {
+        &self.metric_value
     }
     /// Consumes the builder and constructs a [`DataQualityMetric`](crate::types::DataQualityMetric).
     pub fn build(self) -> crate::types::DataQualityMetric {

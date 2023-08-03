@@ -46,6 +46,10 @@ impl DeleteParameterGroupInputBuilder {
         self.parameter_group_name = input;
         self
     }
+    /// <p>The name of the parameter group to delete.</p>
+    pub fn get_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_group_name
+    }
     /// Consumes the builder and constructs a [`DeleteParameterGroupInput`](crate::operation::delete_parameter_group::DeleteParameterGroupInput).
     pub fn build(
         self,

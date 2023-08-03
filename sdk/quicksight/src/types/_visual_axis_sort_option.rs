@@ -43,6 +43,12 @@ impl VisualAxisSortOptionBuilder {
         self.availability_status = input;
         self
     }
+    /// <p>The availaiblity status of a visual's axis sort options.</p>
+    pub fn get_availability_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::DashboardBehavior> {
+        &self.availability_status
+    }
     /// Consumes the builder and constructs a [`VisualAxisSortOption`](crate::types::VisualAxisSortOption).
     pub fn build(self) -> crate::types::VisualAxisSortOption {
         crate::types::VisualAxisSortOption {

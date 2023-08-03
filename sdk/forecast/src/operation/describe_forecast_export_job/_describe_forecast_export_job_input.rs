@@ -45,6 +45,10 @@ impl DescribeForecastExportJobInputBuilder {
         self.forecast_export_job_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the forecast export job.</p>
+    pub fn get_forecast_export_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.forecast_export_job_arn
+    }
     /// Consumes the builder and constructs a [`DescribeForecastExportJobInput`](crate::operation::describe_forecast_export_job::DescribeForecastExportJobInput).
     pub fn build(
         self,

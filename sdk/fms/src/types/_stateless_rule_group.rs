@@ -62,6 +62,10 @@ impl StatelessRuleGroupBuilder {
         self.rule_group_name = input;
         self
     }
+    /// <p>The name of the rule group.</p>
+    pub fn get_rule_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_group_name
+    }
     /// <p>The resource ID of the rule group.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl StatelessRuleGroupBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The resource ID of the rule group.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>The priority of the rule group. Network Firewall evaluates the stateless rule groups in a firewall policy starting from the lowest priority setting. </p>
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl StatelessRuleGroupBuilder {
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
+    }
+    /// <p>The priority of the rule group. Network Firewall evaluates the stateless rule groups in a firewall policy starting from the lowest priority setting. </p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
     }
     /// Consumes the builder and constructs a [`StatelessRuleGroup`](crate::types::StatelessRuleGroup).
     pub fn build(self) -> crate::types::StatelessRuleGroup {

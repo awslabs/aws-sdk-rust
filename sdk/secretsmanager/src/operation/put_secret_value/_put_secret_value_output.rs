@@ -70,6 +70,10 @@ impl PutSecretValueOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the secret.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the secret.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl PutSecretValueOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the secret.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The unique identifier of the version of the secret.</p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_id = ::std::option::Option::Some(input.into());
@@ -89,6 +97,10 @@ impl PutSecretValueOutputBuilder {
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_id = input;
         self
+    }
+    /// <p>The unique identifier of the version of the secret.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
     }
     /// Appends an item to `version_stages`.
     ///
@@ -111,6 +123,12 @@ impl PutSecretValueOutputBuilder {
     ) -> Self {
         self.version_stages = input;
         self
+    }
+    /// <p>The list of staging labels that are currently attached to this version of the secret. Secrets Manager uses staging labels to track a version as it progresses through the secret rotation process.</p>
+    pub fn get_version_stages(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.version_stages
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

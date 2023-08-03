@@ -36,6 +36,10 @@ impl ModifyClusterSnapshotScheduleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyClusterSnapshotSchedule as a reference.
+    pub fn as_input(&self) -> &crate::operation::modify_cluster_snapshot_schedule::builders::ModifyClusterSnapshotScheduleInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl ModifyClusterSnapshotScheduleFluentBuilder {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
+    /// <p>A unique identifier for the cluster whose snapshot schedule you want to modify. </p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_identifier()
+    }
     /// <p>A unique alphanumeric identifier for the schedule that you want to associate with the cluster.</p>
     pub fn schedule_identifier(
         mut self,
@@ -148,6 +156,10 @@ impl ModifyClusterSnapshotScheduleFluentBuilder {
         self.inner = self.inner.set_schedule_identifier(input);
         self
     }
+    /// <p>A unique alphanumeric identifier for the schedule that you want to associate with the cluster.</p>
+    pub fn get_schedule_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schedule_identifier()
+    }
     /// <p>A boolean to indicate whether to remove the assoiciation between the cluster and the schedule.</p>
     pub fn disassociate_schedule(mut self, input: bool) -> Self {
         self.inner = self.inner.disassociate_schedule(input);
@@ -157,5 +169,9 @@ impl ModifyClusterSnapshotScheduleFluentBuilder {
     pub fn set_disassociate_schedule(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_disassociate_schedule(input);
         self
+    }
+    /// <p>A boolean to indicate whether to remove the assoiciation between the cluster and the schedule.</p>
+    pub fn get_disassociate_schedule(&self) -> &::std::option::Option<bool> {
+        self.inner.get_disassociate_schedule()
     }
 }

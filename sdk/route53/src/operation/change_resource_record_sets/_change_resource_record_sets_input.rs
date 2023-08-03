@@ -56,6 +56,10 @@ impl ChangeResourceRecordSetsInputBuilder {
         self.hosted_zone_id = input;
         self
     }
+    /// <p>The ID of the hosted zone that contains the resource record sets that you want to change.</p>
+    pub fn get_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hosted_zone_id
+    }
     /// <p>A complex type that contains an optional comment and the <code>Changes</code> element.</p>
     pub fn change_batch(mut self, input: crate::types::ChangeBatch) -> Self {
         self.change_batch = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl ChangeResourceRecordSetsInputBuilder {
     ) -> Self {
         self.change_batch = input;
         self
+    }
+    /// <p>A complex type that contains an optional comment and the <code>Changes</code> element.</p>
+    pub fn get_change_batch(&self) -> &::std::option::Option<crate::types::ChangeBatch> {
+        &self.change_batch
     }
     /// Consumes the builder and constructs a [`ChangeResourceRecordSetsInput`](crate::operation::change_resource_record_sets::ChangeResourceRecordSetsInput).
     pub fn build(

@@ -37,6 +37,12 @@ impl CreateSystemTemplateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSystemTemplate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_system_template::builders::CreateSystemTemplateInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +136,10 @@ impl CreateSystemTemplateFluentBuilder {
         self.inner = self.inner.set_definition(input);
         self
     }
+    /// <p>The <code>DefinitionDocument</code> used to create the system.</p>
+    pub fn get_definition(&self) -> &::std::option::Option<crate::types::DefinitionDocument> {
+        self.inner.get_definition()
+    }
     /// <p>The namespace version in which the system is to be created.</p>
     /// <p>If no value is specified, the latest version is used by default.</p>
     pub fn compatible_namespace_version(mut self, input: i64) -> Self {
@@ -141,5 +151,10 @@ impl CreateSystemTemplateFluentBuilder {
     pub fn set_compatible_namespace_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_compatible_namespace_version(input);
         self
+    }
+    /// <p>The namespace version in which the system is to be created.</p>
+    /// <p>If no value is specified, the latest version is used by default.</p>
+    pub fn get_compatible_namespace_version(&self) -> &::std::option::Option<i64> {
+        self.inner.get_compatible_namespace_version()
     }
 }

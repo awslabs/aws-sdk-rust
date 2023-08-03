@@ -57,6 +57,10 @@ impl SendAlexaOfferToMasterInputBuilder {
         self.channel_arn = input;
         self
     }
+    /// <p>The ARN of the signaling channel by which Alexa and the master peer communicate.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
+    }
     /// <p>The unique identifier for the sender client.</p>
     pub fn sender_client_id(
         mut self,
@@ -73,6 +77,10 @@ impl SendAlexaOfferToMasterInputBuilder {
         self.sender_client_id = input;
         self
     }
+    /// <p>The unique identifier for the sender client.</p>
+    pub fn get_sender_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sender_client_id
+    }
     /// <p>The base64-encoded SDP offer content.</p>
     pub fn message_payload(
         mut self,
@@ -88,6 +96,10 @@ impl SendAlexaOfferToMasterInputBuilder {
     ) -> Self {
         self.message_payload = input;
         self
+    }
+    /// <p>The base64-encoded SDP offer content.</p>
+    pub fn get_message_payload(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_payload
     }
     /// Consumes the builder and constructs a [`SendAlexaOfferToMasterInput`](crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterInput).
     pub fn build(

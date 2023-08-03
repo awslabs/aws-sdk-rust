@@ -36,6 +36,10 @@ impl CreateUserFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateUser as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_user::builders::CreateUserInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl CreateUserFluentBuilder {
         self.inner = self.inner.set_organization_id(input);
         self
     }
+    /// <p>The identifier of the organization for which the user is created.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
+    }
     /// <p>The name for the new user. WorkMail directory user names have a maximum length of 64. All others have a maximum length of 20.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -133,6 +141,10 @@ impl CreateUserFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name for the new user. WorkMail directory user names have a maximum length of 64. All others have a maximum length of 20.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The display name for the new user.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -144,6 +156,10 @@ impl CreateUserFluentBuilder {
         self.inner = self.inner.set_display_name(input);
         self
     }
+    /// <p>The display name for the new user.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_display_name()
+    }
     /// <p>The password for the new user.</p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.password(input.into());
@@ -153,5 +169,9 @@ impl CreateUserFluentBuilder {
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_password(input);
         self
+    }
+    /// <p>The password for the new user.</p>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_password()
     }
 }

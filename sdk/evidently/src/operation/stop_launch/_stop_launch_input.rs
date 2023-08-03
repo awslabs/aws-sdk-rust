@@ -63,6 +63,10 @@ impl StopLaunchInputBuilder {
         self.project = input;
         self
     }
+    /// <p>The name or ARN of the project that contains the launch that you want to stop.</p>
+    pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project
+    }
     /// <p>The name of the launch to stop.</p>
     pub fn launch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl StopLaunchInputBuilder {
     pub fn set_launch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launch = input;
         self
+    }
+    /// <p>The name of the launch to stop.</p>
+    pub fn get_launch(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch
     }
     /// <p>Specify whether to consider the launch as <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
     pub fn desired_state(mut self, input: crate::types::LaunchStopDesiredState) -> Self {
@@ -86,6 +94,12 @@ impl StopLaunchInputBuilder {
         self.desired_state = input;
         self
     }
+    /// <p>Specify whether to consider the launch as <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
+    pub fn get_desired_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::LaunchStopDesiredState> {
+        &self.desired_state
+    }
     /// <p>A string that describes why you are stopping the launch.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
@@ -95,6 +109,10 @@ impl StopLaunchInputBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>A string that describes why you are stopping the launch.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
     }
     /// Consumes the builder and constructs a [`StopLaunchInput`](crate::operation::stop_launch::StopLaunchInput).
     pub fn build(

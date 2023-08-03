@@ -64,6 +64,10 @@ impl CreateWorkerFleetInputBuilder {
         self.client_token = input;
         self
     }
+    /// Token used for detecting replayed requests. Replayed requests will not be performed multiple times.
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// Human friendly name of the resource.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl CreateWorkerFleetInputBuilder {
         self.name = input;
         self
     }
+    /// Human friendly name of the resource.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Site ARN.
     pub fn site(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.site = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl CreateWorkerFleetInputBuilder {
     pub fn set_site(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.site = input;
         self
+    }
+    /// Site ARN.
+    pub fn get_site(&self) -> &::std::option::Option<::std::string::String> {
+        &self.site
     }
     /// JSON blob containing additional fixed properties regarding the worker fleet
     pub fn additional_fixed_properties(
@@ -99,6 +111,10 @@ impl CreateWorkerFleetInputBuilder {
     ) -> Self {
         self.additional_fixed_properties = input;
         self
+    }
+    /// JSON blob containing additional fixed properties regarding the worker fleet
+    pub fn get_additional_fixed_properties(&self) -> &::std::option::Option<::std::string::String> {
+        &self.additional_fixed_properties
     }
     /// Consumes the builder and constructs a [`CreateWorkerFleetInput`](crate::operation::create_worker_fleet::CreateWorkerFleetInput).
     pub fn build(

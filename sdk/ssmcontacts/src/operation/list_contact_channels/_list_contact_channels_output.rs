@@ -57,6 +57,10 @@ impl ListContactChannelsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The pagination token to continue to the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `contact_channels`.
     ///
     /// To override the contents of this collection use [`set_contact_channels`](Self::set_contact_channels).
@@ -75,6 +79,12 @@ impl ListContactChannelsOutputBuilder {
     ) -> Self {
         self.contact_channels = input;
         self
+    }
+    /// <p>A list of contact channels related to the specified contact.</p>
+    pub fn get_contact_channels(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactChannel>> {
+        &self.contact_channels
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

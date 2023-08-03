@@ -36,6 +36,10 @@ impl AssociateConfigurationItemsToApplicationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateConfigurationItemsToApplication as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_configuration_items_to_application::builders::AssociateConfigurationItemsToApplicationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,12 @@ impl AssociateConfigurationItemsToApplicationFluentBuilder {
         self.inner = self.inner.set_application_configuration_id(input);
         self
     }
+    /// <p>The configuration ID of an application with which items are to be associated.</p>
+    pub fn get_application_configuration_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_configuration_id()
+    }
     /// Appends an item to `configurationIds`.
     ///
     /// To override the contents of this collection use [`set_configuration_ids`](Self::set_configuration_ids).
@@ -125,5 +135,11 @@ impl AssociateConfigurationItemsToApplicationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_configuration_ids(input);
         self
+    }
+    /// <p>The ID of each configuration item to be associated with an application.</p>
+    pub fn get_configuration_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_configuration_ids()
     }
 }

@@ -36,6 +36,13 @@ impl UpdateUserPhoneConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateUserPhoneConfig as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_user_phone_config::builders::UpdateUserPhoneConfigInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +136,10 @@ impl UpdateUserPhoneConfigFluentBuilder {
         self.inner = self.inner.set_phone_config(input);
         self
     }
+    /// <p>Information about phone configuration settings for the user.</p>
+    pub fn get_phone_config(&self) -> &::std::option::Option<crate::types::UserPhoneConfig> {
+        self.inner.get_phone_config()
+    }
     /// <p>The identifier of the user account.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
@@ -139,6 +150,10 @@ impl UpdateUserPhoneConfigFluentBuilder {
         self.inner = self.inner.set_user_id(input);
         self
     }
+    /// <p>The identifier of the user account.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_id()
+    }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
@@ -148,5 +163,9 @@ impl UpdateUserPhoneConfigFluentBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
     }
 }

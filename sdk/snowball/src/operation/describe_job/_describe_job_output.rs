@@ -57,6 +57,10 @@ impl DescribeJobOutputBuilder {
         self.job_metadata = input;
         self
     }
+    /// <p>Information about a specific job, including shipping information, job status, and other important metadata.</p>
+    pub fn get_job_metadata(&self) -> &::std::option::Option<crate::types::JobMetadata> {
+        &self.job_metadata
+    }
     /// Appends an item to `sub_job_metadata`.
     ///
     /// To override the contents of this collection use [`set_sub_job_metadata`](Self::set_sub_job_metadata).
@@ -75,6 +79,12 @@ impl DescribeJobOutputBuilder {
     ) -> Self {
         self.sub_job_metadata = input;
         self
+    }
+    /// <p>Information about a specific job part (in the case of an export job), including shipping information, job status, and other important metadata.</p>
+    pub fn get_sub_job_metadata(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobMetadata>> {
+        &self.sub_job_metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

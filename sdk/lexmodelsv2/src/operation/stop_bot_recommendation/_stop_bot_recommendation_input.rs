@@ -65,6 +65,10 @@ impl StopBotRecommendationInputBuilder {
         self.bot_id = input;
         self
     }
+    /// <p>The unique identifier of the bot containing the bot recommendation to be stopped.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
     /// <p>The version of the bot containing the bot recommendation.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl StopBotRecommendationInputBuilder {
         self.bot_version = input;
         self
     }
+    /// <p>The version of the bot containing the bot recommendation.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_version
+    }
     /// <p>The identifier of the language and locale of the bot recommendation to stop. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
@@ -84,6 +92,10 @@ impl StopBotRecommendationInputBuilder {
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.locale_id = input;
         self
+    }
+    /// <p>The identifier of the language and locale of the bot recommendation to stop. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale_id
     }
     /// <p>The unique identifier of the bot recommendation to be stopped.</p>
     pub fn bot_recommendation_id(
@@ -100,6 +112,10 @@ impl StopBotRecommendationInputBuilder {
     ) -> Self {
         self.bot_recommendation_id = input;
         self
+    }
+    /// <p>The unique identifier of the bot recommendation to be stopped.</p>
+    pub fn get_bot_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_recommendation_id
     }
     /// Consumes the builder and constructs a [`StopBotRecommendationInput`](crate::operation::stop_bot_recommendation::StopBotRecommendationInput).
     pub fn build(

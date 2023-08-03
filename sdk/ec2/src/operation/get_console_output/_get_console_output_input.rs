@@ -58,6 +58,10 @@ impl GetConsoleOutputInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The ID of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -67,6 +71,10 @@ impl GetConsoleOutputInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// <p>When enabled, retrieves the latest console output for the instance.</p>
     /// <p>Default: disabled (<code>false</code>)</p>
@@ -79,6 +87,11 @@ impl GetConsoleOutputInputBuilder {
     pub fn set_latest(mut self, input: ::std::option::Option<bool>) -> Self {
         self.latest = input;
         self
+    }
+    /// <p>When enabled, retrieves the latest console output for the instance.</p>
+    /// <p>Default: disabled (<code>false</code>)</p>
+    pub fn get_latest(&self) -> &::std::option::Option<bool> {
+        &self.latest
     }
     /// Consumes the builder and constructs a [`GetConsoleOutputInput`](crate::operation::get_console_output::GetConsoleOutputInput).
     pub fn build(

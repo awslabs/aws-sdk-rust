@@ -48,6 +48,10 @@ impl DomainInfoBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>Name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The type of search engine that the domain is running.<code>OpenSearch</code> for an OpenSearch engine, or <code>Elasticsearch</code> for a legacy Elasticsearch OSS engine.</p>
     pub fn engine_type(mut self, input: crate::types::EngineType) -> Self {
         self.engine_type = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl DomainInfoBuilder {
     ) -> Self {
         self.engine_type = input;
         self
+    }
+    /// <p>The type of search engine that the domain is running.<code>OpenSearch</code> for an OpenSearch engine, or <code>Elasticsearch</code> for a legacy Elasticsearch OSS engine.</p>
+    pub fn get_engine_type(&self) -> &::std::option::Option<crate::types::EngineType> {
+        &self.engine_type
     }
     /// Consumes the builder and constructs a [`DomainInfo`](crate::types::DomainInfo).
     pub fn build(self) -> crate::types::DomainInfo {

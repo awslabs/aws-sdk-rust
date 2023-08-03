@@ -54,6 +54,10 @@ impl DescribeRouterConfigurationInputBuilder {
         self.virtual_interface_id = input;
         self
     }
+    /// <p>The ID of the virtual interface.</p>
+    pub fn get_virtual_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_interface_id
+    }
     /// <p>Identifies the router by a combination of vendor, platform, and software version. For example, <code>CiscoSystemsInc-2900SeriesRouters-IOS124</code>.</p>
     pub fn router_type_identifier(
         mut self,
@@ -69,6 +73,10 @@ impl DescribeRouterConfigurationInputBuilder {
     ) -> Self {
         self.router_type_identifier = input;
         self
+    }
+    /// <p>Identifies the router by a combination of vendor, platform, and software version. For example, <code>CiscoSystemsInc-2900SeriesRouters-IOS124</code>.</p>
+    pub fn get_router_type_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.router_type_identifier
     }
     /// Consumes the builder and constructs a [`DescribeRouterConfigurationInput`](crate::operation::describe_router_configuration::DescribeRouterConfigurationInput).
     pub fn build(

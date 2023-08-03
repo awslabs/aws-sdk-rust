@@ -36,6 +36,10 @@ impl DeleteFleetAdvisorDatabasesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteFleetAdvisorDatabases as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_fleet_advisor_databases::builders::DeleteFleetAdvisorDatabasesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +136,11 @@ impl DeleteFleetAdvisorDatabasesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_database_ids(input);
         self
+    }
+    /// <p>The IDs of the Fleet Advisor collector databases to delete.</p>
+    pub fn get_database_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_database_ids()
     }
 }

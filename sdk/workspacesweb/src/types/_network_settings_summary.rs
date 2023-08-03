@@ -54,6 +54,10 @@ impl NetworkSettingsSummaryBuilder {
         self.network_settings_arn = input;
         self
     }
+    /// <p>The ARN of the network settings.</p>
+    pub fn get_network_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_settings_arn
+    }
     /// <p>The VPC ID of the network settings.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl NetworkSettingsSummaryBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The VPC ID of the network settings.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Consumes the builder and constructs a [`NetworkSettingsSummary`](crate::types::NetworkSettingsSummary).
     pub fn build(self) -> crate::types::NetworkSettingsSummary {

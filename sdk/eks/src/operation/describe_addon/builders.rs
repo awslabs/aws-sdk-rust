@@ -36,6 +36,12 @@ impl DescribeAddonFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeAddon as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_addon::builders::DescribeAddonInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl DescribeAddonFluentBuilder {
         self.inner = self.inner.set_cluster_name(input);
         self
     }
+    /// <p>The name of the cluster.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_name()
+    }
     /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
     pub fn addon_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.addon_name(input.into());
@@ -127,5 +137,9 @@ impl DescribeAddonFluentBuilder {
     pub fn set_addon_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_addon_name(input);
         self
+    }
+    /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
+    pub fn get_addon_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_addon_name()
     }
 }

@@ -49,6 +49,12 @@ impl SubscriptionDefinitionVersionBuilder {
         self.subscriptions = input;
         self
     }
+    /// A list of subscriptions.
+    pub fn get_subscriptions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscription>> {
+        &self.subscriptions
+    }
     /// Consumes the builder and constructs a [`SubscriptionDefinitionVersion`](crate::types::SubscriptionDefinitionVersion).
     pub fn build(self) -> crate::types::SubscriptionDefinitionVersion {
         crate::types::SubscriptionDefinitionVersion {

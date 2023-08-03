@@ -36,6 +36,10 @@ impl ListRequestedServiceQuotaChangeHistoryByQuotaFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListRequestedServiceQuotaChangeHistoryByQuota as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_requested_service_quota_change_history_by_quota::builders::ListRequestedServiceQuotaChangeHistoryByQuotaInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl ListRequestedServiceQuotaChangeHistoryByQuotaFluentBuilder {
         self.inner = self.inner.set_service_code(input);
         self
     }
+    /// <p>The service identifier.</p>
+    pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_code()
+    }
     /// <p>The quota identifier.</p>
     pub fn quota_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.quota_code(input.into());
@@ -115,6 +123,10 @@ impl ListRequestedServiceQuotaChangeHistoryByQuotaFluentBuilder {
     pub fn set_quota_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_quota_code(input);
         self
+    }
+    /// <p>The quota identifier.</p>
+    pub fn get_quota_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_quota_code()
     }
     /// <p>The status value of the quota increase request.</p>
     pub fn status(mut self, input: crate::types::RequestStatus) -> Self {
@@ -126,6 +138,10 @@ impl ListRequestedServiceQuotaChangeHistoryByQuotaFluentBuilder {
         self.inner = self.inner.set_status(input);
         self
     }
+    /// <p>The status value of the quota increase request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::RequestStatus> {
+        self.inner.get_status()
+    }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -136,6 +152,10 @@ impl ListRequestedServiceQuotaChangeHistoryByQuotaFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -145,5 +165,9 @@ impl ListRequestedServiceQuotaChangeHistoryByQuotaFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

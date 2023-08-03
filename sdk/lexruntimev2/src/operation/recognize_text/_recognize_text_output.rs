@@ -110,6 +110,10 @@ impl RecognizeTextOutputBuilder {
         self.messages = input;
         self
     }
+    /// <p>A list of messages last sent to the user. The messages are ordered based on the order that you returned the messages from your Lambda function or the order that the messages are defined in the bot.</p>
+    pub fn get_messages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Message>> {
+        &self.messages
+    }
     /// <p>Represents the current state of the dialog between the user and the bot. </p>
     /// <p>Use this to determine the progress of the conversation and what the next action may be.</p>
     pub fn session_state(mut self, input: crate::types::SessionState) -> Self {
@@ -124,6 +128,11 @@ impl RecognizeTextOutputBuilder {
     ) -> Self {
         self.session_state = input;
         self
+    }
+    /// <p>Represents the current state of the dialog between the user and the bot. </p>
+    /// <p>Use this to determine the progress of the conversation and what the next action may be.</p>
+    pub fn get_session_state(&self) -> &::std::option::Option<crate::types::SessionState> {
+        &self.session_state
     }
     /// Appends an item to `interpretations`.
     ///
@@ -145,6 +154,13 @@ impl RecognizeTextOutputBuilder {
     ) -> Self {
         self.interpretations = input;
         self
+    }
+    /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p>
+    /// <p>Each interpretation includes the intent, a score that indicates now confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
+    pub fn get_interpretations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Interpretation>> {
+        &self.interpretations
     }
     /// Adds a key-value pair to `request_attributes`.
     ///
@@ -171,6 +187,14 @@ impl RecognizeTextOutputBuilder {
         self.request_attributes = input;
         self
     }
+    /// <p>The attributes sent in the request.</p>
+    pub fn get_request_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.request_attributes
+    }
     /// <p>The identifier of the session in use.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
@@ -180,6 +204,10 @@ impl RecognizeTextOutputBuilder {
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_id = input;
         self
+    }
+    /// <p>The identifier of the session in use.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
     }
     /// <p>The bot member that recognized the text.</p>
     pub fn recognized_bot_member(mut self, input: crate::types::RecognizedBotMember) -> Self {
@@ -193,6 +221,12 @@ impl RecognizeTextOutputBuilder {
     ) -> Self {
         self.recognized_bot_member = input;
         self
+    }
+    /// <p>The bot member that recognized the text.</p>
+    pub fn get_recognized_bot_member(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecognizedBotMember> {
+        &self.recognized_bot_member
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

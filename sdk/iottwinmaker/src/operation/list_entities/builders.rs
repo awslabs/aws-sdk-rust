@@ -36,6 +36,10 @@ impl ListEntitiesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListEntities as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_entities::builders::ListEntitiesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +133,10 @@ impl ListEntitiesFluentBuilder {
         self.inner = self.inner.set_workspace_id(input);
         self
     }
+    /// <p>The ID of the workspace.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workspace_id()
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -150,6 +158,14 @@ impl ListEntitiesFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>A list of objects that filter the request.</p> <note>
+    /// <p>Only one object is accepted as a valid input.</p>
+    /// </note>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListEntitiesFilter>> {
+        self.inner.get_filters()
+    }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -162,6 +178,11 @@ impl ListEntitiesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The string that specifies the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -171,5 +192,9 @@ impl ListEntitiesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The string that specifies the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

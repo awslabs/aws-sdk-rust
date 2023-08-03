@@ -54,6 +54,12 @@ impl DeleteIdentitiesInputBuilder {
         self.identity_ids_to_delete = input;
         self
     }
+    /// <p>A list of 1-60 identities that you want to delete.</p>
+    pub fn get_identity_ids_to_delete(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.identity_ids_to_delete
+    }
     /// Consumes the builder and constructs a [`DeleteIdentitiesInput`](crate::operation::delete_identities::DeleteIdentitiesInput).
     pub fn build(
         self,

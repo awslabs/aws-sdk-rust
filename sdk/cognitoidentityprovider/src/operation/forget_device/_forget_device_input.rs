@@ -54,6 +54,10 @@ impl ForgetDeviceInputBuilder {
         self.access_token = input;
         self
     }
+    /// <p>A valid access token that Amazon Cognito issued to the user whose registered device you want to forget.</p>
+    pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_token
+    }
     /// <p>The device key.</p>
     pub fn device_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_key = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl ForgetDeviceInputBuilder {
     pub fn set_device_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_key = input;
         self
+    }
+    /// <p>The device key.</p>
+    pub fn get_device_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_key
     }
     /// Consumes the builder and constructs a [`ForgetDeviceInput`](crate::operation::forget_device::ForgetDeviceInput).
     pub fn build(

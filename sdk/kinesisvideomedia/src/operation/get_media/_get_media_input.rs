@@ -55,6 +55,10 @@ impl GetMediaInputBuilder {
         self.stream_name = input;
         self
     }
+    /// <p>The Kinesis video stream name from where you want to get the media content. If you don't specify the <code>streamName</code>, you must specify the <code>streamARN</code>.</p>
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_name
+    }
     /// <p>The ARN of the stream from where you want to get the media content. If you don't specify the <code>streamARN</code>, you must specify the <code>streamName</code>.</p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_arn = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl GetMediaInputBuilder {
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_arn = input;
         self
+    }
+    /// <p>The ARN of the stream from where you want to get the media content. If you don't specify the <code>streamARN</code>, you must specify the <code>streamName</code>.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_arn
     }
     /// <p>Identifies the starting chunk to get from the specified stream. </p>
     pub fn start_selector(mut self, input: crate::types::StartSelector) -> Self {
@@ -77,6 +85,10 @@ impl GetMediaInputBuilder {
     ) -> Self {
         self.start_selector = input;
         self
+    }
+    /// <p>Identifies the starting chunk to get from the specified stream. </p>
+    pub fn get_start_selector(&self) -> &::std::option::Option<crate::types::StartSelector> {
+        &self.start_selector
     }
     /// Consumes the builder and constructs a [`GetMediaInput`](crate::operation::get_media::GetMediaInput).
     pub fn build(

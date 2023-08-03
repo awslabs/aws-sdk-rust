@@ -36,6 +36,12 @@ impl UpdateContactFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateContact as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_contact::builders::UpdateContactInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl UpdateContactFluentBuilder {
         self.inner = self.inner.set_contact_list_name(input);
         self
     }
+    /// <p>The name of the contact list.</p>
+    pub fn get_contact_list_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_contact_list_name()
+    }
     /// <p>The contact's email address.</p>
     pub fn email_address(
         mut self,
@@ -139,6 +149,10 @@ impl UpdateContactFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_email_address(input);
         self
+    }
+    /// <p>The contact's email address.</p>
+    pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_email_address()
     }
     /// Appends an item to `TopicPreferences`.
     ///
@@ -157,6 +171,12 @@ impl UpdateContactFluentBuilder {
         self.inner = self.inner.set_topic_preferences(input);
         self
     }
+    /// <p>The contact's preference for being opted-in to or opted-out of a topic.</p>
+    pub fn get_topic_preferences(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicPreference>> {
+        self.inner.get_topic_preferences()
+    }
     /// <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
     pub fn unsubscribe_all(mut self, input: bool) -> Self {
         self.inner = self.inner.unsubscribe_all(input);
@@ -166,6 +186,10 @@ impl UpdateContactFluentBuilder {
     pub fn set_unsubscribe_all(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_unsubscribe_all(input);
         self
+    }
+    /// <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
+    pub fn get_unsubscribe_all(&self) -> &::std::option::Option<bool> {
+        self.inner.get_unsubscribe_all()
     }
     /// <p>The attribute data attached to a contact.</p>
     pub fn attributes_data(
@@ -182,5 +206,9 @@ impl UpdateContactFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_attributes_data(input);
         self
+    }
+    /// <p>The attribute data attached to a contact.</p>
+    pub fn get_attributes_data(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_attributes_data()
     }
 }

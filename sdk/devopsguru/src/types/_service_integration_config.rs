@@ -67,6 +67,10 @@ impl ServiceIntegrationConfigBuilder {
         self.ops_center = input;
         self
     }
+    /// <p> Information about whether DevOps Guru is configured to create an OpsItem in Amazon Web Services Systems Manager OpsCenter for each created insight. </p>
+    pub fn get_ops_center(&self) -> &::std::option::Option<crate::types::OpsCenterIntegration> {
+        &self.ops_center
+    }
     /// <p> Information about whether DevOps Guru is configured to perform log anomaly detection on Amazon CloudWatch log groups. </p>
     pub fn logs_anomaly_detection(
         mut self,
@@ -83,6 +87,12 @@ impl ServiceIntegrationConfigBuilder {
         self.logs_anomaly_detection = input;
         self
     }
+    /// <p> Information about whether DevOps Guru is configured to perform log anomaly detection on Amazon CloudWatch log groups. </p>
+    pub fn get_logs_anomaly_detection(
+        &self,
+    ) -> &::std::option::Option<crate::types::LogsAnomalyDetectionIntegration> {
+        &self.logs_anomaly_detection
+    }
     /// <p> Information about whether DevOps Guru is configured to encrypt server-side data using KMS. </p>
     pub fn kms_server_side_encryption(
         mut self,
@@ -98,6 +108,12 @@ impl ServiceIntegrationConfigBuilder {
     ) -> Self {
         self.kms_server_side_encryption = input;
         self
+    }
+    /// <p> Information about whether DevOps Guru is configured to encrypt server-side data using KMS. </p>
+    pub fn get_kms_server_side_encryption(
+        &self,
+    ) -> &::std::option::Option<crate::types::KmsServerSideEncryptionIntegration> {
+        &self.kms_server_side_encryption
     }
     /// Consumes the builder and constructs a [`ServiceIntegrationConfig`](crate::types::ServiceIntegrationConfig).
     pub fn build(self) -> crate::types::ServiceIntegrationConfig {

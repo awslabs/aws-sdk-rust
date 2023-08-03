@@ -36,6 +36,12 @@ impl SearchDevicesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SearchDevices as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::search_devices::builders::SearchDevicesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl SearchDevicesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request continue results where the previous request ended.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -138,6 +148,10 @@ impl SearchDevicesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// Appends an item to `filters`.
     ///
@@ -155,5 +169,11 @@ impl SearchDevicesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
+    }
+    /// <p>The filter values to use to search for a device.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchDevicesFilter>> {
+        self.inner.get_filters()
     }
 }

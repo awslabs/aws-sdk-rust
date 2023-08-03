@@ -75,6 +75,10 @@ impl ModelOutputConfigurationBuilder {
         self.format = input;
         self
     }
+    /// <p>The format of the model output configuration.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::ModelOutputDataFormat> {
+        &self.format
+    }
     /// Adds a key-value pair to `json_key_to_variable_map`.
     ///
     /// To override the contents of this collection use [`set_json_key_to_variable_map`](Self::set_json_key_to_variable_map).
@@ -100,6 +104,14 @@ impl ModelOutputConfigurationBuilder {
         self.json_key_to_variable_map = input;
         self
     }
+    /// <p>A map of JSON keys in response from SageMaker to the Amazon Fraud Detector variables. </p>
+    pub fn get_json_key_to_variable_map(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.json_key_to_variable_map
+    }
     /// Adds a key-value pair to `csv_index_to_variable_map`.
     ///
     /// To override the contents of this collection use [`set_csv_index_to_variable_map`](Self::set_csv_index_to_variable_map).
@@ -124,6 +136,14 @@ impl ModelOutputConfigurationBuilder {
     ) -> Self {
         self.csv_index_to_variable_map = input;
         self
+    }
+    /// <p>A map of CSV index values in the SageMaker response to the Amazon Fraud Detector variables. </p>
+    pub fn get_csv_index_to_variable_map(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.csv_index_to_variable_map
     }
     /// Consumes the builder and constructs a [`ModelOutputConfiguration`](crate::types::ModelOutputConfiguration).
     pub fn build(self) -> crate::types::ModelOutputConfiguration {

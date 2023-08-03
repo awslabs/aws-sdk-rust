@@ -63,6 +63,14 @@ impl ResponsePartitionKeyBuilder {
         self.dimensions = input;
         self
     }
+    /// <p>A dimension map that contains the dimensions for this partition.</p>
+    pub fn get_dimensions(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.dimensions
+    }
     /// Consumes the builder and constructs a [`ResponsePartitionKey`](crate::types::ResponsePartitionKey).
     pub fn build(self) -> crate::types::ResponsePartitionKey {
         crate::types::ResponsePartitionKey {

@@ -43,6 +43,12 @@ impl SnowconeDeviceConfigurationBuilder {
         self.wireless_connection = input;
         self
     }
+    /// <p>Configures the wireless connection for the Snowcone device.</p>
+    pub fn get_wireless_connection(
+        &self,
+    ) -> &::std::option::Option<crate::types::WirelessConnection> {
+        &self.wireless_connection
+    }
     /// Consumes the builder and constructs a [`SnowconeDeviceConfiguration`](crate::types::SnowconeDeviceConfiguration).
     pub fn build(self) -> crate::types::SnowconeDeviceConfiguration {
         crate::types::SnowconeDeviceConfiguration {

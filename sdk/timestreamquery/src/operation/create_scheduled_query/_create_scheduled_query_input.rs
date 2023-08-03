@@ -157,6 +157,10 @@ impl CreateScheduledQueryInputBuilder {
         self.name = input;
         self
     }
+    /// <p>Name of the scheduled query.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The query string to run. Parameter names can be specified in the query string <code>@</code> character followed by an identifier. The named Parameter <code>@scheduled_runtime</code> is reserved and can be used in the query to get the time at which the query is scheduled to run.</p>
     /// <p>The timestamp calculated according to the ScheduleConfiguration parameter, will be the value of <code>@scheduled_runtime</code> paramater for each query run. For example, consider an instance of a scheduled query executing on 2021-12-01 00:00:00. For this instance, the <code>@scheduled_runtime</code> parameter is initialized to the timestamp 2021-12-01 00:00:00 when invoking the query.</p>
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -168,6 +172,11 @@ impl CreateScheduledQueryInputBuilder {
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_string = input;
         self
+    }
+    /// <p>The query string to run. Parameter names can be specified in the query string <code>@</code> character followed by an identifier. The named Parameter <code>@scheduled_runtime</code> is reserved and can be used in the query to get the time at which the query is scheduled to run.</p>
+    /// <p>The timestamp calculated according to the ScheduleConfiguration parameter, will be the value of <code>@scheduled_runtime</code> paramater for each query run. For example, consider an instance of a scheduled query executing on 2021-12-01 00:00:00. For this instance, the <code>@scheduled_runtime</code> parameter is initialized to the timestamp 2021-12-01 00:00:00 when invoking the query.</p>
+    pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_string
     }
     /// <p>The schedule configuration for the query.</p>
     pub fn schedule_configuration(mut self, input: crate::types::ScheduleConfiguration) -> Self {
@@ -181,6 +190,12 @@ impl CreateScheduledQueryInputBuilder {
     ) -> Self {
         self.schedule_configuration = input;
         self
+    }
+    /// <p>The schedule configuration for the query.</p>
+    pub fn get_schedule_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScheduleConfiguration> {
+        &self.schedule_configuration
     }
     /// <p>Notification configuration for the scheduled query. A notification is sent by Timestream when a query run finishes, when the state is updated or when you delete it. </p>
     pub fn notification_configuration(
@@ -198,6 +213,12 @@ impl CreateScheduledQueryInputBuilder {
         self.notification_configuration = input;
         self
     }
+    /// <p>Notification configuration for the scheduled query. A notification is sent by Timestream when a query run finishes, when the state is updated or when you delete it. </p>
+    pub fn get_notification_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::NotificationConfiguration> {
+        &self.notification_configuration
+    }
     /// <p>Configuration used for writing the result of a query.</p>
     pub fn target_configuration(mut self, input: crate::types::TargetConfiguration) -> Self {
         self.target_configuration = ::std::option::Option::Some(input);
@@ -210,6 +231,12 @@ impl CreateScheduledQueryInputBuilder {
     ) -> Self {
         self.target_configuration = input;
         self
+    }
+    /// <p>Configuration used for writing the result of a query.</p>
+    pub fn get_target_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::TargetConfiguration> {
+        &self.target_configuration
     }
     /// <p>Using a ClientToken makes the call to CreateScheduledQuery idempotent, in other words, making the same request repeatedly will produce the same result. Making multiple identical CreateScheduledQuery requests has the same effect as making a single request. </p>
     /// <ul>
@@ -229,6 +256,14 @@ impl CreateScheduledQueryInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>Using a ClientToken makes the call to CreateScheduledQuery idempotent, in other words, making the same request repeatedly will produce the same result. Making multiple identical CreateScheduledQuery requests has the same effect as making a single request. </p>
+    /// <ul>
+    /// <li> <p> If CreateScheduledQuery is called without a <code>ClientToken</code>, the Query SDK generates a <code>ClientToken</code> on your behalf.</p> </li>
+    /// <li> <p> After 8 hours, any request with the same <code>ClientToken</code> is treated as a new request. </p> </li>
+    /// </ul>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The ARN for the IAM role that Timestream will assume when running the scheduled query. </p>
     pub fn scheduled_query_execution_role_arn(
         mut self,
@@ -244,6 +279,12 @@ impl CreateScheduledQueryInputBuilder {
     ) -> Self {
         self.scheduled_query_execution_role_arn = input;
         self
+    }
+    /// <p>The ARN for the IAM role that Timestream will assume when running the scheduled query. </p>
+    pub fn get_scheduled_query_execution_role_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.scheduled_query_execution_role_arn
     }
     /// Appends an item to `tags`.
     ///
@@ -264,6 +305,10 @@ impl CreateScheduledQueryInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>A list of key-value pairs to label the scheduled query.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The Amazon KMS key used to encrypt the scheduled query resource, at-rest. If the Amazon KMS key is not specified, the scheduled query resource will be encrypted with a Timestream owned Amazon KMS key. To specify a KMS key, use the key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix the name with <i>alias/</i> </p>
     /// <p>If ErrorReportConfiguration uses <code>SSE_KMS</code> as encryption type, the same KmsKeyId is used to encrypt the error report at rest.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -275,6 +320,11 @@ impl CreateScheduledQueryInputBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>The Amazon KMS key used to encrypt the scheduled query resource, at-rest. If the Amazon KMS key is not specified, the scheduled query resource will be encrypted with a Timestream owned Amazon KMS key. To specify a KMS key, use the key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix the name with <i>alias/</i> </p>
+    /// <p>If ErrorReportConfiguration uses <code>SSE_KMS</code> as encryption type, the same KmsKeyId is used to encrypt the error report at rest.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// <p>Configuration for error reporting. Error reports will be generated when a problem is encountered when writing the query results. </p>
     pub fn error_report_configuration(
@@ -291,6 +341,12 @@ impl CreateScheduledQueryInputBuilder {
     ) -> Self {
         self.error_report_configuration = input;
         self
+    }
+    /// <p>Configuration for error reporting. Error reports will be generated when a problem is encountered when writing the query results. </p>
+    pub fn get_error_report_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ErrorReportConfiguration> {
+        &self.error_report_configuration
     }
     /// Consumes the builder and constructs a [`CreateScheduledQueryInput`](crate::operation::create_scheduled_query::CreateScheduledQueryInput).
     pub fn build(

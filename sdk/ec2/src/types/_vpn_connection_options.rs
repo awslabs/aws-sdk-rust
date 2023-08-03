@@ -119,6 +119,10 @@ impl VpnConnectionOptionsBuilder {
         self.enable_acceleration = input;
         self
     }
+    /// <p>Indicates whether acceleration is enabled for the VPN connection.</p>
+    pub fn get_enable_acceleration(&self) -> &::std::option::Option<bool> {
+        &self.enable_acceleration
+    }
     /// <p>Indicates whether the VPN connection uses static routes only. Static routes must be used for devices that don't support BGP.</p>
     pub fn static_routes_only(mut self, input: bool) -> Self {
         self.static_routes_only = ::std::option::Option::Some(input);
@@ -128,6 +132,10 @@ impl VpnConnectionOptionsBuilder {
     pub fn set_static_routes_only(mut self, input: ::std::option::Option<bool>) -> Self {
         self.static_routes_only = input;
         self
+    }
+    /// <p>Indicates whether the VPN connection uses static routes only. Static routes must be used for devices that don't support BGP.</p>
+    pub fn get_static_routes_only(&self) -> &::std::option::Option<bool> {
+        &self.static_routes_only
     }
     /// <p>The IPv4 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
     pub fn local_ipv4_network_cidr(
@@ -145,6 +153,10 @@ impl VpnConnectionOptionsBuilder {
         self.local_ipv4_network_cidr = input;
         self
     }
+    /// <p>The IPv4 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
+    pub fn get_local_ipv4_network_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.local_ipv4_network_cidr
+    }
     /// <p>The IPv4 CIDR on the Amazon Web Services side of the VPN connection.</p>
     pub fn remote_ipv4_network_cidr(
         mut self,
@@ -160,6 +172,10 @@ impl VpnConnectionOptionsBuilder {
     ) -> Self {
         self.remote_ipv4_network_cidr = input;
         self
+    }
+    /// <p>The IPv4 CIDR on the Amazon Web Services side of the VPN connection.</p>
+    pub fn get_remote_ipv4_network_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.remote_ipv4_network_cidr
     }
     /// <p>The IPv6 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
     pub fn local_ipv6_network_cidr(
@@ -177,6 +193,10 @@ impl VpnConnectionOptionsBuilder {
         self.local_ipv6_network_cidr = input;
         self
     }
+    /// <p>The IPv6 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
+    pub fn get_local_ipv6_network_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.local_ipv6_network_cidr
+    }
     /// <p>The IPv6 CIDR on the Amazon Web Services side of the VPN connection.</p>
     pub fn remote_ipv6_network_cidr(
         mut self,
@@ -192,6 +212,10 @@ impl VpnConnectionOptionsBuilder {
     ) -> Self {
         self.remote_ipv6_network_cidr = input;
         self
+    }
+    /// <p>The IPv6 CIDR on the Amazon Web Services side of the VPN connection.</p>
+    pub fn get_remote_ipv6_network_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.remote_ipv6_network_cidr
     }
     /// <p>The type of IPv4 address assigned to the outside interface of the customer gateway.</p>
     /// <p>Valid values: <code>PrivateIpv4</code> | <code>PublicIpv4</code> </p>
@@ -213,6 +237,12 @@ impl VpnConnectionOptionsBuilder {
         self.outside_ip_address_type = input;
         self
     }
+    /// <p>The type of IPv4 address assigned to the outside interface of the customer gateway.</p>
+    /// <p>Valid values: <code>PrivateIpv4</code> | <code>PublicIpv4</code> </p>
+    /// <p>Default: <code>PublicIpv4</code> </p>
+    pub fn get_outside_ip_address_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.outside_ip_address_type
+    }
     /// <p>The transit gateway attachment ID in use for the VPN tunnel.</p>
     pub fn transport_transit_gateway_attachment_id(
         mut self,
@@ -229,6 +259,12 @@ impl VpnConnectionOptionsBuilder {
         self.transport_transit_gateway_attachment_id = input;
         self
     }
+    /// <p>The transit gateway attachment ID in use for the VPN tunnel.</p>
+    pub fn get_transport_transit_gateway_attachment_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.transport_transit_gateway_attachment_id
+    }
     /// <p>Indicates whether the VPN tunnels process IPv4 or IPv6 traffic.</p>
     pub fn tunnel_inside_ip_version(mut self, input: crate::types::TunnelInsideIpVersion) -> Self {
         self.tunnel_inside_ip_version = ::std::option::Option::Some(input);
@@ -241,6 +277,12 @@ impl VpnConnectionOptionsBuilder {
     ) -> Self {
         self.tunnel_inside_ip_version = input;
         self
+    }
+    /// <p>Indicates whether the VPN tunnels process IPv4 or IPv6 traffic.</p>
+    pub fn get_tunnel_inside_ip_version(
+        &self,
+    ) -> &::std::option::Option<crate::types::TunnelInsideIpVersion> {
+        &self.tunnel_inside_ip_version
     }
     /// Appends an item to `tunnel_options`.
     ///
@@ -260,6 +302,12 @@ impl VpnConnectionOptionsBuilder {
     ) -> Self {
         self.tunnel_options = input;
         self
+    }
+    /// <p>Indicates the VPN tunnel options.</p>
+    pub fn get_tunnel_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TunnelOption>> {
+        &self.tunnel_options
     }
     /// Consumes the builder and constructs a [`VpnConnectionOptions`](crate::types::VpnConnectionOptions).
     pub fn build(self) -> crate::types::VpnConnectionOptions {

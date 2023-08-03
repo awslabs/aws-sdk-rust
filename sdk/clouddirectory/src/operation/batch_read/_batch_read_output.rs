@@ -56,6 +56,12 @@ impl BatchReadOutputBuilder {
         self.responses = input;
         self
     }
+    /// <p>A list of all the responses for each batch read.</p>
+    pub fn get_responses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchReadOperationResponse>> {
+        &self.responses
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

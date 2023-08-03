@@ -57,6 +57,12 @@ impl SelectedVideoStreamsBuilder {
         self.attendee_ids = input;
         self
     }
+    /// <p>The attendee IDs of the streams selected for a media pipeline. </p>
+    pub fn get_attendee_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.attendee_ids
+    }
     /// Appends an item to `external_user_ids`.
     ///
     /// To override the contents of this collection use [`set_external_user_ids`](Self::set_external_user_ids).
@@ -78,6 +84,12 @@ impl SelectedVideoStreamsBuilder {
     ) -> Self {
         self.external_user_ids = input;
         self
+    }
+    /// <p>The external user IDs of the streams selected for a media pipeline.</p>
+    pub fn get_external_user_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.external_user_ids
     }
     /// Consumes the builder and constructs a [`SelectedVideoStreams`](crate::types::SelectedVideoStreams).
     pub fn build(self) -> crate::types::SelectedVideoStreams {

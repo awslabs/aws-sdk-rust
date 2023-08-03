@@ -36,6 +36,12 @@ impl DescribeAssetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeAsset as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_asset::builders::DescribeAssetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -117,5 +123,9 @@ impl DescribeAssetFluentBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
+    }
+    /// The ID of an MediaPackage VOD Asset resource.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
     }
 }

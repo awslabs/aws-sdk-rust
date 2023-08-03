@@ -60,6 +60,10 @@ impl RecoveryInstanceDataReplicationInitiationBuilder {
         self.start_date_time = input;
         self
     }
+    /// <p>The date and time of the current attempt to initiate data replication.</p>
+    pub fn get_start_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_date_time
+    }
     /// Appends an item to `steps`.
     ///
     /// To override the contents of this collection use [`set_steps`](Self::set_steps).
@@ -83,6 +87,14 @@ impl RecoveryInstanceDataReplicationInitiationBuilder {
     ) -> Self {
         self.steps = input;
         self
+    }
+    /// <p>The steps of the current attempt to initiate data replication.</p>
+    pub fn get_steps(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::RecoveryInstanceDataReplicationInitiationStep>,
+    > {
+        &self.steps
     }
     /// Consumes the builder and constructs a [`RecoveryInstanceDataReplicationInitiation`](crate::types::RecoveryInstanceDataReplicationInitiation).
     pub fn build(self) -> crate::types::RecoveryInstanceDataReplicationInitiation {

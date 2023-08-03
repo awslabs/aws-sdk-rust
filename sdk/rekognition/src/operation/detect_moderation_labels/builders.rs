@@ -39,6 +39,13 @@ impl DetectModerationLabelsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DetectModerationLabels as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::detect_moderation_labels::builders::DetectModerationLabelsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +138,11 @@ impl DetectModerationLabelsFluentBuilder {
         self.inner = self.inner.set_image(input);
         self
     }
+    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
+    pub fn get_image(&self) -> &::std::option::Option<crate::types::Image> {
+        self.inner.get_image()
+    }
     /// <p>Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't return any labels with a confidence level lower than this specified value.</p>
     /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels with confidence values greater than or equal to 50 percent.</p>
     pub fn min_confidence(mut self, input: f32) -> Self {
@@ -142,6 +154,11 @@ impl DetectModerationLabelsFluentBuilder {
     pub fn set_min_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.inner = self.inner.set_min_confidence(input);
         self
+    }
+    /// <p>Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't return any labels with a confidence level lower than this specified value.</p>
+    /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels with confidence values greater than or equal to 50 percent.</p>
+    pub fn get_min_confidence(&self) -> &::std::option::Option<f32> {
+        self.inner.get_min_confidence()
     }
     /// <p>Sets up the configuration for human evaluation, including the FlowDefinition the image will be sent to.</p>
     pub fn human_loop_config(mut self, input: crate::types::HumanLoopConfig) -> Self {
@@ -155,5 +172,9 @@ impl DetectModerationLabelsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_human_loop_config(input);
         self
+    }
+    /// <p>Sets up the configuration for human evaluation, including the FlowDefinition the image will be sent to.</p>
+    pub fn get_human_loop_config(&self) -> &::std::option::Option<crate::types::HumanLoopConfig> {
+        self.inner.get_human_loop_config()
     }
 }

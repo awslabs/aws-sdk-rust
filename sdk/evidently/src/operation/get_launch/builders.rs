@@ -36,6 +36,10 @@ impl GetLaunchFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetLaunch as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_launch::builders::GetLaunchInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl GetLaunchFluentBuilder {
         self.inner = self.inner.set_project(input);
         self
     }
+    /// <p>The name or ARN of the project that contains the launch.</p>
+    pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project()
+    }
     /// <p>The name of the launch that you want to see the details of.</p>
     pub fn launch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.launch(input.into());
@@ -127,5 +135,9 @@ impl GetLaunchFluentBuilder {
     pub fn set_launch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_launch(input);
         self
+    }
+    /// <p>The name of the launch that you want to see the details of.</p>
+    pub fn get_launch(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_launch()
     }
 }

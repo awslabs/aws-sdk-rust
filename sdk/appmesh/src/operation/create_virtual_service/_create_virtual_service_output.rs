@@ -50,6 +50,10 @@ impl CreateVirtualServiceOutputBuilder {
         self.virtual_service = input;
         self
     }
+    /// <p>The full description of your virtual service following the create call.</p>
+    pub fn get_virtual_service(&self) -> &::std::option::Option<crate::types::VirtualServiceData> {
+        &self.virtual_service
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

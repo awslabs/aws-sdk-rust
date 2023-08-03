@@ -39,6 +39,10 @@ impl GetServiceInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the service that you want to get the detailed data for.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`GetServiceInput`](crate::operation::get_service::GetServiceInput).
     pub fn build(
         self,

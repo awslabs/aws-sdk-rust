@@ -54,6 +54,10 @@ impl HpoResourceConfigBuilder {
         self.max_number_of_training_jobs = input;
         self
     }
+    /// <p>The maximum number of training jobs when you create a solution version. The maximum value for <code>maxNumberOfTrainingJobs</code> is <code>40</code>.</p>
+    pub fn get_max_number_of_training_jobs(&self) -> &::std::option::Option<::std::string::String> {
+        &self.max_number_of_training_jobs
+    }
     /// <p>The maximum number of parallel training jobs when you create a solution version. The maximum value for <code>maxParallelTrainingJobs</code> is <code>10</code>.</p>
     pub fn max_parallel_training_jobs(
         mut self,
@@ -69,6 +73,10 @@ impl HpoResourceConfigBuilder {
     ) -> Self {
         self.max_parallel_training_jobs = input;
         self
+    }
+    /// <p>The maximum number of parallel training jobs when you create a solution version. The maximum value for <code>maxParallelTrainingJobs</code> is <code>10</code>.</p>
+    pub fn get_max_parallel_training_jobs(&self) -> &::std::option::Option<::std::string::String> {
+        &self.max_parallel_training_jobs
     }
     /// Consumes the builder and constructs a [`HpoResourceConfig`](crate::types::HpoResourceConfig).
     pub fn build(self) -> crate::types::HpoResourceConfig {

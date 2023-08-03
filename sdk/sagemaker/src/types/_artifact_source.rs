@@ -49,6 +49,10 @@ impl ArtifactSourceBuilder {
         self.source_uri = input;
         self
     }
+    /// <p>The URI of the source.</p>
+    pub fn get_source_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_uri
+    }
     /// Appends an item to `source_types`.
     ///
     /// To override the contents of this collection use [`set_source_types`](Self::set_source_types).
@@ -67,6 +71,12 @@ impl ArtifactSourceBuilder {
     ) -> Self {
         self.source_types = input;
         self
+    }
+    /// <p>A list of source types.</p>
+    pub fn get_source_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ArtifactSourceType>> {
+        &self.source_types
     }
     /// Consumes the builder and constructs a [`ArtifactSource`](crate::types::ArtifactSource).
     pub fn build(self) -> crate::types::ArtifactSource {

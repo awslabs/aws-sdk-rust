@@ -58,6 +58,12 @@ impl DeleteAccountAssignmentOutputBuilder {
         self.account_assignment_deletion_status = input;
         self
     }
+    /// <p>The status object for the account assignment deletion operation.</p>
+    pub fn get_account_assignment_deletion_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::AccountAssignmentOperationStatus> {
+        &self.account_assignment_deletion_status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

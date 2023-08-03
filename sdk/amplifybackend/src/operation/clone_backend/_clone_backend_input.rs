@@ -56,6 +56,10 @@ impl CloneBackendInputBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The app ID.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p>The name of the backend environment.</p>
     pub fn backend_environment_name(
         mut self,
@@ -72,6 +76,10 @@ impl CloneBackendInputBuilder {
         self.backend_environment_name = input;
         self
     }
+    /// <p>The name of the backend environment.</p>
+    pub fn get_backend_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backend_environment_name
+    }
     /// <p>The name of the destination backend environment to be created.</p>
     pub fn target_environment_name(
         mut self,
@@ -87,6 +95,10 @@ impl CloneBackendInputBuilder {
     ) -> Self {
         self.target_environment_name = input;
         self
+    }
+    /// <p>The name of the destination backend environment to be created.</p>
+    pub fn get_target_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_environment_name
     }
     /// Consumes the builder and constructs a [`CloneBackendInput`](crate::operation::clone_backend::CloneBackendInput).
     pub fn build(

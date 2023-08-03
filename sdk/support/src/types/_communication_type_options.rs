@@ -62,6 +62,10 @@ impl CommunicationTypeOptionsBuilder {
         self.r#type = input;
         self
     }
+    /// <p> A string value indicating the communication type. At the moment the type value can assume one of 3 values at the moment chat, web and call. </p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// Appends an item to `supported_hours`.
     ///
     /// To override the contents of this collection use [`set_supported_hours`](Self::set_supported_hours).
@@ -81,6 +85,12 @@ impl CommunicationTypeOptionsBuilder {
         self.supported_hours = input;
         self
     }
+    /// <p> A JSON-formatted list containing time ranges when support is available. </p>
+    pub fn get_supported_hours(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportedHour>> {
+        &self.supported_hours
+    }
     /// Appends an item to `dates_without_support`.
     ///
     /// To override the contents of this collection use [`set_dates_without_support`](Self::set_dates_without_support).
@@ -99,6 +109,12 @@ impl CommunicationTypeOptionsBuilder {
     ) -> Self {
         self.dates_without_support = input;
         self
+    }
+    /// <p> A JSON-formatted list containing date and time ranges for periods without support </p>
+    pub fn get_dates_without_support(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DateInterval>> {
+        &self.dates_without_support
     }
     /// Consumes the builder and constructs a [`CommunicationTypeOptions`](crate::types::CommunicationTypeOptions).
     pub fn build(self) -> crate::types::CommunicationTypeOptions {

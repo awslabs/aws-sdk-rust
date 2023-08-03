@@ -66,6 +66,14 @@ impl GetDataLakeOrganizationConfigurationOutputBuilder {
         self.auto_enable_new_account = input;
         self
     }
+    /// <p>The configuration for new accounts.</p>
+    pub fn get_auto_enable_new_account(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::DataLakeAutoEnableNewAccountConfiguration>,
+    > {
+        &self.auto_enable_new_account
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

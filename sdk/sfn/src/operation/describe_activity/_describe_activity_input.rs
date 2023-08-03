@@ -40,6 +40,10 @@ impl DescribeActivityInputBuilder {
         self.activity_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the activity to describe.</p>
+    pub fn get_activity_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.activity_arn
+    }
     /// Consumes the builder and constructs a [`DescribeActivityInput`](crate::operation::describe_activity::DescribeActivityInput).
     pub fn build(
         self,

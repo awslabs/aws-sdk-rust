@@ -36,6 +36,10 @@ impl UpdateStackFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateStack as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_stack::builders::UpdateStackInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdateStackFluentBuilder {
         self.inner = self.inner.set_display_name(input);
         self
     }
+    /// <p>The stack name to display.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_display_name()
+    }
     /// <p>The description to display.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -128,6 +136,10 @@ impl UpdateStackFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The description to display.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The name of the stack.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -137,6 +149,10 @@ impl UpdateStackFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the stack.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// Appends an item to `StorageConnectors`.
     ///
@@ -155,6 +171,12 @@ impl UpdateStackFluentBuilder {
         self.inner = self.inner.set_storage_connectors(input);
         self
     }
+    /// <p>The storage connectors to enable.</p>
+    pub fn get_storage_connectors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageConnector>> {
+        self.inner.get_storage_connectors()
+    }
     /// <p>Deletes the storage connectors currently enabled for the stack.</p>
     #[deprecated]
     pub fn delete_storage_connectors(mut self, input: bool) -> Self {
@@ -167,6 +189,11 @@ impl UpdateStackFluentBuilder {
         self.inner = self.inner.set_delete_storage_connectors(input);
         self
     }
+    /// <p>Deletes the storage connectors currently enabled for the stack.</p>
+    #[deprecated]
+    pub fn get_delete_storage_connectors(&self) -> &::std::option::Option<bool> {
+        self.inner.get_delete_storage_connectors()
+    }
     /// <p>The URL that users are redirected to after their streaming session ends.</p>
     pub fn redirect_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.redirect_url(input.into());
@@ -177,6 +204,10 @@ impl UpdateStackFluentBuilder {
         self.inner = self.inner.set_redirect_url(input);
         self
     }
+    /// <p>The URL that users are redirected to after their streaming session ends.</p>
+    pub fn get_redirect_url(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_redirect_url()
+    }
     /// <p>The URL that users are redirected to after they choose the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>
     pub fn feedback_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.feedback_url(input.into());
@@ -186,6 +217,10 @@ impl UpdateStackFluentBuilder {
     pub fn set_feedback_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_feedback_url(input);
         self
+    }
+    /// <p>The URL that users are redirected to after they choose the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>
+    pub fn get_feedback_url(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_feedback_url()
     }
     /// Appends an item to `AttributesToDelete`.
     ///
@@ -204,6 +239,12 @@ impl UpdateStackFluentBuilder {
         self.inner = self.inner.set_attributes_to_delete(input);
         self
     }
+    /// <p>The stack attributes to delete.</p>
+    pub fn get_attributes_to_delete(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StackAttribute>> {
+        self.inner.get_attributes_to_delete()
+    }
     /// Appends an item to `UserSettings`.
     ///
     /// To override the contents of this collection use [`set_user_settings`](Self::set_user_settings).
@@ -221,6 +262,12 @@ impl UpdateStackFluentBuilder {
         self.inner = self.inner.set_user_settings(input);
         self
     }
+    /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled.</p>
+    pub fn get_user_settings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserSetting>> {
+        self.inner.get_user_settings()
+    }
     /// <p>The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.</p>
     pub fn application_settings(mut self, input: crate::types::ApplicationSettings) -> Self {
         self.inner = self.inner.application_settings(input);
@@ -233,6 +280,12 @@ impl UpdateStackFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_application_settings(input);
         self
+    }
+    /// <p>The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.</p>
+    pub fn get_application_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationSettings> {
+        self.inner.get_application_settings()
     }
     /// Appends an item to `AccessEndpoints`.
     ///
@@ -250,6 +303,12 @@ impl UpdateStackFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_access_endpoints(input);
         self
+    }
+    /// <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
+    pub fn get_access_endpoints(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>> {
+        self.inner.get_access_endpoints()
     }
     /// Appends an item to `EmbedHostDomains`.
     ///
@@ -271,6 +330,12 @@ impl UpdateStackFluentBuilder {
         self.inner = self.inner.set_embed_host_domains(input);
         self
     }
+    /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>
+    pub fn get_embed_host_domains(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_embed_host_domains()
+    }
     /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
     pub fn streaming_experience_settings(
         mut self,
@@ -286,5 +351,11 @@ impl UpdateStackFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_streaming_experience_settings(input);
         self
+    }
+    /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
+    pub fn get_streaming_experience_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::StreamingExperienceSettings> {
+        self.inner.get_streaming_experience_settings()
     }
 }

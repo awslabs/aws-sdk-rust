@@ -64,6 +64,10 @@ impl LoggingInfoBuilder {
         self.s3_bucket_name = input;
         self
     }
+    /// <p>The name of an S3 bucket where execution logs are stored.</p>
+    pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_name
+    }
     /// <p>(Optional) The S3 bucket subfolder. </p>
     pub fn s3_key_prefix(
         mut self,
@@ -80,6 +84,10 @@ impl LoggingInfoBuilder {
         self.s3_key_prefix = input;
         self
     }
+    /// <p>(Optional) The S3 bucket subfolder. </p>
+    pub fn get_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_key_prefix
+    }
     /// <p>The Amazon Web Services Region where the S3 bucket is located.</p>
     pub fn s3_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_region = ::std::option::Option::Some(input.into());
@@ -89,6 +97,10 @@ impl LoggingInfoBuilder {
     pub fn set_s3_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_region = input;
         self
+    }
+    /// <p>The Amazon Web Services Region where the S3 bucket is located.</p>
+    pub fn get_s3_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_region
     }
     /// Consumes the builder and constructs a [`LoggingInfo`](crate::types::LoggingInfo).
     pub fn build(self) -> crate::types::LoggingInfo {

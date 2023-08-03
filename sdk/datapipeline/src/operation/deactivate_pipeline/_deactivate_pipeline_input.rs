@@ -49,6 +49,10 @@ impl DeactivatePipelineInputBuilder {
         self.pipeline_id = input;
         self
     }
+    /// <p>The ID of the pipeline.</p>
+    pub fn get_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_id
+    }
     /// <p>Indicates whether to cancel any running objects. The default is true, which sets the state of any running objects to <code>CANCELED</code>. If this value is false, the pipeline is deactivated after all running objects finish.</p>
     pub fn cancel_active(mut self, input: bool) -> Self {
         self.cancel_active = ::std::option::Option::Some(input);
@@ -58,6 +62,10 @@ impl DeactivatePipelineInputBuilder {
     pub fn set_cancel_active(mut self, input: ::std::option::Option<bool>) -> Self {
         self.cancel_active = input;
         self
+    }
+    /// <p>Indicates whether to cancel any running objects. The default is true, which sets the state of any running objects to <code>CANCELED</code>. If this value is false, the pipeline is deactivated after all running objects finish.</p>
+    pub fn get_cancel_active(&self) -> &::std::option::Option<bool> {
+        &self.cancel_active
     }
     /// Consumes the builder and constructs a [`DeactivatePipelineInput`](crate::operation::deactivate_pipeline::DeactivatePipelineInput).
     pub fn build(

@@ -81,6 +81,10 @@ impl ListVirtualInterfaceTestHistoryInputBuilder {
         self.test_id = input;
         self
     }
+    /// <p>The ID of the virtual interface failover test.</p>
+    pub fn get_test_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_id
+    }
     /// <p>The ID of the virtual interface that was tested.</p>
     pub fn virtual_interface_id(
         mut self,
@@ -96,6 +100,10 @@ impl ListVirtualInterfaceTestHistoryInputBuilder {
     ) -> Self {
         self.virtual_interface_id = input;
         self
+    }
+    /// <p>The ID of the virtual interface that was tested.</p>
+    pub fn get_virtual_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_interface_id
     }
     /// Appends an item to `bgp_peers`.
     ///
@@ -116,6 +124,10 @@ impl ListVirtualInterfaceTestHistoryInputBuilder {
         self.bgp_peers = input;
         self
     }
+    /// <p>The BGP peers that were placed in the DOWN state during the virtual interface failover test.</p>
+    pub fn get_bgp_peers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.bgp_peers
+    }
     /// <p>The status of the virtual interface failover test.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -125,6 +137,10 @@ impl ListVirtualInterfaceTestHistoryInputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the virtual interface failover test.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
@@ -138,6 +154,11 @@ impl ListVirtualInterfaceTestHistoryInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -147,6 +168,10 @@ impl ListVirtualInterfaceTestHistoryInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListVirtualInterfaceTestHistoryInput`](crate::operation::list_virtual_interface_test_history::ListVirtualInterfaceTestHistoryInput).
     pub fn build(

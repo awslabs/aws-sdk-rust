@@ -72,6 +72,10 @@ impl UpdateBackendConfigOutputBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The app ID.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p>The app ID for the backend manager.</p>
     pub fn backend_manager_app_id(
         mut self,
@@ -88,6 +92,10 @@ impl UpdateBackendConfigOutputBuilder {
         self.backend_manager_app_id = input;
         self
     }
+    /// <p>The app ID for the backend manager.</p>
+    pub fn get_backend_manager_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backend_manager_app_id
+    }
     /// <p>If the request fails, this error is returned.</p>
     pub fn error(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error = ::std::option::Option::Some(input.into());
@@ -97,6 +105,10 @@ impl UpdateBackendConfigOutputBuilder {
     pub fn set_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error = input;
         self
+    }
+    /// <p>If the request fails, this error is returned.</p>
+    pub fn get_error(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error
     }
     /// <p>Describes the Amazon Cognito configurations for the Admin UI auth resource to log in with.</p>
     pub fn login_auth_config(mut self, input: crate::types::LoginAuthConfigReqObj) -> Self {
@@ -110,6 +122,12 @@ impl UpdateBackendConfigOutputBuilder {
     ) -> Self {
         self.login_auth_config = input;
         self
+    }
+    /// <p>Describes the Amazon Cognito configurations for the Admin UI auth resource to log in with.</p>
+    pub fn get_login_auth_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::LoginAuthConfigReqObj> {
+        &self.login_auth_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

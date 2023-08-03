@@ -51,6 +51,10 @@ impl SoftwareUpdateOptionsStatusBuilder {
         self.options = input;
         self
     }
+    /// <p>The service software update options for a domain.</p>
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::SoftwareUpdateOptions> {
+        &self.options
+    }
     /// <p>The status of service software update options, including creation date and last updated date.</p>
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl SoftwareUpdateOptionsStatusBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of service software update options, including creation date and last updated date.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::OptionStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`SoftwareUpdateOptionsStatus`](crate::types::SoftwareUpdateOptionsStatus).
     pub fn build(self) -> crate::types::SoftwareUpdateOptionsStatus {

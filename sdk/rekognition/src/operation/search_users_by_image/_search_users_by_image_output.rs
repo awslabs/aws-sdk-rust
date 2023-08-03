@@ -82,6 +82,12 @@ impl SearchUsersByImageOutputBuilder {
         self.user_matches = input;
         self
     }
+    /// <p>An array of UserID objects that matched the input face, along with the confidence in the match. The returned structure will be empty if there are no matches. Returned if the SearchUsersByImageResponse action is successful.</p>
+    pub fn get_user_matches(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserMatch>> {
+        &self.user_matches
+    }
     /// <p>Version number of the face detection model associated with the input collection CollectionId.</p>
     pub fn face_model_version(
         mut self,
@@ -98,6 +104,10 @@ impl SearchUsersByImageOutputBuilder {
         self.face_model_version = input;
         self
     }
+    /// <p>Version number of the face detection model associated with the input collection CollectionId.</p>
+    pub fn get_face_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.face_model_version
+    }
     /// <p>A list of FaceDetail objects containing the BoundingBox for the largest face in image, as well as the confidence in the bounding box, that was searched for matches. If no valid face is detected in the image the response will contain no SearchedFace object.</p>
     pub fn searched_face(mut self, input: crate::types::SearchedFaceDetails) -> Self {
         self.searched_face = ::std::option::Option::Some(input);
@@ -110,6 +120,10 @@ impl SearchUsersByImageOutputBuilder {
     ) -> Self {
         self.searched_face = input;
         self
+    }
+    /// <p>A list of FaceDetail objects containing the BoundingBox for the largest face in image, as well as the confidence in the bounding box, that was searched for matches. If no valid face is detected in the image the response will contain no SearchedFace object.</p>
+    pub fn get_searched_face(&self) -> &::std::option::Option<crate::types::SearchedFaceDetails> {
+        &self.searched_face
     }
     /// Appends an item to `unsearched_faces`.
     ///
@@ -129,6 +143,12 @@ impl SearchUsersByImageOutputBuilder {
     ) -> Self {
         self.unsearched_faces = input;
         self
+    }
+    /// <p>List of UnsearchedFace objects. Contains the face details infered from the specified image but not used for search. Contains reasons that describe why a face wasn't used for Search. </p>
+    pub fn get_unsearched_faces(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnsearchedFace>> {
+        &self.unsearched_faces
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -46,6 +46,10 @@ impl GetFormOutputBuilder {
         self.form = input;
         self
     }
+    /// <p>Represents the configuration settings for the form.</p>
+    pub fn get_form(&self) -> &::std::option::Option<crate::types::Form> {
+        &self.form
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

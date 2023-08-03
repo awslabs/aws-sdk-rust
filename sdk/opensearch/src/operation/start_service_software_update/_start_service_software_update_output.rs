@@ -53,6 +53,12 @@ impl StartServiceSoftwareUpdateOutputBuilder {
         self.service_software_options = input;
         self
     }
+    /// <p>The current status of the OpenSearch Service software update.</p>
+    pub fn get_service_software_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServiceSoftwareOptions> {
+        &self.service_software_options
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

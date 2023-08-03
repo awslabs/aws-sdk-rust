@@ -135,6 +135,10 @@ impl ClusterOperationInfoBuilder {
         self.client_request_id = input;
         self
     }
+    /// <p>The ID of the API request that triggered this operation.</p>
+    pub fn get_client_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_id
+    }
     /// <p>ARN of the cluster.</p>
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_arn = ::std::option::Option::Some(input.into());
@@ -144,6 +148,10 @@ impl ClusterOperationInfoBuilder {
     pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_arn = input;
         self
+    }
+    /// <p>ARN of the cluster.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_arn
     }
     /// <p>The time that the operation was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -158,6 +166,10 @@ impl ClusterOperationInfoBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time that the operation was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The time at which the operation finished.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -171,6 +183,10 @@ impl ClusterOperationInfoBuilder {
         self.end_time = input;
         self
     }
+    /// <p>The time at which the operation finished.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>Describes the error if the operation fails.</p>
     pub fn error_info(mut self, input: crate::types::ErrorInfo) -> Self {
         self.error_info = ::std::option::Option::Some(input);
@@ -180,6 +196,10 @@ impl ClusterOperationInfoBuilder {
     pub fn set_error_info(mut self, input: ::std::option::Option<crate::types::ErrorInfo>) -> Self {
         self.error_info = input;
         self
+    }
+    /// <p>Describes the error if the operation fails.</p>
+    pub fn get_error_info(&self) -> &::std::option::Option<crate::types::ErrorInfo> {
+        &self.error_info
     }
     /// <p>ARN of the cluster operation.</p>
     pub fn operation_arn(
@@ -197,6 +217,10 @@ impl ClusterOperationInfoBuilder {
         self.operation_arn = input;
         self
     }
+    /// <p>ARN of the cluster operation.</p>
+    pub fn get_operation_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation_arn
+    }
     /// <p>State of the cluster operation.</p>
     pub fn operation_state(
         mut self,
@@ -212,6 +236,10 @@ impl ClusterOperationInfoBuilder {
     ) -> Self {
         self.operation_state = input;
         self
+    }
+    /// <p>State of the cluster operation.</p>
+    pub fn get_operation_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation_state
     }
     /// Appends an item to `operation_steps`.
     ///
@@ -232,6 +260,12 @@ impl ClusterOperationInfoBuilder {
         self.operation_steps = input;
         self
     }
+    /// <p>Steps completed during the operation.</p>
+    pub fn get_operation_steps(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterOperationStep>> {
+        &self.operation_steps
+    }
     /// <p>Type of the cluster operation.</p>
     pub fn operation_type(
         mut self,
@@ -248,6 +282,10 @@ impl ClusterOperationInfoBuilder {
         self.operation_type = input;
         self
     }
+    /// <p>Type of the cluster operation.</p>
+    pub fn get_operation_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation_type
+    }
     /// <p>Information about cluster attributes before a cluster is updated.</p>
     pub fn source_cluster_info(mut self, input: crate::types::MutableClusterInfo) -> Self {
         self.source_cluster_info = ::std::option::Option::Some(input);
@@ -260,6 +298,12 @@ impl ClusterOperationInfoBuilder {
     ) -> Self {
         self.source_cluster_info = input;
         self
+    }
+    /// <p>Information about cluster attributes before a cluster is updated.</p>
+    pub fn get_source_cluster_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::MutableClusterInfo> {
+        &self.source_cluster_info
     }
     /// <p>Information about cluster attributes after a cluster is updated.</p>
     pub fn target_cluster_info(mut self, input: crate::types::MutableClusterInfo) -> Self {
@@ -274,6 +318,12 @@ impl ClusterOperationInfoBuilder {
         self.target_cluster_info = input;
         self
     }
+    /// <p>Information about cluster attributes after a cluster is updated.</p>
+    pub fn get_target_cluster_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::MutableClusterInfo> {
+        &self.target_cluster_info
+    }
     /// <p>Description of the VPC connection for CreateVpcConnection and DeleteVpcConnection operations.</p>
     pub fn vpc_connection_info(mut self, input: crate::types::VpcConnectionInfo) -> Self {
         self.vpc_connection_info = ::std::option::Option::Some(input);
@@ -286,6 +336,12 @@ impl ClusterOperationInfoBuilder {
     ) -> Self {
         self.vpc_connection_info = input;
         self
+    }
+    /// <p>Description of the VPC connection for CreateVpcConnection and DeleteVpcConnection operations.</p>
+    pub fn get_vpc_connection_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::VpcConnectionInfo> {
+        &self.vpc_connection_info
     }
     /// Consumes the builder and constructs a [`ClusterOperationInfo`](crate::types::ClusterOperationInfo).
     pub fn build(self) -> crate::types::ClusterOperationInfo {

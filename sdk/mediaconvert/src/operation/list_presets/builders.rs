@@ -36,6 +36,10 @@ impl ListPresetsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListPresets as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_presets::builders::ListPresetsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl ListPresetsFluentBuilder {
         self.inner = self.inner.set_category(input);
         self
     }
+    /// Optionally, specify a preset category to limit responses to only presets from that category.
+    pub fn get_category(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_category()
+    }
     /// Optional. When you request a list of presets, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
     pub fn list_by(mut self, input: crate::types::PresetListBy) -> Self {
         self.inner = self.inner.list_by(input);
@@ -136,6 +144,10 @@ impl ListPresetsFluentBuilder {
     pub fn set_list_by(mut self, input: ::std::option::Option<crate::types::PresetListBy>) -> Self {
         self.inner = self.inner.set_list_by(input);
         self
+    }
+    /// Optional. When you request a list of presets, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
+    pub fn get_list_by(&self) -> &::std::option::Option<crate::types::PresetListBy> {
+        self.inner.get_list_by()
     }
     /// Optional. Number of presets, up to twenty, that will be returned at one time
     pub fn max_results(mut self, input: i32) -> Self {
@@ -147,6 +159,10 @@ impl ListPresetsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// Optional. Number of presets, up to twenty, that will be returned at one time
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// Use this string, provided with the response to a previous request, to request the next batch of presets.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -157,6 +173,10 @@ impl ListPresetsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// Use this string, provided with the response to a previous request, to request the next batch of presets.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
     pub fn order(mut self, input: crate::types::Order) -> Self {
         self.inner = self.inner.order(input);
@@ -166,5 +186,9 @@ impl ListPresetsFluentBuilder {
     pub fn set_order(mut self, input: ::std::option::Option<crate::types::Order>) -> Self {
         self.inner = self.inner.set_order(input);
         self
+    }
+    /// Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
+    pub fn get_order(&self) -> &::std::option::Option<crate::types::Order> {
+        self.inner.get_order()
     }
 }

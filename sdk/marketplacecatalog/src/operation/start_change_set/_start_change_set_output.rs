@@ -60,6 +60,10 @@ impl StartChangeSetOutputBuilder {
         self.change_set_id = input;
         self
     }
+    /// <p>Unique identifier generated for the request.</p>
+    pub fn get_change_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_set_id
+    }
     /// <p>The ARN associated to the unique identifier generated for the request.</p>
     pub fn change_set_arn(
         mut self,
@@ -75,6 +79,10 @@ impl StartChangeSetOutputBuilder {
     ) -> Self {
         self.change_set_arn = input;
         self
+    }
+    /// <p>The ARN associated to the unique identifier generated for the request.</p>
+    pub fn get_change_set_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_set_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

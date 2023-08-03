@@ -49,6 +49,12 @@ impl LoRaWanJoinEventNotificationConfigurationsBuilder {
         self.dev_eui_event_topic = input;
         self
     }
+    /// <p>Denotes whether the Dev EUI join event topic is enabled or disabled.</p>
+    pub fn get_dev_eui_event_topic(
+        &self,
+    ) -> &::std::option::Option<crate::types::EventNotificationTopicStatus> {
+        &self.dev_eui_event_topic
+    }
     /// Consumes the builder and constructs a [`LoRaWanJoinEventNotificationConfigurations`](crate::types::LoRaWanJoinEventNotificationConfigurations).
     pub fn build(self) -> crate::types::LoRaWanJoinEventNotificationConfigurations {
         crate::types::LoRaWanJoinEventNotificationConfigurations {

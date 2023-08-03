@@ -68,6 +68,12 @@ impl CategoryEventBuilder {
         self.matched_categories = input;
         self
     }
+    /// <p>Lists the categories that were matched in your audio segment.</p>
+    pub fn get_matched_categories(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.matched_categories
+    }
     /// Adds a key-value pair to `matched_details`.
     ///
     /// To override the contents of this collection use [`set_matched_details`](Self::set_matched_details).
@@ -92,6 +98,14 @@ impl CategoryEventBuilder {
     ) -> Self {
         self.matched_details = input;
         self
+    }
+    /// <p>Contains information about the matched categories, including category names and timestamps.</p>
+    pub fn get_matched_details(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::PointsOfInterest>,
+    > {
+        &self.matched_details
     }
     /// Consumes the builder and constructs a [`CategoryEvent`](crate::types::CategoryEvent).
     pub fn build(self) -> crate::types::CategoryEvent {

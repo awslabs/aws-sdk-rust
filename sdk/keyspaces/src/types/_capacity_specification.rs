@@ -89,6 +89,16 @@ impl CapacitySpecificationBuilder {
         self.throughput_mode = input;
         self
     }
+    /// <p>The read/write throughput capacity mode for a table. The options are:</p>
+    /// <ul>
+    /// <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> and </p> </li>
+    /// <li> <p> <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p> </li>
+    /// </ul>
+    /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    pub fn get_throughput_mode(&self) -> &::std::option::Option<crate::types::ThroughputMode> {
+        &self.throughput_mode
+    }
     /// <p>The throughput capacity specified for <code>read</code> operations defined in <code>read capacity units</code> <code>(RCUs)</code>.</p>
     pub fn read_capacity_units(mut self, input: i64) -> Self {
         self.read_capacity_units = ::std::option::Option::Some(input);
@@ -99,6 +109,10 @@ impl CapacitySpecificationBuilder {
         self.read_capacity_units = input;
         self
     }
+    /// <p>The throughput capacity specified for <code>read</code> operations defined in <code>read capacity units</code> <code>(RCUs)</code>.</p>
+    pub fn get_read_capacity_units(&self) -> &::std::option::Option<i64> {
+        &self.read_capacity_units
+    }
     /// <p>The throughput capacity specified for <code>write</code> operations defined in <code>write capacity units</code> <code>(WCUs)</code>.</p>
     pub fn write_capacity_units(mut self, input: i64) -> Self {
         self.write_capacity_units = ::std::option::Option::Some(input);
@@ -108,6 +122,10 @@ impl CapacitySpecificationBuilder {
     pub fn set_write_capacity_units(mut self, input: ::std::option::Option<i64>) -> Self {
         self.write_capacity_units = input;
         self
+    }
+    /// <p>The throughput capacity specified for <code>write</code> operations defined in <code>write capacity units</code> <code>(WCUs)</code>.</p>
+    pub fn get_write_capacity_units(&self) -> &::std::option::Option<i64> {
+        &self.write_capacity_units
     }
     /// Consumes the builder and constructs a [`CapacitySpecification`](crate::types::CapacitySpecification).
     pub fn build(self) -> crate::types::CapacitySpecification {

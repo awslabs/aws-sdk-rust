@@ -68,6 +68,14 @@ impl CapacitySizeBuilder {
         self.r#type = input;
         self
     }
+    /// <p>Specifies the endpoint capacity type.</p>
+    /// <ul>
+    /// <li> <p> <code>INSTANCE_COUNT</code>: The endpoint activates based on the number of instances.</p> </li>
+    /// <li> <p> <code>CAPACITY_PERCENT</code>: The endpoint activates based on the specified percentage of capacity.</p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::CapacitySizeType> {
+        &self.r#type
+    }
     /// <p>Defines the capacity size, either as a number of instances or a capacity percentage.</p>
     pub fn value(mut self, input: i32) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -77,6 +85,10 @@ impl CapacitySizeBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>Defines the capacity size, either as a number of instances or a capacity percentage.</p>
+    pub fn get_value(&self) -> &::std::option::Option<i32> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`CapacitySize`](crate::types::CapacitySize).
     pub fn build(self) -> crate::types::CapacitySize {

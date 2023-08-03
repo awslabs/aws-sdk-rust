@@ -49,6 +49,10 @@ impl DeleteConnectionInputBuilder {
         self.endpoint_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
+    pub fn get_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
     pub fn replication_instance_arn(
         mut self,
@@ -64,6 +68,10 @@ impl DeleteConnectionInputBuilder {
     ) -> Self {
         self.replication_instance_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+    pub fn get_replication_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_instance_arn
     }
     /// Consumes the builder and constructs a [`DeleteConnectionInput`](crate::operation::delete_connection::DeleteConnectionInput).
     pub fn build(

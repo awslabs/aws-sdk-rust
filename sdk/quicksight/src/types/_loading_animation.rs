@@ -43,6 +43,10 @@ impl LoadingAnimationBuilder {
         self.visibility = input;
         self
     }
+    /// <p>The visibility configuration of <code>LoadingAnimation</code>.</p>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.visibility
+    }
     /// Consumes the builder and constructs a [`LoadingAnimation`](crate::types::LoadingAnimation).
     pub fn build(self) -> crate::types::LoadingAnimation {
         crate::types::LoadingAnimation {

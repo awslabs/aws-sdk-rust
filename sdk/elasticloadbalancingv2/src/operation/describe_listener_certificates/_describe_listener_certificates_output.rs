@@ -63,6 +63,12 @@ impl DescribeListenerCertificatesOutputBuilder {
         self.certificates = input;
         self
     }
+    /// <p>Information about the certificates.</p>
+    pub fn get_certificates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
+        &self.certificates
+    }
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     pub fn next_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_marker = ::std::option::Option::Some(input.into());
@@ -72,6 +78,10 @@ impl DescribeListenerCertificatesOutputBuilder {
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_marker = input;
         self
+    }
+    /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
+    pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

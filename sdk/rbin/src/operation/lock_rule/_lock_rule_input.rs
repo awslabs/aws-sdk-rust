@@ -47,6 +47,10 @@ impl LockRuleInputBuilder {
         self.identifier = input;
         self
     }
+    /// <p>The unique ID of the retention rule.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
+    }
     /// <p>Information about the retention rule lock configuration.</p>
     pub fn lock_configuration(mut self, input: crate::types::LockConfiguration) -> Self {
         self.lock_configuration = ::std::option::Option::Some(input);
@@ -59,6 +63,12 @@ impl LockRuleInputBuilder {
     ) -> Self {
         self.lock_configuration = input;
         self
+    }
+    /// <p>Information about the retention rule lock configuration.</p>
+    pub fn get_lock_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::LockConfiguration> {
+        &self.lock_configuration
     }
     /// Consumes the builder and constructs a [`LockRuleInput`](crate::operation::lock_rule::LockRuleInput).
     pub fn build(

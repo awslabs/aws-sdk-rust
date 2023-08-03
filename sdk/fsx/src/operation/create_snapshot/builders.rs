@@ -43,6 +43,12 @@ impl CreateSnapshotFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSnapshot as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_snapshot::builders::CreateSnapshotInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +137,10 @@ impl CreateSnapshotFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// <p>The name of the snapshot. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -141,6 +151,10 @@ impl CreateSnapshotFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the snapshot. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The ID of the volume that you are taking a snapshot of.</p>
     pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.volume_id(input.into());
@@ -150,6 +164,10 @@ impl CreateSnapshotFluentBuilder {
     pub fn set_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_volume_id(input);
         self
+    }
+    /// <p>The ID of the volume that you are taking a snapshot of.</p>
+    pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_volume_id()
     }
     /// Appends an item to `Tags`.
     ///
@@ -167,5 +185,9 @@ impl CreateSnapshotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

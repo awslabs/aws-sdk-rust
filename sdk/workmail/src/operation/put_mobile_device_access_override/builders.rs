@@ -36,6 +36,10 @@ impl PutMobileDeviceAccessOverrideFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutMobileDeviceAccessOverride as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_mobile_device_access_override::builders::PutMobileDeviceAccessOverrideInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl PutMobileDeviceAccessOverrideFluentBuilder {
         self.inner = self.inner.set_organization_id(input);
         self
     }
+    /// <p>Identifies the WorkMail organization for which you create the override.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
+    }
     /// <p>The WorkMail user for which you create the override. Accepts the following types of user identities:</p>
     /// <ul>
     /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
@@ -152,6 +160,15 @@ impl PutMobileDeviceAccessOverrideFluentBuilder {
         self.inner = self.inner.set_user_id(input);
         self
     }
+    /// <p>The WorkMail user for which you create the override. Accepts the following types of user identities:</p>
+    /// <ul>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
+    /// </ul>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_id()
+    }
     /// <p>The mobile device for which you create the override. <code>DeviceId</code> is case insensitive.</p>
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_id(input.into());
@@ -161,6 +178,10 @@ impl PutMobileDeviceAccessOverrideFluentBuilder {
     pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_id(input);
         self
+    }
+    /// <p>The mobile device for which you create the override. <code>DeviceId</code> is case insensitive.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_id()
     }
     /// <p>The effect of the override, <code>ALLOW</code> or <code>DENY</code>.</p>
     pub fn effect(mut self, input: crate::types::MobileDeviceAccessRuleEffect) -> Self {
@@ -175,6 +196,10 @@ impl PutMobileDeviceAccessOverrideFluentBuilder {
         self.inner = self.inner.set_effect(input);
         self
     }
+    /// <p>The effect of the override, <code>ALLOW</code> or <code>DENY</code>.</p>
+    pub fn get_effect(&self) -> &::std::option::Option<crate::types::MobileDeviceAccessRuleEffect> {
+        self.inner.get_effect()
+    }
     /// <p>A description of the override.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -184,5 +209,9 @@ impl PutMobileDeviceAccessOverrideFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the override.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
 }

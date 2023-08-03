@@ -36,6 +36,12 @@ impl GetDiskSnapshotFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetDiskSnapshot as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_disk_snapshot::builders::GetDiskSnapshotInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl GetDiskSnapshotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_disk_snapshot_name(input);
         self
+    }
+    /// <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
+    pub fn get_disk_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_disk_snapshot_name()
     }
 }

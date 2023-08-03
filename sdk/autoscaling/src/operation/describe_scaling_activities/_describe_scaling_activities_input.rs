@@ -84,6 +84,13 @@ impl DescribeScalingActivitiesInputBuilder {
         self.activity_ids = input;
         self
     }
+    /// <p>The activity IDs of the desired scaling activities. If you omit this property, all activities for the past six weeks are described. If unknown activities are requested, they are ignored with no error. If you specify an Auto Scaling group, the results are limited to that group.</p>
+    /// <p>Array Members: Maximum number of 50 IDs.</p>
+    pub fn get_activity_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.activity_ids
+    }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn auto_scaling_group_name(
         mut self,
@@ -100,6 +107,10 @@ impl DescribeScalingActivitiesInputBuilder {
         self.auto_scaling_group_name = input;
         self
     }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_scaling_group_name
+    }
     /// <p>Indicates whether to include scaling activity from deleted Auto Scaling groups.</p>
     pub fn include_deleted_groups(mut self, input: bool) -> Self {
         self.include_deleted_groups = ::std::option::Option::Some(input);
@@ -109,6 +120,10 @@ impl DescribeScalingActivitiesInputBuilder {
     pub fn set_include_deleted_groups(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_deleted_groups = input;
         self
+    }
+    /// <p>Indicates whether to include scaling activity from deleted Auto Scaling groups.</p>
+    pub fn get_include_deleted_groups(&self) -> &::std::option::Option<bool> {
+        &self.include_deleted_groups
     }
     /// <p>The maximum number of items to return with this call. The default value is <code>100</code> and the maximum value is <code>100</code>.</p>
     pub fn max_records(mut self, input: i32) -> Self {
@@ -120,6 +135,10 @@ impl DescribeScalingActivitiesInputBuilder {
         self.max_records = input;
         self
     }
+    /// <p>The maximum number of items to return with this call. The default value is <code>100</code> and the maximum value is <code>100</code>.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        &self.max_records
+    }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -129,6 +148,10 @@ impl DescribeScalingActivitiesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeScalingActivitiesInput`](crate::operation::describe_scaling_activities::DescribeScalingActivitiesInput).
     pub fn build(

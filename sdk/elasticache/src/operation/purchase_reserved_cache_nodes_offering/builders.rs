@@ -36,6 +36,10 @@ impl PurchaseReservedCacheNodesOfferingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PurchaseReservedCacheNodesOffering as a reference.
+    pub fn as_input(&self) -> &crate::operation::purchase_reserved_cache_nodes_offering::builders::PurchaseReservedCacheNodesOfferingInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -108,6 +112,13 @@ impl PurchaseReservedCacheNodesOfferingFluentBuilder {
         self.inner = self.inner.set_reserved_cache_nodes_offering_id(input);
         self
     }
+    /// <p>The ID of the reserved cache node offering to purchase.</p>
+    /// <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code> </p>
+    pub fn get_reserved_cache_nodes_offering_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reserved_cache_nodes_offering_id()
+    }
     /// <p>A customer-specified identifier to track this reservation.</p> <note>
     /// <p>The Reserved Cache Node ID is an unique customer-specified identifier to track this reservation. If this parameter is not specified, ElastiCache automatically generates an identifier for the reservation.</p>
     /// </note>
@@ -130,6 +141,13 @@ impl PurchaseReservedCacheNodesOfferingFluentBuilder {
         self.inner = self.inner.set_reserved_cache_node_id(input);
         self
     }
+    /// <p>A customer-specified identifier to track this reservation.</p> <note>
+    /// <p>The Reserved Cache Node ID is an unique customer-specified identifier to track this reservation. If this parameter is not specified, ElastiCache automatically generates an identifier for the reservation.</p>
+    /// </note>
+    /// <p>Example: myreservationID</p>
+    pub fn get_reserved_cache_node_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reserved_cache_node_id()
+    }
     /// <p>The number of cache node instances to reserve.</p>
     /// <p>Default: <code>1</code> </p>
     pub fn cache_node_count(mut self, input: i32) -> Self {
@@ -141,6 +159,11 @@ impl PurchaseReservedCacheNodesOfferingFluentBuilder {
     pub fn set_cache_node_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_cache_node_count(input);
         self
+    }
+    /// <p>The number of cache node instances to reserve.</p>
+    /// <p>Default: <code>1</code> </p>
+    pub fn get_cache_node_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_cache_node_count()
     }
     /// Appends an item to `Tags`.
     ///
@@ -158,5 +181,9 @@ impl PurchaseReservedCacheNodesOfferingFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

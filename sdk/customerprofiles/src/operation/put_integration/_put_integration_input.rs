@@ -95,6 +95,10 @@ impl PutIntegrationInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The unique name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The URI of the S3 bucket or any other type of data source.</p>
     pub fn uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.uri = ::std::option::Option::Some(input.into());
@@ -104,6 +108,10 @@ impl PutIntegrationInputBuilder {
     pub fn set_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.uri = input;
         self
+    }
+    /// <p>The URI of the S3 bucket or any other type of data source.</p>
+    pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uri
     }
     /// <p>The name of the profile object type.</p>
     pub fn object_type_name(
@@ -120,6 +128,10 @@ impl PutIntegrationInputBuilder {
     ) -> Self {
         self.object_type_name = input;
         self
+    }
+    /// <p>The name of the profile object type.</p>
+    pub fn get_object_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_type_name
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -146,6 +158,14 @@ impl PutIntegrationInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The configuration that controls how Customer Profiles retrieves data from the source.</p>
     pub fn flow_definition(mut self, input: crate::types::FlowDefinition) -> Self {
         self.flow_definition = ::std::option::Option::Some(input);
@@ -158,6 +178,10 @@ impl PutIntegrationInputBuilder {
     ) -> Self {
         self.flow_definition = input;
         self
+    }
+    /// <p>The configuration that controls how Customer Profiles retrieves data from the source.</p>
+    pub fn get_flow_definition(&self) -> &::std::option::Option<crate::types::FlowDefinition> {
+        &self.flow_definition
     }
     /// Adds a key-value pair to `object_type_names`.
     ///
@@ -183,6 +207,14 @@ impl PutIntegrationInputBuilder {
     ) -> Self {
         self.object_type_names = input;
         self
+    }
+    /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
+    pub fn get_object_type_names(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.object_type_names
     }
     /// Consumes the builder and constructs a [`PutIntegrationInput`](crate::operation::put_integration::PutIntegrationInput).
     pub fn build(

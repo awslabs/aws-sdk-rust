@@ -83,6 +83,10 @@ impl ResourceAlreadyExistsExceptionBuilder {
         self.message = input;
         self
     }
+    /// <p>The message for the exception.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The ID of the resource that caused the exception.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -93,6 +97,10 @@ impl ResourceAlreadyExistsExceptionBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The ID of the resource that caused the exception.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>The ARN of the resource that caused the exception.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -102,6 +110,10 @@ impl ResourceAlreadyExistsExceptionBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p>The ARN of the resource that caused the exception.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

@@ -36,6 +36,10 @@ impl GetServiceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetService as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_service::builders::GetServiceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -123,5 +127,9 @@ impl GetServiceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_service_identifier(input);
         self
+    }
+    /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    pub fn get_service_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_identifier()
     }
 }

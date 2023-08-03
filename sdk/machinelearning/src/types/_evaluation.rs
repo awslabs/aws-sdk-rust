@@ -177,6 +177,10 @@ impl EvaluationBuilder {
         self.evaluation_id = input;
         self
     }
+    /// <p>The ID that is assigned to the <code>Evaluation</code> at creation.</p>
+    pub fn get_evaluation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_id
+    }
     /// <p>The ID of the <code>MLModel</code> that is the focus of the evaluation.</p>
     pub fn ml_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ml_model_id = ::std::option::Option::Some(input.into());
@@ -186,6 +190,10 @@ impl EvaluationBuilder {
     pub fn set_ml_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ml_model_id = input;
         self
+    }
+    /// <p>The ID of the <code>MLModel</code> that is the focus of the evaluation.</p>
+    pub fn get_ml_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ml_model_id
     }
     /// <p>The ID of the <code>DataSource</code> that is used to evaluate the <code>MLModel</code>.</p>
     pub fn evaluation_data_source_id(
@@ -203,6 +211,10 @@ impl EvaluationBuilder {
         self.evaluation_data_source_id = input;
         self
     }
+    /// <p>The ID of the <code>DataSource</code> that is used to evaluate the <code>MLModel</code>.</p>
+    pub fn get_evaluation_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_data_source_id
+    }
     /// <p>The location and name of the data in Amazon Simple Storage Server (Amazon S3) that is used in the evaluation.</p>
     pub fn input_data_location_s3(
         mut self,
@@ -218,6 +230,10 @@ impl EvaluationBuilder {
     ) -> Self {
         self.input_data_location_s3 = input;
         self
+    }
+    /// <p>The location and name of the data in Amazon Simple Storage Server (Amazon S3) that is used in the evaluation.</p>
+    pub fn get_input_data_location_s3(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_data_location_s3
     }
     /// <p>The AWS user account that invoked the evaluation. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
     pub fn created_by_iam_user(
@@ -235,6 +251,10 @@ impl EvaluationBuilder {
         self.created_by_iam_user = input;
         self
     }
+    /// <p>The AWS user account that invoked the evaluation. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
+    pub fn get_created_by_iam_user(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by_iam_user
+    }
     /// <p>The time that the <code>Evaluation</code> was created. The time is expressed in epoch time.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -247,6 +267,10 @@ impl EvaluationBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The time that the <code>Evaluation</code> was created. The time is expressed in epoch time.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>The time of the most recent edit to the <code>Evaluation</code>. The time is expressed in epoch time.</p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -261,6 +285,10 @@ impl EvaluationBuilder {
         self.last_updated_at = input;
         self
     }
+    /// <p>The time of the most recent edit to the <code>Evaluation</code>. The time is expressed in epoch time.</p>
+    pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_at
+    }
     /// <p>A user-supplied name or description of the <code>Evaluation</code>. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -270,6 +298,10 @@ impl EvaluationBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A user-supplied name or description of the <code>Evaluation</code>. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The status of the evaluation. This element can have one of the following values:</p>
     /// <ul>
@@ -294,6 +326,17 @@ impl EvaluationBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::EntityStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the evaluation. This element can have one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to evaluate an <code>MLModel</code>.</p> </li>
+    /// <li> <p> <code>INPROGRESS</code> - The evaluation is underway.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The request to evaluate an <code>MLModel</code> did not run to completion. It is not usable.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> - The evaluation process completed successfully.</p> </li>
+    /// <li> <p> <code>DELETED</code> - The <code>Evaluation</code> is marked as deleted. It is not usable.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::EntityStatus> {
+        &self.status
     }
     /// <p>Measurements of how well the <code>MLModel</code> performed, using observations referenced by the <code>DataSource</code>. One of the following metrics is returned, based on the type of the <code>MLModel</code>: </p>
     /// <ul>
@@ -320,6 +363,18 @@ impl EvaluationBuilder {
         self.performance_metrics = input;
         self
     }
+    /// <p>Measurements of how well the <code>MLModel</code> performed, using observations referenced by the <code>DataSource</code>. One of the following metrics is returned, based on the type of the <code>MLModel</code>: </p>
+    /// <ul>
+    /// <li> <p>BinaryAUC: A binary <code>MLModel</code> uses the Area Under the Curve (AUC) technique to measure performance. </p> </li>
+    /// <li> <p>RegressionRMSE: A regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique to measure performance. RMSE measures the difference between predicted and actual values for a single variable.</p> </li>
+    /// <li> <p>MulticlassAvgFScore: A multiclass <code>MLModel</code> uses the F1 score technique to measure performance. </p> </li>
+    /// </ul>
+    /// <p> For more information about performance metrics, please see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>. </p>
+    pub fn get_performance_metrics(
+        &self,
+    ) -> &::std::option::Option<crate::types::PerformanceMetrics> {
+        &self.performance_metrics
+    }
     /// <p>A description of the most recent details about evaluating the <code>MLModel</code>.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -330,6 +385,10 @@ impl EvaluationBuilder {
         self.message = input;
         self
     }
+    /// <p>A description of the most recent details about evaluating the <code>MLModel</code>.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>Long integer type that is a 64-bit signed number.</p>
     pub fn compute_time(mut self, input: i64) -> Self {
         self.compute_time = ::std::option::Option::Some(input);
@@ -339,6 +398,10 @@ impl EvaluationBuilder {
     pub fn set_compute_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.compute_time = input;
         self
+    }
+    /// <p>Long integer type that is a 64-bit signed number.</p>
+    pub fn get_compute_time(&self) -> &::std::option::Option<i64> {
+        &self.compute_time
     }
     /// <p>A timestamp represented in epoch time.</p>
     pub fn finished_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -354,6 +417,10 @@ impl EvaluationBuilder {
         self
     }
     /// <p>A timestamp represented in epoch time.</p>
+    pub fn get_finished_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.finished_at
+    }
+    /// <p>A timestamp represented in epoch time.</p>
     pub fn started_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.started_at = ::std::option::Option::Some(input);
         self
@@ -365,6 +432,10 @@ impl EvaluationBuilder {
     ) -> Self {
         self.started_at = input;
         self
+    }
+    /// <p>A timestamp represented in epoch time.</p>
+    pub fn get_started_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.started_at
     }
     /// Consumes the builder and constructs a [`Evaluation`](crate::types::Evaluation).
     pub fn build(self) -> crate::types::Evaluation {

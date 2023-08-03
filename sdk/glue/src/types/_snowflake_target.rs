@@ -56,6 +56,10 @@ impl SnowflakeTargetBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the Snowflake target.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Specifies the data of the Snowflake target node.</p>
     pub fn data(mut self, input: crate::types::SnowflakeNodeData) -> Self {
         self.data = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl SnowflakeTargetBuilder {
     ) -> Self {
         self.data = input;
         self
+    }
+    /// <p>Specifies the data of the Snowflake target node.</p>
+    pub fn get_data(&self) -> &::std::option::Option<crate::types::SnowflakeNodeData> {
+        &self.data
     }
     /// Appends an item to `inputs`.
     ///
@@ -87,6 +95,10 @@ impl SnowflakeTargetBuilder {
     ) -> Self {
         self.inputs = input;
         self
+    }
+    /// <p>The nodes that are inputs to the data target.</p>
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inputs
     }
     /// Consumes the builder and constructs a [`SnowflakeTarget`](crate::types::SnowflakeTarget).
     pub fn build(self) -> crate::types::SnowflakeTarget {

@@ -49,6 +49,10 @@ impl OnExitLifecycleBuilder {
         self.events = input;
         self
     }
+    /// <p>Specifies the <code>actions</code> that are performed when the state is exited and the <code>condition</code> is <code>TRUE</code>.</p>
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Event>> {
+        &self.events
+    }
     /// Consumes the builder and constructs a [`OnExitLifecycle`](crate::types::OnExitLifecycle).
     pub fn build(self) -> crate::types::OnExitLifecycle {
         crate::types::OnExitLifecycle {

@@ -70,6 +70,10 @@ impl FirewallSubnetMissingVpcEndpointViolationBuilder {
         self.firewall_subnet_id = input;
         self
     }
+    /// <p>The ID of the firewall that this VPC endpoint is associated with.</p>
+    pub fn get_firewall_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.firewall_subnet_id
+    }
     /// <p>The resource ID of the VPC associated with the deleted VPC subnet.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl FirewallSubnetMissingVpcEndpointViolationBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The resource ID of the VPC associated with the deleted VPC subnet.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// <p>The name of the Availability Zone of the deleted VPC subnet.</p>
     pub fn subnet_availability_zone(
@@ -96,6 +104,10 @@ impl FirewallSubnetMissingVpcEndpointViolationBuilder {
         self.subnet_availability_zone = input;
         self
     }
+    /// <p>The name of the Availability Zone of the deleted VPC subnet.</p>
+    pub fn get_subnet_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_availability_zone
+    }
     /// <p>The ID of the Availability Zone of the deleted VPC subnet.</p>
     pub fn subnet_availability_zone_id(
         mut self,
@@ -111,6 +123,10 @@ impl FirewallSubnetMissingVpcEndpointViolationBuilder {
     ) -> Self {
         self.subnet_availability_zone_id = input;
         self
+    }
+    /// <p>The ID of the Availability Zone of the deleted VPC subnet.</p>
+    pub fn get_subnet_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_availability_zone_id
     }
     /// Consumes the builder and constructs a [`FirewallSubnetMissingVpcEndpointViolation`](crate::types::FirewallSubnetMissingVpcEndpointViolation).
     pub fn build(self) -> crate::types::FirewallSubnetMissingVpcEndpointViolation {

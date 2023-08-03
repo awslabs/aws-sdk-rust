@@ -55,6 +55,10 @@ impl ListStreamsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return at a time.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>A token used to get the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl ListStreamsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token used to get the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>Set to true to return the list of streams in ascending order.</p>
     pub fn ascending_order(mut self, input: bool) -> Self {
         self.ascending_order = ::std::option::Option::Some(input);
@@ -74,6 +82,10 @@ impl ListStreamsInputBuilder {
     pub fn set_ascending_order(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ascending_order = input;
         self
+    }
+    /// <p>Set to true to return the list of streams in ascending order.</p>
+    pub fn get_ascending_order(&self) -> &::std::option::Option<bool> {
+        &self.ascending_order
     }
     /// Consumes the builder and constructs a [`ListStreamsInput`](crate::operation::list_streams::ListStreamsInput).
     pub fn build(

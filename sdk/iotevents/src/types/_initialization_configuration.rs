@@ -40,6 +40,10 @@ impl InitializationConfigurationBuilder {
         self.disabled_on_initialization = input;
         self
     }
+    /// <p>The value must be <code>TRUE</code> or <code>FALSE</code>. If <code>FALSE</code>, all alarm instances created based on the alarm model are activated. The default value is <code>TRUE</code>.</p>
+    pub fn get_disabled_on_initialization(&self) -> &::std::option::Option<bool> {
+        &self.disabled_on_initialization
+    }
     /// Consumes the builder and constructs a [`InitializationConfiguration`](crate::types::InitializationConfiguration).
     pub fn build(self) -> crate::types::InitializationConfiguration {
         crate::types::InitializationConfiguration {

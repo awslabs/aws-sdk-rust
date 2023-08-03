@@ -48,6 +48,10 @@ impl AvailabilityZoneBuilder {
         self.zone_name = input;
         self
     }
+    /// <p>The name of the Availability Zone.</p>
+    pub fn get_zone_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.zone_name
+    }
     /// <p>The ID of the subnet. You can specify one subnet per Availability Zone.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl AvailabilityZoneBuilder {
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_id = input;
         self
+    }
+    /// <p>The ID of the subnet. You can specify one subnet per Availability Zone.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
     }
     /// Consumes the builder and constructs a [`AvailabilityZone`](crate::types::AvailabilityZone).
     pub fn build(self) -> crate::types::AvailabilityZone {

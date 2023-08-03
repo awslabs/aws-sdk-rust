@@ -69,6 +69,10 @@ impl RecordLifecycleActionHeartbeatInputBuilder {
         self.lifecycle_hook_name = input;
         self
     }
+    /// <p>The name of the lifecycle hook.</p>
+    pub fn get_lifecycle_hook_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lifecycle_hook_name
+    }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn auto_scaling_group_name(
         mut self,
@@ -84,6 +88,10 @@ impl RecordLifecycleActionHeartbeatInputBuilder {
     ) -> Self {
         self.auto_scaling_group_name = input;
         self
+    }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_scaling_group_name
     }
     /// <p>A token that uniquely identifies a specific lifecycle action associated with an instance. Amazon EC2 Auto Scaling sends this token to the notification target that you specified when you created the lifecycle hook.</p>
     pub fn lifecycle_action_token(
@@ -101,6 +109,10 @@ impl RecordLifecycleActionHeartbeatInputBuilder {
         self.lifecycle_action_token = input;
         self
     }
+    /// <p>A token that uniquely identifies a specific lifecycle action associated with an instance. Amazon EC2 Auto Scaling sends this token to the notification target that you specified when you created the lifecycle hook.</p>
+    pub fn get_lifecycle_action_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lifecycle_action_token
+    }
     /// <p>The ID of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -110,6 +122,10 @@ impl RecordLifecycleActionHeartbeatInputBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
+    }
+    /// <p>The ID of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// Consumes the builder and constructs a [`RecordLifecycleActionHeartbeatInput`](crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeatInput).
     pub fn build(

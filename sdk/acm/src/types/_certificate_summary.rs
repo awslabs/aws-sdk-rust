@@ -202,6 +202,12 @@ impl CertificateSummaryBuilder {
         self.certificate_arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the certificate. This is of the form:</p>
+    /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_arn
+    }
     /// <p>Fully qualified domain name (FQDN), such as www.example.com or example.com, for the certificate.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
@@ -211,6 +217,10 @@ impl CertificateSummaryBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
+    }
+    /// <p>Fully qualified domain name (FQDN), such as www.example.com or example.com, for the certificate.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// Appends an item to `subject_alternative_name_summaries`.
     ///
@@ -236,6 +246,13 @@ impl CertificateSummaryBuilder {
         self.subject_alternative_name_summaries = input;
         self
     }
+    /// <p>One or more domain names (subject alternative names) included in the certificate. This list contains the domain names that are bound to the public key that is contained in the certificate. The subject alternative names include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect to the website. </p>
+    /// <p>When called by <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_ListCertificates.html">ListCertificates</a>, this parameter will only return the first 100 subject alternative names included in the certificate. To display the full list of subject alternative names, use <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_DescribeCertificate.html">DescribeCertificate</a>.</p>
+    pub fn get_subject_alternative_name_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subject_alternative_name_summaries
+    }
     /// <p>When called by <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_ListCertificates.html">ListCertificates</a>, indicates whether the full list of subject alternative names has been included in the response. If false, the response includes all of the subject alternative names included in the certificate. If true, the response only includes the first 100 subject alternative names included in the certificate. To display the full list of subject alternative names, use <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_DescribeCertificate.html">DescribeCertificate</a>.</p>
     pub fn has_additional_subject_alternative_names(mut self, input: bool) -> Self {
         self.has_additional_subject_alternative_names = ::std::option::Option::Some(input);
@@ -248,6 +265,10 @@ impl CertificateSummaryBuilder {
     ) -> Self {
         self.has_additional_subject_alternative_names = input;
         self
+    }
+    /// <p>When called by <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_ListCertificates.html">ListCertificates</a>, indicates whether the full list of subject alternative names has been included in the response. If false, the response includes all of the subject alternative names included in the certificate. If true, the response only includes the first 100 subject alternative names included in the certificate. To display the full list of subject alternative names, use <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_DescribeCertificate.html">DescribeCertificate</a>.</p>
+    pub fn get_has_additional_subject_alternative_names(&self) -> &::std::option::Option<bool> {
+        &self.has_additional_subject_alternative_names
     }
     /// <p>The status of the certificate.</p>
     /// <p>A certificate enters status PENDING_VALIDATION upon being requested, unless it fails for any of the reasons given in the troubleshooting topic <a href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting-failed.html">Certificate request fails</a>. ACM makes repeated attempts to validate a certificate for 72 hours and then times out. If a certificate shows status FAILED or VALIDATION_TIMED_OUT, delete the request, correct the issue with <a href="https://docs.aws.amazon.com/acm/latest/userguide/dns-validation.html">DNS validation</a> or <a href="https://docs.aws.amazon.com/acm/latest/userguide/email-validation.html">Email validation</a>, and try again. If validation succeeds, the certificate enters status ISSUED. </p>
@@ -264,6 +285,11 @@ impl CertificateSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the certificate.</p>
+    /// <p>A certificate enters status PENDING_VALIDATION upon being requested, unless it fails for any of the reasons given in the troubleshooting topic <a href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting-failed.html">Certificate request fails</a>. ACM makes repeated attempts to validate a certificate for 72 hours and then times out. If a certificate shows status FAILED or VALIDATION_TIMED_OUT, delete the request, correct the issue with <a href="https://docs.aws.amazon.com/acm/latest/userguide/dns-validation.html">DNS validation</a> or <a href="https://docs.aws.amazon.com/acm/latest/userguide/email-validation.html">Email validation</a>, and try again. If validation succeeds, the certificate enters status ISSUED. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CertificateStatus> {
+        &self.status
+    }
     /// <p>The source of the certificate. For certificates provided by ACM, this value is <code>AMAZON_ISSUED</code>. For certificates that you imported with <code>ImportCertificate</code>, this value is <code>IMPORTED</code>. ACM does not provide <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for imported certificates. For more information about the differences between certificates that you import and those that ACM provides, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a> in the <i>Certificate Manager User Guide</i>. </p>
     pub fn r#type(mut self, input: crate::types::CertificateType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -273,6 +299,10 @@ impl CertificateSummaryBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::CertificateType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The source of the certificate. For certificates provided by ACM, this value is <code>AMAZON_ISSUED</code>. For certificates that you imported with <code>ImportCertificate</code>, this value is <code>IMPORTED</code>. ACM does not provide <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for imported certificates. For more information about the differences between certificates that you import and those that ACM provides, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a> in the <i>Certificate Manager User Guide</i>. </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::CertificateType> {
+        &self.r#type
     }
     /// <p>The algorithm that was used to generate the public-private key pair.</p>
     pub fn key_algorithm(mut self, input: crate::types::KeyAlgorithm) -> Self {
@@ -286,6 +316,10 @@ impl CertificateSummaryBuilder {
     ) -> Self {
         self.key_algorithm = input;
         self
+    }
+    /// <p>The algorithm that was used to generate the public-private key pair.</p>
+    pub fn get_key_algorithm(&self) -> &::std::option::Option<crate::types::KeyAlgorithm> {
+        &self.key_algorithm
     }
     /// Appends an item to `key_usages`.
     ///
@@ -306,6 +340,12 @@ impl CertificateSummaryBuilder {
         self.key_usages = input;
         self
     }
+    /// <p>A list of Key Usage X.509 v3 extension objects. Each object is a string value that identifies the purpose of the public key contained in the certificate. Possible extension values include DIGITAL_SIGNATURE, KEY_ENCHIPHERMENT, NON_REPUDIATION, and more.</p>
+    pub fn get_key_usages(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyUsageName>> {
+        &self.key_usages
+    }
     /// Appends an item to `extended_key_usages`.
     ///
     /// To override the contents of this collection use [`set_extended_key_usages`](Self::set_extended_key_usages).
@@ -325,6 +365,12 @@ impl CertificateSummaryBuilder {
         self.extended_key_usages = input;
         self
     }
+    /// <p>Contains a list of Extended Key Usage X.509 v3 extension objects. Each object specifies a purpose for which the certificate public key can be used and consists of a name and an object identifier (OID). </p>
+    pub fn get_extended_key_usages(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExtendedKeyUsageName>> {
+        &self.extended_key_usages
+    }
     /// <p>Indicates whether the certificate is currently in use by any Amazon Web Services resources.</p>
     pub fn in_use(mut self, input: bool) -> Self {
         self.in_use = ::std::option::Option::Some(input);
@@ -335,6 +381,10 @@ impl CertificateSummaryBuilder {
         self.in_use = input;
         self
     }
+    /// <p>Indicates whether the certificate is currently in use by any Amazon Web Services resources.</p>
+    pub fn get_in_use(&self) -> &::std::option::Option<bool> {
+        &self.in_use
+    }
     /// <p>Indicates whether the certificate has been exported. This value exists only when the certificate type is <code>PRIVATE</code>.</p>
     pub fn exported(mut self, input: bool) -> Self {
         self.exported = ::std::option::Option::Some(input);
@@ -344,6 +394,10 @@ impl CertificateSummaryBuilder {
     pub fn set_exported(mut self, input: ::std::option::Option<bool>) -> Self {
         self.exported = input;
         self
+    }
+    /// <p>Indicates whether the certificate has been exported. This value exists only when the certificate type is <code>PRIVATE</code>.</p>
+    pub fn get_exported(&self) -> &::std::option::Option<bool> {
+        &self.exported
     }
     /// <p>Specifies whether the certificate is eligible for renewal. At this time, only exported private certificates can be renewed with the <code>RenewCertificate</code> command.</p>
     pub fn renewal_eligibility(mut self, input: crate::types::RenewalEligibility) -> Self {
@@ -358,6 +412,12 @@ impl CertificateSummaryBuilder {
         self.renewal_eligibility = input;
         self
     }
+    /// <p>Specifies whether the certificate is eligible for renewal. At this time, only exported private certificates can be renewed with the <code>RenewCertificate</code> command.</p>
+    pub fn get_renewal_eligibility(
+        &self,
+    ) -> &::std::option::Option<crate::types::RenewalEligibility> {
+        &self.renewal_eligibility
+    }
     /// <p>The time before which the certificate is not valid.</p>
     pub fn not_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.not_before = ::std::option::Option::Some(input);
@@ -370,6 +430,10 @@ impl CertificateSummaryBuilder {
     ) -> Self {
         self.not_before = input;
         self
+    }
+    /// <p>The time before which the certificate is not valid.</p>
+    pub fn get_not_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.not_before
     }
     /// <p>The time after which the certificate is not valid.</p>
     pub fn not_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -384,6 +448,10 @@ impl CertificateSummaryBuilder {
         self.not_after = input;
         self
     }
+    /// <p>The time after which the certificate is not valid.</p>
+    pub fn get_not_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.not_after
+    }
     /// <p>The time at which the certificate was requested.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -396,6 +464,10 @@ impl CertificateSummaryBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The time at which the certificate was requested.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>The time at which the certificate was issued. This value exists only when the certificate type is <code>AMAZON_ISSUED</code>. </p>
     pub fn issued_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -410,6 +482,10 @@ impl CertificateSummaryBuilder {
         self.issued_at = input;
         self
     }
+    /// <p>The time at which the certificate was issued. This value exists only when the certificate type is <code>AMAZON_ISSUED</code>. </p>
+    pub fn get_issued_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.issued_at
+    }
     /// <p>The date and time when the certificate was imported. This value exists only when the certificate type is <code>IMPORTED</code>. </p>
     pub fn imported_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.imported_at = ::std::option::Option::Some(input);
@@ -423,6 +499,10 @@ impl CertificateSummaryBuilder {
         self.imported_at = input;
         self
     }
+    /// <p>The date and time when the certificate was imported. This value exists only when the certificate type is <code>IMPORTED</code>. </p>
+    pub fn get_imported_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.imported_at
+    }
     /// <p>The time at which the certificate was revoked. This value exists only when the certificate status is <code>REVOKED</code>. </p>
     pub fn revoked_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.revoked_at = ::std::option::Option::Some(input);
@@ -435,6 +515,10 @@ impl CertificateSummaryBuilder {
     ) -> Self {
         self.revoked_at = input;
         self
+    }
+    /// <p>The time at which the certificate was revoked. This value exists only when the certificate status is <code>REVOKED</code>. </p>
+    pub fn get_revoked_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.revoked_at
     }
     /// Consumes the builder and constructs a [`CertificateSummary`](crate::types::CertificateSummary).
     pub fn build(self) -> crate::types::CertificateSummary {

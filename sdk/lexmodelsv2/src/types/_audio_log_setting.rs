@@ -48,6 +48,10 @@ impl AudioLogSettingBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Determines whether audio logging in enabled for the bot.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>The location of audio log files collected when conversation logging is enabled for a bot.</p>
     pub fn destination(mut self, input: crate::types::AudioLogDestination) -> Self {
         self.destination = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl AudioLogSettingBuilder {
     ) -> Self {
         self.destination = input;
         self
+    }
+    /// <p>The location of audio log files collected when conversation logging is enabled for a bot.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::AudioLogDestination> {
+        &self.destination
     }
     /// Consumes the builder and constructs a [`AudioLogSetting`](crate::types::AudioLogSetting).
     pub fn build(self) -> crate::types::AudioLogSetting {

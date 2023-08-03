@@ -53,6 +53,10 @@ impl DescribeDeviceEc2InstancesInputBuilder {
         self.managed_device_id = input;
         self
     }
+    /// <p>The ID of the managed device.</p>
+    pub fn get_managed_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.managed_device_id
+    }
     /// Appends an item to `instance_ids`.
     ///
     /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
@@ -71,6 +75,12 @@ impl DescribeDeviceEc2InstancesInputBuilder {
     ) -> Self {
         self.instance_ids = input;
         self
+    }
+    /// <p>A list of instance IDs associated with the managed device.</p>
+    pub fn get_instance_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.instance_ids
     }
     /// Consumes the builder and constructs a [`DescribeDeviceEc2InstancesInput`](crate::operation::describe_device_ec2_instances::DescribeDeviceEc2InstancesInput).
     pub fn build(

@@ -36,6 +36,12 @@ impl FailoverShardFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the FailoverShard as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::failover_shard::builders::FailoverShardInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl FailoverShardFluentBuilder {
         self.inner = self.inner.set_cluster_name(input);
         self
     }
+    /// <p>The cluster being failed over</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_name()
+    }
     /// <p>The name of the shard</p>
     pub fn shard_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.shard_name(input.into());
@@ -127,5 +137,9 @@ impl FailoverShardFluentBuilder {
     pub fn set_shard_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_shard_name(input);
         self
+    }
+    /// <p>The name of the shard</p>
+    pub fn get_shard_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_shard_name()
     }
 }

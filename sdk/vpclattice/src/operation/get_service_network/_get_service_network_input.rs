@@ -46,6 +46,10 @@ impl GetServiceNetworkInputBuilder {
         self.service_network_identifier = input;
         self
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
+    pub fn get_service_network_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_network_identifier
+    }
     /// Consumes the builder and constructs a [`GetServiceNetworkInput`](crate::operation::get_service_network::GetServiceNetworkInput).
     pub fn build(
         self,

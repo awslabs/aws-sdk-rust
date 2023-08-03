@@ -36,6 +36,10 @@ impl GetTablesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetTables as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_tables::builders::GetTablesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl GetTablesFluentBuilder {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
+    /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog_id()
+    }
     /// <p>The database in the catalog whose tables to list. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn database_name(
         mut self,
@@ -140,6 +148,10 @@ impl GetTablesFluentBuilder {
         self.inner = self.inner.set_database_name(input);
         self
     }
+    /// <p>The database in the catalog whose tables to list. For Hive compatibility, this name is entirely lowercase.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_database_name()
+    }
     /// <p>A regular expression pattern. If present, only those tables whose names match the pattern are returned.</p>
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.expression(input.into());
@@ -149,6 +161,10 @@ impl GetTablesFluentBuilder {
     pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_expression(input);
         self
+    }
+    /// <p>A regular expression pattern. If present, only those tables whose names match the pattern are returned.</p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_expression()
     }
     /// <p>A continuation token, included if this is a continuation call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -160,6 +176,10 @@ impl GetTablesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A continuation token, included if this is a continuation call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of tables to return in a single response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -169,6 +189,10 @@ impl GetTablesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of tables to return in a single response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The transaction ID at which to read the table contents.</p>
     pub fn transaction_id(
@@ -186,6 +210,10 @@ impl GetTablesFluentBuilder {
         self.inner = self.inner.set_transaction_id(input);
         self
     }
+    /// <p>The transaction ID at which to read the table contents.</p>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_transaction_id()
+    }
     /// <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
     pub fn query_as_of_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.query_as_of_time(input);
@@ -198,5 +226,9 @@ impl GetTablesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_query_as_of_time(input);
         self
+    }
+    /// <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
+    pub fn get_query_as_of_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_query_as_of_time()
     }
 }

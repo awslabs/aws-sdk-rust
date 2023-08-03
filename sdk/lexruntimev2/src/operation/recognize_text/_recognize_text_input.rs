@@ -108,6 +108,10 @@ impl RecognizeTextInputBuilder {
         self.bot_id = input;
         self
     }
+    /// <p>The identifier of the bot that processes the request.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
     /// <p>The alias identifier in use for the bot that processes the request.</p>
     pub fn bot_alias_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_alias_id = ::std::option::Option::Some(input.into());
@@ -117,6 +121,10 @@ impl RecognizeTextInputBuilder {
     pub fn set_bot_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_alias_id = input;
         self
+    }
+    /// <p>The alias identifier in use for the bot that processes the request.</p>
+    pub fn get_bot_alias_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_alias_id
     }
     /// <p>The locale where the session is in use.</p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -128,6 +136,10 @@ impl RecognizeTextInputBuilder {
         self.locale_id = input;
         self
     }
+    /// <p>The locale where the session is in use.</p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale_id
+    }
     /// <p>The identifier of the user session that is having the conversation.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
@@ -138,6 +150,10 @@ impl RecognizeTextInputBuilder {
         self.session_id = input;
         self
     }
+    /// <p>The identifier of the user session that is having the conversation.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
+    }
     /// <p>The text that the user entered. Amazon Lex V2 interprets this text.</p>
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
@@ -147,6 +163,10 @@ impl RecognizeTextInputBuilder {
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.text = input;
         self
+    }
+    /// <p>The text that the user entered. Amazon Lex V2 interprets this text.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
     }
     /// <p>The current state of the dialog between the user and the bot.</p>
     pub fn session_state(mut self, input: crate::types::SessionState) -> Self {
@@ -160,6 +180,10 @@ impl RecognizeTextInputBuilder {
     ) -> Self {
         self.session_state = input;
         self
+    }
+    /// <p>The current state of the dialog between the user and the bot.</p>
+    pub fn get_session_state(&self) -> &::std::option::Option<crate::types::SessionState> {
+        &self.session_state
     }
     /// Adds a key-value pair to `request_attributes`.
     ///
@@ -187,6 +211,15 @@ impl RecognizeTextInputBuilder {
     ) -> Self {
         self.request_attributes = input;
         self
+    }
+    /// <p>Request-specific information passed between the client application and Amazon Lex V2 </p>
+    /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
+    pub fn get_request_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.request_attributes
     }
     /// Consumes the builder and constructs a [`RecognizeTextInput`](crate::operation::recognize_text::RecognizeTextInput).
     pub fn build(

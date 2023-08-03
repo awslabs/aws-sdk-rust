@@ -59,6 +59,12 @@ impl DeleteMembersOutputBuilder {
         self.unprocessed_accounts = input;
         self
     }
+    /// <p>The accounts that could not be processed.</p>
+    pub fn get_unprocessed_accounts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>> {
+        &self.unprocessed_accounts
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -51,6 +51,10 @@ impl AddFlowMediaStreamsInputBuilder {
         self.flow_arn = input;
         self
     }
+    /// The Amazon Resource Name (ARN) of the flow.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_arn
+    }
     /// Appends an item to `media_streams`.
     ///
     /// To override the contents of this collection use [`set_media_streams`](Self::set_media_streams).
@@ -69,6 +73,12 @@ impl AddFlowMediaStreamsInputBuilder {
     ) -> Self {
         self.media_streams = input;
         self
+    }
+    /// The media streams that you want to add to the flow.
+    pub fn get_media_streams(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddMediaStreamRequest>> {
+        &self.media_streams
     }
     /// Consumes the builder and constructs a [`AddFlowMediaStreamsInput`](crate::operation::add_flow_media_streams::AddFlowMediaStreamsInput).
     pub fn build(

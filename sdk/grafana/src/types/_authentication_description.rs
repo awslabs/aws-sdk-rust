@@ -67,6 +67,12 @@ impl AuthenticationDescriptionBuilder {
         self.providers = input;
         self
     }
+    /// <p>Specifies whether this workspace uses IAM Identity Center, SAML, or both methods to authenticate users to use the Grafana console in the Amazon Managed Grafana workspace.</p>
+    pub fn get_providers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProviderTypes>> {
+        &self.providers
+    }
     /// <p>A structure containing information about how this workspace works with SAML, including what attributes within the assertion are to be mapped to user information in the workspace. </p>
     pub fn saml(mut self, input: crate::types::SamlAuthentication) -> Self {
         self.saml = ::std::option::Option::Some(input);
@@ -80,6 +86,10 @@ impl AuthenticationDescriptionBuilder {
         self.saml = input;
         self
     }
+    /// <p>A structure containing information about how this workspace works with SAML, including what attributes within the assertion are to be mapped to user information in the workspace. </p>
+    pub fn get_saml(&self) -> &::std::option::Option<crate::types::SamlAuthentication> {
+        &self.saml
+    }
     /// <p>A structure containing information about how this workspace works with IAM Identity Center. </p>
     pub fn aws_sso(mut self, input: crate::types::AwsSsoAuthentication) -> Self {
         self.aws_sso = ::std::option::Option::Some(input);
@@ -92,6 +102,10 @@ impl AuthenticationDescriptionBuilder {
     ) -> Self {
         self.aws_sso = input;
         self
+    }
+    /// <p>A structure containing information about how this workspace works with IAM Identity Center. </p>
+    pub fn get_aws_sso(&self) -> &::std::option::Option<crate::types::AwsSsoAuthentication> {
+        &self.aws_sso
     }
     /// Consumes the builder and constructs a [`AuthenticationDescription`](crate::types::AuthenticationDescription).
     pub fn build(self) -> crate::types::AuthenticationDescription {

@@ -39,6 +39,10 @@ impl StopBuildInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the build.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`StopBuildInput`](crate::operation::stop_build::StopBuildInput).
     pub fn build(
         self,

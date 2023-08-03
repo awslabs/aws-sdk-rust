@@ -64,6 +64,10 @@ impl EntitlementUsageBuilder {
         self.name = input;
         self
     }
+    /// <p>Entitlement usage name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Resource usage consumed.</p>
     pub fn consumed_value(
         mut self,
@@ -80,6 +84,10 @@ impl EntitlementUsageBuilder {
         self.consumed_value = input;
         self
     }
+    /// <p>Resource usage consumed.</p>
+    pub fn get_consumed_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.consumed_value
+    }
     /// <p>Maximum entitlement usage count.</p>
     pub fn max_count(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_count = ::std::option::Option::Some(input.into());
@@ -89,6 +97,10 @@ impl EntitlementUsageBuilder {
     pub fn set_max_count(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_count = input;
         self
+    }
+    /// <p>Maximum entitlement usage count.</p>
+    pub fn get_max_count(&self) -> &::std::option::Option<::std::string::String> {
+        &self.max_count
     }
     /// <p>Entitlement usage unit.</p>
     pub fn unit(mut self, input: crate::types::EntitlementDataUnit) -> Self {
@@ -102,6 +114,10 @@ impl EntitlementUsageBuilder {
     ) -> Self {
         self.unit = input;
         self
+    }
+    /// <p>Entitlement usage unit.</p>
+    pub fn get_unit(&self) -> &::std::option::Option<crate::types::EntitlementDataUnit> {
+        &self.unit
     }
     /// Consumes the builder and constructs a [`EntitlementUsage`](crate::types::EntitlementUsage).
     pub fn build(self) -> crate::types::EntitlementUsage {

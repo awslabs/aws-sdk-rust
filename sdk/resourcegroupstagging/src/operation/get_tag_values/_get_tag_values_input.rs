@@ -53,6 +53,10 @@ impl GetTagValuesInputBuilder {
         self.pagination_token = input;
         self
     }
+    /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
+    pub fn get_pagination_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pagination_token
+    }
     /// <p>Specifies the tag key for which you want to list all existing values that are currently used in the specified Amazon Web Services Region for the calling account.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl GetTagValuesInputBuilder {
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
+    }
+    /// <p>Specifies the tag key for which you want to list all existing values that are currently used in the specified Amazon Web Services Region for the calling account.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
     }
     /// Consumes the builder and constructs a [`GetTagValuesInput`](crate::operation::get_tag_values::GetTagValuesInput).
     pub fn build(

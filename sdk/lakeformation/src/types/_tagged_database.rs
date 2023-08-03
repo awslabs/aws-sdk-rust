@@ -51,6 +51,10 @@ impl TaggedDatabaseBuilder {
         self.database = input;
         self
     }
+    /// <p>A database that has LF-tags attached to it.</p>
+    pub fn get_database(&self) -> &::std::option::Option<crate::types::DatabaseResource> {
+        &self.database
+    }
     /// Appends an item to `lf_tags`.
     ///
     /// To override the contents of this collection use [`set_lf_tags`](Self::set_lf_tags).
@@ -69,6 +73,10 @@ impl TaggedDatabaseBuilder {
     ) -> Self {
         self.lf_tags = input;
         self
+    }
+    /// <p>A list of LF-tags attached to the database.</p>
+    pub fn get_lf_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>> {
+        &self.lf_tags
     }
     /// Consumes the builder and constructs a [`TaggedDatabase`](crate::types::TaggedDatabase).
     pub fn build(self) -> crate::types::TaggedDatabase {

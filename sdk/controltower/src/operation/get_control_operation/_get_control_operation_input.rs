@@ -47,6 +47,10 @@ impl GetControlOperationInputBuilder {
         self.operation_identifier = input;
         self
     }
+    /// <p>The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.</p>
+    pub fn get_operation_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation_identifier
+    }
     /// Consumes the builder and constructs a [`GetControlOperationInput`](crate::operation::get_control_operation::GetControlOperationInput).
     pub fn build(
         self,

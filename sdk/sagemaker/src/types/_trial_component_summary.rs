@@ -138,6 +138,10 @@ impl TrialComponentSummaryBuilder {
         self.trial_component_name = input;
         self
     }
+    /// <p>The name of the trial component.</p>
+    pub fn get_trial_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trial_component_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
     pub fn trial_component_arn(
         mut self,
@@ -154,6 +158,10 @@ impl TrialComponentSummaryBuilder {
         self.trial_component_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
+    pub fn get_trial_component_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trial_component_arn
+    }
     /// <p>The name of the component as displayed. If <code>DisplayName</code> isn't specified, <code>TrialComponentName</code> is displayed.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -163,6 +171,10 @@ impl TrialComponentSummaryBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
+    }
+    /// <p>The name of the component as displayed. If <code>DisplayName</code> isn't specified, <code>TrialComponentName</code> is displayed.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// <p>The Amazon Resource Name (ARN) and job type of the source of a trial component.</p>
     pub fn trial_component_source(mut self, input: crate::types::TrialComponentSource) -> Self {
@@ -176,6 +188,12 @@ impl TrialComponentSummaryBuilder {
     ) -> Self {
         self.trial_component_source = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) and job type of the source of a trial component.</p>
+    pub fn get_trial_component_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::TrialComponentSource> {
+        &self.trial_component_source
     }
     /// <p>The status of the component. States include:</p>
     /// <ul>
@@ -200,6 +218,15 @@ impl TrialComponentSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the component. States include:</p>
+    /// <ul>
+    /// <li> <p>InProgress</p> </li>
+    /// <li> <p>Completed</p> </li>
+    /// <li> <p>Failed</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TrialComponentStatus> {
+        &self.status
+    }
     /// <p>When the component started.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -212,6 +239,10 @@ impl TrialComponentSummaryBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>When the component started.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>When the component ended.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -226,6 +257,10 @@ impl TrialComponentSummaryBuilder {
         self.end_time = input;
         self
     }
+    /// <p>When the component ended.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>When the component was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -238,6 +273,10 @@ impl TrialComponentSummaryBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>When the component was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>Who created the trial component.</p>
     pub fn created_by(mut self, input: crate::types::UserContext) -> Self {
@@ -252,6 +291,10 @@ impl TrialComponentSummaryBuilder {
         self.created_by = input;
         self
     }
+    /// <p>Who created the trial component.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<crate::types::UserContext> {
+        &self.created_by
+    }
     /// <p>When the component was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -265,6 +308,10 @@ impl TrialComponentSummaryBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p>When the component was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     /// <p>Who last modified the component.</p>
     pub fn last_modified_by(mut self, input: crate::types::UserContext) -> Self {
         self.last_modified_by = ::std::option::Option::Some(input);
@@ -277,6 +324,10 @@ impl TrialComponentSummaryBuilder {
     ) -> Self {
         self.last_modified_by = input;
         self
+    }
+    /// <p>Who last modified the component.</p>
+    pub fn get_last_modified_by(&self) -> &::std::option::Option<crate::types::UserContext> {
+        &self.last_modified_by
     }
     /// Consumes the builder and constructs a [`TrialComponentSummary`](crate::types::TrialComponentSummary).
     pub fn build(self) -> crate::types::TrialComponentSummary {

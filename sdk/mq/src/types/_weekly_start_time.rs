@@ -59,6 +59,10 @@ impl WeeklyStartTimeBuilder {
         self.day_of_week = input;
         self
     }
+    /// <p>Required. The day of the week.</p>
+    pub fn get_day_of_week(&self) -> &::std::option::Option<crate::types::DayOfWeek> {
+        &self.day_of_week
+    }
     /// <p>Required. The time, in 24-hour format.</p>
     pub fn time_of_day(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time_of_day = ::std::option::Option::Some(input.into());
@@ -69,6 +73,10 @@ impl WeeklyStartTimeBuilder {
         self.time_of_day = input;
         self
     }
+    /// <p>Required. The time, in 24-hour format.</p>
+    pub fn get_time_of_day(&self) -> &::std::option::Option<::std::string::String> {
+        &self.time_of_day
+    }
     /// <p>The time zone, UTC by default, in either the Country/City format, or the UTC offset format.</p>
     pub fn time_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time_zone = ::std::option::Option::Some(input.into());
@@ -78,6 +86,10 @@ impl WeeklyStartTimeBuilder {
     pub fn set_time_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.time_zone = input;
         self
+    }
+    /// <p>The time zone, UTC by default, in either the Country/City format, or the UTC offset format.</p>
+    pub fn get_time_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.time_zone
     }
     /// Consumes the builder and constructs a [`WeeklyStartTime`](crate::types::WeeklyStartTime).
     pub fn build(self) -> crate::types::WeeklyStartTime {

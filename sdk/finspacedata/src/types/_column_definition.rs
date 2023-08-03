@@ -71,6 +71,13 @@ impl ColumnDefinitionBuilder {
         self.data_type = input;
         self
     }
+    /// <p>Data type of a column.</p>
+    /// <ul>
+    /// <li> <p> <code>STRING</code> – A String data type.</p> <p> <code>CHAR</code> – A char data type.</p> <p> <code>INTEGER</code> – An integer data type.</p> <p> <code>TINYINT</code> – A tinyint data type.</p> <p> <code>SMALLINT</code> – A smallint data type.</p> <p> <code>BIGINT</code> – A bigint data type.</p> <p> <code>FLOAT</code> – A float data type.</p> <p> <code>DOUBLE</code> – A double data type.</p> <p> <code>DATE</code> – A date data type.</p> <p> <code>DATETIME</code> – A datetime data type.</p> <p> <code>BOOLEAN</code> – A boolean data type.</p> <p> <code>BINARY</code> – A binary data type.</p> </li>
+    /// </ul>
+    pub fn get_data_type(&self) -> &::std::option::Option<crate::types::ColumnDataType> {
+        &self.data_type
+    }
     /// <p>The name of a column.</p>
     pub fn column_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.column_name = ::std::option::Option::Some(input.into());
@@ -80,6 +87,10 @@ impl ColumnDefinitionBuilder {
     pub fn set_column_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.column_name = input;
         self
+    }
+    /// <p>The name of a column.</p>
+    pub fn get_column_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.column_name
     }
     /// <p>Description for a column.</p>
     pub fn column_description(
@@ -96,6 +107,10 @@ impl ColumnDefinitionBuilder {
     ) -> Self {
         self.column_description = input;
         self
+    }
+    /// <p>Description for a column.</p>
+    pub fn get_column_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.column_description
     }
     /// Consumes the builder and constructs a [`ColumnDefinition`](crate::types::ColumnDefinition).
     pub fn build(self) -> crate::types::ColumnDefinition {

@@ -43,6 +43,10 @@ impl VideoSelectorColorSpaceSettingsBuilder {
         self.hdr10_settings = input;
         self
     }
+    /// Hdr10 Settings
+    pub fn get_hdr10_settings(&self) -> &::std::option::Option<crate::types::Hdr10Settings> {
+        &self.hdr10_settings
+    }
     /// Consumes the builder and constructs a [`VideoSelectorColorSpaceSettings`](crate::types::VideoSelectorColorSpaceSettings).
     pub fn build(self) -> crate::types::VideoSelectorColorSpaceSettings {
         crate::types::VideoSelectorColorSpaceSettings {

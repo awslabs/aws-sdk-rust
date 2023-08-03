@@ -101,6 +101,13 @@ impl AwsElbLoadBalancerAttributesBuilder {
         self.access_log = input;
         self
     }
+    /// <p>Information about the access log configuration for the load balancer.</p>
+    /// <p>If the access log is enabled, the load balancer captures detailed information about all requests. It delivers the information to a specified S3 bucket.</p>
+    pub fn get_access_log(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsElbLoadBalancerAccessLog> {
+        &self.access_log
+    }
     /// <p>Information about the connection draining configuration for the load balancer.</p>
     /// <p>If connection draining is enabled, the load balancer allows existing requests to complete before it shifts traffic away from a deregistered or unhealthy instance.</p>
     pub fn connection_draining(
@@ -118,6 +125,13 @@ impl AwsElbLoadBalancerAttributesBuilder {
     ) -> Self {
         self.connection_draining = input;
         self
+    }
+    /// <p>Information about the connection draining configuration for the load balancer.</p>
+    /// <p>If connection draining is enabled, the load balancer allows existing requests to complete before it shifts traffic away from a deregistered or unhealthy instance.</p>
+    pub fn get_connection_draining(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsElbLoadBalancerConnectionDraining> {
+        &self.connection_draining
     }
     /// <p>Connection settings for the load balancer.</p>
     /// <p>If an idle timeout is configured, the load balancer allows connections to remain idle for the specified duration. When a connection is idle, no data is sent over the connection.</p>
@@ -137,6 +151,13 @@ impl AwsElbLoadBalancerAttributesBuilder {
         self.connection_settings = input;
         self
     }
+    /// <p>Connection settings for the load balancer.</p>
+    /// <p>If an idle timeout is configured, the load balancer allows connections to remain idle for the specified duration. When a connection is idle, no data is sent over the connection.</p>
+    pub fn get_connection_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsElbLoadBalancerConnectionSettings> {
+        &self.connection_settings
+    }
     /// <p>Cross-zone load balancing settings for the load balancer.</p>
     /// <p>If cross-zone load balancing is enabled, the load balancer routes the request traffic evenly across all instances regardless of the Availability Zones.</p>
     pub fn cross_zone_load_balancing(
@@ -154,6 +175,13 @@ impl AwsElbLoadBalancerAttributesBuilder {
     ) -> Self {
         self.cross_zone_load_balancing = input;
         self
+    }
+    /// <p>Cross-zone load balancing settings for the load balancer.</p>
+    /// <p>If cross-zone load balancing is enabled, the load balancer routes the request traffic evenly across all instances regardless of the Availability Zones.</p>
+    pub fn get_cross_zone_load_balancing(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsElbLoadBalancerCrossZoneLoadBalancing> {
+        &self.cross_zone_load_balancing
     }
     /// Appends an item to `additional_attributes`.
     ///
@@ -178,6 +206,13 @@ impl AwsElbLoadBalancerAttributesBuilder {
     ) -> Self {
         self.additional_attributes = input;
         self
+    }
+    /// <p>Any additional attributes for a load balancer.</p>
+    pub fn get_additional_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsElbLoadBalancerAdditionalAttribute>>
+    {
+        &self.additional_attributes
     }
     /// Consumes the builder and constructs a [`AwsElbLoadBalancerAttributes`](crate::types::AwsElbLoadBalancerAttributes).
     pub fn build(self) -> crate::types::AwsElbLoadBalancerAttributes {

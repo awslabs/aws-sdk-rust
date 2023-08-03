@@ -37,6 +37,10 @@ impl GetPipelineChangeProgressFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetPipelineChangeProgress as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_pipeline_change_progress::builders::GetPipelineChangeProgressInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +136,9 @@ impl GetPipelineChangeProgressFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_pipeline_name(input);
         self
+    }
+    /// <p>The name of the pipeline.</p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pipeline_name()
     }
 }

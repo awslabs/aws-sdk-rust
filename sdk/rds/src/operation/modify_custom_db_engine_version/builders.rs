@@ -39,6 +39,10 @@ impl ModifyCustomDBEngineVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyCustomDBEngineVersion as a reference.
+    pub fn as_input(&self) -> &crate::operation::modify_custom_db_engine_version::builders::ModifyCustomDbEngineVersionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +133,10 @@ impl ModifyCustomDBEngineVersionFluentBuilder {
         self.inner = self.inner.set_engine(input);
         self
     }
+    /// <p>The DB engine. The only supported values are <code>custom-oracle-ee</code> and <code>custom-oracle-ee-cdb</code>.</p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_engine()
+    }
     /// <p>The custom engine version (CEV) that you want to modify. This option is required for RDS Custom for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Amazon Web Services Region.</p>
     pub fn engine_version(
         mut self,
@@ -145,6 +153,10 @@ impl ModifyCustomDBEngineVersionFluentBuilder {
         self.inner = self.inner.set_engine_version(input);
         self
     }
+    /// <p>The custom engine version (CEV) that you want to modify. This option is required for RDS Custom for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Amazon Web Services Region.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_engine_version()
+    }
     /// <p>An optional description of your CEV.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -154,6 +166,10 @@ impl ModifyCustomDBEngineVersionFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>An optional description of your CEV.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The availability status to be assigned to the CEV. Valid values are as follows:</p>
     /// <dl>
@@ -197,5 +213,24 @@ impl ModifyCustomDBEngineVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p>The availability status to be assigned to the CEV. Valid values are as follows:</p>
+    /// <dl>
+    /// <dt>
+    /// available
+    /// </dt>
+    /// <dd>
+    /// <p>You can use this CEV to create a new RDS Custom DB instance.</p>
+    /// </dd>
+    /// <dt>
+    /// inactive
+    /// </dt>
+    /// <dd>
+    /// <p>You can create a new RDS Custom instance by restoring a DB snapshot with this CEV. You can't patch or create new instances with this CEV.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>You can change any status to any status. A typical reason to change status is to prevent the accidental use of a CEV, or to make a deprecated CEV eligible for use again. For example, you might change the status of your CEV from <code>available</code> to <code>inactive</code>, and from <code>inactive</code> back to <code>available</code>. To change the availability status of the CEV, it must not currently be in use by an RDS Custom instance, snapshot, or automated backup.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CustomEngineVersionStatus> {
+        self.inner.get_status()
     }
 }

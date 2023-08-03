@@ -87,6 +87,10 @@ impl DescribeEndpointAccessInputBuilder {
         self.cluster_identifier = input;
         self
     }
+    /// <p>The cluster identifier associated with the described endpoint.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_identifier
+    }
     /// <p>The Amazon Web Services account ID of the owner of the cluster.</p>
     pub fn resource_owner(
         mut self,
@@ -102,6 +106,10 @@ impl DescribeEndpointAccessInputBuilder {
     ) -> Self {
         self.resource_owner = input;
         self
+    }
+    /// <p>The Amazon Web Services account ID of the owner of the cluster.</p>
+    pub fn get_resource_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_owner
     }
     /// <p>The name of the endpoint to be described.</p>
     pub fn endpoint_name(
@@ -119,6 +127,10 @@ impl DescribeEndpointAccessInputBuilder {
         self.endpoint_name = input;
         self
     }
+    /// <p>The name of the endpoint to be described.</p>
+    pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_name
+    }
     /// <p>The virtual private cloud (VPC) identifier with access to the cluster.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -128,6 +140,10 @@ impl DescribeEndpointAccessInputBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The virtual private cloud (VPC) identifier with access to the cluster.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a <code>Marker</code> is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_records(mut self, input: i32) -> Self {
@@ -139,6 +155,10 @@ impl DescribeEndpointAccessInputBuilder {
         self.max_records = input;
         self
     }
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a <code>Marker</code> is included in the response so that the remaining results can be retrieved.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        &self.max_records
+    }
     /// <p>An optional pagination token provided by a previous <code>DescribeEndpointAccess</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -148,6 +168,10 @@ impl DescribeEndpointAccessInputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>An optional pagination token provided by a previous <code>DescribeEndpointAccess</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeEndpointAccessInput`](crate::operation::describe_endpoint_access::DescribeEndpointAccessInput).
     pub fn build(

@@ -41,6 +41,10 @@ impl ListVolumeInitiatorsInputBuilder {
         self.volume_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes for the gateway.</p>
+    pub fn get_volume_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_arn
+    }
     /// Consumes the builder and constructs a [`ListVolumeInitiatorsInput`](crate::operation::list_volume_initiators::ListVolumeInitiatorsInput).
     pub fn build(
         self,

@@ -77,6 +77,13 @@ impl ListResourceRecordSetsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListResourceRecordSets as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_resource_record_sets::builders::ListResourceRecordSetsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -173,6 +180,10 @@ impl ListResourceRecordSetsFluentBuilder {
         self.inner = self.inner.set_hosted_zone_id(input);
         self
     }
+    /// <p>The ID of the hosted zone that contains the resource record sets that you want to list.</p>
+    pub fn get_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hosted_zone_id()
+    }
     /// <p>The first name in the lexicographic ordering of resource record sets that you want to list. If the specified record name doesn't exist, the results begin with the first resource record set that has a name greater than the value of <code>name</code>.</p>
     pub fn start_record_name(
         mut self,
@@ -188,6 +199,10 @@ impl ListResourceRecordSetsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_start_record_name(input);
         self
+    }
+    /// <p>The first name in the lexicographic ordering of resource record sets that you want to list. If the specified record name doesn't exist, the results begin with the first resource record set that has a name greater than the value of <code>name</code>.</p>
+    pub fn get_start_record_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_start_record_name()
     }
     /// <p>The type of resource record set to begin the record listing from.</p>
     /// <p>Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p>
@@ -228,6 +243,23 @@ impl ListResourceRecordSetsFluentBuilder {
         self.inner = self.inner.set_start_record_type(input);
         self
     }
+    /// <p>The type of resource record set to begin the record listing from.</p>
+    /// <p>Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p>
+    /// <p>Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p>
+    /// <p>Values for alias resource record sets: </p>
+    /// <ul>
+    /// <li> <p> <b>API Gateway custom regional API or edge-optimized API</b>: A</p> </li>
+    /// <li> <p> <b>CloudFront distribution</b>: A or AAAA</p> </li>
+    /// <li> <p> <b>Elastic Beanstalk environment that has a regionalized subdomain</b>: A</p> </li>
+    /// <li> <p> <b>Elastic Load Balancing load balancer</b>: A | AAAA</p> </li>
+    /// <li> <p> <b>S3 bucket</b>: A</p> </li>
+    /// <li> <p> <b>VPC interface VPC endpoint</b>: A</p> </li>
+    /// <li> <p> <b>Another resource record set in this hosted zone:</b> The type of the resource record set that the alias references.</p> </li>
+    /// </ul>
+    /// <p>Constraint: Specifying <code>type</code> without specifying <code>name</code> returns an <code>InvalidInput</code> error.</p>
+    pub fn get_start_record_type(&self) -> &::std::option::Option<crate::types::RrType> {
+        self.inner.get_start_record_type()
+    }
     /// <p> <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given DNS name and type, specify the value of <code>NextRecordIdentifier</code> from the previous response to get the next resource record set that has the current DNS name and type.</p>
     pub fn start_record_identifier(
         mut self,
@@ -244,6 +276,10 @@ impl ListResourceRecordSetsFluentBuilder {
         self.inner = self.inner.set_start_record_identifier(input);
         self
     }
+    /// <p> <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given DNS name and type, specify the value of <code>NextRecordIdentifier</code> from the previous response to get the next resource record set that has the current DNS name and type.</p>
+    pub fn get_start_record_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_start_record_identifier()
+    }
     /// <p>(Optional) The maximum number of resource records sets to include in the response body for this request. If the response includes more than <code>maxitems</code> resource record sets, the value of the <code>IsTruncated</code> element in the response is <code>true</code>, and the values of the <code>NextRecordName</code> and <code>NextRecordType</code> elements in the response identify the first resource record set in the next group of <code>maxitems</code> resource record sets.</p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.inner = self.inner.max_items(input);
@@ -253,5 +289,9 @@ impl ListResourceRecordSetsFluentBuilder {
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_items(input);
         self
+    }
+    /// <p>(Optional) The maximum number of resource records sets to include in the response body for this request. If the response includes more than <code>maxitems</code> resource record sets, the value of the <code>IsTruncated</code> element in the response is <code>true</code>, and the values of the <code>NextRecordName</code> and <code>NextRecordType</code> elements in the response identify the first resource record set in the next group of <code>maxitems</code> resource record sets.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_items()
     }
 }

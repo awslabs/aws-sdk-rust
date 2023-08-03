@@ -39,6 +39,10 @@ impl DeleteSolutionInputBuilder {
         self.solution_arn = input;
         self
     }
+    /// <p>The ARN of the solution to delete.</p>
+    pub fn get_solution_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.solution_arn
+    }
     /// Consumes the builder and constructs a [`DeleteSolutionInput`](crate::operation::delete_solution::DeleteSolutionInput).
     pub fn build(
         self,

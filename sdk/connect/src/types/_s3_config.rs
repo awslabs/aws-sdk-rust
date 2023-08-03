@@ -56,6 +56,10 @@ impl S3ConfigBuilder {
         self.bucket_name = input;
         self
     }
+    /// <p>The S3 bucket name.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
+    }
     /// <p>The S3 bucket prefix.</p>
     pub fn bucket_prefix(
         mut self,
@@ -72,6 +76,10 @@ impl S3ConfigBuilder {
         self.bucket_prefix = input;
         self
     }
+    /// <p>The S3 bucket prefix.</p>
+    pub fn get_bucket_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_prefix
+    }
     /// <p>The Amazon S3 encryption configuration.</p>
     pub fn encryption_config(mut self, input: crate::types::EncryptionConfig) -> Self {
         self.encryption_config = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl S3ConfigBuilder {
     ) -> Self {
         self.encryption_config = input;
         self
+    }
+    /// <p>The Amazon S3 encryption configuration.</p>
+    pub fn get_encryption_config(&self) -> &::std::option::Option<crate::types::EncryptionConfig> {
+        &self.encryption_config
     }
     /// Consumes the builder and constructs a [`S3Config`](crate::types::S3Config).
     pub fn build(self) -> crate::types::S3Config {

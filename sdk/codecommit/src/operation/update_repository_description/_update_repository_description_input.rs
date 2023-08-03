@@ -54,6 +54,10 @@ impl UpdateRepositoryDescriptionInputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository to set or change the comment or description for.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The new comment or description for the specified repository. Repository descriptions are limited to 1,000 characters.</p>
     pub fn repository_description(
         mut self,
@@ -69,6 +73,10 @@ impl UpdateRepositoryDescriptionInputBuilder {
     ) -> Self {
         self.repository_description = input;
         self
+    }
+    /// <p>The new comment or description for the specified repository. Repository descriptions are limited to 1,000 characters.</p>
+    pub fn get_repository_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_description
     }
     /// Consumes the builder and constructs a [`UpdateRepositoryDescriptionInput`](crate::operation::update_repository_description::UpdateRepositoryDescriptionInput).
     pub fn build(

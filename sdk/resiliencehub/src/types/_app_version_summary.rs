@@ -40,6 +40,10 @@ impl AppVersionSummaryBuilder {
         self.app_version = input;
         self
     }
+    /// <p>The version of the application.</p>
+    pub fn get_app_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_version
+    }
     /// Consumes the builder and constructs a [`AppVersionSummary`](crate::types::AppVersionSummary).
     pub fn build(self) -> crate::types::AppVersionSummary {
         crate::types::AppVersionSummary {

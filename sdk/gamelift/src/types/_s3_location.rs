@@ -72,6 +72,12 @@ impl S3LocationBuilder {
         self.bucket = input;
         self
     }
+    /// <p>An Amazon S3 bucket identifier. Thename of the S3 bucket.</p> <note>
+    /// <p>Amazon GameLift doesn't support uploading from Amazon S3 buckets with names that contain a dot (.).</p>
+    /// </note>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>The name of the zip file that contains the build files or script files. </p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
@@ -82,6 +88,10 @@ impl S3LocationBuilder {
         self.key = input;
         self
     }
+    /// <p>The name of the zip file that contains the build files or script files. </p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access the S3 bucket.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -91,6 +101,10 @@ impl S3LocationBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access the S3 bucket.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The version of the file, if object versioning is turned on for the bucket. Amazon GameLift uses this information when retrieving files from an S3 bucket that you own. Use this parameter to specify a specific version of the file. If not set, the latest version of the file is retrieved. </p>
     pub fn object_version(
@@ -107,6 +121,10 @@ impl S3LocationBuilder {
     ) -> Self {
         self.object_version = input;
         self
+    }
+    /// <p>The version of the file, if object versioning is turned on for the bucket. Amazon GameLift uses this information when retrieving files from an S3 bucket that you own. Use this parameter to specify a specific version of the file. If not set, the latest version of the file is retrieved. </p>
+    pub fn get_object_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_version
     }
     /// Consumes the builder and constructs a [`S3Location`](crate::types::S3Location).
     pub fn build(self) -> crate::types::S3Location {

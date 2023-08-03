@@ -50,6 +50,10 @@ impl ImportCertificateOutputBuilder {
         self.certificate = input;
         self
     }
+    /// <p>The certificate to be uploaded.</p>
+    pub fn get_certificate(&self) -> &::std::option::Option<crate::types::Certificate> {
+        &self.certificate
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

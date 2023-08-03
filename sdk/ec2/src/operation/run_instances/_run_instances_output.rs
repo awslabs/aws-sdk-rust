@@ -88,6 +88,12 @@ impl RunInstancesOutputBuilder {
         self.groups = input;
         self
     }
+    /// <p>Not supported.</p>
+    pub fn get_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>> {
+        &self.groups
+    }
     /// Appends an item to `instances`.
     ///
     /// To override the contents of this collection use [`set_instances`](Self::set_instances).
@@ -107,6 +113,10 @@ impl RunInstancesOutputBuilder {
         self.instances = input;
         self
     }
+    /// <p>The instances.</p>
+    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Instance>> {
+        &self.instances
+    }
     /// <p>The ID of the Amazon Web Services account that owns the reservation.</p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_id = ::std::option::Option::Some(input.into());
@@ -117,6 +127,10 @@ impl RunInstancesOutputBuilder {
         self.owner_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account that owns the reservation.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
+    }
     /// <p>The ID of the requester that launched the instances on your behalf (for example, Amazon Web Services Management Console or Auto Scaling).</p>
     pub fn requester_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.requester_id = ::std::option::Option::Some(input.into());
@@ -126,6 +140,10 @@ impl RunInstancesOutputBuilder {
     pub fn set_requester_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.requester_id = input;
         self
+    }
+    /// <p>The ID of the requester that launched the instances on your behalf (for example, Amazon Web Services Management Console or Auto Scaling).</p>
+    pub fn get_requester_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.requester_id
     }
     /// <p>The ID of the reservation.</p>
     pub fn reservation_id(
@@ -142,6 +160,10 @@ impl RunInstancesOutputBuilder {
     ) -> Self {
         self.reservation_id = input;
         self
+    }
+    /// <p>The ID of the reservation.</p>
+    pub fn get_reservation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reservation_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

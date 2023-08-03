@@ -36,6 +36,13 @@ impl CreateAssessmentReportFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateAssessmentReport as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_assessment_report::builders::CreateAssessmentReportInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl CreateAssessmentReportFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p> The name of the new assessment report. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p> The description of the assessment report. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -135,6 +146,10 @@ impl CreateAssessmentReportFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p> The description of the assessment report. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p> The identifier for the assessment. </p>
     pub fn assessment_id(
@@ -151,6 +166,10 @@ impl CreateAssessmentReportFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_assessment_id(input);
         self
+    }
+    /// <p> The identifier for the assessment. </p>
+    pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assessment_id()
     }
     /// <p>A SQL statement that represents an evidence finder query.</p>
     /// <p>Provide this parameter when you want to generate an assessment report from the results of an evidence finder search query. When you use this parameter, Audit Manager generates a one-time report using only the evidence from the query output. This report does not include any assessment evidence that was manually <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/generate-assessment-report.html#generate-assessment-report-include-evidence">added to a report using the console</a>, or <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_BatchAssociateAssessmentReportEvidence.html">associated with a report using the API</a>. </p>
@@ -173,5 +192,12 @@ impl CreateAssessmentReportFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_query_statement(input);
         self
+    }
+    /// <p>A SQL statement that represents an evidence finder query.</p>
+    /// <p>Provide this parameter when you want to generate an assessment report from the results of an evidence finder search query. When you use this parameter, Audit Manager generates a one-time report using only the evidence from the query output. This report does not include any assessment evidence that was manually <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/generate-assessment-report.html#generate-assessment-report-include-evidence">added to a report using the console</a>, or <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_BatchAssociateAssessmentReportEvidence.html">associated with a report using the API</a>. </p>
+    /// <p>To use this parameter, the <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_EvidenceFinderEnablement.html#auditmanager-Type-EvidenceFinderEnablement-enablementStatus">enablementStatus</a> of evidence finder must be <code>ENABLED</code>. </p>
+    /// <p> For examples and help resolving <code>queryStatement</code> validation exceptions, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/evidence-finder-issues.html#querystatement-exceptions">Troubleshooting evidence finder issues</a> in the <i>Audit Manager User Guide.</i> </p>
+    pub fn get_query_statement(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_query_statement()
     }
 }

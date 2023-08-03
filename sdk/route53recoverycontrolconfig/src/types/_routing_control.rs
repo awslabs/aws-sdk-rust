@@ -70,6 +70,10 @@ impl RoutingControlBuilder {
         self.control_panel_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the control panel that includes the routing control.</p>
+    pub fn get_control_panel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_panel_arn
+    }
     /// <p>The name of the routing control.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl RoutingControlBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the routing control.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
     pub fn routing_control_arn(
@@ -96,6 +104,10 @@ impl RoutingControlBuilder {
         self.routing_control_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
+    pub fn get_routing_control_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.routing_control_arn
+    }
     /// <p>The deployment status of a routing control. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -105,6 +117,10 @@ impl RoutingControlBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The deployment status of a routing control. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`RoutingControl`](crate::types::RoutingControl).
     pub fn build(self) -> crate::types::RoutingControl {

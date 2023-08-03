@@ -37,6 +37,12 @@ impl AddTagsToResourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AddTagsToResource as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::add_tags_to_resource::builders::AddTagsToResourceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl AddTagsToResourceFluentBuilder {
         self.inner = self.inner.set_resource_name(input);
         self
     }
+    /// <p>The Amazon RDS resource that the tags are added to. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"> Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_name()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -149,5 +159,9 @@ impl AddTagsToResourceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags to be assigned to the Amazon RDS resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

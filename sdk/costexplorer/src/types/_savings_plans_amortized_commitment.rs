@@ -62,6 +62,12 @@ impl SavingsPlansAmortizedCommitmentBuilder {
         self.amortized_recurring_commitment = input;
         self
     }
+    /// <p>The amortized amount of your Savings Plans commitment that was purchased with either a <code>Partial</code> or a <code>NoUpfront</code>.</p>
+    pub fn get_amortized_recurring_commitment(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.amortized_recurring_commitment
+    }
     /// <p>The amortized amount of your Savings Plans commitment that was purchased with an <code>Upfront</code> or <code>PartialUpfront</code> Savings Plans.</p>
     pub fn amortized_upfront_commitment(
         mut self,
@@ -78,6 +84,12 @@ impl SavingsPlansAmortizedCommitmentBuilder {
         self.amortized_upfront_commitment = input;
         self
     }
+    /// <p>The amortized amount of your Savings Plans commitment that was purchased with an <code>Upfront</code> or <code>PartialUpfront</code> Savings Plans.</p>
+    pub fn get_amortized_upfront_commitment(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.amortized_upfront_commitment
+    }
     /// <p>The total amortized amount of your Savings Plans commitment, regardless of your Savings Plans purchase method. </p>
     pub fn total_amortized_commitment(
         mut self,
@@ -93,6 +105,10 @@ impl SavingsPlansAmortizedCommitmentBuilder {
     ) -> Self {
         self.total_amortized_commitment = input;
         self
+    }
+    /// <p>The total amortized amount of your Savings Plans commitment, regardless of your Savings Plans purchase method. </p>
+    pub fn get_total_amortized_commitment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.total_amortized_commitment
     }
     /// Consumes the builder and constructs a [`SavingsPlansAmortizedCommitment`](crate::types::SavingsPlansAmortizedCommitment).
     pub fn build(self) -> crate::types::SavingsPlansAmortizedCommitment {

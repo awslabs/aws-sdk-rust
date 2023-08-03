@@ -36,6 +36,13 @@ impl CreateGroupMembershipFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateGroupMembership as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_group_membership::builders::CreateGroupMembershipInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl CreateGroupMembershipFluentBuilder {
         self.inner = self.inner.set_identity_store_id(input);
         self
     }
+    /// <p>The globally unique identifier for the identity store.</p>
+    pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_store_id()
+    }
     /// <p>The identifier for a group in the identity store.</p>
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_id(input.into());
@@ -142,6 +153,10 @@ impl CreateGroupMembershipFluentBuilder {
         self.inner = self.inner.set_group_id(input);
         self
     }
+    /// <p>The identifier for a group in the identity store.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_id()
+    }
     /// <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
     pub fn member_id(mut self, input: crate::types::MemberId) -> Self {
         self.inner = self.inner.member_id(input);
@@ -151,5 +166,9 @@ impl CreateGroupMembershipFluentBuilder {
     pub fn set_member_id(mut self, input: ::std::option::Option<crate::types::MemberId>) -> Self {
         self.inner = self.inner.set_member_id(input);
         self
+    }
+    /// <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
+    pub fn get_member_id(&self) -> &::std::option::Option<crate::types::MemberId> {
+        self.inner.get_member_id()
     }
 }

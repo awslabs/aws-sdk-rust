@@ -48,6 +48,10 @@ impl AwsEc2LaunchTemplateDataCpuOptionsDetailsBuilder {
         self.core_count = input;
         self
     }
+    /// <p> The number of CPU cores for the instance. </p>
+    pub fn get_core_count(&self) -> &::std::option::Option<i32> {
+        &self.core_count
+    }
     /// <p> The number of threads per CPU core. A value of <code>1</code> disables multithreading for the instance, The default value is <code>2</code>. </p>
     pub fn threads_per_core(mut self, input: i32) -> Self {
         self.threads_per_core = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl AwsEc2LaunchTemplateDataCpuOptionsDetailsBuilder {
     pub fn set_threads_per_core(mut self, input: ::std::option::Option<i32>) -> Self {
         self.threads_per_core = input;
         self
+    }
+    /// <p> The number of threads per CPU core. A value of <code>1</code> disables multithreading for the instance, The default value is <code>2</code>. </p>
+    pub fn get_threads_per_core(&self) -> &::std::option::Option<i32> {
+        &self.threads_per_core
     }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataCpuOptionsDetails`](crate::types::AwsEc2LaunchTemplateDataCpuOptionsDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataCpuOptionsDetails {

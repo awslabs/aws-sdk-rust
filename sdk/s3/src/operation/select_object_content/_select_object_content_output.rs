@@ -79,6 +79,17 @@ impl SelectObjectContentOutputBuilder {
         self.payload = input;
         self
     }
+    /// <p>The array of results.</p>
+    pub fn get_payload(
+        &self,
+    ) -> &::std::option::Option<
+        ::aws_smithy_http::event_stream::Receiver<
+            crate::types::SelectObjectContentEventStream,
+            crate::types::error::SelectObjectContentEventStreamError,
+        >,
+    > {
+        &self.payload
+    }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
         self._extended_request_id = Some(extended_request_id.into());
         self

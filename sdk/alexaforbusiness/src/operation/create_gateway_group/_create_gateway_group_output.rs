@@ -53,6 +53,10 @@ impl CreateGatewayGroupOutputBuilder {
         self.gateway_group_arn = input;
         self
     }
+    /// <p>The ARN of the created gateway group.</p>
+    pub fn get_gateway_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_group_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

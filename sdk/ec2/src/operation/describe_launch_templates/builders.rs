@@ -37,6 +37,13 @@ impl DescribeLaunchTemplatesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeLaunchTemplates as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_launch_templates::builders::DescribeLaunchTemplatesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +143,10 @@ impl DescribeLaunchTemplatesFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// Appends an item to `LaunchTemplateIds`.
     ///
     /// To override the contents of this collection use [`set_launch_template_ids`](Self::set_launch_template_ids).
@@ -156,6 +167,12 @@ impl DescribeLaunchTemplatesFluentBuilder {
         self.inner = self.inner.set_launch_template_ids(input);
         self
     }
+    /// <p>One or more launch template IDs.</p>
+    pub fn get_launch_template_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_launch_template_ids()
+    }
     /// Appends an item to `LaunchTemplateNames`.
     ///
     /// To override the contents of this collection use [`set_launch_template_names`](Self::set_launch_template_names).
@@ -175,6 +192,12 @@ impl DescribeLaunchTemplatesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_launch_template_names(input);
         self
+    }
+    /// <p>One or more launch template names.</p>
+    pub fn get_launch_template_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_launch_template_names()
     }
     /// Appends an item to `Filters`.
     ///
@@ -217,6 +240,22 @@ impl DescribeLaunchTemplatesFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>One or more filters.</p>
+    /// <ul>
+    /// <li> <p> <code>create-time</code> - The time the launch template was created.</p> </li>
+    /// <li> <p> <code>launch-template-name</code> - The name of the launch template.</p> </li>
+    /// <li> <p> <code>tag</code>:<key>
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
+    /// <code>Owner</code> and the value
+    /// <code>TeamA</code>, specify
+    /// <code>tag:Owner</code> for the filter name and
+    /// <code>TeamA</code> for the filter value.
+    /// </key></p> </li>
+    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// <p>The token to request the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -227,6 +266,10 @@ impl DescribeLaunchTemplatesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token to request the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. This value can be between 1 and 200.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -236,5 +279,9 @@ impl DescribeLaunchTemplatesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. This value can be between 1 and 200.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

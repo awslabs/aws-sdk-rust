@@ -40,6 +40,10 @@ impl AssociateDefaultViewInputBuilder {
         self.view_arn = input;
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view to set as the default for the Amazon Web Services Region and Amazon Web Services account in which you call this operation. The specified view must already exist in the called Region.</p>
+    pub fn get_view_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.view_arn
+    }
     /// Consumes the builder and constructs a [`AssociateDefaultViewInput`](crate::operation::associate_default_view::AssociateDefaultViewInput).
     pub fn build(
         self,

@@ -36,6 +36,12 @@ impl UpdateProjectFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateProject as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_project::builders::UpdateProjectInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl UpdateProjectFluentBuilder {
         self.inner = self.inner.set_sample(input);
         self
     }
+    /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
+    pub fn get_sample(&self) -> &::std::option::Option<crate::types::Sample> {
+        self.inner.get_sample()
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed for this request.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -128,6 +138,10 @@ impl UpdateProjectFluentBuilder {
         self.inner = self.inner.set_role_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed for this request.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
+    }
     /// <p>The name of the project to be updated.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -137,5 +151,9 @@ impl UpdateProjectFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the project to be updated.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
 }

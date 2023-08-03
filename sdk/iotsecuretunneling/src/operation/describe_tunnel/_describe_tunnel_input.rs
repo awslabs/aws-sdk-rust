@@ -39,6 +39,10 @@ impl DescribeTunnelInputBuilder {
         self.tunnel_id = input;
         self
     }
+    /// <p>The tunnel to describe.</p>
+    pub fn get_tunnel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tunnel_id
+    }
     /// Consumes the builder and constructs a [`DescribeTunnelInput`](crate::operation::describe_tunnel::DescribeTunnelInput).
     pub fn build(
         self,

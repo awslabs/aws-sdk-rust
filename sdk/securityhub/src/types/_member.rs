@@ -112,6 +112,10 @@ impl MemberBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID of the member account.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The email address of the member account.</p>
     pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email = ::std::option::Option::Some(input.into());
@@ -121,6 +125,10 @@ impl MemberBuilder {
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email = input;
         self
+    }
+    /// <p>The email address of the member account.</p>
+    pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email
     }
     /// <p>This is replaced by <code>AdministratorID</code>.</p>
     /// <p>The Amazon Web Services account ID of the Security Hub administrator account associated with this member account.</p>
@@ -135,6 +143,12 @@ impl MemberBuilder {
     pub fn set_master_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_id = input;
         self
+    }
+    /// <p>This is replaced by <code>AdministratorID</code>.</p>
+    /// <p>The Amazon Web Services account ID of the Security Hub administrator account associated with this member account.</p>
+    #[deprecated(note = "This field is deprecated, use AdministratorId instead.")]
+    pub fn get_master_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_id
     }
     /// <p>The Amazon Web Services account ID of the Security Hub administrator account associated with this member account.</p>
     pub fn administrator_id(
@@ -151,6 +165,10 @@ impl MemberBuilder {
     ) -> Self {
         self.administrator_id = input;
         self
+    }
+    /// <p>The Amazon Web Services account ID of the Security Hub administrator account associated with this member account.</p>
+    pub fn get_administrator_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.administrator_id
     }
     /// <p>The status of the relationship between the member account and its administrator account. </p>
     /// <p>The status can have one of the following values:</p>
@@ -188,6 +206,20 @@ impl MemberBuilder {
         self.member_status = input;
         self
     }
+    /// <p>The status of the relationship between the member account and its administrator account. </p>
+    /// <p>The status can have one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>Created</code> - Indicates that the administrator account added the member account, but has not yet invited the member account.</p> </li>
+    /// <li> <p> <code>Invited</code> - Indicates that the administrator account invited the member account. The member account has not yet responded to the invitation.</p> </li>
+    /// <li> <p> <code>Enabled</code> - Indicates that the member account is currently active. For manually invited member accounts, indicates that the member account accepted the invitation.</p> </li>
+    /// <li> <p> <code>Removed</code> - Indicates that the administrator account disassociated the member account.</p> </li>
+    /// <li> <p> <code>Resigned</code> - Indicates that the member account disassociated themselves from the administrator account.</p> </li>
+    /// <li> <p> <code>Deleted</code> - Indicates that the administrator account deleted the member account.</p> </li>
+    /// <li> <p> <code>AccountSuspended</code> - Indicates that an organization account was suspended from Amazon Web Services at the same time that the administrator account tried to enable the organization account as a member account.</p> </li>
+    /// </ul>
+    pub fn get_member_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_status
+    }
     /// <p>A timestamp for the date and time when the invitation was sent to the member account.</p>
     pub fn invited_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.invited_at = ::std::option::Option::Some(input);
@@ -201,6 +233,10 @@ impl MemberBuilder {
         self.invited_at = input;
         self
     }
+    /// <p>A timestamp for the date and time when the invitation was sent to the member account.</p>
+    pub fn get_invited_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.invited_at
+    }
     /// <p>The timestamp for the date and time when the member account was updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -213,6 +249,10 @@ impl MemberBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// <p>The timestamp for the date and time when the member account was updated.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     /// Consumes the builder and constructs a [`Member`](crate::types::Member).
     pub fn build(self) -> crate::types::Member {

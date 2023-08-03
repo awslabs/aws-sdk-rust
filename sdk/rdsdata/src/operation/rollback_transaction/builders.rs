@@ -36,6 +36,12 @@ impl RollbackTransactionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RollbackTransaction as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::rollback_transaction::builders::RollbackTransactionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl RollbackTransactionFluentBuilder {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
+    }
     /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.secret_arn(input.into());
@@ -135,6 +145,10 @@ impl RollbackTransactionFluentBuilder {
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_secret_arn(input);
         self
+    }
+    /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
+    pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_secret_arn()
     }
     /// <p>The identifier of the transaction to roll back.</p>
     pub fn transaction_id(
@@ -151,5 +165,9 @@ impl RollbackTransactionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_transaction_id(input);
         self
+    }
+    /// <p>The identifier of the transaction to roll back.</p>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_transaction_id()
     }
 }

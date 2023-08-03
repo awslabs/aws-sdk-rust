@@ -71,6 +71,12 @@ impl ListProblemsOutputBuilder {
         self.problem_list = input;
         self
     }
+    /// <p>The list of problems. </p>
+    pub fn get_problem_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Problem>> {
+        &self.problem_list
+    }
     /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -80,6 +86,10 @@ impl ListProblemsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p> The name of the resource group. </p>
     pub fn resource_group_name(
@@ -96,6 +106,10 @@ impl ListProblemsOutputBuilder {
     ) -> Self {
         self.resource_group_name = input;
         self
+    }
+    /// <p> The name of the resource group. </p>
+    pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_group_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

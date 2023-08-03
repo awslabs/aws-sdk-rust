@@ -179,6 +179,10 @@ impl FaceDetailBuilder {
         self.bounding_box = input;
         self
     }
+    /// <p>Bounding box of the face. Default attribute.</p>
+    pub fn get_bounding_box(&self) -> &::std::option::Option<crate::types::BoundingBox> {
+        &self.bounding_box
+    }
     /// <p>The estimated age range, in years, for the face. Low represents the lowest estimated age and High represents the highest estimated age.</p>
     pub fn age_range(mut self, input: crate::types::AgeRange) -> Self {
         self.age_range = ::std::option::Option::Some(input);
@@ -189,6 +193,10 @@ impl FaceDetailBuilder {
         self.age_range = input;
         self
     }
+    /// <p>The estimated age range, in years, for the face. Low represents the lowest estimated age and High represents the highest estimated age.</p>
+    pub fn get_age_range(&self) -> &::std::option::Option<crate::types::AgeRange> {
+        &self.age_range
+    }
     /// <p>Indicates whether or not the face is smiling, and the confidence level in the determination.</p>
     pub fn smile(mut self, input: crate::types::Smile) -> Self {
         self.smile = ::std::option::Option::Some(input);
@@ -198,6 +206,10 @@ impl FaceDetailBuilder {
     pub fn set_smile(mut self, input: ::std::option::Option<crate::types::Smile>) -> Self {
         self.smile = input;
         self
+    }
+    /// <p>Indicates whether or not the face is smiling, and the confidence level in the determination.</p>
+    pub fn get_smile(&self) -> &::std::option::Option<crate::types::Smile> {
+        &self.smile
     }
     /// <p>Indicates whether or not the face is wearing eye glasses, and the confidence level in the determination.</p>
     pub fn eyeglasses(mut self, input: crate::types::Eyeglasses) -> Self {
@@ -212,6 +224,10 @@ impl FaceDetailBuilder {
         self.eyeglasses = input;
         self
     }
+    /// <p>Indicates whether or not the face is wearing eye glasses, and the confidence level in the determination.</p>
+    pub fn get_eyeglasses(&self) -> &::std::option::Option<crate::types::Eyeglasses> {
+        &self.eyeglasses
+    }
     /// <p>Indicates whether or not the face is wearing sunglasses, and the confidence level in the determination.</p>
     pub fn sunglasses(mut self, input: crate::types::Sunglasses) -> Self {
         self.sunglasses = ::std::option::Option::Some(input);
@@ -225,6 +241,10 @@ impl FaceDetailBuilder {
         self.sunglasses = input;
         self
     }
+    /// <p>Indicates whether or not the face is wearing sunglasses, and the confidence level in the determination.</p>
+    pub fn get_sunglasses(&self) -> &::std::option::Option<crate::types::Sunglasses> {
+        &self.sunglasses
+    }
     /// <p>The predicted gender of a detected face. </p>
     pub fn gender(mut self, input: crate::types::Gender) -> Self {
         self.gender = ::std::option::Option::Some(input);
@@ -234,6 +254,10 @@ impl FaceDetailBuilder {
     pub fn set_gender(mut self, input: ::std::option::Option<crate::types::Gender>) -> Self {
         self.gender = input;
         self
+    }
+    /// <p>The predicted gender of a detected face. </p>
+    pub fn get_gender(&self) -> &::std::option::Option<crate::types::Gender> {
+        &self.gender
     }
     /// <p>Indicates whether or not the face has a beard, and the confidence level in the determination.</p>
     pub fn beard(mut self, input: crate::types::Beard) -> Self {
@@ -245,6 +269,10 @@ impl FaceDetailBuilder {
         self.beard = input;
         self
     }
+    /// <p>Indicates whether or not the face has a beard, and the confidence level in the determination.</p>
+    pub fn get_beard(&self) -> &::std::option::Option<crate::types::Beard> {
+        &self.beard
+    }
     /// <p>Indicates whether or not the face has a mustache, and the confidence level in the determination.</p>
     pub fn mustache(mut self, input: crate::types::Mustache) -> Self {
         self.mustache = ::std::option::Option::Some(input);
@@ -254,6 +282,10 @@ impl FaceDetailBuilder {
     pub fn set_mustache(mut self, input: ::std::option::Option<crate::types::Mustache>) -> Self {
         self.mustache = input;
         self
+    }
+    /// <p>Indicates whether or not the face has a mustache, and the confidence level in the determination.</p>
+    pub fn get_mustache(&self) -> &::std::option::Option<crate::types::Mustache> {
+        &self.mustache
     }
     /// <p>Indicates whether or not the eyes on the face are open, and the confidence level in the determination.</p>
     pub fn eyes_open(mut self, input: crate::types::EyeOpen) -> Self {
@@ -265,6 +297,10 @@ impl FaceDetailBuilder {
         self.eyes_open = input;
         self
     }
+    /// <p>Indicates whether or not the eyes on the face are open, and the confidence level in the determination.</p>
+    pub fn get_eyes_open(&self) -> &::std::option::Option<crate::types::EyeOpen> {
+        &self.eyes_open
+    }
     /// <p>Indicates whether or not the mouth on the face is open, and the confidence level in the determination.</p>
     pub fn mouth_open(mut self, input: crate::types::MouthOpen) -> Self {
         self.mouth_open = ::std::option::Option::Some(input);
@@ -274,6 +310,10 @@ impl FaceDetailBuilder {
     pub fn set_mouth_open(mut self, input: ::std::option::Option<crate::types::MouthOpen>) -> Self {
         self.mouth_open = input;
         self
+    }
+    /// <p>Indicates whether or not the mouth on the face is open, and the confidence level in the determination.</p>
+    pub fn get_mouth_open(&self) -> &::std::option::Option<crate::types::MouthOpen> {
+        &self.mouth_open
     }
     /// Appends an item to `emotions`.
     ///
@@ -294,6 +334,10 @@ impl FaceDetailBuilder {
         self.emotions = input;
         self
     }
+    /// <p>The emotions that appear to be expressed on the face, and the confidence level in the determination. The API is only making a determination of the physical appearance of a person's face. It is not a determination of the person’s internal emotional state and should not be used in such a way. For example, a person pretending to have a sad face might not be sad emotionally.</p>
+    pub fn get_emotions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Emotion>> {
+        &self.emotions
+    }
     /// Appends an item to `landmarks`.
     ///
     /// To override the contents of this collection use [`set_landmarks`](Self::set_landmarks).
@@ -313,6 +357,10 @@ impl FaceDetailBuilder {
         self.landmarks = input;
         self
     }
+    /// <p>Indicates the location of landmarks on the face. Default attribute.</p>
+    pub fn get_landmarks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Landmark>> {
+        &self.landmarks
+    }
     /// <p>Indicates the pose of the face as determined by its pitch, roll, and yaw. Default attribute.</p>
     pub fn pose(mut self, input: crate::types::Pose) -> Self {
         self.pose = ::std::option::Option::Some(input);
@@ -322,6 +370,10 @@ impl FaceDetailBuilder {
     pub fn set_pose(mut self, input: ::std::option::Option<crate::types::Pose>) -> Self {
         self.pose = input;
         self
+    }
+    /// <p>Indicates the pose of the face as determined by its pitch, roll, and yaw. Default attribute.</p>
+    pub fn get_pose(&self) -> &::std::option::Option<crate::types::Pose> {
+        &self.pose
     }
     /// <p>Identifies image brightness and sharpness. Default attribute.</p>
     pub fn quality(mut self, input: crate::types::ImageQuality) -> Self {
@@ -333,6 +385,10 @@ impl FaceDetailBuilder {
         self.quality = input;
         self
     }
+    /// <p>Identifies image brightness and sharpness. Default attribute.</p>
+    pub fn get_quality(&self) -> &::std::option::Option<crate::types::ImageQuality> {
+        &self.quality
+    }
     /// <p>Confidence level that the bounding box contains a face (and not a different object such as a tree). Default attribute.</p>
     pub fn confidence(mut self, input: f32) -> Self {
         self.confidence = ::std::option::Option::Some(input);
@@ -342,6 +398,10 @@ impl FaceDetailBuilder {
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.confidence = input;
         self
+    }
+    /// <p>Confidence level that the bounding box contains a face (and not a different object such as a tree). Default attribute.</p>
+    pub fn get_confidence(&self) -> &::std::option::Option<f32> {
+        &self.confidence
     }
     /// <p> <code>FaceOccluded</code> should return "true" with a high confidence score if a detected face’s eyes, nose, and mouth are partially captured or if they are covered by masks, dark sunglasses, cell phones, hands, or other objects. <code>FaceOccluded</code> should return "false" with a high confidence score if common occurrences that do not impact face verification are detected, such as eye glasses, lightly tinted sunglasses, strands of hair, and others. </p>
     pub fn face_occluded(mut self, input: crate::types::FaceOccluded) -> Self {
@@ -356,6 +416,10 @@ impl FaceDetailBuilder {
         self.face_occluded = input;
         self
     }
+    /// <p> <code>FaceOccluded</code> should return "true" with a high confidence score if a detected face’s eyes, nose, and mouth are partially captured or if they are covered by masks, dark sunglasses, cell phones, hands, or other objects. <code>FaceOccluded</code> should return "false" with a high confidence score if common occurrences that do not impact face verification are detected, such as eye glasses, lightly tinted sunglasses, strands of hair, and others. </p>
+    pub fn get_face_occluded(&self) -> &::std::option::Option<crate::types::FaceOccluded> {
+        &self.face_occluded
+    }
     /// <p>Indicates the direction the eyes are gazing in, as defined by pitch and yaw.</p>
     pub fn eye_direction(mut self, input: crate::types::EyeDirection) -> Self {
         self.eye_direction = ::std::option::Option::Some(input);
@@ -368,6 +432,10 @@ impl FaceDetailBuilder {
     ) -> Self {
         self.eye_direction = input;
         self
+    }
+    /// <p>Indicates the direction the eyes are gazing in, as defined by pitch and yaw.</p>
+    pub fn get_eye_direction(&self) -> &::std::option::Option<crate::types::EyeDirection> {
+        &self.eye_direction
     }
     /// Consumes the builder and constructs a [`FaceDetail`](crate::types::FaceDetail).
     pub fn build(self) -> crate::types::FaceDetail {

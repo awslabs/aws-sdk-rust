@@ -48,6 +48,10 @@ impl UiTemplateInfoBuilder {
         self.url = input;
         self
     }
+    /// <p>The URL for the user interface template.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
+    }
     /// <p>The SHA-256 digest of the contents of the template.</p>
     pub fn content_sha256(
         mut self,
@@ -63,6 +67,10 @@ impl UiTemplateInfoBuilder {
     ) -> Self {
         self.content_sha256 = input;
         self
+    }
+    /// <p>The SHA-256 digest of the contents of the template.</p>
+    pub fn get_content_sha256(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_sha256
     }
     /// Consumes the builder and constructs a [`UiTemplateInfo`](crate::types::UiTemplateInfo).
     pub fn build(self) -> crate::types::UiTemplateInfo {

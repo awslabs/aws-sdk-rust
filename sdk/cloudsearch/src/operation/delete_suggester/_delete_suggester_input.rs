@@ -48,6 +48,10 @@ impl DeleteSuggesterInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>Specifies the name of the suggester you want to delete.</p>
     pub fn suggester_name(
         mut self,
@@ -63,6 +67,10 @@ impl DeleteSuggesterInputBuilder {
     ) -> Self {
         self.suggester_name = input;
         self
+    }
+    /// <p>Specifies the name of the suggester you want to delete.</p>
+    pub fn get_suggester_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.suggester_name
     }
     /// Consumes the builder and constructs a [`DeleteSuggesterInput`](crate::operation::delete_suggester::DeleteSuggesterInput).
     pub fn build(

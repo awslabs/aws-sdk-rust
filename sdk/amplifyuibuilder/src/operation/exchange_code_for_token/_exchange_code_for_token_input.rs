@@ -51,6 +51,10 @@ impl ExchangeCodeForTokenInputBuilder {
         self.provider = input;
         self
     }
+    /// <p>The third-party provider for the token. The only valid value is <code>figma</code>.</p>
+    pub fn get_provider(&self) -> &::std::option::Option<crate::types::TokenProviders> {
+        &self.provider
+    }
     /// <p>Describes the configuration of the request.</p>
     pub fn request(mut self, input: crate::types::ExchangeCodeForTokenRequestBody) -> Self {
         self.request = ::std::option::Option::Some(input);
@@ -63,6 +67,12 @@ impl ExchangeCodeForTokenInputBuilder {
     ) -> Self {
         self.request = input;
         self
+    }
+    /// <p>Describes the configuration of the request.</p>
+    pub fn get_request(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExchangeCodeForTokenRequestBody> {
+        &self.request
     }
     /// Consumes the builder and constructs a [`ExchangeCodeForTokenInput`](crate::operation::exchange_code_for_token::ExchangeCodeForTokenInput).
     pub fn build(

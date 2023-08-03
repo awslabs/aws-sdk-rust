@@ -36,6 +36,10 @@ impl DescribeAccountPreferencesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeAccountPreferences as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_account_preferences::builders::DescribeAccountPreferencesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl DescribeAccountPreferencesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>(Optional) You can use <code>NextToken</code> in a subsequent request to fetch the next page of Amazon Web Services account preferences if the response payload was paginated.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>(Optional) When retrieving account preferences, you can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response. The default value is 100. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -135,5 +143,9 @@ impl DescribeAccountPreferencesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>(Optional) When retrieving account preferences, you can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response. The default value is 100. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

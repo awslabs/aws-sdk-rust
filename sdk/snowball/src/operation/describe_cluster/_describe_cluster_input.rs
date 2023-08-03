@@ -39,6 +39,10 @@ impl DescribeClusterInputBuilder {
         self.cluster_id = input;
         self
     }
+    /// <p>The automatically generated ID for a cluster.</p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_id
+    }
     /// Consumes the builder and constructs a [`DescribeClusterInput`](crate::operation::describe_cluster::DescribeClusterInput).
     pub fn build(
         self,

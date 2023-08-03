@@ -56,6 +56,10 @@ impl ObjectTypeFieldBuilder {
         self.source = input;
         self
     }
+    /// <p>A field of a ProfileObject. For example: _source.FirstName, where “_source” is a ProfileObjectType of a Zendesk user and “FirstName” is a field in that ObjectType.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
+    }
     /// <p>The location of the data in the standard ProfileObject model. For example: _profile.Address.PostalCode.</p>
     pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl ObjectTypeFieldBuilder {
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target = input;
         self
+    }
+    /// <p>The location of the data in the standard ProfileObject model. For example: _profile.Address.PostalCode.</p>
+    pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target
     }
     /// <p>The content type of the field. Used for determining equality when searching.</p>
     pub fn content_type(mut self, input: crate::types::FieldContentType) -> Self {
@@ -78,6 +86,10 @@ impl ObjectTypeFieldBuilder {
     ) -> Self {
         self.content_type = input;
         self
+    }
+    /// <p>The content type of the field. Used for determining equality when searching.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<crate::types::FieldContentType> {
+        &self.content_type
     }
     /// Consumes the builder and constructs a [`ObjectTypeField`](crate::types::ObjectTypeField).
     pub fn build(self) -> crate::types::ObjectTypeField {

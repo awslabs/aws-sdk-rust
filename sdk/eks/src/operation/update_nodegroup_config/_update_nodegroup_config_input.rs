@@ -89,6 +89,10 @@ impl UpdateNodegroupConfigInputBuilder {
         self.cluster_name = input;
         self
     }
+    /// <p>The name of the Amazon EKS cluster that the managed node group resides in.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_name
+    }
     /// <p>The name of the managed node group to update.</p>
     pub fn nodegroup_name(
         mut self,
@@ -105,6 +109,10 @@ impl UpdateNodegroupConfigInputBuilder {
         self.nodegroup_name = input;
         self
     }
+    /// <p>The name of the managed node group to update.</p>
+    pub fn get_nodegroup_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nodegroup_name
+    }
     /// <p>The Kubernetes labels to be applied to the nodes in the node group after the update.</p>
     pub fn labels(mut self, input: crate::types::UpdateLabelsPayload) -> Self {
         self.labels = ::std::option::Option::Some(input);
@@ -117,6 +125,10 @@ impl UpdateNodegroupConfigInputBuilder {
     ) -> Self {
         self.labels = input;
         self
+    }
+    /// <p>The Kubernetes labels to be applied to the nodes in the node group after the update.</p>
+    pub fn get_labels(&self) -> &::std::option::Option<crate::types::UpdateLabelsPayload> {
+        &self.labels
     }
     /// <p>The Kubernetes taints to be applied to the nodes in the node group after the update. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node taints on managed node groups</a>.</p>
     pub fn taints(mut self, input: crate::types::UpdateTaintsPayload) -> Self {
@@ -131,6 +143,10 @@ impl UpdateNodegroupConfigInputBuilder {
         self.taints = input;
         self
     }
+    /// <p>The Kubernetes taints to be applied to the nodes in the node group after the update. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node taints on managed node groups</a>.</p>
+    pub fn get_taints(&self) -> &::std::option::Option<crate::types::UpdateTaintsPayload> {
+        &self.taints
+    }
     /// <p>The scaling configuration details for the Auto Scaling group after the update.</p>
     pub fn scaling_config(mut self, input: crate::types::NodegroupScalingConfig) -> Self {
         self.scaling_config = ::std::option::Option::Some(input);
@@ -144,6 +160,12 @@ impl UpdateNodegroupConfigInputBuilder {
         self.scaling_config = input;
         self
     }
+    /// <p>The scaling configuration details for the Auto Scaling group after the update.</p>
+    pub fn get_scaling_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::NodegroupScalingConfig> {
+        &self.scaling_config
+    }
     /// <p>The node group update configuration.</p>
     pub fn update_config(mut self, input: crate::types::NodegroupUpdateConfig) -> Self {
         self.update_config = ::std::option::Option::Some(input);
@@ -156,6 +178,10 @@ impl UpdateNodegroupConfigInputBuilder {
     ) -> Self {
         self.update_config = input;
         self
+    }
+    /// <p>The node group update configuration.</p>
+    pub fn get_update_config(&self) -> &::std::option::Option<crate::types::NodegroupUpdateConfig> {
+        &self.update_config
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(
@@ -172,6 +198,10 @@ impl UpdateNodegroupConfigInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Consumes the builder and constructs a [`UpdateNodegroupConfigInput`](crate::operation::update_nodegroup_config::UpdateNodegroupConfigInput).
     pub fn build(

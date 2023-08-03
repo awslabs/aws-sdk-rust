@@ -39,6 +39,10 @@ impl AssociateServiceRoleToAccountInputBuilder {
         self.role_arn = input;
         self
     }
+    /// The ARN of the service role you wish to associate with your account.
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// Consumes the builder and constructs a [`AssociateServiceRoleToAccountInput`](crate::operation::associate_service_role_to_account::AssociateServiceRoleToAccountInput).
     pub fn build(
         self,

@@ -58,6 +58,10 @@ impl MultiMeasureMappingsBuilder {
         self.target_multi_measure_name = input;
         self
     }
+    /// <p>The name of the target multi-measure name in the derived table. This input is required when measureNameColumn is not provided. If MeasureNameColumn is provided, then value from that column will be used as multi-measure name.</p>
+    pub fn get_target_multi_measure_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_multi_measure_name
+    }
     /// Appends an item to `multi_measure_attribute_mappings`.
     ///
     /// To override the contents of this collection use [`set_multi_measure_attribute_mappings`](Self::set_multi_measure_attribute_mappings).
@@ -79,6 +83,12 @@ impl MultiMeasureMappingsBuilder {
     ) -> Self {
         self.multi_measure_attribute_mappings = input;
         self
+    }
+    /// <p>Required. Attribute mappings to be used for mapping query results to ingest data for multi-measure attributes.</p>
+    pub fn get_multi_measure_attribute_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MultiMeasureAttributeMapping>> {
+        &self.multi_measure_attribute_mappings
     }
     /// Consumes the builder and constructs a [`MultiMeasureMappings`](crate::types::MultiMeasureMappings).
     pub fn build(self) -> crate::types::MultiMeasureMappings {

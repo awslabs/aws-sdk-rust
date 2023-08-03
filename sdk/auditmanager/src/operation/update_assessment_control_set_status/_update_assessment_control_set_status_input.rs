@@ -69,6 +69,10 @@ impl UpdateAssessmentControlSetStatusInputBuilder {
         self.assessment_id = input;
         self
     }
+    /// <p> The unique identifier for the assessment. </p>
+    pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_id
+    }
     /// <p> The unique identifier for the control set. </p>
     pub fn control_set_id(
         mut self,
@@ -85,6 +89,10 @@ impl UpdateAssessmentControlSetStatusInputBuilder {
         self.control_set_id = input;
         self
     }
+    /// <p> The unique identifier for the control set. </p>
+    pub fn get_control_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_set_id
+    }
     /// <p> The status of the control set that's being updated. </p>
     pub fn status(mut self, input: crate::types::ControlSetStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -98,6 +106,10 @@ impl UpdateAssessmentControlSetStatusInputBuilder {
         self.status = input;
         self
     }
+    /// <p> The status of the control set that's being updated. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ControlSetStatus> {
+        &self.status
+    }
     /// <p> The comment that's related to the status update. </p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
@@ -107,6 +119,10 @@ impl UpdateAssessmentControlSetStatusInputBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment = input;
         self
+    }
+    /// <p> The comment that's related to the status update. </p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment
     }
     /// Consumes the builder and constructs a [`UpdateAssessmentControlSetStatusInput`](crate::operation::update_assessment_control_set_status::UpdateAssessmentControlSetStatusInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_assessment_control_set_status::UpdateAssessmentControlSetStatusInput, ::aws_smithy_http::operation::error::BuildError>{

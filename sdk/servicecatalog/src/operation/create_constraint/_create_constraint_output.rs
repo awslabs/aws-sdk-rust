@@ -66,6 +66,10 @@ impl CreateConstraintOutputBuilder {
         self.constraint_detail = input;
         self
     }
+    /// <p>Information about the constraint.</p>
+    pub fn get_constraint_detail(&self) -> &::std::option::Option<crate::types::ConstraintDetail> {
+        &self.constraint_detail
+    }
     /// <p>The constraint parameters.</p>
     pub fn constraint_parameters(
         mut self,
@@ -82,6 +86,10 @@ impl CreateConstraintOutputBuilder {
         self.constraint_parameters = input;
         self
     }
+    /// <p>The constraint parameters.</p>
+    pub fn get_constraint_parameters(&self) -> &::std::option::Option<::std::string::String> {
+        &self.constraint_parameters
+    }
     /// <p>The status of the current request.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -91,6 +99,10 @@ impl CreateConstraintOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the current request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

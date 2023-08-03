@@ -96,6 +96,10 @@ impl ConversionTaskBuilder {
         self.conversion_task_id = input;
         self
     }
+    /// <p>The ID of the conversion task.</p>
+    pub fn get_conversion_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.conversion_task_id
+    }
     /// <p>The time when the task expires. If the upload isn't complete before the expiration time, we automatically cancel the task.</p>
     pub fn expiration_time(
         mut self,
@@ -112,6 +116,10 @@ impl ConversionTaskBuilder {
         self.expiration_time = input;
         self
     }
+    /// <p>The time when the task expires. If the upload isn't complete before the expiration time, we automatically cancel the task.</p>
+    pub fn get_expiration_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expiration_time
+    }
     /// <p>If the task is for importing an instance, this contains information about the import instance task.</p>
     pub fn import_instance(mut self, input: crate::types::ImportInstanceTaskDetails) -> Self {
         self.import_instance = ::std::option::Option::Some(input);
@@ -124,6 +132,12 @@ impl ConversionTaskBuilder {
     ) -> Self {
         self.import_instance = input;
         self
+    }
+    /// <p>If the task is for importing an instance, this contains information about the import instance task.</p>
+    pub fn get_import_instance(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImportInstanceTaskDetails> {
+        &self.import_instance
     }
     /// <p>If the task is for importing a volume, this contains information about the import volume task.</p>
     pub fn import_volume(mut self, input: crate::types::ImportVolumeTaskDetails) -> Self {
@@ -138,6 +152,12 @@ impl ConversionTaskBuilder {
         self.import_volume = input;
         self
     }
+    /// <p>If the task is for importing a volume, this contains information about the import volume task.</p>
+    pub fn get_import_volume(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImportVolumeTaskDetails> {
+        &self.import_volume
+    }
     /// <p>The state of the conversion task.</p>
     pub fn state(mut self, input: crate::types::ConversionTaskState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -150,6 +170,10 @@ impl ConversionTaskBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the conversion task.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ConversionTaskState> {
+        &self.state
     }
     /// <p>The status message related to the conversion task.</p>
     pub fn status_message(
@@ -166,6 +190,10 @@ impl ConversionTaskBuilder {
     ) -> Self {
         self.status_message = input;
         self
+    }
+    /// <p>The status message related to the conversion task.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// Appends an item to `tags`.
     ///
@@ -185,6 +213,10 @@ impl ConversionTaskBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Any tags assigned to the task.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`ConversionTask`](crate::types::ConversionTask).
     pub fn build(self) -> crate::types::ConversionTask {

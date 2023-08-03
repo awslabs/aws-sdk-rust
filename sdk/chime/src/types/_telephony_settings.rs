@@ -56,6 +56,10 @@ impl TelephonySettingsBuilder {
         self.inbound_calling = input;
         self
     }
+    /// <p>Allows or denies inbound calling.</p>
+    pub fn get_inbound_calling(&self) -> &::std::option::Option<bool> {
+        &self.inbound_calling
+    }
     /// <p>Allows or denies outbound calling.</p>
     pub fn outbound_calling(mut self, input: bool) -> Self {
         self.outbound_calling = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl TelephonySettingsBuilder {
         self.outbound_calling = input;
         self
     }
+    /// <p>Allows or denies outbound calling.</p>
+    pub fn get_outbound_calling(&self) -> &::std::option::Option<bool> {
+        &self.outbound_calling
+    }
     /// <p>Allows or denies SMS messaging.</p>
     pub fn sms(mut self, input: bool) -> Self {
         self.sms = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl TelephonySettingsBuilder {
     pub fn set_sms(mut self, input: ::std::option::Option<bool>) -> Self {
         self.sms = input;
         self
+    }
+    /// <p>Allows or denies SMS messaging.</p>
+    pub fn get_sms(&self) -> &::std::option::Option<bool> {
+        &self.sms
     }
     /// Consumes the builder and constructs a [`TelephonySettings`](crate::types::TelephonySettings).
     pub fn build(self) -> crate::types::TelephonySettings {

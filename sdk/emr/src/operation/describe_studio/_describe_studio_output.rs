@@ -46,6 +46,10 @@ impl DescribeStudioOutputBuilder {
         self.studio = input;
         self
     }
+    /// <p>The Amazon EMR Studio details.</p>
+    pub fn get_studio(&self) -> &::std::option::Option<crate::types::Studio> {
+        &self.studio
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -96,6 +96,10 @@ impl ParameterSliderControlBuilder {
         self.parameter_control_id = input;
         self
     }
+    /// <p>The ID of the <code>ParameterSliderControl</code>.</p>
+    pub fn get_parameter_control_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_control_id
+    }
     /// <p>The title of the <code>ParameterSliderControl</code>.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl ParameterSliderControlBuilder {
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
+    }
+    /// <p>The title of the <code>ParameterSliderControl</code>.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
     }
     /// <p>The source parameter name of the <code>ParameterSliderControl</code>.</p>
     pub fn source_parameter_name(
@@ -122,6 +130,10 @@ impl ParameterSliderControlBuilder {
         self.source_parameter_name = input;
         self
     }
+    /// <p>The source parameter name of the <code>ParameterSliderControl</code>.</p>
+    pub fn get_source_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_parameter_name
+    }
     /// <p>The display options of a control.</p>
     pub fn display_options(mut self, input: crate::types::SliderControlDisplayOptions) -> Self {
         self.display_options = ::std::option::Option::Some(input);
@@ -135,6 +147,12 @@ impl ParameterSliderControlBuilder {
         self.display_options = input;
         self
     }
+    /// <p>The display options of a control.</p>
+    pub fn get_display_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::SliderControlDisplayOptions> {
+        &self.display_options
+    }
     /// <p>The smaller value that is displayed at the left of the slider.</p>
     pub fn maximum_value(mut self, input: f64) -> Self {
         self.maximum_value = ::std::option::Option::Some(input);
@@ -144,6 +162,10 @@ impl ParameterSliderControlBuilder {
     pub fn set_maximum_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.maximum_value = input;
         self
+    }
+    /// <p>The smaller value that is displayed at the left of the slider.</p>
+    pub fn get_maximum_value(&self) -> &::std::option::Option<f64> {
+        &self.maximum_value
     }
     /// <p>The larger value that is displayed at the right of the slider.</p>
     pub fn minimum_value(mut self, input: f64) -> Self {
@@ -155,6 +177,10 @@ impl ParameterSliderControlBuilder {
         self.minimum_value = input;
         self
     }
+    /// <p>The larger value that is displayed at the right of the slider.</p>
+    pub fn get_minimum_value(&self) -> &::std::option::Option<f64> {
+        &self.minimum_value
+    }
     /// <p>The number of increments that the slider bar is divided into.</p>
     pub fn step_size(mut self, input: f64) -> Self {
         self.step_size = ::std::option::Option::Some(input);
@@ -164,6 +190,10 @@ impl ParameterSliderControlBuilder {
     pub fn set_step_size(mut self, input: ::std::option::Option<f64>) -> Self {
         self.step_size = input;
         self
+    }
+    /// <p>The number of increments that the slider bar is divided into.</p>
+    pub fn get_step_size(&self) -> &::std::option::Option<f64> {
+        &self.step_size
     }
     /// Consumes the builder and constructs a [`ParameterSliderControl`](crate::types::ParameterSliderControl).
     pub fn build(self) -> crate::types::ParameterSliderControl {

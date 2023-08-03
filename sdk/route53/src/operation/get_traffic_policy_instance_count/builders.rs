@@ -36,6 +36,10 @@ impl GetTrafficPolicyInstanceCountFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetTrafficPolicyInstanceCount as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_traffic_policy_instance_count::builders::GetTrafficPolicyInstanceCountInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(

@@ -46,6 +46,10 @@ impl VerifySessionOutputBuilder {
         self.identity = input;
         self
     }
+    /// <p>The system-generated unique ID of the user in Amazon CodeCatalyst.</p>
+    pub fn get_identity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

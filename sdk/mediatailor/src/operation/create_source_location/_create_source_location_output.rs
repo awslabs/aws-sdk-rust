@@ -132,6 +132,12 @@ impl CreateSourceLocationOutputBuilder {
         self.access_configuration = input;
         self
     }
+    /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
+    pub fn get_access_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AccessConfiguration> {
+        &self.access_configuration
+    }
     /// <p>The ARN to assign to the source location.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -141,6 +147,10 @@ impl CreateSourceLocationOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The ARN to assign to the source location.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The time the source location was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -154,6 +164,10 @@ impl CreateSourceLocationOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time the source location was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The optional configuration for the server that serves segments.</p>
     pub fn default_segment_delivery_configuration(
@@ -171,6 +185,12 @@ impl CreateSourceLocationOutputBuilder {
         self.default_segment_delivery_configuration = input;
         self
     }
+    /// <p>The optional configuration for the server that serves segments.</p>
+    pub fn get_default_segment_delivery_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DefaultSegmentDeliveryConfiguration> {
+        &self.default_segment_delivery_configuration
+    }
     /// <p>The source's HTTP package configurations.</p>
     pub fn http_configuration(mut self, input: crate::types::HttpConfiguration) -> Self {
         self.http_configuration = ::std::option::Option::Some(input);
@@ -184,6 +204,12 @@ impl CreateSourceLocationOutputBuilder {
         self.http_configuration = input;
         self
     }
+    /// <p>The source's HTTP package configurations.</p>
+    pub fn get_http_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::HttpConfiguration> {
+        &self.http_configuration
+    }
     /// <p>The time the source location was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -196,6 +222,10 @@ impl CreateSourceLocationOutputBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>The time the source location was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// Appends an item to `segment_delivery_configurations`.
     ///
@@ -219,6 +249,12 @@ impl CreateSourceLocationOutputBuilder {
         self.segment_delivery_configurations = input;
         self
     }
+    /// <p>The segment delivery configurations for the source location. For information about MediaTailor configurations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with configurations in AWS Elemental MediaTailor</a>.</p>
+    pub fn get_segment_delivery_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SegmentDeliveryConfiguration>> {
+        &self.segment_delivery_configurations
+    }
     /// <p>The name to assign to the source location.</p>
     pub fn source_location_name(
         mut self,
@@ -234,6 +270,10 @@ impl CreateSourceLocationOutputBuilder {
     ) -> Self {
         self.source_location_name = input;
         self
+    }
+    /// <p>The name to assign to the source location.</p>
+    pub fn get_source_location_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_location_name
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -259,6 +299,14 @@ impl CreateSourceLocationOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

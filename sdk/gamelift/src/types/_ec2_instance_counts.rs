@@ -88,6 +88,10 @@ impl Ec2InstanceCountsBuilder {
         self.desired = input;
         self
     }
+    /// <p>Ideal number of active instances. GameLift will always try to maintain the desired number of instances. Capacity is scaled up or down by changing the desired instances. </p>
+    pub fn get_desired(&self) -> &::std::option::Option<i32> {
+        &self.desired
+    }
     /// <p>The minimum instance count value allowed.</p>
     pub fn minimum(mut self, input: i32) -> Self {
         self.minimum = ::std::option::Option::Some(input);
@@ -97,6 +101,10 @@ impl Ec2InstanceCountsBuilder {
     pub fn set_minimum(mut self, input: ::std::option::Option<i32>) -> Self {
         self.minimum = input;
         self
+    }
+    /// <p>The minimum instance count value allowed.</p>
+    pub fn get_minimum(&self) -> &::std::option::Option<i32> {
+        &self.minimum
     }
     /// <p>The maximum instance count value allowed.</p>
     pub fn maximum(mut self, input: i32) -> Self {
@@ -108,6 +116,10 @@ impl Ec2InstanceCountsBuilder {
         self.maximum = input;
         self
     }
+    /// <p>The maximum instance count value allowed.</p>
+    pub fn get_maximum(&self) -> &::std::option::Option<i32> {
+        &self.maximum
+    }
     /// <p>Number of instances that are starting but not yet active.</p>
     pub fn pending(mut self, input: i32) -> Self {
         self.pending = ::std::option::Option::Some(input);
@@ -117,6 +129,10 @@ impl Ec2InstanceCountsBuilder {
     pub fn set_pending(mut self, input: ::std::option::Option<i32>) -> Self {
         self.pending = input;
         self
+    }
+    /// <p>Number of instances that are starting but not yet active.</p>
+    pub fn get_pending(&self) -> &::std::option::Option<i32> {
+        &self.pending
     }
     /// <p>Actual number of instances that are ready to host game sessions.</p>
     pub fn active(mut self, input: i32) -> Self {
@@ -128,6 +144,10 @@ impl Ec2InstanceCountsBuilder {
         self.active = input;
         self
     }
+    /// <p>Actual number of instances that are ready to host game sessions.</p>
+    pub fn get_active(&self) -> &::std::option::Option<i32> {
+        &self.active
+    }
     /// <p>Number of active instances that are not currently hosting a game session.</p>
     pub fn idle(mut self, input: i32) -> Self {
         self.idle = ::std::option::Option::Some(input);
@@ -138,6 +158,10 @@ impl Ec2InstanceCountsBuilder {
         self.idle = input;
         self
     }
+    /// <p>Number of active instances that are not currently hosting a game session.</p>
+    pub fn get_idle(&self) -> &::std::option::Option<i32> {
+        &self.idle
+    }
     /// <p>Number of instances that are no longer active but haven't yet been terminated.</p>
     pub fn terminating(mut self, input: i32) -> Self {
         self.terminating = ::std::option::Option::Some(input);
@@ -147,6 +171,10 @@ impl Ec2InstanceCountsBuilder {
     pub fn set_terminating(mut self, input: ::std::option::Option<i32>) -> Self {
         self.terminating = input;
         self
+    }
+    /// <p>Number of instances that are no longer active but haven't yet been terminated.</p>
+    pub fn get_terminating(&self) -> &::std::option::Option<i32> {
+        &self.terminating
     }
     /// Consumes the builder and constructs a [`Ec2InstanceCounts`](crate::types::Ec2InstanceCounts).
     pub fn build(self) -> crate::types::Ec2InstanceCounts {

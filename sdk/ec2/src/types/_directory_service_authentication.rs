@@ -40,6 +40,10 @@ impl DirectoryServiceAuthenticationBuilder {
         self.directory_id = input;
         self
     }
+    /// <p>The ID of the Active Directory used for authentication.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
     /// Consumes the builder and constructs a [`DirectoryServiceAuthentication`](crate::types::DirectoryServiceAuthentication).
     pub fn build(self) -> crate::types::DirectoryServiceAuthentication {
         crate::types::DirectoryServiceAuthentication {

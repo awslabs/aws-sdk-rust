@@ -44,6 +44,10 @@ impl DescribeFleetPortSettingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeFleetPortSettings as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_fleet_port_settings::builders::DescribeFleetPortSettingsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +138,10 @@ impl DescribeFleetPortSettingsFluentBuilder {
         self.inner = self.inner.set_fleet_id(input);
         self
     }
+    /// <p>A unique identifier for the fleet to retrieve port settings for. You can use either the fleet ID or ARN value.</p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fleet_id()
+    }
     /// <p>A remote location to check for status of port setting updates. Use the Amazon Web Services Region code format, such as <code>us-west-2</code>.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.location(input.into());
@@ -143,5 +151,9 @@ impl DescribeFleetPortSettingsFluentBuilder {
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_location(input);
         self
+    }
+    /// <p>A remote location to check for status of port setting updates. Use the Amazon Web Services Region code format, such as <code>us-west-2</code>.</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_location()
     }
 }

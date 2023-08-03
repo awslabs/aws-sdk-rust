@@ -109,6 +109,14 @@ impl CreateBlueGreenDeploymentInputBuilder {
         self.blue_green_deployment_name = input;
         self
     }
+    /// <p>The name of the blue/green deployment.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't be the same as an existing blue/green deployment name in the same account and Amazon Web Services Region.</p> </li>
+    /// </ul>
+    pub fn get_blue_green_deployment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.blue_green_deployment_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the source production database.</p>
     /// <p>Specify the database that you want to clone. The blue/green deployment creates this database in the green environment. You can make updates to the database in the green environment, such as an engine version upgrade. When you are ready, you can switch the database in the green environment to be the production database.</p>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -120,6 +128,11 @@ impl CreateBlueGreenDeploymentInputBuilder {
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the source production database.</p>
+    /// <p>Specify the database that you want to clone. The blue/green deployment creates this database in the green environment. You can make updates to the database in the green environment, such as an engine version upgrade. When you are ready, you can switch the database in the green environment to be the production database.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
     }
     /// <p>The engine version of the database in the green environment.</p>
     /// <p>Specify the engine version to upgrade to in the green environment.</p>
@@ -139,6 +152,11 @@ impl CreateBlueGreenDeploymentInputBuilder {
         self.target_engine_version = input;
         self
     }
+    /// <p>The engine version of the database in the green environment.</p>
+    /// <p>Specify the engine version to upgrade to in the green environment.</p>
+    pub fn get_target_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_engine_version
+    }
     /// <p>The DB parameter group associated with the DB instance in the green environment.</p>
     /// <p>To test parameter changes, specify a DB parameter group that is different from the one associated with the source DB instance.</p>
     pub fn target_db_parameter_group_name(
@@ -156,6 +174,13 @@ impl CreateBlueGreenDeploymentInputBuilder {
     ) -> Self {
         self.target_db_parameter_group_name = input;
         self
+    }
+    /// <p>The DB parameter group associated with the DB instance in the green environment.</p>
+    /// <p>To test parameter changes, specify a DB parameter group that is different from the one associated with the source DB instance.</p>
+    pub fn get_target_db_parameter_group_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.target_db_parameter_group_name
     }
     /// <p>The DB cluster parameter group associated with the Aurora DB cluster in the green environment.</p>
     /// <p>To test parameter changes, specify a DB cluster parameter group that is different from the one associated with the source DB cluster.</p>
@@ -175,6 +200,13 @@ impl CreateBlueGreenDeploymentInputBuilder {
         self.target_db_cluster_parameter_group_name = input;
         self
     }
+    /// <p>The DB cluster parameter group associated with the Aurora DB cluster in the green environment.</p>
+    /// <p>To test parameter changes, specify a DB cluster parameter group that is different from the one associated with the source DB cluster.</p>
+    pub fn get_target_db_cluster_parameter_group_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.target_db_cluster_parameter_group_name
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -193,6 +225,10 @@ impl CreateBlueGreenDeploymentInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Tags to assign to the blue/green deployment.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateBlueGreenDeploymentInput`](crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentInput).
     pub fn build(

@@ -158,6 +158,10 @@ impl UserAccessResultItemBuilder {
         self.app = input;
         self
     }
+    /// <p>The name of the application.</p>
+    pub fn get_app(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app
+    }
     /// <p>The ID of the application tenant.</p>
     pub fn tenant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tenant_id = ::std::option::Option::Some(input.into());
@@ -167,6 +171,10 @@ impl UserAccessResultItemBuilder {
     pub fn set_tenant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tenant_id = input;
         self
+    }
+    /// <p>The ID of the application tenant.</p>
+    pub fn get_tenant_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tenant_id
     }
     /// <p>The display name of the tenant.</p>
     pub fn tenant_display_name(
@@ -184,6 +192,10 @@ impl UserAccessResultItemBuilder {
         self.tenant_display_name = input;
         self
     }
+    /// <p>The display name of the tenant.</p>
+    pub fn get_tenant_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tenant_display_name
+    }
     /// <p>The unique ID of the task.</p>
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
@@ -193,6 +205,10 @@ impl UserAccessResultItemBuilder {
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_id = input;
         self
+    }
+    /// <p>The unique ID of the task.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
     }
     /// <p>The status of the user access result item.</p>
     /// <p>The following states are possible:</p>
@@ -221,6 +237,17 @@ impl UserAccessResultItemBuilder {
         self.result_status = input;
         self
     }
+    /// <p>The status of the user access result item.</p>
+    /// <p>The following states are possible:</p>
+    /// <ul>
+    /// <li> <p> <code>IN_PROGRESS</code>: The user access task is in progress.</p> </li>
+    /// <li> <p> <code>COMPLETED</code>: The user access task completed successfully.</p> </li>
+    /// <li> <p> <code>FAILED</code>: The user access task failed.</p> </li>
+    /// <li> <p> <code>EXPIRED</code>: The user access task expired.</p> </li>
+    /// </ul>
+    pub fn get_result_status(&self) -> &::std::option::Option<crate::types::ResultStatus> {
+        &self.result_status
+    }
     /// <p>The email address of the target user.</p>
     pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email = ::std::option::Option::Some(input.into());
@@ -231,6 +258,10 @@ impl UserAccessResultItemBuilder {
         self.email = input;
         self
     }
+    /// <p>The email address of the target user.</p>
+    pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email
+    }
     /// <p>The unique ID of user.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
@@ -240,6 +271,10 @@ impl UserAccessResultItemBuilder {
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
+    }
+    /// <p>The unique ID of user.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     /// <p>The full name of the user.</p>
     pub fn user_full_name(
@@ -257,6 +292,10 @@ impl UserAccessResultItemBuilder {
         self.user_full_name = input;
         self
     }
+    /// <p>The full name of the user.</p>
+    pub fn get_user_full_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_full_name
+    }
     /// <p>The first name of the user.</p>
     pub fn user_first_name(
         mut self,
@@ -272,6 +311,10 @@ impl UserAccessResultItemBuilder {
     ) -> Self {
         self.user_first_name = input;
         self
+    }
+    /// <p>The first name of the user.</p>
+    pub fn get_user_first_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_first_name
     }
     /// <p>The last name of the user.</p>
     pub fn user_last_name(
@@ -289,6 +332,10 @@ impl UserAccessResultItemBuilder {
         self.user_last_name = input;
         self
     }
+    /// <p>The last name of the user.</p>
+    pub fn get_user_last_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_last_name
+    }
     /// <p>The status of the user returned by the application.</p>
     pub fn user_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_status = ::std::option::Option::Some(input.into());
@@ -299,6 +346,10 @@ impl UserAccessResultItemBuilder {
         self.user_status = input;
         self
     }
+    /// <p>The status of the user returned by the application.</p>
+    pub fn get_user_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_status
+    }
     /// <p>Contains information about an error returned from a user access task.</p>
     pub fn task_error(mut self, input: crate::types::TaskError) -> Self {
         self.task_error = ::std::option::Option::Some(input);
@@ -308,6 +359,10 @@ impl UserAccessResultItemBuilder {
     pub fn set_task_error(mut self, input: ::std::option::Option<crate::types::TaskError>) -> Self {
         self.task_error = input;
         self
+    }
+    /// <p>Contains information about an error returned from a user access task.</p>
+    pub fn get_task_error(&self) -> &::std::option::Option<crate::types::TaskError> {
+        &self.task_error
     }
     /// Consumes the builder and constructs a [`UserAccessResultItem`](crate::types::UserAccessResultItem).
     pub fn build(self) -> crate::types::UserAccessResultItem {

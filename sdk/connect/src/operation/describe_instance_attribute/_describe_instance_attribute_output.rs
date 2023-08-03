@@ -46,6 +46,10 @@ impl DescribeInstanceAttributeOutputBuilder {
         self.attribute = input;
         self
     }
+    /// <p>The type of attribute.</p>
+    pub fn get_attribute(&self) -> &::std::option::Option<crate::types::Attribute> {
+        &self.attribute
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

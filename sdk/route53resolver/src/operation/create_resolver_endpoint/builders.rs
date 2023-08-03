@@ -40,6 +40,13 @@ impl CreateResolverEndpointFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateResolverEndpoint as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_resolver_endpoint::builders::CreateResolverEndpointInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +143,10 @@ impl CreateResolverEndpointFluentBuilder {
         self.inner = self.inner.set_creator_request_id(input);
         self
     }
+    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
+    pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_creator_request_id()
+    }
     /// <p>A friendly name that lets you easily find a configuration in the Resolver dashboard in the Route 53 console.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -145,6 +156,10 @@ impl CreateResolverEndpointFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>A friendly name that lets you easily find a configuration in the Resolver dashboard in the Route 53 console.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// Appends an item to `SecurityGroupIds`.
     ///
@@ -165,6 +180,12 @@ impl CreateResolverEndpointFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_security_group_ids(input);
         self
+    }
+    /// <p>The ID of one or more security groups that you want to use to control access to this VPC. The security group that you specify must include one or more inbound rules (for inbound Resolver endpoints) or outbound rules (for outbound Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access. For inbound access, open port 53. For outbound access, open the port that you're using for DNS queries on your network.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_security_group_ids()
     }
     /// <p>Specify the applicable value:</p>
     /// <ul>
@@ -187,6 +208,14 @@ impl CreateResolverEndpointFluentBuilder {
         self.inner = self.inner.set_direction(input);
         self
     }
+    /// <p>Specify the applicable value:</p>
+    /// <ul>
+    /// <li> <p> <code>INBOUND</code>: Resolver forwards DNS queries to the DNS service for a VPC from your network</p> </li>
+    /// <li> <p> <code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC to your network</p> </li>
+    /// </ul>
+    pub fn get_direction(&self) -> &::std::option::Option<crate::types::ResolverEndpointDirection> {
+        self.inner.get_direction()
+    }
     /// Appends an item to `IpAddresses`.
     ///
     /// To override the contents of this collection use [`set_ip_addresses`](Self::set_ip_addresses).
@@ -203,6 +232,12 @@ impl CreateResolverEndpointFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ip_addresses(input);
         self
+    }
+    /// <p>The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC. </p>
+    pub fn get_ip_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpAddressRequest>> {
+        self.inner.get_ip_addresses()
     }
     /// Appends an item to `Tags`.
     ///
@@ -221,6 +256,10 @@ impl CreateResolverEndpointFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>A list of the tag keys and values that you want to associate with the endpoint.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p> For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This endpoint type is applied to all IP addresses. </p>
     pub fn resolver_endpoint_type(mut self, input: crate::types::ResolverEndpointType) -> Self {
         self.inner = self.inner.resolver_endpoint_type(input);
@@ -234,6 +273,12 @@ impl CreateResolverEndpointFluentBuilder {
         self.inner = self.inner.set_resolver_endpoint_type(input);
         self
     }
+    /// <p> For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This endpoint type is applied to all IP addresses. </p>
+    pub fn get_resolver_endpoint_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResolverEndpointType> {
+        self.inner.get_resolver_endpoint_type()
+    }
     /// <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the <code>PreferredInstanceType</code>. </p>
     pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.outpost_arn(input.into());
@@ -243,6 +288,10 @@ impl CreateResolverEndpointFluentBuilder {
     pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_outpost_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the <code>PreferredInstanceType</code>. </p>
+    pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_outpost_arn()
     }
     /// <p>The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.</p>
     pub fn preferred_instance_type(
@@ -259,5 +308,9 @@ impl CreateResolverEndpointFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_preferred_instance_type(input);
         self
+    }
+    /// <p>The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.</p>
+    pub fn get_preferred_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_preferred_instance_type()
     }
 }

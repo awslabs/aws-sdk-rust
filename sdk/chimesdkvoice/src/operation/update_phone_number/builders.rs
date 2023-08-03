@@ -38,6 +38,12 @@ impl UpdatePhoneNumberFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdatePhoneNumber as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_phone_number::builders::UpdatePhoneNumberInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,10 @@ impl UpdatePhoneNumberFluentBuilder {
         self.inner = self.inner.set_phone_number_id(input);
         self
     }
+    /// <p>The phone number ID.</p>
+    pub fn get_phone_number_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_phone_number_id()
+    }
     /// <p>The product type.</p>
     pub fn product_type(mut self, input: crate::types::PhoneNumberProductType) -> Self {
         self.inner = self.inner.product_type(input);
@@ -147,6 +157,10 @@ impl UpdatePhoneNumberFluentBuilder {
         self.inner = self.inner.set_product_type(input);
         self
     }
+    /// <p>The product type.</p>
+    pub fn get_product_type(&self) -> &::std::option::Option<crate::types::PhoneNumberProductType> {
+        self.inner.get_product_type()
+    }
     /// <p>The outbound calling name associated with the phone number.</p>
     pub fn calling_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.calling_name(input.into());
@@ -156,5 +170,9 @@ impl UpdatePhoneNumberFluentBuilder {
     pub fn set_calling_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_calling_name(input);
         self
+    }
+    /// <p>The outbound calling name associated with the phone number.</p>
+    pub fn get_calling_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_calling_name()
     }
 }

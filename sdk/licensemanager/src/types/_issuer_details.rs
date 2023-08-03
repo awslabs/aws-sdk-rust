@@ -56,6 +56,10 @@ impl IssuerDetailsBuilder {
         self.name = input;
         self
     }
+    /// <p>Issuer name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
     pub fn sign_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sign_key = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl IssuerDetailsBuilder {
     pub fn set_sign_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sign_key = input;
         self
+    }
+    /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
+    pub fn get_sign_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sign_key
     }
     /// <p>Issuer key fingerprint.</p>
     pub fn key_fingerprint(
@@ -81,6 +89,10 @@ impl IssuerDetailsBuilder {
     ) -> Self {
         self.key_fingerprint = input;
         self
+    }
+    /// <p>Issuer key fingerprint.</p>
+    pub fn get_key_fingerprint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_fingerprint
     }
     /// Consumes the builder and constructs a [`IssuerDetails`](crate::types::IssuerDetails).
     pub fn build(self) -> crate::types::IssuerDetails {

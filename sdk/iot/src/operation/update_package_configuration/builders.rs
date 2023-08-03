@@ -37,6 +37,10 @@ impl UpdatePackageConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdatePackageConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_package_configuration::builders::UpdatePackageConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,12 @@ impl UpdatePackageConfigurationFluentBuilder {
         self.inner = self.inner.set_version_update_by_jobs_config(input);
         self
     }
+    /// <p>Configuration to manage job's package version reporting. This updates the thing's reserved named shadow that the job targets.</p>
+    pub fn get_version_update_by_jobs_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::VersionUpdateByJobsConfig> {
+        self.inner.get_version_update_by_jobs_config()
+    }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -142,5 +152,9 @@ impl UpdatePackageConfigurationFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

@@ -134,6 +134,10 @@ impl ModelDashboardModelCardBuilder {
         self.model_card_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for a model card.</p>
+    pub fn get_model_card_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_card_arn
+    }
     /// <p>The name of a model card.</p>
     pub fn model_card_name(
         mut self,
@@ -150,6 +154,10 @@ impl ModelDashboardModelCardBuilder {
         self.model_card_name = input;
         self
     }
+    /// <p>The name of a model card.</p>
+    pub fn get_model_card_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_card_name
+    }
     /// <p>The model card version.</p>
     pub fn model_card_version(mut self, input: i32) -> Self {
         self.model_card_version = ::std::option::Option::Some(input);
@@ -159,6 +167,10 @@ impl ModelDashboardModelCardBuilder {
     pub fn set_model_card_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.model_card_version = input;
         self
+    }
+    /// <p>The model card version.</p>
+    pub fn get_model_card_version(&self) -> &::std::option::Option<i32> {
+        &self.model_card_version
     }
     /// <p>The model card status.</p>
     pub fn model_card_status(mut self, input: crate::types::ModelCardStatus) -> Self {
@@ -173,6 +185,10 @@ impl ModelDashboardModelCardBuilder {
         self.model_card_status = input;
         self
     }
+    /// <p>The model card status.</p>
+    pub fn get_model_card_status(&self) -> &::std::option::Option<crate::types::ModelCardStatus> {
+        &self.model_card_status
+    }
     /// <p>The KMS Key ID (<code>KMSKeyId</code>) for encryption of model card information.</p>
     pub fn security_config(mut self, input: crate::types::ModelCardSecurityConfig) -> Self {
         self.security_config = ::std::option::Option::Some(input);
@@ -185,6 +201,12 @@ impl ModelDashboardModelCardBuilder {
     ) -> Self {
         self.security_config = input;
         self
+    }
+    /// <p>The KMS Key ID (<code>KMSKeyId</code>) for encryption of model card information.</p>
+    pub fn get_security_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ModelCardSecurityConfig> {
+        &self.security_config
     }
     /// <p>A timestamp that indicates when the model card was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -199,6 +221,10 @@ impl ModelDashboardModelCardBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>A timestamp that indicates when the model card was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn created_by(mut self, input: crate::types::UserContext) -> Self {
         self.created_by = ::std::option::Option::Some(input);
@@ -211,6 +237,10 @@ impl ModelDashboardModelCardBuilder {
     ) -> Self {
         self.created_by = input;
         self
+    }
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<crate::types::UserContext> {
+        &self.created_by
     }
     /// <p>A timestamp that indicates when the model card was last updated.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -225,6 +255,10 @@ impl ModelDashboardModelCardBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p>A timestamp that indicates when the model card was last updated.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn last_modified_by(mut self, input: crate::types::UserContext) -> Self {
         self.last_modified_by = ::std::option::Option::Some(input);
@@ -237,6 +271,10 @@ impl ModelDashboardModelCardBuilder {
     ) -> Self {
         self.last_modified_by = input;
         self
+    }
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    pub fn get_last_modified_by(&self) -> &::std::option::Option<crate::types::UserContext> {
+        &self.last_modified_by
     }
     /// Appends an item to `tags`.
     ///
@@ -257,6 +295,10 @@ impl ModelDashboardModelCardBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags associated with a model card.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>For models created in SageMaker, this is the model ARN. For models created outside of SageMaker, this is a user-customized string.</p>
     pub fn model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_id = ::std::option::Option::Some(input.into());
@@ -267,6 +309,10 @@ impl ModelDashboardModelCardBuilder {
         self.model_id = input;
         self
     }
+    /// <p>For models created in SageMaker, this is the model ARN. For models created outside of SageMaker, this is a user-customized string.</p>
+    pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_id
+    }
     /// <p>A model card's risk rating. Can be low, medium, or high.</p>
     pub fn risk_rating(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.risk_rating = ::std::option::Option::Some(input.into());
@@ -276,6 +322,10 @@ impl ModelDashboardModelCardBuilder {
     pub fn set_risk_rating(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.risk_rating = input;
         self
+    }
+    /// <p>A model card's risk rating. Can be low, medium, or high.</p>
+    pub fn get_risk_rating(&self) -> &::std::option::Option<::std::string::String> {
+        &self.risk_rating
     }
     /// Consumes the builder and constructs a [`ModelDashboardModelCard`](crate::types::ModelDashboardModelCard).
     pub fn build(self) -> crate::types::ModelDashboardModelCard {

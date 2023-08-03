@@ -64,6 +64,10 @@ impl TestSetTurnRecordBuilder {
         self.record_number = input;
         self
     }
+    /// <p>The record number associated with the turn.</p>
+    pub fn get_record_number(&self) -> &::std::option::Option<i64> {
+        &self.record_number
+    }
     /// <p>The unique identifier for the conversation associated with the turn.</p>
     pub fn conversation_id(
         mut self,
@@ -80,6 +84,10 @@ impl TestSetTurnRecordBuilder {
         self.conversation_id = input;
         self
     }
+    /// <p>The unique identifier for the conversation associated with the turn.</p>
+    pub fn get_conversation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.conversation_id
+    }
     /// <p>The number of turns that has elapsed up to that turn.</p>
     pub fn turn_number(mut self, input: i32) -> Self {
         self.turn_number = ::std::option::Option::Some(input);
@@ -89,6 +97,10 @@ impl TestSetTurnRecordBuilder {
     pub fn set_turn_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.turn_number = input;
         self
+    }
+    /// <p>The number of turns that has elapsed up to that turn.</p>
+    pub fn get_turn_number(&self) -> &::std::option::Option<i32> {
+        &self.turn_number
     }
     /// <p>Contains information about the agent or user turn depending upon type of turn.</p>
     pub fn turn_specification(mut self, input: crate::types::TurnSpecification) -> Self {
@@ -102,6 +114,12 @@ impl TestSetTurnRecordBuilder {
     ) -> Self {
         self.turn_specification = input;
         self
+    }
+    /// <p>Contains information about the agent or user turn depending upon type of turn.</p>
+    pub fn get_turn_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::TurnSpecification> {
+        &self.turn_specification
     }
     /// Consumes the builder and constructs a [`TestSetTurnRecord`](crate::types::TestSetTurnRecord).
     pub fn build(self) -> crate::types::TestSetTurnRecord {

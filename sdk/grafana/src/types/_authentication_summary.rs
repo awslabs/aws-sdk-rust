@@ -62,6 +62,12 @@ impl AuthenticationSummaryBuilder {
         self.providers = input;
         self
     }
+    /// <p>Specifies whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.</p>
+    pub fn get_providers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProviderTypes>> {
+        &self.providers
+    }
     /// <p>Specifies whether the workplace's user authentication method is fully configured.</p>
     pub fn saml_configuration_status(
         mut self,
@@ -77,6 +83,12 @@ impl AuthenticationSummaryBuilder {
     ) -> Self {
         self.saml_configuration_status = input;
         self
+    }
+    /// <p>Specifies whether the workplace's user authentication method is fully configured.</p>
+    pub fn get_saml_configuration_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::SamlConfigurationStatus> {
+        &self.saml_configuration_status
     }
     /// Consumes the builder and constructs a [`AuthenticationSummary`](crate::types::AuthenticationSummary).
     pub fn build(self) -> crate::types::AuthenticationSummary {

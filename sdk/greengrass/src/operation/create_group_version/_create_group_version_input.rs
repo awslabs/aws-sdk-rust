@@ -110,6 +110,10 @@ impl CreateGroupVersionInputBuilder {
         self.amzn_client_token = input;
         self
     }
+    /// A client token used to correlate requests and responses.
+    pub fn get_amzn_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.amzn_client_token
+    }
     /// The ARN of the connector definition version for this group.
     pub fn connector_definition_version_arn(
         mut self,
@@ -125,6 +129,12 @@ impl CreateGroupVersionInputBuilder {
     ) -> Self {
         self.connector_definition_version_arn = input;
         self
+    }
+    /// The ARN of the connector definition version for this group.
+    pub fn get_connector_definition_version_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.connector_definition_version_arn
     }
     /// The ARN of the core definition version for this group.
     pub fn core_definition_version_arn(
@@ -142,6 +152,10 @@ impl CreateGroupVersionInputBuilder {
         self.core_definition_version_arn = input;
         self
     }
+    /// The ARN of the core definition version for this group.
+    pub fn get_core_definition_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_definition_version_arn
+    }
     /// The ARN of the device definition version for this group.
     pub fn device_definition_version_arn(
         mut self,
@@ -157,6 +171,12 @@ impl CreateGroupVersionInputBuilder {
     ) -> Self {
         self.device_definition_version_arn = input;
         self
+    }
+    /// The ARN of the device definition version for this group.
+    pub fn get_device_definition_version_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.device_definition_version_arn
     }
     /// The ARN of the function definition version for this group.
     pub fn function_definition_version_arn(
@@ -174,6 +194,12 @@ impl CreateGroupVersionInputBuilder {
         self.function_definition_version_arn = input;
         self
     }
+    /// The ARN of the function definition version for this group.
+    pub fn get_function_definition_version_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.function_definition_version_arn
+    }
     /// The ID of the Greengrass group.
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
@@ -183,6 +209,10 @@ impl CreateGroupVersionInputBuilder {
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_id = input;
         self
+    }
+    /// The ID of the Greengrass group.
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
     }
     /// The ARN of the logger definition version for this group.
     pub fn logger_definition_version_arn(
@@ -200,6 +230,12 @@ impl CreateGroupVersionInputBuilder {
         self.logger_definition_version_arn = input;
         self
     }
+    /// The ARN of the logger definition version for this group.
+    pub fn get_logger_definition_version_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.logger_definition_version_arn
+    }
     /// The ARN of the resource definition version for this group.
     pub fn resource_definition_version_arn(
         mut self,
@@ -216,6 +252,12 @@ impl CreateGroupVersionInputBuilder {
         self.resource_definition_version_arn = input;
         self
     }
+    /// The ARN of the resource definition version for this group.
+    pub fn get_resource_definition_version_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.resource_definition_version_arn
+    }
     /// The ARN of the subscription definition version for this group.
     pub fn subscription_definition_version_arn(
         mut self,
@@ -231,6 +273,12 @@ impl CreateGroupVersionInputBuilder {
     ) -> Self {
         self.subscription_definition_version_arn = input;
         self
+    }
+    /// The ARN of the subscription definition version for this group.
+    pub fn get_subscription_definition_version_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.subscription_definition_version_arn
     }
     /// Consumes the builder and constructs a [`CreateGroupVersionInput`](crate::operation::create_group_version::CreateGroupVersionInput).
     pub fn build(

@@ -68,6 +68,10 @@ impl BlobMetadataBuilder {
         self.blob_id = input;
         self
     }
+    /// <p>The full ID of the blob.</p>
+    pub fn get_blob_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.blob_id
+    }
     /// <p>The path to the blob and associated file name, if any.</p>
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path = ::std::option::Option::Some(input.into());
@@ -77,6 +81,10 @@ impl BlobMetadataBuilder {
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path = input;
         self
+    }
+    /// <p>The path to the blob and associated file name, if any.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
     }
     /// <p>The file mode permissions of the blob. File mode permission codes include:</p>
     /// <ul>
@@ -99,6 +107,16 @@ impl BlobMetadataBuilder {
     pub fn set_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mode = input;
         self
+    }
+    /// <p>The file mode permissions of the blob. File mode permission codes include:</p>
+    /// <ul>
+    /// <li> <p> <code>100644</code> indicates read/write</p> </li>
+    /// <li> <p> <code>100755</code> indicates read/write/execute</p> </li>
+    /// <li> <p> <code>160000</code> indicates a submodule</p> </li>
+    /// <li> <p> <code>120000</code> indicates a symlink</p> </li>
+    /// </ul>
+    pub fn get_mode(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mode
     }
     /// Consumes the builder and constructs a [`BlobMetadata`](crate::types::BlobMetadata).
     pub fn build(self) -> crate::types::BlobMetadata {

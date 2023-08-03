@@ -47,6 +47,10 @@ impl GetAutomationExecutionInputBuilder {
         self.automation_execution_id = input;
         self
     }
+    /// <p>The unique identifier for an existing automation execution to examine. The execution ID is returned by StartAutomationExecution when the execution of an Automation runbook is initiated.</p>
+    pub fn get_automation_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.automation_execution_id
+    }
     /// Consumes the builder and constructs a [`GetAutomationExecutionInput`](crate::operation::get_automation_execution::GetAutomationExecutionInput).
     pub fn build(
         self,

@@ -62,6 +62,10 @@ impl DetectorModelSummaryBuilder {
         self.detector_model_name = input;
         self
     }
+    /// <p>The name of the detector model.</p>
+    pub fn get_detector_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_model_name
+    }
     /// <p>A brief description of the detector model.</p>
     pub fn detector_model_description(
         mut self,
@@ -78,6 +82,10 @@ impl DetectorModelSummaryBuilder {
         self.detector_model_description = input;
         self
     }
+    /// <p>A brief description of the detector model.</p>
+    pub fn get_detector_model_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_model_description
+    }
     /// <p>The time the detector model was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -90,6 +98,10 @@ impl DetectorModelSummaryBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time the detector model was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// Consumes the builder and constructs a [`DetectorModelSummary`](crate::types::DetectorModelSummary).
     pub fn build(self) -> crate::types::DetectorModelSummary {

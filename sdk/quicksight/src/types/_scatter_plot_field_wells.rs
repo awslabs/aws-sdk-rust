@@ -64,6 +64,12 @@ impl ScatterPlotFieldWellsBuilder {
         self.scatter_plot_categorically_aggregated_field_wells = input;
         self
     }
+    /// <p>The aggregated field wells of a scatter plot. The x and y-axes of scatter plots with aggregated field wells are aggregated by category, label, or both.</p>
+    pub fn get_scatter_plot_categorically_aggregated_field_wells(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScatterPlotCategoricallyAggregatedFieldWells> {
+        &self.scatter_plot_categorically_aggregated_field_wells
+    }
     /// <p>The unaggregated field wells of a scatter plot. The x and y-axes of these scatter plots are unaggregated.</p>
     pub fn scatter_plot_unaggregated_field_wells(
         mut self,
@@ -79,6 +85,12 @@ impl ScatterPlotFieldWellsBuilder {
     ) -> Self {
         self.scatter_plot_unaggregated_field_wells = input;
         self
+    }
+    /// <p>The unaggregated field wells of a scatter plot. The x and y-axes of these scatter plots are unaggregated.</p>
+    pub fn get_scatter_plot_unaggregated_field_wells(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScatterPlotUnaggregatedFieldWells> {
+        &self.scatter_plot_unaggregated_field_wells
     }
     /// Consumes the builder and constructs a [`ScatterPlotFieldWells`](crate::types::ScatterPlotFieldWells).
     pub fn build(self) -> crate::types::ScatterPlotFieldWells {

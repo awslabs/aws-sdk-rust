@@ -40,6 +40,10 @@ impl TlsContextBuilder {
         self.server_name = input;
         self
     }
+    /// <p>The value of the <code>serverName</code> key in a TLS authorization request.</p>
+    pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_name
+    }
     /// Consumes the builder and constructs a [`TlsContext`](crate::types::TlsContext).
     pub fn build(self) -> crate::types::TlsContext {
         crate::types::TlsContext {

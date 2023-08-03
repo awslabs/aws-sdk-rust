@@ -75,6 +75,10 @@ impl ListComponentTypesOutputBuilder {
         self.workspace_id = input;
         self
     }
+    /// <p>The ID of the workspace.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
+    }
     /// Appends an item to `component_type_summaries`.
     ///
     /// To override the contents of this collection use [`set_component_type_summaries`](Self::set_component_type_summaries).
@@ -94,6 +98,12 @@ impl ListComponentTypesOutputBuilder {
         self.component_type_summaries = input;
         self
     }
+    /// <p>A list of objects that contain information about the component types.</p>
+    pub fn get_component_type_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentTypeSummary>> {
+        &self.component_type_summaries
+    }
     /// <p>The string that specifies the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -104,6 +114,10 @@ impl ListComponentTypesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The string that specifies the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>Specifies the maximum number of results to display.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -113,6 +127,10 @@ impl ListComponentTypesOutputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>Specifies the maximum number of results to display.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -72,6 +72,10 @@ impl RepositoryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The repository provider.</p>
     pub fn provider(mut self, input: crate::types::RepositoryProvider) -> Self {
         self.provider = ::std::option::Option::Some(input);
@@ -85,6 +89,10 @@ impl RepositoryBuilder {
         self.provider = input;
         self
     }
+    /// <p>The repository provider.</p>
+    pub fn get_provider(&self) -> &::std::option::Option<crate::types::RepositoryProvider> {
+        &self.provider
+    }
     /// <p>The repository name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -94,6 +102,10 @@ impl RepositoryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The repository name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository provider account.</p>
     pub fn connection_arn(
@@ -111,6 +123,10 @@ impl RepositoryBuilder {
         self.connection_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository provider account.</p>
+    pub fn get_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_arn
+    }
     /// <p>Your customer Amazon Web Services KMS encryption key.</p>
     pub fn encryption_key(
         mut self,
@@ -126,6 +142,10 @@ impl RepositoryBuilder {
     ) -> Self {
         self.encryption_key = input;
         self
+    }
+    /// <p>Your customer Amazon Web Services KMS encryption key.</p>
+    pub fn get_encryption_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encryption_key
     }
     /// Consumes the builder and constructs a [`Repository`](crate::types::Repository).
     pub fn build(self) -> crate::types::Repository {

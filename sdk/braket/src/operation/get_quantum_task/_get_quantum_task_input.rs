@@ -45,6 +45,10 @@ impl GetQuantumTaskInputBuilder {
         self.quantum_task_arn = input;
         self
     }
+    /// <p>the ARN of the task to retrieve.</p>
+    pub fn get_quantum_task_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quantum_task_arn
+    }
     /// Consumes the builder and constructs a [`GetQuantumTaskInput`](crate::operation::get_quantum_task::GetQuantumTaskInput).
     pub fn build(
         self,

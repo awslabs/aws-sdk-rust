@@ -36,6 +36,13 @@ impl SearchVulnerabilitiesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SearchVulnerabilities as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::search_vulnerabilities::builders::SearchVulnerabilitiesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +150,12 @@ impl SearchVulnerabilitiesFluentBuilder {
         self.inner = self.inner.set_filter_criteria(input);
         self
     }
+    /// <p>The criteria used to filter the results of a vulnerability search.</p>
+    pub fn get_filter_criteria(
+        &self,
+    ) -> &::std::option::Option<crate::types::SearchVulnerabilitiesFilterCriteria> {
+        self.inner.get_filter_criteria()
+    }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -152,5 +165,9 @@ impl SearchVulnerabilitiesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

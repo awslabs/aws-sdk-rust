@@ -37,6 +37,13 @@ impl DeleteLocalGatewayRouteFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteLocalGatewayRoute as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_local_gateway_route::builders::DeleteLocalGatewayRouteInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl DeleteLocalGatewayRouteFluentBuilder {
         self.inner = self.inner.set_destination_cidr_block(input);
         self
     }
+    /// <p>The CIDR range for the route. This must match the CIDR for the route exactly.</p>
+    pub fn get_destination_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_cidr_block()
+    }
     /// <p>The ID of the local gateway route table.</p>
     pub fn local_gateway_route_table_id(
         mut self,
@@ -149,6 +160,12 @@ impl DeleteLocalGatewayRouteFluentBuilder {
         self.inner = self.inner.set_local_gateway_route_table_id(input);
         self
     }
+    /// <p>The ID of the local gateway route table.</p>
+    pub fn get_local_gateway_route_table_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_local_gateway_route_table_id()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -158,6 +175,10 @@ impl DeleteLocalGatewayRouteFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
     /// <p> Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
     pub fn destination_prefix_list_id(
@@ -174,5 +195,9 @@ impl DeleteLocalGatewayRouteFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destination_prefix_list_id(input);
         self
+    }
+    /// <p> Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
+    pub fn get_destination_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_prefix_list_id()
     }
 }

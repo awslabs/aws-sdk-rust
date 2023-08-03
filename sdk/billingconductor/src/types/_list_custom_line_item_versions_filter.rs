@@ -53,6 +53,13 @@ impl ListCustomLineItemVersionsFilterBuilder {
         self.billing_period_range = input;
         self
     }
+    /// <p>The billing period range in which the custom line item version is applied.</p>
+    pub fn get_billing_period_range(
+        &self,
+    ) -> &::std::option::Option<crate::types::ListCustomLineItemVersionsBillingPeriodRangeFilter>
+    {
+        &self.billing_period_range
+    }
     /// Consumes the builder and constructs a [`ListCustomLineItemVersionsFilter`](crate::types::ListCustomLineItemVersionsFilter).
     pub fn build(self) -> crate::types::ListCustomLineItemVersionsFilter {
         crate::types::ListCustomLineItemVersionsFilter {

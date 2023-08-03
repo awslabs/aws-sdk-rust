@@ -90,6 +90,10 @@ impl UpdateAssessmentInputBuilder {
         self.assessment_id = input;
         self
     }
+    /// <p> The unique identifier for the assessment. </p>
+    pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_id
+    }
     /// <p> The name of the assessment to be updated. </p>
     pub fn assessment_name(
         mut self,
@@ -105,6 +109,10 @@ impl UpdateAssessmentInputBuilder {
     ) -> Self {
         self.assessment_name = input;
         self
+    }
+    /// <p> The name of the assessment to be updated. </p>
+    pub fn get_assessment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_name
     }
     /// <p> The description of the assessment. </p>
     pub fn assessment_description(
@@ -122,6 +130,10 @@ impl UpdateAssessmentInputBuilder {
         self.assessment_description = input;
         self
     }
+    /// <p> The description of the assessment. </p>
+    pub fn get_assessment_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_description
+    }
     /// <p> The scope of the assessment. </p>
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
         self.scope = ::std::option::Option::Some(input);
@@ -131,6 +143,10 @@ impl UpdateAssessmentInputBuilder {
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::Scope>) -> Self {
         self.scope = input;
         self
+    }
+    /// <p> The scope of the assessment. </p>
+    pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
+        &self.scope
     }
     /// <p> The assessment report storage destination for the assessment that's being updated. </p>
     pub fn assessment_reports_destination(
@@ -147,6 +163,12 @@ impl UpdateAssessmentInputBuilder {
     ) -> Self {
         self.assessment_reports_destination = input;
         self
+    }
+    /// <p> The assessment report storage destination for the assessment that's being updated. </p>
+    pub fn get_assessment_reports_destination(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssessmentReportsDestination> {
+        &self.assessment_reports_destination
     }
     /// Appends an item to `roles`.
     ///
@@ -166,6 +188,10 @@ impl UpdateAssessmentInputBuilder {
     ) -> Self {
         self.roles = input;
         self
+    }
+    /// <p> The list of roles for the assessment. </p>
+    pub fn get_roles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Role>> {
+        &self.roles
     }
     /// Consumes the builder and constructs a [`UpdateAssessmentInput`](crate::operation::update_assessment::UpdateAssessmentInput).
     pub fn build(

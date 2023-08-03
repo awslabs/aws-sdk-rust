@@ -88,6 +88,10 @@ impl ResourceBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of resource.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.r#type
+    }
     /// <p>The ID of the resource.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -97,6 +101,10 @@ impl ResourceBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The ID of the resource.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The partition of the resource.</p>
     pub fn partition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -108,6 +116,10 @@ impl ResourceBuilder {
         self.partition = input;
         self
     }
+    /// <p>The partition of the resource.</p>
+    pub fn get_partition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.partition
+    }
     /// <p>The Amazon Web Services Region the impacted resource is located in.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -117,6 +129,10 @@ impl ResourceBuilder {
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
+    }
+    /// <p>The Amazon Web Services Region the impacted resource is located in.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -143,6 +159,14 @@ impl ResourceBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags attached to the resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>An object that contains details about the resource involved in a finding.</p>
     pub fn details(mut self, input: crate::types::ResourceDetails) -> Self {
         self.details = ::std::option::Option::Some(input);
@@ -155,6 +179,10 @@ impl ResourceBuilder {
     ) -> Self {
         self.details = input;
         self
+    }
+    /// <p>An object that contains details about the resource involved in a finding.</p>
+    pub fn get_details(&self) -> &::std::option::Option<crate::types::ResourceDetails> {
+        &self.details
     }
     /// Consumes the builder and constructs a [`Resource`](crate::types::Resource).
     pub fn build(self) -> crate::types::Resource {

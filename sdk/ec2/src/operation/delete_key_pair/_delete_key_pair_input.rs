@@ -55,6 +55,10 @@ impl DeleteKeyPairInputBuilder {
         self.key_name = input;
         self
     }
+    /// <p>The name of the key pair.</p>
+    pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_name
+    }
     /// <p>The ID of the key pair.</p>
     pub fn key_pair_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_pair_id = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl DeleteKeyPairInputBuilder {
         self.key_pair_id = input;
         self
     }
+    /// <p>The ID of the key pair.</p>
+    pub fn get_key_pair_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_pair_id
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -74,6 +82,10 @@ impl DeleteKeyPairInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`DeleteKeyPairInput`](crate::operation::delete_key_pair::DeleteKeyPairInput).
     pub fn build(

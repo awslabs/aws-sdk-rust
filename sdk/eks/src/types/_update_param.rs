@@ -48,6 +48,10 @@ impl UpdateParamBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The keys associated with an update request.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::UpdateParamType> {
+        &self.r#type
+    }
     /// <p>The value of the keys submitted as part of an update request.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl UpdateParamBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of the keys submitted as part of an update request.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`UpdateParam`](crate::types::UpdateParam).
     pub fn build(self) -> crate::types::UpdateParam {

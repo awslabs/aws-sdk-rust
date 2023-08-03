@@ -48,6 +48,10 @@ impl CancelTaskExecutionInputBuilder {
         self.task_execution_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the task execution to stop.</p>
+    pub fn get_task_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_execution_arn
+    }
     /// Consumes the builder and constructs a [`CancelTaskExecutionInput`](crate::operation::cancel_task_execution::CancelTaskExecutionInput).
     pub fn build(
         self,

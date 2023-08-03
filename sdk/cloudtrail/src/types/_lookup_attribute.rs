@@ -51,6 +51,10 @@ impl LookupAttributeBuilder {
         self.attribute_key = input;
         self
     }
+    /// <p>Specifies an attribute on which to filter the events returned.</p>
+    pub fn get_attribute_key(&self) -> &::std::option::Option<crate::types::LookupAttributeKey> {
+        &self.attribute_key
+    }
     /// <p>Specifies a value for the specified AttributeKey.</p>
     pub fn attribute_value(
         mut self,
@@ -66,6 +70,10 @@ impl LookupAttributeBuilder {
     ) -> Self {
         self.attribute_value = input;
         self
+    }
+    /// <p>Specifies a value for the specified AttributeKey.</p>
+    pub fn get_attribute_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_value
     }
     /// Consumes the builder and constructs a [`LookupAttribute`](crate::types::LookupAttribute).
     pub fn build(self) -> crate::types::LookupAttribute {

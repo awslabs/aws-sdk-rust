@@ -59,6 +59,10 @@ impl ComplianceExecutionSummaryBuilder {
         self.execution_time = input;
         self
     }
+    /// <p>The time the execution ran as a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
+    pub fn get_execution_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.execution_time
+    }
     /// <p>An ID created by the system when <code>PutComplianceItems</code> was called. For example, <code>CommandID</code> is a valid execution ID. You can use this ID in subsequent calls.</p>
     pub fn execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_id = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl ComplianceExecutionSummaryBuilder {
     pub fn set_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_id = input;
         self
+    }
+    /// <p>An ID created by the system when <code>PutComplianceItems</code> was called. For example, <code>CommandID</code> is a valid execution ID. You can use this ID in subsequent calls.</p>
+    pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_id
     }
     /// <p>The type of execution. For example, <code>Command</code> is a valid execution type.</p>
     pub fn execution_type(
@@ -84,6 +92,10 @@ impl ComplianceExecutionSummaryBuilder {
     ) -> Self {
         self.execution_type = input;
         self
+    }
+    /// <p>The type of execution. For example, <code>Command</code> is a valid execution type.</p>
+    pub fn get_execution_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_type
     }
     /// Consumes the builder and constructs a [`ComplianceExecutionSummary`](crate::types::ComplianceExecutionSummary).
     pub fn build(self) -> crate::types::ComplianceExecutionSummary {

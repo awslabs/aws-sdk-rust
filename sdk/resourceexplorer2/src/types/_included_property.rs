@@ -56,6 +56,14 @@ impl IncludedPropertyBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the property that is included in this view.</p>
+    /// <p>You can specify the following property names for this field:</p>
+    /// <ul>
+    /// <li> <p> <code>Tags</code> </p> </li>
+    /// </ul>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`IncludedProperty`](crate::types::IncludedProperty).
     pub fn build(self) -> crate::types::IncludedProperty {
         crate::types::IncludedProperty { name: self.name }

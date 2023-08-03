@@ -120,6 +120,10 @@ impl LinkBuilder {
         self.link_id = input;
         self
     }
+    /// <p>The ID of the link.</p>
+    pub fn get_link_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.link_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the link.</p>
     pub fn link_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.link_arn = ::std::option::Option::Some(input.into());
@@ -129,6 +133,10 @@ impl LinkBuilder {
     pub fn set_link_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.link_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the link.</p>
+    pub fn get_link_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.link_arn
     }
     /// <p>The ID of the global network.</p>
     pub fn global_network_id(
@@ -146,6 +154,10 @@ impl LinkBuilder {
         self.global_network_id = input;
         self
     }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_network_id
+    }
     /// <p>The ID of the site.</p>
     pub fn site_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.site_id = ::std::option::Option::Some(input.into());
@@ -155,6 +167,10 @@ impl LinkBuilder {
     pub fn set_site_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.site_id = input;
         self
+    }
+    /// <p>The ID of the site.</p>
+    pub fn get_site_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.site_id
     }
     /// <p>The description of the link.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -166,6 +182,10 @@ impl LinkBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the link.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The type of the link.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -175,6 +195,10 @@ impl LinkBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the link.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// <p>The bandwidth for the link.</p>
     pub fn bandwidth(mut self, input: crate::types::Bandwidth) -> Self {
@@ -186,6 +210,10 @@ impl LinkBuilder {
         self.bandwidth = input;
         self
     }
+    /// <p>The bandwidth for the link.</p>
+    pub fn get_bandwidth(&self) -> &::std::option::Option<crate::types::Bandwidth> {
+        &self.bandwidth
+    }
     /// <p>The provider of the link.</p>
     pub fn provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider = ::std::option::Option::Some(input.into());
@@ -195,6 +223,10 @@ impl LinkBuilder {
     pub fn set_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provider = input;
         self
+    }
+    /// <p>The provider of the link.</p>
+    pub fn get_provider(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provider
     }
     /// <p>The date and time that the link was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -209,6 +241,10 @@ impl LinkBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The date and time that the link was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The state of the link.</p>
     pub fn state(mut self, input: crate::types::LinkState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -218,6 +254,10 @@ impl LinkBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::LinkState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the link.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::LinkState> {
+        &self.state
     }
     /// Appends an item to `tags`.
     ///
@@ -237,6 +277,10 @@ impl LinkBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags for the link.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`Link`](crate::types::Link).
     pub fn build(self) -> crate::types::Link {

@@ -70,6 +70,12 @@ impl DescribeConfigRulesInputBuilder {
         self.config_rule_names = input;
         self
     }
+    /// <p>The names of the Config rules for which you want details. If you do not specify any names, Config returns details for all your rules.</p>
+    pub fn get_config_rule_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.config_rule_names
+    }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -79,6 +85,10 @@ impl DescribeConfigRulesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>Returns a list of Detective or Proactive Config rules. By default, this API returns an unfiltered list. For more information on Detective or Proactive Config rules, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config-rules.html"> <b>Evaluation Mode</b> </a> in the <i>Config Developer Guide</i>.</p>
     pub fn filters(mut self, input: crate::types::DescribeConfigRulesFilters) -> Self {
@@ -92,6 +102,10 @@ impl DescribeConfigRulesInputBuilder {
     ) -> Self {
         self.filters = input;
         self
+    }
+    /// <p>Returns a list of Detective or Proactive Config rules. By default, this API returns an unfiltered list. For more information on Detective or Proactive Config rules, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config-rules.html"> <b>Evaluation Mode</b> </a> in the <i>Config Developer Guide</i>.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::DescribeConfigRulesFilters> {
+        &self.filters
     }
     /// Consumes the builder and constructs a [`DescribeConfigRulesInput`](crate::operation::describe_config_rules::DescribeConfigRulesInput).
     pub fn build(

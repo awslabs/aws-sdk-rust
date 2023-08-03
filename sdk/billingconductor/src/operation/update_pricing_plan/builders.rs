@@ -36,6 +36,12 @@ impl UpdatePricingPlanFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdatePricingPlan as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_pricing_plan::builders::UpdatePricingPlanInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdatePricingPlanFluentBuilder {
         self.inner = self.inner.set_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're updating. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
+    }
     /// <p>The name of the pricing plan. The name must be unique to each pricing plan. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -136,6 +146,10 @@ impl UpdatePricingPlanFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the pricing plan. The name must be unique to each pricing plan. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The description of the pricing plan. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -145,5 +159,9 @@ impl UpdatePricingPlanFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the pricing plan. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
 }

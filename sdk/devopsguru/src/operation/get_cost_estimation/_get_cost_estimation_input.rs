@@ -40,6 +40,10 @@ impl GetCostEstimationInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Consumes the builder and constructs a [`GetCostEstimationInput`](crate::operation::get_cost_estimation::GetCostEstimationInput).
     pub fn build(
         self,

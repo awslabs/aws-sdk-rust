@@ -57,6 +57,10 @@ impl ColumnLevelPermissionRuleBuilder {
         self.principals = input;
         self
     }
+    /// <p>An array of Amazon Resource Names (ARNs) for Amazon QuickSight users or groups.</p>
+    pub fn get_principals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.principals
+    }
     /// Appends an item to `column_names`.
     ///
     /// To override the contents of this collection use [`set_column_names`](Self::set_column_names).
@@ -75,6 +79,12 @@ impl ColumnLevelPermissionRuleBuilder {
     ) -> Self {
         self.column_names = input;
         self
+    }
+    /// <p>An array of column names.</p>
+    pub fn get_column_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.column_names
     }
     /// Consumes the builder and constructs a [`ColumnLevelPermissionRule`](crate::types::ColumnLevelPermissionRule).
     pub fn build(self) -> crate::types::ColumnLevelPermissionRule {

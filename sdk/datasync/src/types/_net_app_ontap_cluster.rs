@@ -125,6 +125,10 @@ impl NetAppOntapClusterBuilder {
         self.cifs_share_count = input;
         self
     }
+    /// <p>The number of CIFS shares in the cluster.</p>
+    pub fn get_cifs_share_count(&self) -> &::std::option::Option<i64> {
+        &self.cifs_share_count
+    }
     /// <p>The number of NFS volumes in the cluster.</p>
     pub fn nfs_exported_volumes(mut self, input: i64) -> Self {
         self.nfs_exported_volumes = ::std::option::Option::Some(input);
@@ -134,6 +138,10 @@ impl NetAppOntapClusterBuilder {
     pub fn set_nfs_exported_volumes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.nfs_exported_volumes = input;
         self
+    }
+    /// <p>The number of NFS volumes in the cluster.</p>
+    pub fn get_nfs_exported_volumes(&self) -> &::std::option::Option<i64> {
+        &self.nfs_exported_volumes
     }
     /// <p>The universally unique identifier (UUID) of the cluster.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -145,6 +153,10 @@ impl NetAppOntapClusterBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The universally unique identifier (UUID) of the cluster.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>The name of the cluster.</p>
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
@@ -154,6 +166,10 @@ impl NetAppOntapClusterBuilder {
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_name = input;
         self
+    }
+    /// <p>The name of the cluster.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_name
     }
     /// <p>The performance data that DataSync Discovery collects about the cluster.</p>
     pub fn max_p95_performance(mut self, input: crate::types::MaxP95Performance) -> Self {
@@ -168,6 +184,12 @@ impl NetAppOntapClusterBuilder {
         self.max_p95_performance = input;
         self
     }
+    /// <p>The performance data that DataSync Discovery collects about the cluster.</p>
+    pub fn get_max_p95_performance(
+        &self,
+    ) -> &::std::option::Option<crate::types::MaxP95Performance> {
+        &self.max_p95_performance
+    }
     /// <p>The total storage space that's available in the cluster.</p>
     pub fn cluster_block_storage_size(mut self, input: i64) -> Self {
         self.cluster_block_storage_size = ::std::option::Option::Some(input);
@@ -178,6 +200,10 @@ impl NetAppOntapClusterBuilder {
         self.cluster_block_storage_size = input;
         self
     }
+    /// <p>The total storage space that's available in the cluster.</p>
+    pub fn get_cluster_block_storage_size(&self) -> &::std::option::Option<i64> {
+        &self.cluster_block_storage_size
+    }
     /// <p>The storage space that's being used in a cluster.</p>
     pub fn cluster_block_storage_used(mut self, input: i64) -> Self {
         self.cluster_block_storage_used = ::std::option::Option::Some(input);
@@ -187,6 +213,10 @@ impl NetAppOntapClusterBuilder {
     pub fn set_cluster_block_storage_used(mut self, input: ::std::option::Option<i64>) -> Self {
         self.cluster_block_storage_used = input;
         self
+    }
+    /// <p>The storage space that's being used in a cluster.</p>
+    pub fn get_cluster_block_storage_used(&self) -> &::std::option::Option<i64> {
+        &self.cluster_block_storage_used
     }
     /// <p>The storage space that's being used in the cluster without accounting for compression or deduplication.</p>
     pub fn cluster_block_storage_logical_used(mut self, input: i64) -> Self {
@@ -200,6 +230,10 @@ impl NetAppOntapClusterBuilder {
     ) -> Self {
         self.cluster_block_storage_logical_used = input;
         self
+    }
+    /// <p>The storage space that's being used in the cluster without accounting for compression or deduplication.</p>
+    pub fn get_cluster_block_storage_logical_used(&self) -> &::std::option::Option<i64> {
+        &self.cluster_block_storage_logical_used
     }
     /// Appends an item to `recommendations`.
     ///
@@ -220,6 +254,12 @@ impl NetAppOntapClusterBuilder {
         self.recommendations = input;
         self
     }
+    /// <p>The Amazon Web Services storage services that DataSync Discovery recommends for the cluster. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-recommendations.html">Recommendations provided by DataSync Discovery</a>.</p>
+    pub fn get_recommendations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Recommendation>> {
+        &self.recommendations
+    }
     /// <p>Indicates whether DataSync Discovery recommendations for the cluster are ready to view, incomplete, or can't be determined.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#recommendation-statuses-table">Recommendation statuses</a>.</p>
     pub fn recommendation_status(mut self, input: crate::types::RecommendationStatus) -> Self {
@@ -235,6 +275,13 @@ impl NetAppOntapClusterBuilder {
         self.recommendation_status = input;
         self
     }
+    /// <p>Indicates whether DataSync Discovery recommendations for the cluster are ready to view, incomplete, or can't be determined.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#recommendation-statuses-table">Recommendation statuses</a>.</p>
+    pub fn get_recommendation_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecommendationStatus> {
+        &self.recommendation_status
+    }
     /// <p>The number of LUNs (logical unit numbers) in the cluster.</p>
     pub fn lun_count(mut self, input: i64) -> Self {
         self.lun_count = ::std::option::Option::Some(input);
@@ -244,6 +291,10 @@ impl NetAppOntapClusterBuilder {
     pub fn set_lun_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.lun_count = input;
         self
+    }
+    /// <p>The number of LUNs (logical unit numbers) in the cluster.</p>
+    pub fn get_lun_count(&self) -> &::std::option::Option<i64> {
+        &self.lun_count
     }
     /// Consumes the builder and constructs a [`NetAppOntapCluster`](crate::types::NetAppOntapCluster).
     pub fn build(self) -> crate::types::NetAppOntapCluster {

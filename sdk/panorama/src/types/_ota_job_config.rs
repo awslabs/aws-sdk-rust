@@ -54,6 +54,10 @@ impl OtaJobConfigBuilder {
         self.image_version = input;
         self
     }
+    /// <p>The target version of the device software.</p>
+    pub fn get_image_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_version
+    }
     /// <p>Whether to apply the update if it is a major version change.</p>
     pub fn allow_major_version_update(mut self, input: bool) -> Self {
         self.allow_major_version_update = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl OtaJobConfigBuilder {
     pub fn set_allow_major_version_update(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_major_version_update = input;
         self
+    }
+    /// <p>Whether to apply the update if it is a major version change.</p>
+    pub fn get_allow_major_version_update(&self) -> &::std::option::Option<bool> {
+        &self.allow_major_version_update
     }
     /// Consumes the builder and constructs a [`OtaJobConfig`](crate::types::OtaJobConfig).
     pub fn build(self) -> crate::types::OtaJobConfig {

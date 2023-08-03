@@ -36,6 +36,12 @@ impl UpdateCommentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateComment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_comment::builders::UpdateCommentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl UpdateCommentFluentBuilder {
         self.inner = self.inner.set_comment_id(input);
         self
     }
+    /// <p>The system-generated ID of the comment you want to update. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
+    pub fn get_comment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_comment_id()
+    }
     /// <p>The updated content to replace the existing content of the comment.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.content(input.into());
@@ -127,5 +137,9 @@ impl UpdateCommentFluentBuilder {
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_content(input);
         self
+    }
+    /// <p>The updated content to replace the existing content of the comment.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_content()
     }
 }

@@ -36,6 +36,12 @@ impl ListNetworkSitesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListNetworkSites as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_network_sites::builders::ListNetworkSitesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -161,6 +167,21 @@ impl ListNetworkSitesFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>The filters. Add filters to your request to return a more specific list of results. Use filters to match the status of the network sites.</p>
+    /// <ul>
+    /// <li> <p> <code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>CREATED</code> | <code>DELETED</code> | <code>DEPROVISIONING</code> | <code>PROVISIONING</code>).</p> </li>
+    /// </ul>
+    /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::NetworkSiteFilterKeys,
+            ::std::vec::Vec<::std::string::String>,
+        >,
+    > {
+        self.inner.get_filters()
+    }
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
     pub fn network_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_arn(input.into());
@@ -170,6 +191,10 @@ impl ListNetworkSitesFluentBuilder {
     pub fn set_network_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the network.</p>
+    pub fn get_network_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_network_arn()
     }
     /// <p>The token for the next page of results.</p>
     pub fn start_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -181,6 +206,10 @@ impl ListNetworkSitesFluentBuilder {
         self.inner = self.inner.set_start_token(input);
         self
     }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_start_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_start_token()
+    }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -190,5 +219,9 @@ impl ListNetworkSitesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

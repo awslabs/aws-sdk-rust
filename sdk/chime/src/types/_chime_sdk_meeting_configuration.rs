@@ -55,6 +55,12 @@ impl ChimeSdkMeetingConfigurationBuilder {
         self.source_configuration = input;
         self
     }
+    /// <p>The source configuration for a specified media capture pipeline.</p>
+    pub fn get_source_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SourceConfiguration> {
+        &self.source_configuration
+    }
     /// <p>The configuration for the artifacts in an Amazon Chime SDK meeting.</p>
     pub fn artifacts_configuration(mut self, input: crate::types::ArtifactsConfiguration) -> Self {
         self.artifacts_configuration = ::std::option::Option::Some(input);
@@ -67,6 +73,12 @@ impl ChimeSdkMeetingConfigurationBuilder {
     ) -> Self {
         self.artifacts_configuration = input;
         self
+    }
+    /// <p>The configuration for the artifacts in an Amazon Chime SDK meeting.</p>
+    pub fn get_artifacts_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ArtifactsConfiguration> {
+        &self.artifacts_configuration
     }
     /// Consumes the builder and constructs a [`ChimeSdkMeetingConfiguration`](crate::types::ChimeSdkMeetingConfiguration).
     pub fn build(self) -> crate::types::ChimeSdkMeetingConfiguration {

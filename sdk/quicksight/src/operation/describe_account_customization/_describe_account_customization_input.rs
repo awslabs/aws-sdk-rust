@@ -61,6 +61,10 @@ impl DescribeAccountCustomizationInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The ID for the Amazon Web Services account that you want to describe Amazon QuickSight customizations for.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The Amazon QuickSight namespace that you want to describe Amazon QuickSight customizations for.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl DescribeAccountCustomizationInputBuilder {
         self.namespace = input;
         self
     }
+    /// <p>The Amazon QuickSight namespace that you want to describe Amazon QuickSight customizations for.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
+    }
     /// <p>The <code>Resolved</code> flag works with the other parameters to determine which view of Amazon QuickSight customizations is returned. You can add this flag to your command to use the same view that Amazon QuickSight uses to identify which customizations to apply to the console. Omit this flag, or set it to <code>no-resolved</code>, to reveal customizations that are configured at different levels. </p>
     pub fn resolved(mut self, input: bool) -> Self {
         self.resolved = ::std::option::Option::Some(input);
@@ -80,6 +88,10 @@ impl DescribeAccountCustomizationInputBuilder {
     pub fn set_resolved(mut self, input: ::std::option::Option<bool>) -> Self {
         self.resolved = input;
         self
+    }
+    /// <p>The <code>Resolved</code> flag works with the other parameters to determine which view of Amazon QuickSight customizations is returned. You can add this flag to your command to use the same view that Amazon QuickSight uses to identify which customizations to apply to the console. Omit this flag, or set it to <code>no-resolved</code>, to reveal customizations that are configured at different levels. </p>
+    pub fn get_resolved(&self) -> &::std::option::Option<bool> {
+        &self.resolved
     }
     /// Consumes the builder and constructs a [`DescribeAccountCustomizationInput`](crate::operation::describe_account_customization::DescribeAccountCustomizationInput).
     pub fn build(

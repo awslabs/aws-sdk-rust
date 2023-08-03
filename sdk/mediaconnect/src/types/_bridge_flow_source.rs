@@ -67,6 +67,10 @@ impl BridgeFlowSourceBuilder {
         self.flow_arn = input;
         self
     }
+    /// The ARN of the cloud flow used as a source of this bridge.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_arn
+    }
     /// The name of the VPC interface attachment to use for this source.
     pub fn flow_vpc_interface_attachment(
         mut self,
@@ -83,6 +87,12 @@ impl BridgeFlowSourceBuilder {
         self.flow_vpc_interface_attachment = input;
         self
     }
+    /// The name of the VPC interface attachment to use for this source.
+    pub fn get_flow_vpc_interface_attachment(
+        &self,
+    ) -> &::std::option::Option<crate::types::VpcInterfaceAttachment> {
+        &self.flow_vpc_interface_attachment
+    }
     /// The name of the flow source.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -93,6 +103,10 @@ impl BridgeFlowSourceBuilder {
         self.name = input;
         self
     }
+    /// The name of the flow source.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// The Amazon Resource Number (ARN) of the output.
     pub fn output_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_arn = ::std::option::Option::Some(input.into());
@@ -102,6 +116,10 @@ impl BridgeFlowSourceBuilder {
     pub fn set_output_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_arn = input;
         self
+    }
+    /// The Amazon Resource Number (ARN) of the output.
+    pub fn get_output_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_arn
     }
     /// Consumes the builder and constructs a [`BridgeFlowSource`](crate::types::BridgeFlowSource).
     pub fn build(self) -> crate::types::BridgeFlowSource {

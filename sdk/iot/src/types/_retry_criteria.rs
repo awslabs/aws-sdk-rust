@@ -51,6 +51,10 @@ impl RetryCriteriaBuilder {
         self.failure_type = input;
         self
     }
+    /// <p>The type of job execution failures that can initiate a job retry.</p>
+    pub fn get_failure_type(&self) -> &::std::option::Option<crate::types::RetryableFailureType> {
+        &self.failure_type
+    }
     /// <p>The number of retries allowed for a failure type for the job.</p>
     pub fn number_of_retries(mut self, input: i32) -> Self {
         self.number_of_retries = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl RetryCriteriaBuilder {
     pub fn set_number_of_retries(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_retries = input;
         self
+    }
+    /// <p>The number of retries allowed for a failure type for the job.</p>
+    pub fn get_number_of_retries(&self) -> &::std::option::Option<i32> {
+        &self.number_of_retries
     }
     /// Consumes the builder and constructs a [`RetryCriteria`](crate::types::RetryCriteria).
     pub fn build(self) -> crate::types::RetryCriteria {

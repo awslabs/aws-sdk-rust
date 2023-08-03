@@ -81,6 +81,10 @@ impl GetReadinessCheckStatusOutputBuilder {
         self.messages = input;
         self
     }
+    /// <p>Top level messages for readiness check status</p>
+    pub fn get_messages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Message>> {
+        &self.messages
+    }
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -91,6 +95,10 @@ impl GetReadinessCheckStatusOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token that identifies which batch of results you want to see.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The readiness at rule level.</p>
     pub fn readiness(mut self, input: crate::types::Readiness) -> Self {
         self.readiness = ::std::option::Option::Some(input);
@@ -100,6 +108,10 @@ impl GetReadinessCheckStatusOutputBuilder {
     pub fn set_readiness(mut self, input: ::std::option::Option<crate::types::Readiness>) -> Self {
         self.readiness = input;
         self
+    }
+    /// <p>The readiness at rule level.</p>
+    pub fn get_readiness(&self) -> &::std::option::Option<crate::types::Readiness> {
+        &self.readiness
     }
     /// Appends an item to `resources`.
     ///
@@ -119,6 +131,12 @@ impl GetReadinessCheckStatusOutputBuilder {
     ) -> Self {
         self.resources = input;
         self
+    }
+    /// <p>Summary of the readiness of resources.</p>
+    pub fn get_resources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceResult>> {
+        &self.resources
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

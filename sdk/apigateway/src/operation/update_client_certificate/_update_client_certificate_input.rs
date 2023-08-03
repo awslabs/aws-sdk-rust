@@ -57,6 +57,10 @@ impl UpdateClientCertificateInputBuilder {
         self.client_certificate_id = input;
         self
     }
+    /// <p>The identifier of the ClientCertificate resource to be updated.</p>
+    pub fn get_client_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_certificate_id
+    }
     /// Appends an item to `patch_operations`.
     ///
     /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
@@ -75,6 +79,12 @@ impl UpdateClientCertificateInputBuilder {
     ) -> Self {
         self.patch_operations = input;
         self
+    }
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    pub fn get_patch_operations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
+        &self.patch_operations
     }
     /// Consumes the builder and constructs a [`UpdateClientCertificateInput`](crate::operation::update_client_certificate::UpdateClientCertificateInput).
     pub fn build(

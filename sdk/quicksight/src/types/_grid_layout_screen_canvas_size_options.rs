@@ -67,6 +67,14 @@ impl GridLayoutScreenCanvasSizeOptionsBuilder {
         self.resize_option = input;
         self
     }
+    /// <p>This value determines the layout behavior when the viewport is resized.</p>
+    /// <ul>
+    /// <li> <p> <code>FIXED</code>: A fixed width will be used when optimizing the layout. In the Amazon QuickSight console, this option is called <code>Classic</code>.</p> </li>
+    /// <li> <p> <code>RESPONSIVE</code>: The width of the canvas will be responsive and optimized to the view port. In the Amazon QuickSight console, this option is called <code>Tiled</code>.</p> </li>
+    /// </ul>
+    pub fn get_resize_option(&self) -> &::std::option::Option<crate::types::ResizeOption> {
+        &self.resize_option
+    }
     /// <p>The width that the view port will be optimized for when the layout renders.</p>
     pub fn optimized_view_port_width(
         mut self,
@@ -82,6 +90,10 @@ impl GridLayoutScreenCanvasSizeOptionsBuilder {
     ) -> Self {
         self.optimized_view_port_width = input;
         self
+    }
+    /// <p>The width that the view port will be optimized for when the layout renders.</p>
+    pub fn get_optimized_view_port_width(&self) -> &::std::option::Option<::std::string::String> {
+        &self.optimized_view_port_width
     }
     /// Consumes the builder and constructs a [`GridLayoutScreenCanvasSizeOptions`](crate::types::GridLayoutScreenCanvasSizeOptions).
     pub fn build(self) -> crate::types::GridLayoutScreenCanvasSizeOptions {

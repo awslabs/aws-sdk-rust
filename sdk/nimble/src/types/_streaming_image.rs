@@ -168,6 +168,10 @@ impl StreamingImageBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>A human-readable description of the streaming image.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -178,6 +182,10 @@ impl StreamingImageBuilder {
         self.description = input;
         self
     }
+    /// <p>A human-readable description of the streaming image.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The ID of an EC2 machine image with which to create the streaming image.</p>
     pub fn ec2_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_image_id = ::std::option::Option::Some(input.into());
@@ -187,6 +195,10 @@ impl StreamingImageBuilder {
     pub fn set_ec2_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ec2_image_id = input;
         self
+    }
+    /// <p>The ID of an EC2 machine image with which to create the streaming image.</p>
+    pub fn get_ec2_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ec2_image_id
     }
     /// <p>The encryption configuration.</p>
     pub fn encryption_configuration(
@@ -203,6 +215,12 @@ impl StreamingImageBuilder {
     ) -> Self {
         self.encryption_configuration = input;
         self
+    }
+    /// <p>The encryption configuration.</p>
+    pub fn get_encryption_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::StreamingImageEncryptionConfiguration> {
+        &self.encryption_configuration
     }
     /// Appends an item to `eula_ids`.
     ///
@@ -223,6 +241,10 @@ impl StreamingImageBuilder {
         self.eula_ids = input;
         self
     }
+    /// <p>The list of EULAs that must be accepted before a Streaming Session can be started using this streaming image.</p>
+    pub fn get_eula_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.eula_ids
+    }
     /// <p>A friendly name for a streaming image resource.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -232,6 +254,10 @@ impl StreamingImageBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A friendly name for a streaming image resource.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The owner of the streaming image, either the <code>studioId</code> that contains the streaming image, or <code>amazon</code> for images that are provided by Amazon Nimble Studio.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -243,6 +269,10 @@ impl StreamingImageBuilder {
         self.owner = input;
         self
     }
+    /// <p>The owner of the streaming image, either the <code>studioId</code> that contains the streaming image, or <code>amazon</code> for images that are provided by Amazon Nimble Studio.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
+    }
     /// <p>The platform of the streaming image, either Windows or Linux.</p>
     pub fn platform(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform = ::std::option::Option::Some(input.into());
@@ -252,6 +282,10 @@ impl StreamingImageBuilder {
     pub fn set_platform(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform = input;
         self
+    }
+    /// <p>The platform of the streaming image, either Windows or Linux.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform
     }
     /// <p>The current state.</p>
     pub fn state(mut self, input: crate::types::StreamingImageState) -> Self {
@@ -266,6 +300,10 @@ impl StreamingImageBuilder {
         self.state = input;
         self
     }
+    /// <p>The current state.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::StreamingImageState> {
+        &self.state
+    }
     /// <p>The status code.</p>
     pub fn status_code(mut self, input: crate::types::StreamingImageStatusCode) -> Self {
         self.status_code = ::std::option::Option::Some(input);
@@ -278,6 +316,12 @@ impl StreamingImageBuilder {
     ) -> Self {
         self.status_code = input;
         self
+    }
+    /// <p>The status code.</p>
+    pub fn get_status_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::StreamingImageStatusCode> {
+        &self.status_code
     }
     /// <p>The status message for the streaming image.</p>
     pub fn status_message(
@@ -295,6 +339,10 @@ impl StreamingImageBuilder {
         self.status_message = input;
         self
     }
+    /// <p>The status message for the streaming image.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>The ID of the streaming image.</p>
     pub fn streaming_image_id(
         mut self,
@@ -310,6 +358,10 @@ impl StreamingImageBuilder {
     ) -> Self {
         self.streaming_image_id = input;
         self
+    }
+    /// <p>The ID of the streaming image.</p>
+    pub fn get_streaming_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.streaming_image_id
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -335,6 +387,14 @@ impl StreamingImageBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`StreamingImage`](crate::types::StreamingImage).
     pub fn build(self) -> crate::types::StreamingImage {

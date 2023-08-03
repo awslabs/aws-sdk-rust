@@ -54,6 +54,10 @@ impl AssociateTeamMemberOutputBuilder {
         self.client_request_token = input;
         self
     }
+    /// <p>The user- or system-generated token from the initial request that can be used to repeat the request.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

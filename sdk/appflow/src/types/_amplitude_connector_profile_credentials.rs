@@ -54,6 +54,10 @@ impl AmplitudeConnectorProfileCredentialsBuilder {
         self.api_key = input;
         self
     }
+    /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API. </p>
+    pub fn get_api_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_key
+    }
     /// <p> The Secret Access Key portion of the credentials. </p>
     pub fn secret_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_key = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl AmplitudeConnectorProfileCredentialsBuilder {
     pub fn set_secret_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_key = input;
         self
+    }
+    /// <p> The Secret Access Key portion of the credentials. </p>
+    pub fn get_secret_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_key
     }
     /// Consumes the builder and constructs a [`AmplitudeConnectorProfileCredentials`](crate::types::AmplitudeConnectorProfileCredentials).
     pub fn build(self) -> crate::types::AmplitudeConnectorProfileCredentials {

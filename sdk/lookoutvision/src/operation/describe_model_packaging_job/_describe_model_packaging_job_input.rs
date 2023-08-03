@@ -47,6 +47,10 @@ impl DescribeModelPackagingJobInputBuilder {
         self.project_name = input;
         self
     }
+    /// <p>The name of the project that contains the model packaging job that you want to describe. </p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
+    }
     /// <p>The job name for the model packaging job. </p>
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DescribeModelPackagingJobInputBuilder {
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_name = input;
         self
+    }
+    /// <p>The job name for the model packaging job. </p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
     }
     /// Consumes the builder and constructs a [`DescribeModelPackagingJobInput`](crate::operation::describe_model_packaging_job::DescribeModelPackagingJobInput).
     pub fn build(

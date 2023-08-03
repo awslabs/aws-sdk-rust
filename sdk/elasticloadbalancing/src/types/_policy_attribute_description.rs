@@ -54,6 +54,10 @@ impl PolicyAttributeDescriptionBuilder {
         self.attribute_name = input;
         self
     }
+    /// <p>The name of the attribute.</p>
+    pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_name
+    }
     /// <p>The value of the attribute.</p>
     pub fn attribute_value(
         mut self,
@@ -69,6 +73,10 @@ impl PolicyAttributeDescriptionBuilder {
     ) -> Self {
         self.attribute_value = input;
         self
+    }
+    /// <p>The value of the attribute.</p>
+    pub fn get_attribute_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_value
     }
     /// Consumes the builder and constructs a [`PolicyAttributeDescription`](crate::types::PolicyAttributeDescription).
     pub fn build(self) -> crate::types::PolicyAttributeDescription {

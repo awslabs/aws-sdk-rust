@@ -72,6 +72,10 @@ impl AnomalyGroupSummaryBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The start time for the group.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_time
+    }
     /// <p>The end time for the group.</p>
     pub fn end_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.end_time = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl AnomalyGroupSummaryBuilder {
     pub fn set_end_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The end time for the group.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.end_time
     }
     /// <p>The ID of the anomaly group.</p>
     pub fn anomaly_group_id(
@@ -98,6 +106,10 @@ impl AnomalyGroupSummaryBuilder {
         self.anomaly_group_id = input;
         self
     }
+    /// <p>The ID of the anomaly group.</p>
+    pub fn get_anomaly_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.anomaly_group_id
+    }
     /// <p>The severity score of the group.</p>
     pub fn anomaly_group_score(mut self, input: f64) -> Self {
         self.anomaly_group_score = ::std::option::Option::Some(input);
@@ -107,6 +119,10 @@ impl AnomalyGroupSummaryBuilder {
     pub fn set_anomaly_group_score(mut self, input: ::std::option::Option<f64>) -> Self {
         self.anomaly_group_score = input;
         self
+    }
+    /// <p>The severity score of the group.</p>
+    pub fn get_anomaly_group_score(&self) -> &::std::option::Option<f64> {
+        &self.anomaly_group_score
     }
     /// <p>The name of the primary affected measure for the group.</p>
     pub fn primary_metric_name(
@@ -123,6 +139,10 @@ impl AnomalyGroupSummaryBuilder {
     ) -> Self {
         self.primary_metric_name = input;
         self
+    }
+    /// <p>The name of the primary affected measure for the group.</p>
+    pub fn get_primary_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.primary_metric_name
     }
     /// Consumes the builder and constructs a [`AnomalyGroupSummary`](crate::types::AnomalyGroupSummary).
     pub fn build(self) -> crate::types::AnomalyGroupSummary {

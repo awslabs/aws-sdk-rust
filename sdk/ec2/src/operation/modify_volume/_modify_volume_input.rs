@@ -123,6 +123,10 @@ impl ModifyVolumeInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The ID of the volume.</p>
     pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_id = ::std::option::Option::Some(input.into());
@@ -132,6 +136,10 @@ impl ModifyVolumeInputBuilder {
     pub fn set_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_id = input;
         self
+    }
+    /// <p>The ID of the volume.</p>
+    pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_id
     }
     /// <p>The target size of the volume, in GiB. The target volume size must be greater than or equal to the existing size of the volume.</p>
     /// <p>The following are the supported volumes sizes for each volume type:</p>
@@ -159,6 +167,18 @@ impl ModifyVolumeInputBuilder {
         self.size = input;
         self
     }
+    /// <p>The target size of the volume, in GiB. The target volume size must be greater than or equal to the existing size of the volume.</p>
+    /// <p>The following are the supported volumes sizes for each volume type:</p>
+    /// <ul>
+    /// <li> <p> <code>gp2</code> and <code>gp3</code>: 1-16,384</p> </li>
+    /// <li> <p> <code>io1</code> and <code>io2</code>: 4-16,384</p> </li>
+    /// <li> <p> <code>st1</code> and <code>sc1</code>: 125-16,384</p> </li>
+    /// <li> <p> <code>standard</code>: 1-1,024</p> </li>
+    /// </ul>
+    /// <p>Default: The existing size is retained.</p>
+    pub fn get_size(&self) -> &::std::option::Option<i32> {
+        &self.size
+    }
     /// <p>The target EBS volume type of the volume. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// <p>Default: The existing type is retained.</p>
     pub fn volume_type(mut self, input: crate::types::VolumeType) -> Self {
@@ -173,6 +193,11 @@ impl ModifyVolumeInputBuilder {
     ) -> Self {
         self.volume_type = input;
         self
+    }
+    /// <p>The target EBS volume type of the volume. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>Default: The existing type is retained.</p>
+    pub fn get_volume_type(&self) -> &::std::option::Option<crate::types::VolumeType> {
+        &self.volume_type
     }
     /// <p>The target IOPS rate of the volume. This parameter is valid only for <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes.</p>
     /// <p>The following are the supported values for each volume type:</p>
@@ -198,6 +223,17 @@ impl ModifyVolumeInputBuilder {
         self.iops = input;
         self
     }
+    /// <p>The target IOPS rate of the volume. This parameter is valid only for <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes.</p>
+    /// <p>The following are the supported values for each volume type:</p>
+    /// <ul>
+    /// <li> <p> <code>gp3</code>: 3,000-16,000 IOPS</p> </li>
+    /// <li> <p> <code>io1</code>: 100-64,000 IOPS</p> </li>
+    /// <li> <p> <code>io2</code>: 100-64,000 IOPS</p> </li>
+    /// </ul>
+    /// <p>Default: The existing value is retained if you keep the same volume type. If you change the volume type to <code>io1</code>, <code>io2</code>, or <code>gp3</code>, the default is 3,000.</p>
+    pub fn get_iops(&self) -> &::std::option::Option<i32> {
+        &self.iops
+    }
     /// <p>The target throughput of the volume, in MiB/s. This parameter is valid only for <code>gp3</code> volumes. The maximum value is 1,000.</p>
     /// <p>Default: The existing value is retained if the source and target volume type is <code>gp3</code>. Otherwise, the default value is 125.</p>
     /// <p>Valid Range: Minimum value of 125. Maximum value of 1000.</p>
@@ -212,6 +248,12 @@ impl ModifyVolumeInputBuilder {
         self.throughput = input;
         self
     }
+    /// <p>The target throughput of the volume, in MiB/s. This parameter is valid only for <code>gp3</code> volumes. The maximum value is 1,000.</p>
+    /// <p>Default: The existing value is retained if the source and target volume type is <code>gp3</code>. Otherwise, the default value is 125.</p>
+    /// <p>Valid Range: Minimum value of 125. Maximum value of 1000.</p>
+    pub fn get_throughput(&self) -> &::std::option::Option<i32> {
+        &self.throughput
+    }
     /// <p>Specifies whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you can attach the volume to up to 16 <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"> Nitro-based instances</a> in the same Availability Zone. This parameter is supported with <code>io1</code> and <code>io2</code> volumes only. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html"> Amazon EBS Multi-Attach</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn multi_attach_enabled(mut self, input: bool) -> Self {
         self.multi_attach_enabled = ::std::option::Option::Some(input);
@@ -221,6 +263,10 @@ impl ModifyVolumeInputBuilder {
     pub fn set_multi_attach_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.multi_attach_enabled = input;
         self
+    }
+    /// <p>Specifies whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you can attach the volume to up to 16 <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"> Nitro-based instances</a> in the same Availability Zone. This parameter is supported with <code>io1</code> and <code>io2</code> volumes only. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html"> Amazon EBS Multi-Attach</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    pub fn get_multi_attach_enabled(&self) -> &::std::option::Option<bool> {
+        &self.multi_attach_enabled
     }
     /// Consumes the builder and constructs a [`ModifyVolumeInput`](crate::operation::modify_volume::ModifyVolumeInput).
     pub fn build(

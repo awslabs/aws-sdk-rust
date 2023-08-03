@@ -47,6 +47,10 @@ impl DescribeAppAssessmentInputBuilder {
         self.assessment_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    pub fn get_assessment_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_arn
+    }
     /// Consumes the builder and constructs a [`DescribeAppAssessmentInput`](crate::operation::describe_app_assessment::DescribeAppAssessmentInput).
     pub fn build(
         self,

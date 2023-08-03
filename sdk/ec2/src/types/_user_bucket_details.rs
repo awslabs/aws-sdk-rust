@@ -48,6 +48,10 @@ impl UserBucketDetailsBuilder {
         self.s3_bucket = input;
         self
     }
+    /// <p>The Amazon S3 bucket from which the disk image was created.</p>
+    pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket
+    }
     /// <p>The file name of the disk image.</p>
     pub fn s3_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_key = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl UserBucketDetailsBuilder {
     pub fn set_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_key = input;
         self
+    }
+    /// <p>The file name of the disk image.</p>
+    pub fn get_s3_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_key
     }
     /// Consumes the builder and constructs a [`UserBucketDetails`](crate::types::UserBucketDetails).
     pub fn build(self) -> crate::types::UserBucketDetails {

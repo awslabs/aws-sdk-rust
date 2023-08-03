@@ -161,6 +161,10 @@ impl ChannelMessageSummaryBuilder {
         self.message_id = input;
         self
     }
+    /// <p>The ID of the message.</p>
+    pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_id
+    }
     /// <p>The content of the channel message. For Amazon Lex V2 bot responses, this field holds a list of messages originating from the bot. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
@@ -171,6 +175,10 @@ impl ChannelMessageSummaryBuilder {
         self.content = input;
         self
     }
+    /// <p>The content of the channel message. For Amazon Lex V2 bot responses, this field holds a list of messages originating from the bot. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
+    }
     /// <p>The metadata of the message.</p>
     pub fn metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metadata = ::std::option::Option::Some(input.into());
@@ -180,6 +188,10 @@ impl ChannelMessageSummaryBuilder {
     pub fn set_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metadata = input;
         self
+    }
+    /// <p>The metadata of the message.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metadata
     }
     /// <p>The type of message.</p>
     pub fn r#type(mut self, input: crate::types::ChannelMessageType) -> Self {
@@ -194,6 +206,10 @@ impl ChannelMessageSummaryBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of message.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ChannelMessageType> {
+        &self.r#type
+    }
     /// <p>The time at which the message summary was created.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_timestamp = ::std::option::Option::Some(input);
@@ -206,6 +222,10 @@ impl ChannelMessageSummaryBuilder {
     ) -> Self {
         self.created_timestamp = input;
         self
+    }
+    /// <p>The time at which the message summary was created.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
     }
     /// <p>The time at which a message was last updated.</p>
     pub fn last_updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -220,6 +240,12 @@ impl ChannelMessageSummaryBuilder {
         self.last_updated_timestamp = input;
         self
     }
+    /// <p>The time at which a message was last updated.</p>
+    pub fn get_last_updated_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_timestamp
+    }
     /// <p>The time at which a message was last edited.</p>
     pub fn last_edited_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_edited_timestamp = ::std::option::Option::Some(input);
@@ -233,6 +259,12 @@ impl ChannelMessageSummaryBuilder {
         self.last_edited_timestamp = input;
         self
     }
+    /// <p>The time at which a message was last edited.</p>
+    pub fn get_last_edited_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_edited_timestamp
+    }
     /// <p>The message sender.</p>
     pub fn sender(mut self, input: crate::types::Identity) -> Self {
         self.sender = ::std::option::Option::Some(input);
@@ -243,6 +275,10 @@ impl ChannelMessageSummaryBuilder {
         self.sender = input;
         self
     }
+    /// <p>The message sender.</p>
+    pub fn get_sender(&self) -> &::std::option::Option<crate::types::Identity> {
+        &self.sender
+    }
     /// <p>Indicates whether a message was redacted.</p>
     pub fn redacted(mut self, input: bool) -> Self {
         self.redacted = ::std::option::Option::Some(input);
@@ -252,6 +288,10 @@ impl ChannelMessageSummaryBuilder {
     pub fn set_redacted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.redacted = input;
         self
+    }
+    /// <p>Indicates whether a message was redacted.</p>
+    pub fn get_redacted(&self) -> &::std::option::Option<bool> {
+        &self.redacted
     }
     /// <p>The message status. The status value is <code>SENT</code> for messages sent to a channel without a channel flow. For channels associated with channel flow, the value determines the processing stage.</p>
     pub fn status(mut self, input: crate::types::ChannelMessageStatusStructure) -> Self {
@@ -265,6 +305,12 @@ impl ChannelMessageSummaryBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The message status. The status value is <code>SENT</code> for messages sent to a channel without a channel flow. For channels associated with channel flow, the value determines the processing stage.</p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ChannelMessageStatusStructure> {
+        &self.status
     }
     /// Adds a key-value pair to `message_attributes`.
     ///
@@ -291,6 +337,14 @@ impl ChannelMessageSummaryBuilder {
         self.message_attributes = input;
         self
     }
+    /// <p>The attributes for the channel message. For Amazon Lex V2 bot responses, the attributes are mapped to specific fields from the bot. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
+    pub fn get_message_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>,
+    > {
+        &self.message_attributes
+    }
     /// <p>The content type of the channel message listed in the summary. For Amazon Lex V2 bot responses, the content type is <code>application/amz-chime-lex-msgs</code> for success responses and <code>application/amz-chime-lex-error</code> for failure responses. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
@@ -300,6 +354,10 @@ impl ChannelMessageSummaryBuilder {
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
+    }
+    /// <p>The content type of the channel message listed in the summary. For Amazon Lex V2 bot responses, the content type is <code>application/amz-chime-lex-msgs</code> for success responses and <code>application/amz-chime-lex-error</code> for failure responses. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
     }
     /// Appends an item to `target`.
     ///
@@ -319,6 +377,10 @@ impl ChannelMessageSummaryBuilder {
     ) -> Self {
         self.target = input;
         self
+    }
+    /// <p>The target of a message, a sender, a user, or a bot. Only the target and the sender can view targeted messages. Only users who can see targeted messages can take actions on them. However, administrators can delete targeted messages that they can’t see.</p>
+    pub fn get_target(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
+        &self.target
     }
     /// Consumes the builder and constructs a [`ChannelMessageSummary`](crate::types::ChannelMessageSummary).
     pub fn build(self) -> crate::types::ChannelMessageSummary {

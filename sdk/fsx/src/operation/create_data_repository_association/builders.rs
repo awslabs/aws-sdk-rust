@@ -39,6 +39,10 @@ impl CreateDataRepositoryAssociationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDataRepositoryAssociation as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_data_repository_association::builders::CreateDataRepositoryAssociationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -109,6 +113,10 @@ impl CreateDataRepositoryAssociationFluentBuilder {
         self.inner = self.inner.set_file_system_id(input);
         self
     }
+    /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_file_system_id()
+    }
     /// <p>A path on the file system that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping file system paths. For example, if a data repository is associated with file system path <code>/ns1/</code>, then you cannot link another data repository with file system path <code>/ns1/ns2</code>.</p>
     /// <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory.</p> <note>
     /// <p>If you specify only a forward slash (<code>/</code>) as the file system path, you can link only one data repository to the file system. You can only specify "/" as the file system path for the first data repository associated with a file system.</p>
@@ -131,6 +139,13 @@ impl CreateDataRepositoryAssociationFluentBuilder {
         self.inner = self.inner.set_file_system_path(input);
         self
     }
+    /// <p>A path on the file system that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping file system paths. For example, if a data repository is associated with file system path <code>/ns1/</code>, then you cannot link another data repository with file system path <code>/ns1/ns2</code>.</p>
+    /// <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory.</p> <note>
+    /// <p>If you specify only a forward slash (<code>/</code>) as the file system path, you can link only one data repository to the file system. You can only specify "/" as the file system path for the first data repository associated with a file system.</p>
+    /// </note>
+    pub fn get_file_system_path(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_file_system_path()
+    }
     /// <p>The path to the Amazon S3 data repository that will be linked to the file system. The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>. This path specifies where in the S3 data repository files will be imported from or exported to.</p>
     pub fn data_repository_path(
         mut self,
@@ -147,6 +162,10 @@ impl CreateDataRepositoryAssociationFluentBuilder {
         self.inner = self.inner.set_data_repository_path(input);
         self
     }
+    /// <p>The path to the Amazon S3 data repository that will be linked to the file system. The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>. This path specifies where in the S3 data repository files will be imported from or exported to.</p>
+    pub fn get_data_repository_path(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_data_repository_path()
+    }
     /// <p>Set to <code>true</code> to run an import data repository task to import metadata from the data repository to the file system after the data repository association is created. Default is <code>false</code>.</p>
     pub fn batch_import_meta_data_on_create(mut self, input: bool) -> Self {
         self.inner = self.inner.batch_import_meta_data_on_create(input);
@@ -160,6 +179,10 @@ impl CreateDataRepositoryAssociationFluentBuilder {
         self.inner = self.inner.set_batch_import_meta_data_on_create(input);
         self
     }
+    /// <p>Set to <code>true</code> to run an import data repository task to import metadata from the data repository to the file system after the data repository association is created. Default is <code>false</code>.</p>
+    pub fn get_batch_import_meta_data_on_create(&self) -> &::std::option::Option<bool> {
+        self.inner.get_batch_import_meta_data_on_create()
+    }
     /// <p>For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.</p>
     /// <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
     pub fn imported_file_chunk_size(mut self, input: i32) -> Self {
@@ -171,6 +194,11 @@ impl CreateDataRepositoryAssociationFluentBuilder {
     pub fn set_imported_file_chunk_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_imported_file_chunk_size(input);
         self
+    }
+    /// <p>For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.</p>
+    /// <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
+    pub fn get_imported_file_chunk_size(&self) -> &::std::option::Option<i32> {
+        self.inner.get_imported_file_chunk_size()
     }
     /// <p>The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data repository association. The configuration defines which file events (new, changed, or deleted files or directories) are automatically imported from the linked data repository to the file system or automatically exported from the file system to the data repository.</p>
     pub fn s3(mut self, input: crate::types::S3DataRepositoryConfiguration) -> Self {
@@ -184,6 +212,10 @@ impl CreateDataRepositoryAssociationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_s3(input);
         self
+    }
+    /// <p>The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data repository association. The configuration defines which file events (new, changed, or deleted files or directories) are automatically imported from the linked data repository to the file system or automatically exported from the file system to the data repository.</p>
+    pub fn get_s3(&self) -> &::std::option::Option<crate::types::S3DataRepositoryConfiguration> {
+        self.inner.get_s3()
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn client_request_token(
@@ -201,6 +233,10 @@ impl CreateDataRepositoryAssociationFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -217,5 +253,9 @@ impl CreateDataRepositoryAssociationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

@@ -64,6 +64,10 @@ impl TrialComponentSourceDetailBuilder {
         self.source_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the source.</p>
+    pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_arn
+    }
     /// <p>Information about a training job that's the source of a trial component.</p>
     pub fn training_job(mut self, input: crate::types::TrainingJob) -> Self {
         self.training_job = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl TrialComponentSourceDetailBuilder {
     ) -> Self {
         self.training_job = input;
         self
+    }
+    /// <p>Information about a training job that's the source of a trial component.</p>
+    pub fn get_training_job(&self) -> &::std::option::Option<crate::types::TrainingJob> {
+        &self.training_job
     }
     /// <p>Information about a processing job that's the source of a trial component.</p>
     pub fn processing_job(mut self, input: crate::types::ProcessingJob) -> Self {
@@ -90,6 +98,10 @@ impl TrialComponentSourceDetailBuilder {
         self.processing_job = input;
         self
     }
+    /// <p>Information about a processing job that's the source of a trial component.</p>
+    pub fn get_processing_job(&self) -> &::std::option::Option<crate::types::ProcessingJob> {
+        &self.processing_job
+    }
     /// <p>Information about a transform job that's the source of a trial component.</p>
     pub fn transform_job(mut self, input: crate::types::TransformJob) -> Self {
         self.transform_job = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl TrialComponentSourceDetailBuilder {
     ) -> Self {
         self.transform_job = input;
         self
+    }
+    /// <p>Information about a transform job that's the source of a trial component.</p>
+    pub fn get_transform_job(&self) -> &::std::option::Option<crate::types::TransformJob> {
+        &self.transform_job
     }
     /// Consumes the builder and constructs a [`TrialComponentSourceDetail`](crate::types::TrialComponentSourceDetail).
     pub fn build(self) -> crate::types::TrialComponentSourceDetail {

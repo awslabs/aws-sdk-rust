@@ -70,6 +70,10 @@ impl UpdateApplicationInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The unique Id of the web application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The name of the web application.</p>
     pub fn application_name(
         mut self,
@@ -85,6 +89,10 @@ impl UpdateApplicationInputBuilder {
     ) -> Self {
         self.application_name = input;
         self
+    }
+    /// <p>The name of the web application.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
     }
     /// <p>An optional description of the web application.</p>
     pub fn application_description(
@@ -102,6 +110,10 @@ impl UpdateApplicationInputBuilder {
         self.application_description = input;
         self
     }
+    /// <p>An optional description of the web application.</p>
+    pub fn get_application_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_description
+    }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -111,6 +123,10 @@ impl UpdateApplicationInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
     pub fn build(

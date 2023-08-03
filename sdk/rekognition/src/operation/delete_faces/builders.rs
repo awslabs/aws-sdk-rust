@@ -37,6 +37,10 @@ impl DeleteFacesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteFaces as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_faces::builders::DeleteFacesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +129,10 @@ impl DeleteFacesFluentBuilder {
         self.inner = self.inner.set_collection_id(input);
         self
     }
+    /// <p>Collection from which to remove the specific faces.</p>
+    pub fn get_collection_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_collection_id()
+    }
     /// Appends an item to `FaceIds`.
     ///
     /// To override the contents of this collection use [`set_face_ids`](Self::set_face_ids).
@@ -141,5 +149,9 @@ impl DeleteFacesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_face_ids(input);
         self
+    }
+    /// <p>An array of face IDs to delete.</p>
+    pub fn get_face_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_face_ids()
     }
 }

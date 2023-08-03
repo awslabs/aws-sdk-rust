@@ -45,6 +45,10 @@ impl VerifyCardValidationDataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the VerifyCardValidationData as a reference.
+    pub fn as_input(&self) -> &crate::operation::verify_card_validation_data::builders::VerifyCardValidationDataInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -141,6 +145,10 @@ impl VerifyCardValidationDataFluentBuilder {
         self.inner = self.inner.set_key_identifier(input);
         self
     }
+    /// <p>The <code>keyARN</code> of the CVK encryption key that Amazon Web Services Payment Cryptography uses to verify card data.</p>
+    pub fn get_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key_identifier()
+    }
     /// <p>The Primary Account Number (PAN), a unique identifier for a payment credit or debit card that associates the card with a specific account holder.</p>
     pub fn primary_account_number(
         mut self,
@@ -156,6 +164,10 @@ impl VerifyCardValidationDataFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_primary_account_number(input);
         self
+    }
+    /// <p>The Primary Account Number (PAN), a unique identifier for a payment credit or debit card that associates the card with a specific account holder.</p>
+    pub fn get_primary_account_number(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_primary_account_number()
     }
     /// <p>The algorithm to use for verification of card data within Amazon Web Services Payment Cryptography.</p>
     pub fn verification_attributes(
@@ -173,6 +185,12 @@ impl VerifyCardValidationDataFluentBuilder {
         self.inner = self.inner.set_verification_attributes(input);
         self
     }
+    /// <p>The algorithm to use for verification of card data within Amazon Web Services Payment Cryptography.</p>
+    pub fn get_verification_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::CardVerificationAttributes> {
+        self.inner.get_verification_attributes()
+    }
     /// <p>The CVV or CSC value for use for card data verification within Amazon Web Services Payment Cryptography.</p>
     pub fn validation_data(
         mut self,
@@ -188,5 +206,9 @@ impl VerifyCardValidationDataFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_validation_data(input);
         self
+    }
+    /// <p>The CVV or CSC value for use for card data verification within Amazon Web Services Payment Cryptography.</p>
+    pub fn get_validation_data(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_validation_data()
     }
 }

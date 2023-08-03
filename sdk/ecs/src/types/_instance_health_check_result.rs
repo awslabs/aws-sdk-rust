@@ -67,6 +67,10 @@ impl InstanceHealthCheckResultBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of container instance health status that was verified.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::InstanceHealthCheckType> {
+        &self.r#type
+    }
     /// <p>The container instance health status.</p>
     pub fn status(mut self, input: crate::types::InstanceHealthCheckState) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -79,6 +83,10 @@ impl InstanceHealthCheckResultBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The container instance health status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::InstanceHealthCheckState> {
+        &self.status
     }
     /// <p>The Unix timestamp for when the container instance health status was last updated.</p>
     pub fn last_updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -93,6 +101,10 @@ impl InstanceHealthCheckResultBuilder {
         self.last_updated = input;
         self
     }
+    /// <p>The Unix timestamp for when the container instance health status was last updated.</p>
+    pub fn get_last_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated
+    }
     /// <p>The Unix timestamp for when the container instance health status last changed.</p>
     pub fn last_status_change(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_status_change = ::std::option::Option::Some(input);
@@ -105,6 +117,10 @@ impl InstanceHealthCheckResultBuilder {
     ) -> Self {
         self.last_status_change = input;
         self
+    }
+    /// <p>The Unix timestamp for when the container instance health status last changed.</p>
+    pub fn get_last_status_change(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_status_change
     }
     /// Consumes the builder and constructs a [`InstanceHealthCheckResult`](crate::types::InstanceHealthCheckResult).
     pub fn build(self) -> crate::types::InstanceHealthCheckResult {

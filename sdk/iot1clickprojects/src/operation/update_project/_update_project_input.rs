@@ -55,6 +55,10 @@ impl UpdateProjectInputBuilder {
         self.project_name = input;
         self
     }
+    /// <p>The name of the project to be updated.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
+    }
     /// <p>An optional user-defined description for the project.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl UpdateProjectInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>An optional user-defined description for the project.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>An object defining the project update. Once a project has been created, you cannot add device template names to the project. However, for a given <code>placementTemplate</code>, you can update the associated <code>callbackOverrides</code> for the device definition using this API.</p>
     pub fn placement_template(mut self, input: crate::types::PlacementTemplate) -> Self {
@@ -77,6 +85,12 @@ impl UpdateProjectInputBuilder {
     ) -> Self {
         self.placement_template = input;
         self
+    }
+    /// <p>An object defining the project update. Once a project has been created, you cannot add device template names to the project. However, for a given <code>placementTemplate</code>, you can update the associated <code>callbackOverrides</code> for the device definition using this API.</p>
+    pub fn get_placement_template(
+        &self,
+    ) -> &::std::option::Option<crate::types::PlacementTemplate> {
+        &self.placement_template
     }
     /// Consumes the builder and constructs a [`UpdateProjectInput`](crate::operation::update_project::UpdateProjectInput).
     pub fn build(

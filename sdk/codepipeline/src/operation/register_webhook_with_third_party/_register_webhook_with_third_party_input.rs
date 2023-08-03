@@ -39,6 +39,10 @@ impl RegisterWebhookWithThirdPartyInputBuilder {
         self.webhook_name = input;
         self
     }
+    /// <p>The name of an existing webhook created with PutWebhook to register with a supported third party. </p>
+    pub fn get_webhook_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.webhook_name
+    }
     /// Consumes the builder and constructs a [`RegisterWebhookWithThirdPartyInput`](crate::operation::register_webhook_with_third_party::RegisterWebhookWithThirdPartyInput).
     pub fn build(
         self,

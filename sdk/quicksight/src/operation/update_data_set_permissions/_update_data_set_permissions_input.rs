@@ -74,6 +74,10 @@ impl UpdateDataSetPermissionsInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
@@ -83,6 +87,10 @@ impl UpdateDataSetPermissionsInputBuilder {
     pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_set_id = input;
         self
+    }
+    /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_set_id
     }
     /// Appends an item to `grant_permissions`.
     ///
@@ -103,6 +111,12 @@ impl UpdateDataSetPermissionsInputBuilder {
         self.grant_permissions = input;
         self
     }
+    /// <p>The resource permissions that you want to grant to the dataset.</p>
+    pub fn get_grant_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+        &self.grant_permissions
+    }
     /// Appends an item to `revoke_permissions`.
     ///
     /// To override the contents of this collection use [`set_revoke_permissions`](Self::set_revoke_permissions).
@@ -121,6 +135,12 @@ impl UpdateDataSetPermissionsInputBuilder {
     ) -> Self {
         self.revoke_permissions = input;
         self
+    }
+    /// <p>The resource permissions that you want to revoke from the dataset.</p>
+    pub fn get_revoke_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+        &self.revoke_permissions
     }
     /// Consumes the builder and constructs a [`UpdateDataSetPermissionsInput`](crate::operation::update_data_set_permissions::UpdateDataSetPermissionsInput).
     pub fn build(

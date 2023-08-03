@@ -37,6 +37,10 @@ impl ListEdgeAgentConfigurationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListEdgeAgentConfigurations as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_edge_agent_configurations::builders::ListEdgeAgentConfigurationsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,6 +143,10 @@ impl ListEdgeAgentConfigurationsFluentBuilder {
         self.inner = self.inner.set_hub_device_arn(input);
         self
     }
+    /// <p>The "Internet of Things (IoT) Thing" Arn of the edge agent.</p>
+    pub fn get_hub_device_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hub_device_arn()
+    }
     /// <p>The maximum number of edge configurations to return in the response. The default is 5.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -149,6 +157,10 @@ impl ListEdgeAgentConfigurationsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of edge configurations to return in the response. The default is 5.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>If you specify this parameter, when the result of a <code>ListEdgeAgentConfigurations</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of edge configurations, provide this token in your next request. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -158,5 +170,9 @@ impl ListEdgeAgentConfigurationsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>If you specify this parameter, when the result of a <code>ListEdgeAgentConfigurations</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of edge configurations, provide this token in your next request. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

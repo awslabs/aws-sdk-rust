@@ -40,6 +40,12 @@ impl GetGeoMatchSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetGeoMatchSet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_geo_match_set::builders::GetGeoMatchSetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,5 +141,9 @@ impl GetGeoMatchSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_geo_match_set_id(input);
         self
+    }
+    /// <p>The <code>GeoMatchSetId</code> of the <code>GeoMatchSet</code> that you want to get. <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
+    pub fn get_geo_match_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_geo_match_set_id()
     }
 }

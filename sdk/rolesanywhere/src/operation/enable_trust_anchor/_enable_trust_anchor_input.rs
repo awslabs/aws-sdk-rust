@@ -46,6 +46,10 @@ impl EnableTrustAnchorInputBuilder {
         self.trust_anchor_id = input;
         self
     }
+    /// <p>The unique identifier of the trust anchor.</p>
+    pub fn get_trust_anchor_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trust_anchor_id
+    }
     /// Consumes the builder and constructs a [`EnableTrustAnchorInput`](crate::operation::enable_trust_anchor::EnableTrustAnchorInput).
     pub fn build(
         self,

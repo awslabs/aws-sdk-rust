@@ -122,6 +122,10 @@ impl ClusterSnapshotBuilder {
         self.subnet_ids = input;
         self
     }
+    /// <p>A list of the IDs of subnets associated with the DB cluster snapshot.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
+    }
     /// <p>The name of the Elastic DocumentDB snapshot.</p>
     pub fn snapshot_name(
         mut self,
@@ -138,6 +142,10 @@ impl ClusterSnapshotBuilder {
         self.snapshot_name = input;
         self
     }
+    /// <p>The name of the Elastic DocumentDB snapshot.</p>
+    pub fn get_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_name
+    }
     /// <p>The arn of the Elastic DocumentDB snapshot</p>
     pub fn snapshot_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_arn = ::std::option::Option::Some(input.into());
@@ -147,6 +155,10 @@ impl ClusterSnapshotBuilder {
     pub fn set_snapshot_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_arn = input;
         self
+    }
+    /// <p>The arn of the Elastic DocumentDB snapshot</p>
+    pub fn get_snapshot_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_arn
     }
     /// <p>The time when the Elastic DocumentDB snapshot was created in Universal Coordinated Time (UTC).</p>
     pub fn snapshot_creation_time(
@@ -164,6 +176,10 @@ impl ClusterSnapshotBuilder {
         self.snapshot_creation_time = input;
         self
     }
+    /// <p>The time when the Elastic DocumentDB snapshot was created in Universal Coordinated Time (UTC).</p>
+    pub fn get_snapshot_creation_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_creation_time
+    }
     /// <p>The arn of the Elastic DocumentDB cluster.</p>
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_arn = ::std::option::Option::Some(input.into());
@@ -173,6 +189,10 @@ impl ClusterSnapshotBuilder {
     pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_arn = input;
         self
+    }
+    /// <p>The arn of the Elastic DocumentDB cluster.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_arn
     }
     /// <p>The time when the Elastic DocumentDB cluster was created in Universal Coordinated Time (UTC).</p>
     pub fn cluster_creation_time(
@@ -190,6 +210,10 @@ impl ClusterSnapshotBuilder {
         self.cluster_creation_time = input;
         self
     }
+    /// <p>The time when the Elastic DocumentDB cluster was created in Universal Coordinated Time (UTC).</p>
+    pub fn get_cluster_creation_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_creation_time
+    }
     /// <p>The status of the Elastic DocumentDB snapshot.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -199,6 +223,10 @@ impl ClusterSnapshotBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the Elastic DocumentDB snapshot.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
     }
     /// Appends an item to `vpc_security_group_ids`.
     ///
@@ -222,6 +250,12 @@ impl ClusterSnapshotBuilder {
         self.vpc_security_group_ids = input;
         self
     }
+    /// <p>A list of the IDs of the VPC security groups associated with the cluster snapshot.</p>
+    pub fn get_vpc_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.vpc_security_group_ids
+    }
     /// <p>The name of the Elastic DocumentDB cluster administrator.</p>
     pub fn admin_user_name(
         mut self,
@@ -238,6 +272,10 @@ impl ClusterSnapshotBuilder {
         self.admin_user_name = input;
         self
     }
+    /// <p>The name of the Elastic DocumentDB cluster administrator.</p>
+    pub fn get_admin_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.admin_user_name
+    }
     /// <p>The KMS key identifier to use to encrypt the Elastic DocumentDB cluster.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -247,6 +285,10 @@ impl ClusterSnapshotBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>The KMS key identifier to use to encrypt the Elastic DocumentDB cluster.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// Consumes the builder and constructs a [`ClusterSnapshot`](crate::types::ClusterSnapshot).
     pub fn build(self) -> crate::types::ClusterSnapshot {

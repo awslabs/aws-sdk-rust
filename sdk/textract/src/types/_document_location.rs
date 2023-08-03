@@ -41,6 +41,10 @@ impl DocumentLocationBuilder {
         self.s3_object = input;
         self
     }
+    /// <p>The Amazon S3 bucket that contains the input document.</p>
+    pub fn get_s3_object(&self) -> &::std::option::Option<crate::types::S3Object> {
+        &self.s3_object
+    }
     /// Consumes the builder and constructs a [`DocumentLocation`](crate::types::DocumentLocation).
     pub fn build(self) -> crate::types::DocumentLocation {
         crate::types::DocumentLocation {

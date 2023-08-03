@@ -214,6 +214,10 @@ impl InstanceInformationBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The managed node ID. </p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>Connection status of SSM Agent. </p> <note>
     /// <p>The status <code>Inactive</code> has been deprecated and is no longer in use.</p>
     /// </note>
@@ -231,6 +235,12 @@ impl InstanceInformationBuilder {
         self.ping_status = input;
         self
     }
+    /// <p>Connection status of SSM Agent. </p> <note>
+    /// <p>The status <code>Inactive</code> has been deprecated and is no longer in use.</p>
+    /// </note>
+    pub fn get_ping_status(&self) -> &::std::option::Option<crate::types::PingStatus> {
+        &self.ping_status
+    }
     /// <p>The date and time when the agent last pinged the Systems Manager service. </p>
     pub fn last_ping_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_ping_date_time = ::std::option::Option::Some(input);
@@ -243,6 +253,10 @@ impl InstanceInformationBuilder {
     ) -> Self {
         self.last_ping_date_time = input;
         self
+    }
+    /// <p>The date and time when the agent last pinged the Systems Manager service. </p>
+    pub fn get_last_ping_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_ping_date_time
     }
     /// <p>The version of SSM Agent running on your Linux managed node. </p>
     pub fn agent_version(
@@ -260,6 +274,10 @@ impl InstanceInformationBuilder {
         self.agent_version = input;
         self
     }
+    /// <p>The version of SSM Agent running on your Linux managed node. </p>
+    pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_version
+    }
     /// <p>Indicates whether the latest version of SSM Agent is running on your Linux managed node. This field doesn't indicate whether or not the latest version is installed on Windows managed nodes, because some older versions of Windows Server use the EC2Config service to process Systems Manager requests.</p>
     pub fn is_latest_version(mut self, input: bool) -> Self {
         self.is_latest_version = ::std::option::Option::Some(input);
@@ -269,6 +287,10 @@ impl InstanceInformationBuilder {
     pub fn set_is_latest_version(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_latest_version = input;
         self
+    }
+    /// <p>Indicates whether the latest version of SSM Agent is running on your Linux managed node. This field doesn't indicate whether or not the latest version is installed on Windows managed nodes, because some older versions of Windows Server use the EC2Config service to process Systems Manager requests.</p>
+    pub fn get_is_latest_version(&self) -> &::std::option::Option<bool> {
+        &self.is_latest_version
     }
     /// <p>The operating system platform type. </p>
     pub fn platform_type(mut self, input: crate::types::PlatformType) -> Self {
@@ -282,6 +304,10 @@ impl InstanceInformationBuilder {
     ) -> Self {
         self.platform_type = input;
         self
+    }
+    /// <p>The operating system platform type. </p>
+    pub fn get_platform_type(&self) -> &::std::option::Option<crate::types::PlatformType> {
+        &self.platform_type
     }
     /// <p>The name of the operating system platform running on your managed node. </p>
     pub fn platform_name(
@@ -299,6 +325,10 @@ impl InstanceInformationBuilder {
         self.platform_name = input;
         self
     }
+    /// <p>The name of the operating system platform running on your managed node. </p>
+    pub fn get_platform_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_name
+    }
     /// <p>The version of the OS platform running on your managed node. </p>
     pub fn platform_version(
         mut self,
@@ -314,6 +344,10 @@ impl InstanceInformationBuilder {
     ) -> Self {
         self.platform_version = input;
         self
+    }
+    /// <p>The version of the OS platform running on your managed node. </p>
+    pub fn get_platform_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_version
     }
     /// <p>The activation ID created by Amazon Web Services Systems Manager when the server or virtual machine (VM) was registered.</p>
     pub fn activation_id(
@@ -331,6 +365,10 @@ impl InstanceInformationBuilder {
         self.activation_id = input;
         self
     }
+    /// <p>The activation ID created by Amazon Web Services Systems Manager when the server or virtual machine (VM) was registered.</p>
+    pub fn get_activation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.activation_id
+    }
     /// <p>The Identity and Access Management (IAM) role assigned to the on-premises Systems Manager managed node. This call doesn't return the IAM role for Amazon Elastic Compute Cloud (Amazon EC2) instances. To retrieve the IAM role for an EC2 instance, use the Amazon EC2 <code>DescribeInstances</code> operation. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in the <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a> in the <i>Amazon Web Services CLI Command Reference</i>.</p>
     pub fn iam_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role = ::std::option::Option::Some(input.into());
@@ -340,6 +378,10 @@ impl InstanceInformationBuilder {
     pub fn set_iam_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_role = input;
         self
+    }
+    /// <p>The Identity and Access Management (IAM) role assigned to the on-premises Systems Manager managed node. This call doesn't return the IAM role for Amazon Elastic Compute Cloud (Amazon EC2) instances. To retrieve the IAM role for an EC2 instance, use the Amazon EC2 <code>DescribeInstances</code> operation. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in the <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a> in the <i>Amazon Web Services CLI Command Reference</i>.</p>
+    pub fn get_iam_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_role
     }
     /// <p>The date the server or VM was registered with Amazon Web Services as a managed node.</p>
     pub fn registration_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -354,6 +396,10 @@ impl InstanceInformationBuilder {
         self.registration_date = input;
         self
     }
+    /// <p>The date the server or VM was registered with Amazon Web Services as a managed node.</p>
+    pub fn get_registration_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.registration_date
+    }
     /// <p>The type of instance. Instances are either EC2 instances or managed instances. </p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -367,6 +413,10 @@ impl InstanceInformationBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The type of instance. Instances are either EC2 instances or managed instances. </p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
+    }
     /// <p>The name assigned to an on-premises server, edge device, or virtual machine (VM) when it is activated as a Systems Manager managed node. The name is specified as the <code>DefaultInstanceName</code> property using the <code>CreateActivation</code> command. It is applied to the managed node by specifying the Activation Code and Activation ID when you install SSM Agent on the node, as explained in <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-linux.html">Install SSM Agent for a hybrid environment (Linux)</a> and <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-win.html">Install SSM Agent for a hybrid environment (Windows)</a>. To retrieve the <code>Name</code> tag of an EC2 instance, use the Amazon EC2 <code>DescribeInstances</code> operation. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in the <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a> in the <i>Amazon Web Services CLI Command Reference</i>.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -377,6 +427,10 @@ impl InstanceInformationBuilder {
         self.name = input;
         self
     }
+    /// <p>The name assigned to an on-premises server, edge device, or virtual machine (VM) when it is activated as a Systems Manager managed node. The name is specified as the <code>DefaultInstanceName</code> property using the <code>CreateActivation</code> command. It is applied to the managed node by specifying the Activation Code and Activation ID when you install SSM Agent on the node, as explained in <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-linux.html">Install SSM Agent for a hybrid environment (Linux)</a> and <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-win.html">Install SSM Agent for a hybrid environment (Windows)</a>. To retrieve the <code>Name</code> tag of an EC2 instance, use the Amazon EC2 <code>DescribeInstances</code> operation. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in the <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a> in the <i>Amazon Web Services CLI Command Reference</i>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The IP address of the managed node.</p>
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_address = ::std::option::Option::Some(input.into());
@@ -386,6 +440,10 @@ impl InstanceInformationBuilder {
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_address = input;
         self
+    }
+    /// <p>The IP address of the managed node.</p>
+    pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address
     }
     /// <p>The fully qualified host name of the managed node.</p>
     pub fn computer_name(
@@ -403,6 +461,10 @@ impl InstanceInformationBuilder {
         self.computer_name = input;
         self
     }
+    /// <p>The fully qualified host name of the managed node.</p>
+    pub fn get_computer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.computer_name
+    }
     /// <p>The status of the association.</p>
     pub fn association_status(
         mut self,
@@ -419,6 +481,10 @@ impl InstanceInformationBuilder {
         self.association_status = input;
         self
     }
+    /// <p>The status of the association.</p>
+    pub fn get_association_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_status
+    }
     /// <p>The date the association was last run.</p>
     pub fn last_association_execution_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_association_execution_date = ::std::option::Option::Some(input);
@@ -431,6 +497,12 @@ impl InstanceInformationBuilder {
     ) -> Self {
         self.last_association_execution_date = input;
         self
+    }
+    /// <p>The date the association was last run.</p>
+    pub fn get_last_association_execution_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_association_execution_date
     }
     /// <p>The last date the association was successfully run.</p>
     pub fn last_successful_association_execution_date(
@@ -448,6 +520,12 @@ impl InstanceInformationBuilder {
         self.last_successful_association_execution_date = input;
         self
     }
+    /// <p>The last date the association was successfully run.</p>
+    pub fn get_last_successful_association_execution_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_successful_association_execution_date
+    }
     /// <p>Information about the association.</p>
     pub fn association_overview(
         mut self,
@@ -464,6 +542,12 @@ impl InstanceInformationBuilder {
         self.association_overview = input;
         self
     }
+    /// <p>Information about the association.</p>
+    pub fn get_association_overview(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceAggregatedAssociationOverview> {
+        &self.association_overview
+    }
     /// <p>The ID of the source resource. For IoT Greengrass devices, <code>SourceId</code> is the Thing name. </p>
     pub fn source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_id = ::std::option::Option::Some(input.into());
@@ -473,6 +557,10 @@ impl InstanceInformationBuilder {
     pub fn set_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_id = input;
         self
+    }
+    /// <p>The ID of the source resource. For IoT Greengrass devices, <code>SourceId</code> is the Thing name. </p>
+    pub fn get_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_id
     }
     /// <p>The type of the source resource. For IoT Greengrass devices, <code>SourceType</code> is <code>AWS::IoT::Thing</code>. </p>
     pub fn source_type(mut self, input: crate::types::SourceType) -> Self {
@@ -486,6 +574,10 @@ impl InstanceInformationBuilder {
     ) -> Self {
         self.source_type = input;
         self
+    }
+    /// <p>The type of the source resource. For IoT Greengrass devices, <code>SourceType</code> is <code>AWS::IoT::Thing</code>. </p>
+    pub fn get_source_type(&self) -> &::std::option::Option<crate::types::SourceType> {
+        &self.source_type
     }
     /// Consumes the builder and constructs a [`InstanceInformation`](crate::types::InstanceInformation).
     pub fn build(self) -> crate::types::InstanceInformation {

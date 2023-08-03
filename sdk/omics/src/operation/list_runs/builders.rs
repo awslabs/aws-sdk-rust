@@ -36,6 +36,10 @@ impl ListRunsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListRuns as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_runs::builders::ListRunsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl ListRunsFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>Filter the list by run name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>Filter the list by run group ID.</p>
     pub fn run_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.run_group_id(input.into());
@@ -133,6 +141,10 @@ impl ListRunsFluentBuilder {
     pub fn set_run_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_run_group_id(input);
         self
+    }
+    /// <p>Filter the list by run group ID.</p>
+    pub fn get_run_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_run_group_id()
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn starting_token(
@@ -150,6 +162,10 @@ impl ListRunsFluentBuilder {
         self.inner = self.inner.set_starting_token(input);
         self
     }
+    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    pub fn get_starting_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_starting_token()
+    }
     /// <p>The maximum number of runs to return in one page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -160,6 +176,10 @@ impl ListRunsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of runs to return in one page of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p> The status of a run. </p>
     pub fn status(mut self, input: crate::types::RunStatus) -> Self {
         self.inner = self.inner.status(input);
@@ -169,5 +189,9 @@ impl ListRunsFluentBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RunStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p> The status of a run. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::RunStatus> {
+        self.inner.get_status()
     }
 }

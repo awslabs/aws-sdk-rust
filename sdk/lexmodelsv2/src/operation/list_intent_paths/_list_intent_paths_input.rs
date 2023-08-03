@@ -81,6 +81,10 @@ impl ListIntentPathsInputBuilder {
         self.bot_id = input;
         self
     }
+    /// <p>The identifier for the bot for which you want to retrieve intent path metrics.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
     /// <p>The date and time that marks the beginning of the range of time for which you want to see intent path metrics.</p>
     pub fn start_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_date_time = ::std::option::Option::Some(input);
@@ -94,6 +98,10 @@ impl ListIntentPathsInputBuilder {
         self.start_date_time = input;
         self
     }
+    /// <p>The date and time that marks the beginning of the range of time for which you want to see intent path metrics.</p>
+    pub fn get_start_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_date_time
+    }
     /// <p>The date and time that marks the end of the range of time for which you want to see intent path metrics.</p>
     pub fn end_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_date_time = ::std::option::Option::Some(input);
@@ -106,6 +114,10 @@ impl ListIntentPathsInputBuilder {
     ) -> Self {
         self.end_date_time = input;
         self
+    }
+    /// <p>The date and time that marks the end of the range of time for which you want to see intent path metrics.</p>
+    pub fn get_end_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_date_time
     }
     /// <p>The intent path for which you want to retrieve metrics. Use a forward slash to separate intents in the path. For example:</p>
     /// <ul>
@@ -127,6 +139,15 @@ impl ListIntentPathsInputBuilder {
         self.intent_path = input;
         self
     }
+    /// <p>The intent path for which you want to retrieve metrics. Use a forward slash to separate intents in the path. For example:</p>
+    /// <ul>
+    /// <li> <p>/BookCar</p> </li>
+    /// <li> <p>/BookCar/BookHotel</p> </li>
+    /// <li> <p>/BookHotel/BookCar</p> </li>
+    /// </ul>
+    pub fn get_intent_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.intent_path
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -145,6 +166,12 @@ impl ListIntentPathsInputBuilder {
     ) -> Self {
         self.filters = input;
         self
+    }
+    /// <p>A list of objects, each describes a condition by which you want to filter the results.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsPathFilter>> {
+        &self.filters
     }
     /// Consumes the builder and constructs a [`ListIntentPathsInput`](crate::operation::list_intent_paths::ListIntentPathsInput).
     pub fn build(

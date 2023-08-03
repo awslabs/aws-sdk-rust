@@ -57,6 +57,10 @@ impl CommitTransactionInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_arn = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl CommitTransactionInputBuilder {
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_arn = input;
         self
+    }
+    /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
+    pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_arn
     }
     /// <p>The identifier of the transaction to end and commit.</p>
     pub fn transaction_id(
@@ -82,6 +90,10 @@ impl CommitTransactionInputBuilder {
     ) -> Self {
         self.transaction_id = input;
         self
+    }
+    /// <p>The identifier of the transaction to end and commit.</p>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transaction_id
     }
     /// Consumes the builder and constructs a [`CommitTransactionInput`](crate::operation::commit_transaction::CommitTransactionInput).
     pub fn build(

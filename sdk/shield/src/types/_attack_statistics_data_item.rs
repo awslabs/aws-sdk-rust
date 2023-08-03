@@ -51,6 +51,10 @@ impl AttackStatisticsDataItemBuilder {
         self.attack_volume = input;
         self
     }
+    /// <p>Information about the volume of attacks during the time period. If the accompanying <code>AttackCount</code> is zero, this setting might be empty.</p>
+    pub fn get_attack_volume(&self) -> &::std::option::Option<crate::types::AttackVolume> {
+        &self.attack_volume
+    }
     /// <p>The number of attacks detected during the time period. This is always present, but might be zero. </p>
     pub fn attack_count(mut self, input: i64) -> Self {
         self.attack_count = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl AttackStatisticsDataItemBuilder {
     pub fn set_attack_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.attack_count = input;
         self
+    }
+    /// <p>The number of attacks detected during the time period. This is always present, but might be zero. </p>
+    pub fn get_attack_count(&self) -> &::std::option::Option<i64> {
+        &self.attack_count
     }
     /// Consumes the builder and constructs a [`AttackStatisticsDataItem`](crate::types::AttackStatisticsDataItem).
     pub fn build(self) -> crate::types::AttackStatisticsDataItem {

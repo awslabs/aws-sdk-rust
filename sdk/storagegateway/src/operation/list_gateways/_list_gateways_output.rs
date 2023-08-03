@@ -63,6 +63,12 @@ impl ListGatewaysOutputBuilder {
         self.gateways = input;
         self
     }
+    /// <p>An array of <code>GatewayInfo</code> objects.</p>
+    pub fn get_gateways(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GatewayInfo>> {
+        &self.gateways
+    }
     /// <p>Use the marker in your next request to fetch the next set of gateways in the list. If there are no more gateways to list, this field does not appear in the response.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -72,6 +78,10 @@ impl ListGatewaysOutputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>Use the marker in your next request to fetch the next set of gateways in the list. If there are no more gateways to list, this field does not appear in the response.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

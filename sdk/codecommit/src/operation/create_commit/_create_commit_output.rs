@@ -78,6 +78,10 @@ impl CreateCommitOutputBuilder {
         self.commit_id = input;
         self
     }
+    /// <p>The full commit ID of the commit that contains your committed file changes.</p>
+    pub fn get_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.commit_id
+    }
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains the commited file changes.</p>
     pub fn tree_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tree_id = ::std::option::Option::Some(input.into());
@@ -87,6 +91,10 @@ impl CreateCommitOutputBuilder {
     pub fn set_tree_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tree_id = input;
         self
+    }
+    /// <p>The full SHA-1 pointer of the tree information for the commit that contains the commited file changes.</p>
+    pub fn get_tree_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tree_id
     }
     /// Appends an item to `files_added`.
     ///
@@ -107,6 +115,12 @@ impl CreateCommitOutputBuilder {
         self.files_added = input;
         self
     }
+    /// <p>The files added as part of the committed file changes.</p>
+    pub fn get_files_added(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FileMetadata>> {
+        &self.files_added
+    }
     /// Appends an item to `files_updated`.
     ///
     /// To override the contents of this collection use [`set_files_updated`](Self::set_files_updated).
@@ -126,6 +140,12 @@ impl CreateCommitOutputBuilder {
         self.files_updated = input;
         self
     }
+    /// <p>The files updated as part of the commited file changes.</p>
+    pub fn get_files_updated(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FileMetadata>> {
+        &self.files_updated
+    }
     /// Appends an item to `files_deleted`.
     ///
     /// To override the contents of this collection use [`set_files_deleted`](Self::set_files_deleted).
@@ -144,6 +164,12 @@ impl CreateCommitOutputBuilder {
     ) -> Self {
         self.files_deleted = input;
         self
+    }
+    /// <p>The files deleted as part of the committed file changes.</p>
+    pub fn get_files_deleted(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FileMetadata>> {
+        &self.files_deleted
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -79,6 +79,10 @@ impl CompleteLifecycleActionInputBuilder {
         self.lifecycle_hook_name = input;
         self
     }
+    /// <p>The name of the lifecycle hook.</p>
+    pub fn get_lifecycle_hook_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lifecycle_hook_name
+    }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn auto_scaling_group_name(
         mut self,
@@ -94,6 +98,10 @@ impl CompleteLifecycleActionInputBuilder {
     ) -> Self {
         self.auto_scaling_group_name = input;
         self
+    }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_scaling_group_name
     }
     /// <p>A universally unique identifier (UUID) that identifies a specific lifecycle action associated with an instance. Amazon EC2 Auto Scaling sends this token to the notification target you specified when you created the lifecycle hook.</p>
     pub fn lifecycle_action_token(
@@ -111,6 +119,10 @@ impl CompleteLifecycleActionInputBuilder {
         self.lifecycle_action_token = input;
         self
     }
+    /// <p>A universally unique identifier (UUID) that identifies a specific lifecycle action associated with an instance. Amazon EC2 Auto Scaling sends this token to the notification target you specified when you created the lifecycle hook.</p>
+    pub fn get_lifecycle_action_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lifecycle_action_token
+    }
     /// <p>The action for the group to take. You can specify either <code>CONTINUE</code> or <code>ABANDON</code>.</p>
     pub fn lifecycle_action_result(
         mut self,
@@ -127,6 +139,10 @@ impl CompleteLifecycleActionInputBuilder {
         self.lifecycle_action_result = input;
         self
     }
+    /// <p>The action for the group to take. You can specify either <code>CONTINUE</code> or <code>ABANDON</code>.</p>
+    pub fn get_lifecycle_action_result(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lifecycle_action_result
+    }
     /// <p>The ID of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -136,6 +152,10 @@ impl CompleteLifecycleActionInputBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
+    }
+    /// <p>The ID of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// Consumes the builder and constructs a [`CompleteLifecycleActionInput`](crate::operation::complete_lifecycle_action::CompleteLifecycleActionInput).
     pub fn build(

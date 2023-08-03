@@ -58,6 +58,12 @@ impl PostLaunchActionsStatusBuilder {
         self.ssm_agent_discovery_datetime = input;
         self
     }
+    /// <p>Time where the AWS Systems Manager was detected as running on the Test or Cutover instance.</p>
+    pub fn get_ssm_agent_discovery_datetime(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.ssm_agent_discovery_datetime
+    }
     /// Appends an item to `post_launch_actions_launch_status_list`.
     ///
     /// To override the contents of this collection use [`set_post_launch_actions_launch_status_list`](Self::set_post_launch_actions_launch_status_list).
@@ -83,6 +89,13 @@ impl PostLaunchActionsStatusBuilder {
     ) -> Self {
         self.post_launch_actions_launch_status_list = input;
         self
+    }
+    /// <p>List of Post Launch Action status.</p>
+    pub fn get_post_launch_actions_launch_status_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobPostLaunchActionsLaunchStatus>>
+    {
+        &self.post_launch_actions_launch_status_list
     }
     /// Consumes the builder and constructs a [`PostLaunchActionsStatus`](crate::types::PostLaunchActionsStatus).
     pub fn build(self) -> crate::types::PostLaunchActionsStatus {

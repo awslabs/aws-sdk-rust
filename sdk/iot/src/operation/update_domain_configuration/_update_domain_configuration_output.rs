@@ -60,6 +60,10 @@ impl UpdateDomainConfigurationOutputBuilder {
         self.domain_configuration_name = input;
         self
     }
+    /// <p>The name of the domain configuration that was updated.</p>
+    pub fn get_domain_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_configuration_name
+    }
     /// <p>The ARN of the domain configuration that was updated.</p>
     pub fn domain_configuration_arn(
         mut self,
@@ -75,6 +79,10 @@ impl UpdateDomainConfigurationOutputBuilder {
     ) -> Self {
         self.domain_configuration_arn = input;
         self
+    }
+    /// <p>The ARN of the domain configuration that was updated.</p>
+    pub fn get_domain_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_configuration_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -71,6 +71,10 @@ impl DecryptDataInputBuilder {
         self.key_identifier = input;
         self
     }
+    /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses for ciphertext decryption.</p>
+    pub fn get_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_identifier
+    }
     /// <p>The ciphertext to decrypt.</p>
     pub fn cipher_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cipher_text = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl DecryptDataInputBuilder {
     pub fn set_cipher_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cipher_text = input;
         self
+    }
+    /// <p>The ciphertext to decrypt.</p>
+    pub fn get_cipher_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cipher_text
     }
     /// <p>The encryption key type and attributes for ciphertext decryption.</p>
     pub fn decryption_attributes(
@@ -96,6 +104,12 @@ impl DecryptDataInputBuilder {
     ) -> Self {
         self.decryption_attributes = input;
         self
+    }
+    /// <p>The encryption key type and attributes for ciphertext decryption.</p>
+    pub fn get_decryption_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::EncryptionDecryptionAttributes> {
+        &self.decryption_attributes
     }
     /// Consumes the builder and constructs a [`DecryptDataInput`](crate::operation::decrypt_data::DecryptDataInput).
     pub fn build(

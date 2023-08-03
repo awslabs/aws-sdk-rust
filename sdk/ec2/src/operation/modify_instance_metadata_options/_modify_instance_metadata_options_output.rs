@@ -58,6 +58,10 @@ impl ModifyInstanceMetadataOptionsOutputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The ID of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The metadata options for the instance.</p>
     pub fn instance_metadata_options(
         mut self,
@@ -73,6 +77,12 @@ impl ModifyInstanceMetadataOptionsOutputBuilder {
     ) -> Self {
         self.instance_metadata_options = input;
         self
+    }
+    /// <p>The metadata options for the instance.</p>
+    pub fn get_instance_metadata_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceMetadataOptionsResponse> {
+        &self.instance_metadata_options
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

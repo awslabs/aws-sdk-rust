@@ -155,6 +155,10 @@ impl UpdateSlotOutputBuilder {
         self.slot_id = input;
         self
     }
+    /// <p>The unique identifier of the slot that was updated.</p>
+    pub fn get_slot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.slot_id
+    }
     /// <p>The updated name of the slot.</p>
     pub fn slot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.slot_name = ::std::option::Option::Some(input.into());
@@ -164,6 +168,10 @@ impl UpdateSlotOutputBuilder {
     pub fn set_slot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.slot_name = input;
         self
+    }
+    /// <p>The updated name of the slot.</p>
+    pub fn get_slot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.slot_name
     }
     /// <p>The updated description of the bot.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -175,6 +183,10 @@ impl UpdateSlotOutputBuilder {
         self.description = input;
         self
     }
+    /// <p>The updated description of the bot.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The updated identifier of the slot type that provides values for the slot.</p>
     pub fn slot_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.slot_type_id = ::std::option::Option::Some(input.into());
@@ -184,6 +196,10 @@ impl UpdateSlotOutputBuilder {
     pub fn set_slot_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.slot_type_id = input;
         self
+    }
+    /// <p>The updated identifier of the slot type that provides values for the slot.</p>
+    pub fn get_slot_type_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.slot_type_id
     }
     /// <p>The updated prompts that Amazon Lex sends to the user to elicit a response that provides a value for the slot.</p>
     pub fn value_elicitation_setting(
@@ -201,6 +217,12 @@ impl UpdateSlotOutputBuilder {
         self.value_elicitation_setting = input;
         self
     }
+    /// <p>The updated prompts that Amazon Lex sends to the user to elicit a response that provides a value for the slot.</p>
+    pub fn get_value_elicitation_setting(
+        &self,
+    ) -> &::std::option::Option<crate::types::SlotValueElicitationSetting> {
+        &self.value_elicitation_setting
+    }
     /// <p>The updated setting that determines whether the slot value is obfuscated in the Amazon CloudWatch logs.</p>
     pub fn obfuscation_setting(mut self, input: crate::types::ObfuscationSetting) -> Self {
         self.obfuscation_setting = ::std::option::Option::Some(input);
@@ -214,6 +236,12 @@ impl UpdateSlotOutputBuilder {
         self.obfuscation_setting = input;
         self
     }
+    /// <p>The updated setting that determines whether the slot value is obfuscated in the Amazon CloudWatch logs.</p>
+    pub fn get_obfuscation_setting(
+        &self,
+    ) -> &::std::option::Option<crate::types::ObfuscationSetting> {
+        &self.obfuscation_setting
+    }
     /// <p>The identifier of the bot that contains the slot.</p>
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
@@ -223,6 +251,10 @@ impl UpdateSlotOutputBuilder {
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_id = input;
         self
+    }
+    /// <p>The identifier of the bot that contains the slot.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
     }
     /// <p>The version of the bot that contains the slot. Will always be <code>DRAFT</code>.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -234,6 +266,10 @@ impl UpdateSlotOutputBuilder {
         self.bot_version = input;
         self
     }
+    /// <p>The version of the bot that contains the slot. Will always be <code>DRAFT</code>.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_version
+    }
     /// <p>The locale that contains the slot.</p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
@@ -244,6 +280,10 @@ impl UpdateSlotOutputBuilder {
         self.locale_id = input;
         self
     }
+    /// <p>The locale that contains the slot.</p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale_id
+    }
     /// <p>The intent that contains the slot.</p>
     pub fn intent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.intent_id = ::std::option::Option::Some(input.into());
@@ -253,6 +293,10 @@ impl UpdateSlotOutputBuilder {
     pub fn set_intent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.intent_id = input;
         self
+    }
+    /// <p>The intent that contains the slot.</p>
+    pub fn get_intent_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.intent_id
     }
     /// <p>The timestamp of the date and time that the slot was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -267,6 +311,10 @@ impl UpdateSlotOutputBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>The timestamp of the date and time that the slot was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>The timestamp of the date and time that the slot was last updated.</p>
     pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date_time = ::std::option::Option::Some(input);
@@ -279,6 +327,12 @@ impl UpdateSlotOutputBuilder {
     ) -> Self {
         self.last_updated_date_time = input;
         self
+    }
+    /// <p>The timestamp of the date and time that the slot was last updated.</p>
+    pub fn get_last_updated_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date_time
     }
     /// <p>Indicates whether the slot accepts multiple values in one response.</p>
     pub fn multiple_values_setting(mut self, input: crate::types::MultipleValuesSetting) -> Self {
@@ -293,6 +347,12 @@ impl UpdateSlotOutputBuilder {
         self.multiple_values_setting = input;
         self
     }
+    /// <p>Indicates whether the slot accepts multiple values in one response.</p>
+    pub fn get_multiple_values_setting(
+        &self,
+    ) -> &::std::option::Option<crate::types::MultipleValuesSetting> {
+        &self.multiple_values_setting
+    }
     /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
     pub fn sub_slot_setting(mut self, input: crate::types::SubSlotSetting) -> Self {
         self.sub_slot_setting = ::std::option::Option::Some(input);
@@ -305,6 +365,10 @@ impl UpdateSlotOutputBuilder {
     ) -> Self {
         self.sub_slot_setting = input;
         self
+    }
+    /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
+    pub fn get_sub_slot_setting(&self) -> &::std::option::Option<crate::types::SubSlotSetting> {
+        &self.sub_slot_setting
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

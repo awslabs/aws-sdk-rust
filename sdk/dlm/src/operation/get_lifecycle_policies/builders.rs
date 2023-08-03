@@ -37,6 +37,12 @@ impl GetLifecyclePoliciesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetLifecyclePolicies as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_lifecycle_policies::builders::GetLifecyclePoliciesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,10 @@ impl GetLifecyclePoliciesFluentBuilder {
         self.inner = self.inner.set_policy_ids(input);
         self
     }
+    /// <p>The identifiers of the data lifecycle policies.</p>
+    pub fn get_policy_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_policy_ids()
+    }
     /// <p>The activation state.</p>
     pub fn state(mut self, input: crate::types::GettablePolicyStateValues) -> Self {
         self.inner = self.inner.state(input);
@@ -146,6 +156,10 @@ impl GetLifecyclePoliciesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_state(input);
         self
+    }
+    /// <p>The activation state.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::GettablePolicyStateValues> {
+        self.inner.get_state()
     }
     /// Appends an item to `ResourceTypes`.
     ///
@@ -163,6 +177,12 @@ impl GetLifecyclePoliciesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_types(input);
         self
+    }
+    /// <p>The resource type.</p>
+    pub fn get_resource_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTypeValues>> {
+        self.inner.get_resource_types()
     }
     /// Appends an item to `TargetTags`.
     ///
@@ -182,6 +202,13 @@ impl GetLifecyclePoliciesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_target_tags(input);
         self
+    }
+    /// <p>The target tag for a policy.</p>
+    /// <p>Tags are strings in the format <code>key=value</code>.</p>
+    pub fn get_target_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_target_tags()
     }
     /// Appends an item to `TagsToAdd`.
     ///
@@ -203,5 +230,13 @@ impl GetLifecyclePoliciesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags_to_add(input);
         self
+    }
+    /// <p>The tags to add to objects created by the policy.</p>
+    /// <p>Tags are strings in the format <code>key=value</code>.</p>
+    /// <p>These user-defined tags are added in addition to the Amazon Web Services-added lifecycle tags.</p>
+    pub fn get_tags_to_add(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_tags_to_add()
     }
 }

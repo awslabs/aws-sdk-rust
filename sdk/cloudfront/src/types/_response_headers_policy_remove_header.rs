@@ -40,6 +40,10 @@ impl ResponseHeadersPolicyRemoveHeaderBuilder {
         self.header = input;
         self
     }
+    /// <p>The HTTP header name.</p>
+    pub fn get_header(&self) -> &::std::option::Option<::std::string::String> {
+        &self.header
+    }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyRemoveHeader`](crate::types::ResponseHeadersPolicyRemoveHeader).
     pub fn build(self) -> crate::types::ResponseHeadersPolicyRemoveHeader {
         crate::types::ResponseHeadersPolicyRemoveHeader {

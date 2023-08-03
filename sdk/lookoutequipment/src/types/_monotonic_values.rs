@@ -51,6 +51,10 @@ impl MonotonicValuesBuilder {
         self.status = input;
         self
     }
+    /// <p> Indicates whether there is a potential data issue related to having monotonic values. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::StatisticalIssueStatus> {
+        &self.status
+    }
     /// <p> Indicates the monotonicity of values. Can be INCREASING, DECREASING, or STATIC. </p>
     pub fn monotonicity(mut self, input: crate::types::Monotonicity) -> Self {
         self.monotonicity = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl MonotonicValuesBuilder {
     ) -> Self {
         self.monotonicity = input;
         self
+    }
+    /// <p> Indicates the monotonicity of values. Can be INCREASING, DECREASING, or STATIC. </p>
+    pub fn get_monotonicity(&self) -> &::std::option::Option<crate::types::Monotonicity> {
+        &self.monotonicity
     }
     /// Consumes the builder and constructs a [`MonotonicValues`](crate::types::MonotonicValues).
     pub fn build(self) -> crate::types::MonotonicValues {

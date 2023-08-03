@@ -40,6 +40,10 @@ impl RepositoryHeadSourceCodeTypeBuilder {
         self.branch_name = input;
         self
     }
+    /// <p>The name of the branch in an associated repository. The <code>RepositoryHeadSourceCodeType</code> specifies the tip of this branch.</p>
+    pub fn get_branch_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.branch_name
+    }
     /// Consumes the builder and constructs a [`RepositoryHeadSourceCodeType`](crate::types::RepositoryHeadSourceCodeType).
     pub fn build(self) -> crate::types::RepositoryHeadSourceCodeType {
         crate::types::RepositoryHeadSourceCodeType {

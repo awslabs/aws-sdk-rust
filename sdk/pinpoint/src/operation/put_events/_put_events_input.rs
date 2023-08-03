@@ -53,6 +53,10 @@ impl PutEventsInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>Specifies a batch of events to process.</p>
     pub fn events_request(mut self, input: crate::types::EventsRequest) -> Self {
         self.events_request = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl PutEventsInputBuilder {
     ) -> Self {
         self.events_request = input;
         self
+    }
+    /// <p>Specifies a batch of events to process.</p>
+    pub fn get_events_request(&self) -> &::std::option::Option<crate::types::EventsRequest> {
+        &self.events_request
     }
     /// Consumes the builder and constructs a [`PutEventsInput`](crate::operation::put_events::PutEventsInput).
     pub fn build(

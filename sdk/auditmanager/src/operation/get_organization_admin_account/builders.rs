@@ -36,6 +36,10 @@ impl GetOrganizationAdminAccountFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetOrganizationAdminAccount as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_organization_admin_account::builders::GetOrganizationAdminAccountInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(

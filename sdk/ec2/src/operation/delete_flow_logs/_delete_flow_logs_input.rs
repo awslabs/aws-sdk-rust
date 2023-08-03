@@ -49,6 +49,10 @@ impl DeleteFlowLogsInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// Appends an item to `flow_log_ids`.
     ///
     /// To override the contents of this collection use [`set_flow_log_ids`](Self::set_flow_log_ids).
@@ -69,6 +73,13 @@ impl DeleteFlowLogsInputBuilder {
     ) -> Self {
         self.flow_log_ids = input;
         self
+    }
+    /// <p>One or more flow log IDs.</p>
+    /// <p>Constraint: Maximum of 1000 flow log IDs.</p>
+    pub fn get_flow_log_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.flow_log_ids
     }
     /// Consumes the builder and constructs a [`DeleteFlowLogsInput`](crate::operation::delete_flow_logs::DeleteFlowLogsInput).
     pub fn build(

@@ -48,6 +48,10 @@ impl ContainerBuilder {
         self.region = input;
         self
     }
+    /// <p>Containers and container images are Region-specific. This is the Region context for the container.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
+    }
     /// Appends an item to `image_uris`.
     ///
     /// To override the contents of this collection use [`set_image_uris`](Self::set_image_uris).
@@ -66,6 +70,10 @@ impl ContainerBuilder {
     ) -> Self {
         self.image_uris = input;
         self
+    }
+    /// <p>A list of URIs for containers created in the context Region.</p>
+    pub fn get_image_uris(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.image_uris
     }
     /// Consumes the builder and constructs a [`Container`](crate::types::Container).
     pub fn build(self) -> crate::types::Container {

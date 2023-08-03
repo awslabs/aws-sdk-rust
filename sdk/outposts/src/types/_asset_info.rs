@@ -72,6 +72,10 @@ impl AssetInfoBuilder {
         self.asset_id = input;
         self
     }
+    /// <p> The ID of the asset. </p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_id
+    }
     /// <p> The rack ID of the asset. </p>
     pub fn rack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rack_id = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl AssetInfoBuilder {
         self.rack_id = input;
         self
     }
+    /// <p> The rack ID of the asset. </p>
+    pub fn get_rack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rack_id
+    }
     /// <p> The type of the asset. </p>
     pub fn asset_type(mut self, input: crate::types::AssetType) -> Self {
         self.asset_type = ::std::option::Option::Some(input);
@@ -91,6 +99,10 @@ impl AssetInfoBuilder {
     pub fn set_asset_type(mut self, input: ::std::option::Option<crate::types::AssetType>) -> Self {
         self.asset_type = input;
         self
+    }
+    /// <p> The type of the asset. </p>
+    pub fn get_asset_type(&self) -> &::std::option::Option<crate::types::AssetType> {
+        &self.asset_type
     }
     /// <p> Information about compute hardware assets. </p>
     pub fn compute_attributes(mut self, input: crate::types::ComputeAttributes) -> Self {
@@ -105,6 +117,12 @@ impl AssetInfoBuilder {
         self.compute_attributes = input;
         self
     }
+    /// <p> Information about compute hardware assets. </p>
+    pub fn get_compute_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::ComputeAttributes> {
+        &self.compute_attributes
+    }
     /// <p> The position of an asset in a rack. </p>
     pub fn asset_location(mut self, input: crate::types::AssetLocation) -> Self {
         self.asset_location = ::std::option::Option::Some(input);
@@ -117,6 +135,10 @@ impl AssetInfoBuilder {
     ) -> Self {
         self.asset_location = input;
         self
+    }
+    /// <p> The position of an asset in a rack. </p>
+    pub fn get_asset_location(&self) -> &::std::option::Option<crate::types::AssetLocation> {
+        &self.asset_location
     }
     /// Consumes the builder and constructs a [`AssetInfo`](crate::types::AssetInfo).
     pub fn build(self) -> crate::types::AssetInfo {

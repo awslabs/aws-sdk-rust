@@ -41,6 +41,12 @@ impl StartExportTaskFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartExportTask as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_export_task::builders::StartExportTaskInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +144,12 @@ impl StartExportTaskFluentBuilder {
         self.inner = self.inner.set_export_data_format(input);
         self
     }
+    /// <p>The file format for the returned export data. Default value is <code>CSV</code>. <b>Note:</b> <i>The</i> <code>GRAPHML</code> <i>option has been deprecated.</i> </p>
+    pub fn get_export_data_format(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportDataFormat>> {
+        self.inner.get_export_data_format()
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -155,6 +167,12 @@ impl StartExportTaskFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>If a filter is present, it selects the single <code>agentId</code> of the Application Discovery Agent for which data is exported. The <code>agentId</code> can be found in the results of the <code>DescribeAgents</code> API or CLI. If no filter is present, <code>startTime</code> and <code>endTime</code> are ignored and exported data includes both Amazon Web Services Application Discovery Service Agentless Collector collectors data and summary data from Application Discovery Agent agents. </p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportFilter>> {
+        self.inner.get_filters()
+    }
     /// <p>The start timestamp for exported data from the single Application Discovery Agent selected in the filters. If no value is specified, data is exported starting from the first data collected by the agent.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
@@ -167,6 +185,10 @@ impl StartExportTaskFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
+    }
+    /// <p>The start timestamp for exported data from the single Application Discovery Agent selected in the filters. If no value is specified, data is exported starting from the first data collected by the agent.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
     }
     /// <p>The end timestamp for exported data from the single Application Discovery Agent selected in the filters. If no value is specified, exported data includes the most recent data collected by the agent.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -181,6 +203,10 @@ impl StartExportTaskFluentBuilder {
         self.inner = self.inner.set_end_time(input);
         self
     }
+    /// <p>The end timestamp for exported data from the single Application Discovery Agent selected in the filters. If no value is specified, exported data includes the most recent data collected by the agent.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time()
+    }
     /// <p> Indicates the type of data that needs to be exported. Only one <a href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_ExportPreferences.html">ExportPreferences</a> can be enabled at any time. </p>
     pub fn preferences(mut self, input: crate::types::ExportPreferences) -> Self {
         self.inner = self.inner.preferences(input);
@@ -193,5 +219,9 @@ impl StartExportTaskFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_preferences(input);
         self
+    }
+    /// <p> Indicates the type of data that needs to be exported. Only one <a href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_ExportPreferences.html">ExportPreferences</a> can be enabled at any time. </p>
+    pub fn get_preferences(&self) -> &::std::option::Option<crate::types::ExportPreferences> {
+        self.inner.get_preferences()
     }
 }

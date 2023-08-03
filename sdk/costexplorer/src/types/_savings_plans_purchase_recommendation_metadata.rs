@@ -62,6 +62,10 @@ impl SavingsPlansPurchaseRecommendationMetadataBuilder {
         self.recommendation_id = input;
         self
     }
+    /// <p>The unique identifier for the recommendation set.</p>
+    pub fn get_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommendation_id
+    }
     /// <p>The timestamp that shows when the recommendations were generated.</p>
     pub fn generation_timestamp(
         mut self,
@@ -78,6 +82,10 @@ impl SavingsPlansPurchaseRecommendationMetadataBuilder {
         self.generation_timestamp = input;
         self
     }
+    /// <p>The timestamp that shows when the recommendations were generated.</p>
+    pub fn get_generation_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.generation_timestamp
+    }
     /// <p>Additional metadata that might be applicable to the recommendation.</p>
     pub fn additional_metadata(
         mut self,
@@ -93,6 +101,10 @@ impl SavingsPlansPurchaseRecommendationMetadataBuilder {
     ) -> Self {
         self.additional_metadata = input;
         self
+    }
+    /// <p>Additional metadata that might be applicable to the recommendation.</p>
+    pub fn get_additional_metadata(&self) -> &::std::option::Option<::std::string::String> {
+        &self.additional_metadata
     }
     /// Consumes the builder and constructs a [`SavingsPlansPurchaseRecommendationMetadata`](crate::types::SavingsPlansPurchaseRecommendationMetadata).
     pub fn build(self) -> crate::types::SavingsPlansPurchaseRecommendationMetadata {

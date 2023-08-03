@@ -40,6 +40,10 @@ impl PardotSourcePropertiesBuilder {
         self.object = input;
         self
     }
+    /// <p>The object specified in the Salesforce Pardot flow source.</p>
+    pub fn get_object(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object
+    }
     /// Consumes the builder and constructs a [`PardotSourceProperties`](crate::types::PardotSourceProperties).
     pub fn build(self) -> crate::types::PardotSourceProperties {
         crate::types::PardotSourceProperties {

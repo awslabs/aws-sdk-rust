@@ -75,6 +75,12 @@ impl UsageStatisticsFilterBuilder {
         self.comparator = input;
         self
     }
+    /// <p>The operator to use in the condition. If the value for the key property is accountId, this value must be CONTAINS. If the value for the key property is any other supported field, this value can be EQ, GT, GTE, LT, LTE, or NE.</p>
+    pub fn get_comparator(
+        &self,
+    ) -> &::std::option::Option<crate::types::UsageStatisticsFilterComparator> {
+        &self.comparator
+    }
     /// <p>The field to use in the condition.</p>
     pub fn key(mut self, input: crate::types::UsageStatisticsFilterKey) -> Self {
         self.key = ::std::option::Option::Some(input);
@@ -87,6 +93,10 @@ impl UsageStatisticsFilterBuilder {
     ) -> Self {
         self.key = input;
         self
+    }
+    /// <p>The field to use in the condition.</p>
+    pub fn get_key(&self) -> &::std::option::Option<crate::types::UsageStatisticsFilterKey> {
+        &self.key
     }
     /// Appends an item to `values`.
     ///
@@ -120,6 +130,17 @@ impl UsageStatisticsFilterBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>An array that lists values to use in the condition, based on the value for the field specified by the key property. If the value for the key property is accountId, this array can specify multiple values. Otherwise, this array can specify only one value.</p>
+    /// <p>Valid values for each supported field are:</p>
+    /// <ul>
+    /// <li><p>accountId - The unique identifier for an Amazon Web Services account.</p></li>
+    /// <li><p>freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie free trial started for an account.</p></li>
+    /// <li><p>serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly quota.</p></li>
+    /// <li><p>total - A string that represents the current estimated cost for an account.</p></li>
+    /// </ul>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`UsageStatisticsFilter`](crate::types::UsageStatisticsFilter).
     pub fn build(self) -> crate::types::UsageStatisticsFilter {

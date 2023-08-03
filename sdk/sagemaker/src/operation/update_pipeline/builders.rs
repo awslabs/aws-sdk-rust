@@ -36,6 +36,12 @@ impl UpdatePipelineFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdatePipeline as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_pipeline::builders::UpdatePipelineInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl UpdatePipelineFluentBuilder {
         self.inner = self.inner.set_pipeline_name(input);
         self
     }
+    /// <p>The name of the pipeline to update.</p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pipeline_name()
+    }
     /// <p>The display name of the pipeline.</p>
     pub fn pipeline_display_name(
         mut self,
@@ -139,6 +149,10 @@ impl UpdatePipelineFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_pipeline_display_name(input);
         self
+    }
+    /// <p>The display name of the pipeline.</p>
+    pub fn get_pipeline_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pipeline_display_name()
     }
     /// <p>The JSON pipeline definition.</p>
     pub fn pipeline_definition(
@@ -156,6 +170,10 @@ impl UpdatePipelineFluentBuilder {
         self.inner = self.inner.set_pipeline_definition(input);
         self
     }
+    /// <p>The JSON pipeline definition.</p>
+    pub fn get_pipeline_definition(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pipeline_definition()
+    }
     /// <p>The location of the pipeline definition stored in Amazon S3. If specified, SageMaker will retrieve the pipeline definition from this location.</p>
     pub fn pipeline_definition_s3_location(
         mut self,
@@ -171,6 +189,12 @@ impl UpdatePipelineFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_pipeline_definition_s3_location(input);
         self
+    }
+    /// <p>The location of the pipeline definition stored in Amazon S3. If specified, SageMaker will retrieve the pipeline definition from this location.</p>
+    pub fn get_pipeline_definition_s3_location(
+        &self,
+    ) -> &::std::option::Option<crate::types::PipelineDefinitionS3Location> {
+        self.inner.get_pipeline_definition_s3_location()
     }
     /// <p>The description of the pipeline.</p>
     pub fn pipeline_description(
@@ -188,6 +212,10 @@ impl UpdatePipelineFluentBuilder {
         self.inner = self.inner.set_pipeline_description(input);
         self
     }
+    /// <p>The description of the pipeline.</p>
+    pub fn get_pipeline_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pipeline_description()
+    }
     /// <p>The Amazon Resource Name (ARN) that the pipeline uses to execute.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -197,6 +225,10 @@ impl UpdatePipelineFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) that the pipeline uses to execute.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// <p>If specified, it applies to all executions of this pipeline by default.</p>
     pub fn parallelism_configuration(
@@ -213,5 +245,11 @@ impl UpdatePipelineFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_parallelism_configuration(input);
         self
+    }
+    /// <p>If specified, it applies to all executions of this pipeline by default.</p>
+    pub fn get_parallelism_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ParallelismConfiguration> {
+        self.inner.get_parallelism_configuration()
     }
 }

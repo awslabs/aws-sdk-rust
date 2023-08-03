@@ -62,6 +62,10 @@ impl SimpleRuleEvaluationBuilder {
         self.input_property_value = input;
         self
     }
+    /// <p>The value of the input property, on the left side of the comparison operator.</p>
+    pub fn get_input_property_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_property_value
+    }
     /// <p>The comparison operator.</p>
     pub fn operator(mut self, input: crate::types::ComparisonOperator) -> Self {
         self.operator = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl SimpleRuleEvaluationBuilder {
     ) -> Self {
         self.operator = input;
         self
+    }
+    /// <p>The comparison operator.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::ComparisonOperator> {
+        &self.operator
     }
     /// <p>The threshold value, on the right side of the comparison operator.</p>
     pub fn threshold_value(
@@ -90,6 +98,10 @@ impl SimpleRuleEvaluationBuilder {
     ) -> Self {
         self.threshold_value = input;
         self
+    }
+    /// <p>The threshold value, on the right side of the comparison operator.</p>
+    pub fn get_threshold_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.threshold_value
     }
     /// Consumes the builder and constructs a [`SimpleRuleEvaluation`](crate::types::SimpleRuleEvaluation).
     pub fn build(self) -> crate::types::SimpleRuleEvaluation {

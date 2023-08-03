@@ -90,6 +90,20 @@ impl InboundCrossClusterSearchConnectionStatusBuilder {
         self.status_code = input;
         self
     }
+    /// <p>The state code for inbound connection. This can be one of the following:</p>
+    /// <ul>
+    /// <li>PENDING_ACCEPTANCE: Inbound connection is not yet accepted by destination domain owner.</li>
+    /// <li>APPROVED: Inbound connection is pending acceptance by destination domain owner.</li>
+    /// <li>REJECTING: Inbound connection rejection is in process.</li>
+    /// <li>REJECTED: Inbound connection is rejected.</li>
+    /// <li>DELETING: Inbound connection deletion is in progress.</li>
+    /// <li>DELETED: Inbound connection is deleted and cannot be used further.</li>
+    /// </ul>
+    pub fn get_status_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::InboundCrossClusterSearchConnectionStatusCode> {
+        &self.status_code
+    }
     /// <p>Specifies verbose information for the inbound connection status.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -99,6 +113,10 @@ impl InboundCrossClusterSearchConnectionStatusBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>Specifies verbose information for the inbound connection status.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`InboundCrossClusterSearchConnectionStatus`](crate::types::InboundCrossClusterSearchConnectionStatus).
     pub fn build(self) -> crate::types::InboundCrossClusterSearchConnectionStatus {

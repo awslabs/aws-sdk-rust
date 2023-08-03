@@ -47,6 +47,10 @@ impl RebootRelationalDatabaseInputBuilder {
         self.relational_database_name = input;
         self
     }
+    /// <p>The name of your database to reboot.</p>
+    pub fn get_relational_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.relational_database_name
+    }
     /// Consumes the builder and constructs a [`RebootRelationalDatabaseInput`](crate::operation::reboot_relational_database::RebootRelationalDatabaseInput).
     pub fn build(
         self,

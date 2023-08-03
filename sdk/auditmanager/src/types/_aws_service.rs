@@ -45,6 +45,10 @@ impl AwsServiceBuilder {
         self.service_name = input;
         self
     }
+    /// <p> The name of the Amazon Web Service. </p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
+    }
     /// Consumes the builder and constructs a [`AwsService`](crate::types::AwsService).
     pub fn build(self) -> crate::types::AwsService {
         crate::types::AwsService {

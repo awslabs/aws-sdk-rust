@@ -36,6 +36,10 @@ impl DescribeImageReplicationStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeImageReplicationStatus as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_image_replication_status::builders::DescribeImageReplicationStatusInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl DescribeImageReplicationStatusFluentBuilder {
         self.inner = self.inner.set_repository_name(input);
         self
     }
+    /// <p>The name of the repository that the image is in.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository_name()
+    }
     /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
     pub fn image_id(mut self, input: crate::types::ImageIdentifier) -> Self {
         self.inner = self.inner.image_id(input);
@@ -119,6 +127,10 @@ impl DescribeImageReplicationStatusFluentBuilder {
         self.inner = self.inner.set_image_id(input);
         self
     }
+    /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<crate::types::ImageIdentifier> {
+        self.inner.get_image_id()
+    }
     /// <p>The Amazon Web Services account ID associated with the registry. If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.registry_id(input.into());
@@ -128,5 +140,9 @@ impl DescribeImageReplicationStatusFluentBuilder {
     pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_registry_id(input);
         self
+    }
+    /// <p>The Amazon Web Services account ID associated with the registry. If you do not specify a registry, the default registry is assumed.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_registry_id()
     }
 }

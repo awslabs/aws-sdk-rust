@@ -54,6 +54,10 @@ impl DescribeInputDeviceThumbnailInputBuilder {
         self.input_device_id = input;
         self
     }
+    /// The unique ID of this input device. For example, hd-123456789abcdef.
+    pub fn get_input_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_device_id
+    }
     /// The HTTP Accept header. Indicates the requested type for the thumbnail.
     pub fn accept(mut self, input: crate::types::AcceptHeader) -> Self {
         self.accept = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl DescribeInputDeviceThumbnailInputBuilder {
     pub fn set_accept(mut self, input: ::std::option::Option<crate::types::AcceptHeader>) -> Self {
         self.accept = input;
         self
+    }
+    /// The HTTP Accept header. Indicates the requested type for the thumbnail.
+    pub fn get_accept(&self) -> &::std::option::Option<crate::types::AcceptHeader> {
+        &self.accept
     }
     /// Consumes the builder and constructs a [`DescribeInputDeviceThumbnailInput`](crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailInput).
     pub fn build(

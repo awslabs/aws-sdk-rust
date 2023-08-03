@@ -50,6 +50,12 @@ impl GetPreparedStatementOutputBuilder {
         self.prepared_statement = input;
         self
     }
+    /// <p>The name of the prepared statement that was retrieved.</p>
+    pub fn get_prepared_statement(
+        &self,
+    ) -> &::std::option::Option<crate::types::PreparedStatement> {
+        &self.prepared_statement
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

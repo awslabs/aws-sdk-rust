@@ -56,6 +56,10 @@ impl ListTagsForResourceInputBuilder {
         self.resource_name = input;
         self
     }
+    /// <p>The Amazon DocumentDB resource with tags to be listed. This value is an Amazon Resource Name (ARN).</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_name
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -74,6 +78,10 @@ impl ListTagsForResourceInputBuilder {
     ) -> Self {
         self.filters = input;
         self
+    }
+    /// <p>This parameter is not currently supported.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
     }
     /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::operation::list_tags_for_resource::ListTagsForResourceInput).
     pub fn build(

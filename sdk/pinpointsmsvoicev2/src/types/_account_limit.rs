@@ -59,6 +59,10 @@ impl AccountLimitBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the attribute to apply the account limit to.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::AccountLimitName> {
+        &self.name
+    }
     /// <p>The current amount that has been spent, in US dollars.</p>
     pub fn used(mut self, input: i64) -> Self {
         self.used = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl AccountLimitBuilder {
         self.used = input;
         self
     }
+    /// <p>The current amount that has been spent, in US dollars.</p>
+    pub fn get_used(&self) -> &::std::option::Option<i64> {
+        &self.used
+    }
     /// <p>The Amazon Web Services set limit for that resource type, in US dollars.</p>
     pub fn max(mut self, input: i64) -> Self {
         self.max = ::std::option::Option::Some(input);
@@ -78,6 +86,10 @@ impl AccountLimitBuilder {
     pub fn set_max(mut self, input: ::std::option::Option<i64>) -> Self {
         self.max = input;
         self
+    }
+    /// <p>The Amazon Web Services set limit for that resource type, in US dollars.</p>
+    pub fn get_max(&self) -> &::std::option::Option<i64> {
+        &self.max
     }
     /// Consumes the builder and constructs a [`AccountLimit`](crate::types::AccountLimit).
     pub fn build(self) -> crate::types::AccountLimit {

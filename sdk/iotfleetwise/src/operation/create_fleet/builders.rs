@@ -39,6 +39,10 @@ impl CreateFleetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateFleet as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_fleet::builders::CreateFleetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +125,10 @@ impl CreateFleetFluentBuilder {
         self.inner = self.inner.set_fleet_id(input);
         self
     }
+    /// <p> The unique ID of the fleet to create. </p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fleet_id()
+    }
     /// <p> A brief description of the fleet to create. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -130,6 +138,10 @@ impl CreateFleetFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p> A brief description of the fleet to create. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p> The Amazon Resource Name (ARN) of a signal catalog. </p>
     pub fn signal_catalog_arn(
@@ -147,6 +159,10 @@ impl CreateFleetFluentBuilder {
         self.inner = self.inner.set_signal_catalog_arn(input);
         self
     }
+    /// <p> The Amazon Resource Name (ARN) of a signal catalog. </p>
+    pub fn get_signal_catalog_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_signal_catalog_arn()
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -163,5 +179,9 @@ impl CreateFleetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Metadata that can be used to manage the fleet.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

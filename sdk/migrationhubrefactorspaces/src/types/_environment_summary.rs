@@ -152,6 +152,10 @@ impl EnvironmentSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the environment. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) of the environment. </p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -162,6 +166,10 @@ impl EnvironmentSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the environment. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>A description of the environment. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -171,6 +179,10 @@ impl EnvironmentSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the environment. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The unique identifier of the environment. </p>
     pub fn environment_id(
@@ -188,6 +200,10 @@ impl EnvironmentSummaryBuilder {
         self.environment_id = input;
         self
     }
+    /// <p>The unique identifier of the environment. </p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
+    }
     /// <p>The network fabric type of the environment. </p>
     pub fn network_fabric_type(mut self, input: crate::types::NetworkFabricType) -> Self {
         self.network_fabric_type = ::std::option::Option::Some(input);
@@ -200,6 +216,12 @@ impl EnvironmentSummaryBuilder {
     ) -> Self {
         self.network_fabric_type = input;
         self
+    }
+    /// <p>The network fabric type of the environment. </p>
+    pub fn get_network_fabric_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkFabricType> {
+        &self.network_fabric_type
     }
     /// <p>The Amazon Web Services account ID of the environment owner.</p>
     pub fn owner_account_id(
@@ -217,6 +239,10 @@ impl EnvironmentSummaryBuilder {
         self.owner_account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID of the environment owner.</p>
+    pub fn get_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_account_id
+    }
     /// <p>The ID of the Transit Gateway set up by the environment. </p>
     pub fn transit_gateway_id(
         mut self,
@@ -233,6 +259,10 @@ impl EnvironmentSummaryBuilder {
         self.transit_gateway_id = input;
         self
     }
+    /// <p>The ID of the Transit Gateway set up by the environment. </p>
+    pub fn get_transit_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_id
+    }
     /// <p>The current state of the environment. </p>
     pub fn state(mut self, input: crate::types::EnvironmentState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -245,6 +275,10 @@ impl EnvironmentSummaryBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The current state of the environment. </p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::EnvironmentState> {
+        &self.state
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -271,6 +305,14 @@ impl EnvironmentSummaryBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags assigned to the environment. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>Any error associated with the environment resource. </p>
     pub fn error(mut self, input: crate::types::ErrorResponse) -> Self {
         self.error = ::std::option::Option::Some(input);
@@ -280,6 +322,10 @@ impl EnvironmentSummaryBuilder {
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::ErrorResponse>) -> Self {
         self.error = input;
         self
+    }
+    /// <p>Any error associated with the environment resource. </p>
+    pub fn get_error(&self) -> &::std::option::Option<crate::types::ErrorResponse> {
+        &self.error
     }
     /// <p>A timestamp that indicates when the environment was last updated. </p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -294,6 +340,10 @@ impl EnvironmentSummaryBuilder {
         self.last_updated_time = input;
         self
     }
+    /// <p>A timestamp that indicates when the environment was last updated. </p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
+    }
     /// <p>A timestamp that indicates when the environment is created. </p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
@@ -306,6 +356,10 @@ impl EnvironmentSummaryBuilder {
     ) -> Self {
         self.created_time = input;
         self
+    }
+    /// <p>A timestamp that indicates when the environment is created. </p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
     }
     /// Consumes the builder and constructs a [`EnvironmentSummary`](crate::types::EnvironmentSummary).
     pub fn build(self) -> crate::types::EnvironmentSummary {

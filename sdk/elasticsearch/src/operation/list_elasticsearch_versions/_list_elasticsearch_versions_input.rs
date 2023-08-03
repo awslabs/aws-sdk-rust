@@ -51,6 +51,10 @@ impl ListElasticsearchVersionsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p> Set this value to limit the number of results returned. Value provided must be greater than 10 else it wont be honored. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p> Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl ListElasticsearchVersionsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p> Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListElasticsearchVersionsInput`](crate::operation::list_elasticsearch_versions::ListElasticsearchVersionsInput).
     pub fn build(

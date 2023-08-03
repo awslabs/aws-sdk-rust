@@ -72,6 +72,10 @@ impl DescribeConnectionAliasesInputBuilder {
         self.alias_ids = input;
         self
     }
+    /// <p>The identifiers of the connection aliases to describe.</p>
+    pub fn get_alias_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.alias_ids
+    }
     /// <p>The identifier of the directory associated with the connection alias.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl DescribeConnectionAliasesInputBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The identifier of the directory associated with the connection alias.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>The maximum number of connection aliases to return.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -92,6 +100,10 @@ impl DescribeConnectionAliasesInputBuilder {
         self.limit = input;
         self
     }
+    /// <p>The maximum number of connection aliases to return.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
+    }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -101,6 +113,10 @@ impl DescribeConnectionAliasesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeConnectionAliasesInput`](crate::operation::describe_connection_aliases::DescribeConnectionAliasesInput).
     pub fn build(

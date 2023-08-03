@@ -36,6 +36,12 @@ impl UpdateBrokerStorageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateBrokerStorage as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_broker_storage::builders::UpdateBrokerStorageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateBrokerStorageFluentBuilder {
         self.inner = self.inner.set_cluster_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_arn()
+    }
     /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
     pub fn current_version(
         mut self,
@@ -141,6 +151,10 @@ impl UpdateBrokerStorageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_current_version(input);
         self
+    }
+    /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
+    pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_current_version()
     }
     /// Appends an item to `TargetBrokerEBSVolumeInfo`.
     ///
@@ -161,5 +175,11 @@ impl UpdateBrokerStorageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_target_broker_ebs_volume_info(input);
         self
+    }
+    /// <p>Describes the target volume size and the ID of the broker to apply the update to.</p>
+    pub fn get_target_broker_ebs_volume_info(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BrokerEbsVolumeInfo>> {
+        self.inner.get_target_broker_ebs_volume_info()
     }
 }

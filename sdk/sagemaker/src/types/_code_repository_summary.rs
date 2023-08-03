@@ -78,6 +78,10 @@ impl CodeRepositorySummaryBuilder {
         self.code_repository_name = input;
         self
     }
+    /// <p>The name of the Git repository.</p>
+    pub fn get_code_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code_repository_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the Git repository.</p>
     pub fn code_repository_arn(
         mut self,
@@ -94,6 +98,10 @@ impl CodeRepositorySummaryBuilder {
         self.code_repository_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Git repository.</p>
+    pub fn get_code_repository_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code_repository_arn
+    }
     /// <p>The date and time that the Git repository was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -106,6 +114,10 @@ impl CodeRepositorySummaryBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The date and time that the Git repository was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The date and time that the Git repository was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -120,6 +132,10 @@ impl CodeRepositorySummaryBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p>The date and time that the Git repository was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     /// <p>Configuration details for the Git repository, including the URL where it is located and the ARN of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository.</p>
     pub fn git_config(mut self, input: crate::types::GitConfig) -> Self {
         self.git_config = ::std::option::Option::Some(input);
@@ -129,6 +145,10 @@ impl CodeRepositorySummaryBuilder {
     pub fn set_git_config(mut self, input: ::std::option::Option<crate::types::GitConfig>) -> Self {
         self.git_config = input;
         self
+    }
+    /// <p>Configuration details for the Git repository, including the URL where it is located and the ARN of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository.</p>
+    pub fn get_git_config(&self) -> &::std::option::Option<crate::types::GitConfig> {
+        &self.git_config
     }
     /// Consumes the builder and constructs a [`CodeRepositorySummary`](crate::types::CodeRepositorySummary).
     pub fn build(self) -> crate::types::CodeRepositorySummary {

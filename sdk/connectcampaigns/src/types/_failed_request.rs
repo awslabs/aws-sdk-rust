@@ -56,6 +56,10 @@ impl FailedRequestBuilder {
         self.client_token = input;
         self
     }
+    /// Client provided parameter used for idempotency. Its value must be unique for each request.
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// Identifier representing a Dial request
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl FailedRequestBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// Identifier representing a Dial request
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// A predefined code indicating the error that caused the failure.
     pub fn failure_code(mut self, input: crate::types::FailureCode) -> Self {
@@ -78,6 +86,10 @@ impl FailedRequestBuilder {
     ) -> Self {
         self.failure_code = input;
         self
+    }
+    /// A predefined code indicating the error that caused the failure.
+    pub fn get_failure_code(&self) -> &::std::option::Option<crate::types::FailureCode> {
+        &self.failure_code
     }
     /// Consumes the builder and constructs a [`FailedRequest`](crate::types::FailedRequest).
     pub fn build(self) -> crate::types::FailedRequest {

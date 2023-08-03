@@ -54,6 +54,10 @@ impl UpdateEvaluationInputBuilder {
         self.evaluation_id = input;
         self
     }
+    /// <p>The ID assigned to the <code>Evaluation</code> during creation.</p>
+    pub fn get_evaluation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_id
+    }
     /// <p>A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content. </p>
     pub fn evaluation_name(
         mut self,
@@ -69,6 +73,10 @@ impl UpdateEvaluationInputBuilder {
     ) -> Self {
         self.evaluation_name = input;
         self
+    }
+    /// <p>A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content. </p>
+    pub fn get_evaluation_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_name
     }
     /// Consumes the builder and constructs a [`UpdateEvaluationInput`](crate::operation::update_evaluation::UpdateEvaluationInput).
     pub fn build(

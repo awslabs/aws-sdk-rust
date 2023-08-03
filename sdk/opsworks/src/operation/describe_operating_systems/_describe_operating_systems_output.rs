@@ -59,6 +59,12 @@ impl DescribeOperatingSystemsOutputBuilder {
         self.operating_systems = input;
         self
     }
+    /// <p>Contains information in response to a <code>DescribeOperatingSystems</code> request.</p>
+    pub fn get_operating_systems(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OperatingSystem>> {
+        &self.operating_systems
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

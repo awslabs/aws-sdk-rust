@@ -56,6 +56,12 @@ impl AwsS3BucketWebsiteConfigurationRoutingRuleConditionBuilder {
         self.http_error_code_returned_equals = input;
         self
     }
+    /// <p>Indicates to redirect the request if the HTTP error code matches this value.</p>
+    pub fn get_http_error_code_returned_equals(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.http_error_code_returned_equals
+    }
     /// <p>Indicates to redirect the request if the key prefix matches this value.</p>
     pub fn key_prefix_equals(
         mut self,
@@ -71,6 +77,10 @@ impl AwsS3BucketWebsiteConfigurationRoutingRuleConditionBuilder {
     ) -> Self {
         self.key_prefix_equals = input;
         self
+    }
+    /// <p>Indicates to redirect the request if the key prefix matches this value.</p>
+    pub fn get_key_prefix_equals(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_prefix_equals
     }
     /// Consumes the builder and constructs a [`AwsS3BucketWebsiteConfigurationRoutingRuleCondition`](crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleCondition).
     pub fn build(self) -> crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleCondition {

@@ -46,6 +46,10 @@ impl DetectDominantLanguageInputBuilder {
         self.text = input;
         self
     }
+    /// <p>A UTF-8 text string. The string must contain at least 20 characters. The maximum string size is 100 KB.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
+    }
     /// Consumes the builder and constructs a [`DetectDominantLanguageInput`](crate::operation::detect_dominant_language::DetectDominantLanguageInput).
     pub fn build(
         self,

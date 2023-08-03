@@ -39,6 +39,10 @@ impl DescribeSnomedctInferenceJobInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p> The identifier that Amazon Comprehend Medical generated for the job. The StartSNOMEDCTInferenceJob operation returns this identifier in its response. </p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// Consumes the builder and constructs a [`DescribeSnomedctInferenceJobInput`](crate::operation::describe_snomedct_inference_job::DescribeSnomedctInferenceJobInput).
     pub fn build(
         self,

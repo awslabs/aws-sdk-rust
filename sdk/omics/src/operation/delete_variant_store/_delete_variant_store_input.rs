@@ -48,6 +48,10 @@ impl DeleteVariantStoreInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The store's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Whether to force deletion.</p>
     pub fn force(mut self, input: bool) -> Self {
         self.force = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl DeleteVariantStoreInputBuilder {
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force = input;
         self
+    }
+    /// <p>Whether to force deletion.</p>
+    pub fn get_force(&self) -> &::std::option::Option<bool> {
+        &self.force
     }
     /// Consumes the builder and constructs a [`DeleteVariantStoreInput`](crate::operation::delete_variant_store::DeleteVariantStoreInput).
     pub fn build(

@@ -49,6 +49,12 @@ impl PatchRuleGroupBuilder {
         self.patch_rules = input;
         self
     }
+    /// <p>The rules that make up the rule group.</p>
+    pub fn get_patch_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchRule>> {
+        &self.patch_rules
+    }
     /// Consumes the builder and constructs a [`PatchRuleGroup`](crate::types::PatchRuleGroup).
     pub fn build(self) -> crate::types::PatchRuleGroup {
         crate::types::PatchRuleGroup {

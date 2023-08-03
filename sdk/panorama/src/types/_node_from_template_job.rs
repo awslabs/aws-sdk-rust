@@ -80,6 +80,10 @@ impl NodeFromTemplateJobBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The job's ID.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>The job's template type.</p>
     pub fn template_type(mut self, input: crate::types::TemplateType) -> Self {
         self.template_type = ::std::option::Option::Some(input);
@@ -93,6 +97,10 @@ impl NodeFromTemplateJobBuilder {
         self.template_type = input;
         self
     }
+    /// <p>The job's template type.</p>
+    pub fn get_template_type(&self) -> &::std::option::Option<crate::types::TemplateType> {
+        &self.template_type
+    }
     /// <p>The job's status.</p>
     pub fn status(mut self, input: crate::types::NodeFromTemplateJobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -105,6 +113,10 @@ impl NodeFromTemplateJobBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The job's status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::NodeFromTemplateJobStatus> {
+        &self.status
     }
     /// <p>The job's status message.</p>
     pub fn status_message(
@@ -122,6 +134,10 @@ impl NodeFromTemplateJobBuilder {
         self.status_message = input;
         self
     }
+    /// <p>The job's status message.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>When the job was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
@@ -135,6 +151,10 @@ impl NodeFromTemplateJobBuilder {
         self.created_time = input;
         self
     }
+    /// <p>When the job was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>The node's name.</p>
     pub fn node_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_name = ::std::option::Option::Some(input.into());
@@ -144,6 +164,10 @@ impl NodeFromTemplateJobBuilder {
     pub fn set_node_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_name = input;
         self
+    }
+    /// <p>The node's name.</p>
+    pub fn get_node_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_name
     }
     /// Consumes the builder and constructs a [`NodeFromTemplateJob`](crate::types::NodeFromTemplateJob).
     pub fn build(self) -> crate::types::NodeFromTemplateJob {

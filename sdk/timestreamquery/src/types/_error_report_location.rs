@@ -43,6 +43,10 @@ impl ErrorReportLocationBuilder {
         self.s3_report_location = input;
         self
     }
+    /// <p>The S3 location where error reports are written.</p>
+    pub fn get_s3_report_location(&self) -> &::std::option::Option<crate::types::S3ReportLocation> {
+        &self.s3_report_location
+    }
     /// Consumes the builder and constructs a [`ErrorReportLocation`](crate::types::ErrorReportLocation).
     pub fn build(self) -> crate::types::ErrorReportLocation {
         crate::types::ErrorReportLocation {

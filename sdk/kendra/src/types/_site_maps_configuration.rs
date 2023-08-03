@@ -54,6 +54,11 @@ impl SiteMapsConfigurationBuilder {
         self.site_maps = input;
         self
     }
+    /// <p>The list of sitemap URLs of the websites you want to crawl.</p>
+    /// <p>The list can include a maximum of three sitemap URLs.</p>
+    pub fn get_site_maps(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.site_maps
+    }
     /// Consumes the builder and constructs a [`SiteMapsConfiguration`](crate::types::SiteMapsConfiguration).
     pub fn build(self) -> crate::types::SiteMapsConfiguration {
         crate::types::SiteMapsConfiguration {

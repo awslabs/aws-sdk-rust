@@ -48,6 +48,10 @@ impl ImagePackageBuilder {
         self.package_name = input;
         self
     }
+    /// <p>The name of the package as reported to the operating system package manager.</p>
+    pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_name
+    }
     /// <p>The version of the package as reported to the operating system package manager.</p>
     pub fn package_version(
         mut self,
@@ -63,6 +67,10 @@ impl ImagePackageBuilder {
     ) -> Self {
         self.package_version = input;
         self
+    }
+    /// <p>The version of the package as reported to the operating system package manager.</p>
+    pub fn get_package_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_version
     }
     /// Consumes the builder and constructs a [`ImagePackage`](crate::types::ImagePackage).
     pub fn build(self) -> crate::types::ImagePackage {

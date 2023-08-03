@@ -102,6 +102,16 @@ impl CopyOptionGroupInputBuilder {
         self.source_option_group_identifier = input;
         self
     }
+    /// <p>The identifier for the source option group.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must specify a valid option group.</p> </li>
+    /// </ul>
+    pub fn get_source_option_group_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.source_option_group_identifier
+    }
     /// <p>The identifier for the copied option group.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -134,6 +144,20 @@ impl CopyOptionGroupInputBuilder {
         self.target_option_group_identifier = input;
         self
     }
+    /// <p>The identifier for the copied option group.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't be null, empty, or blank</p> </li>
+    /// <li> <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// </ul>
+    /// <p>Example: <code>my-option-group</code> </p>
+    pub fn get_target_option_group_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.target_option_group_identifier
+    }
     /// <p>The description for the copied option group.</p>
     pub fn target_option_group_description(
         mut self,
@@ -149,6 +173,12 @@ impl CopyOptionGroupInputBuilder {
     ) -> Self {
         self.target_option_group_description = input;
         self
+    }
+    /// <p>The description for the copied option group.</p>
+    pub fn get_target_option_group_description(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.target_option_group_description
     }
     /// Appends an item to `tags`.
     ///
@@ -168,6 +198,10 @@ impl CopyOptionGroupInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CopyOptionGroupInput`](crate::operation::copy_option_group::CopyOptionGroupInput).
     pub fn build(

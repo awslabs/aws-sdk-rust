@@ -64,6 +64,10 @@ impl EdgeModelBuilder {
         self.model_name = input;
         self
     }
+    /// <p>The name of the model.</p>
+    pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_name
+    }
     /// <p>The model version.</p>
     pub fn model_version(
         mut self,
@@ -80,6 +84,10 @@ impl EdgeModelBuilder {
         self.model_version = input;
         self
     }
+    /// <p>The model version.</p>
+    pub fn get_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_version
+    }
     /// <p>The timestamp of the last data sample taken.</p>
     pub fn latest_sample_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.latest_sample_time = ::std::option::Option::Some(input);
@@ -93,6 +101,10 @@ impl EdgeModelBuilder {
         self.latest_sample_time = input;
         self
     }
+    /// <p>The timestamp of the last data sample taken.</p>
+    pub fn get_latest_sample_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.latest_sample_time
+    }
     /// <p>The timestamp of the last inference that was made.</p>
     pub fn latest_inference(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.latest_inference = ::std::option::Option::Some(input);
@@ -105,6 +117,10 @@ impl EdgeModelBuilder {
     ) -> Self {
         self.latest_inference = input;
         self
+    }
+    /// <p>The timestamp of the last inference that was made.</p>
+    pub fn get_latest_inference(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.latest_inference
     }
     /// Consumes the builder and constructs a [`EdgeModel`](crate::types::EdgeModel).
     pub fn build(self) -> crate::types::EdgeModel {

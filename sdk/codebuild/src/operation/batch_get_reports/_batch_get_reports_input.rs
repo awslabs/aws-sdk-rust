@@ -48,6 +48,12 @@ impl BatchGetReportsInputBuilder {
         self.report_arns = input;
         self
     }
+    /// <p> An array of ARNs that identify the <code>Report</code> objects to return. </p>
+    pub fn get_report_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.report_arns
+    }
     /// Consumes the builder and constructs a [`BatchGetReportsInput`](crate::operation::batch_get_reports::BatchGetReportsInput).
     pub fn build(
         self,

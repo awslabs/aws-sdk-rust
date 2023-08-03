@@ -109,6 +109,14 @@ impl UpdatePortfolioInputBuilder {
         self.accept_language = input;
         self
     }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accept_language
+    }
     /// <p>The portfolio identifier.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -118,6 +126,10 @@ impl UpdatePortfolioInputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The portfolio identifier.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The name to use for display purposes.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -129,6 +141,10 @@ impl UpdatePortfolioInputBuilder {
         self.display_name = input;
         self
     }
+    /// <p>The name to use for display purposes.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// <p>The updated description of the portfolio.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -138,6 +154,10 @@ impl UpdatePortfolioInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The updated description of the portfolio.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The updated name of the portfolio provider.</p>
     pub fn provider_name(
@@ -154,6 +174,10 @@ impl UpdatePortfolioInputBuilder {
     ) -> Self {
         self.provider_name = input;
         self
+    }
+    /// <p>The updated name of the portfolio provider.</p>
+    pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provider_name
     }
     /// Appends an item to `add_tags`.
     ///
@@ -174,6 +198,10 @@ impl UpdatePortfolioInputBuilder {
         self.add_tags = input;
         self
     }
+    /// <p>The tags to add.</p>
+    pub fn get_add_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.add_tags
+    }
     /// Appends an item to `remove_tags`.
     ///
     /// To override the contents of this collection use [`set_remove_tags`](Self::set_remove_tags).
@@ -192,6 +220,12 @@ impl UpdatePortfolioInputBuilder {
     ) -> Self {
         self.remove_tags = input;
         self
+    }
+    /// <p>The tags to remove.</p>
+    pub fn get_remove_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.remove_tags
     }
     /// Consumes the builder and constructs a [`UpdatePortfolioInput`](crate::operation::update_portfolio::UpdatePortfolioInput).
     pub fn build(

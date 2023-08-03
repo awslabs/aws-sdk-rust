@@ -69,6 +69,10 @@ impl MergeBranchesByFastForwardInputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository where you want to merge two branches.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
     pub fn source_commit_specifier(
         mut self,
@@ -86,6 +90,10 @@ impl MergeBranchesByFastForwardInputBuilder {
         self
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    pub fn get_source_commit_specifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_commit_specifier
+    }
+    /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
     pub fn destination_commit_specifier(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -100,6 +108,12 @@ impl MergeBranchesByFastForwardInputBuilder {
     ) -> Self {
         self.destination_commit_specifier = input;
         self
+    }
+    /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    pub fn get_destination_commit_specifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.destination_commit_specifier
     }
     /// <p>The branch where the merge is applied.</p>
     pub fn target_branch(
@@ -116,6 +130,10 @@ impl MergeBranchesByFastForwardInputBuilder {
     ) -> Self {
         self.target_branch = input;
         self
+    }
+    /// <p>The branch where the merge is applied.</p>
+    pub fn get_target_branch(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_branch
     }
     /// Consumes the builder and constructs a [`MergeBranchesByFastForwardInput`](crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardInput).
     pub fn build(

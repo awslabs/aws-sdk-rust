@@ -51,6 +51,12 @@ impl DescribeServiceIntegrationOutputBuilder {
         self.service_integration = input;
         self
     }
+    /// <p> Information about the integration of DevOps Guru with another Amazon Web Services service, such as Amazon Web Services Systems Manager. </p>
+    pub fn get_service_integration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServiceIntegrationConfig> {
+        &self.service_integration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

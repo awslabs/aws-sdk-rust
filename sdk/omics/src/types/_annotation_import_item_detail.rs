@@ -48,6 +48,10 @@ impl AnnotationImportItemDetailBuilder {
         self.source = input;
         self
     }
+    /// <p>The source file's location in Amazon S3.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
+    }
     /// <p>The item's job status.</p>
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
         self.job_status = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl AnnotationImportItemDetailBuilder {
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
         self.job_status = input;
         self
+    }
+    /// <p>The item's job status.</p>
+    pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
+        &self.job_status
     }
     /// Consumes the builder and constructs a [`AnnotationImportItemDetail`](crate::types::AnnotationImportItemDetail).
     pub fn build(self) -> crate::types::AnnotationImportItemDetail {

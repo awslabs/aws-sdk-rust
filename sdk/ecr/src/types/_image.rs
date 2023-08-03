@@ -72,6 +72,10 @@ impl ImageBuilder {
         self.registry_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID associated with the registry containing the image.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
+    }
     /// <p>The name of the repository associated with the image.</p>
     pub fn repository_name(
         mut self,
@@ -88,6 +92,10 @@ impl ImageBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository associated with the image.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>An object containing the image tag and image digest associated with an image.</p>
     pub fn image_id(mut self, input: crate::types::ImageIdentifier) -> Self {
         self.image_id = ::std::option::Option::Some(input);
@@ -100,6 +108,10 @@ impl ImageBuilder {
     ) -> Self {
         self.image_id = input;
         self
+    }
+    /// <p>An object containing the image tag and image digest associated with an image.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<crate::types::ImageIdentifier> {
+        &self.image_id
     }
     /// <p>The image manifest associated with the image.</p>
     pub fn image_manifest(
@@ -117,6 +129,10 @@ impl ImageBuilder {
         self.image_manifest = input;
         self
     }
+    /// <p>The image manifest associated with the image.</p>
+    pub fn get_image_manifest(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_manifest
+    }
     /// <p>The manifest media type of the image.</p>
     pub fn image_manifest_media_type(
         mut self,
@@ -132,6 +148,10 @@ impl ImageBuilder {
     ) -> Self {
         self.image_manifest_media_type = input;
         self
+    }
+    /// <p>The manifest media type of the image.</p>
+    pub fn get_image_manifest_media_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_manifest_media_type
     }
     /// Consumes the builder and constructs a [`Image`](crate::types::Image).
     pub fn build(self) -> crate::types::Image {

@@ -64,6 +64,10 @@ impl DiskInfoBuilder {
         self.name = input;
         self
     }
+    /// <p>The disk name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The disk path.</p>
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl DiskInfoBuilder {
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path = input;
         self
+    }
+    /// <p>The disk path.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
     }
     /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
     pub fn size_in_gb(mut self, input: i32) -> Self {
@@ -84,6 +92,10 @@ impl DiskInfoBuilder {
         self.size_in_gb = input;
         self
     }
+    /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
+    pub fn get_size_in_gb(&self) -> &::std::option::Option<i32> {
+        &self.size_in_gb
+    }
     /// <p>A Boolean value indicating whether this disk is a system disk (has an operating system loaded on it).</p>
     pub fn is_system_disk(mut self, input: bool) -> Self {
         self.is_system_disk = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl DiskInfoBuilder {
     pub fn set_is_system_disk(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_system_disk = input;
         self
+    }
+    /// <p>A Boolean value indicating whether this disk is a system disk (has an operating system loaded on it).</p>
+    pub fn get_is_system_disk(&self) -> &::std::option::Option<bool> {
+        &self.is_system_disk
     }
     /// Consumes the builder and constructs a [`DiskInfo`](crate::types::DiskInfo).
     pub fn build(self) -> crate::types::DiskInfo {

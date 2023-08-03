@@ -36,6 +36,12 @@ impl CreateNetworkFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateNetwork as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_network::builders::CreateNetworkInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl CreateNetworkFluentBuilder {
         self.inner = self.inner.set_network_name(input);
         self
     }
+    /// <p>The name of the network. You can't change the name after you create the network.</p>
+    pub fn get_network_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_network_name()
+    }
     /// <p>The description of the network.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -128,6 +138,10 @@ impl CreateNetworkFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The description of the network.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -137,6 +151,10 @@ impl CreateNetworkFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -160,5 +178,13 @@ impl CreateNetworkFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p> The tags to apply to the network. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

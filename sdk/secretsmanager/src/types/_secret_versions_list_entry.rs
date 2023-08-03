@@ -72,6 +72,10 @@ impl SecretVersionsListEntryBuilder {
         self.version_id = input;
         self
     }
+    /// <p>The unique version identifier of this version of the secret.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
+    }
     /// Appends an item to `version_stages`.
     ///
     /// To override the contents of this collection use [`set_version_stages`](Self::set_version_stages).
@@ -94,6 +98,12 @@ impl SecretVersionsListEntryBuilder {
         self.version_stages = input;
         self
     }
+    /// <p>An array of staging labels that are currently associated with this version of the secret.</p>
+    pub fn get_version_stages(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.version_stages
+    }
     /// <p>The date that this version of the secret was last accessed. Note that the resolution of this field is at the date level and does not include the time.</p>
     pub fn last_accessed_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_accessed_date = ::std::option::Option::Some(input);
@@ -107,6 +117,10 @@ impl SecretVersionsListEntryBuilder {
         self.last_accessed_date = input;
         self
     }
+    /// <p>The date that this version of the secret was last accessed. Note that the resolution of this field is at the date level and does not include the time.</p>
+    pub fn get_last_accessed_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_accessed_date
+    }
     /// <p>The date and time this version of the secret was created.</p>
     pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_date = ::std::option::Option::Some(input);
@@ -119,6 +133,10 @@ impl SecretVersionsListEntryBuilder {
     ) -> Self {
         self.created_date = input;
         self
+    }
+    /// <p>The date and time this version of the secret was created.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_date
     }
     /// Appends an item to `kms_key_ids`.
     ///
@@ -138,6 +156,12 @@ impl SecretVersionsListEntryBuilder {
     ) -> Self {
         self.kms_key_ids = input;
         self
+    }
+    /// <p>The KMS keys used to encrypt the secret version.</p>
+    pub fn get_kms_key_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.kms_key_ids
     }
     /// Consumes the builder and constructs a [`SecretVersionsListEntry`](crate::types::SecretVersionsListEntry).
     pub fn build(self) -> crate::types::SecretVersionsListEntry {

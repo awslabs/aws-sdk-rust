@@ -36,6 +36,12 @@ impl UpdateLabelGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateLabelGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_label_group::builders::UpdateLabelGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateLabelGroupFluentBuilder {
         self.inner = self.inner.set_label_group_name(input);
         self
     }
+    /// <p> The name of the label group to be updated. </p>
+    pub fn get_label_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_label_group_name()
+    }
     /// Appends an item to `FaultCodes`.
     ///
     /// To override the contents of this collection use [`set_fault_codes`](Self::set_fault_codes).
@@ -150,5 +160,12 @@ impl UpdateLabelGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_fault_codes(input);
         self
+    }
+    /// <p> Updates the code indicating the type of anomaly associated with the label. </p>
+    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+    pub fn get_fault_codes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_fault_codes()
     }
 }

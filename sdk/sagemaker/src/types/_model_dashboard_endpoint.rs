@@ -78,6 +78,10 @@ impl ModelDashboardEndpointBuilder {
         self.endpoint_name = input;
         self
     }
+    /// <p>The endpoint name.</p>
+    pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
     pub fn endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_arn = ::std::option::Option::Some(input.into());
@@ -87,6 +91,10 @@ impl ModelDashboardEndpointBuilder {
     pub fn set_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
+    pub fn get_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_arn
     }
     /// <p>A timestamp that indicates when the endpoint was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -101,6 +109,10 @@ impl ModelDashboardEndpointBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>A timestamp that indicates when the endpoint was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The last time the endpoint was modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -114,6 +126,10 @@ impl ModelDashboardEndpointBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p>The last time the endpoint was modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     /// <p>The endpoint status.</p>
     pub fn endpoint_status(mut self, input: crate::types::EndpointStatus) -> Self {
         self.endpoint_status = ::std::option::Option::Some(input);
@@ -126,6 +142,10 @@ impl ModelDashboardEndpointBuilder {
     ) -> Self {
         self.endpoint_status = input;
         self
+    }
+    /// <p>The endpoint status.</p>
+    pub fn get_endpoint_status(&self) -> &::std::option::Option<crate::types::EndpointStatus> {
+        &self.endpoint_status
     }
     /// Consumes the builder and constructs a [`ModelDashboardEndpoint`](crate::types::ModelDashboardEndpoint).
     pub fn build(self) -> crate::types::ModelDashboardEndpoint {

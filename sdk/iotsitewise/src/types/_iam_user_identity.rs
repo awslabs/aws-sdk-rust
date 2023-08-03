@@ -48,6 +48,12 @@ impl IamUserIdentityBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>.</p> <note>
+    /// <p>If you delete the IAM user, access policies that contain this identity include an empty <code>arn</code>. You can delete the access policy for the IAM user that no longer exists.</p>
+    /// </note>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`IamUserIdentity`](crate::types::IamUserIdentity).
     pub fn build(self) -> crate::types::IamUserIdentity {
         crate::types::IamUserIdentity { arn: self.arn }

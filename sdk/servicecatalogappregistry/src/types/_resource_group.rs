@@ -83,6 +83,16 @@ impl ResourceGroupBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of the propagation process for the resource group. The states includes:</p>
+    /// <p> <code>CREATING </code>if the resource group is in the process of being created.</p>
+    /// <p> <code>CREATE_COMPLETE</code> if the resource group was created successfully.</p>
+    /// <p> <code>CREATE_FAILED</code> if the resource group failed to be created.</p>
+    /// <p> <code>UPDATING</code> if the resource group is in the process of being updated.</p>
+    /// <p> <code>UPDATE_COMPLETE</code> if the resource group updated successfully.</p>
+    /// <p> <code>UPDATE_FAILED</code> if the resource group could not update successfully.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ResourceGroupState> {
+        &self.state
+    }
     /// <p>The Amazon resource name (ARN) of the resource group.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -92,6 +102,10 @@ impl ResourceGroupBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon resource name (ARN) of the resource group.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The error message that generates when the propagation process for the resource group fails.</p>
     pub fn error_message(
@@ -108,6 +122,10 @@ impl ResourceGroupBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>The error message that generates when the propagation process for the resource group fails.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`ResourceGroup`](crate::types::ResourceGroup).
     pub fn build(self) -> crate::types::ResourceGroup {

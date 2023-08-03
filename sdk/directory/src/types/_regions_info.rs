@@ -54,6 +54,10 @@ impl RegionsInfoBuilder {
         self.primary_region = input;
         self
     }
+    /// <p>The Region where the Managed Microsoft AD directory was originally created.</p>
+    pub fn get_primary_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.primary_region
+    }
     /// Appends an item to `additional_regions`.
     ///
     /// To override the contents of this collection use [`set_additional_regions`](Self::set_additional_regions).
@@ -75,6 +79,12 @@ impl RegionsInfoBuilder {
     ) -> Self {
         self.additional_regions = input;
         self
+    }
+    /// <p>Lists the Regions where the directory has been replicated, excluding the primary Region.</p>
+    pub fn get_additional_regions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.additional_regions
     }
     /// Consumes the builder and constructs a [`RegionsInfo`](crate::types::RegionsInfo).
     pub fn build(self) -> crate::types::RegionsInfo {

@@ -54,6 +54,10 @@ impl GetImpersonationRoleInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The WorkMail organization from which to retrieve the impersonation role.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>The impersonation role ID to retrieve.</p>
     pub fn impersonation_role_id(
         mut self,
@@ -69,6 +73,10 @@ impl GetImpersonationRoleInputBuilder {
     ) -> Self {
         self.impersonation_role_id = input;
         self
+    }
+    /// <p>The impersonation role ID to retrieve.</p>
+    pub fn get_impersonation_role_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.impersonation_role_id
     }
     /// Consumes the builder and constructs a [`GetImpersonationRoleInput`](crate::operation::get_impersonation_role::GetImpersonationRoleInput).
     pub fn build(

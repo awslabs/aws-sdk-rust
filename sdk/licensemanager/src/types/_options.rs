@@ -126,6 +126,31 @@ impl OptionsBuilder {
         self.activation_override_behavior = input;
         self
     }
+    /// <p>An activation option for your grant that determines the behavior of activating a grant. Activation options can only be used with granted licenses sourced from the Amazon Web Services Marketplace. Additionally, the operation must specify the value of <code>ACTIVE</code> for the <code>Status</code> parameter.</p>
+    /// <ul>
+    /// <li> <p>As a license administrator, you can optionally specify an <code>ActivationOverrideBehavior</code> when activating a grant.</p> </li>
+    /// <li> <p>As a grantor, you can optionally specify an <code>ActivationOverrideBehavior</code> when you activate a grant for a grantee account in your organization.</p> </li>
+    /// <li> <p>As a grantee, if the grantor creating the distributed grant doesn’t specify an <code>ActivationOverrideBehavior</code>, you can optionally specify one when you are activating the grant.</p> </li>
+    /// </ul>
+    /// <dl>
+    /// <dt>
+    /// DISTRIBUTED_GRANTS_ONLY
+    /// </dt>
+    /// <dd>
+    /// <p>Use this value to activate a grant without replacing any member account’s active grants for the same product.</p>
+    /// </dd>
+    /// <dt>
+    /// ALL_GRANTS_PERMITTED_BY_ISSUER
+    /// </dt>
+    /// <dd>
+    /// <p>Use this value to activate a grant and disable other active grants in any member accounts for the same product. This action will also replace their previously activated grants with this activated grant.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_activation_override_behavior(
+        &self,
+    ) -> &::std::option::Option<crate::types::ActivationOverrideBehavior> {
+        &self.activation_override_behavior
+    }
     /// Consumes the builder and constructs a [`Options`](crate::types::Options).
     pub fn build(self) -> crate::types::Options {
         crate::types::Options {

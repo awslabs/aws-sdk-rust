@@ -64,6 +64,12 @@ impl JobManifestLocationBuilder {
         self.object_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for a manifest object.</p> <important>
+    /// <p>When you're using XML requests, you must replace special characters (such as carriage returns) in object keys with their equivalent XML entity codes. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// </important>
+    pub fn get_object_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_arn
+    }
     /// <p>The optional version ID to identify a specific version of the manifest object.</p>
     pub fn object_version_id(
         mut self,
@@ -80,6 +86,10 @@ impl JobManifestLocationBuilder {
         self.object_version_id = input;
         self
     }
+    /// <p>The optional version ID to identify a specific version of the manifest object.</p>
+    pub fn get_object_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_version_id
+    }
     /// <p>The ETag for the specified manifest object.</p>
     pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.e_tag = ::std::option::Option::Some(input.into());
@@ -89,6 +99,10 @@ impl JobManifestLocationBuilder {
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.e_tag = input;
         self
+    }
+    /// <p>The ETag for the specified manifest object.</p>
+    pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.e_tag
     }
     /// Consumes the builder and constructs a [`JobManifestLocation`](crate::types::JobManifestLocation).
     pub fn build(self) -> crate::types::JobManifestLocation {

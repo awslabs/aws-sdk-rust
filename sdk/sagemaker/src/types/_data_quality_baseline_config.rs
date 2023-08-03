@@ -68,6 +68,10 @@ impl DataQualityBaselineConfigBuilder {
         self.baselining_job_name = input;
         self
     }
+    /// <p>The name of the job that performs baselining for the data quality monitoring job.</p>
+    pub fn get_baselining_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.baselining_job_name
+    }
     /// <p>The constraints resource for a monitoring job.</p>
     pub fn constraints_resource(
         mut self,
@@ -84,6 +88,12 @@ impl DataQualityBaselineConfigBuilder {
         self.constraints_resource = input;
         self
     }
+    /// <p>The constraints resource for a monitoring job.</p>
+    pub fn get_constraints_resource(
+        &self,
+    ) -> &::std::option::Option<crate::types::MonitoringConstraintsResource> {
+        &self.constraints_resource
+    }
     /// <p>The statistics resource for a monitoring job.</p>
     pub fn statistics_resource(
         mut self,
@@ -99,6 +109,12 @@ impl DataQualityBaselineConfigBuilder {
     ) -> Self {
         self.statistics_resource = input;
         self
+    }
+    /// <p>The statistics resource for a monitoring job.</p>
+    pub fn get_statistics_resource(
+        &self,
+    ) -> &::std::option::Option<crate::types::MonitoringStatisticsResource> {
+        &self.statistics_resource
     }
     /// Consumes the builder and constructs a [`DataQualityBaselineConfig`](crate::types::DataQualityBaselineConfig).
     pub fn build(self) -> crate::types::DataQualityBaselineConfig {

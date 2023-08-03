@@ -78,6 +78,12 @@ impl DisassociateFacesOutputBuilder {
         self.disassociated_faces = input;
         self
     }
+    /// <p>An array of DissociatedFace objects containing FaceIds that are successfully disassociated with the UserID is returned. Returned if the DisassociatedFaces action is successful.</p>
+    pub fn get_disassociated_faces(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DisassociatedFace>> {
+        &self.disassociated_faces
+    }
     /// Appends an item to `unsuccessful_face_disassociations`.
     ///
     /// To override the contents of this collection use [`set_unsuccessful_face_disassociations`](Self::set_unsuccessful_face_disassociations).
@@ -100,6 +106,12 @@ impl DisassociateFacesOutputBuilder {
         self.unsuccessful_face_disassociations = input;
         self
     }
+    /// <p>An array of UnsuccessfulDisassociation objects containing FaceIds that are not successfully associated, along with the reasons for the failure to associate. Returned if the DisassociateFaces action is successful.</p>
+    pub fn get_unsuccessful_face_disassociations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceDisassociation>> {
+        &self.unsuccessful_face_disassociations
+    }
     /// <p>The status of an update made to a User. Reflects if the User has been updated for every requested change.</p>
     pub fn user_status(mut self, input: crate::types::UserStatus) -> Self {
         self.user_status = ::std::option::Option::Some(input);
@@ -112,6 +124,10 @@ impl DisassociateFacesOutputBuilder {
     ) -> Self {
         self.user_status = input;
         self
+    }
+    /// <p>The status of an update made to a User. Reflects if the User has been updated for every requested change.</p>
+    pub fn get_user_status(&self) -> &::std::option::Option<crate::types::UserStatus> {
+        &self.user_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

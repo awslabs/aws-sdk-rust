@@ -59,6 +59,10 @@ impl KpiConfigurationBuilder {
         self.field_wells = input;
         self
     }
+    /// <p>The field well configuration of a KPI visual.</p>
+    pub fn get_field_wells(&self) -> &::std::option::Option<crate::types::KpiFieldWells> {
+        &self.field_wells
+    }
     /// <p>The sort configuration of a KPI visual.</p>
     pub fn sort_configuration(mut self, input: crate::types::KpiSortConfiguration) -> Self {
         self.sort_configuration = ::std::option::Option::Some(input);
@@ -72,6 +76,12 @@ impl KpiConfigurationBuilder {
         self.sort_configuration = input;
         self
     }
+    /// <p>The sort configuration of a KPI visual.</p>
+    pub fn get_sort_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::KpiSortConfiguration> {
+        &self.sort_configuration
+    }
     /// <p>The options that determine the presentation of a KPI visual.</p>
     pub fn kpi_options(mut self, input: crate::types::KpiOptions) -> Self {
         self.kpi_options = ::std::option::Option::Some(input);
@@ -84,6 +94,10 @@ impl KpiConfigurationBuilder {
     ) -> Self {
         self.kpi_options = input;
         self
+    }
+    /// <p>The options that determine the presentation of a KPI visual.</p>
+    pub fn get_kpi_options(&self) -> &::std::option::Option<crate::types::KpiOptions> {
+        &self.kpi_options
     }
     /// Consumes the builder and constructs a [`KpiConfiguration`](crate::types::KpiConfiguration).
     pub fn build(self) -> crate::types::KpiConfiguration {

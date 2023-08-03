@@ -45,6 +45,12 @@ impl MeasurementBuilder {
         self.processing_config = input;
         self
     }
+    /// <p>The processing configuration for the given measurement property. You can configure measurements to be kept at the edge or forwarded to the Amazon Web Services Cloud. By default, measurements are forwarded to the cloud.</p>
+    pub fn get_processing_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::MeasurementProcessingConfig> {
+        &self.processing_config
+    }
     /// Consumes the builder and constructs a [`Measurement`](crate::types::Measurement).
     pub fn build(self) -> crate::types::Measurement {
         crate::types::Measurement {

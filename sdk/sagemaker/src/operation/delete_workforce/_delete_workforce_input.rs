@@ -45,6 +45,10 @@ impl DeleteWorkforceInputBuilder {
         self.workforce_name = input;
         self
     }
+    /// <p>The name of the workforce.</p>
+    pub fn get_workforce_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workforce_name
+    }
     /// Consumes the builder and constructs a [`DeleteWorkforceInput`](crate::operation::delete_workforce::DeleteWorkforceInput).
     pub fn build(
         self,

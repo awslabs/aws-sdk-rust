@@ -50,6 +50,10 @@ impl GetInsightResultsOutputBuilder {
         self.insight_results = input;
         self
     }
+    /// <p>The insight results returned by the operation.</p>
+    pub fn get_insight_results(&self) -> &::std::option::Option<crate::types::InsightResults> {
+        &self.insight_results
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

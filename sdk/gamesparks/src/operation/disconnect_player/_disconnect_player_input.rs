@@ -56,6 +56,10 @@ impl DisconnectPlayerInputBuilder {
         self.player_id = input;
         self
     }
+    /// <p>The unique identifier representing a player.</p>
+    pub fn get_player_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.player_id
+    }
     /// <p>The name of the game.</p>
     pub fn game_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_name = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl DisconnectPlayerInputBuilder {
         self.game_name = input;
         self
     }
+    /// <p>The name of the game.</p>
+    pub fn get_game_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.game_name
+    }
     /// <p>The name of the stage.</p>
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_name = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl DisconnectPlayerInputBuilder {
     pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stage_name = input;
         self
+    }
+    /// <p>The name of the stage.</p>
+    pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stage_name
     }
     /// Consumes the builder and constructs a [`DisconnectPlayerInput`](crate::operation::disconnect_player::DisconnectPlayerInput).
     pub fn build(

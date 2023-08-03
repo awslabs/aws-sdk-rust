@@ -36,6 +36,10 @@ impl SetVoiceMessageSpendLimitOverrideFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SetVoiceMessageSpendLimitOverride as a reference.
+    pub fn as_input(&self) -> &crate::operation::set_voice_message_spend_limit_override::builders::SetVoiceMessageSpendLimitOverrideInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -99,5 +103,9 @@ impl SetVoiceMessageSpendLimitOverrideFluentBuilder {
     pub fn set_monthly_limit(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_monthly_limit(input);
         self
+    }
+    /// <p>The new monthly limit to enforce on voice messages.</p>
+    pub fn get_monthly_limit(&self) -> &::std::option::Option<i64> {
+        self.inner.get_monthly_limit()
     }
 }

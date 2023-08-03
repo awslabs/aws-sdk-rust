@@ -97,6 +97,10 @@ impl DescribeLocationFsxOntapOutputBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time that the location was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The ARN of the FSx for ONTAP file system location.</p>
     pub fn location_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_arn = ::std::option::Option::Some(input.into());
@@ -106,6 +110,10 @@ impl DescribeLocationFsxOntapOutputBuilder {
     pub fn set_location_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location_arn = input;
         self
+    }
+    /// <p>The ARN of the FSx for ONTAP file system location.</p>
+    pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_arn
     }
     /// <p>The uniform resource identifier (URI) of the FSx for ONTAP file system location.</p>
     pub fn location_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -117,6 +125,10 @@ impl DescribeLocationFsxOntapOutputBuilder {
         self.location_uri = input;
         self
     }
+    /// <p>The uniform resource identifier (URI) of the FSx for ONTAP file system location.</p>
+    pub fn get_location_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_uri
+    }
     /// <p>Specifies the data transfer protocol that DataSync uses to access your Amazon FSx file system.</p>
     pub fn protocol(mut self, input: crate::types::FsxProtocol) -> Self {
         self.protocol = ::std::option::Option::Some(input);
@@ -126,6 +138,10 @@ impl DescribeLocationFsxOntapOutputBuilder {
     pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::FsxProtocol>) -> Self {
         self.protocol = input;
         self
+    }
+    /// <p>Specifies the data transfer protocol that DataSync uses to access your Amazon FSx file system.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::FsxProtocol> {
+        &self.protocol
     }
     /// Appends an item to `security_group_arns`.
     ///
@@ -149,6 +165,12 @@ impl DescribeLocationFsxOntapOutputBuilder {
         self.security_group_arns = input;
         self
     }
+    /// <p>The security groups that DataSync uses to access your FSx for ONTAP file system.</p>
+    pub fn get_security_group_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_arns
+    }
     /// <p>The ARN of the storage virtual machine (SVM) on your FSx for ONTAP file system where you're copying data to or from.</p>
     pub fn storage_virtual_machine_arn(
         mut self,
@@ -165,6 +187,10 @@ impl DescribeLocationFsxOntapOutputBuilder {
         self.storage_virtual_machine_arn = input;
         self
     }
+    /// <p>The ARN of the storage virtual machine (SVM) on your FSx for ONTAP file system where you're copying data to or from.</p>
+    pub fn get_storage_virtual_machine_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_virtual_machine_arn
+    }
     /// <p>The ARN of the FSx for ONTAP file system.</p>
     pub fn fsx_filesystem_arn(
         mut self,
@@ -180,6 +206,10 @@ impl DescribeLocationFsxOntapOutputBuilder {
     ) -> Self {
         self.fsx_filesystem_arn = input;
         self
+    }
+    /// <p>The ARN of the FSx for ONTAP file system.</p>
+    pub fn get_fsx_filesystem_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fsx_filesystem_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -57,6 +57,10 @@ impl BatchGetDeploymentGroupsInputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The name of an CodeDeploy application associated with the applicable IAM or Amazon Web Services account.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// Appends an item to `deployment_group_names`.
     ///
     /// To override the contents of this collection use [`set_deployment_group_names`](Self::set_deployment_group_names).
@@ -78,6 +82,12 @@ impl BatchGetDeploymentGroupsInputBuilder {
     ) -> Self {
         self.deployment_group_names = input;
         self
+    }
+    /// <p>The names of the deployment groups.</p>
+    pub fn get_deployment_group_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.deployment_group_names
     }
     /// Consumes the builder and constructs a [`BatchGetDeploymentGroupsInput`](crate::operation::batch_get_deployment_groups::BatchGetDeploymentGroupsInput).
     pub fn build(

@@ -43,6 +43,10 @@ impl DeviceJobConfigBuilder {
         self.ota_job_config = input;
         self
     }
+    /// <p>A configuration for an over-the-air (OTA) upgrade. Required for OTA jobs.</p>
+    pub fn get_ota_job_config(&self) -> &::std::option::Option<crate::types::OtaJobConfig> {
+        &self.ota_job_config
+    }
     /// Consumes the builder and constructs a [`DeviceJobConfig`](crate::types::DeviceJobConfig).
     pub fn build(self) -> crate::types::DeviceJobConfig {
         crate::types::DeviceJobConfig {

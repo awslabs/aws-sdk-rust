@@ -36,6 +36,12 @@ impl GetHealthCheckFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetHealthCheck as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_health_check::builders::GetHealthCheckInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl GetHealthCheckFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_health_check_id(input);
         self
+    }
+    /// <p>The identifier that Amazon Route 53 assigned to the health check when you created it. When you add or update a resource record set, you use this value to specify which health check to use. The value can be up to 64 characters long.</p>
+    pub fn get_health_check_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_health_check_id()
     }
 }

@@ -47,6 +47,10 @@ impl GetScanInputBuilder {
         self.scan_name = input;
         self
     }
+    /// <p>The name of the scan you want to view details about.</p>
+    pub fn get_scan_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scan_name
+    }
     /// <p>UUID that identifies the individual scan run you want to view details about. You retrieve this when you call the <code>CreateScan</code> operation. Defaults to the latest scan run if missing.</p>
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.run_id = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl GetScanInputBuilder {
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.run_id = input;
         self
+    }
+    /// <p>UUID that identifies the individual scan run you want to view details about. You retrieve this when you call the <code>CreateScan</code> operation. Defaults to the latest scan run if missing.</p>
+    pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.run_id
     }
     /// Consumes the builder and constructs a [`GetScanInput`](crate::operation::get_scan::GetScanInput).
     pub fn build(

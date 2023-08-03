@@ -81,6 +81,10 @@ impl OriginAccessControlListBuilder {
         self.marker = input;
         self
     }
+    /// <p>The value of the <code>Marker</code> field that was provided in the request.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value to use in the <code>Marker</code> field of another request to continue listing origin access controls.</p>
     pub fn next_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_marker = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl OriginAccessControlListBuilder {
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_marker = input;
         self
+    }
+    /// <p>If there are more items in the list than are in this response, this element is present. It contains the value to use in the <code>Marker</code> field of another request to continue listing origin access controls.</p>
+    pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_marker
     }
     /// <p>The maximum number of origin access controls requested.</p>
     pub fn max_items(mut self, input: i32) -> Self {
@@ -101,6 +109,10 @@ impl OriginAccessControlListBuilder {
         self.max_items = input;
         self
     }
+    /// <p>The maximum number of origin access controls requested.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        &self.max_items
+    }
     /// <p>If there are more items in the list than are in this response, this value is <code>true</code>.</p>
     pub fn is_truncated(mut self, input: bool) -> Self {
         self.is_truncated = ::std::option::Option::Some(input);
@@ -111,6 +123,10 @@ impl OriginAccessControlListBuilder {
         self.is_truncated = input;
         self
     }
+    /// <p>If there are more items in the list than are in this response, this value is <code>true</code>.</p>
+    pub fn get_is_truncated(&self) -> &::std::option::Option<bool> {
+        &self.is_truncated
+    }
     /// <p>The number of origin access controls returned in the response.</p>
     pub fn quantity(mut self, input: i32) -> Self {
         self.quantity = ::std::option::Option::Some(input);
@@ -120,6 +136,10 @@ impl OriginAccessControlListBuilder {
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.quantity = input;
         self
+    }
+    /// <p>The number of origin access controls returned in the response.</p>
+    pub fn get_quantity(&self) -> &::std::option::Option<i32> {
+        &self.quantity
     }
     /// Appends an item to `items`.
     ///
@@ -139,6 +159,12 @@ impl OriginAccessControlListBuilder {
     ) -> Self {
         self.items = input;
         self
+    }
+    /// <p>Contains the origin access controls in the list.</p>
+    pub fn get_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OriginAccessControlSummary>> {
+        &self.items
     }
     /// Consumes the builder and constructs a [`OriginAccessControlList`](crate::types::OriginAccessControlList).
     pub fn build(self) -> crate::types::OriginAccessControlList {

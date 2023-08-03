@@ -48,6 +48,10 @@ impl TypedLinkSchemaAndFacetNameBuilder {
         self.schema_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_arn
+    }
     /// <p>The unique name of the typed link facet.</p>
     pub fn typed_link_name(
         mut self,
@@ -63,6 +67,10 @@ impl TypedLinkSchemaAndFacetNameBuilder {
     ) -> Self {
         self.typed_link_name = input;
         self
+    }
+    /// <p>The unique name of the typed link facet.</p>
+    pub fn get_typed_link_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.typed_link_name
     }
     /// Consumes the builder and constructs a [`TypedLinkSchemaAndFacetName`](crate::types::TypedLinkSchemaAndFacetName).
     pub fn build(self) -> crate::types::TypedLinkSchemaAndFacetName {

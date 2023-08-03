@@ -48,6 +48,10 @@ impl ListenerDescriptionBuilder {
         self.listener = input;
         self
     }
+    /// <p>The listener.</p>
+    pub fn get_listener(&self) -> &::std::option::Option<crate::types::Listener> {
+        &self.listener
+    }
     /// Appends an item to `policy_names`.
     ///
     /// To override the contents of this collection use [`set_policy_names`](Self::set_policy_names).
@@ -66,6 +70,12 @@ impl ListenerDescriptionBuilder {
     ) -> Self {
         self.policy_names = input;
         self
+    }
+    /// <p>The policies. If there are no policies enabled, the list is empty.</p>
+    pub fn get_policy_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.policy_names
     }
     /// Consumes the builder and constructs a [`ListenerDescription`](crate::types::ListenerDescription).
     pub fn build(self) -> crate::types::ListenerDescription {

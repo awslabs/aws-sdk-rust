@@ -41,6 +41,10 @@ impl DeleteExperimentTemplateInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the experiment template.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`DeleteExperimentTemplateInput`](crate::operation::delete_experiment_template::DeleteExperimentTemplateInput).
     pub fn build(
         self,

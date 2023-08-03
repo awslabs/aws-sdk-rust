@@ -57,6 +57,12 @@ impl SchemaDefinitionBuilder {
         self.columns = input;
         self
     }
+    /// <p>List of column definitions.</p>
+    pub fn get_columns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnDefinition>> {
+        &self.columns
+    }
     /// Appends an item to `primary_key_columns`.
     ///
     /// To override the contents of this collection use [`set_primary_key_columns`](Self::set_primary_key_columns).
@@ -78,6 +84,12 @@ impl SchemaDefinitionBuilder {
     ) -> Self {
         self.primary_key_columns = input;
         self
+    }
+    /// <p>List of column names used for primary key.</p>
+    pub fn get_primary_key_columns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.primary_key_columns
     }
     /// Consumes the builder and constructs a [`SchemaDefinition`](crate::types::SchemaDefinition).
     pub fn build(self) -> crate::types::SchemaDefinition {

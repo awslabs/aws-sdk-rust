@@ -182,6 +182,10 @@ impl NodeBuilder {
         self.network_id = input;
         self
     }
+    /// <p>The unique identifier of the network that the node is on.</p>
+    pub fn get_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_id
+    }
     /// <p>The unique identifier of the member to which the node belongs.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
     pub fn member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -194,6 +198,11 @@ impl NodeBuilder {
         self.member_id = input;
         self
     }
+    /// <p>The unique identifier of the member to which the node belongs.</p>
+    /// <p>Applies only to Hyperledger Fabric.</p>
+    pub fn get_member_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_id
+    }
     /// <p>The unique identifier of the node.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -203,6 +212,10 @@ impl NodeBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The unique identifier of the node.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The instance type of the node.</p>
     pub fn instance_type(
@@ -220,6 +233,10 @@ impl NodeBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The instance type of the node.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
+    }
     /// <p>The Availability Zone in which the node exists. Required for Ethereum nodes. </p>
     pub fn availability_zone(
         mut self,
@@ -236,6 +253,10 @@ impl NodeBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>The Availability Zone in which the node exists. Required for Ethereum nodes. </p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>Attributes of the blockchain framework being used.</p>
     pub fn framework_attributes(mut self, input: crate::types::NodeFrameworkAttributes) -> Self {
         self.framework_attributes = ::std::option::Option::Some(input);
@@ -248,6 +269,12 @@ impl NodeBuilder {
     ) -> Self {
         self.framework_attributes = input;
         self
+    }
+    /// <p>Attributes of the blockchain framework being used.</p>
+    pub fn get_framework_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::NodeFrameworkAttributes> {
+        &self.framework_attributes
     }
     /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain.</p>
     pub fn log_publishing_configuration(
@@ -265,6 +292,12 @@ impl NodeBuilder {
         self.log_publishing_configuration = input;
         self
     }
+    /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain.</p>
+    pub fn get_log_publishing_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::NodeLogPublishingConfiguration> {
+        &self.log_publishing_configuration
+    }
     /// <p>The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
     pub fn state_db(mut self, input: crate::types::StateDbType) -> Self {
@@ -276,6 +309,11 @@ impl NodeBuilder {
     pub fn set_state_db(mut self, input: ::std::option::Option<crate::types::StateDbType>) -> Self {
         self.state_db = input;
         self
+    }
+    /// <p>The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.</p>
+    /// <p>Applies only to Hyperledger Fabric.</p>
+    pub fn get_state_db(&self) -> &::std::option::Option<crate::types::StateDbType> {
+        &self.state_db
     }
     /// <p>The status of the node.</p>
     /// <ul>
@@ -309,6 +347,21 @@ impl NodeBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the node.</p>
+    /// <ul>
+    /// <li> <p> <code>CREATING</code> - The Amazon Web Services account is in the process of creating a node.</p> </li>
+    /// <li> <p> <code>AVAILABLE</code> - The node has been created and can participate in the network.</p> </li>
+    /// <li> <p> <code>UNHEALTHY</code> - The node is impaired and might not function as expected. Amazon Managed Blockchain automatically finds nodes in this state and tries to recover them. If a node is recoverable, it returns to <code>AVAILABLE</code>. Otherwise, it moves to <code>FAILED</code> status.</p> </li>
+    /// <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a node and creation failed.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The node is in the process of being updated.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The node is in the process of being deleted.</p> </li>
+    /// <li> <p> <code>DELETED</code> - The node can no longer participate on the network.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The node is no longer functional, cannot be recovered, and must be deleted.</p> </li>
+    /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because it cannot access the specified customer managed key in KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the node resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::NodeStatus> {
+        &self.status
+    }
     /// <p>The date and time that the node was created.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -321,6 +374,10 @@ impl NodeBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>The date and time that the node was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -349,6 +406,15 @@ impl NodeBuilder {
         self.tags = input;
         self
     }
+    /// <p>Tags assigned to the node. Each tag consists of a key and optional value.</p>
+    /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The Amazon Resource Name (ARN) of the node. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -358,6 +424,10 @@ impl NodeBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the node. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management Service (KMS) that the node uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>, the node uses an Amazon Web Services owned KMS key for encryption. The node inherits this parameter from the member that it belongs to.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html">Encryption at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
@@ -372,6 +442,12 @@ impl NodeBuilder {
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management Service (KMS) that the node uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>, the node uses an Amazon Web Services owned KMS key for encryption. The node inherits this parameter from the member that it belongs to.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html">Encryption at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
+    /// <p>Applies only to Hyperledger Fabric.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
     }
     /// Consumes the builder and constructs a [`Node`](crate::types::Node).
     pub fn build(self) -> crate::types::Node {

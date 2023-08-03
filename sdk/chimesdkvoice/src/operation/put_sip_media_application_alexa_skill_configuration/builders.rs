@@ -36,6 +36,10 @@ impl PutSipMediaApplicationAlexaSkillConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutSipMediaApplicationAlexaSkillConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_sip_media_application_alexa_skill_configuration::builders::PutSipMediaApplicationAlexaSkillConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl PutSipMediaApplicationAlexaSkillConfigurationFluentBuilder {
         self.inner = self.inner.set_sip_media_application_id(input);
         self
     }
+    /// <p>The SIP media application ID.</p>
+    pub fn get_sip_media_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sip_media_application_id()
+    }
     /// <p>The Alexa Skill configuration.</p>
     pub fn sip_media_application_alexa_skill_configuration(
         mut self,
@@ -125,5 +133,12 @@ impl PutSipMediaApplicationAlexaSkillConfigurationFluentBuilder {
             .inner
             .set_sip_media_application_alexa_skill_configuration(input);
         self
+    }
+    /// <p>The Alexa Skill configuration.</p>
+    pub fn get_sip_media_application_alexa_skill_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SipMediaApplicationAlexaSkillConfiguration> {
+        self.inner
+            .get_sip_media_application_alexa_skill_configuration()
     }
 }

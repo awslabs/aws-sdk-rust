@@ -54,6 +54,10 @@ impl CreateParameterGroupInputBuilder {
         self.parameter_group_name = input;
         self
     }
+    /// <p>The name of the parameter group to apply to all of the clusters in this replication group.</p>
+    pub fn get_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_group_name
+    }
     /// <p>A description of the parameter group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl CreateParameterGroupInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the parameter group.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`CreateParameterGroupInput`](crate::operation::create_parameter_group::CreateParameterGroupInput).
     pub fn build(

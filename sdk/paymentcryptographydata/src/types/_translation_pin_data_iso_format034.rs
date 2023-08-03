@@ -51,6 +51,10 @@ impl TranslationPinDataIsoFormat034Builder {
         self.primary_account_number = input;
         self
     }
+    /// <p>The Primary Account Number (PAN) of the cardholder. A PAN is a unique identifier for a payment credit or debit card and associates the card to a specific account holder.</p>
+    pub fn get_primary_account_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.primary_account_number
+    }
     /// Consumes the builder and constructs a [`TranslationPinDataIsoFormat034`](crate::types::TranslationPinDataIsoFormat034).
     pub fn build(self) -> crate::types::TranslationPinDataIsoFormat034 {
         crate::types::TranslationPinDataIsoFormat034 {

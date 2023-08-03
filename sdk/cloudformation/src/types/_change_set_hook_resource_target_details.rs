@@ -62,6 +62,10 @@ impl ChangeSetHookResourceTargetDetailsBuilder {
         self.logical_resource_id = input;
         self
     }
+    /// <p>The resource's logical ID, which is defined in the stack's template.</p>
+    pub fn get_logical_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.logical_resource_id
+    }
     /// <p>The type of CloudFormation resource, such as <code>AWS::S3::Bucket</code>.</p>
     pub fn resource_type(
         mut self,
@@ -78,6 +82,10 @@ impl ChangeSetHookResourceTargetDetailsBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The type of CloudFormation resource, such as <code>AWS::S3::Bucket</code>.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
+    }
     /// <p>Specifies the action of the resource.</p>
     pub fn resource_action(mut self, input: crate::types::ChangeAction) -> Self {
         self.resource_action = ::std::option::Option::Some(input);
@@ -90,6 +98,10 @@ impl ChangeSetHookResourceTargetDetailsBuilder {
     ) -> Self {
         self.resource_action = input;
         self
+    }
+    /// <p>Specifies the action of the resource.</p>
+    pub fn get_resource_action(&self) -> &::std::option::Option<crate::types::ChangeAction> {
+        &self.resource_action
     }
     /// Consumes the builder and constructs a [`ChangeSetHookResourceTargetDetails`](crate::types::ChangeSetHookResourceTargetDetails).
     pub fn build(self) -> crate::types::ChangeSetHookResourceTargetDetails {

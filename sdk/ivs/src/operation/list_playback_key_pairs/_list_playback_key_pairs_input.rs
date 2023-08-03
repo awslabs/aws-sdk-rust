@@ -48,6 +48,10 @@ impl ListPlaybackKeyPairsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>Maximum number of key pairs to return. Default: your service quota or 100, whichever is smaller.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ListPlaybackKeyPairsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>Maximum number of key pairs to return. Default: your service quota or 100, whichever is smaller.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListPlaybackKeyPairsInput`](crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsInput).
     pub fn build(

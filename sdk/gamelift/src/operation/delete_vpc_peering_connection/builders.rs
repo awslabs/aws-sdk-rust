@@ -39,6 +39,10 @@ impl DeleteVpcPeeringConnectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteVpcPeeringConnection as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_vpc_peering_connection::builders::DeleteVpcPeeringConnectionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +133,10 @@ impl DeleteVpcPeeringConnectionFluentBuilder {
         self.inner = self.inner.set_fleet_id(input);
         self
     }
+    /// <p>A unique identifier for the fleet. This fleet specified must match the fleet referenced in the VPC peering connection record. You can use either the fleet ID or ARN value.</p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fleet_id()
+    }
     /// <p>A unique identifier for a VPC peering connection.</p>
     pub fn vpc_peering_connection_id(
         mut self,
@@ -144,5 +152,9 @@ impl DeleteVpcPeeringConnectionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_vpc_peering_connection_id(input);
         self
+    }
+    /// <p>A unique identifier for a VPC peering connection.</p>
+    pub fn get_vpc_peering_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpc_peering_connection_id()
     }
 }

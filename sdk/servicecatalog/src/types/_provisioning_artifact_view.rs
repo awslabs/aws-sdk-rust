@@ -53,6 +53,12 @@ impl ProvisioningArtifactViewBuilder {
         self.product_view_summary = input;
         self
     }
+    /// <p>Summary information about a product view.</p>
+    pub fn get_product_view_summary(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProductViewSummary> {
+        &self.product_view_summary
+    }
     /// <p>Information about a provisioning artifact. A provisioning artifact is also known as a product version.</p>
     pub fn provisioning_artifact(mut self, input: crate::types::ProvisioningArtifact) -> Self {
         self.provisioning_artifact = ::std::option::Option::Some(input);
@@ -65,6 +71,12 @@ impl ProvisioningArtifactViewBuilder {
     ) -> Self {
         self.provisioning_artifact = input;
         self
+    }
+    /// <p>Information about a provisioning artifact. A provisioning artifact is also known as a product version.</p>
+    pub fn get_provisioning_artifact(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProvisioningArtifact> {
+        &self.provisioning_artifact
     }
     /// Consumes the builder and constructs a [`ProvisioningArtifactView`](crate::types::ProvisioningArtifactView).
     pub fn build(self) -> crate::types::ProvisioningArtifactView {

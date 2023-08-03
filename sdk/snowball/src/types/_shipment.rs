@@ -50,6 +50,10 @@ impl ShipmentBuilder {
         self.status = input;
         self
     }
+    /// <p>Status information for a shipment.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The tracking number for this job. Using this tracking number with your region's carrier's website, you can track a Snow device as the carrier transports it.</p>
     /// <p>For India, the carrier is Amazon Logistics. For all other regions, UPS is the carrier.</p>
     pub fn tracking_number(
@@ -67,6 +71,11 @@ impl ShipmentBuilder {
     ) -> Self {
         self.tracking_number = input;
         self
+    }
+    /// <p>The tracking number for this job. Using this tracking number with your region's carrier's website, you can track a Snow device as the carrier transports it.</p>
+    /// <p>For India, the carrier is Amazon Logistics. For all other regions, UPS is the carrier.</p>
+    pub fn get_tracking_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tracking_number
     }
     /// Consumes the builder and constructs a [`Shipment`](crate::types::Shipment).
     pub fn build(self) -> crate::types::Shipment {

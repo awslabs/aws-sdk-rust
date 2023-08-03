@@ -98,6 +98,10 @@ impl CollectorBuilder {
         self.collector_id = input;
         self
     }
+    /// <p> The ID of the collector. </p>
+    pub fn get_collector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collector_id
+    }
     /// <p> IP address of the server that is hosting the collector. </p>
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_address = ::std::option::Option::Some(input.into());
@@ -108,6 +112,10 @@ impl CollectorBuilder {
         self.ip_address = input;
         self
     }
+    /// <p> IP address of the server that is hosting the collector. </p>
+    pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address
+    }
     /// <p> Hostname of the server that is hosting the collector. </p>
     pub fn host_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_name = ::std::option::Option::Some(input.into());
@@ -117,6 +125,10 @@ impl CollectorBuilder {
     pub fn set_host_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.host_name = input;
         self
+    }
+    /// <p> Hostname of the server that is hosting the collector. </p>
+    pub fn get_host_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_name
     }
     /// <p> Indicates the health of a collector. </p>
     pub fn collector_health(mut self, input: crate::types::CollectorHealth) -> Self {
@@ -130,6 +142,10 @@ impl CollectorBuilder {
     ) -> Self {
         self.collector_health = input;
         self
+    }
+    /// <p> Indicates the health of a collector. </p>
+    pub fn get_collector_health(&self) -> &::std::option::Option<crate::types::CollectorHealth> {
+        &self.collector_health
     }
     /// <p> Current version of the collector that is running in the environment that you specify. </p>
     pub fn collector_version(
@@ -147,6 +163,10 @@ impl CollectorBuilder {
         self.collector_version = input;
         self
     }
+    /// <p> Current version of the collector that is running in the environment that you specify. </p>
+    pub fn get_collector_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collector_version
+    }
     /// <p> Time when the collector registered with the service. </p>
     pub fn registered_time_stamp(
         mut self,
@@ -162,6 +182,10 @@ impl CollectorBuilder {
     ) -> Self {
         self.registered_time_stamp = input;
         self
+    }
+    /// <p> Time when the collector registered with the service. </p>
+    pub fn get_registered_time_stamp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registered_time_stamp
     }
     /// <p> Time when the collector last pinged the service. </p>
     pub fn last_activity_time_stamp(
@@ -179,6 +203,10 @@ impl CollectorBuilder {
         self.last_activity_time_stamp = input;
         self
     }
+    /// <p> Time when the collector last pinged the service. </p>
+    pub fn get_last_activity_time_stamp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_activity_time_stamp
+    }
     /// <p>Summary of the collector configuration.</p>
     pub fn configuration_summary(mut self, input: crate::types::ConfigurationSummary) -> Self {
         self.configuration_summary = ::std::option::Option::Some(input);
@@ -191,6 +219,12 @@ impl CollectorBuilder {
     ) -> Self {
         self.configuration_summary = input;
         self
+    }
+    /// <p>Summary of the collector configuration.</p>
+    pub fn get_configuration_summary(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfigurationSummary> {
+        &self.configuration_summary
     }
     /// Consumes the builder and constructs a [`Collector`](crate::types::Collector).
     pub fn build(self) -> crate::types::Collector {

@@ -65,6 +65,10 @@ impl JobLogsBuilder {
         self.job_completion_report_uri = input;
         self
     }
+    /// <p>A link to an Amazon S3 presigned URL where the job completion report is located.</p>
+    pub fn get_job_completion_report_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_completion_report_uri
+    }
     /// <p>A link to an Amazon S3 presigned URL where the job success log is located.</p>
     pub fn job_success_log_uri(
         mut self,
@@ -81,6 +85,10 @@ impl JobLogsBuilder {
         self.job_success_log_uri = input;
         self
     }
+    /// <p>A link to an Amazon S3 presigned URL where the job success log is located.</p>
+    pub fn get_job_success_log_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_success_log_uri
+    }
     /// <p>A link to an Amazon S3 presigned URL where the job failure log is located.</p>
     pub fn job_failure_log_uri(
         mut self,
@@ -96,6 +104,10 @@ impl JobLogsBuilder {
     ) -> Self {
         self.job_failure_log_uri = input;
         self
+    }
+    /// <p>A link to an Amazon S3 presigned URL where the job failure log is located.</p>
+    pub fn get_job_failure_log_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_failure_log_uri
     }
     /// Consumes the builder and constructs a [`JobLogs`](crate::types::JobLogs).
     pub fn build(self) -> crate::types::JobLogs {

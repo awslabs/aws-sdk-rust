@@ -118,6 +118,12 @@ impl CaptionSourceSettingsBuilder {
         self.ancillary_source_settings = input;
         self
     }
+    /// Settings for ancillary captions source.
+    pub fn get_ancillary_source_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::AncillarySourceSettings> {
+        &self.ancillary_source_settings
+    }
     /// DVB Sub Source Settings
     pub fn dvb_sub_source_settings(mut self, input: crate::types::DvbSubSourceSettings) -> Self {
         self.dvb_sub_source_settings = ::std::option::Option::Some(input);
@@ -130,6 +136,12 @@ impl CaptionSourceSettingsBuilder {
     ) -> Self {
         self.dvb_sub_source_settings = input;
         self
+    }
+    /// DVB Sub Source Settings
+    pub fn get_dvb_sub_source_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::DvbSubSourceSettings> {
+        &self.dvb_sub_source_settings
     }
     /// Settings for embedded captions Source
     pub fn embedded_source_settings(mut self, input: crate::types::EmbeddedSourceSettings) -> Self {
@@ -144,6 +156,12 @@ impl CaptionSourceSettingsBuilder {
         self.embedded_source_settings = input;
         self
     }
+    /// Settings for embedded captions Source
+    pub fn get_embedded_source_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::EmbeddedSourceSettings> {
+        &self.embedded_source_settings
+    }
     /// If your input captions are SCC, SMI, SRT, STL, TTML, WebVTT, or IMSC 1.1 in an xml file, specify the URI of the input caption source file. If your caption source is IMSC in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
     pub fn file_source_settings(mut self, input: crate::types::FileSourceSettings) -> Self {
         self.file_source_settings = ::std::option::Option::Some(input);
@@ -156,6 +174,12 @@ impl CaptionSourceSettingsBuilder {
     ) -> Self {
         self.file_source_settings = input;
         self
+    }
+    /// If your input captions are SCC, SMI, SRT, STL, TTML, WebVTT, or IMSC 1.1 in an xml file, specify the URI of the input caption source file. If your caption source is IMSC in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
+    pub fn get_file_source_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::FileSourceSettings> {
+        &self.file_source_settings
     }
     /// Use Source to identify the format of your input captions. The service cannot auto-detect caption format.
     pub fn source_type(mut self, input: crate::types::CaptionSourceType) -> Self {
@@ -170,6 +194,10 @@ impl CaptionSourceSettingsBuilder {
         self.source_type = input;
         self
     }
+    /// Use Source to identify the format of your input captions. The service cannot auto-detect caption format.
+    pub fn get_source_type(&self) -> &::std::option::Option<crate::types::CaptionSourceType> {
+        &self.source_type
+    }
     /// Settings specific to Teletext caption sources, including Page number.
     pub fn teletext_source_settings(mut self, input: crate::types::TeletextSourceSettings) -> Self {
         self.teletext_source_settings = ::std::option::Option::Some(input);
@@ -183,6 +211,12 @@ impl CaptionSourceSettingsBuilder {
         self.teletext_source_settings = input;
         self
     }
+    /// Settings specific to Teletext caption sources, including Page number.
+    pub fn get_teletext_source_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::TeletextSourceSettings> {
+        &self.teletext_source_settings
+    }
     /// Settings specific to caption sources that are specified by track number. Currently, this is only IMSC captions in an IMF package. If your caption source is IMSC 1.1 in a separate xml file, use FileSourceSettings instead of TrackSourceSettings.
     pub fn track_source_settings(mut self, input: crate::types::TrackSourceSettings) -> Self {
         self.track_source_settings = ::std::option::Option::Some(input);
@@ -195,6 +229,12 @@ impl CaptionSourceSettingsBuilder {
     ) -> Self {
         self.track_source_settings = input;
         self
+    }
+    /// Settings specific to caption sources that are specified by track number. Currently, this is only IMSC captions in an IMF package. If your caption source is IMSC 1.1 in a separate xml file, use FileSourceSettings instead of TrackSourceSettings.
+    pub fn get_track_source_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::TrackSourceSettings> {
+        &self.track_source_settings
     }
     /// Settings specific to WebVTT sources in HLS alternative rendition group. Specify the properties (renditionGroupId, renditionName or renditionLanguageCode) to identify the unique subtitle track among the alternative rendition groups present in the HLS manifest. If no unique track is found, or multiple tracks match the specified properties, the job fails. If there is only one subtitle track in the rendition group, the settings can be left empty and the default subtitle track will be chosen. If your caption source is a sidecar file, use FileSourceSettings instead of WebvttHlsSourceSettings.
     pub fn webvtt_hls_source_settings(
@@ -211,6 +251,12 @@ impl CaptionSourceSettingsBuilder {
     ) -> Self {
         self.webvtt_hls_source_settings = input;
         self
+    }
+    /// Settings specific to WebVTT sources in HLS alternative rendition group. Specify the properties (renditionGroupId, renditionName or renditionLanguageCode) to identify the unique subtitle track among the alternative rendition groups present in the HLS manifest. If no unique track is found, or multiple tracks match the specified properties, the job fails. If there is only one subtitle track in the rendition group, the settings can be left empty and the default subtitle track will be chosen. If your caption source is a sidecar file, use FileSourceSettings instead of WebvttHlsSourceSettings.
+    pub fn get_webvtt_hls_source_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::WebvttHlsSourceSettings> {
+        &self.webvtt_hls_source_settings
     }
     /// Consumes the builder and constructs a [`CaptionSourceSettings`](crate::types::CaptionSourceSettings).
     pub fn build(self) -> crate::types::CaptionSourceSettings {

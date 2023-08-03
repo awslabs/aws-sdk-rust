@@ -43,6 +43,10 @@ impl EgressFilterBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The egress filter type. By default, the type is <code>DROP_ALL</code>, which allows egress only from virtual nodes to other defined resources in the service mesh (and any traffic to <code>*.amazonaws.com</code> for Amazon Web Services API calls). You can set the egress filter type to <code>ALLOW_ALL</code> to allow egress to any endpoint inside or outside of the service mesh.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::EgressFilterType> {
+        &self.r#type
+    }
     /// Consumes the builder and constructs a [`EgressFilter`](crate::types::EgressFilter).
     pub fn build(self) -> crate::types::EgressFilter {
         crate::types::EgressFilter {

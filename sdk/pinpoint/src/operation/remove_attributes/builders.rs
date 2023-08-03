@@ -36,6 +36,12 @@ impl RemoveAttributesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RemoveAttributes as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::remove_attributes::builders::RemoveAttributesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl RemoveAttributesFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>The type of attribute or attributes to remove. Valid values are:</p>
     /// <ul>
     /// <li><p>endpoint-custom-attributes - Custom attributes that describe endpoints, such as the date when an associated user opted in or out of receiving communications from you through a specific type of channel.</p></li>
@@ -158,6 +168,15 @@ impl RemoveAttributesFluentBuilder {
         self.inner = self.inner.set_attribute_type(input);
         self
     }
+    /// <p>The type of attribute or attributes to remove. Valid values are:</p>
+    /// <ul>
+    /// <li><p>endpoint-custom-attributes - Custom attributes that describe endpoints, such as the date when an associated user opted in or out of receiving communications from you through a specific type of channel.</p></li>
+    /// <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as the number of app sessions or the number of items left in a cart.</p></li>
+    /// <li><p>endpoint-user-attributes - Custom attributes that describe users, such as first name, last name, and age.</p></li>
+    /// </ul>
+    pub fn get_attribute_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_attribute_type()
+    }
     /// <p>Specifies one or more attributes to remove from all the endpoints that are associated with an application.</p>
     pub fn update_attributes_request(
         mut self,
@@ -173,5 +192,11 @@ impl RemoveAttributesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_update_attributes_request(input);
         self
+    }
+    /// <p>Specifies one or more attributes to remove from all the endpoints that are associated with an application.</p>
+    pub fn get_update_attributes_request(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateAttributesRequest> {
+        self.inner.get_update_attributes_request()
     }
 }

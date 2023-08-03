@@ -50,6 +50,10 @@ impl GetThirdPartyJobDetailsInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The unique system-generated ID used for identifying the job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -59,6 +63,10 @@ impl GetThirdPartyJobDetailsInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`GetThirdPartyJobDetailsInput`](crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsInput).
     pub fn build(

@@ -66,6 +66,10 @@ impl NumericalDimensionFieldBuilder {
         self.field_id = input;
         self
     }
+    /// <p>The custom field ID.</p>
+    pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_id
+    }
     /// <p>The column that is used in the <code>NumericalDimensionField</code>.</p>
     pub fn column(mut self, input: crate::types::ColumnIdentifier) -> Self {
         self.column = ::std::option::Option::Some(input);
@@ -79,6 +83,10 @@ impl NumericalDimensionFieldBuilder {
         self.column = input;
         self
     }
+    /// <p>The column that is used in the <code>NumericalDimensionField</code>.</p>
+    pub fn get_column(&self) -> &::std::option::Option<crate::types::ColumnIdentifier> {
+        &self.column
+    }
     /// <p>The custom hierarchy ID.</p>
     pub fn hierarchy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hierarchy_id = ::std::option::Option::Some(input.into());
@@ -88,6 +96,10 @@ impl NumericalDimensionFieldBuilder {
     pub fn set_hierarchy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hierarchy_id = input;
         self
+    }
+    /// <p>The custom hierarchy ID.</p>
+    pub fn get_hierarchy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hierarchy_id
     }
     /// <p>The format configuration of the field.</p>
     pub fn format_configuration(mut self, input: crate::types::NumberFormatConfiguration) -> Self {
@@ -101,6 +113,12 @@ impl NumericalDimensionFieldBuilder {
     ) -> Self {
         self.format_configuration = input;
         self
+    }
+    /// <p>The format configuration of the field.</p>
+    pub fn get_format_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::NumberFormatConfiguration> {
+        &self.format_configuration
     }
     /// Consumes the builder and constructs a [`NumericalDimensionField`](crate::types::NumericalDimensionField).
     pub fn build(self) -> crate::types::NumericalDimensionField {

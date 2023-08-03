@@ -41,6 +41,10 @@ impl DescribeMitigationActionInputBuilder {
         self.action_name = input;
         self
     }
+    /// <p>The friendly name that uniquely identifies the mitigation action.</p>
+    pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_name
+    }
     /// Consumes the builder and constructs a [`DescribeMitigationActionInput`](crate::operation::describe_mitigation_action::DescribeMitigationActionInput).
     pub fn build(
         self,

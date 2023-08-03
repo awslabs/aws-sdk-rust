@@ -48,6 +48,10 @@ impl ProjectStatusBuilder {
         self.state = input;
         self
     }
+    /// <p>The phase of completion for a project creation or deletion.</p>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
+    }
     /// <p>In the case of a project creation or deletion failure, a reason for the failure.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ProjectStatusBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>In the case of a project creation or deletion failure, a reason for the failure.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
     }
     /// Consumes the builder and constructs a [`ProjectStatus`](crate::types::ProjectStatus).
     pub fn build(self) -> crate::types::ProjectStatus {

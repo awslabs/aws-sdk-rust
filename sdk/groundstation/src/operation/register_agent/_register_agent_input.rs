@@ -50,6 +50,10 @@ impl RegisterAgentInputBuilder {
         self.discovery_data = input;
         self
     }
+    /// <p>Data for associating an agent with the capabilities it is managing.</p>
+    pub fn get_discovery_data(&self) -> &::std::option::Option<crate::types::DiscoveryData> {
+        &self.discovery_data
+    }
     /// <p>Detailed information about the agent being registered.</p>
     pub fn agent_details(mut self, input: crate::types::AgentDetails) -> Self {
         self.agent_details = ::std::option::Option::Some(input);
@@ -62,6 +66,10 @@ impl RegisterAgentInputBuilder {
     ) -> Self {
         self.agent_details = input;
         self
+    }
+    /// <p>Detailed information about the agent being registered.</p>
+    pub fn get_agent_details(&self) -> &::std::option::Option<crate::types::AgentDetails> {
+        &self.agent_details
     }
     /// Consumes the builder and constructs a [`RegisterAgentInput`](crate::operation::register_agent::RegisterAgentInput).
     pub fn build(

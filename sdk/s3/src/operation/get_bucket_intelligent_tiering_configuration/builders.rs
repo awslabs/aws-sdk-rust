@@ -45,6 +45,10 @@ impl GetBucketIntelligentTieringConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetBucketIntelligentTieringConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_bucket_intelligent_tiering_configuration::builders::GetBucketIntelligentTieringConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -109,6 +113,10 @@ impl GetBucketIntelligentTieringConfigurationFluentBuilder {
         self.inner = self.inner.set_bucket(input);
         self
     }
+    /// <p>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bucket()
+    }
     /// <p>The ID used to identify the S3 Intelligent-Tiering configuration.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
@@ -118,5 +126,9 @@ impl GetBucketIntelligentTieringConfigurationFluentBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
+    }
+    /// <p>The ID used to identify the S3 Intelligent-Tiering configuration.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
     }
 }

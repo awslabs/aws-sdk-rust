@@ -37,6 +37,12 @@ impl DisassociateNodeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateNode as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::disassociate_node::builders::DisassociateNodeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl DisassociateNodeFluentBuilder {
         self.inner = self.inner.set_server_name(input);
         self
     }
+    /// <p>The name of the server from which to disassociate the node. </p>
+    pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_server_name()
+    }
     /// <p>The name of the client node. </p>
     pub fn node_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.node_name(input.into());
@@ -136,6 +146,10 @@ impl DisassociateNodeFluentBuilder {
     pub fn set_node_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_node_name(input);
         self
+    }
+    /// <p>The name of the client node. </p>
+    pub fn get_node_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_node_name()
     }
     /// Appends an item to `EngineAttributes`.
     ///
@@ -161,5 +175,15 @@ impl DisassociateNodeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_engine_attributes(input);
         self
+    }
+    /// <p>Engine attributes that are used for disassociating the node. No attributes are required for Puppet. </p>
+    /// <p class="title"> <b>Attributes required in a DisassociateNode request for Chef</b> </p>
+    /// <ul>
+    /// <li> <p> <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist. </p> </li>
+    /// </ul>
+    pub fn get_engine_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>> {
+        self.inner.get_engine_attributes()
     }
 }

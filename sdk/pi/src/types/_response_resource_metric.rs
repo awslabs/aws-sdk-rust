@@ -56,6 +56,10 @@ impl ResponseResourceMetricBuilder {
         self.metric = input;
         self
     }
+    /// <p>The full name of the metric.</p>
+    pub fn get_metric(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric
+    }
     /// <p>The description of the metric.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl ResponseResourceMetricBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the metric.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The unit of the metric.</p>
     pub fn unit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.unit = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl ResponseResourceMetricBuilder {
     pub fn set_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unit = input;
         self
+    }
+    /// <p>The unit of the metric.</p>
+    pub fn get_unit(&self) -> &::std::option::Option<::std::string::String> {
+        &self.unit
     }
     /// Consumes the builder and constructs a [`ResponseResourceMetric`](crate::types::ResponseResourceMetric).
     pub fn build(self) -> crate::types::ResponseResourceMetric {

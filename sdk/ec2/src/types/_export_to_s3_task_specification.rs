@@ -67,6 +67,10 @@ impl ExportToS3TaskSpecificationBuilder {
         self.container_format = input;
         self
     }
+    /// <p>The container format used to combine disk images with metadata (such as OVF). If absent, only the disk image is exported.</p>
+    pub fn get_container_format(&self) -> &::std::option::Option<crate::types::ContainerFormat> {
+        &self.container_format
+    }
     /// <p>The format for the exported image.</p>
     pub fn disk_image_format(mut self, input: crate::types::DiskImageFormat) -> Self {
         self.disk_image_format = ::std::option::Option::Some(input);
@@ -80,6 +84,10 @@ impl ExportToS3TaskSpecificationBuilder {
         self.disk_image_format = input;
         self
     }
+    /// <p>The format for the exported image.</p>
+    pub fn get_disk_image_format(&self) -> &::std::option::Option<crate::types::DiskImageFormat> {
+        &self.disk_image_format
+    }
     /// <p>The Amazon S3 bucket for the destination image. The destination bucket must exist and have an access control list (ACL) attached that specifies the Region-specific canonical account ID for the <code>Grantee</code>. For more information about the ACL to your S3 bucket, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html#vmexport-prerequisites">Prerequisites</a> in the VM Import/Export User Guide.</p>
     pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket = ::std::option::Option::Some(input.into());
@@ -90,6 +98,10 @@ impl ExportToS3TaskSpecificationBuilder {
         self.s3_bucket = input;
         self
     }
+    /// <p>The Amazon S3 bucket for the destination image. The destination bucket must exist and have an access control list (ACL) attached that specifies the Region-specific canonical account ID for the <code>Grantee</code>. For more information about the ACL to your S3 bucket, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html#vmexport-prerequisites">Prerequisites</a> in the VM Import/Export User Guide.</p>
+    pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket
+    }
     /// <p>The image is written to a single object in the Amazon S3 bucket at the S3 key s3prefix + exportTaskId + '.' + diskImageFormat.</p>
     pub fn s3_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_prefix = ::std::option::Option::Some(input.into());
@@ -99,6 +111,10 @@ impl ExportToS3TaskSpecificationBuilder {
     pub fn set_s3_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_prefix = input;
         self
+    }
+    /// <p>The image is written to a single object in the Amazon S3 bucket at the S3 key s3prefix + exportTaskId + '.' + diskImageFormat.</p>
+    pub fn get_s3_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_prefix
     }
     /// Consumes the builder and constructs a [`ExportToS3TaskSpecification`](crate::types::ExportToS3TaskSpecification).
     pub fn build(self) -> crate::types::ExportToS3TaskSpecification {

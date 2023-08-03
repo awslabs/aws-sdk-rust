@@ -97,6 +97,12 @@ impl GetCostEstimationOutputBuilder {
         self.resource_collection = input;
         self
     }
+    /// <p>The collection of the Amazon Web Services resources used to create your monthly DevOps Guru cost estimate.</p>
+    pub fn get_resource_collection(
+        &self,
+    ) -> &::std::option::Option<crate::types::CostEstimationResourceCollectionFilter> {
+        &self.resource_collection
+    }
     /// <p>The status of creating this cost estimate. If it's still in progress, the status <code>ONGOING</code> is returned. If it is finished, the status <code>COMPLETED</code> is returned.</p>
     pub fn status(mut self, input: crate::types::CostEstimationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -109,6 +115,10 @@ impl GetCostEstimationOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of creating this cost estimate. If it's still in progress, the status <code>ONGOING</code> is returned. If it is finished, the status <code>COMPLETED</code> is returned.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CostEstimationStatus> {
+        &self.status
     }
     /// Appends an item to `costs`.
     ///
@@ -129,6 +139,12 @@ impl GetCostEstimationOutputBuilder {
         self.costs = input;
         self
     }
+    /// <p>An array of <code>ResourceCost</code> objects that each contains details about the monthly cost estimate to analyze one of your Amazon Web Services resources.</p>
+    pub fn get_costs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceResourceCost>> {
+        &self.costs
+    }
     /// <p>The start and end time of the cost estimation.</p>
     pub fn time_range(mut self, input: crate::types::CostEstimationTimeRange) -> Self {
         self.time_range = ::std::option::Option::Some(input);
@@ -142,6 +158,10 @@ impl GetCostEstimationOutputBuilder {
         self.time_range = input;
         self
     }
+    /// <p>The start and end time of the cost estimation.</p>
+    pub fn get_time_range(&self) -> &::std::option::Option<crate::types::CostEstimationTimeRange> {
+        &self.time_range
+    }
     /// <p>The estimated monthly cost to analyze the Amazon Web Services resources. This value is the sum of the estimated costs to analyze each resource in the <code>Costs</code> object in this response.</p>
     pub fn total_cost(mut self, input: f64) -> Self {
         self.total_cost = ::std::option::Option::Some(input);
@@ -152,6 +172,10 @@ impl GetCostEstimationOutputBuilder {
         self.total_cost = input;
         self
     }
+    /// <p>The estimated monthly cost to analyze the Amazon Web Services resources. This value is the sum of the estimated costs to analyze each resource in the <code>Costs</code> object in this response.</p>
+    pub fn get_total_cost(&self) -> &::std::option::Option<f64> {
+        &self.total_cost
+    }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -161,6 +185,10 @@ impl GetCostEstimationOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

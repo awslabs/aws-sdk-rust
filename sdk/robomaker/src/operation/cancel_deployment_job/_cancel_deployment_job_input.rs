@@ -44,6 +44,10 @@ impl CancelDeploymentJobInputBuilder {
         self.job = input;
         self
     }
+    /// <p>The deployment job ARN to cancel.</p>
+    pub fn get_job(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job
+    }
     /// Consumes the builder and constructs a [`CancelDeploymentJobInput`](crate::operation::cancel_deployment_job::CancelDeploymentJobInput).
     pub fn build(
         self,

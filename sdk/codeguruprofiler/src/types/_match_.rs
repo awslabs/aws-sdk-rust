@@ -56,6 +56,10 @@ impl MatchBuilder {
         self.target_frames_index = input;
         self
     }
+    /// <p>The target frame that triggered a match.</p>
+    pub fn get_target_frames_index(&self) -> &::std::option::Option<i32> {
+        &self.target_frames_index
+    }
     /// <p>The location in the profiling graph that contains a recommendation found during analysis.</p>
     pub fn frame_address(
         mut self,
@@ -72,6 +76,10 @@ impl MatchBuilder {
         self.frame_address = input;
         self
     }
+    /// <p>The location in the profiling graph that contains a recommendation found during analysis.</p>
+    pub fn get_frame_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.frame_address
+    }
     /// <p>The value in the profile data that exceeded the recommendation threshold.</p>
     pub fn threshold_breach_value(mut self, input: f64) -> Self {
         self.threshold_breach_value = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl MatchBuilder {
     pub fn set_threshold_breach_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.threshold_breach_value = input;
         self
+    }
+    /// <p>The value in the profile data that exceeded the recommendation threshold.</p>
+    pub fn get_threshold_breach_value(&self) -> &::std::option::Option<f64> {
+        &self.threshold_breach_value
     }
     /// Consumes the builder and constructs a [`Match`](crate::types::Match).
     pub fn build(self) -> crate::types::Match {

@@ -36,6 +36,12 @@ impl AddFlowMediaStreamsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AddFlowMediaStreams as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::add_flow_media_streams::builders::AddFlowMediaStreamsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl AddFlowMediaStreamsFluentBuilder {
         self.inner = self.inner.set_flow_arn(input);
         self
     }
+    /// The Amazon Resource Name (ARN) of the flow.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_flow_arn()
+    }
     /// Appends an item to `MediaStreams`.
     ///
     /// To override the contents of this collection use [`set_media_streams`](Self::set_media_streams).
@@ -142,5 +152,11 @@ impl AddFlowMediaStreamsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_media_streams(input);
         self
+    }
+    /// The media streams that you want to add to the flow.
+    pub fn get_media_streams(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddMediaStreamRequest>> {
+        self.inner.get_media_streams()
     }
 }

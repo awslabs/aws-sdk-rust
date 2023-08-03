@@ -50,6 +50,12 @@ impl HttpRouteActionBuilder {
         self.weighted_targets = input;
         self
     }
+    /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
+    pub fn get_weighted_targets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WeightedTarget>> {
+        &self.weighted_targets
+    }
     /// Consumes the builder and constructs a [`HttpRouteAction`](crate::types::HttpRouteAction).
     pub fn build(self) -> crate::types::HttpRouteAction {
         crate::types::HttpRouteAction {

@@ -43,6 +43,12 @@ impl NegativeValueConfigurationBuilder {
         self.display_mode = input;
         self
     }
+    /// <p>Determines the display mode of the negative value configuration.</p>
+    pub fn get_display_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::NegativeValueDisplayMode> {
+        &self.display_mode
+    }
     /// Consumes the builder and constructs a [`NegativeValueConfiguration`](crate::types::NegativeValueConfiguration).
     pub fn build(self) -> crate::types::NegativeValueConfiguration {
         crate::types::NegativeValueConfiguration {

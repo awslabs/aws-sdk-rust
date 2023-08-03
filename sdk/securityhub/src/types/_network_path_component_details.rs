@@ -57,6 +57,10 @@ impl NetworkPathComponentDetailsBuilder {
         self.address = input;
         self
     }
+    /// <p>The IP addresses of the destination.</p>
+    pub fn get_address(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.address
+    }
     /// Appends an item to `port_ranges`.
     ///
     /// To override the contents of this collection use [`set_port_ranges`](Self::set_port_ranges).
@@ -75,6 +79,12 @@ impl NetworkPathComponentDetailsBuilder {
     ) -> Self {
         self.port_ranges = input;
         self
+    }
+    /// <p>A list of port ranges for the destination.</p>
+    pub fn get_port_ranges(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
+        &self.port_ranges
     }
     /// Consumes the builder and constructs a [`NetworkPathComponentDetails`](crate::types::NetworkPathComponentDetails).
     pub fn build(self) -> crate::types::NetworkPathComponentDetails {

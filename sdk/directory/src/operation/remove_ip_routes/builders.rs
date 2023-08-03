@@ -36,6 +36,12 @@ impl RemoveIpRoutesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RemoveIpRoutes as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::remove_ip_routes::builders::RemoveIpRoutesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl RemoveIpRoutesFluentBuilder {
         self.inner = self.inner.set_directory_id(input);
         self
     }
+    /// <p>Identifier (ID) of the directory from which you want to remove the IP addresses.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_id()
+    }
     /// Appends an item to `CidrIps`.
     ///
     /// To override the contents of this collection use [`set_cidr_ips`](Self::set_cidr_ips).
@@ -142,5 +152,9 @@ impl RemoveIpRoutesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cidr_ips(input);
         self
+    }
+    /// <p>IP address blocks that you want to remove.</p>
+    pub fn get_cidr_ips(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_cidr_ips()
     }
 }

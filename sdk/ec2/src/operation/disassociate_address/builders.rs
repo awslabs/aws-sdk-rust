@@ -37,6 +37,12 @@ impl DisassociateAddressFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateAddress as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::disassociate_address::builders::DisassociateAddressInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl DisassociateAddressFluentBuilder {
         self.inner = self.inner.set_association_id(input);
         self
     }
+    /// <p>The association ID. This parameter is required.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_association_id()
+    }
     /// <p>Deprecated.</p>
     pub fn public_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.public_ip(input.into());
@@ -143,6 +153,10 @@ impl DisassociateAddressFluentBuilder {
         self.inner = self.inner.set_public_ip(input);
         self
     }
+    /// <p>Deprecated.</p>
+    pub fn get_public_ip(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_public_ip()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -152,5 +166,9 @@ impl DisassociateAddressFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

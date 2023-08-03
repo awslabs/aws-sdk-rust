@@ -72,6 +72,10 @@ impl HostPropertiesBuilder {
         self.cores = input;
         self
     }
+    /// <p>The number of cores on the Dedicated Host.</p>
+    pub fn get_cores(&self) -> &::std::option::Option<i32> {
+        &self.cores
+    }
     /// <p>The instance type supported by the Dedicated Host. For example, <code>m5.large</code>. If the host supports multiple instance types, no <b>instanceType</b> is returned.</p>
     pub fn instance_type(
         mut self,
@@ -87,6 +91,10 @@ impl HostPropertiesBuilder {
     ) -> Self {
         self.instance_type = input;
         self
+    }
+    /// <p>The instance type supported by the Dedicated Host. For example, <code>m5.large</code>. If the host supports multiple instance types, no <b>instanceType</b> is returned.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
     }
     /// <p>The instance family supported by the Dedicated Host. For example, <code>m5</code>.</p>
     pub fn instance_family(
@@ -104,6 +112,10 @@ impl HostPropertiesBuilder {
         self.instance_family = input;
         self
     }
+    /// <p>The instance family supported by the Dedicated Host. For example, <code>m5</code>.</p>
+    pub fn get_instance_family(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_family
+    }
     /// <p>The number of sockets on the Dedicated Host.</p>
     pub fn sockets(mut self, input: i32) -> Self {
         self.sockets = ::std::option::Option::Some(input);
@@ -114,6 +126,10 @@ impl HostPropertiesBuilder {
         self.sockets = input;
         self
     }
+    /// <p>The number of sockets on the Dedicated Host.</p>
+    pub fn get_sockets(&self) -> &::std::option::Option<i32> {
+        &self.sockets
+    }
     /// <p>The total number of vCPUs on the Dedicated Host.</p>
     pub fn total_v_cpus(mut self, input: i32) -> Self {
         self.total_v_cpus = ::std::option::Option::Some(input);
@@ -123,6 +139,10 @@ impl HostPropertiesBuilder {
     pub fn set_total_v_cpus(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_v_cpus = input;
         self
+    }
+    /// <p>The total number of vCPUs on the Dedicated Host.</p>
+    pub fn get_total_v_cpus(&self) -> &::std::option::Option<i32> {
+        &self.total_v_cpus
     }
     /// Consumes the builder and constructs a [`HostProperties`](crate::types::HostProperties).
     pub fn build(self) -> crate::types::HostProperties {

@@ -36,6 +36,10 @@ impl BatchAssociateScramSecretFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchAssociateScramSecret as a reference.
+    pub fn as_input(&self) -> &crate::operation::batch_associate_scram_secret::builders::BatchAssociateScramSecretInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl BatchAssociateScramSecretFluentBuilder {
         self.inner = self.inner.set_cluster_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_arn()
+    }
     /// Appends an item to `SecretArnList`.
     ///
     /// To override the contents of this collection use [`set_secret_arn_list`](Self::set_secret_arn_list).
@@ -145,5 +153,11 @@ impl BatchAssociateScramSecretFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_secret_arn_list(input);
         self
+    }
+    /// <p>List of AWS Secrets Manager secret ARNs.</p>
+    pub fn get_secret_arn_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_secret_arn_list()
     }
 }

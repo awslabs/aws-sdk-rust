@@ -48,6 +48,10 @@ impl BillingDetailsBuilder {
         self.billed_memory_used_in_mb = input;
         self
     }
+    /// <p>Billed memory consumption of your workflow, in MB.</p>
+    pub fn get_billed_memory_used_in_mb(&self) -> &::std::option::Option<i64> {
+        &self.billed_memory_used_in_mb
+    }
     /// <p>Billed duration of your workflow, in milliseconds.</p>
     pub fn billed_duration_in_milliseconds(mut self, input: i64) -> Self {
         self.billed_duration_in_milliseconds = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl BillingDetailsBuilder {
     ) -> Self {
         self.billed_duration_in_milliseconds = input;
         self
+    }
+    /// <p>Billed duration of your workflow, in milliseconds.</p>
+    pub fn get_billed_duration_in_milliseconds(&self) -> &::std::option::Option<i64> {
+        &self.billed_duration_in_milliseconds
     }
     /// Consumes the builder and constructs a [`BillingDetails`](crate::types::BillingDetails).
     pub fn build(self) -> crate::types::BillingDetails {

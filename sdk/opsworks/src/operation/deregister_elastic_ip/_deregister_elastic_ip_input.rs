@@ -41,6 +41,10 @@ impl DeregisterElasticIpInputBuilder {
         self.elastic_ip = input;
         self
     }
+    /// <p>The Elastic IP address.</p>
+    pub fn get_elastic_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.elastic_ip
+    }
     /// Consumes the builder and constructs a [`DeregisterElasticIpInput`](crate::operation::deregister_elastic_ip::DeregisterElasticIpInput).
     pub fn build(
         self,

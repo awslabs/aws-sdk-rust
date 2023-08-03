@@ -41,6 +41,10 @@ impl StaticPolicyDefinitionItemBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the static policy.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// Consumes the builder and constructs a [`StaticPolicyDefinitionItem`](crate::types::StaticPolicyDefinitionItem).
     pub fn build(self) -> crate::types::StaticPolicyDefinitionItem {
         crate::types::StaticPolicyDefinitionItem {

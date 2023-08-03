@@ -56,6 +56,10 @@ impl Icd10CmConceptBuilder {
         self.description = input;
         self
     }
+    /// <p>The long description of the ICD-10-CM code in the ontology.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The ICD-10-CM code that identifies the concept found in the knowledge base from the Centers for Disease Control.</p>
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl Icd10CmConceptBuilder {
         self.code = input;
         self
     }
+    /// <p>The ICD-10-CM code that identifies the concept found in the knowledge base from the Centers for Disease Control.</p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
+    }
     /// <p>The level of confidence that Amazon Comprehend Medical has that the entity is accurately linked to an ICD-10-CM concept.</p>
     pub fn score(mut self, input: f32) -> Self {
         self.score = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl Icd10CmConceptBuilder {
     pub fn set_score(mut self, input: ::std::option::Option<f32>) -> Self {
         self.score = input;
         self
+    }
+    /// <p>The level of confidence that Amazon Comprehend Medical has that the entity is accurately linked to an ICD-10-CM concept.</p>
+    pub fn get_score(&self) -> &::std::option::Option<f32> {
+        &self.score
     }
     /// Consumes the builder and constructs a [`Icd10CmConcept`](crate::types::Icd10CmConcept).
     pub fn build(self) -> crate::types::Icd10CmConcept {

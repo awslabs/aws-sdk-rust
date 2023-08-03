@@ -48,6 +48,10 @@ impl FilterValueBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of filter value.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::FilterValueType> {
+        &self.r#type
+    }
     /// Appends an item to `value`.
     ///
     /// To override the contents of this collection use [`set_value`](Self::set_value).
@@ -66,6 +70,10 @@ impl FilterValueBuilder {
     ) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value to be associated.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`FilterValue`](crate::types::FilterValue).
     pub fn build(self) -> crate::types::FilterValue {

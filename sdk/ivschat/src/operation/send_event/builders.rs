@@ -36,6 +36,10 @@ impl SendEventFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SendEvent as a reference.
+    pub fn as_input(&self) -> &crate::operation::send_event::builders::SendEventInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl SendEventFluentBuilder {
         self.inner = self.inner.set_room_identifier(input);
         self
     }
+    /// <p>Identifier of the room to which the event will be sent. Currently this must be an ARN.</p>
+    pub fn get_room_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_room_identifier()
+    }
     /// <p>Application-defined name of the event to send to clients.</p>
     pub fn event_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_name(input.into());
@@ -133,6 +141,10 @@ impl SendEventFluentBuilder {
     pub fn set_event_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_name(input);
         self
+    }
+    /// <p>Application-defined name of the event to send to clients.</p>
+    pub fn get_event_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_name()
     }
     /// Adds a key-value pair to `attributes`.
     ///
@@ -156,5 +168,13 @@ impl SendEventFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
+    }
+    /// <p>Application-defined metadata to attach to the event sent to clients. The maximum length of the metadata is 1 KB total.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_attributes()
     }
 }

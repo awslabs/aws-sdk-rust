@@ -65,6 +65,10 @@ impl RoleMappingBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The role mapping type. Token will use <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims from the Cognito identity provider token to map groups to roles. Rules will attempt to match claims from the token to map to a role.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::RoleMappingType> {
+        &self.r#type
+    }
     /// <p>If you specify Token or Rules as the <code>Type</code>, <code>AmbiguousRoleResolution</code> is required.</p>
     /// <p>Specifies the action to be taken if either no rules match the claim value for the <code>Rules</code> type, or there is no <code>cognito:preferred_role</code> claim and there are multiple <code>cognito:roles</code> matches for the <code>Token</code> type.</p>
     pub fn ambiguous_role_resolution(
@@ -83,6 +87,13 @@ impl RoleMappingBuilder {
         self.ambiguous_role_resolution = input;
         self
     }
+    /// <p>If you specify Token or Rules as the <code>Type</code>, <code>AmbiguousRoleResolution</code> is required.</p>
+    /// <p>Specifies the action to be taken if either no rules match the claim value for the <code>Rules</code> type, or there is no <code>cognito:preferred_role</code> claim and there are multiple <code>cognito:roles</code> matches for the <code>Token</code> type.</p>
+    pub fn get_ambiguous_role_resolution(
+        &self,
+    ) -> &::std::option::Option<crate::types::AmbiguousRoleResolutionType> {
+        &self.ambiguous_role_resolution
+    }
     /// <p>The rules to be used for mapping users to roles.</p>
     /// <p>If you specify Rules as the role mapping type, <code>RulesConfiguration</code> is required.</p>
     pub fn rules_configuration(mut self, input: crate::types::RulesConfigurationType) -> Self {
@@ -97,6 +108,13 @@ impl RoleMappingBuilder {
     ) -> Self {
         self.rules_configuration = input;
         self
+    }
+    /// <p>The rules to be used for mapping users to roles.</p>
+    /// <p>If you specify Rules as the role mapping type, <code>RulesConfiguration</code> is required.</p>
+    pub fn get_rules_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::RulesConfigurationType> {
+        &self.rules_configuration
     }
     /// Consumes the builder and constructs a [`RoleMapping`](crate::types::RoleMapping).
     pub fn build(self) -> crate::types::RoleMapping {

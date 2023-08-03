@@ -43,6 +43,10 @@ impl OpenMonitoringInfoBuilder {
         self.prometheus = input;
         self
     }
+    /// <p>Prometheus settings.</p>
+    pub fn get_prometheus(&self) -> &::std::option::Option<crate::types::PrometheusInfo> {
+        &self.prometheus
+    }
     /// Consumes the builder and constructs a [`OpenMonitoringInfo`](crate::types::OpenMonitoringInfo).
     pub fn build(self) -> crate::types::OpenMonitoringInfo {
         crate::types::OpenMonitoringInfo {

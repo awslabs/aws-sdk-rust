@@ -37,6 +37,10 @@ impl GetContactReachabilityStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetContactReachabilityStatus as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_contact_reachability_status::builders::GetContactReachabilityStatusInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,5 +130,9 @@ impl GetContactReachabilityStatusFluentBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_name(input);
         self
+    }
+    /// <p>The name of the domain for which you want to know whether the registrant contact has confirmed that the email address is valid.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
     }
 }

@@ -48,6 +48,10 @@ impl ImageLocationBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the image.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The URL where the image is available. The URL is valid for 15 minutes so that you can view and download the image</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ImageLocationBuilder {
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
+    }
+    /// <p>The URL where the image is available. The URL is valid for 15 minutes so that you can view and download the image</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     /// Consumes the builder and constructs a [`ImageLocation`](crate::types::ImageLocation).
     pub fn build(self) -> crate::types::ImageLocation {

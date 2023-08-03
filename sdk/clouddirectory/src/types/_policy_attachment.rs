@@ -56,6 +56,10 @@ impl PolicyAttachmentBuilder {
         self.policy_id = input;
         self
     }
+    /// <p>The ID of <code>PolicyAttachment</code>.</p>
+    pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_id
+    }
     /// <p>The <code>ObjectIdentifier</code> that is associated with <code>PolicyAttachment</code>.</p>
     pub fn object_identifier(
         mut self,
@@ -72,6 +76,10 @@ impl PolicyAttachmentBuilder {
         self.object_identifier = input;
         self
     }
+    /// <p>The <code>ObjectIdentifier</code> that is associated with <code>PolicyAttachment</code>.</p>
+    pub fn get_object_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_identifier
+    }
     /// <p>The type of policy that can be associated with <code>PolicyAttachment</code>.</p>
     pub fn policy_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_type = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl PolicyAttachmentBuilder {
     pub fn set_policy_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_type = input;
         self
+    }
+    /// <p>The type of policy that can be associated with <code>PolicyAttachment</code>.</p>
+    pub fn get_policy_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_type
     }
     /// Consumes the builder and constructs a [`PolicyAttachment`](crate::types::PolicyAttachment).
     pub fn build(self) -> crate::types::PolicyAttachment {

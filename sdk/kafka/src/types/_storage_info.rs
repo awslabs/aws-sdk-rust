@@ -43,6 +43,10 @@ impl StorageInfoBuilder {
         self.ebs_storage_info = input;
         self
     }
+    /// <p>EBS volume information.</p>
+    pub fn get_ebs_storage_info(&self) -> &::std::option::Option<crate::types::EbsStorageInfo> {
+        &self.ebs_storage_info
+    }
     /// Consumes the builder and constructs a [`StorageInfo`](crate::types::StorageInfo).
     pub fn build(self) -> crate::types::StorageInfo {
         crate::types::StorageInfo {

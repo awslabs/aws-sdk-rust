@@ -61,6 +61,12 @@ impl BatchGetUserAccessTasksOutputBuilder {
         self.user_access_results_list = input;
         self
     }
+    /// <p>Contains a list of user access results.</p>
+    pub fn get_user_access_results_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserAccessResultItem>> {
+        &self.user_access_results_list
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

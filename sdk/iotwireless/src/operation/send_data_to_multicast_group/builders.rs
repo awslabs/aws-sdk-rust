@@ -36,6 +36,10 @@ impl SendDataToMulticastGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SendDataToMulticastGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::send_data_to_multicast_group::builders::SendDataToMulticastGroupInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl SendDataToMulticastGroupFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The ID of the multicast group.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The binary to be sent to the end device, encoded in base64.</p>
     pub fn payload_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.payload_data(input.into());
@@ -135,6 +143,10 @@ impl SendDataToMulticastGroupFluentBuilder {
     pub fn set_payload_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_payload_data(input);
         self
+    }
+    /// <p>The binary to be sent to the end device, encoded in base64.</p>
+    pub fn get_payload_data(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_payload_data()
     }
     /// <p>Wireless metadata that is to be sent to multicast group.</p>
     pub fn wireless_metadata(mut self, input: crate::types::MulticastWirelessMetadata) -> Self {
@@ -148,5 +160,11 @@ impl SendDataToMulticastGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_wireless_metadata(input);
         self
+    }
+    /// <p>Wireless metadata that is to be sent to multicast group.</p>
+    pub fn get_wireless_metadata(
+        &self,
+    ) -> &::std::option::Option<crate::types::MulticastWirelessMetadata> {
+        self.inner.get_wireless_metadata()
     }
 }

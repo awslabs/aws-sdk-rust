@@ -112,6 +112,10 @@ impl DisruptionComplianceBuilder {
         self.achievable_rto_in_secs = input;
         self
     }
+    /// <p>The Recovery Time Objective (RTO) that is achievable, in seconds</p>
+    pub fn get_achievable_rto_in_secs(&self) -> &::std::option::Option<i32> {
+        &self.achievable_rto_in_secs
+    }
     /// <p>The current RTO, in seconds.</p>
     pub fn current_rto_in_secs(mut self, input: i32) -> Self {
         self.current_rto_in_secs = ::std::option::Option::Some(input);
@@ -121,6 +125,10 @@ impl DisruptionComplianceBuilder {
     pub fn set_current_rto_in_secs(mut self, input: ::std::option::Option<i32>) -> Self {
         self.current_rto_in_secs = input;
         self
+    }
+    /// <p>The current RTO, in seconds.</p>
+    pub fn get_current_rto_in_secs(&self) -> &::std::option::Option<i32> {
+        &self.current_rto_in_secs
     }
     /// <p>The RTO reference identifier.</p>
     pub fn rto_reference_id(
@@ -138,6 +146,10 @@ impl DisruptionComplianceBuilder {
         self.rto_reference_id = input;
         self
     }
+    /// <p>The RTO reference identifier.</p>
+    pub fn get_rto_reference_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rto_reference_id
+    }
     /// <p>The RTO description.</p>
     pub fn rto_description(
         mut self,
@@ -154,6 +166,10 @@ impl DisruptionComplianceBuilder {
         self.rto_description = input;
         self
     }
+    /// <p>The RTO description.</p>
+    pub fn get_rto_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rto_description
+    }
     /// <p>The current RPO, in seconds.</p>
     pub fn current_rpo_in_secs(mut self, input: i32) -> Self {
         self.current_rpo_in_secs = ::std::option::Option::Some(input);
@@ -163,6 +179,10 @@ impl DisruptionComplianceBuilder {
     pub fn set_current_rpo_in_secs(mut self, input: ::std::option::Option<i32>) -> Self {
         self.current_rpo_in_secs = input;
         self
+    }
+    /// <p>The current RPO, in seconds.</p>
+    pub fn get_current_rpo_in_secs(&self) -> &::std::option::Option<i32> {
+        &self.current_rpo_in_secs
     }
     /// <p>The RPO reference identifier.</p>
     pub fn rpo_reference_id(
@@ -180,6 +200,10 @@ impl DisruptionComplianceBuilder {
         self.rpo_reference_id = input;
         self
     }
+    /// <p>The RPO reference identifier.</p>
+    pub fn get_rpo_reference_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rpo_reference_id
+    }
     /// <p>The RPO description.</p>
     pub fn rpo_description(
         mut self,
@@ -196,6 +220,10 @@ impl DisruptionComplianceBuilder {
         self.rpo_description = input;
         self
     }
+    /// <p>The RPO description.</p>
+    pub fn get_rpo_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rpo_description
+    }
     /// <p>The current status of compliance for the resiliency policy.</p>
     pub fn compliance_status(mut self, input: crate::types::ComplianceStatus) -> Self {
         self.compliance_status = ::std::option::Option::Some(input);
@@ -209,6 +237,10 @@ impl DisruptionComplianceBuilder {
         self.compliance_status = input;
         self
     }
+    /// <p>The current status of compliance for the resiliency policy.</p>
+    pub fn get_compliance_status(&self) -> &::std::option::Option<crate::types::ComplianceStatus> {
+        &self.compliance_status
+    }
     /// <p>The Recovery Point Objective (RPO) that is achievable, in seconds.</p>
     pub fn achievable_rpo_in_secs(mut self, input: i32) -> Self {
         self.achievable_rpo_in_secs = ::std::option::Option::Some(input);
@@ -219,6 +251,10 @@ impl DisruptionComplianceBuilder {
         self.achievable_rpo_in_secs = input;
         self
     }
+    /// <p>The Recovery Point Objective (RPO) that is achievable, in seconds.</p>
+    pub fn get_achievable_rpo_in_secs(&self) -> &::std::option::Option<i32> {
+        &self.achievable_rpo_in_secs
+    }
     /// <p>The disruption compliance message.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -228,6 +264,10 @@ impl DisruptionComplianceBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The disruption compliance message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`DisruptionCompliance`](crate::types::DisruptionCompliance).
     pub fn build(self) -> crate::types::DisruptionCompliance {

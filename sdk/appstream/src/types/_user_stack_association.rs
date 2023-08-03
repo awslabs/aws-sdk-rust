@@ -76,6 +76,10 @@ impl UserStackAssociationBuilder {
         self.stack_name = input;
         self
     }
+    /// <p>The name of the stack that is associated with the user.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_name
+    }
     /// <p>The email address of the user who is associated with the stack.</p> <note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
@@ -90,6 +94,12 @@ impl UserStackAssociationBuilder {
         self.user_name = input;
         self
     }
+    /// <p>The email address of the user who is associated with the stack.</p> <note>
+    /// <p>Users' email addresses are case-sensitive.</p>
+    /// </note>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
+    }
     /// <p>The authentication type for the user.</p>
     pub fn authentication_type(mut self, input: crate::types::AuthenticationType) -> Self {
         self.authentication_type = ::std::option::Option::Some(input);
@@ -103,6 +113,12 @@ impl UserStackAssociationBuilder {
         self.authentication_type = input;
         self
     }
+    /// <p>The authentication type for the user.</p>
+    pub fn get_authentication_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthenticationType> {
+        &self.authentication_type
+    }
     /// <p>Specifies whether a welcome email is sent to a user after the user is created in the user pool.</p>
     pub fn send_email_notification(mut self, input: bool) -> Self {
         self.send_email_notification = ::std::option::Option::Some(input);
@@ -112,6 +128,10 @@ impl UserStackAssociationBuilder {
     pub fn set_send_email_notification(mut self, input: ::std::option::Option<bool>) -> Self {
         self.send_email_notification = input;
         self
+    }
+    /// <p>Specifies whether a welcome email is sent to a user after the user is created in the user pool.</p>
+    pub fn get_send_email_notification(&self) -> &::std::option::Option<bool> {
+        &self.send_email_notification
     }
     /// Consumes the builder and constructs a [`UserStackAssociation`](crate::types::UserStackAssociation).
     pub fn build(self) -> crate::types::UserStackAssociation {

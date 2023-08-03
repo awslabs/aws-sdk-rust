@@ -36,6 +36,12 @@ impl DescribeCodeReviewFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeCodeReview as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_code_review::builders::DescribeCodeReviewInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl DescribeCodeReviewFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_code_review_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
+    pub fn get_code_review_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_code_review_arn()
     }
 }

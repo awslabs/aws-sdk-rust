@@ -61,6 +61,12 @@ impl DeleteIdentitiesOutputBuilder {
         self.unprocessed_identity_ids = input;
         self
     }
+    /// <p>An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.</p>
+    pub fn get_unprocessed_identity_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedIdentityId>> {
+        &self.unprocessed_identity_ids
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

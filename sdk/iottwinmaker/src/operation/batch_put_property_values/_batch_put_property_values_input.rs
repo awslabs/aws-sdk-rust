@@ -49,6 +49,10 @@ impl BatchPutPropertyValuesInputBuilder {
         self.workspace_id = input;
         self
     }
+    /// <p>The ID of the workspace that contains the properties to set.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
+    }
     /// Appends an item to `entries`.
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
@@ -67,6 +71,12 @@ impl BatchPutPropertyValuesInputBuilder {
     ) -> Self {
         self.entries = input;
         self
+    }
+    /// <p>An object that maps strings to the property value entries to set. Each string in the mapping must be unique to this object.</p>
+    pub fn get_entries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PropertyValueEntry>> {
+        &self.entries
     }
     /// Consumes the builder and constructs a [`BatchPutPropertyValuesInput`](crate::operation::batch_put_property_values::BatchPutPropertyValuesInput).
     pub fn build(

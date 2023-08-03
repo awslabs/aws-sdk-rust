@@ -46,6 +46,10 @@ impl GetJobRunOutputBuilder {
         self.job_run = input;
         self
     }
+    /// <p>The requested job-run metadata.</p>
+    pub fn get_job_run(&self) -> &::std::option::Option<crate::types::JobRun> {
+        &self.job_run
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

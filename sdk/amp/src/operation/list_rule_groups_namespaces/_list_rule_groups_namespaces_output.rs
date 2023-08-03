@@ -71,6 +71,12 @@ impl ListRuleGroupsNamespacesOutputBuilder {
         self.rule_groups_namespaces = input;
         self
     }
+    /// The list of the selected rule groups namespaces.
+    pub fn get_rule_groups_namespaces(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleGroupsNamespaceSummary>> {
+        &self.rule_groups_namespaces
+    }
     /// Pagination token to use when requesting the next page in this list.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -80,6 +86,10 @@ impl ListRuleGroupsNamespacesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// Pagination token to use when requesting the next page in this list.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

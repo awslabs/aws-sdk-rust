@@ -41,6 +41,10 @@ impl DeleteMitigationActionInputBuilder {
         self.action_name = input;
         self
     }
+    /// <p>The name of the mitigation action that you want to delete.</p>
+    pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_name
+    }
     /// Consumes the builder and constructs a [`DeleteMitigationActionInput`](crate::operation::delete_mitigation_action::DeleteMitigationActionInput).
     pub fn build(
         self,

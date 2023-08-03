@@ -55,6 +55,10 @@ impl DescribeThemePermissionsInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account that contains the theme that you're describing.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The ID for the theme that you want to describe permissions for.</p>
     pub fn theme_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.theme_id = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl DescribeThemePermissionsInputBuilder {
     pub fn set_theme_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.theme_id = input;
         self
+    }
+    /// <p>The ID for the theme that you want to describe permissions for.</p>
+    pub fn get_theme_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.theme_id
     }
     /// Consumes the builder and constructs a [`DescribeThemePermissionsInput`](crate::operation::describe_theme_permissions::DescribeThemePermissionsInput).
     pub fn build(

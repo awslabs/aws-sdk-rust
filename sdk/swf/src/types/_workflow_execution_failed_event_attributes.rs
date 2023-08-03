@@ -56,6 +56,10 @@ impl WorkflowExecutionFailedEventAttributesBuilder {
         self.reason = input;
         self
     }
+    /// <p>The descriptive reason provided for the failure.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
+    }
     /// <p>The details of the failure.</p>
     pub fn details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.details = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl WorkflowExecutionFailedEventAttributesBuilder {
     pub fn set_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.details = input;
         self
+    }
+    /// <p>The details of the failure.</p>
+    pub fn get_details(&self) -> &::std::option::Option<::std::string::String> {
+        &self.details
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>FailWorkflowExecution</code> decision to fail this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn decision_task_completed_event_id(mut self, input: i64) -> Self {
@@ -78,6 +86,10 @@ impl WorkflowExecutionFailedEventAttributesBuilder {
     ) -> Self {
         self.decision_task_completed_event_id = input;
         self
+    }
+    /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>FailWorkflowExecution</code> decision to fail this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    pub fn get_decision_task_completed_event_id(&self) -> &::std::option::Option<i64> {
+        &self.decision_task_completed_event_id
     }
     /// Consumes the builder and constructs a [`WorkflowExecutionFailedEventAttributes`](crate::types::WorkflowExecutionFailedEventAttributes).
     pub fn build(self) -> crate::types::WorkflowExecutionFailedEventAttributes {

@@ -50,6 +50,12 @@ impl NetworkArtifactMetaBuilder {
         self.overrides = input;
         self
     }
+    /// <p>Lists network package overrides.</p>
+    pub fn get_overrides(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ToscaOverride>> {
+        &self.overrides
+    }
     /// Consumes the builder and constructs a [`NetworkArtifactMeta`](crate::types::NetworkArtifactMeta).
     pub fn build(self) -> crate::types::NetworkArtifactMeta {
         crate::types::NetworkArtifactMeta {

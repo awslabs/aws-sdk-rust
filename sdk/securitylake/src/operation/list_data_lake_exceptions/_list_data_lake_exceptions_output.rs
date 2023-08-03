@@ -67,6 +67,12 @@ impl ListDataLakeExceptionsOutputBuilder {
         self.exceptions = input;
         self
     }
+    /// <p>Lists the failures that cannot be retried in the current Region.</p>
+    pub fn get_exceptions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakeException>> {
+        &self.exceptions
+    }
     /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -78,6 +84,11 @@ impl ListDataLakeExceptionsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
+    /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -48,6 +48,10 @@ impl VersioningConfigurationBuilder {
         self.mfa_delete = input;
         self
     }
+    /// <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This element is only returned if the bucket has been configured with MFA delete. If the bucket has never been so configured, this element is not returned.</p>
+    pub fn get_mfa_delete(&self) -> &::std::option::Option<crate::types::MfaDelete> {
+        &self.mfa_delete
+    }
     /// <p>The versioning state of the bucket.</p>
     pub fn status(mut self, input: crate::types::BucketVersioningStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl VersioningConfigurationBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The versioning state of the bucket.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::BucketVersioningStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`VersioningConfiguration`](crate::types::VersioningConfiguration).
     pub fn build(self) -> crate::types::VersioningConfiguration {

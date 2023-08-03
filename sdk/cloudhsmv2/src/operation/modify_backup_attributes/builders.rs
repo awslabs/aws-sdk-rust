@@ -36,6 +36,13 @@ impl ModifyBackupAttributesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyBackupAttributes as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::modify_backup_attributes::builders::ModifyBackupAttributesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl ModifyBackupAttributesFluentBuilder {
         self.inner = self.inner.set_backup_id(input);
         self
     }
+    /// <p>The identifier (ID) of the backup to modify. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
+    pub fn get_backup_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_backup_id()
+    }
     /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
     pub fn never_expires(mut self, input: bool) -> Self {
         self.inner = self.inner.never_expires(input);
@@ -135,5 +146,9 @@ impl ModifyBackupAttributesFluentBuilder {
     pub fn set_never_expires(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_never_expires(input);
         self
+    }
+    /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
+    pub fn get_never_expires(&self) -> &::std::option::Option<bool> {
+        self.inner.get_never_expires()
     }
 }

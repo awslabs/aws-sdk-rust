@@ -62,6 +62,10 @@ impl CreateLbCookieStickinessPolicyInputBuilder {
         self.load_balancer_name = input;
         self
     }
+    /// <p>The name of the load balancer.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.load_balancer_name
+    }
     /// <p>The name of the policy being created. Policy names must consist of alphanumeric characters and dashes (-). This name must be unique within the set of policies for this load balancer.</p>
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl CreateLbCookieStickinessPolicyInputBuilder {
         self.policy_name = input;
         self
     }
+    /// <p>The name of the policy being created. Policy names must consist of alphanumeric characters and dashes (-). This name must be unique within the set of policies for this load balancer.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_name
+    }
     /// <p>The time period, in seconds, after which the cookie should be considered stale. If you do not specify this parameter, the default value is 0, which indicates that the sticky session should last for the duration of the browser session.</p>
     pub fn cookie_expiration_period(mut self, input: i64) -> Self {
         self.cookie_expiration_period = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl CreateLbCookieStickinessPolicyInputBuilder {
     pub fn set_cookie_expiration_period(mut self, input: ::std::option::Option<i64>) -> Self {
         self.cookie_expiration_period = input;
         self
+    }
+    /// <p>The time period, in seconds, after which the cookie should be considered stale. If you do not specify this parameter, the default value is 0, which indicates that the sticky session should last for the duration of the browser session.</p>
+    pub fn get_cookie_expiration_period(&self) -> &::std::option::Option<i64> {
+        &self.cookie_expiration_period
     }
     /// Consumes the builder and constructs a [`CreateLbCookieStickinessPolicyInput`](crate::operation::create_lb_cookie_stickiness_policy::CreateLbCookieStickinessPolicyInput).
     pub fn build(

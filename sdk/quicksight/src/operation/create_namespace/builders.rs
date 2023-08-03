@@ -37,6 +37,12 @@ impl CreateNamespaceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateNamespace as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_namespace::builders::CreateNamespaceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl CreateNamespaceFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The ID for the Amazon Web Services account that you want to create the Amazon QuickSight namespace in.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The name that you want to use to describe the new namespace.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace(input.into());
@@ -142,6 +152,10 @@ impl CreateNamespaceFluentBuilder {
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace(input);
         self
+    }
+    /// <p>The name that you want to use to describe the new namespace.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace()
     }
     /// <p>Specifies the type of your user identity directory. Currently, this supports users with an identity type of <code>QUICKSIGHT</code>.</p>
     pub fn identity_store(mut self, input: crate::types::IdentityStore) -> Self {
@@ -155,6 +169,10 @@ impl CreateNamespaceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_identity_store(input);
         self
+    }
+    /// <p>Specifies the type of your user identity directory. Currently, this supports users with an identity type of <code>QUICKSIGHT</code>.</p>
+    pub fn get_identity_store(&self) -> &::std::option::Option<crate::types::IdentityStore> {
+        self.inner.get_identity_store()
     }
     /// Appends an item to `Tags`.
     ///
@@ -172,5 +190,9 @@ impl CreateNamespaceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags that you want to associate with the namespace that you're creating.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

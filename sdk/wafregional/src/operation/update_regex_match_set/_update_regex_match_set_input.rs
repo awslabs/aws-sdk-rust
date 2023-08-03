@@ -63,6 +63,10 @@ impl UpdateRegexMatchSetInputBuilder {
         self.regex_match_set_id = input;
         self
     }
+    /// <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to update. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
+    pub fn get_regex_match_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.regex_match_set_id
+    }
     /// Appends an item to `updates`.
     ///
     /// To override the contents of this collection use [`set_updates`](Self::set_updates).
@@ -82,6 +86,12 @@ impl UpdateRegexMatchSetInputBuilder {
         self.updates = input;
         self
     }
+    /// <p>An array of <code>RegexMatchSetUpdate</code> objects that you want to insert into or delete from a <code>RegexMatchSet</code>. For more information, see <code>RegexMatchTuple</code>.</p>
+    pub fn get_updates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RegexMatchSetUpdate>> {
+        &self.updates
+    }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_token = ::std::option::Option::Some(input.into());
@@ -91,6 +101,10 @@ impl UpdateRegexMatchSetInputBuilder {
     pub fn set_change_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_token = input;
         self
+    }
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    pub fn get_change_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_token
     }
     /// Consumes the builder and constructs a [`UpdateRegexMatchSetInput`](crate::operation::update_regex_match_set::UpdateRegexMatchSetInput).
     pub fn build(

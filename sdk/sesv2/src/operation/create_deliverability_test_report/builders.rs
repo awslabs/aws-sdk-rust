@@ -36,6 +36,10 @@ impl CreateDeliverabilityTestReportFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDeliverabilityTestReport as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_deliverability_test_report::builders::CreateDeliverabilityTestReportInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl CreateDeliverabilityTestReportFluentBuilder {
         self.inner = self.inner.set_report_name(input);
         self
     }
+    /// <p>A unique name that helps you to identify the predictive inbox placement test when you retrieve the results.</p>
+    pub fn get_report_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_report_name()
+    }
     /// <p>The email address that the predictive inbox placement test email was sent from.</p>
     pub fn from_email_address(
         mut self,
@@ -116,6 +124,10 @@ impl CreateDeliverabilityTestReportFluentBuilder {
         self.inner = self.inner.set_from_email_address(input);
         self
     }
+    /// <p>The email address that the predictive inbox placement test email was sent from.</p>
+    pub fn get_from_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_from_email_address()
+    }
     /// <p>The HTML body of the message that you sent when you performed the predictive inbox placement test.</p>
     pub fn content(mut self, input: crate::types::EmailContent) -> Self {
         self.inner = self.inner.content(input);
@@ -125,6 +137,10 @@ impl CreateDeliverabilityTestReportFluentBuilder {
     pub fn set_content(mut self, input: ::std::option::Option<crate::types::EmailContent>) -> Self {
         self.inner = self.inner.set_content(input);
         self
+    }
+    /// <p>The HTML body of the message that you sent when you performed the predictive inbox placement test.</p>
+    pub fn get_content(&self) -> &::std::option::Option<crate::types::EmailContent> {
+        self.inner.get_content()
     }
     /// Appends an item to `Tags`.
     ///
@@ -142,5 +158,9 @@ impl CreateDeliverabilityTestReportFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>An array of objects that define the tags (keys and values) that you want to associate with the predictive inbox placement test.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

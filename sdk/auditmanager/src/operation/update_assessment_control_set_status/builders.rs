@@ -36,6 +36,10 @@ impl UpdateAssessmentControlSetStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAssessmentControlSetStatus as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_assessment_control_set_status::builders::UpdateAssessmentControlSetStatusInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl UpdateAssessmentControlSetStatusFluentBuilder {
         self.inner = self.inner.set_assessment_id(input);
         self
     }
+    /// <p> The unique identifier for the assessment. </p>
+    pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assessment_id()
+    }
     /// <p> The unique identifier for the control set. </p>
     pub fn control_set_id(
         mut self,
@@ -122,6 +130,10 @@ impl UpdateAssessmentControlSetStatusFluentBuilder {
         self.inner = self.inner.set_control_set_id(input);
         self
     }
+    /// <p> The unique identifier for the control set. </p>
+    pub fn get_control_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_control_set_id()
+    }
     /// <p> The status of the control set that's being updated. </p>
     pub fn status(mut self, input: crate::types::ControlSetStatus) -> Self {
         self.inner = self.inner.status(input);
@@ -135,6 +147,10 @@ impl UpdateAssessmentControlSetStatusFluentBuilder {
         self.inner = self.inner.set_status(input);
         self
     }
+    /// <p> The status of the control set that's being updated. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ControlSetStatus> {
+        self.inner.get_status()
+    }
     /// <p> The comment that's related to the status update. </p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.comment(input.into());
@@ -144,5 +160,9 @@ impl UpdateAssessmentControlSetStatusFluentBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_comment(input);
         self
+    }
+    /// <p> The comment that's related to the status update. </p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_comment()
     }
 }

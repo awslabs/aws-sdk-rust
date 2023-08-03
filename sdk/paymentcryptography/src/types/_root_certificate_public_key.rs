@@ -57,6 +57,10 @@ impl RootCertificatePublicKeyBuilder {
         self.key_attributes = input;
         self
     }
+    /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after the root public key is imported.</p>
+    pub fn get_key_attributes(&self) -> &::std::option::Option<crate::types::KeyAttributes> {
+        &self.key_attributes
+    }
     /// <p>Parameter information for root public key certificate import.</p>
     pub fn public_key_certificate(
         mut self,
@@ -72,6 +76,10 @@ impl RootCertificatePublicKeyBuilder {
     ) -> Self {
         self.public_key_certificate = input;
         self
+    }
+    /// <p>Parameter information for root public key certificate import.</p>
+    pub fn get_public_key_certificate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_key_certificate
     }
     /// Consumes the builder and constructs a [`RootCertificatePublicKey`](crate::types::RootCertificatePublicKey).
     pub fn build(self) -> crate::types::RootCertificatePublicKey {

@@ -37,6 +37,10 @@ impl DescribeNodeAssociationStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeNodeAssociationStatus as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_node_association_status::builders::DescribeNodeAssociationStatusInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,12 @@ impl DescribeNodeAssociationStatusFluentBuilder {
         self.inner = self.inner.set_node_association_status_token(input);
         self
     }
+    /// <p>The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse. </p>
+    pub fn get_node_association_status_token(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_node_association_status_token()
+    }
     /// <p>The name of the server from which to disassociate the node. </p>
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.server_name(input.into());
@@ -142,5 +152,9 @@ impl DescribeNodeAssociationStatusFluentBuilder {
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_server_name(input);
         self
+    }
+    /// <p>The name of the server from which to disassociate the node. </p>
+    pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_server_name()
     }
 }

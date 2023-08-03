@@ -76,6 +76,10 @@ impl DescribeRouterConfigurationOutputBuilder {
         self.customer_router_config = input;
         self
     }
+    /// <p>The customer router configuration.</p>
+    pub fn get_customer_router_config(&self) -> &::std::option::Option<::std::string::String> {
+        &self.customer_router_config
+    }
     /// <p>The details about the router.</p>
     pub fn router(mut self, input: crate::types::RouterType) -> Self {
         self.router = ::std::option::Option::Some(input);
@@ -85,6 +89,10 @@ impl DescribeRouterConfigurationOutputBuilder {
     pub fn set_router(mut self, input: ::std::option::Option<crate::types::RouterType>) -> Self {
         self.router = input;
         self
+    }
+    /// <p>The details about the router.</p>
+    pub fn get_router(&self) -> &::std::option::Option<crate::types::RouterType> {
+        &self.router
     }
     /// <p>The ID assigned to the virtual interface.</p>
     pub fn virtual_interface_id(
@@ -102,6 +110,10 @@ impl DescribeRouterConfigurationOutputBuilder {
         self.virtual_interface_id = input;
         self
     }
+    /// <p>The ID assigned to the virtual interface.</p>
+    pub fn get_virtual_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_interface_id
+    }
     /// <p>Provides the details about a virtual interface's router.</p>
     pub fn virtual_interface_name(
         mut self,
@@ -117,6 +129,10 @@ impl DescribeRouterConfigurationOutputBuilder {
     ) -> Self {
         self.virtual_interface_name = input;
         self
+    }
+    /// <p>Provides the details about a virtual interface's router.</p>
+    pub fn get_virtual_interface_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_interface_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

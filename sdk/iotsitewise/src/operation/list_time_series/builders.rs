@@ -36,6 +36,12 @@ impl ListTimeSeriesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListTimeSeries as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_time_series::builders::ListTimeSeriesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListTimeSeriesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return for each paginated request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -146,6 +156,10 @@ impl ListTimeSeriesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return for each paginated request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The ID of the asset in which the asset property was created.</p>
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -157,6 +171,10 @@ impl ListTimeSeriesFluentBuilder {
         self.inner = self.inner.set_asset_id(input);
         self
     }
+    /// <p>The ID of the asset in which the asset property was created.</p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_asset_id()
+    }
     /// <p>The alias prefix of the time series.</p>
     pub fn alias_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.alias_prefix(input.into());
@@ -166,6 +184,10 @@ impl ListTimeSeriesFluentBuilder {
     pub fn set_alias_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_alias_prefix(input);
         self
+    }
+    /// <p>The alias prefix of the time series.</p>
+    pub fn get_alias_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_alias_prefix()
     }
     /// <p>The type of the time series. The time series type can be one of the following values:</p>
     /// <ul>
@@ -187,5 +209,13 @@ impl ListTimeSeriesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_time_series_type(input);
         self
+    }
+    /// <p>The type of the time series. The time series type can be one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>ASSOCIATED</code> – The time series is associated with an asset property.</p> </li>
+    /// <li> <p> <code>DISASSOCIATED</code> – The time series isn't associated with any asset property.</p> </li>
+    /// </ul>
+    pub fn get_time_series_type(&self) -> &::std::option::Option<crate::types::ListTimeSeriesType> {
+        self.inner.get_time_series_type()
     }
 }

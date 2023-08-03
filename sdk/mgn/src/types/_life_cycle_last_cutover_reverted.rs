@@ -46,6 +46,10 @@ impl LifeCycleLastCutoverRevertedBuilder {
         self.api_call_date_time = input;
         self
     }
+    /// <p>Lifecycle last Cutover reverted API call date time.</p>
+    pub fn get_api_call_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_call_date_time
+    }
     /// Consumes the builder and constructs a [`LifeCycleLastCutoverReverted`](crate::types::LifeCycleLastCutoverReverted).
     pub fn build(self) -> crate::types::LifeCycleLastCutoverReverted {
         crate::types::LifeCycleLastCutoverReverted {

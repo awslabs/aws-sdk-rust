@@ -36,6 +36,12 @@ impl CreateHITTypeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateHITType as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_hit_type::builders::CreateHitTypeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl CreateHITTypeFluentBuilder {
         self.inner = self.inner.set_auto_approval_delay_in_seconds(input);
         self
     }
+    /// <p> The number of seconds after an assignment for the HIT has been submitted, after which the assignment is considered Approved automatically unless the Requester explicitly rejects it. </p>
+    pub fn get_auto_approval_delay_in_seconds(&self) -> &::std::option::Option<i64> {
+        self.inner.get_auto_approval_delay_in_seconds()
+    }
     /// <p> The amount of time, in seconds, that a Worker has to complete the HIT after accepting it. If a Worker does not complete the assignment within the specified duration, the assignment is considered abandoned. If the HIT is still active (that is, its lifetime has not elapsed), the assignment becomes available for other users to find and accept. </p>
     pub fn assignment_duration_in_seconds(mut self, input: i64) -> Self {
         self.inner = self.inner.assignment_duration_in_seconds(input);
@@ -127,6 +137,10 @@ impl CreateHITTypeFluentBuilder {
     pub fn set_assignment_duration_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_assignment_duration_in_seconds(input);
         self
+    }
+    /// <p> The amount of time, in seconds, that a Worker has to complete the HIT after accepting it. If a Worker does not complete the assignment within the specified duration, the assignment is considered abandoned. If the HIT is still active (that is, its lifetime has not elapsed), the assignment becomes available for other users to find and accept. </p>
+    pub fn get_assignment_duration_in_seconds(&self) -> &::std::option::Option<i64> {
+        self.inner.get_assignment_duration_in_seconds()
     }
     /// <p> The amount of money the Requester will pay a Worker for successfully completing the HIT. </p>
     pub fn reward(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,6 +152,10 @@ impl CreateHITTypeFluentBuilder {
         self.inner = self.inner.set_reward(input);
         self
     }
+    /// <p> The amount of money the Requester will pay a Worker for successfully completing the HIT. </p>
+    pub fn get_reward(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reward()
+    }
     /// <p> The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT title appears in search results, and everywhere the HIT is mentioned. </p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.title(input.into());
@@ -147,6 +165,10 @@ impl CreateHITTypeFluentBuilder {
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_title(input);
         self
+    }
+    /// <p> The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT title appears in search results, and everywhere the HIT is mentioned. </p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_title()
     }
     /// <p> One or more words or phrases that describe the HIT, separated by commas. These words are used in searches to find HITs. </p>
     pub fn keywords(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -158,6 +180,10 @@ impl CreateHITTypeFluentBuilder {
         self.inner = self.inner.set_keywords(input);
         self
     }
+    /// <p> One or more words or phrases that describe the HIT, separated by commas. These words are used in searches to find HITs. </p>
+    pub fn get_keywords(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_keywords()
+    }
     /// <p> A general description of the HIT. A description includes detailed information about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded view of search results, and in the HIT and assignment screens. A good description gives the user enough information to evaluate the HIT before accepting it. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -167,6 +193,10 @@ impl CreateHITTypeFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p> A general description of the HIT. A description includes detailed information about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded view of search results, and in the HIT and assignment screens. A good description gives the user enough information to evaluate the HIT before accepting it. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `QualificationRequirements`.
     ///
@@ -187,5 +217,11 @@ impl CreateHITTypeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_qualification_requirements(input);
         self
+    }
+    /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
+    pub fn get_qualification_requirements(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QualificationRequirement>> {
+        self.inner.get_qualification_requirements()
     }
 }

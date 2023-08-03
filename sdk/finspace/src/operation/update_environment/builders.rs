@@ -36,6 +36,12 @@ impl UpdateEnvironmentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateEnvironment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_environment::builders::UpdateEnvironmentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateEnvironmentFluentBuilder {
         self.inner = self.inner.set_environment_id(input);
         self
     }
+    /// <p>The identifier of the FinSpace environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_id()
+    }
     /// <p>The name of the environment.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -142,6 +152,10 @@ impl UpdateEnvironmentFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the environment.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The description of the environment.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -151,6 +165,10 @@ impl UpdateEnvironmentFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the environment.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>Authentication mode for the environment.</p>
     /// <ul>
@@ -173,6 +191,14 @@ impl UpdateEnvironmentFluentBuilder {
         self.inner = self.inner.set_federation_mode(input);
         self
     }
+    /// <p>Authentication mode for the environment.</p>
+    /// <ul>
+    /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
+    /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
+    /// </ul>
+    pub fn get_federation_mode(&self) -> &::std::option::Option<crate::types::FederationMode> {
+        self.inner.get_federation_mode()
+    }
     /// <p>Configuration information when authentication mode is FEDERATED.</p>
     pub fn federation_parameters(mut self, input: crate::types::FederationParameters) -> Self {
         self.inner = self.inner.federation_parameters(input);
@@ -185,5 +211,11 @@ impl UpdateEnvironmentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_federation_parameters(input);
         self
+    }
+    /// <p>Configuration information when authentication mode is FEDERATED.</p>
+    pub fn get_federation_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::FederationParameters> {
+        self.inner.get_federation_parameters()
     }
 }

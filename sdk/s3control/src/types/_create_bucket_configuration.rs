@@ -55,6 +55,14 @@ impl CreateBucketConfigurationBuilder {
         self.location_constraint = input;
         self
     }
+    /// <p>Specifies the Region where the bucket will be created. If you are creating a bucket on the US East (N. Virginia) Region (us-east-1), you do not need to specify the location. </p> <note>
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// </note>
+    pub fn get_location_constraint(
+        &self,
+    ) -> &::std::option::Option<crate::types::BucketLocationConstraint> {
+        &self.location_constraint
+    }
     /// Consumes the builder and constructs a [`CreateBucketConfiguration`](crate::types::CreateBucketConfiguration).
     pub fn build(self) -> crate::types::CreateBucketConfiguration {
         crate::types::CreateBucketConfiguration {

@@ -40,6 +40,10 @@ impl DeleteMlTransformInputBuilder {
         self.transform_id = input;
         self
     }
+    /// <p>The unique identifier of the transform to delete.</p>
+    pub fn get_transform_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transform_id
+    }
     /// Consumes the builder and constructs a [`DeleteMlTransformInput`](crate::operation::delete_ml_transform::DeleteMlTransformInput).
     pub fn build(
         self,

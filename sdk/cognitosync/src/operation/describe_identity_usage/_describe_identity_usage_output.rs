@@ -52,6 +52,10 @@ impl DescribeIdentityUsageOutputBuilder {
         self.identity_usage = input;
         self
     }
+    /// Usage information for the identity.
+    pub fn get_identity_usage(&self) -> &::std::option::Option<crate::types::IdentityUsage> {
+        &self.identity_usage
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

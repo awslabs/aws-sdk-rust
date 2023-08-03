@@ -102,6 +102,10 @@ impl TransitGatewayBuilder {
         self.transit_gateway_id = input;
         self
     }
+    /// <p>The ID of the transit gateway.</p>
+    pub fn get_transit_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
     pub fn transit_gateway_arn(
         mut self,
@@ -118,6 +122,10 @@ impl TransitGatewayBuilder {
         self.transit_gateway_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
+    pub fn get_transit_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_arn
+    }
     /// <p>The state of the transit gateway.</p>
     pub fn state(mut self, input: crate::types::TransitGatewayState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -131,6 +139,10 @@ impl TransitGatewayBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of the transit gateway.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::TransitGatewayState> {
+        &self.state
+    }
     /// <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_id = ::std::option::Option::Some(input.into());
@@ -141,6 +153,10 @@ impl TransitGatewayBuilder {
         self.owner_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
+    }
     /// <p>The description of the transit gateway.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -150,6 +166,10 @@ impl TransitGatewayBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the transit gateway.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The creation time.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -164,6 +184,10 @@ impl TransitGatewayBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The creation time.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The transit gateway options.</p>
     pub fn options(mut self, input: crate::types::TransitGatewayOptions) -> Self {
         self.options = ::std::option::Option::Some(input);
@@ -176,6 +200,10 @@ impl TransitGatewayBuilder {
     ) -> Self {
         self.options = input;
         self
+    }
+    /// <p>The transit gateway options.</p>
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::TransitGatewayOptions> {
+        &self.options
     }
     /// Appends an item to `tags`.
     ///
@@ -195,6 +223,10 @@ impl TransitGatewayBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags for the transit gateway.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`TransitGateway`](crate::types::TransitGateway).
     pub fn build(self) -> crate::types::TransitGateway {

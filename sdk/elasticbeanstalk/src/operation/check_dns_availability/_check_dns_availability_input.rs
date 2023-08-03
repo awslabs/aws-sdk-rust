@@ -41,6 +41,10 @@ impl CheckDnsAvailabilityInputBuilder {
         self.cname_prefix = input;
         self
     }
+    /// <p>The prefix used when this CNAME is reserved.</p>
+    pub fn get_cname_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cname_prefix
+    }
     /// Consumes the builder and constructs a [`CheckDnsAvailabilityInput`](crate::operation::check_dns_availability::CheckDnsAvailabilityInput).
     pub fn build(
         self,

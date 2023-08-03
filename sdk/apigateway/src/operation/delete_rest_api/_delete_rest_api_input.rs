@@ -40,6 +40,10 @@ impl DeleteRestApiInputBuilder {
         self.rest_api_id = input;
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
+    }
     /// Consumes the builder and constructs a [`DeleteRestApiInput`](crate::operation::delete_rest_api::DeleteRestApiInput).
     pub fn build(
         self,

@@ -119,6 +119,20 @@ impl ComplianceBuilder {
         self.status = input;
         self
     }
+    /// <p>The result of a standards check.</p>
+    /// <p>The valid values for <code>Status</code> are as follows.</p>
+    /// <ul>
+    /// <li>
+    /// <ul>
+    /// <li> <p> <code>PASSED</code> - Standards check passed for all evaluated resources.</p> </li>
+    /// <li> <p> <code>WARNING</code> - Some information is missing or this check is not supported for your configuration.</p> </li>
+    /// <li> <p> <code>FAILED</code> - Standards check failed for at least one evaluated resource.</p> </li>
+    /// <li> <p> <code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the result of the Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation result was <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.</p> </li>
+    /// </ul> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ComplianceStatus> {
+        &self.status
+    }
     /// Appends an item to `related_requirements`.
     ///
     /// To override the contents of this collection use [`set_related_requirements`](Self::set_related_requirements).
@@ -141,6 +155,12 @@ impl ComplianceBuilder {
         self.related_requirements = input;
         self
     }
+    /// <p>For a control, the industry or regulatory framework requirements that are related to the control. The check for that control is aligned with these requirements.</p>
+    pub fn get_related_requirements(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.related_requirements
+    }
     /// Appends an item to `status_reasons`.
     ///
     /// To override the contents of this collection use [`set_status_reasons`](Self::set_status_reasons).
@@ -160,6 +180,12 @@ impl ComplianceBuilder {
         self.status_reasons = input;
         self
     }
+    /// <p>For findings generated from controls, a list of reasons behind the value of <code>Status</code>. For the list of status reason codes and their meanings, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related information in the ASFF</a> in the <i>Security Hub User Guide</i>. </p>
+    pub fn get_status_reasons(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StatusReason>> {
+        &self.status_reasons
+    }
     /// <p> The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5. </p>
     pub fn security_control_id(
         mut self,
@@ -175,6 +201,10 @@ impl ComplianceBuilder {
     ) -> Self {
         self.security_control_id = input;
         self
+    }
+    /// <p> The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5. </p>
+    pub fn get_security_control_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_control_id
     }
     /// Appends an item to `associated_standards`.
     ///
@@ -194,6 +224,12 @@ impl ComplianceBuilder {
     ) -> Self {
         self.associated_standards = input;
         self
+    }
+    /// <p>The enabled security standards in which a security control is currently enabled. </p>
+    pub fn get_associated_standards(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociatedStandard>> {
+        &self.associated_standards
     }
     /// Consumes the builder and constructs a [`Compliance`](crate::types::Compliance).
     pub fn build(self) -> crate::types::Compliance {

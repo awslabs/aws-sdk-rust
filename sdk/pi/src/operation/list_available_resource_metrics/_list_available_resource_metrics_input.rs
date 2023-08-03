@@ -86,6 +86,10 @@ impl ListAvailableResourceMetricsInputBuilder {
         self.service_type = input;
         self
     }
+    /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
+    pub fn get_service_type(&self) -> &::std::option::Option<crate::types::ServiceType> {
+        &self.service_type
+    }
     /// <p>An immutable identifier for a data source that is unique within an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use an Amazon RDS DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VWZ</code>. </p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
@@ -95,6 +99,10 @@ impl ListAvailableResourceMetricsInputBuilder {
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identifier = input;
         self
+    }
+    /// <p>An immutable identifier for a data source that is unique within an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use an Amazon RDS DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VWZ</code>. </p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
     }
     /// Appends an item to `metric_types`.
     ///
@@ -127,6 +135,18 @@ impl ListAvailableResourceMetricsInputBuilder {
         self.metric_types = input;
         self
     }
+    /// <p>The types of metrics to return in the response. Valid values in the array include the following:</p>
+    /// <ul>
+    /// <li> <p> <code>os</code> (OS counter metrics) - All engines</p> </li>
+    /// <li> <p> <code>db</code> (DB load metrics) - All engines except for Amazon DocumentDB</p> </li>
+    /// <li> <p> <code>db.sql.stats</code> (per-SQL metrics) - All engines except for Amazon DocumentDB</p> </li>
+    /// <li> <p> <code>db.sql_tokenized.stats</code> (per-SQL digest metrics) - All engines except for Amazon DocumentDB</p> </li>
+    /// </ul>
+    pub fn get_metric_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.metric_types
+    }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -137,6 +157,10 @@ impl ListAvailableResourceMetricsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of items to return. If the <code>MaxRecords</code> value is less than the number of existing items, the response includes a pagination token. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -146,6 +170,10 @@ impl ListAvailableResourceMetricsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of items to return. If the <code>MaxRecords</code> value is less than the number of existing items, the response includes a pagination token. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAvailableResourceMetricsInput`](crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsInput).
     pub fn build(

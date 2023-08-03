@@ -36,6 +36,10 @@ impl GetRegionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetRegions as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_regions::builders::GetRegionsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl GetRegionsFluentBuilder {
         self.inner = self.inner.set_include_availability_zones(input);
         self
     }
+    /// <p>A Boolean value indicating whether to also include Availability Zones in your get regions request. Availability Zones are indicated with a letter: e.g., <code>us-east-2a</code>.</p>
+    pub fn get_include_availability_zones(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_availability_zones()
+    }
     /// <p>A Boolean value indicating whether to also include Availability Zones for databases in your get regions request. Availability Zones are indicated with a letter (e.g., <code>us-east-2a</code>).</p>
     pub fn include_relational_database_availability_zones(mut self, input: bool) -> Self {
         self.inner = self
@@ -134,5 +142,12 @@ impl GetRegionsFluentBuilder {
             .inner
             .set_include_relational_database_availability_zones(input);
         self
+    }
+    /// <p>A Boolean value indicating whether to also include Availability Zones for databases in your get regions request. Availability Zones are indicated with a letter (e.g., <code>us-east-2a</code>).</p>
+    pub fn get_include_relational_database_availability_zones(
+        &self,
+    ) -> &::std::option::Option<bool> {
+        self.inner
+            .get_include_relational_database_availability_zones()
     }
 }

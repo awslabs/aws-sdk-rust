@@ -39,6 +39,12 @@ impl ExecuteChangeSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ExecuteChangeSet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::execute_change_set::builders::ExecuteChangeSetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +141,10 @@ impl ExecuteChangeSetFluentBuilder {
         self.inner = self.inner.set_change_set_name(input);
         self
     }
+    /// <p>The name or Amazon Resource Name (ARN) of the change set that you want use to update the specified stack.</p>
+    pub fn get_change_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_change_set_name()
+    }
     /// <p>If you specified the name of a change set, specify the stack name or Amazon Resource Name (ARN) that's associated with the change set you want to execute.</p>
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_name(input.into());
@@ -144,6 +154,10 @@ impl ExecuteChangeSetFluentBuilder {
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_name(input);
         self
+    }
+    /// <p>If you specified the name of a change set, specify the stack name or Amazon Resource Name (ARN) that's associated with the change set you want to execute.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_name()
     }
     /// <p>A unique identifier for this <code>ExecuteChangeSet</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to execute a change set to update a stack with the same name. You might retry <code>ExecuteChangeSet</code> requests to ensure that CloudFormation successfully received them.</p>
     pub fn client_request_token(
@@ -160,6 +174,10 @@ impl ExecuteChangeSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>A unique identifier for this <code>ExecuteChangeSet</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to execute a change set to update a stack with the same name. You might retry <code>ExecuteChangeSet</code> requests to ensure that CloudFormation successfully received them.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
     /// <p>Preserves the state of previously provisioned resources when an operation fails. This parameter can't be specified when the <code>OnStackFailure</code> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a> API operation was specified.</p>
     /// <ul>
@@ -180,5 +198,14 @@ impl ExecuteChangeSetFluentBuilder {
     pub fn set_disable_rollback(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_disable_rollback(input);
         self
+    }
+    /// <p>Preserves the state of previously provisioned resources when an operation fails. This parameter can't be specified when the <code>OnStackFailure</code> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a> API operation was specified.</p>
+    /// <ul>
+    /// <li> <p> <code>True</code> - if the stack creation fails, do nothing. This is equivalent to specifying <code>DO_NOTHING</code> for the <code>OnStackFailure</code> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a> API operation.</p> </li>
+    /// <li> <p> <code>False</code> - if the stack creation fails, roll back the stack. This is equivalent to specifying <code>ROLLBACK</code> for the <code>OnStackFailure</code> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a> API operation.</p> </li>
+    /// </ul>
+    /// <p>Default: <code>True</code> </p>
+    pub fn get_disable_rollback(&self) -> &::std::option::Option<bool> {
+        self.inner.get_disable_rollback()
     }
 }

@@ -36,6 +36,12 @@ impl DeleteServiceActionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteServiceAction as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_service_action::builders::DeleteServiceActionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DeleteServiceActionFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The language code.</p>
     /// <ul>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
@@ -149,5 +159,13 @@ impl DeleteServiceActionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
+    }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_accept_language()
     }
 }

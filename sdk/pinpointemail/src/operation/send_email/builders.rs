@@ -40,6 +40,10 @@ impl SendEmailFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SendEmail as a reference.
+    pub fn as_input(&self) -> &crate::operation::send_email::builders::SendEmailInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +132,10 @@ impl SendEmailFluentBuilder {
         self.inner = self.inner.set_from_email_address(input);
         self
     }
+    /// <p>The email address that you want to use as the "From" address for the email. The address that you specify has to be verified. </p>
+    pub fn get_from_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_from_email_address()
+    }
     /// <p>An object that contains the recipients of the email message.</p>
     pub fn destination(mut self, input: crate::types::Destination) -> Self {
         self.inner = self.inner.destination(input);
@@ -140,6 +148,10 @@ impl SendEmailFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destination(input);
         self
+    }
+    /// <p>An object that contains the recipients of the email message.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::Destination> {
+        self.inner.get_destination()
     }
     /// Appends an item to `ReplyToAddresses`.
     ///
@@ -161,6 +173,12 @@ impl SendEmailFluentBuilder {
         self.inner = self.inner.set_reply_to_addresses(input);
         self
     }
+    /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
+    pub fn get_reply_to_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_reply_to_addresses()
+    }
     /// <p>The address that Amazon Pinpoint should send bounce and complaint notifications to.</p>
     pub fn feedback_forwarding_email_address(
         mut self,
@@ -177,6 +195,12 @@ impl SendEmailFluentBuilder {
         self.inner = self.inner.set_feedback_forwarding_email_address(input);
         self
     }
+    /// <p>The address that Amazon Pinpoint should send bounce and complaint notifications to.</p>
+    pub fn get_feedback_forwarding_email_address(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_feedback_forwarding_email_address()
+    }
     /// <p>An object that contains the body of the message. You can send either a Simple message or a Raw message.</p>
     pub fn content(mut self, input: crate::types::EmailContent) -> Self {
         self.inner = self.inner.content(input);
@@ -186,6 +210,10 @@ impl SendEmailFluentBuilder {
     pub fn set_content(mut self, input: ::std::option::Option<crate::types::EmailContent>) -> Self {
         self.inner = self.inner.set_content(input);
         self
+    }
+    /// <p>An object that contains the body of the message. You can send either a Simple message or a Raw message.</p>
+    pub fn get_content(&self) -> &::std::option::Option<crate::types::EmailContent> {
+        self.inner.get_content()
     }
     /// Appends an item to `EmailTags`.
     ///
@@ -204,6 +232,12 @@ impl SendEmailFluentBuilder {
         self.inner = self.inner.set_email_tags(input);
         self
     }
+    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events. </p>
+    pub fn get_email_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageTag>> {
+        self.inner.get_email_tags()
+    }
     /// <p>The name of the configuration set that you want to use when sending the email.</p>
     pub fn configuration_set_name(
         mut self,
@@ -219,5 +253,9 @@ impl SendEmailFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_configuration_set_name(input);
         self
+    }
+    /// <p>The name of the configuration set that you want to use when sending the email.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_set_name()
     }
 }

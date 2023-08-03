@@ -37,6 +37,10 @@ impl DeleteMemberFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteMember as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_member::builders::DeleteMemberInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl DeleteMemberFluentBuilder {
         self.inner = self.inner.set_network_id(input);
         self
     }
+    /// <p>The unique identifier of the network from which the member is removed.</p>
+    pub fn get_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_network_id()
+    }
     /// <p>The unique identifier of the member to remove.</p>
     pub fn member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.member_id(input.into());
@@ -128,5 +136,9 @@ impl DeleteMemberFluentBuilder {
     pub fn set_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_member_id(input);
         self
+    }
+    /// <p>The unique identifier of the member to remove.</p>
+    pub fn get_member_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_member_id()
     }
 }

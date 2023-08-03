@@ -48,6 +48,10 @@ impl PostToConnectionInputBuilder {
         self.data = input;
         self
     }
+    /// <p>The data to be sent to the client specified by its connection id.</p>
+    pub fn get_data(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.data
+    }
     /// <p>The identifier of the connection that a specific client is using.</p>
     pub fn connection_id(
         mut self,
@@ -63,6 +67,10 @@ impl PostToConnectionInputBuilder {
     ) -> Self {
         self.connection_id = input;
         self
+    }
+    /// <p>The identifier of the connection that a specific client is using.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_id
     }
     /// Consumes the builder and constructs a [`PostToConnectionInput`](crate::operation::post_to_connection::PostToConnectionInput).
     pub fn build(

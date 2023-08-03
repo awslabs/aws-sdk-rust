@@ -60,6 +60,12 @@ impl DescribeConfigurationRecordersOutputBuilder {
         self.configuration_recorders = input;
         self
     }
+    /// <p>A list that contains the descriptions of the specified configuration recorders.</p>
+    pub fn get_configuration_recorders(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationRecorder>> {
+        &self.configuration_recorders
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

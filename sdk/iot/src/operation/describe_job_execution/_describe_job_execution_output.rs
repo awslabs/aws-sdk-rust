@@ -50,6 +50,10 @@ impl DescribeJobExecutionOutputBuilder {
         self.execution = input;
         self
     }
+    /// <p>Information about the job execution.</p>
+    pub fn get_execution(&self) -> &::std::option::Option<crate::types::JobExecution> {
+        &self.execution
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

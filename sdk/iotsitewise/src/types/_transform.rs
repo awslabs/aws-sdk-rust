@@ -63,6 +63,11 @@ impl TransformBuilder {
         self.expression = input;
         self
     }
+    /// <p>The mathematical expression that defines the transformation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expression
+    }
     /// Appends an item to `variables`.
     ///
     /// To override the contents of this collection use [`set_variables`](Self::set_variables).
@@ -82,6 +87,12 @@ impl TransformBuilder {
         self.variables = input;
         self
     }
+    /// <p>The list of variables used in the expression.</p>
+    pub fn get_variables(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExpressionVariable>> {
+        &self.variables
+    }
     /// <p>The processing configuration for the given transform property. You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud. You can also configure transforms to be computed at the edge or in the cloud.</p>
     pub fn processing_config(mut self, input: crate::types::TransformProcessingConfig) -> Self {
         self.processing_config = ::std::option::Option::Some(input);
@@ -94,6 +105,12 @@ impl TransformBuilder {
     ) -> Self {
         self.processing_config = input;
         self
+    }
+    /// <p>The processing configuration for the given transform property. You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud. You can also configure transforms to be computed at the edge or in the cloud.</p>
+    pub fn get_processing_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransformProcessingConfig> {
+        &self.processing_config
     }
     /// Consumes the builder and constructs a [`Transform`](crate::types::Transform).
     pub fn build(self) -> crate::types::Transform {

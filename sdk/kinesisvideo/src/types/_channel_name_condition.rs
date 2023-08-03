@@ -51,6 +51,12 @@ impl ChannelNameConditionBuilder {
         self.comparison_operator = input;
         self
     }
+    /// <p>A comparison operator. Currently, you can only specify the <code>BEGINS_WITH</code> operator, which finds signaling channels whose names begin with a given prefix.</p>
+    pub fn get_comparison_operator(
+        &self,
+    ) -> &::std::option::Option<crate::types::ComparisonOperator> {
+        &self.comparison_operator
+    }
     /// <p>A value to compare.</p>
     pub fn comparison_value(
         mut self,
@@ -66,6 +72,10 @@ impl ChannelNameConditionBuilder {
     ) -> Self {
         self.comparison_value = input;
         self
+    }
+    /// <p>A value to compare.</p>
+    pub fn get_comparison_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comparison_value
     }
     /// Consumes the builder and constructs a [`ChannelNameCondition`](crate::types::ChannelNameCondition).
     pub fn build(self) -> crate::types::ChannelNameCondition {

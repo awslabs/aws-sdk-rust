@@ -78,6 +78,12 @@ impl GetPoliciesStatsOutputBuilder {
         self.access_policy_stats = input;
         self
     }
+    /// <p>Information about the data access policies in your account.</p>
+    pub fn get_access_policy_stats(
+        &self,
+    ) -> &::std::option::Option<crate::types::AccessPolicyStats> {
+        &self.access_policy_stats
+    }
     /// <p>Information about the security policies in your account.</p>
     pub fn security_policy_stats(mut self, input: crate::types::SecurityPolicyStats) -> Self {
         self.security_policy_stats = ::std::option::Option::Some(input);
@@ -90,6 +96,12 @@ impl GetPoliciesStatsOutputBuilder {
     ) -> Self {
         self.security_policy_stats = input;
         self
+    }
+    /// <p>Information about the security policies in your account.</p>
+    pub fn get_security_policy_stats(
+        &self,
+    ) -> &::std::option::Option<crate::types::SecurityPolicyStats> {
+        &self.security_policy_stats
     }
     /// <p>Information about the security configurations in your account.</p>
     pub fn security_config_stats(mut self, input: crate::types::SecurityConfigStats) -> Self {
@@ -104,6 +116,12 @@ impl GetPoliciesStatsOutputBuilder {
         self.security_config_stats = input;
         self
     }
+    /// <p>Information about the security configurations in your account.</p>
+    pub fn get_security_config_stats(
+        &self,
+    ) -> &::std::option::Option<crate::types::SecurityConfigStats> {
+        &self.security_config_stats
+    }
     /// <p>The total number of OpenSearch Serverless security policies and configurations in your account.</p>
     pub fn total_policy_count(mut self, input: i64) -> Self {
         self.total_policy_count = ::std::option::Option::Some(input);
@@ -113,6 +131,10 @@ impl GetPoliciesStatsOutputBuilder {
     pub fn set_total_policy_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_policy_count = input;
         self
+    }
+    /// <p>The total number of OpenSearch Serverless security policies and configurations in your account.</p>
+    pub fn get_total_policy_count(&self) -> &::std::option::Option<i64> {
+        &self.total_policy_count
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

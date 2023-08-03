@@ -97,6 +97,10 @@ impl GetPackageOutputBuilder {
         self.package_name = input;
         self
     }
+    /// <p>The name of the package.</p>
+    pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_name
+    }
     /// <p>The ARN for the package.</p>
     pub fn package_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_arn = ::std::option::Option::Some(input.into());
@@ -107,6 +111,10 @@ impl GetPackageOutputBuilder {
         self.package_arn = input;
         self
     }
+    /// <p>The ARN for the package.</p>
+    pub fn get_package_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_arn
+    }
     /// <p>The package description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -116,6 +124,10 @@ impl GetPackageOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The package description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The name of the default package version.</p>
     pub fn default_version_name(
@@ -133,6 +145,10 @@ impl GetPackageOutputBuilder {
         self.default_version_name = input;
         self
     }
+    /// <p>The name of the default package version.</p>
+    pub fn get_default_version_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_version_name
+    }
     /// <p>The date the package was created.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -146,6 +162,10 @@ impl GetPackageOutputBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>The date the package was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
+    }
     /// <p>The date when the package was last updated.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input);
@@ -158,6 +178,10 @@ impl GetPackageOutputBuilder {
     ) -> Self {
         self.last_modified_date = input;
         self
+    }
+    /// <p>The date when the package was last updated.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -47,6 +47,10 @@ impl IpSetReferenceBuilder {
         self.reference_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the resource that you are referencing in your rule group.</p>
+    pub fn get_reference_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reference_arn
+    }
     /// Consumes the builder and constructs a [`IpSetReference`](crate::types::IpSetReference).
     pub fn build(self) -> crate::types::IpSetReference {
         crate::types::IpSetReference {

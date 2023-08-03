@@ -79,6 +79,10 @@ impl UpdateFilterInputBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The unique ID of the detector that specifies the GuardDuty service where you want to update a filter.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// <p>The name of the filter.</p>
     pub fn filter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_name = ::std::option::Option::Some(input.into());
@@ -88,6 +92,10 @@ impl UpdateFilterInputBuilder {
     pub fn set_filter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.filter_name = input;
         self
+    }
+    /// <p>The name of the filter.</p>
+    pub fn get_filter_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter_name
     }
     /// <p>The description of the filter. Valid characters include alphanumeric characters, and special characters such as hyphen, period, colon, underscore, parentheses (<code>{ }</code>, <code>[ ]</code>, and <code>( )</code>), forward slash, horizontal tab, vertical tab, newline, form feed, return, and whitespace.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -99,6 +107,10 @@ impl UpdateFilterInputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the filter. Valid characters include alphanumeric characters, and special characters such as hyphen, period, colon, underscore, parentheses (<code>{ }</code>, <code>[ ]</code>, and <code>( )</code>), forward slash, horizontal tab, vertical tab, newline, form feed, return, and whitespace.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
     pub fn action(mut self, input: crate::types::FilterAction) -> Self {
         self.action = ::std::option::Option::Some(input);
@@ -109,6 +121,10 @@ impl UpdateFilterInputBuilder {
         self.action = input;
         self
     }
+    /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::FilterAction> {
+        &self.action
+    }
     /// <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
     pub fn rank(mut self, input: i32) -> Self {
         self.rank = ::std::option::Option::Some(input);
@@ -118,6 +134,10 @@ impl UpdateFilterInputBuilder {
     pub fn set_rank(mut self, input: ::std::option::Option<i32>) -> Self {
         self.rank = input;
         self
+    }
+    /// <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
+    pub fn get_rank(&self) -> &::std::option::Option<i32> {
+        &self.rank
     }
     /// <p>Represents the criteria to be used in the filter for querying findings.</p>
     pub fn finding_criteria(mut self, input: crate::types::FindingCriteria) -> Self {
@@ -131,6 +151,10 @@ impl UpdateFilterInputBuilder {
     ) -> Self {
         self.finding_criteria = input;
         self
+    }
+    /// <p>Represents the criteria to be used in the filter for querying findings.</p>
+    pub fn get_finding_criteria(&self) -> &::std::option::Option<crate::types::FindingCriteria> {
+        &self.finding_criteria
     }
     /// Consumes the builder and constructs a [`UpdateFilterInput`](crate::operation::update_filter::UpdateFilterInput).
     pub fn build(

@@ -51,6 +51,10 @@ impl EbsVolumesResultBuilder {
         self.status = input;
         self
     }
+    /// <p>Describes whether scanning EBS volumes is enabled as a data source.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DataSourceStatus> {
+        &self.status
+    }
     /// <p>Specifies the reason why scanning EBS volumes (Malware Protection) was not enabled as a data source.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl EbsVolumesResultBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>Specifies the reason why scanning EBS volumes (Malware Protection) was not enabled as a data source.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
     }
     /// Consumes the builder and constructs a [`EbsVolumesResult`](crate::types::EbsVolumesResult).
     pub fn build(self) -> crate::types::EbsVolumesResult {

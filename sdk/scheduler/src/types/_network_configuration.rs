@@ -45,6 +45,12 @@ impl NetworkConfigurationBuilder {
         self.awsvpc_configuration = input;
         self
     }
+    /// <p>Specifies the Amazon VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the awsvpc network mode.</p>
+    pub fn get_awsvpc_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsVpcConfiguration> {
+        &self.awsvpc_configuration
+    }
     /// Consumes the builder and constructs a [`NetworkConfiguration`](crate::types::NetworkConfiguration).
     pub fn build(self) -> crate::types::NetworkConfiguration {
         crate::types::NetworkConfiguration {

@@ -37,6 +37,12 @@ impl DeleteIdentityPoolFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteIdentityPool as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_identity_pool::builders::DeleteIdentityPoolInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +138,9 @@ impl DeleteIdentityPoolFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_identity_pool_id(input);
         self
+    }
+    /// <p>An identity pool ID in the format REGION:GUID.</p>
+    pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_pool_id()
     }
 }

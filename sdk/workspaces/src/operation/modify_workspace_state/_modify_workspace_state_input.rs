@@ -48,6 +48,10 @@ impl ModifyWorkspaceStateInputBuilder {
         self.workspace_id = input;
         self
     }
+    /// <p>The identifier of the WorkSpace.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
+    }
     /// <p>The WorkSpace state.</p>
     pub fn workspace_state(mut self, input: crate::types::TargetWorkspaceState) -> Self {
         self.workspace_state = ::std::option::Option::Some(input);
@@ -60,6 +64,12 @@ impl ModifyWorkspaceStateInputBuilder {
     ) -> Self {
         self.workspace_state = input;
         self
+    }
+    /// <p>The WorkSpace state.</p>
+    pub fn get_workspace_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::TargetWorkspaceState> {
+        &self.workspace_state
     }
     /// Consumes the builder and constructs a [`ModifyWorkspaceStateInput`](crate::operation::modify_workspace_state::ModifyWorkspaceStateInput).
     pub fn build(

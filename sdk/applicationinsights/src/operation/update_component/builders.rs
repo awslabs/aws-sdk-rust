@@ -36,6 +36,12 @@ impl UpdateComponentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateComponent as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_component::builders::UpdateComponentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateComponentFluentBuilder {
         self.inner = self.inner.set_resource_group_name(input);
         self
     }
+    /// <p>The name of the resource group.</p>
+    pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_group_name()
+    }
     /// <p>The name of the component.</p>
     pub fn component_name(
         mut self,
@@ -148,6 +158,10 @@ impl UpdateComponentFluentBuilder {
         self.inner = self.inner.set_component_name(input);
         self
     }
+    /// <p>The name of the component.</p>
+    pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_component_name()
+    }
     /// <p>The new name of the component.</p>
     pub fn new_component_name(
         mut self,
@@ -163,6 +177,10 @@ impl UpdateComponentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_new_component_name(input);
         self
+    }
+    /// <p>The new name of the component.</p>
+    pub fn get_new_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_new_component_name()
     }
     /// Appends an item to `ResourceList`.
     ///
@@ -183,5 +201,11 @@ impl UpdateComponentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_list(input);
         self
+    }
+    /// <p>The list of resource ARNs that belong to the component.</p>
+    pub fn get_resource_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_resource_list()
     }
 }

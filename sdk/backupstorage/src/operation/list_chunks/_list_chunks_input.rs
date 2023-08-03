@@ -69,6 +69,10 @@ impl ListChunksInputBuilder {
         self.storage_job_id = input;
         self
     }
+    /// Storage job id
+    pub fn get_storage_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_job_id
+    }
     /// Object token
     pub fn object_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_token = ::std::option::Option::Some(input.into());
@@ -78,6 +82,10 @@ impl ListChunksInputBuilder {
     pub fn set_object_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_token = input;
         self
+    }
+    /// Object token
+    pub fn get_object_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_token
     }
     /// Maximum number of chunks
     pub fn max_results(mut self, input: i32) -> Self {
@@ -89,6 +97,10 @@ impl ListChunksInputBuilder {
         self.max_results = input;
         self
     }
+    /// Maximum number of chunks
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// Pagination token
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -98,6 +110,10 @@ impl ListChunksInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// Pagination token
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListChunksInput`](crate::operation::list_chunks::ListChunksInput).
     pub fn build(

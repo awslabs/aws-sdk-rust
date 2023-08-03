@@ -64,6 +64,11 @@ impl FilterBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of filter that you want to use.</p>
+    /// <p>Valid values are: <code>TERM_MATCH</code>. <code>TERM_MATCH</code> returns only products that match both the given filter field and the given value.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::FilterType> {
+        &self.r#type
+    }
     /// <p>The product metadata field that you want to filter on. You can filter by just the service code to see all products for a specific service, filter by just the attribute name to see a specific attribute for multiple services, or use both a service code and an attribute name to retrieve only products that match both fields.</p>
     /// <p>Valid values include: <code>ServiceCode</code>, and all attribute names</p>
     /// <p>For example, you can filter by the <code>AmazonEC2</code> service code and the <code>volumeType</code> attribute name to get the prices for only Amazon EC2 volumes.</p>
@@ -78,6 +83,12 @@ impl FilterBuilder {
         self.field = input;
         self
     }
+    /// <p>The product metadata field that you want to filter on. You can filter by just the service code to see all products for a specific service, filter by just the attribute name to see a specific attribute for multiple services, or use both a service code and an attribute name to retrieve only products that match both fields.</p>
+    /// <p>Valid values include: <code>ServiceCode</code>, and all attribute names</p>
+    /// <p>For example, you can filter by the <code>AmazonEC2</code> service code and the <code>volumeType</code> attribute name to get the prices for only Amazon EC2 volumes.</p>
+    pub fn get_field(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field
+    }
     /// <p>The service code or attribute value that you want to filter by. If you're filtering by service code this is the actual service code, such as <code>AmazonEC2</code>. If you're filtering by attribute name, this is the attribute value that you want the returned products to match, such as a <code>Provisioned IOPS</code> volume.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -87,6 +98,10 @@ impl FilterBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The service code or attribute value that you want to filter by. If you're filtering by service code this is the actual service code, such as <code>AmazonEC2</code>. If you're filtering by attribute name, this is the attribute value that you want the returned products to match, such as a <code>Provisioned IOPS</code> volume.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     pub fn build(self) -> crate::types::Filter {

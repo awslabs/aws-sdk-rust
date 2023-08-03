@@ -52,6 +52,10 @@ impl CreatePolicyVersionOutputBuilder {
         self.policy_version = input;
         self
     }
+    /// <p>A structure containing details about the new policy version.</p>
+    pub fn get_policy_version(&self) -> &::std::option::Option<crate::types::PolicyVersion> {
+        &self.policy_version
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

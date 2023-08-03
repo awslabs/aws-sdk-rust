@@ -58,6 +58,11 @@ impl RoutingConfigurationListItemBuilder {
         self.state_machine_version_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that identifies one or two state machine versions defined in the routing configuration.</p>
+    /// <p>If you specify the ARN of a second version, it must belong to the same state machine as the first version.</p>
+    pub fn get_state_machine_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_machine_version_arn
+    }
     /// <p>The percentage of traffic you want to route to the second state machine version. The sum of the weights in the routing configuration must be equal to 100.</p>
     pub fn weight(mut self, input: i32) -> Self {
         self.weight = ::std::option::Option::Some(input);
@@ -67,6 +72,10 @@ impl RoutingConfigurationListItemBuilder {
     pub fn set_weight(mut self, input: ::std::option::Option<i32>) -> Self {
         self.weight = input;
         self
+    }
+    /// <p>The percentage of traffic you want to route to the second state machine version. The sum of the weights in the routing configuration must be equal to 100.</p>
+    pub fn get_weight(&self) -> &::std::option::Option<i32> {
+        &self.weight
     }
     /// Consumes the builder and constructs a [`RoutingConfigurationListItem`](crate::types::RoutingConfigurationListItem).
     pub fn build(self) -> crate::types::RoutingConfigurationListItem {

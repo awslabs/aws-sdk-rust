@@ -81,6 +81,10 @@ impl RepositoryTriggerBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the trigger.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The ARN of the resource that is the target for a trigger (for example, the ARN of a topic in Amazon SNS).</p>
     pub fn destination_arn(
         mut self,
@@ -97,6 +101,10 @@ impl RepositoryTriggerBuilder {
         self.destination_arn = input;
         self
     }
+    /// <p>The ARN of the resource that is the target for a trigger (for example, the ARN of a topic in Amazon SNS).</p>
+    pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_arn
+    }
     /// <p>Any custom data associated with the trigger to be included in the information sent to the target of the trigger.</p>
     pub fn custom_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_data = ::std::option::Option::Some(input.into());
@@ -106,6 +114,10 @@ impl RepositoryTriggerBuilder {
     pub fn set_custom_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_data = input;
         self
+    }
+    /// <p>Any custom data associated with the trigger to be included in the information sent to the target of the trigger.</p>
+    pub fn get_custom_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_data
     }
     /// Appends an item to `branches`.
     ///
@@ -130,6 +142,12 @@ impl RepositoryTriggerBuilder {
         self.branches = input;
         self
     }
+    /// <p>The branches to be included in the trigger configuration. If you specify an empty array, the trigger applies to all branches.</p> <note>
+    /// <p>Although no content is required in the array, you must include the array itself.</p>
+    /// </note>
+    pub fn get_branches(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.branches
+    }
     /// Appends an item to `events`.
     ///
     /// To override the contents of this collection use [`set_events`](Self::set_events).
@@ -152,6 +170,14 @@ impl RepositoryTriggerBuilder {
     ) -> Self {
         self.events = input;
         self
+    }
+    /// <p>The repository events that cause the trigger to run actions in another service, such as sending a notification through Amazon SNS. </p> <note>
+    /// <p>The valid value "all" cannot be used with any other values.</p>
+    /// </note>
+    pub fn get_events(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryTriggerEventEnum>> {
+        &self.events
     }
     /// Consumes the builder and constructs a [`RepositoryTrigger`](crate::types::RepositoryTrigger).
     pub fn build(self) -> crate::types::RepositoryTrigger {

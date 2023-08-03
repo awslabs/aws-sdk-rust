@@ -46,6 +46,10 @@ impl ResumeClusterMessageBuilder {
         self.cluster_identifier = input;
         self
     }
+    /// <p>The identifier of the cluster to be resumed.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_identifier
+    }
     /// Consumes the builder and constructs a [`ResumeClusterMessage`](crate::types::ResumeClusterMessage).
     pub fn build(self) -> crate::types::ResumeClusterMessage {
         crate::types::ResumeClusterMessage {

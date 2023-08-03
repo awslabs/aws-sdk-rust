@@ -80,6 +80,10 @@ impl ControlMetadataBuilder {
         self.arn = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) of the control. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p> The unique identifier for the control. </p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl ControlMetadataBuilder {
         self.id = input;
         self
     }
+    /// <p> The unique identifier for the control. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p> The name of the control. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -99,6 +107,10 @@ impl ControlMetadataBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p> The name of the control. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p> The data source that determines where Audit Manager collects evidence from for the control. </p>
     pub fn control_sources(
@@ -116,6 +128,10 @@ impl ControlMetadataBuilder {
         self.control_sources = input;
         self
     }
+    /// <p> The data source that determines where Audit Manager collects evidence from for the control. </p>
+    pub fn get_control_sources(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_sources
+    }
     /// <p> The time when the control was created. </p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -129,6 +145,10 @@ impl ControlMetadataBuilder {
         self.created_at = input;
         self
     }
+    /// <p> The time when the control was created. </p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p> The time when the control was most recently updated. </p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_at = ::std::option::Option::Some(input);
@@ -141,6 +161,10 @@ impl ControlMetadataBuilder {
     ) -> Self {
         self.last_updated_at = input;
         self
+    }
+    /// <p> The time when the control was most recently updated. </p>
+    pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_at
     }
     /// Consumes the builder and constructs a [`ControlMetadata`](crate::types::ControlMetadata).
     pub fn build(self) -> crate::types::ControlMetadata {

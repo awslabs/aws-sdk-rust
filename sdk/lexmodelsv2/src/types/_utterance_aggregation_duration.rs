@@ -50,6 +50,12 @@ impl UtteranceAggregationDurationBuilder {
         self.relative_aggregation_duration = input;
         self
     }
+    /// <p>The desired time window for aggregating utterances. </p>
+    pub fn get_relative_aggregation_duration(
+        &self,
+    ) -> &::std::option::Option<crate::types::RelativeAggregationDuration> {
+        &self.relative_aggregation_duration
+    }
     /// Consumes the builder and constructs a [`UtteranceAggregationDuration`](crate::types::UtteranceAggregationDuration).
     pub fn build(self) -> crate::types::UtteranceAggregationDuration {
         crate::types::UtteranceAggregationDuration {

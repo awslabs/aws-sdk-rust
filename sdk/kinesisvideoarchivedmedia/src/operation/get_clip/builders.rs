@@ -46,6 +46,10 @@ impl GetClipFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetClip as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_clip::builders::GetClipInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +134,11 @@ impl GetClipFluentBuilder {
         self.inner = self.inner.set_stream_name(input);
         self
     }
+    /// <p>The name of the stream for which to retrieve the media clip. </p>
+    /// <p>You must specify either the StreamName or the StreamARN. </p>
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_name()
+    }
     /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the media clip. </p>
     /// <p>You must specify either the StreamName or the StreamARN. </p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -141,6 +150,11 @@ impl GetClipFluentBuilder {
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stream_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the media clip. </p>
+    /// <p>You must specify either the StreamName or the StreamARN. </p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_arn()
     }
     /// <p>The time range of the requested clip and the source of the timestamps.</p>
     pub fn clip_fragment_selector(mut self, input: crate::types::ClipFragmentSelector) -> Self {
@@ -154,5 +168,11 @@ impl GetClipFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_clip_fragment_selector(input);
         self
+    }
+    /// <p>The time range of the requested clip and the source of the timestamps.</p>
+    pub fn get_clip_fragment_selector(
+        &self,
+    ) -> &::std::option::Option<crate::types::ClipFragmentSelector> {
+        self.inner.get_clip_fragment_selector()
     }
 }

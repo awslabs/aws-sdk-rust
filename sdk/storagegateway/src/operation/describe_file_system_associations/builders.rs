@@ -36,6 +36,10 @@ impl DescribeFileSystemAssociationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeFileSystemAssociations as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_file_system_associations::builders::DescribeFileSystemAssociationsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -109,5 +113,11 @@ impl DescribeFileSystemAssociationsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_file_system_association_arn_list(input);
         self
+    }
+    /// <p>An array containing the Amazon Resource Name (ARN) of each file system association to be described.</p>
+    pub fn get_file_system_association_arn_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_file_system_association_arn_list()
     }
 }

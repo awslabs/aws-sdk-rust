@@ -89,6 +89,10 @@ impl CreateRuleInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>A unique name for the rule.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -98,6 +102,10 @@ impl CreateRuleInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A unique name for the rule.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The event source to trigger the rule.</p>
     pub fn trigger_event_source(mut self, input: crate::types::RuleTriggerEventSource) -> Self {
@@ -112,6 +120,12 @@ impl CreateRuleInputBuilder {
         self.trigger_event_source = input;
         self
     }
+    /// <p>The event source to trigger the rule.</p>
+    pub fn get_trigger_event_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::RuleTriggerEventSource> {
+        &self.trigger_event_source
+    }
     /// <p>The conditions of the rule.</p>
     pub fn function(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function = ::std::option::Option::Some(input.into());
@@ -121,6 +135,10 @@ impl CreateRuleInputBuilder {
     pub fn set_function(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function = input;
         self
+    }
+    /// <p>The conditions of the rule.</p>
+    pub fn get_function(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function
     }
     /// Appends an item to `actions`.
     ///
@@ -141,6 +159,10 @@ impl CreateRuleInputBuilder {
         self.actions = input;
         self
     }
+    /// <p>A list of actions to be run when the rule is triggered.</p>
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleAction>> {
+        &self.actions
+    }
     /// <p>The publish status of the rule.</p>
     pub fn publish_status(mut self, input: crate::types::RulePublishStatus) -> Self {
         self.publish_status = ::std::option::Option::Some(input);
@@ -154,6 +176,10 @@ impl CreateRuleInputBuilder {
         self.publish_status = input;
         self
     }
+    /// <p>The publish status of the rule.</p>
+    pub fn get_publish_status(&self) -> &::std::option::Option<crate::types::RulePublishStatus> {
+        &self.publish_status
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -163,6 +189,10 @@ impl CreateRuleInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateRuleInput`](crate::operation::create_rule::CreateRuleInput).
     pub fn build(

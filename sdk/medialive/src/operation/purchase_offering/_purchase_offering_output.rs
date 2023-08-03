@@ -51,6 +51,10 @@ impl PurchaseOfferingOutputBuilder {
         self.reservation = input;
         self
     }
+    /// Reserved resources available to use
+    pub fn get_reservation(&self) -> &::std::option::Option<crate::types::Reservation> {
+        &self.reservation
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

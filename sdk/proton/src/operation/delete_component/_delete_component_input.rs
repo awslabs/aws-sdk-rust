@@ -39,6 +39,10 @@ impl DeleteComponentInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the component to delete.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeleteComponentInput`](crate::operation::delete_component::DeleteComponentInput).
     pub fn build(
         self,

@@ -64,6 +64,10 @@ impl GetResourceMetadataOutputBuilder {
         self.identifier = input;
         self
     }
+    /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
+    }
     /// Adds a key-value pair to `features`.
     ///
     /// To override the contents of this collection use [`set_features`](Self::set_features).
@@ -88,6 +92,14 @@ impl GetResourceMetadataOutputBuilder {
     ) -> Self {
         self.features = input;
         self
+    }
+    /// <p>The metadata for different features. For example, the metadata might indicate that a feature is turned on or off on a specific DB instance.</p>
+    pub fn get_features(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::FeatureMetadata>,
+    > {
+        &self.features
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

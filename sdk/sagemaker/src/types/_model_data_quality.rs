@@ -51,6 +51,10 @@ impl ModelDataQualityBuilder {
         self.statistics = input;
         self
     }
+    /// <p>Data quality statistics for a model.</p>
+    pub fn get_statistics(&self) -> &::std::option::Option<crate::types::MetricsSource> {
+        &self.statistics
+    }
     /// <p>Data quality constraints for a model.</p>
     pub fn constraints(mut self, input: crate::types::MetricsSource) -> Self {
         self.constraints = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl ModelDataQualityBuilder {
     ) -> Self {
         self.constraints = input;
         self
+    }
+    /// <p>Data quality constraints for a model.</p>
+    pub fn get_constraints(&self) -> &::std::option::Option<crate::types::MetricsSource> {
+        &self.constraints
     }
     /// Consumes the builder and constructs a [`ModelDataQuality`](crate::types::ModelDataQuality).
     pub fn build(self) -> crate::types::ModelDataQuality {

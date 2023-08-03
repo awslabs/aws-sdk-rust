@@ -88,6 +88,10 @@ impl UpdateEnvironmentInputBuilder {
         self.environment_id = input;
         self
     }
+    /// <p>The identifier of the FinSpace environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
+    }
     /// <p>The name of the environment.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -98,6 +102,10 @@ impl UpdateEnvironmentInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the environment.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the environment.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -107,6 +115,10 @@ impl UpdateEnvironmentInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the environment.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Authentication mode for the environment.</p>
     /// <ul>
@@ -129,6 +141,14 @@ impl UpdateEnvironmentInputBuilder {
         self.federation_mode = input;
         self
     }
+    /// <p>Authentication mode for the environment.</p>
+    /// <ul>
+    /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
+    /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
+    /// </ul>
+    pub fn get_federation_mode(&self) -> &::std::option::Option<crate::types::FederationMode> {
+        &self.federation_mode
+    }
     /// <p>Configuration information when authentication mode is FEDERATED.</p>
     pub fn federation_parameters(mut self, input: crate::types::FederationParameters) -> Self {
         self.federation_parameters = ::std::option::Option::Some(input);
@@ -141,6 +161,12 @@ impl UpdateEnvironmentInputBuilder {
     ) -> Self {
         self.federation_parameters = input;
         self
+    }
+    /// <p>Configuration information when authentication mode is FEDERATED.</p>
+    pub fn get_federation_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::FederationParameters> {
+        &self.federation_parameters
     }
     /// Consumes the builder and constructs a [`UpdateEnvironmentInput`](crate::operation::update_environment::UpdateEnvironmentInput).
     pub fn build(

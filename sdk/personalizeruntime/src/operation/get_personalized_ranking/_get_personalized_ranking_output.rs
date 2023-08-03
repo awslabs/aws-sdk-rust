@@ -66,6 +66,12 @@ impl GetPersonalizedRankingOutputBuilder {
         self.personalized_ranking = input;
         self
     }
+    /// <p>A list of items in order of most likely interest to the user. The maximum is 500.</p>
+    pub fn get_personalized_ranking(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PredictedItem>> {
+        &self.personalized_ranking
+    }
     /// <p>The ID of the recommendation.</p>
     pub fn recommendation_id(
         mut self,
@@ -81,6 +87,10 @@ impl GetPersonalizedRankingOutputBuilder {
     ) -> Self {
         self.recommendation_id = input;
         self
+    }
+    /// <p>The ID of the recommendation.</p>
+    pub fn get_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommendation_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -36,6 +36,10 @@ impl ListTypesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListTypes as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_types::builders::ListTypesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -147,6 +151,20 @@ impl ListTypesFluentBuilder {
         self.inner = self.inner.set_visibility(input);
         self
     }
+    /// <p>The scope at which the extensions are visible and usable in CloudFormation operations.</p>
+    /// <p>Valid values include:</p>
+    /// <ul>
+    /// <li> <p> <code>PRIVATE</code>: Extensions that are visible and usable within this account and Region. This includes:</p>
+    /// <ul>
+    /// <li> <p>Private extensions you have registered in this account and Region.</p> </li>
+    /// <li> <p>Public extensions that you have activated in this account and Region.</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon Web Services account. This includes extensions from Amazon Web Services, in addition to third-party publishers.</p> </li>
+    /// </ul>
+    /// <p>The default is <code>PRIVATE</code>.</p>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        self.inner.get_visibility()
+    }
     /// <p>For resource types, the provisioning behavior of the resource type. CloudFormation determines the provisioning type during registration, based on the types of handlers in the schema handler package submitted.</p>
     /// <p>Valid values include:</p>
     /// <ul>
@@ -174,6 +192,17 @@ impl ListTypesFluentBuilder {
         self.inner = self.inner.set_provisioning_type(input);
         self
     }
+    /// <p>For resource types, the provisioning behavior of the resource type. CloudFormation determines the provisioning type during registration, based on the types of handlers in the schema handler package submitted.</p>
+    /// <p>Valid values include:</p>
+    /// <ul>
+    /// <li> <p> <code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type during stack update operations.</p> </li>
+    /// <li> <p> <code>IMMUTABLE</code>: The resource type doesn't include an update handler, so the type can't be updated and must instead be replaced during stack update operations.</p> </li>
+    /// <li> <p> <code>NON_PROVISIONABLE</code>: The resource type doesn't include create, read, and delete handlers, and therefore can't actually be provisioned.</p> </li>
+    /// </ul>
+    /// <p>The default is <code>FULLY_MUTABLE</code>.</p>
+    pub fn get_provisioning_type(&self) -> &::std::option::Option<crate::types::ProvisioningType> {
+        self.inner.get_provisioning_type()
+    }
     /// <p>The deprecation status of the extension that you want to get summary information about.</p>
     /// <p>Valid values include:</p>
     /// <ul>
@@ -197,6 +226,15 @@ impl ListTypesFluentBuilder {
         self.inner = self.inner.set_deprecated_status(input);
         self
     }
+    /// <p>The deprecation status of the extension that you want to get summary information about.</p>
+    /// <p>Valid values include:</p>
+    /// <ul>
+    /// <li> <p> <code>LIVE</code>: The extension is registered for use in CloudFormation operations.</p> </li>
+    /// <li> <p> <code>DEPRECATED</code>: The extension has been deregistered and can no longer be used in CloudFormation operations.</p> </li>
+    /// </ul>
+    pub fn get_deprecated_status(&self) -> &::std::option::Option<crate::types::DeprecatedStatus> {
+        self.inner.get_deprecated_status()
+    }
     /// <p>The type of extension.</p>
     pub fn r#type(mut self, input: crate::types::RegistryType) -> Self {
         self.inner = self.inner.r#type(input);
@@ -206,6 +244,10 @@ impl ListTypesFluentBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RegistryType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
+    }
+    /// <p>The type of extension.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::RegistryType> {
+        self.inner.get_type()
     }
     /// <p>Filter criteria to use in determining which extensions to return.</p>
     /// <p>Filters must be compatible with <code>Visibility</code> to return valid results. For example, specifying <code>AWS_TYPES</code> for <code>Category</code> and <code>PRIVATE</code> for <code>Visibility</code> returns an empty list of types, but specifying <code>PUBLIC</code> for <code>Visibility</code> returns the desired list.</p>
@@ -219,6 +261,11 @@ impl ListTypesFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>Filter criteria to use in determining which extensions to return.</p>
+    /// <p>Filters must be compatible with <code>Visibility</code> to return valid results. For example, specifying <code>AWS_TYPES</code> for <code>Category</code> and <code>PRIVATE</code> for <code>Visibility</code> returns an empty list of types, but specifying <code>PUBLIC</code> for <code>Visibility</code> returns the desired list.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::TypeFilters> {
+        self.inner.get_filters()
+    }
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -229,6 +276,10 @@ impl ListTypesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>If the previous paginated request didn't return all the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -238,5 +289,9 @@ impl ListTypesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>If the previous paginated request didn't return all the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

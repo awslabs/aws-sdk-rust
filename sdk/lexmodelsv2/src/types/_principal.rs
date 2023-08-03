@@ -48,6 +48,10 @@ impl PrincipalBuilder {
         self.service = input;
         self
     }
+    /// <p>The name of the Amazon Web Services service that should allowed or denied access to an Amazon Lex action.</p>
+    pub fn get_service(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service
+    }
     /// <p>The Amazon Resource Name (ARN) of the principal.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl PrincipalBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the principal.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`Principal`](crate::types::Principal).
     pub fn build(self) -> crate::types::Principal {

@@ -51,6 +51,12 @@ impl GetSegmentImportJobsOutputBuilder {
         self.import_jobs_response = input;
         self
     }
+    /// <p>Provides information about the status and settings of all the import jobs that are associated with an application or segment. An import job is a job that imports endpoint definitions from one or more files.</p>
+    pub fn get_import_jobs_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImportJobsResponse> {
+        &self.import_jobs_response
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

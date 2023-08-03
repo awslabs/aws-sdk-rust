@@ -43,6 +43,12 @@ impl BaselineBuilder {
         self.predictor_baseline = input;
         self
     }
+    /// <p>The initial <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy metrics</a> for the predictor you are monitoring. Use these metrics as a baseline for comparison purposes as you use your predictor and the metrics change.</p>
+    pub fn get_predictor_baseline(
+        &self,
+    ) -> &::std::option::Option<crate::types::PredictorBaseline> {
+        &self.predictor_baseline
+    }
     /// Consumes the builder and constructs a [`Baseline`](crate::types::Baseline).
     pub fn build(self) -> crate::types::Baseline {
         crate::types::Baseline {

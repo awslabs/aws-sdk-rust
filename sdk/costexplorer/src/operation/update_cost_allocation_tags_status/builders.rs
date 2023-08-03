@@ -36,6 +36,10 @@ impl UpdateCostAllocationTagsStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateCostAllocationTagsStatus as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_cost_allocation_tags_status::builders::UpdateCostAllocationTagsStatusInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -109,5 +113,11 @@ impl UpdateCostAllocationTagsStatusFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cost_allocation_tags_status(input);
         self
+    }
+    /// <p>The list of <code>CostAllocationTagStatusEntry</code> objects that are used to update cost allocation tags status for this request. </p>
+    pub fn get_cost_allocation_tags_status(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CostAllocationTagStatusEntry>> {
+        self.inner.get_cost_allocation_tags_status()
     }
 }

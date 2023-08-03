@@ -49,6 +49,12 @@ impl IngestedEventsDetailBuilder {
         self.ingested_events_time_window = input;
         self
     }
+    /// <p>The start and stop time of the ingested events.</p>
+    pub fn get_ingested_events_time_window(
+        &self,
+    ) -> &::std::option::Option<crate::types::IngestedEventsTimeWindow> {
+        &self.ingested_events_time_window
+    }
     /// Consumes the builder and constructs a [`IngestedEventsDetail`](crate::types::IngestedEventsDetail).
     pub fn build(self) -> crate::types::IngestedEventsDetail {
         crate::types::IngestedEventsDetail {

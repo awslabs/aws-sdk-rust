@@ -72,6 +72,10 @@ impl UriPathRouteInputBuilder {
         self.source_path = input;
         self
     }
+    /// <p>This is the path that Refactor Spaces uses to match traffic. Paths must start with <code>/</code> and are relative to the base of the application. To use path parameters in the source path, add a variable in curly braces. For example, the resource path {user} represents a path parameter called 'user'.</p>
+    pub fn get_source_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_path
+    }
     /// <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is created. </p>
     pub fn activation_state(mut self, input: crate::types::RouteActivationState) -> Self {
         self.activation_state = ::std::option::Option::Some(input);
@@ -84,6 +88,12 @@ impl UriPathRouteInputBuilder {
     ) -> Self {
         self.activation_state = input;
         self
+    }
+    /// <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is created. </p>
+    pub fn get_activation_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::RouteActivationState> {
+        &self.activation_state
     }
     /// Appends an item to `methods`.
     ///
@@ -104,6 +114,10 @@ impl UriPathRouteInputBuilder {
         self.methods = input;
         self
     }
+    /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service. </p>
+    pub fn get_methods(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HttpMethod>> {
+        &self.methods
+    }
     /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service. </p>
     pub fn include_child_paths(mut self, input: bool) -> Self {
         self.include_child_paths = ::std::option::Option::Some(input);
@@ -114,6 +128,10 @@ impl UriPathRouteInputBuilder {
         self.include_child_paths = input;
         self
     }
+    /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service. </p>
+    pub fn get_include_child_paths(&self) -> &::std::option::Option<bool> {
+        &self.include_child_paths
+    }
     /// <p>If set to <code>true</code>, this option appends the source path to the service URL endpoint.</p>
     pub fn append_source_path(mut self, input: bool) -> Self {
         self.append_source_path = ::std::option::Option::Some(input);
@@ -123,6 +141,10 @@ impl UriPathRouteInputBuilder {
     pub fn set_append_source_path(mut self, input: ::std::option::Option<bool>) -> Self {
         self.append_source_path = input;
         self
+    }
+    /// <p>If set to <code>true</code>, this option appends the source path to the service URL endpoint.</p>
+    pub fn get_append_source_path(&self) -> &::std::option::Option<bool> {
+        &self.append_source_path
     }
     /// Consumes the builder and constructs a [`UriPathRouteInput`](crate::types::UriPathRouteInput).
     pub fn build(self) -> crate::types::UriPathRouteInput {

@@ -61,6 +61,10 @@ impl SingleSelectQuestionRuleCategoryAutomationBuilder {
         self.category = input;
         self
     }
+    /// <p> The category name, as defined in Rules.</p>
+    pub fn get_category(&self) -> &::std::option::Option<::std::string::String> {
+        &self.category
+    }
     /// <p>The condition to apply for the automation option. If the condition is <code>PRESENT</code>, then the option is applied when the contact data includes the category. Similarly, if the condition is <code>NOT_PRESENT</code>, then the option is applied when the contact data does not include the category.</p>
     pub fn condition(
         mut self,
@@ -79,6 +83,13 @@ impl SingleSelectQuestionRuleCategoryAutomationBuilder {
         self.condition = input;
         self
     }
+    /// <p>The condition to apply for the automation option. If the condition is <code>PRESENT</code>, then the option is applied when the contact data includes the category. Similarly, if the condition is <code>NOT_PRESENT</code>, then the option is applied when the contact data does not include the category.</p>
+    pub fn get_condition(
+        &self,
+    ) -> &::std::option::Option<crate::types::SingleSelectQuestionRuleCategoryAutomationCondition>
+    {
+        &self.condition
+    }
     /// <p>The identifier of the answer option.</p>
     pub fn option_ref_id(
         mut self,
@@ -94,6 +105,10 @@ impl SingleSelectQuestionRuleCategoryAutomationBuilder {
     ) -> Self {
         self.option_ref_id = input;
         self
+    }
+    /// <p>The identifier of the answer option.</p>
+    pub fn get_option_ref_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.option_ref_id
     }
     /// Consumes the builder and constructs a [`SingleSelectQuestionRuleCategoryAutomation`](crate::types::SingleSelectQuestionRuleCategoryAutomation).
     pub fn build(self) -> crate::types::SingleSelectQuestionRuleCategoryAutomation {

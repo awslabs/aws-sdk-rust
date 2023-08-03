@@ -159,6 +159,10 @@ impl SynthesisTaskBuilder {
         self.engine = input;
         self
     }
+    /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.</p>
+    pub fn get_engine(&self) -> &::std::option::Option<crate::types::Engine> {
+        &self.engine
+    }
     /// <p>The Amazon Polly generated identifier for a speech synthesis task.</p>
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
@@ -168,6 +172,10 @@ impl SynthesisTaskBuilder {
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_id = input;
         self
+    }
+    /// <p>The Amazon Polly generated identifier for a speech synthesis task.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
     }
     /// <p>Current status of the individual speech synthesis task.</p>
     pub fn task_status(mut self, input: crate::types::TaskStatus) -> Self {
@@ -181,6 +189,10 @@ impl SynthesisTaskBuilder {
     ) -> Self {
         self.task_status = input;
         self
+    }
+    /// <p>Current status of the individual speech synthesis task.</p>
+    pub fn get_task_status(&self) -> &::std::option::Option<crate::types::TaskStatus> {
+        &self.task_status
     }
     /// <p>Reason for the current status of a specific speech synthesis task, including errors if the task has failed.</p>
     pub fn task_status_reason(
@@ -198,6 +210,10 @@ impl SynthesisTaskBuilder {
         self.task_status_reason = input;
         self
     }
+    /// <p>Reason for the current status of a specific speech synthesis task, including errors if the task has failed.</p>
+    pub fn get_task_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_status_reason
+    }
     /// <p>Pathway for the output speech file.</p>
     pub fn output_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_uri = ::std::option::Option::Some(input.into());
@@ -207,6 +223,10 @@ impl SynthesisTaskBuilder {
     pub fn set_output_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_uri = input;
         self
+    }
+    /// <p>Pathway for the output speech file.</p>
+    pub fn get_output_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_uri
     }
     /// <p>Timestamp for the time the synthesis task was started.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -221,6 +241,10 @@ impl SynthesisTaskBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>Timestamp for the time the synthesis task was started.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>Number of billable characters synthesized.</p>
     pub fn request_characters(mut self, input: i32) -> Self {
         self.request_characters = ::std::option::Option::Some(input);
@@ -230,6 +254,10 @@ impl SynthesisTaskBuilder {
     pub fn set_request_characters(mut self, input: ::std::option::Option<i32>) -> Self {
         self.request_characters = input;
         self
+    }
+    /// <p>Number of billable characters synthesized.</p>
+    pub fn get_request_characters(&self) -> &::std::option::Option<i32> {
+        &self.request_characters
     }
     /// <p>ARN for the SNS topic optionally used for providing status notification for a speech synthesis task.</p>
     pub fn sns_topic_arn(
@@ -246,6 +274,10 @@ impl SynthesisTaskBuilder {
     ) -> Self {
         self.sns_topic_arn = input;
         self
+    }
+    /// <p>ARN for the SNS topic optionally used for providing status notification for a speech synthesis task.</p>
+    pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sns_topic_arn
     }
     /// Appends an item to `lexicon_names`.
     ///
@@ -269,6 +301,12 @@ impl SynthesisTaskBuilder {
         self.lexicon_names = input;
         self
     }
+    /// <p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. </p>
+    pub fn get_lexicon_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.lexicon_names
+    }
     /// <p>The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
     pub fn output_format(mut self, input: crate::types::OutputFormat) -> Self {
         self.output_format = ::std::option::Option::Some(input);
@@ -281,6 +319,10 @@ impl SynthesisTaskBuilder {
     ) -> Self {
         self.output_format = input;
         self
+    }
+    /// <p>The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
+    pub fn get_output_format(&self) -> &::std::option::Option<crate::types::OutputFormat> {
+        &self.output_format
     }
     /// <p>The audio frequency specified in Hz.</p>
     /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000".</p>
@@ -295,6 +337,12 @@ impl SynthesisTaskBuilder {
     pub fn set_sample_rate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sample_rate = input;
         self
+    }
+    /// <p>The audio frequency specified in Hz.</p>
+    /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000".</p>
+    /// <p>Valid values for pcm are "8000" and "16000" The default value is "16000". </p>
+    pub fn get_sample_rate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sample_rate
     }
     /// Appends an item to `speech_mark_types`.
     ///
@@ -315,6 +363,12 @@ impl SynthesisTaskBuilder {
         self.speech_mark_types = input;
         self
     }
+    /// <p>The type of speech marks returned for the input text.</p>
+    pub fn get_speech_mark_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SpeechMarkType>> {
+        &self.speech_mark_types
+    }
     /// <p>Specifies whether the input text is plain text or SSML. The default value is plain text. </p>
     pub fn text_type(mut self, input: crate::types::TextType) -> Self {
         self.text_type = ::std::option::Option::Some(input);
@@ -325,6 +379,10 @@ impl SynthesisTaskBuilder {
         self.text_type = input;
         self
     }
+    /// <p>Specifies whether the input text is plain text or SSML. The default value is plain text. </p>
+    pub fn get_text_type(&self) -> &::std::option::Option<crate::types::TextType> {
+        &self.text_type
+    }
     /// <p>Voice ID to use for the synthesis. </p>
     pub fn voice_id(mut self, input: crate::types::VoiceId) -> Self {
         self.voice_id = ::std::option::Option::Some(input);
@@ -334,6 +392,10 @@ impl SynthesisTaskBuilder {
     pub fn set_voice_id(mut self, input: ::std::option::Option<crate::types::VoiceId>) -> Self {
         self.voice_id = input;
         self
+    }
+    /// <p>Voice ID to use for the synthesis. </p>
+    pub fn get_voice_id(&self) -> &::std::option::Option<crate::types::VoiceId> {
+        &self.voice_id
     }
     /// <p>Optional language code for a synthesis task. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p>
     /// <p>If a bilingual voice is used and no language code is specified, Amazon Polly uses the default language of the bilingual voice. The default language for any voice is the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.</p>
@@ -349,6 +411,11 @@ impl SynthesisTaskBuilder {
     ) -> Self {
         self.language_code = input;
         self
+    }
+    /// <p>Optional language code for a synthesis task. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p>
+    /// <p>If a bilingual voice is used and no language code is specified, Amazon Polly uses the default language of the bilingual voice. The default language for any voice is the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
+        &self.language_code
     }
     /// Consumes the builder and constructs a [`SynthesisTask`](crate::types::SynthesisTask).
     pub fn build(self) -> crate::types::SynthesisTask {

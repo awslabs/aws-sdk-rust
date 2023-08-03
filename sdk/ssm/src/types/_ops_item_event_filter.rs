@@ -59,6 +59,10 @@ impl OpsItemEventFilterBuilder {
         self.key = input;
         self
     }
+    /// <p>The name of the filter key. Currently, the only supported value is <code>OpsItemId</code>.</p>
+    pub fn get_key(&self) -> &::std::option::Option<crate::types::OpsItemEventFilterKey> {
+        &self.key
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -78,6 +82,10 @@ impl OpsItemEventFilterBuilder {
         self.values = input;
         self
     }
+    /// <p>The values for the filter, consisting of one or more OpsItem IDs.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
+    }
     /// <p>The operator used by the filter call. Currently, the only supported value is <code>Equal</code>.</p>
     pub fn operator(mut self, input: crate::types::OpsItemEventFilterOperator) -> Self {
         self.operator = ::std::option::Option::Some(input);
@@ -90,6 +98,10 @@ impl OpsItemEventFilterBuilder {
     ) -> Self {
         self.operator = input;
         self
+    }
+    /// <p>The operator used by the filter call. Currently, the only supported value is <code>Equal</code>.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::OpsItemEventFilterOperator> {
+        &self.operator
     }
     /// Consumes the builder and constructs a [`OpsItemEventFilter`](crate::types::OpsItemEventFilter).
     pub fn build(self) -> crate::types::OpsItemEventFilter {

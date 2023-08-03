@@ -36,6 +36,10 @@ impl StopPipelineFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopPipeline as a reference.
+    pub fn as_input(&self) -> &crate::operation::stop_pipeline::builders::StopPipelineInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -123,5 +127,9 @@ impl StopPipelineFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_pipeline_name(input);
         self
+    }
+    /// <p>The name of the pipeline to stop.</p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pipeline_name()
     }
 }

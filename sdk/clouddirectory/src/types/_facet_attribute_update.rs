@@ -51,6 +51,10 @@ impl FacetAttributeUpdateBuilder {
         self.attribute = input;
         self
     }
+    /// <p>The attribute to update.</p>
+    pub fn get_attribute(&self) -> &::std::option::Option<crate::types::FacetAttribute> {
+        &self.attribute
+    }
     /// <p>The action to perform when updating the attribute.</p>
     pub fn action(mut self, input: crate::types::UpdateActionType) -> Self {
         self.action = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl FacetAttributeUpdateBuilder {
     ) -> Self {
         self.action = input;
         self
+    }
+    /// <p>The action to perform when updating the attribute.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::UpdateActionType> {
+        &self.action
     }
     /// Consumes the builder and constructs a [`FacetAttributeUpdate`](crate::types::FacetAttributeUpdate).
     pub fn build(self) -> crate::types::FacetAttributeUpdate {

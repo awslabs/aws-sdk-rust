@@ -56,6 +56,10 @@ impl ComputerBuilder {
         self.computer_id = input;
         self
     }
+    /// <p>The identifier of the computer.</p>
+    pub fn get_computer_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.computer_id
+    }
     /// <p>The computer name.</p>
     pub fn computer_name(
         mut self,
@@ -71,6 +75,10 @@ impl ComputerBuilder {
     ) -> Self {
         self.computer_name = input;
         self
+    }
+    /// <p>The computer name.</p>
+    pub fn get_computer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.computer_name
     }
     /// Appends an item to `computer_attributes`.
     ///
@@ -90,6 +98,12 @@ impl ComputerBuilder {
     ) -> Self {
         self.computer_attributes = input;
         self
+    }
+    /// <p>An array of <code>Attribute</code> objects containing the LDAP attributes that belong to the computer account.</p>
+    pub fn get_computer_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+        &self.computer_attributes
     }
     /// Consumes the builder and constructs a [`Computer`](crate::types::Computer).
     pub fn build(self) -> crate::types::Computer {

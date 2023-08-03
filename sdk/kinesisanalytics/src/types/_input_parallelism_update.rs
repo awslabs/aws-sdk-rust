@@ -40,6 +40,10 @@ impl InputParallelismUpdateBuilder {
         self.count_update = input;
         self
     }
+    /// <p>Number of in-application streams to create for the specified streaming source.</p>
+    pub fn get_count_update(&self) -> &::std::option::Option<i32> {
+        &self.count_update
+    }
     /// Consumes the builder and constructs a [`InputParallelismUpdate`](crate::types::InputParallelismUpdate).
     pub fn build(self) -> crate::types::InputParallelismUpdate {
         crate::types::InputParallelismUpdate {

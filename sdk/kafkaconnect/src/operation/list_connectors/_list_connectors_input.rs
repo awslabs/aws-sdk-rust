@@ -61,6 +61,10 @@ impl ListConnectorsInputBuilder {
         self.connector_name_prefix = input;
         self
     }
+    /// <p>The name prefix that you want to use to search for and list connectors.</p>
+    pub fn get_connector_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connector_name_prefix
+    }
     /// <p>The maximum number of connectors to list in one response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -71,6 +75,10 @@ impl ListConnectorsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of connectors to list in one response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>If the response of a ListConnectors operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -80,6 +88,10 @@ impl ListConnectorsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the response of a ListConnectors operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListConnectorsInput`](crate::operation::list_connectors::ListConnectorsInput).
     pub fn build(

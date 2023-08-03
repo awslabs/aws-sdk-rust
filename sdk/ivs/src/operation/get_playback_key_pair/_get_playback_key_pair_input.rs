@@ -40,6 +40,10 @@ impl GetPlaybackKeyPairInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>ARN of the key pair to be returned.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`GetPlaybackKeyPairInput`](crate::operation::get_playback_key_pair::GetPlaybackKeyPairInput).
     pub fn build(
         self,

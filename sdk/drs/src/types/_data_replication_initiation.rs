@@ -63,6 +63,10 @@ impl DataReplicationInitiationBuilder {
         self.start_date_time = input;
         self
     }
+    /// <p>The date and time of the current attempt to initiate data replication.</p>
+    pub fn get_start_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_date_time
+    }
     /// <p>The date and time of the next attempt to initiate data replication.</p>
     pub fn next_attempt_date_time(
         mut self,
@@ -78,6 +82,10 @@ impl DataReplicationInitiationBuilder {
     ) -> Self {
         self.next_attempt_date_time = input;
         self
+    }
+    /// <p>The date and time of the next attempt to initiate data replication.</p>
+    pub fn get_next_attempt_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_attempt_date_time
     }
     /// Appends an item to `steps`.
     ///
@@ -97,6 +105,12 @@ impl DataReplicationInitiationBuilder {
     ) -> Self {
         self.steps = input;
         self
+    }
+    /// <p>The steps of the current attempt to initiate data replication.</p>
+    pub fn get_steps(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataReplicationInitiationStep>> {
+        &self.steps
     }
     /// Consumes the builder and constructs a [`DataReplicationInitiation`](crate::types::DataReplicationInitiation).
     pub fn build(self) -> crate::types::DataReplicationInitiation {

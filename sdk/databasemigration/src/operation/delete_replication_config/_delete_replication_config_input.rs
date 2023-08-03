@@ -48,6 +48,10 @@ impl DeleteReplicationConfigInputBuilder {
         self.replication_config_arn = input;
         self
     }
+    /// <p>The replication config to delete.</p>
+    pub fn get_replication_config_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_config_arn
+    }
     /// Consumes the builder and constructs a [`DeleteReplicationConfigInput`](crate::operation::delete_replication_config::DeleteReplicationConfigInput).
     pub fn build(
         self,

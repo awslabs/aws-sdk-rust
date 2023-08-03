@@ -60,6 +60,12 @@ impl ListLanguagesInputBuilder {
         self.display_language_code = input;
         self
     }
+    /// <p>The language code for the language to use to display the language names in the response. The language code is <code>en</code> by default. </p>
+    pub fn get_display_language_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::DisplayLanguageCode> {
+        &self.display_language_code
+    }
     /// <p>Include the NextToken value to fetch the next group of supported languages. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -70,6 +76,10 @@ impl ListLanguagesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Include the NextToken value to fetch the next group of supported languages. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return in each response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -79,6 +89,10 @@ impl ListLanguagesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return in each response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListLanguagesInput`](crate::operation::list_languages::ListLanguagesInput).
     pub fn build(

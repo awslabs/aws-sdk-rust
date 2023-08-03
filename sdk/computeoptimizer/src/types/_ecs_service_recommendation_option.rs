@@ -86,6 +86,10 @@ impl EcsServiceRecommendationOptionBuilder {
         self.memory = input;
         self
     }
+    /// <p> The memory size of the Amazon ECS service recommendation option. </p>
+    pub fn get_memory(&self) -> &::std::option::Option<i32> {
+        &self.memory
+    }
     /// <p> The CPU size of the Amazon ECS service recommendation option. </p>
     pub fn cpu(mut self, input: i32) -> Self {
         self.cpu = ::std::option::Option::Some(input);
@@ -95,6 +99,10 @@ impl EcsServiceRecommendationOptionBuilder {
     pub fn set_cpu(mut self, input: ::std::option::Option<i32>) -> Self {
         self.cpu = input;
         self
+    }
+    /// <p> The CPU size of the Amazon ECS service recommendation option. </p>
+    pub fn get_cpu(&self) -> &::std::option::Option<i32> {
+        &self.cpu
     }
     /// <p>Describes the savings opportunity for recommendations of a given resource type or for the recommendation option of an individual resource.</p>
     /// <p>Savings opportunity represents the estimated monthly savings you can achieve by implementing a given Compute Optimizer recommendation.</p> <important>
@@ -114,6 +122,15 @@ impl EcsServiceRecommendationOptionBuilder {
     ) -> Self {
         self.savings_opportunity = input;
         self
+    }
+    /// <p>Describes the savings opportunity for recommendations of a given resource type or for the recommendation option of an individual resource.</p>
+    /// <p>Savings opportunity represents the estimated monthly savings you can achieve by implementing a given Compute Optimizer recommendation.</p> <important>
+    /// <p>Savings opportunity data requires that you opt in to Cost Explorer, as well as activate <b>Receive Amazon EC2 resource recommendations</b> in the Cost Explorer preferences page. That creates a connection between Cost Explorer and Compute Optimizer. With this connection, Cost Explorer generates savings estimates considering the price of existing resources, the price of recommended resources, and historical usage data. Estimated monthly savings reflects the projected dollar savings associated with each of the recommendations generated. For more information, see <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-enable.html">Enabling Cost Explorer</a> and <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-rightsizing.html">Optimizing your cost with Rightsizing Recommendations</a> in the <i>Cost Management User Guide</i>.</p>
+    /// </important>
+    pub fn get_savings_opportunity(
+        &self,
+    ) -> &::std::option::Option<crate::types::SavingsOpportunity> {
+        &self.savings_opportunity
     }
     /// Appends an item to `projected_utilization_metrics`.
     ///
@@ -139,6 +156,13 @@ impl EcsServiceRecommendationOptionBuilder {
         self.projected_utilization_metrics = input;
         self
     }
+    /// <p> An array of objects that describe the projected utilization metrics of the Amazon ECS service recommendation option. </p>
+    pub fn get_projected_utilization_metrics(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsServiceProjectedUtilizationMetric>>
+    {
+        &self.projected_utilization_metrics
+    }
     /// Appends an item to `container_recommendations`.
     ///
     /// To override the contents of this collection use [`set_container_recommendations`](Self::set_container_recommendations).
@@ -160,6 +184,12 @@ impl EcsServiceRecommendationOptionBuilder {
     ) -> Self {
         self.container_recommendations = input;
         self
+    }
+    /// <p> The CPU and memory size recommendations for the containers within the task of your Amazon ECS service. </p>
+    pub fn get_container_recommendations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerRecommendation>> {
+        &self.container_recommendations
     }
     /// Consumes the builder and constructs a [`EcsServiceRecommendationOption`](crate::types::EcsServiceRecommendationOption).
     pub fn build(self) -> crate::types::EcsServiceRecommendationOption {

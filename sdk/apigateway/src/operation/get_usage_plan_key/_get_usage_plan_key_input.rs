@@ -55,6 +55,10 @@ impl GetUsagePlanKeyInputBuilder {
         self.usage_plan_id = input;
         self
     }
+    /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
+    pub fn get_usage_plan_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.usage_plan_id
+    }
     /// <p>The key Id of the to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_id = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl GetUsagePlanKeyInputBuilder {
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_id = input;
         self
+    }
+    /// <p>The key Id of the to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
+    pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_id
     }
     /// Consumes the builder and constructs a [`GetUsagePlanKeyInput`](crate::operation::get_usage_plan_key::GetUsagePlanKeyInput).
     pub fn build(

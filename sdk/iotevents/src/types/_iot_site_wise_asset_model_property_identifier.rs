@@ -54,6 +54,10 @@ impl IotSiteWiseAssetModelPropertyIdentifierBuilder {
         self.asset_model_id = input;
         self
     }
+    /// <p> The ID of the AWS IoT SiteWise asset model. </p>
+    pub fn get_asset_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_model_id
+    }
     /// <p> The ID of the AWS IoT SiteWise asset property. </p>
     pub fn property_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.property_id = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl IotSiteWiseAssetModelPropertyIdentifierBuilder {
     pub fn set_property_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.property_id = input;
         self
+    }
+    /// <p> The ID of the AWS IoT SiteWise asset property. </p>
+    pub fn get_property_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.property_id
     }
     /// Consumes the builder and constructs a [`IotSiteWiseAssetModelPropertyIdentifier`](crate::types::IotSiteWiseAssetModelPropertyIdentifier).
     pub fn build(self) -> crate::types::IotSiteWiseAssetModelPropertyIdentifier {

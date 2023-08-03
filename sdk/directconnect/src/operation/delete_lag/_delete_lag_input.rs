@@ -39,6 +39,10 @@ impl DeleteLagInputBuilder {
         self.lag_id = input;
         self
     }
+    /// <p>The ID of the LAG.</p>
+    pub fn get_lag_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lag_id
+    }
     /// Consumes the builder and constructs a [`DeleteLagInput`](crate::operation::delete_lag::DeleteLagInput).
     pub fn build(
         self,

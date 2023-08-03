@@ -37,6 +37,12 @@ impl DeactivatePipelineFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeactivatePipeline as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::deactivate_pipeline::builders::DeactivatePipelineInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl DeactivatePipelineFluentBuilder {
         self.inner = self.inner.set_pipeline_id(input);
         self
     }
+    /// <p>The ID of the pipeline.</p>
+    pub fn get_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pipeline_id()
+    }
     /// <p>Indicates whether to cancel any running objects. The default is true, which sets the state of any running objects to <code>CANCELED</code>. If this value is false, the pipeline is deactivated after all running objects finish.</p>
     pub fn cancel_active(mut self, input: bool) -> Self {
         self.inner = self.inner.cancel_active(input);
@@ -136,5 +146,9 @@ impl DeactivatePipelineFluentBuilder {
     pub fn set_cancel_active(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_cancel_active(input);
         self
+    }
+    /// <p>Indicates whether to cancel any running objects. The default is true, which sets the state of any running objects to <code>CANCELED</code>. If this value is false, the pipeline is deactivated after all running objects finish.</p>
+    pub fn get_cancel_active(&self) -> &::std::option::Option<bool> {
+        self.inner.get_cancel_active()
     }
 }

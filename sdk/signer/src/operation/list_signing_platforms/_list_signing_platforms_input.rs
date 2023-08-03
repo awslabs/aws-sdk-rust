@@ -72,6 +72,10 @@ impl ListSigningPlatformsInputBuilder {
         self.category = input;
         self
     }
+    /// <p>The category type of a signing platform.</p>
+    pub fn get_category(&self) -> &::std::option::Option<::std::string::String> {
+        &self.category
+    }
     /// <p>Any partner entities connected to a signing platform.</p>
     pub fn partner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.partner = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl ListSigningPlatformsInputBuilder {
     pub fn set_partner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.partner = input;
         self
+    }
+    /// <p>Any partner entities connected to a signing platform.</p>
+    pub fn get_partner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.partner
     }
     /// <p>The validation template that is used by the target signing platform.</p>
     pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -92,6 +100,10 @@ impl ListSigningPlatformsInputBuilder {
         self.target = input;
         self
     }
+    /// <p>The validation template that is used by the target signing platform.</p>
+    pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target
+    }
     /// <p>The maximum number of results to be returned by this operation.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl ListSigningPlatformsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to be returned by this operation.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -111,6 +127,10 @@ impl ListSigningPlatformsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListSigningPlatformsInput`](crate::operation::list_signing_platforms::ListSigningPlatformsInput).
     pub fn build(

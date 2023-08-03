@@ -36,6 +36,13 @@ impl GetOnPremisesInstanceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetOnPremisesInstance as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_on_premises_instance::builders::GetOnPremisesInstanceInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +138,9 @@ impl GetOnPremisesInstanceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_instance_name(input);
         self
+    }
+    /// <p> The name of the on-premises instance about which to get information. </p>
+    pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_name()
     }
 }

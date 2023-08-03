@@ -51,6 +51,12 @@ impl FunctionDefinitionVersionBuilder {
         self.default_config = input;
         self
     }
+    /// The default configuration that applies to all Lambda functions in this function definition version. Individual Lambda functions can override these settings.
+    pub fn get_default_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::FunctionDefaultConfig> {
+        &self.default_config
+    }
     /// Appends an item to `functions`.
     ///
     /// To override the contents of this collection use [`set_functions`](Self::set_functions).
@@ -69,6 +75,10 @@ impl FunctionDefinitionVersionBuilder {
     ) -> Self {
         self.functions = input;
         self
+    }
+    /// A list of Lambda functions in this function definition version.
+    pub fn get_functions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Function>> {
+        &self.functions
     }
     /// Consumes the builder and constructs a [`FunctionDefinitionVersion`](crate::types::FunctionDefinitionVersion).
     pub fn build(self) -> crate::types::FunctionDefinitionVersion {

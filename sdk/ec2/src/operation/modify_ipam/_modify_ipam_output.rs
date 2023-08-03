@@ -46,6 +46,10 @@ impl ModifyIpamOutputBuilder {
         self.ipam = input;
         self
     }
+    /// <p>The results of the modification.</p>
+    pub fn get_ipam(&self) -> &::std::option::Option<crate::types::Ipam> {
+        &self.ipam
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

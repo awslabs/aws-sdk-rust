@@ -39,6 +39,10 @@ impl StopEntitiesDetectionV2JobInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The identifier of the medical entities job to stop.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// Consumes the builder and constructs a [`StopEntitiesDetectionV2JobInput`](crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobInput).
     pub fn build(
         self,

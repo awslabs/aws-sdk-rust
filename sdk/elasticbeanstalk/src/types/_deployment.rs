@@ -82,6 +82,10 @@ impl DeploymentBuilder {
         self.version_label = input;
         self
     }
+    /// <p>The version label of the application version in the deployment.</p>
+    pub fn get_version_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_label
+    }
     /// <p>The ID of the deployment. This number increases by one each time that you deploy source code or change instance configuration settings.</p>
     pub fn deployment_id(mut self, input: i64) -> Self {
         self.deployment_id = ::std::option::Option::Some(input);
@@ -91,6 +95,10 @@ impl DeploymentBuilder {
     pub fn set_deployment_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.deployment_id = input;
         self
+    }
+    /// <p>The ID of the deployment. This number increases by one each time that you deploy source code or change instance configuration settings.</p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<i64> {
+        &self.deployment_id
     }
     /// <p>The status of the deployment:</p>
     /// <ul>
@@ -112,6 +120,15 @@ impl DeploymentBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the deployment:</p>
+    /// <ul>
+    /// <li> <p> <code>In Progress</code> : The deployment is in progress.</p> </li>
+    /// <li> <p> <code>Deployed</code> : The deployment succeeded.</p> </li>
+    /// <li> <p> <code>Failed</code> : The deployment failed.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>For in-progress deployments, the time that the deployment started.</p>
     /// <p>For completed deployments, the time that the deployment ended.</p>
     pub fn deployment_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -126,6 +143,11 @@ impl DeploymentBuilder {
     ) -> Self {
         self.deployment_time = input;
         self
+    }
+    /// <p>For in-progress deployments, the time that the deployment started.</p>
+    /// <p>For completed deployments, the time that the deployment ended.</p>
+    pub fn get_deployment_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.deployment_time
     }
     /// Consumes the builder and constructs a [`Deployment`](crate::types::Deployment).
     pub fn build(self) -> crate::types::Deployment {

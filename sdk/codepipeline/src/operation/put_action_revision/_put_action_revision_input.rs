@@ -71,6 +71,10 @@ impl PutActionRevisionInputBuilder {
         self.pipeline_name = input;
         self
     }
+    /// <p>The name of the pipeline that starts processing the revision to the source.</p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_name
+    }
     /// <p>The name of the stage that contains the action that acts on the revision.</p>
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_name = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl PutActionRevisionInputBuilder {
         self.stage_name = input;
         self
     }
+    /// <p>The name of the stage that contains the action that acts on the revision.</p>
+    pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stage_name
+    }
     /// <p>The name of the action that processes the revision.</p>
     pub fn action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_name = ::std::option::Option::Some(input.into());
@@ -90,6 +98,10 @@ impl PutActionRevisionInputBuilder {
     pub fn set_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action_name = input;
         self
+    }
+    /// <p>The name of the action that processes the revision.</p>
+    pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_name
     }
     /// <p>Represents information about the version (or revision) of an action.</p>
     pub fn action_revision(mut self, input: crate::types::ActionRevision) -> Self {
@@ -103,6 +115,10 @@ impl PutActionRevisionInputBuilder {
     ) -> Self {
         self.action_revision = input;
         self
+    }
+    /// <p>Represents information about the version (or revision) of an action.</p>
+    pub fn get_action_revision(&self) -> &::std::option::Option<crate::types::ActionRevision> {
+        &self.action_revision
     }
     /// Consumes the builder and constructs a [`PutActionRevisionInput`](crate::operation::put_action_revision::PutActionRevisionInput).
     pub fn build(

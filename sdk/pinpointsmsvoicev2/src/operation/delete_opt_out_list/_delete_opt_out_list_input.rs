@@ -46,6 +46,10 @@ impl DeleteOptOutListInputBuilder {
         self.opt_out_list_name = input;
         self
     }
+    /// <p>The OptOutListName or OptOutListArn of the OptOutList to delete. You can use <code>DescribeOptOutLists</code> to find the values for OptOutListName and OptOutListArn.</p>
+    pub fn get_opt_out_list_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.opt_out_list_name
+    }
     /// Consumes the builder and constructs a [`DeleteOptOutListInput`](crate::operation::delete_opt_out_list::DeleteOptOutListInput).
     pub fn build(
         self,

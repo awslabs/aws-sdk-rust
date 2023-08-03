@@ -60,6 +60,10 @@ impl ProtectiveEquipmentBodyPartBuilder {
         self.name = input;
         self
     }
+    /// <p>The detected body part.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::BodyPart> {
+        &self.name
+    }
     /// <p>The confidence that Amazon Rekognition has in the detection accuracy of the detected body part. </p>
     pub fn confidence(mut self, input: f32) -> Self {
         self.confidence = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl ProtectiveEquipmentBodyPartBuilder {
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.confidence = input;
         self
+    }
+    /// <p>The confidence that Amazon Rekognition has in the detection accuracy of the detected body part. </p>
+    pub fn get_confidence(&self) -> &::std::option::Option<f32> {
+        &self.confidence
     }
     /// Appends an item to `equipment_detections`.
     ///
@@ -88,6 +96,12 @@ impl ProtectiveEquipmentBodyPartBuilder {
     ) -> Self {
         self.equipment_detections = input;
         self
+    }
+    /// <p>An array of Personal Protective Equipment items detected around a body part.</p>
+    pub fn get_equipment_detections(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EquipmentDetection>> {
+        &self.equipment_detections
     }
     /// Consumes the builder and constructs a [`ProtectiveEquipmentBodyPart`](crate::types::ProtectiveEquipmentBodyPart).
     pub fn build(self) -> crate::types::ProtectiveEquipmentBodyPart {

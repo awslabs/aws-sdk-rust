@@ -36,6 +36,12 @@ impl PutResourceLogLevelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutResourceLogLevel as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_resource_log_level::builders::PutResourceLogLevelInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl PutResourceLogLevelFluentBuilder {
         self.inner = self.inner.set_resource_identifier(input);
         self
     }
+    /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_identifier()
+    }
     /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
     pub fn resource_type(
         mut self,
@@ -148,6 +158,10 @@ impl PutResourceLogLevelFluentBuilder {
         self.inner = self.inner.set_resource_type(input);
         self
     }
+    /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_type()
+    }
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
     pub fn log_level(mut self, input: crate::types::LogLevel) -> Self {
         self.inner = self.inner.log_level(input);
@@ -157,5 +171,9 @@ impl PutResourceLogLevelFluentBuilder {
     pub fn set_log_level(mut self, input: ::std::option::Option<crate::types::LogLevel>) -> Self {
         self.inner = self.inner.set_log_level(input);
         self
+    }
+    /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
+    pub fn get_log_level(&self) -> &::std::option::Option<crate::types::LogLevel> {
+        self.inner.get_log_level()
     }
 }

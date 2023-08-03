@@ -107,6 +107,12 @@ impl RecurrenceSettingsBuilder {
         self.monthly_settings = input;
         self
     }
+    /// <p>Information about on-call rotations that recur monthly.</p>
+    pub fn get_monthly_settings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MonthlySetting>> {
+        &self.monthly_settings
+    }
     /// Appends an item to `weekly_settings`.
     ///
     /// To override the contents of this collection use [`set_weekly_settings`](Self::set_weekly_settings).
@@ -125,6 +131,12 @@ impl RecurrenceSettingsBuilder {
     ) -> Self {
         self.weekly_settings = input;
         self
+    }
+    /// <p>Information about on-call rotations that recur weekly.</p>
+    pub fn get_weekly_settings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WeeklySetting>> {
+        &self.weekly_settings
     }
     /// Appends an item to `daily_settings`.
     ///
@@ -145,6 +157,12 @@ impl RecurrenceSettingsBuilder {
         self.daily_settings = input;
         self
     }
+    /// <p>Information about on-call rotations that recur daily.</p>
+    pub fn get_daily_settings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HandOffTime>> {
+        &self.daily_settings
+    }
     /// <p>The number of contacts, or shift team members designated to be on call concurrently during a shift. For example, in an on-call schedule containing ten contacts, a value of <code>2</code> designates that two of them are on call at any given time.</p>
     pub fn number_of_on_calls(mut self, input: i32) -> Self {
         self.number_of_on_calls = ::std::option::Option::Some(input);
@@ -154,6 +172,10 @@ impl RecurrenceSettingsBuilder {
     pub fn set_number_of_on_calls(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_on_calls = input;
         self
+    }
+    /// <p>The number of contacts, or shift team members designated to be on call concurrently during a shift. For example, in an on-call schedule containing ten contacts, a value of <code>2</code> designates that two of them are on call at any given time.</p>
+    pub fn get_number_of_on_calls(&self) -> &::std::option::Option<i32> {
+        &self.number_of_on_calls
     }
     /// Adds a key-value pair to `shift_coverages`.
     ///
@@ -183,6 +205,17 @@ impl RecurrenceSettingsBuilder {
         self.shift_coverages = input;
         self
     }
+    /// <p>Information about the days of the week included in on-call rotation coverage.</p>
+    pub fn get_shift_coverages(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::DayOfWeek,
+            ::std::vec::Vec<crate::types::CoverageTime>,
+        >,
+    > {
+        &self.shift_coverages
+    }
     /// <p>The number of days, weeks, or months a single rotation lasts.</p>
     pub fn recurrence_multiplier(mut self, input: i32) -> Self {
         self.recurrence_multiplier = ::std::option::Option::Some(input);
@@ -192,6 +225,10 @@ impl RecurrenceSettingsBuilder {
     pub fn set_recurrence_multiplier(mut self, input: ::std::option::Option<i32>) -> Self {
         self.recurrence_multiplier = input;
         self
+    }
+    /// <p>The number of days, weeks, or months a single rotation lasts.</p>
+    pub fn get_recurrence_multiplier(&self) -> &::std::option::Option<i32> {
+        &self.recurrence_multiplier
     }
     /// Consumes the builder and constructs a [`RecurrenceSettings`](crate::types::RecurrenceSettings).
     pub fn build(self) -> crate::types::RecurrenceSettings {

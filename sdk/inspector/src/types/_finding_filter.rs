@@ -105,6 +105,10 @@ impl FindingFilterBuilder {
         self.agent_ids = input;
         self
     }
+    /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>agentId</b> property of the <code>Finding</code> data type.</p>
+    pub fn get_agent_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.agent_ids
+    }
     /// Appends an item to `auto_scaling_groups`.
     ///
     /// To override the contents of this collection use [`set_auto_scaling_groups`](Self::set_auto_scaling_groups).
@@ -127,6 +131,12 @@ impl FindingFilterBuilder {
         self.auto_scaling_groups = input;
         self
     }
+    /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>autoScalingGroup</b> property of the <code>Finding</code> data type.</p>
+    pub fn get_auto_scaling_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.auto_scaling_groups
+    }
     /// Appends an item to `rule_names`.
     ///
     /// To override the contents of this collection use [`set_rule_names`](Self::set_rule_names).
@@ -146,6 +156,10 @@ impl FindingFilterBuilder {
         self.rule_names = input;
         self
     }
+    /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>ruleName</b> property of the <code>Finding</code> data type.</p>
+    pub fn get_rule_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.rule_names
+    }
     /// Appends an item to `severities`.
     ///
     /// To override the contents of this collection use [`set_severities`](Self::set_severities).
@@ -164,6 +178,12 @@ impl FindingFilterBuilder {
     ) -> Self {
         self.severities = input;
         self
+    }
+    /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>severity</b> property of the <code>Finding</code> data type.</p>
+    pub fn get_severities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Severity>> {
+        &self.severities
     }
     /// Appends an item to `rules_package_arns`.
     ///
@@ -187,6 +207,12 @@ impl FindingFilterBuilder {
         self.rules_package_arns = input;
         self
     }
+    /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>rulesPackageArn</b> property of the <code>Finding</code> data type.</p>
+    pub fn get_rules_package_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.rules_package_arns
+    }
     /// Appends an item to `attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
@@ -205,6 +231,12 @@ impl FindingFilterBuilder {
     ) -> Self {
         self.attributes = input;
         self
+    }
+    /// <p>For a record to match a filter, the list of values that are specified for this data type property must be contained in the list of values of the <b>attributes</b> property of the <code>Finding</code> data type.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+        &self.attributes
     }
     /// Appends an item to `user_attributes`.
     ///
@@ -225,6 +257,12 @@ impl FindingFilterBuilder {
         self.user_attributes = input;
         self
     }
+    /// <p>For a record to match a filter, the value that is specified for this data type property must be contained in the list of values of the <b>userAttributes</b> property of the <code>Finding</code> data type.</p>
+    pub fn get_user_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+        &self.user_attributes
+    }
     /// <p>The time range during which the finding is generated.</p>
     pub fn creation_time_range(mut self, input: crate::types::TimestampRange) -> Self {
         self.creation_time_range = ::std::option::Option::Some(input);
@@ -237,6 +275,10 @@ impl FindingFilterBuilder {
     ) -> Self {
         self.creation_time_range = input;
         self
+    }
+    /// <p>The time range during which the finding is generated.</p>
+    pub fn get_creation_time_range(&self) -> &::std::option::Option<crate::types::TimestampRange> {
+        &self.creation_time_range
     }
     /// Consumes the builder and constructs a [`FindingFilter`](crate::types::FindingFilter).
     pub fn build(self) -> crate::types::FindingFilter {

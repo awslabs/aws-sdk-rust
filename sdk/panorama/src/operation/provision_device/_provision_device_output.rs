@@ -78,6 +78,10 @@ impl ProvisionDeviceOutputBuilder {
         self.device_id = input;
         self
     }
+    /// <p>The device's ID.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_id
+    }
     /// <p>The device's ARN.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -88,6 +92,10 @@ impl ProvisionDeviceOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The device's ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The device's status.</p>
     pub fn status(mut self, input: crate::types::DeviceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -97,6 +105,10 @@ impl ProvisionDeviceOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DeviceStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The device's status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DeviceStatus> {
+        &self.status
     }
     /// <p>The device's configuration bundle.</p>
     pub fn certificates(mut self, input: ::aws_smithy_types::Blob) -> Self {
@@ -110,6 +122,10 @@ impl ProvisionDeviceOutputBuilder {
     ) -> Self {
         self.certificates = input;
         self
+    }
+    /// <p>The device's configuration bundle.</p>
+    pub fn get_certificates(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.certificates
     }
     /// <p>The device's IoT thing name.</p>
     pub fn iot_thing_name(
@@ -126,6 +142,10 @@ impl ProvisionDeviceOutputBuilder {
     ) -> Self {
         self.iot_thing_name = input;
         self
+    }
+    /// <p>The device's IoT thing name.</p>
+    pub fn get_iot_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iot_thing_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

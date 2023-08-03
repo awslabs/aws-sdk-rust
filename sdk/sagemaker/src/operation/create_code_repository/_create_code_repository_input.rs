@@ -62,6 +62,10 @@ impl CreateCodeRepositoryInputBuilder {
         self.code_repository_name = input;
         self
     }
+    /// <p>The name of the Git repository. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
+    pub fn get_code_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code_repository_name
+    }
     /// <p>Specifies details about the repository, including the URL where the repository is located, the default branch, and credentials to use to access the repository.</p>
     pub fn git_config(mut self, input: crate::types::GitConfig) -> Self {
         self.git_config = ::std::option::Option::Some(input);
@@ -71,6 +75,10 @@ impl CreateCodeRepositoryInputBuilder {
     pub fn set_git_config(mut self, input: ::std::option::Option<crate::types::GitConfig>) -> Self {
         self.git_config = input;
         self
+    }
+    /// <p>Specifies details about the repository, including the URL where the repository is located, the default branch, and credentials to use to access the repository.</p>
+    pub fn get_git_config(&self) -> &::std::option::Option<crate::types::GitConfig> {
+        &self.git_config
     }
     /// Appends an item to `tags`.
     ///
@@ -90,6 +98,10 @@ impl CreateCodeRepositoryInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateCodeRepositoryInput`](crate::operation::create_code_repository::CreateCodeRepositoryInput).
     pub fn build(

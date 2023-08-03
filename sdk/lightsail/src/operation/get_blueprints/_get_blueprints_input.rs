@@ -61,6 +61,10 @@ impl GetBlueprintsInputBuilder {
         self.include_inactive = input;
         self
     }
+    /// <p>A Boolean value that indicates whether to include inactive (unavailable) blueprints in the response of your request.</p>
+    pub fn get_include_inactive(&self) -> &::std::option::Option<bool> {
+        &self.include_inactive
+    }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetBlueprints</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     pub fn page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -72,6 +76,11 @@ impl GetBlueprintsInputBuilder {
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.page_token = input;
         self
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetBlueprints</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.page_token
     }
     /// <p>Returns a list of blueprints that are specific to Lightsail for Research.</p> <important>
     /// <p>You must use this parameter to view Lightsail for Research blueprints.</p>
@@ -89,6 +98,12 @@ impl GetBlueprintsInputBuilder {
     ) -> Self {
         self.app_category = input;
         self
+    }
+    /// <p>Returns a list of blueprints that are specific to Lightsail for Research.</p> <important>
+    /// <p>You must use this parameter to view Lightsail for Research blueprints.</p>
+    /// </important>
+    pub fn get_app_category(&self) -> &::std::option::Option<crate::types::AppCategory> {
+        &self.app_category
     }
     /// Consumes the builder and constructs a [`GetBlueprintsInput`](crate::operation::get_blueprints::GetBlueprintsInput).
     pub fn build(

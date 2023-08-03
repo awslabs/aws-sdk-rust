@@ -73,6 +73,10 @@ impl CreateServiceSyncConfigInputBuilder {
         self.service_name = input;
         self
     }
+    /// <p>The name of the service the Proton Ops file is for.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
+    }
     /// <p>The provider type for your repository.</p>
     pub fn repository_provider(mut self, input: crate::types::RepositoryProvider) -> Self {
         self.repository_provider = ::std::option::Option::Some(input);
@@ -85,6 +89,12 @@ impl CreateServiceSyncConfigInputBuilder {
     ) -> Self {
         self.repository_provider = input;
         self
+    }
+    /// <p>The provider type for your repository.</p>
+    pub fn get_repository_provider(
+        &self,
+    ) -> &::std::option::Option<crate::types::RepositoryProvider> {
+        &self.repository_provider
     }
     /// <p>The repository name.</p>
     pub fn repository_name(
@@ -102,6 +112,10 @@ impl CreateServiceSyncConfigInputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The repository name.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The repository branch for your Proton Ops file.</p>
     pub fn branch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch = ::std::option::Option::Some(input.into());
@@ -112,6 +126,10 @@ impl CreateServiceSyncConfigInputBuilder {
         self.branch = input;
         self
     }
+    /// <p>The repository branch for your Proton Ops file.</p>
+    pub fn get_branch(&self) -> &::std::option::Option<::std::string::String> {
+        &self.branch
+    }
     /// <p>The path to the Proton Ops file.</p>
     pub fn file_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_path = ::std::option::Option::Some(input.into());
@@ -121,6 +139,10 @@ impl CreateServiceSyncConfigInputBuilder {
     pub fn set_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_path = input;
         self
+    }
+    /// <p>The path to the Proton Ops file.</p>
+    pub fn get_file_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_path
     }
     /// Consumes the builder and constructs a [`CreateServiceSyncConfigInput`](crate::operation::create_service_sync_config::CreateServiceSyncConfigInput).
     pub fn build(

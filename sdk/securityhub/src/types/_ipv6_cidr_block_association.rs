@@ -78,6 +78,10 @@ impl Ipv6CidrBlockAssociationBuilder {
         self.association_id = input;
         self
     }
+    /// <p>The association ID for the IPv6 CIDR block.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_id
+    }
     /// <p>The IPv6 CIDR block.</p>
     pub fn ipv6_cidr_block(
         mut self,
@@ -93,6 +97,10 @@ impl Ipv6CidrBlockAssociationBuilder {
     ) -> Self {
         self.ipv6_cidr_block = input;
         self
+    }
+    /// <p>The IPv6 CIDR block.</p>
+    pub fn get_ipv6_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv6_cidr_block
     }
     /// <p>Information about the state of the CIDR block. Valid values are as follows:</p>
     /// <ul>
@@ -125,6 +133,18 @@ impl Ipv6CidrBlockAssociationBuilder {
     ) -> Self {
         self.cidr_block_state = input;
         self
+    }
+    /// <p>Information about the state of the CIDR block. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>associating</code> </p> </li>
+    /// <li> <p> <code>associated</code> </p> </li>
+    /// <li> <p> <code>disassociating</code> </p> </li>
+    /// <li> <p> <code>disassociated</code> </p> </li>
+    /// <li> <p> <code>failed</code> </p> </li>
+    /// <li> <p> <code>failing</code> </p> </li>
+    /// </ul>
+    pub fn get_cidr_block_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr_block_state
     }
     /// Consumes the builder and constructs a [`Ipv6CidrBlockAssociation`](crate::types::Ipv6CidrBlockAssociation).
     pub fn build(self) -> crate::types::Ipv6CidrBlockAssociation {

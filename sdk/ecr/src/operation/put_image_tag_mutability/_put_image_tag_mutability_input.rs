@@ -57,6 +57,10 @@ impl PutImageTagMutabilityInputBuilder {
         self.registry_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to update the image tag mutability settings. If you do not specify a registry, the default registry is assumed.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
+    }
     /// <p>The name of the repository in which to update the image tag mutability settings.</p>
     pub fn repository_name(
         mut self,
@@ -73,6 +77,10 @@ impl PutImageTagMutabilityInputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository in which to update the image tag mutability settings.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The tag mutability setting for the repository. If <code>MUTABLE</code> is specified, image tags can be overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
     pub fn image_tag_mutability(mut self, input: crate::types::ImageTagMutability) -> Self {
         self.image_tag_mutability = ::std::option::Option::Some(input);
@@ -85,6 +93,12 @@ impl PutImageTagMutabilityInputBuilder {
     ) -> Self {
         self.image_tag_mutability = input;
         self
+    }
+    /// <p>The tag mutability setting for the repository. If <code>MUTABLE</code> is specified, image tags can be overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
+    pub fn get_image_tag_mutability(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImageTagMutability> {
+        &self.image_tag_mutability
     }
     /// Consumes the builder and constructs a [`PutImageTagMutabilityInput`](crate::operation::put_image_tag_mutability::PutImageTagMutabilityInput).
     pub fn build(

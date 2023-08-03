@@ -56,6 +56,10 @@ impl ComponentPropertyGroupRequestBuilder {
         self.group_type = input;
         self
     }
+    /// <p>The group type.</p>
+    pub fn get_group_type(&self) -> &::std::option::Option<crate::types::GroupType> {
+        &self.group_type
+    }
     /// Appends an item to `property_names`.
     ///
     /// To override the contents of this collection use [`set_property_names`](Self::set_property_names).
@@ -78,6 +82,12 @@ impl ComponentPropertyGroupRequestBuilder {
         self.property_names = input;
         self
     }
+    /// <p>The property names.</p>
+    pub fn get_property_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.property_names
+    }
     /// <p>The update type.</p>
     pub fn update_type(mut self, input: crate::types::PropertyGroupUpdateType) -> Self {
         self.update_type = ::std::option::Option::Some(input);
@@ -90,6 +100,10 @@ impl ComponentPropertyGroupRequestBuilder {
     ) -> Self {
         self.update_type = input;
         self
+    }
+    /// <p>The update type.</p>
+    pub fn get_update_type(&self) -> &::std::option::Option<crate::types::PropertyGroupUpdateType> {
+        &self.update_type
     }
     /// Consumes the builder and constructs a [`ComponentPropertyGroupRequest`](crate::types::ComponentPropertyGroupRequest).
     pub fn build(self) -> crate::types::ComponentPropertyGroupRequest {

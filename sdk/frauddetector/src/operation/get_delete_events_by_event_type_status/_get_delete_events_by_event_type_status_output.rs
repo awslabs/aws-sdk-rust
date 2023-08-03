@@ -60,6 +60,10 @@ impl GetDeleteEventsByEventTypeStatusOutputBuilder {
         self.event_type_name = input;
         self
     }
+    /// <p>The event type name.</p>
+    pub fn get_event_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_type_name
+    }
     /// <p>The deletion status.</p>
     pub fn events_deletion_status(mut self, input: crate::types::AsyncJobStatus) -> Self {
         self.events_deletion_status = ::std::option::Option::Some(input);
@@ -72,6 +76,12 @@ impl GetDeleteEventsByEventTypeStatusOutputBuilder {
     ) -> Self {
         self.events_deletion_status = input;
         self
+    }
+    /// <p>The deletion status.</p>
+    pub fn get_events_deletion_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::AsyncJobStatus> {
+        &self.events_deletion_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

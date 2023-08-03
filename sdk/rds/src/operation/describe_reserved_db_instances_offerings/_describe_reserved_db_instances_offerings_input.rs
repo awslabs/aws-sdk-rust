@@ -126,6 +126,13 @@ impl DescribeReservedDbInstancesOfferingsInputBuilder {
         self.reserved_db_instances_offering_id = input;
         self
     }
+    /// <p>The offering identifier filter value. Specify this parameter to show only the available offering that matches the specified reservation identifier.</p>
+    /// <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code> </p>
+    pub fn get_reserved_db_instances_offering_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.reserved_db_instances_offering_id
+    }
     /// <p>The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class.</p>
     pub fn db_instance_class(
         mut self,
@@ -142,6 +149,10 @@ impl DescribeReservedDbInstancesOfferingsInputBuilder {
         self.db_instance_class = input;
         self
     }
+    /// <p>The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class.</p>
+    pub fn get_db_instance_class(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_class
+    }
     /// <p>Duration filter value, specified in years or seconds. Specify this parameter to show only reservations for this duration.</p>
     /// <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code> </p>
     pub fn duration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -153,6 +164,11 @@ impl DescribeReservedDbInstancesOfferingsInputBuilder {
     pub fn set_duration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.duration = input;
         self
+    }
+    /// <p>Duration filter value, specified in years or seconds. Specify this parameter to show only reservations for this duration.</p>
+    /// <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code> </p>
+    pub fn get_duration(&self) -> &::std::option::Option<::std::string::String> {
+        &self.duration
     }
     /// <p>Product description filter value. Specify this parameter to show only the available offerings that contain the specified product description.</p> <note>
     /// <p>The results show offerings that partially match the filter value.</p>
@@ -174,6 +190,12 @@ impl DescribeReservedDbInstancesOfferingsInputBuilder {
         self.product_description = input;
         self
     }
+    /// <p>Product description filter value. Specify this parameter to show only the available offerings that contain the specified product description.</p> <note>
+    /// <p>The results show offerings that partially match the filter value.</p>
+    /// </note>
+    pub fn get_product_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_description
+    }
     /// <p>The offering type filter value. Specify this parameter to show only the available offerings matching the specified offering type.</p>
     /// <p>Valid Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code> </p>
     pub fn offering_type(
@@ -192,6 +214,11 @@ impl DescribeReservedDbInstancesOfferingsInputBuilder {
         self.offering_type = input;
         self
     }
+    /// <p>The offering type filter value. Specify this parameter to show only the available offerings matching the specified offering type.</p>
+    /// <p>Valid Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code> </p>
+    pub fn get_offering_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.offering_type
+    }
     /// <p>A value that indicates whether to show only those reservations that support Multi-AZ.</p>
     pub fn multi_az(mut self, input: bool) -> Self {
         self.multi_az = ::std::option::Option::Some(input);
@@ -201,6 +228,10 @@ impl DescribeReservedDbInstancesOfferingsInputBuilder {
     pub fn set_multi_az(mut self, input: ::std::option::Option<bool>) -> Self {
         self.multi_az = input;
         self
+    }
+    /// <p>A value that indicates whether to show only those reservations that support Multi-AZ.</p>
+    pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
+        &self.multi_az
     }
     /// Appends an item to `filters`.
     ///
@@ -221,6 +252,10 @@ impl DescribeReservedDbInstancesOfferingsInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>This parameter isn't currently supported.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
+    }
     /// <p>The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is available, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
@@ -235,6 +270,12 @@ impl DescribeReservedDbInstancesOfferingsInputBuilder {
         self.max_records = input;
         self
     }
+    /// <p>The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is available, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        &self.max_records
+    }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -244,6 +285,10 @@ impl DescribeReservedDbInstancesOfferingsInputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeReservedDbInstancesOfferingsInput`](crate::operation::describe_reserved_db_instances_offerings::DescribeReservedDbInstancesOfferingsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_reserved_db_instances_offerings::DescribeReservedDbInstancesOfferingsInput, ::aws_smithy_http::operation::error::BuildError>{

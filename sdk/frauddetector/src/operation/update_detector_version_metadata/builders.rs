@@ -36,6 +36,10 @@ impl UpdateDetectorVersionMetadataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDetectorVersionMetadata as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_detector_version_metadata::builders::UpdateDetectorVersionMetadataInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl UpdateDetectorVersionMetadataFluentBuilder {
         self.inner = self.inner.set_detector_id(input);
         self
     }
+    /// <p>The detector ID.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_id()
+    }
     /// <p>The detector version ID. </p>
     pub fn detector_version_id(
         mut self,
@@ -142,6 +150,10 @@ impl UpdateDetectorVersionMetadataFluentBuilder {
         self.inner = self.inner.set_detector_version_id(input);
         self
     }
+    /// <p>The detector version ID. </p>
+    pub fn get_detector_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_version_id()
+    }
     /// <p>The description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -151,5 +163,9 @@ impl UpdateDetectorVersionMetadataFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
 }

@@ -53,6 +53,12 @@ impl DescribeResourceGroupsInputBuilder {
         self.resource_group_arns = input;
         self
     }
+    /// <p>The ARN that specifies the resource group that you want to describe.</p>
+    pub fn get_resource_group_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_group_arns
+    }
     /// Consumes the builder and constructs a [`DescribeResourceGroupsInput`](crate::operation::describe_resource_groups::DescribeResourceGroupsInput).
     pub fn build(
         self,

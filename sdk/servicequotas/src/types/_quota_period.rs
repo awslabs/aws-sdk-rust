@@ -48,6 +48,10 @@ impl QuotaPeriodBuilder {
         self.period_value = input;
         self
     }
+    /// <p>The value.</p>
+    pub fn get_period_value(&self) -> &::std::option::Option<i32> {
+        &self.period_value
+    }
     /// <p>The time unit.</p>
     pub fn period_unit(mut self, input: crate::types::PeriodUnit) -> Self {
         self.period_unit = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl QuotaPeriodBuilder {
     ) -> Self {
         self.period_unit = input;
         self
+    }
+    /// <p>The time unit.</p>
+    pub fn get_period_unit(&self) -> &::std::option::Option<crate::types::PeriodUnit> {
+        &self.period_unit
     }
     /// Consumes the builder and constructs a [`QuotaPeriod`](crate::types::QuotaPeriod).
     pub fn build(self) -> crate::types::QuotaPeriod {

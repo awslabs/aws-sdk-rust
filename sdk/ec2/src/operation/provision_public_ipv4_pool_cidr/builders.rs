@@ -37,6 +37,10 @@ impl ProvisionPublicIpv4PoolCidrFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ProvisionPublicIpv4PoolCidr as a reference.
+    pub fn as_input(&self) -> &crate::operation::provision_public_ipv4_pool_cidr::builders::ProvisionPublicIpv4PoolCidrInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl ProvisionPublicIpv4PoolCidrFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>The ID of the IPAM pool you would like to use to allocate this CIDR.</p>
     pub fn ipam_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ipam_pool_id(input.into());
@@ -136,6 +144,10 @@ impl ProvisionPublicIpv4PoolCidrFluentBuilder {
     pub fn set_ipam_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ipam_pool_id(input);
         self
+    }
+    /// <p>The ID of the IPAM pool you would like to use to allocate this CIDR.</p>
+    pub fn get_ipam_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ipam_pool_id()
     }
     /// <p>The ID of the public IPv4 pool you would like to use for this CIDR.</p>
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -147,6 +159,10 @@ impl ProvisionPublicIpv4PoolCidrFluentBuilder {
         self.inner = self.inner.set_pool_id(input);
         self
     }
+    /// <p>The ID of the public IPv4 pool you would like to use for this CIDR.</p>
+    pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pool_id()
+    }
     /// <p>The netmask length of the CIDR you would like to allocate to the public IPv4 pool.</p>
     pub fn netmask_length(mut self, input: i32) -> Self {
         self.inner = self.inner.netmask_length(input);
@@ -156,5 +172,9 @@ impl ProvisionPublicIpv4PoolCidrFluentBuilder {
     pub fn set_netmask_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_netmask_length(input);
         self
+    }
+    /// <p>The netmask length of the CIDR you would like to allocate to the public IPv4 pool.</p>
+    pub fn get_netmask_length(&self) -> &::std::option::Option<i32> {
+        self.inner.get_netmask_length()
     }
 }

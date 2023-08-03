@@ -84,6 +84,10 @@ impl AppInputSourceBuilder {
         self.source_name = input;
         self
     }
+    /// <p>The name of the input source.</p>
+    pub fn get_source_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_name
+    }
     /// <p>The resource type of the input source.</p>
     pub fn import_type(mut self, input: crate::types::ResourceMappingType) -> Self {
         self.import_type = ::std::option::Option::Some(input);
@@ -97,6 +101,10 @@ impl AppInputSourceBuilder {
         self.import_type = input;
         self
     }
+    /// <p>The resource type of the input source.</p>
+    pub fn get_import_type(&self) -> &::std::option::Option<crate::types::ResourceMappingType> {
+        &self.import_type
+    }
     /// <p>The Amazon Resource Name (ARN) of the input source. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_arn = ::std::option::Option::Some(input.into());
@@ -106,6 +114,10 @@ impl AppInputSourceBuilder {
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the input source. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_arn
     }
     /// <p>The name of the Terraform s3 state ﬁle.</p>
     pub fn terraform_source(mut self, input: crate::types::TerraformSource) -> Self {
@@ -120,6 +132,10 @@ impl AppInputSourceBuilder {
         self.terraform_source = input;
         self
     }
+    /// <p>The name of the Terraform s3 state ﬁle.</p>
+    pub fn get_terraform_source(&self) -> &::std::option::Option<crate::types::TerraformSource> {
+        &self.terraform_source
+    }
     /// <p>The number of resources.</p>
     pub fn resource_count(mut self, input: i32) -> Self {
         self.resource_count = ::std::option::Option::Some(input);
@@ -129,6 +145,10 @@ impl AppInputSourceBuilder {
     pub fn set_resource_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.resource_count = input;
         self
+    }
+    /// <p>The number of resources.</p>
+    pub fn get_resource_count(&self) -> &::std::option::Option<i32> {
+        &self.resource_count
     }
     /// <p>The namespace on your Amazon Elastic Kubernetes Service cluster.</p>
     pub fn eks_source_cluster_namespace(
@@ -145,6 +165,12 @@ impl AppInputSourceBuilder {
     ) -> Self {
         self.eks_source_cluster_namespace = input;
         self
+    }
+    /// <p>The namespace on your Amazon Elastic Kubernetes Service cluster.</p>
+    pub fn get_eks_source_cluster_namespace(
+        &self,
+    ) -> &::std::option::Option<crate::types::EksSourceClusterNamespace> {
+        &self.eks_source_cluster_namespace
     }
     /// Consumes the builder and constructs a [`AppInputSource`](crate::types::AppInputSource).
     pub fn build(self) -> crate::types::AppInputSource {

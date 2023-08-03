@@ -94,6 +94,10 @@ impl UsageLimitBuilder {
         self.usage_limit_id = input;
         self
     }
+    /// <p>The identifier of the usage limit.</p>
+    pub fn get_usage_limit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.usage_limit_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the resource associated with the usage limit.</p>
     pub fn usage_limit_arn(
         mut self,
@@ -110,6 +114,10 @@ impl UsageLimitBuilder {
         self.usage_limit_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the resource associated with the usage limit.</p>
+    pub fn get_usage_limit_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.usage_limit_arn
+    }
     /// <p>The Amazon Resource Name (ARN) that identifies the Amazon Redshift Serverless resource.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -119,6 +127,10 @@ impl UsageLimitBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) that identifies the Amazon Redshift Serverless resource.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// <p>The Amazon Redshift Serverless feature to limit.</p>
     pub fn usage_type(mut self, input: crate::types::UsageLimitUsageType) -> Self {
@@ -133,6 +145,10 @@ impl UsageLimitBuilder {
         self.usage_type = input;
         self
     }
+    /// <p>The Amazon Redshift Serverless feature to limit.</p>
+    pub fn get_usage_type(&self) -> &::std::option::Option<crate::types::UsageLimitUsageType> {
+        &self.usage_type
+    }
     /// <p>The limit amount. If time-based, this amount is in RPUs consumed per hour. If data-based, this amount is in terabytes (TB). The value must be a positive number.</p>
     pub fn amount(mut self, input: i64) -> Self {
         self.amount = ::std::option::Option::Some(input);
@@ -142,6 +158,10 @@ impl UsageLimitBuilder {
     pub fn set_amount(mut self, input: ::std::option::Option<i64>) -> Self {
         self.amount = input;
         self
+    }
+    /// <p>The limit amount. If time-based, this amount is in RPUs consumed per hour. If data-based, this amount is in terabytes (TB). The value must be a positive number.</p>
+    pub fn get_amount(&self) -> &::std::option::Option<i64> {
+        &self.amount
     }
     /// <p>The time period that the amount applies to. A weekly period begins on Sunday. The default is monthly.</p>
     pub fn period(mut self, input: crate::types::UsageLimitPeriod) -> Self {
@@ -156,6 +176,10 @@ impl UsageLimitBuilder {
         self.period = input;
         self
     }
+    /// <p>The time period that the amount applies to. A weekly period begins on Sunday. The default is monthly.</p>
+    pub fn get_period(&self) -> &::std::option::Option<crate::types::UsageLimitPeriod> {
+        &self.period
+    }
     /// <p>The action that Amazon Redshift Serverless takes when the limit is reached.</p>
     pub fn breach_action(mut self, input: crate::types::UsageLimitBreachAction) -> Self {
         self.breach_action = ::std::option::Option::Some(input);
@@ -168,6 +192,12 @@ impl UsageLimitBuilder {
     ) -> Self {
         self.breach_action = input;
         self
+    }
+    /// <p>The action that Amazon Redshift Serverless takes when the limit is reached.</p>
+    pub fn get_breach_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::UsageLimitBreachAction> {
+        &self.breach_action
     }
     /// Consumes the builder and constructs a [`UsageLimit`](crate::types::UsageLimit).
     pub fn build(self) -> crate::types::UsageLimit {

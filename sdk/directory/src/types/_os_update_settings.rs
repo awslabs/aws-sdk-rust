@@ -40,6 +40,10 @@ impl OsUpdateSettingsBuilder {
         self.os_version = input;
         self
     }
+    /// <p> OS version that the directory needs to be updated to. </p>
+    pub fn get_os_version(&self) -> &::std::option::Option<crate::types::OsVersion> {
+        &self.os_version
+    }
     /// Consumes the builder and constructs a [`OsUpdateSettings`](crate::types::OsUpdateSettings).
     pub fn build(self) -> crate::types::OsUpdateSettings {
         crate::types::OsUpdateSettings {

@@ -57,6 +57,10 @@ impl DeleteAwsLogSourceOutputBuilder {
         self.failed = input;
         self
     }
+    /// <p>Deletion of the Amazon Web Services sources failed as the account is not a part of the organization.</p>
+    pub fn get_failed(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.failed
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

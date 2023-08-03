@@ -60,6 +60,12 @@ impl CancelStepsOutputBuilder {
         self.cancel_steps_info_list = input;
         self
     }
+    /// <p>A list of <code>CancelStepsInfo</code>, which shows the status of specified cancel requests for each <code>StepID</code> specified.</p>
+    pub fn get_cancel_steps_info_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CancelStepsInfo>> {
+        &self.cancel_steps_info_list
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

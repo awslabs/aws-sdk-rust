@@ -65,6 +65,12 @@ impl DatasetEntityRecognizerInputDataConfigBuilder {
         self.annotations = input;
         self
     }
+    /// <p>The S3 location of the annotation documents for your custom entity recognizer.</p>
+    pub fn get_annotations(
+        &self,
+    ) -> &::std::option::Option<crate::types::DatasetEntityRecognizerAnnotations> {
+        &self.annotations
+    }
     /// <p>The format and location of the training documents for your custom entity recognizer.</p>
     pub fn documents(mut self, input: crate::types::DatasetEntityRecognizerDocuments) -> Self {
         self.documents = ::std::option::Option::Some(input);
@@ -78,6 +84,12 @@ impl DatasetEntityRecognizerInputDataConfigBuilder {
         self.documents = input;
         self
     }
+    /// <p>The format and location of the training documents for your custom entity recognizer.</p>
+    pub fn get_documents(
+        &self,
+    ) -> &::std::option::Option<crate::types::DatasetEntityRecognizerDocuments> {
+        &self.documents
+    }
     /// <p>The S3 location of the entity list for your custom entity recognizer.</p>
     pub fn entity_list(mut self, input: crate::types::DatasetEntityRecognizerEntityList) -> Self {
         self.entity_list = ::std::option::Option::Some(input);
@@ -90,6 +102,12 @@ impl DatasetEntityRecognizerInputDataConfigBuilder {
     ) -> Self {
         self.entity_list = input;
         self
+    }
+    /// <p>The S3 location of the entity list for your custom entity recognizer.</p>
+    pub fn get_entity_list(
+        &self,
+    ) -> &::std::option::Option<crate::types::DatasetEntityRecognizerEntityList> {
+        &self.entity_list
     }
     /// Consumes the builder and constructs a [`DatasetEntityRecognizerInputDataConfig`](crate::types::DatasetEntityRecognizerInputDataConfig).
     pub fn build(self) -> crate::types::DatasetEntityRecognizerInputDataConfig {

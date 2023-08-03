@@ -54,6 +54,10 @@ impl ExpressionBuilder {
         self.expression_name = input;
         self
     }
+    /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
+    pub fn get_expression_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expression_name
+    }
     /// <p>The expression to evaluate for sorting while processing a search request. The <code>Expression</code> syntax is based on JavaScript expressions. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
     pub fn expression_value(
         mut self,
@@ -69,6 +73,10 @@ impl ExpressionBuilder {
     ) -> Self {
         self.expression_value = input;
         self
+    }
+    /// <p>The expression to evaluate for sorting while processing a search request. The <code>Expression</code> syntax is based on JavaScript expressions. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
+    pub fn get_expression_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expression_value
     }
     /// Consumes the builder and constructs a [`Expression`](crate::types::Expression).
     pub fn build(self) -> crate::types::Expression {

@@ -68,6 +68,11 @@ impl PrivateDnsNameConfigurationBuilder {
         self.state = input;
         self
     }
+    /// <p>The verification state of the VPC endpoint service.</p>
+    /// <p>&gt;Consumers of the endpoint service can use the private name only when the state is <code>verified</code>.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::DnsNameState> {
+        &self.state
+    }
     /// <p>The endpoint service verification type, for example TXT.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -77,6 +82,10 @@ impl PrivateDnsNameConfigurationBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The endpoint service verification type, for example TXT.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// <p>The value the service provider adds to the private DNS name domain record before verification.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -88,6 +97,10 @@ impl PrivateDnsNameConfigurationBuilder {
         self.value = input;
         self
     }
+    /// <p>The value the service provider adds to the private DNS name domain record before verification.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// <p>The name of the record subdomain the service provider needs to create. The service provider adds the <code>value</code> text to the <code>name</code>.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -97,6 +110,10 @@ impl PrivateDnsNameConfigurationBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the record subdomain the service provider needs to create. The service provider adds the <code>value</code> text to the <code>name</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`PrivateDnsNameConfiguration`](crate::types::PrivateDnsNameConfiguration).
     pub fn build(self) -> crate::types::PrivateDnsNameConfiguration {

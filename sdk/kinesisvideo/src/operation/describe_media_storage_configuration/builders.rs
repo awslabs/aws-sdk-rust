@@ -36,6 +36,10 @@ impl DescribeMediaStorageConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeMediaStorageConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_media_storage_configuration::builders::DescribeMediaStorageConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl DescribeMediaStorageConfigurationFluentBuilder {
         self.inner = self.inner.set_channel_name(input);
         self
     }
+    /// <p>The name of the channel.</p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_name()
+    }
     /// <p>The Amazon Resource Name (ARN) of the channel.</p>
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_arn(input.into());
@@ -109,5 +117,9 @@ impl DescribeMediaStorageConfigurationFluentBuilder {
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_channel_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the channel.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_arn()
     }
 }

@@ -119,6 +119,10 @@ impl JobDataBuilder {
         self.action_type_id = input;
         self
     }
+    /// <p>Represents information about an action type.</p>
+    pub fn get_action_type_id(&self) -> &::std::option::Option<crate::types::ActionTypeId> {
+        &self.action_type_id
+    }
     /// <p>Represents information about an action configuration.</p>
     pub fn action_configuration(mut self, input: crate::types::ActionConfiguration) -> Self {
         self.action_configuration = ::std::option::Option::Some(input);
@@ -131,6 +135,12 @@ impl JobDataBuilder {
     ) -> Self {
         self.action_configuration = input;
         self
+    }
+    /// <p>Represents information about an action configuration.</p>
+    pub fn get_action_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ActionConfiguration> {
+        &self.action_configuration
     }
     /// <p>Represents information about a pipeline to a job worker.</p> <note>
     /// <p>Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for custom jobs.</p>
@@ -148,6 +158,12 @@ impl JobDataBuilder {
     ) -> Self {
         self.pipeline_context = input;
         self
+    }
+    /// <p>Represents information about a pipeline to a job worker.</p> <note>
+    /// <p>Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for custom jobs.</p>
+    /// </note>
+    pub fn get_pipeline_context(&self) -> &::std::option::Option<crate::types::PipelineContext> {
+        &self.pipeline_context
     }
     /// Appends an item to `input_artifacts`.
     ///
@@ -168,6 +184,12 @@ impl JobDataBuilder {
         self.input_artifacts = input;
         self
     }
+    /// <p>The artifact supplied to the job.</p>
+    pub fn get_input_artifacts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Artifact>> {
+        &self.input_artifacts
+    }
     /// Appends an item to `output_artifacts`.
     ///
     /// To override the contents of this collection use [`set_output_artifacts`](Self::set_output_artifacts).
@@ -187,6 +209,12 @@ impl JobDataBuilder {
         self.output_artifacts = input;
         self
     }
+    /// <p>The output of the job.</p>
+    pub fn get_output_artifacts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Artifact>> {
+        &self.output_artifacts
+    }
     /// <p>Represents an Amazon Web Services session credentials object. These credentials are temporary credentials that are issued by Amazon Web Services Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifacts for the pipeline in CodePipeline.</p>
     pub fn artifact_credentials(mut self, input: crate::types::AwsSessionCredentials) -> Self {
         self.artifact_credentials = ::std::option::Option::Some(input);
@@ -199,6 +227,12 @@ impl JobDataBuilder {
     ) -> Self {
         self.artifact_credentials = input;
         self
+    }
+    /// <p>Represents an Amazon Web Services session credentials object. These credentials are temporary credentials that are issued by Amazon Web Services Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifacts for the pipeline in CodePipeline.</p>
+    pub fn get_artifact_credentials(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsSessionCredentials> {
+        &self.artifact_credentials
     }
     /// <p>A system-generated token, such as a deployment ID, required by a job to continue the job asynchronously.</p>
     pub fn continuation_token(
@@ -216,6 +250,10 @@ impl JobDataBuilder {
         self.continuation_token = input;
         self
     }
+    /// <p>A system-generated token, such as a deployment ID, required by a job to continue the job asynchronously.</p>
+    pub fn get_continuation_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.continuation_token
+    }
     /// <p>Represents information about the key used to encrypt data in the artifact store, such as an KMS key. </p>
     pub fn encryption_key(mut self, input: crate::types::EncryptionKey) -> Self {
         self.encryption_key = ::std::option::Option::Some(input);
@@ -228,6 +266,10 @@ impl JobDataBuilder {
     ) -> Self {
         self.encryption_key = input;
         self
+    }
+    /// <p>Represents information about the key used to encrypt data in the artifact store, such as an KMS key. </p>
+    pub fn get_encryption_key(&self) -> &::std::option::Option<crate::types::EncryptionKey> {
+        &self.encryption_key
     }
     /// Consumes the builder and constructs a [`JobData`](crate::types::JobData).
     pub fn build(self) -> crate::types::JobData {

@@ -108,6 +108,10 @@ impl SettingsBuilder {
         self.is_aws_org_enabled = input;
         self
     }
+    /// <p> Specifies whether Organizations is enabled. </p>
+    pub fn get_is_aws_org_enabled(&self) -> &::std::option::Option<bool> {
+        &self.is_aws_org_enabled
+    }
     /// <p> The designated Amazon Simple Notification Service (Amazon SNS) topic. </p>
     pub fn sns_topic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic = ::std::option::Option::Some(input.into());
@@ -117,6 +121,10 @@ impl SettingsBuilder {
     pub fn set_sns_topic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sns_topic = input;
         self
+    }
+    /// <p> The designated Amazon Simple Notification Service (Amazon SNS) topic. </p>
+    pub fn get_sns_topic(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sns_topic
     }
     /// <p>The default S3 destination bucket for storing assessment reports.</p>
     pub fn default_assessment_reports_destination(
@@ -133,6 +141,12 @@ impl SettingsBuilder {
     ) -> Self {
         self.default_assessment_reports_destination = input;
         self
+    }
+    /// <p>The default S3 destination bucket for storing assessment reports.</p>
+    pub fn get_default_assessment_reports_destination(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssessmentReportsDestination> {
+        &self.default_assessment_reports_destination
     }
     /// Appends an item to `default_process_owners`.
     ///
@@ -153,6 +167,12 @@ impl SettingsBuilder {
         self.default_process_owners = input;
         self
     }
+    /// <p> The designated default audit owners. </p>
+    pub fn get_default_process_owners(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Role>> {
+        &self.default_process_owners
+    }
     /// <p> The KMS key details. </p>
     pub fn kms_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key = ::std::option::Option::Some(input.into());
@@ -162,6 +182,10 @@ impl SettingsBuilder {
     pub fn set_kms_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key = input;
         self
+    }
+    /// <p> The KMS key details. </p>
+    pub fn get_kms_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key
     }
     /// <p>The current evidence finder status and event data store details.</p>
     pub fn evidence_finder_enablement(
@@ -179,6 +203,12 @@ impl SettingsBuilder {
         self.evidence_finder_enablement = input;
         self
     }
+    /// <p>The current evidence finder status and event data store details.</p>
+    pub fn get_evidence_finder_enablement(
+        &self,
+    ) -> &::std::option::Option<crate::types::EvidenceFinderEnablement> {
+        &self.evidence_finder_enablement
+    }
     /// <p>The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is handled when you deregister Audit Manager.</p>
     pub fn deregistration_policy(mut self, input: crate::types::DeregistrationPolicy) -> Self {
         self.deregistration_policy = ::std::option::Option::Some(input);
@@ -191,6 +221,12 @@ impl SettingsBuilder {
     ) -> Self {
         self.deregistration_policy = input;
         self
+    }
+    /// <p>The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is handled when you deregister Audit Manager.</p>
+    pub fn get_deregistration_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeregistrationPolicy> {
+        &self.deregistration_policy
     }
     /// <p>The default S3 destination bucket for storing evidence finder exports.</p>
     pub fn default_export_destination(
@@ -207,6 +243,12 @@ impl SettingsBuilder {
     ) -> Self {
         self.default_export_destination = input;
         self
+    }
+    /// <p>The default S3 destination bucket for storing evidence finder exports.</p>
+    pub fn get_default_export_destination(
+        &self,
+    ) -> &::std::option::Option<crate::types::DefaultExportDestination> {
+        &self.default_export_destination
     }
     /// Consumes the builder and constructs a [`Settings`](crate::types::Settings).
     pub fn build(self) -> crate::types::Settings {

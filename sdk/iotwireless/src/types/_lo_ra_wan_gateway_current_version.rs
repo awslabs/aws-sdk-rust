@@ -43,6 +43,12 @@ impl LoRaWanGatewayCurrentVersionBuilder {
         self.current_version = input;
         self
     }
+    /// <p>The version of the gateways that should receive the update.</p>
+    pub fn get_current_version(
+        &self,
+    ) -> &::std::option::Option<crate::types::LoRaWanGatewayVersion> {
+        &self.current_version
+    }
     /// Consumes the builder and constructs a [`LoRaWanGatewayCurrentVersion`](crate::types::LoRaWanGatewayCurrentVersion).
     pub fn build(self) -> crate::types::LoRaWanGatewayCurrentVersion {
         crate::types::LoRaWanGatewayCurrentVersion {

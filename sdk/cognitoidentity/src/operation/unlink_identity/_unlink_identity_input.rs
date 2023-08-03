@@ -64,6 +64,10 @@ impl UnlinkIdentityInputBuilder {
         self.identity_id = input;
         self
     }
+    /// <p>A unique identifier in the format REGION:GUID.</p>
+    pub fn get_identity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_id
+    }
     /// Adds a key-value pair to `logins`.
     ///
     /// To override the contents of this collection use [`set_logins`](Self::set_logins).
@@ -89,6 +93,14 @@ impl UnlinkIdentityInputBuilder {
         self.logins = input;
         self
     }
+    /// <p>A set of optional name-value pairs that map provider names to provider tokens.</p>
+    pub fn get_logins(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.logins
+    }
     /// Appends an item to `logins_to_remove`.
     ///
     /// To override the contents of this collection use [`set_logins_to_remove`](Self::set_logins_to_remove).
@@ -110,6 +122,12 @@ impl UnlinkIdentityInputBuilder {
     ) -> Self {
         self.logins_to_remove = input;
         self
+    }
+    /// <p>Provider names to unlink from this identity.</p>
+    pub fn get_logins_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.logins_to_remove
     }
     /// Consumes the builder and constructs a [`UnlinkIdentityInput`](crate::operation::unlink_identity::UnlinkIdentityInput).
     pub fn build(

@@ -61,6 +61,10 @@ impl CreateRoutingProfileOutputBuilder {
         self.routing_profile_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
+    pub fn get_routing_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.routing_profile_arn
+    }
     /// <p>The identifier of the routing profile.</p>
     pub fn routing_profile_id(
         mut self,
@@ -76,6 +80,10 @@ impl CreateRoutingProfileOutputBuilder {
     ) -> Self {
         self.routing_profile_id = input;
         self
+    }
+    /// <p>The identifier of the routing profile.</p>
+    pub fn get_routing_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.routing_profile_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

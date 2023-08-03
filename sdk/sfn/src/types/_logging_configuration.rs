@@ -56,6 +56,10 @@ impl LoggingConfigurationBuilder {
         self.level = input;
         self
     }
+    /// <p>Defines which category of execution history events are logged.</p>
+    pub fn get_level(&self) -> &::std::option::Option<crate::types::LogLevel> {
+        &self.level
+    }
     /// <p>Determines whether execution data is included in your log. When set to <code>false</code>, data is excluded.</p>
     pub fn include_execution_data(mut self, input: bool) -> Self {
         self.include_execution_data = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl LoggingConfigurationBuilder {
     pub fn set_include_execution_data(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_execution_data = input;
         self
+    }
+    /// <p>Determines whether execution data is included in your log. When set to <code>false</code>, data is excluded.</p>
+    pub fn get_include_execution_data(&self) -> &::std::option::Option<bool> {
+        &self.include_execution_data
     }
     /// Appends an item to `destinations`.
     ///
@@ -84,6 +92,12 @@ impl LoggingConfigurationBuilder {
     ) -> Self {
         self.destinations = input;
         self
+    }
+    /// <p>An array of objects that describes where your execution history events will be logged. Limited to size 1. Required, if your log level is not set to <code>OFF</code>.</p>
+    pub fn get_destinations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LogDestination>> {
+        &self.destinations
     }
     /// Consumes the builder and constructs a [`LoggingConfiguration`](crate::types::LoggingConfiguration).
     pub fn build(self) -> crate::types::LoggingConfiguration {

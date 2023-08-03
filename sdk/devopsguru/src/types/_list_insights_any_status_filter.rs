@@ -48,6 +48,10 @@ impl ListInsightsAnyStatusFilterBuilder {
         self.r#type = input;
         self
     }
+    /// <p> Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights. </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::InsightType> {
+        &self.r#type
+    }
     /// <p> A time range used to specify when the behavior of the filtered insights started. </p>
     pub fn start_time_range(mut self, input: crate::types::StartTimeRange) -> Self {
         self.start_time_range = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl ListInsightsAnyStatusFilterBuilder {
     ) -> Self {
         self.start_time_range = input;
         self
+    }
+    /// <p> A time range used to specify when the behavior of the filtered insights started. </p>
+    pub fn get_start_time_range(&self) -> &::std::option::Option<crate::types::StartTimeRange> {
+        &self.start_time_range
     }
     /// Consumes the builder and constructs a [`ListInsightsAnyStatusFilter`](crate::types::ListInsightsAnyStatusFilter).
     pub fn build(self) -> crate::types::ListInsightsAnyStatusFilter {

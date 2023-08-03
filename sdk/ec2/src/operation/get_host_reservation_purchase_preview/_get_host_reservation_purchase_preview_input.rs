@@ -56,6 +56,12 @@ impl GetHostReservationPurchasePreviewInputBuilder {
         self.host_id_set = input;
         self
     }
+    /// <p>The IDs of the Dedicated Hosts with which the reservation is associated.</p>
+    pub fn get_host_id_set(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.host_id_set
+    }
     /// <p>The offering ID of the reservation.</p>
     pub fn offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.offering_id = ::std::option::Option::Some(input.into());
@@ -65,6 +71,10 @@ impl GetHostReservationPurchasePreviewInputBuilder {
     pub fn set_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.offering_id = input;
         self
+    }
+    /// <p>The offering ID of the reservation.</p>
+    pub fn get_offering_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.offering_id
     }
     /// Consumes the builder and constructs a [`GetHostReservationPurchasePreviewInput`](crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewInput, ::aws_smithy_http::operation::error::BuildError>{

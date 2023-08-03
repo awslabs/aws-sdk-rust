@@ -40,6 +40,10 @@ impl GetStreamingDistributionConfigInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The streaming distribution's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`GetStreamingDistributionConfigInput`](crate::operation::get_streaming_distribution_config::GetStreamingDistributionConfigInput).
     pub fn build(
         self,

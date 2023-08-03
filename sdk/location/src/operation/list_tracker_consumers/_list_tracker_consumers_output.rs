@@ -67,6 +67,12 @@ impl ListTrackerConsumersOutputBuilder {
         self.consumer_arns = input;
         self
     }
+    /// <p>Contains the list of geofence collection ARNs associated to the tracker resource.</p>
+    pub fn get_consumer_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.consumer_arns
+    }
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -76,6 +82,10 @@ impl ListTrackerConsumersOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

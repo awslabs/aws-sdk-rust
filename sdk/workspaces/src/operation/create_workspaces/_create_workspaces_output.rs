@@ -70,6 +70,12 @@ impl CreateWorkspacesOutputBuilder {
         self.failed_requests = input;
         self
     }
+    /// <p>Information about the WorkSpaces that could not be created.</p>
+    pub fn get_failed_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedCreateWorkspaceRequest>> {
+        &self.failed_requests
+    }
     /// Appends an item to `pending_requests`.
     ///
     /// To override the contents of this collection use [`set_pending_requests`](Self::set_pending_requests).
@@ -90,6 +96,13 @@ impl CreateWorkspacesOutputBuilder {
     ) -> Self {
         self.pending_requests = input;
         self
+    }
+    /// <p>Information about the WorkSpaces that were created.</p>
+    /// <p>Because this operation is asynchronous, the identifier returned is not immediately available for use with other operations. For example, if you call <code>DescribeWorkspaces</code> before the WorkSpace is created, the information returned can be incomplete.</p>
+    pub fn get_pending_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Workspace>> {
+        &self.pending_requests
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

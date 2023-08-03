@@ -50,6 +50,10 @@ impl UpdateRegistryInputBuilder {
         self.registry_id = input;
         self
     }
+    /// <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<crate::types::RegistryId> {
+        &self.registry_id
+    }
     /// <p>A description of the registry. If description is not provided, this field will not be updated.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -59,6 +63,10 @@ impl UpdateRegistryInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the registry. If description is not provided, this field will not be updated.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`UpdateRegistryInput`](crate::operation::update_registry::UpdateRegistryInput).
     pub fn build(

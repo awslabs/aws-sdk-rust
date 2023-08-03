@@ -130,6 +130,10 @@ impl DescribePackageImportJobOutputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The job's ID.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>The job's client token.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -139,6 +143,10 @@ impl DescribePackageImportJobOutputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>The job's client token.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>The job's type.</p>
     pub fn job_type(mut self, input: crate::types::PackageImportJobType) -> Self {
@@ -153,6 +161,10 @@ impl DescribePackageImportJobOutputBuilder {
         self.job_type = input;
         self
     }
+    /// <p>The job's type.</p>
+    pub fn get_job_type(&self) -> &::std::option::Option<crate::types::PackageImportJobType> {
+        &self.job_type
+    }
     /// <p>The job's input config.</p>
     pub fn input_config(mut self, input: crate::types::PackageImportJobInputConfig) -> Self {
         self.input_config = ::std::option::Option::Some(input);
@@ -165,6 +177,12 @@ impl DescribePackageImportJobOutputBuilder {
     ) -> Self {
         self.input_config = input;
         self
+    }
+    /// <p>The job's input config.</p>
+    pub fn get_input_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::PackageImportJobInputConfig> {
+        &self.input_config
     }
     /// <p>The job's output config.</p>
     pub fn output_config(mut self, input: crate::types::PackageImportJobOutputConfig) -> Self {
@@ -179,6 +197,12 @@ impl DescribePackageImportJobOutputBuilder {
         self.output_config = input;
         self
     }
+    /// <p>The job's output config.</p>
+    pub fn get_output_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::PackageImportJobOutputConfig> {
+        &self.output_config
+    }
     /// <p>The job's output.</p>
     pub fn output(mut self, input: crate::types::PackageImportJobOutput) -> Self {
         self.output = ::std::option::Option::Some(input);
@@ -191,6 +215,10 @@ impl DescribePackageImportJobOutputBuilder {
     ) -> Self {
         self.output = input;
         self
+    }
+    /// <p>The job's output.</p>
+    pub fn get_output(&self) -> &::std::option::Option<crate::types::PackageImportJobOutput> {
+        &self.output
     }
     /// <p>When the job was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -205,6 +233,10 @@ impl DescribePackageImportJobOutputBuilder {
         self.created_time = input;
         self
     }
+    /// <p>When the job was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>When the job was updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -218,6 +250,10 @@ impl DescribePackageImportJobOutputBuilder {
         self.last_updated_time = input;
         self
     }
+    /// <p>When the job was updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
+    }
     /// <p>The job's status.</p>
     pub fn status(mut self, input: crate::types::PackageImportJobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -230,6 +266,10 @@ impl DescribePackageImportJobOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The job's status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::PackageImportJobStatus> {
+        &self.status
     }
     /// <p>The job's status message.</p>
     pub fn status_message(
@@ -246,6 +286,10 @@ impl DescribePackageImportJobOutputBuilder {
     ) -> Self {
         self.status_message = input;
         self
+    }
+    /// <p>The job's status message.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// Appends an item to `job_tags`.
     ///
@@ -265,6 +309,12 @@ impl DescribePackageImportJobOutputBuilder {
     ) -> Self {
         self.job_tags = input;
         self
+    }
+    /// <p>The job's tags.</p>
+    pub fn get_job_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobResourceTags>> {
+        &self.job_tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

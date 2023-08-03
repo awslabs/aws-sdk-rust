@@ -51,6 +51,10 @@ impl DeleteBucketAccessKeyInputBuilder {
         self.bucket_name = input;
         self
     }
+    /// <p>The name of the bucket that the access key belongs to.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
+    }
     /// <p>The ID of the access key to delete.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketAccessKeys.html">GetBucketAccessKeys</a> action to get a list of access key IDs that you can specify.</p>
     pub fn access_key_id(
@@ -68,6 +72,11 @@ impl DeleteBucketAccessKeyInputBuilder {
     ) -> Self {
         self.access_key_id = input;
         self
+    }
+    /// <p>The ID of the access key to delete.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketAccessKeys.html">GetBucketAccessKeys</a> action to get a list of access key IDs that you can specify.</p>
+    pub fn get_access_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_key_id
     }
     /// Consumes the builder and constructs a [`DeleteBucketAccessKeyInput`](crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyInput).
     pub fn build(

@@ -65,6 +65,10 @@ impl ExecuteQueryInputBuilder {
         self.workspace_id = input;
         self
     }
+    /// <p>The ID of the workspace.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
+    }
     /// <p>The query statement.</p>
     pub fn query_statement(
         mut self,
@@ -81,6 +85,10 @@ impl ExecuteQueryInputBuilder {
         self.query_statement = input;
         self
     }
+    /// <p>The query statement.</p>
+    pub fn get_query_statement(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_statement
+    }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -93,6 +101,11 @@ impl ExecuteQueryInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The string that specifies the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -102,6 +115,10 @@ impl ExecuteQueryInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The string that specifies the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ExecuteQueryInput`](crate::operation::execute_query::ExecuteQueryInput).
     pub fn build(

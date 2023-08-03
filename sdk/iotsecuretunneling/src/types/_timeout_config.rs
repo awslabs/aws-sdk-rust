@@ -40,6 +40,10 @@ impl TimeoutConfigBuilder {
         self.max_lifetime_timeout_minutes = input;
         self
     }
+    /// <p>The maximum amount of time (in minutes) a tunnel can remain open. If not specified, maxLifetimeTimeoutMinutes defaults to 720 minutes. Valid values are from 1 minute to 12 hours (720 minutes) </p>
+    pub fn get_max_lifetime_timeout_minutes(&self) -> &::std::option::Option<i32> {
+        &self.max_lifetime_timeout_minutes
+    }
     /// Consumes the builder and constructs a [`TimeoutConfig`](crate::types::TimeoutConfig).
     pub fn build(self) -> crate::types::TimeoutConfig {
         crate::types::TimeoutConfig {

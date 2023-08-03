@@ -38,6 +38,10 @@ impl DetectStackResourceDriftFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DetectStackResourceDrift as a reference.
+    pub fn as_input(&self) -> &crate::operation::detect_stack_resource_drift::builders::DetectStackResourceDriftInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +132,10 @@ impl DetectStackResourceDriftFluentBuilder {
         self.inner = self.inner.set_stack_name(input);
         self
     }
+    /// <p>The name of the stack to which the resource belongs.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_name()
+    }
     /// <p>The logical name of the resource for which to return drift information.</p>
     pub fn logical_resource_id(
         mut self,
@@ -143,5 +151,9 @@ impl DetectStackResourceDriftFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_logical_resource_id(input);
         self
+    }
+    /// <p>The logical name of the resource for which to return drift information.</p>
+    pub fn get_logical_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_logical_resource_id()
     }
 }

@@ -43,6 +43,10 @@ impl ExternalMetricsPreferenceBuilder {
         self.source = input;
         self
     }
+    /// <p> Contains the source options for external metrics preferences. </p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::ExternalMetricsSource> {
+        &self.source
+    }
     /// Consumes the builder and constructs a [`ExternalMetricsPreference`](crate::types::ExternalMetricsPreference).
     pub fn build(self) -> crate::types::ExternalMetricsPreference {
         crate::types::ExternalMetricsPreference {

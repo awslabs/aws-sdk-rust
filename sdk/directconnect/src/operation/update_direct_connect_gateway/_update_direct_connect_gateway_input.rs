@@ -53,6 +53,10 @@ impl UpdateDirectConnectGatewayInputBuilder {
         self.direct_connect_gateway_id = input;
         self
     }
+    /// <p>The ID of the Direct Connect gateway to update.</p>
+    pub fn get_direct_connect_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.direct_connect_gateway_id
+    }
     /// <p>The new name for the Direct Connect gateway.</p>
     pub fn new_direct_connect_gateway_name(
         mut self,
@@ -68,6 +72,12 @@ impl UpdateDirectConnectGatewayInputBuilder {
     ) -> Self {
         self.new_direct_connect_gateway_name = input;
         self
+    }
+    /// <p>The new name for the Direct Connect gateway.</p>
+    pub fn get_new_direct_connect_gateway_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.new_direct_connect_gateway_name
     }
     /// Consumes the builder and constructs a [`UpdateDirectConnectGatewayInput`](crate::operation::update_direct_connect_gateway::UpdateDirectConnectGatewayInput).
     pub fn build(

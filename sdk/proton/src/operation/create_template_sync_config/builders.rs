@@ -37,6 +37,10 @@ impl CreateTemplateSyncConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateTemplateSyncConfig as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_template_sync_config::builders::CreateTemplateSyncConfigInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl CreateTemplateSyncConfigFluentBuilder {
         self.inner = self.inner.set_template_name(input);
         self
     }
+    /// <p>The name of your registered template.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_name()
+    }
     /// <p>The type of the registered template.</p>
     pub fn template_type(mut self, input: crate::types::TemplateType) -> Self {
         self.inner = self.inner.template_type(input);
@@ -146,6 +154,10 @@ impl CreateTemplateSyncConfigFluentBuilder {
         self.inner = self.inner.set_template_type(input);
         self
     }
+    /// <p>The type of the registered template.</p>
+    pub fn get_template_type(&self) -> &::std::option::Option<crate::types::TemplateType> {
+        self.inner.get_template_type()
+    }
     /// <p>The provider type for your repository.</p>
     pub fn repository_provider(mut self, input: crate::types::RepositoryProvider) -> Self {
         self.inner = self.inner.repository_provider(input);
@@ -158,6 +170,12 @@ impl CreateTemplateSyncConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_repository_provider(input);
         self
+    }
+    /// <p>The provider type for your repository.</p>
+    pub fn get_repository_provider(
+        &self,
+    ) -> &::std::option::Option<crate::types::RepositoryProvider> {
+        self.inner.get_repository_provider()
     }
     /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
     pub fn repository_name(
@@ -175,6 +193,10 @@ impl CreateTemplateSyncConfigFluentBuilder {
         self.inner = self.inner.set_repository_name(input);
         self
     }
+    /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository_name()
+    }
     /// <p>The repository branch for your template.</p>
     pub fn branch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.branch(input.into());
@@ -185,6 +207,10 @@ impl CreateTemplateSyncConfigFluentBuilder {
         self.inner = self.inner.set_branch(input);
         self
     }
+    /// <p>The repository branch for your template.</p>
+    pub fn get_branch(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_branch()
+    }
     /// <p>A repository subdirectory path to your template bundle directory. When included, Proton limits the template bundle search to this repository directory.</p>
     pub fn subdirectory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subdirectory(input.into());
@@ -194,5 +220,9 @@ impl CreateTemplateSyncConfigFluentBuilder {
     pub fn set_subdirectory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subdirectory(input);
         self
+    }
+    /// <p>A repository subdirectory path to your template bundle directory. When included, Proton limits the template bundle search to this repository directory.</p>
+    pub fn get_subdirectory(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_subdirectory()
     }
 }

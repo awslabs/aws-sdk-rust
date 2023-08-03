@@ -36,6 +36,12 @@ impl CreatePublicKeyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreatePublicKey as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_public_key::builders::CreatePublicKeyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,5 +134,9 @@ impl CreatePublicKeyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_public_key_config(input);
         self
+    }
+    /// <p>A CloudFront public key configuration.</p>
+    pub fn get_public_key_config(&self) -> &::std::option::Option<crate::types::PublicKeyConfig> {
+        self.inner.get_public_key_config()
     }
 }

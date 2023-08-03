@@ -48,6 +48,10 @@ impl EmailContentBuilder {
         self.subject = input;
         self
     }
+    /// <p>The subject of the email.</p>
+    pub fn get_subject(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subject
+    }
     /// <p>The message that you want to send. The message can be up to 200 characters.</p>
     pub fn additional_message(
         mut self,
@@ -63,6 +67,10 @@ impl EmailContentBuilder {
     ) -> Self {
         self.additional_message = input;
         self
+    }
+    /// <p>The message that you want to send. The message can be up to 200 characters.</p>
+    pub fn get_additional_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.additional_message
     }
     /// Consumes the builder and constructs a [`EmailContent`](crate::types::EmailContent).
     pub fn build(self) -> crate::types::EmailContent {

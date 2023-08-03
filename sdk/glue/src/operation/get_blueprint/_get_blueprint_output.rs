@@ -46,6 +46,10 @@ impl GetBlueprintOutputBuilder {
         self.blueprint = input;
         self
     }
+    /// <p>Returns a <code>Blueprint</code> object.</p>
+    pub fn get_blueprint(&self) -> &::std::option::Option<crate::types::Blueprint> {
+        &self.blueprint
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

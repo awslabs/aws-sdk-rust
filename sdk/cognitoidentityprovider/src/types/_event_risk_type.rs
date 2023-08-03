@@ -59,6 +59,10 @@ impl EventRiskTypeBuilder {
         self.risk_decision = input;
         self
     }
+    /// <p>The risk decision.</p>
+    pub fn get_risk_decision(&self) -> &::std::option::Option<crate::types::RiskDecisionType> {
+        &self.risk_decision
+    }
     /// <p>The risk level.</p>
     pub fn risk_level(mut self, input: crate::types::RiskLevelType) -> Self {
         self.risk_level = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl EventRiskTypeBuilder {
         self.risk_level = input;
         self
     }
+    /// <p>The risk level.</p>
+    pub fn get_risk_level(&self) -> &::std::option::Option<crate::types::RiskLevelType> {
+        &self.risk_level
+    }
     /// <p>Indicates whether compromised credentials were detected during an authentication event.</p>
     pub fn compromised_credentials_detected(mut self, input: bool) -> Self {
         self.compromised_credentials_detected = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl EventRiskTypeBuilder {
     ) -> Self {
         self.compromised_credentials_detected = input;
         self
+    }
+    /// <p>Indicates whether compromised credentials were detected during an authentication event.</p>
+    pub fn get_compromised_credentials_detected(&self) -> &::std::option::Option<bool> {
+        &self.compromised_credentials_detected
     }
     /// Consumes the builder and constructs a [`EventRiskType`](crate::types::EventRiskType).
     pub fn build(self) -> crate::types::EventRiskType {

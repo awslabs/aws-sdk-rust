@@ -75,6 +75,10 @@ impl StartPipelineReprocessingInputBuilder {
         self.pipeline_name = input;
         self
     }
+    /// <p>The name of the pipeline on which to start reprocessing.</p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_name
+    }
     /// <p>The start time (inclusive) of raw message data that is reprocessed.</p>
     /// <p>If you specify a value for the <code>startTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -89,6 +93,11 @@ impl StartPipelineReprocessingInputBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>The start time (inclusive) of raw message data that is reprocessed.</p>
+    /// <p>If you specify a value for the <code>startTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>The end time (exclusive) of raw message data that is reprocessed.</p>
     /// <p>If you specify a value for the <code>endTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
@@ -105,6 +114,11 @@ impl StartPipelineReprocessingInputBuilder {
         self.end_time = input;
         self
     }
+    /// <p>The end time (exclusive) of raw message data that is reprocessed.</p>
+    /// <p>If you specify a value for the <code>endTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>Specifies one or more sets of channel messages that you want to reprocess.</p>
     /// <p>If you use the <code>channelMessages</code> object, you must not specify a value for <code>startTime</code> and <code>endTime</code>.</p>
     pub fn channel_messages(mut self, input: crate::types::ChannelMessages) -> Self {
@@ -119,6 +133,11 @@ impl StartPipelineReprocessingInputBuilder {
     ) -> Self {
         self.channel_messages = input;
         self
+    }
+    /// <p>Specifies one or more sets of channel messages that you want to reprocess.</p>
+    /// <p>If you use the <code>channelMessages</code> object, you must not specify a value for <code>startTime</code> and <code>endTime</code>.</p>
+    pub fn get_channel_messages(&self) -> &::std::option::Option<crate::types::ChannelMessages> {
+        &self.channel_messages
     }
     /// Consumes the builder and constructs a [`StartPipelineReprocessingInput`](crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingInput).
     pub fn build(

@@ -182,6 +182,10 @@ impl LoadBalancerDescriptionBuilder {
         self.load_balancer_name = input;
         self
     }
+    /// <p>The name of the load balancer.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.load_balancer_name
+    }
     /// <p>The DNS name of the load balancer.</p>
     pub fn dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dns_name = ::std::option::Option::Some(input.into());
@@ -191,6 +195,10 @@ impl LoadBalancerDescriptionBuilder {
     pub fn set_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dns_name = input;
         self
+    }
+    /// <p>The DNS name of the load balancer.</p>
+    pub fn get_dns_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dns_name
     }
     /// <p>The DNS name of the load balancer.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.</p>
@@ -210,6 +218,11 @@ impl LoadBalancerDescriptionBuilder {
         self.canonical_hosted_zone_name = input;
         self
     }
+    /// <p>The DNS name of the load balancer.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.</p>
+    pub fn get_canonical_hosted_zone_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.canonical_hosted_zone_name
+    }
     /// <p>The ID of the Amazon Route 53 hosted zone for the load balancer.</p>
     pub fn canonical_hosted_zone_name_id(
         mut self,
@@ -225,6 +238,12 @@ impl LoadBalancerDescriptionBuilder {
     ) -> Self {
         self.canonical_hosted_zone_name_id = input;
         self
+    }
+    /// <p>The ID of the Amazon Route 53 hosted zone for the load balancer.</p>
+    pub fn get_canonical_hosted_zone_name_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.canonical_hosted_zone_name_id
     }
     /// Appends an item to `listener_descriptions`.
     ///
@@ -245,6 +264,12 @@ impl LoadBalancerDescriptionBuilder {
         self.listener_descriptions = input;
         self
     }
+    /// <p>The listeners for the load balancer.</p>
+    pub fn get_listener_descriptions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListenerDescription>> {
+        &self.listener_descriptions
+    }
     /// <p>The policies defined for the load balancer.</p>
     pub fn policies(mut self, input: crate::types::Policies) -> Self {
         self.policies = ::std::option::Option::Some(input);
@@ -254,6 +279,10 @@ impl LoadBalancerDescriptionBuilder {
     pub fn set_policies(mut self, input: ::std::option::Option<crate::types::Policies>) -> Self {
         self.policies = input;
         self
+    }
+    /// <p>The policies defined for the load balancer.</p>
+    pub fn get_policies(&self) -> &::std::option::Option<crate::types::Policies> {
+        &self.policies
     }
     /// Appends an item to `backend_server_descriptions`.
     ///
@@ -277,6 +306,12 @@ impl LoadBalancerDescriptionBuilder {
         self.backend_server_descriptions = input;
         self
     }
+    /// <p>Information about your EC2 instances.</p>
+    pub fn get_backend_server_descriptions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BackendServerDescription>> {
+        &self.backend_server_descriptions
+    }
     /// Appends an item to `availability_zones`.
     ///
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
@@ -299,6 +334,12 @@ impl LoadBalancerDescriptionBuilder {
         self.availability_zones = input;
         self
     }
+    /// <p>The Availability Zones for the load balancer.</p>
+    pub fn get_availability_zones(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.availability_zones
+    }
     /// Appends an item to `subnets`.
     ///
     /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
@@ -318,6 +359,10 @@ impl LoadBalancerDescriptionBuilder {
         self.subnets = input;
         self
     }
+    /// <p>The IDs of the subnets for the load balancer.</p>
+    pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnets
+    }
     /// <p>The ID of the VPC for the load balancer.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -327,6 +372,10 @@ impl LoadBalancerDescriptionBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The ID of the VPC for the load balancer.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Appends an item to `instances`.
     ///
@@ -347,6 +396,10 @@ impl LoadBalancerDescriptionBuilder {
         self.instances = input;
         self
     }
+    /// <p>The IDs of the instances for the load balancer.</p>
+    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Instance>> {
+        &self.instances
+    }
     /// <p>Information about the health checks conducted on the load balancer.</p>
     pub fn health_check(mut self, input: crate::types::HealthCheck) -> Self {
         self.health_check = ::std::option::Option::Some(input);
@@ -360,6 +413,10 @@ impl LoadBalancerDescriptionBuilder {
         self.health_check = input;
         self
     }
+    /// <p>Information about the health checks conducted on the load balancer.</p>
+    pub fn get_health_check(&self) -> &::std::option::Option<crate::types::HealthCheck> {
+        &self.health_check
+    }
     /// <p>The security group for the load balancer, which you can use as part of your inbound rules for your registered instances. To only allow traffic from load balancers, add a security group rule that specifies this source security group as the inbound source.</p>
     pub fn source_security_group(mut self, input: crate::types::SourceSecurityGroup) -> Self {
         self.source_security_group = ::std::option::Option::Some(input);
@@ -372,6 +429,12 @@ impl LoadBalancerDescriptionBuilder {
     ) -> Self {
         self.source_security_group = input;
         self
+    }
+    /// <p>The security group for the load balancer, which you can use as part of your inbound rules for your registered instances. To only allow traffic from load balancers, add a security group rule that specifies this source security group as the inbound source.</p>
+    pub fn get_source_security_group(
+        &self,
+    ) -> &::std::option::Option<crate::types::SourceSecurityGroup> {
+        &self.source_security_group
     }
     /// Appends an item to `security_groups`.
     ///
@@ -395,6 +458,12 @@ impl LoadBalancerDescriptionBuilder {
         self.security_groups = input;
         self
     }
+    /// <p>The security groups for the load balancer. Valid only for load balancers in a VPC.</p>
+    pub fn get_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_groups
+    }
     /// <p>The date and time the load balancer was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
@@ -407,6 +476,10 @@ impl LoadBalancerDescriptionBuilder {
     ) -> Self {
         self.created_time = input;
         self
+    }
+    /// <p>The date and time the load balancer was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
     }
     /// <p>The type of load balancer. Valid only for load balancers in a VPC.</p>
     /// <p>If <code>Scheme</code> is <code>internet-facing</code>, the load balancer has a public DNS name that resolves to a public IP address.</p>
@@ -421,6 +494,12 @@ impl LoadBalancerDescriptionBuilder {
     pub fn set_scheme(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scheme = input;
         self
+    }
+    /// <p>The type of load balancer. Valid only for load balancers in a VPC.</p>
+    /// <p>If <code>Scheme</code> is <code>internet-facing</code>, the load balancer has a public DNS name that resolves to a public IP address.</p>
+    /// <p>If <code>Scheme</code> is <code>internal</code>, the load balancer has a public DNS name that resolves to a private IP address.</p>
+    pub fn get_scheme(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scheme
     }
     /// Consumes the builder and constructs a [`LoadBalancerDescription`](crate::types::LoadBalancerDescription).
     pub fn build(self) -> crate::types::LoadBalancerDescription {

@@ -54,6 +54,10 @@ impl DeleteBranchInputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository that contains the branch to be deleted.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The name of the branch to delete.</p>
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch_name = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl DeleteBranchInputBuilder {
     pub fn set_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.branch_name = input;
         self
+    }
+    /// <p>The name of the branch to delete.</p>
+    pub fn get_branch_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.branch_name
     }
     /// Consumes the builder and constructs a [`DeleteBranchInput`](crate::operation::delete_branch::DeleteBranchInput).
     pub fn build(

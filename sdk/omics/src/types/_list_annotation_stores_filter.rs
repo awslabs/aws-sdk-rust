@@ -40,6 +40,10 @@ impl ListAnnotationStoresFilterBuilder {
         self.status = input;
         self
     }
+    /// <p>A status to filter on.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::StoreStatus> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`ListAnnotationStoresFilter`](crate::types::ListAnnotationStoresFilter).
     pub fn build(self) -> crate::types::ListAnnotationStoresFilter {
         crate::types::ListAnnotationStoresFilter {

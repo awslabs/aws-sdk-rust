@@ -58,6 +58,12 @@ impl GetVaultNotificationsOutputBuilder {
         self.vault_notification_config = input;
         self
     }
+    /// <p>Returns the notification configuration set on the vault.</p>
+    pub fn get_vault_notification_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::VaultNotificationConfig> {
+        &self.vault_notification_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -120,6 +120,18 @@ impl EffectiveRecommendationPreferencesBuilder {
         self.cpu_vendor_architectures = input;
         self
     }
+    /// <p>Describes the CPU vendor and architecture for an instance or Auto Scaling group recommendations.</p>
+    /// <p>For example, when you specify <code>AWS_ARM64</code> with:</p>
+    /// <ul>
+    /// <li> <p>A <code>GetEC2InstanceRecommendations</code> or <code>GetAutoScalingGroupRecommendations</code> request, Compute Optimizer returns recommendations that consist of Graviton2 instance types only.</p> </li>
+    /// <li> <p>A <code>GetEC2RecommendationProjectedMetrics</code> request, Compute Optimizer returns projected utilization metrics for Graviton2 instance type recommendations only.</p> </li>
+    /// <li> <p>A <code>ExportEC2InstanceRecommendations</code> or <code>ExportAutoScalingGroupRecommendations</code> request, Compute Optimizer exports recommendations that consist of Graviton2 instance types only.</p> </li>
+    /// </ul>
+    pub fn get_cpu_vendor_architectures(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CpuVendorArchitecture>> {
+        &self.cpu_vendor_architectures
+    }
     /// <p>Describes the activation status of the enhanced infrastructure metrics preference.</p>
     /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
@@ -140,6 +152,14 @@ impl EffectiveRecommendationPreferencesBuilder {
         self.enhanced_infrastructure_metrics = input;
         self
     }
+    /// <p>Describes the activation status of the enhanced infrastructure metrics preference.</p>
+    /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    pub fn get_enhanced_infrastructure_metrics(
+        &self,
+    ) -> &::std::option::Option<crate::types::EnhancedInfrastructureMetrics> {
+        &self.enhanced_infrastructure_metrics
+    }
     /// <p>Describes the activation status of the inferred workload types preference.</p>
     /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh. A status of <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
     pub fn inferred_workload_types(
@@ -158,6 +178,13 @@ impl EffectiveRecommendationPreferencesBuilder {
         self.inferred_workload_types = input;
         self
     }
+    /// <p>Describes the activation status of the inferred workload types preference.</p>
+    /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh. A status of <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
+    pub fn get_inferred_workload_types(
+        &self,
+    ) -> &::std::option::Option<crate::types::InferredWorkloadTypesPreference> {
+        &self.inferred_workload_types
+    }
     /// <p> An object that describes the external metrics recommendation preference. </p>
     /// <p> If the preference is applied in the latest recommendation refresh, an object with a valid <code>source</code> value appears in the response. If the preference isn't applied to the recommendations already, then this object doesn't appear in the response. </p>
     pub fn external_metrics_preference(
@@ -175,6 +202,13 @@ impl EffectiveRecommendationPreferencesBuilder {
     ) -> Self {
         self.external_metrics_preference = input;
         self
+    }
+    /// <p> An object that describes the external metrics recommendation preference. </p>
+    /// <p> If the preference is applied in the latest recommendation refresh, an object with a valid <code>source</code> value appears in the response. If the preference isn't applied to the recommendations already, then this object doesn't appear in the response. </p>
+    pub fn get_external_metrics_preference(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExternalMetricsPreference> {
+        &self.external_metrics_preference
     }
     /// Consumes the builder and constructs a [`EffectiveRecommendationPreferences`](crate::types::EffectiveRecommendationPreferences).
     pub fn build(self) -> crate::types::EffectiveRecommendationPreferences {

@@ -70,6 +70,14 @@ impl TargetBuilder {
         self.target_type = input;
         self
     }
+    /// <p>The target type. Can be an Chatbot topic or Chatbot client.</p>
+    /// <ul>
+    /// <li> <p>Chatbot topics are specified as <code>SNS</code>.</p> </li>
+    /// <li> <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p> </li>
+    /// </ul>
+    pub fn get_target_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_type
+    }
     /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
     pub fn target_address(
         mut self,
@@ -85,6 +93,10 @@ impl TargetBuilder {
     ) -> Self {
         self.target_address = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
+    pub fn get_target_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_address
     }
     /// Consumes the builder and constructs a [`Target`](crate::types::Target).
     pub fn build(self) -> crate::types::Target {

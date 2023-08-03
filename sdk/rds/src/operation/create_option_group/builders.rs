@@ -37,6 +37,12 @@ impl CreateOptionGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateOptionGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_option_group::builders::CreateOptionGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -147,6 +153,17 @@ impl CreateOptionGroupFluentBuilder {
         self.inner = self.inner.set_option_group_name(input);
         self
     }
+    /// <p>Specifies the name of the option group to be created.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// </ul>
+    /// <p>Example: <code>myoptiongroup</code> </p>
+    pub fn get_option_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_option_group_name()
+    }
     /// <p>Specifies the name of the engine that this option group should be associated with.</p>
     /// <p>Valid Values:</p>
     /// <ul>
@@ -185,6 +202,24 @@ impl CreateOptionGroupFluentBuilder {
         self.inner = self.inner.set_engine_name(input);
         self
     }
+    /// <p>Specifies the name of the engine that this option group should be associated with.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li> <p> <code>mariadb</code> </p> </li>
+    /// <li> <p> <code>mysql</code> </p> </li>
+    /// <li> <p> <code>oracle-ee</code> </p> </li>
+    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+    /// <li> <p> <code>oracle-se2</code> </p> </li>
+    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li>
+    /// <li> <p> <code>postgres</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ee</code> </p> </li>
+    /// <li> <p> <code>sqlserver-se</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ex</code> </p> </li>
+    /// <li> <p> <code>sqlserver-web</code> </p> </li>
+    /// </ul>
+    pub fn get_engine_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_engine_name()
+    }
     /// <p>Specifies the major version of the engine that this option group should be associated with.</p>
     pub fn major_engine_version(
         mut self,
@@ -200,6 +235,10 @@ impl CreateOptionGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_major_engine_version(input);
         self
+    }
+    /// <p>Specifies the major version of the engine that this option group should be associated with.</p>
+    pub fn get_major_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_major_engine_version()
     }
     /// <p>The description of the option group.</p>
     pub fn option_group_description(
@@ -217,6 +256,10 @@ impl CreateOptionGroupFluentBuilder {
         self.inner = self.inner.set_option_group_description(input);
         self
     }
+    /// <p>The description of the option group.</p>
+    pub fn get_option_group_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_option_group_description()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -233,5 +276,9 @@ impl CreateOptionGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Tags to assign to the option group.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

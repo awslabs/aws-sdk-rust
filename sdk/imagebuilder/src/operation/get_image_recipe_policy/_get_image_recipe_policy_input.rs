@@ -46,6 +46,10 @@ impl GetImageRecipePolicyInputBuilder {
         self.image_recipe_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the image recipe whose policy you want to retrieve.</p>
+    pub fn get_image_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_recipe_arn
+    }
     /// Consumes the builder and constructs a [`GetImageRecipePolicyInput`](crate::operation::get_image_recipe_policy::GetImageRecipePolicyInput).
     pub fn build(
         self,

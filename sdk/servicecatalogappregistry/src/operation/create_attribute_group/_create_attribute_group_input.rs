@@ -80,6 +80,10 @@ impl CreateAttributeGroupInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the attribute group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the attribute group that the user provides.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl CreateAttributeGroupInputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the attribute group that the user provides.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>
     pub fn attributes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attributes = ::std::option::Option::Some(input.into());
@@ -99,6 +107,10 @@ impl CreateAttributeGroupInputBuilder {
     pub fn set_attributes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attributes = input;
         self
+    }
+    /// <p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attributes
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -125,6 +137,14 @@ impl CreateAttributeGroupInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Key-value pairs you can use to associate with the attribute group.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>A unique identifier that you provide to ensure idempotency. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -134,6 +154,10 @@ impl CreateAttributeGroupInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A unique identifier that you provide to ensure idempotency. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateAttributeGroupInput`](crate::operation::create_attribute_group::CreateAttributeGroupInput).
     pub fn build(

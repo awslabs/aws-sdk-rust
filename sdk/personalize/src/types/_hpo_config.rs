@@ -70,6 +70,12 @@ impl HpoConfigBuilder {
         self.hpo_objective = input;
         self
     }
+    /// <p>The metric to optimize during HPO.</p> <note>
+    /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p>
+    /// </note>
+    pub fn get_hpo_objective(&self) -> &::std::option::Option<crate::types::HpoObjective> {
+        &self.hpo_objective
+    }
     /// <p>Describes the resource configuration for HPO.</p>
     pub fn hpo_resource_config(mut self, input: crate::types::HpoResourceConfig) -> Self {
         self.hpo_resource_config = ::std::option::Option::Some(input);
@@ -82,6 +88,12 @@ impl HpoConfigBuilder {
     ) -> Self {
         self.hpo_resource_config = input;
         self
+    }
+    /// <p>Describes the resource configuration for HPO.</p>
+    pub fn get_hpo_resource_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::HpoResourceConfig> {
+        &self.hpo_resource_config
     }
     /// <p>The hyperparameters and their allowable ranges.</p>
     pub fn algorithm_hyper_parameter_ranges(
@@ -98,6 +110,12 @@ impl HpoConfigBuilder {
     ) -> Self {
         self.algorithm_hyper_parameter_ranges = input;
         self
+    }
+    /// <p>The hyperparameters and their allowable ranges.</p>
+    pub fn get_algorithm_hyper_parameter_ranges(
+        &self,
+    ) -> &::std::option::Option<crate::types::HyperParameterRanges> {
+        &self.algorithm_hyper_parameter_ranges
     }
     /// Consumes the builder and constructs a [`HpoConfig`](crate::types::HpoConfig).
     pub fn build(self) -> crate::types::HpoConfig {

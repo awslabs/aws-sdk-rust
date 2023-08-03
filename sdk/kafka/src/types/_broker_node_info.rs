@@ -89,6 +89,10 @@ impl BrokerNodeInfoBuilder {
         self.attached_eni_id = input;
         self
     }
+    /// <p>The attached elastic network interface of the broker.</p>
+    pub fn get_attached_eni_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attached_eni_id
+    }
     /// <p>The ID of the broker.</p>
     pub fn broker_id(mut self, input: f64) -> Self {
         self.broker_id = ::std::option::Option::Some(input);
@@ -98,6 +102,10 @@ impl BrokerNodeInfoBuilder {
     pub fn set_broker_id(mut self, input: ::std::option::Option<f64>) -> Self {
         self.broker_id = input;
         self
+    }
+    /// <p>The ID of the broker.</p>
+    pub fn get_broker_id(&self) -> &::std::option::Option<f64> {
+        &self.broker_id
     }
     /// <p>The client subnet to which this broker node belongs.</p>
     pub fn client_subnet(
@@ -115,6 +123,10 @@ impl BrokerNodeInfoBuilder {
         self.client_subnet = input;
         self
     }
+    /// <p>The client subnet to which this broker node belongs.</p>
+    pub fn get_client_subnet(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_subnet
+    }
     /// <p>The virtual private cloud (VPC) of the client.</p>
     pub fn client_vpc_ip_address(
         mut self,
@@ -131,6 +143,10 @@ impl BrokerNodeInfoBuilder {
         self.client_vpc_ip_address = input;
         self
     }
+    /// <p>The virtual private cloud (VPC) of the client.</p>
+    pub fn get_client_vpc_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_vpc_ip_address
+    }
     /// <p>Information about the version of software currently deployed on the Apache Kafka brokers in the cluster.</p>
     pub fn current_broker_software_info(mut self, input: crate::types::BrokerSoftwareInfo) -> Self {
         self.current_broker_software_info = ::std::option::Option::Some(input);
@@ -143,6 +159,12 @@ impl BrokerNodeInfoBuilder {
     ) -> Self {
         self.current_broker_software_info = input;
         self
+    }
+    /// <p>Information about the version of software currently deployed on the Apache Kafka brokers in the cluster.</p>
+    pub fn get_current_broker_software_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::BrokerSoftwareInfo> {
+        &self.current_broker_software_info
     }
     /// Appends an item to `endpoints`.
     ///
@@ -162,6 +184,10 @@ impl BrokerNodeInfoBuilder {
     ) -> Self {
         self.endpoints = input;
         self
+    }
+    /// <p>Endpoints for accessing the broker.</p>
+    pub fn get_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.endpoints
     }
     /// Consumes the builder and constructs a [`BrokerNodeInfo`](crate::types::BrokerNodeInfo).
     pub fn build(self) -> crate::types::BrokerNodeInfo {

@@ -36,6 +36,12 @@ impl BatchGetViewFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchGetView as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_get_view::builders::BatchGetViewInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,5 +130,9 @@ impl BatchGetViewFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_view_arns(input);
         self
+    }
+    /// <p>A list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource names (ARNs)</a> that identify the views you want details for.</p>
+    pub fn get_view_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_view_arns()
     }
 }

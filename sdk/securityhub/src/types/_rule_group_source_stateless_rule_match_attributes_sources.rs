@@ -47,6 +47,10 @@ impl RuleGroupSourceStatelessRuleMatchAttributesSourcesBuilder {
         self.address_definition = input;
         self
     }
+    /// <p>An IP address or a block of IP addresses.</p>
+    pub fn get_address_definition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address_definition
+    }
     /// Consumes the builder and constructs a [`RuleGroupSourceStatelessRuleMatchAttributesSources`](crate::types::RuleGroupSourceStatelessRuleMatchAttributesSources).
     pub fn build(self) -> crate::types::RuleGroupSourceStatelessRuleMatchAttributesSources {
         crate::types::RuleGroupSourceStatelessRuleMatchAttributesSources {

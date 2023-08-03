@@ -225,6 +225,10 @@ impl CreateImageBuilderInputBuilder {
         self.name = input;
         self
     }
+    /// <p>A unique name for the image builder.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The name of the image used to create the image builder.</p>
     pub fn image_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_name = ::std::option::Option::Some(input.into());
@@ -235,6 +239,10 @@ impl CreateImageBuilderInputBuilder {
         self.image_name = input;
         self
     }
+    /// <p>The name of the image used to create the image builder.</p>
+    pub fn get_image_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_name
+    }
     /// <p>The ARN of the public, private, or shared image to use.</p>
     pub fn image_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_arn = ::std::option::Option::Some(input.into());
@@ -244,6 +252,10 @@ impl CreateImageBuilderInputBuilder {
     pub fn set_image_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_arn = input;
         self
+    }
+    /// <p>The ARN of the public, private, or shared image to use.</p>
+    pub fn get_image_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_arn
     }
     /// <p>The instance type to use when launching the image builder. The following instance types are available:</p>
     /// <ul>
@@ -331,6 +343,45 @@ impl CreateImageBuilderInputBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The instance type to use when launching the image builder. The following instance types are available:</p>
+    /// <ul>
+    /// <li> <p>stream.standard.small</p> </li>
+    /// <li> <p>stream.standard.medium</p> </li>
+    /// <li> <p>stream.standard.large</p> </li>
+    /// <li> <p>stream.compute.large</p> </li>
+    /// <li> <p>stream.compute.xlarge</p> </li>
+    /// <li> <p>stream.compute.2xlarge</p> </li>
+    /// <li> <p>stream.compute.4xlarge</p> </li>
+    /// <li> <p>stream.compute.8xlarge</p> </li>
+    /// <li> <p>stream.memory.large</p> </li>
+    /// <li> <p>stream.memory.xlarge</p> </li>
+    /// <li> <p>stream.memory.2xlarge</p> </li>
+    /// <li> <p>stream.memory.4xlarge</p> </li>
+    /// <li> <p>stream.memory.8xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.large</p> </li>
+    /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.large</p> </li>
+    /// <li> <p>stream.graphics-design.xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
+    /// </ul>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
+    }
     /// <p>The description to display.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -340,6 +391,10 @@ impl CreateImageBuilderInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description to display.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The image builder name to display.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -351,6 +406,10 @@ impl CreateImageBuilderInputBuilder {
         self.display_name = input;
         self
     }
+    /// <p>The image builder name to display.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// <p>The VPC configuration for the image builder. You can specify only one subnet.</p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
         self.vpc_config = ::std::option::Option::Some(input);
@@ -360,6 +419,10 @@ impl CreateImageBuilderInputBuilder {
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
         self.vpc_config = input;
         self
+    }
+    /// <p>The VPC configuration for the image builder. You can specify only one subnet.</p>
+    pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
+        &self.vpc_config
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
@@ -372,6 +435,11 @@ impl CreateImageBuilderInputBuilder {
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_role_arn
     }
     /// <p>Enables or disables default internet access for the image builder.</p>
     pub fn enable_default_internet_access(mut self, input: bool) -> Self {
@@ -386,6 +454,10 @@ impl CreateImageBuilderInputBuilder {
         self.enable_default_internet_access = input;
         self
     }
+    /// <p>Enables or disables default internet access for the image builder.</p>
+    pub fn get_enable_default_internet_access(&self) -> &::std::option::Option<bool> {
+        &self.enable_default_internet_access
+    }
     /// <p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain. </p>
     pub fn domain_join_info(mut self, input: crate::types::DomainJoinInfo) -> Self {
         self.domain_join_info = ::std::option::Option::Some(input);
@@ -398,6 +470,10 @@ impl CreateImageBuilderInputBuilder {
     ) -> Self {
         self.domain_join_info = input;
         self
+    }
+    /// <p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain. </p>
+    pub fn get_domain_join_info(&self) -> &::std::option::Option<crate::types::DomainJoinInfo> {
+        &self.domain_join_info
     }
     /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
     pub fn appstream_agent_version(
@@ -414,6 +490,10 @@ impl CreateImageBuilderInputBuilder {
     ) -> Self {
         self.appstream_agent_version = input;
         self
+    }
+    /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
+    pub fn get_appstream_agent_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.appstream_agent_version
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -448,6 +528,18 @@ impl CreateImageBuilderInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags to associate with the image builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
+    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
+    /// <p>_ . : / = + \ - @</p>
+    /// <p>If you do not specify a value, the value is set to an empty string.</p>
+    /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// Appends an item to `access_endpoints`.
     ///
     /// To override the contents of this collection use [`set_access_endpoints`](Self::set_access_endpoints).
@@ -466,6 +558,12 @@ impl CreateImageBuilderInputBuilder {
     ) -> Self {
         self.access_endpoints = input;
         self
+    }
+    /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the image builder only through the specified endpoints.</p>
+    pub fn get_access_endpoints(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>> {
+        &self.access_endpoints
     }
     /// Consumes the builder and constructs a [`CreateImageBuilderInput`](crate::operation::create_image_builder::CreateImageBuilderInput).
     pub fn build(

@@ -51,6 +51,10 @@ impl GetTestGridSessionOutputBuilder {
         self.test_grid_session = input;
         self
     }
+    /// <p>The <code>TestGridSession</code> that was requested.</p>
+    pub fn get_test_grid_session(&self) -> &::std::option::Option<crate::types::TestGridSession> {
+        &self.test_grid_session
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

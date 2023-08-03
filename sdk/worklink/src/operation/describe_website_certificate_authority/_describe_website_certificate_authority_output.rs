@@ -62,6 +62,10 @@ impl DescribeWebsiteCertificateAuthorityOutputBuilder {
         self.certificate = input;
         self
     }
+    /// <p>The root certificate of the certificate authority.</p>
+    pub fn get_certificate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate
+    }
     /// <p>The time that the certificate authority was added.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl DescribeWebsiteCertificateAuthorityOutputBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The time that the certificate authority was added.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>The certificate name to display.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -84,6 +92,10 @@ impl DescribeWebsiteCertificateAuthorityOutputBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
+    }
+    /// <p>The certificate name to display.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

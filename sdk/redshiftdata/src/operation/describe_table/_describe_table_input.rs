@@ -117,6 +117,10 @@ impl DescribeTableInputBuilder {
         self.cluster_identifier = input;
         self
     }
+    /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_identifier
+    }
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_arn = ::std::option::Option::Some(input.into());
@@ -126,6 +130,10 @@ impl DescribeTableInputBuilder {
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_arn = input;
         self
+    }
+    /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
+    pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_arn
     }
     /// <p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials. </p>
     pub fn db_user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -137,6 +145,10 @@ impl DescribeTableInputBuilder {
         self.db_user = input;
         self
     }
+    /// <p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials. </p>
+    pub fn get_db_user(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_user
+    }
     /// <p>The name of the database that contains the tables to be described. If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
@@ -146,6 +158,10 @@ impl DescribeTableInputBuilder {
     pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database = input;
         self
+    }
+    /// <p>The name of the database that contains the tables to be described. If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
+    pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database
     }
     /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
     pub fn connected_database(
@@ -163,6 +179,10 @@ impl DescribeTableInputBuilder {
         self.connected_database = input;
         self
     }
+    /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
+    pub fn get_connected_database(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connected_database
+    }
     /// <p>The schema that contains the table. If no schema is specified, then matching tables for all schemas are returned. </p>
     pub fn schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema = ::std::option::Option::Some(input.into());
@@ -172,6 +192,10 @@ impl DescribeTableInputBuilder {
     pub fn set_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema = input;
         self
+    }
+    /// <p>The schema that contains the table. If no schema is specified, then matching tables for all schemas are returned. </p>
+    pub fn get_schema(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema
     }
     /// <p>The table name. If no table is specified, then all tables for all matching schemas are returned. If no table and no schema is specified, then all tables for all schemas in the database are returned</p>
     pub fn table(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -183,6 +207,10 @@ impl DescribeTableInputBuilder {
         self.table = input;
         self
     }
+    /// <p>The table name. If no table is specified, then all tables for all matching schemas are returned. If no table and no schema is specified, then all tables for all schemas in the database are returned</p>
+    pub fn get_table(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table
+    }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -193,6 +221,10 @@ impl DescribeTableInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of tables to return in the response. If more tables exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -202,6 +234,10 @@ impl DescribeTableInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of tables to return in the response. If more tables exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
     pub fn workgroup_name(
@@ -218,6 +254,10 @@ impl DescribeTableInputBuilder {
     ) -> Self {
         self.workgroup_name = input;
         self
+    }
+    /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
+    pub fn get_workgroup_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workgroup_name
     }
     /// Consumes the builder and constructs a [`DescribeTableInput`](crate::operation::describe_table::DescribeTableInput).
     pub fn build(

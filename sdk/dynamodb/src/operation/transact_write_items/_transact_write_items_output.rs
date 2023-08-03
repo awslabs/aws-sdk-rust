@@ -82,6 +82,12 @@ impl TransactWriteItemsOutputBuilder {
         self.consumed_capacity = input;
         self
     }
+    /// <p>The capacity units consumed by the entire <code>TransactWriteItems</code> operation. The values of the list are ordered according to the ordering of the <code>TransactItems</code> request parameter. </p>
+    pub fn get_consumed_capacity(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConsumedCapacity>> {
+        &self.consumed_capacity
+    }
     /// Adds a key-value pair to `item_collection_metrics`.
     ///
     /// To override the contents of this collection use [`set_item_collection_metrics`](Self::set_item_collection_metrics).
@@ -109,6 +115,17 @@ impl TransactWriteItemsOutputBuilder {
     ) -> Self {
         self.item_collection_metrics = input;
         self
+    }
+    /// <p>A list of tables that were processed by <code>TransactWriteItems</code> and, for each table, information about any item collections that were affected by individual <code>UpdateItem</code>, <code>PutItem</code>, or <code>DeleteItem</code> operations. </p>
+    pub fn get_item_collection_metrics(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::vec::Vec<crate::types::ItemCollectionMetrics>,
+        >,
+    > {
+        &self.item_collection_metrics
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

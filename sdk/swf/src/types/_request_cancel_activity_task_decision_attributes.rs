@@ -48,6 +48,10 @@ impl RequestCancelActivityTaskDecisionAttributesBuilder {
         self.activity_id = input;
         self
     }
+    /// <p>The <code>activityId</code> of the activity task to be canceled.</p>
+    pub fn get_activity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.activity_id
+    }
     /// Consumes the builder and constructs a [`RequestCancelActivityTaskDecisionAttributes`](crate::types::RequestCancelActivityTaskDecisionAttributes).
     pub fn build(self) -> crate::types::RequestCancelActivityTaskDecisionAttributes {
         crate::types::RequestCancelActivityTaskDecisionAttributes {

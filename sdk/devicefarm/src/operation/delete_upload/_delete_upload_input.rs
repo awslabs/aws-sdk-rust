@@ -40,6 +40,10 @@ impl DeleteUploadInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm upload to delete.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`DeleteUploadInput`](crate::operation::delete_upload::DeleteUploadInput).
     pub fn build(
         self,

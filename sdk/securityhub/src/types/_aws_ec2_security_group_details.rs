@@ -88,6 +88,10 @@ impl AwsEc2SecurityGroupDetailsBuilder {
         self.group_name = input;
         self
     }
+    /// <p>The name of the security group.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
+    }
     /// <p>The ID of the security group.</p>
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
@@ -97,6 +101,10 @@ impl AwsEc2SecurityGroupDetailsBuilder {
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_id = input;
         self
+    }
+    /// <p>The ID of the security group.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
     }
     /// <p>The Amazon Web Services account ID of the owner of the security group.</p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -108,6 +116,10 @@ impl AwsEc2SecurityGroupDetailsBuilder {
         self.owner_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID of the owner of the security group.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
+    }
     /// <p>[VPC only] The ID of the VPC for the security group.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -117,6 +129,10 @@ impl AwsEc2SecurityGroupDetailsBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>[VPC only] The ID of the VPC for the security group.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Appends an item to `ip_permissions`.
     ///
@@ -138,6 +154,13 @@ impl AwsEc2SecurityGroupDetailsBuilder {
     ) -> Self {
         self.ip_permissions = input;
         self
+    }
+    /// <p>The inbound rules associated with the security group.</p>
+    pub fn get_ip_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEc2SecurityGroupIpPermission>>
+    {
+        &self.ip_permissions
     }
     /// Appends an item to `ip_permissions_egress`.
     ///
@@ -162,6 +185,13 @@ impl AwsEc2SecurityGroupDetailsBuilder {
     ) -> Self {
         self.ip_permissions_egress = input;
         self
+    }
+    /// <p>[VPC only] The outbound rules associated with the security group.</p>
+    pub fn get_ip_permissions_egress(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEc2SecurityGroupIpPermission>>
+    {
+        &self.ip_permissions_egress
     }
     /// Consumes the builder and constructs a [`AwsEc2SecurityGroupDetails`](crate::types::AwsEc2SecurityGroupDetails).
     pub fn build(self) -> crate::types::AwsEc2SecurityGroupDetails {

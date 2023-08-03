@@ -40,6 +40,10 @@ impl DeleteApiDestinationInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the destination to delete.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeleteApiDestinationInput`](crate::operation::delete_api_destination::DeleteApiDestinationInput).
     pub fn build(
         self,

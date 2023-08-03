@@ -36,6 +36,13 @@ impl UpdateDetectorVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDetectorVersion as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_detector_version::builders::UpdateDetectorVersionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl UpdateDetectorVersionFluentBuilder {
         self.inner = self.inner.set_detector_id(input);
         self
     }
+    /// <p>The parent detector ID for the detector version you want to update.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_id()
+    }
     /// <p>The detector version ID. </p>
     pub fn detector_version_id(
         mut self,
@@ -141,6 +152,10 @@ impl UpdateDetectorVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_detector_version_id(input);
         self
+    }
+    /// <p>The detector version ID. </p>
+    pub fn get_detector_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_version_id()
     }
     /// Appends an item to `externalModelEndpoints`.
     ///
@@ -162,6 +177,12 @@ impl UpdateDetectorVersionFluentBuilder {
         self.inner = self.inner.set_external_model_endpoints(input);
         self
     }
+    /// <p>The Amazon SageMaker model endpoints to include in the detector version.</p>
+    pub fn get_external_model_endpoints(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_external_model_endpoints()
+    }
     /// Appends an item to `rules`.
     ///
     /// To override the contents of this collection use [`set_rules`](Self::set_rules).
@@ -179,6 +200,10 @@ impl UpdateDetectorVersionFluentBuilder {
         self.inner = self.inner.set_rules(input);
         self
     }
+    /// <p>The rules to include in the detector version.</p>
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Rule>> {
+        self.inner.get_rules()
+    }
     /// <p>The detector version description. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -188,6 +213,10 @@ impl UpdateDetectorVersionFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The detector version description. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `modelVersions`.
     ///
@@ -205,6 +234,12 @@ impl UpdateDetectorVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_model_versions(input);
         self
+    }
+    /// <p>The model versions to include in the detector version.</p>
+    pub fn get_model_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelVersion>> {
+        self.inner.get_model_versions()
     }
     /// <p>The rule execution mode to add to the detector.</p>
     /// <p>If you specify <code>FIRST_MATCHED</code>, Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
@@ -224,5 +259,14 @@ impl UpdateDetectorVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_rule_execution_mode(input);
         self
+    }
+    /// <p>The rule execution mode to add to the detector.</p>
+    /// <p>If you specify <code>FIRST_MATCHED</code>, Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
+    /// <p>If you specifiy <code>ALL_MATCHED</code>, Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
+    /// <p>The default behavior is <code>FIRST_MATCHED</code>.</p>
+    pub fn get_rule_execution_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::RuleExecutionMode> {
+        self.inner.get_rule_execution_mode()
     }
 }

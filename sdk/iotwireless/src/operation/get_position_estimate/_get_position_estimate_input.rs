@@ -83,6 +83,12 @@ impl GetPositionEstimateInputBuilder {
         self.wi_fi_access_points = input;
         self
     }
+    /// <p>Retrieves an estimated device position by resolving WLAN measurement data. The position is resolved using HERE's Wi-Fi based solver.</p>
+    pub fn get_wi_fi_access_points(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WiFiAccessPoint>> {
+        &self.wi_fi_access_points
+    }
     /// <p>Retrieves an estimated device position by resolving measurement data from cellular radio towers. The position is resolved using HERE's cellular-based solver.</p>
     pub fn cell_towers(mut self, input: crate::types::CellTowers) -> Self {
         self.cell_towers = ::std::option::Option::Some(input);
@@ -96,6 +102,10 @@ impl GetPositionEstimateInputBuilder {
         self.cell_towers = input;
         self
     }
+    /// <p>Retrieves an estimated device position by resolving measurement data from cellular radio towers. The position is resolved using HERE's cellular-based solver.</p>
+    pub fn get_cell_towers(&self) -> &::std::option::Option<crate::types::CellTowers> {
+        &self.cell_towers
+    }
     /// <p>Retrieves an estimated device position by resolving the IP address information from the device. The position is resolved using MaxMind's IP-based solver.</p>
     pub fn ip(mut self, input: crate::types::Ip) -> Self {
         self.ip = ::std::option::Option::Some(input);
@@ -106,6 +116,10 @@ impl GetPositionEstimateInputBuilder {
         self.ip = input;
         self
     }
+    /// <p>Retrieves an estimated device position by resolving the IP address information from the device. The position is resolved using MaxMind's IP-based solver.</p>
+    pub fn get_ip(&self) -> &::std::option::Option<crate::types::Ip> {
+        &self.ip
+    }
     /// <p>Retrieves an estimated device position by resolving the global navigation satellite system (GNSS) scan data. The position is resolved using the GNSS solver powered by LoRa Cloud.</p>
     pub fn gnss(mut self, input: crate::types::Gnss) -> Self {
         self.gnss = ::std::option::Option::Some(input);
@@ -115,6 +129,10 @@ impl GetPositionEstimateInputBuilder {
     pub fn set_gnss(mut self, input: ::std::option::Option<crate::types::Gnss>) -> Self {
         self.gnss = input;
         self
+    }
+    /// <p>Retrieves an estimated device position by resolving the global navigation satellite system (GNSS) scan data. The position is resolved using the GNSS solver powered by LoRa Cloud.</p>
+    pub fn get_gnss(&self) -> &::std::option::Option<crate::types::Gnss> {
+        &self.gnss
     }
     /// <p>Optional information that specifies the time when the position information will be resolved. It uses the Unix timestamp format. If not specified, the time at which the request was received will be used.</p>
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -128,6 +146,10 @@ impl GetPositionEstimateInputBuilder {
     ) -> Self {
         self.timestamp = input;
         self
+    }
+    /// <p>Optional information that specifies the time when the position information will be resolved. It uses the Unix timestamp format. If not specified, the time at which the request was received will be used.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
     }
     /// Consumes the builder and constructs a [`GetPositionEstimateInput`](crate::operation::get_position_estimate::GetPositionEstimateInput).
     pub fn build(

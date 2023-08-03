@@ -78,6 +78,10 @@ impl UpdateLogPatternInputBuilder {
         self.resource_group_name = input;
         self
     }
+    /// <p>The name of the resource group.</p>
+    pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_group_name
+    }
     /// <p>The name of the log pattern set.</p>
     pub fn pattern_set_name(
         mut self,
@@ -94,6 +98,10 @@ impl UpdateLogPatternInputBuilder {
         self.pattern_set_name = input;
         self
     }
+    /// <p>The name of the log pattern set.</p>
+    pub fn get_pattern_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pattern_set_name
+    }
     /// <p>The name of the log pattern.</p>
     pub fn pattern_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pattern_name = ::std::option::Option::Some(input.into());
@@ -103,6 +111,10 @@ impl UpdateLogPatternInputBuilder {
     pub fn set_pattern_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pattern_name = input;
         self
+    }
+    /// <p>The name of the log pattern.</p>
+    pub fn get_pattern_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pattern_name
     }
     /// <p>The log pattern. The pattern must be DFA compatible. Patterns that utilize forward lookahead or backreference constructions are not supported.</p>
     pub fn pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -114,6 +126,10 @@ impl UpdateLogPatternInputBuilder {
         self.pattern = input;
         self
     }
+    /// <p>The log pattern. The pattern must be DFA compatible. Patterns that utilize forward lookahead or backreference constructions are not supported.</p>
+    pub fn get_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pattern
+    }
     /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank. Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns. </p>
     pub fn rank(mut self, input: i32) -> Self {
         self.rank = ::std::option::Option::Some(input);
@@ -123,6 +139,10 @@ impl UpdateLogPatternInputBuilder {
     pub fn set_rank(mut self, input: ::std::option::Option<i32>) -> Self {
         self.rank = input;
         self
+    }
+    /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank. Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns. </p>
+    pub fn get_rank(&self) -> &::std::option::Option<i32> {
+        &self.rank
     }
     /// Consumes the builder and constructs a [`UpdateLogPatternInput`](crate::operation::update_log_pattern::UpdateLogPatternInput).
     pub fn build(

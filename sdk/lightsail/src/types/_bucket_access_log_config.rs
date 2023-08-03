@@ -67,6 +67,10 @@ impl BucketAccessLogConfigBuilder {
         self.enabled = input;
         self
     }
+    /// <p>A Boolean value that indicates whether bucket access logging is enabled for the bucket.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>The name of the bucket where the access logs are saved. The destination can be a Lightsail bucket in the same account, and in the same Amazon Web Services Region as the source bucket.</p> <note>
     /// <p>This parameter is required when enabling the access log for a bucket, and should be omitted when disabling the access log.</p>
     /// </note>
@@ -80,6 +84,12 @@ impl BucketAccessLogConfigBuilder {
     pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination = input;
         self
+    }
+    /// <p>The name of the bucket where the access logs are saved. The destination can be a Lightsail bucket in the same account, and in the same Amazon Web Services Region as the source bucket.</p> <note>
+    /// <p>This parameter is required when enabling the access log for a bucket, and should be omitted when disabling the access log.</p>
+    /// </note>
+    pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination
     }
     /// <p>The optional object prefix for the bucket access log.</p>
     /// <p>The prefix is an optional addition to the object key that organizes your access log files in the destination bucket. For example, if you specify a <code>logs/</code> prefix, then each log object will begin with the <code>logs/</code> prefix in its key (for example, <code>logs/2021-11-01-21-32-16-E568B2907131C0C0</code>).</p> <note>
@@ -96,6 +106,13 @@ impl BucketAccessLogConfigBuilder {
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix = input;
         self
+    }
+    /// <p>The optional object prefix for the bucket access log.</p>
+    /// <p>The prefix is an optional addition to the object key that organizes your access log files in the destination bucket. For example, if you specify a <code>logs/</code> prefix, then each log object will begin with the <code>logs/</code> prefix in its key (for example, <code>logs/2021-11-01-21-32-16-E568B2907131C0C0</code>).</p> <note>
+    /// <p>This parameter can be optionally specified when enabling the access log for a bucket, and should be omitted when disabling the access log.</p>
+    /// </note>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
     }
     /// Consumes the builder and constructs a [`BucketAccessLogConfig`](crate::types::BucketAccessLogConfig).
     pub fn build(self) -> crate::types::BucketAccessLogConfig {

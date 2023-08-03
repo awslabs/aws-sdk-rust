@@ -63,6 +63,10 @@ impl StopDevEnvironmentSessionInputBuilder {
         self.space_name = input;
         self
     }
+    /// <p>The name of the space.</p>
+    pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.space_name
+    }
     /// <p>The name of the project in the space.</p>
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl StopDevEnvironmentSessionInputBuilder {
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_name = input;
         self
+    }
+    /// <p>The name of the project in the space.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
     }
     /// <p>The system-generated unique ID of the Dev Environment. To obtain this ID, use <code>ListDevEnvironments</code>.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -83,6 +91,10 @@ impl StopDevEnvironmentSessionInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The system-generated unique ID of the Dev Environment. To obtain this ID, use <code>ListDevEnvironments</code>.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The system-generated unique ID of the Dev Environment session. This ID is returned by <code>StartDevEnvironmentSession</code>.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
@@ -92,6 +104,10 @@ impl StopDevEnvironmentSessionInputBuilder {
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_id = input;
         self
+    }
+    /// <p>The system-generated unique ID of the Dev Environment session. This ID is returned by <code>StartDevEnvironmentSession</code>.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
     }
     /// Consumes the builder and constructs a [`StopDevEnvironmentSessionInput`](crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionInput).
     pub fn build(

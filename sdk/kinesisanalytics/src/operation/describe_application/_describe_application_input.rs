@@ -47,6 +47,10 @@ impl DescribeApplicationInputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>Name of the application.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// Consumes the builder and constructs a [`DescribeApplicationInput`](crate::operation::describe_application::DescribeApplicationInput).
     pub fn build(
         self,

@@ -66,6 +66,10 @@ impl SparkSubmitBuilder {
         self.entry_point = input;
         self
     }
+    /// <p>The entry point for the Spark submit job run.</p>
+    pub fn get_entry_point(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entry_point
+    }
     /// Appends an item to `entry_point_arguments`.
     ///
     /// To override the contents of this collection use [`set_entry_point_arguments`](Self::set_entry_point_arguments).
@@ -88,6 +92,12 @@ impl SparkSubmitBuilder {
         self.entry_point_arguments = input;
         self
     }
+    /// <p>The arguments for the Spark submit job run.</p>
+    pub fn get_entry_point_arguments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.entry_point_arguments
+    }
     /// <p>The parameters for the Spark submit job run.</p>
     pub fn spark_submit_parameters(
         mut self,
@@ -103,6 +113,10 @@ impl SparkSubmitBuilder {
     ) -> Self {
         self.spark_submit_parameters = input;
         self
+    }
+    /// <p>The parameters for the Spark submit job run.</p>
+    pub fn get_spark_submit_parameters(&self) -> &::std::option::Option<::std::string::String> {
+        &self.spark_submit_parameters
     }
     /// Consumes the builder and constructs a [`SparkSubmit`](crate::types::SparkSubmit).
     pub fn build(self) -> crate::types::SparkSubmit {

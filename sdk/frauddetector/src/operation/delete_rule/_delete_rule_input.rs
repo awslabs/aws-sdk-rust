@@ -39,6 +39,10 @@ impl DeleteRuleInputBuilder {
         self.rule = input;
         self
     }
+    /// <p>A rule.</p>
+    pub fn get_rule(&self) -> &::std::option::Option<crate::types::Rule> {
+        &self.rule
+    }
     /// Consumes the builder and constructs a [`DeleteRuleInput`](crate::operation::delete_rule::DeleteRuleInput).
     pub fn build(
         self,

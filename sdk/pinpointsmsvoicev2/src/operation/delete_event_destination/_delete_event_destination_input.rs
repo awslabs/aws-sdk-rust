@@ -55,6 +55,10 @@ impl DeleteEventDestinationInputBuilder {
         self.configuration_set_name = input;
         self
     }
+    /// <p>The name of the configuration set or the configuration set's Amazon Resource Name (ARN) to remove the event destination from. The ConfigurateSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set_name
+    }
     /// <p>The name of the event destination to delete.</p>
     pub fn event_destination_name(
         mut self,
@@ -70,6 +74,10 @@ impl DeleteEventDestinationInputBuilder {
     ) -> Self {
         self.event_destination_name = input;
         self
+    }
+    /// <p>The name of the event destination to delete.</p>
+    pub fn get_event_destination_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_destination_name
     }
     /// Consumes the builder and constructs a [`DeleteEventDestinationInput`](crate::operation::delete_event_destination::DeleteEventDestinationInput).
     pub fn build(

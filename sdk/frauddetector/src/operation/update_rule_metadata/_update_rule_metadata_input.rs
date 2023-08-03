@@ -48,6 +48,10 @@ impl UpdateRuleMetadataInputBuilder {
         self.rule = input;
         self
     }
+    /// <p>The rule to update.</p>
+    pub fn get_rule(&self) -> &::std::option::Option<crate::types::Rule> {
+        &self.rule
+    }
     /// <p>The rule description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl UpdateRuleMetadataInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The rule description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`UpdateRuleMetadataInput`](crate::operation::update_rule_metadata::UpdateRuleMetadataInput).
     pub fn build(

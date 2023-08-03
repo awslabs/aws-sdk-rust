@@ -38,6 +38,12 @@ impl AssociateAliasFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateAlias as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::associate_alias::builders::AssociateAliasInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl AssociateAliasFluentBuilder {
         self.inner = self.inner.set_target_distribution_id(input);
         self
     }
+    /// <p>The ID of the distribution that you're associating the alias with.</p>
+    pub fn get_target_distribution_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_distribution_id()
+    }
     /// <p>The alias (also known as a CNAME) to add to the target distribution.</p>
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.alias(input.into());
@@ -135,5 +145,9 @@ impl AssociateAliasFluentBuilder {
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_alias(input);
         self
+    }
+    /// <p>The alias (also known as a CNAME) to add to the target distribution.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_alias()
     }
 }

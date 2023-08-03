@@ -90,6 +90,17 @@ impl CreateClusterSecurityGroupInputBuilder {
         self.cluster_security_group_name = input;
         self
     }
+    /// <p>The name for the security group. Amazon Redshift stores the value as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain no more than 255 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>Must not be "Default".</p> </li>
+    /// <li> <p>Must be unique for all security groups that are created by your Amazon Web Services account.</p> </li>
+    /// </ul>
+    /// <p>Example: <code>examplesecuritygroup</code> </p>
+    pub fn get_cluster_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_security_group_name
+    }
     /// <p>A description for the security group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -99,6 +110,10 @@ impl CreateClusterSecurityGroupInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description for the security group.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `tags`.
     ///
@@ -118,6 +133,10 @@ impl CreateClusterSecurityGroupInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tag instances.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateClusterSecurityGroupInput`](crate::operation::create_cluster_security_group::CreateClusterSecurityGroupInput).
     pub fn build(

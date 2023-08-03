@@ -36,6 +36,10 @@ impl CreateLoggingConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateLoggingConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_logging_configuration::builders::CreateLoggingConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl CreateLoggingConfigurationFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>Logging-configuration name. The value does not need to be unique.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A complex type that contains a destination configuration for where chat content will be logged. There can be only one type of destination (<code>cloudWatchLogs</code>, <code>firehose</code>, or <code>s3</code>) in a <code>destinationConfiguration</code>.</p>
     pub fn destination_configuration(
         mut self,
@@ -141,6 +149,12 @@ impl CreateLoggingConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destination_configuration(input);
         self
+    }
+    /// <p>A complex type that contains a destination configuration for where chat content will be logged. There can be only one type of destination (<code>cloudWatchLogs</code>, <code>firehose</code>, or <code>s3</code>) in a <code>destinationConfiguration</code>.</p>
+    pub fn get_destination_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DestinationConfiguration> {
+        self.inner.get_destination_configuration()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -164,5 +178,13 @@ impl CreateLoggingConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints on tags beyond what is documented there.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

@@ -83,6 +83,10 @@ impl LimitsExceededExceptionBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The type of limit that would be exceeded.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -93,6 +97,10 @@ impl LimitsExceededExceptionBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of limit that would be exceeded.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p>The threshold that would be exceeded.</p>
     pub fn limit(mut self, input: i64) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -102,6 +110,10 @@ impl LimitsExceededExceptionBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i64>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>The threshold that would be exceeded.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i64> {
+        &self.limit
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

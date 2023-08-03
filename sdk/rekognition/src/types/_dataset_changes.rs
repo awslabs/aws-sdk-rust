@@ -47,6 +47,11 @@ impl DatasetChangesBuilder {
         self.ground_truth = input;
         self
     }
+    /// <p>A Base64-encoded binary data object containing one or JSON lines that either update the dataset or are additions to the dataset. You change a dataset by calling <code>UpdateDatasetEntries</code>. If you are using an AWS SDK to call <code>UpdateDatasetEntries</code>, you don't need to encode <code>Changes</code> as the SDK encodes the data for you. </p>
+    /// <p>For example JSON lines, see Image-Level labels in manifest files and and Object localization in manifest files in the <i>Amazon Rekognition Custom Labels Developer Guide</i>. </p>
+    pub fn get_ground_truth(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.ground_truth
+    }
     /// Consumes the builder and constructs a [`DatasetChanges`](crate::types::DatasetChanges).
     pub fn build(self) -> crate::types::DatasetChanges {
         crate::types::DatasetChanges {

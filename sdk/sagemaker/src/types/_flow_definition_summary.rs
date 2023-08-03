@@ -80,6 +80,10 @@ impl FlowDefinitionSummaryBuilder {
         self.flow_definition_name = input;
         self
     }
+    /// <p>The name of the flow definition.</p>
+    pub fn get_flow_definition_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_definition_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the flow definition.</p>
     pub fn flow_definition_arn(
         mut self,
@@ -96,6 +100,10 @@ impl FlowDefinitionSummaryBuilder {
         self.flow_definition_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the flow definition.</p>
+    pub fn get_flow_definition_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_definition_arn
+    }
     /// <p>The status of the flow definition. Valid values:</p>
     pub fn flow_definition_status(mut self, input: crate::types::FlowDefinitionStatus) -> Self {
         self.flow_definition_status = ::std::option::Option::Some(input);
@@ -109,6 +117,12 @@ impl FlowDefinitionSummaryBuilder {
         self.flow_definition_status = input;
         self
     }
+    /// <p>The status of the flow definition. Valid values:</p>
+    pub fn get_flow_definition_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::FlowDefinitionStatus> {
+        &self.flow_definition_status
+    }
     /// <p>The timestamp when SageMaker created the flow definition.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -121,6 +135,10 @@ impl FlowDefinitionSummaryBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The timestamp when SageMaker created the flow definition.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The reason why the flow definition creation failed. A failure reason is returned only when the flow definition status is <code>Failed</code>.</p>
     pub fn failure_reason(
@@ -137,6 +155,10 @@ impl FlowDefinitionSummaryBuilder {
     ) -> Self {
         self.failure_reason = input;
         self
+    }
+    /// <p>The reason why the flow definition creation failed. A failure reason is returned only when the flow definition status is <code>Failed</code>.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     /// Consumes the builder and constructs a [`FlowDefinitionSummary`](crate::types::FlowDefinitionSummary).
     pub fn build(self) -> crate::types::FlowDefinitionSummary {

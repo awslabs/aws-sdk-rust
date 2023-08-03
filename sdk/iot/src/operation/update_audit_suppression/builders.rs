@@ -36,6 +36,13 @@ impl UpdateAuditSuppressionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAuditSuppression as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_audit_suppression::builders::UpdateAuditSuppressionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl UpdateAuditSuppressionFluentBuilder {
         self.inner = self.inner.set_check_name(input);
         self
     }
+    /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
+    pub fn get_check_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_check_name()
+    }
     /// <p>Information that identifies the noncompliant resource.</p>
     pub fn resource_identifier(mut self, input: crate::types::ResourceIdentifier) -> Self {
         self.inner = self.inner.resource_identifier(input);
@@ -138,6 +149,12 @@ impl UpdateAuditSuppressionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_identifier(input);
         self
+    }
+    /// <p>Information that identifies the noncompliant resource.</p>
+    pub fn get_resource_identifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceIdentifier> {
+        self.inner.get_resource_identifier()
     }
     /// <p> The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to. </p>
     pub fn expiration_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -152,6 +169,10 @@ impl UpdateAuditSuppressionFluentBuilder {
         self.inner = self.inner.set_expiration_date(input);
         self
     }
+    /// <p> The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to. </p>
+    pub fn get_expiration_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_expiration_date()
+    }
     /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
     pub fn suppress_indefinitely(mut self, input: bool) -> Self {
         self.inner = self.inner.suppress_indefinitely(input);
@@ -162,6 +183,10 @@ impl UpdateAuditSuppressionFluentBuilder {
         self.inner = self.inner.set_suppress_indefinitely(input);
         self
     }
+    /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
+    pub fn get_suppress_indefinitely(&self) -> &::std::option::Option<bool> {
+        self.inner.get_suppress_indefinitely()
+    }
     /// <p> The description of the audit suppression. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -171,5 +196,9 @@ impl UpdateAuditSuppressionFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p> The description of the audit suppression. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
 }

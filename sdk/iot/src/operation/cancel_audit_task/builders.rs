@@ -37,6 +37,12 @@ impl CancelAuditTaskFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CancelAuditTask as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::cancel_audit_task::builders::CancelAuditTaskInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,5 +132,9 @@ impl CancelAuditTaskFluentBuilder {
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_task_id(input);
         self
+    }
+    /// <p>The ID of the audit you want to cancel. You can only cancel an audit that is "IN_PROGRESS".</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_task_id()
     }
 }

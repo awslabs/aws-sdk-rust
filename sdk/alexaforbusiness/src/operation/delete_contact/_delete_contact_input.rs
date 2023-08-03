@@ -39,6 +39,10 @@ impl DeleteContactInputBuilder {
         self.contact_arn = input;
         self
     }
+    /// <p>The ARN of the contact to delete.</p>
+    pub fn get_contact_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_arn
+    }
     /// Consumes the builder and constructs a [`DeleteContactInput`](crate::operation::delete_contact::DeleteContactInput).
     pub fn build(
         self,

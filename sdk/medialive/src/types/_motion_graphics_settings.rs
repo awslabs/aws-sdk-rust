@@ -50,6 +50,12 @@ impl MotionGraphicsSettingsBuilder {
         self.html_motion_graphics_settings = input;
         self
     }
+    /// Html Motion Graphics Settings
+    pub fn get_html_motion_graphics_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::HtmlMotionGraphicsSettings> {
+        &self.html_motion_graphics_settings
+    }
     /// Consumes the builder and constructs a [`MotionGraphicsSettings`](crate::types::MotionGraphicsSettings).
     pub fn build(self) -> crate::types::MotionGraphicsSettings {
         crate::types::MotionGraphicsSettings {

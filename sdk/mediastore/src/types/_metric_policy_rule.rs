@@ -48,6 +48,10 @@ impl MetricPolicyRuleBuilder {
         self.object_group = input;
         self
     }
+    /// <p>A path or file name that defines which objects to include in the group. Wildcards (*) are acceptable.</p>
+    pub fn get_object_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_group
+    }
     /// <p>A name that allows you to refer to the object group.</p>
     pub fn object_group_name(
         mut self,
@@ -63,6 +67,10 @@ impl MetricPolicyRuleBuilder {
     ) -> Self {
         self.object_group_name = input;
         self
+    }
+    /// <p>A name that allows you to refer to the object group.</p>
+    pub fn get_object_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_group_name
     }
     /// Consumes the builder and constructs a [`MetricPolicyRule`](crate::types::MetricPolicyRule).
     pub fn build(self) -> crate::types::MetricPolicyRule {

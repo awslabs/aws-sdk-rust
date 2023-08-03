@@ -41,6 +41,10 @@ impl GetTransitGatewayPeeringInputBuilder {
         self.peering_id = input;
         self
     }
+    /// <p>The ID of the peering request.</p>
+    pub fn get_peering_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.peering_id
+    }
     /// Consumes the builder and constructs a [`GetTransitGatewayPeeringInput`](crate::operation::get_transit_gateway_peering::GetTransitGatewayPeeringInput).
     pub fn build(
         self,

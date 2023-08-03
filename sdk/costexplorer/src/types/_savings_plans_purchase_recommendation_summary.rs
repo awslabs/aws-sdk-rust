@@ -129,6 +129,10 @@ impl SavingsPlansPurchaseRecommendationSummaryBuilder {
         self.estimated_roi = input;
         self
     }
+    /// <p>The estimated return on investment that's based on the recommended Savings Plans and estimated savings.</p>
+    pub fn get_estimated_roi(&self) -> &::std::option::Option<::std::string::String> {
+        &self.estimated_roi
+    }
     /// <p>The currency code that Amazon Web Services used to generate the recommendations and present potential savings.</p>
     pub fn currency_code(
         mut self,
@@ -144,6 +148,10 @@ impl SavingsPlansPurchaseRecommendationSummaryBuilder {
     ) -> Self {
         self.currency_code = input;
         self
+    }
+    /// <p>The currency code that Amazon Web Services used to generate the recommendations and present potential savings.</p>
+    pub fn get_currency_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.currency_code
     }
     /// <p>The estimated total cost of the usage after purchasing the recommended Savings Plans. This is a sum of the cost of Savings Plans during this term, and the remaining On-Demand usage.</p>
     pub fn estimated_total_cost(
@@ -161,6 +169,10 @@ impl SavingsPlansPurchaseRecommendationSummaryBuilder {
         self.estimated_total_cost = input;
         self
     }
+    /// <p>The estimated total cost of the usage after purchasing the recommended Savings Plans. This is a sum of the cost of Savings Plans during this term, and the remaining On-Demand usage.</p>
+    pub fn get_estimated_total_cost(&self) -> &::std::option::Option<::std::string::String> {
+        &self.estimated_total_cost
+    }
     /// <p>The current total on demand spend of the applicable usage types over the lookback period.</p>
     pub fn current_on_demand_spend(
         mut self,
@@ -176,6 +188,10 @@ impl SavingsPlansPurchaseRecommendationSummaryBuilder {
     ) -> Self {
         self.current_on_demand_spend = input;
         self
+    }
+    /// <p>The current total on demand spend of the applicable usage types over the lookback period.</p>
+    pub fn get_current_on_demand_spend(&self) -> &::std::option::Option<::std::string::String> {
+        &self.current_on_demand_spend
     }
     /// <p>The estimated total savings over the lookback period, based on the purchase of the recommended Savings Plans.</p>
     pub fn estimated_savings_amount(
@@ -193,6 +209,10 @@ impl SavingsPlansPurchaseRecommendationSummaryBuilder {
         self.estimated_savings_amount = input;
         self
     }
+    /// <p>The estimated total savings over the lookback period, based on the purchase of the recommended Savings Plans.</p>
+    pub fn get_estimated_savings_amount(&self) -> &::std::option::Option<::std::string::String> {
+        &self.estimated_savings_amount
+    }
     /// <p>The aggregate number of Savings Plans recommendations that exist for your account.</p>
     pub fn total_recommendation_count(
         mut self,
@@ -208,6 +228,10 @@ impl SavingsPlansPurchaseRecommendationSummaryBuilder {
     ) -> Self {
         self.total_recommendation_count = input;
         self
+    }
+    /// <p>The aggregate number of Savings Plans recommendations that exist for your account.</p>
+    pub fn get_total_recommendation_count(&self) -> &::std::option::Option<::std::string::String> {
+        &self.total_recommendation_count
     }
     /// <p>The recommended Savings Plans cost on a daily (24 hourly) basis.</p>
     pub fn daily_commitment_to_purchase(
@@ -225,6 +249,12 @@ impl SavingsPlansPurchaseRecommendationSummaryBuilder {
         self.daily_commitment_to_purchase = input;
         self
     }
+    /// <p>The recommended Savings Plans cost on a daily (24 hourly) basis.</p>
+    pub fn get_daily_commitment_to_purchase(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.daily_commitment_to_purchase
+    }
     /// <p>The recommended hourly commitment that's based on the recommendation parameters.</p>
     pub fn hourly_commitment_to_purchase(
         mut self,
@@ -240,6 +270,12 @@ impl SavingsPlansPurchaseRecommendationSummaryBuilder {
     ) -> Self {
         self.hourly_commitment_to_purchase = input;
         self
+    }
+    /// <p>The recommended hourly commitment that's based on the recommendation parameters.</p>
+    pub fn get_hourly_commitment_to_purchase(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.hourly_commitment_to_purchase
     }
     /// <p>The estimated savings relative to the total cost of On-Demand usage, over the lookback period. This is calculated as <code>estimatedSavingsAmount</code>/ <code>CurrentOnDemandSpend</code>*100.</p>
     pub fn estimated_savings_percentage(
@@ -257,6 +293,12 @@ impl SavingsPlansPurchaseRecommendationSummaryBuilder {
         self.estimated_savings_percentage = input;
         self
     }
+    /// <p>The estimated savings relative to the total cost of On-Demand usage, over the lookback period. This is calculated as <code>estimatedSavingsAmount</code>/ <code>CurrentOnDemandSpend</code>*100.</p>
+    pub fn get_estimated_savings_percentage(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.estimated_savings_percentage
+    }
     /// <p>The estimated monthly savings amount that's based on the recommended Savings Plans purchase.</p>
     pub fn estimated_monthly_savings_amount(
         mut self,
@@ -272,6 +314,12 @@ impl SavingsPlansPurchaseRecommendationSummaryBuilder {
     ) -> Self {
         self.estimated_monthly_savings_amount = input;
         self
+    }
+    /// <p>The estimated monthly savings amount that's based on the recommended Savings Plans purchase.</p>
+    pub fn get_estimated_monthly_savings_amount(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.estimated_monthly_savings_amount
     }
     /// <p>The estimated On-Demand costs you expect with no additional commitment. It's based on your usage of the selected time period and the Savings Plans you own. </p>
     pub fn estimated_on_demand_cost_with_current_commitment(
@@ -289,6 +337,12 @@ impl SavingsPlansPurchaseRecommendationSummaryBuilder {
     ) -> Self {
         self.estimated_on_demand_cost_with_current_commitment = input;
         self
+    }
+    /// <p>The estimated On-Demand costs you expect with no additional commitment. It's based on your usage of the selected time period and the Savings Plans you own. </p>
+    pub fn get_estimated_on_demand_cost_with_current_commitment(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.estimated_on_demand_cost_with_current_commitment
     }
     /// Consumes the builder and constructs a [`SavingsPlansPurchaseRecommendationSummary`](crate::types::SavingsPlansPurchaseRecommendationSummary).
     pub fn build(self) -> crate::types::SavingsPlansPurchaseRecommendationSummary {

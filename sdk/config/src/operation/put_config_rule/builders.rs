@@ -45,6 +45,12 @@ impl PutConfigRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutConfigRule as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_config_rule::builders::PutConfigRuleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +136,10 @@ impl PutConfigRuleFluentBuilder {
         self.inner = self.inner.set_config_rule(input);
         self
     }
+    /// <p>The rule that you want to add to your account.</p>
+    pub fn get_config_rule(&self) -> &::std::option::Option<crate::types::ConfigRule> {
+        self.inner.get_config_rule()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -146,5 +156,9 @@ impl PutConfigRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>An array of tag object.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

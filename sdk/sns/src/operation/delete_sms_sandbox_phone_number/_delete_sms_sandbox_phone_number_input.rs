@@ -39,6 +39,10 @@ impl DeleteSmsSandboxPhoneNumberInputBuilder {
         self.phone_number = input;
         self
     }
+    /// <p>The destination phone number to delete.</p>
+    pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number
+    }
     /// Consumes the builder and constructs a [`DeleteSmsSandboxPhoneNumberInput`](crate::operation::delete_sms_sandbox_phone_number::DeleteSmsSandboxPhoneNumberInput).
     pub fn build(
         self,

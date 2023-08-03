@@ -48,6 +48,10 @@ impl GetOnPremisesInstanceInputBuilder {
         self.instance_name = input;
         self
     }
+    /// <p> The name of the on-premises instance about which to get information. </p>
+    pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_name
+    }
     /// Consumes the builder and constructs a [`GetOnPremisesInstanceInput`](crate::operation::get_on_premises_instance::GetOnPremisesInstanceInput).
     pub fn build(
         self,

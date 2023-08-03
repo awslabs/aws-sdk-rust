@@ -51,6 +51,10 @@ impl DocumentFilterBuilder {
         self.key = input;
         self
     }
+    /// <p>The name of the filter.</p>
+    pub fn get_key(&self) -> &::std::option::Option<crate::types::DocumentFilterKey> {
+        &self.key
+    }
     /// <p>The value of the filter.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl DocumentFilterBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of the filter.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`DocumentFilter`](crate::types::DocumentFilter).
     pub fn build(self) -> crate::types::DocumentFilter {

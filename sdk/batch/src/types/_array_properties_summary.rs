@@ -48,6 +48,10 @@ impl ArrayPropertiesSummaryBuilder {
         self.size = input;
         self
     }
+    /// <p>The size of the array job. This parameter is returned for parent array jobs.</p>
+    pub fn get_size(&self) -> &::std::option::Option<i32> {
+        &self.size
+    }
     /// <p>The job index within the array that's associated with this job. This parameter is returned for children of array jobs.</p>
     pub fn index(mut self, input: i32) -> Self {
         self.index = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ArrayPropertiesSummaryBuilder {
     pub fn set_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.index = input;
         self
+    }
+    /// <p>The job index within the array that's associated with this job. This parameter is returned for children of array jobs.</p>
+    pub fn get_index(&self) -> &::std::option::Option<i32> {
+        &self.index
     }
     /// Consumes the builder and constructs a [`ArrayPropertiesSummary`](crate::types::ArrayPropertiesSummary).
     pub fn build(self) -> crate::types::ArrayPropertiesSummary {

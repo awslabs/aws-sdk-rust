@@ -36,6 +36,12 @@ impl PostToConnectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PostToConnection as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::post_to_connection::builders::PostToConnectionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl PostToConnectionFluentBuilder {
         self.inner = self.inner.set_data(input);
         self
     }
+    /// <p>The data to be sent to the client specified by its connection id.</p>
+    pub fn get_data(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        self.inner.get_data()
+    }
     /// <p>The identifier of the connection that a specific client is using.</p>
     pub fn connection_id(
         mut self,
@@ -141,5 +151,9 @@ impl PostToConnectionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_connection_id(input);
         self
+    }
+    /// <p>The identifier of the connection that a specific client is using.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connection_id()
     }
 }

@@ -36,6 +36,12 @@ impl CreateWorkflowFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateWorkflow as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_workflow::builders::CreateWorkflowInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl CreateWorkflowFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the migration workflow.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The description of the migration workflow.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -128,6 +138,10 @@ impl CreateWorkflowFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The description of the migration workflow.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The ID of the template.</p>
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_id(input.into());
@@ -137,6 +151,10 @@ impl CreateWorkflowFluentBuilder {
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_id(input);
         self
+    }
+    /// <p>The ID of the template.</p>
+    pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_id()
     }
     /// <p>The configuration ID of the application configured in Application Discovery Service.</p>
     pub fn application_configuration_id(
@@ -153,6 +171,12 @@ impl CreateWorkflowFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_application_configuration_id(input);
         self
+    }
+    /// <p>The configuration ID of the application configured in Application Discovery Service.</p>
+    pub fn get_application_configuration_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_configuration_id()
     }
     /// Adds a key-value pair to `inputParameters`.
     ///
@@ -177,6 +201,14 @@ impl CreateWorkflowFluentBuilder {
         self.inner = self.inner.set_input_parameters(input);
         self
     }
+    /// <p>The input parameters required to create a migration workflow.</p>
+    pub fn get_input_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::StepInput>,
+    > {
+        self.inner.get_input_parameters()
+    }
     /// Appends an item to `stepTargets`.
     ///
     /// To override the contents of this collection use [`set_step_targets`](Self::set_step_targets).
@@ -193,6 +225,12 @@ impl CreateWorkflowFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_step_targets(input);
         self
+    }
+    /// <p>The servers on which a step will be run.</p>
+    pub fn get_step_targets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_step_targets()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -216,5 +254,13 @@ impl CreateWorkflowFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags to add on a migration workflow.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

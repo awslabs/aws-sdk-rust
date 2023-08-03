@@ -118,6 +118,10 @@ impl DynamoDbActionBuilder {
         self.table_name = input;
         self
     }
+    /// <p>The name of the DynamoDB table.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
+    }
     /// <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -128,6 +132,10 @@ impl DynamoDbActionBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The type of operation to be performed. This follows the substitution template, so it can be <code>${operation}</code>, but the substitution must result in one of the following: <code>INSERT</code>, <code>UPDATE</code>, or <code>DELETE</code>.</p>
     pub fn operation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operation = ::std::option::Option::Some(input.into());
@@ -137,6 +145,10 @@ impl DynamoDbActionBuilder {
     pub fn set_operation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operation = input;
         self
+    }
+    /// <p>The type of operation to be performed. This follows the substitution template, so it can be <code>${operation}</code>, but the substitution must result in one of the following: <code>INSERT</code>, <code>UPDATE</code>, or <code>DELETE</code>.</p>
+    pub fn get_operation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation
     }
     /// <p>The hash key name.</p>
     pub fn hash_key_field(
@@ -154,6 +166,10 @@ impl DynamoDbActionBuilder {
         self.hash_key_field = input;
         self
     }
+    /// <p>The hash key name.</p>
+    pub fn get_hash_key_field(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hash_key_field
+    }
     /// <p>The hash key value.</p>
     pub fn hash_key_value(
         mut self,
@@ -170,6 +186,10 @@ impl DynamoDbActionBuilder {
         self.hash_key_value = input;
         self
     }
+    /// <p>The hash key value.</p>
+    pub fn get_hash_key_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hash_key_value
+    }
     /// <p>The hash key type. Valid values are "STRING" or "NUMBER"</p>
     pub fn hash_key_type(mut self, input: crate::types::DynamoKeyType) -> Self {
         self.hash_key_type = ::std::option::Option::Some(input);
@@ -182,6 +202,10 @@ impl DynamoDbActionBuilder {
     ) -> Self {
         self.hash_key_type = input;
         self
+    }
+    /// <p>The hash key type. Valid values are "STRING" or "NUMBER"</p>
+    pub fn get_hash_key_type(&self) -> &::std::option::Option<crate::types::DynamoKeyType> {
+        &self.hash_key_type
     }
     /// <p>The range key name.</p>
     pub fn range_key_field(
@@ -199,6 +223,10 @@ impl DynamoDbActionBuilder {
         self.range_key_field = input;
         self
     }
+    /// <p>The range key name.</p>
+    pub fn get_range_key_field(&self) -> &::std::option::Option<::std::string::String> {
+        &self.range_key_field
+    }
     /// <p>The range key value.</p>
     pub fn range_key_value(
         mut self,
@@ -215,6 +243,10 @@ impl DynamoDbActionBuilder {
         self.range_key_value = input;
         self
     }
+    /// <p>The range key value.</p>
+    pub fn get_range_key_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.range_key_value
+    }
     /// <p>The range key type. Valid values are "STRING" or "NUMBER"</p>
     pub fn range_key_type(mut self, input: crate::types::DynamoKeyType) -> Self {
         self.range_key_type = ::std::option::Option::Some(input);
@@ -227,6 +259,10 @@ impl DynamoDbActionBuilder {
     ) -> Self {
         self.range_key_type = input;
         self
+    }
+    /// <p>The range key type. Valid values are "STRING" or "NUMBER"</p>
+    pub fn get_range_key_type(&self) -> &::std::option::Option<crate::types::DynamoKeyType> {
+        &self.range_key_type
     }
     /// <p>The action payload. This name can be customized.</p>
     pub fn payload_field(
@@ -243,6 +279,10 @@ impl DynamoDbActionBuilder {
     ) -> Self {
         self.payload_field = input;
         self
+    }
+    /// <p>The action payload. This name can be customized.</p>
+    pub fn get_payload_field(&self) -> &::std::option::Option<::std::string::String> {
+        &self.payload_field
     }
     /// Consumes the builder and constructs a [`DynamoDbAction`](crate::types::DynamoDbAction).
     pub fn build(self) -> crate::types::DynamoDbAction {

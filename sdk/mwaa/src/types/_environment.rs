@@ -368,6 +368,10 @@ impl EnvironmentBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The status of the Amazon MWAA environment. Valid values:</p>
     /// <ul>
     /// <li> <p> <code>CREATING</code> - Indicates the request to create the environment is in progress.</p> </li>
@@ -407,6 +411,23 @@ impl EnvironmentBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the Amazon MWAA environment. Valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATING</code> - Indicates the request to create the environment is in progress.</p> </li>
+    /// <li> <p> <code>CREATING_SNAPSHOT</code> - Indicates the request to update environment details, or upgrade the environment version, is in progress and Amazon MWAA is creating a storage volume snapshot of the Amazon RDS database cluster associated with the environment. A database snapshot is a backup created at a specific point in time. Amazon MWAA uses snapshots to recover environment metadata if the process to update or upgrade an environment fails.</p> </li>
+    /// <li> <p> <code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment could not be created.</p> </li>
+    /// <li> <p> <code>AVAILABLE</code> - Indicates the request was successful and the environment is ready to use.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - Indicates the request to update the environment is in progress.</p> </li>
+    /// <li> <p> <code>ROLLING_BACK</code> - Indicates the request to update environment details, or upgrade the environment version, failed and Amazon MWAA is restoring the environment using the latest storage volume snapshot.</p> </li>
+    /// <li> <p> <code>DELETING</code> - Indicates the request to delete the environment is in progress.</p> </li>
+    /// <li> <p> <code>DELETED</code> - Indicates the request to delete the environment is complete, and the environment has been deleted.</p> </li>
+    /// <li> <p> <code>UNAVAILABLE</code> - Indicates the request failed, but the environment was unable to rollback and is not in a stable state.</p> </li>
+    /// <li> <p> <code>UPDATE_FAILED</code> - Indicates the request to update the environment failed, and the environment has rolled back successfully and is ready to use.</p> </li>
+    /// </ul>
+    /// <p>We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon MWAA troubleshooting</a>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::EnvironmentStatus> {
+        &self.status
+    }
     /// <p>The Amazon Resource Name (ARN) of the Amazon MWAA environment.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -416,6 +437,10 @@ impl EnvironmentBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon MWAA environment.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The day and time the environment was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -429,6 +454,10 @@ impl EnvironmentBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The day and time the environment was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>The Apache Airflow <i>Web server</i> host name for the Amazon MWAA environment. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing the Apache Airflow UI</a>.</p>
     pub fn webserver_url(
@@ -446,6 +475,10 @@ impl EnvironmentBuilder {
         self.webserver_url = input;
         self
     }
+    /// <p>The Apache Airflow <i>Web server</i> host name for the Amazon MWAA environment. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing the Apache Airflow UI</a>.</p>
+    pub fn get_webserver_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.webserver_url
+    }
     /// <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA to access Amazon Web Services resources in your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.</p>
     pub fn execution_role_arn(
         mut self,
@@ -461,6 +494,10 @@ impl EnvironmentBuilder {
     ) -> Self {
         self.execution_role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA to access Amazon Web Services resources in your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.</p>
+    pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_role_arn
     }
     /// <p>The Amazon Resource Name (ARN) for the service-linked role of the environment. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-slr.html">Amazon MWAA Service-linked role</a>.</p>
     pub fn service_role_arn(
@@ -478,6 +515,10 @@ impl EnvironmentBuilder {
         self.service_role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the service-linked role of the environment. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-slr.html">Amazon MWAA Service-linked role</a>.</p>
+    pub fn get_service_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_role_arn
+    }
     /// <p>The Amazon Web Services Key Management Service (KMS) encryption key used to encrypt the data in your environment.</p>
     pub fn kms_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key = ::std::option::Option::Some(input.into());
@@ -487,6 +528,10 @@ impl EnvironmentBuilder {
     pub fn set_kms_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key = input;
         self
+    }
+    /// <p>The Amazon Web Services Key Management Service (KMS) encryption key used to encrypt the data in your environment.</p>
+    pub fn get_kms_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key
     }
     /// <p>The Apache Airflow version on your environment. Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, and <code>2.5.1</code>.</p>
     pub fn airflow_version(
@@ -504,6 +549,10 @@ impl EnvironmentBuilder {
         self.airflow_version = input;
         self
     }
+    /// <p>The Apache Airflow version on your environment. Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, and <code>2.5.1</code>.</p>
+    pub fn get_airflow_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.airflow_version
+    }
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket for Amazon MWAA</a>.</p>
     pub fn source_bucket_arn(
         mut self,
@@ -520,6 +569,10 @@ impl EnvironmentBuilder {
         self.source_bucket_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket for Amazon MWAA</a>.</p>
+    pub fn get_source_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_bucket_arn
+    }
     /// <p>The relative path to the DAGs folder in your Amazon S3 bucket. For example, <code>s3://mwaa-environment/dags</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating DAGs</a>.</p>
     pub fn dag_s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dag_s3_path = ::std::option::Option::Some(input.into());
@@ -529,6 +582,10 @@ impl EnvironmentBuilder {
     pub fn set_dag_s3_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dag_s3_path = input;
         self
+    }
+    /// <p>The relative path to the DAGs folder in your Amazon S3 bucket. For example, <code>s3://mwaa-environment/dags</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating DAGs</a>.</p>
+    pub fn get_dag_s3_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dag_s3_path
     }
     /// <p>The relative path to the file in your Amazon S3 bucket. For example, <code>s3://mwaa-environment/plugins.zip</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom plugins</a>.</p>
     pub fn plugins_s3_path(
@@ -545,6 +602,10 @@ impl EnvironmentBuilder {
     ) -> Self {
         self.plugins_s3_path = input;
         self
+    }
+    /// <p>The relative path to the file in your Amazon S3 bucket. For example, <code>s3://mwaa-environment/plugins.zip</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom plugins</a>.</p>
+    pub fn get_plugins_s3_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.plugins_s3_path
     }
     /// <p>The version of the <code>plugins.zip</code> file in your Amazon S3 bucket. You must specify the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon S3 assigns to the file.</p>
     /// <p> Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The following is an example: </p>
@@ -568,6 +629,13 @@ impl EnvironmentBuilder {
         self.plugins_s3_object_version = input;
         self
     }
+    /// <p>The version of the <code>plugins.zip</code> file in your Amazon S3 bucket. You must specify the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon S3 assigns to the file.</p>
+    /// <p> Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The following is an example: </p>
+    /// <p> <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom plugins</a>.</p>
+    pub fn get_plugins_s3_object_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.plugins_s3_object_version
+    }
     /// <p>The relative path to the <code>requirements.txt</code> file in your Amazon S3 bucket. For example, <code>s3://mwaa-environment/requirements.txt</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python dependencies</a>.</p>
     pub fn requirements_s3_path(
         mut self,
@@ -583,6 +651,10 @@ impl EnvironmentBuilder {
     ) -> Self {
         self.requirements_s3_path = input;
         self
+    }
+    /// <p>The relative path to the <code>requirements.txt</code> file in your Amazon S3 bucket. For example, <code>s3://mwaa-environment/requirements.txt</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python dependencies</a>.</p>
+    pub fn get_requirements_s3_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.requirements_s3_path
     }
     /// <p>The version of the <code>requirements.txt </code> file on your Amazon S3 bucket. You must specify the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon S3 assigns to the file.</p>
     /// <p> Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The following is an example: </p>
@@ -606,6 +678,15 @@ impl EnvironmentBuilder {
         self.requirements_s3_object_version = input;
         self
     }
+    /// <p>The version of the <code>requirements.txt </code> file on your Amazon S3 bucket. You must specify the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon S3 assigns to the file.</p>
+    /// <p> Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The following is an example: </p>
+    /// <p> <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code> </p>
+    /// <p> For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python dependencies</a>. </p>
+    pub fn get_requirements_s3_object_version(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.requirements_s3_object_version
+    }
     /// <p>The relative path to the startup shell script in your Amazon S3 bucket. For example, <code>s3://mwaa-environment/startup.sh</code>.</p>
     /// <p> Amazon MWAA runs the script as your environment starts, and before running the Apache Airflow process. You can use this script to install dependencies, modify Apache Airflow configuration options, and set environment variables. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>. </p>
     pub fn startup_script_s3_path(
@@ -623,6 +704,11 @@ impl EnvironmentBuilder {
     ) -> Self {
         self.startup_script_s3_path = input;
         self
+    }
+    /// <p>The relative path to the startup shell script in your Amazon S3 bucket. For example, <code>s3://mwaa-environment/startup.sh</code>.</p>
+    /// <p> Amazon MWAA runs the script as your environment starts, and before running the Apache Airflow process. You can use this script to install dependencies, modify Apache Airflow configuration options, and set environment variables. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>. </p>
+    pub fn get_startup_script_s3_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.startup_script_s3_path
     }
     /// <p>The version of the startup shell script in your Amazon S3 bucket. You must specify the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon S3 assigns to the file.</p>
     /// <p> Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The following is an example: </p>
@@ -645,6 +731,15 @@ impl EnvironmentBuilder {
     ) -> Self {
         self.startup_script_s3_object_version = input;
         self
+    }
+    /// <p>The version of the startup shell script in your Amazon S3 bucket. You must specify the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon S3 assigns to the file.</p>
+    /// <p> Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The following is an example: </p>
+    /// <p> <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code> </p>
+    /// <p> For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>. </p>
+    pub fn get_startup_script_s3_object_version(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.startup_script_s3_object_version
     }
     /// Adds a key-value pair to `airflow_configuration_options`.
     ///
@@ -671,6 +766,14 @@ impl EnvironmentBuilder {
         self.airflow_configuration_options = input;
         self
     }
+    /// <p>A list of key-value pairs containing the Apache Airflow configuration options attached to your environment. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache Airflow configuration options</a>.</p>
+    pub fn get_airflow_configuration_options(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.airflow_configuration_options
+    }
     /// <p>The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>, <code>mw1.large</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment class</a>.</p>
     pub fn environment_class(
         mut self,
@@ -687,6 +790,10 @@ impl EnvironmentBuilder {
         self.environment_class = input;
         self
     }
+    /// <p>The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>, <code>mw1.large</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment class</a>.</p>
+    pub fn get_environment_class(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_class
+    }
     /// <p>The maximum number of workers that run in your environment. For example, <code>20</code>.</p>
     pub fn max_workers(mut self, input: i32) -> Self {
         self.max_workers = ::std::option::Option::Some(input);
@@ -696,6 +803,10 @@ impl EnvironmentBuilder {
     pub fn set_max_workers(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_workers = input;
         self
+    }
+    /// <p>The maximum number of workers that run in your environment. For example, <code>20</code>.</p>
+    pub fn get_max_workers(&self) -> &::std::option::Option<i32> {
+        &self.max_workers
     }
     /// <p>Describes the VPC networking components used to secure and enable network traffic between the Amazon Web Services resources for your environment. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.</p>
     pub fn network_configuration(mut self, input: crate::types::NetworkConfiguration) -> Self {
@@ -710,6 +821,12 @@ impl EnvironmentBuilder {
         self.network_configuration = input;
         self
     }
+    /// <p>Describes the VPC networking components used to secure and enable network traffic between the Amazon Web Services resources for your environment. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.</p>
+    pub fn get_network_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkConfiguration> {
+        &self.network_configuration
+    }
     /// <p>The Apache Airflow logs published to CloudWatch Logs.</p>
     pub fn logging_configuration(mut self, input: crate::types::LoggingConfiguration) -> Self {
         self.logging_configuration = ::std::option::Option::Some(input);
@@ -723,6 +840,12 @@ impl EnvironmentBuilder {
         self.logging_configuration = input;
         self
     }
+    /// <p>The Apache Airflow logs published to CloudWatch Logs.</p>
+    pub fn get_logging_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::LoggingConfiguration> {
+        &self.logging_configuration
+    }
     /// <p>The status of the last update on the environment.</p>
     pub fn last_update(mut self, input: crate::types::LastUpdate) -> Self {
         self.last_update = ::std::option::Option::Some(input);
@@ -735,6 +858,10 @@ impl EnvironmentBuilder {
     ) -> Self {
         self.last_update = input;
         self
+    }
+    /// <p>The status of the last update on the environment.</p>
+    pub fn get_last_update(&self) -> &::std::option::Option<crate::types::LastUpdate> {
+        &self.last_update
     }
     /// <p>The day and time of the week in Coordinated Universal Time (UTC) 24-hour standard time that weekly maintenance updates are scheduled. For example: <code>TUE:03:30</code>.</p>
     pub fn weekly_maintenance_window_start(
@@ -751,6 +878,12 @@ impl EnvironmentBuilder {
     ) -> Self {
         self.weekly_maintenance_window_start = input;
         self
+    }
+    /// <p>The day and time of the week in Coordinated Universal Time (UTC) 24-hour standard time that weekly maintenance updates are scheduled. For example: <code>TUE:03:30</code>.</p>
+    pub fn get_weekly_maintenance_window_start(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.weekly_maintenance_window_start
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -777,6 +910,14 @@ impl EnvironmentBuilder {
         self.tags = input;
         self
     }
+    /// <p>The key-value tag pairs associated to your environment. For example, <code>"Environment": "Staging"</code>. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The Apache Airflow <i>Web server</i> access mode. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access modes</a>.</p>
     pub fn webserver_access_mode(mut self, input: crate::types::WebserverAccessMode) -> Self {
         self.webserver_access_mode = ::std::option::Option::Some(input);
@@ -790,6 +931,12 @@ impl EnvironmentBuilder {
         self.webserver_access_mode = input;
         self
     }
+    /// <p>The Apache Airflow <i>Web server</i> access mode. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access modes</a>.</p>
+    pub fn get_webserver_access_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::WebserverAccessMode> {
+        &self.webserver_access_mode
+    }
     /// <p>The minimum number of workers that run in your environment. For example, <code>2</code>.</p>
     pub fn min_workers(mut self, input: i32) -> Self {
         self.min_workers = ::std::option::Option::Some(input);
@@ -800,6 +947,10 @@ impl EnvironmentBuilder {
         self.min_workers = input;
         self
     }
+    /// <p>The minimum number of workers that run in your environment. For example, <code>2</code>.</p>
+    pub fn get_min_workers(&self) -> &::std::option::Option<i32> {
+        &self.min_workers
+    }
     /// <p>The number of Apache Airflow schedulers that run in your Amazon MWAA environment.</p>
     pub fn schedulers(mut self, input: i32) -> Self {
         self.schedulers = ::std::option::Option::Some(input);
@@ -809,6 +960,10 @@ impl EnvironmentBuilder {
     pub fn set_schedulers(mut self, input: ::std::option::Option<i32>) -> Self {
         self.schedulers = input;
         self
+    }
+    /// <p>The number of Apache Airflow schedulers that run in your Amazon MWAA environment.</p>
+    pub fn get_schedulers(&self) -> &::std::option::Option<i32> {
+        &self.schedulers
     }
     /// Consumes the builder and constructs a [`Environment`](crate::types::Environment).
     pub fn build(self) -> crate::types::Environment {

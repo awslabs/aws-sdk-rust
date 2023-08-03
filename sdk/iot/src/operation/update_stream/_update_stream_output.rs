@@ -70,6 +70,10 @@ impl UpdateStreamOutputBuilder {
         self.stream_id = input;
         self
     }
+    /// <p>The stream ID.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_id
+    }
     /// <p>The stream ARN.</p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_arn = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl UpdateStreamOutputBuilder {
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_arn = input;
         self
+    }
+    /// <p>The stream ARN.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_arn
     }
     /// <p>A description of the stream.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -90,6 +98,10 @@ impl UpdateStreamOutputBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the stream.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The stream version.</p>
     pub fn stream_version(mut self, input: i32) -> Self {
         self.stream_version = ::std::option::Option::Some(input);
@@ -99,6 +111,10 @@ impl UpdateStreamOutputBuilder {
     pub fn set_stream_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.stream_version = input;
         self
+    }
+    /// <p>The stream version.</p>
+    pub fn get_stream_version(&self) -> &::std::option::Option<i32> {
+        &self.stream_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

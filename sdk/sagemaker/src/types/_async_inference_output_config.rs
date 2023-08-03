@@ -71,6 +71,11 @@ impl AsyncInferenceOutputConfigBuilder {
         self.kms_key_id = input;
         self
     }
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the asynchronous inference output in Amazon S3.</p>
+    /// <p></p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// <p>The Amazon S3 location to upload inference responses to.</p>
     pub fn s3_output_path(
         mut self,
@@ -86,6 +91,10 @@ impl AsyncInferenceOutputConfigBuilder {
     ) -> Self {
         self.s3_output_path = input;
         self
+    }
+    /// <p>The Amazon S3 location to upload inference responses to.</p>
+    pub fn get_s3_output_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_output_path
     }
     /// <p>Specifies the configuration for notifications of inference results for asynchronous inference.</p>
     pub fn notification_config(
@@ -103,6 +112,12 @@ impl AsyncInferenceOutputConfigBuilder {
         self.notification_config = input;
         self
     }
+    /// <p>Specifies the configuration for notifications of inference results for asynchronous inference.</p>
+    pub fn get_notification_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AsyncInferenceNotificationConfig> {
+        &self.notification_config
+    }
     /// <p>The Amazon S3 location to upload failure inference responses to.</p>
     pub fn s3_failure_path(
         mut self,
@@ -118,6 +133,10 @@ impl AsyncInferenceOutputConfigBuilder {
     ) -> Self {
         self.s3_failure_path = input;
         self
+    }
+    /// <p>The Amazon S3 location to upload failure inference responses to.</p>
+    pub fn get_s3_failure_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_failure_path
     }
     /// Consumes the builder and constructs a [`AsyncInferenceOutputConfig`](crate::types::AsyncInferenceOutputConfig).
     pub fn build(self) -> crate::types::AsyncInferenceOutputConfig {

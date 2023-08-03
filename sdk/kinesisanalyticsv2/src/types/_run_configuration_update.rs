@@ -57,6 +57,12 @@ impl RunConfigurationUpdateBuilder {
         self.flink_run_configuration = input;
         self
     }
+    /// <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics application.</p>
+    pub fn get_flink_run_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::FlinkRunConfiguration> {
+        &self.flink_run_configuration
+    }
     /// <p>Describes updates to the restore behavior of a restarting application.</p>
     pub fn application_restore_configuration(
         mut self,
@@ -72,6 +78,12 @@ impl RunConfigurationUpdateBuilder {
     ) -> Self {
         self.application_restore_configuration = input;
         self
+    }
+    /// <p>Describes updates to the restore behavior of a restarting application.</p>
+    pub fn get_application_restore_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationRestoreConfiguration> {
+        &self.application_restore_configuration
     }
     /// Consumes the builder and constructs a [`RunConfigurationUpdate`](crate::types::RunConfigurationUpdate).
     pub fn build(self) -> crate::types::RunConfigurationUpdate {

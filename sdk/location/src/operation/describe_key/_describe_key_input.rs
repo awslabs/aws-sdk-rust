@@ -39,6 +39,10 @@ impl DescribeKeyInputBuilder {
         self.key_name = input;
         self
     }
+    /// <p>The name of the API key resource.</p>
+    pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_name
+    }
     /// Consumes the builder and constructs a [`DescribeKeyInput`](crate::operation::describe_key::DescribeKeyInput).
     pub fn build(
         self,

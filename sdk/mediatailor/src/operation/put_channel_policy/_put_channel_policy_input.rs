@@ -48,6 +48,10 @@ impl PutChannelPolicyInputBuilder {
         self.channel_name = input;
         self
     }
+    /// <p>The channel name associated with this Channel Policy.</p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_name
+    }
     /// <p>Adds an IAM role that determines the permissions of your channel.</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl PutChannelPolicyInputBuilder {
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy = input;
         self
+    }
+    /// <p>Adds an IAM role that determines the permissions of your channel.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy
     }
     /// Consumes the builder and constructs a [`PutChannelPolicyInput`](crate::operation::put_channel_policy::PutChannelPolicyInput).
     pub fn build(

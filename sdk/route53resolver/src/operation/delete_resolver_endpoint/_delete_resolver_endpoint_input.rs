@@ -47,6 +47,10 @@ impl DeleteResolverEndpointInputBuilder {
         self.resolver_endpoint_id = input;
         self
     }
+    /// <p>The ID of the Resolver endpoint that you want to delete.</p>
+    pub fn get_resolver_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resolver_endpoint_id
+    }
     /// Consumes the builder and constructs a [`DeleteResolverEndpointInput`](crate::operation::delete_resolver_endpoint::DeleteResolverEndpointInput).
     pub fn build(
         self,

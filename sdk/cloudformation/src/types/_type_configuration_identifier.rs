@@ -76,6 +76,11 @@ impl TypeConfigurationIdentifierBuilder {
         self.type_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the extension, in this account and Region.</p>
+    /// <p>For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the type</a> in this account and Region. For private extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the type</a> in this account and Region.</p>
+    pub fn get_type_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.type_arn
+    }
     /// <p>The alias specified for this configuration, if one was specified when the configuration was set.</p>
     pub fn type_configuration_alias(
         mut self,
@@ -91,6 +96,10 @@ impl TypeConfigurationIdentifierBuilder {
     ) -> Self {
         self.type_configuration_alias = input;
         self
+    }
+    /// <p>The alias specified for this configuration, if one was specified when the configuration was set.</p>
+    pub fn get_type_configuration_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.type_configuration_alias
     }
     /// <p>The Amazon Resource Name (ARN) for the configuration, in this account and Region.</p>
     pub fn type_configuration_arn(
@@ -108,6 +117,10 @@ impl TypeConfigurationIdentifierBuilder {
         self.type_configuration_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the configuration, in this account and Region.</p>
+    pub fn get_type_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.type_configuration_arn
+    }
     /// <p>The type of extension.</p>
     pub fn r#type(mut self, input: crate::types::ThirdPartyType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -118,6 +131,10 @@ impl TypeConfigurationIdentifierBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of extension.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ThirdPartyType> {
+        &self.r#type
+    }
     /// <p>The name of the extension type to which this configuration applies.</p>
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_name = ::std::option::Option::Some(input.into());
@@ -127,6 +144,10 @@ impl TypeConfigurationIdentifierBuilder {
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.type_name = input;
         self
+    }
+    /// <p>The name of the extension type to which this configuration applies.</p>
+    pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.type_name
     }
     /// Consumes the builder and constructs a [`TypeConfigurationIdentifier`](crate::types::TypeConfigurationIdentifier).
     pub fn build(self) -> crate::types::TypeConfigurationIdentifier {

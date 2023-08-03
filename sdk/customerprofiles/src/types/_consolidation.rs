@@ -56,6 +56,12 @@ impl ConsolidationBuilder {
         self.matching_attributes_list = input;
         self
     }
+    /// <p>A list of matching criteria.</p>
+    pub fn get_matching_attributes_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
+        &self.matching_attributes_list
+    }
     /// Consumes the builder and constructs a [`Consolidation`](crate::types::Consolidation).
     pub fn build(self) -> crate::types::Consolidation {
         crate::types::Consolidation {

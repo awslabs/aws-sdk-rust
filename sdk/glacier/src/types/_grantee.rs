@@ -72,6 +72,10 @@ impl GranteeBuilder {
         self.r#type = input;
         self
     }
+    /// <p>Type of grantee</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
+        &self.r#type
+    }
     /// <p>Screen name of the grantee.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl GranteeBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
+    }
+    /// <p>Screen name of the grantee.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// <p>URI of the grantee group.</p>
     pub fn uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -92,6 +100,10 @@ impl GranteeBuilder {
         self.uri = input;
         self
     }
+    /// <p>URI of the grantee group.</p>
+    pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uri
+    }
     /// <p>The canonical user ID of the grantee.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -101,6 +113,10 @@ impl GranteeBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The canonical user ID of the grantee.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>Email address of the grantee.</p>
     pub fn email_address(
@@ -117,6 +133,10 @@ impl GranteeBuilder {
     ) -> Self {
         self.email_address = input;
         self
+    }
+    /// <p>Email address of the grantee.</p>
+    pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_address
     }
     /// Consumes the builder and constructs a [`Grantee`](crate::types::Grantee).
     pub fn build(self) -> crate::types::Grantee {

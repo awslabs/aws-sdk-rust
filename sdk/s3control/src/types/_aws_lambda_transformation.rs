@@ -48,6 +48,10 @@ impl AwsLambdaTransformationBuilder {
         self.function_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
+    pub fn get_function_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_arn
+    }
     /// <p>Additional JSON that provides supplemental data to the Lambda function used to transform objects.</p>
     pub fn function_payload(
         mut self,
@@ -63,6 +67,10 @@ impl AwsLambdaTransformationBuilder {
     ) -> Self {
         self.function_payload = input;
         self
+    }
+    /// <p>Additional JSON that provides supplemental data to the Lambda function used to transform objects.</p>
+    pub fn get_function_payload(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_payload
     }
     /// Consumes the builder and constructs a [`AwsLambdaTransformation`](crate::types::AwsLambdaTransformation).
     pub fn build(self) -> crate::types::AwsLambdaTransformation {

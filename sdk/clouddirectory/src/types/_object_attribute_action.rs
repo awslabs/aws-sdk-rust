@@ -56,6 +56,12 @@ impl ObjectAttributeActionBuilder {
         self.object_attribute_action_type = input;
         self
     }
+    /// <p>A type that can be either <code>Update</code> or <code>Delete</code>.</p>
+    pub fn get_object_attribute_action_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateActionType> {
+        &self.object_attribute_action_type
+    }
     /// <p>The value that you want to update to.</p>
     pub fn object_attribute_update_value(
         mut self,
@@ -71,6 +77,12 @@ impl ObjectAttributeActionBuilder {
     ) -> Self {
         self.object_attribute_update_value = input;
         self
+    }
+    /// <p>The value that you want to update to.</p>
+    pub fn get_object_attribute_update_value(
+        &self,
+    ) -> &::std::option::Option<crate::types::TypedAttributeValue> {
+        &self.object_attribute_update_value
     }
     /// Consumes the builder and constructs a [`ObjectAttributeAction`](crate::types::ObjectAttributeAction).
     pub fn build(self) -> crate::types::ObjectAttributeAction {

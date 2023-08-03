@@ -163,6 +163,11 @@ impl SlackConfigurationBuilder {
         self.team_id = input;
         self
     }
+    /// <p>The identifier of the team in the Slack workspace. For example, <i>T0123456789</i>.</p>
+    /// <p>You can find your team ID in the URL of the main page of your Slack workspace. When you log in to Slack via a browser, you are directed to the URL of the main page. For example, <i>https://app.slack.com/client/<b>T0123456789</b>/...</i>.</p>
+    pub fn get_team_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.team_id
+    }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Slack workspace team. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
     /// <li> <p>slackToken—The user or bot token created in Slack. For more information on creating a token in Slack, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#slack-authentication">Authentication for a Slack data source</a>.</p> </li>
@@ -179,6 +184,13 @@ impl SlackConfigurationBuilder {
         self.secret_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Slack workspace team. The secret must contain a JSON structure with the following keys:</p>
+    /// <ul>
+    /// <li> <p>slackToken—The user or bot token created in Slack. For more information on creating a token in Slack, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#slack-authentication">Authentication for a Slack data source</a>.</p> </li>
+    /// </ul>
+    pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_arn
+    }
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Slack. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
     pub fn vpc_configuration(mut self, input: crate::types::DataSourceVpcConfiguration) -> Self {
         self.vpc_configuration = ::std::option::Option::Some(input);
@@ -191,6 +203,12 @@ impl SlackConfigurationBuilder {
     ) -> Self {
         self.vpc_configuration = input;
         self
+    }
+    /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Slack. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+    pub fn get_vpc_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataSourceVpcConfiguration> {
+        &self.vpc_configuration
     }
     /// Appends an item to `slack_entity_list`.
     ///
@@ -211,6 +229,12 @@ impl SlackConfigurationBuilder {
         self.slack_entity_list = input;
         self
     }
+    /// <p>Specify whether to index public channels, private channels, group messages, and direct messages. You can specify one or more of these options.</p>
+    pub fn get_slack_entity_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SlackEntity>> {
+        &self.slack_entity_list
+    }
     /// <p> <code>TRUE</code> to use the Slack change log to determine which documents require updating in the index. Depending on the Slack change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in Slack.</p>
     pub fn use_change_log(mut self, input: bool) -> Self {
         self.use_change_log = ::std::option::Option::Some(input);
@@ -220,6 +244,10 @@ impl SlackConfigurationBuilder {
     pub fn set_use_change_log(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_change_log = input;
         self
+    }
+    /// <p> <code>TRUE</code> to use the Slack change log to determine which documents require updating in the index. Depending on the Slack change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in Slack.</p>
+    pub fn get_use_change_log(&self) -> &::std::option::Option<bool> {
+        &self.use_change_log
     }
     /// <p> <code>TRUE</code> to index bot messages from your Slack workspace team.</p>
     pub fn crawl_bot_message(mut self, input: bool) -> Self {
@@ -231,6 +259,10 @@ impl SlackConfigurationBuilder {
         self.crawl_bot_message = input;
         self
     }
+    /// <p> <code>TRUE</code> to index bot messages from your Slack workspace team.</p>
+    pub fn get_crawl_bot_message(&self) -> &::std::option::Option<bool> {
+        &self.crawl_bot_message
+    }
     /// <p> <code>TRUE</code> to exclude archived messages to index from your Slack workspace team.</p>
     pub fn exclude_archived(mut self, input: bool) -> Self {
         self.exclude_archived = ::std::option::Option::Some(input);
@@ -240,6 +272,10 @@ impl SlackConfigurationBuilder {
     pub fn set_exclude_archived(mut self, input: ::std::option::Option<bool>) -> Self {
         self.exclude_archived = input;
         self
+    }
+    /// <p> <code>TRUE</code> to exclude archived messages to index from your Slack workspace team.</p>
+    pub fn get_exclude_archived(&self) -> &::std::option::Option<bool> {
+        &self.exclude_archived
     }
     /// <p>The date to start crawling your data from your Slack workspace team. The date must follow this format: <code>yyyy-mm-dd</code>.</p>
     pub fn since_crawl_date(
@@ -257,6 +293,10 @@ impl SlackConfigurationBuilder {
         self.since_crawl_date = input;
         self
     }
+    /// <p>The date to start crawling your data from your Slack workspace team. The date must follow this format: <code>yyyy-mm-dd</code>.</p>
+    pub fn get_since_crawl_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.since_crawl_date
+    }
     /// <p>The number of hours for change log to look back from when you last synchronized your data. You can look back up to 7 days or 168 hours.</p>
     /// <p>Change log updates your index only if new content was added since you last synced your data. Updated or deleted content from before you last synced does not get updated in your index. To capture updated or deleted content before you last synced, set the <code>LookBackPeriod</code> to the number of hours you want change log to look back.</p>
     pub fn look_back_period(mut self, input: i32) -> Self {
@@ -268,6 +308,11 @@ impl SlackConfigurationBuilder {
     pub fn set_look_back_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.look_back_period = input;
         self
+    }
+    /// <p>The number of hours for change log to look back from when you last synchronized your data. You can look back up to 7 days or 168 hours.</p>
+    /// <p>Change log updates your index only if new content was added since you last synced your data. Updated or deleted content from before you last synced does not get updated in your index. To capture updated or deleted content before you last synced, set the <code>LookBackPeriod</code> to the number of hours you want change log to look back.</p>
+    pub fn get_look_back_period(&self) -> &::std::option::Option<i32> {
+        &self.look_back_period
     }
     /// Appends an item to `private_channel_filter`.
     ///
@@ -291,6 +336,12 @@ impl SlackConfigurationBuilder {
         self.private_channel_filter = input;
         self
     }
+    /// <p>The list of private channel names from your Slack workspace team. You use this if you want to index specific private channels, not all private channels. You can also use regular expression patterns to filter private channels.</p>
+    pub fn get_private_channel_filter(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.private_channel_filter
+    }
     /// Appends an item to `public_channel_filter`.
     ///
     /// To override the contents of this collection use [`set_public_channel_filter`](Self::set_public_channel_filter).
@@ -312,6 +363,12 @@ impl SlackConfigurationBuilder {
     ) -> Self {
         self.public_channel_filter = input;
         self
+    }
+    /// <p>The list of public channel names to index from your Slack workspace team. You use this if you want to index specific public channels, not all public channels. You can also use regular expression patterns to filter public channels.</p>
+    pub fn get_public_channel_filter(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.public_channel_filter
     }
     /// Appends an item to `inclusion_patterns`.
     ///
@@ -335,6 +392,12 @@ impl SlackConfigurationBuilder {
         self.inclusion_patterns = input;
         self
     }
+    /// <p>A list of regular expression patterns to include certain attached files in your Slack workspace team. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    pub fn get_inclusion_patterns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inclusion_patterns
+    }
     /// Appends an item to `exclusion_patterns`.
     ///
     /// To override the contents of this collection use [`set_exclusion_patterns`](Self::set_exclusion_patterns).
@@ -357,6 +420,12 @@ impl SlackConfigurationBuilder {
         self.exclusion_patterns = input;
         self
     }
+    /// <p>A list of regular expression patterns to exclude certain attached files in your Slack workspace team. Files that match the patterns are excluded from the index. Files that don’t match the patterns are included in the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    pub fn get_exclusion_patterns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.exclusion_patterns
+    }
     /// Appends an item to `field_mappings`.
     ///
     /// To override the contents of this collection use [`set_field_mappings`](Self::set_field_mappings).
@@ -375,6 +444,12 @@ impl SlackConfigurationBuilder {
     ) -> Self {
         self.field_mappings = input;
         self
+    }
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Slack data source attributes or field names to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Slack fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Slack data source field names must exist in your Slack custom metadata.</p>
+    pub fn get_field_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>> {
+        &self.field_mappings
     }
     /// Consumes the builder and constructs a [`SlackConfiguration`](crate::types::SlackConfiguration).
     pub fn build(self) -> crate::types::SlackConfiguration {

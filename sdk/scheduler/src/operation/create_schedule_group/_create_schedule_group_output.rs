@@ -54,6 +54,10 @@ impl CreateScheduleGroupOutputBuilder {
         self.schedule_group_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the schedule group.</p>
+    pub fn get_schedule_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schedule_group_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

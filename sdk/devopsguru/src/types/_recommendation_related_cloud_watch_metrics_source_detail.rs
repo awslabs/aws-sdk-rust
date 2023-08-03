@@ -49,6 +49,10 @@ impl RecommendationRelatedCloudWatchMetricsSourceDetailBuilder {
         self.metric_name = input;
         self
     }
+    /// <p>The name of the CloudWatch metric.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
+    }
     /// <p>The namespace of the CloudWatch metric. A namespace is a container for CloudWatch metrics.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl RecommendationRelatedCloudWatchMetricsSourceDetailBuilder {
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
         self
+    }
+    /// <p>The namespace of the CloudWatch metric. A namespace is a container for CloudWatch metrics.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
     }
     /// Consumes the builder and constructs a [`RecommendationRelatedCloudWatchMetricsSourceDetail`](crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail).
     pub fn build(self) -> crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail {

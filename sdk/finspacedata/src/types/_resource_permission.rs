@@ -50,6 +50,10 @@ impl ResourcePermissionBuilder {
         self.permission = input;
         self
     }
+    /// <p>Permission for a resource.</p>
+    pub fn get_permission(&self) -> &::std::option::Option<::std::string::String> {
+        &self.permission
+    }
     /// Consumes the builder and constructs a [`ResourcePermission`](crate::types::ResourcePermission).
     pub fn build(self) -> crate::types::ResourcePermission {
         crate::types::ResourcePermission {

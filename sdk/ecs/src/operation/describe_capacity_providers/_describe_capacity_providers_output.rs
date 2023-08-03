@@ -72,6 +72,12 @@ impl DescribeCapacityProvidersOutputBuilder {
         self.capacity_providers = input;
         self
     }
+    /// <p>The list of capacity providers.</p>
+    pub fn get_capacity_providers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityProvider>> {
+        &self.capacity_providers
+    }
     /// Appends an item to `failures`.
     ///
     /// To override the contents of this collection use [`set_failures`](Self::set_failures).
@@ -91,6 +97,10 @@ impl DescribeCapacityProvidersOutputBuilder {
         self.failures = input;
         self
     }
+    /// <p>Any failures associated with the call.</p>
+    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Failure>> {
+        &self.failures
+    }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeCapacityProviders</code> request. When the results of a <code>DescribeCapacityProviders</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -100,6 +110,10 @@ impl DescribeCapacityProvidersOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeCapacityProviders</code> request. When the results of a <code>DescribeCapacityProviders</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

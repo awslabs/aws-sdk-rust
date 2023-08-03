@@ -62,6 +62,12 @@ impl TreeMapSortConfigurationBuilder {
         self.tree_map_sort = input;
         self
     }
+    /// <p>The sort configuration of group by fields.</p>
+    pub fn get_tree_map_sort(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>> {
+        &self.tree_map_sort
+    }
     /// <p>The limit on the number of groups that are displayed.</p>
     pub fn tree_map_group_items_limit_configuration(
         mut self,
@@ -77,6 +83,12 @@ impl TreeMapSortConfigurationBuilder {
     ) -> Self {
         self.tree_map_group_items_limit_configuration = input;
         self
+    }
+    /// <p>The limit on the number of groups that are displayed.</p>
+    pub fn get_tree_map_group_items_limit_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ItemsLimitConfiguration> {
+        &self.tree_map_group_items_limit_configuration
     }
     /// Consumes the builder and constructs a [`TreeMapSortConfiguration`](crate::types::TreeMapSortConfiguration).
     pub fn build(self) -> crate::types::TreeMapSortConfiguration {

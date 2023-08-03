@@ -48,6 +48,10 @@ impl TimeSeriesForecastingSettingsBuilder {
         self.status = input;
         self
     }
+    /// <p>Describes whether time series forecasting is enabled or disabled in the Canvas application.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::FeatureStatus> {
+        &self.status
+    }
     /// <p>The IAM role that Canvas passes to Amazon Forecast for time series forecasting. By default, Canvas uses the execution role specified in the <code>UserProfile</code> that launches the Canvas application. If an execution role is not specified in the <code>UserProfile</code>, Canvas uses the execution role specified in the Domain that owns the <code>UserProfile</code>. To allow time series forecasting, this IAM role should have the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/security-iam-awsmanpol-canvas.html#security-iam-awsmanpol-AmazonSageMakerCanvasForecastAccess"> AmazonSageMakerCanvasForecastAccess</a> policy attached and <code>forecast.amazonaws.com</code> added in the trust relationship as a service principal.</p>
     pub fn amazon_forecast_role_arn(
         mut self,
@@ -63,6 +67,10 @@ impl TimeSeriesForecastingSettingsBuilder {
     ) -> Self {
         self.amazon_forecast_role_arn = input;
         self
+    }
+    /// <p>The IAM role that Canvas passes to Amazon Forecast for time series forecasting. By default, Canvas uses the execution role specified in the <code>UserProfile</code> that launches the Canvas application. If an execution role is not specified in the <code>UserProfile</code>, Canvas uses the execution role specified in the Domain that owns the <code>UserProfile</code>. To allow time series forecasting, this IAM role should have the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/security-iam-awsmanpol-canvas.html#security-iam-awsmanpol-AmazonSageMakerCanvasForecastAccess"> AmazonSageMakerCanvasForecastAccess</a> policy attached and <code>forecast.amazonaws.com</code> added in the trust relationship as a service principal.</p>
+    pub fn get_amazon_forecast_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.amazon_forecast_role_arn
     }
     /// Consumes the builder and constructs a [`TimeSeriesForecastingSettings`](crate::types::TimeSeriesForecastingSettings).
     pub fn build(self) -> crate::types::TimeSeriesForecastingSettings {

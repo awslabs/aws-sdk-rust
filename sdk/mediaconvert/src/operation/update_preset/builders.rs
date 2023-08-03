@@ -36,6 +36,10 @@ impl UpdatePresetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdatePreset as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_preset::builders::UpdatePresetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdatePresetFluentBuilder {
         self.inner = self.inner.set_category(input);
         self
     }
+    /// The new category for the preset, if you are changing it.
+    pub fn get_category(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_category()
+    }
     /// The new description for the preset, if you are changing it.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -128,6 +136,10 @@ impl UpdatePresetFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// The new description for the preset, if you are changing it.
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// The name of the preset you are modifying.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -137,6 +149,10 @@ impl UpdatePresetFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// The name of the preset you are modifying.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// Settings for preset
     pub fn settings(mut self, input: crate::types::PresetSettings) -> Self {
@@ -150,5 +166,9 @@ impl UpdatePresetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_settings(input);
         self
+    }
+    /// Settings for preset
+    pub fn get_settings(&self) -> &::std::option::Option<crate::types::PresetSettings> {
+        self.inner.get_settings()
     }
 }

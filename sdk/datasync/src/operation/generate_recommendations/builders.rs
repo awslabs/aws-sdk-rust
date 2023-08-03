@@ -40,6 +40,13 @@ impl GenerateRecommendationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GenerateRecommendations as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::generate_recommendations::builders::GenerateRecommendationsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +143,10 @@ impl GenerateRecommendationsFluentBuilder {
         self.inner = self.inner.set_discovery_job_arn(input);
         self
     }
+    /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that collects information about your on-premises storage system.</p>
+    pub fn get_discovery_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_discovery_job_arn()
+    }
     /// Appends an item to `ResourceIds`.
     ///
     /// To override the contents of this collection use [`set_resource_ids`](Self::set_resource_ids).
@@ -153,6 +164,12 @@ impl GenerateRecommendationsFluentBuilder {
         self.inner = self.inner.set_resource_ids(input);
         self
     }
+    /// <p>Specifies the universally unique identifiers (UUIDs) of the resources in your storage system that you want recommendations on.</p>
+    pub fn get_resource_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_resource_ids()
+    }
     /// <p>Specifies the type of resource in your storage system that you want recommendations on.</p>
     pub fn resource_type(mut self, input: crate::types::DiscoveryResourceType) -> Self {
         self.inner = self.inner.resource_type(input);
@@ -165,5 +182,9 @@ impl GenerateRecommendationsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
+    }
+    /// <p>Specifies the type of resource in your storage system that you want recommendations on.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::DiscoveryResourceType> {
+        self.inner.get_resource_type()
     }
 }

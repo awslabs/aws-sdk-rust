@@ -39,6 +39,10 @@ impl DescribeBrokerInputBuilder {
         self.broker_id = input;
         self
     }
+    /// <p>The unique ID that Amazon MQ generates for the broker.</p>
+    pub fn get_broker_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.broker_id
+    }
     /// Consumes the builder and constructs a [`DescribeBrokerInput`](crate::operation::describe_broker::DescribeBrokerInput).
     pub fn build(
         self,

@@ -56,6 +56,10 @@ impl AssetDestinationEntryBuilder {
         self.asset_id = input;
         self
     }
+    /// <p>The unique identifier for the asset.</p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_id
+    }
     /// <p>The Amazon S3 bucket that is the destination for the asset.</p>
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl AssetDestinationEntryBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The Amazon S3 bucket that is the destination for the asset.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>The name of the object in Amazon S3 for the asset.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl AssetDestinationEntryBuilder {
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
+    }
+    /// <p>The name of the object in Amazon S3 for the asset.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
     }
     /// Consumes the builder and constructs a [`AssetDestinationEntry`](crate::types::AssetDestinationEntry).
     pub fn build(self) -> crate::types::AssetDestinationEntry {

@@ -58,6 +58,10 @@ impl ShardBuilder {
         self.shard_id = input;
         self
     }
+    /// <p>The system-generated identifier for this shard.</p>
+    pub fn get_shard_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shard_id
+    }
     /// <p>The range of possible sequence numbers for the shard.</p>
     pub fn sequence_number_range(mut self, input: crate::types::SequenceNumberRange) -> Self {
         self.sequence_number_range = ::std::option::Option::Some(input);
@@ -70,6 +74,12 @@ impl ShardBuilder {
     ) -> Self {
         self.sequence_number_range = input;
         self
+    }
+    /// <p>The range of possible sequence numbers for the shard.</p>
+    pub fn get_sequence_number_range(
+        &self,
+    ) -> &::std::option::Option<crate::types::SequenceNumberRange> {
+        &self.sequence_number_range
     }
     /// <p>The shard ID of the current shard's parent.</p>
     pub fn parent_shard_id(
@@ -86,6 +96,10 @@ impl ShardBuilder {
     ) -> Self {
         self.parent_shard_id = input;
         self
+    }
+    /// <p>The shard ID of the current shard's parent.</p>
+    pub fn get_parent_shard_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_shard_id
     }
     /// Consumes the builder and constructs a [`Shard`](crate::types::Shard).
     pub fn build(self) -> crate::types::Shard {

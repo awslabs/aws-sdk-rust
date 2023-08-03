@@ -72,6 +72,12 @@ impl GetPartitionIndexesOutputBuilder {
         self.partition_index_descriptor_list = input;
         self
     }
+    /// <p>A list of index descriptors.</p>
+    pub fn get_partition_index_descriptor_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PartitionIndexDescriptor>> {
+        &self.partition_index_descriptor_list
+    }
     /// <p>A continuation token, present if the current list segment is not the last.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -81,6 +87,10 @@ impl GetPartitionIndexesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A continuation token, present if the current list segment is not the last.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

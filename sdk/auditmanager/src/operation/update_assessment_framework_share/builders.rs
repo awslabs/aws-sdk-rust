@@ -36,6 +36,10 @@ impl UpdateAssessmentFrameworkShareFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAssessmentFrameworkShare as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_assessment_framework_share::builders::UpdateAssessmentFrameworkShareInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl UpdateAssessmentFrameworkShareFluentBuilder {
         self.inner = self.inner.set_request_id(input);
         self
     }
+    /// <p> The unique identifier for the share request. </p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_request_id()
+    }
     /// <p>Specifies whether the share request is a sent request or a received request.</p>
     pub fn request_type(mut self, input: crate::types::ShareRequestType) -> Self {
         self.inner = self.inner.request_type(input);
@@ -113,6 +121,10 @@ impl UpdateAssessmentFrameworkShareFluentBuilder {
         self.inner = self.inner.set_request_type(input);
         self
     }
+    /// <p>Specifies whether the share request is a sent request or a received request.</p>
+    pub fn get_request_type(&self) -> &::std::option::Option<crate::types::ShareRequestType> {
+        self.inner.get_request_type()
+    }
     /// <p>Specifies the update action for the share request.</p>
     pub fn action(mut self, input: crate::types::ShareRequestAction) -> Self {
         self.inner = self.inner.action(input);
@@ -125,5 +137,9 @@ impl UpdateAssessmentFrameworkShareFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_action(input);
         self
+    }
+    /// <p>Specifies the update action for the share request.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::ShareRequestAction> {
+        self.inner.get_action()
     }
 }

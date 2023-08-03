@@ -38,6 +38,10 @@ impl CreateResolverQueryLogConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateResolverQueryLogConfig as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_resolver_query_log_config::builders::CreateResolverQueryLogConfigInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +132,10 @@ impl CreateResolverQueryLogConfigFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name that you want to give the query logging configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The ARN of the resource that you want Resolver to send query logs. You can send query logs to an S3 bucket, a CloudWatch Logs log group, or a Kinesis Data Firehose delivery stream. Examples of valid values include the following:</p>
     /// <ul>
     /// <li> <p> <b>S3 bucket</b>: </p> <p> <code>arn:aws:s3:::examplebucket</code> </p> <p>You can optionally append a file prefix to the end of the ARN.</p> <p> <code>arn:aws:s3:::examplebucket/development/</code> </p> </li>
@@ -154,6 +162,15 @@ impl CreateResolverQueryLogConfigFluentBuilder {
         self.inner = self.inner.set_destination_arn(input);
         self
     }
+    /// <p>The ARN of the resource that you want Resolver to send query logs. You can send query logs to an S3 bucket, a CloudWatch Logs log group, or a Kinesis Data Firehose delivery stream. Examples of valid values include the following:</p>
+    /// <ul>
+    /// <li> <p> <b>S3 bucket</b>: </p> <p> <code>arn:aws:s3:::examplebucket</code> </p> <p>You can optionally append a file prefix to the end of the ARN.</p> <p> <code>arn:aws:s3:::examplebucket/development/</code> </p> </li>
+    /// <li> <p> <b>CloudWatch Logs log group</b>: </p> <p> <code>arn:aws:logs:us-west-1:123456789012:log-group:/mystack-testgroup-12ABC1AB12A1:*</code> </p> </li>
+    /// <li> <p> <b>Kinesis Data Firehose delivery stream</b>:</p> <p> <code>arn:aws:kinesis:us-east-2:0123456789:stream/my_stream_name</code> </p> </li>
+    /// </ul>
+    pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_arn()
+    }
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
     pub fn creator_request_id(
         mut self,
@@ -169,6 +186,10 @@ impl CreateResolverQueryLogConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_creator_request_id(input);
         self
+    }
+    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
+    pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_creator_request_id()
     }
     /// Appends an item to `Tags`.
     ///
@@ -186,5 +207,9 @@ impl CreateResolverQueryLogConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of the tag keys and values that you want to associate with the query logging configuration.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

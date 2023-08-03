@@ -97,6 +97,15 @@ impl StorageTypeBuilder {
         self.storage_type_name = input;
         self
     }
+    /// <p> Type of the storage. List of available storage options: </p>
+    /// <ol>
+    /// <li>instance</li> Inbuilt storage available for the given Instance
+    /// <li>ebs</li> Elastic block storage that would be attached to the given Instance
+    /// </ol>
+    /// <p></p>
+    pub fn get_storage_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_type_name
+    }
     /// <p> SubType of the given storage type. List of available sub-storage options: For "instance" storageType we wont have any storageSubType, in case of "ebs" storageType we will have following valid storageSubTypes </p>
     /// <ol>
     /// <li>standard</li>
@@ -127,6 +136,17 @@ impl StorageTypeBuilder {
         self.storage_sub_type_name = input;
         self
     }
+    /// <p> SubType of the given storage type. List of available sub-storage options: For "instance" storageType we wont have any storageSubType, in case of "ebs" storageType we will have following valid storageSubTypes </p>
+    /// <ol>
+    /// <li>standard</li>
+    /// <li>gp2</li>
+    /// <li>gp3</li>
+    /// <li>io1</li>
+    /// </ol> Refer <code><code>VolumeType</code></code> for more information regarding above EBS storage options.
+    /// <p></p>
+    pub fn get_storage_sub_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_sub_type_name
+    }
     /// Appends an item to `storage_type_limits`.
     ///
     /// To override the contents of this collection use [`set_storage_type_limits`](Self::set_storage_type_limits).
@@ -145,6 +165,12 @@ impl StorageTypeBuilder {
     ) -> Self {
         self.storage_type_limits = input;
         self
+    }
+    /// <p>List of limits that are applicable for given storage type. </p>
+    pub fn get_storage_type_limits(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageTypeLimit>> {
+        &self.storage_type_limits
     }
     /// Consumes the builder and constructs a [`StorageType`](crate::types::StorageType).
     pub fn build(self) -> crate::types::StorageType {

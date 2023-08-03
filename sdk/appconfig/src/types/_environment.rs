@@ -85,6 +85,10 @@ impl EnvironmentBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The application ID.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The environment ID.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -94,6 +98,10 @@ impl EnvironmentBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The environment ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The name of the environment.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -105,6 +113,10 @@ impl EnvironmentBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the environment.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the environment.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -114,6 +126,10 @@ impl EnvironmentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the environment.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code> </p>
     pub fn state(mut self, input: crate::types::EnvironmentState) -> Self {
@@ -127,6 +143,10 @@ impl EnvironmentBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code> </p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::EnvironmentState> {
+        &self.state
     }
     /// Appends an item to `monitors`.
     ///
@@ -146,6 +166,10 @@ impl EnvironmentBuilder {
     ) -> Self {
         self.monitors = input;
         self
+    }
+    /// <p>Amazon CloudWatch alarms monitored during the deployment.</p>
+    pub fn get_monitors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Monitor>> {
+        &self.monitors
     }
     /// Consumes the builder and constructs a [`Environment`](crate::types::Environment).
     pub fn build(self) -> crate::types::Environment {

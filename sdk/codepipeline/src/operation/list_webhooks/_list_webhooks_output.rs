@@ -63,6 +63,12 @@ impl ListWebhooksOutputBuilder {
         self.webhooks = input;
         self
     }
+    /// <p>The JSON detail returned for each webhook in the list output for the ListWebhooks call.</p>
+    pub fn get_webhooks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListWebhookItem>> {
+        &self.webhooks
+    }
     /// <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent ListWebhooks call to return the next set of webhooks in the list. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -72,6 +78,10 @@ impl ListWebhooksOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent ListWebhooks call to return the next set of webhooks in the list. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

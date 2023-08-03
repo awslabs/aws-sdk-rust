@@ -55,6 +55,10 @@ impl DeleteImpersonationRoleInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The WorkMail organization from which to delete the impersonation role.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>The ID of the impersonation role to delete.</p>
     pub fn impersonation_role_id(
         mut self,
@@ -70,6 +74,10 @@ impl DeleteImpersonationRoleInputBuilder {
     ) -> Self {
         self.impersonation_role_id = input;
         self
+    }
+    /// <p>The ID of the impersonation role to delete.</p>
+    pub fn get_impersonation_role_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.impersonation_role_id
     }
     /// Consumes the builder and constructs a [`DeleteImpersonationRoleInput`](crate::operation::delete_impersonation_role::DeleteImpersonationRoleInput).
     pub fn build(

@@ -47,6 +47,10 @@ impl DescribeJobTemplateInputBuilder {
         self.job_template_id = input;
         self
     }
+    /// <p>The unique identifier of the job template.</p>
+    pub fn get_job_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_template_id
+    }
     /// Consumes the builder and constructs a [`DescribeJobTemplateInput`](crate::operation::describe_job_template::DescribeJobTemplateInput).
     pub fn build(
         self,

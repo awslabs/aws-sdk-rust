@@ -51,6 +51,10 @@ impl DetectedJsonFormatDescriptorBuilder {
         self.file_compression = input;
         self
     }
+    /// <p>The format's file compression.</p>
+    pub fn get_file_compression(&self) -> &::std::option::Option<crate::types::DetectedField> {
+        &self.file_compression
+    }
     /// <p>The format's character set.</p>
     pub fn charset(mut self, input: crate::types::DetectedField) -> Self {
         self.charset = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl DetectedJsonFormatDescriptorBuilder {
     ) -> Self {
         self.charset = input;
         self
+    }
+    /// <p>The format's character set.</p>
+    pub fn get_charset(&self) -> &::std::option::Option<crate::types::DetectedField> {
+        &self.charset
     }
     /// Consumes the builder and constructs a [`DetectedJsonFormatDescriptor`](crate::types::DetectedJsonFormatDescriptor).
     pub fn build(self) -> crate::types::DetectedJsonFormatDescriptor {

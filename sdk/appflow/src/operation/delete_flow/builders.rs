@@ -36,6 +36,10 @@ impl DeleteFlowFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteFlow as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_flow::builders::DeleteFlowInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl DeleteFlowFluentBuilder {
         self.inner = self.inner.set_flow_name(input);
         self
     }
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
+    pub fn get_flow_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_flow_name()
+    }
     /// <p> Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use. </p>
     pub fn force_delete(mut self, input: bool) -> Self {
         self.inner = self.inner.force_delete(input);
@@ -127,5 +135,9 @@ impl DeleteFlowFluentBuilder {
     pub fn set_force_delete(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force_delete(input);
         self
+    }
+    /// <p> Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use. </p>
+    pub fn get_force_delete(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force_delete()
     }
 }

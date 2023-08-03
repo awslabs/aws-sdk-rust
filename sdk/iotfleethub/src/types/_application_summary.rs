@@ -96,6 +96,10 @@ impl ApplicationSummaryBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The unique Id of the web application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The name of the web application.</p>
     pub fn application_name(
         mut self,
@@ -111,6 +115,10 @@ impl ApplicationSummaryBuilder {
     ) -> Self {
         self.application_name = input;
         self
+    }
+    /// <p>The name of the web application.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
     }
     /// <p>An optional description of the web application.</p>
     pub fn application_description(
@@ -128,6 +136,10 @@ impl ApplicationSummaryBuilder {
         self.application_description = input;
         self
     }
+    /// <p>An optional description of the web application.</p>
+    pub fn get_application_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_description
+    }
     /// <p>The URL of the web application.</p>
     pub fn application_url(
         mut self,
@@ -144,6 +156,10 @@ impl ApplicationSummaryBuilder {
         self.application_url = input;
         self
     }
+    /// <p>The URL of the web application.</p>
+    pub fn get_application_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_url
+    }
     /// <p>The date (in Unix epoch time) when the web application was created.</p>
     pub fn application_creation_date(mut self, input: i64) -> Self {
         self.application_creation_date = ::std::option::Option::Some(input);
@@ -154,6 +170,10 @@ impl ApplicationSummaryBuilder {
         self.application_creation_date = input;
         self
     }
+    /// <p>The date (in Unix epoch time) when the web application was created.</p>
+    pub fn get_application_creation_date(&self) -> &::std::option::Option<i64> {
+        &self.application_creation_date
+    }
     /// <p>The date (in Unix epoch time) when the web application was last updated.</p>
     pub fn application_last_update_date(mut self, input: i64) -> Self {
         self.application_last_update_date = ::std::option::Option::Some(input);
@@ -163,6 +183,10 @@ impl ApplicationSummaryBuilder {
     pub fn set_application_last_update_date(mut self, input: ::std::option::Option<i64>) -> Self {
         self.application_last_update_date = input;
         self
+    }
+    /// <p>The date (in Unix epoch time) when the web application was last updated.</p>
+    pub fn get_application_last_update_date(&self) -> &::std::option::Option<i64> {
+        &self.application_last_update_date
     }
     /// <p>The current state of the web application.</p>
     pub fn application_state(mut self, input: crate::types::ApplicationState) -> Self {
@@ -176,6 +200,10 @@ impl ApplicationSummaryBuilder {
     ) -> Self {
         self.application_state = input;
         self
+    }
+    /// <p>The current state of the web application.</p>
+    pub fn get_application_state(&self) -> &::std::option::Option<crate::types::ApplicationState> {
+        &self.application_state
     }
     /// Consumes the builder and constructs a [`ApplicationSummary`](crate::types::ApplicationSummary).
     pub fn build(self) -> crate::types::ApplicationSummary {

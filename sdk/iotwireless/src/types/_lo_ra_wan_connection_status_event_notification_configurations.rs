@@ -50,6 +50,12 @@ impl LoRaWanConnectionStatusEventNotificationConfigurationsBuilder {
         self.gateway_eui_event_topic = input;
         self
     }
+    /// <p>Denotes whether the gateway EUI connection status event topic is enabled or disabled.</p>
+    pub fn get_gateway_eui_event_topic(
+        &self,
+    ) -> &::std::option::Option<crate::types::EventNotificationTopicStatus> {
+        &self.gateway_eui_event_topic
+    }
     /// Consumes the builder and constructs a [`LoRaWanConnectionStatusEventNotificationConfigurations`](crate::types::LoRaWanConnectionStatusEventNotificationConfigurations).
     pub fn build(self) -> crate::types::LoRaWanConnectionStatusEventNotificationConfigurations {
         crate::types::LoRaWanConnectionStatusEventNotificationConfigurations {

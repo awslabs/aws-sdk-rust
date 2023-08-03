@@ -40,6 +40,10 @@ impl ClassicLoadBalancerBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the load balancer.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`ClassicLoadBalancer`](crate::types::ClassicLoadBalancer).
     pub fn build(self) -> crate::types::ClassicLoadBalancer {
         crate::types::ClassicLoadBalancer { name: self.name }

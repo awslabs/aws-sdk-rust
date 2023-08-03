@@ -36,6 +36,12 @@ impl AssociateProfilesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateProfiles as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::associate_profiles::builders::AssociateProfilesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl AssociateProfilesFluentBuilder {
         self.inner = self.inner.set_workload_id(input);
         self
     }
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workload_id()
+    }
     /// Appends an item to `ProfileArns`.
     ///
     /// To override the contents of this collection use [`set_profile_arns`](Self::set_profile_arns).
@@ -142,5 +152,11 @@ impl AssociateProfilesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_profile_arns(input);
         self
+    }
+    /// <p>The list of profile ARNs to associate with the workload.</p>
+    pub fn get_profile_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_profile_arns()
     }
 }

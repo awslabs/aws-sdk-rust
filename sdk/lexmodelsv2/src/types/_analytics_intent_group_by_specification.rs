@@ -43,6 +43,10 @@ impl AnalyticsIntentGroupBySpecificationBuilder {
         self.name = input;
         self
     }
+    /// <p>Specifies whether to group the intent stages by their name or their end state.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::AnalyticsIntentField> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`AnalyticsIntentGroupBySpecification`](crate::types::AnalyticsIntentGroupBySpecification).
     pub fn build(self) -> crate::types::AnalyticsIntentGroupBySpecification {
         crate::types::AnalyticsIntentGroupBySpecification { name: self.name }

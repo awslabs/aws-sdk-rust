@@ -46,6 +46,10 @@ impl UpdateTerminationProtectionOutputBuilder {
         self.stack_id = input;
         self
     }
+    /// <p>The unique ID of the stack.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

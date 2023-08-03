@@ -36,6 +36,12 @@ impl DescribeFpgaImagesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeFpgaImages as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_fpga_images::builders::DescribeFpgaImagesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl DescribeFpgaImagesFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// Appends an item to `FpgaImageIds`.
     ///
     /// To override the contents of this collection use [`set_fpga_image_ids`](Self::set_fpga_image_ids).
@@ -157,6 +167,12 @@ impl DescribeFpgaImagesFluentBuilder {
         self.inner = self.inner.set_fpga_image_ids(input);
         self
     }
+    /// <p>The AFI IDs.</p>
+    pub fn get_fpga_image_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_fpga_image_ids()
+    }
     /// Appends an item to `Owners`.
     ///
     /// To override the contents of this collection use [`set_owners`](Self::set_owners).
@@ -173,6 +189,10 @@ impl DescribeFpgaImagesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_owners(input);
         self
+    }
+    /// <p>Filters the AFI by owner. Specify an Amazon Web Services account ID, <code>self</code> (owner is the sender of the request), or an Amazon Web Services owner alias (valid values are <code>amazon</code> | <code>aws-marketplace</code>).</p>
+    pub fn get_owners(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_owners()
     }
     /// Appends an item to `Filters`.
     ///
@@ -229,6 +249,29 @@ impl DescribeFpgaImagesFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>The filters.</p>
+    /// <ul>
+    /// <li> <p> <code>create-time</code> - The creation time of the AFI.</p> </li>
+    /// <li> <p> <code>fpga-image-id</code> - The FPGA image identifier (AFI ID).</p> </li>
+    /// <li> <p> <code>fpga-image-global-id</code> - The global FPGA image identifier (AGFI ID).</p> </li>
+    /// <li> <p> <code>name</code> - The name of the AFI.</p> </li>
+    /// <li> <p> <code>owner-id</code> - The Amazon Web Services account ID of the AFI owner.</p> </li>
+    /// <li> <p> <code>product-code</code> - The product code.</p> </li>
+    /// <li> <p> <code>shell-version</code> - The version of the Amazon Web Services Shell that was used to create the bitstream.</p> </li>
+    /// <li> <p> <code>state</code> - The state of the AFI (<code>pending</code> | <code>failed</code> | <code>available</code> | <code>unavailable</code>).</p> </li>
+    /// <li> <p> <code>tag</code>:<key>
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
+    /// <code>Owner</code> and the value
+    /// <code>TeamA</code>, specify
+    /// <code>tag:Owner</code> for the filter name and
+    /// <code>TeamA</code> for the filter value.
+    /// </key></p> </li>
+    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
+    /// <li> <p> <code>update-time</code> - The time of the most recent update.</p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// <p>The token to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -239,6 +282,10 @@ impl DescribeFpgaImagesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token to retrieve the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -248,5 +295,9 @@ impl DescribeFpgaImagesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return in a single call.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

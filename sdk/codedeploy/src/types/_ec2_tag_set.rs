@@ -53,6 +53,12 @@ impl Ec2TagSetBuilder {
         self.ec2_tag_set_list = input;
         self
     }
+    /// <p>A list that contains other lists of Amazon EC2 instance tag groups. For an instance to be included in the deployment group, it must be identified by all of the tag groups in the list.</p>
+    pub fn get_ec2_tag_set_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::Ec2TagFilter>>> {
+        &self.ec2_tag_set_list
+    }
     /// Consumes the builder and constructs a [`Ec2TagSet`](crate::types::Ec2TagSet).
     pub fn build(self) -> crate::types::Ec2TagSet {
         crate::types::Ec2TagSet {

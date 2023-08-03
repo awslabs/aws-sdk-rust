@@ -107,6 +107,10 @@ impl ApplicationDescriptionBuilder {
         self.application_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_arn
+    }
     /// <p>The name of the application.</p>
     pub fn application_name(
         mut self,
@@ -123,6 +127,10 @@ impl ApplicationDescriptionBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The name of the application.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>User-defined description of the application.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -132,6 +140,10 @@ impl ApplicationDescriptionBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>User-defined description of the application.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The date when the application was created.</p>
     pub fn date_created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -146,6 +158,10 @@ impl ApplicationDescriptionBuilder {
         self.date_created = input;
         self
     }
+    /// <p>The date when the application was created.</p>
+    pub fn get_date_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.date_created
+    }
     /// <p>The date when the application was last modified.</p>
     pub fn date_updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.date_updated = ::std::option::Option::Some(input);
@@ -158,6 +174,10 @@ impl ApplicationDescriptionBuilder {
     ) -> Self {
         self.date_updated = input;
         self
+    }
+    /// <p>The date when the application was last modified.</p>
+    pub fn get_date_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.date_updated
     }
     /// Appends an item to `versions`.
     ///
@@ -177,6 +197,10 @@ impl ApplicationDescriptionBuilder {
     ) -> Self {
         self.versions = input;
         self
+    }
+    /// <p>The names of the versions for this application.</p>
+    pub fn get_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.versions
     }
     /// Appends an item to `configuration_templates`.
     ///
@@ -200,6 +224,12 @@ impl ApplicationDescriptionBuilder {
         self.configuration_templates = input;
         self
     }
+    /// <p>The names of the configuration templates associated with this application.</p>
+    pub fn get_configuration_templates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.configuration_templates
+    }
     /// <p>The lifecycle settings for the application.</p>
     pub fn resource_lifecycle_config(
         mut self,
@@ -215,6 +245,12 @@ impl ApplicationDescriptionBuilder {
     ) -> Self {
         self.resource_lifecycle_config = input;
         self
+    }
+    /// <p>The lifecycle settings for the application.</p>
+    pub fn get_resource_lifecycle_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationResourceLifecycleConfig> {
+        &self.resource_lifecycle_config
     }
     /// Consumes the builder and constructs a [`ApplicationDescription`](crate::types::ApplicationDescription).
     pub fn build(self) -> crate::types::ApplicationDescription {

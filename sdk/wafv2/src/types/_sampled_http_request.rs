@@ -145,6 +145,10 @@ impl SampledHttpRequestBuilder {
         self.request = input;
         self
     }
+    /// <p>A complex type that contains detailed information about the request.</p>
+    pub fn get_request(&self) -> &::std::option::Option<crate::types::HttpRequest> {
+        &self.request
+    }
     /// <p>A value that indicates how one result in the response relates proportionally to other results in the response. For example, a result that has a weight of <code>2</code> represents roughly twice as many web requests as a result that has a weight of <code>1</code>.</p>
     pub fn weight(mut self, input: i64) -> Self {
         self.weight = ::std::option::Option::Some(input);
@@ -154,6 +158,10 @@ impl SampledHttpRequestBuilder {
     pub fn set_weight(mut self, input: ::std::option::Option<i64>) -> Self {
         self.weight = input;
         self
+    }
+    /// <p>A value that indicates how one result in the response relates proportionally to other results in the response. For example, a result that has a weight of <code>2</code> represents roughly twice as many web requests as a result that has a weight of <code>1</code>.</p>
+    pub fn get_weight(&self) -> &::std::option::Option<i64> {
+        &self.weight
     }
     /// <p>The time at which WAF received the request from your Amazon Web Services resource, in Unix time format (in seconds).</p>
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -168,6 +176,10 @@ impl SampledHttpRequestBuilder {
         self.timestamp = input;
         self
     }
+    /// <p>The time at which WAF received the request from your Amazon Web Services resource, in Unix time format (in seconds).</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
+    }
     /// <p>The action that WAF applied to the request.</p>
     pub fn action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action = ::std::option::Option::Some(input.into());
@@ -177,6 +189,10 @@ impl SampledHttpRequestBuilder {
     pub fn set_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action = input;
         self
+    }
+    /// <p>The action that WAF applied to the request.</p>
+    pub fn get_action(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action
     }
     /// <p>The name of the <code>Rule</code> that the request matched. For managed rule groups, the format for this name is <code>
     /// <vendor name>
@@ -216,6 +232,21 @@ impl SampledHttpRequestBuilder {
         self.rule_name_within_rule_group = input;
         self
     }
+    /// <p>The name of the <code>Rule</code> that the request matched. For managed rule groups, the format for this name is <code>
+    /// <vendor name>
+    /// #
+    /// <managed rule group name>
+    /// #
+    /// <rule name></rule>
+    /// </managed>
+    /// </vendor></code>. For your own rule groups, the format for this name is <code>
+    /// <rule group name>
+    /// #
+    /// <rule name></rule>
+    /// </rule></code>. If the rule is not in a rule group, this field is absent. </p>
+    pub fn get_rule_name_within_rule_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_name_within_rule_group
+    }
     /// Appends an item to `request_headers_inserted`.
     ///
     /// To override the contents of this collection use [`set_request_headers_inserted`](Self::set_request_headers_inserted).
@@ -235,6 +266,12 @@ impl SampledHttpRequestBuilder {
         self.request_headers_inserted = input;
         self
     }
+    /// <p>Custom request headers inserted by WAF into the request, according to the custom request configuration for the matching rule action.</p>
+    pub fn get_request_headers_inserted(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HttpHeader>> {
+        &self.request_headers_inserted
+    }
     /// <p>The response code that was sent for the request.</p>
     pub fn response_code_sent(mut self, input: i32) -> Self {
         self.response_code_sent = ::std::option::Option::Some(input);
@@ -244,6 +281,10 @@ impl SampledHttpRequestBuilder {
     pub fn set_response_code_sent(mut self, input: ::std::option::Option<i32>) -> Self {
         self.response_code_sent = input;
         self
+    }
+    /// <p>The response code that was sent for the request.</p>
+    pub fn get_response_code_sent(&self) -> &::std::option::Option<i32> {
+        &self.response_code_sent
     }
     /// Appends an item to `labels`.
     ///
@@ -266,6 +307,11 @@ impl SampledHttpRequestBuilder {
         self.labels = input;
         self
     }
+    /// <p>Labels applied to the web request by matching rules. WAF applies fully qualified labels to matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule group or web ACL defines the label namespace. </p>
+    /// <p>For example, <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code> or <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>. </p>
+    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Label>> {
+        &self.labels
+    }
     /// <p>The <code>CAPTCHA</code> response for the request.</p>
     pub fn captcha_response(mut self, input: crate::types::CaptchaResponse) -> Self {
         self.captcha_response = ::std::option::Option::Some(input);
@@ -279,6 +325,10 @@ impl SampledHttpRequestBuilder {
         self.captcha_response = input;
         self
     }
+    /// <p>The <code>CAPTCHA</code> response for the request.</p>
+    pub fn get_captcha_response(&self) -> &::std::option::Option<crate::types::CaptchaResponse> {
+        &self.captcha_response
+    }
     /// <p>The <code>Challenge</code> response for the request.</p>
     pub fn challenge_response(mut self, input: crate::types::ChallengeResponse) -> Self {
         self.challenge_response = ::std::option::Option::Some(input);
@@ -291,6 +341,12 @@ impl SampledHttpRequestBuilder {
     ) -> Self {
         self.challenge_response = input;
         self
+    }
+    /// <p>The <code>Challenge</code> response for the request.</p>
+    pub fn get_challenge_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::ChallengeResponse> {
+        &self.challenge_response
     }
     /// <p>Used only for rule group rules that have a rule action override in place in the web ACL. This is the action that the rule group rule is configured for, and not the action that was applied to the request. The action that WAF applied is the <code>Action</code> value. </p>
     pub fn overridden_action(
@@ -307,6 +363,10 @@ impl SampledHttpRequestBuilder {
     ) -> Self {
         self.overridden_action = input;
         self
+    }
+    /// <p>Used only for rule group rules that have a rule action override in place in the web ACL. This is the action that the rule group rule is configured for, and not the action that was applied to the request. The action that WAF applied is the <code>Action</code> value. </p>
+    pub fn get_overridden_action(&self) -> &::std::option::Option<::std::string::String> {
+        &self.overridden_action
     }
     /// Consumes the builder and constructs a [`SampledHttpRequest`](crate::types::SampledHttpRequest).
     pub fn build(self) -> crate::types::SampledHttpRequest {

@@ -399,6 +399,18 @@ impl RestoreFromClusterSnapshotInputBuilder {
         self.cluster_identifier = input;
         self
     }
+    /// <p>The identifier of the cluster that will be created from restoring the snapshot.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>Alphabetic characters must be lowercase.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>
+    /// </ul>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_identifier
+    }
     /// <p>The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. You must specify this parameter or <code>snapshotArn</code>, but not both.</p>
     /// <p>Example: <code>my-snapshot-id</code> </p>
     pub fn snapshot_identifier(
@@ -417,6 +429,11 @@ impl RestoreFromClusterSnapshotInputBuilder {
         self.snapshot_identifier = input;
         self
     }
+    /// <p>The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. You must specify this parameter or <code>snapshotArn</code>, but not both.</p>
+    /// <p>Example: <code>my-snapshot-id</code> </p>
+    pub fn get_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_identifier
+    }
     /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster. You must specify this parameter or <code>snapshotIdentifier</code>, but not both.</p>
     pub fn snapshot_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_arn = ::std::option::Option::Some(input.into());
@@ -426,6 +443,10 @@ impl RestoreFromClusterSnapshotInputBuilder {
     pub fn set_snapshot_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster. You must specify this parameter or <code>snapshotIdentifier</code>, but not both.</p>
+    pub fn get_snapshot_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_arn
     }
     /// <p>The name of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     pub fn snapshot_cluster_identifier(
@@ -443,6 +464,10 @@ impl RestoreFromClusterSnapshotInputBuilder {
         self.snapshot_cluster_identifier = input;
         self
     }
+    /// <p>The name of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    pub fn get_snapshot_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_cluster_identifier
+    }
     /// <p>The port number on which the cluster accepts connections.</p>
     /// <p>Default: The same port as the original cluster.</p>
     /// <p>Constraints: Must be between <code>1115</code> and <code>65535</code>.</p>
@@ -456,6 +481,12 @@ impl RestoreFromClusterSnapshotInputBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
+    }
+    /// <p>The port number on which the cluster accepts connections.</p>
+    /// <p>Default: The same port as the original cluster.</p>
+    /// <p>Constraints: Must be between <code>1115</code> and <code>65535</code>.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// <p>The Amazon EC2 Availability Zone in which to restore the cluster.</p>
     /// <p>Default: A random, system-chosen Availability Zone.</p>
@@ -477,6 +508,12 @@ impl RestoreFromClusterSnapshotInputBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>The Amazon EC2 Availability Zone in which to restore the cluster.</p>
+    /// <p>Default: A random, system-chosen Availability Zone.</p>
+    /// <p>Example: <code>us-east-2a</code> </p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>If <code>true</code>, major version upgrades can be applied during the maintenance window to the Amazon Redshift engine that is running on the cluster. </p>
     /// <p>Default: <code>true</code> </p>
     pub fn allow_version_upgrade(mut self, input: bool) -> Self {
@@ -488,6 +525,11 @@ impl RestoreFromClusterSnapshotInputBuilder {
     pub fn set_allow_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_version_upgrade = input;
         self
+    }
+    /// <p>If <code>true</code>, major version upgrades can be applied during the maintenance window to the Amazon Redshift engine that is running on the cluster. </p>
+    /// <p>Default: <code>true</code> </p>
+    pub fn get_allow_version_upgrade(&self) -> &::std::option::Option<bool> {
+        &self.allow_version_upgrade
     }
     /// <p>The name of the subnet group where you want to cluster restored.</p>
     /// <p>A snapshot of cluster in VPC can be restored only in VPC. Therefore, you must provide subnet group name where you want the cluster restored.</p>
@@ -507,6 +549,11 @@ impl RestoreFromClusterSnapshotInputBuilder {
         self.cluster_subnet_group_name = input;
         self
     }
+    /// <p>The name of the subnet group where you want to cluster restored.</p>
+    /// <p>A snapshot of cluster in VPC can be restored only in VPC. Therefore, you must provide subnet group name where you want the cluster restored.</p>
+    pub fn get_cluster_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_subnet_group_name
+    }
     /// <p>If <code>true</code>, the cluster can be accessed from a public network. </p>
     pub fn publicly_accessible(mut self, input: bool) -> Self {
         self.publicly_accessible = ::std::option::Option::Some(input);
@@ -516,6 +563,10 @@ impl RestoreFromClusterSnapshotInputBuilder {
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
         self.publicly_accessible = input;
         self
+    }
+    /// <p>If <code>true</code>, the cluster can be accessed from a public network. </p>
+    pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
+        &self.publicly_accessible
     }
     /// <p>The Amazon Web Services account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot.</p>
     pub fn owner_account(
@@ -533,6 +584,10 @@ impl RestoreFromClusterSnapshotInputBuilder {
         self.owner_account = input;
         self
     }
+    /// <p>The Amazon Web Services account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot.</p>
+    pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_account
+    }
     /// <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
     pub fn hsm_client_certificate_identifier(
         mut self,
@@ -548,6 +603,12 @@ impl RestoreFromClusterSnapshotInputBuilder {
     ) -> Self {
         self.hsm_client_certificate_identifier = input;
         self
+    }
+    /// <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
+    pub fn get_hsm_client_certificate_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.hsm_client_certificate_identifier
     }
     /// <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
     pub fn hsm_configuration_identifier(
@@ -565,6 +626,12 @@ impl RestoreFromClusterSnapshotInputBuilder {
         self.hsm_configuration_identifier = input;
         self
     }
+    /// <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
+    pub fn get_hsm_configuration_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.hsm_configuration_identifier
+    }
     /// <p>The Elastic IP (EIP) address for the cluster. Don't specify the Elastic IP address for a publicly accessible cluster with availability zone relocation turned on.</p>
     pub fn elastic_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.elastic_ip = ::std::option::Option::Some(input.into());
@@ -574,6 +641,10 @@ impl RestoreFromClusterSnapshotInputBuilder {
     pub fn set_elastic_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.elastic_ip = input;
         self
+    }
+    /// <p>The Elastic IP (EIP) address for the cluster. Don't specify the Elastic IP address for a publicly accessible cluster with availability zone relocation turned on.</p>
+    pub fn get_elastic_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.elastic_ip
     }
     /// <p>The name of the parameter group to be associated with this cluster.</p>
     /// <p>Default: The default Amazon Redshift cluster parameter group. For information about the default parameter group, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working with Amazon Redshift Parameter Groups</a>.</p>
@@ -605,6 +676,19 @@ impl RestoreFromClusterSnapshotInputBuilder {
         self.cluster_parameter_group_name = input;
         self
     }
+    /// <p>The name of the parameter group to be associated with this cluster.</p>
+    /// <p>Default: The default Amazon Redshift cluster parameter group. For information about the default parameter group, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working with Amazon Redshift Parameter Groups</a>.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be 1 to 255 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// </ul>
+    pub fn get_cluster_parameter_group_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_parameter_group_name
+    }
     /// Appends an item to `cluster_security_groups`.
     ///
     /// To override the contents of this collection use [`set_cluster_security_groups`](Self::set_cluster_security_groups).
@@ -630,6 +714,14 @@ impl RestoreFromClusterSnapshotInputBuilder {
     ) -> Self {
         self.cluster_security_groups = input;
         self
+    }
+    /// <p>A list of security groups to be associated with this cluster.</p>
+    /// <p>Default: The default cluster security group for Amazon Redshift.</p>
+    /// <p>Cluster security groups only apply to clusters outside of VPCs.</p>
+    pub fn get_cluster_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.cluster_security_groups
     }
     /// Appends an item to `vpc_security_group_ids`.
     ///
@@ -657,6 +749,14 @@ impl RestoreFromClusterSnapshotInputBuilder {
         self.vpc_security_group_ids = input;
         self
     }
+    /// <p>A list of Virtual Private Cloud (VPC) security groups to be associated with the cluster.</p>
+    /// <p>Default: The default VPC security group is associated with the cluster.</p>
+    /// <p>VPC security groups only apply to clusters in VPCs.</p>
+    pub fn get_vpc_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.vpc_security_group_ids
+    }
     /// <p>The weekly time range (in UTC) during which automated cluster maintenance can occur.</p>
     /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
     /// <p> Default: The value selected for the cluster from which the snapshot was taken. For more information about the time blocks for each region, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance Windows</a> in Amazon Redshift Cluster Management Guide. </p>
@@ -681,6 +781,16 @@ impl RestoreFromClusterSnapshotInputBuilder {
         self.preferred_maintenance_window = input;
         self
     }
+    /// <p>The weekly time range (in UTC) during which automated cluster maintenance can occur.</p>
+    /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+    /// <p> Default: The value selected for the cluster from which the snapshot was taken. For more information about the time blocks for each region, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance Windows</a> in Amazon Redshift Cluster Management Guide. </p>
+    /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
+    /// <p>Constraints: Minimum 30-minute window.</p>
+    pub fn get_preferred_maintenance_window(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.preferred_maintenance_window
+    }
     /// <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <code>CreateClusterSnapshot</code>. </p>
     /// <p>You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.</p>
     /// <p>Default: The value selected for the cluster from which the snapshot was taken.</p>
@@ -700,6 +810,13 @@ impl RestoreFromClusterSnapshotInputBuilder {
         self.automated_snapshot_retention_period = input;
         self
     }
+    /// <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <code>CreateClusterSnapshot</code>. </p>
+    /// <p>You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.</p>
+    /// <p>Default: The value selected for the cluster from which the snapshot was taken.</p>
+    /// <p>Constraints: Must be a value from 0 to 35.</p>
+    pub fn get_automated_snapshot_retention_period(&self) -> &::std::option::Option<i32> {
+        &self.automated_snapshot_retention_period
+    }
     /// <p>The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained indefinitely. This setting doesn't change the retention period of existing snapshots.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     pub fn manual_snapshot_retention_period(mut self, input: i32) -> Self {
@@ -715,6 +832,11 @@ impl RestoreFromClusterSnapshotInputBuilder {
         self.manual_snapshot_retention_period = input;
         self
     }
+    /// <p>The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained indefinitely. This setting doesn't change the retention period of existing snapshots.</p>
+    /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
+    pub fn get_manual_snapshot_retention_period(&self) -> &::std::option::Option<i32> {
+        &self.manual_snapshot_retention_period
+    }
     /// <p>The Key Management Service (KMS) key ID of the encryption key that encrypts data in the cluster restored from a shared snapshot. You can also provide the key ID when you restore from an unencrypted snapshot to an encrypted cluster in the same account. Additionally, you can specify a new KMS key ID when you restore from an encrypted snapshot in the same account in order to change it. In that case, the restored cluster is encrypted with the new KMS key ID.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -724,6 +846,10 @@ impl RestoreFromClusterSnapshotInputBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>The Key Management Service (KMS) key ID of the encryption key that encrypts data in the cluster restored from a shared snapshot. You can also provide the key ID when you restore from an unencrypted snapshot to an encrypted cluster in the same account. Additionally, you can specify a new KMS key ID when you restore from an encrypted snapshot in the same account in order to change it. In that case, the restored cluster is encrypted with the new KMS key ID.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// <p>The node type that the restored cluster will be provisioned with.</p>
     /// <p>Default: The node type of the cluster from which the snapshot was taken. You can modify this if you are using any DS node type. In that case, you can choose to restore into another DS node type of the same size. For example, you can restore ds1.8xlarge into ds2.8xlarge, or ds1.xlarge into ds2.xlarge. If you have a DC instance type, you must restore into that same instance type and size. In other words, you can only restore a dc1.large instance type into another dc1.large instance type or dc2.large instance type. You can't restore dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlarge cluster, then resize to a dc2.8large cluster. For more information about node types, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes"> About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
@@ -736,6 +862,11 @@ impl RestoreFromClusterSnapshotInputBuilder {
     pub fn set_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_type = input;
         self
+    }
+    /// <p>The node type that the restored cluster will be provisioned with.</p>
+    /// <p>Default: The node type of the cluster from which the snapshot was taken. You can modify this if you are using any DS node type. In that case, you can choose to restore into another DS node type of the same size. For example, you can restore ds1.8xlarge into ds2.8xlarge, or ds1.xlarge into ds2.xlarge. If you have a DC instance type, you must restore into that same instance type and size. In other words, you can only restore a dc1.large instance type into another dc1.large instance type or dc2.large instance type. You can't restore dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlarge cluster, then resize to a dc2.8large cluster. For more information about node types, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes"> About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
+    pub fn get_node_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_type
     }
     /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
     /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
@@ -750,6 +881,12 @@ impl RestoreFromClusterSnapshotInputBuilder {
     pub fn set_enhanced_vpc_routing(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enhanced_vpc_routing = input;
         self
+    }
+    /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
+    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
+    /// <p>Default: false</p>
+    pub fn get_enhanced_vpc_routing(&self) -> &::std::option::Option<bool> {
+        &self.enhanced_vpc_routing
     }
     /// <p>Reserved.</p>
     pub fn additional_info(
@@ -766,6 +903,10 @@ impl RestoreFromClusterSnapshotInputBuilder {
     ) -> Self {
         self.additional_info = input;
         self
+    }
+    /// <p>Reserved.</p>
+    pub fn get_additional_info(&self) -> &::std::option::Option<::std::string::String> {
+        &self.additional_info
     }
     /// Appends an item to `iam_roles`.
     ///
@@ -788,6 +929,11 @@ impl RestoreFromClusterSnapshotInputBuilder {
         self.iam_roles = input;
         self
     }
+    /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. </p>
+    /// <p>The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    pub fn get_iam_roles(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.iam_roles
+    }
     /// <p>The name of the maintenance track for the restored cluster. When you take a snapshot, the snapshot inherits the <code>MaintenanceTrack</code> value from the cluster. The snapshot might be on a different track than the cluster that was the source for the snapshot. For example, suppose that you take a snapshot of a cluster that is on the current track and then change the cluster to be on the trailing track. In this case, the snapshot and the source cluster are on different tracks.</p>
     pub fn maintenance_track_name(
         mut self,
@@ -803,6 +949,10 @@ impl RestoreFromClusterSnapshotInputBuilder {
     ) -> Self {
         self.maintenance_track_name = input;
         self
+    }
+    /// <p>The name of the maintenance track for the restored cluster. When you take a snapshot, the snapshot inherits the <code>MaintenanceTrack</code> value from the cluster. The snapshot might be on a different track than the cluster that was the source for the snapshot. For example, suppose that you take a snapshot of a cluster that is on the current track and then change the cluster to be on the trailing track. In this case, the snapshot and the source cluster are on different tracks.</p>
+    pub fn get_maintenance_track_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.maintenance_track_name
     }
     /// <p>A unique identifier for the snapshot schedule.</p>
     pub fn snapshot_schedule_identifier(
@@ -820,6 +970,12 @@ impl RestoreFromClusterSnapshotInputBuilder {
         self.snapshot_schedule_identifier = input;
         self
     }
+    /// <p>A unique identifier for the snapshot schedule.</p>
+    pub fn get_snapshot_schedule_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_schedule_identifier
+    }
     /// <p>The number of nodes specified when provisioning the restored cluster.</p>
     pub fn number_of_nodes(mut self, input: i32) -> Self {
         self.number_of_nodes = ::std::option::Option::Some(input);
@@ -830,6 +986,10 @@ impl RestoreFromClusterSnapshotInputBuilder {
         self.number_of_nodes = input;
         self
     }
+    /// <p>The number of nodes specified when provisioning the restored cluster.</p>
+    pub fn get_number_of_nodes(&self) -> &::std::option::Option<i32> {
+        &self.number_of_nodes
+    }
     /// <p>The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is restored.</p>
     pub fn availability_zone_relocation(mut self, input: bool) -> Self {
         self.availability_zone_relocation = ::std::option::Option::Some(input);
@@ -839,6 +999,10 @@ impl RestoreFromClusterSnapshotInputBuilder {
     pub fn set_availability_zone_relocation(mut self, input: ::std::option::Option<bool>) -> Self {
         self.availability_zone_relocation = input;
         self
+    }
+    /// <p>The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is restored.</p>
+    pub fn get_availability_zone_relocation(&self) -> &::std::option::Option<bool> {
+        &self.availability_zone_relocation
     }
     /// <p>This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
     pub fn aqua_configuration_status(
@@ -856,6 +1020,12 @@ impl RestoreFromClusterSnapshotInputBuilder {
         self.aqua_configuration_status = input;
         self
     }
+    /// <p>This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
+    pub fn get_aqua_configuration_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::AquaConfigurationStatus> {
+        &self.aqua_configuration_status
+    }
     /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified while it was restored from a snapshot.</p>
     pub fn default_iam_role_arn(
         mut self,
@@ -871,6 +1041,10 @@ impl RestoreFromClusterSnapshotInputBuilder {
     ) -> Self {
         self.default_iam_role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified while it was restored from a snapshot.</p>
+    pub fn get_default_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_iam_role_arn
     }
     /// <p>The identifier of the target reserved node offering.</p>
     pub fn reserved_node_id(
@@ -889,6 +1063,10 @@ impl RestoreFromClusterSnapshotInputBuilder {
         self
     }
     /// <p>The identifier of the target reserved node offering.</p>
+    pub fn get_reserved_node_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reserved_node_id
+    }
+    /// <p>The identifier of the target reserved node offering.</p>
     pub fn target_reserved_node_offering_id(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -904,6 +1082,12 @@ impl RestoreFromClusterSnapshotInputBuilder {
         self.target_reserved_node_offering_id = input;
         self
     }
+    /// <p>The identifier of the target reserved node offering.</p>
+    pub fn get_target_reserved_node_offering_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.target_reserved_node_offering_id
+    }
     /// <p>Enables support for restoring an unencrypted snapshot to a cluster encrypted with Key Management Service (KMS) and a customer managed key.</p>
     pub fn encrypted(mut self, input: bool) -> Self {
         self.encrypted = ::std::option::Option::Some(input);
@@ -913,6 +1097,10 @@ impl RestoreFromClusterSnapshotInputBuilder {
     pub fn set_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.encrypted = input;
         self
+    }
+    /// <p>Enables support for restoring an unencrypted snapshot to a cluster encrypted with Key Management Service (KMS) and a customer managed key.</p>
+    pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
+        &self.encrypted
     }
     /// Consumes the builder and constructs a [`RestoreFromClusterSnapshotInput`](crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotInput).
     pub fn build(

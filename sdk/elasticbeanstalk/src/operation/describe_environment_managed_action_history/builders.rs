@@ -36,6 +36,10 @@ impl DescribeEnvironmentManagedActionHistoryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeEnvironmentManagedActionHistory as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_environment_managed_action_history::builders::DescribeEnvironmentManagedActionHistoryInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -112,6 +116,10 @@ impl DescribeEnvironmentManagedActionHistoryFluentBuilder {
         self.inner = self.inner.set_environment_id(input);
         self
     }
+    /// <p>The environment ID of the target environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_id()
+    }
     /// <p>The name of the target environment.</p>
     pub fn environment_name(
         mut self,
@@ -128,6 +136,10 @@ impl DescribeEnvironmentManagedActionHistoryFluentBuilder {
         self.inner = self.inner.set_environment_name(input);
         self
     }
+    /// <p>The name of the target environment.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_name()
+    }
     /// <p>The pagination token returned by a previous request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -138,6 +150,10 @@ impl DescribeEnvironmentManagedActionHistoryFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The pagination token returned by a previous request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of items to return for a single request.</p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.inner = self.inner.max_items(input);
@@ -147,5 +163,9 @@ impl DescribeEnvironmentManagedActionHistoryFluentBuilder {
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_items(input);
         self
+    }
+    /// <p>The maximum number of items to return for a single request.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_items()
     }
 }

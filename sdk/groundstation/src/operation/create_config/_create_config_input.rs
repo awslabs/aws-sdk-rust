@@ -64,6 +64,10 @@ impl CreateConfigInputBuilder {
         self.name = input;
         self
     }
+    /// <p>Name of a <code>Config</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Parameters of a <code>Config</code>.</p>
     pub fn config_data(mut self, input: crate::types::ConfigTypeData) -> Self {
         self.config_data = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl CreateConfigInputBuilder {
     ) -> Self {
         self.config_data = input;
         self
+    }
+    /// <p>Parameters of a <code>Config</code>.</p>
+    pub fn get_config_data(&self) -> &::std::option::Option<crate::types::ConfigTypeData> {
+        &self.config_data
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -101,6 +109,14 @@ impl CreateConfigInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Tags assigned to a <code>Config</code>.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateConfigInput`](crate::operation::create_config::CreateConfigInput).
     pub fn build(

@@ -83,6 +83,10 @@ impl InvalidInputExceptionBuilder {
         self.error_code = input;
         self
     }
+    /// Error code for the exception
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
+    }
     #[allow(missing_docs)] // documentation missing in model
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -93,6 +97,10 @@ impl InvalidInputExceptionBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Field that has invalid input
     pub fn field_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.field_name = ::std::option::Option::Some(input.into());
@@ -102,6 +110,10 @@ impl InvalidInputExceptionBuilder {
     pub fn set_field_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field_name = input;
         self
+    }
+    /// Field that has invalid input
+    pub fn get_field_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_name
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

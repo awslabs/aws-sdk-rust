@@ -60,6 +60,10 @@ impl ListSolNetworkPackagesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `network_packages`.
     ///
     /// To override the contents of this collection use [`set_network_packages`](Self::set_network_packages).
@@ -78,6 +82,12 @@ impl ListSolNetworkPackagesOutputBuilder {
     ) -> Self {
         self.network_packages = input;
         self
+    }
+    /// <p>Network packages. A network package is a .zip file in CSAR (Cloud Service Archive) format defines the function packages you want to deploy and the Amazon Web Services infrastructure you want to deploy them on.</p>
+    pub fn get_network_packages(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListSolNetworkPackageInfo>> {
+        &self.network_packages
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

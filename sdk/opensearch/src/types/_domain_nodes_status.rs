@@ -98,6 +98,10 @@ impl DomainNodesStatusBuilder {
         self.node_id = input;
         self
     }
+    /// <p>The ID of the node.</p>
+    pub fn get_node_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_id
+    }
     /// <p>Indicates whether the nodes is a data, master, or ultrawarm node.</p>
     pub fn node_type(mut self, input: crate::types::NodeType) -> Self {
         self.node_type = ::std::option::Option::Some(input);
@@ -107,6 +111,10 @@ impl DomainNodesStatusBuilder {
     pub fn set_node_type(mut self, input: ::std::option::Option<crate::types::NodeType>) -> Self {
         self.node_type = input;
         self
+    }
+    /// <p>Indicates whether the nodes is a data, master, or ultrawarm node.</p>
+    pub fn get_node_type(&self) -> &::std::option::Option<crate::types::NodeType> {
+        &self.node_type
     }
     /// <p>The Availability Zone of the node.</p>
     pub fn availability_zone(
@@ -124,6 +132,10 @@ impl DomainNodesStatusBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>The Availability Zone of the node.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>The instance type information of the node.</p>
     pub fn instance_type(mut self, input: crate::types::OpenSearchPartitionInstanceType) -> Self {
         self.instance_type = ::std::option::Option::Some(input);
@@ -136,6 +148,12 @@ impl DomainNodesStatusBuilder {
     ) -> Self {
         self.instance_type = input;
         self
+    }
+    /// <p>The instance type information of the node.</p>
+    pub fn get_instance_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::OpenSearchPartitionInstanceType> {
+        &self.instance_type
     }
     /// <p>Indicates if the node is active or in standby.</p>
     pub fn node_status(mut self, input: crate::types::NodeStatus) -> Self {
@@ -150,6 +168,10 @@ impl DomainNodesStatusBuilder {
         self.node_status = input;
         self
     }
+    /// <p>Indicates if the node is active or in standby.</p>
+    pub fn get_node_status(&self) -> &::std::option::Option<crate::types::NodeStatus> {
+        &self.node_status
+    }
     /// <p>Indicates if the node has EBS or instance storage. </p>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_type = ::std::option::Option::Some(input.into());
@@ -159,6 +181,10 @@ impl DomainNodesStatusBuilder {
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_type = input;
         self
+    }
+    /// <p>Indicates if the node has EBS or instance storage. </p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_type
     }
     /// <p>If the nodes has EBS storage, indicates if the volume type is GP2 or GP3. Only applicable for data nodes. </p>
     pub fn storage_volume_type(mut self, input: crate::types::VolumeType) -> Self {
@@ -173,6 +199,10 @@ impl DomainNodesStatusBuilder {
         self.storage_volume_type = input;
         self
     }
+    /// <p>If the nodes has EBS storage, indicates if the volume type is GP2 or GP3. Only applicable for data nodes. </p>
+    pub fn get_storage_volume_type(&self) -> &::std::option::Option<crate::types::VolumeType> {
+        &self.storage_volume_type
+    }
     /// <p>The storage size of the node, in GiB.</p>
     pub fn storage_size(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_size = ::std::option::Option::Some(input.into());
@@ -182,6 +212,10 @@ impl DomainNodesStatusBuilder {
     pub fn set_storage_size(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_size = input;
         self
+    }
+    /// <p>The storage size of the node, in GiB.</p>
+    pub fn get_storage_size(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_size
     }
     /// Consumes the builder and constructs a [`DomainNodesStatus`](crate::types::DomainNodesStatus).
     pub fn build(self) -> crate::types::DomainNodesStatus {

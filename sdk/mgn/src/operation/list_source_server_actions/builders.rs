@@ -37,6 +37,13 @@ impl ListSourceServerActionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListSourceServerActions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_source_server_actions::builders::ListSourceServerActionsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -142,6 +149,10 @@ impl ListSourceServerActionsFluentBuilder {
         self.inner = self.inner.set_source_server_id(input);
         self
     }
+    /// <p>Source server ID.</p>
+    pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_server_id()
+    }
     /// <p>Filters to apply when listing source server post migration custom actions.</p>
     pub fn filters(mut self, input: crate::types::SourceServerActionsRequestFilters) -> Self {
         self.inner = self.inner.filters(input);
@@ -155,6 +166,12 @@ impl ListSourceServerActionsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>Filters to apply when listing source server post migration custom actions.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<crate::types::SourceServerActionsRequestFilters> {
+        self.inner.get_filters()
+    }
     /// <p>Maximum amount of items to return when listing source server post migration custom actions.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -164,6 +181,10 @@ impl ListSourceServerActionsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>Maximum amount of items to return when listing source server post migration custom actions.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>Next token to use when listing source server post migration custom actions.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -175,6 +196,10 @@ impl ListSourceServerActionsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>Next token to use when listing source server post migration custom actions.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>Account ID to return when listing source server post migration custom actions.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
@@ -184,5 +209,9 @@ impl ListSourceServerActionsFluentBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
+    }
+    /// <p>Account ID to return when listing source server post migration custom actions.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
     }
 }

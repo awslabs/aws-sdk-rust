@@ -47,6 +47,10 @@ impl RejectSharedDirectoryInputBuilder {
         self.shared_directory_id = input;
         self
     }
+    /// <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account.</p>
+    pub fn get_shared_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shared_directory_id
+    }
     /// Consumes the builder and constructs a [`RejectSharedDirectoryInput`](crate::operation::reject_shared_directory::RejectSharedDirectoryInput).
     pub fn build(
         self,

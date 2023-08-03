@@ -61,6 +61,10 @@ impl ModifySecurityGroupRulesInputBuilder {
         self.group_id = input;
         self
     }
+    /// <p>The ID of the security group.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
+    }
     /// Appends an item to `security_group_rules`.
     ///
     /// To override the contents of this collection use [`set_security_group_rules`](Self::set_security_group_rules).
@@ -80,6 +84,12 @@ impl ModifySecurityGroupRulesInputBuilder {
         self.security_group_rules = input;
         self
     }
+    /// <p>Information about the security group properties to update.</p>
+    pub fn get_security_group_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupRuleUpdate>> {
+        &self.security_group_rules
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -89,6 +99,10 @@ impl ModifySecurityGroupRulesInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`ModifySecurityGroupRulesInput`](crate::operation::modify_security_group_rules::ModifySecurityGroupRulesInput).
     pub fn build(

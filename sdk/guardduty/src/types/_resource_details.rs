@@ -40,6 +40,10 @@ impl ResourceDetailsBuilder {
         self.instance_arn = input;
         self
     }
+    /// <p>InstanceArn that was scanned in the scan entry.</p>
+    pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_arn
+    }
     /// Consumes the builder and constructs a [`ResourceDetails`](crate::types::ResourceDetails).
     pub fn build(self) -> crate::types::ResourceDetails {
         crate::types::ResourceDetails {

@@ -36,6 +36,12 @@ impl CreateVpcEndpointFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateVpcEndpoint as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_vpc_endpoint::builders::CreateVpcEndpointInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateVpcEndpointFluentBuilder {
         self.inner = self.inner.set_domain_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the domain to grant access to.</p>
+    pub fn get_domain_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_arn()
+    }
     /// <p>Options to specify the subnets and security groups for the endpoint.</p>
     pub fn vpc_options(mut self, input: crate::types::VpcOptions) -> Self {
         self.inner = self.inner.vpc_options(input);
@@ -139,6 +149,10 @@ impl CreateVpcEndpointFluentBuilder {
         self.inner = self.inner.set_vpc_options(input);
         self
     }
+    /// <p>Options to specify the subnets and security groups for the endpoint.</p>
+    pub fn get_vpc_options(&self) -> &::std::option::Option<crate::types::VpcOptions> {
+        self.inner.get_vpc_options()
+    }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -148,5 +162,9 @@ impl CreateVpcEndpointFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

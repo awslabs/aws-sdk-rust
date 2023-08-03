@@ -54,6 +54,10 @@ impl CancelledSpotInstanceRequestBuilder {
         self.spot_instance_request_id = input;
         self
     }
+    /// <p>The ID of the Spot Instance request.</p>
+    pub fn get_spot_instance_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.spot_instance_request_id
+    }
     /// <p>The state of the Spot Instance request.</p>
     pub fn state(mut self, input: crate::types::CancelSpotInstanceRequestState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -66,6 +70,12 @@ impl CancelledSpotInstanceRequestBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the Spot Instance request.</p>
+    pub fn get_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::CancelSpotInstanceRequestState> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`CancelledSpotInstanceRequest`](crate::types::CancelledSpotInstanceRequest).
     pub fn build(self) -> crate::types::CancelledSpotInstanceRequest {

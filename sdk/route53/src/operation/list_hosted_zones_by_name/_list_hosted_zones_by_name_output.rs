@@ -110,6 +110,12 @@ impl ListHostedZonesByNameOutputBuilder {
         self.hosted_zones = input;
         self
     }
+    /// <p>A complex type that contains general information about the hosted zone.</p>
+    pub fn get_hosted_zones(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HostedZone>> {
+        &self.hosted_zones
+    }
     /// <p>For the second and subsequent calls to <code>ListHostedZonesByName</code>, <code>DNSName</code> is the value that you specified for the <code>dnsname</code> parameter in the request that produced the current response.</p>
     pub fn dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dns_name = ::std::option::Option::Some(input.into());
@@ -119,6 +125,10 @@ impl ListHostedZonesByNameOutputBuilder {
     pub fn set_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dns_name = input;
         self
+    }
+    /// <p>For the second and subsequent calls to <code>ListHostedZonesByName</code>, <code>DNSName</code> is the value that you specified for the <code>dnsname</code> parameter in the request that produced the current response.</p>
+    pub fn get_dns_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dns_name
     }
     /// <p>The ID that Amazon Route 53 assigned to the hosted zone when you created it.</p>
     pub fn hosted_zone_id(
@@ -136,6 +146,10 @@ impl ListHostedZonesByNameOutputBuilder {
         self.hosted_zone_id = input;
         self
     }
+    /// <p>The ID that Amazon Route 53 assigned to the hosted zone when you created it.</p>
+    pub fn get_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hosted_zone_id
+    }
     /// <p>A flag that indicates whether there are more hosted zones to be listed. If the response was truncated, you can get the next group of <code>maxitems</code> hosted zones by calling <code>ListHostedZonesByName</code> again and specifying the values of <code>NextDNSName</code> and <code>NextHostedZoneId</code> elements in the <code>dnsname</code> and <code>hostedzoneid</code> parameters.</p>
     pub fn is_truncated(mut self, input: bool) -> Self {
         self.is_truncated = ::std::option::Option::Some(input);
@@ -145,6 +159,10 @@ impl ListHostedZonesByNameOutputBuilder {
     pub fn set_is_truncated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_truncated = input;
         self
+    }
+    /// <p>A flag that indicates whether there are more hosted zones to be listed. If the response was truncated, you can get the next group of <code>maxitems</code> hosted zones by calling <code>ListHostedZonesByName</code> again and specifying the values of <code>NextDNSName</code> and <code>NextHostedZoneId</code> elements in the <code>dnsname</code> and <code>hostedzoneid</code> parameters.</p>
+    pub fn get_is_truncated(&self) -> &::std::option::Option<bool> {
+        &self.is_truncated
     }
     /// <p>If <code>IsTruncated</code> is true, the value of <code>NextDNSName</code> is the name of the first hosted zone in the next group of <code>maxitems</code> hosted zones. Call <code>ListHostedZonesByName</code> again and specify the value of <code>NextDNSName</code> and <code>NextHostedZoneId</code> in the <code>dnsname</code> and <code>hostedzoneid</code> parameters, respectively.</p>
     /// <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
@@ -164,6 +182,11 @@ impl ListHostedZonesByNameOutputBuilder {
         self.next_dns_name = input;
         self
     }
+    /// <p>If <code>IsTruncated</code> is true, the value of <code>NextDNSName</code> is the name of the first hosted zone in the next group of <code>maxitems</code> hosted zones. Call <code>ListHostedZonesByName</code> again and specify the value of <code>NextDNSName</code> and <code>NextHostedZoneId</code> in the <code>dnsname</code> and <code>hostedzoneid</code> parameters, respectively.</p>
+    /// <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
+    pub fn get_next_dns_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_dns_name
+    }
     /// <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextHostedZoneId</code> identifies the first hosted zone in the next group of <code>maxitems</code> hosted zones. Call <code>ListHostedZonesByName</code> again and specify the value of <code>NextDNSName</code> and <code>NextHostedZoneId</code> in the <code>dnsname</code> and <code>hostedzoneid</code> parameters, respectively.</p>
     /// <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
     pub fn next_hosted_zone_id(
@@ -182,6 +205,11 @@ impl ListHostedZonesByNameOutputBuilder {
         self.next_hosted_zone_id = input;
         self
     }
+    /// <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextHostedZoneId</code> identifies the first hosted zone in the next group of <code>maxitems</code> hosted zones. Call <code>ListHostedZonesByName</code> again and specify the value of <code>NextDNSName</code> and <code>NextHostedZoneId</code> in the <code>dnsname</code> and <code>hostedzoneid</code> parameters, respectively.</p>
+    /// <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
+    pub fn get_next_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_hosted_zone_id
+    }
     /// <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListHostedZonesByName</code> that produced the current response.</p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.max_items = ::std::option::Option::Some(input);
@@ -191,6 +219,10 @@ impl ListHostedZonesByNameOutputBuilder {
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_items = input;
         self
+    }
+    /// <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListHostedZonesByName</code> that produced the current response.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        &self.max_items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

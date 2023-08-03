@@ -47,6 +47,10 @@ impl WafOverrideActionBuilder {
         self.r#type = input;
         self
     }
+    /// <p> <code>COUNT</code> overrides the action specified by the individual rule within a <code>RuleGroup</code> . If set to <code>NONE</code>, the rule's action will take place.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::WafOverrideActionType> {
+        &self.r#type
+    }
     /// Consumes the builder and constructs a [`WafOverrideAction`](crate::types::WafOverrideAction).
     pub fn build(self) -> crate::types::WafOverrideAction {
         crate::types::WafOverrideAction {

@@ -51,6 +51,10 @@ impl RemediationBuilder {
         self.recommendation = input;
         self
     }
+    /// <p>An object that contains information about the recommended course of action to remediate a finding.</p>
+    pub fn get_recommendation(&self) -> &::std::option::Option<crate::types::Recommendation> {
+        &self.recommendation
+    }
     /// Appends an item to `suggested_fixes`.
     ///
     /// To override the contents of this collection use [`set_suggested_fixes`](Self::set_suggested_fixes).
@@ -69,6 +73,12 @@ impl RemediationBuilder {
     ) -> Self {
         self.suggested_fixes = input;
         self
+    }
+    /// <p>A list of <code>SuggestedFix</code> objects. Each object contains information about a suggested code fix to remediate the finding.</p>
+    pub fn get_suggested_fixes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SuggestedFix>> {
+        &self.suggested_fixes
     }
     /// Consumes the builder and constructs a [`Remediation`](crate::types::Remediation).
     pub fn build(self) -> crate::types::Remediation {

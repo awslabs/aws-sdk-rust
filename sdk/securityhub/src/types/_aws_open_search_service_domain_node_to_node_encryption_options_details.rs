@@ -42,6 +42,10 @@ impl AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetailsBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Whether node-to-node encryption is enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Consumes the builder and constructs a [`AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails`](crate::types::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails).
     pub fn build(
         self,

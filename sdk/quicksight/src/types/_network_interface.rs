@@ -72,6 +72,10 @@ impl NetworkInterfaceBuilder {
         self.subnet_id = input;
         self
     }
+    /// <p>The subnet ID associated with the network interface.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
+    }
     /// <p>The availability zone that the network interface resides in.</p>
     pub fn availability_zone(
         mut self,
@@ -87,6 +91,10 @@ impl NetworkInterfaceBuilder {
     ) -> Self {
         self.availability_zone = input;
         self
+    }
+    /// <p>The availability zone that the network interface resides in.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
     }
     /// <p>An error message.</p>
     pub fn error_message(
@@ -104,6 +112,10 @@ impl NetworkInterfaceBuilder {
         self.error_message = input;
         self
     }
+    /// <p>An error message.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// <p>The status of the network interface.</p>
     pub fn status(mut self, input: crate::types::NetworkInterfaceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -116,6 +128,10 @@ impl NetworkInterfaceBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the network interface.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::NetworkInterfaceStatus> {
+        &self.status
     }
     /// <p>The network interface ID.</p>
     pub fn network_interface_id(
@@ -132,6 +148,10 @@ impl NetworkInterfaceBuilder {
     ) -> Self {
         self.network_interface_id = input;
         self
+    }
+    /// <p>The network interface ID.</p>
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_interface_id
     }
     /// Consumes the builder and constructs a [`NetworkInterface`](crate::types::NetworkInterface).
     pub fn build(self) -> crate::types::NetworkInterface {

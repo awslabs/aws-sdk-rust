@@ -47,6 +47,10 @@ impl DescribeFeaturedResultsSetInputBuilder {
         self.index_id = input;
         self
     }
+    /// <p>The identifier of the index used for featuring results.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_id
+    }
     /// <p>The identifier of the set of featured results that you want to get information on.</p>
     pub fn featured_results_set_id(
         mut self,
@@ -62,6 +66,10 @@ impl DescribeFeaturedResultsSetInputBuilder {
     ) -> Self {
         self.featured_results_set_id = input;
         self
+    }
+    /// <p>The identifier of the set of featured results that you want to get information on.</p>
+    pub fn get_featured_results_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.featured_results_set_id
     }
     /// Consumes the builder and constructs a [`DescribeFeaturedResultsSetInput`](crate::operation::describe_featured_results_set::DescribeFeaturedResultsSetInput).
     pub fn build(

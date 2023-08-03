@@ -49,6 +49,10 @@ impl TrialComponentArtifactBuilder {
         self.media_type = input;
         self
     }
+    /// <p>The media type of the artifact, which indicates the type of data in the artifact file. The media type consists of a <i>type</i> and a <i>subtype</i> concatenated with a slash (/) character, for example, text/csv, image/jpeg, and s3/uri. The type specifies the category of the media. The subtype specifies the kind of data.</p>
+    pub fn get_media_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.media_type
+    }
     /// <p>The location of the artifact.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl TrialComponentArtifactBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The location of the artifact.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`TrialComponentArtifact`](crate::types::TrialComponentArtifact).
     pub fn build(self) -> crate::types::TrialComponentArtifact {

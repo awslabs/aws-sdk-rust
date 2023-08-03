@@ -97,6 +97,17 @@ impl AnalyticsIntentStageMetricResultBuilder {
         self.name = input;
         self
     }
+    /// <p>The metric that you requested.</p>
+    /// <ul>
+    /// <li> <p> <code>Count</code> – The number of times the intent stage occurred.</p> </li>
+    /// <li> <p> <code>Success</code> – The number of times the intent stage succeeded.</p> </li>
+    /// <li> <p> <code>Failure</code> – The number of times the intent stage failed.</p> </li>
+    /// <li> <p> <code>Dropped</code> – The number of times the user dropped the intent stage.</p> </li>
+    /// <li> <p> <code>Retry</code> – The number of times the bot tried to elicit a response from the user at this stage.</p> </li>
+    /// </ul>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::AnalyticsIntentStageMetricName> {
+        &self.name
+    }
     /// <p>The summary statistic that you requested to calculate.</p>
     /// <ul>
     /// <li> <p> <code>Sum</code> – The total count for the category you provide in <code>name</code>.</p> </li>
@@ -120,6 +131,15 @@ impl AnalyticsIntentStageMetricResultBuilder {
         self.statistic = input;
         self
     }
+    /// <p>The summary statistic that you requested to calculate.</p>
+    /// <ul>
+    /// <li> <p> <code>Sum</code> – The total count for the category you provide in <code>name</code>.</p> </li>
+    /// <li> <p> <code>Average</code> – The total count divided by the number of intent stages in the category you provide in <code>name</code>.</p> </li>
+    /// <li> <p> <code>Max</code> – The highest count in the category you provide in <code>name</code>.</p> </li>
+    /// </ul>
+    pub fn get_statistic(&self) -> &::std::option::Option<crate::types::AnalyticsMetricStatistic> {
+        &self.statistic
+    }
     /// <p>The value of the summary statistic for the metric that you requested.</p>
     pub fn value(mut self, input: f64) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -129,6 +149,10 @@ impl AnalyticsIntentStageMetricResultBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of the summary statistic for the metric that you requested.</p>
+    pub fn get_value(&self) -> &::std::option::Option<f64> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`AnalyticsIntentStageMetricResult`](crate::types::AnalyticsIntentStageMetricResult).
     pub fn build(self) -> crate::types::AnalyticsIntentStageMetricResult {

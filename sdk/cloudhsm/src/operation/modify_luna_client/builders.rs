@@ -39,6 +39,12 @@ impl ModifyLunaClientFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyLunaClient as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::modify_luna_client::builders::ModifyLunaClientInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl ModifyLunaClientFluentBuilder {
         self.inner = self.inner.set_client_arn(input);
         self
     }
+    /// <p>The ARN of the client.</p>
+    pub fn get_client_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_arn()
+    }
     /// <p>The new certificate for the client.</p>
     pub fn certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate(input.into());
@@ -138,5 +148,9 @@ impl ModifyLunaClientFluentBuilder {
     pub fn set_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate(input);
         self
+    }
+    /// <p>The new certificate for the client.</p>
+    pub fn get_certificate(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate()
     }
 }

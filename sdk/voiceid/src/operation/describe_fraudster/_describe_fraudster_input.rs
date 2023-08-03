@@ -54,6 +54,10 @@ impl DescribeFraudsterInputBuilder {
         self.domain_id = input;
         self
     }
+    /// <p>The identifier of the domain that contains the fraudster.</p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_id
+    }
     /// <p>The identifier of the fraudster you are describing.</p>
     pub fn fraudster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fraudster_id = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl DescribeFraudsterInputBuilder {
     pub fn set_fraudster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fraudster_id = input;
         self
+    }
+    /// <p>The identifier of the fraudster you are describing.</p>
+    pub fn get_fraudster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fraudster_id
     }
     /// Consumes the builder and constructs a [`DescribeFraudsterInput`](crate::operation::describe_fraudster::DescribeFraudsterInput).
     pub fn build(

@@ -69,6 +69,10 @@ impl ListSchemasInputBuilder {
         self.collaboration_identifier = input;
         self
     }
+    /// <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
+    pub fn get_collaboration_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collaboration_identifier
+    }
     /// <p>If present, filter schemas by schema type. The only valid schema type is currently `TABLE`.</p>
     pub fn schema_type(mut self, input: crate::types::SchemaType) -> Self {
         self.schema_type = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl ListSchemasInputBuilder {
         self.schema_type = input;
         self
     }
+    /// <p>If present, filter schemas by schema type. The only valid schema type is currently `TABLE`.</p>
+    pub fn get_schema_type(&self) -> &::std::option::Option<crate::types::SchemaType> {
+        &self.schema_type
+    }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -92,6 +100,10 @@ impl ListSchemasInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum size of the results that is returned per call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -101,6 +113,10 @@ impl ListSchemasInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum size of the results that is returned per call.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListSchemasInput`](crate::operation::list_schemas::ListSchemasInput).
     pub fn build(

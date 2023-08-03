@@ -48,6 +48,10 @@ impl NodeTypeSpecificValueBuilder {
         self.node_type = input;
         self
     }
+    /// <p>A node type to which the parameter value applies.</p>
+    pub fn get_node_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_type
+    }
     /// <p>The parameter value for this node type.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl NodeTypeSpecificValueBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The parameter value for this node type.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`NodeTypeSpecificValue`](crate::types::NodeTypeSpecificValue).
     pub fn build(self) -> crate::types::NodeTypeSpecificValue {

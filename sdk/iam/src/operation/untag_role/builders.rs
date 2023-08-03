@@ -36,6 +36,10 @@ impl UntagRoleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UntagRole as a reference.
+    pub fn as_input(&self) -> &crate::operation::untag_role::builders::UntagRoleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -120,6 +124,11 @@ impl UntagRoleFluentBuilder {
         self.inner = self.inner.set_role_name(input);
         self
     }
+    /// <p>The name of the IAM role from which you want to remove tags.</p>
+    /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_name()
+    }
     /// Appends an item to `TagKeys`.
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
@@ -136,5 +145,9 @@ impl UntagRoleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tag_keys(input);
         self
+    }
+    /// <p>A list of key names as a simple array of strings. The tags with matching keys are removed from the specified role.</p>
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_tag_keys()
     }
 }

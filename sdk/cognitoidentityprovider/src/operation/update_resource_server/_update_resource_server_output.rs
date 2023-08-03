@@ -50,6 +50,10 @@ impl UpdateResourceServerOutputBuilder {
         self.resource_server = input;
         self
     }
+    /// <p>The resource server.</p>
+    pub fn get_resource_server(&self) -> &::std::option::Option<crate::types::ResourceServerType> {
+        &self.resource_server
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

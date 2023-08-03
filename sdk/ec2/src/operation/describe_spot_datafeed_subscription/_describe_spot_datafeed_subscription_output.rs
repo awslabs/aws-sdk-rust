@@ -56,6 +56,12 @@ impl DescribeSpotDatafeedSubscriptionOutputBuilder {
         self.spot_datafeed_subscription = input;
         self
     }
+    /// <p>The Spot Instance data feed subscription.</p>
+    pub fn get_spot_datafeed_subscription(
+        &self,
+    ) -> &::std::option::Option<crate::types::SpotDatafeedSubscription> {
+        &self.spot_datafeed_subscription
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

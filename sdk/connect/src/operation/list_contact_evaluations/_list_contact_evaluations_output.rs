@@ -73,6 +73,12 @@ impl ListContactEvaluationsOutputBuilder {
         self.evaluation_summary_list = input;
         self
     }
+    /// <p>Provides details about a list of contact evaluations belonging to an instance.</p>
+    pub fn get_evaluation_summary_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationSummary>> {
+        &self.evaluation_summary_list
+    }
     /// <p>If there are additional results, this is the token for the next set of results.</p> <important>
     /// <p>This is always returned as null in the response.</p>
     /// </important>
@@ -86,6 +92,12 @@ impl ListContactEvaluationsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p> <important>
+    /// <p>This is always returned as null in the response.</p>
+    /// </important>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

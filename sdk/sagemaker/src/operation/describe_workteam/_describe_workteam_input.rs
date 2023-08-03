@@ -46,6 +46,10 @@ impl DescribeWorkteamInputBuilder {
         self.workteam_name = input;
         self
     }
+    /// <p>The name of the work team to return a description of.</p>
+    pub fn get_workteam_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workteam_name
+    }
     /// Consumes the builder and constructs a [`DescribeWorkteamInput`](crate::operation::describe_workteam::DescribeWorkteamInput).
     pub fn build(
         self,

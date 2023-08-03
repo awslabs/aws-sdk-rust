@@ -48,6 +48,12 @@ impl SendTemplatedEmailFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SendTemplatedEmail as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::send_templated_email::builders::SendTemplatedEmailInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -144,6 +150,13 @@ impl SendTemplatedEmailFluentBuilder {
         self.inner = self.inner.set_source(input);
         self
     }
+    /// <p>The email address that is sending the email. This email address must be either individually verified with Amazon SES, or from a domain that has been verified with Amazon SES. For information about verifying identities, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer Guide</a>.</p>
+    /// <p>If you are sending on behalf of another user and have been permitted to do so by a sending authorization policy, then you must also specify the <code>SourceArn</code> parameter. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p> <note>
+    /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a source email address (the part of the email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly name</i>) may contain non-ASCII characters. These characters must be encoded using MIME encoded-word syntax, as described in<a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>.</p>
+    /// </note>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source()
+    }
     /// <p>The destination for this email, composed of To:, CC:, and BCC: fields. A Destination can include up to 50 recipients across these three fields.</p>
     pub fn destination(mut self, input: crate::types::Destination) -> Self {
         self.inner = self.inner.destination(input);
@@ -156,6 +169,10 @@ impl SendTemplatedEmailFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destination(input);
         self
+    }
+    /// <p>The destination for this email, composed of To:, CC:, and BCC: fields. A Destination can include up to 50 recipients across these three fields.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::Destination> {
+        self.inner.get_destination()
     }
     /// Appends an item to `ReplyToAddresses`.
     ///
@@ -177,6 +194,12 @@ impl SendTemplatedEmailFluentBuilder {
         self.inner = self.inner.set_reply_to_addresses(input);
         self
     }
+    /// <p>The reply-to email address(es) for the message. If the recipient replies to the message, each reply-to address will receive the reply.</p>
+    pub fn get_reply_to_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_reply_to_addresses()
+    }
     /// <p>The email address that bounces and complaints will be forwarded to when feedback forwarding is enabled. If the message cannot be delivered to the recipient, then an error message will be returned from the recipient's ISP; this message will then be forwarded to the email address specified by the <code>ReturnPath</code> parameter. The <code>ReturnPath</code> parameter is never overwritten. This email address must be either individually verified with Amazon SES, or from a domain that has been verified with Amazon SES. </p>
     pub fn return_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.return_path(input.into());
@@ -186,6 +209,10 @@ impl SendTemplatedEmailFluentBuilder {
     pub fn set_return_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_return_path(input);
         self
+    }
+    /// <p>The email address that bounces and complaints will be forwarded to when feedback forwarding is enabled. If the message cannot be delivered to the recipient, then an error message will be returned from the recipient's ISP; this message will then be forwarded to the email address specified by the <code>ReturnPath</code> parameter. The <code>ReturnPath</code> parameter is never overwritten. This email address must be either individually verified with Amazon SES, or from a domain that has been verified with Amazon SES. </p>
+    pub fn get_return_path(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_return_path()
     }
     /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to send for the email address specified in the <code>Source</code> parameter.</p>
     /// <p>For example, if the owner of <code>example.com</code> (which has ARN <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a policy to it that authorizes you to send from <code>user@example.com</code>, then you would specify the <code>SourceArn</code> to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the <code>Source</code> to be <code>user@example.com</code>.</p>
@@ -200,6 +227,12 @@ impl SendTemplatedEmailFluentBuilder {
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_arn(input);
         self
+    }
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to send for the email address specified in the <code>Source</code> parameter.</p>
+    /// <p>For example, if the owner of <code>example.com</code> (which has ARN <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a policy to it that authorizes you to send from <code>user@example.com</code>, then you would specify the <code>SourceArn</code> to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the <code>Source</code> to be <code>user@example.com</code>.</p>
+    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
+    pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_arn()
     }
     /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>ReturnPath</code> parameter.</p>
     /// <p>For example, if the owner of <code>example.com</code> (which has ARN <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a policy to it that authorizes you to use <code>feedback@example.com</code>, then you would specify the <code>ReturnPathArn</code> to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
@@ -221,6 +254,12 @@ impl SendTemplatedEmailFluentBuilder {
         self.inner = self.inner.set_return_path_arn(input);
         self
     }
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>ReturnPath</code> parameter.</p>
+    /// <p>For example, if the owner of <code>example.com</code> (which has ARN <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a policy to it that authorizes you to use <code>feedback@example.com</code>, then you would specify the <code>ReturnPathArn</code> to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
+    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
+    pub fn get_return_path_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_return_path_arn()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -238,6 +277,10 @@ impl SendTemplatedEmailFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using <code>SendTemplatedEmail</code>. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageTag>> {
+        self.inner.get_tags()
+    }
     /// <p>The name of the configuration set to use when you send an email using <code>SendTemplatedEmail</code>.</p>
     pub fn configuration_set_name(
         mut self,
@@ -254,6 +297,10 @@ impl SendTemplatedEmailFluentBuilder {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }
+    /// <p>The name of the configuration set to use when you send an email using <code>SendTemplatedEmail</code>.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_set_name()
+    }
     /// <p>The template to use when sending this email.</p>
     pub fn template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template(input.into());
@@ -264,6 +311,10 @@ impl SendTemplatedEmailFluentBuilder {
         self.inner = self.inner.set_template(input);
         self
     }
+    /// <p>The template to use when sending this email.</p>
+    pub fn get_template(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template()
+    }
     /// <p>The ARN of the template to use when sending this email.</p>
     pub fn template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_arn(input.into());
@@ -273,6 +324,10 @@ impl SendTemplatedEmailFluentBuilder {
     pub fn set_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_arn(input);
         self
+    }
+    /// <p>The ARN of the template to use when sending this email.</p>
+    pub fn get_template_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_arn()
     }
     /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
     pub fn template_data(
@@ -289,5 +344,9 @@ impl SendTemplatedEmailFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_template_data(input);
         self
+    }
+    /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
+    pub fn get_template_data(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_data()
     }
 }

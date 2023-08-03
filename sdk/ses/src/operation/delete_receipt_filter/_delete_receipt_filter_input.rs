@@ -42,6 +42,10 @@ impl DeleteReceiptFilterInputBuilder {
         self.filter_name = input;
         self
     }
+    /// <p>The name of the IP address filter to delete.</p>
+    pub fn get_filter_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter_name
+    }
     /// Consumes the builder and constructs a [`DeleteReceiptFilterInput`](crate::operation::delete_receipt_filter::DeleteReceiptFilterInput).
     pub fn build(
         self,

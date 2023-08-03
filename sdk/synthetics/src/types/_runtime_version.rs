@@ -64,6 +64,10 @@ impl RuntimeVersionBuilder {
         self.version_name = input;
         self
     }
+    /// <p>The name of the runtime version. For a list of valid runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
+    pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_name
+    }
     /// <p>A description of the runtime version, created by Amazon.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl RuntimeVersionBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the runtime version, created by Amazon.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The date that the runtime version was released.</p>
     pub fn release_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -87,6 +95,10 @@ impl RuntimeVersionBuilder {
         self.release_date = input;
         self
     }
+    /// <p>The date that the runtime version was released.</p>
+    pub fn get_release_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.release_date
+    }
     /// <p>If this runtime version is deprecated, this value is the date of deprecation.</p>
     pub fn deprecation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.deprecation_date = ::std::option::Option::Some(input);
@@ -99,6 +111,10 @@ impl RuntimeVersionBuilder {
     ) -> Self {
         self.deprecation_date = input;
         self
+    }
+    /// <p>If this runtime version is deprecated, this value is the date of deprecation.</p>
+    pub fn get_deprecation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.deprecation_date
     }
     /// Consumes the builder and constructs a [`RuntimeVersion`](crate::types::RuntimeVersion).
     pub fn build(self) -> crate::types::RuntimeVersion {

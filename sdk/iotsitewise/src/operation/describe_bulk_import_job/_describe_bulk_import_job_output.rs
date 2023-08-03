@@ -130,6 +130,10 @@ impl DescribeBulkImportJobOutputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The ID of the job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>The unique name that helps identify the job request.</p>
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
@@ -139,6 +143,10 @@ impl DescribeBulkImportJobOutputBuilder {
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_name = input;
         self
+    }
+    /// <p>The unique name that helps identify the job request.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
     }
     /// <p>The status of the bulk import job can be one of following values.</p>
     /// <ul>
@@ -166,6 +174,18 @@ impl DescribeBulkImportJobOutputBuilder {
         self.job_status = input;
         self
     }
+    /// <p>The status of the bulk import job can be one of following values.</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>
+    /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li>
+    /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li>
+    /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+    /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+    /// </ul>
+    pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
+        &self.job_status
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows IoT SiteWise to read Amazon S3 data.</p>
     pub fn job_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_role_arn = ::std::option::Option::Some(input.into());
@@ -175,6 +195,10 @@ impl DescribeBulkImportJobOutputBuilder {
     pub fn set_job_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_role_arn = input;
         self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows IoT SiteWise to read Amazon S3 data.</p>
+    pub fn get_job_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_role_arn
     }
     /// Appends an item to `files`.
     ///
@@ -195,6 +219,10 @@ impl DescribeBulkImportJobOutputBuilder {
         self.files = input;
         self
     }
+    /// <p>The files in the specified Amazon S3 bucket that contain your data.</p>
+    pub fn get_files(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::File>> {
+        &self.files
+    }
     /// <p>The Amazon S3 destination where errors associated with the job creation request are saved.</p>
     pub fn error_report_location(mut self, input: crate::types::ErrorReportLocation) -> Self {
         self.error_report_location = ::std::option::Option::Some(input);
@@ -207,6 +235,12 @@ impl DescribeBulkImportJobOutputBuilder {
     ) -> Self {
         self.error_report_location = input;
         self
+    }
+    /// <p>The Amazon S3 destination where errors associated with the job creation request are saved.</p>
+    pub fn get_error_report_location(
+        &self,
+    ) -> &::std::option::Option<crate::types::ErrorReportLocation> {
+        &self.error_report_location
     }
     /// <p>Contains the configuration information of a job, such as the file format used to save data in Amazon S3.</p>
     pub fn job_configuration(mut self, input: crate::types::JobConfiguration) -> Self {
@@ -221,6 +255,10 @@ impl DescribeBulkImportJobOutputBuilder {
         self.job_configuration = input;
         self
     }
+    /// <p>Contains the configuration information of a job, such as the file format used to save data in Amazon S3.</p>
+    pub fn get_job_configuration(&self) -> &::std::option::Option<crate::types::JobConfiguration> {
+        &self.job_configuration
+    }
     /// <p>The date the job was created, in Unix epoch TIME.</p>
     pub fn job_creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.job_creation_date = ::std::option::Option::Some(input);
@@ -234,6 +272,10 @@ impl DescribeBulkImportJobOutputBuilder {
         self.job_creation_date = input;
         self
     }
+    /// <p>The date the job was created, in Unix epoch TIME.</p>
+    pub fn get_job_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.job_creation_date
+    }
     /// <p>The date the job was last updated, in Unix epoch time.</p>
     pub fn job_last_update_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.job_last_update_date = ::std::option::Option::Some(input);
@@ -246,6 +288,10 @@ impl DescribeBulkImportJobOutputBuilder {
     ) -> Self {
         self.job_last_update_date = input;
         self
+    }
+    /// <p>The date the job was last updated, in Unix epoch time.</p>
+    pub fn get_job_last_update_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.job_last_update_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

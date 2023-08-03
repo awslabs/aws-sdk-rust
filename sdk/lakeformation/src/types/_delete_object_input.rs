@@ -56,6 +56,10 @@ impl DeleteObjectInputBuilder {
         self.uri = input;
         self
     }
+    /// <p>The Amazon S3 location of the object to delete.</p>
+    pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uri
+    }
     /// <p>The Amazon S3 ETag of the object. Returned by <code>GetTableObjects</code> for validation and used to identify changes to the underlying data.</p>
     pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.e_tag = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl DeleteObjectInputBuilder {
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.e_tag = input;
         self
+    }
+    /// <p>The Amazon S3 ETag of the object. Returned by <code>GetTableObjects</code> for validation and used to identify changes to the underlying data.</p>
+    pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.e_tag
     }
     /// Appends an item to `partition_values`.
     ///
@@ -87,6 +95,12 @@ impl DeleteObjectInputBuilder {
     ) -> Self {
         self.partition_values = input;
         self
+    }
+    /// <p>A list of partition values for the object. A value must be specified for each partition key associated with the governed table.</p>
+    pub fn get_partition_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.partition_values
     }
     /// Consumes the builder and constructs a [`DeleteObjectInput`](crate::types::DeleteObjectInput).
     pub fn build(self) -> crate::types::DeleteObjectInput {

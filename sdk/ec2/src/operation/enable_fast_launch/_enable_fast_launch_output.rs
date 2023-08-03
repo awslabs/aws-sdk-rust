@@ -119,6 +119,10 @@ impl EnableFastLaunchOutputBuilder {
         self.image_id = input;
         self
     }
+    /// <p>The image ID that identifies the Windows AMI for which faster launching was enabled.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_id
+    }
     /// <p>The type of resource that was defined for pre-provisioning the Windows AMI for faster launching.</p>
     pub fn resource_type(mut self, input: crate::types::FastLaunchResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -131,6 +135,12 @@ impl EnableFastLaunchOutputBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The type of resource that was defined for pre-provisioning the Windows AMI for faster launching.</p>
+    pub fn get_resource_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::FastLaunchResourceType> {
+        &self.resource_type
     }
     /// <p>Settings to create and manage the pre-provisioned snapshots that Amazon EC2 uses for faster launches from the Windows AMI. This property is returned when the associated <code>resourceType</code> is <code>snapshot</code>.</p>
     pub fn snapshot_configuration(
@@ -148,6 +158,12 @@ impl EnableFastLaunchOutputBuilder {
         self.snapshot_configuration = input;
         self
     }
+    /// <p>Settings to create and manage the pre-provisioned snapshots that Amazon EC2 uses for faster launches from the Windows AMI. This property is returned when the associated <code>resourceType</code> is <code>snapshot</code>.</p>
+    pub fn get_snapshot_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::FastLaunchSnapshotConfigurationResponse> {
+        &self.snapshot_configuration
+    }
     /// <p>The launch template that is used when launching Windows instances from pre-provisioned snapshots.</p>
     pub fn launch_template(
         mut self,
@@ -164,6 +180,12 @@ impl EnableFastLaunchOutputBuilder {
         self.launch_template = input;
         self
     }
+    /// <p>The launch template that is used when launching Windows instances from pre-provisioned snapshots.</p>
+    pub fn get_launch_template(
+        &self,
+    ) -> &::std::option::Option<crate::types::FastLaunchLaunchTemplateSpecificationResponse> {
+        &self.launch_template
+    }
     /// <p>The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots for Windows faster launching.</p>
     pub fn max_parallel_launches(mut self, input: i32) -> Self {
         self.max_parallel_launches = ::std::option::Option::Some(input);
@@ -174,6 +196,10 @@ impl EnableFastLaunchOutputBuilder {
         self.max_parallel_launches = input;
         self
     }
+    /// <p>The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots for Windows faster launching.</p>
+    pub fn get_max_parallel_launches(&self) -> &::std::option::Option<i32> {
+        &self.max_parallel_launches
+    }
     /// <p>The owner ID for the Windows AMI for which faster launching was enabled.</p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_id = ::std::option::Option::Some(input.into());
@@ -183,6 +209,10 @@ impl EnableFastLaunchOutputBuilder {
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_id = input;
         self
+    }
+    /// <p>The owner ID for the Windows AMI for which faster launching was enabled.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
     }
     /// <p>The current state of faster launching for the specified Windows AMI.</p>
     pub fn state(mut self, input: crate::types::FastLaunchStateCode) -> Self {
@@ -196,6 +226,10 @@ impl EnableFastLaunchOutputBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The current state of faster launching for the specified Windows AMI.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::FastLaunchStateCode> {
+        &self.state
     }
     /// <p>The reason that the state changed for faster launching for the Windows AMI.</p>
     pub fn state_transition_reason(
@@ -213,6 +247,10 @@ impl EnableFastLaunchOutputBuilder {
         self.state_transition_reason = input;
         self
     }
+    /// <p>The reason that the state changed for faster launching for the Windows AMI.</p>
+    pub fn get_state_transition_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_transition_reason
+    }
     /// <p>The time that the state changed for faster launching for the Windows AMI.</p>
     pub fn state_transition_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.state_transition_time = ::std::option::Option::Some(input);
@@ -225,6 +263,12 @@ impl EnableFastLaunchOutputBuilder {
     ) -> Self {
         self.state_transition_time = input;
         self
+    }
+    /// <p>The time that the state changed for faster launching for the Windows AMI.</p>
+    pub fn get_state_transition_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.state_transition_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

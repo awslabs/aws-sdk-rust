@@ -80,6 +80,10 @@ impl VgwTelemetryBuilder {
         self.accepted_route_count = input;
         self
     }
+    /// <p>The number of accepted routes.</p>
+    pub fn get_accepted_route_count(&self) -> &::std::option::Option<i32> {
+        &self.accepted_route_count
+    }
     /// <p>The date and time of the last change in status.</p>
     pub fn last_status_change(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_status_change = ::std::option::Option::Some(input);
@@ -92,6 +96,10 @@ impl VgwTelemetryBuilder {
     ) -> Self {
         self.last_status_change = input;
         self
+    }
+    /// <p>The date and time of the last change in status.</p>
+    pub fn get_last_status_change(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_status_change
     }
     /// <p>The Internet-routable IP address of the virtual private gateway's outside interface.</p>
     pub fn outside_ip_address(
@@ -109,6 +117,10 @@ impl VgwTelemetryBuilder {
         self.outside_ip_address = input;
         self
     }
+    /// <p>The Internet-routable IP address of the virtual private gateway's outside interface.</p>
+    pub fn get_outside_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.outside_ip_address
+    }
     /// <p>The status of the VPN tunnel.</p>
     pub fn status(mut self, input: crate::types::TelemetryStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -121,6 +133,10 @@ impl VgwTelemetryBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the VPN tunnel.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TelemetryStatus> {
+        &self.status
     }
     /// <p>If an error occurs, a description of the error.</p>
     pub fn status_message(
@@ -138,6 +154,10 @@ impl VgwTelemetryBuilder {
         self.status_message = input;
         self
     }
+    /// <p>If an error occurs, a description of the error.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>The Amazon Resource Name (ARN) of the VPN tunnel endpoint certificate.</p>
     pub fn certificate_arn(
         mut self,
@@ -153,6 +173,10 @@ impl VgwTelemetryBuilder {
     ) -> Self {
         self.certificate_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the VPN tunnel endpoint certificate.</p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_arn
     }
     /// Consumes the builder and constructs a [`VgwTelemetry`](crate::types::VgwTelemetry).
     pub fn build(self) -> crate::types::VgwTelemetry {

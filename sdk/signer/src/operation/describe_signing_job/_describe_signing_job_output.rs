@@ -201,6 +201,10 @@ impl DescribeSigningJobOutputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The ID of the signing job on output.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>The object that contains the name of your S3 bucket or your raw code.</p>
     pub fn source(mut self, input: crate::types::Source) -> Self {
         self.source = ::std::option::Option::Some(input);
@@ -210,6 +214,10 @@ impl DescribeSigningJobOutputBuilder {
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::Source>) -> Self {
         self.source = input;
         self
+    }
+    /// <p>The object that contains the name of your S3 bucket or your raw code.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::Source> {
+        &self.source
     }
     /// <p>The Amazon Resource Name (ARN) of your code signing certificate.</p>
     pub fn signing_material(mut self, input: crate::types::SigningMaterial) -> Self {
@@ -224,6 +232,10 @@ impl DescribeSigningJobOutputBuilder {
         self.signing_material = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of your code signing certificate.</p>
+    pub fn get_signing_material(&self) -> &::std::option::Option<crate::types::SigningMaterial> {
+        &self.signing_material
+    }
     /// <p>The microcontroller platform to which your signed code image will be distributed.</p>
     pub fn platform_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_id = ::std::option::Option::Some(input.into());
@@ -233,6 +245,10 @@ impl DescribeSigningJobOutputBuilder {
     pub fn set_platform_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform_id = input;
         self
+    }
+    /// <p>The microcontroller platform to which your signed code image will be distributed.</p>
+    pub fn get_platform_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_id
     }
     /// <p>A human-readable name for the signing platform associated with the signing job.</p>
     pub fn platform_display_name(
@@ -250,6 +266,10 @@ impl DescribeSigningJobOutputBuilder {
         self.platform_display_name = input;
         self
     }
+    /// <p>A human-readable name for the signing platform associated with the signing job.</p>
+    pub fn get_platform_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_display_name
+    }
     /// <p>The name of the profile that initiated the signing operation.</p>
     pub fn profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_name = ::std::option::Option::Some(input.into());
@@ -259,6 +279,10 @@ impl DescribeSigningJobOutputBuilder {
     pub fn set_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_name = input;
         self
+    }
+    /// <p>The name of the profile that initiated the signing operation.</p>
+    pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_name
     }
     /// <p>The version of the signing profile used to initiate the signing job.</p>
     pub fn profile_version(
@@ -276,6 +300,10 @@ impl DescribeSigningJobOutputBuilder {
         self.profile_version = input;
         self
     }
+    /// <p>The version of the signing profile used to initiate the signing job.</p>
+    pub fn get_profile_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_version
+    }
     /// <p>A list of any overrides that were applied to the signing operation.</p>
     pub fn overrides(mut self, input: crate::types::SigningPlatformOverrides) -> Self {
         self.overrides = ::std::option::Option::Some(input);
@@ -288,6 +316,10 @@ impl DescribeSigningJobOutputBuilder {
     ) -> Self {
         self.overrides = input;
         self
+    }
+    /// <p>A list of any overrides that were applied to the signing operation.</p>
+    pub fn get_overrides(&self) -> &::std::option::Option<crate::types::SigningPlatformOverrides> {
+        &self.overrides
     }
     /// Adds a key-value pair to `signing_parameters`.
     ///
@@ -314,6 +346,14 @@ impl DescribeSigningJobOutputBuilder {
         self.signing_parameters = input;
         self
     }
+    /// <p>Map of user-assigned key-value pairs used during signing. These values contain any information that you specified for use in your signing job. </p>
+    pub fn get_signing_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.signing_parameters
+    }
     /// <p>Date and time that the signing job was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -326,6 +366,10 @@ impl DescribeSigningJobOutputBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>Date and time that the signing job was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>Date and time that the signing job was completed.</p>
     pub fn completed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -340,6 +384,10 @@ impl DescribeSigningJobOutputBuilder {
         self.completed_at = input;
         self
     }
+    /// <p>Date and time that the signing job was completed.</p>
+    pub fn get_completed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.completed_at
+    }
     /// <p>Thr expiration timestamp for the signature generated by the signing job.</p>
     pub fn signature_expires_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.signature_expires_at = ::std::option::Option::Some(input);
@@ -353,6 +401,10 @@ impl DescribeSigningJobOutputBuilder {
         self.signature_expires_at = input;
         self
     }
+    /// <p>Thr expiration timestamp for the signature generated by the signing job.</p>
+    pub fn get_signature_expires_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.signature_expires_at
+    }
     /// <p>The IAM principal that requested the signing job.</p>
     pub fn requested_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.requested_by = ::std::option::Option::Some(input.into());
@@ -363,6 +415,10 @@ impl DescribeSigningJobOutputBuilder {
         self.requested_by = input;
         self
     }
+    /// <p>The IAM principal that requested the signing job.</p>
+    pub fn get_requested_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.requested_by
+    }
     /// <p>Status of the signing job.</p>
     pub fn status(mut self, input: crate::types::SigningStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -372,6 +428,10 @@ impl DescribeSigningJobOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SigningStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Status of the signing job.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SigningStatus> {
+        &self.status
     }
     /// <p>String value that contains the status reason.</p>
     pub fn status_reason(
@@ -389,6 +449,10 @@ impl DescribeSigningJobOutputBuilder {
         self.status_reason = input;
         self
     }
+    /// <p>String value that contains the status reason.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
+    }
     /// <p>A revocation record if the signature generated by the signing job has been revoked. Contains a timestamp and the ID of the IAM entity that revoked the signature.</p>
     pub fn revocation_record(mut self, input: crate::types::SigningJobRevocationRecord) -> Self {
         self.revocation_record = ::std::option::Option::Some(input);
@@ -401,6 +465,12 @@ impl DescribeSigningJobOutputBuilder {
     ) -> Self {
         self.revocation_record = input;
         self
+    }
+    /// <p>A revocation record if the signature generated by the signing job has been revoked. Contains a timestamp and the ID of the IAM entity that revoked the signature.</p>
+    pub fn get_revocation_record(
+        &self,
+    ) -> &::std::option::Option<crate::types::SigningJobRevocationRecord> {
+        &self.revocation_record
     }
     /// <p>Name of the S3 bucket where the signed code image is saved by code signing.</p>
     pub fn signed_object(mut self, input: crate::types::SignedObject) -> Self {
@@ -415,6 +485,10 @@ impl DescribeSigningJobOutputBuilder {
         self.signed_object = input;
         self
     }
+    /// <p>Name of the S3 bucket where the signed code image is saved by code signing.</p>
+    pub fn get_signed_object(&self) -> &::std::option::Option<crate::types::SignedObject> {
+        &self.signed_object
+    }
     /// <p>The AWS account ID of the job owner.</p>
     pub fn job_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_owner = ::std::option::Option::Some(input.into());
@@ -425,6 +499,10 @@ impl DescribeSigningJobOutputBuilder {
         self.job_owner = input;
         self
     }
+    /// <p>The AWS account ID of the job owner.</p>
+    pub fn get_job_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_owner
+    }
     /// <p>The IAM entity that initiated the signing job.</p>
     pub fn job_invoker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_invoker = ::std::option::Option::Some(input.into());
@@ -434,6 +512,10 @@ impl DescribeSigningJobOutputBuilder {
     pub fn set_job_invoker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_invoker = input;
         self
+    }
+    /// <p>The IAM entity that initiated the signing job.</p>
+    pub fn get_job_invoker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_invoker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -81,6 +81,10 @@ impl LineChartMarkerStyleSettingsBuilder {
         self.marker_visibility = input;
         self
     }
+    /// <p>Configuration option that determines whether to show the markers in the series.</p>
+    pub fn get_marker_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.marker_visibility
+    }
     /// <p>Shape option for markers in the series.</p>
     /// <ul>
     /// <li> <p> <code>CIRCLE</code>: Show marker as a circle.</p> </li>
@@ -108,6 +112,17 @@ impl LineChartMarkerStyleSettingsBuilder {
         self.marker_shape = input;
         self
     }
+    /// <p>Shape option for markers in the series.</p>
+    /// <ul>
+    /// <li> <p> <code>CIRCLE</code>: Show marker as a circle.</p> </li>
+    /// <li> <p> <code>TRIANGLE</code>: Show marker as a triangle.</p> </li>
+    /// <li> <p> <code>SQUARE</code>: Show marker as a square.</p> </li>
+    /// <li> <p> <code>DIAMOND</code>: Show marker as a diamond.</p> </li>
+    /// <li> <p> <code>ROUNDED_SQUARE</code>: Show marker as a rounded square.</p> </li>
+    /// </ul>
+    pub fn get_marker_shape(&self) -> &::std::option::Option<crate::types::LineChartMarkerShape> {
+        &self.marker_shape
+    }
     /// <p>Size of marker in the series.</p>
     pub fn marker_size(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker_size = ::std::option::Option::Some(input.into());
@@ -118,6 +133,10 @@ impl LineChartMarkerStyleSettingsBuilder {
         self.marker_size = input;
         self
     }
+    /// <p>Size of marker in the series.</p>
+    pub fn get_marker_size(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker_size
+    }
     /// <p>Color of marker in the series.</p>
     pub fn marker_color(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker_color = ::std::option::Option::Some(input.into());
@@ -127,6 +146,10 @@ impl LineChartMarkerStyleSettingsBuilder {
     pub fn set_marker_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker_color = input;
         self
+    }
+    /// <p>Color of marker in the series.</p>
+    pub fn get_marker_color(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker_color
     }
     /// Consumes the builder and constructs a [`LineChartMarkerStyleSettings`](crate::types::LineChartMarkerStyleSettings).
     pub fn build(self) -> crate::types::LineChartMarkerStyleSettings {

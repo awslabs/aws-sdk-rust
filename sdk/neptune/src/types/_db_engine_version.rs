@@ -139,6 +139,10 @@ impl DbEngineVersionBuilder {
         self.engine = input;
         self
     }
+    /// <p>The name of the database engine.</p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine
+    }
     /// <p>The version number of the database engine.</p>
     pub fn engine_version(
         mut self,
@@ -154,6 +158,10 @@ impl DbEngineVersionBuilder {
     ) -> Self {
         self.engine_version = input;
         self
+    }
+    /// <p>The version number of the database engine.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
     }
     /// <p>The name of the DB parameter group family for the database engine.</p>
     pub fn db_parameter_group_family(
@@ -171,6 +179,10 @@ impl DbEngineVersionBuilder {
         self.db_parameter_group_family = input;
         self
     }
+    /// <p>The name of the DB parameter group family for the database engine.</p>
+    pub fn get_db_parameter_group_family(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_parameter_group_family
+    }
     /// <p>The description of the database engine.</p>
     pub fn db_engine_description(
         mut self,
@@ -186,6 +198,10 @@ impl DbEngineVersionBuilder {
     ) -> Self {
         self.db_engine_description = input;
         self
+    }
+    /// <p>The description of the database engine.</p>
+    pub fn get_db_engine_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_engine_description
     }
     /// <p>The description of the database engine version.</p>
     pub fn db_engine_version_description(
@@ -203,6 +219,12 @@ impl DbEngineVersionBuilder {
         self.db_engine_version_description = input;
         self
     }
+    /// <p>The description of the database engine version.</p>
+    pub fn get_db_engine_version_description(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.db_engine_version_description
+    }
     /// <p> <i>(Not supported by Neptune)</i> </p>
     pub fn default_character_set(mut self, input: crate::types::CharacterSet) -> Self {
         self.default_character_set = ::std::option::Option::Some(input);
@@ -215,6 +237,10 @@ impl DbEngineVersionBuilder {
     ) -> Self {
         self.default_character_set = input;
         self
+    }
+    /// <p> <i>(Not supported by Neptune)</i> </p>
+    pub fn get_default_character_set(&self) -> &::std::option::Option<crate::types::CharacterSet> {
+        &self.default_character_set
     }
     /// Appends an item to `supported_character_sets`.
     ///
@@ -235,6 +261,12 @@ impl DbEngineVersionBuilder {
         self.supported_character_sets = input;
         self
     }
+    /// <p> <i>(Not supported by Neptune)</i> </p>
+    pub fn get_supported_character_sets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CharacterSet>> {
+        &self.supported_character_sets
+    }
     /// Appends an item to `valid_upgrade_target`.
     ///
     /// To override the contents of this collection use [`set_valid_upgrade_target`](Self::set_valid_upgrade_target).
@@ -254,6 +286,12 @@ impl DbEngineVersionBuilder {
         self.valid_upgrade_target = input;
         self
     }
+    /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
+    pub fn get_valid_upgrade_target(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpgradeTarget>> {
+        &self.valid_upgrade_target
+    }
     /// Appends an item to `supported_timezones`.
     ///
     /// To override the contents of this collection use [`set_supported_timezones`](Self::set_supported_timezones).
@@ -272,6 +310,12 @@ impl DbEngineVersionBuilder {
     ) -> Self {
         self.supported_timezones = input;
         self
+    }
+    /// <p>A list of the time zones supported by this engine for the <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.</p>
+    pub fn get_supported_timezones(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Timezone>> {
+        &self.supported_timezones
     }
     /// Appends an item to `exportable_log_types`.
     ///
@@ -295,6 +339,12 @@ impl DbEngineVersionBuilder {
         self.exportable_log_types = input;
         self
     }
+    /// <p>The types of logs that the database engine has available for export to CloudWatch Logs.</p>
+    pub fn get_exportable_log_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.exportable_log_types
+    }
     /// <p>A value that indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.</p>
     pub fn supports_log_exports_to_cloudwatch_logs(mut self, input: bool) -> Self {
         self.supports_log_exports_to_cloudwatch_logs = ::std::option::Option::Some(input);
@@ -308,6 +358,10 @@ impl DbEngineVersionBuilder {
         self.supports_log_exports_to_cloudwatch_logs = input;
         self
     }
+    /// <p>A value that indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.</p>
+    pub fn get_supports_log_exports_to_cloudwatch_logs(&self) -> &::std::option::Option<bool> {
+        &self.supports_log_exports_to_cloudwatch_logs
+    }
     /// <p>Indicates whether the database engine version supports read replicas.</p>
     pub fn supports_read_replica(mut self, input: bool) -> Self {
         self.supports_read_replica = ::std::option::Option::Some(input);
@@ -318,6 +372,10 @@ impl DbEngineVersionBuilder {
         self.supports_read_replica = input;
         self
     }
+    /// <p>Indicates whether the database engine version supports read replicas.</p>
+    pub fn get_supports_read_replica(&self) -> &::std::option::Option<bool> {
+        &self.supports_read_replica
+    }
     /// <p>A value that indicates whether you can use Aurora global databases with a specific DB engine version.</p>
     pub fn supports_global_databases(mut self, input: bool) -> Self {
         self.supports_global_databases = ::std::option::Option::Some(input);
@@ -327,6 +385,10 @@ impl DbEngineVersionBuilder {
     pub fn set_supports_global_databases(mut self, input: ::std::option::Option<bool>) -> Self {
         self.supports_global_databases = input;
         self
+    }
+    /// <p>A value that indicates whether you can use Aurora global databases with a specific DB engine version.</p>
+    pub fn get_supports_global_databases(&self) -> &::std::option::Option<bool> {
+        &self.supports_global_databases
     }
     /// Consumes the builder and constructs a [`DbEngineVersion`](crate::types::DbEngineVersion).
     pub fn build(self) -> crate::types::DbEngineVersion {

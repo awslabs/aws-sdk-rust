@@ -53,6 +53,10 @@ impl AddStorageSystemOutputBuilder {
         self.storage_system_arn = input;
         self
     }
+    /// <p>The ARN of the on-premises storage system that you can use with DataSync Discovery.</p>
+    pub fn get_storage_system_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_system_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

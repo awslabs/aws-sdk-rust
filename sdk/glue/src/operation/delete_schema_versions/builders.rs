@@ -39,6 +39,12 @@ impl DeleteSchemaVersionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteSchemaVersions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_schema_versions::builders::DeleteSchemaVersionsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl DeleteSchemaVersionsFluentBuilder {
         self.inner = self.inner.set_schema_id(input);
         self
     }
+    /// <p>This is a wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
+    pub fn get_schema_id(&self) -> &::std::option::Option<crate::types::SchemaId> {
+        self.inner.get_schema_id()
+    }
     /// <p>A version range may be supplied which may be of the format:</p>
     /// <ul>
     /// <li> <p>a single version number, 5</p> </li>
@@ -146,5 +156,13 @@ impl DeleteSchemaVersionsFluentBuilder {
     pub fn set_versions(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_versions(input);
         self
+    }
+    /// <p>A version range may be supplied which may be of the format:</p>
+    /// <ul>
+    /// <li> <p>a single version number, 5</p> </li>
+    /// <li> <p>a range, 5-8 : deletes versions 5, 6, 7, 8</p> </li>
+    /// </ul>
+    pub fn get_versions(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_versions()
     }
 }

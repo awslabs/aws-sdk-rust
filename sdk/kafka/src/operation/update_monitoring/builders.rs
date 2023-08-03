@@ -36,6 +36,12 @@ impl UpdateMonitoringFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateMonitoring as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_monitoring::builders::UpdateMonitoringInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateMonitoringFluentBuilder {
         self.inner = self.inner.set_cluster_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_arn()
+    }
     /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
     pub fn current_version(
         mut self,
@@ -142,6 +152,10 @@ impl UpdateMonitoringFluentBuilder {
         self.inner = self.inner.set_current_version(input);
         self
     }
+    /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
+    pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_current_version()
+    }
     /// <p>Specifies which Apache Kafka metrics Amazon MSK gathers and sends to Amazon CloudWatch for this cluster.</p>
     pub fn enhanced_monitoring(mut self, input: crate::types::EnhancedMonitoring) -> Self {
         self.inner = self.inner.enhanced_monitoring(input);
@@ -154,6 +168,12 @@ impl UpdateMonitoringFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_enhanced_monitoring(input);
         self
+    }
+    /// <p>Specifies which Apache Kafka metrics Amazon MSK gathers and sends to Amazon CloudWatch for this cluster.</p>
+    pub fn get_enhanced_monitoring(
+        &self,
+    ) -> &::std::option::Option<crate::types::EnhancedMonitoring> {
+        self.inner.get_enhanced_monitoring()
     }
     /// <p>The settings for open monitoring.</p>
     pub fn open_monitoring(mut self, input: crate::types::OpenMonitoringInfo) -> Self {
@@ -168,6 +188,10 @@ impl UpdateMonitoringFluentBuilder {
         self.inner = self.inner.set_open_monitoring(input);
         self
     }
+    /// <p>The settings for open monitoring.</p>
+    pub fn get_open_monitoring(&self) -> &::std::option::Option<crate::types::OpenMonitoringInfo> {
+        self.inner.get_open_monitoring()
+    }
     #[allow(missing_docs)] // documentation missing in model
     pub fn logging_info(mut self, input: crate::types::LoggingInfo) -> Self {
         self.inner = self.inner.logging_info(input);
@@ -180,5 +204,9 @@ impl UpdateMonitoringFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_logging_info(input);
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_logging_info(&self) -> &::std::option::Option<crate::types::LoggingInfo> {
+        self.inner.get_logging_info()
     }
 }

@@ -55,6 +55,10 @@ impl UpdateAssessmentStatusInputBuilder {
         self.assessment_id = input;
         self
     }
+    /// <p> The unique identifier for the assessment. </p>
+    pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_id
+    }
     /// <p> The current status of the assessment. </p>
     pub fn status(mut self, input: crate::types::AssessmentStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -67,6 +71,10 @@ impl UpdateAssessmentStatusInputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p> The current status of the assessment. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AssessmentStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`UpdateAssessmentStatusInput`](crate::operation::update_assessment_status::UpdateAssessmentStatusInput).
     pub fn build(

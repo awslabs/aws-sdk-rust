@@ -43,6 +43,10 @@ impl MonitoringBuilder {
         self.state = input;
         self
     }
+    /// <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::MonitoringState> {
+        &self.state
+    }
     /// Consumes the builder and constructs a [`Monitoring`](crate::types::Monitoring).
     pub fn build(self) -> crate::types::Monitoring {
         crate::types::Monitoring { state: self.state }

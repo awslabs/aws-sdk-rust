@@ -72,6 +72,10 @@ impl StepConfigBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the step.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The action to take when the step fails. Use one of the following values:</p>
     /// <ul>
     /// <li> <p> <code>TERMINATE_CLUSTER</code> - Shuts down the cluster.</p> </li>
@@ -101,6 +105,18 @@ impl StepConfigBuilder {
         self.action_on_failure = input;
         self
     }
+    /// <p>The action to take when the step fails. Use one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>TERMINATE_CLUSTER</code> - Shuts down the cluster.</p> </li>
+    /// <li> <p> <code>CANCEL_AND_WAIT</code> - Cancels any pending steps and returns the cluster to the <code>WAITING</code> state.</p> </li>
+    /// <li> <p> <code>CONTINUE</code> - Continues to the next step in the queue.</p> </li>
+    /// <li> <p> <code>TERMINATE_JOB_FLOW</code> - Shuts down the cluster. <code>TERMINATE_JOB_FLOW</code> is provided for backward compatibility. We recommend using <code>TERMINATE_CLUSTER</code> instead.</p> </li>
+    /// </ul>
+    /// <p>If a cluster's <code>StepConcurrencyLevel</code> is greater than <code>1</code>, do not use <code>AddJobFlowSteps</code> to submit a step with this parameter set to <code>CANCEL_AND_WAIT</code> or <code>TERMINATE_CLUSTER</code>. The step is not submitted and the action fails with a message that the <code>ActionOnFailure</code> setting is not valid.</p>
+    /// <p>If you change a cluster's <code>StepConcurrencyLevel</code> to be greater than 1 while a step is running, the <code>ActionOnFailure</code> parameter may not behave as you expect. In this case, for a step that fails with this parameter set to <code>CANCEL_AND_WAIT</code>, pending steps and the running step are not canceled; for a step that fails with this parameter set to <code>TERMINATE_CLUSTER</code>, the cluster does not terminate.</p>
+    pub fn get_action_on_failure(&self) -> &::std::option::Option<crate::types::ActionOnFailure> {
+        &self.action_on_failure
+    }
     /// <p>The JAR file used for the step.</p>
     pub fn hadoop_jar_step(mut self, input: crate::types::HadoopJarStepConfig) -> Self {
         self.hadoop_jar_step = ::std::option::Option::Some(input);
@@ -113,6 +129,10 @@ impl StepConfigBuilder {
     ) -> Self {
         self.hadoop_jar_step = input;
         self
+    }
+    /// <p>The JAR file used for the step.</p>
+    pub fn get_hadoop_jar_step(&self) -> &::std::option::Option<crate::types::HadoopJarStepConfig> {
+        &self.hadoop_jar_step
     }
     /// Consumes the builder and constructs a [`StepConfig`](crate::types::StepConfig).
     pub fn build(self) -> crate::types::StepConfig {

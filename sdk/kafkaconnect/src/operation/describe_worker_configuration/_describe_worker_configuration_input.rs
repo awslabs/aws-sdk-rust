@@ -45,6 +45,10 @@ impl DescribeWorkerConfigurationInputBuilder {
         self.worker_configuration_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the worker configuration that you want to get information about.</p>
+    pub fn get_worker_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.worker_configuration_arn
+    }
     /// Consumes the builder and constructs a [`DescribeWorkerConfigurationInput`](crate::operation::describe_worker_configuration::DescribeWorkerConfigurationInput).
     pub fn build(
         self,

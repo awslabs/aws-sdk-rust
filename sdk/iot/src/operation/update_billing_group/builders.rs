@@ -37,6 +37,12 @@ impl UpdateBillingGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateBillingGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_billing_group::builders::UpdateBillingGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl UpdateBillingGroupFluentBuilder {
         self.inner = self.inner.set_billing_group_name(input);
         self
     }
+    /// <p>The name of the billing group.</p>
+    pub fn get_billing_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_billing_group_name()
+    }
     /// <p>The properties of the billing group.</p>
     pub fn billing_group_properties(mut self, input: crate::types::BillingGroupProperties) -> Self {
         self.inner = self.inner.billing_group_properties(input);
@@ -146,6 +156,12 @@ impl UpdateBillingGroupFluentBuilder {
         self.inner = self.inner.set_billing_group_properties(input);
         self
     }
+    /// <p>The properties of the billing group.</p>
+    pub fn get_billing_group_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::BillingGroupProperties> {
+        self.inner.get_billing_group_properties()
+    }
     /// <p>The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>UpdateBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.</p>
     pub fn expected_version(mut self, input: i64) -> Self {
         self.inner = self.inner.expected_version(input);
@@ -155,5 +171,9 @@ impl UpdateBillingGroupFluentBuilder {
     pub fn set_expected_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_expected_version(input);
         self
+    }
+    /// <p>The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>UpdateBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.</p>
+    pub fn get_expected_version(&self) -> &::std::option::Option<i64> {
+        self.inner.get_expected_version()
     }
 }

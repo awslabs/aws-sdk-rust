@@ -36,6 +36,12 @@ impl RegisterMailDomainFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RegisterMailDomain as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::register_mail_domain::builders::RegisterMailDomainInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl RegisterMailDomainFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>Idempotency token used when retrying requests.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>The WorkMail organization under which you're creating the domain.</p>
     pub fn organization_id(
         mut self,
@@ -142,6 +152,10 @@ impl RegisterMailDomainFluentBuilder {
         self.inner = self.inner.set_organization_id(input);
         self
     }
+    /// <p>The WorkMail organization under which you're creating the domain.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
+    }
     /// <p>The name of the mail domain to create in WorkMail and SES.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
@@ -151,5 +165,9 @@ impl RegisterMailDomainFluentBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_name(input);
         self
+    }
+    /// <p>The name of the mail domain to create in WorkMail and SES.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
     }
 }

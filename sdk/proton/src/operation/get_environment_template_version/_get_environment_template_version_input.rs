@@ -61,6 +61,10 @@ impl GetEnvironmentTemplateVersionInputBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The name of the environment template a version of which you want to get detailed data for.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// <p>To get environment template major version detail data, include <code>major Version</code>.</p>
     pub fn major_version(
         mut self,
@@ -77,6 +81,10 @@ impl GetEnvironmentTemplateVersionInputBuilder {
         self.major_version = input;
         self
     }
+    /// <p>To get environment template major version detail data, include <code>major Version</code>.</p>
+    pub fn get_major_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.major_version
+    }
     /// <p>To get environment template minor version detail data, include <code>minorVersion</code>.</p>
     pub fn minor_version(
         mut self,
@@ -92,6 +100,10 @@ impl GetEnvironmentTemplateVersionInputBuilder {
     ) -> Self {
         self.minor_version = input;
         self
+    }
+    /// <p>To get environment template minor version detail data, include <code>minorVersion</code>.</p>
+    pub fn get_minor_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.minor_version
     }
     /// Consumes the builder and constructs a [`GetEnvironmentTemplateVersionInput`](crate::operation::get_environment_template_version::GetEnvironmentTemplateVersionInput).
     pub fn build(

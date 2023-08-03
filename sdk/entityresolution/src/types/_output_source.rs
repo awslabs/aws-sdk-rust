@@ -70,6 +70,10 @@ impl OutputSourceBuilder {
         self.output_s3_path = input;
         self
     }
+    /// <p>The S3 path to which Entity Resolution will write the output table.</p>
+    pub fn get_output_s3_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_s3_path
+    }
     /// Appends an item to `output`.
     ///
     /// To override the contents of this collection use [`set_output`](Self::set_output).
@@ -89,6 +93,12 @@ impl OutputSourceBuilder {
         self.output = input;
         self
     }
+    /// <p>A list of <code>OutputAttribute</code> objects, each of which have the fields Name and Hashed. Each of these objects selects a column to be included in the output table, and whether the values of the column should be hashed.</p>
+    pub fn get_output(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputAttribute>> {
+        &self.output
+    }
     /// <p>Customer KMS ARN for encryption at rest. If not provided, system will use an Entity Resolution managed KMS key.</p>
     pub fn kms_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_arn = ::std::option::Option::Some(input.into());
@@ -99,6 +109,10 @@ impl OutputSourceBuilder {
         self.kms_arn = input;
         self
     }
+    /// <p>Customer KMS ARN for encryption at rest. If not provided, system will use an Entity Resolution managed KMS key.</p>
+    pub fn get_kms_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_arn
+    }
     /// <p>Normalizes the attributes defined in the schema in the input data. For example, if an attribute has an <code>AttributeType</code> of <code>PHONE_NUMBER</code>, and the data in the input table is in a format of 1234567890, Entity Resolution will normalize this field in the output to (123)-456-7890.</p>
     pub fn apply_normalization(mut self, input: bool) -> Self {
         self.apply_normalization = ::std::option::Option::Some(input);
@@ -108,6 +122,10 @@ impl OutputSourceBuilder {
     pub fn set_apply_normalization(mut self, input: ::std::option::Option<bool>) -> Self {
         self.apply_normalization = input;
         self
+    }
+    /// <p>Normalizes the attributes defined in the schema in the input data. For example, if an attribute has an <code>AttributeType</code> of <code>PHONE_NUMBER</code>, and the data in the input table is in a format of 1234567890, Entity Resolution will normalize this field in the output to (123)-456-7890.</p>
+    pub fn get_apply_normalization(&self) -> &::std::option::Option<bool> {
+        &self.apply_normalization
     }
     /// Consumes the builder and constructs a [`OutputSource`](crate::types::OutputSource).
     pub fn build(self) -> crate::types::OutputSource {

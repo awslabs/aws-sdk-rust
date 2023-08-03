@@ -48,6 +48,12 @@ impl TlsConfigBuilder {
         self.insecure_skip_verification = input;
         self
     }
+    /// <p>Specifies whether or not API Gateway skips verification that the certificate for an integration endpoint is issued by a supported certificate authority. This isn’t recommended, but it enables you to use certificates that are signed by private certificate authorities, or certificates that are self-signed. If enabled, API Gateway still performs basic certificate validation, which includes checking the certificate's expiration date, hostname, and presence of a root certificate authority. Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code> integrations.</p> <important>
+    /// <p>Enabling <code>insecureSkipVerification</code> isn't recommended, especially for integrations with public HTTPS endpoints. If you enable <code>insecureSkipVerification</code>, you increase the risk of man-in-the-middle attacks.</p>
+    /// </important>
+    pub fn get_insecure_skip_verification(&self) -> &::std::option::Option<bool> {
+        &self.insecure_skip_verification
+    }
     /// Consumes the builder and constructs a [`TlsConfig`](crate::types::TlsConfig).
     pub fn build(self) -> crate::types::TlsConfig {
         crate::types::TlsConfig {

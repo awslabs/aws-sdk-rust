@@ -45,6 +45,10 @@ impl CancelComponentDeploymentInputBuilder {
         self.component_name = input;
         self
     }
+    /// <p>The name of the component with the deployment to cancel.</p>
+    pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_name
+    }
     /// Consumes the builder and constructs a [`CancelComponentDeploymentInput`](crate::operation::cancel_component_deployment::CancelComponentDeploymentInput).
     pub fn build(
         self,

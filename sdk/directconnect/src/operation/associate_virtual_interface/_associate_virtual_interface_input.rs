@@ -53,6 +53,10 @@ impl AssociateVirtualInterfaceInputBuilder {
         self.virtual_interface_id = input;
         self
     }
+    /// <p>The ID of the virtual interface.</p>
+    pub fn get_virtual_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_interface_id
+    }
     /// <p>The ID of the LAG or connection.</p>
     pub fn connection_id(
         mut self,
@@ -68,6 +72,10 @@ impl AssociateVirtualInterfaceInputBuilder {
     ) -> Self {
         self.connection_id = input;
         self
+    }
+    /// <p>The ID of the LAG or connection.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_id
     }
     /// Consumes the builder and constructs a [`AssociateVirtualInterfaceInput`](crate::operation::associate_virtual_interface::AssociateVirtualInterfaceInput).
     pub fn build(

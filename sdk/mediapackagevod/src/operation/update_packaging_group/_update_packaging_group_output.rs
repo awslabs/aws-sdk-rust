@@ -111,6 +111,10 @@ impl UpdatePackagingGroupOutputBuilder {
         self.approximate_asset_count = input;
         self
     }
+    /// The approximate asset count of the PackagingGroup.
+    pub fn get_approximate_asset_count(&self) -> &::std::option::Option<i32> {
+        &self.approximate_asset_count
+    }
     /// The ARN of the PackagingGroup.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -120,6 +124,10 @@ impl UpdatePackagingGroupOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// The ARN of the PackagingGroup.
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// CDN Authorization credentials
     pub fn authorization(mut self, input: crate::types::Authorization) -> Self {
@@ -134,6 +142,10 @@ impl UpdatePackagingGroupOutputBuilder {
         self.authorization = input;
         self
     }
+    /// CDN Authorization credentials
+    pub fn get_authorization(&self) -> &::std::option::Option<crate::types::Authorization> {
+        &self.authorization
+    }
     /// The time the PackagingGroup was created.
     pub fn created_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_at = ::std::option::Option::Some(input.into());
@@ -144,6 +156,10 @@ impl UpdatePackagingGroupOutputBuilder {
         self.created_at = input;
         self
     }
+    /// The time the PackagingGroup was created.
+    pub fn get_created_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_at
+    }
     /// The fully qualified domain name for Assets in the PackagingGroup.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
@@ -153,6 +169,10 @@ impl UpdatePackagingGroupOutputBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
+    }
+    /// The fully qualified domain name for Assets in the PackagingGroup.
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// Configure egress access logging.
     pub fn egress_access_logs(mut self, input: crate::types::EgressAccessLogs) -> Self {
@@ -167,6 +187,10 @@ impl UpdatePackagingGroupOutputBuilder {
         self.egress_access_logs = input;
         self
     }
+    /// Configure egress access logging.
+    pub fn get_egress_access_logs(&self) -> &::std::option::Option<crate::types::EgressAccessLogs> {
+        &self.egress_access_logs
+    }
     /// The ID of the PackagingGroup.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -176,6 +200,10 @@ impl UpdatePackagingGroupOutputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// The ID of the PackagingGroup.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -201,6 +229,14 @@ impl UpdatePackagingGroupOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// A collection of tags associated with a resource
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

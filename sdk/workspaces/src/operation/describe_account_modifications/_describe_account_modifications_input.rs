@@ -39,6 +39,10 @@ impl DescribeAccountModificationsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Consumes the builder and constructs a [`DescribeAccountModificationsInput`](crate::operation::describe_account_modifications::DescribeAccountModificationsInput).
     pub fn build(
         self,

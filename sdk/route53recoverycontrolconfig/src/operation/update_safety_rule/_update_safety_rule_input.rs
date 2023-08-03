@@ -54,6 +54,12 @@ impl UpdateSafetyRuleInputBuilder {
         self.assertion_rule_update = input;
         self
     }
+    /// <p>The assertion rule to update.</p>
+    pub fn get_assertion_rule_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssertionRuleUpdate> {
+        &self.assertion_rule_update
+    }
     /// <p>The gating rule to update.</p>
     pub fn gating_rule_update(mut self, input: crate::types::GatingRuleUpdate) -> Self {
         self.gating_rule_update = ::std::option::Option::Some(input);
@@ -66,6 +72,10 @@ impl UpdateSafetyRuleInputBuilder {
     ) -> Self {
         self.gating_rule_update = input;
         self
+    }
+    /// <p>The gating rule to update.</p>
+    pub fn get_gating_rule_update(&self) -> &::std::option::Option<crate::types::GatingRuleUpdate> {
+        &self.gating_rule_update
     }
     /// Consumes the builder and constructs a [`UpdateSafetyRuleInput`](crate::operation::update_safety_rule::UpdateSafetyRuleInput).
     pub fn build(

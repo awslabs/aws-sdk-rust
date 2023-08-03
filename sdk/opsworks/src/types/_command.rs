@@ -152,6 +152,10 @@ impl CommandBuilder {
         self.command_id = input;
         self
     }
+    /// <p>The command ID.</p>
+    pub fn get_command_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.command_id
+    }
     /// <p>The ID of the instance where the command was executed.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -161,6 +165,10 @@ impl CommandBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
+    }
+    /// <p>The ID of the instance where the command was executed.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// <p>The command deployment ID.</p>
     pub fn deployment_id(
@@ -178,6 +186,10 @@ impl CommandBuilder {
         self.deployment_id = input;
         self
     }
+    /// <p>The command deployment ID.</p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
+    }
     /// <p>Date and time when the command was run.</p>
     pub fn created_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_at = ::std::option::Option::Some(input.into());
@@ -187,6 +199,10 @@ impl CommandBuilder {
     pub fn set_created_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>Date and time when the command was run.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_at
     }
     /// <p>Date and time when the command was acknowledged.</p>
     pub fn acknowledged_at(
@@ -204,6 +220,10 @@ impl CommandBuilder {
         self.acknowledged_at = input;
         self
     }
+    /// <p>Date and time when the command was acknowledged.</p>
+    pub fn get_acknowledged_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.acknowledged_at
+    }
     /// <p>Date when the command completed.</p>
     pub fn completed_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.completed_at = ::std::option::Option::Some(input.into());
@@ -213,6 +233,10 @@ impl CommandBuilder {
     pub fn set_completed_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.completed_at = input;
         self
+    }
+    /// <p>Date when the command completed.</p>
+    pub fn get_completed_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.completed_at
     }
     /// <p>The command status:</p>
     /// <ul>
@@ -236,6 +260,16 @@ impl CommandBuilder {
         self.status = input;
         self
     }
+    /// <p>The command status:</p>
+    /// <ul>
+    /// <li> <p>failed</p> </li>
+    /// <li> <p>successful</p> </li>
+    /// <li> <p>skipped</p> </li>
+    /// <li> <p>pending</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The command exit code.</p>
     pub fn exit_code(mut self, input: i32) -> Self {
         self.exit_code = ::std::option::Option::Some(input);
@@ -246,6 +280,10 @@ impl CommandBuilder {
         self.exit_code = input;
         self
     }
+    /// <p>The command exit code.</p>
+    pub fn get_exit_code(&self) -> &::std::option::Option<i32> {
+        &self.exit_code
+    }
     /// <p>The URL of the command log.</p>
     pub fn log_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_url = ::std::option::Option::Some(input.into());
@@ -255,6 +293,10 @@ impl CommandBuilder {
     pub fn set_log_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_url = input;
         self
+    }
+    /// <p>The URL of the command log.</p>
+    pub fn get_log_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_url
     }
     /// <p>The command type:</p>
     /// <ul>
@@ -293,6 +335,24 @@ impl CommandBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The command type:</p>
+    /// <ul>
+    /// <li> <p> <code>configure</code> </p> </li>
+    /// <li> <p> <code>deploy</code> </p> </li>
+    /// <li> <p> <code>execute_recipes</code> </p> </li>
+    /// <li> <p> <code>install_dependencies</code> </p> </li>
+    /// <li> <p> <code>restart</code> </p> </li>
+    /// <li> <p> <code>rollback</code> </p> </li>
+    /// <li> <p> <code>setup</code> </p> </li>
+    /// <li> <p> <code>start</code> </p> </li>
+    /// <li> <p> <code>stop</code> </p> </li>
+    /// <li> <p> <code>undeploy</code> </p> </li>
+    /// <li> <p> <code>update_custom_cookbooks</code> </p> </li>
+    /// <li> <p> <code>update_dependencies</code> </p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`Command`](crate::types::Command).
     pub fn build(self) -> crate::types::Command {

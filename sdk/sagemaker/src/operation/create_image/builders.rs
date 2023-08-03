@@ -36,6 +36,10 @@ impl CreateImageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateImage as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_image::builders::CreateImageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl CreateImageFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The description of the image.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The display name of the image. If not provided, <code>ImageName</code> is displayed.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
@@ -127,6 +135,10 @@ impl CreateImageFluentBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_display_name(input);
         self
+    }
+    /// <p>The display name of the image. If not provided, <code>ImageName</code> is displayed.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_display_name()
     }
     /// <p>The name of the image. Must be unique to your account.</p>
     pub fn image_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,6 +150,10 @@ impl CreateImageFluentBuilder {
         self.inner = self.inner.set_image_name(input);
         self
     }
+    /// <p>The name of the image. Must be unique to your account.</p>
+    pub fn get_image_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_image_name()
+    }
     /// <p>The ARN of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -147,6 +163,10 @@ impl CreateImageFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>The ARN of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// Appends an item to `Tags`.
     ///
@@ -164,5 +184,9 @@ impl CreateImageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of tags to apply to the image.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

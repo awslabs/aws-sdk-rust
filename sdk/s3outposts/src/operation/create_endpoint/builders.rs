@@ -44,6 +44,12 @@ impl CreateEndpointFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateEndpoint as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_endpoint::builders::CreateEndpointInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateEndpointFluentBuilder {
         self.inner = self.inner.set_outpost_id(input);
         self
     }
+    /// <p>The ID of the Outposts. </p>
+    pub fn get_outpost_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_outpost_id()
+    }
     /// <p>The ID of the subnet in the selected VPC. The endpoint subnet must belong to the Outpost that has Amazon S3 on Outposts provisioned.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subnet_id(input.into());
@@ -135,6 +145,10 @@ impl CreateEndpointFluentBuilder {
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subnet_id(input);
         self
+    }
+    /// <p>The ID of the subnet in the selected VPC. The endpoint subnet must belong to the Outpost that has Amazon S3 on Outposts provisioned.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_subnet_id()
     }
     /// <p>The ID of the security group to use with the endpoint.</p>
     pub fn security_group_id(
@@ -151,6 +165,10 @@ impl CreateEndpointFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_security_group_id(input);
         self
+    }
+    /// <p>The ID of the security group to use with the endpoint.</p>
+    pub fn get_security_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_security_group_id()
     }
     /// <p>The type of access for the network connectivity for the Amazon S3 on Outposts endpoint. To use the Amazon Web Services VPC, choose <code>Private</code>. To use the endpoint with an on-premises network, choose <code>CustomerOwnedIp</code>. If you choose <code>CustomerOwnedIp</code>, you must also provide the customer-owned IP address pool (CoIP pool).</p> <note>
     /// <p> <code>Private</code> is the default access type value.</p>
@@ -169,6 +187,12 @@ impl CreateEndpointFluentBuilder {
         self.inner = self.inner.set_access_type(input);
         self
     }
+    /// <p>The type of access for the network connectivity for the Amazon S3 on Outposts endpoint. To use the Amazon Web Services VPC, choose <code>Private</code>. To use the endpoint with an on-premises network, choose <code>CustomerOwnedIp</code>. If you choose <code>CustomerOwnedIp</code>, you must also provide the customer-owned IP address pool (CoIP pool).</p> <note>
+    /// <p> <code>Private</code> is the default access type value.</p>
+    /// </note>
+    pub fn get_access_type(&self) -> &::std::option::Option<crate::types::EndpointAccessType> {
+        self.inner.get_access_type()
+    }
     /// <p>The ID of the customer-owned IPv4 address pool (CoIP pool) for the endpoint. IP addresses are allocated from this pool for the endpoint.</p>
     pub fn customer_owned_ipv4_pool(
         mut self,
@@ -184,5 +208,9 @@ impl CreateEndpointFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_customer_owned_ipv4_pool(input);
         self
+    }
+    /// <p>The ID of the customer-owned IPv4 address pool (CoIP pool) for the endpoint. IP addresses are allocated from this pool for the endpoint.</p>
+    pub fn get_customer_owned_ipv4_pool(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_customer_owned_ipv4_pool()
     }
 }

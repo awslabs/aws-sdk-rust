@@ -49,6 +49,12 @@ impl JobExecutionsRetryConfigBuilder {
         self.criteria_list = input;
         self
     }
+    /// <p>The list of criteria that determines how many retries are allowed for each failure type for a job.</p>
+    pub fn get_criteria_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RetryCriteria>> {
+        &self.criteria_list
+    }
     /// Consumes the builder and constructs a [`JobExecutionsRetryConfig`](crate::types::JobExecutionsRetryConfig).
     pub fn build(self) -> crate::types::JobExecutionsRetryConfig {
         crate::types::JobExecutionsRetryConfig {

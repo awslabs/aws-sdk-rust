@@ -68,6 +68,13 @@ impl ChangeMessageVisibilityBatchRequestEntryBuilder {
         self.id = input;
         self
     }
+    /// <p>An identifier for this particular receipt handle used to communicate the result.</p> <note>
+    /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
+    /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
+    /// </note>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>A receipt handle.</p>
     pub fn receipt_handle(
         mut self,
@@ -84,6 +91,10 @@ impl ChangeMessageVisibilityBatchRequestEntryBuilder {
         self.receipt_handle = input;
         self
     }
+    /// <p>A receipt handle.</p>
+    pub fn get_receipt_handle(&self) -> &::std::option::Option<::std::string::String> {
+        &self.receipt_handle
+    }
     /// <p>The new value (in seconds) for the message's visibility timeout.</p>
     pub fn visibility_timeout(mut self, input: i32) -> Self {
         self.visibility_timeout = ::std::option::Option::Some(input);
@@ -93,6 +104,10 @@ impl ChangeMessageVisibilityBatchRequestEntryBuilder {
     pub fn set_visibility_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.visibility_timeout = input;
         self
+    }
+    /// <p>The new value (in seconds) for the message's visibility timeout.</p>
+    pub fn get_visibility_timeout(&self) -> &::std::option::Option<i32> {
+        &self.visibility_timeout
     }
     /// Consumes the builder and constructs a [`ChangeMessageVisibilityBatchRequestEntry`](crate::types::ChangeMessageVisibilityBatchRequestEntry).
     pub fn build(self) -> crate::types::ChangeMessageVisibilityBatchRequestEntry {

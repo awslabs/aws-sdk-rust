@@ -40,6 +40,10 @@ impl CancelExportTaskInputBuilder {
         self.task_id = input;
         self
     }
+    /// <p>The ID of the export task.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
+    }
     /// Consumes the builder and constructs a [`CancelExportTaskInput`](crate::operation::cancel_export_task::CancelExportTaskInput).
     pub fn build(
         self,

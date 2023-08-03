@@ -36,6 +36,10 @@ impl GetSnapshotFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetSnapshot as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_snapshot::builders::GetSnapshotInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl GetSnapshotFluentBuilder {
         self.inner = self.inner.set_game_name(input);
         self
     }
+    /// <p>The name of the game.</p>
+    pub fn get_game_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_game_name()
+    }
     /// <p>The identifier of the snapshot.</p>
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_id(input.into());
@@ -127,6 +135,10 @@ impl GetSnapshotFluentBuilder {
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_id(input);
         self
+    }
+    /// <p>The identifier of the snapshot.</p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_id()
     }
     /// Appends an item to `Sections`.
     ///
@@ -144,5 +156,9 @@ impl GetSnapshotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sections(input);
         self
+    }
+    /// <p>The list of game configuration sections to be described.</p>
+    pub fn get_sections(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_sections()
     }
 }

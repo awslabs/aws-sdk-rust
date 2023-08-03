@@ -50,6 +50,12 @@ impl SectionBasedLayoutCanvasSizeOptionsBuilder {
         self.paper_canvas_size_options = input;
         self
     }
+    /// <p>The options for a paper canvas of a section-based layout.</p>
+    pub fn get_paper_canvas_size_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::SectionBasedLayoutPaperCanvasSizeOptions> {
+        &self.paper_canvas_size_options
+    }
     /// Consumes the builder and constructs a [`SectionBasedLayoutCanvasSizeOptions`](crate::types::SectionBasedLayoutCanvasSizeOptions).
     pub fn build(self) -> crate::types::SectionBasedLayoutCanvasSizeOptions {
         crate::types::SectionBasedLayoutCanvasSizeOptions {

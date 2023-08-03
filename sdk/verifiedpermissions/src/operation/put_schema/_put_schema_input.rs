@@ -53,6 +53,10 @@ impl PutSchemaInputBuilder {
         self.policy_store_id = input;
         self
     }
+    /// <p>Specifies the ID of the policy store in which to place the schema.</p>
+    pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_store_id
+    }
     /// <p>Specifies the definition of the schema to be stored. The schema definition must be written in Cedar schema JSON.</p>
     pub fn definition(mut self, input: crate::types::SchemaDefinition) -> Self {
         self.definition = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl PutSchemaInputBuilder {
     ) -> Self {
         self.definition = input;
         self
+    }
+    /// <p>Specifies the definition of the schema to be stored. The schema definition must be written in Cedar schema JSON.</p>
+    pub fn get_definition(&self) -> &::std::option::Option<crate::types::SchemaDefinition> {
+        &self.definition
     }
     /// Consumes the builder and constructs a [`PutSchemaInput`](crate::operation::put_schema::PutSchemaInput).
     pub fn build(

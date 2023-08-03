@@ -62,6 +62,11 @@ impl CognitoUserPoolConfigurationBuilder {
         self.user_pool_arn = input;
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the Amazon Cognito user pool that contains the identities to be authorized.</p>
+    /// <p>Example: <code>"UserPoolArn": "arn:aws:cognito-idp:us-east-1:123456789012:userpool/us-east-1_1a2b3c4d5"</code> </p>
+    pub fn get_user_pool_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool_arn
+    }
     /// Appends an item to `client_ids`.
     ///
     /// To override the contents of this collection use [`set_client_ids`](Self::set_client_ids).
@@ -82,6 +87,11 @@ impl CognitoUserPoolConfigurationBuilder {
     ) -> Self {
         self.client_ids = input;
         self
+    }
+    /// <p>The unique application client IDs that are associated with the specified Amazon Cognito user pool.</p>
+    /// <p>Example: <code>"ClientIds": ["&amp;ExampleCogClientId;"]</code> </p>
+    pub fn get_client_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.client_ids
     }
     /// Consumes the builder and constructs a [`CognitoUserPoolConfiguration`](crate::types::CognitoUserPoolConfiguration).
     pub fn build(self) -> crate::types::CognitoUserPoolConfiguration {

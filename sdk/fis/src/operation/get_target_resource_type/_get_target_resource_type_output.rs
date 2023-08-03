@@ -51,6 +51,12 @@ impl GetTargetResourceTypeOutputBuilder {
         self.target_resource_type = input;
         self
     }
+    /// <p>Information about the resource type.</p>
+    pub fn get_target_resource_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::TargetResourceType> {
+        &self.target_resource_type
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

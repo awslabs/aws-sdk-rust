@@ -50,6 +50,12 @@ impl ProtectionLimitsBuilder {
         self.protected_resource_type_limits = input;
         self
     }
+    /// <p>The maximum number of resource types that you can specify in a protection.</p>
+    pub fn get_protected_resource_type_limits(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Limit>> {
+        &self.protected_resource_type_limits
+    }
     /// Consumes the builder and constructs a [`ProtectionLimits`](crate::types::ProtectionLimits).
     pub fn build(self) -> crate::types::ProtectionLimits {
         crate::types::ProtectionLimits {

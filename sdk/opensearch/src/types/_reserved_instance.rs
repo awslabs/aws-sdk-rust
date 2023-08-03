@@ -155,6 +155,10 @@ impl ReservedInstanceBuilder {
         self.reservation_name = input;
         self
     }
+    /// <p>The customer-specified identifier to track this reservation.</p>
+    pub fn get_reservation_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reservation_name
+    }
     /// <p>The unique identifier for the reservation.</p>
     pub fn reserved_instance_id(
         mut self,
@@ -171,6 +175,10 @@ impl ReservedInstanceBuilder {
         self.reserved_instance_id = input;
         self
     }
+    /// <p>The unique identifier for the reservation.</p>
+    pub fn get_reserved_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reserved_instance_id
+    }
     /// <p>The unique identifier of the billing subscription.</p>
     pub fn billing_subscription_id(mut self, input: i64) -> Self {
         self.billing_subscription_id = ::std::option::Option::Some(input);
@@ -180,6 +188,10 @@ impl ReservedInstanceBuilder {
     pub fn set_billing_subscription_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.billing_subscription_id = input;
         self
+    }
+    /// <p>The unique identifier of the billing subscription.</p>
+    pub fn get_billing_subscription_id(&self) -> &::std::option::Option<i64> {
+        &self.billing_subscription_id
     }
     /// <p>The unique identifier of the Reserved Instance offering.</p>
     pub fn reserved_instance_offering_id(
@@ -197,6 +209,12 @@ impl ReservedInstanceBuilder {
         self.reserved_instance_offering_id = input;
         self
     }
+    /// <p>The unique identifier of the Reserved Instance offering.</p>
+    pub fn get_reserved_instance_offering_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.reserved_instance_offering_id
+    }
     /// <p>The OpenSearch instance type offered by theReserved Instance offering.</p>
     pub fn instance_type(mut self, input: crate::types::OpenSearchPartitionInstanceType) -> Self {
         self.instance_type = ::std::option::Option::Some(input);
@@ -209,6 +227,12 @@ impl ReservedInstanceBuilder {
     ) -> Self {
         self.instance_type = input;
         self
+    }
+    /// <p>The OpenSearch instance type offered by theReserved Instance offering.</p>
+    pub fn get_instance_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::OpenSearchPartitionInstanceType> {
+        &self.instance_type
     }
     /// <p>The date and time when the reservation was purchased.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -223,6 +247,10 @@ impl ReservedInstanceBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The date and time when the reservation was purchased.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The duration, in seconds, for which the OpenSearch instance is reserved.</p>
     pub fn duration(mut self, input: i32) -> Self {
         self.duration = ::std::option::Option::Some(input);
@@ -232,6 +260,10 @@ impl ReservedInstanceBuilder {
     pub fn set_duration(mut self, input: ::std::option::Option<i32>) -> Self {
         self.duration = input;
         self
+    }
+    /// <p>The duration, in seconds, for which the OpenSearch instance is reserved.</p>
+    pub fn get_duration(&self) -> &::std::option::Option<i32> {
+        &self.duration
     }
     /// <p>The upfront fixed charge you will paid to purchase the specific Reserved Instance offering.</p>
     pub fn fixed_price(mut self, input: f64) -> Self {
@@ -243,6 +275,10 @@ impl ReservedInstanceBuilder {
         self.fixed_price = input;
         self
     }
+    /// <p>The upfront fixed charge you will paid to purchase the specific Reserved Instance offering.</p>
+    pub fn get_fixed_price(&self) -> &::std::option::Option<f64> {
+        &self.fixed_price
+    }
     /// <p>The hourly rate at which you're charged for the domain using this Reserved Instance.</p>
     pub fn usage_price(mut self, input: f64) -> Self {
         self.usage_price = ::std::option::Option::Some(input);
@@ -252,6 +288,10 @@ impl ReservedInstanceBuilder {
     pub fn set_usage_price(mut self, input: ::std::option::Option<f64>) -> Self {
         self.usage_price = input;
         self
+    }
+    /// <p>The hourly rate at which you're charged for the domain using this Reserved Instance.</p>
+    pub fn get_usage_price(&self) -> &::std::option::Option<f64> {
+        &self.usage_price
     }
     /// <p>The currency code for the offering.</p>
     pub fn currency_code(
@@ -269,6 +309,10 @@ impl ReservedInstanceBuilder {
         self.currency_code = input;
         self
     }
+    /// <p>The currency code for the offering.</p>
+    pub fn get_currency_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.currency_code
+    }
     /// <p>The number of OpenSearch instances that have been reserved.</p>
     pub fn instance_count(mut self, input: i32) -> Self {
         self.instance_count = ::std::option::Option::Some(input);
@@ -279,6 +323,10 @@ impl ReservedInstanceBuilder {
         self.instance_count = input;
         self
     }
+    /// <p>The number of OpenSearch instances that have been reserved.</p>
+    pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.instance_count
+    }
     /// <p>The state of the Reserved Instance.</p>
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state = ::std::option::Option::Some(input.into());
@@ -288,6 +336,10 @@ impl ReservedInstanceBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the Reserved Instance.</p>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
     }
     /// <p>The payment option as defined in the Reserved Instance offering.</p>
     pub fn payment_option(mut self, input: crate::types::ReservedInstancePaymentOption) -> Self {
@@ -301,6 +353,12 @@ impl ReservedInstanceBuilder {
     ) -> Self {
         self.payment_option = input;
         self
+    }
+    /// <p>The payment option as defined in the Reserved Instance offering.</p>
+    pub fn get_payment_option(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReservedInstancePaymentOption> {
+        &self.payment_option
     }
     /// Appends an item to `recurring_charges`.
     ///
@@ -320,6 +378,12 @@ impl ReservedInstanceBuilder {
     ) -> Self {
         self.recurring_charges = input;
         self
+    }
+    /// <p>The recurring charge to your account, regardless of whether you create any domains using the Reserved Instance offering.</p>
+    pub fn get_recurring_charges(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>> {
+        &self.recurring_charges
     }
     /// Consumes the builder and constructs a [`ReservedInstance`](crate::types::ReservedInstance).
     pub fn build(self) -> crate::types::ReservedInstance {

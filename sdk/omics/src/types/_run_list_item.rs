@@ -112,6 +112,10 @@ impl RunListItemBuilder {
         self.arn = input;
         self
     }
+    /// <p>The run's ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The run's ID.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -121,6 +125,10 @@ impl RunListItemBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The run's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The run's status.</p>
     pub fn status(mut self, input: crate::types::RunStatus) -> Self {
@@ -132,6 +140,10 @@ impl RunListItemBuilder {
         self.status = input;
         self
     }
+    /// <p>The run's status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::RunStatus> {
+        &self.status
+    }
     /// <p>The run's workflow ID.</p>
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
@@ -141,6 +153,10 @@ impl RunListItemBuilder {
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_id = input;
         self
+    }
+    /// <p>The run's workflow ID.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_id
     }
     /// <p>The run's name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -152,6 +168,10 @@ impl RunListItemBuilder {
         self.name = input;
         self
     }
+    /// <p>The run's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The run's priority.</p>
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
@@ -162,6 +182,10 @@ impl RunListItemBuilder {
         self.priority = input;
         self
     }
+    /// <p>The run's priority.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
+    }
     /// <p>The run's storage capacity.</p>
     pub fn storage_capacity(mut self, input: i32) -> Self {
         self.storage_capacity = ::std::option::Option::Some(input);
@@ -171,6 +195,10 @@ impl RunListItemBuilder {
     pub fn set_storage_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.storage_capacity = input;
         self
+    }
+    /// <p>The run's storage capacity.</p>
+    pub fn get_storage_capacity(&self) -> &::std::option::Option<i32> {
+        &self.storage_capacity
     }
     /// <p>When the run was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -185,6 +213,10 @@ impl RunListItemBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>When the run was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>When the run started.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -198,6 +230,10 @@ impl RunListItemBuilder {
         self.start_time = input;
         self
     }
+    /// <p>When the run started.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>When the run stopped.</p>
     pub fn stop_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.stop_time = ::std::option::Option::Some(input);
@@ -210,6 +246,10 @@ impl RunListItemBuilder {
     ) -> Self {
         self.stop_time = input;
         self
+    }
+    /// <p>When the run stopped.</p>
+    pub fn get_stop_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.stop_time
     }
     /// Consumes the builder and constructs a [`RunListItem`](crate::types::RunListItem).
     pub fn build(self) -> crate::types::RunListItem {

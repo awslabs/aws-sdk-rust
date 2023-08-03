@@ -116,6 +116,10 @@ impl AgentInfoBuilder {
         self.agent_id = input;
         self
     }
+    /// <p>The agent or collector ID.</p>
+    pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_id
+    }
     /// <p>The name of the host where the agent or collector resides. The host can be a server or virtual machine.</p>
     pub fn host_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_name = ::std::option::Option::Some(input.into());
@@ -125,6 +129,10 @@ impl AgentInfoBuilder {
     pub fn set_host_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.host_name = input;
         self
+    }
+    /// <p>The name of the host where the agent or collector resides. The host can be a server or virtual machine.</p>
+    pub fn get_host_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_name
     }
     /// Appends an item to `agent_network_info_list`.
     ///
@@ -145,6 +153,12 @@ impl AgentInfoBuilder {
         self.agent_network_info_list = input;
         self
     }
+    /// <p>Network details about the host where the agent or collector resides.</p>
+    pub fn get_agent_network_info_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentNetworkInfo>> {
+        &self.agent_network_info_list
+    }
     /// <p>The ID of the connector.</p>
     pub fn connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_id = ::std::option::Option::Some(input.into());
@@ -154,6 +168,10 @@ impl AgentInfoBuilder {
     pub fn set_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connector_id = input;
         self
+    }
+    /// <p>The ID of the connector.</p>
+    pub fn get_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connector_id
     }
     /// <p>The agent or collector version.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -165,6 +183,10 @@ impl AgentInfoBuilder {
         self.version = input;
         self
     }
+    /// <p>The agent or collector version.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
+    }
     /// <p>The health of the agent.</p>
     pub fn health(mut self, input: crate::types::AgentStatus) -> Self {
         self.health = ::std::option::Option::Some(input);
@@ -174,6 +196,10 @@ impl AgentInfoBuilder {
     pub fn set_health(mut self, input: ::std::option::Option<crate::types::AgentStatus>) -> Self {
         self.health = input;
         self
+    }
+    /// <p>The health of the agent.</p>
+    pub fn get_health(&self) -> &::std::option::Option<crate::types::AgentStatus> {
+        &self.health
     }
     /// <p>Time since agent health was reported.</p>
     pub fn last_health_ping_time(
@@ -191,6 +217,10 @@ impl AgentInfoBuilder {
         self.last_health_ping_time = input;
         self
     }
+    /// <p>Time since agent health was reported.</p>
+    pub fn get_last_health_ping_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_health_ping_time
+    }
     /// <p>Status of the collection process for an agent.</p>
     pub fn collection_status(
         mut self,
@@ -207,6 +237,10 @@ impl AgentInfoBuilder {
         self.collection_status = input;
         self
     }
+    /// <p>Status of the collection process for an agent.</p>
+    pub fn get_collection_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collection_status
+    }
     /// <p>Type of agent.</p>
     pub fn agent_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_type = ::std::option::Option::Some(input.into());
@@ -216,6 +250,10 @@ impl AgentInfoBuilder {
     pub fn set_agent_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_type = input;
         self
+    }
+    /// <p>Type of agent.</p>
+    pub fn get_agent_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_type
     }
     /// <p>Agent's first registration timestamp in UTC.</p>
     pub fn registered_time(
@@ -232,6 +270,10 @@ impl AgentInfoBuilder {
     ) -> Self {
         self.registered_time = input;
         self
+    }
+    /// <p>Agent's first registration timestamp in UTC.</p>
+    pub fn get_registered_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registered_time
     }
     /// Consumes the builder and constructs a [`AgentInfo`](crate::types::AgentInfo).
     pub fn build(self) -> crate::types::AgentInfo {

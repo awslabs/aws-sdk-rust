@@ -55,6 +55,10 @@ impl ListDatasetsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `dataset_summaries`.
     ///
     /// To override the contents of this collection use [`set_dataset_summaries`](Self::set_dataset_summaries).
@@ -73,6 +77,12 @@ impl ListDatasetsOutputBuilder {
     ) -> Self {
         self.dataset_summaries = input;
         self
+    }
+    /// <p>Provides information about the specified dataset, including creation time, dataset ARN, and status. </p>
+    pub fn get_dataset_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetSummary>> {
+        &self.dataset_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

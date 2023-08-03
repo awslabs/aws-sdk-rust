@@ -72,6 +72,10 @@ impl TrainingJobStatusCountersBuilder {
         self.completed = input;
         self
     }
+    /// <p>The number of completed training jobs launched by the hyperparameter tuning job.</p>
+    pub fn get_completed(&self) -> &::std::option::Option<i32> {
+        &self.completed
+    }
     /// <p>The number of in-progress training jobs launched by a hyperparameter tuning job.</p>
     pub fn in_progress(mut self, input: i32) -> Self {
         self.in_progress = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl TrainingJobStatusCountersBuilder {
     pub fn set_in_progress(mut self, input: ::std::option::Option<i32>) -> Self {
         self.in_progress = input;
         self
+    }
+    /// <p>The number of in-progress training jobs launched by a hyperparameter tuning job.</p>
+    pub fn get_in_progress(&self) -> &::std::option::Option<i32> {
+        &self.in_progress
     }
     /// <p>The number of training jobs that failed, but can be retried. A failed training job can be retried only if it failed because an internal service error occurred.</p>
     pub fn retryable_error(mut self, input: i32) -> Self {
@@ -92,6 +100,10 @@ impl TrainingJobStatusCountersBuilder {
         self.retryable_error = input;
         self
     }
+    /// <p>The number of training jobs that failed, but can be retried. A failed training job can be retried only if it failed because an internal service error occurred.</p>
+    pub fn get_retryable_error(&self) -> &::std::option::Option<i32> {
+        &self.retryable_error
+    }
     /// <p>The number of training jobs that failed and can't be retried. A failed training job can't be retried if it failed because a client error occurred.</p>
     pub fn non_retryable_error(mut self, input: i32) -> Self {
         self.non_retryable_error = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl TrainingJobStatusCountersBuilder {
         self.non_retryable_error = input;
         self
     }
+    /// <p>The number of training jobs that failed and can't be retried. A failed training job can't be retried if it failed because a client error occurred.</p>
+    pub fn get_non_retryable_error(&self) -> &::std::option::Option<i32> {
+        &self.non_retryable_error
+    }
     /// <p>The number of training jobs launched by a hyperparameter tuning job that were manually stopped.</p>
     pub fn stopped(mut self, input: i32) -> Self {
         self.stopped = ::std::option::Option::Some(input);
@@ -111,6 +127,10 @@ impl TrainingJobStatusCountersBuilder {
     pub fn set_stopped(mut self, input: ::std::option::Option<i32>) -> Self {
         self.stopped = input;
         self
+    }
+    /// <p>The number of training jobs launched by a hyperparameter tuning job that were manually stopped.</p>
+    pub fn get_stopped(&self) -> &::std::option::Option<i32> {
+        &self.stopped
     }
     /// Consumes the builder and constructs a [`TrainingJobStatusCounters`](crate::types::TrainingJobStatusCounters).
     pub fn build(self) -> crate::types::TrainingJobStatusCounters {

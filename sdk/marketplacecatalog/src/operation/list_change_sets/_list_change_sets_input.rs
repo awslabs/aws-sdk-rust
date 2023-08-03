@@ -71,6 +71,10 @@ impl ListChangeSetsInputBuilder {
         self.catalog = input;
         self
     }
+    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
+    pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog
+    }
     /// Appends an item to `filter_list`.
     ///
     /// To override the contents of this collection use [`set_filter_list`](Self::set_filter_list).
@@ -90,6 +94,10 @@ impl ListChangeSetsInputBuilder {
         self.filter_list = input;
         self
     }
+    /// <p>An array of filter objects.</p>
+    pub fn get_filter_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filter_list
+    }
     /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
     pub fn sort(mut self, input: crate::types::Sort) -> Self {
         self.sort = ::std::option::Option::Some(input);
@@ -99,6 +107,10 @@ impl ListChangeSetsInputBuilder {
     pub fn set_sort(mut self, input: ::std::option::Option<crate::types::Sort>) -> Self {
         self.sort = input;
         self
+    }
+    /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
+    pub fn get_sort(&self) -> &::std::option::Option<crate::types::Sort> {
+        &self.sort
     }
     /// <p>The maximum number of results returned by a single call. This value must be provided in the next call to retrieve the next set of results. By default, this value is 20.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -110,6 +122,10 @@ impl ListChangeSetsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results returned by a single call. This value must be provided in the next call to retrieve the next set of results. By default, this value is 20.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -119,6 +135,10 @@ impl ListChangeSetsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListChangeSetsInput`](crate::operation::list_change_sets::ListChangeSetsInput).
     pub fn build(

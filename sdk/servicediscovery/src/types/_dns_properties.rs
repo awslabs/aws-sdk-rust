@@ -54,6 +54,10 @@ impl DnsPropertiesBuilder {
         self.hosted_zone_id = input;
         self
     }
+    /// <p>The ID for the Route&nbsp;53 hosted zone that Cloud Map creates when you create a namespace.</p>
+    pub fn get_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hosted_zone_id
+    }
     /// <p>Start of Authority (SOA) record for the hosted zone.</p>
     pub fn soa(mut self, input: crate::types::Soa) -> Self {
         self.soa = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl DnsPropertiesBuilder {
     pub fn set_soa(mut self, input: ::std::option::Option<crate::types::Soa>) -> Self {
         self.soa = input;
         self
+    }
+    /// <p>Start of Authority (SOA) record for the hosted zone.</p>
+    pub fn get_soa(&self) -> &::std::option::Option<crate::types::Soa> {
+        &self.soa
     }
     /// Consumes the builder and constructs a [`DnsProperties`](crate::types::DnsProperties).
     pub fn build(self) -> crate::types::DnsProperties {

@@ -134,6 +134,10 @@ impl ForecastSummaryBuilder {
         self.forecast_arn = input;
         self
     }
+    /// <p>The ARN of the forecast.</p>
+    pub fn get_forecast_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.forecast_arn
+    }
     /// <p>The name of the forecast.</p>
     pub fn forecast_name(
         mut self,
@@ -149,6 +153,10 @@ impl ForecastSummaryBuilder {
     ) -> Self {
         self.forecast_name = input;
         self
+    }
+    /// <p>The name of the forecast.</p>
+    pub fn get_forecast_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.forecast_name
     }
     /// <p>The ARN of the predictor used to generate the forecast.</p>
     pub fn predictor_arn(
@@ -166,6 +174,10 @@ impl ForecastSummaryBuilder {
         self.predictor_arn = input;
         self
     }
+    /// <p>The ARN of the predictor used to generate the forecast.</p>
+    pub fn get_predictor_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.predictor_arn
+    }
     /// <p>Whether the Forecast was created from an AutoPredictor.</p>
     pub fn created_using_auto_predictor(mut self, input: bool) -> Self {
         self.created_using_auto_predictor = ::std::option::Option::Some(input);
@@ -175,6 +187,10 @@ impl ForecastSummaryBuilder {
     pub fn set_created_using_auto_predictor(mut self, input: ::std::option::Option<bool>) -> Self {
         self.created_using_auto_predictor = input;
         self
+    }
+    /// <p>Whether the Forecast was created from an AutoPredictor.</p>
+    pub fn get_created_using_auto_predictor(&self) -> &::std::option::Option<bool> {
+        &self.created_using_auto_predictor
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group that provided the data used to train the predictor.</p>
     pub fn dataset_group_arn(
@@ -191,6 +207,10 @@ impl ForecastSummaryBuilder {
     ) -> Self {
         self.dataset_group_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the dataset group that provided the data used to train the predictor.</p>
+    pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_group_arn
     }
     /// <p>The status of the forecast. States include:</p>
     /// <ul>
@@ -218,6 +238,18 @@ impl ForecastSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the forecast. States include:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// </ul> <note>
+    /// <p>The <code>Status</code> of the forecast must be <code>ACTIVE</code> before you can query or export the forecast.</p>
+    /// </note>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>If an error occurred, an informational message about the error.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -227,6 +259,10 @@ impl ForecastSummaryBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>If an error occurred, an informational message about the error.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// <p>When the forecast creation task was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -240,6 +276,10 @@ impl ForecastSummaryBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>When the forecast creation task was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
@@ -267,6 +307,19 @@ impl ForecastSummaryBuilder {
     ) -> Self {
         self.last_modification_time = input;
         self
+    }
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
+    /// </ul>
+    pub fn get_last_modification_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modification_time
     }
     /// Consumes the builder and constructs a [`ForecastSummary`](crate::types::ForecastSummary).
     pub fn build(self) -> crate::types::ForecastSummary {

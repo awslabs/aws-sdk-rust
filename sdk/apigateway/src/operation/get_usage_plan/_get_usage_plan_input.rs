@@ -46,6 +46,10 @@ impl GetUsagePlanInputBuilder {
         self.usage_plan_id = input;
         self
     }
+    /// <p>The identifier of the UsagePlan resource to be retrieved.</p>
+    pub fn get_usage_plan_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.usage_plan_id
+    }
     /// Consumes the builder and constructs a [`GetUsagePlanInput`](crate::operation::get_usage_plan::GetUsagePlanInput).
     pub fn build(
         self,

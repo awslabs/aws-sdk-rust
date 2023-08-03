@@ -37,6 +37,12 @@ impl GetHostedZoneLimitFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetHostedZoneLimit as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_hosted_zone_limit::builders::GetHostedZoneLimitInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +144,14 @@ impl GetHostedZoneLimitFluentBuilder {
         self.inner = self.inner.set_type(input);
         self
     }
+    /// <p>The limit that you want to get. Valid values include the following:</p>
+    /// <ul>
+    /// <li> <p> <b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can create in the specified hosted zone.</p> </li>
+    /// <li> <p> <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the specified private hosted zone.</p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::HostedZoneLimitType> {
+        self.inner.get_type()
+    }
     /// <p>The ID of the hosted zone that you want to get a limit for.</p>
     pub fn hosted_zone_id(
         mut self,
@@ -153,5 +167,9 @@ impl GetHostedZoneLimitFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_hosted_zone_id(input);
         self
+    }
+    /// <p>The ID of the hosted zone that you want to get a limit for.</p>
+    pub fn get_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hosted_zone_id()
     }
 }

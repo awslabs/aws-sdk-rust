@@ -69,6 +69,12 @@ impl UnassignIpv6AddressesInputBuilder {
         self.ipv6_addresses = input;
         self
     }
+    /// <p>The IPv6 addresses to unassign from the network interface.</p>
+    pub fn get_ipv6_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ipv6_addresses
+    }
     /// Appends an item to `ipv6_prefixes`.
     ///
     /// To override the contents of this collection use [`set_ipv6_prefixes`](Self::set_ipv6_prefixes).
@@ -91,6 +97,12 @@ impl UnassignIpv6AddressesInputBuilder {
         self.ipv6_prefixes = input;
         self
     }
+    /// <p>The IPv6 prefixes to unassign from the network interface.</p>
+    pub fn get_ipv6_prefixes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ipv6_prefixes
+    }
     /// <p>The ID of the network interface.</p>
     pub fn network_interface_id(
         mut self,
@@ -106,6 +118,10 @@ impl UnassignIpv6AddressesInputBuilder {
     ) -> Self {
         self.network_interface_id = input;
         self
+    }
+    /// <p>The ID of the network interface.</p>
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_interface_id
     }
     /// Consumes the builder and constructs a [`UnassignIpv6AddressesInput`](crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesInput).
     pub fn build(

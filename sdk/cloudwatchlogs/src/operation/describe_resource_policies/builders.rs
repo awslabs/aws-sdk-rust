@@ -36,6 +36,13 @@ impl DescribeResourcePoliciesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeResourcePolicies as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_resource_policies::builders::DescribeResourcePoliciesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl DescribeResourcePoliciesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of resource policies to be displayed with one call of this API.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -135,5 +146,9 @@ impl DescribeResourcePoliciesFluentBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
+    }
+    /// <p>The maximum number of resource policies to be displayed with one call of this API.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
     }
 }

@@ -41,6 +41,12 @@ impl CreateVoiceConnectorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateVoiceConnector as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_voice_connector::builders::CreateVoiceConnectorInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +137,10 @@ impl CreateVoiceConnectorFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the Amazon Chime Voice Connector.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p> The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code> . </p>
     pub fn aws_region(mut self, input: crate::types::VoiceConnectorAwsRegion) -> Self {
         self.inner = self.inner.aws_region(input);
@@ -144,6 +154,10 @@ impl CreateVoiceConnectorFluentBuilder {
         self.inner = self.inner.set_aws_region(input);
         self
     }
+    /// <p> The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code> . </p>
+    pub fn get_aws_region(&self) -> &::std::option::Option<crate::types::VoiceConnectorAwsRegion> {
+        self.inner.get_aws_region()
+    }
     /// <p>When enabled, requires encryption for the Amazon Chime Voice Connector.</p>
     pub fn require_encryption(mut self, input: bool) -> Self {
         self.inner = self.inner.require_encryption(input);
@@ -153,5 +167,9 @@ impl CreateVoiceConnectorFluentBuilder {
     pub fn set_require_encryption(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_require_encryption(input);
         self
+    }
+    /// <p>When enabled, requires encryption for the Amazon Chime Voice Connector.</p>
+    pub fn get_require_encryption(&self) -> &::std::option::Option<bool> {
+        self.inner.get_require_encryption()
     }
 }

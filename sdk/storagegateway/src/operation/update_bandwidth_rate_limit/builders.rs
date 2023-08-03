@@ -38,6 +38,10 @@ impl UpdateBandwidthRateLimitFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateBandwidthRateLimit as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_bandwidth_rate_limit::builders::UpdateBandwidthRateLimitInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +132,10 @@ impl UpdateBandwidthRateLimitFluentBuilder {
         self.inner = self.inner.set_gateway_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gateway_arn()
+    }
     /// <p>The average upload bandwidth rate limit in bits per second.</p>
     pub fn average_upload_rate_limit_in_bits_per_sec(mut self, input: i64) -> Self {
         self.inner = self.inner.average_upload_rate_limit_in_bits_per_sec(input);
@@ -142,6 +150,10 @@ impl UpdateBandwidthRateLimitFluentBuilder {
             .inner
             .set_average_upload_rate_limit_in_bits_per_sec(input);
         self
+    }
+    /// <p>The average upload bandwidth rate limit in bits per second.</p>
+    pub fn get_average_upload_rate_limit_in_bits_per_sec(&self) -> &::std::option::Option<i64> {
+        self.inner.get_average_upload_rate_limit_in_bits_per_sec()
     }
     /// <p>The average download bandwidth rate limit in bits per second.</p>
     pub fn average_download_rate_limit_in_bits_per_sec(mut self, input: i64) -> Self {
@@ -159,5 +171,9 @@ impl UpdateBandwidthRateLimitFluentBuilder {
             .inner
             .set_average_download_rate_limit_in_bits_per_sec(input);
         self
+    }
+    /// <p>The average download bandwidth rate limit in bits per second.</p>
+    pub fn get_average_download_rate_limit_in_bits_per_sec(&self) -> &::std::option::Option<i64> {
+        self.inner.get_average_download_rate_limit_in_bits_per_sec()
     }
 }

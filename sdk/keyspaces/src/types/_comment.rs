@@ -40,6 +40,10 @@ impl CommentBuilder {
         self.message = input;
         self
     }
+    /// <p>An optional description of the table.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Consumes the builder and constructs a [`Comment`](crate::types::Comment).
     pub fn build(self) -> crate::types::Comment {
         crate::types::Comment {

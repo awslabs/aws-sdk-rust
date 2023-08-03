@@ -36,6 +36,12 @@ impl GetIpAccessSettingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetIpAccessSettings as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_ip_access_settings::builders::GetIpAccessSettingsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl GetIpAccessSettingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ip_access_settings_arn(input);
         self
+    }
+    /// <p>The ARN of the IP access settings.</p>
+    pub fn get_ip_access_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ip_access_settings_arn()
     }
 }

@@ -97,6 +97,10 @@ impl CreateRobotOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the robot.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the robot.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -106,6 +110,10 @@ impl CreateRobotOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the robot.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The time, in milliseconds since the epoch, when the robot was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -119,6 +127,10 @@ impl CreateRobotOutputBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The time, in milliseconds since the epoch, when the robot was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>The Amazon Resource Name (ARN) of the Greengrass group associated with the robot.</p>
     pub fn greengrass_group_id(
@@ -136,6 +148,10 @@ impl CreateRobotOutputBuilder {
         self.greengrass_group_id = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Greengrass group associated with the robot.</p>
+    pub fn get_greengrass_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.greengrass_group_id
+    }
     /// <p>The target architecture of the robot.</p>
     pub fn architecture(mut self, input: crate::types::Architecture) -> Self {
         self.architecture = ::std::option::Option::Some(input);
@@ -148,6 +164,10 @@ impl CreateRobotOutputBuilder {
     ) -> Self {
         self.architecture = input;
         self
+    }
+    /// <p>The target architecture of the robot.</p>
+    pub fn get_architecture(&self) -> &::std::option::Option<crate::types::Architecture> {
+        &self.architecture
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -173,6 +193,14 @@ impl CreateRobotOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The list of all tags added to the robot.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

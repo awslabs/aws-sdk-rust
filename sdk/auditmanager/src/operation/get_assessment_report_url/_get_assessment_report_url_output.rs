@@ -48,6 +48,10 @@ impl GetAssessmentReportUrlOutputBuilder {
         self.pre_signed_url = input;
         self
     }
+    /// <p> Short for uniform resource locator. A URL is used as a unique identifier to locate a resource on the internet. </p>
+    pub fn get_pre_signed_url(&self) -> &::std::option::Option<crate::types::Url> {
+        &self.pre_signed_url
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

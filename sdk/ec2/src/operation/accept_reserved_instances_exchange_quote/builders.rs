@@ -36,6 +36,10 @@ impl AcceptReservedInstancesExchangeQuoteFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AcceptReservedInstancesExchangeQuote as a reference.
+    pub fn as_input(&self) -> &crate::operation::accept_reserved_instances_exchange_quote::builders::AcceptReservedInstancesExchangeQuoteInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl AcceptReservedInstancesExchangeQuoteFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// Appends an item to `ReservedInstanceIds`.
     ///
     /// To override the contents of this collection use [`set_reserved_instance_ids`](Self::set_reserved_instance_ids).
@@ -120,6 +128,12 @@ impl AcceptReservedInstancesExchangeQuoteFluentBuilder {
         self.inner = self.inner.set_reserved_instance_ids(input);
         self
     }
+    /// <p>The IDs of the Convertible Reserved Instances to exchange for another Convertible Reserved Instance of the same or higher value.</p>
+    pub fn get_reserved_instance_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_reserved_instance_ids()
+    }
     /// Appends an item to `TargetConfigurations`.
     ///
     /// To override the contents of this collection use [`set_target_configurations`](Self::set_target_configurations).
@@ -139,5 +153,11 @@ impl AcceptReservedInstancesExchangeQuoteFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_target_configurations(input);
         self
+    }
+    /// <p>The configuration of the target Convertible Reserved Instance to exchange for your current Convertible Reserved Instances.</p>
+    pub fn get_target_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetConfigurationRequest>> {
+        self.inner.get_target_configurations()
     }
 }

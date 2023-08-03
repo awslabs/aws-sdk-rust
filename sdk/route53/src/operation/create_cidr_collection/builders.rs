@@ -36,6 +36,12 @@ impl CreateCidrCollectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateCidrCollection as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_cidr_collection::builders::CreateCidrCollectionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateCidrCollectionFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>A unique identifier for the account that can be used to reference the collection from other API calls.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A client-specific token that allows requests to be securely retried so that the intended outcome will only occur once, retries receive a similar response, and there are no additional edge cases to handle.</p>
     pub fn caller_reference(
         mut self,
@@ -141,5 +151,9 @@ impl CreateCidrCollectionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_caller_reference(input);
         self
+    }
+    /// <p>A client-specific token that allows requests to be securely retried so that the intended outcome will only occur once, retries receive a similar response, and there are no additional edge cases to handle.</p>
+    pub fn get_caller_reference(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_caller_reference()
     }
 }

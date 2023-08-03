@@ -38,6 +38,10 @@ impl GetEC2RecommendationProjectedMetricsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetEC2RecommendationProjectedMetrics as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_ec2_recommendation_projected_metrics::builders::GetEc2RecommendationProjectedMetricsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -102,6 +106,10 @@ impl GetEC2RecommendationProjectedMetricsFluentBuilder {
         self.inner = self.inner.set_instance_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the instances for which to return recommendation projected metrics.</p>
+    pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_arn()
+    }
     /// <p>The statistic of the projected metrics.</p>
     pub fn stat(mut self, input: crate::types::MetricStatistic) -> Self {
         self.inner = self.inner.stat(input);
@@ -112,6 +120,10 @@ impl GetEC2RecommendationProjectedMetricsFluentBuilder {
         self.inner = self.inner.set_stat(input);
         self
     }
+    /// <p>The statistic of the projected metrics.</p>
+    pub fn get_stat(&self) -> &::std::option::Option<crate::types::MetricStatistic> {
+        self.inner.get_stat()
+    }
     /// <p>The granularity, in seconds, of the projected metrics data points.</p>
     pub fn period(mut self, input: i32) -> Self {
         self.inner = self.inner.period(input);
@@ -121,6 +133,10 @@ impl GetEC2RecommendationProjectedMetricsFluentBuilder {
     pub fn set_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_period(input);
         self
+    }
+    /// <p>The granularity, in seconds, of the projected metrics data points.</p>
+    pub fn get_period(&self) -> &::std::option::Option<i32> {
+        self.inner.get_period()
     }
     /// <p>The timestamp of the first projected metrics data point to return.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -135,6 +151,10 @@ impl GetEC2RecommendationProjectedMetricsFluentBuilder {
         self.inner = self.inner.set_start_time(input);
         self
     }
+    /// <p>The timestamp of the first projected metrics data point to return.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
+    }
     /// <p>The timestamp of the last projected metrics data point to return.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time(input);
@@ -147,6 +167,10 @@ impl GetEC2RecommendationProjectedMetricsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
+    }
+    /// <p>The timestamp of the last projected metrics data point to return.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time()
     }
     /// <p>An object to specify the preferences for the Amazon EC2 recommendation projected metrics to return in the response.</p>
     pub fn recommendation_preferences(
@@ -163,5 +187,11 @@ impl GetEC2RecommendationProjectedMetricsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_recommendation_preferences(input);
         self
+    }
+    /// <p>An object to specify the preferences for the Amazon EC2 recommendation projected metrics to return in the response.</p>
+    pub fn get_recommendation_preferences(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecommendationPreferences> {
+        self.inner.get_recommendation_preferences()
     }
 }

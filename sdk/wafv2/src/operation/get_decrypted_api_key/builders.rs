@@ -37,6 +37,12 @@ impl GetDecryptedAPIKeyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetDecryptedAPIKey as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_decrypted_api_key::builders::GetDecryptedApiKeyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,15 @@ impl GetDecryptedAPIKeyFluentBuilder {
         self.inner = self.inner.set_scope(input);
         self
     }
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance. </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+    /// <ul>
+    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+    /// </ul>
+    pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
+        self.inner.get_scope()
+    }
     /// <p>The encrypted API key. </p>
     pub fn api_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.api_key(input.into());
@@ -146,5 +161,9 @@ impl GetDecryptedAPIKeyFluentBuilder {
     pub fn set_api_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_api_key(input);
         self
+    }
+    /// <p>The encrypted API key. </p>
+    pub fn get_api_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_api_key()
     }
 }

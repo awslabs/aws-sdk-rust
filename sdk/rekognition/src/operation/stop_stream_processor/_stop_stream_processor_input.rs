@@ -41,6 +41,10 @@ impl StopStreamProcessorInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of a stream processor created by <code>CreateStreamProcessor</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`StopStreamProcessorInput`](crate::operation::stop_stream_processor::StopStreamProcessorInput).
     pub fn build(
         self,

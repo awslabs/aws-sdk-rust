@@ -72,6 +72,10 @@ impl DescribeIpamPoolsInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -91,6 +95,10 @@ impl DescribeIpamPoolsInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>One or more filters for the request. For more information about filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Filtering CLI output</a>.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
+    }
     /// <p>The maximum number of results to return in the request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -101,6 +109,10 @@ impl DescribeIpamPoolsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return in the request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -110,6 +122,10 @@ impl DescribeIpamPoolsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `ipam_pool_ids`.
     ///
@@ -132,6 +148,12 @@ impl DescribeIpamPoolsInputBuilder {
     ) -> Self {
         self.ipam_pool_ids = input;
         self
+    }
+    /// <p>The IDs of the IPAM pools you would like information on.</p>
+    pub fn get_ipam_pool_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ipam_pool_ids
     }
     /// Consumes the builder and constructs a [`DescribeIpamPoolsInput`](crate::operation::describe_ipam_pools::DescribeIpamPoolsInput).
     pub fn build(

@@ -36,6 +36,13 @@ impl ListDeploymentTargetsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListDeploymentTargets as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_deployment_targets::builders::ListDeploymentTargetsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl ListDeploymentTargetsFluentBuilder {
         self.inner = self.inner.set_deployment_id(input);
         self
     }
+    /// <p> The unique ID of a deployment. </p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_deployment_id()
+    }
     /// <p> A token identifier returned from the previous <code>ListDeploymentTargets</code> call. It can be used to return the next set of deployment targets in the list. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -141,6 +152,10 @@ impl ListDeploymentTargetsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p> A token identifier returned from the previous <code>ListDeploymentTargets</code> call. It can be used to return the next set of deployment targets in the list. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// Adds a key-value pair to `targetFilters`.
     ///
@@ -175,5 +190,20 @@ impl ListDeploymentTargetsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_target_filters(input);
         self
+    }
+    /// <p> A key used to filter the returned targets. The two valid values are:</p>
+    /// <ul>
+    /// <li> <p> <code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be <code>Failed</code>, <code>InProgress</code>, <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>, or <code>Unknown</code>. </p> </li>
+    /// <li> <p> <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or <code>Green</code>. </p> </li>
+    /// </ul>
+    pub fn get_target_filters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::TargetFilterName,
+            ::std::vec::Vec<::std::string::String>,
+        >,
+    > {
+        self.inner.get_target_filters()
     }
 }

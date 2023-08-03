@@ -40,6 +40,10 @@ impl OriginDetailsBuilder {
         self.product_id = input;
         self
     }
+    /// <p>The product ID of the origin of the data set.</p>
+    pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_id
+    }
     /// Consumes the builder and constructs a [`OriginDetails`](crate::types::OriginDetails).
     pub fn build(self) -> crate::types::OriginDetails {
         crate::types::OriginDetails {

@@ -51,6 +51,10 @@ impl AgentVersionBuilder {
         self.version = input;
         self
     }
+    /// <p>The agent version.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
+    }
     /// <p>The configuration manager.</p>
     pub fn configuration_manager(mut self, input: crate::types::StackConfigurationManager) -> Self {
         self.configuration_manager = ::std::option::Option::Some(input);
@@ -63,6 +67,12 @@ impl AgentVersionBuilder {
     ) -> Self {
         self.configuration_manager = input;
         self
+    }
+    /// <p>The configuration manager.</p>
+    pub fn get_configuration_manager(
+        &self,
+    ) -> &::std::option::Option<crate::types::StackConfigurationManager> {
+        &self.configuration_manager
     }
     /// Consumes the builder and constructs a [`AgentVersion`](crate::types::AgentVersion).
     pub fn build(self) -> crate::types::AgentVersion {

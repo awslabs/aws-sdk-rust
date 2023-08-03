@@ -58,6 +58,10 @@ impl ListRequestedServiceQuotaChangeHistoryByQuotaOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `requested_quotas`.
     ///
     /// To override the contents of this collection use [`set_requested_quotas`](Self::set_requested_quotas).
@@ -76,6 +80,12 @@ impl ListRequestedServiceQuotaChangeHistoryByQuotaOutputBuilder {
     ) -> Self {
         self.requested_quotas = input;
         self
+    }
+    /// <p>Information about the quota increase requests.</p>
+    pub fn get_requested_quotas(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RequestedServiceQuotaChange>> {
+        &self.requested_quotas
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

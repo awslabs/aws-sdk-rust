@@ -57,6 +57,10 @@ impl UpdateDeletionProtectionInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the replication set to update.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>Specifies if deletion protection is turned on or off in your account. </p>
     pub fn deletion_protected(mut self, input: bool) -> Self {
         self.deletion_protected = ::std::option::Option::Some(input);
@@ -67,6 +71,10 @@ impl UpdateDeletionProtectionInputBuilder {
         self.deletion_protected = input;
         self
     }
+    /// <p>Specifies if deletion protection is turned on or off in your account. </p>
+    pub fn get_deletion_protected(&self) -> &::std::option::Option<bool> {
+        &self.deletion_protected
+    }
     /// <p>A token that ensures that the operation is called only once with the specified details.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -76,6 +84,10 @@ impl UpdateDeletionProtectionInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A token that ensures that the operation is called only once with the specified details.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateDeletionProtectionInput`](crate::operation::update_deletion_protection::UpdateDeletionProtectionInput).
     pub fn build(

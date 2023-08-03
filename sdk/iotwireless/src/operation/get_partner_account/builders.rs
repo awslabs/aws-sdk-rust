@@ -36,6 +36,12 @@ impl GetPartnerAccountFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetPartnerAccount as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_partner_account::builders::GetPartnerAccountInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl GetPartnerAccountFluentBuilder {
         self.inner = self.inner.set_partner_account_id(input);
         self
     }
+    /// <p>The partner account ID to disassociate from the AWS account.</p>
+    pub fn get_partner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_partner_account_id()
+    }
     /// <p>The partner type.</p>
     pub fn partner_type(mut self, input: crate::types::PartnerType) -> Self {
         self.inner = self.inner.partner_type(input);
@@ -144,5 +154,9 @@ impl GetPartnerAccountFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_partner_type(input);
         self
+    }
+    /// <p>The partner type.</p>
+    pub fn get_partner_type(&self) -> &::std::option::Option<crate::types::PartnerType> {
+        self.inner.get_partner_type()
     }
 }

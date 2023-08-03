@@ -78,6 +78,10 @@ impl JobPostLaunchActionsLaunchStatusBuilder {
         self.ssm_document = input;
         self
     }
+    /// <p>AWS Systems Manager's Document of the of the Job Post Launch Actions.</p>
+    pub fn get_ssm_document(&self) -> &::std::option::Option<crate::types::SsmDocument> {
+        &self.ssm_document
+    }
     /// <p>AWS Systems Manager Document type.</p>
     pub fn ssm_document_type(mut self, input: crate::types::SsmDocumentType) -> Self {
         self.ssm_document_type = ::std::option::Option::Some(input);
@@ -91,6 +95,10 @@ impl JobPostLaunchActionsLaunchStatusBuilder {
         self.ssm_document_type = input;
         self
     }
+    /// <p>AWS Systems Manager Document type.</p>
+    pub fn get_ssm_document_type(&self) -> &::std::option::Option<crate::types::SsmDocumentType> {
+        &self.ssm_document_type
+    }
     /// <p>AWS Systems Manager Document's execution ID of the of the Job Post Launch Actions.</p>
     pub fn execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_id = ::std::option::Option::Some(input.into());
@@ -100,6 +108,10 @@ impl JobPostLaunchActionsLaunchStatusBuilder {
     pub fn set_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_id = input;
         self
+    }
+    /// <p>AWS Systems Manager Document's execution ID of the of the Job Post Launch Actions.</p>
+    pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_id
     }
     /// <p>AWS Systems Manager Document's execution status.</p>
     pub fn execution_status(
@@ -117,6 +129,12 @@ impl JobPostLaunchActionsLaunchStatusBuilder {
         self.execution_status = input;
         self
     }
+    /// <p>AWS Systems Manager Document's execution status.</p>
+    pub fn get_execution_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::PostLaunchActionExecutionStatus> {
+        &self.execution_status
+    }
     /// <p>AWS Systems Manager Document's failure reason.</p>
     pub fn failure_reason(
         mut self,
@@ -132,6 +150,10 @@ impl JobPostLaunchActionsLaunchStatusBuilder {
     ) -> Self {
         self.failure_reason = input;
         self
+    }
+    /// <p>AWS Systems Manager Document's failure reason.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     /// Consumes the builder and constructs a [`JobPostLaunchActionsLaunchStatus`](crate::types::JobPostLaunchActionsLaunchStatus).
     pub fn build(self) -> crate::types::JobPostLaunchActionsLaunchStatus {

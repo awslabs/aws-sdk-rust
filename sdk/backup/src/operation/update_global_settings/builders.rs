@@ -36,6 +36,12 @@ impl UpdateGlobalSettingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateGlobalSettings as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_global_settings::builders::UpdateGlobalSettingsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,5 +144,13 @@ impl UpdateGlobalSettingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_global_settings(input);
         self
+    }
+    /// <p>A value for <code>isCrossAccountBackupEnabled</code> and a Region. Example: <code>update-global-settings --global-settings isCrossAccountBackupEnabled=false --region us-west-2</code>.</p>
+    pub fn get_global_settings(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_global_settings()
     }
 }

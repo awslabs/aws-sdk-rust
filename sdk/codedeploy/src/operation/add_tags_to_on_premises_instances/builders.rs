@@ -36,6 +36,10 @@ impl AddTagsToOnPremisesInstancesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AddTagsToOnPremisesInstances as a reference.
+    pub fn as_input(&self) -> &crate::operation::add_tags_to_on_premises_instances::builders::AddTagsToOnPremisesInstancesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +139,11 @@ impl AddTagsToOnPremisesInstancesFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tag key-value pairs to add to the on-premises instances.</p>
+    /// <p>Keys and values are both required. Keys cannot be null or empty strings. Value-only tags are not allowed.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// Appends an item to `instanceNames`.
     ///
     /// To override the contents of this collection use [`set_instance_names`](Self::set_instance_names).
@@ -154,5 +163,11 @@ impl AddTagsToOnPremisesInstancesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_instance_names(input);
         self
+    }
+    /// <p>The names of the on-premises instances to which to add tags.</p>
+    pub fn get_instance_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_instance_names()
     }
 }

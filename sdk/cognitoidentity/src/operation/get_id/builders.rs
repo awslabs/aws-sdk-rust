@@ -37,6 +37,10 @@ impl GetIdFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetId as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_id::builders::GetIdInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl GetIdFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>A standard AWS account ID (9+ digits).</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     pub fn identity_pool_id(
         mut self,
@@ -134,6 +142,10 @@ impl GetIdFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_identity_pool_id(input);
         self
+    }
+    /// <p>An identity pool ID in the format REGION:GUID.</p>
+    pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_pool_id()
     }
     /// Adds a key-value pair to `Logins`.
     ///
@@ -181,5 +193,25 @@ impl GetIdFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_logins(input);
         self
+    }
+    /// <p>A set of optional name-value pairs that map provider names to provider tokens. The available provider names for <code>Logins</code> are as follows:</p>
+    /// <ul>
+    /// <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li>
+    /// <li> <p>Amazon Cognito user pool: <code>cognito-idp.
+    /// <region>
+    /// .amazonaws.com/
+    /// <your_user_pool_id></your_user_pool_id>
+    /// </region></code>, for example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>. </p> </li>
+    /// <li> <p>Google: <code>accounts.google.com</code> </p> </li>
+    /// <li> <p>Amazon: <code>www.amazon.com</code> </p> </li>
+    /// <li> <p>Twitter: <code>api.twitter.com</code> </p> </li>
+    /// <li> <p>Digits: <code>www.digits.com</code> </p> </li>
+    /// </ul>
+    pub fn get_logins(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_logins()
     }
 }

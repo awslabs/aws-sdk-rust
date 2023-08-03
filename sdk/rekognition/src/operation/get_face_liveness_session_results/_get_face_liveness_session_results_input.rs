@@ -39,6 +39,10 @@ impl GetFaceLivenessSessionResultsInputBuilder {
         self.session_id = input;
         self
     }
+    /// <p>A unique 128-bit UUID. This is used to uniquely identify the session and also acts as an idempotency token for all operations associated with the session.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
+    }
     /// Consumes the builder and constructs a [`GetFaceLivenessSessionResultsInput`](crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsInput).
     pub fn build(
         self,

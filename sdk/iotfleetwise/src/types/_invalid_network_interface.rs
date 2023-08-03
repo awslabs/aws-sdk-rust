@@ -48,6 +48,10 @@ impl InvalidNetworkInterfaceBuilder {
         self.interface_id = input;
         self
     }
+    /// <p>The ID of the interface that isn't valid.</p>
+    pub fn get_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.interface_id
+    }
     /// <p>A message about why the interface isn't valid. </p>
     pub fn reason(mut self, input: crate::types::NetworkInterfaceFailureReason) -> Self {
         self.reason = ::std::option::Option::Some(input);
@@ -60,6 +64,12 @@ impl InvalidNetworkInterfaceBuilder {
     ) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>A message about why the interface isn't valid. </p>
+    pub fn get_reason(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkInterfaceFailureReason> {
+        &self.reason
     }
     /// Consumes the builder and constructs a [`InvalidNetworkInterface`](crate::types::InvalidNetworkInterface).
     pub fn build(self) -> crate::types::InvalidNetworkInterface {

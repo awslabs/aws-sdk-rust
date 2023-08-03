@@ -117,6 +117,10 @@ impl UserTypeBuilder {
         self.username = input;
         self
     }
+    /// <p>The user name of the user you want to describe.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
+    }
     /// Appends an item to `attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
@@ -136,6 +140,12 @@ impl UserTypeBuilder {
         self.attributes = input;
         self
     }
+    /// <p>A container with information about the user type attributes.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeType>> {
+        &self.attributes
+    }
     /// <p>The creation date of the user.</p>
     pub fn user_create_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.user_create_date = ::std::option::Option::Some(input);
@@ -148,6 +158,10 @@ impl UserTypeBuilder {
     ) -> Self {
         self.user_create_date = input;
         self
+    }
+    /// <p>The creation date of the user.</p>
+    pub fn get_user_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.user_create_date
     }
     /// <p>The last modified date of the user.</p>
     pub fn user_last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -162,6 +176,12 @@ impl UserTypeBuilder {
         self.user_last_modified_date = input;
         self
     }
+    /// <p>The last modified date of the user.</p>
+    pub fn get_user_last_modified_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.user_last_modified_date
+    }
     /// <p>Specifies whether the user is enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -171,6 +191,10 @@ impl UserTypeBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>Specifies whether the user is enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// <p>The user status. This can be one of the following:</p>
     /// <ul>
@@ -203,6 +227,19 @@ impl UserTypeBuilder {
         self.user_status = input;
         self
     }
+    /// <p>The user status. This can be one of the following:</p>
+    /// <ul>
+    /// <li> <p>UNCONFIRMED - User has been created but not confirmed.</p> </li>
+    /// <li> <p>CONFIRMED - User has been confirmed.</p> </li>
+    /// <li> <p>EXTERNAL_PROVIDER - User signed in with a third-party IdP.</p> </li>
+    /// <li> <p>ARCHIVED - User is no longer active.</p> </li>
+    /// <li> <p>UNKNOWN - User status isn't known.</p> </li>
+    /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p> </li>
+    /// <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else. </p> </li>
+    /// </ul>
+    pub fn get_user_status(&self) -> &::std::option::Option<crate::types::UserStatusType> {
+        &self.user_status
+    }
     /// Appends an item to `mfa_options`.
     ///
     /// To override the contents of this collection use [`set_mfa_options`](Self::set_mfa_options).
@@ -221,6 +258,12 @@ impl UserTypeBuilder {
     ) -> Self {
         self.mfa_options = input;
         self
+    }
+    /// <p>The MFA options for the user.</p>
+    pub fn get_mfa_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>> {
+        &self.mfa_options
     }
     /// Consumes the builder and constructs a [`UserType`](crate::types::UserType).
     pub fn build(self) -> crate::types::UserType {

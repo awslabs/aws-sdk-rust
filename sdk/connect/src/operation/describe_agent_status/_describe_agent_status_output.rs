@@ -51,6 +51,10 @@ impl DescribeAgentStatusOutputBuilder {
         self.agent_status = input;
         self
     }
+    /// <p>The agent status.</p>
+    pub fn get_agent_status(&self) -> &::std::option::Option<crate::types::AgentStatus> {
+        &self.agent_status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

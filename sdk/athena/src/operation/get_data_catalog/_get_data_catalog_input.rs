@@ -39,6 +39,10 @@ impl GetDataCatalogInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the data catalog to return.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`GetDataCatalogInput`](crate::operation::get_data_catalog::GetDataCatalogInput).
     pub fn build(
         self,

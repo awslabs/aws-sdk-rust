@@ -36,6 +36,10 @@ impl CreateJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateJob as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_job::builders::CreateJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl CreateJobFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>Definition of the Amazon Braket job to be created. Specifies the container image the job uses and information about the Python scripts used for entry and training.</p>
     pub fn algorithm_specification(mut self, input: crate::types::AlgorithmSpecification) -> Self {
         self.inner = self.inner.algorithm_specification(input);
@@ -130,6 +138,12 @@ impl CreateJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_algorithm_specification(input);
         self
+    }
+    /// <p>Definition of the Amazon Braket job to be created. Specifies the container image the job uses and information about the Python scripts used for entry and training.</p>
+    pub fn get_algorithm_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::AlgorithmSpecification> {
+        self.inner.get_algorithm_specification()
     }
     /// Appends an item to `inputDataConfig`.
     ///
@@ -148,6 +162,12 @@ impl CreateJobFluentBuilder {
         self.inner = self.inner.set_input_data_config(input);
         self
     }
+    /// <p>A list of parameters that specify the name and type of input data and where it is located.</p>
+    pub fn get_input_data_config(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputFileConfig>> {
+        self.inner.get_input_data_config()
+    }
     /// <p>The path to the S3 location where you want to store job artifacts and the encryption key used to store them.</p>
     pub fn output_data_config(mut self, input: crate::types::JobOutputDataConfig) -> Self {
         self.inner = self.inner.output_data_config(input);
@@ -160,6 +180,12 @@ impl CreateJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_output_data_config(input);
         self
+    }
+    /// <p>The path to the S3 location where you want to store job artifacts and the encryption key used to store them.</p>
+    pub fn get_output_data_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::JobOutputDataConfig> {
+        self.inner.get_output_data_config()
     }
     /// <p>Information about the output locations for job checkpoint data.</p>
     pub fn checkpoint_config(mut self, input: crate::types::JobCheckpointConfig) -> Self {
@@ -174,6 +200,12 @@ impl CreateJobFluentBuilder {
         self.inner = self.inner.set_checkpoint_config(input);
         self
     }
+    /// <p>Information about the output locations for job checkpoint data.</p>
+    pub fn get_checkpoint_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::JobCheckpointConfig> {
+        self.inner.get_checkpoint_config()
+    }
     /// <p>The name of the Amazon Braket job.</p>
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_name(input.into());
@@ -184,6 +216,10 @@ impl CreateJobFluentBuilder {
         self.inner = self.inner.set_job_name(input);
         self
     }
+    /// <p>The name of the Amazon Braket job.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_name()
+    }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the users' s3 buckets.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -193,6 +229,10 @@ impl CreateJobFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the users' s3 buckets.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// <p> The user-defined criteria that specifies when a job stops running.</p>
     pub fn stopping_condition(mut self, input: crate::types::JobStoppingCondition) -> Self {
@@ -207,6 +247,12 @@ impl CreateJobFluentBuilder {
         self.inner = self.inner.set_stopping_condition(input);
         self
     }
+    /// <p> The user-defined criteria that specifies when a job stops running.</p>
+    pub fn get_stopping_condition(
+        &self,
+    ) -> &::std::option::Option<crate::types::JobStoppingCondition> {
+        self.inner.get_stopping_condition()
+    }
     /// <p>Configuration of the resource instances to use while running the hybrid job on Amazon Braket.</p>
     pub fn instance_config(mut self, input: crate::types::InstanceConfig) -> Self {
         self.inner = self.inner.instance_config(input);
@@ -219,6 +265,10 @@ impl CreateJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_instance_config(input);
         self
+    }
+    /// <p>Configuration of the resource instances to use while running the hybrid job on Amazon Braket.</p>
+    pub fn get_instance_config(&self) -> &::std::option::Option<crate::types::InstanceConfig> {
+        self.inner.get_instance_config()
     }
     /// Adds a key-value pair to `hyperParameters`.
     ///
@@ -243,6 +293,14 @@ impl CreateJobFluentBuilder {
         self.inner = self.inner.set_hyper_parameters(input);
         self
     }
+    /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of the training job. The values are set with a string of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>
+    pub fn get_hyper_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_hyper_parameters()
+    }
     /// <p>The quantum processing unit (QPU) or simulator used to create an Amazon Braket job.</p>
     pub fn device_config(mut self, input: crate::types::DeviceConfig) -> Self {
         self.inner = self.inner.device_config(input);
@@ -255,6 +313,10 @@ impl CreateJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_device_config(input);
         self
+    }
+    /// <p>The quantum processing unit (QPU) or simulator used to create an Amazon Braket job.</p>
+    pub fn get_device_config(&self) -> &::std::option::Option<crate::types::DeviceConfig> {
+        self.inner.get_device_config()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -278,5 +340,13 @@ impl CreateJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

@@ -54,6 +54,10 @@ impl UpdateHostKeyOutputBuilder {
         self.server_id = input;
         self
     }
+    /// <p>Returns the server identifier for the server that contains the updated host key.</p>
+    pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_id
+    }
     /// <p>Returns the host key identifier for the updated host key.</p>
     pub fn host_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_key_id = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl UpdateHostKeyOutputBuilder {
     pub fn set_host_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.host_key_id = input;
         self
+    }
+    /// <p>Returns the host key identifier for the updated host key.</p>
+    pub fn get_host_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_key_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

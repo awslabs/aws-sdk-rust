@@ -64,6 +64,10 @@ impl LambdaFunctionConfigurationBuilder {
         self.id = input;
         self
     }
+    /// <p>An optional unique identifier for configurations in a notification configuration. If you don't provide one, Amazon S3 will assign an ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function that Amazon S3 invokes when the specified event type occurs.</p>
     pub fn lambda_function_arn(
         mut self,
@@ -79,6 +83,10 @@ impl LambdaFunctionConfigurationBuilder {
     ) -> Self {
         self.lambda_function_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function that Amazon S3 invokes when the specified event type occurs.</p>
+    pub fn get_lambda_function_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lambda_function_arn
     }
     /// Appends an item to `events`.
     ///
@@ -99,6 +107,10 @@ impl LambdaFunctionConfigurationBuilder {
         self.events = input;
         self
     }
+    /// <p>The Amazon S3 bucket event for which to invoke the Lambda function. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported Event Types</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Event>> {
+        &self.events
+    }
     /// <p>Specifies object key name filtering rules. For information about key name filtering, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/notification-how-to-filtering.html">Configuring event notifications using object key name filtering</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn filter(mut self, input: crate::types::NotificationConfigurationFilter) -> Self {
         self.filter = ::std::option::Option::Some(input);
@@ -111,6 +123,12 @@ impl LambdaFunctionConfigurationBuilder {
     ) -> Self {
         self.filter = input;
         self
+    }
+    /// <p>Specifies object key name filtering rules. For information about key name filtering, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/notification-how-to-filtering.html">Configuring event notifications using object key name filtering</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_filter(
+        &self,
+    ) -> &::std::option::Option<crate::types::NotificationConfigurationFilter> {
+        &self.filter
     }
     /// Consumes the builder and constructs a [`LambdaFunctionConfiguration`](crate::types::LambdaFunctionConfiguration).
     pub fn build(self) -> crate::types::LambdaFunctionConfiguration {

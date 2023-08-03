@@ -49,6 +49,12 @@ impl EnableTransitGatewayRouteTablePropagationOutputBuilder {
         self.propagation = input;
         self
     }
+    /// <p>Information about route propagation.</p>
+    pub fn get_propagation(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransitGatewayPropagation> {
+        &self.propagation
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

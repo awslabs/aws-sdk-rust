@@ -51,6 +51,10 @@ impl ImportGameConfigurationInputBuilder {
         self.game_name = input;
         self
     }
+    /// <p>The name of the game.</p>
+    pub fn get_game_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.game_name
+    }
     /// <p>The source used to import configuration sections.</p>
     pub fn import_source(mut self, input: crate::types::ImportGameConfigurationSource) -> Self {
         self.import_source = ::std::option::Option::Some(input);
@@ -63,6 +67,12 @@ impl ImportGameConfigurationInputBuilder {
     ) -> Self {
         self.import_source = input;
         self
+    }
+    /// <p>The source used to import configuration sections.</p>
+    pub fn get_import_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImportGameConfigurationSource> {
+        &self.import_source
     }
     /// Consumes the builder and constructs a [`ImportGameConfigurationInput`](crate::operation::import_game_configuration::ImportGameConfigurationInput).
     pub fn build(

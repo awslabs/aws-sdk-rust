@@ -152,6 +152,10 @@ impl AttachmentBuilder {
         self.core_network_id = input;
         self
     }
+    /// <p>The ID of a core network.</p>
+    pub fn get_core_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_network_id
+    }
     /// <p>The ARN of a core network.</p>
     pub fn core_network_arn(
         mut self,
@@ -167,6 +171,10 @@ impl AttachmentBuilder {
     ) -> Self {
         self.core_network_arn = input;
         self
+    }
+    /// <p>The ARN of a core network.</p>
+    pub fn get_core_network_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_network_arn
     }
     /// <p>The ID of the attachment.</p>
     pub fn attachment_id(
@@ -184,6 +192,10 @@ impl AttachmentBuilder {
         self.attachment_id = input;
         self
     }
+    /// <p>The ID of the attachment.</p>
+    pub fn get_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attachment_id
+    }
     /// <p>The ID of the attachment account owner.</p>
     pub fn owner_account_id(
         mut self,
@@ -200,6 +212,10 @@ impl AttachmentBuilder {
         self.owner_account_id = input;
         self
     }
+    /// <p>The ID of the attachment account owner.</p>
+    pub fn get_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_account_id
+    }
     /// <p>The type of attachment.</p>
     pub fn attachment_type(mut self, input: crate::types::AttachmentType) -> Self {
         self.attachment_type = ::std::option::Option::Some(input);
@@ -213,6 +229,10 @@ impl AttachmentBuilder {
         self.attachment_type = input;
         self
     }
+    /// <p>The type of attachment.</p>
+    pub fn get_attachment_type(&self) -> &::std::option::Option<crate::types::AttachmentType> {
+        &self.attachment_type
+    }
     /// <p>The state of the attachment.</p>
     pub fn state(mut self, input: crate::types::AttachmentState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -225,6 +245,10 @@ impl AttachmentBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the attachment.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::AttachmentState> {
+        &self.state
     }
     /// <p>The Region where the edge is located.</p>
     pub fn edge_location(
@@ -242,6 +266,10 @@ impl AttachmentBuilder {
         self.edge_location = input;
         self
     }
+    /// <p>The Region where the edge is located.</p>
+    pub fn get_edge_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.edge_location
+    }
     /// <p>The attachment resource ARN.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -251,6 +279,10 @@ impl AttachmentBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p>The attachment resource ARN.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// <p>The policy rule number associated with the attachment.</p>
     pub fn attachment_policy_rule_number(mut self, input: i32) -> Self {
@@ -262,6 +294,10 @@ impl AttachmentBuilder {
         self.attachment_policy_rule_number = input;
         self
     }
+    /// <p>The policy rule number associated with the attachment.</p>
+    pub fn get_attachment_policy_rule_number(&self) -> &::std::option::Option<i32> {
+        &self.attachment_policy_rule_number
+    }
     /// <p>The name of the segment attachment.</p>
     pub fn segment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.segment_name = ::std::option::Option::Some(input.into());
@@ -271,6 +307,10 @@ impl AttachmentBuilder {
     pub fn set_segment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.segment_name = input;
         self
+    }
+    /// <p>The name of the segment attachment.</p>
+    pub fn get_segment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.segment_name
     }
     /// Appends an item to `tags`.
     ///
@@ -291,6 +331,10 @@ impl AttachmentBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags associated with the attachment.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The attachment to move from one segment to another.</p>
     pub fn proposed_segment_change(mut self, input: crate::types::ProposedSegmentChange) -> Self {
         self.proposed_segment_change = ::std::option::Option::Some(input);
@@ -303,6 +347,12 @@ impl AttachmentBuilder {
     ) -> Self {
         self.proposed_segment_change = input;
         self
+    }
+    /// <p>The attachment to move from one segment to another.</p>
+    pub fn get_proposed_segment_change(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProposedSegmentChange> {
+        &self.proposed_segment_change
     }
     /// <p>The timestamp when the attachment was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -317,6 +367,10 @@ impl AttachmentBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The timestamp when the attachment was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The timestamp when the attachment was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -329,6 +383,10 @@ impl AttachmentBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// <p>The timestamp when the attachment was last updated.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     /// Consumes the builder and constructs a [`Attachment`](crate::types::Attachment).
     pub fn build(self) -> crate::types::Attachment {

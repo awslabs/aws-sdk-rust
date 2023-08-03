@@ -48,6 +48,10 @@ impl ResourceSpecificationBuilder {
         self.reserved_bitrate = input;
         self
     }
+    /// The amount of outbound bandwidth that is discounted in the offering.
+    pub fn get_reserved_bitrate(&self) -> &::std::option::Option<i32> {
+        &self.reserved_bitrate
+    }
     /// The type of resource and the unit that is being billed for.
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl ResourceSpecificationBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// The type of resource and the unit that is being billed for.
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
     }
     /// Consumes the builder and constructs a [`ResourceSpecification`](crate::types::ResourceSpecification).
     pub fn build(self) -> crate::types::ResourceSpecification {

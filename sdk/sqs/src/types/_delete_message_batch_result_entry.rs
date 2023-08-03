@@ -40,6 +40,10 @@ impl DeleteMessageBatchResultEntryBuilder {
         self.id = input;
         self
     }
+    /// <p>Represents a successfully deleted message.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`DeleteMessageBatchResultEntry`](crate::types::DeleteMessageBatchResultEntry).
     pub fn build(self) -> crate::types::DeleteMessageBatchResultEntry {
         crate::types::DeleteMessageBatchResultEntry { id: self.id }

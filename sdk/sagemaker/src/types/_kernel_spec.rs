@@ -48,6 +48,10 @@ impl KernelSpecBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the Jupyter kernel in the image. This value is case sensitive.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The display name of the kernel.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl KernelSpecBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
+    }
+    /// <p>The display name of the kernel.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// Consumes the builder and constructs a [`KernelSpec`](crate::types::KernelSpec).
     pub fn build(self) -> crate::types::KernelSpec {

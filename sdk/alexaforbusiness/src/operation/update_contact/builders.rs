@@ -37,6 +37,12 @@ impl UpdateContactFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateContact as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_contact::builders::UpdateContactInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +125,10 @@ impl UpdateContactFluentBuilder {
         self.inner = self.inner.set_contact_arn(input);
         self
     }
+    /// <p>The ARN of the contact to update.</p>
+    pub fn get_contact_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_contact_arn()
+    }
     /// <p>The updated display name of the contact.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
@@ -128,6 +138,10 @@ impl UpdateContactFluentBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_display_name(input);
         self
+    }
+    /// <p>The updated display name of the contact.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_display_name()
     }
     /// <p>The updated first name of the contact.</p>
     pub fn first_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -139,6 +153,10 @@ impl UpdateContactFluentBuilder {
         self.inner = self.inner.set_first_name(input);
         self
     }
+    /// <p>The updated first name of the contact.</p>
+    pub fn get_first_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_first_name()
+    }
     /// <p>The updated last name of the contact.</p>
     pub fn last_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.last_name(input.into());
@@ -149,6 +167,10 @@ impl UpdateContactFluentBuilder {
         self.inner = self.inner.set_last_name(input);
         self
     }
+    /// <p>The updated last name of the contact.</p>
+    pub fn get_last_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_last_name()
+    }
     /// <p>The updated phone number of the contact. The phone number type defaults to WORK. You can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
     pub fn phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.phone_number(input.into());
@@ -158,6 +180,10 @@ impl UpdateContactFluentBuilder {
     pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_phone_number(input);
         self
+    }
+    /// <p>The updated phone number of the contact. The phone number type defaults to WORK. You can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
+    pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_phone_number()
     }
     /// Appends an item to `PhoneNumbers`.
     ///
@@ -176,6 +202,12 @@ impl UpdateContactFluentBuilder {
         self.inner = self.inner.set_phone_numbers(input);
         self
     }
+    /// <p>The list of phone numbers for the contact.</p>
+    pub fn get_phone_numbers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>> {
+        self.inner.get_phone_numbers()
+    }
     /// Appends an item to `SipAddresses`.
     ///
     /// To override the contents of this collection use [`set_sip_addresses`](Self::set_sip_addresses).
@@ -192,5 +224,11 @@ impl UpdateContactFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sip_addresses(input);
         self
+    }
+    /// <p>The list of SIP addresses for the contact.</p>
+    pub fn get_sip_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SipAddress>> {
+        self.inner.get_sip_addresses()
     }
 }

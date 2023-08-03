@@ -43,6 +43,10 @@ impl AccountSettingsDetailBuilder {
         self.capacity_limits = input;
         self
     }
+    /// <p>The maximum capacity limits for all OpenSearch Serverless collections, in OpenSearch Compute Units (OCUs). These limits are used to scale your collections based on the current workload. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-scaling.html">Managing capacity limits for Amazon OpenSearch Serverless</a>.</p>
+    pub fn get_capacity_limits(&self) -> &::std::option::Option<crate::types::CapacityLimits> {
+        &self.capacity_limits
+    }
     /// Consumes the builder and constructs a [`AccountSettingsDetail`](crate::types::AccountSettingsDetail).
     pub fn build(self) -> crate::types::AccountSettingsDetail {
         crate::types::AccountSettingsDetail {

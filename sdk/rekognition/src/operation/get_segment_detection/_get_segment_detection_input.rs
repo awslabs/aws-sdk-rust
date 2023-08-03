@@ -57,6 +57,10 @@ impl GetSegmentDetectionInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>Job identifier for the text detection operation for which you want results returned. You get the job identifer from an initial call to <code>StartSegmentDetection</code>.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -67,6 +71,10 @@ impl GetSegmentDetectionInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of text.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -76,6 +84,10 @@ impl GetSegmentDetectionInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of text.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`GetSegmentDetectionInput`](crate::operation::get_segment_detection::GetSegmentDetectionInput).
     pub fn build(

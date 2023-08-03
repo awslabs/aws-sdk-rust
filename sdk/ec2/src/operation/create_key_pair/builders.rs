@@ -39,6 +39,12 @@ impl CreateKeyPairFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateKeyPair as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_key_pair::builders::CreateKeyPairInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -123,6 +129,11 @@ impl CreateKeyPairFluentBuilder {
         self.inner = self.inner.set_key_name(input);
         self
     }
+    /// <p>A unique name for the key pair.</p>
+    /// <p>Constraints: Up to 255 ASCII characters</p>
+    pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key_name()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -132,6 +143,10 @@ impl CreateKeyPairFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
     /// <p>The type of key pair. Note that ED25519 keys are not supported for Windows instances.</p>
     /// <p>Default: <code>rsa</code> </p>
@@ -144,6 +159,11 @@ impl CreateKeyPairFluentBuilder {
     pub fn set_key_type(mut self, input: ::std::option::Option<crate::types::KeyType>) -> Self {
         self.inner = self.inner.set_key_type(input);
         self
+    }
+    /// <p>The type of key pair. Note that ED25519 keys are not supported for Windows instances.</p>
+    /// <p>Default: <code>rsa</code> </p>
+    pub fn get_key_type(&self) -> &::std::option::Option<crate::types::KeyType> {
+        self.inner.get_key_type()
     }
     /// Appends an item to `TagSpecifications`.
     ///
@@ -162,6 +182,12 @@ impl CreateKeyPairFluentBuilder {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
+    /// <p>The tags to apply to the new key pair.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        self.inner.get_tag_specifications()
+    }
     /// <p>The format of the key pair.</p>
     /// <p>Default: <code>pem</code> </p>
     pub fn key_format(mut self, input: crate::types::KeyFormat) -> Self {
@@ -173,5 +199,10 @@ impl CreateKeyPairFluentBuilder {
     pub fn set_key_format(mut self, input: ::std::option::Option<crate::types::KeyFormat>) -> Self {
         self.inner = self.inner.set_key_format(input);
         self
+    }
+    /// <p>The format of the key pair.</p>
+    /// <p>Default: <code>pem</code> </p>
+    pub fn get_key_format(&self) -> &::std::option::Option<crate::types::KeyFormat> {
+        self.inner.get_key_format()
     }
 }

@@ -42,6 +42,12 @@ impl DescribeServicesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeServices as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_services::builders::DescribeServicesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -142,6 +148,12 @@ impl DescribeServicesFluentBuilder {
         self.inner = self.inner.set_service_code_list(input);
         self
     }
+    /// <p>A JSON-formatted list of service codes available for Amazon Web Services services.</p>
+    pub fn get_service_code_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_service_code_list()
+    }
     /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub fn language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.language(input.into());
@@ -151,5 +163,9 @@ impl DescribeServicesFluentBuilder {
     pub fn set_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_language(input);
         self
+    }
+    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
+    pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_language()
     }
 }

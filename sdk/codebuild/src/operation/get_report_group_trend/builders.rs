@@ -36,6 +36,12 @@ impl GetReportGroupTrendFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetReportGroupTrend as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_report_group_trend::builders::GetReportGroupTrendInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl GetReportGroupTrendFluentBuilder {
         self.inner = self.inner.set_report_group_arn(input);
         self
     }
+    /// <p>The ARN of the report group that contains the reports to analyze.</p>
+    pub fn get_report_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_report_group_arn()
+    }
     /// <p>The number of reports to analyze. This operation always retrieves the most recent reports.</p>
     /// <p>If this parameter is omitted, the most recent 100 reports are analyzed.</p>
     pub fn num_of_reports(mut self, input: i32) -> Self {
@@ -143,6 +153,11 @@ impl GetReportGroupTrendFluentBuilder {
     pub fn set_num_of_reports(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_num_of_reports(input);
         self
+    }
+    /// <p>The number of reports to analyze. This operation always retrieves the most recent reports.</p>
+    /// <p>If this parameter is omitted, the most recent 100 reports are analyzed.</p>
+    pub fn get_num_of_reports(&self) -> &::std::option::Option<i32> {
+        self.inner.get_num_of_reports()
     }
     /// <p>The test report value to accumulate. This must be one of the following values:</p>
     /// <dl>
@@ -300,5 +315,83 @@ impl GetReportGroupTrendFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_trend_field(input);
         self
+    }
+    /// <p>The test report value to accumulate. This must be one of the following values:</p>
+    /// <dl>
+    /// <dt>
+    /// Test reports:
+    /// </dt>
+    /// <dd>
+    /// <dl>
+    /// <dt>
+    /// DURATION
+    /// </dt>
+    /// <dd>
+    /// <p>Accumulate the test run times for the specified reports.</p>
+    /// </dd>
+    /// <dt>
+    /// PASS_RATE
+    /// </dt>
+    /// <dd>
+    /// <p>Accumulate the percentage of tests that passed for the specified test reports.</p>
+    /// </dd>
+    /// <dt>
+    /// TOTAL
+    /// </dt>
+    /// <dd>
+    /// <p>Accumulate the total number of tests for the specified test reports.</p>
+    /// </dd>
+    /// </dl>
+    /// </dd>
+    /// </dl>
+    /// <dl>
+    /// <dt>
+    /// Code coverage reports:
+    /// </dt>
+    /// <dd>
+    /// <dl>
+    /// <dt>
+    /// BRANCH_COVERAGE
+    /// </dt>
+    /// <dd>
+    /// <p>Accumulate the branch coverage percentages for the specified test reports.</p>
+    /// </dd>
+    /// <dt>
+    /// BRANCHES_COVERED
+    /// </dt>
+    /// <dd>
+    /// <p>Accumulate the branches covered values for the specified test reports.</p>
+    /// </dd>
+    /// <dt>
+    /// BRANCHES_MISSED
+    /// </dt>
+    /// <dd>
+    /// <p>Accumulate the branches missed values for the specified test reports.</p>
+    /// </dd>
+    /// <dt>
+    /// LINE_COVERAGE
+    /// </dt>
+    /// <dd>
+    /// <p>Accumulate the line coverage percentages for the specified test reports.</p>
+    /// </dd>
+    /// <dt>
+    /// LINES_COVERED
+    /// </dt>
+    /// <dd>
+    /// <p>Accumulate the lines covered values for the specified test reports.</p>
+    /// </dd>
+    /// <dt>
+    /// LINES_MISSED
+    /// </dt>
+    /// <dd>
+    /// <p>Accumulate the lines not covered values for the specified test reports.</p>
+    /// </dd>
+    /// </dl>
+    /// </dd>
+    /// </dl>
+    pub fn get_trend_field(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReportGroupTrendFieldType> {
+        self.inner.get_trend_field()
     }
 }

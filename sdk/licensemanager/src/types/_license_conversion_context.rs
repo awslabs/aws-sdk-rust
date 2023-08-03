@@ -46,6 +46,10 @@ impl LicenseConversionContextBuilder {
         self.usage_operation = input;
         self
     }
+    /// <p>The Usage operation value that corresponds to the license type you are converting your resource from. For more information about which platforms correspond to which usage operation values see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html#billing-info">Sample data: usage operation by platform </a> </p>
+    pub fn get_usage_operation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.usage_operation
+    }
     /// Consumes the builder and constructs a [`LicenseConversionContext`](crate::types::LicenseConversionContext).
     pub fn build(self) -> crate::types::LicenseConversionContext {
         crate::types::LicenseConversionContext {

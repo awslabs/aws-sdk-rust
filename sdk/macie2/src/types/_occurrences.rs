@@ -91,6 +91,11 @@ impl OccurrencesBuilder {
         self.cells = input;
         self
     }
+    /// <p>An array of objects, one for each occurrence of sensitive data in a Microsoft Excel workbook, CSV file, or TSV file. This value is null for all other types of files.</p>
+    /// <p>Each Cell object specifies a cell or field that contains the sensitive data.</p>
+    pub fn get_cells(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Cell>> {
+        &self.cells
+    }
     /// Appends an item to `line_ranges`.
     ///
     /// To override the contents of this collection use [`set_line_ranges`](Self::set_line_ranges).
@@ -112,6 +117,11 @@ impl OccurrencesBuilder {
         self.line_ranges = input;
         self
     }
+    /// <p>An array of objects, one for each occurrence of sensitive data in an email message or a non-binary text file such as an HTML, TXT, or XML file. Each Range object specifies a line or inclusive range of lines that contains the sensitive data, and the position of the data on the specified line or lines.</p>
+    /// <p>This value is often null for file types that are supported by Cell, Page, or Record objects. Exceptions are the location of sensitive data in: unstructured sections of an otherwise structured file, such as a comment in a file; a malformed file that Amazon Macie analyzes as plain text; and, a CSV or TSV file that has any column names that contain sensitive data.</p>
+    pub fn get_line_ranges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Range>> {
+        &self.line_ranges
+    }
     /// Appends an item to `offset_ranges`.
     ///
     /// To override the contents of this collection use [`set_offset_ranges`](Self::set_offset_ranges).
@@ -130,6 +140,12 @@ impl OccurrencesBuilder {
     ) -> Self {
         self.offset_ranges = input;
         self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_offset_ranges(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Range>> {
+        &self.offset_ranges
     }
     /// Appends an item to `pages`.
     ///
@@ -152,6 +168,11 @@ impl OccurrencesBuilder {
         self.pages = input;
         self
     }
+    /// <p>An array of objects, one for each occurrence of sensitive data in an Adobe Portable Document Format file. This value is null for all other types of files.</p>
+    /// <p>Each Page object specifies a page that contains the sensitive data.</p>
+    pub fn get_pages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Page>> {
+        &self.pages
+    }
     /// Appends an item to `records`.
     ///
     /// To override the contents of this collection use [`set_records`](Self::set_records).
@@ -172,6 +193,11 @@ impl OccurrencesBuilder {
     ) -> Self {
         self.records = input;
         self
+    }
+    /// <p>An array of objects, one for each occurrence of sensitive data in an Apache Avro object container, Apache Parquet file, JSON file, or JSON Lines file. This value is null for all other types of files.</p>
+    /// <p>For an Avro object container or Parquet file, each Record object specifies a record index and the path to a field in a record that contains the sensitive data. For a JSON or JSON Lines file, each Record object specifies the path to a field or array that contains the sensitive data. For a JSON Lines file, it also specifies the index of the line that contains the data.</p>
+    pub fn get_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Record>> {
+        &self.records
     }
     /// Consumes the builder and constructs a [`Occurrences`](crate::types::Occurrences).
     pub fn build(self) -> crate::types::Occurrences {

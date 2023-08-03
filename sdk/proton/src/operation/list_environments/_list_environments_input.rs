@@ -60,6 +60,10 @@ impl ListEnvironmentsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token that indicates the location of the next environment in the array of environments, after the list of environments that was previously requested.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of environments to list.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl ListEnvironmentsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of environments to list.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Appends an item to `environment_templates`.
     ///
@@ -88,6 +96,12 @@ impl ListEnvironmentsInputBuilder {
     ) -> Self {
         self.environment_templates = input;
         self
+    }
+    /// <p>An array of the versions of the environment template.</p>
+    pub fn get_environment_templates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentTemplateFilter>> {
+        &self.environment_templates
     }
     /// Consumes the builder and constructs a [`ListEnvironmentsInput`](crate::operation::list_environments::ListEnvironmentsInput).
     pub fn build(

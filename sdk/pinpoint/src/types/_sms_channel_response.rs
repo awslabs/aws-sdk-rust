@@ -150,6 +150,10 @@ impl SmsChannelResponseBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The unique identifier for the application that the SMS channel applies to.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The date and time, in ISO 8601 format, when the SMS channel was enabled.</p>
     pub fn creation_date(
         mut self,
@@ -166,6 +170,10 @@ impl SmsChannelResponseBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>The date and time, in ISO 8601 format, when the SMS channel was enabled.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_date
+    }
     /// <p>Specifies whether the SMS channel is enabled for the application.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -175,6 +183,10 @@ impl SmsChannelResponseBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>Specifies whether the SMS channel is enabled for the application.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// <p>(Not used) This property is retained only for backward compatibility.</p>
     pub fn has_credential(mut self, input: bool) -> Self {
@@ -186,6 +198,10 @@ impl SmsChannelResponseBuilder {
         self.has_credential = input;
         self
     }
+    /// <p>(Not used) This property is retained only for backward compatibility.</p>
+    pub fn get_has_credential(&self) -> &::std::option::Option<bool> {
+        &self.has_credential
+    }
     /// <p>(Deprecated) An identifier for the SMS channel. This property is retained only for backward compatibility.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -196,6 +212,10 @@ impl SmsChannelResponseBuilder {
         self.id = input;
         self
     }
+    /// <p>(Deprecated) An identifier for the SMS channel. This property is retained only for backward compatibility.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>Specifies whether the SMS channel is archived.</p>
     pub fn is_archived(mut self, input: bool) -> Self {
         self.is_archived = ::std::option::Option::Some(input);
@@ -205,6 +225,10 @@ impl SmsChannelResponseBuilder {
     pub fn set_is_archived(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_archived = input;
         self
+    }
+    /// <p>Specifies whether the SMS channel is archived.</p>
+    pub fn get_is_archived(&self) -> &::std::option::Option<bool> {
+        &self.is_archived
     }
     /// <p>The user who last modified the SMS channel.</p>
     pub fn last_modified_by(
@@ -222,6 +246,10 @@ impl SmsChannelResponseBuilder {
         self.last_modified_by = input;
         self
     }
+    /// <p>The user who last modified the SMS channel.</p>
+    pub fn get_last_modified_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_by
+    }
     /// <p>The date and time, in ISO 8601 format, when the SMS channel was last modified.</p>
     pub fn last_modified_date(
         mut self,
@@ -238,6 +266,10 @@ impl SmsChannelResponseBuilder {
         self.last_modified_date = input;
         self
     }
+    /// <p>The date and time, in ISO 8601 format, when the SMS channel was last modified.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_date
+    }
     /// <p>The type of messaging or notification platform for the channel. For the SMS channel, this value is SMS.</p>
     pub fn platform(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform = ::std::option::Option::Some(input.into());
@@ -247,6 +279,10 @@ impl SmsChannelResponseBuilder {
     pub fn set_platform(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform = input;
         self
+    }
+    /// <p>The type of messaging or notification platform for the channel. For the SMS channel, this value is SMS.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform
     }
     /// <p>The maximum number of promotional messages that you can send through the SMS channel each second.</p>
     pub fn promotional_messages_per_second(mut self, input: i32) -> Self {
@@ -261,6 +297,10 @@ impl SmsChannelResponseBuilder {
         self.promotional_messages_per_second = input;
         self
     }
+    /// <p>The maximum number of promotional messages that you can send through the SMS channel each second.</p>
+    pub fn get_promotional_messages_per_second(&self) -> &::std::option::Option<i32> {
+        &self.promotional_messages_per_second
+    }
     /// <p>The identity that displays on recipients' devices when they receive messages from the SMS channel.</p>
     pub fn sender_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sender_id = ::std::option::Option::Some(input.into());
@@ -271,6 +311,10 @@ impl SmsChannelResponseBuilder {
         self.sender_id = input;
         self
     }
+    /// <p>The identity that displays on recipients' devices when they receive messages from the SMS channel.</p>
+    pub fn get_sender_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sender_id
+    }
     /// <p>The registered short code to use when you send messages through the SMS channel.</p>
     pub fn short_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.short_code = ::std::option::Option::Some(input.into());
@@ -280,6 +324,10 @@ impl SmsChannelResponseBuilder {
     pub fn set_short_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.short_code = input;
         self
+    }
+    /// <p>The registered short code to use when you send messages through the SMS channel.</p>
+    pub fn get_short_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.short_code
     }
     /// <p>The maximum number of transactional messages that you can send through the SMS channel each second.</p>
     pub fn transactional_messages_per_second(mut self, input: i32) -> Self {
@@ -294,6 +342,10 @@ impl SmsChannelResponseBuilder {
         self.transactional_messages_per_second = input;
         self
     }
+    /// <p>The maximum number of transactional messages that you can send through the SMS channel each second.</p>
+    pub fn get_transactional_messages_per_second(&self) -> &::std::option::Option<i32> {
+        &self.transactional_messages_per_second
+    }
     /// <p>The current version of the SMS channel.</p>
     pub fn version(mut self, input: i32) -> Self {
         self.version = ::std::option::Option::Some(input);
@@ -303,6 +355,10 @@ impl SmsChannelResponseBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The current version of the SMS channel.</p>
+    pub fn get_version(&self) -> &::std::option::Option<i32> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`SmsChannelResponse`](crate::types::SmsChannelResponse).
     pub fn build(self) -> crate::types::SmsChannelResponse {

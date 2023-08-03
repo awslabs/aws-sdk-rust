@@ -104,6 +104,10 @@ impl DomainDescriptionBuilder {
         self.name = input;
         self
     }
+    /// <p> The name of the domain. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p> The Amazon Web Services account ID that owns the domain. </p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner = ::std::option::Option::Some(input.into());
@@ -113,6 +117,10 @@ impl DomainDescriptionBuilder {
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner = input;
         self
+    }
+    /// <p> The Amazon Web Services account ID that owns the domain. </p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
     }
     /// <p> The Amazon Resource Name (ARN) of the domain. </p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -124,6 +132,10 @@ impl DomainDescriptionBuilder {
         self.arn = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) of the domain. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p> The current status of a domain. </p>
     pub fn status(mut self, input: crate::types::DomainStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -133,6 +145,10 @@ impl DomainDescriptionBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DomainStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p> The current status of a domain. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DomainStatus> {
+        &self.status
     }
     /// <p> A timestamp that represents the date and time the domain was created. </p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -146,6 +162,10 @@ impl DomainDescriptionBuilder {
     ) -> Self {
         self.created_time = input;
         self
+    }
+    /// <p> A timestamp that represents the date and time the domain was created. </p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
     }
     /// <p> The ARN of an Key Management Service (KMS) key associated with a domain. </p>
     pub fn encryption_key(
@@ -163,6 +183,10 @@ impl DomainDescriptionBuilder {
         self.encryption_key = input;
         self
     }
+    /// <p> The ARN of an Key Management Service (KMS) key associated with a domain. </p>
+    pub fn get_encryption_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encryption_key
+    }
     /// <p> The number of repositories in the domain. </p>
     pub fn repository_count(mut self, input: i32) -> Self {
         self.repository_count = ::std::option::Option::Some(input);
@@ -173,6 +197,10 @@ impl DomainDescriptionBuilder {
         self.repository_count = input;
         self
     }
+    /// <p> The number of repositories in the domain. </p>
+    pub fn get_repository_count(&self) -> &::std::option::Option<i32> {
+        &self.repository_count
+    }
     /// <p> The total size of all assets in the domain. </p>
     pub fn asset_size_bytes(mut self, input: i64) -> Self {
         self.asset_size_bytes = ::std::option::Option::Some(input);
@@ -182,6 +210,10 @@ impl DomainDescriptionBuilder {
     pub fn set_asset_size_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.asset_size_bytes = input;
         self
+    }
+    /// <p> The total size of all assets in the domain. </p>
+    pub fn get_asset_size_bytes(&self) -> &::std::option::Option<i64> {
+        &self.asset_size_bytes
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket that is used to store package assets in the domain.</p>
     pub fn s3_bucket_arn(
@@ -198,6 +230,10 @@ impl DomainDescriptionBuilder {
     ) -> Self {
         self.s3_bucket_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket that is used to store package assets in the domain.</p>
+    pub fn get_s3_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_arn
     }
     /// Consumes the builder and constructs a [`DomainDescription`](crate::types::DomainDescription).
     pub fn build(self) -> crate::types::DomainDescription {

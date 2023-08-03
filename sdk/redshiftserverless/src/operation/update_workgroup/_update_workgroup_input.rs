@@ -102,6 +102,10 @@ impl UpdateWorkgroupInputBuilder {
         self.workgroup_name = input;
         self
     }
+    /// <p>The name of the workgroup to update. You can't update the name of a workgroup once it is created.</p>
+    pub fn get_workgroup_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workgroup_name
+    }
     /// <p>The new base data warehouse capacity in Redshift Processing Units (RPUs).</p>
     pub fn base_capacity(mut self, input: i32) -> Self {
         self.base_capacity = ::std::option::Option::Some(input);
@@ -112,6 +116,10 @@ impl UpdateWorkgroupInputBuilder {
         self.base_capacity = input;
         self
     }
+    /// <p>The new base data warehouse capacity in Redshift Processing Units (RPUs).</p>
+    pub fn get_base_capacity(&self) -> &::std::option::Option<i32> {
+        &self.base_capacity
+    }
     /// <p>The value that specifies whether to turn on enhanced virtual private cloud (VPC) routing, which forces Amazon Redshift Serverless to route traffic through your VPC.</p>
     pub fn enhanced_vpc_routing(mut self, input: bool) -> Self {
         self.enhanced_vpc_routing = ::std::option::Option::Some(input);
@@ -121,6 +129,10 @@ impl UpdateWorkgroupInputBuilder {
     pub fn set_enhanced_vpc_routing(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enhanced_vpc_routing = input;
         self
+    }
+    /// <p>The value that specifies whether to turn on enhanced virtual private cloud (VPC) routing, which forces Amazon Redshift Serverless to route traffic through your VPC.</p>
+    pub fn get_enhanced_vpc_routing(&self) -> &::std::option::Option<bool> {
+        &self.enhanced_vpc_routing
     }
     /// Appends an item to `config_parameters`.
     ///
@@ -141,6 +153,12 @@ impl UpdateWorkgroupInputBuilder {
         self.config_parameters = input;
         self
     }
+    /// <p>An array of parameters to set for advanced control over a database. The options are <code>auto_mv</code>, <code>datestyle</code>, <code>enable_case_sensitivity_identifier</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, <code>search_path</code>, and query monitoring metrics that let you define performance boundaries. For more information about query monitoring rules and available metrics, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless"> Query monitoring metrics for Amazon Redshift Serverless</a>.</p>
+    pub fn get_config_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigParameter>> {
+        &self.config_parameters
+    }
     /// <p>A value that specifies whether the workgroup can be accessible from a public network.</p>
     pub fn publicly_accessible(mut self, input: bool) -> Self {
         self.publicly_accessible = ::std::option::Option::Some(input);
@@ -150,6 +168,10 @@ impl UpdateWorkgroupInputBuilder {
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
         self.publicly_accessible = input;
         self
+    }
+    /// <p>A value that specifies whether the workgroup can be accessible from a public network.</p>
+    pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
+        &self.publicly_accessible
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -169,6 +191,10 @@ impl UpdateWorkgroupInputBuilder {
     ) -> Self {
         self.subnet_ids = input;
         self
+    }
+    /// <p>An array of VPC subnet IDs to associate with the workgroup.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
     }
     /// Appends an item to `security_group_ids`.
     ///
@@ -192,6 +218,12 @@ impl UpdateWorkgroupInputBuilder {
         self.security_group_ids = input;
         self
     }
+    /// <p>An array of security group IDs to associate with the workgroup.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
+    }
     /// <p>The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -201,6 +233,10 @@ impl UpdateWorkgroupInputBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
+    }
+    /// <p>The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// Consumes the builder and constructs a [`UpdateWorkgroupInput`](crate::operation::update_workgroup::UpdateWorkgroupInput).
     pub fn build(

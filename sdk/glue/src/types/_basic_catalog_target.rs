@@ -64,6 +64,10 @@ impl BasicCatalogTargetBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of your data target.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `inputs`.
     ///
     /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
@@ -83,6 +87,10 @@ impl BasicCatalogTargetBuilder {
         self.inputs = input;
         self
     }
+    /// <p>The nodes that are inputs to the data target.</p>
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inputs
+    }
     /// <p>The database that contains the table you want to use as the target. This database must already exist in the Data Catalog.</p>
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
@@ -93,6 +101,10 @@ impl BasicCatalogTargetBuilder {
         self.database = input;
         self
     }
+    /// <p>The database that contains the table you want to use as the target. This database must already exist in the Data Catalog.</p>
+    pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database
+    }
     /// <p>The table that defines the schema of your output data. This table must already exist in the Data Catalog.</p>
     pub fn table(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table = ::std::option::Option::Some(input.into());
@@ -102,6 +114,10 @@ impl BasicCatalogTargetBuilder {
     pub fn set_table(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table = input;
         self
+    }
+    /// <p>The table that defines the schema of your output data. This table must already exist in the Data Catalog.</p>
+    pub fn get_table(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table
     }
     /// Consumes the builder and constructs a [`BasicCatalogTarget`](crate::types::BasicCatalogTarget).
     pub fn build(self) -> crate::types::BasicCatalogTarget {

@@ -36,6 +36,10 @@ impl CreateSipMediaApplicationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSipMediaApplication as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_sip_media_application::builders::CreateSipMediaApplicationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl CreateSipMediaApplicationFluentBuilder {
         self.inner = self.inner.set_aws_region(input);
         self
     }
+    /// <p>The AWS Region assigned to the SIP media application.</p>
+    pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_region()
+    }
     /// <p>The SIP media application's name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -135,6 +143,10 @@ impl CreateSipMediaApplicationFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The SIP media application's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// Appends an item to `Endpoints`.
     ///
@@ -153,6 +165,12 @@ impl CreateSipMediaApplicationFluentBuilder {
         self.inner = self.inner.set_endpoints(input);
         self
     }
+    /// <p>List of endpoints (Lambda ARNs) specified for the SIP media application.</p>
+    pub fn get_endpoints(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplicationEndpoint>> {
+        self.inner.get_endpoints()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -169,5 +187,9 @@ impl CreateSipMediaApplicationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags assigned to the SIP media application.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

@@ -49,6 +49,10 @@ impl UpdatePullRequestApprovalRuleContentOutputBuilder {
         self.approval_rule = input;
         self
     }
+    /// <p>Information about the updated approval rule.</p>
+    pub fn get_approval_rule(&self) -> &::std::option::Option<crate::types::ApprovalRule> {
+        &self.approval_rule
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

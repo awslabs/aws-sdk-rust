@@ -50,6 +50,12 @@ impl AwsS3BucketNotificationConfigurationFilterBuilder {
         self.s3_key_filter = input;
         self
     }
+    /// <p>Details for an Amazon S3 filter.</p>
+    pub fn get_s3_key_filter(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsS3BucketNotificationConfigurationS3KeyFilter> {
+        &self.s3_key_filter
+    }
     /// Consumes the builder and constructs a [`AwsS3BucketNotificationConfigurationFilter`](crate::types::AwsS3BucketNotificationConfigurationFilter).
     pub fn build(self) -> crate::types::AwsS3BucketNotificationConfigurationFilter {
         crate::types::AwsS3BucketNotificationConfigurationFilter {

@@ -80,6 +80,10 @@ impl CreateUserInputBuilder {
         self.broker_id = input;
         self
     }
+    /// <p>The unique ID that Amazon MQ generates for the broker.</p>
+    pub fn get_broker_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.broker_id
+    }
     /// <p>Enables access to the ActiveMQ Web Console for the ActiveMQ user.</p>
     pub fn console_access(mut self, input: bool) -> Self {
         self.console_access = ::std::option::Option::Some(input);
@@ -89,6 +93,10 @@ impl CreateUserInputBuilder {
     pub fn set_console_access(mut self, input: ::std::option::Option<bool>) -> Self {
         self.console_access = input;
         self
+    }
+    /// <p>Enables access to the ActiveMQ Web Console for the ActiveMQ user.</p>
+    pub fn get_console_access(&self) -> &::std::option::Option<bool> {
+        &self.console_access
     }
     /// Appends an item to `groups`.
     ///
@@ -109,6 +117,10 @@ impl CreateUserInputBuilder {
         self.groups = input;
         self
     }
+    /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.groups
+    }
     /// <p>Required. The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas, colons, or equal signs (,:=).</p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
@@ -118,6 +130,10 @@ impl CreateUserInputBuilder {
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.password = input;
         self
+    }
+    /// <p>Required. The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas, colons, or equal signs (,:=).</p>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.password
     }
     /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -129,6 +145,10 @@ impl CreateUserInputBuilder {
         self.username = input;
         self
     }
+    /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
+    }
     /// <p>Defines if this user is intended for CRDR replication purposes.</p>
     pub fn replication_user(mut self, input: bool) -> Self {
         self.replication_user = ::std::option::Option::Some(input);
@@ -138,6 +158,10 @@ impl CreateUserInputBuilder {
     pub fn set_replication_user(mut self, input: ::std::option::Option<bool>) -> Self {
         self.replication_user = input;
         self
+    }
+    /// <p>Defines if this user is intended for CRDR replication purposes.</p>
+    pub fn get_replication_user(&self) -> &::std::option::Option<bool> {
+        &self.replication_user
     }
     /// Consumes the builder and constructs a [`CreateUserInput`](crate::operation::create_user::CreateUserInput).
     pub fn build(

@@ -58,6 +58,12 @@ impl InferenceOutputConfigurationBuilder {
         self.s3_output_configuration = input;
         self
     }
+    /// <p> Specifies configuration information for the output results from for the inference, output S3 location. </p>
+    pub fn get_s3_output_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::InferenceS3OutputConfiguration> {
+        &self.s3_output_configuration
+    }
     /// <p>The ID number for the AWS KMS key used to encrypt the inference output. </p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -67,6 +73,10 @@ impl InferenceOutputConfigurationBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>The ID number for the AWS KMS key used to encrypt the inference output. </p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// Consumes the builder and constructs a [`InferenceOutputConfiguration`](crate::types::InferenceOutputConfiguration).
     pub fn build(self) -> crate::types::InferenceOutputConfiguration {

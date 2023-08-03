@@ -36,6 +36,10 @@ impl ListStacksFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListStacks as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_stacks::builders::ListStacksInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl ListStacksFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A string that identifies the next page of stacks that you want to retrieve.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// Appends an item to `StackStatusFilter`.
     ///
     /// To override the contents of this collection use [`set_stack_status_filter`](Self::set_stack_status_filter).
@@ -140,5 +148,11 @@ impl ListStacksFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_stack_status_filter(input);
         self
+    }
+    /// <p>Stack status to use as a filter. Specify one or more stack status codes to list only stacks with the specified status codes. For a complete list of stack status codes, see the <code>StackStatus</code> parameter of the <code>Stack</code> data type.</p>
+    pub fn get_stack_status_filter(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StackStatus>> {
+        self.inner.get_stack_status_filter()
     }
 }

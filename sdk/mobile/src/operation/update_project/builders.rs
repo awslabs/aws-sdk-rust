@@ -36,6 +36,12 @@ impl UpdateProjectFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateProject as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_project::builders::UpdateProjectInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl UpdateProjectFluentBuilder {
         self.inner = self.inner.set_contents(input);
         self
     }
+    /// <p> ZIP or YAML file which contains project configuration to be updated. This should be the contents of the file downloaded from the URL provided in an export project operation. </p>
+    pub fn get_contents(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        self.inner.get_contents()
+    }
     /// <p> Unique project identifier. </p>
     pub fn project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.project_id(input.into());
@@ -127,5 +137,9 @@ impl UpdateProjectFluentBuilder {
     pub fn set_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_project_id(input);
         self
+    }
+    /// <p> Unique project identifier. </p>
+    pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_id()
     }
 }

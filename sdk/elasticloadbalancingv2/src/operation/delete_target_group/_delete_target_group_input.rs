@@ -46,6 +46,10 @@ impl DeleteTargetGroupInputBuilder {
         self.target_group_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the target group.</p>
+    pub fn get_target_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_group_arn
+    }
     /// Consumes the builder and constructs a [`DeleteTargetGroupInput`](crate::operation::delete_target_group::DeleteTargetGroupInput).
     pub fn build(
         self,

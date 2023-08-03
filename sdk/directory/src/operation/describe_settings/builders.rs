@@ -36,6 +36,12 @@ impl DescribeSettingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeSettings as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_settings::builders::DescribeSettingsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DescribeSettingsFluentBuilder {
         self.inner = self.inner.set_directory_id(input);
         self
     }
+    /// <p>The identifier of the directory for which to retrieve information.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_id()
+    }
     /// <p>The status of the directory settings for which to retrieve information.</p>
     pub fn status(mut self, input: crate::types::DirectoryConfigurationStatus) -> Self {
         self.inner = self.inner.status(input);
@@ -139,6 +149,10 @@ impl DescribeSettingsFluentBuilder {
         self.inner = self.inner.set_status(input);
         self
     }
+    /// <p>The status of the directory settings for which to retrieve information.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DirectoryConfigurationStatus> {
+        self.inner.get_status()
+    }
     /// <p>The <code>DescribeSettingsResult.NextToken</code> value from a previous call to <code>DescribeSettings</code>. Pass null if this is the first call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -148,5 +162,9 @@ impl DescribeSettingsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The <code>DescribeSettingsResult.NextToken</code> value from a previous call to <code>DescribeSettings</code>. Pass null if this is the first call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

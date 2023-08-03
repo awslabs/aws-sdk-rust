@@ -47,6 +47,10 @@ impl RemoveListenerCertificatesInputBuilder {
         self.listener_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the listener.</p>
+    pub fn get_listener_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.listener_arn
+    }
     /// Appends an item to `certificates`.
     ///
     /// To override the contents of this collection use [`set_certificates`](Self::set_certificates).
@@ -65,6 +69,12 @@ impl RemoveListenerCertificatesInputBuilder {
     ) -> Self {
         self.certificates = input;
         self
+    }
+    /// <p>The certificate to remove. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
+    pub fn get_certificates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
+        &self.certificates
     }
     /// Consumes the builder and constructs a [`RemoveListenerCertificatesInput`](crate::operation::remove_listener_certificates::RemoveListenerCertificatesInput).
     pub fn build(

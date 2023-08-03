@@ -56,6 +56,10 @@ impl DescribeOpsItemsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `ops_item_summaries`.
     ///
     /// To override the contents of this collection use [`set_ops_item_summaries`](Self::set_ops_item_summaries).
@@ -74,6 +78,12 @@ impl DescribeOpsItemsOutputBuilder {
     ) -> Self {
         self.ops_item_summaries = input;
         self
+    }
+    /// <p>A list of OpsItems.</p>
+    pub fn get_ops_item_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsItemSummary>> {
+        &self.ops_item_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

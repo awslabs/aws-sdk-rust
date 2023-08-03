@@ -56,6 +56,10 @@ impl S3DestinationBuilder {
         self.bucket_name = input;
         self
     }
+    /// <p>The name of the bucket.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
+    }
     /// <p>The path prefix to use in the path to the location in the bucket. This prefix specifies where to store classification results in the bucket.</p>
     pub fn key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_prefix = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl S3DestinationBuilder {
         self.key_prefix = input;
         self
     }
+    /// <p>The path prefix to use in the path to the location in the bucket. This prefix specifies where to store classification results in the bucket.</p>
+    pub fn get_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_prefix
+    }
     /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for encryption of the results. This must be the ARN of an existing, symmetric encryption KMS key that's in the same Amazon Web Services Region as the bucket.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_arn = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl S3DestinationBuilder {
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for encryption of the results. This must be the ARN of an existing, symmetric encryption KMS key that's in the same Amazon Web Services Region as the bucket.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
     }
     /// Consumes the builder and constructs a [`S3Destination`](crate::types::S3Destination).
     pub fn build(self) -> crate::types::S3Destination {

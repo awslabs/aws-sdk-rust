@@ -72,6 +72,13 @@ impl ExperimentTemplateLogConfigurationBuilder {
         self.cloud_watch_logs_configuration = input;
         self
     }
+    /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
+    pub fn get_cloud_watch_logs_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExperimentTemplateCloudWatchLogsLogConfiguration>
+    {
+        &self.cloud_watch_logs_configuration
+    }
     /// <p>The configuration for experiment logging to Amazon S3.</p>
     pub fn s3_configuration(
         mut self,
@@ -88,6 +95,12 @@ impl ExperimentTemplateLogConfigurationBuilder {
         self.s3_configuration = input;
         self
     }
+    /// <p>The configuration for experiment logging to Amazon S3.</p>
+    pub fn get_s3_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExperimentTemplateS3LogConfiguration> {
+        &self.s3_configuration
+    }
     /// <p>The schema version.</p>
     pub fn log_schema_version(mut self, input: i32) -> Self {
         self.log_schema_version = ::std::option::Option::Some(input);
@@ -97,6 +110,10 @@ impl ExperimentTemplateLogConfigurationBuilder {
     pub fn set_log_schema_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.log_schema_version = input;
         self
+    }
+    /// <p>The schema version.</p>
+    pub fn get_log_schema_version(&self) -> &::std::option::Option<i32> {
+        &self.log_schema_version
     }
     /// Consumes the builder and constructs a [`ExperimentTemplateLogConfiguration`](crate::types::ExperimentTemplateLogConfiguration).
     pub fn build(self) -> crate::types::ExperimentTemplateLogConfiguration {

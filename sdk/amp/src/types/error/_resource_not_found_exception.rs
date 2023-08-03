@@ -83,6 +83,10 @@ impl ResourceNotFoundExceptionBuilder {
         self.message = input;
         self
     }
+    /// Description of the error.
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Identifier of the resource affected.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -92,6 +96,10 @@ impl ResourceNotFoundExceptionBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// Identifier of the resource affected.
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// Type of the resource affected.
     pub fn resource_type(
@@ -108,6 +116,10 @@ impl ResourceNotFoundExceptionBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// Type of the resource affected.
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

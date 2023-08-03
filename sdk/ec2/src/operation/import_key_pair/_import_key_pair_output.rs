@@ -88,6 +88,13 @@ impl ImportKeyPairOutputBuilder {
         self.key_fingerprint = input;
         self
     }
+    /// <ul>
+    /// <li> <p>For RSA key pairs, the key fingerprint is the MD5 public key fingerprint as specified in section 4 of RFC 4716.</p> </li>
+    /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
+    /// </ul>
+    pub fn get_key_fingerprint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_fingerprint
+    }
     /// <p>The key pair name that you provided.</p>
     pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_name = ::std::option::Option::Some(input.into());
@@ -98,6 +105,10 @@ impl ImportKeyPairOutputBuilder {
         self.key_name = input;
         self
     }
+    /// <p>The key pair name that you provided.</p>
+    pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_name
+    }
     /// <p>The ID of the resulting key pair.</p>
     pub fn key_pair_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_pair_id = ::std::option::Option::Some(input.into());
@@ -107,6 +118,10 @@ impl ImportKeyPairOutputBuilder {
     pub fn set_key_pair_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_pair_id = input;
         self
+    }
+    /// <p>The ID of the resulting key pair.</p>
+    pub fn get_key_pair_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_pair_id
     }
     /// Appends an item to `tags`.
     ///
@@ -126,6 +141,10 @@ impl ImportKeyPairOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags applied to the imported key pair.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

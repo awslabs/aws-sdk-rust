@@ -53,6 +53,10 @@ impl BatchDisassociateResourceInputBuilder {
         self.resource_set_identifier = input;
         self
     }
+    /// <p>A unique identifier for the resource set, used in a request to refer to the resource set.</p>
+    pub fn get_resource_set_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_set_identifier
+    }
     /// Appends an item to `items`.
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
@@ -71,6 +75,10 @@ impl BatchDisassociateResourceInputBuilder {
     ) -> Self {
         self.items = input;
         self
+    }
+    /// <p>The uniform resource identifiers (URI) of resources that should be disassociated from the resource set. The URIs must be Amazon Resource Names (ARNs).</p>
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.items
     }
     /// Consumes the builder and constructs a [`BatchDisassociateResourceInput`](crate::operation::batch_disassociate_resource::BatchDisassociateResourceInput).
     pub fn build(

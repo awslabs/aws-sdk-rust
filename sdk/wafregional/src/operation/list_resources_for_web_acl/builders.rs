@@ -41,6 +41,13 @@ impl ListResourcesForWebACLFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListResourcesForWebACL as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_resources_for_web_acl::builders::ListResourcesForWebAclInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +138,10 @@ impl ListResourcesForWebACLFluentBuilder {
         self.inner = self.inner.set_web_acl_id(input);
         self
     }
+    /// <p>The unique identifier (ID) of the web ACL for which to list the associated resources.</p>
+    pub fn get_web_acl_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_web_acl_id()
+    }
     /// <p>The type of resource to list, either an application load balancer or Amazon API Gateway.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.inner = self.inner.resource_type(input);
@@ -143,5 +154,9 @@ impl ListResourcesForWebACLFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
+    }
+    /// <p>The type of resource to list, either an application load balancer or Amazon API Gateway.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        self.inner.get_resource_type()
     }
 }

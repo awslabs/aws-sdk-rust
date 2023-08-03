@@ -38,6 +38,10 @@ impl DescribeHsmClientCertificatesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeHsmClientCertificates as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_hsm_client_certificates::builders::DescribeHsmClientCertificatesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +144,12 @@ impl DescribeHsmClientCertificatesFluentBuilder {
         self.inner = self.inner.set_hsm_client_certificate_identifier(input);
         self
     }
+    /// <p>The identifier of a specific HSM client certificate for which you want information. If no identifier is specified, information is returned for all HSM client certificates owned by your Amazon Web Services account.</p>
+    pub fn get_hsm_client_certificate_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hsm_client_certificate_identifier()
+    }
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
     /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: minimum 20, maximum 100.</p>
@@ -154,6 +164,12 @@ impl DescribeHsmClientCertificatesFluentBuilder {
         self.inner = self.inner.set_max_records(input);
         self
     }
+    /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
+    /// <p>Default: <code>100</code> </p>
+    /// <p>Constraints: minimum 20, maximum 100.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
+    }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeHsmClientCertificates</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -163,6 +179,10 @@ impl DescribeHsmClientCertificatesFluentBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
+    }
+    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeHsmClientCertificates</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
     }
     /// Appends an item to `TagKeys`.
     ///
@@ -181,6 +201,10 @@ impl DescribeHsmClientCertificatesFluentBuilder {
         self.inner = self.inner.set_tag_keys(input);
         self
     }
+    /// <p>A tag key or keys for which you want to return all matching HSM client certificates that are associated with the specified key or keys. For example, suppose that you have HSM client certificates that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the HSM client certificates that have either or both of these tag keys associated with them.</p>
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_tag_keys()
+    }
     /// Appends an item to `TagValues`.
     ///
     /// To override the contents of this collection use [`set_tag_values`](Self::set_tag_values).
@@ -197,5 +221,9 @@ impl DescribeHsmClientCertificatesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tag_values(input);
         self
+    }
+    /// <p>A tag value or values for which you want to return all matching HSM client certificates that are associated with the specified tag value or values. For example, suppose that you have HSM client certificates that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the HSM client certificates that have either or both of these tag values associated with them.</p>
+    pub fn get_tag_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_tag_values()
     }
 }

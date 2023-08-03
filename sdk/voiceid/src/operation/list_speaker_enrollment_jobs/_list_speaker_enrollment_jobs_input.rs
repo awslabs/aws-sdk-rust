@@ -63,6 +63,10 @@ impl ListSpeakerEnrollmentJobsInputBuilder {
         self.domain_id = input;
         self
     }
+    /// <p>The identifier of the domain that contains the speaker enrollment jobs.</p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_id
+    }
     /// <p>Provides the status of your speaker enrollment Job.</p>
     pub fn job_status(mut self, input: crate::types::SpeakerEnrollmentJobStatus) -> Self {
         self.job_status = ::std::option::Option::Some(input);
@@ -76,6 +80,12 @@ impl ListSpeakerEnrollmentJobsInputBuilder {
         self.job_status = input;
         self
     }
+    /// <p>Provides the status of your speaker enrollment Job.</p>
+    pub fn get_job_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::SpeakerEnrollmentJobStatus> {
+        &self.job_status
+    }
     /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain more pages of results. The default is 100; the maximum allowed page size is also 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -86,6 +96,10 @@ impl ListSpeakerEnrollmentJobsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain more pages of results. The default is 100; the maximum allowed page size is also 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -95,6 +109,10 @@ impl ListSpeakerEnrollmentJobsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListSpeakerEnrollmentJobsInput`](crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsInput).
     pub fn build(

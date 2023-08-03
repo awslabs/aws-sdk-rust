@@ -68,6 +68,10 @@ impl SectionModificationBuilder {
         self.section = input;
         self
     }
+    /// <p>The name of the section to be modified.</p>
+    pub fn get_section(&self) -> &::std::option::Option<::std::string::String> {
+        &self.section
+    }
     /// <p>The path within the section content to be modified.</p>
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path = ::std::option::Option::Some(input.into());
@@ -77,6 +81,10 @@ impl SectionModificationBuilder {
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path = input;
         self
+    }
+    /// <p>The path within the section content to be modified.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
     }
     /// <p>The operation to be performed on a configuration section.</p>
     /// <p> Content can be added, deleted, or replaced within a section. </p>
@@ -90,6 +98,11 @@ impl SectionModificationBuilder {
         self.operation = input;
         self
     }
+    /// <p>The operation to be performed on a configuration section.</p>
+    /// <p> Content can be added, deleted, or replaced within a section. </p>
+    pub fn get_operation(&self) -> &::std::option::Option<crate::types::Operation> {
+        &self.operation
+    }
     /// <p>For add and replace operations, this is the value that will be used.</p>
     /// <p> This field should be omitted for delete operations. </p>
     pub fn value(mut self, input: ::aws_smithy_types::Document) -> Self {
@@ -101,6 +114,11 @@ impl SectionModificationBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>For add and replace operations, this is the value that will be used.</p>
+    /// <p> This field should be omitted for delete operations. </p>
+    pub fn get_value(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`SectionModification`](crate::types::SectionModification).
     pub fn build(self) -> crate::types::SectionModification {

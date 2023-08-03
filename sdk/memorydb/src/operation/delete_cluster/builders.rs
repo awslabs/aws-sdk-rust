@@ -36,6 +36,12 @@ impl DeleteClusterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteCluster as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_cluster::builders::DeleteClusterInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl DeleteClusterFluentBuilder {
         self.inner = self.inner.set_cluster_name(input);
         self
     }
+    /// <p>The name of the cluster to be deleted</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_name()
+    }
     /// <p>The user-supplied name of a final cluster snapshot. This is the unique name that identifies the snapshot. MemoryDB creates the snapshot, and then deletes the cluster immediately afterward.</p>
     pub fn final_snapshot_name(
         mut self,
@@ -133,5 +143,9 @@ impl DeleteClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_final_snapshot_name(input);
         self
+    }
+    /// <p>The user-supplied name of a final cluster snapshot. This is the unique name that identifies the snapshot. MemoryDB creates the snapshot, and then deletes the cluster immediately afterward.</p>
+    pub fn get_final_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_final_snapshot_name()
     }
 }

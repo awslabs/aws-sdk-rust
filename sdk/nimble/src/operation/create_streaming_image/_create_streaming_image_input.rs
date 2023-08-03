@@ -98,6 +98,10 @@ impl CreateStreamingImageInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>A human-readable description of the streaming image.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -107,6 +111,10 @@ impl CreateStreamingImageInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A human-readable description of the streaming image.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The ID of an EC2 machine image with which to create this streaming image.</p>
     pub fn ec2_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -118,6 +126,10 @@ impl CreateStreamingImageInputBuilder {
         self.ec2_image_id = input;
         self
     }
+    /// <p>The ID of an EC2 machine image with which to create this streaming image.</p>
+    pub fn get_ec2_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ec2_image_id
+    }
     /// <p>A friendly name for a streaming image resource.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -128,6 +140,10 @@ impl CreateStreamingImageInputBuilder {
         self.name = input;
         self
     }
+    /// <p>A friendly name for a streaming image resource.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
@@ -137,6 +153,10 @@ impl CreateStreamingImageInputBuilder {
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.studio_id = input;
         self
+    }
+    /// <p>The studio ID. </p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_id
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -162,6 +182,14 @@ impl CreateStreamingImageInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateStreamingImageInput`](crate::operation::create_streaming_image::CreateStreamingImageInput).
     pub fn build(

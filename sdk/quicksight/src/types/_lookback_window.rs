@@ -56,6 +56,10 @@ impl LookbackWindowBuilder {
         self.column_name = input;
         self
     }
+    /// <p>The name of the lookback window column.</p>
+    pub fn get_column_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.column_name
+    }
     /// <p>The lookback window column size.</p>
     pub fn size(mut self, input: i64) -> Self {
         self.size = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl LookbackWindowBuilder {
     pub fn set_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.size = input;
         self
+    }
+    /// <p>The lookback window column size.</p>
+    pub fn get_size(&self) -> &::std::option::Option<i64> {
+        &self.size
     }
     /// <p>The size unit that is used for the lookback window column. Valid values for this structure are <code>HOUR</code>, <code>DAY</code>, and <code>WEEK</code>.</p>
     pub fn size_unit(mut self, input: crate::types::LookbackWindowSizeUnit) -> Self {
@@ -78,6 +86,10 @@ impl LookbackWindowBuilder {
     ) -> Self {
         self.size_unit = input;
         self
+    }
+    /// <p>The size unit that is used for the lookback window column. Valid values for this structure are <code>HOUR</code>, <code>DAY</code>, and <code>WEEK</code>.</p>
+    pub fn get_size_unit(&self) -> &::std::option::Option<crate::types::LookbackWindowSizeUnit> {
+        &self.size_unit
     }
     /// Consumes the builder and constructs a [`LookbackWindow`](crate::types::LookbackWindow).
     pub fn build(self) -> crate::types::LookbackWindow {

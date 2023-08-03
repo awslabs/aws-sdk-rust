@@ -41,6 +41,10 @@ impl ListVpcEndpointsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Identifier to allow retrieval of paginated results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Consumes the builder and constructs a [`ListVpcEndpointsInput`](crate::operation::list_vpc_endpoints::ListVpcEndpointsInput).
     pub fn build(
         self,

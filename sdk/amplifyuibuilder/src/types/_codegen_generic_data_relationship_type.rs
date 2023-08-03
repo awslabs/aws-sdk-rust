@@ -107,6 +107,10 @@ impl CodegenGenericDataRelationshipTypeBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The data relationship type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::GenericDataRelationshipType> {
+        &self.r#type
+    }
     /// <p>The name of the related model in the data relationship.</p>
     pub fn related_model_name(
         mut self,
@@ -122,6 +126,10 @@ impl CodegenGenericDataRelationshipTypeBuilder {
     ) -> Self {
         self.related_model_name = input;
         self
+    }
+    /// <p>The name of the related model in the data relationship.</p>
+    pub fn get_related_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.related_model_name
     }
     /// Appends an item to `related_model_fields`.
     ///
@@ -145,6 +153,12 @@ impl CodegenGenericDataRelationshipTypeBuilder {
         self.related_model_fields = input;
         self
     }
+    /// <p>The related model fields in the data relationship.</p>
+    pub fn get_related_model_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.related_model_fields
+    }
     /// <p>Specifies whether the relationship can unlink the associated model.</p>
     pub fn can_unlink_associated_model(mut self, input: bool) -> Self {
         self.can_unlink_associated_model = ::std::option::Option::Some(input);
@@ -154,6 +168,10 @@ impl CodegenGenericDataRelationshipTypeBuilder {
     pub fn set_can_unlink_associated_model(mut self, input: ::std::option::Option<bool>) -> Self {
         self.can_unlink_associated_model = input;
         self
+    }
+    /// <p>Specifies whether the relationship can unlink the associated model.</p>
+    pub fn get_can_unlink_associated_model(&self) -> &::std::option::Option<bool> {
+        &self.can_unlink_associated_model
     }
     /// <p>The name of the related join field in the data relationship.</p>
     pub fn related_join_field_name(
@@ -171,6 +189,10 @@ impl CodegenGenericDataRelationshipTypeBuilder {
         self.related_join_field_name = input;
         self
     }
+    /// <p>The name of the related join field in the data relationship.</p>
+    pub fn get_related_join_field_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.related_join_field_name
+    }
     /// <p>The name of the related join table in the data relationship.</p>
     pub fn related_join_table_name(
         mut self,
@@ -187,6 +209,10 @@ impl CodegenGenericDataRelationshipTypeBuilder {
         self.related_join_table_name = input;
         self
     }
+    /// <p>The name of the related join table in the data relationship.</p>
+    pub fn get_related_join_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.related_join_table_name
+    }
     /// <p>The value of the <code>belongsTo</code> field on the related data model. </p>
     pub fn belongs_to_field_on_related_model(
         mut self,
@@ -202,6 +228,12 @@ impl CodegenGenericDataRelationshipTypeBuilder {
     ) -> Self {
         self.belongs_to_field_on_related_model = input;
         self
+    }
+    /// <p>The value of the <code>belongsTo</code> field on the related data model. </p>
+    pub fn get_belongs_to_field_on_related_model(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.belongs_to_field_on_related_model
     }
     /// Appends an item to `associated_fields`.
     ///
@@ -225,6 +257,12 @@ impl CodegenGenericDataRelationshipTypeBuilder {
         self.associated_fields = input;
         self
     }
+    /// <p>The associated fields of the data relationship.</p>
+    pub fn get_associated_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.associated_fields
+    }
     /// <p>Specifies whether the <code>@index</code> directive is supported for a <code>hasMany</code> data relationship.</p>
     pub fn is_has_many_index(mut self, input: bool) -> Self {
         self.is_has_many_index = ::std::option::Option::Some(input);
@@ -234,6 +272,10 @@ impl CodegenGenericDataRelationshipTypeBuilder {
     pub fn set_is_has_many_index(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_has_many_index = input;
         self
+    }
+    /// <p>Specifies whether the <code>@index</code> directive is supported for a <code>hasMany</code> data relationship.</p>
+    pub fn get_is_has_many_index(&self) -> &::std::option::Option<bool> {
+        &self.is_has_many_index
     }
     /// Consumes the builder and constructs a [`CodegenGenericDataRelationshipType`](crate::types::CodegenGenericDataRelationshipType).
     pub fn build(self) -> crate::types::CodegenGenericDataRelationshipType {

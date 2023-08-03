@@ -72,6 +72,10 @@ impl RuleBuilder {
         self.rule_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the rule.</p>
+    pub fn get_rule_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_arn
+    }
     /// <p>The priority.</p>
     pub fn priority(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.priority = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl RuleBuilder {
     pub fn set_priority(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.priority = input;
         self
+    }
+    /// <p>The priority.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<::std::string::String> {
+        &self.priority
     }
     /// Appends an item to `conditions`.
     ///
@@ -101,6 +109,12 @@ impl RuleBuilder {
         self.conditions = input;
         self
     }
+    /// <p>The conditions. Each rule can include zero or one of the following conditions: <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the following conditions: <code>http-header</code> and <code>query-string</code>.</p>
+    pub fn get_conditions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleCondition>> {
+        &self.conditions
+    }
     /// Appends an item to `actions`.
     ///
     /// To override the contents of this collection use [`set_actions`](Self::set_actions).
@@ -120,6 +134,10 @@ impl RuleBuilder {
         self.actions = input;
         self
     }
+    /// <p>The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>, <code>redirect</code>, or <code>fixed-response</code>, and it must be the last action to be performed.</p>
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Action>> {
+        &self.actions
+    }
     /// <p>Indicates whether this is the default rule.</p>
     pub fn is_default(mut self, input: bool) -> Self {
         self.is_default = ::std::option::Option::Some(input);
@@ -129,6 +147,10 @@ impl RuleBuilder {
     pub fn set_is_default(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_default = input;
         self
+    }
+    /// <p>Indicates whether this is the default rule.</p>
+    pub fn get_is_default(&self) -> &::std::option::Option<bool> {
+        &self.is_default
     }
     /// Consumes the builder and constructs a [`Rule`](crate::types::Rule).
     pub fn build(self) -> crate::types::Rule {

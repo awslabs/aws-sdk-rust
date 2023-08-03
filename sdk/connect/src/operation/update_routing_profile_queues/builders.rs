@@ -36,6 +36,10 @@ impl UpdateRoutingProfileQueuesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateRoutingProfileQueues as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_routing_profile_queues::builders::UpdateRoutingProfileQueuesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl UpdateRoutingProfileQueuesFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>The identifier of the routing profile.</p>
     pub fn routing_profile_id(
         mut self,
@@ -141,6 +149,10 @@ impl UpdateRoutingProfileQueuesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_routing_profile_id(input);
         self
+    }
+    /// <p>The identifier of the routing profile.</p>
+    pub fn get_routing_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_routing_profile_id()
     }
     /// Appends an item to `QueueConfigs`.
     ///
@@ -158,5 +170,11 @@ impl UpdateRoutingProfileQueuesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_queue_configs(input);
         self
+    }
+    /// <p>The queues to be updated for this routing profile. Queues must first be associated to the routing profile. You can do this using AssociateRoutingProfileQueues.</p>
+    pub fn get_queue_configs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfig>> {
+        self.inner.get_queue_configs()
     }
 }

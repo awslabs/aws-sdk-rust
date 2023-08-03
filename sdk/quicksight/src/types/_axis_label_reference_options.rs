@@ -48,6 +48,10 @@ impl AxisLabelReferenceOptionsBuilder {
         self.field_id = input;
         self
     }
+    /// <p>The field that the axis label is targeted to.</p>
+    pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_id
+    }
     /// <p>The column that the axis label is targeted to.</p>
     pub fn column(mut self, input: crate::types::ColumnIdentifier) -> Self {
         self.column = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl AxisLabelReferenceOptionsBuilder {
     ) -> Self {
         self.column = input;
         self
+    }
+    /// <p>The column that the axis label is targeted to.</p>
+    pub fn get_column(&self) -> &::std::option::Option<crate::types::ColumnIdentifier> {
+        &self.column
     }
     /// Consumes the builder and constructs a [`AxisLabelReferenceOptions`](crate::types::AxisLabelReferenceOptions).
     pub fn build(self) -> crate::types::AxisLabelReferenceOptions {

@@ -36,6 +36,10 @@ impl UpdateTrafficPolicyCommentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateTrafficPolicyComment as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_traffic_policy_comment::builders::UpdateTrafficPolicyCommentInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl UpdateTrafficPolicyCommentFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The value of <code>Id</code> for the traffic policy that you want to update the comment for.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The value of <code>Version</code> for the traffic policy that you want to update the comment for.</p>
     pub fn version(mut self, input: i32) -> Self {
         self.inner = self.inner.version(input);
@@ -136,6 +144,10 @@ impl UpdateTrafficPolicyCommentFluentBuilder {
         self.inner = self.inner.set_version(input);
         self
     }
+    /// <p>The value of <code>Version</code> for the traffic policy that you want to update the comment for.</p>
+    pub fn get_version(&self) -> &::std::option::Option<i32> {
+        self.inner.get_version()
+    }
     /// <p>The new comment for the specified traffic policy and version.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.comment(input.into());
@@ -145,5 +157,9 @@ impl UpdateTrafficPolicyCommentFluentBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_comment(input);
         self
+    }
+    /// <p>The new comment for the specified traffic policy and version.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_comment()
     }
 }

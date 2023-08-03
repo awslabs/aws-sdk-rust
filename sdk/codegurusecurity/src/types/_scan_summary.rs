@@ -80,6 +80,10 @@ impl ScanSummaryBuilder {
         self.scan_state = input;
         self
     }
+    /// <p>The state of the scan. A scan can be <code>In Progress</code>, <code>Complete</code>, or <code>Failed</code>. </p>
+    pub fn get_scan_state(&self) -> &::std::option::Option<crate::types::ScanState> {
+        &self.scan_state
+    }
     /// <p> The time when the scan was created. </p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -92,6 +96,10 @@ impl ScanSummaryBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p> The time when the scan was created. </p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>The time the scan was last updated. A scan is updated when it is re-run.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -106,6 +114,10 @@ impl ScanSummaryBuilder {
         self.updated_at = input;
         self
     }
+    /// <p>The time the scan was last updated. A scan is updated when it is re-run.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
+    }
     /// <p>The name of the scan. </p>
     pub fn scan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scan_name = ::std::option::Option::Some(input.into());
@@ -116,6 +128,10 @@ impl ScanSummaryBuilder {
         self.scan_name = input;
         self
     }
+    /// <p>The name of the scan. </p>
+    pub fn get_scan_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scan_name
+    }
     /// <p>The identifier for the scan run. </p>
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.run_id = ::std::option::Option::Some(input.into());
@@ -125,6 +141,10 @@ impl ScanSummaryBuilder {
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.run_id = input;
         self
+    }
+    /// <p>The identifier for the scan run. </p>
+    pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.run_id
     }
     /// <p>The ARN for the scan name.</p>
     pub fn scan_name_arn(
@@ -141,6 +161,10 @@ impl ScanSummaryBuilder {
     ) -> Self {
         self.scan_name_arn = input;
         self
+    }
+    /// <p>The ARN for the scan name.</p>
+    pub fn get_scan_name_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scan_name_arn
     }
     /// Consumes the builder and constructs a [`ScanSummary`](crate::types::ScanSummary).
     pub fn build(self) -> crate::types::ScanSummary {

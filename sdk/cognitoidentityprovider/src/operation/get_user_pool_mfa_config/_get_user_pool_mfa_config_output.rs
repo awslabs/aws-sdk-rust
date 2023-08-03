@@ -81,6 +81,12 @@ impl GetUserPoolMfaConfigOutputBuilder {
         self.sms_mfa_configuration = input;
         self
     }
+    /// <p>The SMS text message multi-factor authentication (MFA) configuration.</p>
+    pub fn get_sms_mfa_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SmsMfaConfigType> {
+        &self.sms_mfa_configuration
+    }
     /// <p>The software token multi-factor authentication (MFA) configuration.</p>
     pub fn software_token_mfa_configuration(
         mut self,
@@ -96,6 +102,12 @@ impl GetUserPoolMfaConfigOutputBuilder {
     ) -> Self {
         self.software_token_mfa_configuration = input;
         self
+    }
+    /// <p>The software token multi-factor authentication (MFA) configuration.</p>
+    pub fn get_software_token_mfa_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SoftwareTokenMfaConfigType> {
+        &self.software_token_mfa_configuration
     }
     /// <p>The multi-factor authentication (MFA) configuration. Valid values include:</p>
     /// <ul>
@@ -119,6 +131,15 @@ impl GetUserPoolMfaConfigOutputBuilder {
     ) -> Self {
         self.mfa_configuration = input;
         self
+    }
+    /// <p>The multi-factor authentication (MFA) configuration. Valid values include:</p>
+    /// <ul>
+    /// <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li>
+    /// <li> <p> <code>ON</code> MFA is required for all users to sign in.</p> </li>
+    /// <li> <p> <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p> </li>
+    /// </ul>
+    pub fn get_mfa_configuration(&self) -> &::std::option::Option<crate::types::UserPoolMfaType> {
+        &self.mfa_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

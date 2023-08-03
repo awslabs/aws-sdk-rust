@@ -46,6 +46,10 @@ impl AssignTapePoolOutputBuilder {
         self.tape_arn = input;
         self
     }
+    /// <p>The unique Amazon Resource Names (ARN) of the virtual tape that was added to the tape pool.</p>
+    pub fn get_tape_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tape_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

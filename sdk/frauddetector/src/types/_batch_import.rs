@@ -136,6 +136,10 @@ impl BatchImportBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The ID of the batch import job. </p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>The status of the batch import job.</p>
     pub fn status(mut self, input: crate::types::AsyncJobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -148,6 +152,10 @@ impl BatchImportBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the batch import job.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AsyncJobStatus> {
+        &self.status
     }
     /// <p>The reason batch import job failed.</p>
     pub fn failure_reason(
@@ -165,6 +173,10 @@ impl BatchImportBuilder {
         self.failure_reason = input;
         self
     }
+    /// <p>The reason batch import job failed.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
     /// <p>Timestamp of when the batch import job started.</p>
     pub fn start_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_time = ::std::option::Option::Some(input.into());
@@ -174,6 +186,10 @@ impl BatchImportBuilder {
     pub fn set_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>Timestamp of when the batch import job started.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_time
     }
     /// <p>Timestamp of when batch import job completed.</p>
     pub fn completion_time(
@@ -191,6 +207,10 @@ impl BatchImportBuilder {
         self.completion_time = input;
         self
     }
+    /// <p>Timestamp of when batch import job completed.</p>
+    pub fn get_completion_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.completion_time
+    }
     /// <p>The Amazon S3 location of your data file for batch import.</p>
     pub fn input_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_path = ::std::option::Option::Some(input.into());
@@ -201,6 +221,10 @@ impl BatchImportBuilder {
         self.input_path = input;
         self
     }
+    /// <p>The Amazon S3 location of your data file for batch import.</p>
+    pub fn get_input_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_path
+    }
     /// <p>The Amazon S3 location of your output file.</p>
     pub fn output_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_path = ::std::option::Option::Some(input.into());
@@ -210,6 +234,10 @@ impl BatchImportBuilder {
     pub fn set_output_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_path = input;
         self
+    }
+    /// <p>The Amazon S3 location of your output file.</p>
+    pub fn get_output_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_path
     }
     /// <p>The name of the event type.</p>
     pub fn event_type_name(
@@ -227,6 +255,10 @@ impl BatchImportBuilder {
         self.event_type_name = input;
         self
     }
+    /// <p>The name of the event type.</p>
+    pub fn get_event_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_type_name
+    }
     /// <p>The ARN of the IAM role to use for this job request.</p>
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role_arn = ::std::option::Option::Some(input.into());
@@ -236,6 +268,10 @@ impl BatchImportBuilder {
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_role_arn = input;
         self
+    }
+    /// <p>The ARN of the IAM role to use for this job request.</p>
+    pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_role_arn
     }
     /// <p>The ARN of the batch import job.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -247,6 +283,10 @@ impl BatchImportBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the batch import job.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The number of records processed by batch import job.</p>
     pub fn processed_records_count(mut self, input: i32) -> Self {
         self.processed_records_count = ::std::option::Option::Some(input);
@@ -256,6 +296,10 @@ impl BatchImportBuilder {
     pub fn set_processed_records_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.processed_records_count = input;
         self
+    }
+    /// <p>The number of records processed by batch import job.</p>
+    pub fn get_processed_records_count(&self) -> &::std::option::Option<i32> {
+        &self.processed_records_count
     }
     /// <p>The number of records that failed to import. </p>
     pub fn failed_records_count(mut self, input: i32) -> Self {
@@ -267,6 +311,10 @@ impl BatchImportBuilder {
         self.failed_records_count = input;
         self
     }
+    /// <p>The number of records that failed to import. </p>
+    pub fn get_failed_records_count(&self) -> &::std::option::Option<i32> {
+        &self.failed_records_count
+    }
     /// <p>The total number of records in the batch import job.</p>
     pub fn total_records_count(mut self, input: i32) -> Self {
         self.total_records_count = ::std::option::Option::Some(input);
@@ -276,6 +324,10 @@ impl BatchImportBuilder {
     pub fn set_total_records_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_records_count = input;
         self
+    }
+    /// <p>The total number of records in the batch import job.</p>
+    pub fn get_total_records_count(&self) -> &::std::option::Option<i32> {
+        &self.total_records_count
     }
     /// Consumes the builder and constructs a [`BatchImport`](crate::types::BatchImport).
     pub fn build(self) -> crate::types::BatchImport {

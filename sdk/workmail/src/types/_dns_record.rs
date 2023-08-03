@@ -56,6 +56,10 @@ impl DnsRecordBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The RFC 1035 record type. Possible values: <code>CNAME</code>, <code>A</code>, <code>MX</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p>The DNS hostname.- For example, <code>domain.example.com</code>.</p>
     pub fn hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hostname = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl DnsRecordBuilder {
         self.hostname = input;
         self
     }
+    /// <p>The DNS hostname.- For example, <code>domain.example.com</code>.</p>
+    pub fn get_hostname(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hostname
+    }
     /// <p>The value returned by the DNS for a query to that hostname and record type.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl DnsRecordBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value returned by the DNS for a query to that hostname and record type.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`DnsRecord`](crate::types::DnsRecord).
     pub fn build(self) -> crate::types::DnsRecord {

@@ -37,6 +37,10 @@ impl UpdateBusinessReportScheduleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateBusinessReportSchedule as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_business_report_schedule::builders::UpdateBusinessReportScheduleInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl UpdateBusinessReportScheduleFluentBuilder {
         self.inner = self.inner.set_schedule_arn(input);
         self
     }
+    /// <p>The ARN of the business report schedule.</p>
+    pub fn get_schedule_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schedule_arn()
+    }
     /// <p>The S3 location of the output reports.</p>
     pub fn s3_bucket_name(
         mut self,
@@ -142,6 +150,10 @@ impl UpdateBusinessReportScheduleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_s3_bucket_name(input);
         self
+    }
+    /// <p>The S3 location of the output reports.</p>
+    pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_s3_bucket_name()
     }
     /// <p>The S3 key where the report is delivered.</p>
     pub fn s3_key_prefix(
@@ -159,6 +171,10 @@ impl UpdateBusinessReportScheduleFluentBuilder {
         self.inner = self.inner.set_s3_key_prefix(input);
         self
     }
+    /// <p>The S3 key where the report is delivered.</p>
+    pub fn get_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_s3_key_prefix()
+    }
     /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
     pub fn format(mut self, input: crate::types::BusinessReportFormat) -> Self {
         self.inner = self.inner.format(input);
@@ -171,6 +187,10 @@ impl UpdateBusinessReportScheduleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_format(input);
         self
+    }
+    /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::BusinessReportFormat> {
+        self.inner.get_format()
     }
     /// <p>The name identifier of the schedule.</p>
     pub fn schedule_name(
@@ -188,6 +208,10 @@ impl UpdateBusinessReportScheduleFluentBuilder {
         self.inner = self.inner.set_schedule_name(input);
         self
     }
+    /// <p>The name identifier of the schedule.</p>
+    pub fn get_schedule_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schedule_name()
+    }
     /// <p>The recurrence of the reports.</p>
     pub fn recurrence(mut self, input: crate::types::BusinessReportRecurrence) -> Self {
         self.inner = self.inner.recurrence(input);
@@ -200,5 +224,9 @@ impl UpdateBusinessReportScheduleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_recurrence(input);
         self
+    }
+    /// <p>The recurrence of the reports.</p>
+    pub fn get_recurrence(&self) -> &::std::option::Option<crate::types::BusinessReportRecurrence> {
+        self.inner.get_recurrence()
     }
 }

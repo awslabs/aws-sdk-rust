@@ -46,6 +46,10 @@ impl GetProposalOutputBuilder {
         self.proposal = input;
         self
     }
+    /// <p>Information about a proposal.</p>
+    pub fn get_proposal(&self) -> &::std::option::Option<crate::types::Proposal> {
+        &self.proposal
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

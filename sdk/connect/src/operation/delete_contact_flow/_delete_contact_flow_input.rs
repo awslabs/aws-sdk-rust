@@ -48,6 +48,10 @@ impl DeleteContactFlowInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The identifier of the flow.</p>
     pub fn contact_flow_id(
         mut self,
@@ -63,6 +67,10 @@ impl DeleteContactFlowInputBuilder {
     ) -> Self {
         self.contact_flow_id = input;
         self
+    }
+    /// <p>The identifier of the flow.</p>
+    pub fn get_contact_flow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_flow_id
     }
     /// Consumes the builder and constructs a [`DeleteContactFlowInput`](crate::operation::delete_contact_flow::DeleteContactFlowInput).
     pub fn build(

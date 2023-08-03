@@ -36,6 +36,12 @@ impl DescribeDetectorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeDetector as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_detector::builders::DescribeDetectorInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DescribeDetectorFluentBuilder {
         self.inner = self.inner.set_detector_id(input);
         self
     }
+    /// <p>The detector ID.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_id()
+    }
     /// <p>The next token from the previous response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -136,6 +146,10 @@ impl DescribeDetectorFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The next token from the previous response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return for the request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -145,5 +159,9 @@ impl DescribeDetectorFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return for the request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

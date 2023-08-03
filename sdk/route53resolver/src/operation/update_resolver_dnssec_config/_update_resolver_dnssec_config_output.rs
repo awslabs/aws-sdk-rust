@@ -51,6 +51,12 @@ impl UpdateResolverDnssecConfigOutputBuilder {
         self.resolver_dnssec_config = input;
         self
     }
+    /// <p>A complex type that contains settings for the specified DNSSEC configuration.</p>
+    pub fn get_resolver_dnssec_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResolverDnssecConfig> {
+        &self.resolver_dnssec_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

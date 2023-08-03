@@ -53,6 +53,12 @@ impl UpdateCollectionOutputBuilder {
         self.update_collection_detail = input;
         self
     }
+    /// <p>Details about the updated collection.</p>
+    pub fn get_update_collection_detail(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateCollectionDetail> {
+        &self.update_collection_detail
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

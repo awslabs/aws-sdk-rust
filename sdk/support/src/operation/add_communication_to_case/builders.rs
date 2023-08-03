@@ -42,6 +42,13 @@ impl AddCommunicationToCaseFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AddCommunicationToCase as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::add_communication_to_case::builders::AddCommunicationToCaseInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl AddCommunicationToCaseFluentBuilder {
         self.inner = self.inner.set_case_id(input);
         self
     }
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
+    pub fn get_case_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_case_id()
+    }
     /// <p>The body of an email communication to add to the support case.</p>
     pub fn communication_body(
         mut self,
@@ -147,6 +158,10 @@ impl AddCommunicationToCaseFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_communication_body(input);
         self
+    }
+    /// <p>The body of an email communication to add to the support case.</p>
+    pub fn get_communication_body(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_communication_body()
     }
     /// Appends an item to `ccEmailAddresses`.
     ///
@@ -168,6 +183,12 @@ impl AddCommunicationToCaseFluentBuilder {
         self.inner = self.inner.set_cc_email_addresses(input);
         self
     }
+    /// <p>The email addresses in the CC line of an email to be added to the support case.</p>
+    pub fn get_cc_email_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_cc_email_addresses()
+    }
     /// <p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <code>AddAttachmentsToSet</code> </p>
     pub fn attachment_set_id(
         mut self,
@@ -183,5 +204,9 @@ impl AddCommunicationToCaseFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_attachment_set_id(input);
         self
+    }
+    /// <p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <code>AddAttachmentsToSet</code> </p>
+    pub fn get_attachment_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_attachment_set_id()
     }
 }

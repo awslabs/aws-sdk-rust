@@ -37,6 +37,10 @@ impl EnableImportFindingsForProductFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the EnableImportFindingsForProduct as a reference.
+    pub fn as_input(&self) -> &crate::operation::enable_import_findings_for_product::builders::EnableImportFindingsForProductInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,5 +104,9 @@ impl EnableImportFindingsForProductFluentBuilder {
     pub fn set_product_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_product_arn(input);
         self
+    }
+    /// <p>The ARN of the product to enable the integration for.</p>
+    pub fn get_product_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_product_arn()
     }
 }

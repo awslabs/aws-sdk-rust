@@ -64,6 +64,10 @@ impl UpdateThingGroupInputBuilder {
         self.thing_group_name = input;
         self
     }
+    /// <p>The thing group to update.</p>
+    pub fn get_thing_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_group_name
+    }
     /// <p>The thing group properties.</p>
     pub fn thing_group_properties(mut self, input: crate::types::ThingGroupProperties) -> Self {
         self.thing_group_properties = ::std::option::Option::Some(input);
@@ -77,6 +81,12 @@ impl UpdateThingGroupInputBuilder {
         self.thing_group_properties = input;
         self
     }
+    /// <p>The thing group properties.</p>
+    pub fn get_thing_group_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::ThingGroupProperties> {
+        &self.thing_group_properties
+    }
     /// <p>The expected version of the thing group. If this does not match the version of the thing group being updated, the update will fail.</p>
     pub fn expected_version(mut self, input: i64) -> Self {
         self.expected_version = ::std::option::Option::Some(input);
@@ -86,6 +96,10 @@ impl UpdateThingGroupInputBuilder {
     pub fn set_expected_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.expected_version = input;
         self
+    }
+    /// <p>The expected version of the thing group. If this does not match the version of the thing group being updated, the update will fail.</p>
+    pub fn get_expected_version(&self) -> &::std::option::Option<i64> {
+        &self.expected_version
     }
     /// Consumes the builder and constructs a [`UpdateThingGroupInput`](crate::operation::update_thing_group::UpdateThingGroupInput).
     pub fn build(

@@ -50,6 +50,12 @@ impl GetVirtualMachineOutputBuilder {
         self.virtual_machine = input;
         self
     }
+    /// <p>This object contains the basic attributes of <code>VirtualMachine</code> contained by the output of <code>GetVirtualMachine</code> </p>
+    pub fn get_virtual_machine(
+        &self,
+    ) -> &::std::option::Option<crate::types::VirtualMachineDetails> {
+        &self.virtual_machine
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

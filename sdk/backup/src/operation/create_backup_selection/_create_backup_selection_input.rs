@@ -65,6 +65,10 @@ impl CreateBackupSelectionInputBuilder {
         self.backup_plan_id = input;
         self
     }
+    /// <p>Uniquely identifies the backup plan to be associated with the selection of resources.</p>
+    pub fn get_backup_plan_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_plan_id
+    }
     /// <p>Specifies the body of a request to assign a set of resources to a backup plan.</p>
     pub fn backup_selection(mut self, input: crate::types::BackupSelection) -> Self {
         self.backup_selection = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl CreateBackupSelectionInputBuilder {
     ) -> Self {
         self.backup_selection = input;
         self
+    }
+    /// <p>Specifies the body of a request to assign a set of resources to a backup plan.</p>
+    pub fn get_backup_selection(&self) -> &::std::option::Option<crate::types::BackupSelection> {
+        &self.backup_selection
     }
     /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional.</p>
     /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
@@ -95,6 +103,11 @@ impl CreateBackupSelectionInputBuilder {
     ) -> Self {
         self.creator_request_id = input;
         self
+    }
+    /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional.</p>
+    /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
+    pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creator_request_id
     }
     /// Consumes the builder and constructs a [`CreateBackupSelectionInput`](crate::operation::create_backup_selection::CreateBackupSelectionInput).
     pub fn build(

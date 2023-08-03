@@ -36,6 +36,10 @@ impl DescribeAssociationExecutionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeAssociationExecutions as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_association_executions::builders::DescribeAssociationExecutionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +142,10 @@ impl DescribeAssociationExecutionsFluentBuilder {
         self.inner = self.inner.set_association_id(input);
         self
     }
+    /// <p>The association ID for which you want to view execution history details.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_association_id()
+    }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -161,6 +169,15 @@ impl DescribeAssociationExecutionsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>Filters for the request. You can specify the following filters and values.</p>
+    /// <p>ExecutionId (EQUAL)</p>
+    /// <p>Status (EQUAL)</p>
+    /// <p>CreatedTime (EQUAL, GREATER_THAN, LESS_THAN)</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociationExecutionFilter>> {
+        self.inner.get_filters()
+    }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -171,6 +188,10 @@ impl DescribeAssociationExecutionsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -180,5 +201,9 @@ impl DescribeAssociationExecutionsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

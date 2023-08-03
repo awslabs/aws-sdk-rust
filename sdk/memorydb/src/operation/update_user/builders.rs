@@ -36,6 +36,10 @@ impl UpdateUserFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateUser as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_user::builders::UpdateUserInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdateUserFluentBuilder {
         self.inner = self.inner.set_user_name(input);
         self
     }
+    /// <p>The name of the user</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_name()
+    }
     /// <p>Denotes the user's authentication properties, such as whether it requires a password to authenticate.</p>
     pub fn authentication_mode(mut self, input: crate::types::AuthenticationMode) -> Self {
         self.inner = self.inner.authentication_mode(input);
@@ -130,6 +138,12 @@ impl UpdateUserFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_authentication_mode(input);
         self
+    }
+    /// <p>Denotes the user's authentication properties, such as whether it requires a password to authenticate.</p>
+    pub fn get_authentication_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthenticationMode> {
+        self.inner.get_authentication_mode()
     }
     /// <p>Access permissions string used for this user.</p>
     pub fn access_string(
@@ -146,5 +160,9 @@ impl UpdateUserFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_access_string(input);
         self
+    }
+    /// <p>Access permissions string used for this user.</p>
+    pub fn get_access_string(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_access_string()
     }
 }

@@ -45,6 +45,10 @@ impl StopAssessmentInputBuilder {
         self.assessment_id = input;
         self
     }
+    /// <p> The <code>assessmentId</code> returned by <code>StartAssessment</code>. </p>
+    pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_id
+    }
     /// Consumes the builder and constructs a [`StopAssessmentInput`](crate::operation::stop_assessment::StopAssessmentInput).
     pub fn build(
         self,

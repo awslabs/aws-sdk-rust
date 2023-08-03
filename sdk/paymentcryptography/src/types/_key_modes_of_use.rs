@@ -104,6 +104,10 @@ impl KeyModesOfUseBuilder {
         self.encrypt = input;
         self
     }
+    /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used to encrypt data.</p>
+    pub fn get_encrypt(&self) -> &::std::option::Option<bool> {
+        &self.encrypt
+    }
     /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used to decrypt data.</p>
     pub fn decrypt(mut self, input: bool) -> Self {
         self.decrypt = ::std::option::Option::Some(input);
@@ -113,6 +117,10 @@ impl KeyModesOfUseBuilder {
     pub fn set_decrypt(mut self, input: ::std::option::Option<bool>) -> Self {
         self.decrypt = input;
         self
+    }
+    /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used to decrypt data.</p>
+    pub fn get_decrypt(&self) -> &::std::option::Option<bool> {
+        &self.decrypt
     }
     /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used to wrap other keys.</p>
     pub fn wrap(mut self, input: bool) -> Self {
@@ -124,6 +132,10 @@ impl KeyModesOfUseBuilder {
         self.wrap = input;
         self
     }
+    /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used to wrap other keys.</p>
+    pub fn get_wrap(&self) -> &::std::option::Option<bool> {
+        &self.wrap
+    }
     /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used to unwrap other keys.</p>
     pub fn unwrap(mut self, input: bool) -> Self {
         self.unwrap = ::std::option::Option::Some(input);
@@ -133,6 +145,10 @@ impl KeyModesOfUseBuilder {
     pub fn set_unwrap(mut self, input: ::std::option::Option<bool>) -> Self {
         self.unwrap = input;
         self
+    }
+    /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used to unwrap other keys.</p>
+    pub fn get_unwrap(&self) -> &::std::option::Option<bool> {
+        &self.unwrap
     }
     /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used to generate and verify other card and PIN verification keys.</p>
     pub fn generate(mut self, input: bool) -> Self {
@@ -144,6 +160,10 @@ impl KeyModesOfUseBuilder {
         self.generate = input;
         self
     }
+    /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used to generate and verify other card and PIN verification keys.</p>
+    pub fn get_generate(&self) -> &::std::option::Option<bool> {
+        &self.generate
+    }
     /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used for signing.</p>
     pub fn sign(mut self, input: bool) -> Self {
         self.sign = ::std::option::Option::Some(input);
@@ -153,6 +173,10 @@ impl KeyModesOfUseBuilder {
     pub fn set_sign(mut self, input: ::std::option::Option<bool>) -> Self {
         self.sign = input;
         self
+    }
+    /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used for signing.</p>
+    pub fn get_sign(&self) -> &::std::option::Option<bool> {
+        &self.sign
     }
     /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used to verify signatures.</p>
     pub fn verify(mut self, input: bool) -> Self {
@@ -164,6 +188,10 @@ impl KeyModesOfUseBuilder {
         self.verify = input;
         self
     }
+    /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used to verify signatures.</p>
+    pub fn get_verify(&self) -> &::std::option::Option<bool> {
+        &self.verify
+    }
     /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used to derive new keys.</p>
     pub fn derive_key(mut self, input: bool) -> Self {
         self.derive_key = ::std::option::Option::Some(input);
@@ -174,6 +202,10 @@ impl KeyModesOfUseBuilder {
         self.derive_key = input;
         self
     }
+    /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used to derive new keys.</p>
+    pub fn get_derive_key(&self) -> &::std::option::Option<bool> {
+        &self.derive_key
+    }
     /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key has no special restrictions other than the restrictions implied by <code>KeyUsage</code>.</p>
     pub fn no_restrictions(mut self, input: bool) -> Self {
         self.no_restrictions = ::std::option::Option::Some(input);
@@ -183,6 +215,10 @@ impl KeyModesOfUseBuilder {
     pub fn set_no_restrictions(mut self, input: ::std::option::Option<bool>) -> Self {
         self.no_restrictions = input;
         self
+    }
+    /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key has no special restrictions other than the restrictions implied by <code>KeyUsage</code>.</p>
+    pub fn get_no_restrictions(&self) -> &::std::option::Option<bool> {
+        &self.no_restrictions
     }
     /// Consumes the builder and constructs a [`KeyModesOfUse`](crate::types::KeyModesOfUse).
     pub fn build(self) -> crate::types::KeyModesOfUse {

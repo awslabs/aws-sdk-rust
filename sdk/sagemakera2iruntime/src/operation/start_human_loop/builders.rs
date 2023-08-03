@@ -36,6 +36,12 @@ impl StartHumanLoopFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartHumanLoop as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_human_loop::builders::StartHumanLoopInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl StartHumanLoopFluentBuilder {
         self.inner = self.inner.set_human_loop_name(input);
         self
     }
+    /// <p>The name of the human loop.</p>
+    pub fn get_human_loop_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_human_loop_name()
+    }
     /// <p>The Amazon Resource Name (ARN) of the flow definition associated with this human loop.</p>
     pub fn flow_definition_arn(
         mut self,
@@ -148,6 +158,10 @@ impl StartHumanLoopFluentBuilder {
         self.inner = self.inner.set_flow_definition_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the flow definition associated with this human loop.</p>
+    pub fn get_flow_definition_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_flow_definition_arn()
+    }
     /// <p>An object that contains information about the human loop.</p>
     pub fn human_loop_input(mut self, input: crate::types::HumanLoopInput) -> Self {
         self.inner = self.inner.human_loop_input(input);
@@ -161,6 +175,10 @@ impl StartHumanLoopFluentBuilder {
         self.inner = self.inner.set_human_loop_input(input);
         self
     }
+    /// <p>An object that contains information about the human loop.</p>
+    pub fn get_human_loop_input(&self) -> &::std::option::Option<crate::types::HumanLoopInput> {
+        self.inner.get_human_loop_input()
+    }
     /// <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data is free of personally identifiable information and/or free of adult content.</p>
     pub fn data_attributes(mut self, input: crate::types::HumanLoopDataAttributes) -> Self {
         self.inner = self.inner.data_attributes(input);
@@ -173,5 +191,11 @@ impl StartHumanLoopFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_data_attributes(input);
         self
+    }
+    /// <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data is free of personally identifiable information and/or free of adult content.</p>
+    pub fn get_data_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::HumanLoopDataAttributes> {
+        self.inner.get_data_attributes()
     }
 }

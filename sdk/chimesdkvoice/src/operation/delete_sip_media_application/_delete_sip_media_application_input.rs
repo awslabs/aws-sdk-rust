@@ -45,6 +45,10 @@ impl DeleteSipMediaApplicationInputBuilder {
         self.sip_media_application_id = input;
         self
     }
+    /// <p>The SIP media application ID.</p>
+    pub fn get_sip_media_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sip_media_application_id
+    }
     /// Consumes the builder and constructs a [`DeleteSipMediaApplicationInput`](crate::operation::delete_sip_media_application::DeleteSipMediaApplicationInput).
     pub fn build(
         self,

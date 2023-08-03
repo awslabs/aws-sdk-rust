@@ -76,6 +76,12 @@ impl BatchGetRecordOutputBuilder {
         self.records = input;
         self
     }
+    /// <p>A list of Records you requested to be retrieved in batch.</p>
+    pub fn get_records(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetRecordResultDetail>> {
+        &self.records
+    }
     /// Appends an item to `errors`.
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
@@ -94,6 +100,12 @@ impl BatchGetRecordOutputBuilder {
     ) -> Self {
         self.errors = input;
         self
+    }
+    /// <p>A list of errors that have occurred when retrieving a batch of Records.</p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetRecordError>> {
+        &self.errors
     }
     /// Appends an item to `unprocessed_identifiers`.
     ///
@@ -116,6 +128,12 @@ impl BatchGetRecordOutputBuilder {
     ) -> Self {
         self.unprocessed_identifiers = input;
         self
+    }
+    /// <p>A unprocessed list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name.</p>
+    pub fn get_unprocessed_identifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetRecordIdentifier>> {
+        &self.unprocessed_identifiers
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -36,6 +36,10 @@ impl CreateDistributionConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDistributionConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_distribution_configuration::builders::CreateDistributionConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl CreateDistributionConfigurationFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the distribution configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The description of the distribution configuration.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -109,6 +117,10 @@ impl CreateDistributionConfigurationFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the distribution configuration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `distributions`.
     ///
@@ -126,6 +138,12 @@ impl CreateDistributionConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_distributions(input);
         self
+    }
+    /// <p>The distributions of the distribution configuration.</p>
+    pub fn get_distributions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Distribution>> {
+        self.inner.get_distributions()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -150,6 +168,14 @@ impl CreateDistributionConfigurationFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags of the distribution configuration.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>The idempotency token of the distribution configuration.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -159,5 +185,9 @@ impl CreateDistributionConfigurationFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>The idempotency token of the distribution configuration.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

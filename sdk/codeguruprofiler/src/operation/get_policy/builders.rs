@@ -36,6 +36,10 @@ impl GetPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetPolicy as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_policy::builders::GetPolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -123,5 +127,9 @@ impl GetPolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_profiling_group_name(input);
         self
+    }
+    /// <p>The name of the profiling group.</p>
+    pub fn get_profiling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_profiling_group_name()
     }
 }

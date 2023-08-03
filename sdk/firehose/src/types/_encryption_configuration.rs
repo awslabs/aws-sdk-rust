@@ -53,6 +53,12 @@ impl EncryptionConfigurationBuilder {
         self.no_encryption_config = input;
         self
     }
+    /// <p>Specifically override existing encryption information to ensure that no encryption is used.</p>
+    pub fn get_no_encryption_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::NoEncryptionConfig> {
+        &self.no_encryption_config
+    }
     /// <p>The encryption key.</p>
     pub fn kms_encryption_config(mut self, input: crate::types::KmsEncryptionConfig) -> Self {
         self.kms_encryption_config = ::std::option::Option::Some(input);
@@ -65,6 +71,12 @@ impl EncryptionConfigurationBuilder {
     ) -> Self {
         self.kms_encryption_config = input;
         self
+    }
+    /// <p>The encryption key.</p>
+    pub fn get_kms_encryption_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::KmsEncryptionConfig> {
+        &self.kms_encryption_config
     }
     /// Consumes the builder and constructs a [`EncryptionConfiguration`](crate::types::EncryptionConfiguration).
     pub fn build(self) -> crate::types::EncryptionConfiguration {

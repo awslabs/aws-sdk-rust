@@ -56,6 +56,10 @@ impl AssetModelHierarchyBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the asset model hierarchy. This ID is a <code>hierarchyId</code>.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the asset model hierarchy that you specify by using the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl AssetModelHierarchyBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the asset model hierarchy that you specify by using the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The ID of the asset model. All assets in this hierarchy must be instances of the <code>childAssetModelId</code> asset model.</p>
     pub fn child_asset_model_id(
@@ -81,6 +89,10 @@ impl AssetModelHierarchyBuilder {
     ) -> Self {
         self.child_asset_model_id = input;
         self
+    }
+    /// <p>The ID of the asset model. All assets in this hierarchy must be instances of the <code>childAssetModelId</code> asset model.</p>
+    pub fn get_child_asset_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.child_asset_model_id
     }
     /// Consumes the builder and constructs a [`AssetModelHierarchy`](crate::types::AssetModelHierarchy).
     pub fn build(self) -> crate::types::AssetModelHierarchy {

@@ -100,6 +100,10 @@ impl ComponentUpdateRequestBuilder {
         self.update_type = input;
         self
     }
+    /// <p>The update type of the component update request.</p>
+    pub fn get_update_type(&self) -> &::std::option::Option<crate::types::ComponentUpdateType> {
+        &self.update_type
+    }
     /// <p>The description of the component type.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -109,6 +113,10 @@ impl ComponentUpdateRequestBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the component type.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The ID of the component type.</p>
     pub fn component_type_id(
@@ -125,6 +133,10 @@ impl ComponentUpdateRequestBuilder {
     ) -> Self {
         self.component_type_id = input;
         self
+    }
+    /// <p>The ID of the component type.</p>
+    pub fn get_component_type_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_type_id
     }
     /// Adds a key-value pair to `property_updates`.
     ///
@@ -150,6 +162,14 @@ impl ComponentUpdateRequestBuilder {
     ) -> Self {
         self.property_updates = input;
         self
+    }
+    /// <p>An object that maps strings to the properties to set in the component type update. Each string in the mapping must be unique to this object.</p>
+    pub fn get_property_updates(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::PropertyRequest>,
+    > {
+        &self.property_updates
     }
     /// Adds a key-value pair to `property_group_updates`.
     ///
@@ -178,6 +198,17 @@ impl ComponentUpdateRequestBuilder {
     ) -> Self {
         self.property_group_updates = input;
         self
+    }
+    /// <p>The property group updates.</p>
+    pub fn get_property_group_updates(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::ComponentPropertyGroupRequest,
+        >,
+    > {
+        &self.property_group_updates
     }
     /// Consumes the builder and constructs a [`ComponentUpdateRequest`](crate::types::ComponentUpdateRequest).
     pub fn build(self) -> crate::types::ComponentUpdateRequest {

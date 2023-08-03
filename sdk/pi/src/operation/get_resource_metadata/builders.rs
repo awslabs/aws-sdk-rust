@@ -36,6 +36,12 @@ impl GetResourceMetadataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetResourceMetadata as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_resource_metadata::builders::GetResourceMetadataInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl GetResourceMetadataFluentBuilder {
         self.inner = self.inner.set_service_type(input);
         self
     }
+    /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
+    pub fn get_service_type(&self) -> &::std::option::Option<crate::types::ServiceType> {
+        self.inner.get_service_type()
+    }
     /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identifier(input.into());
@@ -138,5 +148,9 @@ impl GetResourceMetadataFluentBuilder {
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identifier(input);
         self
+    }
+    /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identifier()
     }
 }

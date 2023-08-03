@@ -46,6 +46,10 @@ impl GetLicenseOutputBuilder {
         self.license = input;
         self
     }
+    /// <p>License details.</p>
+    pub fn get_license(&self) -> &::std::option::Option<crate::types::License> {
+        &self.license
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

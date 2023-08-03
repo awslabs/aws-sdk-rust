@@ -56,6 +56,10 @@ impl ListBatchLoadTasksInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The total number of items to return in the output. If the total number of items available is more than the value specified, a NextToken is provided in the output. To resume pagination, provide the NextToken value as argument of a subsequent API invocation.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl ListBatchLoadTasksInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The total number of items to return in the output. If the total number of items available is more than the value specified, a NextToken is provided in the output. To resume pagination, provide the NextToken value as argument of a subsequent API invocation.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>Status of the batch load task.</p>
     pub fn task_status(mut self, input: crate::types::BatchLoadStatus) -> Self {
@@ -78,6 +86,10 @@ impl ListBatchLoadTasksInputBuilder {
     ) -> Self {
         self.task_status = input;
         self
+    }
+    /// <p>Status of the batch load task.</p>
+    pub fn get_task_status(&self) -> &::std::option::Option<crate::types::BatchLoadStatus> {
+        &self.task_status
     }
     /// Consumes the builder and constructs a [`ListBatchLoadTasksInput`](crate::operation::list_batch_load_tasks::ListBatchLoadTasksInput).
     pub fn build(

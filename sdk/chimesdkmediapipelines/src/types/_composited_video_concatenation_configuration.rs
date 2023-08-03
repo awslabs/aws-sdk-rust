@@ -43,6 +43,10 @@ impl CompositedVideoConcatenationConfigurationBuilder {
         self.state = input;
         self
     }
+    /// <p>Enables or disables the configuration object.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ArtifactsConcatenationState> {
+        &self.state
+    }
     /// Consumes the builder and constructs a [`CompositedVideoConcatenationConfiguration`](crate::types::CompositedVideoConcatenationConfiguration).
     pub fn build(self) -> crate::types::CompositedVideoConcatenationConfiguration {
         crate::types::CompositedVideoConcatenationConfiguration { state: self.state }

@@ -84,6 +84,10 @@ impl LaunchProfileInitializationScriptBuilder {
         self.script = input;
         self
     }
+    /// <p>The initialization script.</p>
+    pub fn get_script(&self) -> &::std::option::Option<::std::string::String> {
+        &self.script
+    }
     /// <p>The unique identifier for a studio component resource.</p>
     pub fn studio_component_id(
         mut self,
@@ -99,6 +103,10 @@ impl LaunchProfileInitializationScriptBuilder {
     ) -> Self {
         self.studio_component_id = input;
         self
+    }
+    /// <p>The unique identifier for a studio component resource.</p>
+    pub fn get_studio_component_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_component_id
     }
     /// <p>The name for the studio component.</p>
     pub fn studio_component_name(
@@ -116,6 +124,10 @@ impl LaunchProfileInitializationScriptBuilder {
         self.studio_component_name = input;
         self
     }
+    /// <p>The name for the studio component.</p>
+    pub fn get_studio_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_component_name
+    }
     /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
     pub fn secure_initialization_role_arn(
         mut self,
@@ -132,6 +144,12 @@ impl LaunchProfileInitializationScriptBuilder {
         self.secure_initialization_role_arn = input;
         self
     }
+    /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
+    pub fn get_secure_initialization_role_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.secure_initialization_role_arn
+    }
     /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
     pub fn runtime_role_arn(
         mut self,
@@ -147,6 +165,10 @@ impl LaunchProfileInitializationScriptBuilder {
     ) -> Self {
         self.runtime_role_arn = input;
         self
+    }
+    /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
+    pub fn get_runtime_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.runtime_role_arn
     }
     /// Consumes the builder and constructs a [`LaunchProfileInitializationScript`](crate::types::LaunchProfileInitializationScript).
     pub fn build(self) -> crate::types::LaunchProfileInitializationScript {

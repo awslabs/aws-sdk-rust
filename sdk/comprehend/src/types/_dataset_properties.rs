@@ -112,6 +112,10 @@ impl DatasetPropertiesBuilder {
         self.dataset_arn = input;
         self
     }
+    /// <p>The ARN of the dataset.</p>
+    pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_arn
+    }
     /// <p>The name of the dataset.</p>
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_name = ::std::option::Option::Some(input.into());
@@ -121,6 +125,10 @@ impl DatasetPropertiesBuilder {
     pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_name = input;
         self
+    }
+    /// <p>The name of the dataset.</p>
+    pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_name
     }
     /// <p>The dataset type (training data or test data).</p>
     pub fn dataset_type(mut self, input: crate::types::DatasetType) -> Self {
@@ -134,6 +142,10 @@ impl DatasetPropertiesBuilder {
     ) -> Self {
         self.dataset_type = input;
         self
+    }
+    /// <p>The dataset type (training data or test data).</p>
+    pub fn get_dataset_type(&self) -> &::std::option::Option<crate::types::DatasetType> {
+        &self.dataset_type
     }
     /// <p>The S3 URI where the dataset is stored.</p>
     pub fn dataset_s3_uri(
@@ -151,6 +163,10 @@ impl DatasetPropertiesBuilder {
         self.dataset_s3_uri = input;
         self
     }
+    /// <p>The S3 URI where the dataset is stored.</p>
+    pub fn get_dataset_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_s3_uri
+    }
     /// <p>Description of the dataset.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -160,6 +176,10 @@ impl DatasetPropertiesBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Description of the dataset.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The dataset status. While the system creates the dataset, the status is <code>CREATING</code>. When the dataset is ready to use, the status changes to <code>COMPLETED</code>. </p>
     pub fn status(mut self, input: crate::types::DatasetStatus) -> Self {
@@ -171,6 +191,10 @@ impl DatasetPropertiesBuilder {
         self.status = input;
         self
     }
+    /// <p>The dataset status. While the system creates the dataset, the status is <code>CREATING</code>. When the dataset is ready to use, the status changes to <code>COMPLETED</code>. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DatasetStatus> {
+        &self.status
+    }
     /// <p>A description of the status of the dataset.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -181,6 +205,10 @@ impl DatasetPropertiesBuilder {
         self.message = input;
         self
     }
+    /// <p>A description of the status of the dataset.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The number of documents in the dataset.</p>
     pub fn number_of_documents(mut self, input: i64) -> Self {
         self.number_of_documents = ::std::option::Option::Some(input);
@@ -190,6 +218,10 @@ impl DatasetPropertiesBuilder {
     pub fn set_number_of_documents(mut self, input: ::std::option::Option<i64>) -> Self {
         self.number_of_documents = input;
         self
+    }
+    /// <p>The number of documents in the dataset.</p>
+    pub fn get_number_of_documents(&self) -> &::std::option::Option<i64> {
+        &self.number_of_documents
     }
     /// <p>Creation time of the dataset.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -204,6 +236,10 @@ impl DatasetPropertiesBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>Creation time of the dataset.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>Time when the data from the dataset becomes available in the data lake.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -216,6 +252,10 @@ impl DatasetPropertiesBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>Time when the data from the dataset becomes available in the data lake.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// Consumes the builder and constructs a [`DatasetProperties`](crate::types::DatasetProperties).
     pub fn build(self) -> crate::types::DatasetProperties {

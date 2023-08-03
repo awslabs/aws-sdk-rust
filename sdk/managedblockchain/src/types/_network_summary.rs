@@ -96,6 +96,10 @@ impl NetworkSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier of the network.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the network.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl NetworkSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the network.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>An optional description of the network.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -116,6 +124,10 @@ impl NetworkSummaryBuilder {
         self.description = input;
         self
     }
+    /// <p>An optional description of the network.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The blockchain framework that the network uses.</p>
     pub fn framework(mut self, input: crate::types::Framework) -> Self {
         self.framework = ::std::option::Option::Some(input);
@@ -125,6 +137,10 @@ impl NetworkSummaryBuilder {
     pub fn set_framework(mut self, input: ::std::option::Option<crate::types::Framework>) -> Self {
         self.framework = input;
         self
+    }
+    /// <p>The blockchain framework that the network uses.</p>
+    pub fn get_framework(&self) -> &::std::option::Option<crate::types::Framework> {
+        &self.framework
     }
     /// <p>The version of the blockchain framework that the network uses.</p>
     pub fn framework_version(
@@ -142,6 +158,10 @@ impl NetworkSummaryBuilder {
         self.framework_version = input;
         self
     }
+    /// <p>The version of the blockchain framework that the network uses.</p>
+    pub fn get_framework_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.framework_version
+    }
     /// <p>The current status of the network.</p>
     pub fn status(mut self, input: crate::types::NetworkStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -151,6 +171,10 @@ impl NetworkSummaryBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::NetworkStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the network.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::NetworkStatus> {
+        &self.status
     }
     /// <p>The date and time that the network was created.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -165,6 +189,10 @@ impl NetworkSummaryBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>The date and time that the network was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
+    }
     /// <p>The Amazon Resource Name (ARN) of the network. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -174,6 +202,10 @@ impl NetworkSummaryBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the network. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`NetworkSummary`](crate::types::NetworkSummary).
     pub fn build(self) -> crate::types::NetworkSummary {

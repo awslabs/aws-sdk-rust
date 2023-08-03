@@ -80,6 +80,10 @@ impl S3CatalogDeltaSourceBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the Delta Lake data source.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The name of the database to read from.</p>
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl S3CatalogDeltaSourceBuilder {
         self.database = input;
         self
     }
+    /// <p>The name of the database to read from.</p>
+    pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database
+    }
     /// <p>The name of the table in the database to read from.</p>
     pub fn table(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table = ::std::option::Option::Some(input.into());
@@ -99,6 +107,10 @@ impl S3CatalogDeltaSourceBuilder {
     pub fn set_table(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table = input;
         self
+    }
+    /// <p>The name of the table in the database to read from.</p>
+    pub fn get_table(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table
     }
     /// Adds a key-value pair to `additional_delta_options`.
     ///
@@ -125,6 +137,14 @@ impl S3CatalogDeltaSourceBuilder {
         self.additional_delta_options = input;
         self
     }
+    /// <p>Specifies additional connection options.</p>
+    pub fn get_additional_delta_options(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.additional_delta_options
+    }
     /// Appends an item to `output_schemas`.
     ///
     /// To override the contents of this collection use [`set_output_schemas`](Self::set_output_schemas).
@@ -143,6 +163,12 @@ impl S3CatalogDeltaSourceBuilder {
     ) -> Self {
         self.output_schemas = input;
         self
+    }
+    /// <p>Specifies the data schema for the Delta Lake source.</p>
+    pub fn get_output_schemas(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>> {
+        &self.output_schemas
     }
     /// Consumes the builder and constructs a [`S3CatalogDeltaSource`](crate::types::S3CatalogDeltaSource).
     pub fn build(self) -> crate::types::S3CatalogDeltaSource {

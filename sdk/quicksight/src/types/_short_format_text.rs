@@ -49,6 +49,10 @@ impl ShortFormatTextBuilder {
         self.plain_text = input;
         self
     }
+    /// <p>Plain text format.</p>
+    pub fn get_plain_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.plain_text
+    }
     /// <p>Rich text. Examples of rich text include bold, underline, and italics.</p>
     pub fn rich_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rich_text = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl ShortFormatTextBuilder {
     pub fn set_rich_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rich_text = input;
         self
+    }
+    /// <p>Rich text. Examples of rich text include bold, underline, and italics.</p>
+    pub fn get_rich_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rich_text
     }
     /// Consumes the builder and constructs a [`ShortFormatText`](crate::types::ShortFormatText).
     pub fn build(self) -> crate::types::ShortFormatText {

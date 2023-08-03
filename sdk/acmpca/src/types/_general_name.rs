@@ -96,6 +96,10 @@ impl GeneralNameBuilder {
         self.other_name = input;
         self
     }
+    /// <p>Represents <code>GeneralName</code> using an <code>OtherName</code> object.</p>
+    pub fn get_other_name(&self) -> &::std::option::Option<crate::types::OtherName> {
+        &self.other_name
+    }
     /// <p>Represents <code>GeneralName</code> as an <a href="https://datatracker.ietf.org/doc/html/rfc822">RFC 822</a> email address.</p>
     pub fn rfc822_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rfc822_name = ::std::option::Option::Some(input.into());
@@ -106,6 +110,10 @@ impl GeneralNameBuilder {
         self.rfc822_name = input;
         self
     }
+    /// <p>Represents <code>GeneralName</code> as an <a href="https://datatracker.ietf.org/doc/html/rfc822">RFC 822</a> email address.</p>
+    pub fn get_rfc822_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rfc822_name
+    }
     /// <p>Represents <code>GeneralName</code> as a DNS name.</p>
     pub fn dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dns_name = ::std::option::Option::Some(input.into());
@@ -115,6 +123,10 @@ impl GeneralNameBuilder {
     pub fn set_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dns_name = input;
         self
+    }
+    /// <p>Represents <code>GeneralName</code> as a DNS name.</p>
+    pub fn get_dns_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dns_name
     }
     /// <p>Contains information about the certificate subject. The <code>Subject</code> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <code>Subject </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate.</p>
     pub fn directory_name(mut self, input: crate::types::Asn1Subject) -> Self {
@@ -129,6 +141,10 @@ impl GeneralNameBuilder {
         self.directory_name = input;
         self
     }
+    /// <p>Contains information about the certificate subject. The <code>Subject</code> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <code>Subject </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate.</p>
+    pub fn get_directory_name(&self) -> &::std::option::Option<crate::types::Asn1Subject> {
+        &self.directory_name
+    }
     /// <p>Represents <code>GeneralName</code> as an <code>EdiPartyName</code> object.</p>
     pub fn edi_party_name(mut self, input: crate::types::EdiPartyName) -> Self {
         self.edi_party_name = ::std::option::Option::Some(input);
@@ -141,6 +157,10 @@ impl GeneralNameBuilder {
     ) -> Self {
         self.edi_party_name = input;
         self
+    }
+    /// <p>Represents <code>GeneralName</code> as an <code>EdiPartyName</code> object.</p>
+    pub fn get_edi_party_name(&self) -> &::std::option::Option<crate::types::EdiPartyName> {
+        &self.edi_party_name
     }
     /// <p>Represents <code>GeneralName</code> as a URI.</p>
     pub fn uniform_resource_identifier(
@@ -158,6 +178,10 @@ impl GeneralNameBuilder {
         self.uniform_resource_identifier = input;
         self
     }
+    /// <p>Represents <code>GeneralName</code> as a URI.</p>
+    pub fn get_uniform_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uniform_resource_identifier
+    }
     /// <p>Represents <code>GeneralName</code> as an IPv4 or IPv6 address.</p>
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_address = ::std::option::Option::Some(input.into());
@@ -167,6 +191,10 @@ impl GeneralNameBuilder {
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_address = input;
         self
+    }
+    /// <p>Represents <code>GeneralName</code> as an IPv4 or IPv6 address.</p>
+    pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address
     }
     /// <p> Represents <code>GeneralName</code> as an object identifier (OID).</p>
     pub fn registered_id(
@@ -183,6 +211,10 @@ impl GeneralNameBuilder {
     ) -> Self {
         self.registered_id = input;
         self
+    }
+    /// <p> Represents <code>GeneralName</code> as an object identifier (OID).</p>
+    pub fn get_registered_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registered_id
     }
     /// Consumes the builder and constructs a [`GeneralName`](crate::types::GeneralName).
     pub fn build(self) -> crate::types::GeneralName {

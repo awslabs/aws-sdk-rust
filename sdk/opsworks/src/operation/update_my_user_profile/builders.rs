@@ -37,6 +37,12 @@ impl UpdateMyUserProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateMyUserProfile as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_my_user_profile::builders::UpdateMyUserProfileInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +138,9 @@ impl UpdateMyUserProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ssh_public_key(input);
         self
+    }
+    /// <p>The user's SSH public key.</p>
+    pub fn get_ssh_public_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ssh_public_key()
     }
 }

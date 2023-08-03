@@ -43,6 +43,12 @@ impl PutPermissionPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutPermissionPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_permission_policy::builders::PutPermissionPolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl PutPermissionPolicyFluentBuilder {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the <code>RuleGroup</code> to which you want to attach the policy.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
+    }
     /// <p>The policy to attach to the specified rule group. </p>
     /// <p>The policy specifications must conform to the following:</p>
     /// <ul>
@@ -160,5 +170,18 @@ impl PutPermissionPolicyFluentBuilder {
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy(input);
         self
+    }
+    /// <p>The policy to attach to the specified rule group. </p>
+    /// <p>The policy specifications must conform to the following:</p>
+    /// <ul>
+    /// <li> <p>The policy must be composed using IAM Policy version 2012-10-17.</p> </li>
+    /// <li> <p>The policy must include specifications for <code>Effect</code>, <code>Action</code>, and <code>Principal</code>.</p> </li>
+    /// <li> <p> <code>Effect</code> must specify <code>Allow</code>.</p> </li>
+    /// <li> <p> <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard actions in the policy.</p> </li>
+    /// <li> <p>The policy must not include a <code>Resource</code> parameter.</p> </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a>. </p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy()
     }
 }

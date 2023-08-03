@@ -79,6 +79,10 @@ impl DeleteEnvironmentOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the environment.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) of the environment.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -88,6 +92,10 @@ impl DeleteEnvironmentOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the environment.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The unique identifier of the environment.</p>
     pub fn environment_id(
@@ -105,6 +113,10 @@ impl DeleteEnvironmentOutputBuilder {
         self.environment_id = input;
         self
     }
+    /// <p>The unique identifier of the environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
+    }
     /// <p>The current state of the environment. </p>
     pub fn state(mut self, input: crate::types::EnvironmentState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -118,6 +130,10 @@ impl DeleteEnvironmentOutputBuilder {
         self.state = input;
         self
     }
+    /// <p>The current state of the environment. </p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::EnvironmentState> {
+        &self.state
+    }
     /// <p>A timestamp that indicates when the environment was last updated. </p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -130,6 +146,10 @@ impl DeleteEnvironmentOutputBuilder {
     ) -> Self {
         self.last_updated_time = input;
         self
+    }
+    /// <p>A timestamp that indicates when the environment was last updated. </p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

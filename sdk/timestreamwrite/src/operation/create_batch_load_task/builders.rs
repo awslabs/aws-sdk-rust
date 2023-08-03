@@ -36,6 +36,12 @@ impl CreateBatchLoadTaskFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateBatchLoadTask as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_batch_load_task::builders::CreateBatchLoadTaskInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl CreateBatchLoadTaskFluentBuilder {
         self
     }
     /// <p></p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
+    /// <p></p>
     pub fn data_model_configuration(mut self, input: crate::types::DataModelConfiguration) -> Self {
         self.inner = self.inner.data_model_configuration(input);
         self
@@ -138,6 +148,12 @@ impl CreateBatchLoadTaskFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_data_model_configuration(input);
         self
+    }
+    /// <p></p>
+    pub fn get_data_model_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataModelConfiguration> {
+        self.inner.get_data_model_configuration()
     }
     /// <p>Defines configuration details about the data source for a batch load task.</p>
     pub fn data_source_configuration(
@@ -155,6 +171,12 @@ impl CreateBatchLoadTaskFluentBuilder {
         self.inner = self.inner.set_data_source_configuration(input);
         self
     }
+    /// <p>Defines configuration details about the data source for a batch load task.</p>
+    pub fn get_data_source_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataSourceConfiguration> {
+        self.inner.get_data_source_configuration()
+    }
     /// <p>Report configuration for a batch load task. This contains details about where error reports are stored.</p>
     pub fn report_configuration(mut self, input: crate::types::ReportConfiguration) -> Self {
         self.inner = self.inner.report_configuration(input);
@@ -167,6 +189,12 @@ impl CreateBatchLoadTaskFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_report_configuration(input);
         self
+    }
+    /// <p>Report configuration for a batch load task. This contains details about where error reports are stored.</p>
+    pub fn get_report_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReportConfiguration> {
+        self.inner.get_report_configuration()
     }
     /// <p>Target Timestream database for a batch load task.</p>
     pub fn target_database_name(
@@ -184,6 +212,10 @@ impl CreateBatchLoadTaskFluentBuilder {
         self.inner = self.inner.set_target_database_name(input);
         self
     }
+    /// <p>Target Timestream database for a batch load task.</p>
+    pub fn get_target_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_database_name()
+    }
     /// <p>Target Timestream table for a batch load task.</p>
     pub fn target_table_name(
         mut self,
@@ -200,6 +232,10 @@ impl CreateBatchLoadTaskFluentBuilder {
         self.inner = self.inner.set_target_table_name(input);
         self
     }
+    /// <p>Target Timestream table for a batch load task.</p>
+    pub fn get_target_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_table_name()
+    }
     /// <p></p>
     pub fn record_version(mut self, input: i64) -> Self {
         self.inner = self.inner.record_version(input);
@@ -209,5 +245,9 @@ impl CreateBatchLoadTaskFluentBuilder {
     pub fn set_record_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_record_version(input);
         self
+    }
+    /// <p></p>
+    pub fn get_record_version(&self) -> &::std::option::Option<i64> {
+        self.inner.get_record_version()
     }
 }

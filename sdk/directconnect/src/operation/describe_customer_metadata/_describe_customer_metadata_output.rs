@@ -75,6 +75,12 @@ impl DescribeCustomerMetadataOutputBuilder {
         self.agreements = input;
         self
     }
+    /// <p>The list of customer agreements.</p>
+    pub fn get_agreements(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomerAgreement>> {
+        &self.agreements
+    }
     /// <p>The type of network-to-network interface (NNI) partner. The partner type will be one of the following:</p>
     /// <ul>
     /// <li> <p>V1: This partner can only allocate 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps subgigabit connections.</p> </li>
@@ -97,6 +103,15 @@ impl DescribeCustomerMetadataOutputBuilder {
     ) -> Self {
         self.nni_partner_type = input;
         self
+    }
+    /// <p>The type of network-to-network interface (NNI) partner. The partner type will be one of the following:</p>
+    /// <ul>
+    /// <li> <p>V1: This partner can only allocate 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps subgigabit connections.</p> </li>
+    /// <li> <p>V2: This partner can only allocate 1GB, 2GB, 5GB, or 10GB hosted connections.</p> </li>
+    /// <li> <p>nonPartner: The customer is not a partner.</p> </li>
+    /// </ul>
+    pub fn get_nni_partner_type(&self) -> &::std::option::Option<crate::types::NniPartnerType> {
+        &self.nni_partner_type
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

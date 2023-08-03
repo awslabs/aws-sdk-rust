@@ -54,6 +54,10 @@ impl RuleGroupTypePairBuilder {
         self.rule_group_arn = input;
         self
     }
+    /// <p>The ARN of the rule group.</p>
+    pub fn get_rule_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_group_arn
+    }
     /// <p>The rule group type. The possible values are <code>Domain List</code> and <code>Suricata</code>.</p>
     pub fn rule_group_type(
         mut self,
@@ -69,6 +73,10 @@ impl RuleGroupTypePairBuilder {
     ) -> Self {
         self.rule_group_type = input;
         self
+    }
+    /// <p>The rule group type. The possible values are <code>Domain List</code> and <code>Suricata</code>.</p>
+    pub fn get_rule_group_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_group_type
     }
     /// Consumes the builder and constructs a [`RuleGroupTypePair`](crate::types::RuleGroupTypePair).
     pub fn build(self) -> crate::types::RuleGroupTypePair {

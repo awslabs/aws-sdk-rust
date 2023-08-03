@@ -78,6 +78,10 @@ impl UploadListElementBuilder {
         self.multipart_upload_id = input;
         self
     }
+    /// <p>The ID of a multipart upload.</p>
+    pub fn get_multipart_upload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.multipart_upload_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the vault that contains the archive.</p>
     pub fn vault_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vault_arn = ::std::option::Option::Some(input.into());
@@ -87,6 +91,10 @@ impl UploadListElementBuilder {
     pub fn set_vault_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vault_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the vault that contains the archive.</p>
+    pub fn get_vault_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vault_arn
     }
     /// <p>The description of the archive that was specified in the Initiate Multipart Upload request.</p>
     pub fn archive_description(
@@ -104,6 +112,10 @@ impl UploadListElementBuilder {
         self.archive_description = input;
         self
     }
+    /// <p>The description of the archive that was specified in the Initiate Multipart Upload request.</p>
+    pub fn get_archive_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.archive_description
+    }
     /// <p>The part size, in bytes, specified in the Initiate Multipart Upload request. This is the size of all the parts in the upload except the last part, which may be smaller than this size.</p>
     pub fn part_size_in_bytes(mut self, input: i64) -> Self {
         self.part_size_in_bytes = ::std::option::Option::Some(input);
@@ -113,6 +125,10 @@ impl UploadListElementBuilder {
     pub fn set_part_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.part_size_in_bytes = input;
         self
+    }
+    /// <p>The part size, in bytes, specified in the Initiate Multipart Upload request. This is the size of all the parts in the upload except the last part, which may be smaller than this size.</p>
+    pub fn get_part_size_in_bytes(&self) -> &::std::option::Option<i64> {
+        &self.part_size_in_bytes
     }
     /// <p>The UTC time at which the multipart upload was initiated.</p>
     pub fn creation_date(
@@ -129,6 +145,10 @@ impl UploadListElementBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>The UTC time at which the multipart upload was initiated.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_date
     }
     /// Consumes the builder and constructs a [`UploadListElement`](crate::types::UploadListElement).
     pub fn build(self) -> crate::types::UploadListElement {

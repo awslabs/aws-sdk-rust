@@ -92,6 +92,10 @@ impl ExecutorsSummaryBuilder {
         self.executor_id = input;
         self
     }
+    /// <p>The UUID of the executor.</p>
+    pub fn get_executor_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.executor_id
+    }
     /// <p>The type of executor used for the application (<code>COORDINATOR</code>, <code>GATEWAY</code>, or <code>WORKER</code>).</p>
     pub fn executor_type(mut self, input: crate::types::ExecutorType) -> Self {
         self.executor_type = ::std::option::Option::Some(input);
@@ -105,6 +109,10 @@ impl ExecutorsSummaryBuilder {
         self.executor_type = input;
         self
     }
+    /// <p>The type of executor used for the application (<code>COORDINATOR</code>, <code>GATEWAY</code>, or <code>WORKER</code>).</p>
+    pub fn get_executor_type(&self) -> &::std::option::Option<crate::types::ExecutorType> {
+        &self.executor_type
+    }
     /// <p>The date and time that the executor started.</p>
     pub fn start_date_time(mut self, input: i64) -> Self {
         self.start_date_time = ::std::option::Option::Some(input);
@@ -115,6 +123,10 @@ impl ExecutorsSummaryBuilder {
         self.start_date_time = input;
         self
     }
+    /// <p>The date and time that the executor started.</p>
+    pub fn get_start_date_time(&self) -> &::std::option::Option<i64> {
+        &self.start_date_time
+    }
     /// <p>The date and time that the executor was terminated.</p>
     pub fn termination_date_time(mut self, input: i64) -> Self {
         self.termination_date_time = ::std::option::Option::Some(input);
@@ -124,6 +136,10 @@ impl ExecutorsSummaryBuilder {
     pub fn set_termination_date_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.termination_date_time = input;
         self
+    }
+    /// <p>The date and time that the executor was terminated.</p>
+    pub fn get_termination_date_time(&self) -> &::std::option::Option<i64> {
+        &self.termination_date_time
     }
     /// <p>The processing state of the executor. A description of each state follows.</p>
     /// <p> <code>CREATING</code> - The executor is being started, including acquiring resources.</p>
@@ -150,6 +166,16 @@ impl ExecutorsSummaryBuilder {
         self.executor_state = input;
         self
     }
+    /// <p>The processing state of the executor. A description of each state follows.</p>
+    /// <p> <code>CREATING</code> - The executor is being started, including acquiring resources.</p>
+    /// <p> <code>CREATED</code> - The executor has been started.</p>
+    /// <p> <code>REGISTERED</code> - The executor has been registered.</p>
+    /// <p> <code>TERMINATING</code> - The executor is in the process of shutting down.</p>
+    /// <p> <code>TERMINATED</code> - The executor is no longer running.</p>
+    /// <p> <code>FAILED</code> - Due to a failure, the executor is no longer running.</p>
+    pub fn get_executor_state(&self) -> &::std::option::Option<crate::types::ExecutorState> {
+        &self.executor_state
+    }
     /// <p>The smallest unit of compute that a session can request from Athena. Size is measured in data processing unit (DPU) values, a relative measure of processing power.</p>
     pub fn executor_size(mut self, input: i64) -> Self {
         self.executor_size = ::std::option::Option::Some(input);
@@ -159,6 +185,10 @@ impl ExecutorsSummaryBuilder {
     pub fn set_executor_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.executor_size = input;
         self
+    }
+    /// <p>The smallest unit of compute that a session can request from Athena. Size is measured in data processing unit (DPU) values, a relative measure of processing power.</p>
+    pub fn get_executor_size(&self) -> &::std::option::Option<i64> {
+        &self.executor_size
     }
     /// Consumes the builder and constructs a [`ExecutorsSummary`](crate::types::ExecutorsSummary).
     pub fn build(self) -> crate::types::ExecutorsSummary {

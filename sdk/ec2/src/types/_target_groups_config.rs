@@ -49,6 +49,12 @@ impl TargetGroupsConfigBuilder {
         self.target_groups = input;
         self
     }
+    /// <p>One or more target groups.</p>
+    pub fn get_target_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetGroup>> {
+        &self.target_groups
+    }
     /// Consumes the builder and constructs a [`TargetGroupsConfig`](crate::types::TargetGroupsConfig).
     pub fn build(self) -> crate::types::TargetGroupsConfig {
         crate::types::TargetGroupsConfig {

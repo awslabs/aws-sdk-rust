@@ -56,6 +56,10 @@ impl TaskBuilder {
         self.status = input;
         self
     }
+    /// <p>Status of the task - Not Started, In-Progress, Complete.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
+    }
     /// <p>Details of task status as notified by a migration tool. A tool might use this field to provide clarifying information about the status that is unique to that tool or that explains an error state.</p>
     pub fn status_detail(
         mut self,
@@ -72,6 +76,10 @@ impl TaskBuilder {
         self.status_detail = input;
         self
     }
+    /// <p>Details of task status as notified by a migration tool. A tool might use this field to provide clarifying information about the status that is unique to that tool or that explains an error state.</p>
+    pub fn get_status_detail(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_detail
+    }
     /// <p>Indication of the percentage completion of the task.</p>
     pub fn progress_percent(mut self, input: i32) -> Self {
         self.progress_percent = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl TaskBuilder {
     pub fn set_progress_percent(mut self, input: ::std::option::Option<i32>) -> Self {
         self.progress_percent = input;
         self
+    }
+    /// <p>Indication of the percentage completion of the task.</p>
+    pub fn get_progress_percent(&self) -> &::std::option::Option<i32> {
+        &self.progress_percent
     }
     /// Consumes the builder and constructs a [`Task`](crate::types::Task).
     pub fn build(self) -> crate::types::Task {

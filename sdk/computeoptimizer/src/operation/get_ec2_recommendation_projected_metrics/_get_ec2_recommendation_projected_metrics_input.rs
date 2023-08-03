@@ -82,6 +82,10 @@ impl GetEc2RecommendationProjectedMetricsInputBuilder {
         self.instance_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the instances for which to return recommendation projected metrics.</p>
+    pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_arn
+    }
     /// <p>The statistic of the projected metrics.</p>
     pub fn stat(mut self, input: crate::types::MetricStatistic) -> Self {
         self.stat = ::std::option::Option::Some(input);
@@ -92,6 +96,10 @@ impl GetEc2RecommendationProjectedMetricsInputBuilder {
         self.stat = input;
         self
     }
+    /// <p>The statistic of the projected metrics.</p>
+    pub fn get_stat(&self) -> &::std::option::Option<crate::types::MetricStatistic> {
+        &self.stat
+    }
     /// <p>The granularity, in seconds, of the projected metrics data points.</p>
     pub fn period(mut self, input: i32) -> Self {
         self.period = ::std::option::Option::Some(input);
@@ -101,6 +109,10 @@ impl GetEc2RecommendationProjectedMetricsInputBuilder {
     pub fn set_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.period = input;
         self
+    }
+    /// <p>The granularity, in seconds, of the projected metrics data points.</p>
+    pub fn get_period(&self) -> &::std::option::Option<i32> {
+        &self.period
     }
     /// <p>The timestamp of the first projected metrics data point to return.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -115,6 +127,10 @@ impl GetEc2RecommendationProjectedMetricsInputBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The timestamp of the first projected metrics data point to return.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The timestamp of the last projected metrics data point to return.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -127,6 +143,10 @@ impl GetEc2RecommendationProjectedMetricsInputBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The timestamp of the last projected metrics data point to return.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// <p>An object to specify the preferences for the Amazon EC2 recommendation projected metrics to return in the response.</p>
     pub fn recommendation_preferences(
@@ -143,6 +163,12 @@ impl GetEc2RecommendationProjectedMetricsInputBuilder {
     ) -> Self {
         self.recommendation_preferences = input;
         self
+    }
+    /// <p>An object to specify the preferences for the Amazon EC2 recommendation projected metrics to return in the response.</p>
+    pub fn get_recommendation_preferences(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecommendationPreferences> {
+        &self.recommendation_preferences
     }
     /// Consumes the builder and constructs a [`GetEc2RecommendationProjectedMetricsInput`](crate::operation::get_ec2_recommendation_projected_metrics::GetEc2RecommendationProjectedMetricsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_ec2_recommendation_projected_metrics::GetEc2RecommendationProjectedMetricsInput, ::aws_smithy_http::operation::error::BuildError>{

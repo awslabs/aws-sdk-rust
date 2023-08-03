@@ -52,6 +52,10 @@ impl StartHumanLoopOutputBuilder {
         self.human_loop_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the human loop.</p>
+    pub fn get_human_loop_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.human_loop_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

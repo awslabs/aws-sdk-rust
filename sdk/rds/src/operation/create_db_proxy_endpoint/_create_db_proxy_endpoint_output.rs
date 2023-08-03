@@ -51,6 +51,10 @@ impl CreateDbProxyEndpointOutputBuilder {
         self.db_proxy_endpoint = input;
         self
     }
+    /// <p>The <code>DBProxyEndpoint</code> object that is created by the API operation. The DB proxy endpoint that you create might provide capabilities such as read/write or read-only operations, or using a different VPC than the proxy's default VPC.</p>
+    pub fn get_db_proxy_endpoint(&self) -> &::std::option::Option<crate::types::DbProxyEndpoint> {
+        &self.db_proxy_endpoint
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

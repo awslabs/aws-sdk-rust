@@ -37,6 +37,10 @@ impl ListJobExecutionsForThingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListJobExecutionsForThing as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_job_executions_for_thing::builders::ListJobExecutionsForThingInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl ListJobExecutionsForThingFluentBuilder {
         self.inner = self.inner.set_thing_name(input);
         self
     }
+    /// <p>The thing name.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_thing_name()
+    }
     /// <p>An optional filter that lets you search for jobs that have the specified status.</p>
     pub fn status(mut self, input: crate::types::JobExecutionStatus) -> Self {
         self.inner = self.inner.status(input);
@@ -145,6 +153,10 @@ impl ListJobExecutionsForThingFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p>An optional filter that lets you search for jobs that have the specified status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::JobExecutionStatus> {
+        self.inner.get_status()
     }
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
     /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
@@ -164,6 +176,14 @@ impl ListJobExecutionsForThingFluentBuilder {
         self.inner = self.inner.set_namespace_id(input);
         self
     }
+    /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
+    /// <p>The <code>namespaceId</code> feature is in public preview.</p>
+    /// </note>
+    pub fn get_namespace_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace_id()
+    }
     /// <p>The maximum number of results to be returned per request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -173,6 +193,10 @@ impl ListJobExecutionsForThingFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The token to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -184,6 +208,10 @@ impl ListJobExecutionsForThingFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The unique identifier you assigned to this job when it was created.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_id(input.into());
@@ -193,5 +221,9 @@ impl ListJobExecutionsForThingFluentBuilder {
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_id(input);
         self
+    }
+    /// <p>The unique identifier you assigned to this job when it was created.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_id()
     }
 }

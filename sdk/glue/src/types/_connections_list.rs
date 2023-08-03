@@ -49,6 +49,12 @@ impl ConnectionsListBuilder {
         self.connections = input;
         self
     }
+    /// <p>A list of connections used by the job.</p>
+    pub fn get_connections(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.connections
+    }
     /// Consumes the builder and constructs a [`ConnectionsList`](crate::types::ConnectionsList).
     pub fn build(self) -> crate::types::ConnectionsList {
         crate::types::ConnectionsList {

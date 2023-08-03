@@ -54,6 +54,10 @@ impl EnableIoTLoggingParamsBuilder {
         self.role_arn_for_logging = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role used for logging.</p>
+    pub fn get_role_arn_for_logging(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn_for_logging
+    }
     /// <p>Specifies the type of information to be logged.</p>
     pub fn log_level(mut self, input: crate::types::LogLevel) -> Self {
         self.log_level = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl EnableIoTLoggingParamsBuilder {
     pub fn set_log_level(mut self, input: ::std::option::Option<crate::types::LogLevel>) -> Self {
         self.log_level = input;
         self
+    }
+    /// <p>Specifies the type of information to be logged.</p>
+    pub fn get_log_level(&self) -> &::std::option::Option<crate::types::LogLevel> {
+        &self.log_level
     }
     /// Consumes the builder and constructs a [`EnableIoTLoggingParams`](crate::types::EnableIoTLoggingParams).
     pub fn build(self) -> crate::types::EnableIoTLoggingParams {

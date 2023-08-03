@@ -36,6 +36,12 @@ impl GetExclusionsPreviewFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetExclusionsPreview as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_exclusions_preview::builders::GetExclusionsPreviewInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +149,10 @@ impl GetExclusionsPreviewFluentBuilder {
         self.inner = self.inner.set_assessment_template_arn(input);
         self
     }
+    /// <p>The ARN that specifies the assessment template for which the exclusions preview was requested.</p>
+    pub fn get_assessment_template_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assessment_template_arn()
+    }
     /// <p>The unique identifier associated of the exclusions preview.</p>
     pub fn preview_token(
         mut self,
@@ -159,6 +169,10 @@ impl GetExclusionsPreviewFluentBuilder {
         self.inner = self.inner.set_preview_token(input);
         self
     }
+    /// <p>The unique identifier associated of the exclusions preview.</p>
+    pub fn get_preview_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_preview_token()
+    }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the GetExclusionsPreviewRequest action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -168,6 +182,10 @@ impl GetExclusionsPreviewFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the GetExclusionsPreviewRequest action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 100. The maximum value is 500.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -179,6 +197,10 @@ impl GetExclusionsPreviewFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 100. The maximum value is 500.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
     pub fn locale(mut self, input: crate::types::Locale) -> Self {
         self.inner = self.inner.locale(input);
@@ -188,5 +210,9 @@ impl GetExclusionsPreviewFluentBuilder {
     pub fn set_locale(mut self, input: ::std::option::Option<crate::types::Locale>) -> Self {
         self.inner = self.inner.set_locale(input);
         self
+    }
+    /// <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
+    pub fn get_locale(&self) -> &::std::option::Option<crate::types::Locale> {
+        self.inner.get_locale()
     }
 }

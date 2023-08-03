@@ -196,6 +196,15 @@ impl AdmMessageBuilder {
         self.action = input;
         self
     }
+    /// <p>The action to occur if the recipient taps the push notification. Valid values are:</p>
+    /// <ul>
+    /// <li><p>OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default action.</p></li>
+    /// <li><p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This action uses the deep-linking features of the Android platform.</p></li>
+    /// <li><p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li>
+    /// </ul>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::Action> {
+        &self.action
+    }
     /// <p>The body of the notification message.</p>
     pub fn body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.body = ::std::option::Option::Some(input.into());
@@ -205,6 +214,10 @@ impl AdmMessageBuilder {
     pub fn set_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.body = input;
         self
+    }
+    /// <p>The body of the notification message.</p>
+    pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.body
     }
     /// <p>An arbitrary string that indicates that multiple messages are logically the same and that Amazon Device Messaging (ADM) can drop previously enqueued messages in favor of this message.</p>
     pub fn consolidation_key(
@@ -221,6 +234,10 @@ impl AdmMessageBuilder {
     ) -> Self {
         self.consolidation_key = input;
         self
+    }
+    /// <p>An arbitrary string that indicates that multiple messages are logically the same and that Amazon Device Messaging (ADM) can drop previously enqueued messages in favor of this message.</p>
+    pub fn get_consolidation_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.consolidation_key
     }
     /// Adds a key-value pair to `data`.
     ///
@@ -247,6 +264,14 @@ impl AdmMessageBuilder {
         self.data = input;
         self
     }
+    /// <p>The JSON data payload to use for the push notification, if the notification is a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
+    pub fn get_data(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.data
+    }
     /// <p>The amount of time, in seconds, that ADM should store the message if the recipient's device is offline. Amazon Pinpoint specifies this value in the expiresAfter parameter when it sends the notification message to ADM.</p>
     pub fn expires_after(
         mut self,
@@ -262,6 +287,10 @@ impl AdmMessageBuilder {
     ) -> Self {
         self.expires_after = input;
         self
+    }
+    /// <p>The amount of time, in seconds, that ADM should store the message if the recipient's device is offline. Amazon Pinpoint specifies this value in the expiresAfter parameter when it sends the notification message to ADM.</p>
+    pub fn get_expires_after(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expires_after
     }
     /// <p>The icon image name of the asset saved in your app.</p>
     pub fn icon_reference(
@@ -279,6 +308,10 @@ impl AdmMessageBuilder {
         self.icon_reference = input;
         self
     }
+    /// <p>The icon image name of the asset saved in your app.</p>
+    pub fn get_icon_reference(&self) -> &::std::option::Option<::std::string::String> {
+        &self.icon_reference
+    }
     /// <p>The URL of the large icon image to display in the content view of the push notification.</p>
     pub fn image_icon_url(
         mut self,
@@ -295,6 +328,10 @@ impl AdmMessageBuilder {
         self.image_icon_url = input;
         self
     }
+    /// <p>The URL of the large icon image to display in the content view of the push notification.</p>
+    pub fn get_image_icon_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_icon_url
+    }
     /// <p>The URL of an image to display in the push notification.</p>
     pub fn image_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_url = ::std::option::Option::Some(input.into());
@@ -304,6 +341,10 @@ impl AdmMessageBuilder {
     pub fn set_image_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_url = input;
         self
+    }
+    /// <p>The URL of an image to display in the push notification.</p>
+    pub fn get_image_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_url
     }
     /// <p>The base64-encoded, MD5 checksum of the value specified by the Data property. ADM uses the MD5 value to verify the integrity of the data.</p>
     pub fn md5(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -315,6 +356,10 @@ impl AdmMessageBuilder {
         self.md5 = input;
         self
     }
+    /// <p>The base64-encoded, MD5 checksum of the value specified by the Data property. ADM uses the MD5 value to verify the integrity of the data.</p>
+    pub fn get_md5(&self) -> &::std::option::Option<::std::string::String> {
+        &self.md5
+    }
     /// <p>The raw, JSON-formatted string to use as the payload for the notification message. If specified, this value overrides all other content for the message.</p>
     pub fn raw_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.raw_content = ::std::option::Option::Some(input.into());
@@ -325,6 +370,10 @@ impl AdmMessageBuilder {
         self.raw_content = input;
         self
     }
+    /// <p>The raw, JSON-formatted string to use as the payload for the notification message. If specified, this value overrides all other content for the message.</p>
+    pub fn get_raw_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.raw_content
+    }
     /// <p>Specifies whether the notification is a silent push notification, which is a push notification that doesn't display on a recipient's device. Silent push notifications can be used for cases such as updating an app's configuration or supporting phone home functionality.</p>
     pub fn silent_push(mut self, input: bool) -> Self {
         self.silent_push = ::std::option::Option::Some(input);
@@ -334,6 +383,10 @@ impl AdmMessageBuilder {
     pub fn set_silent_push(mut self, input: ::std::option::Option<bool>) -> Self {
         self.silent_push = input;
         self
+    }
+    /// <p>Specifies whether the notification is a silent push notification, which is a push notification that doesn't display on a recipient's device. Silent push notifications can be used for cases such as updating an app's configuration or supporting phone home functionality.</p>
+    pub fn get_silent_push(&self) -> &::std::option::Option<bool> {
+        &self.silent_push
     }
     /// <p>The URL of the small icon image to display in the status bar and the content view of the push notification.</p>
     pub fn small_image_icon_url(
@@ -351,6 +404,10 @@ impl AdmMessageBuilder {
         self.small_image_icon_url = input;
         self
     }
+    /// <p>The URL of the small icon image to display in the status bar and the content view of the push notification.</p>
+    pub fn get_small_image_icon_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.small_image_icon_url
+    }
     /// <p>The sound to play when the recipient receives the push notification. You can use the default stream or specify the file name of a sound resource that's bundled in your app. On an Android platform, the sound file must reside in /res/raw/.</p>
     pub fn sound(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sound = ::std::option::Option::Some(input.into());
@@ -360,6 +417,10 @@ impl AdmMessageBuilder {
     pub fn set_sound(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sound = input;
         self
+    }
+    /// <p>The sound to play when the recipient receives the push notification. You can use the default stream or specify the file name of a sound resource that's bundled in your app. On an Android platform, the sound file must reside in /res/raw/.</p>
+    pub fn get_sound(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sound
     }
     /// Adds a key-value pair to `substitutions`.
     ///
@@ -389,6 +450,14 @@ impl AdmMessageBuilder {
         self.substitutions = input;
         self
     }
+    /// <p>The default message variables to use in the notification message. You can override the default variables with individual address variables.</p>
+    pub fn get_substitutions(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    > {
+        &self.substitutions
+    }
     /// <p>The title to display above the notification message on the recipient's device.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
@@ -399,6 +468,10 @@ impl AdmMessageBuilder {
         self.title = input;
         self
     }
+    /// <p>The title to display above the notification message on the recipient's device.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
+    }
     /// <p>The URL to open in the recipient's default mobile browser, if a recipient taps the push notification and the value of the Action property is URL.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
@@ -408,6 +481,10 @@ impl AdmMessageBuilder {
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
+    }
+    /// <p>The URL to open in the recipient's default mobile browser, if a recipient taps the push notification and the value of the Action property is URL.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     /// Consumes the builder and constructs a [`AdmMessage`](crate::types::AdmMessage).
     pub fn build(self) -> crate::types::AdmMessage {

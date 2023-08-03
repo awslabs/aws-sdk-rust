@@ -51,6 +51,10 @@ impl GetViolationDetailsOutputBuilder {
         self.violation_detail = input;
         self
     }
+    /// <p>Violation detail for a resource.</p>
+    pub fn get_violation_detail(&self) -> &::std::option::Option<crate::types::ViolationDetail> {
+        &self.violation_detail
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

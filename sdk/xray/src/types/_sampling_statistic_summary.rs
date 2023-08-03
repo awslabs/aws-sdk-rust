@@ -72,6 +72,10 @@ impl SamplingStatisticSummaryBuilder {
         self.rule_name = input;
         self
     }
+    /// <p>The name of the sampling rule.</p>
+    pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_name
+    }
     /// <p>The start time of the reporting window.</p>
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
@@ -85,6 +89,10 @@ impl SamplingStatisticSummaryBuilder {
         self.timestamp = input;
         self
     }
+    /// <p>The start time of the reporting window.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
+    }
     /// <p>The number of requests that matched the rule.</p>
     pub fn request_count(mut self, input: i32) -> Self {
         self.request_count = ::std::option::Option::Some(input);
@@ -94,6 +102,10 @@ impl SamplingStatisticSummaryBuilder {
     pub fn set_request_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.request_count = input;
         self
+    }
+    /// <p>The number of requests that matched the rule.</p>
+    pub fn get_request_count(&self) -> &::std::option::Option<i32> {
+        &self.request_count
     }
     /// <p>The number of requests recorded with borrowed reservoir quota.</p>
     pub fn borrow_count(mut self, input: i32) -> Self {
@@ -105,6 +117,10 @@ impl SamplingStatisticSummaryBuilder {
         self.borrow_count = input;
         self
     }
+    /// <p>The number of requests recorded with borrowed reservoir quota.</p>
+    pub fn get_borrow_count(&self) -> &::std::option::Option<i32> {
+        &self.borrow_count
+    }
     /// <p>The number of requests recorded.</p>
     pub fn sampled_count(mut self, input: i32) -> Self {
         self.sampled_count = ::std::option::Option::Some(input);
@@ -114,6 +130,10 @@ impl SamplingStatisticSummaryBuilder {
     pub fn set_sampled_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.sampled_count = input;
         self
+    }
+    /// <p>The number of requests recorded.</p>
+    pub fn get_sampled_count(&self) -> &::std::option::Option<i32> {
+        &self.sampled_count
     }
     /// Consumes the builder and constructs a [`SamplingStatisticSummary`](crate::types::SamplingStatisticSummary).
     pub fn build(self) -> crate::types::SamplingStatisticSummary {

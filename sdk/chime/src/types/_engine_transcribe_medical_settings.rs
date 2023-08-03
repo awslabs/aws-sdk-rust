@@ -91,6 +91,12 @@ impl EngineTranscribeMedicalSettingsBuilder {
         self.language_code = input;
         self
     }
+    /// <p>The language code specified for the Amazon Transcribe Medical engine.</p>
+    pub fn get_language_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::TranscribeMedicalLanguageCode> {
+        &self.language_code
+    }
     /// <p>The specialty specified for the Amazon Transcribe Medical engine.</p>
     pub fn specialty(mut self, input: crate::types::TranscribeMedicalSpecialty) -> Self {
         self.specialty = ::std::option::Option::Some(input);
@@ -104,6 +110,12 @@ impl EngineTranscribeMedicalSettingsBuilder {
         self.specialty = input;
         self
     }
+    /// <p>The specialty specified for the Amazon Transcribe Medical engine.</p>
+    pub fn get_specialty(
+        &self,
+    ) -> &::std::option::Option<crate::types::TranscribeMedicalSpecialty> {
+        &self.specialty
+    }
     /// <p>The type of transcription.</p>
     pub fn r#type(mut self, input: crate::types::TranscribeMedicalType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -116,6 +128,10 @@ impl EngineTranscribeMedicalSettingsBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of transcription.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::TranscribeMedicalType> {
+        &self.r#type
     }
     /// <p>The name of the vocabulary passed to Amazon Transcribe Medical.</p>
     pub fn vocabulary_name(
@@ -133,6 +149,10 @@ impl EngineTranscribeMedicalSettingsBuilder {
         self.vocabulary_name = input;
         self
     }
+    /// <p>The name of the vocabulary passed to Amazon Transcribe Medical.</p>
+    pub fn get_vocabulary_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vocabulary_name
+    }
     /// <p>The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the meeting's Region.</p>
     pub fn region(mut self, input: crate::types::TranscribeMedicalRegion) -> Self {
         self.region = ::std::option::Option::Some(input);
@@ -145,6 +165,10 @@ impl EngineTranscribeMedicalSettingsBuilder {
     ) -> Self {
         self.region = input;
         self
+    }
+    /// <p>The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the meeting's Region.</p>
+    pub fn get_region(&self) -> &::std::option::Option<crate::types::TranscribeMedicalRegion> {
+        &self.region
     }
     /// <p>Labels all personally identifiable information (PII) identified in your transcript. If you don't include <code>PiiEntityTypes</code>, all PII is identified.</p>
     /// <p>You can’t set <code>ContentIdentificationType</code> and <code>ContentRedactionType</code>.</p>
@@ -163,6 +187,13 @@ impl EngineTranscribeMedicalSettingsBuilder {
     ) -> Self {
         self.content_identification_type = input;
         self
+    }
+    /// <p>Labels all personally identifiable information (PII) identified in your transcript. If you don't include <code>PiiEntityTypes</code>, all PII is identified.</p>
+    /// <p>You can’t set <code>ContentIdentificationType</code> and <code>ContentRedactionType</code>.</p>
+    pub fn get_content_identification_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::TranscribeMedicalContentIdentificationType> {
+        &self.content_identification_type
     }
     /// Consumes the builder and constructs a [`EngineTranscribeMedicalSettings`](crate::types::EngineTranscribeMedicalSettings).
     pub fn build(self) -> crate::types::EngineTranscribeMedicalSettings {

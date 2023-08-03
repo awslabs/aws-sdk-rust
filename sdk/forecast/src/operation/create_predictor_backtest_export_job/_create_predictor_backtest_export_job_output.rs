@@ -52,6 +52,12 @@ impl CreatePredictorBacktestExportJobOutputBuilder {
         self.predictor_backtest_export_job_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job that you want to export.</p>
+    pub fn get_predictor_backtest_export_job_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.predictor_backtest_export_job_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

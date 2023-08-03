@@ -61,6 +61,10 @@ impl BatchReadInputBuilder {
         self.directory_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_arn
+    }
     /// Appends an item to `operations`.
     ///
     /// To override the contents of this collection use [`set_operations`](Self::set_operations).
@@ -80,6 +84,12 @@ impl BatchReadInputBuilder {
         self.operations = input;
         self
     }
+    /// <p>A list of operations that are part of the batch.</p>
+    pub fn get_operations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchReadOperation>> {
+        &self.operations
+    }
     /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
     pub fn consistency_level(mut self, input: crate::types::ConsistencyLevel) -> Self {
         self.consistency_level = ::std::option::Option::Some(input);
@@ -92,6 +102,10 @@ impl BatchReadInputBuilder {
     ) -> Self {
         self.consistency_level = input;
         self
+    }
+    /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
+    pub fn get_consistency_level(&self) -> &::std::option::Option<crate::types::ConsistencyLevel> {
+        &self.consistency_level
     }
     /// Consumes the builder and constructs a [`BatchReadInput`](crate::operation::batch_read::BatchReadInput).
     pub fn build(

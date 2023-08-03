@@ -45,6 +45,12 @@ impl DeleteInfrastructureConfigurationInputBuilder {
         self.infrastructure_configuration_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration to delete.</p>
+    pub fn get_infrastructure_configuration_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.infrastructure_configuration_arn
+    }
     /// Consumes the builder and constructs a [`DeleteInfrastructureConfigurationInput`](crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

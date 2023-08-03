@@ -63,6 +63,14 @@ impl EksMetadataBuilder {
         self.labels = input;
         self
     }
+    /// <p>Key-value pairs used to identify, sort, and organize cube resources. Can contain up to 63 uppercase letters, lowercase letters, numbers, hyphens (-), and underscores (_). Labels can be added or modified at any time. Each resource can have multiple labels, but each key must be unique for a given object.</p>
+    pub fn get_labels(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.labels
+    }
     /// Consumes the builder and constructs a [`EksMetadata`](crate::types::EksMetadata).
     pub fn build(self) -> crate::types::EksMetadata {
         crate::types::EksMetadata {

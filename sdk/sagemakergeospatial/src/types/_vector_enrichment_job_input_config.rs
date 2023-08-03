@@ -57,6 +57,12 @@ impl VectorEnrichmentJobInputConfigBuilder {
         self.document_type = input;
         self
     }
+    /// <p>The input structure that defines the data source file type.</p>
+    pub fn get_document_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::VectorEnrichmentJobDocumentType> {
+        &self.document_type
+    }
     /// <p>The input structure for the data source that represents the storage type of the input data objects.</p>
     pub fn data_source_config(
         mut self,
@@ -72,6 +78,12 @@ impl VectorEnrichmentJobInputConfigBuilder {
     ) -> Self {
         self.data_source_config = input;
         self
+    }
+    /// <p>The input structure for the data source that represents the storage type of the input data objects.</p>
+    pub fn get_data_source_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::VectorEnrichmentJobDataSourceConfigInput> {
+        &self.data_source_config
     }
     /// Consumes the builder and constructs a [`VectorEnrichmentJobInputConfig`](crate::types::VectorEnrichmentJobInputConfig).
     pub fn build(self) -> crate::types::VectorEnrichmentJobInputConfig {

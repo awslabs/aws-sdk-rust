@@ -96,6 +96,18 @@ impl CreateSnapshotCopyGrantInputBuilder {
         self.snapshot_copy_grant_name = input;
         self
     }
+    /// <p>The name of the snapshot copy grant. This name must be unique in the region for the Amazon Web Services account.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>Alphabetic characters must be lowercase.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>
+    /// </ul>
+    pub fn get_snapshot_copy_grant_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_copy_grant_name
+    }
     /// <p>The unique identifier of the encrypted symmetric key to which to grant Amazon Redshift permission. If no key is specified, the default key is used.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -105,6 +117,10 @@ impl CreateSnapshotCopyGrantInputBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>The unique identifier of the encrypted symmetric key to which to grant Amazon Redshift permission. If no key is specified, the default key is used.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// Appends an item to `tags`.
     ///
@@ -124,6 +140,10 @@ impl CreateSnapshotCopyGrantInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tag instances.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSnapshotCopyGrantInput`](crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantInput).
     pub fn build(

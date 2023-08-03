@@ -72,6 +72,10 @@ impl AliasListEntryBuilder {
         self.alias_name = input;
         self
     }
+    /// <p>String that contains the alias. This value begins with <code>alias/</code>.</p>
+    pub fn get_alias_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias_name
+    }
     /// <p>String that contains the key ARN.</p>
     pub fn alias_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias_arn = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl AliasListEntryBuilder {
     pub fn set_alias_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alias_arn = input;
         self
+    }
+    /// <p>String that contains the key ARN.</p>
+    pub fn get_alias_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias_arn
     }
     /// <p>String that contains the key identifier of the KMS key associated with the alias.</p>
     pub fn target_key_id(
@@ -98,6 +106,10 @@ impl AliasListEntryBuilder {
         self.target_key_id = input;
         self
     }
+    /// <p>String that contains the key identifier of the KMS key associated with the alias.</p>
+    pub fn get_target_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_key_id
+    }
     /// <p>Date and time that the alias was most recently created in the account and Region. Formatted as Unix time.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -111,6 +123,10 @@ impl AliasListEntryBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>Date and time that the alias was most recently created in the account and Region. Formatted as Unix time.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
+    }
     /// <p>Date and time that the alias was most recently associated with a KMS key in the account and Region. Formatted as Unix time.</p>
     pub fn last_updated_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date = ::std::option::Option::Some(input);
@@ -123,6 +139,10 @@ impl AliasListEntryBuilder {
     ) -> Self {
         self.last_updated_date = input;
         self
+    }
+    /// <p>Date and time that the alias was most recently associated with a KMS key in the account and Region. Formatted as Unix time.</p>
+    pub fn get_last_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date
     }
     /// Consumes the builder and constructs a [`AliasListEntry`](crate::types::AliasListEntry).
     pub fn build(self) -> crate::types::AliasListEntry {

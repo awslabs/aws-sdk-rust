@@ -62,6 +62,10 @@ impl DescribeCompanyNetworkConfigurationOutputBuilder {
         self.vpc_id = input;
         self
     }
+    /// <p>The VPC with connectivity to associated websites.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
+    }
     /// Appends an item to `subnet_ids`.
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
@@ -80,6 +84,10 @@ impl DescribeCompanyNetworkConfigurationOutputBuilder {
     ) -> Self {
         self.subnet_ids = input;
         self
+    }
+    /// <p>The subnets used for X-ENI connections from Amazon WorkLink rendering containers.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
     }
     /// Appends an item to `security_group_ids`.
     ///
@@ -102,6 +110,12 @@ impl DescribeCompanyNetworkConfigurationOutputBuilder {
     ) -> Self {
         self.security_group_ids = input;
         self
+    }
+    /// <p>The security groups associated with access to the provided subnets.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

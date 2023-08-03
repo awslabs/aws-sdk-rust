@@ -55,6 +55,10 @@ impl UpdateRecipeInputBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the recipe.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The name of the recipe to be updated.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl UpdateRecipeInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the recipe to be updated.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `steps`.
     ///
@@ -83,6 +91,10 @@ impl UpdateRecipeInputBuilder {
     ) -> Self {
         self.steps = input;
         self
+    }
+    /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.</p>
+    pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecipeStep>> {
+        &self.steps
     }
     /// Consumes the builder and constructs a [`UpdateRecipeInput`](crate::operation::update_recipe::UpdateRecipeInput).
     pub fn build(

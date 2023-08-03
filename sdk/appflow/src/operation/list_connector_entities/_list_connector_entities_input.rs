@@ -87,6 +87,10 @@ impl ListConnectorEntitiesInputBuilder {
         self.connector_profile_name = input;
         self
     }
+    /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account, and is used to query the downstream connector. </p>
+    pub fn get_connector_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connector_profile_name
+    }
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
     pub fn connector_type(mut self, input: crate::types::ConnectorType) -> Self {
         self.connector_type = ::std::option::Option::Some(input);
@@ -99,6 +103,10 @@ impl ListConnectorEntitiesInputBuilder {
     ) -> Self {
         self.connector_type = input;
         self
+    }
+    /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
+    pub fn get_connector_type(&self) -> &::std::option::Option<crate::types::ConnectorType> {
+        &self.connector_type
     }
     /// <p> This optional parameter is specific to connector implementation. Some connectors support multiple levels or categories of entities. You can find out the list of roots for such providers by sending a request without the <code>entitiesPath</code> parameter. If the connector supports entities at different roots, this initial request returns the list of roots. Otherwise, this request returns all entities supported by the provider. </p>
     pub fn entities_path(
@@ -116,6 +124,10 @@ impl ListConnectorEntitiesInputBuilder {
         self.entities_path = input;
         self
     }
+    /// <p> This optional parameter is specific to connector implementation. Some connectors support multiple levels or categories of entities. You can find out the list of roots for such providers by sending a request without the <code>entitiesPath</code> parameter. If the connector supports entities at different roots, this initial request returns the list of roots. Otherwise, this request returns all entities supported by the provider. </p>
+    pub fn get_entities_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entities_path
+    }
     /// <p>The version of the API that's used by the connector.</p>
     pub fn api_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_version = ::std::option::Option::Some(input.into());
@@ -125,6 +137,10 @@ impl ListConnectorEntitiesInputBuilder {
     pub fn set_api_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_version = input;
         self
+    }
+    /// <p>The version of the API that's used by the connector.</p>
+    pub fn get_api_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_version
     }
     /// <p>The maximum number of items that the operation returns in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -136,6 +152,10 @@ impl ListConnectorEntitiesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of items that the operation returns in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>A token that was provided by your prior <code>ListConnectorEntities</code> operation if the response was too big for the page size. You specify this token to get the next page of results in paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -145,6 +165,10 @@ impl ListConnectorEntitiesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token that was provided by your prior <code>ListConnectorEntities</code> operation if the response was too big for the page size. You specify this token to get the next page of results in paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListConnectorEntitiesInput`](crate::operation::list_connector_entities::ListConnectorEntitiesInput).
     pub fn build(

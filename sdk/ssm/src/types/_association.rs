@@ -153,6 +153,10 @@ impl AssociationBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the SSM document.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The managed node ID.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -162,6 +166,10 @@ impl AssociationBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
+    }
+    /// <p>The managed node ID.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// <p>The ID created by the system when you create an association. An association is a binding between a document and a set of targets with a schedule.</p>
     pub fn association_id(
@@ -179,6 +187,10 @@ impl AssociationBuilder {
         self.association_id = input;
         self
     }
+    /// <p>The ID created by the system when you create an association. An association is a binding between a document and a set of targets with a schedule.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_id
+    }
     /// <p>The association version.</p>
     pub fn association_version(
         mut self,
@@ -194,6 +206,10 @@ impl AssociationBuilder {
     ) -> Self {
         self.association_version = input;
         self
+    }
+    /// <p>The association version.</p>
+    pub fn get_association_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_version
     }
     /// <p>The version of the document used in the association. If you change a document version for a State Manager association, Systems Manager immediately runs the association unless you previously specifed the <code>apply-only-at-cron-interval</code> parameter.</p> <important>
     /// <p>State Manager doesn't support running associations that use a new version of a document if that document is shared from another account. State Manager always runs the <code>default</code> version of a document if shared from another account, even though the Systems Manager console shows that a new version was processed. If you want to run an association using a new version of a document shared form another account, you must set the document version to <code>default</code>.</p>
@@ -215,6 +231,12 @@ impl AssociationBuilder {
         self.document_version = input;
         self
     }
+    /// <p>The version of the document used in the association. If you change a document version for a State Manager association, Systems Manager immediately runs the association unless you previously specifed the <code>apply-only-at-cron-interval</code> parameter.</p> <important>
+    /// <p>State Manager doesn't support running associations that use a new version of a document if that document is shared from another account. State Manager always runs the <code>default</code> version of a document if shared from another account, even though the Systems Manager console shows that a new version was processed. If you want to run an association using a new version of a document shared form another account, you must set the document version to <code>default</code>.</p>
+    /// </important>
+    pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_version
+    }
     /// Appends an item to `targets`.
     ///
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).
@@ -234,6 +256,10 @@ impl AssociationBuilder {
         self.targets = input;
         self
     }
+    /// <p>The managed nodes targeted by the request to create an association. You can target all managed nodes in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of <code>*</code>.</p>
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
+        &self.targets
+    }
     /// <p>The date on which the association was last run.</p>
     pub fn last_execution_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_execution_date = ::std::option::Option::Some(input);
@@ -247,6 +273,10 @@ impl AssociationBuilder {
         self.last_execution_date = input;
         self
     }
+    /// <p>The date on which the association was last run.</p>
+    pub fn get_last_execution_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_execution_date
+    }
     /// <p>Information about the association.</p>
     pub fn overview(mut self, input: crate::types::AssociationOverview) -> Self {
         self.overview = ::std::option::Option::Some(input);
@@ -259,6 +289,10 @@ impl AssociationBuilder {
     ) -> Self {
         self.overview = input;
         self
+    }
+    /// <p>Information about the association.</p>
+    pub fn get_overview(&self) -> &::std::option::Option<crate::types::AssociationOverview> {
+        &self.overview
     }
     /// <p>A cron expression that specifies a schedule when the association runs. The schedule runs in Coordinated Universal Time (UTC).</p>
     pub fn schedule_expression(
@@ -276,6 +310,10 @@ impl AssociationBuilder {
         self.schedule_expression = input;
         self
     }
+    /// <p>A cron expression that specifies a schedule when the association runs. The schedule runs in Coordinated Universal Time (UTC).</p>
+    pub fn get_schedule_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schedule_expression
+    }
     /// <p>The association name.</p>
     pub fn association_name(
         mut self,
@@ -292,6 +330,10 @@ impl AssociationBuilder {
         self.association_name = input;
         self
     }
+    /// <p>The association name.</p>
+    pub fn get_association_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_name
+    }
     /// <p>Number of days to wait after the scheduled day to run an association.</p>
     pub fn schedule_offset(mut self, input: i32) -> Self {
         self.schedule_offset = ::std::option::Option::Some(input);
@@ -301,6 +343,10 @@ impl AssociationBuilder {
     pub fn set_schedule_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.schedule_offset = input;
         self
+    }
+    /// <p>Number of days to wait after the scheduled day to run an association.</p>
+    pub fn get_schedule_offset(&self) -> &::std::option::Option<i32> {
+        &self.schedule_offset
     }
     /// Appends an item to `target_maps`.
     ///
@@ -333,6 +379,19 @@ impl AssociationBuilder {
     ) -> Self {
         self.target_maps = input;
         self
+    }
+    /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+    pub fn get_target_maps(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<
+            ::std::collections::HashMap<
+                ::std::string::String,
+                ::std::vec::Vec<::std::string::String>,
+            >,
+        >,
+    > {
+        &self.target_maps
     }
     /// Consumes the builder and constructs a [`Association`](crate::types::Association).
     pub fn build(self) -> crate::types::Association {

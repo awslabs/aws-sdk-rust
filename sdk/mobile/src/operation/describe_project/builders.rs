@@ -36,6 +36,12 @@ impl DescribeProjectFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeProject as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_project::builders::DescribeProjectInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DescribeProjectFluentBuilder {
         self.inner = self.inner.set_project_id(input);
         self
     }
+    /// <p> Unique project identifier. </p>
+    pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_id()
+    }
     /// <p> If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project. </p>
     pub fn sync_from_resources(mut self, input: bool) -> Self {
         self.inner = self.inner.sync_from_resources(input);
@@ -135,5 +145,9 @@ impl DescribeProjectFluentBuilder {
     pub fn set_sync_from_resources(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_sync_from_resources(input);
         self
+    }
+    /// <p> If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project. </p>
+    pub fn get_sync_from_resources(&self) -> &::std::option::Option<bool> {
+        self.inner.get_sync_from_resources()
     }
 }

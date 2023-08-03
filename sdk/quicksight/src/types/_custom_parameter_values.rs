@@ -78,6 +78,12 @@ impl CustomParameterValuesBuilder {
         self.string_values = input;
         self
     }
+    /// <p>A list of string-type parameter values.</p>
+    pub fn get_string_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.string_values
+    }
     /// Appends an item to `integer_values`.
     ///
     /// To override the contents of this collection use [`set_integer_values`](Self::set_integer_values).
@@ -96,6 +102,10 @@ impl CustomParameterValuesBuilder {
     ) -> Self {
         self.integer_values = input;
         self
+    }
+    /// <p>A list of integer-type parameter values.</p>
+    pub fn get_integer_values(&self) -> &::std::option::Option<::std::vec::Vec<i64>> {
+        &self.integer_values
     }
     /// Appends an item to `decimal_values`.
     ///
@@ -116,6 +126,10 @@ impl CustomParameterValuesBuilder {
         self.decimal_values = input;
         self
     }
+    /// <p>A list of decimal-type parameter values.</p>
+    pub fn get_decimal_values(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+        &self.decimal_values
+    }
     /// Appends an item to `date_time_values`.
     ///
     /// To override the contents of this collection use [`set_date_time_values`](Self::set_date_time_values).
@@ -134,6 +148,12 @@ impl CustomParameterValuesBuilder {
     ) -> Self {
         self.date_time_values = input;
         self
+    }
+    /// <p>A list of datetime-type parameter values.</p>
+    pub fn get_date_time_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>> {
+        &self.date_time_values
     }
     /// Consumes the builder and constructs a [`CustomParameterValues`](crate::types::CustomParameterValues).
     pub fn build(self) -> crate::types::CustomParameterValues {

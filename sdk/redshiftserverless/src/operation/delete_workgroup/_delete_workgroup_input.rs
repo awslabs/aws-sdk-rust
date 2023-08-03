@@ -45,6 +45,10 @@ impl DeleteWorkgroupInputBuilder {
         self.workgroup_name = input;
         self
     }
+    /// <p>The name of the workgroup to be deleted.</p>
+    pub fn get_workgroup_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workgroup_name
+    }
     /// Consumes the builder and constructs a [`DeleteWorkgroupInput`](crate::operation::delete_workgroup::DeleteWorkgroupInput).
     pub fn build(
         self,

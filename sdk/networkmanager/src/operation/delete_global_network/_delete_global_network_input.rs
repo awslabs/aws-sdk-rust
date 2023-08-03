@@ -47,6 +47,10 @@ impl DeleteGlobalNetworkInputBuilder {
         self.global_network_id = input;
         self
     }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_network_id
+    }
     /// Consumes the builder and constructs a [`DeleteGlobalNetworkInput`](crate::operation::delete_global_network::DeleteGlobalNetworkInput).
     pub fn build(
         self,

@@ -36,6 +36,10 @@ impl ListTokensFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListTokens as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_tokens::builders::ListTokensInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +129,10 @@ impl ListTokensFluentBuilder {
         self.inner = self.inner.set_token_ids(input);
         self
     }
+    /// <p>Token IDs.</p>
+    pub fn get_token_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_token_ids()
+    }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -148,6 +156,13 @@ impl ListTokensFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>Filters to scope the results. The following filter is supported:</p>
+    /// <ul>
+    /// <li> <p> <code>LicenseArns</code> </p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// <p>Token for the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -158,6 +173,10 @@ impl ListTokensFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>Token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>Maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -167,5 +186,9 @@ impl ListTokensFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>Maximum number of results to return in a single call.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

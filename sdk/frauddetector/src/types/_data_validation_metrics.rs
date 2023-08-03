@@ -65,6 +65,12 @@ impl DataValidationMetricsBuilder {
         self.file_level_messages = input;
         self
     }
+    /// <p>The file-specific model training data validation messages.</p>
+    pub fn get_file_level_messages(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FileValidationMessage>> {
+        &self.file_level_messages
+    }
     /// Appends an item to `field_level_messages`.
     ///
     /// To override the contents of this collection use [`set_field_level_messages`](Self::set_field_level_messages).
@@ -83,6 +89,12 @@ impl DataValidationMetricsBuilder {
     ) -> Self {
         self.field_level_messages = input;
         self
+    }
+    /// <p>The field-specific model training validation messages.</p>
+    pub fn get_field_level_messages(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldValidationMessage>> {
+        &self.field_level_messages
     }
     /// Consumes the builder and constructs a [`DataValidationMetrics`](crate::types::DataValidationMetrics).
     pub fn build(self) -> crate::types::DataValidationMetrics {

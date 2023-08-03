@@ -38,6 +38,10 @@ impl ModifyHapgFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyHapg as a reference.
+    pub fn as_input(&self) -> &crate::operation::modify_hapg::builders::ModifyHapgInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -120,6 +124,10 @@ impl ModifyHapgFluentBuilder {
         self.inner = self.inner.set_hapg_arn(input);
         self
     }
+    /// <p>The ARN of the high-availability partition group to modify.</p>
+    pub fn get_hapg_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hapg_arn()
+    }
     /// <p>The new label for the high-availability partition group.</p>
     pub fn label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.label(input.into());
@@ -129,6 +137,10 @@ impl ModifyHapgFluentBuilder {
     pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_label(input);
         self
+    }
+    /// <p>The new label for the high-availability partition group.</p>
+    pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_label()
     }
     /// Appends an item to `PartitionSerialList`.
     ///
@@ -149,5 +161,11 @@ impl ModifyHapgFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_partition_serial_list(input);
         self
+    }
+    /// <p>The list of partition serial numbers to make members of the high-availability partition group.</p>
+    pub fn get_partition_serial_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_partition_serial_list()
     }
 }

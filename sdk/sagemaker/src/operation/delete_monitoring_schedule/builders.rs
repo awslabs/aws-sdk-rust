@@ -36,6 +36,13 @@ impl DeleteMonitoringScheduleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteMonitoringSchedule as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_monitoring_schedule::builders::DeleteMonitoringScheduleInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +138,9 @@ impl DeleteMonitoringScheduleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_monitoring_schedule_name(input);
         self
+    }
+    /// <p>The name of the monitoring schedule to delete.</p>
+    pub fn get_monitoring_schedule_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_monitoring_schedule_name()
     }
 }

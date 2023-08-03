@@ -36,6 +36,12 @@ impl CreateClassifierFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateClassifier as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_classifier::builders::CreateClassifierInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,12 @@ impl CreateClassifierFluentBuilder {
         self.inner = self.inner.set_grok_classifier(input);
         self
     }
+    /// <p>A <code>GrokClassifier</code> object specifying the classifier to create.</p>
+    pub fn get_grok_classifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateGrokClassifierRequest> {
+        self.inner.get_grok_classifier()
+    }
     /// <p>An <code>XMLClassifier</code> object specifying the classifier to create.</p>
     pub fn xml_classifier(mut self, input: crate::types::CreateXmlClassifierRequest) -> Self {
         self.inner = self.inner.xml_classifier(input);
@@ -141,6 +153,12 @@ impl CreateClassifierFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_xml_classifier(input);
         self
+    }
+    /// <p>An <code>XMLClassifier</code> object specifying the classifier to create.</p>
+    pub fn get_xml_classifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateXmlClassifierRequest> {
+        self.inner.get_xml_classifier()
     }
     /// <p>A <code>JsonClassifier</code> object specifying the classifier to create.</p>
     pub fn json_classifier(mut self, input: crate::types::CreateJsonClassifierRequest) -> Self {
@@ -155,6 +173,12 @@ impl CreateClassifierFluentBuilder {
         self.inner = self.inner.set_json_classifier(input);
         self
     }
+    /// <p>A <code>JsonClassifier</code> object specifying the classifier to create.</p>
+    pub fn get_json_classifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateJsonClassifierRequest> {
+        self.inner.get_json_classifier()
+    }
     /// <p>A <code>CsvClassifier</code> object specifying the classifier to create.</p>
     pub fn csv_classifier(mut self, input: crate::types::CreateCsvClassifierRequest) -> Self {
         self.inner = self.inner.csv_classifier(input);
@@ -167,5 +191,11 @@ impl CreateClassifierFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_csv_classifier(input);
         self
+    }
+    /// <p>A <code>CsvClassifier</code> object specifying the classifier to create.</p>
+    pub fn get_csv_classifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateCsvClassifierRequest> {
+        self.inner.get_csv_classifier()
     }
 }

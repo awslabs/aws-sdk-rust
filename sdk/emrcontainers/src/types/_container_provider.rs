@@ -59,6 +59,10 @@ impl ContainerProviderBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of the container provider. Amazon EKS is the only supported type as of now.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ContainerProviderType> {
+        &self.r#type
+    }
     /// <p>The ID of the container cluster.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -69,6 +73,10 @@ impl ContainerProviderBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the container cluster.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The information about the container cluster.</p>
     pub fn info(mut self, input: crate::types::ContainerInfo) -> Self {
         self.info = ::std::option::Option::Some(input);
@@ -78,6 +86,10 @@ impl ContainerProviderBuilder {
     pub fn set_info(mut self, input: ::std::option::Option<crate::types::ContainerInfo>) -> Self {
         self.info = input;
         self
+    }
+    /// <p>The information about the container cluster.</p>
+    pub fn get_info(&self) -> &::std::option::Option<crate::types::ContainerInfo> {
+        &self.info
     }
     /// Consumes the builder and constructs a [`ContainerProvider`](crate::types::ContainerProvider).
     pub fn build(self) -> crate::types::ContainerProvider {

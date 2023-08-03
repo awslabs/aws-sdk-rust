@@ -74,6 +74,10 @@ impl CostCategorySplitChargeRuleBuilder {
         self.source = input;
         self
     }
+    /// <p>The Cost Category value that you want to split. That value can't be used as a source or a target in other split charge rules. To indicate uncategorized costs, you can use an empty string as the source.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
+    }
     /// Appends an item to `targets`.
     ///
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).
@@ -93,6 +97,10 @@ impl CostCategorySplitChargeRuleBuilder {
         self.targets = input;
         self
     }
+    /// <p>The Cost Category values that you want to split costs across. These values can't be used as a source in other split charge rules. </p>
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.targets
+    }
     /// <p>The method that's used to define how to split your source costs across your targets. </p>
     /// <p> <code>Proportional</code> - Allocates charges across your targets based on the proportional weighted cost of each target.</p>
     /// <p> <code>Fixed</code> - Allocates charges across your targets based on your defined allocation percentage.</p>
@@ -111,6 +119,15 @@ impl CostCategorySplitChargeRuleBuilder {
     ) -> Self {
         self.method = input;
         self
+    }
+    /// <p>The method that's used to define how to split your source costs across your targets. </p>
+    /// <p> <code>Proportional</code> - Allocates charges across your targets based on the proportional weighted cost of each target.</p>
+    /// <p> <code>Fixed</code> - Allocates charges across your targets based on your defined allocation percentage.</p>
+    /// <p>&gt;<code>Even</code> - Allocates costs evenly across all targets.</p>
+    pub fn get_method(
+        &self,
+    ) -> &::std::option::Option<crate::types::CostCategorySplitChargeMethod> {
+        &self.method
     }
     /// Appends an item to `parameters`.
     ///
@@ -132,6 +149,13 @@ impl CostCategorySplitChargeRuleBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>The parameters for a split charge method. This is only required for the <code>FIXED</code> method. </p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRuleParameter>>
+    {
+        &self.parameters
     }
     /// Consumes the builder and constructs a [`CostCategorySplitChargeRule`](crate::types::CostCategorySplitChargeRule).
     pub fn build(self) -> crate::types::CostCategorySplitChargeRule {

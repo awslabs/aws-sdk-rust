@@ -41,6 +41,10 @@ impl GetAssessmentFrameworkInputBuilder {
         self.framework_id = input;
         self
     }
+    /// <p> The identifier for the framework. </p>
+    pub fn get_framework_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.framework_id
+    }
     /// Consumes the builder and constructs a [`GetAssessmentFrameworkInput`](crate::operation::get_assessment_framework::GetAssessmentFrameworkInput).
     pub fn build(
         self,

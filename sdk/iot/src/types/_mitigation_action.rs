@@ -64,6 +64,10 @@ impl MitigationActionBuilder {
         self.name = input;
         self
     }
+    /// <p>A user-friendly name for the mitigation action.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A unique identifier for the mitigation action.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl MitigationActionBuilder {
         self.id = input;
         self
     }
+    /// <p>A unique identifier for the mitigation action.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The IAM role ARN used to apply this mitigation action.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl MitigationActionBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The IAM role ARN used to apply this mitigation action.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The set of parameters for this mitigation action. The parameters vary, depending on the kind of action you apply.</p>
     pub fn action_params(mut self, input: crate::types::MitigationActionParams) -> Self {
@@ -96,6 +108,12 @@ impl MitigationActionBuilder {
     ) -> Self {
         self.action_params = input;
         self
+    }
+    /// <p>The set of parameters for this mitigation action. The parameters vary, depending on the kind of action you apply.</p>
+    pub fn get_action_params(
+        &self,
+    ) -> &::std::option::Option<crate::types::MitigationActionParams> {
+        &self.action_params
     }
     /// Consumes the builder and constructs a [`MitigationAction`](crate::types::MitigationAction).
     pub fn build(self) -> crate::types::MitigationAction {

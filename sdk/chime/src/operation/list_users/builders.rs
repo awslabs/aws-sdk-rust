@@ -36,6 +36,10 @@ impl ListUsersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListUsers as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_users::builders::ListUsersInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl ListUsersFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p>Optional. The user email address used to filter results. Maximum 1.</p>
     pub fn user_email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_email(input.into());
@@ -133,6 +141,10 @@ impl ListUsersFluentBuilder {
     pub fn set_user_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_email(input);
         self
+    }
+    /// <p>Optional. The user email address used to filter results. Maximum 1.</p>
+    pub fn get_user_email(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_email()
     }
     /// <p>The user type.</p>
     pub fn user_type(mut self, input: crate::types::UserType) -> Self {
@@ -144,6 +156,10 @@ impl ListUsersFluentBuilder {
         self.inner = self.inner.set_user_type(input);
         self
     }
+    /// <p>The user type.</p>
+    pub fn get_user_type(&self) -> &::std::option::Option<crate::types::UserType> {
+        self.inner.get_user_type()
+    }
     /// <p>The maximum number of results to return in a single call. Defaults to 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -154,6 +170,10 @@ impl ListUsersFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return in a single call. Defaults to 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -163,5 +183,9 @@ impl ListUsersFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

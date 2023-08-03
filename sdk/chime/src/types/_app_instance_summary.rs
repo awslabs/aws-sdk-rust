@@ -69,6 +69,10 @@ impl AppInstanceSummaryBuilder {
         self.app_instance_arn = input;
         self
     }
+    /// <p>The <code>AppInstance</code> ARN.</p>
+    pub fn get_app_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_instance_arn
+    }
     /// <p>The name of the <code>AppInstance</code>.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl AppInstanceSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the <code>AppInstance</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The metadata of the <code>AppInstance</code>.</p>
     pub fn metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metadata = ::std::option::Option::Some(input.into());
@@ -88,6 +96,10 @@ impl AppInstanceSummaryBuilder {
     pub fn set_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metadata = input;
         self
+    }
+    /// <p>The metadata of the <code>AppInstance</code>.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metadata
     }
     /// Consumes the builder and constructs a [`AppInstanceSummary`](crate::types::AppInstanceSummary).
     pub fn build(self) -> crate::types::AppInstanceSummary {

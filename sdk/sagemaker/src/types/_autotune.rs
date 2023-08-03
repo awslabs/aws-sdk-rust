@@ -48,6 +48,10 @@ impl AutotuneBuilder {
         self.mode = input;
         self
     }
+    /// <p>Set <code>Mode</code> to <code>Enabled</code> if you want to use Autotune.</p>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::AutotuneMode> {
+        &self.mode
+    }
     /// Consumes the builder and constructs a [`Autotune`](crate::types::Autotune).
     pub fn build(self) -> crate::types::Autotune {
         crate::types::Autotune { mode: self.mode }

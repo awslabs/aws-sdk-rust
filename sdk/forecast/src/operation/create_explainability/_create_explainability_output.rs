@@ -53,6 +53,10 @@ impl CreateExplainabilityOutputBuilder {
         self.explainability_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Explainability.</p>
+    pub fn get_explainability_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.explainability_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

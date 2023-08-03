@@ -36,6 +36,10 @@ impl DescribeComponentConfigurationRecommendationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeComponentConfigurationRecommendation as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_component_configuration_recommendation::builders::DescribeComponentConfigurationRecommendationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl DescribeComponentConfigurationRecommendationFluentBuilder {
         self.inner = self.inner.set_resource_group_name(input);
         self
     }
+    /// <p>The name of the resource group.</p>
+    pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_group_name()
+    }
     /// <p>The name of the component.</p>
     pub fn component_name(
         mut self,
@@ -122,6 +130,10 @@ impl DescribeComponentConfigurationRecommendationFluentBuilder {
         self.inner = self.inner.set_component_name(input);
         self
     }
+    /// <p>The name of the component.</p>
+    pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_component_name()
+    }
     /// <p>The tier of the application component.</p>
     pub fn tier(mut self, input: crate::types::Tier) -> Self {
         self.inner = self.inner.tier(input);
@@ -131,5 +143,9 @@ impl DescribeComponentConfigurationRecommendationFluentBuilder {
     pub fn set_tier(mut self, input: ::std::option::Option<crate::types::Tier>) -> Self {
         self.inner = self.inner.set_tier(input);
         self
+    }
+    /// <p>The tier of the application component.</p>
+    pub fn get_tier(&self) -> &::std::option::Option<crate::types::Tier> {
+        self.inner.get_tier()
     }
 }

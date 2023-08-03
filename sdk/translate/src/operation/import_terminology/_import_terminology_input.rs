@@ -80,6 +80,10 @@ impl ImportTerminologyInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the custom terminology being imported.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The merge strategy of the custom terminology being imported. Currently, only the OVERWRITE merge strategy is supported. In this case, the imported terminology will overwrite an existing terminology of the same name.</p>
     pub fn merge_strategy(mut self, input: crate::types::MergeStrategy) -> Self {
         self.merge_strategy = ::std::option::Option::Some(input);
@@ -93,6 +97,10 @@ impl ImportTerminologyInputBuilder {
         self.merge_strategy = input;
         self
     }
+    /// <p>The merge strategy of the custom terminology being imported. Currently, only the OVERWRITE merge strategy is supported. In this case, the imported terminology will overwrite an existing terminology of the same name.</p>
+    pub fn get_merge_strategy(&self) -> &::std::option::Option<crate::types::MergeStrategy> {
+        &self.merge_strategy
+    }
     /// <p>The description of the custom terminology being imported.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -102,6 +110,10 @@ impl ImportTerminologyInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the custom terminology being imported.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The terminology data for the custom terminology being imported.</p>
     pub fn terminology_data(mut self, input: crate::types::TerminologyData) -> Self {
@@ -116,6 +128,10 @@ impl ImportTerminologyInputBuilder {
         self.terminology_data = input;
         self
     }
+    /// <p>The terminology data for the custom terminology being imported.</p>
+    pub fn get_terminology_data(&self) -> &::std::option::Option<crate::types::TerminologyData> {
+        &self.terminology_data
+    }
     /// <p>The encryption key for the custom terminology being imported.</p>
     pub fn encryption_key(mut self, input: crate::types::EncryptionKey) -> Self {
         self.encryption_key = ::std::option::Option::Some(input);
@@ -128,6 +144,10 @@ impl ImportTerminologyInputBuilder {
     ) -> Self {
         self.encryption_key = input;
         self
+    }
+    /// <p>The encryption key for the custom terminology being imported.</p>
+    pub fn get_encryption_key(&self) -> &::std::option::Option<crate::types::EncryptionKey> {
+        &self.encryption_key
     }
     /// Appends an item to `tags`.
     ///
@@ -147,6 +167,10 @@ impl ImportTerminologyInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each tag key for the resource must be unique. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`ImportTerminologyInput`](crate::operation::import_terminology::ImportTerminologyInput).
     pub fn build(

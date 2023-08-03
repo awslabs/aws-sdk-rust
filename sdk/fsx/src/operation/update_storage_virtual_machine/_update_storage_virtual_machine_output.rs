@@ -51,6 +51,12 @@ impl UpdateStorageVirtualMachineOutputBuilder {
         self.storage_virtual_machine = input;
         self
     }
+    /// <p>Describes the Amazon FSx for NetApp ONTAP storage virtual machine (SVM) configuration.</p>
+    pub fn get_storage_virtual_machine(
+        &self,
+    ) -> &::std::option::Option<crate::types::StorageVirtualMachine> {
+        &self.storage_virtual_machine
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

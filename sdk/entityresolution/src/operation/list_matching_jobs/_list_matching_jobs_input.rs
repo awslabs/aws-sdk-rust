@@ -62,6 +62,10 @@ impl ListMatchingJobsInputBuilder {
         self.workflow_name = input;
         self
     }
+    /// <p>The name of the workflow to be retrieved.</p>
+    pub fn get_workflow_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_name
+    }
     /// <p>The pagination token from the previous <code>ListSchemaMappings</code> API call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl ListMatchingJobsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The pagination token from the previous <code>ListSchemaMappings</code> API call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of objects returned per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl ListMatchingJobsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of objects returned per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListMatchingJobsInput`](crate::operation::list_matching_jobs::ListMatchingJobsInput).
     pub fn build(

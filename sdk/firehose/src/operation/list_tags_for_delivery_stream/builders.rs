@@ -36,6 +36,10 @@ impl ListTagsForDeliveryStreamFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListTagsForDeliveryStream as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_tags_for_delivery_stream::builders::ListTagsForDeliveryStreamInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl ListTagsForDeliveryStreamFluentBuilder {
         self.inner = self.inner.set_delivery_stream_name(input);
         self
     }
+    /// <p>The name of the delivery stream whose tags you want to list.</p>
+    pub fn get_delivery_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_delivery_stream_name()
+    }
     /// <p>The key to use as the starting point for the list of tags. If you set this parameter, <code>ListTagsForDeliveryStream</code> gets all tags that occur after <code>ExclusiveStartTagKey</code>.</p>
     pub fn exclusive_start_tag_key(
         mut self,
@@ -148,6 +156,10 @@ impl ListTagsForDeliveryStreamFluentBuilder {
         self.inner = self.inner.set_exclusive_start_tag_key(input);
         self
     }
+    /// <p>The key to use as the starting point for the list of tags. If you set this parameter, <code>ListTagsForDeliveryStream</code> gets all tags that occur after <code>ExclusiveStartTagKey</code>.</p>
+    pub fn get_exclusive_start_tag_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_exclusive_start_tag_key()
+    }
     /// <p>The number of tags to return. If this number is less than the total number of tags associated with the delivery stream, <code>HasMoreTags</code> is set to <code>true</code> in the response. To list additional tags, set <code>ExclusiveStartTagKey</code> to the last key in the response. </p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -157,5 +169,9 @@ impl ListTagsForDeliveryStreamFluentBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
+    }
+    /// <p>The number of tags to return. If this number is less than the total number of tags associated with the delivery stream, <code>HasMoreTags</code> is set to <code>true</code> in the response. To list additional tags, set <code>ExclusiveStartTagKey</code> to the last key in the response. </p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
     }
 }

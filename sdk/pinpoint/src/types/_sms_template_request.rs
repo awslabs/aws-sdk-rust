@@ -86,6 +86,10 @@ impl SmsTemplateRequestBuilder {
         self.body = input;
         self
     }
+    /// <p>The message body to use in text messages that are based on the message template.</p>
+    pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.body
+    }
     /// <p>A JSON object that specifies the default values to use for message variables in the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable. When you create a message that's based on the template, you can override these defaults with message-specific and address-specific variables and values.</p>
     pub fn default_substitutions(
         mut self,
@@ -102,6 +106,10 @@ impl SmsTemplateRequestBuilder {
         self.default_substitutions = input;
         self
     }
+    /// <p>A JSON object that specifies the default values to use for message variables in the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable. When you create a message that's based on the template, you can override these defaults with message-specific and address-specific variables and values.</p>
+    pub fn get_default_substitutions(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_substitutions
+    }
     /// <p>The unique identifier for the recommender model to use for the message template. Amazon Pinpoint uses this value to determine how to retrieve and process data from a recommender model when it sends messages that use the template, if the template contains message variables for recommendation data.</p>
     pub fn recommender_id(
         mut self,
@@ -117,6 +125,10 @@ impl SmsTemplateRequestBuilder {
     ) -> Self {
         self.recommender_id = input;
         self
+    }
+    /// <p>The unique identifier for the recommender model to use for the message template. Amazon Pinpoint uses this value to determine how to retrieve and process data from a recommender model when it sends messages that use the template, if the template contains message variables for recommendation data.</p>
+    pub fn get_recommender_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommender_id
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -149,6 +161,17 @@ impl SmsTemplateRequestBuilder {
         self.tags = input;
         self
     }
+    /// <note>
+    /// <p>As of <b>22-05-2023</b> tags has been deprecated for update operations. After this date any value in tags is not processed and an error code is not returned. To manage tags we recommend using either <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/tags-resource-arn.html">Tags</a> in the <i>API Reference for Amazon Pinpoint</i>, <a href="https://docs.aws.amazon.com/cli/latest/reference/resourcegroupstaggingapi/index.html">resourcegroupstaggingapi</a> commands in the <i>AWS Command Line Interface Documentation</i> or <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/resourcegroupstaggingapi/package-summary.html">resourcegroupstaggingapi</a> in the <i>AWS SDK</i>.</p>
+    /// </note>
+    /// <p>(Deprecated) A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>A custom description of the message template.</p>
     pub fn template_description(
         mut self,
@@ -164,6 +187,10 @@ impl SmsTemplateRequestBuilder {
     ) -> Self {
         self.template_description = input;
         self
+    }
+    /// <p>A custom description of the message template.</p>
+    pub fn get_template_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_description
     }
     /// Consumes the builder and constructs a [`SmsTemplateRequest`](crate::types::SmsTemplateRequest).
     pub fn build(self) -> crate::types::SmsTemplateRequest {

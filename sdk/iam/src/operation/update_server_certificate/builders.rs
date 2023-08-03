@@ -42,6 +42,13 @@ impl UpdateServerCertificateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateServerCertificate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_server_certificate::builders::UpdateServerCertificateInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +147,11 @@ impl UpdateServerCertificateFluentBuilder {
         self.inner = self.inner.set_server_certificate_name(input);
         self
     }
+    /// <p>The name of the server certificate that you want to update.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn get_server_certificate_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_server_certificate_name()
+    }
     /// <p>The new path for the server certificate. Include this only if you are updating the server certificate's path.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p>
     pub fn new_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -151,6 +163,11 @@ impl UpdateServerCertificateFluentBuilder {
     pub fn set_new_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_new_path(input);
         self
+    }
+    /// <p>The new path for the server certificate. Include this only if you are updating the server certificate's path.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p>
+    pub fn get_new_path(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_new_path()
     }
     /// <p>The new name for the server certificate. Include this only if you are updating the server certificate's name. The name of the certificate cannot contain any spaces.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
@@ -169,5 +186,10 @@ impl UpdateServerCertificateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_new_server_certificate_name(input);
         self
+    }
+    /// <p>The new name for the server certificate. Include this only if you are updating the server certificate's name. The name of the certificate cannot contain any spaces.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn get_new_server_certificate_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_new_server_certificate_name()
     }
 }

@@ -144,6 +144,10 @@ impl UpdateConfigurationTemplateOutputBuilder {
         self.solution_stack_name = input;
         self
     }
+    /// <p>The name of the solution stack this configuration set uses.</p>
+    pub fn get_solution_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.solution_stack_name
+    }
     /// <p>The ARN of the platform version.</p>
     pub fn platform_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_arn = ::std::option::Option::Some(input.into());
@@ -153,6 +157,10 @@ impl UpdateConfigurationTemplateOutputBuilder {
     pub fn set_platform_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform_arn = input;
         self
+    }
+    /// <p>The ARN of the platform version.</p>
+    pub fn get_platform_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_arn
     }
     /// <p>The name of the application associated with this configuration set.</p>
     pub fn application_name(
@@ -170,6 +178,10 @@ impl UpdateConfigurationTemplateOutputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The name of the application associated with this configuration set.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p> If not <code>null</code>, the name of the configuration template for this configuration set. </p>
     pub fn template_name(
         mut self,
@@ -186,6 +198,10 @@ impl UpdateConfigurationTemplateOutputBuilder {
         self.template_name = input;
         self
     }
+    /// <p> If not <code>null</code>, the name of the configuration template for this configuration set. </p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// <p>Describes this configuration set.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -195,6 +211,10 @@ impl UpdateConfigurationTemplateOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Describes this configuration set.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p> If not <code>null</code>, the name of the environment for this configuration set. </p>
     pub fn environment_name(
@@ -211,6 +231,10 @@ impl UpdateConfigurationTemplateOutputBuilder {
     ) -> Self {
         self.environment_name = input;
         self
+    }
+    /// <p> If not <code>null</code>, the name of the environment for this configuration set. </p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
     }
     /// <p> If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter indicates the deployment status of this configuration set: </p>
     /// <ul>
@@ -237,6 +261,18 @@ impl UpdateConfigurationTemplateOutputBuilder {
         self.deployment_status = input;
         self
     }
+    /// <p> If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter indicates the deployment status of this configuration set: </p>
+    /// <ul>
+    /// <li> <p> <code>null</code>: This configuration is not associated with a running environment.</p> </li>
+    /// <li> <p> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying.</p> </li>
+    /// <li> <p> <code>deployed</code>: This is the configuration that is currently deployed to the associated running environment.</p> </li>
+    /// <li> <p> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</p> </li>
+    /// </ul>
+    pub fn get_deployment_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfigurationDeploymentStatus> {
+        &self.deployment_status
+    }
     /// <p>The date (in UTC time) when this configuration set was created.</p>
     pub fn date_created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.date_created = ::std::option::Option::Some(input);
@@ -250,6 +286,10 @@ impl UpdateConfigurationTemplateOutputBuilder {
         self.date_created = input;
         self
     }
+    /// <p>The date (in UTC time) when this configuration set was created.</p>
+    pub fn get_date_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.date_created
+    }
     /// <p>The date (in UTC time) when this configuration set was last modified.</p>
     pub fn date_updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.date_updated = ::std::option::Option::Some(input);
@@ -262,6 +302,10 @@ impl UpdateConfigurationTemplateOutputBuilder {
     ) -> Self {
         self.date_updated = input;
         self
+    }
+    /// <p>The date (in UTC time) when this configuration set was last modified.</p>
+    pub fn get_date_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.date_updated
     }
     /// Appends an item to `option_settings`.
     ///
@@ -281,6 +325,12 @@ impl UpdateConfigurationTemplateOutputBuilder {
     ) -> Self {
         self.option_settings = input;
         self
+    }
+    /// <p>A list of the configuration options and their values in this configuration set.</p>
+    pub fn get_option_settings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>> {
+        &self.option_settings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -36,6 +36,12 @@ impl CreateFlowDefinitionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateFlowDefinition as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_flow_definition::builders::CreateFlowDefinitionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl CreateFlowDefinitionFluentBuilder {
         self.inner = self.inner.set_flow_definition_name(input);
         self
     }
+    /// <p>The name of your flow definition.</p>
+    pub fn get_flow_definition_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_flow_definition_name()
+    }
     /// <p>Container for configuring the source of human task requests. Use to specify if Amazon Rekognition or Amazon Textract is used as an integration source.</p>
     pub fn human_loop_request_source(
         mut self,
@@ -147,6 +157,12 @@ impl CreateFlowDefinitionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_human_loop_request_source(input);
         self
+    }
+    /// <p>Container for configuring the source of human task requests. Use to specify if Amazon Rekognition or Amazon Textract is used as an integration source.</p>
+    pub fn get_human_loop_request_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::HumanLoopRequestSource> {
+        self.inner.get_human_loop_request_source()
     }
     /// <p>An object containing information about the events that trigger a human workflow.</p>
     pub fn human_loop_activation_config(
@@ -164,6 +180,12 @@ impl CreateFlowDefinitionFluentBuilder {
         self.inner = self.inner.set_human_loop_activation_config(input);
         self
     }
+    /// <p>An object containing information about the events that trigger a human workflow.</p>
+    pub fn get_human_loop_activation_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::HumanLoopActivationConfig> {
+        self.inner.get_human_loop_activation_config()
+    }
     /// <p>An object containing information about the tasks the human reviewers will perform.</p>
     pub fn human_loop_config(mut self, input: crate::types::HumanLoopConfig) -> Self {
         self.inner = self.inner.human_loop_config(input);
@@ -176,6 +198,10 @@ impl CreateFlowDefinitionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_human_loop_config(input);
         self
+    }
+    /// <p>An object containing information about the tasks the human reviewers will perform.</p>
+    pub fn get_human_loop_config(&self) -> &::std::option::Option<crate::types::HumanLoopConfig> {
+        self.inner.get_human_loop_config()
     }
     /// <p>An object containing information about where the human review results will be uploaded.</p>
     pub fn output_config(mut self, input: crate::types::FlowDefinitionOutputConfig) -> Self {
@@ -190,6 +216,12 @@ impl CreateFlowDefinitionFluentBuilder {
         self.inner = self.inner.set_output_config(input);
         self
     }
+    /// <p>An object containing information about where the human review results will be uploaded.</p>
+    pub fn get_output_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::FlowDefinitionOutputConfig> {
+        self.inner.get_output_config()
+    }
     /// <p>The Amazon Resource Name (ARN) of the role needed to call other services on your behalf. For example, <code>arn:aws:iam::1234567890:role/service-role/AmazonSageMaker-ExecutionRole-20180111T151298</code>.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -199,6 +231,10 @@ impl CreateFlowDefinitionFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the role needed to call other services on your behalf. For example, <code>arn:aws:iam::1234567890:role/service-role/AmazonSageMaker-ExecutionRole-20180111T151298</code>.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// Appends an item to `Tags`.
     ///
@@ -216,5 +252,9 @@ impl CreateFlowDefinitionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>An array of key-value pairs that contain metadata to help you categorize and organize a flow definition. Each tag consists of a key and a value, both of which you define.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

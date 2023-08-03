@@ -48,6 +48,10 @@ impl CompatibleImageBuilder {
         self.ami_id = input;
         self
     }
+    /// <p>The unique identifier for an individual Snow device AMI.</p>
+    pub fn get_ami_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ami_id
+    }
     /// <p>The optional name of a compatible image.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl CompatibleImageBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The optional name of a compatible image.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`CompatibleImage`](crate::types::CompatibleImage).
     pub fn build(self) -> crate::types::CompatibleImage {

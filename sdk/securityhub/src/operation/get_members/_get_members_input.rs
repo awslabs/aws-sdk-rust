@@ -48,6 +48,12 @@ impl GetMembersInputBuilder {
         self.account_ids = input;
         self
     }
+    /// <p>The list of account IDs for the Security Hub member accounts to return the details for. </p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.account_ids
+    }
     /// Consumes the builder and constructs a [`GetMembersInput`](crate::operation::get_members::GetMembersInput).
     pub fn build(
         self,

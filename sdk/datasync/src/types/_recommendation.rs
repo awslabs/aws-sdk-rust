@@ -65,6 +65,10 @@ impl RecommendationBuilder {
         self.storage_type = input;
         self
     }
+    /// <p>A recommended Amazon Web Services storage service that you can migrate data to based on information that DataSync Discovery collects about your on-premises storage system.</p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_type
+    }
     /// Adds a key-value pair to `storage_configuration`.
     ///
     /// To override the contents of this collection use [`set_storage_configuration`](Self::set_storage_configuration).
@@ -90,6 +94,14 @@ impl RecommendationBuilder {
         self.storage_configuration = input;
         self
     }
+    /// <p>Information about how you can set up a recommended Amazon Web Services storage service.</p>
+    pub fn get_storage_configuration(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.storage_configuration
+    }
     /// <p>The estimated monthly cost of the recommended Amazon Web Services storage service.</p>
     pub fn estimated_monthly_storage_cost(
         mut self,
@@ -105,6 +117,12 @@ impl RecommendationBuilder {
     ) -> Self {
         self.estimated_monthly_storage_cost = input;
         self
+    }
+    /// <p>The estimated monthly cost of the recommended Amazon Web Services storage service.</p>
+    pub fn get_estimated_monthly_storage_cost(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.estimated_monthly_storage_cost
     }
     /// Consumes the builder and constructs a [`Recommendation`](crate::types::Recommendation).
     pub fn build(self) -> crate::types::Recommendation {

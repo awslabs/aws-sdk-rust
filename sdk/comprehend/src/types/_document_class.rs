@@ -56,6 +56,10 @@ impl DocumentClassBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the class.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The confidence score that Amazon Comprehend has this class correctly attributed.</p>
     pub fn score(mut self, input: f32) -> Self {
         self.score = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl DocumentClassBuilder {
         self.score = input;
         self
     }
+    /// <p>The confidence score that Amazon Comprehend has this class correctly attributed.</p>
+    pub fn get_score(&self) -> &::std::option::Option<f32> {
+        &self.score
+    }
     /// <p>Page number in the input document. This field is present in the response only if your request includes the <code>Byte</code> parameter. </p>
     pub fn page(mut self, input: i32) -> Self {
         self.page = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl DocumentClassBuilder {
     pub fn set_page(mut self, input: ::std::option::Option<i32>) -> Self {
         self.page = input;
         self
+    }
+    /// <p>Page number in the input document. This field is present in the response only if your request includes the <code>Byte</code> parameter. </p>
+    pub fn get_page(&self) -> &::std::option::Option<i32> {
+        &self.page
     }
     /// Consumes the builder and constructs a [`DocumentClass`](crate::types::DocumentClass).
     pub fn build(self) -> crate::types::DocumentClass {

@@ -51,6 +51,10 @@ impl ListOpenWorkflowExecutionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListOpenWorkflowExecutions as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_open_workflow_executions::builders::ListOpenWorkflowExecutionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -147,6 +151,10 @@ impl ListOpenWorkflowExecutionsFluentBuilder {
         self.inner = self.inner.set_domain(input);
         self
     }
+    /// <p>The name of the domain that contains the workflow executions to list.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain()
+    }
     /// <p>Workflow executions are included in the returned results based on whether their start times are within the range specified by this filter.</p>
     pub fn start_time_filter(mut self, input: crate::types::ExecutionTimeFilter) -> Self {
         self.inner = self.inner.start_time_filter(input);
@@ -159,6 +167,12 @@ impl ListOpenWorkflowExecutionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_start_time_filter(input);
         self
+    }
+    /// <p>Workflow executions are included in the returned results based on whether their start times are within the range specified by this filter.</p>
+    pub fn get_start_time_filter(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExecutionTimeFilter> {
+        self.inner.get_start_time_filter()
     }
     /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note>
     /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
@@ -177,6 +191,12 @@ impl ListOpenWorkflowExecutionsFluentBuilder {
         self.inner = self.inner.set_type_filter(input);
         self
     }
+    /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note>
+    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// </note>
+    pub fn get_type_filter(&self) -> &::std::option::Option<crate::types::WorkflowTypeFilter> {
+        self.inner.get_type_filter()
+    }
     /// <p>If specified, only executions that have the matching tag are listed.</p> <note>
     /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
@@ -190,6 +210,12 @@ impl ListOpenWorkflowExecutionsFluentBuilder {
     pub fn set_tag_filter(mut self, input: ::std::option::Option<crate::types::TagFilter>) -> Self {
         self.inner = self.inner.set_tag_filter(input);
         self
+    }
+    /// <p>If specified, only executions that have the matching tag are listed.</p> <note>
+    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// </note>
+    pub fn get_tag_filter(&self) -> &::std::option::Option<crate::types::TagFilter> {
+        self.inner.get_tag_filter()
     }
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
@@ -209,6 +235,11 @@ impl ListOpenWorkflowExecutionsFluentBuilder {
         self.inner = self.inner.set_next_page_token(input);
         self
     }
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
+    pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_page_token()
+    }
     /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
     pub fn maximum_page_size(mut self, input: i32) -> Self {
         self.inner = self.inner.maximum_page_size(input);
@@ -219,6 +250,10 @@ impl ListOpenWorkflowExecutionsFluentBuilder {
         self.inner = self.inner.set_maximum_page_size(input);
         self
     }
+    /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
+    pub fn get_maximum_page_size(&self) -> &::std::option::Option<i32> {
+        self.inner.get_maximum_page_size()
+    }
     /// <p>When set to <code>true</code>, returns the results in reverse order. By default the results are returned in descending order of the start time of the executions.</p>
     pub fn reverse_order(mut self, input: bool) -> Self {
         self.inner = self.inner.reverse_order(input);
@@ -228,6 +263,10 @@ impl ListOpenWorkflowExecutionsFluentBuilder {
     pub fn set_reverse_order(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_reverse_order(input);
         self
+    }
+    /// <p>When set to <code>true</code>, returns the results in reverse order. By default the results are returned in descending order of the start time of the executions.</p>
+    pub fn get_reverse_order(&self) -> &::std::option::Option<bool> {
+        self.inner.get_reverse_order()
     }
     /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
     /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
@@ -245,5 +284,13 @@ impl ListOpenWorkflowExecutionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_execution_filter(input);
         self
+    }
+    /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
+    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// </note>
+    pub fn get_execution_filter(
+        &self,
+    ) -> &::std::option::Option<crate::types::WorkflowExecutionFilter> {
+        self.inner.get_execution_filter()
     }
 }

@@ -56,6 +56,10 @@ impl UserTurnIntentOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the intent.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Adds a key-value pair to `slots`.
     ///
     /// To override the contents of this collection use [`set_slots`](Self::set_slots).
@@ -80,6 +84,14 @@ impl UserTurnIntentOutputBuilder {
     ) -> Self {
         self.slots = input;
         self
+    }
+    /// <p>The slots associated with the intent.</p>
+    pub fn get_slots(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::UserTurnSlotOutput>,
+    > {
+        &self.slots
     }
     /// Consumes the builder and constructs a [`UserTurnIntentOutput`](crate::types::UserTurnIntentOutput).
     pub fn build(self) -> crate::types::UserTurnIntentOutput {

@@ -43,6 +43,10 @@ impl BestObjectiveNotImprovingBuilder {
         self.max_number_of_training_jobs_not_improving = input;
         self
     }
+    /// <p>The number of training jobs that have failed to improve model performance by 1% or greater over prior training jobs as evaluated against an objective function.</p>
+    pub fn get_max_number_of_training_jobs_not_improving(&self) -> &::std::option::Option<i32> {
+        &self.max_number_of_training_jobs_not_improving
+    }
     /// Consumes the builder and constructs a [`BestObjectiveNotImproving`](crate::types::BestObjectiveNotImproving).
     pub fn build(self) -> crate::types::BestObjectiveNotImproving {
         crate::types::BestObjectiveNotImproving {

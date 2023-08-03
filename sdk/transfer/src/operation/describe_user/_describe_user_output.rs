@@ -54,6 +54,10 @@ impl DescribeUserOutputBuilder {
         self.server_id = input;
         self
     }
+    /// <p>A system-assigned unique identifier for a server that has this user assigned.</p>
+    pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_id
+    }
     /// <p>An array containing the properties of the Transfer Family user for the <code>ServerID</code> value that you specified.</p>
     pub fn user(mut self, input: crate::types::DescribedUser) -> Self {
         self.user = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl DescribeUserOutputBuilder {
     pub fn set_user(mut self, input: ::std::option::Option<crate::types::DescribedUser>) -> Self {
         self.user = input;
         self
+    }
+    /// <p>An array containing the properties of the Transfer Family user for the <code>ServerID</code> value that you specified.</p>
+    pub fn get_user(&self) -> &::std::option::Option<crate::types::DescribedUser> {
+        &self.user
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

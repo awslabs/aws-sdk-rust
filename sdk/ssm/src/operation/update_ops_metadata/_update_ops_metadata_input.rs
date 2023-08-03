@@ -70,6 +70,10 @@ impl UpdateOpsMetadataInputBuilder {
         self.ops_metadata_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object to update.</p>
+    pub fn get_ops_metadata_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ops_metadata_arn
+    }
     /// Adds a key-value pair to `metadata_to_update`.
     ///
     /// To override the contents of this collection use [`set_metadata_to_update`](Self::set_metadata_to_update).
@@ -95,6 +99,14 @@ impl UpdateOpsMetadataInputBuilder {
         self.metadata_to_update = input;
         self
     }
+    /// <p>Metadata to add to an OpsMetadata object.</p>
+    pub fn get_metadata_to_update(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>,
+    > {
+        &self.metadata_to_update
+    }
     /// Appends an item to `keys_to_delete`.
     ///
     /// To override the contents of this collection use [`set_keys_to_delete`](Self::set_keys_to_delete).
@@ -116,6 +128,12 @@ impl UpdateOpsMetadataInputBuilder {
     ) -> Self {
         self.keys_to_delete = input;
         self
+    }
+    /// <p>The metadata keys to delete from the OpsMetadata object. </p>
+    pub fn get_keys_to_delete(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.keys_to_delete
     }
     /// Consumes the builder and constructs a [`UpdateOpsMetadataInput`](crate::operation::update_ops_metadata::UpdateOpsMetadataInput).
     pub fn build(

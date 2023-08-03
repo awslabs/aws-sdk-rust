@@ -56,6 +56,10 @@ impl DeleteMethodInputBuilder {
         self.rest_api_id = input;
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
+    }
     /// <p>The Resource identifier for the Method resource.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl DeleteMethodInputBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The Resource identifier for the Method resource.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>The HTTP verb of the Method resource.</p>
     pub fn http_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.http_method = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl DeleteMethodInputBuilder {
     pub fn set_http_method(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.http_method = input;
         self
+    }
+    /// <p>The HTTP verb of the Method resource.</p>
+    pub fn get_http_method(&self) -> &::std::option::Option<::std::string::String> {
+        &self.http_method
     }
     /// Consumes the builder and constructs a [`DeleteMethodInput`](crate::operation::delete_method::DeleteMethodInput).
     pub fn build(

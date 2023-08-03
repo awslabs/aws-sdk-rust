@@ -41,6 +41,12 @@ impl GetTestGridSessionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetTestGridSession as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_test_grid_session::builders::GetTestGridSessionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +137,10 @@ impl GetTestGridSessionFluentBuilder {
         self.inner = self.inner.set_project_arn(input);
         self
     }
+    /// <p>The ARN for the project that this session belongs to. See <code>CreateTestGridProject</code> and <code>ListTestGridProjects</code>.</p>
+    pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_arn()
+    }
     /// <p>An ID associated with this session.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.session_id(input.into());
@@ -141,6 +151,10 @@ impl GetTestGridSessionFluentBuilder {
         self.inner = self.inner.set_session_id(input);
         self
     }
+    /// <p>An ID associated with this session.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_session_id()
+    }
     /// <p>An ARN that uniquely identifies a <code>TestGridSession</code>.</p>
     pub fn session_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.session_arn(input.into());
@@ -150,5 +164,9 @@ impl GetTestGridSessionFluentBuilder {
     pub fn set_session_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_session_arn(input);
         self
+    }
+    /// <p>An ARN that uniquely identifies a <code>TestGridSession</code>.</p>
+    pub fn get_session_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_session_arn()
     }
 }

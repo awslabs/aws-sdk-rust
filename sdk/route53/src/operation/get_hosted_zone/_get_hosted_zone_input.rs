@@ -40,6 +40,10 @@ impl GetHostedZoneInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the hosted zone that you want to get information about.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`GetHostedZoneInput`](crate::operation::get_hosted_zone::GetHostedZoneInput).
     pub fn build(
         self,

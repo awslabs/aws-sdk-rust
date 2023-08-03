@@ -80,6 +80,10 @@ impl DataSourceSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The arn of the datasource.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The unique ID of the data source.</p>
     pub fn data_source_id(
         mut self,
@@ -96,6 +100,10 @@ impl DataSourceSummaryBuilder {
         self.data_source_id = input;
         self
     }
+    /// <p>The unique ID of the data source.</p>
+    pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_id
+    }
     /// <p>The name of the data source.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -106,6 +114,10 @@ impl DataSourceSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the data source.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type of the data source.</p>
     pub fn r#type(mut self, input: crate::types::DataSourceType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -115,6 +127,10 @@ impl DataSourceSummaryBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DataSourceType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the data source.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::DataSourceType> {
+        &self.r#type
     }
     /// <p>The date and time that the data source was created. This value is expressed in MM-DD-YYYY HH:MM:SS format.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -129,6 +145,10 @@ impl DataSourceSummaryBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The date and time that the data source was created. This value is expressed in MM-DD-YYYY HH:MM:SS format.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>The date and time the data source was last updated. This value is expressed in MM-DD-YYYY HH:MM:SS format.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -141,6 +161,10 @@ impl DataSourceSummaryBuilder {
     ) -> Self {
         self.last_updated_time = input;
         self
+    }
+    /// <p>The date and time the data source was last updated. This value is expressed in MM-DD-YYYY HH:MM:SS format.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
     }
     /// Consumes the builder and constructs a [`DataSourceSummary`](crate::types::DataSourceSummary).
     pub fn build(self) -> crate::types::DataSourceSummary {

@@ -56,6 +56,10 @@ impl UpdateDefaultBranchInputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository to set or change the default branch for.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The name of the branch to set as the default.</p>
     pub fn default_branch_name(
         mut self,
@@ -71,6 +75,10 @@ impl UpdateDefaultBranchInputBuilder {
     ) -> Self {
         self.default_branch_name = input;
         self
+    }
+    /// <p>The name of the branch to set as the default.</p>
+    pub fn get_default_branch_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_branch_name
     }
     /// Consumes the builder and constructs a [`UpdateDefaultBranchInput`](crate::operation::update_default_branch::UpdateDefaultBranchInput).
     pub fn build(

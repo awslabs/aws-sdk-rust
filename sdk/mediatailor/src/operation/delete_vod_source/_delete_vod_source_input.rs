@@ -53,6 +53,10 @@ impl DeleteVodSourceInputBuilder {
         self.source_location_name = input;
         self
     }
+    /// <p>The name of the source location associated with this VOD Source.</p>
+    pub fn get_source_location_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_location_name
+    }
     /// <p>The name of the VOD source.</p>
     pub fn vod_source_name(
         mut self,
@@ -68,6 +72,10 @@ impl DeleteVodSourceInputBuilder {
     ) -> Self {
         self.vod_source_name = input;
         self
+    }
+    /// <p>The name of the VOD source.</p>
+    pub fn get_vod_source_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vod_source_name
     }
     /// Consumes the builder and constructs a [`DeleteVodSourceInput`](crate::operation::delete_vod_source::DeleteVodSourceInput).
     pub fn build(

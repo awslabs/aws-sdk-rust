@@ -66,6 +66,10 @@ impl ListInfrastructureConfigurationsOutputBuilder {
         self.request_id = input;
         self
     }
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
+    }
     /// Appends an item to `infrastructure_configuration_summary_list`.
     ///
     /// To override the contents of this collection use [`set_infrastructure_configuration_summary_list`](Self::set_infrastructure_configuration_summary_list).
@@ -92,6 +96,13 @@ impl ListInfrastructureConfigurationsOutputBuilder {
         self.infrastructure_configuration_summary_list = input;
         self
     }
+    /// <p>The list of infrastructure configurations.</p>
+    pub fn get_infrastructure_configuration_summary_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InfrastructureConfigurationSummary>>
+    {
+        &self.infrastructure_configuration_summary_list
+    }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -101,6 +112,10 @@ impl ListInfrastructureConfigurationsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -48,6 +48,10 @@ impl AwsJobRateIncreaseCriteriaBuilder {
         self.number_of_notified_things = input;
         self
     }
+    /// <p>When this number of things have been notified, it will initiate an increase in the rollout rate.</p>
+    pub fn get_number_of_notified_things(&self) -> &::std::option::Option<i32> {
+        &self.number_of_notified_things
+    }
     /// <p>When this number of things have succeeded in their job execution, it will initiate an increase in the rollout rate.</p>
     pub fn number_of_succeeded_things(mut self, input: i32) -> Self {
         self.number_of_succeeded_things = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl AwsJobRateIncreaseCriteriaBuilder {
     pub fn set_number_of_succeeded_things(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_succeeded_things = input;
         self
+    }
+    /// <p>When this number of things have succeeded in their job execution, it will initiate an increase in the rollout rate.</p>
+    pub fn get_number_of_succeeded_things(&self) -> &::std::option::Option<i32> {
+        &self.number_of_succeeded_things
     }
     /// Consumes the builder and constructs a [`AwsJobRateIncreaseCriteria`](crate::types::AwsJobRateIncreaseCriteria).
     pub fn build(self) -> crate::types::AwsJobRateIncreaseCriteria {

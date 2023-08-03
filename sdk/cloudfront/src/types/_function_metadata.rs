@@ -68,6 +68,10 @@ impl FunctionMetadataBuilder {
         self.function_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the function. The ARN uniquely identifies the function.</p>
+    pub fn get_function_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_arn
+    }
     /// <p>The stage that the function is in, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
     /// <p>When a function is in the <code>DEVELOPMENT</code> stage, you can test the function with <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.</p>
     /// <p>When a function is in the <code>LIVE</code> stage, you can attach the function to a distribution's cache behavior, using the function's ARN.</p>
@@ -82,6 +86,12 @@ impl FunctionMetadataBuilder {
         self.stage = input;
         self
     }
+    /// <p>The stage that the function is in, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
+    /// <p>When a function is in the <code>DEVELOPMENT</code> stage, you can test the function with <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.</p>
+    /// <p>When a function is in the <code>LIVE</code> stage, you can attach the function to a distribution's cache behavior, using the function's ARN.</p>
+    pub fn get_stage(&self) -> &::std::option::Option<crate::types::FunctionStage> {
+        &self.stage
+    }
     /// <p>The date and time when the function was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
@@ -95,6 +105,10 @@ impl FunctionMetadataBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The date and time when the function was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>The date and time when the function was most recently updated.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -107,6 +121,10 @@ impl FunctionMetadataBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>The date and time when the function was most recently updated.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// Consumes the builder and constructs a [`FunctionMetadata`](crate::types::FunctionMetadata).
     pub fn build(self) -> crate::types::FunctionMetadata {

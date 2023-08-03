@@ -54,6 +54,10 @@ impl ModifyDbParameterGroupOutputBuilder {
         self.db_parameter_group_name = input;
         self
     }
+    /// <p>Provides the name of the DB parameter group.</p>
+    pub fn get_db_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_parameter_group_name
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

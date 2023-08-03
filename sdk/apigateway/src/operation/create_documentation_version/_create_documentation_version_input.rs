@@ -64,6 +64,10 @@ impl CreateDocumentationVersionInputBuilder {
         self.rest_api_id = input;
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
+    }
     /// <p>The version identifier of the new snapshot.</p>
     pub fn documentation_version(
         mut self,
@@ -80,6 +84,10 @@ impl CreateDocumentationVersionInputBuilder {
         self.documentation_version = input;
         self
     }
+    /// <p>The version identifier of the new snapshot.</p>
+    pub fn get_documentation_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.documentation_version
+    }
     /// <p>The stage name to be associated with the new documentation snapshot.</p>
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_name = ::std::option::Option::Some(input.into());
@@ -90,6 +98,10 @@ impl CreateDocumentationVersionInputBuilder {
         self.stage_name = input;
         self
     }
+    /// <p>The stage name to be associated with the new documentation snapshot.</p>
+    pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stage_name
+    }
     /// <p>A description about the new documentation snapshot.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -99,6 +111,10 @@ impl CreateDocumentationVersionInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description about the new documentation snapshot.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`CreateDocumentationVersionInput`](crate::operation::create_documentation_version::CreateDocumentationVersionInput).
     pub fn build(

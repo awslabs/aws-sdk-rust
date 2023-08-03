@@ -53,6 +53,12 @@ impl SensitivityInspectionTemplateExcludesBuilder {
         self.managed_data_identifier_ids = input;
         self
     }
+    /// <p>An array of unique identifiers, one for each managed data identifier to exclude. To retrieve a list of valid values, use the ListManagedDataIdentifiers operation.</p>
+    pub fn get_managed_data_identifier_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.managed_data_identifier_ids
+    }
     /// Consumes the builder and constructs a [`SensitivityInspectionTemplateExcludes`](crate::types::SensitivityInspectionTemplateExcludes).
     pub fn build(self) -> crate::types::SensitivityInspectionTemplateExcludes {
         crate::types::SensitivityInspectionTemplateExcludes {

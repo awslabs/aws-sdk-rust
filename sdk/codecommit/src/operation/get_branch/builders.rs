@@ -36,6 +36,10 @@ impl GetBranchFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetBranch as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_branch::builders::GetBranchInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl GetBranchFluentBuilder {
         self.inner = self.inner.set_repository_name(input);
         self
     }
+    /// <p>The name of the repository that contains the branch for which you want to retrieve information.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository_name()
+    }
     /// <p>The name of the branch for which you want to retrieve information.</p>
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.branch_name(input.into());
@@ -133,5 +141,9 @@ impl GetBranchFluentBuilder {
     pub fn set_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_branch_name(input);
         self
+    }
+    /// <p>The name of the branch for which you want to retrieve information.</p>
+    pub fn get_branch_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_branch_name()
     }
 }

@@ -64,6 +64,10 @@ impl MetricFilterMatchRecordBuilder {
         self.event_number = input;
         self
     }
+    /// <p>The event number.</p>
+    pub fn get_event_number(&self) -> &::std::option::Option<i64> {
+        &self.event_number
+    }
     /// <p>The raw event data.</p>
     pub fn event_message(
         mut self,
@@ -79,6 +83,10 @@ impl MetricFilterMatchRecordBuilder {
     ) -> Self {
         self.event_message = input;
         self
+    }
+    /// <p>The raw event data.</p>
+    pub fn get_event_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_message
     }
     /// Adds a key-value pair to `extracted_values`.
     ///
@@ -104,6 +112,14 @@ impl MetricFilterMatchRecordBuilder {
     ) -> Self {
         self.extracted_values = input;
         self
+    }
+    /// <p>The values extracted from the event data by the filter.</p>
+    pub fn get_extracted_values(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.extracted_values
     }
     /// Consumes the builder and constructs a [`MetricFilterMatchRecord`](crate::types::MetricFilterMatchRecord).
     pub fn build(self) -> crate::types::MetricFilterMatchRecord {

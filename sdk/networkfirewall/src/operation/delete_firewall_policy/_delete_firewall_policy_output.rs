@@ -53,6 +53,12 @@ impl DeleteFirewallPolicyOutputBuilder {
         self.firewall_policy_response = input;
         self
     }
+    /// <p>The object containing the definition of the <code>FirewallPolicyResponse</code> that you asked to delete. </p>
+    pub fn get_firewall_policy_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::FirewallPolicyResponse> {
+        &self.firewall_policy_response
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

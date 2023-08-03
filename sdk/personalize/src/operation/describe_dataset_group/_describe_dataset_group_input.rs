@@ -46,6 +46,10 @@ impl DescribeDatasetGroupInputBuilder {
         self.dataset_group_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the dataset group to describe.</p>
+    pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_group_arn
+    }
     /// Consumes the builder and constructs a [`DescribeDatasetGroupInput`](crate::operation::describe_dataset_group::DescribeDatasetGroupInput).
     pub fn build(
         self,

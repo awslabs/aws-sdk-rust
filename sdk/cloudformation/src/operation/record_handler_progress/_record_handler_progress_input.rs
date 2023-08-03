@@ -92,6 +92,10 @@ impl RecordHandlerProgressInputBuilder {
         self
     }
     /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
+    pub fn get_bearer_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bearer_token
+    }
+    /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
     pub fn operation_status(mut self, input: crate::types::OperationStatus) -> Self {
         self.operation_status = ::std::option::Option::Some(input);
         self
@@ -105,6 +109,10 @@ impl RecordHandlerProgressInputBuilder {
         self
     }
     /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
+    pub fn get_operation_status(&self) -> &::std::option::Option<crate::types::OperationStatus> {
+        &self.operation_status
+    }
+    /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
     pub fn current_operation_status(mut self, input: crate::types::OperationStatus) -> Self {
         self.current_operation_status = ::std::option::Option::Some(input);
         self
@@ -116,6 +124,12 @@ impl RecordHandlerProgressInputBuilder {
     ) -> Self {
         self.current_operation_status = input;
         self
+    }
+    /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
+    pub fn get_current_operation_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::OperationStatus> {
+        &self.current_operation_status
     }
     /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
     pub fn status_message(
@@ -134,6 +148,10 @@ impl RecordHandlerProgressInputBuilder {
         self
     }
     /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
+    /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
     pub fn error_code(mut self, input: crate::types::HandlerErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
         self
@@ -145,6 +163,10 @@ impl RecordHandlerProgressInputBuilder {
     ) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::HandlerErrorCode> {
+        &self.error_code
     }
     /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
     pub fn resource_model(
@@ -163,6 +185,10 @@ impl RecordHandlerProgressInputBuilder {
         self
     }
     /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
+    pub fn get_resource_model(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_model
+    }
+    /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
     pub fn client_request_token(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -177,6 +203,10 @@ impl RecordHandlerProgressInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Consumes the builder and constructs a [`RecordHandlerProgressInput`](crate::operation::record_handler_progress::RecordHandlerProgressInput).
     pub fn build(

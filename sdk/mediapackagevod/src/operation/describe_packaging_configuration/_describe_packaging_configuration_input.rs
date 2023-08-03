@@ -39,6 +39,10 @@ impl DescribePackagingConfigurationInputBuilder {
         self.id = input;
         self
     }
+    /// The ID of a MediaPackage VOD PackagingConfiguration resource.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`DescribePackagingConfigurationInput`](crate::operation::describe_packaging_configuration::DescribePackagingConfigurationInput).
     pub fn build(
         self,

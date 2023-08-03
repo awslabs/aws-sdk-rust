@@ -64,6 +64,12 @@ impl GetContinuousDeploymentPolicyOutputBuilder {
         self.continuous_deployment_policy = input;
         self
     }
+    /// <p>A continuous deployment policy.</p>
+    pub fn get_continuous_deployment_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContinuousDeploymentPolicy> {
+        &self.continuous_deployment_policy
+    }
     /// <p>The version identifier for the current version of the continuous deployment policy.</p>
     pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.e_tag = ::std::option::Option::Some(input.into());
@@ -73,6 +79,10 @@ impl GetContinuousDeploymentPolicyOutputBuilder {
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.e_tag = input;
         self
+    }
+    /// <p>The version identifier for the current version of the continuous deployment policy.</p>
+    pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.e_tag
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

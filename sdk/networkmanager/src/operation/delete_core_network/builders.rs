@@ -36,6 +36,12 @@ impl DeleteCoreNetworkFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteCoreNetwork as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_core_network::builders::DeleteCoreNetworkInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl DeleteCoreNetworkFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_core_network_id(input);
         self
+    }
+    /// <p>The network ID of the deleted core network.</p>
+    pub fn get_core_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_core_network_id()
     }
 }

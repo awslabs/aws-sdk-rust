@@ -77,6 +77,10 @@ impl OutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the in-application stream.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Identifies a Kinesis data stream as the destination.</p>
     pub fn kinesis_streams_output(mut self, input: crate::types::KinesisStreamsOutput) -> Self {
         self.kinesis_streams_output = ::std::option::Option::Some(input);
@@ -89,6 +93,12 @@ impl OutputBuilder {
     ) -> Self {
         self.kinesis_streams_output = input;
         self
+    }
+    /// <p>Identifies a Kinesis data stream as the destination.</p>
+    pub fn get_kinesis_streams_output(
+        &self,
+    ) -> &::std::option::Option<crate::types::KinesisStreamsOutput> {
+        &self.kinesis_streams_output
     }
     /// <p>Identifies a Kinesis Data Firehose delivery stream as the destination.</p>
     pub fn kinesis_firehose_output(mut self, input: crate::types::KinesisFirehoseOutput) -> Self {
@@ -103,6 +113,12 @@ impl OutputBuilder {
         self.kinesis_firehose_output = input;
         self
     }
+    /// <p>Identifies a Kinesis Data Firehose delivery stream as the destination.</p>
+    pub fn get_kinesis_firehose_output(
+        &self,
+    ) -> &::std::option::Option<crate::types::KinesisFirehoseOutput> {
+        &self.kinesis_firehose_output
+    }
     /// <p>Identifies an Amazon Lambda function as the destination.</p>
     pub fn lambda_output(mut self, input: crate::types::LambdaOutput) -> Self {
         self.lambda_output = ::std::option::Option::Some(input);
@@ -116,6 +132,10 @@ impl OutputBuilder {
         self.lambda_output = input;
         self
     }
+    /// <p>Identifies an Amazon Lambda function as the destination.</p>
+    pub fn get_lambda_output(&self) -> &::std::option::Option<crate::types::LambdaOutput> {
+        &self.lambda_output
+    }
     /// <p>Describes the data format when records are written to the destination. </p>
     pub fn destination_schema(mut self, input: crate::types::DestinationSchema) -> Self {
         self.destination_schema = ::std::option::Option::Some(input);
@@ -128,6 +148,12 @@ impl OutputBuilder {
     ) -> Self {
         self.destination_schema = input;
         self
+    }
+    /// <p>Describes the data format when records are written to the destination. </p>
+    pub fn get_destination_schema(
+        &self,
+    ) -> &::std::option::Option<crate::types::DestinationSchema> {
+        &self.destination_schema
     }
     /// Consumes the builder and constructs a [`Output`](crate::types::Output).
     pub fn build(self) -> crate::types::Output {

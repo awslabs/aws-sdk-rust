@@ -74,6 +74,10 @@ impl UpdateFolderPermissionsInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The ID for the Amazon Web Services account that contains the folder to update.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The ID of the folder.</p>
     pub fn folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.folder_id = ::std::option::Option::Some(input.into());
@@ -83,6 +87,10 @@ impl UpdateFolderPermissionsInputBuilder {
     pub fn set_folder_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.folder_id = input;
         self
+    }
+    /// <p>The ID of the folder.</p>
+    pub fn get_folder_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.folder_id
     }
     /// Appends an item to `grant_permissions`.
     ///
@@ -103,6 +111,12 @@ impl UpdateFolderPermissionsInputBuilder {
         self.grant_permissions = input;
         self
     }
+    /// <p>The permissions that you want to grant on a resource.</p>
+    pub fn get_grant_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+        &self.grant_permissions
+    }
     /// Appends an item to `revoke_permissions`.
     ///
     /// To override the contents of this collection use [`set_revoke_permissions`](Self::set_revoke_permissions).
@@ -121,6 +135,12 @@ impl UpdateFolderPermissionsInputBuilder {
     ) -> Self {
         self.revoke_permissions = input;
         self
+    }
+    /// <p>The permissions that you want to revoke from a resource.</p>
+    pub fn get_revoke_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+        &self.revoke_permissions
     }
     /// Consumes the builder and constructs a [`UpdateFolderPermissionsInput`](crate::operation::update_folder_permissions::UpdateFolderPermissionsInput).
     pub fn build(

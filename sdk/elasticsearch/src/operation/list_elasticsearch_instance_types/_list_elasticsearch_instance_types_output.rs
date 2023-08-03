@@ -71,6 +71,12 @@ impl ListElasticsearchInstanceTypesOutputBuilder {
         self.elasticsearch_instance_types = input;
         self
     }
+    /// <p> List of instance types supported by Amazon Elasticsearch service for given <code> <code>ElasticsearchVersion</code> </code> </p>
+    pub fn get_elasticsearch_instance_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EsPartitionInstanceType>> {
+        &self.elasticsearch_instance_types
+    }
     /// <p>In case if there are more results available NextToken would be present, make further request to the same API with received NextToken to paginate remaining results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -80,6 +86,10 @@ impl ListElasticsearchInstanceTypesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>In case if there are more results available NextToken would be present, make further request to the same API with received NextToken to paginate remaining results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

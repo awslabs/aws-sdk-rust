@@ -46,6 +46,10 @@ impl DescribeWorkforceInputBuilder {
         self.workforce_name = input;
         self
     }
+    /// <p>The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically set to <code>default</code> when a workforce is created and cannot be modified. </p>
+    pub fn get_workforce_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workforce_name
+    }
     /// Consumes the builder and constructs a [`DescribeWorkforceInput`](crate::operation::describe_workforce::DescribeWorkforceInput).
     pub fn build(
         self,

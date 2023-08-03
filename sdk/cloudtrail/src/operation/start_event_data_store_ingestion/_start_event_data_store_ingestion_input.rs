@@ -45,6 +45,10 @@ impl StartEventDataStoreIngestionInputBuilder {
         self.event_data_store = input;
         self
     }
+    /// <p>The ARN (or ID suffix of the ARN) of the event data store for which you want to start ingestion.</p>
+    pub fn get_event_data_store(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_data_store
+    }
     /// Consumes the builder and constructs a [`StartEventDataStoreIngestionInput`](crate::operation::start_event_data_store_ingestion::StartEventDataStoreIngestionInput).
     pub fn build(
         self,

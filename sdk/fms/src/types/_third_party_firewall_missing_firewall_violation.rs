@@ -70,6 +70,10 @@ impl ThirdPartyFirewallMissingFirewallViolationBuilder {
         self.violation_target = input;
         self
     }
+    /// <p>The ID of the third-party firewall that's causing the violation.</p>
+    pub fn get_violation_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.violation_target
+    }
     /// <p>The resource ID of the VPC associated with a third-party firewall.</p>
     pub fn vpc(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl ThirdPartyFirewallMissingFirewallViolationBuilder {
     pub fn set_vpc(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc = input;
         self
+    }
+    /// <p>The resource ID of the VPC associated with a third-party firewall.</p>
+    pub fn get_vpc(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc
     }
     /// <p>The Availability Zone of the third-party firewall that's causing the violation.</p>
     pub fn availability_zone(
@@ -96,6 +104,10 @@ impl ThirdPartyFirewallMissingFirewallViolationBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>The Availability Zone of the third-party firewall that's causing the violation.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>The reason the resource is causing this violation, if a reason is available.</p>
     pub fn target_violation_reason(
         mut self,
@@ -111,6 +123,10 @@ impl ThirdPartyFirewallMissingFirewallViolationBuilder {
     ) -> Self {
         self.target_violation_reason = input;
         self
+    }
+    /// <p>The reason the resource is causing this violation, if a reason is available.</p>
+    pub fn get_target_violation_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_violation_reason
     }
     /// Consumes the builder and constructs a [`ThirdPartyFirewallMissingFirewallViolation`](crate::types::ThirdPartyFirewallMissingFirewallViolation).
     pub fn build(self) -> crate::types::ThirdPartyFirewallMissingFirewallViolation {

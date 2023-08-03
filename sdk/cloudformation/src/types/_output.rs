@@ -64,6 +64,10 @@ impl OutputBuilder {
         self.output_key = input;
         self
     }
+    /// <p>The key associated with the output.</p>
+    pub fn get_output_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_key
+    }
     /// <p>The value associated with the output.</p>
     pub fn output_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_value = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl OutputBuilder {
     pub fn set_output_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_value = input;
         self
+    }
+    /// <p>The value associated with the output.</p>
+    pub fn get_output_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_value
     }
     /// <p>User defined description associated with the output.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl OutputBuilder {
         self.description = input;
         self
     }
+    /// <p>User defined description associated with the output.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The name of the export associated with the output.</p>
     pub fn export_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.export_name = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl OutputBuilder {
     pub fn set_export_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.export_name = input;
         self
+    }
+    /// <p>The name of the export associated with the output.</p>
+    pub fn get_export_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.export_name
     }
     /// Consumes the builder and constructs a [`Output`](crate::types::Output).
     pub fn build(self) -> crate::types::Output {

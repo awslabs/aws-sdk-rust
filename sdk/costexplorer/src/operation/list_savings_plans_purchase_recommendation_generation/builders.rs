@@ -36,6 +36,10 @@ impl ListSavingsPlansPurchaseRecommendationGenerationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListSavingsPlansPurchaseRecommendationGeneration as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_savings_plans_purchase_recommendation_generation::builders::ListSavingsPlansPurchaseRecommendationGenerationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -103,6 +107,10 @@ impl ListSavingsPlansPurchaseRecommendationGenerationFluentBuilder {
         self.inner = self.inner.set_generation_status(input);
         self
     }
+    /// <p>The status of the recommendation generation.</p>
+    pub fn get_generation_status(&self) -> &::std::option::Option<crate::types::GenerationStatus> {
+        self.inner.get_generation_status()
+    }
     /// Appends an item to `RecommendationIds`.
     ///
     /// To override the contents of this collection use [`set_recommendation_ids`](Self::set_recommendation_ids).
@@ -123,6 +131,12 @@ impl ListSavingsPlansPurchaseRecommendationGenerationFluentBuilder {
         self.inner = self.inner.set_recommendation_ids(input);
         self
     }
+    /// <p>The IDs for each specific recommendation.</p>
+    pub fn get_recommendation_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_recommendation_ids()
+    }
     /// <p>The number of recommendations that you want returned in a single response object.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.inner = self.inner.page_size(input);
@@ -132,6 +146,10 @@ impl ListSavingsPlansPurchaseRecommendationGenerationFluentBuilder {
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_page_size(input);
         self
+    }
+    /// <p>The number of recommendations that you want returned in a single response object.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        self.inner.get_page_size()
     }
     /// <p>The token to retrieve the next set of results.</p>
     pub fn next_page_token(
@@ -148,5 +166,9 @@ impl ListSavingsPlansPurchaseRecommendationGenerationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_next_page_token(input);
         self
+    }
+    /// <p>The token to retrieve the next set of results.</p>
+    pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_page_token()
     }
 }

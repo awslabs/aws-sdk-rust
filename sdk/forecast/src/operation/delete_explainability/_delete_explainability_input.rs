@@ -47,6 +47,10 @@ impl DeleteExplainabilityInputBuilder {
         self.explainability_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Explainability resource to delete.</p>
+    pub fn get_explainability_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.explainability_arn
+    }
     /// Consumes the builder and constructs a [`DeleteExplainabilityInput`](crate::operation::delete_explainability::DeleteExplainabilityInput).
     pub fn build(
         self,

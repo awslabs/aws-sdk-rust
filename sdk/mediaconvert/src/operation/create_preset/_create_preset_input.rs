@@ -79,6 +79,10 @@ impl CreatePresetInputBuilder {
         self.category = input;
         self
     }
+    /// Optional. A category for the preset you are creating.
+    pub fn get_category(&self) -> &::std::option::Option<::std::string::String> {
+        &self.category
+    }
     /// Optional. A description of the preset you are creating.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl CreatePresetInputBuilder {
         self.description = input;
         self
     }
+    /// Optional. A description of the preset you are creating.
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// The name of the preset you are creating.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -98,6 +106,10 @@ impl CreatePresetInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// The name of the preset you are creating.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Settings for preset
     pub fn settings(mut self, input: crate::types::PresetSettings) -> Self {
@@ -111,6 +123,10 @@ impl CreatePresetInputBuilder {
     ) -> Self {
         self.settings = input;
         self
+    }
+    /// Settings for preset
+    pub fn get_settings(&self) -> &::std::option::Option<crate::types::PresetSettings> {
+        &self.settings
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -136,6 +152,14 @@ impl CreatePresetInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreatePresetInput`](crate::operation::create_preset::CreatePresetInput).
     pub fn build(

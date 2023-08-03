@@ -49,6 +49,10 @@ impl ListClassificationScopesInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the classification scope to retrieve the unique identifier for.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl ListClassificationScopesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListClassificationScopesInput`](crate::operation::list_classification_scopes::ListClassificationScopesInput).
     pub fn build(

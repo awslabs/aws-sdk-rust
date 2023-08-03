@@ -49,6 +49,10 @@ impl DeleteBucketLifecycleInputBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The bucket name of the lifecycle to delete.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(
         mut self,
@@ -64,6 +68,10 @@ impl DeleteBucketLifecycleInputBuilder {
     ) -> Self {
         self.expected_bucket_owner = input;
         self
+    }
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+    pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expected_bucket_owner
     }
     /// Consumes the builder and constructs a [`DeleteBucketLifecycleInput`](crate::operation::delete_bucket_lifecycle::DeleteBucketLifecycleInput).
     pub fn build(

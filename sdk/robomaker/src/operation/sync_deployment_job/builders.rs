@@ -41,6 +41,12 @@ impl SyncDeploymentJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SyncDeploymentJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::sync_deployment_job::builders::SyncDeploymentJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl SyncDeploymentJobFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// <p>The target fleet for the synchronization.</p>
     pub fn fleet(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet(input.into());
@@ -146,5 +156,9 @@ impl SyncDeploymentJobFluentBuilder {
     pub fn set_fleet(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fleet(input);
         self
+    }
+    /// <p>The target fleet for the synchronization.</p>
+    pub fn get_fleet(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fleet()
     }
 }

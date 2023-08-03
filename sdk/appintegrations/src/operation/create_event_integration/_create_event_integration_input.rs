@@ -89,6 +89,10 @@ impl CreateEventIntegrationInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the event integration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the event integration.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -98,6 +102,10 @@ impl CreateEventIntegrationInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the event integration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The event filter.</p>
     pub fn event_filter(mut self, input: crate::types::EventFilter) -> Self {
@@ -111,6 +119,10 @@ impl CreateEventIntegrationInputBuilder {
     ) -> Self {
         self.event_filter = input;
         self
+    }
+    /// <p>The event filter.</p>
+    pub fn get_event_filter(&self) -> &::std::option::Option<crate::types::EventFilter> {
+        &self.event_filter
     }
     /// <p>The EventBridge bus.</p>
     pub fn event_bridge_bus(
@@ -128,6 +140,10 @@ impl CreateEventIntegrationInputBuilder {
         self.event_bridge_bus = input;
         self
     }
+    /// <p>The EventBridge bus.</p>
+    pub fn get_event_bridge_bus(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_bridge_bus
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -137,6 +153,10 @@ impl CreateEventIntegrationInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -162,6 +182,14 @@ impl CreateEventIntegrationInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateEventIntegrationInput`](crate::operation::create_event_integration::CreateEventIntegrationInput).
     pub fn build(

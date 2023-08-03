@@ -42,6 +42,12 @@ impl UpdateChannelMessageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateChannelMessage as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_channel_message::builders::UpdateChannelMessageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateChannelMessageFluentBuilder {
         self.inner = self.inner.set_channel_arn(input);
         self
     }
+    /// <p>The ARN of the channel.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_arn()
+    }
     /// <p>The ID string of the message being updated.</p>
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.message_id(input.into());
@@ -141,6 +151,10 @@ impl UpdateChannelMessageFluentBuilder {
     pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_message_id(input);
         self
+    }
+    /// <p>The ID string of the message being updated.</p>
+    pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_message_id()
     }
     /// <p>The content of the message being updated.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -152,6 +166,10 @@ impl UpdateChannelMessageFluentBuilder {
         self.inner = self.inner.set_content(input);
         self
     }
+    /// <p>The content of the message being updated.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_content()
+    }
     /// <p>The metadata of the message being updated.</p>
     pub fn metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metadata(input.into());
@@ -162,6 +180,10 @@ impl UpdateChannelMessageFluentBuilder {
         self.inner = self.inner.set_metadata(input);
         self
     }
+    /// <p>The metadata of the message being updated.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_metadata()
+    }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.chime_bearer(input.into());
@@ -171,5 +193,9 @@ impl UpdateChannelMessageFluentBuilder {
     pub fn set_chime_bearer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_chime_bearer(input);
         self
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_chime_bearer()
     }
 }

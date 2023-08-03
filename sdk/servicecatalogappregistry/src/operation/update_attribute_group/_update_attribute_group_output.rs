@@ -50,6 +50,10 @@ impl UpdateAttributeGroupOutputBuilder {
         self.attribute_group = input;
         self
     }
+    /// <p>The updated information of the attribute group.</p>
+    pub fn get_attribute_group(&self) -> &::std::option::Option<crate::types::AttributeGroup> {
+        &self.attribute_group
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -54,6 +54,10 @@ impl CreateStreamProcessorOutputBuilder {
         self.stream_processor_arn = input;
         self
     }
+    /// <p>Amazon Resource Number for the newly created stream processor.</p>
+    pub fn get_stream_processor_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_processor_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

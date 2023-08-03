@@ -49,6 +49,12 @@ impl OrStatementBuilder {
         self.statements = input;
         self
     }
+    /// <p>The statements to combine with OR logic. You can use any statements that can be nested.</p>
+    pub fn get_statements(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Statement>> {
+        &self.statements
+    }
     /// Consumes the builder and constructs a [`OrStatement`](crate::types::OrStatement).
     pub fn build(self) -> crate::types::OrStatement {
         crate::types::OrStatement {

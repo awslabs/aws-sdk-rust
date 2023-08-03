@@ -36,6 +36,10 @@ impl BatchDetectDominantLanguageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchDetectDominantLanguage as a reference.
+    pub fn as_input(&self) -> &crate::operation::batch_detect_dominant_language::builders::BatchDetectDominantLanguageInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +136,9 @@ impl BatchDetectDominantLanguageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_text_list(input);
         self
+    }
+    /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. Each document should contain at least 20 characters. The maximum size of each document is 5 KB.</p>
+    pub fn get_text_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_text_list()
     }
 }

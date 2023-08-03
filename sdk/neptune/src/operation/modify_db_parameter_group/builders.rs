@@ -41,6 +41,13 @@ impl ModifyDBParameterGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyDBParameterGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::modify_db_parameter_group::builders::ModifyDbParameterGroupInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -145,6 +152,14 @@ impl ModifyDBParameterGroupFluentBuilder {
         self.inner = self.inner.set_db_parameter_group_name(input);
         self
     }
+    /// <p>The name of the DB parameter group.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
+    /// </ul>
+    pub fn get_db_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_parameter_group_name()
+    }
     /// Appends an item to `Parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
@@ -167,5 +182,14 @@ impl ModifyDBParameterGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
+    }
+    /// <p>An array of parameter names, values, and the apply method for the parameter update. At least one parameter name, value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20 parameters can be modified in a single request.</p>
+    /// <p>Valid Values (for the application method): <code>immediate | pending-reboot</code> </p> <note>
+    /// <p>You can use the immediate value with dynamic parameters only. You can use the pending-reboot value for both dynamic and static parameters, and changes are applied when you reboot the DB instance without failover.</p>
+    /// </note>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+        self.inner.get_parameters()
     }
 }

@@ -37,6 +37,12 @@ impl ListPlatformVersionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListPlatformVersions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_platform_versions::builders::ListPlatformVersionsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -145,6 +151,12 @@ impl ListPlatformVersionsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>Criteria for restricting the resulting list of platform versions. The filter is interpreted as a logical conjunction (AND) of the separate <code>PlatformFilter</code> terms.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformFilter>> {
+        self.inner.get_filters()
+    }
     /// <p>The maximum number of platform version values returned in one call.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.inner = self.inner.max_records(input);
@@ -154,6 +166,10 @@ impl ListPlatformVersionsFluentBuilder {
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_records(input);
         self
+    }
+    /// <p>The maximum number of platform version values returned in one call.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
     }
     /// <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other parameter values must be identical to the ones specified in the initial request.</p>
     /// <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
@@ -166,5 +182,10 @@ impl ListPlatformVersionsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other parameter values must be identical to the ones specified in the initial request.</p>
+    /// <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

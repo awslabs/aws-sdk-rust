@@ -40,6 +40,10 @@ impl StackSetOperationStatusDetailsBuilder {
         self.failed_stack_instances_count = input;
         self
     }
+    /// <p>The number of stack instances for which the StackSet operation failed.</p>
+    pub fn get_failed_stack_instances_count(&self) -> &::std::option::Option<i32> {
+        &self.failed_stack_instances_count
+    }
     /// Consumes the builder and constructs a [`StackSetOperationStatusDetails`](crate::types::StackSetOperationStatusDetails).
     pub fn build(self) -> crate::types::StackSetOperationStatusDetails {
         crate::types::StackSetOperationStatusDetails {

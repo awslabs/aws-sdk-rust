@@ -72,6 +72,10 @@ impl S3OutputFormatConfigBuilder {
         self.file_type = input;
         self
     }
+    /// <p> Indicates the file type that Amazon AppFlow places in the Amazon S3 bucket. </p>
+    pub fn get_file_type(&self) -> &::std::option::Option<crate::types::FileType> {
+        &self.file_type
+    }
     /// <p> Determines the prefix that Amazon AppFlow applies to the folder name in the Amazon S3 bucket. You can name folders according to the flow frequency and date. </p>
     pub fn prefix_config(mut self, input: crate::types::PrefixConfig) -> Self {
         self.prefix_config = ::std::option::Option::Some(input);
@@ -85,6 +89,10 @@ impl S3OutputFormatConfigBuilder {
         self.prefix_config = input;
         self
     }
+    /// <p> Determines the prefix that Amazon AppFlow applies to the folder name in the Amazon S3 bucket. You can name folders according to the flow frequency and date. </p>
+    pub fn get_prefix_config(&self) -> &::std::option::Option<crate::types::PrefixConfig> {
+        &self.prefix_config
+    }
     /// <p> The aggregation settings that you can use to customize the output format of your flow data. </p>
     pub fn aggregation_config(mut self, input: crate::types::AggregationConfig) -> Self {
         self.aggregation_config = ::std::option::Option::Some(input);
@@ -97,6 +105,12 @@ impl S3OutputFormatConfigBuilder {
     ) -> Self {
         self.aggregation_config = input;
         self
+    }
+    /// <p> The aggregation settings that you can use to customize the output format of your flow data. </p>
+    pub fn get_aggregation_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AggregationConfig> {
+        &self.aggregation_config
     }
     /// <p>If your file output format is Parquet, use this parameter to set whether Amazon AppFlow preserves the data types in your source data when it writes the output to Amazon S3. </p>
     /// <ul>
@@ -115,6 +129,14 @@ impl S3OutputFormatConfigBuilder {
     pub fn set_preserve_source_data_typing(mut self, input: ::std::option::Option<bool>) -> Self {
         self.preserve_source_data_typing = input;
         self
+    }
+    /// <p>If your file output format is Parquet, use this parameter to set whether Amazon AppFlow preserves the data types in your source data when it writes the output to Amazon S3. </p>
+    /// <ul>
+    /// <li> <p> <code>true</code>: Amazon AppFlow preserves the data types when it writes to Amazon S3. For example, an integer or <code>1</code> in your source data is still an integer in your output.</p> </li>
+    /// <li> <p> <code>false</code>: Amazon AppFlow converts all of the source data into strings when it writes to Amazon S3. For example, an integer of <code>1</code> in your source data becomes the string <code>"1"</code> in the output.</p> </li>
+    /// </ul>
+    pub fn get_preserve_source_data_typing(&self) -> &::std::option::Option<bool> {
+        &self.preserve_source_data_typing
     }
     /// Consumes the builder and constructs a [`S3OutputFormatConfig`](crate::types::S3OutputFormatConfig).
     pub fn build(self) -> crate::types::S3OutputFormatConfig {

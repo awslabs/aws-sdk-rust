@@ -96,6 +96,10 @@ impl PageBuilder {
         self.page_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the page to the contact channel.</p>
+    pub fn get_page_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.page_arn
+    }
     /// <p>The ARN of the engagement that this page is part of.</p>
     pub fn engagement_arn(
         mut self,
@@ -112,6 +116,10 @@ impl PageBuilder {
         self.engagement_arn = input;
         self
     }
+    /// <p>The ARN of the engagement that this page is part of.</p>
+    pub fn get_engagement_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engagement_arn
+    }
     /// <p>The ARN of the contact that Incident Manager is engaging.</p>
     pub fn contact_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_arn = ::std::option::Option::Some(input.into());
@@ -121,6 +129,10 @@ impl PageBuilder {
     pub fn set_contact_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_arn = input;
         self
+    }
+    /// <p>The ARN of the contact that Incident Manager is engaging.</p>
+    pub fn get_contact_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_arn
     }
     /// <p>The user that started the engagement.</p>
     pub fn sender(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -132,6 +144,10 @@ impl PageBuilder {
         self.sender = input;
         self
     }
+    /// <p>The user that started the engagement.</p>
+    pub fn get_sender(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sender
+    }
     /// <p>The ARN of the incident that's engaging the contact channel.</p>
     pub fn incident_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.incident_id = ::std::option::Option::Some(input.into());
@@ -141,6 +157,10 @@ impl PageBuilder {
     pub fn set_incident_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.incident_id = input;
         self
+    }
+    /// <p>The ARN of the incident that's engaging the contact channel.</p>
+    pub fn get_incident_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.incident_id
     }
     /// <p>The time that Incident Manager engaged the contact channel.</p>
     pub fn sent_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -155,6 +175,10 @@ impl PageBuilder {
         self.sent_time = input;
         self
     }
+    /// <p>The time that Incident Manager engaged the contact channel.</p>
+    pub fn get_sent_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.sent_time
+    }
     /// <p>The time the message was delivered to the contact channel.</p>
     pub fn delivery_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.delivery_time = ::std::option::Option::Some(input);
@@ -168,6 +192,10 @@ impl PageBuilder {
         self.delivery_time = input;
         self
     }
+    /// <p>The time the message was delivered to the contact channel.</p>
+    pub fn get_delivery_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.delivery_time
+    }
     /// <p>The time that the contact channel acknowledged engagement.</p>
     pub fn read_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.read_time = ::std::option::Option::Some(input);
@@ -180,6 +208,10 @@ impl PageBuilder {
     ) -> Self {
         self.read_time = input;
         self
+    }
+    /// <p>The time that the contact channel acknowledged engagement.</p>
+    pub fn get_read_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.read_time
     }
     /// Consumes the builder and constructs a [`Page`](crate::types::Page).
     pub fn build(self) -> crate::types::Page {

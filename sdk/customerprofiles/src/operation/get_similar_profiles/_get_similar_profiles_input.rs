@@ -80,6 +80,10 @@ impl GetSimilarProfilesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The pagination token from the previous <code>GetSimilarProfiles</code> API call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of objects returned per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -89,6 +93,10 @@ impl GetSimilarProfilesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of objects returned per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The unique name of the domain.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -100,6 +108,10 @@ impl GetSimilarProfilesInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The unique name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>Specify the type of matching to get similar profiles for.</p>
     pub fn match_type(mut self, input: crate::types::MatchType) -> Self {
         self.match_type = ::std::option::Option::Some(input);
@@ -109,6 +121,10 @@ impl GetSimilarProfilesInputBuilder {
     pub fn set_match_type(mut self, input: ::std::option::Option<crate::types::MatchType>) -> Self {
         self.match_type = input;
         self
+    }
+    /// <p>Specify the type of matching to get similar profiles for.</p>
+    pub fn get_match_type(&self) -> &::std::option::Option<crate::types::MatchType> {
+        &self.match_type
     }
     /// <p>The string indicating the search key to be used.</p>
     pub fn search_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -120,6 +136,10 @@ impl GetSimilarProfilesInputBuilder {
         self.search_key = input;
         self
     }
+    /// <p>The string indicating the search key to be used.</p>
+    pub fn get_search_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.search_key
+    }
     /// <p>The string based on <code>SearchKey</code> to be searched for similar profiles.</p>
     pub fn search_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.search_value = ::std::option::Option::Some(input.into());
@@ -129,6 +149,10 @@ impl GetSimilarProfilesInputBuilder {
     pub fn set_search_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.search_value = input;
         self
+    }
+    /// <p>The string based on <code>SearchKey</code> to be searched for similar profiles.</p>
+    pub fn get_search_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.search_value
     }
     /// Consumes the builder and constructs a [`GetSimilarProfilesInput`](crate::operation::get_similar_profiles::GetSimilarProfilesInput).
     pub fn build(

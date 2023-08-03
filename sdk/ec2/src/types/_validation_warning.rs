@@ -49,6 +49,12 @@ impl ValidationWarningBuilder {
         self.errors = input;
         self
     }
+    /// <p>The error codes and error messages.</p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationError>> {
+        &self.errors
+    }
     /// Consumes the builder and constructs a [`ValidationWarning`](crate::types::ValidationWarning).
     pub fn build(self) -> crate::types::ValidationWarning {
         crate::types::ValidationWarning {

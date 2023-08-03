@@ -64,6 +64,10 @@ impl SeverityCountsBuilder {
         self.all = input;
         self
     }
+    /// <p>The total number of findings across all severity levels for the specified filter.</p>
+    pub fn get_all(&self) -> &::std::option::Option<i64> {
+        &self.all
+    }
     /// <p>The number of critical severity findings for the specified filter.</p>
     pub fn critical(mut self, input: i64) -> Self {
         self.critical = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl SeverityCountsBuilder {
     pub fn set_critical(mut self, input: ::std::option::Option<i64>) -> Self {
         self.critical = input;
         self
+    }
+    /// <p>The number of critical severity findings for the specified filter.</p>
+    pub fn get_critical(&self) -> &::std::option::Option<i64> {
+        &self.critical
     }
     /// <p>The number of high severity findings for the specified filter.</p>
     pub fn high(mut self, input: i64) -> Self {
@@ -84,6 +92,10 @@ impl SeverityCountsBuilder {
         self.high = input;
         self
     }
+    /// <p>The number of high severity findings for the specified filter.</p>
+    pub fn get_high(&self) -> &::std::option::Option<i64> {
+        &self.high
+    }
     /// <p>The number of medium severity findings for the specified filter.</p>
     pub fn medium(mut self, input: i64) -> Self {
         self.medium = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl SeverityCountsBuilder {
     pub fn set_medium(mut self, input: ::std::option::Option<i64>) -> Self {
         self.medium = input;
         self
+    }
+    /// <p>The number of medium severity findings for the specified filter.</p>
+    pub fn get_medium(&self) -> &::std::option::Option<i64> {
+        &self.medium
     }
     /// Consumes the builder and constructs a [`SeverityCounts`](crate::types::SeverityCounts).
     pub fn build(self) -> crate::types::SeverityCounts {

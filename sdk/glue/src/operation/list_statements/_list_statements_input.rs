@@ -55,6 +55,10 @@ impl ListStatementsInputBuilder {
         self.session_id = input;
         self
     }
+    /// <p>The Session ID of the statements.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
+    }
     /// <p>The origin of the request to list statements.</p>
     pub fn request_origin(
         mut self,
@@ -71,6 +75,10 @@ impl ListStatementsInputBuilder {
         self.request_origin = input;
         self
     }
+    /// <p>The origin of the request to list statements.</p>
+    pub fn get_request_origin(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_origin
+    }
     /// <p>A continuation token, if this is a continuation call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -80,6 +88,10 @@ impl ListStatementsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A continuation token, if this is a continuation call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListStatementsInput`](crate::operation::list_statements::ListStatementsInput).
     pub fn build(

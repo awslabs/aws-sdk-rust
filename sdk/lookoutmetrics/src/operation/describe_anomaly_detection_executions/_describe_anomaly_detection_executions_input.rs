@@ -69,6 +69,10 @@ impl DescribeAnomalyDetectionExecutionsInputBuilder {
         self.anomaly_detector_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    pub fn get_anomaly_detector_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.anomaly_detector_arn
+    }
     /// <p>The timestamp of the anomaly detection job.</p>
     pub fn timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timestamp = ::std::option::Option::Some(input.into());
@@ -78,6 +82,10 @@ impl DescribeAnomalyDetectionExecutionsInputBuilder {
     pub fn set_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timestamp = input;
         self
+    }
+    /// <p>The timestamp of the anomaly detection job.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timestamp
     }
     /// <p>The number of items to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -89,6 +97,10 @@ impl DescribeAnomalyDetectionExecutionsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The number of items to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -98,6 +110,10 @@ impl DescribeAnomalyDetectionExecutionsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeAnomalyDetectionExecutionsInput`](crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -74,6 +74,12 @@ impl ListServerNeighborsOutputBuilder {
         self.neighbors = input;
         self
     }
+    /// <p>List of distinct servers that are one hop away from the given server.</p>
+    pub fn get_neighbors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NeighborConnectionDetail>> {
+        &self.neighbors
+    }
     /// <p>Token to retrieve the next set of results. For example, if you specified 100 IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -84,6 +90,10 @@ impl ListServerNeighborsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Token to retrieve the next set of results. For example, if you specified 100 IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>Count of distinct servers that are one hop away from the given server.</p>
     pub fn known_dependency_count(mut self, input: i64) -> Self {
         self.known_dependency_count = ::std::option::Option::Some(input);
@@ -93,6 +103,10 @@ impl ListServerNeighborsOutputBuilder {
     pub fn set_known_dependency_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.known_dependency_count = input;
         self
+    }
+    /// <p>Count of distinct servers that are one hop away from the given server.</p>
+    pub fn get_known_dependency_count(&self) -> &::std::option::Option<i64> {
+        &self.known_dependency_count
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

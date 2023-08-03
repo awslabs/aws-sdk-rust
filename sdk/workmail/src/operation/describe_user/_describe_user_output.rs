@@ -102,6 +102,10 @@ impl DescribeUserOutputBuilder {
         self.user_id = input;
         self
     }
+    /// <p>The identifier for the described user.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
+    }
     /// <p>The name for the user.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -111,6 +115,10 @@ impl DescribeUserOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name for the user.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The email of the user.</p>
     pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -122,6 +130,10 @@ impl DescribeUserOutputBuilder {
         self.email = input;
         self
     }
+    /// <p>The email of the user.</p>
+    pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email
+    }
     /// <p>The display name of the user.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -131,6 +143,10 @@ impl DescribeUserOutputBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
+    }
+    /// <p>The display name of the user.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// <p>The state of a user: enabled (registered to WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
     pub fn state(mut self, input: crate::types::EntityState) -> Self {
@@ -142,6 +158,10 @@ impl DescribeUserOutputBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of a user: enabled (registered to WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::EntityState> {
+        &self.state
+    }
     /// <p>In certain cases, other entities are modeled as users. If interoperability is enabled, resources are imported into WorkMail as users. Because different WorkMail organizations rely on different directory types, administrators can distinguish between an unregistered user (account is disabled and has a user role) and the directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.</p>
     pub fn user_role(mut self, input: crate::types::UserRole) -> Self {
         self.user_role = ::std::option::Option::Some(input);
@@ -151,6 +171,10 @@ impl DescribeUserOutputBuilder {
     pub fn set_user_role(mut self, input: ::std::option::Option<crate::types::UserRole>) -> Self {
         self.user_role = input;
         self
+    }
+    /// <p>In certain cases, other entities are modeled as users. If interoperability is enabled, resources are imported into WorkMail as users. Because different WorkMail organizations rely on different directory types, administrators can distinguish between an unregistered user (account is disabled and has a user role) and the directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.</p>
+    pub fn get_user_role(&self) -> &::std::option::Option<crate::types::UserRole> {
+        &self.user_role
     }
     /// <p>The date and time at which the user was enabled for WorkMailusage, in UNIX epoch time format.</p>
     pub fn enabled_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -165,6 +189,10 @@ impl DescribeUserOutputBuilder {
         self.enabled_date = input;
         self
     }
+    /// <p>The date and time at which the user was enabled for WorkMailusage, in UNIX epoch time format.</p>
+    pub fn get_enabled_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.enabled_date
+    }
     /// <p>The date and time at which the user was disabled for WorkMail usage, in UNIX epoch time format.</p>
     pub fn disabled_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.disabled_date = ::std::option::Option::Some(input);
@@ -177,6 +205,10 @@ impl DescribeUserOutputBuilder {
     ) -> Self {
         self.disabled_date = input;
         self
+    }
+    /// <p>The date and time at which the user was disabled for WorkMail usage, in UNIX epoch time format.</p>
+    pub fn get_disabled_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.disabled_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

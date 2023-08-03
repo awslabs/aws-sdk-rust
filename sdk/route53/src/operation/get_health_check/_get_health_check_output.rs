@@ -50,6 +50,10 @@ impl GetHealthCheckOutputBuilder {
         self.health_check = input;
         self
     }
+    /// <p>A complex type that contains information about one health check that is associated with the current Amazon Web Services account.</p>
+    pub fn get_health_check(&self) -> &::std::option::Option<crate::types::HealthCheck> {
+        &self.health_check
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

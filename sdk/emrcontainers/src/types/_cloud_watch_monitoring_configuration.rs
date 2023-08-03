@@ -54,6 +54,10 @@ impl CloudWatchMonitoringConfigurationBuilder {
         self.log_group_name = input;
         self
     }
+    /// <p>The name of the log group for log publishing.</p>
+    pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group_name
+    }
     /// <p>The specified name prefix for log streams.</p>
     pub fn log_stream_name_prefix(
         mut self,
@@ -69,6 +73,10 @@ impl CloudWatchMonitoringConfigurationBuilder {
     ) -> Self {
         self.log_stream_name_prefix = input;
         self
+    }
+    /// <p>The specified name prefix for log streams.</p>
+    pub fn get_log_stream_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_stream_name_prefix
     }
     /// Consumes the builder and constructs a [`CloudWatchMonitoringConfiguration`](crate::types::CloudWatchMonitoringConfiguration).
     pub fn build(self) -> crate::types::CloudWatchMonitoringConfiguration {

@@ -46,6 +46,10 @@ impl DeleteSubnetGroupInputBuilder {
         self.subnet_group_name = input;
         self
     }
+    /// <p>The name of the subnet group to delete</p>
+    pub fn get_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_group_name
+    }
     /// Consumes the builder and constructs a [`DeleteSubnetGroupInput`](crate::operation::delete_subnet_group::DeleteSubnetGroupInput).
     pub fn build(
         self,

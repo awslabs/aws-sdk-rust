@@ -64,6 +64,10 @@ impl PutImageTagMutabilityOutputBuilder {
         self.registry_id = input;
         self
     }
+    /// <p>The registry ID associated with the request.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
+    }
     /// <p>The repository name associated with the request.</p>
     pub fn repository_name(
         mut self,
@@ -80,6 +84,10 @@ impl PutImageTagMutabilityOutputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The repository name associated with the request.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The image tag mutability setting for the repository.</p>
     pub fn image_tag_mutability(mut self, input: crate::types::ImageTagMutability) -> Self {
         self.image_tag_mutability = ::std::option::Option::Some(input);
@@ -92,6 +100,12 @@ impl PutImageTagMutabilityOutputBuilder {
     ) -> Self {
         self.image_tag_mutability = input;
         self
+    }
+    /// <p>The image tag mutability setting for the repository.</p>
+    pub fn get_image_tag_mutability(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImageTagMutability> {
+        &self.image_tag_mutability
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

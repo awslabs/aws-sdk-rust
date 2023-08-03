@@ -52,6 +52,12 @@ impl CreateHyperParameterTuningJobOutputBuilder {
         self.hyper_parameter_tuning_job_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the tuning job. SageMaker assigns an ARN to a hyperparameter tuning job when you create it.</p>
+    pub fn get_hyper_parameter_tuning_job_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.hyper_parameter_tuning_job_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

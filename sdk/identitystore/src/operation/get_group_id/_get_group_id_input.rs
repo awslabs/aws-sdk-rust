@@ -55,6 +55,10 @@ impl GetGroupIdInputBuilder {
         self.identity_store_id = input;
         self
     }
+    /// <p>The globally unique identifier for the identity store.</p>
+    pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_store_id
+    }
     /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the unique attribute, the only valid path is <code>displayName</code>.</p>
     pub fn alternate_identifier(mut self, input: crate::types::AlternateIdentifier) -> Self {
         self.alternate_identifier = ::std::option::Option::Some(input);
@@ -67,6 +71,12 @@ impl GetGroupIdInputBuilder {
     ) -> Self {
         self.alternate_identifier = input;
         self
+    }
+    /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the unique attribute, the only valid path is <code>displayName</code>.</p>
+    pub fn get_alternate_identifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::AlternateIdentifier> {
+        &self.alternate_identifier
     }
     /// Consumes the builder and constructs a [`GetGroupIdInput`](crate::operation::get_group_id::GetGroupIdInput).
     pub fn build(

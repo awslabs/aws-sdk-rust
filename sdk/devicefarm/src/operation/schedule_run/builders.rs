@@ -36,6 +36,10 @@ impl ScheduleRunFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ScheduleRun as a reference.
+    pub fn as_input(&self) -> &crate::operation::schedule_run::builders::ScheduleRunInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl ScheduleRunFluentBuilder {
         self.inner = self.inner.set_project_arn(input);
         self
     }
+    /// <p>The ARN of the project for the run to be scheduled.</p>
+    pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_arn()
+    }
     /// <p>The ARN of an application package to run tests against, created with <code>CreateUpload</code>. See <code>ListUploads</code>.</p>
     pub fn app_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_arn(input.into());
@@ -127,6 +135,10 @@ impl ScheduleRunFluentBuilder {
     pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_arn(input);
         self
+    }
+    /// <p>The ARN of an application package to run tests against, created with <code>CreateUpload</code>. See <code>ListUploads</code>.</p>
+    pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_arn()
     }
     /// <p>The ARN of the device pool for the run to be scheduled.</p>
     pub fn device_pool_arn(
@@ -143,6 +155,10 @@ impl ScheduleRunFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_device_pool_arn(input);
         self
+    }
+    /// <p>The ARN of the device pool for the run to be scheduled.</p>
+    pub fn get_device_pool_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_pool_arn()
     }
     /// <p>The filter criteria used to dynamically select a set of devices for a test run and the maximum number of devices to be included in the run.</p>
     /// <p>Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> is required in a request.</p>
@@ -162,6 +178,13 @@ impl ScheduleRunFluentBuilder {
         self.inner = self.inner.set_device_selection_configuration(input);
         self
     }
+    /// <p>The filter criteria used to dynamically select a set of devices for a test run and the maximum number of devices to be included in the run.</p>
+    /// <p>Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> is required in a request.</p>
+    pub fn get_device_selection_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeviceSelectionConfiguration> {
+        self.inner.get_device_selection_configuration()
+    }
     /// <p>The name for the run to be scheduled.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -172,6 +195,10 @@ impl ScheduleRunFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name for the run to be scheduled.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>Information about the test for the run to be scheduled.</p>
     pub fn test(mut self, input: crate::types::ScheduleRunTest) -> Self {
         self.inner = self.inner.test(input);
@@ -181,6 +208,10 @@ impl ScheduleRunFluentBuilder {
     pub fn set_test(mut self, input: ::std::option::Option<crate::types::ScheduleRunTest>) -> Self {
         self.inner = self.inner.set_test(input);
         self
+    }
+    /// <p>Information about the test for the run to be scheduled.</p>
+    pub fn get_test(&self) -> &::std::option::Option<crate::types::ScheduleRunTest> {
+        self.inner.get_test()
     }
     /// <p>Information about the settings for the run to be scheduled.</p>
     pub fn configuration(mut self, input: crate::types::ScheduleRunConfiguration) -> Self {
@@ -195,6 +226,12 @@ impl ScheduleRunFluentBuilder {
         self.inner = self.inner.set_configuration(input);
         self
     }
+    /// <p>Information about the settings for the run to be scheduled.</p>
+    pub fn get_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScheduleRunConfiguration> {
+        self.inner.get_configuration()
+    }
     /// <p>Specifies configuration information about a test run, such as the execution timeout (in minutes).</p>
     pub fn execution_configuration(mut self, input: crate::types::ExecutionConfiguration) -> Self {
         self.inner = self.inner.execution_configuration(input);
@@ -207,5 +244,11 @@ impl ScheduleRunFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_execution_configuration(input);
         self
+    }
+    /// <p>Specifies configuration information about a test run, such as the execution timeout (in minutes).</p>
+    pub fn get_execution_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExecutionConfiguration> {
+        self.inner.get_execution_configuration()
     }
 }

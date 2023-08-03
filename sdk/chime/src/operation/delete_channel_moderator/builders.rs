@@ -44,6 +44,13 @@ impl DeleteChannelModeratorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteChannelModerator as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_channel_moderator::builders::DeleteChannelModeratorInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +141,10 @@ impl DeleteChannelModeratorFluentBuilder {
         self.inner = self.inner.set_channel_arn(input);
         self
     }
+    /// <p>The ARN of the channel.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_arn()
+    }
     /// <p>The ARN of the moderator being deleted.</p>
     pub fn channel_moderator_arn(
         mut self,
@@ -150,6 +161,10 @@ impl DeleteChannelModeratorFluentBuilder {
         self.inner = self.inner.set_channel_moderator_arn(input);
         self
     }
+    /// <p>The ARN of the moderator being deleted.</p>
+    pub fn get_channel_moderator_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_moderator_arn()
+    }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.chime_bearer(input.into());
@@ -159,5 +174,9 @@ impl DeleteChannelModeratorFluentBuilder {
     pub fn set_chime_bearer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_chime_bearer(input);
         self
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_chime_bearer()
     }
 }

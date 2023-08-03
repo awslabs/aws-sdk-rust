@@ -49,6 +49,10 @@ impl GetIdentityVerificationAttributesInputBuilder {
         self.identities = input;
         self
     }
+    /// <p>A list of identities.</p>
+    pub fn get_identities(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.identities
+    }
     /// Consumes the builder and constructs a [`GetIdentityVerificationAttributesInput`](crate::operation::get_identity_verification_attributes::GetIdentityVerificationAttributesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_identity_verification_attributes::GetIdentityVerificationAttributesInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

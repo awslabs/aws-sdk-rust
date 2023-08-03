@@ -56,6 +56,10 @@ impl FilterBuilder {
         self.key = input;
         self
     }
+    /// <p>The name of the parameter to filter on.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>The value to match.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl FilterBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value to match.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// <p>The condition to apply. To include the objects that match the statement, specify <code>IS</code>. To exclude matching objects, specify <code>IS_NOT</code>.</p>
     pub fn condition(mut self, input: crate::types::FilterConditionString) -> Self {
@@ -78,6 +86,10 @@ impl FilterBuilder {
     ) -> Self {
         self.condition = input;
         self
+    }
+    /// <p>The condition to apply. To include the objects that match the statement, specify <code>IS</code>. To exclude matching objects, specify <code>IS_NOT</code>.</p>
+    pub fn get_condition(&self) -> &::std::option::Option<crate::types::FilterConditionString> {
+        &self.condition
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     pub fn build(self) -> crate::types::Filter {

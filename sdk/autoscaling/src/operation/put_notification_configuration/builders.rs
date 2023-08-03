@@ -39,6 +39,10 @@ impl PutNotificationConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutNotificationConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_notification_configuration::builders::PutNotificationConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +139,10 @@ impl PutNotificationConfigurationFluentBuilder {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_auto_scaling_group_name()
+    }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
     pub fn topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.topic_arn(input.into());
@@ -144,6 +152,10 @@ impl PutNotificationConfigurationFluentBuilder {
     pub fn set_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_topic_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
+    pub fn get_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_topic_arn()
     }
     /// Appends an item to `NotificationTypes`.
     ///
@@ -164,5 +176,11 @@ impl PutNotificationConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_notification_types(input);
         self
+    }
+    /// <p>The type of event that causes the notification to be sent. To query the notification types supported by Amazon EC2 Auto Scaling, call the <code>DescribeAutoScalingNotificationTypes</code> API.</p>
+    pub fn get_notification_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_notification_types()
     }
 }

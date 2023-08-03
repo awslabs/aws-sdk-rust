@@ -36,6 +36,12 @@ impl DeletePartitionIndexFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeletePartitionIndex as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_partition_index::builders::DeletePartitionIndexInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DeletePartitionIndexFluentBuilder {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
+    /// <p>The catalog ID where the table resides.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog_id()
+    }
     /// <p>Specifies the name of a database from which you want to delete a partition index.</p>
     pub fn database_name(
         mut self,
@@ -142,6 +152,10 @@ impl DeletePartitionIndexFluentBuilder {
         self.inner = self.inner.set_database_name(input);
         self
     }
+    /// <p>Specifies the name of a database from which you want to delete a partition index.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_database_name()
+    }
     /// <p>Specifies the name of a table from which you want to delete a partition index.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.table_name(input.into());
@@ -152,6 +166,10 @@ impl DeletePartitionIndexFluentBuilder {
         self.inner = self.inner.set_table_name(input);
         self
     }
+    /// <p>Specifies the name of a table from which you want to delete a partition index.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_table_name()
+    }
     /// <p>The name of the partition index to be deleted.</p>
     pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.index_name(input.into());
@@ -161,5 +179,9 @@ impl DeletePartitionIndexFluentBuilder {
     pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_index_name(input);
         self
+    }
+    /// <p>The name of the partition index to be deleted.</p>
+    pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_index_name()
     }
 }

@@ -39,6 +39,12 @@ impl UpdateGameSessionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateGameSession as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_game_session::builders::UpdateGameSessionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +141,10 @@ impl UpdateGameSessionFluentBuilder {
         self.inner = self.inner.set_game_session_id(input);
         self
     }
+    /// <p>A unique identifier for the game session to update. </p>
+    pub fn get_game_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_game_session_id()
+    }
     /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
     pub fn maximum_player_session_count(mut self, input: i32) -> Self {
         self.inner = self.inner.maximum_player_session_count(input);
@@ -145,6 +155,10 @@ impl UpdateGameSessionFluentBuilder {
         self.inner = self.inner.set_maximum_player_session_count(input);
         self
     }
+    /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
+    pub fn get_maximum_player_session_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_maximum_player_session_count()
+    }
     /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -154,6 +168,10 @@ impl UpdateGameSessionFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>A policy that determines whether the game session is accepting new players.</p>
     pub fn player_session_creation_policy(
@@ -170,6 +188,12 @@ impl UpdateGameSessionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_player_session_creation_policy(input);
         self
+    }
+    /// <p>A policy that determines whether the game session is accepting new players.</p>
+    pub fn get_player_session_creation_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::PlayerSessionCreationPolicy> {
+        self.inner.get_player_session_creation_policy()
     }
     /// <p>Game session protection policy to apply to this game session only.</p>
     /// <ul>
@@ -191,5 +215,13 @@ impl UpdateGameSessionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_protection_policy(input);
         self
+    }
+    /// <p>Game session protection policy to apply to this game session only.</p>
+    /// <ul>
+    /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
+    /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
+    /// </ul>
+    pub fn get_protection_policy(&self) -> &::std::option::Option<crate::types::ProtectionPolicy> {
+        self.inner.get_protection_policy()
     }
 }

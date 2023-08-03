@@ -70,6 +70,10 @@ impl ConnectorBuilder {
         self.connector_arn = input;
         self
     }
+    /// The ARN of the connector.
+    pub fn get_connector_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connector_arn
+    }
     /// A descriptive or arbitrary ID for the connector. This value must be unique within the connector definition version. Max length is 128 characters with pattern [a-zA-Z0-9:_-]+.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl ConnectorBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// A descriptive or arbitrary ID for the connector. This value must be unique within the connector definition version. Max length is 128 characters with pattern [a-zA-Z0-9:_-]+.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Adds a key-value pair to `parameters`.
     ///
@@ -104,6 +112,14 @@ impl ConnectorBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// The parameters or configuration that the connector uses.
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.parameters
     }
     /// Consumes the builder and constructs a [`Connector`](crate::types::Connector).
     pub fn build(self) -> crate::types::Connector {

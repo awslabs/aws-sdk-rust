@@ -40,6 +40,12 @@ impl RebootDBInstanceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RebootDBInstance as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::reboot_db_instance::builders::RebootDbInstanceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -144,6 +150,14 @@ impl RebootDBInstanceFluentBuilder {
         self.inner = self.inner.set_db_instance_identifier(input);
         self
     }
+    /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li>
+    /// </ul>
+    pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_instance_identifier()
+    }
     /// <p>A value that indicates whether the reboot is conducted through a Multi-AZ failover.</p>
     /// <p>Constraint: You can't enable force failover if the instance isn't configured for Multi-AZ.</p>
     pub fn force_failover(mut self, input: bool) -> Self {
@@ -155,5 +169,10 @@ impl RebootDBInstanceFluentBuilder {
     pub fn set_force_failover(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force_failover(input);
         self
+    }
+    /// <p>A value that indicates whether the reboot is conducted through a Multi-AZ failover.</p>
+    /// <p>Constraint: You can't enable force failover if the instance isn't configured for Multi-AZ.</p>
+    pub fn get_force_failover(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force_failover()
     }
 }

@@ -79,6 +79,10 @@ impl RevokeClientVpnIngressInputBuilder {
         self.client_vpn_endpoint_id = input;
         self
     }
+    /// <p>The ID of the Client VPN endpoint with which the authorization rule is associated.</p>
+    pub fn get_client_vpn_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_vpn_endpoint_id
+    }
     /// <p>The IPv4 address range, in CIDR notation, of the network for which access is being removed.</p>
     pub fn target_network_cidr(
         mut self,
@@ -94,6 +98,10 @@ impl RevokeClientVpnIngressInputBuilder {
     ) -> Self {
         self.target_network_cidr = input;
         self
+    }
+    /// <p>The IPv4 address range, in CIDR notation, of the network for which access is being removed.</p>
+    pub fn get_target_network_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_network_cidr
     }
     /// <p>The ID of the Active Directory group for which to revoke access. </p>
     pub fn access_group_id(
@@ -111,6 +119,10 @@ impl RevokeClientVpnIngressInputBuilder {
         self.access_group_id = input;
         self
     }
+    /// <p>The ID of the Active Directory group for which to revoke access. </p>
+    pub fn get_access_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_group_id
+    }
     /// <p>Indicates whether access should be revoked for all clients.</p>
     pub fn revoke_all_groups(mut self, input: bool) -> Self {
         self.revoke_all_groups = ::std::option::Option::Some(input);
@@ -121,6 +133,10 @@ impl RevokeClientVpnIngressInputBuilder {
         self.revoke_all_groups = input;
         self
     }
+    /// <p>Indicates whether access should be revoked for all clients.</p>
+    pub fn get_revoke_all_groups(&self) -> &::std::option::Option<bool> {
+        &self.revoke_all_groups
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -130,6 +146,10 @@ impl RevokeClientVpnIngressInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`RevokeClientVpnIngressInput`](crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressInput).
     pub fn build(

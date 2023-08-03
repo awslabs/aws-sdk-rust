@@ -72,6 +72,10 @@ impl TemplateVersionSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the template version.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The version number of the template version.</p>
     pub fn version_number(mut self, input: i64) -> Self {
         self.version_number = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl TemplateVersionSummaryBuilder {
     pub fn set_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.version_number = input;
         self
+    }
+    /// <p>The version number of the template version.</p>
+    pub fn get_version_number(&self) -> &::std::option::Option<i64> {
+        &self.version_number
     }
     /// <p>The time that this template version was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -95,6 +103,10 @@ impl TemplateVersionSummaryBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The time that this template version was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>The status of the template version.</p>
     pub fn status(mut self, input: crate::types::ResourceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -108,6 +120,10 @@ impl TemplateVersionSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the template version.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ResourceStatus> {
+        &self.status
+    }
     /// <p>The description of the template version.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -117,6 +133,10 @@ impl TemplateVersionSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the template version.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`TemplateVersionSummary`](crate::types::TemplateVersionSummary).
     pub fn build(self) -> crate::types::TemplateVersionSummary {

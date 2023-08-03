@@ -93,6 +93,10 @@ impl CreateExtensionAssociationInputBuilder {
         self.extension_identifier = input;
         self
     }
+    /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
+    pub fn get_extension_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.extension_identifier
+    }
     /// <p>The version number of the extension. If not specified, AppConfig uses the maximum version of the extension.</p>
     pub fn extension_version_number(mut self, input: i32) -> Self {
         self.extension_version_number = ::std::option::Option::Some(input);
@@ -102,6 +106,10 @@ impl CreateExtensionAssociationInputBuilder {
     pub fn set_extension_version_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.extension_version_number = input;
         self
+    }
+    /// <p>The version number of the extension. If not specified, AppConfig uses the maximum version of the extension.</p>
+    pub fn get_extension_version_number(&self) -> &::std::option::Option<i32> {
+        &self.extension_version_number
     }
     /// <p>The ARN of an application, configuration profile, or environment.</p>
     pub fn resource_identifier(
@@ -118,6 +126,10 @@ impl CreateExtensionAssociationInputBuilder {
     ) -> Self {
         self.resource_identifier = input;
         self
+    }
+    /// <p>The ARN of an application, configuration profile, or environment.</p>
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_identifier
     }
     /// Adds a key-value pair to `parameters`.
     ///
@@ -144,6 +156,14 @@ impl CreateExtensionAssociationInputBuilder {
         self.parameters = input;
         self
     }
+    /// <p>The parameter names and values defined in the extensions. Extension parameters marked <code>Required</code> must be entered for this field.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.parameters
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -168,6 +188,14 @@ impl CreateExtensionAssociationInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Adds one or more tags for the specified extension association. Tags are metadata that help you categorize resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateExtensionAssociationInput`](crate::operation::create_extension_association::CreateExtensionAssociationInput).
     pub fn build(

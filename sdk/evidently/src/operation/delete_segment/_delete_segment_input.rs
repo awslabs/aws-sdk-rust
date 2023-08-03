@@ -39,6 +39,10 @@ impl DeleteSegmentInputBuilder {
         self.segment = input;
         self
     }
+    /// <p>Specifies the segment to delete.</p>
+    pub fn get_segment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.segment
+    }
     /// Consumes the builder and constructs a [`DeleteSegmentInput`](crate::operation::delete_segment::DeleteSegmentInput).
     pub fn build(
         self,

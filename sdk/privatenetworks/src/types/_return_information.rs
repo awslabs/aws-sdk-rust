@@ -67,6 +67,10 @@ impl ReturnInformationBuilder {
         self.shipping_address = input;
         self
     }
+    /// <p>The shipping address.</p>
+    pub fn get_shipping_address(&self) -> &::std::option::Option<crate::types::Address> {
+        &self.shipping_address
+    }
     /// <p>The reason for the return. If the return request did not include a reason for the return, this value is null.</p>
     pub fn return_reason(
         mut self,
@@ -82,6 +86,10 @@ impl ReturnInformationBuilder {
     ) -> Self {
         self.return_reason = input;
         self
+    }
+    /// <p>The reason for the return. If the return request did not include a reason for the return, this value is null.</p>
+    pub fn get_return_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.return_reason
     }
     /// <p>The Amazon Resource Name (ARN) of the replacement order.</p>
     pub fn replacement_order_arn(
@@ -99,6 +107,10 @@ impl ReturnInformationBuilder {
         self.replacement_order_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the replacement order.</p>
+    pub fn get_replacement_order_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replacement_order_arn
+    }
     /// <p>The URL of the shipping label. The shipping label is available for download only if the status of the network resource is <code>PENDING_RETURN</code>. For more information, see <a href="https://docs.aws.amazon.com/private-networks/latest/userguide/radio-units.html#return-radio-unit">Return a radio unit</a>.</p>
     pub fn shipping_label(
         mut self,
@@ -114,6 +126,10 @@ impl ReturnInformationBuilder {
     ) -> Self {
         self.shipping_label = input;
         self
+    }
+    /// <p>The URL of the shipping label. The shipping label is available for download only if the status of the network resource is <code>PENDING_RETURN</code>. For more information, see <a href="https://docs.aws.amazon.com/private-networks/latest/userguide/radio-units.html#return-radio-unit">Return a radio unit</a>.</p>
+    pub fn get_shipping_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shipping_label
     }
     /// Consumes the builder and constructs a [`ReturnInformation`](crate::types::ReturnInformation).
     pub fn build(self) -> crate::types::ReturnInformation {

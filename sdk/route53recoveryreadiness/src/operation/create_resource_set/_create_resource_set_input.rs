@@ -80,6 +80,10 @@ impl CreateResourceSetInputBuilder {
         self.resource_set_name = input;
         self
     }
+    /// <p>The name of the resource set to create.</p>
+    pub fn get_resource_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_set_name
+    }
     /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
     /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
     pub fn resource_set_type(
@@ -97,6 +101,11 @@ impl CreateResourceSetInputBuilder {
     ) -> Self {
         self.resource_set_type = input;
         self
+    }
+    /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
+    /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
+    pub fn get_resource_set_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_set_type
     }
     /// Appends an item to `resources`.
     ///
@@ -116,6 +125,10 @@ impl CreateResourceSetInputBuilder {
     ) -> Self {
         self.resources = input;
         self
+    }
+    /// <p>A list of resource objects in the resource set.</p>
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
+        &self.resources
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -141,6 +154,14 @@ impl CreateResourceSetInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A tag to associate with the parameters for a resource set.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateResourceSetInput`](crate::operation::create_resource_set::CreateResourceSetInput).
     pub fn build(

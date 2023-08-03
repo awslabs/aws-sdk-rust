@@ -60,6 +60,14 @@ impl AwsS3BucketNotificationConfigurationBuilder {
         self.configurations = input;
         self
     }
+    /// <p>Configurations for S3 bucket notifications.</p>
+    pub fn get_configurations(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::AwsS3BucketNotificationConfigurationDetail>,
+    > {
+        &self.configurations
+    }
     /// Consumes the builder and constructs a [`AwsS3BucketNotificationConfiguration`](crate::types::AwsS3BucketNotificationConfiguration).
     pub fn build(self) -> crate::types::AwsS3BucketNotificationConfiguration {
         crate::types::AwsS3BucketNotificationConfiguration {

@@ -73,6 +73,10 @@ impl VolumeRecommendationOptionBuilder {
         self.configuration = input;
         self
     }
+    /// <p>An array of objects that describe a volume configuration.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::VolumeConfiguration> {
+        &self.configuration
+    }
     /// <p>The performance risk of the volume recommendation option.</p>
     /// <p>Performance risk is the likelihood of the recommended volume type meeting the performance requirement of your workload.</p>
     /// <p>The value ranges from <code>0</code> - <code>4</code>, with <code>0</code> meaning that the recommended resource is predicted to always provide enough hardware capability. The higher the performance risk is, the more likely you should validate whether the recommendation will meet the performance requirements of your workload before migrating your resource.</p>
@@ -87,6 +91,12 @@ impl VolumeRecommendationOptionBuilder {
         self.performance_risk = input;
         self
     }
+    /// <p>The performance risk of the volume recommendation option.</p>
+    /// <p>Performance risk is the likelihood of the recommended volume type meeting the performance requirement of your workload.</p>
+    /// <p>The value ranges from <code>0</code> - <code>4</code>, with <code>0</code> meaning that the recommended resource is predicted to always provide enough hardware capability. The higher the performance risk is, the more likely you should validate whether the recommendation will meet the performance requirements of your workload before migrating your resource.</p>
+    pub fn get_performance_risk(&self) -> &::std::option::Option<f64> {
+        &self.performance_risk
+    }
     /// <p>The rank of the volume recommendation option.</p>
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
     pub fn rank(mut self, input: i32) -> Self {
@@ -98,6 +108,11 @@ impl VolumeRecommendationOptionBuilder {
     pub fn set_rank(mut self, input: ::std::option::Option<i32>) -> Self {
         self.rank = input;
         self
+    }
+    /// <p>The rank of the volume recommendation option.</p>
+    /// <p>The top recommendation option is ranked as <code>1</code>.</p>
+    pub fn get_rank(&self) -> &::std::option::Option<i32> {
+        &self.rank
     }
     /// <p>An object that describes the savings opportunity for the EBS volume recommendation option. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
     pub fn savings_opportunity(mut self, input: crate::types::SavingsOpportunity) -> Self {
@@ -111,6 +126,12 @@ impl VolumeRecommendationOptionBuilder {
     ) -> Self {
         self.savings_opportunity = input;
         self
+    }
+    /// <p>An object that describes the savings opportunity for the EBS volume recommendation option. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
+    pub fn get_savings_opportunity(
+        &self,
+    ) -> &::std::option::Option<crate::types::SavingsOpportunity> {
+        &self.savings_opportunity
     }
     /// Consumes the builder and constructs a [`VolumeRecommendationOption`](crate::types::VolumeRecommendationOption).
     pub fn build(self) -> crate::types::VolumeRecommendationOption {

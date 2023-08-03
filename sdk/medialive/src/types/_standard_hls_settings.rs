@@ -54,6 +54,10 @@ impl StandardHlsSettingsBuilder {
         self.audio_rendition_sets = input;
         self
     }
+    /// List all the audio groups that are used with the video output stream. Input all the audio GROUP-IDs that are associated to the video, separate by ','.
+    pub fn get_audio_rendition_sets(&self) -> &::std::option::Option<::std::string::String> {
+        &self.audio_rendition_sets
+    }
     /// Settings information for the .m3u8 container
     pub fn m3u8_settings(mut self, input: crate::types::M3u8Settings) -> Self {
         self.m3u8_settings = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl StandardHlsSettingsBuilder {
     ) -> Self {
         self.m3u8_settings = input;
         self
+    }
+    /// Settings information for the .m3u8 container
+    pub fn get_m3u8_settings(&self) -> &::std::option::Option<crate::types::M3u8Settings> {
+        &self.m3u8_settings
     }
     /// Consumes the builder and constructs a [`StandardHlsSettings`](crate::types::StandardHlsSettings).
     pub fn build(self) -> crate::types::StandardHlsSettings {

@@ -39,6 +39,13 @@ impl UpdateUserIdentityInfoFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateUserIdentityInfo as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_user_identity_info::builders::UpdateUserIdentityInfoInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl UpdateUserIdentityInfoFluentBuilder {
         self.inner = self.inner.set_identity_info(input);
         self
     }
+    /// <p>The identity information for the user.</p>
+    pub fn get_identity_info(&self) -> &::std::option::Option<crate::types::UserIdentityInfo> {
+        self.inner.get_identity_info()
+    }
     /// <p>The identifier of the user account.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
@@ -142,6 +153,10 @@ impl UpdateUserIdentityInfoFluentBuilder {
         self.inner = self.inner.set_user_id(input);
         self
     }
+    /// <p>The identifier of the user account.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_id()
+    }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
@@ -151,5 +166,9 @@ impl UpdateUserIdentityInfoFluentBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
     }
 }

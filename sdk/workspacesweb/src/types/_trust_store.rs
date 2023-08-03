@@ -61,6 +61,12 @@ impl TrustStoreBuilder {
         self.associated_portal_arns = input;
         self
     }
+    /// <p>A list of web portal ARNs that this trust store is associated with.</p>
+    pub fn get_associated_portal_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.associated_portal_arns
+    }
     /// <p>The ARN of the trust store.</p>
     pub fn trust_store_arn(
         mut self,
@@ -76,6 +82,10 @@ impl TrustStoreBuilder {
     ) -> Self {
         self.trust_store_arn = input;
         self
+    }
+    /// <p>The ARN of the trust store.</p>
+    pub fn get_trust_store_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trust_store_arn
     }
     /// Consumes the builder and constructs a [`TrustStore`](crate::types::TrustStore).
     pub fn build(self) -> crate::types::TrustStore {

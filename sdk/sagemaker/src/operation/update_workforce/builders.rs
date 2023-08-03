@@ -47,6 +47,12 @@ impl UpdateWorkforceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateWorkforce as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_workforce::builders::UpdateWorkforceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +149,10 @@ impl UpdateWorkforceFluentBuilder {
         self.inner = self.inner.set_workforce_name(input);
         self
     }
+    /// <p>The name of the private workforce that you want to update. You can find your workforce name by using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListWorkforces.html">ListWorkforces</a> operation.</p>
+    pub fn get_workforce_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workforce_name()
+    }
     /// <p>A list of one to ten worker IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) that can be used to access tasks assigned to this workforce.</p>
     /// <p>Maximum: Ten CIDR values</p>
     pub fn source_ip_config(mut self, input: crate::types::SourceIpConfig) -> Self {
@@ -158,6 +168,11 @@ impl UpdateWorkforceFluentBuilder {
         self.inner = self.inner.set_source_ip_config(input);
         self
     }
+    /// <p>A list of one to ten worker IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) that can be used to access tasks assigned to this workforce.</p>
+    /// <p>Maximum: Ten CIDR values</p>
+    pub fn get_source_ip_config(&self) -> &::std::option::Option<crate::types::SourceIpConfig> {
+        self.inner.get_source_ip_config()
+    }
     /// <p>Use this parameter to update your OIDC Identity Provider (IdP) configuration for a workforce made using your own IdP.</p>
     pub fn oidc_config(mut self, input: crate::types::OidcConfig) -> Self {
         self.inner = self.inner.oidc_config(input);
@@ -171,6 +186,10 @@ impl UpdateWorkforceFluentBuilder {
         self.inner = self.inner.set_oidc_config(input);
         self
     }
+    /// <p>Use this parameter to update your OIDC Identity Provider (IdP) configuration for a workforce made using your own IdP.</p>
+    pub fn get_oidc_config(&self) -> &::std::option::Option<crate::types::OidcConfig> {
+        self.inner.get_oidc_config()
+    }
     /// <p>Use this parameter to update your VPC configuration for a workforce.</p>
     pub fn workforce_vpc_config(mut self, input: crate::types::WorkforceVpcConfigRequest) -> Self {
         self.inner = self.inner.workforce_vpc_config(input);
@@ -183,5 +202,11 @@ impl UpdateWorkforceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_workforce_vpc_config(input);
         self
+    }
+    /// <p>Use this parameter to update your VPC configuration for a workforce.</p>
+    pub fn get_workforce_vpc_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::WorkforceVpcConfigRequest> {
+        self.inner.get_workforce_vpc_config()
     }
 }

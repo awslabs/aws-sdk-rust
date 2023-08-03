@@ -60,6 +60,11 @@ impl ProvisioningHookBuilder {
         self.payload_version = input;
         self
     }
+    /// <p>The payload that was sent to the target function.</p>
+    /// <p> <i>Note:</i> Only Lambda functions are currently supported.</p>
+    pub fn get_payload_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.payload_version
+    }
     /// <p>The ARN of the target function.</p>
     /// <p> <i>Note:</i> Only Lambda functions are currently supported.</p>
     pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -71,6 +76,11 @@ impl ProvisioningHookBuilder {
     pub fn set_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_arn = input;
         self
+    }
+    /// <p>The ARN of the target function.</p>
+    /// <p> <i>Note:</i> Only Lambda functions are currently supported.</p>
+    pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_arn
     }
     /// Consumes the builder and constructs a [`ProvisioningHook`](crate::types::ProvisioningHook).
     pub fn build(self) -> crate::types::ProvisioningHook {

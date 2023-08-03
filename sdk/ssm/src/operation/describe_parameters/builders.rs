@@ -39,6 +39,12 @@ impl DescribeParametersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeParameters as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_parameters::builders::DescribeParametersInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -147,6 +153,12 @@ impl DescribeParametersFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>This data type is deprecated. Instead, use <code>ParameterFilters</code>.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParametersFilter>> {
+        self.inner.get_filters()
+    }
     /// Appends an item to `ParameterFilters`.
     ///
     /// To override the contents of this collection use [`set_parameter_filters`](Self::set_parameter_filters).
@@ -164,6 +176,12 @@ impl DescribeParametersFluentBuilder {
         self.inner = self.inner.set_parameter_filters(input);
         self
     }
+    /// <p>Filters to limit the request results.</p>
+    pub fn get_parameter_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterStringFilter>> {
+        self.inner.get_parameter_filters()
+    }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -174,6 +192,10 @@ impl DescribeParametersFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -183,5 +205,9 @@ impl DescribeParametersFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

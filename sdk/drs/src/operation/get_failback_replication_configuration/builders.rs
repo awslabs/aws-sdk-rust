@@ -36,6 +36,10 @@ impl GetFailbackReplicationConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetFailbackReplicationConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_failback_replication_configuration::builders::GetFailbackReplicationConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -105,5 +109,9 @@ impl GetFailbackReplicationConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_recovery_instance_id(input);
         self
+    }
+    /// <p>The ID of the Recovery Instance whose failback replication configuration should be returned.</p>
+    pub fn get_recovery_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_recovery_instance_id()
     }
 }

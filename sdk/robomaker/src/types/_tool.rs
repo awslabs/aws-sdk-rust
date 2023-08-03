@@ -72,6 +72,10 @@ impl ToolBuilder {
         self.stream_ui = input;
         self
     }
+    /// <p>Boolean indicating whether a streaming session will be configured for the tool. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with the tool as it is running in the simulation. It must have a graphical user interface. The default is <code>False</code>. </p>
+    pub fn get_stream_ui(&self) -> &::std::option::Option<bool> {
+        &self.stream_ui
+    }
     /// <p>The name of the tool.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl ToolBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the tool.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Command-line arguments for the tool. It must include the tool executable name.</p>
     pub fn command(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -92,6 +100,10 @@ impl ToolBuilder {
         self.command = input;
         self
     }
+    /// <p>Command-line arguments for the tool. It must include the tool executable name.</p>
+    pub fn get_command(&self) -> &::std::option::Option<::std::string::String> {
+        &self.command
+    }
     /// <p>Boolean indicating whether logs will be recorded in CloudWatch for the tool. The default is <code>False</code>. </p>
     pub fn stream_output_to_cloud_watch(mut self, input: bool) -> Self {
         self.stream_output_to_cloud_watch = ::std::option::Option::Some(input);
@@ -101,6 +113,10 @@ impl ToolBuilder {
     pub fn set_stream_output_to_cloud_watch(mut self, input: ::std::option::Option<bool>) -> Self {
         self.stream_output_to_cloud_watch = input;
         self
+    }
+    /// <p>Boolean indicating whether logs will be recorded in CloudWatch for the tool. The default is <code>False</code>. </p>
+    pub fn get_stream_output_to_cloud_watch(&self) -> &::std::option::Option<bool> {
+        &self.stream_output_to_cloud_watch
     }
     /// <p>Exit behavior determines what happens when your tool quits running. <code>RESTART</code> will cause your tool to be restarted. <code>FAIL</code> will cause your job to exit. The default is <code>RESTART</code>. </p>
     pub fn exit_behavior(mut self, input: crate::types::ExitBehavior) -> Self {
@@ -114,6 +130,10 @@ impl ToolBuilder {
     ) -> Self {
         self.exit_behavior = input;
         self
+    }
+    /// <p>Exit behavior determines what happens when your tool quits running. <code>RESTART</code> will cause your tool to be restarted. <code>FAIL</code> will cause your job to exit. The default is <code>RESTART</code>. </p>
+    pub fn get_exit_behavior(&self) -> &::std::option::Option<crate::types::ExitBehavior> {
+        &self.exit_behavior
     }
     /// Consumes the builder and constructs a [`Tool`](crate::types::Tool).
     pub fn build(self) -> crate::types::Tool {

@@ -94,6 +94,10 @@ impl ReserveContactInputBuilder {
         self.mission_profile_arn = input;
         self
     }
+    /// <p>ARN of a mission profile.</p>
+    pub fn get_mission_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mission_profile_arn
+    }
     /// <p>ARN of a satellite</p>
     pub fn satellite_arn(
         mut self,
@@ -110,6 +114,10 @@ impl ReserveContactInputBuilder {
         self.satellite_arn = input;
         self
     }
+    /// <p>ARN of a satellite</p>
+    pub fn get_satellite_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.satellite_arn
+    }
     /// <p>Start time of a contact in UTC.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -123,6 +131,10 @@ impl ReserveContactInputBuilder {
         self.start_time = input;
         self
     }
+    /// <p>Start time of a contact in UTC.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>End time of a contact in UTC.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -135,6 +147,10 @@ impl ReserveContactInputBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>End time of a contact in UTC.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// <p>Name of a ground station.</p>
     pub fn ground_station(
@@ -151,6 +167,10 @@ impl ReserveContactInputBuilder {
     ) -> Self {
         self.ground_station = input;
         self
+    }
+    /// <p>Name of a ground station.</p>
+    pub fn get_ground_station(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ground_station
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -176,6 +196,14 @@ impl ReserveContactInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Tags assigned to a contact.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`ReserveContactInput`](crate::operation::reserve_contact::ReserveContactInput).
     pub fn build(

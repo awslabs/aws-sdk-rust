@@ -48,6 +48,10 @@ impl DisassociateIpGroupsInputBuilder {
         self.directory_id = input;
         self
     }
+    /// <p>The identifier of the directory.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
     /// Appends an item to `group_ids`.
     ///
     /// To override the contents of this collection use [`set_group_ids`](Self::set_group_ids).
@@ -66,6 +70,10 @@ impl DisassociateIpGroupsInputBuilder {
     ) -> Self {
         self.group_ids = input;
         self
+    }
+    /// <p>The identifiers of one or more IP access control groups.</p>
+    pub fn get_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.group_ids
     }
     /// Consumes the builder and constructs a [`DisassociateIpGroupsInput`](crate::operation::disassociate_ip_groups::DisassociateIpGroupsInput).
     pub fn build(

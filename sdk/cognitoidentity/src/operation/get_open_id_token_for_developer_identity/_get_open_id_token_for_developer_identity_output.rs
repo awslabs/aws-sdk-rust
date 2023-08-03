@@ -55,6 +55,10 @@ impl GetOpenIdTokenForDeveloperIdentityOutputBuilder {
         self.identity_id = input;
         self
     }
+    /// <p>A unique identifier in the format REGION:GUID.</p>
+    pub fn get_identity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_id
+    }
     /// <p>An OpenID token.</p>
     pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl GetOpenIdTokenForDeveloperIdentityOutputBuilder {
     pub fn set_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.token = input;
         self
+    }
+    /// <p>An OpenID token.</p>
+    pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

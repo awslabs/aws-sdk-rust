@@ -66,6 +66,10 @@ impl ThingGroupMetadataBuilder {
         self.parent_group_name = input;
         self
     }
+    /// <p>The parent thing group name.</p>
+    pub fn get_parent_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_group_name
+    }
     /// Appends an item to `root_to_parent_thing_groups`.
     ///
     /// To override the contents of this collection use [`set_root_to_parent_thing_groups`](Self::set_root_to_parent_thing_groups).
@@ -85,6 +89,12 @@ impl ThingGroupMetadataBuilder {
         self.root_to_parent_thing_groups = input;
         self
     }
+    /// <p>The root parent thing group.</p>
+    pub fn get_root_to_parent_thing_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupNameAndArn>> {
+        &self.root_to_parent_thing_groups
+    }
     /// <p>The UNIX timestamp of when the thing group was created.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -97,6 +107,10 @@ impl ThingGroupMetadataBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>The UNIX timestamp of when the thing group was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
     }
     /// Consumes the builder and constructs a [`ThingGroupMetadata`](crate::types::ThingGroupMetadata).
     pub fn build(self) -> crate::types::ThingGroupMetadata {

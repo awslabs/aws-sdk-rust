@@ -45,6 +45,10 @@ impl DescribeEmailMonitoringConfigurationInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The ID of the organization for which the email monitoring configuration is described.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// Consumes the builder and constructs a [`DescribeEmailMonitoringConfigurationInput`](crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

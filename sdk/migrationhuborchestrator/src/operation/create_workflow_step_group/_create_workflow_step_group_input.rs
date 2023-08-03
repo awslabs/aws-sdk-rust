@@ -73,6 +73,10 @@ impl CreateWorkflowStepGroupInputBuilder {
         self.workflow_id = input;
         self
     }
+    /// <p>The ID of the migration workflow that will contain the step group.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_id
+    }
     /// <p>The name of the step group.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -83,6 +87,10 @@ impl CreateWorkflowStepGroupInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the step group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the step group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -92,6 +100,10 @@ impl CreateWorkflowStepGroupInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the step group.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `next`.
     ///
@@ -112,6 +124,10 @@ impl CreateWorkflowStepGroupInputBuilder {
         self.next = input;
         self
     }
+    /// <p>The next step group.</p>
+    pub fn get_next(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.next
+    }
     /// Appends an item to `previous`.
     ///
     /// To override the contents of this collection use [`set_previous`](Self::set_previous).
@@ -130,6 +146,10 @@ impl CreateWorkflowStepGroupInputBuilder {
     ) -> Self {
         self.previous = input;
         self
+    }
+    /// <p>The previous step group.</p>
+    pub fn get_previous(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.previous
     }
     /// Consumes the builder and constructs a [`CreateWorkflowStepGroupInput`](crate::operation::create_workflow_step_group::CreateWorkflowStepGroupInput).
     pub fn build(

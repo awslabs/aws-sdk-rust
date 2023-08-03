@@ -64,6 +64,10 @@ impl RedactChannelMessageInputBuilder {
         self.channel_arn = input;
         self
     }
+    /// <p>The ARN of the channel containing the messages that you want to redact.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
+    }
     /// <p>The ID of the message being redacted.</p>
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_id = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl RedactChannelMessageInputBuilder {
         self.message_id = input;
         self
     }
+    /// <p>The ID of the message being redacted.</p>
+    pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_id
+    }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.chime_bearer = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl RedactChannelMessageInputBuilder {
     pub fn set_chime_bearer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.chime_bearer = input;
         self
+    }
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
+    pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
+        &self.chime_bearer
     }
     /// <p>The ID of the SubChannel in the request.</p>
     pub fn sub_channel_id(
@@ -99,6 +111,10 @@ impl RedactChannelMessageInputBuilder {
     ) -> Self {
         self.sub_channel_id = input;
         self
+    }
+    /// <p>The ID of the SubChannel in the request.</p>
+    pub fn get_sub_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sub_channel_id
     }
     /// Consumes the builder and constructs a [`RedactChannelMessageInput`](crate::operation::redact_channel_message::RedactChannelMessageInput).
     pub fn build(

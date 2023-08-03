@@ -51,6 +51,12 @@ impl CreateNetworkInsightsPathOutputBuilder {
         self.network_insights_path = input;
         self
     }
+    /// <p>Information about the path.</p>
+    pub fn get_network_insights_path(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkInsightsPath> {
+        &self.network_insights_path
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

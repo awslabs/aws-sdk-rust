@@ -82,6 +82,12 @@ impl GetUsageStatisticsInputBuilder {
         self.filter_by = input;
         self
     }
+    /// <p>An array of objects, one for each condition to use to filter the query results. If you specify more than one condition, Amazon Macie uses an AND operator to join the conditions.</p>
+    pub fn get_filter_by(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageStatisticsFilter>> {
+        &self.filter_by
+    }
     /// <p>The maximum number of items to include in each page of the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -92,6 +98,10 @@ impl GetUsageStatisticsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of items to include in each page of the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -101,6 +111,10 @@ impl GetUsageStatisticsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The criteria to use to sort the query results.</p>
     pub fn sort_by(mut self, input: crate::types::UsageStatisticsSortBy) -> Self {
@@ -115,6 +129,10 @@ impl GetUsageStatisticsInputBuilder {
         self.sort_by = input;
         self
     }
+    /// <p>The criteria to use to sort the query results.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::UsageStatisticsSortBy> {
+        &self.sort_by
+    }
     /// <p>The inclusive time period to query usage data for. Valid values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value, Amazon Macie provides usage data for the preceding 30 days.</p>
     pub fn time_range(mut self, input: crate::types::TimeRange) -> Self {
         self.time_range = ::std::option::Option::Some(input);
@@ -124,6 +142,10 @@ impl GetUsageStatisticsInputBuilder {
     pub fn set_time_range(mut self, input: ::std::option::Option<crate::types::TimeRange>) -> Self {
         self.time_range = input;
         self
+    }
+    /// <p>The inclusive time period to query usage data for. Valid values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value, Amazon Macie provides usage data for the preceding 30 days.</p>
+    pub fn get_time_range(&self) -> &::std::option::Option<crate::types::TimeRange> {
+        &self.time_range
     }
     /// Consumes the builder and constructs a [`GetUsageStatisticsInput`](crate::operation::get_usage_statistics::GetUsageStatisticsInput).
     pub fn build(

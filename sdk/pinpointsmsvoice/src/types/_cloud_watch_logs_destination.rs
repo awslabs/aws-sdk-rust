@@ -48,6 +48,10 @@ impl CloudWatchLogsDestinationBuilder {
         self.iam_role_arn = input;
         self
     }
+    /// The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM) role that is able to write event data to an Amazon CloudWatch destination.
+    pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_role_arn
+    }
     /// The name of the Amazon CloudWatch Log Group that you want to record events in.
     pub fn log_group_arn(
         mut self,
@@ -63,6 +67,10 @@ impl CloudWatchLogsDestinationBuilder {
     ) -> Self {
         self.log_group_arn = input;
         self
+    }
+    /// The name of the Amazon CloudWatch Log Group that you want to record events in.
+    pub fn get_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group_arn
     }
     /// Consumes the builder and constructs a [`CloudWatchLogsDestination`](crate::types::CloudWatchLogsDestination).
     pub fn build(self) -> crate::types::CloudWatchLogsDestination {

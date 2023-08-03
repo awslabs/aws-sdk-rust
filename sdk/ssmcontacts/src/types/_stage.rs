@@ -48,6 +48,10 @@ impl StageBuilder {
         self.duration_in_minutes = input;
         self
     }
+    /// <p>The time to wait until beginning the next stage. The duration can only be set to 0 if a target is specified.</p>
+    pub fn get_duration_in_minutes(&self) -> &::std::option::Option<i32> {
+        &self.duration_in_minutes
+    }
     /// Appends an item to `targets`.
     ///
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).
@@ -66,6 +70,10 @@ impl StageBuilder {
     ) -> Self {
         self.targets = input;
         self
+    }
+    /// <p>The contacts or contact methods that the escalation plan or engagement plan is engaging.</p>
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
+        &self.targets
     }
     /// Consumes the builder and constructs a [`Stage`](crate::types::Stage).
     pub fn build(self) -> crate::types::Stage {

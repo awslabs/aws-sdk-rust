@@ -36,6 +36,12 @@ impl GetEvidenceFolderFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetEvidenceFolder as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_evidence_folder::builders::GetEvidenceFolderInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl GetEvidenceFolderFluentBuilder {
         self.inner = self.inner.set_assessment_id(input);
         self
     }
+    /// <p> The unique identifier for the assessment. </p>
+    pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assessment_id()
+    }
     /// <p> The unique identifier for the control set. </p>
     pub fn control_set_id(
         mut self,
@@ -148,6 +158,10 @@ impl GetEvidenceFolderFluentBuilder {
         self.inner = self.inner.set_control_set_id(input);
         self
     }
+    /// <p> The unique identifier for the control set. </p>
+    pub fn get_control_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_control_set_id()
+    }
     /// <p> The unique identifier for the folder that the evidence is stored in. </p>
     pub fn evidence_folder_id(
         mut self,
@@ -163,5 +177,9 @@ impl GetEvidenceFolderFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_evidence_folder_id(input);
         self
+    }
+    /// <p> The unique identifier for the folder that the evidence is stored in. </p>
+    pub fn get_evidence_folder_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_evidence_folder_id()
     }
 }

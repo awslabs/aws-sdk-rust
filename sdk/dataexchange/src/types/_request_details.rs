@@ -147,6 +147,12 @@ impl RequestDetailsBuilder {
         self.export_asset_to_signed_url = input;
         self
     }
+    /// <p>Details about the export to signed URL request.</p>
+    pub fn get_export_asset_to_signed_url(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExportAssetToSignedUrlRequestDetails> {
+        &self.export_asset_to_signed_url
+    }
     /// <p>Details about the export to Amazon S3 request.</p>
     pub fn export_assets_to_s3(
         mut self,
@@ -164,6 +170,12 @@ impl RequestDetailsBuilder {
         self
     }
     /// <p>Details about the export to Amazon S3 request.</p>
+    pub fn get_export_assets_to_s3(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExportAssetsToS3RequestDetails> {
+        &self.export_assets_to_s3
+    }
+    /// <p>Details about the export to Amazon S3 request.</p>
     pub fn export_revisions_to_s3(
         mut self,
         input: crate::types::ExportRevisionsToS3RequestDetails,
@@ -178,6 +190,12 @@ impl RequestDetailsBuilder {
     ) -> Self {
         self.export_revisions_to_s3 = input;
         self
+    }
+    /// <p>Details about the export to Amazon S3 request.</p>
+    pub fn get_export_revisions_to_s3(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExportRevisionsToS3RequestDetails> {
+        &self.export_revisions_to_s3
     }
     /// <p>Details about the import from Amazon S3 request.</p>
     pub fn import_asset_from_signed_url(
@@ -195,6 +213,12 @@ impl RequestDetailsBuilder {
         self.import_asset_from_signed_url = input;
         self
     }
+    /// <p>Details about the import from Amazon S3 request.</p>
+    pub fn get_import_asset_from_signed_url(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImportAssetFromSignedUrlRequestDetails> {
+        &self.import_asset_from_signed_url
+    }
     /// <p>Details about the import asset from API Gateway API request.</p>
     pub fn import_assets_from_s3(
         mut self,
@@ -210,6 +234,12 @@ impl RequestDetailsBuilder {
     ) -> Self {
         self.import_assets_from_s3 = input;
         self
+    }
+    /// <p>Details about the import asset from API Gateway API request.</p>
+    pub fn get_import_assets_from_s3(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImportAssetsFromS3RequestDetails> {
+        &self.import_assets_from_s3
     }
     /// <p>Details from an import from Amazon Redshift datashare request.</p>
     pub fn import_assets_from_redshift_data_shares(
@@ -229,6 +259,13 @@ impl RequestDetailsBuilder {
         self.import_assets_from_redshift_data_shares = input;
         self
     }
+    /// <p>Details from an import from Amazon Redshift datashare request.</p>
+    pub fn get_import_assets_from_redshift_data_shares(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImportAssetsFromRedshiftDataSharesRequestDetails>
+    {
+        &self.import_assets_from_redshift_data_shares
+    }
     /// <p>Details about the import from signed URL request.</p>
     pub fn import_asset_from_api_gateway_api(
         mut self,
@@ -245,6 +282,12 @@ impl RequestDetailsBuilder {
         self.import_asset_from_api_gateway_api = input;
         self
     }
+    /// <p>Details about the import from signed URL request.</p>
+    pub fn get_import_asset_from_api_gateway_api(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImportAssetFromApiGatewayApiRequestDetails> {
+        &self.import_asset_from_api_gateway_api
+    }
     /// <p>Details of the request to create S3 data access from the Amazon S3 bucket.</p>
     pub fn create_s3_data_access_from_s3_bucket(
         mut self,
@@ -260,6 +303,12 @@ impl RequestDetailsBuilder {
     ) -> Self {
         self.create_s3_data_access_from_s3_bucket = input;
         self
+    }
+    /// <p>Details of the request to create S3 data access from the Amazon S3 bucket.</p>
+    pub fn get_create_s3_data_access_from_s3_bucket(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateS3DataAccessFromS3BucketRequestDetails> {
+        &self.create_s3_data_access_from_s3_bucket
     }
     /// <p>Request details for the ImportAssetsFromLakeFormationTagPolicy job.</p>
     pub fn import_assets_from_lake_formation_tag_policy(
@@ -278,6 +327,13 @@ impl RequestDetailsBuilder {
     ) -> Self {
         self.import_assets_from_lake_formation_tag_policy = input;
         self
+    }
+    /// <p>Request details for the ImportAssetsFromLakeFormationTagPolicy job.</p>
+    pub fn get_import_assets_from_lake_formation_tag_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImportAssetsFromLakeFormationTagPolicyRequestDetails>
+    {
+        &self.import_assets_from_lake_formation_tag_policy
     }
     /// Consumes the builder and constructs a [`RequestDetails`](crate::types::RequestDetails).
     pub fn build(self) -> crate::types::RequestDetails {

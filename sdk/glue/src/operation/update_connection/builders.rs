@@ -36,6 +36,12 @@ impl UpdateConnectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateConnection as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_connection::builders::UpdateConnectionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateConnectionFluentBuilder {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
+    /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog_id()
+    }
     /// <p>The name of the connection definition to update.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -135,6 +145,10 @@ impl UpdateConnectionFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the connection definition to update.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>A <code>ConnectionInput</code> object that redefines the connection in question.</p>
     pub fn connection_input(mut self, input: crate::types::ConnectionInput) -> Self {
@@ -148,5 +162,9 @@ impl UpdateConnectionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_connection_input(input);
         self
+    }
+    /// <p>A <code>ConnectionInput</code> object that redefines the connection in question.</p>
+    pub fn get_connection_input(&self) -> &::std::option::Option<crate::types::ConnectionInput> {
+        self.inner.get_connection_input()
     }
 }

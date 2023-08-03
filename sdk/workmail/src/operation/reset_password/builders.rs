@@ -36,6 +36,12 @@ impl ResetPasswordFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ResetPassword as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::reset_password::builders::ResetPasswordInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl ResetPasswordFluentBuilder {
         self.inner = self.inner.set_organization_id(input);
         self
     }
+    /// <p>The identifier of the organization that contains the user for which the password is reset.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
+    }
     /// <p>The identifier of the user for whom the password is reset.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
@@ -134,6 +144,10 @@ impl ResetPasswordFluentBuilder {
         self.inner = self.inner.set_user_id(input);
         self
     }
+    /// <p>The identifier of the user for whom the password is reset.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_id()
+    }
     /// <p>The new password for the user.</p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.password(input.into());
@@ -143,5 +157,9 @@ impl ResetPasswordFluentBuilder {
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_password(input);
         self
+    }
+    /// <p>The new password for the user.</p>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_password()
     }
 }

@@ -50,6 +50,10 @@ impl DescribeTagOptionOutputBuilder {
         self.tag_option_detail = input;
         self
     }
+    /// <p>Information about the TagOption.</p>
+    pub fn get_tag_option_detail(&self) -> &::std::option::Option<crate::types::TagOptionDetail> {
+        &self.tag_option_detail
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

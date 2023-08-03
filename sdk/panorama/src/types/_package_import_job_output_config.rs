@@ -50,6 +50,12 @@ impl PackageImportJobOutputConfigBuilder {
         self.package_version_output_config = input;
         self
     }
+    /// <p>The package version's output configuration.</p>
+    pub fn get_package_version_output_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::PackageVersionOutputConfig> {
+        &self.package_version_output_config
+    }
     /// Consumes the builder and constructs a [`PackageImportJobOutputConfig`](crate::types::PackageImportJobOutputConfig).
     pub fn build(self) -> crate::types::PackageImportJobOutputConfig {
         crate::types::PackageImportJobOutputConfig {

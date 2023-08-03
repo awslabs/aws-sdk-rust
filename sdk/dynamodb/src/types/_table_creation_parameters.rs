@@ -100,6 +100,10 @@ impl TableCreationParametersBuilder {
         self.table_name = input;
         self
     }
+    /// <p> The name of the table created as part of the import operation. </p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
+    }
     /// Appends an item to `attribute_definitions`.
     ///
     /// To override the contents of this collection use [`set_attribute_definitions`](Self::set_attribute_definitions).
@@ -118,6 +122,12 @@ impl TableCreationParametersBuilder {
     ) -> Self {
         self.attribute_definitions = input;
         self
+    }
+    /// <p> The attributes of the table created as part of the import operation. </p>
+    pub fn get_attribute_definitions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeDefinition>> {
+        &self.attribute_definitions
     }
     /// Appends an item to `key_schema`.
     ///
@@ -138,6 +148,12 @@ impl TableCreationParametersBuilder {
         self.key_schema = input;
         self
     }
+    /// <p> The primary key and option sort key of the table created as part of the import operation. </p>
+    pub fn get_key_schema(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>> {
+        &self.key_schema
+    }
     /// <p> The billing mode for provisioning the table created as part of the import operation. </p>
     pub fn billing_mode(mut self, input: crate::types::BillingMode) -> Self {
         self.billing_mode = ::std::option::Option::Some(input);
@@ -150,6 +166,10 @@ impl TableCreationParametersBuilder {
     ) -> Self {
         self.billing_mode = input;
         self
+    }
+    /// <p> The billing mode for provisioning the table created as part of the import operation. </p>
+    pub fn get_billing_mode(&self) -> &::std::option::Option<crate::types::BillingMode> {
+        &self.billing_mode
     }
     /// <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p>
     /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -166,6 +186,13 @@ impl TableCreationParametersBuilder {
         self.provisioned_throughput = input;
         self
     }
+    /// <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p>
+    /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    pub fn get_provisioned_throughput(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProvisionedThroughput> {
+        &self.provisioned_throughput
+    }
     /// <p>Represents the settings used to enable server-side encryption.</p>
     pub fn sse_specification(mut self, input: crate::types::SseSpecification) -> Self {
         self.sse_specification = ::std::option::Option::Some(input);
@@ -178,6 +205,10 @@ impl TableCreationParametersBuilder {
     ) -> Self {
         self.sse_specification = input;
         self
+    }
+    /// <p>Represents the settings used to enable server-side encryption.</p>
+    pub fn get_sse_specification(&self) -> &::std::option::Option<crate::types::SseSpecification> {
+        &self.sse_specification
     }
     /// Appends an item to `global_secondary_indexes`.
     ///
@@ -197,6 +228,12 @@ impl TableCreationParametersBuilder {
     ) -> Self {
         self.global_secondary_indexes = input;
         self
+    }
+    /// <p> The Global Secondary Indexes (GSI) of the table to be created as part of the import operation. </p>
+    pub fn get_global_secondary_indexes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndex>> {
+        &self.global_secondary_indexes
     }
     /// Consumes the builder and constructs a [`TableCreationParameters`](crate::types::TableCreationParameters).
     pub fn build(self) -> crate::types::TableCreationParameters {

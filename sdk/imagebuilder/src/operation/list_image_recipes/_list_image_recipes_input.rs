@@ -74,6 +74,10 @@ impl ListImageRecipesInputBuilder {
         self.owner = input;
         self
     }
+    /// <p>The owner defines which image recipes you want to list. By default, this request will only show image recipes owned by your account. You can use this field to specify if you want to view image recipes owned by yourself, by Amazon, or those image recipes that have been shared with you by other customers.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<crate::types::Ownership> {
+        &self.owner
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -103,6 +107,15 @@ impl ListImageRecipesInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>Use the following filters to streamline results:</p>
+    /// <ul>
+    /// <li> <p> <code>name</code> </p> </li>
+    /// <li> <p> <code>parentImage</code> </p> </li>
+    /// <li> <p> <code>platform</code> </p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
+    }
     /// <p>The maximum items to return in a request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -113,6 +126,10 @@ impl ListImageRecipesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum items to return in a request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -122,6 +139,10 @@ impl ListImageRecipesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListImageRecipesInput`](crate::operation::list_image_recipes::ListImageRecipesInput).
     pub fn build(

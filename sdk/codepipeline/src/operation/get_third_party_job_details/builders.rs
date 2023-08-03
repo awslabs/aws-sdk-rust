@@ -38,6 +38,13 @@ impl GetThirdPartyJobDetailsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetThirdPartyJobDetails as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_third_party_job_details::builders::GetThirdPartyJobDetailsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +135,10 @@ impl GetThirdPartyJobDetailsFluentBuilder {
         self.inner = self.inner.set_job_id(input);
         self
     }
+    /// <p>The unique system-generated ID used for identifying the job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_id()
+    }
     /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -137,5 +148,9 @@ impl GetThirdPartyJobDetailsFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

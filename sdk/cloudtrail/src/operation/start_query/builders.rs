@@ -37,6 +37,10 @@ impl StartQueryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartQuery as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_query::builders::StartQueryInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +129,10 @@ impl StartQueryFluentBuilder {
         self.inner = self.inner.set_query_statement(input);
         self
     }
+    /// <p>The SQL code of your query.</p>
+    pub fn get_query_statement(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_query_statement()
+    }
     /// <p> The URI for the S3 bucket where CloudTrail delivers the query results. </p>
     pub fn delivery_s3_uri(
         mut self,
@@ -141,6 +149,10 @@ impl StartQueryFluentBuilder {
         self.inner = self.inner.set_delivery_s3_uri(input);
         self
     }
+    /// <p> The URI for the S3 bucket where CloudTrail delivers the query results. </p>
+    pub fn get_delivery_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_delivery_s3_uri()
+    }
     /// <p> The alias that identifies a query template. </p>
     pub fn query_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_alias(input.into());
@@ -150,6 +162,10 @@ impl StartQueryFluentBuilder {
     pub fn set_query_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_alias(input);
         self
+    }
+    /// <p> The alias that identifies a query template. </p>
+    pub fn get_query_alias(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_query_alias()
     }
     /// Appends an item to `QueryParameters`.
     ///
@@ -170,5 +186,11 @@ impl StartQueryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_query_parameters(input);
         self
+    }
+    /// <p> The query parameters for the specified <code>QueryAlias</code>. </p>
+    pub fn get_query_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_query_parameters()
     }
 }

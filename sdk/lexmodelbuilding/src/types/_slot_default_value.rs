@@ -66,6 +66,15 @@ impl SlotDefaultValueBuilder {
         self.default_value = input;
         self
     }
+    /// <p>The default value for the slot. You can specify one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>#context-name.slot-name</code> - The slot value "slot-name" in the context "context-name."</p> </li>
+    /// <li> <p> <code>{attribute}</code> - The slot value of the session attribute "attribute."</p> </li>
+    /// <li> <p> <code>'value'</code> - The discrete value "value."</p> </li>
+    /// </ul>
+    pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_value
+    }
     /// Consumes the builder and constructs a [`SlotDefaultValue`](crate::types::SlotDefaultValue).
     pub fn build(self) -> crate::types::SlotDefaultValue {
         crate::types::SlotDefaultValue {

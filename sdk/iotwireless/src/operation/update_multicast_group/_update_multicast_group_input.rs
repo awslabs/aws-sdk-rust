@@ -64,6 +64,10 @@ impl UpdateMulticastGroupInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the multicast group.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the multicast group.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl UpdateMulticastGroupInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the multicast group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the new resource.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl UpdateMulticastGroupInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the new resource.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The LoRaWAN information that is to be used with the multicast group.</p>
     pub fn lo_ra_wan(mut self, input: crate::types::LoRaWanMulticast) -> Self {
@@ -96,6 +108,10 @@ impl UpdateMulticastGroupInputBuilder {
     ) -> Self {
         self.lo_ra_wan = input;
         self
+    }
+    /// <p>The LoRaWAN information that is to be used with the multicast group.</p>
+    pub fn get_lo_ra_wan(&self) -> &::std::option::Option<crate::types::LoRaWanMulticast> {
+        &self.lo_ra_wan
     }
     /// Consumes the builder and constructs a [`UpdateMulticastGroupInput`](crate::operation::update_multicast_group::UpdateMulticastGroupInput).
     pub fn build(

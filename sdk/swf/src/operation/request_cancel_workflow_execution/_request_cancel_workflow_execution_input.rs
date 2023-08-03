@@ -55,6 +55,10 @@ impl RequestCancelWorkflowExecutionInputBuilder {
         self.domain = input;
         self
     }
+    /// <p>The name of the domain containing the workflow execution to cancel.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
+    }
     /// <p>The workflowId of the workflow execution to cancel.</p>
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl RequestCancelWorkflowExecutionInputBuilder {
         self.workflow_id = input;
         self
     }
+    /// <p>The workflowId of the workflow execution to cancel.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_id
+    }
     /// <p>The runId of the workflow execution to cancel.</p>
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.run_id = ::std::option::Option::Some(input.into());
@@ -74,6 +82,10 @@ impl RequestCancelWorkflowExecutionInputBuilder {
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.run_id = input;
         self
+    }
+    /// <p>The runId of the workflow execution to cancel.</p>
+    pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.run_id
     }
     /// Consumes the builder and constructs a [`RequestCancelWorkflowExecutionInput`](crate::operation::request_cancel_workflow_execution::RequestCancelWorkflowExecutionInput).
     pub fn build(

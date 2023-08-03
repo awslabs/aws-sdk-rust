@@ -89,6 +89,10 @@ impl ImportCertificateInputBuilder {
         self.certificate_arn = input;
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field. </p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_arn
+    }
     /// <p>The certificate to import.</p>
     pub fn certificate(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.certificate = ::std::option::Option::Some(input);
@@ -101,6 +105,10 @@ impl ImportCertificateInputBuilder {
     ) -> Self {
         self.certificate = input;
         self
+    }
+    /// <p>The certificate to import.</p>
+    pub fn get_certificate(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.certificate
     }
     /// <p>The private key that matches the public key in the certificate.</p>
     pub fn private_key(mut self, input: ::aws_smithy_types::Blob) -> Self {
@@ -115,6 +123,10 @@ impl ImportCertificateInputBuilder {
         self.private_key = input;
         self
     }
+    /// <p>The private key that matches the public key in the certificate.</p>
+    pub fn get_private_key(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.private_key
+    }
     /// <p>The PEM encoded certificate chain.</p>
     pub fn certificate_chain(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.certificate_chain = ::std::option::Option::Some(input);
@@ -127,6 +139,10 @@ impl ImportCertificateInputBuilder {
     ) -> Self {
         self.certificate_chain = input;
         self
+    }
+    /// <p>The PEM encoded certificate chain.</p>
+    pub fn get_certificate_chain(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.certificate_chain
     }
     /// Appends an item to `tags`.
     ///
@@ -148,6 +164,11 @@ impl ImportCertificateInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>One or more resource tags to associate with the imported certificate. </p>
+    /// <p>Note: You cannot apply tags when reimporting a certificate.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`ImportCertificateInput`](crate::operation::import_certificate::ImportCertificateInput).
     pub fn build(

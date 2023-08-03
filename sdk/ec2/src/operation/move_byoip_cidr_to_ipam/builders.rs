@@ -37,6 +37,12 @@ impl MoveByoipCidrToIpamFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the MoveByoipCidrToIpam as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::move_byoip_cidr_to_ipam::builders::MoveByoipCidrToIpamInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl MoveByoipCidrToIpamFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>The BYOIP CIDR.</p>
     pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cidr(input.into());
@@ -137,6 +147,10 @@ impl MoveByoipCidrToIpamFluentBuilder {
         self.inner = self.inner.set_cidr(input);
         self
     }
+    /// <p>The BYOIP CIDR.</p>
+    pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cidr()
+    }
     /// <p>The IPAM pool ID.</p>
     pub fn ipam_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ipam_pool_id(input.into());
@@ -146,6 +160,10 @@ impl MoveByoipCidrToIpamFluentBuilder {
     pub fn set_ipam_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ipam_pool_id(input);
         self
+    }
+    /// <p>The IPAM pool ID.</p>
+    pub fn get_ipam_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ipam_pool_id()
     }
     /// <p>The Amazon Web Services account ID of the owner of the IPAM pool.</p>
     pub fn ipam_pool_owner(
@@ -162,5 +180,9 @@ impl MoveByoipCidrToIpamFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ipam_pool_owner(input);
         self
+    }
+    /// <p>The Amazon Web Services account ID of the owner of the IPAM pool.</p>
+    pub fn get_ipam_pool_owner(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ipam_pool_owner()
     }
 }

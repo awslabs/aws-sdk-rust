@@ -55,6 +55,10 @@ impl CreateLayoutInputBuilder {
         self.domain_id = input;
         self
     }
+    /// <p>The unique identifier of the Cases domain. </p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_id
+    }
     /// <p>The name of the layout. It must be unique for the Cases domain.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl CreateLayoutInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the layout. It must be unique for the Cases domain.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Information about which fields will be present in the layout, and information about the order of the fields.</p>
     pub fn content(mut self, input: crate::types::LayoutContent) -> Self {
@@ -77,6 +85,10 @@ impl CreateLayoutInputBuilder {
     ) -> Self {
         self.content = input;
         self
+    }
+    /// <p>Information about which fields will be present in the layout, and information about the order of the fields.</p>
+    pub fn get_content(&self) -> &::std::option::Option<crate::types::LayoutContent> {
+        &self.content
     }
     /// Consumes the builder and constructs a [`CreateLayoutInput`](crate::operation::create_layout::CreateLayoutInput).
     pub fn build(

@@ -48,6 +48,10 @@ impl DataCatalogSummaryBuilder {
         self.catalog_name = input;
         self
     }
+    /// <p>The name of the data catalog. The catalog name is unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>
+    pub fn get_catalog_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_name
+    }
     /// <p>The data catalog type.</p>
     pub fn r#type(mut self, input: crate::types::DataCatalogType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl DataCatalogSummaryBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DataCatalogType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The data catalog type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::DataCatalogType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`DataCatalogSummary`](crate::types::DataCatalogSummary).
     pub fn build(self) -> crate::types::DataCatalogSummary {

@@ -62,6 +62,12 @@ impl DescribeDomainNodesOutputBuilder {
         self.domain_nodes_status_list = input;
         self
     }
+    /// <p>Contains nodes information list <code>DomainNodesStatusList</code> with details about the all nodes on the requested domain.</p>
+    pub fn get_domain_nodes_status_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainNodesStatus>> {
+        &self.domain_nodes_status_list
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -47,6 +47,10 @@ impl DeleteAssessmentFrameworkShareInputBuilder {
         self.request_id = input;
         self
     }
+    /// <p>The unique identifier for the share request to be deleted.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
+    }
     /// <p>Specifies whether the share request is a sent request or a received request.</p>
     pub fn request_type(mut self, input: crate::types::ShareRequestType) -> Self {
         self.request_type = ::std::option::Option::Some(input);
@@ -59,6 +63,10 @@ impl DeleteAssessmentFrameworkShareInputBuilder {
     ) -> Self {
         self.request_type = input;
         self
+    }
+    /// <p>Specifies whether the share request is a sent request or a received request.</p>
+    pub fn get_request_type(&self) -> &::std::option::Option<crate::types::ShareRequestType> {
+        &self.request_type
     }
     /// Consumes the builder and constructs a [`DeleteAssessmentFrameworkShareInput`](crate::operation::delete_assessment_framework_share::DeleteAssessmentFrameworkShareInput).
     pub fn build(

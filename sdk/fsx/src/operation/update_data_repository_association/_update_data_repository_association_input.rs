@@ -71,6 +71,10 @@ impl UpdateDataRepositoryAssociationInputBuilder {
         self.association_id = input;
         self
     }
+    /// <p>The ID of the data repository association that you are updating.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_id
+    }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn client_request_token(
         mut self,
@@ -87,6 +91,10 @@ impl UpdateDataRepositoryAssociationInputBuilder {
         self.client_request_token = input;
         self
     }
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
+    }
     /// <p>For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.</p>
     /// <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
     pub fn imported_file_chunk_size(mut self, input: i32) -> Self {
@@ -98,6 +106,11 @@ impl UpdateDataRepositoryAssociationInputBuilder {
     pub fn set_imported_file_chunk_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.imported_file_chunk_size = input;
         self
+    }
+    /// <p>For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.</p>
+    /// <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
+    pub fn get_imported_file_chunk_size(&self) -> &::std::option::Option<i32> {
+        &self.imported_file_chunk_size
     }
     /// <p>The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data repository association. The configuration defines which file events (new, changed, or deleted files or directories) are automatically imported from the linked data repository to the file system or automatically exported from the file system to the data repository.</p>
     pub fn s3(mut self, input: crate::types::S3DataRepositoryConfiguration) -> Self {
@@ -111,6 +124,10 @@ impl UpdateDataRepositoryAssociationInputBuilder {
     ) -> Self {
         self.s3 = input;
         self
+    }
+    /// <p>The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data repository association. The configuration defines which file events (new, changed, or deleted files or directories) are automatically imported from the linked data repository to the file system or automatically exported from the file system to the data repository.</p>
+    pub fn get_s3(&self) -> &::std::option::Option<crate::types::S3DataRepositoryConfiguration> {
+        &self.s3
     }
     /// Consumes the builder and constructs a [`UpdateDataRepositoryAssociationInput`](crate::operation::update_data_repository_association::UpdateDataRepositoryAssociationInput).
     pub fn build(

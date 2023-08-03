@@ -189,6 +189,10 @@ impl UpdateSiteRackPhysicalPropertiesInputBuilder {
         self.site_id = input;
         self
     }
+    /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
+    pub fn get_site_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.site_id
+    }
     /// <p>The power draw, in kVA, available at the hardware placement position for the rack.</p>
     pub fn power_draw_kva(mut self, input: crate::types::PowerDrawKva) -> Self {
         self.power_draw_kva = ::std::option::Option::Some(input);
@@ -201,6 +205,10 @@ impl UpdateSiteRackPhysicalPropertiesInputBuilder {
     ) -> Self {
         self.power_draw_kva = input;
         self
+    }
+    /// <p>The power draw, in kVA, available at the hardware placement position for the rack.</p>
+    pub fn get_power_draw_kva(&self) -> &::std::option::Option<crate::types::PowerDrawKva> {
+        &self.power_draw_kva
     }
     /// <p>The power option that you can provide for hardware. </p>
     /// <ul>
@@ -222,6 +230,14 @@ impl UpdateSiteRackPhysicalPropertiesInputBuilder {
     ) -> Self {
         self.power_phase = input;
         self
+    }
+    /// <p>The power option that you can provide for hardware. </p>
+    /// <ul>
+    /// <li> <p>Single-phase AC feed: 200 V to 277 V, 50 Hz or 60 Hz</p> </li>
+    /// <li> <p>Three-phase AC feed: 346 V to 480 V, 50 Hz or 60 Hz</p> </li>
+    /// </ul>
+    pub fn get_power_phase(&self) -> &::std::option::Option<crate::types::PowerPhase> {
+        &self.power_phase
     }
     /// <p>The power connector that Amazon Web Services should plan to provide for connections to the hardware. Note the correlation between <code>PowerPhase</code> and <code>PowerConnector</code>. </p>
     /// <ul>
@@ -260,6 +276,22 @@ impl UpdateSiteRackPhysicalPropertiesInputBuilder {
         self.power_connector = input;
         self
     }
+    /// <p>The power connector that Amazon Web Services should plan to provide for connections to the hardware. Note the correlation between <code>PowerPhase</code> and <code>PowerConnector</code>. </p>
+    /// <ul>
+    /// <li> <p>Single-phase AC feed</p>
+    /// <ul>
+    /// <li> <p> <b>L6-30P</b> – (common in US); 30A; single phase</p> </li>
+    /// <li> <p> <b>IEC309 (blue)</b> – P+N+E, 6hr; 32 A; single phase</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Three-phase AC feed</p>
+    /// <ul>
+    /// <li> <p> <b>AH530P7W (red)</b> – 3P+N+E, 7hr; 30A; three phase</p> </li>
+    /// <li> <p> <b>AH532P6W (red)</b> – 3P+N+E, 6hr; 32A; three phase</p> </li>
+    /// </ul> </li>
+    /// </ul>
+    pub fn get_power_connector(&self) -> &::std::option::Option<crate::types::PowerConnector> {
+        &self.power_connector
+    }
     /// <p>Indicates whether the power feed comes above or below the rack. </p>
     pub fn power_feed_drop(mut self, input: crate::types::PowerFeedDrop) -> Self {
         self.power_feed_drop = ::std::option::Option::Some(input);
@@ -273,6 +305,10 @@ impl UpdateSiteRackPhysicalPropertiesInputBuilder {
         self.power_feed_drop = input;
         self
     }
+    /// <p>Indicates whether the power feed comes above or below the rack. </p>
+    pub fn get_power_feed_drop(&self) -> &::std::option::Option<crate::types::PowerFeedDrop> {
+        &self.power_feed_drop
+    }
     /// <p>The uplink speed the rack should support for the connection to the Region. </p>
     pub fn uplink_gbps(mut self, input: crate::types::UplinkGbps) -> Self {
         self.uplink_gbps = ::std::option::Option::Some(input);
@@ -285,6 +321,10 @@ impl UpdateSiteRackPhysicalPropertiesInputBuilder {
     ) -> Self {
         self.uplink_gbps = input;
         self
+    }
+    /// <p>The uplink speed the rack should support for the connection to the Region. </p>
+    pub fn get_uplink_gbps(&self) -> &::std::option::Option<crate::types::UplinkGbps> {
+        &self.uplink_gbps
     }
     /// <p>Racks come with two Outpost network devices. Depending on the supported uplink speed at the site, the Outpost network devices provide a variable number of uplinks. Specify the number of uplinks for each Outpost network device that you intend to use to connect the rack to your network. Note the correlation between <code>UplinkGbps</code> and <code>UplinkCount</code>. </p>
     /// <ul>
@@ -309,6 +349,15 @@ impl UpdateSiteRackPhysicalPropertiesInputBuilder {
         self.uplink_count = input;
         self
     }
+    /// <p>Racks come with two Outpost network devices. Depending on the supported uplink speed at the site, the Outpost network devices provide a variable number of uplinks. Specify the number of uplinks for each Outpost network device that you intend to use to connect the rack to your network. Note the correlation between <code>UplinkGbps</code> and <code>UplinkCount</code>. </p>
+    /// <ul>
+    /// <li> <p>1Gbps - Uplinks available: 1, 2, 4, 6, 8</p> </li>
+    /// <li> <p>10Gbps - Uplinks available: 1, 2, 4, 8, 12, 16</p> </li>
+    /// <li> <p>40 and 100 Gbps- Uplinks available: 1, 2, 4</p> </li>
+    /// </ul>
+    pub fn get_uplink_count(&self) -> &::std::option::Option<crate::types::UplinkCount> {
+        &self.uplink_count
+    }
     /// <p>The type of fiber that you will use to attach the Outpost to your network. </p>
     pub fn fiber_optic_cable_type(mut self, input: crate::types::FiberOpticCableType) -> Self {
         self.fiber_optic_cable_type = ::std::option::Option::Some(input);
@@ -321,6 +370,12 @@ impl UpdateSiteRackPhysicalPropertiesInputBuilder {
     ) -> Self {
         self.fiber_optic_cable_type = input;
         self
+    }
+    /// <p>The type of fiber that you will use to attach the Outpost to your network. </p>
+    pub fn get_fiber_optic_cable_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::FiberOpticCableType> {
+        &self.fiber_optic_cable_type
     }
     /// <p>The type of optical standard that you will use to attach the Outpost to your network. This field is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a> in the Amazon Web Services Outposts User Guide. </p>
     /// <ul>
@@ -365,6 +420,25 @@ impl UpdateSiteRackPhysicalPropertiesInputBuilder {
         self.optical_standard = input;
         self
     }
+    /// <p>The type of optical standard that you will use to attach the Outpost to your network. This field is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a> in the Amazon Web Services Outposts User Guide. </p>
+    /// <ul>
+    /// <li> <p> <code>OPTIC_10GBASE_SR</code>: 10GBASE-SR</p> </li>
+    /// <li> <p> <code>OPTIC_10GBASE_IR</code>: 10GBASE-IR</p> </li>
+    /// <li> <p> <code>OPTIC_10GBASE_LR</code>: 10GBASE-LR</p> </li>
+    /// <li> <p> <code>OPTIC_40GBASE_SR</code>: 40GBASE-SR</p> </li>
+    /// <li> <p> <code>OPTIC_40GBASE_ESR</code>: 40GBASE-ESR</p> </li>
+    /// <li> <p> <code>OPTIC_40GBASE_IR4_LR4L</code>: 40GBASE-IR (LR4L)</p> </li>
+    /// <li> <p> <code>OPTIC_40GBASE_LR4</code>: 40GBASE-LR4</p> </li>
+    /// <li> <p> <code>OPTIC_100GBASE_SR4</code>: 100GBASE-SR4</p> </li>
+    /// <li> <p> <code>OPTIC_100GBASE_CWDM4</code>: 100GBASE-CWDM4</p> </li>
+    /// <li> <p> <code>OPTIC_100GBASE_LR4</code>: 100GBASE-LR4</p> </li>
+    /// <li> <p> <code>OPTIC_100G_PSM4_MSA</code>: 100G PSM4 MSA</p> </li>
+    /// <li> <p> <code>OPTIC_1000BASE_LX</code>: 1000Base-LX</p> </li>
+    /// <li> <p> <code>OPTIC_1000BASE_SX</code> : 1000Base-SX</p> </li>
+    /// </ul>
+    pub fn get_optical_standard(&self) -> &::std::option::Option<crate::types::OpticalStandard> {
+        &self.optical_standard
+    }
     /// <p>The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs. </p>
     pub fn maximum_supported_weight_lbs(
         mut self,
@@ -380,6 +454,12 @@ impl UpdateSiteRackPhysicalPropertiesInputBuilder {
     ) -> Self {
         self.maximum_supported_weight_lbs = input;
         self
+    }
+    /// <p>The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs. </p>
+    pub fn get_maximum_supported_weight_lbs(
+        &self,
+    ) -> &::std::option::Option<crate::types::MaximumSupportedWeightLbs> {
+        &self.maximum_supported_weight_lbs
     }
     /// Consumes the builder and constructs a [`UpdateSiteRackPhysicalPropertiesInput`](crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -36,6 +36,10 @@ impl StartRecommendationReportGenerationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartRecommendationReportGeneration as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_recommendation_report_generation::builders::StartRecommendationReportGenerationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -103,6 +107,10 @@ impl StartRecommendationReportGenerationFluentBuilder {
         self.inner = self.inner.set_output_format(input);
         self
     }
+    /// <p> The output format for the recommendation report file. The default format is Microsoft Excel. </p>
+    pub fn get_output_format(&self) -> &::std::option::Option<crate::types::OutputFormat> {
+        self.inner.get_output_format()
+    }
     /// Appends an item to `groupIdFilter`.
     ///
     /// To override the contents of this collection use [`set_group_id_filter`](Self::set_group_id_filter).
@@ -119,5 +127,11 @@ impl StartRecommendationReportGenerationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_group_id_filter(input);
         self
+    }
+    /// <p> Groups the resources in the recommendation report with a unique name. </p>
+    pub fn get_group_id_filter(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Group>> {
+        self.inner.get_group_id_filter()
     }
 }

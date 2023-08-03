@@ -96,6 +96,10 @@ impl IpAddressResponseBuilder {
         self.ip_id = input;
         self
     }
+    /// <p>The ID of one IP address.</p>
+    pub fn get_ip_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_id
+    }
     /// <p>The ID of one subnet.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl IpAddressResponseBuilder {
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_id = input;
         self
+    }
+    /// <p>The ID of one subnet.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
     }
     /// <p>One IPv4 address that the Resolver endpoint uses for DNS queries.</p>
     pub fn ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -116,6 +124,10 @@ impl IpAddressResponseBuilder {
         self.ip = input;
         self
     }
+    /// <p>One IPv4 address that the Resolver endpoint uses for DNS queries.</p>
+    pub fn get_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip
+    }
     /// <p> One IPv6 address that the Resolver endpoint uses for DNS queries. </p>
     pub fn ipv6(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipv6 = ::std::option::Option::Some(input.into());
@@ -125,6 +137,10 @@ impl IpAddressResponseBuilder {
     pub fn set_ipv6(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipv6 = input;
         self
+    }
+    /// <p> One IPv6 address that the Resolver endpoint uses for DNS queries. </p>
+    pub fn get_ipv6(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv6
     }
     /// <p>A status code that gives the current status of the request.</p>
     pub fn status(mut self, input: crate::types::IpAddressStatus) -> Self {
@@ -138,6 +154,10 @@ impl IpAddressResponseBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>A status code that gives the current status of the request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::IpAddressStatus> {
+        &self.status
     }
     /// <p>A message that provides additional information about the status of the request.</p>
     pub fn status_message(
@@ -155,6 +175,10 @@ impl IpAddressResponseBuilder {
         self.status_message = input;
         self
     }
+    /// <p>A message that provides additional information about the status of the request.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>The date and time that the IP address was created, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub fn creation_time(
         mut self,
@@ -171,6 +195,10 @@ impl IpAddressResponseBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The date and time that the IP address was created, in Unix time format and Coordinated Universal Time (UTC).</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_time
+    }
     /// <p>The date and time that the IP address was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub fn modification_time(
         mut self,
@@ -186,6 +214,10 @@ impl IpAddressResponseBuilder {
     ) -> Self {
         self.modification_time = input;
         self
+    }
+    /// <p>The date and time that the IP address was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
+    pub fn get_modification_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.modification_time
     }
     /// Consumes the builder and constructs a [`IpAddressResponse`](crate::types::IpAddressResponse).
     pub fn build(self) -> crate::types::IpAddressResponse {

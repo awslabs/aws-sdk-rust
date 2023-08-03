@@ -65,6 +65,10 @@ impl ArchivalSummaryBuilder {
         self.archival_date_time = input;
         self
     }
+    /// <p>The date and time when table archival was initiated by DynamoDB, in UNIX epoch time format.</p>
+    pub fn get_archival_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.archival_date_time
+    }
     /// <p>The reason DynamoDB archived the table. Currently, the only possible value is:</p>
     /// <ul>
     /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The table was archived due to the table's KMS key being inaccessible for more than seven days. An On-Demand backup was created at the archival time.</p> </li>
@@ -87,6 +91,13 @@ impl ArchivalSummaryBuilder {
         self.archival_reason = input;
         self
     }
+    /// <p>The reason DynamoDB archived the table. Currently, the only possible value is:</p>
+    /// <ul>
+    /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The table was archived due to the table's KMS key being inaccessible for more than seven days. An On-Demand backup was created at the archival time.</p> </li>
+    /// </ul>
+    pub fn get_archival_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.archival_reason
+    }
     /// <p>The Amazon Resource Name (ARN) of the backup the table was archived to, when applicable in the archival reason. If you wish to restore this backup to the same table name, you will need to delete the original table.</p>
     pub fn archival_backup_arn(
         mut self,
@@ -102,6 +113,10 @@ impl ArchivalSummaryBuilder {
     ) -> Self {
         self.archival_backup_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the backup the table was archived to, when applicable in the archival reason. If you wish to restore this backup to the same table name, you will need to delete the original table.</p>
+    pub fn get_archival_backup_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.archival_backup_arn
     }
     /// Consumes the builder and constructs a [`ArchivalSummary`](crate::types::ArchivalSummary).
     pub fn build(self) -> crate::types::ArchivalSummary {

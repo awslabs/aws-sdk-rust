@@ -73,6 +73,10 @@ impl VpcConfigResponseBuilder {
         self.subnets = input;
         self
     }
+    /// <p>A list of subnet IDs associated with the simulation job.</p>
+    pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnets
+    }
     /// Appends an item to `security_groups`.
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
@@ -95,6 +99,12 @@ impl VpcConfigResponseBuilder {
         self.security_groups = input;
         self
     }
+    /// <p>A list of security group IDs associated with the simulation job.</p>
+    pub fn get_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_groups
+    }
     /// <p>The VPC ID associated with your simulation job.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -105,6 +115,10 @@ impl VpcConfigResponseBuilder {
         self.vpc_id = input;
         self
     }
+    /// <p>The VPC ID associated with your simulation job.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
+    }
     /// <p>A boolean indicating if a public IP was assigned.</p>
     pub fn assign_public_ip(mut self, input: bool) -> Self {
         self.assign_public_ip = ::std::option::Option::Some(input);
@@ -114,6 +128,10 @@ impl VpcConfigResponseBuilder {
     pub fn set_assign_public_ip(mut self, input: ::std::option::Option<bool>) -> Self {
         self.assign_public_ip = input;
         self
+    }
+    /// <p>A boolean indicating if a public IP was assigned.</p>
+    pub fn get_assign_public_ip(&self) -> &::std::option::Option<bool> {
+        &self.assign_public_ip
     }
     /// Consumes the builder and constructs a [`VpcConfigResponse`](crate::types::VpcConfigResponse).
     pub fn build(self) -> crate::types::VpcConfigResponse {

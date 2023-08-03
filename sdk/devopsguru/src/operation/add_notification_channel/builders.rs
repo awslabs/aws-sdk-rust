@@ -38,6 +38,13 @@ impl AddNotificationChannelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AddNotificationChannel as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::add_notification_channel::builders::AddNotificationChannelInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,5 +137,9 @@ impl AddNotificationChannelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_config(input);
         self
+    }
+    /// <p> A <code>NotificationChannelConfig</code> object that specifies what type of notification channel to add. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
+    pub fn get_config(&self) -> &::std::option::Option<crate::types::NotificationChannelConfig> {
+        self.inner.get_config()
     }
 }

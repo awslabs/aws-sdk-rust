@@ -80,6 +80,10 @@ impl ReviewResultDetailBuilder {
         self.action_id = input;
         self
     }
+    /// <p> A unique identifier of the Review action result. </p>
+    pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_id
+    }
     /// <p>The HITID or AssignmentId about which this result was taken. Note that HIT-level Review Policies will often emit results about both the HIT itself and its Assignments, while Assignment-level review policies generally only emit results about the Assignment itself. </p>
     pub fn subject_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subject_id = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl ReviewResultDetailBuilder {
     pub fn set_subject_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subject_id = input;
         self
+    }
+    /// <p>The HITID or AssignmentId about which this result was taken. Note that HIT-level Review Policies will often emit results about both the HIT itself and its Assignments, while Assignment-level review policies generally only emit results about the Assignment itself. </p>
+    pub fn get_subject_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subject_id
     }
     /// <p> The type of the object from the SubjectId field.</p>
     pub fn subject_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -100,6 +108,10 @@ impl ReviewResultDetailBuilder {
         self.subject_type = input;
         self
     }
+    /// <p> The type of the object from the SubjectId field.</p>
+    pub fn get_subject_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subject_type
+    }
     /// <p> Specifies the QuestionId the result is describing. Depending on whether the TargetType is a HIT or Assignment this results could specify multiple values. If TargetType is HIT and QuestionId is absent, then the result describes results of the HIT, including the HIT agreement score. If ObjectType is Assignment and QuestionId is absent, then the result describes the Worker's performance on the HIT. </p>
     pub fn question_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.question_id = ::std::option::Option::Some(input.into());
@@ -109,6 +121,10 @@ impl ReviewResultDetailBuilder {
     pub fn set_question_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.question_id = input;
         self
+    }
+    /// <p> Specifies the QuestionId the result is describing. Depending on whether the TargetType is a HIT or Assignment this results could specify multiple values. If TargetType is HIT and QuestionId is absent, then the result describes results of the HIT, including the HIT agreement score. If ObjectType is Assignment and QuestionId is absent, then the result describes the Worker's performance on the HIT. </p>
+    pub fn get_question_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.question_id
     }
     /// <p> Key identifies the particular piece of reviewed information. </p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -120,6 +136,10 @@ impl ReviewResultDetailBuilder {
         self.key = input;
         self
     }
+    /// <p> Key identifies the particular piece of reviewed information. </p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p> The values of Key provided by the review policies you have selected. </p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -129,6 +149,10 @@ impl ReviewResultDetailBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p> The values of Key provided by the review policies you have selected. </p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`ReviewResultDetail`](crate::types::ReviewResultDetail).
     pub fn build(self) -> crate::types::ReviewResultDetail {

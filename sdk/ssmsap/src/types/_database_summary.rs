@@ -94,6 +94,10 @@ impl DatabaseSummaryBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The ID of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The ID of the component.</p>
     pub fn component_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_id = ::std::option::Option::Some(input.into());
@@ -104,6 +108,10 @@ impl DatabaseSummaryBuilder {
         self.component_id = input;
         self
     }
+    /// <p>The ID of the component.</p>
+    pub fn get_component_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_id
+    }
     /// <p>The ID of the database.</p>
     pub fn database_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_id = ::std::option::Option::Some(input.into());
@@ -113,6 +121,10 @@ impl DatabaseSummaryBuilder {
     pub fn set_database_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_id = input;
         self
+    }
+    /// <p>The ID of the database.</p>
+    pub fn get_database_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_id
     }
     /// <p>The type of the database.</p>
     pub fn database_type(mut self, input: crate::types::DatabaseType) -> Self {
@@ -127,6 +139,10 @@ impl DatabaseSummaryBuilder {
         self.database_type = input;
         self
     }
+    /// <p>The type of the database.</p>
+    pub fn get_database_type(&self) -> &::std::option::Option<crate::types::DatabaseType> {
+        &self.database_type
+    }
     /// <p>The Amazon Resource Name (ARN) of the database.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -136,6 +152,10 @@ impl DatabaseSummaryBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the database.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -161,6 +181,14 @@ impl DatabaseSummaryBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags of the database.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`DatabaseSummary`](crate::types::DatabaseSummary).
     pub fn build(self) -> crate::types::DatabaseSummary {

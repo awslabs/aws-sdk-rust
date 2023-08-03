@@ -48,6 +48,10 @@ impl UpdateAnomalyMonitorInputBuilder {
         self.monitor_arn = input;
         self
     }
+    /// <p>Cost anomaly monitor Amazon Resource Names (ARNs). </p>
+    pub fn get_monitor_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitor_arn
+    }
     /// <p>The new name for the cost anomaly monitor. </p>
     pub fn monitor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitor_name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl UpdateAnomalyMonitorInputBuilder {
     pub fn set_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monitor_name = input;
         self
+    }
+    /// <p>The new name for the cost anomaly monitor. </p>
+    pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitor_name
     }
     /// Consumes the builder and constructs a [`UpdateAnomalyMonitorInput`](crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorInput).
     pub fn build(

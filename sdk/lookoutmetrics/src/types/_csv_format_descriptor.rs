@@ -83,6 +83,10 @@ impl CsvFormatDescriptorBuilder {
         self.file_compression = input;
         self
     }
+    /// <p>The level of compression of the source CSV file.</p>
+    pub fn get_file_compression(&self) -> &::std::option::Option<crate::types::CsvFileCompression> {
+        &self.file_compression
+    }
     /// <p>The character set in which the source CSV file is written.</p>
     pub fn charset(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.charset = ::std::option::Option::Some(input.into());
@@ -92,6 +96,10 @@ impl CsvFormatDescriptorBuilder {
     pub fn set_charset(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.charset = input;
         self
+    }
+    /// <p>The character set in which the source CSV file is written.</p>
+    pub fn get_charset(&self) -> &::std::option::Option<::std::string::String> {
+        &self.charset
     }
     /// <p>Whether or not the source CSV file contains a header.</p>
     pub fn contains_header(mut self, input: bool) -> Self {
@@ -103,6 +111,10 @@ impl CsvFormatDescriptorBuilder {
         self.contains_header = input;
         self
     }
+    /// <p>Whether or not the source CSV file contains a header.</p>
+    pub fn get_contains_header(&self) -> &::std::option::Option<bool> {
+        &self.contains_header
+    }
     /// <p>The character used to delimit the source CSV file.</p>
     pub fn delimiter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delimiter = ::std::option::Option::Some(input.into());
@@ -112,6 +124,10 @@ impl CsvFormatDescriptorBuilder {
     pub fn set_delimiter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delimiter = input;
         self
+    }
+    /// <p>The character used to delimit the source CSV file.</p>
+    pub fn get_delimiter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delimiter
     }
     /// Appends an item to `header_list`.
     ///
@@ -132,6 +148,12 @@ impl CsvFormatDescriptorBuilder {
         self.header_list = input;
         self
     }
+    /// <p>A list of the source CSV file's headers, if any.</p>
+    pub fn get_header_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.header_list
+    }
     /// <p>The character used as a quote character.</p>
     pub fn quote_symbol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quote_symbol = ::std::option::Option::Some(input.into());
@@ -141,6 +163,10 @@ impl CsvFormatDescriptorBuilder {
     pub fn set_quote_symbol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.quote_symbol = input;
         self
+    }
+    /// <p>The character used as a quote character.</p>
+    pub fn get_quote_symbol(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quote_symbol
     }
     /// Consumes the builder and constructs a [`CsvFormatDescriptor`](crate::types::CsvFormatDescriptor).
     pub fn build(self) -> crate::types::CsvFormatDescriptor {

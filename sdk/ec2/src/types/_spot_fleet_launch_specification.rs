@@ -250,6 +250,12 @@ impl SpotFleetLaunchSpecificationBuilder {
         self.security_groups = input;
         self
     }
+    /// <p>The security groups.</p>
+    pub fn get_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>> {
+        &self.security_groups
+    }
     /// <p>Deprecated.</p>
     pub fn addressing_type(
         mut self,
@@ -265,6 +271,10 @@ impl SpotFleetLaunchSpecificationBuilder {
     ) -> Self {
         self.addressing_type = input;
         self
+    }
+    /// <p>Deprecated.</p>
+    pub fn get_addressing_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.addressing_type
     }
     /// Appends an item to `block_device_mappings`.
     ///
@@ -285,6 +295,12 @@ impl SpotFleetLaunchSpecificationBuilder {
         self.block_device_mappings = input;
         self
     }
+    /// <p>One or more block devices that are mapped to the Spot Instances. You can't specify both a snapshot ID and an encryption value. This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank and its encryption status is used for the volume encryption status.</p>
+    pub fn get_block_device_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>> {
+        &self.block_device_mappings
+    }
     /// <p>Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
     /// <p>Default: <code>false</code> </p>
     pub fn ebs_optimized(mut self, input: bool) -> Self {
@@ -296,6 +312,11 @@ impl SpotFleetLaunchSpecificationBuilder {
     pub fn set_ebs_optimized(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ebs_optimized = input;
         self
+    }
+    /// <p>Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
+    /// <p>Default: <code>false</code> </p>
+    pub fn get_ebs_optimized(&self) -> &::std::option::Option<bool> {
+        &self.ebs_optimized
     }
     /// <p>The IAM instance profile.</p>
     pub fn iam_instance_profile(
@@ -313,6 +334,12 @@ impl SpotFleetLaunchSpecificationBuilder {
         self.iam_instance_profile = input;
         self
     }
+    /// <p>The IAM instance profile.</p>
+    pub fn get_iam_instance_profile(
+        &self,
+    ) -> &::std::option::Option<crate::types::IamInstanceProfileSpecification> {
+        &self.iam_instance_profile
+    }
     /// <p>The ID of the AMI.</p>
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
@@ -322,6 +349,10 @@ impl SpotFleetLaunchSpecificationBuilder {
     pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_id = input;
         self
+    }
+    /// <p>The ID of the AMI.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_id
     }
     /// <p>The instance type.</p>
     pub fn instance_type(mut self, input: crate::types::InstanceType) -> Self {
@@ -336,6 +367,10 @@ impl SpotFleetLaunchSpecificationBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The instance type.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
+        &self.instance_type
+    }
     /// <p>The ID of the kernel.</p>
     pub fn kernel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kernel_id = ::std::option::Option::Some(input.into());
@@ -346,6 +381,10 @@ impl SpotFleetLaunchSpecificationBuilder {
         self.kernel_id = input;
         self
     }
+    /// <p>The ID of the kernel.</p>
+    pub fn get_kernel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kernel_id
+    }
     /// <p>The name of the key pair.</p>
     pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_name = ::std::option::Option::Some(input.into());
@@ -355,6 +394,10 @@ impl SpotFleetLaunchSpecificationBuilder {
     pub fn set_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_name = input;
         self
+    }
+    /// <p>The name of the key pair.</p>
+    pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_name
     }
     /// <p>Enable or disable monitoring for the instances.</p>
     pub fn monitoring(mut self, input: crate::types::SpotFleetMonitoring) -> Self {
@@ -368,6 +411,10 @@ impl SpotFleetLaunchSpecificationBuilder {
     ) -> Self {
         self.monitoring = input;
         self
+    }
+    /// <p>Enable or disable monitoring for the instances.</p>
+    pub fn get_monitoring(&self) -> &::std::option::Option<crate::types::SpotFleetMonitoring> {
+        &self.monitoring
     }
     /// Appends an item to `network_interfaces`.
     ///
@@ -397,6 +444,15 @@ impl SpotFleetLaunchSpecificationBuilder {
         self.network_interfaces = input;
         self
     }
+    /// <p>One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p> <note>
+    /// <p> <code>SpotFleetLaunchSpecification</code> currently does not support Elastic Fabric Adapter (EFA). To specify an EFA, you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p>
+    /// </note>
+    pub fn get_network_interfaces(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>>
+    {
+        &self.network_interfaces
+    }
     /// <p>The placement information.</p>
     pub fn placement(mut self, input: crate::types::SpotPlacement) -> Self {
         self.placement = ::std::option::Option::Some(input);
@@ -410,6 +466,10 @@ impl SpotFleetLaunchSpecificationBuilder {
         self.placement = input;
         self
     }
+    /// <p>The placement information.</p>
+    pub fn get_placement(&self) -> &::std::option::Option<crate::types::SpotPlacement> {
+        &self.placement
+    }
     /// <p>The ID of the RAM disk. Some kernels require additional drivers at launch. Check the kernel requirements for information about whether you need to specify a RAM disk. To find kernel requirements, refer to the Amazon Web Services Resource Center and search for the kernel ID.</p>
     pub fn ramdisk_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ramdisk_id = ::std::option::Option::Some(input.into());
@@ -419,6 +479,10 @@ impl SpotFleetLaunchSpecificationBuilder {
     pub fn set_ramdisk_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ramdisk_id = input;
         self
+    }
+    /// <p>The ID of the RAM disk. Some kernels require additional drivers at launch. Check the kernel requirements for information about whether you need to specify a RAM disk. To find kernel requirements, refer to the Amazon Web Services Resource Center and search for the kernel ID.</p>
+    pub fn get_ramdisk_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ramdisk_id
     }
     /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
@@ -434,6 +498,12 @@ impl SpotFleetLaunchSpecificationBuilder {
         self.spot_price = input;
         self
     }
+    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
+    /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
+    /// </important>
+    pub fn get_spot_price(&self) -> &::std::option::Option<::std::string::String> {
+        &self.spot_price
+    }
     /// <p>The IDs of the subnets in which to launch the instances. To specify multiple subnets, separate them using commas; for example, "subnet-1234abcdeexample1, subnet-0987cdef6example2".</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
@@ -444,6 +514,10 @@ impl SpotFleetLaunchSpecificationBuilder {
         self.subnet_id = input;
         self
     }
+    /// <p>The IDs of the subnets in which to launch the instances. To specify multiple subnets, separate them using commas; for example, "subnet-1234abcdeexample1, subnet-0987cdef6example2".</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
+    }
     /// <p>The base64-encoded user data that instances use when starting up. User data is limited to 16 KB.</p>
     pub fn user_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_data = ::std::option::Option::Some(input.into());
@@ -453,6 +527,10 @@ impl SpotFleetLaunchSpecificationBuilder {
     pub fn set_user_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_data = input;
         self
+    }
+    /// <p>The base64-encoded user data that instances use when starting up. User data is limited to 16 KB.</p>
+    pub fn get_user_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_data
     }
     /// <p>The number of units provided by the specified instance type. These are the same units that you chose to set the target capacity in terms of instances, or a performance characteristic such as vCPUs, memory, or I/O.</p>
     /// <p>If the target capacity divided by this value is not a whole number, Amazon EC2 rounds the number of instances to the next whole number. If this value is not specified, the default is 1.</p>
@@ -465,6 +543,11 @@ impl SpotFleetLaunchSpecificationBuilder {
     pub fn set_weighted_capacity(mut self, input: ::std::option::Option<f64>) -> Self {
         self.weighted_capacity = input;
         self
+    }
+    /// <p>The number of units provided by the specified instance type. These are the same units that you chose to set the target capacity in terms of instances, or a performance characteristic such as vCPUs, memory, or I/O.</p>
+    /// <p>If the target capacity divided by this value is not a whole number, Amazon EC2 rounds the number of instances to the next whole number. If this value is not specified, the default is 1.</p>
+    pub fn get_weighted_capacity(&self) -> &::std::option::Option<f64> {
+        &self.weighted_capacity
     }
     /// Appends an item to `tag_specifications`.
     ///
@@ -485,6 +568,12 @@ impl SpotFleetLaunchSpecificationBuilder {
         self.tag_specifications = input;
         self
     }
+    /// <p>The tags to apply during creation.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SpotFleetTagSpecification>> {
+        &self.tag_specifications
+    }
     /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p> <note>
     /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.</p>
     /// </note>
@@ -501,6 +590,14 @@ impl SpotFleetLaunchSpecificationBuilder {
     ) -> Self {
         self.instance_requirements = input;
         self
+    }
+    /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p> <note>
+    /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.</p>
+    /// </note>
+    pub fn get_instance_requirements(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceRequirements> {
+        &self.instance_requirements
     }
     /// Consumes the builder and constructs a [`SpotFleetLaunchSpecification`](crate::types::SpotFleetLaunchSpecification).
     pub fn build(self) -> crate::types::SpotFleetLaunchSpecification {

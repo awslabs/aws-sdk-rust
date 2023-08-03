@@ -74,6 +74,10 @@ impl DirectoryConnectSettingsBuilder {
         self.vpc_id = input;
         self
     }
+    /// <p>The identifier of the VPC in which the AD Connector is created.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
+    }
     /// Appends an item to `subnet_ids`.
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
@@ -92,6 +96,10 @@ impl DirectoryConnectSettingsBuilder {
     ) -> Self {
         self.subnet_ids = input;
         self
+    }
+    /// <p>A list of subnet identifiers in the VPC in which the AD Connector is created.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
     }
     /// Appends an item to `customer_dns_ips`.
     ///
@@ -114,6 +122,12 @@ impl DirectoryConnectSettingsBuilder {
     ) -> Self {
         self.customer_dns_ips = input;
         self
+    }
+    /// <p>A list of one or more IP addresses of DNS servers or domain controllers in your self-managed directory.</p>
+    pub fn get_customer_dns_ips(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.customer_dns_ips
     }
     /// <p>The user name of an account in your self-managed directory that is used to connect to the directory. This account must have the following permissions:</p>
     /// <ul>
@@ -140,6 +154,15 @@ impl DirectoryConnectSettingsBuilder {
     ) -> Self {
         self.customer_user_name = input;
         self
+    }
+    /// <p>The user name of an account in your self-managed directory that is used to connect to the directory. This account must have the following permissions:</p>
+    /// <ul>
+    /// <li> <p>Read users and groups</p> </li>
+    /// <li> <p>Create computer objects</p> </li>
+    /// <li> <p>Join computers to the domain</p> </li>
+    /// </ul>
+    pub fn get_customer_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.customer_user_name
     }
     /// Consumes the builder and constructs a [`DirectoryConnectSettings`](crate::types::DirectoryConnectSettings).
     pub fn build(self) -> crate::types::DirectoryConnectSettings {

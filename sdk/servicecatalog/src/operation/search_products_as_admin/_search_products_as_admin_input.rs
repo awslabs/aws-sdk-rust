@@ -136,6 +136,14 @@ impl SearchProductsAsAdminInputBuilder {
         self.accept_language = input;
         self
     }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accept_language
+    }
     /// <p>The portfolio identifier.</p>
     pub fn portfolio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portfolio_id = ::std::option::Option::Some(input.into());
@@ -145,6 +153,10 @@ impl SearchProductsAsAdminInputBuilder {
     pub fn set_portfolio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.portfolio_id = input;
         self
+    }
+    /// <p>The portfolio identifier.</p>
+    pub fn get_portfolio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portfolio_id
     }
     /// Adds a key-value pair to `filters`.
     ///
@@ -174,6 +186,17 @@ impl SearchProductsAsAdminInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>The search filters. If no search filters are specified, the output includes all products to which the administrator has access.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::ProductViewFilterBy,
+            ::std::vec::Vec<::std::string::String>,
+        >,
+    > {
+        &self.filters
+    }
     /// <p>The sort field. If no value is specified, the results are not sorted.</p>
     pub fn sort_by(mut self, input: crate::types::ProductViewSortBy) -> Self {
         self.sort_by = ::std::option::Option::Some(input);
@@ -187,6 +210,10 @@ impl SearchProductsAsAdminInputBuilder {
         self.sort_by = input;
         self
     }
+    /// <p>The sort field. If no value is specified, the results are not sorted.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ProductViewSortBy> {
+        &self.sort_by
+    }
     /// <p>The sort order. If no value is specified, the results are not sorted.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -196,6 +223,10 @@ impl SearchProductsAsAdminInputBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p>The sort order. If no value is specified, the results are not sorted.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.sort_order
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -207,6 +238,10 @@ impl SearchProductsAsAdminInputBuilder {
         self.page_token = input;
         self
     }
+    /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.page_token
+    }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.page_size = ::std::option::Option::Some(input);
@@ -216,6 +251,10 @@ impl SearchProductsAsAdminInputBuilder {
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.page_size = input;
         self
+    }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        &self.page_size
     }
     /// <p>Access level of the source of the product.</p>
     pub fn product_source(mut self, input: crate::types::ProductSource) -> Self {
@@ -229,6 +268,10 @@ impl SearchProductsAsAdminInputBuilder {
     ) -> Self {
         self.product_source = input;
         self
+    }
+    /// <p>Access level of the source of the product.</p>
+    pub fn get_product_source(&self) -> &::std::option::Option<crate::types::ProductSource> {
+        &self.product_source
     }
     /// Consumes the builder and constructs a [`SearchProductsAsAdminInput`](crate::operation::search_products_as_admin::SearchProductsAsAdminInput).
     pub fn build(

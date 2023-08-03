@@ -54,6 +54,10 @@ impl WeightedTargetGroupBuilder {
         self.target_group_identifier = input;
         self
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
+    pub fn get_target_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_group_identifier
+    }
     /// <p>Only required if you specify multiple target groups for a forward action. The "weight" determines how requests are distributed to the target group. For example, if you specify two target groups, each with a weight of 10, each target group receives half the requests. If you specify two target groups, one with a weight of 10 and the other with a weight of 20, the target group with a weight of 20 receives twice as many requests as the other target group. If there's only one target group specified, then the default value is 100.</p>
     pub fn weight(mut self, input: i32) -> Self {
         self.weight = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl WeightedTargetGroupBuilder {
     pub fn set_weight(mut self, input: ::std::option::Option<i32>) -> Self {
         self.weight = input;
         self
+    }
+    /// <p>Only required if you specify multiple target groups for a forward action. The "weight" determines how requests are distributed to the target group. For example, if you specify two target groups, each with a weight of 10, each target group receives half the requests. If you specify two target groups, one with a weight of 10 and the other with a weight of 20, the target group with a weight of 20 receives twice as many requests as the other target group. If there's only one target group specified, then the default value is 100.</p>
+    pub fn get_weight(&self) -> &::std::option::Option<i32> {
+        &self.weight
     }
     /// Consumes the builder and constructs a [`WeightedTargetGroup`](crate::types::WeightedTargetGroup).
     pub fn build(self) -> crate::types::WeightedTargetGroup {

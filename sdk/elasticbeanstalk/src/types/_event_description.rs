@@ -107,6 +107,10 @@ impl EventDescriptionBuilder {
         self.event_date = input;
         self
     }
+    /// <p>The date when the event occurred.</p>
+    pub fn get_event_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.event_date
+    }
     /// <p>The event message.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -116,6 +120,10 @@ impl EventDescriptionBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The event message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// <p>The application associated with the event.</p>
     pub fn application_name(
@@ -133,6 +141,10 @@ impl EventDescriptionBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The application associated with the event.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>The release label for the application version associated with this event.</p>
     pub fn version_label(
         mut self,
@@ -148,6 +160,10 @@ impl EventDescriptionBuilder {
     ) -> Self {
         self.version_label = input;
         self
+    }
+    /// <p>The release label for the application version associated with this event.</p>
+    pub fn get_version_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_label
     }
     /// <p>The name of the configuration associated with this event.</p>
     pub fn template_name(
@@ -165,6 +181,10 @@ impl EventDescriptionBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The name of the configuration associated with this event.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// <p>The name of the environment associated with this event.</p>
     pub fn environment_name(
         mut self,
@@ -181,6 +201,10 @@ impl EventDescriptionBuilder {
         self.environment_name = input;
         self
     }
+    /// <p>The name of the environment associated with this event.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
+    }
     /// <p>The ARN of the platform version.</p>
     pub fn platform_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_arn = ::std::option::Option::Some(input.into());
@@ -191,6 +215,10 @@ impl EventDescriptionBuilder {
         self.platform_arn = input;
         self
     }
+    /// <p>The ARN of the platform version.</p>
+    pub fn get_platform_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_arn
+    }
     /// <p>The web service request ID for the activity of this event.</p>
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_id = ::std::option::Option::Some(input.into());
@@ -200,6 +228,10 @@ impl EventDescriptionBuilder {
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_id = input;
         self
+    }
+    /// <p>The web service request ID for the activity of this event.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
     }
     /// <p>The severity level of this event.</p>
     pub fn severity(mut self, input: crate::types::EventSeverity) -> Self {
@@ -213,6 +245,10 @@ impl EventDescriptionBuilder {
     ) -> Self {
         self.severity = input;
         self
+    }
+    /// <p>The severity level of this event.</p>
+    pub fn get_severity(&self) -> &::std::option::Option<crate::types::EventSeverity> {
+        &self.severity
     }
     /// Consumes the builder and constructs a [`EventDescription`](crate::types::EventDescription).
     pub fn build(self) -> crate::types::EventDescription {

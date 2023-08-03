@@ -88,6 +88,10 @@ impl RepositorySummaryBuilder {
         self.name = input;
         self
     }
+    /// <p> The name of the repository. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p> The Amazon Web Services account ID that manages the repository. </p>
     pub fn administrator_account(
         mut self,
@@ -104,6 +108,10 @@ impl RepositorySummaryBuilder {
         self.administrator_account = input;
         self
     }
+    /// <p> The Amazon Web Services account ID that manages the repository. </p>
+    pub fn get_administrator_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.administrator_account
+    }
     /// <p> The name of the domain that contains the repository. </p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
@@ -113,6 +121,10 @@ impl RepositorySummaryBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
+    }
+    /// <p> The name of the domain that contains the repository. </p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -124,6 +136,10 @@ impl RepositorySummaryBuilder {
         self.domain_owner = input;
         self
     }
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_owner
+    }
     /// <p> The ARN of the repository. </p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -134,6 +150,10 @@ impl RepositorySummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p> The ARN of the repository. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p> The description of the repository. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -143,6 +163,10 @@ impl RepositorySummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p> The description of the repository. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>A timestamp that represents the date and time the repository was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -156,6 +180,10 @@ impl RepositorySummaryBuilder {
     ) -> Self {
         self.created_time = input;
         self
+    }
+    /// <p>A timestamp that represents the date and time the repository was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
     }
     /// Consumes the builder and constructs a [`RepositorySummary`](crate::types::RepositorySummary).
     pub fn build(self) -> crate::types::RepositorySummary {

@@ -48,6 +48,10 @@ impl DatasetActionSummaryBuilder {
         self.action_name = input;
         self
     }
+    /// <p>The name of the action that automatically creates the dataset's contents.</p>
+    pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_name
+    }
     /// <p>The type of action by which the dataset's contents are automatically created.</p>
     pub fn action_type(mut self, input: crate::types::DatasetActionType) -> Self {
         self.action_type = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl DatasetActionSummaryBuilder {
     ) -> Self {
         self.action_type = input;
         self
+    }
+    /// <p>The type of action by which the dataset's contents are automatically created.</p>
+    pub fn get_action_type(&self) -> &::std::option::Option<crate::types::DatasetActionType> {
+        &self.action_type
     }
     /// Consumes the builder and constructs a [`DatasetActionSummary`](crate::types::DatasetActionSummary).
     pub fn build(self) -> crate::types::DatasetActionSummary {

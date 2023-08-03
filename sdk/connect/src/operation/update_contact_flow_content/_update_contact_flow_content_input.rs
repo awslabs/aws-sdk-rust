@@ -57,6 +57,10 @@ impl UpdateContactFlowContentInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The identifier of the flow.</p>
     pub fn contact_flow_id(
         mut self,
@@ -73,6 +77,10 @@ impl UpdateContactFlowContentInputBuilder {
         self.contact_flow_id = input;
         self
     }
+    /// <p>The identifier of the flow.</p>
+    pub fn get_contact_flow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_flow_id
+    }
     /// <p>The JSON string that represents flow's content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example contact flow in Amazon Connect Flow language</a>. </p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl UpdateContactFlowContentInputBuilder {
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
+    }
+    /// <p>The JSON string that represents flow's content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example contact flow in Amazon Connect Flow language</a>. </p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
     }
     /// Consumes the builder and constructs a [`UpdateContactFlowContentInput`](crate::operation::update_contact_flow_content::UpdateContactFlowContentInput).
     pub fn build(

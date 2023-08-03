@@ -36,6 +36,12 @@ impl ListLayerVersionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListLayerVersions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_layer_versions::builders::ListLayerVersionsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -142,6 +148,11 @@ impl ListLayerVersionsFluentBuilder {
         self.inner = self.inner.set_compatible_runtime(input);
         self
     }
+    /// <p>A runtime identifier. For example, <code>go1.x</code>.</p>
+    /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
+    pub fn get_compatible_runtime(&self) -> &::std::option::Option<crate::types::Runtime> {
+        self.inner.get_compatible_runtime()
+    }
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
     pub fn layer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.layer_name(input.into());
@@ -151,6 +162,10 @@ impl ListLayerVersionsFluentBuilder {
     pub fn set_layer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_layer_name(input);
         self
+    }
+    /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
+    pub fn get_layer_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_layer_name()
     }
     /// <p>A pagination token returned by a previous call.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -162,6 +177,10 @@ impl ListLayerVersionsFluentBuilder {
         self.inner = self.inner.set_marker(input);
         self
     }
+    /// <p>A pagination token returned by a previous call.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
+    }
     /// <p>The maximum number of versions to return.</p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.inner = self.inner.max_items(input);
@@ -171,6 +190,10 @@ impl ListLayerVersionsFluentBuilder {
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_items(input);
         self
+    }
+    /// <p>The maximum number of versions to return.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_items()
     }
     /// <p>The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
     pub fn compatible_architecture(mut self, input: crate::types::Architecture) -> Self {
@@ -184,5 +207,11 @@ impl ListLayerVersionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_compatible_architecture(input);
         self
+    }
+    /// <p>The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
+    pub fn get_compatible_architecture(
+        &self,
+    ) -> &::std::option::Option<crate::types::Architecture> {
+        self.inner.get_compatible_architecture()
     }
 }

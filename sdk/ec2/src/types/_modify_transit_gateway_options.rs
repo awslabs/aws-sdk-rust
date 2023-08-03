@@ -146,6 +146,12 @@ impl ModifyTransitGatewayOptionsBuilder {
         self.add_transit_gateway_cidr_blocks = input;
         self
     }
+    /// <p>Adds IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size /24 CIDR block or larger for IPv4, or a size /64 CIDR block or larger for IPv6.</p>
+    pub fn get_add_transit_gateway_cidr_blocks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.add_transit_gateway_cidr_blocks
+    }
     /// Appends an item to `remove_transit_gateway_cidr_blocks`.
     ///
     /// To override the contents of this collection use [`set_remove_transit_gateway_cidr_blocks`](Self::set_remove_transit_gateway_cidr_blocks).
@@ -168,6 +174,12 @@ impl ModifyTransitGatewayOptionsBuilder {
         self.remove_transit_gateway_cidr_blocks = input;
         self
     }
+    /// <p>Removes CIDR blocks for the transit gateway.</p>
+    pub fn get_remove_transit_gateway_cidr_blocks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.remove_transit_gateway_cidr_blocks
+    }
     /// <p>Enable or disable Equal Cost Multipath Protocol support.</p>
     pub fn vpn_ecmp_support(mut self, input: crate::types::VpnEcmpSupportValue) -> Self {
         self.vpn_ecmp_support = ::std::option::Option::Some(input);
@@ -181,6 +193,12 @@ impl ModifyTransitGatewayOptionsBuilder {
         self.vpn_ecmp_support = input;
         self
     }
+    /// <p>Enable or disable Equal Cost Multipath Protocol support.</p>
+    pub fn get_vpn_ecmp_support(
+        &self,
+    ) -> &::std::option::Option<crate::types::VpnEcmpSupportValue> {
+        &self.vpn_ecmp_support
+    }
     /// <p>Enable or disable DNS support.</p>
     pub fn dns_support(mut self, input: crate::types::DnsSupportValue) -> Self {
         self.dns_support = ::std::option::Option::Some(input);
@@ -193,6 +211,10 @@ impl ModifyTransitGatewayOptionsBuilder {
     ) -> Self {
         self.dns_support = input;
         self
+    }
+    /// <p>Enable or disable DNS support.</p>
+    pub fn get_dns_support(&self) -> &::std::option::Option<crate::types::DnsSupportValue> {
+        &self.dns_support
     }
     /// <p>Enable or disable automatic acceptance of attachment requests.</p>
     pub fn auto_accept_shared_attachments(
@@ -210,6 +232,12 @@ impl ModifyTransitGatewayOptionsBuilder {
         self.auto_accept_shared_attachments = input;
         self
     }
+    /// <p>Enable or disable automatic acceptance of attachment requests.</p>
+    pub fn get_auto_accept_shared_attachments(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoAcceptSharedAttachmentsValue> {
+        &self.auto_accept_shared_attachments
+    }
     /// <p>Enable or disable automatic association with the default association route table.</p>
     pub fn default_route_table_association(
         mut self,
@@ -225,6 +253,12 @@ impl ModifyTransitGatewayOptionsBuilder {
     ) -> Self {
         self.default_route_table_association = input;
         self
+    }
+    /// <p>Enable or disable automatic association with the default association route table.</p>
+    pub fn get_default_route_table_association(
+        &self,
+    ) -> &::std::option::Option<crate::types::DefaultRouteTableAssociationValue> {
+        &self.default_route_table_association
     }
     /// <p>The ID of the default association route table.</p>
     pub fn association_default_route_table_id(
@@ -242,6 +276,12 @@ impl ModifyTransitGatewayOptionsBuilder {
         self.association_default_route_table_id = input;
         self
     }
+    /// <p>The ID of the default association route table.</p>
+    pub fn get_association_default_route_table_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.association_default_route_table_id
+    }
     /// <p>Enable or disable automatic propagation of routes to the default propagation route table.</p>
     pub fn default_route_table_propagation(
         mut self,
@@ -257,6 +297,12 @@ impl ModifyTransitGatewayOptionsBuilder {
     ) -> Self {
         self.default_route_table_propagation = input;
         self
+    }
+    /// <p>Enable or disable automatic propagation of routes to the default propagation route table.</p>
+    pub fn get_default_route_table_propagation(
+        &self,
+    ) -> &::std::option::Option<crate::types::DefaultRouteTablePropagationValue> {
+        &self.default_route_table_propagation
     }
     /// <p>The ID of the default propagation route table.</p>
     pub fn propagation_default_route_table_id(
@@ -274,6 +320,12 @@ impl ModifyTransitGatewayOptionsBuilder {
         self.propagation_default_route_table_id = input;
         self
     }
+    /// <p>The ID of the default propagation route table.</p>
+    pub fn get_propagation_default_route_table_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.propagation_default_route_table_id
+    }
     /// <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP session. The range is 64512 to 65534 for 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs.</p>
     /// <p>The modify ASN operation is not allowed on a transit gateway with active BGP sessions. You must first delete all transit gateway attachments that have BGP configured prior to modifying the ASN on the transit gateway.</p>
     pub fn amazon_side_asn(mut self, input: i64) -> Self {
@@ -285,6 +337,11 @@ impl ModifyTransitGatewayOptionsBuilder {
     pub fn set_amazon_side_asn(mut self, input: ::std::option::Option<i64>) -> Self {
         self.amazon_side_asn = input;
         self
+    }
+    /// <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP session. The range is 64512 to 65534 for 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs.</p>
+    /// <p>The modify ASN operation is not allowed on a transit gateway with active BGP sessions. You must first delete all transit gateway attachments that have BGP configured prior to modifying the ASN on the transit gateway.</p>
+    pub fn get_amazon_side_asn(&self) -> &::std::option::Option<i64> {
+        &self.amazon_side_asn
     }
     /// Consumes the builder and constructs a [`ModifyTransitGatewayOptions`](crate::types::ModifyTransitGatewayOptions).
     pub fn build(self) -> crate::types::ModifyTransitGatewayOptions {

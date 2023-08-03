@@ -130,6 +130,10 @@ impl SearchResourcesInputBuilder {
         self.authentication_token = input;
         self
     }
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication_token
+    }
     /// <p>The String to search for. Searches across different text fields based on request parameters. Use double quotes around the query string for exact phrase matches.</p>
     pub fn query_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_text = ::std::option::Option::Some(input.into());
@@ -139,6 +143,10 @@ impl SearchResourcesInputBuilder {
     pub fn set_query_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_text = input;
         self
+    }
+    /// <p>The String to search for. Searches across different text fields based on request parameters. Use double quotes around the query string for exact phrase matches.</p>
+    pub fn get_query_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_text
     }
     /// Appends an item to `query_scopes`.
     ///
@@ -159,6 +167,12 @@ impl SearchResourcesInputBuilder {
         self.query_scopes = input;
         self
     }
+    /// <p>Filter based on the text field type. A Folder has only a name and no content. A Comment has only content and no name. A Document or Document Version has a name and content</p>
+    pub fn get_query_scopes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchQueryScopeType>> {
+        &self.query_scopes
+    }
     /// <p>Filters based on the resource owner OrgId. This is a mandatory parameter when using Admin SigV4 credentials.</p>
     pub fn organization_id(
         mut self,
@@ -174,6 +188,10 @@ impl SearchResourcesInputBuilder {
     ) -> Self {
         self.organization_id = input;
         self
+    }
+    /// <p>Filters based on the resource owner OrgId. This is a mandatory parameter when using Admin SigV4 credentials.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
     }
     /// Appends an item to `additional_response_fields`.
     ///
@@ -197,6 +215,12 @@ impl SearchResourcesInputBuilder {
         self.additional_response_fields = input;
         self
     }
+    /// <p>A list of attributes to include in the response. Used to request fields that are not normally returned in a standard response.</p>
+    pub fn get_additional_response_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalResponseFieldType>> {
+        &self.additional_response_fields
+    }
     /// <p>Filters results based on entity metadata.</p>
     pub fn filters(mut self, input: crate::types::Filters) -> Self {
         self.filters = ::std::option::Option::Some(input);
@@ -206,6 +230,10 @@ impl SearchResourcesInputBuilder {
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::Filters>) -> Self {
         self.filters = input;
         self
+    }
+    /// <p>Filters results based on entity metadata.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::Filters> {
+        &self.filters
     }
     /// Appends an item to `order_by`.
     ///
@@ -226,6 +254,12 @@ impl SearchResourcesInputBuilder {
         self.order_by = input;
         self
     }
+    /// <p>Order by results in one or more categories.</p>
+    pub fn get_order_by(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchSortResult>> {
+        &self.order_by
+    }
     /// <p>Max results count per page.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -236,6 +270,10 @@ impl SearchResourcesInputBuilder {
         self.limit = input;
         self
     }
+    /// <p>Max results count per page.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
+    }
     /// <p>The marker for the next set of results.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -245,6 +283,10 @@ impl SearchResourcesInputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>The marker for the next set of results.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// Consumes the builder and constructs a [`SearchResourcesInput`](crate::operation::search_resources::SearchResourcesInput).
     pub fn build(

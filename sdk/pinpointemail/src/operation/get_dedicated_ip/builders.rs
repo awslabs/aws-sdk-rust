@@ -36,6 +36,12 @@ impl GetDedicatedIpFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetDedicatedIp as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_dedicated_ip::builders::GetDedicatedIpInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +131,9 @@ impl GetDedicatedIpFluentBuilder {
     pub fn set_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ip(input);
         self
+    }
+    /// <p>The IP address that you want to obtain more information about. The value you specify has to be a dedicated IP address that's assocaited with your Amazon Pinpoint account.</p>
+    pub fn get_ip(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ip()
     }
 }

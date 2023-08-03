@@ -63,6 +63,10 @@ impl ListApplicationSnapshotsInputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The name of an existing application.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>The maximum number of application snapshots to list.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl ListApplicationSnapshotsInputBuilder {
         self.limit = input;
         self
     }
+    /// <p>The maximum number of application snapshots to list.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
+    }
     /// <p>Use this parameter if you receive a <code>NextToken</code> response in a previous request that indicates that there is more output available. Set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl ListApplicationSnapshotsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Use this parameter if you receive a <code>NextToken</code> response in a previous request that indicates that there is more output available. Set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListApplicationSnapshotsInput`](crate::operation::list_application_snapshots::ListApplicationSnapshotsInput).
     pub fn build(

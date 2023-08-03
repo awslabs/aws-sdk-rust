@@ -101,6 +101,21 @@ impl DescribeInstancePatchesOutputBuilder {
         self.patches = input;
         self
     }
+    /// <p>Each entry in the array is a structure containing:</p>
+    /// <ul>
+    /// <li> <p>Title (string)</p> </li>
+    /// <li> <p>KBId (string)</p> </li>
+    /// <li> <p>Classification (string)</p> </li>
+    /// <li> <p>Severity (string)</p> </li>
+    /// <li> <p>State (string, such as "INSTALLED" or "FAILED")</p> </li>
+    /// <li> <p>InstalledTime (DateTime)</p> </li>
+    /// <li> <p>InstalledBy (string)</p> </li>
+    /// </ul>
+    pub fn get_patches(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchComplianceData>> {
+        &self.patches
+    }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -110,6 +125,10 @@ impl DescribeInstancePatchesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

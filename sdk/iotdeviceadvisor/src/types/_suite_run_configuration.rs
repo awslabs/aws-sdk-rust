@@ -59,6 +59,10 @@ impl SuiteRunConfigurationBuilder {
         self.primary_device = input;
         self
     }
+    /// <p>Sets the primary device for the test suite run. This requires a thing ARN or a certificate ARN.</p>
+    pub fn get_primary_device(&self) -> &::std::option::Option<crate::types::DeviceUnderTest> {
+        &self.primary_device
+    }
     /// Appends an item to `selected_test_list`.
     ///
     /// To override the contents of this collection use [`set_selected_test_list`](Self::set_selected_test_list).
@@ -81,6 +85,12 @@ impl SuiteRunConfigurationBuilder {
         self.selected_test_list = input;
         self
     }
+    /// <p>Sets test case list.</p>
+    pub fn get_selected_test_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.selected_test_list
+    }
     /// <p>TRUE if multiple test suites run in parallel.</p>
     pub fn parallel_run(mut self, input: bool) -> Self {
         self.parallel_run = ::std::option::Option::Some(input);
@@ -90,6 +100,10 @@ impl SuiteRunConfigurationBuilder {
     pub fn set_parallel_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.parallel_run = input;
         self
+    }
+    /// <p>TRUE if multiple test suites run in parallel.</p>
+    pub fn get_parallel_run(&self) -> &::std::option::Option<bool> {
+        &self.parallel_run
     }
     /// Consumes the builder and constructs a [`SuiteRunConfiguration`](crate::types::SuiteRunConfiguration).
     pub fn build(self) -> crate::types::SuiteRunConfiguration {

@@ -46,6 +46,10 @@ impl DeletePlatformApplicationInputBuilder {
         self.platform_application_arn = input;
         self
     }
+    /// <p>PlatformApplicationArn of platform application object to delete.</p>
+    pub fn get_platform_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_application_arn
+    }
     /// Consumes the builder and constructs a [`DeletePlatformApplicationInput`](crate::operation::delete_platform_application::DeletePlatformApplicationInput).
     pub fn build(
         self,

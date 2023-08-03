@@ -60,6 +60,12 @@ impl DescribeServicesInputBuilder {
         self.service_code_list = input;
         self
     }
+    /// <p>A JSON-formatted list of service codes available for Amazon Web Services services.</p>
+    pub fn get_service_code_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.service_code_list
+    }
     /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub fn language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language = ::std::option::Option::Some(input.into());
@@ -69,6 +75,10 @@ impl DescribeServicesInputBuilder {
     pub fn set_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.language = input;
         self
+    }
+    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
+    pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.language
     }
     /// Consumes the builder and constructs a [`DescribeServicesInput`](crate::operation::describe_services::DescribeServicesInput).
     pub fn build(

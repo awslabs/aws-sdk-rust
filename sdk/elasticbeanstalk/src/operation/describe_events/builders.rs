@@ -38,6 +38,12 @@ impl DescribeEventsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeEvents as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_events::builders::DescribeEventsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl DescribeEventsFluentBuilder {
         self.inner = self.inner.set_application_name(input);
         self
     }
+    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those associated with this application.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_name()
+    }
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this application version.</p>
     pub fn version_label(
         mut self,
@@ -153,6 +163,10 @@ impl DescribeEventsFluentBuilder {
         self.inner = self.inner.set_version_label(input);
         self
     }
+    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this application version.</p>
+    pub fn get_version_label(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version_label()
+    }
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that are associated with this environment configuration.</p>
     pub fn template_name(
         mut self,
@@ -168,6 +182,10 @@ impl DescribeEventsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
+    }
+    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that are associated with this environment configuration.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_name()
     }
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this environment.</p>
     pub fn environment_id(
@@ -186,6 +204,10 @@ impl DescribeEventsFluentBuilder {
         self
     }
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_id()
+    }
+    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this environment.</p>
     pub fn environment_name(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -201,6 +223,10 @@ impl DescribeEventsFluentBuilder {
         self.inner = self.inner.set_environment_name(input);
         self
     }
+    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this environment.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_name()
+    }
     /// <p>The ARN of a custom platform version. If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this custom platform version.</p>
     pub fn platform_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.platform_arn(input.into());
@@ -211,6 +237,10 @@ impl DescribeEventsFluentBuilder {
         self.inner = self.inner.set_platform_arn(input);
         self
     }
+    /// <p>The ARN of a custom platform version. If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this custom platform version.</p>
+    pub fn get_platform_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_platform_arn()
+    }
     /// <p>If specified, AWS Elastic Beanstalk restricts the described events to include only those associated with this request ID.</p>
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.request_id(input.into());
@@ -220,6 +250,10 @@ impl DescribeEventsFluentBuilder {
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_request_id(input);
         self
+    }
+    /// <p>If specified, AWS Elastic Beanstalk restricts the described events to include only those associated with this request ID.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_request_id()
     }
     /// <p>If specified, limits the events returned from this call to include only those with the specified severity or higher.</p>
     pub fn severity(mut self, input: crate::types::EventSeverity) -> Self {
@@ -234,6 +268,10 @@ impl DescribeEventsFluentBuilder {
         self.inner = self.inner.set_severity(input);
         self
     }
+    /// <p>If specified, limits the events returned from this call to include only those with the specified severity or higher.</p>
+    pub fn get_severity(&self) -> &::std::option::Option<crate::types::EventSeverity> {
+        self.inner.get_severity()
+    }
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that occur on or after this time.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
@@ -246,6 +284,10 @@ impl DescribeEventsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
+    }
+    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that occur on or after this time.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
     }
     /// <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that occur up to, but not including, the <code>EndTime</code>. </p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -260,6 +302,10 @@ impl DescribeEventsFluentBuilder {
         self.inner = self.inner.set_end_time(input);
         self
     }
+    /// <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that occur up to, but not including, the <code>EndTime</code>. </p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time()
+    }
     /// <p>Specifies the maximum number of events that can be returned, beginning with the most recent event.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.inner = self.inner.max_records(input);
@@ -270,6 +316,10 @@ impl DescribeEventsFluentBuilder {
         self.inner = self.inner.set_max_records(input);
         self
     }
+    /// <p>Specifies the maximum number of events that can be returned, beginning with the most recent event.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
+    }
     /// <p>Pagination token. If specified, the events return the next batch of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -279,5 +329,9 @@ impl DescribeEventsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>Pagination token. If specified, the events return the next batch of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

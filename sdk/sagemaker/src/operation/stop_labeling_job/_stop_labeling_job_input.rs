@@ -45,6 +45,10 @@ impl StopLabelingJobInputBuilder {
         self.labeling_job_name = input;
         self
     }
+    /// <p>The name of the labeling job to stop.</p>
+    pub fn get_labeling_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.labeling_job_name
+    }
     /// Consumes the builder and constructs a [`StopLabelingJobInput`](crate::operation::stop_labeling_job::StopLabelingJobInput).
     pub fn build(
         self,

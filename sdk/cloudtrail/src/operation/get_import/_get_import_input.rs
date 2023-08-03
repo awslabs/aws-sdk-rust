@@ -39,6 +39,10 @@ impl GetImportInputBuilder {
         self.import_id = input;
         self
     }
+    /// <p> The ID for the import. </p>
+    pub fn get_import_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.import_id
+    }
     /// Consumes the builder and constructs a [`GetImportInput`](crate::operation::get_import::GetImportInput).
     pub fn build(
         self,

@@ -86,6 +86,10 @@ impl RegistryListItemBuilder {
         self.registry_name = input;
         self
     }
+    /// <p>The name of the registry.</p>
+    pub fn get_registry_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the registry.</p>
     pub fn registry_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_arn = ::std::option::Option::Some(input.into());
@@ -96,6 +100,10 @@ impl RegistryListItemBuilder {
         self.registry_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the registry.</p>
+    pub fn get_registry_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_arn
+    }
     /// <p>A description of the registry.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -105,6 +113,10 @@ impl RegistryListItemBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the registry.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The status of the registry.</p>
     pub fn status(mut self, input: crate::types::RegistryStatus) -> Self {
@@ -119,6 +131,10 @@ impl RegistryListItemBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the registry.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::RegistryStatus> {
+        &self.status
+    }
     /// <p>The data the registry was created.</p>
     pub fn created_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_time = ::std::option::Option::Some(input.into());
@@ -129,6 +145,10 @@ impl RegistryListItemBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The data the registry was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_time
+    }
     /// <p>The date the registry was updated.</p>
     pub fn updated_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.updated_time = ::std::option::Option::Some(input.into());
@@ -138,6 +158,10 @@ impl RegistryListItemBuilder {
     pub fn set_updated_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.updated_time = input;
         self
+    }
+    /// <p>The date the registry was updated.</p>
+    pub fn get_updated_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.updated_time
     }
     /// Consumes the builder and constructs a [`RegistryListItem`](crate::types::RegistryListItem).
     pub fn build(self) -> crate::types::RegistryListItem {

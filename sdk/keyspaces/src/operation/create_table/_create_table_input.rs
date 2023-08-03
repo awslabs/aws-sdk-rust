@@ -224,6 +224,10 @@ impl CreateTableInputBuilder {
         self.keyspace_name = input;
         self
     }
+    /// <p>The name of the keyspace that the table is going to be created in.</p>
+    pub fn get_keyspace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.keyspace_name
+    }
     /// <p>The name of the table.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
@@ -233,6 +237,10 @@ impl CreateTableInputBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
+    }
+    /// <p>The name of the table.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// <p>The <code>schemaDefinition</code> consists of the following parameters.</p>
     /// <p>For each column to be created:</p>
@@ -277,6 +285,25 @@ impl CreateTableInputBuilder {
         self.schema_definition = input;
         self
     }
+    /// <p>The <code>schemaDefinition</code> consists of the following parameters.</p>
+    /// <p>For each column to be created:</p>
+    /// <ul>
+    /// <li> <p> <code>name</code> - The name of the column.</p> </li>
+    /// <li> <p> <code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> </li>
+    /// </ul>
+    /// <p>The primary key of the table consists of the following columns:</p>
+    /// <ul>
+    /// <li> <p> <code>partitionKeys</code> - The partition key can be a single column, or it can be a compound value composed of two or more columns. The partition key portion of the primary key is required and determines how Amazon Keyspaces stores your data.</p> </li>
+    /// <li> <p> <code>name</code> - The name of each partition key column.</p> </li>
+    /// <li> <p> <code>clusteringKeys</code> - The optional clustering column portion of your primary key determines how the data is clustered and sorted within each partition.</p> </li>
+    /// <li> <p> <code>name</code> - The name of the clustering column. </p> </li>
+    /// <li> <p> <code>orderBy</code> - Sets the ascendant (<code>ASC</code>) or descendant (<code>DESC</code>) order modifier.</p> <p>To define a column as static use <code>staticColumns</code> - Static columns store values that are shared by all rows in the same partition:</p> </li>
+    /// <li> <p> <code>name</code> - The name of the column.</p> </li>
+    /// <li> <p> <code>type</code> - An Amazon Keyspaces data type.</p> </li>
+    /// </ul>
+    pub fn get_schema_definition(&self) -> &::std::option::Option<crate::types::SchemaDefinition> {
+        &self.schema_definition
+    }
     /// <p>This parameter allows to enter a description of the table.</p>
     pub fn comment(mut self, input: crate::types::Comment) -> Self {
         self.comment = ::std::option::Option::Some(input);
@@ -286,6 +313,10 @@ impl CreateTableInputBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<crate::types::Comment>) -> Self {
         self.comment = input;
         self
+    }
+    /// <p>This parameter allows to enter a description of the table.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<crate::types::Comment> {
+        &self.comment
     }
     /// <p>Specifies the read/write throughput capacity mode for the table. The options are:</p>
     /// <ul>
@@ -311,6 +342,18 @@ impl CreateTableInputBuilder {
     ) -> Self {
         self.capacity_specification = input;
         self
+    }
+    /// <p>Specifies the read/write throughput capacity mode for the table. The options are:</p>
+    /// <ul>
+    /// <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> and </p> </li>
+    /// <li> <p> <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p> </li>
+    /// </ul>
+    /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    pub fn get_capacity_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::CapacitySpecification> {
+        &self.capacity_specification
     }
     /// <p>Specifies how the encryption key for encryption at rest is managed for the table. You can choose one of the following KMS key (KMS key):</p>
     /// <ul>
@@ -340,6 +383,18 @@ impl CreateTableInputBuilder {
         self.encryption_specification = input;
         self
     }
+    /// <p>Specifies how the encryption key for encryption at rest is managed for the table. You can choose one of the following KMS key (KMS key):</p>
+    /// <ul>
+    /// <li> <p> <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p> </li>
+    /// <li> <p> <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input.</p> </li>
+    /// </ul>
+    /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    pub fn get_encryption_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::EncryptionSpecification> {
+        &self.encryption_specification
+    }
     /// <p>Specifies if <code>pointInTimeRecovery</code> is enabled or disabled for the table. The options are:</p>
     /// <ul>
     /// <li> <p> <code>status=ENABLED</code> </p> </li>
@@ -365,6 +420,18 @@ impl CreateTableInputBuilder {
         self.point_in_time_recovery = input;
         self
     }
+    /// <p>Specifies if <code>pointInTimeRecovery</code> is enabled or disabled for the table. The options are:</p>
+    /// <ul>
+    /// <li> <p> <code>status=ENABLED</code> </p> </li>
+    /// <li> <p> <code>status=DISABLED</code> </p> </li>
+    /// </ul>
+    /// <p>If it's not specified, the default is <code>status=DISABLED</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    pub fn get_point_in_time_recovery(
+        &self,
+    ) -> &::std::option::Option<crate::types::PointInTimeRecovery> {
+        &self.point_in_time_recovery
+    }
     /// <p>Enables Time to Live custom settings for the table. The options are:</p>
     /// <ul>
     /// <li> <p> <code>status:enabled</code> </p> </li>
@@ -387,6 +454,16 @@ impl CreateTableInputBuilder {
         self.ttl = input;
         self
     }
+    /// <p>Enables Time to Live custom settings for the table. The options are:</p>
+    /// <ul>
+    /// <li> <p> <code>status:enabled</code> </p> </li>
+    /// <li> <p> <code>status:disabled</code> </p> </li>
+    /// </ul>
+    /// <p>The default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you can't disable it for the table.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL.html">Expiring data by using Amazon Keyspaces Time to Live (TTL)</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    pub fn get_ttl(&self) -> &::std::option::Option<crate::types::TimeToLive> {
+        &self.ttl
+    }
     /// <p>The default Time to Live setting in seconds for the table.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL-how-it-works.html#ttl-howitworks_default_ttl">Setting the default TTL value for a table</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn default_time_to_live(mut self, input: i32) -> Self {
@@ -398,6 +475,11 @@ impl CreateTableInputBuilder {
     pub fn set_default_time_to_live(mut self, input: ::std::option::Option<i32>) -> Self {
         self.default_time_to_live = input;
         self
+    }
+    /// <p>The default Time to Live setting in seconds for the table.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL-how-it-works.html#ttl-howitworks_default_ttl">Setting the default TTL value for a table</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    pub fn get_default_time_to_live(&self) -> &::std::option::Option<i32> {
+        &self.default_time_to_live
     }
     /// Appends an item to `tags`.
     ///
@@ -420,6 +502,11 @@ impl CreateTableInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>A list of key-value pair tags to be attached to the resource. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p> Enables client-side timestamps for the table. By default, the setting is disabled. You can enable client-side timestamps with the following option:</p>
     /// <ul>
     /// <li> <p> <code>status: "enabled"</code> </p> </li>
@@ -440,6 +527,16 @@ impl CreateTableInputBuilder {
     ) -> Self {
         self.client_side_timestamps = input;
         self
+    }
+    /// <p> Enables client-side timestamps for the table. By default, the setting is disabled. You can enable client-side timestamps with the following option:</p>
+    /// <ul>
+    /// <li> <p> <code>status: "enabled"</code> </p> </li>
+    /// </ul>
+    /// <p>Once client-side timestamps are enabled for a table, this setting cannot be disabled.</p>
+    pub fn get_client_side_timestamps(
+        &self,
+    ) -> &::std::option::Option<crate::types::ClientSideTimestamps> {
+        &self.client_side_timestamps
     }
     /// Consumes the builder and constructs a [`CreateTableInput`](crate::operation::create_table::CreateTableInput).
     pub fn build(

@@ -36,6 +36,10 @@ impl CreateDirectConnectGatewayFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDirectConnectGateway as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_direct_connect_gateway::builders::CreateDirectConnectGatewayInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl CreateDirectConnectGatewayFluentBuilder {
         self.inner = self.inner.set_direct_connect_gateway_name(input);
         self
     }
+    /// <p>The name of the Direct Connect gateway.</p>
+    pub fn get_direct_connect_gateway_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_direct_connect_gateway_name()
+    }
     /// <p>The autonomous system number (ASN) for Border Gateway Protocol (BGP) to be configured on the Amazon side of the connection. The ASN must be in the private range of 64,512 to 65,534 or 4,200,000,000 to 4,294,967,294. The default is 64512.</p>
     pub fn amazon_side_asn(mut self, input: i64) -> Self {
         self.inner = self.inner.amazon_side_asn(input);
@@ -141,5 +149,9 @@ impl CreateDirectConnectGatewayFluentBuilder {
     pub fn set_amazon_side_asn(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_amazon_side_asn(input);
         self
+    }
+    /// <p>The autonomous system number (ASN) for Border Gateway Protocol (BGP) to be configured on the Amazon side of the connection. The ASN must be in the private range of 64,512 to 65,534 or 4,200,000,000 to 4,294,967,294. The default is 64512.</p>
+    pub fn get_amazon_side_asn(&self) -> &::std::option::Option<i64> {
+        self.inner.get_amazon_side_asn()
     }
 }

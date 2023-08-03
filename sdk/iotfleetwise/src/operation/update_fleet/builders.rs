@@ -38,6 +38,10 @@ impl UpdateFleetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateFleet as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_fleet::builders::UpdateFleetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -120,6 +124,10 @@ impl UpdateFleetFluentBuilder {
         self.inner = self.inner.set_fleet_id(input);
         self
     }
+    /// <p> The ID of the fleet to update. </p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fleet_id()
+    }
     /// <p> An updated description of the fleet. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -129,5 +137,9 @@ impl UpdateFleetFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p> An updated description of the fleet. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
 }

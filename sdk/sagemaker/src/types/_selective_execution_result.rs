@@ -46,6 +46,12 @@ impl SelectiveExecutionResultBuilder {
         self.source_pipeline_execution_arn = input;
         self
     }
+    /// <p>The ARN from an execution of the current pipeline.</p>
+    pub fn get_source_pipeline_execution_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.source_pipeline_execution_arn
+    }
     /// Consumes the builder and constructs a [`SelectiveExecutionResult`](crate::types::SelectiveExecutionResult).
     pub fn build(self) -> crate::types::SelectiveExecutionResult {
         crate::types::SelectiveExecutionResult {

@@ -54,6 +54,10 @@ impl DomainJoinInfoBuilder {
         self.directory_name = input;
         self
     }
+    /// <p>The fully qualified name of the directory (for example, corp.example.com).</p>
+    pub fn get_directory_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_name
+    }
     /// <p>The distinguished name of the organizational unit for computer accounts.</p>
     pub fn organizational_unit_distinguished_name(
         mut self,
@@ -69,6 +73,12 @@ impl DomainJoinInfoBuilder {
     ) -> Self {
         self.organizational_unit_distinguished_name = input;
         self
+    }
+    /// <p>The distinguished name of the organizational unit for computer accounts.</p>
+    pub fn get_organizational_unit_distinguished_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.organizational_unit_distinguished_name
     }
     /// Consumes the builder and constructs a [`DomainJoinInfo`](crate::types::DomainJoinInfo).
     pub fn build(self) -> crate::types::DomainJoinInfo {

@@ -38,6 +38,10 @@ impl StartVoiceToneAnalysisTaskFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartVoiceToneAnalysisTask as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_voice_tone_analysis_task::builders::StartVoiceToneAnalysisTaskInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +138,10 @@ impl StartVoiceToneAnalysisTaskFluentBuilder {
         self.inner = self.inner.set_voice_connector_id(input);
         self
     }
+    /// <p>The Voice Connector ID.</p>
+    pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_voice_connector_id()
+    }
     /// <p>The transaction ID.</p>
     pub fn transaction_id(
         mut self,
@@ -150,6 +158,10 @@ impl StartVoiceToneAnalysisTaskFluentBuilder {
         self.inner = self.inner.set_transaction_id(input);
         self
     }
+    /// <p>The transaction ID.</p>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_transaction_id()
+    }
     /// <p>The language code.</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.inner = self.inner.language_code(input);
@@ -162,6 +174,10 @@ impl StartVoiceToneAnalysisTaskFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
+    }
+    /// <p>The language code.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
+        self.inner.get_language_code()
     }
     /// <p>The unique identifier for the client request. Use a different token for different voice tone analysis tasks.</p>
     pub fn client_request_token(
@@ -178,5 +194,9 @@ impl StartVoiceToneAnalysisTaskFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>The unique identifier for the client request. Use a different token for different voice tone analysis tasks.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
 }

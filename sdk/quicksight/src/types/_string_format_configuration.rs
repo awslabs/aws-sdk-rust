@@ -62,6 +62,12 @@ impl StringFormatConfigurationBuilder {
         self.null_value_format_configuration = input;
         self
     }
+    /// <p>The options that determine the null value format configuration.</p>
+    pub fn get_null_value_format_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::NullValueFormatConfiguration> {
+        &self.null_value_format_configuration
+    }
     /// <p>The formatting configuration for numeric strings.</p>
     pub fn numeric_format_configuration(
         mut self,
@@ -77,6 +83,12 @@ impl StringFormatConfigurationBuilder {
     ) -> Self {
         self.numeric_format_configuration = input;
         self
+    }
+    /// <p>The formatting configuration for numeric strings.</p>
+    pub fn get_numeric_format_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::NumericFormatConfiguration> {
+        &self.numeric_format_configuration
     }
     /// Consumes the builder and constructs a [`StringFormatConfiguration`](crate::types::StringFormatConfiguration).
     pub fn build(self) -> crate::types::StringFormatConfiguration {

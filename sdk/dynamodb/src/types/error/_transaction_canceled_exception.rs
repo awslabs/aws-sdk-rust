@@ -163,6 +163,10 @@ impl TransactionCanceledExceptionBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Appends an item to `cancellation_reasons`.
     ///
     /// To override the contents of this collection use [`set_cancellation_reasons`](Self::set_cancellation_reasons).
@@ -181,6 +185,12 @@ impl TransactionCanceledExceptionBuilder {
     ) -> Self {
         self.cancellation_reasons = input;
         self
+    }
+    /// <p>A list of cancellation reasons.</p>
+    pub fn get_cancellation_reasons(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CancellationReason>> {
+        &self.cancellation_reasons
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

@@ -132,6 +132,10 @@ impl ProtectedQueryBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier for a protected query instance.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The identifier for the membership.</p>
     pub fn membership_id(
         mut self,
@@ -147,6 +151,10 @@ impl ProtectedQueryBuilder {
     ) -> Self {
         self.membership_id = input;
         self
+    }
+    /// <p>The identifier for the membership.</p>
+    pub fn get_membership_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.membership_id
     }
     /// <p>The ARN of the membership.</p>
     pub fn membership_arn(
@@ -164,6 +172,10 @@ impl ProtectedQueryBuilder {
         self.membership_arn = input;
         self
     }
+    /// <p>The ARN of the membership.</p>
+    pub fn get_membership_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.membership_arn
+    }
     /// <p>The time at which the protected query was created.</p>
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
@@ -176,6 +188,10 @@ impl ProtectedQueryBuilder {
     ) -> Self {
         self.create_time = input;
         self
+    }
+    /// <p>The time at which the protected query was created.</p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
     }
     /// <p>The protected query SQL parameters.</p>
     pub fn sql_parameters(mut self, input: crate::types::ProtectedQuerySqlParameters) -> Self {
@@ -190,6 +206,12 @@ impl ProtectedQueryBuilder {
         self.sql_parameters = input;
         self
     }
+    /// <p>The protected query SQL parameters.</p>
+    pub fn get_sql_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProtectedQuerySqlParameters> {
+        &self.sql_parameters
+    }
     /// <p>The status of the query.</p>
     pub fn status(mut self, input: crate::types::ProtectedQueryStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -202,6 +224,10 @@ impl ProtectedQueryBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the query.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ProtectedQueryStatus> {
+        &self.status
     }
     /// <p>Contains any details needed to write the query results.</p>
     pub fn result_configuration(
@@ -219,6 +245,12 @@ impl ProtectedQueryBuilder {
         self.result_configuration = input;
         self
     }
+    /// <p>Contains any details needed to write the query results.</p>
+    pub fn get_result_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProtectedQueryResultConfiguration> {
+        &self.result_configuration
+    }
     /// <p>Statistics about protected query execution.</p>
     pub fn statistics(mut self, input: crate::types::ProtectedQueryStatistics) -> Self {
         self.statistics = ::std::option::Option::Some(input);
@@ -231,6 +263,10 @@ impl ProtectedQueryBuilder {
     ) -> Self {
         self.statistics = input;
         self
+    }
+    /// <p>Statistics about protected query execution.</p>
+    pub fn get_statistics(&self) -> &::std::option::Option<crate::types::ProtectedQueryStatistics> {
+        &self.statistics
     }
     /// <p>The result of the protected query.</p>
     pub fn result(mut self, input: crate::types::ProtectedQueryResult) -> Self {
@@ -245,6 +281,10 @@ impl ProtectedQueryBuilder {
         self.result = input;
         self
     }
+    /// <p>The result of the protected query.</p>
+    pub fn get_result(&self) -> &::std::option::Option<crate::types::ProtectedQueryResult> {
+        &self.result
+    }
     /// <p>An error thrown by the protected query.</p>
     pub fn error(mut self, input: crate::types::ProtectedQueryError) -> Self {
         self.error = ::std::option::Option::Some(input);
@@ -257,6 +297,10 @@ impl ProtectedQueryBuilder {
     ) -> Self {
         self.error = input;
         self
+    }
+    /// <p>An error thrown by the protected query.</p>
+    pub fn get_error(&self) -> &::std::option::Option<crate::types::ProtectedQueryError> {
+        &self.error
     }
     /// Consumes the builder and constructs a [`ProtectedQuery`](crate::types::ProtectedQuery).
     pub fn build(self) -> crate::types::ProtectedQuery {

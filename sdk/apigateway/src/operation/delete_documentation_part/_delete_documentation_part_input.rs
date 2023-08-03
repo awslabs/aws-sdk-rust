@@ -50,6 +50,10 @@ impl DeleteDocumentationPartInputBuilder {
         self.rest_api_id = input;
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
+    }
     /// <p>The identifier of the to-be-deleted documentation part.</p>
     pub fn documentation_part_id(
         mut self,
@@ -65,6 +69,10 @@ impl DeleteDocumentationPartInputBuilder {
     ) -> Self {
         self.documentation_part_id = input;
         self
+    }
+    /// <p>The identifier of the to-be-deleted documentation part.</p>
+    pub fn get_documentation_part_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.documentation_part_id
     }
     /// Consumes the builder and constructs a [`DeleteDocumentationPartInput`](crate::operation::delete_documentation_part::DeleteDocumentationPartInput).
     pub fn build(

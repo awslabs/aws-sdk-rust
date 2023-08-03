@@ -76,6 +76,10 @@ impl CreateSafetyRuleInputBuilder {
         self.assertion_rule = input;
         self
     }
+    /// <p>The assertion rule requested.</p>
+    pub fn get_assertion_rule(&self) -> &::std::option::Option<crate::types::NewAssertionRule> {
+        &self.assertion_rule
+    }
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -85,6 +89,10 @@ impl CreateSafetyRuleInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>The gating rule requested.</p>
     pub fn gating_rule(mut self, input: crate::types::NewGatingRule) -> Self {
@@ -98,6 +106,10 @@ impl CreateSafetyRuleInputBuilder {
     ) -> Self {
         self.gating_rule = input;
         self
+    }
+    /// <p>The gating rule requested.</p>
+    pub fn get_gating_rule(&self) -> &::std::option::Option<crate::types::NewGatingRule> {
+        &self.gating_rule
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -123,6 +135,14 @@ impl CreateSafetyRuleInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags associated with the safety rule.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSafetyRuleInput`](crate::operation::create_safety_rule::CreateSafetyRuleInput).
     pub fn build(

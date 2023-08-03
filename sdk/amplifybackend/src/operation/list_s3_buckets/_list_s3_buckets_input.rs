@@ -40,6 +40,10 @@ impl ListS3BucketsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Reserved for future use.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Consumes the builder and constructs a [`ListS3BucketsInput`](crate::operation::list_s3_buckets::ListS3BucketsInput).
     pub fn build(
         self,

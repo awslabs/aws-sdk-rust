@@ -36,6 +36,12 @@ impl DescribeBackupJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeBackupJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_backup_job::builders::DescribeBackupJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl DescribeBackupJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_backup_job_id(input);
         self
+    }
+    /// <p>Uniquely identifies a request to Backup to back up a resource.</p>
+    pub fn get_backup_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_backup_job_id()
     }
 }

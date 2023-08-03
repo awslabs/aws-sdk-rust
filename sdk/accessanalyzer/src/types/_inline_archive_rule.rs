@@ -56,6 +56,10 @@ impl InlineArchiveRuleBuilder {
         self.rule_name = input;
         self
     }
+    /// <p>The name of the rule.</p>
+    pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_name
+    }
     /// Adds a key-value pair to `filter`.
     ///
     /// To override the contents of this collection use [`set_filter`](Self::set_filter).
@@ -80,6 +84,14 @@ impl InlineArchiveRuleBuilder {
     ) -> Self {
         self.filter = input;
         self
+    }
+    /// <p>The condition and values for a criterion.</p>
+    pub fn get_filter(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::Criterion>,
+    > {
+        &self.filter
     }
     /// Consumes the builder and constructs a [`InlineArchiveRule`](crate::types::InlineArchiveRule).
     pub fn build(self) -> crate::types::InlineArchiveRule {

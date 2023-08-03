@@ -40,6 +40,10 @@ impl DeliveryOptionsBuilder {
         self.tls_policy = input;
         self
     }
+    /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
+    pub fn get_tls_policy(&self) -> &::std::option::Option<crate::types::TlsPolicy> {
+        &self.tls_policy
+    }
     /// Consumes the builder and constructs a [`DeliveryOptions`](crate::types::DeliveryOptions).
     pub fn build(self) -> crate::types::DeliveryOptions {
         crate::types::DeliveryOptions {

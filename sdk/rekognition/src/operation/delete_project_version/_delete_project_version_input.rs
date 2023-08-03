@@ -46,6 +46,10 @@ impl DeleteProjectVersionInputBuilder {
         self.project_version_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
+    pub fn get_project_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_version_arn
+    }
     /// Consumes the builder and constructs a [`DeleteProjectVersionInput`](crate::operation::delete_project_version::DeleteProjectVersionInput).
     pub fn build(
         self,

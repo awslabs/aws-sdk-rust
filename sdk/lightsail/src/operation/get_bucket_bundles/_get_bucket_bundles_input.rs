@@ -40,6 +40,10 @@ impl GetBucketBundlesInputBuilder {
         self.include_inactive = input;
         self
     }
+    /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.</p>
+    pub fn get_include_inactive(&self) -> &::std::option::Option<bool> {
+        &self.include_inactive
+    }
     /// Consumes the builder and constructs a [`GetBucketBundlesInput`](crate::operation::get_bucket_bundles::GetBucketBundlesInput).
     pub fn build(
         self,

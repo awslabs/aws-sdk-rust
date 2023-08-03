@@ -36,6 +36,10 @@ impl ListKeysFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListKeys as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_keys::builders::ListKeysInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,11 @@ impl ListKeysFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>An optional limit for the number of resources returned in a single call. </p>
+    /// <p>Default value: <code>100</code> </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
     /// <p>Default value: <code>null</code> </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,6 +147,11 @@ impl ListKeysFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
+    /// <p>Default value: <code>null</code> </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>Optionally filter the list to only <code>Active</code> or <code>Expired</code> API keys.</p>
     pub fn filter(mut self, input: crate::types::ApiKeyFilter) -> Self {
         self.inner = self.inner.filter(input);
@@ -147,5 +161,9 @@ impl ListKeysFluentBuilder {
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ApiKeyFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
+    }
+    /// <p>Optionally filter the list to only <code>Active</code> or <code>Expired</code> API keys.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::ApiKeyFilter> {
+        self.inner.get_filter()
     }
 }

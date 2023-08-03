@@ -46,6 +46,10 @@ impl ReleasePhoneNumberInputBuilder {
         self.phone_number_id = input;
         self
     }
+    /// <p>The PhoneNumberId or PhoneNumberArn of the phone number to release. You can use <code>DescribePhoneNumbers</code> to get the values for PhoneNumberId and PhoneNumberArn.</p>
+    pub fn get_phone_number_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number_id
+    }
     /// Consumes the builder and constructs a [`ReleasePhoneNumberInput`](crate::operation::release_phone_number::ReleasePhoneNumberInput).
     pub fn build(
         self,

@@ -87,6 +87,10 @@ impl DescribeAnomalyDetectorsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Use the token returned by the previous operation to request the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return in one operation. The maximum value that you can specify is 100.</p>
     /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -99,6 +103,11 @@ impl DescribeAnomalyDetectorsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return in one operation. The maximum value that you can specify is 100.</p>
+    /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>Limits the results to only the anomaly detection models that are associated with the specified namespace.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
@@ -109,6 +118,10 @@ impl DescribeAnomalyDetectorsInputBuilder {
         self.namespace = input;
         self
     }
+    /// <p>Limits the results to only the anomaly detection models that are associated with the specified namespace.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
+    }
     /// <p>Limits the results to only the anomaly detection models that are associated with the specified metric name. If there are multiple metrics with this name in different namespaces that have anomaly detection models, they're all returned.</p>
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_name = ::std::option::Option::Some(input.into());
@@ -118,6 +131,10 @@ impl DescribeAnomalyDetectorsInputBuilder {
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_name = input;
         self
+    }
+    /// <p>Limits the results to only the anomaly detection models that are associated with the specified metric name. If there are multiple metrics with this name in different namespaces that have anomaly detection models, they're all returned.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
     }
     /// Appends an item to `dimensions`.
     ///
@@ -138,6 +155,12 @@ impl DescribeAnomalyDetectorsInputBuilder {
         self.dimensions = input;
         self
     }
+    /// <p>Limits the results to only the anomaly detection models that are associated with the specified metric dimensions. If there are multiple metrics that have these dimensions and have anomaly detection models associated, they're all returned.</p>
+    pub fn get_dimensions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Dimension>> {
+        &self.dimensions
+    }
     /// Appends an item to `anomaly_detector_types`.
     ///
     /// To override the contents of this collection use [`set_anomaly_detector_types`](Self::set_anomaly_detector_types).
@@ -156,6 +179,12 @@ impl DescribeAnomalyDetectorsInputBuilder {
     ) -> Self {
         self.anomaly_detector_types = input;
         self
+    }
+    /// <p>The anomaly detector types to request when using <code>DescribeAnomalyDetectorsInput</code>. If empty, defaults to <code>SINGLE_METRIC</code>.</p>
+    pub fn get_anomaly_detector_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnomalyDetectorType>> {
+        &self.anomaly_detector_types
     }
     /// Consumes the builder and constructs a [`DescribeAnomalyDetectorsInput`](crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsInput).
     pub fn build(

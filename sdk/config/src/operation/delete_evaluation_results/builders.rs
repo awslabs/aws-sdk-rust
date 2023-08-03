@@ -37,6 +37,13 @@ impl DeleteEvaluationResultsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteEvaluationResults as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_evaluation_results::builders::DeleteEvaluationResultsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +139,9 @@ impl DeleteEvaluationResultsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_config_rule_name(input);
         self
+    }
+    /// <p>The name of the Config rule for which you want to delete the evaluation results.</p>
+    pub fn get_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_config_rule_name()
     }
 }

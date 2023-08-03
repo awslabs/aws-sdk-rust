@@ -36,6 +36,10 @@ impl DetachObjectFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DetachObject as a reference.
+    pub fn as_input(&self) -> &crate::operation::detach_object::builders::DetachObjectInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl DetachObjectFluentBuilder {
         self.inner = self.inner.set_directory_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_arn()
+    }
     /// <p>The parent reference from which the object with the specified link name is detached.</p>
     pub fn parent_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.inner = self.inner.parent_reference(input);
@@ -137,6 +145,10 @@ impl DetachObjectFluentBuilder {
         self.inner = self.inner.set_parent_reference(input);
         self
     }
+    /// <p>The parent reference from which the object with the specified link name is detached.</p>
+    pub fn get_parent_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
+        self.inner.get_parent_reference()
+    }
     /// <p>The link name associated with the object that needs to be detached.</p>
     pub fn link_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.link_name(input.into());
@@ -146,5 +158,9 @@ impl DetachObjectFluentBuilder {
     pub fn set_link_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_link_name(input);
         self
+    }
+    /// <p>The link name associated with the object that needs to be detached.</p>
+    pub fn get_link_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_link_name()
     }
 }

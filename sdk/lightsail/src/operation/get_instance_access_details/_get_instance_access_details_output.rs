@@ -49,6 +49,12 @@ impl GetInstanceAccessDetailsOutputBuilder {
         self.access_details = input;
         self
     }
+    /// <p>An array of key-value pairs containing information about a get instance access request.</p>
+    pub fn get_access_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceAccessDetails> {
+        &self.access_details
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

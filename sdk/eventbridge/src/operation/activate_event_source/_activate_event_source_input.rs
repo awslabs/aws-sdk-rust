@@ -41,6 +41,10 @@ impl ActivateEventSourceInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the partner event source to activate.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`ActivateEventSourceInput`](crate::operation::activate_event_source::ActivateEventSourceInput).
     pub fn build(
         self,

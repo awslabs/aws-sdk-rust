@@ -46,6 +46,10 @@ impl CreateJobOutputBuilder {
         self.job_arn = input;
         self
     }
+    /// <p>The ARN of the Amazon Braket job created.</p>
+    pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

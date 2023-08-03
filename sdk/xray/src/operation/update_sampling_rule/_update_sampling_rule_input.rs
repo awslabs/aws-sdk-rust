@@ -43,6 +43,12 @@ impl UpdateSamplingRuleInputBuilder {
         self.sampling_rule_update = input;
         self
     }
+    /// <p>The rule and fields to change.</p>
+    pub fn get_sampling_rule_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::SamplingRuleUpdate> {
+        &self.sampling_rule_update
+    }
     /// Consumes the builder and constructs a [`UpdateSamplingRuleInput`](crate::operation::update_sampling_rule::UpdateSamplingRuleInput).
     pub fn build(
         self,

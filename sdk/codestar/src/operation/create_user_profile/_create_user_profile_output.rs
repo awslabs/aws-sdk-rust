@@ -98,6 +98,10 @@ impl CreateUserProfileOutputBuilder {
         self.user_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
+    pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_arn
+    }
     /// <p>The name that is displayed as the friendly name for the user in AWS CodeStar.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -107,6 +111,10 @@ impl CreateUserProfileOutputBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
+    }
+    /// <p>The name that is displayed as the friendly name for the user in AWS CodeStar.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// <p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>
     pub fn email_address(
@@ -124,6 +132,10 @@ impl CreateUserProfileOutputBuilder {
         self.email_address = input;
         self
     }
+    /// <p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>
+    pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_address
+    }
     /// <p>The SSH public key associated with the user in AWS CodeStar. This is the public portion of the public/private keypair the user can use to access project resources if a project owner allows the user remote access to those resources.</p>
     pub fn ssh_public_key(
         mut self,
@@ -140,6 +152,10 @@ impl CreateUserProfileOutputBuilder {
         self.ssh_public_key = input;
         self
     }
+    /// <p>The SSH public key associated with the user in AWS CodeStar. This is the public portion of the public/private keypair the user can use to access project resources if a project owner allows the user remote access to those resources.</p>
+    pub fn get_ssh_public_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ssh_public_key
+    }
     /// <p>The date the user profile was created, in timestamp format.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_timestamp = ::std::option::Option::Some(input);
@@ -153,6 +169,10 @@ impl CreateUserProfileOutputBuilder {
         self.created_timestamp = input;
         self
     }
+    /// <p>The date the user profile was created, in timestamp format.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
+    }
     /// <p>The date the user profile was last modified, in timestamp format.</p>
     pub fn last_modified_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_timestamp = ::std::option::Option::Some(input);
@@ -165,6 +185,12 @@ impl CreateUserProfileOutputBuilder {
     ) -> Self {
         self.last_modified_timestamp = input;
         self
+    }
+    /// <p>The date the user profile was last modified, in timestamp format.</p>
+    pub fn get_last_modified_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

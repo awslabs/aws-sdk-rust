@@ -53,6 +53,12 @@ impl DescribeEnvironmentsInputBuilder {
         self.environment_ids = input;
         self
     }
+    /// <p>The IDs of individual environments to get information about.</p>
+    pub fn get_environment_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.environment_ids
+    }
     /// Consumes the builder and constructs a [`DescribeEnvironmentsInput`](crate::operation::describe_environments::DescribeEnvironmentsInput).
     pub fn build(
         self,

@@ -47,6 +47,10 @@ impl UntagInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the resource group from which to remove tags. The command removed both the specified keys and any values associated with those keys.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Appends an item to `keys`.
     ///
     /// To override the contents of this collection use [`set_keys`](Self::set_keys).
@@ -65,6 +69,10 @@ impl UntagInputBuilder {
     ) -> Self {
         self.keys = input;
         self
+    }
+    /// <p>The keys of the tags to be removed.</p>
+    pub fn get_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.keys
     }
     /// Consumes the builder and constructs a [`UntagInput`](crate::operation::untag::UntagInput).
     pub fn build(

@@ -54,6 +54,10 @@ impl DataLakeLifecycleTransitionBuilder {
         self.storage_class = input;
         self
     }
+    /// <p>The range of storage classes that you can choose from based on the data access, resiliency, and cost requirements of your workloads.</p>
+    pub fn get_storage_class(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_class
+    }
     /// <p>Number of days before data transitions to a different S3 Storage Class in the Amazon Security Lake object.</p>
     pub fn days(mut self, input: i32) -> Self {
         self.days = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl DataLakeLifecycleTransitionBuilder {
     pub fn set_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.days = input;
         self
+    }
+    /// <p>Number of days before data transitions to a different S3 Storage Class in the Amazon Security Lake object.</p>
+    pub fn get_days(&self) -> &::std::option::Option<i32> {
+        &self.days
     }
     /// Consumes the builder and constructs a [`DataLakeLifecycleTransition`](crate::types::DataLakeLifecycleTransition).
     pub fn build(self) -> crate::types::DataLakeLifecycleTransition {

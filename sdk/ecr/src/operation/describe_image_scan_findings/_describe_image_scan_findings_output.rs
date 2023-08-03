@@ -86,6 +86,10 @@ impl DescribeImageScanFindingsOutputBuilder {
         self.registry_id = input;
         self
     }
+    /// <p>The registry ID associated with the request.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
+    }
     /// <p>The repository name associated with the request.</p>
     pub fn repository_name(
         mut self,
@@ -102,6 +106,10 @@ impl DescribeImageScanFindingsOutputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The repository name associated with the request.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
     pub fn image_id(mut self, input: crate::types::ImageIdentifier) -> Self {
         self.image_id = ::std::option::Option::Some(input);
@@ -114,6 +122,10 @@ impl DescribeImageScanFindingsOutputBuilder {
     ) -> Self {
         self.image_id = input;
         self
+    }
+    /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<crate::types::ImageIdentifier> {
+        &self.image_id
     }
     /// <p>The current state of the scan.</p>
     pub fn image_scan_status(mut self, input: crate::types::ImageScanStatus) -> Self {
@@ -128,6 +140,10 @@ impl DescribeImageScanFindingsOutputBuilder {
         self.image_scan_status = input;
         self
     }
+    /// <p>The current state of the scan.</p>
+    pub fn get_image_scan_status(&self) -> &::std::option::Option<crate::types::ImageScanStatus> {
+        &self.image_scan_status
+    }
     /// <p>The information contained in the image scan findings.</p>
     pub fn image_scan_findings(mut self, input: crate::types::ImageScanFindings) -> Self {
         self.image_scan_findings = ::std::option::Option::Some(input);
@@ -141,6 +157,12 @@ impl DescribeImageScanFindingsOutputBuilder {
         self.image_scan_findings = input;
         self
     }
+    /// <p>The information contained in the image scan findings.</p>
+    pub fn get_image_scan_findings(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImageScanFindings> {
+        &self.image_scan_findings
+    }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImageScanFindings</code> request. When the results of a <code>DescribeImageScanFindings</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -150,6 +172,10 @@ impl DescribeImageScanFindingsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImageScanFindings</code> request. When the results of a <code>DescribeImageScanFindings</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

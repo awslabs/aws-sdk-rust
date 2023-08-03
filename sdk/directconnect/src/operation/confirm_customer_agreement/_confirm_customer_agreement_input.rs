@@ -47,6 +47,10 @@ impl ConfirmCustomerAgreementInputBuilder {
         self.agreement_name = input;
         self
     }
+    /// <p> The name of the customer agreement. </p>
+    pub fn get_agreement_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agreement_name
+    }
     /// Consumes the builder and constructs a [`ConfirmCustomerAgreementInput`](crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementInput).
     pub fn build(
         self,

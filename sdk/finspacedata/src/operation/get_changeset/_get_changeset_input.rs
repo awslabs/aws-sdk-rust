@@ -48,6 +48,10 @@ impl GetChangesetInputBuilder {
         self.dataset_id = input;
         self
     }
+    /// <p>The unique identifier for the FinSpace Dataset where the Changeset is created.</p>
+    pub fn get_dataset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_id
+    }
     /// <p>The unique identifier of the Changeset for which to get data.</p>
     pub fn changeset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.changeset_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl GetChangesetInputBuilder {
     pub fn set_changeset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.changeset_id = input;
         self
+    }
+    /// <p>The unique identifier of the Changeset for which to get data.</p>
+    pub fn get_changeset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.changeset_id
     }
     /// Consumes the builder and constructs a [`GetChangesetInput`](crate::operation::get_changeset::GetChangesetInput).
     pub fn build(

@@ -36,6 +36,12 @@ impl TestSegmentPatternFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the TestSegmentPattern as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::test_segment_pattern::builders::TestSegmentPatternInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl TestSegmentPatternFluentBuilder {
         self.inner = self.inner.set_pattern(input);
         self
     }
+    /// <p>The pattern to test.</p>
+    pub fn get_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pattern()
+    }
     /// <p>A sample <code>evaluationContext</code> JSON block to test against the specified pattern.</p>
     pub fn payload(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.payload(input.into());
@@ -135,5 +145,9 @@ impl TestSegmentPatternFluentBuilder {
     pub fn set_payload(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_payload(input);
         self
+    }
+    /// <p>A sample <code>evaluationContext</code> JSON block to test against the specified pattern.</p>
+    pub fn get_payload(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_payload()
     }
 }

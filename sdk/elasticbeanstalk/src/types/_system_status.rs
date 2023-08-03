@@ -51,6 +51,10 @@ impl SystemStatusBuilder {
         self.cpu_utilization = input;
         self
     }
+    /// <p>CPU utilization metrics for the instance.</p>
+    pub fn get_cpu_utilization(&self) -> &::std::option::Option<crate::types::CpuUtilization> {
+        &self.cpu_utilization
+    }
     /// Appends an item to `load_average`.
     ///
     /// To override the contents of this collection use [`set_load_average`](Self::set_load_average).
@@ -66,6 +70,10 @@ impl SystemStatusBuilder {
     pub fn set_load_average(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.load_average = input;
         self
+    }
+    /// <p>Load average in the last 1-minute, 5-minute, and 15-minute periods. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating System Metrics</a>.</p>
+    pub fn get_load_average(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+        &self.load_average
     }
     /// Consumes the builder and constructs a [`SystemStatus`](crate::types::SystemStatus).
     pub fn build(self) -> crate::types::SystemStatus {

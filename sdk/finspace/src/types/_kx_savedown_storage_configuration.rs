@@ -63,6 +63,13 @@ impl KxSavedownStorageConfigurationBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of writeable storage space for temporarily storing your savedown data. The valid values are:</p>
+    /// <ul>
+    /// <li> <p>SDS01 – This type represents 3000 IOPS and io2 ebs volume type.</p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::KxSavedownStorageType> {
+        &self.r#type
+    }
     /// <p>The size of temporary storage in bytes.</p>
     pub fn size(mut self, input: i32) -> Self {
         self.size = ::std::option::Option::Some(input);
@@ -72,6 +79,10 @@ impl KxSavedownStorageConfigurationBuilder {
     pub fn set_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.size = input;
         self
+    }
+    /// <p>The size of temporary storage in bytes.</p>
+    pub fn get_size(&self) -> &::std::option::Option<i32> {
+        &self.size
     }
     /// Consumes the builder and constructs a [`KxSavedownStorageConfiguration`](crate::types::KxSavedownStorageConfiguration).
     pub fn build(self) -> crate::types::KxSavedownStorageConfiguration {

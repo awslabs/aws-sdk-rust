@@ -36,6 +36,10 @@ impl BatchCreateDelegationByAssessmentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchCreateDelegationByAssessment as a reference.
+    pub fn as_input(&self) -> &crate::operation::batch_create_delegation_by_assessment::builders::BatchCreateDelegationByAssessmentInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -110,6 +114,12 @@ impl BatchCreateDelegationByAssessmentFluentBuilder {
         self.inner = self.inner.set_create_delegation_requests(input);
         self
     }
+    /// <p> The API request to batch create delegations in Audit Manager. </p>
+    pub fn get_create_delegation_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateDelegationRequest>> {
+        self.inner.get_create_delegation_requests()
+    }
     /// <p> The identifier for the assessment. </p>
     pub fn assessment_id(
         mut self,
@@ -125,5 +135,9 @@ impl BatchCreateDelegationByAssessmentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_assessment_id(input);
         self
+    }
+    /// <p> The identifier for the assessment. </p>
+    pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assessment_id()
     }
 }

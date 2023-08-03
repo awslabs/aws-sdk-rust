@@ -143,6 +143,10 @@ impl CreateOpenZfsVolumeConfigurationBuilder {
         self.parent_volume_id = input;
         self
     }
+    /// <p>The ID of the volume to use as the parent volume of the volume that you are creating.</p>
+    pub fn get_parent_volume_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_volume_id
+    }
     /// <p>Specifies the amount of storage in gibibytes (GiB) to reserve from the parent volume. Setting <code>StorageCapacityReservationGiB</code> guarantees that the specified amount of storage space on the parent volume will always be available for the volume. You can't reserve more storage than the parent volume has. To <i>not</i> specify a storage capacity reservation, set this to <code>0</code> or <code>-1</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-volumes.html#volume-properties">Volume properties</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
     pub fn storage_capacity_reservation_gi_b(mut self, input: i32) -> Self {
         self.storage_capacity_reservation_gi_b = ::std::option::Option::Some(input);
@@ -156,6 +160,10 @@ impl CreateOpenZfsVolumeConfigurationBuilder {
         self.storage_capacity_reservation_gi_b = input;
         self
     }
+    /// <p>Specifies the amount of storage in gibibytes (GiB) to reserve from the parent volume. Setting <code>StorageCapacityReservationGiB</code> guarantees that the specified amount of storage space on the parent volume will always be available for the volume. You can't reserve more storage than the parent volume has. To <i>not</i> specify a storage capacity reservation, set this to <code>0</code> or <code>-1</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-volumes.html#volume-properties">Volume properties</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
+    pub fn get_storage_capacity_reservation_gi_b(&self) -> &::std::option::Option<i32> {
+        &self.storage_capacity_reservation_gi_b
+    }
     /// <p>Sets the maximum storage size in gibibytes (GiB) for the volume. You can specify a quota that is larger than the storage on the parent volume. A volume quota limits the amount of storage that the volume can consume to the configured amount, but does not guarantee the space will be available on the parent volume. To guarantee quota space, you must also set <code>StorageCapacityReservationGiB</code>. To <i>not</i> specify a storage capacity quota, set this to <code>-1</code>. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-volumes.html#volume-properties">Volume properties</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
     pub fn storage_capacity_quota_gi_b(mut self, input: i32) -> Self {
@@ -168,6 +176,11 @@ impl CreateOpenZfsVolumeConfigurationBuilder {
         self.storage_capacity_quota_gi_b = input;
         self
     }
+    /// <p>Sets the maximum storage size in gibibytes (GiB) for the volume. You can specify a quota that is larger than the storage on the parent volume. A volume quota limits the amount of storage that the volume can consume to the configured amount, but does not guarantee the space will be available on the parent volume. To guarantee quota space, you must also set <code>StorageCapacityReservationGiB</code>. To <i>not</i> specify a storage capacity quota, set this to <code>-1</code>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-volumes.html#volume-properties">Volume properties</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
+    pub fn get_storage_capacity_quota_gi_b(&self) -> &::std::option::Option<i32> {
+        &self.storage_capacity_quota_gi_b
+    }
     /// <p>Specifies the suggested block size for a volume in a ZFS dataset, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. We recommend using the default setting for the majority of use cases. Generally, workloads that write in fixed small or large record sizes may benefit from setting a custom record size, like database workloads (small record size) or media streaming workloads (large record size). For additional guidance on when to set a custom record size, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#record-size-performance"> ZFS Record size</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
     pub fn record_size_ki_b(mut self, input: i32) -> Self {
         self.record_size_ki_b = ::std::option::Option::Some(input);
@@ -177,6 +190,10 @@ impl CreateOpenZfsVolumeConfigurationBuilder {
     pub fn set_record_size_ki_b(mut self, input: ::std::option::Option<i32>) -> Self {
         self.record_size_ki_b = input;
         self
+    }
+    /// <p>Specifies the suggested block size for a volume in a ZFS dataset, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. We recommend using the default setting for the majority of use cases. Generally, workloads that write in fixed small or large record sizes may benefit from setting a custom record size, like database workloads (small record size) or media streaming workloads (large record size). For additional guidance on when to set a custom record size, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#record-size-performance"> ZFS Record size</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
+    pub fn get_record_size_ki_b(&self) -> &::std::option::Option<i32> {
+        &self.record_size_ki_b
     }
     /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
     /// <ul>
@@ -206,6 +223,18 @@ impl CreateOpenZfsVolumeConfigurationBuilder {
         self.data_compression_type = input;
         self
     }
+    /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
+    /// <ul>
+    /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is the default.</p> </li>
+    /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. ZSTD compression provides a higher level of data compression and higher read throughput performance than LZ4 compression.</p> </li>
+    /// <li> <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. LZ4 compression provides a lower level of compression and higher write throughput performance than ZSTD compression.</p> </li>
+    /// </ul>
+    /// <p>For more information about volume compression types and the performance of your Amazon FSx for OpenZFS file system, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs"> Tips for maximizing performance</a> File system and volume settings in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
+    pub fn get_data_compression_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::OpenZfsDataCompressionType> {
+        &self.data_compression_type
+    }
     /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code>, and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value.</p>
     pub fn copy_tags_to_snapshots(mut self, input: bool) -> Self {
         self.copy_tags_to_snapshots = ::std::option::Option::Some(input);
@@ -215,6 +244,10 @@ impl CreateOpenZfsVolumeConfigurationBuilder {
     pub fn set_copy_tags_to_snapshots(mut self, input: ::std::option::Option<bool>) -> Self {
         self.copy_tags_to_snapshots = input;
         self
+    }
+    /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code>, and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value.</p>
+    pub fn get_copy_tags_to_snapshots(&self) -> &::std::option::Option<bool> {
+        &self.copy_tags_to_snapshots
     }
     /// <p>The configuration object that specifies the snapshot to use as the origin of the data for the volume.</p>
     pub fn origin_snapshot(
@@ -232,6 +265,12 @@ impl CreateOpenZfsVolumeConfigurationBuilder {
         self.origin_snapshot = input;
         self
     }
+    /// <p>The configuration object that specifies the snapshot to use as the origin of the data for the volume.</p>
+    pub fn get_origin_snapshot(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateOpenZfsOriginSnapshotConfiguration> {
+        &self.origin_snapshot
+    }
     /// <p>A Boolean value indicating whether the volume is read-only.</p>
     pub fn read_only(mut self, input: bool) -> Self {
         self.read_only = ::std::option::Option::Some(input);
@@ -241,6 +280,10 @@ impl CreateOpenZfsVolumeConfigurationBuilder {
     pub fn set_read_only(mut self, input: ::std::option::Option<bool>) -> Self {
         self.read_only = input;
         self
+    }
+    /// <p>A Boolean value indicating whether the volume is read-only.</p>
+    pub fn get_read_only(&self) -> &::std::option::Option<bool> {
+        &self.read_only
     }
     /// Appends an item to `nfs_exports`.
     ///
@@ -261,6 +304,12 @@ impl CreateOpenZfsVolumeConfigurationBuilder {
         self.nfs_exports = input;
         self
     }
+    /// <p>The configuration object for mounting a Network File System (NFS) file system.</p>
+    pub fn get_nfs_exports(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OpenZfsNfsExport>> {
+        &self.nfs_exports
+    }
     /// Appends an item to `user_and_group_quotas`.
     ///
     /// To override the contents of this collection use [`set_user_and_group_quotas`](Self::set_user_and_group_quotas).
@@ -279,6 +328,12 @@ impl CreateOpenZfsVolumeConfigurationBuilder {
     ) -> Self {
         self.user_and_group_quotas = input;
         self
+    }
+    /// <p>An object specifying how much storage users or groups can use on the volume.</p>
+    pub fn get_user_and_group_quotas(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OpenZfsUserOrGroupQuota>> {
+        &self.user_and_group_quotas
     }
     /// Consumes the builder and constructs a [`CreateOpenZfsVolumeConfiguration`](crate::types::CreateOpenZfsVolumeConfiguration).
     pub fn build(self) -> crate::types::CreateOpenZfsVolumeConfiguration {

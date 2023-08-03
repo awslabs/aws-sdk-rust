@@ -70,6 +70,10 @@ impl ManagedAgentStateChangeBuilder {
         self.container_name = input;
         self
     }
+    /// <p>The name of the container that's associated with the managed agent.</p>
+    pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_name
+    }
     /// <p>The name of the managed agent.</p>
     pub fn managed_agent_name(mut self, input: crate::types::ManagedAgentName) -> Self {
         self.managed_agent_name = ::std::option::Option::Some(input);
@@ -83,6 +87,10 @@ impl ManagedAgentStateChangeBuilder {
         self.managed_agent_name = input;
         self
     }
+    /// <p>The name of the managed agent.</p>
+    pub fn get_managed_agent_name(&self) -> &::std::option::Option<crate::types::ManagedAgentName> {
+        &self.managed_agent_name
+    }
     /// <p>The status of the managed agent.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -93,6 +101,10 @@ impl ManagedAgentStateChangeBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the managed agent.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The reason for the status of the managed agent.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
@@ -102,6 +114,10 @@ impl ManagedAgentStateChangeBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>The reason for the status of the managed agent.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
     }
     /// Consumes the builder and constructs a [`ManagedAgentStateChange`](crate::types::ManagedAgentStateChange).
     pub fn build(self) -> crate::types::ManagedAgentStateChange {

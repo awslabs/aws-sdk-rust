@@ -50,6 +50,12 @@ impl GetAccessPolicyOutputBuilder {
         self.access_policy_detail = input;
         self
     }
+    /// <p>Details about the requested access policy.</p>
+    pub fn get_access_policy_detail(
+        &self,
+    ) -> &::std::option::Option<crate::types::AccessPolicyDetail> {
+        &self.access_policy_detail
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -36,6 +36,12 @@ impl UpdatePackageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdatePackage as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_package::builders::UpdatePackageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl UpdatePackageFluentBuilder {
         self.inner = self.inner.set_package_id(input);
         self
     }
+    /// <p>The unique identifier for the package.</p>
+    pub fn get_package_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_package_id()
+    }
     /// <p>Amazon S3 bucket and key for the package.</p>
     pub fn package_source(mut self, input: crate::types::PackageSource) -> Self {
         self.inner = self.inner.package_source(input);
@@ -130,6 +140,10 @@ impl UpdatePackageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_package_source(input);
         self
+    }
+    /// <p>Amazon S3 bucket and key for the package.</p>
+    pub fn get_package_source(&self) -> &::std::option::Option<crate::types::PackageSource> {
+        self.inner.get_package_source()
     }
     /// <p>A new description of the package.</p>
     pub fn package_description(
@@ -147,6 +161,10 @@ impl UpdatePackageFluentBuilder {
         self.inner = self.inner.set_package_description(input);
         self
     }
+    /// <p>A new description of the package.</p>
+    pub fn get_package_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_package_description()
+    }
     /// <p>Commit message for the updated file, which is shown as part of <code>GetPackageVersionHistoryResponse</code>.</p>
     pub fn commit_message(
         mut self,
@@ -162,5 +180,9 @@ impl UpdatePackageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_commit_message(input);
         self
+    }
+    /// <p>Commit message for the updated file, which is shown as part of <code>GetPackageVersionHistoryResponse</code>.</p>
+    pub fn get_commit_message(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_commit_message()
     }
 }

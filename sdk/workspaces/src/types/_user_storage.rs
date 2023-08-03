@@ -40,6 +40,10 @@ impl UserStorageBuilder {
         self.capacity = input;
         self
     }
+    /// <p>The size of the user volume.</p>
+    pub fn get_capacity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.capacity
+    }
     /// Consumes the builder and constructs a [`UserStorage`](crate::types::UserStorage).
     pub fn build(self) -> crate::types::UserStorage {
         crate::types::UserStorage {

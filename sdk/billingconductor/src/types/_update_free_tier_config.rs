@@ -40,6 +40,10 @@ impl UpdateFreeTierConfigBuilder {
         self.activated = input;
         self
     }
+    /// <p> Activate or deactivate application of Amazon Web Services Free Tier. </p>
+    pub fn get_activated(&self) -> &::std::option::Option<bool> {
+        &self.activated
+    }
     /// Consumes the builder and constructs a [`UpdateFreeTierConfig`](crate::types::UpdateFreeTierConfig).
     pub fn build(self) -> crate::types::UpdateFreeTierConfig {
         crate::types::UpdateFreeTierConfig {

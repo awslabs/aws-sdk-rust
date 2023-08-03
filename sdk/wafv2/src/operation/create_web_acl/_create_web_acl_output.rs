@@ -49,6 +49,10 @@ impl CreateWebAclOutputBuilder {
         self.summary = input;
         self
     }
+    /// <p>High-level information about a <code>WebACL</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>WebACL</code>, and the ARN, that you provide to operations like <code>AssociateWebACL</code>.</p>
+    pub fn get_summary(&self) -> &::std::option::Option<crate::types::WebAclSummary> {
+        &self.summary
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

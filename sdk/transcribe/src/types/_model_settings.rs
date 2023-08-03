@@ -51,6 +51,11 @@ impl ModelSettingsBuilder {
         self.language_model_name = input;
         self
     }
+    /// <p>The name of the custom language model you want to use when processing your transcription job. Note that custom language model names are case sensitive.</p>
+    /// <p>The language of the specified custom language model must match the language code that you specify in your transcription request. If the languages don't match, the custom language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
+    pub fn get_language_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.language_model_name
+    }
     /// Consumes the builder and constructs a [`ModelSettings`](crate::types::ModelSettings).
     pub fn build(self) -> crate::types::ModelSettings {
         crate::types::ModelSettings {

@@ -154,6 +154,10 @@ impl AppBlockBuilderBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the app block builder.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the app block builder.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -163,6 +167,10 @@ impl AppBlockBuilderBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the app block builder.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The display name of the app block builder.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -174,6 +182,10 @@ impl AppBlockBuilderBuilder {
         self.display_name = input;
         self
     }
+    /// <p>The display name of the app block builder.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// <p>The description of the app block builder.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -183,6 +195,10 @@ impl AppBlockBuilderBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the app block builder.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The platform of the app block builder.</p>
     /// <p> <code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
@@ -198,6 +214,13 @@ impl AppBlockBuilderBuilder {
     ) -> Self {
         self.platform = input;
         self
+    }
+    /// <p>The platform of the app block builder.</p>
+    /// <p> <code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
+    pub fn get_platform(
+        &self,
+    ) -> &::std::option::Option<crate::types::AppBlockBuilderPlatformType> {
+        &self.platform
     }
     /// <p>The instance type of the app block builder.</p>
     pub fn instance_type(
@@ -215,6 +238,10 @@ impl AppBlockBuilderBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The instance type of the app block builder.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
+    }
     /// <p>Indicates whether default internet access is enabled for the app block builder.</p>
     pub fn enable_default_internet_access(mut self, input: bool) -> Self {
         self.enable_default_internet_access = ::std::option::Option::Some(input);
@@ -228,6 +255,10 @@ impl AppBlockBuilderBuilder {
         self.enable_default_internet_access = input;
         self
     }
+    /// <p>Indicates whether default internet access is enabled for the app block builder.</p>
+    pub fn get_enable_default_internet_access(&self) -> &::std::option::Option<bool> {
+        &self.enable_default_internet_access
+    }
     /// <p>The ARN of the IAM role that is applied to the app block builder.</p>
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role_arn = ::std::option::Option::Some(input.into());
@@ -238,6 +269,10 @@ impl AppBlockBuilderBuilder {
         self.iam_role_arn = input;
         self
     }
+    /// <p>The ARN of the IAM role that is applied to the app block builder.</p>
+    pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_role_arn
+    }
     /// <p>The VPC configuration for the app block builder.</p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
         self.vpc_config = ::std::option::Option::Some(input);
@@ -247,6 +282,10 @@ impl AppBlockBuilderBuilder {
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
         self.vpc_config = input;
         self
+    }
+    /// <p>The VPC configuration for the app block builder.</p>
+    pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
+        &self.vpc_config
     }
     /// <p>The state of the app block builder.</p>
     pub fn state(mut self, input: crate::types::AppBlockBuilderState) -> Self {
@@ -261,6 +300,10 @@ impl AppBlockBuilderBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of the app block builder.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::AppBlockBuilderState> {
+        &self.state
+    }
     /// <p>The creation time of the app block builder.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
@@ -273,6 +316,10 @@ impl AppBlockBuilderBuilder {
     ) -> Self {
         self.created_time = input;
         self
+    }
+    /// <p>The creation time of the app block builder.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
     }
     /// Appends an item to `app_block_builder_errors`.
     ///
@@ -293,6 +340,12 @@ impl AppBlockBuilderBuilder {
         self.app_block_builder_errors = input;
         self
     }
+    /// <p>The app block builder errors.</p>
+    pub fn get_app_block_builder_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceError>> {
+        &self.app_block_builder_errors
+    }
     /// <p>The state change reason.</p>
     pub fn state_change_reason(
         mut self,
@@ -308,6 +361,12 @@ impl AppBlockBuilderBuilder {
     ) -> Self {
         self.state_change_reason = input;
         self
+    }
+    /// <p>The state change reason.</p>
+    pub fn get_state_change_reason(
+        &self,
+    ) -> &::std::option::Option<crate::types::AppBlockBuilderStateChangeReason> {
+        &self.state_change_reason
     }
     /// Appends an item to `access_endpoints`.
     ///
@@ -327,6 +386,12 @@ impl AppBlockBuilderBuilder {
     ) -> Self {
         self.access_endpoints = input;
         self
+    }
+    /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the app block builder only through the specified endpoints.</p>
+    pub fn get_access_endpoints(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>> {
+        &self.access_endpoints
     }
     /// Consumes the builder and constructs a [`AppBlockBuilder`](crate::types::AppBlockBuilder).
     pub fn build(self) -> crate::types::AppBlockBuilder {

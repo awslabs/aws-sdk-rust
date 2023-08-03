@@ -39,6 +39,10 @@ impl DescribeInputInputBuilder {
         self.input_name = input;
         self
     }
+    /// <p>The name of the input.</p>
+    pub fn get_input_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_name
+    }
     /// Consumes the builder and constructs a [`DescribeInputInput`](crate::operation::describe_input::DescribeInputInput).
     pub fn build(
         self,

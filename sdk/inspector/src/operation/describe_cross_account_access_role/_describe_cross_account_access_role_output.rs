@@ -62,6 +62,10 @@ impl DescribeCrossAccountAccessRoleOutputBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The ARN that specifies the IAM role that Amazon Inspector uses to access your AWS account.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>A Boolean value that specifies whether the IAM role has the necessary policies attached to enable Amazon Inspector to access your AWS account.</p>
     pub fn valid(mut self, input: bool) -> Self {
         self.valid = ::std::option::Option::Some(input);
@@ -71,6 +75,10 @@ impl DescribeCrossAccountAccessRoleOutputBuilder {
     pub fn set_valid(mut self, input: ::std::option::Option<bool>) -> Self {
         self.valid = input;
         self
+    }
+    /// <p>A Boolean value that specifies whether the IAM role has the necessary policies attached to enable Amazon Inspector to access your AWS account.</p>
+    pub fn get_valid(&self) -> &::std::option::Option<bool> {
+        &self.valid
     }
     /// <p>The date when the cross-account access role was registered.</p>
     pub fn registered_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -84,6 +92,10 @@ impl DescribeCrossAccountAccessRoleOutputBuilder {
     ) -> Self {
         self.registered_at = input;
         self
+    }
+    /// <p>The date when the cross-account access role was registered.</p>
+    pub fn get_registered_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.registered_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

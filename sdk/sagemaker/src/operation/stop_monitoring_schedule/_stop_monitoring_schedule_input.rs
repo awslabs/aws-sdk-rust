@@ -47,6 +47,10 @@ impl StopMonitoringScheduleInputBuilder {
         self.monitoring_schedule_name = input;
         self
     }
+    /// <p>The name of the schedule to stop.</p>
+    pub fn get_monitoring_schedule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitoring_schedule_name
+    }
     /// Consumes the builder and constructs a [`StopMonitoringScheduleInput`](crate::operation::stop_monitoring_schedule::StopMonitoringScheduleInput).
     pub fn build(
         self,

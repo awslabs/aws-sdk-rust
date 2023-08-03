@@ -56,6 +56,10 @@ impl ApplyMappingBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the transform node.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `inputs`.
     ///
     /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
@@ -75,6 +79,10 @@ impl ApplyMappingBuilder {
         self.inputs = input;
         self
     }
+    /// <p>The data inputs identified by their node names.</p>
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inputs
+    }
     /// Appends an item to `mapping`.
     ///
     /// To override the contents of this collection use [`set_mapping`](Self::set_mapping).
@@ -93,6 +101,10 @@ impl ApplyMappingBuilder {
     ) -> Self {
         self.mapping = input;
         self
+    }
+    /// <p>Specifies the mapping of data property keys in the data source to data property keys in the data target.</p>
+    pub fn get_mapping(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Mapping>> {
+        &self.mapping
     }
     /// Consumes the builder and constructs a [`ApplyMapping`](crate::types::ApplyMapping).
     pub fn build(self) -> crate::types::ApplyMapping {

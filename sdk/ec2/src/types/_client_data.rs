@@ -64,6 +64,10 @@ impl ClientDataBuilder {
         self.comment = input;
         self
     }
+    /// <p>A user-defined comment about the disk upload.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment
+    }
     /// <p>The time that the disk upload ends.</p>
     pub fn upload_end(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.upload_end = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl ClientDataBuilder {
         self.upload_end = input;
         self
     }
+    /// <p>The time that the disk upload ends.</p>
+    pub fn get_upload_end(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.upload_end
+    }
     /// <p>The size of the uploaded disk image, in GiB.</p>
     pub fn upload_size(mut self, input: f64) -> Self {
         self.upload_size = ::std::option::Option::Some(input);
@@ -86,6 +94,10 @@ impl ClientDataBuilder {
     pub fn set_upload_size(mut self, input: ::std::option::Option<f64>) -> Self {
         self.upload_size = input;
         self
+    }
+    /// <p>The size of the uploaded disk image, in GiB.</p>
+    pub fn get_upload_size(&self) -> &::std::option::Option<f64> {
+        &self.upload_size
     }
     /// <p>The time that the disk upload starts.</p>
     pub fn upload_start(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -99,6 +111,10 @@ impl ClientDataBuilder {
     ) -> Self {
         self.upload_start = input;
         self
+    }
+    /// <p>The time that the disk upload starts.</p>
+    pub fn get_upload_start(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.upload_start
     }
     /// Consumes the builder and constructs a [`ClientData`](crate::types::ClientData).
     pub fn build(self) -> crate::types::ClientData {

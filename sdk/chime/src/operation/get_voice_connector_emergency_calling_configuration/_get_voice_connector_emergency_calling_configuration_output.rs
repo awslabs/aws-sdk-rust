@@ -56,6 +56,12 @@ impl GetVoiceConnectorEmergencyCallingConfigurationOutputBuilder {
         self.emergency_calling_configuration = input;
         self
     }
+    /// <p>The emergency calling configuration details.</p>
+    pub fn get_emergency_calling_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::EmergencyCallingConfiguration> {
+        &self.emergency_calling_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -54,6 +54,10 @@ impl MergeBranchesByFastForwardOutputBuilder {
         self.commit_id = input;
         self
     }
+    /// <p>The commit ID of the merge in the destination or target branch.</p>
+    pub fn get_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.commit_id
+    }
     /// <p>The tree ID of the merge in the destination or target branch.</p>
     pub fn tree_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tree_id = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl MergeBranchesByFastForwardOutputBuilder {
     pub fn set_tree_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tree_id = input;
         self
+    }
+    /// <p>The tree ID of the merge in the destination or target branch.</p>
+    pub fn get_tree_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tree_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -80,6 +80,10 @@ impl GetObjectAttributesPartsBuilder {
         self.total_parts_count = input;
         self
     }
+    /// <p>The total number of parts.</p>
+    pub fn get_total_parts_count(&self) -> &::std::option::Option<i32> {
+        &self.total_parts_count
+    }
     /// <p>The marker for the current part.</p>
     pub fn part_number_marker(
         mut self,
@@ -95,6 +99,10 @@ impl GetObjectAttributesPartsBuilder {
     ) -> Self {
         self.part_number_marker = input;
         self
+    }
+    /// <p>The marker for the current part.</p>
+    pub fn get_part_number_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.part_number_marker
     }
     /// <p>When a list is truncated, this element specifies the last part in the list, as well as the value to use for the <code>PartNumberMarker</code> request parameter in a subsequent request.</p>
     pub fn next_part_number_marker(
@@ -112,6 +120,10 @@ impl GetObjectAttributesPartsBuilder {
         self.next_part_number_marker = input;
         self
     }
+    /// <p>When a list is truncated, this element specifies the last part in the list, as well as the value to use for the <code>PartNumberMarker</code> request parameter in a subsequent request.</p>
+    pub fn get_next_part_number_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_part_number_marker
+    }
     /// <p>The maximum number of parts allowed in the response.</p>
     pub fn max_parts(mut self, input: i32) -> Self {
         self.max_parts = ::std::option::Option::Some(input);
@@ -122,6 +134,10 @@ impl GetObjectAttributesPartsBuilder {
         self.max_parts = input;
         self
     }
+    /// <p>The maximum number of parts allowed in the response.</p>
+    pub fn get_max_parts(&self) -> &::std::option::Option<i32> {
+        &self.max_parts
+    }
     /// <p>Indicates whether the returned list of parts is truncated. A value of <code>true</code> indicates that the list was truncated. A list can be truncated if the number of parts exceeds the limit returned in the <code>MaxParts</code> element.</p>
     pub fn is_truncated(mut self, input: bool) -> Self {
         self.is_truncated = ::std::option::Option::Some(input);
@@ -131,6 +147,10 @@ impl GetObjectAttributesPartsBuilder {
     pub fn set_is_truncated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_truncated = input;
         self
+    }
+    /// <p>Indicates whether the returned list of parts is truncated. A value of <code>true</code> indicates that the list was truncated. A list can be truncated if the number of parts exceeds the limit returned in the <code>MaxParts</code> element.</p>
+    pub fn get_is_truncated(&self) -> &::std::option::Option<bool> {
+        &self.is_truncated
     }
     /// Appends an item to `parts`.
     ///
@@ -150,6 +170,10 @@ impl GetObjectAttributesPartsBuilder {
     ) -> Self {
         self.parts = input;
         self
+    }
+    /// <p>A container for elements related to a particular part. A response can contain zero or more <code>Parts</code> elements.</p>
+    pub fn get_parts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ObjectPart>> {
+        &self.parts
     }
     /// Consumes the builder and constructs a [`GetObjectAttributesParts`](crate::types::GetObjectAttributesParts).
     pub fn build(self) -> crate::types::GetObjectAttributesParts {

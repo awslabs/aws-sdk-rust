@@ -51,6 +51,10 @@ impl GpsPointDimensionBuilder {
         self.coordinates = input;
         self
     }
+    /// <p>The GPS coordinates to measure distance from.</p>
+    pub fn get_coordinates(&self) -> &::std::option::Option<crate::types::GpsCoordinates> {
+        &self.coordinates
+    }
     /// <p>The range, in kilometers, from the GPS coordinates.</p>
     pub fn range_in_kilometers(mut self, input: f64) -> Self {
         self.range_in_kilometers = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl GpsPointDimensionBuilder {
     pub fn set_range_in_kilometers(mut self, input: ::std::option::Option<f64>) -> Self {
         self.range_in_kilometers = input;
         self
+    }
+    /// <p>The range, in kilometers, from the GPS coordinates.</p>
+    pub fn get_range_in_kilometers(&self) -> &::std::option::Option<f64> {
+        &self.range_in_kilometers
     }
     /// Consumes the builder and constructs a [`GpsPointDimension`](crate::types::GpsPointDimension).
     pub fn build(self) -> crate::types::GpsPointDimension {

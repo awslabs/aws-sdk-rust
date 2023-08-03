@@ -46,6 +46,10 @@ impl FailStepMetadataBuilder {
         self.error_message = input;
         self
     }
+    /// <p>A message that you define and then is processed and rendered by the Fail step when the error occurs.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// Consumes the builder and constructs a [`FailStepMetadata`](crate::types::FailStepMetadata).
     pub fn build(self) -> crate::types::FailStepMetadata {
         crate::types::FailStepMetadata {

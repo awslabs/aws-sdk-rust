@@ -46,6 +46,10 @@ impl UpdateSchemaOutputBuilder {
         self.schema_arn = input;
         self
     }
+    /// <p>The ARN that is associated with the updated schema. For more information, see <code>arns</code>.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

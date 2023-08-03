@@ -47,6 +47,10 @@ impl DisassociateRepositoryInputBuilder {
         self.association_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.</p>
+    pub fn get_association_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_arn
+    }
     /// Consumes the builder and constructs a [`DisassociateRepositoryInput`](crate::operation::disassociate_repository::DisassociateRepositoryInput).
     pub fn build(
         self,

@@ -36,6 +36,10 @@ impl IncreaseReplicationFactorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the IncreaseReplicationFactor as a reference.
+    pub fn as_input(&self) -> &crate::operation::increase_replication_factor::builders::IncreaseReplicationFactorInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl IncreaseReplicationFactorFluentBuilder {
         self.inner = self.inner.set_cluster_name(input);
         self
     }
+    /// <p>The name of the DAX cluster that will receive additional nodes.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_name()
+    }
     /// <p>The new number of nodes for the DAX cluster.</p>
     pub fn new_replication_factor(mut self, input: i32) -> Self {
         self.inner = self.inner.new_replication_factor(input);
@@ -135,6 +143,10 @@ impl IncreaseReplicationFactorFluentBuilder {
     pub fn set_new_replication_factor(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_new_replication_factor(input);
         self
+    }
+    /// <p>The new number of nodes for the DAX cluster.</p>
+    pub fn get_new_replication_factor(&self) -> &::std::option::Option<i32> {
+        self.inner.get_new_replication_factor()
     }
     /// Appends an item to `AvailabilityZones`.
     ///
@@ -155,5 +167,11 @@ impl IncreaseReplicationFactorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_availability_zones(input);
         self
+    }
+    /// <p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.</p>
+    pub fn get_availability_zones(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_availability_zones()
     }
 }

@@ -50,6 +50,10 @@ impl GetInstanceAccessOutputBuilder {
         self.instance_access = input;
         self
     }
+    /// <p>The connection information for a fleet instance, including IP address and access credentials.</p>
+    pub fn get_instance_access(&self) -> &::std::option::Option<crate::types::InstanceAccess> {
+        &self.instance_access
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

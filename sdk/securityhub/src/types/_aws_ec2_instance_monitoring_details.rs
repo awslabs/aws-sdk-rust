@@ -40,6 +40,10 @@ impl AwsEc2InstanceMonitoringDetailsBuilder {
         self.state = input;
         self
     }
+    /// <p> Indicates whether detailed monitoring is turned on. Otherwise, basic monitoring is turned on. </p>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
+    }
     /// Consumes the builder and constructs a [`AwsEc2InstanceMonitoringDetails`](crate::types::AwsEc2InstanceMonitoringDetails).
     pub fn build(self) -> crate::types::AwsEc2InstanceMonitoringDetails {
         crate::types::AwsEc2InstanceMonitoringDetails { state: self.state }

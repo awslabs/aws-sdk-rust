@@ -63,6 +63,12 @@ impl AncillarySourceSettingsBuilder {
         self.convert608_to708 = input;
         self
     }
+    /// Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert, MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
+    pub fn get_convert608_to708(
+        &self,
+    ) -> &::std::option::Option<crate::types::AncillaryConvert608To708> {
+        &self.convert608_to708
+    }
     /// Specifies the 608 channel number in the ancillary data track from which to extract captions. Unused for passthrough.
     pub fn source_ancillary_channel_number(mut self, input: i32) -> Self {
         self.source_ancillary_channel_number = ::std::option::Option::Some(input);
@@ -76,6 +82,10 @@ impl AncillarySourceSettingsBuilder {
         self.source_ancillary_channel_number = input;
         self
     }
+    /// Specifies the 608 channel number in the ancillary data track from which to extract captions. Unused for passthrough.
+    pub fn get_source_ancillary_channel_number(&self) -> &::std::option::Option<i32> {
+        &self.source_ancillary_channel_number
+    }
     /// By default, the service terminates any unterminated captions at the end of each input. If you want the caption to continue onto your next input, disable this setting.
     pub fn terminate_captions(mut self, input: crate::types::AncillaryTerminateCaptions) -> Self {
         self.terminate_captions = ::std::option::Option::Some(input);
@@ -88,6 +98,12 @@ impl AncillarySourceSettingsBuilder {
     ) -> Self {
         self.terminate_captions = input;
         self
+    }
+    /// By default, the service terminates any unterminated captions at the end of each input. If you want the caption to continue onto your next input, disable this setting.
+    pub fn get_terminate_captions(
+        &self,
+    ) -> &::std::option::Option<crate::types::AncillaryTerminateCaptions> {
+        &self.terminate_captions
     }
     /// Consumes the builder and constructs a [`AncillarySourceSettings`](crate::types::AncillarySourceSettings).
     pub fn build(self) -> crate::types::AncillarySourceSettings {

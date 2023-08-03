@@ -53,6 +53,10 @@ impl UpdatePublicSharingSettingsInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID associated with your Amazon QuickSight subscription.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account.</p>
     pub fn public_sharing_enabled(mut self, input: bool) -> Self {
         self.public_sharing_enabled = ::std::option::Option::Some(input);
@@ -62,6 +66,10 @@ impl UpdatePublicSharingSettingsInputBuilder {
     pub fn set_public_sharing_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.public_sharing_enabled = input;
         self
+    }
+    /// <p>A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account.</p>
+    pub fn get_public_sharing_enabled(&self) -> &::std::option::Option<bool> {
+        &self.public_sharing_enabled
     }
     /// Consumes the builder and constructs a [`UpdatePublicSharingSettingsInput`](crate::operation::update_public_sharing_settings::UpdatePublicSharingSettingsInput).
     pub fn build(

@@ -39,6 +39,10 @@ impl DescribeLoadBasedAutoScalingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeLoadBasedAutoScaling as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_load_based_auto_scaling::builders::DescribeLoadBasedAutoScalingInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,5 +139,9 @@ impl DescribeLoadBasedAutoScalingFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_layer_ids(input);
         self
+    }
+    /// <p>An array of layer IDs.</p>
+    pub fn get_layer_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_layer_ids()
     }
 }

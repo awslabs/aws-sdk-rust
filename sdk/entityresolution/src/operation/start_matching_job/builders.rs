@@ -36,6 +36,12 @@ impl StartMatchingJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartMatchingJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_matching_job::builders::StartMatchingJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl StartMatchingJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_workflow_name(input);
         self
+    }
+    /// <p>The name of the matching job to be retrieved.</p>
+    pub fn get_workflow_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workflow_name()
     }
 }

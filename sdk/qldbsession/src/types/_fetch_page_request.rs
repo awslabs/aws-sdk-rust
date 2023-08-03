@@ -54,6 +54,10 @@ impl FetchPageRequestBuilder {
         self.transaction_id = input;
         self
     }
+    /// <p>Specifies the transaction ID of the page to be fetched.</p>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transaction_id
+    }
     /// <p>Specifies the next page token of the page to be fetched.</p>
     pub fn next_page_token(
         mut self,
@@ -69,6 +73,10 @@ impl FetchPageRequestBuilder {
     ) -> Self {
         self.next_page_token = input;
         self
+    }
+    /// <p>Specifies the next page token of the page to be fetched.</p>
+    pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_page_token
     }
     /// Consumes the builder and constructs a [`FetchPageRequest`](crate::types::FetchPageRequest).
     pub fn build(self) -> crate::types::FetchPageRequest {

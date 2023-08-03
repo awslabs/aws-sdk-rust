@@ -70,6 +70,10 @@ impl SearchRasterDataCollectionOutputBuilder {
         self.approximate_result_count = input;
         self
     }
+    /// <p>Approximate number of results in the response.</p>
+    pub fn get_approximate_result_count(&self) -> &::std::option::Option<i32> {
+        &self.approximate_result_count
+    }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl SearchRasterDataCollectionOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `items`.
     ///
@@ -98,6 +106,10 @@ impl SearchRasterDataCollectionOutputBuilder {
     ) -> Self {
         self.items = input;
         self
+    }
+    /// <p>List of items matching the Raster DataCollectionQuery.</p>
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ItemSource>> {
+        &self.items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

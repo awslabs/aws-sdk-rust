@@ -72,6 +72,10 @@ impl SessionIssuerBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The unique identifier for the Amazon Web Services account that owns the entity that was used to get the credentials.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the source account, Identity and Access Management (IAM) user, or role that was used to get the credentials.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl SessionIssuerBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the source account, Identity and Access Management (IAM) user, or role that was used to get the credentials.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The unique identifier for the entity that was used to get the credentials.</p>
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -92,6 +100,10 @@ impl SessionIssuerBuilder {
         self.principal_id = input;
         self
     }
+    /// <p>The unique identifier for the entity that was used to get the credentials.</p>
+    pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal_id
+    }
     /// <p>The source of the temporary security credentials, such as Root, IAMUser, or Role.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -102,6 +114,10 @@ impl SessionIssuerBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The source of the temporary security credentials, such as Root, IAMUser, or Role.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p>The name or alias of the user or role that issued the session. This value is null if the credentials were obtained from a root account that doesn't have an alias.</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
@@ -111,6 +127,10 @@ impl SessionIssuerBuilder {
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_name = input;
         self
+    }
+    /// <p>The name or alias of the user or role that issued the session. This value is null if the credentials were obtained from a root account that doesn't have an alias.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
     }
     /// Consumes the builder and constructs a [`SessionIssuer`](crate::types::SessionIssuer).
     pub fn build(self) -> crate::types::SessionIssuer {

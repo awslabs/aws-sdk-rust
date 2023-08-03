@@ -77,6 +77,10 @@ impl ListFacesInputBuilder {
         self.collection_id = input;
         self
     }
+    /// <p>ID of the collection from which to list the faces.</p>
+    pub fn get_collection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collection_id
+    }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of faces.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -86,6 +90,10 @@ impl ListFacesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of faces.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>Maximum number of faces to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -97,6 +105,10 @@ impl ListFacesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>Maximum number of faces to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>An array of user IDs to match when listing faces in a collection.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
@@ -106,6 +118,10 @@ impl ListFacesInputBuilder {
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
+    }
+    /// <p>An array of user IDs to match when listing faces in a collection.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     /// Appends an item to `face_ids`.
     ///
@@ -125,6 +141,10 @@ impl ListFacesInputBuilder {
     ) -> Self {
         self.face_ids = input;
         self
+    }
+    /// <p>An array of face IDs to match when listing faces in a collection.</p>
+    pub fn get_face_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.face_ids
     }
     /// Consumes the builder and constructs a [`ListFacesInput`](crate::operation::list_faces::ListFacesInput).
     pub fn build(

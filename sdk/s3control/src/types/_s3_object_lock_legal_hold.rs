@@ -43,6 +43,10 @@ impl S3ObjectLockLegalHoldBuilder {
         self.status = input;
         self
     }
+    /// <p>The Object Lock legal hold status to be applied to all objects in the Batch Operations job.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::S3ObjectLockLegalHoldStatus> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`S3ObjectLockLegalHold`](crate::types::S3ObjectLockLegalHold).
     pub fn build(self) -> crate::types::S3ObjectLockLegalHold {
         crate::types::S3ObjectLockLegalHold {

@@ -74,6 +74,10 @@ impl DescribePendingMaintenanceActionsInputBuilder {
         self.replication_instance_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+    pub fn get_replication_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_instance_arn
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -93,6 +97,10 @@ impl DescribePendingMaintenanceActionsInputBuilder {
         self.filters = input;
         self
     }
+    /// <p></p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
+    }
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -102,6 +110,10 @@ impl DescribePendingMaintenanceActionsInputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
@@ -116,6 +128,12 @@ impl DescribePendingMaintenanceActionsInputBuilder {
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_records = input;
         self
+    }
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        &self.max_records
     }
     /// Consumes the builder and constructs a [`DescribePendingMaintenanceActionsInput`](crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsInput, ::aws_smithy_http::operation::error::BuildError>{

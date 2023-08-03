@@ -48,6 +48,10 @@ impl PredictionBuilder {
         self.value = input;
         self
     }
+    /// <p>The predicted value of a detected object.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// <p>Amazon Textract's confidence in its predicted value.</p>
     pub fn confidence(mut self, input: f32) -> Self {
         self.confidence = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl PredictionBuilder {
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.confidence = input;
         self
+    }
+    /// <p>Amazon Textract's confidence in its predicted value.</p>
+    pub fn get_confidence(&self) -> &::std::option::Option<f32> {
+        &self.confidence
     }
     /// Consumes the builder and constructs a [`Prediction`](crate::types::Prediction).
     pub fn build(self) -> crate::types::Prediction {

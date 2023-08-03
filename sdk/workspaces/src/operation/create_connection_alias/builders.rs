@@ -36,6 +36,13 @@ impl CreateConnectionAliasFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateConnectionAlias as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_connection_alias::builders::CreateConnectionAliasInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +143,12 @@ impl CreateConnectionAliasFluentBuilder {
         self.inner = self.inner.set_connection_string(input);
         self
     }
+    /// <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p> <important>
+    /// <p>After you create a connection string, it is always associated to your Amazon Web Services account. You cannot recreate the same connection string with a different account, even if you delete all instances of it from the original account. The connection string is globally reserved for your account.</p>
+    /// </important>
+    pub fn get_connection_string(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connection_string()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -152,5 +165,9 @@ impl CreateConnectionAliasFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags to associate with the connection alias.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

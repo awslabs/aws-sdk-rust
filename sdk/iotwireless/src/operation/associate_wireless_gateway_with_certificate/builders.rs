@@ -36,6 +36,10 @@ impl AssociateWirelessGatewayWithCertificateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateWirelessGatewayWithCertificate as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_wireless_gateway_with_certificate::builders::AssociateWirelessGatewayWithCertificateInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl AssociateWirelessGatewayWithCertificateFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The ID of the resource to update.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The ID of the certificate to associate with the wireless gateway.</p>
     pub fn iot_certificate_id(
         mut self,
@@ -115,5 +123,9 @@ impl AssociateWirelessGatewayWithCertificateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_iot_certificate_id(input);
         self
+    }
+    /// <p>The ID of the certificate to associate with the wireless gateway.</p>
+    pub fn get_iot_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_iot_certificate_id()
     }
 }

@@ -65,6 +65,10 @@ impl UpdateContactFlowNameInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The identifier of the flow.</p>
     pub fn contact_flow_id(
         mut self,
@@ -81,6 +85,10 @@ impl UpdateContactFlowNameInputBuilder {
         self.contact_flow_id = input;
         self
     }
+    /// <p>The identifier of the flow.</p>
+    pub fn get_contact_flow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_flow_id
+    }
     /// <p>The name of the flow.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl UpdateContactFlowNameInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the flow.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the flow.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -100,6 +112,10 @@ impl UpdateContactFlowNameInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the flow.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`UpdateContactFlowNameInput`](crate::operation::update_contact_flow_name::UpdateContactFlowNameInput).
     pub fn build(

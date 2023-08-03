@@ -65,6 +65,10 @@ impl ChannelFlowCallbackInputBuilder {
         self.callback_id = input;
         self
     }
+    /// <p>The identifier passed to the processor by the service when invoked. Use the identifier to call back the service.</p>
+    pub fn get_callback_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.callback_id
+    }
     /// <p>The ARN of the channel.</p>
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl ChannelFlowCallbackInputBuilder {
         self.channel_arn = input;
         self
     }
+    /// <p>The ARN of the channel.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
+    }
     /// <p>When a processor determines that a message needs to be <code>DENIED</code>, pass this parameter with a value of true.</p>
     pub fn delete_resource(mut self, input: bool) -> Self {
         self.delete_resource = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl ChannelFlowCallbackInputBuilder {
     pub fn set_delete_resource(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete_resource = input;
         self
+    }
+    /// <p>When a processor determines that a message needs to be <code>DENIED</code>, pass this parameter with a value of true.</p>
+    pub fn get_delete_resource(&self) -> &::std::option::Option<bool> {
+        &self.delete_resource
     }
     /// <p>Stores information about the processed message.</p>
     pub fn channel_message(mut self, input: crate::types::ChannelMessageCallback) -> Self {
@@ -97,6 +109,12 @@ impl ChannelFlowCallbackInputBuilder {
     ) -> Self {
         self.channel_message = input;
         self
+    }
+    /// <p>Stores information about the processed message.</p>
+    pub fn get_channel_message(
+        &self,
+    ) -> &::std::option::Option<crate::types::ChannelMessageCallback> {
+        &self.channel_message
     }
     /// Consumes the builder and constructs a [`ChannelFlowCallbackInput`](crate::operation::channel_flow_callback::ChannelFlowCallbackInput).
     pub fn build(

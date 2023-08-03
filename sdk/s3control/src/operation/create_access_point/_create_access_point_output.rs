@@ -69,6 +69,12 @@ impl CreateAccessPointOutputBuilder {
         self.access_point_arn = input;
         self
     }
+    /// <p>The ARN of the access point.</p> <note>
+    /// <p>This is only supported by Amazon S3 on Outposts.</p>
+    /// </note>
+    pub fn get_access_point_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_point_arn
+    }
     /// <p>The name or alias of the access point.</p>
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias = ::std::option::Option::Some(input.into());
@@ -78,6 +84,10 @@ impl CreateAccessPointOutputBuilder {
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alias = input;
         self
+    }
+    /// <p>The name or alias of the access point.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -36,6 +36,12 @@ impl BatchCreateVariableFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchCreateVariable as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_create_variable::builders::BatchCreateVariableInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,12 @@ impl BatchCreateVariableFluentBuilder {
         self.inner = self.inner.set_variable_entries(input);
         self
     }
+    /// <p>The list of variables for the batch create variable request.</p>
+    pub fn get_variable_entries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VariableEntry>> {
+        self.inner.get_variable_entries()
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -149,5 +161,9 @@ impl BatchCreateVariableFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A collection of key and value pairs.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

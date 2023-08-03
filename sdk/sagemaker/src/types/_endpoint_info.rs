@@ -46,6 +46,10 @@ impl EndpointInfoBuilder {
         self.endpoint_name = input;
         self
     }
+    /// <p>The name of a customer's endpoint.</p>
+    pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_name
+    }
     /// Consumes the builder and constructs a [`EndpointInfo`](crate::types::EndpointInfo).
     pub fn build(self) -> crate::types::EndpointInfo {
         crate::types::EndpointInfo {

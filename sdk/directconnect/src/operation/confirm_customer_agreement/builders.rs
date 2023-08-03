@@ -36,6 +36,13 @@ impl ConfirmCustomerAgreementFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ConfirmCustomerAgreement as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::confirm_customer_agreement::builders::ConfirmCustomerAgreementInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +138,9 @@ impl ConfirmCustomerAgreementFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_agreement_name(input);
         self
+    }
+    /// <p> The name of the customer agreement. </p>
+    pub fn get_agreement_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_agreement_name()
     }
 }

@@ -56,6 +56,10 @@ impl AwsWafv2VisibilityConfigDetailsBuilder {
         self.cloud_watch_metrics_enabled = input;
         self
     }
+    /// <p> A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch. For the list of available metrics, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF metrics and dimensions</a> in the <i>WAF Developer Guide</i>. </p>
+    pub fn get_cloud_watch_metrics_enabled(&self) -> &::std::option::Option<bool> {
+        &self.cloud_watch_metrics_enabled
+    }
     /// <p> A name of the Amazon CloudWatch metric. </p>
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_name = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl AwsWafv2VisibilityConfigDetailsBuilder {
         self.metric_name = input;
         self
     }
+    /// <p> A name of the Amazon CloudWatch metric. </p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
+    }
     /// <p> A boolean indicating whether WAF should store a sampling of the web requests that match the rules. You can view the sampled requests through the WAF console. </p>
     pub fn sampled_requests_enabled(mut self, input: bool) -> Self {
         self.sampled_requests_enabled = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl AwsWafv2VisibilityConfigDetailsBuilder {
     pub fn set_sampled_requests_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.sampled_requests_enabled = input;
         self
+    }
+    /// <p> A boolean indicating whether WAF should store a sampling of the web requests that match the rules. You can view the sampled requests through the WAF console. </p>
+    pub fn get_sampled_requests_enabled(&self) -> &::std::option::Option<bool> {
+        &self.sampled_requests_enabled
     }
     /// Consumes the builder and constructs a [`AwsWafv2VisibilityConfigDetails`](crate::types::AwsWafv2VisibilityConfigDetails).
     pub fn build(self) -> crate::types::AwsWafv2VisibilityConfigDetails {

@@ -66,6 +66,10 @@ impl DropNullFieldsBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the transform node.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `inputs`.
     ///
     /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
@@ -85,6 +89,10 @@ impl DropNullFieldsBuilder {
         self.inputs = input;
         self
     }
+    /// <p>The data inputs identified by their node names.</p>
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inputs
+    }
     /// <p>A structure that represents whether certain values are recognized as null values for removal.</p>
     pub fn null_check_box_list(mut self, input: crate::types::NullCheckBoxList) -> Self {
         self.null_check_box_list = ::std::option::Option::Some(input);
@@ -97,6 +105,12 @@ impl DropNullFieldsBuilder {
     ) -> Self {
         self.null_check_box_list = input;
         self
+    }
+    /// <p>A structure that represents whether certain values are recognized as null values for removal.</p>
+    pub fn get_null_check_box_list(
+        &self,
+    ) -> &::std::option::Option<crate::types::NullCheckBoxList> {
+        &self.null_check_box_list
     }
     /// Appends an item to `null_text_list`.
     ///
@@ -118,6 +132,13 @@ impl DropNullFieldsBuilder {
     ) -> Self {
         self.null_text_list = input;
         self
+    }
+    /// <p>A structure that specifies a list of NullValueField structures that represent a custom null value such as zero or other value being used as a null placeholder unique to the dataset.</p>
+    /// <p>The <code>DropNullFields</code> transform removes custom null values only if both the value of the null placeholder and the datatype match the data.</p>
+    pub fn get_null_text_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NullValueField>> {
+        &self.null_text_list
     }
     /// Consumes the builder and constructs a [`DropNullFields`](crate::types::DropNullFields).
     pub fn build(self) -> crate::types::DropNullFields {

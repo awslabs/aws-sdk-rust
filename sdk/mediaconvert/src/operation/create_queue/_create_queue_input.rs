@@ -90,6 +90,10 @@ impl CreateQueueInputBuilder {
         self.description = input;
         self
     }
+    /// Optional. A description of the queue that you are creating.
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// The name of the queue that you are creating.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -99,6 +103,10 @@ impl CreateQueueInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// The name of the queue that you are creating.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per minute, billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the entire queue, regardless of how much or how little you use it. Reserved pricing requires a 12-month commitment. When you use the API to create a queue, the default is on-demand.
     pub fn pricing_plan(mut self, input: crate::types::PricingPlan) -> Self {
@@ -112,6 +120,10 @@ impl CreateQueueInputBuilder {
     ) -> Self {
         self.pricing_plan = input;
         self
+    }
+    /// Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per minute, billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the entire queue, regardless of how much or how little you use it. Reserved pricing requires a 12-month commitment. When you use the API to create a queue, the default is on-demand.
+    pub fn get_pricing_plan(&self) -> &::std::option::Option<crate::types::PricingPlan> {
+        &self.pricing_plan
     }
     /// Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to on-demand queues.
     pub fn reservation_plan_settings(
@@ -129,6 +141,12 @@ impl CreateQueueInputBuilder {
         self.reservation_plan_settings = input;
         self
     }
+    /// Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to on-demand queues.
+    pub fn get_reservation_plan_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReservationPlanSettings> {
+        &self.reservation_plan_settings
+    }
     /// Initial state of the queue. If you create a paused queue, then jobs in that queue won't begin.
     pub fn status(mut self, input: crate::types::QueueStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -138,6 +156,10 @@ impl CreateQueueInputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::QueueStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// Initial state of the queue. If you create a paused queue, then jobs in that queue won't begin.
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::QueueStatus> {
+        &self.status
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -163,6 +185,14 @@ impl CreateQueueInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateQueueInput`](crate::operation::create_queue::CreateQueueInput).
     pub fn build(

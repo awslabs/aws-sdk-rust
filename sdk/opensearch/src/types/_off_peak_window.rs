@@ -45,6 +45,10 @@ impl OffPeakWindowBuilder {
         self.window_start_time = input;
         self
     }
+    /// <p>A custom start time for the off-peak window, in Coordinated Universal Time (UTC). The window length will always be 10 hours, so you can't specify an end time. For example, if you specify 11:00 P.M. UTC as a start time, the end time will automatically be set to 9:00 A.M.</p>
+    pub fn get_window_start_time(&self) -> &::std::option::Option<crate::types::WindowStartTime> {
+        &self.window_start_time
+    }
     /// Consumes the builder and constructs a [`OffPeakWindow`](crate::types::OffPeakWindow).
     pub fn build(self) -> crate::types::OffPeakWindow {
         crate::types::OffPeakWindow {

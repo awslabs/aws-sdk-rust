@@ -56,6 +56,10 @@ impl QueryBuilder {
         self.query_id = input;
         self
     }
+    /// <p>The ID of a query.</p>
+    pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_id
+    }
     /// <p>The status of the query. This can be <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code>.</p>
     pub fn query_status(mut self, input: crate::types::QueryStatus) -> Self {
         self.query_status = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl QueryBuilder {
         self.query_status = input;
         self
     }
+    /// <p>The status of the query. This can be <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code>.</p>
+    pub fn get_query_status(&self) -> &::std::option::Option<crate::types::QueryStatus> {
+        &self.query_status
+    }
     /// <p>The creation time of a query.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl QueryBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The creation time of a query.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// Consumes the builder and constructs a [`Query`](crate::types::Query).
     pub fn build(self) -> crate::types::Query {

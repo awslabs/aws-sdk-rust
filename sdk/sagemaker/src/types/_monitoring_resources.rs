@@ -43,6 +43,12 @@ impl MonitoringResourcesBuilder {
         self.cluster_config = input;
         self
     }
+    /// <p>The configuration for the cluster resources used to run the processing job.</p>
+    pub fn get_cluster_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::MonitoringClusterConfig> {
+        &self.cluster_config
+    }
     /// Consumes the builder and constructs a [`MonitoringResources`](crate::types::MonitoringResources).
     pub fn build(self) -> crate::types::MonitoringResources {
         crate::types::MonitoringResources {

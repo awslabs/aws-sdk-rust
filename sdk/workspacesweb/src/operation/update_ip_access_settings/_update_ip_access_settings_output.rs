@@ -51,6 +51,10 @@ impl UpdateIpAccessSettingsOutputBuilder {
         self.ip_access_settings = input;
         self
     }
+    /// <p>The IP access settings.</p>
+    pub fn get_ip_access_settings(&self) -> &::std::option::Option<crate::types::IpAccessSettings> {
+        &self.ip_access_settings
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

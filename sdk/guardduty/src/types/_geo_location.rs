@@ -48,6 +48,10 @@ impl GeoLocationBuilder {
         self.lat = input;
         self
     }
+    /// <p>The latitude information of the remote IP address.</p>
+    pub fn get_lat(&self) -> &::std::option::Option<f64> {
+        &self.lat
+    }
     /// <p>The longitude information of the remote IP address.</p>
     pub fn lon(mut self, input: f64) -> Self {
         self.lon = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl GeoLocationBuilder {
     pub fn set_lon(mut self, input: ::std::option::Option<f64>) -> Self {
         self.lon = input;
         self
+    }
+    /// <p>The longitude information of the remote IP address.</p>
+    pub fn get_lon(&self) -> &::std::option::Option<f64> {
+        &self.lon
     }
     /// Consumes the builder and constructs a [`GeoLocation`](crate::types::GeoLocation).
     pub fn build(self) -> crate::types::GeoLocation {

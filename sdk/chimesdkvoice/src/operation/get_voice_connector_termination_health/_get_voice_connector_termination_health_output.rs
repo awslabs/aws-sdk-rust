@@ -49,6 +49,12 @@ impl GetVoiceConnectorTerminationHealthOutputBuilder {
         self.termination_health = input;
         self
     }
+    /// <p>The termination health details.</p>
+    pub fn get_termination_health(
+        &self,
+    ) -> &::std::option::Option<crate::types::TerminationHealth> {
+        &self.termination_health
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

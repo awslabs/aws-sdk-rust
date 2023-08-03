@@ -51,6 +51,10 @@ impl GetInsightsByAssessmentOutputBuilder {
         self.insights = input;
         self
     }
+    /// <p> The assessment analytics data that the <code>GetInsightsByAssessment</code> API returned. </p>
+    pub fn get_insights(&self) -> &::std::option::Option<crate::types::InsightsByAssessment> {
+        &self.insights
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

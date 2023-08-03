@@ -48,6 +48,10 @@ impl ThemeValuesBuilder {
         self.key = input;
         self
     }
+    /// <p>The name of the property.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>The value of the property.</p>
     pub fn value(mut self, input: crate::types::ThemeValue) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ThemeValuesBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::ThemeValue>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of the property.</p>
+    pub fn get_value(&self) -> &::std::option::Option<crate::types::ThemeValue> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`ThemeValues`](crate::types::ThemeValues).
     pub fn build(self) -> crate::types::ThemeValues {

@@ -140,6 +140,10 @@ impl BillingGroupListElementBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the billing group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Number (ARN) that can be used to uniquely identify the billing group.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -150,6 +154,10 @@ impl BillingGroupListElementBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Number (ARN) that can be used to uniquely identify the billing group.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The description of the billing group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -159,6 +167,10 @@ impl BillingGroupListElementBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the billing group.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The account ID that serves as the main account in a billing group.</p>
     pub fn primary_account_id(
@@ -176,6 +188,10 @@ impl BillingGroupListElementBuilder {
         self.primary_account_id = input;
         self
     }
+    /// <p>The account ID that serves as the main account in a billing group.</p>
+    pub fn get_primary_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.primary_account_id
+    }
     /// <p>The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group.</p>
     pub fn computation_preference(mut self, input: crate::types::ComputationPreference) -> Self {
         self.computation_preference = ::std::option::Option::Some(input);
@@ -189,6 +205,12 @@ impl BillingGroupListElementBuilder {
         self.computation_preference = input;
         self
     }
+    /// <p>The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group.</p>
+    pub fn get_computation_preference(
+        &self,
+    ) -> &::std::option::Option<crate::types::ComputationPreference> {
+        &self.computation_preference
+    }
     /// <p>The number of accounts in the particular billing group.</p>
     pub fn size(mut self, input: i64) -> Self {
         self.size = ::std::option::Option::Some(input);
@@ -198,6 +220,10 @@ impl BillingGroupListElementBuilder {
     pub fn set_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.size = input;
         self
+    }
+    /// <p>The number of accounts in the particular billing group.</p>
+    pub fn get_size(&self) -> &::std::option::Option<i64> {
+        &self.size
     }
     /// <p>The time when the billing group was created.</p>
     pub fn creation_time(mut self, input: i64) -> Self {
@@ -209,6 +235,10 @@ impl BillingGroupListElementBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time when the billing group was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<i64> {
+        &self.creation_time
+    }
     /// <p>The most recent time when the billing group was modified.</p>
     pub fn last_modified_time(mut self, input: i64) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -218,6 +248,10 @@ impl BillingGroupListElementBuilder {
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>The most recent time when the billing group was modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<i64> {
+        &self.last_modified_time
     }
     /// <p>The billing group status. Only one of the valid values can be used.</p>
     pub fn status(mut self, input: crate::types::BillingGroupStatus) -> Self {
@@ -231,6 +265,10 @@ impl BillingGroupListElementBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The billing group status. Only one of the valid values can be used.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::BillingGroupStatus> {
+        &self.status
     }
     /// <p>The reason why the billing group is in its current status.</p>
     pub fn status_reason(
@@ -248,6 +286,10 @@ impl BillingGroupListElementBuilder {
         self.status_reason = input;
         self
     }
+    /// <p>The reason why the billing group is in its current status.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
+    }
     /// <p>Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.</p>
     pub fn account_grouping(
         mut self,
@@ -263,6 +305,12 @@ impl BillingGroupListElementBuilder {
     ) -> Self {
         self.account_grouping = input;
         self
+    }
+    /// <p>Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.</p>
+    pub fn get_account_grouping(
+        &self,
+    ) -> &::std::option::Option<crate::types::ListBillingGroupAccountGrouping> {
+        &self.account_grouping
     }
     /// Consumes the builder and constructs a [`BillingGroupListElement`](crate::types::BillingGroupListElement).
     pub fn build(self) -> crate::types::BillingGroupListElement {

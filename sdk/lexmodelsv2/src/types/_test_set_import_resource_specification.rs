@@ -105,6 +105,10 @@ impl TestSetImportResourceSpecificationBuilder {
         self.test_set_name = input;
         self
     }
+    /// <p>The name of the test set.</p>
+    pub fn get_test_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_set_name
+    }
     /// <p>The description of the test set.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -115,6 +119,10 @@ impl TestSetImportResourceSpecificationBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the test set.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access the test set.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -124,6 +132,10 @@ impl TestSetImportResourceSpecificationBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access the test set.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>Contains information about the location that Amazon Lex uses to store the test-set.</p>
     pub fn storage_location(mut self, input: crate::types::TestSetStorageLocation) -> Self {
@@ -137,6 +149,12 @@ impl TestSetImportResourceSpecificationBuilder {
     ) -> Self {
         self.storage_location = input;
         self
+    }
+    /// <p>Contains information about the location that Amazon Lex uses to store the test-set.</p>
+    pub fn get_storage_location(
+        &self,
+    ) -> &::std::option::Option<crate::types::TestSetStorageLocation> {
+        &self.storage_location
     }
     /// <p>Contains information about the input location from where test-set should be imported.</p>
     pub fn import_input_location(
@@ -154,6 +172,12 @@ impl TestSetImportResourceSpecificationBuilder {
         self.import_input_location = input;
         self
     }
+    /// <p>Contains information about the input location from where test-set should be imported.</p>
+    pub fn get_import_input_location(
+        &self,
+    ) -> &::std::option::Option<crate::types::TestSetImportInputLocation> {
+        &self.import_input_location
+    }
     /// <p>Specifies whether the test-set being imported contains written or spoken data.</p>
     pub fn modality(mut self, input: crate::types::TestSetModality) -> Self {
         self.modality = ::std::option::Option::Some(input);
@@ -166,6 +190,10 @@ impl TestSetImportResourceSpecificationBuilder {
     ) -> Self {
         self.modality = input;
         self
+    }
+    /// <p>Specifies whether the test-set being imported contains written or spoken data.</p>
+    pub fn get_modality(&self) -> &::std::option::Option<crate::types::TestSetModality> {
+        &self.modality
     }
     /// Adds a key-value pair to `test_set_tags`.
     ///
@@ -191,6 +219,14 @@ impl TestSetImportResourceSpecificationBuilder {
     ) -> Self {
         self.test_set_tags = input;
         self
+    }
+    /// <p>A list of tags to add to the test set. You can only add tags when you import/generate a new test set. You can't use the <code>UpdateTestSet</code> operation to update tags. To update tags, use the <code>TagResource</code> operation.</p>
+    pub fn get_test_set_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.test_set_tags
     }
     /// Consumes the builder and constructs a [`TestSetImportResourceSpecification`](crate::types::TestSetImportResourceSpecification).
     pub fn build(self) -> crate::types::TestSetImportResourceSpecification {

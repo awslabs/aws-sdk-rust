@@ -40,6 +40,10 @@ impl AwsLambdaFunctionTracingConfigBuilder {
         self.mode = input;
         self
     }
+    /// <p>The tracing mode.</p>
+    pub fn get_mode(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mode
+    }
     /// Consumes the builder and constructs a [`AwsLambdaFunctionTracingConfig`](crate::types::AwsLambdaFunctionTracingConfig).
     pub fn build(self) -> crate::types::AwsLambdaFunctionTracingConfig {
         crate::types::AwsLambdaFunctionTracingConfig { mode: self.mode }

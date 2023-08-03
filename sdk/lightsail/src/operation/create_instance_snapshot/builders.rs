@@ -37,6 +37,13 @@ impl CreateInstanceSnapshotFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateInstanceSnapshot as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_instance_snapshot::builders::CreateInstanceSnapshotInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl CreateInstanceSnapshotFluentBuilder {
         self.inner = self.inner.set_instance_snapshot_name(input);
         self
     }
+    /// <p>The name for your new snapshot.</p>
+    pub fn get_instance_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_snapshot_name()
+    }
     /// <p>The Lightsail instance on which to base your snapshot.</p>
     pub fn instance_name(
         mut self,
@@ -148,6 +159,10 @@ impl CreateInstanceSnapshotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_instance_name(input);
         self
+    }
+    /// <p>The Lightsail instance on which to base your snapshot.</p>
+    pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_name()
     }
     /// Appends an item to `tags`.
     ///
@@ -167,5 +182,10 @@ impl CreateInstanceSnapshotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tag keys and optional values to add to the resource during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

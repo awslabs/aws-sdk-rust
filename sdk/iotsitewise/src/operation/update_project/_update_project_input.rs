@@ -63,6 +63,10 @@ impl UpdateProjectInputBuilder {
         self.project_id = input;
         self
     }
+    /// <p>The ID of the project to update.</p>
+    pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_id
+    }
     /// <p>A new friendly name for the project.</p>
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl UpdateProjectInputBuilder {
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_name = input;
         self
+    }
+    /// <p>A new friendly name for the project.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
     }
     /// <p>A new description for the project.</p>
     pub fn project_description(
@@ -89,6 +97,10 @@ impl UpdateProjectInputBuilder {
         self.project_description = input;
         self
     }
+    /// <p>A new description for the project.</p>
+    pub fn get_project_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_description
+    }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -98,6 +110,10 @@ impl UpdateProjectInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateProjectInput`](crate::operation::update_project::UpdateProjectInput).
     pub fn build(

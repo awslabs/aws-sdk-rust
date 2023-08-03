@@ -39,6 +39,13 @@ impl TagCertificateAuthorityFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the TagCertificateAuthority as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::tag_certificate_authority::builders::TagCertificateAuthorityInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +144,11 @@ impl TagCertificateAuthorityFluentBuilder {
         self.inner = self.inner.set_certificate_authority_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form: </p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
+    pub fn get_certificate_authority_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate_authority_arn()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -153,5 +165,9 @@ impl TagCertificateAuthorityFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>List of tags to be associated with the CA.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

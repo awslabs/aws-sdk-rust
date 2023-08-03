@@ -72,6 +72,12 @@ impl DescribeAssessmentTargetsOutputBuilder {
         self.assessment_targets = input;
         self
     }
+    /// <p>Information about the assessment targets.</p>
+    pub fn get_assessment_targets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentTarget>> {
+        &self.assessment_targets
+    }
     /// Adds a key-value pair to `failed_items`.
     ///
     /// To override the contents of this collection use [`set_failed_items`](Self::set_failed_items).
@@ -96,6 +102,14 @@ impl DescribeAssessmentTargetsOutputBuilder {
     ) -> Self {
         self.failed_items = input;
         self
+    }
+    /// <p>Assessment target details that cannot be described. An error code is provided for each failed item.</p>
+    pub fn get_failed_items(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>,
+    > {
+        &self.failed_items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

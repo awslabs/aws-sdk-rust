@@ -63,6 +63,10 @@ impl ListClustersOutputBuilder {
         self.clusters = input;
         self
     }
+    /// <p>An array of the clusters in an account.</p>
+    pub fn get_clusters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Cluster>> {
+        &self.clusters
+    }
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl ListClustersOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token that identifies which batch of results you want to see.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

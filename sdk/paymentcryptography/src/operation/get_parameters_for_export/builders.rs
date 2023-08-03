@@ -44,6 +44,13 @@ impl GetParametersForExportFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetParametersForExport as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_parameters_for_export::builders::GetParametersForExportInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +144,10 @@ impl GetParametersForExportFluentBuilder {
         self.inner = self.inner.set_key_material_type(input);
         self
     }
+    /// <p>The key block format type (for example, TR-34 or TR-31) to use during key material export. Export token is only required for a TR-34 key export, <code>TR34_KEY_BLOCK</code>. Export token is not required for TR-31 key export.</p>
+    pub fn get_key_material_type(&self) -> &::std::option::Option<crate::types::KeyMaterialType> {
+        self.inner.get_key_material_type()
+    }
     /// <p>The signing key algorithm to generate a signing key certificate. This certificate signs the wrapped key under export within the TR-34 key block cryptogram. <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
     pub fn signing_key_algorithm(mut self, input: crate::types::KeyAlgorithm) -> Self {
         self.inner = self.inner.signing_key_algorithm(input);
@@ -149,5 +160,9 @@ impl GetParametersForExportFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_signing_key_algorithm(input);
         self
+    }
+    /// <p>The signing key algorithm to generate a signing key certificate. This certificate signs the wrapped key under export within the TR-34 key block cryptogram. <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
+    pub fn get_signing_key_algorithm(&self) -> &::std::option::Option<crate::types::KeyAlgorithm> {
+        self.inner.get_signing_key_algorithm()
     }
 }

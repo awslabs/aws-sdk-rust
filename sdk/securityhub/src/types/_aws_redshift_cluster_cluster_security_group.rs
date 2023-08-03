@@ -54,6 +54,10 @@ impl AwsRedshiftClusterClusterSecurityGroupBuilder {
         self.cluster_security_group_name = input;
         self
     }
+    /// <p>The name of the cluster security group.</p>
+    pub fn get_cluster_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_security_group_name
+    }
     /// <p>The status of the cluster security group.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl AwsRedshiftClusterClusterSecurityGroupBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the cluster security group.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`AwsRedshiftClusterClusterSecurityGroup`](crate::types::AwsRedshiftClusterClusterSecurityGroup).
     pub fn build(self) -> crate::types::AwsRedshiftClusterClusterSecurityGroup {

@@ -47,6 +47,10 @@ impl DescribeSecurityPolicyInputBuilder {
         self.security_policy_name = input;
         self
     }
+    /// <p>Specifies the name of the security policy that is attached to the server.</p>
+    pub fn get_security_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_policy_name
+    }
     /// Consumes the builder and constructs a [`DescribeSecurityPolicyInput`](crate::operation::describe_security_policy::DescribeSecurityPolicyInput).
     pub fn build(
         self,

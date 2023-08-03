@@ -38,6 +38,12 @@ impl ListResourceRequestsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListResourceRequests as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_resource_requests::builders::ListResourceRequestsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -141,6 +147,11 @@ impl ListResourceRequestsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
+    /// <p>The default is <code>20</code>.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -150,6 +161,10 @@ impl ListResourceRequestsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The filter criteria to apply to the requests returned.</p>
     pub fn resource_request_status_filter(
@@ -166,5 +181,11 @@ impl ListResourceRequestsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_request_status_filter(input);
         self
+    }
+    /// <p>The filter criteria to apply to the requests returned.</p>
+    pub fn get_resource_request_status_filter(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceRequestStatusFilter> {
+        self.inner.get_resource_request_status_filter()
     }
 }

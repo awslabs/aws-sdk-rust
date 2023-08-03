@@ -37,6 +37,10 @@ impl ImportCrlFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ImportCrl as a reference.
+    pub fn as_input(&self) -> &crate::operation::import_crl::builders::ImportCrlInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl ImportCrlFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the certificate revocation list (CRL).</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The x509 v3 specified certificate revocation list (CRL).</p>
     pub fn crl_data(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.crl_data(input);
@@ -129,6 +137,10 @@ impl ImportCrlFluentBuilder {
         self.inner = self.inner.set_crl_data(input);
         self
     }
+    /// <p>The x509 v3 specified certificate revocation list (CRL).</p>
+    pub fn get_crl_data(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        self.inner.get_crl_data()
+    }
     /// <p>Specifies whether the certificate revocation list (CRL) is enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.enabled(input);
@@ -138,6 +150,10 @@ impl ImportCrlFluentBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enabled(input);
         self
+    }
+    /// <p>Specifies whether the certificate revocation list (CRL) is enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enabled()
     }
     /// Appends an item to `tags`.
     ///
@@ -156,6 +172,10 @@ impl ImportCrlFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>A list of tags to attach to the certificate revocation list (CRL).</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>The ARN of the TrustAnchor the certificate revocation list (CRL) will provide revocation for.</p>
     pub fn trust_anchor_arn(
         mut self,
@@ -171,5 +191,9 @@ impl ImportCrlFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_trust_anchor_arn(input);
         self
+    }
+    /// <p>The ARN of the TrustAnchor the certificate revocation list (CRL) will provide revocation for.</p>
+    pub fn get_trust_anchor_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_trust_anchor_arn()
     }
 }

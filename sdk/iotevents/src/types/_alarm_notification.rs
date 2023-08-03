@@ -53,6 +53,12 @@ impl AlarmNotificationBuilder {
         self.notification_actions = input;
         self
     }
+    /// <p>Contains the notification settings of an alarm model. The settings apply to all alarms that were created based on this alarm model.</p>
+    pub fn get_notification_actions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationAction>> {
+        &self.notification_actions
+    }
     /// Consumes the builder and constructs a [`AlarmNotification`](crate::types::AlarmNotification).
     pub fn build(self) -> crate::types::AlarmNotification {
         crate::types::AlarmNotification {

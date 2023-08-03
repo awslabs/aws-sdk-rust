@@ -40,6 +40,10 @@ impl Phase2EncryptionAlgorithmsRequestListValueBuilder {
         self.value = input;
         self
     }
+    /// <p>The encryption algorithm.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// Consumes the builder and constructs a [`Phase2EncryptionAlgorithmsRequestListValue`](crate::types::Phase2EncryptionAlgorithmsRequestListValue).
     pub fn build(self) -> crate::types::Phase2EncryptionAlgorithmsRequestListValue {
         crate::types::Phase2EncryptionAlgorithmsRequestListValue { value: self.value }

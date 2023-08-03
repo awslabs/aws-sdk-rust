@@ -77,6 +77,10 @@ impl ImportVolumeInputBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>The Availability Zone for the resulting EBS volume.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>A description of the volume.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -87,6 +91,10 @@ impl ImportVolumeInputBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the volume.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -96,6 +104,10 @@ impl ImportVolumeInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// <p>The disk image.</p>
     pub fn image(mut self, input: crate::types::DiskImageDetail) -> Self {
@@ -110,6 +122,10 @@ impl ImportVolumeInputBuilder {
         self.image = input;
         self
     }
+    /// <p>The disk image.</p>
+    pub fn get_image(&self) -> &::std::option::Option<crate::types::DiskImageDetail> {
+        &self.image
+    }
     /// <p>The volume size.</p>
     pub fn volume(mut self, input: crate::types::VolumeDetail) -> Self {
         self.volume = ::std::option::Option::Some(input);
@@ -119,6 +135,10 @@ impl ImportVolumeInputBuilder {
     pub fn set_volume(mut self, input: ::std::option::Option<crate::types::VolumeDetail>) -> Self {
         self.volume = input;
         self
+    }
+    /// <p>The volume size.</p>
+    pub fn get_volume(&self) -> &::std::option::Option<crate::types::VolumeDetail> {
+        &self.volume
     }
     /// Consumes the builder and constructs a [`ImportVolumeInput`](crate::operation::import_volume::ImportVolumeInput).
     pub fn build(

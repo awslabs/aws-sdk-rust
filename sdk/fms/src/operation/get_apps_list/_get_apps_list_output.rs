@@ -57,6 +57,10 @@ impl GetAppsListOutputBuilder {
         self.apps_list = input;
         self
     }
+    /// <p>Information about the specified Firewall Manager applications list.</p>
+    pub fn get_apps_list(&self) -> &::std::option::Option<crate::types::AppsListData> {
+        &self.apps_list
+    }
     /// <p>The Amazon Resource Name (ARN) of the applications list.</p>
     pub fn apps_list_arn(
         mut self,
@@ -72,6 +76,10 @@ impl GetAppsListOutputBuilder {
     ) -> Self {
         self.apps_list_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the applications list.</p>
+    pub fn get_apps_list_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.apps_list_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -48,6 +48,10 @@ impl DescribeAccountCustomizationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeAccountCustomization as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_account_customization::builders::DescribeAccountCustomizationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -144,6 +148,10 @@ impl DescribeAccountCustomizationFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The ID for the Amazon Web Services account that you want to describe Amazon QuickSight customizations for.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The Amazon QuickSight namespace that you want to describe Amazon QuickSight customizations for.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace(input.into());
@@ -154,6 +162,10 @@ impl DescribeAccountCustomizationFluentBuilder {
         self.inner = self.inner.set_namespace(input);
         self
     }
+    /// <p>The Amazon QuickSight namespace that you want to describe Amazon QuickSight customizations for.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace()
+    }
     /// <p>The <code>Resolved</code> flag works with the other parameters to determine which view of Amazon QuickSight customizations is returned. You can add this flag to your command to use the same view that Amazon QuickSight uses to identify which customizations to apply to the console. Omit this flag, or set it to <code>no-resolved</code>, to reveal customizations that are configured at different levels. </p>
     pub fn resolved(mut self, input: bool) -> Self {
         self.inner = self.inner.resolved(input);
@@ -163,5 +175,9 @@ impl DescribeAccountCustomizationFluentBuilder {
     pub fn set_resolved(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_resolved(input);
         self
+    }
+    /// <p>The <code>Resolved</code> flag works with the other parameters to determine which view of Amazon QuickSight customizations is returned. You can add this flag to your command to use the same view that Amazon QuickSight uses to identify which customizations to apply to the console. Omit this flag, or set it to <code>no-resolved</code>, to reveal customizations that are configured at different levels. </p>
+    pub fn get_resolved(&self) -> &::std::option::Option<bool> {
+        self.inner.get_resolved()
     }
 }

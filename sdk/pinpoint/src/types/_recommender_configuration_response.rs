@@ -165,6 +165,15 @@ impl RecommenderConfigurationResponseBuilder {
         self.attributes = input;
         self
     }
+    /// <p>A map that defines 1-10 custom endpoint or user attributes, depending on the value for the RecommendationProviderIdType property. Each of these attributes temporarily stores a recommended item that's retrieved from the recommender model and sent to an AWS Lambda function for additional processing. Each attribute can be used as a message variable in a message template.</p>
+    /// <p>This value is null if the configuration doesn't invoke an AWS Lambda function (RecommendationTransformerUri) to perform additional processing of recommendation data.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.attributes
+    }
     /// <p>The date, in extended ISO 8601 format, when the configuration was created for the recommender model.</p>
     pub fn creation_date(
         mut self,
@@ -181,6 +190,10 @@ impl RecommenderConfigurationResponseBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>The date, in extended ISO 8601 format, when the configuration was created for the recommender model.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_date
+    }
     /// <p>The custom description of the configuration for the recommender model.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -191,6 +204,10 @@ impl RecommenderConfigurationResponseBuilder {
         self.description = input;
         self
     }
+    /// <p>The custom description of the configuration for the recommender model.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The unique identifier for the recommender model configuration.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -200,6 +217,10 @@ impl RecommenderConfigurationResponseBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The unique identifier for the recommender model configuration.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The date, in extended ISO 8601 format, when the configuration for the recommender model was last modified.</p>
     pub fn last_modified_date(
@@ -217,6 +238,10 @@ impl RecommenderConfigurationResponseBuilder {
         self.last_modified_date = input;
         self
     }
+    /// <p>The date, in extended ISO 8601 format, when the configuration for the recommender model was last modified.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_date
+    }
     /// <p>The custom name of the configuration for the recommender model.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -226,6 +251,10 @@ impl RecommenderConfigurationResponseBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The custom name of the configuration for the recommender model.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The type of Amazon Pinpoint ID that's associated with unique user IDs in the recommender model. This value enables the model to use attribute and event data that’s specific to a particular endpoint or user in an Amazon Pinpoint application. Possible values are:</p>
     /// <ul>
@@ -251,6 +280,16 @@ impl RecommenderConfigurationResponseBuilder {
         self.recommendation_provider_id_type = input;
         self
     }
+    /// <p>The type of Amazon Pinpoint ID that's associated with unique user IDs in the recommender model. This value enables the model to use attribute and event data that’s specific to a particular endpoint or user in an Amazon Pinpoint application. Possible values are:</p>
+    /// <ul>
+    /// <li><p>PINPOINT_ENDPOINT_ID - Each user in the model is associated with a particular endpoint in Amazon Pinpoint. The data is correlated based on endpoint IDs in Amazon Pinpoint. This is the default value.</p></li>
+    /// <li><p>PINPOINT_USER_ID - Each user in the model is associated with a particular user and endpoint in Amazon Pinpoint. The data is correlated based on user IDs in Amazon Pinpoint. If this value is specified, an endpoint definition in Amazon Pinpoint has to specify both a user ID (UserId) and an endpoint ID. Otherwise, messages won’t be sent to the user's endpoint.</p></li>
+    /// </ul>
+    pub fn get_recommendation_provider_id_type(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.recommendation_provider_id_type
+    }
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to retrieve recommendation data from the recommender model.</p>
     pub fn recommendation_provider_role_arn(
         mut self,
@@ -266,6 +305,12 @@ impl RecommenderConfigurationResponseBuilder {
     ) -> Self {
         self.recommendation_provider_role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to retrieve recommendation data from the recommender model.</p>
+    pub fn get_recommendation_provider_role_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.recommendation_provider_role_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the recommender model that Amazon Pinpoint retrieves the recommendation data from. This value is the ARN of an Amazon Personalize campaign.</p>
     pub fn recommendation_provider_uri(
@@ -283,6 +328,10 @@ impl RecommenderConfigurationResponseBuilder {
         self.recommendation_provider_uri = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the recommender model that Amazon Pinpoint retrieves the recommendation data from. This value is the ARN of an Amazon Personalize campaign.</p>
+    pub fn get_recommendation_provider_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommendation_provider_uri
+    }
     /// <p>The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon Pinpoint invokes to perform additional processing of recommendation data that it retrieves from the recommender model.</p>
     pub fn recommendation_transformer_uri(
         mut self,
@@ -298,6 +347,12 @@ impl RecommenderConfigurationResponseBuilder {
     ) -> Self {
         self.recommendation_transformer_uri = input;
         self
+    }
+    /// <p>The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon Pinpoint invokes to perform additional processing of recommendation data that it retrieves from the recommender model.</p>
+    pub fn get_recommendation_transformer_uri(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.recommendation_transformer_uri
     }
     /// <p>The custom display name for the standard endpoint or user attribute (RecommendationItems) that temporarily stores recommended items for each endpoint or user, depending on the value for the RecommendationProviderIdType property. This name appears in the <b>Attribute finder</b> of the template editor on the Amazon Pinpoint console.</p>
     /// <p>This value is null if the configuration doesn't invoke an AWS Lambda function (RecommendationTransformerUri) to perform additional processing of recommendation data.</p>
@@ -317,6 +372,13 @@ impl RecommenderConfigurationResponseBuilder {
         self.recommendations_display_name = input;
         self
     }
+    /// <p>The custom display name for the standard endpoint or user attribute (RecommendationItems) that temporarily stores recommended items for each endpoint or user, depending on the value for the RecommendationProviderIdType property. This name appears in the <b>Attribute finder</b> of the template editor on the Amazon Pinpoint console.</p>
+    /// <p>This value is null if the configuration doesn't invoke an AWS Lambda function (RecommendationTransformerUri) to perform additional processing of recommendation data.</p>
+    pub fn get_recommendations_display_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.recommendations_display_name
+    }
     /// <p>The number of recommended items that are retrieved from the model for each endpoint or user, depending on the value for the RecommendationProviderIdType property. This number determines how many recommended items are available for use in message variables.</p>
     pub fn recommendations_per_message(mut self, input: i32) -> Self {
         self.recommendations_per_message = ::std::option::Option::Some(input);
@@ -326,6 +388,10 @@ impl RecommenderConfigurationResponseBuilder {
     pub fn set_recommendations_per_message(mut self, input: ::std::option::Option<i32>) -> Self {
         self.recommendations_per_message = input;
         self
+    }
+    /// <p>The number of recommended items that are retrieved from the model for each endpoint or user, depending on the value for the RecommendationProviderIdType property. This number determines how many recommended items are available for use in message variables.</p>
+    pub fn get_recommendations_per_message(&self) -> &::std::option::Option<i32> {
+        &self.recommendations_per_message
     }
     /// Consumes the builder and constructs a [`RecommenderConfigurationResponse`](crate::types::RecommenderConfigurationResponse).
     pub fn build(self) -> crate::types::RecommenderConfigurationResponse {

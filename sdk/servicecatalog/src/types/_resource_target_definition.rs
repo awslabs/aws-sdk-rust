@@ -59,6 +59,10 @@ impl ResourceTargetDefinitionBuilder {
         self.attribute = input;
         self
     }
+    /// <p>The attribute to be changed.</p>
+    pub fn get_attribute(&self) -> &::std::option::Option<crate::types::ResourceAttribute> {
+        &self.attribute
+    }
     /// <p>If the attribute is <code>Properties</code>, the value is the name of the property. Otherwise, the value is null.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl ResourceTargetDefinitionBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>If the attribute is <code>Properties</code>, the value is the name of the property. Otherwise, the value is null.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>If the attribute is <code>Properties</code>, indicates whether a change to this property causes the resource to be re-created.</p>
     pub fn requires_recreation(mut self, input: crate::types::RequiresRecreation) -> Self {
@@ -81,6 +89,12 @@ impl ResourceTargetDefinitionBuilder {
     ) -> Self {
         self.requires_recreation = input;
         self
+    }
+    /// <p>If the attribute is <code>Properties</code>, indicates whether a change to this property causes the resource to be re-created.</p>
+    pub fn get_requires_recreation(
+        &self,
+    ) -> &::std::option::Option<crate::types::RequiresRecreation> {
+        &self.requires_recreation
     }
     /// Consumes the builder and constructs a [`ResourceTargetDefinition`](crate::types::ResourceTargetDefinition).
     pub fn build(self) -> crate::types::ResourceTargetDefinition {

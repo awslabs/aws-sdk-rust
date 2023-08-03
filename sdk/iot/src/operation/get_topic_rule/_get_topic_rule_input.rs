@@ -40,6 +40,10 @@ impl GetTopicRuleInputBuilder {
         self.rule_name = input;
         self
     }
+    /// <p>The name of the rule.</p>
+    pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_name
+    }
     /// Consumes the builder and constructs a [`GetTopicRuleInput`](crate::operation::get_topic_rule::GetTopicRuleInput).
     pub fn build(
         self,

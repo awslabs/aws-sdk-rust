@@ -40,6 +40,10 @@ impl LaunchTemplateHibernationOptionsBuilder {
         self.configured = input;
         self
     }
+    /// <p>If this parameter is set to <code>true</code>, the instance is enabled for hibernation; otherwise, it is not enabled for hibernation.</p>
+    pub fn get_configured(&self) -> &::std::option::Option<bool> {
+        &self.configured
+    }
     /// Consumes the builder and constructs a [`LaunchTemplateHibernationOptions`](crate::types::LaunchTemplateHibernationOptions).
     pub fn build(self) -> crate::types::LaunchTemplateHibernationOptions {
         crate::types::LaunchTemplateHibernationOptions {

@@ -36,6 +36,10 @@ impl UpdateApprovalRuleTemplateDescriptionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateApprovalRuleTemplateDescription as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_approval_rule_template_description::builders::UpdateApprovalRuleTemplateDescriptionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl UpdateApprovalRuleTemplateDescriptionFluentBuilder {
         self.inner = self.inner.set_approval_rule_template_name(input);
         self
     }
+    /// <p>The name of the template for which you want to update the description.</p>
+    pub fn get_approval_rule_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_approval_rule_template_name()
+    }
     /// <p>The updated description of the approval rule template.</p>
     pub fn approval_rule_template_description(
         mut self,
@@ -121,5 +129,11 @@ impl UpdateApprovalRuleTemplateDescriptionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_approval_rule_template_description(input);
         self
+    }
+    /// <p>The updated description of the approval rule template.</p>
+    pub fn get_approval_rule_template_description(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_approval_rule_template_description()
     }
 }

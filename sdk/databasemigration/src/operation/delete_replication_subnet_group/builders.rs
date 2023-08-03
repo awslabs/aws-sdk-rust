@@ -36,6 +36,10 @@ impl DeleteReplicationSubnetGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteReplicationSubnetGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_replication_subnet_group::builders::DeleteReplicationSubnetGroupInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +135,11 @@ impl DeleteReplicationSubnetGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_replication_subnet_group_identifier(input);
         self
+    }
+    /// <p>The subnet group name of the replication instance.</p>
+    pub fn get_replication_subnet_group_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_replication_subnet_group_identifier()
     }
 }

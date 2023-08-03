@@ -39,6 +39,10 @@ impl DeleteCustomRoutingListenerInputBuilder {
         self.listener_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the listener to delete.</p>
+    pub fn get_listener_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.listener_arn
+    }
     /// Consumes the builder and constructs a [`DeleteCustomRoutingListenerInput`](crate::operation::delete_custom_routing_listener::DeleteCustomRoutingListenerInput).
     pub fn build(
         self,

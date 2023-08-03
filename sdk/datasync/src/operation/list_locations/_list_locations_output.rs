@@ -64,6 +64,12 @@ impl ListLocationsOutputBuilder {
         self.locations = input;
         self
     }
+    /// <p>An array that contains a list of locations.</p>
+    pub fn get_locations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LocationListEntry>> {
+        &self.locations
+    }
     /// <p>An opaque string that indicates the position at which to begin returning the next list of locations.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -73,6 +79,10 @@ impl ListLocationsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>An opaque string that indicates the position at which to begin returning the next list of locations.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

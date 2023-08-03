@@ -48,6 +48,12 @@ impl RegistryCatalogDataBuilder {
         self.display_name = input;
         self
     }
+    /// <p>The display name for a public registry. This appears on the Amazon ECR Public Gallery.</p> <important>
+    /// <p>Only accounts that have the verified account badge can have a registry display name.</p>
+    /// </important>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// Consumes the builder and constructs a [`RegistryCatalogData`](crate::types::RegistryCatalogData).
     pub fn build(self) -> crate::types::RegistryCatalogData {
         crate::types::RegistryCatalogData {

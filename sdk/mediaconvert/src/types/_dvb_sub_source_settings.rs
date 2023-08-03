@@ -40,6 +40,10 @@ impl DvbSubSourceSettingsBuilder {
         self.pid = input;
         self
     }
+    /// When using DVB-Sub with Burn-in, use this PID for the source content. Unused for DVB-Sub passthrough. All DVB-Sub content is passed through, regardless of selectors.
+    pub fn get_pid(&self) -> &::std::option::Option<i32> {
+        &self.pid
+    }
     /// Consumes the builder and constructs a [`DvbSubSourceSettings`](crate::types::DvbSubSourceSettings).
     pub fn build(self) -> crate::types::DvbSubSourceSettings {
         crate::types::DvbSubSourceSettings { pid: self.pid }

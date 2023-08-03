@@ -42,6 +42,10 @@ impl GetRemoteAccessSessionInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the remote access session about which you want to get session information.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`GetRemoteAccessSessionInput`](crate::operation::get_remote_access_session::GetRemoteAccessSessionInput).
     pub fn build(
         self,

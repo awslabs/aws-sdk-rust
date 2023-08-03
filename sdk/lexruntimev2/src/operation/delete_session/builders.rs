@@ -40,6 +40,12 @@ impl DeleteSessionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteSession as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_session::builders::DeleteSessionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -122,6 +128,10 @@ impl DeleteSessionFluentBuilder {
         self.inner = self.inner.set_bot_id(input);
         self
     }
+    /// <p>The identifier of the bot that contains the session data.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_id()
+    }
     /// <p>The alias identifier in use for the bot that contains the session data.</p>
     pub fn bot_alias_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_alias_id(input.into());
@@ -131,6 +141,10 @@ impl DeleteSessionFluentBuilder {
     pub fn set_bot_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bot_alias_id(input);
         self
+    }
+    /// <p>The alias identifier in use for the bot that contains the session data.</p>
+    pub fn get_bot_alias_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_alias_id()
     }
     /// <p>The locale where the session is in use.</p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -142,6 +156,10 @@ impl DeleteSessionFluentBuilder {
         self.inner = self.inner.set_locale_id(input);
         self
     }
+    /// <p>The locale where the session is in use.</p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_locale_id()
+    }
     /// <p>The identifier of the session to delete.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.session_id(input.into());
@@ -151,5 +169,9 @@ impl DeleteSessionFluentBuilder {
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_session_id(input);
         self
+    }
+    /// <p>The identifier of the session to delete.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_session_id()
     }
 }

@@ -60,6 +60,14 @@ impl AwsEksClusterLoggingDetailsBuilder {
         self.cluster_logging = input;
         self
     }
+    /// <p>Cluster logging configurations.</p>
+    pub fn get_cluster_logging(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::AwsEksClusterLoggingClusterLoggingDetails>,
+    > {
+        &self.cluster_logging
+    }
     /// Consumes the builder and constructs a [`AwsEksClusterLoggingDetails`](crate::types::AwsEksClusterLoggingDetails).
     pub fn build(self) -> crate::types::AwsEksClusterLoggingDetails {
         crate::types::AwsEksClusterLoggingDetails {

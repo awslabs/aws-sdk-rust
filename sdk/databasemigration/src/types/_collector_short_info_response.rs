@@ -54,6 +54,10 @@ impl CollectorShortInfoResponseBuilder {
         self.collector_referenced_id = input;
         self
     }
+    /// <p>The reference ID of the Fleet Advisor collector.</p>
+    pub fn get_collector_referenced_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collector_referenced_id
+    }
     /// <p>The name of the Fleet Advisor collector.</p>
     pub fn collector_name(
         mut self,
@@ -69,6 +73,10 @@ impl CollectorShortInfoResponseBuilder {
     ) -> Self {
         self.collector_name = input;
         self
+    }
+    /// <p>The name of the Fleet Advisor collector.</p>
+    pub fn get_collector_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collector_name
     }
     /// Consumes the builder and constructs a [`CollectorShortInfoResponse`](crate::types::CollectorShortInfoResponse).
     pub fn build(self) -> crate::types::CollectorShortInfoResponse {

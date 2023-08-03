@@ -45,6 +45,10 @@ impl DescribeValidDbInstanceModificationsInputBuilder {
         self.db_instance_identifier = input;
         self
     }
+    /// <p>The customer identifier or the ARN of your DB instance.</p>
+    pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_identifier
+    }
     /// Consumes the builder and constructs a [`DescribeValidDbInstanceModificationsInput`](crate::operation::describe_valid_db_instance_modifications::DescribeValidDbInstanceModificationsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_valid_db_instance_modifications::DescribeValidDbInstanceModificationsInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

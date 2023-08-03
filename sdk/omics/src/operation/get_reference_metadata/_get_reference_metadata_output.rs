@@ -119,6 +119,10 @@ impl GetReferenceMetadataOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The reference's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The reference's ARN.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -128,6 +132,10 @@ impl GetReferenceMetadataOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The reference's ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The reference's reference store ID.</p>
     pub fn reference_store_id(
@@ -145,6 +153,10 @@ impl GetReferenceMetadataOutputBuilder {
         self.reference_store_id = input;
         self
     }
+    /// <p>The reference's reference store ID.</p>
+    pub fn get_reference_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reference_store_id
+    }
     /// <p>The reference's MD5 checksum.</p>
     pub fn md5(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.md5 = ::std::option::Option::Some(input.into());
@@ -154,6 +166,10 @@ impl GetReferenceMetadataOutputBuilder {
     pub fn set_md5(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.md5 = input;
         self
+    }
+    /// <p>The reference's MD5 checksum.</p>
+    pub fn get_md5(&self) -> &::std::option::Option<::std::string::String> {
+        &self.md5
     }
     /// <p>The reference's status.</p>
     pub fn status(mut self, input: crate::types::ReferenceStatus) -> Self {
@@ -168,6 +184,10 @@ impl GetReferenceMetadataOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The reference's status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ReferenceStatus> {
+        &self.status
+    }
     /// <p>The reference's name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -178,6 +198,10 @@ impl GetReferenceMetadataOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The reference's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The reference's description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -187,6 +211,10 @@ impl GetReferenceMetadataOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The reference's description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>When the reference was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -201,6 +229,10 @@ impl GetReferenceMetadataOutputBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>When the reference was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>When the reference was updated.</p>
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
@@ -214,6 +246,10 @@ impl GetReferenceMetadataOutputBuilder {
         self.update_time = input;
         self
     }
+    /// <p>When the reference was updated.</p>
+    pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_time
+    }
     /// <p>The reference's files.</p>
     pub fn files(mut self, input: crate::types::ReferenceFiles) -> Self {
         self.files = ::std::option::Option::Some(input);
@@ -223,6 +259,10 @@ impl GetReferenceMetadataOutputBuilder {
     pub fn set_files(mut self, input: ::std::option::Option<crate::types::ReferenceFiles>) -> Self {
         self.files = input;
         self
+    }
+    /// <p>The reference's files.</p>
+    pub fn get_files(&self) -> &::std::option::Option<crate::types::ReferenceFiles> {
+        &self.files
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

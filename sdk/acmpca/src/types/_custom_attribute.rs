@@ -56,6 +56,10 @@ impl CustomAttributeBuilder {
         self.object_identifier = input;
         self
     }
+    /// <p>Specifies the object identifier (OID) of the attribute type of the relative distinguished name (RDN).</p>
+    pub fn get_object_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_identifier
+    }
     /// <p></p>
     /// <p>Specifies the attribute value of relative distinguished name (RDN).</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -67,6 +71,11 @@ impl CustomAttributeBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p></p>
+    /// <p>Specifies the attribute value of relative distinguished name (RDN).</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`CustomAttribute`](crate::types::CustomAttribute).
     pub fn build(self) -> crate::types::CustomAttribute {

@@ -72,6 +72,10 @@ impl TerminateClientVpnConnectionsOutputBuilder {
         self.client_vpn_endpoint_id = input;
         self
     }
+    /// <p>The ID of the Client VPN endpoint.</p>
+    pub fn get_client_vpn_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_vpn_endpoint_id
+    }
     /// <p>The user who established the terminated client connections.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl TerminateClientVpnConnectionsOutputBuilder {
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
+    }
+    /// <p>The user who established the terminated client connections.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
     }
     /// Appends an item to `connection_statuses`.
     ///
@@ -100,6 +108,12 @@ impl TerminateClientVpnConnectionsOutputBuilder {
     ) -> Self {
         self.connection_statuses = input;
         self
+    }
+    /// <p>The current state of the client connections.</p>
+    pub fn get_connection_statuses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TerminateConnectionStatus>> {
+        &self.connection_statuses
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

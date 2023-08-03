@@ -50,6 +50,12 @@ impl UpdateContainerAgentOutputBuilder {
         self.container_instance = input;
         self
     }
+    /// <p>The container instance that the container agent was updated for.</p>
+    pub fn get_container_instance(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContainerInstance> {
+        &self.container_instance
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

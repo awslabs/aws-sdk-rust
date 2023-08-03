@@ -48,6 +48,10 @@ impl AutoMlConfigBuilder {
         self.metric_name = input;
         self
     }
+    /// <p>The metric to optimize.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
+    }
     /// Appends an item to `recipe_list`.
     ///
     /// To override the contents of this collection use [`set_recipe_list`](Self::set_recipe_list).
@@ -66,6 +70,12 @@ impl AutoMlConfigBuilder {
     ) -> Self {
         self.recipe_list = input;
         self
+    }
+    /// <p>The list of candidate recipes.</p>
+    pub fn get_recipe_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.recipe_list
     }
     /// Consumes the builder and constructs a [`AutoMlConfig`](crate::types::AutoMlConfig).
     pub fn build(self) -> crate::types::AutoMlConfig {

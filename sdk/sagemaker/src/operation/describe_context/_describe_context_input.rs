@@ -39,6 +39,10 @@ impl DescribeContextInputBuilder {
         self.context_name = input;
         self
     }
+    /// <p>The name of the context to describe.</p>
+    pub fn get_context_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.context_name
+    }
     /// Consumes the builder and constructs a [`DescribeContextInput`](crate::operation::describe_context::DescribeContextInput).
     pub fn build(
         self,

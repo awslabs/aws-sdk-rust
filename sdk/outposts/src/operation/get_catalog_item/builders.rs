@@ -36,6 +36,12 @@ impl GetCatalogItemFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetCatalogItem as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_catalog_item::builders::GetCatalogItemInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl GetCatalogItemFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_catalog_item_id(input);
         self
+    }
+    /// <p>The ID of the catalog item.</p>
+    pub fn get_catalog_item_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog_item_id()
     }
 }

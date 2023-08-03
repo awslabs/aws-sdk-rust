@@ -75,6 +75,10 @@ impl EntityNotExistsExceptionBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Appends an item to `entity_ids`.
     ///
     /// To override the contents of this collection use [`set_entity_ids`](Self::set_entity_ids).
@@ -93,6 +97,10 @@ impl EntityNotExistsExceptionBuilder {
     ) -> Self {
         self.entity_ids = input;
         self
+    }
+    /// <p>The IDs of the non-existent resources.</p>
+    pub fn get_entity_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.entity_ids
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

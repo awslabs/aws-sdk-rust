@@ -54,6 +54,10 @@ impl TestSetImportInputLocationBuilder {
         self.s3_bucket_name = input;
         self
     }
+    /// <p>The name of the Amazon S3 bucket.</p>
+    pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_name
+    }
     /// <p>The path inside the Amazon S3 bucket pointing to the test-set CSV file.</p>
     pub fn s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_path = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl TestSetImportInputLocationBuilder {
     pub fn set_s3_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_path = input;
         self
+    }
+    /// <p>The path inside the Amazon S3 bucket pointing to the test-set CSV file.</p>
+    pub fn get_s3_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_path
     }
     /// Consumes the builder and constructs a [`TestSetImportInputLocation`](crate::types::TestSetImportInputLocation).
     pub fn build(self) -> crate::types::TestSetImportInputLocation {

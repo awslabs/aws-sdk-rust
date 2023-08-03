@@ -36,6 +36,12 @@ impl CreateDatasetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDataset as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_dataset::builders::CreateDatasetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl CreateDatasetFluentBuilder {
         self.inner = self.inner.set_dataset_name(input);
         self
     }
+    /// <p>The name of the dataset being created. </p>
+    pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dataset_name()
+    }
     /// <p>A JSON description of the data that is in each time series dataset, including names, column names, and data types. </p>
     pub fn dataset_schema(mut self, input: crate::types::DatasetSchema) -> Self {
         self.inner = self.inner.dataset_schema(input);
@@ -130,6 +140,10 @@ impl CreateDatasetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_dataset_schema(input);
         self
+    }
+    /// <p>A JSON description of the data that is in each time series dataset, including names, column names, and data types. </p>
+    pub fn get_dataset_schema(&self) -> &::std::option::Option<crate::types::DatasetSchema> {
+        self.inner.get_dataset_schema()
     }
     /// <p>Provides the identifier of the KMS key used to encrypt dataset data by Amazon Lookout for Equipment. </p>
     pub fn server_side_kms_key_id(
@@ -147,6 +161,10 @@ impl CreateDatasetFluentBuilder {
         self.inner = self.inner.set_server_side_kms_key_id(input);
         self
     }
+    /// <p>Provides the identifier of the KMS key used to encrypt dataset data by Amazon Lookout for Equipment. </p>
+    pub fn get_server_side_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_server_side_kms_key_id()
+    }
     /// <p> A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -156,6 +174,10 @@ impl CreateDatasetFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p> A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// Appends an item to `Tags`.
     ///
@@ -173,5 +195,9 @@ impl CreateDatasetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Any tags associated with the ingested data described in the dataset. </p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

@@ -36,6 +36,12 @@ impl ListDirectoriesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListDirectories as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_directories::builders::ListDirectoriesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListDirectoriesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to retrieve.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -147,6 +157,10 @@ impl ListDirectoriesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to retrieve.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The state of the directories in the list. Can be either Enabled, Disabled, or Deleted.</p>
     pub fn state(mut self, input: crate::types::DirectoryState) -> Self {
         self.inner = self.inner.state(input);
@@ -156,5 +170,9 @@ impl ListDirectoriesFluentBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::DirectoryState>) -> Self {
         self.inner = self.inner.set_state(input);
         self
+    }
+    /// <p>The state of the directories in the list. Can be either Enabled, Disabled, or Deleted.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::DirectoryState> {
+        self.inner.get_state()
     }
 }

@@ -55,6 +55,11 @@ impl LambdaLinuxProcessParamsBuilder {
         self.isolation_mode = input;
         self
     }
+    /// <p>The isolation mode for the process that contains the Lambda function. The process can run in an isolated runtime environment inside the IoT Greengrass container, or as a regular process outside any container.</p>
+    /// <p>Default: <code>GreengrassContainer</code> </p>
+    pub fn get_isolation_mode(&self) -> &::std::option::Option<crate::types::LambdaIsolationMode> {
+        &self.isolation_mode
+    }
     /// <p>The parameters for the container in which the Lambda function runs.</p>
     pub fn container_params(mut self, input: crate::types::LambdaContainerParams) -> Self {
         self.container_params = ::std::option::Option::Some(input);
@@ -67,6 +72,12 @@ impl LambdaLinuxProcessParamsBuilder {
     ) -> Self {
         self.container_params = input;
         self
+    }
+    /// <p>The parameters for the container in which the Lambda function runs.</p>
+    pub fn get_container_params(
+        &self,
+    ) -> &::std::option::Option<crate::types::LambdaContainerParams> {
+        &self.container_params
     }
     /// Consumes the builder and constructs a [`LambdaLinuxProcessParams`](crate::types::LambdaLinuxProcessParams).
     pub fn build(self) -> crate::types::LambdaLinuxProcessParams {

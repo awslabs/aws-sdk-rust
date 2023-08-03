@@ -37,6 +37,13 @@ impl DetachSecurityProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DetachSecurityProfile as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::detach_security_profile::builders::DetachSecurityProfileInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl DetachSecurityProfileFluentBuilder {
         self.inner = self.inner.set_security_profile_name(input);
         self
     }
+    /// <p>The security profile that is detached.</p>
+    pub fn get_security_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_security_profile_name()
+    }
     /// <p>The ARN of the thing group from which the security profile is detached.</p>
     pub fn security_profile_target_arn(
         mut self,
@@ -148,5 +159,9 @@ impl DetachSecurityProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_security_profile_target_arn(input);
         self
+    }
+    /// <p>The ARN of the thing group from which the security profile is detached.</p>
+    pub fn get_security_profile_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_security_profile_target_arn()
     }
 }

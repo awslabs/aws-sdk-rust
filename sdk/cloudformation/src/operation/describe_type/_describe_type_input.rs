@@ -91,6 +91,11 @@ impl DescribeTypeInputBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The kind of extension.</p>
+    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::RegistryType> {
+        &self.r#type
+    }
     /// <p>The name of the extension.</p>
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -102,6 +107,11 @@ impl DescribeTypeInputBuilder {
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.type_name = input;
         self
+    }
+    /// <p>The name of the extension.</p>
+    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
+    pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.type_name
     }
     /// <p>The Amazon Resource Name (ARN) of the extension.</p>
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
@@ -115,6 +125,11 @@ impl DescribeTypeInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the extension.</p>
+    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the extension version when it is registered.</p>
     /// <p>If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information about that specific extension version. Otherwise, it returns information about the default extension version.</p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -127,6 +142,11 @@ impl DescribeTypeInputBuilder {
         self.version_id = input;
         self
     }
+    /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the extension version when it is registered.</p>
+    /// <p>If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information about that specific extension version. Otherwise, it returns information about the default extension version.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
+    }
     /// <p>The publisher ID of the extension publisher.</p>
     /// <p>Extensions provided by Amazon Web Services are not assigned a publisher ID.</p>
     pub fn publisher_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,6 +158,11 @@ impl DescribeTypeInputBuilder {
     pub fn set_publisher_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.publisher_id = input;
         self
+    }
+    /// <p>The publisher ID of the extension publisher.</p>
+    /// <p>Extensions provided by Amazon Web Services are not assigned a publisher ID.</p>
+    pub fn get_publisher_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.publisher_id
     }
     /// <p>The version number of a public third-party extension.</p>
     pub fn public_version_number(
@@ -154,6 +179,10 @@ impl DescribeTypeInputBuilder {
     ) -> Self {
         self.public_version_number = input;
         self
+    }
+    /// <p>The version number of a public third-party extension.</p>
+    pub fn get_public_version_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_version_number
     }
     /// Consumes the builder and constructs a [`DescribeTypeInput`](crate::operation::describe_type::DescribeTypeInput).
     pub fn build(

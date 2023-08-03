@@ -88,6 +88,10 @@ impl RegisterInstanceInputBuilder {
         self.stack_id = input;
         self
     }
+    /// <p>The ID of the stack that the instance is to be registered with.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_id
+    }
     /// <p>The instance's hostname.</p>
     pub fn hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hostname = ::std::option::Option::Some(input.into());
@@ -97,6 +101,10 @@ impl RegisterInstanceInputBuilder {
     pub fn set_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hostname = input;
         self
+    }
+    /// <p>The instance's hostname.</p>
+    pub fn get_hostname(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hostname
     }
     /// <p>The instance's public IP address.</p>
     pub fn public_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -108,6 +116,10 @@ impl RegisterInstanceInputBuilder {
         self.public_ip = input;
         self
     }
+    /// <p>The instance's public IP address.</p>
+    pub fn get_public_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_ip
+    }
     /// <p>The instance's private IP address.</p>
     pub fn private_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_ip = ::std::option::Option::Some(input.into());
@@ -117,6 +129,10 @@ impl RegisterInstanceInputBuilder {
     pub fn set_private_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.private_ip = input;
         self
+    }
+    /// <p>The instance's private IP address.</p>
+    pub fn get_private_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_ip
     }
     /// <p>The instances public RSA key. This key is used to encrypt communication between the instance and the service.</p>
     pub fn rsa_public_key(
@@ -134,6 +150,10 @@ impl RegisterInstanceInputBuilder {
         self.rsa_public_key = input;
         self
     }
+    /// <p>The instances public RSA key. This key is used to encrypt communication between the instance and the service.</p>
+    pub fn get_rsa_public_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rsa_public_key
+    }
     /// <p>The instances public RSA key fingerprint.</p>
     pub fn rsa_public_key_fingerprint(
         mut self,
@@ -150,6 +170,10 @@ impl RegisterInstanceInputBuilder {
         self.rsa_public_key_fingerprint = input;
         self
     }
+    /// <p>The instances public RSA key fingerprint.</p>
+    pub fn get_rsa_public_key_fingerprint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rsa_public_key_fingerprint
+    }
     /// <p>An InstanceIdentity object that contains the instance's identity.</p>
     pub fn instance_identity(mut self, input: crate::types::InstanceIdentity) -> Self {
         self.instance_identity = ::std::option::Option::Some(input);
@@ -162,6 +186,10 @@ impl RegisterInstanceInputBuilder {
     ) -> Self {
         self.instance_identity = input;
         self
+    }
+    /// <p>An InstanceIdentity object that contains the instance's identity.</p>
+    pub fn get_instance_identity(&self) -> &::std::option::Option<crate::types::InstanceIdentity> {
+        &self.instance_identity
     }
     /// Consumes the builder and constructs a [`RegisterInstanceInput`](crate::operation::register_instance::RegisterInstanceInput).
     pub fn build(

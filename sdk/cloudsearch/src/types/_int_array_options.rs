@@ -72,6 +72,10 @@ impl IntArrayOptionsBuilder {
         self.default_value = input;
         self
     }
+    /// A value to use for the field if the field isn't specified for a document.
+    pub fn get_default_value(&self) -> &::std::option::Option<i64> {
+        &self.default_value
+    }
     /// <p>A list of source fields to map to the field. </p>
     pub fn source_fields(
         mut self,
@@ -88,6 +92,10 @@ impl IntArrayOptionsBuilder {
         self.source_fields = input;
         self
     }
+    /// <p>A list of source fields to map to the field. </p>
+    pub fn get_source_fields(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_fields
+    }
     /// <p>Whether facet information can be returned for the field.</p>
     pub fn facet_enabled(mut self, input: bool) -> Self {
         self.facet_enabled = ::std::option::Option::Some(input);
@@ -97,6 +105,10 @@ impl IntArrayOptionsBuilder {
     pub fn set_facet_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.facet_enabled = input;
         self
+    }
+    /// <p>Whether facet information can be returned for the field.</p>
+    pub fn get_facet_enabled(&self) -> &::std::option::Option<bool> {
+        &self.facet_enabled
     }
     /// <p>Whether the contents of the field are searchable.</p>
     pub fn search_enabled(mut self, input: bool) -> Self {
@@ -108,6 +120,10 @@ impl IntArrayOptionsBuilder {
         self.search_enabled = input;
         self
     }
+    /// <p>Whether the contents of the field are searchable.</p>
+    pub fn get_search_enabled(&self) -> &::std::option::Option<bool> {
+        &self.search_enabled
+    }
     /// <p>Whether the contents of the field can be returned in the search results.</p>
     pub fn return_enabled(mut self, input: bool) -> Self {
         self.return_enabled = ::std::option::Option::Some(input);
@@ -117,6 +133,10 @@ impl IntArrayOptionsBuilder {
     pub fn set_return_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.return_enabled = input;
         self
+    }
+    /// <p>Whether the contents of the field can be returned in the search results.</p>
+    pub fn get_return_enabled(&self) -> &::std::option::Option<bool> {
+        &self.return_enabled
     }
     /// Consumes the builder and constructs a [`IntArrayOptions`](crate::types::IntArrayOptions).
     pub fn build(self) -> crate::types::IntArrayOptions {

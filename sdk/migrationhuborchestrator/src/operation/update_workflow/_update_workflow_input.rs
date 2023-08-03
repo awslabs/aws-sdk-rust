@@ -88,6 +88,10 @@ impl UpdateWorkflowInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the migration workflow.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the migration workflow.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -98,6 +102,10 @@ impl UpdateWorkflowInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the migration workflow.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the migration workflow.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -107,6 +115,10 @@ impl UpdateWorkflowInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the migration workflow.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `input_parameters`.
     ///
@@ -133,6 +145,14 @@ impl UpdateWorkflowInputBuilder {
         self.input_parameters = input;
         self
     }
+    /// <p>The input parameters required to update a migration workflow.</p>
+    pub fn get_input_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::StepInput>,
+    > {
+        &self.input_parameters
+    }
     /// Appends an item to `step_targets`.
     ///
     /// To override the contents of this collection use [`set_step_targets`](Self::set_step_targets).
@@ -151,6 +171,12 @@ impl UpdateWorkflowInputBuilder {
     ) -> Self {
         self.step_targets = input;
         self
+    }
+    /// <p>The servers on which a step will be run.</p>
+    pub fn get_step_targets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.step_targets
     }
     /// Consumes the builder and constructs a [`UpdateWorkflowInput`](crate::operation::update_workflow::UpdateWorkflowInput).
     pub fn build(

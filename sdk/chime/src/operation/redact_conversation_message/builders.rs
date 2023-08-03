@@ -36,6 +36,10 @@ impl RedactConversationMessageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RedactConversationMessage as a reference.
+    pub fn as_input(&self) -> &crate::operation::redact_conversation_message::builders::RedactConversationMessageInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl RedactConversationMessageFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p>The conversation ID.</p>
     pub fn conversation_id(
         mut self,
@@ -142,6 +150,10 @@ impl RedactConversationMessageFluentBuilder {
         self.inner = self.inner.set_conversation_id(input);
         self
     }
+    /// <p>The conversation ID.</p>
+    pub fn get_conversation_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_conversation_id()
+    }
     /// <p>The message ID.</p>
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.message_id(input.into());
@@ -151,5 +163,9 @@ impl RedactConversationMessageFluentBuilder {
     pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_message_id(input);
         self
+    }
+    /// <p>The message ID.</p>
+    pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_message_id()
     }
 }

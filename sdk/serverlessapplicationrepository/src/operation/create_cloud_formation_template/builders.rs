@@ -36,6 +36,10 @@ impl CreateCloudFormationTemplateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateCloudFormationTemplate as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_cloud_formation_template::builders::CreateCloudFormationTemplateInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl CreateCloudFormationTemplateFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>The semantic version of the application:</p>
     /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
     pub fn semantic_version(
@@ -149,5 +157,10 @@ impl CreateCloudFormationTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_semantic_version(input);
         self
+    }
+    /// <p>The semantic version of the application:</p>
+    /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
+    pub fn get_semantic_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_semantic_version()
     }
 }

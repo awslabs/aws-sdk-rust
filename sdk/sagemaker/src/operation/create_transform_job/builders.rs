@@ -46,6 +46,12 @@ impl CreateTransformJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateTransformJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_transform_job::builders::CreateTransformJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -142,6 +148,10 @@ impl CreateTransformJobFluentBuilder {
         self.inner = self.inner.set_transform_job_name(input);
         self
     }
+    /// <p>The name of the transform job. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. </p>
+    pub fn get_transform_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_transform_job_name()
+    }
     /// <p>The name of the model that you want to use for the transform job. <code>ModelName</code> must be the name of an existing Amazon SageMaker model within an Amazon Web Services Region in an Amazon Web Services account.</p>
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_name(input.into());
@@ -152,6 +162,10 @@ impl CreateTransformJobFluentBuilder {
         self.inner = self.inner.set_model_name(input);
         self
     }
+    /// <p>The name of the model that you want to use for the transform job. <code>ModelName</code> must be the name of an existing Amazon SageMaker model within an Amazon Web Services Region in an Amazon Web Services account.</p>
+    pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_model_name()
+    }
     /// <p>The maximum number of parallel requests that can be sent to each instance in a transform job. If <code>MaxConcurrentTransforms</code> is set to <code>0</code> or left unset, Amazon SageMaker checks the optional execution-parameters to determine the settings for your chosen algorithm. If the execution-parameters endpoint is not enabled, the default value is <code>1</code>. For more information on execution-parameters, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html#your-algorithms-batch-code-how-containe-serves-requests">How Containers Serve Requests</a>. For built-in algorithms, you don't need to set a value for <code>MaxConcurrentTransforms</code>.</p>
     pub fn max_concurrent_transforms(mut self, input: i32) -> Self {
         self.inner = self.inner.max_concurrent_transforms(input);
@@ -161,6 +175,10 @@ impl CreateTransformJobFluentBuilder {
     pub fn set_max_concurrent_transforms(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_concurrent_transforms(input);
         self
+    }
+    /// <p>The maximum number of parallel requests that can be sent to each instance in a transform job. If <code>MaxConcurrentTransforms</code> is set to <code>0</code> or left unset, Amazon SageMaker checks the optional execution-parameters to determine the settings for your chosen algorithm. If the execution-parameters endpoint is not enabled, the default value is <code>1</code>. For more information on execution-parameters, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html#your-algorithms-batch-code-how-containe-serves-requests">How Containers Serve Requests</a>. For built-in algorithms, you don't need to set a value for <code>MaxConcurrentTransforms</code>.</p>
+    pub fn get_max_concurrent_transforms(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_concurrent_transforms()
     }
     /// <p>Configures the timeout and maximum number of retries for processing a transform job invocation.</p>
     pub fn model_client_config(mut self, input: crate::types::ModelClientConfig) -> Self {
@@ -175,6 +193,12 @@ impl CreateTransformJobFluentBuilder {
         self.inner = self.inner.set_model_client_config(input);
         self
     }
+    /// <p>Configures the timeout and maximum number of retries for processing a transform job invocation.</p>
+    pub fn get_model_client_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ModelClientConfig> {
+        self.inner.get_model_client_config()
+    }
     /// <p>The maximum allowed size of the payload, in MB. A <i>payload</i> is the data portion of a record (without metadata). The value in <code>MaxPayloadInMB</code> must be greater than, or equal to, the size of a single record. To estimate the size of a record in MB, divide the size of your dataset by the number of records. To ensure that the records fit within the maximum payload size, we recommend using a slightly larger value. The default value is <code>6</code> MB. </p>
     /// <p>The value of <code>MaxPayloadInMB</code> cannot be greater than 100 MB. If you specify the <code>MaxConcurrentTransforms</code> parameter, the value of <code>(MaxConcurrentTransforms * MaxPayloadInMB)</code> also cannot exceed 100 MB.</p>
     /// <p>For cases where the payload might be arbitrarily large and is transmitted using HTTP chunked encoding, set the value to <code>0</code>. This feature works only in supported algorithms. Currently, Amazon SageMaker built-in algorithms do not support HTTP chunked encoding.</p>
@@ -188,6 +212,12 @@ impl CreateTransformJobFluentBuilder {
     pub fn set_max_payload_in_mb(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_payload_in_mb(input);
         self
+    }
+    /// <p>The maximum allowed size of the payload, in MB. A <i>payload</i> is the data portion of a record (without metadata). The value in <code>MaxPayloadInMB</code> must be greater than, or equal to, the size of a single record. To estimate the size of a record in MB, divide the size of your dataset by the number of records. To ensure that the records fit within the maximum payload size, we recommend using a slightly larger value. The default value is <code>6</code> MB. </p>
+    /// <p>The value of <code>MaxPayloadInMB</code> cannot be greater than 100 MB. If you specify the <code>MaxConcurrentTransforms</code> parameter, the value of <code>(MaxConcurrentTransforms * MaxPayloadInMB)</code> also cannot exceed 100 MB.</p>
+    /// <p>For cases where the payload might be arbitrarily large and is transmitted using HTTP chunked encoding, set the value to <code>0</code>. This feature works only in supported algorithms. Currently, Amazon SageMaker built-in algorithms do not support HTTP chunked encoding.</p>
+    pub fn get_max_payload_in_mb(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_payload_in_mb()
     }
     /// <p>Specifies the number of records to include in a mini-batch for an HTTP inference request. A <i>record</i> <i></i> is a single unit of input data that inference can be made on. For example, a single line in a CSV file is a record. </p>
     /// <p>To enable the batch strategy, you must set the <code>SplitType</code> property to <code>Line</code>, <code>RecordIO</code>, or <code>TFRecord</code>.</p>
@@ -207,6 +237,13 @@ impl CreateTransformJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_batch_strategy(input);
         self
+    }
+    /// <p>Specifies the number of records to include in a mini-batch for an HTTP inference request. A <i>record</i> <i></i> is a single unit of input data that inference can be made on. For example, a single line in a CSV file is a record. </p>
+    /// <p>To enable the batch strategy, you must set the <code>SplitType</code> property to <code>Line</code>, <code>RecordIO</code>, or <code>TFRecord</code>.</p>
+    /// <p>To use only one record when making an HTTP invocation request to a container, set <code>BatchStrategy</code> to <code>SingleRecord</code> and <code>SplitType</code> to <code>Line</code>.</p>
+    /// <p>To fit as many records in a mini-batch as can fit within the <code>MaxPayloadInMB</code> limit, set <code>BatchStrategy</code> to <code>MultiRecord</code> and <code>SplitType</code> to <code>Line</code>.</p>
+    pub fn get_batch_strategy(&self) -> &::std::option::Option<crate::types::BatchStrategy> {
+        self.inner.get_batch_strategy()
     }
     /// Adds a key-value pair to `Environment`.
     ///
@@ -231,6 +268,14 @@ impl CreateTransformJobFluentBuilder {
         self.inner = self.inner.set_environment(input);
         self
     }
+    /// <p>The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.</p>
+    pub fn get_environment(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_environment()
+    }
     /// <p>Describes the input source and the way the transform job consumes it.</p>
     pub fn transform_input(mut self, input: crate::types::TransformInput) -> Self {
         self.inner = self.inner.transform_input(input);
@@ -243,6 +288,10 @@ impl CreateTransformJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_transform_input(input);
         self
+    }
+    /// <p>Describes the input source and the way the transform job consumes it.</p>
+    pub fn get_transform_input(&self) -> &::std::option::Option<crate::types::TransformInput> {
+        self.inner.get_transform_input()
     }
     /// <p>Describes the results of the transform job.</p>
     pub fn transform_output(mut self, input: crate::types::TransformOutput) -> Self {
@@ -257,6 +306,10 @@ impl CreateTransformJobFluentBuilder {
         self.inner = self.inner.set_transform_output(input);
         self
     }
+    /// <p>Describes the results of the transform job.</p>
+    pub fn get_transform_output(&self) -> &::std::option::Option<crate::types::TransformOutput> {
+        self.inner.get_transform_output()
+    }
     /// <p>Configuration to control how SageMaker captures inference data.</p>
     pub fn data_capture_config(mut self, input: crate::types::BatchDataCaptureConfig) -> Self {
         self.inner = self.inner.data_capture_config(input);
@@ -269,6 +322,12 @@ impl CreateTransformJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_data_capture_config(input);
         self
+    }
+    /// <p>Configuration to control how SageMaker captures inference data.</p>
+    pub fn get_data_capture_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchDataCaptureConfig> {
+        self.inner.get_data_capture_config()
     }
     /// <p>Describes the resources, including ML instance types and ML instance count, to use for the transform job.</p>
     pub fn transform_resources(mut self, input: crate::types::TransformResources) -> Self {
@@ -283,6 +342,12 @@ impl CreateTransformJobFluentBuilder {
         self.inner = self.inner.set_transform_resources(input);
         self
     }
+    /// <p>Describes the resources, including ML instance types and ML instance count, to use for the transform job.</p>
+    pub fn get_transform_resources(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransformResources> {
+        self.inner.get_transform_resources()
+    }
     /// <p>The data structure used to specify the data to be used for inference in a batch transform job and to associate the data that is relevant to the prediction results in the output. The input filter provided allows you to exclude input data that is not needed for inference in a batch transform job. The output filter provided allows you to include input data relevant to interpreting the predictions in the output from the job. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate Prediction Results with their Corresponding Input Records</a>.</p>
     pub fn data_processing(mut self, input: crate::types::DataProcessing) -> Self {
         self.inner = self.inner.data_processing(input);
@@ -295,6 +360,10 @@ impl CreateTransformJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_data_processing(input);
         self
+    }
+    /// <p>The data structure used to specify the data to be used for inference in a batch transform job and to associate the data that is relevant to the prediction results in the output. The input filter provided allows you to exclude input data that is not needed for inference in a batch transform job. The output filter provided allows you to include input data relevant to interpreting the predictions in the output from the job. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate Prediction Results with their Corresponding Input Records</a>.</p>
+    pub fn get_data_processing(&self) -> &::std::option::Option<crate::types::DataProcessing> {
+        self.inner.get_data_processing()
     }
     /// Appends an item to `Tags`.
     ///
@@ -312,6 +381,10 @@ impl CreateTransformJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
     /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
     /// <ul>
@@ -335,5 +408,14 @@ impl CreateTransformJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_experiment_config(input);
         self
+    }
+    /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
+    /// <ul>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a> </p> </li>
+    /// </ul>
+    pub fn get_experiment_config(&self) -> &::std::option::Option<crate::types::ExperimentConfig> {
+        self.inner.get_experiment_config()
     }
 }

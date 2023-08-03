@@ -36,6 +36,12 @@ impl UpdateBackupPlanFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateBackupPlan as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_backup_plan::builders::UpdateBackupPlanInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateBackupPlanFluentBuilder {
         self.inner = self.inner.set_backup_plan_id(input);
         self
     }
+    /// <p>Uniquely identifies a backup plan.</p>
+    pub fn get_backup_plan_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_backup_plan_id()
+    }
     /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
     pub fn backup_plan(mut self, input: crate::types::BackupPlanInput) -> Self {
         self.inner = self.inner.backup_plan(input);
@@ -144,5 +154,9 @@ impl UpdateBackupPlanFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_backup_plan(input);
         self
+    }
+    /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
+    pub fn get_backup_plan(&self) -> &::std::option::Option<crate::types::BackupPlanInput> {
+        self.inner.get_backup_plan()
     }
 }

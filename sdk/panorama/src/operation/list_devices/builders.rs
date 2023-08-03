@@ -36,6 +36,10 @@ impl ListDevicesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListDevices as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_devices::builders::ListDevicesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl ListDevicesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of devices to return in one page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -136,6 +144,10 @@ impl ListDevicesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of devices to return in one page of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The target column to be sorted on. Default column sort is CREATED_TIME.</p>
     pub fn sort_by(mut self, input: crate::types::ListDevicesSortBy) -> Self {
@@ -150,6 +162,10 @@ impl ListDevicesFluentBuilder {
         self.inner = self.inner.set_sort_by(input);
         self
     }
+    /// <p>The target column to be sorted on. Default column sort is CREATED_TIME.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ListDevicesSortBy> {
+        self.inner.get_sort_by()
+    }
     /// <p>The sorting order for the returned list. SortOrder is DESCENDING by default based on CREATED_TIME. Otherwise, SortOrder is ASCENDING.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.inner = self.inner.sort_order(input);
@@ -160,6 +176,10 @@ impl ListDevicesFluentBuilder {
         self.inner = self.inner.set_sort_order(input);
         self
     }
+    /// <p>The sorting order for the returned list. SortOrder is DESCENDING by default based on CREATED_TIME. Otherwise, SortOrder is ASCENDING.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        self.inner.get_sort_order()
+    }
     /// <p>Filter based on device's name. Prefixes supported.</p>
     pub fn name_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name_filter(input.into());
@@ -169,6 +189,10 @@ impl ListDevicesFluentBuilder {
     pub fn set_name_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name_filter(input);
         self
+    }
+    /// <p>Filter based on device's name. Prefixes supported.</p>
+    pub fn get_name_filter(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name_filter()
     }
     /// <p>Filter based on a device's status.</p>
     pub fn device_aggregated_status_filter(
@@ -185,5 +209,11 @@ impl ListDevicesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_device_aggregated_status_filter(input);
         self
+    }
+    /// <p>Filter based on a device's status.</p>
+    pub fn get_device_aggregated_status_filter(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeviceAggregatedStatus> {
+        self.inner.get_device_aggregated_status_filter()
     }
 }

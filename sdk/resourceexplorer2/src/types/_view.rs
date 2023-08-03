@@ -93,6 +93,10 @@ impl ViewBuilder {
         self.view_arn = input;
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view.</p>
+    pub fn get_view_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.view_arn
+    }
     /// <p>The Amazon Web Services account that owns this view.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner = ::std::option::Option::Some(input.into());
@@ -102,6 +106,10 @@ impl ViewBuilder {
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner = input;
         self
+    }
+    /// <p>The Amazon Web Services account that owns this view.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
     }
     /// <p>The date and time when this view was last modified.</p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -116,6 +124,10 @@ impl ViewBuilder {
         self.last_updated_at = input;
         self
     }
+    /// <p>The date and time when this view was last modified.</p>
+    pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_at
+    }
     /// <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of an Amazon Web Services account, an organization, or an organizational unit (OU) that specifies whether this view includes resources from only the specified Amazon Web Services account, all accounts in the specified organization, or all accounts in the specified OU.</p>
     /// <p>If not specified, the value defaults to the Amazon Web Services account used to call this operation.</p>
     pub fn scope(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -127,6 +139,11 @@ impl ViewBuilder {
     pub fn set_scope(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scope = input;
         self
+    }
+    /// <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of an Amazon Web Services account, an organization, or an organizational unit (OU) that specifies whether this view includes resources from only the specified Amazon Web Services account, all accounts in the specified organization, or all accounts in the specified OU.</p>
+    /// <p>If not specified, the value defaults to the Amazon Web Services account used to call this operation.</p>
+    pub fn get_scope(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scope
     }
     /// Appends an item to `included_properties`.
     ///
@@ -147,6 +164,12 @@ impl ViewBuilder {
         self.included_properties = input;
         self
     }
+    /// <p>A structure that contains additional information about the view.</p>
+    pub fn get_included_properties(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IncludedProperty>> {
+        &self.included_properties
+    }
     /// <p>An array of <code>SearchFilter</code> objects that specify which resources can be included in the results of queries made using this view.</p>
     pub fn filters(mut self, input: crate::types::SearchFilter) -> Self {
         self.filters = ::std::option::Option::Some(input);
@@ -156,6 +179,10 @@ impl ViewBuilder {
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::SearchFilter>) -> Self {
         self.filters = input;
         self
+    }
+    /// <p>An array of <code>SearchFilter</code> objects that specify which resources can be included in the results of queries made using this view.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::SearchFilter> {
+        &self.filters
     }
     /// Consumes the builder and constructs a [`View`](crate::types::View).
     pub fn build(self) -> crate::types::View {

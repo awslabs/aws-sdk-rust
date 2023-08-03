@@ -38,6 +38,12 @@ impl DeleteKeywordFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteKeyword as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_keyword::builders::DeleteKeywordInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DeleteKeywordFluentBuilder {
         self.inner = self.inner.set_origination_identity(input);
         self
     }
+    /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, PoolId or PoolArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn and <code>DescribePools</code> to find the values of PoolId and PoolArn.</p>
+    pub fn get_origination_identity(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_origination_identity()
+    }
     /// <p>The keyword to delete.</p>
     pub fn keyword(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.keyword(input.into());
@@ -135,5 +145,9 @@ impl DeleteKeywordFluentBuilder {
     pub fn set_keyword(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_keyword(input);
         self
+    }
+    /// <p>The keyword to delete.</p>
+    pub fn get_keyword(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_keyword()
     }
 }

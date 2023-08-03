@@ -72,6 +72,10 @@ impl CompleteLayerUploadOutputBuilder {
         self.registry_id = input;
         self
     }
+    /// <p>The registry ID associated with the request.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
+    }
     /// <p>The repository name associated with the request.</p>
     pub fn repository_name(
         mut self,
@@ -88,6 +92,10 @@ impl CompleteLayerUploadOutputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The repository name associated with the request.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The upload ID associated with the layer.</p>
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upload_id = ::std::option::Option::Some(input.into());
@@ -98,6 +106,10 @@ impl CompleteLayerUploadOutputBuilder {
         self.upload_id = input;
         self
     }
+    /// <p>The upload ID associated with the layer.</p>
+    pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.upload_id
+    }
     /// <p>The <code>sha256</code> digest of the image layer.</p>
     pub fn layer_digest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.layer_digest = ::std::option::Option::Some(input.into());
@@ -107,6 +119,10 @@ impl CompleteLayerUploadOutputBuilder {
     pub fn set_layer_digest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.layer_digest = input;
         self
+    }
+    /// <p>The <code>sha256</code> digest of the image layer.</p>
+    pub fn get_layer_digest(&self) -> &::std::option::Option<::std::string::String> {
+        &self.layer_digest
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

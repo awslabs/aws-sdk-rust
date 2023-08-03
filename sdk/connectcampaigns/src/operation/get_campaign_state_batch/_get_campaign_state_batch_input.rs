@@ -51,6 +51,12 @@ impl GetCampaignStateBatchInputBuilder {
         self.campaign_ids = input;
         self
     }
+    /// List of CampaignId
+    pub fn get_campaign_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.campaign_ids
+    }
     /// Consumes the builder and constructs a [`GetCampaignStateBatchInput`](crate::operation::get_campaign_state_batch::GetCampaignStateBatchInput).
     pub fn build(
         self,

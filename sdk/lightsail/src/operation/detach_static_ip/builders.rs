@@ -36,6 +36,12 @@ impl DetachStaticIpFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DetachStaticIp as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::detach_static_ip::builders::DetachStaticIpInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl DetachStaticIpFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_static_ip_name(input);
         self
+    }
+    /// <p>The name of the static IP to detach from the instance.</p>
+    pub fn get_static_ip_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_static_ip_name()
     }
 }

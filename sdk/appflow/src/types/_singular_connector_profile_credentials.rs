@@ -45,6 +45,10 @@ impl SingularConnectorProfileCredentialsBuilder {
         self.api_key = input;
         self
     }
+    /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API. </p>
+    pub fn get_api_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_key
+    }
     /// Consumes the builder and constructs a [`SingularConnectorProfileCredentials`](crate::types::SingularConnectorProfileCredentials).
     pub fn build(self) -> crate::types::SingularConnectorProfileCredentials {
         crate::types::SingularConnectorProfileCredentials {

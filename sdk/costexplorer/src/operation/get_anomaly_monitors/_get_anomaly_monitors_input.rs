@@ -68,6 +68,12 @@ impl GetAnomalyMonitorsInputBuilder {
         self.monitor_arn_list = input;
         self
     }
+    /// <p>A list of cost anomaly monitor ARNs. </p>
+    pub fn get_monitor_arn_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.monitor_arn_list
+    }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn next_page_token(
         mut self,
@@ -84,6 +90,10 @@ impl GetAnomalyMonitorsInputBuilder {
         self.next_page_token = input;
         self
     }
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+    pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_page_token
+    }
     /// <p>The number of entries that a paginated response contains. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -93,6 +103,10 @@ impl GetAnomalyMonitorsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The number of entries that a paginated response contains. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`GetAnomalyMonitorsInput`](crate::operation::get_anomaly_monitors::GetAnomalyMonitorsInput).
     pub fn build(

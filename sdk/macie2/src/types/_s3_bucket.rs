@@ -133,6 +133,18 @@ impl S3BucketBuilder {
         self.allows_unencrypted_object_uploads = input;
         self
     }
+    /// <p>Specifies whether the bucket policy for the bucket requires server-side encryption of objects when objects are added to the bucket. Possible values are:</p>
+    /// <ul>
+    /// <li><p>FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include a valid server-side encryption header.</p></li>
+    /// <li><p>TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't require server-side encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include a valid server-side encryption header.</p></li>
+    /// <li><p>UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side encryption of new objects.</p></li>
+    /// </ul>
+    /// <p>Valid server-side encryption headers are: x-amz-server-side-encryption with a value of AES256 or aws:kms, and x-amz-server-side-encryption-customer-algorithm with a value of AES256.</p>
+    pub fn get_allows_unencrypted_object_uploads(
+        &self,
+    ) -> &::std::option::Option<crate::types::AllowsUnencryptedObjectUploads> {
+        &self.allows_unencrypted_object_uploads
+    }
     /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -142,6 +154,10 @@ impl S3BucketBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was created. This value can also indicate when changes such as edits to the bucket's policy were most recently made to the bucket, relative to when the finding was created or last updated.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -155,6 +171,10 @@ impl S3BucketBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was created. This value can also indicate when changes such as edits to the bucket's policy were most recently made to the bucket, relative to when the finding was created or last updated.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>The default server-side encryption settings for the bucket.</p>
     pub fn default_server_side_encryption(
@@ -172,6 +192,12 @@ impl S3BucketBuilder {
         self.default_server_side_encryption = input;
         self
     }
+    /// <p>The default server-side encryption settings for the bucket.</p>
+    pub fn get_default_server_side_encryption(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServerSideEncryption> {
+        &self.default_server_side_encryption
+    }
     /// <p>The name of the bucket.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -182,6 +208,10 @@ impl S3BucketBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the bucket.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The display name and canonical user ID for the Amazon Web Services account that owns the bucket.</p>
     pub fn owner(mut self, input: crate::types::S3BucketOwner) -> Self {
         self.owner = ::std::option::Option::Some(input);
@@ -191,6 +221,10 @@ impl S3BucketBuilder {
     pub fn set_owner(mut self, input: ::std::option::Option<crate::types::S3BucketOwner>) -> Self {
         self.owner = input;
         self
+    }
+    /// <p>The display name and canonical user ID for the Amazon Web Services account that owns the bucket.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<crate::types::S3BucketOwner> {
+        &self.owner
     }
     /// <p>The permissions settings that determine whether the bucket is publicly accessible.</p>
     pub fn public_access(mut self, input: crate::types::BucketPublicAccess) -> Self {
@@ -204,6 +238,10 @@ impl S3BucketBuilder {
     ) -> Self {
         self.public_access = input;
         self
+    }
+    /// <p>The permissions settings that determine whether the bucket is publicly accessible.</p>
+    pub fn get_public_access(&self) -> &::std::option::Option<crate::types::BucketPublicAccess> {
+        &self.public_access
     }
     /// Appends an item to `tags`.
     ///
@@ -223,6 +261,10 @@ impl S3BucketBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags that are associated with the bucket.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`S3Bucket`](crate::types::S3Bucket).
     pub fn build(self) -> crate::types::S3Bucket {

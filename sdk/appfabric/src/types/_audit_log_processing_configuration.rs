@@ -48,6 +48,10 @@ impl AuditLogProcessingConfigurationBuilder {
         self.schema = input;
         self
     }
+    /// <p>The event schema in which the audit logs need to be formatted.</p>
+    pub fn get_schema(&self) -> &::std::option::Option<crate::types::Schema> {
+        &self.schema
+    }
     /// <p>The format in which the audit logs need to be formatted.</p>
     pub fn format(mut self, input: crate::types::Format) -> Self {
         self.format = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl AuditLogProcessingConfigurationBuilder {
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::Format>) -> Self {
         self.format = input;
         self
+    }
+    /// <p>The format in which the audit logs need to be formatted.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::Format> {
+        &self.format
     }
     /// Consumes the builder and constructs a [`AuditLogProcessingConfiguration`](crate::types::AuditLogProcessingConfiguration).
     pub fn build(self) -> crate::types::AuditLogProcessingConfiguration {

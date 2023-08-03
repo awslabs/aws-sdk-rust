@@ -36,6 +36,10 @@ impl CreateLoggingConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateLoggingConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_logging_configuration::builders::CreateLoggingConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl CreateLoggingConfigurationFluentBuilder {
         self.inner = self.inner.set_workspace_id(input);
         self
     }
+    /// The ID of the workspace to vend logs to.
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workspace_id()
+    }
     /// The ARN of the CW log group to which the vended log data will be published.
     pub fn log_group_arn(
         mut self,
@@ -142,6 +150,10 @@ impl CreateLoggingConfigurationFluentBuilder {
         self.inner = self.inner.set_log_group_arn(input);
         self
     }
+    /// The ARN of the CW log group to which the vended log data will be published.
+    pub fn get_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_log_group_arn()
+    }
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -151,5 +163,9 @@ impl CreateLoggingConfigurationFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

@@ -46,6 +46,10 @@ impl DescribeExperimentInputBuilder {
         self.experiment_name = input;
         self
     }
+    /// <p>The name of the experiment to describe.</p>
+    pub fn get_experiment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.experiment_name
+    }
     /// Consumes the builder and constructs a [`DescribeExperimentInput`](crate::operation::describe_experiment::DescribeExperimentInput).
     pub fn build(
         self,

@@ -46,6 +46,10 @@ impl FrameCaptureOutputSettingsBuilder {
         self.name_modifier = input;
         self
     }
+    /// Required if the output group contains more than one output. This modifier forms part of the output file name.
+    pub fn get_name_modifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name_modifier
+    }
     /// Consumes the builder and constructs a [`FrameCaptureOutputSettings`](crate::types::FrameCaptureOutputSettings).
     pub fn build(self) -> crate::types::FrameCaptureOutputSettings {
         crate::types::FrameCaptureOutputSettings {

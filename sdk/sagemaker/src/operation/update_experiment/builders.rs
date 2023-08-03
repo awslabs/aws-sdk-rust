@@ -36,6 +36,12 @@ impl UpdateExperimentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateExperiment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_experiment::builders::UpdateExperimentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateExperimentFluentBuilder {
         self.inner = self.inner.set_experiment_name(input);
         self
     }
+    /// <p>The name of the experiment to update.</p>
+    pub fn get_experiment_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_experiment_name()
+    }
     /// <p>The name of the experiment as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>ExperimentName</code> is displayed.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
@@ -142,6 +152,10 @@ impl UpdateExperimentFluentBuilder {
         self.inner = self.inner.set_display_name(input);
         self
     }
+    /// <p>The name of the experiment as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>ExperimentName</code> is displayed.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_display_name()
+    }
     /// <p>The description of the experiment.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -151,5 +165,9 @@ impl UpdateExperimentFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the experiment.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
 }

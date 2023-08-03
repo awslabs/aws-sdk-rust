@@ -69,6 +69,12 @@ impl VideoCodecSettingsBuilder {
         self.frame_capture_settings = input;
         self
     }
+    /// Frame Capture Settings
+    pub fn get_frame_capture_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::FrameCaptureSettings> {
+        &self.frame_capture_settings
+    }
     /// H264 Settings
     pub fn h264_settings(mut self, input: crate::types::H264Settings) -> Self {
         self.h264_settings = ::std::option::Option::Some(input);
@@ -81,6 +87,10 @@ impl VideoCodecSettingsBuilder {
     ) -> Self {
         self.h264_settings = input;
         self
+    }
+    /// H264 Settings
+    pub fn get_h264_settings(&self) -> &::std::option::Option<crate::types::H264Settings> {
+        &self.h264_settings
     }
     /// H265 Settings
     pub fn h265_settings(mut self, input: crate::types::H265Settings) -> Self {
@@ -95,6 +105,10 @@ impl VideoCodecSettingsBuilder {
         self.h265_settings = input;
         self
     }
+    /// H265 Settings
+    pub fn get_h265_settings(&self) -> &::std::option::Option<crate::types::H265Settings> {
+        &self.h265_settings
+    }
     /// Mpeg2 Settings
     pub fn mpeg2_settings(mut self, input: crate::types::Mpeg2Settings) -> Self {
         self.mpeg2_settings = ::std::option::Option::Some(input);
@@ -107,6 +121,10 @@ impl VideoCodecSettingsBuilder {
     ) -> Self {
         self.mpeg2_settings = input;
         self
+    }
+    /// Mpeg2 Settings
+    pub fn get_mpeg2_settings(&self) -> &::std::option::Option<crate::types::Mpeg2Settings> {
+        &self.mpeg2_settings
     }
     /// Consumes the builder and constructs a [`VideoCodecSettings`](crate::types::VideoCodecSettings).
     pub fn build(self) -> crate::types::VideoCodecSettings {

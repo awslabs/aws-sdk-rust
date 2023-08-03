@@ -47,6 +47,10 @@ impl ChangeCidrCollectionOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID that is returned by <code>ChangeCidrCollection</code>. You can use it as input to <code>GetChange</code> to see if a CIDR collection change has propagated or not.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

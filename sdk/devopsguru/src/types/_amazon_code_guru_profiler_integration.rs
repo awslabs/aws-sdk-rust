@@ -43,6 +43,10 @@ impl AmazonCodeGuruProfilerIntegrationBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the CodeGuru Profiler integration. Specifies if DevOps Guru is enabled to consume recommendations that are generated from Amazon CodeGuru Profiler.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::EventSourceOptInStatus> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`AmazonCodeGuruProfilerIntegration`](crate::types::AmazonCodeGuruProfilerIntegration).
     pub fn build(self) -> crate::types::AmazonCodeGuruProfilerIntegration {
         crate::types::AmazonCodeGuruProfilerIntegration {

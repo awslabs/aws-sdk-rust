@@ -50,6 +50,10 @@ impl PutDedicatedIpInPoolInputBuilder {
         self.ip = input;
         self
     }
+    /// <p>The IP address that you want to move to the dedicated IP pool. The value you specify has to be a dedicated IP address that's associated with your Amazon Web Services account.</p>
+    pub fn get_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip
+    }
     /// <p>The name of the IP pool that you want to add the dedicated IP address to. You have to specify an IP pool that already exists.</p>
     pub fn destination_pool_name(
         mut self,
@@ -65,6 +69,10 @@ impl PutDedicatedIpInPoolInputBuilder {
     ) -> Self {
         self.destination_pool_name = input;
         self
+    }
+    /// <p>The name of the IP pool that you want to add the dedicated IP address to. You have to specify an IP pool that already exists.</p>
+    pub fn get_destination_pool_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_pool_name
     }
     /// Consumes the builder and constructs a [`PutDedicatedIpInPoolInput`](crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolInput).
     pub fn build(

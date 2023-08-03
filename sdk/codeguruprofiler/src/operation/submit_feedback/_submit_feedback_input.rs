@@ -70,6 +70,10 @@ impl SubmitFeedbackInputBuilder {
         self.profiling_group_name = input;
         self
     }
+    /// <p>The name of the profiling group that is associated with the analysis data.</p>
+    pub fn get_profiling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profiling_group_name
+    }
     /// <p>The universally unique identifier (UUID) of the <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AnomalyInstance.html"> <code>AnomalyInstance</code> </a> object that is included in the analysis data.</p>
     pub fn anomaly_instance_id(
         mut self,
@@ -86,6 +90,10 @@ impl SubmitFeedbackInputBuilder {
         self.anomaly_instance_id = input;
         self
     }
+    /// <p>The universally unique identifier (UUID) of the <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AnomalyInstance.html"> <code>AnomalyInstance</code> </a> object that is included in the analysis data.</p>
+    pub fn get_anomaly_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.anomaly_instance_id
+    }
     /// <p> The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>. </p>
     pub fn r#type(mut self, input: crate::types::FeedbackType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -96,6 +104,10 @@ impl SubmitFeedbackInputBuilder {
         self.r#type = input;
         self
     }
+    /// <p> The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>. </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::FeedbackType> {
+        &self.r#type
+    }
     /// <p>Optional feedback about this anomaly.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
@@ -105,6 +117,10 @@ impl SubmitFeedbackInputBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment = input;
         self
+    }
+    /// <p>Optional feedback about this anomaly.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment
     }
     /// Consumes the builder and constructs a [`SubmitFeedbackInput`](crate::operation::submit_feedback::SubmitFeedbackInput).
     pub fn build(

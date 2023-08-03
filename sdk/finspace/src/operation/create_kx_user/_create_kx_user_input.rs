@@ -85,6 +85,10 @@ impl CreateKxUserInputBuilder {
         self.environment_id = input;
         self
     }
+    /// <p>A unique identifier for the kdb environment where you want to create a user.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
+    }
     /// <p>A unique identifier for the user.</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
@@ -95,6 +99,10 @@ impl CreateKxUserInputBuilder {
         self.user_name = input;
         self
     }
+    /// <p>A unique identifier for the user.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
+    }
     /// <p>The IAM role ARN that will be associated with the user.</p>
     pub fn iam_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role = ::std::option::Option::Some(input.into());
@@ -104,6 +112,10 @@ impl CreateKxUserInputBuilder {
     pub fn set_iam_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_role = input;
         self
+    }
+    /// <p>The IAM role ARN that will be associated with the user.</p>
+    pub fn get_iam_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_role
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -130,6 +142,14 @@ impl CreateKxUserInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>A list of key-value pairs to label the user. You can add up to 50 tags to a user.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -139,6 +159,10 @@ impl CreateKxUserInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateKxUserInput`](crate::operation::create_kx_user::CreateKxUserInput).
     pub fn build(

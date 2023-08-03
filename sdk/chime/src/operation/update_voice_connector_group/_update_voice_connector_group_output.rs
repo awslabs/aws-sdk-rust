@@ -51,6 +51,12 @@ impl UpdateVoiceConnectorGroupOutputBuilder {
         self.voice_connector_group = input;
         self
     }
+    /// <p>The updated Amazon Chime Voice Connector group details.</p>
+    pub fn get_voice_connector_group(
+        &self,
+    ) -> &::std::option::Option<crate::types::VoiceConnectorGroup> {
+        &self.voice_connector_group
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -51,6 +51,10 @@ impl ThresholdBuilder {
         self.comparison = input;
         self
     }
+    /// <p>The type of comparison. Only "less than" (LT) comparisons are supported.</p>
+    pub fn get_comparison(&self) -> &::std::option::Option<crate::types::Comparison> {
+        &self.comparison
+    }
     /// <p>The threshold value to compare.</p>
     pub fn threshold_value(mut self, input: f64) -> Self {
         self.threshold_value = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl ThresholdBuilder {
     pub fn set_threshold_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.threshold_value = input;
         self
+    }
+    /// <p>The threshold value to compare.</p>
+    pub fn get_threshold_value(&self) -> &::std::option::Option<f64> {
+        &self.threshold_value
     }
     /// Consumes the builder and constructs a [`Threshold`](crate::types::Threshold).
     pub fn build(self) -> crate::types::Threshold {

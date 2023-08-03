@@ -48,6 +48,10 @@ impl ContainerSummaryBuilder {
         self.exit_code = input;
         self
     }
+    /// <p>The exit code to return upon completion.</p>
+    pub fn get_exit_code(&self) -> &::std::option::Option<i32> {
+        &self.exit_code
+    }
     /// <p>A short (255 max characters) human-readable string to provide additional details for a running or stopped container.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ContainerSummaryBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>A short (255 max characters) human-readable string to provide additional details for a running or stopped container.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
     }
     /// Consumes the builder and constructs a [`ContainerSummary`](crate::types::ContainerSummary).
     pub fn build(self) -> crate::types::ContainerSummary {

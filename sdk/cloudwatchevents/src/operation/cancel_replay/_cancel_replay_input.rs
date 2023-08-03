@@ -39,6 +39,10 @@ impl CancelReplayInputBuilder {
         self.replay_name = input;
         self
     }
+    /// <p>The name of the replay to cancel.</p>
+    pub fn get_replay_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replay_name
+    }
     /// Consumes the builder and constructs a [`CancelReplayInput`](crate::operation::cancel_replay::CancelReplayInput).
     pub fn build(
         self,

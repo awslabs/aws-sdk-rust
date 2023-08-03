@@ -37,6 +37,13 @@ impl PutVoiceConnectorProxyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutVoiceConnectorProxy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_voice_connector_proxy::builders::PutVoiceConnectorProxyInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl PutVoiceConnectorProxyFluentBuilder {
         self.inner = self.inner.set_voice_connector_id(input);
         self
     }
+    /// <p>The Voice Connector ID.</p>
+    pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_voice_connector_id()
+    }
     /// <p>The default number of minutes allowed for proxy session.</p>
     pub fn default_session_expiry_minutes(mut self, input: i32) -> Self {
         self.inner = self.inner.default_session_expiry_minutes(input);
@@ -142,6 +153,10 @@ impl PutVoiceConnectorProxyFluentBuilder {
     pub fn set_default_session_expiry_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_default_session_expiry_minutes(input);
         self
+    }
+    /// <p>The default number of minutes allowed for proxy session.</p>
+    pub fn get_default_session_expiry_minutes(&self) -> &::std::option::Option<i32> {
+        self.inner.get_default_session_expiry_minutes()
     }
     /// Appends an item to `PhoneNumberPoolCountries`.
     ///
@@ -163,6 +178,12 @@ impl PutVoiceConnectorProxyFluentBuilder {
         self.inner = self.inner.set_phone_number_pool_countries(input);
         self
     }
+    /// <p>The countries for proxy phone numbers to be selected from.</p>
+    pub fn get_phone_number_pool_countries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_phone_number_pool_countries()
+    }
     /// <p>The phone number to route calls to after a proxy session expires.</p>
     pub fn fall_back_phone_number(
         mut self,
@@ -179,6 +200,10 @@ impl PutVoiceConnectorProxyFluentBuilder {
         self.inner = self.inner.set_fall_back_phone_number(input);
         self
     }
+    /// <p>The phone number to route calls to after a proxy session expires.</p>
+    pub fn get_fall_back_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fall_back_phone_number()
+    }
     /// <p>When true, stops proxy sessions from being created on the specified Amazon Chime SDK Voice Connector.</p>
     pub fn disabled(mut self, input: bool) -> Self {
         self.inner = self.inner.disabled(input);
@@ -188,5 +213,9 @@ impl PutVoiceConnectorProxyFluentBuilder {
     pub fn set_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_disabled(input);
         self
+    }
+    /// <p>When true, stops proxy sessions from being created on the specified Amazon Chime SDK Voice Connector.</p>
+    pub fn get_disabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_disabled()
     }
 }

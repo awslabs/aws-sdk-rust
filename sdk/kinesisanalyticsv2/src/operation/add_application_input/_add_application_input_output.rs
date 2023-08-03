@@ -71,6 +71,10 @@ impl AddApplicationInputOutputBuilder {
         self.application_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_arn
+    }
     /// <p>Provides the current application version.</p>
     pub fn application_version_id(mut self, input: i64) -> Self {
         self.application_version_id = ::std::option::Option::Some(input);
@@ -80,6 +84,10 @@ impl AddApplicationInputOutputBuilder {
     pub fn set_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.application_version_id = input;
         self
+    }
+    /// <p>Provides the current application version.</p>
+    pub fn get_application_version_id(&self) -> &::std::option::Option<i64> {
+        &self.application_version_id
     }
     /// Appends an item to `input_descriptions`.
     ///
@@ -99,6 +107,12 @@ impl AddApplicationInputOutputBuilder {
     ) -> Self {
         self.input_descriptions = input;
         self
+    }
+    /// <p>Describes the application input configuration. </p>
+    pub fn get_input_descriptions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputDescription>> {
+        &self.input_descriptions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

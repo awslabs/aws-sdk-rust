@@ -50,6 +50,10 @@ impl ListSubscriptionsByTopicInputBuilder {
         self.topic_arn = input;
         self
     }
+    /// <p>The ARN of the topic for which you wish to find subscriptions.</p>
+    pub fn get_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_arn
+    }
     /// <p>Token returned by the previous <code>ListSubscriptionsByTopic</code> request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -59,6 +63,10 @@ impl ListSubscriptionsByTopicInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Token returned by the previous <code>ListSubscriptionsByTopic</code> request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListSubscriptionsByTopicInput`](crate::operation::list_subscriptions_by_topic::ListSubscriptionsByTopicInput).
     pub fn build(

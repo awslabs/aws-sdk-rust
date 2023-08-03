@@ -86,6 +86,10 @@ impl ListSlotsOutputBuilder {
         self.bot_id = input;
         self
     }
+    /// <p>The identifier of the bot that contains the slots.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
     /// <p>The version of the bot that contains the slots.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
@@ -95,6 +99,10 @@ impl ListSlotsOutputBuilder {
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_version = input;
         self
+    }
+    /// <p>The version of the bot that contains the slots.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_version
     }
     /// <p>The language and locale of the slots in the list.</p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -106,6 +114,10 @@ impl ListSlotsOutputBuilder {
         self.locale_id = input;
         self
     }
+    /// <p>The language and locale of the slots in the list.</p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale_id
+    }
     /// <p>The identifier of the intent that contains the slots.</p>
     pub fn intent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.intent_id = ::std::option::Option::Some(input.into());
@@ -115,6 +127,10 @@ impl ListSlotsOutputBuilder {
     pub fn set_intent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.intent_id = input;
         self
+    }
+    /// <p>The identifier of the intent that contains the slots.</p>
+    pub fn get_intent_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.intent_id
     }
     /// Appends an item to `slot_summaries`.
     ///
@@ -135,6 +151,12 @@ impl ListSlotsOutputBuilder {
         self.slot_summaries = input;
         self
     }
+    /// <p>Summary information for the slots that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more slots available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
+    pub fn get_slot_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SlotSummary>> {
+        &self.slot_summaries
+    }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListSlots</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListSlots</code> operation request to get the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -144,6 +166,10 @@ impl ListSlotsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token that indicates whether there are more results to return in a response to the <code>ListSlots</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListSlots</code> operation request to get the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

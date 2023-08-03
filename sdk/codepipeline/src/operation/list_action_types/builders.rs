@@ -36,6 +36,12 @@ impl ListActionTypesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListActionTypes as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_action_types::builders::ListActionTypesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +146,10 @@ impl ListActionTypesFluentBuilder {
         self.inner = self.inner.set_action_owner_filter(input);
         self
     }
+    /// <p>Filters the list of action types to those created by a specified entity.</p>
+    pub fn get_action_owner_filter(&self) -> &::std::option::Option<crate::types::ActionOwner> {
+        self.inner.get_action_owner_filter()
+    }
     /// <p>An identifier that was returned from the previous list action types call, which can be used to return the next set of action types in the list.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -149,6 +159,10 @@ impl ListActionTypesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>An identifier that was returned from the previous list action types call, which can be used to return the next set of action types in the list.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The Region to filter on for the list of action types.</p>
     pub fn region_filter(
@@ -165,5 +179,9 @@ impl ListActionTypesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_region_filter(input);
         self
+    }
+    /// <p>The Region to filter on for the list of action types.</p>
+    pub fn get_region_filter(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_region_filter()
     }
 }

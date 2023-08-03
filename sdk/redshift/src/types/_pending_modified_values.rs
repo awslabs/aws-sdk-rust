@@ -130,6 +130,10 @@ impl PendingModifiedValuesBuilder {
         self.master_user_password = input;
         self
     }
+    /// <p>The pending or in-progress change of the admin user password for the cluster.</p>
+    pub fn get_master_user_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_user_password
+    }
     /// <p>The pending or in-progress change of the cluster's node type.</p>
     pub fn node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_type = ::std::option::Option::Some(input.into());
@@ -139,6 +143,10 @@ impl PendingModifiedValuesBuilder {
     pub fn set_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_type = input;
         self
+    }
+    /// <p>The pending or in-progress change of the cluster's node type.</p>
+    pub fn get_node_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_type
     }
     /// <p>The pending or in-progress change of the number of nodes in the cluster.</p>
     pub fn number_of_nodes(mut self, input: i32) -> Self {
@@ -150,6 +158,10 @@ impl PendingModifiedValuesBuilder {
         self.number_of_nodes = input;
         self
     }
+    /// <p>The pending or in-progress change of the number of nodes in the cluster.</p>
+    pub fn get_number_of_nodes(&self) -> &::std::option::Option<i32> {
+        &self.number_of_nodes
+    }
     /// <p>The pending or in-progress change of the cluster type.</p>
     pub fn cluster_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_type = ::std::option::Option::Some(input.into());
@@ -159,6 +171,10 @@ impl PendingModifiedValuesBuilder {
     pub fn set_cluster_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_type = input;
         self
+    }
+    /// <p>The pending or in-progress change of the cluster type.</p>
+    pub fn get_cluster_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_type
     }
     /// <p>The pending or in-progress change of the service version.</p>
     pub fn cluster_version(
@@ -176,6 +192,10 @@ impl PendingModifiedValuesBuilder {
         self.cluster_version = input;
         self
     }
+    /// <p>The pending or in-progress change of the service version.</p>
+    pub fn get_cluster_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_version
+    }
     /// <p>The pending or in-progress change of the automated snapshot retention period.</p>
     pub fn automated_snapshot_retention_period(mut self, input: i32) -> Self {
         self.automated_snapshot_retention_period = ::std::option::Option::Some(input);
@@ -188,6 +208,10 @@ impl PendingModifiedValuesBuilder {
     ) -> Self {
         self.automated_snapshot_retention_period = input;
         self
+    }
+    /// <p>The pending or in-progress change of the automated snapshot retention period.</p>
+    pub fn get_automated_snapshot_retention_period(&self) -> &::std::option::Option<i32> {
+        &self.automated_snapshot_retention_period
     }
     /// <p>The pending or in-progress change of the new identifier for the cluster.</p>
     pub fn cluster_identifier(
@@ -205,6 +229,10 @@ impl PendingModifiedValuesBuilder {
         self.cluster_identifier = input;
         self
     }
+    /// <p>The pending or in-progress change of the new identifier for the cluster.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_identifier
+    }
     /// <p>The pending or in-progress change of the ability to connect to the cluster from the public network.</p>
     pub fn publicly_accessible(mut self, input: bool) -> Self {
         self.publicly_accessible = ::std::option::Option::Some(input);
@@ -214,6 +242,10 @@ impl PendingModifiedValuesBuilder {
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
         self.publicly_accessible = input;
         self
+    }
+    /// <p>The pending or in-progress change of the ability to connect to the cluster from the public network.</p>
+    pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
+        &self.publicly_accessible
     }
     /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
     /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
@@ -228,6 +260,12 @@ impl PendingModifiedValuesBuilder {
     pub fn set_enhanced_vpc_routing(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enhanced_vpc_routing = input;
         self
+    }
+    /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
+    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
+    /// <p>Default: false</p>
+    pub fn get_enhanced_vpc_routing(&self) -> &::std::option::Option<bool> {
+        &self.enhanced_vpc_routing
     }
     /// <p>The name of the maintenance track that the cluster will change to during the next maintenance window.</p>
     pub fn maintenance_track_name(
@@ -245,6 +283,10 @@ impl PendingModifiedValuesBuilder {
         self.maintenance_track_name = input;
         self
     }
+    /// <p>The name of the maintenance track that the cluster will change to during the next maintenance window.</p>
+    pub fn get_maintenance_track_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.maintenance_track_name
+    }
     /// <p>The encryption type for a cluster. Possible values are: KMS and None. </p>
     pub fn encryption_type(
         mut self,
@@ -260,6 +302,10 @@ impl PendingModifiedValuesBuilder {
     ) -> Self {
         self.encryption_type = input;
         self
+    }
+    /// <p>The encryption type for a cluster. Possible values are: KMS and None. </p>
+    pub fn get_encryption_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encryption_type
     }
     /// Consumes the builder and constructs a [`PendingModifiedValues`](crate::types::PendingModifiedValues).
     pub fn build(self) -> crate::types::PendingModifiedValues {

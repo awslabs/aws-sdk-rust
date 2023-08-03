@@ -62,6 +62,10 @@ impl NotificationContextBuilder {
         self.validation_id = input;
         self
     }
+    /// <p>The ID of the validation.</p>
+    pub fn get_validation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.validation_id
+    }
     /// <p>The status of the validation.</p>
     pub fn status(mut self, input: crate::types::ValidationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl NotificationContextBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the validation.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ValidationStatus> {
+        &self.status
     }
     /// <p>The status message.</p>
     pub fn status_message(
@@ -90,6 +98,10 @@ impl NotificationContextBuilder {
     ) -> Self {
         self.status_message = input;
         self
+    }
+    /// <p>The status message.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// Consumes the builder and constructs a [`NotificationContext`](crate::types::NotificationContext).
     pub fn build(self) -> crate::types::NotificationContext {

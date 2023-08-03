@@ -80,6 +80,10 @@ impl ResourceInventoryBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>ID of the resource.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>Type of resource.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -93,6 +97,10 @@ impl ResourceInventoryBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>Type of resource.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
+    }
     /// <p>Amazon Resource Name (ARN) of the resource.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -103,6 +111,10 @@ impl ResourceInventoryBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the resource.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p>Platform of the resource.</p>
     pub fn platform(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform = ::std::option::Option::Some(input.into());
@@ -112,6 +124,10 @@ impl ResourceInventoryBuilder {
     pub fn set_platform(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform = input;
         self
+    }
+    /// <p>Platform of the resource.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform
     }
     /// <p>Platform version of the resource in the inventory.</p>
     pub fn platform_version(
@@ -129,6 +145,10 @@ impl ResourceInventoryBuilder {
         self.platform_version = input;
         self
     }
+    /// <p>Platform version of the resource in the inventory.</p>
+    pub fn get_platform_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_version
+    }
     /// <p>ID of the account that owns the resource.</p>
     pub fn resource_owning_account_id(
         mut self,
@@ -144,6 +164,10 @@ impl ResourceInventoryBuilder {
     ) -> Self {
         self.resource_owning_account_id = input;
         self
+    }
+    /// <p>ID of the account that owns the resource.</p>
+    pub fn get_resource_owning_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_owning_account_id
     }
     /// Consumes the builder and constructs a [`ResourceInventory`](crate::types::ResourceInventory).
     pub fn build(self) -> crate::types::ResourceInventory {

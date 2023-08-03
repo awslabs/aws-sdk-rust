@@ -36,6 +36,10 @@ impl UpdateCustomRoutingAcceleratorAttributesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateCustomRoutingAcceleratorAttributes as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_custom_routing_accelerator_attributes::builders::UpdateCustomRoutingAcceleratorAttributesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl UpdateCustomRoutingAcceleratorAttributesFluentBuilder {
         self.inner = self.inner.set_accelerator_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator to update attributes for.</p>
+    pub fn get_accelerator_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_accelerator_arn()
+    }
     /// <p>Update whether flow logs are enabled. The default value is false. If the value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow logs</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     pub fn flow_logs_enabled(mut self, input: bool) -> Self {
@@ -117,6 +125,11 @@ impl UpdateCustomRoutingAcceleratorAttributesFluentBuilder {
     pub fn set_flow_logs_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_flow_logs_enabled(input);
         self
+    }
+    /// <p>Update whether flow logs are enabled. The default value is false. If the value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow logs</a> in the <i>Global Accelerator Developer Guide</i>.</p>
+    pub fn get_flow_logs_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_flow_logs_enabled()
     }
     /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and have a bucket policy that grants Global Accelerator permission to write to the bucket.</p>
     pub fn flow_logs_s3_bucket(
@@ -133,6 +146,10 @@ impl UpdateCustomRoutingAcceleratorAttributesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_flow_logs_s3_bucket(input);
         self
+    }
+    /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and have a bucket policy that grants Global Accelerator permission to write to the bucket.</p>
+    pub fn get_flow_logs_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_flow_logs_s3_bucket()
     }
     /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. </p>
     /// <p>If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
@@ -153,5 +170,11 @@ impl UpdateCustomRoutingAcceleratorAttributesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_flow_logs_s3_prefix(input);
         self
+    }
+    /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. </p>
+    /// <p>If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
+    /// <p>DOC-EXAMPLE-BUCKET//AWSLogs/aws_account_id</p>
+    pub fn get_flow_logs_s3_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_flow_logs_s3_prefix()
     }
 }

@@ -36,6 +36,13 @@ impl StartDataIngestionJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartDataIngestionJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_data_ingestion_job::builders::StartDataIngestionJobInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl StartDataIngestionJobFluentBuilder {
         self.inner = self.inner.set_dataset_name(input);
         self
     }
+    /// <p>The name of the dataset being used by the data ingestion job. </p>
+    pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dataset_name()
+    }
     /// <p> Specifies information for the input data for the data ingestion job, including dataset S3 location. </p>
     pub fn ingestion_input_configuration(
         mut self,
@@ -142,6 +153,12 @@ impl StartDataIngestionJobFluentBuilder {
         self.inner = self.inner.set_ingestion_input_configuration(input);
         self
     }
+    /// <p> Specifies information for the input data for the data ingestion job, including dataset S3 location. </p>
+    pub fn get_ingestion_input_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::IngestionInputConfiguration> {
+        self.inner.get_ingestion_input_configuration()
+    }
     /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the data ingestion job. </p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -152,6 +169,10 @@ impl StartDataIngestionJobFluentBuilder {
         self.inner = self.inner.set_role_arn(input);
         self
     }
+    /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the data ingestion job. </p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
+    }
     /// <p> A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -161,5 +182,9 @@ impl StartDataIngestionJobFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p> A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

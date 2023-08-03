@@ -145,6 +145,11 @@ impl CostTypesBuilder {
         self.include_tax = input;
         self
     }
+    /// <p>Specifies whether a budget includes taxes.</p>
+    /// <p>The default value is <code>true</code>.</p>
+    pub fn get_include_tax(&self) -> &::std::option::Option<bool> {
+        &self.include_tax
+    }
     /// <p>Specifies whether a budget includes subscriptions.</p>
     /// <p>The default value is <code>true</code>.</p>
     pub fn include_subscription(mut self, input: bool) -> Self {
@@ -156,6 +161,11 @@ impl CostTypesBuilder {
     pub fn set_include_subscription(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_subscription = input;
         self
+    }
+    /// <p>Specifies whether a budget includes subscriptions.</p>
+    /// <p>The default value is <code>true</code>.</p>
+    pub fn get_include_subscription(&self) -> &::std::option::Option<bool> {
+        &self.include_subscription
     }
     /// <p>Specifies whether a budget uses a blended rate.</p>
     /// <p>The default value is <code>false</code>.</p>
@@ -169,6 +179,11 @@ impl CostTypesBuilder {
         self.use_blended = input;
         self
     }
+    /// <p>Specifies whether a budget uses a blended rate.</p>
+    /// <p>The default value is <code>false</code>.</p>
+    pub fn get_use_blended(&self) -> &::std::option::Option<bool> {
+        &self.use_blended
+    }
     /// <p>Specifies whether a budget includes refunds.</p>
     /// <p>The default value is <code>true</code>.</p>
     pub fn include_refund(mut self, input: bool) -> Self {
@@ -180,6 +195,11 @@ impl CostTypesBuilder {
     pub fn set_include_refund(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_refund = input;
         self
+    }
+    /// <p>Specifies whether a budget includes refunds.</p>
+    /// <p>The default value is <code>true</code>.</p>
+    pub fn get_include_refund(&self) -> &::std::option::Option<bool> {
+        &self.include_refund
     }
     /// <p>Specifies whether a budget includes credits.</p>
     /// <p>The default value is <code>true</code>.</p>
@@ -193,6 +213,11 @@ impl CostTypesBuilder {
         self.include_credit = input;
         self
     }
+    /// <p>Specifies whether a budget includes credits.</p>
+    /// <p>The default value is <code>true</code>.</p>
+    pub fn get_include_credit(&self) -> &::std::option::Option<bool> {
+        &self.include_credit
+    }
     /// <p>Specifies whether a budget includes upfront RI costs.</p>
     /// <p>The default value is <code>true</code>.</p>
     pub fn include_upfront(mut self, input: bool) -> Self {
@@ -204,6 +229,11 @@ impl CostTypesBuilder {
     pub fn set_include_upfront(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_upfront = input;
         self
+    }
+    /// <p>Specifies whether a budget includes upfront RI costs.</p>
+    /// <p>The default value is <code>true</code>.</p>
+    pub fn get_include_upfront(&self) -> &::std::option::Option<bool> {
+        &self.include_upfront
     }
     /// <p>Specifies whether a budget includes recurring fees such as monthly RI fees.</p>
     /// <p>The default value is <code>true</code>.</p>
@@ -217,6 +247,11 @@ impl CostTypesBuilder {
         self.include_recurring = input;
         self
     }
+    /// <p>Specifies whether a budget includes recurring fees such as monthly RI fees.</p>
+    /// <p>The default value is <code>true</code>.</p>
+    pub fn get_include_recurring(&self) -> &::std::option::Option<bool> {
+        &self.include_recurring
+    }
     /// <p>Specifies whether a budget includes non-RI subscription costs.</p>
     /// <p>The default value is <code>true</code>.</p>
     pub fn include_other_subscription(mut self, input: bool) -> Self {
@@ -228,6 +263,11 @@ impl CostTypesBuilder {
     pub fn set_include_other_subscription(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_other_subscription = input;
         self
+    }
+    /// <p>Specifies whether a budget includes non-RI subscription costs.</p>
+    /// <p>The default value is <code>true</code>.</p>
+    pub fn get_include_other_subscription(&self) -> &::std::option::Option<bool> {
+        &self.include_other_subscription
     }
     /// <p>Specifies whether a budget includes support subscription fees.</p>
     /// <p>The default value is <code>true</code>.</p>
@@ -241,6 +281,11 @@ impl CostTypesBuilder {
         self.include_support = input;
         self
     }
+    /// <p>Specifies whether a budget includes support subscription fees.</p>
+    /// <p>The default value is <code>true</code>.</p>
+    pub fn get_include_support(&self) -> &::std::option::Option<bool> {
+        &self.include_support
+    }
     /// <p>Specifies whether a budget includes discounts.</p>
     /// <p>The default value is <code>true</code>.</p>
     pub fn include_discount(mut self, input: bool) -> Self {
@@ -253,6 +298,11 @@ impl CostTypesBuilder {
         self.include_discount = input;
         self
     }
+    /// <p>Specifies whether a budget includes discounts.</p>
+    /// <p>The default value is <code>true</code>.</p>
+    pub fn get_include_discount(&self) -> &::std::option::Option<bool> {
+        &self.include_discount
+    }
     /// <p>Specifies whether a budget uses the amortized rate.</p>
     /// <p>The default value is <code>false</code>.</p>
     pub fn use_amortized(mut self, input: bool) -> Self {
@@ -264,6 +314,11 @@ impl CostTypesBuilder {
     pub fn set_use_amortized(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_amortized = input;
         self
+    }
+    /// <p>Specifies whether a budget uses the amortized rate.</p>
+    /// <p>The default value is <code>false</code>.</p>
+    pub fn get_use_amortized(&self) -> &::std::option::Option<bool> {
+        &self.use_amortized
     }
     /// Consumes the builder and constructs a [`CostTypes`](crate::types::CostTypes).
     pub fn build(self) -> crate::types::CostTypes {

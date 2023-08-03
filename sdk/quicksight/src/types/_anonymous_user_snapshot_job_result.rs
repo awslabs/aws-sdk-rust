@@ -53,6 +53,12 @@ impl AnonymousUserSnapshotJobResultBuilder {
         self.file_groups = input;
         self
     }
+    /// <p>A list of <code>SnapshotJobResultFileGroup</code> objects that contain information on the files that are requested during a <code>StartDashboardSnapshotJob</code> API call. If the job succeeds, these objects contain the location where the snapshot artifacts are stored. If the job fails, the objects contain information about the error that caused the job to fail.</p>
+    pub fn get_file_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotJobResultFileGroup>> {
+        &self.file_groups
+    }
     /// Consumes the builder and constructs a [`AnonymousUserSnapshotJobResult`](crate::types::AnonymousUserSnapshotJobResult).
     pub fn build(self) -> crate::types::AnonymousUserSnapshotJobResult {
         crate::types::AnonymousUserSnapshotJobResult {

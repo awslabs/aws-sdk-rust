@@ -104,6 +104,10 @@ impl CreateCollectionDetailBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier of the collection.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the collection.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -113,6 +117,10 @@ impl CreateCollectionDetailBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the collection.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The current status of the collection.</p>
     pub fn status(mut self, input: crate::types::CollectionStatus) -> Self {
@@ -127,6 +135,10 @@ impl CreateCollectionDetailBuilder {
         self.status = input;
         self
     }
+    /// <p>The current status of the collection.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CollectionStatus> {
+        &self.status
+    }
     /// <p>The type of collection.</p>
     pub fn r#type(mut self, input: crate::types::CollectionType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -136,6 +148,10 @@ impl CreateCollectionDetailBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::CollectionType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of collection.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::CollectionType> {
+        &self.r#type
     }
     /// <p>A description of the collection.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -147,6 +163,10 @@ impl CreateCollectionDetailBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the collection.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The Amazon Resource Name (ARN) of the collection.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -156,6 +176,10 @@ impl CreateCollectionDetailBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the collection.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS key with which to encrypt the collection.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -167,6 +191,10 @@ impl CreateCollectionDetailBuilder {
         self.kms_key_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key with which to encrypt the collection.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
+    }
     /// <p>The Epoch time when the collection was created.</p>
     pub fn created_date(mut self, input: i64) -> Self {
         self.created_date = ::std::option::Option::Some(input);
@@ -177,6 +205,10 @@ impl CreateCollectionDetailBuilder {
         self.created_date = input;
         self
     }
+    /// <p>The Epoch time when the collection was created.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<i64> {
+        &self.created_date
+    }
     /// <p>The date and time when the collection was last modified.</p>
     pub fn last_modified_date(mut self, input: i64) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input);
@@ -186,6 +218,10 @@ impl CreateCollectionDetailBuilder {
     pub fn set_last_modified_date(mut self, input: ::std::option::Option<i64>) -> Self {
         self.last_modified_date = input;
         self
+    }
+    /// <p>The date and time when the collection was last modified.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<i64> {
+        &self.last_modified_date
     }
     /// Consumes the builder and constructs a [`CreateCollectionDetail`](crate::types::CreateCollectionDetail).
     pub fn build(self) -> crate::types::CreateCollectionDetail {

@@ -88,6 +88,10 @@ impl GetFindingsReportStatusOutputBuilder {
         self.report_id = input;
         self
     }
+    /// <p>The ID of the report.</p>
+    pub fn get_report_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.report_id
+    }
     /// <p>The status of the report.</p>
     pub fn status(mut self, input: crate::types::ExternalReportStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -101,6 +105,10 @@ impl GetFindingsReportStatusOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the report.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ExternalReportStatus> {
+        &self.status
+    }
     /// <p>The error code of the report.</p>
     pub fn error_code(mut self, input: crate::types::ReportingErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
@@ -113,6 +121,10 @@ impl GetFindingsReportStatusOutputBuilder {
     ) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The error code of the report.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::ReportingErrorCode> {
+        &self.error_code
     }
     /// <p>The error message of the report.</p>
     pub fn error_message(
@@ -130,6 +142,10 @@ impl GetFindingsReportStatusOutputBuilder {
         self.error_message = input;
         self
     }
+    /// <p>The error message of the report.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// <p>The destination of the report.</p>
     pub fn destination(mut self, input: crate::types::Destination) -> Self {
         self.destination = ::std::option::Option::Some(input);
@@ -143,6 +159,10 @@ impl GetFindingsReportStatusOutputBuilder {
         self.destination = input;
         self
     }
+    /// <p>The destination of the report.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::Destination> {
+        &self.destination
+    }
     /// <p>The filter criteria associated with the report.</p>
     pub fn filter_criteria(mut self, input: crate::types::FilterCriteria) -> Self {
         self.filter_criteria = ::std::option::Option::Some(input);
@@ -155,6 +175,10 @@ impl GetFindingsReportStatusOutputBuilder {
     ) -> Self {
         self.filter_criteria = input;
         self
+    }
+    /// <p>The filter criteria associated with the report.</p>
+    pub fn get_filter_criteria(&self) -> &::std::option::Option<crate::types::FilterCriteria> {
+        &self.filter_criteria
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -36,6 +36,10 @@ impl ListProfilesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListProfiles as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_profiles::builders::ListProfilesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +133,10 @@ impl ListProfilesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of profiles to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>When there are additional results that were not returned, a <code>NextToken</code> parameter is returned. You can use that value for a subsequent call to <code>ListProfiles</code> to continue listing results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -138,6 +146,10 @@ impl ListProfilesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>When there are additional results that were not returned, a <code>NextToken</code> parameter is returned. You can use that value for a subsequent call to <code>ListProfiles</code> to continue listing results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
     pub fn profile_type(mut self, input: crate::types::ProfileType) -> Self {
@@ -151,5 +163,9 @@ impl ListProfilesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_profile_type(input);
         self
+    }
+    /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
+    pub fn get_profile_type(&self) -> &::std::option::Option<crate::types::ProfileType> {
+        self.inner.get_profile_type()
     }
 }

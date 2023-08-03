@@ -105,6 +105,10 @@ impl CertificateBuilder {
         self.certificate_identifier = input;
         self
     }
+    /// <p>The unique key that identifies a certificate.</p>
+    pub fn get_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_identifier
+    }
     /// <p>The type of the certificate.</p>
     pub fn certificate_type(
         mut self,
@@ -121,6 +125,10 @@ impl CertificateBuilder {
         self.certificate_type = input;
         self
     }
+    /// <p>The type of the certificate.</p>
+    pub fn get_certificate_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_type
+    }
     /// <p>The thumbprint of the certificate.</p>
     pub fn thumbprint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thumbprint = ::std::option::Option::Some(input.into());
@@ -130,6 +138,10 @@ impl CertificateBuilder {
     pub fn set_thumbprint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thumbprint = input;
         self
+    }
+    /// <p>The thumbprint of the certificate.</p>
+    pub fn get_thumbprint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thumbprint
     }
     /// <p>The starting date from which the certificate is valid.</p>
     pub fn valid_from(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -144,6 +156,10 @@ impl CertificateBuilder {
         self.valid_from = input;
         self
     }
+    /// <p>The starting date from which the certificate is valid.</p>
+    pub fn get_valid_from(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.valid_from
+    }
     /// <p>The final date that the certificate continues to be valid.</p>
     pub fn valid_till(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.valid_till = ::std::option::Option::Some(input);
@@ -156,6 +172,10 @@ impl CertificateBuilder {
     ) -> Self {
         self.valid_till = input;
         self
+    }
+    /// <p>The final date that the certificate continues to be valid.</p>
+    pub fn get_valid_till(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.valid_till
     }
     /// <p>The Amazon Resource Name (ARN) for the certificate.</p>
     pub fn certificate_arn(
@@ -173,6 +193,10 @@ impl CertificateBuilder {
         self.certificate_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the certificate.</p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_arn
+    }
     /// <p>Whether there is an override for the default certificate identifier.</p>
     pub fn customer_override(mut self, input: bool) -> Self {
         self.customer_override = ::std::option::Option::Some(input);
@@ -182,6 +206,10 @@ impl CertificateBuilder {
     pub fn set_customer_override(mut self, input: ::std::option::Option<bool>) -> Self {
         self.customer_override = input;
         self
+    }
+    /// <p>Whether there is an override for the default certificate identifier.</p>
+    pub fn get_customer_override(&self) -> &::std::option::Option<bool> {
+        &self.customer_override
     }
     /// <p>If there is an override for the default certificate identifier, when the override expires.</p>
     pub fn customer_override_valid_till(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -195,6 +223,12 @@ impl CertificateBuilder {
     ) -> Self {
         self.customer_override_valid_till = input;
         self
+    }
+    /// <p>If there is an override for the default certificate identifier, when the override expires.</p>
+    pub fn get_customer_override_valid_till(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.customer_override_valid_till
     }
     /// Consumes the builder and constructs a [`Certificate`](crate::types::Certificate).
     pub fn build(self) -> crate::types::Certificate {

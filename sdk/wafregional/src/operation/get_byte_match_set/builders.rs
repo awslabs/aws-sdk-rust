@@ -40,6 +40,12 @@ impl GetByteMatchSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetByteMatchSet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_byte_match_set::builders::GetByteMatchSetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,5 +141,9 @@ impl GetByteMatchSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_byte_match_set_id(input);
         self
+    }
+    /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to get. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
+    pub fn get_byte_match_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_byte_match_set_id()
     }
 }

@@ -84,6 +84,10 @@ impl UpdateVehicleRequestItemBuilder {
         self.vehicle_name = input;
         self
     }
+    /// <p>The unique ID of the vehicle to update.</p>
+    pub fn get_vehicle_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vehicle_name
+    }
     /// <p>The ARN of the vehicle model (model manifest) associated with the vehicle to update.</p>
     pub fn model_manifest_arn(
         mut self,
@@ -100,6 +104,10 @@ impl UpdateVehicleRequestItemBuilder {
         self.model_manifest_arn = input;
         self
     }
+    /// <p>The ARN of the vehicle model (model manifest) associated with the vehicle to update.</p>
+    pub fn get_model_manifest_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_manifest_arn
+    }
     /// <p>The ARN of the signal decoder manifest associated with the vehicle to update.</p>
     pub fn decoder_manifest_arn(
         mut self,
@@ -115,6 +123,10 @@ impl UpdateVehicleRequestItemBuilder {
     ) -> Self {
         self.decoder_manifest_arn = input;
         self
+    }
+    /// <p>The ARN of the signal decoder manifest associated with the vehicle to update.</p>
+    pub fn get_decoder_manifest_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.decoder_manifest_arn
     }
     /// Adds a key-value pair to `attributes`.
     ///
@@ -143,6 +155,15 @@ impl UpdateVehicleRequestItemBuilder {
         self.attributes = input;
         self
     }
+    /// <p>Static information about a vehicle in a key-value pair. For example:</p>
+    /// <p> <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.attributes
+    }
     /// <p>The method the specified attributes will update the existing attributes on the vehicle. Use<code>Overwite</code> to replace the vehicle attributes with the specified attributes. Or use <code>Merge</code> to combine all attributes.</p>
     /// <p>This is required if attributes are present in the input.</p>
     pub fn attribute_update_mode(mut self, input: crate::types::UpdateMode) -> Self {
@@ -157,6 +178,11 @@ impl UpdateVehicleRequestItemBuilder {
     ) -> Self {
         self.attribute_update_mode = input;
         self
+    }
+    /// <p>The method the specified attributes will update the existing attributes on the vehicle. Use<code>Overwite</code> to replace the vehicle attributes with the specified attributes. Or use <code>Merge</code> to combine all attributes.</p>
+    /// <p>This is required if attributes are present in the input.</p>
+    pub fn get_attribute_update_mode(&self) -> &::std::option::Option<crate::types::UpdateMode> {
+        &self.attribute_update_mode
     }
     /// Consumes the builder and constructs a [`UpdateVehicleRequestItem`](crate::types::UpdateVehicleRequestItem).
     pub fn build(self) -> crate::types::UpdateVehicleRequestItem {

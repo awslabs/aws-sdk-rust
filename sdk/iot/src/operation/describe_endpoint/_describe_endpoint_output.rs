@@ -54,6 +54,10 @@ impl DescribeEndpointOutputBuilder {
         self.endpoint_address = input;
         self
     }
+    /// <p>The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.</p>
+    pub fn get_endpoint_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_address
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

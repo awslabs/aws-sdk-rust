@@ -63,6 +63,13 @@ impl AnchorDateConfigurationBuilder {
         self.anchor_option = input;
         self
     }
+    /// <p>The options for the date configuration. Choose one of the options below:</p>
+    /// <ul>
+    /// <li> <p> <code>NOW</code> </p> </li>
+    /// </ul>
+    pub fn get_anchor_option(&self) -> &::std::option::Option<crate::types::AnchorOption> {
+        &self.anchor_option
+    }
     /// <p>The name of the parameter that is used for the anchor date configuration.</p>
     pub fn parameter_name(
         mut self,
@@ -78,6 +85,10 @@ impl AnchorDateConfigurationBuilder {
     ) -> Self {
         self.parameter_name = input;
         self
+    }
+    /// <p>The name of the parameter that is used for the anchor date configuration.</p>
+    pub fn get_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_name
     }
     /// Consumes the builder and constructs a [`AnchorDateConfiguration`](crate::types::AnchorDateConfiguration).
     pub fn build(self) -> crate::types::AnchorDateConfiguration {

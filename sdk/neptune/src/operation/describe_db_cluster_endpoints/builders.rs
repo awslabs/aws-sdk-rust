@@ -38,6 +38,10 @@ impl DescribeDBClusterEndpointsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeDBClusterEndpoints as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_db_cluster_endpoints::builders::DescribeDbClusterEndpointsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +144,10 @@ impl DescribeDBClusterEndpointsFluentBuilder {
         self.inner = self.inner.set_db_cluster_identifier(input);
         self
     }
+    /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
+    pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_cluster_identifier()
+    }
     /// <p>The identifier of the endpoint to describe. This parameter is stored as a lowercase string.</p>
     pub fn db_cluster_endpoint_identifier(
         mut self,
@@ -155,6 +163,12 @@ impl DescribeDBClusterEndpointsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_db_cluster_endpoint_identifier(input);
         self
+    }
+    /// <p>The identifier of the endpoint to describe. This parameter is stored as a lowercase string.</p>
+    pub fn get_db_cluster_endpoint_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_cluster_endpoint_identifier()
     }
     /// Appends an item to `Filters`.
     ///
@@ -173,6 +187,10 @@ impl DescribeDBClusterEndpointsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>A set of name-value pairs that define which endpoints to include in the output. The filters are specified as name-value pairs, in the format <code>Name=<i>endpoint_type</i>,Values=<i>endpoint_type1</i>,<i>endpoint_type2</i>,...</code>. <code>Name</code> can be one of: <code>db-cluster-endpoint-type</code>, <code>db-cluster-endpoint-custom-type</code>, <code>db-cluster-endpoint-id</code>, <code>db-cluster-endpoint-status</code>. <code>Values</code> for the <code> db-cluster-endpoint-type</code> filter can be one or more of: <code>reader</code>, <code>writer</code>, <code>custom</code>. <code>Values</code> for the <code>db-cluster-endpoint-custom-type</code> filter can be one or more of: <code>reader</code>, <code>any</code>. <code>Values</code> for the <code>db-cluster-endpoint-status</code> filter can be one or more of: <code>available</code>, <code>creating</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. </p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
@@ -187,6 +205,12 @@ impl DescribeDBClusterEndpointsFluentBuilder {
         self.inner = self.inner.set_max_records(input);
         self
     }
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results. </p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
+    }
     /// <p> An optional pagination token provided by a previous <code>DescribeDBClusterEndpoints</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -196,5 +220,9 @@ impl DescribeDBClusterEndpointsFluentBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
+    }
+    /// <p> An optional pagination token provided by a previous <code>DescribeDBClusterEndpoints</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
     }
 }

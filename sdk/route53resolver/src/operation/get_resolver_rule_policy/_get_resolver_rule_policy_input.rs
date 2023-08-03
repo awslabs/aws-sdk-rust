@@ -41,6 +41,10 @@ impl GetResolverRulePolicyInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ID of the Resolver rule that you want to get the Resolver rule policy for.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`GetResolverRulePolicyInput`](crate::operation::get_resolver_rule_policy::GetResolverRulePolicyInput).
     pub fn build(
         self,

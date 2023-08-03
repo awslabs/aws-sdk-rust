@@ -46,6 +46,10 @@ impl ValidateMatchmakingRuleSetOutputBuilder {
         self.valid = input;
         self
     }
+    /// <p>A response indicating whether the rule set is valid.</p>
+    pub fn get_valid(&self) -> &::std::option::Option<bool> {
+        &self.valid
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

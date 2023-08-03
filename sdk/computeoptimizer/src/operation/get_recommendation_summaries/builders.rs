@@ -44,6 +44,10 @@ impl GetRecommendationSummariesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetRecommendationSummaries as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_recommendation_summaries::builders::GetRecommendationSummariesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -151,6 +155,14 @@ impl GetRecommendationSummariesFluentBuilder {
         self.inner = self.inner.set_account_ids(input);
         self
     }
+    /// <p>The ID of the Amazon Web Services account for which to return recommendation summaries.</p>
+    /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return recommendation summaries.</p>
+    /// <p>Only one account ID can be specified per request.</p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_account_ids()
+    }
     /// <p>The token to advance to the next page of recommendation summaries.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -160,6 +172,10 @@ impl GetRecommendationSummariesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token to advance to the next page of recommendation summaries.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The maximum number of recommendation summaries to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
@@ -172,5 +188,10 @@ impl GetRecommendationSummariesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of recommendation summaries to return with a single request.</p>
+    /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

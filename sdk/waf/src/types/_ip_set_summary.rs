@@ -52,6 +52,10 @@ impl IpSetSummaryBuilder {
         self.ip_set_id = input;
         self
     }
+    /// <p>The <code>IPSetId</code> for an <code>IPSet</code>. You can use <code>IPSetId</code> in a <code>GetIPSet</code> request to get detailed information about an <code>IPSet</code>.</p>
+    pub fn get_ip_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_set_id
+    }
     /// <p>A friendly name or description of the <code>IPSet</code>. You can't change the name of an <code>IPSet</code> after you create it.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -61,6 +65,10 @@ impl IpSetSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A friendly name or description of the <code>IPSet</code>. You can't change the name of an <code>IPSet</code> after you create it.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`IpSetSummary`](crate::types::IpSetSummary).
     pub fn build(self) -> crate::types::IpSetSummary {

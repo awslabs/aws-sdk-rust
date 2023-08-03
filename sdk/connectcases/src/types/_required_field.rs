@@ -40,6 +40,10 @@ impl RequiredFieldBuilder {
         self.field_id = input;
         self
     }
+    /// <p>Unique identifier of a field.</p>
+    pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_id
+    }
     /// Consumes the builder and constructs a [`RequiredField`](crate::types::RequiredField).
     pub fn build(self) -> crate::types::RequiredField {
         crate::types::RequiredField {

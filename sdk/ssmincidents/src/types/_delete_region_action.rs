@@ -40,6 +40,10 @@ impl DeleteRegionActionBuilder {
         self.region_name = input;
         self
     }
+    /// <p>The name of the Amazon Web Services Region you're deleting from the replication set.</p>
+    pub fn get_region_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region_name
+    }
     /// Consumes the builder and constructs a [`DeleteRegionAction`](crate::types::DeleteRegionAction).
     pub fn build(self) -> crate::types::DeleteRegionAction {
         crate::types::DeleteRegionAction {

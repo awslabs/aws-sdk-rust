@@ -39,6 +39,10 @@ impl RejectSkillInputBuilder {
         self.skill_id = input;
         self
     }
+    /// <p>The unique identifier of the skill.</p>
+    pub fn get_skill_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.skill_id
+    }
     /// Consumes the builder and constructs a [`RejectSkillInput`](crate::operation::reject_skill::RejectSkillInput).
     pub fn build(
         self,

@@ -36,6 +36,10 @@ impl DescribeDirectConnectGatewaysFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeDirectConnectGateways as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_direct_connect_gateways::builders::DescribeDirectConnectGatewaysInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl DescribeDirectConnectGatewaysFluentBuilder {
         self.inner = self.inner.set_direct_connect_gateway_id(input);
         self
     }
+    /// <p>The ID of the Direct Connect gateway.</p>
+    pub fn get_direct_connect_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_direct_connect_gateway_id()
+    }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -144,6 +152,11 @@ impl DescribeDirectConnectGatewaysFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token provided in the previous call to retrieve the next page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -153,5 +166,9 @@ impl DescribeDirectConnectGatewaysFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token provided in the previous call to retrieve the next page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

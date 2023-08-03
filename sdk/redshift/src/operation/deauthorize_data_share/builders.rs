@@ -36,6 +36,12 @@ impl DeauthorizeDataShareFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeauthorizeDataShare as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::deauthorize_data_share::builders::DeauthorizeDataShareInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl DeauthorizeDataShareFluentBuilder {
         self.inner = self.inner.set_data_share_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the datashare to remove authorization from.</p>
+    pub fn get_data_share_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_data_share_arn()
+    }
     /// <p>The identifier of the data consumer that is to have authorization removed from the datashare. This identifier is an Amazon Web Services account ID or a keyword, such as ADX.</p>
     pub fn consumer_identifier(
         mut self,
@@ -147,5 +157,9 @@ impl DeauthorizeDataShareFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_consumer_identifier(input);
         self
+    }
+    /// <p>The identifier of the data consumer that is to have authorization removed from the datashare. This identifier is an Amazon Web Services account ID or a keyword, such as ADX.</p>
+    pub fn get_consumer_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_consumer_identifier()
     }
 }

@@ -36,6 +36,10 @@ impl GetLaunchProfileInitializationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetLaunchProfileInitialization as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_launch_profile_initialization::builders::GetLaunchProfileInitializationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl GetLaunchProfileInitializationFluentBuilder {
         self.inner = self.inner.set_launch_profile_id(input);
         self
     }
+    /// <p>The ID of the launch profile used to control access from the streaming session.</p>
+    pub fn get_launch_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_launch_profile_id()
+    }
     /// Appends an item to `launchProfileProtocolVersions`.
     ///
     /// To override the contents of this collection use [`set_launch_profile_protocol_versions`](Self::set_launch_profile_protocol_versions).
@@ -126,6 +134,12 @@ impl GetLaunchProfileInitializationFluentBuilder {
         self.inner = self.inner.set_launch_profile_protocol_versions(input);
         self
     }
+    /// <p>The launch profile protocol versions supported by the client.</p>
+    pub fn get_launch_profile_protocol_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_launch_profile_protocol_versions()
+    }
     /// <p>The launch purpose.</p>
     pub fn launch_purpose(
         mut self,
@@ -142,6 +156,10 @@ impl GetLaunchProfileInitializationFluentBuilder {
         self.inner = self.inner.set_launch_purpose(input);
         self
     }
+    /// <p>The launch purpose.</p>
+    pub fn get_launch_purpose(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_launch_purpose()
+    }
     /// <p>The platform where this Launch Profile will be used, either Windows or Linux.</p>
     pub fn platform(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.platform(input.into());
@@ -152,6 +170,10 @@ impl GetLaunchProfileInitializationFluentBuilder {
         self.inner = self.inner.set_platform(input);
         self
     }
+    /// <p>The platform where this Launch Profile will be used, either Windows or Linux.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_platform()
+    }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.studio_id(input.into());
@@ -161,5 +183,9 @@ impl GetLaunchProfileInitializationFluentBuilder {
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_studio_id(input);
         self
+    }
+    /// <p>The studio ID. </p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_studio_id()
     }
 }

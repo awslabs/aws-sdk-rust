@@ -40,6 +40,10 @@ impl MemberUserBuilder {
         self.user_id = input;
         self
     }
+    /// <p>The identifier of the user you want to map to a group.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
+    }
     /// Consumes the builder and constructs a [`MemberUser`](crate::types::MemberUser).
     pub fn build(self) -> crate::types::MemberUser {
         crate::types::MemberUser {

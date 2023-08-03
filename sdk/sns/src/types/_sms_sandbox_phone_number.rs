@@ -51,6 +51,10 @@ impl SmsSandboxPhoneNumberBuilder {
         self.phone_number = input;
         self
     }
+    /// <p>The destination phone number.</p>
+    pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number
+    }
     /// <p>The destination phone number's verification status.</p>
     pub fn status(mut self, input: crate::types::SmsSandboxPhoneNumberVerificationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -63,6 +67,12 @@ impl SmsSandboxPhoneNumberBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The destination phone number's verification status.</p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::SmsSandboxPhoneNumberVerificationStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`SmsSandboxPhoneNumber`](crate::types::SmsSandboxPhoneNumber).
     pub fn build(self) -> crate::types::SmsSandboxPhoneNumber {

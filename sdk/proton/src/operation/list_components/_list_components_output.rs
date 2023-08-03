@@ -54,6 +54,10 @@ impl ListComponentsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token that indicates the location of the next component in the array of components, after the current requested list of components.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `components`.
     ///
     /// To override the contents of this collection use [`set_components`](Self::set_components).
@@ -72,6 +76,12 @@ impl ListComponentsOutputBuilder {
     ) -> Self {
         self.components = input;
         self
+    }
+    /// <p>An array of components with summary data.</p>
+    pub fn get_components(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentSummary>> {
+        &self.components
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

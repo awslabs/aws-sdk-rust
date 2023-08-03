@@ -40,6 +40,10 @@ impl GetExternalDataViewAccessDetailsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetExternalDataViewAccessDetails as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_external_data_view_access_details::builders::GetExternalDataViewAccessDetailsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -104,6 +108,10 @@ impl GetExternalDataViewAccessDetailsFluentBuilder {
         self.inner = self.inner.set_data_view_id(input);
         self
     }
+    /// <p>The unique identifier for the Dataview that you want to access.</p>
+    pub fn get_data_view_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_data_view_id()
+    }
     /// <p>The unique identifier for the Dataset.</p>
     pub fn dataset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_id(input.into());
@@ -113,5 +121,9 @@ impl GetExternalDataViewAccessDetailsFluentBuilder {
     pub fn set_dataset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dataset_id(input);
         self
+    }
+    /// <p>The unique identifier for the Dataset.</p>
+    pub fn get_dataset_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dataset_id()
     }
 }

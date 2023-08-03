@@ -49,6 +49,10 @@ impl GetPolicyVersionInputBuilder {
         self.policy_name = input;
         self
     }
+    /// <p>The name of the policy.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_name
+    }
     /// <p>The policy version ID.</p>
     pub fn policy_version_id(
         mut self,
@@ -64,6 +68,10 @@ impl GetPolicyVersionInputBuilder {
     ) -> Self {
         self.policy_version_id = input;
         self
+    }
+    /// <p>The policy version ID.</p>
+    pub fn get_policy_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_version_id
     }
     /// Consumes the builder and constructs a [`GetPolicyVersionInput`](crate::operation::get_policy_version::GetPolicyVersionInput).
     pub fn build(

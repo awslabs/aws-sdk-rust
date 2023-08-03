@@ -72,6 +72,10 @@ impl StartFileTransferInputBuilder {
         self.connector_id = input;
         self
     }
+    /// <p>The unique identifier for the connector.</p>
+    pub fn get_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connector_id
+    }
     /// Appends an item to `send_file_paths`.
     ///
     /// To override the contents of this collection use [`set_send_file_paths`](Self::set_send_file_paths).
@@ -93,6 +97,12 @@ impl StartFileTransferInputBuilder {
     ) -> Self {
         self.send_file_paths = input;
         self
+    }
+    /// <p>One or more source paths for the Transfer Family server. Each string represents a source file path for one outbound file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.</p>
+    pub fn get_send_file_paths(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.send_file_paths
     }
     /// Appends an item to `retrieve_file_paths`.
     ///
@@ -116,6 +126,12 @@ impl StartFileTransferInputBuilder {
         self.retrieve_file_paths = input;
         self
     }
+    /// <p>One or more source paths for the partner's SFTP server. Each string represents a source file path for one inbound file transfer.</p>
+    pub fn get_retrieve_file_paths(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.retrieve_file_paths
+    }
     /// <p>For an inbound transfer, the <code>LocaDirectoryPath</code> specifies the destination for one or more files that are transferred from the partner's SFTP server.</p>
     pub fn local_directory_path(
         mut self,
@@ -132,6 +148,10 @@ impl StartFileTransferInputBuilder {
         self.local_directory_path = input;
         self
     }
+    /// <p>For an inbound transfer, the <code>LocaDirectoryPath</code> specifies the destination for one or more files that are transferred from the partner's SFTP server.</p>
+    pub fn get_local_directory_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.local_directory_path
+    }
     /// <p>For an outbound transfer, the <code>RemoteDirectoryPath</code> specifies the destination for one or more files that are transferred to the partner's SFTP server. If you don't specify a <code>RemoteDirectoryPath</code>, the destination for transferred files is the SFTP user's home directory.</p>
     pub fn remote_directory_path(
         mut self,
@@ -147,6 +167,10 @@ impl StartFileTransferInputBuilder {
     ) -> Self {
         self.remote_directory_path = input;
         self
+    }
+    /// <p>For an outbound transfer, the <code>RemoteDirectoryPath</code> specifies the destination for one or more files that are transferred to the partner's SFTP server. If you don't specify a <code>RemoteDirectoryPath</code>, the destination for transferred files is the SFTP user's home directory.</p>
+    pub fn get_remote_directory_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.remote_directory_path
     }
     /// Consumes the builder and constructs a [`StartFileTransferInput`](crate::operation::start_file_transfer::StartFileTransferInput).
     pub fn build(

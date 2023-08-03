@@ -41,6 +41,10 @@ impl DescribeCampaignInputBuilder {
         self.id = input;
         self
     }
+    /// Identifier representing a Campaign
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`DescribeCampaignInput`](crate::operation::describe_campaign::DescribeCampaignInput).
     pub fn build(
         self,

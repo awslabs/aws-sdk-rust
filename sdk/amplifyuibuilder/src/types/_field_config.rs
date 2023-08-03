@@ -76,6 +76,10 @@ impl FieldConfigBuilder {
         self.label = input;
         self
     }
+    /// <p>The label for the field.</p>
+    pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label
+    }
     /// <p>Specifies the field position.</p>
     pub fn position(mut self, input: crate::types::FieldPosition) -> Self {
         self.position = ::std::option::Option::Some(input);
@@ -89,6 +93,10 @@ impl FieldConfigBuilder {
         self.position = input;
         self
     }
+    /// <p>Specifies the field position.</p>
+    pub fn get_position(&self) -> &::std::option::Option<crate::types::FieldPosition> {
+        &self.position
+    }
     /// <p>Specifies whether to hide a field.</p>
     pub fn excluded(mut self, input: bool) -> Self {
         self.excluded = ::std::option::Option::Some(input);
@@ -98,6 +106,10 @@ impl FieldConfigBuilder {
     pub fn set_excluded(mut self, input: ::std::option::Option<bool>) -> Self {
         self.excluded = input;
         self
+    }
+    /// <p>Specifies whether to hide a field.</p>
+    pub fn get_excluded(&self) -> &::std::option::Option<bool> {
+        &self.excluded
     }
     /// <p>Describes the configuration for the default input value to display for a field.</p>
     pub fn input_type(mut self, input: crate::types::FieldInputConfig) -> Self {
@@ -111,6 +123,10 @@ impl FieldConfigBuilder {
     ) -> Self {
         self.input_type = input;
         self
+    }
+    /// <p>Describes the configuration for the default input value to display for a field.</p>
+    pub fn get_input_type(&self) -> &::std::option::Option<crate::types::FieldInputConfig> {
+        &self.input_type
     }
     /// Appends an item to `validations`.
     ///
@@ -130,6 +146,12 @@ impl FieldConfigBuilder {
     ) -> Self {
         self.validations = input;
         self
+    }
+    /// <p>The validations to perform on the value in the field.</p>
+    pub fn get_validations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldValidationConfiguration>> {
+        &self.validations
     }
     /// Consumes the builder and constructs a [`FieldConfig`](crate::types::FieldConfig).
     pub fn build(self) -> crate::types::FieldConfig {

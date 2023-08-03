@@ -39,6 +39,10 @@ impl GetFleetInputBuilder {
         self.fleet_id = input;
         self
     }
+    /// <p> The ID of the fleet to retrieve information about. </p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_id
+    }
     /// Consumes the builder and constructs a [`GetFleetInput`](crate::operation::get_fleet::GetFleetInput).
     pub fn build(
         self,

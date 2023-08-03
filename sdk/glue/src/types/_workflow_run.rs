@@ -132,6 +132,10 @@ impl WorkflowRunBuilder {
         self.name = input;
         self
     }
+    /// <p>Name of the workflow that was run.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The ID of this workflow run.</p>
     pub fn workflow_run_id(
         mut self,
@@ -148,6 +152,10 @@ impl WorkflowRunBuilder {
         self.workflow_run_id = input;
         self
     }
+    /// <p>The ID of this workflow run.</p>
+    pub fn get_workflow_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_run_id
+    }
     /// <p>The ID of the previous workflow run.</p>
     pub fn previous_run_id(
         mut self,
@@ -163,6 +171,10 @@ impl WorkflowRunBuilder {
     ) -> Self {
         self.previous_run_id = input;
         self
+    }
+    /// <p>The ID of the previous workflow run.</p>
+    pub fn get_previous_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.previous_run_id
     }
     /// Adds a key-value pair to `workflow_run_properties`.
     ///
@@ -189,6 +201,14 @@ impl WorkflowRunBuilder {
         self.workflow_run_properties = input;
         self
     }
+    /// <p>The workflow run properties which were set during the run.</p>
+    pub fn get_workflow_run_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.workflow_run_properties
+    }
     /// <p>The date and time when the workflow run was started.</p>
     pub fn started_on(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.started_on = ::std::option::Option::Some(input);
@@ -201,6 +221,10 @@ impl WorkflowRunBuilder {
     ) -> Self {
         self.started_on = input;
         self
+    }
+    /// <p>The date and time when the workflow run was started.</p>
+    pub fn get_started_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.started_on
     }
     /// <p>The date and time when the workflow run completed.</p>
     pub fn completed_on(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -215,6 +239,10 @@ impl WorkflowRunBuilder {
         self.completed_on = input;
         self
     }
+    /// <p>The date and time when the workflow run completed.</p>
+    pub fn get_completed_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.completed_on
+    }
     /// <p>The status of the workflow run.</p>
     pub fn status(mut self, input: crate::types::WorkflowRunStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -227,6 +255,10 @@ impl WorkflowRunBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the workflow run.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::WorkflowRunStatus> {
+        &self.status
     }
     /// <p>This error message describes any error that may have occurred in starting the workflow run. Currently the only error message is "Concurrent runs exceeded for workflow: <code>foo</code>."</p>
     pub fn error_message(
@@ -244,6 +276,10 @@ impl WorkflowRunBuilder {
         self.error_message = input;
         self
     }
+    /// <p>This error message describes any error that may have occurred in starting the workflow run. Currently the only error message is "Concurrent runs exceeded for workflow: <code>foo</code>."</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// <p>The statistics of the run.</p>
     pub fn statistics(mut self, input: crate::types::WorkflowRunStatistics) -> Self {
         self.statistics = ::std::option::Option::Some(input);
@@ -257,6 +293,10 @@ impl WorkflowRunBuilder {
         self.statistics = input;
         self
     }
+    /// <p>The statistics of the run.</p>
+    pub fn get_statistics(&self) -> &::std::option::Option<crate::types::WorkflowRunStatistics> {
+        &self.statistics
+    }
     /// <p>The graph representing all the Glue components that belong to the workflow as nodes and directed connections between them as edges.</p>
     pub fn graph(mut self, input: crate::types::WorkflowGraph) -> Self {
         self.graph = ::std::option::Option::Some(input);
@@ -266,6 +306,10 @@ impl WorkflowRunBuilder {
     pub fn set_graph(mut self, input: ::std::option::Option<crate::types::WorkflowGraph>) -> Self {
         self.graph = input;
         self
+    }
+    /// <p>The graph representing all the Glue components that belong to the workflow as nodes and directed connections between them as edges.</p>
+    pub fn get_graph(&self) -> &::std::option::Option<crate::types::WorkflowGraph> {
+        &self.graph
     }
     /// <p>The batch condition that started the workflow run.</p>
     pub fn starting_event_batch_condition(
@@ -282,6 +326,12 @@ impl WorkflowRunBuilder {
     ) -> Self {
         self.starting_event_batch_condition = input;
         self
+    }
+    /// <p>The batch condition that started the workflow run.</p>
+    pub fn get_starting_event_batch_condition(
+        &self,
+    ) -> &::std::option::Option<crate::types::StartingEventBatchCondition> {
+        &self.starting_event_batch_condition
     }
     /// Consumes the builder and constructs a [`WorkflowRun`](crate::types::WorkflowRun).
     pub fn build(self) -> crate::types::WorkflowRun {

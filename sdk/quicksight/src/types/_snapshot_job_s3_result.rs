@@ -78,6 +78,12 @@ impl SnapshotJobS3ResultBuilder {
         self.s3_destination_configuration = input;
         self
     }
+    /// <p>A list of Amazon S3 bucket configurations that are provided when you make a <code>StartDashboardSnapshotJob</code> API call. </p>
+    pub fn get_s3_destination_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SnapshotS3DestinationConfiguration> {
+        &self.s3_destination_configuration
+    }
     /// <p>The Amazon S3 Uri.</p>
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_uri = ::std::option::Option::Some(input.into());
@@ -87,6 +93,10 @@ impl SnapshotJobS3ResultBuilder {
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_uri = input;
         self
+    }
+    /// <p>The Amazon S3 Uri.</p>
+    pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_uri
     }
     /// Appends an item to `error_info`.
     ///
@@ -106,6 +116,12 @@ impl SnapshotJobS3ResultBuilder {
     ) -> Self {
         self.error_info = input;
         self
+    }
+    /// <p>An array of error records that describe any failures that occur while the dashboard snapshot job runs.</p>
+    pub fn get_error_info(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotJobResultErrorInfo>> {
+        &self.error_info
     }
     /// Consumes the builder and constructs a [`SnapshotJobS3Result`](crate::types::SnapshotJobS3Result).
     pub fn build(self) -> crate::types::SnapshotJobS3Result {

@@ -37,6 +37,10 @@ impl DeleteEventFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteEvent as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_event::builders::DeleteEventInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl DeleteEventFluentBuilder {
         self.inner = self.inner.set_event_id(input);
         self
     }
+    /// <p>The ID of the event to delete.</p>
+    pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_id()
+    }
     /// <p>The name of the event type.</p>
     pub fn event_type_name(
         mut self,
@@ -135,6 +143,10 @@ impl DeleteEventFluentBuilder {
         self.inner = self.inner.set_event_type_name(input);
         self
     }
+    /// <p>The name of the event type.</p>
+    pub fn get_event_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_type_name()
+    }
     /// <p>Specifies whether or not to delete any predictions associated with the event. If set to <code>True</code>, </p>
     pub fn delete_audit_history(mut self, input: bool) -> Self {
         self.inner = self.inner.delete_audit_history(input);
@@ -144,5 +156,9 @@ impl DeleteEventFluentBuilder {
     pub fn set_delete_audit_history(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_delete_audit_history(input);
         self
+    }
+    /// <p>Specifies whether or not to delete any predictions associated with the event. If set to <code>True</code>, </p>
+    pub fn get_delete_audit_history(&self) -> &::std::option::Option<bool> {
+        self.inner.get_delete_audit_history()
     }
 }

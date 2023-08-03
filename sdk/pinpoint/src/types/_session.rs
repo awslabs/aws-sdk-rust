@@ -64,6 +64,10 @@ impl SessionBuilder {
         self.duration = input;
         self
     }
+    /// <p>The duration of the session, in milliseconds.</p>
+    pub fn get_duration(&self) -> &::std::option::Option<i32> {
+        &self.duration
+    }
     /// <p>The unique identifier for the session.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl SessionBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The unique identifier for the session.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The date and time when the session began.</p>
     pub fn start_timestamp(
@@ -90,6 +98,10 @@ impl SessionBuilder {
         self.start_timestamp = input;
         self
     }
+    /// <p>The date and time when the session began.</p>
+    pub fn get_start_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_timestamp
+    }
     /// <p>The date and time when the session ended.</p>
     pub fn stop_timestamp(
         mut self,
@@ -105,6 +117,10 @@ impl SessionBuilder {
     ) -> Self {
         self.stop_timestamp = input;
         self
+    }
+    /// <p>The date and time when the session ended.</p>
+    pub fn get_stop_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stop_timestamp
     }
     /// Consumes the builder and constructs a [`Session`](crate::types::Session).
     pub fn build(self) -> crate::types::Session {

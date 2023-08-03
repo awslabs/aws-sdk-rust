@@ -56,6 +56,10 @@ impl ConnectionBodyParameterBuilder {
         self.key = input;
         self
     }
+    /// <p>The key for the parameter.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>The value associated with the key.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl ConnectionBodyParameterBuilder {
         self.value = input;
         self
     }
+    /// <p>The value associated with the key.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// <p>Specified whether the value is secret.</p>
     pub fn is_value_secret(mut self, input: bool) -> Self {
         self.is_value_secret = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl ConnectionBodyParameterBuilder {
     pub fn set_is_value_secret(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_value_secret = input;
         self
+    }
+    /// <p>Specified whether the value is secret.</p>
+    pub fn get_is_value_secret(&self) -> &::std::option::Option<bool> {
+        &self.is_value_secret
     }
     /// Consumes the builder and constructs a [`ConnectionBodyParameter`](crate::types::ConnectionBodyParameter).
     pub fn build(self) -> crate::types::ConnectionBodyParameter {

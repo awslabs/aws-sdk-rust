@@ -47,6 +47,10 @@ impl GetRegionsInputBuilder {
         self.include_availability_zones = input;
         self
     }
+    /// <p>A Boolean value indicating whether to also include Availability Zones in your get regions request. Availability Zones are indicated with a letter: e.g., <code>us-east-2a</code>.</p>
+    pub fn get_include_availability_zones(&self) -> &::std::option::Option<bool> {
+        &self.include_availability_zones
+    }
     /// <p>A Boolean value indicating whether to also include Availability Zones for databases in your get regions request. Availability Zones are indicated with a letter (e.g., <code>us-east-2a</code>).</p>
     pub fn include_relational_database_availability_zones(mut self, input: bool) -> Self {
         self.include_relational_database_availability_zones = ::std::option::Option::Some(input);
@@ -59,6 +63,12 @@ impl GetRegionsInputBuilder {
     ) -> Self {
         self.include_relational_database_availability_zones = input;
         self
+    }
+    /// <p>A Boolean value indicating whether to also include Availability Zones for databases in your get regions request. Availability Zones are indicated with a letter (e.g., <code>us-east-2a</code>).</p>
+    pub fn get_include_relational_database_availability_zones(
+        &self,
+    ) -> &::std::option::Option<bool> {
+        &self.include_relational_database_availability_zones
     }
     /// Consumes the builder and constructs a [`GetRegionsInput`](crate::operation::get_regions::GetRegionsInput).
     pub fn build(

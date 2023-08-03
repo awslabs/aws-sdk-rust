@@ -48,6 +48,10 @@ impl ListenerBuilder {
         self.protocol = input;
         self
     }
+    /// <p>The protocol that is used by the Listener.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<::std::string::String> {
+        &self.protocol
+    }
     /// <p>The port that is used by the Listener.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ListenerBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
+    }
+    /// <p>The port that is used by the Listener.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// Consumes the builder and constructs a [`Listener`](crate::types::Listener).
     pub fn build(self) -> crate::types::Listener {

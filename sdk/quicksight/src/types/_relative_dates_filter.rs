@@ -143,6 +143,10 @@ impl RelativeDatesFilterBuilder {
         self.filter_id = input;
         self
     }
+    /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
+    pub fn get_filter_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter_id
+    }
     /// <p>The column that the filter is applied to.</p>
     pub fn column(mut self, input: crate::types::ColumnIdentifier) -> Self {
         self.column = ::std::option::Option::Some(input);
@@ -155,6 +159,10 @@ impl RelativeDatesFilterBuilder {
     ) -> Self {
         self.column = input;
         self
+    }
+    /// <p>The column that the filter is applied to.</p>
+    pub fn get_column(&self) -> &::std::option::Option<crate::types::ColumnIdentifier> {
+        &self.column
     }
     /// <p>The date configuration of the filter.</p>
     pub fn anchor_date_configuration(
@@ -172,6 +180,12 @@ impl RelativeDatesFilterBuilder {
         self.anchor_date_configuration = input;
         self
     }
+    /// <p>The date configuration of the filter.</p>
+    pub fn get_anchor_date_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AnchorDateConfiguration> {
+        &self.anchor_date_configuration
+    }
     /// <p>The minimum granularity (period granularity) of the relative dates filter.</p>
     pub fn minimum_granularity(mut self, input: crate::types::TimeGranularity) -> Self {
         self.minimum_granularity = ::std::option::Option::Some(input);
@@ -185,6 +199,10 @@ impl RelativeDatesFilterBuilder {
         self.minimum_granularity = input;
         self
     }
+    /// <p>The minimum granularity (period granularity) of the relative dates filter.</p>
+    pub fn get_minimum_granularity(&self) -> &::std::option::Option<crate::types::TimeGranularity> {
+        &self.minimum_granularity
+    }
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
     pub fn time_granularity(mut self, input: crate::types::TimeGranularity) -> Self {
         self.time_granularity = ::std::option::Option::Some(input);
@@ -197,6 +215,10 @@ impl RelativeDatesFilterBuilder {
     ) -> Self {
         self.time_granularity = input;
         self
+    }
+    /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
+    pub fn get_time_granularity(&self) -> &::std::option::Option<crate::types::TimeGranularity> {
+        &self.time_granularity
     }
     /// <p>The range date type of the filter. Choose one of the options below:</p>
     /// <ul>
@@ -225,6 +247,17 @@ impl RelativeDatesFilterBuilder {
         self.relative_date_type = input;
         self
     }
+    /// <p>The range date type of the filter. Choose one of the options below:</p>
+    /// <ul>
+    /// <li> <p> <code>PREVIOUS</code> </p> </li>
+    /// <li> <p> <code>THIS</code> </p> </li>
+    /// <li> <p> <code>LAST</code> </p> </li>
+    /// <li> <p> <code>NOW</code> </p> </li>
+    /// <li> <p> <code>NEXT</code> </p> </li>
+    /// </ul>
+    pub fn get_relative_date_type(&self) -> &::std::option::Option<crate::types::RelativeDateType> {
+        &self.relative_date_type
+    }
     /// <p>The date value of the filter.</p>
     pub fn relative_date_value(mut self, input: i32) -> Self {
         self.relative_date_value = ::std::option::Option::Some(input);
@@ -234,6 +267,10 @@ impl RelativeDatesFilterBuilder {
     pub fn set_relative_date_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.relative_date_value = input;
         self
+    }
+    /// <p>The date value of the filter.</p>
+    pub fn get_relative_date_value(&self) -> &::std::option::Option<i32> {
+        &self.relative_date_value
     }
     /// <p>The parameter whose value should be used for the filter value.</p>
     pub fn parameter_name(
@@ -250,6 +287,10 @@ impl RelativeDatesFilterBuilder {
     ) -> Self {
         self.parameter_name = input;
         self
+    }
+    /// <p>The parameter whose value should be used for the filter value.</p>
+    pub fn get_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_name
     }
     /// <p>This option determines how null values should be treated when filtering data.</p>
     /// <ul>
@@ -274,6 +315,15 @@ impl RelativeDatesFilterBuilder {
         self.null_option = input;
         self
     }
+    /// <p>This option determines how null values should be treated when filtering data.</p>
+    /// <ul>
+    /// <li> <p> <code>ALL_VALUES</code>: Include null values in filtered results.</p> </li>
+    /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li>
+    /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li>
+    /// </ul>
+    pub fn get_null_option(&self) -> &::std::option::Option<crate::types::FilterNullOption> {
+        &self.null_option
+    }
     /// <p>The configuration for the exclude period of the filter.</p>
     pub fn exclude_period_configuration(
         mut self,
@@ -289,6 +339,12 @@ impl RelativeDatesFilterBuilder {
     ) -> Self {
         self.exclude_period_configuration = input;
         self
+    }
+    /// <p>The configuration for the exclude period of the filter.</p>
+    pub fn get_exclude_period_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExcludePeriodConfiguration> {
+        &self.exclude_period_configuration
     }
     /// Consumes the builder and constructs a [`RelativeDatesFilter`](crate::types::RelativeDatesFilter).
     pub fn build(self) -> crate::types::RelativeDatesFilter {

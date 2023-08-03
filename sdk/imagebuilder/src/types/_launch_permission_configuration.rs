@@ -74,6 +74,10 @@ impl LaunchPermissionConfigurationBuilder {
         self.user_ids = input;
         self
     }
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn get_user_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.user_ids
+    }
     /// Appends an item to `user_groups`.
     ///
     /// To override the contents of this collection use [`set_user_groups`](Self::set_user_groups).
@@ -92,6 +96,12 @@ impl LaunchPermissionConfigurationBuilder {
     ) -> Self {
         self.user_groups = input;
         self
+    }
+    /// <p>The name of the group.</p>
+    pub fn get_user_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.user_groups
     }
     /// Appends an item to `organization_arns`.
     ///
@@ -115,6 +125,12 @@ impl LaunchPermissionConfigurationBuilder {
         self.organization_arns = input;
         self
     }
+    /// <p>The ARN for an Amazon Web Services Organization that you want to share your AMI with. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What is Organizations?</a>.</p>
+    pub fn get_organization_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.organization_arns
+    }
     /// Appends an item to `organizational_unit_arns`.
     ///
     /// To override the contents of this collection use [`set_organizational_unit_arns`](Self::set_organizational_unit_arns).
@@ -136,6 +152,12 @@ impl LaunchPermissionConfigurationBuilder {
     ) -> Self {
         self.organizational_unit_arns = input;
         self
+    }
+    /// <p>The ARN for an Organizations organizational unit (OU) that you want to share your AMI with. For more information about key concepts for Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html">Organizations terminology and concepts</a>.</p>
+    pub fn get_organizational_unit_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.organizational_unit_arns
     }
     /// Consumes the builder and constructs a [`LaunchPermissionConfiguration`](crate::types::LaunchPermissionConfiguration).
     pub fn build(self) -> crate::types::LaunchPermissionConfiguration {

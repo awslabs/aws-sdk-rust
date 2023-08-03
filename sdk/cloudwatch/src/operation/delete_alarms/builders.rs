@@ -41,6 +41,10 @@ impl DeleteAlarmsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteAlarms as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_alarms::builders::DeleteAlarmsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,5 +133,11 @@ impl DeleteAlarmsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_alarm_names(input);
         self
+    }
+    /// <p>The alarms to be deleted. Do not enclose the alarm names in quote marks.</p>
+    pub fn get_alarm_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_alarm_names()
     }
 }

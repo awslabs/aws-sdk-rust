@@ -43,6 +43,10 @@ impl OutputConfigInputBuilder {
         self.s3_data = input;
         self
     }
+    /// <p>Path to Amazon S3 storage location for the output configuration file.</p>
+    pub fn get_s3_data(&self) -> &::std::option::Option<crate::types::ExportS3DataInput> {
+        &self.s3_data
+    }
     /// Consumes the builder and constructs a [`OutputConfigInput`](crate::types::OutputConfigInput).
     pub fn build(self) -> crate::types::OutputConfigInput {
         crate::types::OutputConfigInput {

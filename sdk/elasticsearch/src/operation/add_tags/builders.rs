@@ -36,6 +36,10 @@ impl AddTagsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AddTags as a reference.
+    pub fn as_input(&self) -> &crate::operation::add_tags::builders::AddTagsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl AddTagsFluentBuilder {
         self.inner = self.inner.set_arn(input);
         self
     }
+    /// <p> Specify the <code>ARN</code> for which you want to add the tags.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
+    }
     /// Appends an item to `TagList`.
     ///
     /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
@@ -134,5 +142,9 @@ impl AddTagsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tag_list(input);
         self
+    }
+    /// <p> List of <code>Tag</code> that need to be added for the Elasticsearch domain. </p>
+    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tag_list()
     }
 }

@@ -48,6 +48,10 @@ impl QueryArgProfilesBuilder {
         self.quantity = input;
         self
     }
+    /// <p>Number of profiles for query argument-profile mapping for field-level encryption.</p>
+    pub fn get_quantity(&self) -> &::std::option::Option<i32> {
+        &self.quantity
+    }
     /// Appends an item to `items`.
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
@@ -66,6 +70,12 @@ impl QueryArgProfilesBuilder {
     ) -> Self {
         self.items = input;
         self
+    }
+    /// <p>Number of items for query argument-profile mapping for field-level encryption.</p>
+    pub fn get_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryArgProfile>> {
+        &self.items
     }
     /// Consumes the builder and constructs a [`QueryArgProfiles`](crate::types::QueryArgProfiles).
     pub fn build(self) -> crate::types::QueryArgProfiles {

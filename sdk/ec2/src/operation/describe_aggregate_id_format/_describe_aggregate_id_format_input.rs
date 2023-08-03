@@ -39,6 +39,10 @@ impl DescribeAggregateIdFormatInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// Consumes the builder and constructs a [`DescribeAggregateIdFormatInput`](crate::operation::describe_aggregate_id_format::DescribeAggregateIdFormatInput).
     pub fn build(
         self,

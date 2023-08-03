@@ -76,6 +76,10 @@ impl DataQualityRuleResultBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the data quality rule.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description of the data quality rule.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -85,6 +89,10 @@ impl DataQualityRuleResultBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the data quality rule.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>An evaluation message.</p>
     pub fn evaluation_message(
@@ -102,6 +110,10 @@ impl DataQualityRuleResultBuilder {
         self.evaluation_message = input;
         self
     }
+    /// <p>An evaluation message.</p>
+    pub fn get_evaluation_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_message
+    }
     /// <p>A pass or fail status for the rule.</p>
     pub fn result(mut self, input: crate::types::DataQualityRuleResultStatus) -> Self {
         self.result = ::std::option::Option::Some(input);
@@ -114,6 +126,10 @@ impl DataQualityRuleResultBuilder {
     ) -> Self {
         self.result = input;
         self
+    }
+    /// <p>A pass or fail status for the rule.</p>
+    pub fn get_result(&self) -> &::std::option::Option<crate::types::DataQualityRuleResultStatus> {
+        &self.result
     }
     /// Adds a key-value pair to `evaluated_metrics`.
     ///
@@ -137,6 +153,12 @@ impl DataQualityRuleResultBuilder {
     ) -> Self {
         self.evaluated_metrics = input;
         self
+    }
+    /// <p>A map of metrics associated with the evaluation of the rule.</p>
+    pub fn get_evaluated_metrics(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, f64>> {
+        &self.evaluated_metrics
     }
     /// Consumes the builder and constructs a [`DataQualityRuleResult`](crate::types::DataQualityRuleResult).
     pub fn build(self) -> crate::types::DataQualityRuleResult {

@@ -59,6 +59,10 @@ impl GetAccessControlEffectOutputBuilder {
         self.effect = input;
         self
     }
+    /// <p>The rule effect.</p>
+    pub fn get_effect(&self) -> &::std::option::Option<crate::types::AccessControlRuleEffect> {
+        &self.effect
+    }
     /// Appends an item to `matched_rules`.
     ///
     /// To override the contents of this collection use [`set_matched_rules`](Self::set_matched_rules).
@@ -80,6 +84,12 @@ impl GetAccessControlEffectOutputBuilder {
     ) -> Self {
         self.matched_rules = input;
         self
+    }
+    /// <p>The rules that match the given parameters, resulting in an effect.</p>
+    pub fn get_matched_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.matched_rules
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

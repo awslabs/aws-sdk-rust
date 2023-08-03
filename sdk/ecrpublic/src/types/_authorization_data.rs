@@ -54,6 +54,10 @@ impl AuthorizationDataBuilder {
         self.authorization_token = input;
         self
     }
+    /// <p>A base64-encoded string that contains authorization data for a public Amazon ECR registry. When the string is decoded, it's presented in the format <code>user:password</code> for public registry authentication using <code>docker login</code>.</p>
+    pub fn get_authorization_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authorization_token
+    }
     /// <p>The Unix time in seconds and milliseconds when the authorization token expires. Authorization tokens are valid for 12 hours.</p>
     pub fn expires_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expires_at = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl AuthorizationDataBuilder {
     ) -> Self {
         self.expires_at = input;
         self
+    }
+    /// <p>The Unix time in seconds and milliseconds when the authorization token expires. Authorization tokens are valid for 12 hours.</p>
+    pub fn get_expires_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expires_at
     }
     /// Consumes the builder and constructs a [`AuthorizationData`](crate::types::AuthorizationData).
     pub fn build(self) -> crate::types::AuthorizationData {

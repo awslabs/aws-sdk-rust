@@ -51,6 +51,12 @@ impl ModifyInstanceEventWindowOutputBuilder {
         self.instance_event_window = input;
         self
     }
+    /// <p>Information about the event window.</p>
+    pub fn get_instance_event_window(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceEventWindow> {
+        &self.instance_event_window
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -69,6 +69,10 @@ impl CreateGatewayInputBuilder {
         self.activation_key = input;
         self
     }
+    /// <p>The activation key of the created gateway.</p>
+    pub fn get_activation_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.activation_key
+    }
     /// <p>The display name of the created gateway.</p>
     pub fn gateway_display_name(
         mut self,
@@ -85,6 +89,10 @@ impl CreateGatewayInputBuilder {
         self.gateway_display_name = input;
         self
     }
+    /// <p>The display name of the created gateway.</p>
+    pub fn get_gateway_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_display_name
+    }
     /// <p>The type of created gateway.</p>
     pub fn gateway_type(mut self, input: crate::types::GatewayType) -> Self {
         self.gateway_type = ::std::option::Option::Some(input);
@@ -97,6 +105,10 @@ impl CreateGatewayInputBuilder {
     ) -> Self {
         self.gateway_type = input;
         self
+    }
+    /// <p>The type of created gateway.</p>
+    pub fn get_gateway_type(&self) -> &::std::option::Option<crate::types::GatewayType> {
+        &self.gateway_type
     }
     /// Appends an item to `tags`.
     ///
@@ -116,6 +128,10 @@ impl CreateGatewayInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of up to 50 tags to assign to the gateway. Each tag is a key-value pair.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateGatewayInput`](crate::operation::create_gateway::CreateGatewayInput).
     pub fn build(

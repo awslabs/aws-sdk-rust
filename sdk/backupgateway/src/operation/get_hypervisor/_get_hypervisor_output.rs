@@ -49,6 +49,10 @@ impl GetHypervisorOutputBuilder {
         self.hypervisor = input;
         self
     }
+    /// <p>Details about the requested hypervisor.</p>
+    pub fn get_hypervisor(&self) -> &::std::option::Option<crate::types::HypervisorDetails> {
+        &self.hypervisor
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

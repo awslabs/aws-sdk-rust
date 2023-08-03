@@ -49,6 +49,10 @@ impl DeleteWorkflowStepGroupInputBuilder {
         self.workflow_id = input;
         self
     }
+    /// <p>The ID of the migration workflow.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_id
+    }
     /// <p>The ID of the step group you want to delete.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl DeleteWorkflowStepGroupInputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The ID of the step group you want to delete.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`DeleteWorkflowStepGroupInput`](crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupInput).
     pub fn build(

@@ -64,6 +64,10 @@ impl CampaignEmailMessageBuilder {
         self.body = input;
         self
     }
+    /// <p>The body of the email for recipients whose email clients don't render HTML content.</p>
+    pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.body
+    }
     /// <p>The verified email address to send the email from. The default address is the FromAddress specified for the email channel for the application.</p>
     pub fn from_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.from_address = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl CampaignEmailMessageBuilder {
     pub fn set_from_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.from_address = input;
         self
+    }
+    /// <p>The verified email address to send the email from. The default address is the FromAddress specified for the email channel for the application.</p>
+    pub fn get_from_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.from_address
     }
     /// <p>The body of the email, in HTML format, for recipients whose email clients render HTML content.</p>
     pub fn html_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl CampaignEmailMessageBuilder {
         self.html_body = input;
         self
     }
+    /// <p>The body of the email, in HTML format, for recipients whose email clients render HTML content.</p>
+    pub fn get_html_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.html_body
+    }
     /// <p>The subject line, or title, of the email.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl CampaignEmailMessageBuilder {
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
+    }
+    /// <p>The subject line, or title, of the email.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
     }
     /// Consumes the builder and constructs a [`CampaignEmailMessage`](crate::types::CampaignEmailMessage).
     pub fn build(self) -> crate::types::CampaignEmailMessage {

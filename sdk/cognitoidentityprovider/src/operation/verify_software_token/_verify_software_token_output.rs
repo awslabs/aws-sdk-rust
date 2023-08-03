@@ -66,6 +66,12 @@ impl VerifySoftwareTokenOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the verify software token.</p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::VerifySoftwareTokenResponseType> {
+        &self.status
+    }
     /// <p>The session that should be passed both ways in challenge-response calls to the service.</p>
     pub fn session(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session = ::std::option::Option::Some(input.into());
@@ -75,6 +81,10 @@ impl VerifySoftwareTokenOutputBuilder {
     pub fn set_session(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session = input;
         self
+    }
+    /// <p>The session that should be passed both ways in challenge-response calls to the service.</p>
+    pub fn get_session(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

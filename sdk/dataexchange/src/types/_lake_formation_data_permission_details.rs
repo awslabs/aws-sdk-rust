@@ -43,6 +43,10 @@ impl LakeFormationDataPermissionDetailsBuilder {
         self.lf_tag_policy = input;
         self
     }
+    /// <p>Details about the LF-tag policy.</p>
+    pub fn get_lf_tag_policy(&self) -> &::std::option::Option<crate::types::LfTagPolicyDetails> {
+        &self.lf_tag_policy
+    }
     /// Consumes the builder and constructs a [`LakeFormationDataPermissionDetails`](crate::types::LakeFormationDataPermissionDetails).
     pub fn build(self) -> crate::types::LakeFormationDataPermissionDetails {
         crate::types::LakeFormationDataPermissionDetails {

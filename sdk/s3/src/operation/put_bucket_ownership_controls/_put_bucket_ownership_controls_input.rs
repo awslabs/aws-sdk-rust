@@ -65,6 +65,10 @@ impl PutBucketOwnershipControlsInputBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The name of the Amazon S3 bucket whose <code>OwnershipControls</code> you want to set.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>The MD5 hash of the <code>OwnershipControls</code> request body. </p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub fn content_md5(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -76,6 +80,11 @@ impl PutBucketOwnershipControlsInputBuilder {
     pub fn set_content_md5(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_md5 = input;
         self
+    }
+    /// <p>The MD5 hash of the <code>OwnershipControls</code> request body. </p>
+    /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
+    pub fn get_content_md5(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_md5
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(
@@ -93,6 +102,10 @@ impl PutBucketOwnershipControlsInputBuilder {
         self.expected_bucket_owner = input;
         self
     }
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+    pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expected_bucket_owner
+    }
     /// <p>The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or ObjectWriter) that you want to apply to this Amazon S3 bucket.</p>
     pub fn ownership_controls(mut self, input: crate::types::OwnershipControls) -> Self {
         self.ownership_controls = ::std::option::Option::Some(input);
@@ -105,6 +118,12 @@ impl PutBucketOwnershipControlsInputBuilder {
     ) -> Self {
         self.ownership_controls = input;
         self
+    }
+    /// <p>The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or ObjectWriter) that you want to apply to this Amazon S3 bucket.</p>
+    pub fn get_ownership_controls(
+        &self,
+    ) -> &::std::option::Option<crate::types::OwnershipControls> {
+        &self.ownership_controls
     }
     /// Consumes the builder and constructs a [`PutBucketOwnershipControlsInput`](crate::operation::put_bucket_ownership_controls::PutBucketOwnershipControlsInput).
     pub fn build(

@@ -78,6 +78,10 @@ impl RelationalTableBuilder {
         self.data_source_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the data source.</p>
+    pub fn get_data_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_arn
+    }
     /// <p>The catalog associated with a table.</p>
     pub fn catalog(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog = ::std::option::Option::Some(input.into());
@@ -87,6 +91,10 @@ impl RelationalTableBuilder {
     pub fn set_catalog(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.catalog = input;
         self
+    }
+    /// <p>The catalog associated with a table.</p>
+    pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog
     }
     /// <p>The schema name. This name applies to certain relational database engines.</p>
     pub fn schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -98,6 +106,10 @@ impl RelationalTableBuilder {
         self.schema = input;
         self
     }
+    /// <p>The schema name. This name applies to certain relational database engines.</p>
+    pub fn get_schema(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema
+    }
     /// <p>The name of the relational table.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -107,6 +119,10 @@ impl RelationalTableBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the relational table.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `input_columns`.
     ///
@@ -126,6 +142,12 @@ impl RelationalTableBuilder {
     ) -> Self {
         self.input_columns = input;
         self
+    }
+    /// <p>The column schema of the table.</p>
+    pub fn get_input_columns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputColumn>> {
+        &self.input_columns
     }
     /// Consumes the builder and constructs a [`RelationalTable`](crate::types::RelationalTable).
     pub fn build(self) -> crate::types::RelationalTable {

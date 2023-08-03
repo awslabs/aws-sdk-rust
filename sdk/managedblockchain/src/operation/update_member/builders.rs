@@ -37,6 +37,10 @@ impl UpdateMemberFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateMember as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_member::builders::UpdateMemberInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl UpdateMemberFluentBuilder {
         self.inner = self.inner.set_network_id(input);
         self
     }
+    /// <p>The unique identifier of the Managed Blockchain network to which the member belongs.</p>
+    pub fn get_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_network_id()
+    }
     /// <p>The unique identifier of the member.</p>
     pub fn member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.member_id(input.into());
@@ -128,6 +136,10 @@ impl UpdateMemberFluentBuilder {
     pub fn set_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_member_id(input);
         self
+    }
+    /// <p>The unique identifier of the member.</p>
+    pub fn get_member_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_member_id()
     }
     /// <p>Configuration properties for publishing to Amazon CloudWatch Logs.</p>
     pub fn log_publishing_configuration(
@@ -144,5 +156,11 @@ impl UpdateMemberFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_log_publishing_configuration(input);
         self
+    }
+    /// <p>Configuration properties for publishing to Amazon CloudWatch Logs.</p>
+    pub fn get_log_publishing_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::MemberLogPublishingConfiguration> {
+        self.inner.get_log_publishing_configuration()
     }
 }

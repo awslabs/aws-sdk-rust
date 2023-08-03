@@ -70,6 +70,14 @@ impl DescribeInstanceTypeLimitsOutputBuilder {
         self.limits_by_role = input;
         self
     }
+    /// <p>Map that contains all applicable instance type limits.<code>data</code> refers to data nodes.<code>master</code> refers to dedicated master nodes.</p>
+    pub fn get_limits_by_role(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::Limits>,
+    > {
+        &self.limits_by_role
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

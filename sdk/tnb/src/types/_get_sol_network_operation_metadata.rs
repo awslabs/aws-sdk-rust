@@ -52,6 +52,10 @@ impl GetSolNetworkOperationMetadataBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The date that the resource was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The date that the resource was last modified.</p>
     pub fn last_modified(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified = ::std::option::Option::Some(input);
@@ -64,6 +68,10 @@ impl GetSolNetworkOperationMetadataBuilder {
     ) -> Self {
         self.last_modified = input;
         self
+    }
+    /// <p>The date that the resource was last modified.</p>
+    pub fn get_last_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified
     }
     /// Consumes the builder and constructs a [`GetSolNetworkOperationMetadata`](crate::types::GetSolNetworkOperationMetadata).
     pub fn build(self) -> crate::types::GetSolNetworkOperationMetadata {

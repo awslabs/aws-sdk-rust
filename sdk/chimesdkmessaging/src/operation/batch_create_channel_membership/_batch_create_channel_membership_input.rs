@@ -75,6 +75,10 @@ impl BatchCreateChannelMembershipInputBuilder {
         self.channel_arn = input;
         self
     }
+    /// <p>The ARN of the channel to which you're adding users or bots.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
+    }
     /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
     pub fn r#type(mut self, input: crate::types::ChannelMembershipType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -87,6 +91,10 @@ impl BatchCreateChannelMembershipInputBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ChannelMembershipType> {
+        &self.r#type
     }
     /// Appends an item to `member_arns`.
     ///
@@ -107,6 +115,12 @@ impl BatchCreateChannelMembershipInputBuilder {
         self.member_arns = input;
         self
     }
+    /// <p>The ARNs of the members you want to add to the channel. Only <code>AppInstanceUsers</code> and <code>AppInstanceBots</code> can be added as a channel member.</p>
+    pub fn get_member_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.member_arns
+    }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.chime_bearer = ::std::option::Option::Some(input.into());
@@ -116,6 +130,10 @@ impl BatchCreateChannelMembershipInputBuilder {
     pub fn set_chime_bearer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.chime_bearer = input;
         self
+    }
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
+    pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
+        &self.chime_bearer
     }
     /// <p>The ID of the SubChannel in the request. </p> <note>
     /// <p>Only required when creating membership in a SubChannel for a moderator in an elastic channel.</p>
@@ -136,6 +154,12 @@ impl BatchCreateChannelMembershipInputBuilder {
     ) -> Self {
         self.sub_channel_id = input;
         self
+    }
+    /// <p>The ID of the SubChannel in the request. </p> <note>
+    /// <p>Only required when creating membership in a SubChannel for a moderator in an elastic channel.</p>
+    /// </note>
+    pub fn get_sub_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sub_channel_id
     }
     /// Consumes the builder and constructs a [`BatchCreateChannelMembershipInput`](crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipInput).
     pub fn build(

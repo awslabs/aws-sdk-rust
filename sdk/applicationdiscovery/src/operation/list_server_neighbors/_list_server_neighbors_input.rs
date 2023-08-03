@@ -80,6 +80,10 @@ impl ListServerNeighborsInputBuilder {
         self.configuration_id = input;
         self
     }
+    /// <p>Configuration ID of the server for which neighbors are being listed.</p>
+    pub fn get_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_id
+    }
     /// <p>Flag to indicate if port and protocol information is needed as part of the response.</p>
     pub fn port_information_needed(mut self, input: bool) -> Self {
         self.port_information_needed = ::std::option::Option::Some(input);
@@ -89,6 +93,10 @@ impl ListServerNeighborsInputBuilder {
     pub fn set_port_information_needed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.port_information_needed = input;
         self
+    }
+    /// <p>Flag to indicate if port and protocol information is needed as part of the response.</p>
+    pub fn get_port_information_needed(&self) -> &::std::option::Option<bool> {
+        &self.port_information_needed
     }
     /// Appends an item to `neighbor_configuration_ids`.
     ///
@@ -112,6 +120,12 @@ impl ListServerNeighborsInputBuilder {
         self.neighbor_configuration_ids = input;
         self
     }
+    /// <p>List of configuration IDs to test for one-hop-away.</p>
+    pub fn get_neighbor_configuration_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.neighbor_configuration_ids
+    }
     /// <p>Maximum number of results to return in a single page of output.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -122,6 +136,10 @@ impl ListServerNeighborsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>Maximum number of results to return in a single page of output.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>Token to retrieve the next set of results. For example, if you previously specified 100 IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -131,6 +149,10 @@ impl ListServerNeighborsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Token to retrieve the next set of results. For example, if you previously specified 100 IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListServerNeighborsInput`](crate::operation::list_server_neighbors::ListServerNeighborsInput).
     pub fn build(

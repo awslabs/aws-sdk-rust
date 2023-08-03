@@ -37,6 +37,12 @@ impl UpdateDomainEntryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDomainEntry as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_domain_entry::builders::UpdateDomainEntryInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl UpdateDomainEntryFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>The name of the domain recordset to update.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p>An array of key-value pairs containing information about the domain entry.</p>
     pub fn domain_entry(mut self, input: crate::types::DomainEntry) -> Self {
         self.inner = self.inner.domain_entry(input);
@@ -139,5 +149,9 @@ impl UpdateDomainEntryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_domain_entry(input);
         self
+    }
+    /// <p>An array of key-value pairs containing information about the domain entry.</p>
+    pub fn get_domain_entry(&self) -> &::std::option::Option<crate::types::DomainEntry> {
+        self.inner.get_domain_entry()
     }
 }

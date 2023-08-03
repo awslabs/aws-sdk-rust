@@ -46,6 +46,10 @@ impl SidewalkSingleStartImportInfoBuilder {
         self.sidewalk_manufacturing_sn = input;
         self
     }
+    /// <p>The Sidewalk manufacturing serial number (SMSN) of the device added to the import task.</p>
+    pub fn get_sidewalk_manufacturing_sn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sidewalk_manufacturing_sn
+    }
     /// Consumes the builder and constructs a [`SidewalkSingleStartImportInfo`](crate::types::SidewalkSingleStartImportInfo).
     pub fn build(self) -> crate::types::SidewalkSingleStartImportInfo {
         crate::types::SidewalkSingleStartImportInfo {

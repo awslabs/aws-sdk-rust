@@ -103,6 +103,12 @@ impl ObservabilityConfigurationBuilder {
         self.observability_configuration_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of this observability configuration.</p>
+    pub fn get_observability_configuration_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.observability_configuration_arn
+    }
     /// <p>The customer-provided observability configuration name. It can be used in multiple revisions of a configuration.</p>
     pub fn observability_configuration_name(
         mut self,
@@ -119,6 +125,12 @@ impl ObservabilityConfigurationBuilder {
         self.observability_configuration_name = input;
         self
     }
+    /// <p>The customer-provided observability configuration name. It can be used in multiple revisions of a configuration.</p>
+    pub fn get_observability_configuration_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.observability_configuration_name
+    }
     /// <p>The configuration of the tracing feature within this observability configuration. If not specified, tracing isn't enabled.</p>
     pub fn trace_configuration(mut self, input: crate::types::TraceConfiguration) -> Self {
         self.trace_configuration = ::std::option::Option::Some(input);
@@ -131,6 +143,12 @@ impl ObservabilityConfigurationBuilder {
     ) -> Self {
         self.trace_configuration = input;
         self
+    }
+    /// <p>The configuration of the tracing feature within this observability configuration. If not specified, tracing isn't enabled.</p>
+    pub fn get_trace_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::TraceConfiguration> {
+        &self.trace_configuration
     }
     /// <p>The revision of this observability configuration. It's unique among all the active configurations (<code>"Status": "ACTIVE"</code>) that share the same <code>ObservabilityConfigurationName</code>.</p>
     pub fn observability_configuration_revision(mut self, input: i32) -> Self {
@@ -145,6 +163,10 @@ impl ObservabilityConfigurationBuilder {
         self.observability_configuration_revision = input;
         self
     }
+    /// <p>The revision of this observability configuration. It's unique among all the active configurations (<code>"Status": "ACTIVE"</code>) that share the same <code>ObservabilityConfigurationName</code>.</p>
+    pub fn get_observability_configuration_revision(&self) -> &::std::option::Option<i32> {
+        &self.observability_configuration_revision
+    }
     /// <p>It's set to <code>true</code> for the configuration with the highest <code>Revision</code> among all configurations that share the same <code>ObservabilityConfigurationName</code>. It's set to <code>false</code> otherwise.</p>
     pub fn latest(mut self, input: bool) -> Self {
         self.latest = ::std::option::Option::Some(input);
@@ -154,6 +176,10 @@ impl ObservabilityConfigurationBuilder {
     pub fn set_latest(mut self, input: ::std::option::Option<bool>) -> Self {
         self.latest = input;
         self
+    }
+    /// <p>It's set to <code>true</code> for the configuration with the highest <code>Revision</code> among all configurations that share the same <code>ObservabilityConfigurationName</code>. It's set to <code>false</code> otherwise.</p>
+    pub fn get_latest(&self) -> &::std::option::Option<bool> {
+        &self.latest
     }
     /// <p>The current state of the observability configuration. If the status of a configuration revision is <code>INACTIVE</code>, it was deleted and can't be used. Inactive configuration revisions are permanently removed some time after they are deleted.</p>
     pub fn status(mut self, input: crate::types::ObservabilityConfigurationStatus) -> Self {
@@ -168,6 +194,12 @@ impl ObservabilityConfigurationBuilder {
         self.status = input;
         self
     }
+    /// <p>The current state of the observability configuration. If the status of a configuration revision is <code>INACTIVE</code>, it was deleted and can't be used. Inactive configuration revisions are permanently removed some time after they are deleted.</p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ObservabilityConfigurationStatus> {
+        &self.status
+    }
     /// <p>The time when the observability configuration was created. It's in Unix time stamp format.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -181,6 +213,10 @@ impl ObservabilityConfigurationBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The time when the observability configuration was created. It's in Unix time stamp format.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The time when the observability configuration was deleted. It's in Unix time stamp format.</p>
     pub fn deleted_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.deleted_at = ::std::option::Option::Some(input);
@@ -193,6 +229,10 @@ impl ObservabilityConfigurationBuilder {
     ) -> Self {
         self.deleted_at = input;
         self
+    }
+    /// <p>The time when the observability configuration was deleted. It's in Unix time stamp format.</p>
+    pub fn get_deleted_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.deleted_at
     }
     /// Consumes the builder and constructs a [`ObservabilityConfiguration`](crate::types::ObservabilityConfiguration).
     pub fn build(self) -> crate::types::ObservabilityConfiguration {

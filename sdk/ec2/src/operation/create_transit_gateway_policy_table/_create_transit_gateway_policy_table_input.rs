@@ -62,6 +62,10 @@ impl CreateTransitGatewayPolicyTableInputBuilder {
         self.transit_gateway_id = input;
         self
     }
+    /// <p>The ID of the transit gateway used for the policy table.</p>
+    pub fn get_transit_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_id
+    }
     /// Appends an item to `tag_specifications`.
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
@@ -81,6 +85,12 @@ impl CreateTransitGatewayPolicyTableInputBuilder {
         self.tag_specifications = input;
         self
     }
+    /// <p>The tags specification for the transit gateway policy table created during the request.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -90,6 +100,10 @@ impl CreateTransitGatewayPolicyTableInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`CreateTransitGatewayPolicyTableInput`](crate::operation::create_transit_gateway_policy_table::CreateTransitGatewayPolicyTableInput).
     pub fn build(

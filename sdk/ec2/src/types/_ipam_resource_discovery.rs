@@ -134,6 +134,10 @@ impl IpamResourceDiscoveryBuilder {
         self.owner_id = input;
         self
     }
+    /// <p>The ID of the owner.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
+    }
     /// <p>The resource discovery ID.</p>
     pub fn ipam_resource_discovery_id(
         mut self,
@@ -149,6 +153,10 @@ impl IpamResourceDiscoveryBuilder {
     ) -> Self {
         self.ipam_resource_discovery_id = input;
         self
+    }
+    /// <p>The resource discovery ID.</p>
+    pub fn get_ipam_resource_discovery_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipam_resource_discovery_id
     }
     /// <p>The resource discovery Amazon Resource Name (ARN).</p>
     pub fn ipam_resource_discovery_arn(
@@ -166,6 +174,10 @@ impl IpamResourceDiscoveryBuilder {
         self.ipam_resource_discovery_arn = input;
         self
     }
+    /// <p>The resource discovery Amazon Resource Name (ARN).</p>
+    pub fn get_ipam_resource_discovery_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipam_resource_discovery_arn
+    }
     /// <p>The resource discovery Region.</p>
     pub fn ipam_resource_discovery_region(
         mut self,
@@ -182,6 +194,12 @@ impl IpamResourceDiscoveryBuilder {
         self.ipam_resource_discovery_region = input;
         self
     }
+    /// <p>The resource discovery Region.</p>
+    pub fn get_ipam_resource_discovery_region(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.ipam_resource_discovery_region
+    }
     /// <p>The resource discovery description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -191,6 +209,10 @@ impl IpamResourceDiscoveryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The resource discovery description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `operating_regions`.
     ///
@@ -211,6 +233,12 @@ impl IpamResourceDiscoveryBuilder {
         self.operating_regions = input;
         self
     }
+    /// <p>The operating Regions for the resource discovery. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
+    pub fn get_operating_regions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpamOperatingRegion>> {
+        &self.operating_regions
+    }
     /// <p>Defines if the resource discovery is the default. The default resource discovery is the resource discovery automatically created when you create an IPAM.</p>
     pub fn is_default(mut self, input: bool) -> Self {
         self.is_default = ::std::option::Option::Some(input);
@@ -220,6 +248,10 @@ impl IpamResourceDiscoveryBuilder {
     pub fn set_is_default(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_default = input;
         self
+    }
+    /// <p>Defines if the resource discovery is the default. The default resource discovery is the resource discovery automatically created when you create an IPAM.</p>
+    pub fn get_is_default(&self) -> &::std::option::Option<bool> {
+        &self.is_default
     }
     /// <p>The lifecycle state of the resource discovery.</p>
     /// <ul>
@@ -262,6 +294,24 @@ impl IpamResourceDiscoveryBuilder {
         self.state = input;
         self
     }
+    /// <p>The lifecycle state of the resource discovery.</p>
+    /// <ul>
+    /// <li> <p> <code>create-in-progress</code> - Resource discovery is being created.</p> </li>
+    /// <li> <p> <code>create-complete</code> - Resource discovery creation is complete.</p> </li>
+    /// <li> <p> <code>create-failed</code> - Resource discovery creation has failed.</p> </li>
+    /// <li> <p> <code>modify-in-progress</code> - Resource discovery is being modified.</p> </li>
+    /// <li> <p> <code>modify-complete</code> - Resource discovery modification is complete.</p> </li>
+    /// <li> <p> <code>modify-failed</code> - Resource discovery modification has failed.</p> </li>
+    /// <li> <p> <code>delete-in-progress</code> - Resource discovery is being deleted.</p> </li>
+    /// <li> <p> <code>delete-complete</code> - Resource discovery deletion is complete.</p> </li>
+    /// <li> <p> <code>delete-failed</code> - Resource discovery deletion has failed.</p> </li>
+    /// <li> <p> <code>isolate-in-progress</code> - Amazon Web Services account that created the resource discovery has been removed and the resource discovery is being isolated.</p> </li>
+    /// <li> <p> <code>isolate-complete</code> - Resource discovery isolation is complete.</p> </li>
+    /// <li> <p> <code>restore-in-progress</code> - Amazon Web Services account that created the resource discovery and was isolated has been restored.</p> </li>
+    /// </ul>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::IpamResourceDiscoveryState> {
+        &self.state
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -280,6 +330,10 @@ impl IpamResourceDiscoveryBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`IpamResourceDiscovery`](crate::types::IpamResourceDiscovery).
     pub fn build(self) -> crate::types::IpamResourceDiscovery {

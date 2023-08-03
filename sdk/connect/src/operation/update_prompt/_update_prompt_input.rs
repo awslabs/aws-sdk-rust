@@ -71,6 +71,10 @@ impl UpdatePromptInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>A unique identifier for the prompt.</p>
     pub fn prompt_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prompt_id = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl UpdatePromptInputBuilder {
     pub fn set_prompt_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prompt_id = input;
         self
+    }
+    /// <p>A unique identifier for the prompt.</p>
+    pub fn get_prompt_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prompt_id
     }
     /// <p>The name of the prompt.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -91,6 +99,10 @@ impl UpdatePromptInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the prompt.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description of the prompt.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -101,6 +113,10 @@ impl UpdatePromptInputBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the prompt.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The URI for the S3 bucket where the prompt is stored.</p>
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_uri = ::std::option::Option::Some(input.into());
@@ -110,6 +126,10 @@ impl UpdatePromptInputBuilder {
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_uri = input;
         self
+    }
+    /// <p>The URI for the S3 bucket where the prompt is stored.</p>
+    pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_uri
     }
     /// Consumes the builder and constructs a [`UpdatePromptInput`](crate::operation::update_prompt::UpdatePromptInput).
     pub fn build(

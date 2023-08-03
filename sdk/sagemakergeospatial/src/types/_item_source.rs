@@ -80,6 +80,10 @@ impl ItemSourceBuilder {
         self.id = input;
         self
     }
+    /// <p>A unique Id for the source item.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The item Geometry in GeoJson format.</p>
     pub fn geometry(mut self, input: crate::types::Geometry) -> Self {
         self.geometry = ::std::option::Option::Some(input);
@@ -89,6 +93,10 @@ impl ItemSourceBuilder {
     pub fn set_geometry(mut self, input: ::std::option::Option<crate::types::Geometry>) -> Self {
         self.geometry = input;
         self
+    }
+    /// <p>The item Geometry in GeoJson format.</p>
+    pub fn get_geometry(&self) -> &::std::option::Option<crate::types::Geometry> {
+        &self.geometry
     }
     /// Adds a key-value pair to `assets`.
     ///
@@ -115,6 +123,14 @@ impl ItemSourceBuilder {
         self.assets = input;
         self
     }
+    /// <p>This is a dictionary of Asset Objects data associated with the Item that can be downloaded or streamed, each with a unique key.</p>
+    pub fn get_assets(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::AssetValue>,
+    > {
+        &self.assets
+    }
     /// <p>The searchable date and time of the item, in UTC.</p>
     pub fn date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.date_time = ::std::option::Option::Some(input);
@@ -128,6 +144,10 @@ impl ItemSourceBuilder {
         self.date_time = input;
         self
     }
+    /// <p>The searchable date and time of the item, in UTC.</p>
+    pub fn get_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.date_time
+    }
     /// <p>This field contains additional properties of the item.</p>
     pub fn properties(mut self, input: crate::types::Properties) -> Self {
         self.properties = ::std::option::Option::Some(input);
@@ -140,6 +160,10 @@ impl ItemSourceBuilder {
     ) -> Self {
         self.properties = input;
         self
+    }
+    /// <p>This field contains additional properties of the item.</p>
+    pub fn get_properties(&self) -> &::std::option::Option<crate::types::Properties> {
+        &self.properties
     }
     /// Consumes the builder and constructs a [`ItemSource`](crate::types::ItemSource).
     pub fn build(self) -> crate::types::ItemSource {

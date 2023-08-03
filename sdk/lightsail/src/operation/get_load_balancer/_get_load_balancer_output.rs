@@ -50,6 +50,10 @@ impl GetLoadBalancerOutputBuilder {
         self.load_balancer = input;
         self
     }
+    /// <p>An object containing information about your load balancer.</p>
+    pub fn get_load_balancer(&self) -> &::std::option::Option<crate::types::LoadBalancer> {
+        &self.load_balancer
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

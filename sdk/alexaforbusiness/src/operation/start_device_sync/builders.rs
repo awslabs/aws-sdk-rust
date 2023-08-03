@@ -44,6 +44,12 @@ impl StartDeviceSyncFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartDeviceSync as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_device_sync::builders::StartDeviceSyncInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,10 @@ impl StartDeviceSyncFluentBuilder {
         self.inner = self.inner.set_room_arn(input);
         self
     }
+    /// <p>The ARN of the room with which the device to sync is associated. Required.</p>
+    pub fn get_room_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_room_arn()
+    }
     /// <p>The ARN of the device to sync. Required.</p>
     pub fn device_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_arn(input.into());
@@ -143,6 +153,10 @@ impl StartDeviceSyncFluentBuilder {
     pub fn set_device_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_arn(input);
         self
+    }
+    /// <p>The ARN of the device to sync. Required.</p>
+    pub fn get_device_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_arn()
     }
     /// Appends an item to `Features`.
     ///
@@ -160,5 +174,9 @@ impl StartDeviceSyncFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_features(input);
         self
+    }
+    /// <p>Request structure to start the device sync. Required.</p>
+    pub fn get_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Feature>> {
+        self.inner.get_features()
     }
 }

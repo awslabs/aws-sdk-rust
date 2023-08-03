@@ -36,6 +36,12 @@ impl SearchProductsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SearchProducts as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::search_products::builders::SearchProductsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +149,14 @@ impl SearchProductsFluentBuilder {
         self.inner = self.inner.set_accept_language(input);
         self
     }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_accept_language()
+    }
     /// Adds a key-value pair to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -169,6 +183,17 @@ impl SearchProductsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>The search filters. If no search filters are specified, the output includes all products to which the caller has access.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::ProductViewFilterBy,
+            ::std::vec::Vec<::std::string::String>,
+        >,
+    > {
+        self.inner.get_filters()
+    }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.inner = self.inner.page_size(input);
@@ -178,6 +203,10 @@ impl SearchProductsFluentBuilder {
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_page_size(input);
         self
+    }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        self.inner.get_page_size()
     }
     /// <p>The sort field. If no value is specified, the results are not sorted.</p>
     pub fn sort_by(mut self, input: crate::types::ProductViewSortBy) -> Self {
@@ -192,6 +221,10 @@ impl SearchProductsFluentBuilder {
         self.inner = self.inner.set_sort_by(input);
         self
     }
+    /// <p>The sort field. If no value is specified, the results are not sorted.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ProductViewSortBy> {
+        self.inner.get_sort_by()
+    }
     /// <p>The sort order. If no value is specified, the results are not sorted.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.inner = self.inner.sort_order(input);
@@ -202,6 +235,10 @@ impl SearchProductsFluentBuilder {
         self.inner = self.inner.set_sort_order(input);
         self
     }
+    /// <p>The sort order. If no value is specified, the results are not sorted.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        self.inner.get_sort_order()
+    }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.page_token(input.into());
@@ -211,5 +248,9 @@ impl SearchProductsFluentBuilder {
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_page_token(input);
         self
+    }
+    /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_page_token()
     }
 }

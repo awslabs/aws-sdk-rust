@@ -49,6 +49,10 @@ impl UpdateAccountSettingsInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The Amazon Chime account settings to update.</p>
     pub fn account_settings(mut self, input: crate::types::AccountSettings) -> Self {
         self.account_settings = ::std::option::Option::Some(input);
@@ -61,6 +65,10 @@ impl UpdateAccountSettingsInputBuilder {
     ) -> Self {
         self.account_settings = input;
         self
+    }
+    /// <p>The Amazon Chime account settings to update.</p>
+    pub fn get_account_settings(&self) -> &::std::option::Option<crate::types::AccountSettings> {
+        &self.account_settings
     }
     /// Consumes the builder and constructs a [`UpdateAccountSettingsInput`](crate::operation::update_account_settings::UpdateAccountSettingsInput).
     pub fn build(

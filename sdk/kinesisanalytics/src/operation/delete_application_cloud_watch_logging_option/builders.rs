@@ -39,6 +39,10 @@ impl DeleteApplicationCloudWatchLoggingOptionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteApplicationCloudWatchLoggingOption as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_application_cloud_watch_logging_option::builders::DeleteApplicationCloudWatchLoggingOptionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -109,6 +113,10 @@ impl DeleteApplicationCloudWatchLoggingOptionFluentBuilder {
         self.inner = self.inner.set_application_name(input);
         self
     }
+    /// <p>The Kinesis Analytics application name.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_name()
+    }
     /// <p>The version ID of the Kinesis Analytics application.</p>
     pub fn current_application_version_id(mut self, input: i64) -> Self {
         self.inner = self.inner.current_application_version_id(input);
@@ -118,6 +126,10 @@ impl DeleteApplicationCloudWatchLoggingOptionFluentBuilder {
     pub fn set_current_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_current_application_version_id(input);
         self
+    }
+    /// <p>The version ID of the Kinesis Analytics application.</p>
+    pub fn get_current_application_version_id(&self) -> &::std::option::Option<i64> {
+        self.inner.get_current_application_version_id()
     }
     /// <p>The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation. </p>
     pub fn cloud_watch_logging_option_id(
@@ -134,5 +146,11 @@ impl DeleteApplicationCloudWatchLoggingOptionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cloud_watch_logging_option_id(input);
         self
+    }
+    /// <p>The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation. </p>
+    pub fn get_cloud_watch_logging_option_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cloud_watch_logging_option_id()
     }
 }

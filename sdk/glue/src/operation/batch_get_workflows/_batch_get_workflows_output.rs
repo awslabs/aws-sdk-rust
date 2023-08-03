@@ -64,6 +64,10 @@ impl BatchGetWorkflowsOutputBuilder {
         self.workflows = input;
         self
     }
+    /// <p>A list of workflow resource metadata.</p>
+    pub fn get_workflows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Workflow>> {
+        &self.workflows
+    }
     /// Appends an item to `missing_workflows`.
     ///
     /// To override the contents of this collection use [`set_missing_workflows`](Self::set_missing_workflows).
@@ -85,6 +89,12 @@ impl BatchGetWorkflowsOutputBuilder {
     ) -> Self {
         self.missing_workflows = input;
         self
+    }
+    /// <p>A list of names of workflows not found.</p>
+    pub fn get_missing_workflows(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.missing_workflows
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

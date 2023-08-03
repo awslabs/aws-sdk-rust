@@ -39,6 +39,10 @@ impl StopStreamInputBuilder {
         self.channel_arn = input;
         self
     }
+    /// <p>ARN of the channel for which the stream is to be stopped.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
+    }
     /// Consumes the builder and constructs a [`StopStreamInput`](crate::operation::stop_stream::StopStreamInput).
     pub fn build(
         self,

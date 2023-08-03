@@ -47,6 +47,10 @@ impl DeleteIpSetInputBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The unique ID of the detector associated with the IPSet.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// <p>The unique ID of the IPSet to delete.</p>
     pub fn ip_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_set_id = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DeleteIpSetInputBuilder {
     pub fn set_ip_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_set_id = input;
         self
+    }
+    /// <p>The unique ID of the IPSet to delete.</p>
+    pub fn get_ip_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_set_id
     }
     /// Consumes the builder and constructs a [`DeleteIpSetInput`](crate::operation::delete_ip_set::DeleteIpSetInput).
     pub fn build(

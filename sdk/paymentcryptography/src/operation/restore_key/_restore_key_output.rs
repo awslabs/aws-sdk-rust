@@ -46,6 +46,10 @@ impl RestoreKeyOutputBuilder {
         self.key = input;
         self
     }
+    /// <p>The key material of the restored key. The <code>KeyState</code> will change to <code>CREATE_COMPLETE</code> and value for <code>DeletePendingTimestamp</code> gets removed. </p>
+    pub fn get_key(&self) -> &::std::option::Option<crate::types::Key> {
+        &self.key
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

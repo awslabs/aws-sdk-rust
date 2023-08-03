@@ -40,6 +40,10 @@ impl RootStorageBuilder {
         self.capacity = input;
         self
     }
+    /// <p>The size of the root volume.</p>
+    pub fn get_capacity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.capacity
+    }
     /// Consumes the builder and constructs a [`RootStorage`](crate::types::RootStorage).
     pub fn build(self) -> crate::types::RootStorage {
         crate::types::RootStorage {

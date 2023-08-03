@@ -41,6 +41,10 @@ impl AssociateDrtLogBucketInputBuilder {
         self.log_bucket = input;
         self
     }
+    /// <p>The Amazon S3 bucket that contains the logs that you want to share.</p>
+    pub fn get_log_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_bucket
+    }
     /// Consumes the builder and constructs a [`AssociateDrtLogBucketInput`](crate::operation::associate_drt_log_bucket::AssociateDrtLogBucketInput).
     pub fn build(
         self,

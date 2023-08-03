@@ -56,6 +56,10 @@ impl SnapshotLimitsBuilder {
         self.manual_snapshots_limit = input;
         self
     }
+    /// <p>The maximum number of manual snapshots allowed.</p>
+    pub fn get_manual_snapshots_limit(&self) -> &::std::option::Option<i32> {
+        &self.manual_snapshots_limit
+    }
     /// <p>The current number of manual snapshots of the directory.</p>
     pub fn manual_snapshots_current_count(mut self, input: i32) -> Self {
         self.manual_snapshots_current_count = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl SnapshotLimitsBuilder {
     pub fn set_manual_snapshots_current_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.manual_snapshots_current_count = input;
         self
+    }
+    /// <p>The current number of manual snapshots of the directory.</p>
+    pub fn get_manual_snapshots_current_count(&self) -> &::std::option::Option<i32> {
+        &self.manual_snapshots_current_count
     }
     /// <p>Indicates if the manual snapshot limit has been reached.</p>
     pub fn manual_snapshots_limit_reached(mut self, input: bool) -> Self {
@@ -78,6 +86,10 @@ impl SnapshotLimitsBuilder {
     ) -> Self {
         self.manual_snapshots_limit_reached = input;
         self
+    }
+    /// <p>Indicates if the manual snapshot limit has been reached.</p>
+    pub fn get_manual_snapshots_limit_reached(&self) -> &::std::option::Option<bool> {
+        &self.manual_snapshots_limit_reached
     }
     /// Consumes the builder and constructs a [`SnapshotLimits`](crate::types::SnapshotLimits).
     pub fn build(self) -> crate::types::SnapshotLimits {

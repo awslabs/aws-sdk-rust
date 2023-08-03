@@ -46,6 +46,10 @@ impl DescribeFrameworkInputBuilder {
         self.framework_name = input;
         self
     }
+    /// <p>The unique name of a framework.</p>
+    pub fn get_framework_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.framework_name
+    }
     /// Consumes the builder and constructs a [`DescribeFrameworkInput`](crate::operation::describe_framework::DescribeFrameworkInput).
     pub fn build(
         self,

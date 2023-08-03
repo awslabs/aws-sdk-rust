@@ -127,6 +127,10 @@ impl PushNotificationTemplateRequestBuilder {
         self.adm = input;
         self
     }
+    /// <p>The message template to use for the ADM (Amazon Device Messaging) channel. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
+    pub fn get_adm(&self) -> &::std::option::Option<crate::types::AndroidPushNotificationTemplate> {
+        &self.adm
+    }
     /// <p>The message template to use for the APNs (Apple Push Notification service) channel. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
     pub fn apns(mut self, input: crate::types::ApnsPushNotificationTemplate) -> Self {
         self.apns = ::std::option::Option::Some(input);
@@ -139,6 +143,10 @@ impl PushNotificationTemplateRequestBuilder {
     ) -> Self {
         self.apns = input;
         self
+    }
+    /// <p>The message template to use for the APNs (Apple Push Notification service) channel. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
+    pub fn get_apns(&self) -> &::std::option::Option<crate::types::ApnsPushNotificationTemplate> {
+        &self.apns
     }
     /// <p>The message template to use for the Baidu (Baidu Cloud Push) channel. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
     pub fn baidu(mut self, input: crate::types::AndroidPushNotificationTemplate) -> Self {
@@ -153,6 +161,12 @@ impl PushNotificationTemplateRequestBuilder {
         self.baidu = input;
         self
     }
+    /// <p>The message template to use for the Baidu (Baidu Cloud Push) channel. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
+    pub fn get_baidu(
+        &self,
+    ) -> &::std::option::Option<crate::types::AndroidPushNotificationTemplate> {
+        &self.baidu
+    }
     /// <p>The default message template to use for push notification channels.</p>
     pub fn default_value(mut self, input: crate::types::DefaultPushNotificationTemplate) -> Self {
         self.default_value = ::std::option::Option::Some(input);
@@ -165,6 +179,12 @@ impl PushNotificationTemplateRequestBuilder {
     ) -> Self {
         self.default_value = input;
         self
+    }
+    /// <p>The default message template to use for push notification channels.</p>
+    pub fn get_default(
+        &self,
+    ) -> &::std::option::Option<crate::types::DefaultPushNotificationTemplate> {
+        &self.default_value
     }
     /// <p>A JSON object that specifies the default values to use for message variables in the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable. When you create a message that's based on the template, you can override these defaults with message-specific and address-specific variables and values.</p>
     pub fn default_substitutions(
@@ -182,6 +202,10 @@ impl PushNotificationTemplateRequestBuilder {
         self.default_substitutions = input;
         self
     }
+    /// <p>A JSON object that specifies the default values to use for message variables in the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable. When you create a message that's based on the template, you can override these defaults with message-specific and address-specific variables and values.</p>
+    pub fn get_default_substitutions(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_substitutions
+    }
     /// <p>The message template to use for the GCM channel, which is used to send notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
     pub fn gcm(mut self, input: crate::types::AndroidPushNotificationTemplate) -> Self {
         self.gcm = ::std::option::Option::Some(input);
@@ -194,6 +218,10 @@ impl PushNotificationTemplateRequestBuilder {
     ) -> Self {
         self.gcm = input;
         self
+    }
+    /// <p>The message template to use for the GCM channel, which is used to send notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
+    pub fn get_gcm(&self) -> &::std::option::Option<crate::types::AndroidPushNotificationTemplate> {
+        &self.gcm
     }
     /// <p>The unique identifier for the recommender model to use for the message template. Amazon Pinpoint uses this value to determine how to retrieve and process data from a recommender model when it sends messages that use the template, if the template contains message variables for recommendation data.</p>
     pub fn recommender_id(
@@ -210,6 +238,10 @@ impl PushNotificationTemplateRequestBuilder {
     ) -> Self {
         self.recommender_id = input;
         self
+    }
+    /// <p>The unique identifier for the recommender model to use for the message template. Amazon Pinpoint uses this value to determine how to retrieve and process data from a recommender model when it sends messages that use the template, if the template contains message variables for recommendation data.</p>
+    pub fn get_recommender_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommender_id
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -242,6 +274,17 @@ impl PushNotificationTemplateRequestBuilder {
         self.tags = input;
         self
     }
+    /// <note>
+    /// <p>As of <b>22-05-2023</b> tags has been deprecated for update operations. After this date any value in tags is not processed and an error code is not returned. To manage tags we recommend using either <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/tags-resource-arn.html">Tags</a> in the <i>API Reference for Amazon Pinpoint</i>, <a href="https://docs.aws.amazon.com/cli/latest/reference/resourcegroupstaggingapi/index.html">resourcegroupstaggingapi</a> commands in the <i>AWS Command Line Interface Documentation</i> or <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/resourcegroupstaggingapi/package-summary.html">resourcegroupstaggingapi</a> in the <i>AWS SDK</i>.</p>
+    /// </note>
+    /// <p>(Deprecated) A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>A custom description of the message template.</p>
     pub fn template_description(
         mut self,
@@ -257,6 +300,10 @@ impl PushNotificationTemplateRequestBuilder {
     ) -> Self {
         self.template_description = input;
         self
+    }
+    /// <p>A custom description of the message template.</p>
+    pub fn get_template_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_description
     }
     /// Consumes the builder and constructs a [`PushNotificationTemplateRequest`](crate::types::PushNotificationTemplateRequest).
     pub fn build(self) -> crate::types::PushNotificationTemplateRequest {

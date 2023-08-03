@@ -44,6 +44,10 @@ impl LabelSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>An individual label specification.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`LabelSummary`](crate::types::LabelSummary).
     pub fn build(self) -> crate::types::LabelSummary {
         crate::types::LabelSummary { name: self.name }

@@ -54,6 +54,12 @@ impl CostCategorySplitChargeRuleParameterBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The parameter type. </p>
+    pub fn get_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::CostCategorySplitChargeRuleParameterType> {
+        &self.r#type
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -72,6 +78,10 @@ impl CostCategorySplitChargeRuleParameterBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>The parameter values. </p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`CostCategorySplitChargeRuleParameter`](crate::types::CostCategorySplitChargeRuleParameter).
     pub fn build(self) -> crate::types::CostCategorySplitChargeRuleParameter {

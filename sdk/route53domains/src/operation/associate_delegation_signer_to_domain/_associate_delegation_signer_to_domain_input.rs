@@ -49,6 +49,10 @@ impl AssociateDelegationSignerToDomainInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The information about a key, including the algorithm, public key-value, and flags.</p>
     pub fn signing_attributes(mut self, input: crate::types::DnssecSigningAttributes) -> Self {
         self.signing_attributes = ::std::option::Option::Some(input);
@@ -61,6 +65,12 @@ impl AssociateDelegationSignerToDomainInputBuilder {
     ) -> Self {
         self.signing_attributes = input;
         self
+    }
+    /// <p>The information about a key, including the algorithm, public key-value, and flags.</p>
+    pub fn get_signing_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::DnssecSigningAttributes> {
+        &self.signing_attributes
     }
     /// Consumes the builder and constructs a [`AssociateDelegationSignerToDomainInput`](crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainInput, ::aws_smithy_http::operation::error::BuildError>{

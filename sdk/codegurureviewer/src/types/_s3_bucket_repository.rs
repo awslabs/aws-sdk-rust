@@ -48,6 +48,10 @@ impl S3BucketRepositoryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the repository when the <code>ProviderType</code> is <code>S3Bucket</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>An <code>S3RepositoryDetails</code> object that specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes the S3 object keys for a source code .zip file and for a build artifacts .zip file.</p>
     pub fn details(mut self, input: crate::types::S3RepositoryDetails) -> Self {
         self.details = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl S3BucketRepositoryBuilder {
     ) -> Self {
         self.details = input;
         self
+    }
+    /// <p>An <code>S3RepositoryDetails</code> object that specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes the S3 object keys for a source code .zip file and for a build artifacts .zip file.</p>
+    pub fn get_details(&self) -> &::std::option::Option<crate::types::S3RepositoryDetails> {
+        &self.details
     }
     /// Consumes the builder and constructs a [`S3BucketRepository`](crate::types::S3BucketRepository).
     pub fn build(self) -> crate::types::S3BucketRepository {

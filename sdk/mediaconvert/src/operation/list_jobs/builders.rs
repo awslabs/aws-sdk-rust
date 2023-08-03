@@ -36,6 +36,10 @@ impl ListJobsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListJobs as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_jobs::builders::ListJobsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl ListJobsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// Optional. Number of jobs, up to twenty, that will be returned at one time.
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// Optional. Use this string, provided with the response to a previous request, to request the next batch of jobs.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -133,6 +141,10 @@ impl ListJobsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// Optional. Use this string, provided with the response to a previous request, to request the next batch of jobs.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
     pub fn order(mut self, input: crate::types::Order) -> Self {
@@ -144,6 +156,10 @@ impl ListJobsFluentBuilder {
         self.inner = self.inner.set_order(input);
         self
     }
+    /// Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
+    pub fn get_order(&self) -> &::std::option::Option<crate::types::Order> {
+        self.inner.get_order()
+    }
     /// Optional. Provide a queue name to get back only jobs from that queue.
     pub fn queue(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.queue(input.into());
@@ -154,6 +170,10 @@ impl ListJobsFluentBuilder {
         self.inner = self.inner.set_queue(input);
         self
     }
+    /// Optional. Provide a queue name to get back only jobs from that queue.
+    pub fn get_queue(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_queue()
+    }
     /// Optional. A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
     pub fn status(mut self, input: crate::types::JobStatus) -> Self {
         self.inner = self.inner.status(input);
@@ -163,5 +183,9 @@ impl ListJobsFluentBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// Optional. A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
+        self.inner.get_status()
     }
 }

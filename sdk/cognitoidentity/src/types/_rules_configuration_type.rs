@@ -53,6 +53,11 @@ impl RulesConfigurationTypeBuilder {
         self.rules = input;
         self
     }
+    /// <p>An array of rules. You can specify up to 25 rules per identity provider.</p>
+    /// <p>Rules are evaluated in order. The first one to match specifies the role.</p>
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MappingRule>> {
+        &self.rules
+    }
     /// Consumes the builder and constructs a [`RulesConfigurationType`](crate::types::RulesConfigurationType).
     pub fn build(self) -> crate::types::RulesConfigurationType {
         crate::types::RulesConfigurationType { rules: self.rules }

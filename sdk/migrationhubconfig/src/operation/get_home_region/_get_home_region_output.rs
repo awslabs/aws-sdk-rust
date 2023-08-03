@@ -46,6 +46,10 @@ impl GetHomeRegionOutputBuilder {
         self.home_region = input;
         self
     }
+    /// <p>The name of the home region of the calling account.</p>
+    pub fn get_home_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.home_region
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

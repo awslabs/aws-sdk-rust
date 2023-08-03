@@ -47,6 +47,10 @@ impl DeleteContainerRecipeInputBuilder {
         self.container_recipe_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the container recipe to delete.</p>
+    pub fn get_container_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_recipe_arn
+    }
     /// Consumes the builder and constructs a [`DeleteContainerRecipeInput`](crate::operation::delete_container_recipe::DeleteContainerRecipeInput).
     pub fn build(
         self,

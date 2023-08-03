@@ -47,6 +47,10 @@ impl DeleteStateMachineAliasInputBuilder {
         self.state_machine_alias_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the state machine alias to delete.</p>
+    pub fn get_state_machine_alias_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_machine_alias_arn
+    }
     /// Consumes the builder and constructs a [`DeleteStateMachineAliasInput`](crate::operation::delete_state_machine_alias::DeleteStateMachineAliasInput).
     pub fn build(
         self,

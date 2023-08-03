@@ -55,6 +55,12 @@ impl GetContainerServicePowersOutputBuilder {
         self.powers = input;
         self
     }
+    /// <p>An array of objects that describe the powers that can be specified for a container service.</p>
+    pub fn get_powers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerServicePower>> {
+        &self.powers
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

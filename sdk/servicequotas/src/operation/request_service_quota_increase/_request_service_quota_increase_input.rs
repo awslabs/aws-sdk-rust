@@ -55,6 +55,10 @@ impl RequestServiceQuotaIncreaseInputBuilder {
         self.service_code = input;
         self
     }
+    /// <p>The service identifier.</p>
+    pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_code
+    }
     /// <p>The quota identifier.</p>
     pub fn quota_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quota_code = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl RequestServiceQuotaIncreaseInputBuilder {
         self.quota_code = input;
         self
     }
+    /// <p>The quota identifier.</p>
+    pub fn get_quota_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quota_code
+    }
     /// <p>The new, increased value for the quota.</p>
     pub fn desired_value(mut self, input: f64) -> Self {
         self.desired_value = ::std::option::Option::Some(input);
@@ -74,6 +82,10 @@ impl RequestServiceQuotaIncreaseInputBuilder {
     pub fn set_desired_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.desired_value = input;
         self
+    }
+    /// <p>The new, increased value for the quota.</p>
+    pub fn get_desired_value(&self) -> &::std::option::Option<f64> {
+        &self.desired_value
     }
     /// Consumes the builder and constructs a [`RequestServiceQuotaIncreaseInput`](crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseInput).
     pub fn build(

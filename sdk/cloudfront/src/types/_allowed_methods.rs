@@ -72,6 +72,10 @@ impl AllowedMethodsBuilder {
         self.quantity = input;
         self
     }
+    /// <p>The number of HTTP methods that you want CloudFront to forward to your origin. Valid values are 2 (for <code>GET</code> and <code>HEAD</code> requests), 3 (for <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests) and 7 (for <code>GET, HEAD, OPTIONS, PUT, PATCH, POST</code>, and <code>DELETE</code> requests).</p>
+    pub fn get_quantity(&self) -> &::std::option::Option<i32> {
+        &self.quantity
+    }
     /// Appends an item to `items`.
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
@@ -90,6 +94,10 @@ impl AllowedMethodsBuilder {
     ) -> Self {
         self.items = input;
         self
+    }
+    /// <p>A complex type that contains the HTTP methods that you want CloudFront to process and forward to your origin.</p>
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Method>> {
+        &self.items
     }
     /// <p>A complex type that controls whether CloudFront caches the response to requests using the specified HTTP methods. There are two choices:</p>
     /// <ul>
@@ -113,6 +121,15 @@ impl AllowedMethodsBuilder {
     ) -> Self {
         self.cached_methods = input;
         self
+    }
+    /// <p>A complex type that controls whether CloudFront caches the response to requests using the specified HTTP methods. There are two choices:</p>
+    /// <ul>
+    /// <li> <p>CloudFront caches responses to <code>GET</code> and <code>HEAD</code> requests.</p> </li>
+    /// <li> <p>CloudFront caches responses to <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests.</p> </li>
+    /// </ul>
+    /// <p>If you pick the second choice for your Amazon S3 Origin, you may need to forward Access-Control-Request-Method, Access-Control-Request-Headers, and Origin headers for the responses to be cached correctly.</p>
+    pub fn get_cached_methods(&self) -> &::std::option::Option<crate::types::CachedMethods> {
+        &self.cached_methods
     }
     /// Consumes the builder and constructs a [`AllowedMethods`](crate::types::AllowedMethods).
     pub fn build(self) -> crate::types::AllowedMethods {

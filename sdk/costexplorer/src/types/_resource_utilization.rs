@@ -46,6 +46,12 @@ impl ResourceUtilizationBuilder {
         self.ec2_resource_utilization = input;
         self
     }
+    /// <p>The utilization of current Amazon EC2 instance. </p>
+    pub fn get_ec2_resource_utilization(
+        &self,
+    ) -> &::std::option::Option<crate::types::Ec2ResourceUtilization> {
+        &self.ec2_resource_utilization
+    }
     /// Consumes the builder and constructs a [`ResourceUtilization`](crate::types::ResourceUtilization).
     pub fn build(self) -> crate::types::ResourceUtilization {
         crate::types::ResourceUtilization {

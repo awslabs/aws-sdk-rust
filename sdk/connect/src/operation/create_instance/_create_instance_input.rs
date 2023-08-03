@@ -89,6 +89,10 @@ impl CreateInstanceInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>The idempotency token.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The type of identity management for your Amazon Connect users.</p>
     pub fn identity_management_type(mut self, input: crate::types::DirectoryType) -> Self {
         self.identity_management_type = ::std::option::Option::Some(input);
@@ -101,6 +105,12 @@ impl CreateInstanceInputBuilder {
     ) -> Self {
         self.identity_management_type = input;
         self
+    }
+    /// <p>The type of identity management for your Amazon Connect users.</p>
+    pub fn get_identity_management_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::DirectoryType> {
+        &self.identity_management_type
     }
     /// <p>The name for your instance.</p>
     pub fn instance_alias(
@@ -118,6 +128,10 @@ impl CreateInstanceInputBuilder {
         self.instance_alias = input;
         self
     }
+    /// <p>The name for your instance.</p>
+    pub fn get_instance_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_alias
+    }
     /// <p>The identifier for the directory.</p>
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
@@ -127,6 +141,10 @@ impl CreateInstanceInputBuilder {
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_id = input;
         self
+    }
+    /// <p>The identifier for the directory.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
     }
     /// <p>Your contact center handles incoming contacts.</p>
     pub fn inbound_calls_enabled(mut self, input: bool) -> Self {
@@ -138,6 +156,10 @@ impl CreateInstanceInputBuilder {
         self.inbound_calls_enabled = input;
         self
     }
+    /// <p>Your contact center handles incoming contacts.</p>
+    pub fn get_inbound_calls_enabled(&self) -> &::std::option::Option<bool> {
+        &self.inbound_calls_enabled
+    }
     /// <p>Your contact center allows outbound calls.</p>
     pub fn outbound_calls_enabled(mut self, input: bool) -> Self {
         self.outbound_calls_enabled = ::std::option::Option::Some(input);
@@ -147,6 +169,10 @@ impl CreateInstanceInputBuilder {
     pub fn set_outbound_calls_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.outbound_calls_enabled = input;
         self
+    }
+    /// <p>Your contact center allows outbound calls.</p>
+    pub fn get_outbound_calls_enabled(&self) -> &::std::option::Option<bool> {
+        &self.outbound_calls_enabled
     }
     /// Consumes the builder and constructs a [`CreateInstanceInput`](crate::operation::create_instance::CreateInstanceInput).
     pub fn build(

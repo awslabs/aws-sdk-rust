@@ -43,6 +43,12 @@ impl ExistingObjectReplicationBuilder {
         self.status = input;
         self
     }
+    /// <p>Specifies whether Amazon S3 replicates existing source bucket objects. </p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExistingObjectReplicationStatus> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`ExistingObjectReplication`](crate::types::ExistingObjectReplication).
     pub fn build(self) -> crate::types::ExistingObjectReplication {
         crate::types::ExistingObjectReplication {

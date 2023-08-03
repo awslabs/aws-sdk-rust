@@ -54,6 +54,10 @@ impl AwsRdsDbParameterGroupBuilder {
         self.db_parameter_group_name = input;
         self
     }
+    /// <p>The name of the parameter group.</p>
+    pub fn get_db_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_parameter_group_name
+    }
     /// <p>The status of parameter updates.</p>
     pub fn parameter_apply_status(
         mut self,
@@ -69,6 +73,10 @@ impl AwsRdsDbParameterGroupBuilder {
     ) -> Self {
         self.parameter_apply_status = input;
         self
+    }
+    /// <p>The status of parameter updates.</p>
+    pub fn get_parameter_apply_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_apply_status
     }
     /// Consumes the builder and constructs a [`AwsRdsDbParameterGroup`](crate::types::AwsRdsDbParameterGroup).
     pub fn build(self) -> crate::types::AwsRdsDbParameterGroup {

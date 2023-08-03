@@ -65,6 +65,10 @@ impl ConfusionMatrixBuilder {
         self.num_true_positives = input;
         self
     }
+    /// <p>The number of matches in the data that the transform correctly found, in the confusion matrix for your transform.</p>
+    pub fn get_num_true_positives(&self) -> &::std::option::Option<i64> {
+        &self.num_true_positives
+    }
     /// <p>The number of nonmatches in the data that the transform incorrectly classified as a match, in the confusion matrix for your transform.</p>
     pub fn num_false_positives(mut self, input: i64) -> Self {
         self.num_false_positives = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl ConfusionMatrixBuilder {
     pub fn set_num_false_positives(mut self, input: ::std::option::Option<i64>) -> Self {
         self.num_false_positives = input;
         self
+    }
+    /// <p>The number of nonmatches in the data that the transform incorrectly classified as a match, in the confusion matrix for your transform.</p>
+    pub fn get_num_false_positives(&self) -> &::std::option::Option<i64> {
+        &self.num_false_positives
     }
     /// <p>The number of nonmatches in the data that the transform correctly rejected, in the confusion matrix for your transform.</p>
     pub fn num_true_negatives(mut self, input: i64) -> Self {
@@ -85,6 +93,10 @@ impl ConfusionMatrixBuilder {
         self.num_true_negatives = input;
         self
     }
+    /// <p>The number of nonmatches in the data that the transform correctly rejected, in the confusion matrix for your transform.</p>
+    pub fn get_num_true_negatives(&self) -> &::std::option::Option<i64> {
+        &self.num_true_negatives
+    }
     /// <p>The number of matches in the data that the transform didn't find, in the confusion matrix for your transform.</p>
     pub fn num_false_negatives(mut self, input: i64) -> Self {
         self.num_false_negatives = ::std::option::Option::Some(input);
@@ -94,6 +106,10 @@ impl ConfusionMatrixBuilder {
     pub fn set_num_false_negatives(mut self, input: ::std::option::Option<i64>) -> Self {
         self.num_false_negatives = input;
         self
+    }
+    /// <p>The number of matches in the data that the transform didn't find, in the confusion matrix for your transform.</p>
+    pub fn get_num_false_negatives(&self) -> &::std::option::Option<i64> {
+        &self.num_false_negatives
     }
     /// Consumes the builder and constructs a [`ConfusionMatrix`](crate::types::ConfusionMatrix).
     pub fn build(self) -> crate::types::ConfusionMatrix {

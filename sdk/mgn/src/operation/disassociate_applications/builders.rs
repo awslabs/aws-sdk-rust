@@ -37,6 +37,13 @@ impl DisassociateApplicationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateApplications as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::disassociate_applications::builders::DisassociateApplicationsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl DisassociateApplicationsFluentBuilder {
         self.inner = self.inner.set_wave_id(input);
         self
     }
+    /// <p>Wave ID.</p>
+    pub fn get_wave_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_wave_id()
+    }
     /// Appends an item to `applicationIDs`.
     ///
     /// To override the contents of this collection use [`set_application_i_ds`](Self::set_application_i_ds).
@@ -147,6 +158,12 @@ impl DisassociateApplicationsFluentBuilder {
         self.inner = self.inner.set_application_i_ds(input);
         self
     }
+    /// <p>Application IDs list.</p>
+    pub fn get_application_i_ds(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_application_i_ds()
+    }
     /// <p>Account ID.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
@@ -156,5 +173,9 @@ impl DisassociateApplicationsFluentBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
+    }
+    /// <p>Account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
     }
 }

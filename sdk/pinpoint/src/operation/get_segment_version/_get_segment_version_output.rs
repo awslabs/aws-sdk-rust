@@ -50,6 +50,10 @@ impl GetSegmentVersionOutputBuilder {
         self.segment_response = input;
         self
     }
+    /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
+    pub fn get_segment_response(&self) -> &::std::option::Option<crate::types::SegmentResponse> {
+        &self.segment_response
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

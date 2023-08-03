@@ -36,6 +36,12 @@ impl StartExperimentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartExperiment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_experiment::builders::StartExperimentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl StartExperimentFluentBuilder {
         self.inner = self.inner.set_project(input);
         self
     }
+    /// <p>The name or ARN of the project that contains the experiment to start.</p>
+    pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project()
+    }
     /// <p>The name of the experiment to start.</p>
     pub fn experiment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.experiment(input.into());
@@ -135,6 +145,10 @@ impl StartExperimentFluentBuilder {
     pub fn set_experiment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_experiment(input);
         self
+    }
+    /// <p>The name of the experiment to start.</p>
+    pub fn get_experiment(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_experiment()
     }
     /// <p>The date and time to end the experiment. This must be no more than 30 days after the experiment starts.</p>
     pub fn analysis_complete_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -148,5 +162,11 @@ impl StartExperimentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_analysis_complete_time(input);
         self
+    }
+    /// <p>The date and time to end the experiment. This must be no more than 30 days after the experiment starts.</p>
+    pub fn get_analysis_complete_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_analysis_complete_time()
     }
 }

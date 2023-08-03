@@ -55,6 +55,10 @@ impl RevokeSecurityGroupEgressOutputBuilder {
         self.r#return = input;
         self
     }
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
+    pub fn get_return(&self) -> &::std::option::Option<bool> {
+        &self.r#return
+    }
     /// Appends an item to `unknown_ip_permissions`.
     ///
     /// To override the contents of this collection use [`set_unknown_ip_permissions`](Self::set_unknown_ip_permissions).
@@ -73,6 +77,12 @@ impl RevokeSecurityGroupEgressOutputBuilder {
     ) -> Self {
         self.unknown_ip_permissions = input;
         self
+    }
+    /// <p>The outbound rules that were unknown to the service. In some cases, <code>unknownIpPermissionSet</code> might be in a different format from the request parameter. </p>
+    pub fn get_unknown_ip_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpPermission>> {
+        &self.unknown_ip_permissions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

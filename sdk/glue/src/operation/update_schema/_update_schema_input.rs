@@ -81,6 +81,14 @@ impl UpdateSchemaInputBuilder {
         self.schema_id = input;
         self
     }
+    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
+    /// <ul>
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+    /// </ul>
+    pub fn get_schema_id(&self) -> &::std::option::Option<crate::types::SchemaId> {
+        &self.schema_id
+    }
     /// <p>Version number required for check pointing. One of <code>VersionNumber</code> or <code>Compatibility</code> has to be provided.</p>
     pub fn schema_version_number(mut self, input: crate::types::SchemaVersionNumber) -> Self {
         self.schema_version_number = ::std::option::Option::Some(input);
@@ -93,6 +101,12 @@ impl UpdateSchemaInputBuilder {
     ) -> Self {
         self.schema_version_number = input;
         self
+    }
+    /// <p>Version number required for check pointing. One of <code>VersionNumber</code> or <code>Compatibility</code> has to be provided.</p>
+    pub fn get_schema_version_number(
+        &self,
+    ) -> &::std::option::Option<crate::types::SchemaVersionNumber> {
+        &self.schema_version_number
     }
     /// <p>The new compatibility setting for the schema.</p>
     pub fn compatibility(mut self, input: crate::types::Compatibility) -> Self {
@@ -107,6 +121,10 @@ impl UpdateSchemaInputBuilder {
         self.compatibility = input;
         self
     }
+    /// <p>The new compatibility setting for the schema.</p>
+    pub fn get_compatibility(&self) -> &::std::option::Option<crate::types::Compatibility> {
+        &self.compatibility
+    }
     /// <p>The new description for the schema.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -116,6 +134,10 @@ impl UpdateSchemaInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The new description for the schema.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`UpdateSchemaInput`](crate::operation::update_schema::UpdateSchemaInput).
     pub fn build(

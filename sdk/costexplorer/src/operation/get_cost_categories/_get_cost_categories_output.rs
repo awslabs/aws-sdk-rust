@@ -87,6 +87,10 @@ impl GetCostCategoriesOutputBuilder {
         self.next_page_token = input;
         self
     }
+    /// <p>If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_page_token
+    }
     /// Appends an item to `cost_category_names`.
     ///
     /// To override the contents of this collection use [`set_cost_category_names`](Self::set_cost_category_names).
@@ -108,6 +112,12 @@ impl GetCostCategoriesOutputBuilder {
     ) -> Self {
         self.cost_category_names = input;
         self
+    }
+    /// <p>The names of the Cost Categories.</p>
+    pub fn get_cost_category_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.cost_category_names
     }
     /// Appends an item to `cost_category_values`.
     ///
@@ -133,6 +143,13 @@ impl GetCostCategoriesOutputBuilder {
         self.cost_category_values = input;
         self
     }
+    /// <p>The Cost Category values.</p>
+    /// <p>If the <code>CostCategoryName</code> key isn't specified in the request, the <code>CostCategoryValues</code> fields aren't returned. </p>
+    pub fn get_cost_category_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.cost_category_values
+    }
     /// <p>The number of objects that are returned.</p>
     pub fn return_size(mut self, input: i32) -> Self {
         self.return_size = ::std::option::Option::Some(input);
@@ -143,6 +160,10 @@ impl GetCostCategoriesOutputBuilder {
         self.return_size = input;
         self
     }
+    /// <p>The number of objects that are returned.</p>
+    pub fn get_return_size(&self) -> &::std::option::Option<i32> {
+        &self.return_size
+    }
     /// <p>The total number of objects.</p>
     pub fn total_size(mut self, input: i32) -> Self {
         self.total_size = ::std::option::Option::Some(input);
@@ -152,6 +173,10 @@ impl GetCostCategoriesOutputBuilder {
     pub fn set_total_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_size = input;
         self
+    }
+    /// <p>The total number of objects.</p>
+    pub fn get_total_size(&self) -> &::std::option::Option<i32> {
+        &self.total_size
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

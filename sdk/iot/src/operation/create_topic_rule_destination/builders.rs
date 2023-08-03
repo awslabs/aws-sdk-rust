@@ -37,6 +37,10 @@ impl CreateTopicRuleDestinationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateTopicRuleDestination as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_topic_rule_destination::builders::CreateTopicRuleDestinationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +136,11 @@ impl CreateTopicRuleDestinationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destination_configuration(input);
         self
+    }
+    /// <p>The topic rule destination configuration.</p>
+    pub fn get_destination_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::TopicRuleDestinationConfiguration> {
+        self.inner.get_destination_configuration()
     }
 }

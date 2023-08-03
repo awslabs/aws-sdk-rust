@@ -86,6 +86,10 @@ impl UpdateEnvironmentInputBuilder {
         self.environment_id = input;
         self
     }
+    /// <p>The unique identifier of the runtime environment that you want to update.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
+    }
     /// <p>The desired capacity for the runtime environment to update. The minimum possible value is 0 and the maximum is 100.</p>
     pub fn desired_capacity(mut self, input: i32) -> Self {
         self.desired_capacity = ::std::option::Option::Some(input);
@@ -95,6 +99,10 @@ impl UpdateEnvironmentInputBuilder {
     pub fn set_desired_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.desired_capacity = input;
         self
+    }
+    /// <p>The desired capacity for the runtime environment to update. The minimum possible value is 0 and the maximum is 100.</p>
+    pub fn get_desired_capacity(&self) -> &::std::option::Option<i32> {
+        &self.desired_capacity
     }
     /// <p>The instance type for the runtime environment to update.</p>
     pub fn instance_type(
@@ -112,6 +120,10 @@ impl UpdateEnvironmentInputBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The instance type for the runtime environment to update.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
+    }
     /// <p>The version of the runtime engine for the runtime environment.</p>
     pub fn engine_version(
         mut self,
@@ -127,6 +139,10 @@ impl UpdateEnvironmentInputBuilder {
     ) -> Self {
         self.engine_version = input;
         self
+    }
+    /// <p>The version of the runtime engine for the runtime environment.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
     }
     /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
     pub fn preferred_maintenance_window(
@@ -144,6 +160,12 @@ impl UpdateEnvironmentInputBuilder {
         self.preferred_maintenance_window = input;
         self
     }
+    /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
+    pub fn get_preferred_maintenance_window(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.preferred_maintenance_window
+    }
     /// <p>Indicates whether to update the runtime environment during the maintenance window. The default is false. Currently, Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter only if <code>applyDuringMaintenanceWindow</code> is true. If any parameter other than <code>engineVersion</code> is provided in <code>UpdateEnvironmentRequest</code>, it will fail if <code>applyDuringMaintenanceWindow</code> is set to true.</p>
     pub fn apply_during_maintenance_window(mut self, input: bool) -> Self {
         self.apply_during_maintenance_window = ::std::option::Option::Some(input);
@@ -156,6 +178,10 @@ impl UpdateEnvironmentInputBuilder {
     ) -> Self {
         self.apply_during_maintenance_window = input;
         self
+    }
+    /// <p>Indicates whether to update the runtime environment during the maintenance window. The default is false. Currently, Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter only if <code>applyDuringMaintenanceWindow</code> is true. If any parameter other than <code>engineVersion</code> is provided in <code>UpdateEnvironmentRequest</code>, it will fail if <code>applyDuringMaintenanceWindow</code> is set to true.</p>
+    pub fn get_apply_during_maintenance_window(&self) -> &::std::option::Option<bool> {
+        &self.apply_during_maintenance_window
     }
     /// Consumes the builder and constructs a [`UpdateEnvironmentInput`](crate::operation::update_environment::UpdateEnvironmentInput).
     pub fn build(

@@ -36,6 +36,12 @@ impl StartEngagementFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartEngagement as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_engagement::builders::StartEngagementInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl StartEngagementFluentBuilder {
         self.inner = self.inner.set_contact_id(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the contact being engaged.</p>
+    pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_contact_id()
+    }
     /// <p>The user that started the engagement.</p>
     pub fn sender(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sender(input.into());
@@ -135,6 +145,10 @@ impl StartEngagementFluentBuilder {
     pub fn set_sender(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sender(input);
         self
+    }
+    /// <p>The user that started the engagement.</p>
+    pub fn get_sender(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sender()
     }
     /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
     pub fn subject(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -146,6 +160,10 @@ impl StartEngagementFluentBuilder {
         self.inner = self.inner.set_subject(input);
         self
     }
+    /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
+    pub fn get_subject(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_subject()
+    }
     /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.content(input.into());
@@ -155,6 +173,10 @@ impl StartEngagementFluentBuilder {
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_content(input);
         self
+    }
+    /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_content()
     }
     /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
     pub fn public_subject(
@@ -172,6 +194,10 @@ impl StartEngagementFluentBuilder {
         self.inner = self.inner.set_public_subject(input);
         self
     }
+    /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
+    pub fn get_public_subject(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_public_subject()
+    }
     /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
     pub fn public_content(
         mut self,
@@ -188,6 +214,10 @@ impl StartEngagementFluentBuilder {
         self.inner = self.inner.set_public_content(input);
         self
     }
+    /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
+    pub fn get_public_content(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_public_content()
+    }
     /// <p>The ARN of the incident that the engagement is part of.</p>
     pub fn incident_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.incident_id(input.into());
@@ -197,6 +227,10 @@ impl StartEngagementFluentBuilder {
     pub fn set_incident_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_incident_id(input);
         self
+    }
+    /// <p>The ARN of the incident that the engagement is part of.</p>
+    pub fn get_incident_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_incident_id()
     }
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub fn idempotency_token(
@@ -213,5 +247,9 @@ impl StartEngagementFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
+    }
+    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+    pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_idempotency_token()
     }
 }

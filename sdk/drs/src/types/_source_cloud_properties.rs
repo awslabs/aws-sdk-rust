@@ -62,6 +62,10 @@ impl SourceCloudPropertiesBuilder {
         self.origin_account_id = input;
         self
     }
+    /// <p>AWS Account ID for an EC2-originated Source Server.</p>
+    pub fn get_origin_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.origin_account_id
+    }
     /// <p>AWS Region for an EC2-originated Source Server.</p>
     pub fn origin_region(
         mut self,
@@ -78,6 +82,10 @@ impl SourceCloudPropertiesBuilder {
         self.origin_region = input;
         self
     }
+    /// <p>AWS Region for an EC2-originated Source Server.</p>
+    pub fn get_origin_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.origin_region
+    }
     /// <p>AWS Availability Zone for an EC2-originated Source Server.</p>
     pub fn origin_availability_zone(
         mut self,
@@ -93,6 +101,10 @@ impl SourceCloudPropertiesBuilder {
     ) -> Self {
         self.origin_availability_zone = input;
         self
+    }
+    /// <p>AWS Availability Zone for an EC2-originated Source Server.</p>
+    pub fn get_origin_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.origin_availability_zone
     }
     /// Consumes the builder and constructs a [`SourceCloudProperties`](crate::types::SourceCloudProperties).
     pub fn build(self) -> crate::types::SourceCloudProperties {

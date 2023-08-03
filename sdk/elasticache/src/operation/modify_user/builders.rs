@@ -36,6 +36,10 @@ impl ModifyUserFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyUser as a reference.
+    pub fn as_input(&self) -> &crate::operation::modify_user::builders::ModifyUserInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl ModifyUserFluentBuilder {
         self.inner = self.inner.set_user_id(input);
         self
     }
+    /// <p>The ID of the user.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_id()
+    }
     /// <p>Access permissions string used for this user.</p>
     pub fn access_string(
         mut self,
@@ -134,6 +142,10 @@ impl ModifyUserFluentBuilder {
         self.inner = self.inner.set_access_string(input);
         self
     }
+    /// <p>Access permissions string used for this user.</p>
+    pub fn get_access_string(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_access_string()
+    }
     /// <p>Adds additional user permissions to the access string.</p>
     pub fn append_access_string(
         mut self,
@@ -149,6 +161,10 @@ impl ModifyUserFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_append_access_string(input);
         self
+    }
+    /// <p>Adds additional user permissions to the access string.</p>
+    pub fn get_append_access_string(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_append_access_string()
     }
     /// Appends an item to `Passwords`.
     ///
@@ -167,6 +183,10 @@ impl ModifyUserFluentBuilder {
         self.inner = self.inner.set_passwords(input);
         self
     }
+    /// <p>The passwords belonging to the user. You are allowed up to two.</p>
+    pub fn get_passwords(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_passwords()
+    }
     /// <p>Indicates no password is required for the user.</p>
     pub fn no_password_required(mut self, input: bool) -> Self {
         self.inner = self.inner.no_password_required(input);
@@ -176,6 +196,10 @@ impl ModifyUserFluentBuilder {
     pub fn set_no_password_required(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_no_password_required(input);
         self
+    }
+    /// <p>Indicates no password is required for the user.</p>
+    pub fn get_no_password_required(&self) -> &::std::option::Option<bool> {
+        self.inner.get_no_password_required()
     }
     /// <p>Specifies how to authenticate the user.</p>
     pub fn authentication_mode(mut self, input: crate::types::AuthenticationMode) -> Self {
@@ -189,5 +213,11 @@ impl ModifyUserFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_authentication_mode(input);
         self
+    }
+    /// <p>Specifies how to authenticate the user.</p>
+    pub fn get_authentication_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthenticationMode> {
+        self.inner.get_authentication_mode()
     }
 }

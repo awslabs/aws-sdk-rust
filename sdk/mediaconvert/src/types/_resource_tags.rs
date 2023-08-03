@@ -56,6 +56,10 @@ impl ResourceTagsBuilder {
         self.arn = input;
         self
     }
+    /// The Amazon Resource Name (ARN) of the resource.
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -80,6 +84,14 @@ impl ResourceTagsBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// The tags for the resource.
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`ResourceTags`](crate::types::ResourceTags).
     pub fn build(self) -> crate::types::ResourceTags {

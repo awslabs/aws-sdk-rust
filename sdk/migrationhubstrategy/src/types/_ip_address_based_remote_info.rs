@@ -62,6 +62,12 @@ impl IpAddressBasedRemoteInfoBuilder {
         self.ip_address_configuration_time_stamp = input;
         self
     }
+    /// <p>The time stamp of the configuration.</p>
+    pub fn get_ip_address_configuration_time_stamp(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address_configuration_time_stamp
+    }
     /// <p>The type of authorization.</p>
     pub fn auth_type(mut self, input: crate::types::AuthType) -> Self {
         self.auth_type = ::std::option::Option::Some(input);
@@ -72,6 +78,10 @@ impl IpAddressBasedRemoteInfoBuilder {
         self.auth_type = input;
         self
     }
+    /// <p>The type of authorization.</p>
+    pub fn get_auth_type(&self) -> &::std::option::Option<crate::types::AuthType> {
+        &self.auth_type
+    }
     /// <p>The type of the operating system.</p>
     pub fn os_type(mut self, input: crate::types::OsType) -> Self {
         self.os_type = ::std::option::Option::Some(input);
@@ -81,6 +91,10 @@ impl IpAddressBasedRemoteInfoBuilder {
     pub fn set_os_type(mut self, input: ::std::option::Option<crate::types::OsType>) -> Self {
         self.os_type = input;
         self
+    }
+    /// <p>The type of the operating system.</p>
+    pub fn get_os_type(&self) -> &::std::option::Option<crate::types::OsType> {
+        &self.os_type
     }
     /// Consumes the builder and constructs a [`IpAddressBasedRemoteInfo`](crate::types::IpAddressBasedRemoteInfo).
     pub fn build(self) -> crate::types::IpAddressBasedRemoteInfo {

@@ -90,6 +90,10 @@ impl EngineConfigurationBuilder {
         self.coordinator_dpu_size = input;
         self
     }
+    /// <p>The number of DPUs to use for the coordinator. A coordinator is a special executor that orchestrates processing work and manages other executors in a notebook session. The default is 1.</p>
+    pub fn get_coordinator_dpu_size(&self) -> &::std::option::Option<i32> {
+        &self.coordinator_dpu_size
+    }
     /// <p>The maximum number of DPUs that can run concurrently.</p>
     pub fn max_concurrent_dpus(mut self, input: i32) -> Self {
         self.max_concurrent_dpus = ::std::option::Option::Some(input);
@@ -100,6 +104,10 @@ impl EngineConfigurationBuilder {
         self.max_concurrent_dpus = input;
         self
     }
+    /// <p>The maximum number of DPUs that can run concurrently.</p>
+    pub fn get_max_concurrent_dpus(&self) -> &::std::option::Option<i32> {
+        &self.max_concurrent_dpus
+    }
     /// <p>The default number of DPUs to use for executors. An executor is the smallest unit of compute that a notebook session can request from Athena. The default is 1.</p>
     pub fn default_executor_dpu_size(mut self, input: i32) -> Self {
         self.default_executor_dpu_size = ::std::option::Option::Some(input);
@@ -109,6 +117,10 @@ impl EngineConfigurationBuilder {
     pub fn set_default_executor_dpu_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.default_executor_dpu_size = input;
         self
+    }
+    /// <p>The default number of DPUs to use for executors. An executor is the smallest unit of compute that a notebook session can request from Athena. The default is 1.</p>
+    pub fn get_default_executor_dpu_size(&self) -> &::std::option::Option<i32> {
+        &self.default_executor_dpu_size
     }
     /// Adds a key-value pair to `additional_configs`.
     ///
@@ -137,6 +149,15 @@ impl EngineConfigurationBuilder {
         self.additional_configs = input;
         self
     }
+    /// <p>Contains additional notebook engine <code>MAP
+    /// <string, string></string,></code> parameter mappings in the form of key-value pairs. To specify an Athena notebook that the Jupyter server will download and serve, specify a value for the <code>StartSessionRequest$NotebookVersion</code> field, and then add a key named <code>NotebookId</code> to <code>AdditionalConfigs</code> that has the value of the Athena notebook ID.</p>
+    pub fn get_additional_configs(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.additional_configs
+    }
     /// Adds a key-value pair to `spark_properties`.
     ///
     /// To override the contents of this collection use [`set_spark_properties`](Self::set_spark_properties).
@@ -161,6 +182,14 @@ impl EngineConfigurationBuilder {
     ) -> Self {
         self.spark_properties = input;
         self
+    }
+    /// <p>Specifies custom jar files and Spark properties for use cases like cluster encryption, table formats, and general Spark tuning.</p>
+    pub fn get_spark_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.spark_properties
     }
     /// Consumes the builder and constructs a [`EngineConfiguration`](crate::types::EngineConfiguration).
     pub fn build(self) -> crate::types::EngineConfiguration {

@@ -80,6 +80,10 @@ impl AccountSettingsBuilder {
         self.account_name = input;
         self
     }
+    /// <p>The "account name" you provided for the Amazon QuickSight subscription in your Amazon Web Services account. You create this name when you sign up for Amazon QuickSight. It is unique in all of Amazon Web Services and it appears only when users sign in.</p>
+    pub fn get_account_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_name
+    }
     /// <p>The edition of Amazon QuickSight that you're currently subscribed to: Enterprise edition or Standard edition.</p>
     pub fn edition(mut self, input: crate::types::Edition) -> Self {
         self.edition = ::std::option::Option::Some(input);
@@ -89,6 +93,10 @@ impl AccountSettingsBuilder {
     pub fn set_edition(mut self, input: ::std::option::Option<crate::types::Edition>) -> Self {
         self.edition = input;
         self
+    }
+    /// <p>The edition of Amazon QuickSight that you're currently subscribed to: Enterprise edition or Standard edition.</p>
+    pub fn get_edition(&self) -> &::std::option::Option<crate::types::Edition> {
+        &self.edition
     }
     /// <p>The default Amazon QuickSight namespace for your Amazon Web Services account. </p>
     pub fn default_namespace(
@@ -106,6 +114,10 @@ impl AccountSettingsBuilder {
         self.default_namespace = input;
         self
     }
+    /// <p>The default Amazon QuickSight namespace for your Amazon Web Services account. </p>
+    pub fn get_default_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_namespace
+    }
     /// <p>The main notification email for your Amazon QuickSight subscription.</p>
     pub fn notification_email(
         mut self,
@@ -122,6 +134,10 @@ impl AccountSettingsBuilder {
         self.notification_email = input;
         self
     }
+    /// <p>The main notification email for your Amazon QuickSight subscription.</p>
+    pub fn get_notification_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notification_email
+    }
     /// <p>A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account. For more information about turning on public sharing, see <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
     pub fn public_sharing_enabled(mut self, input: bool) -> Self {
         self.public_sharing_enabled = ::std::option::Option::Some(input);
@@ -131,6 +147,10 @@ impl AccountSettingsBuilder {
     pub fn set_public_sharing_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.public_sharing_enabled = input;
         self
+    }
+    /// <p>A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account. For more information about turning on public sharing, see <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
+    pub fn get_public_sharing_enabled(&self) -> &::std::option::Option<bool> {
+        &self.public_sharing_enabled
     }
     /// <p>A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A <code>True</code> value doesn't allow the account to be deleted and results in an error message if a user tries to make a <code>DeleteAccountSubsctiption</code> request. A <code>False</code> value will allow the ccount to be deleted. </p>
     pub fn termination_protection_enabled(mut self, input: bool) -> Self {
@@ -144,6 +164,10 @@ impl AccountSettingsBuilder {
     ) -> Self {
         self.termination_protection_enabled = input;
         self
+    }
+    /// <p>A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A <code>True</code> value doesn't allow the account to be deleted and results in an error message if a user tries to make a <code>DeleteAccountSubsctiption</code> request. A <code>False</code> value will allow the ccount to be deleted. </p>
+    pub fn get_termination_protection_enabled(&self) -> &::std::option::Option<bool> {
+        &self.termination_protection_enabled
     }
     /// Consumes the builder and constructs a [`AccountSettings`](crate::types::AccountSettings).
     pub fn build(self) -> crate::types::AccountSettings {

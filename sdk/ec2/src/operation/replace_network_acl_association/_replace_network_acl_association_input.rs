@@ -61,6 +61,10 @@ impl ReplaceNetworkAclAssociationInputBuilder {
         self.association_id = input;
         self
     }
+    /// <p>The ID of the current association between the original network ACL and the subnet.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_id
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -70,6 +74,10 @@ impl ReplaceNetworkAclAssociationInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// <p>The ID of the new network ACL to associate with the subnet.</p>
     pub fn network_acl_id(
@@ -86,6 +94,10 @@ impl ReplaceNetworkAclAssociationInputBuilder {
     ) -> Self {
         self.network_acl_id = input;
         self
+    }
+    /// <p>The ID of the new network ACL to associate with the subnet.</p>
+    pub fn get_network_acl_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_acl_id
     }
     /// Consumes the builder and constructs a [`ReplaceNetworkAclAssociationInput`](crate::operation::replace_network_acl_association::ReplaceNetworkAclAssociationInput).
     pub fn build(

@@ -40,6 +40,10 @@ impl SentimentAnalysisSettingsBuilder {
         self.detect_sentiment = input;
         self
     }
+    /// <p>Sets whether Amazon Lex uses Amazon Comprehend to detect the sentiment of user utterances.</p>
+    pub fn get_detect_sentiment(&self) -> &::std::option::Option<bool> {
+        &self.detect_sentiment
+    }
     /// Consumes the builder and constructs a [`SentimentAnalysisSettings`](crate::types::SentimentAnalysisSettings).
     pub fn build(self) -> crate::types::SentimentAnalysisSettings {
         crate::types::SentimentAnalysisSettings {

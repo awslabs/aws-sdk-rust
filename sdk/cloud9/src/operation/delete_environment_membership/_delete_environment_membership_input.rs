@@ -53,6 +53,10 @@ impl DeleteEnvironmentMembershipInputBuilder {
         self.environment_id = input;
         self
     }
+    /// <p>The ID of the environment to delete the environment member from.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the environment member to delete from the environment.</p>
     pub fn user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_arn = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl DeleteEnvironmentMembershipInputBuilder {
     pub fn set_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the environment member to delete from the environment.</p>
+    pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_arn
     }
     /// Consumes the builder and constructs a [`DeleteEnvironmentMembershipInput`](crate::operation::delete_environment_membership::DeleteEnvironmentMembershipInput).
     pub fn build(

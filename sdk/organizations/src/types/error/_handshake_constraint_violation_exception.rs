@@ -99,6 +99,10 @@ impl HandshakeConstraintViolationExceptionBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
+    #[allow(missing_docs)] // documentation missing in model
     pub fn reason(
         mut self,
         input: crate::types::HandshakeConstraintViolationExceptionReason,
@@ -113,6 +117,12 @@ impl HandshakeConstraintViolationExceptionBuilder {
     ) -> Self {
         self.reason = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_reason(
+        &self,
+    ) -> &::std::option::Option<crate::types::HandshakeConstraintViolationExceptionReason> {
+        &self.reason
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

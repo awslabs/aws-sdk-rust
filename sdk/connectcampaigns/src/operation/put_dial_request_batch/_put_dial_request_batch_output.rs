@@ -67,6 +67,12 @@ impl PutDialRequestBatchOutputBuilder {
         self.successful_requests = input;
         self
     }
+    /// A list of successful requests identified by the unique client token.
+    pub fn get_successful_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SuccessfulRequest>> {
+        &self.successful_requests
+    }
     /// Appends an item to `failed_requests`.
     ///
     /// To override the contents of this collection use [`set_failed_requests`](Self::set_failed_requests).
@@ -85,6 +91,12 @@ impl PutDialRequestBatchOutputBuilder {
     ) -> Self {
         self.failed_requests = input;
         self
+    }
+    /// A list of failed requests.
+    pub fn get_failed_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedRequest>> {
+        &self.failed_requests
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

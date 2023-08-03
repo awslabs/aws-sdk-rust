@@ -51,6 +51,11 @@ impl GetParameterInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the parameter you want to query.</p>
+    /// <p>To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter version, use <code>"Name": "name:version"</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Return decrypted values for secure string parameters. This flag is ignored for <code>String</code> and <code>StringList</code> parameter types.</p>
     pub fn with_decryption(mut self, input: bool) -> Self {
         self.with_decryption = ::std::option::Option::Some(input);
@@ -60,6 +65,10 @@ impl GetParameterInputBuilder {
     pub fn set_with_decryption(mut self, input: ::std::option::Option<bool>) -> Self {
         self.with_decryption = input;
         self
+    }
+    /// <p>Return decrypted values for secure string parameters. This flag is ignored for <code>String</code> and <code>StringList</code> parameter types.</p>
+    pub fn get_with_decryption(&self) -> &::std::option::Option<bool> {
+        &self.with_decryption
     }
     /// Consumes the builder and constructs a [`GetParameterInput`](crate::operation::get_parameter::GetParameterInput).
     pub fn build(

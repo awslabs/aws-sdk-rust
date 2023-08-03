@@ -54,6 +54,10 @@ impl IndexStatisticsBuilder {
         self.faq_statistics = input;
         self
     }
+    /// <p>The number of question and answer topics in the index.</p>
+    pub fn get_faq_statistics(&self) -> &::std::option::Option<crate::types::FaqStatistics> {
+        &self.faq_statistics
+    }
     /// <p>The number of text documents indexed.</p>
     pub fn text_document_statistics(mut self, input: crate::types::TextDocumentStatistics) -> Self {
         self.text_document_statistics = ::std::option::Option::Some(input);
@@ -66,6 +70,12 @@ impl IndexStatisticsBuilder {
     ) -> Self {
         self.text_document_statistics = input;
         self
+    }
+    /// <p>The number of text documents indexed.</p>
+    pub fn get_text_document_statistics(
+        &self,
+    ) -> &::std::option::Option<crate::types::TextDocumentStatistics> {
+        &self.text_document_statistics
     }
     /// Consumes the builder and constructs a [`IndexStatistics`](crate::types::IndexStatistics).
     pub fn build(self) -> crate::types::IndexStatistics {

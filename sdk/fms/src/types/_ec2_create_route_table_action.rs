@@ -48,6 +48,10 @@ impl Ec2CreateRouteTableActionBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the CreateRouteTable action.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>Information about the ID of a VPC.</p>
     pub fn vpc_id(mut self, input: crate::types::ActionTarget) -> Self {
         self.vpc_id = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl Ec2CreateRouteTableActionBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<crate::types::ActionTarget>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>Information about the ID of a VPC.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<crate::types::ActionTarget> {
+        &self.vpc_id
     }
     /// Consumes the builder and constructs a [`Ec2CreateRouteTableAction`](crate::types::Ec2CreateRouteTableAction).
     pub fn build(self) -> crate::types::Ec2CreateRouteTableAction {

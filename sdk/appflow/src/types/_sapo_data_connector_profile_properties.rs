@@ -104,6 +104,10 @@ impl SapoDataConnectorProfilePropertiesBuilder {
         self.application_host_url = input;
         self
     }
+    /// <p> The location of the SAPOData resource. </p>
+    pub fn get_application_host_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_host_url
+    }
     /// <p> The application path to catalog service. </p>
     pub fn application_service_path(
         mut self,
@@ -120,6 +124,10 @@ impl SapoDataConnectorProfilePropertiesBuilder {
         self.application_service_path = input;
         self
     }
+    /// <p> The application path to catalog service. </p>
+    pub fn get_application_service_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_service_path
+    }
     /// <p> The port number of the SAPOData instance. </p>
     pub fn port_number(mut self, input: i32) -> Self {
         self.port_number = ::std::option::Option::Some(input);
@@ -129,6 +137,10 @@ impl SapoDataConnectorProfilePropertiesBuilder {
     pub fn set_port_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port_number = input;
         self
+    }
+    /// <p> The port number of the SAPOData instance. </p>
+    pub fn get_port_number(&self) -> &::std::option::Option<i32> {
+        &self.port_number
     }
     /// <p> The client number for the client creating the connection. </p>
     pub fn client_number(
@@ -146,6 +158,10 @@ impl SapoDataConnectorProfilePropertiesBuilder {
         self.client_number = input;
         self
     }
+    /// <p> The client number for the client creating the connection. </p>
+    pub fn get_client_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_number
+    }
     /// <p> The logon language of SAPOData instance. </p>
     pub fn logon_language(
         mut self,
@@ -161,6 +177,10 @@ impl SapoDataConnectorProfilePropertiesBuilder {
     ) -> Self {
         self.logon_language = input;
         self
+    }
+    /// <p> The logon language of SAPOData instance. </p>
+    pub fn get_logon_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.logon_language
     }
     /// <p> The SAPOData Private Link service name to be used for private data transfers. </p>
     pub fn private_link_service_name(
@@ -178,6 +198,10 @@ impl SapoDataConnectorProfilePropertiesBuilder {
         self.private_link_service_name = input;
         self
     }
+    /// <p> The SAPOData Private Link service name to be used for private data transfers. </p>
+    pub fn get_private_link_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_link_service_name
+    }
     /// <p> The SAPOData OAuth properties required for OAuth type authentication. </p>
     pub fn o_auth_properties(mut self, input: crate::types::OAuthProperties) -> Self {
         self.o_auth_properties = ::std::option::Option::Some(input);
@@ -191,6 +215,10 @@ impl SapoDataConnectorProfilePropertiesBuilder {
         self.o_auth_properties = input;
         self
     }
+    /// <p> The SAPOData OAuth properties required for OAuth type authentication. </p>
+    pub fn get_o_auth_properties(&self) -> &::std::option::Option<crate::types::OAuthProperties> {
+        &self.o_auth_properties
+    }
     /// <p>If you set this parameter to <code>true</code>, Amazon AppFlow bypasses the single sign-on (SSO) settings in your SAP account when it accesses your SAP OData instance.</p>
     /// <p>Whether you need this option depends on the types of credentials that you applied to your SAP OData connection profile. If your profile uses basic authentication credentials, SAP SSO can prevent Amazon AppFlow from connecting to your account with your username and password. In this case, bypassing SSO makes it possible for Amazon AppFlow to connect successfully. However, if your profile uses OAuth credentials, this parameter has no affect.</p>
     pub fn disable_sso(mut self, input: bool) -> Self {
@@ -202,6 +230,11 @@ impl SapoDataConnectorProfilePropertiesBuilder {
     pub fn set_disable_sso(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disable_sso = input;
         self
+    }
+    /// <p>If you set this parameter to <code>true</code>, Amazon AppFlow bypasses the single sign-on (SSO) settings in your SAP account when it accesses your SAP OData instance.</p>
+    /// <p>Whether you need this option depends on the types of credentials that you applied to your SAP OData connection profile. If your profile uses basic authentication credentials, SAP SSO can prevent Amazon AppFlow from connecting to your account with your username and password. In this case, bypassing SSO makes it possible for Amazon AppFlow to connect successfully. However, if your profile uses OAuth credentials, this parameter has no affect.</p>
+    pub fn get_disable_sso(&self) -> &::std::option::Option<bool> {
+        &self.disable_sso
     }
     /// Consumes the builder and constructs a [`SapoDataConnectorProfileProperties`](crate::types::SapoDataConnectorProfileProperties).
     pub fn build(self) -> crate::types::SapoDataConnectorProfileProperties {

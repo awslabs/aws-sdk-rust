@@ -64,6 +64,13 @@ impl ConnectionPropertiesBuilder {
         self.endpoint = input;
         self
     }
+    /// <important>
+    /// <p>The Endpoint attribute cannot be modified. </p>
+    /// </important>
+    /// <p>The endpoint of the remote domain. Applicable for VPC_ENDPOINT connection mode.</p>
+    pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint
+    }
     /// <p>The connection properties for cross cluster search.</p>
     pub fn cross_cluster_search(
         mut self,
@@ -79,6 +86,12 @@ impl ConnectionPropertiesBuilder {
     ) -> Self {
         self.cross_cluster_search = input;
         self
+    }
+    /// <p>The connection properties for cross cluster search.</p>
+    pub fn get_cross_cluster_search(
+        &self,
+    ) -> &::std::option::Option<crate::types::CrossClusterSearchConnectionProperties> {
+        &self.cross_cluster_search
     }
     /// Consumes the builder and constructs a [`ConnectionProperties`](crate::types::ConnectionProperties).
     pub fn build(self) -> crate::types::ConnectionProperties {

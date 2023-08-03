@@ -36,6 +36,10 @@ impl CreateLicenseManagerReportGeneratorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateLicenseManagerReportGenerator as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_license_manager_report_generator::builders::CreateLicenseManagerReportGeneratorInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl CreateLicenseManagerReportGeneratorFluentBuilder {
         self.inner = self.inner.set_report_generator_name(input);
         self
     }
+    /// <p>Name of the report generator.</p>
+    pub fn get_report_generator_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_report_generator_name()
+    }
     /// Appends an item to `Type`.
     ///
     /// To override the contents of this collection use [`set_type`](Self::set_type).
@@ -131,6 +139,14 @@ impl CreateLicenseManagerReportGeneratorFluentBuilder {
         self.inner = self.inner.set_type(input);
         self
     }
+    /// <p>Type of reports to generate. The following report types an be generated:</p>
+    /// <ul>
+    /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li>
+    /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReportType>> {
+        self.inner.get_type()
+    }
     /// <p>Defines the type of license configuration the report generator tracks.</p>
     pub fn report_context(mut self, input: crate::types::ReportContext) -> Self {
         self.inner = self.inner.report_context(input);
@@ -143,6 +159,10 @@ impl CreateLicenseManagerReportGeneratorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_report_context(input);
         self
+    }
+    /// <p>Defines the type of license configuration the report generator tracks.</p>
+    pub fn get_report_context(&self) -> &::std::option::Option<crate::types::ReportContext> {
+        self.inner.get_report_context()
     }
     /// <p>Frequency by which reports are generated. Reports can be generated daily, monthly, or weekly.</p>
     pub fn report_frequency(mut self, input: crate::types::ReportFrequency) -> Self {
@@ -157,6 +177,10 @@ impl CreateLicenseManagerReportGeneratorFluentBuilder {
         self.inner = self.inner.set_report_frequency(input);
         self
     }
+    /// <p>Frequency by which reports are generated. Reports can be generated daily, monthly, or weekly.</p>
+    pub fn get_report_frequency(&self) -> &::std::option::Option<crate::types::ReportFrequency> {
+        self.inner.get_report_frequency()
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -167,6 +191,10 @@ impl CreateLicenseManagerReportGeneratorFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>Description of the report generator.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -176,6 +204,10 @@ impl CreateLicenseManagerReportGeneratorFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>Description of the report generator.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `Tags`.
     ///
@@ -193,5 +225,9 @@ impl CreateLicenseManagerReportGeneratorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Tags to add to the report generator.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

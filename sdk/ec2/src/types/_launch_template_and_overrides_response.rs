@@ -58,6 +58,12 @@ impl LaunchTemplateAndOverridesResponseBuilder {
         self.launch_template_specification = input;
         self
     }
+    /// <p>The launch template.</p>
+    pub fn get_launch_template_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::FleetLaunchTemplateSpecification> {
+        &self.launch_template_specification
+    }
     /// <p>Any parameters that you specify override the same parameters in the launch template.</p>
     pub fn overrides(mut self, input: crate::types::FleetLaunchTemplateOverrides) -> Self {
         self.overrides = ::std::option::Option::Some(input);
@@ -70,6 +76,12 @@ impl LaunchTemplateAndOverridesResponseBuilder {
     ) -> Self {
         self.overrides = input;
         self
+    }
+    /// <p>Any parameters that you specify override the same parameters in the launch template.</p>
+    pub fn get_overrides(
+        &self,
+    ) -> &::std::option::Option<crate::types::FleetLaunchTemplateOverrides> {
+        &self.overrides
     }
     /// Consumes the builder and constructs a [`LaunchTemplateAndOverridesResponse`](crate::types::LaunchTemplateAndOverridesResponse).
     pub fn build(self) -> crate::types::LaunchTemplateAndOverridesResponse {

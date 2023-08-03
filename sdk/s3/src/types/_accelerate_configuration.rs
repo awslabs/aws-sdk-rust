@@ -43,6 +43,10 @@ impl AccelerateConfigurationBuilder {
         self.status = input;
         self
     }
+    /// <p>Specifies the transfer acceleration status of the bucket.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::BucketAccelerateStatus> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`AccelerateConfiguration`](crate::types::AccelerateConfiguration).
     pub fn build(self) -> crate::types::AccelerateConfiguration {
         crate::types::AccelerateConfiguration {

@@ -46,6 +46,10 @@ impl CreateDbProxyOutputBuilder {
         self.db_proxy = input;
         self
     }
+    /// <p>The <code>DBProxy</code> structure corresponding to the new proxy.</p>
+    pub fn get_db_proxy(&self) -> &::std::option::Option<crate::types::DbProxy> {
+        &self.db_proxy
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

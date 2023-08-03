@@ -36,6 +36,10 @@ impl UpdateSourceServerReplicationTypeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateSourceServerReplicationType as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_source_server_replication_type::builders::UpdateSourceServerReplicationTypeInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl UpdateSourceServerReplicationTypeFluentBuilder {
         self.inner = self.inner.set_source_server_id(input);
         self
     }
+    /// <p>ID of source server on which to update replication type.</p>
+    pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_server_id()
+    }
     /// <p>Replication type to which to update source server.</p>
     pub fn replication_type(mut self, input: crate::types::ReplicationType) -> Self {
         self.inner = self.inner.replication_type(input);
@@ -119,6 +127,10 @@ impl UpdateSourceServerReplicationTypeFluentBuilder {
         self.inner = self.inner.set_replication_type(input);
         self
     }
+    /// <p>Replication type to which to update source server.</p>
+    pub fn get_replication_type(&self) -> &::std::option::Option<crate::types::ReplicationType> {
+        self.inner.get_replication_type()
+    }
     /// <p>Account ID on which to update replication type.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
@@ -128,5 +140,9 @@ impl UpdateSourceServerReplicationTypeFluentBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
+    }
+    /// <p>Account ID on which to update replication type.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
     }
 }

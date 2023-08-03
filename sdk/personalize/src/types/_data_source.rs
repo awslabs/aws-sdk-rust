@@ -50,6 +50,11 @@ impl DataSourceBuilder {
         self.data_location = input;
         self
     }
+    /// <p>The path to the Amazon S3 bucket where the data that you want to upload to your dataset is stored. For example: </p>
+    /// <p> <code>s3://bucket-name/folder-name/</code> </p>
+    pub fn get_data_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_location
+    }
     /// Consumes the builder and constructs a [`DataSource`](crate::types::DataSource).
     pub fn build(self) -> crate::types::DataSource {
         crate::types::DataSource {

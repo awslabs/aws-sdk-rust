@@ -37,6 +37,10 @@ impl ModifyTrafficMirrorFilterNetworkServicesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyTrafficMirrorFilterNetworkServices as a reference.
+    pub fn as_input(&self) -> &crate::operation::modify_traffic_mirror_filter_network_services::builders::ModifyTrafficMirrorFilterNetworkServicesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -107,6 +111,10 @@ impl ModifyTrafficMirrorFilterNetworkServicesFluentBuilder {
         self.inner = self.inner.set_traffic_mirror_filter_id(input);
         self
     }
+    /// <p>The ID of the Traffic Mirror filter.</p>
+    pub fn get_traffic_mirror_filter_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_traffic_mirror_filter_id()
+    }
     /// Appends an item to `AddNetworkServices`.
     ///
     /// To override the contents of this collection use [`set_add_network_services`](Self::set_add_network_services).
@@ -126,6 +134,12 @@ impl ModifyTrafficMirrorFilterNetworkServicesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_add_network_services(input);
         self
+    }
+    /// <p>The network service, for example Amazon DNS, that you want to mirror.</p>
+    pub fn get_add_network_services(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorNetworkService>> {
+        self.inner.get_add_network_services()
     }
     /// Appends an item to `RemoveNetworkServices`.
     ///
@@ -147,6 +161,12 @@ impl ModifyTrafficMirrorFilterNetworkServicesFluentBuilder {
         self.inner = self.inner.set_remove_network_services(input);
         self
     }
+    /// <p>The network service, for example Amazon DNS, that you no longer want to mirror.</p>
+    pub fn get_remove_network_services(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorNetworkService>> {
+        self.inner.get_remove_network_services()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -156,5 +176,9 @@ impl ModifyTrafficMirrorFilterNetworkServicesFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

@@ -72,6 +72,10 @@ impl JsonClassifierBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the classifier.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The time that this classifier was registered.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -84,6 +88,10 @@ impl JsonClassifierBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time that this classifier was registered.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The time that this classifier was last updated.</p>
     pub fn last_updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -98,6 +106,10 @@ impl JsonClassifierBuilder {
         self.last_updated = input;
         self
     }
+    /// <p>The time that this classifier was last updated.</p>
+    pub fn get_last_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated
+    }
     /// <p>The version of this classifier.</p>
     pub fn version(mut self, input: i64) -> Self {
         self.version = ::std::option::Option::Some(input);
@@ -108,6 +120,10 @@ impl JsonClassifierBuilder {
         self.version = input;
         self
     }
+    /// <p>The version of this classifier.</p>
+    pub fn get_version(&self) -> &::std::option::Option<i64> {
+        &self.version
+    }
     /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify. Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
     pub fn json_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.json_path = ::std::option::Option::Some(input.into());
@@ -117,6 +133,10 @@ impl JsonClassifierBuilder {
     pub fn set_json_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.json_path = input;
         self
+    }
+    /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify. Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
+    pub fn get_json_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.json_path
     }
     /// Consumes the builder and constructs a [`JsonClassifier`](crate::types::JsonClassifier).
     pub fn build(self) -> crate::types::JsonClassifier {

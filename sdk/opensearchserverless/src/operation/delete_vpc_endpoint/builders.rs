@@ -36,6 +36,12 @@ impl DeleteVpcEndpointFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteVpcEndpoint as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_vpc_endpoint::builders::DeleteVpcEndpointInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DeleteVpcEndpointFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The VPC endpoint identifier.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -135,5 +145,9 @@ impl DeleteVpcEndpointFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

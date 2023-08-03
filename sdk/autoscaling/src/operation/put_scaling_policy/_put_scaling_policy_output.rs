@@ -56,6 +56,10 @@ impl PutScalingPolicyOutputBuilder {
         self.policy_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the policy.</p>
+    pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_arn
+    }
     /// Appends an item to `alarms`.
     ///
     /// To override the contents of this collection use [`set_alarms`](Self::set_alarms).
@@ -74,6 +78,10 @@ impl PutScalingPolicyOutputBuilder {
     ) -> Self {
         self.alarms = input;
         self
+    }
+    /// <p>The CloudWatch alarms created for the target tracking scaling policy.</p>
+    pub fn get_alarms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Alarm>> {
+        &self.alarms
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -64,6 +64,10 @@ impl RelatedWorkspacePropertiesBuilder {
         self.workspace_id = input;
         self
     }
+    /// <p>The identifier of the related WorkSpace.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
+    }
     /// <p>The Region of the related WorkSpace.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl RelatedWorkspacePropertiesBuilder {
         self.region = input;
         self
     }
+    /// <p>The Region of the related WorkSpace.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
+    }
     /// <p>Indicates the state of the WorkSpace.</p>
     pub fn state(mut self, input: crate::types::WorkspaceState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -83,6 +91,10 @@ impl RelatedWorkspacePropertiesBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::WorkspaceState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>Indicates the state of the WorkSpace.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::WorkspaceState> {
+        &self.state
     }
     /// <p>Indicates the type of WorkSpace.</p>
     pub fn r#type(mut self, input: crate::types::StandbyWorkspaceRelationshipType) -> Self {
@@ -96,6 +108,12 @@ impl RelatedWorkspacePropertiesBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>Indicates the type of WorkSpace.</p>
+    pub fn get_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::StandbyWorkspaceRelationshipType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`RelatedWorkspaceProperties`](crate::types::RelatedWorkspaceProperties).
     pub fn build(self) -> crate::types::RelatedWorkspaceProperties {

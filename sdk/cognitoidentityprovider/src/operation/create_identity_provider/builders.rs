@@ -36,6 +36,13 @@ impl CreateIdentityProviderFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateIdentityProvider as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_identity_provider::builders::CreateIdentityProviderInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl CreateIdentityProviderFluentBuilder {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
+    /// <p>The user pool ID.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_pool_id()
+    }
     /// <p>The IdP name.</p>
     pub fn provider_name(
         mut self,
@@ -142,6 +153,10 @@ impl CreateIdentityProviderFluentBuilder {
         self.inner = self.inner.set_provider_name(input);
         self
     }
+    /// <p>The IdP name.</p>
+    pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_provider_name()
+    }
     /// <p>The IdP type.</p>
     pub fn provider_type(mut self, input: crate::types::IdentityProviderTypeType) -> Self {
         self.inner = self.inner.provider_type(input);
@@ -154,6 +169,12 @@ impl CreateIdentityProviderFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_provider_type(input);
         self
+    }
+    /// <p>The IdP type.</p>
+    pub fn get_provider_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::IdentityProviderTypeType> {
+        self.inner.get_provider_type()
     }
     /// Adds a key-value pair to `ProviderDetails`.
     ///
@@ -272,6 +293,61 @@ impl CreateIdentityProviderFluentBuilder {
         self.inner = self.inner.set_provider_details(input);
         self
     }
+    /// <p>The IdP details. The following list describes the provider detail keys for each IdP type.</p>
+    /// <ul>
+    /// <li> <p>For Google and Login with Amazon:</p>
+    /// <ul>
+    /// <li> <p>client_id</p> </li>
+    /// <li> <p>client_secret</p> </li>
+    /// <li> <p>authorize_scopes</p> </li>
+    /// </ul> </li>
+    /// <li> <p>For Facebook:</p>
+    /// <ul>
+    /// <li> <p>client_id</p> </li>
+    /// <li> <p>client_secret</p> </li>
+    /// <li> <p>authorize_scopes</p> </li>
+    /// <li> <p>api_version</p> </li>
+    /// </ul> </li>
+    /// <li> <p>For Sign in with Apple:</p>
+    /// <ul>
+    /// <li> <p>client_id</p> </li>
+    /// <li> <p>team_id</p> </li>
+    /// <li> <p>key_id</p> </li>
+    /// <li> <p>private_key</p> </li>
+    /// <li> <p>authorize_scopes</p> </li>
+    /// </ul> </li>
+    /// <li> <p>For OpenID Connect (OIDC) providers:</p>
+    /// <ul>
+    /// <li> <p>client_id</p> </li>
+    /// <li> <p>client_secret</p> </li>
+    /// <li> <p>attributes_request_method</p> </li>
+    /// <li> <p>oidc_issuer</p> </li>
+    /// <li> <p>authorize_scopes</p> </li>
+    /// <li> <p>The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code> URL.</p>
+    /// <ul>
+    /// <li> <p>authorize_url </p> </li>
+    /// <li> <p>token_url </p> </li>
+    /// <li> <p>attributes_url </p> </li>
+    /// <li> <p>jwks_uri </p> </li>
+    /// </ul> </li>
+    /// <li> <p>Amazon Cognito sets the value of the following keys automatically. They are read-only.</p>
+    /// <ul>
+    /// <li> <p>attributes_url_add_attributes </p> </li>
+    /// </ul> </li>
+    /// </ul> </li>
+    /// <li> <p>For SAML providers:</p>
+    /// <ul>
+    /// <li> <p>MetadataFile or MetadataURL</p> </li>
+    /// <li> <p>IDPSignout <i>optional</i> </p> </li>
+    /// </ul> </li>
+    /// </ul>
+    pub fn get_provider_details(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_provider_details()
+    }
     /// Adds a key-value pair to `AttributeMapping`.
     ///
     /// To override the contents of this collection use [`set_attribute_mapping`](Self::set_attribute_mapping).
@@ -295,6 +371,14 @@ impl CreateIdentityProviderFluentBuilder {
         self.inner = self.inner.set_attribute_mapping(input);
         self
     }
+    /// <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
+    pub fn get_attribute_mapping(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_attribute_mapping()
+    }
     /// Appends an item to `IdpIdentifiers`.
     ///
     /// To override the contents of this collection use [`set_idp_identifiers`](Self::set_idp_identifiers).
@@ -314,5 +398,11 @@ impl CreateIdentityProviderFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_idp_identifiers(input);
         self
+    }
+    /// <p>A list of IdP identifiers.</p>
+    pub fn get_idp_identifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_idp_identifiers()
     }
 }

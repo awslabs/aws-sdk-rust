@@ -80,6 +80,10 @@ impl StackSummaryBuilder {
         self.stack_id = input;
         self
     }
+    /// <p>The stack ID.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_id
+    }
     /// <p>The stack name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl StackSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The stack name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The stack's ARN.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -100,6 +108,10 @@ impl StackSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The stack's ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The number of layers.</p>
     pub fn layers_count(mut self, input: i32) -> Self {
         self.layers_count = ::std::option::Option::Some(input);
@@ -110,6 +122,10 @@ impl StackSummaryBuilder {
         self.layers_count = input;
         self
     }
+    /// <p>The number of layers.</p>
+    pub fn get_layers_count(&self) -> &::std::option::Option<i32> {
+        &self.layers_count
+    }
     /// <p>The number of apps.</p>
     pub fn apps_count(mut self, input: i32) -> Self {
         self.apps_count = ::std::option::Option::Some(input);
@@ -119,6 +135,10 @@ impl StackSummaryBuilder {
     pub fn set_apps_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.apps_count = input;
         self
+    }
+    /// <p>The number of apps.</p>
+    pub fn get_apps_count(&self) -> &::std::option::Option<i32> {
+        &self.apps_count
     }
     /// <p>An <code>InstancesCount</code> object with the number of instances in each status.</p>
     pub fn instances_count(mut self, input: crate::types::InstancesCount) -> Self {
@@ -132,6 +152,10 @@ impl StackSummaryBuilder {
     ) -> Self {
         self.instances_count = input;
         self
+    }
+    /// <p>An <code>InstancesCount</code> object with the number of instances in each status.</p>
+    pub fn get_instances_count(&self) -> &::std::option::Option<crate::types::InstancesCount> {
+        &self.instances_count
     }
     /// Consumes the builder and constructs a [`StackSummary`](crate::types::StackSummary).
     pub fn build(self) -> crate::types::StackSummary {

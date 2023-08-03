@@ -55,6 +55,10 @@ impl AddBridgeOutputsOutputBuilder {
         self.bridge_arn = input;
         self
     }
+    /// The Amazon Resource Number (ARN) of the bridge.
+    pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bridge_arn
+    }
     /// Appends an item to `outputs`.
     ///
     /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
@@ -73,6 +77,12 @@ impl AddBridgeOutputsOutputBuilder {
     ) -> Self {
         self.outputs = input;
         self
+    }
+    /// The outputs that you added to this bridge.
+    pub fn get_outputs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BridgeOutput>> {
+        &self.outputs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

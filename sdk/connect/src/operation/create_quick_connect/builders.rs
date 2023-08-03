@@ -36,6 +36,12 @@ impl CreateQuickConnectFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateQuickConnect as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_quick_connect::builders::CreateQuickConnectInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateQuickConnectFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>The name of the quick connect.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -136,6 +146,10 @@ impl CreateQuickConnectFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the quick connect.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The description of the quick connect.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -145,6 +159,10 @@ impl CreateQuickConnectFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the quick connect.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>Configuration settings for the quick connect.</p>
     pub fn quick_connect_config(mut self, input: crate::types::QuickConnectConfig) -> Self {
@@ -158,6 +176,12 @@ impl CreateQuickConnectFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_quick_connect_config(input);
         self
+    }
+    /// <p>Configuration settings for the quick connect.</p>
+    pub fn get_quick_connect_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::QuickConnectConfig> {
+        self.inner.get_quick_connect_config()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -181,5 +205,13 @@ impl CreateQuickConnectFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

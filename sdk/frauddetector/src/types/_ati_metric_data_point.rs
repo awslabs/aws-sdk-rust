@@ -64,6 +64,10 @@ impl AtiMetricDataPointBuilder {
         self.cr = input;
         self
     }
+    /// <p> The challenge rate. This indicates the percentage of login events that the model recommends to challenge such as one-time password, multi-factor authentication, and investigations. </p>
+    pub fn get_cr(&self) -> &::std::option::Option<f32> {
+        &self.cr
+    }
     /// <p> The anomaly discovery rate. This metric quantifies the percentage of anomalies that can be detected by the model at the selected score threshold. A lower score threshold increases the percentage of anomalies captured by the model, but would also require challenging a larger percentage of login events, leading to a higher customer friction. </p>
     pub fn adr(mut self, input: f32) -> Self {
         self.adr = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl AtiMetricDataPointBuilder {
     pub fn set_adr(mut self, input: ::std::option::Option<f32>) -> Self {
         self.adr = input;
         self
+    }
+    /// <p> The anomaly discovery rate. This metric quantifies the percentage of anomalies that can be detected by the model at the selected score threshold. A lower score threshold increases the percentage of anomalies captured by the model, but would also require challenging a larger percentage of login events, leading to a higher customer friction. </p>
+    pub fn get_adr(&self) -> &::std::option::Option<f32> {
+        &self.adr
     }
     /// <p> The model's threshold that specifies an acceptable fraud capture rate. For example, a threshold of 500 means any model score 500 or above is labeled as fraud. </p>
     pub fn threshold(mut self, input: f32) -> Self {
@@ -84,6 +92,10 @@ impl AtiMetricDataPointBuilder {
         self.threshold = input;
         self
     }
+    /// <p> The model's threshold that specifies an acceptable fraud capture rate. For example, a threshold of 500 means any model score 500 or above is labeled as fraud. </p>
+    pub fn get_threshold(&self) -> &::std::option::Option<f32> {
+        &self.threshold
+    }
     /// <p> The account takeover discovery rate. This metric quantifies the percentage of account compromise events that can be detected by the model at the selected score threshold. This metric is only available if 50 or more entities with at-least one labeled account takeover event is present in the ingested dataset. </p>
     pub fn atodr(mut self, input: f32) -> Self {
         self.atodr = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl AtiMetricDataPointBuilder {
     pub fn set_atodr(mut self, input: ::std::option::Option<f32>) -> Self {
         self.atodr = input;
         self
+    }
+    /// <p> The account takeover discovery rate. This metric quantifies the percentage of account compromise events that can be detected by the model at the selected score threshold. This metric is only available if 50 or more entities with at-least one labeled account takeover event is present in the ingested dataset. </p>
+    pub fn get_atodr(&self) -> &::std::option::Option<f32> {
+        &self.atodr
     }
     /// Consumes the builder and constructs a [`AtiMetricDataPoint`](crate::types::AtiMetricDataPoint).
     pub fn build(self) -> crate::types::AtiMetricDataPoint {

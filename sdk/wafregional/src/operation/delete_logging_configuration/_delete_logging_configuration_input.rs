@@ -39,6 +39,10 @@ impl DeleteLoggingConfigurationInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the web ACL from which you want to delete the <code>LoggingConfiguration</code>.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Consumes the builder and constructs a [`DeleteLoggingConfigurationInput`](crate::operation::delete_logging_configuration::DeleteLoggingConfigurationInput).
     pub fn build(
         self,

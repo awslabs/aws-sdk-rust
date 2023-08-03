@@ -48,6 +48,10 @@ impl OpsMetadataFilterBuilder {
         self.key = input;
         self
     }
+    /// <p>A filter key.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -66,6 +70,10 @@ impl OpsMetadataFilterBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>A filter value.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`OpsMetadataFilter`](crate::types::OpsMetadataFilter).
     pub fn build(self) -> crate::types::OpsMetadataFilter {

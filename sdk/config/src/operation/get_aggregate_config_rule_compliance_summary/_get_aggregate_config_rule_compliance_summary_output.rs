@@ -66,6 +66,10 @@ impl GetAggregateConfigRuleComplianceSummaryOutputBuilder {
         self.group_by_key = input;
         self
     }
+    /// <p>Groups the result based on ACCOUNT_ID or AWS_REGION.</p>
+    pub fn get_group_by_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_by_key
+    }
     /// Appends an item to `aggregate_compliance_counts`.
     ///
     /// To override the contents of this collection use [`set_aggregate_compliance_counts`](Self::set_aggregate_compliance_counts).
@@ -88,6 +92,12 @@ impl GetAggregateConfigRuleComplianceSummaryOutputBuilder {
         self.aggregate_compliance_counts = input;
         self
     }
+    /// <p>Returns a list of AggregateComplianceCounts object.</p>
+    pub fn get_aggregate_compliance_counts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregateComplianceCount>> {
+        &self.aggregate_compliance_counts
+    }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -97,6 +107,10 @@ impl GetAggregateConfigRuleComplianceSummaryOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -96,6 +96,10 @@ impl DescribeInputSecurityGroupOutputBuilder {
         self.arn = input;
         self
     }
+    /// Unique ARN of Input Security Group
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// The Id of the Input Security Group
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl DescribeInputSecurityGroupOutputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// The Id of the Input Security Group
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Appends an item to `inputs`.
     ///
@@ -125,6 +133,10 @@ impl DescribeInputSecurityGroupOutputBuilder {
         self.inputs = input;
         self
     }
+    /// The list of inputs currently using this Input Security Group.
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inputs
+    }
     /// The current state of the Input Security Group.
     pub fn state(mut self, input: crate::types::InputSecurityGroupState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -137,6 +149,10 @@ impl DescribeInputSecurityGroupOutputBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// The current state of the Input Security Group.
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::InputSecurityGroupState> {
+        &self.state
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -163,6 +179,14 @@ impl DescribeInputSecurityGroupOutputBuilder {
         self.tags = input;
         self
     }
+    /// A collection of key-value pairs.
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// Appends an item to `whitelist_rules`.
     ///
     /// To override the contents of this collection use [`set_whitelist_rules`](Self::set_whitelist_rules).
@@ -181,6 +205,12 @@ impl DescribeInputSecurityGroupOutputBuilder {
     ) -> Self {
         self.whitelist_rules = input;
         self
+    }
+    /// Whitelist rules and their sync status
+    pub fn get_whitelist_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputWhitelistRule>> {
+        &self.whitelist_rules
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

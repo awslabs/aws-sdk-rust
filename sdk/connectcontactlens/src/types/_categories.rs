@@ -68,6 +68,12 @@ impl CategoriesBuilder {
         self.matched_categories = input;
         self
     }
+    /// <p>The category rules that have been matched in the analyzed segment.</p>
+    pub fn get_matched_categories(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.matched_categories
+    }
     /// Adds a key-value pair to `matched_details`.
     ///
     /// To override the contents of this collection use [`set_matched_details`](Self::set_matched_details).
@@ -92,6 +98,14 @@ impl CategoriesBuilder {
     ) -> Self {
         self.matched_details = input;
         self
+    }
+    /// <p>The category rule that was matched and when it occurred in the transcript.</p>
+    pub fn get_matched_details(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::CategoryDetails>,
+    > {
+        &self.matched_details
     }
     /// Consumes the builder and constructs a [`Categories`](crate::types::Categories).
     pub fn build(self) -> crate::types::Categories {

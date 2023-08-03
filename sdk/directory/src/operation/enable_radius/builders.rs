@@ -36,6 +36,10 @@ impl EnableRadiusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the EnableRadius as a reference.
+    pub fn as_input(&self) -> &crate::operation::enable_radius::builders::EnableRadiusInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl EnableRadiusFluentBuilder {
         self.inner = self.inner.set_directory_id(input);
         self
     }
+    /// <p>The identifier of the directory for which to enable MFA.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_id()
+    }
     /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
     pub fn radius_settings(mut self, input: crate::types::RadiusSettings) -> Self {
         self.inner = self.inner.radius_settings(input);
@@ -130,5 +138,9 @@ impl EnableRadiusFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_radius_settings(input);
         self
+    }
+    /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
+    pub fn get_radius_settings(&self) -> &::std::option::Option<crate::types::RadiusSettings> {
+        self.inner.get_radius_settings()
     }
 }

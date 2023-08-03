@@ -37,6 +37,10 @@ impl DescribeReservedInstancesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeReservedInstances as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_reserved_instances::builders::DescribeReservedInstancesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -166,6 +170,26 @@ impl DescribeReservedInstancesFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>One or more filters.</p>
+    /// <ul>
+    /// <li> <p> <code>availability-zone</code> - The Availability Zone where the Reserved Instance can be used.</p> </li>
+    /// <li> <p> <code>duration</code> - The duration of the Reserved Instance (one year or three years), in seconds (<code>31536000</code> | <code>94608000</code>).</p> </li>
+    /// <li> <p> <code>end</code> - The time when the Reserved Instance expires (for example, 2015-08-07T11:54:42.000Z).</p> </li>
+    /// <li> <p> <code>fixed-price</code> - The purchase price of the Reserved Instance (for example, 9800.0).</p> </li>
+    /// <li> <p> <code>instance-type</code> - The instance type that is covered by the reservation.</p> </li>
+    /// <li> <p> <code>scope</code> - The scope of the Reserved Instance (<code>Region</code> or <code>Availability Zone</code>).</p> </li>
+    /// <li> <p> <code>product-description</code> - The Reserved Instance product platform description (<code>Linux/UNIX</code> | <code>Linux with SQL Server Standard</code> | <code>Linux with SQL Server Web</code> | <code>Linux with SQL Server Enterprise</code> | <code>SUSE Linux</code> | <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux with HA</code> | <code>Windows</code> | <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server Web</code> | <code>Windows with SQL Server Enterprise</code>).</p> </li>
+    /// <li> <p> <code>reserved-instances-id</code> - The ID of the Reserved Instance.</p> </li>
+    /// <li> <p> <code>start</code> - The time at which the Reserved Instance purchase request was placed (for example, 2014-08-07T11:54:42.000Z).</p> </li>
+    /// <li> <p> <code>state</code> - The state of the Reserved Instance (<code>payment-pending</code> | <code>active</code> | <code>payment-failed</code> | <code>retired</code>).</p> </li>
+    /// <li> <p> <code>tag:
+    /// <key></key></code> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p> </li>
+    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
+    /// <li> <p> <code>usage-price</code> - The usage price of the Reserved Instance, per hour (for example, 0.84).</p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// <p>Describes whether the Reserved Instance is Standard or Convertible.</p>
     pub fn offering_class(mut self, input: crate::types::OfferingClassType) -> Self {
         self.inner = self.inner.offering_class(input);
@@ -178,6 +202,10 @@ impl DescribeReservedInstancesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_offering_class(input);
         self
+    }
+    /// <p>Describes whether the Reserved Instance is Standard or Convertible.</p>
+    pub fn get_offering_class(&self) -> &::std::option::Option<crate::types::OfferingClassType> {
+        self.inner.get_offering_class()
     }
     /// Appends an item to `ReservedInstancesIds`.
     ///
@@ -201,6 +229,13 @@ impl DescribeReservedInstancesFluentBuilder {
         self.inner = self.inner.set_reserved_instances_ids(input);
         self
     }
+    /// <p>One or more Reserved Instance IDs.</p>
+    /// <p>Default: Describes all your Reserved Instances, or only those otherwise specified.</p>
+    pub fn get_reserved_instances_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_reserved_instances_ids()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -210,6 +245,10 @@ impl DescribeReservedInstancesFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
     /// <p>The Reserved Instance offering type. If you are using tools that predate the 2011-11-01 API version, you only have access to the <code>Medium Utilization</code> Reserved Instance offering type.</p>
     pub fn offering_type(mut self, input: crate::types::OfferingTypeValues) -> Self {
@@ -223,5 +262,9 @@ impl DescribeReservedInstancesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_offering_type(input);
         self
+    }
+    /// <p>The Reserved Instance offering type. If you are using tools that predate the 2011-11-01 API version, you only have access to the <code>Medium Utilization</code> Reserved Instance offering type.</p>
+    pub fn get_offering_type(&self) -> &::std::option::Option<crate::types::OfferingTypeValues> {
+        self.inner.get_offering_type()
     }
 }

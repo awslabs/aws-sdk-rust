@@ -56,6 +56,10 @@ impl PathComponentBuilder {
         self.sequence = input;
         self
     }
+    /// <p>The sequence number in the path. The destination is 0.</p>
+    pub fn get_sequence(&self) -> &::std::option::Option<i32> {
+        &self.sequence
+    }
     /// <p>The resource.</p>
     pub fn resource(mut self, input: crate::types::NetworkResourceSummary) -> Self {
         self.resource = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl PathComponentBuilder {
     ) -> Self {
         self.resource = input;
         self
+    }
+    /// <p>The resource.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<crate::types::NetworkResourceSummary> {
+        &self.resource
     }
     /// <p>The destination CIDR block in the route table.</p>
     pub fn destination_cidr_block(
@@ -84,6 +92,10 @@ impl PathComponentBuilder {
     ) -> Self {
         self.destination_cidr_block = input;
         self
+    }
+    /// <p>The destination CIDR block in the route table.</p>
+    pub fn get_destination_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_cidr_block
     }
     /// Consumes the builder and constructs a [`PathComponent`](crate::types::PathComponent).
     pub fn build(self) -> crate::types::PathComponent {

@@ -36,6 +36,13 @@ impl GetSegmentImportJobsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetSegmentImportJobs as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_segment_import_jobs::builders::GetSegmentImportJobsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl GetSegmentImportJobsFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     pub fn page_size(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.page_size(input.into());
@@ -141,6 +152,10 @@ impl GetSegmentImportJobsFluentBuilder {
     pub fn set_page_size(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_page_size(input);
         self
+    }
+    /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_page_size()
     }
     /// <p>The unique identifier for the segment.</p>
     pub fn segment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -152,6 +167,10 @@ impl GetSegmentImportJobsFluentBuilder {
         self.inner = self.inner.set_segment_id(input);
         self
     }
+    /// <p>The unique identifier for the segment.</p>
+    pub fn get_segment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_segment_id()
+    }
     /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
     pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.token(input.into());
@@ -161,5 +180,9 @@ impl GetSegmentImportJobsFluentBuilder {
     pub fn set_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_token(input);
         self
+    }
+    /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_token()
     }
 }

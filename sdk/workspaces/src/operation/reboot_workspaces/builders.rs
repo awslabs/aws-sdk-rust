@@ -38,6 +38,12 @@ impl RebootWorkspacesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RebootWorkspaces as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::reboot_workspaces::builders::RebootWorkspacesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,5 +140,11 @@ impl RebootWorkspacesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_reboot_workspace_requests(input);
         self
+    }
+    /// <p>The WorkSpaces to reboot. You can specify up to 25 WorkSpaces.</p>
+    pub fn get_reboot_workspace_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RebootRequest>> {
+        self.inner.get_reboot_workspace_requests()
     }
 }

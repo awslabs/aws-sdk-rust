@@ -71,6 +71,10 @@ impl ListDeviceResourcesInputBuilder {
         self.managed_device_id = input;
         self
     }
+    /// <p>The ID of the managed device that you are listing the resources of.</p>
+    pub fn get_managed_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.managed_device_id
+    }
     /// <p>A structure used to filter the results by type of resource.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl ListDeviceResourcesInputBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>A structure used to filter the results by type of resource.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// <p>The maximum number of resources per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -91,6 +99,10 @@ impl ListDeviceResourcesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of resources per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>A pagination token to continue to the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -100,6 +112,10 @@ impl ListDeviceResourcesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A pagination token to continue to the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListDeviceResourcesInput`](crate::operation::list_device_resources::ListDeviceResourcesInput).
     pub fn build(

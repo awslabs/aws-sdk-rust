@@ -36,6 +36,12 @@ impl ListDomainNamesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListDomainNames as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_domain_names::builders::ListDomainNamesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,5 +134,9 @@ impl ListDomainNamesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_engine_type(input);
         self
+    }
+    /// <p>Filters the output by domain engine type.</p>
+    pub fn get_engine_type(&self) -> &::std::option::Option<crate::types::EngineType> {
+        self.inner.get_engine_type()
     }
 }

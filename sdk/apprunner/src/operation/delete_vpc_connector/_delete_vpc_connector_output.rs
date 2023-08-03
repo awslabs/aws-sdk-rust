@@ -50,6 +50,10 @@ impl DeleteVpcConnectorOutputBuilder {
         self.vpc_connector = input;
         self
     }
+    /// <p>A description of the App Runner VPC connector that this request just deleted.</p>
+    pub fn get_vpc_connector(&self) -> &::std::option::Option<crate::types::VpcConnector> {
+        &self.vpc_connector
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

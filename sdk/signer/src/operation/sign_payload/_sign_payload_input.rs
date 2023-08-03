@@ -63,6 +63,10 @@ impl SignPayloadInputBuilder {
         self.profile_name = input;
         self
     }
+    /// <p>The name of the signing profile.</p>
+    pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_name
+    }
     /// <p>The AWS account ID of the profile owner.</p>
     pub fn profile_owner(
         mut self,
@@ -79,6 +83,10 @@ impl SignPayloadInputBuilder {
         self.profile_owner = input;
         self
     }
+    /// <p>The AWS account ID of the profile owner.</p>
+    pub fn get_profile_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_owner
+    }
     /// <p>Specifies the object digest (hash) to sign.</p>
     pub fn payload(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.payload = ::std::option::Option::Some(input);
@@ -88,6 +96,10 @@ impl SignPayloadInputBuilder {
     pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.payload = input;
         self
+    }
+    /// <p>Specifies the object digest (hash) to sign.</p>
+    pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.payload
     }
     /// <p>Payload content type</p>
     pub fn payload_format(
@@ -104,6 +116,10 @@ impl SignPayloadInputBuilder {
     ) -> Self {
         self.payload_format = input;
         self
+    }
+    /// <p>Payload content type</p>
+    pub fn get_payload_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.payload_format
     }
     /// Consumes the builder and constructs a [`SignPayloadInput`](crate::operation::sign_payload::SignPayloadInput).
     pub fn build(

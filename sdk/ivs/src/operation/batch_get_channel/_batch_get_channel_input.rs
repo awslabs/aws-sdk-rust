@@ -48,6 +48,10 @@ impl BatchGetChannelInputBuilder {
         self.arns = input;
         self
     }
+    /// <p>Array of ARNs, one per channel.</p>
+    pub fn get_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.arns
+    }
     /// Consumes the builder and constructs a [`BatchGetChannelInput`](crate::operation::batch_get_channel::BatchGetChannelInput).
     pub fn build(
         self,

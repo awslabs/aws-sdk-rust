@@ -163,6 +163,10 @@ impl VolumeModificationBuilder {
         self.volume_id = input;
         self
     }
+    /// <p>The ID of the volume.</p>
+    pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_id
+    }
     /// <p>The current modification state. The modification state is null for unmodified volumes.</p>
     pub fn modification_state(mut self, input: crate::types::VolumeModificationState) -> Self {
         self.modification_state = ::std::option::Option::Some(input);
@@ -175,6 +179,12 @@ impl VolumeModificationBuilder {
     ) -> Self {
         self.modification_state = input;
         self
+    }
+    /// <p>The current modification state. The modification state is null for unmodified volumes.</p>
+    pub fn get_modification_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::VolumeModificationState> {
+        &self.modification_state
     }
     /// <p>A status message about the modification progress or failure.</p>
     pub fn status_message(
@@ -192,6 +202,10 @@ impl VolumeModificationBuilder {
         self.status_message = input;
         self
     }
+    /// <p>A status message about the modification progress or failure.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>The target size of the volume, in GiB.</p>
     pub fn target_size(mut self, input: i32) -> Self {
         self.target_size = ::std::option::Option::Some(input);
@@ -202,6 +216,10 @@ impl VolumeModificationBuilder {
         self.target_size = input;
         self
     }
+    /// <p>The target size of the volume, in GiB.</p>
+    pub fn get_target_size(&self) -> &::std::option::Option<i32> {
+        &self.target_size
+    }
     /// <p>The target IOPS rate of the volume.</p>
     pub fn target_iops(mut self, input: i32) -> Self {
         self.target_iops = ::std::option::Option::Some(input);
@@ -211,6 +229,10 @@ impl VolumeModificationBuilder {
     pub fn set_target_iops(mut self, input: ::std::option::Option<i32>) -> Self {
         self.target_iops = input;
         self
+    }
+    /// <p>The target IOPS rate of the volume.</p>
+    pub fn get_target_iops(&self) -> &::std::option::Option<i32> {
+        &self.target_iops
     }
     /// <p>The target EBS volume type of the volume.</p>
     pub fn target_volume_type(mut self, input: crate::types::VolumeType) -> Self {
@@ -225,6 +247,10 @@ impl VolumeModificationBuilder {
         self.target_volume_type = input;
         self
     }
+    /// <p>The target EBS volume type of the volume.</p>
+    pub fn get_target_volume_type(&self) -> &::std::option::Option<crate::types::VolumeType> {
+        &self.target_volume_type
+    }
     /// <p>The target throughput of the volume, in MiB/s.</p>
     pub fn target_throughput(mut self, input: i32) -> Self {
         self.target_throughput = ::std::option::Option::Some(input);
@@ -234,6 +260,10 @@ impl VolumeModificationBuilder {
     pub fn set_target_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
         self.target_throughput = input;
         self
+    }
+    /// <p>The target throughput of the volume, in MiB/s.</p>
+    pub fn get_target_throughput(&self) -> &::std::option::Option<i32> {
+        &self.target_throughput
     }
     /// <p>The target setting for Amazon EBS Multi-Attach.</p>
     pub fn target_multi_attach_enabled(mut self, input: bool) -> Self {
@@ -245,6 +275,10 @@ impl VolumeModificationBuilder {
         self.target_multi_attach_enabled = input;
         self
     }
+    /// <p>The target setting for Amazon EBS Multi-Attach.</p>
+    pub fn get_target_multi_attach_enabled(&self) -> &::std::option::Option<bool> {
+        &self.target_multi_attach_enabled
+    }
     /// <p>The original size of the volume, in GiB.</p>
     pub fn original_size(mut self, input: i32) -> Self {
         self.original_size = ::std::option::Option::Some(input);
@@ -255,6 +289,10 @@ impl VolumeModificationBuilder {
         self.original_size = input;
         self
     }
+    /// <p>The original size of the volume, in GiB.</p>
+    pub fn get_original_size(&self) -> &::std::option::Option<i32> {
+        &self.original_size
+    }
     /// <p>The original IOPS rate of the volume.</p>
     pub fn original_iops(mut self, input: i32) -> Self {
         self.original_iops = ::std::option::Option::Some(input);
@@ -264,6 +302,10 @@ impl VolumeModificationBuilder {
     pub fn set_original_iops(mut self, input: ::std::option::Option<i32>) -> Self {
         self.original_iops = input;
         self
+    }
+    /// <p>The original IOPS rate of the volume.</p>
+    pub fn get_original_iops(&self) -> &::std::option::Option<i32> {
+        &self.original_iops
     }
     /// <p>The original EBS volume type of the volume.</p>
     pub fn original_volume_type(mut self, input: crate::types::VolumeType) -> Self {
@@ -278,6 +320,10 @@ impl VolumeModificationBuilder {
         self.original_volume_type = input;
         self
     }
+    /// <p>The original EBS volume type of the volume.</p>
+    pub fn get_original_volume_type(&self) -> &::std::option::Option<crate::types::VolumeType> {
+        &self.original_volume_type
+    }
     /// <p>The original throughput of the volume, in MiB/s.</p>
     pub fn original_throughput(mut self, input: i32) -> Self {
         self.original_throughput = ::std::option::Option::Some(input);
@@ -287,6 +333,10 @@ impl VolumeModificationBuilder {
     pub fn set_original_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
         self.original_throughput = input;
         self
+    }
+    /// <p>The original throughput of the volume, in MiB/s.</p>
+    pub fn get_original_throughput(&self) -> &::std::option::Option<i32> {
+        &self.original_throughput
     }
     /// <p>The original setting for Amazon EBS Multi-Attach.</p>
     pub fn original_multi_attach_enabled(mut self, input: bool) -> Self {
@@ -298,6 +348,10 @@ impl VolumeModificationBuilder {
         self.original_multi_attach_enabled = input;
         self
     }
+    /// <p>The original setting for Amazon EBS Multi-Attach.</p>
+    pub fn get_original_multi_attach_enabled(&self) -> &::std::option::Option<bool> {
+        &self.original_multi_attach_enabled
+    }
     /// <p>The modification progress, from 0 to 100 percent complete.</p>
     pub fn progress(mut self, input: i64) -> Self {
         self.progress = ::std::option::Option::Some(input);
@@ -307,6 +361,10 @@ impl VolumeModificationBuilder {
     pub fn set_progress(mut self, input: ::std::option::Option<i64>) -> Self {
         self.progress = input;
         self
+    }
+    /// <p>The modification progress, from 0 to 100 percent complete.</p>
+    pub fn get_progress(&self) -> &::std::option::Option<i64> {
+        &self.progress
     }
     /// <p>The modification start time.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -321,6 +379,10 @@ impl VolumeModificationBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The modification start time.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The modification completion or failure time.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -333,6 +395,10 @@ impl VolumeModificationBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The modification completion or failure time.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// Consumes the builder and constructs a [`VolumeModification`](crate::types::VolumeModification).
     pub fn build(self) -> crate::types::VolumeModification {

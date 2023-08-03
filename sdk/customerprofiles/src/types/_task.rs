@@ -83,6 +83,12 @@ impl TaskBuilder {
         self.connector_operator = input;
         self
     }
+    /// <p>The operation to be performed on the provided source fields.</p>
+    pub fn get_connector_operator(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConnectorOperator> {
+        &self.connector_operator
+    }
     /// <p>A field in a destination connector, or a field value against which Amazon AppFlow validates a source field.</p>
     pub fn destination_field(
         mut self,
@@ -98,6 +104,10 @@ impl TaskBuilder {
     ) -> Self {
         self.destination_field = input;
         self
+    }
+    /// <p>A field in a destination connector, or a field value against which Amazon AppFlow validates a source field.</p>
+    pub fn get_destination_field(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_field
     }
     /// Appends an item to `source_fields`.
     ///
@@ -120,6 +130,12 @@ impl TaskBuilder {
     ) -> Self {
         self.source_fields = input;
         self
+    }
+    /// <p>The source fields to which a particular task is applied.</p>
+    pub fn get_source_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.source_fields
     }
     /// Adds a key-value pair to `task_properties`.
     ///
@@ -149,6 +165,14 @@ impl TaskBuilder {
         self.task_properties = input;
         self
     }
+    /// <p>A map used to store task-related information. The service looks for particular information based on the TaskType.</p>
+    pub fn get_task_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<crate::types::OperatorPropertiesKeys, ::std::string::String>,
+    > {
+        &self.task_properties
+    }
     /// <p>Specifies the particular task implementation that Amazon AppFlow performs.</p>
     pub fn task_type(mut self, input: crate::types::TaskType) -> Self {
         self.task_type = ::std::option::Option::Some(input);
@@ -158,6 +182,10 @@ impl TaskBuilder {
     pub fn set_task_type(mut self, input: ::std::option::Option<crate::types::TaskType>) -> Self {
         self.task_type = input;
         self
+    }
+    /// <p>Specifies the particular task implementation that Amazon AppFlow performs.</p>
+    pub fn get_task_type(&self) -> &::std::option::Option<crate::types::TaskType> {
+        &self.task_type
     }
     /// Consumes the builder and constructs a [`Task`](crate::types::Task).
     pub fn build(self) -> crate::types::Task {

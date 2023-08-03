@@ -56,6 +56,10 @@ impl GetTestGridSessionInputBuilder {
         self.project_arn = input;
         self
     }
+    /// <p>The ARN for the project that this session belongs to. See <code>CreateTestGridProject</code> and <code>ListTestGridProjects</code>.</p>
+    pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_arn
+    }
     /// <p>An ID associated with this session.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl GetTestGridSessionInputBuilder {
         self.session_id = input;
         self
     }
+    /// <p>An ID associated with this session.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
+    }
     /// <p>An ARN that uniquely identifies a <code>TestGridSession</code>.</p>
     pub fn session_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_arn = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl GetTestGridSessionInputBuilder {
     pub fn set_session_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_arn = input;
         self
+    }
+    /// <p>An ARN that uniquely identifies a <code>TestGridSession</code>.</p>
+    pub fn get_session_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_arn
     }
     /// Consumes the builder and constructs a [`GetTestGridSessionInput`](crate::operation::get_test_grid_session::GetTestGridSessionInput).
     pub fn build(

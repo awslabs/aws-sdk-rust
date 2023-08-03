@@ -47,6 +47,10 @@ impl StartExportLabelsTaskRunInputBuilder {
         self.transform_id = input;
         self
     }
+    /// <p>The unique identifier of the machine learning transform.</p>
+    pub fn get_transform_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transform_id
+    }
     /// <p>The Amazon S3 path where you export the labels.</p>
     pub fn output_s3_path(
         mut self,
@@ -62,6 +66,10 @@ impl StartExportLabelsTaskRunInputBuilder {
     ) -> Self {
         self.output_s3_path = input;
         self
+    }
+    /// <p>The Amazon S3 path where you export the labels.</p>
+    pub fn get_output_s3_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_s3_path
     }
     /// Consumes the builder and constructs a [`StartExportLabelsTaskRunInput`](crate::operation::start_export_labels_task_run::StartExportLabelsTaskRunInput).
     pub fn build(

@@ -37,6 +37,12 @@ impl DescribeTasksFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeTasks as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_tasks::builders::DescribeTasksInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +125,10 @@ impl DescribeTasksFluentBuilder {
         self.inner = self.inner.set_cluster(input);
         self
     }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task or tasks to describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required if the task or tasks you are describing were launched in any cluster other than the default cluster.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster()
+    }
     /// Appends an item to `tasks`.
     ///
     /// To override the contents of this collection use [`set_tasks`](Self::set_tasks).
@@ -136,6 +146,10 @@ impl DescribeTasksFluentBuilder {
         self.inner = self.inner.set_tasks(input);
         self
     }
+    /// <p>A list of up to 100 task IDs or full ARN entries.</p>
+    pub fn get_tasks(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_tasks()
+    }
     /// Appends an item to `include`.
     ///
     /// To override the contents of this collection use [`set_include`](Self::set_include).
@@ -152,5 +166,9 @@ impl DescribeTasksFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_include(input);
         self
+    }
+    /// <p>Specifies whether you want to see the resource tags for the task. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
+    pub fn get_include(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskField>> {
+        self.inner.get_include()
     }
 }

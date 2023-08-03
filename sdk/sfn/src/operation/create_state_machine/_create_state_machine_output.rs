@@ -69,6 +69,10 @@ impl CreateStateMachineOutputBuilder {
         self.state_machine_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that identifies the created state machine.</p>
+    pub fn get_state_machine_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_machine_arn
+    }
     /// <p>The date the state machine is created.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl CreateStateMachineOutputBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>The date the state machine is created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the created state machine version. If you do not set the <code>publish</code> parameter to <code>true</code>, this field returns null value.</p>
     pub fn state_machine_version_arn(
@@ -97,6 +105,10 @@ impl CreateStateMachineOutputBuilder {
     ) -> Self {
         self.state_machine_version_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) that identifies the created state machine version. If you do not set the <code>publish</code> parameter to <code>true</code>, this field returns null value.</p>
+    pub fn get_state_machine_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_machine_version_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -136,6 +136,10 @@ impl ReportDefinitionBuilder {
         self.report_name = input;
         self
     }
+    /// <p>The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces. </p>
+    pub fn get_report_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.report_name
+    }
     /// <p>The length of time covered by the report. </p>
     pub fn time_unit(mut self, input: crate::types::TimeUnit) -> Self {
         self.time_unit = ::std::option::Option::Some(input);
@@ -146,6 +150,10 @@ impl ReportDefinitionBuilder {
         self.time_unit = input;
         self
     }
+    /// <p>The length of time covered by the report. </p>
+    pub fn get_time_unit(&self) -> &::std::option::Option<crate::types::TimeUnit> {
+        &self.time_unit
+    }
     /// <p>The format that AWS saves the report in.</p>
     pub fn format(mut self, input: crate::types::ReportFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
@@ -155,6 +163,10 @@ impl ReportDefinitionBuilder {
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::ReportFormat>) -> Self {
         self.format = input;
         self
+    }
+    /// <p>The format that AWS saves the report in.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::ReportFormat> {
+        &self.format
     }
     /// <p>The compression format that AWS uses for the report.</p>
     pub fn compression(mut self, input: crate::types::CompressionFormat) -> Self {
@@ -168,6 +180,10 @@ impl ReportDefinitionBuilder {
     ) -> Self {
         self.compression = input;
         self
+    }
+    /// <p>The compression format that AWS uses for the report.</p>
+    pub fn get_compression(&self) -> &::std::option::Option<crate::types::CompressionFormat> {
+        &self.compression
     }
     /// Appends an item to `additional_schema_elements`.
     ///
@@ -188,6 +204,12 @@ impl ReportDefinitionBuilder {
         self.additional_schema_elements = input;
         self
     }
+    /// <p>A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs. </p>
+    pub fn get_additional_schema_elements(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaElement>> {
+        &self.additional_schema_elements
+    }
     /// <p>The S3 bucket where AWS delivers the report.</p>
     pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket = ::std::option::Option::Some(input.into());
@@ -197,6 +219,10 @@ impl ReportDefinitionBuilder {
     pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket = input;
         self
+    }
+    /// <p>The S3 bucket where AWS delivers the report.</p>
+    pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket
     }
     /// <p>The prefix that AWS adds to the report name when AWS delivers the report. Your prefix can't include spaces.</p>
     pub fn s3_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -208,6 +234,10 @@ impl ReportDefinitionBuilder {
         self.s3_prefix = input;
         self
     }
+    /// <p>The prefix that AWS adds to the report name when AWS delivers the report. Your prefix can't include spaces.</p>
+    pub fn get_s3_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_prefix
+    }
     /// <p>The region of the S3 bucket that AWS delivers the report into.</p>
     pub fn s3_region(mut self, input: crate::types::AwsRegion) -> Self {
         self.s3_region = ::std::option::Option::Some(input);
@@ -217,6 +247,10 @@ impl ReportDefinitionBuilder {
     pub fn set_s3_region(mut self, input: ::std::option::Option<crate::types::AwsRegion>) -> Self {
         self.s3_region = input;
         self
+    }
+    /// <p>The region of the S3 bucket that AWS delivers the report into.</p>
+    pub fn get_s3_region(&self) -> &::std::option::Option<crate::types::AwsRegion> {
+        &self.s3_region
     }
     /// Appends an item to `additional_artifacts`.
     ///
@@ -237,6 +271,12 @@ impl ReportDefinitionBuilder {
         self.additional_artifacts = input;
         self
     }
+    /// <p>A list of manifests that you want Amazon Web Services to create for this report.</p>
+    pub fn get_additional_artifacts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalArtifact>> {
+        &self.additional_artifacts
+    }
     /// <p>Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.</p>
     pub fn refresh_closed_reports(mut self, input: bool) -> Self {
         self.refresh_closed_reports = ::std::option::Option::Some(input);
@@ -246,6 +286,10 @@ impl ReportDefinitionBuilder {
     pub fn set_refresh_closed_reports(mut self, input: ::std::option::Option<bool>) -> Self {
         self.refresh_closed_reports = input;
         self
+    }
+    /// <p>Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.</p>
+    pub fn get_refresh_closed_reports(&self) -> &::std::option::Option<bool> {
+        &self.refresh_closed_reports
     }
     /// <p>Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in addition to the previous versions.</p>
     pub fn report_versioning(mut self, input: crate::types::ReportVersioning) -> Self {
@@ -259,6 +303,10 @@ impl ReportDefinitionBuilder {
     ) -> Self {
         self.report_versioning = input;
         self
+    }
+    /// <p>Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in addition to the previous versions.</p>
+    pub fn get_report_versioning(&self) -> &::std::option::Option<crate::types::ReportVersioning> {
+        &self.report_versioning
     }
     /// <p> The Amazon resource name of the billing view. You can get this value by using the billing view service public APIs. </p>
     pub fn billing_view_arn(
@@ -275,6 +323,10 @@ impl ReportDefinitionBuilder {
     ) -> Self {
         self.billing_view_arn = input;
         self
+    }
+    /// <p> The Amazon resource name of the billing view. You can get this value by using the billing view service public APIs. </p>
+    pub fn get_billing_view_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.billing_view_arn
     }
     /// Consumes the builder and constructs a [`ReportDefinition`](crate::types::ReportDefinition).
     pub fn build(self) -> crate::types::ReportDefinition {

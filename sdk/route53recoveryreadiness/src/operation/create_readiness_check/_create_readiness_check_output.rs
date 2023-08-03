@@ -85,6 +85,10 @@ impl CreateReadinessCheckOutputBuilder {
         self.readiness_check_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) associated with a readiness check.</p>
+    pub fn get_readiness_check_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.readiness_check_arn
+    }
     /// <p>Name of a readiness check.</p>
     pub fn readiness_check_name(
         mut self,
@@ -101,6 +105,10 @@ impl CreateReadinessCheckOutputBuilder {
         self.readiness_check_name = input;
         self
     }
+    /// <p>Name of a readiness check.</p>
+    pub fn get_readiness_check_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.readiness_check_name
+    }
     /// <p>Name of the resource set to be checked.</p>
     pub fn resource_set(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_set = ::std::option::Option::Some(input.into());
@@ -110,6 +118,10 @@ impl CreateReadinessCheckOutputBuilder {
     pub fn set_resource_set(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_set = input;
         self
+    }
+    /// <p>Name of the resource set to be checked.</p>
+    pub fn get_resource_set(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_set
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -135,6 +147,14 @@ impl CreateReadinessCheckOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A collection of tags associated with a resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

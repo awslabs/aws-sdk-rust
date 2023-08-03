@@ -36,6 +36,10 @@ impl ExecuteProvisionedProductPlanFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ExecuteProvisionedProductPlan as a reference.
+    pub fn as_input(&self) -> &crate::operation::execute_provisioned_product_plan::builders::ExecuteProvisionedProductPlanInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +144,14 @@ impl ExecuteProvisionedProductPlanFluentBuilder {
         self.inner = self.inner.set_accept_language(input);
         self
     }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_accept_language()
+    }
     /// <p>The plan identifier.</p>
     pub fn plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.plan_id(input.into());
@@ -149,6 +161,10 @@ impl ExecuteProvisionedProductPlanFluentBuilder {
     pub fn set_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_plan_id(input);
         self
+    }
+    /// <p>The plan identifier.</p>
+    pub fn get_plan_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_plan_id()
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub fn idempotency_token(
@@ -165,5 +181,9 @@ impl ExecuteProvisionedProductPlanFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
+    }
+    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
+    pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_idempotency_token()
     }
 }

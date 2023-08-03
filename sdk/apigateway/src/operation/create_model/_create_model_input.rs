@@ -72,6 +72,10 @@ impl CreateModelInputBuilder {
         self.rest_api_id = input;
         self
     }
+    /// <p>The RestApi identifier under which the Model will be created.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
+    }
     /// <p>The name of the model. Must be alphanumeric.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl CreateModelInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the model. Must be alphanumeric.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The description of the model.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -92,6 +100,10 @@ impl CreateModelInputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the model.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The schema for the model. For <code>application/json</code> models, this should be JSON schema draft 4 model.</p>
     pub fn schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema = ::std::option::Option::Some(input.into());
@@ -102,6 +114,10 @@ impl CreateModelInputBuilder {
         self.schema = input;
         self
     }
+    /// <p>The schema for the model. For <code>application/json</code> models, this should be JSON schema draft 4 model.</p>
+    pub fn get_schema(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema
+    }
     /// <p>The content-type for the model.</p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
@@ -111,6 +127,10 @@ impl CreateModelInputBuilder {
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
+    }
+    /// <p>The content-type for the model.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
     }
     /// Consumes the builder and constructs a [`CreateModelInput`](crate::operation::create_model::CreateModelInput).
     pub fn build(

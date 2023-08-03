@@ -48,6 +48,10 @@ impl ReplicationTaskAssessmentRunProgressBuilder {
         self.individual_assessment_count = input;
         self
     }
+    /// <p>The number of individual assessments that are specified to run.</p>
+    pub fn get_individual_assessment_count(&self) -> &::std::option::Option<i32> {
+        &self.individual_assessment_count
+    }
     /// <p>The number of individual assessments that have completed, successfully or not.</p>
     pub fn individual_assessment_completed_count(mut self, input: i32) -> Self {
         self.individual_assessment_completed_count = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl ReplicationTaskAssessmentRunProgressBuilder {
     ) -> Self {
         self.individual_assessment_completed_count = input;
         self
+    }
+    /// <p>The number of individual assessments that have completed, successfully or not.</p>
+    pub fn get_individual_assessment_completed_count(&self) -> &::std::option::Option<i32> {
+        &self.individual_assessment_completed_count
     }
     /// Consumes the builder and constructs a [`ReplicationTaskAssessmentRunProgress`](crate::types::ReplicationTaskAssessmentRunProgress).
     pub fn build(self) -> crate::types::ReplicationTaskAssessmentRunProgress {

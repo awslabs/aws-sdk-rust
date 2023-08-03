@@ -37,6 +37,10 @@ impl DisassociateRecoveryPointFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateRecoveryPoint as a reference.
+    pub fn as_input(&self) -> &crate::operation::disassociate_recovery_point::builders::DisassociateRecoveryPointInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl DisassociateRecoveryPointFluentBuilder {
         self.inner = self.inner.set_backup_vault_name(input);
         self
     }
+    /// <p>The unique name of an Backup vault.</p>
+    pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_backup_vault_name()
+    }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies an Backup recovery point.</p>
     pub fn recovery_point_arn(
         mut self,
@@ -148,5 +156,9 @@ impl DisassociateRecoveryPointFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_recovery_point_arn(input);
         self
+    }
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies an Backup recovery point.</p>
+    pub fn get_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_recovery_point_arn()
     }
 }

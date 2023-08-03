@@ -54,6 +54,10 @@ impl ApplicationDependencySummaryBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the nested application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The semantic version of the nested application.</p>
     pub fn semantic_version(
         mut self,
@@ -69,6 +73,10 @@ impl ApplicationDependencySummaryBuilder {
     ) -> Self {
         self.semantic_version = input;
         self
+    }
+    /// <p>The semantic version of the nested application.</p>
+    pub fn get_semantic_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.semantic_version
     }
     /// Consumes the builder and constructs a [`ApplicationDependencySummary`](crate::types::ApplicationDependencySummary).
     pub fn build(self) -> crate::types::ApplicationDependencySummary {

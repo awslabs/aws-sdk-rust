@@ -63,6 +63,10 @@ impl ListGraphsOutputBuilder {
         self.graph_list = input;
         self
     }
+    /// <p>A list of behavior graphs that the account is an administrator account for.</p>
+    pub fn get_graph_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Graph>> {
+        &self.graph_list
+    }
     /// <p>If there are more behavior graphs remaining in the results, then this is the pagination token to use to request the next page of behavior graphs.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl ListGraphsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If there are more behavior graphs remaining in the results, then this is the pagination token to use to request the next page of behavior graphs.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

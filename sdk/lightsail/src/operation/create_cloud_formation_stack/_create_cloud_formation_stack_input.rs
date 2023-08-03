@@ -48,6 +48,12 @@ impl CreateCloudFormationStackInputBuilder {
         self.instances = input;
         self
     }
+    /// <p>An array of parameters that will be used to create the new Amazon EC2 instance. You can only pass one instance entry at a time in this array. You will get an invalid parameter error if you pass more than one instance entry in this array.</p>
+    pub fn get_instances(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceEntry>> {
+        &self.instances
+    }
     /// Consumes the builder and constructs a [`CreateCloudFormationStackInput`](crate::operation::create_cloud_formation_stack::CreateCloudFormationStackInput).
     pub fn build(
         self,

@@ -75,6 +75,10 @@ impl SourceConnectorPropertiesBuilder {
         self.marketo = input;
         self
     }
+    /// <p>The properties that are applied when Marketo is being used as a source.</p>
+    pub fn get_marketo(&self) -> &::std::option::Option<crate::types::MarketoSourceProperties> {
+        &self.marketo
+    }
     /// <p>The properties that are applied when Amazon S3 is being used as the flow source.</p>
     pub fn s3(mut self, input: crate::types::S3SourceProperties) -> Self {
         self.s3 = ::std::option::Option::Some(input);
@@ -87,6 +91,10 @@ impl SourceConnectorPropertiesBuilder {
     ) -> Self {
         self.s3 = input;
         self
+    }
+    /// <p>The properties that are applied when Amazon S3 is being used as the flow source.</p>
+    pub fn get_s3(&self) -> &::std::option::Option<crate::types::S3SourceProperties> {
+        &self.s3
     }
     /// <p>The properties that are applied when Salesforce is being used as a source.</p>
     pub fn salesforce(mut self, input: crate::types::SalesforceSourceProperties) -> Self {
@@ -101,6 +109,12 @@ impl SourceConnectorPropertiesBuilder {
         self.salesforce = input;
         self
     }
+    /// <p>The properties that are applied when Salesforce is being used as a source.</p>
+    pub fn get_salesforce(
+        &self,
+    ) -> &::std::option::Option<crate::types::SalesforceSourceProperties> {
+        &self.salesforce
+    }
     /// <p>The properties that are applied when ServiceNow is being used as a source.</p>
     pub fn service_now(mut self, input: crate::types::ServiceNowSourceProperties) -> Self {
         self.service_now = ::std::option::Option::Some(input);
@@ -114,6 +128,12 @@ impl SourceConnectorPropertiesBuilder {
         self.service_now = input;
         self
     }
+    /// <p>The properties that are applied when ServiceNow is being used as a source.</p>
+    pub fn get_service_now(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServiceNowSourceProperties> {
+        &self.service_now
+    }
     /// <p>The properties that are applied when using Zendesk as a flow source.</p>
     pub fn zendesk(mut self, input: crate::types::ZendeskSourceProperties) -> Self {
         self.zendesk = ::std::option::Option::Some(input);
@@ -126,6 +146,10 @@ impl SourceConnectorPropertiesBuilder {
     ) -> Self {
         self.zendesk = input;
         self
+    }
+    /// <p>The properties that are applied when using Zendesk as a flow source.</p>
+    pub fn get_zendesk(&self) -> &::std::option::Option<crate::types::ZendeskSourceProperties> {
+        &self.zendesk
     }
     /// Consumes the builder and constructs a [`SourceConnectorProperties`](crate::types::SourceConnectorProperties).
     pub fn build(self) -> crate::types::SourceConnectorProperties {

@@ -62,6 +62,10 @@ impl OtaUpdateSummaryBuilder {
         self.ota_update_id = input;
         self
     }
+    /// <p>The OTA update ID.</p>
+    pub fn get_ota_update_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ota_update_id
+    }
     /// <p>The OTA update ARN.</p>
     pub fn ota_update_arn(
         mut self,
@@ -78,6 +82,10 @@ impl OtaUpdateSummaryBuilder {
         self.ota_update_arn = input;
         self
     }
+    /// <p>The OTA update ARN.</p>
+    pub fn get_ota_update_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ota_update_arn
+    }
     /// <p>The date when the OTA update was created.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -90,6 +98,10 @@ impl OtaUpdateSummaryBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>The date when the OTA update was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
     }
     /// Consumes the builder and constructs a [`OtaUpdateSummary`](crate::types::OtaUpdateSummary).
     pub fn build(self) -> crate::types::OtaUpdateSummary {

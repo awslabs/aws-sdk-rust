@@ -241,6 +241,27 @@ impl DescribeDbEngineVersionsInputBuilder {
         self.engine = input;
         self
     }
+    /// <p>The database engine to return.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li> <p> <code>aurora-mysql</code> </p> </li>
+    /// <li> <p> <code>aurora-postgresql</code> </p> </li>
+    /// <li> <p> <code>custom-oracle-ee</code> </p> </li>
+    /// <li> <p> <code>mariadb</code> </p> </li>
+    /// <li> <p> <code>mysql</code> </p> </li>
+    /// <li> <p> <code>oracle-ee</code> </p> </li>
+    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+    /// <li> <p> <code>oracle-se2</code> </p> </li>
+    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li>
+    /// <li> <p> <code>postgres</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ee</code> </p> </li>
+    /// <li> <p> <code>sqlserver-se</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ex</code> </p> </li>
+    /// <li> <p> <code>sqlserver-web</code> </p> </li>
+    /// </ul>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine
+    }
     /// <p>The database engine version to return.</p>
     /// <p>Example: <code>5.1.49</code> </p>
     pub fn engine_version(
@@ -258,6 +279,11 @@ impl DescribeDbEngineVersionsInputBuilder {
     ) -> Self {
         self.engine_version = input;
         self
+    }
+    /// <p>The database engine version to return.</p>
+    /// <p>Example: <code>5.1.49</code> </p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
     }
     /// <p>The name of a specific DB parameter group family to return details for.</p>
     /// <p>Constraints:</p>
@@ -282,6 +308,14 @@ impl DescribeDbEngineVersionsInputBuilder {
     ) -> Self {
         self.db_parameter_group_family = input;
         self
+    }
+    /// <p>The name of a specific DB parameter group family to return details for.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>If supplied, must match an existing DBParameterGroupFamily.</p> </li>
+    /// </ul>
+    pub fn get_db_parameter_group_family(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_parameter_group_family
     }
     /// Appends an item to `filters`.
     ///
@@ -340,6 +374,29 @@ impl DescribeDbEngineVersionsInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>A filter that specifies one or more DB engine versions to describe.</p>
+    /// <p>Supported filters:</p>
+    /// <ul>
+    /// <li> <p> <code>db-parameter-group-family</code> - Accepts parameter groups family names. The results list only includes information about the DB engine versions for these parameter group families.</p> </li>
+    /// <li> <p> <code>engine</code> - Accepts engine names. The results list only includes information about the DB engine versions for these engines.</p> </li>
+    /// <li> <p> <code>engine-mode</code> - Accepts DB engine modes. The results list only includes information about the DB engine versions for these engine modes. Valid DB engine modes are the following:</p>
+    /// <ul>
+    /// <li> <p> <code>global</code> </p> </li>
+    /// <li> <p> <code>multimaster</code> </p> </li>
+    /// <li> <p> <code>parallelquery</code> </p> </li>
+    /// <li> <p> <code>provisioned</code> </p> </li>
+    /// <li> <p> <code>serverless</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>engine-version</code> - Accepts engine versions. The results list only includes information about the DB engine versions for these engine versions.</p> </li>
+    /// <li> <p> <code>status</code> - Accepts engine version statuses. The results list only includes information about the DB engine versions for these statuses. Valid statuses are the following:</p>
+    /// <ul>
+    /// <li> <p> <code>available</code> </p> </li>
+    /// <li> <p> <code>deprecated</code> </p> </li>
+    /// </ul> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
+    }
     /// <p>The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is available, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
@@ -354,6 +411,12 @@ impl DescribeDbEngineVersionsInputBuilder {
         self.max_records = input;
         self
     }
+    /// <p>The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is available, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        &self.max_records
+    }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -364,6 +427,10 @@ impl DescribeDbEngineVersionsInputBuilder {
         self.marker = input;
         self
     }
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>A value that indicates whether only the default version of the specified engine or engine and major version combination is returned.</p>
     pub fn default_only(mut self, input: bool) -> Self {
         self.default_only = ::std::option::Option::Some(input);
@@ -373,6 +440,10 @@ impl DescribeDbEngineVersionsInputBuilder {
     pub fn set_default_only(mut self, input: ::std::option::Option<bool>) -> Self {
         self.default_only = input;
         self
+    }
+    /// <p>A value that indicates whether only the default version of the specified engine or engine and major version combination is returned.</p>
+    pub fn get_default_only(&self) -> &::std::option::Option<bool> {
+        &self.default_only
     }
     /// <p>A value that indicates whether to list the supported character sets for each engine version.</p>
     /// <p>If this parameter is enabled and the requested engine supports the <code>CharacterSetName</code> parameter for <code>CreateDBInstance</code>, the response includes a list of supported character sets for each engine version.</p>
@@ -388,6 +459,12 @@ impl DescribeDbEngineVersionsInputBuilder {
         self.list_supported_character_sets = input;
         self
     }
+    /// <p>A value that indicates whether to list the supported character sets for each engine version.</p>
+    /// <p>If this parameter is enabled and the requested engine supports the <code>CharacterSetName</code> parameter for <code>CreateDBInstance</code>, the response includes a list of supported character sets for each engine version.</p>
+    /// <p>For RDS Custom, the default is not to list supported character sets. If you set <code>ListSupportedCharacterSets</code> to <code>true</code>, RDS Custom returns no results.</p>
+    pub fn get_list_supported_character_sets(&self) -> &::std::option::Option<bool> {
+        &self.list_supported_character_sets
+    }
     /// <p>A value that indicates whether to list the supported time zones for each engine version.</p>
     /// <p>If this parameter is enabled and the requested engine supports the <code>TimeZone</code> parameter for <code>CreateDBInstance</code>, the response includes a list of supported time zones for each engine version.</p>
     /// <p>For RDS Custom, the default is not to list supported time zones. If you set <code>ListSupportedTimezones</code> to <code>true</code>, RDS Custom returns no results.</p>
@@ -402,6 +479,12 @@ impl DescribeDbEngineVersionsInputBuilder {
         self.list_supported_timezones = input;
         self
     }
+    /// <p>A value that indicates whether to list the supported time zones for each engine version.</p>
+    /// <p>If this parameter is enabled and the requested engine supports the <code>TimeZone</code> parameter for <code>CreateDBInstance</code>, the response includes a list of supported time zones for each engine version.</p>
+    /// <p>For RDS Custom, the default is not to list supported time zones. If you set <code>ListSupportedTimezones</code> to <code>true</code>, RDS Custom returns no results.</p>
+    pub fn get_list_supported_timezones(&self) -> &::std::option::Option<bool> {
+        &self.list_supported_timezones
+    }
     /// <p>A value that indicates whether to include engine versions that aren't available in the list. The default is to list only available engine versions.</p>
     pub fn include_all(mut self, input: bool) -> Self {
         self.include_all = ::std::option::Option::Some(input);
@@ -411,6 +494,10 @@ impl DescribeDbEngineVersionsInputBuilder {
     pub fn set_include_all(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_all = input;
         self
+    }
+    /// <p>A value that indicates whether to include engine versions that aren't available in the list. The default is to list only available engine versions.</p>
+    pub fn get_include_all(&self) -> &::std::option::Option<bool> {
+        &self.include_all
     }
     /// Consumes the builder and constructs a [`DescribeDbEngineVersionsInput`](crate::operation::describe_db_engine_versions::DescribeDbEngineVersionsInput).
     pub fn build(

@@ -72,6 +72,10 @@ impl WorkGroupSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the workgroup.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The state of the workgroup.</p>
     pub fn state(mut self, input: crate::types::WorkGroupState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl WorkGroupSummaryBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of the workgroup.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::WorkGroupState> {
+        &self.state
+    }
     /// <p>The workgroup description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl WorkGroupSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The workgroup description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The workgroup creation date and time.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -105,6 +117,10 @@ impl WorkGroupSummaryBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The workgroup creation date and time.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The engine version setting for all queries on the workgroup. Queries on the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.</p>
     pub fn engine_version(mut self, input: crate::types::EngineVersion) -> Self {
         self.engine_version = ::std::option::Option::Some(input);
@@ -117,6 +133,10 @@ impl WorkGroupSummaryBuilder {
     ) -> Self {
         self.engine_version = input;
         self
+    }
+    /// <p>The engine version setting for all queries on the workgroup. Queries on the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<crate::types::EngineVersion> {
+        &self.engine_version
     }
     /// Consumes the builder and constructs a [`WorkGroupSummary`](crate::types::WorkGroupSummary).
     pub fn build(self) -> crate::types::WorkGroupSummary {

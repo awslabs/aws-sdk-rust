@@ -49,6 +49,12 @@ impl SearchResourcesCriteriaBlockBuilder {
         self.and = input;
         self
     }
+    /// <p>An array of objects, one for each property- or tag-based condition that includes or excludes resources from the query results. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.</p>
+    pub fn get_and(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchResourcesCriteria>> {
+        &self.and
+    }
     /// Consumes the builder and constructs a [`SearchResourcesCriteriaBlock`](crate::types::SearchResourcesCriteriaBlock).
     pub fn build(self) -> crate::types::SearchResourcesCriteriaBlock {
         crate::types::SearchResourcesCriteriaBlock { and: self.and }

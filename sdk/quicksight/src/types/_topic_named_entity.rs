@@ -73,6 +73,10 @@ impl TopicNamedEntityBuilder {
         self.entity_name = input;
         self
     }
+    /// <p>The name of the named entity.</p>
+    pub fn get_entity_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_name
+    }
     /// <p>The description of the named entity.</p>
     pub fn entity_description(
         mut self,
@@ -88,6 +92,10 @@ impl TopicNamedEntityBuilder {
     ) -> Self {
         self.entity_description = input;
         self
+    }
+    /// <p>The description of the named entity.</p>
+    pub fn get_entity_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_description
     }
     /// Appends an item to `entity_synonyms`.
     ///
@@ -111,6 +119,12 @@ impl TopicNamedEntityBuilder {
         self.entity_synonyms = input;
         self
     }
+    /// <p>The other names or aliases for the named entity.</p>
+    pub fn get_entity_synonyms(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.entity_synonyms
+    }
     /// <p>The type of named entity that a topic represents.</p>
     pub fn semantic_entity_type(mut self, input: crate::types::SemanticEntityType) -> Self {
         self.semantic_entity_type = ::std::option::Option::Some(input);
@@ -123,6 +137,12 @@ impl TopicNamedEntityBuilder {
     ) -> Self {
         self.semantic_entity_type = input;
         self
+    }
+    /// <p>The type of named entity that a topic represents.</p>
+    pub fn get_semantic_entity_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::SemanticEntityType> {
+        &self.semantic_entity_type
     }
     /// Appends an item to `definition`.
     ///
@@ -142,6 +162,12 @@ impl TopicNamedEntityBuilder {
     ) -> Self {
         self.definition = input;
         self
+    }
+    /// <p>The definition of a named entity.</p>
+    pub fn get_definition(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NamedEntityDefinition>> {
+        &self.definition
     }
     /// Consumes the builder and constructs a [`TopicNamedEntity`](crate::types::TopicNamedEntity).
     pub fn build(self) -> crate::types::TopicNamedEntity {

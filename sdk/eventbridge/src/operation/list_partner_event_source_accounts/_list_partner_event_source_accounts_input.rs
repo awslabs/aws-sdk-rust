@@ -61,6 +61,10 @@ impl ListPartnerEventSourceAccountsInputBuilder {
         self.event_source_name = input;
         self
     }
+    /// <p>The name of the partner event source to display account information about.</p>
+    pub fn get_event_source_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_source_name
+    }
     /// <p>The token returned by a previous call to this operation. Specifying this retrieves the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl ListPartnerEventSourceAccountsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token returned by a previous call to this operation. Specifying this retrieves the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>Specifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -80,6 +88,10 @@ impl ListPartnerEventSourceAccountsInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>Specifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// Consumes the builder and constructs a [`ListPartnerEventSourceAccountsInput`](crate::operation::list_partner_event_source_accounts::ListPartnerEventSourceAccountsInput).
     pub fn build(

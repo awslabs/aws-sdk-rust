@@ -48,6 +48,10 @@ impl CheckpointConfigBuilder {
         self.s3_uri = input;
         self
     }
+    /// <p>Identifies the S3 path where you want SageMaker to store checkpoints. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
+    pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_uri
+    }
     /// <p>(Optional) The local directory where checkpoints are written. The default directory is <code>/opt/ml/checkpoints/</code>. </p>
     pub fn local_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_path = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl CheckpointConfigBuilder {
     pub fn set_local_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.local_path = input;
         self
+    }
+    /// <p>(Optional) The local directory where checkpoints are written. The default directory is <code>/opt/ml/checkpoints/</code>. </p>
+    pub fn get_local_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.local_path
     }
     /// Consumes the builder and constructs a [`CheckpointConfig`](crate::types::CheckpointConfig).
     pub fn build(self) -> crate::types::CheckpointConfig {

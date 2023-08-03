@@ -85,6 +85,14 @@ impl EvaluationFormSingleSelectQuestionPropertiesBuilder {
         self.options = input;
         self
     }
+    /// <p>The answer options of the single select question.</p>
+    pub fn get_options(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::EvaluationFormSingleSelectQuestionOption>,
+    > {
+        &self.options
+    }
     /// <p>The display mode of the single select question.</p>
     pub fn display_as(
         mut self,
@@ -102,6 +110,12 @@ impl EvaluationFormSingleSelectQuestionPropertiesBuilder {
         self
     }
     /// <p>The display mode of the single select question.</p>
+    pub fn get_display_as(
+        &self,
+    ) -> &::std::option::Option<crate::types::EvaluationFormSingleSelectQuestionDisplayMode> {
+        &self.display_as
+    }
+    /// <p>The display mode of the single select question.</p>
     pub fn automation(
         mut self,
         input: crate::types::EvaluationFormSingleSelectQuestionAutomation,
@@ -116,6 +130,12 @@ impl EvaluationFormSingleSelectQuestionPropertiesBuilder {
     ) -> Self {
         self.automation = input;
         self
+    }
+    /// <p>The display mode of the single select question.</p>
+    pub fn get_automation(
+        &self,
+    ) -> &::std::option::Option<crate::types::EvaluationFormSingleSelectQuestionAutomation> {
+        &self.automation
     }
     /// Consumes the builder and constructs a [`EvaluationFormSingleSelectQuestionProperties`](crate::types::EvaluationFormSingleSelectQuestionProperties).
     pub fn build(self) -> crate::types::EvaluationFormSingleSelectQuestionProperties {

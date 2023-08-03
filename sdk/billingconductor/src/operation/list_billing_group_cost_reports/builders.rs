@@ -36,6 +36,10 @@ impl ListBillingGroupCostReportsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListBillingGroupCostReports as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_billing_group_cost_reports::builders::ListBillingGroupCostReportsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +142,10 @@ impl ListBillingGroupCostReportsFluentBuilder {
         self.inner = self.inner.set_billing_period(input);
         self
     }
+    /// <p>The preferred billing period for your report. </p>
+    pub fn get_billing_period(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_billing_period()
+    }
     /// <p>The maximum number of reports to retrieve. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -148,6 +156,10 @@ impl ListBillingGroupCostReportsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of reports to retrieve. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The pagination token that's used on subsequent calls to get reports. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -157,6 +169,10 @@ impl ListBillingGroupCostReportsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The pagination token that's used on subsequent calls to get reports. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>A <code>ListBillingGroupCostReportsFilter</code> to specify billing groups to retrieve reports from. </p>
     pub fn filters(mut self, input: crate::types::ListBillingGroupCostReportsFilter) -> Self {
@@ -170,5 +186,11 @@ impl ListBillingGroupCostReportsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
+    }
+    /// <p>A <code>ListBillingGroupCostReportsFilter</code> to specify billing groups to retrieve reports from. </p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<crate::types::ListBillingGroupCostReportsFilter> {
+        self.inner.get_filters()
     }
 }

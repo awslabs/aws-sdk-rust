@@ -105,6 +105,19 @@ impl AnalyticsSessionMetricResultBuilder {
         self.name = input;
         self
     }
+    /// <p>The metric that you requested.</p>
+    /// <ul>
+    /// <li> <p> <code>Count</code> – The number of sessions.</p> </li>
+    /// <li> <p> <code>Success</code> – The number of sessions that succeeded.</p> </li>
+    /// <li> <p> <code>Failure</code> – The number of sessions that failed.</p> </li>
+    /// <li> <p> <code>Dropped</code> – The number of sessions that the user dropped.</p> </li>
+    /// <li> <p> <code>Duration</code> – The duration of sessions.</p> </li>
+    /// <li> <p> <code>TurnPersession</code> – The number of turns in the sessions.</p> </li>
+    /// <li> <p> <code>Concurrency</code> – The number of sessions occurring in the same period of time.</p> </li>
+    /// </ul>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::AnalyticsSessionMetricName> {
+        &self.name
+    }
     /// <p>The summary statistic that you requested to calculate.</p>
     /// <ul>
     /// <li> <p> <code>Sum</code> – The total count for the category you provide in <code>name</code>.</p> </li>
@@ -128,6 +141,15 @@ impl AnalyticsSessionMetricResultBuilder {
         self.statistic = input;
         self
     }
+    /// <p>The summary statistic that you requested to calculate.</p>
+    /// <ul>
+    /// <li> <p> <code>Sum</code> – The total count for the category you provide in <code>name</code>.</p> </li>
+    /// <li> <p> <code>Average</code> – The total count divided by the number of sessions in the category you provide in <code>name</code>.</p> </li>
+    /// <li> <p> <code>Max</code> – The highest count in the category you provide in <code>name</code>.</p> </li>
+    /// </ul>
+    pub fn get_statistic(&self) -> &::std::option::Option<crate::types::AnalyticsMetricStatistic> {
+        &self.statistic
+    }
     /// <p>The value of the summary statistic for the metric that you requested.</p>
     pub fn value(mut self, input: f64) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -137,6 +159,10 @@ impl AnalyticsSessionMetricResultBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of the summary statistic for the metric that you requested.</p>
+    pub fn get_value(&self) -> &::std::option::Option<f64> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`AnalyticsSessionMetricResult`](crate::types::AnalyticsSessionMetricResult).
     pub fn build(self) -> crate::types::AnalyticsSessionMetricResult {

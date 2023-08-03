@@ -38,6 +38,10 @@ impl DisableEnhancedMonitoringFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisableEnhancedMonitoring as a reference.
+    pub fn as_input(&self) -> &crate::operation::disable_enhanced_monitoring::builders::DisableEnhancedMonitoringInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +132,10 @@ impl DisableEnhancedMonitoringFluentBuilder {
         self.inner = self.inner.set_stream_name(input);
         self
     }
+    /// <p>The name of the Kinesis data stream for which to disable enhanced monitoring.</p>
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_name()
+    }
     /// Appends an item to `ShardLevelMetrics`.
     ///
     /// To override the contents of this collection use [`set_shard_level_metrics`](Self::set_shard_level_metrics).
@@ -169,6 +177,24 @@ impl DisableEnhancedMonitoringFluentBuilder {
         self.inner = self.inner.set_shard_level_metrics(input);
         self
     }
+    /// <p>List of shard-level metrics to disable.</p>
+    /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>" disables every metric.</p>
+    /// <ul>
+    /// <li> <p> <code>IncomingBytes</code> </p> </li>
+    /// <li> <p> <code>IncomingRecords</code> </p> </li>
+    /// <li> <p> <code>OutgoingBytes</code> </p> </li>
+    /// <li> <p> <code>OutgoingRecords</code> </p> </li>
+    /// <li> <p> <code>WriteProvisionedThroughputExceeded</code> </p> </li>
+    /// <li> <p> <code>ReadProvisionedThroughputExceeded</code> </p> </li>
+    /// <li> <p> <code>IteratorAgeMilliseconds</code> </p> </li>
+    /// <li> <p> <code>ALL</code> </p> </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
+    pub fn get_shard_level_metrics(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricsName>> {
+        self.inner.get_shard_level_metrics()
+    }
     /// <p>The ARN of the stream.</p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stream_arn(input.into());
@@ -178,5 +204,9 @@ impl DisableEnhancedMonitoringFluentBuilder {
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stream_arn(input);
         self
+    }
+    /// <p>The ARN of the stream.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_arn()
     }
 }

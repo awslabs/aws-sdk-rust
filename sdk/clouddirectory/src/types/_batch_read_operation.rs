@@ -180,6 +180,12 @@ impl BatchReadOperationBuilder {
         self.list_object_attributes = input;
         self
     }
+    /// <p>Lists all attributes that are associated with an object.</p>
+    pub fn get_list_object_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchListObjectAttributes> {
+        &self.list_object_attributes
+    }
     /// <p>Returns a paginated list of child objects that are associated with a given object.</p>
     pub fn list_object_children(mut self, input: crate::types::BatchListObjectChildren) -> Self {
         self.list_object_children = ::std::option::Option::Some(input);
@@ -193,6 +199,12 @@ impl BatchReadOperationBuilder {
         self.list_object_children = input;
         self
     }
+    /// <p>Returns a paginated list of child objects that are associated with a given object.</p>
+    pub fn get_list_object_children(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchListObjectChildren> {
+        &self.list_object_children
+    }
     /// <p>Lists indices attached to an object.</p>
     pub fn list_attached_indices(mut self, input: crate::types::BatchListAttachedIndices) -> Self {
         self.list_attached_indices = ::std::option::Option::Some(input);
@@ -205,6 +217,12 @@ impl BatchReadOperationBuilder {
     ) -> Self {
         self.list_attached_indices = input;
         self
+    }
+    /// <p>Lists indices attached to an object.</p>
+    pub fn get_list_attached_indices(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchListAttachedIndices> {
+        &self.list_attached_indices
     }
     /// <p>Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node objects. For more information about objects, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html">Directory Structure</a>.</p>
     pub fn list_object_parent_paths(
@@ -222,6 +240,12 @@ impl BatchReadOperationBuilder {
         self.list_object_parent_paths = input;
         self
     }
+    /// <p>Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node objects. For more information about objects, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html">Directory Structure</a>.</p>
+    pub fn get_list_object_parent_paths(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchListObjectParentPaths> {
+        &self.list_object_parent_paths
+    }
     /// <p>Retrieves metadata about an object.</p>
     pub fn get_object_information(
         mut self,
@@ -238,6 +262,12 @@ impl BatchReadOperationBuilder {
         self.get_object_information = input;
         self
     }
+    /// <p>Retrieves metadata about an object.</p>
+    pub fn get_get_object_information(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchGetObjectInformation> {
+        &self.get_object_information
+    }
     /// <p>Retrieves attributes within a facet that are associated with an object.</p>
     pub fn get_object_attributes(mut self, input: crate::types::BatchGetObjectAttributes) -> Self {
         self.get_object_attributes = ::std::option::Option::Some(input);
@@ -250,6 +280,12 @@ impl BatchReadOperationBuilder {
     ) -> Self {
         self.get_object_attributes = input;
         self
+    }
+    /// <p>Retrieves attributes within a facet that are associated with an object.</p>
+    pub fn get_get_object_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchGetObjectAttributes> {
+        &self.get_object_attributes
     }
     /// <p>Lists parent objects that are associated with a given object in pagination fashion.</p>
     pub fn list_object_parents(mut self, input: crate::types::BatchListObjectParents) -> Self {
@@ -264,6 +300,12 @@ impl BatchReadOperationBuilder {
         self.list_object_parents = input;
         self
     }
+    /// <p>Lists parent objects that are associated with a given object in pagination fashion.</p>
+    pub fn get_list_object_parents(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchListObjectParents> {
+        &self.list_object_parents
+    }
     /// <p>Returns policies attached to an object in pagination fashion.</p>
     pub fn list_object_policies(mut self, input: crate::types::BatchListObjectPolicies) -> Self {
         self.list_object_policies = ::std::option::Option::Some(input);
@@ -276,6 +318,12 @@ impl BatchReadOperationBuilder {
     ) -> Self {
         self.list_object_policies = input;
         self
+    }
+    /// <p>Returns policies attached to an object in pagination fashion.</p>
+    pub fn get_list_object_policies(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchListObjectPolicies> {
+        &self.list_object_policies
     }
     /// <p>Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached.</p>
     pub fn list_policy_attachments(
@@ -293,6 +341,12 @@ impl BatchReadOperationBuilder {
         self.list_policy_attachments = input;
         self
     }
+    /// <p>Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached.</p>
+    pub fn get_list_policy_attachments(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchListPolicyAttachments> {
+        &self.list_policy_attachments
+    }
     /// <p>Lists all policies from the root of the <code>Directory</code> to the object specified. If there are no policies present, an empty list is returned. If policies are present, and if some objects don't have the policies attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it returns <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the root from the target object are ignored. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
     pub fn lookup_policy(mut self, input: crate::types::BatchLookupPolicy) -> Self {
         self.lookup_policy = ::std::option::Option::Some(input);
@@ -306,6 +360,10 @@ impl BatchReadOperationBuilder {
         self.lookup_policy = input;
         self
     }
+    /// <p>Lists all policies from the root of the <code>Directory</code> to the object specified. If there are no policies present, an empty list is returned. If policies are present, and if some objects don't have the policies attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it returns <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the root from the target object are ignored. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
+    pub fn get_lookup_policy(&self) -> &::std::option::Option<crate::types::BatchLookupPolicy> {
+        &self.lookup_policy
+    }
     /// <p>Lists objects attached to the specified index.</p>
     pub fn list_index(mut self, input: crate::types::BatchListIndex) -> Self {
         self.list_index = ::std::option::Option::Some(input);
@@ -318,6 +376,10 @@ impl BatchReadOperationBuilder {
     ) -> Self {
         self.list_index = input;
         self
+    }
+    /// <p>Lists objects attached to the specified index.</p>
+    pub fn get_list_index(&self) -> &::std::option::Option<crate::types::BatchListIndex> {
+        &self.list_index
     }
     /// <p>Returns a paginated list of all the outgoing <code>TypedLinkSpecifier</code> information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
     pub fn list_outgoing_typed_links(
@@ -335,6 +397,12 @@ impl BatchReadOperationBuilder {
         self.list_outgoing_typed_links = input;
         self
     }
+    /// <p>Returns a paginated list of all the outgoing <code>TypedLinkSpecifier</code> information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    pub fn get_list_outgoing_typed_links(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchListOutgoingTypedLinks> {
+        &self.list_outgoing_typed_links
+    }
     /// <p>Returns a paginated list of all the incoming <code>TypedLinkSpecifier</code> information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
     pub fn list_incoming_typed_links(
         mut self,
@@ -351,6 +419,12 @@ impl BatchReadOperationBuilder {
         self.list_incoming_typed_links = input;
         self
     }
+    /// <p>Returns a paginated list of all the incoming <code>TypedLinkSpecifier</code> information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    pub fn get_list_incoming_typed_links(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchListIncomingTypedLinks> {
+        &self.list_incoming_typed_links
+    }
     /// <p>Retrieves attributes that are associated with a typed link.</p>
     pub fn get_link_attributes(mut self, input: crate::types::BatchGetLinkAttributes) -> Self {
         self.get_link_attributes = ::std::option::Option::Some(input);
@@ -363,6 +437,12 @@ impl BatchReadOperationBuilder {
     ) -> Self {
         self.get_link_attributes = input;
         self
+    }
+    /// <p>Retrieves attributes that are associated with a typed link.</p>
+    pub fn get_get_link_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchGetLinkAttributes> {
+        &self.get_link_attributes
     }
     /// Consumes the builder and constructs a [`BatchReadOperation`](crate::types::BatchReadOperation).
     pub fn build(self) -> crate::types::BatchReadOperation {

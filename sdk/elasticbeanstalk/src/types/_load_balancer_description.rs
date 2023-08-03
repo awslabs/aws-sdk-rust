@@ -62,6 +62,10 @@ impl LoadBalancerDescriptionBuilder {
         self.load_balancer_name = input;
         self
     }
+    /// <p>The name of the LoadBalancer.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.load_balancer_name
+    }
     /// <p>The domain name of the LoadBalancer.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl LoadBalancerDescriptionBuilder {
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
+    }
+    /// <p>The domain name of the LoadBalancer.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
     }
     /// Appends an item to `listeners`.
     ///
@@ -90,6 +98,10 @@ impl LoadBalancerDescriptionBuilder {
     ) -> Self {
         self.listeners = input;
         self
+    }
+    /// <p>A list of Listeners used by the LoadBalancer.</p>
+    pub fn get_listeners(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Listener>> {
+        &self.listeners
     }
     /// Consumes the builder and constructs a [`LoadBalancerDescription`](crate::types::LoadBalancerDescription).
     pub fn build(self) -> crate::types::LoadBalancerDescription {

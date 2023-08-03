@@ -79,6 +79,10 @@ impl CreateSegmentInputBuilder {
         self.name = input;
         self
     }
+    /// <p>A name for the segment.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The pattern to use for the segment. For more information about pattern syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html#CloudWatch-Evidently-segments-syntax.html"> Segment rule pattern syntax</a>.</p>
     pub fn pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pattern = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl CreateSegmentInputBuilder {
         self.pattern = input;
         self
     }
+    /// <p>The pattern to use for the segment. For more information about pattern syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html#CloudWatch-Evidently-segments-syntax.html"> Segment rule pattern syntax</a>.</p>
+    pub fn get_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pattern
+    }
     /// <p>An optional description for this segment.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -98,6 +106,10 @@ impl CreateSegmentInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>An optional description for this segment.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -131,6 +143,18 @@ impl CreateSegmentInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Assigns one or more tags (key-value pairs) to the segment.</p>
+    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
+    /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
+    /// <p>You can associate as many as 50 tags with a segment.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSegmentInput`](crate::operation::create_segment::CreateSegmentInput).
     pub fn build(

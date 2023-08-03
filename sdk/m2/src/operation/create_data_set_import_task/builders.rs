@@ -36,6 +36,13 @@ impl CreateDataSetImportTaskFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDataSetImportTask as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_data_set_import_task::builders::CreateDataSetImportTaskInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl CreateDataSetImportTaskFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The unique identifier of the application for which you want to import data sets.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>The data set import task configuration.</p>
     pub fn import_config(mut self, input: crate::types::DataSetImportConfig) -> Self {
         self.inner = self.inner.import_config(input);
@@ -145,6 +156,10 @@ impl CreateDataSetImportTaskFluentBuilder {
         self.inner = self.inner.set_import_config(input);
         self
     }
+    /// <p>The data set import task configuration.</p>
+    pub fn get_import_config(&self) -> &::std::option::Option<crate::types::DataSetImportConfig> {
+        self.inner.get_import_config()
+    }
     /// <p> Unique, case-sensitive identifier you provide to ensure the idempotency of the request to create a data set import. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires. </p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -154,5 +169,9 @@ impl CreateDataSetImportTaskFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p> Unique, case-sensitive identifier you provide to ensure the idempotency of the request to create a data set import. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires. </p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

@@ -37,6 +37,12 @@ impl AdminAddUserToGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AdminAddUserToGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::admin_add_user_to_group::builders::AdminAddUserToGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl AdminAddUserToGroupFluentBuilder {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
+    /// <p>The user pool ID for the user pool.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_pool_id()
+    }
     /// <p>The username for the user.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.username(input.into());
@@ -137,6 +147,10 @@ impl AdminAddUserToGroupFluentBuilder {
         self.inner = self.inner.set_username(input);
         self
     }
+    /// <p>The username for the user.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_username()
+    }
     /// <p>The group name.</p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_name(input.into());
@@ -146,5 +160,9 @@ impl AdminAddUserToGroupFluentBuilder {
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_name(input);
         self
+    }
+    /// <p>The group name.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_name()
     }
 }

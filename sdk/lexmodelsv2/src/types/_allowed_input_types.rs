@@ -48,6 +48,10 @@ impl AllowedInputTypesBuilder {
         self.allow_audio_input = input;
         self
     }
+    /// <p>Indicates whether audio input is allowed.</p>
+    pub fn get_allow_audio_input(&self) -> &::std::option::Option<bool> {
+        &self.allow_audio_input
+    }
     /// <p>Indicates whether DTMF input is allowed.</p>
     pub fn allow_dtmf_input(mut self, input: bool) -> Self {
         self.allow_dtmf_input = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl AllowedInputTypesBuilder {
     pub fn set_allow_dtmf_input(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_dtmf_input = input;
         self
+    }
+    /// <p>Indicates whether DTMF input is allowed.</p>
+    pub fn get_allow_dtmf_input(&self) -> &::std::option::Option<bool> {
+        &self.allow_dtmf_input
     }
     /// Consumes the builder and constructs a [`AllowedInputTypes`](crate::types::AllowedInputTypes).
     pub fn build(self) -> crate::types::AllowedInputTypes {

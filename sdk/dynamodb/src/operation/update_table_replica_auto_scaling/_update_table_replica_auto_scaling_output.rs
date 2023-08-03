@@ -56,6 +56,12 @@ impl UpdateTableReplicaAutoScalingOutputBuilder {
         self.table_auto_scaling_description = input;
         self
     }
+    /// <p>Returns information about the auto scaling settings of a table with replicas.</p>
+    pub fn get_table_auto_scaling_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::TableAutoScalingDescription> {
+        &self.table_auto_scaling_description
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -46,6 +46,10 @@ impl BatchUpdateObjectAttributesResponseBuilder {
         self.object_identifier = input;
         self
     }
+    /// <p>ID that is associated with the object.</p>
+    pub fn get_object_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_identifier
+    }
     /// Consumes the builder and constructs a [`BatchUpdateObjectAttributesResponse`](crate::types::BatchUpdateObjectAttributesResponse).
     pub fn build(self) -> crate::types::BatchUpdateObjectAttributesResponse {
         crate::types::BatchUpdateObjectAttributesResponse {

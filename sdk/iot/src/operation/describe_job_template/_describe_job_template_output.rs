@@ -162,6 +162,10 @@ impl DescribeJobTemplateOutputBuilder {
         self.job_template_arn = input;
         self
     }
+    /// <p>The ARN of the job template.</p>
+    pub fn get_job_template_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_template_arn
+    }
     /// <p>The unique identifier of the job template.</p>
     pub fn job_template_id(
         mut self,
@@ -178,6 +182,10 @@ impl DescribeJobTemplateOutputBuilder {
         self.job_template_id = input;
         self
     }
+    /// <p>The unique identifier of the job template.</p>
+    pub fn get_job_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_template_id
+    }
     /// <p>A description of the job template.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -187,6 +195,10 @@ impl DescribeJobTemplateOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the job template.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>An S3 link to the job document.</p>
     pub fn document_source(
@@ -204,6 +216,10 @@ impl DescribeJobTemplateOutputBuilder {
         self.document_source = input;
         self
     }
+    /// <p>An S3 link to the job document.</p>
+    pub fn get_document_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_source
+    }
     /// <p>The job document.</p>
     pub fn document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document = ::std::option::Option::Some(input.into());
@@ -213,6 +229,10 @@ impl DescribeJobTemplateOutputBuilder {
     pub fn set_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document = input;
         self
+    }
+    /// <p>The job document.</p>
+    pub fn get_document(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document
     }
     /// <p>The time, in seconds since the epoch, when the job template was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -227,6 +247,10 @@ impl DescribeJobTemplateOutputBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The time, in seconds since the epoch, when the job template was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>Configuration for pre-signed S3 URLs.</p>
     pub fn presigned_url_config(mut self, input: crate::types::PresignedUrlConfig) -> Self {
         self.presigned_url_config = ::std::option::Option::Some(input);
@@ -239,6 +263,12 @@ impl DescribeJobTemplateOutputBuilder {
     ) -> Self {
         self.presigned_url_config = input;
         self
+    }
+    /// <p>Configuration for pre-signed S3 URLs.</p>
+    pub fn get_presigned_url_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::PresignedUrlConfig> {
+        &self.presigned_url_config
     }
     /// <p>Allows you to create a staged rollout of a job.</p>
     pub fn job_executions_rollout_config(
@@ -256,6 +286,12 @@ impl DescribeJobTemplateOutputBuilder {
         self.job_executions_rollout_config = input;
         self
     }
+    /// <p>Allows you to create a staged rollout of a job.</p>
+    pub fn get_job_executions_rollout_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::JobExecutionsRolloutConfig> {
+        &self.job_executions_rollout_config
+    }
     /// <p>The criteria that determine when and how a job abort takes place.</p>
     pub fn abort_config(mut self, input: crate::types::AbortConfig) -> Self {
         self.abort_config = ::std::option::Option::Some(input);
@@ -269,6 +305,10 @@ impl DescribeJobTemplateOutputBuilder {
         self.abort_config = input;
         self
     }
+    /// <p>The criteria that determine when and how a job abort takes place.</p>
+    pub fn get_abort_config(&self) -> &::std::option::Option<crate::types::AbortConfig> {
+        &self.abort_config
+    }
     /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
     pub fn timeout_config(mut self, input: crate::types::TimeoutConfig) -> Self {
         self.timeout_config = ::std::option::Option::Some(input);
@@ -281,6 +321,10 @@ impl DescribeJobTemplateOutputBuilder {
     ) -> Self {
         self.timeout_config = input;
         self
+    }
+    /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
+    pub fn get_timeout_config(&self) -> &::std::option::Option<crate::types::TimeoutConfig> {
+        &self.timeout_config
     }
     /// <p>The configuration that determines how many retries are allowed for each failure type for a job.</p>
     pub fn job_executions_retry_config(
@@ -297,6 +341,12 @@ impl DescribeJobTemplateOutputBuilder {
     ) -> Self {
         self.job_executions_retry_config = input;
         self
+    }
+    /// <p>The configuration that determines how many retries are allowed for each failure type for a job.</p>
+    pub fn get_job_executions_retry_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::JobExecutionsRetryConfig> {
+        &self.job_executions_retry_config
     }
     /// Appends an item to `maintenance_windows`.
     ///
@@ -316,6 +366,12 @@ impl DescribeJobTemplateOutputBuilder {
     ) -> Self {
         self.maintenance_windows = input;
         self
+    }
+    /// <p>Allows you to configure an optional maintenance window for the rollout of a job document to all devices in the target group for a job.</p>
+    pub fn get_maintenance_windows(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindow>> {
+        &self.maintenance_windows
     }
     /// Appends an item to `destination_package_versions`.
     ///
@@ -340,6 +396,13 @@ impl DescribeJobTemplateOutputBuilder {
     ) -> Self {
         self.destination_package_versions = input;
         self
+    }
+    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
+    /// <p> <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.</p>
+    pub fn get_destination_package_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.destination_package_versions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

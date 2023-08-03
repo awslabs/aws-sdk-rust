@@ -69,6 +69,10 @@ impl ListWorkersWithQualificationTypeInputBuilder {
         self.qualification_type_id = input;
         self
     }
+    /// <p>The ID of the Qualification type of the Qualifications to return.</p>
+    pub fn get_qualification_type_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.qualification_type_id
+    }
     /// <p> The status of the Qualifications to return. Can be <code>Granted | Revoked</code>. </p>
     pub fn status(mut self, input: crate::types::QualificationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl ListWorkersWithQualificationTypeInputBuilder {
         self.status = input;
         self
     }
+    /// <p> The status of the Qualifications to return. Can be <code>Granted | Revoked</code>. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::QualificationStatus> {
+        &self.status
+    }
     /// <p>Pagination Token</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -92,6 +100,10 @@ impl ListWorkersWithQualificationTypeInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Pagination Token</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p> Limit the number of results returned. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -101,6 +113,10 @@ impl ListWorkersWithQualificationTypeInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p> Limit the number of results returned. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListWorkersWithQualificationTypeInput`](crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeInput, ::aws_smithy_http::operation::error::BuildError>{

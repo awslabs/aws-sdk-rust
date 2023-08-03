@@ -56,6 +56,10 @@ impl PackageAggregationResponseBuilder {
         self.package_name = input;
         self
     }
+    /// <p>The name of the operating system package.</p>
+    pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_name
+    }
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl PackageAggregationResponseBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>An object that contains the count of matched findings per severity.</p>
     pub fn severity_counts(mut self, input: crate::types::SeverityCounts) -> Self {
@@ -78,6 +86,10 @@ impl PackageAggregationResponseBuilder {
     ) -> Self {
         self.severity_counts = input;
         self
+    }
+    /// <p>An object that contains the count of matched findings per severity.</p>
+    pub fn get_severity_counts(&self) -> &::std::option::Option<crate::types::SeverityCounts> {
+        &self.severity_counts
     }
     /// Consumes the builder and constructs a [`PackageAggregationResponse`](crate::types::PackageAggregationResponse).
     pub fn build(self) -> crate::types::PackageAggregationResponse {

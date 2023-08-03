@@ -45,6 +45,10 @@ impl StartKeyUsageInputBuilder {
         self.key_identifier = input;
         self
     }
+    /// <p>The <code>KeyArn</code> of the key.</p>
+    pub fn get_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_identifier
+    }
     /// Consumes the builder and constructs a [`StartKeyUsageInput`](crate::operation::start_key_usage::StartKeyUsageInput).
     pub fn build(
         self,

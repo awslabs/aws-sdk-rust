@@ -60,6 +60,11 @@ impl JsonMatchPatternBuilder {
         self.all = input;
         self
     }
+    /// <p>Match all of the elements. See also <code>MatchScope</code> in <code>JsonBody</code>. </p>
+    /// <p>You must specify either this setting or the <code>IncludedPaths</code> setting, but not both.</p>
+    pub fn get_all(&self) -> &::std::option::Option<crate::types::All> {
+        &self.all
+    }
     /// Appends an item to `included_paths`.
     ///
     /// To override the contents of this collection use [`set_included_paths`](Self::set_included_paths).
@@ -89,6 +94,16 @@ impl JsonMatchPatternBuilder {
     ) -> Self {
         self.included_paths = input;
         self
+    }
+    /// <p>Match only the specified include paths. See also <code>MatchScope</code> in <code>JsonBody</code>. </p>
+    /// <p>Provide the include paths using JSON Pointer syntax. For example, <code>"IncludedPaths": ["/dogs/0/name", "/dogs/1/name"]</code>. For information about this syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>. </p>
+    /// <p>You must specify either this setting or the <code>All</code> setting, but not both.</p> <note>
+    /// <p>Don't use this option to include all paths. Instead, use the <code>All</code> setting. </p>
+    /// </note>
+    pub fn get_included_paths(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.included_paths
     }
     /// Consumes the builder and constructs a [`JsonMatchPattern`](crate::types::JsonMatchPattern).
     pub fn build(self) -> crate::types::JsonMatchPattern {

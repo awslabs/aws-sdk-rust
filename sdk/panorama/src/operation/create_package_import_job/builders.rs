@@ -37,6 +37,13 @@ impl CreatePackageImportJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreatePackageImportJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_package_import_job::builders::CreatePackageImportJobInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +137,10 @@ impl CreatePackageImportJobFluentBuilder {
         self.inner = self.inner.set_job_type(input);
         self
     }
+    /// <p>A job type for the package import job.</p>
+    pub fn get_job_type(&self) -> &::std::option::Option<crate::types::PackageImportJobType> {
+        self.inner.get_job_type()
+    }
     /// <p>An input config for the package import job.</p>
     pub fn input_config(mut self, input: crate::types::PackageImportJobInputConfig) -> Self {
         self.inner = self.inner.input_config(input);
@@ -142,6 +153,12 @@ impl CreatePackageImportJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_input_config(input);
         self
+    }
+    /// <p>An input config for the package import job.</p>
+    pub fn get_input_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::PackageImportJobInputConfig> {
+        self.inner.get_input_config()
     }
     /// <p>An output config for the package import job.</p>
     pub fn output_config(mut self, input: crate::types::PackageImportJobOutputConfig) -> Self {
@@ -156,6 +173,12 @@ impl CreatePackageImportJobFluentBuilder {
         self.inner = self.inner.set_output_config(input);
         self
     }
+    /// <p>An output config for the package import job.</p>
+    pub fn get_output_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::PackageImportJobOutputConfig> {
+        self.inner.get_output_config()
+    }
     /// <p>A client token for the package import job.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -165,6 +188,10 @@ impl CreatePackageImportJobFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A client token for the package import job.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// Appends an item to `JobTags`.
     ///
@@ -182,5 +209,11 @@ impl CreatePackageImportJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_job_tags(input);
         self
+    }
+    /// <p>Tags for the package import job.</p>
+    pub fn get_job_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobResourceTags>> {
+        self.inner.get_job_tags()
     }
 }

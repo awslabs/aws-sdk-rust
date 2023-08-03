@@ -43,6 +43,10 @@ impl OutputFormatConfigurationBuilder {
         self.serializer = input;
         self
     }
+    /// <p>Specifies which serializer to use. You can choose either the ORC SerDe or the Parquet SerDe. If both are non-null, the server rejects the request.</p>
+    pub fn get_serializer(&self) -> &::std::option::Option<crate::types::Serializer> {
+        &self.serializer
+    }
     /// Consumes the builder and constructs a [`OutputFormatConfiguration`](crate::types::OutputFormatConfiguration).
     pub fn build(self) -> crate::types::OutputFormatConfiguration {
         crate::types::OutputFormatConfiguration {

@@ -96,6 +96,14 @@ impl ResetDbParameterGroupInputBuilder {
         self.db_parameter_group_name = input;
         self
     }
+    /// <p>The name of the DB parameter group.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the name of an existing <code>DBParameterGroup</code>.</p> </li>
+    /// </ul>
+    pub fn get_db_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_parameter_group_name
+    }
     /// <p>A value that indicates whether to reset all parameters in the DB parameter group to default values. By default, all parameters in the DB parameter group are reset to default values.</p>
     pub fn reset_all_parameters(mut self, input: bool) -> Self {
         self.reset_all_parameters = ::std::option::Option::Some(input);
@@ -105,6 +113,10 @@ impl ResetDbParameterGroupInputBuilder {
     pub fn set_reset_all_parameters(mut self, input: ::std::option::Option<bool>) -> Self {
         self.reset_all_parameters = input;
         self
+    }
+    /// <p>A value that indicates whether to reset all parameters in the DB parameter group to default values. By default, all parameters in the DB parameter group are reset to default values.</p>
+    pub fn get_reset_all_parameters(&self) -> &::std::option::Option<bool> {
+        &self.reset_all_parameters
     }
     /// Appends an item to `parameters`.
     ///
@@ -140,6 +152,20 @@ impl ResetDbParameterGroupInputBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single request.</p>
+    /// <p> <b>MySQL</b> </p>
+    /// <p>Valid Values (for Apply method): <code>immediate</code> | <code>pending-reboot</code> </p>
+    /// <p>You can use the immediate value with dynamic parameters only. You can use the <code>pending-reboot</code> value for both dynamic and static parameters, and changes are applied when DB instance reboots.</p>
+    /// <p> <b>MariaDB</b> </p>
+    /// <p>Valid Values (for Apply method): <code>immediate</code> | <code>pending-reboot</code> </p>
+    /// <p>You can use the immediate value with dynamic parameters only. You can use the <code>pending-reboot</code> value for both dynamic and static parameters, and changes are applied when DB instance reboots.</p>
+    /// <p> <b>Oracle</b> </p>
+    /// <p>Valid Values (for Apply method): <code>pending-reboot</code> </p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+        &self.parameters
     }
     /// Consumes the builder and constructs a [`ResetDbParameterGroupInput`](crate::operation::reset_db_parameter_group::ResetDbParameterGroupInput).
     pub fn build(

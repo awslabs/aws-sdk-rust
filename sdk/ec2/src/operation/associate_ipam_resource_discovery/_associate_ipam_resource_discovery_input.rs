@@ -72,6 +72,10 @@ impl AssociateIpamResourceDiscoveryInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>An IPAM ID.</p>
     pub fn ipam_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_id = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl AssociateIpamResourceDiscoveryInputBuilder {
     pub fn set_ipam_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipam_id = input;
         self
+    }
+    /// <p>An IPAM ID.</p>
+    pub fn get_ipam_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipam_id
     }
     /// <p>A resource discovery ID.</p>
     pub fn ipam_resource_discovery_id(
@@ -97,6 +105,10 @@ impl AssociateIpamResourceDiscoveryInputBuilder {
     ) -> Self {
         self.ipam_resource_discovery_id = input;
         self
+    }
+    /// <p>A resource discovery ID.</p>
+    pub fn get_ipam_resource_discovery_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipam_resource_discovery_id
     }
     /// Appends an item to `tag_specifications`.
     ///
@@ -117,6 +129,12 @@ impl AssociateIpamResourceDiscoveryInputBuilder {
         self.tag_specifications = input;
         self
     }
+    /// <p>Tag specifications.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
+    }
     /// <p>A client token.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -126,6 +144,10 @@ impl AssociateIpamResourceDiscoveryInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A client token.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`AssociateIpamResourceDiscoveryInput`](crate::operation::associate_ipam_resource_discovery::AssociateIpamResourceDiscoveryInput).
     pub fn build(

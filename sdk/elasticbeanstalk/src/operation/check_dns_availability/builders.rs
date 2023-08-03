@@ -36,6 +36,12 @@ impl CheckDNSAvailabilityFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CheckDNSAvailability as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::check_dns_availability::builders::CheckDnsAvailabilityInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +131,9 @@ impl CheckDNSAvailabilityFluentBuilder {
     pub fn set_cname_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cname_prefix(input);
         self
+    }
+    /// <p>The prefix used when this CNAME is reserved.</p>
+    pub fn get_cname_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cname_prefix()
     }
 }

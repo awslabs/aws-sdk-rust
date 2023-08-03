@@ -40,6 +40,10 @@ impl LambdaConnectorProvisioningConfigBuilder {
         self.lambda_arn = input;
         self
     }
+    /// <p>Lambda ARN of the connector being registered.</p>
+    pub fn get_lambda_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lambda_arn
+    }
     /// Consumes the builder and constructs a [`LambdaConnectorProvisioningConfig`](crate::types::LambdaConnectorProvisioningConfig).
     pub fn build(self) -> crate::types::LambdaConnectorProvisioningConfig {
         crate::types::LambdaConnectorProvisioningConfig {

@@ -79,6 +79,14 @@ impl Ec2MetadataBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags attached to the instance.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The ID of the Amazon Machine Image (AMI) used to launch the instance.</p>
     pub fn ami_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ami_id = ::std::option::Option::Some(input.into());
@@ -89,6 +97,10 @@ impl Ec2MetadataBuilder {
         self.ami_id = input;
         self
     }
+    /// <p>The ID of the Amazon Machine Image (AMI) used to launch the instance.</p>
+    pub fn get_ami_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ami_id
+    }
     /// <p>The platform of the instance.</p>
     pub fn platform(mut self, input: crate::types::Ec2Platform) -> Self {
         self.platform = ::std::option::Option::Some(input);
@@ -98,6 +110,10 @@ impl Ec2MetadataBuilder {
     pub fn set_platform(mut self, input: ::std::option::Option<crate::types::Ec2Platform>) -> Self {
         self.platform = input;
         self
+    }
+    /// <p>The platform of the instance.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<crate::types::Ec2Platform> {
+        &self.platform
     }
     /// Consumes the builder and constructs a [`Ec2Metadata`](crate::types::Ec2Metadata).
     pub fn build(self) -> crate::types::Ec2Metadata {

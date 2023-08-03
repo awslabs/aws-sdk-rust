@@ -37,6 +37,12 @@ impl SendTextMessageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SendTextMessage as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::send_text_message::builders::SendTextMessageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl SendTextMessageFluentBuilder {
         self.inner = self.inner.set_destination_phone_number(input);
         self
     }
+    /// <p>The destination phone number in E.164 format.</p>
+    pub fn get_destination_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_phone_number()
+    }
     /// <p>The origination identity of the message. This can be either the PhoneNumber, PhoneNumberId, PhoneNumberArn, SenderId, SenderIdArn, PoolId, or PoolArn.</p>
     pub fn origination_identity(
         mut self,
@@ -149,6 +159,10 @@ impl SendTextMessageFluentBuilder {
         self.inner = self.inner.set_origination_identity(input);
         self
     }
+    /// <p>The origination identity of the message. This can be either the PhoneNumber, PhoneNumberId, PhoneNumberArn, SenderId, SenderIdArn, PoolId, or PoolArn.</p>
+    pub fn get_origination_identity(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_origination_identity()
+    }
     /// <p>The body of the text message.</p>
     pub fn message_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.message_body(input.into());
@@ -158,6 +172,10 @@ impl SendTextMessageFluentBuilder {
     pub fn set_message_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_message_body(input);
         self
+    }
+    /// <p>The body of the text message.</p>
+    pub fn get_message_body(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_message_body()
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
     pub fn message_type(mut self, input: crate::types::MessageType) -> Self {
@@ -172,6 +190,10 @@ impl SendTextMessageFluentBuilder {
         self.inner = self.inner.set_message_type(input);
         self
     }
+    /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
+    pub fn get_message_type(&self) -> &::std::option::Option<crate::types::MessageType> {
+        self.inner.get_message_type()
+    }
     /// <p>When you register a short code in the US, you must specify a program name. If you don’t have a US short code, omit this attribute.</p>
     pub fn keyword(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.keyword(input.into());
@@ -181,6 +203,10 @@ impl SendTextMessageFluentBuilder {
     pub fn set_keyword(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_keyword(input);
         self
+    }
+    /// <p>When you register a short code in the US, you must specify a program name. If you don’t have a US short code, omit this attribute.</p>
+    pub fn get_keyword(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_keyword()
     }
     /// <p>The name of the configuration set to use. This can be either the ConfigurationSetName or ConfigurationSetArn.</p>
     pub fn configuration_set_name(
@@ -198,6 +224,10 @@ impl SendTextMessageFluentBuilder {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }
+    /// <p>The name of the configuration set to use. This can be either the ConfigurationSetName or ConfigurationSetArn.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_set_name()
+    }
     /// <p>The maximum amount that you want to spend, in US dollars, per each text message part. A text message can contain multiple parts.</p>
     pub fn max_price(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.max_price(input.into());
@@ -208,6 +238,10 @@ impl SendTextMessageFluentBuilder {
         self.inner = self.inner.set_max_price(input);
         self
     }
+    /// <p>The maximum amount that you want to spend, in US dollars, per each text message part. A text message can contain multiple parts.</p>
+    pub fn get_max_price(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_max_price()
+    }
     /// <p>How long the text message is valid for. By default this is 72 hours.</p>
     pub fn time_to_live(mut self, input: i32) -> Self {
         self.inner = self.inner.time_to_live(input);
@@ -217,6 +251,10 @@ impl SendTextMessageFluentBuilder {
     pub fn set_time_to_live(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_time_to_live(input);
         self
+    }
+    /// <p>How long the text message is valid for. By default this is 72 hours.</p>
+    pub fn get_time_to_live(&self) -> &::std::option::Option<i32> {
+        self.inner.get_time_to_live()
     }
     /// Adds a key-value pair to `Context`.
     ///
@@ -240,6 +278,14 @@ impl SendTextMessageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_context(input);
         self
+    }
+    /// <p>You can specify custom data in this field. If you do, that data is logged to the event destination.</p>
+    pub fn get_context(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_context()
     }
     /// Adds a key-value pair to `DestinationCountryParameters`.
     ///
@@ -267,6 +313,17 @@ impl SendTextMessageFluentBuilder {
         self.inner = self.inner.set_destination_country_parameters(input);
         self
     }
+    /// <p>This field is used for any country-specific registration requirements. Currently, this setting is only used when you send messages to recipients in India using a sender ID. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-senderid-india.html">Special requirements for sending SMS messages to recipients in India</a>. </p>
+    pub fn get_destination_country_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::DestinationCountryParameterKey,
+            ::std::string::String,
+        >,
+    > {
+        self.inner.get_destination_country_parameters()
+    }
     /// <p>When set to true, the message is checked and validated, but isn't sent to the end recipient.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -276,5 +333,9 @@ impl SendTextMessageFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>When set to true, the message is checked and validated, but isn't sent to the end recipient.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

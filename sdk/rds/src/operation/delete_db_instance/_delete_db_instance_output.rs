@@ -54,6 +54,11 @@ impl DeleteDbInstanceOutputBuilder {
         self.db_instance = input;
         self
     }
+    /// <p>Contains the details of an Amazon RDS DB instance.</p>
+    /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
+    pub fn get_db_instance(&self) -> &::std::option::Option<crate::types::DbInstance> {
+        &self.db_instance
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

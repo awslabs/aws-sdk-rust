@@ -51,6 +51,10 @@ impl DatabaseTableOutputOptionsBuilder {
         self.temp_directory = input;
         self
     }
+    /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can store intermediate results.</p>
+    pub fn get_temp_directory(&self) -> &::std::option::Option<crate::types::S3Location> {
+        &self.temp_directory
+    }
     /// <p>A prefix for the name of a table DataBrew will create in the database.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl DatabaseTableOutputOptionsBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
+    }
+    /// <p>A prefix for the name of a table DataBrew will create in the database.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// Consumes the builder and constructs a [`DatabaseTableOutputOptions`](crate::types::DatabaseTableOutputOptions).
     pub fn build(self) -> crate::types::DatabaseTableOutputOptions {

@@ -37,6 +37,13 @@ impl ListCostAllocationTagsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListCostAllocationTags as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_cost_allocation_tags::builders::ListCostAllocationTagsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -142,6 +149,10 @@ impl ListCostAllocationTagsFluentBuilder {
         self.inner = self.inner.set_status(input);
         self
     }
+    /// <p>The status of cost allocation tag keys that are returned for this request. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CostAllocationTagStatus> {
+        self.inner.get_status()
+    }
     /// Appends an item to `TagKeys`.
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
@@ -159,6 +170,10 @@ impl ListCostAllocationTagsFluentBuilder {
         self.inner = self.inner.set_tag_keys(input);
         self
     }
+    /// <p>The list of cost allocation tag keys that are returned for this request. </p>
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_tag_keys()
+    }
     /// <p>The type of <code>CostAllocationTag</code> object that are returned for this request. The <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. The <code>UserDefined</code> type tags are tags that you define, create, and apply to resources. </p>
     pub fn r#type(mut self, input: crate::types::CostAllocationTagType) -> Self {
         self.inner = self.inner.r#type(input);
@@ -172,6 +187,10 @@ impl ListCostAllocationTagsFluentBuilder {
         self.inner = self.inner.set_type(input);
         self
     }
+    /// <p>The type of <code>CostAllocationTag</code> object that are returned for this request. The <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. The <code>UserDefined</code> type tags are tags that you define, create, and apply to resources. </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::CostAllocationTagType> {
+        self.inner.get_type()
+    }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -182,6 +201,10 @@ impl ListCostAllocationTagsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of objects that are returned for this request. By default, the request returns 100 results. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -191,5 +214,9 @@ impl ListCostAllocationTagsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of objects that are returned for this request. By default, the request returns 100 results. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

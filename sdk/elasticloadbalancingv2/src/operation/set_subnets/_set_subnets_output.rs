@@ -64,6 +64,12 @@ impl SetSubnetsOutputBuilder {
         self.availability_zones = input;
         self
     }
+    /// <p>Information about the subnets.</p>
+    pub fn get_availability_zones(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>> {
+        &self.availability_zones
+    }
     /// <p>[Network Load Balancers] The IP address type.</p>
     pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
         self.ip_address_type = ::std::option::Option::Some(input);
@@ -76,6 +82,10 @@ impl SetSubnetsOutputBuilder {
     ) -> Self {
         self.ip_address_type = input;
         self
+    }
+    /// <p>[Network Load Balancers] The IP address type.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        &self.ip_address_type
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -40,6 +40,10 @@ impl AwsWafRegionalWebAclRulesListActionDetailsBuilder {
         self.r#type = input;
         self
     }
+    /// <p>For actions that are associated with a rule, the action that WAF takes when a web request matches all conditions in a rule. </p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// Consumes the builder and constructs a [`AwsWafRegionalWebAclRulesListActionDetails`](crate::types::AwsWafRegionalWebAclRulesListActionDetails).
     pub fn build(self) -> crate::types::AwsWafRegionalWebAclRulesListActionDetails {
         crate::types::AwsWafRegionalWebAclRulesListActionDetails {

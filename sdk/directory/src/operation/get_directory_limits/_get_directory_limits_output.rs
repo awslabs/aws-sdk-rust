@@ -51,6 +51,10 @@ impl GetDirectoryLimitsOutputBuilder {
         self.directory_limits = input;
         self
     }
+    /// <p>A <code>DirectoryLimits</code> object that contains the directory limits for the current Region.</p>
+    pub fn get_directory_limits(&self) -> &::std::option::Option<crate::types::DirectoryLimits> {
+        &self.directory_limits
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -131,6 +131,10 @@ impl GetDashboardEmbedUrlInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The ID for the dashboard, also added to the Identity and Access Management (IAM) policy.</p>
     pub fn dashboard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dashboard_id = ::std::option::Option::Some(input.into());
@@ -140,6 +144,10 @@ impl GetDashboardEmbedUrlInputBuilder {
     pub fn set_dashboard_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dashboard_id = input;
         self
+    }
+    /// <p>The ID for the dashboard, also added to the Identity and Access Management (IAM) policy.</p>
+    pub fn get_dashboard_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dashboard_id
     }
     /// <p>The authentication method that the user uses to sign in.</p>
     pub fn identity_type(mut self, input: crate::types::EmbeddingIdentityType) -> Self {
@@ -154,6 +162,10 @@ impl GetDashboardEmbedUrlInputBuilder {
         self.identity_type = input;
         self
     }
+    /// <p>The authentication method that the user uses to sign in.</p>
+    pub fn get_identity_type(&self) -> &::std::option::Option<crate::types::EmbeddingIdentityType> {
+        &self.identity_type
+    }
     /// <p>How many minutes the session is valid. The session lifetime must be 15-600 minutes.</p>
     pub fn session_lifetime_in_minutes(mut self, input: i64) -> Self {
         self.session_lifetime_in_minutes = ::std::option::Option::Some(input);
@@ -163,6 +175,10 @@ impl GetDashboardEmbedUrlInputBuilder {
     pub fn set_session_lifetime_in_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.session_lifetime_in_minutes = input;
         self
+    }
+    /// <p>How many minutes the session is valid. The session lifetime must be 15-600 minutes.</p>
+    pub fn get_session_lifetime_in_minutes(&self) -> &::std::option::Option<i64> {
+        &self.session_lifetime_in_minutes
     }
     /// <p>Remove the undo/redo button on the embedded dashboard. The default is FALSE, which enables the undo/redo button.</p>
     pub fn undo_redo_disabled(mut self, input: bool) -> Self {
@@ -174,6 +190,10 @@ impl GetDashboardEmbedUrlInputBuilder {
         self.undo_redo_disabled = input;
         self
     }
+    /// <p>Remove the undo/redo button on the embedded dashboard. The default is FALSE, which enables the undo/redo button.</p>
+    pub fn get_undo_redo_disabled(&self) -> &::std::option::Option<bool> {
+        &self.undo_redo_disabled
+    }
     /// <p>Remove the reset button on the embedded dashboard. The default is FALSE, which enables the reset button.</p>
     pub fn reset_disabled(mut self, input: bool) -> Self {
         self.reset_disabled = ::std::option::Option::Some(input);
@@ -184,6 +204,10 @@ impl GetDashboardEmbedUrlInputBuilder {
         self.reset_disabled = input;
         self
     }
+    /// <p>Remove the reset button on the embedded dashboard. The default is FALSE, which enables the reset button.</p>
+    pub fn get_reset_disabled(&self) -> &::std::option::Option<bool> {
+        &self.reset_disabled
+    }
     /// <p>Adds persistence of state for the user session in an embedded dashboard. Persistence applies to the sheet and the parameter settings. These are control settings that the dashboard subscriber (Amazon QuickSight reader) chooses while viewing the dashboard. If this is set to <code>TRUE</code>, the settings are the same when the subscriber reopens the same dashboard URL. The state is stored in Amazon QuickSight, not in a browser cookie. If this is set to FALSE, the state of the user session is not persisted. The default is <code>FALSE</code>.</p>
     pub fn state_persistence_enabled(mut self, input: bool) -> Self {
         self.state_persistence_enabled = ::std::option::Option::Some(input);
@@ -193,6 +217,10 @@ impl GetDashboardEmbedUrlInputBuilder {
     pub fn set_state_persistence_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.state_persistence_enabled = input;
         self
+    }
+    /// <p>Adds persistence of state for the user session in an embedded dashboard. Persistence applies to the sheet and the parameter settings. These are control settings that the dashboard subscriber (Amazon QuickSight reader) chooses while viewing the dashboard. If this is set to <code>TRUE</code>, the settings are the same when the subscriber reopens the same dashboard URL. The state is stored in Amazon QuickSight, not in a browser cookie. If this is set to FALSE, the state of the user session is not persisted. The default is <code>FALSE</code>.</p>
+    pub fn get_state_persistence_enabled(&self) -> &::std::option::Option<bool> {
+        &self.state_persistence_enabled
     }
     /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the following:</p>
     /// <ul>
@@ -216,6 +244,16 @@ impl GetDashboardEmbedUrlInputBuilder {
         self.user_arn = input;
         self
     }
+    /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the following:</p>
+    /// <ul>
+    /// <li> <p>Active Directory (AD) users or group members</p> </li>
+    /// <li> <p>Invited nonfederated users</p> </li>
+    /// <li> <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation.</p> </li>
+    /// </ul>
+    /// <p>Omit this parameter for users in the third group – IAM users and IAM role-based sessions.</p>
+    pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_arn
+    }
     /// <p>The Amazon QuickSight namespace that contains the dashboard IDs in this request. If you're not using a custom namespace, set <code>Namespace = default</code>.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
@@ -225,6 +263,10 @@ impl GetDashboardEmbedUrlInputBuilder {
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
         self
+    }
+    /// <p>The Amazon QuickSight namespace that contains the dashboard IDs in this request. If you're not using a custom namespace, set <code>Namespace = default</code>.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
     }
     /// Appends an item to `additional_dashboard_ids`.
     ///
@@ -247,6 +289,12 @@ impl GetDashboardEmbedUrlInputBuilder {
     ) -> Self {
         self.additional_dashboard_ids = input;
         self
+    }
+    /// <p>A list of one or more dashboard IDs that you want anonymous users to have tempporary access to. Currently, the <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> because other identity types authenticate as Amazon QuickSight or IAM users. For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can access all three dashboards.</p>
+    pub fn get_additional_dashboard_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.additional_dashboard_ids
     }
     /// Consumes the builder and constructs a [`GetDashboardEmbedUrlInput`](crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlInput).
     pub fn build(

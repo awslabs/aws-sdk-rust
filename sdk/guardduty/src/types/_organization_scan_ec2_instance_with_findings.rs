@@ -43,6 +43,10 @@ impl OrganizationScanEc2InstanceWithFindingsBuilder {
         self.ebs_volumes = input;
         self
     }
+    /// <p>Whether scanning EBS volumes should be auto-enabled for new members joining the organization.</p>
+    pub fn get_ebs_volumes(&self) -> &::std::option::Option<crate::types::OrganizationEbsVolumes> {
+        &self.ebs_volumes
+    }
     /// Consumes the builder and constructs a [`OrganizationScanEc2InstanceWithFindings`](crate::types::OrganizationScanEc2InstanceWithFindings).
     pub fn build(self) -> crate::types::OrganizationScanEc2InstanceWithFindings {
         crate::types::OrganizationScanEc2InstanceWithFindings {

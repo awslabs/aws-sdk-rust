@@ -56,6 +56,10 @@ impl AiffSettingsBuilder {
         self.bit_depth = input;
         self
     }
+    /// Specify Bit depth, in bits per sample, to choose the encoding quality for this audio track.
+    pub fn get_bit_depth(&self) -> &::std::option::Option<i32> {
+        &self.bit_depth
+    }
     /// Specify the number of channels in this output audio track. Valid values are 1 and even numbers up to 64. For example, 1, 2, 4, 6, and so on, up to 64.
     pub fn channels(mut self, input: i32) -> Self {
         self.channels = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl AiffSettingsBuilder {
         self.channels = input;
         self
     }
+    /// Specify the number of channels in this output audio track. Valid values are 1 and even numbers up to 64. For example, 1, 2, 4, 6, and so on, up to 64.
+    pub fn get_channels(&self) -> &::std::option::Option<i32> {
+        &self.channels
+    }
     /// Sample rate in hz.
     pub fn sample_rate(mut self, input: i32) -> Self {
         self.sample_rate = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl AiffSettingsBuilder {
     pub fn set_sample_rate(mut self, input: ::std::option::Option<i32>) -> Self {
         self.sample_rate = input;
         self
+    }
+    /// Sample rate in hz.
+    pub fn get_sample_rate(&self) -> &::std::option::Option<i32> {
+        &self.sample_rate
     }
     /// Consumes the builder and constructs a [`AiffSettings`](crate::types::AiffSettings).
     pub fn build(self) -> crate::types::AiffSettings {

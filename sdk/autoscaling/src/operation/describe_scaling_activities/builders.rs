@@ -38,6 +38,10 @@ impl DescribeScalingActivitiesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeScalingActivities as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_scaling_activities::builders::DescribeScalingActivitiesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -146,6 +150,13 @@ impl DescribeScalingActivitiesFluentBuilder {
         self.inner = self.inner.set_activity_ids(input);
         self
     }
+    /// <p>The activity IDs of the desired scaling activities. If you omit this property, all activities for the past six weeks are described. If unknown activities are requested, they are ignored with no error. If you specify an Auto Scaling group, the results are limited to that group.</p>
+    /// <p>Array Members: Maximum number of 50 IDs.</p>
+    pub fn get_activity_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_activity_ids()
+    }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn auto_scaling_group_name(
         mut self,
@@ -162,6 +173,10 @@ impl DescribeScalingActivitiesFluentBuilder {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_auto_scaling_group_name()
+    }
     /// <p>Indicates whether to include scaling activity from deleted Auto Scaling groups.</p>
     pub fn include_deleted_groups(mut self, input: bool) -> Self {
         self.inner = self.inner.include_deleted_groups(input);
@@ -171,6 +186,10 @@ impl DescribeScalingActivitiesFluentBuilder {
     pub fn set_include_deleted_groups(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_deleted_groups(input);
         self
+    }
+    /// <p>Indicates whether to include scaling activity from deleted Auto Scaling groups.</p>
+    pub fn get_include_deleted_groups(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_deleted_groups()
     }
     /// <p>The maximum number of items to return with this call. The default value is <code>100</code> and the maximum value is <code>100</code>.</p>
     pub fn max_records(mut self, input: i32) -> Self {
@@ -182,6 +201,10 @@ impl DescribeScalingActivitiesFluentBuilder {
         self.inner = self.inner.set_max_records(input);
         self
     }
+    /// <p>The maximum number of items to return with this call. The default value is <code>100</code> and the maximum value is <code>100</code>.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
+    }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -191,5 +214,9 @@ impl DescribeScalingActivitiesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

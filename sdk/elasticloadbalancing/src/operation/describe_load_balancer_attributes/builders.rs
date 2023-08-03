@@ -36,6 +36,10 @@ impl DescribeLoadBalancerAttributesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeLoadBalancerAttributes as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_load_balancer_attributes::builders::DescribeLoadBalancerAttributesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -105,5 +109,9 @@ impl DescribeLoadBalancerAttributesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_load_balancer_name(input);
         self
+    }
+    /// <p>The name of the load balancer.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_load_balancer_name()
     }
 }

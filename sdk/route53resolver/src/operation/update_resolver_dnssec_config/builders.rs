@@ -36,6 +36,10 @@ impl UpdateResolverDnssecConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateResolverDnssecConfig as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_resolver_dnssec_config::builders::UpdateResolverDnssecConfigInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl UpdateResolverDnssecConfigFluentBuilder {
         self.inner = self.inner.set_resource_id(input);
         self
     }
+    /// <p>The ID of the virtual private cloud (VPC) that you're updating the DNSSEC validation status for.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
+    }
     /// <p>The new value that you are specifying for DNSSEC validation for the VPC. The value can be <code>ENABLE</code> or <code>DISABLE</code>. Be aware that it can take time for a validation status change to be completed.</p>
     pub fn validation(mut self, input: crate::types::Validation) -> Self {
         self.inner = self.inner.validation(input);
@@ -138,5 +146,9 @@ impl UpdateResolverDnssecConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_validation(input);
         self
+    }
+    /// <p>The new value that you are specifying for DNSSEC validation for the VPC. The value can be <code>ENABLE</code> or <code>DISABLE</code>. Be aware that it can take time for a validation status change to be completed.</p>
+    pub fn get_validation(&self) -> &::std::option::Option<crate::types::Validation> {
+        self.inner.get_validation()
     }
 }

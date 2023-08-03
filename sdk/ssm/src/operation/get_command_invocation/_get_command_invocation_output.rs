@@ -210,6 +210,10 @@ impl GetCommandInvocationOutputBuilder {
         self.command_id = input;
         self
     }
+    /// <p>The parent command ID of the invocation plugin.</p>
+    pub fn get_command_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.command_id
+    }
     /// <p>The ID of the managed node targeted by the command. A <i>managed node</i> can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, or on-premises server or VM in your hybrid environment that is configured for Amazon Web Services Systems Manager.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -220,6 +224,10 @@ impl GetCommandInvocationOutputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The ID of the managed node targeted by the command. A <i>managed node</i> can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, or on-premises server or VM in your hybrid environment that is configured for Amazon Web Services Systems Manager.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The comment text for the command.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
@@ -229,6 +237,10 @@ impl GetCommandInvocationOutputBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment = input;
         self
+    }
+    /// <p>The comment text for the command.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment
     }
     /// <p>The name of the document that was run. For example, <code>AWS-RunShellScript</code>.</p>
     pub fn document_name(
@@ -246,6 +258,10 @@ impl GetCommandInvocationOutputBuilder {
         self.document_name = input;
         self
     }
+    /// <p>The name of the document that was run. For example, <code>AWS-RunShellScript</code>.</p>
+    pub fn get_document_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_name
+    }
     /// <p>The Systems Manager document (SSM document) version used in the request.</p>
     pub fn document_version(
         mut self,
@@ -262,6 +278,10 @@ impl GetCommandInvocationOutputBuilder {
         self.document_version = input;
         self
     }
+    /// <p>The Systems Manager document (SSM document) version used in the request.</p>
+    pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_version
+    }
     /// <p>The name of the plugin, or <i>step name</i>, for which details are reported. For example, <code>aws:RunShellScript</code> is a plugin.</p>
     pub fn plugin_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.plugin_name = ::std::option::Option::Some(input.into());
@@ -272,6 +292,10 @@ impl GetCommandInvocationOutputBuilder {
         self.plugin_name = input;
         self
     }
+    /// <p>The name of the plugin, or <i>step name</i>, for which details are reported. For example, <code>aws:RunShellScript</code> is a plugin.</p>
+    pub fn get_plugin_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.plugin_name
+    }
     /// <p>The error level response code for the plugin script. If the response code is <code>-1</code>, then the command hasn't started running on the managed node, or it wasn't received by the node.</p>
     pub fn response_code(mut self, input: i32) -> Self {
         self.response_code = ::std::option::Option::Some(input);
@@ -281,6 +305,10 @@ impl GetCommandInvocationOutputBuilder {
     pub fn set_response_code(mut self, input: ::std::option::Option<i32>) -> Self {
         self.response_code = input;
         self
+    }
+    /// <p>The error level response code for the plugin script. If the response code is <code>-1</code>, then the command hasn't started running on the managed node, or it wasn't received by the node.</p>
+    pub fn get_response_code(&self) -> &::std::option::Option<i32> {
+        &self.response_code
     }
     /// <p>The date and time the plugin started running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedBefore</code> filter.</p>
     /// <p> <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code> </p>
@@ -302,6 +330,12 @@ impl GetCommandInvocationOutputBuilder {
         self.execution_start_date_time = input;
         self
     }
+    /// <p>The date and time the plugin started running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedBefore</code> filter.</p>
+    /// <p> <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code> </p>
+    /// <p>If the plugin hasn't started to run, the string is empty.</p>
+    pub fn get_execution_start_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_start_date_time
+    }
     /// <p>Duration since <code>ExecutionStartDateTime</code>.</p>
     pub fn execution_elapsed_time(
         mut self,
@@ -317,6 +351,10 @@ impl GetCommandInvocationOutputBuilder {
     ) -> Self {
         self.execution_elapsed_time = input;
         self
+    }
+    /// <p>Duration since <code>ExecutionStartDateTime</code>.</p>
+    pub fn get_execution_elapsed_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_elapsed_time
     }
     /// <p>The date and time the plugin finished running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedAfter</code> filter.</p>
     /// <p> <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code> </p>
@@ -338,6 +376,12 @@ impl GetCommandInvocationOutputBuilder {
         self.execution_end_date_time = input;
         self
     }
+    /// <p>The date and time the plugin finished running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedAfter</code> filter.</p>
+    /// <p> <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code> </p>
+    /// <p>If the plugin hasn't started to run, the string is empty.</p>
+    pub fn get_execution_end_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_end_date_time
+    }
     /// <p>The status of this invocation plugin. This status can be different than <code>StatusDetails</code>.</p>
     pub fn status(mut self, input: crate::types::CommandInvocationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -350,6 +394,10 @@ impl GetCommandInvocationOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of this invocation plugin. This status can be different than <code>StatusDetails</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CommandInvocationStatus> {
+        &self.status
     }
     /// <p>A detailed status of the command execution for an invocation. <code>StatusDetails</code> includes more information than <code>Status</code> because it includes states resulting from error and concurrency control parameters. <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. <code>StatusDetails</code> can be one of the following values:</p>
     /// <ul>
@@ -391,6 +439,22 @@ impl GetCommandInvocationOutputBuilder {
         self.status_details = input;
         self
     }
+    /// <p>A detailed status of the command execution for an invocation. <code>StatusDetails</code> includes more information than <code>Status</code> because it includes states resulting from error and concurrency control parameters. <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. <code>StatusDetails</code> can be one of the following values:</p>
+    /// <ul>
+    /// <li> <p>Pending: The command hasn't been sent to the managed node.</p> </li>
+    /// <li> <p>In Progress: The command has been sent to the managed node but hasn't reached a terminal state.</p> </li>
+    /// <li> <p>Delayed: The system attempted to send the command to the target, but the target wasn't available. The managed node might not be available because of network issues, because the node was stopped, or for similar reasons. The system will try to send the command again.</p> </li>
+    /// <li> <p>Success: The command or plugin ran successfully. This is a terminal state.</p> </li>
+    /// <li> <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery timeout expired. Delivery timeouts don't count against the parent command's <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
+    /// <li> <p>Execution Timed Out: The command started to run on the managed node, but the execution wasn't complete before the timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li>
+    /// <li> <p>Failed: The command wasn't run successfully on the managed node. For a plugin, this indicates that the result code wasn't zero. For a command invocation, this indicates that the result code for one or more plugins wasn't zero. Invocation failures count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li>
+    /// <li> <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p> </li>
+    /// <li> <p>Undeliverable: The command can't be delivered to the managed node. The node might not exist or might not be responding. Undeliverable invocations don't count against the parent command's <code>MaxErrors</code> limit and don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
+    /// <li> <p>Terminated: The parent command exceeded its <code>MaxErrors</code> limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li>
+    /// </ul>
+    pub fn get_status_details(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_details
+    }
     /// <p>The first 24,000 characters written by the plugin to <code>stdout</code>. If the command hasn't finished running, if <code>ExecutionStatus</code> is neither Succeeded nor Failed, then this string is empty.</p>
     pub fn standard_output_content(
         mut self,
@@ -406,6 +470,10 @@ impl GetCommandInvocationOutputBuilder {
     ) -> Self {
         self.standard_output_content = input;
         self
+    }
+    /// <p>The first 24,000 characters written by the plugin to <code>stdout</code>. If the command hasn't finished running, if <code>ExecutionStatus</code> is neither Succeeded nor Failed, then this string is empty.</p>
+    pub fn get_standard_output_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.standard_output_content
     }
     /// <p>The URL for the complete text written by the plugin to <code>stdout</code> in Amazon Simple Storage Service (Amazon S3). If an S3 bucket wasn't specified, then this string is empty.</p>
     pub fn standard_output_url(
@@ -423,6 +491,10 @@ impl GetCommandInvocationOutputBuilder {
         self.standard_output_url = input;
         self
     }
+    /// <p>The URL for the complete text written by the plugin to <code>stdout</code> in Amazon Simple Storage Service (Amazon S3). If an S3 bucket wasn't specified, then this string is empty.</p>
+    pub fn get_standard_output_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.standard_output_url
+    }
     /// <p>The first 8,000 characters written by the plugin to <code>stderr</code>. If the command hasn't finished running, then this string is empty.</p>
     pub fn standard_error_content(
         mut self,
@@ -438,6 +510,10 @@ impl GetCommandInvocationOutputBuilder {
     ) -> Self {
         self.standard_error_content = input;
         self
+    }
+    /// <p>The first 8,000 characters written by the plugin to <code>stderr</code>. If the command hasn't finished running, then this string is empty.</p>
+    pub fn get_standard_error_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.standard_error_content
     }
     /// <p>The URL for the complete text written by the plugin to <code>stderr</code>. If the command hasn't finished running, then this string is empty.</p>
     pub fn standard_error_url(
@@ -455,6 +531,10 @@ impl GetCommandInvocationOutputBuilder {
         self.standard_error_url = input;
         self
     }
+    /// <p>The URL for the complete text written by the plugin to <code>stderr</code>. If the command hasn't finished running, then this string is empty.</p>
+    pub fn get_standard_error_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.standard_error_url
+    }
     /// <p>Amazon CloudWatch Logs information where Systems Manager sent the command output.</p>
     pub fn cloud_watch_output_config(
         mut self,
@@ -470,6 +550,12 @@ impl GetCommandInvocationOutputBuilder {
     ) -> Self {
         self.cloud_watch_output_config = input;
         self
+    }
+    /// <p>Amazon CloudWatch Logs information where Systems Manager sent the command output.</p>
+    pub fn get_cloud_watch_output_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudWatchOutputConfig> {
+        &self.cloud_watch_output_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

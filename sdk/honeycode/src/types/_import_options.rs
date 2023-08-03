@@ -54,6 +54,12 @@ impl ImportOptionsBuilder {
         self.destination_options = input;
         self
     }
+    /// <p>Options relating to the destination of the import request.</p>
+    pub fn get_destination_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::DestinationOptions> {
+        &self.destination_options
+    }
     /// <p>Options relating to parsing delimited text. Required if dataFormat is DELIMITED_TEXT.</p>
     pub fn delimited_text_options(
         mut self,
@@ -69,6 +75,12 @@ impl ImportOptionsBuilder {
     ) -> Self {
         self.delimited_text_options = input;
         self
+    }
+    /// <p>Options relating to parsing delimited text. Required if dataFormat is DELIMITED_TEXT.</p>
+    pub fn get_delimited_text_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::DelimitedTextImportOptions> {
+        &self.delimited_text_options
     }
     /// Consumes the builder and constructs a [`ImportOptions`](crate::types::ImportOptions).
     pub fn build(self) -> crate::types::ImportOptions {

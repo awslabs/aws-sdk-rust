@@ -44,6 +44,10 @@ impl CreateMatchmakingRuleSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateMatchmakingRuleSet as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_matchmaking_rule_set::builders::CreateMatchmakingRuleSetInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +138,10 @@ impl CreateMatchmakingRuleSetFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>A unique identifier for the matchmaking rule set. A matchmaking configuration identifies the rule set it uses by this name value. Note that the rule set name is different from the optional <code>name</code> field in the rule set body.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements support a description field.</p>
     pub fn rule_set_body(
         mut self,
@@ -149,6 +157,10 @@ impl CreateMatchmakingRuleSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_rule_set_body(input);
         self
+    }
+    /// <p>A collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements support a description field.</p>
+    pub fn get_rule_set_body(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rule_set_body()
     }
     /// Appends an item to `Tags`.
     ///
@@ -166,5 +178,9 @@ impl CreateMatchmakingRuleSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of labels to assign to the new matchmaking rule set resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

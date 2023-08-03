@@ -36,6 +36,12 @@ impl CreateServiceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateService as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_service::builders::CreateServiceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl CreateServiceFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The service name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A description of the Proton service.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -127,6 +137,10 @@ impl CreateServiceFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the Proton service.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The name of the service template that's used to create the service.</p>
     pub fn template_name(
@@ -144,6 +158,10 @@ impl CreateServiceFluentBuilder {
         self.inner = self.inner.set_template_name(input);
         self
     }
+    /// <p>The name of the service template that's used to create the service.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_name()
+    }
     /// <p>The major version of the service template that was used to create the service.</p>
     pub fn template_major_version(
         mut self,
@@ -159,6 +177,10 @@ impl CreateServiceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_template_major_version(input);
         self
+    }
+    /// <p>The major version of the service template that was used to create the service.</p>
+    pub fn get_template_major_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_major_version()
     }
     /// <p>The minor version of the service template that was used to create the service.</p>
     pub fn template_minor_version(
@@ -176,6 +198,10 @@ impl CreateServiceFluentBuilder {
         self.inner = self.inner.set_template_minor_version(input);
         self
     }
+    /// <p>The minor version of the service template that was used to create the service.</p>
+    pub fn get_template_minor_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_minor_version()
+    }
     /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. <i>Don’t</i> include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-create-svc.html">Create a service</a> in the <i>Proton User Guide</i>.</p>
     pub fn spec(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.spec(input.into());
@@ -185,6 +211,10 @@ impl CreateServiceFluentBuilder {
     pub fn set_spec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_spec(input);
         self
+    }
+    /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. <i>Don’t</i> include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-create-svc.html">Create a service</a> in the <i>Proton User Guide</i>.</p>
+    pub fn get_spec(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_spec()
     }
     /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
     pub fn repository_connection_arn(
@@ -202,6 +232,10 @@ impl CreateServiceFluentBuilder {
         self.inner = self.inner.set_repository_connection_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
+    pub fn get_repository_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository_connection_arn()
+    }
     /// <p>The ID of the code repository. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
     pub fn repository_id(
         mut self,
@@ -218,6 +252,10 @@ impl CreateServiceFluentBuilder {
         self.inner = self.inner.set_repository_id(input);
         self
     }
+    /// <p>The ID of the code repository. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
+    pub fn get_repository_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository_id()
+    }
     /// <p>The name of the code repository branch that holds the code that's deployed in Proton. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.branch_name(input.into());
@@ -227,6 +265,10 @@ impl CreateServiceFluentBuilder {
     pub fn set_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_branch_name(input);
         self
+    }
+    /// <p>The name of the code repository branch that holds the code that's deployed in Proton. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
+    pub fn get_branch_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_branch_name()
     }
     /// Appends an item to `tags`.
     ///
@@ -246,5 +288,10 @@ impl CreateServiceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>An optional list of metadata items that you can associate with the Proton service. A tag is a key-value pair.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

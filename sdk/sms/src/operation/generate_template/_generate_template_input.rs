@@ -48,6 +48,10 @@ impl GenerateTemplateInputBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The ID of the application associated with the CloudFormation template.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p>The format for generating the CloudFormation template.</p>
     pub fn template_format(mut self, input: crate::types::OutputFormat) -> Self {
         self.template_format = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl GenerateTemplateInputBuilder {
     ) -> Self {
         self.template_format = input;
         self
+    }
+    /// <p>The format for generating the CloudFormation template.</p>
+    pub fn get_template_format(&self) -> &::std::option::Option<crate::types::OutputFormat> {
+        &self.template_format
     }
     /// Consumes the builder and constructs a [`GenerateTemplateInput`](crate::operation::generate_template::GenerateTemplateInput).
     pub fn build(

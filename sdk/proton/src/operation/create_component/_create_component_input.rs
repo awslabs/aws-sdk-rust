@@ -131,6 +131,10 @@ impl CreateComponentInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The customer-provided name of the component.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>An optional customer-provided description of the component.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -141,6 +145,10 @@ impl CreateComponentInputBuilder {
         self.description = input;
         self
     }
+    /// <p>An optional customer-provided description of the component.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. If you don't specify this, the component isn't attached to any service instance. Specify both <code>serviceInstanceName</code> and <code>serviceName</code> or neither of them.</p>
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
@@ -150,6 +158,10 @@ impl CreateComponentInputBuilder {
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_name = input;
         self
+    }
+    /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. If you don't specify this, the component isn't attached to any service instance. Specify both <code>serviceInstanceName</code> and <code>serviceName</code> or neither of them.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
     }
     /// <p>The name of the service instance that you want to attach this component to. If you don't specify this, the component isn't attached to any service instance. Specify both <code>serviceInstanceName</code> and <code>serviceName</code> or neither of them.</p>
     pub fn service_instance_name(
@@ -167,6 +179,10 @@ impl CreateComponentInputBuilder {
         self.service_instance_name = input;
         self
     }
+    /// <p>The name of the service instance that you want to attach this component to. If you don't specify this, the component isn't attached to any service instance. Specify both <code>serviceInstanceName</code> and <code>serviceName</code> or neither of them.</p>
+    pub fn get_service_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_instance_name
+    }
     /// <p>The name of the Proton environment that you want to associate this component with. You must specify this when you don't specify <code>serviceInstanceName</code> and <code>serviceName</code>.</p>
     pub fn environment_name(
         mut self,
@@ -182,6 +198,10 @@ impl CreateComponentInputBuilder {
     ) -> Self {
         self.environment_name = input;
         self
+    }
+    /// <p>The name of the Proton environment that you want to associate this component with. You must specify this when you don't specify <code>serviceInstanceName</code> and <code>serviceName</code>.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
     }
     /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
     /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
@@ -203,6 +223,12 @@ impl CreateComponentInputBuilder {
         self.template_file = input;
         self
     }
+    /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
+    /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
+    /// </note>
+    pub fn get_template_file(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_file
+    }
     /// <p>A path to a manifest file that lists the Infrastructure as Code (IaC) file, template language, and rendering engine for infrastructure that a custom component provisions.</p>
     pub fn manifest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.manifest = ::std::option::Option::Some(input.into());
@@ -213,6 +239,10 @@ impl CreateComponentInputBuilder {
         self.manifest = input;
         self
     }
+    /// <p>A path to a manifest file that lists the Infrastructure as Code (IaC) file, template language, and rendering engine for infrastructure that a custom component provisions.</p>
+    pub fn get_manifest(&self) -> &::std::option::Option<::std::string::String> {
+        &self.manifest
+    }
     /// <p>The service spec that you want the component to use to access service inputs. Set this only when you attach the component to a service instance.</p>
     pub fn service_spec(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_spec = ::std::option::Option::Some(input.into());
@@ -222,6 +252,10 @@ impl CreateComponentInputBuilder {
     pub fn set_service_spec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_spec = input;
         self
+    }
+    /// <p>The service spec that you want the component to use to access service inputs. Set this only when you attach the component to a service instance.</p>
+    pub fn get_service_spec(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_spec
     }
     /// Appends an item to `tags`.
     ///
@@ -244,6 +278,11 @@ impl CreateComponentInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>An optional list of metadata items that you can associate with the Proton component. A tag is a key-value pair.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The client token for the created component.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -253,6 +292,10 @@ impl CreateComponentInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>The client token for the created component.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateComponentInput`](crate::operation::create_component::CreateComponentInput).
     pub fn build(

@@ -36,6 +36,12 @@ impl UpdateCollaborationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateCollaboration as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_collaboration::builders::UpdateCollaborationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateCollaborationFluentBuilder {
         self.inner = self.inner.set_collaboration_identifier(input);
         self
     }
+    /// <p>The identifier for the collaboration.</p>
+    pub fn get_collaboration_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_collaboration_identifier()
+    }
     /// <p>A human-readable identifier provided by the collaboration owner. Display names are not unique.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -142,6 +152,10 @@ impl UpdateCollaborationFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>A human-readable identifier provided by the collaboration owner. Display names are not unique.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A description of the collaboration.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -151,5 +165,9 @@ impl UpdateCollaborationFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the collaboration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
 }

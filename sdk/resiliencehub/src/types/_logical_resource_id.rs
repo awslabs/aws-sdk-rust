@@ -76,6 +76,10 @@ impl LogicalResourceIdBuilder {
         self.identifier = input;
         self
     }
+    /// <p>The identifier of the resource.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
+    }
     /// <p>The name of the CloudFormation stack this resource belongs to.</p>
     pub fn logical_stack_name(
         mut self,
@@ -91,6 +95,10 @@ impl LogicalResourceIdBuilder {
     ) -> Self {
         self.logical_stack_name = input;
         self
+    }
+    /// <p>The name of the CloudFormation stack this resource belongs to.</p>
+    pub fn get_logical_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.logical_stack_name
     }
     /// <p>The name of the resource group that this resource belongs to.</p>
     pub fn resource_group_name(
@@ -108,6 +116,10 @@ impl LogicalResourceIdBuilder {
         self.resource_group_name = input;
         self
     }
+    /// <p>The name of the resource group that this resource belongs to.</p>
+    pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_group_name
+    }
     /// <p> The name of the Terraform S3 state file this resource belongs to. </p>
     pub fn terraform_source_name(
         mut self,
@@ -123,6 +135,10 @@ impl LogicalResourceIdBuilder {
     ) -> Self {
         self.terraform_source_name = input;
         self
+    }
+    /// <p> The name of the Terraform S3 state file this resource belongs to. </p>
+    pub fn get_terraform_source_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.terraform_source_name
     }
     /// <p>The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note>
     /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p>
@@ -143,6 +159,12 @@ impl LogicalResourceIdBuilder {
     ) -> Self {
         self.eks_source_name = input;
         self
+    }
+    /// <p>The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note>
+    /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p>
+    /// </note>
+    pub fn get_eks_source_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.eks_source_name
     }
     /// Consumes the builder and constructs a [`LogicalResourceId`](crate::types::LogicalResourceId).
     pub fn build(self) -> crate::types::LogicalResourceId {

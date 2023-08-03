@@ -40,6 +40,10 @@ impl ShardConfigurationRequestBuilder {
         self.shard_count = input;
         self
     }
+    /// <p>The number of shards in the cluster</p>
+    pub fn get_shard_count(&self) -> &::std::option::Option<i32> {
+        &self.shard_count
+    }
     /// Consumes the builder and constructs a [`ShardConfigurationRequest`](crate::types::ShardConfigurationRequest).
     pub fn build(self) -> crate::types::ShardConfigurationRequest {
         crate::types::ShardConfigurationRequest {

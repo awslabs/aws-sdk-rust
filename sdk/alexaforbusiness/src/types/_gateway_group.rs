@@ -56,6 +56,10 @@ impl GatewayGroupBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the gateway group.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the gateway group.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl GatewayGroupBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the gateway group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the gateway group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl GatewayGroupBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the gateway group.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`GatewayGroup`](crate::types::GatewayGroup).
     pub fn build(self) -> crate::types::GatewayGroup {

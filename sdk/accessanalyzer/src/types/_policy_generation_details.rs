@@ -46,6 +46,10 @@ impl PolicyGenerationDetailsBuilder {
         self.principal_arn = input;
         self
     }
+    /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
+    pub fn get_principal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal_arn
+    }
     /// Consumes the builder and constructs a [`PolicyGenerationDetails`](crate::types::PolicyGenerationDetails).
     pub fn build(self) -> crate::types::PolicyGenerationDetails {
         crate::types::PolicyGenerationDetails {

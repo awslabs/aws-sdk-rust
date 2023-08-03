@@ -54,6 +54,10 @@ impl CreateNetworkOutputBuilder {
         self.network_id = input;
         self
     }
+    /// <p>The unique identifier for the network.</p>
+    pub fn get_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_id
+    }
     /// <p>The unique identifier for the first member within the network.</p>
     pub fn member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_id = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl CreateNetworkOutputBuilder {
     pub fn set_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.member_id = input;
         self
+    }
+    /// <p>The unique identifier for the first member within the network.</p>
+    pub fn get_member_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

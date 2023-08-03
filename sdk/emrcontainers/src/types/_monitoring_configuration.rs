@@ -78,6 +78,10 @@ impl MonitoringConfigurationBuilder {
         self.persistent_app_ui = input;
         self
     }
+    /// <p>Monitoring configurations for the persistent application UI. </p>
+    pub fn get_persistent_app_ui(&self) -> &::std::option::Option<crate::types::PersistentAppUi> {
+        &self.persistent_app_ui
+    }
     /// <p>Monitoring configurations for CloudWatch.</p>
     pub fn cloud_watch_monitoring_configuration(
         mut self,
@@ -93,6 +97,12 @@ impl MonitoringConfigurationBuilder {
     ) -> Self {
         self.cloud_watch_monitoring_configuration = input;
         self
+    }
+    /// <p>Monitoring configurations for CloudWatch.</p>
+    pub fn get_cloud_watch_monitoring_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudWatchMonitoringConfiguration> {
+        &self.cloud_watch_monitoring_configuration
     }
     /// <p>Amazon S3 configuration for monitoring log publishing.</p>
     pub fn s3_monitoring_configuration(
@@ -110,6 +120,12 @@ impl MonitoringConfigurationBuilder {
         self.s3_monitoring_configuration = input;
         self
     }
+    /// <p>Amazon S3 configuration for monitoring log publishing.</p>
+    pub fn get_s3_monitoring_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3MonitoringConfiguration> {
+        &self.s3_monitoring_configuration
+    }
     /// <p>Enable or disable container log rotation.</p>
     pub fn container_log_rotation_configuration(
         mut self,
@@ -125,6 +141,12 @@ impl MonitoringConfigurationBuilder {
     ) -> Self {
         self.container_log_rotation_configuration = input;
         self
+    }
+    /// <p>Enable or disable container log rotation.</p>
+    pub fn get_container_log_rotation_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContainerLogRotationConfiguration> {
+        &self.container_log_rotation_configuration
     }
     /// Consumes the builder and constructs a [`MonitoringConfiguration`](crate::types::MonitoringConfiguration).
     pub fn build(self) -> crate::types::MonitoringConfiguration {

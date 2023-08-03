@@ -44,6 +44,12 @@ impl AssociateFacesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateFaces as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::associate_faces::builders::AssociateFacesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl AssociateFacesFluentBuilder {
         self.inner = self.inner.set_collection_id(input);
         self
     }
+    /// <p>The ID of an existing collection containing the UserID.</p>
+    pub fn get_collection_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_collection_id()
+    }
     /// <p>The ID for the existing UserID.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
@@ -141,6 +151,10 @@ impl AssociateFacesFluentBuilder {
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
         self
+    }
+    /// <p>The ID for the existing UserID.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_id()
     }
     /// Appends an item to `FaceIds`.
     ///
@@ -159,6 +173,10 @@ impl AssociateFacesFluentBuilder {
         self.inner = self.inner.set_face_ids(input);
         self
     }
+    /// <p>An array of FaceIDs to associate with the UserID.</p>
+    pub fn get_face_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_face_ids()
+    }
     /// <p>An optional value specifying the minimum confidence in the UserID match to return. The default value is 75.</p>
     pub fn user_match_threshold(mut self, input: f32) -> Self {
         self.inner = self.inner.user_match_threshold(input);
@@ -168,6 +186,10 @@ impl AssociateFacesFluentBuilder {
     pub fn set_user_match_threshold(mut self, input: ::std::option::Option<f32>) -> Self {
         self.inner = self.inner.set_user_match_threshold(input);
         self
+    }
+    /// <p>An optional value specifying the minimum confidence in the UserID match to return. The default value is 75.</p>
+    pub fn get_user_match_threshold(&self) -> &::std::option::Option<f32> {
+        self.inner.get_user_match_threshold()
     }
     /// <p>Idempotent token used to identify the request to <code>AssociateFaces</code>. If you use the same token with multiple <code>AssociateFaces</code> requests, the same response is returned. Use ClientRequestToken to prevent the same request from being processed more than once.</p>
     pub fn client_request_token(
@@ -184,5 +206,9 @@ impl AssociateFacesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>Idempotent token used to identify the request to <code>AssociateFaces</code>. If you use the same token with multiple <code>AssociateFaces</code> requests, the same response is returned. Use ClientRequestToken to prevent the same request from being processed more than once.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
 }

@@ -51,6 +51,10 @@ impl GetRegexPatternSetOutputBuilder {
         self.regex_pattern_set = input;
         self
     }
+    /// <p>Information about the <code>RegexPatternSet</code> that you specified in the <code>GetRegexPatternSet</code> request, including the identifier of the pattern set and the regular expression patterns you want AWS WAF to search for. </p>
+    pub fn get_regex_pattern_set(&self) -> &::std::option::Option<crate::types::RegexPatternSet> {
+        &self.regex_pattern_set
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

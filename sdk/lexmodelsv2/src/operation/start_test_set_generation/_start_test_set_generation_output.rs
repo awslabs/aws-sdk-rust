@@ -132,6 +132,10 @@ impl StartTestSetGenerationOutputBuilder {
         self.test_set_generation_id = input;
         self
     }
+    /// <p>The unique identifier of the test set generation to describe.</p>
+    pub fn get_test_set_generation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_set_generation_id
+    }
     /// <p> The creation date and time for the test set generation.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
@@ -144,6 +148,10 @@ impl StartTestSetGenerationOutputBuilder {
     ) -> Self {
         self.creation_date_time = input;
         self
+    }
+    /// <p> The creation date and time for the test set generation.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
     }
     /// <p> The status for the test set generation.</p>
     pub fn test_set_generation_status(
@@ -161,6 +169,12 @@ impl StartTestSetGenerationOutputBuilder {
         self.test_set_generation_status = input;
         self
     }
+    /// <p> The status for the test set generation.</p>
+    pub fn get_test_set_generation_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::TestSetGenerationStatus> {
+        &self.test_set_generation_status
+    }
     /// <p>The test set name used for the test set generation.</p>
     pub fn test_set_name(
         mut self,
@@ -177,6 +191,10 @@ impl StartTestSetGenerationOutputBuilder {
         self.test_set_name = input;
         self
     }
+    /// <p>The test set name used for the test set generation.</p>
+    pub fn get_test_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_set_name
+    }
     /// <p>The description used for the test set generation.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -186,6 +204,10 @@ impl StartTestSetGenerationOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description used for the test set generation.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The Amazon S3 storage location for the test set generation.</p>
     pub fn storage_location(mut self, input: crate::types::TestSetStorageLocation) -> Self {
@@ -199,6 +221,12 @@ impl StartTestSetGenerationOutputBuilder {
     ) -> Self {
         self.storage_location = input;
         self
+    }
+    /// <p>The Amazon S3 storage location for the test set generation.</p>
+    pub fn get_storage_location(
+        &self,
+    ) -> &::std::option::Option<crate::types::TestSetStorageLocation> {
+        &self.storage_location
     }
     /// <p> The data source for the test set generation.</p>
     pub fn generation_data_source(
@@ -216,6 +244,12 @@ impl StartTestSetGenerationOutputBuilder {
         self.generation_data_source = input;
         self
     }
+    /// <p> The data source for the test set generation.</p>
+    pub fn get_generation_data_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::TestSetGenerationDataSource> {
+        &self.generation_data_source
+    }
     /// <p>The roleARN used for any operation in the test set to access resources in the Amazon Web Services account.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -225,6 +259,10 @@ impl StartTestSetGenerationOutputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The roleARN used for any operation in the test set to access resources in the Amazon Web Services account.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Adds a key-value pair to `test_set_tags`.
     ///
@@ -250,6 +288,14 @@ impl StartTestSetGenerationOutputBuilder {
     ) -> Self {
         self.test_set_tags = input;
         self
+    }
+    /// <p>A list of tags that was used for the test set that is being generated.</p>
+    pub fn get_test_set_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.test_set_tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

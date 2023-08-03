@@ -64,6 +64,12 @@ impl DescribeActivitiesOutputBuilder {
         self.user_activities = input;
         self
     }
+    /// <p>The list of activities for the specified user and time period.</p>
+    pub fn get_user_activities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Activity>> {
+        &self.user_activities
+    }
     /// <p>The marker for the next set of results.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -73,6 +79,10 @@ impl DescribeActivitiesOutputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>The marker for the next set of results.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

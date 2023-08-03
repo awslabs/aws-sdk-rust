@@ -48,6 +48,10 @@ impl InstanceStateBuilder {
         self.code = input;
         self
     }
+    /// <p>The status code for the instance.</p>
+    pub fn get_code(&self) -> &::std::option::Option<i32> {
+        &self.code
+    }
     /// <p>The state of the instance (e.g., <code>running</code> or <code>pending</code>).</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl InstanceStateBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The state of the instance (e.g., <code>running</code> or <code>pending</code>).</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`InstanceState`](crate::types::InstanceState).
     pub fn build(self) -> crate::types::InstanceState {

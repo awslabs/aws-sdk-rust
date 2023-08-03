@@ -77,6 +77,10 @@ impl ResourceQuotasBuilder {
         self.application_quota = input;
         self
     }
+    /// <p>The quota for applications in the AWS account.</p>
+    pub fn get_application_quota(&self) -> &::std::option::Option<crate::types::ResourceQuota> {
+        &self.application_quota
+    }
     /// <p>The quota for application versions in the AWS account.</p>
     pub fn application_version_quota(mut self, input: crate::types::ResourceQuota) -> Self {
         self.application_version_quota = ::std::option::Option::Some(input);
@@ -89,6 +93,12 @@ impl ResourceQuotasBuilder {
     ) -> Self {
         self.application_version_quota = input;
         self
+    }
+    /// <p>The quota for application versions in the AWS account.</p>
+    pub fn get_application_version_quota(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceQuota> {
+        &self.application_version_quota
     }
     /// <p>The quota for environments in the AWS account.</p>
     pub fn environment_quota(mut self, input: crate::types::ResourceQuota) -> Self {
@@ -103,6 +113,10 @@ impl ResourceQuotasBuilder {
         self.environment_quota = input;
         self
     }
+    /// <p>The quota for environments in the AWS account.</p>
+    pub fn get_environment_quota(&self) -> &::std::option::Option<crate::types::ResourceQuota> {
+        &self.environment_quota
+    }
     /// <p>The quota for configuration templates in the AWS account.</p>
     pub fn configuration_template_quota(mut self, input: crate::types::ResourceQuota) -> Self {
         self.configuration_template_quota = ::std::option::Option::Some(input);
@@ -116,6 +130,12 @@ impl ResourceQuotasBuilder {
         self.configuration_template_quota = input;
         self
     }
+    /// <p>The quota for configuration templates in the AWS account.</p>
+    pub fn get_configuration_template_quota(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceQuota> {
+        &self.configuration_template_quota
+    }
     /// <p>The quota for custom platforms in the AWS account.</p>
     pub fn custom_platform_quota(mut self, input: crate::types::ResourceQuota) -> Self {
         self.custom_platform_quota = ::std::option::Option::Some(input);
@@ -128,6 +148,10 @@ impl ResourceQuotasBuilder {
     ) -> Self {
         self.custom_platform_quota = input;
         self
+    }
+    /// <p>The quota for custom platforms in the AWS account.</p>
+    pub fn get_custom_platform_quota(&self) -> &::std::option::Option<crate::types::ResourceQuota> {
+        &self.custom_platform_quota
     }
     /// Consumes the builder and constructs a [`ResourceQuotas`](crate::types::ResourceQuotas).
     pub fn build(self) -> crate::types::ResourceQuotas {

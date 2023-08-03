@@ -50,6 +50,10 @@ impl ModifyOptionGroupOutputBuilder {
         self.option_group = input;
         self
     }
+    /// <p></p>
+    pub fn get_option_group(&self) -> &::std::option::Option<crate::types::OptionGroup> {
+        &self.option_group
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

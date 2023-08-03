@@ -36,6 +36,12 @@ impl GetGameConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetGameConfiguration as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_game_configuration::builders::GetGameConfigurationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl GetGameConfigurationFluentBuilder {
         self.inner = self.inner.set_game_name(input);
         self
     }
+    /// <p>The name of the game.</p>
+    pub fn get_game_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_game_name()
+    }
     /// Appends an item to `Sections`.
     ///
     /// To override the contents of this collection use [`set_sections`](Self::set_sections).
@@ -142,5 +152,9 @@ impl GetGameConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sections(input);
         self
+    }
+    /// <p>The list of sections to return.</p>
+    pub fn get_sections(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_sections()
     }
 }

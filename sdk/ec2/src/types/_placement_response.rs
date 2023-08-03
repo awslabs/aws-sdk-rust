@@ -40,6 +40,10 @@ impl PlacementResponseBuilder {
         self.group_name = input;
         self
     }
+    /// <p>The name of the placement group that the instance is in.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
+    }
     /// Consumes the builder and constructs a [`PlacementResponse`](crate::types::PlacementResponse).
     pub fn build(self) -> crate::types::PlacementResponse {
         crate::types::PlacementResponse {

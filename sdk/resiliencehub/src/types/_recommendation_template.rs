@@ -248,6 +248,10 @@ impl RecommendationTemplateBuilder {
         self.templates_location = input;
         self
     }
+    /// <p>The file location of the template.</p>
+    pub fn get_templates_location(&self) -> &::std::option::Option<crate::types::S3Location> {
+        &self.templates_location
+    }
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn assessment_arn(
         mut self,
@@ -264,6 +268,10 @@ impl RecommendationTemplateBuilder {
         self.assessment_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    pub fn get_assessment_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn app_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_arn = ::std::option::Option::Some(input.into());
@@ -273,6 +281,10 @@ impl RecommendationTemplateBuilder {
     pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_arn
     }
     /// Appends an item to `recommendation_ids`.
     ///
@@ -295,6 +307,12 @@ impl RecommendationTemplateBuilder {
     ) -> Self {
         self.recommendation_ids = input;
         self
+    }
+    /// <p>Identifiers for the recommendations used in the recommendation template.</p>
+    pub fn get_recommendation_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.recommendation_ids
     }
     /// Appends an item to `recommendation_types`.
     ///
@@ -355,6 +373,32 @@ impl RecommendationTemplateBuilder {
         self.recommendation_types = input;
         self
     }
+    /// <p>An array of strings that specify the recommendation template type or types.</p>
+    /// <dl>
+    /// <dt>
+    /// Alarm
+    /// </dt>
+    /// <dd>
+    /// <p>The template is an <code>AlarmRecommendation</code> template.</p>
+    /// </dd>
+    /// <dt>
+    /// Sop
+    /// </dt>
+    /// <dd>
+    /// <p>The template is a <code>SopRecommendation</code> template.</p>
+    /// </dd>
+    /// <dt>
+    /// Test
+    /// </dt>
+    /// <dd>
+    /// <p>The template is a <code>TestRecommendation</code> template.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_recommendation_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RenderRecommendationType>> {
+        &self.recommendation_types
+    }
     /// <p>The format of the recommendation template.</p>
     /// <dl>
     /// <dt>
@@ -396,6 +440,24 @@ impl RecommendationTemplateBuilder {
         self.format = input;
         self
     }
+    /// <p>The format of the recommendation template.</p>
+    /// <dl>
+    /// <dt>
+    /// CfnJson
+    /// </dt>
+    /// <dd>
+    /// <p>The template is CloudFormation JSON.</p>
+    /// </dd>
+    /// <dt>
+    /// CfnYaml
+    /// </dt>
+    /// <dd>
+    /// <p>The template is CloudFormation YAML.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::TemplateFormat> {
+        &self.format
+    }
     /// <p>The Amazon Resource Name (ARN) for the recommendation template.</p>
     pub fn recommendation_template_arn(
         mut self,
@@ -412,6 +474,10 @@ impl RecommendationTemplateBuilder {
         self.recommendation_template_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the recommendation template.</p>
+    pub fn get_recommendation_template_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommendation_template_arn
+    }
     /// <p>The message for the recommendation template.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -421,6 +487,10 @@ impl RecommendationTemplateBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The message for the recommendation template.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// <p>The status of the action.</p>
     pub fn status(mut self, input: crate::types::RecommendationTemplateStatus) -> Self {
@@ -435,6 +505,10 @@ impl RecommendationTemplateBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the action.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::RecommendationTemplateStatus> {
+        &self.status
+    }
     /// <p>The name for the recommendation template.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -444,6 +518,10 @@ impl RecommendationTemplateBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name for the recommendation template.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The start time for the action.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -458,6 +536,10 @@ impl RecommendationTemplateBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The start time for the action.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The end time for the action.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -470,6 +552,10 @@ impl RecommendationTemplateBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The end time for the action.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -496,6 +582,14 @@ impl RecommendationTemplateBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>Indicates if replacements are needed.</p>
     pub fn needs_replacements(mut self, input: bool) -> Self {
         self.needs_replacements = ::std::option::Option::Some(input);
@@ -505,6 +599,10 @@ impl RecommendationTemplateBuilder {
     pub fn set_needs_replacements(mut self, input: ::std::option::Option<bool>) -> Self {
         self.needs_replacements = input;
         self
+    }
+    /// <p>Indicates if replacements are needed.</p>
+    pub fn get_needs_replacements(&self) -> &::std::option::Option<bool> {
+        &self.needs_replacements
     }
     /// Consumes the builder and constructs a [`RecommendationTemplate`](crate::types::RecommendationTemplate).
     pub fn build(self) -> crate::types::RecommendationTemplate {

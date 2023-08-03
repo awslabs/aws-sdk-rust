@@ -62,6 +62,10 @@ impl AcceptInvitationInputBuilder {
         self.administrator_account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID for the account that sent the invitation.</p>
+    pub fn get_administrator_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.administrator_account_id
+    }
     /// <p>The unique identifier for the invitation to accept.</p>
     pub fn invitation_id(
         mut self,
@@ -78,6 +82,10 @@ impl AcceptInvitationInputBuilder {
         self.invitation_id = input;
         self
     }
+    /// <p>The unique identifier for the invitation to accept.</p>
+    pub fn get_invitation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.invitation_id
+    }
     /// <p>(Deprecated) The Amazon Web Services account ID for the account that sent the invitation. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
     pub fn master_account(
         mut self,
@@ -93,6 +101,10 @@ impl AcceptInvitationInputBuilder {
     ) -> Self {
         self.master_account = input;
         self
+    }
+    /// <p>(Deprecated) The Amazon Web Services account ID for the account that sent the invitation. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
+    pub fn get_master_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_account
     }
     /// Consumes the builder and constructs a [`AcceptInvitationInput`](crate::operation::accept_invitation::AcceptInvitationInput).
     pub fn build(

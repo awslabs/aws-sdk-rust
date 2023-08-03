@@ -59,6 +59,10 @@ impl TcpRouteBuilder {
         self.action = input;
         self
     }
+    /// <p>The action to take if a match is determined.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::TcpRouteAction> {
+        &self.action
+    }
     /// <p>An object that represents types of timeouts. </p>
     pub fn timeout(mut self, input: crate::types::TcpTimeout) -> Self {
         self.timeout = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl TcpRouteBuilder {
         self.timeout = input;
         self
     }
+    /// <p>An object that represents types of timeouts. </p>
+    pub fn get_timeout(&self) -> &::std::option::Option<crate::types::TcpTimeout> {
+        &self.timeout
+    }
     /// <p>An object that represents the criteria for determining a request match.</p>
     pub fn r#match(mut self, input: crate::types::TcpRouteMatch) -> Self {
         self.r#match = ::std::option::Option::Some(input);
@@ -78,6 +86,10 @@ impl TcpRouteBuilder {
     pub fn set_match(mut self, input: ::std::option::Option<crate::types::TcpRouteMatch>) -> Self {
         self.r#match = input;
         self
+    }
+    /// <p>An object that represents the criteria for determining a request match.</p>
+    pub fn get_match(&self) -> &::std::option::Option<crate::types::TcpRouteMatch> {
+        &self.r#match
     }
     /// Consumes the builder and constructs a [`TcpRoute`](crate::types::TcpRoute).
     pub fn build(self) -> crate::types::TcpRoute {

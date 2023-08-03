@@ -45,6 +45,10 @@ impl GetNetworkAnalyzerConfigurationInputBuilder {
         self.configuration_name = input;
         self
     }
+    /// <p>Name of the network analyzer configuration.</p>
+    pub fn get_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_name
+    }
     /// Consumes the builder and constructs a [`GetNetworkAnalyzerConfigurationInput`](crate::operation::get_network_analyzer_configuration::GetNetworkAnalyzerConfigurationInput).
     pub fn build(
         self,

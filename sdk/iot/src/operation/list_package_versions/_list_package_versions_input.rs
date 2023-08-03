@@ -65,6 +65,10 @@ impl ListPackageVersionsInputBuilder {
         self.package_name = input;
         self
     }
+    /// <p>The name of the target package.</p>
+    pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_name
+    }
     /// <p>The status of the package version. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
     pub fn status(mut self, input: crate::types::PackageVersionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -78,6 +82,10 @@ impl ListPackageVersionsInputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the package version. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::PackageVersionStatus> {
+        &self.status
+    }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -88,6 +96,10 @@ impl ListPackageVersionsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return at one time.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token for the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -97,6 +109,10 @@ impl ListPackageVersionsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListPackageVersionsInput`](crate::operation::list_package_versions::ListPackageVersionsInput).
     pub fn build(

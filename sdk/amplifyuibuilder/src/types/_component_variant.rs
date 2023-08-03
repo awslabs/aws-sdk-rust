@@ -88,6 +88,14 @@ impl ComponentVariantBuilder {
         self.variant_values = input;
         self
     }
+    /// <p>The combination of variants that comprise this variant. You can't specify <code>tags</code> as a valid property for <code>variantValues</code>.</p>
+    pub fn get_variant_values(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.variant_values
+    }
     /// Adds a key-value pair to `overrides`.
     ///
     /// To override the contents of this collection use [`set_overrides`](Self::set_overrides).
@@ -115,6 +123,17 @@ impl ComponentVariantBuilder {
     ) -> Self {
         self.overrides = input;
         self
+    }
+    /// <p>The properties of the component variant that can be overriden when customizing an instance of the component. You can't specify <code>tags</code> as a valid property for <code>overrides</code>.</p>
+    pub fn get_overrides(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+        >,
+    > {
+        &self.overrides
     }
     /// Consumes the builder and constructs a [`ComponentVariant`](crate::types::ComponentVariant).
     pub fn build(self) -> crate::types::ComponentVariant {

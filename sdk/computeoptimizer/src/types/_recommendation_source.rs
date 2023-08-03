@@ -57,6 +57,10 @@ impl RecommendationSourceBuilder {
         self.recommendation_source_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the recommendation source.</p>
+    pub fn get_recommendation_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommendation_source_arn
+    }
     /// <p>The resource type of the recommendation source.</p>
     pub fn recommendation_source_type(
         mut self,
@@ -72,6 +76,12 @@ impl RecommendationSourceBuilder {
     ) -> Self {
         self.recommendation_source_type = input;
         self
+    }
+    /// <p>The resource type of the recommendation source.</p>
+    pub fn get_recommendation_source_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecommendationSourceType> {
+        &self.recommendation_source_type
     }
     /// Consumes the builder and constructs a [`RecommendationSource`](crate::types::RecommendationSource).
     pub fn build(self) -> crate::types::RecommendationSource {

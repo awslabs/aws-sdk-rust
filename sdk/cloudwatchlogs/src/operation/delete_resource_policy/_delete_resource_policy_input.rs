@@ -40,6 +40,10 @@ impl DeleteResourcePolicyInputBuilder {
         self.policy_name = input;
         self
     }
+    /// <p>The name of the policy to be revoked. This parameter is required.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_name
+    }
     /// Consumes the builder and constructs a [`DeleteResourcePolicyInput`](crate::operation::delete_resource_policy::DeleteResourcePolicyInput).
     pub fn build(
         self,

@@ -62,6 +62,10 @@ impl RevokeFlowEntitlementOutputBuilder {
         self.entitlement_arn = input;
         self
     }
+    /// The ARN of the entitlement that was revoked.
+    pub fn get_entitlement_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entitlement_arn
+    }
     /// The ARN of the flow that the entitlement was revoked from.
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl RevokeFlowEntitlementOutputBuilder {
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_arn = input;
         self
+    }
+    /// The ARN of the flow that the entitlement was revoked from.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

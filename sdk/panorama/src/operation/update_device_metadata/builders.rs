@@ -36,6 +36,12 @@ impl UpdateDeviceMetadataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDeviceMetadata as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_device_metadata::builders::UpdateDeviceMetadataInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateDeviceMetadataFluentBuilder {
         self.inner = self.inner.set_device_id(input);
         self
     }
+    /// <p>The device's ID.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_id()
+    }
     /// <p>A description for the device.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -135,5 +145,9 @@ impl UpdateDeviceMetadataFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description for the device.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
 }

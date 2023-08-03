@@ -63,6 +63,10 @@ impl RegisterCaCertificateOutputBuilder {
         self.certificate_arn = input;
         self
     }
+    /// <p>The CA certificate ARN.</p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_arn
+    }
     /// <p>The CA certificate identifier.</p>
     pub fn certificate_id(
         mut self,
@@ -78,6 +82,10 @@ impl RegisterCaCertificateOutputBuilder {
     ) -> Self {
         self.certificate_id = input;
         self
+    }
+    /// <p>The CA certificate identifier.</p>
+    pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

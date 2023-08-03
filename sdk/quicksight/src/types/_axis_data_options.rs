@@ -52,6 +52,12 @@ impl AxisDataOptionsBuilder {
         self.numeric_axis_options = input;
         self
     }
+    /// <p>The options for an axis with a numeric field.</p>
+    pub fn get_numeric_axis_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::NumericAxisOptions> {
+        &self.numeric_axis_options
+    }
     /// <p>The options for an axis with a date field.</p>
     pub fn date_axis_options(mut self, input: crate::types::DateAxisOptions) -> Self {
         self.date_axis_options = ::std::option::Option::Some(input);
@@ -64,6 +70,10 @@ impl AxisDataOptionsBuilder {
     ) -> Self {
         self.date_axis_options = input;
         self
+    }
+    /// <p>The options for an axis with a date field.</p>
+    pub fn get_date_axis_options(&self) -> &::std::option::Option<crate::types::DateAxisOptions> {
+        &self.date_axis_options
     }
     /// Consumes the builder and constructs a [`AxisDataOptions`](crate::types::AxisDataOptions).
     pub fn build(self) -> crate::types::AxisDataOptions {

@@ -57,6 +57,12 @@ impl SingleMasterChannelEndpointConfigurationBuilder {
         self.protocols = input;
         self
     }
+    /// <p>This property is used to determine the nature of communication over this <code>SINGLE_MASTER</code> signaling channel. If <code>WSS</code> is specified, this API returns a websocket endpoint. If <code>HTTPS</code> is specified, this API returns an <code>HTTPS</code> endpoint.</p>
+    pub fn get_protocols(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelProtocol>> {
+        &self.protocols
+    }
     /// <p>This property is used to determine messaging permissions in this <code>SINGLE_MASTER</code> signaling channel. If <code>MASTER</code> is specified, this API returns an endpoint that a client can use to receive offers from and send answers to any of the viewers on this signaling channel. If <code>VIEWER</code> is specified, this API returns an endpoint that a client can use only to send offers to another <code>MASTER</code> client on this signaling channel. </p>
     pub fn role(mut self, input: crate::types::ChannelRole) -> Self {
         self.role = ::std::option::Option::Some(input);
@@ -66,6 +72,10 @@ impl SingleMasterChannelEndpointConfigurationBuilder {
     pub fn set_role(mut self, input: ::std::option::Option<crate::types::ChannelRole>) -> Self {
         self.role = input;
         self
+    }
+    /// <p>This property is used to determine messaging permissions in this <code>SINGLE_MASTER</code> signaling channel. If <code>MASTER</code> is specified, this API returns an endpoint that a client can use to receive offers from and send answers to any of the viewers on this signaling channel. If <code>VIEWER</code> is specified, this API returns an endpoint that a client can use only to send offers to another <code>MASTER</code> client on this signaling channel. </p>
+    pub fn get_role(&self) -> &::std::option::Option<crate::types::ChannelRole> {
+        &self.role
     }
     /// Consumes the builder and constructs a [`SingleMasterChannelEndpointConfiguration`](crate::types::SingleMasterChannelEndpointConfiguration).
     pub fn build(self) -> crate::types::SingleMasterChannelEndpointConfiguration {

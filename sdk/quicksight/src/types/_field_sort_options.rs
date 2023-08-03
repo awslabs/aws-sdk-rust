@@ -48,6 +48,10 @@ impl FieldSortOptionsBuilder {
         self.field_sort = input;
         self
     }
+    /// <p>The sort configuration for a field in a field well.</p>
+    pub fn get_field_sort(&self) -> &::std::option::Option<crate::types::FieldSort> {
+        &self.field_sort
+    }
     /// <p>The sort configuration for a column that is not used in a field well.</p>
     pub fn column_sort(mut self, input: crate::types::ColumnSort) -> Self {
         self.column_sort = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl FieldSortOptionsBuilder {
     ) -> Self {
         self.column_sort = input;
         self
+    }
+    /// <p>The sort configuration for a column that is not used in a field well.</p>
+    pub fn get_column_sort(&self) -> &::std::option::Option<crate::types::ColumnSort> {
+        &self.column_sort
     }
     /// Consumes the builder and constructs a [`FieldSortOptions`](crate::types::FieldSortOptions).
     pub fn build(self) -> crate::types::FieldSortOptions {

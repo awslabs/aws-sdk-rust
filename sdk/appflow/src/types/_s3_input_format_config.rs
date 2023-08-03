@@ -43,6 +43,10 @@ impl S3InputFormatConfigBuilder {
         self.s3_input_file_type = input;
         self
     }
+    /// <p> The file type that Amazon AppFlow gets from your Amazon S3 bucket. </p>
+    pub fn get_s3_input_file_type(&self) -> &::std::option::Option<crate::types::S3InputFileType> {
+        &self.s3_input_file_type
+    }
     /// Consumes the builder and constructs a [`S3InputFormatConfig`](crate::types::S3InputFormatConfig).
     pub fn build(self) -> crate::types::S3InputFormatConfig {
         crate::types::S3InputFormatConfig {

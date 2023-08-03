@@ -52,6 +52,10 @@ impl CreatePartnerEventSourceOutputBuilder {
         self.event_source_arn = input;
         self
     }
+    /// <p>The ARN of the partner event source.</p>
+    pub fn get_event_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_source_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -104,6 +104,10 @@ impl ScheduledActionBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier of the scheduled action.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The type of action that will be taken on the domain.</p>
     pub fn r#type(mut self, input: crate::types::ActionType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -113,6 +117,10 @@ impl ScheduledActionBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ActionType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of action that will be taken on the domain.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ActionType> {
+        &self.r#type
     }
     /// <p>The severity of the action.</p>
     pub fn severity(mut self, input: crate::types::ActionSeverity) -> Self {
@@ -127,6 +135,10 @@ impl ScheduledActionBuilder {
         self.severity = input;
         self
     }
+    /// <p>The severity of the action.</p>
+    pub fn get_severity(&self) -> &::std::option::Option<crate::types::ActionSeverity> {
+        &self.severity
+    }
     /// <p>The time when the change is scheduled to happen.</p>
     pub fn scheduled_time(mut self, input: i64) -> Self {
         self.scheduled_time = ::std::option::Option::Some(input);
@@ -137,6 +149,10 @@ impl ScheduledActionBuilder {
         self.scheduled_time = input;
         self
     }
+    /// <p>The time when the change is scheduled to happen.</p>
+    pub fn get_scheduled_time(&self) -> &::std::option::Option<i64> {
+        &self.scheduled_time
+    }
     /// <p>A description of the action to be taken.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -146,6 +162,10 @@ impl ScheduledActionBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the action to be taken.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Whether the action was scheduled manually (<code>CUSTOMER</code>, or by OpenSearch Service automatically (<code>SYSTEM</code>).</p>
     pub fn scheduled_by(mut self, input: crate::types::ScheduledBy) -> Self {
@@ -160,6 +180,10 @@ impl ScheduledActionBuilder {
         self.scheduled_by = input;
         self
     }
+    /// <p>Whether the action was scheduled manually (<code>CUSTOMER</code>, or by OpenSearch Service automatically (<code>SYSTEM</code>).</p>
+    pub fn get_scheduled_by(&self) -> &::std::option::Option<crate::types::ScheduledBy> {
+        &self.scheduled_by
+    }
     /// <p>The current status of the scheduled action.</p>
     pub fn status(mut self, input: crate::types::ActionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -169,6 +193,10 @@ impl ScheduledActionBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ActionStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the scheduled action.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ActionStatus> {
+        &self.status
     }
     /// <p>Whether the action is required or optional.</p>
     pub fn mandatory(mut self, input: bool) -> Self {
@@ -180,6 +208,10 @@ impl ScheduledActionBuilder {
         self.mandatory = input;
         self
     }
+    /// <p>Whether the action is required or optional.</p>
+    pub fn get_mandatory(&self) -> &::std::option::Option<bool> {
+        &self.mandatory
+    }
     /// <p>Whether or not the scheduled action is cancellable.</p>
     pub fn cancellable(mut self, input: bool) -> Self {
         self.cancellable = ::std::option::Option::Some(input);
@@ -189,6 +221,10 @@ impl ScheduledActionBuilder {
     pub fn set_cancellable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.cancellable = input;
         self
+    }
+    /// <p>Whether or not the scheduled action is cancellable.</p>
+    pub fn get_cancellable(&self) -> &::std::option::Option<bool> {
+        &self.cancellable
     }
     /// Consumes the builder and constructs a [`ScheduledAction`](crate::types::ScheduledAction).
     pub fn build(self) -> crate::types::ScheduledAction {

@@ -80,6 +80,10 @@ impl AssessmentBuilder {
         self.arn = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) of the assessment. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p> The Amazon Web Services account that's associated with the assessment. </p>
     pub fn aws_account(mut self, input: crate::types::AwsAccount) -> Self {
         self.aws_account = ::std::option::Option::Some(input);
@@ -92,6 +96,10 @@ impl AssessmentBuilder {
     ) -> Self {
         self.aws_account = input;
         self
+    }
+    /// <p> The Amazon Web Services account that's associated with the assessment. </p>
+    pub fn get_aws_account(&self) -> &::std::option::Option<crate::types::AwsAccount> {
+        &self.aws_account
     }
     /// <p> The metadata for the assessment. </p>
     pub fn metadata(mut self, input: crate::types::AssessmentMetadata) -> Self {
@@ -106,6 +114,10 @@ impl AssessmentBuilder {
         self.metadata = input;
         self
     }
+    /// <p> The metadata for the assessment. </p>
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::AssessmentMetadata> {
+        &self.metadata
+    }
     /// <p> The framework that the assessment was created from. </p>
     pub fn framework(mut self, input: crate::types::AssessmentFramework) -> Self {
         self.framework = ::std::option::Option::Some(input);
@@ -118,6 +130,10 @@ impl AssessmentBuilder {
     ) -> Self {
         self.framework = input;
         self
+    }
+    /// <p> The framework that the assessment was created from. </p>
+    pub fn get_framework(&self) -> &::std::option::Option<crate::types::AssessmentFramework> {
+        &self.framework
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -143,6 +159,14 @@ impl AssessmentBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p> The tags that are associated with the assessment. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`Assessment`](crate::types::Assessment).
     pub fn build(self) -> crate::types::Assessment {

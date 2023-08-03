@@ -54,6 +54,10 @@ impl HttpEndpointDescriptionBuilder {
         self.url = input;
         self
     }
+    /// <p>The URL of the HTTP endpoint selected as the destination.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
+    }
     /// <p>The name of the HTTP endpoint selected as the destination.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl HttpEndpointDescriptionBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the HTTP endpoint selected as the destination.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`HttpEndpointDescription`](crate::types::HttpEndpointDescription).
     pub fn build(self) -> crate::types::HttpEndpointDescription {

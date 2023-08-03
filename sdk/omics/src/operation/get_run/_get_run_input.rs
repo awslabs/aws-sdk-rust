@@ -47,6 +47,10 @@ impl GetRunInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The run's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Appends an item to `export`.
     ///
     /// To override the contents of this collection use [`set_export`](Self::set_export).
@@ -65,6 +69,10 @@ impl GetRunInputBuilder {
     ) -> Self {
         self.export = input;
         self
+    }
+    /// <p>The run's export format.</p>
+    pub fn get_export(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RunExport>> {
+        &self.export
     }
     /// Consumes the builder and constructs a [`GetRunInput`](crate::operation::get_run::GetRunInput).
     pub fn build(

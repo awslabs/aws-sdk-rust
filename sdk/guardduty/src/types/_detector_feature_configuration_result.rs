@@ -71,6 +71,10 @@ impl DetectorFeatureConfigurationResultBuilder {
         self.name = input;
         self
     }
+    /// <p>Indicates the name of the feature that can be enabled for the detector.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::DetectorFeatureResult> {
+        &self.name
+    }
     /// <p>Indicates the status of the feature that is enabled for the detector.</p>
     pub fn status(mut self, input: crate::types::FeatureStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -80,6 +84,10 @@ impl DetectorFeatureConfigurationResultBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FeatureStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Indicates the status of the feature that is enabled for the detector.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::FeatureStatus> {
+        &self.status
     }
     /// <p>The timestamp at which the feature object was updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -93,6 +101,10 @@ impl DetectorFeatureConfigurationResultBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// <p>The timestamp at which the feature object was updated.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     /// Appends an item to `additional_configuration`.
     ///
@@ -117,6 +129,13 @@ impl DetectorFeatureConfigurationResultBuilder {
     ) -> Self {
         self.additional_configuration = input;
         self
+    }
+    /// <p>Additional configuration for a resource.</p>
+    pub fn get_additional_configuration(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DetectorAdditionalConfigurationResult>>
+    {
+        &self.additional_configuration
     }
     /// Consumes the builder and constructs a [`DetectorFeatureConfigurationResult`](crate::types::DetectorFeatureConfigurationResult).
     pub fn build(self) -> crate::types::DetectorFeatureConfigurationResult {

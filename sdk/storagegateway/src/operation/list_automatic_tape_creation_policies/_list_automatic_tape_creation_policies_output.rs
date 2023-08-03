@@ -66,6 +66,13 @@ impl ListAutomaticTapeCreationPoliciesOutputBuilder {
         self.automatic_tape_creation_policy_infos = input;
         self
     }
+    /// <p>Gets a listing of information about the gateway's automatic tape creation policies, including the automatic tape creation rules and the gateway that is using the policies.</p>
+    pub fn get_automatic_tape_creation_policy_infos(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutomaticTapeCreationPolicyInfo>>
+    {
+        &self.automatic_tape_creation_policy_infos
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

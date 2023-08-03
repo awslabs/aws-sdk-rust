@@ -36,6 +36,10 @@ impl DescribeInputDeviceThumbnailFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeInputDeviceThumbnail as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_input_device_thumbnail::builders::DescribeInputDeviceThumbnailInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl DescribeInputDeviceThumbnailFluentBuilder {
         self.inner = self.inner.set_input_device_id(input);
         self
     }
+    /// The unique ID of this input device. For example, hd-123456789abcdef.
+    pub fn get_input_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_input_device_id()
+    }
     /// The HTTP Accept header. Indicates the requested type for the thumbnail.
     pub fn accept(mut self, input: crate::types::AcceptHeader) -> Self {
         self.inner = self.inner.accept(input);
@@ -141,5 +149,9 @@ impl DescribeInputDeviceThumbnailFluentBuilder {
     pub fn set_accept(mut self, input: ::std::option::Option<crate::types::AcceptHeader>) -> Self {
         self.inner = self.inner.set_accept(input);
         self
+    }
+    /// The HTTP Accept header. Indicates the requested type for the thumbnail.
+    pub fn get_accept(&self) -> &::std::option::Option<crate::types::AcceptHeader> {
+        self.inner.get_accept()
     }
 }

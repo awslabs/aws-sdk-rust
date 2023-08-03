@@ -36,6 +36,12 @@ impl GenerateDataSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GenerateDataSet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::generate_data_set::builders::GenerateDataSetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -187,6 +193,39 @@ impl GenerateDataSetFluentBuilder {
         self.inner = self.inner.set_data_set_type(input);
         self
     }
+    /// <p>The desired data set type.</p>
+    /// <p> </p>
+    /// <ul>
+    /// <li> <strong>customer_subscriber_hourly_monthly_subscriptions</strong> <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p> </li>
+    /// <li> <strong>customer_subscriber_annual_subscriptions</strong> <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p> </li>
+    /// <li> <strong>daily_business_usage_by_instance_type</strong> <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p> </li>
+    /// <li> <strong>daily_business_fees</strong> <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p> </li>
+    /// <li> <strong>daily_business_free_trial_conversions</strong> <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p> </li>
+    /// <li> <strong>daily_business_new_instances</strong> <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p> </li>
+    /// <li> <strong>daily_business_new_product_subscribers</strong> <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p> </li>
+    /// <li> <strong>daily_business_canceled_product_subscribers</strong> <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p> </li>
+    /// <li> <strong>monthly_revenue_billing_and_revenue_data</strong> <p>From 2017-09-15 to present: Available monthly on the 15th day of the month by 24:00 UTC. Data includes metered transactions (e.g. hourly) from one month prior.</p> </li>
+    /// <li> <strong>monthly_revenue_annual_subscriptions</strong> <p>From 2017-09-15 to present: Available monthly on the 15th day of the month by 24:00 UTC. Data includes up-front software charges (e.g. annual) from one month prior.</p> </li>
+    /// <li> <strong>monthly_revenue_field_demonstration_usage</strong> <p>From 2018-03-15 to present: Available monthly on the 15th day of the month by 24:00 UTC.</p> </li>
+    /// <li> <strong>monthly_revenue_flexible_payment_schedule</strong> <p>From 2018-11-15 to present: Available monthly on the 15th day of the month by 24:00 UTC.</p> </li>
+    /// <li> <strong>disbursed_amount_by_product</strong> <p>From 2017-09-15 to present: Available every 30 days by 24:00 UTC.</p> </li>
+    /// <li> <strong>disbursed_amount_by_instance_hours</strong> <p>From 2017-09-15 to present: Available every 30 days by 24:00 UTC.</p> </li>
+    /// <li> <strong>disbursed_amount_by_customer_geo</strong> <p>From 2017-09-15 to present: Available every 30 days by 24:00 UTC.</p> </li>
+    /// <li> <strong>disbursed_amount_by_age_of_uncollected_funds</strong> <p>From 2017-09-15 to present: Available every 30 days by 24:00 UTC.</p> </li>
+    /// <li> <strong>disbursed_amount_by_age_of_disbursed_funds</strong> <p>From 2017-09-15 to present: Available every 30 days by 24:00 UTC.</p> </li>
+    /// <li> <strong>disbursed_amount_by_age_of_past_due_funds</strong> <p>From 2018-04-07 to present: Available every 30 days by 24:00 UTC.</p> </li>
+    /// <li> <strong>disbursed_amount_by_uncollected_funds_breakdown</strong> <p>From 2019-10-04 to present: Available every 30 days by 24:00 UTC.</p> </li>
+    /// <li> <strong>sales_compensation_billed_revenue</strong> <p>From 2017-09-15 to present: Available monthly on the 15th day of the month by 24:00 UTC. Data includes metered transactions (e.g. hourly) from one month prior, and up-front software charges (e.g. annual) from one month prior.</p> </li>
+    /// <li> <strong>us_sales_and_use_tax_records</strong> <p>From 2017-09-15 to present: Available monthly on the 15th day of the month by 24:00 UTC.</p> </li>
+    /// <li> <strong>disbursed_amount_by_product_with_uncollected_funds</strong> <p>This data set is deprecated. Download related reports from AMMP instead!</p> </li>
+    /// <li> <strong>customer_profile_by_industry</strong> <p>This data set is deprecated. Download related reports from AMMP instead!</p> </li>
+    /// <li> <strong>customer_profile_by_revenue</strong> <p>This data set is deprecated. Download related reports from AMMP instead!</p> </li>
+    /// <li> <strong>customer_profile_by_geography</strong> <p>This data set is deprecated. Download related reports from AMMP instead!</p> </li>
+    /// </ul>
+    /// <p></p>
+    pub fn get_data_set_type(&self) -> &::std::option::Option<crate::types::DataSetType> {
+        self.inner.get_data_set_type()
+    }
     /// The date a data set was published. For daily data sets, provide a date with day-level granularity for the desired day. For monthly data sets except those with prefix disbursed_amount, provide a date with month-level granularity for the desired month (the day value will be ignored). For data sets with prefix disbursed_amount, provide a date with day-level granularity for the desired day. For these data sets we will look backwards in time over the range of 31 days until the first data set is found (the latest one).
     pub fn data_set_publication_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.data_set_publication_date(input);
@@ -199,6 +238,12 @@ impl GenerateDataSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_data_set_publication_date(input);
         self
+    }
+    /// The date a data set was published. For daily data sets, provide a date with day-level granularity for the desired day. For monthly data sets except those with prefix disbursed_amount, provide a date with month-level granularity for the desired month (the day value will be ignored). For data sets with prefix disbursed_amount, provide a date with day-level granularity for the desired day. For these data sets we will look backwards in time over the range of 31 days until the first data set is found (the latest one).
+    pub fn get_data_set_publication_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_data_set_publication_date()
     }
     /// The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS services.
     pub fn role_name_arn(
@@ -216,6 +261,10 @@ impl GenerateDataSetFluentBuilder {
         self.inner = self.inner.set_role_name_arn(input);
         self
     }
+    /// The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS services.
+    pub fn get_role_name_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_name_arn()
+    }
     /// The name (friendly name, not ARN) of the destination S3 bucket.
     pub fn destination_s3_bucket_name(
         mut self,
@@ -231,6 +280,10 @@ impl GenerateDataSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destination_s3_bucket_name(input);
         self
+    }
+    /// The name (friendly name, not ARN) of the destination S3 bucket.
+    pub fn get_destination_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_s3_bucket_name()
     }
     /// (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems. For example, if given the bucket name "mybucket" and the prefix "myprefix/mydatasets", the output file "outputfile" would be published to "s3://mybucket/myprefix/mydatasets/outputfile". If the prefix directory structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3 bucket root.
     pub fn destination_s3_prefix(
@@ -248,6 +301,10 @@ impl GenerateDataSetFluentBuilder {
         self.inner = self.inner.set_destination_s3_prefix(input);
         self
     }
+    /// (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems. For example, if given the bucket name "mybucket" and the prefix "myprefix/mydatasets", the output file "outputfile" would be published to "s3://mybucket/myprefix/mydatasets/outputfile". If the prefix directory structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3 bucket root.
+    pub fn get_destination_s3_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_s3_prefix()
+    }
     /// Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an error has occurred.
     pub fn sns_topic_arn(
         mut self,
@@ -263,6 +320,10 @@ impl GenerateDataSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sns_topic_arn(input);
         self
+    }
+    /// Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an error has occurred.
+    pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sns_topic_arn()
     }
     /// Adds a key-value pair to `customerDefinedValues`.
     ///
@@ -286,5 +347,13 @@ impl GenerateDataSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_customer_defined_values(input);
         self
+    }
+    /// (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the data set metadata file. These key-value pairs can be used to correlated responses with tracking information from other systems.
+    pub fn get_customer_defined_values(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_customer_defined_values()
     }
 }

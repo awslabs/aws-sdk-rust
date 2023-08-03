@@ -36,6 +36,12 @@ impl CreatePricingPlanFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreatePricingPlan as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_pricing_plan::builders::CreatePricingPlanInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreatePricingPlanFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>The name of the pricing plan. The names must be unique to each pricing plan. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -136,6 +146,10 @@ impl CreatePricingPlanFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the pricing plan. The names must be unique to each pricing plan. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The description of the pricing plan. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -145,6 +159,10 @@ impl CreatePricingPlanFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the pricing plan. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `PricingRuleArns`.
     ///
@@ -165,6 +183,12 @@ impl CreatePricingPlanFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_pricing_rule_arns(input);
         self
+    }
+    /// <p> A list of Amazon Resource Names (ARNs) that define the pricing plan parameters. </p>
+    pub fn get_pricing_rule_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_pricing_rule_arns()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -188,5 +212,13 @@ impl CreatePricingPlanFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p> A map that contains tag keys and tag values that are attached to a pricing plan. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

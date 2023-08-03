@@ -52,6 +52,12 @@ impl GoogleAnalyticsMetadataBuilder {
         self.o_auth_scopes = input;
         self
     }
+    /// <p> The desired authorization scope for the Google Analytics account. </p>
+    pub fn get_o_auth_scopes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.o_auth_scopes
+    }
     /// Consumes the builder and constructs a [`GoogleAnalyticsMetadata`](crate::types::GoogleAnalyticsMetadata).
     pub fn build(self) -> crate::types::GoogleAnalyticsMetadata {
         crate::types::GoogleAnalyticsMetadata {

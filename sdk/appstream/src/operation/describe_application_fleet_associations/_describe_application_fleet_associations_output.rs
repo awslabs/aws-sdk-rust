@@ -70,6 +70,12 @@ impl DescribeApplicationFleetAssociationsOutputBuilder {
         self.application_fleet_associations = input;
         self
     }
+    /// <p>The application fleet associations in the list.</p>
+    pub fn get_application_fleet_associations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationFleetAssociation>> {
+        &self.application_fleet_associations
+    }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -79,6 +85,10 @@ impl DescribeApplicationFleetAssociationsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -104,6 +104,10 @@ impl ScheduledTriggerPropertiesBuilder {
         self.schedule_expression = input;
         self
     }
+    /// <p> The scheduling expression that determines the rate at which the schedule will run, for example <code>rate(5minutes)</code>. </p>
+    pub fn get_schedule_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schedule_expression
+    }
     /// <p> Specifies whether a scheduled flow has an incremental data transfer or a complete data transfer for each flow run. </p>
     pub fn data_pull_mode(mut self, input: crate::types::DataPullMode) -> Self {
         self.data_pull_mode = ::std::option::Option::Some(input);
@@ -116,6 +120,10 @@ impl ScheduledTriggerPropertiesBuilder {
     ) -> Self {
         self.data_pull_mode = input;
         self
+    }
+    /// <p> Specifies whether a scheduled flow has an incremental data transfer or a complete data transfer for each flow run. </p>
+    pub fn get_data_pull_mode(&self) -> &::std::option::Option<crate::types::DataPullMode> {
+        &self.data_pull_mode
     }
     /// <p>The time at which the scheduled flow starts. The time is formatted as a timestamp that follows the ISO 8601 standard, such as <code>2022-04-26T13:00:00-07:00</code>.</p>
     pub fn schedule_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -130,6 +138,10 @@ impl ScheduledTriggerPropertiesBuilder {
         self.schedule_start_time = input;
         self
     }
+    /// <p>The time at which the scheduled flow starts. The time is formatted as a timestamp that follows the ISO 8601 standard, such as <code>2022-04-26T13:00:00-07:00</code>.</p>
+    pub fn get_schedule_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.schedule_start_time
+    }
     /// <p>The time at which the scheduled flow ends. The time is formatted as a timestamp that follows the ISO 8601 standard, such as <code>2022-04-27T13:00:00-07:00</code>.</p>
     pub fn schedule_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.schedule_end_time = ::std::option::Option::Some(input);
@@ -143,6 +155,10 @@ impl ScheduledTriggerPropertiesBuilder {
         self.schedule_end_time = input;
         self
     }
+    /// <p>The time at which the scheduled flow ends. The time is formatted as a timestamp that follows the ISO 8601 standard, such as <code>2022-04-27T13:00:00-07:00</code>.</p>
+    pub fn get_schedule_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.schedule_end_time
+    }
     /// <p>Specifies the time zone used when referring to the dates and times of a scheduled flow, such as <code>America/New_York</code>. This time zone is only a descriptive label. It doesn't affect how Amazon AppFlow interprets the timestamps that you specify to schedule the flow.</p>
     /// <p>If you want to schedule a flow by using times in a particular time zone, indicate the time zone as a UTC offset in your timestamps. For example, the UTC offsets for the <code>America/New_York</code> timezone are <code>-04:00</code> EDT and <code>-05:00 EST</code>.</p>
     pub fn timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -155,6 +171,11 @@ impl ScheduledTriggerPropertiesBuilder {
         self.timezone = input;
         self
     }
+    /// <p>Specifies the time zone used when referring to the dates and times of a scheduled flow, such as <code>America/New_York</code>. This time zone is only a descriptive label. It doesn't affect how Amazon AppFlow interprets the timestamps that you specify to schedule the flow.</p>
+    /// <p>If you want to schedule a flow by using times in a particular time zone, indicate the time zone as a UTC offset in your timestamps. For example, the UTC offsets for the <code>America/New_York</code> timezone are <code>-04:00</code> EDT and <code>-05:00 EST</code>.</p>
+    pub fn get_timezone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timezone
+    }
     /// <p> Specifies the optional offset that is added to the time interval for a schedule-triggered flow. </p>
     pub fn schedule_offset(mut self, input: i64) -> Self {
         self.schedule_offset = ::std::option::Option::Some(input);
@@ -164,6 +185,10 @@ impl ScheduledTriggerPropertiesBuilder {
     pub fn set_schedule_offset(mut self, input: ::std::option::Option<i64>) -> Self {
         self.schedule_offset = input;
         self
+    }
+    /// <p> Specifies the optional offset that is added to the time interval for a schedule-triggered flow. </p>
+    pub fn get_schedule_offset(&self) -> &::std::option::Option<i64> {
+        &self.schedule_offset
     }
     /// <p> Specifies the date range for the records to import from the connector in the first flow run. </p>
     pub fn first_execution_from(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -178,6 +203,10 @@ impl ScheduledTriggerPropertiesBuilder {
         self.first_execution_from = input;
         self
     }
+    /// <p> Specifies the date range for the records to import from the connector in the first flow run. </p>
+    pub fn get_first_execution_from(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.first_execution_from
+    }
     /// <p>Defines how many times a scheduled flow fails consecutively before Amazon AppFlow deactivates it.</p>
     pub fn flow_error_deactivation_threshold(mut self, input: i32) -> Self {
         self.flow_error_deactivation_threshold = ::std::option::Option::Some(input);
@@ -190,6 +219,10 @@ impl ScheduledTriggerPropertiesBuilder {
     ) -> Self {
         self.flow_error_deactivation_threshold = input;
         self
+    }
+    /// <p>Defines how many times a scheduled flow fails consecutively before Amazon AppFlow deactivates it.</p>
+    pub fn get_flow_error_deactivation_threshold(&self) -> &::std::option::Option<i32> {
+        &self.flow_error_deactivation_threshold
     }
     /// Consumes the builder and constructs a [`ScheduledTriggerProperties`](crate::types::ScheduledTriggerProperties).
     pub fn build(self) -> crate::types::ScheduledTriggerProperties {

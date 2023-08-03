@@ -70,6 +70,12 @@ impl DefaultNewSheetConfigurationBuilder {
         self.interactive_layout_configuration = input;
         self
     }
+    /// <p>The options that determine the default settings for interactive layout configuration.</p>
+    pub fn get_interactive_layout_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DefaultInteractiveLayoutConfiguration> {
+        &self.interactive_layout_configuration
+    }
     /// <p>The options that determine the default settings for a paginated layout configuration.</p>
     pub fn paginated_layout_configuration(
         mut self,
@@ -86,6 +92,12 @@ impl DefaultNewSheetConfigurationBuilder {
         self.paginated_layout_configuration = input;
         self
     }
+    /// <p>The options that determine the default settings for a paginated layout configuration.</p>
+    pub fn get_paginated_layout_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DefaultPaginatedLayoutConfiguration> {
+        &self.paginated_layout_configuration
+    }
     /// <p>The option that determines the sheet content type.</p>
     pub fn sheet_content_type(mut self, input: crate::types::SheetContentType) -> Self {
         self.sheet_content_type = ::std::option::Option::Some(input);
@@ -98,6 +110,10 @@ impl DefaultNewSheetConfigurationBuilder {
     ) -> Self {
         self.sheet_content_type = input;
         self
+    }
+    /// <p>The option that determines the sheet content type.</p>
+    pub fn get_sheet_content_type(&self) -> &::std::option::Option<crate::types::SheetContentType> {
+        &self.sheet_content_type
     }
     /// Consumes the builder and constructs a [`DefaultNewSheetConfiguration`](crate::types::DefaultNewSheetConfiguration).
     pub fn build(self) -> crate::types::DefaultNewSheetConfiguration {

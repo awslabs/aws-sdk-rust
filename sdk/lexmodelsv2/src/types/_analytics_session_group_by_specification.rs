@@ -43,6 +43,10 @@ impl AnalyticsSessionGroupBySpecificationBuilder {
         self.name = input;
         self
     }
+    /// <p>Specifies whether to group the session by their end state or their locale.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::AnalyticsSessionField> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`AnalyticsSessionGroupBySpecification`](crate::types::AnalyticsSessionGroupBySpecification).
     pub fn build(self) -> crate::types::AnalyticsSessionGroupBySpecification {
         crate::types::AnalyticsSessionGroupBySpecification { name: self.name }

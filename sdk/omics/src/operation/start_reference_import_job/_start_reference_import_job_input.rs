@@ -75,6 +75,10 @@ impl StartReferenceImportJobInputBuilder {
         self.reference_store_id = input;
         self
     }
+    /// <p>The job's reference store ID.</p>
+    pub fn get_reference_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reference_store_id
+    }
     /// <p>A service role for the job.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -85,6 +89,10 @@ impl StartReferenceImportJobInputBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>A service role for the job.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>To ensure that jobs don't run multiple times, specify a unique token for each job.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -94,6 +102,10 @@ impl StartReferenceImportJobInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>To ensure that jobs don't run multiple times, specify a unique token for each job.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Appends an item to `sources`.
     ///
@@ -115,6 +127,13 @@ impl StartReferenceImportJobInputBuilder {
     ) -> Self {
         self.sources = input;
         self
+    }
+    /// <p>The job's source files.</p>
+    pub fn get_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StartReferenceImportJobSourceItem>>
+    {
+        &self.sources
     }
     /// Consumes the builder and constructs a [`StartReferenceImportJobInput`](crate::operation::start_reference_import_job::StartReferenceImportJobInput).
     pub fn build(

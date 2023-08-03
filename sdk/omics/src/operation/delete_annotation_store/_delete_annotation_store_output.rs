@@ -48,6 +48,10 @@ impl DeleteAnnotationStoreOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The store's status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::StoreStatus> {
+        &self.status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

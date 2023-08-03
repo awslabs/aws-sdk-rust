@@ -38,6 +38,10 @@ impl DisassociateNatGatewayAddressFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateNatGatewayAddress as a reference.
+    pub fn as_input(&self) -> &crate::operation::disassociate_nat_gateway_address::builders::DisassociateNatGatewayAddressInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +138,10 @@ impl DisassociateNatGatewayAddressFluentBuilder {
         self.inner = self.inner.set_nat_gateway_id(input);
         self
     }
+    /// <p>The ID of the NAT gateway.</p>
+    pub fn get_nat_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_nat_gateway_id()
+    }
     /// Appends an item to `AssociationIds`.
     ///
     /// To override the contents of this collection use [`set_association_ids`](Self::set_association_ids).
@@ -154,6 +162,12 @@ impl DisassociateNatGatewayAddressFluentBuilder {
         self.inner = self.inner.set_association_ids(input);
         self
     }
+    /// <p>The association IDs of EIPs that have been associated with the NAT gateway.</p>
+    pub fn get_association_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_association_ids()
+    }
     /// <p>The maximum amount of time to wait (in seconds) before forcibly releasing the IP addresses if connections are still in progress. Default value is 350 seconds.</p>
     pub fn max_drain_duration_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.max_drain_duration_seconds(input);
@@ -164,6 +178,10 @@ impl DisassociateNatGatewayAddressFluentBuilder {
         self.inner = self.inner.set_max_drain_duration_seconds(input);
         self
     }
+    /// <p>The maximum amount of time to wait (in seconds) before forcibly releasing the IP addresses if connections are still in progress. Default value is 350 seconds.</p>
+    pub fn get_max_drain_duration_seconds(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_drain_duration_seconds()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -173,5 +191,9 @@ impl DisassociateNatGatewayAddressFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

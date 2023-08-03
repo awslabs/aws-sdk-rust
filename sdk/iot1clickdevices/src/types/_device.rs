@@ -58,6 +58,10 @@ impl DeviceBuilder {
         self.attributes = input;
         self
     }
+    /// <p>The user specified attributes associated with the device for an event.</p>
+    pub fn get_attributes(&self) -> &::std::option::Option<crate::types::Attributes> {
+        &self.attributes
+    }
     /// <p>The unique identifier of the device.</p>
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_id = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl DeviceBuilder {
         self.device_id = input;
         self
     }
+    /// <p>The unique identifier of the device.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_id
+    }
     /// <p>The device type, such as "button".</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -77,6 +85,10 @@ impl DeviceBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The device type, such as "button".</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`Device`](crate::types::Device).
     pub fn build(self) -> crate::types::Device {

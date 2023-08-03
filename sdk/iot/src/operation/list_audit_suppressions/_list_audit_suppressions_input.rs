@@ -73,6 +73,10 @@ impl ListAuditSuppressionsInputBuilder {
         self.check_name = input;
         self
     }
+    /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
+    pub fn get_check_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.check_name
+    }
     /// <p>Information that identifies the noncompliant resource.</p>
     pub fn resource_identifier(mut self, input: crate::types::ResourceIdentifier) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input);
@@ -86,6 +90,12 @@ impl ListAuditSuppressionsInputBuilder {
         self.resource_identifier = input;
         self
     }
+    /// <p>Information that identifies the noncompliant resource.</p>
+    pub fn get_resource_identifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceIdentifier> {
+        &self.resource_identifier
+    }
     /// <p> Determines whether suppressions are listed in ascending order by expiration date or not. If parameter isn't provided, <code>ascendingOrder=true</code>. </p>
     pub fn ascending_order(mut self, input: bool) -> Self {
         self.ascending_order = ::std::option::Option::Some(input);
@@ -95,6 +105,10 @@ impl ListAuditSuppressionsInputBuilder {
     pub fn set_ascending_order(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ascending_order = input;
         self
+    }
+    /// <p> Determines whether suppressions are listed in ascending order by expiration date or not. If parameter isn't provided, <code>ascendingOrder=true</code>. </p>
+    pub fn get_ascending_order(&self) -> &::std::option::Option<bool> {
+        &self.ascending_order
     }
     /// <p> The token for the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -106,6 +120,10 @@ impl ListAuditSuppressionsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p> The token for the next set of results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p> The maximum number of results to return at one time. The default is 25. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -115,6 +133,10 @@ impl ListAuditSuppressionsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p> The maximum number of results to return at one time. The default is 25. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAuditSuppressionsInput`](crate::operation::list_audit_suppressions::ListAuditSuppressionsInput).
     pub fn build(

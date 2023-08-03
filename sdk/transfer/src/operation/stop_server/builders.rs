@@ -40,6 +40,10 @@ impl StopServerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopServer as a reference.
+    pub fn as_input(&self) -> &crate::operation::stop_server::builders::StopServerInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,5 +125,9 @@ impl StopServerFluentBuilder {
     pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_server_id(input);
         self
+    }
+    /// <p>A system-assigned unique identifier for a server that you stopped.</p>
+    pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_server_id()
     }
 }

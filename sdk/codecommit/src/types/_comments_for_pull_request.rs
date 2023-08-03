@@ -102,6 +102,10 @@ impl CommentsForPullRequestBuilder {
         self.pull_request_id = input;
         self
     }
+    /// <p>The system-generated ID of the pull request.</p>
+    pub fn get_pull_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pull_request_id
+    }
     /// <p>The name of the repository that contains the pull request.</p>
     pub fn repository_name(
         mut self,
@@ -117,6 +121,10 @@ impl CommentsForPullRequestBuilder {
     ) -> Self {
         self.repository_name = input;
         self
+    }
+    /// <p>The name of the repository that contains the pull request.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
     }
     /// <p>The full commit ID of the commit that was the tip of the destination branch when the pull request was created. This commit is superceded by the after commit in the source branch when and if you merge the source branch into the destination branch.</p>
     pub fn before_commit_id(
@@ -134,6 +142,10 @@ impl CommentsForPullRequestBuilder {
         self.before_commit_id = input;
         self
     }
+    /// <p>The full commit ID of the commit that was the tip of the destination branch when the pull request was created. This commit is superceded by the after commit in the source branch when and if you merge the source branch into the destination branch.</p>
+    pub fn get_before_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.before_commit_id
+    }
     /// <p>The full commit ID of the commit that was the tip of the source branch at the time the comment was made. </p>
     pub fn after_commit_id(
         mut self,
@@ -149,6 +161,10 @@ impl CommentsForPullRequestBuilder {
     ) -> Self {
         self.after_commit_id = input;
         self
+    }
+    /// <p>The full commit ID of the commit that was the tip of the source branch at the time the comment was made. </p>
+    pub fn get_after_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.after_commit_id
     }
     /// <p>The full blob ID of the file on which you want to comment on the destination commit.</p>
     pub fn before_blob_id(
@@ -166,6 +182,10 @@ impl CommentsForPullRequestBuilder {
         self.before_blob_id = input;
         self
     }
+    /// <p>The full blob ID of the file on which you want to comment on the destination commit.</p>
+    pub fn get_before_blob_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.before_blob_id
+    }
     /// <p>The full blob ID of the file on which you want to comment on the source commit.</p>
     pub fn after_blob_id(
         mut self,
@@ -182,6 +202,10 @@ impl CommentsForPullRequestBuilder {
         self.after_blob_id = input;
         self
     }
+    /// <p>The full blob ID of the file on which you want to comment on the source commit.</p>
+    pub fn get_after_blob_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.after_blob_id
+    }
     /// <p>Location information about the comment on the pull request, including the file name, line number, and whether the version of the file where the comment was made is BEFORE (destination branch) or AFTER (source branch).</p>
     pub fn location(mut self, input: crate::types::Location) -> Self {
         self.location = ::std::option::Option::Some(input);
@@ -191,6 +215,10 @@ impl CommentsForPullRequestBuilder {
     pub fn set_location(mut self, input: ::std::option::Option<crate::types::Location>) -> Self {
         self.location = input;
         self
+    }
+    /// <p>Location information about the comment on the pull request, including the file name, line number, and whether the version of the file where the comment was made is BEFORE (destination branch) or AFTER (source branch).</p>
+    pub fn get_location(&self) -> &::std::option::Option<crate::types::Location> {
+        &self.location
     }
     /// Appends an item to `comments`.
     ///
@@ -210,6 +238,10 @@ impl CommentsForPullRequestBuilder {
     ) -> Self {
         self.comments = input;
         self
+    }
+    /// <p>An array of comment objects. Each comment object contains information about a comment on the pull request.</p>
+    pub fn get_comments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Comment>> {
+        &self.comments
     }
     /// Consumes the builder and constructs a [`CommentsForPullRequest`](crate::types::CommentsForPullRequest).
     pub fn build(self) -> crate::types::CommentsForPullRequest {

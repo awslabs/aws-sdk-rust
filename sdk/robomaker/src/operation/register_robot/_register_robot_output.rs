@@ -57,6 +57,10 @@ impl RegisterRobotOutputBuilder {
         self.fleet = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the fleet that the robot will join.</p>
+    pub fn get_fleet(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet
+    }
     /// <p>Information about the robot registration.</p>
     pub fn robot(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.robot = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl RegisterRobotOutputBuilder {
     pub fn set_robot(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.robot = input;
         self
+    }
+    /// <p>Information about the robot registration.</p>
+    pub fn get_robot(&self) -> &::std::option::Option<::std::string::String> {
+        &self.robot
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

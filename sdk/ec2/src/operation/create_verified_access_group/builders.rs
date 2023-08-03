@@ -36,6 +36,10 @@ impl CreateVerifiedAccessGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateVerifiedAccessGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_verified_access_group::builders::CreateVerifiedAccessGroupInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl CreateVerifiedAccessGroupFluentBuilder {
         self.inner = self.inner.set_verified_access_instance_id(input);
         self
     }
+    /// <p>The ID of the Verified Access instance.</p>
+    pub fn get_verified_access_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_verified_access_instance_id()
+    }
     /// <p>A description for the Verified Access group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -141,6 +149,10 @@ impl CreateVerifiedAccessGroupFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description for the Verified Access group.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The Verified Access policy document.</p>
     pub fn policy_document(
@@ -157,6 +169,10 @@ impl CreateVerifiedAccessGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_policy_document(input);
         self
+    }
+    /// <p>The Verified Access policy document.</p>
+    pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_document()
     }
     /// Appends an item to `TagSpecifications`.
     ///
@@ -175,6 +191,12 @@ impl CreateVerifiedAccessGroupFluentBuilder {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
+    /// <p>The tags to assign to the Verified Access group.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        self.inner.get_tag_specifications()
+    }
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -185,6 +207,10 @@ impl CreateVerifiedAccessGroupFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -194,5 +220,9 @@ impl CreateVerifiedAccessGroupFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

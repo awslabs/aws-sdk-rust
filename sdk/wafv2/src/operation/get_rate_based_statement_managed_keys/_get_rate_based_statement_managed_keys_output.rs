@@ -66,6 +66,12 @@ impl GetRateBasedStatementManagedKeysOutputBuilder {
         self.managed_keys_ipv4 = input;
         self
     }
+    /// <p>The keys that are of Internet Protocol version 4 (IPv4). </p>
+    pub fn get_managed_keys_ipv4(
+        &self,
+    ) -> &::std::option::Option<crate::types::RateBasedStatementManagedKeysIpSet> {
+        &self.managed_keys_ipv4
+    }
     /// <p>The keys that are of Internet Protocol version 6 (IPv6). </p>
     pub fn managed_keys_ipv6(
         mut self,
@@ -81,6 +87,12 @@ impl GetRateBasedStatementManagedKeysOutputBuilder {
     ) -> Self {
         self.managed_keys_ipv6 = input;
         self
+    }
+    /// <p>The keys that are of Internet Protocol version 6 (IPv6). </p>
+    pub fn get_managed_keys_ipv6(
+        &self,
+    ) -> &::std::option::Option<crate::types::RateBasedStatementManagedKeysIpSet> {
+        &self.managed_keys_ipv6
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

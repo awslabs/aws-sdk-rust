@@ -83,6 +83,10 @@ impl DetectedCsvFormatDescriptorBuilder {
         self.file_compression = input;
         self
     }
+    /// <p>The format's file compression.</p>
+    pub fn get_file_compression(&self) -> &::std::option::Option<crate::types::DetectedField> {
+        &self.file_compression
+    }
     /// <p>The format's charset.</p>
     pub fn charset(mut self, input: crate::types::DetectedField) -> Self {
         self.charset = ::std::option::Option::Some(input);
@@ -95,6 +99,10 @@ impl DetectedCsvFormatDescriptorBuilder {
     ) -> Self {
         self.charset = input;
         self
+    }
+    /// <p>The format's charset.</p>
+    pub fn get_charset(&self) -> &::std::option::Option<crate::types::DetectedField> {
+        &self.charset
     }
     /// <p>Whether the format includes a header.</p>
     pub fn contains_header(mut self, input: crate::types::DetectedField) -> Self {
@@ -109,6 +117,10 @@ impl DetectedCsvFormatDescriptorBuilder {
         self.contains_header = input;
         self
     }
+    /// <p>Whether the format includes a header.</p>
+    pub fn get_contains_header(&self) -> &::std::option::Option<crate::types::DetectedField> {
+        &self.contains_header
+    }
     /// <p>The format's delimiter.</p>
     pub fn delimiter(mut self, input: crate::types::DetectedField) -> Self {
         self.delimiter = ::std::option::Option::Some(input);
@@ -121,6 +133,10 @@ impl DetectedCsvFormatDescriptorBuilder {
     ) -> Self {
         self.delimiter = input;
         self
+    }
+    /// <p>The format's delimiter.</p>
+    pub fn get_delimiter(&self) -> &::std::option::Option<crate::types::DetectedField> {
+        &self.delimiter
     }
     /// <p>The format's header list.</p>
     pub fn header_list(mut self, input: crate::types::DetectedField) -> Self {
@@ -135,6 +151,10 @@ impl DetectedCsvFormatDescriptorBuilder {
         self.header_list = input;
         self
     }
+    /// <p>The format's header list.</p>
+    pub fn get_header_list(&self) -> &::std::option::Option<crate::types::DetectedField> {
+        &self.header_list
+    }
     /// <p>The format's quote symbol.</p>
     pub fn quote_symbol(mut self, input: crate::types::DetectedField) -> Self {
         self.quote_symbol = ::std::option::Option::Some(input);
@@ -147,6 +167,10 @@ impl DetectedCsvFormatDescriptorBuilder {
     ) -> Self {
         self.quote_symbol = input;
         self
+    }
+    /// <p>The format's quote symbol.</p>
+    pub fn get_quote_symbol(&self) -> &::std::option::Option<crate::types::DetectedField> {
+        &self.quote_symbol
     }
     /// Consumes the builder and constructs a [`DetectedCsvFormatDescriptor`](crate::types::DetectedCsvFormatDescriptor).
     pub fn build(self) -> crate::types::DetectedCsvFormatDescriptor {

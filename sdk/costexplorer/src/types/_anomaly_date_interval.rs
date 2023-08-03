@@ -48,6 +48,10 @@ impl AnomalyDateIntervalBuilder {
         self.start_date = input;
         self
     }
+    /// <p>The first date an anomaly was observed. </p>
+    pub fn get_start_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_date
+    }
     /// <p>The last date an anomaly was observed. </p>
     pub fn end_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.end_date = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl AnomalyDateIntervalBuilder {
     pub fn set_end_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.end_date = input;
         self
+    }
+    /// <p>The last date an anomaly was observed. </p>
+    pub fn get_end_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.end_date
     }
     /// Consumes the builder and constructs a [`AnomalyDateInterval`](crate::types::AnomalyDateInterval).
     pub fn build(self) -> crate::types::AnomalyDateInterval {

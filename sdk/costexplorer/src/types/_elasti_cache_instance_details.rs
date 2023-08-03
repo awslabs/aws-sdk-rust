@@ -80,6 +80,10 @@ impl ElastiCacheInstanceDetailsBuilder {
         self.family = input;
         self
     }
+    /// <p>The instance family of the recommended reservation.</p>
+    pub fn get_family(&self) -> &::std::option::Option<::std::string::String> {
+        &self.family
+    }
     /// <p>The type of node that Amazon Web Services recommends.</p>
     pub fn node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_type = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl ElastiCacheInstanceDetailsBuilder {
         self.node_type = input;
         self
     }
+    /// <p>The type of node that Amazon Web Services recommends.</p>
+    pub fn get_node_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_type
+    }
     /// <p>The Amazon Web Services Region of the recommended reservation.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -99,6 +107,10 @@ impl ElastiCacheInstanceDetailsBuilder {
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
+    }
+    /// <p>The Amazon Web Services Region of the recommended reservation.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// <p>The description of the recommended reservation.</p>
     pub fn product_description(
@@ -116,6 +128,10 @@ impl ElastiCacheInstanceDetailsBuilder {
         self.product_description = input;
         self
     }
+    /// <p>The description of the recommended reservation.</p>
+    pub fn get_product_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_description
+    }
     /// <p>Determines whether the recommendation is for a current generation instance.</p>
     pub fn current_generation(mut self, input: bool) -> Self {
         self.current_generation = ::std::option::Option::Some(input);
@@ -126,6 +142,10 @@ impl ElastiCacheInstanceDetailsBuilder {
         self.current_generation = input;
         self
     }
+    /// <p>Determines whether the recommendation is for a current generation instance.</p>
+    pub fn get_current_generation(&self) -> &::std::option::Option<bool> {
+        &self.current_generation
+    }
     /// <p>Determines whether the recommended reservation is size flexible.</p>
     pub fn size_flex_eligible(mut self, input: bool) -> Self {
         self.size_flex_eligible = ::std::option::Option::Some(input);
@@ -135,6 +155,10 @@ impl ElastiCacheInstanceDetailsBuilder {
     pub fn set_size_flex_eligible(mut self, input: ::std::option::Option<bool>) -> Self {
         self.size_flex_eligible = input;
         self
+    }
+    /// <p>Determines whether the recommended reservation is size flexible.</p>
+    pub fn get_size_flex_eligible(&self) -> &::std::option::Option<bool> {
+        &self.size_flex_eligible
     }
     /// Consumes the builder and constructs a [`ElastiCacheInstanceDetails`](crate::types::ElastiCacheInstanceDetails).
     pub fn build(self) -> crate::types::ElastiCacheInstanceDetails {

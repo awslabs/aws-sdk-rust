@@ -71,6 +71,10 @@ impl UpdateCustomRoutingAcceleratorInputBuilder {
         self.accelerator_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the accelerator to update.</p>
+    pub fn get_accelerator_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accelerator_arn
+    }
     /// <p>The name of the accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric characters, periods (.), or hyphens (-), and must not begin or end with a hyphen or period.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl UpdateCustomRoutingAcceleratorInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric characters, periods (.), or hyphens (-), and must not begin or end with a hyphen or period.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The IP address type that an accelerator supports. For a custom routing accelerator, the value must be IPV4.</p>
     pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
@@ -94,6 +102,10 @@ impl UpdateCustomRoutingAcceleratorInputBuilder {
         self.ip_address_type = input;
         self
     }
+    /// <p>The IP address type that an accelerator supports. For a custom routing accelerator, the value must be IPV4.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        &self.ip_address_type
+    }
     /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
     /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
     pub fn enabled(mut self, input: bool) -> Self {
@@ -105,6 +117,11 @@ impl UpdateCustomRoutingAcceleratorInputBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
+    /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// Consumes the builder and constructs a [`UpdateCustomRoutingAcceleratorInput`](crate::operation::update_custom_routing_accelerator::UpdateCustomRoutingAcceleratorInput).
     pub fn build(

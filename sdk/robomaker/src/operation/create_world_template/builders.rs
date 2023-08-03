@@ -36,6 +36,12 @@ impl CreateWorldTemplateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateWorldTemplate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_world_template::builders::CreateWorldTemplateInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl CreateWorldTemplateFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// <p>The name of the world template.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -141,6 +151,10 @@ impl CreateWorldTemplateFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the world template.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The world template body.</p>
     pub fn template_body(
@@ -158,6 +172,10 @@ impl CreateWorldTemplateFluentBuilder {
         self.inner = self.inner.set_template_body(input);
         self
     }
+    /// <p>The world template body.</p>
+    pub fn get_template_body(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_body()
+    }
     /// <p>The location of the world template.</p>
     pub fn template_location(mut self, input: crate::types::TemplateLocation) -> Self {
         self.inner = self.inner.template_location(input);
@@ -170,6 +188,10 @@ impl CreateWorldTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_template_location(input);
         self
+    }
+    /// <p>The location of the world template.</p>
+    pub fn get_template_location(&self) -> &::std::option::Option<crate::types::TemplateLocation> {
+        self.inner.get_template_location()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -193,5 +215,13 @@ impl CreateWorldTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A map that contains tag keys and tag values that are attached to the world template.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

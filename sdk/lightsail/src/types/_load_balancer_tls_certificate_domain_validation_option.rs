@@ -53,6 +53,10 @@ impl LoadBalancerTlsCertificateDomainValidationOptionBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The fully qualified domain name in the certificate request.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The status of the domain validation. Valid values are listed below.</p>
     pub fn validation_status(
         mut self,
@@ -68,6 +72,12 @@ impl LoadBalancerTlsCertificateDomainValidationOptionBuilder {
     ) -> Self {
         self.validation_status = input;
         self
+    }
+    /// <p>The status of the domain validation. Valid values are listed below.</p>
+    pub fn get_validation_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::LoadBalancerTlsCertificateDomainStatus> {
+        &self.validation_status
     }
     /// Consumes the builder and constructs a [`LoadBalancerTlsCertificateDomainValidationOption`](crate::types::LoadBalancerTlsCertificateDomainValidationOption).
     pub fn build(self) -> crate::types::LoadBalancerTlsCertificateDomainValidationOption {

@@ -62,6 +62,10 @@ impl AssociatePhoneNumberWithUserInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The user ID.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl AssociatePhoneNumberWithUserInputBuilder {
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
+    }
+    /// <p>The user ID.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     /// <p>The phone number, in E.164 format.</p>
     pub fn e164_phone_number(
@@ -87,6 +95,10 @@ impl AssociatePhoneNumberWithUserInputBuilder {
     ) -> Self {
         self.e164_phone_number = input;
         self
+    }
+    /// <p>The phone number, in E.164 format.</p>
+    pub fn get_e164_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.e164_phone_number
     }
     /// Consumes the builder and constructs a [`AssociatePhoneNumberWithUserInput`](crate::operation::associate_phone_number_with_user::AssociatePhoneNumberWithUserInput).
     pub fn build(

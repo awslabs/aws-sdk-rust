@@ -36,6 +36,10 @@ impl PutDefaultEncryptionConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutDefaultEncryptionConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_default_encryption_configuration::builders::PutDefaultEncryptionConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -103,6 +107,10 @@ impl PutDefaultEncryptionConfigurationFluentBuilder {
         self.inner = self.inner.set_encryption_type(input);
         self
     }
+    /// <p>The type of encryption used for the encryption configuration.</p>
+    pub fn get_encryption_type(&self) -> &::std::option::Option<crate::types::EncryptionType> {
+        self.inner.get_encryption_type()
+    }
     /// <p>The Key ID of the customer managed key used for KMS encryption. This is required if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
@@ -112,5 +120,9 @@ impl PutDefaultEncryptionConfigurationFluentBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
+    }
+    /// <p>The Key ID of the customer managed key used for KMS encryption. This is required if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_id()
     }
 }

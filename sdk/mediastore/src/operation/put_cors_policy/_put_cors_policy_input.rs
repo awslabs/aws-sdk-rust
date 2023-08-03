@@ -53,6 +53,10 @@ impl PutCorsPolicyInputBuilder {
         self.container_name = input;
         self
     }
+    /// <p>The name of the container that you want to assign the CORS policy to.</p>
+    pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_name
+    }
     /// Appends an item to `cors_policy`.
     ///
     /// To override the contents of this collection use [`set_cors_policy`](Self::set_cors_policy).
@@ -71,6 +75,12 @@ impl PutCorsPolicyInputBuilder {
     ) -> Self {
         self.cors_policy = input;
         self
+    }
+    /// <p>The CORS policy to apply to the container. </p>
+    pub fn get_cors_policy(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CorsRule>> {
+        &self.cors_policy
     }
     /// Consumes the builder and constructs a [`PutCorsPolicyInput`](crate::operation::put_cors_policy::PutCorsPolicyInput).
     pub fn build(

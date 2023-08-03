@@ -36,6 +36,10 @@ impl DeleteRouteFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteRoute as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_route::builders::DeleteRouteInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl DeleteRouteFluentBuilder {
         self.inner = self.inner.set_environment_identifier(input);
         self
     }
+    /// <p>The ID of the environment to delete the route from.</p>
+    pub fn get_environment_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_identifier()
+    }
     /// <p>The ID of the application to delete the route from.</p>
     pub fn application_identifier(
         mut self,
@@ -140,6 +148,10 @@ impl DeleteRouteFluentBuilder {
         self.inner = self.inner.set_application_identifier(input);
         self
     }
+    /// <p>The ID of the application to delete the route from.</p>
+    pub fn get_application_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_identifier()
+    }
     /// <p>The ID of the route to delete.</p>
     pub fn route_identifier(
         mut self,
@@ -155,5 +167,9 @@ impl DeleteRouteFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_route_identifier(input);
         self
+    }
+    /// <p>The ID of the route to delete.</p>
+    pub fn get_route_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_route_identifier()
     }
 }

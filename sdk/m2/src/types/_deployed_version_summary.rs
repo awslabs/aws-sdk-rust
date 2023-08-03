@@ -56,6 +56,10 @@ impl DeployedVersionSummaryBuilder {
         self.application_version = input;
         self
     }
+    /// <p>The version of the deployed application.</p>
+    pub fn get_application_version(&self) -> &::std::option::Option<i32> {
+        &self.application_version
+    }
     /// <p>The status of the deployment.</p>
     pub fn status(mut self, input: crate::types::DeploymentLifecycle) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl DeployedVersionSummaryBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the deployment.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DeploymentLifecycle> {
+        &self.status
     }
     /// <p>The reason for the reported status.</p>
     pub fn status_reason(
@@ -84,6 +92,10 @@ impl DeployedVersionSummaryBuilder {
     ) -> Self {
         self.status_reason = input;
         self
+    }
+    /// <p>The reason for the reported status.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
     }
     /// Consumes the builder and constructs a [`DeployedVersionSummary`](crate::types::DeployedVersionSummary).
     pub fn build(self) -> crate::types::DeployedVersionSummary {

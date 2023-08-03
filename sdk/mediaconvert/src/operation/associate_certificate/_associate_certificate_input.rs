@@ -41,6 +41,10 @@ impl AssociateCertificateInputBuilder {
         self.arn = input;
         self
     }
+    /// The ARN of the ACM certificate that you want to associate with your MediaConvert resource.
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`AssociateCertificateInput`](crate::operation::associate_certificate::AssociateCertificateInput).
     pub fn build(
         self,

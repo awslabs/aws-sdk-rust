@@ -47,6 +47,10 @@ impl GetLayoutInputBuilder {
         self.domain_id = input;
         self
     }
+    /// <p>The unique identifier of the Cases domain. </p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_id
+    }
     /// <p>The unique identifier of the layout.</p>
     pub fn layout_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.layout_id = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl GetLayoutInputBuilder {
     pub fn set_layout_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.layout_id = input;
         self
+    }
+    /// <p>The unique identifier of the layout.</p>
+    pub fn get_layout_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.layout_id
     }
     /// Consumes the builder and constructs a [`GetLayoutInput`](crate::operation::get_layout::GetLayoutInput).
     pub fn build(

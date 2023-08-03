@@ -57,6 +57,10 @@ impl SetVaultAccessPolicyInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The name of the vault.</p>
     pub fn vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vault_name = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl SetVaultAccessPolicyInputBuilder {
     pub fn set_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vault_name = input;
         self
+    }
+    /// <p>The name of the vault.</p>
+    pub fn get_vault_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vault_name
     }
     /// <p>The vault access policy as a JSON string.</p>
     pub fn policy(mut self, input: crate::types::VaultAccessPolicy) -> Self {
@@ -79,6 +87,10 @@ impl SetVaultAccessPolicyInputBuilder {
     ) -> Self {
         self.policy = input;
         self
+    }
+    /// <p>The vault access policy as a JSON string.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<crate::types::VaultAccessPolicy> {
+        &self.policy
     }
     /// Consumes the builder and constructs a [`SetVaultAccessPolicyInput`](crate::operation::set_vault_access_policy::SetVaultAccessPolicyInput).
     pub fn build(

@@ -38,6 +38,12 @@ impl ListCollectionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListCollections as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_collections::builders::ListCollectionsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -142,6 +148,12 @@ impl ListCollectionsFluentBuilder {
         self.inner = self.inner.set_collection_filters(input);
         self
     }
+    /// <p>List of filter names and values that you can use for requests.</p>
+    pub fn get_collection_filters(
+        &self,
+    ) -> &::std::option::Option<crate::types::CollectionFilters> {
+        self.inner.get_collection_filters()
+    }
     /// <p>If your initial <code>ListCollections</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListCollections</code> operations, which returns results in the next page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -152,6 +164,10 @@ impl ListCollectionsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>If your initial <code>ListCollections</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListCollections</code> operations, which returns results in the next page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return. Default is 20. You can use <code>nextToken</code> to get the next page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -161,5 +177,9 @@ impl ListCollectionsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return. Default is 20. You can use <code>nextToken</code> to get the next page of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

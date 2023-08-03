@@ -47,6 +47,10 @@ impl RevokeIpRulesInputBuilder {
         self.group_id = input;
         self
     }
+    /// <p>The identifier of the group.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
+    }
     /// Appends an item to `user_rules`.
     ///
     /// To override the contents of this collection use [`set_user_rules`](Self::set_user_rules).
@@ -65,6 +69,10 @@ impl RevokeIpRulesInputBuilder {
     ) -> Self {
         self.user_rules = input;
         self
+    }
+    /// <p>The rules to remove from the group.</p>
+    pub fn get_user_rules(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.user_rules
     }
     /// Consumes the builder and constructs a [`RevokeIpRulesInput`](crate::operation::revoke_ip_rules::RevokeIpRulesInput).
     pub fn build(

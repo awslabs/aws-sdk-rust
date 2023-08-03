@@ -57,6 +57,12 @@ impl SecurityProfileTargetMappingBuilder {
         self.security_profile_identifier = input;
         self
     }
+    /// <p>Information that identifies the security profile.</p>
+    pub fn get_security_profile_identifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::SecurityProfileIdentifier> {
+        &self.security_profile_identifier
+    }
     /// <p>Information about the target (thing group) associated with the security profile.</p>
     pub fn target(mut self, input: crate::types::SecurityProfileTarget) -> Self {
         self.target = ::std::option::Option::Some(input);
@@ -69,6 +75,10 @@ impl SecurityProfileTargetMappingBuilder {
     ) -> Self {
         self.target = input;
         self
+    }
+    /// <p>Information about the target (thing group) associated with the security profile.</p>
+    pub fn get_target(&self) -> &::std::option::Option<crate::types::SecurityProfileTarget> {
+        &self.target
     }
     /// Consumes the builder and constructs a [`SecurityProfileTargetMapping`](crate::types::SecurityProfileTargetMapping).
     pub fn build(self) -> crate::types::SecurityProfileTargetMapping {

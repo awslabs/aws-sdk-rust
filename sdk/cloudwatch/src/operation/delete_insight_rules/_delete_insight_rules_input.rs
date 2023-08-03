@@ -49,6 +49,10 @@ impl DeleteInsightRulesInputBuilder {
         self.rule_names = input;
         self
     }
+    /// <p>An array of the rule names to delete. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
+    pub fn get_rule_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.rule_names
+    }
     /// Consumes the builder and constructs a [`DeleteInsightRulesInput`](crate::operation::delete_insight_rules::DeleteInsightRulesInput).
     pub fn build(
         self,

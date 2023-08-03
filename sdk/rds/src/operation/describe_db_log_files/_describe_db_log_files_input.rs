@@ -111,6 +111,14 @@ impl DescribeDbLogFilesInputBuilder {
         self.db_instance_identifier = input;
         self
     }
+    /// <p>The customer-assigned name of the DB instance that contains the log files you want to list.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li>
+    /// </ul>
+    pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_identifier
+    }
     /// <p>Filters the available log files for log file names that contain the specified string.</p>
     pub fn filename_contains(
         mut self,
@@ -127,6 +135,10 @@ impl DescribeDbLogFilesInputBuilder {
         self.filename_contains = input;
         self
     }
+    /// <p>Filters the available log files for log file names that contain the specified string.</p>
+    pub fn get_filename_contains(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filename_contains
+    }
     /// <p>Filters the available log files for files written since the specified date, in POSIX timestamp format with milliseconds.</p>
     pub fn file_last_written(mut self, input: i64) -> Self {
         self.file_last_written = ::std::option::Option::Some(input);
@@ -137,6 +149,10 @@ impl DescribeDbLogFilesInputBuilder {
         self.file_last_written = input;
         self
     }
+    /// <p>Filters the available log files for files written since the specified date, in POSIX timestamp format with milliseconds.</p>
+    pub fn get_file_last_written(&self) -> &::std::option::Option<i64> {
+        &self.file_last_written
+    }
     /// <p>Filters the available log files for files larger than the specified size.</p>
     pub fn file_size(mut self, input: i64) -> Self {
         self.file_size = ::std::option::Option::Some(input);
@@ -146,6 +162,10 @@ impl DescribeDbLogFilesInputBuilder {
     pub fn set_file_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.file_size = input;
         self
+    }
+    /// <p>Filters the available log files for files larger than the specified size.</p>
+    pub fn get_file_size(&self) -> &::std::option::Option<i64> {
+        &self.file_size
     }
     /// Appends an item to `filters`.
     ///
@@ -166,6 +186,10 @@ impl DescribeDbLogFilesInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>This parameter isn't currently supported.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
+    }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.max_records = ::std::option::Option::Some(input);
@@ -176,6 +200,10 @@ impl DescribeDbLogFilesInputBuilder {
         self.max_records = input;
         self
     }
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        &self.max_records
+    }
     /// <p>The pagination token provided in the previous request. If this parameter is specified the response includes only records beyond the marker, up to MaxRecords.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -185,6 +213,10 @@ impl DescribeDbLogFilesInputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>The pagination token provided in the previous request. If this parameter is specified the response includes only records beyond the marker, up to MaxRecords.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeDbLogFilesInput`](crate::operation::describe_db_log_files::DescribeDbLogFilesInput).
     pub fn build(

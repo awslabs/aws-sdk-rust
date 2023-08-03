@@ -36,6 +36,13 @@ impl ExecuteScheduledQueryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ExecuteScheduledQuery as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::execute_scheduled_query::builders::ExecuteScheduledQueryInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl ExecuteScheduledQueryFluentBuilder {
         self.inner = self.inner.set_scheduled_query_arn(input);
         self
     }
+    /// <p>ARN of the scheduled query.</p>
+    pub fn get_scheduled_query_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_scheduled_query_arn()
+    }
     /// <p>The timestamp in UTC. Query will be run as if it was invoked at this timestamp. </p>
     pub fn invocation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.invocation_time(input);
@@ -145,6 +156,10 @@ impl ExecuteScheduledQueryFluentBuilder {
         self.inner = self.inner.set_invocation_time(input);
         self
     }
+    /// <p>The timestamp in UTC. Query will be run as if it was invoked at this timestamp. </p>
+    pub fn get_invocation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_invocation_time()
+    }
     /// <p>Not used. </p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -154,5 +169,9 @@ impl ExecuteScheduledQueryFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>Not used. </p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

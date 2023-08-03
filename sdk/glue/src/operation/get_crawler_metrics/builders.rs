@@ -36,6 +36,12 @@ impl GetCrawlerMetricsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetCrawlerMetrics as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_crawler_metrics::builders::GetCrawlerMetricsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -147,6 +153,12 @@ impl GetCrawlerMetricsFluentBuilder {
         self.inner = self.inner.set_crawler_name_list(input);
         self
     }
+    /// <p>A list of the names of crawlers about which to retrieve metrics.</p>
+    pub fn get_crawler_name_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_crawler_name_list()
+    }
     /// <p>The maximum size of a list to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -157,6 +169,10 @@ impl GetCrawlerMetricsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum size of a list to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>A continuation token, if this is a continuation call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -166,5 +182,9 @@ impl GetCrawlerMetricsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A continuation token, if this is a continuation call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

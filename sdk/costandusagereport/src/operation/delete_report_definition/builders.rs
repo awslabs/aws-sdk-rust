@@ -36,6 +36,13 @@ impl DeleteReportDefinitionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteReportDefinition as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_report_definition::builders::DeleteReportDefinitionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +132,9 @@ impl DeleteReportDefinitionFluentBuilder {
     pub fn set_report_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_report_name(input);
         self
+    }
+    /// <p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>
+    pub fn get_report_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_report_name()
     }
 }

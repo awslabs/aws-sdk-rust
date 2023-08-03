@@ -51,6 +51,10 @@ impl CreateAssessmentReportOutputBuilder {
         self.assessment_report = input;
         self
     }
+    /// <p> The new assessment report that the <code>CreateAssessmentReport</code> API returned. </p>
+    pub fn get_assessment_report(&self) -> &::std::option::Option<crate::types::AssessmentReport> {
+        &self.assessment_report
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -37,6 +37,13 @@ impl UpdateBatchPredictionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateBatchPrediction as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_batch_prediction::builders::UpdateBatchPredictionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl UpdateBatchPredictionFluentBuilder {
         self.inner = self.inner.set_batch_prediction_id(input);
         self
     }
+    /// <p>The ID assigned to the <code>BatchPrediction</code> during creation.</p>
+    pub fn get_batch_prediction_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_batch_prediction_id()
+    }
     /// <p>A new user-supplied name or description of the <code>BatchPrediction</code>.</p>
     pub fn batch_prediction_name(
         mut self,
@@ -148,5 +159,9 @@ impl UpdateBatchPredictionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_batch_prediction_name(input);
         self
+    }
+    /// <p>A new user-supplied name or description of the <code>BatchPrediction</code>.</p>
+    pub fn get_batch_prediction_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_batch_prediction_name()
     }
 }

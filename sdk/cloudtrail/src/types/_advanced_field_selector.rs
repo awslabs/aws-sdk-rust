@@ -1304,6 +1304,314 @@ impl AdvancedFieldSelectorBuilder {
         self.field = input;
         self
     }
+    /// <p> A field in a CloudTrail event record on which to filter events to be logged. For event data stores for Config configuration items, Audit Manager evidence, or non-Amazon Web Services events, the field is used only for selecting events as filtering is not supported. </p>
+    /// <p> For CloudTrail event records, supported fields include <code>readOnly</code>, <code>eventCategory</code>, <code>eventSource</code> (for management events), <code>eventName</code>, <code>resources.type</code>, and <code>resources.ARN</code>. </p>
+    /// <p> For event data stores for Config configuration items, Audit Manager evidence, or non-Amazon Web Services events, the only supported field is <code>eventCategory</code>. </p>
+    /// <ul>
+    /// <li> <p> <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code> or <code>false</code>. If you do not add this field, CloudTrail logs both <code>read</code> and <code>write</code> events. A value of <code>true</code> logs only <code>read</code> events. A value of <code>false</code> logs only <code>write</code> events.</p> </li>
+    /// <li> <p> <b> <code>eventSource</code> </b> - For filtering management events only. This can be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
+    /// <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can use it to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple values for this ﬁeld, separated by commas.</p> </li>
+    /// <li> <p> <b> <code>eventCategory</code> </b> - This is required and must be set to <code>Equals</code>. </p>
+    /// <ul>
+    /// <li> <p> For CloudTrail event records, the value must be <code>Management</code> or <code>Data</code>. </p> </li>
+    /// <li> <p> For Config configuration items, the value must be <code>ConfigurationItem</code>. </p> </li>
+    /// <li> <p> For Audit Manager evidence, the value must be <code>Evidence</code>. </p> </li>
+    /// <li> <p> For non-Amazon Web Services events, the value must be <code>ActivityAuditLog</code>. </p> </li>
+    /// </ul> </li>
+    /// <li> <p> <b> <code>resources.type</code> </b> - This ﬁeld is required for CloudTrail data events. <code>resources.type</code> can only use the <code>Equals</code> operator, and the value can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li>
+    /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
+    /// <li> <p> <code>AWS::S3::Object</code> </p> </li>
+    /// <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li>
+    /// <li> <p> <code>AWS::CodeWhisperer::Profile</code> </p> </li>
+    /// <li> <p> <code>AWS::Cognito::IdentityPool</code> </p> </li>
+    /// <li> <p> <code>AWS::DynamoDB::Stream</code> </p> </li>
+    /// <li> <p> <code>AWS::EC2::Snapshot</code> </p> </li>
+    /// <li> <p> <code>AWS::EMRWAL::Workspace</code> </p> </li>
+    /// <li> <p> <code>AWS::FinSpace::Environment</code> </p> </li>
+    /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
+    /// <li> <p> <code>AWS::GuardDuty::Detector</code> </p> </li>
+    /// <li> <p> <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li>
+    /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
+    /// <li> <p> <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li>
+    /// <li> <p> <code>AWS::SageMaker::FeatureGroup</code> </p> </li>
+    /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
+    /// <li> <p> <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li>
+    /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
+    /// </ul> <p> You can have only one <code>resources.type</code> ﬁeld per selector. To log data events on more than one resource type, add another selector.</p> </li>
+    /// <li> <p> <b> <code>resources.ARN</code> </b> - You can use any operator with <code>resources.ARN</code>, but if you use <code>Equals</code> or <code>NotEquals</code>, the value must exactly match the ARN of a valid resource of the type you've speciﬁed in the template as the value of resources.type. For example, if resources.type equals <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To log all data events for all objects in a specific S3 bucket, use the <code>StartsWith</code> operator, and include only the bucket ARN as the matching value.</p> <p>The trailing slash is intentional; do not exclude it. Replace the text between less than and greater than symbols (&lt;&gt;) with resource-specific information. </p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :s3:::
+    /// <bucket_name>
+    /// /
+    /// </bucket_name>
+    /// </partition></code> </p> </li>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :s3:::
+    /// <bucket_name>
+    /// /
+    /// <object_path>
+    /// /
+    /// </object_path>
+    /// </bucket_name>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When resources.type equals <code>AWS::DynamoDB::Table</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :dynamodb:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :table/
+    /// <table_name></table_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When resources.type equals <code>AWS::Lambda::Function</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :lambda:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :function:
+    /// <function_name></function_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When resources.type equals <code>AWS::CloudTrail::Channel</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :cloudtrail:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :channel/
+    /// <channel_uuid></channel_uuid>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When resources.type equals <code>AWS::CodeWhisperer::Profile</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :codewhisperer:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :profile/
+    /// <profile_id></profile_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When resources.type equals <code>AWS::Cognito::IdentityPool</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :cognito-identity:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :identitypool/
+    /// <identity_pool_id></identity_pool_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::DynamoDB::Stream</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :dynamodb:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :table/
+    /// <table_name>
+    /// /stream/
+    /// <date_time></date_time>
+    /// </table_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::EC2::Snapshot</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :ec2:
+    /// <region>
+    /// ::snapshot/
+    /// <snapshot_id></snapshot_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::EMRWAL::Workspace</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :emrwal:
+    /// <region>
+    /// ::workspace/
+    /// <workspace_name></workspace_name>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::FinSpace::Environment</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :finspace:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :environment/
+    /// <environment_id></environment_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::Glue::Table</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :glue:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :table/
+    /// <database_name>
+    /// /
+    /// <table_name></table_name>
+    /// </database_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::GuardDuty::Detector</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :guardduty:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :detector/
+    /// <detector_id></detector_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::KendraRanking::ExecutionPlan</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :kendra-ranking:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :rescore-execution-plan/
+    /// <rescore_execution_plan_id></rescore_execution_plan_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :managedblockchain:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :nodes/
+    /// <node_id></node_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SageMaker::ExperimentTrialComponent</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :sagemaker:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :experiment-trial-component/
+    /// <experiment_trial_component_name></experiment_trial_component_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SageMaker::FeatureGroup</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :sagemaker:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :feature-group/
+    /// <feature_group_name></feature_group_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::S3::AccessPoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the following formats. To log events on all objects in an S3 access point, we recommend that you use only the access point ARN, don’t include the object path, and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :s3:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :accesspoint/
+    /// <access_point_name></access_point_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :s3:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :accesspoint/
+    /// <access_point_name>
+    /// /object/
+    /// <object_path></object_path>
+    /// </access_point_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :s3-object-lambda:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :accesspoint/
+    /// <access_point_name></access_point_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::S3Outposts::Object</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :s3-outposts:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :
+    /// <object_path></object_path>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> </li>
+    /// </ul>
+    pub fn get_field(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field
+    }
     /// Appends an item to `equals`.
     ///
     /// To override the contents of this collection use [`set_equals`](Self::set_equals).
@@ -1322,6 +1630,10 @@ impl AdvancedFieldSelectorBuilder {
     ) -> Self {
         self.equals = input;
         self
+    }
+    /// <p> An operator that includes events that match the exact value of the event record field specified as the value of <code>Field</code>. This is the only valid operator that you can use with the <code>readOnly</code>, <code>eventCategory</code>, and <code>resources.type</code> fields.</p>
+    pub fn get_equals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.equals
     }
     /// Appends an item to `starts_with`.
     ///
@@ -1342,6 +1654,12 @@ impl AdvancedFieldSelectorBuilder {
         self.starts_with = input;
         self
     }
+    /// <p>An operator that includes events that match the first few characters of the event record field specified as the value of <code>Field</code>.</p>
+    pub fn get_starts_with(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.starts_with
+    }
     /// Appends an item to `ends_with`.
     ///
     /// To override the contents of this collection use [`set_ends_with`](Self::set_ends_with).
@@ -1361,6 +1679,10 @@ impl AdvancedFieldSelectorBuilder {
         self.ends_with = input;
         self
     }
+    /// <p>An operator that includes events that match the last few characters of the event record field specified as the value of <code>Field</code>.</p>
+    pub fn get_ends_with(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ends_with
+    }
     /// Appends an item to `not_equals`.
     ///
     /// To override the contents of this collection use [`set_not_equals`](Self::set_not_equals).
@@ -1379,6 +1701,10 @@ impl AdvancedFieldSelectorBuilder {
     ) -> Self {
         self.not_equals = input;
         self
+    }
+    /// <p> An operator that excludes events that match the exact value of the event record field specified as the value of <code>Field</code>. </p>
+    pub fn get_not_equals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.not_equals
     }
     /// Appends an item to `not_starts_with`.
     ///
@@ -1402,6 +1728,12 @@ impl AdvancedFieldSelectorBuilder {
         self.not_starts_with = input;
         self
     }
+    /// <p> An operator that excludes events that match the first few characters of the event record field specified as the value of <code>Field</code>. </p>
+    pub fn get_not_starts_with(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.not_starts_with
+    }
     /// Appends an item to `not_ends_with`.
     ///
     /// To override the contents of this collection use [`set_not_ends_with`](Self::set_not_ends_with).
@@ -1423,6 +1755,12 @@ impl AdvancedFieldSelectorBuilder {
     ) -> Self {
         self.not_ends_with = input;
         self
+    }
+    /// <p> An operator that excludes events that match the last few characters of the event record field specified as the value of <code>Field</code>. </p>
+    pub fn get_not_ends_with(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.not_ends_with
     }
     /// Consumes the builder and constructs a [`AdvancedFieldSelector`](crate::types::AdvancedFieldSelector).
     pub fn build(self) -> crate::types::AdvancedFieldSelector {

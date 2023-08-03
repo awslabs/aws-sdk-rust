@@ -62,6 +62,10 @@ impl UpdateAddressBookInputBuilder {
         self.address_book_arn = input;
         self
     }
+    /// <p>The ARN of the room to update.</p>
+    pub fn get_address_book_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address_book_arn
+    }
     /// <p>The updated name of the room.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl UpdateAddressBookInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The updated name of the room.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The updated description of the room.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl UpdateAddressBookInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The updated description of the room.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`UpdateAddressBookInput`](crate::operation::update_address_book::UpdateAddressBookInput).
     pub fn build(

@@ -71,6 +71,10 @@ impl UpdateVpcAttachmentInputBuilder {
         self.attachment_id = input;
         self
     }
+    /// <p>The ID of the attachment.</p>
+    pub fn get_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attachment_id
+    }
     /// Appends an item to `add_subnet_arns`.
     ///
     /// To override the contents of this collection use [`set_add_subnet_arns`](Self::set_add_subnet_arns).
@@ -92,6 +96,12 @@ impl UpdateVpcAttachmentInputBuilder {
     ) -> Self {
         self.add_subnet_arns = input;
         self
+    }
+    /// <p>Adds a subnet ARN to the VPC attachment.</p>
+    pub fn get_add_subnet_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.add_subnet_arns
     }
     /// Appends an item to `remove_subnet_arns`.
     ///
@@ -115,6 +125,12 @@ impl UpdateVpcAttachmentInputBuilder {
         self.remove_subnet_arns = input;
         self
     }
+    /// <p>Removes a subnet ARN from the attachment.</p>
+    pub fn get_remove_subnet_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.remove_subnet_arns
+    }
     /// <p>Additional options for updating the VPC attachment. </p>
     pub fn options(mut self, input: crate::types::VpcOptions) -> Self {
         self.options = ::std::option::Option::Some(input);
@@ -124,6 +140,10 @@ impl UpdateVpcAttachmentInputBuilder {
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::VpcOptions>) -> Self {
         self.options = input;
         self
+    }
+    /// <p>Additional options for updating the VPC attachment. </p>
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::VpcOptions> {
+        &self.options
     }
     /// Consumes the builder and constructs a [`UpdateVpcAttachmentInput`](crate::operation::update_vpc_attachment::UpdateVpcAttachmentInput).
     pub fn build(

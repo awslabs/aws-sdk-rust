@@ -65,6 +65,10 @@ impl ContentBuilder {
         self.text_list = input;
         self
     }
+    /// <p>The list of text messages.</p>
+    pub fn get_text_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Text>> {
+        &self.text_list
+    }
     /// Appends an item to `ssml_list`.
     ///
     /// To override the contents of this collection use [`set_ssml_list`](Self::set_ssml_list).
@@ -84,6 +88,10 @@ impl ContentBuilder {
         self.ssml_list = input;
         self
     }
+    /// <p>The list of SSML messages.</p>
+    pub fn get_ssml_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Ssml>> {
+        &self.ssml_list
+    }
     /// Appends an item to `audio_list`.
     ///
     /// To override the contents of this collection use [`set_audio_list`](Self::set_audio_list).
@@ -102,6 +110,10 @@ impl ContentBuilder {
     ) -> Self {
         self.audio_list = input;
         self
+    }
+    /// <p>The list of audio messages.</p>
+    pub fn get_audio_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Audio>> {
+        &self.audio_list
     }
     /// Consumes the builder and constructs a [`Content`](crate::types::Content).
     pub fn build(self) -> crate::types::Content {

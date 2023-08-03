@@ -64,6 +64,10 @@ impl GetRecordsOutputBuilder {
         self.records = input;
         self
     }
+    /// <p>The stream records from the shard, which were retrieved using the shard iterator.</p>
+    pub fn get_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Record>> {
+        &self.records
+    }
     /// <p>The next position in the shard from which to start sequentially reading stream records. If set to <code>null</code>, the shard has been closed and the requested iterator will not return any more data.</p>
     pub fn next_shard_iterator(
         mut self,
@@ -79,6 +83,10 @@ impl GetRecordsOutputBuilder {
     ) -> Self {
         self.next_shard_iterator = input;
         self
+    }
+    /// <p>The next position in the shard from which to start sequentially reading stream records. If set to <code>null</code>, the shard has been closed and the requested iterator will not return any more data.</p>
+    pub fn get_next_shard_iterator(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_shard_iterator
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -40,6 +40,10 @@ impl RetryOptionsBuilder {
         self.duration_in_seconds = input;
         self
     }
+    /// <p>The period of time during which Kinesis Data Firehose retries to deliver data to the specified Amazon S3 prefix.</p>
+    pub fn get_duration_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.duration_in_seconds
+    }
     /// Consumes the builder and constructs a [`RetryOptions`](crate::types::RetryOptions).
     pub fn build(self) -> crate::types::RetryOptions {
         crate::types::RetryOptions {

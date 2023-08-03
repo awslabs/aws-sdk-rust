@@ -38,6 +38,10 @@ impl CreateExportFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateExport as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_export::builders::CreateExportInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,12 @@ impl CreateExportFluentBuilder {
         self.inner = self.inner.set_resource_specification(input);
         self
     }
+    /// <p>Specifies the type of resource to export, either a bot or a bot locale. You can only specify one type of resource to export.</p>
+    pub fn get_resource_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExportResourceSpecification> {
+        self.inner.get_resource_specification()
+    }
     /// <p>The file format of the bot or bot locale definition files.</p>
     pub fn file_format(mut self, input: crate::types::ImportExportFileFormat) -> Self {
         self.inner = self.inner.file_format(input);
@@ -138,6 +148,10 @@ impl CreateExportFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_file_format(input);
         self
+    }
+    /// <p>The file format of the bot or bot locale definition files.</p>
+    pub fn get_file_format(&self) -> &::std::option::Option<crate::types::ImportExportFileFormat> {
+        self.inner.get_file_format()
     }
     /// <p>An password to use to encrypt the exported archive. Using a password is optional, but you should encrypt the archive to protect the data in transit between Amazon Lex and your local computer.</p>
     pub fn file_password(
@@ -154,5 +168,9 @@ impl CreateExportFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_file_password(input);
         self
+    }
+    /// <p>An password to use to encrypt the exported archive. Using a password is optional, but you should encrypt the archive to protect the data in transit between Amazon Lex and your local computer.</p>
+    pub fn get_file_password(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_file_password()
     }
 }

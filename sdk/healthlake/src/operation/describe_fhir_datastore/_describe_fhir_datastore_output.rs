@@ -53,6 +53,12 @@ impl DescribeFhirDatastoreOutputBuilder {
         self.datastore_properties = input;
         self
     }
+    /// <p>All properties associated with a data store, including the data store ID, data store ARN, data store name, data store status, when the data store was created, data store type version, and the data store's endpoint.</p>
+    pub fn get_datastore_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::DatastoreProperties> {
+        &self.datastore_properties
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

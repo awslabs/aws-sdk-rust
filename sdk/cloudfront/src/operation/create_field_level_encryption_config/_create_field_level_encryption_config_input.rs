@@ -49,6 +49,12 @@ impl CreateFieldLevelEncryptionConfigInputBuilder {
         self.field_level_encryption_config = input;
         self
     }
+    /// <p>The request to create a new field-level encryption configuration.</p>
+    pub fn get_field_level_encryption_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::FieldLevelEncryptionConfig> {
+        &self.field_level_encryption_config
+    }
     /// Consumes the builder and constructs a [`CreateFieldLevelEncryptionConfigInput`](crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

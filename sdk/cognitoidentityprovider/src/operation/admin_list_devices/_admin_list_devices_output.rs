@@ -65,6 +65,10 @@ impl AdminListDevicesOutputBuilder {
         self.devices = input;
         self
     }
+    /// <p>The devices in the list of devices response.</p>
+    pub fn get_devices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceType>> {
+        &self.devices
+    }
     /// <p>The pagination token.</p>
     pub fn pagination_token(
         mut self,
@@ -80,6 +84,10 @@ impl AdminListDevicesOutputBuilder {
     ) -> Self {
         self.pagination_token = input;
         self
+    }
+    /// <p>The pagination token.</p>
+    pub fn get_pagination_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pagination_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

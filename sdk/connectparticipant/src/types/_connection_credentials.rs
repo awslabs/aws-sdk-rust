@@ -56,6 +56,10 @@ impl ConnectionCredentialsBuilder {
         self.connection_token = input;
         self
     }
+    /// <p>The connection token.</p>
+    pub fn get_connection_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_token
+    }
     /// <p>The expiration of the token.</p>
     /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
     pub fn expiry(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -67,6 +71,11 @@ impl ConnectionCredentialsBuilder {
     pub fn set_expiry(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expiry = input;
         self
+    }
+    /// <p>The expiration of the token.</p>
+    /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
+    pub fn get_expiry(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expiry
     }
     /// Consumes the builder and constructs a [`ConnectionCredentials`](crate::types::ConnectionCredentials).
     pub fn build(self) -> crate::types::ConnectionCredentials {

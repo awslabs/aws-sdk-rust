@@ -74,6 +74,12 @@ impl ImageScanFindingAggregationBuilder {
         self.account_aggregation = input;
         self
     }
+    /// <p>Returns an object that contains severity counts based on an account ID.</p>
+    pub fn get_account_aggregation(
+        &self,
+    ) -> &::std::option::Option<crate::types::AccountAggregation> {
+        &self.account_aggregation
+    }
     /// <p>Returns an object that contains severity counts based on the Amazon Resource Name (ARN) for a specific image.</p>
     pub fn image_aggregation(mut self, input: crate::types::ImageAggregation) -> Self {
         self.image_aggregation = ::std::option::Option::Some(input);
@@ -86,6 +92,10 @@ impl ImageScanFindingAggregationBuilder {
     ) -> Self {
         self.image_aggregation = input;
         self
+    }
+    /// <p>Returns an object that contains severity counts based on the Amazon Resource Name (ARN) for a specific image.</p>
+    pub fn get_image_aggregation(&self) -> &::std::option::Option<crate::types::ImageAggregation> {
+        &self.image_aggregation
     }
     /// <p>Returns an object that contains severity counts based on an image pipeline ARN.</p>
     pub fn image_pipeline_aggregation(
@@ -103,6 +113,12 @@ impl ImageScanFindingAggregationBuilder {
         self.image_pipeline_aggregation = input;
         self
     }
+    /// <p>Returns an object that contains severity counts based on an image pipeline ARN.</p>
+    pub fn get_image_pipeline_aggregation(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImagePipelineAggregation> {
+        &self.image_pipeline_aggregation
+    }
     /// <p>Returns an object that contains severity counts based on vulnerability ID.</p>
     pub fn vulnerability_id_aggregation(
         mut self,
@@ -118,6 +134,12 @@ impl ImageScanFindingAggregationBuilder {
     ) -> Self {
         self.vulnerability_id_aggregation = input;
         self
+    }
+    /// <p>Returns an object that contains severity counts based on vulnerability ID.</p>
+    pub fn get_vulnerability_id_aggregation(
+        &self,
+    ) -> &::std::option::Option<crate::types::VulnerabilityIdAggregation> {
+        &self.vulnerability_id_aggregation
     }
     /// Consumes the builder and constructs a [`ImageScanFindingAggregation`](crate::types::ImageScanFindingAggregation).
     pub fn build(self) -> crate::types::ImageScanFindingAggregation {

@@ -56,6 +56,10 @@ impl SqsActionBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The ARN of the IAM role that grants access.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The URL of the Amazon SQS queue.</p>
     pub fn queue_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_url = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl SqsActionBuilder {
         self.queue_url = input;
         self
     }
+    /// <p>The URL of the Amazon SQS queue.</p>
+    pub fn get_queue_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.queue_url
+    }
     /// <p>Specifies whether to use Base64 encoding.</p>
     pub fn use_base64(mut self, input: bool) -> Self {
         self.use_base64 = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl SqsActionBuilder {
     pub fn set_use_base64(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_base64 = input;
         self
+    }
+    /// <p>Specifies whether to use Base64 encoding.</p>
+    pub fn get_use_base64(&self) -> &::std::option::Option<bool> {
+        &self.use_base64
     }
     /// Consumes the builder and constructs a [`SqsAction`](crate::types::SqsAction).
     pub fn build(self) -> crate::types::SqsAction {

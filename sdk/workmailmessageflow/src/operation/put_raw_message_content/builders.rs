@@ -39,6 +39,13 @@ impl PutRawMessageContentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutRawMessageContent as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_raw_message_content::builders::PutRawMessageContentInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +136,10 @@ impl PutRawMessageContentFluentBuilder {
         self.inner = self.inner.set_message_id(input);
         self
     }
+    /// <p>The identifier of the email message being updated.</p>
+    pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_message_id()
+    }
     /// <p>Describes the raw message content of the updated email message.</p>
     pub fn content(mut self, input: crate::types::RawMessageContent) -> Self {
         self.inner = self.inner.content(input);
@@ -141,5 +152,9 @@ impl PutRawMessageContentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_content(input);
         self
+    }
+    /// <p>Describes the raw message content of the updated email message.</p>
+    pub fn get_content(&self) -> &::std::option::Option<crate::types::RawMessageContent> {
+        self.inner.get_content()
     }
 }

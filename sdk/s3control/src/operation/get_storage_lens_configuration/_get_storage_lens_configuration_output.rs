@@ -55,6 +55,12 @@ impl GetStorageLensConfigurationOutputBuilder {
         self.storage_lens_configuration = input;
         self
     }
+    /// <p>The S3 Storage Lens configuration requested.</p>
+    pub fn get_storage_lens_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::StorageLensConfiguration> {
+        &self.storage_lens_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

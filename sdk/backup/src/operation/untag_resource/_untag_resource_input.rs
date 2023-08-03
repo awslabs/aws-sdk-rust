@@ -53,6 +53,10 @@ impl UntagResourceInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the type of the tagged resource.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Appends an item to `tag_key_list`.
     ///
     /// To override the contents of this collection use [`set_tag_key_list`](Self::set_tag_key_list).
@@ -71,6 +75,12 @@ impl UntagResourceInputBuilder {
     ) -> Self {
         self.tag_key_list = input;
         self
+    }
+    /// <p>A list of keys to identify which key-value tags to remove from a resource.</p>
+    pub fn get_tag_key_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tag_key_list
     }
     /// Consumes the builder and constructs a [`UntagResourceInput`](crate::operation::untag_resource::UntagResourceInput).
     pub fn build(

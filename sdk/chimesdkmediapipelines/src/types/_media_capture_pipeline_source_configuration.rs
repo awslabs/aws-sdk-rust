@@ -67,6 +67,10 @@ impl MediaCapturePipelineSourceConfigurationBuilder {
         self.media_pipeline_arn = input;
         self
     }
+    /// <p>The media pipeline ARN in the configuration object of a media capture pipeline.</p>
+    pub fn get_media_pipeline_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.media_pipeline_arn
+    }
     /// <p>The meeting configuration settings in a media capture pipeline configuration object. </p>
     pub fn chime_sdk_meeting_configuration(
         mut self,
@@ -82,6 +86,12 @@ impl MediaCapturePipelineSourceConfigurationBuilder {
     ) -> Self {
         self.chime_sdk_meeting_configuration = input;
         self
+    }
+    /// <p>The meeting configuration settings in a media capture pipeline configuration object. </p>
+    pub fn get_chime_sdk_meeting_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ChimeSdkMeetingConcatenationConfiguration> {
+        &self.chime_sdk_meeting_configuration
     }
     /// Consumes the builder and constructs a [`MediaCapturePipelineSourceConfiguration`](crate::types::MediaCapturePipelineSourceConfiguration).
     pub fn build(self) -> crate::types::MediaCapturePipelineSourceConfiguration {

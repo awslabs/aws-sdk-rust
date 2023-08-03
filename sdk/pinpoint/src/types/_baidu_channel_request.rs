@@ -56,6 +56,10 @@ impl BaiduChannelRequestBuilder {
         self.api_key = input;
         self
     }
+    /// <p>The API key that you received from the Baidu Cloud Push service to communicate with the service.</p>
+    pub fn get_api_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_key
+    }
     /// <p>Specifies whether to enable the Baidu channel for the application.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl BaiduChannelRequestBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Specifies whether to enable the Baidu channel for the application.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>The secret key that you received from the Baidu Cloud Push service to communicate with the service.</p>
     pub fn secret_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_key = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl BaiduChannelRequestBuilder {
     pub fn set_secret_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_key = input;
         self
+    }
+    /// <p>The secret key that you received from the Baidu Cloud Push service to communicate with the service.</p>
+    pub fn get_secret_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_key
     }
     /// Consumes the builder and constructs a [`BaiduChannelRequest`](crate::types::BaiduChannelRequest).
     pub fn build(self) -> crate::types::BaiduChannelRequest {

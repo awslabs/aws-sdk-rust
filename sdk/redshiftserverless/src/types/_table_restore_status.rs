@@ -158,6 +158,10 @@ impl TableRestoreStatusBuilder {
         self.table_restore_request_id = input;
         self
     }
+    /// <p>The ID of the RestoreTableFromSnapshot request.</p>
+    pub fn get_table_restore_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_restore_request_id
+    }
     /// <p>A value that describes the current state of the table restore request. Possible values include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -168,6 +172,10 @@ impl TableRestoreStatusBuilder {
         self.status = input;
         self
     }
+    /// <p>A value that describes the current state of the table restore request. Possible values include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>A description of the status of the table restore request. Status values include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -177,6 +185,10 @@ impl TableRestoreStatusBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>A description of the status of the table restore request. Status values include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// <p>The time that the table restore request was made, in Universal Coordinated Time (UTC).</p>
     pub fn request_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -190,6 +202,10 @@ impl TableRestoreStatusBuilder {
     ) -> Self {
         self.request_time = input;
         self
+    }
+    /// <p>The time that the table restore request was made, in Universal Coordinated Time (UTC).</p>
+    pub fn get_request_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.request_time
     }
     /// <p>The namespace of the table being restored from.</p>
     pub fn namespace_name(
@@ -207,6 +223,10 @@ impl TableRestoreStatusBuilder {
         self.namespace_name = input;
         self
     }
+    /// <p>The namespace of the table being restored from.</p>
+    pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace_name
+    }
     /// <p>The name of the workgroup being restored from.</p>
     pub fn workgroup_name(
         mut self,
@@ -222,6 +242,10 @@ impl TableRestoreStatusBuilder {
     ) -> Self {
         self.workgroup_name = input;
         self
+    }
+    /// <p>The name of the workgroup being restored from.</p>
+    pub fn get_workgroup_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workgroup_name
     }
     /// <p>The name of the snapshot being restored from.</p>
     pub fn snapshot_name(
@@ -239,6 +263,10 @@ impl TableRestoreStatusBuilder {
         self.snapshot_name = input;
         self
     }
+    /// <p>The name of the snapshot being restored from.</p>
+    pub fn get_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_name
+    }
     /// <p>The amount of data restored to the new table so far, in megabytes (MB).</p>
     pub fn progress_in_mega_bytes(mut self, input: i64) -> Self {
         self.progress_in_mega_bytes = ::std::option::Option::Some(input);
@@ -249,6 +277,10 @@ impl TableRestoreStatusBuilder {
         self.progress_in_mega_bytes = input;
         self
     }
+    /// <p>The amount of data restored to the new table so far, in megabytes (MB).</p>
+    pub fn get_progress_in_mega_bytes(&self) -> &::std::option::Option<i64> {
+        &self.progress_in_mega_bytes
+    }
     /// <p>The total amount of data to restore to the new table, in megabytes (MB).</p>
     pub fn total_data_in_mega_bytes(mut self, input: i64) -> Self {
         self.total_data_in_mega_bytes = ::std::option::Option::Some(input);
@@ -258,6 +290,10 @@ impl TableRestoreStatusBuilder {
     pub fn set_total_data_in_mega_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_data_in_mega_bytes = input;
         self
+    }
+    /// <p>The total amount of data to restore to the new table, in megabytes (MB).</p>
+    pub fn get_total_data_in_mega_bytes(&self) -> &::std::option::Option<i64> {
+        &self.total_data_in_mega_bytes
     }
     /// <p>The name of the source database being restored from.</p>
     pub fn source_database_name(
@@ -275,6 +311,10 @@ impl TableRestoreStatusBuilder {
         self.source_database_name = input;
         self
     }
+    /// <p>The name of the source database being restored from.</p>
+    pub fn get_source_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_database_name
+    }
     /// <p>The name of the source schema being restored from.</p>
     pub fn source_schema_name(
         mut self,
@@ -290,6 +330,10 @@ impl TableRestoreStatusBuilder {
     ) -> Self {
         self.source_schema_name = input;
         self
+    }
+    /// <p>The name of the source schema being restored from.</p>
+    pub fn get_source_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_schema_name
     }
     /// <p>The name of the source table being restored from.</p>
     pub fn source_table_name(
@@ -307,6 +351,10 @@ impl TableRestoreStatusBuilder {
         self.source_table_name = input;
         self
     }
+    /// <p>The name of the source table being restored from.</p>
+    pub fn get_source_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_table_name
+    }
     /// <p>The name of the database to restore to.</p>
     pub fn target_database_name(
         mut self,
@@ -322,6 +370,10 @@ impl TableRestoreStatusBuilder {
     ) -> Self {
         self.target_database_name = input;
         self
+    }
+    /// <p>The name of the database to restore to.</p>
+    pub fn get_target_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_database_name
     }
     /// <p>The name of the schema to restore to.</p>
     pub fn target_schema_name(
@@ -339,6 +391,10 @@ impl TableRestoreStatusBuilder {
         self.target_schema_name = input;
         self
     }
+    /// <p>The name of the schema to restore to.</p>
+    pub fn get_target_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_schema_name
+    }
     /// <p>The name of the table to create from the restore operation.</p>
     pub fn new_table_name(
         mut self,
@@ -354,6 +410,10 @@ impl TableRestoreStatusBuilder {
     ) -> Self {
         self.new_table_name = input;
         self
+    }
+    /// <p>The name of the table to create from the restore operation.</p>
+    pub fn get_new_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.new_table_name
     }
     /// Consumes the builder and constructs a [`TableRestoreStatus`](crate::types::TableRestoreStatus).
     pub fn build(self) -> crate::types::TableRestoreStatus {

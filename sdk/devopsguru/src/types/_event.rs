@@ -99,6 +99,12 @@ impl EventBuilder {
         self.resource_collection = input;
         self
     }
+    /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    pub fn get_resource_collection(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceCollection> {
+        &self.resource_collection
+    }
     /// <p> The ID of the event. </p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -108,6 +114,10 @@ impl EventBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p> The ID of the event. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p> A <code>Timestamp</code> that specifies the time the event occurred. </p>
     pub fn time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -119,6 +129,10 @@ impl EventBuilder {
         self.time = input;
         self
     }
+    /// <p> A <code>Timestamp</code> that specifies the time the event occurred. </p>
+    pub fn get_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.time
+    }
     /// <p> The Amazon Web Services source that emitted the event. </p>
     pub fn event_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_source = ::std::option::Option::Some(input.into());
@@ -129,6 +143,10 @@ impl EventBuilder {
         self.event_source = input;
         self
     }
+    /// <p> The Amazon Web Services source that emitted the event. </p>
+    pub fn get_event_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_source
+    }
     /// <p> The name of the event. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -138,6 +156,10 @@ impl EventBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p> The name of the event. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p> The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, where DevOps Guru analysis found the event. </p>
     pub fn data_source(mut self, input: crate::types::EventDataSource) -> Self {
@@ -152,6 +174,10 @@ impl EventBuilder {
         self.data_source = input;
         self
     }
+    /// <p> The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, where DevOps Guru analysis found the event. </p>
+    pub fn get_data_source(&self) -> &::std::option::Option<crate::types::EventDataSource> {
+        &self.data_source
+    }
     /// <p> The class of the event. The class specifies what the event is related to, such as an infrastructure change, a deployment, or a schema change. </p>
     pub fn event_class(mut self, input: crate::types::EventClass) -> Self {
         self.event_class = ::std::option::Option::Some(input);
@@ -164,6 +190,10 @@ impl EventBuilder {
     ) -> Self {
         self.event_class = input;
         self
+    }
+    /// <p> The class of the event. The class specifies what the event is related to, such as an infrastructure change, a deployment, or a schema change. </p>
+    pub fn get_event_class(&self) -> &::std::option::Option<crate::types::EventClass> {
+        &self.event_class
     }
     /// Appends an item to `resources`.
     ///
@@ -183,6 +213,12 @@ impl EventBuilder {
     ) -> Self {
         self.resources = input;
         self
+    }
+    /// <p> An <code>EventResource</code> object that contains information about the resource that emitted the event. </p>
+    pub fn get_resources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventResource>> {
+        &self.resources
     }
     /// Consumes the builder and constructs a [`Event`](crate::types::Event).
     pub fn build(self) -> crate::types::Event {

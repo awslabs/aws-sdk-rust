@@ -63,6 +63,10 @@ impl AssociateAssetsInputBuilder {
         self.asset_id = input;
         self
     }
+    /// <p>The ID of the parent asset.</p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_id
+    }
     /// <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed that all come from the same asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn hierarchy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hierarchy_id = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl AssociateAssetsInputBuilder {
     pub fn set_hierarchy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hierarchy_id = input;
         self
+    }
+    /// <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed that all come from the same asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_hierarchy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hierarchy_id
     }
     /// <p>The ID of the child asset to be associated.</p>
     pub fn child_asset_id(
@@ -89,6 +97,10 @@ impl AssociateAssetsInputBuilder {
         self.child_asset_id = input;
         self
     }
+    /// <p>The ID of the child asset to be associated.</p>
+    pub fn get_child_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.child_asset_id
+    }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -98,6 +110,10 @@ impl AssociateAssetsInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`AssociateAssetsInput`](crate::operation::associate_assets::AssociateAssetsInput).
     pub fn build(

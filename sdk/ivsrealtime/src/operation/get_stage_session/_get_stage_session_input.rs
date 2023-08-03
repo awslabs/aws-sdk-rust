@@ -47,6 +47,10 @@ impl GetStageSessionInputBuilder {
         self.stage_arn = input;
         self
     }
+    /// <p>ARN of the stage for which the information is to be retrieved.</p>
+    pub fn get_stage_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stage_arn
+    }
     /// <p>ID of a session within the stage.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl GetStageSessionInputBuilder {
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_id = input;
         self
+    }
+    /// <p>ID of a session within the stage.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
     }
     /// Consumes the builder and constructs a [`GetStageSessionInput`](crate::operation::get_stage_session::GetStageSessionInput).
     pub fn build(

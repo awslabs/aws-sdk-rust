@@ -53,6 +53,12 @@ impl EbsBlockDeviceConfigBuilder {
         self.volume_specification = input;
         self
     }
+    /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an Amazon EC2 instance in the cluster.</p>
+    pub fn get_volume_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::VolumeSpecification> {
+        &self.volume_specification
+    }
     /// <p>Number of EBS volumes with a specific volume configuration that are associated with every instance in the instance group</p>
     pub fn volumes_per_instance(mut self, input: i32) -> Self {
         self.volumes_per_instance = ::std::option::Option::Some(input);
@@ -62,6 +68,10 @@ impl EbsBlockDeviceConfigBuilder {
     pub fn set_volumes_per_instance(mut self, input: ::std::option::Option<i32>) -> Self {
         self.volumes_per_instance = input;
         self
+    }
+    /// <p>Number of EBS volumes with a specific volume configuration that are associated with every instance in the instance group</p>
+    pub fn get_volumes_per_instance(&self) -> &::std::option::Option<i32> {
+        &self.volumes_per_instance
     }
     /// Consumes the builder and constructs a [`EbsBlockDeviceConfig`](crate::types::EbsBlockDeviceConfig).
     pub fn build(self) -> crate::types::EbsBlockDeviceConfig {

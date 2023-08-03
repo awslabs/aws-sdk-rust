@@ -40,6 +40,10 @@ impl DeleteIncidentRecordInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the incident record you are deleting.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`DeleteIncidentRecordInput`](crate::operation::delete_incident_record::DeleteIncidentRecordInput).
     pub fn build(
         self,

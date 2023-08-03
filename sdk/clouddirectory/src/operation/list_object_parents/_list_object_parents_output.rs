@@ -90,6 +90,14 @@ impl ListObjectParentsOutputBuilder {
         self.parents = input;
         self
     }
+    /// <p>The parent structure, which is a map with key as the <code>ObjectIdentifier</code> and LinkName as the value.</p>
+    pub fn get_parents(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.parents
+    }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -99,6 +107,10 @@ impl ListObjectParentsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `parent_links`.
     ///
@@ -120,6 +132,13 @@ impl ListObjectParentsOutputBuilder {
     ) -> Self {
         self.parent_links = input;
         self
+    }
+    /// <p>Returns a list of parent reference and LinkName Tuples.</p>
+    pub fn get_parent_links(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ObjectIdentifierAndLinkNameTuple>>
+    {
+        &self.parent_links
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

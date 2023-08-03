@@ -88,6 +88,10 @@ impl GetDeploymentOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier for the deployment resource.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The description for the deployment resource.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -97,6 +101,10 @@ impl GetDeploymentOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description for the deployment resource.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The date and time that the deployment resource was created.</p>
     pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -110,6 +118,10 @@ impl GetDeploymentOutputBuilder {
     ) -> Self {
         self.created_date = input;
         self
+    }
+    /// <p>The date and time that the deployment resource was created.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_date
     }
     /// Adds a key-value pair to `api_summary`.
     ///
@@ -138,6 +150,17 @@ impl GetDeploymentOutputBuilder {
     ) -> Self {
         self.api_summary = input;
         self
+    }
+    /// <p>A summary of the RestApi at the date and time that the deployment resource was created.</p>
+    pub fn get_api_summary(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::collections::HashMap<::std::string::String, crate::types::MethodSnapshot>,
+        >,
+    > {
+        &self.api_summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

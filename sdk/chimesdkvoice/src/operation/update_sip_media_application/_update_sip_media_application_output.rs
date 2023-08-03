@@ -51,6 +51,12 @@ impl UpdateSipMediaApplicationOutputBuilder {
         self.sip_media_application = input;
         self
     }
+    /// <p>The updated SIP media application’s details.</p>
+    pub fn get_sip_media_application(
+        &self,
+    ) -> &::std::option::Option<crate::types::SipMediaApplication> {
+        &self.sip_media_application
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

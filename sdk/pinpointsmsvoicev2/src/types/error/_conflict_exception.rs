@@ -91,6 +91,10 @@ impl ConflictExceptionBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The reason for the exception.</p>
     pub fn reason(mut self, input: crate::types::ConflictExceptionReason) -> Self {
         self.reason = ::std::option::Option::Some(input);
@@ -103,6 +107,10 @@ impl ConflictExceptionBuilder {
     ) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>The reason for the exception.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<crate::types::ConflictExceptionReason> {
+        &self.reason
     }
     /// <p>The type of resource that caused the exception.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
@@ -117,6 +125,10 @@ impl ConflictExceptionBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The type of resource that caused the exception.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
+    }
     /// <p>The unique identifier of the request.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -126,6 +138,10 @@ impl ConflictExceptionBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The unique identifier of the request.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

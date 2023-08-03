@@ -57,6 +57,10 @@ impl AssignTapePoolInputBuilder {
         self.tape_arn = input;
         self
     }
+    /// <p>The unique Amazon Resource Name (ARN) of the virtual tape that you want to add to the tape pool.</p>
+    pub fn get_tape_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tape_arn
+    }
     /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pool_id = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl AssignTapePoolInputBuilder {
     pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pool_id = input;
         self
+    }
+    /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
+    pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pool_id
     }
     /// <p>Set permissions to bypass governance retention. If the lock type of the archived tape is <code>Governance</code>, the tape's archived age is not older than <code>RetentionLockInDays</code>, and the user does not already have <code>BypassGovernanceRetention</code>, setting this to TRUE enables the user to bypass the retention lock. This parameter is set to true by default for calls from the console.</p>
     /// <p>Valid values: <code>TRUE</code> | <code>FALSE</code> </p>
@@ -78,6 +86,11 @@ impl AssignTapePoolInputBuilder {
     pub fn set_bypass_governance_retention(mut self, input: ::std::option::Option<bool>) -> Self {
         self.bypass_governance_retention = input;
         self
+    }
+    /// <p>Set permissions to bypass governance retention. If the lock type of the archived tape is <code>Governance</code>, the tape's archived age is not older than <code>RetentionLockInDays</code>, and the user does not already have <code>BypassGovernanceRetention</code>, setting this to TRUE enables the user to bypass the retention lock. This parameter is set to true by default for calls from the console.</p>
+    /// <p>Valid values: <code>TRUE</code> | <code>FALSE</code> </p>
+    pub fn get_bypass_governance_retention(&self) -> &::std::option::Option<bool> {
+        &self.bypass_governance_retention
     }
     /// Consumes the builder and constructs a [`AssignTapePoolInput`](crate::operation::assign_tape_pool::AssignTapePoolInput).
     pub fn build(

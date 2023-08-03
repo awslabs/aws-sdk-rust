@@ -40,6 +40,10 @@ impl CreateAssessmentFrameworkControlBuilder {
         self.id = input;
         self
     }
+    /// <p> The unique identifier of the control. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`CreateAssessmentFrameworkControl`](crate::types::CreateAssessmentFrameworkControl).
     pub fn build(self) -> crate::types::CreateAssessmentFrameworkControl {
         crate::types::CreateAssessmentFrameworkControl { id: self.id }

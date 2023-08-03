@@ -54,6 +54,12 @@ impl SnapshotAnonymousUserRedactedBuilder {
         self.row_level_permission_tag_keys = input;
         self
     }
+    /// <p>The tag keys for the <code>RowLevelPermissionTags</code>.</p>
+    pub fn get_row_level_permission_tag_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.row_level_permission_tag_keys
+    }
     /// Consumes the builder and constructs a [`SnapshotAnonymousUserRedacted`](crate::types::SnapshotAnonymousUserRedacted).
     pub fn build(self) -> crate::types::SnapshotAnonymousUserRedacted {
         crate::types::SnapshotAnonymousUserRedacted {

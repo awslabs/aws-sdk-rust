@@ -90,6 +90,10 @@ impl CreateProfilingGroupInputBuilder {
         self.profiling_group_name = input;
         self
     }
+    /// <p>The name of the profiling group to create.</p>
+    pub fn get_profiling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profiling_group_name
+    }
     /// <p> The compute platform of the profiling group. Use <code>AWSLambda</code> if your application runs on AWS Lambda. Use <code>Default</code> if your application runs on a compute platform that is not AWS Lambda, such an Amazon EC2 instance, an on-premises server, or a different platform. If not specified, <code>Default</code> is used. </p>
     pub fn compute_platform(mut self, input: crate::types::ComputePlatform) -> Self {
         self.compute_platform = ::std::option::Option::Some(input);
@@ -103,6 +107,10 @@ impl CreateProfilingGroupInputBuilder {
         self.compute_platform = input;
         self
     }
+    /// <p> The compute platform of the profiling group. Use <code>AWSLambda</code> if your application runs on AWS Lambda. Use <code>Default</code> if your application runs on a compute platform that is not AWS Lambda, such an Amazon EC2 instance, an on-premises server, or a different platform. If not specified, <code>Default</code> is used. </p>
+    pub fn get_compute_platform(&self) -> &::std::option::Option<crate::types::ComputePlatform> {
+        &self.compute_platform
+    }
     /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental creation of duplicate profiling groups if there are failures and retries. </p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -112,6 +120,10 @@ impl CreateProfilingGroupInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental creation of duplicate profiling groups if there are failures and retries. </p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p> Specifies whether profiling is enabled or disabled for the created profiling group. </p>
     pub fn agent_orchestration_config(
@@ -128,6 +140,12 @@ impl CreateProfilingGroupInputBuilder {
     ) -> Self {
         self.agent_orchestration_config = input;
         self
+    }
+    /// <p> Specifies whether profiling is enabled or disabled for the created profiling group. </p>
+    pub fn get_agent_orchestration_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AgentOrchestrationConfig> {
+        &self.agent_orchestration_config
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -153,6 +171,14 @@ impl CreateProfilingGroupInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p> A list of tags to add to the created profiling group. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateProfilingGroupInput`](crate::operation::create_profiling_group::CreateProfilingGroupInput).
     pub fn build(

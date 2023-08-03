@@ -93,6 +93,10 @@ impl MatchAttributesBuilder {
         self.sources = input;
         self
     }
+    /// <p>The source IP addresses and address ranges to inspect for, in CIDR notation. If not specified, this matches with any source address. </p>
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Address>> {
+        &self.sources
+    }
     /// Appends an item to `destinations`.
     ///
     /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
@@ -111,6 +115,12 @@ impl MatchAttributesBuilder {
     ) -> Self {
         self.destinations = input;
         self
+    }
+    /// <p>The destination IP addresses and address ranges to inspect for, in CIDR notation. If not specified, this matches with any destination address. </p>
+    pub fn get_destinations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Address>> {
+        &self.destinations
     }
     /// Appends an item to `source_ports`.
     ///
@@ -133,6 +143,13 @@ impl MatchAttributesBuilder {
         self.source_ports = input;
         self
     }
+    /// <p>The source ports to inspect for. If not specified, this matches with any source port. This setting is only used for protocols 6 (TCP) and 17 (UDP). </p>
+    /// <p>You can specify individual ports, for example <code>1994</code> and you can specify port ranges, for example <code>1990:1994</code>. </p>
+    pub fn get_source_ports(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
+        &self.source_ports
+    }
     /// Appends an item to `destination_ports`.
     ///
     /// To override the contents of this collection use [`set_destination_ports`](Self::set_destination_ports).
@@ -154,6 +171,13 @@ impl MatchAttributesBuilder {
         self.destination_ports = input;
         self
     }
+    /// <p>The destination ports to inspect for. If not specified, this matches with any destination port. This setting is only used for protocols 6 (TCP) and 17 (UDP). </p>
+    /// <p>You can specify individual ports, for example <code>1994</code> and you can specify port ranges, for example <code>1990:1994</code>. </p>
+    pub fn get_destination_ports(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
+        &self.destination_ports
+    }
     /// Appends an item to `protocols`.
     ///
     /// To override the contents of this collection use [`set_protocols`](Self::set_protocols).
@@ -169,6 +193,10 @@ impl MatchAttributesBuilder {
     pub fn set_protocols(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.protocols = input;
         self
+    }
+    /// <p>The protocols to inspect for, specified using each protocol's assigned internet protocol number (IANA). If not specified, this matches with any protocol. </p>
+    pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.protocols
     }
     /// Appends an item to `tcp_flags`.
     ///
@@ -188,6 +216,12 @@ impl MatchAttributesBuilder {
     ) -> Self {
         self.tcp_flags = input;
         self
+    }
+    /// <p>The TCP flags and masks to inspect for. If not specified, this matches with any settings. This setting is only used for protocol 6 (TCP).</p>
+    pub fn get_tcp_flags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TcpFlagField>> {
+        &self.tcp_flags
     }
     /// Consumes the builder and constructs a [`MatchAttributes`](crate::types::MatchAttributes).
     pub fn build(self) -> crate::types::MatchAttributes {

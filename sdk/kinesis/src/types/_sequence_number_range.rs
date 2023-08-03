@@ -54,6 +54,10 @@ impl SequenceNumberRangeBuilder {
         self.starting_sequence_number = input;
         self
     }
+    /// <p>The starting sequence number for the range.</p>
+    pub fn get_starting_sequence_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.starting_sequence_number
+    }
     /// <p>The ending sequence number for the range. Shards that are in the OPEN state have an ending sequence number of <code>null</code>.</p>
     pub fn ending_sequence_number(
         mut self,
@@ -69,6 +73,10 @@ impl SequenceNumberRangeBuilder {
     ) -> Self {
         self.ending_sequence_number = input;
         self
+    }
+    /// <p>The ending sequence number for the range. Shards that are in the OPEN state have an ending sequence number of <code>null</code>.</p>
+    pub fn get_ending_sequence_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ending_sequence_number
     }
     /// Consumes the builder and constructs a [`SequenceNumberRange`](crate::types::SequenceNumberRange).
     pub fn build(self) -> crate::types::SequenceNumberRange {

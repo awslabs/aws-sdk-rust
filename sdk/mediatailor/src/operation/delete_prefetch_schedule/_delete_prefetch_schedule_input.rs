@@ -49,6 +49,10 @@ impl DeletePrefetchScheduleInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the prefetch schedule. If the action is successful, the service sends back an HTTP 204 response with an empty HTTP body.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The name of the playback configuration for this prefetch schedule.</p>
     pub fn playback_configuration_name(
         mut self,
@@ -64,6 +68,10 @@ impl DeletePrefetchScheduleInputBuilder {
     ) -> Self {
         self.playback_configuration_name = input;
         self
+    }
+    /// <p>The name of the playback configuration for this prefetch schedule.</p>
+    pub fn get_playback_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.playback_configuration_name
     }
     /// Consumes the builder and constructs a [`DeletePrefetchScheduleInput`](crate::operation::delete_prefetch_schedule::DeletePrefetchScheduleInput).
     pub fn build(

@@ -58,6 +58,11 @@ impl ChangeMessageVisibilityBatchInputBuilder {
         self.queue_url = input;
         self
     }
+    /// <p>The URL of the Amazon SQS queue whose messages' visibility is changed.</p>
+    /// <p>Queue URLs and names are case-sensitive.</p>
+    pub fn get_queue_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.queue_url
+    }
     /// Appends an item to `entries`.
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
@@ -81,6 +86,14 @@ impl ChangeMessageVisibilityBatchInputBuilder {
     ) -> Self {
         self.entries = input;
         self
+    }
+    /// <p>Lists the receipt handles of the messages for which the visibility timeout must be changed.</p>
+    pub fn get_entries(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::ChangeMessageVisibilityBatchRequestEntry>,
+    > {
+        &self.entries
     }
     /// Consumes the builder and constructs a [`ChangeMessageVisibilityBatchInput`](crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchInput).
     pub fn build(

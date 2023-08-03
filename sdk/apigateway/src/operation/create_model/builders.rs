@@ -36,6 +36,10 @@ impl CreateModelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateModel as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_model::builders::CreateModelInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl CreateModelFluentBuilder {
         self.inner = self.inner.set_rest_api_id(input);
         self
     }
+    /// <p>The RestApi identifier under which the Model will be created.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rest_api_id()
+    }
     /// <p>The name of the model. Must be alphanumeric.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -127,6 +135,10 @@ impl CreateModelFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the model. Must be alphanumeric.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The description of the model.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,6 +150,10 @@ impl CreateModelFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The description of the model.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The schema for the model. For <code>application/json</code> models, this should be JSON schema draft 4 model.</p>
     pub fn schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schema(input.into());
@@ -148,6 +164,10 @@ impl CreateModelFluentBuilder {
         self.inner = self.inner.set_schema(input);
         self
     }
+    /// <p>The schema for the model. For <code>application/json</code> models, this should be JSON schema draft 4 model.</p>
+    pub fn get_schema(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schema()
+    }
     /// <p>The content-type for the model.</p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.content_type(input.into());
@@ -157,5 +177,9 @@ impl CreateModelFluentBuilder {
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_content_type(input);
         self
+    }
+    /// <p>The content-type for the model.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_content_type()
     }
 }

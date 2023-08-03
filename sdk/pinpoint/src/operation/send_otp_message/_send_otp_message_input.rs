@@ -57,6 +57,10 @@ impl SendOtpMessageInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The unique ID of your Amazon Pinpoint application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>Send OTP message request parameters.</p>
     pub fn send_otp_message_request_parameters(
         mut self,
@@ -72,6 +76,12 @@ impl SendOtpMessageInputBuilder {
     ) -> Self {
         self.send_otp_message_request_parameters = input;
         self
+    }
+    /// <p>Send OTP message request parameters.</p>
+    pub fn get_send_otp_message_request_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::SendOtpMessageRequestParameters> {
+        &self.send_otp_message_request_parameters
     }
     /// Consumes the builder and constructs a [`SendOtpMessageInput`](crate::operation::send_otp_message::SendOtpMessageInput).
     pub fn build(

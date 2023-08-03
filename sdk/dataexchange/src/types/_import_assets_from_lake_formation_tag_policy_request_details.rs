@@ -84,6 +84,10 @@ impl ImportAssetsFromLakeFormationTagPolicyRequestDetailsBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The identifier for the AWS Glue Data Catalog.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p>A structure for the database object.</p>
     pub fn database(mut self, input: crate::types::DatabaseLfTagPolicyAndPermissions) -> Self {
         self.database = ::std::option::Option::Some(input);
@@ -96,6 +100,12 @@ impl ImportAssetsFromLakeFormationTagPolicyRequestDetailsBuilder {
     ) -> Self {
         self.database = input;
         self
+    }
+    /// <p>A structure for the database object.</p>
+    pub fn get_database(
+        &self,
+    ) -> &::std::option::Option<crate::types::DatabaseLfTagPolicyAndPermissions> {
+        &self.database
     }
     /// <p>A structure for the table object.</p>
     pub fn table(mut self, input: crate::types::TableLfTagPolicyAndPermissions) -> Self {
@@ -110,6 +120,12 @@ impl ImportAssetsFromLakeFormationTagPolicyRequestDetailsBuilder {
         self.table = input;
         self
     }
+    /// <p>A structure for the table object.</p>
+    pub fn get_table(
+        &self,
+    ) -> &::std::option::Option<crate::types::TableLfTagPolicyAndPermissions> {
+        &self.table
+    }
     /// <p>The IAM role's ARN that allows AWS Data Exchange to assume the role and grant and revoke permissions of subscribers to AWS Lake Formation data permissions.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -119,6 +135,10 @@ impl ImportAssetsFromLakeFormationTagPolicyRequestDetailsBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The IAM role's ARN that allows AWS Data Exchange to assume the role and grant and revoke permissions of subscribers to AWS Lake Formation data permissions.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The unique identifier for the data set associated with this import job.</p>
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -130,6 +150,10 @@ impl ImportAssetsFromLakeFormationTagPolicyRequestDetailsBuilder {
         self.data_set_id = input;
         self
     }
+    /// <p>The unique identifier for the data set associated with this import job.</p>
+    pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_set_id
+    }
     /// <p>The unique identifier for the revision associated with this import job.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
@@ -139,6 +163,10 @@ impl ImportAssetsFromLakeFormationTagPolicyRequestDetailsBuilder {
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision_id = input;
         self
+    }
+    /// <p>The unique identifier for the revision associated with this import job.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_id
     }
     /// Consumes the builder and constructs a [`ImportAssetsFromLakeFormationTagPolicyRequestDetails`](crate::types::ImportAssetsFromLakeFormationTagPolicyRequestDetails).
     pub fn build(self) -> crate::types::ImportAssetsFromLakeFormationTagPolicyRequestDetails {

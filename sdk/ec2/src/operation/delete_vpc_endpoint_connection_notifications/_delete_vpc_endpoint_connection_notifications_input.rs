@@ -48,6 +48,10 @@ impl DeleteVpcEndpointConnectionNotificationsInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// Appends an item to `connection_notification_ids`.
     ///
     /// To override the contents of this collection use [`set_connection_notification_ids`](Self::set_connection_notification_ids).
@@ -69,6 +73,12 @@ impl DeleteVpcEndpointConnectionNotificationsInputBuilder {
     ) -> Self {
         self.connection_notification_ids = input;
         self
+    }
+    /// <p>The IDs of the notifications.</p>
+    pub fn get_connection_notification_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.connection_notification_ids
     }
     /// Consumes the builder and constructs a [`DeleteVpcEndpointConnectionNotificationsInput`](crate::operation::delete_vpc_endpoint_connection_notifications::DeleteVpcEndpointConnectionNotificationsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_vpc_endpoint_connection_notifications::DeleteVpcEndpointConnectionNotificationsInput, ::aws_smithy_http::operation::error::BuildError>{

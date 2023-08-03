@@ -38,6 +38,12 @@ impl UploadDocumentsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UploadDocuments as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::upload_documents::builders::UploadDocumentsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +137,12 @@ impl UploadDocumentsFluentBuilder {
         self.inner = self.inner.set_documents(input);
         self
     }
+    /// <p>A batch of documents formatted in JSON or HTML.</p>
+    pub fn get_documents(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+        self.inner.get_documents()
+    }
     /// <p>The format of the batch you are uploading. Amazon CloudSearch supports two document batch formats:</p>
     /// <ul>
     /// <li>application/json</li>
@@ -151,5 +163,13 @@ impl UploadDocumentsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_content_type(input);
         self
+    }
+    /// <p>The format of the batch you are uploading. Amazon CloudSearch supports two document batch formats:</p>
+    /// <ul>
+    /// <li>application/json</li>
+    /// <li>application/xml</li>
+    /// </ul>
+    pub fn get_content_type(&self) -> &::std::option::Option<crate::types::ContentType> {
+        self.inner.get_content_type()
     }
 }

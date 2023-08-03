@@ -43,6 +43,10 @@ impl DestinationSchemaBuilder {
         self.record_format_type = input;
         self
     }
+    /// <p>Specifies the format of the records on the output stream.</p>
+    pub fn get_record_format_type(&self) -> &::std::option::Option<crate::types::RecordFormatType> {
+        &self.record_format_type
+    }
     /// Consumes the builder and constructs a [`DestinationSchema`](crate::types::DestinationSchema).
     pub fn build(self) -> crate::types::DestinationSchema {
         crate::types::DestinationSchema {

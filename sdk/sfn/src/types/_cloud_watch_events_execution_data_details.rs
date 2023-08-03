@@ -40,6 +40,10 @@ impl CloudWatchEventsExecutionDataDetailsBuilder {
         self.included = input;
         self
     }
+    /// <p>Indicates whether input or output was included in the response. Always <code>true</code> for API calls. </p>
+    pub fn get_included(&self) -> &::std::option::Option<bool> {
+        &self.included
+    }
     /// Consumes the builder and constructs a [`CloudWatchEventsExecutionDataDetails`](crate::types::CloudWatchEventsExecutionDataDetails).
     pub fn build(self) -> crate::types::CloudWatchEventsExecutionDataDetails {
         crate::types::CloudWatchEventsExecutionDataDetails {

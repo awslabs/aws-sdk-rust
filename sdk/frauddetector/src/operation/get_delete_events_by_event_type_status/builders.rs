@@ -36,6 +36,10 @@ impl GetDeleteEventsByEventTypeStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetDeleteEventsByEventTypeStatus as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_delete_events_by_event_type_status::builders::GetDeleteEventsByEventTypeStatusInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -105,5 +109,9 @@ impl GetDeleteEventsByEventTypeStatusFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_event_type_name(input);
         self
+    }
+    /// <p>Name of event type for which to get the deletion status.</p>
+    pub fn get_event_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_type_name()
     }
 }

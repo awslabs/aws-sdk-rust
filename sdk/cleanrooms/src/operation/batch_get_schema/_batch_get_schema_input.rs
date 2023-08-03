@@ -53,6 +53,10 @@ impl BatchGetSchemaInputBuilder {
         self.collaboration_identifier = input;
         self
     }
+    /// <p>A unique identifier for the collaboration that the schemas belong to. Currently accepts collaboration ID.</p>
+    pub fn get_collaboration_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collaboration_identifier
+    }
     /// Appends an item to `names`.
     ///
     /// To override the contents of this collection use [`set_names`](Self::set_names).
@@ -71,6 +75,10 @@ impl BatchGetSchemaInputBuilder {
     ) -> Self {
         self.names = input;
         self
+    }
+    /// <p>The names for the schema objects to retrieve.&gt;</p>
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.names
     }
     /// Consumes the builder and constructs a [`BatchGetSchemaInput`](crate::operation::batch_get_schema::BatchGetSchemaInput).
     pub fn build(

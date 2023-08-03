@@ -38,6 +38,12 @@ impl GetThingShadowFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetThingShadow as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_thing_shadow::builders::GetThingShadowInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +134,10 @@ impl GetThingShadowFluentBuilder {
         self.inner = self.inner.set_thing_name(input);
         self
     }
+    /// <p>The name of the thing.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_thing_name()
+    }
     /// <p>The name of the shadow.</p>
     pub fn shadow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.shadow_name(input.into());
@@ -137,5 +147,9 @@ impl GetThingShadowFluentBuilder {
     pub fn set_shadow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_shadow_name(input);
         self
+    }
+    /// <p>The name of the shadow.</p>
+    pub fn get_shadow_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_shadow_name()
     }
 }

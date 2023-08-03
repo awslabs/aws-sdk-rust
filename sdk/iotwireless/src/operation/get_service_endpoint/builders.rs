@@ -36,6 +36,12 @@ impl GetServiceEndpointFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetServiceEndpoint as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_service_endpoint::builders::GetServiceEndpointInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,5 +134,11 @@ impl GetServiceEndpointFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_service_type(input);
         self
+    }
+    /// <p>The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint or <code>CLAIM</code> for the global endpoint.</p>
+    pub fn get_service_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::WirelessGatewayServiceType> {
+        self.inner.get_service_type()
     }
 }

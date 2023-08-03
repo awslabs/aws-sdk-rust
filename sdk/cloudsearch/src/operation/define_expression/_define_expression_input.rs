@@ -49,6 +49,10 @@ impl DefineExpressionInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results. </p>
     pub fn expression(mut self, input: crate::types::Expression) -> Self {
         self.expression = ::std::option::Option::Some(input);
@@ -61,6 +65,10 @@ impl DefineExpressionInputBuilder {
     ) -> Self {
         self.expression = input;
         self
+    }
+    /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results. </p>
+    pub fn get_expression(&self) -> &::std::option::Option<crate::types::Expression> {
+        &self.expression
     }
     /// Consumes the builder and constructs a [`DefineExpressionInput`](crate::operation::define_expression::DefineExpressionInput).
     pub fn build(

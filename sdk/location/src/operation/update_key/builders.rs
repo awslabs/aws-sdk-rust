@@ -36,6 +36,10 @@ impl UpdateKeyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateKey as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_key::builders::UpdateKeyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdateKeyFluentBuilder {
         self.inner = self.inner.set_key_name(input);
         self
     }
+    /// <p>The name of the API key resource to update.</p>
+    pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key_name()
+    }
     /// <p>Updates the description for the API key resource.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -127,6 +135,10 @@ impl UpdateKeyFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>Updates the description for the API key resource.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>Updates the timestamp for when the API key resource will expire in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn expire_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -141,6 +153,10 @@ impl UpdateKeyFluentBuilder {
         self.inner = self.inner.set_expire_time(input);
         self
     }
+    /// <p>Updates the timestamp for when the API key resource will expire in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    pub fn get_expire_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_expire_time()
+    }
     /// <p>Whether the API key should expire. Set to <code>true</code> to set the API key to have no expiration time.</p>
     pub fn no_expiry(mut self, input: bool) -> Self {
         self.inner = self.inner.no_expiry(input);
@@ -150,6 +166,10 @@ impl UpdateKeyFluentBuilder {
     pub fn set_no_expiry(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_no_expiry(input);
         self
+    }
+    /// <p>Whether the API key should expire. Set to <code>true</code> to set the API key to have no expiration time.</p>
+    pub fn get_no_expiry(&self) -> &::std::option::Option<bool> {
+        self.inner.get_no_expiry()
     }
     /// <p>The boolean flag to be included for updating <code>ExpireTime</code> or <code>Restrictions</code> details.</p>
     /// <p>Must be set to <code>true</code> to update an API key resource that has been used in the past 7 days.</p>
@@ -167,6 +187,13 @@ impl UpdateKeyFluentBuilder {
         self.inner = self.inner.set_force_update(input);
         self
     }
+    /// <p>The boolean flag to be included for updating <code>ExpireTime</code> or <code>Restrictions</code> details.</p>
+    /// <p>Must be set to <code>true</code> to update an API key resource that has been used in the past 7 days.</p>
+    /// <p> <code>False</code> if force update is not preferred</p>
+    /// <p>Default value: <code>False</code> </p>
+    pub fn get_force_update(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force_update()
+    }
     /// <p>Updates the API key restrictions for the API key resource.</p>
     pub fn restrictions(mut self, input: crate::types::ApiKeyRestrictions) -> Self {
         self.inner = self.inner.restrictions(input);
@@ -179,5 +206,9 @@ impl UpdateKeyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_restrictions(input);
         self
+    }
+    /// <p>Updates the API key restrictions for the API key resource.</p>
+    pub fn get_restrictions(&self) -> &::std::option::Option<crate::types::ApiKeyRestrictions> {
+        self.inner.get_restrictions()
     }
 }

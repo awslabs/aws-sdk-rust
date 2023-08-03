@@ -54,6 +54,10 @@ impl ServiceAccountCredentialsBuilder {
         self.account_name = input;
         self
     }
+    /// <p>The user name of the account. This account must have the following privileges: create computer objects, join computers to the domain, and change/reset the password on descendant computer objects for the organizational units specified.</p>
+    pub fn get_account_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_name
+    }
     /// <p>The password for the account.</p>
     pub fn account_password(
         mut self,
@@ -69,6 +73,10 @@ impl ServiceAccountCredentialsBuilder {
     ) -> Self {
         self.account_password = input;
         self
+    }
+    /// <p>The password for the account.</p>
+    pub fn get_account_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_password
     }
     /// Consumes the builder and constructs a [`ServiceAccountCredentials`](crate::types::ServiceAccountCredentials).
     pub fn build(self) -> crate::types::ServiceAccountCredentials {

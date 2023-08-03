@@ -41,6 +41,10 @@ impl DescribeStreamProcessorInputBuilder {
         self.name = input;
         self
     }
+    /// <p>Name of the stream processor for which you want information.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DescribeStreamProcessorInput`](crate::operation::describe_stream_processor::DescribeStreamProcessorInput).
     pub fn build(
         self,

@@ -40,6 +40,10 @@ impl EventOrchestrationBuilder {
         self.event_bridge_enabled = input;
         self
     }
+    /// <p>Specifies if event orchestration is enabled through Amazon EventBridge.</p>
+    pub fn get_event_bridge_enabled(&self) -> &::std::option::Option<bool> {
+        &self.event_bridge_enabled
+    }
     /// Consumes the builder and constructs a [`EventOrchestration`](crate::types::EventOrchestration).
     pub fn build(self) -> crate::types::EventOrchestration {
         crate::types::EventOrchestration {

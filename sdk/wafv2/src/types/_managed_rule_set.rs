@@ -119,6 +119,11 @@ impl ManagedRuleSetBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
+    /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -128,6 +133,10 @@ impl ManagedRuleSetBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -139,6 +148,10 @@ impl ManagedRuleSetBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the entity.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>A description of the set that helps with identification. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -148,6 +161,10 @@ impl ManagedRuleSetBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the set that helps with identification. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `published_versions`.
     ///
@@ -174,6 +191,14 @@ impl ManagedRuleSetBuilder {
         self.published_versions = input;
         self
     }
+    /// <p>The versions of this managed rule set that are available for use by customers. </p>
+    pub fn get_published_versions(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::ManagedRuleSetVersion>,
+    > {
+        &self.published_versions
+    }
     /// <p>The version that you would like your customers to use.</p>
     pub fn recommended_version(
         mut self,
@@ -189,6 +214,10 @@ impl ManagedRuleSetBuilder {
     ) -> Self {
         self.recommended_version = input;
         self
+    }
+    /// <p>The version that you would like your customers to use.</p>
+    pub fn get_recommended_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommended_version
     }
     /// <p>The label namespace prefix for the managed rule groups that are offered to customers from this managed rule set. All labels that are added by rules in the managed rule group have this prefix. </p>
     /// <ul>
@@ -221,6 +250,18 @@ impl ManagedRuleSetBuilder {
     ) -> Self {
         self.label_namespace = input;
         self
+    }
+    /// <p>The label namespace prefix for the managed rule groups that are offered to customers from this managed rule set. All labels that are added by rules in the managed rule group have this prefix. </p>
+    /// <ul>
+    /// <li> <p>The syntax for the label namespace prefix for a managed rule group is the following: </p> <p> <code>awswaf:managed:
+    /// <vendor>
+    /// :
+    /// <rule group name></rule>
+    /// </vendor></code>:</p> </li>
+    /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li>
+    /// </ul>
+    pub fn get_label_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label_namespace
     }
     /// Consumes the builder and constructs a [`ManagedRuleSet`](crate::types::ManagedRuleSet).
     pub fn build(self) -> crate::types::ManagedRuleSet {

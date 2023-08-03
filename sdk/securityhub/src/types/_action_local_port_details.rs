@@ -48,6 +48,10 @@ impl ActionLocalPortDetailsBuilder {
         self.port = input;
         self
     }
+    /// <p>The number of the port.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
+    }
     /// <p>The port name of the local connection.</p>
     pub fn port_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.port_name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ActionLocalPortDetailsBuilder {
     pub fn set_port_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.port_name = input;
         self
+    }
+    /// <p>The port name of the local connection.</p>
+    pub fn get_port_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.port_name
     }
     /// Consumes the builder and constructs a [`ActionLocalPortDetails`](crate::types::ActionLocalPortDetails).
     pub fn build(self) -> crate::types::ActionLocalPortDetails {

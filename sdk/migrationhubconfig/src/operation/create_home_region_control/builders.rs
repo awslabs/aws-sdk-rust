@@ -37,6 +37,13 @@ impl CreateHomeRegionControlFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateHomeRegionControl as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_home_region_control::builders::CreateHomeRegionControlInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl CreateHomeRegionControlFluentBuilder {
         self.inner = self.inner.set_home_region(input);
         self
     }
+    /// <p>The name of the home region of the calling account.</p>
+    pub fn get_home_region(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_home_region()
+    }
     /// <p>The account for which this command sets up a home region control. The <code>Target</code> is always of type <code>ACCOUNT</code>.</p>
     pub fn target(mut self, input: crate::types::Target) -> Self {
         self.inner = self.inner.target(input);
@@ -137,6 +148,10 @@ impl CreateHomeRegionControlFluentBuilder {
         self.inner = self.inner.set_target(input);
         self
     }
+    /// <p>The account for which this command sets up a home region control. The <code>Target</code> is always of type <code>ACCOUNT</code>.</p>
+    pub fn get_target(&self) -> &::std::option::Option<crate::types::Target> {
+        self.inner.get_target()
+    }
     /// <p>Optional Boolean flag to indicate whether any effect should take place. It tests whether the caller has permission to make the call.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -146,5 +161,9 @@ impl CreateHomeRegionControlFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Optional Boolean flag to indicate whether any effect should take place. It tests whether the caller has permission to make the call.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

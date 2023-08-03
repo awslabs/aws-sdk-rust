@@ -56,6 +56,10 @@ impl OAuthPropertiesBuilder {
         self.token_url = input;
         self
     }
+    /// <p> The token url required to fetch access/refresh tokens using authorization code and also to refresh expired access token using refresh token.</p>
+    pub fn get_token_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token_url
+    }
     /// <p> The authorization code url required to redirect to SAP Login Page to fetch authorization code for OAuth type authentication. </p>
     pub fn auth_code_url(
         mut self,
@@ -71,6 +75,10 @@ impl OAuthPropertiesBuilder {
     ) -> Self {
         self.auth_code_url = input;
         self
+    }
+    /// <p> The authorization code url required to redirect to SAP Login Page to fetch authorization code for OAuth type authentication. </p>
+    pub fn get_auth_code_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auth_code_url
     }
     /// Appends an item to `o_auth_scopes`.
     ///
@@ -93,6 +101,12 @@ impl OAuthPropertiesBuilder {
     ) -> Self {
         self.o_auth_scopes = input;
         self
+    }
+    /// <p> The OAuth scopes required for OAuth type authentication. </p>
+    pub fn get_o_auth_scopes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.o_auth_scopes
     }
     /// Consumes the builder and constructs a [`OAuthProperties`](crate::types::OAuthProperties).
     pub fn build(self) -> crate::types::OAuthProperties {

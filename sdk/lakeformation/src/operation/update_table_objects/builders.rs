@@ -36,6 +36,12 @@ impl UpdateTableObjectsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateTableObjects as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_table_objects::builders::UpdateTableObjectsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateTableObjectsFluentBuilder {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
+    /// <p>The catalog containing the governed table to update. Defaults to the caller’s account ID.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog_id()
+    }
     /// <p>The database containing the governed table to update.</p>
     pub fn database_name(
         mut self,
@@ -142,6 +152,10 @@ impl UpdateTableObjectsFluentBuilder {
         self.inner = self.inner.set_database_name(input);
         self
     }
+    /// <p>The database containing the governed table to update.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_database_name()
+    }
     /// <p>The governed table to update.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.table_name(input.into());
@@ -151,6 +165,10 @@ impl UpdateTableObjectsFluentBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_table_name(input);
         self
+    }
+    /// <p>The governed table to update.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_table_name()
     }
     /// <p>The transaction at which to do the write.</p>
     pub fn transaction_id(
@@ -168,6 +186,10 @@ impl UpdateTableObjectsFluentBuilder {
         self.inner = self.inner.set_transaction_id(input);
         self
     }
+    /// <p>The transaction at which to do the write.</p>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_transaction_id()
+    }
     /// Appends an item to `WriteOperations`.
     ///
     /// To override the contents of this collection use [`set_write_operations`](Self::set_write_operations).
@@ -184,5 +206,11 @@ impl UpdateTableObjectsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_write_operations(input);
         self
+    }
+    /// <p>A list of <code>WriteOperation</code> objects that define an object to add to or delete from the manifest for a governed table.</p>
+    pub fn get_write_operations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WriteOperation>> {
+        self.inner.get_write_operations()
     }
 }

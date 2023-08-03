@@ -48,6 +48,10 @@ impl FailurePolicyBuilder {
         self.rto_in_secs = input;
         self
     }
+    /// <p>The Recovery Time Objective (RTO), in seconds.</p>
+    pub fn get_rto_in_secs(&self) -> &::std::option::Option<i32> {
+        &self.rto_in_secs
+    }
     /// <p>The Recovery Point Objective (RPO), in seconds.</p>
     pub fn rpo_in_secs(mut self, input: i32) -> Self {
         self.rpo_in_secs = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl FailurePolicyBuilder {
     pub fn set_rpo_in_secs(mut self, input: ::std::option::Option<i32>) -> Self {
         self.rpo_in_secs = input;
         self
+    }
+    /// <p>The Recovery Point Objective (RPO), in seconds.</p>
+    pub fn get_rpo_in_secs(&self) -> &::std::option::Option<i32> {
+        &self.rpo_in_secs
     }
     /// Consumes the builder and constructs a [`FailurePolicy`](crate::types::FailurePolicy).
     pub fn build(self) -> crate::types::FailurePolicy {

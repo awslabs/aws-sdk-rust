@@ -91,6 +91,10 @@ impl UserIdentityBuilder {
         self.assumed_role = input;
         self
     }
+    /// <p>If the action was performed with temporary security credentials that were obtained using the AssumeRole operation of the Security Token Service (STS) API, the identifiers, session context, and other details about the identity.</p>
+    pub fn get_assumed_role(&self) -> &::std::option::Option<crate::types::AssumedRole> {
+        &self.assumed_role
+    }
     /// <p>If the action was performed using the credentials for another Amazon Web Services account, the details of that account.</p>
     pub fn aws_account(mut self, input: crate::types::AwsAccount) -> Self {
         self.aws_account = ::std::option::Option::Some(input);
@@ -103,6 +107,10 @@ impl UserIdentityBuilder {
     ) -> Self {
         self.aws_account = input;
         self
+    }
+    /// <p>If the action was performed using the credentials for another Amazon Web Services account, the details of that account.</p>
+    pub fn get_aws_account(&self) -> &::std::option::Option<crate::types::AwsAccount> {
+        &self.aws_account
     }
     /// <p>If the action was performed by an Amazon Web Services account that belongs to an Amazon Web Service, the name of the service.</p>
     pub fn aws_service(mut self, input: crate::types::AwsService) -> Self {
@@ -117,6 +125,10 @@ impl UserIdentityBuilder {
         self.aws_service = input;
         self
     }
+    /// <p>If the action was performed by an Amazon Web Services account that belongs to an Amazon Web Service, the name of the service.</p>
+    pub fn get_aws_service(&self) -> &::std::option::Option<crate::types::AwsService> {
+        &self.aws_service
+    }
     /// <p>If the action was performed with temporary security credentials that were obtained using the GetFederationToken operation of the Security Token Service (STS) API, the identifiers, session context, and other details about the identity.</p>
     pub fn federated_user(mut self, input: crate::types::FederatedUser) -> Self {
         self.federated_user = ::std::option::Option::Some(input);
@@ -130,6 +142,10 @@ impl UserIdentityBuilder {
         self.federated_user = input;
         self
     }
+    /// <p>If the action was performed with temporary security credentials that were obtained using the GetFederationToken operation of the Security Token Service (STS) API, the identifiers, session context, and other details about the identity.</p>
+    pub fn get_federated_user(&self) -> &::std::option::Option<crate::types::FederatedUser> {
+        &self.federated_user
+    }
     /// <p>If the action was performed using the credentials for an Identity and Access Management (IAM) user, the name and other details about the user.</p>
     pub fn iam_user(mut self, input: crate::types::IamUser) -> Self {
         self.iam_user = ::std::option::Option::Some(input);
@@ -139,6 +155,10 @@ impl UserIdentityBuilder {
     pub fn set_iam_user(mut self, input: ::std::option::Option<crate::types::IamUser>) -> Self {
         self.iam_user = input;
         self
+    }
+    /// <p>If the action was performed using the credentials for an Identity and Access Management (IAM) user, the name and other details about the user.</p>
+    pub fn get_iam_user(&self) -> &::std::option::Option<crate::types::IamUser> {
+        &self.iam_user
     }
     /// <p>If the action was performed using the credentials for your Amazon Web Services account, the details of your account.</p>
     pub fn root(mut self, input: crate::types::UserIdentityRoot) -> Self {
@@ -153,6 +173,10 @@ impl UserIdentityBuilder {
         self.root = input;
         self
     }
+    /// <p>If the action was performed using the credentials for your Amazon Web Services account, the details of your account.</p>
+    pub fn get_root(&self) -> &::std::option::Option<crate::types::UserIdentityRoot> {
+        &self.root
+    }
     /// <p>The type of entity that performed the action.</p>
     pub fn r#type(mut self, input: crate::types::UserIdentityType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -165,6 +189,10 @@ impl UserIdentityBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of entity that performed the action.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::UserIdentityType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`UserIdentity`](crate::types::UserIdentity).
     pub fn build(self) -> crate::types::UserIdentity {

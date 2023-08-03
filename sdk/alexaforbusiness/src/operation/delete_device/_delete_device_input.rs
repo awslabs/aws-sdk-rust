@@ -39,6 +39,10 @@ impl DeleteDeviceInputBuilder {
         self.device_arn = input;
         self
     }
+    /// <p>The ARN of the device for which to request details.</p>
+    pub fn get_device_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_arn
+    }
     /// Consumes the builder and constructs a [`DeleteDeviceInput`](crate::operation::delete_device::DeleteDeviceInput).
     pub fn build(
         self,

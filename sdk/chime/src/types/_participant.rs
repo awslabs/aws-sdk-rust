@@ -54,6 +54,10 @@ impl ParticipantBuilder {
         self.phone_number = input;
         self
     }
+    /// <p>The participant's phone number.</p>
+    pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number
+    }
     /// <p>The participant's proxy phone number.</p>
     pub fn proxy_phone_number(
         mut self,
@@ -69,6 +73,10 @@ impl ParticipantBuilder {
     ) -> Self {
         self.proxy_phone_number = input;
         self
+    }
+    /// <p>The participant's proxy phone number.</p>
+    pub fn get_proxy_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.proxy_phone_number
     }
     /// Consumes the builder and constructs a [`Participant`](crate::types::Participant).
     pub fn build(self) -> crate::types::Participant {

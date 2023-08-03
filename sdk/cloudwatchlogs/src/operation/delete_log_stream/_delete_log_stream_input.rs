@@ -53,6 +53,10 @@ impl DeleteLogStreamInputBuilder {
         self.log_group_name = input;
         self
     }
+    /// <p>The name of the log group.</p>
+    pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group_name
+    }
     /// <p>The name of the log stream.</p>
     pub fn log_stream_name(
         mut self,
@@ -68,6 +72,10 @@ impl DeleteLogStreamInputBuilder {
     ) -> Self {
         self.log_stream_name = input;
         self
+    }
+    /// <p>The name of the log stream.</p>
+    pub fn get_log_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_stream_name
     }
     /// Consumes the builder and constructs a [`DeleteLogStreamInput`](crate::operation::delete_log_stream::DeleteLogStreamInput).
     pub fn build(

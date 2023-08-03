@@ -65,6 +65,10 @@ impl ShareErrorBuilder {
         self.accounts = input;
         self
     }
+    /// <p>List of accounts impacted by the error.</p>
+    pub fn get_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.accounts
+    }
     /// <p>Information about the error.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl ShareErrorBuilder {
         self.message = input;
         self
     }
+    /// <p>Information about the error.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>Error type that happened when processing the operation.</p>
     pub fn error(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error = ::std::option::Option::Some(input.into());
@@ -84,6 +92,10 @@ impl ShareErrorBuilder {
     pub fn set_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error = input;
         self
+    }
+    /// <p>Error type that happened when processing the operation.</p>
+    pub fn get_error(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error
     }
     /// Consumes the builder and constructs a [`ShareError`](crate::types::ShareError).
     pub fn build(self) -> crate::types::ShareError {

@@ -101,6 +101,12 @@ impl ConfigurationSummaryBuilder {
         self.vcenter_based_remote_info_list = input;
         self
     }
+    /// <p>The list of vCenter configurations.</p>
+    pub fn get_vcenter_based_remote_info_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VcenterBasedRemoteInfo>> {
+        &self.vcenter_based_remote_info_list
+    }
     /// Appends an item to `ip_address_based_remote_info_list`.
     ///
     /// To override the contents of this collection use [`set_ip_address_based_remote_info_list`](Self::set_ip_address_based_remote_info_list).
@@ -123,6 +129,12 @@ impl ConfigurationSummaryBuilder {
         self.ip_address_based_remote_info_list = input;
         self
     }
+    /// <p>IP address based configurations.</p>
+    pub fn get_ip_address_based_remote_info_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpAddressBasedRemoteInfo>> {
+        &self.ip_address_based_remote_info_list
+    }
     /// Appends an item to `version_control_info_list`.
     ///
     /// To override the contents of this collection use [`set_version_control_info_list`](Self::set_version_control_info_list).
@@ -141,6 +153,12 @@ impl ConfigurationSummaryBuilder {
     ) -> Self {
         self.version_control_info_list = input;
         self
+    }
+    /// <p>The list of the version control configurations.</p>
+    pub fn get_version_control_info_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VersionControlInfo>> {
+        &self.version_control_info_list
     }
     /// Appends an item to `pipeline_info_list`.
     ///
@@ -161,6 +179,12 @@ impl ConfigurationSummaryBuilder {
         self.pipeline_info_list = input;
         self
     }
+    /// <p>The list of pipeline info configurations.</p>
+    pub fn get_pipeline_info_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineInfo>> {
+        &self.pipeline_info_list
+    }
     /// <p>Info about the remote server source code configuration.</p>
     pub fn remote_source_code_analysis_server_info(
         mut self,
@@ -176,6 +200,12 @@ impl ConfigurationSummaryBuilder {
     ) -> Self {
         self.remote_source_code_analysis_server_info = input;
         self
+    }
+    /// <p>Info about the remote server source code configuration.</p>
+    pub fn get_remote_source_code_analysis_server_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::RemoteSourceCodeAnalysisServerInfo> {
+        &self.remote_source_code_analysis_server_info
     }
     /// Consumes the builder and constructs a [`ConfigurationSummary`](crate::types::ConfigurationSummary).
     pub fn build(self) -> crate::types::ConfigurationSummary {

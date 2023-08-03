@@ -80,6 +80,10 @@ impl GetMapTileInputBuilder {
         self.map_name = input;
         self
     }
+    /// <p>The map resource to retrieve the map tiles from.</p>
+    pub fn get_map_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.map_name
+    }
     /// <p>The zoom value for the map tile.</p>
     pub fn z(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.z = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl GetMapTileInputBuilder {
     pub fn set_z(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.z = input;
         self
+    }
+    /// <p>The zoom value for the map tile.</p>
+    pub fn get_z(&self) -> &::std::option::Option<::std::string::String> {
+        &self.z
     }
     /// <p>The X axis value for the map tile.</p>
     pub fn x(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -100,6 +108,10 @@ impl GetMapTileInputBuilder {
         self.x = input;
         self
     }
+    /// <p>The X axis value for the map tile.</p>
+    pub fn get_x(&self) -> &::std::option::Option<::std::string::String> {
+        &self.x
+    }
     /// <p>The Y axis value for the map tile. </p>
     pub fn y(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.y = ::std::option::Option::Some(input.into());
@@ -110,6 +122,10 @@ impl GetMapTileInputBuilder {
         self.y = input;
         self
     }
+    /// <p>The Y axis value for the map tile. </p>
+    pub fn get_y(&self) -> &::std::option::Option<::std::string::String> {
+        &self.y
+    }
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
@@ -119,6 +135,10 @@ impl GetMapTileInputBuilder {
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
+    }
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
     }
     /// Consumes the builder and constructs a [`GetMapTileInput`](crate::operation::get_map_tile::GetMapTileInput).
     pub fn build(

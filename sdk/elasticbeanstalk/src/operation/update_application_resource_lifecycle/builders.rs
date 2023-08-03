@@ -36,6 +36,10 @@ impl UpdateApplicationResourceLifecycleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateApplicationResourceLifecycle as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_application_resource_lifecycle::builders::UpdateApplicationResourceLifecycleInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl UpdateApplicationResourceLifecycleFluentBuilder {
         self.inner = self.inner.set_application_name(input);
         self
     }
+    /// <p>The name of the application.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_name()
+    }
     /// <p>The lifecycle configuration.</p>
     pub fn resource_lifecycle_config(
         mut self,
@@ -121,5 +129,11 @@ impl UpdateApplicationResourceLifecycleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_lifecycle_config(input);
         self
+    }
+    /// <p>The lifecycle configuration.</p>
+    pub fn get_resource_lifecycle_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationResourceLifecycleConfig> {
+        self.inner.get_resource_lifecycle_config()
     }
 }

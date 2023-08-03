@@ -36,6 +36,10 @@ impl DeleteEdgeDeploymentStageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteEdgeDeploymentStage as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_edge_deployment_stage::builders::DeleteEdgeDeploymentStageInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl DeleteEdgeDeploymentStageFluentBuilder {
         self.inner = self.inner.set_edge_deployment_plan_name(input);
         self
     }
+    /// <p>The name of the edge deployment plan from which the stage will be deleted.</p>
+    pub fn get_edge_deployment_plan_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_edge_deployment_plan_name()
+    }
     /// <p>The name of the stage.</p>
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stage_name(input.into());
@@ -141,5 +149,9 @@ impl DeleteEdgeDeploymentStageFluentBuilder {
     pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stage_name(input);
         self
+    }
+    /// <p>The name of the stage.</p>
+    pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stage_name()
     }
 }

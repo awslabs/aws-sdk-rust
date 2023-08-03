@@ -36,6 +36,13 @@ impl DescribePackageVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribePackageVersion as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_package_version::builders::DescribePackageVersionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl DescribePackageVersionFluentBuilder {
         self.inner = self.inner.set_owner_account(input);
         self
     }
+    /// <p>The version's owner account.</p>
+    pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_owner_account()
+    }
     /// <p>The version's ID.</p>
     pub fn package_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.package_id(input.into());
@@ -141,6 +152,10 @@ impl DescribePackageVersionFluentBuilder {
     pub fn set_package_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_package_id(input);
         self
+    }
+    /// <p>The version's ID.</p>
+    pub fn get_package_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_package_id()
     }
     /// <p>The version's version.</p>
     pub fn package_version(
@@ -158,6 +173,10 @@ impl DescribePackageVersionFluentBuilder {
         self.inner = self.inner.set_package_version(input);
         self
     }
+    /// <p>The version's version.</p>
+    pub fn get_package_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_package_version()
+    }
     /// <p>The version's patch version.</p>
     pub fn patch_version(
         mut self,
@@ -173,5 +192,9 @@ impl DescribePackageVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_patch_version(input);
         self
+    }
+    /// <p>The version's patch version.</p>
+    pub fn get_patch_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_patch_version()
     }
 }

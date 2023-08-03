@@ -38,6 +38,10 @@ impl ListAvailableManagementCidrRangesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListAvailableManagementCidrRanges as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_available_management_cidr_ranges::builders::ListAvailableManagementCidrRangesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -108,6 +112,12 @@ impl ListAvailableManagementCidrRangesFluentBuilder {
         self.inner = self.inner.set_management_cidr_range_constraint(input);
         self
     }
+    /// <p>The IP address range to search. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block).</p>
+    pub fn get_management_cidr_range_constraint(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_management_cidr_range_constraint()
+    }
     /// <p>The maximum number of items to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -118,6 +128,10 @@ impl ListAvailableManagementCidrRangesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of items to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -127,5 +141,9 @@ impl ListAvailableManagementCidrRangesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

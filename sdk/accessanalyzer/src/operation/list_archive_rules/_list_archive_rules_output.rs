@@ -66,6 +66,12 @@ impl ListArchiveRulesOutputBuilder {
         self.archive_rules = input;
         self
     }
+    /// <p>A list of archive rules created for the specified analyzer.</p>
+    pub fn get_archive_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ArchiveRuleSummary>> {
+        &self.archive_rules
+    }
     /// <p>A token used for pagination of results returned.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -75,6 +81,10 @@ impl ListArchiveRulesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token used for pagination of results returned.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -55,6 +55,10 @@ impl DescribeListenerCertificatesInputBuilder {
         self.listener_arn = input;
         self
     }
+    /// <p>The Amazon Resource Names (ARN) of the listener.</p>
+    pub fn get_listener_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.listener_arn
+    }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl DescribeListenerCertificatesInputBuilder {
         self.marker = input;
         self
     }
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>The maximum number of results to return with this call.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.page_size = ::std::option::Option::Some(input);
@@ -74,6 +82,10 @@ impl DescribeListenerCertificatesInputBuilder {
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.page_size = input;
         self
+    }
+    /// <p>The maximum number of results to return with this call.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        &self.page_size
     }
     /// Consumes the builder and constructs a [`DescribeListenerCertificatesInput`](crate::operation::describe_listener_certificates::DescribeListenerCertificatesInput).
     pub fn build(

@@ -39,6 +39,10 @@ impl DescribeTrialInputBuilder {
         self.trial_name = input;
         self
     }
+    /// <p>The name of the trial to describe.</p>
+    pub fn get_trial_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trial_name
+    }
     /// Consumes the builder and constructs a [`DescribeTrialInput`](crate::operation::describe_trial::DescribeTrialInput).
     pub fn build(
         self,

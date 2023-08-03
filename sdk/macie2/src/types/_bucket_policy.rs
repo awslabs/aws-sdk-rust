@@ -48,6 +48,10 @@ impl BucketPolicyBuilder {
         self.allows_public_read_access = input;
         self
     }
+    /// <p>Specifies whether the bucket policy allows the general public to have read access to the bucket.</p>
+    pub fn get_allows_public_read_access(&self) -> &::std::option::Option<bool> {
+        &self.allows_public_read_access
+    }
     /// <p>Specifies whether the bucket policy allows the general public to have write access to the bucket.</p>
     pub fn allows_public_write_access(mut self, input: bool) -> Self {
         self.allows_public_write_access = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl BucketPolicyBuilder {
     pub fn set_allows_public_write_access(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allows_public_write_access = input;
         self
+    }
+    /// <p>Specifies whether the bucket policy allows the general public to have write access to the bucket.</p>
+    pub fn get_allows_public_write_access(&self) -> &::std::option::Option<bool> {
+        &self.allows_public_write_access
     }
     /// Consumes the builder and constructs a [`BucketPolicy`](crate::types::BucketPolicy).
     pub fn build(self) -> crate::types::BucketPolicy {

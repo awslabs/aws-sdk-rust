@@ -45,6 +45,12 @@ impl KubernetesConfigurationBuilder {
         self.audit_logs = input;
         self
     }
+    /// <p>The status of Kubernetes audit logs as a data source.</p>
+    pub fn get_audit_logs(
+        &self,
+    ) -> &::std::option::Option<crate::types::KubernetesAuditLogsConfiguration> {
+        &self.audit_logs
+    }
     /// Consumes the builder and constructs a [`KubernetesConfiguration`](crate::types::KubernetesConfiguration).
     pub fn build(self) -> crate::types::KubernetesConfiguration {
         crate::types::KubernetesConfiguration {

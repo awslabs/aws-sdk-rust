@@ -54,6 +54,10 @@ impl TimestampPartitionBuilder {
         self.attribute_name = input;
         self
     }
+    /// <p> The attribute name of the partition defined by a timestamp. </p>
+    pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_name
+    }
     /// <p> The timestamp format of a partition defined by a timestamp. The default format is seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     pub fn timestamp_format(
         mut self,
@@ -69,6 +73,10 @@ impl TimestampPartitionBuilder {
     ) -> Self {
         self.timestamp_format = input;
         self
+    }
+    /// <p> The timestamp format of a partition defined by a timestamp. The default format is seconds since epoch (January 1, 1970 at midnight UTC time). </p>
+    pub fn get_timestamp_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timestamp_format
     }
     /// Consumes the builder and constructs a [`TimestampPartition`](crate::types::TimestampPartition).
     pub fn build(self) -> crate::types::TimestampPartition {

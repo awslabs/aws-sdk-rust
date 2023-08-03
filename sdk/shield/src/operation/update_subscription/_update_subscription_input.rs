@@ -40,6 +40,10 @@ impl UpdateSubscriptionInputBuilder {
         self.auto_renew = input;
         self
     }
+    /// <p>When you initally create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. If <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing subscription period. You can change this by submitting an <code>UpdateSubscription</code> request. If the <code>UpdateSubscription</code> request does not included a value for <code>AutoRenew</code>, the existing value for <code>AutoRenew</code> remains unchanged.</p>
+    pub fn get_auto_renew(&self) -> &::std::option::Option<crate::types::AutoRenew> {
+        &self.auto_renew
+    }
     /// Consumes the builder and constructs a [`UpdateSubscriptionInput`](crate::operation::update_subscription::UpdateSubscriptionInput).
     pub fn build(
         self,

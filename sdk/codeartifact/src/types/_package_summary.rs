@@ -79,6 +79,10 @@ impl PackageSummaryBuilder {
         self.format = input;
         self
     }
+    /// <p> The format of the package. </p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::PackageFormat> {
+        &self.format
+    }
     /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
     /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
@@ -101,6 +105,16 @@ impl PackageSummaryBuilder {
         self.namespace = input;
         self
     }
+    /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
+    /// </ul>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
+    }
     /// <p> The name of the package. </p>
     pub fn package(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package = ::std::option::Option::Some(input.into());
@@ -110,6 +124,10 @@ impl PackageSummaryBuilder {
     pub fn set_package(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package = input;
         self
+    }
+    /// <p> The name of the package. </p>
+    pub fn get_package(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package
     }
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginConfiguration.html">PackageOriginConfiguration</a> object that contains a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that contains information about the upstream and publish package origin restrictions.</p>
     pub fn origin_configuration(mut self, input: crate::types::PackageOriginConfiguration) -> Self {
@@ -123,6 +141,12 @@ impl PackageSummaryBuilder {
     ) -> Self {
         self.origin_configuration = input;
         self
+    }
+    /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginConfiguration.html">PackageOriginConfiguration</a> object that contains a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that contains information about the upstream and publish package origin restrictions.</p>
+    pub fn get_origin_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::PackageOriginConfiguration> {
+        &self.origin_configuration
     }
     /// Consumes the builder and constructs a [`PackageSummary`](crate::types::PackageSummary).
     pub fn build(self) -> crate::types::PackageSummary {

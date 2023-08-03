@@ -61,6 +61,11 @@ impl DbClusterSnapshotAttributeBuilder {
         self.attribute_name = input;
         self
     }
+    /// <p>The name of the manual cluster snapshot attribute.</p>
+    /// <p>The attribute named <code>restore</code> refers to the list of Amazon Web Services accounts that have permission to copy or restore the manual cluster snapshot.</p>
+    pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_name
+    }
     /// Appends an item to `attribute_values`.
     ///
     /// To override the contents of this collection use [`set_attribute_values`](Self::set_attribute_values).
@@ -84,6 +89,13 @@ impl DbClusterSnapshotAttributeBuilder {
     ) -> Self {
         self.attribute_values = input;
         self
+    }
+    /// <p>The values for the manual cluster snapshot attribute.</p>
+    /// <p>If the <code>AttributeName</code> field is set to <code>restore</code>, then this element returns a list of IDs of the Amazon Web Services accounts that are authorized to copy or restore the manual cluster snapshot. If a value of <code>all</code> is in the list, then the manual cluster snapshot is public and available for any Amazon Web Services account to copy or restore.</p>
+    pub fn get_attribute_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.attribute_values
     }
     /// Consumes the builder and constructs a [`DbClusterSnapshotAttribute`](crate::types::DbClusterSnapshotAttribute).
     pub fn build(self) -> crate::types::DbClusterSnapshotAttribute {

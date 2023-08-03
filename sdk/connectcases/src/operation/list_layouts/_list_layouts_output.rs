@@ -63,6 +63,12 @@ impl ListLayoutsOutputBuilder {
         self.layouts = input;
         self
     }
+    /// <p>The layouts for the domain.</p>
+    pub fn get_layouts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LayoutSummary>> {
+        &self.layouts
+    }
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -72,6 +78,10 @@ impl ListLayoutsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

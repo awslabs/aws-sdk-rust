@@ -96,6 +96,10 @@ impl AliasBuilder {
         self.alias_id = input;
         self
     }
+    /// <p>A unique identifier for the alias. Alias IDs are unique within a Region.</p>
+    pub fn get_alias_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias_id
+    }
     /// <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl AliasBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift alias resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
@@ -122,6 +130,13 @@ impl AliasBuilder {
         self.alias_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift alias resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+    /// <region>
+    /// ::alias/alias-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
+    /// </region></code>. In a GameLift alias ARN, the resource ID matches the alias ID value.</p>
+    pub fn get_alias_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias_arn
+    }
     /// <p>A human-readable description of an alias.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -131,6 +146,10 @@ impl AliasBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A human-readable description of an alias.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The routing configuration, including routing type and fleet target, for the alias. </p>
     pub fn routing_strategy(mut self, input: crate::types::RoutingStrategy) -> Self {
@@ -145,6 +164,10 @@ impl AliasBuilder {
         self.routing_strategy = input;
         self
     }
+    /// <p>The routing configuration, including routing type and fleet target, for the alias. </p>
+    pub fn get_routing_strategy(&self) -> &::std::option::Option<crate::types::RoutingStrategy> {
+        &self.routing_strategy
+    }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -158,6 +181,10 @@ impl AliasBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The time that this data object was last modified. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -170,6 +197,10 @@ impl AliasBuilder {
     ) -> Self {
         self.last_updated_time = input;
         self
+    }
+    /// <p>The time that this data object was last modified. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
     }
     /// Consumes the builder and constructs a [`Alias`](crate::types::Alias).
     pub fn build(self) -> crate::types::Alias {

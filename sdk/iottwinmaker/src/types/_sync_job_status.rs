@@ -48,6 +48,10 @@ impl SyncJobStatusBuilder {
         self.state = input;
         self
     }
+    /// <p>The SyncJob status state.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::SyncJobState> {
+        &self.state
+    }
     /// <p>The SyncJob error.</p>
     pub fn error(mut self, input: crate::types::ErrorDetails) -> Self {
         self.error = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl SyncJobStatusBuilder {
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::ErrorDetails>) -> Self {
         self.error = input;
         self
+    }
+    /// <p>The SyncJob error.</p>
+    pub fn get_error(&self) -> &::std::option::Option<crate::types::ErrorDetails> {
+        &self.error
     }
     /// Consumes the builder and constructs a [`SyncJobStatus`](crate::types::SyncJobStatus).
     pub fn build(self) -> crate::types::SyncJobStatus {

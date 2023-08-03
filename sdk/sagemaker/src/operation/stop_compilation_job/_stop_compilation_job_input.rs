@@ -46,6 +46,10 @@ impl StopCompilationJobInputBuilder {
         self.compilation_job_name = input;
         self
     }
+    /// <p>The name of the model compilation job to stop.</p>
+    pub fn get_compilation_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.compilation_job_name
+    }
     /// Consumes the builder and constructs a [`StopCompilationJobInput`](crate::operation::stop_compilation_job::StopCompilationJobInput).
     pub fn build(
         self,

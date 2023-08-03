@@ -66,6 +66,10 @@ impl MetadataInfoBuilder {
         self.metadata_value = input;
         self
     }
+    /// <p>The metadata key’s corresponding value.</p>
+    pub fn get_metadata_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metadata_value
+    }
     /// <p>The time at which the entry was created.</p>
     pub fn created_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_time = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl MetadataInfoBuilder {
     pub fn set_created_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_time = input;
         self
+    }
+    /// <p>The time at which the entry was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_time
     }
     /// Appends an item to `other_metadata_value_list`.
     ///
@@ -97,6 +105,12 @@ impl MetadataInfoBuilder {
     ) -> Self {
         self.other_metadata_value_list = input;
         self
+    }
+    /// <p>Other metadata belonging to the same metadata key.</p>
+    pub fn get_other_metadata_value_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OtherMetadataValueListItem>> {
+        &self.other_metadata_value_list
     }
     /// Consumes the builder and constructs a [`MetadataInfo`](crate::types::MetadataInfo).
     pub fn build(self) -> crate::types::MetadataInfo {

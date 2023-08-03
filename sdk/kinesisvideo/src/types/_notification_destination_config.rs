@@ -40,6 +40,10 @@ impl NotificationDestinationConfigBuilder {
         self.uri = input;
         self
     }
+    /// <p>The Uniform Resource Identifier (URI) that identifies where the images will be delivered.</p>
+    pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uri
+    }
     /// Consumes the builder and constructs a [`NotificationDestinationConfig`](crate::types::NotificationDestinationConfig).
     pub fn build(self) -> crate::types::NotificationDestinationConfig {
         crate::types::NotificationDestinationConfig { uri: self.uri }

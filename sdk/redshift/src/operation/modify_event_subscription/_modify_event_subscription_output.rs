@@ -51,6 +51,12 @@ impl ModifyEventSubscriptionOutputBuilder {
         self.event_subscription = input;
         self
     }
+    /// <p>Describes event subscriptions.</p>
+    pub fn get_event_subscription(
+        &self,
+    ) -> &::std::option::Option<crate::types::EventSubscription> {
+        &self.event_subscription
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

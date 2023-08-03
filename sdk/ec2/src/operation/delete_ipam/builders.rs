@@ -37,6 +37,10 @@ impl DeleteIpamFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteIpam as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_ipam::builders::DeleteIpamInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl DeleteIpamFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>The ID of the IPAM to delete.</p>
     pub fn ipam_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ipam_id(input.into());
@@ -128,6 +136,10 @@ impl DeleteIpamFluentBuilder {
     pub fn set_ipam_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ipam_id(input);
         self
+    }
+    /// <p>The ID of the IPAM to delete.</p>
+    pub fn get_ipam_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ipam_id()
     }
     /// <p>Enables you to quickly delete an IPAM, private scopes, pools in private scopes, and any allocations in the pools in private scopes. You cannot delete the IPAM with this option if there is a pool in your public scope. If you use this option, IPAM does the following:</p>
     /// <ul>
@@ -156,5 +168,18 @@ impl DeleteIpamFluentBuilder {
     pub fn set_cascade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_cascade(input);
         self
+    }
+    /// <p>Enables you to quickly delete an IPAM, private scopes, pools in private scopes, and any allocations in the pools in private scopes. You cannot delete the IPAM with this option if there is a pool in your public scope. If you use this option, IPAM does the following:</p>
+    /// <ul>
+    /// <li> <p>Deallocates any CIDRs allocated to VPC resources (such as VPCs) in pools in private scopes.</p> <note>
+    /// <p>No VPC resources are deleted as a result of enabling this option. The CIDR associated with the resource will no longer be allocated from an IPAM pool, but the CIDR itself will remain unchanged.</p>
+    /// </note> </li>
+    /// <li> <p>Deprovisions all IPv4 CIDRs provisioned to IPAM pools in private scopes.</p> </li>
+    /// <li> <p>Deletes all IPAM pools in private scopes.</p> </li>
+    /// <li> <p>Deletes all non-default private scopes in the IPAM.</p> </li>
+    /// <li> <p>Deletes the default public and private scopes and the IPAM.</p> </li>
+    /// </ul>
+    pub fn get_cascade(&self) -> &::std::option::Option<bool> {
+        self.inner.get_cascade()
     }
 }

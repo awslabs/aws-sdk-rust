@@ -80,6 +80,14 @@ impl ListReceivedLicensesForOrganizationInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>Filters to scope the results. The following filters are supported:</p>
+    /// <ul>
+    /// <li> <p> <code>Beneficiary</code> </p> </li>
+    /// <li> <p> <code>ProductSKU</code> </p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
+    }
     /// <p>Token for the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -90,6 +98,10 @@ impl ListReceivedLicensesForOrganizationInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>Maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -99,6 +111,10 @@ impl ListReceivedLicensesForOrganizationInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>Maximum number of results to return in a single call.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListReceivedLicensesForOrganizationInput`](crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationInput, ::aws_smithy_http::operation::error::BuildError>{

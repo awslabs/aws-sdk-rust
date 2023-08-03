@@ -96,6 +96,10 @@ impl AppInstanceUserBuilder {
         self.app_instance_user_arn = input;
         self
     }
+    /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    pub fn get_app_instance_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_instance_user_arn
+    }
     /// <p>The name of the <code>AppInstanceUser</code>.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -106,6 +110,10 @@ impl AppInstanceUserBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the <code>AppInstanceUser</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The metadata of the <code>AppInstanceUser</code>.</p>
     pub fn metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metadata = ::std::option::Option::Some(input.into());
@@ -115,6 +123,10 @@ impl AppInstanceUserBuilder {
     pub fn set_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metadata = input;
         self
+    }
+    /// <p>The metadata of the <code>AppInstanceUser</code>.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metadata
     }
     /// <p>The time at which the <code>AppInstanceUser</code> was created.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -129,6 +141,10 @@ impl AppInstanceUserBuilder {
         self.created_timestamp = input;
         self
     }
+    /// <p>The time at which the <code>AppInstanceUser</code> was created.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
+    }
     /// <p>The time at which the <code>AppInstanceUser</code> was last updated.</p>
     pub fn last_updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_timestamp = ::std::option::Option::Some(input);
@@ -142,6 +158,12 @@ impl AppInstanceUserBuilder {
         self.last_updated_timestamp = input;
         self
     }
+    /// <p>The time at which the <code>AppInstanceUser</code> was last updated.</p>
+    pub fn get_last_updated_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_timestamp
+    }
     /// <p>The interval after which an <code>AppInstanceUser</code> is automatically deleted.</p>
     pub fn expiration_settings(mut self, input: crate::types::ExpirationSettings) -> Self {
         self.expiration_settings = ::std::option::Option::Some(input);
@@ -154,6 +176,12 @@ impl AppInstanceUserBuilder {
     ) -> Self {
         self.expiration_settings = input;
         self
+    }
+    /// <p>The interval after which an <code>AppInstanceUser</code> is automatically deleted.</p>
+    pub fn get_expiration_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExpirationSettings> {
+        &self.expiration_settings
     }
     /// Consumes the builder and constructs a [`AppInstanceUser`](crate::types::AppInstanceUser).
     pub fn build(self) -> crate::types::AppInstanceUser {

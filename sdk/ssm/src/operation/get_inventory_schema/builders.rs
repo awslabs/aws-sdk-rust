@@ -36,6 +36,12 @@ impl GetInventorySchemaFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetInventorySchema as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_inventory_schema::builders::GetInventorySchemaInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl GetInventorySchemaFluentBuilder {
         self.inner = self.inner.set_type_name(input);
         self
     }
+    /// <p>The type of inventory item to return.</p>
+    pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_type_name()
+    }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -146,6 +156,10 @@ impl GetInventorySchemaFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -157,6 +171,10 @@ impl GetInventorySchemaFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>Returns inventory schemas that support aggregation. For example, this call returns the <code>AWS:InstanceInformation</code> type, because it supports aggregation based on the <code>PlatformName</code>, <code>PlatformType</code>, and <code>PlatformVersion</code> attributes.</p>
     pub fn aggregator(mut self, input: bool) -> Self {
         self.inner = self.inner.aggregator(input);
@@ -167,6 +185,10 @@ impl GetInventorySchemaFluentBuilder {
         self.inner = self.inner.set_aggregator(input);
         self
     }
+    /// <p>Returns inventory schemas that support aggregation. For example, this call returns the <code>AWS:InstanceInformation</code> type, because it supports aggregation based on the <code>PlatformName</code>, <code>PlatformType</code>, and <code>PlatformVersion</code> attributes.</p>
+    pub fn get_aggregator(&self) -> &::std::option::Option<bool> {
+        self.inner.get_aggregator()
+    }
     /// <p>Returns the sub-type schema for a specified inventory type.</p>
     pub fn sub_type(mut self, input: bool) -> Self {
         self.inner = self.inner.sub_type(input);
@@ -176,5 +198,9 @@ impl GetInventorySchemaFluentBuilder {
     pub fn set_sub_type(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_sub_type(input);
         self
+    }
+    /// <p>Returns the sub-type schema for a specified inventory type.</p>
+    pub fn get_sub_type(&self) -> &::std::option::Option<bool> {
+        self.inner.get_sub_type()
     }
 }

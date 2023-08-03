@@ -88,6 +88,10 @@ impl JobLogEventDataBuilder {
         self.source_server_id = input;
         self
     }
+    /// <p>The ID of a Source Server.</p>
+    pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_server_id
+    }
     /// <p>The ID of a conversion server.</p>
     pub fn conversion_server_id(
         mut self,
@@ -103,6 +107,10 @@ impl JobLogEventDataBuilder {
     ) -> Self {
         self.conversion_server_id = input;
         self
+    }
+    /// <p>The ID of a conversion server.</p>
+    pub fn get_conversion_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.conversion_server_id
     }
     /// <p>The ID of a Recovery Instance.</p>
     pub fn target_instance_id(
@@ -120,6 +128,10 @@ impl JobLogEventDataBuilder {
         self.target_instance_id = input;
         self
     }
+    /// <p>The ID of a Recovery Instance.</p>
+    pub fn get_target_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_instance_id
+    }
     /// <p>A string representing a job error.</p>
     pub fn raw_error(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.raw_error = ::std::option::Option::Some(input.into());
@@ -129,6 +141,10 @@ impl JobLogEventDataBuilder {
     pub fn set_raw_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.raw_error = input;
         self
+    }
+    /// <p>A string representing a job error.</p>
+    pub fn get_raw_error(&self) -> &::std::option::Option<::std::string::String> {
+        &self.raw_error
     }
     /// <p>Properties of a conversion job</p>
     pub fn conversion_properties(mut self, input: crate::types::ConversionProperties) -> Self {
@@ -143,6 +159,12 @@ impl JobLogEventDataBuilder {
         self.conversion_properties = input;
         self
     }
+    /// <p>Properties of a conversion job</p>
+    pub fn get_conversion_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConversionProperties> {
+        &self.conversion_properties
+    }
     /// <p>Properties of resource related to a job event.</p>
     pub fn event_resource_data(mut self, input: crate::types::EventResourceData) -> Self {
         self.event_resource_data = ::std::option::Option::Some(input);
@@ -155,6 +177,12 @@ impl JobLogEventDataBuilder {
     ) -> Self {
         self.event_resource_data = input;
         self
+    }
+    /// <p>Properties of resource related to a job event.</p>
+    pub fn get_event_resource_data(
+        &self,
+    ) -> &::std::option::Option<crate::types::EventResourceData> {
+        &self.event_resource_data
     }
     /// Consumes the builder and constructs a [`JobLogEventData`](crate::types::JobLogEventData).
     pub fn build(self) -> crate::types::JobLogEventData {

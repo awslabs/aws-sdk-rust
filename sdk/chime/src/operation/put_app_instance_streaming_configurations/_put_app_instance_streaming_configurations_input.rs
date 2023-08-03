@@ -57,6 +57,10 @@ impl PutAppInstanceStreamingConfigurationsInputBuilder {
         self.app_instance_arn = input;
         self
     }
+    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    pub fn get_app_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_instance_arn
+    }
     /// Appends an item to `app_instance_streaming_configurations`.
     ///
     /// To override the contents of this collection use [`set_app_instance_streaming_configurations`](Self::set_app_instance_streaming_configurations).
@@ -82,6 +86,13 @@ impl PutAppInstanceStreamingConfigurationsInputBuilder {
     ) -> Self {
         self.app_instance_streaming_configurations = input;
         self
+    }
+    /// <p>The streaming configurations set for an <code>AppInstance</code>.</p>
+    pub fn get_app_instance_streaming_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppInstanceStreamingConfiguration>>
+    {
+        &self.app_instance_streaming_configurations
     }
     /// Consumes the builder and constructs a [`PutAppInstanceStreamingConfigurationsInput`](crate::operation::put_app_instance_streaming_configurations::PutAppInstanceStreamingConfigurationsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_app_instance_streaming_configurations::PutAppInstanceStreamingConfigurationsInput, ::aws_smithy_http::operation::error::BuildError>{

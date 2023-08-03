@@ -51,6 +51,12 @@ impl ModifyAquaConfigurationOutputBuilder {
         self.aqua_configuration = input;
         self
     }
+    /// <p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator). </p>
+    pub fn get_aqua_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AquaConfiguration> {
+        &self.aqua_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

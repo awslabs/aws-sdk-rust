@@ -69,6 +69,12 @@ impl BatchGetAutomationRulesOutputBuilder {
         self.rules = input;
         self
     }
+    /// <p> A list of rule details for the provided rule ARNs. </p>
+    pub fn get_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesConfig>> {
+        &self.rules
+    }
     /// Appends an item to `unprocessed_automation_rules`.
     ///
     /// To override the contents of this collection use [`set_unprocessed_automation_rules`](Self::set_unprocessed_automation_rules).
@@ -90,6 +96,12 @@ impl BatchGetAutomationRulesOutputBuilder {
     ) -> Self {
         self.unprocessed_automation_rules = input;
         self
+    }
+    /// <p> A list of objects containing <code>RuleArn</code>, <code>ErrorCode</code>, and <code>ErrorMessage</code>. This parameter tells you which automation rules the request didn't retrieve and why. </p>
+    pub fn get_unprocessed_automation_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAutomationRule>> {
+        &self.unprocessed_automation_rules
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

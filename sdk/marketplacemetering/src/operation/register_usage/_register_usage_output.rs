@@ -59,6 +59,12 @@ impl RegisterUsageOutputBuilder {
         self.public_key_rotation_timestamp = input;
         self
     }
+    /// <p>(Optional) Only included when public key version has expired</p>
+    pub fn get_public_key_rotation_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.public_key_rotation_timestamp
+    }
     /// <p>JWT Token</p>
     pub fn signature(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signature = ::std::option::Option::Some(input.into());
@@ -68,6 +74,10 @@ impl RegisterUsageOutputBuilder {
     pub fn set_signature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signature = input;
         self
+    }
+    /// <p>JWT Token</p>
+    pub fn get_signature(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signature
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

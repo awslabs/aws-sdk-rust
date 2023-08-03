@@ -65,6 +65,10 @@ impl ExpenseDocumentBuilder {
         self.expense_index = input;
         self
     }
+    /// <p>Denotes which invoice or receipt in the document the information is coming from. First document will be 1, the second 2, and so on.</p>
+    pub fn get_expense_index(&self) -> &::std::option::Option<i32> {
+        &self.expense_index
+    }
     /// Appends an item to `summary_fields`.
     ///
     /// To override the contents of this collection use [`set_summary_fields`](Self::set_summary_fields).
@@ -83,6 +87,12 @@ impl ExpenseDocumentBuilder {
     ) -> Self {
         self.summary_fields = input;
         self
+    }
+    /// <p>Any information found outside of a table by Amazon Textract.</p>
+    pub fn get_summary_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExpenseField>> {
+        &self.summary_fields
     }
     /// Appends an item to `line_item_groups`.
     ///
@@ -103,6 +113,12 @@ impl ExpenseDocumentBuilder {
         self.line_item_groups = input;
         self
     }
+    /// <p>Information detected on each table of a document, seperated into <code>LineItems</code>.</p>
+    pub fn get_line_item_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LineItemGroup>> {
+        &self.line_item_groups
+    }
     /// Appends an item to `blocks`.
     ///
     /// To override the contents of this collection use [`set_blocks`](Self::set_blocks).
@@ -121,6 +137,10 @@ impl ExpenseDocumentBuilder {
     ) -> Self {
         self.blocks = input;
         self
+    }
+    /// <p>This is a block object, the same as reported when DetectDocumentText is run on a document. It provides word level recognition of text.</p>
+    pub fn get_blocks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Block>> {
+        &self.blocks
     }
     /// Consumes the builder and constructs a [`ExpenseDocument`](crate::types::ExpenseDocument).
     pub fn build(self) -> crate::types::ExpenseDocument {

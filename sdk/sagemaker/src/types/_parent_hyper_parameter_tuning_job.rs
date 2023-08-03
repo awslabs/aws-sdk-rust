@@ -46,6 +46,12 @@ impl ParentHyperParameterTuningJobBuilder {
         self.hyper_parameter_tuning_job_name = input;
         self
     }
+    /// <p>The name of the hyperparameter tuning job to be used as a starting point for a new hyperparameter tuning job.</p>
+    pub fn get_hyper_parameter_tuning_job_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.hyper_parameter_tuning_job_name
+    }
     /// Consumes the builder and constructs a [`ParentHyperParameterTuningJob`](crate::types::ParentHyperParameterTuningJob).
     pub fn build(self) -> crate::types::ParentHyperParameterTuningJob {
         crate::types::ParentHyperParameterTuningJob {

@@ -48,6 +48,10 @@ impl UnprocessedGraphBuilder {
         self.graph_arn = input;
         self
     }
+    /// <p>The ARN of the organization behavior graph.</p>
+    pub fn get_graph_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.graph_arn
+    }
     /// <p>The reason data source package information could not be processed for a behavior graph.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl UnprocessedGraphBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>The reason data source package information could not be processed for a behavior graph.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
     }
     /// Consumes the builder and constructs a [`UnprocessedGraph`](crate::types::UnprocessedGraph).
     pub fn build(self) -> crate::types::UnprocessedGraph {

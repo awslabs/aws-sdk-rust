@@ -161,6 +161,10 @@ impl DescribeMetricSetOutputBuilder {
         self.metric_set_arn = input;
         self
     }
+    /// <p>The ARN of the dataset.</p>
+    pub fn get_metric_set_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_set_arn
+    }
     /// <p>The ARN of the detector that contains the dataset.</p>
     pub fn anomaly_detector_arn(
         mut self,
@@ -176,6 +180,10 @@ impl DescribeMetricSetOutputBuilder {
     ) -> Self {
         self.anomaly_detector_arn = input;
         self
+    }
+    /// <p>The ARN of the detector that contains the dataset.</p>
+    pub fn get_anomaly_detector_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.anomaly_detector_arn
     }
     /// <p>The name of the dataset.</p>
     pub fn metric_set_name(
@@ -193,6 +201,10 @@ impl DescribeMetricSetOutputBuilder {
         self.metric_set_name = input;
         self
     }
+    /// <p>The name of the dataset.</p>
+    pub fn get_metric_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_set_name
+    }
     /// <p>The dataset's description.</p>
     pub fn metric_set_description(
         mut self,
@@ -209,6 +221,10 @@ impl DescribeMetricSetOutputBuilder {
         self.metric_set_description = input;
         self
     }
+    /// <p>The dataset's description.</p>
+    pub fn get_metric_set_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_set_description
+    }
     /// <p>The time at which the dataset was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -221,6 +237,10 @@ impl DescribeMetricSetOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time at which the dataset was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The time at which the dataset was last modified.</p>
     pub fn last_modification_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -235,6 +255,12 @@ impl DescribeMetricSetOutputBuilder {
         self.last_modification_time = input;
         self
     }
+    /// <p>The time at which the dataset was last modified.</p>
+    pub fn get_last_modification_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modification_time
+    }
     /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3, Redshift, Athena and datasources.</p>
     pub fn offset(mut self, input: i32) -> Self {
         self.offset = ::std::option::Option::Some(input);
@@ -244,6 +270,10 @@ impl DescribeMetricSetOutputBuilder {
     pub fn set_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.offset = input;
         self
+    }
+    /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3, Redshift, Athena and datasources.</p>
+    pub fn get_offset(&self) -> &::std::option::Option<i32> {
+        &self.offset
     }
     /// Appends an item to `metric_list`.
     ///
@@ -264,6 +294,10 @@ impl DescribeMetricSetOutputBuilder {
         self.metric_list = input;
         self
     }
+    /// <p>A list of the metrics defined by the dataset.</p>
+    pub fn get_metric_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Metric>> {
+        &self.metric_list
+    }
     /// <p>Contains information about the column used for tracking time in your source data.</p>
     pub fn timestamp_column(mut self, input: crate::types::TimestampColumn) -> Self {
         self.timestamp_column = ::std::option::Option::Some(input);
@@ -276,6 +310,10 @@ impl DescribeMetricSetOutputBuilder {
     ) -> Self {
         self.timestamp_column = input;
         self
+    }
+    /// <p>Contains information about the column used for tracking time in your source data.</p>
+    pub fn get_timestamp_column(&self) -> &::std::option::Option<crate::types::TimestampColumn> {
+        &self.timestamp_column
     }
     /// Appends an item to `dimension_list`.
     ///
@@ -299,6 +337,12 @@ impl DescribeMetricSetOutputBuilder {
         self.dimension_list = input;
         self
     }
+    /// <p>A list of the dimensions chosen for analysis.</p>
+    pub fn get_dimension_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.dimension_list
+    }
     /// <p>The interval at which the data will be analyzed for anomalies.</p>
     pub fn metric_set_frequency(mut self, input: crate::types::Frequency) -> Self {
         self.metric_set_frequency = ::std::option::Option::Some(input);
@@ -312,6 +356,10 @@ impl DescribeMetricSetOutputBuilder {
         self.metric_set_frequency = input;
         self
     }
+    /// <p>The interval at which the data will be analyzed for anomalies.</p>
+    pub fn get_metric_set_frequency(&self) -> &::std::option::Option<crate::types::Frequency> {
+        &self.metric_set_frequency
+    }
     /// <p>The time zone in which the dataset's data was recorded.</p>
     pub fn timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timezone = ::std::option::Option::Some(input.into());
@@ -321,6 +369,10 @@ impl DescribeMetricSetOutputBuilder {
     pub fn set_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timezone = input;
         self
+    }
+    /// <p>The time zone in which the dataset's data was recorded.</p>
+    pub fn get_timezone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timezone
     }
     /// <p>Contains information about the dataset's source data.</p>
     pub fn metric_source(mut self, input: crate::types::MetricSource) -> Self {
@@ -334,6 +386,10 @@ impl DescribeMetricSetOutputBuilder {
     ) -> Self {
         self.metric_source = input;
         self
+    }
+    /// <p>Contains information about the dataset's source data.</p>
+    pub fn get_metric_source(&self) -> &::std::option::Option<crate::types::MetricSource> {
+        &self.metric_source
     }
     /// Appends an item to `dimension_filter_list`.
     ///
@@ -353,6 +409,12 @@ impl DescribeMetricSetOutputBuilder {
     ) -> Self {
         self.dimension_filter_list = input;
         self
+    }
+    /// <p>The dimensions and their values that were used to filter the dataset.</p>
+    pub fn get_dimension_filter_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricSetDimensionFilter>> {
+        &self.dimension_filter_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

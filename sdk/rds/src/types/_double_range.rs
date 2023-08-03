@@ -48,6 +48,10 @@ impl DoubleRangeBuilder {
         self.from = input;
         self
     }
+    /// <p>The minimum value in the range.</p>
+    pub fn get_from(&self) -> &::std::option::Option<f64> {
+        &self.from
+    }
     /// <p>The maximum value in the range.</p>
     pub fn to(mut self, input: f64) -> Self {
         self.to = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl DoubleRangeBuilder {
     pub fn set_to(mut self, input: ::std::option::Option<f64>) -> Self {
         self.to = input;
         self
+    }
+    /// <p>The maximum value in the range.</p>
+    pub fn get_to(&self) -> &::std::option::Option<f64> {
+        &self.to
     }
     /// Consumes the builder and constructs a [`DoubleRange`](crate::types::DoubleRange).
     pub fn build(self) -> crate::types::DoubleRange {

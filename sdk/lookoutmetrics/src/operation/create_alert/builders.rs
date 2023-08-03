@@ -36,6 +36,10 @@ impl CreateAlertFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateAlert as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_alert::builders::CreateAlertInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl CreateAlertFluentBuilder {
         self.inner = self.inner.set_alert_name(input);
         self
     }
+    /// <p>The name of the alert.</p>
+    pub fn get_alert_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_alert_name()
+    }
     /// <p>An integer from 0 to 100 specifying the alert sensitivity threshold.</p>
     pub fn alert_sensitivity_threshold(mut self, input: i32) -> Self {
         self.inner = self.inner.alert_sensitivity_threshold(input);
@@ -127,6 +135,10 @@ impl CreateAlertFluentBuilder {
     pub fn set_alert_sensitivity_threshold(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_alert_sensitivity_threshold(input);
         self
+    }
+    /// <p>An integer from 0 to 100 specifying the alert sensitivity threshold.</p>
+    pub fn get_alert_sensitivity_threshold(&self) -> &::std::option::Option<i32> {
+        self.inner.get_alert_sensitivity_threshold()
     }
     /// <p>A description of the alert.</p>
     pub fn alert_description(
@@ -144,6 +156,10 @@ impl CreateAlertFluentBuilder {
         self.inner = self.inner.set_alert_description(input);
         self
     }
+    /// <p>A description of the alert.</p>
+    pub fn get_alert_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_alert_description()
+    }
     /// <p>The ARN of the detector to which the alert is attached.</p>
     pub fn anomaly_detector_arn(
         mut self,
@@ -160,6 +176,10 @@ impl CreateAlertFluentBuilder {
         self.inner = self.inner.set_anomaly_detector_arn(input);
         self
     }
+    /// <p>The ARN of the detector to which the alert is attached.</p>
+    pub fn get_anomaly_detector_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_anomaly_detector_arn()
+    }
     /// <p>Action that will be triggered when there is an alert.</p>
     pub fn action(mut self, input: crate::types::Action) -> Self {
         self.inner = self.inner.action(input);
@@ -169,6 +189,10 @@ impl CreateAlertFluentBuilder {
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::Action>) -> Self {
         self.inner = self.inner.set_action(input);
         self
+    }
+    /// <p>Action that will be triggered when there is an alert.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::Action> {
+        self.inner.get_action()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -193,6 +217,14 @@ impl CreateAlertFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the alert.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>The configuration of the alert filters, containing MetricList and DimensionFilterList.</p>
     pub fn alert_filters(mut self, input: crate::types::AlertFilters) -> Self {
         self.inner = self.inner.alert_filters(input);
@@ -205,5 +237,9 @@ impl CreateAlertFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_alert_filters(input);
         self
+    }
+    /// <p>The configuration of the alert filters, containing MetricList and DimensionFilterList.</p>
+    pub fn get_alert_filters(&self) -> &::std::option::Option<crate::types::AlertFilters> {
+        self.inner.get_alert_filters()
     }
 }

@@ -40,6 +40,10 @@ impl ComputeTypeBuilder {
         self.name = input;
         self
     }
+    /// <p>The compute type.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::Compute> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`ComputeType`](crate::types::ComputeType).
     pub fn build(self) -> crate::types::ComputeType {
         crate::types::ComputeType { name: self.name }

@@ -49,6 +49,10 @@ impl RemoveAutoScalingPolicyInputBuilder {
         self.cluster_id = input;
         self
     }
+    /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_id
+    }
     /// <p>Specifies the ID of the instance group to which the scaling policy is applied.</p>
     pub fn instance_group_id(
         mut self,
@@ -64,6 +68,10 @@ impl RemoveAutoScalingPolicyInputBuilder {
     ) -> Self {
         self.instance_group_id = input;
         self
+    }
+    /// <p>Specifies the ID of the instance group to which the scaling policy is applied.</p>
+    pub fn get_instance_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_group_id
     }
     /// Consumes the builder and constructs a [`RemoveAutoScalingPolicyInput`](crate::operation::remove_auto_scaling_policy::RemoveAutoScalingPolicyInput).
     pub fn build(

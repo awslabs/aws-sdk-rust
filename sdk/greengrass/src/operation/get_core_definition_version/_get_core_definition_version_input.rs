@@ -55,6 +55,10 @@ impl GetCoreDefinitionVersionInputBuilder {
         self.core_definition_id = input;
         self
     }
+    /// The ID of the core definition.
+    pub fn get_core_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_definition_id
+    }
     /// The ID of the core definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListCoreDefinitionVersions'' requests. If the version is the last one that was associated with a core definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
     pub fn core_definition_version_id(
         mut self,
@@ -70,6 +74,10 @@ impl GetCoreDefinitionVersionInputBuilder {
     ) -> Self {
         self.core_definition_version_id = input;
         self
+    }
+    /// The ID of the core definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListCoreDefinitionVersions'' requests. If the version is the last one that was associated with a core definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
+    pub fn get_core_definition_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_definition_version_id
     }
     /// Consumes the builder and constructs a [`GetCoreDefinitionVersionInput`](crate::operation::get_core_definition_version::GetCoreDefinitionVersionInput).
     pub fn build(

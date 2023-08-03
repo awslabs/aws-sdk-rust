@@ -51,6 +51,10 @@ impl RealtimeContactAnalysisSegmentBuilder {
         self.transcript = input;
         self
     }
+    /// <p>The analyzed transcript.</p>
+    pub fn get_transcript(&self) -> &::std::option::Option<crate::types::Transcript> {
+        &self.transcript
+    }
     /// <p>The matched category rules.</p>
     pub fn categories(mut self, input: crate::types::Categories) -> Self {
         self.categories = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl RealtimeContactAnalysisSegmentBuilder {
     ) -> Self {
         self.categories = input;
         self
+    }
+    /// <p>The matched category rules.</p>
+    pub fn get_categories(&self) -> &::std::option::Option<crate::types::Categories> {
+        &self.categories
     }
     /// Consumes the builder and constructs a [`RealtimeContactAnalysisSegment`](crate::types::RealtimeContactAnalysisSegment).
     pub fn build(self) -> crate::types::RealtimeContactAnalysisSegment {

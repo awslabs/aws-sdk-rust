@@ -94,6 +94,12 @@ impl BatchUpdateFindingsUnprocessedFindingBuilder {
         self.finding_identifier = input;
         self
     }
+    /// <p>The identifier of the finding that was not updated.</p>
+    pub fn get_finding_identifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsSecurityFindingIdentifier> {
+        &self.finding_identifier
+    }
     /// <p>The code associated with the error. Possible values are:</p>
     /// <ul>
     /// <li> <p> <code>ConcurrentUpdateError</code> - Another request attempted to update the finding while this request was being processed. This error may also occur if you call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html"> <code>BatchUpdateFindings</code> </a> and <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html"> <code>BatchImportFindings</code> </a> at the same time.</p> </li>
@@ -119,6 +125,18 @@ impl BatchUpdateFindingsUnprocessedFindingBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The code associated with the error. Possible values are:</p>
+    /// <ul>
+    /// <li> <p> <code>ConcurrentUpdateError</code> - Another request attempted to update the finding while this request was being processed. This error may also occur if you call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html"> <code>BatchUpdateFindings</code> </a> and <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html"> <code>BatchImportFindings</code> </a> at the same time.</p> </li>
+    /// <li> <p> <code>DuplicatedFindingIdentifier</code> - The request included two or more findings with the same <code>FindingIdentifier</code>.</p> </li>
+    /// <li> <p> <code>FindingNotFound</code> - The <code>FindingIdentifier</code> included in the request did not match an existing finding.</p> </li>
+    /// <li> <p> <code>FindingSizeExceeded</code> - The finding size was greater than the permissible value of 240 KB.</p> </li>
+    /// <li> <p> <code>InternalFailure</code> - An internal service failure occurred when updating the finding.</p> </li>
+    /// <li> <p> <code>InvalidInput</code> - The finding update contained an invalid value that did not satisfy the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a> syntax.</p> </li>
+    /// </ul>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
     }
     /// <p>The message associated with the error. Possible values are:</p>
     /// <ul>
@@ -151,6 +169,18 @@ impl BatchUpdateFindingsUnprocessedFindingBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>The message associated with the error. Possible values are:</p>
+    /// <ul>
+    /// <li> <p> <code>Concurrent finding updates detected</code> </p> </li>
+    /// <li> <p> <code>Finding Identifier is duplicated</code> </p> </li>
+    /// <li> <p> <code>Finding Not Found</code> </p> </li>
+    /// <li> <p> <code>Finding size exceeded 240 KB</code> </p> </li>
+    /// <li> <p> <code>Internal service failure</code> </p> </li>
+    /// <li> <p> <code>Invalid Input</code> </p> </li>
+    /// </ul>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`BatchUpdateFindingsUnprocessedFinding`](crate::types::BatchUpdateFindingsUnprocessedFinding).
     pub fn build(self) -> crate::types::BatchUpdateFindingsUnprocessedFinding {

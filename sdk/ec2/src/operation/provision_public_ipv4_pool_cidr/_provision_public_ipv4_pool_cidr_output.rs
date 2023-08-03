@@ -54,6 +54,10 @@ impl ProvisionPublicIpv4PoolCidrOutputBuilder {
         self.pool_id = input;
         self
     }
+    /// <p>The ID of the pool that you want to provision the CIDR to.</p>
+    pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pool_id
+    }
     /// <p>Information about the address range of the public IPv4 pool.</p>
     pub fn pool_address_range(mut self, input: crate::types::PublicIpv4PoolRange) -> Self {
         self.pool_address_range = ::std::option::Option::Some(input);
@@ -66,6 +70,12 @@ impl ProvisionPublicIpv4PoolCidrOutputBuilder {
     ) -> Self {
         self.pool_address_range = input;
         self
+    }
+    /// <p>Information about the address range of the public IPv4 pool.</p>
+    pub fn get_pool_address_range(
+        &self,
+    ) -> &::std::option::Option<crate::types::PublicIpv4PoolRange> {
+        &self.pool_address_range
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -51,6 +51,10 @@ impl CreatePipelineInputBuilder {
         self.pipeline = input;
         self
     }
+    /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
+    pub fn get_pipeline(&self) -> &::std::option::Option<crate::types::PipelineDeclaration> {
+        &self.pipeline
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -69,6 +73,10 @@ impl CreatePipelineInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags for the pipeline.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreatePipelineInput`](crate::operation::create_pipeline::CreatePipelineInput).
     pub fn build(

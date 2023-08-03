@@ -56,6 +56,10 @@ impl TopicRefreshDetailsBuilder {
         self.refresh_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the topic refresh.</p>
+    pub fn get_refresh_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.refresh_arn
+    }
     /// <p>The ID of the refresh, which occurs as a result of topic creation or topic update.</p>
     pub fn refresh_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.refresh_id = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl TopicRefreshDetailsBuilder {
     pub fn set_refresh_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.refresh_id = input;
         self
+    }
+    /// <p>The ID of the refresh, which occurs as a result of topic creation or topic update.</p>
+    pub fn get_refresh_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.refresh_id
     }
     /// <p>The status of the refresh job that indicates whether the job is still running, completed successfully, or failed.</p>
     pub fn refresh_status(mut self, input: crate::types::TopicRefreshStatus) -> Self {
@@ -78,6 +86,10 @@ impl TopicRefreshDetailsBuilder {
     ) -> Self {
         self.refresh_status = input;
         self
+    }
+    /// <p>The status of the refresh job that indicates whether the job is still running, completed successfully, or failed.</p>
+    pub fn get_refresh_status(&self) -> &::std::option::Option<crate::types::TopicRefreshStatus> {
+        &self.refresh_status
     }
     /// Consumes the builder and constructs a [`TopicRefreshDetails`](crate::types::TopicRefreshDetails).
     pub fn build(self) -> crate::types::TopicRefreshDetails {

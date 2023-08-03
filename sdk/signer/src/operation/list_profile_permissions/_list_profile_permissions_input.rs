@@ -49,6 +49,10 @@ impl ListProfilePermissionsInputBuilder {
         self.profile_name = input;
         self
     }
+    /// <p>Name of the signing profile containing the cross-account permissions.</p>
+    pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_name
+    }
     /// <p>String for specifying the next set of paginated results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl ListProfilePermissionsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>String for specifying the next set of paginated results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListProfilePermissionsInput`](crate::operation::list_profile_permissions::ListProfilePermissionsInput).
     pub fn build(

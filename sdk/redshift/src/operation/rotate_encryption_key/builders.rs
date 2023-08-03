@@ -36,6 +36,12 @@ impl RotateEncryptionKeyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RotateEncryptionKey as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::rotate_encryption_key::builders::RotateEncryptionKeyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,5 +139,10 @@ impl RotateEncryptionKeyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
+    }
+    /// <p>The unique identifier of the cluster that you want to rotate the encryption keys for.</p>
+    /// <p>Constraints: Must be the name of valid cluster that has encryption enabled.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_identifier()
     }
 }

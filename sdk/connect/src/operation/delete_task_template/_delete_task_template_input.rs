@@ -48,6 +48,10 @@ impl DeleteTaskTemplateInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>A unique identifier for the task template.</p>
     pub fn task_template_id(
         mut self,
@@ -63,6 +67,10 @@ impl DeleteTaskTemplateInputBuilder {
     ) -> Self {
         self.task_template_id = input;
         self
+    }
+    /// <p>A unique identifier for the task template.</p>
+    pub fn get_task_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_template_id
     }
     /// Consumes the builder and constructs a [`DeleteTaskTemplateInput`](crate::operation::delete_task_template::DeleteTaskTemplateInput).
     pub fn build(

@@ -43,6 +43,12 @@ impl ResourceDetailsBuilder {
         self.ec2_resource_details = input;
         self
     }
+    /// <p>Details for the Amazon EC2 resource.</p>
+    pub fn get_ec2_resource_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::Ec2ResourceDetails> {
+        &self.ec2_resource_details
+    }
     /// Consumes the builder and constructs a [`ResourceDetails`](crate::types::ResourceDetails).
     pub fn build(self) -> crate::types::ResourceDetails {
         crate::types::ResourceDetails {

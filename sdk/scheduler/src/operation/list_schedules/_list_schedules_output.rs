@@ -54,6 +54,10 @@ impl ListSchedulesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Indicates whether there are additional results to retrieve. If the value is null, there are no more results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `schedules`.
     ///
     /// To override the contents of this collection use [`set_schedules`](Self::set_schedules).
@@ -72,6 +76,12 @@ impl ListSchedulesOutputBuilder {
     ) -> Self {
         self.schedules = input;
         self
+    }
+    /// <p>The schedules that match the specified criteria.</p>
+    pub fn get_schedules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduleSummary>> {
+        &self.schedules
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

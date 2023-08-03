@@ -83,6 +83,10 @@ impl ColumnConfigurationBuilder {
         self.document_id_column_name = input;
         self
     }
+    /// <p>The column that provides the document's identifier.</p>
+    pub fn get_document_id_column_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_id_column_name
+    }
     /// <p>The column that contains the contents of the document.</p>
     pub fn document_data_column_name(
         mut self,
@@ -99,6 +103,10 @@ impl ColumnConfigurationBuilder {
         self.document_data_column_name = input;
         self
     }
+    /// <p>The column that contains the contents of the document.</p>
+    pub fn get_document_data_column_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_data_column_name
+    }
     /// <p>The column that contains the title of the document.</p>
     pub fn document_title_column_name(
         mut self,
@@ -114,6 +122,10 @@ impl ColumnConfigurationBuilder {
     ) -> Self {
         self.document_title_column_name = input;
         self
+    }
+    /// <p>The column that contains the title of the document.</p>
+    pub fn get_document_title_column_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_title_column_name
     }
     /// Appends an item to `field_mappings`.
     ///
@@ -133,6 +145,12 @@ impl ColumnConfigurationBuilder {
     ) -> Self {
         self.field_mappings = input;
         self
+    }
+    /// <p>An array of objects that map database column names to the corresponding fields in an index. You must first create the fields in the index using the <code>UpdateIndex</code> API.</p>
+    pub fn get_field_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>> {
+        &self.field_mappings
     }
     /// Appends an item to `change_detecting_columns`.
     ///
@@ -155,6 +173,12 @@ impl ColumnConfigurationBuilder {
     ) -> Self {
         self.change_detecting_columns = input;
         self
+    }
+    /// <p>One to five columns that indicate when a document in the database has changed.</p>
+    pub fn get_change_detecting_columns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.change_detecting_columns
     }
     /// Consumes the builder and constructs a [`ColumnConfiguration`](crate::types::ColumnConfiguration).
     pub fn build(self) -> crate::types::ColumnConfiguration {

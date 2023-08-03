@@ -106,6 +106,12 @@ impl CodegenJobGenericDataSchemaBuilder {
         self.data_source_type = input;
         self
     }
+    /// <p>The type of the data source for the schema. Currently, the only valid value is an Amplify <code>DataStore</code>.</p>
+    pub fn get_data_source_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::CodegenJobGenericDataSourceType> {
+        &self.data_source_type
+    }
     /// Adds a key-value pair to `models`.
     ///
     /// To override the contents of this collection use [`set_models`](Self::set_models).
@@ -133,6 +139,14 @@ impl CodegenJobGenericDataSchemaBuilder {
     ) -> Self {
         self.models = input;
         self
+    }
+    /// <p>The name of a <code>CodegenGenericDataModel</code>.</p>
+    pub fn get_models(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::CodegenGenericDataModel>,
+    > {
+        &self.models
     }
     /// Adds a key-value pair to `enums`.
     ///
@@ -162,6 +176,14 @@ impl CodegenJobGenericDataSchemaBuilder {
         self.enums = input;
         self
     }
+    /// <p>The name of a <code>CodegenGenericDataEnum</code>.</p>
+    pub fn get_enums(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::CodegenGenericDataEnum>,
+    > {
+        &self.enums
+    }
     /// Adds a key-value pair to `non_models`.
     ///
     /// To override the contents of this collection use [`set_non_models`](Self::set_non_models).
@@ -189,6 +211,17 @@ impl CodegenJobGenericDataSchemaBuilder {
     ) -> Self {
         self.non_models = input;
         self
+    }
+    /// <p>The name of a <code>CodegenGenericDataNonModel</code>.</p>
+    pub fn get_non_models(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::CodegenGenericDataNonModel,
+        >,
+    > {
+        &self.non_models
     }
     /// Consumes the builder and constructs a [`CodegenJobGenericDataSchema`](crate::types::CodegenJobGenericDataSchema).
     pub fn build(self) -> crate::types::CodegenJobGenericDataSchema {

@@ -51,6 +51,10 @@ impl BrokerEngineTypeBuilder {
         self.engine_type = input;
         self
     }
+    /// <p>The broker's engine type.</p>
+    pub fn get_engine_type(&self) -> &::std::option::Option<crate::types::EngineType> {
+        &self.engine_type
+    }
     /// Appends an item to `engine_versions`.
     ///
     /// To override the contents of this collection use [`set_engine_versions`](Self::set_engine_versions).
@@ -69,6 +73,12 @@ impl BrokerEngineTypeBuilder {
     ) -> Self {
         self.engine_versions = input;
         self
+    }
+    /// <p>The list of engine versions.</p>
+    pub fn get_engine_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EngineVersion>> {
+        &self.engine_versions
     }
     /// Consumes the builder and constructs a [`BrokerEngineType`](crate::types::BrokerEngineType).
     pub fn build(self) -> crate::types::BrokerEngineType {

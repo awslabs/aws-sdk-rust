@@ -48,6 +48,10 @@ impl CustomPluginFileDescriptionBuilder {
         self.file_md5 = input;
         self
     }
+    /// <p>The hex-encoded MD5 checksum of the custom plugin file. You can use it to validate the file.</p>
+    pub fn get_file_md5(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_md5
+    }
     /// <p>The size in bytes of the custom plugin file. You can use it to validate the file.</p>
     pub fn file_size(mut self, input: i64) -> Self {
         self.file_size = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl CustomPluginFileDescriptionBuilder {
     pub fn set_file_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.file_size = input;
         self
+    }
+    /// <p>The size in bytes of the custom plugin file. You can use it to validate the file.</p>
+    pub fn get_file_size(&self) -> &::std::option::Option<i64> {
+        &self.file_size
     }
     /// Consumes the builder and constructs a [`CustomPluginFileDescription`](crate::types::CustomPluginFileDescription).
     pub fn build(self) -> crate::types::CustomPluginFileDescription {

@@ -50,6 +50,10 @@ impl ObjectLambdaAccessPointAliasBuilder {
         self.value = input;
         self
     }
+    /// <p>The alias value of the Object Lambda Access Point.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// <p>The status of the Object Lambda Access Point alias. If the status is <code>PROVISIONING</code>, the Object Lambda Access Point is provisioning the alias and the alias is not ready for use yet. If the status is <code>READY</code>, the Object Lambda Access Point alias is successfully provisioned and ready for use.</p>
     pub fn status(mut self, input: crate::types::ObjectLambdaAccessPointAliasStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -62,6 +66,12 @@ impl ObjectLambdaAccessPointAliasBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the Object Lambda Access Point alias. If the status is <code>PROVISIONING</code>, the Object Lambda Access Point is provisioning the alias and the alias is not ready for use yet. If the status is <code>READY</code>, the Object Lambda Access Point alias is successfully provisioned and ready for use.</p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ObjectLambdaAccessPointAliasStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`ObjectLambdaAccessPointAlias`](crate::types::ObjectLambdaAccessPointAlias).
     pub fn build(self) -> crate::types::ObjectLambdaAccessPointAlias {

@@ -47,6 +47,10 @@ impl GetMetadataInputBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The unique ID of the Amplify app.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
     pub fn environment_name(
         mut self,
@@ -62,6 +66,10 @@ impl GetMetadataInputBuilder {
     ) -> Self {
         self.environment_name = input;
         self
+    }
+    /// <p>The name of the backend environment that is part of the Amplify app.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
     }
     /// Consumes the builder and constructs a [`GetMetadataInput`](crate::operation::get_metadata::GetMetadataInput).
     pub fn build(

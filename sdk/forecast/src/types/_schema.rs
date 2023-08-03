@@ -49,6 +49,12 @@ impl SchemaBuilder {
         self.attributes = input;
         self
     }
+    /// <p>An array of attributes specifying the name and type of each field in a dataset.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaAttribute>> {
+        &self.attributes
+    }
     /// Consumes the builder and constructs a [`Schema`](crate::types::Schema).
     pub fn build(self) -> crate::types::Schema {
         crate::types::Schema {

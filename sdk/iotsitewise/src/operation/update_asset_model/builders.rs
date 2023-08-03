@@ -39,6 +39,12 @@ impl UpdateAssetModelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAssetModel as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_asset_model::builders::UpdateAssetModelInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +141,10 @@ impl UpdateAssetModelFluentBuilder {
         self.inner = self.inner.set_asset_model_id(input);
         self
     }
+    /// <p>The ID of the asset model to update.</p>
+    pub fn get_asset_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_asset_model_id()
+    }
     /// <p>A unique, friendly name for the asset model.</p>
     pub fn asset_model_name(
         mut self,
@@ -151,6 +161,10 @@ impl UpdateAssetModelFluentBuilder {
         self.inner = self.inner.set_asset_model_name(input);
         self
     }
+    /// <p>A unique, friendly name for the asset model.</p>
+    pub fn get_asset_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_asset_model_name()
+    }
     /// <p>A description for the asset model.</p>
     pub fn asset_model_description(
         mut self,
@@ -166,6 +180,10 @@ impl UpdateAssetModelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_asset_model_description(input);
         self
+    }
+    /// <p>A description for the asset model.</p>
+    pub fn get_asset_model_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_asset_model_description()
     }
     /// Appends an item to `assetModelProperties`.
     ///
@@ -186,6 +204,13 @@ impl UpdateAssetModelFluentBuilder {
         self.inner = self.inner.set_asset_model_properties(input);
         self
     }
+    /// <p>The updated property definitions of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>You can specify up to 200 properties per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_asset_model_properties(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelProperty>> {
+        self.inner.get_asset_model_properties()
+    }
     /// Appends an item to `assetModelHierarchies`.
     ///
     /// To override the contents of this collection use [`set_asset_model_hierarchies`](Self::set_asset_model_hierarchies).
@@ -204,6 +229,13 @@ impl UpdateAssetModelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_asset_model_hierarchies(input);
         self
+    }
+    /// <p>The updated hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be children of any other assets created from this asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>You can specify up to 10 hierarchies per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_asset_model_hierarchies(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelHierarchy>> {
+        self.inner.get_asset_model_hierarchies()
     }
     /// Appends an item to `assetModelCompositeModels`.
     ///
@@ -225,6 +257,12 @@ impl UpdateAssetModelFluentBuilder {
         self.inner = self.inner.set_asset_model_composite_models(input);
         self
     }
+    /// <p>The composite asset models that are part of this asset model. Composite asset models are asset models that contain specific properties. Each composite model has a type that defines the properties that the composite model supports. Use composite asset models to define alarms on this asset model.</p>
+    pub fn get_asset_model_composite_models(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModel>> {
+        self.inner.get_asset_model_composite_models()
+    }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -234,5 +272,9 @@ impl UpdateAssetModelFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

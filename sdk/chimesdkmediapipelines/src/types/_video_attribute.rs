@@ -64,6 +64,10 @@ impl VideoAttributeBuilder {
         self.corner_radius = input;
         self
     }
+    /// <p>Sets the corner radius of all video tiles.</p>
+    pub fn get_corner_radius(&self) -> &::std::option::Option<i32> {
+        &self.corner_radius
+    }
     /// <p>Defines the border color of all video tiles.</p>
     pub fn border_color(mut self, input: crate::types::BorderColor) -> Self {
         self.border_color = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl VideoAttributeBuilder {
     ) -> Self {
         self.border_color = input;
         self
+    }
+    /// <p>Defines the border color of all video tiles.</p>
+    pub fn get_border_color(&self) -> &::std::option::Option<crate::types::BorderColor> {
+        &self.border_color
     }
     /// <p>Defines the highlight color for the active video tile.</p>
     pub fn highlight_color(mut self, input: crate::types::HighlightColor) -> Self {
@@ -90,6 +98,10 @@ impl VideoAttributeBuilder {
         self.highlight_color = input;
         self
     }
+    /// <p>Defines the highlight color for the active video tile.</p>
+    pub fn get_highlight_color(&self) -> &::std::option::Option<crate::types::HighlightColor> {
+        &self.highlight_color
+    }
     /// <p>Defines the border thickness for all video tiles.</p>
     pub fn border_thickness(mut self, input: i32) -> Self {
         self.border_thickness = ::std::option::Option::Some(input);
@@ -99,6 +111,10 @@ impl VideoAttributeBuilder {
     pub fn set_border_thickness(mut self, input: ::std::option::Option<i32>) -> Self {
         self.border_thickness = input;
         self
+    }
+    /// <p>Defines the border thickness for all video tiles.</p>
+    pub fn get_border_thickness(&self) -> &::std::option::Option<i32> {
+        &self.border_thickness
     }
     /// Consumes the builder and constructs a [`VideoAttribute`](crate::types::VideoAttribute).
     pub fn build(self) -> crate::types::VideoAttribute {

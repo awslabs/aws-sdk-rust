@@ -48,6 +48,10 @@ impl ProjectSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p> Name of the project. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p> Unique project identifier. </p>
     pub fn project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ProjectSummaryBuilder {
     pub fn set_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_id = input;
         self
+    }
+    /// <p> Unique project identifier. </p>
+    pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_id
     }
     /// Consumes the builder and constructs a [`ProjectSummary`](crate::types::ProjectSummary).
     pub fn build(self) -> crate::types::ProjectSummary {

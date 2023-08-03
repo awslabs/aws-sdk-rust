@@ -152,6 +152,10 @@ impl AssessmentFrameworkShareRequestBuilder {
         self.id = input;
         self
     }
+    /// <p> The unique identifier for the share request. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The unique identifier for the shared custom framework. </p>
     pub fn framework_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework_id = ::std::option::Option::Some(input.into());
@@ -161,6 +165,10 @@ impl AssessmentFrameworkShareRequestBuilder {
     pub fn set_framework_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.framework_id = input;
         self
+    }
+    /// <p>The unique identifier for the shared custom framework. </p>
+    pub fn get_framework_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.framework_id
     }
     /// <p> The name of the custom framework that the share request is for. </p>
     pub fn framework_name(
@@ -178,6 +186,10 @@ impl AssessmentFrameworkShareRequestBuilder {
         self.framework_name = input;
         self
     }
+    /// <p> The name of the custom framework that the share request is for. </p>
+    pub fn get_framework_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.framework_name
+    }
     /// <p>The description of the shared custom framework.</p>
     pub fn framework_description(
         mut self,
@@ -194,6 +206,10 @@ impl AssessmentFrameworkShareRequestBuilder {
         self.framework_description = input;
         self
     }
+    /// <p>The description of the shared custom framework.</p>
+    pub fn get_framework_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.framework_description
+    }
     /// <p> The status of the share request. </p>
     pub fn status(mut self, input: crate::types::ShareRequestStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -206,6 +222,10 @@ impl AssessmentFrameworkShareRequestBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p> The status of the share request. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ShareRequestStatus> {
+        &self.status
     }
     /// <p> The Amazon Web Services account of the sender. </p>
     pub fn source_account(
@@ -223,6 +243,10 @@ impl AssessmentFrameworkShareRequestBuilder {
         self.source_account = input;
         self
     }
+    /// <p> The Amazon Web Services account of the sender. </p>
+    pub fn get_source_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_account
+    }
     /// <p> The Amazon Web Services account of the recipient. </p>
     pub fn destination_account(
         mut self,
@@ -238,6 +262,10 @@ impl AssessmentFrameworkShareRequestBuilder {
     ) -> Self {
         self.destination_account = input;
         self
+    }
+    /// <p> The Amazon Web Services account of the recipient. </p>
+    pub fn get_destination_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_account
     }
     /// <p> The Amazon Web Services Region of the recipient. </p>
     pub fn destination_region(
@@ -255,6 +283,10 @@ impl AssessmentFrameworkShareRequestBuilder {
         self.destination_region = input;
         self
     }
+    /// <p> The Amazon Web Services Region of the recipient. </p>
+    pub fn get_destination_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_region
+    }
     /// <p> The time when the share request expires. </p>
     pub fn expiration_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expiration_time = ::std::option::Option::Some(input);
@@ -267,6 +299,10 @@ impl AssessmentFrameworkShareRequestBuilder {
     ) -> Self {
         self.expiration_time = input;
         self
+    }
+    /// <p> The time when the share request expires. </p>
+    pub fn get_expiration_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expiration_time
     }
     /// <p> The time when the share request was created. </p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -281,6 +317,10 @@ impl AssessmentFrameworkShareRequestBuilder {
         self.creation_time = input;
         self
     }
+    /// <p> The time when the share request was created. </p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p> Specifies when the share request was last updated. </p>
     pub fn last_updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated = ::std::option::Option::Some(input);
@@ -294,6 +334,10 @@ impl AssessmentFrameworkShareRequestBuilder {
         self.last_updated = input;
         self
     }
+    /// <p> Specifies when the share request was last updated. </p>
+    pub fn get_last_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated
+    }
     /// <p> An optional comment from the sender about the share request. </p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
@@ -303,6 +347,10 @@ impl AssessmentFrameworkShareRequestBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment = input;
         self
+    }
+    /// <p> An optional comment from the sender about the share request. </p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment
     }
     /// <p>The number of standard controls that are part of the shared custom framework. </p>
     pub fn standard_controls_count(mut self, input: i32) -> Self {
@@ -314,6 +362,10 @@ impl AssessmentFrameworkShareRequestBuilder {
         self.standard_controls_count = input;
         self
     }
+    /// <p>The number of standard controls that are part of the shared custom framework. </p>
+    pub fn get_standard_controls_count(&self) -> &::std::option::Option<i32> {
+        &self.standard_controls_count
+    }
     /// <p>The number of custom controls that are part of the shared custom framework.</p>
     pub fn custom_controls_count(mut self, input: i32) -> Self {
         self.custom_controls_count = ::std::option::Option::Some(input);
@@ -323,6 +375,10 @@ impl AssessmentFrameworkShareRequestBuilder {
     pub fn set_custom_controls_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.custom_controls_count = input;
         self
+    }
+    /// <p>The number of custom controls that are part of the shared custom framework.</p>
+    pub fn get_custom_controls_count(&self) -> &::std::option::Option<i32> {
+        &self.custom_controls_count
     }
     /// <p>The compliance type that the shared custom framework supports, such as CIS or HIPAA.</p>
     pub fn compliance_type(
@@ -339,6 +395,10 @@ impl AssessmentFrameworkShareRequestBuilder {
     ) -> Self {
         self.compliance_type = input;
         self
+    }
+    /// <p>The compliance type that the shared custom framework supports, such as CIS or HIPAA.</p>
+    pub fn get_compliance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.compliance_type
     }
     /// Consumes the builder and constructs a [`AssessmentFrameworkShareRequest`](crate::types::AssessmentFrameworkShareRequest).
     pub fn build(self) -> crate::types::AssessmentFrameworkShareRequest {

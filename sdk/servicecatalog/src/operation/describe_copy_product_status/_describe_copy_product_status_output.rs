@@ -65,6 +65,12 @@ impl DescribeCopyProductStatusOutputBuilder {
         self.copy_product_status = input;
         self
     }
+    /// <p>The status of the copy product operation.</p>
+    pub fn get_copy_product_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::CopyProductStatus> {
+        &self.copy_product_status
+    }
     /// <p>The identifier of the copied product.</p>
     pub fn target_product_id(
         mut self,
@@ -81,6 +87,10 @@ impl DescribeCopyProductStatusOutputBuilder {
         self.target_product_id = input;
         self
     }
+    /// <p>The identifier of the copied product.</p>
+    pub fn get_target_product_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_product_id
+    }
     /// <p>The status message.</p>
     pub fn status_detail(
         mut self,
@@ -96,6 +106,10 @@ impl DescribeCopyProductStatusOutputBuilder {
     ) -> Self {
         self.status_detail = input;
         self
+    }
+    /// <p>The status message.</p>
+    pub fn get_status_detail(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_detail
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

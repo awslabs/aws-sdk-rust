@@ -104,6 +104,10 @@ impl AnomalyBuilder {
         self.anomaly_id = input;
         self
     }
+    /// <p>The unique identifier for the anomaly. </p>
+    pub fn get_anomaly_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.anomaly_id
+    }
     /// <p>The first day the anomaly is detected. </p>
     pub fn anomaly_start_date(
         mut self,
@@ -119,6 +123,10 @@ impl AnomalyBuilder {
     ) -> Self {
         self.anomaly_start_date = input;
         self
+    }
+    /// <p>The first day the anomaly is detected. </p>
+    pub fn get_anomaly_start_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.anomaly_start_date
     }
     /// <p>The last day the anomaly is detected. </p>
     pub fn anomaly_end_date(
@@ -136,6 +144,10 @@ impl AnomalyBuilder {
         self.anomaly_end_date = input;
         self
     }
+    /// <p>The last day the anomaly is detected. </p>
+    pub fn get_anomaly_end_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.anomaly_end_date
+    }
     /// <p>The dimension for the anomaly (for example, an Amazon Web Service in a service monitor). </p>
     pub fn dimension_value(
         mut self,
@@ -151,6 +163,10 @@ impl AnomalyBuilder {
     ) -> Self {
         self.dimension_value = input;
         self
+    }
+    /// <p>The dimension for the anomaly (for example, an Amazon Web Service in a service monitor). </p>
+    pub fn get_dimension_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dimension_value
     }
     /// Appends an item to `root_causes`.
     ///
@@ -171,6 +187,12 @@ impl AnomalyBuilder {
         self.root_causes = input;
         self
     }
+    /// <p>The list of identified root causes for the anomaly. </p>
+    pub fn get_root_causes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RootCause>> {
+        &self.root_causes
+    }
     /// <p>The latest and maximum score for the anomaly. </p>
     pub fn anomaly_score(mut self, input: crate::types::AnomalyScore) -> Self {
         self.anomaly_score = ::std::option::Option::Some(input);
@@ -184,6 +206,10 @@ impl AnomalyBuilder {
         self.anomaly_score = input;
         self
     }
+    /// <p>The latest and maximum score for the anomaly. </p>
+    pub fn get_anomaly_score(&self) -> &::std::option::Option<crate::types::AnomalyScore> {
+        &self.anomaly_score
+    }
     /// <p>The dollar impact for the anomaly. </p>
     pub fn impact(mut self, input: crate::types::Impact) -> Self {
         self.impact = ::std::option::Option::Some(input);
@@ -194,6 +220,10 @@ impl AnomalyBuilder {
         self.impact = input;
         self
     }
+    /// <p>The dollar impact for the anomaly. </p>
+    pub fn get_impact(&self) -> &::std::option::Option<crate::types::Impact> {
+        &self.impact
+    }
     /// <p>The Amazon Resource Name (ARN) for the cost monitor that generated this anomaly. </p>
     pub fn monitor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitor_arn = ::std::option::Option::Some(input.into());
@@ -203,6 +233,10 @@ impl AnomalyBuilder {
     pub fn set_monitor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monitor_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the cost monitor that generated this anomaly. </p>
+    pub fn get_monitor_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitor_arn
     }
     /// <p>The feedback value. </p>
     pub fn feedback(mut self, input: crate::types::AnomalyFeedbackType) -> Self {
@@ -216,6 +250,10 @@ impl AnomalyBuilder {
     ) -> Self {
         self.feedback = input;
         self
+    }
+    /// <p>The feedback value. </p>
+    pub fn get_feedback(&self) -> &::std::option::Option<crate::types::AnomalyFeedbackType> {
+        &self.feedback
     }
     /// Consumes the builder and constructs a [`Anomaly`](crate::types::Anomaly).
     pub fn build(self) -> crate::types::Anomaly {

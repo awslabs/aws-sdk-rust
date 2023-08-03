@@ -36,6 +36,12 @@ impl DescribeRulesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeRules as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_rules::builders::DescribeRulesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl DescribeRulesFluentBuilder {
         self.inner = self.inner.set_listener_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the listener.</p>
+    pub fn get_listener_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_listener_arn()
+    }
     /// Appends an item to `RuleArns`.
     ///
     /// To override the contents of this collection use [`set_rule_arns`](Self::set_rule_arns).
@@ -135,6 +145,10 @@ impl DescribeRulesFluentBuilder {
         self.inner = self.inner.set_rule_arns(input);
         self
     }
+    /// <p>The Amazon Resource Names (ARN) of the rules.</p>
+    pub fn get_rule_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_rule_arns()
+    }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -145,6 +159,10 @@ impl DescribeRulesFluentBuilder {
         self.inner = self.inner.set_marker(input);
         self
     }
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
+    }
     /// <p>The maximum number of results to return with this call.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.inner = self.inner.page_size(input);
@@ -154,5 +172,9 @@ impl DescribeRulesFluentBuilder {
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_page_size(input);
         self
+    }
+    /// <p>The maximum number of results to return with this call.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        self.inner.get_page_size()
     }
 }

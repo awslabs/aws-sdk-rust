@@ -105,6 +105,10 @@ impl TaskScheduledEventDetailsBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The service name of the resource in a task state.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
+    }
     /// <p>The action of the resource called by a task state.</p>
     pub fn resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource = ::std::option::Option::Some(input.into());
@@ -114,6 +118,10 @@ impl TaskScheduledEventDetailsBuilder {
     pub fn set_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource = input;
         self
+    }
+    /// <p>The action of the resource called by a task state.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource
     }
     /// <p>The region of the scheduled task</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -125,6 +133,10 @@ impl TaskScheduledEventDetailsBuilder {
         self.region = input;
         self
     }
+    /// <p>The region of the scheduled task</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
+    }
     /// <p>The JSON data passed to the resource referenced in a task state. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn parameters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameters = ::std::option::Option::Some(input.into());
@@ -134,6 +146,10 @@ impl TaskScheduledEventDetailsBuilder {
     pub fn set_parameters(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>The JSON data passed to the resource referenced in a task state. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameters
     }
     /// <p>The maximum allowed duration of the task.</p>
     pub fn timeout_in_seconds(mut self, input: i64) -> Self {
@@ -145,6 +161,10 @@ impl TaskScheduledEventDetailsBuilder {
         self.timeout_in_seconds = input;
         self
     }
+    /// <p>The maximum allowed duration of the task.</p>
+    pub fn get_timeout_in_seconds(&self) -> &::std::option::Option<i64> {
+        &self.timeout_in_seconds
+    }
     /// <p>The maximum allowed duration between two heartbeats for the task.</p>
     pub fn heartbeat_in_seconds(mut self, input: i64) -> Self {
         self.heartbeat_in_seconds = ::std::option::Option::Some(input);
@@ -154,6 +174,10 @@ impl TaskScheduledEventDetailsBuilder {
     pub fn set_heartbeat_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.heartbeat_in_seconds = input;
         self
+    }
+    /// <p>The maximum allowed duration between two heartbeats for the task.</p>
+    pub fn get_heartbeat_in_seconds(&self) -> &::std::option::Option<i64> {
+        &self.heartbeat_in_seconds
     }
     /// <p>The credentials that Step Functions uses for the task.</p>
     pub fn task_credentials(mut self, input: crate::types::TaskCredentials) -> Self {
@@ -167,6 +191,10 @@ impl TaskScheduledEventDetailsBuilder {
     ) -> Self {
         self.task_credentials = input;
         self
+    }
+    /// <p>The credentials that Step Functions uses for the task.</p>
+    pub fn get_task_credentials(&self) -> &::std::option::Option<crate::types::TaskCredentials> {
+        &self.task_credentials
     }
     /// Consumes the builder and constructs a [`TaskScheduledEventDetails`](crate::types::TaskScheduledEventDetails).
     pub fn build(self) -> crate::types::TaskScheduledEventDetails {

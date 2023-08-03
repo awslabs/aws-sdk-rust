@@ -39,6 +39,13 @@ impl DeleteServiceLinkedRoleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteServiceLinkedRole as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_service_linked_role::builders::DeleteServiceLinkedRoleInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,5 +135,9 @@ impl DeleteServiceLinkedRoleFluentBuilder {
     pub fn set_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_name(input);
         self
+    }
+    /// <p>The name of the service-linked role to be deleted.</p>
+    pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_name()
     }
 }

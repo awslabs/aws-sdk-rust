@@ -142,6 +142,10 @@ impl MultiplexProgramPacketIdentifiersMapBuilder {
         self.audio_pids = input;
         self
     }
+    /// Placeholder documentation for __listOf__integer
+    pub fn get_audio_pids(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.audio_pids
+    }
     /// Appends an item to `dvb_sub_pids`.
     ///
     /// To override the contents of this collection use [`set_dvb_sub_pids`](Self::set_dvb_sub_pids).
@@ -158,6 +162,10 @@ impl MultiplexProgramPacketIdentifiersMapBuilder {
         self.dvb_sub_pids = input;
         self
     }
+    /// Placeholder documentation for __listOf__integer
+    pub fn get_dvb_sub_pids(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.dvb_sub_pids
+    }
     /// Placeholder documentation for __integer
     pub fn dvb_teletext_pid(mut self, input: i32) -> Self {
         self.dvb_teletext_pid = ::std::option::Option::Some(input);
@@ -167,6 +175,10 @@ impl MultiplexProgramPacketIdentifiersMapBuilder {
     pub fn set_dvb_teletext_pid(mut self, input: ::std::option::Option<i32>) -> Self {
         self.dvb_teletext_pid = input;
         self
+    }
+    /// Placeholder documentation for __integer
+    pub fn get_dvb_teletext_pid(&self) -> &::std::option::Option<i32> {
+        &self.dvb_teletext_pid
     }
     /// Placeholder documentation for __integer
     pub fn etv_platform_pid(mut self, input: i32) -> Self {
@@ -179,6 +191,10 @@ impl MultiplexProgramPacketIdentifiersMapBuilder {
         self
     }
     /// Placeholder documentation for __integer
+    pub fn get_etv_platform_pid(&self) -> &::std::option::Option<i32> {
+        &self.etv_platform_pid
+    }
+    /// Placeholder documentation for __integer
     pub fn etv_signal_pid(mut self, input: i32) -> Self {
         self.etv_signal_pid = ::std::option::Option::Some(input);
         self
@@ -187,6 +203,10 @@ impl MultiplexProgramPacketIdentifiersMapBuilder {
     pub fn set_etv_signal_pid(mut self, input: ::std::option::Option<i32>) -> Self {
         self.etv_signal_pid = input;
         self
+    }
+    /// Placeholder documentation for __integer
+    pub fn get_etv_signal_pid(&self) -> &::std::option::Option<i32> {
+        &self.etv_signal_pid
     }
     /// Appends an item to `klv_data_pids`.
     ///
@@ -204,6 +224,10 @@ impl MultiplexProgramPacketIdentifiersMapBuilder {
         self.klv_data_pids = input;
         self
     }
+    /// Placeholder documentation for __listOf__integer
+    pub fn get_klv_data_pids(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.klv_data_pids
+    }
     /// Placeholder documentation for __integer
     pub fn pcr_pid(mut self, input: i32) -> Self {
         self.pcr_pid = ::std::option::Option::Some(input);
@@ -213,6 +237,10 @@ impl MultiplexProgramPacketIdentifiersMapBuilder {
     pub fn set_pcr_pid(mut self, input: ::std::option::Option<i32>) -> Self {
         self.pcr_pid = input;
         self
+    }
+    /// Placeholder documentation for __integer
+    pub fn get_pcr_pid(&self) -> &::std::option::Option<i32> {
+        &self.pcr_pid
     }
     /// Placeholder documentation for __integer
     pub fn pmt_pid(mut self, input: i32) -> Self {
@@ -225,6 +253,10 @@ impl MultiplexProgramPacketIdentifiersMapBuilder {
         self
     }
     /// Placeholder documentation for __integer
+    pub fn get_pmt_pid(&self) -> &::std::option::Option<i32> {
+        &self.pmt_pid
+    }
+    /// Placeholder documentation for __integer
     pub fn private_metadata_pid(mut self, input: i32) -> Self {
         self.private_metadata_pid = ::std::option::Option::Some(input);
         self
@@ -233,6 +265,10 @@ impl MultiplexProgramPacketIdentifiersMapBuilder {
     pub fn set_private_metadata_pid(mut self, input: ::std::option::Option<i32>) -> Self {
         self.private_metadata_pid = input;
         self
+    }
+    /// Placeholder documentation for __integer
+    pub fn get_private_metadata_pid(&self) -> &::std::option::Option<i32> {
+        &self.private_metadata_pid
     }
     /// Appends an item to `scte27_pids`.
     ///
@@ -250,6 +286,10 @@ impl MultiplexProgramPacketIdentifiersMapBuilder {
         self.scte27_pids = input;
         self
     }
+    /// Placeholder documentation for __listOf__integer
+    pub fn get_scte27_pids(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.scte27_pids
+    }
     /// Placeholder documentation for __integer
     pub fn scte35_pid(mut self, input: i32) -> Self {
         self.scte35_pid = ::std::option::Option::Some(input);
@@ -259,6 +299,10 @@ impl MultiplexProgramPacketIdentifiersMapBuilder {
     pub fn set_scte35_pid(mut self, input: ::std::option::Option<i32>) -> Self {
         self.scte35_pid = input;
         self
+    }
+    /// Placeholder documentation for __integer
+    pub fn get_scte35_pid(&self) -> &::std::option::Option<i32> {
+        &self.scte35_pid
     }
     /// Placeholder documentation for __integer
     pub fn timed_metadata_pid(mut self, input: i32) -> Self {
@@ -271,6 +315,10 @@ impl MultiplexProgramPacketIdentifiersMapBuilder {
         self
     }
     /// Placeholder documentation for __integer
+    pub fn get_timed_metadata_pid(&self) -> &::std::option::Option<i32> {
+        &self.timed_metadata_pid
+    }
+    /// Placeholder documentation for __integer
     pub fn video_pid(mut self, input: i32) -> Self {
         self.video_pid = ::std::option::Option::Some(input);
         self
@@ -279,6 +327,10 @@ impl MultiplexProgramPacketIdentifiersMapBuilder {
     pub fn set_video_pid(mut self, input: ::std::option::Option<i32>) -> Self {
         self.video_pid = input;
         self
+    }
+    /// Placeholder documentation for __integer
+    pub fn get_video_pid(&self) -> &::std::option::Option<i32> {
+        &self.video_pid
     }
     /// Consumes the builder and constructs a [`MultiplexProgramPacketIdentifiersMap`](crate::types::MultiplexProgramPacketIdentifiersMap).
     pub fn build(self) -> crate::types::MultiplexProgramPacketIdentifiersMap {

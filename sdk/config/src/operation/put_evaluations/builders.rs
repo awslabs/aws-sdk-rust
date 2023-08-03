@@ -36,6 +36,12 @@ impl PutEvaluationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutEvaluations as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_evaluations::builders::PutEvaluationsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +131,12 @@ impl PutEvaluationsFluentBuilder {
         self.inner = self.inner.set_evaluations(input);
         self
     }
+    /// <p>The assessments that the Lambda function performs. Each evaluation identifies an Amazon Web Services resource and indicates whether it complies with the Config rule that invokes the Lambda function.</p>
+    pub fn get_evaluations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Evaluation>> {
+        self.inner.get_evaluations()
+    }
     /// <p>An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the evaluation.</p>
     pub fn result_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.result_token(input.into());
@@ -134,6 +146,10 @@ impl PutEvaluationsFluentBuilder {
     pub fn set_result_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_result_token(input);
         self
+    }
+    /// <p>An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the evaluation.</p>
+    pub fn get_result_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_result_token()
     }
     /// <p>Use this parameter to specify a test run for <code>PutEvaluations</code>. You can verify whether your Lambda function will deliver evaluation results to Config. No updates occur to your existing evaluations, and evaluation results are not sent to Config.</p> <note>
     /// <p>When <code>TestMode</code> is <code>true</code>, <code>PutEvaluations</code> doesn't require a valid value for the <code>ResultToken</code> parameter, but the value cannot be null.</p>
@@ -148,5 +164,11 @@ impl PutEvaluationsFluentBuilder {
     pub fn set_test_mode(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_test_mode(input);
         self
+    }
+    /// <p>Use this parameter to specify a test run for <code>PutEvaluations</code>. You can verify whether your Lambda function will deliver evaluation results to Config. No updates occur to your existing evaluations, and evaluation results are not sent to Config.</p> <note>
+    /// <p>When <code>TestMode</code> is <code>true</code>, <code>PutEvaluations</code> doesn't require a valid value for the <code>ResultToken</code> parameter, but the value cannot be null.</p>
+    /// </note>
+    pub fn get_test_mode(&self) -> &::std::option::Option<bool> {
+        self.inner.get_test_mode()
     }
 }

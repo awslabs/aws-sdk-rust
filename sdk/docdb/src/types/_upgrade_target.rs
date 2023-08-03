@@ -72,6 +72,10 @@ impl UpgradeTargetBuilder {
         self.engine = input;
         self
     }
+    /// <p>The name of the upgrade target database engine.</p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine
+    }
     /// <p>The version number of the upgrade target database engine.</p>
     pub fn engine_version(
         mut self,
@@ -88,6 +92,10 @@ impl UpgradeTargetBuilder {
         self.engine_version = input;
         self
     }
+    /// <p>The version number of the upgrade target database engine.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
+    }
     /// <p>The version of the database engine that an instance can be upgraded to.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -97,6 +105,10 @@ impl UpgradeTargetBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The version of the database engine that an instance can be upgraded to.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>A value that indicates whether the target version is applied to any source DB instances that have <code>AutoMinorVersionUpgrade</code> set to <code>true</code>.</p>
     pub fn auto_upgrade(mut self, input: bool) -> Self {
@@ -108,6 +120,10 @@ impl UpgradeTargetBuilder {
         self.auto_upgrade = input;
         self
     }
+    /// <p>A value that indicates whether the target version is applied to any source DB instances that have <code>AutoMinorVersionUpgrade</code> set to <code>true</code>.</p>
+    pub fn get_auto_upgrade(&self) -> &::std::option::Option<bool> {
+        &self.auto_upgrade
+    }
     /// <p>A value that indicates whether a database engine is upgraded to a major version.</p>
     pub fn is_major_version_upgrade(mut self, input: bool) -> Self {
         self.is_major_version_upgrade = ::std::option::Option::Some(input);
@@ -117,6 +133,10 @@ impl UpgradeTargetBuilder {
     pub fn set_is_major_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_major_version_upgrade = input;
         self
+    }
+    /// <p>A value that indicates whether a database engine is upgraded to a major version.</p>
+    pub fn get_is_major_version_upgrade(&self) -> &::std::option::Option<bool> {
+        &self.is_major_version_upgrade
     }
     /// Consumes the builder and constructs a [`UpgradeTarget`](crate::types::UpgradeTarget).
     pub fn build(self) -> crate::types::UpgradeTarget {

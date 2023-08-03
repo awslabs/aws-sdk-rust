@@ -56,6 +56,10 @@ impl SigningJobRevocationRecordBuilder {
         self.reason = input;
         self
     }
+    /// <p>A caller-supplied reason for revocation.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
+    }
     /// <p>The time of revocation.</p>
     pub fn revoked_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.revoked_at = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl SigningJobRevocationRecordBuilder {
         self.revoked_at = input;
         self
     }
+    /// <p>The time of revocation.</p>
+    pub fn get_revoked_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.revoked_at
+    }
     /// <p>The identity of the revoker.</p>
     pub fn revoked_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revoked_by = ::std::option::Option::Some(input.into());
@@ -78,6 +86,10 @@ impl SigningJobRevocationRecordBuilder {
     pub fn set_revoked_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revoked_by = input;
         self
+    }
+    /// <p>The identity of the revoker.</p>
+    pub fn get_revoked_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revoked_by
     }
     /// Consumes the builder and constructs a [`SigningJobRevocationRecord`](crate::types::SigningJobRevocationRecord).
     pub fn build(self) -> crate::types::SigningJobRevocationRecord {

@@ -36,6 +36,10 @@ impl ListPipesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListPipes as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_pipes::builders::ListPipesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl ListPipesFluentBuilder {
         self.inner = self.inner.set_name_prefix(input);
         self
     }
+    /// <p>A value that will return a subset of the pipes associated with this account. For example, <code>"NamePrefix": "ABC"</code> will return all endpoints with "ABC" in the name.</p>
+    pub fn get_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name_prefix()
+    }
     /// <p>The state the pipe should be in.</p>
     pub fn desired_state(mut self, input: crate::types::RequestedPipeState) -> Self {
         self.inner = self.inner.desired_state(input);
@@ -137,6 +145,10 @@ impl ListPipesFluentBuilder {
         self.inner = self.inner.set_desired_state(input);
         self
     }
+    /// <p>The state the pipe should be in.</p>
+    pub fn get_desired_state(&self) -> &::std::option::Option<crate::types::RequestedPipeState> {
+        self.inner.get_desired_state()
+    }
     /// <p>The state the pipe is in.</p>
     pub fn current_state(mut self, input: crate::types::PipeState) -> Self {
         self.inner = self.inner.current_state(input);
@@ -149,6 +161,10 @@ impl ListPipesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_current_state(input);
         self
+    }
+    /// <p>The state the pipe is in.</p>
+    pub fn get_current_state(&self) -> &::std::option::Option<crate::types::PipeState> {
+        self.inner.get_current_state()
     }
     /// <p>The prefix matching the pipe source.</p>
     pub fn source_prefix(
@@ -166,6 +182,10 @@ impl ListPipesFluentBuilder {
         self.inner = self.inner.set_source_prefix(input);
         self
     }
+    /// <p>The prefix matching the pipe source.</p>
+    pub fn get_source_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_prefix()
+    }
     /// <p>The prefix matching the pipe target.</p>
     pub fn target_prefix(
         mut self,
@@ -182,6 +202,10 @@ impl ListPipesFluentBuilder {
         self.inner = self.inner.set_target_prefix(input);
         self
     }
+    /// <p>The prefix matching the pipe target.</p>
+    pub fn get_target_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_prefix()
+    }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -192,6 +216,10 @@ impl ListPipesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of pipes to include in the response.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -201,5 +229,9 @@ impl ListPipesFluentBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
+    }
+    /// <p>The maximum number of pipes to include in the response.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
     }
 }

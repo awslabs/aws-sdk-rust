@@ -36,6 +36,10 @@ impl InviteUsersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the InviteUsers as a reference.
+    pub fn as_input(&self) -> &crate::operation::invite_users::builders::InviteUsersInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl InviteUsersFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// Appends an item to `UserEmailList`.
     ///
     /// To override the contents of this collection use [`set_user_email_list`](Self::set_user_email_list).
@@ -138,6 +146,12 @@ impl InviteUsersFluentBuilder {
         self.inner = self.inner.set_user_email_list(input);
         self
     }
+    /// <p>The user email addresses to which to send the email invitation.</p>
+    pub fn get_user_email_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_user_email_list()
+    }
     /// <p>The user type.</p>
     pub fn user_type(mut self, input: crate::types::UserType) -> Self {
         self.inner = self.inner.user_type(input);
@@ -147,5 +161,9 @@ impl InviteUsersFluentBuilder {
     pub fn set_user_type(mut self, input: ::std::option::Option<crate::types::UserType>) -> Self {
         self.inner = self.inner.set_user_type(input);
         self
+    }
+    /// <p>The user type.</p>
+    pub fn get_user_type(&self) -> &::std::option::Option<crate::types::UserType> {
+        self.inner.get_user_type()
     }
 }

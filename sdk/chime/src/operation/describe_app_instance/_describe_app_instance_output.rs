@@ -51,6 +51,10 @@ impl DescribeAppInstanceOutputBuilder {
         self.app_instance = input;
         self
     }
+    /// <p>The ARN, metadata, created and last-updated timestamps, and the name of the <code>AppInstance</code>. All timestamps use epoch milliseconds.</p>
+    pub fn get_app_instance(&self) -> &::std::option::Option<crate::types::AppInstance> {
+        &self.app_instance
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

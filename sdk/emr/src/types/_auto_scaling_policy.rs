@@ -51,6 +51,10 @@ impl AutoScalingPolicyBuilder {
         self.constraints = input;
         self
     }
+    /// <p>The upper and lower Amazon EC2 instance limits for an automatic scaling policy. Automatic scaling activity will not cause an instance group to grow above or below these limits.</p>
+    pub fn get_constraints(&self) -> &::std::option::Option<crate::types::ScalingConstraints> {
+        &self.constraints
+    }
     /// Appends an item to `rules`.
     ///
     /// To override the contents of this collection use [`set_rules`](Self::set_rules).
@@ -69,6 +73,10 @@ impl AutoScalingPolicyBuilder {
     ) -> Self {
         self.rules = input;
         self
+    }
+    /// <p>The scale-in and scale-out rules that comprise the automatic scaling policy.</p>
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScalingRule>> {
+        &self.rules
     }
     /// Consumes the builder and constructs a [`AutoScalingPolicy`](crate::types::AutoScalingPolicy).
     pub fn build(self) -> crate::types::AutoScalingPolicy {

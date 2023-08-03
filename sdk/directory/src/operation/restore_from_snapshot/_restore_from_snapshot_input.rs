@@ -42,6 +42,10 @@ impl RestoreFromSnapshotInputBuilder {
         self.snapshot_id = input;
         self
     }
+    /// <p>The identifier of the snapshot to restore from.</p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_id
+    }
     /// Consumes the builder and constructs a [`RestoreFromSnapshotInput`](crate::operation::restore_from_snapshot::RestoreFromSnapshotInput).
     pub fn build(
         self,

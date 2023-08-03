@@ -46,6 +46,10 @@ impl CreateOrderOutputBuilder {
         self.order = input;
         self
     }
+    /// <p>Information about this order.</p>
+    pub fn get_order(&self) -> &::std::option::Option<crate::types::Order> {
+        &self.order
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

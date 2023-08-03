@@ -166,6 +166,10 @@ impl CreateSchemaOutputBuilder {
         self.registry_name = input;
         self
     }
+    /// <p>The name of the registry.</p>
+    pub fn get_registry_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the registry.</p>
     pub fn registry_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_arn = ::std::option::Option::Some(input.into());
@@ -175,6 +179,10 @@ impl CreateSchemaOutputBuilder {
     pub fn set_registry_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registry_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the registry.</p>
+    pub fn get_registry_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_arn
     }
     /// <p>The name of the schema.</p>
     pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -186,6 +194,10 @@ impl CreateSchemaOutputBuilder {
         self.schema_name = input;
         self
     }
+    /// <p>The name of the schema.</p>
+    pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
     pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_arn = ::std::option::Option::Some(input.into());
@@ -196,6 +208,10 @@ impl CreateSchemaOutputBuilder {
         self.schema_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the schema.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_arn
+    }
     /// <p>A description of the schema if specified when created.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -205,6 +221,10 @@ impl CreateSchemaOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the schema if specified when created.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
     pub fn data_format(mut self, input: crate::types::DataFormat) -> Self {
@@ -219,6 +239,10 @@ impl CreateSchemaOutputBuilder {
         self.data_format = input;
         self
     }
+    /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
+    pub fn get_data_format(&self) -> &::std::option::Option<crate::types::DataFormat> {
+        &self.data_format
+    }
     /// <p>The schema compatibility mode.</p>
     pub fn compatibility(mut self, input: crate::types::Compatibility) -> Self {
         self.compatibility = ::std::option::Option::Some(input);
@@ -232,6 +256,10 @@ impl CreateSchemaOutputBuilder {
         self.compatibility = input;
         self
     }
+    /// <p>The schema compatibility mode.</p>
+    pub fn get_compatibility(&self) -> &::std::option::Option<crate::types::Compatibility> {
+        &self.compatibility
+    }
     /// <p>The version number of the checkpoint (the last time the compatibility mode was changed).</p>
     pub fn schema_checkpoint(mut self, input: i64) -> Self {
         self.schema_checkpoint = ::std::option::Option::Some(input);
@@ -241,6 +269,10 @@ impl CreateSchemaOutputBuilder {
     pub fn set_schema_checkpoint(mut self, input: ::std::option::Option<i64>) -> Self {
         self.schema_checkpoint = input;
         self
+    }
+    /// <p>The version number of the checkpoint (the last time the compatibility mode was changed).</p>
+    pub fn get_schema_checkpoint(&self) -> &::std::option::Option<i64> {
+        &self.schema_checkpoint
     }
     /// <p>The latest version of the schema associated with the returned schema definition.</p>
     pub fn latest_schema_version(mut self, input: i64) -> Self {
@@ -252,6 +284,10 @@ impl CreateSchemaOutputBuilder {
         self.latest_schema_version = input;
         self
     }
+    /// <p>The latest version of the schema associated with the returned schema definition.</p>
+    pub fn get_latest_schema_version(&self) -> &::std::option::Option<i64> {
+        &self.latest_schema_version
+    }
     /// <p>The next version of the schema associated with the returned schema definition.</p>
     pub fn next_schema_version(mut self, input: i64) -> Self {
         self.next_schema_version = ::std::option::Option::Some(input);
@@ -261,6 +297,10 @@ impl CreateSchemaOutputBuilder {
     pub fn set_next_schema_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.next_schema_version = input;
         self
+    }
+    /// <p>The next version of the schema associated with the returned schema definition.</p>
+    pub fn get_next_schema_version(&self) -> &::std::option::Option<i64> {
+        &self.next_schema_version
     }
     /// <p>The status of the schema. </p>
     pub fn schema_status(mut self, input: crate::types::SchemaStatus) -> Self {
@@ -274,6 +314,10 @@ impl CreateSchemaOutputBuilder {
     ) -> Self {
         self.schema_status = input;
         self
+    }
+    /// <p>The status of the schema. </p>
+    pub fn get_schema_status(&self) -> &::std::option::Option<crate::types::SchemaStatus> {
+        &self.schema_status
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -300,6 +344,14 @@ impl CreateSchemaOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags for the schema.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The unique identifier of the first schema version.</p>
     pub fn schema_version_id(
         mut self,
@@ -316,6 +368,10 @@ impl CreateSchemaOutputBuilder {
         self.schema_version_id = input;
         self
     }
+    /// <p>The unique identifier of the first schema version.</p>
+    pub fn get_schema_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_version_id
+    }
     /// <p>The status of the first schema version created.</p>
     pub fn schema_version_status(mut self, input: crate::types::SchemaVersionStatus) -> Self {
         self.schema_version_status = ::std::option::Option::Some(input);
@@ -328,6 +384,12 @@ impl CreateSchemaOutputBuilder {
     ) -> Self {
         self.schema_version_status = input;
         self
+    }
+    /// <p>The status of the first schema version created.</p>
+    pub fn get_schema_version_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::SchemaVersionStatus> {
+        &self.schema_version_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

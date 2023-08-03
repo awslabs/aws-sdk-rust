@@ -36,6 +36,12 @@ impl UpdateApplicationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateApplication as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_application::builders::UpdateApplicationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateApplicationFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The ID of the application to update.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>The client idempotency token of the application to update. Its value must be unique for each request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -141,6 +151,10 @@ impl UpdateApplicationFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>The client idempotency token of the application to update. Its value must be unique for each request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// Adds a key-value pair to `initialCapacity`.
     ///
@@ -165,6 +179,14 @@ impl UpdateApplicationFluentBuilder {
         self.inner = self.inner.set_initial_capacity(input);
         self
     }
+    /// <p>The capacity to initialize when the application is updated.</p>
+    pub fn get_initial_capacity(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::InitialCapacityConfig>,
+    > {
+        self.inner.get_initial_capacity()
+    }
     /// <p>The maximum capacity to allocate when the application is updated. This is cumulative across all workers at any given point in time during the lifespan of the application. No new resources will be created once any one of the defined limits is hit.</p>
     pub fn maximum_capacity(mut self, input: crate::types::MaximumAllowedResources) -> Self {
         self.inner = self.inner.maximum_capacity(input);
@@ -177,6 +199,12 @@ impl UpdateApplicationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_maximum_capacity(input);
         self
+    }
+    /// <p>The maximum capacity to allocate when the application is updated. This is cumulative across all workers at any given point in time during the lifespan of the application. No new resources will be created once any one of the defined limits is hit.</p>
+    pub fn get_maximum_capacity(
+        &self,
+    ) -> &::std::option::Option<crate::types::MaximumAllowedResources> {
+        self.inner.get_maximum_capacity()
     }
     /// <p>The configuration for an application to automatically start on job submission.</p>
     pub fn auto_start_configuration(mut self, input: crate::types::AutoStartConfig) -> Self {
@@ -191,6 +219,12 @@ impl UpdateApplicationFluentBuilder {
         self.inner = self.inner.set_auto_start_configuration(input);
         self
     }
+    /// <p>The configuration for an application to automatically start on job submission.</p>
+    pub fn get_auto_start_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoStartConfig> {
+        self.inner.get_auto_start_configuration()
+    }
     /// <p>The configuration for an application to automatically stop after a certain amount of time being idle.</p>
     pub fn auto_stop_configuration(mut self, input: crate::types::AutoStopConfig) -> Self {
         self.inner = self.inner.auto_stop_configuration(input);
@@ -203,6 +237,12 @@ impl UpdateApplicationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_auto_stop_configuration(input);
         self
+    }
+    /// <p>The configuration for an application to automatically stop after a certain amount of time being idle.</p>
+    pub fn get_auto_stop_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoStopConfig> {
+        self.inner.get_auto_stop_configuration()
     }
     /// <p>The network configuration for customer VPC connectivity.</p>
     pub fn network_configuration(mut self, input: crate::types::NetworkConfiguration) -> Self {
@@ -217,6 +257,12 @@ impl UpdateApplicationFluentBuilder {
         self.inner = self.inner.set_network_configuration(input);
         self
     }
+    /// <p>The network configuration for customer VPC connectivity.</p>
+    pub fn get_network_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkConfiguration> {
+        self.inner.get_network_configuration()
+    }
     /// <p>The CPU architecture of an application.</p>
     pub fn architecture(mut self, input: crate::types::Architecture) -> Self {
         self.inner = self.inner.architecture(input);
@@ -230,6 +276,10 @@ impl UpdateApplicationFluentBuilder {
         self.inner = self.inner.set_architecture(input);
         self
     }
+    /// <p>The CPU architecture of an application.</p>
+    pub fn get_architecture(&self) -> &::std::option::Option<crate::types::Architecture> {
+        self.inner.get_architecture()
+    }
     /// <p>The image configuration to be used for all worker types. You can either set this parameter or <code>imageConfiguration</code> for each worker type in <code>WorkerTypeSpecificationInput</code>.</p>
     pub fn image_configuration(mut self, input: crate::types::ImageConfigurationInput) -> Self {
         self.inner = self.inner.image_configuration(input);
@@ -242,6 +292,12 @@ impl UpdateApplicationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_image_configuration(input);
         self
+    }
+    /// <p>The image configuration to be used for all worker types. You can either set this parameter or <code>imageConfiguration</code> for each worker type in <code>WorkerTypeSpecificationInput</code>.</p>
+    pub fn get_image_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImageConfigurationInput> {
+        self.inner.get_image_configuration()
     }
     /// Adds a key-value pair to `workerTypeSpecifications`.
     ///
@@ -269,6 +325,17 @@ impl UpdateApplicationFluentBuilder {
         self.inner = self.inner.set_worker_type_specifications(input);
         self
     }
+    /// <p>The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid worker types for a Spark or Hive application. Valid worker types include <code>Driver</code> and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can either set image details in this parameter for each worker type, or in <code>imageConfiguration</code> for all worker types.</p>
+    pub fn get_worker_type_specifications(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::WorkerTypeSpecificationInput,
+        >,
+    > {
+        self.inner.get_worker_type_specifications()
+    }
     /// <p>The Amazon EMR release label for the application. You can change the release label to use a different release of Amazon EMR.</p>
     pub fn release_label(
         mut self,
@@ -284,5 +351,9 @@ impl UpdateApplicationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_release_label(input);
         self
+    }
+    /// <p>The Amazon EMR release label for the application. You can change the release label to use a different release of Amazon EMR.</p>
+    pub fn get_release_label(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_release_label()
     }
 }

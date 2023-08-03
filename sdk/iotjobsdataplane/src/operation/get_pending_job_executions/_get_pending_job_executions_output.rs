@@ -67,6 +67,12 @@ impl GetPendingJobExecutionsOutputBuilder {
         self.in_progress_jobs = input;
         self
     }
+    /// <p>A list of JobExecutionSummary objects with status IN_PROGRESS.</p>
+    pub fn get_in_progress_jobs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummary>> {
+        &self.in_progress_jobs
+    }
     /// Appends an item to `queued_jobs`.
     ///
     /// To override the contents of this collection use [`set_queued_jobs`](Self::set_queued_jobs).
@@ -85,6 +91,12 @@ impl GetPendingJobExecutionsOutputBuilder {
     ) -> Self {
         self.queued_jobs = input;
         self
+    }
+    /// <p>A list of JobExecutionSummary objects with status QUEUED.</p>
+    pub fn get_queued_jobs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummary>> {
+        &self.queued_jobs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

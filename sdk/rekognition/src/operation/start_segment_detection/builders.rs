@@ -40,6 +40,13 @@ impl StartSegmentDetectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartSegmentDetection as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_segment_detection::builders::StartSegmentDetectionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +137,10 @@ impl StartSegmentDetectionFluentBuilder {
         self.inner = self.inner.set_video(input);
         self
     }
+    /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
+    pub fn get_video(&self) -> &::std::option::Option<crate::types::Video> {
+        self.inner.get_video()
+    }
     /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartSegmentDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
     pub fn client_request_token(
         mut self,
@@ -146,6 +157,10 @@ impl StartSegmentDetectionFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartSegmentDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the segment detection operation. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
     pub fn notification_channel(mut self, input: crate::types::NotificationChannel) -> Self {
         self.inner = self.inner.notification_channel(input);
@@ -159,6 +174,12 @@ impl StartSegmentDetectionFluentBuilder {
         self.inner = self.inner.set_notification_channel(input);
         self
     }
+    /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the segment detection operation. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
+    pub fn get_notification_channel(
+        &self,
+    ) -> &::std::option::Option<crate::types::NotificationChannel> {
+        self.inner.get_notification_channel()
+    }
     /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
     pub fn job_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_tag(input.into());
@@ -168,6 +189,10 @@ impl StartSegmentDetectionFluentBuilder {
     pub fn set_job_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_tag(input);
         self
+    }
+    /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+    pub fn get_job_tag(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_tag()
     }
     /// <p>Filters for technical cue or shot detection.</p>
     pub fn filters(mut self, input: crate::types::StartSegmentDetectionFilters) -> Self {
@@ -181,6 +206,12 @@ impl StartSegmentDetectionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
+    }
+    /// <p>Filters for technical cue or shot detection.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<crate::types::StartSegmentDetectionFilters> {
+        self.inner.get_filters()
     }
     /// Appends an item to `SegmentTypes`.
     ///
@@ -198,5 +229,11 @@ impl StartSegmentDetectionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_segment_types(input);
         self
+    }
+    /// <p>An array of segment types to detect in the video. Valid values are TECHNICAL_CUE and SHOT.</p>
+    pub fn get_segment_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SegmentType>> {
+        self.inner.get_segment_types()
     }
 }

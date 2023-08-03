@@ -69,6 +69,16 @@ impl ReportExportConfigBuilder {
         self.export_config_type = input;
         self
     }
+    /// <p> The export configuration type. Valid values are: </p>
+    /// <ul>
+    /// <li> <p> <code>S3</code>: The report results are exported to an S3 bucket. </p> </li>
+    /// <li> <p> <code>NO_EXPORT</code>: The report results are not exported. </p> </li>
+    /// </ul>
+    pub fn get_export_config_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReportExportConfigType> {
+        &self.export_config_type
+    }
     /// <p> A <code>S3ReportExportConfig</code> object that contains information about the S3 bucket where the run of a report is exported. </p>
     pub fn s3_destination(mut self, input: crate::types::S3ReportExportConfig) -> Self {
         self.s3_destination = ::std::option::Option::Some(input);
@@ -81,6 +91,10 @@ impl ReportExportConfigBuilder {
     ) -> Self {
         self.s3_destination = input;
         self
+    }
+    /// <p> A <code>S3ReportExportConfig</code> object that contains information about the S3 bucket where the run of a report is exported. </p>
+    pub fn get_s3_destination(&self) -> &::std::option::Option<crate::types::S3ReportExportConfig> {
+        &self.s3_destination
     }
     /// Consumes the builder and constructs a [`ReportExportConfig`](crate::types::ReportExportConfig).
     pub fn build(self) -> crate::types::ReportExportConfig {

@@ -63,6 +63,10 @@ impl UpdateRevisionInputBuilder {
         self.comment = input;
         self
     }
+    /// <p>An optional comment about the revision.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment
+    }
     /// <p>The unique identifier for a data set.</p>
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl UpdateRevisionInputBuilder {
     pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_set_id = input;
         self
+    }
+    /// <p>The unique identifier for a data set.</p>
+    pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_set_id
     }
     /// <p>Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
     pub fn finalized(mut self, input: bool) -> Self {
@@ -83,6 +91,10 @@ impl UpdateRevisionInputBuilder {
         self.finalized = input;
         self
     }
+    /// <p>Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
+    pub fn get_finalized(&self) -> &::std::option::Option<bool> {
+        &self.finalized
+    }
     /// <p>The unique identifier for a revision.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
@@ -92,6 +104,10 @@ impl UpdateRevisionInputBuilder {
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision_id = input;
         self
+    }
+    /// <p>The unique identifier for a revision.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_id
     }
     /// Consumes the builder and constructs a [`UpdateRevisionInput`](crate::operation::update_revision::UpdateRevisionInput).
     pub fn build(

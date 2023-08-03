@@ -51,6 +51,10 @@ impl DeleteIndexFieldOutputBuilder {
         self.index_field = input;
         self
     }
+    /// <p>The status of the index field being deleted.</p>
+    pub fn get_index_field(&self) -> &::std::option::Option<crate::types::IndexFieldStatus> {
+        &self.index_field
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

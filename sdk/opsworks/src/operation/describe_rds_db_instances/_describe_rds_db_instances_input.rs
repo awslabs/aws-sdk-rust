@@ -49,6 +49,10 @@ impl DescribeRdsDbInstancesInputBuilder {
         self.stack_id = input;
         self
     }
+    /// <p>The ID of the stack with which the instances are registered. The operation returns descriptions of all registered Amazon RDS instances.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_id
+    }
     /// Appends an item to `rds_db_instance_arns`.
     ///
     /// To override the contents of this collection use [`set_rds_db_instance_arns`](Self::set_rds_db_instance_arns).
@@ -70,6 +74,12 @@ impl DescribeRdsDbInstancesInputBuilder {
     ) -> Self {
         self.rds_db_instance_arns = input;
         self
+    }
+    /// <p>An array containing the ARNs of the instances to be described.</p>
+    pub fn get_rds_db_instance_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.rds_db_instance_arns
     }
     /// Consumes the builder and constructs a [`DescribeRdsDbInstancesInput`](crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesInput).
     pub fn build(

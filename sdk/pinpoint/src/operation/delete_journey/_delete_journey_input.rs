@@ -53,6 +53,10 @@ impl DeleteJourneyInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The unique identifier for the journey.</p>
     pub fn journey_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.journey_id = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl DeleteJourneyInputBuilder {
     pub fn set_journey_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.journey_id = input;
         self
+    }
+    /// <p>The unique identifier for the journey.</p>
+    pub fn get_journey_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.journey_id
     }
     /// Consumes the builder and constructs a [`DeleteJourneyInput`](crate::operation::delete_journey::DeleteJourneyInput).
     pub fn build(

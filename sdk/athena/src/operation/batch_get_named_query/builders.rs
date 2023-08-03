@@ -36,6 +36,12 @@ impl BatchGetNamedQueryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchGetNamedQuery as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_get_named_query::builders::BatchGetNamedQueryInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,5 +141,11 @@ impl BatchGetNamedQueryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_named_query_ids(input);
         self
+    }
+    /// <p>An array of query IDs.</p>
+    pub fn get_named_query_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_named_query_ids()
     }
 }

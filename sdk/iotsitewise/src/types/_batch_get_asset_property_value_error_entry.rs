@@ -61,6 +61,12 @@ impl BatchGetAssetPropertyValueErrorEntryBuilder {
         self.error_code = input;
         self
     }
+    /// <p>The error code.</p>
+    pub fn get_error_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchGetAssetPropertyValueErrorCode> {
+        &self.error_code
+    }
     /// <p>The associated error message.</p>
     pub fn error_message(
         mut self,
@@ -77,6 +83,10 @@ impl BatchGetAssetPropertyValueErrorEntryBuilder {
         self.error_message = input;
         self
     }
+    /// <p>The associated error message.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// <p>The ID of the entry.</p>
     pub fn entry_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entry_id = ::std::option::Option::Some(input.into());
@@ -86,6 +96,10 @@ impl BatchGetAssetPropertyValueErrorEntryBuilder {
     pub fn set_entry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entry_id = input;
         self
+    }
+    /// <p>The ID of the entry.</p>
+    pub fn get_entry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entry_id
     }
     /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueErrorEntry`](crate::types::BatchGetAssetPropertyValueErrorEntry).
     pub fn build(self) -> crate::types::BatchGetAssetPropertyValueErrorEntry {

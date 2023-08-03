@@ -52,6 +52,10 @@ impl RegionOfInterestBuilder {
         self.bounding_box = input;
         self
     }
+    /// <p>The box representing a region of interest on screen.</p>
+    pub fn get_bounding_box(&self) -> &::std::option::Option<crate::types::BoundingBox> {
+        &self.bounding_box
+    }
     /// Appends an item to `polygon`.
     ///
     /// To override the contents of this collection use [`set_polygon`](Self::set_polygon).
@@ -70,6 +74,10 @@ impl RegionOfInterestBuilder {
     ) -> Self {
         self.polygon = input;
         self
+    }
+    /// <p> Specifies a shape made up of up to 10 <code>Point</code> objects to define a region of interest. </p>
+    pub fn get_polygon(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Point>> {
+        &self.polygon
     }
     /// Consumes the builder and constructs a [`RegionOfInterest`](crate::types::RegionOfInterest).
     pub fn build(self) -> crate::types::RegionOfInterest {

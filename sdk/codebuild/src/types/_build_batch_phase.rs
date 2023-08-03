@@ -335,6 +335,54 @@ impl BuildBatchPhaseBuilder {
         self.phase_type = input;
         self
     }
+    /// <p>The name of the batch build phase. Valid values include:</p>
+    /// <dl>
+    /// <dt>
+    /// COMBINE_ARTIFACTS
+    /// </dt>
+    /// <dd>
+    /// <p>Build output artifacts are being combined and uploaded to the output location.</p>
+    /// </dd>
+    /// <dt>
+    /// DOWNLOAD_BATCHSPEC
+    /// </dt>
+    /// <dd>
+    /// <p>The batch build specification is being downloaded.</p>
+    /// </dd>
+    /// <dt>
+    /// FAILED
+    /// </dt>
+    /// <dd>
+    /// <p>One or more of the builds failed.</p>
+    /// </dd>
+    /// <dt>
+    /// IN_PROGRESS
+    /// </dt>
+    /// <dd>
+    /// <p>The batch build is in progress.</p>
+    /// </dd>
+    /// <dt>
+    /// STOPPED
+    /// </dt>
+    /// <dd>
+    /// <p>The batch build was stopped.</p>
+    /// </dd>
+    /// <dt>
+    /// SUBMITTED
+    /// </dt>
+    /// <dd>
+    /// <p>The btach build has been submitted.</p>
+    /// </dd>
+    /// <dt>
+    /// SUCCEEDED
+    /// </dt>
+    /// <dd>
+    /// <p>The batch build succeeded.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_phase_type(&self) -> &::std::option::Option<crate::types::BuildBatchPhaseType> {
+        &self.phase_type
+    }
     /// <p>The current status of the batch build phase. Valid values include:</p>
     /// <dl>
     /// <dt>
@@ -424,6 +472,48 @@ impl BuildBatchPhaseBuilder {
         self.phase_status = input;
         self
     }
+    /// <p>The current status of the batch build phase. Valid values include:</p>
+    /// <dl>
+    /// <dt>
+    /// FAILED
+    /// </dt>
+    /// <dd>
+    /// <p>The build phase failed.</p>
+    /// </dd>
+    /// <dt>
+    /// FAULT
+    /// </dt>
+    /// <dd>
+    /// <p>The build phase faulted.</p>
+    /// </dd>
+    /// <dt>
+    /// IN_PROGRESS
+    /// </dt>
+    /// <dd>
+    /// <p>The build phase is still in progress.</p>
+    /// </dd>
+    /// <dt>
+    /// STOPPED
+    /// </dt>
+    /// <dd>
+    /// <p>The build phase stopped.</p>
+    /// </dd>
+    /// <dt>
+    /// SUCCEEDED
+    /// </dt>
+    /// <dd>
+    /// <p>The build phase succeeded.</p>
+    /// </dd>
+    /// <dt>
+    /// TIMED_OUT
+    /// </dt>
+    /// <dd>
+    /// <p>The build phase timed out.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_phase_status(&self) -> &::std::option::Option<crate::types::StatusType> {
+        &self.phase_status
+    }
     /// <p>When the batch build phase started, expressed in Unix time format.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -436,6 +526,10 @@ impl BuildBatchPhaseBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>When the batch build phase started, expressed in Unix time format.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>When the batch build phase ended, expressed in Unix time format.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -450,6 +544,10 @@ impl BuildBatchPhaseBuilder {
         self.end_time = input;
         self
     }
+    /// <p>When the batch build phase ended, expressed in Unix time format.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>How long, in seconds, between the starting and ending times of the batch build's phase.</p>
     pub fn duration_in_seconds(mut self, input: i64) -> Self {
         self.duration_in_seconds = ::std::option::Option::Some(input);
@@ -459,6 +557,10 @@ impl BuildBatchPhaseBuilder {
     pub fn set_duration_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.duration_in_seconds = input;
         self
+    }
+    /// <p>How long, in seconds, between the starting and ending times of the batch build's phase.</p>
+    pub fn get_duration_in_seconds(&self) -> &::std::option::Option<i64> {
+        &self.duration_in_seconds
     }
     /// Appends an item to `contexts`.
     ///
@@ -478,6 +580,12 @@ impl BuildBatchPhaseBuilder {
     ) -> Self {
         self.contexts = input;
         self
+    }
+    /// <p>Additional information about the batch build phase. Especially to help troubleshoot a failed batch build.</p>
+    pub fn get_contexts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PhaseContext>> {
+        &self.contexts
     }
     /// Consumes the builder and constructs a [`BuildBatchPhase`](crate::types::BuildBatchPhase).
     pub fn build(self) -> crate::types::BuildBatchPhase {

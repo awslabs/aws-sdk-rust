@@ -39,6 +39,10 @@ impl DeleteAssetInputBuilder {
         self.id = input;
         self
     }
+    /// The ID of the MediaPackage VOD Asset resource to delete.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`DeleteAssetInput`](crate::operation::delete_asset::DeleteAssetInput).
     pub fn build(
         self,

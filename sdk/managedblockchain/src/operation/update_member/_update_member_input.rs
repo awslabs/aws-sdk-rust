@@ -59,6 +59,10 @@ impl UpdateMemberInputBuilder {
         self.network_id = input;
         self
     }
+    /// <p>The unique identifier of the Managed Blockchain network to which the member belongs.</p>
+    pub fn get_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_id
+    }
     /// <p>The unique identifier of the member.</p>
     pub fn member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_id = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl UpdateMemberInputBuilder {
     pub fn set_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.member_id = input;
         self
+    }
+    /// <p>The unique identifier of the member.</p>
+    pub fn get_member_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_id
     }
     /// <p>Configuration properties for publishing to Amazon CloudWatch Logs.</p>
     pub fn log_publishing_configuration(
@@ -84,6 +92,12 @@ impl UpdateMemberInputBuilder {
     ) -> Self {
         self.log_publishing_configuration = input;
         self
+    }
+    /// <p>Configuration properties for publishing to Amazon CloudWatch Logs.</p>
+    pub fn get_log_publishing_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::MemberLogPublishingConfiguration> {
+        &self.log_publishing_configuration
     }
     /// Consumes the builder and constructs a [`UpdateMemberInput`](crate::operation::update_member::UpdateMemberInput).
     pub fn build(

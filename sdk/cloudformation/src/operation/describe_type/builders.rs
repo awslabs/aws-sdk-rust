@@ -37,6 +37,10 @@ impl DescribeTypeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeType as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_type::builders::DescribeTypeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +125,11 @@ impl DescribeTypeFluentBuilder {
         self.inner = self.inner.set_type(input);
         self
     }
+    /// <p>The kind of extension.</p>
+    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::RegistryType> {
+        self.inner.get_type()
+    }
     /// <p>The name of the extension.</p>
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -132,6 +141,11 @@ impl DescribeTypeFluentBuilder {
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_type_name(input);
         self
+    }
+    /// <p>The name of the extension.</p>
+    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
+    pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_type_name()
     }
     /// <p>The Amazon Resource Name (ARN) of the extension.</p>
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
@@ -145,6 +159,11 @@ impl DescribeTypeFluentBuilder {
         self.inner = self.inner.set_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the extension.</p>
+    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
+    }
     /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the extension version when it is registered.</p>
     /// <p>If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information about that specific extension version. Otherwise, it returns information about the default extension version.</p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -157,6 +176,11 @@ impl DescribeTypeFluentBuilder {
         self.inner = self.inner.set_version_id(input);
         self
     }
+    /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the extension version when it is registered.</p>
+    /// <p>If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information about that specific extension version. Otherwise, it returns information about the default extension version.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version_id()
+    }
     /// <p>The publisher ID of the extension publisher.</p>
     /// <p>Extensions provided by Amazon Web Services are not assigned a publisher ID.</p>
     pub fn publisher_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -168,6 +192,11 @@ impl DescribeTypeFluentBuilder {
     pub fn set_publisher_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_publisher_id(input);
         self
+    }
+    /// <p>The publisher ID of the extension publisher.</p>
+    /// <p>Extensions provided by Amazon Web Services are not assigned a publisher ID.</p>
+    pub fn get_publisher_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_publisher_id()
     }
     /// <p>The version number of a public third-party extension.</p>
     pub fn public_version_number(
@@ -184,5 +213,9 @@ impl DescribeTypeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_public_version_number(input);
         self
+    }
+    /// <p>The version number of a public third-party extension.</p>
+    pub fn get_public_version_number(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_public_version_number()
     }
 }

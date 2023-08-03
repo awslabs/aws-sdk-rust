@@ -46,6 +46,10 @@ impl DecryptDataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DecryptData as a reference.
+    pub fn as_input(&self) -> &crate::operation::decrypt_data::builders::DecryptDataInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +138,10 @@ impl DecryptDataFluentBuilder {
         self.inner = self.inner.set_key_identifier(input);
         self
     }
+    /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses for ciphertext decryption.</p>
+    pub fn get_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key_identifier()
+    }
     /// <p>The ciphertext to decrypt.</p>
     pub fn cipher_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cipher_text(input.into());
@@ -143,6 +151,10 @@ impl DecryptDataFluentBuilder {
     pub fn set_cipher_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cipher_text(input);
         self
+    }
+    /// <p>The ciphertext to decrypt.</p>
+    pub fn get_cipher_text(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cipher_text()
     }
     /// <p>The encryption key type and attributes for ciphertext decryption.</p>
     pub fn decryption_attributes(
@@ -159,5 +171,11 @@ impl DecryptDataFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_decryption_attributes(input);
         self
+    }
+    /// <p>The encryption key type and attributes for ciphertext decryption.</p>
+    pub fn get_decryption_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::EncryptionDecryptionAttributes> {
+        self.inner.get_decryption_attributes()
     }
 }

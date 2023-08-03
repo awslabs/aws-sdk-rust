@@ -47,6 +47,10 @@ impl GetBotInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the bot. The name is case sensitive. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The version or alias of the bot.</p>
     pub fn version_or_alias(
         mut self,
@@ -62,6 +66,10 @@ impl GetBotInputBuilder {
     ) -> Self {
         self.version_or_alias = input;
         self
+    }
+    /// <p>The version or alias of the bot.</p>
+    pub fn get_version_or_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_or_alias
     }
     /// Consumes the builder and constructs a [`GetBotInput`](crate::operation::get_bot::GetBotInput).
     pub fn build(

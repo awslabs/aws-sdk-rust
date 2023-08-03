@@ -115,6 +115,10 @@ impl CreateDevEnvironmentInputBuilder {
         self.space_name = input;
         self
     }
+    /// <p>The name of the space.</p>
+    pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.space_name
+    }
     /// <p>The name of the project in the space.</p>
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
@@ -124,6 +128,10 @@ impl CreateDevEnvironmentInputBuilder {
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_name = input;
         self
+    }
+    /// <p>The name of the project in the space.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
     }
     /// Appends an item to `repositories`.
     ///
@@ -144,6 +152,12 @@ impl CreateDevEnvironmentInputBuilder {
         self.repositories = input;
         self
     }
+    /// <p>The source repository that contains the branch to clone into the Dev Environment. </p>
+    pub fn get_repositories(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryInput>> {
+        &self.repositories
+    }
     /// <p>A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -154,6 +168,10 @@ impl CreateDevEnvironmentInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The user-defined alias for a Dev Environment.</p>
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias = ::std::option::Option::Some(input.into());
@@ -163,6 +181,10 @@ impl CreateDevEnvironmentInputBuilder {
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alias = input;
         self
+    }
+    /// <p>The user-defined alias for a Dev Environment.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias
     }
     /// Appends an item to `ides`.
     ///
@@ -187,6 +209,14 @@ impl CreateDevEnvironmentInputBuilder {
         self.ides = input;
         self
     }
+    /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p> <note>
+    /// <p>An IDE is required to create a Dev Environment. For Dev Environment creation, this field contains configuration information and must be provided. </p>
+    /// </note>
+    pub fn get_ides(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>> {
+        &self.ides
+    }
     /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
     pub fn instance_type(mut self, input: crate::types::InstanceType) -> Self {
         self.instance_type = ::std::option::Option::Some(input);
@@ -200,6 +230,10 @@ impl CreateDevEnvironmentInputBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
+        &self.instance_type
+    }
     /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.</p>
     pub fn inactivity_timeout_minutes(mut self, input: i32) -> Self {
         self.inactivity_timeout_minutes = ::std::option::Option::Some(input);
@@ -209,6 +243,10 @@ impl CreateDevEnvironmentInputBuilder {
     pub fn set_inactivity_timeout_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inactivity_timeout_minutes = input;
         self
+    }
+    /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.</p>
+    pub fn get_inactivity_timeout_minutes(&self) -> &::std::option::Option<i32> {
+        &self.inactivity_timeout_minutes
     }
     /// <p>Information about the amount of storage allocated to the Dev Environment. </p> <note>
     /// <p>By default, a Dev Environment is configured to have 16GB of persistent storage when created from the Amazon CodeCatalyst console, but there is no default when programmatically creating a Dev Environment. Valid values for persistent storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
@@ -229,6 +267,14 @@ impl CreateDevEnvironmentInputBuilder {
     ) -> Self {
         self.persistent_storage = input;
         self
+    }
+    /// <p>Information about the amount of storage allocated to the Dev Environment. </p> <note>
+    /// <p>By default, a Dev Environment is configured to have 16GB of persistent storage when created from the Amazon CodeCatalyst console, but there is no default when programmatically creating a Dev Environment. Valid values for persistent storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
+    /// </note>
+    pub fn get_persistent_storage(
+        &self,
+    ) -> &::std::option::Option<crate::types::PersistentStorageConfiguration> {
+        &self.persistent_storage
     }
     /// Consumes the builder and constructs a [`CreateDevEnvironmentInput`](crate::operation::create_dev_environment::CreateDevEnvironmentInput).
     pub fn build(

@@ -68,6 +68,10 @@ impl StartJobRunOutputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>This output displays the application ID on which the job run was submitted.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The output contains the ID of the started job run.</p>
     pub fn job_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_run_id = ::std::option::Option::Some(input.into());
@@ -78,6 +82,10 @@ impl StartJobRunOutputBuilder {
         self.job_run_id = input;
         self
     }
+    /// <p>The output contains the ID of the started job run.</p>
+    pub fn get_job_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_run_id
+    }
     /// <p>This output displays the ARN of the job run..</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -87,6 +95,10 @@ impl StartJobRunOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>This output displays the ARN of the job run..</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

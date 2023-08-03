@@ -39,6 +39,10 @@ impl GetResolverQueryLogConfigPolicyInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the query logging configuration that you want to get the query logging policy for.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`GetResolverQueryLogConfigPolicyInput`](crate::operation::get_resolver_query_log_config_policy::GetResolverQueryLogConfigPolicyInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_resolver_query_log_config_policy::GetResolverQueryLogConfigPolicyInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

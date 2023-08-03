@@ -88,6 +88,10 @@ impl MultipartUploadBuilder {
         self.upload_id = input;
         self
     }
+    /// <p>Upload ID that identifies the multipart upload.</p>
+    pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.upload_id
+    }
     /// <p>Key of the object for which the multipart upload was initiated.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
@@ -97,6 +101,10 @@ impl MultipartUploadBuilder {
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
+    }
+    /// <p>Key of the object for which the multipart upload was initiated.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
     }
     /// <p>Date and time at which the multipart upload was initiated.</p>
     pub fn initiated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -111,6 +119,10 @@ impl MultipartUploadBuilder {
         self.initiated = input;
         self
     }
+    /// <p>Date and time at which the multipart upload was initiated.</p>
+    pub fn get_initiated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.initiated
+    }
     /// <p>The class of storage used to store the object.</p>
     pub fn storage_class(mut self, input: crate::types::StorageClass) -> Self {
         self.storage_class = ::std::option::Option::Some(input);
@@ -124,6 +136,10 @@ impl MultipartUploadBuilder {
         self.storage_class = input;
         self
     }
+    /// <p>The class of storage used to store the object.</p>
+    pub fn get_storage_class(&self) -> &::std::option::Option<crate::types::StorageClass> {
+        &self.storage_class
+    }
     /// <p>Specifies the owner of the object that is part of the multipart upload. </p>
     pub fn owner(mut self, input: crate::types::Owner) -> Self {
         self.owner = ::std::option::Option::Some(input);
@@ -134,6 +150,10 @@ impl MultipartUploadBuilder {
         self.owner = input;
         self
     }
+    /// <p>Specifies the owner of the object that is part of the multipart upload. </p>
+    pub fn get_owner(&self) -> &::std::option::Option<crate::types::Owner> {
+        &self.owner
+    }
     /// <p>Identifies who initiated the multipart upload.</p>
     pub fn initiator(mut self, input: crate::types::Initiator) -> Self {
         self.initiator = ::std::option::Option::Some(input);
@@ -143,6 +163,10 @@ impl MultipartUploadBuilder {
     pub fn set_initiator(mut self, input: ::std::option::Option<crate::types::Initiator>) -> Self {
         self.initiator = input;
         self
+    }
+    /// <p>Identifies who initiated the multipart upload.</p>
+    pub fn get_initiator(&self) -> &::std::option::Option<crate::types::Initiator> {
+        &self.initiator
     }
     /// <p>The algorithm that was used to create a checksum of the object.</p>
     pub fn checksum_algorithm(mut self, input: crate::types::ChecksumAlgorithm) -> Self {
@@ -156,6 +180,12 @@ impl MultipartUploadBuilder {
     ) -> Self {
         self.checksum_algorithm = input;
         self
+    }
+    /// <p>The algorithm that was used to create a checksum of the object.</p>
+    pub fn get_checksum_algorithm(
+        &self,
+    ) -> &::std::option::Option<crate::types::ChecksumAlgorithm> {
+        &self.checksum_algorithm
     }
     /// Consumes the builder and constructs a [`MultipartUpload`](crate::types::MultipartUpload).
     pub fn build(self) -> crate::types::MultipartUpload {

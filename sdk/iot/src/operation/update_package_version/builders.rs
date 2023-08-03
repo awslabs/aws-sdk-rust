@@ -37,6 +37,12 @@ impl UpdatePackageVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdatePackageVersion as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_package_version::builders::UpdatePackageVersionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl UpdatePackageVersionFluentBuilder {
         self.inner = self.inner.set_package_name(input);
         self
     }
+    /// <p>The name of the associated software package.</p>
+    pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_package_name()
+    }
     /// <p>The name of the target package version.</p>
     pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version_name(input.into());
@@ -137,6 +147,10 @@ impl UpdatePackageVersionFluentBuilder {
         self.inner = self.inner.set_version_name(input);
         self
     }
+    /// <p>The name of the target package version.</p>
+    pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version_name()
+    }
     /// <p>The package version description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -146,6 +160,10 @@ impl UpdatePackageVersionFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The package version description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Adds a key-value pair to `attributes`.
     ///
@@ -174,6 +192,16 @@ impl UpdatePackageVersionFluentBuilder {
         self.inner = self.inner.set_attributes(input);
         self
     }
+    /// <p>Metadata that can be used to define a package version’s configuration. For example, the S3 file location, configuration options that are being sent to the device or fleet. </p>
+    /// <p> <b>Note:</b> Attributes can be updated only when the package version is in a draft state.</p>
+    /// <p>The combined size of all the attributes on a package version is limited to 3KB.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_attributes()
+    }
     /// <p>The status that the package version should be assigned. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
     pub fn action(mut self, input: crate::types::PackageVersionAction) -> Self {
         self.inner = self.inner.action(input);
@@ -187,6 +215,10 @@ impl UpdatePackageVersionFluentBuilder {
         self.inner = self.inner.set_action(input);
         self
     }
+    /// <p>The status that the package version should be assigned. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::PackageVersionAction> {
+        self.inner.get_action()
+    }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -196,5 +228,9 @@ impl UpdatePackageVersionFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

@@ -41,6 +41,10 @@ impl DeleteNotificationRuleInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the notification rule you want to delete.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`DeleteNotificationRuleInput`](crate::operation::delete_notification_rule::DeleteNotificationRuleInput).
     pub fn build(
         self,

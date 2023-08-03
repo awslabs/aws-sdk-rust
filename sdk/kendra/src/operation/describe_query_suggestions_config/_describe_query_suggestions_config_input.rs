@@ -39,6 +39,10 @@ impl DescribeQuerySuggestionsConfigInputBuilder {
         self.index_id = input;
         self
     }
+    /// <p>The identifier of the index with query suggestions that you want to get information on.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_id
+    }
     /// Consumes the builder and constructs a [`DescribeQuerySuggestionsConfigInput`](crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigInput).
     pub fn build(
         self,

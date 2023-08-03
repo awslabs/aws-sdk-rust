@@ -72,6 +72,10 @@ impl RedshiftSourceBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the Amazon Redshift data store.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The database to read from.</p>
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl RedshiftSourceBuilder {
         self.database = input;
         self
     }
+    /// <p>The database to read from.</p>
+    pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database
+    }
     /// <p>The database table to read from.</p>
     pub fn table(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl RedshiftSourceBuilder {
     pub fn set_table(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table = input;
         self
+    }
+    /// <p>The database table to read from.</p>
+    pub fn get_table(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table
     }
     /// <p>The Amazon S3 path where temporary data can be staged when copying out of the database.</p>
     pub fn redshift_tmp_dir(
@@ -108,6 +120,10 @@ impl RedshiftSourceBuilder {
         self.redshift_tmp_dir = input;
         self
     }
+    /// <p>The Amazon S3 path where temporary data can be staged when copying out of the database.</p>
+    pub fn get_redshift_tmp_dir(&self) -> &::std::option::Option<::std::string::String> {
+        &self.redshift_tmp_dir
+    }
     /// <p>The IAM role with permissions.</p>
     pub fn tmp_dir_iam_role(
         mut self,
@@ -123,6 +139,10 @@ impl RedshiftSourceBuilder {
     ) -> Self {
         self.tmp_dir_iam_role = input;
         self
+    }
+    /// <p>The IAM role with permissions.</p>
+    pub fn get_tmp_dir_iam_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tmp_dir_iam_role
     }
     /// Consumes the builder and constructs a [`RedshiftSource`](crate::types::RedshiftSource).
     pub fn build(self) -> crate::types::RedshiftSource {

@@ -86,6 +86,10 @@ impl CreateVerifiedAccessGroupInputBuilder {
         self.verified_access_instance_id = input;
         self
     }
+    /// <p>The ID of the Verified Access instance.</p>
+    pub fn get_verified_access_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.verified_access_instance_id
+    }
     /// <p>A description for the Verified Access group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -95,6 +99,10 @@ impl CreateVerifiedAccessGroupInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description for the Verified Access group.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The Verified Access policy document.</p>
     pub fn policy_document(
@@ -111,6 +119,10 @@ impl CreateVerifiedAccessGroupInputBuilder {
     ) -> Self {
         self.policy_document = input;
         self
+    }
+    /// <p>The Verified Access policy document.</p>
+    pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_document
     }
     /// Appends an item to `tag_specifications`.
     ///
@@ -131,6 +143,12 @@ impl CreateVerifiedAccessGroupInputBuilder {
         self.tag_specifications = input;
         self
     }
+    /// <p>The tags to assign to the Verified Access group.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
+    }
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -141,6 +159,10 @@ impl CreateVerifiedAccessGroupInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -150,6 +172,10 @@ impl CreateVerifiedAccessGroupInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`CreateVerifiedAccessGroupInput`](crate::operation::create_verified_access_group::CreateVerifiedAccessGroupInput).
     pub fn build(

@@ -54,6 +54,10 @@ impl DescribeDataSourceInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn data_source_id(
         mut self,
@@ -69,6 +73,10 @@ impl DescribeDataSourceInputBuilder {
     ) -> Self {
         self.data_source_id = input;
         self
+    }
+    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_id
     }
     /// Consumes the builder and constructs a [`DescribeDataSourceInput`](crate::operation::describe_data_source::DescribeDataSourceInput).
     pub fn build(

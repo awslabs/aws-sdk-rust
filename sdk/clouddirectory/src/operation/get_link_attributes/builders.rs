@@ -36,6 +36,12 @@ impl GetLinkAttributesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetLinkAttributes as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_link_attributes::builders::GetLinkAttributesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl GetLinkAttributesFluentBuilder {
         self.inner = self.inner.set_directory_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_arn()
+    }
     /// <p>Allows a typed link specifier to be accepted as input.</p>
     pub fn typed_link_specifier(mut self, input: crate::types::TypedLinkSpecifier) -> Self {
         self.inner = self.inner.typed_link_specifier(input);
@@ -144,6 +154,12 @@ impl GetLinkAttributesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_typed_link_specifier(input);
         self
+    }
+    /// <p>Allows a typed link specifier to be accepted as input.</p>
+    pub fn get_typed_link_specifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::TypedLinkSpecifier> {
+        self.inner.get_typed_link_specifier()
     }
     /// Appends an item to `AttributeNames`.
     ///
@@ -165,6 +181,12 @@ impl GetLinkAttributesFluentBuilder {
         self.inner = self.inner.set_attribute_names(input);
         self
     }
+    /// <p>A list of attribute names whose values will be retrieved.</p>
+    pub fn get_attribute_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_attribute_names()
+    }
     /// <p>The consistency level at which to retrieve the attributes on a typed link.</p>
     pub fn consistency_level(mut self, input: crate::types::ConsistencyLevel) -> Self {
         self.inner = self.inner.consistency_level(input);
@@ -177,5 +199,9 @@ impl GetLinkAttributesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_consistency_level(input);
         self
+    }
+    /// <p>The consistency level at which to retrieve the attributes on a typed link.</p>
+    pub fn get_consistency_level(&self) -> &::std::option::Option<crate::types::ConsistencyLevel> {
+        self.inner.get_consistency_level()
     }
 }

@@ -45,6 +45,10 @@ impl GetPullRequestInputBuilder {
         self.pull_request_id = input;
         self
     }
+    /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+    pub fn get_pull_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pull_request_id
+    }
     /// Consumes the builder and constructs a [`GetPullRequestInput`](crate::operation::get_pull_request::GetPullRequestInput).
     pub fn build(
         self,

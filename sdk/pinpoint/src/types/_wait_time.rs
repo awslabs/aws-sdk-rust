@@ -48,6 +48,10 @@ impl WaitTimeBuilder {
         self.wait_for = input;
         self
     }
+    /// <p>The amount of time to wait, as a duration in ISO 8601 format, before determining whether the activity's conditions have been met or moving participants to the next activity in the journey.</p>
+    pub fn get_wait_for(&self) -> &::std::option::Option<::std::string::String> {
+        &self.wait_for
+    }
     /// <p>The date and time, in ISO 8601 format, when Amazon Pinpoint determines whether the activity's conditions have been met or the activity moves participants to the next activity in the journey.</p>
     pub fn wait_until(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.wait_until = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl WaitTimeBuilder {
     pub fn set_wait_until(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.wait_until = input;
         self
+    }
+    /// <p>The date and time, in ISO 8601 format, when Amazon Pinpoint determines whether the activity's conditions have been met or the activity moves participants to the next activity in the journey.</p>
+    pub fn get_wait_until(&self) -> &::std::option::Option<::std::string::String> {
+        &self.wait_until
     }
     /// Consumes the builder and constructs a [`WaitTime`](crate::types::WaitTime).
     pub fn build(self) -> crate::types::WaitTime {

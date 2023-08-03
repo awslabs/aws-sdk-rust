@@ -67,6 +67,10 @@ impl UpdateUserRequestItemBuilder {
         self.user_id = input;
         self
     }
+    /// <p>The user ID.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
+    }
     /// <p>The user license type.</p>
     pub fn license_type(mut self, input: crate::types::License) -> Self {
         self.license_type = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl UpdateUserRequestItemBuilder {
         self.license_type = input;
         self
     }
+    /// <p>The user license type.</p>
+    pub fn get_license_type(&self) -> &::std::option::Option<crate::types::License> {
+        &self.license_type
+    }
     /// <p>The user type.</p>
     pub fn user_type(mut self, input: crate::types::UserType) -> Self {
         self.user_type = ::std::option::Option::Some(input);
@@ -86,6 +94,10 @@ impl UpdateUserRequestItemBuilder {
     pub fn set_user_type(mut self, input: ::std::option::Option<crate::types::UserType>) -> Self {
         self.user_type = input;
         self
+    }
+    /// <p>The user type.</p>
+    pub fn get_user_type(&self) -> &::std::option::Option<crate::types::UserType> {
+        &self.user_type
     }
     /// <p>The Alexa for Business metadata.</p>
     pub fn alexa_for_business_metadata(
@@ -102,6 +114,12 @@ impl UpdateUserRequestItemBuilder {
     ) -> Self {
         self.alexa_for_business_metadata = input;
         self
+    }
+    /// <p>The Alexa for Business metadata.</p>
+    pub fn get_alexa_for_business_metadata(
+        &self,
+    ) -> &::std::option::Option<crate::types::AlexaForBusinessMetadata> {
+        &self.alexa_for_business_metadata
     }
     /// Consumes the builder and constructs a [`UpdateUserRequestItem`](crate::types::UpdateUserRequestItem).
     pub fn build(self) -> crate::types::UpdateUserRequestItem {

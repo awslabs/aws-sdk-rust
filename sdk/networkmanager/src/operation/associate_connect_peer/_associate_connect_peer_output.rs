@@ -53,6 +53,12 @@ impl AssociateConnectPeerOutputBuilder {
         self.connect_peer_association = input;
         self
     }
+    /// <p>The response to the Connect peer request.</p>
+    pub fn get_connect_peer_association(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConnectPeerAssociation> {
+        &self.connect_peer_association
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

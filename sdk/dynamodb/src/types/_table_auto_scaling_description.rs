@@ -72,6 +72,10 @@ impl TableAutoScalingDescriptionBuilder {
         self.table_name = input;
         self
     }
+    /// <p>The name of the table.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
+    }
     /// <p>The current state of the table:</p>
     /// <ul>
     /// <li> <p> <code>CREATING</code> - The table is being created.</p> </li>
@@ -97,6 +101,16 @@ impl TableAutoScalingDescriptionBuilder {
         self.table_status = input;
         self
     }
+    /// <p>The current state of the table:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATING</code> - The table is being created.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The table is being updated.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The table is being deleted.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> - The table is ready for use.</p> </li>
+    /// </ul>
+    pub fn get_table_status(&self) -> &::std::option::Option<crate::types::TableStatus> {
+        &self.table_status
+    }
     /// Appends an item to `replicas`.
     ///
     /// To override the contents of this collection use [`set_replicas`](Self::set_replicas).
@@ -115,6 +129,12 @@ impl TableAutoScalingDescriptionBuilder {
     ) -> Self {
         self.replicas = input;
         self
+    }
+    /// <p>Represents replicas of the global table.</p>
+    pub fn get_replicas(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicaAutoScalingDescription>> {
+        &self.replicas
     }
     /// Consumes the builder and constructs a [`TableAutoScalingDescription`](crate::types::TableAutoScalingDescription).
     pub fn build(self) -> crate::types::TableAutoScalingDescription {

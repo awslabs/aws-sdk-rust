@@ -57,6 +57,12 @@ impl PropertyFiltersBuilder {
         self.properties = input;
         self
     }
+    /// <p>A list of Property Filters.</p>
+    pub fn get_properties(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PropertyFilter>> {
+        &self.properties
+    }
     /// <p>The Logical Operator used to combine the Property Filters.</p>
     pub fn logical_operator(mut self, input: crate::types::LogicalOperator) -> Self {
         self.logical_operator = ::std::option::Option::Some(input);
@@ -69,6 +75,10 @@ impl PropertyFiltersBuilder {
     ) -> Self {
         self.logical_operator = input;
         self
+    }
+    /// <p>The Logical Operator used to combine the Property Filters.</p>
+    pub fn get_logical_operator(&self) -> &::std::option::Option<crate::types::LogicalOperator> {
+        &self.logical_operator
     }
     /// Consumes the builder and constructs a [`PropertyFilters`](crate::types::PropertyFilters).
     pub fn build(self) -> crate::types::PropertyFilters {

@@ -46,6 +46,10 @@ impl CreateJobOutputBuilder {
         self.job = input;
         self
     }
+    /// Each job converts an input file into an output file or files. For more information, see the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+    pub fn get_job(&self) -> &::std::option::Option<crate::types::Job> {
+        &self.job
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

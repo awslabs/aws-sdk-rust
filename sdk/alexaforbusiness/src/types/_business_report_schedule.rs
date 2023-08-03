@@ -98,6 +98,10 @@ impl BusinessReportScheduleBuilder {
         self.schedule_arn = input;
         self
     }
+    /// <p>The ARN of the business report schedule.</p>
+    pub fn get_schedule_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schedule_arn
+    }
     /// <p>The name identifier of the schedule.</p>
     pub fn schedule_name(
         mut self,
@@ -113,6 +117,10 @@ impl BusinessReportScheduleBuilder {
     ) -> Self {
         self.schedule_name = input;
         self
+    }
+    /// <p>The name identifier of the schedule.</p>
+    pub fn get_schedule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schedule_name
     }
     /// <p>The S3 bucket name of the output reports.</p>
     pub fn s3_bucket_name(
@@ -130,6 +138,10 @@ impl BusinessReportScheduleBuilder {
         self.s3_bucket_name = input;
         self
     }
+    /// <p>The S3 bucket name of the output reports.</p>
+    pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_name
+    }
     /// <p>The S3 key where the report is delivered.</p>
     pub fn s3_key_prefix(
         mut self,
@@ -146,6 +158,10 @@ impl BusinessReportScheduleBuilder {
         self.s3_key_prefix = input;
         self
     }
+    /// <p>The S3 key where the report is delivered.</p>
+    pub fn get_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_key_prefix
+    }
     /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
     pub fn format(mut self, input: crate::types::BusinessReportFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
@@ -158,6 +174,10 @@ impl BusinessReportScheduleBuilder {
     ) -> Self {
         self.format = input;
         self
+    }
+    /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::BusinessReportFormat> {
+        &self.format
     }
     /// <p>The content range of the reports.</p>
     pub fn content_range(mut self, input: crate::types::BusinessReportContentRange) -> Self {
@@ -172,6 +192,12 @@ impl BusinessReportScheduleBuilder {
         self.content_range = input;
         self
     }
+    /// <p>The content range of the reports.</p>
+    pub fn get_content_range(
+        &self,
+    ) -> &::std::option::Option<crate::types::BusinessReportContentRange> {
+        &self.content_range
+    }
     /// <p>The recurrence of the reports.</p>
     pub fn recurrence(mut self, input: crate::types::BusinessReportRecurrence) -> Self {
         self.recurrence = ::std::option::Option::Some(input);
@@ -185,6 +211,10 @@ impl BusinessReportScheduleBuilder {
         self.recurrence = input;
         self
     }
+    /// <p>The recurrence of the reports.</p>
+    pub fn get_recurrence(&self) -> &::std::option::Option<crate::types::BusinessReportRecurrence> {
+        &self.recurrence
+    }
     /// <p>The details of the last business report delivery for a specified time interval.</p>
     pub fn last_business_report(mut self, input: crate::types::BusinessReport) -> Self {
         self.last_business_report = ::std::option::Option::Some(input);
@@ -197,6 +227,10 @@ impl BusinessReportScheduleBuilder {
     ) -> Self {
         self.last_business_report = input;
         self
+    }
+    /// <p>The details of the last business report delivery for a specified time interval.</p>
+    pub fn get_last_business_report(&self) -> &::std::option::Option<crate::types::BusinessReport> {
+        &self.last_business_report
     }
     /// Consumes the builder and constructs a [`BusinessReportSchedule`](crate::types::BusinessReportSchedule).
     pub fn build(self) -> crate::types::BusinessReportSchedule {

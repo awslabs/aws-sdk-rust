@@ -81,6 +81,10 @@ impl DescribedWorkflowBuilder {
         self.arn = input;
         self
     }
+    /// <p>Specifies the unique Amazon Resource Name (ARN) for the workflow.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>Specifies the text description for the workflow.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl DescribedWorkflowBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Specifies the text description for the workflow.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `steps`.
     ///
@@ -110,6 +118,10 @@ impl DescribedWorkflowBuilder {
         self.steps = input;
         self
     }
+    /// <p>Specifies the details for the steps that are in the specified workflow.</p>
+    pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>> {
+        &self.steps
+    }
     /// Appends an item to `on_exception_steps`.
     ///
     /// To override the contents of this collection use [`set_on_exception_steps`](Self::set_on_exception_steps).
@@ -129,6 +141,12 @@ impl DescribedWorkflowBuilder {
         self.on_exception_steps = input;
         self
     }
+    /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p>
+    pub fn get_on_exception_steps(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>> {
+        &self.on_exception_steps
+    }
     /// <p>A unique identifier for the workflow.</p>
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
@@ -138,6 +156,10 @@ impl DescribedWorkflowBuilder {
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_id = input;
         self
+    }
+    /// <p>A unique identifier for the workflow.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_id
     }
     /// Appends an item to `tags`.
     ///
@@ -157,6 +179,10 @@ impl DescribedWorkflowBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Key-value pairs that can be used to group and search for workflows. Tags are metadata attached to workflows for any purpose.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`DescribedWorkflow`](crate::types::DescribedWorkflow).
     pub fn build(self) -> crate::types::DescribedWorkflow {

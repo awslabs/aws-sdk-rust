@@ -43,6 +43,10 @@ impl RoutingConfigBuilder {
         self.failover_config = input;
         self
     }
+    /// <p>The failover configuration for an endpoint. This includes what triggers failover and what happens when it's triggered.</p>
+    pub fn get_failover_config(&self) -> &::std::option::Option<crate::types::FailoverConfig> {
+        &self.failover_config
+    }
     /// Consumes the builder and constructs a [`RoutingConfig`](crate::types::RoutingConfig).
     pub fn build(self) -> crate::types::RoutingConfig {
         crate::types::RoutingConfig {

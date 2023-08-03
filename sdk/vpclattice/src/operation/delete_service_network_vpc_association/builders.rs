@@ -36,6 +36,10 @@ impl DeleteServiceNetworkVpcAssociationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteServiceNetworkVpcAssociation as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_service_network_vpc_association::builders::DeleteServiceNetworkVpcAssociationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -109,5 +113,11 @@ impl DeleteServiceNetworkVpcAssociationFluentBuilder {
             .inner
             .set_service_network_vpc_association_identifier(input);
         self
+    }
+    /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
+    pub fn get_service_network_vpc_association_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_network_vpc_association_identifier()
     }
 }

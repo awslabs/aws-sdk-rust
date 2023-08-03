@@ -36,6 +36,12 @@ impl DescribePlaceIndexFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribePlaceIndex as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_place_index::builders::DescribePlaceIndexInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +131,9 @@ impl DescribePlaceIndexFluentBuilder {
     pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_index_name(input);
         self
+    }
+    /// <p>The name of the place index resource.</p>
+    pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_index_name()
     }
 }

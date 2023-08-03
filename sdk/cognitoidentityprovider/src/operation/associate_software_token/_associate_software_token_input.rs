@@ -55,6 +55,10 @@ impl AssociateSoftwareTokenInputBuilder {
         self.access_token = input;
         self
     }
+    /// <p>A valid access token that Amazon Cognito issued to the user whose software token you want to generate.</p>
+    pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_token
+    }
     /// <p>The session that should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
     pub fn session(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl AssociateSoftwareTokenInputBuilder {
     pub fn set_session(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session = input;
         self
+    }
+    /// <p>The session that should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
+    pub fn get_session(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session
     }
     /// Consumes the builder and constructs a [`AssociateSoftwareTokenInput`](crate::operation::associate_software_token::AssociateSoftwareTokenInput).
     pub fn build(

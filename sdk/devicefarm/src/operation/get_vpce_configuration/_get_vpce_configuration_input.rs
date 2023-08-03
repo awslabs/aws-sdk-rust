@@ -40,6 +40,10 @@ impl GetVpceConfigurationInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to describe.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`GetVpceConfigurationInput`](crate::operation::get_vpce_configuration::GetVpceConfigurationInput).
     pub fn build(
         self,

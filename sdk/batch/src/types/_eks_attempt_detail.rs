@@ -90,6 +90,12 @@ impl EksAttemptDetailBuilder {
         self.containers = input;
         self
     }
+    /// <p>The details for the final status of the containers for this job attempt.</p>
+    pub fn get_containers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EksAttemptContainerDetail>> {
+        &self.containers
+    }
     /// <p>The name of the pod for this job attempt.</p>
     pub fn pod_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pod_name = ::std::option::Option::Some(input.into());
@@ -99,6 +105,10 @@ impl EksAttemptDetailBuilder {
     pub fn set_pod_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pod_name = input;
         self
+    }
+    /// <p>The name of the pod for this job attempt.</p>
+    pub fn get_pod_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pod_name
     }
     /// <p>The name of the node for this job attempt.</p>
     pub fn node_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -110,6 +120,10 @@ impl EksAttemptDetailBuilder {
         self.node_name = input;
         self
     }
+    /// <p>The name of the node for this job attempt.</p>
+    pub fn get_node_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_name
+    }
     /// <p>The Unix timestamp (in milliseconds) for when the attempt was started (when the attempt transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state).</p>
     pub fn started_at(mut self, input: i64) -> Self {
         self.started_at = ::std::option::Option::Some(input);
@@ -120,6 +134,10 @@ impl EksAttemptDetailBuilder {
         self.started_at = input;
         self
     }
+    /// <p>The Unix timestamp (in milliseconds) for when the attempt was started (when the attempt transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state).</p>
+    pub fn get_started_at(&self) -> &::std::option::Option<i64> {
+        &self.started_at
+    }
     /// <p>The Unix timestamp (in milliseconds) for when the attempt was stopped. This happens when the attempt transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>.</p>
     pub fn stopped_at(mut self, input: i64) -> Self {
         self.stopped_at = ::std::option::Option::Some(input);
@@ -129,6 +147,10 @@ impl EksAttemptDetailBuilder {
     pub fn set_stopped_at(mut self, input: ::std::option::Option<i64>) -> Self {
         self.stopped_at = input;
         self
+    }
+    /// <p>The Unix timestamp (in milliseconds) for when the attempt was stopped. This happens when the attempt transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>.</p>
+    pub fn get_stopped_at(&self) -> &::std::option::Option<i64> {
+        &self.stopped_at
     }
     /// <p>A short, human-readable string to provide additional details for the current status of the job attempt.</p>
     pub fn status_reason(
@@ -145,6 +167,10 @@ impl EksAttemptDetailBuilder {
     ) -> Self {
         self.status_reason = input;
         self
+    }
+    /// <p>A short, human-readable string to provide additional details for the current status of the job attempt.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
     }
     /// Consumes the builder and constructs a [`EksAttemptDetail`](crate::types::EksAttemptDetail).
     pub fn build(self) -> crate::types::EksAttemptDetail {

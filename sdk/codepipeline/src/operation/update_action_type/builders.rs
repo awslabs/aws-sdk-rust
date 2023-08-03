@@ -36,6 +36,12 @@ impl UpdateActionTypeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateActionType as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_action_type::builders::UpdateActionTypeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,5 +134,9 @@ impl UpdateActionTypeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_action_type(input);
         self
+    }
+    /// <p>The action type definition for the action type to be updated.</p>
+    pub fn get_action_type(&self) -> &::std::option::Option<crate::types::ActionTypeDeclaration> {
+        self.inner.get_action_type()
     }
 }

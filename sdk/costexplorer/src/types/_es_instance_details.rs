@@ -78,6 +78,10 @@ impl EsInstanceDetailsBuilder {
         self.instance_class = input;
         self
     }
+    /// <p>The class of instance that Amazon Web Services recommends.</p>
+    pub fn get_instance_class(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_class
+    }
     /// <p>The size of instance that Amazon Web Services recommends.</p>
     pub fn instance_size(
         mut self,
@@ -94,6 +98,10 @@ impl EsInstanceDetailsBuilder {
         self.instance_size = input;
         self
     }
+    /// <p>The size of instance that Amazon Web Services recommends.</p>
+    pub fn get_instance_size(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_size
+    }
     /// <p>The Amazon Web Services Region of the recommended reservation.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -103,6 +111,10 @@ impl EsInstanceDetailsBuilder {
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
+    }
+    /// <p>The Amazon Web Services Region of the recommended reservation.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// <p>Determines whether the recommendation is for a current-generation instance.</p>
     pub fn current_generation(mut self, input: bool) -> Self {
@@ -114,6 +126,10 @@ impl EsInstanceDetailsBuilder {
         self.current_generation = input;
         self
     }
+    /// <p>Determines whether the recommendation is for a current-generation instance.</p>
+    pub fn get_current_generation(&self) -> &::std::option::Option<bool> {
+        &self.current_generation
+    }
     /// <p>Determines whether the recommended reservation is size flexible.</p>
     pub fn size_flex_eligible(mut self, input: bool) -> Self {
         self.size_flex_eligible = ::std::option::Option::Some(input);
@@ -123,6 +139,10 @@ impl EsInstanceDetailsBuilder {
     pub fn set_size_flex_eligible(mut self, input: ::std::option::Option<bool>) -> Self {
         self.size_flex_eligible = input;
         self
+    }
+    /// <p>Determines whether the recommended reservation is size flexible.</p>
+    pub fn get_size_flex_eligible(&self) -> &::std::option::Option<bool> {
+        &self.size_flex_eligible
     }
     /// Consumes the builder and constructs a [`EsInstanceDetails`](crate::types::EsInstanceDetails).
     pub fn build(self) -> crate::types::EsInstanceDetails {

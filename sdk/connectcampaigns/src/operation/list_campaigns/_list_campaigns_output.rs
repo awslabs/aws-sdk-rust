@@ -57,6 +57,10 @@ impl ListCampaignsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// The token for the next set of results.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `campaign_summary_list`.
     ///
     /// To override the contents of this collection use [`set_campaign_summary_list`](Self::set_campaign_summary_list).
@@ -75,6 +79,12 @@ impl ListCampaignsOutputBuilder {
     ) -> Self {
         self.campaign_summary_list = input;
         self
+    }
+    /// A list of Amazon Connect campaigns.
+    pub fn get_campaign_summary_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CampaignSummary>> {
+        &self.campaign_summary_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

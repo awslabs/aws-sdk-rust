@@ -36,6 +36,10 @@ impl UpdateClusterKafkaVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateClusterKafkaVersion as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_cluster_kafka_version::builders::UpdateClusterKafkaVersionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl UpdateClusterKafkaVersionFluentBuilder {
         self.inner = self.inner.set_cluster_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_arn()
+    }
     /// <p>The custom configuration that should be applied on the new version of cluster.</p>
     pub fn configuration_info(mut self, input: crate::types::ConfigurationInfo) -> Self {
         self.inner = self.inner.configuration_info(input);
@@ -138,6 +146,12 @@ impl UpdateClusterKafkaVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_configuration_info(input);
         self
+    }
+    /// <p>The custom configuration that should be applied on the new version of cluster.</p>
+    pub fn get_configuration_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfigurationInfo> {
+        self.inner.get_configuration_info()
     }
     /// <p>Current cluster version.</p>
     pub fn current_version(
@@ -155,6 +169,10 @@ impl UpdateClusterKafkaVersionFluentBuilder {
         self.inner = self.inner.set_current_version(input);
         self
     }
+    /// <p>Current cluster version.</p>
+    pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_current_version()
+    }
     /// <p>Target Kafka version.</p>
     pub fn target_kafka_version(
         mut self,
@@ -170,5 +188,9 @@ impl UpdateClusterKafkaVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_target_kafka_version(input);
         self
+    }
+    /// <p>Target Kafka version.</p>
+    pub fn get_target_kafka_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_kafka_version()
     }
 }

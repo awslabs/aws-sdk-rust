@@ -51,6 +51,10 @@ impl EndpointPerformanceBuilder {
         self.metrics = input;
         self
     }
+    /// <p>The metrics for an existing endpoint.</p>
+    pub fn get_metrics(&self) -> &::std::option::Option<crate::types::InferenceMetrics> {
+        &self.metrics
+    }
     /// <p>Details about a customer endpoint that was compared in an Inference Recommender job.</p>
     pub fn endpoint_info(mut self, input: crate::types::EndpointInfo) -> Self {
         self.endpoint_info = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl EndpointPerformanceBuilder {
     ) -> Self {
         self.endpoint_info = input;
         self
+    }
+    /// <p>Details about a customer endpoint that was compared in an Inference Recommender job.</p>
+    pub fn get_endpoint_info(&self) -> &::std::option::Option<crate::types::EndpointInfo> {
+        &self.endpoint_info
     }
     /// Consumes the builder and constructs a [`EndpointPerformance`](crate::types::EndpointPerformance).
     pub fn build(self) -> crate::types::EndpointPerformance {

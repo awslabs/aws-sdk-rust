@@ -54,6 +54,10 @@ impl MixedInstancesPolicyBuilder {
         self.launch_template = input;
         self
     }
+    /// <p>One or more launch templates and the instance types (overrides) that are used to launch EC2 instances to fulfill On-Demand and Spot capacities.</p>
+    pub fn get_launch_template(&self) -> &::std::option::Option<crate::types::LaunchTemplate> {
+        &self.launch_template
+    }
     /// <p>The instances distribution.</p>
     pub fn instances_distribution(mut self, input: crate::types::InstancesDistribution) -> Self {
         self.instances_distribution = ::std::option::Option::Some(input);
@@ -66,6 +70,12 @@ impl MixedInstancesPolicyBuilder {
     ) -> Self {
         self.instances_distribution = input;
         self
+    }
+    /// <p>The instances distribution.</p>
+    pub fn get_instances_distribution(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstancesDistribution> {
+        &self.instances_distribution
     }
     /// Consumes the builder and constructs a [`MixedInstancesPolicy`](crate::types::MixedInstancesPolicy).
     pub fn build(self) -> crate::types::MixedInstancesPolicy {

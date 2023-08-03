@@ -56,6 +56,10 @@ impl ListTagsForStreamInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If you specify this parameter and the result of a <code>ListTagsForStream</code> call is truncated, the response includes a token that you can use in the next request to fetch the next batch of tags.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The Amazon Resource Name (ARN) of the stream that you want to list tags for.</p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_arn = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl ListTagsForStreamInputBuilder {
         self.stream_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the stream that you want to list tags for.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_arn
+    }
     /// <p>The name of the stream that you want to list tags for.</p>
     pub fn stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_name = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl ListTagsForStreamInputBuilder {
     pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_name = input;
         self
+    }
+    /// <p>The name of the stream that you want to list tags for.</p>
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_name
     }
     /// Consumes the builder and constructs a [`ListTagsForStreamInput`](crate::operation::list_tags_for_stream::ListTagsForStreamInput).
     pub fn build(

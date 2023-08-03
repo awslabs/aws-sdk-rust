@@ -48,6 +48,10 @@ impl TableFieldCustomTextContentBuilder {
         self.value = input;
         self
     }
+    /// <p>The string value of the custom text content for the table URL link content.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// <p>The font configuration of the custom text content for the table URL link content.</p>
     pub fn font_configuration(mut self, input: crate::types::FontConfiguration) -> Self {
         self.font_configuration = ::std::option::Option::Some(input);
@@ -60,6 +64,12 @@ impl TableFieldCustomTextContentBuilder {
     ) -> Self {
         self.font_configuration = input;
         self
+    }
+    /// <p>The font configuration of the custom text content for the table URL link content.</p>
+    pub fn get_font_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::FontConfiguration> {
+        &self.font_configuration
     }
     /// Consumes the builder and constructs a [`TableFieldCustomTextContent`](crate::types::TableFieldCustomTextContent).
     pub fn build(self) -> crate::types::TableFieldCustomTextContent {

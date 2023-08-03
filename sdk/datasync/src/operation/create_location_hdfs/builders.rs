@@ -36,6 +36,12 @@ impl CreateLocationHdfsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateLocationHdfs as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_location_hdfs::builders::CreateLocationHdfsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateLocationHdfsFluentBuilder {
         self.inner = self.inner.set_subdirectory(input);
         self
     }
+    /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write data to the HDFS cluster. If the subdirectory isn't specified, it will default to <code>/</code>.</p>
+    pub fn get_subdirectory(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_subdirectory()
+    }
     /// Appends an item to `NameNodes`.
     ///
     /// To override the contents of this collection use [`set_name_nodes`](Self::set_name_nodes).
@@ -143,6 +153,12 @@ impl CreateLocationHdfsFluentBuilder {
         self.inner = self.inner.set_name_nodes(input);
         self
     }
+    /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes. You can use only one NameNode.</p>
+    pub fn get_name_nodes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HdfsNameNode>> {
+        self.inner.get_name_nodes()
+    }
     /// <p>The size of data blocks to write into the HDFS cluster. The block size must be a multiple of 512 bytes. The default block size is 128 mebibytes (MiB).</p>
     pub fn block_size(mut self, input: i32) -> Self {
         self.inner = self.inner.block_size(input);
@@ -153,6 +169,10 @@ impl CreateLocationHdfsFluentBuilder {
         self.inner = self.inner.set_block_size(input);
         self
     }
+    /// <p>The size of data blocks to write into the HDFS cluster. The block size must be a multiple of 512 bytes. The default block size is 128 mebibytes (MiB).</p>
+    pub fn get_block_size(&self) -> &::std::option::Option<i32> {
+        self.inner.get_block_size()
+    }
     /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. By default, data is replicated to three DataNodes.</p>
     pub fn replication_factor(mut self, input: i32) -> Self {
         self.inner = self.inner.replication_factor(input);
@@ -162,6 +182,10 @@ impl CreateLocationHdfsFluentBuilder {
     pub fn set_replication_factor(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_replication_factor(input);
         self
+    }
+    /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. By default, data is replicated to three DataNodes.</p>
+    pub fn get_replication_factor(&self) -> &::std::option::Option<i32> {
+        self.inner.get_replication_factor()
     }
     /// <p>The URI of the HDFS cluster's Key Management Server (KMS). </p>
     pub fn kms_key_provider_uri(
@@ -179,6 +203,10 @@ impl CreateLocationHdfsFluentBuilder {
         self.inner = self.inner.set_kms_key_provider_uri(input);
         self
     }
+    /// <p>The URI of the HDFS cluster's Key Management Server (KMS). </p>
+    pub fn get_kms_key_provider_uri(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_provider_uri()
+    }
     /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer protection settings configured on the Hadoop Distributed File System (HDFS) cluster. If <code>QopConfiguration</code> isn't specified, <code>RpcProtection</code> and <code>DataTransferProtection</code> default to <code>PRIVACY</code>. If you set <code>RpcProtection</code> or <code>DataTransferProtection</code>, the other parameter assumes the same value. </p>
     pub fn qop_configuration(mut self, input: crate::types::QopConfiguration) -> Self {
         self.inner = self.inner.qop_configuration(input);
@@ -191,6 +219,10 @@ impl CreateLocationHdfsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_qop_configuration(input);
         self
+    }
+    /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer protection settings configured on the Hadoop Distributed File System (HDFS) cluster. If <code>QopConfiguration</code> isn't specified, <code>RpcProtection</code> and <code>DataTransferProtection</code> default to <code>PRIVACY</code>. If you set <code>RpcProtection</code> or <code>DataTransferProtection</code>, the other parameter assumes the same value. </p>
+    pub fn get_qop_configuration(&self) -> &::std::option::Option<crate::types::QopConfiguration> {
+        self.inner.get_qop_configuration()
     }
     /// <p>The type of authentication used to determine the identity of the user. </p>
     pub fn authentication_type(mut self, input: crate::types::HdfsAuthenticationType) -> Self {
@@ -205,6 +237,12 @@ impl CreateLocationHdfsFluentBuilder {
         self.inner = self.inner.set_authentication_type(input);
         self
     }
+    /// <p>The type of authentication used to determine the identity of the user. </p>
+    pub fn get_authentication_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::HdfsAuthenticationType> {
+        self.inner.get_authentication_type()
+    }
     /// <p>The user name used to identify the client on the host operating system. </p> <note>
     /// <p>If <code>SIMPLE</code> is specified for <code>AuthenticationType</code>, this parameter is required. </p>
     /// </note>
@@ -218,6 +256,12 @@ impl CreateLocationHdfsFluentBuilder {
     pub fn set_simple_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_simple_user(input);
         self
+    }
+    /// <p>The user name used to identify the client on the host operating system. </p> <note>
+    /// <p>If <code>SIMPLE</code> is specified for <code>AuthenticationType</code>, this parameter is required. </p>
+    /// </note>
+    pub fn get_simple_user(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_simple_user()
     }
     /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p> <note>
     /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required.</p>
@@ -239,6 +283,12 @@ impl CreateLocationHdfsFluentBuilder {
         self.inner = self.inner.set_kerberos_principal(input);
         self
     }
+    /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p> <note>
+    /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required.</p>
+    /// </note>
+    pub fn get_kerberos_principal(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kerberos_principal()
+    }
     /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you're using the CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text. </p> <note>
     /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required. </p>
     /// </note>
@@ -255,6 +305,12 @@ impl CreateLocationHdfsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_kerberos_keytab(input);
         self
+    }
+    /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you're using the CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text. </p> <note>
+    /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required. </p>
+    /// </note>
+    pub fn get_kerberos_keytab(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        self.inner.get_kerberos_keytab()
     }
     /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text. </p> <note>
     /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required.</p>
@@ -273,6 +329,12 @@ impl CreateLocationHdfsFluentBuilder {
         self.inner = self.inner.set_kerberos_krb5_conf(input);
         self
     }
+    /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text. </p> <note>
+    /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required.</p>
+    /// </note>
+    pub fn get_kerberos_krb5_conf(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        self.inner.get_kerberos_krb5_conf()
+    }
     /// Appends an item to `AgentArns`.
     ///
     /// To override the contents of this collection use [`set_agent_arns`](Self::set_agent_arns).
@@ -290,6 +352,10 @@ impl CreateLocationHdfsFluentBuilder {
         self.inner = self.inner.set_agent_arns(input);
         self
     }
+    /// <p>The Amazon Resource Names (ARNs) of the agents that are used to connect to the HDFS cluster.</p>
+    pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_agent_arns()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -306,5 +372,9 @@ impl CreateLocationHdfsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources. </p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>> {
+        self.inner.get_tags()
     }
 }

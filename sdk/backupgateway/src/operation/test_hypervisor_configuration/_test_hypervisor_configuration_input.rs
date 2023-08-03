@@ -71,6 +71,10 @@ impl TestHypervisorConfigurationInputBuilder {
         self.gateway_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway to the hypervisor to test.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
+    }
     /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
     pub fn host(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl TestHypervisorConfigurationInputBuilder {
     pub fn set_host(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.host = input;
         self
+    }
+    /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
+    pub fn get_host(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host
     }
     /// <p>The username for the hypervisor.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -91,6 +99,10 @@ impl TestHypervisorConfigurationInputBuilder {
         self.username = input;
         self
     }
+    /// <p>The username for the hypervisor.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
+    }
     /// <p>The password for the hypervisor.</p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
@@ -100,6 +112,10 @@ impl TestHypervisorConfigurationInputBuilder {
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.password = input;
         self
+    }
+    /// <p>The password for the hypervisor.</p>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.password
     }
     /// Consumes the builder and constructs a [`TestHypervisorConfigurationInput`](crate::operation::test_hypervisor_configuration::TestHypervisorConfigurationInput).
     pub fn build(

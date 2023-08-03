@@ -183,6 +183,13 @@ impl RequestSpotInstancesInputBuilder {
         self.availability_zone_group = input;
         self
     }
+    /// <p>The user-specified name for a logical grouping of requests.</p>
+    /// <p>When you specify an Availability Zone group in a Spot Instance request, all Spot Instances in the request are launched in the same Availability Zone. Instance proximity is maintained with this parameter, but the choice of Availability Zone is not. The group applies only to requests for Spot Instances of the same instance type. Any additional Spot Instance requests that are specified with the same Availability Zone group name are launched in that same Availability Zone, as long as at least one instance from the group is still active.</p>
+    /// <p>If there is no active instance running in the Availability Zone group that you specify for a new Spot Instance request (all instances are terminated, the request is expired, or the maximum price you specified falls below current Spot price), then Amazon EC2 launches the instance in any Availability Zone where the constraint can be met. Consequently, the subsequent set of Spot Instances could be placed in a different zone from the original request, even if you specified the same Availability Zone group.</p>
+    /// <p>Default: Instances are launched in any available Availability Zone.</p>
+    pub fn get_availability_zone_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_group
+    }
     /// <p>Deprecated.</p>
     pub fn block_duration_minutes(mut self, input: i32) -> Self {
         self.block_duration_minutes = ::std::option::Option::Some(input);
@@ -192,6 +199,10 @@ impl RequestSpotInstancesInputBuilder {
     pub fn set_block_duration_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.block_duration_minutes = input;
         self
+    }
+    /// <p>Deprecated.</p>
+    pub fn get_block_duration_minutes(&self) -> &::std::option::Option<i32> {
+        &self.block_duration_minutes
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure Idempotency</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -203,6 +214,10 @@ impl RequestSpotInstancesInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure Idempotency</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -212,6 +227,10 @@ impl RequestSpotInstancesInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// <p>The maximum number of Spot Instances to launch.</p>
     /// <p>Default: 1</p>
@@ -225,6 +244,11 @@ impl RequestSpotInstancesInputBuilder {
         self.instance_count = input;
         self
     }
+    /// <p>The maximum number of Spot Instances to launch.</p>
+    /// <p>Default: 1</p>
+    pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.instance_count
+    }
     /// <p>The instance launch group. Launch groups are Spot Instances that launch together and terminate together.</p>
     /// <p>Default: Instances are launched and terminated individually</p>
     pub fn launch_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -236,6 +260,11 @@ impl RequestSpotInstancesInputBuilder {
     pub fn set_launch_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launch_group = input;
         self
+    }
+    /// <p>The instance launch group. Launch groups are Spot Instances that launch together and terminate together.</p>
+    /// <p>Default: Instances are launched and terminated individually</p>
+    pub fn get_launch_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_group
     }
     /// <p>The launch specification.</p>
     pub fn launch_specification(
@@ -253,6 +282,12 @@ impl RequestSpotInstancesInputBuilder {
         self.launch_specification = input;
         self
     }
+    /// <p>The launch specification.</p>
+    pub fn get_launch_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::RequestSpotLaunchSpecification> {
+        &self.launch_specification
+    }
     /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
@@ -266,6 +301,12 @@ impl RequestSpotInstancesInputBuilder {
     pub fn set_spot_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.spot_price = input;
         self
+    }
+    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
+    /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
+    /// </important>
+    pub fn get_spot_price(&self) -> &::std::option::Option<::std::string::String> {
+        &self.spot_price
     }
     /// <p>The Spot Instance request type.</p>
     /// <p>Default: <code>one-time</code> </p>
@@ -282,6 +323,11 @@ impl RequestSpotInstancesInputBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The Spot Instance request type.</p>
+    /// <p>Default: <code>one-time</code> </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::SpotInstanceType> {
+        &self.r#type
+    }
     /// <p>The start date of the request. If this is a one-time request, the request becomes active at this date and time and remains active until all instances launch, the request expires, or the request is canceled. If the request is persistent, the request becomes active at this date and time and remains active until it expires or is canceled.</p>
     /// <p>The specified start date and time cannot be equal to the current date and time. You must specify a start date and time that occurs after the current date and time.</p>
     pub fn valid_from(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -296,6 +342,11 @@ impl RequestSpotInstancesInputBuilder {
     ) -> Self {
         self.valid_from = input;
         self
+    }
+    /// <p>The start date of the request. If this is a one-time request, the request becomes active at this date and time and remains active until all instances launch, the request expires, or the request is canceled. If the request is persistent, the request becomes active at this date and time and remains active until it expires or is canceled.</p>
+    /// <p>The specified start date and time cannot be equal to the current date and time. You must specify a start date and time that occurs after the current date and time.</p>
+    pub fn get_valid_from(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.valid_from
     }
     /// <p>The end date of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
     /// <ul>
@@ -318,6 +369,14 @@ impl RequestSpotInstancesInputBuilder {
         self.valid_until = input;
         self
     }
+    /// <p>The end date of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+    /// <ul>
+    /// <li> <p>For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is reached. Otherwise, the request remains active until you cancel it. </p> </li>
+    /// <li> <p>For a one-time request, the request remains active until all instances launch, the request is canceled, or the <code>ValidUntil</code> date and time is reached. By default, the request is valid for 7 days from the date the request was created.</p> </li>
+    /// </ul>
+    pub fn get_valid_until(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.valid_until
+    }
     /// Appends an item to `tag_specifications`.
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
@@ -337,6 +396,12 @@ impl RequestSpotInstancesInputBuilder {
         self.tag_specifications = input;
         self
     }
+    /// <p>The key-value pair for tagging the Spot Instance request on creation. The value for <code>ResourceType</code> must be <code>spot-instances-request</code>, otherwise the Spot Instance request fails. To tag the Spot Instance request after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>. </p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
+    }
     /// <p>The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.</p>
     pub fn instance_interruption_behavior(
         mut self,
@@ -352,6 +417,12 @@ impl RequestSpotInstancesInputBuilder {
     ) -> Self {
         self.instance_interruption_behavior = input;
         self
+    }
+    /// <p>The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.</p>
+    pub fn get_instance_interruption_behavior(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceInterruptionBehavior> {
+        &self.instance_interruption_behavior
     }
     /// Consumes the builder and constructs a [`RequestSpotInstancesInput`](crate::operation::request_spot_instances::RequestSpotInstancesInput).
     pub fn build(

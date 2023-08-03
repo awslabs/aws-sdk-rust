@@ -47,6 +47,10 @@ impl DescribeApplicationStateInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The configurationId in Application Discovery Service that uniquely identifies the grouped application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// Consumes the builder and constructs a [`DescribeApplicationStateInput`](crate::operation::describe_application_state::DescribeApplicationStateInput).
     pub fn build(
         self,

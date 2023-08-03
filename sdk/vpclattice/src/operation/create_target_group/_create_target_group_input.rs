@@ -80,6 +80,10 @@ impl CreateTargetGroupInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the target group. The name must be unique within the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type of target group.</p>
     pub fn r#type(mut self, input: crate::types::TargetGroupType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -89,6 +93,10 @@ impl CreateTargetGroupInputBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::TargetGroupType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of target group.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::TargetGroupType> {
+        &self.r#type
     }
     /// <p>The target group configuration. If <code>type</code> is set to <code>LAMBDA</code>, this parameter doesn't apply.</p>
     pub fn config(mut self, input: crate::types::TargetGroupConfig) -> Self {
@@ -103,6 +111,10 @@ impl CreateTargetGroupInputBuilder {
         self.config = input;
         self
     }
+    /// <p>The target group configuration. If <code>type</code> is set to <code>LAMBDA</code>, this parameter doesn't apply.</p>
+    pub fn get_config(&self) -> &::std::option::Option<crate::types::TargetGroupConfig> {
+        &self.config
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -112,6 +124,10 @@ impl CreateTargetGroupInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -137,6 +153,14 @@ impl CreateTargetGroupInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags for the target group.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateTargetGroupInput`](crate::operation::create_target_group::CreateTargetGroupInput).
     pub fn build(

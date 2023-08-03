@@ -39,6 +39,10 @@ impl UpdateSchemaFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateSchema as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_schema::builders::UpdateSchemaInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +133,14 @@ impl UpdateSchemaFluentBuilder {
         self.inner = self.inner.set_schema_id(input);
         self
     }
+    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
+    /// <ul>
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+    /// </ul>
+    pub fn get_schema_id(&self) -> &::std::option::Option<crate::types::SchemaId> {
+        self.inner.get_schema_id()
+    }
     /// <p>Version number required for check pointing. One of <code>VersionNumber</code> or <code>Compatibility</code> has to be provided.</p>
     pub fn schema_version_number(mut self, input: crate::types::SchemaVersionNumber) -> Self {
         self.inner = self.inner.schema_version_number(input);
@@ -141,6 +153,12 @@ impl UpdateSchemaFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_schema_version_number(input);
         self
+    }
+    /// <p>Version number required for check pointing. One of <code>VersionNumber</code> or <code>Compatibility</code> has to be provided.</p>
+    pub fn get_schema_version_number(
+        &self,
+    ) -> &::std::option::Option<crate::types::SchemaVersionNumber> {
+        self.inner.get_schema_version_number()
     }
     /// <p>The new compatibility setting for the schema.</p>
     pub fn compatibility(mut self, input: crate::types::Compatibility) -> Self {
@@ -155,6 +173,10 @@ impl UpdateSchemaFluentBuilder {
         self.inner = self.inner.set_compatibility(input);
         self
     }
+    /// <p>The new compatibility setting for the schema.</p>
+    pub fn get_compatibility(&self) -> &::std::option::Option<crate::types::Compatibility> {
+        self.inner.get_compatibility()
+    }
     /// <p>The new description for the schema.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -164,5 +186,9 @@ impl UpdateSchemaFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The new description for the schema.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
 }

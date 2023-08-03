@@ -50,6 +50,13 @@ impl DeprecateWorkflowTypeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeprecateWorkflowType as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::deprecate_workflow_type::builders::DeprecateWorkflowTypeInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +147,10 @@ impl DeprecateWorkflowTypeFluentBuilder {
         self.inner = self.inner.set_domain(input);
         self
     }
+    /// <p>The name of the domain in which the workflow type is registered.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain()
+    }
     /// <p>The workflow type to deprecate.</p>
     pub fn workflow_type(mut self, input: crate::types::WorkflowType) -> Self {
         self.inner = self.inner.workflow_type(input);
@@ -152,5 +163,9 @@ impl DeprecateWorkflowTypeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_workflow_type(input);
         self
+    }
+    /// <p>The workflow type to deprecate.</p>
+    pub fn get_workflow_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
+        self.inner.get_workflow_type()
     }
 }

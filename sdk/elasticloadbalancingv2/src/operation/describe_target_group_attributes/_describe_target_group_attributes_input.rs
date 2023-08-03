@@ -45,6 +45,10 @@ impl DescribeTargetGroupAttributesInputBuilder {
         self.target_group_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the target group.</p>
+    pub fn get_target_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_group_arn
+    }
     /// Consumes the builder and constructs a [`DescribeTargetGroupAttributesInput`](crate::operation::describe_target_group_attributes::DescribeTargetGroupAttributesInput).
     pub fn build(
         self,

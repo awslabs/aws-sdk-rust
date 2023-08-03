@@ -59,6 +59,10 @@ impl ParticipatingGatewaysBuilder {
         self.downlink_mode = input;
         self
     }
+    /// <p>Indicates whether to send the downlink message in sequential mode or concurrent mode, or to use only the chosen gateways from the previous uplink message transmission.</p>
+    pub fn get_downlink_mode(&self) -> &::std::option::Option<crate::types::DownlinkMode> {
+        &self.downlink_mode
+    }
     /// Appends an item to `gateway_list`.
     ///
     /// To override the contents of this collection use [`set_gateway_list`](Self::set_gateway_list).
@@ -78,6 +82,12 @@ impl ParticipatingGatewaysBuilder {
         self.gateway_list = input;
         self
     }
+    /// <p>The list of gateways that you want to use for sending the downlink data traffic.</p>
+    pub fn get_gateway_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GatewayListItem>> {
+        &self.gateway_list
+    }
     /// <p>The duration of time for which AWS IoT Core for LoRaWAN will wait before transmitting the payload to the next gateway.</p>
     pub fn transmission_interval(mut self, input: i32) -> Self {
         self.transmission_interval = ::std::option::Option::Some(input);
@@ -87,6 +97,10 @@ impl ParticipatingGatewaysBuilder {
     pub fn set_transmission_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.transmission_interval = input;
         self
+    }
+    /// <p>The duration of time for which AWS IoT Core for LoRaWAN will wait before transmitting the payload to the next gateway.</p>
+    pub fn get_transmission_interval(&self) -> &::std::option::Option<i32> {
+        &self.transmission_interval
     }
     /// Consumes the builder and constructs a [`ParticipatingGateways`](crate::types::ParticipatingGateways).
     pub fn build(self) -> crate::types::ParticipatingGateways {

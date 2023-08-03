@@ -39,6 +39,10 @@ impl DeleteDomainInputBuilder {
         self.domain_id = input;
         self
     }
+    /// <p>The identifier of the domain you want to delete.</p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_id
+    }
     /// Consumes the builder and constructs a [`DeleteDomainInput`](crate::operation::delete_domain::DeleteDomainInput).
     pub fn build(
         self,

@@ -43,6 +43,12 @@ impl ConversationLevelTestResultsFilterByBuilder {
         self.end_to_end_result = input;
         self
     }
+    /// <p>The selection of matched or mismatched end-to-end status to filter test set results data at the conversation level.</p>
+    pub fn get_end_to_end_result(
+        &self,
+    ) -> &::std::option::Option<crate::types::TestResultMatchStatus> {
+        &self.end_to_end_result
+    }
     /// Consumes the builder and constructs a [`ConversationLevelTestResultsFilterBy`](crate::types::ConversationLevelTestResultsFilterBy).
     pub fn build(self) -> crate::types::ConversationLevelTestResultsFilterBy {
         crate::types::ConversationLevelTestResultsFilterBy {

@@ -36,6 +36,13 @@ impl UpdateLongTermPricingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateLongTermPricing as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_long_term_pricing::builders::UpdateLongTermPricingInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl UpdateLongTermPricingFluentBuilder {
         self.inner = self.inner.set_long_term_pricing_id(input);
         self
     }
+    /// <p>The ID of the long-term pricing type for the device.</p>
+    pub fn get_long_term_pricing_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_long_term_pricing_id()
+    }
     /// <p>Specifies that a device that is ordered with long-term pricing should be replaced with a new device.</p>
     pub fn replacement_job(
         mut self,
@@ -148,6 +159,10 @@ impl UpdateLongTermPricingFluentBuilder {
         self.inner = self.inner.set_replacement_job(input);
         self
     }
+    /// <p>Specifies that a device that is ordered with long-term pricing should be replaced with a new device.</p>
+    pub fn get_replacement_job(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_replacement_job()
+    }
     /// <p>If set to <code>true</code>, specifies that the current long-term pricing type for the device should be automatically renewed before the long-term pricing contract expires.</p>
     pub fn is_long_term_pricing_auto_renew(mut self, input: bool) -> Self {
         self.inner = self.inner.is_long_term_pricing_auto_renew(input);
@@ -160,5 +175,9 @@ impl UpdateLongTermPricingFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_is_long_term_pricing_auto_renew(input);
         self
+    }
+    /// <p>If set to <code>true</code>, specifies that the current long-term pricing type for the device should be automatically renewed before the long-term pricing contract expires.</p>
+    pub fn get_is_long_term_pricing_auto_renew(&self) -> &::std::option::Option<bool> {
+        self.inner.get_is_long_term_pricing_auto_renew()
     }
 }

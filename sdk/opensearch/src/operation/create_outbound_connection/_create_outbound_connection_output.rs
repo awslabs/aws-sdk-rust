@@ -108,6 +108,12 @@ impl CreateOutboundConnectionOutputBuilder {
         self.local_domain_info = input;
         self
     }
+    /// <p>Information about the source (local) domain.</p>
+    pub fn get_local_domain_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::DomainInformationContainer> {
+        &self.local_domain_info
+    }
     /// <p>Information about the destination (remote) domain.</p>
     pub fn remote_domain_info(mut self, input: crate::types::DomainInformationContainer) -> Self {
         self.remote_domain_info = ::std::option::Option::Some(input);
@@ -120,6 +126,12 @@ impl CreateOutboundConnectionOutputBuilder {
     ) -> Self {
         self.remote_domain_info = input;
         self
+    }
+    /// <p>Information about the destination (remote) domain.</p>
+    pub fn get_remote_domain_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::DomainInformationContainer> {
+        &self.remote_domain_info
     }
     /// <p>Name of the connection.</p>
     pub fn connection_alias(
@@ -137,6 +149,10 @@ impl CreateOutboundConnectionOutputBuilder {
         self.connection_alias = input;
         self
     }
+    /// <p>Name of the connection.</p>
+    pub fn get_connection_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_alias
+    }
     /// <p>The status of the connection.</p>
     pub fn connection_status(mut self, input: crate::types::OutboundConnectionStatus) -> Self {
         self.connection_status = ::std::option::Option::Some(input);
@@ -149,6 +165,12 @@ impl CreateOutboundConnectionOutputBuilder {
     ) -> Self {
         self.connection_status = input;
         self
+    }
+    /// <p>The status of the connection.</p>
+    pub fn get_connection_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::OutboundConnectionStatus> {
+        &self.connection_status
     }
     /// <p>The unique identifier for the created outbound connection, which is used for subsequent operations on the connection.</p>
     pub fn connection_id(
@@ -166,6 +188,10 @@ impl CreateOutboundConnectionOutputBuilder {
         self.connection_id = input;
         self
     }
+    /// <p>The unique identifier for the created outbound connection, which is used for subsequent operations on the connection.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_id
+    }
     /// <p>The connection mode.</p>
     pub fn connection_mode(mut self, input: crate::types::ConnectionMode) -> Self {
         self.connection_mode = ::std::option::Option::Some(input);
@@ -179,6 +205,10 @@ impl CreateOutboundConnectionOutputBuilder {
         self.connection_mode = input;
         self
     }
+    /// <p>The connection mode.</p>
+    pub fn get_connection_mode(&self) -> &::std::option::Option<crate::types::ConnectionMode> {
+        &self.connection_mode
+    }
     /// <p>The <code>ConnectionProperties</code> for the newly created connection.</p>
     pub fn connection_properties(mut self, input: crate::types::ConnectionProperties) -> Self {
         self.connection_properties = ::std::option::Option::Some(input);
@@ -191,6 +221,12 @@ impl CreateOutboundConnectionOutputBuilder {
     ) -> Self {
         self.connection_properties = input;
         self
+    }
+    /// <p>The <code>ConnectionProperties</code> for the newly created connection.</p>
+    pub fn get_connection_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConnectionProperties> {
+        &self.connection_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

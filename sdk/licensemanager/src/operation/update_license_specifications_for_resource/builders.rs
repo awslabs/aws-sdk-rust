@@ -37,6 +37,10 @@ impl UpdateLicenseSpecificationsForResourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateLicenseSpecificationsForResource as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_license_specifications_for_resource::builders::UpdateLicenseSpecificationsForResourceInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -101,6 +105,10 @@ impl UpdateLicenseSpecificationsForResourceFluentBuilder {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
+    }
     /// Appends an item to `AddLicenseSpecifications`.
     ///
     /// To override the contents of this collection use [`set_add_license_specifications`](Self::set_add_license_specifications).
@@ -117,6 +125,12 @@ impl UpdateLicenseSpecificationsForResourceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_add_license_specifications(input);
         self
+    }
+    /// <p>ARNs of the license configurations to add.</p>
+    pub fn get_add_license_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LicenseSpecification>> {
+        self.inner.get_add_license_specifications()
     }
     /// Appends an item to `RemoveLicenseSpecifications`.
     ///
@@ -137,5 +151,11 @@ impl UpdateLicenseSpecificationsForResourceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_remove_license_specifications(input);
         self
+    }
+    /// <p>ARNs of the license configurations to remove.</p>
+    pub fn get_remove_license_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LicenseSpecification>> {
+        self.inner.get_remove_license_specifications()
     }
 }

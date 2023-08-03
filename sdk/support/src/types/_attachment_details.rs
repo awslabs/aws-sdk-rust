@@ -54,6 +54,10 @@ impl AttachmentDetailsBuilder {
         self.attachment_id = input;
         self
     }
+    /// <p>The ID of the attachment.</p>
+    pub fn get_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attachment_id
+    }
     /// <p>The file name of the attachment.</p>
     pub fn file_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_name = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl AttachmentDetailsBuilder {
     pub fn set_file_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_name = input;
         self
+    }
+    /// <p>The file name of the attachment.</p>
+    pub fn get_file_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_name
     }
     /// Consumes the builder and constructs a [`AttachmentDetails`](crate::types::AttachmentDetails).
     pub fn build(self) -> crate::types::AttachmentDetails {

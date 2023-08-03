@@ -46,6 +46,10 @@ impl CreateIpGroupOutputBuilder {
         self.group_id = input;
         self
     }
+    /// <p>The identifier of the group.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

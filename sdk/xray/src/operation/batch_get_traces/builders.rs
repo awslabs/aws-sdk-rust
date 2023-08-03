@@ -36,6 +36,12 @@ impl BatchGetTracesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchGetTraces as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_get_traces::builders::BatchGetTracesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -144,6 +150,10 @@ impl BatchGetTracesFluentBuilder {
         self.inner = self.inner.set_trace_ids(input);
         self
     }
+    /// <p>Specify the trace IDs of requests for which to retrieve segments.</p>
+    pub fn get_trace_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_trace_ids()
+    }
     /// <p>Pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -153,5 +163,9 @@ impl BatchGetTracesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>Pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

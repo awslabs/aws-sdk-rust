@@ -39,6 +39,10 @@ impl CancelJobInputBuilder {
         self.job_arn = input;
         self
     }
+    /// <p>The ARN of the Amazon Braket job to cancel.</p>
+    pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_arn
+    }
     /// Consumes the builder and constructs a [`CancelJobInput`](crate::operation::cancel_job::CancelJobInput).
     pub fn build(
         self,

@@ -51,6 +51,10 @@ impl ResourceStringFilterBuilder {
         self.comparison = input;
         self
     }
+    /// <p>The filter's comparison.</p>
+    pub fn get_comparison(&self) -> &::std::option::Option<crate::types::ResourceStringComparison> {
+        &self.comparison
+    }
     /// <p>The filter's value.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl ResourceStringFilterBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The filter's value.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`ResourceStringFilter`](crate::types::ResourceStringFilter).
     pub fn build(self) -> crate::types::ResourceStringFilter {

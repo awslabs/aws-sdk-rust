@@ -36,6 +36,10 @@ impl GetPortalServiceProviderMetadataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetPortalServiceProviderMetadata as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_portal_service_provider_metadata::builders::GetPortalServiceProviderMetadataInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -99,5 +103,9 @@ impl GetPortalServiceProviderMetadataFluentBuilder {
     pub fn set_portal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_portal_arn(input);
         self
+    }
+    /// <p>The ARN of the web portal.</p>
+    pub fn get_portal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_portal_arn()
     }
 }

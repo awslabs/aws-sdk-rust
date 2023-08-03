@@ -41,6 +41,10 @@ impl UpdateVpcIngressConnectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateVpcIngressConnection as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_vpc_ingress_connection::builders::UpdateVpcIngressConnectionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +141,10 @@ impl UpdateVpcIngressConnectionFluentBuilder {
         self.inner = self.inner.set_vpc_ingress_connection_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (Arn) for the App Runner VPC Ingress Connection resource that you want to update.</p>
+    pub fn get_vpc_ingress_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpc_ingress_connection_arn()
+    }
     /// <p>Specifications for the customer’s Amazon VPC and the related Amazon Web Services PrivateLink VPC endpoint that are used to update the VPC Ingress Connection resource.</p>
     pub fn ingress_vpc_configuration(
         mut self,
@@ -152,5 +160,11 @@ impl UpdateVpcIngressConnectionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ingress_vpc_configuration(input);
         self
+    }
+    /// <p>Specifications for the customer’s Amazon VPC and the related Amazon Web Services PrivateLink VPC endpoint that are used to update the VPC Ingress Connection resource.</p>
+    pub fn get_ingress_vpc_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::IngressVpcConfiguration> {
+        self.inner.get_ingress_vpc_configuration()
     }
 }

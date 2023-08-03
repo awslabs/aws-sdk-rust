@@ -78,6 +78,10 @@ impl CustomerGatewayAssociationBuilder {
         self.customer_gateway_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
+    pub fn get_customer_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.customer_gateway_arn
+    }
     /// <p>The ID of the global network.</p>
     pub fn global_network_id(
         mut self,
@@ -94,6 +98,10 @@ impl CustomerGatewayAssociationBuilder {
         self.global_network_id = input;
         self
     }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_network_id
+    }
     /// <p>The ID of the device.</p>
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_id = ::std::option::Option::Some(input.into());
@@ -104,6 +112,10 @@ impl CustomerGatewayAssociationBuilder {
         self.device_id = input;
         self
     }
+    /// <p>The ID of the device.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_id
+    }
     /// <p>The ID of the link.</p>
     pub fn link_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.link_id = ::std::option::Option::Some(input.into());
@@ -113,6 +125,10 @@ impl CustomerGatewayAssociationBuilder {
     pub fn set_link_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.link_id = input;
         self
+    }
+    /// <p>The ID of the link.</p>
+    pub fn get_link_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.link_id
     }
     /// <p>The association state.</p>
     pub fn state(mut self, input: crate::types::CustomerGatewayAssociationState) -> Self {
@@ -126,6 +142,12 @@ impl CustomerGatewayAssociationBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The association state.</p>
+    pub fn get_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomerGatewayAssociationState> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`CustomerGatewayAssociation`](crate::types::CustomerGatewayAssociation).
     pub fn build(self) -> crate::types::CustomerGatewayAssociation {

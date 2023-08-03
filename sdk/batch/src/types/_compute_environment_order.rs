@@ -50,6 +50,10 @@ impl ComputeEnvironmentOrderBuilder {
         self.order = input;
         self
     }
+    /// <p>The order of the compute environment. Compute environments are tried in ascending order. For example, if two compute environments are associated with a job queue, the compute environment with a lower <code>order</code> integer value is tried for job placement first.</p>
+    pub fn get_order(&self) -> &::std::option::Option<i32> {
+        &self.order
+    }
     /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
     pub fn compute_environment(
         mut self,
@@ -65,6 +69,10 @@ impl ComputeEnvironmentOrderBuilder {
     ) -> Self {
         self.compute_environment = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
+    pub fn get_compute_environment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.compute_environment
     }
     /// Consumes the builder and constructs a [`ComputeEnvironmentOrder`](crate::types::ComputeEnvironmentOrder).
     pub fn build(self) -> crate::types::ComputeEnvironmentOrder {

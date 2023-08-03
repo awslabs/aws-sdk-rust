@@ -47,6 +47,10 @@ impl DescribeProgramInputBuilder {
         self.channel_name = input;
         self
     }
+    /// <p>The name of the channel associated with this Program.</p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_name
+    }
     /// <p>The name of the program.</p>
     pub fn program_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.program_name = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DescribeProgramInputBuilder {
     pub fn set_program_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.program_name = input;
         self
+    }
+    /// <p>The name of the program.</p>
+    pub fn get_program_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.program_name
     }
     /// Consumes the builder and constructs a [`DescribeProgramInput`](crate::operation::describe_program::DescribeProgramInput).
     pub fn build(

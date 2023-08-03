@@ -36,6 +36,12 @@ impl UpdateCodeRepositoryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateCodeRepository as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_code_repository::builders::UpdateCodeRepositoryInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateCodeRepositoryFluentBuilder {
         self.inner = self.inner.set_code_repository_name(input);
         self
     }
+    /// <p>The name of the Git repository to update.</p>
+    pub fn get_code_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_code_repository_name()
+    }
     /// <p>The configuration of the git repository, including the URL and the Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following format:</p>
     /// <p> <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code> </p>
     pub fn git_config(mut self, input: crate::types::GitConfigForUpdate) -> Self {
@@ -146,5 +156,10 @@ impl UpdateCodeRepositoryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_git_config(input);
         self
+    }
+    /// <p>The configuration of the git repository, including the URL and the Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following format:</p>
+    /// <p> <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code> </p>
+    pub fn get_git_config(&self) -> &::std::option::Option<crate::types::GitConfigForUpdate> {
+        self.inner.get_git_config()
     }
 }

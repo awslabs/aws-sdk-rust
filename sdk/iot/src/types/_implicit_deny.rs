@@ -49,6 +49,10 @@ impl ImplicitDenyBuilder {
         self.policies = input;
         self
     }
+    /// <p>Policies that don't contain a matching allow or deny statement for the specified action on the specified resource. </p>
+    pub fn get_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Policy>> {
+        &self.policies
+    }
     /// Consumes the builder and constructs a [`ImplicitDeny`](crate::types::ImplicitDeny).
     pub fn build(self) -> crate::types::ImplicitDeny {
         crate::types::ImplicitDeny {

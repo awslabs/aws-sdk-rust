@@ -40,6 +40,10 @@ impl OperationStatusFilterBuilder {
         self.status = input;
         self
     }
+    /// <p>Filters the list operations result based on the status attribute.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::StatusValues> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`OperationStatusFilter`](crate::types::OperationStatusFilter).
     pub fn build(self) -> crate::types::OperationStatusFilter {
         crate::types::OperationStatusFilter {

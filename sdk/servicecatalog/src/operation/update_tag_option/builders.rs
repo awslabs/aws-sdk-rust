@@ -36,6 +36,12 @@ impl UpdateTagOptionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateTagOption as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_tag_option::builders::UpdateTagOptionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateTagOptionFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The TagOption identifier.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The updated value.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.value(input.into());
@@ -136,6 +146,10 @@ impl UpdateTagOptionFluentBuilder {
         self.inner = self.inner.set_value(input);
         self
     }
+    /// <p>The updated value.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_value()
+    }
     /// <p>The updated active state.</p>
     pub fn active(mut self, input: bool) -> Self {
         self.inner = self.inner.active(input);
@@ -145,5 +159,9 @@ impl UpdateTagOptionFluentBuilder {
     pub fn set_active(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_active(input);
         self
+    }
+    /// <p>The updated active state.</p>
+    pub fn get_active(&self) -> &::std::option::Option<bool> {
+        self.inner.get_active()
     }
 }

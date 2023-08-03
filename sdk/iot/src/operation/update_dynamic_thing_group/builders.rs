@@ -38,6 +38,13 @@ impl UpdateDynamicThingGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDynamicThingGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_dynamic_thing_group::builders::UpdateDynamicThingGroupInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +141,10 @@ impl UpdateDynamicThingGroupFluentBuilder {
         self.inner = self.inner.set_thing_group_name(input);
         self
     }
+    /// <p>The name of the dynamic thing group to update.</p>
+    pub fn get_thing_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_thing_group_name()
+    }
     /// <p>The dynamic thing group properties to update.</p>
     pub fn thing_group_properties(mut self, input: crate::types::ThingGroupProperties) -> Self {
         self.inner = self.inner.thing_group_properties(input);
@@ -147,6 +158,12 @@ impl UpdateDynamicThingGroupFluentBuilder {
         self.inner = self.inner.set_thing_group_properties(input);
         self
     }
+    /// <p>The dynamic thing group properties to update.</p>
+    pub fn get_thing_group_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::ThingGroupProperties> {
+        self.inner.get_thing_group_properties()
+    }
     /// <p>The expected version of the dynamic thing group to update.</p>
     pub fn expected_version(mut self, input: i64) -> Self {
         self.inner = self.inner.expected_version(input);
@@ -156,6 +173,10 @@ impl UpdateDynamicThingGroupFluentBuilder {
     pub fn set_expected_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_expected_version(input);
         self
+    }
+    /// <p>The expected version of the dynamic thing group to update.</p>
+    pub fn get_expected_version(&self) -> &::std::option::Option<i64> {
+        self.inner.get_expected_version()
     }
     /// <p>The dynamic thing group index to update.</p> <note>
     /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
@@ -171,6 +192,12 @@ impl UpdateDynamicThingGroupFluentBuilder {
         self.inner = self.inner.set_index_name(input);
         self
     }
+    /// <p>The dynamic thing group index to update.</p> <note>
+    /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
+    /// </note>
+    pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_index_name()
+    }
     /// <p>The dynamic thing group search query string to update.</p>
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_string(input.into());
@@ -180,6 +207,10 @@ impl UpdateDynamicThingGroupFluentBuilder {
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_string(input);
         self
+    }
+    /// <p>The dynamic thing group search query string to update.</p>
+    pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_query_string()
     }
     /// <p>The dynamic thing group query version to update.</p> <note>
     /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>
@@ -200,5 +231,11 @@ impl UpdateDynamicThingGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_query_version(input);
         self
+    }
+    /// <p>The dynamic thing group query version to update.</p> <note>
+    /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>
+    /// </note>
+    pub fn get_query_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_query_version()
     }
 }

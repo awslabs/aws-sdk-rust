@@ -86,6 +86,10 @@ impl ExecuteCommandOutputBuilder {
         self.cluster_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the container.</p>
     pub fn container_arn(
         mut self,
@@ -101,6 +105,10 @@ impl ExecuteCommandOutputBuilder {
     ) -> Self {
         self.container_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the container.</p>
+    pub fn get_container_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_arn
     }
     /// <p>The name of the container.</p>
     pub fn container_name(
@@ -118,6 +126,10 @@ impl ExecuteCommandOutputBuilder {
         self.container_name = input;
         self
     }
+    /// <p>The name of the container.</p>
+    pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_name
+    }
     /// <p>Determines whether the execute command session is running in interactive mode. Amazon ECS only supports initiating interactive sessions, so you must specify <code>true</code> for this value.</p>
     pub fn interactive(mut self, input: bool) -> Self {
         self.interactive = ::std::option::Option::Some(input);
@@ -127,6 +139,10 @@ impl ExecuteCommandOutputBuilder {
     pub fn set_interactive(mut self, input: ::std::option::Option<bool>) -> Self {
         self.interactive = input;
         self
+    }
+    /// <p>Determines whether the execute command session is running in interactive mode. Amazon ECS only supports initiating interactive sessions, so you must specify <code>true</code> for this value.</p>
+    pub fn get_interactive(&self) -> &::std::option::Option<bool> {
+        &self.interactive
     }
     /// <p>The details of the SSM session that was created for this instance of execute-command.</p>
     pub fn session(mut self, input: crate::types::Session) -> Self {
@@ -138,6 +154,10 @@ impl ExecuteCommandOutputBuilder {
         self.session = input;
         self
     }
+    /// <p>The details of the SSM session that was created for this instance of execute-command.</p>
+    pub fn get_session(&self) -> &::std::option::Option<crate::types::Session> {
+        &self.session
+    }
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
     pub fn task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_arn = ::std::option::Option::Some(input.into());
@@ -147,6 +167,10 @@ impl ExecuteCommandOutputBuilder {
     pub fn set_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the task.</p>
+    pub fn get_task_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

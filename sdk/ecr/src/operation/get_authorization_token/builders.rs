@@ -37,6 +37,13 @@ impl GetAuthorizationTokenFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetAuthorizationToken as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_authorization_token::builders::GetAuthorizationTokenInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,5 +146,14 @@ impl GetAuthorizationTokenFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_registry_ids(input);
         self
+    }
+    /// <p>A list of Amazon Web Services account IDs that are associated with the registries for which to get AuthorizationData objects. If you do not specify a registry, the default registry is assumed.</p>
+    #[deprecated(
+        note = "This field is deprecated. The returned authorization token can be used to access any Amazon ECR registry that the IAM principal has access to, specifying a registry ID doesn't change the permissions scope of the authorization token."
+    )]
+    pub fn get_registry_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_registry_ids()
     }
 }

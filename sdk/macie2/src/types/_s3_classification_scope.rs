@@ -43,6 +43,12 @@ impl S3ClassificationScopeBuilder {
         self.excludes = input;
         self
     }
+    /// <p>The S3 buckets that are excluded.</p>
+    pub fn get_excludes(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3ClassificationScopeExclusion> {
+        &self.excludes
+    }
     /// Consumes the builder and constructs a [`S3ClassificationScope`](crate::types::S3ClassificationScope).
     pub fn build(self) -> crate::types::S3ClassificationScope {
         crate::types::S3ClassificationScope {

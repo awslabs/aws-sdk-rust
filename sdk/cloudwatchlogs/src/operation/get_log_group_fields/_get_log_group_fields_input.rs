@@ -76,6 +76,12 @@ impl GetLogGroupFieldsInputBuilder {
         self.log_group_name = input;
         self
     }
+    /// <p>The name of the log group to search.</p> <note>
+    /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
+    /// </note>
+    pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group_name
+    }
     /// <p>The time to set as the center of the query. If you specify <code>time</code>, the 8 minutes before and 8 minutes after this time are searched. If you omit <code>time</code>, the most recent 15 minutes up to the current time are searched.</p>
     /// <p>The <code>time</code> value is specified as epoch time, which is the number of seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
     pub fn time(mut self, input: i64) -> Self {
@@ -87,6 +93,11 @@ impl GetLogGroupFieldsInputBuilder {
     pub fn set_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.time = input;
         self
+    }
+    /// <p>The time to set as the center of the query. If you specify <code>time</code>, the 8 minutes before and 8 minutes after this time are searched. If you omit <code>time</code>, the most recent 15 minutes up to the current time are searched.</p>
+    /// <p>The <code>time</code> value is specified as epoch time, which is the number of seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
+    pub fn get_time(&self) -> &::std::option::Option<i64> {
+        &self.time
     }
     /// <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must specify the ARN.</p> <note>
     /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
@@ -107,6 +118,12 @@ impl GetLogGroupFieldsInputBuilder {
     ) -> Self {
         self.log_group_identifier = input;
         self
+    }
+    /// <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must specify the ARN.</p> <note>
+    /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
+    /// </note>
+    pub fn get_log_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group_identifier
     }
     /// Consumes the builder and constructs a [`GetLogGroupFieldsInput`](crate::operation::get_log_group_fields::GetLogGroupFieldsInput).
     pub fn build(

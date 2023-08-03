@@ -46,6 +46,12 @@ impl DescribeNotebookInstanceLifecycleConfigInputBuilder {
         self.notebook_instance_lifecycle_config_name = input;
         self
     }
+    /// <p>The name of the lifecycle configuration to describe.</p>
+    pub fn get_notebook_instance_lifecycle_config_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.notebook_instance_lifecycle_config_name
+    }
     /// Consumes the builder and constructs a [`DescribeNotebookInstanceLifecycleConfigInput`](crate::operation::describe_notebook_instance_lifecycle_config::DescribeNotebookInstanceLifecycleConfigInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_notebook_instance_lifecycle_config::DescribeNotebookInstanceLifecycleConfigInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

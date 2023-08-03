@@ -48,6 +48,10 @@ impl SecurityPolicyStatsBuilder {
         self.encryption_policy_count = input;
         self
     }
+    /// <p>The number of encryption policies in the current account.</p>
+    pub fn get_encryption_policy_count(&self) -> &::std::option::Option<i64> {
+        &self.encryption_policy_count
+    }
     /// <p>The number of network policies in the current account.</p>
     pub fn network_policy_count(mut self, input: i64) -> Self {
         self.network_policy_count = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl SecurityPolicyStatsBuilder {
     pub fn set_network_policy_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.network_policy_count = input;
         self
+    }
+    /// <p>The number of network policies in the current account.</p>
+    pub fn get_network_policy_count(&self) -> &::std::option::Option<i64> {
+        &self.network_policy_count
     }
     /// Consumes the builder and constructs a [`SecurityPolicyStats`](crate::types::SecurityPolicyStats).
     pub fn build(self) -> crate::types::SecurityPolicyStats {

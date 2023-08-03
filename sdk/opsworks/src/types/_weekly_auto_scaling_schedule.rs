@@ -166,6 +166,14 @@ impl WeeklyAutoScalingScheduleBuilder {
         self.monday = input;
         self
     }
+    /// <p>The schedule for Monday.</p>
+    pub fn get_monday(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.monday
+    }
     /// Adds a key-value pair to `tuesday`.
     ///
     /// To override the contents of this collection use [`set_tuesday`](Self::set_tuesday).
@@ -190,6 +198,14 @@ impl WeeklyAutoScalingScheduleBuilder {
     ) -> Self {
         self.tuesday = input;
         self
+    }
+    /// <p>The schedule for Tuesday.</p>
+    pub fn get_tuesday(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tuesday
     }
     /// Adds a key-value pair to `wednesday`.
     ///
@@ -216,6 +232,14 @@ impl WeeklyAutoScalingScheduleBuilder {
         self.wednesday = input;
         self
     }
+    /// <p>The schedule for Wednesday.</p>
+    pub fn get_wednesday(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.wednesday
+    }
     /// Adds a key-value pair to `thursday`.
     ///
     /// To override the contents of this collection use [`set_thursday`](Self::set_thursday).
@@ -240,6 +264,14 @@ impl WeeklyAutoScalingScheduleBuilder {
     ) -> Self {
         self.thursday = input;
         self
+    }
+    /// <p>The schedule for Thursday.</p>
+    pub fn get_thursday(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.thursday
     }
     /// Adds a key-value pair to `friday`.
     ///
@@ -266,6 +298,14 @@ impl WeeklyAutoScalingScheduleBuilder {
         self.friday = input;
         self
     }
+    /// <p>The schedule for Friday.</p>
+    pub fn get_friday(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.friday
+    }
     /// Adds a key-value pair to `saturday`.
     ///
     /// To override the contents of this collection use [`set_saturday`](Self::set_saturday).
@@ -291,6 +331,14 @@ impl WeeklyAutoScalingScheduleBuilder {
         self.saturday = input;
         self
     }
+    /// <p>The schedule for Saturday.</p>
+    pub fn get_saturday(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.saturday
+    }
     /// Adds a key-value pair to `sunday`.
     ///
     /// To override the contents of this collection use [`set_sunday`](Self::set_sunday).
@@ -315,6 +363,14 @@ impl WeeklyAutoScalingScheduleBuilder {
     ) -> Self {
         self.sunday = input;
         self
+    }
+    /// <p>The schedule for Sunday.</p>
+    pub fn get_sunday(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.sunday
     }
     /// Consumes the builder and constructs a [`WeeklyAutoScalingSchedule`](crate::types::WeeklyAutoScalingSchedule).
     pub fn build(self) -> crate::types::WeeklyAutoScalingSchedule {

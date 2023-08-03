@@ -125,6 +125,10 @@ impl MeetingBuilder {
         self.meeting_id = input;
         self
     }
+    /// <p>The Amazon Chime SDK meeting ID.</p>
+    pub fn get_meeting_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.meeting_id
+    }
     /// <p>Reserved.</p>
     pub fn meeting_host_id(
         mut self,
@@ -140,6 +144,10 @@ impl MeetingBuilder {
     ) -> Self {
         self.meeting_host_id = input;
         self
+    }
+    /// <p>Reserved.</p>
+    pub fn get_meeting_host_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.meeting_host_id
     }
     /// <p>The external meeting ID.</p>
     /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p>
@@ -161,6 +169,12 @@ impl MeetingBuilder {
         self.external_meeting_id = input;
         self
     }
+    /// <p>The external meeting ID.</p>
+    /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p>
+    /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case insensitive.</p>
+    pub fn get_external_meeting_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_meeting_id
+    }
     /// <p>The Region in which you create the meeting. Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.</p>
     /// <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
     pub fn media_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -172,6 +186,11 @@ impl MeetingBuilder {
     pub fn set_media_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.media_region = input;
         self
+    }
+    /// <p>The Region in which you create the meeting. Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.</p>
+    /// <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
+    pub fn get_media_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.media_region
     }
     /// <p>The media placement for the meeting.</p>
     pub fn media_placement(mut self, input: crate::types::MediaPlacement) -> Self {
@@ -186,6 +205,10 @@ impl MeetingBuilder {
         self.media_placement = input;
         self
     }
+    /// <p>The media placement for the meeting.</p>
+    pub fn get_media_placement(&self) -> &::std::option::Option<crate::types::MediaPlacement> {
+        &self.media_placement
+    }
     /// <p>The features available to a meeting, such as echo reduction.</p>
     pub fn meeting_features(mut self, input: crate::types::MeetingFeaturesConfiguration) -> Self {
         self.meeting_features = ::std::option::Option::Some(input);
@@ -198,6 +221,12 @@ impl MeetingBuilder {
     ) -> Self {
         self.meeting_features = input;
         self
+    }
+    /// <p>The features available to a meeting, such as echo reduction.</p>
+    pub fn get_meeting_features(
+        &self,
+    ) -> &::std::option::Option<crate::types::MeetingFeaturesConfiguration> {
+        &self.meeting_features
     }
     /// <p>When specified, replicates the media from the primary meeting to this meeting.</p>
     pub fn primary_meeting_id(
@@ -214,6 +243,10 @@ impl MeetingBuilder {
     ) -> Self {
         self.primary_meeting_id = input;
         self
+    }
+    /// <p>When specified, replicates the media from the primary meeting to this meeting.</p>
+    pub fn get_primary_meeting_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.primary_meeting_id
     }
     /// Appends an item to `tenant_ids`.
     ///
@@ -234,6 +267,10 @@ impl MeetingBuilder {
         self.tenant_ids = input;
         self
     }
+    /// <p>Array of strings.</p>
+    pub fn get_tenant_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tenant_ids
+    }
     /// <p>The ARN of the meeting.</p>
     pub fn meeting_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.meeting_arn = ::std::option::Option::Some(input.into());
@@ -243,6 +280,10 @@ impl MeetingBuilder {
     pub fn set_meeting_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.meeting_arn = input;
         self
+    }
+    /// <p>The ARN of the meeting.</p>
+    pub fn get_meeting_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.meeting_arn
     }
     /// Consumes the builder and constructs a [`Meeting`](crate::types::Meeting).
     pub fn build(self) -> crate::types::Meeting {

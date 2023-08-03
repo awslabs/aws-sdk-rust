@@ -398,6 +398,10 @@ impl GetObjectOutputBuilder {
         self.body = input;
         self
     }
+    /// <p>Object data.</p>
+    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+        &self.body
+    }
     /// <p>Specifies whether the object retrieved was (true) or was not (false) a Delete Marker. If false, this response header does not appear in the response.</p>
     pub fn delete_marker(mut self, input: bool) -> Self {
         self.delete_marker = ::std::option::Option::Some(input);
@@ -407,6 +411,10 @@ impl GetObjectOutputBuilder {
     pub fn set_delete_marker(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete_marker = input;
         self
+    }
+    /// <p>Specifies whether the object retrieved was (true) or was not (false) a Delete Marker. If false, this response header does not appear in the response.</p>
+    pub fn get_delete_marker(&self) -> &::std::option::Option<bool> {
+        &self.delete_marker
     }
     /// <p>Indicates that a range of bytes was specified.</p>
     pub fn accept_ranges(
@@ -424,6 +432,10 @@ impl GetObjectOutputBuilder {
         self.accept_ranges = input;
         self
     }
+    /// <p>Indicates that a range of bytes was specified.</p>
+    pub fn get_accept_ranges(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accept_ranges
+    }
     /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the <code>expiry-date</code> and <code>rule-id</code> key-value pairs providing object expiration information. The value of the <code>rule-id</code> is URL-encoded.</p>
     pub fn expiration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expiration = ::std::option::Option::Some(input.into());
@@ -434,6 +446,10 @@ impl GetObjectOutputBuilder {
         self.expiration = input;
         self
     }
+    /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the <code>expiry-date</code> and <code>rule-id</code> key-value pairs providing object expiration information. The value of the <code>rule-id</code> is URL-encoded.</p>
+    pub fn get_expiration(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expiration
+    }
     /// <p>Provides information about object restoration action and expiration time of the restored object copy.</p>
     pub fn restore(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.restore = ::std::option::Option::Some(input.into());
@@ -443,6 +459,10 @@ impl GetObjectOutputBuilder {
     pub fn set_restore(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.restore = input;
         self
+    }
+    /// <p>Provides information about object restoration action and expiration time of the restored object copy.</p>
+    pub fn get_restore(&self) -> &::std::option::Option<::std::string::String> {
+        &self.restore
     }
     /// <p>Creation date of the object.</p>
     pub fn last_modified(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -457,6 +477,10 @@ impl GetObjectOutputBuilder {
         self.last_modified = input;
         self
     }
+    /// <p>Creation date of the object.</p>
+    pub fn get_last_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified
+    }
     /// <p>Size of the body in bytes.</p>
     pub fn content_length(mut self, input: i64) -> Self {
         self.content_length = ::std::option::Option::Some(input);
@@ -467,6 +491,10 @@ impl GetObjectOutputBuilder {
         self.content_length = input;
         self
     }
+    /// <p>Size of the body in bytes.</p>
+    pub fn get_content_length(&self) -> &::std::option::Option<i64> {
+        &self.content_length
+    }
     /// <p>An entity tag (ETag) is an opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
     pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.e_tag = ::std::option::Option::Some(input.into());
@@ -476,6 +504,10 @@ impl GetObjectOutputBuilder {
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.e_tag = input;
         self
+    }
+    /// <p>An entity tag (ETag) is an opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
+    pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.e_tag
     }
     /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn checksum_crc32(
@@ -493,6 +525,10 @@ impl GetObjectOutputBuilder {
         self.checksum_crc32 = input;
         self
     }
+    /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_checksum_crc32(&self) -> &::std::option::Option<::std::string::String> {
+        &self.checksum_crc32
+    }
     /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn checksum_crc32_c(
         mut self,
@@ -508,6 +544,10 @@ impl GetObjectOutputBuilder {
     ) -> Self {
         self.checksum_crc32_c = input;
         self
+    }
+    /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_checksum_crc32_c(&self) -> &::std::option::Option<::std::string::String> {
+        &self.checksum_crc32_c
     }
     /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn checksum_sha1(
@@ -525,6 +565,10 @@ impl GetObjectOutputBuilder {
         self.checksum_sha1 = input;
         self
     }
+    /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_checksum_sha1(&self) -> &::std::option::Option<::std::string::String> {
+        &self.checksum_sha1
+    }
     /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn checksum_sha256(
         mut self,
@@ -541,6 +585,10 @@ impl GetObjectOutputBuilder {
         self.checksum_sha256 = input;
         self
     }
+    /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_checksum_sha256(&self) -> &::std::option::Option<::std::string::String> {
+        &self.checksum_sha256
+    }
     /// <p>This is set to the number of metadata entries not returned in <code>x-amz-meta</code> headers. This can happen if you create metadata using an API like SOAP that supports more flexible metadata than the REST API. For example, using SOAP, you can create metadata whose values are not legal HTTP headers.</p>
     pub fn missing_meta(mut self, input: i32) -> Self {
         self.missing_meta = ::std::option::Option::Some(input);
@@ -551,6 +599,10 @@ impl GetObjectOutputBuilder {
         self.missing_meta = input;
         self
     }
+    /// <p>This is set to the number of metadata entries not returned in <code>x-amz-meta</code> headers. This can happen if you create metadata using an API like SOAP that supports more flexible metadata than the REST API. For example, using SOAP, you can create metadata whose values are not legal HTTP headers.</p>
+    pub fn get_missing_meta(&self) -> &::std::option::Option<i32> {
+        &self.missing_meta
+    }
     /// <p>Version of the object.</p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_id = ::std::option::Option::Some(input.into());
@@ -560,6 +612,10 @@ impl GetObjectOutputBuilder {
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_id = input;
         self
+    }
+    /// <p>Version of the object.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
     }
     /// <p>Specifies caching behavior along the request/reply chain.</p>
     pub fn cache_control(
@@ -577,6 +633,10 @@ impl GetObjectOutputBuilder {
         self.cache_control = input;
         self
     }
+    /// <p>Specifies caching behavior along the request/reply chain.</p>
+    pub fn get_cache_control(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_control
+    }
     /// <p>Specifies presentational information for the object.</p>
     pub fn content_disposition(
         mut self,
@@ -592,6 +652,10 @@ impl GetObjectOutputBuilder {
     ) -> Self {
         self.content_disposition = input;
         self
+    }
+    /// <p>Specifies presentational information for the object.</p>
+    pub fn get_content_disposition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_disposition
     }
     /// <p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field.</p>
     pub fn content_encoding(
@@ -609,6 +673,10 @@ impl GetObjectOutputBuilder {
         self.content_encoding = input;
         self
     }
+    /// <p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field.</p>
+    pub fn get_content_encoding(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_encoding
+    }
     /// <p>The language the content is in.</p>
     pub fn content_language(
         mut self,
@@ -624,6 +692,10 @@ impl GetObjectOutputBuilder {
     ) -> Self {
         self.content_language = input;
         self
+    }
+    /// <p>The language the content is in.</p>
+    pub fn get_content_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_language
     }
     /// <p>The portion of the object returned in the response.</p>
     pub fn content_range(
@@ -641,6 +713,10 @@ impl GetObjectOutputBuilder {
         self.content_range = input;
         self
     }
+    /// <p>The portion of the object returned in the response.</p>
+    pub fn get_content_range(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_range
+    }
     /// <p>A standard MIME type describing the format of the object data.</p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
@@ -650,6 +726,10 @@ impl GetObjectOutputBuilder {
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
+    }
+    /// <p>A standard MIME type describing the format of the object data.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
     }
     /// <p>The date and time at which the object is no longer cacheable.</p>
     pub fn expires(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -663,6 +743,10 @@ impl GetObjectOutputBuilder {
     ) -> Self {
         self.expires = input;
         self
+    }
+    /// <p>The date and time at which the object is no longer cacheable.</p>
+    pub fn get_expires(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expires
     }
     /// <p>If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL. Amazon S3 stores the value of this header in the object metadata.</p>
     pub fn website_redirect_location(
@@ -680,6 +764,10 @@ impl GetObjectOutputBuilder {
         self.website_redirect_location = input;
         self
     }
+    /// <p>If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL. Amazon S3 stores the value of this header in the object metadata.</p>
+    pub fn get_website_redirect_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.website_redirect_location
+    }
     /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, <code>AES256</code>, <code>aws:kms</code>, <code>aws:kms:dsse</code>).</p>
     pub fn server_side_encryption(mut self, input: crate::types::ServerSideEncryption) -> Self {
         self.server_side_encryption = ::std::option::Option::Some(input);
@@ -692,6 +780,12 @@ impl GetObjectOutputBuilder {
     ) -> Self {
         self.server_side_encryption = input;
         self
+    }
+    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, <code>AES256</code>, <code>aws:kms</code>, <code>aws:kms:dsse</code>).</p>
+    pub fn get_server_side_encryption(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServerSideEncryption> {
+        &self.server_side_encryption
     }
     /// Adds a key-value pair to `metadata`.
     ///
@@ -718,6 +812,14 @@ impl GetObjectOutputBuilder {
         self.metadata = input;
         self
     }
+    /// <p>A map of metadata to store with the object in S3.</p>
+    pub fn get_metadata(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.metadata
+    }
     /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</p>
     pub fn sse_customer_algorithm(
         mut self,
@@ -733,6 +835,10 @@ impl GetObjectOutputBuilder {
     ) -> Self {
         self.sse_customer_algorithm = input;
         self
+    }
+    /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</p>
+    pub fn get_sse_customer_algorithm(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sse_customer_algorithm
     }
     /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round-trip message integrity verification of the customer-provided encryption key.</p>
     pub fn sse_customer_key_md5(
@@ -750,6 +856,10 @@ impl GetObjectOutputBuilder {
         self.sse_customer_key_md5 = input;
         self
     }
+    /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round-trip message integrity verification of the customer-provided encryption key.</p>
+    pub fn get_sse_customer_key_md5(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sse_customer_key_md5
+    }
     /// <p>If present, specifies the ID of the Key Management Service (KMS) symmetric encryption customer managed key that was used for the object.</p>
     pub fn ssekms_key_id(
         mut self,
@@ -766,6 +876,10 @@ impl GetObjectOutputBuilder {
         self.ssekms_key_id = input;
         self
     }
+    /// <p>If present, specifies the ID of the Key Management Service (KMS) symmetric encryption customer managed key that was used for the object.</p>
+    pub fn get_ssekms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ssekms_key_id
+    }
     /// <p>Indicates whether the object uses an S3 Bucket Key for server-side encryption with Key Management Service (KMS) keys (SSE-KMS).</p>
     pub fn bucket_key_enabled(mut self, input: bool) -> Self {
         self.bucket_key_enabled = ::std::option::Option::Some(input);
@@ -775,6 +889,10 @@ impl GetObjectOutputBuilder {
     pub fn set_bucket_key_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.bucket_key_enabled = input;
         self
+    }
+    /// <p>Indicates whether the object uses an S3 Bucket Key for server-side encryption with Key Management Service (KMS) keys (SSE-KMS).</p>
+    pub fn get_bucket_key_enabled(&self) -> &::std::option::Option<bool> {
+        &self.bucket_key_enabled
     }
     /// <p>Provides storage class information of the object. Amazon S3 returns this header for all objects except for S3 Standard storage class objects.</p>
     pub fn storage_class(mut self, input: crate::types::StorageClass) -> Self {
@@ -789,6 +907,10 @@ impl GetObjectOutputBuilder {
         self.storage_class = input;
         self
     }
+    /// <p>Provides storage class information of the object. Amazon S3 returns this header for all objects except for S3 Standard storage class objects.</p>
+    pub fn get_storage_class(&self) -> &::std::option::Option<crate::types::StorageClass> {
+        &self.storage_class
+    }
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub fn request_charged(mut self, input: crate::types::RequestCharged) -> Self {
         self.request_charged = ::std::option::Option::Some(input);
@@ -801,6 +923,10 @@ impl GetObjectOutputBuilder {
     ) -> Self {
         self.request_charged = input;
         self
+    }
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+    pub fn get_request_charged(&self) -> &::std::option::Option<crate::types::RequestCharged> {
+        &self.request_charged
     }
     /// <p>Amazon S3 can return this if your request involves a bucket that is either a source or destination in a replication rule.</p>
     pub fn replication_status(mut self, input: crate::types::ReplicationStatus) -> Self {
@@ -815,6 +941,12 @@ impl GetObjectOutputBuilder {
         self.replication_status = input;
         self
     }
+    /// <p>Amazon S3 can return this if your request involves a bucket that is either a source or destination in a replication rule.</p>
+    pub fn get_replication_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReplicationStatus> {
+        &self.replication_status
+    }
     /// <p>The count of parts this object has. This value is only returned if you specify <code>partNumber</code> in your request and the object was uploaded as a multipart upload.</p>
     pub fn parts_count(mut self, input: i32) -> Self {
         self.parts_count = ::std::option::Option::Some(input);
@@ -825,6 +957,10 @@ impl GetObjectOutputBuilder {
         self.parts_count = input;
         self
     }
+    /// <p>The count of parts this object has. This value is only returned if you specify <code>partNumber</code> in your request and the object was uploaded as a multipart upload.</p>
+    pub fn get_parts_count(&self) -> &::std::option::Option<i32> {
+        &self.parts_count
+    }
     /// <p>The number of tags, if any, on the object.</p>
     pub fn tag_count(mut self, input: i32) -> Self {
         self.tag_count = ::std::option::Option::Some(input);
@@ -834,6 +970,10 @@ impl GetObjectOutputBuilder {
     pub fn set_tag_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.tag_count = input;
         self
+    }
+    /// <p>The number of tags, if any, on the object.</p>
+    pub fn get_tag_count(&self) -> &::std::option::Option<i32> {
+        &self.tag_count
     }
     /// <p>The Object Lock mode currently in place for this object.</p>
     pub fn object_lock_mode(mut self, input: crate::types::ObjectLockMode) -> Self {
@@ -848,6 +988,10 @@ impl GetObjectOutputBuilder {
         self.object_lock_mode = input;
         self
     }
+    /// <p>The Object Lock mode currently in place for this object.</p>
+    pub fn get_object_lock_mode(&self) -> &::std::option::Option<crate::types::ObjectLockMode> {
+        &self.object_lock_mode
+    }
     /// <p>The date and time when this object's Object Lock will expire.</p>
     pub fn object_lock_retain_until_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.object_lock_retain_until_date = ::std::option::Option::Some(input);
@@ -860,6 +1004,12 @@ impl GetObjectOutputBuilder {
     ) -> Self {
         self.object_lock_retain_until_date = input;
         self
+    }
+    /// <p>The date and time when this object's Object Lock will expire.</p>
+    pub fn get_object_lock_retain_until_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.object_lock_retain_until_date
     }
     /// <p>Indicates whether this object has an active legal hold. This field is only returned if you have permission to view an object's legal hold status. </p>
     pub fn object_lock_legal_hold_status(
@@ -876,6 +1026,12 @@ impl GetObjectOutputBuilder {
     ) -> Self {
         self.object_lock_legal_hold_status = input;
         self
+    }
+    /// <p>Indicates whether this object has an active legal hold. This field is only returned if you have permission to view an object's legal hold status. </p>
+    pub fn get_object_lock_legal_hold_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ObjectLockLegalHoldStatus> {
+        &self.object_lock_legal_hold_status
     }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
         self._extended_request_id = Some(extended_request_id.into());

@@ -55,6 +55,10 @@ impl DescribeClustersOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `clusters`.
     ///
     /// To override the contents of this collection use [`set_clusters`](Self::set_clusters).
@@ -73,6 +77,10 @@ impl DescribeClustersOutputBuilder {
     ) -> Self {
         self.clusters = input;
         self
+    }
+    /// <p>The descriptions of your DAX clusters, in response to a <i>DescribeClusters</i> request.</p>
+    pub fn get_clusters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Cluster>> {
+        &self.clusters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -55,6 +55,10 @@ impl DeregisterFromWorkMailInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The identifier for the organization under which the WorkMail entity exists.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>The identifier for the member (user or group) to be updated.</p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl DeregisterFromWorkMailInputBuilder {
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entity_id = input;
         self
+    }
+    /// <p>The identifier for the member (user or group) to be updated.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_id
     }
     /// Consumes the builder and constructs a [`DeregisterFromWorkMailInput`](crate::operation::deregister_from_work_mail::DeregisterFromWorkMailInput).
     pub fn build(

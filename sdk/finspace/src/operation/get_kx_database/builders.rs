@@ -36,6 +36,12 @@ impl GetKxDatabaseFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetKxDatabase as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_kx_database::builders::GetKxDatabaseInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl GetKxDatabaseFluentBuilder {
         self.inner = self.inner.set_environment_id(input);
         self
     }
+    /// <p>A unique identifier for the kdb environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_id()
+    }
     /// <p>The name of the kdb database.</p>
     pub fn database_name(
         mut self,
@@ -139,5 +149,9 @@ impl GetKxDatabaseFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
+    }
+    /// <p>The name of the kdb database.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_database_name()
     }
 }

@@ -43,6 +43,12 @@ impl ExperimentScheduleBuilder {
         self.analysis_complete_time = input;
         self
     }
+    /// <p>The time and date that Evidently completed the analysis of the experiment.</p>
+    pub fn get_analysis_complete_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.analysis_complete_time
+    }
     /// Consumes the builder and constructs a [`ExperimentSchedule`](crate::types::ExperimentSchedule).
     pub fn build(self) -> crate::types::ExperimentSchedule {
         crate::types::ExperimentSchedule {

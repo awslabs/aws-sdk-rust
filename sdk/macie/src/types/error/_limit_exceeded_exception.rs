@@ -83,6 +83,10 @@ impl LimitExceededExceptionBuilder {
         self.error_code = input;
         self
     }
+    /// Error code for the exception
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
+    }
     #[allow(missing_docs)] // documentation missing in model
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -92,6 +96,10 @@ impl LimitExceededExceptionBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Resource type that caused the exception
     pub fn resource_type(
@@ -108,6 +116,10 @@ impl LimitExceededExceptionBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// Resource type that caused the exception
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

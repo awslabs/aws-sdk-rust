@@ -106,6 +106,10 @@ impl TransformFilterCriteriaBuilder {
         self.name = input;
         self
     }
+    /// <p>A unique transform name that is used to filter the machine learning transforms.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type of machine learning transform that is used to filter the machine learning transforms.</p>
     pub fn transform_type(mut self, input: crate::types::TransformType) -> Self {
         self.transform_type = ::std::option::Option::Some(input);
@@ -118,6 +122,10 @@ impl TransformFilterCriteriaBuilder {
     ) -> Self {
         self.transform_type = input;
         self
+    }
+    /// <p>The type of machine learning transform that is used to filter the machine learning transforms.</p>
+    pub fn get_transform_type(&self) -> &::std::option::Option<crate::types::TransformType> {
+        &self.transform_type
     }
     /// <p>Filters the list of machine learning transforms by the last known status of the transforms (to indicate whether a transform can be used or not). One of "NOT_READY", "READY", or "DELETING".</p>
     pub fn status(mut self, input: crate::types::TransformStatusType) -> Self {
@@ -132,6 +140,10 @@ impl TransformFilterCriteriaBuilder {
         self.status = input;
         self
     }
+    /// <p>Filters the list of machine learning transforms by the last known status of the transforms (to indicate whether a transform can be used or not). One of "NOT_READY", "READY", or "DELETING".</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TransformStatusType> {
+        &self.status
+    }
     /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
     pub fn glue_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.glue_version = ::std::option::Option::Some(input.into());
@@ -141,6 +153,10 @@ impl TransformFilterCriteriaBuilder {
     pub fn set_glue_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.glue_version = input;
         self
+    }
+    /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+    pub fn get_glue_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.glue_version
     }
     /// <p>The time and date before which the transforms were created.</p>
     pub fn created_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -155,6 +171,10 @@ impl TransformFilterCriteriaBuilder {
         self.created_before = input;
         self
     }
+    /// <p>The time and date before which the transforms were created.</p>
+    pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_before
+    }
     /// <p>The time and date after which the transforms were created.</p>
     pub fn created_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_after = ::std::option::Option::Some(input);
@@ -167,6 +187,10 @@ impl TransformFilterCriteriaBuilder {
     ) -> Self {
         self.created_after = input;
         self
+    }
+    /// <p>The time and date after which the transforms were created.</p>
+    pub fn get_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_after
     }
     /// <p>Filter on transforms last modified before this date.</p>
     pub fn last_modified_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -181,6 +205,10 @@ impl TransformFilterCriteriaBuilder {
         self.last_modified_before = input;
         self
     }
+    /// <p>Filter on transforms last modified before this date.</p>
+    pub fn get_last_modified_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_before
+    }
     /// <p>Filter on transforms last modified after this date.</p>
     pub fn last_modified_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_after = ::std::option::Option::Some(input);
@@ -193,6 +221,10 @@ impl TransformFilterCriteriaBuilder {
     ) -> Self {
         self.last_modified_after = input;
         self
+    }
+    /// <p>Filter on transforms last modified after this date.</p>
+    pub fn get_last_modified_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_after
     }
     /// Appends an item to `schema`.
     ///
@@ -214,6 +246,13 @@ impl TransformFilterCriteriaBuilder {
     ) -> Self {
         self.schema = input;
         self
+    }
+    /// <p>Filters on datasets with a specific schema. The <code>Map
+    /// <column, type></column,></code> object is an array of key-value pairs representing the schema this transform accepts, where <code>Column</code> is the name of a column, and <code>Type</code> is the type of the data such as an integer or string. Has an upper bound of 100 columns.</p>
+    pub fn get_schema(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaColumn>> {
+        &self.schema
     }
     /// Consumes the builder and constructs a [`TransformFilterCriteria`](crate::types::TransformFilterCriteria).
     pub fn build(self) -> crate::types::TransformFilterCriteria {

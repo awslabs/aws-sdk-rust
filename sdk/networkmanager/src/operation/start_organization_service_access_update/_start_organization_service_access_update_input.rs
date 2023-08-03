@@ -39,6 +39,10 @@ impl StartOrganizationServiceAccessUpdateInputBuilder {
         self.action = input;
         self
     }
+    /// <p>The action to take for the update request. This can be either <code>ENABLE</code> or <code>DISABLE</code>.</p>
+    pub fn get_action(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action
+    }
     /// Consumes the builder and constructs a [`StartOrganizationServiceAccessUpdateInput`](crate::operation::start_organization_service_access_update::StartOrganizationServiceAccessUpdateInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::start_organization_service_access_update::StartOrganizationServiceAccessUpdateInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

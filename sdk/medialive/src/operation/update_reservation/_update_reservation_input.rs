@@ -57,6 +57,10 @@ impl UpdateReservationInputBuilder {
         self.name = input;
         self
     }
+    /// Name of the reservation
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Renewal settings for the reservation
     pub fn renewal_settings(mut self, input: crate::types::RenewalSettings) -> Self {
         self.renewal_settings = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl UpdateReservationInputBuilder {
     ) -> Self {
         self.renewal_settings = input;
         self
+    }
+    /// Renewal settings for the reservation
+    pub fn get_renewal_settings(&self) -> &::std::option::Option<crate::types::RenewalSettings> {
+        &self.renewal_settings
     }
     /// Unique reservation ID, e.g. '1234567'
     pub fn reservation_id(
@@ -85,6 +93,10 @@ impl UpdateReservationInputBuilder {
     ) -> Self {
         self.reservation_id = input;
         self
+    }
+    /// Unique reservation ID, e.g. '1234567'
+    pub fn get_reservation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reservation_id
     }
     /// Consumes the builder and constructs a [`UpdateReservationInput`](crate::operation::update_reservation::UpdateReservationInput).
     pub fn build(

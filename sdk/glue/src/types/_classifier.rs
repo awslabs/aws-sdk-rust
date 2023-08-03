@@ -68,6 +68,10 @@ impl ClassifierBuilder {
         self.grok_classifier = input;
         self
     }
+    /// <p>A classifier that uses <code>grok</code>.</p>
+    pub fn get_grok_classifier(&self) -> &::std::option::Option<crate::types::GrokClassifier> {
+        &self.grok_classifier
+    }
     /// <p>A classifier for XML content.</p>
     pub fn xml_classifier(mut self, input: crate::types::XmlClassifier) -> Self {
         self.xml_classifier = ::std::option::Option::Some(input);
@@ -80,6 +84,10 @@ impl ClassifierBuilder {
     ) -> Self {
         self.xml_classifier = input;
         self
+    }
+    /// <p>A classifier for XML content.</p>
+    pub fn get_xml_classifier(&self) -> &::std::option::Option<crate::types::XmlClassifier> {
+        &self.xml_classifier
     }
     /// <p>A classifier for JSON content.</p>
     pub fn json_classifier(mut self, input: crate::types::JsonClassifier) -> Self {
@@ -94,6 +102,10 @@ impl ClassifierBuilder {
         self.json_classifier = input;
         self
     }
+    /// <p>A classifier for JSON content.</p>
+    pub fn get_json_classifier(&self) -> &::std::option::Option<crate::types::JsonClassifier> {
+        &self.json_classifier
+    }
     /// <p>A classifier for comma-separated values (CSV).</p>
     pub fn csv_classifier(mut self, input: crate::types::CsvClassifier) -> Self {
         self.csv_classifier = ::std::option::Option::Some(input);
@@ -106,6 +118,10 @@ impl ClassifierBuilder {
     ) -> Self {
         self.csv_classifier = input;
         self
+    }
+    /// <p>A classifier for comma-separated values (CSV).</p>
+    pub fn get_csv_classifier(&self) -> &::std::option::Option<crate::types::CsvClassifier> {
+        &self.csv_classifier
     }
     /// Consumes the builder and constructs a [`Classifier`](crate::types::Classifier).
     pub fn build(self) -> crate::types::Classifier {

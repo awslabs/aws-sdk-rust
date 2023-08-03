@@ -49,6 +49,10 @@ impl RemoveAllBackendsInputBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The app ID.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p>Cleans up the Amplify Console app if this value is set to true.</p>
     pub fn clean_amplify_app(mut self, input: bool) -> Self {
         self.clean_amplify_app = ::std::option::Option::Some(input);
@@ -58,6 +62,10 @@ impl RemoveAllBackendsInputBuilder {
     pub fn set_clean_amplify_app(mut self, input: ::std::option::Option<bool>) -> Self {
         self.clean_amplify_app = input;
         self
+    }
+    /// <p>Cleans up the Amplify Console app if this value is set to true.</p>
+    pub fn get_clean_amplify_app(&self) -> &::std::option::Option<bool> {
+        &self.clean_amplify_app
     }
     /// Consumes the builder and constructs a [`RemoveAllBackendsInput`](crate::operation::remove_all_backends::RemoveAllBackendsInput).
     pub fn build(

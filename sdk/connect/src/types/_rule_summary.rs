@@ -97,6 +97,10 @@ impl RuleSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the rule.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A unique identifier for the rule.</p>
     pub fn rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_id = ::std::option::Option::Some(input.into());
@@ -107,6 +111,10 @@ impl RuleSummaryBuilder {
         self.rule_id = input;
         self
     }
+    /// <p>A unique identifier for the rule.</p>
+    pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
     pub fn rule_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_arn = ::std::option::Option::Some(input.into());
@@ -116,6 +124,10 @@ impl RuleSummaryBuilder {
     pub fn set_rule_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the rule.</p>
+    pub fn get_rule_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_arn
     }
     /// <p>The name of the event source.</p>
     pub fn event_source_name(mut self, input: crate::types::EventSourceName) -> Self {
@@ -130,6 +142,10 @@ impl RuleSummaryBuilder {
         self.event_source_name = input;
         self
     }
+    /// <p>The name of the event source.</p>
+    pub fn get_event_source_name(&self) -> &::std::option::Option<crate::types::EventSourceName> {
+        &self.event_source_name
+    }
     /// <p>The publish status of the rule.</p>
     pub fn publish_status(mut self, input: crate::types::RulePublishStatus) -> Self {
         self.publish_status = ::std::option::Option::Some(input);
@@ -142,6 +158,10 @@ impl RuleSummaryBuilder {
     ) -> Self {
         self.publish_status = input;
         self
+    }
+    /// <p>The publish status of the rule.</p>
+    pub fn get_publish_status(&self) -> &::std::option::Option<crate::types::RulePublishStatus> {
+        &self.publish_status
     }
     /// Appends an item to `action_summaries`.
     ///
@@ -162,6 +182,12 @@ impl RuleSummaryBuilder {
         self.action_summaries = input;
         self
     }
+    /// <p>A list of ActionTypes associated with a rule. </p>
+    pub fn get_action_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionSummary>> {
+        &self.action_summaries
+    }
     /// <p>The timestamp for when the rule was created. </p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
@@ -175,6 +201,10 @@ impl RuleSummaryBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The timestamp for when the rule was created. </p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>The timestamp for when the rule was last updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -187,6 +217,10 @@ impl RuleSummaryBuilder {
     ) -> Self {
         self.last_updated_time = input;
         self
+    }
+    /// <p>The timestamp for when the rule was last updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
     }
     /// Consumes the builder and constructs a [`RuleSummary`](crate::types::RuleSummary).
     pub fn build(self) -> crate::types::RuleSummary {

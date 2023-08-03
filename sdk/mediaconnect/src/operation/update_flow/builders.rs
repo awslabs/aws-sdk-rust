@@ -36,6 +36,10 @@ impl UpdateFlowFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateFlow as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_flow::builders::UpdateFlowInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdateFlowFluentBuilder {
         self.inner = self.inner.set_flow_arn(input);
         self
     }
+    /// The flow that you want to update.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_flow_arn()
+    }
     /// The settings for source failover.
     pub fn source_failover_config(mut self, input: crate::types::UpdateFailoverConfig) -> Self {
         self.inner = self.inner.source_failover_config(input);
@@ -131,6 +139,12 @@ impl UpdateFlowFluentBuilder {
         self.inner = self.inner.set_source_failover_config(input);
         self
     }
+    /// The settings for source failover.
+    pub fn get_source_failover_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateFailoverConfig> {
+        self.inner.get_source_failover_config()
+    }
     /// Update maintenance setting for a flow
     pub fn maintenance(mut self, input: crate::types::UpdateMaintenance) -> Self {
         self.inner = self.inner.maintenance(input);
@@ -143,5 +157,9 @@ impl UpdateFlowFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_maintenance(input);
         self
+    }
+    /// Update maintenance setting for a flow
+    pub fn get_maintenance(&self) -> &::std::option::Option<crate::types::UpdateMaintenance> {
+        self.inner.get_maintenance()
     }
 }

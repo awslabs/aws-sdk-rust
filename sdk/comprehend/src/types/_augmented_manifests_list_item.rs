@@ -99,6 +99,10 @@ impl AugmentedManifestsListItemBuilder {
         self.s3_uri = input;
         self
     }
+    /// <p>The Amazon S3 location of the augmented manifest file.</p>
+    pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_uri
+    }
     /// <p>The purpose of the data you've provided in the augmented manifest. You can either train or test this data. If you don't specify, the default is train.</p>
     /// <p>TRAIN - all of the documents in the manifest will be used for training. If no test documents are provided, Amazon Comprehend will automatically reserve a portion of the training documents for testing.</p>
     /// <p> TEST - all of the documents in the manifest will be used for testing.</p>
@@ -112,6 +116,12 @@ impl AugmentedManifestsListItemBuilder {
     pub fn set_split(mut self, input: ::std::option::Option<crate::types::Split>) -> Self {
         self.split = input;
         self
+    }
+    /// <p>The purpose of the data you've provided in the augmented manifest. You can either train or test this data. If you don't specify, the default is train.</p>
+    /// <p>TRAIN - all of the documents in the manifest will be used for training. If no test documents are provided, Amazon Comprehend will automatically reserve a portion of the training documents for testing.</p>
+    /// <p> TEST - all of the documents in the manifest will be used for testing.</p>
+    pub fn get_split(&self) -> &::std::option::Option<crate::types::Split> {
+        &self.split
     }
     /// Appends an item to `attribute_names`.
     ///
@@ -139,6 +149,14 @@ impl AugmentedManifestsListItemBuilder {
         self.attribute_names = input;
         self
     }
+    /// <p>The JSON attribute that contains the annotations for your training documents. The number of attribute names that you specify depends on whether your augmented manifest file is the output of a single labeling job or a chained labeling job.</p>
+    /// <p>If your file is the output of a single labeling job, specify the LabelAttributeName key that was used when the job was created in Ground Truth.</p>
+    /// <p>If your file is the output of a chained labeling job, specify the LabelAttributeName key for one or more jobs in the chain. Each LabelAttributeName key provides the annotations from an individual job.</p>
+    pub fn get_attribute_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.attribute_names
+    }
     /// <p>The S3 prefix to the annotation files that are referred in the augmented manifest file.</p>
     pub fn annotation_data_s3_uri(
         mut self,
@@ -155,6 +173,10 @@ impl AugmentedManifestsListItemBuilder {
         self.annotation_data_s3_uri = input;
         self
     }
+    /// <p>The S3 prefix to the annotation files that are referred in the augmented manifest file.</p>
+    pub fn get_annotation_data_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.annotation_data_s3_uri
+    }
     /// <p>The S3 prefix to the source files (PDFs) that are referred to in the augmented manifest file.</p>
     pub fn source_documents_s3_uri(
         mut self,
@@ -170,6 +192,10 @@ impl AugmentedManifestsListItemBuilder {
     ) -> Self {
         self.source_documents_s3_uri = input;
         self
+    }
+    /// <p>The S3 prefix to the source files (PDFs) that are referred to in the augmented manifest file.</p>
+    pub fn get_source_documents_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_documents_s3_uri
     }
     /// <p>The type of augmented manifest. PlainTextDocument or SemiStructuredDocument. If you don't specify, the default is PlainTextDocument. </p>
     /// <ul>
@@ -194,6 +220,16 @@ impl AugmentedManifestsListItemBuilder {
     ) -> Self {
         self.document_type = input;
         self
+    }
+    /// <p>The type of augmented manifest. PlainTextDocument or SemiStructuredDocument. If you don't specify, the default is PlainTextDocument. </p>
+    /// <ul>
+    /// <li> <p> <code>PLAIN_TEXT_DOCUMENT</code> A document type that represents any unicode text that is encoded in UTF-8.</p> </li>
+    /// <li> <p> <code>SEMI_STRUCTURED_DOCUMENT</code> A document type with positional and structural context, like a PDF. For training with Amazon Comprehend, only PDFs are supported. For inference, Amazon Comprehend support PDFs, DOCX and TXT.</p> </li>
+    /// </ul>
+    pub fn get_document_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::AugmentedManifestsDocumentTypeFormat> {
+        &self.document_type
     }
     /// Consumes the builder and constructs a [`AugmentedManifestsListItem`](crate::types::AugmentedManifestsListItem).
     pub fn build(self) -> crate::types::AugmentedManifestsListItem {

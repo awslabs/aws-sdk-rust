@@ -55,6 +55,10 @@ impl UpdateAssessmentFrameworkShareInputBuilder {
         self.request_id = input;
         self
     }
+    /// <p> The unique identifier for the share request. </p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
+    }
     /// <p>Specifies whether the share request is a sent request or a received request.</p>
     pub fn request_type(mut self, input: crate::types::ShareRequestType) -> Self {
         self.request_type = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl UpdateAssessmentFrameworkShareInputBuilder {
         self.request_type = input;
         self
     }
+    /// <p>Specifies whether the share request is a sent request or a received request.</p>
+    pub fn get_request_type(&self) -> &::std::option::Option<crate::types::ShareRequestType> {
+        &self.request_type
+    }
     /// <p>Specifies the update action for the share request.</p>
     pub fn action(mut self, input: crate::types::ShareRequestAction) -> Self {
         self.action = ::std::option::Option::Some(input);
@@ -80,6 +88,10 @@ impl UpdateAssessmentFrameworkShareInputBuilder {
     ) -> Self {
         self.action = input;
         self
+    }
+    /// <p>Specifies the update action for the share request.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::ShareRequestAction> {
+        &self.action
     }
     /// Consumes the builder and constructs a [`UpdateAssessmentFrameworkShareInput`](crate::operation::update_assessment_framework_share::UpdateAssessmentFrameworkShareInput).
     pub fn build(

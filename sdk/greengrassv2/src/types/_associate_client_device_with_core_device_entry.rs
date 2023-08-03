@@ -40,6 +40,10 @@ impl AssociateClientDeviceWithCoreDeviceEntryBuilder {
         self.thing_name = input;
         self
     }
+    /// <p>The name of the IoT thing that represents the client device to associate.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_name
+    }
     /// Consumes the builder and constructs a [`AssociateClientDeviceWithCoreDeviceEntry`](crate::types::AssociateClientDeviceWithCoreDeviceEntry).
     pub fn build(self) -> crate::types::AssociateClientDeviceWithCoreDeviceEntry {
         crate::types::AssociateClientDeviceWithCoreDeviceEntry {

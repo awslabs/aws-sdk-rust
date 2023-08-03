@@ -67,6 +67,12 @@ impl InstanceFleetProvisioningSpecificationsBuilder {
         self.spot_specification = input;
         self
     }
+    /// <p>The launch specification for Spot instances in the fleet, which determines the defined duration, provisioning timeout behavior, and allocation strategy.</p>
+    pub fn get_spot_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::SpotProvisioningSpecification> {
+        &self.spot_specification
+    }
     /// <p> The launch specification for On-Demand Instances in the instance fleet, which determines the allocation strategy. </p> <note>
     /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions. On-Demand Instances allocation strategy is available in Amazon EMR releases 5.12.1 and later.</p>
     /// </note>
@@ -86,6 +92,14 @@ impl InstanceFleetProvisioningSpecificationsBuilder {
     ) -> Self {
         self.on_demand_specification = input;
         self
+    }
+    /// <p> The launch specification for On-Demand Instances in the instance fleet, which determines the allocation strategy. </p> <note>
+    /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions. On-Demand Instances allocation strategy is available in Amazon EMR releases 5.12.1 and later.</p>
+    /// </note>
+    pub fn get_on_demand_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::OnDemandProvisioningSpecification> {
+        &self.on_demand_specification
     }
     /// Consumes the builder and constructs a [`InstanceFleetProvisioningSpecifications`](crate::types::InstanceFleetProvisioningSpecifications).
     pub fn build(self) -> crate::types::InstanceFleetProvisioningSpecifications {

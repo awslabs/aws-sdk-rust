@@ -38,6 +38,10 @@ impl GetAggregateConfigRuleComplianceSummaryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetAggregateConfigRuleComplianceSummary as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_aggregate_config_rule_compliance_summary::builders::GetAggregateConfigRuleComplianceSummaryInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -114,6 +118,12 @@ impl GetAggregateConfigRuleComplianceSummaryFluentBuilder {
         self.inner = self.inner.set_configuration_aggregator_name(input);
         self
     }
+    /// <p>The name of the configuration aggregator.</p>
+    pub fn get_configuration_aggregator_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_aggregator_name()
+    }
     /// <p>Filters the results based on the ConfigRuleComplianceSummaryFilters object.</p>
     pub fn filters(mut self, input: crate::types::ConfigRuleComplianceSummaryFilters) -> Self {
         self.inner = self.inner.filters(input);
@@ -126,6 +136,12 @@ impl GetAggregateConfigRuleComplianceSummaryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
+    }
+    /// <p>Filters the results based on the ConfigRuleComplianceSummaryFilters object.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfigRuleComplianceSummaryFilters> {
+        self.inner.get_filters()
     }
     /// <p>Groups the result based on ACCOUNT_ID or AWS_REGION.</p>
     pub fn group_by_key(
@@ -143,6 +159,12 @@ impl GetAggregateConfigRuleComplianceSummaryFluentBuilder {
         self.inner = self.inner.set_group_by_key(input);
         self
     }
+    /// <p>Groups the result based on ACCOUNT_ID or AWS_REGION.</p>
+    pub fn get_group_by_key(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfigRuleComplianceSummaryGroupKey> {
+        self.inner.get_group_by_key()
+    }
     /// <p>The maximum number of evaluation results returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -153,6 +175,10 @@ impl GetAggregateConfigRuleComplianceSummaryFluentBuilder {
         self.inner = self.inner.set_limit(input);
         self
     }
+    /// <p>The maximum number of evaluation results returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
+    }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -162,5 +188,9 @@ impl GetAggregateConfigRuleComplianceSummaryFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

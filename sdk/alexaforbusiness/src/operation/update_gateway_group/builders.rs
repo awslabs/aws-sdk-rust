@@ -37,6 +37,12 @@ impl UpdateGatewayGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateGatewayGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_gateway_group::builders::UpdateGatewayGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl UpdateGatewayGroupFluentBuilder {
         self.inner = self.inner.set_gateway_group_arn(input);
         self
     }
+    /// <p>The ARN of the gateway group to update.</p>
+    pub fn get_gateway_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gateway_group_arn()
+    }
     /// <p>The updated name of the gateway group.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -143,6 +153,10 @@ impl UpdateGatewayGroupFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The updated name of the gateway group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The updated description of the gateway group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -152,5 +166,9 @@ impl UpdateGatewayGroupFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The updated description of the gateway group.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
 }

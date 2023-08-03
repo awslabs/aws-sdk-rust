@@ -37,6 +37,13 @@ impl AddNotificationChannelsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AddNotificationChannels as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::add_notification_channels::builders::AddNotificationChannelsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl AddNotificationChannelsFluentBuilder {
         self.inner = self.inner.set_profiling_group_name(input);
         self
     }
+    /// <p>The name of the profiling group that we are setting up notifications for.</p>
+    pub fn get_profiling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_profiling_group_name()
+    }
     /// Appends an item to `channels`.
     ///
     /// To override the contents of this collection use [`set_channels`](Self::set_channels).
@@ -149,5 +160,9 @@ impl AddNotificationChannelsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_channels(input);
         self
+    }
+    /// <p>One or 2 channels to report to when anomalies are detected.</p>
+    pub fn get_channels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Channel>> {
+        self.inner.get_channels()
     }
 }

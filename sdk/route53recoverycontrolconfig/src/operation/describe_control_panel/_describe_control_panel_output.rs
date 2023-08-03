@@ -50,6 +50,10 @@ impl DescribeControlPanelOutputBuilder {
         self.control_panel = input;
         self
     }
+    /// <p>Information about the control panel.</p>
+    pub fn get_control_panel(&self) -> &::std::option::Option<crate::types::ControlPanel> {
+        &self.control_panel
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

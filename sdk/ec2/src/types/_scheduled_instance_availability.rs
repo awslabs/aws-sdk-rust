@@ -142,6 +142,10 @@ impl ScheduledInstanceAvailabilityBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>The Availability Zone.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>The number of available instances.</p>
     pub fn available_instance_count(mut self, input: i32) -> Self {
         self.available_instance_count = ::std::option::Option::Some(input);
@@ -151,6 +155,10 @@ impl ScheduledInstanceAvailabilityBuilder {
     pub fn set_available_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.available_instance_count = input;
         self
+    }
+    /// <p>The number of available instances.</p>
+    pub fn get_available_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.available_instance_count
     }
     /// <p>The time period for the first schedule to start.</p>
     pub fn first_slot_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -165,6 +173,12 @@ impl ScheduledInstanceAvailabilityBuilder {
         self.first_slot_start_time = input;
         self
     }
+    /// <p>The time period for the first schedule to start.</p>
+    pub fn get_first_slot_start_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.first_slot_start_time
+    }
     /// <p>The hourly price for a single instance.</p>
     pub fn hourly_price(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hourly_price = ::std::option::Option::Some(input.into());
@@ -174,6 +188,10 @@ impl ScheduledInstanceAvailabilityBuilder {
     pub fn set_hourly_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hourly_price = input;
         self
+    }
+    /// <p>The hourly price for a single instance.</p>
+    pub fn get_hourly_price(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hourly_price
     }
     /// <p>The instance type. You can specify one of the C3, C4, M4, or R3 instance types.</p>
     pub fn instance_type(
@@ -191,6 +209,10 @@ impl ScheduledInstanceAvailabilityBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The instance type. You can specify one of the C3, C4, M4, or R3 instance types.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
+    }
     /// <p>The maximum term. The only possible value is 365 days.</p>
     pub fn max_term_duration_in_days(mut self, input: i32) -> Self {
         self.max_term_duration_in_days = ::std::option::Option::Some(input);
@@ -201,6 +223,10 @@ impl ScheduledInstanceAvailabilityBuilder {
         self.max_term_duration_in_days = input;
         self
     }
+    /// <p>The maximum term. The only possible value is 365 days.</p>
+    pub fn get_max_term_duration_in_days(&self) -> &::std::option::Option<i32> {
+        &self.max_term_duration_in_days
+    }
     /// <p>The minimum term. The only possible value is 365 days.</p>
     pub fn min_term_duration_in_days(mut self, input: i32) -> Self {
         self.min_term_duration_in_days = ::std::option::Option::Some(input);
@@ -210,6 +236,10 @@ impl ScheduledInstanceAvailabilityBuilder {
     pub fn set_min_term_duration_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_term_duration_in_days = input;
         self
+    }
+    /// <p>The minimum term. The only possible value is 365 days.</p>
+    pub fn get_min_term_duration_in_days(&self) -> &::std::option::Option<i32> {
+        &self.min_term_duration_in_days
     }
     /// <p>The network platform.</p>
     pub fn network_platform(
@@ -227,6 +257,10 @@ impl ScheduledInstanceAvailabilityBuilder {
         self.network_platform = input;
         self
     }
+    /// <p>The network platform.</p>
+    pub fn get_network_platform(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_platform
+    }
     /// <p>The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p>
     pub fn platform(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform = ::std::option::Option::Some(input.into());
@@ -236,6 +270,10 @@ impl ScheduledInstanceAvailabilityBuilder {
     pub fn set_platform(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform = input;
         self
+    }
+    /// <p>The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p>
+    pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform
     }
     /// <p>The purchase token. This token expires in two hours.</p>
     pub fn purchase_token(
@@ -253,6 +291,10 @@ impl ScheduledInstanceAvailabilityBuilder {
         self.purchase_token = input;
         self
     }
+    /// <p>The purchase token. This token expires in two hours.</p>
+    pub fn get_purchase_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.purchase_token
+    }
     /// <p>The schedule recurrence.</p>
     pub fn recurrence(mut self, input: crate::types::ScheduledInstanceRecurrence) -> Self {
         self.recurrence = ::std::option::Option::Some(input);
@@ -266,6 +308,12 @@ impl ScheduledInstanceAvailabilityBuilder {
         self.recurrence = input;
         self
     }
+    /// <p>The schedule recurrence.</p>
+    pub fn get_recurrence(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScheduledInstanceRecurrence> {
+        &self.recurrence
+    }
     /// <p>The number of hours in the schedule.</p>
     pub fn slot_duration_in_hours(mut self, input: i32) -> Self {
         self.slot_duration_in_hours = ::std::option::Option::Some(input);
@@ -276,6 +324,10 @@ impl ScheduledInstanceAvailabilityBuilder {
         self.slot_duration_in_hours = input;
         self
     }
+    /// <p>The number of hours in the schedule.</p>
+    pub fn get_slot_duration_in_hours(&self) -> &::std::option::Option<i32> {
+        &self.slot_duration_in_hours
+    }
     /// <p>The total number of hours for a single instance for the entire term.</p>
     pub fn total_scheduled_instance_hours(mut self, input: i32) -> Self {
         self.total_scheduled_instance_hours = ::std::option::Option::Some(input);
@@ -285,6 +337,10 @@ impl ScheduledInstanceAvailabilityBuilder {
     pub fn set_total_scheduled_instance_hours(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_scheduled_instance_hours = input;
         self
+    }
+    /// <p>The total number of hours for a single instance for the entire term.</p>
+    pub fn get_total_scheduled_instance_hours(&self) -> &::std::option::Option<i32> {
+        &self.total_scheduled_instance_hours
     }
     /// Consumes the builder and constructs a [`ScheduledInstanceAvailability`](crate::types::ScheduledInstanceAvailability).
     pub fn build(self) -> crate::types::ScheduledInstanceAvailability {

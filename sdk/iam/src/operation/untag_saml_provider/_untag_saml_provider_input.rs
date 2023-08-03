@@ -58,6 +58,11 @@ impl UntagSamlProviderInputBuilder {
         self.saml_provider_arn = input;
         self
     }
+    /// <p>The ARN of the SAML identity provider in IAM from which you want to remove tags.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn get_saml_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.saml_provider_arn
+    }
     /// Appends an item to `tag_keys`.
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
@@ -76,6 +81,10 @@ impl UntagSamlProviderInputBuilder {
     ) -> Self {
         self.tag_keys = input;
         self
+    }
+    /// <p>A list of key names as a simple array of strings. The tags with matching keys are removed from the specified SAML identity provider.</p>
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tag_keys
     }
     /// Consumes the builder and constructs a [`UntagSamlProviderInput`](crate::operation::untag_saml_provider::UntagSamlProviderInput).
     pub fn build(

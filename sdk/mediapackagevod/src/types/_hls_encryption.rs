@@ -62,6 +62,12 @@ impl HlsEncryptionBuilder {
         self.constant_initialization_vector = input;
         self
     }
+    /// A constant initialization vector for encryption (optional). When not specified the initialization vector will be periodically rotated.
+    pub fn get_constant_initialization_vector(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.constant_initialization_vector
+    }
     /// The encryption method to use.
     pub fn encryption_method(mut self, input: crate::types::EncryptionMethod) -> Self {
         self.encryption_method = ::std::option::Option::Some(input);
@@ -75,6 +81,10 @@ impl HlsEncryptionBuilder {
         self.encryption_method = input;
         self
     }
+    /// The encryption method to use.
+    pub fn get_encryption_method(&self) -> &::std::option::Option<crate::types::EncryptionMethod> {
+        &self.encryption_method
+    }
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
     pub fn speke_key_provider(mut self, input: crate::types::SpekeKeyProvider) -> Self {
         self.speke_key_provider = ::std::option::Option::Some(input);
@@ -87,6 +97,10 @@ impl HlsEncryptionBuilder {
     ) -> Self {
         self.speke_key_provider = input;
         self
+    }
+    /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
+    pub fn get_speke_key_provider(&self) -> &::std::option::Option<crate::types::SpekeKeyProvider> {
+        &self.speke_key_provider
     }
     /// Consumes the builder and constructs a [`HlsEncryption`](crate::types::HlsEncryption).
     pub fn build(self) -> crate::types::HlsEncryption {

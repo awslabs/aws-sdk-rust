@@ -36,6 +36,12 @@ impl UpdateBrokerCountFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateBrokerCount as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_broker_count::builders::UpdateBrokerCountInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateBrokerCountFluentBuilder {
         self.inner = self.inner.set_cluster_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_arn()
+    }
     /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
     pub fn current_version(
         mut self,
@@ -142,6 +152,10 @@ impl UpdateBrokerCountFluentBuilder {
         self.inner = self.inner.set_current_version(input);
         self
     }
+    /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
+    pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_current_version()
+    }
     /// <p>The number of broker nodes that you want the cluster to have after this operation completes successfully.</p>
     pub fn target_number_of_broker_nodes(mut self, input: i32) -> Self {
         self.inner = self.inner.target_number_of_broker_nodes(input);
@@ -151,5 +165,9 @@ impl UpdateBrokerCountFluentBuilder {
     pub fn set_target_number_of_broker_nodes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_target_number_of_broker_nodes(input);
         self
+    }
+    /// <p>The number of broker nodes that you want the cluster to have after this operation completes successfully.</p>
+    pub fn get_target_number_of_broker_nodes(&self) -> &::std::option::Option<i32> {
+        self.inner.get_target_number_of_broker_nodes()
     }
 }

@@ -40,6 +40,10 @@ impl GetDeliverabilityTestReportInputBuilder {
         self.report_id = input;
         self
     }
+    /// <p>A unique string that identifies the predictive inbox placement test.</p>
+    pub fn get_report_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.report_id
+    }
     /// Consumes the builder and constructs a [`GetDeliverabilityTestReportInput`](crate::operation::get_deliverability_test_report::GetDeliverabilityTestReportInput).
     pub fn build(
         self,

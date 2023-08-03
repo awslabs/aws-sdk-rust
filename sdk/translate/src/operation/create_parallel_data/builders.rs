@@ -36,6 +36,12 @@ impl CreateParallelDataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateParallelData as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_parallel_data::builders::CreateParallelDataInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateParallelDataFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>A custom name for the parallel data resource in Amazon Translate. You must assign a name that is unique in the account and region.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A custom description for the parallel data resource in Amazon Translate.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -135,6 +145,10 @@ impl CreateParallelDataFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A custom description for the parallel data resource in Amazon Translate.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>Specifies the format and S3 location of the parallel data input file.</p>
     pub fn parallel_data_config(mut self, input: crate::types::ParallelDataConfig) -> Self {
@@ -149,6 +163,12 @@ impl CreateParallelDataFluentBuilder {
         self.inner = self.inner.set_parallel_data_config(input);
         self
     }
+    /// <p>Specifies the format and S3 location of the parallel data input file.</p>
+    pub fn get_parallel_data_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ParallelDataConfig> {
+        self.inner.get_parallel_data_config()
+    }
     /// <p>The encryption key used to encrypt this object.</p>
     pub fn encryption_key(mut self, input: crate::types::EncryptionKey) -> Self {
         self.inner = self.inner.encryption_key(input);
@@ -162,6 +182,10 @@ impl CreateParallelDataFluentBuilder {
         self.inner = self.inner.set_encryption_key(input);
         self
     }
+    /// <p>The encryption key used to encrypt this object.</p>
+    pub fn get_encryption_key(&self) -> &::std::option::Option<crate::types::EncryptionKey> {
+        self.inner.get_encryption_key()
+    }
     /// <p>A unique identifier for the request. This token is automatically generated when you use Amazon Translate through an AWS SDK.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -171,6 +195,10 @@ impl CreateParallelDataFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A unique identifier for the request. This token is automatically generated when you use Amazon Translate through an AWS SDK.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// Appends an item to `Tags`.
     ///
@@ -188,5 +216,9 @@ impl CreateParallelDataFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each tag key for the resource must be unique. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

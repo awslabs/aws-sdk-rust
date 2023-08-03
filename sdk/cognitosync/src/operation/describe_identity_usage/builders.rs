@@ -58,6 +58,13 @@ impl DescribeIdentityUsageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeIdentityUsage as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_identity_usage::builders::DescribeIdentityUsageInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -155,6 +162,10 @@ impl DescribeIdentityUsageFluentBuilder {
         self
     }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_pool_id()
+    }
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub fn identity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_id(input.into());
         self
@@ -163,5 +174,9 @@ impl DescribeIdentityUsageFluentBuilder {
     pub fn set_identity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_id(input);
         self
+    }
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    pub fn get_identity_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_id()
     }
 }

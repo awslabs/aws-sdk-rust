@@ -94,6 +94,12 @@ impl EventIntegrationAssociationBuilder {
         self.event_integration_association_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the event integration association.</p>
+    pub fn get_event_integration_association_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.event_integration_association_arn
+    }
     /// <p>The identifier for the event integration association.</p>
     pub fn event_integration_association_id(
         mut self,
@@ -109,6 +115,12 @@ impl EventIntegrationAssociationBuilder {
     ) -> Self {
         self.event_integration_association_id = input;
         self
+    }
+    /// <p>The identifier for the event integration association.</p>
+    pub fn get_event_integration_association_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.event_integration_association_id
     }
     /// <p>The name of the event integration.</p>
     pub fn event_integration_name(
@@ -126,6 +138,10 @@ impl EventIntegrationAssociationBuilder {
         self.event_integration_name = input;
         self
     }
+    /// <p>The name of the event integration.</p>
+    pub fn get_event_integration_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_integration_name
+    }
     /// <p>The identifier for the client that is associated with the event integration.</p>
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
@@ -135,6 +151,10 @@ impl EventIntegrationAssociationBuilder {
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_id = input;
         self
+    }
+    /// <p>The identifier for the client that is associated with the event integration.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_id
     }
     /// <p>The name of the EventBridge rule.</p>
     pub fn event_bridge_rule_name(
@@ -151,6 +171,10 @@ impl EventIntegrationAssociationBuilder {
     ) -> Self {
         self.event_bridge_rule_name = input;
         self
+    }
+    /// <p>The name of the EventBridge rule.</p>
+    pub fn get_event_bridge_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_bridge_rule_name
     }
     /// Adds a key-value pair to `client_association_metadata`.
     ///
@@ -176,6 +200,14 @@ impl EventIntegrationAssociationBuilder {
     ) -> Self {
         self.client_association_metadata = input;
         self
+    }
+    /// <p>The metadata associated with the client.</p>
+    pub fn get_client_association_metadata(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.client_association_metadata
     }
     /// Consumes the builder and constructs a [`EventIntegrationAssociation`](crate::types::EventIntegrationAssociation).
     pub fn build(self) -> crate::types::EventIntegrationAssociation {

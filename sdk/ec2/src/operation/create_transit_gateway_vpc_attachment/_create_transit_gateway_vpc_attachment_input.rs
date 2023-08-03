@@ -90,6 +90,10 @@ impl CreateTransitGatewayVpcAttachmentInputBuilder {
         self.transit_gateway_id = input;
         self
     }
+    /// <p>The ID of the transit gateway.</p>
+    pub fn get_transit_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_id
+    }
     /// <p>The ID of the VPC.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -99,6 +103,10 @@ impl CreateTransitGatewayVpcAttachmentInputBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The ID of the VPC.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -119,6 +127,10 @@ impl CreateTransitGatewayVpcAttachmentInputBuilder {
         self.subnet_ids = input;
         self
     }
+    /// <p>The IDs of one or more subnets. You can specify only one subnet per Availability Zone. You must specify at least one subnet, but we recommend that you specify two subnets for better availability. The transit gateway uses one IP address from each specified subnet.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
+    }
     /// <p>The VPC attachment options.</p>
     pub fn options(
         mut self,
@@ -134,6 +146,12 @@ impl CreateTransitGatewayVpcAttachmentInputBuilder {
     ) -> Self {
         self.options = input;
         self
+    }
+    /// <p>The VPC attachment options.</p>
+    pub fn get_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateTransitGatewayVpcAttachmentRequestOptions> {
+        &self.options
     }
     /// Appends an item to `tag_specifications`.
     ///
@@ -154,6 +172,12 @@ impl CreateTransitGatewayVpcAttachmentInputBuilder {
         self.tag_specifications = input;
         self
     }
+    /// <p>The tags to apply to the VPC attachment.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -163,6 +187,10 @@ impl CreateTransitGatewayVpcAttachmentInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`CreateTransitGatewayVpcAttachmentInput`](crate::operation::create_transit_gateway_vpc_attachment::CreateTransitGatewayVpcAttachmentInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_transit_gateway_vpc_attachment::CreateTransitGatewayVpcAttachmentInput, ::aws_smithy_http::operation::error::BuildError>{

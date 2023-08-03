@@ -62,6 +62,10 @@ impl SetLoadBalancerPoliciesOfListenerInputBuilder {
         self.load_balancer_name = input;
         self
     }
+    /// <p>The name of the load balancer.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.load_balancer_name
+    }
     /// <p>The external port of the load balancer.</p>
     pub fn load_balancer_port(mut self, input: i32) -> Self {
         self.load_balancer_port = ::std::option::Option::Some(input);
@@ -71,6 +75,10 @@ impl SetLoadBalancerPoliciesOfListenerInputBuilder {
     pub fn set_load_balancer_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.load_balancer_port = input;
         self
+    }
+    /// <p>The external port of the load balancer.</p>
+    pub fn get_load_balancer_port(&self) -> &::std::option::Option<i32> {
+        &self.load_balancer_port
     }
     /// Appends an item to `policy_names`.
     ///
@@ -90,6 +98,12 @@ impl SetLoadBalancerPoliciesOfListenerInputBuilder {
     ) -> Self {
         self.policy_names = input;
         self
+    }
+    /// <p>The names of the policies. This list must include all policies to be enabled. If you omit a policy that is currently enabled, it is disabled. If the list is empty, all current policies are disabled.</p>
+    pub fn get_policy_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.policy_names
     }
     /// Consumes the builder and constructs a [`SetLoadBalancerPoliciesOfListenerInput`](crate::operation::set_load_balancer_policies_of_listener::SetLoadBalancerPoliciesOfListenerInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::set_load_balancer_policies_of_listener::SetLoadBalancerPoliciesOfListenerInput, ::aws_smithy_http::operation::error::BuildError>{

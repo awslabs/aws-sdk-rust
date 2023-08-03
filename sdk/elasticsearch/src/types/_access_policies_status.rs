@@ -48,6 +48,10 @@ impl AccessPoliciesStatusBuilder {
         self.options = input;
         self
     }
+    /// <p>The access policy configured for the Elasticsearch domain. Access policies may be resource-based, IP-based, or IAM-based. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies" target="_blank"> Configuring Access Policies</a>for more information.</p>
+    pub fn get_options(&self) -> &::std::option::Option<::std::string::String> {
+        &self.options
+    }
     /// <p>The status of the access policy for the Elasticsearch domain. See <code>OptionStatus</code> for the status information that's included. </p>
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl AccessPoliciesStatusBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the access policy for the Elasticsearch domain. See <code>OptionStatus</code> for the status information that's included. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::OptionStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`AccessPoliciesStatus`](crate::types::AccessPoliciesStatus).
     pub fn build(self) -> crate::types::AccessPoliciesStatus {

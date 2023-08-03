@@ -47,6 +47,10 @@ impl GetInstancePortStatesInputBuilder {
         self.instance_name = input;
         self
     }
+    /// <p>The name of the instance for which to return firewall port states.</p>
+    pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_name
+    }
     /// Consumes the builder and constructs a [`GetInstancePortStatesInput`](crate::operation::get_instance_port_states::GetInstancePortStatesInput).
     pub fn build(
         self,

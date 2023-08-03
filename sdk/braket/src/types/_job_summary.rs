@@ -107,6 +107,10 @@ impl JobSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the Amazon Braket job.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::JobPrimaryStatus> {
+        &self.status
+    }
     /// <p>The ARN of the Amazon Braket job.</p>
     pub fn job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_arn = ::std::option::Option::Some(input.into());
@@ -116,6 +120,10 @@ impl JobSummaryBuilder {
     pub fn set_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_arn = input;
         self
+    }
+    /// <p>The ARN of the Amazon Braket job.</p>
+    pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_arn
     }
     /// <p>The name of the Amazon Braket job.</p>
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -127,6 +135,10 @@ impl JobSummaryBuilder {
         self.job_name = input;
         self
     }
+    /// <p>The name of the Amazon Braket job.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
+    }
     /// <p>Provides summary information about the primary device used by an Amazon Braket job.</p>
     pub fn device(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device = ::std::option::Option::Some(input.into());
@@ -136,6 +148,10 @@ impl JobSummaryBuilder {
     pub fn set_device(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device = input;
         self
+    }
+    /// <p>Provides summary information about the primary device used by an Amazon Braket job.</p>
+    pub fn get_device(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device
     }
     /// <p>The date and time that the Amazon Braket job was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -150,6 +166,10 @@ impl JobSummaryBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The date and time that the Amazon Braket job was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The date and time that the Amazon Braket job was started.</p>
     pub fn started_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.started_at = ::std::option::Option::Some(input);
@@ -163,6 +183,10 @@ impl JobSummaryBuilder {
         self.started_at = input;
         self
     }
+    /// <p>The date and time that the Amazon Braket job was started.</p>
+    pub fn get_started_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.started_at
+    }
     /// <p>The date and time that the Amazon Braket job ended.</p>
     pub fn ended_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.ended_at = ::std::option::Option::Some(input);
@@ -175,6 +199,10 @@ impl JobSummaryBuilder {
     ) -> Self {
         self.ended_at = input;
         self
+    }
+    /// <p>The date and time that the Amazon Braket job ended.</p>
+    pub fn get_ended_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.ended_at
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -200,6 +228,14 @@ impl JobSummaryBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`JobSummary`](crate::types::JobSummary).
     pub fn build(self) -> crate::types::JobSummary {

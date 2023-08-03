@@ -122,6 +122,10 @@ impl StageDetailsBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the stage.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The game key associated with the stage.</p>
     /// <p> The game key is a unique identifier that the game client uses to connect to the GameSparks backend. </p>
     pub fn game_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -134,6 +138,11 @@ impl StageDetailsBuilder {
         self.game_key = input;
         self
     }
+    /// <p>The game key associated with the stage.</p>
+    /// <p> The game key is a unique identifier that the game client uses to connect to the GameSparks backend. </p>
+    pub fn get_game_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.game_key
+    }
     /// <p>The Amazon Resource Name (ARN) of the stage.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -143,6 +152,10 @@ impl StageDetailsBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the stage.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The Amazon Resource Name (ARN) of the role used to run the game runtimes deployed to the stage.</p>
     pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -154,6 +167,10 @@ impl StageDetailsBuilder {
         self.role = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the role used to run the game runtimes deployed to the stage.</p>
+    pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role
+    }
     /// <p>The description of the stage.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -163,6 +180,10 @@ impl StageDetailsBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the stage.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The timestamp of when the stage was created.</p>
     pub fn created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -177,6 +198,10 @@ impl StageDetailsBuilder {
         self.created = input;
         self
     }
+    /// <p>The timestamp of when the stage was created.</p>
+    pub fn get_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created
+    }
     /// <p>The timestamp of when the stage was last updated.</p>
     pub fn last_updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated = ::std::option::Option::Some(input);
@@ -190,6 +215,10 @@ impl StageDetailsBuilder {
         self.last_updated = input;
         self
     }
+    /// <p>The timestamp of when the stage was last updated.</p>
+    pub fn get_last_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated
+    }
     /// <p>The state of the stage.</p>
     pub fn state(mut self, input: crate::types::StageState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -199,6 +228,10 @@ impl StageDetailsBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::StageState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the stage.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::StageState> {
+        &self.state
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -225,6 +258,14 @@ impl StageDetailsBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags associated with the stage.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The Amazon CloudWatch log group for game runtimes deployed to the stage.</p>
     pub fn log_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group = ::std::option::Option::Some(input.into());
@@ -234,6 +275,10 @@ impl StageDetailsBuilder {
     pub fn set_log_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_group = input;
         self
+    }
+    /// <p>The Amazon CloudWatch log group for game runtimes deployed to the stage.</p>
+    pub fn get_log_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group
     }
     /// Consumes the builder and constructs a [`StageDetails`](crate::types::StageDetails).
     pub fn build(self) -> crate::types::StageDetails {

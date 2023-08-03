@@ -51,6 +51,10 @@ impl GetInstanceSnapshotOutputBuilder {
         self.instance_snapshot = input;
         self
     }
+    /// <p>An array of key-value pairs containing information about the results of your get instance snapshot request.</p>
+    pub fn get_instance_snapshot(&self) -> &::std::option::Option<crate::types::InstanceSnapshot> {
+        &self.instance_snapshot
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

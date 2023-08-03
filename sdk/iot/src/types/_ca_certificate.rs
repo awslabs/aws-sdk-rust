@@ -72,6 +72,10 @@ impl CaCertificateBuilder {
         self.certificate_arn = input;
         self
     }
+    /// <p>The ARN of the CA certificate.</p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_arn
+    }
     /// <p>The ID of the CA certificate.</p>
     pub fn certificate_id(
         mut self,
@@ -88,6 +92,10 @@ impl CaCertificateBuilder {
         self.certificate_id = input;
         self
     }
+    /// <p>The ID of the CA certificate.</p>
+    pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_id
+    }
     /// <p>The status of the CA certificate.</p>
     /// <p>The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
     pub fn status(mut self, input: crate::types::CaCertificateStatus) -> Self {
@@ -103,6 +111,11 @@ impl CaCertificateBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the CA certificate.</p>
+    /// <p>The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CaCertificateStatus> {
+        &self.status
+    }
     /// <p>The date the CA certificate was created.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -115,6 +128,10 @@ impl CaCertificateBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>The date the CA certificate was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
     }
     /// Consumes the builder and constructs a [`CaCertificate`](crate::types::CaCertificate).
     pub fn build(self) -> crate::types::CaCertificate {

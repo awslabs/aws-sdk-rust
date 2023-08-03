@@ -37,6 +37,10 @@ impl GetTableFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetTable as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_table::builders::GetTableInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +129,10 @@ impl GetTableFluentBuilder {
         self.inner = self.inner.set_keyspace_name(input);
         self
     }
+    /// <p>The name of the keyspace that the table is stored in.</p>
+    pub fn get_keyspace_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_keyspace_name()
+    }
     /// <p>The name of the table.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.table_name(input.into());
@@ -134,5 +142,9 @@ impl GetTableFluentBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_table_name(input);
         self
+    }
+    /// <p>The name of the table.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_table_name()
     }
 }

@@ -56,6 +56,10 @@ impl GetBucketTaggingOutputBuilder {
         self.tag_set = input;
         self
     }
+    /// <p>The tags set of the Outposts bucket.</p>
+    pub fn get_tag_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::S3Tag>> {
+        &self.tag_set
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

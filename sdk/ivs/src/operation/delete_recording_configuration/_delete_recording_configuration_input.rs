@@ -39,6 +39,10 @@ impl DeleteRecordingConfigurationInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>ARN of the recording configuration to be deleted.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`DeleteRecordingConfigurationInput`](crate::operation::delete_recording_configuration::DeleteRecordingConfigurationInput).
     pub fn build(
         self,

@@ -36,6 +36,13 @@ impl CreateAssessmentTargetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateAssessmentTarget as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_assessment_target::builders::CreateAssessmentTargetInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl CreateAssessmentTargetFluentBuilder {
         self.inner = self.inner.set_assessment_target_name(input);
         self
     }
+    /// <p>The user-defined name that identifies the assessment target that you want to create. The name must be unique within the AWS account.</p>
+    pub fn get_assessment_target_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assessment_target_name()
+    }
     /// <p>The ARN that specifies the resource group that is used to create the assessment target. If resourceGroupArn is not specified, all EC2 instances in the current AWS account and region are included in the assessment target.</p>
     pub fn resource_group_arn(
         mut self,
@@ -147,5 +158,9 @@ impl CreateAssessmentTargetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_group_arn(input);
         self
+    }
+    /// <p>The ARN that specifies the resource group that is used to create the assessment target. If resourceGroupArn is not specified, all EC2 instances in the current AWS account and region are included in the assessment target.</p>
+    pub fn get_resource_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_group_arn()
     }
 }

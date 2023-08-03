@@ -48,6 +48,10 @@ impl TimeZoneBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the time zone, following the <a href="https://www.iana.org/time-zones"> IANA time zone standard</a>. For example, <code>America/Los_Angeles</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The time zone's offset, in seconds, from UTC.</p>
     pub fn offset(mut self, input: i32) -> Self {
         self.offset = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl TimeZoneBuilder {
     pub fn set_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.offset = input;
         self
+    }
+    /// <p>The time zone's offset, in seconds, from UTC.</p>
+    pub fn get_offset(&self) -> &::std::option::Option<i32> {
+        &self.offset
     }
     /// Consumes the builder and constructs a [`TimeZone`](crate::types::TimeZone).
     pub fn build(self) -> crate::types::TimeZone {

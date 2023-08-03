@@ -46,6 +46,12 @@ impl PutConferencePreferenceInputBuilder {
         self.conference_preference = input;
         self
     }
+    /// <p>The conference preference of a specific conference provider.</p>
+    pub fn get_conference_preference(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConferencePreference> {
+        &self.conference_preference
+    }
     /// Consumes the builder and constructs a [`PutConferencePreferenceInput`](crate::operation::put_conference_preference::PutConferencePreferenceInput).
     pub fn build(
         self,

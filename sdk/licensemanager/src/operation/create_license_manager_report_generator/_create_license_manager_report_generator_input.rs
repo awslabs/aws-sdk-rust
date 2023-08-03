@@ -101,6 +101,10 @@ impl CreateLicenseManagerReportGeneratorInputBuilder {
         self.report_generator_name = input;
         self
     }
+    /// <p>Name of the report generator.</p>
+    pub fn get_report_generator_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.report_generator_name
+    }
     /// Appends an item to `r#type`.
     ///
     /// To override the contents of this collection use [`set_type`](Self::set_type).
@@ -128,6 +132,14 @@ impl CreateLicenseManagerReportGeneratorInputBuilder {
         self.r#type = input;
         self
     }
+    /// <p>Type of reports to generate. The following report types an be generated:</p>
+    /// <ul>
+    /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li>
+    /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReportType>> {
+        &self.r#type
+    }
     /// <p>Defines the type of license configuration the report generator tracks.</p>
     pub fn report_context(mut self, input: crate::types::ReportContext) -> Self {
         self.report_context = ::std::option::Option::Some(input);
@@ -140,6 +152,10 @@ impl CreateLicenseManagerReportGeneratorInputBuilder {
     ) -> Self {
         self.report_context = input;
         self
+    }
+    /// <p>Defines the type of license configuration the report generator tracks.</p>
+    pub fn get_report_context(&self) -> &::std::option::Option<crate::types::ReportContext> {
+        &self.report_context
     }
     /// <p>Frequency by which reports are generated. Reports can be generated daily, monthly, or weekly.</p>
     pub fn report_frequency(mut self, input: crate::types::ReportFrequency) -> Self {
@@ -154,6 +170,10 @@ impl CreateLicenseManagerReportGeneratorInputBuilder {
         self.report_frequency = input;
         self
     }
+    /// <p>Frequency by which reports are generated. Reports can be generated daily, monthly, or weekly.</p>
+    pub fn get_report_frequency(&self) -> &::std::option::Option<crate::types::ReportFrequency> {
+        &self.report_frequency
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -164,6 +184,10 @@ impl CreateLicenseManagerReportGeneratorInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>Description of the report generator.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -173,6 +197,10 @@ impl CreateLicenseManagerReportGeneratorInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Description of the report generator.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `tags`.
     ///
@@ -192,6 +220,10 @@ impl CreateLicenseManagerReportGeneratorInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Tags to add to the report generator.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateLicenseManagerReportGeneratorInput`](crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorInput, ::aws_smithy_http::operation::error::BuildError>{

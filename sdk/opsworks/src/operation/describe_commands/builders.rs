@@ -39,6 +39,12 @@ impl DescribeCommandsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeCommands as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_commands::builders::DescribeCommandsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +141,10 @@ impl DescribeCommandsFluentBuilder {
         self.inner = self.inner.set_deployment_id(input);
         self
     }
+    /// <p>The deployment ID. If you include this parameter, <code>DescribeCommands</code> returns a description of the commands associated with the specified deployment.</p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_deployment_id()
+    }
     /// <p>The instance ID. If you include this parameter, <code>DescribeCommands</code> returns a description of the commands associated with the specified instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
@@ -144,6 +154,10 @@ impl DescribeCommandsFluentBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
+    }
+    /// <p>The instance ID. If you include this parameter, <code>DescribeCommands</code> returns a description of the commands associated with the specified instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
     }
     /// Appends an item to `CommandIds`.
     ///
@@ -161,5 +175,11 @@ impl DescribeCommandsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_command_ids(input);
         self
+    }
+    /// <p>An array of command IDs. If you include this parameter, <code>DescribeCommands</code> returns a description of the specified commands. Otherwise, it returns a description of every command.</p>
+    pub fn get_command_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_command_ids()
     }
 }

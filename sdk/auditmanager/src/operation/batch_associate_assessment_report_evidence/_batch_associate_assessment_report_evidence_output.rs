@@ -64,6 +64,12 @@ impl BatchAssociateAssessmentReportEvidenceOutputBuilder {
         self.evidence_ids = input;
         self
     }
+    /// <p> The list of evidence identifiers. </p>
+    pub fn get_evidence_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.evidence_ids
+    }
     /// Appends an item to `errors`.
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
@@ -82,6 +88,12 @@ impl BatchAssociateAssessmentReportEvidenceOutputBuilder {
     ) -> Self {
         self.errors = input;
         self
+    }
+    /// <p> A list of errors that the <code>BatchAssociateAssessmentReportEvidence</code> API returned. </p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentReportEvidenceError>> {
+        &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

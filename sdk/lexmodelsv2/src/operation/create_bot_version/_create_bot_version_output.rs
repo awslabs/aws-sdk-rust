@@ -95,6 +95,10 @@ impl CreateBotVersionOutputBuilder {
         self.bot_id = input;
         self
     }
+    /// <p>The bot identifier specified in the request.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
     /// <p>The description of the version specified in the request.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl CreateBotVersionOutputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the version specified in the request.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The version number assigned to the version.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
@@ -114,6 +122,10 @@ impl CreateBotVersionOutputBuilder {
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_version = input;
         self
+    }
+    /// <p>The version number assigned to the version.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_version
     }
     /// Adds a key-value pair to `bot_version_locale_specification`.
     ///
@@ -143,6 +155,14 @@ impl CreateBotVersionOutputBuilder {
         self.bot_version_locale_specification = input;
         self
     }
+    /// <p>The source versions used for each locale in the new version.</p>
+    pub fn get_bot_version_locale_specification(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::BotVersionLocaleDetails>,
+    > {
+        &self.bot_version_locale_specification
+    }
     /// <p>When you send a request to create or update a bot, Amazon Lex sets the status response element to <code>Creating</code>. After Amazon Lex builds the bot, it sets status to <code>Available</code>. If Amazon Lex can't build the bot, it sets status to <code>Failed</code>.</p>
     pub fn bot_status(mut self, input: crate::types::BotStatus) -> Self {
         self.bot_status = ::std::option::Option::Some(input);
@@ -152,6 +172,10 @@ impl CreateBotVersionOutputBuilder {
     pub fn set_bot_status(mut self, input: ::std::option::Option<crate::types::BotStatus>) -> Self {
         self.bot_status = input;
         self
+    }
+    /// <p>When you send a request to create or update a bot, Amazon Lex sets the status response element to <code>Creating</code>. After Amazon Lex builds the bot, it sets status to <code>Available</code>. If Amazon Lex can't build the bot, it sets status to <code>Failed</code>.</p>
+    pub fn get_bot_status(&self) -> &::std::option::Option<crate::types::BotStatus> {
+        &self.bot_status
     }
     /// <p>A timestamp of the date and time that the version was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -165,6 +189,10 @@ impl CreateBotVersionOutputBuilder {
     ) -> Self {
         self.creation_date_time = input;
         self
+    }
+    /// <p>A timestamp of the date and time that the version was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -62,6 +62,12 @@ impl HsmClientCertificateBuilder {
         self.hsm_client_certificate_identifier = input;
         self
     }
+    /// <p>The identifier of the HSM client certificate.</p>
+    pub fn get_hsm_client_certificate_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.hsm_client_certificate_identifier
+    }
     /// <p>The public key that the Amazon Redshift cluster will use to connect to the HSM. You must register the public key in the HSM.</p>
     pub fn hsm_client_certificate_public_key(
         mut self,
@@ -77,6 +83,12 @@ impl HsmClientCertificateBuilder {
     ) -> Self {
         self.hsm_client_certificate_public_key = input;
         self
+    }
+    /// <p>The public key that the Amazon Redshift cluster will use to connect to the HSM. You must register the public key in the HSM.</p>
+    pub fn get_hsm_client_certificate_public_key(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.hsm_client_certificate_public_key
     }
     /// Appends an item to `tags`.
     ///
@@ -96,6 +108,10 @@ impl HsmClientCertificateBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The list of tags for the HSM client certificate.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`HsmClientCertificate`](crate::types::HsmClientCertificate).
     pub fn build(self) -> crate::types::HsmClientCertificate {

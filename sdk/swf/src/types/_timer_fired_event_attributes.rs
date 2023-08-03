@@ -48,6 +48,10 @@ impl TimerFiredEventAttributesBuilder {
         self.timer_id = input;
         self
     }
+    /// <p>The unique ID of the timer that fired.</p>
+    pub fn get_timer_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timer_id
+    }
     /// <p>The ID of the <code>TimerStarted</code> event that was recorded when this timer was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn started_event_id(mut self, input: i64) -> Self {
         self.started_event_id = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl TimerFiredEventAttributesBuilder {
     pub fn set_started_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.started_event_id = input;
         self
+    }
+    /// <p>The ID of the <code>TimerStarted</code> event that was recorded when this timer was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    pub fn get_started_event_id(&self) -> &::std::option::Option<i64> {
+        &self.started_event_id
     }
     /// Consumes the builder and constructs a [`TimerFiredEventAttributes`](crate::types::TimerFiredEventAttributes).
     pub fn build(self) -> crate::types::TimerFiredEventAttributes {

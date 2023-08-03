@@ -49,6 +49,10 @@ impl UpdateCustomRoutingListenerInputBuilder {
         self.listener_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the listener to update.</p>
+    pub fn get_listener_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.listener_arn
+    }
     /// Appends an item to `port_ranges`.
     ///
     /// To override the contents of this collection use [`set_port_ranges`](Self::set_port_ranges).
@@ -69,6 +73,13 @@ impl UpdateCustomRoutingListenerInputBuilder {
     ) -> Self {
         self.port_ranges = input;
         self
+    }
+    /// <p>The updated port range to support for connections from clients to your accelerator. If you remove ports that are currently being used by a subnet endpoint, the call fails.</p>
+    /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About endpoints for custom routing accelerators</a>.</p>
+    pub fn get_port_ranges(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
+        &self.port_ranges
     }
     /// Consumes the builder and constructs a [`UpdateCustomRoutingListenerInput`](crate::operation::update_custom_routing_listener::UpdateCustomRoutingListenerInput).
     pub fn build(

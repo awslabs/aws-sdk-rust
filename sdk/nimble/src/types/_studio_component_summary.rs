@@ -120,6 +120,10 @@ impl StudioComponentSummaryBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The ISO timestamp in seconds for when the resource was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The user ID of the user that created the studio component.</p>
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
@@ -129,6 +133,10 @@ impl StudioComponentSummaryBuilder {
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by = input;
         self
+    }
+    /// <p>The user ID of the user that created the studio component.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by
     }
     /// <p>The description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -140,6 +148,10 @@ impl StudioComponentSummaryBuilder {
         self.description = input;
         self
     }
+    /// <p>The description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The name for the studio component.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -149,6 +161,10 @@ impl StudioComponentSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name for the studio component.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The unique identifier for a studio component resource.</p>
     pub fn studio_component_id(
@@ -166,6 +182,10 @@ impl StudioComponentSummaryBuilder {
         self.studio_component_id = input;
         self
     }
+    /// <p>The unique identifier for a studio component resource.</p>
+    pub fn get_studio_component_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_component_id
+    }
     /// <p>The specific subtype of a studio component.</p>
     pub fn subtype(mut self, input: crate::types::StudioComponentSubtype) -> Self {
         self.subtype = ::std::option::Option::Some(input);
@@ -178,6 +198,10 @@ impl StudioComponentSummaryBuilder {
     ) -> Self {
         self.subtype = input;
         self
+    }
+    /// <p>The specific subtype of a studio component.</p>
+    pub fn get_subtype(&self) -> &::std::option::Option<crate::types::StudioComponentSubtype> {
+        &self.subtype
     }
     /// <p>The type of the studio component.</p>
     pub fn r#type(mut self, input: crate::types::StudioComponentType) -> Self {
@@ -192,6 +216,10 @@ impl StudioComponentSummaryBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of the studio component.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::StudioComponentType> {
+        &self.r#type
+    }
     /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -205,6 +233,10 @@ impl StudioComponentSummaryBuilder {
         self.updated_at = input;
         self
     }
+    /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
+    }
     /// <p>The user ID of the user that most recently updated the resource.</p>
     pub fn updated_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.updated_by = ::std::option::Option::Some(input.into());
@@ -214,6 +246,10 @@ impl StudioComponentSummaryBuilder {
     pub fn set_updated_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.updated_by = input;
         self
+    }
+    /// <p>The user ID of the user that most recently updated the resource.</p>
+    pub fn get_updated_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.updated_by
     }
     /// Consumes the builder and constructs a [`StudioComponentSummary`](crate::types::StudioComponentSummary).
     pub fn build(self) -> crate::types::StudioComponentSummary {

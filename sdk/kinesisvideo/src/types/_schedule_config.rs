@@ -60,6 +60,11 @@ impl ScheduleConfigBuilder {
         self.schedule_expression = input;
         self
     }
+    /// <p>The Quartz cron expression that takes care of scheduling jobs to record from the camera, or local media file, onto the Edge Agent. If the <code>ScheduleExpression</code> is not provided for the <code>RecorderConfig</code>, then the Edge Agent will always be set to recording mode.</p>
+    /// <p>For more information about Quartz, refer to the <a href="http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html"> <i>Cron Trigger Tutorial</i> </a> page to understand the valid expressions and its use.</p>
+    pub fn get_schedule_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schedule_expression
+    }
     /// <p>The total duration to record the media. If the <code>ScheduleExpression</code> attribute is provided, then the <code>DurationInSeconds</code> attribute should also be specified.</p>
     pub fn duration_in_seconds(mut self, input: i32) -> Self {
         self.duration_in_seconds = ::std::option::Option::Some(input);
@@ -69,6 +74,10 @@ impl ScheduleConfigBuilder {
     pub fn set_duration_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.duration_in_seconds = input;
         self
+    }
+    /// <p>The total duration to record the media. If the <code>ScheduleExpression</code> attribute is provided, then the <code>DurationInSeconds</code> attribute should also be specified.</p>
+    pub fn get_duration_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.duration_in_seconds
     }
     /// Consumes the builder and constructs a [`ScheduleConfig`](crate::types::ScheduleConfig).
     pub fn build(self) -> crate::types::ScheduleConfig {

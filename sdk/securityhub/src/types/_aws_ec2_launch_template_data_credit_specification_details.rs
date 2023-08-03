@@ -41,6 +41,10 @@ impl AwsEc2LaunchTemplateDataCreditSpecificationDetailsBuilder {
         self.cpu_credits = input;
         self
     }
+    /// <p> The credit option for CPU usage of a T instance. </p>
+    pub fn get_cpu_credits(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cpu_credits
+    }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataCreditSpecificationDetails`](crate::types::AwsEc2LaunchTemplateDataCreditSpecificationDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataCreditSpecificationDetails {
         crate::types::AwsEc2LaunchTemplateDataCreditSpecificationDetails {

@@ -53,6 +53,10 @@ impl DetachElasticLoadBalancerInputBuilder {
         self.elastic_load_balancer_name = input;
         self
     }
+    /// <p>The Elastic Load Balancing instance's name.</p>
+    pub fn get_elastic_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.elastic_load_balancer_name
+    }
     /// <p>The ID of the layer that the Elastic Load Balancing instance is attached to.</p>
     pub fn layer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.layer_id = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl DetachElasticLoadBalancerInputBuilder {
     pub fn set_layer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.layer_id = input;
         self
+    }
+    /// <p>The ID of the layer that the Elastic Load Balancing instance is attached to.</p>
+    pub fn get_layer_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.layer_id
     }
     /// Consumes the builder and constructs a [`DetachElasticLoadBalancerInput`](crate::operation::detach_elastic_load_balancer::DetachElasticLoadBalancerInput).
     pub fn build(

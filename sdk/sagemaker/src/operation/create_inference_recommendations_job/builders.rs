@@ -36,6 +36,10 @@ impl CreateInferenceRecommendationsJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateInferenceRecommendationsJob as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_inference_recommendations_job::builders::CreateInferenceRecommendationsJobInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl CreateInferenceRecommendationsJobFluentBuilder {
         self.inner = self.inner.set_job_name(input);
         self
     }
+    /// <p>A name for the recommendation job. The name must be unique within the Amazon Web Services Region and within your Amazon Web Services account. The job name is passed down to the resources created by the recommendation job. The names of resources (such as the model, endpoint configuration, endpoint, and compilation) that are prefixed with the job name are truncated at 40 characters.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_name()
+    }
     /// <p>Defines the type of recommendation job. Specify <code>Default</code> to initiate an instance recommendation and <code>Advanced</code> to initiate a load test. If left unspecified, Amazon SageMaker Inference Recommender will run an instance recommendation (<code>DEFAULT</code>) job.</p>
     pub fn job_type(mut self, input: crate::types::RecommendationJobType) -> Self {
         self.inner = self.inner.job_type(input);
@@ -113,6 +121,10 @@ impl CreateInferenceRecommendationsJobFluentBuilder {
         self.inner = self.inner.set_job_type(input);
         self
     }
+    /// <p>Defines the type of recommendation job. Specify <code>Default</code> to initiate an instance recommendation and <code>Advanced</code> to initiate a load test. If left unspecified, Amazon SageMaker Inference Recommender will run an instance recommendation (<code>DEFAULT</code>) job.</p>
+    pub fn get_job_type(&self) -> &::std::option::Option<crate::types::RecommendationJobType> {
+        self.inner.get_job_type()
+    }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -122,6 +134,10 @@ impl CreateInferenceRecommendationsJobFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// <p>Provides information about the versioned model package Amazon Resource Name (ARN), the traffic pattern, and endpoint configurations.</p>
     pub fn input_config(mut self, input: crate::types::RecommendationJobInputConfig) -> Self {
@@ -135,6 +151,12 @@ impl CreateInferenceRecommendationsJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_input_config(input);
         self
+    }
+    /// <p>Provides information about the versioned model package Amazon Resource Name (ARN), the traffic pattern, and endpoint configurations.</p>
+    pub fn get_input_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecommendationJobInputConfig> {
+        self.inner.get_input_config()
     }
     /// <p>Description of the recommendation job.</p>
     pub fn job_description(
@@ -152,6 +174,10 @@ impl CreateInferenceRecommendationsJobFluentBuilder {
         self.inner = self.inner.set_job_description(input);
         self
     }
+    /// <p>Description of the recommendation job.</p>
+    pub fn get_job_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_description()
+    }
     /// <p>A set of conditions for stopping a recommendation job. If any of the conditions are met, the job is automatically stopped.</p>
     pub fn stopping_conditions(
         mut self,
@@ -168,6 +194,12 @@ impl CreateInferenceRecommendationsJobFluentBuilder {
         self.inner = self.inner.set_stopping_conditions(input);
         self
     }
+    /// <p>A set of conditions for stopping a recommendation job. If any of the conditions are met, the job is automatically stopped.</p>
+    pub fn get_stopping_conditions(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecommendationJobStoppingConditions> {
+        self.inner.get_stopping_conditions()
+    }
     /// <p>Provides information about the output artifacts and the KMS key to use for Amazon S3 server-side encryption.</p>
     pub fn output_config(mut self, input: crate::types::RecommendationJobOutputConfig) -> Self {
         self.inner = self.inner.output_config(input);
@@ -180,6 +212,12 @@ impl CreateInferenceRecommendationsJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_output_config(input);
         self
+    }
+    /// <p>Provides information about the output artifacts and the KMS key to use for Amazon S3 server-side encryption.</p>
+    pub fn get_output_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecommendationJobOutputConfig> {
+        self.inner.get_output_config()
     }
     /// Appends an item to `Tags`.
     ///
@@ -197,5 +235,9 @@ impl CreateInferenceRecommendationsJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The metadata that you apply to Amazon Web Services resources to help you categorize and organize them. Each tag consists of a key and a value, both of which you define. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in the Amazon Web Services General Reference.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

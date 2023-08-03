@@ -39,6 +39,10 @@ impl GetMlTransformInputBuilder {
         self.transform_id = input;
         self
     }
+    /// <p>The unique identifier of the transform, generated at the time that the transform was created.</p>
+    pub fn get_transform_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transform_id
+    }
     /// Consumes the builder and constructs a [`GetMlTransformInput`](crate::operation::get_ml_transform::GetMlTransformInput).
     pub fn build(
         self,

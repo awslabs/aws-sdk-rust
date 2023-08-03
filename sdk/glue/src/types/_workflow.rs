@@ -112,6 +112,10 @@ impl WorkflowBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the workflow.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description of the workflow.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -121,6 +125,10 @@ impl WorkflowBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the workflow.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `default_run_properties`.
     ///
@@ -147,6 +155,14 @@ impl WorkflowBuilder {
         self.default_run_properties = input;
         self
     }
+    /// <p>A collection of properties to be used as part of each execution of the workflow. The run properties are made available to each job in the workflow. A job can modify the properties for the next jobs in the flow.</p>
+    pub fn get_default_run_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.default_run_properties
+    }
     /// <p>The date and time when the workflow was created.</p>
     pub fn created_on(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_on = ::std::option::Option::Some(input);
@@ -159,6 +175,10 @@ impl WorkflowBuilder {
     ) -> Self {
         self.created_on = input;
         self
+    }
+    /// <p>The date and time when the workflow was created.</p>
+    pub fn get_created_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_on
     }
     /// <p>The date and time when the workflow was last modified.</p>
     pub fn last_modified_on(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -173,6 +193,10 @@ impl WorkflowBuilder {
         self.last_modified_on = input;
         self
     }
+    /// <p>The date and time when the workflow was last modified.</p>
+    pub fn get_last_modified_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_on
+    }
     /// <p>The information about the last execution of the workflow.</p>
     pub fn last_run(mut self, input: crate::types::WorkflowRun) -> Self {
         self.last_run = ::std::option::Option::Some(input);
@@ -182,6 +206,10 @@ impl WorkflowBuilder {
     pub fn set_last_run(mut self, input: ::std::option::Option<crate::types::WorkflowRun>) -> Self {
         self.last_run = input;
         self
+    }
+    /// <p>The information about the last execution of the workflow.</p>
+    pub fn get_last_run(&self) -> &::std::option::Option<crate::types::WorkflowRun> {
+        &self.last_run
     }
     /// <p>The graph representing all the Glue components that belong to the workflow as nodes and directed connections between them as edges.</p>
     pub fn graph(mut self, input: crate::types::WorkflowGraph) -> Self {
@@ -193,6 +221,10 @@ impl WorkflowBuilder {
         self.graph = input;
         self
     }
+    /// <p>The graph representing all the Glue components that belong to the workflow as nodes and directed connections between them as edges.</p>
+    pub fn get_graph(&self) -> &::std::option::Option<crate::types::WorkflowGraph> {
+        &self.graph
+    }
     /// <p>You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter blank, there is no limit to the number of concurrent workflow runs.</p>
     pub fn max_concurrent_runs(mut self, input: i32) -> Self {
         self.max_concurrent_runs = ::std::option::Option::Some(input);
@@ -202,6 +234,10 @@ impl WorkflowBuilder {
     pub fn set_max_concurrent_runs(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_concurrent_runs = input;
         self
+    }
+    /// <p>You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter blank, there is no limit to the number of concurrent workflow runs.</p>
+    pub fn get_max_concurrent_runs(&self) -> &::std::option::Option<i32> {
+        &self.max_concurrent_runs
     }
     /// <p>This structure indicates the details of the blueprint that this particular workflow is created from.</p>
     pub fn blueprint_details(mut self, input: crate::types::BlueprintDetails) -> Self {
@@ -215,6 +251,10 @@ impl WorkflowBuilder {
     ) -> Self {
         self.blueprint_details = input;
         self
+    }
+    /// <p>This structure indicates the details of the blueprint that this particular workflow is created from.</p>
+    pub fn get_blueprint_details(&self) -> &::std::option::Option<crate::types::BlueprintDetails> {
+        &self.blueprint_details
     }
     /// Consumes the builder and constructs a [`Workflow`](crate::types::Workflow).
     pub fn build(self) -> crate::types::Workflow {

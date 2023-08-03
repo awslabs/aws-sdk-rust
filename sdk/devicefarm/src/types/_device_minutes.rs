@@ -56,6 +56,10 @@ impl DeviceMinutesBuilder {
         self.total = input;
         self
     }
+    /// <p>When specified, represents the total minutes used by the resource to run tests.</p>
+    pub fn get_total(&self) -> &::std::option::Option<f64> {
+        &self.total
+    }
     /// <p>When specified, represents only the sum of metered minutes used by the resource to run tests.</p>
     pub fn metered(mut self, input: f64) -> Self {
         self.metered = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl DeviceMinutesBuilder {
         self.metered = input;
         self
     }
+    /// <p>When specified, represents only the sum of metered minutes used by the resource to run tests.</p>
+    pub fn get_metered(&self) -> &::std::option::Option<f64> {
+        &self.metered
+    }
     /// <p>When specified, represents only the sum of unmetered minutes used by the resource to run tests.</p>
     pub fn unmetered(mut self, input: f64) -> Self {
         self.unmetered = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl DeviceMinutesBuilder {
     pub fn set_unmetered(mut self, input: ::std::option::Option<f64>) -> Self {
         self.unmetered = input;
         self
+    }
+    /// <p>When specified, represents only the sum of unmetered minutes used by the resource to run tests.</p>
+    pub fn get_unmetered(&self) -> &::std::option::Option<f64> {
+        &self.unmetered
     }
     /// Consumes the builder and constructs a [`DeviceMinutes`](crate::types::DeviceMinutes).
     pub fn build(self) -> crate::types::DeviceMinutes {

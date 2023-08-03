@@ -73,6 +73,10 @@ impl UpdateWorkforceInputBuilder {
         self.workforce_name = input;
         self
     }
+    /// <p>The name of the private workforce that you want to update. You can find your workforce name by using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListWorkforces.html">ListWorkforces</a> operation.</p>
+    pub fn get_workforce_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workforce_name
+    }
     /// <p>A list of one to ten worker IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) that can be used to access tasks assigned to this workforce.</p>
     /// <p>Maximum: Ten CIDR values</p>
     pub fn source_ip_config(mut self, input: crate::types::SourceIpConfig) -> Self {
@@ -88,6 +92,11 @@ impl UpdateWorkforceInputBuilder {
         self.source_ip_config = input;
         self
     }
+    /// <p>A list of one to ten worker IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) that can be used to access tasks assigned to this workforce.</p>
+    /// <p>Maximum: Ten CIDR values</p>
+    pub fn get_source_ip_config(&self) -> &::std::option::Option<crate::types::SourceIpConfig> {
+        &self.source_ip_config
+    }
     /// <p>Use this parameter to update your OIDC Identity Provider (IdP) configuration for a workforce made using your own IdP.</p>
     pub fn oidc_config(mut self, input: crate::types::OidcConfig) -> Self {
         self.oidc_config = ::std::option::Option::Some(input);
@@ -101,6 +110,10 @@ impl UpdateWorkforceInputBuilder {
         self.oidc_config = input;
         self
     }
+    /// <p>Use this parameter to update your OIDC Identity Provider (IdP) configuration for a workforce made using your own IdP.</p>
+    pub fn get_oidc_config(&self) -> &::std::option::Option<crate::types::OidcConfig> {
+        &self.oidc_config
+    }
     /// <p>Use this parameter to update your VPC configuration for a workforce.</p>
     pub fn workforce_vpc_config(mut self, input: crate::types::WorkforceVpcConfigRequest) -> Self {
         self.workforce_vpc_config = ::std::option::Option::Some(input);
@@ -113,6 +126,12 @@ impl UpdateWorkforceInputBuilder {
     ) -> Self {
         self.workforce_vpc_config = input;
         self
+    }
+    /// <p>Use this parameter to update your VPC configuration for a workforce.</p>
+    pub fn get_workforce_vpc_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::WorkforceVpcConfigRequest> {
+        &self.workforce_vpc_config
     }
     /// Consumes the builder and constructs a [`UpdateWorkforceInput`](crate::operation::update_workforce::UpdateWorkforceInput).
     pub fn build(

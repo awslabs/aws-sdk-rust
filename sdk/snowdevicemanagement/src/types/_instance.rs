@@ -144,6 +144,10 @@ impl InstanceBuilder {
         self.image_id = input;
         self
     }
+    /// <p>The ID of the AMI used to launch the instance.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_id
+    }
     /// <p>The Amazon Machine Image (AMI) launch index, which you can use to find this instance in the launch group. </p>
     pub fn ami_launch_index(mut self, input: i32) -> Self {
         self.ami_launch_index = ::std::option::Option::Some(input);
@@ -153,6 +157,10 @@ impl InstanceBuilder {
     pub fn set_ami_launch_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.ami_launch_index = input;
         self
+    }
+    /// <p>The Amazon Machine Image (AMI) launch index, which you can use to find this instance in the launch group. </p>
+    pub fn get_ami_launch_index(&self) -> &::std::option::Option<i32> {
+        &self.ami_launch_index
     }
     /// <p>The ID of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -164,6 +172,10 @@ impl InstanceBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The ID of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The description of the current state of an instance.</p>
     pub fn state(mut self, input: crate::types::InstanceState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -173,6 +185,10 @@ impl InstanceBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::InstanceState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The description of the current state of an instance.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::InstanceState> {
+        &self.state
     }
     /// <p>The instance type.</p>
     pub fn instance_type(
@@ -190,6 +206,10 @@ impl InstanceBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The instance type.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
+    }
     /// <p>The private IPv4 address assigned to the instance.</p>
     pub fn private_ip_address(
         mut self,
@@ -205,6 +225,10 @@ impl InstanceBuilder {
     ) -> Self {
         self.private_ip_address = input;
         self
+    }
+    /// <p>The private IPv4 address assigned to the instance.</p>
+    pub fn get_private_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_ip_address
     }
     /// <p>The public IPv4 address assigned to the instance.</p>
     pub fn public_ip_address(
@@ -222,6 +246,10 @@ impl InstanceBuilder {
         self.public_ip_address = input;
         self
     }
+    /// <p>The public IPv4 address assigned to the instance.</p>
+    pub fn get_public_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_ip_address
+    }
     /// <p>When the instance was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -235,6 +263,10 @@ impl InstanceBuilder {
         self.created_at = input;
         self
     }
+    /// <p>When the instance was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>When the instance was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -247,6 +279,10 @@ impl InstanceBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// <p>When the instance was last updated.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     /// Appends an item to `block_device_mappings`.
     ///
@@ -270,6 +306,12 @@ impl InstanceBuilder {
         self.block_device_mappings = input;
         self
     }
+    /// <p>Any block device mapping entries for the instance.</p>
+    pub fn get_block_device_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>> {
+        &self.block_device_mappings
+    }
     /// Appends an item to `security_groups`.
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
@@ -289,6 +331,12 @@ impl InstanceBuilder {
         self.security_groups = input;
         self
     }
+    /// <p>The security groups for the instance.</p>
+    pub fn get_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupIdentifier>> {
+        &self.security_groups
+    }
     /// <p>The CPU options for the instance.</p>
     pub fn cpu_options(mut self, input: crate::types::CpuOptions) -> Self {
         self.cpu_options = ::std::option::Option::Some(input);
@@ -301,6 +349,10 @@ impl InstanceBuilder {
     ) -> Self {
         self.cpu_options = input;
         self
+    }
+    /// <p>The CPU options for the instance.</p>
+    pub fn get_cpu_options(&self) -> &::std::option::Option<crate::types::CpuOptions> {
+        &self.cpu_options
     }
     /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>). </p>
     pub fn root_device_name(
@@ -317,6 +369,10 @@ impl InstanceBuilder {
     ) -> Self {
         self.root_device_name = input;
         self
+    }
+    /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>). </p>
+    pub fn get_root_device_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.root_device_name
     }
     /// Consumes the builder and constructs a [`Instance`](crate::types::Instance).
     pub fn build(self) -> crate::types::Instance {

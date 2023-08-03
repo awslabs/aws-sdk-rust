@@ -46,6 +46,10 @@ impl DeleteClusterSecurityGroupInputBuilder {
         self.cluster_security_group_name = input;
         self
     }
+    /// <p>The name of the cluster security group to be deleted.</p>
+    pub fn get_cluster_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_security_group_name
+    }
     /// Consumes the builder and constructs a [`DeleteClusterSecurityGroupInput`](crate::operation::delete_cluster_security_group::DeleteClusterSecurityGroupInput).
     pub fn build(
         self,

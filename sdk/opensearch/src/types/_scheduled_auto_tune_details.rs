@@ -64,6 +64,10 @@ impl ScheduledAutoTuneDetailsBuilder {
         self.date = input;
         self
     }
+    /// <p>The date and time when the Auto-Tune action is scheduled for the domain.</p>
+    pub fn get_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.date
+    }
     /// <p>The type of Auto-Tune action.</p>
     pub fn action_type(mut self, input: crate::types::ScheduledAutoTuneActionType) -> Self {
         self.action_type = ::std::option::Option::Some(input);
@@ -77,6 +81,12 @@ impl ScheduledAutoTuneDetailsBuilder {
         self.action_type = input;
         self
     }
+    /// <p>The type of Auto-Tune action.</p>
+    pub fn get_action_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScheduledAutoTuneActionType> {
+        &self.action_type
+    }
     /// <p>A description of the Auto-Tune action.</p>
     pub fn action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action = ::std::option::Option::Some(input.into());
@@ -86,6 +96,10 @@ impl ScheduledAutoTuneDetailsBuilder {
     pub fn set_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action = input;
         self
+    }
+    /// <p>A description of the Auto-Tune action.</p>
+    pub fn get_action(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action
     }
     /// <p>The severity of the Auto-Tune action. Valid values are <code>LOW</code>, <code>MEDIUM</code>, and <code>HIGH</code>.</p>
     pub fn severity(mut self, input: crate::types::ScheduledAutoTuneSeverityType) -> Self {
@@ -99,6 +113,12 @@ impl ScheduledAutoTuneDetailsBuilder {
     ) -> Self {
         self.severity = input;
         self
+    }
+    /// <p>The severity of the Auto-Tune action. Valid values are <code>LOW</code>, <code>MEDIUM</code>, and <code>HIGH</code>.</p>
+    pub fn get_severity(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScheduledAutoTuneSeverityType> {
+        &self.severity
     }
     /// Consumes the builder and constructs a [`ScheduledAutoTuneDetails`](crate::types::ScheduledAutoTuneDetails).
     pub fn build(self) -> crate::types::ScheduledAutoTuneDetails {

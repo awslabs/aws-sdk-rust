@@ -262,6 +262,11 @@ impl CreateWorkloadInputBuilder {
         self.workload_name = input;
         self
     }
+    /// <p>The name of the workload.</p>
+    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
+    pub fn get_workload_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workload_name
+    }
     /// <p>The description for the workload.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -271,6 +276,10 @@ impl CreateWorkloadInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description for the workload.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The environment for the workload.</p>
     pub fn environment(mut self, input: crate::types::WorkloadEnvironment) -> Self {
@@ -284,6 +293,10 @@ impl CreateWorkloadInputBuilder {
     ) -> Self {
         self.environment = input;
         self
+    }
+    /// <p>The environment for the workload.</p>
+    pub fn get_environment(&self) -> &::std::option::Option<crate::types::WorkloadEnvironment> {
+        &self.environment
     }
     /// Appends an item to `account_ids`.
     ///
@@ -304,6 +317,12 @@ impl CreateWorkloadInputBuilder {
         self.account_ids = input;
         self
     }
+    /// <p>The list of Amazon Web Services account IDs associated with the workload.</p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.account_ids
+    }
     /// Appends an item to `aws_regions`.
     ///
     /// To override the contents of this collection use [`set_aws_regions`](Self::set_aws_regions).
@@ -322,6 +341,12 @@ impl CreateWorkloadInputBuilder {
     ) -> Self {
         self.aws_regions = input;
         self
+    }
+    /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
+    pub fn get_aws_regions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.aws_regions
     }
     /// Appends an item to `non_aws_regions`.
     ///
@@ -345,6 +370,12 @@ impl CreateWorkloadInputBuilder {
         self.non_aws_regions = input;
         self
     }
+    /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
+    pub fn get_non_aws_regions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.non_aws_regions
+    }
     /// Appends an item to `pillar_priorities`.
     ///
     /// To override the contents of this collection use [`set_pillar_priorities`](Self::set_pillar_priorities).
@@ -367,6 +398,12 @@ impl CreateWorkloadInputBuilder {
         self.pillar_priorities = input;
         self
     }
+    /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
+    pub fn get_pillar_priorities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.pillar_priorities
+    }
     /// <p>The URL of the architectural design for the workload.</p>
     pub fn architectural_design(
         mut self,
@@ -383,6 +420,10 @@ impl CreateWorkloadInputBuilder {
         self.architectural_design = input;
         self
     }
+    /// <p>The URL of the architectural design for the workload.</p>
+    pub fn get_architectural_design(&self) -> &::std::option::Option<::std::string::String> {
+        &self.architectural_design
+    }
     /// <p>The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.</p>
     pub fn review_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.review_owner = ::std::option::Option::Some(input.into());
@@ -392,6 +433,10 @@ impl CreateWorkloadInputBuilder {
     pub fn set_review_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.review_owner = input;
         self
+    }
+    /// <p>The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.</p>
+    pub fn get_review_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.review_owner
     }
     /// <p>The industry type for the workload.</p>
     /// <p>If specified, must be one of the following:</p>
@@ -469,6 +514,40 @@ impl CreateWorkloadInputBuilder {
         self.industry_type = input;
         self
     }
+    /// <p>The industry type for the workload.</p>
+    /// <p>If specified, must be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>Agriculture</code> </p> </li>
+    /// <li> <p> <code>Automobile</code> </p> </li>
+    /// <li> <p> <code>Defense</code> </p> </li>
+    /// <li> <p> <code>Design and Engineering</code> </p> </li>
+    /// <li> <p> <code>Digital Advertising</code> </p> </li>
+    /// <li> <p> <code>Education</code> </p> </li>
+    /// <li> <p> <code>Environmental Protection</code> </p> </li>
+    /// <li> <p> <code>Financial Services</code> </p> </li>
+    /// <li> <p> <code>Gaming</code> </p> </li>
+    /// <li> <p> <code>General Public Services</code> </p> </li>
+    /// <li> <p> <code>Healthcare</code> </p> </li>
+    /// <li> <p> <code>Hospitality</code> </p> </li>
+    /// <li> <p> <code>InfoTech</code> </p> </li>
+    /// <li> <p> <code>Justice and Public Safety</code> </p> </li>
+    /// <li> <p> <code>Life Sciences</code> </p> </li>
+    /// <li> <p> <code>Manufacturing</code> </p> </li>
+    /// <li> <p> <code>Media &amp; Entertainment</code> </p> </li>
+    /// <li> <p> <code>Mining &amp; Resources</code> </p> </li>
+    /// <li> <p> <code>Oil &amp; Gas</code> </p> </li>
+    /// <li> <p> <code>Power &amp; Utilities</code> </p> </li>
+    /// <li> <p> <code>Professional Services</code> </p> </li>
+    /// <li> <p> <code>Real Estate &amp; Construction</code> </p> </li>
+    /// <li> <p> <code>Retail &amp; Wholesale</code> </p> </li>
+    /// <li> <p> <code>Social Protection</code> </p> </li>
+    /// <li> <p> <code>Telecommunications</code> </p> </li>
+    /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
+    /// <li> <p> <code>Other</code> </p> </li>
+    /// </ul>
+    pub fn get_industry_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.industry_type
+    }
     /// <p>The industry for the workload.</p>
     pub fn industry(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.industry = ::std::option::Option::Some(input.into());
@@ -478,6 +557,10 @@ impl CreateWorkloadInputBuilder {
     pub fn set_industry(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.industry = input;
         self
+    }
+    /// <p>The industry for the workload.</p>
+    pub fn get_industry(&self) -> &::std::option::Option<::std::string::String> {
+        &self.industry
     }
     /// Appends an item to `lenses`.
     ///
@@ -498,6 +581,10 @@ impl CreateWorkloadInputBuilder {
         self.lenses = input;
         self
     }
+    /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    pub fn get_lenses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.lenses
+    }
     /// <p>The notes associated with the workload.</p>
     pub fn notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notes = ::std::option::Option::Some(input.into());
@@ -507,6 +594,10 @@ impl CreateWorkloadInputBuilder {
     pub fn set_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notes = input;
         self
+    }
+    /// <p>The notes associated with the workload.</p>
+    pub fn get_notes(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notes
     }
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
@@ -529,6 +620,13 @@ impl CreateWorkloadInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
+    /// </important>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -555,6 +653,14 @@ impl CreateWorkloadInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags to be associated with the workload.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>Well-Architected discovery configuration settings associated to the workload.</p>
     pub fn discovery_config(mut self, input: crate::types::WorkloadDiscoveryConfig) -> Self {
         self.discovery_config = ::std::option::Option::Some(input);
@@ -567,6 +673,12 @@ impl CreateWorkloadInputBuilder {
     ) -> Self {
         self.discovery_config = input;
         self
+    }
+    /// <p>Well-Architected discovery configuration settings associated to the workload.</p>
+    pub fn get_discovery_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::WorkloadDiscoveryConfig> {
+        &self.discovery_config
     }
     /// Appends an item to `applications`.
     ///
@@ -587,6 +699,12 @@ impl CreateWorkloadInputBuilder {
         self.applications = input;
         self
     }
+    /// <p>List of AppRegistry application ARNs associated to the workload.</p>
+    pub fn get_applications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.applications
+    }
     /// Appends an item to `profile_arns`.
     ///
     /// To override the contents of this collection use [`set_profile_arns`](Self::set_profile_arns).
@@ -605,6 +723,12 @@ impl CreateWorkloadInputBuilder {
     ) -> Self {
         self.profile_arns = input;
         self
+    }
+    /// <p>The list of profile ARNs associated with the workload.</p>
+    pub fn get_profile_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.profile_arns
     }
     /// Consumes the builder and constructs a [`CreateWorkloadInput`](crate::operation::create_workload::CreateWorkloadInput).
     pub fn build(

@@ -194,6 +194,27 @@ impl CreateContainerServiceInputBuilder {
         self.service_name = input;
         self
     }
+    /// <p>The name for the container service.</p>
+    /// <p>The name that you specify for your container service will make up part of its default domain. The default domain of a container service is typically <code>https://
+    /// <servicename>
+    /// .
+    /// <randomguid>
+    /// .
+    /// <awsregion>
+    /// .cs.amazonlightsail.com
+    /// </awsregion>
+    /// </randomguid>
+    /// </servicename></code>. If the name of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) Amazon Web Services Region (<code>us-east-2</code>), then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code> </p>
+    /// <p>The following are the requirements for container service names:</p>
+    /// <ul>
+    /// <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail account.</p> </li>
+    /// <li> <p>Must contain 1 to 63 characters.</p> </li>
+    /// <li> <p>Must contain only alphanumeric characters and hyphens.</p> </li>
+    /// <li> <p>A hyphen (-) can separate words but cannot be at the start or end of the name.</p> </li>
+    /// </ul>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
+    }
     /// <p>The power specification for the container service.</p>
     /// <p>The power specifies the amount of memory, vCPUs, and base monthly cost of each node of the container service. The <code>power</code> and <code>scale</code> of a container service makes up its configured capacity. To determine the monthly price of your container service, multiply the base price of the <code>power</code> with the <code>scale</code> (the number of nodes) of the service.</p>
     /// <p>Use the <code>GetContainerServicePowers</code> action to get a list of power options that you can specify using this parameter, and their base monthly cost.</p>
@@ -211,6 +232,12 @@ impl CreateContainerServiceInputBuilder {
         self.power = input;
         self
     }
+    /// <p>The power specification for the container service.</p>
+    /// <p>The power specifies the amount of memory, vCPUs, and base monthly cost of each node of the container service. The <code>power</code> and <code>scale</code> of a container service makes up its configured capacity. To determine the monthly price of your container service, multiply the base price of the <code>power</code> with the <code>scale</code> (the number of nodes) of the service.</p>
+    /// <p>Use the <code>GetContainerServicePowers</code> action to get a list of power options that you can specify using this parameter, and their base monthly cost.</p>
+    pub fn get_power(&self) -> &::std::option::Option<crate::types::ContainerServicePowerName> {
+        &self.power
+    }
     /// <p>The scale specification for the container service.</p>
     /// <p>The scale specifies the allocated compute nodes of the container service. The <code>power</code> and <code>scale</code> of a container service makes up its configured capacity. To determine the monthly price of your container service, multiply the base price of the <code>power</code> with the <code>scale</code> (the number of nodes) of the service.</p>
     pub fn scale(mut self, input: i32) -> Self {
@@ -222,6 +249,11 @@ impl CreateContainerServiceInputBuilder {
     pub fn set_scale(mut self, input: ::std::option::Option<i32>) -> Self {
         self.scale = input;
         self
+    }
+    /// <p>The scale specification for the container service.</p>
+    /// <p>The scale specifies the allocated compute nodes of the container service. The <code>power</code> and <code>scale</code> of a container service makes up its configured capacity. To determine the monthly price of your container service, multiply the base price of the <code>power</code> with the <code>scale</code> (the number of nodes) of the service.</p>
+    pub fn get_scale(&self) -> &::std::option::Option<i32> {
+        &self.scale
     }
     /// Appends an item to `tags`.
     ///
@@ -245,6 +277,12 @@ impl CreateContainerServiceInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tag keys and optional values to add to the container service during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    /// <p>For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Adds a key-value pair to `public_domain_names`.
     ///
@@ -284,6 +322,19 @@ impl CreateContainerServiceInputBuilder {
         self.public_domain_names = input;
         self
     }
+    /// <p>The public domain names to use with the container service, such as <code>example.com</code> and <code>www.example.com</code>.</p>
+    /// <p>You can specify up to four public domain names for a container service. The domain names that you specify are used when you create a deployment with a container configured as the public endpoint of your container service.</p>
+    /// <p>If you don't specify public domain names, then you can use the default domain of the container service.</p> <important>
+    /// <p>You must create and validate an SSL/TLS certificate before you can use public domain names with your container service. Use the <code>CreateCertificate</code> action to create a certificate for the public domain names you want to use with your container service.</p>
+    /// </important>
+    /// <p>You can specify public domain names using a string to array map as shown in the example later on this page.</p>
+    pub fn get_public_domain_names(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    > {
+        &self.public_domain_names
+    }
     /// <p>An object that describes a deployment for the container service.</p>
     /// <p>A deployment specifies the containers that will be launched on the container service and their settings, such as the ports to open, the environment variables to apply, and the launch command to run. It also specifies the container that will serve as the public endpoint of the deployment and its settings, such as the HTTP or HTTPS port to use, and the health check configuration.</p>
     pub fn deployment(mut self, input: crate::types::ContainerServiceDeploymentRequest) -> Self {
@@ -298,6 +349,13 @@ impl CreateContainerServiceInputBuilder {
     ) -> Self {
         self.deployment = input;
         self
+    }
+    /// <p>An object that describes a deployment for the container service.</p>
+    /// <p>A deployment specifies the containers that will be launched on the container service and their settings, such as the ports to open, the environment variables to apply, and the launch command to run. It also specifies the container that will serve as the public endpoint of the deployment and its settings, such as the HTTP or HTTPS port to use, and the health check configuration.</p>
+    pub fn get_deployment(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContainerServiceDeploymentRequest> {
+        &self.deployment
     }
     /// <p>An object to describe the configuration for the container service to access private container image repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories.</p>
     /// <p>For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
@@ -316,6 +374,13 @@ impl CreateContainerServiceInputBuilder {
     ) -> Self {
         self.private_registry_access = input;
         self
+    }
+    /// <p>An object to describe the configuration for the container service to access private container image repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories.</p>
+    /// <p>For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+    pub fn get_private_registry_access(
+        &self,
+    ) -> &::std::option::Option<crate::types::PrivateRegistryAccessRequest> {
+        &self.private_registry_access
     }
     /// Consumes the builder and constructs a [`CreateContainerServiceInput`](crate::operation::create_container_service::CreateContainerServiceInput).
     pub fn build(

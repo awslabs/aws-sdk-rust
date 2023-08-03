@@ -64,6 +64,10 @@ impl PutProjectPolicyInputBuilder {
         self.project_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the project that the project policy is attached to.</p>
+    pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_arn
+    }
     /// <p>A name for the policy.</p>
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl PutProjectPolicyInputBuilder {
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_name = input;
         self
+    }
+    /// <p>A name for the policy.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_name
     }
     /// <p>The revision ID for the Project Policy. Each time you modify a policy, Amazon Rekognition Custom Labels generates and assigns a new <code>PolicyRevisionId</code> and then deletes the previous version of the policy.</p>
     pub fn policy_revision_id(
@@ -90,6 +98,10 @@ impl PutProjectPolicyInputBuilder {
         self.policy_revision_id = input;
         self
     }
+    /// <p>The revision ID for the Project Policy. Each time you modify a policy, Amazon Rekognition Custom Labels generates and assigns a new <code>PolicyRevisionId</code> and then deletes the previous version of the policy.</p>
+    pub fn get_policy_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_revision_id
+    }
     /// <p>A resource policy to add to the model. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON policy reference</a>. </p>
     pub fn policy_document(
         mut self,
@@ -105,6 +117,10 @@ impl PutProjectPolicyInputBuilder {
     ) -> Self {
         self.policy_document = input;
         self
+    }
+    /// <p>A resource policy to add to the model. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON policy reference</a>. </p>
+    pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_document
     }
     /// Consumes the builder and constructs a [`PutProjectPolicyInput`](crate::operation::put_project_policy::PutProjectPolicyInput).
     pub fn build(

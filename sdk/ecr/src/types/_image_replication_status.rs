@@ -64,6 +64,10 @@ impl ImageReplicationStatusBuilder {
         self.region = input;
         self
     }
+    /// <p>The destination Region for the image replication.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
+    }
     /// <p>The Amazon Web Services account ID associated with the registry to which the image belongs.</p>
     pub fn registry_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_id = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl ImageReplicationStatusBuilder {
     pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registry_id = input;
         self
+    }
+    /// <p>The Amazon Web Services account ID associated with the registry to which the image belongs.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
     }
     /// <p>The image replication status.</p>
     pub fn status(mut self, input: crate::types::ReplicationStatus) -> Self {
@@ -87,6 +95,10 @@ impl ImageReplicationStatusBuilder {
         self.status = input;
         self
     }
+    /// <p>The image replication status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ReplicationStatus> {
+        &self.status
+    }
     /// <p>The failure code for a replication that has failed.</p>
     pub fn failure_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_code = ::std::option::Option::Some(input.into());
@@ -96,6 +108,10 @@ impl ImageReplicationStatusBuilder {
     pub fn set_failure_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_code = input;
         self
+    }
+    /// <p>The failure code for a replication that has failed.</p>
+    pub fn get_failure_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_code
     }
     /// Consumes the builder and constructs a [`ImageReplicationStatus`](crate::types::ImageReplicationStatus).
     pub fn build(self) -> crate::types::ImageReplicationStatus {

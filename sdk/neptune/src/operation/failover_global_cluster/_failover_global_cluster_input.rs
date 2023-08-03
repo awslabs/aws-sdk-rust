@@ -59,6 +59,11 @@ impl FailoverGlobalClusterInputBuilder {
         self.global_cluster_identifier = input;
         self
     }
+    /// <p>Identifier of the Neptune global database that should be failed over. The identifier is the unique key assigned by the user when the Neptune global database was created. In other words, it's the name of the global database that you want to fail over.</p>
+    /// <p>Constraints: Must match the identifier of an existing Neptune global database.</p>
+    pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_cluster_identifier
+    }
     /// <p>The Amazon Resource Name (ARN) of the secondary Neptune DB cluster that you want to promote to primary for the global database.</p>
     pub fn target_db_cluster_identifier(
         mut self,
@@ -74,6 +79,12 @@ impl FailoverGlobalClusterInputBuilder {
     ) -> Self {
         self.target_db_cluster_identifier = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the secondary Neptune DB cluster that you want to promote to primary for the global database.</p>
+    pub fn get_target_db_cluster_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.target_db_cluster_identifier
     }
     /// Consumes the builder and constructs a [`FailoverGlobalClusterInput`](crate::operation::failover_global_cluster::FailoverGlobalClusterInput).
     pub fn build(

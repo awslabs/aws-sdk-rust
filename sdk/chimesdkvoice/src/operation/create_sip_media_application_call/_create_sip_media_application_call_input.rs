@@ -102,6 +102,10 @@ impl CreateSipMediaApplicationCallInputBuilder {
         self.from_phone_number = input;
         self
     }
+    /// <p>The phone number that a user calls from. This is a phone number in your Amazon Chime SDK phone number inventory.</p>
+    pub fn get_from_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.from_phone_number
+    }
     /// <p>The phone number that the service should call.</p>
     pub fn to_phone_number(
         mut self,
@@ -118,6 +122,10 @@ impl CreateSipMediaApplicationCallInputBuilder {
         self.to_phone_number = input;
         self
     }
+    /// <p>The phone number that the service should call.</p>
+    pub fn get_to_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.to_phone_number
+    }
     /// <p>The ID of the SIP media application.</p>
     pub fn sip_media_application_id(
         mut self,
@@ -133,6 +141,10 @@ impl CreateSipMediaApplicationCallInputBuilder {
     ) -> Self {
         self.sip_media_application_id = input;
         self
+    }
+    /// <p>The ID of the SIP media application.</p>
+    pub fn get_sip_media_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sip_media_application_id
     }
     /// Adds a key-value pair to `sip_headers`.
     ///
@@ -159,6 +171,14 @@ impl CreateSipMediaApplicationCallInputBuilder {
         self.sip_headers = input;
         self
     }
+    /// <p>The SIP headers added to an outbound call leg.</p>
+    pub fn get_sip_headers(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.sip_headers
+    }
     /// Adds a key-value pair to `arguments_map`.
     ///
     /// To override the contents of this collection use [`set_arguments_map`](Self::set_arguments_map).
@@ -183,6 +203,14 @@ impl CreateSipMediaApplicationCallInputBuilder {
     ) -> Self {
         self.arguments_map = input;
         self
+    }
+    /// <p>Context passed to a CreateSipMediaApplication API call. For example, you could pass key-value pairs such as: <code>"FirstName": "John", "LastName": "Doe"</code> </p>
+    pub fn get_arguments_map(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.arguments_map
     }
     /// Consumes the builder and constructs a [`CreateSipMediaApplicationCallInput`](crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallInput).
     pub fn build(

@@ -36,6 +36,10 @@ impl GetUserIdFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetUserId as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_user_id::builders::GetUserIdInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl GetUserIdFluentBuilder {
         self.inner = self.inner.set_identity_store_id(input);
         self
     }
+    /// <p>The globally unique identifier for the identity store.</p>
+    pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_store_id()
+    }
     /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the unique attribute, the only valid paths are <code>userName</code> and <code>emails.value</code>.</p>
     pub fn alternate_identifier(mut self, input: crate::types::AlternateIdentifier) -> Self {
         self.inner = self.inner.alternate_identifier(input);
@@ -136,5 +144,11 @@ impl GetUserIdFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_alternate_identifier(input);
         self
+    }
+    /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the unique attribute, the only valid paths are <code>userName</code> and <code>emails.value</code>.</p>
+    pub fn get_alternate_identifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::AlternateIdentifier> {
+        self.inner.get_alternate_identifier()
     }
 }

@@ -65,6 +65,12 @@ impl BatchUpdateRuleOutputBuilder {
         self.successful = input;
         self
     }
+    /// <p>The rules that were successfully updated.</p>
+    pub fn get_successful(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleUpdateSuccess>> {
+        &self.successful
+    }
     /// Appends an item to `unsuccessful`.
     ///
     /// To override the contents of this collection use [`set_unsuccessful`](Self::set_unsuccessful).
@@ -83,6 +89,12 @@ impl BatchUpdateRuleOutputBuilder {
     ) -> Self {
         self.unsuccessful = input;
         self
+    }
+    /// <p>The rules that the operation couldn't update.</p>
+    pub fn get_unsuccessful(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleUpdateFailure>> {
+        &self.unsuccessful
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

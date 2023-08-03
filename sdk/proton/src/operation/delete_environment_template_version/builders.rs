@@ -37,6 +37,10 @@ impl DeleteEnvironmentTemplateVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteEnvironmentTemplateVersion as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_environment_template_version::builders::DeleteEnvironmentTemplateVersionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -107,6 +111,10 @@ impl DeleteEnvironmentTemplateVersionFluentBuilder {
         self.inner = self.inner.set_template_name(input);
         self
     }
+    /// <p>The name of the environment template.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_name()
+    }
     /// <p>The environment template major version to delete.</p>
     pub fn major_version(
         mut self,
@@ -123,6 +131,10 @@ impl DeleteEnvironmentTemplateVersionFluentBuilder {
         self.inner = self.inner.set_major_version(input);
         self
     }
+    /// <p>The environment template major version to delete.</p>
+    pub fn get_major_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_major_version()
+    }
     /// <p>The environment template minor version to delete.</p>
     pub fn minor_version(
         mut self,
@@ -138,5 +150,9 @@ impl DeleteEnvironmentTemplateVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_minor_version(input);
         self
+    }
+    /// <p>The environment template minor version to delete.</p>
+    pub fn get_minor_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_minor_version()
     }
 }

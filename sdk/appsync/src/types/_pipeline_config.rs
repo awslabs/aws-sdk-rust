@@ -49,6 +49,10 @@ impl PipelineConfigBuilder {
         self.functions = input;
         self
     }
+    /// <p>A list of <code>Function</code> objects.</p>
+    pub fn get_functions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.functions
+    }
     /// Consumes the builder and constructs a [`PipelineConfig`](crate::types::PipelineConfig).
     pub fn build(self) -> crate::types::PipelineConfig {
         crate::types::PipelineConfig {

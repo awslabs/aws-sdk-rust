@@ -36,6 +36,12 @@ impl BatchGetCollectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchGetCollection as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_get_collection::builders::BatchGetCollectionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl BatchGetCollectionFluentBuilder {
         self.inner = self.inner.set_ids(input);
         self
     }
+    /// <p>A list of collection IDs. You can't provide names and IDs in the same request. The ID is part of the collection endpoint. You can also retrieve it using the <a href="https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_ListCollections.html">ListCollections</a> API.</p>
+    pub fn get_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_ids()
+    }
     /// Appends an item to `names`.
     ///
     /// To override the contents of this collection use [`set_names`](Self::set_names).
@@ -149,5 +159,9 @@ impl BatchGetCollectionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_names(input);
         self
+    }
+    /// <p>A list of collection names. You can't provide names and IDs in the same request.</p>
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_names()
     }
 }

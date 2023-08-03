@@ -36,6 +36,12 @@ impl CreateDataSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDataSet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_data_set::builders::CreateDataSetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl CreateDataSetFluentBuilder {
         self.inner = self.inner.set_asset_type(input);
         self
     }
+    /// <p>The type of asset that is added to a data set.</p>
+    pub fn get_asset_type(&self) -> &::std::option::Option<crate::types::AssetType> {
+        self.inner.get_asset_type()
+    }
     /// <p>A description for the data set. This value can be up to 16,348 characters long.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -128,6 +138,10 @@ impl CreateDataSetFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>A description for the data set. This value can be up to 16,348 characters long.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The name of the data set.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -137,6 +151,10 @@ impl CreateDataSetFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the data set.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -160,5 +178,13 @@ impl CreateDataSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A data set tag is an optional label that you can assign to a data set when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to these data sets and revisions.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

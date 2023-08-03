@@ -54,6 +54,10 @@ impl SetIpAddressTypeInputBuilder {
         self.load_balancer_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+    pub fn get_load_balancer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.load_balancer_arn
+    }
     /// <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.</p>
     pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
         self.ip_address_type = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl SetIpAddressTypeInputBuilder {
     ) -> Self {
         self.ip_address_type = input;
         self
+    }
+    /// <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        &self.ip_address_type
     }
     /// Consumes the builder and constructs a [`SetIpAddressTypeInput`](crate::operation::set_ip_address_type::SetIpAddressTypeInput).
     pub fn build(

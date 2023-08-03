@@ -41,6 +41,10 @@ impl ModifyFleetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyFleet as a reference.
+    pub fn as_input(&self) -> &crate::operation::modify_fleet::builders::ModifyFleetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -123,6 +127,10 @@ impl ModifyFleetFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>Indicates whether running instances should be terminated if the total target capacity of the EC2 Fleet is decreased below the current size of the EC2 Fleet.</p>
     /// <p>Supported only for fleets of type <code>maintain</code>.</p>
     pub fn excess_capacity_termination_policy(
@@ -140,6 +148,13 @@ impl ModifyFleetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_excess_capacity_termination_policy(input);
         self
+    }
+    /// <p>Indicates whether running instances should be terminated if the total target capacity of the EC2 Fleet is decreased below the current size of the EC2 Fleet.</p>
+    /// <p>Supported only for fleets of type <code>maintain</code>.</p>
+    pub fn get_excess_capacity_termination_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::FleetExcessCapacityTerminationPolicy> {
+        self.inner.get_excess_capacity_termination_policy()
     }
     /// Appends an item to `LaunchTemplateConfigs`.
     ///
@@ -163,6 +178,13 @@ impl ModifyFleetFluentBuilder {
         self.inner = self.inner.set_launch_template_configs(input);
         self
     }
+    /// <p>The launch template and overrides.</p>
+    pub fn get_launch_template_configs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetLaunchTemplateConfigRequest>>
+    {
+        self.inner.get_launch_template_configs()
+    }
     /// <p>The ID of the EC2 Fleet.</p>
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet_id(input.into());
@@ -172,6 +194,10 @@ impl ModifyFleetFluentBuilder {
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fleet_id(input);
         self
+    }
+    /// <p>The ID of the EC2 Fleet.</p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fleet_id()
     }
     /// <p>The size of the EC2 Fleet.</p>
     pub fn target_capacity_specification(
@@ -189,6 +215,12 @@ impl ModifyFleetFluentBuilder {
         self.inner = self.inner.set_target_capacity_specification(input);
         self
     }
+    /// <p>The size of the EC2 Fleet.</p>
+    pub fn get_target_capacity_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::TargetCapacitySpecificationRequest> {
+        self.inner.get_target_capacity_specification()
+    }
     /// <p>Reserved.</p>
     pub fn context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.context(input.into());
@@ -198,5 +230,9 @@ impl ModifyFleetFluentBuilder {
     pub fn set_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_context(input);
         self
+    }
+    /// <p>Reserved.</p>
+    pub fn get_context(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_context()
     }
 }

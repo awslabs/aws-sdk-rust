@@ -51,6 +51,13 @@ impl CreateChannelMembershipFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateChannelMembership as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_channel_membership::builders::CreateChannelMembershipInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -141,6 +148,10 @@ impl CreateChannelMembershipFluentBuilder {
         self.inner = self.inner.set_channel_arn(input);
         self
     }
+    /// <p>The ARN of the channel to which you're adding users.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_arn()
+    }
     /// <p>The <code>AppInstanceUserArn</code> of the member you want to add to the channel.</p>
     pub fn member_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.member_arn(input.into());
@@ -150,6 +161,10 @@ impl CreateChannelMembershipFluentBuilder {
     pub fn set_member_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_member_arn(input);
         self
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the member you want to add to the channel.</p>
+    pub fn get_member_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_member_arn()
     }
     /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
     pub fn r#type(mut self, input: crate::types::ChannelMembershipType) -> Self {
@@ -164,6 +179,10 @@ impl CreateChannelMembershipFluentBuilder {
         self.inner = self.inner.set_type(input);
         self
     }
+    /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ChannelMembershipType> {
+        self.inner.get_type()
+    }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.chime_bearer(input.into());
@@ -173,6 +192,10 @@ impl CreateChannelMembershipFluentBuilder {
     pub fn set_chime_bearer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_chime_bearer(input);
         self
+    }
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
+    pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_chime_bearer()
     }
     /// <p>The ID of the SubChannel in the request.</p> <note>
     /// <p>Only required when creating membership in a SubChannel for a moderator in an elastic channel.</p>
@@ -193,5 +216,11 @@ impl CreateChannelMembershipFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sub_channel_id(input);
         self
+    }
+    /// <p>The ID of the SubChannel in the request.</p> <note>
+    /// <p>Only required when creating membership in a SubChannel for a moderator in an elastic channel.</p>
+    /// </note>
+    pub fn get_sub_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sub_channel_id()
     }
 }

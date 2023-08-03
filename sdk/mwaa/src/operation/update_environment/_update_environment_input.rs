@@ -256,6 +256,10 @@ impl UpdateEnvironmentInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of your Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA to access Amazon Web Services resources in your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.</p>
     pub fn execution_role_arn(
         mut self,
@@ -271,6 +275,10 @@ impl UpdateEnvironmentInputBuilder {
     ) -> Self {
         self.execution_role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA to access Amazon Web Services resources in your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.</p>
+    pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_role_arn
     }
     /// <p>The Apache Airflow version for your environment. To upgrade your environment, specify a newer version of Apache Airflow supported by Amazon MWAA.</p>
     /// <p>Before you upgrade an environment, make sure your requirements, DAGs, plugins, and other resources used in your workflows are compatible with the new Apache Airflow version. For more information about updating your resources, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/upgrading-environment.html">Upgrading an Amazon MWAA environment</a>.</p>
@@ -292,6 +300,12 @@ impl UpdateEnvironmentInputBuilder {
         self.airflow_version = input;
         self
     }
+    /// <p>The Apache Airflow version for your environment. To upgrade your environment, specify a newer version of Apache Airflow supported by Amazon MWAA.</p>
+    /// <p>Before you upgrade an environment, make sure your requirements, DAGs, plugins, and other resources used in your workflows are compatible with the new Apache Airflow version. For more information about updating your resources, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/upgrading-environment.html">Upgrading an Amazon MWAA environment</a>.</p>
+    /// <p>Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, and <code>2.5.1</code>.</p>
+    pub fn get_airflow_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.airflow_version
+    }
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket for Amazon MWAA</a>.</p>
     pub fn source_bucket_arn(
         mut self,
@@ -308,6 +322,10 @@ impl UpdateEnvironmentInputBuilder {
         self.source_bucket_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket for Amazon MWAA</a>.</p>
+    pub fn get_source_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_bucket_arn
+    }
     /// <p>The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating DAGs</a>.</p>
     pub fn dag_s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dag_s3_path = ::std::option::Option::Some(input.into());
@@ -317,6 +335,10 @@ impl UpdateEnvironmentInputBuilder {
     pub fn set_dag_s3_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dag_s3_path = input;
         self
+    }
+    /// <p>The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating DAGs</a>.</p>
+    pub fn get_dag_s3_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dag_s3_path
     }
     /// <p>The relative path to the <code>plugins.zip</code> file on your Amazon S3 bucket. For example, <code>plugins.zip</code>. If specified, then the plugins.zip version is required. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom plugins</a>.</p>
     pub fn plugins_s3_path(
@@ -334,6 +356,10 @@ impl UpdateEnvironmentInputBuilder {
         self.plugins_s3_path = input;
         self
     }
+    /// <p>The relative path to the <code>plugins.zip</code> file on your Amazon S3 bucket. For example, <code>plugins.zip</code>. If specified, then the plugins.zip version is required. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom plugins</a>.</p>
+    pub fn get_plugins_s3_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.plugins_s3_path
+    }
     /// <p>The version of the plugins.zip file on your Amazon S3 bucket. You must specify a version each time a <code>plugins.zip</code> file is updated. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning works</a>.</p>
     pub fn plugins_s3_object_version(
         mut self,
@@ -349,6 +375,10 @@ impl UpdateEnvironmentInputBuilder {
     ) -> Self {
         self.plugins_s3_object_version = input;
         self
+    }
+    /// <p>The version of the plugins.zip file on your Amazon S3 bucket. You must specify a version each time a <code>plugins.zip</code> file is updated. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning works</a>.</p>
+    pub fn get_plugins_s3_object_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.plugins_s3_object_version
     }
     /// <p>The relative path to the <code>requirements.txt</code> file on your Amazon S3 bucket. For example, <code>requirements.txt</code>. If specified, then a file version is required. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python dependencies</a>.</p>
     pub fn requirements_s3_path(
@@ -366,6 +396,10 @@ impl UpdateEnvironmentInputBuilder {
         self.requirements_s3_path = input;
         self
     }
+    /// <p>The relative path to the <code>requirements.txt</code> file on your Amazon S3 bucket. For example, <code>requirements.txt</code>. If specified, then a file version is required. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python dependencies</a>.</p>
+    pub fn get_requirements_s3_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.requirements_s3_path
+    }
     /// <p>The version of the requirements.txt file on your Amazon S3 bucket. You must specify a version each time a <code>requirements.txt</code> file is updated. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning works</a>.</p>
     pub fn requirements_s3_object_version(
         mut self,
@@ -381,6 +415,12 @@ impl UpdateEnvironmentInputBuilder {
     ) -> Self {
         self.requirements_s3_object_version = input;
         self
+    }
+    /// <p>The version of the requirements.txt file on your Amazon S3 bucket. You must specify a version each time a <code>requirements.txt</code> file is updated. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning works</a>.</p>
+    pub fn get_requirements_s3_object_version(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.requirements_s3_object_version
     }
     /// <p>The relative path to the startup shell script in your Amazon S3 bucket. For example, <code>s3://mwaa-environment/startup.sh</code>.</p>
     /// <p> Amazon MWAA runs the script as your environment starts, and before running the Apache Airflow process. You can use this script to install dependencies, modify Apache Airflow configuration options, and set environment variables. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>. </p>
@@ -399,6 +439,11 @@ impl UpdateEnvironmentInputBuilder {
     ) -> Self {
         self.startup_script_s3_path = input;
         self
+    }
+    /// <p>The relative path to the startup shell script in your Amazon S3 bucket. For example, <code>s3://mwaa-environment/startup.sh</code>.</p>
+    /// <p> Amazon MWAA runs the script as your environment starts, and before running the Apache Airflow process. You can use this script to install dependencies, modify Apache Airflow configuration options, and set environment variables. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>. </p>
+    pub fn get_startup_script_s3_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.startup_script_s3_path
     }
     /// <p> The version of the startup shell script in your Amazon S3 bucket. You must specify the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon S3 assigns to the file every time you update the script. </p>
     /// <p> Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The following is an example: </p>
@@ -421,6 +466,15 @@ impl UpdateEnvironmentInputBuilder {
     ) -> Self {
         self.startup_script_s3_object_version = input;
         self
+    }
+    /// <p> The version of the startup shell script in your Amazon S3 bucket. You must specify the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon S3 assigns to the file every time you update the script. </p>
+    /// <p> Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The following is an example: </p>
+    /// <p> <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code> </p>
+    /// <p> For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>. </p>
+    pub fn get_startup_script_s3_object_version(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.startup_script_s3_object_version
     }
     /// Adds a key-value pair to `airflow_configuration_options`.
     ///
@@ -447,6 +501,14 @@ impl UpdateEnvironmentInputBuilder {
         self.airflow_configuration_options = input;
         self
     }
+    /// <p>A list of key-value pairs containing the Apache Airflow configuration options you want to attach to your environment. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache Airflow configuration options</a>.</p>
+    pub fn get_airflow_configuration_options(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.airflow_configuration_options
+    }
     /// <p>The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>, <code>mw1.large</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment class</a>.</p>
     pub fn environment_class(
         mut self,
@@ -463,6 +525,10 @@ impl UpdateEnvironmentInputBuilder {
         self.environment_class = input;
         self
     }
+    /// <p>The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>, <code>mw1.large</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment class</a>.</p>
+    pub fn get_environment_class(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_class
+    }
     /// <p>The maximum number of workers that you want to run in your environment. MWAA scales the number of Apache Airflow workers up to the number you specify in the <code>MaxWorkers</code> field. For example, <code>20</code>. When there are no more tasks running, and no more in the queue, MWAA disposes of the extra workers leaving the one worker that is included with your environment, or the number you specify in <code>MinWorkers</code>.</p>
     pub fn max_workers(mut self, input: i32) -> Self {
         self.max_workers = ::std::option::Option::Some(input);
@@ -472,6 +538,10 @@ impl UpdateEnvironmentInputBuilder {
     pub fn set_max_workers(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_workers = input;
         self
+    }
+    /// <p>The maximum number of workers that you want to run in your environment. MWAA scales the number of Apache Airflow workers up to the number you specify in the <code>MaxWorkers</code> field. For example, <code>20</code>. When there are no more tasks running, and no more in the queue, MWAA disposes of the extra workers leaving the one worker that is included with your environment, or the number you specify in <code>MinWorkers</code>.</p>
+    pub fn get_max_workers(&self) -> &::std::option::Option<i32> {
+        &self.max_workers
     }
     /// <p>The VPC networking components used to secure and enable network traffic between the Amazon Web Services resources for your environment. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.</p>
     pub fn network_configuration(
@@ -489,6 +559,12 @@ impl UpdateEnvironmentInputBuilder {
         self.network_configuration = input;
         self
     }
+    /// <p>The VPC networking components used to secure and enable network traffic between the Amazon Web Services resources for your environment. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.</p>
+    pub fn get_network_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateNetworkConfigurationInput> {
+        &self.network_configuration
+    }
     /// <p>The Apache Airflow log types to send to CloudWatch Logs.</p>
     pub fn logging_configuration(mut self, input: crate::types::LoggingConfigurationInput) -> Self {
         self.logging_configuration = ::std::option::Option::Some(input);
@@ -501,6 +577,12 @@ impl UpdateEnvironmentInputBuilder {
     ) -> Self {
         self.logging_configuration = input;
         self
+    }
+    /// <p>The Apache Airflow log types to send to CloudWatch Logs.</p>
+    pub fn get_logging_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::LoggingConfigurationInput> {
+        &self.logging_configuration
     }
     /// <p>The day and time of the week in Coordinated Universal Time (UTC) 24-hour standard time to start weekly maintenance updates of your environment in the following format: <code>DAY:HH:MM</code>. For example: <code>TUE:03:30</code>. You can specify a start time in 30 minute increments only.</p>
     pub fn weekly_maintenance_window_start(
@@ -518,6 +600,12 @@ impl UpdateEnvironmentInputBuilder {
         self.weekly_maintenance_window_start = input;
         self
     }
+    /// <p>The day and time of the week in Coordinated Universal Time (UTC) 24-hour standard time to start weekly maintenance updates of your environment in the following format: <code>DAY:HH:MM</code>. For example: <code>TUE:03:30</code>. You can specify a start time in 30 minute increments only.</p>
+    pub fn get_weekly_maintenance_window_start(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.weekly_maintenance_window_start
+    }
     /// <p>The Apache Airflow <i>Web server</i> access mode. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access modes</a>.</p>
     pub fn webserver_access_mode(mut self, input: crate::types::WebserverAccessMode) -> Self {
         self.webserver_access_mode = ::std::option::Option::Some(input);
@@ -531,6 +619,12 @@ impl UpdateEnvironmentInputBuilder {
         self.webserver_access_mode = input;
         self
     }
+    /// <p>The Apache Airflow <i>Web server</i> access mode. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access modes</a>.</p>
+    pub fn get_webserver_access_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::WebserverAccessMode> {
+        &self.webserver_access_mode
+    }
     /// <p>The minimum number of workers that you want to run in your environment. MWAA scales the number of Apache Airflow workers up to the number you specify in the <code>MaxWorkers</code> field. When there are no more tasks running, and no more in the queue, MWAA disposes of the extra workers leaving the worker count you specify in the <code>MinWorkers</code> field. For example, <code>2</code>.</p>
     pub fn min_workers(mut self, input: i32) -> Self {
         self.min_workers = ::std::option::Option::Some(input);
@@ -541,6 +635,10 @@ impl UpdateEnvironmentInputBuilder {
         self.min_workers = input;
         self
     }
+    /// <p>The minimum number of workers that you want to run in your environment. MWAA scales the number of Apache Airflow workers up to the number you specify in the <code>MaxWorkers</code> field. When there are no more tasks running, and no more in the queue, MWAA disposes of the extra workers leaving the worker count you specify in the <code>MinWorkers</code> field. For example, <code>2</code>.</p>
+    pub fn get_min_workers(&self) -> &::std::option::Option<i32> {
+        &self.min_workers
+    }
     /// <p>The number of Apache Airflow schedulers to run in your Amazon MWAA environment.</p>
     pub fn schedulers(mut self, input: i32) -> Self {
         self.schedulers = ::std::option::Option::Some(input);
@@ -550,6 +648,10 @@ impl UpdateEnvironmentInputBuilder {
     pub fn set_schedulers(mut self, input: ::std::option::Option<i32>) -> Self {
         self.schedulers = input;
         self
+    }
+    /// <p>The number of Apache Airflow schedulers to run in your Amazon MWAA environment.</p>
+    pub fn get_schedulers(&self) -> &::std::option::Option<i32> {
+        &self.schedulers
     }
     /// Consumes the builder and constructs a [`UpdateEnvironmentInput`](crate::operation::update_environment::UpdateEnvironmentInput).
     pub fn build(

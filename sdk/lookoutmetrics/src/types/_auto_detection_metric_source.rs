@@ -45,6 +45,12 @@ impl AutoDetectionMetricSourceBuilder {
         self.s3_source_config = input;
         self
     }
+    /// <p>The source's source config.</p>
+    pub fn get_s3_source_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoDetectionS3SourceConfig> {
+        &self.s3_source_config
+    }
     /// Consumes the builder and constructs a [`AutoDetectionMetricSource`](crate::types::AutoDetectionMetricSource).
     pub fn build(self) -> crate::types::AutoDetectionMetricSource {
         crate::types::AutoDetectionMetricSource {

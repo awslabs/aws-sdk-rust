@@ -40,6 +40,10 @@ impl DeletePipelineInputBuilder {
         self.pipeline_id = input;
         self
     }
+    /// <p>The ID of the pipeline.</p>
+    pub fn get_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_id
+    }
     /// Consumes the builder and constructs a [`DeletePipelineInput`](crate::operation::delete_pipeline::DeletePipelineInput).
     pub fn build(
         self,

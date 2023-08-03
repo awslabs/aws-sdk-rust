@@ -46,6 +46,10 @@ impl UpdateEndpointWeightsAndCapacitiesOutputBuilder {
         self.endpoint_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the updated endpoint.</p>
+    pub fn get_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

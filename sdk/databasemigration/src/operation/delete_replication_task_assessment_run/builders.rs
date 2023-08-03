@@ -37,6 +37,10 @@ impl DeleteReplicationTaskAssessmentRunFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteReplicationTaskAssessmentRun as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_replication_task_assessment_run::builders::DeleteReplicationTaskAssessmentRunInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,5 +110,11 @@ impl DeleteReplicationTaskAssessmentRunFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_replication_task_assessment_run_arn(input);
         self
+    }
+    /// <p>Amazon Resource Name (ARN) of the premigration assessment run to be deleted.</p>
+    pub fn get_replication_task_assessment_run_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_replication_task_assessment_run_arn()
     }
 }

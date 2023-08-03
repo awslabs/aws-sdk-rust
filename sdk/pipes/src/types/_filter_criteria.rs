@@ -49,6 +49,10 @@ impl FilterCriteriaBuilder {
         self.filters = input;
         self
     }
+    /// <p>The event patterns.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
+    }
     /// Consumes the builder and constructs a [`FilterCriteria`](crate::types::FilterCriteria).
     pub fn build(self) -> crate::types::FilterCriteria {
         crate::types::FilterCriteria {

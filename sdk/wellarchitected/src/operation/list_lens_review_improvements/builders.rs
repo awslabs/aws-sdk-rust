@@ -36,6 +36,10 @@ impl ListLensReviewImprovementsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListLensReviewImprovements as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_lens_review_improvements::builders::ListLensReviewImprovementsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl ListLensReviewImprovementsFluentBuilder {
         self.inner = self.inner.set_workload_id(input);
         self
     }
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workload_id()
+    }
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
@@ -148,6 +156,13 @@ impl ListLensReviewImprovementsFluentBuilder {
         self.inner = self.inner.set_lens_alias(input);
         self
     }
+    /// <p>The alias of the lens.</p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    pub fn get_lens_alias(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_lens_alias()
+    }
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
     pub fn pillar_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -159,6 +174,11 @@ impl ListLensReviewImprovementsFluentBuilder {
     pub fn set_pillar_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pillar_id(input);
         self
+    }
+    /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+    /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+    pub fn get_pillar_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pillar_id()
     }
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
@@ -172,6 +192,11 @@ impl ListLensReviewImprovementsFluentBuilder {
         self.inner = self.inner.set_milestone_number(input);
         self
     }
+    /// <p>The milestone number.</p>
+    /// <p>A workload can have a maximum of 100 milestones.</p>
+    pub fn get_milestone_number(&self) -> &::std::option::Option<i32> {
+        self.inner.get_milestone_number()
+    }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -182,6 +207,10 @@ impl ListLensReviewImprovementsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token to use to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return for this request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -191,6 +220,10 @@ impl ListLensReviewImprovementsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return for this request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The priority of the question.</p>
     pub fn question_priority(mut self, input: crate::types::QuestionPriority) -> Self {
@@ -204,5 +237,9 @@ impl ListLensReviewImprovementsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_question_priority(input);
         self
+    }
+    /// <p>The priority of the question.</p>
+    pub fn get_question_priority(&self) -> &::std::option::Option<crate::types::QuestionPriority> {
+        self.inner.get_question_priority()
     }
 }

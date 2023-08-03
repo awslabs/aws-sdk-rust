@@ -54,6 +54,10 @@ impl IpRuleBuilder {
         self.ip_range = input;
         self
     }
+    /// <p>The IP range of the IP rule.</p>
+    pub fn get_ip_range(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_range
+    }
     /// <p>The description of the IP rule.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl IpRuleBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the IP rule.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`IpRule`](crate::types::IpRule).
     pub fn build(self) -> crate::types::IpRule {

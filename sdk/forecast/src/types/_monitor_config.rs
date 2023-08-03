@@ -40,6 +40,10 @@ impl MonitorConfigBuilder {
         self.monitor_name = input;
         self
     }
+    /// <p>The name of the monitor resource.</p>
+    pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitor_name
+    }
     /// Consumes the builder and constructs a [`MonitorConfig`](crate::types::MonitorConfig).
     pub fn build(self) -> crate::types::MonitorConfig {
         crate::types::MonitorConfig {

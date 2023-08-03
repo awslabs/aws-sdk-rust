@@ -54,6 +54,10 @@ impl PutInsightSelectorsInputBuilder {
         self.trail_name = input;
         self
     }
+    /// <p>The name of the CloudTrail trail for which you want to change or add Insights selectors.</p>
+    pub fn get_trail_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trail_name
+    }
     /// Appends an item to `insight_selectors`.
     ///
     /// To override the contents of this collection use [`set_insight_selectors`](Self::set_insight_selectors).
@@ -76,6 +80,14 @@ impl PutInsightSelectorsInputBuilder {
     ) -> Self {
         self.insight_selectors = input;
         self
+    }
+    /// <p>A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid Insight types.</p>
+    /// <p>The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated per minute against a baseline API call volume.</p>
+    /// <p>The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes. The error is shown if the API call is unsuccessful.</p>
+    pub fn get_insight_selectors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>> {
+        &self.insight_selectors
     }
     /// Consumes the builder and constructs a [`PutInsightSelectorsInput`](crate::operation::put_insight_selectors::PutInsightSelectorsInput).
     pub fn build(

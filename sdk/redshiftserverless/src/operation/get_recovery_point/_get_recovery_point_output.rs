@@ -50,6 +50,10 @@ impl GetRecoveryPointOutputBuilder {
         self.recovery_point = input;
         self
     }
+    /// <p>The returned recovery point object.</p>
+    pub fn get_recovery_point(&self) -> &::std::option::Option<crate::types::RecoveryPoint> {
+        &self.recovery_point
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

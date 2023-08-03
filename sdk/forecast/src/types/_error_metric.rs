@@ -78,6 +78,10 @@ impl ErrorMetricBuilder {
         self.forecast_type = input;
         self
     }
+    /// <p> The Forecast type used to compute WAPE, MAPE, MASE, and RMSE. </p>
+    pub fn get_forecast_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.forecast_type
+    }
     /// <p> The weighted absolute percentage error (WAPE). </p>
     pub fn wape(mut self, input: f64) -> Self {
         self.wape = ::std::option::Option::Some(input);
@@ -87,6 +91,10 @@ impl ErrorMetricBuilder {
     pub fn set_wape(mut self, input: ::std::option::Option<f64>) -> Self {
         self.wape = input;
         self
+    }
+    /// <p> The weighted absolute percentage error (WAPE). </p>
+    pub fn get_wape(&self) -> &::std::option::Option<f64> {
+        &self.wape
     }
     /// <p> The root-mean-square error (RMSE). </p>
     pub fn rmse(mut self, input: f64) -> Self {
@@ -98,6 +106,10 @@ impl ErrorMetricBuilder {
         self.rmse = input;
         self
     }
+    /// <p> The root-mean-square error (RMSE). </p>
+    pub fn get_rmse(&self) -> &::std::option::Option<f64> {
+        &self.rmse
+    }
     /// <p>The Mean Absolute Scaled Error (MASE)</p>
     pub fn mase(mut self, input: f64) -> Self {
         self.mase = ::std::option::Option::Some(input);
@@ -108,6 +120,10 @@ impl ErrorMetricBuilder {
         self.mase = input;
         self
     }
+    /// <p>The Mean Absolute Scaled Error (MASE)</p>
+    pub fn get_mase(&self) -> &::std::option::Option<f64> {
+        &self.mase
+    }
     /// <p>The Mean Absolute Percentage Error (MAPE)</p>
     pub fn mape(mut self, input: f64) -> Self {
         self.mape = ::std::option::Option::Some(input);
@@ -117,6 +133,10 @@ impl ErrorMetricBuilder {
     pub fn set_mape(mut self, input: ::std::option::Option<f64>) -> Self {
         self.mape = input;
         self
+    }
+    /// <p>The Mean Absolute Percentage Error (MAPE)</p>
+    pub fn get_mape(&self) -> &::std::option::Option<f64> {
+        &self.mape
     }
     /// Consumes the builder and constructs a [`ErrorMetric`](crate::types::ErrorMetric).
     pub fn build(self) -> crate::types::ErrorMetric {

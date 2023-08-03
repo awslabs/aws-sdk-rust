@@ -47,6 +47,10 @@ impl EnableAllFeaturesOutputBuilder {
         self.handshake = input;
         self
     }
+    /// <p>A structure that contains details about the handshake created to support this request to enable all features in the organization.</p>
+    pub fn get_handshake(&self) -> &::std::option::Option<crate::types::Handshake> {
+        &self.handshake
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

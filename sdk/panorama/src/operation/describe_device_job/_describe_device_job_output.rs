@@ -111,6 +111,10 @@ impl DescribeDeviceJobOutputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The job's ID.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>The device's ID.</p>
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_id = ::std::option::Option::Some(input.into());
@@ -120,6 +124,10 @@ impl DescribeDeviceJobOutputBuilder {
     pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_id = input;
         self
+    }
+    /// <p>The device's ID.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_id
     }
     /// <p>The device's ARN.</p>
     pub fn device_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -131,6 +139,10 @@ impl DescribeDeviceJobOutputBuilder {
         self.device_arn = input;
         self
     }
+    /// <p>The device's ARN.</p>
+    pub fn get_device_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_arn
+    }
     /// <p>The device's name.</p>
     pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_name = ::std::option::Option::Some(input.into());
@@ -140,6 +152,10 @@ impl DescribeDeviceJobOutputBuilder {
     pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_name = input;
         self
+    }
+    /// <p>The device's name.</p>
+    pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_name
     }
     /// <p>The device's type.</p>
     pub fn device_type(mut self, input: crate::types::DeviceType) -> Self {
@@ -153,6 +169,10 @@ impl DescribeDeviceJobOutputBuilder {
     ) -> Self {
         self.device_type = input;
         self
+    }
+    /// <p>The device's type.</p>
+    pub fn get_device_type(&self) -> &::std::option::Option<crate::types::DeviceType> {
+        &self.device_type
     }
     /// <p>For an OTA job, the target version of the device software.</p>
     pub fn image_version(
@@ -170,6 +190,10 @@ impl DescribeDeviceJobOutputBuilder {
         self.image_version = input;
         self
     }
+    /// <p>For an OTA job, the target version of the device software.</p>
+    pub fn get_image_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_version
+    }
     /// <p>The job's status.</p>
     pub fn status(mut self, input: crate::types::UpdateProgress) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -182,6 +206,10 @@ impl DescribeDeviceJobOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The job's status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::UpdateProgress> {
+        &self.status
     }
     /// <p>When the job was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -196,6 +224,10 @@ impl DescribeDeviceJobOutputBuilder {
         self.created_time = input;
         self
     }
+    /// <p>When the job was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>The job's type.</p>
     pub fn job_type(mut self, input: crate::types::JobType) -> Self {
         self.job_type = ::std::option::Option::Some(input);
@@ -205,6 +237,10 @@ impl DescribeDeviceJobOutputBuilder {
     pub fn set_job_type(mut self, input: ::std::option::Option<crate::types::JobType>) -> Self {
         self.job_type = input;
         self
+    }
+    /// <p>The job's type.</p>
+    pub fn get_job_type(&self) -> &::std::option::Option<crate::types::JobType> {
+        &self.job_type
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

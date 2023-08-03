@@ -39,6 +39,10 @@ impl GetEffectiveRecommendationPreferencesInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the resource for which to confirm effective recommendation preferences. Only EC2 instance and Auto Scaling group ARNs are currently supported.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Consumes the builder and constructs a [`GetEffectiveRecommendationPreferencesInput`](crate::operation::get_effective_recommendation_preferences::GetEffectiveRecommendationPreferencesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_effective_recommendation_preferences::GetEffectiveRecommendationPreferencesInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

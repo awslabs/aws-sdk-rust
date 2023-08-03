@@ -36,6 +36,12 @@ impl ListOfferingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListOfferings as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_offerings::builders::ListOfferingsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +141,10 @@ impl ListOfferingsFluentBuilder {
         self.inner = self.inner.set_channel_class(input);
         self
     }
+    /// Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
+    pub fn get_channel_class(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_class()
+    }
     /// Filter to offerings that match the configuration of an existing channel, e.g. '2345678' (a channel ID)
     pub fn channel_configuration(
         mut self,
@@ -151,6 +161,10 @@ impl ListOfferingsFluentBuilder {
         self.inner = self.inner.set_channel_configuration(input);
         self
     }
+    /// Filter to offerings that match the configuration of an existing channel, e.g. '2345678' (a channel ID)
+    pub fn get_channel_configuration(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_configuration()
+    }
     /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
     pub fn codec(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.codec(input.into());
@@ -160,6 +174,10 @@ impl ListOfferingsFluentBuilder {
     pub fn set_codec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_codec(input);
         self
+    }
+    /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
+    pub fn get_codec(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_codec()
     }
     /// Filter by offering duration, e.g. '12'
     pub fn duration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -171,6 +189,10 @@ impl ListOfferingsFluentBuilder {
         self.inner = self.inner.set_duration(input);
         self
     }
+    /// Filter by offering duration, e.g. '12'
+    pub fn get_duration(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_duration()
+    }
     /// Placeholder documentation for MaxResults
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -180,6 +202,10 @@ impl ListOfferingsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// Placeholder documentation for MaxResults
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
     pub fn maximum_bitrate(
@@ -197,6 +223,10 @@ impl ListOfferingsFluentBuilder {
         self.inner = self.inner.set_maximum_bitrate(input);
         self
     }
+    /// Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
+    pub fn get_maximum_bitrate(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_maximum_bitrate()
+    }
     /// Filter by framerate, 'MAX_30_FPS' or 'MAX_60_FPS'
     pub fn maximum_framerate(
         mut self,
@@ -213,6 +243,10 @@ impl ListOfferingsFluentBuilder {
         self.inner = self.inner.set_maximum_framerate(input);
         self
     }
+    /// Filter by framerate, 'MAX_30_FPS' or 'MAX_60_FPS'
+    pub fn get_maximum_framerate(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_maximum_framerate()
+    }
     /// Placeholder documentation for __string
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -223,6 +257,10 @@ impl ListOfferingsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// Placeholder documentation for __string
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'
     pub fn resolution(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resolution(input.into());
@@ -232,6 +270,10 @@ impl ListOfferingsFluentBuilder {
     pub fn set_resolution(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resolution(input);
         self
+    }
+    /// Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'
+    pub fn get_resolution(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resolution()
     }
     /// Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
     pub fn resource_type(
@@ -249,6 +291,10 @@ impl ListOfferingsFluentBuilder {
         self.inner = self.inner.set_resource_type(input);
         self
     }
+    /// Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_type()
+    }
     /// Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
     pub fn special_feature(
         mut self,
@@ -265,6 +311,10 @@ impl ListOfferingsFluentBuilder {
         self.inner = self.inner.set_special_feature(input);
         self
     }
+    /// Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
+    pub fn get_special_feature(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_special_feature()
+    }
     /// Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'
     pub fn video_quality(
         mut self,
@@ -280,5 +330,9 @@ impl ListOfferingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_video_quality(input);
         self
+    }
+    /// Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'
+    pub fn get_video_quality(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_video_quality()
     }
 }

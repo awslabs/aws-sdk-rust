@@ -75,6 +75,12 @@ impl ProvisionedThroughputDescriptionBuilder {
         self.last_increase_date_time = input;
         self
     }
+    /// <p>The date and time of the last provisioned throughput increase for this table.</p>
+    pub fn get_last_increase_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_increase_date_time
+    }
     /// <p>The date and time of the last provisioned throughput decrease for this table.</p>
     pub fn last_decrease_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_decrease_date_time = ::std::option::Option::Some(input);
@@ -88,6 +94,12 @@ impl ProvisionedThroughputDescriptionBuilder {
         self.last_decrease_date_time = input;
         self
     }
+    /// <p>The date and time of the last provisioned throughput decrease for this table.</p>
+    pub fn get_last_decrease_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_decrease_date_time
+    }
     /// <p>The number of provisioned throughput decreases for this table during this UTC calendar day. For current maximums on provisioned throughput decreases, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn number_of_decreases_today(mut self, input: i64) -> Self {
         self.number_of_decreases_today = ::std::option::Option::Some(input);
@@ -97,6 +109,10 @@ impl ProvisionedThroughputDescriptionBuilder {
     pub fn set_number_of_decreases_today(mut self, input: ::std::option::Option<i64>) -> Self {
         self.number_of_decreases_today = input;
         self
+    }
+    /// <p>The number of provisioned throughput decreases for this table during this UTC calendar day. For current maximums on provisioned throughput decreases, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    pub fn get_number_of_decreases_today(&self) -> &::std::option::Option<i64> {
+        &self.number_of_decreases_today
     }
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>. Eventually consistent reads require less effort than strongly consistent reads, so a setting of 50 <code>ReadCapacityUnits</code> per second provides 100 eventually consistent <code>ReadCapacityUnits</code> per second.</p>
     pub fn read_capacity_units(mut self, input: i64) -> Self {
@@ -108,6 +124,10 @@ impl ProvisionedThroughputDescriptionBuilder {
         self.read_capacity_units = input;
         self
     }
+    /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>. Eventually consistent reads require less effort than strongly consistent reads, so a setting of 50 <code>ReadCapacityUnits</code> per second provides 100 eventually consistent <code>ReadCapacityUnits</code> per second.</p>
+    pub fn get_read_capacity_units(&self) -> &::std::option::Option<i64> {
+        &self.read_capacity_units
+    }
     /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
     pub fn write_capacity_units(mut self, input: i64) -> Self {
         self.write_capacity_units = ::std::option::Option::Some(input);
@@ -117,6 +137,10 @@ impl ProvisionedThroughputDescriptionBuilder {
     pub fn set_write_capacity_units(mut self, input: ::std::option::Option<i64>) -> Self {
         self.write_capacity_units = input;
         self
+    }
+    /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
+    pub fn get_write_capacity_units(&self) -> &::std::option::Option<i64> {
+        &self.write_capacity_units
     }
     /// Consumes the builder and constructs a [`ProvisionedThroughputDescription`](crate::types::ProvisionedThroughputDescription).
     pub fn build(self) -> crate::types::ProvisionedThroughputDescription {

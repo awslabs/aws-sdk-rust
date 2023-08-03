@@ -71,6 +71,10 @@ impl DeleteLabelsInputBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The ID of the resource.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn authentication_token(
         mut self,
@@ -86,6 +90,10 @@ impl DeleteLabelsInputBuilder {
     ) -> Self {
         self.authentication_token = input;
         self
+    }
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication_token
     }
     /// Appends an item to `labels`.
     ///
@@ -106,6 +114,10 @@ impl DeleteLabelsInputBuilder {
         self.labels = input;
         self
     }
+    /// <p>List of labels to delete from the resource.</p>
+    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.labels
+    }
     /// <p>Flag to request removal of all labels from the specified resource.</p>
     pub fn delete_all(mut self, input: bool) -> Self {
         self.delete_all = ::std::option::Option::Some(input);
@@ -115,6 +127,10 @@ impl DeleteLabelsInputBuilder {
     pub fn set_delete_all(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete_all = input;
         self
+    }
+    /// <p>Flag to request removal of all labels from the specified resource.</p>
+    pub fn get_delete_all(&self) -> &::std::option::Option<bool> {
+        &self.delete_all
     }
     /// Consumes the builder and constructs a [`DeleteLabelsInput`](crate::operation::delete_labels::DeleteLabelsInput).
     pub fn build(

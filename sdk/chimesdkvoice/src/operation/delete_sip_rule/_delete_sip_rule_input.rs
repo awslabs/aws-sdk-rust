@@ -39,6 +39,10 @@ impl DeleteSipRuleInputBuilder {
         self.sip_rule_id = input;
         self
     }
+    /// <p>The SIP rule ID.</p>
+    pub fn get_sip_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sip_rule_id
+    }
     /// Consumes the builder and constructs a [`DeleteSipRuleInput`](crate::operation::delete_sip_rule::DeleteSipRuleInput).
     pub fn build(
         self,

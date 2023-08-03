@@ -69,6 +69,10 @@ impl ListExtensionVersionsInputBuilder {
         self.namespace = input;
         self
     }
+    /// <p>The namespace (qualifier) of the extension.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
+    }
     /// <p>The name of the extension.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -78,6 +82,10 @@ impl ListExtensionVersionsInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the extension.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The token that indicates the start of the next sequential page of results.</p>
     /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
@@ -91,6 +99,11 @@ impl ListExtensionVersionsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token that indicates the start of the next sequential page of results.</p>
+    /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return.</p>
     /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -102,6 +115,11 @@ impl ListExtensionVersionsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return.</p>
+    /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListExtensionVersionsInput`](crate::operation::list_extension_versions::ListExtensionVersionsInput).
     pub fn build(

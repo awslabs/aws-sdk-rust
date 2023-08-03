@@ -49,6 +49,12 @@ impl DeclineInvitationsInputBuilder {
         self.account_ids = input;
         self
     }
+    /// <p>An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to decline.</p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.account_ids
+    }
     /// Consumes the builder and constructs a [`DeclineInvitationsInput`](crate::operation::decline_invitations::DeclineInvitationsInput).
     pub fn build(
         self,

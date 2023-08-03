@@ -40,6 +40,10 @@ impl InputLossFailoverSettingsBuilder {
         self.input_loss_threshold_msec = input;
         self
     }
+    /// The amount of time (in milliseconds) that no input is detected. After that time, an input failover will occur.
+    pub fn get_input_loss_threshold_msec(&self) -> &::std::option::Option<i32> {
+        &self.input_loss_threshold_msec
+    }
     /// Consumes the builder and constructs a [`InputLossFailoverSettings`](crate::types::InputLossFailoverSettings).
     pub fn build(self) -> crate::types::InputLossFailoverSettings {
         crate::types::InputLossFailoverSettings {

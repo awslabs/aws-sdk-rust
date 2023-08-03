@@ -36,6 +36,12 @@ impl ListSnapshotsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListSnapshots as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_snapshots::builders::ListSnapshotsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl ListSnapshotsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -138,6 +148,10 @@ impl ListSnapshotsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The namespace from which to list all snapshots.</p>
     pub fn namespace_name(
@@ -155,6 +169,10 @@ impl ListSnapshotsFluentBuilder {
         self.inner = self.inner.set_namespace_name(input);
         self
     }
+    /// <p>The namespace from which to list all snapshots.</p>
+    pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace_name()
+    }
     /// <p>The Amazon Resource Name (ARN) of the namespace from which to list all snapshots.</p>
     pub fn namespace_arn(
         mut self,
@@ -170,6 +188,10 @@ impl ListSnapshotsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_namespace_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the namespace from which to list all snapshots.</p>
+    pub fn get_namespace_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace_arn()
     }
     /// <p>The owner Amazon Web Services account of the snapshot.</p>
     pub fn owner_account(
@@ -187,6 +209,10 @@ impl ListSnapshotsFluentBuilder {
         self.inner = self.inner.set_owner_account(input);
         self
     }
+    /// <p>The owner Amazon Web Services account of the snapshot.</p>
+    pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_owner_account()
+    }
     /// <p>The time when the creation of the snapshot was initiated.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
@@ -200,6 +226,10 @@ impl ListSnapshotsFluentBuilder {
         self.inner = self.inner.set_start_time(input);
         self
     }
+    /// <p>The time when the creation of the snapshot was initiated.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
+    }
     /// <p>The timestamp showing when the snapshot creation finished.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time(input);
@@ -212,5 +242,9 @@ impl ListSnapshotsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
+    }
+    /// <p>The timestamp showing when the snapshot creation finished.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time()
     }
 }

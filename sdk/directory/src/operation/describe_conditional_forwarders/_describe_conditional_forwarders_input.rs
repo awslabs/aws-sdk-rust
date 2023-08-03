@@ -48,6 +48,10 @@ impl DescribeConditionalForwardersInputBuilder {
         self.directory_id = input;
         self
     }
+    /// <p>The directory ID for which to get the list of associated conditional forwarders.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
     /// Appends an item to `remote_domain_names`.
     ///
     /// To override the contents of this collection use [`set_remote_domain_names`](Self::set_remote_domain_names).
@@ -69,6 +73,12 @@ impl DescribeConditionalForwardersInputBuilder {
     ) -> Self {
         self.remote_domain_names = input;
         self
+    }
+    /// <p>The fully qualified domain names (FQDN) of the remote domains for which to get the list of associated conditional forwarders. If this member is null, all conditional forwarders are returned.</p>
+    pub fn get_remote_domain_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.remote_domain_names
     }
     /// Consumes the builder and constructs a [`DescribeConditionalForwardersInput`](crate::operation::describe_conditional_forwarders::DescribeConditionalForwardersInput).
     pub fn build(

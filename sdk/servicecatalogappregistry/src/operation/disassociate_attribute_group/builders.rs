@@ -36,6 +36,10 @@ impl DisassociateAttributeGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateAttributeGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::disassociate_attribute_group::builders::DisassociateAttributeGroupInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl DisassociateAttributeGroupFluentBuilder {
         self.inner = self.inner.set_application(input);
         self
     }
+    /// <p> The name, ID, or ARN of the application. </p>
+    pub fn get_application(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application()
+    }
     /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
     pub fn attribute_group(
         mut self,
@@ -141,5 +149,9 @@ impl DisassociateAttributeGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_attribute_group(input);
         self
+    }
+    /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
+    pub fn get_attribute_group(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_attribute_group()
     }
 }

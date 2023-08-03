@@ -56,6 +56,10 @@ impl S3ConfigBuilder {
         self.bucket_name = input;
         self
     }
+    /// <p>The Amazon S3 bucket name.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
+    }
     /// <p>The Amazon S3 bucket prefix.</p>
     pub fn bucket_prefix(
         mut self,
@@ -72,6 +76,10 @@ impl S3ConfigBuilder {
         self.bucket_prefix = input;
         self
     }
+    /// <p>The Amazon S3 bucket prefix.</p>
+    pub fn get_bucket_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_prefix
+    }
     /// <p>The status of publishing Internet Monitor internet measurements to an Amazon S3 bucket.</p>
     pub fn log_delivery_status(mut self, input: crate::types::LogDeliveryStatus) -> Self {
         self.log_delivery_status = ::std::option::Option::Some(input);
@@ -84,6 +92,12 @@ impl S3ConfigBuilder {
     ) -> Self {
         self.log_delivery_status = input;
         self
+    }
+    /// <p>The status of publishing Internet Monitor internet measurements to an Amazon S3 bucket.</p>
+    pub fn get_log_delivery_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::LogDeliveryStatus> {
+        &self.log_delivery_status
     }
     /// Consumes the builder and constructs a [`S3Config`](crate::types::S3Config).
     pub fn build(self) -> crate::types::S3Config {

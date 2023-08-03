@@ -37,6 +37,12 @@ impl SetV2LoggingLevelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SetV2LoggingLevel as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::set_v2_logging_level::builders::SetV2LoggingLevelInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl SetV2LoggingLevelFluentBuilder {
         self.inner = self.inner.set_log_target(input);
         self
     }
+    /// <p>The log target.</p>
+    pub fn get_log_target(&self) -> &::std::option::Option<crate::types::LogTarget> {
+        self.inner.get_log_target()
+    }
     /// <p>The log level.</p>
     pub fn log_level(mut self, input: crate::types::LogLevel) -> Self {
         self.inner = self.inner.log_level(input);
@@ -136,5 +146,9 @@ impl SetV2LoggingLevelFluentBuilder {
     pub fn set_log_level(mut self, input: ::std::option::Option<crate::types::LogLevel>) -> Self {
         self.inner = self.inner.set_log_level(input);
         self
+    }
+    /// <p>The log level.</p>
+    pub fn get_log_level(&self) -> &::std::option::Option<crate::types::LogLevel> {
+        self.inner.get_log_level()
     }
 }

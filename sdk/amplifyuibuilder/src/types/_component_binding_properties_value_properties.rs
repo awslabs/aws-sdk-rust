@@ -96,6 +96,10 @@ impl ComponentBindingPropertiesValuePropertiesBuilder {
         self.model = input;
         self
     }
+    /// <p>An Amplify DataStore model.</p>
+    pub fn get_model(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model
+    }
     /// <p>The field to bind the data to.</p>
     pub fn field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.field = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl ComponentBindingPropertiesValuePropertiesBuilder {
     pub fn set_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field = input;
         self
+    }
+    /// <p>The field to bind the data to.</p>
+    pub fn get_field(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field
     }
     /// Appends an item to `predicates`.
     ///
@@ -125,6 +133,12 @@ impl ComponentBindingPropertiesValuePropertiesBuilder {
         self.predicates = input;
         self
     }
+    /// <p>A list of predicates for binding a component's properties to data.</p>
+    pub fn get_predicates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Predicate>> {
+        &self.predicates
+    }
     /// <p>An authenticated user attribute.</p>
     pub fn user_attribute(
         mut self,
@@ -141,6 +155,10 @@ impl ComponentBindingPropertiesValuePropertiesBuilder {
         self.user_attribute = input;
         self
     }
+    /// <p>An authenticated user attribute.</p>
+    pub fn get_user_attribute(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_attribute
+    }
     /// <p>An Amazon S3 bucket.</p>
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
@@ -151,6 +169,10 @@ impl ComponentBindingPropertiesValuePropertiesBuilder {
         self.bucket = input;
         self
     }
+    /// <p>An Amazon S3 bucket.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>The storage key for an Amazon S3 bucket.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
@@ -160,6 +182,10 @@ impl ComponentBindingPropertiesValuePropertiesBuilder {
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
+    }
+    /// <p>The storage key for an Amazon S3 bucket.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
     }
     /// <p>The default value to assign to the property.</p>
     pub fn default_value(
@@ -177,6 +203,10 @@ impl ComponentBindingPropertiesValuePropertiesBuilder {
         self.default_value = input;
         self
     }
+    /// <p>The default value to assign to the property.</p>
+    pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_value
+    }
     /// <p>The name of a component slot.</p>
     pub fn slot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.slot_name = ::std::option::Option::Some(input.into());
@@ -186,6 +216,10 @@ impl ComponentBindingPropertiesValuePropertiesBuilder {
     pub fn set_slot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.slot_name = input;
         self
+    }
+    /// <p>The name of a component slot.</p>
+    pub fn get_slot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.slot_name
     }
     /// Consumes the builder and constructs a [`ComponentBindingPropertiesValueProperties`](crate::types::ComponentBindingPropertiesValueProperties).
     pub fn build(self) -> crate::types::ComponentBindingPropertiesValueProperties {

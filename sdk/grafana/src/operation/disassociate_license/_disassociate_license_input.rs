@@ -48,6 +48,10 @@ impl DisassociateLicenseInputBuilder {
         self.workspace_id = input;
         self
     }
+    /// <p>The ID of the workspace to remove the Grafana Enterprise license from.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
+    }
     /// <p>The type of license to remove from the workspace.</p>
     pub fn license_type(mut self, input: crate::types::LicenseType) -> Self {
         self.license_type = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl DisassociateLicenseInputBuilder {
     ) -> Self {
         self.license_type = input;
         self
+    }
+    /// <p>The type of license to remove from the workspace.</p>
+    pub fn get_license_type(&self) -> &::std::option::Option<crate::types::LicenseType> {
+        &self.license_type
     }
     /// Consumes the builder and constructs a [`DisassociateLicenseInput`](crate::operation::disassociate_license::DisassociateLicenseInput).
     pub fn build(

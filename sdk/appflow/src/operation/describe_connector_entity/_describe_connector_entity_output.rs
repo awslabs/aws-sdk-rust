@@ -61,6 +61,12 @@ impl DescribeConnectorEntityOutputBuilder {
         self.connector_entity_fields = input;
         self
     }
+    /// <p> Describes the fields for that connector entity. For example, for an <i>account</i> entity, the fields would be <i>account name</i>, <i>account ID</i>, and so on. </p>
+    pub fn get_connector_entity_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectorEntityField>> {
+        &self.connector_entity_fields
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

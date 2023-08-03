@@ -53,6 +53,11 @@ impl CopyDbSnapshotOutputBuilder {
         self.db_snapshot = input;
         self
     }
+    /// <p>Contains the details of an Amazon RDS DB snapshot.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBSnapshots</code> action.</p>
+    pub fn get_db_snapshot(&self) -> &::std::option::Option<crate::types::DbSnapshot> {
+        &self.db_snapshot
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

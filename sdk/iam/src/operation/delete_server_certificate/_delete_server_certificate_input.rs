@@ -51,6 +51,11 @@ impl DeleteServerCertificateInputBuilder {
         self.server_certificate_name = input;
         self
     }
+    /// <p>The name of the server certificate you want to delete.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn get_server_certificate_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_certificate_name
+    }
     /// Consumes the builder and constructs a [`DeleteServerCertificateInput`](crate::operation::delete_server_certificate::DeleteServerCertificateInput).
     pub fn build(
         self,

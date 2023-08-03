@@ -56,6 +56,10 @@ impl ListAnalyzersInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token used for pagination of results returned.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl ListAnalyzersInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The type of analyzer.</p>
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl ListAnalyzersInputBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of analyzer.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`ListAnalyzersInput`](crate::operation::list_analyzers::ListAnalyzersInput).
     pub fn build(

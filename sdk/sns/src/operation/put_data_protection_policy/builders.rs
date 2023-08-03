@@ -37,6 +37,13 @@ impl PutDataProtectionPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutDataProtectionPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_data_protection_policy::builders::PutDataProtectionPolicyInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +136,11 @@ impl PutDataProtectionPolicyFluentBuilder {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
+    /// <p>The ARN of the topic whose <code>DataProtectionPolicy</code> you want to add or update.</p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the Amazon Web Services General Reference.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
+    }
     /// <p>The JSON serialization of the topic's <code>DataProtectionPolicy</code>.</p>
     /// <p>The <code>DataProtectionPolicy</code> must be in JSON string format.</p>
     /// <p>Length Constraints: Maximum length of 30,720.</p>
@@ -148,5 +160,11 @@ impl PutDataProtectionPolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_data_protection_policy(input);
         self
+    }
+    /// <p>The JSON serialization of the topic's <code>DataProtectionPolicy</code>.</p>
+    /// <p>The <code>DataProtectionPolicy</code> must be in JSON string format.</p>
+    /// <p>Length Constraints: Maximum length of 30,720.</p>
+    pub fn get_data_protection_policy(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_data_protection_policy()
     }
 }

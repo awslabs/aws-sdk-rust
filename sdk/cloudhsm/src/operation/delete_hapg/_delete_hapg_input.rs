@@ -40,6 +40,10 @@ impl DeleteHapgInputBuilder {
         self.hapg_arn = input;
         self
     }
+    /// <p>The ARN of the high-availability partition group to delete.</p>
+    pub fn get_hapg_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hapg_arn
+    }
     /// Consumes the builder and constructs a [`DeleteHapgInput`](crate::operation::delete_hapg::DeleteHapgInput).
     pub fn build(
         self,

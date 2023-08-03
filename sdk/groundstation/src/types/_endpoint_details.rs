@@ -81,6 +81,10 @@ impl EndpointDetailsBuilder {
         self.security_details = input;
         self
     }
+    /// <p>Endpoint security details including a list of subnets, a list of security groups and a role to connect streams to instances.</p>
+    pub fn get_security_details(&self) -> &::std::option::Option<crate::types::SecurityDetails> {
+        &self.security_details
+    }
     /// <p>A dataflow endpoint.</p>
     pub fn endpoint(mut self, input: crate::types::DataflowEndpoint) -> Self {
         self.endpoint = ::std::option::Option::Some(input);
@@ -93,6 +97,10 @@ impl EndpointDetailsBuilder {
     ) -> Self {
         self.endpoint = input;
         self
+    }
+    /// <p>A dataflow endpoint.</p>
+    pub fn get_endpoint(&self) -> &::std::option::Option<crate::types::DataflowEndpoint> {
+        &self.endpoint
     }
     /// <p>An agent endpoint.</p>
     pub fn aws_ground_station_agent_endpoint(
@@ -110,6 +118,12 @@ impl EndpointDetailsBuilder {
         self.aws_ground_station_agent_endpoint = input;
         self
     }
+    /// <p>An agent endpoint.</p>
+    pub fn get_aws_ground_station_agent_endpoint(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsGroundStationAgentEndpoint> {
+        &self.aws_ground_station_agent_endpoint
+    }
     /// <p>A dataflow endpoint health status. This field is ignored when calling <code>CreateDataflowEndpointGroup</code>.</p>
     pub fn health_status(mut self, input: crate::types::CapabilityHealth) -> Self {
         self.health_status = ::std::option::Option::Some(input);
@@ -122,6 +136,10 @@ impl EndpointDetailsBuilder {
     ) -> Self {
         self.health_status = input;
         self
+    }
+    /// <p>A dataflow endpoint health status. This field is ignored when calling <code>CreateDataflowEndpointGroup</code>.</p>
+    pub fn get_health_status(&self) -> &::std::option::Option<crate::types::CapabilityHealth> {
+        &self.health_status
     }
     /// Appends an item to `health_reasons`.
     ///
@@ -141,6 +159,12 @@ impl EndpointDetailsBuilder {
     ) -> Self {
         self.health_reasons = input;
         self
+    }
+    /// <p>Health reasons for a dataflow endpoint. This field is ignored when calling <code>CreateDataflowEndpointGroup</code>.</p>
+    pub fn get_health_reasons(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CapabilityHealthReason>> {
+        &self.health_reasons
     }
     /// Consumes the builder and constructs a [`EndpointDetails`](crate::types::EndpointDetails).
     pub fn build(self) -> crate::types::EndpointDetails {

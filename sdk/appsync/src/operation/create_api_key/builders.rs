@@ -36,6 +36,12 @@ impl CreateApiKeyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateApiKey as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_api_key::builders::CreateApiKeyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl CreateApiKeyFluentBuilder {
         self.inner = self.inner.set_api_id(input);
         self
     }
+    /// <p>The ID for your GraphQL API.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_api_id()
+    }
     /// <p>A description of the purpose of the API key.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -128,6 +138,10 @@ impl CreateApiKeyFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>A description of the purpose of the API key.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>From the creation time, the time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the nearest hour. The default value for this parameter is 7 days from creation time. For more information, see .</p>
     pub fn expires(mut self, input: i64) -> Self {
         self.inner = self.inner.expires(input);
@@ -137,5 +151,9 @@ impl CreateApiKeyFluentBuilder {
     pub fn set_expires(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_expires(input);
         self
+    }
+    /// <p>From the creation time, the time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the nearest hour. The default value for this parameter is 7 days from creation time. For more information, see .</p>
+    pub fn get_expires(&self) -> &::std::option::Option<i64> {
+        self.inner.get_expires()
     }
 }

@@ -54,6 +54,10 @@ impl ReservationPurchaseRecommendationMetadataBuilder {
         self.recommendation_id = input;
         self
     }
+    /// <p>The ID for this specific recommendation.</p>
+    pub fn get_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommendation_id
+    }
     /// <p>The timestamp for when Amazon Web Services made this recommendation.</p>
     pub fn generation_timestamp(
         mut self,
@@ -69,6 +73,10 @@ impl ReservationPurchaseRecommendationMetadataBuilder {
     ) -> Self {
         self.generation_timestamp = input;
         self
+    }
+    /// <p>The timestamp for when Amazon Web Services made this recommendation.</p>
+    pub fn get_generation_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.generation_timestamp
     }
     /// Consumes the builder and constructs a [`ReservationPurchaseRecommendationMetadata`](crate::types::ReservationPurchaseRecommendationMetadata).
     pub fn build(self) -> crate::types::ReservationPurchaseRecommendationMetadata {

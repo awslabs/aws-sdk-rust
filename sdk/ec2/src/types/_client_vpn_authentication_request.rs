@@ -79,6 +79,10 @@ impl ClientVpnAuthenticationRequestBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of client authentication to be used.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ClientVpnAuthenticationType> {
+        &self.r#type
+    }
     /// <p>Information about the Active Directory to be used, if applicable. You must provide this information if <b>Type</b> is <code>directory-service-authentication</code>.</p>
     pub fn active_directory(
         mut self,
@@ -94,6 +98,12 @@ impl ClientVpnAuthenticationRequestBuilder {
     ) -> Self {
         self.active_directory = input;
         self
+    }
+    /// <p>Information about the Active Directory to be used, if applicable. You must provide this information if <b>Type</b> is <code>directory-service-authentication</code>.</p>
+    pub fn get_active_directory(
+        &self,
+    ) -> &::std::option::Option<crate::types::DirectoryServiceAuthenticationRequest> {
+        &self.active_directory
     }
     /// <p>Information about the authentication certificates to be used, if applicable. You must provide this information if <b>Type</b> is <code>certificate-authentication</code>.</p>
     pub fn mutual_authentication(
@@ -111,6 +121,12 @@ impl ClientVpnAuthenticationRequestBuilder {
         self.mutual_authentication = input;
         self
     }
+    /// <p>Information about the authentication certificates to be used, if applicable. You must provide this information if <b>Type</b> is <code>certificate-authentication</code>.</p>
+    pub fn get_mutual_authentication(
+        &self,
+    ) -> &::std::option::Option<crate::types::CertificateAuthenticationRequest> {
+        &self.mutual_authentication
+    }
     /// <p>Information about the IAM SAML identity provider to be used, if applicable. You must provide this information if <b>Type</b> is <code>federated-authentication</code>.</p>
     pub fn federated_authentication(
         mut self,
@@ -126,6 +142,12 @@ impl ClientVpnAuthenticationRequestBuilder {
     ) -> Self {
         self.federated_authentication = input;
         self
+    }
+    /// <p>Information about the IAM SAML identity provider to be used, if applicable. You must provide this information if <b>Type</b> is <code>federated-authentication</code>.</p>
+    pub fn get_federated_authentication(
+        &self,
+    ) -> &::std::option::Option<crate::types::FederatedAuthenticationRequest> {
+        &self.federated_authentication
     }
     /// Consumes the builder and constructs a [`ClientVpnAuthenticationRequest`](crate::types::ClientVpnAuthenticationRequest).
     pub fn build(self) -> crate::types::ClientVpnAuthenticationRequest {

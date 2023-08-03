@@ -49,6 +49,10 @@ impl DescribeJournalS3ExportInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the ledger.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The UUID (represented in Base62-encoded text) of the journal export job to describe.</p>
     pub fn export_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.export_id = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl DescribeJournalS3ExportInputBuilder {
     pub fn set_export_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.export_id = input;
         self
+    }
+    /// <p>The UUID (represented in Base62-encoded text) of the journal export job to describe.</p>
+    pub fn get_export_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.export_id
     }
     /// Consumes the builder and constructs a [`DescribeJournalS3ExportInput`](crate::operation::describe_journal_s3_export::DescribeJournalS3ExportInput).
     pub fn build(

@@ -65,6 +65,14 @@ impl CustomDeliveryConfigurationBuilder {
         self.delivery_uri = input;
         self
     }
+    /// <p>The destination to send the campaign or treatment to. This value can be one of the following:</p>
+    /// <ul>
+    /// <li><p>The name or Amazon Resource Name (ARN) of an AWS Lambda function to invoke to handle delivery of the campaign or treatment.</p></li>
+    /// <li><p>The URL for a web application or service that supports HTTPS and can receive the message. The URL has to be a full URL, including the HTTPS protocol.</p></li>
+    /// </ul>
+    pub fn get_delivery_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delivery_uri
+    }
     /// Appends an item to `endpoint_types`.
     ///
     /// To override the contents of this collection use [`set_endpoint_types`](Self::set_endpoint_types).
@@ -83,6 +91,12 @@ impl CustomDeliveryConfigurationBuilder {
     ) -> Self {
         self.endpoint_types = input;
         self
+    }
+    /// <p>The types of endpoints to send the campaign or treatment to. Each valid value maps to a type of channel that you can associate with an endpoint by using the ChannelType property of an endpoint.</p>
+    pub fn get_endpoint_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointTypesElement>> {
+        &self.endpoint_types
     }
     /// Consumes the builder and constructs a [`CustomDeliveryConfiguration`](crate::types::CustomDeliveryConfiguration).
     pub fn build(self) -> crate::types::CustomDeliveryConfiguration {

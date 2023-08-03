@@ -64,6 +64,10 @@ impl AdminSetUserSettingsInputBuilder {
         self.user_pool_id = input;
         self
     }
+    /// <p>The ID of the user pool that contains the user whose options you're setting.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool_id
+    }
     /// <p>The user name of the user whose options you're setting.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl AdminSetUserSettingsInputBuilder {
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
+    }
+    /// <p>The user name of the user whose options you're setting.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
     }
     /// Appends an item to `mfa_options`.
     ///
@@ -92,6 +100,12 @@ impl AdminSetUserSettingsInputBuilder {
     ) -> Self {
         self.mfa_options = input;
         self
+    }
+    /// <p>You can use this parameter only to set an SMS configuration that uses SMS for delivery.</p>
+    pub fn get_mfa_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>> {
+        &self.mfa_options
     }
     /// Consumes the builder and constructs a [`AdminSetUserSettingsInput`](crate::operation::admin_set_user_settings::AdminSetUserSettingsInput).
     pub fn build(

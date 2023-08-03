@@ -58,6 +58,10 @@ impl VerifyOtpMessageInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The unique ID of your Amazon Pinpoint application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>Verify OTP message request.</p>
     pub fn verify_otp_message_request_parameters(
         mut self,
@@ -73,6 +77,12 @@ impl VerifyOtpMessageInputBuilder {
     ) -> Self {
         self.verify_otp_message_request_parameters = input;
         self
+    }
+    /// <p>Verify OTP message request.</p>
+    pub fn get_verify_otp_message_request_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::VerifyOtpMessageRequestParameters> {
+        &self.verify_otp_message_request_parameters
     }
     /// Consumes the builder and constructs a [`VerifyOtpMessageInput`](crate::operation::verify_otp_message::VerifyOtpMessageInput).
     pub fn build(

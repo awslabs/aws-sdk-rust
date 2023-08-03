@@ -43,6 +43,10 @@ impl UpdateDomainContactPrivacyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDomainContactPrivacy as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_domain_contact_privacy::builders::UpdateDomainContactPrivacyInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl UpdateDomainContactPrivacyFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>The name of the domain that you want to update the privacy setting for.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p> <note>
     /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
     /// </note>
@@ -146,6 +154,12 @@ impl UpdateDomainContactPrivacyFluentBuilder {
     pub fn set_admin_privacy(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_admin_privacy(input);
         self
+    }
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p> <note>
+    /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
+    /// </note>
+    pub fn get_admin_privacy(&self) -> &::std::option::Option<bool> {
+        self.inner.get_admin_privacy()
     }
     /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p> <note>
     /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
@@ -161,6 +175,12 @@ impl UpdateDomainContactPrivacyFluentBuilder {
         self.inner = self.inner.set_registrant_privacy(input);
         self
     }
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p> <note>
+    /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
+    /// </note>
+    pub fn get_registrant_privacy(&self) -> &::std::option::Option<bool> {
+        self.inner.get_registrant_privacy()
+    }
     /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p> <note>
     /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
     /// </note>
@@ -174,5 +194,11 @@ impl UpdateDomainContactPrivacyFluentBuilder {
     pub fn set_tech_privacy(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_tech_privacy(input);
         self
+    }
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p> <note>
+    /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
+    /// </note>
+    pub fn get_tech_privacy(&self) -> &::std::option::Option<bool> {
+        self.inner.get_tech_privacy()
     }
 }

@@ -39,6 +39,13 @@ impl RegisterStreamConsumerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RegisterStreamConsumer as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::register_stream_consumer::builders::RegisterStreamConsumerInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +136,10 @@ impl RegisterStreamConsumerFluentBuilder {
         self.inner = self.inner.set_stream_arn(input);
         self
     }
+    /// <p>The ARN of the Kinesis data stream that you want to register the consumer with. For more info, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_arn()
+    }
     /// <p>For a given Kinesis data stream, each consumer must have a unique name. However, consumer names don't have to be unique across data streams.</p>
     pub fn consumer_name(
         mut self,
@@ -144,5 +155,9 @@ impl RegisterStreamConsumerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_consumer_name(input);
         self
+    }
+    /// <p>For a given Kinesis data stream, each consumer must have a unique name. However, consumer names don't have to be unique across data streams.</p>
+    pub fn get_consumer_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_consumer_name()
     }
 }

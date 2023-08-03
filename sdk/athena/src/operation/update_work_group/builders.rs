@@ -36,6 +36,12 @@ impl UpdateWorkGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateWorkGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_work_group::builders::UpdateWorkGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateWorkGroupFluentBuilder {
         self.inner = self.inner.set_work_group(input);
         self
     }
+    /// <p>The specified workgroup that will be updated.</p>
+    pub fn get_work_group(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_work_group()
+    }
     /// <p>The workgroup description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -135,6 +145,10 @@ impl UpdateWorkGroupFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The workgroup description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>Contains configuration updates for an Athena SQL workgroup.</p>
     pub fn configuration_updates(
@@ -152,6 +166,12 @@ impl UpdateWorkGroupFluentBuilder {
         self.inner = self.inner.set_configuration_updates(input);
         self
     }
+    /// <p>Contains configuration updates for an Athena SQL workgroup.</p>
+    pub fn get_configuration_updates(
+        &self,
+    ) -> &::std::option::Option<crate::types::WorkGroupConfigurationUpdates> {
+        self.inner.get_configuration_updates()
+    }
     /// <p>The workgroup state that will be updated for the given workgroup.</p>
     pub fn state(mut self, input: crate::types::WorkGroupState) -> Self {
         self.inner = self.inner.state(input);
@@ -161,5 +181,9 @@ impl UpdateWorkGroupFluentBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::WorkGroupState>) -> Self {
         self.inner = self.inner.set_state(input);
         self
+    }
+    /// <p>The workgroup state that will be updated for the given workgroup.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::WorkGroupState> {
+        self.inner.get_state()
     }
 }

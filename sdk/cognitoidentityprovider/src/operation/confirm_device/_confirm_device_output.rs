@@ -47,6 +47,10 @@ impl ConfirmDeviceOutputBuilder {
         self.user_confirmation_necessary = input;
         self
     }
+    /// <p>Indicates whether the user confirmation must confirm the device response.</p>
+    pub fn get_user_confirmation_necessary(&self) -> &::std::option::Option<bool> {
+        &self.user_confirmation_necessary
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

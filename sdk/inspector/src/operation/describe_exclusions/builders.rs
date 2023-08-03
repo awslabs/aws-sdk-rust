@@ -36,6 +36,12 @@ impl DescribeExclusionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeExclusions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_exclusions::builders::DescribeExclusionsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +142,12 @@ impl DescribeExclusionsFluentBuilder {
         self.inner = self.inner.set_exclusion_arns(input);
         self
     }
+    /// <p>The list of ARNs that specify the exclusions that you want to describe.</p>
+    pub fn get_exclusion_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_exclusion_arns()
+    }
     /// <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
     pub fn locale(mut self, input: crate::types::Locale) -> Self {
         self.inner = self.inner.locale(input);
@@ -145,5 +157,9 @@ impl DescribeExclusionsFluentBuilder {
     pub fn set_locale(mut self, input: ::std::option::Option<crate::types::Locale>) -> Self {
         self.inner = self.inner.set_locale(input);
         self
+    }
+    /// <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
+    pub fn get_locale(&self) -> &::std::option::Option<crate::types::Locale> {
+        self.inner.get_locale()
     }
 }

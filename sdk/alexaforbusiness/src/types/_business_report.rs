@@ -75,6 +75,10 @@ impl BusinessReportBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the report generation execution (RUNNING, SUCCEEDED, or FAILED).</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::BusinessReportStatus> {
+        &self.status
+    }
     /// <p>The failure code.</p>
     pub fn failure_code(mut self, input: crate::types::BusinessReportFailureCode) -> Self {
         self.failure_code = ::std::option::Option::Some(input);
@@ -87,6 +91,12 @@ impl BusinessReportBuilder {
     ) -> Self {
         self.failure_code = input;
         self
+    }
+    /// <p>The failure code.</p>
+    pub fn get_failure_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::BusinessReportFailureCode> {
+        &self.failure_code
     }
     /// <p>The S3 location of the output reports.</p>
     pub fn s3_location(mut self, input: crate::types::BusinessReportS3Location) -> Self {
@@ -101,6 +111,12 @@ impl BusinessReportBuilder {
         self.s3_location = input;
         self
     }
+    /// <p>The S3 location of the output reports.</p>
+    pub fn get_s3_location(
+        &self,
+    ) -> &::std::option::Option<crate::types::BusinessReportS3Location> {
+        &self.s3_location
+    }
     /// <p>The time of report delivery.</p>
     pub fn delivery_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.delivery_time = ::std::option::Option::Some(input);
@@ -114,6 +130,10 @@ impl BusinessReportBuilder {
         self.delivery_time = input;
         self
     }
+    /// <p>The time of report delivery.</p>
+    pub fn get_delivery_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.delivery_time
+    }
     /// <p>The download link where a user can download the report.</p>
     pub fn download_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.download_url = ::std::option::Option::Some(input.into());
@@ -123,6 +143,10 @@ impl BusinessReportBuilder {
     pub fn set_download_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.download_url = input;
         self
+    }
+    /// <p>The download link where a user can download the report.</p>
+    pub fn get_download_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.download_url
     }
     /// Consumes the builder and constructs a [`BusinessReport`](crate::types::BusinessReport).
     pub fn build(self) -> crate::types::BusinessReport {

@@ -57,6 +57,10 @@ impl TriggerConfigBuilder {
         self.trigger_name = input;
         self
     }
+    /// <p>The name of the notification trigger.</p>
+    pub fn get_trigger_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trigger_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service topic through which notifications about deployment or instance events are sent.</p>
     pub fn trigger_target_arn(
         mut self,
@@ -72,6 +76,10 @@ impl TriggerConfigBuilder {
     ) -> Self {
         self.trigger_target_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service topic through which notifications about deployment or instance events are sent.</p>
+    pub fn get_trigger_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trigger_target_arn
     }
     /// Appends an item to `trigger_events`.
     ///
@@ -91,6 +99,12 @@ impl TriggerConfigBuilder {
     ) -> Self {
         self.trigger_events = input;
         self
+    }
+    /// <p>The event type or types for which notifications are triggered.</p>
+    pub fn get_trigger_events(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TriggerEventType>> {
+        &self.trigger_events
     }
     /// Consumes the builder and constructs a [`TriggerConfig`](crate::types::TriggerConfig).
     pub fn build(self) -> crate::types::TriggerConfig {

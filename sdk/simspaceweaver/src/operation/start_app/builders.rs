@@ -36,6 +36,10 @@ impl StartAppFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartApp as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_app::builders::StartAppInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl StartAppFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>A value that you provide to ensure that repeated calls to this API operation using the same parameters complete only once. A <code>ClientToken</code> is also known as an <i>idempotency token</i>. A <code>ClientToken</code> expires after 24 hours.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>The name of the simulation of the app.</p>
     pub fn simulation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.simulation(input.into());
@@ -127,6 +135,10 @@ impl StartAppFluentBuilder {
     pub fn set_simulation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_simulation(input);
         self
+    }
+    /// <p>The name of the simulation of the app.</p>
+    pub fn get_simulation(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_simulation()
     }
     /// <p>The name of the domain of the app.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,6 +150,10 @@ impl StartAppFluentBuilder {
         self.inner = self.inner.set_domain(input);
         self
     }
+    /// <p>The name of the domain of the app.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain()
+    }
     /// <p>The name of the app.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -148,6 +164,10 @@ impl StartAppFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the app.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The description of the app.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -157,6 +177,10 @@ impl StartAppFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the app.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>Options that apply when the app starts. These options override default behavior.</p>
     pub fn launch_overrides(mut self, input: crate::types::LaunchOverrides) -> Self {
@@ -170,5 +194,9 @@ impl StartAppFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_launch_overrides(input);
         self
+    }
+    /// <p>Options that apply when the app starts. These options override default behavior.</p>
+    pub fn get_launch_overrides(&self) -> &::std::option::Option<crate::types::LaunchOverrides> {
+        self.inner.get_launch_overrides()
     }
 }

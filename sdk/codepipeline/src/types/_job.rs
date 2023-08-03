@@ -64,6 +64,10 @@ impl JobBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique system-generated ID of the job.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>Other data about a job.</p>
     pub fn data(mut self, input: crate::types::JobData) -> Self {
         self.data = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl JobBuilder {
     pub fn set_data(mut self, input: ::std::option::Option<crate::types::JobData>) -> Self {
         self.data = input;
         self
+    }
+    /// <p>Other data about a job.</p>
+    pub fn get_data(&self) -> &::std::option::Option<crate::types::JobData> {
+        &self.data
     }
     /// <p>A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Use this number in an <code>AcknowledgeJob</code> request.</p>
     pub fn nonce(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl JobBuilder {
         self.nonce = input;
         self
     }
+    /// <p>A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Use this number in an <code>AcknowledgeJob</code> request.</p>
+    pub fn get_nonce(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nonce
+    }
     /// <p>The ID of the Amazon Web Services account to use when performing the job.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl JobBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>The ID of the Amazon Web Services account to use when performing the job.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// Consumes the builder and constructs a [`Job`](crate::types::Job).
     pub fn build(self) -> crate::types::Job {

@@ -72,6 +72,10 @@ impl MaintenanceWindowAutomationParametersBuilder {
         self.document_version = input;
         self
     }
+    /// <p>The version of an Automation runbook to use during task execution.</p>
+    pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_version
+    }
     /// Adds a key-value pair to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
@@ -109,6 +113,19 @@ impl MaintenanceWindowAutomationParametersBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>The parameters for the <code>AUTOMATION</code> task.</p>
+    /// <p>For information about specifying and updating task parameters, see <code>RegisterTaskWithMaintenanceWindow</code> and <code>UpdateMaintenanceWindowTask</code>.</p> <note>
+    /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+    /// <p>For <code>AUTOMATION</code> task types, Amazon Web Services Systems Manager ignores any values specified for these parameters.</p>
+    /// </note>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    > {
+        &self.parameters
     }
     /// Consumes the builder and constructs a [`MaintenanceWindowAutomationParameters`](crate::types::MaintenanceWindowAutomationParameters).
     pub fn build(self) -> crate::types::MaintenanceWindowAutomationParameters {

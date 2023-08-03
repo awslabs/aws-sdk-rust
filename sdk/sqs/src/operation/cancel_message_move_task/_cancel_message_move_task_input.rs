@@ -41,6 +41,10 @@ impl CancelMessageMoveTaskInputBuilder {
         self.task_handle = input;
         self
     }
+    /// <p>An identifier associated with a message movement task.</p>
+    pub fn get_task_handle(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_handle
+    }
     /// Consumes the builder and constructs a [`CancelMessageMoveTaskInput`](crate::operation::cancel_message_move_task::CancelMessageMoveTaskInput).
     pub fn build(
         self,

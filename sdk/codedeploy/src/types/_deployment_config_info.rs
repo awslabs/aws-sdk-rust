@@ -90,6 +90,10 @@ impl DeploymentConfigInfoBuilder {
         self.deployment_config_id = input;
         self
     }
+    /// <p>The deployment configuration ID.</p>
+    pub fn get_deployment_config_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_config_id
+    }
     /// <p>The deployment configuration name.</p>
     pub fn deployment_config_name(
         mut self,
@@ -106,6 +110,10 @@ impl DeploymentConfigInfoBuilder {
         self.deployment_config_name = input;
         self
     }
+    /// <p>The deployment configuration name.</p>
+    pub fn get_deployment_config_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_config_name
+    }
     /// <p>Information about the number or percentage of minimum healthy instance.</p>
     pub fn minimum_healthy_hosts(mut self, input: crate::types::MinimumHealthyHosts) -> Self {
         self.minimum_healthy_hosts = ::std::option::Option::Some(input);
@@ -118,6 +126,12 @@ impl DeploymentConfigInfoBuilder {
     ) -> Self {
         self.minimum_healthy_hosts = input;
         self
+    }
+    /// <p>Information about the number or percentage of minimum healthy instance.</p>
+    pub fn get_minimum_healthy_hosts(
+        &self,
+    ) -> &::std::option::Option<crate::types::MinimumHealthyHosts> {
+        &self.minimum_healthy_hosts
     }
     /// <p>The time at which the deployment configuration was created.</p>
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -132,6 +146,10 @@ impl DeploymentConfigInfoBuilder {
         self.create_time = input;
         self
     }
+    /// <p>The time at which the deployment configuration was created.</p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
+    }
     /// <p>The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
     pub fn compute_platform(mut self, input: crate::types::ComputePlatform) -> Self {
         self.compute_platform = ::std::option::Option::Some(input);
@@ -145,6 +163,10 @@ impl DeploymentConfigInfoBuilder {
         self.compute_platform = input;
         self
     }
+    /// <p>The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
+    pub fn get_compute_platform(&self) -> &::std::option::Option<crate::types::ComputePlatform> {
+        &self.compute_platform
+    }
     /// <p>The configuration that specifies how the deployment traffic is routed. Used for deployments with a Lambda or Amazon ECS compute platform only.</p>
     pub fn traffic_routing_config(mut self, input: crate::types::TrafficRoutingConfig) -> Self {
         self.traffic_routing_config = ::std::option::Option::Some(input);
@@ -157,6 +179,12 @@ impl DeploymentConfigInfoBuilder {
     ) -> Self {
         self.traffic_routing_config = input;
         self
+    }
+    /// <p>The configuration that specifies how the deployment traffic is routed. Used for deployments with a Lambda or Amazon ECS compute platform only.</p>
+    pub fn get_traffic_routing_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::TrafficRoutingConfig> {
+        &self.traffic_routing_config
     }
     /// Consumes the builder and constructs a [`DeploymentConfigInfo`](crate::types::DeploymentConfigInfo).
     pub fn build(self) -> crate::types::DeploymentConfigInfo {

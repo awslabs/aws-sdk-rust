@@ -79,6 +79,10 @@ impl ConditionalFormattingCustomIconConditionBuilder {
         self.expression = input;
         self
     }
+    /// <p>The expression that determines the condition of the icon set.</p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expression
+    }
     /// <p>Custom icon options for an icon set.</p>
     pub fn icon_options(
         mut self,
@@ -95,6 +99,12 @@ impl ConditionalFormattingCustomIconConditionBuilder {
         self.icon_options = input;
         self
     }
+    /// <p>Custom icon options for an icon set.</p>
+    pub fn get_icon_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConditionalFormattingCustomIconOptions> {
+        &self.icon_options
+    }
     /// <p>Determines the color of the icon.</p>
     pub fn color(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.color = ::std::option::Option::Some(input.into());
@@ -104,6 +114,10 @@ impl ConditionalFormattingCustomIconConditionBuilder {
     pub fn set_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.color = input;
         self
+    }
+    /// <p>Determines the color of the icon.</p>
+    pub fn get_color(&self) -> &::std::option::Option<::std::string::String> {
+        &self.color
     }
     /// <p>Determines the icon display configuration.</p>
     pub fn display_configuration(
@@ -120,6 +134,12 @@ impl ConditionalFormattingCustomIconConditionBuilder {
     ) -> Self {
         self.display_configuration = input;
         self
+    }
+    /// <p>Determines the icon display configuration.</p>
+    pub fn get_display_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConditionalFormattingIconDisplayConfiguration> {
+        &self.display_configuration
     }
     /// Consumes the builder and constructs a [`ConditionalFormattingCustomIconCondition`](crate::types::ConditionalFormattingCustomIconCondition).
     pub fn build(self) -> crate::types::ConditionalFormattingCustomIconCondition {

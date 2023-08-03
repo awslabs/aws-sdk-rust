@@ -39,6 +39,10 @@ impl GetClusterInputBuilder {
         self.cluster_arn = input;
         self
     }
+    /// <p>The arn of the Elastic DocumentDB cluster.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_arn
+    }
     /// Consumes the builder and constructs a [`GetClusterInput`](crate::operation::get_cluster::GetClusterInput).
     pub fn build(
         self,

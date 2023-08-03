@@ -37,6 +37,10 @@ impl ListAuditMitigationActionsTasksFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListAuditMitigationActionsTasks as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_audit_mitigation_actions_tasks::builders::ListAuditMitigationActionsTasksInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -113,6 +117,10 @@ impl ListAuditMitigationActionsTasksFluentBuilder {
         self.inner = self.inner.set_audit_task_id(input);
         self
     }
+    /// <p>Specify this filter to limit results to tasks that were applied to results for a specific audit.</p>
+    pub fn get_audit_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_audit_task_id()
+    }
     /// <p>Specify this filter to limit results to tasks that were applied to a specific audit finding.</p>
     pub fn finding_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.finding_id(input.into());
@@ -122,6 +130,10 @@ impl ListAuditMitigationActionsTasksFluentBuilder {
     pub fn set_finding_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_finding_id(input);
         self
+    }
+    /// <p>Specify this filter to limit results to tasks that were applied to a specific audit finding.</p>
+    pub fn get_finding_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_finding_id()
     }
     /// <p>Specify this filter to limit results to tasks that are in a specific state.</p>
     pub fn task_status(mut self, input: crate::types::AuditMitigationActionsTaskStatus) -> Self {
@@ -136,6 +148,12 @@ impl ListAuditMitigationActionsTasksFluentBuilder {
         self.inner = self.inner.set_task_status(input);
         self
     }
+    /// <p>Specify this filter to limit results to tasks that are in a specific state.</p>
+    pub fn get_task_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuditMitigationActionsTaskStatus> {
+        self.inner.get_task_status()
+    }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -146,6 +164,10 @@ impl ListAuditMitigationActionsTasksFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token for the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -155,6 +177,10 @@ impl ListAuditMitigationActionsTasksFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>Specify this filter to limit results to tasks that began on or after a specific date and time.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -169,6 +195,10 @@ impl ListAuditMitigationActionsTasksFluentBuilder {
         self.inner = self.inner.set_start_time(input);
         self
     }
+    /// <p>Specify this filter to limit results to tasks that began on or after a specific date and time.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
+    }
     /// <p>Specify this filter to limit results to tasks that were completed or canceled on or before a specific date and time.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time(input);
@@ -181,5 +211,9 @@ impl ListAuditMitigationActionsTasksFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
+    }
+    /// <p>Specify this filter to limit results to tasks that were completed or canceled on or before a specific date and time.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time()
     }
 }

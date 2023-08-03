@@ -38,6 +38,12 @@ impl UpdateClusterVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateClusterVersion as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_cluster_version::builders::UpdateClusterVersionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +134,10 @@ impl UpdateClusterVersionFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the Amazon EKS cluster to update.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The desired Kubernetes version following a successful update.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version(input.into());
@@ -137,6 +147,10 @@ impl UpdateClusterVersionFluentBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version(input);
         self
+    }
+    /// <p>The desired Kubernetes version following a successful update.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(
@@ -153,5 +167,9 @@ impl UpdateClusterVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
 }

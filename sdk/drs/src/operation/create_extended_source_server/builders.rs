@@ -36,6 +36,10 @@ impl CreateExtendedSourceServerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateExtendedSourceServer as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_extended_source_server::builders::CreateExtendedSourceServerInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl CreateExtendedSourceServerFluentBuilder {
         self.inner = self.inner.set_source_server_arn(input);
         self
     }
+    /// <p>This defines the ARN of the source server in staging Account based on which you want to create an extended source server.</p>
+    pub fn get_source_server_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_server_arn()
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -154,5 +162,13 @@ impl CreateExtendedSourceServerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of tags associated with the extended source server.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

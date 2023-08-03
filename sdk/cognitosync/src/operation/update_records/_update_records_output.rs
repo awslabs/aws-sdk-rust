@@ -56,6 +56,10 @@ impl UpdateRecordsOutputBuilder {
         self.records = input;
         self
     }
+    /// A list of records that have been updated.
+    pub fn get_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Record>> {
+        &self.records
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

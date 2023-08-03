@@ -48,6 +48,10 @@ impl Cvss3Builder {
         self.base_score = input;
         self
     }
+    /// <p>The CVSS v3 base score for the vulnerability.</p>
+    pub fn get_base_score(&self) -> &::std::option::Option<f64> {
+        &self.base_score
+    }
     /// <p>The scoring vector associated with the CVSS v3 score.</p>
     pub fn scoring_vector(
         mut self,
@@ -63,6 +67,10 @@ impl Cvss3Builder {
     ) -> Self {
         self.scoring_vector = input;
         self
+    }
+    /// <p>The scoring vector associated with the CVSS v3 score.</p>
+    pub fn get_scoring_vector(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scoring_vector
     }
     /// Consumes the builder and constructs a [`Cvss3`](crate::types::Cvss3).
     pub fn build(self) -> crate::types::Cvss3 {

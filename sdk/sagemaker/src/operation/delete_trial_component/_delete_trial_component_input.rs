@@ -46,6 +46,10 @@ impl DeleteTrialComponentInputBuilder {
         self.trial_component_name = input;
         self
     }
+    /// <p>The name of the component to delete.</p>
+    pub fn get_trial_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trial_component_name
+    }
     /// Consumes the builder and constructs a [`DeleteTrialComponentInput`](crate::operation::delete_trial_component::DeleteTrialComponentInput).
     pub fn build(
         self,

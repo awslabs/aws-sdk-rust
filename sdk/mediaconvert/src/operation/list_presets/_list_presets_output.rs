@@ -54,6 +54,10 @@ impl ListPresetsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// Use this string to request the next batch of presets.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `presets`.
     ///
     /// To override the contents of this collection use [`set_presets`](Self::set_presets).
@@ -72,6 +76,10 @@ impl ListPresetsOutputBuilder {
     ) -> Self {
         self.presets = input;
         self
+    }
+    /// List of presets
+    pub fn get_presets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Preset>> {
+        &self.presets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

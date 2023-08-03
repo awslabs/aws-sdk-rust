@@ -75,6 +75,10 @@ impl GroupOrderingIdSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The current processing status of actions for mapping users to their groups. The status can be either <code>PROCESSING</code>, <code>SUCCEEDED</code>, <code>DELETING</code>, <code>DELETED</code>, or <code>FAILED</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::PrincipalMappingStatus> {
+        &self.status
+    }
     /// <p>The Unix timestamp when an action was last updated. An action can be a <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_at = ::std::option::Option::Some(input);
@@ -87,6 +91,10 @@ impl GroupOrderingIdSummaryBuilder {
     ) -> Self {
         self.last_updated_at = input;
         self
+    }
+    /// <p>The Unix timestamp when an action was last updated. An action can be a <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
+    pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_at
     }
     /// <p>The Unix timestamp when an action was received by Amazon Kendra. An action can be a <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
     pub fn received_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -101,6 +109,10 @@ impl GroupOrderingIdSummaryBuilder {
         self.received_at = input;
         self
     }
+    /// <p>The Unix timestamp when an action was received by Amazon Kendra. An action can be a <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
+    pub fn get_received_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.received_at
+    }
     /// <p>The order in which actions should complete processing. An action can be a <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
     pub fn ordering_id(mut self, input: i64) -> Self {
         self.ordering_id = ::std::option::Option::Some(input);
@@ -110,6 +122,10 @@ impl GroupOrderingIdSummaryBuilder {
     pub fn set_ordering_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.ordering_id = input;
         self
+    }
+    /// <p>The order in which actions should complete processing. An action can be a <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
+    pub fn get_ordering_id(&self) -> &::std::option::Option<i64> {
+        &self.ordering_id
     }
     /// <p>The reason an action could not be processed. An action can be a <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
     pub fn failure_reason(
@@ -126,6 +142,10 @@ impl GroupOrderingIdSummaryBuilder {
     ) -> Self {
         self.failure_reason = input;
         self
+    }
+    /// <p>The reason an action could not be processed. An action can be a <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     /// Consumes the builder and constructs a [`GroupOrderingIdSummary`](crate::types::GroupOrderingIdSummary).
     pub fn build(self) -> crate::types::GroupOrderingIdSummary {

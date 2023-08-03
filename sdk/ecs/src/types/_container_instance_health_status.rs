@@ -52,6 +52,12 @@ impl ContainerInstanceHealthStatusBuilder {
         self.overall_status = input;
         self
     }
+    /// <p>The overall health status of the container instance. This is an aggregate status of all container instance health checks.</p>
+    pub fn get_overall_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceHealthCheckState> {
+        &self.overall_status
+    }
     /// Appends an item to `details`.
     ///
     /// To override the contents of this collection use [`set_details`](Self::set_details).
@@ -70,6 +76,12 @@ impl ContainerInstanceHealthStatusBuilder {
     ) -> Self {
         self.details = input;
         self
+    }
+    /// <p>An array of objects representing the details of the container instance health status.</p>
+    pub fn get_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceHealthCheckResult>> {
+        &self.details
     }
     /// Consumes the builder and constructs a [`ContainerInstanceHealthStatus`](crate::types::ContainerInstanceHealthStatus).
     pub fn build(self) -> crate::types::ContainerInstanceHealthStatus {

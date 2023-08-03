@@ -37,6 +37,12 @@ impl ListAttachedPoliciesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListAttachedPolicies as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_attached_policies::builders::ListAttachedPoliciesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +144,10 @@ impl ListAttachedPoliciesFluentBuilder {
         self.inner = self.inner.set_target(input);
         self
     }
+    /// <p>The group or principal for which the policies will be listed. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
+    pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target()
+    }
     /// <p>When true, recursively list attached policies.</p>
     pub fn recursive(mut self, input: bool) -> Self {
         self.inner = self.inner.recursive(input);
@@ -147,6 +157,10 @@ impl ListAttachedPoliciesFluentBuilder {
     pub fn set_recursive(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_recursive(input);
         self
+    }
+    /// <p>When true, recursively list attached policies.</p>
+    pub fn get_recursive(&self) -> &::std::option::Option<bool> {
+        self.inner.get_recursive()
     }
     /// <p>The token to retrieve the next set of results.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -158,6 +172,10 @@ impl ListAttachedPoliciesFluentBuilder {
         self.inner = self.inner.set_marker(input);
         self
     }
+    /// <p>The token to retrieve the next set of results.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
+    }
     /// <p>The maximum number of results to be returned per request.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.inner = self.inner.page_size(input);
@@ -167,5 +185,9 @@ impl ListAttachedPoliciesFluentBuilder {
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_page_size(input);
         self
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        self.inner.get_page_size()
     }
 }

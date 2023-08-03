@@ -77,6 +77,10 @@ impl CreateKeysAndCertificateOutputBuilder {
         self.certificate_arn = input;
         self
     }
+    /// <p>The ARN of the certificate.</p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_arn
+    }
     /// <p>The ID of the certificate. IoT issues a default subject name for the certificate (for example, IoT Certificate).</p>
     pub fn certificate_id(
         mut self,
@@ -92,6 +96,10 @@ impl CreateKeysAndCertificateOutputBuilder {
     ) -> Self {
         self.certificate_id = input;
         self
+    }
+    /// <p>The ID of the certificate. IoT issues a default subject name for the certificate (for example, IoT Certificate).</p>
+    pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_id
     }
     /// <p>The certificate data, in PEM format.</p>
     pub fn certificate_pem(
@@ -109,6 +117,10 @@ impl CreateKeysAndCertificateOutputBuilder {
         self.certificate_pem = input;
         self
     }
+    /// <p>The certificate data, in PEM format.</p>
+    pub fn get_certificate_pem(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_pem
+    }
     /// <p>The generated key pair.</p>
     pub fn key_pair(mut self, input: crate::types::KeyPair) -> Self {
         self.key_pair = ::std::option::Option::Some(input);
@@ -118,6 +130,10 @@ impl CreateKeysAndCertificateOutputBuilder {
     pub fn set_key_pair(mut self, input: ::std::option::Option<crate::types::KeyPair>) -> Self {
         self.key_pair = input;
         self
+    }
+    /// <p>The generated key pair.</p>
+    pub fn get_key_pair(&self) -> &::std::option::Option<crate::types::KeyPair> {
+        &self.key_pair
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

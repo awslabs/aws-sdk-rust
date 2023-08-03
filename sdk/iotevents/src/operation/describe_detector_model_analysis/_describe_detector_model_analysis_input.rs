@@ -39,6 +39,10 @@ impl DescribeDetectorModelAnalysisInputBuilder {
         self.analysis_id = input;
         self
     }
+    /// <p>The ID of the analysis result that you want to retrieve.</p>
+    pub fn get_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.analysis_id
+    }
     /// Consumes the builder and constructs a [`DescribeDetectorModelAnalysisInput`](crate::operation::describe_detector_model_analysis::DescribeDetectorModelAnalysisInput).
     pub fn build(
         self,

@@ -51,6 +51,12 @@ impl UpdateRuleGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateRuleGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_rule_group::builders::UpdateRuleGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -147,6 +153,10 @@ impl UpdateRuleGroupFluentBuilder {
         self.inner = self.inner.set_rule_group_id(input);
         self
     }
+    /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to update. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
+    pub fn get_rule_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rule_group_id()
+    }
     /// Appends an item to `Updates`.
     ///
     /// To override the contents of this collection use [`set_updates`](Self::set_updates).
@@ -168,6 +178,14 @@ impl UpdateRuleGroupFluentBuilder {
         self.inner = self.inner.set_updates(input);
         self
     }
+    /// <p>An array of <code>RuleGroupUpdate</code> objects that you want to insert into or delete from a <code>RuleGroup</code>.</p>
+    /// <p>You can only insert <code>REGULAR</code> rules into a rule group.</p>
+    /// <p> <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
+    pub fn get_updates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleGroupUpdate>> {
+        self.inner.get_updates()
+    }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.change_token(input.into());
@@ -177,5 +195,9 @@ impl UpdateRuleGroupFluentBuilder {
     pub fn set_change_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_change_token(input);
         self
+    }
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    pub fn get_change_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_change_token()
     }
 }

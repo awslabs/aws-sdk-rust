@@ -48,6 +48,10 @@ impl DeleteQueuedReservedInstancesInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// Appends an item to `reserved_instances_ids`.
     ///
     /// To override the contents of this collection use [`set_reserved_instances_ids`](Self::set_reserved_instances_ids).
@@ -69,6 +73,12 @@ impl DeleteQueuedReservedInstancesInputBuilder {
     ) -> Self {
         self.reserved_instances_ids = input;
         self
+    }
+    /// <p>The IDs of the Reserved Instances.</p>
+    pub fn get_reserved_instances_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.reserved_instances_ids
     }
     /// Consumes the builder and constructs a [`DeleteQueuedReservedInstancesInput`](crate::operation::delete_queued_reserved_instances::DeleteQueuedReservedInstancesInput).
     pub fn build(

@@ -39,6 +39,10 @@ impl CreateProactiveJoinBuilder {
         self.enabled_by_motion = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_enabled_by_motion(&self) -> &::std::option::Option<bool> {
+        &self.enabled_by_motion
+    }
     /// Consumes the builder and constructs a [`CreateProactiveJoin`](crate::types::CreateProactiveJoin).
     pub fn build(self) -> crate::types::CreateProactiveJoin {
         crate::types::CreateProactiveJoin {

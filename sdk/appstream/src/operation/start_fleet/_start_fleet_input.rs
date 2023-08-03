@@ -39,6 +39,10 @@ impl StartFleetInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the fleet.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`StartFleetInput`](crate::operation::start_fleet::StartFleetInput).
     pub fn build(
         self,

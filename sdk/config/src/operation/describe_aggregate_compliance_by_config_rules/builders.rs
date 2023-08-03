@@ -38,6 +38,10 @@ impl DescribeAggregateComplianceByConfigRulesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeAggregateComplianceByConfigRules as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_aggregate_compliance_by_config_rules::builders::DescribeAggregateComplianceByConfigRulesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -114,6 +118,12 @@ impl DescribeAggregateComplianceByConfigRulesFluentBuilder {
         self.inner = self.inner.set_configuration_aggregator_name(input);
         self
     }
+    /// <p>The name of the configuration aggregator.</p>
+    pub fn get_configuration_aggregator_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_aggregator_name()
+    }
     /// <p>Filters the results by ConfigRuleComplianceFilters object. </p>
     pub fn filters(mut self, input: crate::types::ConfigRuleComplianceFilters) -> Self {
         self.inner = self.inner.filters(input);
@@ -127,6 +137,10 @@ impl DescribeAggregateComplianceByConfigRulesFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>Filters the results by ConfigRuleComplianceFilters object. </p>
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::ConfigRuleComplianceFilters> {
+        self.inner.get_filters()
+    }
     /// <p>The maximum number of evaluation results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -137,6 +151,10 @@ impl DescribeAggregateComplianceByConfigRulesFluentBuilder {
         self.inner = self.inner.set_limit(input);
         self
     }
+    /// <p>The maximum number of evaluation results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
+    }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -146,5 +164,9 @@ impl DescribeAggregateComplianceByConfigRulesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

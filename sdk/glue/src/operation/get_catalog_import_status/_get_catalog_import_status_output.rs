@@ -51,6 +51,10 @@ impl GetCatalogImportStatusOutputBuilder {
         self.import_status = input;
         self
     }
+    /// <p>The status of the specified catalog migration.</p>
+    pub fn get_import_status(&self) -> &::std::option::Option<crate::types::CatalogImportStatus> {
+        &self.import_status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -57,6 +57,10 @@ impl VpcOptionsBuilder {
         self.subnet_ids = input;
         self
     }
+    /// <p>A list of subnet IDs associated with the VPC endpoint.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
+    }
     /// Appends an item to `security_group_ids`.
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
@@ -78,6 +82,12 @@ impl VpcOptionsBuilder {
     ) -> Self {
         self.security_group_ids = input;
         self
+    }
+    /// <p>A list of security groups associated with the VPC endpoint.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
     }
     /// Consumes the builder and constructs a [`VpcOptions`](crate::types::VpcOptions).
     pub fn build(self) -> crate::types::VpcOptions {

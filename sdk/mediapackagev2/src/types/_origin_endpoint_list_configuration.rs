@@ -122,6 +122,10 @@ impl OriginEndpointListConfigurationBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
     pub fn channel_group_name(
         mut self,
@@ -138,6 +142,10 @@ impl OriginEndpointListConfigurationBuilder {
         self.channel_group_name = input;
         self
     }
+    /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
+    pub fn get_channel_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_group_name
+    }
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. </p>
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
@@ -147,6 +155,10 @@ impl OriginEndpointListConfigurationBuilder {
     pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_name = input;
         self
+    }
+    /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. </p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_name
     }
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. </p>
     pub fn origin_endpoint_name(
@@ -164,6 +176,10 @@ impl OriginEndpointListConfigurationBuilder {
         self.origin_endpoint_name = input;
         self
     }
+    /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. </p>
+    pub fn get_origin_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.origin_endpoint_name
+    }
     /// <p>The type of container attached to this origin endpoint. A container type is a file format that encapsulates one or more media streams, such as audio and video, into a single file. </p>
     pub fn container_type(mut self, input: crate::types::ContainerType) -> Self {
         self.container_type = ::std::option::Option::Some(input);
@@ -177,6 +193,10 @@ impl OriginEndpointListConfigurationBuilder {
         self.container_type = input;
         self
     }
+    /// <p>The type of container attached to this origin endpoint. A container type is a file format that encapsulates one or more media streams, such as audio and video, into a single file. </p>
+    pub fn get_container_type(&self) -> &::std::option::Option<crate::types::ContainerType> {
+        &self.container_type
+    }
     /// <p>Any descriptive information that you want to add to the origin endpoint for future identification purposes.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -186,6 +206,10 @@ impl OriginEndpointListConfigurationBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Any descriptive information that you want to add to the origin endpoint for future identification purposes.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The date and time the origin endpoint was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -200,6 +224,10 @@ impl OriginEndpointListConfigurationBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The date and time the origin endpoint was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The date and time the origin endpoint was modified.</p>
     pub fn modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.modified_at = ::std::option::Option::Some(input);
@@ -212,6 +240,10 @@ impl OriginEndpointListConfigurationBuilder {
     ) -> Self {
         self.modified_at = input;
         self
+    }
+    /// <p>The date and time the origin endpoint was modified.</p>
+    pub fn get_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.modified_at
     }
     /// Appends an item to `hls_manifests`.
     ///
@@ -231,6 +263,12 @@ impl OriginEndpointListConfigurationBuilder {
     ) -> Self {
         self.hls_manifests = input;
         self
+    }
+    /// <p>An HTTP live streaming (HLS) manifest configuration.</p>
+    pub fn get_hls_manifests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListHlsManifestConfiguration>> {
+        &self.hls_manifests
     }
     /// Appends an item to `low_latency_hls_manifests`.
     ///
@@ -255,6 +293,13 @@ impl OriginEndpointListConfigurationBuilder {
     ) -> Self {
         self.low_latency_hls_manifests = input;
         self
+    }
+    /// <p>A low-latency HLS manifest configuration.</p>
+    pub fn get_low_latency_hls_manifests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListLowLatencyHlsManifestConfiguration>>
+    {
+        &self.low_latency_hls_manifests
     }
     /// Consumes the builder and constructs a [`OriginEndpointListConfiguration`](crate::types::OriginEndpointListConfiguration).
     pub fn build(self) -> crate::types::OriginEndpointListConfiguration {

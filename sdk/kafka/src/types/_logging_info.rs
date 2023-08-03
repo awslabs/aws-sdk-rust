@@ -42,6 +42,10 @@ impl LoggingInfoBuilder {
         self.broker_logs = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_broker_logs(&self) -> &::std::option::Option<crate::types::BrokerLogs> {
+        &self.broker_logs
+    }
     /// Consumes the builder and constructs a [`LoggingInfo`](crate::types::LoggingInfo).
     pub fn build(self) -> crate::types::LoggingInfo {
         crate::types::LoggingInfo {

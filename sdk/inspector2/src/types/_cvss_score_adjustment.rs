@@ -48,6 +48,10 @@ impl CvssScoreAdjustmentBuilder {
         self.metric = input;
         self
     }
+    /// <p>The metric used to adjust the CVSS score.</p>
+    pub fn get_metric(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric
+    }
     /// <p>The reason the CVSS score has been adjustment.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl CvssScoreAdjustmentBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>The reason the CVSS score has been adjustment.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
     }
     /// Consumes the builder and constructs a [`CvssScoreAdjustment`](crate::types::CvssScoreAdjustment).
     pub fn build(self) -> crate::types::CvssScoreAdjustment {

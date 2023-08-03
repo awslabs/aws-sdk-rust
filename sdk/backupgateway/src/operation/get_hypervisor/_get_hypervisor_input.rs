@@ -45,6 +45,10 @@ impl GetHypervisorInputBuilder {
         self.hypervisor_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+    pub fn get_hypervisor_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hypervisor_arn
+    }
     /// Consumes the builder and constructs a [`GetHypervisorInput`](crate::operation::get_hypervisor::GetHypervisorInput).
     pub fn build(
         self,

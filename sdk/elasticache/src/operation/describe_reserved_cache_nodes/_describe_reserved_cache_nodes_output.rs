@@ -59,6 +59,10 @@ impl DescribeReservedCacheNodesOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// Appends an item to `reserved_cache_nodes`.
     ///
     /// To override the contents of this collection use [`set_reserved_cache_nodes`](Self::set_reserved_cache_nodes).
@@ -77,6 +81,12 @@ impl DescribeReservedCacheNodesOutputBuilder {
     ) -> Self {
         self.reserved_cache_nodes = input;
         self
+    }
+    /// <p>A list of reserved cache nodes. Each element in the list contains detailed information about one node.</p>
+    pub fn get_reserved_cache_nodes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedCacheNode>> {
+        &self.reserved_cache_nodes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -65,6 +65,10 @@ impl ForbiddenExceptionBuilder {
         self.message = input;
         self
     }
+    /// <p>The message returned when WAF doesn't allow your request based on a web ACL that's associated with your user pool.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);

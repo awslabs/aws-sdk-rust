@@ -71,6 +71,15 @@ impl SessionDataSortByBuilder {
         self.name = input;
         self
     }
+    /// <p>The measure by which to sort the session analytics data.</p>
+    /// <ul>
+    /// <li> <p> <code>conversationStartTime</code> – The date and time when the conversation began. A conversation is defined as a unique combination of a <code>sessionId</code> and an <code>originatingRequestId</code>.</p> </li>
+    /// <li> <p> <code>numberOfTurns</code> – The number of turns that the session took.</p> </li>
+    /// <li> <p> <code>conversationDurationSeconds</code> – The duration of the conversation in seconds.</p> </li>
+    /// </ul>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::AnalyticsSessionSortByName> {
+        &self.name
+    }
     /// <p>Specifies whether to sort the results in ascending or descending order.</p>
     pub fn order(mut self, input: crate::types::AnalyticsSortOrder) -> Self {
         self.order = ::std::option::Option::Some(input);
@@ -83,6 +92,10 @@ impl SessionDataSortByBuilder {
     ) -> Self {
         self.order = input;
         self
+    }
+    /// <p>Specifies whether to sort the results in ascending or descending order.</p>
+    pub fn get_order(&self) -> &::std::option::Option<crate::types::AnalyticsSortOrder> {
+        &self.order
     }
     /// Consumes the builder and constructs a [`SessionDataSortBy`](crate::types::SessionDataSortBy).
     pub fn build(self) -> crate::types::SessionDataSortBy {

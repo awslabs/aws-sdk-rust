@@ -36,6 +36,10 @@ impl UpdateLaunchConfigurationTemplateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateLaunchConfigurationTemplate as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_launch_configuration_template::builders::UpdateLaunchConfigurationTemplateInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,12 @@ impl UpdateLaunchConfigurationTemplateFluentBuilder {
         self.inner = self.inner.set_launch_configuration_template_id(input);
         self
     }
+    /// <p>Launch Configuration Template ID.</p>
+    pub fn get_launch_configuration_template_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_launch_configuration_template_id()
+    }
     /// <p>Launch disposition.</p>
     pub fn launch_disposition(mut self, input: crate::types::LaunchDisposition) -> Self {
         self.inner = self.inner.launch_disposition(input);
@@ -118,6 +128,12 @@ impl UpdateLaunchConfigurationTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_launch_disposition(input);
         self
+    }
+    /// <p>Launch disposition.</p>
+    pub fn get_launch_disposition(
+        &self,
+    ) -> &::std::option::Option<crate::types::LaunchDisposition> {
+        self.inner.get_launch_disposition()
     }
     /// <p>Target instance type right-sizing method.</p>
     pub fn target_instance_type_right_sizing_method(
@@ -137,6 +153,12 @@ impl UpdateLaunchConfigurationTemplateFluentBuilder {
             .set_target_instance_type_right_sizing_method(input);
         self
     }
+    /// <p>Target instance type right-sizing method.</p>
+    pub fn get_target_instance_type_right_sizing_method(
+        &self,
+    ) -> &::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod> {
+        self.inner.get_target_instance_type_right_sizing_method()
+    }
     /// <p>Copy private IP.</p>
     pub fn copy_private_ip(mut self, input: bool) -> Self {
         self.inner = self.inner.copy_private_ip(input);
@@ -146,6 +168,10 @@ impl UpdateLaunchConfigurationTemplateFluentBuilder {
     pub fn set_copy_private_ip(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_copy_private_ip(input);
         self
+    }
+    /// <p>Copy private IP.</p>
+    pub fn get_copy_private_ip(&self) -> &::std::option::Option<bool> {
+        self.inner.get_copy_private_ip()
     }
     /// <p>Copy tags.</p>
     pub fn copy_tags(mut self, input: bool) -> Self {
@@ -157,6 +183,10 @@ impl UpdateLaunchConfigurationTemplateFluentBuilder {
         self.inner = self.inner.set_copy_tags(input);
         self
     }
+    /// <p>Copy tags.</p>
+    pub fn get_copy_tags(&self) -> &::std::option::Option<bool> {
+        self.inner.get_copy_tags()
+    }
     /// <p>Licensing.</p>
     pub fn licensing(mut self, input: crate::types::Licensing) -> Self {
         self.inner = self.inner.licensing(input);
@@ -166,6 +196,10 @@ impl UpdateLaunchConfigurationTemplateFluentBuilder {
     pub fn set_licensing(mut self, input: ::std::option::Option<crate::types::Licensing>) -> Self {
         self.inner = self.inner.set_licensing(input);
         self
+    }
+    /// <p>Licensing.</p>
+    pub fn get_licensing(&self) -> &::std::option::Option<crate::types::Licensing> {
+        self.inner.get_licensing()
     }
     /// <p>S3 bucket ARN to export Source Network templates.</p>
     pub fn export_bucket_arn(
@@ -182,5 +216,9 @@ impl UpdateLaunchConfigurationTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_export_bucket_arn(input);
         self
+    }
+    /// <p>S3 bucket ARN to export Source Network templates.</p>
+    pub fn get_export_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_export_bucket_arn()
     }
 }

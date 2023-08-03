@@ -78,6 +78,10 @@ impl ScheduledAuditMetadataBuilder {
         self.scheduled_audit_name = input;
         self
     }
+    /// <p>The name of the scheduled audit.</p>
+    pub fn get_scheduled_audit_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scheduled_audit_name
+    }
     /// <p>The ARN of the scheduled audit.</p>
     pub fn scheduled_audit_arn(
         mut self,
@@ -94,6 +98,10 @@ impl ScheduledAuditMetadataBuilder {
         self.scheduled_audit_arn = input;
         self
     }
+    /// <p>The ARN of the scheduled audit.</p>
+    pub fn get_scheduled_audit_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scheduled_audit_arn
+    }
     /// <p>How often the scheduled audit occurs.</p>
     pub fn frequency(mut self, input: crate::types::AuditFrequency) -> Self {
         self.frequency = ::std::option::Option::Some(input);
@@ -107,6 +115,10 @@ impl ScheduledAuditMetadataBuilder {
         self.frequency = input;
         self
     }
+    /// <p>How often the scheduled audit occurs.</p>
+    pub fn get_frequency(&self) -> &::std::option::Option<crate::types::AuditFrequency> {
+        &self.frequency
+    }
     /// <p>The day of the month on which the scheduled audit is run (if the <code>frequency</code> is "MONTHLY"). If days 29-31 are specified, and the month does not have that many days, the audit takes place on the "LAST" day of the month.</p>
     pub fn day_of_month(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.day_of_month = ::std::option::Option::Some(input.into());
@@ -116,6 +128,10 @@ impl ScheduledAuditMetadataBuilder {
     pub fn set_day_of_month(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.day_of_month = input;
         self
+    }
+    /// <p>The day of the month on which the scheduled audit is run (if the <code>frequency</code> is "MONTHLY"). If days 29-31 are specified, and the month does not have that many days, the audit takes place on the "LAST" day of the month.</p>
+    pub fn get_day_of_month(&self) -> &::std::option::Option<::std::string::String> {
+        &self.day_of_month
     }
     /// <p>The day of the week on which the scheduled audit is run (if the <code>frequency</code> is "WEEKLY" or "BIWEEKLY").</p>
     pub fn day_of_week(mut self, input: crate::types::DayOfWeek) -> Self {
@@ -129,6 +145,10 @@ impl ScheduledAuditMetadataBuilder {
     ) -> Self {
         self.day_of_week = input;
         self
+    }
+    /// <p>The day of the week on which the scheduled audit is run (if the <code>frequency</code> is "WEEKLY" or "BIWEEKLY").</p>
+    pub fn get_day_of_week(&self) -> &::std::option::Option<crate::types::DayOfWeek> {
+        &self.day_of_week
     }
     /// Consumes the builder and constructs a [`ScheduledAuditMetadata`](crate::types::ScheduledAuditMetadata).
     pub fn build(self) -> crate::types::ScheduledAuditMetadata {

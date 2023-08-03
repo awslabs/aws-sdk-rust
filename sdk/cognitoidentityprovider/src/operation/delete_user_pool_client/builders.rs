@@ -36,6 +36,13 @@ impl DeleteUserPoolClientFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteUserPoolClient as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_user_pool_client::builders::DeleteUserPoolClientInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl DeleteUserPoolClientFluentBuilder {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
+    /// <p>The user pool ID for the user pool where you want to delete the client.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_pool_id()
+    }
     /// <p>The app client ID of the app associated with the user pool.</p>
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_id(input.into());
@@ -135,5 +146,9 @@ impl DeleteUserPoolClientFluentBuilder {
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_id(input);
         self
+    }
+    /// <p>The app client ID of the app associated with the user pool.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_id()
     }
 }

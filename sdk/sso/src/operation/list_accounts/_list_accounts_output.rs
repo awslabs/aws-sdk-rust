@@ -54,6 +54,10 @@ impl ListAccountsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The page token client that is used to retrieve the list of accounts.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `account_list`.
     ///
     /// To override the contents of this collection use [`set_account_list`](Self::set_account_list).
@@ -72,6 +76,12 @@ impl ListAccountsOutputBuilder {
     ) -> Self {
         self.account_list = input;
         self
+    }
+    /// <p>A paginated response with the list of account information and the next token if more results are available.</p>
+    pub fn get_account_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountInfo>> {
+        &self.account_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -46,6 +46,10 @@ impl DeleteConfigurationSetTrackingOptionsInputBuilder {
         self.configuration_set_name = input;
         self
     }
+    /// <p>The name of the configuration set from which you want to delete the tracking options.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set_name
+    }
     /// Consumes the builder and constructs a [`DeleteConfigurationSetTrackingOptionsInput`](crate::operation::delete_configuration_set_tracking_options::DeleteConfigurationSetTrackingOptionsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_configuration_set_tracking_options::DeleteConfigurationSetTrackingOptionsInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

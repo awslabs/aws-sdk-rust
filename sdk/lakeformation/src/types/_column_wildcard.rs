@@ -52,6 +52,12 @@ impl ColumnWildcardBuilder {
         self.excluded_column_names = input;
         self
     }
+    /// <p>Excludes column names. Any column with this name will be excluded.</p>
+    pub fn get_excluded_column_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.excluded_column_names
+    }
     /// Consumes the builder and constructs a [`ColumnWildcard`](crate::types::ColumnWildcard).
     pub fn build(self) -> crate::types::ColumnWildcard {
         crate::types::ColumnWildcard {

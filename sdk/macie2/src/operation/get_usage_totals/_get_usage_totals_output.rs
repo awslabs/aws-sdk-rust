@@ -54,6 +54,10 @@ impl GetUsageTotalsOutputBuilder {
         self.time_range = input;
         self
     }
+    /// <p>The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.</p>
+    pub fn get_time_range(&self) -> &::std::option::Option<crate::types::TimeRange> {
+        &self.time_range
+    }
     /// Appends an item to `usage_totals`.
     ///
     /// To override the contents of this collection use [`set_usage_totals`](Self::set_usage_totals).
@@ -72,6 +76,12 @@ impl GetUsageTotalsOutputBuilder {
     ) -> Self {
         self.usage_totals = input;
         self
+    }
+    /// <p>An array of objects that contains the results of the query. Each object contains the data for a specific usage metric.</p>
+    pub fn get_usage_totals(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageTotal>> {
+        &self.usage_totals
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

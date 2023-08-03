@@ -57,6 +57,10 @@ impl RoleValuesBuilder {
         self.editor = input;
         self
     }
+    /// <p>A list of groups from the SAML assertion attribute to grant the Grafana <code>Editor</code> role to.</p>
+    pub fn get_editor(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.editor
+    }
     /// Appends an item to `admin`.
     ///
     /// To override the contents of this collection use [`set_admin`](Self::set_admin).
@@ -75,6 +79,10 @@ impl RoleValuesBuilder {
     ) -> Self {
         self.admin = input;
         self
+    }
+    /// <p>A list of groups from the SAML assertion attribute to grant the Grafana <code>Admin</code> role to.</p>
+    pub fn get_admin(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.admin
     }
     /// Consumes the builder and constructs a [`RoleValues`](crate::types::RoleValues).
     pub fn build(self) -> crate::types::RoleValues {

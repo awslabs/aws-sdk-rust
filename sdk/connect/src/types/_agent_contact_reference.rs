@@ -92,6 +92,10 @@ impl AgentContactReferenceBuilder {
         self.contact_id = input;
         self
     }
+    /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
+    pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_id
+    }
     /// <p>The channel of the contact.</p>
     pub fn channel(mut self, input: crate::types::Channel) -> Self {
         self.channel = ::std::option::Option::Some(input);
@@ -101,6 +105,10 @@ impl AgentContactReferenceBuilder {
     pub fn set_channel(mut self, input: ::std::option::Option<crate::types::Channel>) -> Self {
         self.channel = input;
         self
+    }
+    /// <p>The channel of the contact.</p>
+    pub fn get_channel(&self) -> &::std::option::Option<crate::types::Channel> {
+        &self.channel
     }
     /// <p>How the contact was initiated.</p>
     pub fn initiation_method(mut self, input: crate::types::ContactInitiationMethod) -> Self {
@@ -115,6 +123,12 @@ impl AgentContactReferenceBuilder {
         self.initiation_method = input;
         self
     }
+    /// <p>How the contact was initiated.</p>
+    pub fn get_initiation_method(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContactInitiationMethod> {
+        &self.initiation_method
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">state of the contact</a>.</p>
     pub fn agent_contact_state(mut self, input: crate::types::ContactState) -> Self {
         self.agent_contact_state = ::std::option::Option::Some(input);
@@ -127,6 +141,10 @@ impl AgentContactReferenceBuilder {
     ) -> Self {
         self.agent_contact_state = input;
         self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">state of the contact</a>.</p>
+    pub fn get_agent_contact_state(&self) -> &::std::option::Option<crate::types::ContactState> {
+        &self.agent_contact_state
     }
     /// <p>The epoch timestamp when the contact state started.</p>
     pub fn state_start_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -141,6 +159,12 @@ impl AgentContactReferenceBuilder {
         self.state_start_timestamp = input;
         self
     }
+    /// <p>The epoch timestamp when the contact state started.</p>
+    pub fn get_state_start_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.state_start_timestamp
+    }
     /// <p>The time at which the contact was connected to an agent.</p>
     pub fn connected_to_agent_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.connected_to_agent_timestamp = ::std::option::Option::Some(input);
@@ -154,6 +178,12 @@ impl AgentContactReferenceBuilder {
         self.connected_to_agent_timestamp = input;
         self
     }
+    /// <p>The time at which the contact was connected to an agent.</p>
+    pub fn get_connected_to_agent_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.connected_to_agent_timestamp
+    }
     /// <p>Contains information about a queue resource for which metrics are returned.</p>
     pub fn queue(mut self, input: crate::types::QueueReference) -> Self {
         self.queue = ::std::option::Option::Some(input);
@@ -163,6 +193,10 @@ impl AgentContactReferenceBuilder {
     pub fn set_queue(mut self, input: ::std::option::Option<crate::types::QueueReference>) -> Self {
         self.queue = input;
         self
+    }
+    /// <p>Contains information about a queue resource for which metrics are returned.</p>
+    pub fn get_queue(&self) -> &::std::option::Option<crate::types::QueueReference> {
+        &self.queue
     }
     /// Consumes the builder and constructs a [`AgentContactReference`](crate::types::AgentContactReference).
     pub fn build(self) -> crate::types::AgentContactReference {

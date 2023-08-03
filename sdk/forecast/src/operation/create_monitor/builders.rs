@@ -36,6 +36,12 @@ impl CreateMonitorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateMonitor as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_monitor::builders::CreateMonitorInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl CreateMonitorFluentBuilder {
         self.inner = self.inner.set_monitor_name(input);
         self
     }
+    /// <p>The name of the monitor resource.</p>
+    pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_monitor_name()
+    }
     /// <p>The Amazon Resource Name (ARN) of the predictor to monitor.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
@@ -127,6 +137,10 @@ impl CreateMonitorFluentBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the predictor to monitor.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
     }
     /// Appends an item to `Tags`.
     ///
@@ -144,5 +158,9 @@ impl CreateMonitorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the monitor resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

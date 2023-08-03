@@ -64,6 +64,12 @@ impl CreateParticipantOutputBuilder {
         self.participant_credentials = input;
         self
     }
+    /// <p>The token used by the chat participant to call <code>CreateParticipantConnection</code>. The participant token is valid for the lifetime of a chat participant.</p>
+    pub fn get_participant_credentials(
+        &self,
+    ) -> &::std::option::Option<crate::types::ParticipantTokenCredentials> {
+        &self.participant_credentials
+    }
     /// <p>The identifier for a chat participant. The participantId for a chat participant is the same throughout the chat lifecycle.</p>
     pub fn participant_id(
         mut self,
@@ -79,6 +85,10 @@ impl CreateParticipantOutputBuilder {
     ) -> Self {
         self.participant_id = input;
         self
+    }
+    /// <p>The identifier for a chat participant. The participantId for a chat participant is the same throughout the chat lifecycle.</p>
+    pub fn get_participant_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.participant_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -39,6 +39,10 @@ impl DescribeKeyPhrasesDetectionJobInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The identifier that Amazon Comprehend generated for the job. The <code>StartKeyPhrasesDetectionJob</code> operation returns this identifier in its response.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// Consumes the builder and constructs a [`DescribeKeyPhrasesDetectionJobInput`](crate::operation::describe_key_phrases_detection_job::DescribeKeyPhrasesDetectionJobInput).
     pub fn build(
         self,

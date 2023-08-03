@@ -100,6 +100,10 @@ impl SipRuleBuilder {
         self.sip_rule_id = input;
         self
     }
+    /// <p>A SIP rule's ID.</p>
+    pub fn get_sip_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sip_rule_id
+    }
     /// <p>A SIP rule's name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -110,6 +114,10 @@ impl SipRuleBuilder {
         self.name = input;
         self
     }
+    /// <p>A SIP rule's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Indicates whether the SIP rule is enabled or disabled. You must disable a rule before you can delete it.</p>
     pub fn disabled(mut self, input: bool) -> Self {
         self.disabled = ::std::option::Option::Some(input);
@@ -119,6 +127,10 @@ impl SipRuleBuilder {
     pub fn set_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disabled = input;
         self
+    }
+    /// <p>Indicates whether the SIP rule is enabled or disabled. You must disable a rule before you can delete it.</p>
+    pub fn get_disabled(&self) -> &::std::option::Option<bool> {
+        &self.disabled
     }
     /// <p>The type of trigger set for a SIP rule, either a phone number or a URI request host name.</p>
     pub fn trigger_type(mut self, input: crate::types::SipRuleTriggerType) -> Self {
@@ -132,6 +144,10 @@ impl SipRuleBuilder {
     ) -> Self {
         self.trigger_type = input;
         self
+    }
+    /// <p>The type of trigger set for a SIP rule, either a phone number or a URI request host name.</p>
+    pub fn get_trigger_type(&self) -> &::std::option::Option<crate::types::SipRuleTriggerType> {
+        &self.trigger_type
     }
     /// <p>The value set for a SIP rule's trigger type. Either a phone number or a URI hostname.</p>
     pub fn trigger_value(
@@ -148,6 +164,10 @@ impl SipRuleBuilder {
     ) -> Self {
         self.trigger_value = input;
         self
+    }
+    /// <p>The value set for a SIP rule's trigger type. Either a phone number or a URI hostname.</p>
+    pub fn get_trigger_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trigger_value
     }
     /// Appends an item to `target_applications`.
     ///
@@ -168,6 +188,12 @@ impl SipRuleBuilder {
         self.target_applications = input;
         self
     }
+    /// <p>The target SIP media application and other details, such as priority and AWS Region, to be specified in the SIP rule. Only one SIP rule per AWS Region can be provided.</p>
+    pub fn get_target_applications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SipRuleTargetApplication>> {
+        &self.target_applications
+    }
     /// <p>The time at which the SIP rule was created, in ISO 8601 format.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_timestamp = ::std::option::Option::Some(input);
@@ -181,6 +207,10 @@ impl SipRuleBuilder {
         self.created_timestamp = input;
         self
     }
+    /// <p>The time at which the SIP rule was created, in ISO 8601 format.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
+    }
     /// <p>The time at which the SIP rule was updated, in ISO 8601 format.</p>
     pub fn updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_timestamp = ::std::option::Option::Some(input);
@@ -193,6 +223,10 @@ impl SipRuleBuilder {
     ) -> Self {
         self.updated_timestamp = input;
         self
+    }
+    /// <p>The time at which the SIP rule was updated, in ISO 8601 format.</p>
+    pub fn get_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_timestamp
     }
     /// Consumes the builder and constructs a [`SipRule`](crate::types::SipRule).
     pub fn build(self) -> crate::types::SipRule {

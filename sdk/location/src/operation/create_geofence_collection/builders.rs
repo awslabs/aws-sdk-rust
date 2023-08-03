@@ -36,6 +36,13 @@ impl CreateGeofenceCollectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateGeofenceCollection as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_geofence_collection::builders::CreateGeofenceCollectionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -144,6 +151,16 @@ impl CreateGeofenceCollectionFluentBuilder {
         self.inner = self.inner.set_collection_name(input);
         self
     }
+    /// <p>A custom name for the geofence collection.</p>
+    /// <p>Requirements:</p>
+    /// <ul>
+    /// <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_). </p> </li>
+    /// <li> <p>Must be a unique geofence collection name.</p> </li>
+    /// <li> <p>No spaces allowed. For example, <code>ExampleGeofenceCollection</code>.</p> </li>
+    /// </ul>
+    pub fn get_collection_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_collection_name()
+    }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(
         note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
@@ -165,6 +182,14 @@ impl CreateGeofenceCollectionFluentBuilder {
         self.inner = self.inner.set_pricing_plan(input);
         self
     }
+    /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
+    #[deprecated(
+        note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
+        since = "2022-02-01"
+    )]
+    pub fn get_pricing_plan(&self) -> &::std::option::Option<crate::types::PricingPlan> {
+        self.inner.get_pricing_plan()
+    }
     /// <p>This parameter is no longer used.</p>
     #[deprecated(note = "Deprecated. No longer allowed.", since = "2022-02-01")]
     pub fn pricing_plan_data_source(
@@ -183,6 +208,11 @@ impl CreateGeofenceCollectionFluentBuilder {
         self.inner = self.inner.set_pricing_plan_data_source(input);
         self
     }
+    /// <p>This parameter is no longer used.</p>
+    #[deprecated(note = "Deprecated. No longer allowed.", since = "2022-02-01")]
+    pub fn get_pricing_plan_data_source(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pricing_plan_data_source()
+    }
     /// <p>An optional description for the geofence collection.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -192,6 +222,10 @@ impl CreateGeofenceCollectionFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>An optional description for the geofence collection.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -236,6 +270,24 @@ impl CreateGeofenceCollectionFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Applies one or more tags to the geofence collection. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>
+    /// <p>Format: <code>"key" : "value"</code> </p>
+    /// <p>Restrictions:</p>
+    /// <ul>
+    /// <li> <p>Maximum 50 tags per resource</p> </li>
+    /// <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li>
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
+    /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
+    /// </ul>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN. </p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
@@ -245,5 +297,9 @@ impl CreateGeofenceCollectionFluentBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
+    }
+    /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN. </p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_id()
     }
 }

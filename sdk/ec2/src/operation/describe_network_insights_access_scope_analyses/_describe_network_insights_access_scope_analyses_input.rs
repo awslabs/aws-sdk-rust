@@ -115,6 +115,12 @@ impl DescribeNetworkInsightsAccessScopeAnalysesInputBuilder {
         self.network_insights_access_scope_analysis_ids = input;
         self
     }
+    /// <p>The IDs of the Network Access Scope analyses.</p>
+    pub fn get_network_insights_access_scope_analysis_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.network_insights_access_scope_analysis_ids
+    }
     /// <p>The ID of the Network Access Scope.</p>
     pub fn network_insights_access_scope_id(
         mut self,
@@ -131,6 +137,12 @@ impl DescribeNetworkInsightsAccessScopeAnalysesInputBuilder {
         self.network_insights_access_scope_id = input;
         self
     }
+    /// <p>The ID of the Network Access Scope.</p>
+    pub fn get_network_insights_access_scope_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.network_insights_access_scope_id
+    }
     /// <p>Filters the results based on the start time. The analysis must have started on or after this time.</p>
     pub fn analysis_start_time_begin(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.analysis_start_time_begin = ::std::option::Option::Some(input);
@@ -144,6 +156,12 @@ impl DescribeNetworkInsightsAccessScopeAnalysesInputBuilder {
         self.analysis_start_time_begin = input;
         self
     }
+    /// <p>Filters the results based on the start time. The analysis must have started on or after this time.</p>
+    pub fn get_analysis_start_time_begin(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.analysis_start_time_begin
+    }
     /// <p>Filters the results based on the start time. The analysis must have started on or before this time.</p>
     pub fn analysis_start_time_end(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.analysis_start_time_end = ::std::option::Option::Some(input);
@@ -156,6 +174,12 @@ impl DescribeNetworkInsightsAccessScopeAnalysesInputBuilder {
     ) -> Self {
         self.analysis_start_time_end = input;
         self
+    }
+    /// <p>Filters the results based on the start time. The analysis must have started on or before this time.</p>
+    pub fn get_analysis_start_time_end(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.analysis_start_time_end
     }
     /// Appends an item to `filters`.
     ///
@@ -176,6 +200,10 @@ impl DescribeNetworkInsightsAccessScopeAnalysesInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>There are no supported filters.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
+    }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -185,6 +213,10 @@ impl DescribeNetworkInsightsAccessScopeAnalysesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -196,6 +228,10 @@ impl DescribeNetworkInsightsAccessScopeAnalysesInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -205,6 +241,10 @@ impl DescribeNetworkInsightsAccessScopeAnalysesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeNetworkInsightsAccessScopeAnalysesInput`](crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalysesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalysesInput, ::aws_smithy_http::operation::error::BuildError>{

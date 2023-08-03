@@ -75,6 +75,10 @@ impl CreateSecurityConfigInputBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of security configuration.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::SecurityConfigType> {
+        &self.r#type
+    }
     /// <p>The name of the security configuration.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -85,6 +89,10 @@ impl CreateSecurityConfigInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the security configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description of the security configuration.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -94,6 +102,10 @@ impl CreateSecurityConfigInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the security configuration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Describes SAML options in in the form of a key-value map. This field is required if you specify <code>saml</code> for the <code>type</code> parameter.</p>
     pub fn saml_options(mut self, input: crate::types::SamlConfigOptions) -> Self {
@@ -108,6 +120,10 @@ impl CreateSecurityConfigInputBuilder {
         self.saml_options = input;
         self
     }
+    /// <p>Describes SAML options in in the form of a key-value map. This field is required if you specify <code>saml</code> for the <code>type</code> parameter.</p>
+    pub fn get_saml_options(&self) -> &::std::option::Option<crate::types::SamlConfigOptions> {
+        &self.saml_options
+    }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -117,6 +133,10 @@ impl CreateSecurityConfigInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateSecurityConfigInput`](crate::operation::create_security_config::CreateSecurityConfigInput).
     pub fn build(

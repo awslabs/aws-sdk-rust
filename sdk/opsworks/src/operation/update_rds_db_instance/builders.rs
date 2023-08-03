@@ -37,6 +37,12 @@ impl UpdateRdsDbInstanceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateRdsDbInstance as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_rds_db_instance::builders::UpdateRdsDbInstanceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl UpdateRdsDbInstanceFluentBuilder {
         self.inner = self.inner.set_rds_db_instance_arn(input);
         self
     }
+    /// <p>The Amazon RDS instance's ARN.</p>
+    pub fn get_rds_db_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rds_db_instance_arn()
+    }
     /// <p>The master user name.</p>
     pub fn db_user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_user(input.into());
@@ -143,6 +153,10 @@ impl UpdateRdsDbInstanceFluentBuilder {
         self.inner = self.inner.set_db_user(input);
         self
     }
+    /// <p>The master user name.</p>
+    pub fn get_db_user(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_user()
+    }
     /// <p>The database password.</p>
     pub fn db_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_password(input.into());
@@ -152,5 +166,9 @@ impl UpdateRdsDbInstanceFluentBuilder {
     pub fn set_db_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_password(input);
         self
+    }
+    /// <p>The database password.</p>
+    pub fn get_db_password(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_password()
     }
 }

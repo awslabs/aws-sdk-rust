@@ -45,6 +45,12 @@ impl DeleteReplicationConfigurationTemplateInputBuilder {
         self.replication_configuration_template_id = input;
         self
     }
+    /// <p>The ID of the Replication Configuration Template to be deleted.</p>
+    pub fn get_replication_configuration_template_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.replication_configuration_template_id
+    }
     /// Consumes the builder and constructs a [`DeleteReplicationConfigurationTemplateInput`](crate::operation::delete_replication_configuration_template::DeleteReplicationConfigurationTemplateInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_replication_configuration_template::DeleteReplicationConfigurationTemplateInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

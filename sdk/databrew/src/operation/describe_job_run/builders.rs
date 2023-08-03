@@ -36,6 +36,12 @@ impl DescribeJobRunFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeJobRun as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_job_run::builders::DescribeJobRunInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DescribeJobRunFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the job being processed during this run.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The unique identifier of the job run.</p>
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.run_id(input.into());
@@ -135,5 +145,9 @@ impl DescribeJobRunFluentBuilder {
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_run_id(input);
         self
+    }
+    /// <p>The unique identifier of the job run.</p>
+    pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_run_id()
     }
 }

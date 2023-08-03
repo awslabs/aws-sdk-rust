@@ -68,6 +68,10 @@ impl ResetPasswordInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The identifier of the organization that contains the user for which the password is reset.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>The identifier of the user for whom the password is reset.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
@@ -78,6 +82,10 @@ impl ResetPasswordInputBuilder {
         self.user_id = input;
         self
     }
+    /// <p>The identifier of the user for whom the password is reset.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
+    }
     /// <p>The new password for the user.</p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
@@ -87,6 +95,10 @@ impl ResetPasswordInputBuilder {
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.password = input;
         self
+    }
+    /// <p>The new password for the user.</p>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.password
     }
     /// Consumes the builder and constructs a [`ResetPasswordInput`](crate::operation::reset_password::ResetPasswordInput).
     pub fn build(

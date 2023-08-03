@@ -36,6 +36,12 @@ impl UpdateApplicationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateApplication as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_application::builders::UpdateApplicationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateApplicationFluentBuilder {
         self.inner = self.inner.set_application_name(input);
         self
     }
+    /// <p>The current name of the application you want to change.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_name()
+    }
     /// <p>The new name to give the application.</p>
     pub fn new_application_name(
         mut self,
@@ -147,5 +157,9 @@ impl UpdateApplicationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_new_application_name(input);
         self
+    }
+    /// <p>The new name to give the application.</p>
+    pub fn get_new_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_new_application_name()
     }
 }

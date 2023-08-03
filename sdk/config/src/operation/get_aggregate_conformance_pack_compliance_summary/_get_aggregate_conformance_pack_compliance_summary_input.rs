@@ -87,6 +87,12 @@ impl GetAggregateConformancePackComplianceSummaryInputBuilder {
         self.configuration_aggregator_name = input;
         self
     }
+    /// <p>The name of the configuration aggregator.</p>
+    pub fn get_configuration_aggregator_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_aggregator_name
+    }
     /// <p>Filters the results based on the <code>AggregateConformancePackComplianceSummaryFilters</code> object.</p>
     pub fn filters(
         mut self,
@@ -104,6 +110,13 @@ impl GetAggregateConformancePackComplianceSummaryInputBuilder {
     ) -> Self {
         self.filters = input;
         self
+    }
+    /// <p>Filters the results based on the <code>AggregateConformancePackComplianceSummaryFilters</code> object.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<crate::types::AggregateConformancePackComplianceSummaryFilters>
+    {
+        &self.filters
     }
     /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
     pub fn group_by_key(
@@ -123,6 +136,13 @@ impl GetAggregateConformancePackComplianceSummaryInputBuilder {
         self.group_by_key = input;
         self
     }
+    /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
+    pub fn get_group_by_key(
+        &self,
+    ) -> &::std::option::Option<crate::types::AggregateConformancePackComplianceSummaryGroupKey>
+    {
+        &self.group_by_key
+    }
     /// <p>The maximum number of results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -133,6 +153,10 @@ impl GetAggregateConformancePackComplianceSummaryInputBuilder {
         self.limit = input;
         self
     }
+    /// <p>The maximum number of results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
+    }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -142,6 +166,10 @@ impl GetAggregateConformancePackComplianceSummaryInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`GetAggregateConformancePackComplianceSummaryInput`](crate::operation::get_aggregate_conformance_pack_compliance_summary::GetAggregateConformancePackComplianceSummaryInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_aggregate_conformance_pack_compliance_summary::GetAggregateConformancePackComplianceSummaryInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -41,6 +41,12 @@ impl DescribeRobotFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeRobot as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_robot::builders::DescribeRobotInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -122,5 +128,9 @@ impl DescribeRobotFluentBuilder {
     pub fn set_robot(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_robot(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the robot to be described.</p>
+    pub fn get_robot(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_robot()
     }
 }

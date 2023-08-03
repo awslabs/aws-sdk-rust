@@ -107,6 +107,10 @@ impl DistributionBuilder {
         self.region = input;
         self
     }
+    /// <p>The target Region.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
+    }
     /// <p>The specific AMI settings; for example, launch permissions or AMI tags.</p>
     pub fn ami_distribution_configuration(
         mut self,
@@ -123,6 +127,12 @@ impl DistributionBuilder {
         self.ami_distribution_configuration = input;
         self
     }
+    /// <p>The specific AMI settings; for example, launch permissions or AMI tags.</p>
+    pub fn get_ami_distribution_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AmiDistributionConfiguration> {
+        &self.ami_distribution_configuration
+    }
     /// <p>Container distribution settings for encryption, licensing, and sharing in a specific Region.</p>
     pub fn container_distribution_configuration(
         mut self,
@@ -138,6 +148,12 @@ impl DistributionBuilder {
     ) -> Self {
         self.container_distribution_configuration = input;
         self
+    }
+    /// <p>Container distribution settings for encryption, licensing, and sharing in a specific Region.</p>
+    pub fn get_container_distribution_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContainerDistributionConfiguration> {
+        &self.container_distribution_configuration
     }
     /// Appends an item to `license_configuration_arns`.
     ///
@@ -161,6 +177,12 @@ impl DistributionBuilder {
         self.license_configuration_arns = input;
         self
     }
+    /// <p>The License Manager Configuration to associate with the AMI in the specified Region.</p>
+    pub fn get_license_configuration_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.license_configuration_arns
+    }
     /// Appends an item to `launch_template_configurations`.
     ///
     /// To override the contents of this collection use [`set_launch_template_configurations`](Self::set_launch_template_configurations).
@@ -183,6 +205,12 @@ impl DistributionBuilder {
         self.launch_template_configurations = input;
         self
     }
+    /// <p>A group of launchTemplateConfiguration settings that apply to image distribution for specified accounts.</p>
+    pub fn get_launch_template_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateConfiguration>> {
+        &self.launch_template_configurations
+    }
     /// <p>Configure export settings to deliver disk images created from your image build, using a file format that is compatible with your VMs in that Region.</p>
     pub fn s3_export_configuration(mut self, input: crate::types::S3ExportConfiguration) -> Self {
         self.s3_export_configuration = ::std::option::Option::Some(input);
@@ -195,6 +223,12 @@ impl DistributionBuilder {
     ) -> Self {
         self.s3_export_configuration = input;
         self
+    }
+    /// <p>Configure export settings to deliver disk images created from your image build, using a file format that is compatible with your VMs in that Region.</p>
+    pub fn get_s3_export_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3ExportConfiguration> {
+        &self.s3_export_configuration
     }
     /// Appends an item to `fast_launch_configurations`.
     ///
@@ -217,6 +251,12 @@ impl DistributionBuilder {
     ) -> Self {
         self.fast_launch_configurations = input;
         self
+    }
+    /// <p>The Windows faster-launching configurations to use for AMI distribution.</p>
+    pub fn get_fast_launch_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FastLaunchConfiguration>> {
+        &self.fast_launch_configurations
     }
     /// Consumes the builder and constructs a [`Distribution`](crate::types::Distribution).
     pub fn build(self) -> crate::types::Distribution {

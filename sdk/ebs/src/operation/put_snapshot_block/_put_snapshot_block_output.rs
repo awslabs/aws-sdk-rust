@@ -55,6 +55,10 @@ impl PutSnapshotBlockOutputBuilder {
         self.checksum = input;
         self
     }
+    /// <p>The SHA256 checksum generated for the block data by Amazon EBS.</p>
+    pub fn get_checksum(&self) -> &::std::option::Option<::std::string::String> {
+        &self.checksum
+    }
     /// <p>The algorithm used by Amazon EBS to generate the checksum.</p>
     pub fn checksum_algorithm(mut self, input: crate::types::ChecksumAlgorithm) -> Self {
         self.checksum_algorithm = ::std::option::Option::Some(input);
@@ -67,6 +71,12 @@ impl PutSnapshotBlockOutputBuilder {
     ) -> Self {
         self.checksum_algorithm = input;
         self
+    }
+    /// <p>The algorithm used by Amazon EBS to generate the checksum.</p>
+    pub fn get_checksum_algorithm(
+        &self,
+    ) -> &::std::option::Option<crate::types::ChecksumAlgorithm> {
+        &self.checksum_algorithm
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

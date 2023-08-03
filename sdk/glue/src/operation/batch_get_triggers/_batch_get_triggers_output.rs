@@ -64,6 +64,10 @@ impl BatchGetTriggersOutputBuilder {
         self.triggers = input;
         self
     }
+    /// <p>A list of trigger definitions.</p>
+    pub fn get_triggers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Trigger>> {
+        &self.triggers
+    }
     /// Appends an item to `triggers_not_found`.
     ///
     /// To override the contents of this collection use [`set_triggers_not_found`](Self::set_triggers_not_found).
@@ -85,6 +89,12 @@ impl BatchGetTriggersOutputBuilder {
     ) -> Self {
         self.triggers_not_found = input;
         self
+    }
+    /// <p>A list of names of triggers not found.</p>
+    pub fn get_triggers_not_found(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.triggers_not_found
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

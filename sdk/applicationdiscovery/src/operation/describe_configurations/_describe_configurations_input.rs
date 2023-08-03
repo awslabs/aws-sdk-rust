@@ -53,6 +53,12 @@ impl DescribeConfigurationsInputBuilder {
         self.configuration_ids = input;
         self
     }
+    /// <p>One or more configuration IDs.</p>
+    pub fn get_configuration_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.configuration_ids
+    }
     /// Consumes the builder and constructs a [`DescribeConfigurationsInput`](crate::operation::describe_configurations::DescribeConfigurationsInput).
     pub fn build(
         self,

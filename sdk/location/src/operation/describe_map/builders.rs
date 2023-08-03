@@ -36,6 +36,10 @@ impl DescribeMapFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeMap as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_map::builders::DescribeMapInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -117,5 +121,9 @@ impl DescribeMapFluentBuilder {
     pub fn set_map_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_map_name(input);
         self
+    }
+    /// <p>The name of the map resource.</p>
+    pub fn get_map_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_map_name()
     }
 }

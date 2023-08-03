@@ -36,6 +36,12 @@ impl GetGroupVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetGroupVersion as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_group_version::builders::GetGroupVersionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl GetGroupVersionFluentBuilder {
         self.inner = self.inner.set_group_id(input);
         self
     }
+    /// The ID of the Greengrass group.
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_id()
+    }
     /// The ID of the group version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListGroupVersions'' requests. If the version is the last one that was associated with a group, the value also maps to the ''LatestVersion'' property of the corresponding ''GroupInformation'' object.
     pub fn group_version_id(
         mut self,
@@ -141,5 +151,9 @@ impl GetGroupVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_group_version_id(input);
         self
+    }
+    /// The ID of the group version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListGroupVersions'' requests. If the version is the last one that was associated with a group, the value also maps to the ''LatestVersion'' property of the corresponding ''GroupInformation'' object.
+    pub fn get_group_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_version_id()
     }
 }

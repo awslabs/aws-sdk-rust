@@ -51,6 +51,10 @@ impl LogEventBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The timestamp when the database log event was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The message of the database log event.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl LogEventBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The message of the database log event.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`LogEvent`](crate::types::LogEvent).
     pub fn build(self) -> crate::types::LogEvent {

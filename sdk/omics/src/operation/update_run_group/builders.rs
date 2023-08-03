@@ -36,6 +36,12 @@ impl UpdateRunGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateRunGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_run_group::builders::UpdateRunGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateRunGroupFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The group's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>A name for the group.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -135,6 +145,10 @@ impl UpdateRunGroupFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>A name for the group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The maximum number of CPUs to use.</p>
     pub fn max_cpus(mut self, input: i32) -> Self {
@@ -146,6 +160,10 @@ impl UpdateRunGroupFluentBuilder {
         self.inner = self.inner.set_max_cpus(input);
         self
     }
+    /// <p>The maximum number of CPUs to use.</p>
+    pub fn get_max_cpus(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_cpus()
+    }
     /// <p>The maximum number of concurrent runs for the group.</p>
     pub fn max_runs(mut self, input: i32) -> Self {
         self.inner = self.inner.max_runs(input);
@@ -155,6 +173,10 @@ impl UpdateRunGroupFluentBuilder {
     pub fn set_max_runs(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_runs(input);
         self
+    }
+    /// <p>The maximum number of concurrent runs for the group.</p>
+    pub fn get_max_runs(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_runs()
     }
     /// <p>A maximum run time for the group in minutes.</p>
     pub fn max_duration(mut self, input: i32) -> Self {
@@ -166,6 +188,10 @@ impl UpdateRunGroupFluentBuilder {
         self.inner = self.inner.set_max_duration(input);
         self
     }
+    /// <p>A maximum run time for the group in minutes.</p>
+    pub fn get_max_duration(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_duration()
+    }
     /// <p> The maximum GPUs that can be used by a run group. </p>
     pub fn max_gpus(mut self, input: i32) -> Self {
         self.inner = self.inner.max_gpus(input);
@@ -175,5 +201,9 @@ impl UpdateRunGroupFluentBuilder {
     pub fn set_max_gpus(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_gpus(input);
         self
+    }
+    /// <p> The maximum GPUs that can be used by a run group. </p>
+    pub fn get_max_gpus(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_gpus()
     }
 }

@@ -40,6 +40,10 @@ impl MonitoringJsonDatasetFormatBuilder {
         self.line = input;
         self
     }
+    /// <p>Indicates if the file should be read as a json object per line. </p>
+    pub fn get_line(&self) -> &::std::option::Option<bool> {
+        &self.line
+    }
     /// Consumes the builder and constructs a [`MonitoringJsonDatasetFormat`](crate::types::MonitoringJsonDatasetFormat).
     pub fn build(self) -> crate::types::MonitoringJsonDatasetFormat {
         crate::types::MonitoringJsonDatasetFormat {

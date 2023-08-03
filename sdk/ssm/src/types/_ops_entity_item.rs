@@ -56,6 +56,10 @@ impl OpsEntityItemBuilder {
         self.capture_time = input;
         self
     }
+    /// <p>The time the OpsData was captured.</p>
+    pub fn get_capture_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.capture_time
+    }
     /// Appends an item to `content`.
     ///
     /// To override the contents of this collection use [`set_content`](Self::set_content).
@@ -81,6 +85,14 @@ impl OpsEntityItemBuilder {
     ) -> Self {
         self.content = input;
         self
+    }
+    /// <p>The details of an OpsData summary.</p>
+    pub fn get_content(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    > {
+        &self.content
     }
     /// Consumes the builder and constructs a [`OpsEntityItem`](crate::types::OpsEntityItem).
     pub fn build(self) -> crate::types::OpsEntityItem {

@@ -81,6 +81,10 @@ impl ChannelAssociatedWithFlowSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the channel flow.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The ARN of the channel.</p>
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
@@ -91,6 +95,10 @@ impl ChannelAssociatedWithFlowSummaryBuilder {
         self.channel_arn = input;
         self
     }
+    /// <p>The ARN of the channel.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
+    }
     /// <p>The mode of the channel.</p>
     pub fn mode(mut self, input: crate::types::ChannelMode) -> Self {
         self.mode = ::std::option::Option::Some(input);
@@ -100,6 +108,10 @@ impl ChannelAssociatedWithFlowSummaryBuilder {
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::ChannelMode>) -> Self {
         self.mode = input;
         self
+    }
+    /// <p>The mode of the channel.</p>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::ChannelMode> {
+        &self.mode
     }
     /// <p>The channel's privacy setting.</p>
     pub fn privacy(mut self, input: crate::types::ChannelPrivacy) -> Self {
@@ -114,6 +126,10 @@ impl ChannelAssociatedWithFlowSummaryBuilder {
         self.privacy = input;
         self
     }
+    /// <p>The channel's privacy setting.</p>
+    pub fn get_privacy(&self) -> &::std::option::Option<crate::types::ChannelPrivacy> {
+        &self.privacy
+    }
     /// <p>The channel's metadata.</p>
     pub fn metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metadata = ::std::option::Option::Some(input.into());
@@ -123,6 +139,10 @@ impl ChannelAssociatedWithFlowSummaryBuilder {
     pub fn set_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metadata = input;
         self
+    }
+    /// <p>The channel's metadata.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metadata
     }
     /// Consumes the builder and constructs a [`ChannelAssociatedWithFlowSummary`](crate::types::ChannelAssociatedWithFlowSummary).
     pub fn build(self) -> crate::types::ChannelAssociatedWithFlowSummary {

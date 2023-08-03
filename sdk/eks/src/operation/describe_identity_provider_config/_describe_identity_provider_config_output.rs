@@ -56,6 +56,12 @@ impl DescribeIdentityProviderConfigOutputBuilder {
         self.identity_provider_config = input;
         self
     }
+    /// <p>The object that represents an OpenID Connect (OIDC) identity provider configuration.</p>
+    pub fn get_identity_provider_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::IdentityProviderConfigResponse> {
+        &self.identity_provider_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

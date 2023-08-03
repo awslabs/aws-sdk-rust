@@ -51,6 +51,10 @@ impl AxisTickLabelOptionsBuilder {
         self.label_options = input;
         self
     }
+    /// <p>Determines whether or not the axis ticks are visible.</p>
+    pub fn get_label_options(&self) -> &::std::option::Option<crate::types::LabelOptions> {
+        &self.label_options
+    }
     /// <p>The rotation angle of the axis tick labels.</p>
     pub fn rotation_angle(mut self, input: f64) -> Self {
         self.rotation_angle = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl AxisTickLabelOptionsBuilder {
     pub fn set_rotation_angle(mut self, input: ::std::option::Option<f64>) -> Self {
         self.rotation_angle = input;
         self
+    }
+    /// <p>The rotation angle of the axis tick labels.</p>
+    pub fn get_rotation_angle(&self) -> &::std::option::Option<f64> {
+        &self.rotation_angle
     }
     /// Consumes the builder and constructs a [`AxisTickLabelOptions`](crate::types::AxisTickLabelOptions).
     pub fn build(self) -> crate::types::AxisTickLabelOptions {

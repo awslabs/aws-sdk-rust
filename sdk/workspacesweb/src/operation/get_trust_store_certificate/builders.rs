@@ -36,6 +36,10 @@ impl GetTrustStoreCertificateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetTrustStoreCertificate as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_trust_store_certificate::builders::GetTrustStoreCertificateInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl GetTrustStoreCertificateFluentBuilder {
         self.inner = self.inner.set_trust_store_arn(input);
         self
     }
+    /// <p>The ARN of the trust store certificate.</p>
+    pub fn get_trust_store_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_trust_store_arn()
+    }
     /// <p>The thumbprint of the trust store certificate.</p>
     pub fn thumbprint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.thumbprint(input.into());
@@ -141,5 +149,9 @@ impl GetTrustStoreCertificateFluentBuilder {
     pub fn set_thumbprint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_thumbprint(input);
         self
+    }
+    /// <p>The thumbprint of the trust store certificate.</p>
+    pub fn get_thumbprint(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_thumbprint()
     }
 }

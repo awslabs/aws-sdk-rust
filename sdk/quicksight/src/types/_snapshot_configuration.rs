@@ -69,6 +69,12 @@ impl SnapshotConfigurationBuilder {
         self.file_groups = input;
         self
     }
+    /// <p>A list of <code>SnapshotJobResultFileGroup</code> objects that contain information about the snapshot that is generated. This list can hold a maximum of 6 <code>FileGroup</code> configurations.</p>
+    pub fn get_file_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotFileGroup>> {
+        &self.file_groups
+    }
     /// <p>A structure that contains information on the Amazon S3 bucket that the generated snapshot is stored in.</p>
     pub fn destination_configuration(
         mut self,
@@ -85,6 +91,12 @@ impl SnapshotConfigurationBuilder {
         self.destination_configuration = input;
         self
     }
+    /// <p>A structure that contains information on the Amazon S3 bucket that the generated snapshot is stored in.</p>
+    pub fn get_destination_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SnapshotDestinationConfiguration> {
+        &self.destination_configuration
+    }
     /// <p>A list of Amazon QuickSight parameters and the list's override values.</p>
     pub fn parameters(mut self, input: crate::types::Parameters) -> Self {
         self.parameters = ::std::option::Option::Some(input);
@@ -97,6 +109,10 @@ impl SnapshotConfigurationBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>A list of Amazon QuickSight parameters and the list's override values.</p>
+    pub fn get_parameters(&self) -> &::std::option::Option<crate::types::Parameters> {
+        &self.parameters
     }
     /// Consumes the builder and constructs a [`SnapshotConfiguration`](crate::types::SnapshotConfiguration).
     pub fn build(self) -> crate::types::SnapshotConfiguration {

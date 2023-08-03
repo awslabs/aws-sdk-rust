@@ -60,6 +60,10 @@ impl ListWorkerConfigurationsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If the response of a ListWorkerConfigurations operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `worker_configurations`.
     ///
     /// To override the contents of this collection use [`set_worker_configurations`](Self::set_worker_configurations).
@@ -81,6 +85,12 @@ impl ListWorkerConfigurationsOutputBuilder {
     ) -> Self {
         self.worker_configurations = input;
         self
+    }
+    /// <p>An array of worker configuration descriptions.</p>
+    pub fn get_worker_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkerConfigurationSummary>> {
+        &self.worker_configurations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

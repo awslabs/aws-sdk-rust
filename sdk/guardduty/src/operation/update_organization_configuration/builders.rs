@@ -37,6 +37,10 @@ impl UpdateOrganizationConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateOrganizationConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -101,6 +105,10 @@ impl UpdateOrganizationConfigurationFluentBuilder {
         self.inner = self.inner.set_detector_id(input);
         self
     }
+    /// <p>The ID of the detector that configures the delegated administrator.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_id()
+    }
     /// <p>Indicates whether to automatically enable member accounts in the organization.</p>
     /// <p>Even though this is still supported, we recommend using <code>AutoEnableOrganizationMembers</code> to achieve the similar results.</p>
     #[deprecated(note = "This field is deprecated, use AutoEnableOrganizationMembers instead")]
@@ -114,6 +122,12 @@ impl UpdateOrganizationConfigurationFluentBuilder {
     pub fn set_auto_enable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_auto_enable(input);
         self
+    }
+    /// <p>Indicates whether to automatically enable member accounts in the organization.</p>
+    /// <p>Even though this is still supported, we recommend using <code>AutoEnableOrganizationMembers</code> to achieve the similar results.</p>
+    #[deprecated(note = "This field is deprecated, use AutoEnableOrganizationMembers instead")]
+    pub fn get_auto_enable(&self) -> &::std::option::Option<bool> {
+        self.inner.get_auto_enable()
     }
     /// <p>Describes which data sources will be updated.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
@@ -133,6 +147,13 @@ impl UpdateOrganizationConfigurationFluentBuilder {
         self.inner = self.inner.set_data_sources(input);
         self
     }
+    /// <p>Describes which data sources will be updated.</p>
+    #[deprecated(note = "This parameter is deprecated, use Features instead")]
+    pub fn get_data_sources(
+        &self,
+    ) -> &::std::option::Option<crate::types::OrganizationDataSourceConfigurations> {
+        self.inner.get_data_sources()
+    }
     /// Appends an item to `Features`.
     ///
     /// To override the contents of this collection use [`set_features`](Self::set_features).
@@ -151,6 +172,13 @@ impl UpdateOrganizationConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_features(input);
         self
+    }
+    /// <p>A list of features that will be configured for the organization.</p>
+    pub fn get_features(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OrganizationFeatureConfiguration>>
+    {
+        self.inner.get_features()
     }
     /// <p>Indicates the auto-enablement configuration of GuardDuty for the member accounts in the organization. </p>
     /// <ul>
@@ -177,5 +205,16 @@ impl UpdateOrganizationConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_auto_enable_organization_members(input);
         self
+    }
+    /// <p>Indicates the auto-enablement configuration of GuardDuty for the member accounts in the organization. </p>
+    /// <ul>
+    /// <li> <p> <code>NEW</code>: Indicates that when a new account joins the organization, they will have GuardDuty enabled automatically. </p> </li>
+    /// <li> <p> <code>ALL</code>: Indicates that all accounts in the Amazon Web Services Organization have GuardDuty enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.</p> </li>
+    /// <li> <p> <code>NONE</code>: Indicates that GuardDuty will not be automatically enabled for any accounts in the organization. GuardDuty must be managed for each account individually by the administrator.</p> </li>
+    /// </ul>
+    pub fn get_auto_enable_organization_members(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoEnableMembers> {
+        self.inner.get_auto_enable_organization_members()
     }
 }

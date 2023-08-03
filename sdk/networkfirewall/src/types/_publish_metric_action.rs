@@ -49,6 +49,12 @@ impl PublishMetricActionBuilder {
         self.dimensions = input;
         self
     }
+    /// <p></p>
+    pub fn get_dimensions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Dimension>> {
+        &self.dimensions
+    }
     /// Consumes the builder and constructs a [`PublishMetricAction`](crate::types::PublishMetricAction).
     pub fn build(self) -> crate::types::PublishMetricAction {
         crate::types::PublishMetricAction {

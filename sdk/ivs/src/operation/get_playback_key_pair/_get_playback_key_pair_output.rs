@@ -51,6 +51,10 @@ impl GetPlaybackKeyPairOutputBuilder {
         self.key_pair = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_key_pair(&self) -> &::std::option::Option<crate::types::PlaybackKeyPair> {
+        &self.key_pair
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

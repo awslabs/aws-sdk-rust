@@ -40,6 +40,10 @@ impl ImportGameConfigurationSourceBuilder {
         self.file = input;
         self
     }
+    /// <p>The JSON string containing the configuration sections.</p>
+    pub fn get_file(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.file
+    }
     /// Consumes the builder and constructs a [`ImportGameConfigurationSource`](crate::types::ImportGameConfigurationSource).
     pub fn build(self) -> crate::types::ImportGameConfigurationSource {
         crate::types::ImportGameConfigurationSource { file: self.file }

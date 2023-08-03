@@ -36,6 +36,12 @@ impl UpdateDiscoveryJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDiscoveryJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_discovery_job::builders::UpdateDiscoveryJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateDiscoveryJobFluentBuilder {
         self.inner = self.inner.set_discovery_job_arn(input);
         self
     }
+    /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want to update.</p>
+    pub fn get_discovery_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_discovery_job_arn()
+    }
     /// <p>Specifies in minutes how long that you want the discovery job to run. (You can't set this parameter to less than the number of minutes that the job has already run for.)</p>
     pub fn collection_duration_minutes(mut self, input: i32) -> Self {
         self.inner = self.inner.collection_duration_minutes(input);
@@ -141,5 +151,9 @@ impl UpdateDiscoveryJobFluentBuilder {
     pub fn set_collection_duration_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_collection_duration_minutes(input);
         self
+    }
+    /// <p>Specifies in minutes how long that you want the discovery job to run. (You can't set this parameter to less than the number of minutes that the job has already run for.)</p>
+    pub fn get_collection_duration_minutes(&self) -> &::std::option::Option<i32> {
+        self.inner.get_collection_duration_minutes()
     }
 }

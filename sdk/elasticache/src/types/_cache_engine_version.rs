@@ -74,6 +74,10 @@ impl CacheEngineVersionBuilder {
         self.engine = input;
         self
     }
+    /// <p>The name of the cache engine.</p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine
+    }
     /// <p>The version number of the cache engine.</p>
     pub fn engine_version(
         mut self,
@@ -89,6 +93,10 @@ impl CacheEngineVersionBuilder {
     ) -> Self {
         self.engine_version = input;
         self
+    }
+    /// <p>The version number of the cache engine.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
     }
     /// <p>The name of the cache parameter group family associated with this cache engine.</p>
     /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis7</code> </p>
@@ -108,6 +116,13 @@ impl CacheEngineVersionBuilder {
         self.cache_parameter_group_family = input;
         self
     }
+    /// <p>The name of the cache parameter group family associated with this cache engine.</p>
+    /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis7</code> </p>
+    pub fn get_cache_parameter_group_family(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.cache_parameter_group_family
+    }
     /// <p>The description of the cache engine.</p>
     pub fn cache_engine_description(
         mut self,
@@ -124,6 +139,10 @@ impl CacheEngineVersionBuilder {
         self.cache_engine_description = input;
         self
     }
+    /// <p>The description of the cache engine.</p>
+    pub fn get_cache_engine_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_engine_description
+    }
     /// <p>The description of the cache engine version.</p>
     pub fn cache_engine_version_description(
         mut self,
@@ -139,6 +158,12 @@ impl CacheEngineVersionBuilder {
     ) -> Self {
         self.cache_engine_version_description = input;
         self
+    }
+    /// <p>The description of the cache engine version.</p>
+    pub fn get_cache_engine_version_description(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.cache_engine_version_description
     }
     /// Consumes the builder and constructs a [`CacheEngineVersion`](crate::types::CacheEngineVersion).
     pub fn build(self) -> crate::types::CacheEngineVersion {

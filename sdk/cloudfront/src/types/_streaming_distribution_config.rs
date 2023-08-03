@@ -110,6 +110,12 @@ impl StreamingDistributionConfigBuilder {
         self.caller_reference = input;
         self
     }
+    /// <p>A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
+    /// <p>If the value of <code>CallerReference</code> is new (regardless of the content of the <code>StreamingDistributionConfig</code> object), CloudFront creates a new distribution.</p>
+    /// <p>If <code>CallerReference</code> is a value that you already sent in a previous request to create a distribution, CloudFront returns a <code>DistributionAlreadyExists</code> error.</p>
+    pub fn get_caller_reference(&self) -> &::std::option::Option<::std::string::String> {
+        &self.caller_reference
+    }
     /// <p>A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution.</p>
     pub fn s3_origin(mut self, input: crate::types::S3Origin) -> Self {
         self.s3_origin = ::std::option::Option::Some(input);
@@ -119,6 +125,10 @@ impl StreamingDistributionConfigBuilder {
     pub fn set_s3_origin(mut self, input: ::std::option::Option<crate::types::S3Origin>) -> Self {
         self.s3_origin = input;
         self
+    }
+    /// <p>A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution.</p>
+    pub fn get_s3_origin(&self) -> &::std::option::Option<crate::types::S3Origin> {
+        &self.s3_origin
     }
     /// <p>A complex type that contains information about CNAMEs (alternate domain names), if any, for this streaming distribution.</p>
     pub fn aliases(mut self, input: crate::types::Aliases) -> Self {
@@ -130,6 +140,10 @@ impl StreamingDistributionConfigBuilder {
         self.aliases = input;
         self
     }
+    /// <p>A complex type that contains information about CNAMEs (alternate domain names), if any, for this streaming distribution.</p>
+    pub fn get_aliases(&self) -> &::std::option::Option<crate::types::Aliases> {
+        &self.aliases
+    }
     /// <p>Any comments you want to include about the streaming distribution.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
@@ -139,6 +153,10 @@ impl StreamingDistributionConfigBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment = input;
         self
+    }
+    /// <p>Any comments you want to include about the streaming distribution.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment
     }
     /// <p>A complex type that controls whether access logs are written for the streaming distribution.</p>
     pub fn logging(mut self, input: crate::types::StreamingLoggingConfig) -> Self {
@@ -153,6 +171,10 @@ impl StreamingDistributionConfigBuilder {
         self.logging = input;
         self
     }
+    /// <p>A complex type that controls whether access logs are written for the streaming distribution.</p>
+    pub fn get_logging(&self) -> &::std::option::Option<crate::types::StreamingLoggingConfig> {
+        &self.logging
+    }
     /// <p>A complex type that specifies any Amazon Web Services accounts that you want to permit to create signed URLs for private content. If you want the distribution to use signed URLs, include this element; if you want the distribution to use public URLs, remove this element. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn trusted_signers(mut self, input: crate::types::TrustedSigners) -> Self {
         self.trusted_signers = ::std::option::Option::Some(input);
@@ -165,6 +187,10 @@ impl StreamingDistributionConfigBuilder {
     ) -> Self {
         self.trusted_signers = input;
         self
+    }
+    /// <p>A complex type that specifies any Amazon Web Services accounts that you want to permit to create signed URLs for private content. If you want the distribution to use signed URLs, include this element; if you want the distribution to use public URLs, remove this element. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn get_trusted_signers(&self) -> &::std::option::Option<crate::types::TrustedSigners> {
+        &self.trusted_signers
     }
     /// <p>A complex type that contains information about price class for this streaming distribution.</p>
     pub fn price_class(mut self, input: crate::types::PriceClass) -> Self {
@@ -179,6 +205,10 @@ impl StreamingDistributionConfigBuilder {
         self.price_class = input;
         self
     }
+    /// <p>A complex type that contains information about price class for this streaming distribution.</p>
+    pub fn get_price_class(&self) -> &::std::option::Option<crate::types::PriceClass> {
+        &self.price_class
+    }
     /// <p>Whether the streaming distribution is enabled to accept user requests for content.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -188,6 +218,10 @@ impl StreamingDistributionConfigBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>Whether the streaming distribution is enabled to accept user requests for content.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// Consumes the builder and constructs a [`StreamingDistributionConfig`](crate::types::StreamingDistributionConfig).
     pub fn build(self) -> crate::types::StreamingDistributionConfig {

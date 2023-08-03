@@ -36,6 +36,10 @@ impl AcceptGrantFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AcceptGrant as a reference.
+    pub fn as_input(&self) -> &crate::operation::accept_grant::builders::AcceptGrantInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -117,5 +121,9 @@ impl AcceptGrantFluentBuilder {
     pub fn set_grant_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_grant_arn(input);
         self
+    }
+    /// <p>Amazon Resource Name (ARN) of the grant.</p>
+    pub fn get_grant_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_grant_arn()
     }
 }

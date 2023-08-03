@@ -36,6 +36,10 @@ impl ListDatasetsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListDatasets as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_datasets::builders::ListDatasetsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +139,10 @@ impl ListDatasetsFluentBuilder {
         self.inner = self.inner.set_dataset_group_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the dataset group that contains the datasets to list.</p>
+    pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dataset_group_arn()
+    }
     /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting the next set of dataset import jobs (if they exist).</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -145,6 +153,10 @@ impl ListDatasetsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting the next set of dataset import jobs (if they exist).</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of datasets to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -154,5 +166,9 @@ impl ListDatasetsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of datasets to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

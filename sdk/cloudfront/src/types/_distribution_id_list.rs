@@ -80,6 +80,10 @@ impl DistributionIdListBuilder {
         self.marker = input;
         self
     }
+    /// <p>The value provided in the <code>Marker</code> request field.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>Contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing distribution IDs where you left off.</p>
     pub fn next_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_marker = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl DistributionIdListBuilder {
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_marker = input;
         self
+    }
+    /// <p>Contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing distribution IDs where you left off.</p>
+    pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_marker
     }
     /// <p>The maximum number of distribution IDs requested.</p>
     pub fn max_items(mut self, input: i32) -> Self {
@@ -100,6 +108,10 @@ impl DistributionIdListBuilder {
         self.max_items = input;
         self
     }
+    /// <p>The maximum number of distribution IDs requested.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        &self.max_items
+    }
     /// <p>A flag that indicates whether more distribution IDs remain to be listed. If your results were truncated, you can make a subsequent request using the <code>Marker</code> request field to retrieve more distribution IDs in the list.</p>
     pub fn is_truncated(mut self, input: bool) -> Self {
         self.is_truncated = ::std::option::Option::Some(input);
@@ -110,6 +122,10 @@ impl DistributionIdListBuilder {
         self.is_truncated = input;
         self
     }
+    /// <p>A flag that indicates whether more distribution IDs remain to be listed. If your results were truncated, you can make a subsequent request using the <code>Marker</code> request field to retrieve more distribution IDs in the list.</p>
+    pub fn get_is_truncated(&self) -> &::std::option::Option<bool> {
+        &self.is_truncated
+    }
     /// <p>The total number of distribution IDs returned in the response.</p>
     pub fn quantity(mut self, input: i32) -> Self {
         self.quantity = ::std::option::Option::Some(input);
@@ -119,6 +135,10 @@ impl DistributionIdListBuilder {
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.quantity = input;
         self
+    }
+    /// <p>The total number of distribution IDs returned in the response.</p>
+    pub fn get_quantity(&self) -> &::std::option::Option<i32> {
+        &self.quantity
     }
     /// Appends an item to `items`.
     ///
@@ -138,6 +158,10 @@ impl DistributionIdListBuilder {
     ) -> Self {
         self.items = input;
         self
+    }
+    /// <p>Contains the distribution IDs in the list.</p>
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.items
     }
     /// Consumes the builder and constructs a [`DistributionIdList`](crate::types::DistributionIdList).
     pub fn build(self) -> crate::types::DistributionIdList {

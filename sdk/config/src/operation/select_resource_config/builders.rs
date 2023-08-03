@@ -37,6 +37,12 @@ impl SelectResourceConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SelectResourceConfig as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::select_resource_config::builders::SelectResourceConfigInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +144,10 @@ impl SelectResourceConfigFluentBuilder {
         self.inner = self.inner.set_expression(input);
         self
     }
+    /// <p>The SQL query <code>SELECT</code> command.</p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_expression()
+    }
     /// <p>The maximum number of query results returned on each page. </p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -148,6 +158,10 @@ impl SelectResourceConfigFluentBuilder {
         self.inner = self.inner.set_limit(input);
         self
     }
+    /// <p>The maximum number of query results returned on each page. </p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
+    }
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -157,5 +171,9 @@ impl SelectResourceConfigFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

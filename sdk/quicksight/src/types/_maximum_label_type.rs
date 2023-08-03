@@ -43,6 +43,10 @@ impl MaximumLabelTypeBuilder {
         self.visibility = input;
         self
     }
+    /// <p>The visibility of the maximum label.</p>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.visibility
+    }
     /// Consumes the builder and constructs a [`MaximumLabelType`](crate::types::MaximumLabelType).
     pub fn build(self) -> crate::types::MaximumLabelType {
         crate::types::MaximumLabelType {

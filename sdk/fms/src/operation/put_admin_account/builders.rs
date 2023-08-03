@@ -36,6 +36,12 @@ impl PutAdminAccountFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutAdminAccount as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_admin_account::builders::PutAdminAccountInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl PutAdminAccountFluentBuilder {
         self.inner = self.inner.set_admin_account(input);
         self
     }
+    /// <p>The Amazon Web Services account ID to add as an Firewall Manager administrator account. The account must be a member of the organization that was onboarded to Firewall Manager by <code>AssociateAdminAccount</code>. For more information about Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the Amazon Web Services Accounts in Your Organization</a>.</p>
+    pub fn get_admin_account(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_admin_account()
+    }
     /// <p>Configures the resources that the specified Firewall Manager administrator can manage. As a best practice, set the administrative scope according to the principles of least privilege. Only grant the administrator the specific resources or permissions that they need to perform the duties of their role.</p>
     pub fn admin_scope(mut self, input: crate::types::AdminScope) -> Self {
         self.inner = self.inner.admin_scope(input);
@@ -144,5 +154,9 @@ impl PutAdminAccountFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_admin_scope(input);
         self
+    }
+    /// <p>Configures the resources that the specified Firewall Manager administrator can manage. As a best practice, set the administrative scope according to the principles of least privilege. Only grant the administrator the specific resources or permissions that they need to perform the duties of their role.</p>
+    pub fn get_admin_scope(&self) -> &::std::option::Option<crate::types::AdminScope> {
+        self.inner.get_admin_scope()
     }
 }

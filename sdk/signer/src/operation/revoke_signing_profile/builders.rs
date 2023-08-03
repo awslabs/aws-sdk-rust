@@ -36,6 +36,12 @@ impl RevokeSigningProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RevokeSigningProfile as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::revoke_signing_profile::builders::RevokeSigningProfileInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl RevokeSigningProfileFluentBuilder {
         self.inner = self.inner.set_profile_name(input);
         self
     }
+    /// <p>The name of the signing profile to be revoked.</p>
+    pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_profile_name()
+    }
     /// <p>The version of the signing profile to be revoked.</p>
     pub fn profile_version(
         mut self,
@@ -142,6 +152,10 @@ impl RevokeSigningProfileFluentBuilder {
         self.inner = self.inner.set_profile_version(input);
         self
     }
+    /// <p>The version of the signing profile to be revoked.</p>
+    pub fn get_profile_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_profile_version()
+    }
     /// <p>The reason for revoking a signing profile.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reason(input.into());
@@ -151,6 +165,10 @@ impl RevokeSigningProfileFluentBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reason(input);
         self
+    }
+    /// <p>The reason for revoking a signing profile.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reason()
     }
     /// <p>A timestamp for when revocation of a Signing Profile should become effective. Signatures generated using the signing profile after this timestamp are not trusted.</p>
     pub fn effective_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -164,5 +182,9 @@ impl RevokeSigningProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_effective_time(input);
         self
+    }
+    /// <p>A timestamp for when revocation of a Signing Profile should become effective. Signatures generated using the signing profile after this timestamp are not trusted.</p>
+    pub fn get_effective_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_effective_time()
     }
 }

@@ -39,6 +39,10 @@ impl StartTriggerInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the trigger to start.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`StartTriggerInput`](crate::operation::start_trigger::StartTriggerInput).
     pub fn build(
         self,

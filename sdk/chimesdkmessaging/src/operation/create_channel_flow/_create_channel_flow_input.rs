@@ -87,6 +87,10 @@ impl CreateChannelFlowInputBuilder {
         self.app_instance_arn = input;
         self
     }
+    /// <p>The ARN of the channel flow request.</p>
+    pub fn get_app_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_instance_arn
+    }
     /// Appends an item to `processors`.
     ///
     /// To override the contents of this collection use [`set_processors`](Self::set_processors).
@@ -106,6 +110,12 @@ impl CreateChannelFlowInputBuilder {
         self.processors = input;
         self
     }
+    /// <p>Information about the processor Lambda functions.</p>
+    pub fn get_processors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Processor>> {
+        &self.processors
+    }
     /// <p>The name of the channel flow.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -115,6 +125,10 @@ impl CreateChannelFlowInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the channel flow.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `tags`.
     ///
@@ -135,6 +149,10 @@ impl CreateChannelFlowInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags for the creation request.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The client token for the request. An Idempotency token.</p>
     pub fn client_request_token(
         mut self,
@@ -150,6 +168,10 @@ impl CreateChannelFlowInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>The client token for the request. An Idempotency token.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Consumes the builder and constructs a [`CreateChannelFlowInput`](crate::operation::create_channel_flow::CreateChannelFlowInput).
     pub fn build(

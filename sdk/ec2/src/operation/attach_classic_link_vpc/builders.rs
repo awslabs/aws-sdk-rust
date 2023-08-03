@@ -41,6 +41,13 @@ impl AttachClassicLinkVpcFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AttachClassicLinkVpc as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::attach_classic_link_vpc::builders::AttachClassicLinkVpcInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +138,10 @@ impl AttachClassicLinkVpcFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// Appends an item to `Groups`.
     ///
     /// To override the contents of this collection use [`set_groups`](Self::set_groups).
@@ -148,6 +159,10 @@ impl AttachClassicLinkVpcFluentBuilder {
         self.inner = self.inner.set_groups(input);
         self
     }
+    /// <p>The IDs of the security groups. You cannot specify security groups from a different VPC.</p>
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_groups()
+    }
     /// <p>The ID of the EC2-Classic instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
@@ -158,6 +173,10 @@ impl AttachClassicLinkVpcFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The ID of the EC2-Classic instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>The ID of the ClassicLink-enabled VPC.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_id(input.into());
@@ -167,5 +186,9 @@ impl AttachClassicLinkVpcFluentBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_id(input);
         self
+    }
+    /// <p>The ID of the ClassicLink-enabled VPC.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpc_id()
     }
 }

@@ -39,6 +39,10 @@ impl GetProjectInputBuilder {
         self.project = input;
         self
     }
+    /// <p>The name or ARN of the project that you want to see the details of.</p>
+    pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project
+    }
     /// Consumes the builder and constructs a [`GetProjectInput`](crate::operation::get_project::GetProjectInput).
     pub fn build(
         self,

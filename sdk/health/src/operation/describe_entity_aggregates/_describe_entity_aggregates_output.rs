@@ -58,6 +58,12 @@ impl DescribeEntityAggregatesOutputBuilder {
         self.entity_aggregates = input;
         self
     }
+    /// <p>The number of entities that are affected by each of the specified events.</p>
+    pub fn get_entity_aggregates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityAggregate>> {
+        &self.entity_aggregates
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

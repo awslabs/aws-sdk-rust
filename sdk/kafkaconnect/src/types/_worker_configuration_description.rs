@@ -48,6 +48,10 @@ impl WorkerConfigurationDescriptionBuilder {
         self.revision = input;
         self
     }
+    /// <p>The revision of the worker configuration.</p>
+    pub fn get_revision(&self) -> &::std::option::Option<i64> {
+        &self.revision
+    }
     /// <p>The Amazon Resource Name (ARN) of the worker configuration.</p>
     pub fn worker_configuration_arn(
         mut self,
@@ -63,6 +67,10 @@ impl WorkerConfigurationDescriptionBuilder {
     ) -> Self {
         self.worker_configuration_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the worker configuration.</p>
+    pub fn get_worker_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.worker_configuration_arn
     }
     /// Consumes the builder and constructs a [`WorkerConfigurationDescription`](crate::types::WorkerConfigurationDescription).
     pub fn build(self) -> crate::types::WorkerConfigurationDescription {

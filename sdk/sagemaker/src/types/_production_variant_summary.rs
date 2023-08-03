@@ -116,6 +116,10 @@ impl ProductionVariantSummaryBuilder {
         self.variant_name = input;
         self
     }
+    /// <p>The name of the variant.</p>
+    pub fn get_variant_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.variant_name
+    }
     /// Appends an item to `deployed_images`.
     ///
     /// To override the contents of this collection use [`set_deployed_images`](Self::set_deployed_images).
@@ -135,6 +139,12 @@ impl ProductionVariantSummaryBuilder {
         self.deployed_images = input;
         self
     }
+    /// <p>An array of <code>DeployedImage</code> objects that specify the Amazon EC2 Container Registry paths of the inference images deployed on instances of this <code>ProductionVariant</code>.</p>
+    pub fn get_deployed_images(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeployedImage>> {
+        &self.deployed_images
+    }
     /// <p>The weight associated with the variant.</p>
     pub fn current_weight(mut self, input: f32) -> Self {
         self.current_weight = ::std::option::Option::Some(input);
@@ -144,6 +154,10 @@ impl ProductionVariantSummaryBuilder {
     pub fn set_current_weight(mut self, input: ::std::option::Option<f32>) -> Self {
         self.current_weight = input;
         self
+    }
+    /// <p>The weight associated with the variant.</p>
+    pub fn get_current_weight(&self) -> &::std::option::Option<f32> {
+        &self.current_weight
     }
     /// <p>The requested weight, as specified in the <code>UpdateEndpointWeightsAndCapacities</code> request. </p>
     pub fn desired_weight(mut self, input: f32) -> Self {
@@ -155,6 +169,10 @@ impl ProductionVariantSummaryBuilder {
         self.desired_weight = input;
         self
     }
+    /// <p>The requested weight, as specified in the <code>UpdateEndpointWeightsAndCapacities</code> request. </p>
+    pub fn get_desired_weight(&self) -> &::std::option::Option<f32> {
+        &self.desired_weight
+    }
     /// <p>The number of instances associated with the variant.</p>
     pub fn current_instance_count(mut self, input: i32) -> Self {
         self.current_instance_count = ::std::option::Option::Some(input);
@@ -165,6 +183,10 @@ impl ProductionVariantSummaryBuilder {
         self.current_instance_count = input;
         self
     }
+    /// <p>The number of instances associated with the variant.</p>
+    pub fn get_current_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.current_instance_count
+    }
     /// <p>The number of instances requested in the <code>UpdateEndpointWeightsAndCapacities</code> request. </p>
     pub fn desired_instance_count(mut self, input: i32) -> Self {
         self.desired_instance_count = ::std::option::Option::Some(input);
@@ -174,6 +196,10 @@ impl ProductionVariantSummaryBuilder {
     pub fn set_desired_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.desired_instance_count = input;
         self
+    }
+    /// <p>The number of instances requested in the <code>UpdateEndpointWeightsAndCapacities</code> request. </p>
+    pub fn get_desired_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.desired_instance_count
     }
     /// Appends an item to `variant_status`.
     ///
@@ -194,6 +220,12 @@ impl ProductionVariantSummaryBuilder {
         self.variant_status = input;
         self
     }
+    /// <p>The endpoint variant status which describes the current deployment stage status or operational status.</p>
+    pub fn get_variant_status(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantStatus>> {
+        &self.variant_status
+    }
     /// <p>The serverless configuration for the endpoint.</p>
     pub fn current_serverless_config(
         mut self,
@@ -210,6 +242,12 @@ impl ProductionVariantSummaryBuilder {
         self.current_serverless_config = input;
         self
     }
+    /// <p>The serverless configuration for the endpoint.</p>
+    pub fn get_current_serverless_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProductionVariantServerlessConfig> {
+        &self.current_serverless_config
+    }
     /// <p>The serverless configuration requested for the endpoint update.</p>
     pub fn desired_serverless_config(
         mut self,
@@ -225,6 +263,12 @@ impl ProductionVariantSummaryBuilder {
     ) -> Self {
         self.desired_serverless_config = input;
         self
+    }
+    /// <p>The serverless configuration requested for the endpoint update.</p>
+    pub fn get_desired_serverless_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProductionVariantServerlessConfig> {
+        &self.desired_serverless_config
     }
     /// Consumes the builder and constructs a [`ProductionVariantSummary`](crate::types::ProductionVariantSummary).
     pub fn build(self) -> crate::types::ProductionVariantSummary {

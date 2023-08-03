@@ -56,6 +56,10 @@ impl DescribeInstancesInputBuilder {
         self.stack_id = input;
         self
     }
+    /// <p>A stack ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of the instances associated with the specified stack.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_id
+    }
     /// <p>A layer ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of the instances associated with the specified layer.</p>
     pub fn layer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.layer_id = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl DescribeInstancesInputBuilder {
     pub fn set_layer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.layer_id = input;
         self
+    }
+    /// <p>A layer ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of the instances associated with the specified layer.</p>
+    pub fn get_layer_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.layer_id
     }
     /// Appends an item to `instance_ids`.
     ///
@@ -84,6 +92,12 @@ impl DescribeInstancesInputBuilder {
     ) -> Self {
         self.instance_ids = input;
         self
+    }
+    /// <p>An array of instance IDs to be described. If you use this parameter, <code>DescribeInstances</code> returns a description of the specified instances. Otherwise, it returns a description of every instance.</p>
+    pub fn get_instance_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.instance_ids
     }
     /// Consumes the builder and constructs a [`DescribeInstancesInput`](crate::operation::describe_instances::DescribeInstancesInput).
     pub fn build(

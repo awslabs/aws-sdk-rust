@@ -36,6 +36,13 @@ impl CreateLogSubscriptionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateLogSubscription as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_log_subscription::builders::CreateLogSubscriptionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl CreateLogSubscriptionFluentBuilder {
         self.inner = self.inner.set_directory_id(input);
         self
     }
+    /// <p>Identifier of the directory to which you want to subscribe and receive real-time logs to your specified CloudWatch log group.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_id()
+    }
     /// <p>The name of the CloudWatch log group where the real-time domain controller logs are forwarded.</p>
     pub fn log_group_name(
         mut self,
@@ -141,5 +152,9 @@ impl CreateLogSubscriptionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_log_group_name(input);
         self
+    }
+    /// <p>The name of the CloudWatch log group where the real-time domain controller logs are forwarded.</p>
+    pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_log_group_name()
     }
 }

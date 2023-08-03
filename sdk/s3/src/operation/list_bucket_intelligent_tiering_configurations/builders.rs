@@ -45,6 +45,10 @@ impl ListBucketIntelligentTieringConfigurationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListBucketIntelligentTieringConfigurations as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_bucket_intelligent_tiering_configurations::builders::ListBucketIntelligentTieringConfigurationsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -109,6 +113,10 @@ impl ListBucketIntelligentTieringConfigurationsFluentBuilder {
         self.inner = self.inner.set_bucket(input);
         self
     }
+    /// <p>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bucket()
+    }
     /// <p>The <code>ContinuationToken</code> that represents a placeholder from where this request should begin.</p>
     pub fn continuation_token(
         mut self,
@@ -124,5 +132,9 @@ impl ListBucketIntelligentTieringConfigurationsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_continuation_token(input);
         self
+    }
+    /// <p>The <code>ContinuationToken</code> that represents a placeholder from where this request should begin.</p>
+    pub fn get_continuation_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_continuation_token()
     }
 }

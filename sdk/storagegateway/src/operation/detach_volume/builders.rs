@@ -36,6 +36,10 @@ impl DetachVolumeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DetachVolume as a reference.
+    pub fn as_input(&self) -> &crate::operation::detach_volume::builders::DetachVolumeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl DetachVolumeFluentBuilder {
         self.inner = self.inner.set_volume_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the volume to detach from the gateway.</p>
+    pub fn get_volume_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_volume_arn()
+    }
     /// <p>Set to <code>true</code> to forcibly remove the iSCSI connection of the target volume and detach the volume. The default is <code>false</code>. If this value is set to <code>false</code>, you must manually disconnect the iSCSI connection from the target volume.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn force_detach(mut self, input: bool) -> Self {
@@ -129,5 +137,10 @@ impl DetachVolumeFluentBuilder {
     pub fn set_force_detach(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force_detach(input);
         self
+    }
+    /// <p>Set to <code>true</code> to forcibly remove the iSCSI connection of the target volume and detach the volume. The default is <code>false</code>. If this value is set to <code>false</code>, you must manually disconnect the iSCSI connection from the target volume.</p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    pub fn get_force_detach(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force_detach()
     }
 }

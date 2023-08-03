@@ -79,6 +79,10 @@ impl ListPolicyAttachmentsInputBuilder {
         self.directory_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_arn
+    }
     /// <p>The reference that identifies the policy object.</p>
     pub fn policy_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.policy_reference = ::std::option::Option::Some(input);
@@ -92,6 +96,10 @@ impl ListPolicyAttachmentsInputBuilder {
         self.policy_reference = input;
         self
     }
+    /// <p>The reference that identifies the policy object.</p>
+    pub fn get_policy_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
+        &self.policy_reference
+    }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -102,6 +110,10 @@ impl ListPolicyAttachmentsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -111,6 +123,10 @@ impl ListPolicyAttachmentsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
     pub fn consistency_level(mut self, input: crate::types::ConsistencyLevel) -> Self {
@@ -124,6 +140,10 @@ impl ListPolicyAttachmentsInputBuilder {
     ) -> Self {
         self.consistency_level = input;
         self
+    }
+    /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
+    pub fn get_consistency_level(&self) -> &::std::option::Option<crate::types::ConsistencyLevel> {
+        &self.consistency_level
     }
     /// Consumes the builder and constructs a [`ListPolicyAttachmentsInput`](crate::operation::list_policy_attachments::ListPolicyAttachmentsInput).
     pub fn build(

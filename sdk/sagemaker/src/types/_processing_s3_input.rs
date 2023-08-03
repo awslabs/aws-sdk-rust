@@ -87,6 +87,10 @@ impl ProcessingS3InputBuilder {
         self.s3_uri = input;
         self
     }
+    /// <p>The URI of the Amazon S3 prefix Amazon SageMaker downloads data required to run a processing job.</p>
+    pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_uri
+    }
     /// <p>The local path in your container where you want Amazon SageMaker to write input data to. <code>LocalPath</code> is an absolute path to the input data and must begin with <code>/opt/ml/processing/</code>. <code>LocalPath</code> is a required parameter when <code>AppManaged</code> is <code>False</code> (default).</p>
     pub fn local_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_path = ::std::option::Option::Some(input.into());
@@ -96,6 +100,10 @@ impl ProcessingS3InputBuilder {
     pub fn set_local_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.local_path = input;
         self
+    }
+    /// <p>The local path in your container where you want Amazon SageMaker to write input data to. <code>LocalPath</code> is an absolute path to the input data and must begin with <code>/opt/ml/processing/</code>. <code>LocalPath</code> is a required parameter when <code>AppManaged</code> is <code>False</code> (default).</p>
+    pub fn get_local_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.local_path
     }
     /// <p>Whether you use an <code>S3Prefix</code> or a <code>ManifestFile</code> for the data type. If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. Amazon SageMaker uses all objects with the specified key name prefix for the processing job. If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file containing a list of object keys that you want Amazon SageMaker to use for the processing job.</p>
     pub fn s3_data_type(mut self, input: crate::types::ProcessingS3DataType) -> Self {
@@ -110,6 +118,10 @@ impl ProcessingS3InputBuilder {
         self.s3_data_type = input;
         self
     }
+    /// <p>Whether you use an <code>S3Prefix</code> or a <code>ManifestFile</code> for the data type. If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. Amazon SageMaker uses all objects with the specified key name prefix for the processing job. If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file containing a list of object keys that you want Amazon SageMaker to use for the processing job.</p>
+    pub fn get_s3_data_type(&self) -> &::std::option::Option<crate::types::ProcessingS3DataType> {
+        &self.s3_data_type
+    }
     /// <p>Whether to use <code>File</code> or <code>Pipe</code> input mode. In File mode, Amazon SageMaker copies the data from the input source onto the local ML storage volume before starting your processing container. This is the most commonly used input mode. In <code>Pipe</code> mode, Amazon SageMaker streams input data from the source directly to your processing container into named pipes without using the ML storage volume.</p>
     pub fn s3_input_mode(mut self, input: crate::types::ProcessingS3InputMode) -> Self {
         self.s3_input_mode = ::std::option::Option::Some(input);
@@ -122,6 +134,10 @@ impl ProcessingS3InputBuilder {
     ) -> Self {
         self.s3_input_mode = input;
         self
+    }
+    /// <p>Whether to use <code>File</code> or <code>Pipe</code> input mode. In File mode, Amazon SageMaker copies the data from the input source onto the local ML storage volume before starting your processing container. This is the most commonly used input mode. In <code>Pipe</code> mode, Amazon SageMaker streams input data from the source directly to your processing container into named pipes without using the ML storage volume.</p>
+    pub fn get_s3_input_mode(&self) -> &::std::option::Option<crate::types::ProcessingS3InputMode> {
+        &self.s3_input_mode
     }
     /// <p>Whether to distribute the data from Amazon S3 to all processing instances with <code>FullyReplicated</code>, or whether the data from Amazon S3 is shared by Amazon S3 key, downloading one shard of data to each processing instance.</p>
     pub fn s3_data_distribution_type(
@@ -139,6 +155,12 @@ impl ProcessingS3InputBuilder {
         self.s3_data_distribution_type = input;
         self
     }
+    /// <p>Whether to distribute the data from Amazon S3 to all processing instances with <code>FullyReplicated</code>, or whether the data from Amazon S3 is shared by Amazon S3 key, downloading one shard of data to each processing instance.</p>
+    pub fn get_s3_data_distribution_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProcessingS3DataDistributionType> {
+        &self.s3_data_distribution_type
+    }
     /// <p>Whether to GZIP-decompress the data in Amazon S3 as it is streamed into the processing container. <code>Gzip</code> can only be used when <code>Pipe</code> mode is specified as the <code>S3InputMode</code>. In <code>Pipe</code> mode, Amazon SageMaker streams input data from the source directly to your container without using the EBS volume.</p>
     pub fn s3_compression_type(mut self, input: crate::types::ProcessingS3CompressionType) -> Self {
         self.s3_compression_type = ::std::option::Option::Some(input);
@@ -151,6 +173,12 @@ impl ProcessingS3InputBuilder {
     ) -> Self {
         self.s3_compression_type = input;
         self
+    }
+    /// <p>Whether to GZIP-decompress the data in Amazon S3 as it is streamed into the processing container. <code>Gzip</code> can only be used when <code>Pipe</code> mode is specified as the <code>S3InputMode</code>. In <code>Pipe</code> mode, Amazon SageMaker streams input data from the source directly to your container without using the EBS volume.</p>
+    pub fn get_s3_compression_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProcessingS3CompressionType> {
+        &self.s3_compression_type
     }
     /// Consumes the builder and constructs a [`ProcessingS3Input`](crate::types::ProcessingS3Input).
     pub fn build(self) -> crate::types::ProcessingS3Input {

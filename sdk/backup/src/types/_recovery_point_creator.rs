@@ -70,6 +70,10 @@ impl RecoveryPointCreatorBuilder {
         self.backup_plan_id = input;
         self
     }
+    /// <p>Uniquely identifies a backup plan.</p>
+    pub fn get_backup_plan_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_plan_id
+    }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan; for example, <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.</p>
     pub fn backup_plan_arn(
         mut self,
@@ -85,6 +89,10 @@ impl RecoveryPointCreatorBuilder {
     ) -> Self {
         self.backup_plan_arn = input;
         self
+    }
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan; for example, <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.</p>
+    pub fn get_backup_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_plan_arn
     }
     /// <p>Version IDs are unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. They cannot be edited.</p>
     pub fn backup_plan_version(
@@ -102,6 +110,10 @@ impl RecoveryPointCreatorBuilder {
         self.backup_plan_version = input;
         self
     }
+    /// <p>Version IDs are unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. They cannot be edited.</p>
+    pub fn get_backup_plan_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_plan_version
+    }
     /// <p>Uniquely identifies a rule used to schedule the backup of a selection of resources.</p>
     pub fn backup_rule_id(
         mut self,
@@ -117,6 +129,10 @@ impl RecoveryPointCreatorBuilder {
     ) -> Self {
         self.backup_rule_id = input;
         self
+    }
+    /// <p>Uniquely identifies a rule used to schedule the backup of a selection of resources.</p>
+    pub fn get_backup_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_rule_id
     }
     /// Consumes the builder and constructs a [`RecoveryPointCreator`](crate::types::RecoveryPointCreator).
     pub fn build(self) -> crate::types::RecoveryPointCreator {

@@ -104,6 +104,10 @@ impl RelationalDatabaseParameterBuilder {
         self.allowed_values = input;
         self
     }
+    /// <p>Specifies the valid range of values for the parameter.</p>
+    pub fn get_allowed_values(&self) -> &::std::option::Option<::std::string::String> {
+        &self.allowed_values
+    }
     /// <p>Indicates when parameter updates are applied.</p>
     /// <p>Can be <code>immediate</code> or <code>pending-reboot</code>.</p>
     pub fn apply_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -116,6 +120,11 @@ impl RelationalDatabaseParameterBuilder {
         self.apply_method = input;
         self
     }
+    /// <p>Indicates when parameter updates are applied.</p>
+    /// <p>Can be <code>immediate</code> or <code>pending-reboot</code>.</p>
+    pub fn get_apply_method(&self) -> &::std::option::Option<::std::string::String> {
+        &self.apply_method
+    }
     /// <p>Specifies the engine-specific parameter type.</p>
     pub fn apply_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.apply_type = ::std::option::Option::Some(input.into());
@@ -125,6 +134,10 @@ impl RelationalDatabaseParameterBuilder {
     pub fn set_apply_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.apply_type = input;
         self
+    }
+    /// <p>Specifies the engine-specific parameter type.</p>
+    pub fn get_apply_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.apply_type
     }
     /// <p>Specifies the valid data type for the parameter.</p>
     pub fn data_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -136,6 +149,10 @@ impl RelationalDatabaseParameterBuilder {
         self.data_type = input;
         self
     }
+    /// <p>Specifies the valid data type for the parameter.</p>
+    pub fn get_data_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_type
+    }
     /// <p>Provides a description of the parameter.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -146,6 +163,10 @@ impl RelationalDatabaseParameterBuilder {
         self.description = input;
         self
     }
+    /// <p>Provides a description of the parameter.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>A Boolean value indicating whether the parameter can be modified.</p>
     pub fn is_modifiable(mut self, input: bool) -> Self {
         self.is_modifiable = ::std::option::Option::Some(input);
@@ -155,6 +176,10 @@ impl RelationalDatabaseParameterBuilder {
     pub fn set_is_modifiable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_modifiable = input;
         self
+    }
+    /// <p>A Boolean value indicating whether the parameter can be modified.</p>
+    pub fn get_is_modifiable(&self) -> &::std::option::Option<bool> {
+        &self.is_modifiable
     }
     /// <p>Specifies the name of the parameter.</p>
     pub fn parameter_name(
@@ -172,6 +197,10 @@ impl RelationalDatabaseParameterBuilder {
         self.parameter_name = input;
         self
     }
+    /// <p>Specifies the name of the parameter.</p>
+    pub fn get_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_name
+    }
     /// <p>Specifies the value of the parameter.</p>
     pub fn parameter_value(
         mut self,
@@ -187,6 +216,10 @@ impl RelationalDatabaseParameterBuilder {
     ) -> Self {
         self.parameter_value = input;
         self
+    }
+    /// <p>Specifies the value of the parameter.</p>
+    pub fn get_parameter_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_value
     }
     /// Consumes the builder and constructs a [`RelationalDatabaseParameter`](crate::types::RelationalDatabaseParameter).
     pub fn build(self) -> crate::types::RelationalDatabaseParameter {

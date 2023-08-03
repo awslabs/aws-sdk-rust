@@ -47,6 +47,10 @@ impl DeleteApnsVoipChannelInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// Consumes the builder and constructs a [`DeleteApnsVoipChannelInput`](crate::operation::delete_apns_voip_channel::DeleteApnsVoipChannelInput).
     pub fn build(
         self,

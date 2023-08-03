@@ -64,6 +64,10 @@ impl TransitGatewayRegistrationBuilder {
         self.global_network_id = input;
         self
     }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_network_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
     pub fn transit_gateway_arn(
         mut self,
@@ -80,6 +84,10 @@ impl TransitGatewayRegistrationBuilder {
         self.transit_gateway_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
+    pub fn get_transit_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_arn
+    }
     /// <p>The state of the transit gateway registration.</p>
     pub fn state(mut self, input: crate::types::TransitGatewayRegistrationStateReason) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -92,6 +100,12 @@ impl TransitGatewayRegistrationBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the transit gateway registration.</p>
+    pub fn get_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransitGatewayRegistrationStateReason> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`TransitGatewayRegistration`](crate::types::TransitGatewayRegistration).
     pub fn build(self) -> crate::types::TransitGatewayRegistration {

@@ -93,6 +93,10 @@ impl PutBotAliasInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the alias. The name is <i>not</i> case sensitive.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description of the alias.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -102,6 +106,10 @@ impl PutBotAliasInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the alias.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The version of the bot.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -113,6 +121,10 @@ impl PutBotAliasInputBuilder {
         self.bot_version = input;
         self
     }
+    /// <p>The version of the bot.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_version
+    }
     /// <p>The name of the bot.</p>
     pub fn bot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_name = ::std::option::Option::Some(input.into());
@@ -122,6 +134,10 @@ impl PutBotAliasInputBuilder {
     pub fn set_bot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_name = input;
         self
+    }
+    /// <p>The name of the bot.</p>
+    pub fn get_bot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_name
     }
     /// <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>
     /// <p>When you create a new bot alias, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p>
@@ -137,6 +153,12 @@ impl PutBotAliasInputBuilder {
         self.checksum = input;
         self
     }
+    /// <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>
+    /// <p>When you create a new bot alias, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p>
+    /// <p>When you want to update a bot alias, set the <code>checksum</code> field to the checksum of the most recent revision of the <code>$LATEST</code> version. If you don't specify the <code> checksum</code> field, or if the checksum does not match the <code>$LATEST</code> version, you get a <code>PreconditionFailedException</code> exception.</p>
+    pub fn get_checksum(&self) -> &::std::option::Option<::std::string::String> {
+        &self.checksum
+    }
     /// <p>Settings for conversation logs for the alias.</p>
     pub fn conversation_logs(mut self, input: crate::types::ConversationLogsRequest) -> Self {
         self.conversation_logs = ::std::option::Option::Some(input);
@@ -149,6 +171,12 @@ impl PutBotAliasInputBuilder {
     ) -> Self {
         self.conversation_logs = input;
         self
+    }
+    /// <p>Settings for conversation logs for the alias.</p>
+    pub fn get_conversation_logs(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConversationLogsRequest> {
+        &self.conversation_logs
     }
     /// Appends an item to `tags`.
     ///
@@ -168,6 +196,10 @@ impl PutBotAliasInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tags to add to the bot alias. You can only add tags when you create an alias, you can't use the <code>PutBotAlias</code> operation to update the tags on a bot alias. To update tags, use the <code>TagResource</code> operation.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`PutBotAliasInput`](crate::operation::put_bot_alias::PutBotAliasInput).
     pub fn build(

@@ -36,6 +36,12 @@ impl ListComplianceItemsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListComplianceItems as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_compliance_items::builders::ListComplianceItemsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -144,6 +150,12 @@ impl ListComplianceItemsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>One or more compliance filters. Use a filter to return a more specific list of results.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComplianceStringFilter>> {
+        self.inner.get_filters()
+    }
     /// Appends an item to `ResourceIds`.
     ///
     /// To override the contents of this collection use [`set_resource_ids`](Self::set_resource_ids).
@@ -160,6 +172,12 @@ impl ListComplianceItemsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_ids(input);
         self
+    }
+    /// <p>The ID for the resources from which to get compliance information. Currently, you can only specify one resource ID.</p>
+    pub fn get_resource_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_resource_ids()
     }
     /// Appends an item to `ResourceTypes`.
     ///
@@ -181,6 +199,12 @@ impl ListComplianceItemsFluentBuilder {
         self.inner = self.inner.set_resource_types(input);
         self
     }
+    /// <p>The type of resource from which to get compliance information. Currently, the only supported resource type is <code>ManagedInstance</code>.</p>
+    pub fn get_resource_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_resource_types()
+    }
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -191,6 +215,10 @@ impl ListComplianceItemsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -200,5 +228,9 @@ impl ListComplianceItemsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

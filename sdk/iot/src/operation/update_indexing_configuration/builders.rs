@@ -37,6 +37,10 @@ impl UpdateIndexingConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateIndexingConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_indexing_configuration::builders::UpdateIndexingConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,12 @@ impl UpdateIndexingConfigurationFluentBuilder {
         self.inner = self.inner.set_thing_indexing_configuration(input);
         self
     }
+    /// <p>Thing indexing configuration.</p>
+    pub fn get_thing_indexing_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ThingIndexingConfiguration> {
+        self.inner.get_thing_indexing_configuration()
+    }
     /// <p>Thing group indexing configuration.</p>
     pub fn thing_group_indexing_configuration(
         mut self,
@@ -148,5 +158,11 @@ impl UpdateIndexingConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_thing_group_indexing_configuration(input);
         self
+    }
+    /// <p>Thing group indexing configuration.</p>
+    pub fn get_thing_group_indexing_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ThingGroupIndexingConfiguration> {
+        self.inner.get_thing_group_indexing_configuration()
     }
 }

@@ -36,6 +36,12 @@ impl ModifyIpamScopeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyIpamScope as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::modify_ipam_scope::builders::ModifyIpamScopeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl ModifyIpamScopeFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>The ID of the scope you want to modify.</p>
     pub fn ipam_scope_id(
         mut self,
@@ -142,6 +152,10 @@ impl ModifyIpamScopeFluentBuilder {
         self.inner = self.inner.set_ipam_scope_id(input);
         self
     }
+    /// <p>The ID of the scope you want to modify.</p>
+    pub fn get_ipam_scope_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ipam_scope_id()
+    }
     /// <p>The description of the scope you want to modify.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -151,5 +165,9 @@ impl ModifyIpamScopeFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the scope you want to modify.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
 }

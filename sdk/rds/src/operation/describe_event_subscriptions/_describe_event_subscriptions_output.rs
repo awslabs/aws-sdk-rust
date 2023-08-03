@@ -59,6 +59,10 @@ impl DescribeEventSubscriptionsOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p>An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// Appends an item to `event_subscriptions_list`.
     ///
     /// To override the contents of this collection use [`set_event_subscriptions_list`](Self::set_event_subscriptions_list).
@@ -77,6 +81,12 @@ impl DescribeEventSubscriptionsOutputBuilder {
     ) -> Self {
         self.event_subscriptions_list = input;
         self
+    }
+    /// <p>A list of EventSubscriptions data types.</p>
+    pub fn get_event_subscriptions_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventSubscription>> {
+        &self.event_subscriptions_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -41,6 +41,10 @@ impl DeleteTagsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteTags as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_tags::builders::DeleteTagsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +133,10 @@ impl DeleteTagsFluentBuilder {
         self.inner = self.inner.set_file_system_id(input);
         self
     }
+    /// <p>The ID of the file system whose tags you want to delete (String).</p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_file_system_id()
+    }
     /// Appends an item to `TagKeys`.
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
@@ -145,5 +153,9 @@ impl DeleteTagsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tag_keys(input);
         self
+    }
+    /// <p>A list of tag keys to delete.</p>
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_tag_keys()
     }
 }

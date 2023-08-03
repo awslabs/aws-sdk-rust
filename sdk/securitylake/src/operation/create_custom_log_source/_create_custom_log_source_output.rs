@@ -51,6 +51,10 @@ impl CreateCustomLogSourceOutputBuilder {
         self.source = input;
         self
     }
+    /// <p>The created third-party custom source.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::CustomLogSourceResource> {
+        &self.source
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

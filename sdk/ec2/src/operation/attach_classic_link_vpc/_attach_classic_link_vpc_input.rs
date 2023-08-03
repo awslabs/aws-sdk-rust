@@ -64,6 +64,10 @@ impl AttachClassicLinkVpcInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// Appends an item to `groups`.
     ///
     /// To override the contents of this collection use [`set_groups`](Self::set_groups).
@@ -83,6 +87,10 @@ impl AttachClassicLinkVpcInputBuilder {
         self.groups = input;
         self
     }
+    /// <p>The IDs of the security groups. You cannot specify security groups from a different VPC.</p>
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.groups
+    }
     /// <p>The ID of the EC2-Classic instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -93,6 +101,10 @@ impl AttachClassicLinkVpcInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The ID of the EC2-Classic instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The ID of the ClassicLink-enabled VPC.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -102,6 +114,10 @@ impl AttachClassicLinkVpcInputBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The ID of the ClassicLink-enabled VPC.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Consumes the builder and constructs a [`AttachClassicLinkVpcInput`](crate::operation::attach_classic_link_vpc::AttachClassicLinkVpcInput).
     pub fn build(

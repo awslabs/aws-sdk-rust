@@ -71,6 +71,10 @@ impl SearchIndexInputBuilder {
         self.index_name = input;
         self
     }
+    /// <p>The search index name.</p>
+    pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_name
+    }
     /// <p>The search query string. For more information about the search query syntax, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query syntax</a>.</p>
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_string = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl SearchIndexInputBuilder {
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_string = input;
         self
+    }
+    /// <p>The search query string. For more information about the search query syntax, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query syntax</a>.</p>
+    pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_string
     }
     /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -91,6 +99,10 @@ impl SearchIndexInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -100,6 +112,10 @@ impl SearchIndexInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return at one time.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The query version.</p>
     pub fn query_version(
@@ -116,6 +132,10 @@ impl SearchIndexInputBuilder {
     ) -> Self {
         self.query_version = input;
         self
+    }
+    /// <p>The query version.</p>
+    pub fn get_query_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_version
     }
     /// Consumes the builder and constructs a [`SearchIndexInput`](crate::operation::search_index::SearchIndexInput).
     pub fn build(

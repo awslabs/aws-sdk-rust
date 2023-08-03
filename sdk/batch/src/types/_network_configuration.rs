@@ -43,6 +43,10 @@ impl NetworkConfigurationBuilder {
         self.assign_public_ip = input;
         self
     }
+    /// <p>Indicates whether the job has a public IP address. For a job that's running on Fargate resources in a private subnet to send outbound traffic to the internet (for example, to pull container images), the private subnet requires a NAT gateway be attached to route requests to the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Amazon ECS task networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. The default value is "<code>DISABLED</code>".</p>
+    pub fn get_assign_public_ip(&self) -> &::std::option::Option<crate::types::AssignPublicIp> {
+        &self.assign_public_ip
+    }
     /// Consumes the builder and constructs a [`NetworkConfiguration`](crate::types::NetworkConfiguration).
     pub fn build(self) -> crate::types::NetworkConfiguration {
         crate::types::NetworkConfiguration {

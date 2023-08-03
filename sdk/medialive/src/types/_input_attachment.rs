@@ -74,6 +74,12 @@ impl InputAttachmentBuilder {
         self.automatic_input_failover_settings = input;
         self
     }
+    /// User-specified settings for defining what the conditions are for declaring the input unhealthy and failing over to a different input.
+    pub fn get_automatic_input_failover_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutomaticInputFailoverSettings> {
+        &self.automatic_input_failover_settings
+    }
     /// User-specified name for the attachment. This is required if the user wants to use this input in an input switch action.
     pub fn input_attachment_name(
         mut self,
@@ -90,6 +96,10 @@ impl InputAttachmentBuilder {
         self.input_attachment_name = input;
         self
     }
+    /// User-specified name for the attachment. This is required if the user wants to use this input in an input switch action.
+    pub fn get_input_attachment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_attachment_name
+    }
     /// The ID of the input
     pub fn input_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_id = ::std::option::Option::Some(input.into());
@@ -99,6 +109,10 @@ impl InputAttachmentBuilder {
     pub fn set_input_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_id = input;
         self
+    }
+    /// The ID of the input
+    pub fn get_input_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_id
     }
     /// Settings of an input (caption selector, etc.)
     pub fn input_settings(mut self, input: crate::types::InputSettings) -> Self {
@@ -112,6 +126,10 @@ impl InputAttachmentBuilder {
     ) -> Self {
         self.input_settings = input;
         self
+    }
+    /// Settings of an input (caption selector, etc.)
+    pub fn get_input_settings(&self) -> &::std::option::Option<crate::types::InputSettings> {
+        &self.input_settings
     }
     /// Consumes the builder and constructs a [`InputAttachment`](crate::types::InputAttachment).
     pub fn build(self) -> crate::types::InputAttachment {

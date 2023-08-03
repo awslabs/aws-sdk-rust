@@ -58,6 +58,10 @@ impl ListSlackWorkspaceConfigurationsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The point where pagination should resume when the response returns only partial results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `slack_workspace_configurations`.
     ///
     /// To override the contents of this collection use [`set_slack_workspace_configurations`](Self::set_slack_workspace_configurations).
@@ -79,6 +83,12 @@ impl ListSlackWorkspaceConfigurationsOutputBuilder {
     ) -> Self {
         self.slack_workspace_configurations = input;
         self
+    }
+    /// <p>The configurations for a Slack workspace.</p>
+    pub fn get_slack_workspace_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SlackWorkspaceConfiguration>> {
+        &self.slack_workspace_configurations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

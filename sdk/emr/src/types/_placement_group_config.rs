@@ -60,6 +60,11 @@ impl PlacementGroupConfigBuilder {
         self.instance_role = input;
         self
     }
+    /// <p>Role of the instance in the cluster.</p>
+    /// <p>Starting with Amazon EMR release 5.23.0, the only supported instance role is <code>MASTER</code>.</p>
+    pub fn get_instance_role(&self) -> &::std::option::Option<crate::types::InstanceRoleType> {
+        &self.instance_role
+    }
     /// <p>Amazon EC2 Placement Group strategy associated with instance role.</p>
     /// <p>Starting with Amazon EMR release 5.23.0, the only supported placement strategy is <code>SPREAD</code> for the <code>MASTER</code> instance role.</p>
     pub fn placement_strategy(mut self, input: crate::types::PlacementGroupStrategy) -> Self {
@@ -74,6 +79,13 @@ impl PlacementGroupConfigBuilder {
     ) -> Self {
         self.placement_strategy = input;
         self
+    }
+    /// <p>Amazon EC2 Placement Group strategy associated with instance role.</p>
+    /// <p>Starting with Amazon EMR release 5.23.0, the only supported placement strategy is <code>SPREAD</code> for the <code>MASTER</code> instance role.</p>
+    pub fn get_placement_strategy(
+        &self,
+    ) -> &::std::option::Option<crate::types::PlacementGroupStrategy> {
+        &self.placement_strategy
     }
     /// Consumes the builder and constructs a [`PlacementGroupConfig`](crate::types::PlacementGroupConfig).
     pub fn build(self) -> crate::types::PlacementGroupConfig {

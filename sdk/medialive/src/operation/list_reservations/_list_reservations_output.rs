@@ -56,6 +56,10 @@ impl ListReservationsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// Token to retrieve the next page of results
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `reservations`.
     ///
     /// To override the contents of this collection use [`set_reservations`](Self::set_reservations).
@@ -74,6 +78,12 @@ impl ListReservationsOutputBuilder {
     ) -> Self {
         self.reservations = input;
         self
+    }
+    /// List of reservations
+    pub fn get_reservations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Reservation>> {
+        &self.reservations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

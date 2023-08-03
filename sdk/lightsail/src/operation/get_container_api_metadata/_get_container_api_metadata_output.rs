@@ -72,6 +72,14 @@ impl GetContainerApiMetadataOutputBuilder {
         self.metadata = input;
         self
     }
+    /// <p>Metadata about Lightsail containers, such as the current version of the Lightsail Control (lightsailctl) plugin.</p>
+    pub fn get_metadata(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    > {
+        &self.metadata
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

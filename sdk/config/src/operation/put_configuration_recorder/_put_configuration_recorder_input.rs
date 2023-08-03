@@ -47,6 +47,12 @@ impl PutConfigurationRecorderInputBuilder {
         self.configuration_recorder = input;
         self
     }
+    /// <p>An object for the configuration recorder to record configuration changes for specified resource types.</p>
+    pub fn get_configuration_recorder(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfigurationRecorder> {
+        &self.configuration_recorder
+    }
     /// Consumes the builder and constructs a [`PutConfigurationRecorderInput`](crate::operation::put_configuration_recorder::PutConfigurationRecorderInput).
     pub fn build(
         self,

@@ -36,6 +36,10 @@ impl CreateObjectFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateObject as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_object::builders::CreateObjectInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl CreateObjectFluentBuilder {
         self.inner = self.inner.set_directory_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> in which the object will be created. For more information, see <code>arns</code>.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_arn()
+    }
     /// Appends an item to `SchemaFacets`.
     ///
     /// To override the contents of this collection use [`set_schema_facets`](Self::set_schema_facets).
@@ -140,6 +148,12 @@ impl CreateObjectFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_schema_facets(input);
         self
+    }
+    /// <p>A list of schema facets to be associated with the object. Do not provide minor version components. See <code>SchemaFacet</code> for details.</p>
+    pub fn get_schema_facets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>> {
+        self.inner.get_schema_facets()
     }
     /// Appends an item to `ObjectAttributeList`.
     ///
@@ -158,6 +172,12 @@ impl CreateObjectFluentBuilder {
         self.inner = self.inner.set_object_attribute_list(input);
         self
     }
+    /// <p>The attribute map whose attribute ARN contains the key and attribute value as the map value.</p>
+    pub fn get_object_attribute_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>> {
+        self.inner.get_object_attribute_list()
+    }
     /// <p>If specified, the parent reference to which this object will be attached.</p>
     pub fn parent_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.inner = self.inner.parent_reference(input);
@@ -171,6 +191,10 @@ impl CreateObjectFluentBuilder {
         self.inner = self.inner.set_parent_reference(input);
         self
     }
+    /// <p>If specified, the parent reference to which this object will be attached.</p>
+    pub fn get_parent_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
+        self.inner.get_parent_reference()
+    }
     /// <p>The name of link that is used to attach this object to a parent.</p>
     pub fn link_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.link_name(input.into());
@@ -180,5 +204,9 @@ impl CreateObjectFluentBuilder {
     pub fn set_link_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_link_name(input);
         self
+    }
+    /// <p>The name of link that is used to attach this object to a parent.</p>
+    pub fn get_link_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_link_name()
     }
 }

@@ -36,6 +36,10 @@ impl UpdateUserFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateUser as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_user::builders::UpdateUserInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdateUserFluentBuilder {
         self.inner = self.inner.set_broker_id(input);
         self
     }
+    /// <p>The unique ID that Amazon MQ generates for the broker.</p>
+    pub fn get_broker_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_broker_id()
+    }
     /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
     pub fn console_access(mut self, input: bool) -> Self {
         self.inner = self.inner.console_access(input);
@@ -127,6 +135,10 @@ impl UpdateUserFluentBuilder {
     pub fn set_console_access(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_console_access(input);
         self
+    }
+    /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
+    pub fn get_console_access(&self) -> &::std::option::Option<bool> {
+        self.inner.get_console_access()
     }
     /// Appends an item to `Groups`.
     ///
@@ -145,6 +157,10 @@ impl UpdateUserFluentBuilder {
         self.inner = self.inner.set_groups(input);
         self
     }
+    /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_groups()
+    }
     /// <p>The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas, colons, or equal signs (,:=).</p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.password(input.into());
@@ -154,6 +170,10 @@ impl UpdateUserFluentBuilder {
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_password(input);
         self
+    }
+    /// <p>The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas, colons, or equal signs (,:=).</p>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_password()
     }
     /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -165,6 +185,10 @@ impl UpdateUserFluentBuilder {
         self.inner = self.inner.set_username(input);
         self
     }
+    /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_username()
+    }
     /// <p>Defines whether the user is intended for data replication.</p>
     pub fn replication_user(mut self, input: bool) -> Self {
         self.inner = self.inner.replication_user(input);
@@ -174,5 +198,9 @@ impl UpdateUserFluentBuilder {
     pub fn set_replication_user(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_replication_user(input);
         self
+    }
+    /// <p>Defines whether the user is intended for data replication.</p>
+    pub fn get_replication_user(&self) -> &::std::option::Option<bool> {
+        self.inner.get_replication_user()
     }
 }

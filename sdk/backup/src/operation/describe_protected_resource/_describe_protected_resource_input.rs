@@ -39,6 +39,10 @@ impl DescribeProtectedResourceInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Consumes the builder and constructs a [`DescribeProtectedResourceInput`](crate::operation::describe_protected_resource::DescribeProtectedResourceInput).
     pub fn build(
         self,

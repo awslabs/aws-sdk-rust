@@ -42,6 +42,10 @@ impl DeleteDedicatedIpPoolInputBuilder {
         self.pool_name = input;
         self
     }
+    /// <p>The name of the dedicated IP pool that you want to delete.</p>
+    pub fn get_pool_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pool_name
+    }
     /// Consumes the builder and constructs a [`DeleteDedicatedIpPoolInput`](crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolInput).
     pub fn build(
         self,

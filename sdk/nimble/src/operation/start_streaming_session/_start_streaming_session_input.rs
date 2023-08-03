@@ -65,6 +65,10 @@ impl StartStreamingSessionInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The streaming session ID for the <code>StartStreamingSessionRequest</code>.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl StartStreamingSessionInputBuilder {
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_id = input;
         self
+    }
+    /// <p>The streaming session ID for the <code>StartStreamingSessionRequest</code>.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
     }
     /// <p>The studio ID for the StartStreamingSessionRequest.</p>
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -85,6 +93,10 @@ impl StartStreamingSessionInputBuilder {
         self.studio_id = input;
         self
     }
+    /// <p>The studio ID for the StartStreamingSessionRequest.</p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_id
+    }
     /// <p>The ID of the backup.</p>
     pub fn backup_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_id = ::std::option::Option::Some(input.into());
@@ -94,6 +106,10 @@ impl StartStreamingSessionInputBuilder {
     pub fn set_backup_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_id = input;
         self
+    }
+    /// <p>The ID of the backup.</p>
+    pub fn get_backup_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_id
     }
     /// Consumes the builder and constructs a [`StartStreamingSessionInput`](crate::operation::start_streaming_session::StartStreamingSessionInput).
     pub fn build(

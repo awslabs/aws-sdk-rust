@@ -41,6 +41,10 @@ impl GetRasterDataCollectionInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`GetRasterDataCollectionInput`](crate::operation::get_raster_data_collection::GetRasterDataCollectionInput).
     pub fn build(
         self,

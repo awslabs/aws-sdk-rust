@@ -44,6 +44,12 @@ impl CreateChannelFlowFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateChannelFlow as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_channel_flow::builders::CreateChannelFlowInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +146,10 @@ impl CreateChannelFlowFluentBuilder {
         self.inner = self.inner.set_app_instance_arn(input);
         self
     }
+    /// <p>The ARN of the channel flow request.</p>
+    pub fn get_app_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_instance_arn()
+    }
     /// Appends an item to `Processors`.
     ///
     /// To override the contents of this collection use [`set_processors`](Self::set_processors).
@@ -157,6 +167,12 @@ impl CreateChannelFlowFluentBuilder {
         self.inner = self.inner.set_processors(input);
         self
     }
+    /// <p>Information about the processor Lambda functions.</p>
+    pub fn get_processors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Processor>> {
+        self.inner.get_processors()
+    }
     /// <p>The name of the channel flow.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -166,6 +182,10 @@ impl CreateChannelFlowFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the channel flow.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// Appends an item to `Tags`.
     ///
@@ -184,6 +204,10 @@ impl CreateChannelFlowFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags for the creation request.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>The client token for the request. An Idempotency token.</p>
     pub fn client_request_token(
         mut self,
@@ -199,5 +223,9 @@ impl CreateChannelFlowFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>The client token for the request. An Idempotency token.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
 }

@@ -57,6 +57,12 @@ impl GetDimensionKeyDetailsOutputBuilder {
         self.dimensions = input;
         self
     }
+    /// <p>The details for the requested dimensions.</p>
+    pub fn get_dimensions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionKeyDetail>> {
+        &self.dimensions
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

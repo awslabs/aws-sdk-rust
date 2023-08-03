@@ -51,6 +51,10 @@ impl BatchReadExceptionBuilder {
         self.r#type = input;
         self
     }
+    /// <p>A type of exception, such as <code>InvalidArnException</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::BatchReadExceptionType> {
+        &self.r#type
+    }
     /// <p>An exception message that is associated with the failure.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl BatchReadExceptionBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>An exception message that is associated with the failure.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`BatchReadException`](crate::types::BatchReadException).
     pub fn build(self) -> crate::types::BatchReadException {

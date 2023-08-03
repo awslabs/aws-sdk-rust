@@ -36,6 +36,13 @@ impl DeleteMultiplexProgramFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteMultiplexProgram as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_multiplex_program::builders::DeleteMultiplexProgramInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl DeleteMultiplexProgramFluentBuilder {
         self.inner = self.inner.set_multiplex_id(input);
         self
     }
+    /// The ID of the multiplex that the program belongs to.
+    pub fn get_multiplex_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_multiplex_id()
+    }
     /// The multiplex program name.
     pub fn program_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.program_name(input.into());
@@ -135,5 +146,9 @@ impl DeleteMultiplexProgramFluentBuilder {
     pub fn set_program_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_program_name(input);
         self
+    }
+    /// The multiplex program name.
+    pub fn get_program_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_program_name()
     }
 }

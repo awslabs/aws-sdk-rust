@@ -43,6 +43,10 @@ impl SseKmsEncryptedObjectsBuilder {
         self.status = input;
         self
     }
+    /// <p>Specifies whether Amazon S3 replicates objects created with server-side encryption using an Amazon Web Services KMS key stored in Amazon Web Services Key Management Service.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SseKmsEncryptedObjectsStatus> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`SseKmsEncryptedObjects`](crate::types::SseKmsEncryptedObjects).
     pub fn build(self) -> crate::types::SseKmsEncryptedObjects {
         crate::types::SseKmsEncryptedObjects {

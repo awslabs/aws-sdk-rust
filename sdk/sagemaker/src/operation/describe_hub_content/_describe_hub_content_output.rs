@@ -178,6 +178,10 @@ impl DescribeHubContentOutputBuilder {
         self.hub_content_name = input;
         self
     }
+    /// <p>The name of the hub content.</p>
+    pub fn get_hub_content_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hub_content_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the hub content.</p>
     pub fn hub_content_arn(
         mut self,
@@ -193,6 +197,10 @@ impl DescribeHubContentOutputBuilder {
     ) -> Self {
         self.hub_content_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the hub content.</p>
+    pub fn get_hub_content_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hub_content_arn
     }
     /// <p>The version of the hub content.</p>
     pub fn hub_content_version(
@@ -210,6 +218,10 @@ impl DescribeHubContentOutputBuilder {
         self.hub_content_version = input;
         self
     }
+    /// <p>The version of the hub content.</p>
+    pub fn get_hub_content_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hub_content_version
+    }
     /// <p>The type of hub content.</p>
     pub fn hub_content_type(mut self, input: crate::types::HubContentType) -> Self {
         self.hub_content_type = ::std::option::Option::Some(input);
@@ -222,6 +234,10 @@ impl DescribeHubContentOutputBuilder {
     ) -> Self {
         self.hub_content_type = input;
         self
+    }
+    /// <p>The type of hub content.</p>
+    pub fn get_hub_content_type(&self) -> &::std::option::Option<crate::types::HubContentType> {
+        &self.hub_content_type
     }
     /// <p>The document schema version for the hub content.</p>
     pub fn document_schema_version(
@@ -239,6 +255,10 @@ impl DescribeHubContentOutputBuilder {
         self.document_schema_version = input;
         self
     }
+    /// <p>The document schema version for the hub content.</p>
+    pub fn get_document_schema_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_schema_version
+    }
     /// <p>The name of the hub that contains the content.</p>
     pub fn hub_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_name = ::std::option::Option::Some(input.into());
@@ -249,6 +269,10 @@ impl DescribeHubContentOutputBuilder {
         self.hub_name = input;
         self
     }
+    /// <p>The name of the hub that contains the content.</p>
+    pub fn get_hub_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hub_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the hub that contains the content. </p>
     pub fn hub_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_arn = ::std::option::Option::Some(input.into());
@@ -258,6 +282,10 @@ impl DescribeHubContentOutputBuilder {
     pub fn set_hub_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hub_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the hub that contains the content. </p>
+    pub fn get_hub_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hub_arn
     }
     /// <p>The display name of the hub content.</p>
     pub fn hub_content_display_name(
@@ -275,6 +303,10 @@ impl DescribeHubContentOutputBuilder {
         self.hub_content_display_name = input;
         self
     }
+    /// <p>The display name of the hub content.</p>
+    pub fn get_hub_content_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hub_content_display_name
+    }
     /// <p>A description of the hub content.</p>
     pub fn hub_content_description(
         mut self,
@@ -290,6 +322,10 @@ impl DescribeHubContentOutputBuilder {
     ) -> Self {
         self.hub_content_description = input;
         self
+    }
+    /// <p>A description of the hub content.</p>
+    pub fn get_hub_content_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hub_content_description
     }
     /// <p>A string that provides a description of the hub content. This string can include links, tables, and standard markdown formating.</p>
     pub fn hub_content_markdown(
@@ -307,6 +343,10 @@ impl DescribeHubContentOutputBuilder {
         self.hub_content_markdown = input;
         self
     }
+    /// <p>A string that provides a description of the hub content. This string can include links, tables, and standard markdown formating.</p>
+    pub fn get_hub_content_markdown(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hub_content_markdown
+    }
     /// <p>The hub content document that describes information about the hub content such as type, associated containers, scripts, and more.</p>
     pub fn hub_content_document(
         mut self,
@@ -322,6 +362,10 @@ impl DescribeHubContentOutputBuilder {
     ) -> Self {
         self.hub_content_document = input;
         self
+    }
+    /// <p>The hub content document that describes information about the hub content such as type, associated containers, scripts, and more.</p>
+    pub fn get_hub_content_document(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hub_content_document
     }
     /// Appends an item to `hub_content_search_keywords`.
     ///
@@ -345,6 +389,12 @@ impl DescribeHubContentOutputBuilder {
         self.hub_content_search_keywords = input;
         self
     }
+    /// <p>The searchable keywords for the hub content.</p>
+    pub fn get_hub_content_search_keywords(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.hub_content_search_keywords
+    }
     /// Appends an item to `hub_content_dependencies`.
     ///
     /// To override the contents of this collection use [`set_hub_content_dependencies`](Self::set_hub_content_dependencies).
@@ -364,6 +414,12 @@ impl DescribeHubContentOutputBuilder {
         self.hub_content_dependencies = input;
         self
     }
+    /// <p>The location of any dependencies that the hub content has, such as scripts, model artifacts, datasets, or notebooks.</p>
+    pub fn get_hub_content_dependencies(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HubContentDependency>> {
+        &self.hub_content_dependencies
+    }
     /// <p>The status of the hub content.</p>
     pub fn hub_content_status(mut self, input: crate::types::HubContentStatus) -> Self {
         self.hub_content_status = ::std::option::Option::Some(input);
@@ -376,6 +432,10 @@ impl DescribeHubContentOutputBuilder {
     ) -> Self {
         self.hub_content_status = input;
         self
+    }
+    /// <p>The status of the hub content.</p>
+    pub fn get_hub_content_status(&self) -> &::std::option::Option<crate::types::HubContentStatus> {
+        &self.hub_content_status
     }
     /// <p>The failure reason if importing hub content failed.</p>
     pub fn failure_reason(
@@ -393,6 +453,10 @@ impl DescribeHubContentOutputBuilder {
         self.failure_reason = input;
         self
     }
+    /// <p>The failure reason if importing hub content failed.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
     /// <p>The date and time that hub content was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -405,6 +469,10 @@ impl DescribeHubContentOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The date and time that hub content was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

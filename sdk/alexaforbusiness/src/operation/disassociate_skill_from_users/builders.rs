@@ -37,6 +37,10 @@ impl DisassociateSkillFromUsersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateSkillFromUsers as a reference.
+    pub fn as_input(&self) -> &crate::operation::disassociate_skill_from_users::builders::DisassociateSkillFromUsersInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,5 +130,9 @@ impl DisassociateSkillFromUsersFluentBuilder {
     pub fn set_skill_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_skill_id(input);
         self
+    }
+    /// <p> The private skill ID you want to make unavailable for enrolled users.</p>
+    pub fn get_skill_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_skill_id()
     }
 }

@@ -57,6 +57,10 @@ impl ListIdentityProvidersInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to be included in the next page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -67,6 +71,10 @@ impl ListIdentityProvidersInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to be included in the next page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The ARN of the web portal.</p>
     pub fn portal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portal_arn = ::std::option::Option::Some(input.into());
@@ -76,6 +84,10 @@ impl ListIdentityProvidersInputBuilder {
     pub fn set_portal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.portal_arn = input;
         self
+    }
+    /// <p>The ARN of the web portal.</p>
+    pub fn get_portal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portal_arn
     }
     /// Consumes the builder and constructs a [`ListIdentityProvidersInput`](crate::operation::list_identity_providers::ListIdentityProvidersInput).
     pub fn build(

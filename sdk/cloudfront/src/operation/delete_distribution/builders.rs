@@ -36,6 +36,12 @@ impl DeleteDistributionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteDistribution as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_distribution::builders::DeleteDistributionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DeleteDistributionFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The distribution ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The value of the <code>ETag</code> header that you received when you disabled the distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.if_match(input.into());
@@ -135,5 +145,9 @@ impl DeleteDistributionFluentBuilder {
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_if_match(input);
         self
+    }
+    /// <p>The value of the <code>ETag</code> header that you received when you disabled the distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_if_match()
     }
 }

@@ -108,6 +108,10 @@ impl EnvironmentResourceDescriptionBuilder {
         self.environment_name = input;
         self
     }
+    /// <p>The name of the environment.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
+    }
     /// Appends an item to `auto_scaling_groups`.
     ///
     /// To override the contents of this collection use [`set_auto_scaling_groups`](Self::set_auto_scaling_groups).
@@ -126,6 +130,12 @@ impl EnvironmentResourceDescriptionBuilder {
     ) -> Self {
         self.auto_scaling_groups = input;
         self
+    }
+    /// <p> The <code>AutoScalingGroups</code> used by this environment. </p>
+    pub fn get_auto_scaling_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroup>> {
+        &self.auto_scaling_groups
     }
     /// Appends an item to `instances`.
     ///
@@ -146,6 +156,10 @@ impl EnvironmentResourceDescriptionBuilder {
         self.instances = input;
         self
     }
+    /// <p>The Amazon EC2 instances used by this environment.</p>
+    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Instance>> {
+        &self.instances
+    }
     /// Appends an item to `launch_configurations`.
     ///
     /// To override the contents of this collection use [`set_launch_configurations`](Self::set_launch_configurations).
@@ -164,6 +178,12 @@ impl EnvironmentResourceDescriptionBuilder {
     ) -> Self {
         self.launch_configurations = input;
         self
+    }
+    /// <p>The Auto Scaling launch configurations in use by this environment.</p>
+    pub fn get_launch_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchConfiguration>> {
+        &self.launch_configurations
     }
     /// Appends an item to `launch_templates`.
     ///
@@ -184,6 +204,12 @@ impl EnvironmentResourceDescriptionBuilder {
         self.launch_templates = input;
         self
     }
+    /// <p>The Amazon EC2 launch templates in use by this environment.</p>
+    pub fn get_launch_templates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplate>> {
+        &self.launch_templates
+    }
     /// Appends an item to `load_balancers`.
     ///
     /// To override the contents of this collection use [`set_load_balancers`](Self::set_load_balancers).
@@ -202,6 +228,12 @@ impl EnvironmentResourceDescriptionBuilder {
     ) -> Self {
         self.load_balancers = input;
         self
+    }
+    /// <p>The LoadBalancers in use by this environment.</p>
+    pub fn get_load_balancers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>> {
+        &self.load_balancers
     }
     /// Appends an item to `triggers`.
     ///
@@ -222,6 +254,10 @@ impl EnvironmentResourceDescriptionBuilder {
         self.triggers = input;
         self
     }
+    /// <p>The <code>AutoScaling</code> triggers in use by this environment. </p>
+    pub fn get_triggers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Trigger>> {
+        &self.triggers
+    }
     /// Appends an item to `queues`.
     ///
     /// To override the contents of this collection use [`set_queues`](Self::set_queues).
@@ -240,6 +276,10 @@ impl EnvironmentResourceDescriptionBuilder {
     ) -> Self {
         self.queues = input;
         self
+    }
+    /// <p>The queues used by this environment.</p>
+    pub fn get_queues(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Queue>> {
+        &self.queues
     }
     /// Consumes the builder and constructs a [`EnvironmentResourceDescription`](crate::types::EnvironmentResourceDescription).
     pub fn build(self) -> crate::types::EnvironmentResourceDescription {

@@ -41,6 +41,10 @@ impl ShuffleConfigBuilder {
         self.seed = input;
         self
     }
+    /// <p>Determines the shuffling order in <code>ShuffleConfig</code> value.</p>
+    pub fn get_seed(&self) -> &::std::option::Option<i64> {
+        &self.seed
+    }
     /// Consumes the builder and constructs a [`ShuffleConfig`](crate::types::ShuffleConfig).
     pub fn build(self) -> crate::types::ShuffleConfig {
         crate::types::ShuffleConfig {

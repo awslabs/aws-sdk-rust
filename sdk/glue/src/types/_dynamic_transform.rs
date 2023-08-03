@@ -97,6 +97,10 @@ impl DynamicTransformBuilder {
         self.name = input;
         self
     }
+    /// <p>Specifies the name of the dynamic transform.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Specifies the name of the dynamic transform as it appears in the Glue Studio visual editor.</p>
     pub fn transform_name(
         mut self,
@@ -112,6 +116,10 @@ impl DynamicTransformBuilder {
     ) -> Self {
         self.transform_name = input;
         self
+    }
+    /// <p>Specifies the name of the dynamic transform as it appears in the Glue Studio visual editor.</p>
+    pub fn get_transform_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transform_name
     }
     /// Appends an item to `inputs`.
     ///
@@ -132,6 +140,10 @@ impl DynamicTransformBuilder {
         self.inputs = input;
         self
     }
+    /// <p>Specifies the inputs for the dynamic transform that are required.</p>
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inputs
+    }
     /// Appends an item to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
@@ -151,6 +163,12 @@ impl DynamicTransformBuilder {
         self.parameters = input;
         self
     }
+    /// <p>Specifies the parameters of the dynamic transform.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TransformConfigParameter>> {
+        &self.parameters
+    }
     /// <p>Specifies the name of the function of the dynamic transform.</p>
     pub fn function_name(
         mut self,
@@ -167,6 +185,10 @@ impl DynamicTransformBuilder {
         self.function_name = input;
         self
     }
+    /// <p>Specifies the name of the function of the dynamic transform.</p>
+    pub fn get_function_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_name
+    }
     /// <p>Specifies the path of the dynamic transform source and config files.</p>
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path = ::std::option::Option::Some(input.into());
@@ -177,6 +199,10 @@ impl DynamicTransformBuilder {
         self.path = input;
         self
     }
+    /// <p>Specifies the path of the dynamic transform source and config files.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
+    }
     /// <p>This field is not used and will be deprecated in future release.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -186,6 +212,10 @@ impl DynamicTransformBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>This field is not used and will be deprecated in future release.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Appends an item to `output_schemas`.
     ///
@@ -205,6 +235,12 @@ impl DynamicTransformBuilder {
     ) -> Self {
         self.output_schemas = input;
         self
+    }
+    /// <p>Specifies the data schema for the dynamic transform.</p>
+    pub fn get_output_schemas(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>> {
+        &self.output_schemas
     }
     /// Consumes the builder and constructs a [`DynamicTransform`](crate::types::DynamicTransform).
     pub fn build(self) -> crate::types::DynamicTransform {

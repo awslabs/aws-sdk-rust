@@ -99,6 +99,10 @@ impl SamlOptionsInputBuilder {
         self.enabled = input;
         self
     }
+    /// <p>True to enable SAML authentication for a domain.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>The SAML Identity Provider's information.</p>
     pub fn idp(mut self, input: crate::types::SamlIdp) -> Self {
         self.idp = ::std::option::Option::Some(input);
@@ -108,6 +112,10 @@ impl SamlOptionsInputBuilder {
     pub fn set_idp(mut self, input: ::std::option::Option<crate::types::SamlIdp>) -> Self {
         self.idp = input;
         self
+    }
+    /// <p>The SAML Identity Provider's information.</p>
+    pub fn get_idp(&self) -> &::std::option::Option<crate::types::SamlIdp> {
+        &self.idp
     }
     /// <p>The SAML master user name, which is stored in the domain's internal user database.</p>
     pub fn master_user_name(
@@ -125,6 +133,10 @@ impl SamlOptionsInputBuilder {
         self.master_user_name = input;
         self
     }
+    /// <p>The SAML master user name, which is stored in the domain's internal user database.</p>
+    pub fn get_master_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_user_name
+    }
     /// <p>The backend role that the SAML master user is mapped to.</p>
     pub fn master_backend_role(
         mut self,
@@ -141,6 +153,10 @@ impl SamlOptionsInputBuilder {
         self.master_backend_role = input;
         self
     }
+    /// <p>The backend role that the SAML master user is mapped to.</p>
+    pub fn get_master_backend_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_backend_role
+    }
     /// <p>Element of the SAML assertion to use for the user name. Default is <code>NameID</code>.</p>
     pub fn subject_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subject_key = ::std::option::Option::Some(input.into());
@@ -150,6 +166,10 @@ impl SamlOptionsInputBuilder {
     pub fn set_subject_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subject_key = input;
         self
+    }
+    /// <p>Element of the SAML assertion to use for the user name. Default is <code>NameID</code>.</p>
+    pub fn get_subject_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subject_key
     }
     /// <p>Element of the SAML assertion to use for backend roles. Default is <code>roles</code>.</p>
     pub fn roles_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -161,6 +181,10 @@ impl SamlOptionsInputBuilder {
         self.roles_key = input;
         self
     }
+    /// <p>Element of the SAML assertion to use for backend roles. Default is <code>roles</code>.</p>
+    pub fn get_roles_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.roles_key
+    }
     /// <p>The duration, in minutes, after which a user session becomes inactive. Acceptable values are between 1 and 1440, and the default value is 60.</p>
     pub fn session_timeout_minutes(mut self, input: i32) -> Self {
         self.session_timeout_minutes = ::std::option::Option::Some(input);
@@ -170,6 +194,10 @@ impl SamlOptionsInputBuilder {
     pub fn set_session_timeout_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.session_timeout_minutes = input;
         self
+    }
+    /// <p>The duration, in minutes, after which a user session becomes inactive. Acceptable values are between 1 and 1440, and the default value is 60.</p>
+    pub fn get_session_timeout_minutes(&self) -> &::std::option::Option<i32> {
+        &self.session_timeout_minutes
     }
     /// Consumes the builder and constructs a [`SamlOptionsInput`](crate::types::SamlOptionsInput).
     pub fn build(self) -> crate::types::SamlOptionsInput {

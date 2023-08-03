@@ -56,6 +56,12 @@ impl AssociateIamInstanceProfileOutputBuilder {
         self.iam_instance_profile_association = input;
         self
     }
+    /// <p>Information about the IAM instance profile association.</p>
+    pub fn get_iam_instance_profile_association(
+        &self,
+    ) -> &::std::option::Option<crate::types::IamInstanceProfileAssociation> {
+        &self.iam_instance_profile_association
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

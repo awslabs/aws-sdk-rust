@@ -36,6 +36,12 @@ impl GetConfiguredTableFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetConfiguredTable as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_configured_table::builders::GetConfiguredTableInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl GetConfiguredTableFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_configured_table_identifier(input);
         self
+    }
+    /// <p>The unique ID for the configured table to retrieve.</p>
+    pub fn get_configured_table_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configured_table_identifier()
     }
 }

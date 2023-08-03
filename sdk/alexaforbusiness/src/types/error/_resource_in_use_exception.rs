@@ -75,6 +75,10 @@ impl ResourceInUseExceptionBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>A unique, user-specified identifier for the request that ensures idempotency.</p>
     pub fn client_request_token(
         mut self,
@@ -90,6 +94,10 @@ impl ResourceInUseExceptionBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>A unique, user-specified identifier for the request that ensures idempotency.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

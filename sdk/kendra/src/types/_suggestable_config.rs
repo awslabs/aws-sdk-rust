@@ -54,6 +54,10 @@ impl SuggestableConfigBuilder {
         self.attribute_name = input;
         self
     }
+    /// <p>The name of the document field/attribute.</p>
+    pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_name
+    }
     /// <p> <code>TRUE</code> means the document field/attribute is suggestible, so the contents within the field can be used for query suggestions.</p>
     pub fn suggestable(mut self, input: bool) -> Self {
         self.suggestable = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl SuggestableConfigBuilder {
     pub fn set_suggestable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.suggestable = input;
         self
+    }
+    /// <p> <code>TRUE</code> means the document field/attribute is suggestible, so the contents within the field can be used for query suggestions.</p>
+    pub fn get_suggestable(&self) -> &::std::option::Option<bool> {
+        &self.suggestable
     }
     /// Consumes the builder and constructs a [`SuggestableConfig`](crate::types::SuggestableConfig).
     pub fn build(self) -> crate::types::SuggestableConfig {

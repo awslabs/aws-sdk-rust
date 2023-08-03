@@ -43,6 +43,10 @@ impl AuditLogDestinationConfigurationBuilder {
         self.destination = input;
         self
     }
+    /// <p>Contains information about an audit log destination.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::Destination> {
+        &self.destination
+    }
     /// Consumes the builder and constructs a [`AuditLogDestinationConfiguration`](crate::types::AuditLogDestinationConfiguration).
     pub fn build(self) -> crate::types::AuditLogDestinationConfiguration {
         crate::types::AuditLogDestinationConfiguration {

@@ -58,6 +58,10 @@ impl ListRecordsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListRecords as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_records::builders::ListRecordsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -147,6 +151,10 @@ impl ListRecordsFluentBuilder {
         self
     }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_pool_id()
+    }
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub fn identity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_id(input.into());
         self
@@ -155,6 +163,10 @@ impl ListRecordsFluentBuilder {
     pub fn set_identity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_id(input);
         self
+    }
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    pub fn get_identity_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_id()
     }
     /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -166,6 +178,10 @@ impl ListRecordsFluentBuilder {
         self.inner = self.inner.set_dataset_name(input);
         self
     }
+    /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
+    pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dataset_name()
+    }
     /// The last server sync count for this record.
     pub fn last_sync_count(mut self, input: i64) -> Self {
         self.inner = self.inner.last_sync_count(input);
@@ -175,6 +191,10 @@ impl ListRecordsFluentBuilder {
     pub fn set_last_sync_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_last_sync_count(input);
         self
+    }
+    /// The last server sync count for this record.
+    pub fn get_last_sync_count(&self) -> &::std::option::Option<i64> {
+        self.inner.get_last_sync_count()
     }
     /// A pagination token for obtaining the next page of results.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -186,6 +206,10 @@ impl ListRecordsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// A pagination token for obtaining the next page of results.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// The maximum number of results to be returned.
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -195,6 +219,10 @@ impl ListRecordsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// The maximum number of results to be returned.
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// A token containing a session ID, identity ID, and expiration.
     pub fn sync_session_token(
@@ -211,5 +239,9 @@ impl ListRecordsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sync_session_token(input);
         self
+    }
+    /// A token containing a session ID, identity ID, and expiration.
+    pub fn get_sync_session_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sync_session_token()
     }
 }

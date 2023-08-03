@@ -86,6 +86,10 @@ impl UpdateStudioInputBuilder {
         self.admin_role_arn = input;
         self
     }
+    /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
+    pub fn get_admin_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.admin_role_arn
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -95,6 +99,10 @@ impl UpdateStudioInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>A friendly name for the studio.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -106,6 +114,10 @@ impl UpdateStudioInputBuilder {
         self.display_name = input;
         self
     }
+    /// <p>A friendly name for the studio.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
@@ -115,6 +127,10 @@ impl UpdateStudioInputBuilder {
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.studio_id = input;
         self
+    }
+    /// <p>The studio ID. </p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_id
     }
     /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
     pub fn user_role_arn(
@@ -131,6 +147,10 @@ impl UpdateStudioInputBuilder {
     ) -> Self {
         self.user_role_arn = input;
         self
+    }
+    /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
+    pub fn get_user_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_role_arn
     }
     /// Consumes the builder and constructs a [`UpdateStudioInput`](crate::operation::update_studio::UpdateStudioInput).
     pub fn build(

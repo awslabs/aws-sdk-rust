@@ -37,6 +37,10 @@ impl DeletePolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeletePolicy as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_policy::builders::DeletePolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -120,5 +124,10 @@ impl DeletePolicyFluentBuilder {
     pub fn set_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_id(input);
         self
+    }
+    /// <p>The unique identifier (ID) of the policy that you want to delete. You can get the ID from the <code>ListPolicies</code> or <code>ListPoliciesForTarget</code> operations.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
+    pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_id()
     }
 }

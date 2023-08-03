@@ -81,6 +81,10 @@ impl CreateKxEnvironmentInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the kdb environment that you want to create.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description for the kdb environment.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -91,6 +95,10 @@ impl CreateKxEnvironmentInputBuilder {
         self.description = input;
         self
     }
+    /// <p>A description for the kdb environment.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The KMS key ID to encrypt your data in the FinSpace environment.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -100,6 +108,10 @@ impl CreateKxEnvironmentInputBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>The KMS key ID to encrypt your data in the FinSpace environment.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -126,6 +138,14 @@ impl CreateKxEnvironmentInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>A list of key-value pairs to label the kdb environment. You can add up to 50 tags to your kdb environment.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -135,6 +155,10 @@ impl CreateKxEnvironmentInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateKxEnvironmentInput`](crate::operation::create_kx_environment::CreateKxEnvironmentInput).
     pub fn build(

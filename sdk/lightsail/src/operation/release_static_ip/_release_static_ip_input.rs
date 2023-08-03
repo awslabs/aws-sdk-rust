@@ -45,6 +45,10 @@ impl ReleaseStaticIpInputBuilder {
         self.static_ip_name = input;
         self
     }
+    /// <p>The name of the static IP to delete.</p>
+    pub fn get_static_ip_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.static_ip_name
+    }
     /// Consumes the builder and constructs a [`ReleaseStaticIpInput`](crate::operation::release_static_ip::ReleaseStaticIpInput).
     pub fn build(
         self,

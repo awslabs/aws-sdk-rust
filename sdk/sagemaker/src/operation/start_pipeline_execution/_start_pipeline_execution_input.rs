@@ -101,6 +101,10 @@ impl StartPipelineExecutionInputBuilder {
         self.pipeline_name = input;
         self
     }
+    /// <p>The name or Amazon Resource Name (ARN) of the pipeline.</p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_name
+    }
     /// <p>The display name of the pipeline execution.</p>
     pub fn pipeline_execution_display_name(
         mut self,
@@ -116,6 +120,12 @@ impl StartPipelineExecutionInputBuilder {
     ) -> Self {
         self.pipeline_execution_display_name = input;
         self
+    }
+    /// <p>The display name of the pipeline execution.</p>
+    pub fn get_pipeline_execution_display_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_execution_display_name
     }
     /// Appends an item to `pipeline_parameters`.
     ///
@@ -136,6 +146,12 @@ impl StartPipelineExecutionInputBuilder {
         self.pipeline_parameters = input;
         self
     }
+    /// <p>Contains a list of pipeline parameters. This list can be empty. </p>
+    pub fn get_pipeline_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+        &self.pipeline_parameters
+    }
     /// <p>The description of the pipeline execution.</p>
     pub fn pipeline_execution_description(
         mut self,
@@ -151,6 +167,12 @@ impl StartPipelineExecutionInputBuilder {
     ) -> Self {
         self.pipeline_execution_description = input;
         self
+    }
+    /// <p>The description of the pipeline execution.</p>
+    pub fn get_pipeline_execution_description(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_execution_description
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once.</p>
     pub fn client_request_token(
@@ -168,6 +190,10 @@ impl StartPipelineExecutionInputBuilder {
         self.client_request_token = input;
         self
     }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
+    }
     /// <p>This configuration, if specified, overrides the parallelism configuration of the parent pipeline for this specific run.</p>
     pub fn parallelism_configuration(
         mut self,
@@ -184,6 +210,12 @@ impl StartPipelineExecutionInputBuilder {
         self.parallelism_configuration = input;
         self
     }
+    /// <p>This configuration, if specified, overrides the parallelism configuration of the parent pipeline for this specific run.</p>
+    pub fn get_parallelism_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ParallelismConfiguration> {
+        &self.parallelism_configuration
+    }
     /// <p>The selective execution configuration applied to the pipeline run.</p>
     pub fn selective_execution_config(
         mut self,
@@ -199,6 +231,12 @@ impl StartPipelineExecutionInputBuilder {
     ) -> Self {
         self.selective_execution_config = input;
         self
+    }
+    /// <p>The selective execution configuration applied to the pipeline run.</p>
+    pub fn get_selective_execution_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::SelectiveExecutionConfig> {
+        &self.selective_execution_config
     }
     /// Consumes the builder and constructs a [`StartPipelineExecutionInput`](crate::operation::start_pipeline_execution::StartPipelineExecutionInput).
     pub fn build(

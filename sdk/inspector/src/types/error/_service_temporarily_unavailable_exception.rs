@@ -80,6 +80,10 @@ impl ServiceTemporarilyUnavailableExceptionBuilder {
         self.message = input;
         self
     }
+    /// <p>Details of the exception error.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>You can wait and then retry your request.</p>
     pub fn can_retry(mut self, input: bool) -> Self {
         self.can_retry = ::std::option::Option::Some(input);
@@ -89,6 +93,10 @@ impl ServiceTemporarilyUnavailableExceptionBuilder {
     pub fn set_can_retry(mut self, input: ::std::option::Option<bool>) -> Self {
         self.can_retry = input;
         self
+    }
+    /// <p>You can wait and then retry your request.</p>
+    pub fn get_can_retry(&self) -> &::std::option::Option<bool> {
+        &self.can_retry
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

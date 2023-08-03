@@ -54,6 +54,10 @@ impl WebhookAuthConfigurationBuilder {
         self.allowed_ip_range = input;
         self
     }
+    /// <p>The property used to configure acceptance of webhooks in an IP address range. For IP, only the <code>AllowedIPRange</code> property must be set. This property must be set to a valid CIDR range.</p>
+    pub fn get_allowed_ip_range(&self) -> &::std::option::Option<::std::string::String> {
+        &self.allowed_ip_range
+    }
     /// <p>The property used to configure GitHub authentication. For GITHUB_HMAC, only the <code>SecretToken</code> property must be set.</p>
     pub fn secret_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_token = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl WebhookAuthConfigurationBuilder {
     pub fn set_secret_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_token = input;
         self
+    }
+    /// <p>The property used to configure GitHub authentication. For GITHUB_HMAC, only the <code>SecretToken</code> property must be set.</p>
+    pub fn get_secret_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_token
     }
     /// Consumes the builder and constructs a [`WebhookAuthConfiguration`](crate::types::WebhookAuthConfiguration).
     pub fn build(self) -> crate::types::WebhookAuthConfiguration {

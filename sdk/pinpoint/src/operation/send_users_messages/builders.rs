@@ -36,6 +36,12 @@ impl SendUsersMessagesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SendUsersMessages as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::send_users_messages::builders::SendUsersMessagesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl SendUsersMessagesFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>Specifies the configuration and other settings for a message to send to all the endpoints that are associated with a list of users.</p>
     pub fn send_users_message_request(
         mut self,
@@ -147,5 +157,11 @@ impl SendUsersMessagesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_send_users_message_request(input);
         self
+    }
+    /// <p>Specifies the configuration and other settings for a message to send to all the endpoints that are associated with a list of users.</p>
+    pub fn get_send_users_message_request(
+        &self,
+    ) -> &::std::option::Option<crate::types::SendUsersMessageRequest> {
+        self.inner.get_send_users_message_request()
     }
 }

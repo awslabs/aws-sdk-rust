@@ -74,6 +74,10 @@ impl CreateVpcConnectorInputBuilder {
         self.vpc_connector_name = input;
         self
     }
+    /// <p>A name for the VPC connector.</p>
+    pub fn get_vpc_connector_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_connector_name
+    }
     /// Appends an item to `subnets`.
     ///
     /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
@@ -97,6 +101,12 @@ impl CreateVpcConnectorInputBuilder {
         self.subnets = input;
         self
     }
+    /// <p>A list of IDs of subnets that App Runner should use when it associates your service with a custom Amazon VPC. Specify IDs of subnets of a single Amazon VPC. App Runner determines the Amazon VPC from the subnets you specify.</p> <note>
+    /// <p> App Runner currently only provides support for IPv4. </p>
+    /// </note>
+    pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnets
+    }
     /// Appends an item to `security_groups`.
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
@@ -119,6 +129,12 @@ impl CreateVpcConnectorInputBuilder {
         self.security_groups = input;
         self
     }
+    /// <p>A list of IDs of security groups that App Runner should use for access to Amazon Web Services resources under the specified subnets. If not specified, App Runner uses the default security group of the Amazon VPC. The default security group allows all outbound traffic.</p>
+    pub fn get_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_groups
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -137,6 +153,10 @@ impl CreateVpcConnectorInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of metadata items that you can associate with your VPC connector resource. A tag is a key-value pair.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateVpcConnectorInput`](crate::operation::create_vpc_connector::CreateVpcConnectorInput).
     pub fn build(

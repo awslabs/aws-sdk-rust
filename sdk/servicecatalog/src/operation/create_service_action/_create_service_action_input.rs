@@ -166,6 +166,10 @@ impl CreateServiceActionInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The self-service action name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The service action definition type. For example, <code>SSM_AUTOMATION</code>.</p>
     pub fn definition_type(mut self, input: crate::types::ServiceActionDefinitionType) -> Self {
         self.definition_type = ::std::option::Option::Some(input);
@@ -178,6 +182,12 @@ impl CreateServiceActionInputBuilder {
     ) -> Self {
         self.definition_type = input;
         self
+    }
+    /// <p>The service action definition type. For example, <code>SSM_AUTOMATION</code>.</p>
+    pub fn get_definition_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServiceActionDefinitionType> {
+        &self.definition_type
     }
     /// Adds a key-value pair to `definition`.
     ///
@@ -265,6 +275,46 @@ impl CreateServiceActionInputBuilder {
         self.definition = input;
         self
     }
+    /// <p>The self-service action definition. Can be one of the following:</p>
+    /// <dl>
+    /// <dt>
+    /// Name
+    /// </dt>
+    /// <dd>
+    /// <p>The name of the Amazon Web Services Systems Manager document (SSM document). For example, <code>AWS-RestartEC2Instance</code>.</p>
+    /// <p>If you are using a shared SSM document, you must provide the ARN instead of the name.</p>
+    /// </dd>
+    /// <dt>
+    /// Version
+    /// </dt>
+    /// <dd>
+    /// <p>The Amazon Web Services Systems Manager automation document version. For example, <code>"Version": "1"</code> </p>
+    /// </dd>
+    /// <dt>
+    /// AssumeRole
+    /// </dt>
+    /// <dd>
+    /// <p>The Amazon Resource Name (ARN) of the role that performs the self-service actions on your behalf. For example, <code>"AssumeRole": "arn:aws:iam::12345678910:role/ActionRole"</code>.</p>
+    /// <p>To reuse the provisioned product launch role, set to <code>"AssumeRole": "LAUNCH_ROLE"</code>.</p>
+    /// </dd>
+    /// <dt>
+    /// Parameters
+    /// </dt>
+    /// <dd>
+    /// <p>The list of parameters in JSON format.</p>
+    /// <p>For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_definition(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::ServiceActionDefinitionKey,
+            ::std::string::String,
+        >,
+    > {
+        &self.definition
+    }
     /// <p>The self-service action description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -274,6 +324,10 @@ impl CreateServiceActionInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The self-service action description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The language code.</p>
     /// <ul>
@@ -299,6 +353,14 @@ impl CreateServiceActionInputBuilder {
         self.accept_language = input;
         self
     }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accept_language
+    }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub fn idempotency_token(
         mut self,
@@ -314,6 +376,10 @@ impl CreateServiceActionInputBuilder {
     ) -> Self {
         self.idempotency_token = input;
         self
+    }
+    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
+    pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.idempotency_token
     }
     /// Consumes the builder and constructs a [`CreateServiceActionInput`](crate::operation::create_service_action::CreateServiceActionInput).
     pub fn build(

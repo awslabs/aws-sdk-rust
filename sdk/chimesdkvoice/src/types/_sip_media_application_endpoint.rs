@@ -45,6 +45,10 @@ impl SipMediaApplicationEndpointBuilder {
         self.lambda_arn = input;
         self
     }
+    /// <p>Valid Amazon Resource Name (ARN) of the Lambda function, version, or alias. The function must be created in the same AWS Region as the SIP media application.</p>
+    pub fn get_lambda_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lambda_arn
+    }
     /// Consumes the builder and constructs a [`SipMediaApplicationEndpoint`](crate::types::SipMediaApplicationEndpoint).
     pub fn build(self) -> crate::types::SipMediaApplicationEndpoint {
         crate::types::SipMediaApplicationEndpoint {

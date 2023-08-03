@@ -36,6 +36,10 @@ impl AssociateSigninDelegateGroupsWithAccountFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateSigninDelegateGroupsWithAccount as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_signin_delegate_groups_with_account::builders::AssociateSigninDelegateGroupsWithAccountInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl AssociateSigninDelegateGroupsWithAccountFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// Appends an item to `SigninDelegateGroups`.
     ///
     /// To override the contents of this collection use [`set_signin_delegate_groups`](Self::set_signin_delegate_groups).
@@ -116,5 +124,11 @@ impl AssociateSigninDelegateGroupsWithAccountFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_signin_delegate_groups(input);
         self
+    }
+    /// <p>The sign-in delegate groups.</p>
+    pub fn get_signin_delegate_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SigninDelegateGroup>> {
+        self.inner.get_signin_delegate_groups()
     }
 }

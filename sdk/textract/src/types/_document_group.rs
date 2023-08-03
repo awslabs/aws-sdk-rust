@@ -70,6 +70,10 @@ impl DocumentGroupBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of document that Amazon Textract has detected. See <a href="https://docs.aws.amazon.com/textract/latest/dg/lending-response-objects.html">Analyze Lending Response Objects</a> for a list of all types returned by Textract.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// Appends an item to `split_documents`.
     ///
     /// To override the contents of this collection use [`set_split_documents`](Self::set_split_documents).
@@ -88,6 +92,12 @@ impl DocumentGroupBuilder {
     ) -> Self {
         self.split_documents = input;
         self
+    }
+    /// <p>An array that contains information about the pages of a document, defined by logical boundary.</p>
+    pub fn get_split_documents(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SplitDocument>> {
+        &self.split_documents
     }
     /// Appends an item to `detected_signatures`.
     ///
@@ -108,6 +118,12 @@ impl DocumentGroupBuilder {
         self.detected_signatures = input;
         self
     }
+    /// <p>A list of the detected signatures found in a document group.</p>
+    pub fn get_detected_signatures(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DetectedSignature>> {
+        &self.detected_signatures
+    }
     /// Appends an item to `undetected_signatures`.
     ///
     /// To override the contents of this collection use [`set_undetected_signatures`](Self::set_undetected_signatures).
@@ -126,6 +142,12 @@ impl DocumentGroupBuilder {
     ) -> Self {
         self.undetected_signatures = input;
         self
+    }
+    /// <p>A list of any expected signatures not found in a document group.</p>
+    pub fn get_undetected_signatures(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UndetectedSignature>> {
+        &self.undetected_signatures
     }
     /// Consumes the builder and constructs a [`DocumentGroup`](crate::types::DocumentGroup).
     pub fn build(self) -> crate::types::DocumentGroup {

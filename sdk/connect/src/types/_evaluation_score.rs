@@ -56,6 +56,10 @@ impl EvaluationScoreBuilder {
         self.percentage = input;
         self
     }
+    /// <p>The score percentage for an item in a contact evaluation.</p>
+    pub fn get_percentage(&self) -> &::std::option::Option<f64> {
+        &self.percentage
+    }
     /// <p>The flag to mark the item as not applicable for scoring.</p>
     pub fn not_applicable(mut self, input: bool) -> Self {
         self.not_applicable = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl EvaluationScoreBuilder {
         self.not_applicable = input;
         self
     }
+    /// <p>The flag to mark the item as not applicable for scoring.</p>
+    pub fn get_not_applicable(&self) -> &::std::option::Option<bool> {
+        &self.not_applicable
+    }
     /// <p>The flag that marks the item as automatic fail. If the item or a child item gets an automatic fail answer, this flag will be true.</p>
     pub fn automatic_fail(mut self, input: bool) -> Self {
         self.automatic_fail = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl EvaluationScoreBuilder {
     pub fn set_automatic_fail(mut self, input: ::std::option::Option<bool>) -> Self {
         self.automatic_fail = input;
         self
+    }
+    /// <p>The flag that marks the item as automatic fail. If the item or a child item gets an automatic fail answer, this flag will be true.</p>
+    pub fn get_automatic_fail(&self) -> &::std::option::Option<bool> {
+        &self.automatic_fail
     }
     /// Consumes the builder and constructs a [`EvaluationScore`](crate::types::EvaluationScore).
     pub fn build(self) -> crate::types::EvaluationScore {

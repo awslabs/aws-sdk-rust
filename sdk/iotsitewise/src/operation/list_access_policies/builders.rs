@@ -36,6 +36,12 @@ impl ListAccessPoliciesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListAccessPolicies as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_access_policies::builders::ListAccessPoliciesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +146,10 @@ impl ListAccessPoliciesFluentBuilder {
         self.inner = self.inner.set_identity_type(input);
         self
     }
+    /// <p>The type of identity (IAM Identity Center user, IAM Identity Center group, or IAM user). This parameter is required if you specify <code>identityId</code>.</p>
+    pub fn get_identity_type(&self) -> &::std::option::Option<crate::types::IdentityType> {
+        self.inner.get_identity_type()
+    }
     /// <p>The ID of the identity. This parameter is required if you specify <code>USER</code> or <code>GROUP</code> for <code>identityType</code>.</p>
     pub fn identity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_id(input.into());
@@ -149,6 +159,10 @@ impl ListAccessPoliciesFluentBuilder {
     pub fn set_identity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_id(input);
         self
+    }
+    /// <p>The ID of the identity. This parameter is required if you specify <code>USER</code> or <code>GROUP</code> for <code>identityType</code>.</p>
+    pub fn get_identity_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_id()
     }
     /// <p>The type of resource (portal or project). This parameter is required if you specify <code>resourceId</code>.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
@@ -163,6 +177,10 @@ impl ListAccessPoliciesFluentBuilder {
         self.inner = self.inner.set_resource_type(input);
         self
     }
+    /// <p>The type of resource (portal or project). This parameter is required if you specify <code>resourceId</code>.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        self.inner.get_resource_type()
+    }
     /// <p>The ID of the resource. This parameter is required if you specify <code>resourceType</code>.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
@@ -172,6 +190,10 @@ impl ListAccessPoliciesFluentBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_id(input);
         self
+    }
+    /// <p>The ID of the resource. This parameter is required if you specify <code>resourceType</code>.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
     }
     /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>. This parameter is required if you specify <code>IAM</code> for <code>identityType</code>.</p>
     pub fn iam_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -183,6 +205,10 @@ impl ListAccessPoliciesFluentBuilder {
         self.inner = self.inner.set_iam_arn(input);
         self
     }
+    /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>. This parameter is required if you specify <code>IAM</code> for <code>identityType</code>.</p>
+    pub fn get_iam_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_iam_arn()
+    }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -192,6 +218,10 @@ impl ListAccessPoliciesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 50</p>
@@ -204,5 +234,10 @@ impl ListAccessPoliciesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return for each paginated request.</p>
+    /// <p>Default: 50</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

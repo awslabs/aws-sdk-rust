@@ -36,6 +36,13 @@ impl DescribeFHIRImportJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeFHIRImportJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_fhir_import_job::builders::DescribeFhirImportJobInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl DescribeFHIRImportJobFluentBuilder {
         self.inner = self.inner.set_datastore_id(input);
         self
     }
+    /// <p>The AWS-generated ID of the data store.</p>
+    pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_datastore_id()
+    }
     /// <p>The AWS-generated job ID.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_id(input.into());
@@ -135,5 +146,9 @@ impl DescribeFHIRImportJobFluentBuilder {
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_id(input);
         self
+    }
+    /// <p>The AWS-generated job ID.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_id()
     }
 }

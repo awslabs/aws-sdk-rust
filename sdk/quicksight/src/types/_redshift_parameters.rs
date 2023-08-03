@@ -64,6 +64,10 @@ impl RedshiftParametersBuilder {
         self.host = input;
         self
     }
+    /// <p>Host. This field can be blank if <code>ClusterId</code> is provided.</p>
+    pub fn get_host(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host
+    }
     /// <p>Port. This field can be blank if the <code>ClusterId</code> is provided.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl RedshiftParametersBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
+    }
+    /// <p>Port. This field can be blank if the <code>ClusterId</code> is provided.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// <p>Database.</p>
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl RedshiftParametersBuilder {
         self.database = input;
         self
     }
+    /// <p>Database.</p>
+    pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database
+    }
     /// <p>Cluster ID. This field can be blank if the <code>Host</code> and <code>Port</code> are provided.</p>
     pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_id = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl RedshiftParametersBuilder {
     pub fn set_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_id = input;
         self
+    }
+    /// <p>Cluster ID. This field can be blank if the <code>Host</code> and <code>Port</code> are provided.</p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_id
     }
     /// Consumes the builder and constructs a [`RedshiftParameters`](crate::types::RedshiftParameters).
     pub fn build(self) -> crate::types::RedshiftParameters {

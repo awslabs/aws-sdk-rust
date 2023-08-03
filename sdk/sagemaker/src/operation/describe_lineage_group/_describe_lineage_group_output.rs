@@ -109,6 +109,10 @@ impl DescribeLineageGroupOutputBuilder {
         self.lineage_group_name = input;
         self
     }
+    /// <p>The name of the lineage group.</p>
+    pub fn get_lineage_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lineage_group_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
     pub fn lineage_group_arn(
         mut self,
@@ -125,6 +129,10 @@ impl DescribeLineageGroupOutputBuilder {
         self.lineage_group_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
+    pub fn get_lineage_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lineage_group_arn
+    }
     /// <p>The display name of the lineage group.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -135,6 +143,10 @@ impl DescribeLineageGroupOutputBuilder {
         self.display_name = input;
         self
     }
+    /// <p>The display name of the lineage group.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// <p>The description of the lineage group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -144,6 +156,10 @@ impl DescribeLineageGroupOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the lineage group.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The creation time of lineage group.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -158,6 +174,10 @@ impl DescribeLineageGroupOutputBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The creation time of lineage group.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn created_by(mut self, input: crate::types::UserContext) -> Self {
         self.created_by = ::std::option::Option::Some(input);
@@ -170,6 +190,10 @@ impl DescribeLineageGroupOutputBuilder {
     ) -> Self {
         self.created_by = input;
         self
+    }
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<crate::types::UserContext> {
+        &self.created_by
     }
     /// <p>The last modified time of the lineage group.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -184,6 +208,10 @@ impl DescribeLineageGroupOutputBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p>The last modified time of the lineage group.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn last_modified_by(mut self, input: crate::types::UserContext) -> Self {
         self.last_modified_by = ::std::option::Option::Some(input);
@@ -196,6 +224,10 @@ impl DescribeLineageGroupOutputBuilder {
     ) -> Self {
         self.last_modified_by = input;
         self
+    }
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    pub fn get_last_modified_by(&self) -> &::std::option::Option<crate::types::UserContext> {
+        &self.last_modified_by
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

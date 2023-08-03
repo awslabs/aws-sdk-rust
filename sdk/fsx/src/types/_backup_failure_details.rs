@@ -40,6 +40,10 @@ impl BackupFailureDetailsBuilder {
         self.message = input;
         self
     }
+    /// <p>A message describing the backup-creation failure.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Consumes the builder and constructs a [`BackupFailureDetails`](crate::types::BackupFailureDetails).
     pub fn build(self) -> crate::types::BackupFailureDetails {
         crate::types::BackupFailureDetails {

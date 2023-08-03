@@ -46,6 +46,10 @@ impl BatchAttachToIndexResponseBuilder {
         self.attached_object_identifier = input;
         self
     }
+    /// <p>The <code>ObjectIdentifier</code> of the object that was attached to the index.</p>
+    pub fn get_attached_object_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attached_object_identifier
+    }
     /// Consumes the builder and constructs a [`BatchAttachToIndexResponse`](crate::types::BatchAttachToIndexResponse).
     pub fn build(self) -> crate::types::BatchAttachToIndexResponse {
         crate::types::BatchAttachToIndexResponse {

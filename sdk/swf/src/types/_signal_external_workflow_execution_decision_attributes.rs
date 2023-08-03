@@ -81,6 +81,10 @@ impl SignalExternalWorkflowExecutionDecisionAttributesBuilder {
         self.workflow_id = input;
         self
     }
+    /// <p> The <code>workflowId</code> of the workflow execution to be signaled.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_id
+    }
     /// <p>The <code>runId</code> of the workflow execution to be signaled.</p>
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.run_id = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl SignalExternalWorkflowExecutionDecisionAttributesBuilder {
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.run_id = input;
         self
+    }
+    /// <p>The <code>runId</code> of the workflow execution to be signaled.</p>
+    pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.run_id
     }
     /// <p> The name of the signal.The target workflow execution uses the signal name and input to process the signal.</p>
     pub fn signal_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -101,6 +109,10 @@ impl SignalExternalWorkflowExecutionDecisionAttributesBuilder {
         self.signal_name = input;
         self
     }
+    /// <p> The name of the signal.The target workflow execution uses the signal name and input to process the signal.</p>
+    pub fn get_signal_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signal_name
+    }
     /// <p> The input data to be provided with the signal. The target workflow execution uses the signal name and input data to process the signal.</p>
     pub fn input(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input = ::std::option::Option::Some(input.into());
@@ -111,6 +123,10 @@ impl SignalExternalWorkflowExecutionDecisionAttributesBuilder {
         self.input = input;
         self
     }
+    /// <p> The input data to be provided with the signal. The target workflow execution uses the signal name and input data to process the signal.</p>
+    pub fn get_input(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input
+    }
     /// <p>The data attached to the event that can be used by the decider in subsequent decision tasks.</p>
     pub fn control(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control = ::std::option::Option::Some(input.into());
@@ -120,6 +136,10 @@ impl SignalExternalWorkflowExecutionDecisionAttributesBuilder {
     pub fn set_control(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.control = input;
         self
+    }
+    /// <p>The data attached to the event that can be used by the decider in subsequent decision tasks.</p>
+    pub fn get_control(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control
     }
     /// Consumes the builder and constructs a [`SignalExternalWorkflowExecutionDecisionAttributes`](crate::types::SignalExternalWorkflowExecutionDecisionAttributes).
     pub fn build(self) -> crate::types::SignalExternalWorkflowExecutionDecisionAttributes {

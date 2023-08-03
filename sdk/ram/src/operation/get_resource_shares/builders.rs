@@ -36,6 +36,12 @@ impl GetResourceSharesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetResourceShares as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_resource_shares::builders::GetResourceSharesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -147,6 +153,12 @@ impl GetResourceSharesFluentBuilder {
         self.inner = self.inner.set_resource_share_arns(input);
         self
     }
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of individual resource shares that you want information about.</p>
+    pub fn get_resource_share_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_resource_share_arns()
+    }
     /// <p>Specifies that you want to retrieve details of only those resource shares that have this status.</p>
     pub fn resource_share_status(mut self, input: crate::types::ResourceShareStatus) -> Self {
         self.inner = self.inner.resource_share_status(input);
@@ -159,6 +171,12 @@ impl GetResourceSharesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_share_status(input);
         self
+    }
+    /// <p>Specifies that you want to retrieve details of only those resource shares that have this status.</p>
+    pub fn get_resource_share_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceShareStatus> {
+        self.inner.get_resource_share_status()
     }
     /// <p>Specifies that you want to retrieve details of only those resource shares that match the following:</p>
     /// <ul>
@@ -181,6 +199,14 @@ impl GetResourceSharesFluentBuilder {
         self.inner = self.inner.set_resource_owner(input);
         self
     }
+    /// <p>Specifies that you want to retrieve details of only those resource shares that match the following:</p>
+    /// <ul>
+    /// <li> <p> <b> <code>SELF</code> </b> – resource shares that your account shares with other accounts</p> </li>
+    /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resource shares that other accounts share with your account</p> </li>
+    /// </ul>
+    pub fn get_resource_owner(&self) -> &::std::option::Option<crate::types::ResourceOwner> {
+        self.inner.get_resource_owner()
+    }
     /// <p>Specifies the name of an individual resource share that you want to retrieve details about.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -190,6 +216,10 @@ impl GetResourceSharesFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>Specifies the name of an individual resource share that you want to retrieve details about.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// Appends an item to `tagFilters`.
     ///
@@ -208,6 +238,12 @@ impl GetResourceSharesFluentBuilder {
         self.inner = self.inner.set_tag_filters(input);
         self
     }
+    /// <p>Specifies that you want to retrieve details of only those resource shares that match the specified tag keys and values.</p>
+    pub fn get_tag_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagFilter>> {
+        self.inner.get_tag_filters()
+    }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -218,6 +254,10 @@ impl GetResourceSharesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -227,6 +267,10 @@ impl GetResourceSharesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>Specifies that you want to retrieve details of only those resource shares that use the managed permission with this <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a>.</p>
     pub fn permission_arn(
@@ -244,6 +288,10 @@ impl GetResourceSharesFluentBuilder {
         self.inner = self.inner.set_permission_arn(input);
         self
     }
+    /// <p>Specifies that you want to retrieve details of only those resource shares that use the managed permission with this <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a>.</p>
+    pub fn get_permission_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_permission_arn()
+    }
     /// <p>Specifies that you want to retrieve details for only those resource shares that use the specified version of the managed permission.</p>
     pub fn permission_version(mut self, input: i32) -> Self {
         self.inner = self.inner.permission_version(input);
@@ -253,5 +301,9 @@ impl GetResourceSharesFluentBuilder {
     pub fn set_permission_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_permission_version(input);
         self
+    }
+    /// <p>Specifies that you want to retrieve details for only those resource shares that use the specified version of the managed permission.</p>
+    pub fn get_permission_version(&self) -> &::std::option::Option<i32> {
+        self.inner.get_permission_version()
     }
 }

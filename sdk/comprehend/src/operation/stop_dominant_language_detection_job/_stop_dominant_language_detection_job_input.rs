@@ -39,6 +39,10 @@ impl StopDominantLanguageDetectionJobInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The identifier of the dominant language detection job to stop.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// Consumes the builder and constructs a [`StopDominantLanguageDetectionJobInput`](crate::operation::stop_dominant_language_detection_job::StopDominantLanguageDetectionJobInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::stop_dominant_language_detection_job::StopDominantLanguageDetectionJobInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

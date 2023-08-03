@@ -114,6 +114,10 @@ impl IngestionDestinationBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the ingestion destination.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the ingestion.</p>
     pub fn ingestion_arn(
         mut self,
@@ -129,6 +133,10 @@ impl IngestionDestinationBuilder {
     ) -> Self {
         self.ingestion_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the ingestion.</p>
+    pub fn get_ingestion_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ingestion_arn
     }
     /// <p>Contains information about how ingested data is processed.</p>
     pub fn processing_configuration(
@@ -146,6 +154,12 @@ impl IngestionDestinationBuilder {
         self.processing_configuration = input;
         self
     }
+    /// <p>Contains information about how ingested data is processed.</p>
+    pub fn get_processing_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProcessingConfiguration> {
+        &self.processing_configuration
+    }
     /// <p>Contains information about the destination of ingested data.</p>
     pub fn destination_configuration(
         mut self,
@@ -161,6 +175,12 @@ impl IngestionDestinationBuilder {
     ) -> Self {
         self.destination_configuration = input;
         self
+    }
+    /// <p>Contains information about the destination of ingested data.</p>
+    pub fn get_destination_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DestinationConfiguration> {
+        &self.destination_configuration
     }
     /// <p>The state of the ingestion destination.</p>
     /// <p>The following states are possible:</p>
@@ -185,6 +205,15 @@ impl IngestionDestinationBuilder {
         self.status = input;
         self
     }
+    /// <p>The state of the ingestion destination.</p>
+    /// <p>The following states are possible:</p>
+    /// <ul>
+    /// <li> <p> <code>Active</code>: The ingestion destination is active and is ready to be used.</p> </li>
+    /// <li> <p> <code>Failed</code>: The ingestion destination has failed. If the ingestion destination is in this state, you should verify the ingestion destination configuration and try again.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::IngestionDestinationStatus> {
+        &self.status
+    }
     /// <p>The reason for the current status of the ingestion destination.</p>
     /// <p>Only present when the <code>status</code> of ingestion destination is <code>Failed</code>.</p>
     pub fn status_reason(
@@ -203,6 +232,11 @@ impl IngestionDestinationBuilder {
         self.status_reason = input;
         self
     }
+    /// <p>The reason for the current status of the ingestion destination.</p>
+    /// <p>Only present when the <code>status</code> of ingestion destination is <code>Failed</code>.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
+    }
     /// <p>The timestamp of when the ingestion destination was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -216,6 +250,10 @@ impl IngestionDestinationBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The timestamp of when the ingestion destination was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The timestamp of when the ingestion destination was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -228,6 +266,10 @@ impl IngestionDestinationBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// <p>The timestamp of when the ingestion destination was last updated.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     /// Consumes the builder and constructs a [`IngestionDestination`](crate::types::IngestionDestination).
     pub fn build(self) -> crate::types::IngestionDestination {

@@ -68,6 +68,10 @@ impl CreateMapOutputBuilder {
         self.map_name = input;
         self
     }
+    /// <p>The name of the map resource.</p>
+    pub fn get_map_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.map_name
+    }
     /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web Services.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
@@ -84,6 +88,13 @@ impl CreateMapOutputBuilder {
         self.map_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web Services.</p>
+    /// <ul>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
+    /// </ul>
+    pub fn get_map_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.map_arn
+    }
     /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
@@ -96,6 +107,10 @@ impl CreateMapOutputBuilder {
     ) -> Self {
         self.create_time = input;
         self
+    }
+    /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

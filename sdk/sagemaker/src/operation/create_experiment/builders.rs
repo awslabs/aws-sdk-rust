@@ -43,6 +43,12 @@ impl CreateExperimentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateExperiment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_experiment::builders::CreateExperimentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,6 +145,10 @@ impl CreateExperimentFluentBuilder {
         self.inner = self.inner.set_experiment_name(input);
         self
     }
+    /// <p>The name of the experiment. The name must be unique in your Amazon Web Services account and is not case-sensitive.</p>
+    pub fn get_experiment_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_experiment_name()
+    }
     /// <p>The name of the experiment as displayed. The name doesn't need to be unique. If you don't specify <code>DisplayName</code>, the value in <code>ExperimentName</code> is displayed.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
@@ -149,6 +159,10 @@ impl CreateExperimentFluentBuilder {
         self.inner = self.inner.set_display_name(input);
         self
     }
+    /// <p>The name of the experiment as displayed. The name doesn't need to be unique. If you don't specify <code>DisplayName</code>, the value in <code>ExperimentName</code> is displayed.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_display_name()
+    }
     /// <p>The description of the experiment.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -158,6 +172,10 @@ impl CreateExperimentFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the experiment.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `Tags`.
     ///
@@ -175,5 +193,9 @@ impl CreateExperimentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of tags to associate with the experiment. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

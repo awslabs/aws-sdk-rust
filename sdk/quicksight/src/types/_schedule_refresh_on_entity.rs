@@ -51,6 +51,10 @@ impl ScheduleRefreshOnEntityBuilder {
         self.day_of_week = input;
         self
     }
+    /// <p>The day of the week that you want to schedule a refresh on.</p>
+    pub fn get_day_of_week(&self) -> &::std::option::Option<crate::types::DayOfWeek> {
+        &self.day_of_week
+    }
     /// <p>The day of the month that you want to schedule refresh on.</p>
     pub fn day_of_month(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.day_of_month = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl ScheduleRefreshOnEntityBuilder {
     pub fn set_day_of_month(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.day_of_month = input;
         self
+    }
+    /// <p>The day of the month that you want to schedule refresh on.</p>
+    pub fn get_day_of_month(&self) -> &::std::option::Option<::std::string::String> {
+        &self.day_of_month
     }
     /// Consumes the builder and constructs a [`ScheduleRefreshOnEntity`](crate::types::ScheduleRefreshOnEntity).
     pub fn build(self) -> crate::types::ScheduleRefreshOnEntity {

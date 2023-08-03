@@ -62,6 +62,10 @@ impl SkillGroupDataBuilder {
         self.skill_group_arn = input;
         self
     }
+    /// <p>The skill group ARN of a skill group.</p>
+    pub fn get_skill_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.skill_group_arn
+    }
     /// <p>The skill group name of a skill group.</p>
     pub fn skill_group_name(
         mut self,
@@ -78,6 +82,10 @@ impl SkillGroupDataBuilder {
         self.skill_group_name = input;
         self
     }
+    /// <p>The skill group name of a skill group.</p>
+    pub fn get_skill_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.skill_group_name
+    }
     /// <p>The description of a skill group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -87,6 +95,10 @@ impl SkillGroupDataBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of a skill group.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`SkillGroupData`](crate::types::SkillGroupData).
     pub fn build(self) -> crate::types::SkillGroupData {

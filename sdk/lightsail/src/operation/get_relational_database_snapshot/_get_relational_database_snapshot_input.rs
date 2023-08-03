@@ -45,6 +45,12 @@ impl GetRelationalDatabaseSnapshotInputBuilder {
         self.relational_database_snapshot_name = input;
         self
     }
+    /// <p>The name of the database snapshot for which to get information.</p>
+    pub fn get_relational_database_snapshot_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.relational_database_snapshot_name
+    }
     /// Consumes the builder and constructs a [`GetRelationalDatabaseSnapshotInput`](crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotInput).
     pub fn build(
         self,

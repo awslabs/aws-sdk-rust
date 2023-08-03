@@ -81,6 +81,10 @@ impl ListDataSourceSyncJobsInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the data source connector.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The identifier of the index used with the data source connector.</p>
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl ListDataSourceSyncJobsInputBuilder {
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.index_id = input;
         self
+    }
+    /// <p>The identifier of the index used with the data source connector.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_id
     }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of jobs.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -101,6 +109,10 @@ impl ListDataSourceSyncJobsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of jobs.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of synchronization jobs to return in the response. If there are fewer results in the list, this response contains only the actual results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -110,6 +122,10 @@ impl ListDataSourceSyncJobsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of synchronization jobs to return in the response. If there are fewer results in the list, this response contains only the actual results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>When specified, the synchronization jobs returned in the list are limited to jobs between the specified dates.</p>
     pub fn start_time_filter(mut self, input: crate::types::TimeRange) -> Self {
@@ -124,6 +140,10 @@ impl ListDataSourceSyncJobsInputBuilder {
         self.start_time_filter = input;
         self
     }
+    /// <p>When specified, the synchronization jobs returned in the list are limited to jobs between the specified dates.</p>
+    pub fn get_start_time_filter(&self) -> &::std::option::Option<crate::types::TimeRange> {
+        &self.start_time_filter
+    }
     /// <p>Only returns synchronization jobs with the <code>Status</code> field equal to the specified status.</p>
     pub fn status_filter(mut self, input: crate::types::DataSourceSyncJobStatus) -> Self {
         self.status_filter = ::std::option::Option::Some(input);
@@ -136,6 +156,12 @@ impl ListDataSourceSyncJobsInputBuilder {
     ) -> Self {
         self.status_filter = input;
         self
+    }
+    /// <p>Only returns synchronization jobs with the <code>Status</code> field equal to the specified status.</p>
+    pub fn get_status_filter(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataSourceSyncJobStatus> {
+        &self.status_filter
     }
     /// Consumes the builder and constructs a [`ListDataSourceSyncJobsInput`](crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsInput).
     pub fn build(

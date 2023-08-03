@@ -40,6 +40,10 @@ impl DescribeImagesFilterBuilder {
         self.tag_status = input;
         self
     }
+    /// <p>The tag status with which to filter your <code>DescribeImages</code> results. You can filter results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.</p>
+    pub fn get_tag_status(&self) -> &::std::option::Option<crate::types::TagStatus> {
+        &self.tag_status
+    }
     /// Consumes the builder and constructs a [`DescribeImagesFilter`](crate::types::DescribeImagesFilter).
     pub fn build(self) -> crate::types::DescribeImagesFilter {
         crate::types::DescribeImagesFilter {

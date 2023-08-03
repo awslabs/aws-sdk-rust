@@ -91,6 +91,10 @@ impl DescribePackageInputBuilder {
         self.domain = input;
         self
     }
+    /// <p>The name of the domain that contains the repository that contains the package.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
+    }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_owner = ::std::option::Option::Some(input.into());
@@ -100,6 +104,10 @@ impl DescribePackageInputBuilder {
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_owner = input;
         self
+    }
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_owner
     }
     /// <p>The name of the repository that contains the requested package. </p>
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -111,6 +119,10 @@ impl DescribePackageInputBuilder {
         self.repository = input;
         self
     }
+    /// <p>The name of the repository that contains the requested package. </p>
+    pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository
+    }
     /// <p>A format that specifies the type of the requested package.</p>
     pub fn format(mut self, input: crate::types::PackageFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
@@ -120,6 +132,10 @@ impl DescribePackageInputBuilder {
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::PackageFormat>) -> Self {
         self.format = input;
         self
+    }
+    /// <p>A format that specifies the type of the requested package.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::PackageFormat> {
+        &self.format
     }
     /// <p>The namespace of the requested package. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -143,6 +159,16 @@ impl DescribePackageInputBuilder {
         self.namespace = input;
         self
     }
+    /// <p>The namespace of the requested package. The package component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. The namespace is required when requesting Maven packages. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
+    /// </ul>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
+    }
     /// <p>The name of the requested package.</p>
     pub fn package(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package = ::std::option::Option::Some(input.into());
@@ -152,6 +178,10 @@ impl DescribePackageInputBuilder {
     pub fn set_package(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package = input;
         self
+    }
+    /// <p>The name of the requested package.</p>
+    pub fn get_package(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package
     }
     /// Consumes the builder and constructs a [`DescribePackageInput`](crate::operation::describe_package::DescribePackageInput).
     pub fn build(

@@ -49,6 +49,12 @@ impl ValidDbInstanceModificationsMessageBuilder {
         self.storage = input;
         self
     }
+    /// <p>Valid storage options for your DB instance.</p>
+    pub fn get_storage(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidStorageOptions>> {
+        &self.storage
+    }
     /// Consumes the builder and constructs a [`ValidDbInstanceModificationsMessage`](crate::types::ValidDbInstanceModificationsMessage).
     pub fn build(self) -> crate::types::ValidDbInstanceModificationsMessage {
         crate::types::ValidDbInstanceModificationsMessage {

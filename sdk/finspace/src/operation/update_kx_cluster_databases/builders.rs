@@ -37,6 +37,10 @@ impl UpdateKxClusterDatabasesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateKxClusterDatabases as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_kx_cluster_databases::builders::UpdateKxClusterDatabasesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl UpdateKxClusterDatabasesFluentBuilder {
         self.inner = self.inner.set_environment_id(input);
         self
     }
+    /// <p>The unique identifier of a kdb environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_id()
+    }
     /// <p>A unique name for the cluster that you want to modify.</p>
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_name(input.into());
@@ -143,6 +151,10 @@ impl UpdateKxClusterDatabasesFluentBuilder {
         self.inner = self.inner.set_cluster_name(input);
         self
     }
+    /// <p>A unique name for the cluster that you want to modify.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_name()
+    }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -152,6 +164,10 @@ impl UpdateKxClusterDatabasesFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// Appends an item to `databases`.
     ///
@@ -169,5 +185,11 @@ impl UpdateKxClusterDatabasesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_databases(input);
         self
+    }
+    /// <p> The structure of databases mounted on the cluster.</p>
+    pub fn get_databases(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseConfiguration>> {
+        self.inner.get_databases()
     }
 }

@@ -56,6 +56,10 @@ impl UpdateDecoderManifestOutputBuilder {
         self.name = input;
         self
     }
+    /// <p> The name of the updated decoder manifest. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p> The Amazon Resource Name (ARN) of the updated decoder manifest. </p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl UpdateDecoderManifestOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p> The Amazon Resource Name (ARN) of the updated decoder manifest. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

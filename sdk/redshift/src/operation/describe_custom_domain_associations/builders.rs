@@ -36,6 +36,10 @@ impl DescribeCustomDomainAssociationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeCustomDomainAssociations as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_custom_domain_associations::builders::DescribeCustomDomainAssociationsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -112,6 +116,10 @@ impl DescribeCustomDomainAssociationsFluentBuilder {
         self.inner = self.inner.set_custom_domain_name(input);
         self
     }
+    /// <p>The custom domain name for the custom domain association.</p>
+    pub fn get_custom_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_custom_domain_name()
+    }
     /// <p>The certificate Amazon Resource Name (ARN) for the custom domain association.</p>
     pub fn custom_domain_certificate_arn(
         mut self,
@@ -128,6 +136,12 @@ impl DescribeCustomDomainAssociationsFluentBuilder {
         self.inner = self.inner.set_custom_domain_certificate_arn(input);
         self
     }
+    /// <p>The certificate Amazon Resource Name (ARN) for the custom domain association.</p>
+    pub fn get_custom_domain_certificate_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_custom_domain_certificate_arn()
+    }
     /// <p>The maximum records setting for the associated custom domain.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.inner = self.inner.max_records(input);
@@ -138,6 +152,10 @@ impl DescribeCustomDomainAssociationsFluentBuilder {
         self.inner = self.inner.set_max_records(input);
         self
     }
+    /// <p>The maximum records setting for the associated custom domain.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
+    }
     /// <p>The marker for the custom domain association.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -147,5 +165,9 @@ impl DescribeCustomDomainAssociationsFluentBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
+    }
+    /// <p>The marker for the custom domain association.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
     }
 }

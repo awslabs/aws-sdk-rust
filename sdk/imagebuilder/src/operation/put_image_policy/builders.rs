@@ -36,6 +36,12 @@ impl PutImagePolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutImagePolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_image_policy::builders::PutImagePolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl PutImagePolicyFluentBuilder {
         self.inner = self.inner.set_image_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the image that this policy should be applied to.</p>
+    pub fn get_image_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_image_arn()
+    }
     /// <p>The policy to apply.</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy(input.into());
@@ -135,5 +145,9 @@ impl PutImagePolicyFluentBuilder {
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy(input);
         self
+    }
+    /// <p>The policy to apply.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy()
     }
 }

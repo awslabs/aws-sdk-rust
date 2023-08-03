@@ -60,6 +60,10 @@ impl PermissionGroupParamsBuilder {
         self.permission_group_id = input;
         self
     }
+    /// <p>The unique identifier for the <code>PermissionGroup</code>.</p>
+    pub fn get_permission_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.permission_group_id
+    }
     /// Appends an item to `dataset_permissions`.
     ///
     /// To override the contents of this collection use [`set_dataset_permissions`](Self::set_dataset_permissions).
@@ -78,6 +82,12 @@ impl PermissionGroupParamsBuilder {
     ) -> Self {
         self.dataset_permissions = input;
         self
+    }
+    /// <p>List of resource permissions.</p>
+    pub fn get_dataset_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+        &self.dataset_permissions
     }
     /// Consumes the builder and constructs a [`PermissionGroupParams`](crate::types::PermissionGroupParams).
     pub fn build(self) -> crate::types::PermissionGroupParams {

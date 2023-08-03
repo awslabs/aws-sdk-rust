@@ -45,6 +45,12 @@ impl DataSetRefreshPropertiesBuilder {
         self.refresh_configuration = input;
         self
     }
+    /// <p>The refresh configuration for a dataset.</p>
+    pub fn get_refresh_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::RefreshConfiguration> {
+        &self.refresh_configuration
+    }
     /// Consumes the builder and constructs a [`DataSetRefreshProperties`](crate::types::DataSetRefreshProperties).
     pub fn build(self) -> crate::types::DataSetRefreshProperties {
         crate::types::DataSetRefreshProperties {

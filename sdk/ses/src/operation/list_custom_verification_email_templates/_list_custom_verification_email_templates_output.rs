@@ -73,6 +73,13 @@ impl ListCustomVerificationEmailTemplatesOutputBuilder {
         self.custom_verification_email_templates = input;
         self
     }
+    /// <p>A list of the custom verification email templates that exist in your account.</p>
+    pub fn get_custom_verification_email_templates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomVerificationEmailTemplate>>
+    {
+        &self.custom_verification_email_templates
+    }
     /// <p>A token indicating that there are additional custom verification email templates available to be listed. Pass this token to a subsequent call to <code>ListTemplates</code> to retrieve the next 50 custom verification email templates.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -82,6 +89,10 @@ impl ListCustomVerificationEmailTemplatesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token indicating that there are additional custom verification email templates available to be listed. Pass this token to a subsequent call to <code>ListTemplates</code> to retrieve the next 50 custom verification email templates.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

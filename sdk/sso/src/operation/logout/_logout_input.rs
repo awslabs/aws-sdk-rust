@@ -44,6 +44,10 @@ impl LogoutInputBuilder {
         self.access_token = input;
         self
     }
+    /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>IAM Identity Center OIDC API Reference Guide</i>.</p>
+    pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_token
+    }
     /// Consumes the builder and constructs a [`LogoutInput`](crate::operation::logout::LogoutInput).
     pub fn build(
         self,

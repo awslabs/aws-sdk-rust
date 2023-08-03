@@ -46,6 +46,10 @@ impl DeleteAuthorizerInputBuilder {
         self.authorizer_name = input;
         self
     }
+    /// <p>The name of the authorizer to delete.</p>
+    pub fn get_authorizer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authorizer_name
+    }
     /// Consumes the builder and constructs a [`DeleteAuthorizerInput`](crate::operation::delete_authorizer::DeleteAuthorizerInput).
     pub fn build(
         self,

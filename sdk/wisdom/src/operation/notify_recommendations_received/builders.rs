@@ -36,6 +36,10 @@ impl NotifyRecommendationsReceivedFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the NotifyRecommendationsReceived as a reference.
+    pub fn as_input(&self) -> &crate::operation::notify_recommendations_received::builders::NotifyRecommendationsReceivedInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl NotifyRecommendationsReceivedFluentBuilder {
         self.inner = self.inner.set_assistant_id(input);
         self
     }
+    /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn get_assistant_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assistant_id()
+    }
     /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.session_id(input.into());
@@ -135,6 +143,10 @@ impl NotifyRecommendationsReceivedFluentBuilder {
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_session_id(input);
         self
+    }
+    /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_session_id()
     }
     /// Appends an item to `recommendationIds`.
     ///
@@ -155,5 +167,11 @@ impl NotifyRecommendationsReceivedFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_recommendation_ids(input);
         self
+    }
+    /// <p>The identifiers of the recommendations.</p>
+    pub fn get_recommendation_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_recommendation_ids()
     }
 }

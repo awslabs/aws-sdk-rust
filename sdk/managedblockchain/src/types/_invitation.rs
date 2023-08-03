@@ -101,6 +101,10 @@ impl InvitationBuilder {
         self.invitation_id = input;
         self
     }
+    /// <p>The unique identifier for the invitation.</p>
+    pub fn get_invitation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.invitation_id
+    }
     /// <p>The date and time that the invitation was created.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -114,6 +118,10 @@ impl InvitationBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>The date and time that the invitation was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
+    }
     /// <p>The date and time that the invitation expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, the invitee can no longer create a member and join the network using this <code>InvitationId</code>.</p>
     pub fn expiration_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expiration_date = ::std::option::Option::Some(input);
@@ -126,6 +134,10 @@ impl InvitationBuilder {
     ) -> Self {
         self.expiration_date = input;
         self
+    }
+    /// <p>The date and time that the invitation expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, the invitee can no longer create a member and join the network using this <code>InvitationId</code>.</p>
+    pub fn get_expiration_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expiration_date
     }
     /// <p>The status of the invitation:</p>
     /// <ul>
@@ -154,6 +166,17 @@ impl InvitationBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the invitation:</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING</code> - The invitee hasn't created a member to join the network, and the invitation hasn't yet expired.</p> </li>
+    /// <li> <p> <code>ACCEPTING</code> - The invitee has begun creating a member, and creation hasn't yet completed.</p> </li>
+    /// <li> <p> <code>ACCEPTED</code> - The invitee created a member and joined the network using the <code>InvitationID</code>.</p> </li>
+    /// <li> <p> <code>REJECTED</code> - The invitee rejected the invitation.</p> </li>
+    /// <li> <p> <code>EXPIRED</code> - The invitee neither created a member nor rejected the invitation before the <code>ExpirationDate</code>.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::InvitationStatus> {
+        &self.status
+    }
     /// <p>A summary of network configuration properties.</p>
     pub fn network_summary(mut self, input: crate::types::NetworkSummary) -> Self {
         self.network_summary = ::std::option::Option::Some(input);
@@ -167,6 +190,10 @@ impl InvitationBuilder {
         self.network_summary = input;
         self
     }
+    /// <p>A summary of network configuration properties.</p>
+    pub fn get_network_summary(&self) -> &::std::option::Option<crate::types::NetworkSummary> {
+        &self.network_summary
+    }
     /// <p>The Amazon Resource Name (ARN) of the invitation. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -176,6 +203,10 @@ impl InvitationBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the invitation. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`Invitation`](crate::types::Invitation).
     pub fn build(self) -> crate::types::Invitation {

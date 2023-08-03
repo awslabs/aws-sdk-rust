@@ -88,6 +88,10 @@ impl IdentityNotificationAttributesBuilder {
         self.bounce_topic = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish bounce notifications.</p>
+    pub fn get_bounce_topic(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bounce_topic
+    }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish complaint notifications.</p>
     pub fn complaint_topic(
         mut self,
@@ -103,6 +107,10 @@ impl IdentityNotificationAttributesBuilder {
     ) -> Self {
         self.complaint_topic = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish complaint notifications.</p>
+    pub fn get_complaint_topic(&self) -> &::std::option::Option<::std::string::String> {
+        &self.complaint_topic
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish delivery notifications.</p>
     pub fn delivery_topic(
@@ -120,6 +128,10 @@ impl IdentityNotificationAttributesBuilder {
         self.delivery_topic = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish delivery notifications.</p>
+    pub fn get_delivery_topic(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delivery_topic
+    }
     /// <p>Describes whether Amazon SES will forward bounce and complaint notifications as email. <code>true</code> indicates that Amazon SES will forward bounce and complaint notifications as email, while <code>false</code> indicates that bounce and complaint notifications will be published only to the specified bounce and complaint Amazon SNS topics.</p>
     pub fn forwarding_enabled(mut self, input: bool) -> Self {
         self.forwarding_enabled = ::std::option::Option::Some(input);
@@ -129,6 +141,10 @@ impl IdentityNotificationAttributesBuilder {
     pub fn set_forwarding_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.forwarding_enabled = input;
         self
+    }
+    /// <p>Describes whether Amazon SES will forward bounce and complaint notifications as email. <code>true</code> indicates that Amazon SES will forward bounce and complaint notifications as email, while <code>false</code> indicates that bounce and complaint notifications will be published only to the specified bounce and complaint Amazon SNS topics.</p>
+    pub fn get_forwarding_enabled(&self) -> &::std::option::Option<bool> {
+        &self.forwarding_enabled
     }
     /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of type <code>Bounce</code>. A value of <code>true</code> specifies that Amazon SES will include headers in bounce notifications, and a value of <code>false</code> specifies that Amazon SES will not include headers in bounce notifications.</p>
     pub fn headers_in_bounce_notifications_enabled(mut self, input: bool) -> Self {
@@ -143,6 +159,10 @@ impl IdentityNotificationAttributesBuilder {
         self.headers_in_bounce_notifications_enabled = input;
         self
     }
+    /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of type <code>Bounce</code>. A value of <code>true</code> specifies that Amazon SES will include headers in bounce notifications, and a value of <code>false</code> specifies that Amazon SES will not include headers in bounce notifications.</p>
+    pub fn get_headers_in_bounce_notifications_enabled(&self) -> &::std::option::Option<bool> {
+        &self.headers_in_bounce_notifications_enabled
+    }
     /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of type <code>Complaint</code>. A value of <code>true</code> specifies that Amazon SES will include headers in complaint notifications, and a value of <code>false</code> specifies that Amazon SES will not include headers in complaint notifications.</p>
     pub fn headers_in_complaint_notifications_enabled(mut self, input: bool) -> Self {
         self.headers_in_complaint_notifications_enabled = ::std::option::Option::Some(input);
@@ -156,6 +176,10 @@ impl IdentityNotificationAttributesBuilder {
         self.headers_in_complaint_notifications_enabled = input;
         self
     }
+    /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of type <code>Complaint</code>. A value of <code>true</code> specifies that Amazon SES will include headers in complaint notifications, and a value of <code>false</code> specifies that Amazon SES will not include headers in complaint notifications.</p>
+    pub fn get_headers_in_complaint_notifications_enabled(&self) -> &::std::option::Option<bool> {
+        &self.headers_in_complaint_notifications_enabled
+    }
     /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of type <code>Delivery</code>. A value of <code>true</code> specifies that Amazon SES will include headers in delivery notifications, and a value of <code>false</code> specifies that Amazon SES will not include headers in delivery notifications.</p>
     pub fn headers_in_delivery_notifications_enabled(mut self, input: bool) -> Self {
         self.headers_in_delivery_notifications_enabled = ::std::option::Option::Some(input);
@@ -168,6 +192,10 @@ impl IdentityNotificationAttributesBuilder {
     ) -> Self {
         self.headers_in_delivery_notifications_enabled = input;
         self
+    }
+    /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of type <code>Delivery</code>. A value of <code>true</code> specifies that Amazon SES will include headers in delivery notifications, and a value of <code>false</code> specifies that Amazon SES will not include headers in delivery notifications.</p>
+    pub fn get_headers_in_delivery_notifications_enabled(&self) -> &::std::option::Option<bool> {
+        &self.headers_in_delivery_notifications_enabled
     }
     /// Consumes the builder and constructs a [`IdentityNotificationAttributes`](crate::types::IdentityNotificationAttributes).
     pub fn build(self) -> crate::types::IdentityNotificationAttributes {

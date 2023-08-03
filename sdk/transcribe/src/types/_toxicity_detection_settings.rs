@@ -50,6 +50,12 @@ impl ToxicityDetectionSettingsBuilder {
         self.toxicity_categories = input;
         self
     }
+    /// <p> If you include <code>ToxicityDetection</code> in your transcription request, you must also include <code>ToxicityCategories</code>. The only accepted value for this parameter is <code>ALL</code>.</p>
+    pub fn get_toxicity_categories(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ToxicityCategory>> {
+        &self.toxicity_categories
+    }
     /// Consumes the builder and constructs a [`ToxicityDetectionSettings`](crate::types::ToxicityDetectionSettings).
     pub fn build(self) -> crate::types::ToxicityDetectionSettings {
         crate::types::ToxicityDetectionSettings {

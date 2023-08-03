@@ -95,6 +95,10 @@ impl GetJourneyDateRangeKpiInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The last date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-26T20:00:00Z for 8:00 PM UTC July 26, 2019.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -108,6 +112,10 @@ impl GetJourneyDateRangeKpiInputBuilder {
         self.end_time = input;
         self
     }
+    /// <p>The last date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-26T20:00:00Z for 8:00 PM UTC July 26, 2019.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>The unique identifier for the journey.</p>
     pub fn journey_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.journey_id = ::std::option::Option::Some(input.into());
@@ -117,6 +125,10 @@ impl GetJourneyDateRangeKpiInputBuilder {
     pub fn set_journey_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.journey_id = input;
         self
+    }
+    /// <p>The unique identifier for the journey.</p>
+    pub fn get_journey_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.journey_id
     }
     /// <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, to retrieve data for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. Examples are email-open-rate and successful-delivery-rate. For a list of valid values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
     pub fn kpi_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -128,6 +140,10 @@ impl GetJourneyDateRangeKpiInputBuilder {
         self.kpi_name = input;
         self
     }
+    /// <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, to retrieve data for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. Examples are email-open-rate and successful-delivery-rate. For a list of valid values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
+    pub fn get_kpi_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kpi_name
+    }
     /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -138,6 +154,10 @@ impl GetJourneyDateRangeKpiInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     pub fn page_size(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.page_size = ::std::option::Option::Some(input.into());
@@ -147,6 +167,10 @@ impl GetJourneyDateRangeKpiInputBuilder {
     pub fn set_page_size(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.page_size = input;
         self
+    }
+    /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<::std::string::String> {
+        &self.page_size
     }
     /// <p>The first date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be fewer than 90 days from the current day.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -160,6 +184,10 @@ impl GetJourneyDateRangeKpiInputBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>The first date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be fewer than 90 days from the current day.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// Consumes the builder and constructs a [`GetJourneyDateRangeKpiInput`](crate::operation::get_journey_date_range_kpi::GetJourneyDateRangeKpiInput).
     pub fn build(

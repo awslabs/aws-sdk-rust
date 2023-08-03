@@ -65,6 +65,10 @@ impl ListRuleBasedMatchesOutputBuilder {
         self.match_ids = input;
         self
     }
+    /// <p>The list of <code>MatchIds</code> for the given domain.</p>
+    pub fn get_match_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.match_ids
+    }
     /// <p>The pagination token from the previous <code>ListRuleBasedMatches</code> API call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl ListRuleBasedMatchesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination token from the previous <code>ListRuleBasedMatches</code> API call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

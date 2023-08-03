@@ -89,6 +89,10 @@ impl HttpRouteMatchBuilder {
         self.prefix = input;
         self
     }
+    /// <p>Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by itself matches all requests to the virtual service name. You can also match for path-based routing of requests. For example, if your virtual service name is <code>my-service.local</code> and you want the route to match requests to <code>my-service.local/metrics</code>, your prefix should be <code>/metrics</code>.</p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
+    }
     /// <p>The client request path to match on.</p>
     pub fn path(mut self, input: crate::types::HttpPathMatch) -> Self {
         self.path = ::std::option::Option::Some(input);
@@ -98,6 +102,10 @@ impl HttpRouteMatchBuilder {
     pub fn set_path(mut self, input: ::std::option::Option<crate::types::HttpPathMatch>) -> Self {
         self.path = input;
         self
+    }
+    /// <p>The client request path to match on.</p>
+    pub fn get_path(&self) -> &::std::option::Option<crate::types::HttpPathMatch> {
+        &self.path
     }
     /// Appends an item to `query_parameters`.
     ///
@@ -118,6 +126,12 @@ impl HttpRouteMatchBuilder {
         self.query_parameters = input;
         self
     }
+    /// <p>The client request query parameters to match on.</p>
+    pub fn get_query_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HttpQueryParameter>> {
+        &self.query_parameters
+    }
     /// <p>The client request method to match on. Specify only one.</p>
     pub fn method(mut self, input: crate::types::HttpMethod) -> Self {
         self.method = ::std::option::Option::Some(input);
@@ -128,6 +142,10 @@ impl HttpRouteMatchBuilder {
         self.method = input;
         self
     }
+    /// <p>The client request method to match on. Specify only one.</p>
+    pub fn get_method(&self) -> &::std::option::Option<crate::types::HttpMethod> {
+        &self.method
+    }
     /// <p>The client request scheme to match on. Specify only one. Applicable only for HTTP2 routes.</p>
     pub fn scheme(mut self, input: crate::types::HttpScheme) -> Self {
         self.scheme = ::std::option::Option::Some(input);
@@ -137,6 +155,10 @@ impl HttpRouteMatchBuilder {
     pub fn set_scheme(mut self, input: ::std::option::Option<crate::types::HttpScheme>) -> Self {
         self.scheme = input;
         self
+    }
+    /// <p>The client request scheme to match on. Specify only one. Applicable only for HTTP2 routes.</p>
+    pub fn get_scheme(&self) -> &::std::option::Option<crate::types::HttpScheme> {
+        &self.scheme
     }
     /// Appends an item to `headers`.
     ///
@@ -157,6 +179,12 @@ impl HttpRouteMatchBuilder {
         self.headers = input;
         self
     }
+    /// <p>The client request headers to match on.</p>
+    pub fn get_headers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HttpRouteHeader>> {
+        &self.headers
+    }
     /// <p>The port number to match on.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -166,6 +194,10 @@ impl HttpRouteMatchBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
+    }
+    /// <p>The port number to match on.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// Consumes the builder and constructs a [`HttpRouteMatch`](crate::types::HttpRouteMatch).
     pub fn build(self) -> crate::types::HttpRouteMatch {

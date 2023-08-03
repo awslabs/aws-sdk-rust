@@ -55,6 +55,10 @@ impl CustomResponseBodyBuilder {
         self.content_type = input;
         self
     }
+    /// <p>The type of content in the payload that you are defining in the <code>Content</code> string.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<crate::types::ResponseContentType> {
+        &self.content_type
+    }
     /// <p>The payload of the custom response. </p>
     /// <p>You can use JSON escape strings in JSON content. To do this, you must specify JSON content in the <code>ContentType</code> setting. </p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
@@ -68,6 +72,12 @@ impl CustomResponseBodyBuilder {
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
+    }
+    /// <p>The payload of the custom response. </p>
+    /// <p>You can use JSON escape strings in JSON content. To do this, you must specify JSON content in the <code>ContentType</code> setting. </p>
+    /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
     }
     /// Consumes the builder and constructs a [`CustomResponseBody`](crate::types::CustomResponseBody).
     pub fn build(self) -> crate::types::CustomResponseBody {

@@ -39,6 +39,10 @@ impl DeleteSchemaInputBuilder {
         self.schema_id = input;
         self
     }
+    /// <p>This is a wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
+    pub fn get_schema_id(&self) -> &::std::option::Option<crate::types::SchemaId> {
+        &self.schema_id
+    }
     /// Consumes the builder and constructs a [`DeleteSchemaInput`](crate::operation::delete_schema::DeleteSchemaInput).
     pub fn build(
         self,

@@ -48,6 +48,10 @@ impl EirpBuilder {
         self.value = input;
         self
     }
+    /// <p>Value of an EIRP. Valid values are between 20.0 to 50.0 dBW.</p>
+    pub fn get_value(&self) -> &::std::option::Option<f64> {
+        &self.value
+    }
     /// <p>Units of an EIRP.</p>
     pub fn units(mut self, input: crate::types::EirpUnits) -> Self {
         self.units = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl EirpBuilder {
     pub fn set_units(mut self, input: ::std::option::Option<crate::types::EirpUnits>) -> Self {
         self.units = input;
         self
+    }
+    /// <p>Units of an EIRP.</p>
+    pub fn get_units(&self) -> &::std::option::Option<crate::types::EirpUnits> {
+        &self.units
     }
     /// Consumes the builder and constructs a [`Eirp`](crate::types::Eirp).
     pub fn build(self) -> crate::types::Eirp {

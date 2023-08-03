@@ -43,6 +43,10 @@ impl F4vSettingsBuilder {
         self.moov_placement = input;
         self
     }
+    /// If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for progressive downloading. Otherwise it is placed normally at the end.
+    pub fn get_moov_placement(&self) -> &::std::option::Option<crate::types::F4vMoovPlacement> {
+        &self.moov_placement
+    }
     /// Consumes the builder and constructs a [`F4vSettings`](crate::types::F4vSettings).
     pub fn build(self) -> crate::types::F4vSettings {
         crate::types::F4vSettings {

@@ -41,6 +41,10 @@ impl DeleteOutpostResolverInputBuilder {
         self.id = input;
         self
     }
+    /// <p>A unique string that identifies the Resolver on the Outpost.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`DeleteOutpostResolverInput`](crate::operation::delete_outpost_resolver::DeleteOutpostResolverInput).
     pub fn build(
         self,

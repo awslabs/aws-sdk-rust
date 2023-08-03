@@ -65,6 +65,10 @@ impl InvalidTriggerConfigExceptionBuilder {
         self.message = input;
         self
     }
+    /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);

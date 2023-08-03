@@ -36,6 +36,12 @@ impl CreateDeploymentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDeployment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_deployment::builders::CreateDeploymentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateDeploymentFluentBuilder {
         self.inner = self.inner.set_app_id(input);
         self
     }
+    /// <p> The unique ID for an Amplify app. </p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_id()
+    }
     /// <p> The name for the branch, for the job. </p>
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.branch_name(input.into());
@@ -135,6 +145,10 @@ impl CreateDeploymentFluentBuilder {
     pub fn set_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_branch_name(input);
         self
+    }
+    /// <p> The name for the branch, for the job. </p>
+    pub fn get_branch_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_branch_name()
     }
     /// Adds a key-value pair to `fileMap`.
     ///
@@ -158,5 +172,13 @@ impl CreateDeploymentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_file_map(input);
         self
+    }
+    /// <p> An optional file map that contains the file name as the key and the file content md5 hash as the value. If this argument is provided, the service will generate a unique upload URL per file. Otherwise, the service will only generate a single upload URL for the zipped files. </p>
+    pub fn get_file_map(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_file_map()
     }
 }

@@ -36,6 +36,12 @@ impl CreateAlgorithmFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateAlgorithm as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_algorithm::builders::CreateAlgorithmInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl CreateAlgorithmFluentBuilder {
         self.inner = self.inner.set_algorithm_name(input);
         self
     }
+    /// <p>The name of the algorithm.</p>
+    pub fn get_algorithm_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_algorithm_name()
+    }
     /// <p>A description of the algorithm.</p>
     pub fn algorithm_description(
         mut self,
@@ -147,6 +157,10 @@ impl CreateAlgorithmFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_algorithm_description(input);
         self
+    }
+    /// <p>A description of the algorithm.</p>
+    pub fn get_algorithm_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_algorithm_description()
     }
     /// <p>Specifies details about training jobs run by this algorithm, including the following:</p>
     /// <ul>
@@ -179,6 +193,21 @@ impl CreateAlgorithmFluentBuilder {
         self.inner = self.inner.set_training_specification(input);
         self
     }
+    /// <p>Specifies details about training jobs run by this algorithm, including the following:</p>
+    /// <ul>
+    /// <li> <p>The Amazon ECR path of the container and the version digest of the algorithm.</p> </li>
+    /// <li> <p>The hyperparameters that the algorithm supports.</p> </li>
+    /// <li> <p>The instance types that the algorithm supports for training.</p> </li>
+    /// <li> <p>Whether the algorithm supports distributed training.</p> </li>
+    /// <li> <p>The metrics that the algorithm emits to Amazon CloudWatch.</p> </li>
+    /// <li> <p>Which metrics that the algorithm emits can be used as the objective metric for hyperparameter tuning jobs.</p> </li>
+    /// <li> <p>The input channels that the algorithm supports for training data. For example, an algorithm might support <code>train</code>, <code>validation</code>, and <code>test</code> channels.</p> </li>
+    /// </ul>
+    pub fn get_training_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::TrainingSpecification> {
+        self.inner.get_training_specification()
+    }
     /// <p>Specifies details about inference jobs that the algorithm runs, including the following:</p>
     /// <ul>
     /// <li> <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p> </li>
@@ -202,6 +231,17 @@ impl CreateAlgorithmFluentBuilder {
         self.inner = self.inner.set_inference_specification(input);
         self
     }
+    /// <p>Specifies details about inference jobs that the algorithm runs, including the following:</p>
+    /// <ul>
+    /// <li> <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p> </li>
+    /// <li> <p>The instance types that the algorithm supports for transform jobs and real-time endpoints used for inference.</p> </li>
+    /// <li> <p>The input and output content formats that the algorithm supports for inference.</p> </li>
+    /// </ul>
+    pub fn get_inference_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::InferenceSpecification> {
+        self.inner.get_inference_specification()
+    }
     /// <p>Specifies configurations for one or more training jobs and that SageMaker runs to test the algorithm's training code and, optionally, one or more batch transform jobs that SageMaker runs to test the algorithm's inference code.</p>
     pub fn validation_specification(
         mut self,
@@ -218,6 +258,12 @@ impl CreateAlgorithmFluentBuilder {
         self.inner = self.inner.set_validation_specification(input);
         self
     }
+    /// <p>Specifies configurations for one or more training jobs and that SageMaker runs to test the algorithm's training code and, optionally, one or more batch transform jobs that SageMaker runs to test the algorithm's inference code.</p>
+    pub fn get_validation_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::AlgorithmValidationSpecification> {
+        self.inner.get_validation_specification()
+    }
     /// <p>Whether to certify the algorithm so that it can be listed in Amazon Web Services Marketplace.</p>
     pub fn certify_for_marketplace(mut self, input: bool) -> Self {
         self.inner = self.inner.certify_for_marketplace(input);
@@ -227,6 +273,10 @@ impl CreateAlgorithmFluentBuilder {
     pub fn set_certify_for_marketplace(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_certify_for_marketplace(input);
         self
+    }
+    /// <p>Whether to certify the algorithm so that it can be listed in Amazon Web Services Marketplace.</p>
+    pub fn get_certify_for_marketplace(&self) -> &::std::option::Option<bool> {
+        self.inner.get_certify_for_marketplace()
     }
     /// Appends an item to `Tags`.
     ///
@@ -244,5 +294,9 @@ impl CreateAlgorithmFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

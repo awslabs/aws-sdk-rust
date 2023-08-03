@@ -69,6 +69,10 @@ impl ComponentRecommendationBuilder {
         self.app_component_name = input;
         self
     }
+    /// <p>The name of the Application Component.</p>
+    pub fn get_app_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_component_name
+    }
     /// <p>The recommendation status.</p>
     pub fn recommendation_status(
         mut self,
@@ -84,6 +88,12 @@ impl ComponentRecommendationBuilder {
     ) -> Self {
         self.recommendation_status = input;
         self
+    }
+    /// <p>The recommendation status.</p>
+    pub fn get_recommendation_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecommendationComplianceStatus> {
+        &self.recommendation_status
     }
     /// Appends an item to `config_recommendations`.
     ///
@@ -103,6 +113,12 @@ impl ComponentRecommendationBuilder {
     ) -> Self {
         self.config_recommendations = input;
         self
+    }
+    /// <p>The list of recommendations.</p>
+    pub fn get_config_recommendations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigRecommendation>> {
+        &self.config_recommendations
     }
     /// Consumes the builder and constructs a [`ComponentRecommendation`](crate::types::ComponentRecommendation).
     pub fn build(self) -> crate::types::ComponentRecommendation {

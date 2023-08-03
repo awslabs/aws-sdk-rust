@@ -62,6 +62,10 @@ impl StartCopyJobOutputBuilder {
         self.copy_job_id = input;
         self
     }
+    /// <p>Uniquely identifies a copy job.</p>
+    pub fn get_copy_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.copy_job_id
+    }
     /// <p>The date and time that a copy job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl StartCopyJobOutputBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>The date and time that a copy job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
+    }
     /// <p>This is a returned boolean value indicating this is a parent (composite) copy job.</p>
     pub fn is_parent(mut self, input: bool) -> Self {
         self.is_parent = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl StartCopyJobOutputBuilder {
     pub fn set_is_parent(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_parent = input;
         self
+    }
+    /// <p>This is a returned boolean value indicating this is a parent (composite) copy job.</p>
+    pub fn get_is_parent(&self) -> &::std::option::Option<bool> {
+        &self.is_parent
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

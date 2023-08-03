@@ -54,6 +54,10 @@ impl DescribeOrganizationConfigurationOutputBuilder {
         self.auto_enable = input;
         self
     }
+    /// <p>Specifies whether Amazon Macie is enabled automatically for accounts that are added to the organization.</p>
+    pub fn get_auto_enable(&self) -> &::std::option::Option<bool> {
+        &self.auto_enable
+    }
     /// <p>Specifies whether the maximum number of Amazon Macie member accounts are part of the organization.</p>
     pub fn max_account_limit_reached(mut self, input: bool) -> Self {
         self.max_account_limit_reached = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl DescribeOrganizationConfigurationOutputBuilder {
     pub fn set_max_account_limit_reached(mut self, input: ::std::option::Option<bool>) -> Self {
         self.max_account_limit_reached = input;
         self
+    }
+    /// <p>Specifies whether the maximum number of Amazon Macie member accounts are part of the organization.</p>
+    pub fn get_max_account_limit_reached(&self) -> &::std::option::Option<bool> {
+        &self.max_account_limit_reached
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

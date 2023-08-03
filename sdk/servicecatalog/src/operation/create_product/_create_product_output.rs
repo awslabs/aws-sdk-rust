@@ -69,6 +69,12 @@ impl CreateProductOutputBuilder {
         self.product_view_detail = input;
         self
     }
+    /// <p>Information about the product view.</p>
+    pub fn get_product_view_detail(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProductViewDetail> {
+        &self.product_view_detail
+    }
     /// <p>Information about the provisioning artifact. </p>
     pub fn provisioning_artifact_detail(
         mut self,
@@ -84,6 +90,12 @@ impl CreateProductOutputBuilder {
     ) -> Self {
         self.provisioning_artifact_detail = input;
         self
+    }
+    /// <p>Information about the provisioning artifact. </p>
+    pub fn get_provisioning_artifact_detail(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProvisioningArtifactDetail> {
+        &self.provisioning_artifact_detail
     }
     /// Appends an item to `tags`.
     ///
@@ -103,6 +115,10 @@ impl CreateProductOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Information about the tags associated with the product.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -41,6 +41,10 @@ impl ClipBuilder {
         self.time_span = input;
         self
     }
+    /// <p>Settings that determine when a clip begins and how long it lasts.</p>
+    pub fn get_time_span(&self) -> &::std::option::Option<crate::types::TimeSpan> {
+        &self.time_span
+    }
     /// Consumes the builder and constructs a [`Clip`](crate::types::Clip).
     pub fn build(self) -> crate::types::Clip {
         crate::types::Clip {

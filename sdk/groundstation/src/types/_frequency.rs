@@ -48,6 +48,10 @@ impl FrequencyBuilder {
         self.value = input;
         self
     }
+    /// <p>Frequency value. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for uplink.</p>
+    pub fn get_value(&self) -> &::std::option::Option<f64> {
+        &self.value
+    }
     /// <p>Frequency units.</p>
     pub fn units(mut self, input: crate::types::FrequencyUnits) -> Self {
         self.units = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl FrequencyBuilder {
     pub fn set_units(mut self, input: ::std::option::Option<crate::types::FrequencyUnits>) -> Self {
         self.units = input;
         self
+    }
+    /// <p>Frequency units.</p>
+    pub fn get_units(&self) -> &::std::option::Option<crate::types::FrequencyUnits> {
+        &self.units
     }
     /// Consumes the builder and constructs a [`Frequency`](crate::types::Frequency).
     pub fn build(self) -> crate::types::Frequency {

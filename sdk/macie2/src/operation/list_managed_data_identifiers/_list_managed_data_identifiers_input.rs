@@ -39,6 +39,10 @@ impl ListManagedDataIdentifiersInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Consumes the builder and constructs a [`ListManagedDataIdentifiersInput`](crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersInput).
     pub fn build(
         self,

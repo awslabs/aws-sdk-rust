@@ -39,6 +39,12 @@ impl DescribeLogStreamsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeLogStreams as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_log_streams::builders::DescribeLogStreamsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -150,6 +156,12 @@ impl DescribeLogStreamsFluentBuilder {
         self.inner = self.inner.set_log_group_name(input);
         self
     }
+    /// <p>The name of the log group.</p> <note>
+    /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
+    /// </note>
+    pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_log_group_name()
+    }
     /// <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p> <note>
     /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
     /// </note>
@@ -170,6 +182,12 @@ impl DescribeLogStreamsFluentBuilder {
         self.inner = self.inner.set_log_group_identifier(input);
         self
     }
+    /// <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p> <note>
+    /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
+    /// </note>
+    pub fn get_log_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_log_group_identifier()
+    }
     /// <p>The prefix to match.</p>
     /// <p>If <code>orderBy</code> is <code>LastEventTime</code>, you cannot specify this parameter.</p>
     pub fn log_stream_name_prefix(
@@ -188,6 +206,11 @@ impl DescribeLogStreamsFluentBuilder {
         self.inner = self.inner.set_log_stream_name_prefix(input);
         self
     }
+    /// <p>The prefix to match.</p>
+    /// <p>If <code>orderBy</code> is <code>LastEventTime</code>, you cannot specify this parameter.</p>
+    pub fn get_log_stream_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_log_stream_name_prefix()
+    }
     /// <p>If the value is <code>LogStreamName</code>, the results are ordered by log stream name. If the value is <code>LastEventTime</code>, the results are ordered by the event time. The default value is <code>LogStreamName</code>.</p>
     /// <p>If you order the results by event time, you cannot specify the <code>logStreamNamePrefix</code> parameter.</p>
     /// <p> <code>lastEventTimestamp</code> represents the time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. <code>lastEventTimestamp</code> updates on an eventual consistency basis. It typically updates in less than an hour from ingestion, but in rare situations might take longer.</p>
@@ -202,6 +225,12 @@ impl DescribeLogStreamsFluentBuilder {
         self.inner = self.inner.set_order_by(input);
         self
     }
+    /// <p>If the value is <code>LogStreamName</code>, the results are ordered by log stream name. If the value is <code>LastEventTime</code>, the results are ordered by the event time. The default value is <code>LogStreamName</code>.</p>
+    /// <p>If you order the results by event time, you cannot specify the <code>logStreamNamePrefix</code> parameter.</p>
+    /// <p> <code>lastEventTimestamp</code> represents the time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. <code>lastEventTimestamp</code> updates on an eventual consistency basis. It typically updates in less than an hour from ingestion, but in rare situations might take longer.</p>
+    pub fn get_order_by(&self) -> &::std::option::Option<crate::types::OrderBy> {
+        self.inner.get_order_by()
+    }
     /// <p>If the value is true, results are returned in descending order. If the value is to false, results are returned in ascending order. The default value is false.</p>
     pub fn descending(mut self, input: bool) -> Self {
         self.inner = self.inner.descending(input);
@@ -211,6 +240,10 @@ impl DescribeLogStreamsFluentBuilder {
     pub fn set_descending(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_descending(input);
         self
+    }
+    /// <p>If the value is true, results are returned in descending order. If the value is to false, results are returned in ascending order. The default value is false.</p>
+    pub fn get_descending(&self) -> &::std::option::Option<bool> {
+        self.inner.get_descending()
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -222,6 +255,10 @@ impl DescribeLogStreamsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -231,5 +268,9 @@ impl DescribeLogStreamsFluentBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
+    }
+    /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
     }
 }

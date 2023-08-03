@@ -54,6 +54,10 @@ impl TransitGatewayConfigurationBuilder {
         self.transit_gateway_id = input;
         self
     }
+    /// <p>The identifier of the transit gateway created by the customer to connect outbound traffics from kdb network to your internal network.</p>
+    pub fn get_transit_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_id
+    }
     /// <p>The routing CIDR on behalf of kdb environment. It could be any "/26 range in the 100.64.0.0 CIDR space. After providing, it will be added to the customer's transit gateway routing table so that the traffics could be routed to kdb network.</p>
     pub fn routable_cidr_space(
         mut self,
@@ -69,6 +73,10 @@ impl TransitGatewayConfigurationBuilder {
     ) -> Self {
         self.routable_cidr_space = input;
         self
+    }
+    /// <p>The routing CIDR on behalf of kdb environment. It could be any "/26 range in the 100.64.0.0 CIDR space. After providing, it will be added to the customer's transit gateway routing table so that the traffics could be routed to kdb network.</p>
+    pub fn get_routable_cidr_space(&self) -> &::std::option::Option<::std::string::String> {
+        &self.routable_cidr_space
     }
     /// Consumes the builder and constructs a [`TransitGatewayConfiguration`](crate::types::TransitGatewayConfiguration).
     pub fn build(self) -> crate::types::TransitGatewayConfiguration {

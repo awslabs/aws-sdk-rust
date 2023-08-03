@@ -53,6 +53,10 @@ impl RejectQualificationRequestInputBuilder {
         self.qualification_request_id = input;
         self
     }
+    /// <p> The ID of the Qualification request, as returned by the <code>ListQualificationRequests</code> operation. </p>
+    pub fn get_qualification_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.qualification_request_id
+    }
     /// <p>A text message explaining why the request was rejected, to be shown to the Worker who made the request.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl RejectQualificationRequestInputBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>A text message explaining why the request was rejected, to be shown to the Worker who made the request.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
     }
     /// Consumes the builder and constructs a [`RejectQualificationRequestInput`](crate::operation::reject_qualification_request::RejectQualificationRequestInput).
     pub fn build(

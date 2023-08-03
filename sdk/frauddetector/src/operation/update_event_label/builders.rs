@@ -36,6 +36,12 @@ impl UpdateEventLabelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateEventLabel as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_event_label::builders::UpdateEventLabelInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateEventLabelFluentBuilder {
         self.inner = self.inner.set_event_id(input);
         self
     }
+    /// <p>The ID of the event associated with the label to update.</p>
+    pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_id()
+    }
     /// <p>The event type of the event associated with the label to update.</p>
     pub fn event_type_name(
         mut self,
@@ -141,6 +151,10 @@ impl UpdateEventLabelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_event_type_name(input);
         self
+    }
+    /// <p>The event type of the event associated with the label to update.</p>
+    pub fn get_event_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_type_name()
     }
     /// <p>The new label to assign to the event.</p>
     pub fn assigned_label(
@@ -158,6 +172,10 @@ impl UpdateEventLabelFluentBuilder {
         self.inner = self.inner.set_assigned_label(input);
         self
     }
+    /// <p>The new label to assign to the event.</p>
+    pub fn get_assigned_label(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assigned_label()
+    }
     /// <p>The timestamp associated with the label. The timestamp must be specified using ISO 8601 standard in UTC. </p>
     pub fn label_timestamp(
         mut self,
@@ -173,5 +191,9 @@ impl UpdateEventLabelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_label_timestamp(input);
         self
+    }
+    /// <p>The timestamp associated with the label. The timestamp must be specified using ISO 8601 standard in UTC. </p>
+    pub fn get_label_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_label_timestamp()
     }
 }

@@ -51,6 +51,10 @@ impl CreateConfigurationProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateConfigurationProfile as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_configuration_profile::builders::CreateConfigurationProfileInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -147,6 +151,10 @@ impl CreateConfigurationProfileFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The application ID.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>A name for the configuration profile.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -157,6 +165,10 @@ impl CreateConfigurationProfileFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>A name for the configuration profile.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A description of the configuration profile.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -166,6 +178,10 @@ impl CreateConfigurationProfileFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the configuration profile.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>A URI to locate the configuration. You can specify the following:</p>
     /// <ul>
@@ -209,6 +225,26 @@ impl CreateConfigurationProfileFluentBuilder {
         self.inner = self.inner.set_location_uri(input);
         self
     }
+    /// <p>A URI to locate the configuration. You can specify the following:</p>
+    /// <ul>
+    /// <li> <p>For the AppConfig hosted configuration store and for feature flags, specify <code>hosted</code>.</p> </li>
+    /// <li> <p>For an Amazon Web Services Systems Manager Parameter Store parameter, specify either the parameter name in the format <code>ssm-parameter://
+    /// <parameter name></parameter></code> or the ARN.</p> </li>
+    /// <li> <p>For an Secrets Manager secret, specify the URI in the following format: <code>secrets-manager</code>://<secret name>
+    /// .
+    /// </secret></p> </li>
+    /// <li> <p>For an Amazon S3 object, specify the URI in the following format: <code>s3://
+    /// <bucket>
+    /// /
+    /// <objectkey>
+    /// </objectkey>
+    /// </bucket></code>. Here is an example: <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p> </li>
+    /// <li> <p>For an SSM document, specify either the document name in the format <code>ssm-document://
+    /// <document name></document></code> or the Amazon Resource Name (ARN).</p> </li>
+    /// </ul>
+    pub fn get_location_uri(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_location_uri()
+    }
     /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p> <important>
     /// <p>A retrieval role ARN is not required for configurations stored in the AppConfig hosted configuration store. It is required for all other sources that store your configuration. </p>
     /// </important>
@@ -229,6 +265,12 @@ impl CreateConfigurationProfileFluentBuilder {
         self.inner = self.inner.set_retrieval_role_arn(input);
         self
     }
+    /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p> <important>
+    /// <p>A retrieval role ARN is not required for configurations stored in the AppConfig hosted configuration store. It is required for all other sources that store your configuration. </p>
+    /// </important>
+    pub fn get_retrieval_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_retrieval_role_arn()
+    }
     /// Appends an item to `Validators`.
     ///
     /// To override the contents of this collection use [`set_validators`](Self::set_validators).
@@ -245,6 +287,12 @@ impl CreateConfigurationProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_validators(input);
         self
+    }
+    /// <p>A list of methods for validating the configuration.</p>
+    pub fn get_validators(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Validator>> {
+        self.inner.get_validators()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -269,6 +317,14 @@ impl CreateConfigurationProfileFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Metadata to assign to the configuration profile. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
     /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
     /// <p> <code>AWS.Freeform</code> </p>
@@ -282,5 +338,11 @@ impl CreateConfigurationProfileFluentBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_type(input);
         self
+    }
+    /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
+    /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
+    /// <p> <code>AWS.Freeform</code> </p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_type()
     }
 }

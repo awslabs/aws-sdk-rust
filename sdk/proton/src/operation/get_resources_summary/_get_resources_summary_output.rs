@@ -48,6 +48,10 @@ impl GetResourcesSummaryOutputBuilder {
         self.counts = input;
         self
     }
+    /// <p>Summary counts of each Proton resource type.</p>
+    pub fn get_counts(&self) -> &::std::option::Option<crate::types::CountsSummary> {
+        &self.counts
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

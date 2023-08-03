@@ -53,6 +53,10 @@ impl PutRecordInputBuilder {
         self.delivery_stream_name = input;
         self
     }
+    /// <p>The name of the delivery stream.</p>
+    pub fn get_delivery_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delivery_stream_name
+    }
     /// <p>The record.</p>
     pub fn record(mut self, input: crate::types::Record) -> Self {
         self.record = ::std::option::Option::Some(input);
@@ -62,6 +66,10 @@ impl PutRecordInputBuilder {
     pub fn set_record(mut self, input: ::std::option::Option<crate::types::Record>) -> Self {
         self.record = input;
         self
+    }
+    /// <p>The record.</p>
+    pub fn get_record(&self) -> &::std::option::Option<crate::types::Record> {
+        &self.record
     }
     /// Consumes the builder and constructs a [`PutRecordInput`](crate::operation::put_record::PutRecordInput).
     pub fn build(

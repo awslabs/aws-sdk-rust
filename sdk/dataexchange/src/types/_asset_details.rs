@@ -84,6 +84,10 @@ impl AssetDetailsBuilder {
         self.s3_snapshot_asset = input;
         self
     }
+    /// <p>The Amazon S3 object that is the asset.</p>
+    pub fn get_s3_snapshot_asset(&self) -> &::std::option::Option<crate::types::S3SnapshotAsset> {
+        &self.s3_snapshot_asset
+    }
     /// <p>The Amazon Redshift datashare that is the asset.</p>
     pub fn redshift_data_share_asset(
         mut self,
@@ -100,6 +104,12 @@ impl AssetDetailsBuilder {
         self.redshift_data_share_asset = input;
         self
     }
+    /// <p>The Amazon Redshift datashare that is the asset.</p>
+    pub fn get_redshift_data_share_asset(
+        &self,
+    ) -> &::std::option::Option<crate::types::RedshiftDataShareAsset> {
+        &self.redshift_data_share_asset
+    }
     /// <p>Information about the API Gateway API asset.</p>
     pub fn api_gateway_api_asset(mut self, input: crate::types::ApiGatewayApiAsset) -> Self {
         self.api_gateway_api_asset = ::std::option::Option::Some(input);
@@ -113,6 +123,12 @@ impl AssetDetailsBuilder {
         self.api_gateway_api_asset = input;
         self
     }
+    /// <p>Information about the API Gateway API asset.</p>
+    pub fn get_api_gateway_api_asset(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApiGatewayApiAsset> {
+        &self.api_gateway_api_asset
+    }
     /// <p>The Amazon S3 data access that is the asset.</p>
     pub fn s3_data_access_asset(mut self, input: crate::types::S3DataAccessAsset) -> Self {
         self.s3_data_access_asset = ::std::option::Option::Some(input);
@@ -125,6 +141,12 @@ impl AssetDetailsBuilder {
     ) -> Self {
         self.s3_data_access_asset = input;
         self
+    }
+    /// <p>The Amazon S3 data access that is the asset.</p>
+    pub fn get_s3_data_access_asset(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3DataAccessAsset> {
+        &self.s3_data_access_asset
     }
     /// <p>The AWS Lake Formation data permission that is the asset.</p>
     pub fn lake_formation_data_permission_asset(
@@ -141,6 +163,12 @@ impl AssetDetailsBuilder {
     ) -> Self {
         self.lake_formation_data_permission_asset = input;
         self
+    }
+    /// <p>The AWS Lake Formation data permission that is the asset.</p>
+    pub fn get_lake_formation_data_permission_asset(
+        &self,
+    ) -> &::std::option::Option<crate::types::LakeFormationDataPermissionAsset> {
+        &self.lake_formation_data_permission_asset
     }
     /// Consumes the builder and constructs a [`AssetDetails`](crate::types::AssetDetails).
     pub fn build(self) -> crate::types::AssetDetails {

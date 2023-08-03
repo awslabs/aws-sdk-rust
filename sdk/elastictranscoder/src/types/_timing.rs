@@ -56,6 +56,10 @@ impl TimingBuilder {
         self.submit_time_millis = input;
         self
     }
+    /// <p>The time the job was submitted to Elastic Transcoder, in epoch milliseconds.</p>
+    pub fn get_submit_time_millis(&self) -> &::std::option::Option<i64> {
+        &self.submit_time_millis
+    }
     /// <p>The time the job began transcoding, in epoch milliseconds.</p>
     pub fn start_time_millis(mut self, input: i64) -> Self {
         self.start_time_millis = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl TimingBuilder {
         self.start_time_millis = input;
         self
     }
+    /// <p>The time the job began transcoding, in epoch milliseconds.</p>
+    pub fn get_start_time_millis(&self) -> &::std::option::Option<i64> {
+        &self.start_time_millis
+    }
     /// <p>The time the job finished transcoding, in epoch milliseconds.</p>
     pub fn finish_time_millis(mut self, input: i64) -> Self {
         self.finish_time_millis = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl TimingBuilder {
     pub fn set_finish_time_millis(mut self, input: ::std::option::Option<i64>) -> Self {
         self.finish_time_millis = input;
         self
+    }
+    /// <p>The time the job finished transcoding, in epoch milliseconds.</p>
+    pub fn get_finish_time_millis(&self) -> &::std::option::Option<i64> {
+        &self.finish_time_millis
     }
     /// Consumes the builder and constructs a [`Timing`](crate::types::Timing).
     pub fn build(self) -> crate::types::Timing {

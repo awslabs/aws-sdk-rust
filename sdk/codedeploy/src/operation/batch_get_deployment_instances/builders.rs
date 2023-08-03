@@ -40,6 +40,10 @@ impl BatchGetDeploymentInstancesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchGetDeploymentInstances as a reference.
+    pub fn as_input(&self) -> &crate::operation::batch_get_deployment_instances::builders::BatchGetDeploymentInstancesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +140,10 @@ impl BatchGetDeploymentInstancesFluentBuilder {
         self.inner = self.inner.set_deployment_id(input);
         self
     }
+    /// <p> The unique ID of a deployment. </p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_deployment_id()
+    }
     /// Appends an item to `instanceIds`.
     ///
     /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
@@ -152,5 +160,11 @@ impl BatchGetDeploymentInstancesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_instance_ids(input);
         self
+    }
+    /// <p>The unique IDs of instances used in the deployment. The maximum number of instance IDs you can specify is 25.</p>
+    pub fn get_instance_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_instance_ids()
     }
 }

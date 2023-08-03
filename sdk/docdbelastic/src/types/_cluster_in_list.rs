@@ -56,6 +56,10 @@ impl ClusterInListBuilder {
         self.cluster_name = input;
         self
     }
+    /// <p>The name of the Elastic DocumentDB cluster.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_name
+    }
     /// <p>The arn of the Elastic DocumentDB cluster.</p>
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_arn = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl ClusterInListBuilder {
         self.cluster_arn = input;
         self
     }
+    /// <p>The arn of the Elastic DocumentDB cluster.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_arn
+    }
     /// <p>The status of the Elastic DocumentDB cluster.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl ClusterInListBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the Elastic DocumentDB cluster.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`ClusterInList`](crate::types::ClusterInList).
     pub fn build(self) -> crate::types::ClusterInList {

@@ -72,6 +72,10 @@ impl PositionBuilder {
         self.latitude = input;
         self
     }
+    /// <p>The latitude of the position.</p>
+    pub fn get_latitude(&self) -> &::std::option::Option<f64> {
+        &self.latitude
+    }
     /// <p>The longitude of the position.</p>
     pub fn longitude(mut self, input: f64) -> Self {
         self.longitude = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl PositionBuilder {
         self.longitude = input;
         self
     }
+    /// <p>The longitude of the position.</p>
+    pub fn get_longitude(&self) -> &::std::option::Option<f64> {
+        &self.longitude
+    }
     /// <p>The elevation of the equipment at this position.</p>
     pub fn elevation(mut self, input: f64) -> Self {
         self.elevation = ::std::option::Option::Some(input);
@@ -91,6 +99,10 @@ impl PositionBuilder {
     pub fn set_elevation(mut self, input: ::std::option::Option<f64>) -> Self {
         self.elevation = input;
         self
+    }
+    /// <p>The elevation of the equipment at this position.</p>
+    pub fn get_elevation(&self) -> &::std::option::Option<f64> {
+        &self.elevation
     }
     /// <p>The units used to measure the elevation of the position.</p>
     pub fn elevation_unit(mut self, input: crate::types::ElevationUnit) -> Self {
@@ -105,6 +117,10 @@ impl PositionBuilder {
         self.elevation_unit = input;
         self
     }
+    /// <p>The units used to measure the elevation of the position.</p>
+    pub fn get_elevation_unit(&self) -> &::std::option::Option<crate::types::ElevationUnit> {
+        &self.elevation_unit
+    }
     /// <p>The reference point from which elevation is reported.</p>
     pub fn elevation_reference(mut self, input: crate::types::ElevationReference) -> Self {
         self.elevation_reference = ::std::option::Option::Some(input);
@@ -117,6 +133,12 @@ impl PositionBuilder {
     ) -> Self {
         self.elevation_reference = input;
         self
+    }
+    /// <p>The reference point from which elevation is reported.</p>
+    pub fn get_elevation_reference(
+        &self,
+    ) -> &::std::option::Option<crate::types::ElevationReference> {
+        &self.elevation_reference
     }
     /// Consumes the builder and constructs a [`Position`](crate::types::Position).
     pub fn build(self) -> crate::types::Position {

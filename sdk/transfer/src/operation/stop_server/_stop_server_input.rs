@@ -39,6 +39,10 @@ impl StopServerInputBuilder {
         self.server_id = input;
         self
     }
+    /// <p>A system-assigned unique identifier for a server that you stopped.</p>
+    pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_id
+    }
     /// Consumes the builder and constructs a [`StopServerInput`](crate::operation::stop_server::StopServerInput).
     pub fn build(
         self,

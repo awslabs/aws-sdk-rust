@@ -55,6 +55,10 @@ impl UpdateTagOptionInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The TagOption identifier.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The updated value.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl UpdateTagOptionInputBuilder {
         self.value = input;
         self
     }
+    /// <p>The updated value.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// <p>The updated active state.</p>
     pub fn active(mut self, input: bool) -> Self {
         self.active = ::std::option::Option::Some(input);
@@ -74,6 +82,10 @@ impl UpdateTagOptionInputBuilder {
     pub fn set_active(mut self, input: ::std::option::Option<bool>) -> Self {
         self.active = input;
         self
+    }
+    /// <p>The updated active state.</p>
+    pub fn get_active(&self) -> &::std::option::Option<bool> {
+        &self.active
     }
     /// Consumes the builder and constructs a [`UpdateTagOptionInput`](crate::operation::update_tag_option::UpdateTagOptionInput).
     pub fn build(

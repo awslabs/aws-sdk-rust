@@ -47,6 +47,10 @@ impl DeleteReceiptRuleSetInputBuilder {
         self.rule_set_name = input;
         self
     }
+    /// <p>The name of the receipt rule set to delete.</p>
+    pub fn get_rule_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_set_name
+    }
     /// Consumes the builder and constructs a [`DeleteReceiptRuleSetInput`](crate::operation::delete_receipt_rule_set::DeleteReceiptRuleSetInput).
     pub fn build(
         self,

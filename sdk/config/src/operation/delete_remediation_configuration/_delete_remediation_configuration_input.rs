@@ -53,6 +53,10 @@ impl DeleteRemediationConfigurationInputBuilder {
         self.config_rule_name = input;
         self
     }
+    /// <p>The name of the Config rule for which you want to delete remediation configuration.</p>
+    pub fn get_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.config_rule_name
+    }
     /// <p>The type of a resource.</p>
     pub fn resource_type(
         mut self,
@@ -68,6 +72,10 @@ impl DeleteRemediationConfigurationInputBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The type of a resource.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
     }
     /// Consumes the builder and constructs a [`DeleteRemediationConfigurationInput`](crate::operation::delete_remediation_configuration::DeleteRemediationConfigurationInput).
     pub fn build(

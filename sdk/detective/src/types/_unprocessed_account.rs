@@ -48,6 +48,10 @@ impl UnprocessedAccountBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account identifier of the member account that was not processed.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The reason that the member account request could not be processed.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl UnprocessedAccountBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>The reason that the member account request could not be processed.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
     }
     /// Consumes the builder and constructs a [`UnprocessedAccount`](crate::types::UnprocessedAccount).
     pub fn build(self) -> crate::types::UnprocessedAccount {

@@ -52,6 +52,10 @@ impl DeleteApprovalRuleTemplateOutputBuilder {
         self.approval_rule_template_id = input;
         self
     }
+    /// <p>The system-generated ID of the deleted approval rule template. If the template has been previously deleted, the only response is a 200 OK.</p>
+    pub fn get_approval_rule_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.approval_rule_template_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

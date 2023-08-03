@@ -40,6 +40,10 @@ impl AudioTrackBuilder {
         self.track = input;
         self
     }
+    /// 1-based integer value that maps to a specific audio track
+    pub fn get_track(&self) -> &::std::option::Option<i32> {
+        &self.track
+    }
     /// Consumes the builder and constructs a [`AudioTrack`](crate::types::AudioTrack).
     pub fn build(self) -> crate::types::AudioTrack {
         crate::types::AudioTrack { track: self.track }

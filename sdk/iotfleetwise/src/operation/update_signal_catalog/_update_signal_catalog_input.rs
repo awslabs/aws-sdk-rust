@@ -73,6 +73,10 @@ impl UpdateSignalCatalogInputBuilder {
         self.name = input;
         self
     }
+    /// <p> The name of the signal catalog to update. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p> A brief description of the signal catalog to update.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl UpdateSignalCatalogInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p> A brief description of the signal catalog to update.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `nodes_to_add`.
     ///
@@ -102,6 +110,10 @@ impl UpdateSignalCatalogInputBuilder {
         self.nodes_to_add = input;
         self
     }
+    /// <p> A list of information about nodes to add to the signal catalog. </p>
+    pub fn get_nodes_to_add(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Node>> {
+        &self.nodes_to_add
+    }
     /// Appends an item to `nodes_to_update`.
     ///
     /// To override the contents of this collection use [`set_nodes_to_update`](Self::set_nodes_to_update).
@@ -120,6 +132,12 @@ impl UpdateSignalCatalogInputBuilder {
     ) -> Self {
         self.nodes_to_update = input;
         self
+    }
+    /// <p> A list of information about nodes to update in the signal catalog. </p>
+    pub fn get_nodes_to_update(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Node>> {
+        &self.nodes_to_update
     }
     /// Appends an item to `nodes_to_remove`.
     ///
@@ -142,6 +160,12 @@ impl UpdateSignalCatalogInputBuilder {
     ) -> Self {
         self.nodes_to_remove = input;
         self
+    }
+    /// <p> A list of <code>fullyQualifiedName</code> of nodes to remove from the signal catalog. </p>
+    pub fn get_nodes_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.nodes_to_remove
     }
     /// Consumes the builder and constructs a [`UpdateSignalCatalogInput`](crate::operation::update_signal_catalog::UpdateSignalCatalogInput).
     pub fn build(

@@ -59,6 +59,13 @@ impl DescribeHealthServiceStatusForOrganizationOutputBuilder {
         self.health_service_access_status_for_organization = input;
         self
     }
+    /// <p>Information about the status of enabling or disabling the Health organizational view feature in your organization.</p>
+    /// <p>Valid values are <code>ENABLED | DISABLED | PENDING</code>. </p>
+    pub fn get_health_service_access_status_for_organization(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.health_service_access_status_for_organization
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

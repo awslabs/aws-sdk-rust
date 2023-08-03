@@ -43,6 +43,12 @@ impl AbortTransactionResultBuilder {
         self.timing_information = input;
         self
     }
+    /// <p>Contains server-side performance information for the command.</p>
+    pub fn get_timing_information(
+        &self,
+    ) -> &::std::option::Option<crate::types::TimingInformation> {
+        &self.timing_information
+    }
     /// Consumes the builder and constructs a [`AbortTransactionResult`](crate::types::AbortTransactionResult).
     pub fn build(self) -> crate::types::AbortTransactionResult {
         crate::types::AbortTransactionResult {

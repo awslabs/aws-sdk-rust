@@ -57,6 +57,10 @@ impl CreateMatchmakingRuleSetInputBuilder {
         self.name = input;
         self
     }
+    /// <p>A unique identifier for the matchmaking rule set. A matchmaking configuration identifies the rule set it uses by this name value. Note that the rule set name is different from the optional <code>name</code> field in the rule set body.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements support a description field.</p>
     pub fn rule_set_body(
         mut self,
@@ -72,6 +76,10 @@ impl CreateMatchmakingRuleSetInputBuilder {
     ) -> Self {
         self.rule_set_body = input;
         self
+    }
+    /// <p>A collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements support a description field.</p>
+    pub fn get_rule_set_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_set_body
     }
     /// Appends an item to `tags`.
     ///
@@ -91,6 +99,10 @@ impl CreateMatchmakingRuleSetInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of labels to assign to the new matchmaking rule set resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateMatchmakingRuleSetInput`](crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetInput).
     pub fn build(

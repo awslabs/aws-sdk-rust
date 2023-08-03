@@ -53,6 +53,10 @@ impl GetExtensionInputBuilder {
         self.extension_identifier = input;
         self
     }
+    /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
+    pub fn get_extension_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.extension_identifier
+    }
     /// <p>The extension version number. If no version number was defined, AppConfig uses the highest version.</p>
     pub fn version_number(mut self, input: i32) -> Self {
         self.version_number = ::std::option::Option::Some(input);
@@ -62,6 +66,10 @@ impl GetExtensionInputBuilder {
     pub fn set_version_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.version_number = input;
         self
+    }
+    /// <p>The extension version number. If no version number was defined, AppConfig uses the highest version.</p>
+    pub fn get_version_number(&self) -> &::std::option::Option<i32> {
+        &self.version_number
     }
     /// Consumes the builder and constructs a [`GetExtensionInput`](crate::operation::get_extension::GetExtensionInput).
     pub fn build(

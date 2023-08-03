@@ -41,6 +41,10 @@ impl StopAppBlockBuilderInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the app block builder.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`StopAppBlockBuilderInput`](crate::operation::stop_app_block_builder::StopAppBlockBuilderInput).
     pub fn build(
         self,

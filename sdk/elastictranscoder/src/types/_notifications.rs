@@ -66,6 +66,10 @@ impl NotificationsBuilder {
         self.progressing = input;
         self
     }
+    /// <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to notify when Elastic Transcoder has started to process the job.</p>
+    pub fn get_progressing(&self) -> &::std::option::Option<::std::string::String> {
+        &self.progressing
+    }
     /// <p>The Amazon SNS topic that you want to notify when Elastic Transcoder has finished processing the job.</p>
     pub fn completed(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.completed = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl NotificationsBuilder {
     pub fn set_completed(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.completed = input;
         self
+    }
+    /// <p>The Amazon SNS topic that you want to notify when Elastic Transcoder has finished processing the job.</p>
+    pub fn get_completed(&self) -> &::std::option::Option<::std::string::String> {
+        &self.completed
     }
     /// <p>The Amazon SNS topic that you want to notify when Elastic Transcoder encounters a warning condition.</p>
     pub fn warning(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -86,6 +94,10 @@ impl NotificationsBuilder {
         self.warning = input;
         self
     }
+    /// <p>The Amazon SNS topic that you want to notify when Elastic Transcoder encounters a warning condition.</p>
+    pub fn get_warning(&self) -> &::std::option::Option<::std::string::String> {
+        &self.warning
+    }
     /// <p>The Amazon SNS topic that you want to notify when Elastic Transcoder encounters an error condition.</p>
     pub fn error(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error = ::std::option::Option::Some(input.into());
@@ -95,6 +107,10 @@ impl NotificationsBuilder {
     pub fn set_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error = input;
         self
+    }
+    /// <p>The Amazon SNS topic that you want to notify when Elastic Transcoder encounters an error condition.</p>
+    pub fn get_error(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error
     }
     /// Consumes the builder and constructs a [`Notifications`](crate::types::Notifications).
     pub fn build(self) -> crate::types::Notifications {

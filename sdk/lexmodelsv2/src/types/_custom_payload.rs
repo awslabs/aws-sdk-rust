@@ -40,6 +40,10 @@ impl CustomPayloadBuilder {
         self.value = input;
         self
     }
+    /// <p>The string that is sent to your application.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// Consumes the builder and constructs a [`CustomPayload`](crate::types::CustomPayload).
     pub fn build(self) -> crate::types::CustomPayload {
         crate::types::CustomPayload { value: self.value }

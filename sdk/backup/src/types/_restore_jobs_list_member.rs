@@ -136,6 +136,10 @@ impl RestoreJobsListMemberBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The account ID that owns the restore job.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>Uniquely identifies the job that restores a recovery point.</p>
     pub fn restore_job_id(
         mut self,
@@ -151,6 +155,10 @@ impl RestoreJobsListMemberBuilder {
     ) -> Self {
         self.restore_job_id = input;
         self
+    }
+    /// <p>Uniquely identifies the job that restores a recovery point.</p>
+    pub fn get_restore_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.restore_job_id
     }
     /// <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     pub fn recovery_point_arn(
@@ -168,6 +176,10 @@ impl RestoreJobsListMemberBuilder {
         self.recovery_point_arn = input;
         self
     }
+    /// <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+    pub fn get_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recovery_point_arn
+    }
     /// <p>The date and time a restore job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -180,6 +192,10 @@ impl RestoreJobsListMemberBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>The date and time a restore job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
     }
     /// <p>The date and time a job to restore a recovery point is completed, in Unix format and Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn completion_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -194,6 +210,10 @@ impl RestoreJobsListMemberBuilder {
         self.completion_date = input;
         self
     }
+    /// <p>The date and time a job to restore a recovery point is completed, in Unix format and Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    pub fn get_completion_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.completion_date
+    }
     /// <p>A status code specifying the state of the job initiated by Backup to restore a recovery point.</p>
     pub fn status(mut self, input: crate::types::RestoreJobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -206,6 +226,10 @@ impl RestoreJobsListMemberBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>A status code specifying the state of the job initiated by Backup to restore a recovery point.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::RestoreJobStatus> {
+        &self.status
     }
     /// <p>A detailed message explaining the status of the job to restore a recovery point.</p>
     pub fn status_message(
@@ -223,6 +247,10 @@ impl RestoreJobsListMemberBuilder {
         self.status_message = input;
         self
     }
+    /// <p>A detailed message explaining the status of the job to restore a recovery point.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>Contains an estimated percentage complete of a job at the time the job status was queried.</p>
     pub fn percent_done(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.percent_done = ::std::option::Option::Some(input.into());
@@ -232,6 +260,10 @@ impl RestoreJobsListMemberBuilder {
     pub fn set_percent_done(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.percent_done = input;
         self
+    }
+    /// <p>Contains an estimated percentage complete of a job at the time the job status was queried.</p>
+    pub fn get_percent_done(&self) -> &::std::option::Option<::std::string::String> {
+        &self.percent_done
     }
     /// <p>The size, in bytes, of the restored resource.</p>
     pub fn backup_size_in_bytes(mut self, input: i64) -> Self {
@@ -243,6 +275,10 @@ impl RestoreJobsListMemberBuilder {
         self.backup_size_in_bytes = input;
         self
     }
+    /// <p>The size, in bytes, of the restored resource.</p>
+    pub fn get_backup_size_in_bytes(&self) -> &::std::option::Option<i64> {
+        &self.backup_size_in_bytes
+    }
     /// <p>Specifies the IAM role ARN used to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role_arn = ::std::option::Option::Some(input.into());
@@ -252,6 +288,10 @@ impl RestoreJobsListMemberBuilder {
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_role_arn = input;
         self
+    }
+    /// <p>Specifies the IAM role ARN used to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+    pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_role_arn
     }
     /// <p>The amount of time in minutes that a job restoring a recovery point is expected to take.</p>
     pub fn expected_completion_time_minutes(mut self, input: i64) -> Self {
@@ -265,6 +305,10 @@ impl RestoreJobsListMemberBuilder {
     ) -> Self {
         self.expected_completion_time_minutes = input;
         self
+    }
+    /// <p>The amount of time in minutes that a job restoring a recovery point is expected to take.</p>
+    pub fn get_expected_completion_time_minutes(&self) -> &::std::option::Option<i64> {
+        &self.expected_completion_time_minutes
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     pub fn created_resource_arn(
@@ -282,6 +326,10 @@ impl RestoreJobsListMemberBuilder {
         self.created_resource_arn = input;
         self
     }
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
+    pub fn get_created_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_resource_arn
+    }
     /// <p>The resource type of the listed restore jobs; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database. For Windows Volume Shadow Copy Service (VSS) backups, the only supported resource type is Amazon EC2.</p>
     pub fn resource_type(
         mut self,
@@ -297,6 +345,10 @@ impl RestoreJobsListMemberBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The resource type of the listed restore jobs; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database. For Windows Volume Shadow Copy Service (VSS) backups, the only supported resource type is Amazon EC2.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
     }
     /// Consumes the builder and constructs a [`RestoreJobsListMember`](crate::types::RestoreJobsListMember).
     pub fn build(self) -> crate::types::RestoreJobsListMember {

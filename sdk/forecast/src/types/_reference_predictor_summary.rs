@@ -48,6 +48,10 @@ impl ReferencePredictorSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the reference predictor.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>Whether the reference predictor is <code>Active</code> or <code>Deleted</code>.</p>
     pub fn state(mut self, input: crate::types::State) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ReferencePredictorSummaryBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::State>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>Whether the reference predictor is <code>Active</code> or <code>Deleted</code>.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::State> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`ReferencePredictorSummary`](crate::types::ReferencePredictorSummary).
     pub fn build(self) -> crate::types::ReferencePredictorSummary {

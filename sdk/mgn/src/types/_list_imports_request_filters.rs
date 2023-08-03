@@ -49,6 +49,12 @@ impl ListImportsRequestFiltersBuilder {
         self.import_i_ds = input;
         self
     }
+    /// <p>List imports request filters import IDs.</p>
+    pub fn get_import_i_ds(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.import_i_ds
+    }
     /// Consumes the builder and constructs a [`ListImportsRequestFilters`](crate::types::ListImportsRequestFilters).
     pub fn build(self) -> crate::types::ListImportsRequestFilters {
         crate::types::ListImportsRequestFilters {

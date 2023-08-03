@@ -52,6 +52,11 @@ impl DescribeLoggingStatusInputBuilder {
         self.cluster_identifier = input;
         self
     }
+    /// <p>The identifier of the cluster from which to get the logging status.</p>
+    /// <p>Example: <code>examplecluster</code> </p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_identifier
+    }
     /// Consumes the builder and constructs a [`DescribeLoggingStatusInput`](crate::operation::describe_logging_status::DescribeLoggingStatusInput).
     pub fn build(
         self,

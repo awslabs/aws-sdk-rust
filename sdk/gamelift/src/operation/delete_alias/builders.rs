@@ -38,6 +38,10 @@ impl DeleteAliasFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteAlias as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_alias::builders::DeleteAliasInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,5 +123,9 @@ impl DeleteAliasFluentBuilder {
     pub fn set_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_alias_id(input);
         self
+    }
+    /// <p>A unique identifier of the alias that you want to delete. You can use either the alias ID or ARN value.</p>
+    pub fn get_alias_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_alias_id()
     }
 }

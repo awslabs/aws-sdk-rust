@@ -51,6 +51,12 @@ impl RemediationActionWithOrderBuilder {
         self.remediation_action = input;
         self
     }
+    /// <p>Information about an action you can take to remediate a violation.</p>
+    pub fn get_remediation_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::RemediationAction> {
+        &self.remediation_action
+    }
     /// <p>The order of the remediation actions in the list.</p>
     pub fn order(mut self, input: i32) -> Self {
         self.order = ::std::option::Option::Some(input);
@@ -60,6 +66,10 @@ impl RemediationActionWithOrderBuilder {
     pub fn set_order(mut self, input: ::std::option::Option<i32>) -> Self {
         self.order = input;
         self
+    }
+    /// <p>The order of the remediation actions in the list.</p>
+    pub fn get_order(&self) -> &::std::option::Option<i32> {
+        &self.order
     }
     /// Consumes the builder and constructs a [`RemediationActionWithOrder`](crate::types::RemediationActionWithOrder).
     pub fn build(self) -> crate::types::RemediationActionWithOrder {

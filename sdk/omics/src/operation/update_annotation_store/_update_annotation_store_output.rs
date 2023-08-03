@@ -112,6 +112,10 @@ impl UpdateAnnotationStoreOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The store's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The store's genome reference.</p>
     pub fn reference(mut self, input: crate::types::ReferenceItem) -> Self {
         self.reference = ::std::option::Option::Some(input);
@@ -125,6 +129,10 @@ impl UpdateAnnotationStoreOutputBuilder {
         self.reference = input;
         self
     }
+    /// <p>The store's genome reference.</p>
+    pub fn get_reference(&self) -> &::std::option::Option<crate::types::ReferenceItem> {
+        &self.reference
+    }
     /// <p>The store's status.</p>
     pub fn status(mut self, input: crate::types::StoreStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -134,6 +142,10 @@ impl UpdateAnnotationStoreOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StoreStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The store's status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::StoreStatus> {
+        &self.status
     }
     /// <p>The store's name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -145,6 +157,10 @@ impl UpdateAnnotationStoreOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The store's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The store's description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -154,6 +170,10 @@ impl UpdateAnnotationStoreOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The store's description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>When the store was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -168,6 +188,10 @@ impl UpdateAnnotationStoreOutputBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>When the store was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>When the store was updated.</p>
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
@@ -180,6 +204,10 @@ impl UpdateAnnotationStoreOutputBuilder {
     ) -> Self {
         self.update_time = input;
         self
+    }
+    /// <p>When the store was updated.</p>
+    pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_time
     }
     /// <p>Parsing options for the store.</p>
     pub fn store_options(mut self, input: crate::types::StoreOptions) -> Self {
@@ -194,6 +222,10 @@ impl UpdateAnnotationStoreOutputBuilder {
         self.store_options = input;
         self
     }
+    /// <p>Parsing options for the store.</p>
+    pub fn get_store_options(&self) -> &::std::option::Option<crate::types::StoreOptions> {
+        &self.store_options
+    }
     /// <p>The annotation file format of the store.</p>
     pub fn store_format(mut self, input: crate::types::StoreFormat) -> Self {
         self.store_format = ::std::option::Option::Some(input);
@@ -206,6 +238,10 @@ impl UpdateAnnotationStoreOutputBuilder {
     ) -> Self {
         self.store_format = input;
         self
+    }
+    /// <p>The annotation file format of the store.</p>
+    pub fn get_store_format(&self) -> &::std::option::Option<crate::types::StoreFormat> {
+        &self.store_format
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

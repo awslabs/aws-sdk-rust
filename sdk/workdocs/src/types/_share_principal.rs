@@ -56,6 +56,10 @@ impl SharePrincipalBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the recipient.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The type of the recipient.</p>
     pub fn r#type(mut self, input: crate::types::PrincipalType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl SharePrincipalBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of the recipient.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::PrincipalType> {
+        &self.r#type
+    }
     /// <p>The role of the recipient.</p>
     pub fn role(mut self, input: crate::types::RoleType) -> Self {
         self.role = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl SharePrincipalBuilder {
     pub fn set_role(mut self, input: ::std::option::Option<crate::types::RoleType>) -> Self {
         self.role = input;
         self
+    }
+    /// <p>The role of the recipient.</p>
+    pub fn get_role(&self) -> &::std::option::Option<crate::types::RoleType> {
+        &self.role
     }
     /// Consumes the builder and constructs a [`SharePrincipal`](crate::types::SharePrincipal).
     pub fn build(self) -> crate::types::SharePrincipal {

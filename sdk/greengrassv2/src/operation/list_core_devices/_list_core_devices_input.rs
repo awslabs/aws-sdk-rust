@@ -77,6 +77,10 @@ impl ListCoreDevicesInputBuilder {
         self.thing_group_arn = input;
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing group by which to filter. If you specify this parameter, the list includes only core devices that have successfully deployed a deployment that targets the thing group. When you remove a core device from a thing group, the list continues to include that core device.</p>
+    pub fn get_thing_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_group_arn
+    }
     /// <p>The core device status by which to filter. If you specify this parameter, the list includes only core devices that have this status. Choose one of the following options:</p>
     /// <ul>
     /// <li> <p> <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p> </li>
@@ -98,6 +102,14 @@ impl ListCoreDevicesInputBuilder {
         self.status = input;
         self
     }
+    /// <p>The core device status by which to filter. If you specify this parameter, the list includes only core devices that have this status. Choose one of the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p> </li>
+    /// <li> <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state on the core device.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CoreDeviceStatus> {
+        &self.status
+    }
     /// <p>The maximum number of results to be returned per paginated request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -108,6 +120,10 @@ impl ListCoreDevicesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to be returned per paginated request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -117,6 +133,10 @@ impl ListCoreDevicesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListCoreDevicesInput`](crate::operation::list_core_devices::ListCoreDevicesInput).
     pub fn build(

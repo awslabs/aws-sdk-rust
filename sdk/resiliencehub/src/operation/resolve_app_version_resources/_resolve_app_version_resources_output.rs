@@ -70,6 +70,10 @@ impl ResolveAppVersionResourcesOutputBuilder {
         self.app_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_arn
+    }
     /// <p>The version of the application.</p>
     pub fn app_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_version = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl ResolveAppVersionResourcesOutputBuilder {
     pub fn set_app_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_version = input;
         self
+    }
+    /// <p>The version of the application.</p>
+    pub fn get_app_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_version
     }
     /// <p>The identifier for a specific resolution.</p>
     pub fn resolution_id(
@@ -96,6 +104,10 @@ impl ResolveAppVersionResourcesOutputBuilder {
         self.resolution_id = input;
         self
     }
+    /// <p>The identifier for a specific resolution.</p>
+    pub fn get_resolution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resolution_id
+    }
     /// <p>The status of the action.</p>
     pub fn status(mut self, input: crate::types::ResourceResolutionStatusType) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -108,6 +120,10 @@ impl ResolveAppVersionResourcesOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the action.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ResourceResolutionStatusType> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -65,6 +65,10 @@ impl BeginTransactionInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_arn = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl BeginTransactionInputBuilder {
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_arn = input;
         self
+    }
+    /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
+    pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_arn
     }
     /// <p>The name of the database.</p>
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -85,6 +93,10 @@ impl BeginTransactionInputBuilder {
         self.database = input;
         self
     }
+    /// <p>The name of the database.</p>
+    pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database
+    }
     /// <p>The name of the database schema.</p>
     pub fn schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema = ::std::option::Option::Some(input.into());
@@ -94,6 +106,10 @@ impl BeginTransactionInputBuilder {
     pub fn set_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema = input;
         self
+    }
+    /// <p>The name of the database schema.</p>
+    pub fn get_schema(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema
     }
     /// Consumes the builder and constructs a [`BeginTransactionInput`](crate::operation::begin_transaction::BeginTransactionInput).
     pub fn build(

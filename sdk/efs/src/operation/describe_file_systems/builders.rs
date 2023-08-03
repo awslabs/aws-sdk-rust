@@ -40,6 +40,12 @@ impl DescribeFileSystemsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeFileSystems as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_file_systems::builders::DescribeFileSystemsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -141,6 +147,10 @@ impl DescribeFileSystemsFluentBuilder {
         self.inner = self.inner.set_max_items(input);
         self
     }
+    /// <p>(Optional) Specifies the maximum number of file systems to return in the response (integer). This number is automatically set to 100. The response is paginated at 100 per page if you have more than 100 file systems. </p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_items()
+    }
     /// <p>(Optional) Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String). If present, specifies to continue the list from where the returning call had left off. </p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -150,6 +160,10 @@ impl DescribeFileSystemsFluentBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
+    }
+    /// <p>(Optional) Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String). If present, specifies to continue the list from where the returning call had left off. </p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
     }
     /// <p>(Optional) Restricts the list to the file system with this creation token (String). You specify a creation token when you create an Amazon EFS file system.</p>
     pub fn creation_token(
@@ -167,6 +181,10 @@ impl DescribeFileSystemsFluentBuilder {
         self.inner = self.inner.set_creation_token(input);
         self
     }
+    /// <p>(Optional) Restricts the list to the file system with this creation token (String). You specify a creation token when you create an Amazon EFS file system.</p>
+    pub fn get_creation_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_creation_token()
+    }
     /// <p>(Optional) ID of the file system whose description you want to retrieve (String).</p>
     pub fn file_system_id(
         mut self,
@@ -182,5 +200,9 @@ impl DescribeFileSystemsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_file_system_id(input);
         self
+    }
+    /// <p>(Optional) ID of the file system whose description you want to retrieve (String).</p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_file_system_id()
     }
 }

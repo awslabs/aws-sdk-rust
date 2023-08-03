@@ -63,6 +63,10 @@ impl UpdateTaskSetInputBuilder {
         self.cluster = input;
         self
     }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task set is found in.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster
+    }
     /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task set is found in.</p>
     pub fn service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl UpdateTaskSetInputBuilder {
     pub fn set_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service = input;
         self
+    }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task set is found in.</p>
+    pub fn get_service(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the task set to update.</p>
     pub fn task_set(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -83,6 +91,10 @@ impl UpdateTaskSetInputBuilder {
         self.task_set = input;
         self
     }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the task set to update.</p>
+    pub fn get_task_set(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_set
+    }
     /// <p>A floating-point percentage of the desired number of tasks to place and keep running in the task set.</p>
     pub fn scale(mut self, input: crate::types::Scale) -> Self {
         self.scale = ::std::option::Option::Some(input);
@@ -92,6 +104,10 @@ impl UpdateTaskSetInputBuilder {
     pub fn set_scale(mut self, input: ::std::option::Option<crate::types::Scale>) -> Self {
         self.scale = input;
         self
+    }
+    /// <p>A floating-point percentage of the desired number of tasks to place and keep running in the task set.</p>
+    pub fn get_scale(&self) -> &::std::option::Option<crate::types::Scale> {
+        &self.scale
     }
     /// Consumes the builder and constructs a [`UpdateTaskSetInput`](crate::operation::update_task_set::UpdateTaskSetInput).
     pub fn build(

@@ -94,6 +94,10 @@ impl ConversationLevelTestResultItemBuilder {
         self.conversation_id = input;
         self
     }
+    /// <p>The conversation Id of the test result evaluation item.</p>
+    pub fn get_conversation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.conversation_id
+    }
     /// <p>The end-to-end success or failure of the test result evaluation item.</p>
     pub fn end_to_end_result(mut self, input: crate::types::TestResultMatchStatus) -> Self {
         self.end_to_end_result = ::std::option::Option::Some(input);
@@ -106,6 +110,12 @@ impl ConversationLevelTestResultItemBuilder {
     ) -> Self {
         self.end_to_end_result = input;
         self
+    }
+    /// <p>The end-to-end success or failure of the test result evaluation item.</p>
+    pub fn get_end_to_end_result(
+        &self,
+    ) -> &::std::option::Option<crate::types::TestResultMatchStatus> {
+        &self.end_to_end_result
     }
     /// <p>The speech transcription success or failure of the test result evaluation item.</p>
     pub fn speech_transcription_result(
@@ -122,6 +132,12 @@ impl ConversationLevelTestResultItemBuilder {
     ) -> Self {
         self.speech_transcription_result = input;
         self
+    }
+    /// <p>The speech transcription success or failure of the test result evaluation item.</p>
+    pub fn get_speech_transcription_result(
+        &self,
+    ) -> &::std::option::Option<crate::types::TestResultMatchStatus> {
+        &self.speech_transcription_result
     }
     /// Appends an item to `intent_classification_results`.
     ///
@@ -147,6 +163,14 @@ impl ConversationLevelTestResultItemBuilder {
         self.intent_classification_results = input;
         self
     }
+    /// <p>The intent classification of the test result evaluation item.</p>
+    pub fn get_intent_classification_results(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::ConversationLevelIntentClassificationResultItem>,
+    > {
+        &self.intent_classification_results
+    }
     /// Appends an item to `slot_resolution_results`.
     ///
     /// To override the contents of this collection use [`set_slot_resolution_results`](Self::set_slot_resolution_results).
@@ -170,6 +194,14 @@ impl ConversationLevelTestResultItemBuilder {
     ) -> Self {
         self.slot_resolution_results = input;
         self
+    }
+    /// <p>The slot success or failure of the test result evaluation item.</p>
+    pub fn get_slot_resolution_results(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::ConversationLevelSlotResolutionResultItem>,
+    > {
+        &self.slot_resolution_results
     }
     /// Consumes the builder and constructs a [`ConversationLevelTestResultItem`](crate::types::ConversationLevelTestResultItem).
     pub fn build(self) -> crate::types::ConversationLevelTestResultItem {

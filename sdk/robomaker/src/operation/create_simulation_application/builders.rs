@@ -36,6 +36,10 @@ impl CreateSimulationApplicationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSimulationApplication as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_simulation_application::builders::CreateSimulationApplicationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl CreateSimulationApplicationFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the simulation application.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// Appends an item to `sources`.
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
@@ -143,6 +151,12 @@ impl CreateSimulationApplicationFluentBuilder {
         self.inner = self.inner.set_sources(input);
         self
     }
+    /// <p>The sources of the simulation application.</p>
+    pub fn get_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceConfig>> {
+        self.inner.get_sources()
+    }
     /// <p>The simulation software suite used by the simulation application.</p>
     pub fn simulation_software_suite(
         mut self,
@@ -159,6 +173,12 @@ impl CreateSimulationApplicationFluentBuilder {
         self.inner = self.inner.set_simulation_software_suite(input);
         self
     }
+    /// <p>The simulation software suite used by the simulation application.</p>
+    pub fn get_simulation_software_suite(
+        &self,
+    ) -> &::std::option::Option<crate::types::SimulationSoftwareSuite> {
+        self.inner.get_simulation_software_suite()
+    }
     /// <p>The robot software suite (ROS distribution) used by the simulation application.</p>
     pub fn robot_software_suite(mut self, input: crate::types::RobotSoftwareSuite) -> Self {
         self.inner = self.inner.robot_software_suite(input);
@@ -172,6 +192,12 @@ impl CreateSimulationApplicationFluentBuilder {
         self.inner = self.inner.set_robot_software_suite(input);
         self
     }
+    /// <p>The robot software suite (ROS distribution) used by the simulation application.</p>
+    pub fn get_robot_software_suite(
+        &self,
+    ) -> &::std::option::Option<crate::types::RobotSoftwareSuite> {
+        self.inner.get_robot_software_suite()
+    }
     /// <p>The rendering engine for the simulation application.</p>
     pub fn rendering_engine(mut self, input: crate::types::RenderingEngine) -> Self {
         self.inner = self.inner.rendering_engine(input);
@@ -184,6 +210,10 @@ impl CreateSimulationApplicationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_rendering_engine(input);
         self
+    }
+    /// <p>The rendering engine for the simulation application.</p>
+    pub fn get_rendering_engine(&self) -> &::std::option::Option<crate::types::RenderingEngine> {
+        self.inner.get_rendering_engine()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -208,6 +238,14 @@ impl CreateSimulationApplicationFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>A map that contains tag keys and tag values that are attached to the simulation application.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>The object that contains the Docker image URI used to create your simulation application.</p>
     pub fn environment(mut self, input: crate::types::Environment) -> Self {
         self.inner = self.inner.environment(input);
@@ -220,5 +258,9 @@ impl CreateSimulationApplicationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_environment(input);
         self
+    }
+    /// <p>The object that contains the Docker image URI used to create your simulation application.</p>
+    pub fn get_environment(&self) -> &::std::option::Option<crate::types::Environment> {
+        self.inner.get_environment()
     }
 }

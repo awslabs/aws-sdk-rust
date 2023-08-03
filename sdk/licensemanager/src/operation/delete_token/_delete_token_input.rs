@@ -39,6 +39,10 @@ impl DeleteTokenInputBuilder {
         self.token_id = input;
         self
     }
+    /// <p>Token ID.</p>
+    pub fn get_token_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token_id
+    }
     /// Consumes the builder and constructs a [`DeleteTokenInput`](crate::operation::delete_token::DeleteTokenInput).
     pub fn build(
         self,

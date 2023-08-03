@@ -37,6 +37,10 @@ impl ResetDBClusterParameterGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ResetDBClusterParameterGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::reset_db_cluster_parameter_group::builders::ResetDbClusterParameterGroupInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,12 @@ impl ResetDBClusterParameterGroupFluentBuilder {
         self.inner = self.inner.set_db_cluster_parameter_group_name(input);
         self
     }
+    /// <p>The name of the cluster parameter group to reset.</p>
+    pub fn get_db_cluster_parameter_group_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_cluster_parameter_group_name()
+    }
     /// <p>A value that is set to <code>true</code> to reset all parameters in the cluster parameter group to their default values, and <code>false</code> otherwise. You can't use this parameter if there is a list of parameter names specified for the <code>Parameters</code> parameter.</p>
     pub fn reset_all_parameters(mut self, input: bool) -> Self {
         self.inner = self.inner.reset_all_parameters(input);
@@ -142,6 +152,10 @@ impl ResetDBClusterParameterGroupFluentBuilder {
     pub fn set_reset_all_parameters(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_reset_all_parameters(input);
         self
+    }
+    /// <p>A value that is set to <code>true</code> to reset all parameters in the cluster parameter group to their default values, and <code>false</code> otherwise. You can't use this parameter if there is a list of parameter names specified for the <code>Parameters</code> parameter.</p>
+    pub fn get_reset_all_parameters(&self) -> &::std::option::Option<bool> {
+        self.inner.get_reset_all_parameters()
     }
     /// Appends an item to `Parameters`.
     ///
@@ -159,5 +173,11 @@ impl ResetDBClusterParameterGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
+    }
+    /// <p>A list of parameter names in the cluster parameter group to reset to the default values. You can't use this parameter if the <code>ResetAllParameters</code> parameter is set to <code>true</code>.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+        self.inner.get_parameters()
     }
 }

@@ -37,6 +37,10 @@ impl AttachDiskFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AttachDisk as a reference.
+    pub fn as_input(&self) -> &crate::operation::attach_disk::builders::AttachDiskInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl AttachDiskFluentBuilder {
         self.inner = self.inner.set_disk_name(input);
         self
     }
+    /// <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+    pub fn get_disk_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_disk_name()
+    }
     /// <p>The name of the Lightsail instance where you want to utilize the storage disk.</p>
     pub fn instance_name(
         mut self,
@@ -135,6 +143,10 @@ impl AttachDiskFluentBuilder {
         self.inner = self.inner.set_instance_name(input);
         self
     }
+    /// <p>The name of the Lightsail instance where you want to utilize the storage disk.</p>
+    pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_name()
+    }
     /// <p>The disk path to expose to the instance (e.g., <code>/dev/xvdf</code>).</p>
     pub fn disk_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.disk_path(input.into());
@@ -144,6 +156,10 @@ impl AttachDiskFluentBuilder {
     pub fn set_disk_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_disk_path(input);
         self
+    }
+    /// <p>The disk path to expose to the instance (e.g., <code>/dev/xvdf</code>).</p>
+    pub fn get_disk_path(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_disk_path()
     }
     /// <p>A Boolean value used to determine the automatic mounting of a storage volume to a virtual computer. The default value is <code>False</code>.</p> <important>
     /// <p>This value only applies to Lightsail for Research resources.</p>
@@ -158,5 +174,11 @@ impl AttachDiskFluentBuilder {
     pub fn set_auto_mounting(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_auto_mounting(input);
         self
+    }
+    /// <p>A Boolean value used to determine the automatic mounting of a storage volume to a virtual computer. The default value is <code>False</code>.</p> <important>
+    /// <p>This value only applies to Lightsail for Research resources.</p>
+    /// </important>
+    pub fn get_auto_mounting(&self) -> &::std::option::Option<bool> {
+        self.inner.get_auto_mounting()
     }
 }

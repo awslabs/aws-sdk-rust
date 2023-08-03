@@ -67,6 +67,12 @@ impl ListApplicationsInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>Applications list filters.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<crate::types::ListApplicationsRequestFilters> {
+        &self.filters
+    }
     /// <p>Maximum results to return when listing applications.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -76,6 +82,10 @@ impl ListApplicationsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>Maximum results to return when listing applications.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>Request next token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -87,6 +97,10 @@ impl ListApplicationsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Request next token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>Applications list Account ID.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -96,6 +110,10 @@ impl ListApplicationsInputBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>Applications list Account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// Consumes the builder and constructs a [`ListApplicationsInput`](crate::operation::list_applications::ListApplicationsInput).
     pub fn build(

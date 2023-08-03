@@ -63,6 +63,10 @@ impl PutServiceQuotaIncreaseRequestIntoTemplateInputBuilder {
         self.quota_code = input;
         self
     }
+    /// <p>The quota identifier.</p>
+    pub fn get_quota_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quota_code
+    }
     /// <p>The service identifier.</p>
     pub fn service_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_code = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl PutServiceQuotaIncreaseRequestIntoTemplateInputBuilder {
     pub fn set_service_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_code = input;
         self
+    }
+    /// <p>The service identifier.</p>
+    pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_code
     }
     /// <p>The AWS Region.</p>
     pub fn aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -83,6 +91,10 @@ impl PutServiceQuotaIncreaseRequestIntoTemplateInputBuilder {
         self.aws_region = input;
         self
     }
+    /// <p>The AWS Region.</p>
+    pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_region
+    }
     /// <p>The new, increased value for the quota.</p>
     pub fn desired_value(mut self, input: f64) -> Self {
         self.desired_value = ::std::option::Option::Some(input);
@@ -92,6 +104,10 @@ impl PutServiceQuotaIncreaseRequestIntoTemplateInputBuilder {
     pub fn set_desired_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.desired_value = input;
         self
+    }
+    /// <p>The new, increased value for the quota.</p>
+    pub fn get_desired_value(&self) -> &::std::option::Option<f64> {
+        &self.desired_value
     }
     /// Consumes the builder and constructs a [`PutServiceQuotaIncreaseRequestIntoTemplateInput`](crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateInput, ::aws_smithy_http::operation::error::BuildError>{

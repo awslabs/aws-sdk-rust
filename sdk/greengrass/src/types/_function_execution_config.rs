@@ -51,6 +51,12 @@ impl FunctionExecutionConfigBuilder {
         self.isolation_mode = input;
         self
     }
+    /// Specifies whether the Lambda function runs in a Greengrass container (default) or without containerization. Unless your scenario requires that you run without containerization, we recommend that you run in a Greengrass container. Omit this value to run the Lambda function with the default containerization for the group.
+    pub fn get_isolation_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::FunctionIsolationMode> {
+        &self.isolation_mode
+    }
     /// Specifies the user and group whose permissions are used when running the Lambda function. You can specify one or both values to override the default values. We recommend that you avoid running as root unless absolutely necessary to minimize the risk of unintended changes or malicious attacks. To run as root, you must set ''IsolationMode'' to ''NoContainer'' and update config.json in ''greengrass-root/config'' to set ''allowFunctionsToRunAsRoot'' to ''yes''.
     pub fn run_as(mut self, input: crate::types::FunctionRunAsConfig) -> Self {
         self.run_as = ::std::option::Option::Some(input);
@@ -63,6 +69,10 @@ impl FunctionExecutionConfigBuilder {
     ) -> Self {
         self.run_as = input;
         self
+    }
+    /// Specifies the user and group whose permissions are used when running the Lambda function. You can specify one or both values to override the default values. We recommend that you avoid running as root unless absolutely necessary to minimize the risk of unintended changes or malicious attacks. To run as root, you must set ''IsolationMode'' to ''NoContainer'' and update config.json in ''greengrass-root/config'' to set ''allowFunctionsToRunAsRoot'' to ''yes''.
+    pub fn get_run_as(&self) -> &::std::option::Option<crate::types::FunctionRunAsConfig> {
+        &self.run_as
     }
     /// Consumes the builder and constructs a [`FunctionExecutionConfig`](crate::types::FunctionExecutionConfig).
     pub fn build(self) -> crate::types::FunctionExecutionConfig {

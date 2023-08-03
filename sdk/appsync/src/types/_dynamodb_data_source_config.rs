@@ -72,6 +72,10 @@ impl DynamodbDataSourceConfigBuilder {
         self.table_name = input;
         self
     }
+    /// <p>The table name.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
+    }
     /// <p>The Amazon Web Services Region.</p>
     pub fn aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_region = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl DynamodbDataSourceConfigBuilder {
         self.aws_region = input;
         self
     }
+    /// <p>The Amazon Web Services Region.</p>
+    pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_region
+    }
     /// <p>Set to TRUE to use Amazon Cognito credentials with this data source.</p>
     pub fn use_caller_credentials(mut self, input: bool) -> Self {
         self.use_caller_credentials = ::std::option::Option::Some(input);
@@ -91,6 +99,10 @@ impl DynamodbDataSourceConfigBuilder {
     pub fn set_use_caller_credentials(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_caller_credentials = input;
         self
+    }
+    /// <p>Set to TRUE to use Amazon Cognito credentials with this data source.</p>
+    pub fn get_use_caller_credentials(&self) -> &::std::option::Option<bool> {
+        &self.use_caller_credentials
     }
     /// <p>The <code>DeltaSyncConfig</code> for a versioned data source.</p>
     pub fn delta_sync_config(mut self, input: crate::types::DeltaSyncConfig) -> Self {
@@ -105,6 +117,10 @@ impl DynamodbDataSourceConfigBuilder {
         self.delta_sync_config = input;
         self
     }
+    /// <p>The <code>DeltaSyncConfig</code> for a versioned data source.</p>
+    pub fn get_delta_sync_config(&self) -> &::std::option::Option<crate::types::DeltaSyncConfig> {
+        &self.delta_sync_config
+    }
     /// <p>Set to TRUE to use Conflict Detection and Resolution with this data source.</p>
     pub fn versioned(mut self, input: bool) -> Self {
         self.versioned = ::std::option::Option::Some(input);
@@ -114,6 +130,10 @@ impl DynamodbDataSourceConfigBuilder {
     pub fn set_versioned(mut self, input: ::std::option::Option<bool>) -> Self {
         self.versioned = input;
         self
+    }
+    /// <p>Set to TRUE to use Conflict Detection and Resolution with this data source.</p>
+    pub fn get_versioned(&self) -> &::std::option::Option<bool> {
+        &self.versioned
     }
     /// Consumes the builder and constructs a [`DynamodbDataSourceConfig`](crate::types::DynamodbDataSourceConfig).
     pub fn build(self) -> crate::types::DynamodbDataSourceConfig {

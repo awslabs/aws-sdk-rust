@@ -49,6 +49,10 @@ impl S3ObjectOwnerBuilder {
         self
     }
     /// <p></p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
+    /// <p></p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +61,10 @@ impl S3ObjectOwnerBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
+    }
+    /// <p></p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// Consumes the builder and constructs a [`S3ObjectOwner`](crate::types::S3ObjectOwner).
     pub fn build(self) -> crate::types::S3ObjectOwner {

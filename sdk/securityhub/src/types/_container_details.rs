@@ -96,6 +96,10 @@ impl ContainerDetailsBuilder {
         self.container_runtime = input;
         self
     }
+    /// <p>The runtime of the container. </p>
+    pub fn get_container_runtime(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_runtime
+    }
     /// <p>The name of the container related to a finding.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl ContainerDetailsBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the container related to a finding.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The identifier of the container image related to a finding.</p>
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -116,6 +124,10 @@ impl ContainerDetailsBuilder {
         self.image_id = input;
         self
     }
+    /// <p>The identifier of the container image related to a finding.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_id
+    }
     /// <p>The name of the container image related to a finding.</p>
     pub fn image_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_name = ::std::option::Option::Some(input.into());
@@ -125,6 +137,10 @@ impl ContainerDetailsBuilder {
     pub fn set_image_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_name = input;
         self
+    }
+    /// <p>The name of the container image related to a finding.</p>
+    pub fn get_image_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_name
     }
     /// <p>Indicates when the container started.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -137,6 +153,11 @@ impl ContainerDetailsBuilder {
     pub fn set_launched_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launched_at = input;
         self
+    }
+    /// <p>Indicates when the container started.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_launched_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launched_at
     }
     /// Appends an item to `volume_mounts`.
     ///
@@ -157,6 +178,12 @@ impl ContainerDetailsBuilder {
         self.volume_mounts = input;
         self
     }
+    /// <p>Provides information about the mounting of a volume in a container. </p>
+    pub fn get_volume_mounts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeMount>> {
+        &self.volume_mounts
+    }
     /// <p>When this parameter is <code>true</code>, the container is given elevated privileges on the host container instance (similar to the root user). </p>
     pub fn privileged(mut self, input: bool) -> Self {
         self.privileged = ::std::option::Option::Some(input);
@@ -166,6 +193,10 @@ impl ContainerDetailsBuilder {
     pub fn set_privileged(mut self, input: ::std::option::Option<bool>) -> Self {
         self.privileged = input;
         self
+    }
+    /// <p>When this parameter is <code>true</code>, the container is given elevated privileges on the host container instance (similar to the root user). </p>
+    pub fn get_privileged(&self) -> &::std::option::Option<bool> {
+        &self.privileged
     }
     /// Consumes the builder and constructs a [`ContainerDetails`](crate::types::ContainerDetails).
     pub fn build(self) -> crate::types::ContainerDetails {

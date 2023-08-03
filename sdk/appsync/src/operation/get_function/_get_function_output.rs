@@ -51,6 +51,12 @@ impl GetFunctionOutputBuilder {
         self.function_configuration = input;
         self
     }
+    /// <p>The <code>Function</code> object.</p>
+    pub fn get_function_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::FunctionConfiguration> {
+        &self.function_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

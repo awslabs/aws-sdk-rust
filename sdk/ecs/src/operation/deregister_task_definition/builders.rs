@@ -40,6 +40,13 @@ impl DeregisterTaskDefinitionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeregisterTaskDefinition as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::deregister_task_definition::builders::DeregisterTaskDefinitionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,5 +142,9 @@ impl DeregisterTaskDefinitionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_task_definition(input);
         self
+    }
+    /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition to deregister. You must specify a <code>revision</code>.</p>
+    pub fn get_task_definition(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_task_definition()
     }
 }

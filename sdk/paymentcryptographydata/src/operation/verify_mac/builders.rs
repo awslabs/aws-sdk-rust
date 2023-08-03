@@ -43,6 +43,10 @@ impl VerifyMacFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the VerifyMac as a reference.
+    pub fn as_input(&self) -> &crate::operation::verify_mac::builders::VerifyMacInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +135,10 @@ impl VerifyMacFluentBuilder {
         self.inner = self.inner.set_key_identifier(input);
         self
     }
+    /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses to verify MAC data.</p>
+    pub fn get_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key_identifier()
+    }
     /// <p>The data on for which MAC is under verification.</p>
     pub fn message_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.message_data(input.into());
@@ -141,6 +149,10 @@ impl VerifyMacFluentBuilder {
         self.inner = self.inner.set_message_data(input);
         self
     }
+    /// <p>The data on for which MAC is under verification.</p>
+    pub fn get_message_data(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_message_data()
+    }
     /// <p>The MAC being verified.</p>
     pub fn mac(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.mac(input.into());
@@ -150,6 +162,10 @@ impl VerifyMacFluentBuilder {
     pub fn set_mac(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_mac(input);
         self
+    }
+    /// <p>The MAC being verified.</p>
+    pub fn get_mac(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_mac()
     }
     /// <p>The attributes and data values to use for MAC verification within Amazon Web Services Payment Cryptography.</p>
     pub fn verification_attributes(mut self, input: crate::types::MacAttributes) -> Self {
@@ -164,6 +180,12 @@ impl VerifyMacFluentBuilder {
         self.inner = self.inner.set_verification_attributes(input);
         self
     }
+    /// <p>The attributes and data values to use for MAC verification within Amazon Web Services Payment Cryptography.</p>
+    pub fn get_verification_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::MacAttributes> {
+        self.inner.get_verification_attributes()
+    }
     /// <p>The length of the MAC.</p>
     pub fn mac_length(mut self, input: i32) -> Self {
         self.inner = self.inner.mac_length(input);
@@ -173,5 +195,9 @@ impl VerifyMacFluentBuilder {
     pub fn set_mac_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_mac_length(input);
         self
+    }
+    /// <p>The length of the MAC.</p>
+    pub fn get_mac_length(&self) -> &::std::option::Option<i32> {
+        self.inner.get_mac_length()
     }
 }

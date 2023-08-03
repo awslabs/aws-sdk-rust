@@ -48,6 +48,10 @@ impl NielsenConfigurationBuilder {
         self.breakout_code = input;
         self
     }
+    /// Nielsen has discontinued the use of breakout code functionality. If you must include this property, set the value to zero.
+    pub fn get_breakout_code(&self) -> &::std::option::Option<i32> {
+        &self.breakout_code
+    }
     /// Use Distributor ID to specify the distributor ID that is assigned to your organization by Nielsen.
     pub fn distributor_id(
         mut self,
@@ -63,6 +67,10 @@ impl NielsenConfigurationBuilder {
     ) -> Self {
         self.distributor_id = input;
         self
+    }
+    /// Use Distributor ID to specify the distributor ID that is assigned to your organization by Nielsen.
+    pub fn get_distributor_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.distributor_id
     }
     /// Consumes the builder and constructs a [`NielsenConfiguration`](crate::types::NielsenConfiguration).
     pub fn build(self) -> crate::types::NielsenConfiguration {

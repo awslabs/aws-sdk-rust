@@ -64,6 +64,10 @@ impl PropertyTypeBuilder {
         self.attribute = input;
         self
     }
+    /// <p>Specifies an asset attribute property. An attribute generally contains static information, such as the serial number of an <a href="https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications">IIoT</a> wind turbine.</p>
+    pub fn get_attribute(&self) -> &::std::option::Option<crate::types::Attribute> {
+        &self.attribute
+    }
     /// <p>Specifies an asset measurement property. A measurement represents a device's raw sensor data stream, such as timestamped temperature values or timestamped power values.</p>
     pub fn measurement(mut self, input: crate::types::Measurement) -> Self {
         self.measurement = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl PropertyTypeBuilder {
         self.measurement = input;
         self
     }
+    /// <p>Specifies an asset measurement property. A measurement represents a device's raw sensor data stream, such as timestamped temperature values or timestamped power values.</p>
+    pub fn get_measurement(&self) -> &::std::option::Option<crate::types::Measurement> {
+        &self.measurement
+    }
     /// <p>Specifies an asset transform property. A transform contains a mathematical expression that maps a property's data points from one form to another, such as a unit conversion from Celsius to Fahrenheit.</p>
     pub fn transform(mut self, input: crate::types::Transform) -> Self {
         self.transform = ::std::option::Option::Some(input);
@@ -87,6 +95,10 @@ impl PropertyTypeBuilder {
         self.transform = input;
         self
     }
+    /// <p>Specifies an asset transform property. A transform contains a mathematical expression that maps a property's data points from one form to another, such as a unit conversion from Celsius to Fahrenheit.</p>
+    pub fn get_transform(&self) -> &::std::option::Option<crate::types::Transform> {
+        &self.transform
+    }
     /// <p>Specifies an asset metric property. A metric contains a mathematical expression that uses aggregate functions to process all input data points over a time interval and output a single data point, such as to calculate the average hourly temperature.</p>
     pub fn metric(mut self, input: crate::types::Metric) -> Self {
         self.metric = ::std::option::Option::Some(input);
@@ -96,6 +108,10 @@ impl PropertyTypeBuilder {
     pub fn set_metric(mut self, input: ::std::option::Option<crate::types::Metric>) -> Self {
         self.metric = input;
         self
+    }
+    /// <p>Specifies an asset metric property. A metric contains a mathematical expression that uses aggregate functions to process all input data points over a time interval and output a single data point, such as to calculate the average hourly temperature.</p>
+    pub fn get_metric(&self) -> &::std::option::Option<crate::types::Metric> {
+        &self.metric
     }
     /// Consumes the builder and constructs a [`PropertyType`](crate::types::PropertyType).
     pub fn build(self) -> crate::types::PropertyType {

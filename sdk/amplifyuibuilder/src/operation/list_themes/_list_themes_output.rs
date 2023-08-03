@@ -63,6 +63,12 @@ impl ListThemesOutputBuilder {
         self.entities = input;
         self
     }
+    /// <p>The list of themes for the Amplify app.</p>
+    pub fn get_entities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ThemeSummary>> {
+        &self.entities
+    }
     /// <p>The pagination token that's returned if more results are available.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -72,6 +78,10 @@ impl ListThemesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination token that's returned if more results are available.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

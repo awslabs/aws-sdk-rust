@@ -48,6 +48,10 @@ impl ChangeProgressDetailsBuilder {
         self.change_id = input;
         self
     }
+    /// <p>The ID of the configuration change.</p>
+    pub fn get_change_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_id
+    }
     /// <p>A message corresponding to the status of the configuration change.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ChangeProgressDetailsBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>A message corresponding to the status of the configuration change.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`ChangeProgressDetails`](crate::types::ChangeProgressDetails).
     pub fn build(self) -> crate::types::ChangeProgressDetails {

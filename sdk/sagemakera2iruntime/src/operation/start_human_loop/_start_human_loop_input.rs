@@ -69,6 +69,10 @@ impl StartHumanLoopInputBuilder {
         self.human_loop_name = input;
         self
     }
+    /// <p>The name of the human loop.</p>
+    pub fn get_human_loop_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.human_loop_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the flow definition associated with this human loop.</p>
     pub fn flow_definition_arn(
         mut self,
@@ -85,6 +89,10 @@ impl StartHumanLoopInputBuilder {
         self.flow_definition_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the flow definition associated with this human loop.</p>
+    pub fn get_flow_definition_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_definition_arn
+    }
     /// <p>An object that contains information about the human loop.</p>
     pub fn human_loop_input(mut self, input: crate::types::HumanLoopInput) -> Self {
         self.human_loop_input = ::std::option::Option::Some(input);
@@ -98,6 +106,10 @@ impl StartHumanLoopInputBuilder {
         self.human_loop_input = input;
         self
     }
+    /// <p>An object that contains information about the human loop.</p>
+    pub fn get_human_loop_input(&self) -> &::std::option::Option<crate::types::HumanLoopInput> {
+        &self.human_loop_input
+    }
     /// <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data is free of personally identifiable information and/or free of adult content.</p>
     pub fn data_attributes(mut self, input: crate::types::HumanLoopDataAttributes) -> Self {
         self.data_attributes = ::std::option::Option::Some(input);
@@ -110,6 +122,12 @@ impl StartHumanLoopInputBuilder {
     ) -> Self {
         self.data_attributes = input;
         self
+    }
+    /// <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data is free of personally identifiable information and/or free of adult content.</p>
+    pub fn get_data_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::HumanLoopDataAttributes> {
+        &self.data_attributes
     }
     /// Consumes the builder and constructs a [`StartHumanLoopInput`](crate::operation::start_human_loop::StartHumanLoopInput).
     pub fn build(

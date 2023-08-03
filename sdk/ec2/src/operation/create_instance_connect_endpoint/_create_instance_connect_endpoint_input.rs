@@ -90,6 +90,10 @@ impl CreateInstanceConnectEndpointInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The ID of the subnet in which to create the EC2 Instance Connect Endpoint.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
@@ -99,6 +103,10 @@ impl CreateInstanceConnectEndpointInputBuilder {
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_id = input;
         self
+    }
+    /// <p>The ID of the subnet in which to create the EC2 Instance Connect Endpoint.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
     }
     /// Appends an item to `security_group_ids`.
     ///
@@ -122,6 +130,12 @@ impl CreateInstanceConnectEndpointInputBuilder {
         self.security_group_ids = input;
         self
     }
+    /// <p>One or more security groups to associate with the endpoint. If you don't specify a security group, the default security group for your VPC will be associated with the endpoint.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
+    }
     /// <p>Indicates whether your client's IP address is preserved as the source. The value is <code>true</code> or <code>false</code>.</p>
     /// <ul>
     /// <li> <p>If <code>true</code>, your client's IP address is used when you connect to a resource.</p> </li>
@@ -142,6 +156,15 @@ impl CreateInstanceConnectEndpointInputBuilder {
         self.preserve_client_ip = input;
         self
     }
+    /// <p>Indicates whether your client's IP address is preserved as the source. The value is <code>true</code> or <code>false</code>.</p>
+    /// <ul>
+    /// <li> <p>If <code>true</code>, your client's IP address is used when you connect to a resource.</p> </li>
+    /// <li> <p>If <code>false</code>, the elastic network interface IP address is used when you connect to a resource.</p> </li>
+    /// </ul>
+    /// <p>Default: <code>true</code> </p>
+    pub fn get_preserve_client_ip(&self) -> &::std::option::Option<bool> {
+        &self.preserve_client_ip
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -151,6 +174,10 @@ impl CreateInstanceConnectEndpointInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Appends an item to `tag_specifications`.
     ///
@@ -170,6 +197,12 @@ impl CreateInstanceConnectEndpointInputBuilder {
     ) -> Self {
         self.tag_specifications = input;
         self
+    }
+    /// <p>The tags to apply to the EC2 Instance Connect Endpoint during creation.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
     }
     /// Consumes the builder and constructs a [`CreateInstanceConnectEndpointInput`](crate::operation::create_instance_connect_endpoint::CreateInstanceConnectEndpointInput).
     pub fn build(

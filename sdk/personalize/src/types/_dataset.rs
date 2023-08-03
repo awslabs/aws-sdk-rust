@@ -126,6 +126,10 @@ impl DatasetBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the dataset.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) of the dataset that you want metadata for.</p>
     pub fn dataset_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_arn = ::std::option::Option::Some(input.into());
@@ -135,6 +139,10 @@ impl DatasetBuilder {
     pub fn set_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the dataset that you want metadata for.</p>
+    pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
     pub fn dataset_group_arn(
@@ -151,6 +159,10 @@ impl DatasetBuilder {
     ) -> Self {
         self.dataset_group_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
+    pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_group_arn
     }
     /// <p>One of the following values:</p>
     /// <ul>
@@ -172,6 +184,15 @@ impl DatasetBuilder {
         self.dataset_type = input;
         self
     }
+    /// <p>One of the following values:</p>
+    /// <ul>
+    /// <li> <p>Interactions</p> </li>
+    /// <li> <p>Items</p> </li>
+    /// <li> <p>Users</p> </li>
+    /// </ul>
+    pub fn get_dataset_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_type
+    }
     /// <p>The ARN of the associated schema.</p>
     pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_arn = ::std::option::Option::Some(input.into());
@@ -181,6 +202,10 @@ impl DatasetBuilder {
     pub fn set_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_arn = input;
         self
+    }
+    /// <p>The ARN of the associated schema.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_arn
     }
     /// <p>The status of the dataset.</p>
     /// <p>A dataset can be in one of the following states:</p>
@@ -202,6 +227,15 @@ impl DatasetBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the dataset.</p>
+    /// <p>A dataset can be in one of the following states:</p>
+    /// <ul>
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The creation date and time (in Unix time) of the dataset.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
@@ -214,6 +248,10 @@ impl DatasetBuilder {
     ) -> Self {
         self.creation_date_time = input;
         self
+    }
+    /// <p>The creation date and time (in Unix time) of the dataset.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
     }
     /// <p>A time stamp that shows when the dataset was updated.</p>
     pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -228,6 +266,12 @@ impl DatasetBuilder {
         self.last_updated_date_time = input;
         self
     }
+    /// <p>A time stamp that shows when the dataset was updated.</p>
+    pub fn get_last_updated_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date_time
+    }
     /// <p>Describes the latest update to the dataset.</p>
     pub fn latest_dataset_update(mut self, input: crate::types::DatasetUpdateSummary) -> Self {
         self.latest_dataset_update = ::std::option::Option::Some(input);
@@ -240,6 +284,12 @@ impl DatasetBuilder {
     ) -> Self {
         self.latest_dataset_update = input;
         self
+    }
+    /// <p>Describes the latest update to the dataset.</p>
+    pub fn get_latest_dataset_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::DatasetUpdateSummary> {
+        &self.latest_dataset_update
     }
     /// Consumes the builder and constructs a [`Dataset`](crate::types::Dataset).
     pub fn build(self) -> crate::types::Dataset {

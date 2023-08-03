@@ -141,6 +141,10 @@ impl NetworkBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier of the network.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the network.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -150,6 +154,10 @@ impl NetworkBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the network.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Attributes of the blockchain framework for the network.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -161,6 +169,10 @@ impl NetworkBuilder {
         self.description = input;
         self
     }
+    /// <p>Attributes of the blockchain framework for the network.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The blockchain framework that the network uses.</p>
     pub fn framework(mut self, input: crate::types::Framework) -> Self {
         self.framework = ::std::option::Option::Some(input);
@@ -170,6 +182,10 @@ impl NetworkBuilder {
     pub fn set_framework(mut self, input: ::std::option::Option<crate::types::Framework>) -> Self {
         self.framework = input;
         self
+    }
+    /// <p>The blockchain framework that the network uses.</p>
+    pub fn get_framework(&self) -> &::std::option::Option<crate::types::Framework> {
+        &self.framework
     }
     /// <p>The version of the blockchain framework that the network uses.</p>
     pub fn framework_version(
@@ -187,6 +203,10 @@ impl NetworkBuilder {
         self.framework_version = input;
         self
     }
+    /// <p>The version of the blockchain framework that the network uses.</p>
+    pub fn get_framework_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.framework_version
+    }
     /// <p>Attributes of the blockchain framework that the network uses.</p>
     pub fn framework_attributes(mut self, input: crate::types::NetworkFrameworkAttributes) -> Self {
         self.framework_attributes = ::std::option::Option::Some(input);
@@ -199,6 +219,12 @@ impl NetworkBuilder {
     ) -> Self {
         self.framework_attributes = input;
         self
+    }
+    /// <p>Attributes of the blockchain framework that the network uses.</p>
+    pub fn get_framework_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkFrameworkAttributes> {
+        &self.framework_attributes
     }
     /// <p>The VPC endpoint service name of the VPC endpoint service of the network. Members use the VPC endpoint service name to create a VPC endpoint to access network resources.</p>
     pub fn vpc_endpoint_service_name(
@@ -216,6 +242,10 @@ impl NetworkBuilder {
         self.vpc_endpoint_service_name = input;
         self
     }
+    /// <p>The VPC endpoint service name of the VPC endpoint service of the network. Members use the VPC endpoint service name to create a VPC endpoint to access network resources.</p>
+    pub fn get_vpc_endpoint_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_endpoint_service_name
+    }
     /// <p>The voting rules that the network uses to decide if a proposal is accepted.</p>
     pub fn voting_policy(mut self, input: crate::types::VotingPolicy) -> Self {
         self.voting_policy = ::std::option::Option::Some(input);
@@ -229,6 +259,10 @@ impl NetworkBuilder {
         self.voting_policy = input;
         self
     }
+    /// <p>The voting rules that the network uses to decide if a proposal is accepted.</p>
+    pub fn get_voting_policy(&self) -> &::std::option::Option<crate::types::VotingPolicy> {
+        &self.voting_policy
+    }
     /// <p>The current status of the network.</p>
     pub fn status(mut self, input: crate::types::NetworkStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -238,6 +272,10 @@ impl NetworkBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::NetworkStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the network.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::NetworkStatus> {
+        &self.status
     }
     /// <p>The date and time that the network was created.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -251,6 +289,10 @@ impl NetworkBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>The date and time that the network was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -279,6 +321,15 @@ impl NetworkBuilder {
         self.tags = input;
         self
     }
+    /// <p>Tags assigned to the network. Each tag consists of a key and optional value.</p>
+    /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The Amazon Resource Name (ARN) of the network. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -288,6 +339,10 @@ impl NetworkBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the network. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`Network`](crate::types::Network).
     pub fn build(self) -> crate::types::Network {

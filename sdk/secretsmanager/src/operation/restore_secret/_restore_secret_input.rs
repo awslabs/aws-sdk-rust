@@ -43,6 +43,11 @@ impl RestoreSecretInputBuilder {
         self.secret_id = input;
         self
     }
+    /// <p>The ARN or name of the secret to restore.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
+    pub fn get_secret_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_id
+    }
     /// Consumes the builder and constructs a [`RestoreSecretInput`](crate::operation::restore_secret::RestoreSecretInput).
     pub fn build(
         self,

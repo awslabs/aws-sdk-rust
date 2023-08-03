@@ -96,6 +96,10 @@ impl WafEntityMigrationExceptionBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
+    #[allow(missing_docs)] // documentation missing in model
     pub fn migration_error_type(mut self, input: crate::types::MigrationErrorType) -> Self {
         self.migration_error_type = ::std::option::Option::Some(input);
         self
@@ -107,6 +111,12 @@ impl WafEntityMigrationExceptionBuilder {
     ) -> Self {
         self.migration_error_type = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_migration_error_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::MigrationErrorType> {
+        &self.migration_error_type
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn migration_error_reason(
@@ -123,6 +133,10 @@ impl WafEntityMigrationExceptionBuilder {
     ) -> Self {
         self.migration_error_reason = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_migration_error_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.migration_error_reason
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

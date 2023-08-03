@@ -52,6 +52,10 @@ impl GetThirdPartyJobDetailsOutputBuilder {
         self.job_details = input;
         self
     }
+    /// <p>The details of the job, including any protected values defined for the job.</p>
+    pub fn get_job_details(&self) -> &::std::option::Option<crate::types::ThirdPartyJobDetails> {
+        &self.job_details
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

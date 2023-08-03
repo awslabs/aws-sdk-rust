@@ -39,6 +39,10 @@ impl DescribeJobInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the job to be described.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DescribeJobInput`](crate::operation::describe_job::DescribeJobInput).
     pub fn build(
         self,

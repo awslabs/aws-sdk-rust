@@ -36,6 +36,10 @@ impl ListConfigurationProfilesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListConfigurationProfiles as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_configuration_profiles::builders::ListConfigurationProfilesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -141,6 +145,10 @@ impl ListConfigurationProfilesFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The application ID.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -150,6 +158,10 @@ impl ListConfigurationProfilesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -161,6 +173,10 @@ impl ListConfigurationProfilesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A token to start the list. Use this token to get the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>A filter based on the type of configurations that the configuration profile contains. A configuration can be a feature flag or a freeform configuration.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.r#type(input.into());
@@ -170,5 +186,9 @@ impl ListConfigurationProfilesFluentBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_type(input);
         self
+    }
+    /// <p>A filter based on the type of configurations that the configuration profile contains. A configuration can be a feature flag or a freeform configuration.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_type()
     }
 }

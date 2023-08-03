@@ -124,6 +124,10 @@ impl CampaignBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the campaign.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) of the campaign. </p>
     pub fn campaign_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.campaign_arn = ::std::option::Option::Some(input.into());
@@ -133,6 +137,10 @@ impl CampaignBuilder {
     pub fn set_campaign_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.campaign_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the campaign. </p>
+    pub fn get_campaign_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.campaign_arn
     }
     /// <p>The Amazon Resource Name (ARN) of a specific version of the solution.</p>
     pub fn solution_version_arn(
@@ -150,6 +158,10 @@ impl CampaignBuilder {
         self.solution_version_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of a specific version of the solution.</p>
+    pub fn get_solution_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.solution_version_arn
+    }
     /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second. A high <code>minProvisionedTPS</code> will increase your bill. We recommend starting with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using Amazon CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as necessary.</p>
     pub fn min_provisioned_tps(mut self, input: i32) -> Self {
         self.min_provisioned_tps = ::std::option::Option::Some(input);
@@ -159,6 +171,10 @@ impl CampaignBuilder {
     pub fn set_min_provisioned_tps(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_provisioned_tps = input;
         self
+    }
+    /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second. A high <code>minProvisionedTPS</code> will increase your bill. We recommend starting with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using Amazon CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as necessary.</p>
+    pub fn get_min_provisioned_tps(&self) -> &::std::option::Option<i32> {
+        &self.min_provisioned_tps
     }
     /// <p>The configuration details of a campaign.</p>
     pub fn campaign_config(mut self, input: crate::types::CampaignConfig) -> Self {
@@ -172,6 +188,10 @@ impl CampaignBuilder {
     ) -> Self {
         self.campaign_config = input;
         self
+    }
+    /// <p>The configuration details of a campaign.</p>
+    pub fn get_campaign_config(&self) -> &::std::option::Option<crate::types::CampaignConfig> {
+        &self.campaign_config
     }
     /// <p>The status of the campaign.</p>
     /// <p>A campaign can be in one of the following states:</p>
@@ -193,6 +213,15 @@ impl CampaignBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the campaign.</p>
+    /// <p>A campaign can be in one of the following states:</p>
+    /// <ul>
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>If a campaign fails, the reason behind the failure.</p>
     pub fn failure_reason(
         mut self,
@@ -209,6 +238,10 @@ impl CampaignBuilder {
         self.failure_reason = input;
         self
     }
+    /// <p>If a campaign fails, the reason behind the failure.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
     /// <p>The date and time (in Unix format) that the campaign was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
@@ -221,6 +254,10 @@ impl CampaignBuilder {
     ) -> Self {
         self.creation_date_time = input;
         self
+    }
+    /// <p>The date and time (in Unix format) that the campaign was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
     }
     /// <p>The date and time (in Unix format) that the campaign was last updated.</p>
     pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -235,6 +272,12 @@ impl CampaignBuilder {
         self.last_updated_date_time = input;
         self
     }
+    /// <p>The date and time (in Unix format) that the campaign was last updated.</p>
+    pub fn get_last_updated_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date_time
+    }
     /// <p>Provides a summary of the properties of a campaign update. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a> API.</p>
     pub fn latest_campaign_update(mut self, input: crate::types::CampaignUpdateSummary) -> Self {
         self.latest_campaign_update = ::std::option::Option::Some(input);
@@ -247,6 +290,12 @@ impl CampaignBuilder {
     ) -> Self {
         self.latest_campaign_update = input;
         self
+    }
+    /// <p>Provides a summary of the properties of a campaign update. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a> API.</p>
+    pub fn get_latest_campaign_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::CampaignUpdateSummary> {
+        &self.latest_campaign_update
     }
     /// Consumes the builder and constructs a [`Campaign`](crate::types::Campaign).
     pub fn build(self) -> crate::types::Campaign {

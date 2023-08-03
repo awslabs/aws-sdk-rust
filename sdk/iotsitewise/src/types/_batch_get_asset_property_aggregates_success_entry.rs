@@ -49,6 +49,10 @@ impl BatchGetAssetPropertyAggregatesSuccessEntryBuilder {
         self.entry_id = input;
         self
     }
+    /// <p>The ID of the entry.</p>
+    pub fn get_entry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entry_id
+    }
     /// Appends an item to `aggregated_values`.
     ///
     /// To override the contents of this collection use [`set_aggregated_values`](Self::set_aggregated_values).
@@ -67,6 +71,12 @@ impl BatchGetAssetPropertyAggregatesSuccessEntryBuilder {
     ) -> Self {
         self.aggregated_values = input;
         self
+    }
+    /// <p>The requested aggregated asset property values (for example, average, minimum, and maximum).</p>
+    pub fn get_aggregated_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregatedValue>> {
+        &self.aggregated_values
     }
     /// Consumes the builder and constructs a [`BatchGetAssetPropertyAggregatesSuccessEntry`](crate::types::BatchGetAssetPropertyAggregatesSuccessEntry).
     pub fn build(self) -> crate::types::BatchGetAssetPropertyAggregatesSuccessEntry {

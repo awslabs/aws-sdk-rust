@@ -40,6 +40,10 @@ impl ActiveContextBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of active context.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`ActiveContext`](crate::types::ActiveContext).
     pub fn build(self) -> crate::types::ActiveContext {
         crate::types::ActiveContext { name: self.name }

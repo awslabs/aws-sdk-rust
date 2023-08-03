@@ -68,6 +68,10 @@ impl TagSearchConditionBuilder {
         self.tag_key = input;
         self
     }
+    /// <p>The tag key used in the tag search condition.</p>
+    pub fn get_tag_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tag_key
+    }
     /// <p>The tag value used in the tag search condition.</p>
     pub fn tag_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tag_value = ::std::option::Option::Some(input.into());
@@ -77,6 +81,10 @@ impl TagSearchConditionBuilder {
     pub fn set_tag_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tag_value = input;
         self
+    }
+    /// <p>The tag value used in the tag search condition.</p>
+    pub fn get_tag_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tag_value
     }
     /// <p>The type of comparison to be made when evaluating the tag key in tag search condition.</p>
     pub fn tag_key_comparison_type(mut self, input: crate::types::StringComparisonType) -> Self {
@@ -91,6 +99,12 @@ impl TagSearchConditionBuilder {
         self.tag_key_comparison_type = input;
         self
     }
+    /// <p>The type of comparison to be made when evaluating the tag key in tag search condition.</p>
+    pub fn get_tag_key_comparison_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::StringComparisonType> {
+        &self.tag_key_comparison_type
+    }
     /// <p>The type of comparison to be made when evaluating the tag value in tag search condition.</p>
     pub fn tag_value_comparison_type(mut self, input: crate::types::StringComparisonType) -> Self {
         self.tag_value_comparison_type = ::std::option::Option::Some(input);
@@ -103,6 +117,12 @@ impl TagSearchConditionBuilder {
     ) -> Self {
         self.tag_value_comparison_type = input;
         self
+    }
+    /// <p>The type of comparison to be made when evaluating the tag value in tag search condition.</p>
+    pub fn get_tag_value_comparison_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::StringComparisonType> {
+        &self.tag_value_comparison_type
     }
     /// Consumes the builder and constructs a [`TagSearchCondition`](crate::types::TagSearchCondition).
     pub fn build(self) -> crate::types::TagSearchCondition {

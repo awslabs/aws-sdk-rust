@@ -48,6 +48,10 @@ impl FileSystemEndpointBuilder {
         self.dns_name = input;
         self
     }
+    /// <p>The file system's DNS name. You can mount your file system using its DNS name.</p>
+    pub fn get_dns_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dns_name
+    }
     /// Appends an item to `ip_addresses`.
     ///
     /// To override the contents of this collection use [`set_ip_addresses`](Self::set_ip_addresses).
@@ -66,6 +70,12 @@ impl FileSystemEndpointBuilder {
     ) -> Self {
         self.ip_addresses = input;
         self
+    }
+    /// <p>IP addresses of the file system endpoint.</p>
+    pub fn get_ip_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ip_addresses
     }
     /// Consumes the builder and constructs a [`FileSystemEndpoint`](crate::types::FileSystemEndpoint).
     pub fn build(self) -> crate::types::FileSystemEndpoint {

@@ -77,6 +77,10 @@ impl NotificationSettingDetailBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Indicates whether the notification setting is enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>The event to which this notification setting is applied.</p>
     pub fn event(mut self, input: crate::types::NotificationEvent) -> Self {
         self.event = ::std::option::Option::Some(input);
@@ -90,6 +94,10 @@ impl NotificationSettingDetailBuilder {
         self.event = input;
         self
     }
+    /// <p>The event to which this notification setting is applied.</p>
+    pub fn get_event(&self) -> &::std::option::Option<crate::types::NotificationEvent> {
+        &self.event
+    }
     /// <p>The number of days before a notification event.</p>
     pub fn threshold(mut self, input: i32) -> Self {
         self.threshold = ::std::option::Option::Some(input);
@@ -99,6 +107,10 @@ impl NotificationSettingDetailBuilder {
     pub fn set_threshold(mut self, input: ::std::option::Option<i32>) -> Self {
         self.threshold = input;
         self
+    }
+    /// <p>The number of days before a notification event.</p>
+    pub fn get_threshold(&self) -> &::std::option::Option<i32> {
+        &self.threshold
     }
     /// <p>The specified channel of notification. IAM Roles Anywhere uses CloudWatch metrics, EventBridge, and Health Dashboard to notify for an event.</p> <note>
     /// <p>In the absence of a specific channel, IAM Roles Anywhere applies this setting to 'ALL' channels.</p>
@@ -117,6 +129,12 @@ impl NotificationSettingDetailBuilder {
         self.channel = input;
         self
     }
+    /// <p>The specified channel of notification. IAM Roles Anywhere uses CloudWatch metrics, EventBridge, and Health Dashboard to notify for an event.</p> <note>
+    /// <p>In the absence of a specific channel, IAM Roles Anywhere applies this setting to 'ALL' channels.</p>
+    /// </note>
+    pub fn get_channel(&self) -> &::std::option::Option<crate::types::NotificationChannel> {
+        &self.channel
+    }
     /// <p>The principal that configured the notification setting. For default settings configured by IAM Roles Anywhere, the value is <code>rolesanywhere.amazonaws.com</code>, and for customized notifications settings, it is the respective account ID. </p>
     pub fn configured_by(
         mut self,
@@ -132,6 +150,10 @@ impl NotificationSettingDetailBuilder {
     ) -> Self {
         self.configured_by = input;
         self
+    }
+    /// <p>The principal that configured the notification setting. For default settings configured by IAM Roles Anywhere, the value is <code>rolesanywhere.amazonaws.com</code>, and for customized notifications settings, it is the respective account ID. </p>
+    pub fn get_configured_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configured_by
     }
     /// Consumes the builder and constructs a [`NotificationSettingDetail`](crate::types::NotificationSettingDetail).
     pub fn build(self) -> crate::types::NotificationSettingDetail {

@@ -77,6 +77,10 @@ impl DeviceTypeBuilder {
         self.device_key = input;
         self
     }
+    /// <p>The device key.</p>
+    pub fn get_device_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_key
+    }
     /// Appends an item to `device_attributes`.
     ///
     /// To override the contents of this collection use [`set_device_attributes`](Self::set_device_attributes).
@@ -96,6 +100,12 @@ impl DeviceTypeBuilder {
         self.device_attributes = input;
         self
     }
+    /// <p>The device attributes.</p>
+    pub fn get_device_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeType>> {
+        &self.device_attributes
+    }
     /// <p>The creation date of the device.</p>
     pub fn device_create_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.device_create_date = ::std::option::Option::Some(input);
@@ -108,6 +118,10 @@ impl DeviceTypeBuilder {
     ) -> Self {
         self.device_create_date = input;
         self
+    }
+    /// <p>The creation date of the device.</p>
+    pub fn get_device_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.device_create_date
     }
     /// <p>The last modified date of the device.</p>
     pub fn device_last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -122,6 +136,12 @@ impl DeviceTypeBuilder {
         self.device_last_modified_date = input;
         self
     }
+    /// <p>The last modified date of the device.</p>
+    pub fn get_device_last_modified_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.device_last_modified_date
+    }
     /// <p>The date when the device was last authenticated.</p>
     pub fn device_last_authenticated_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.device_last_authenticated_date = ::std::option::Option::Some(input);
@@ -134,6 +154,12 @@ impl DeviceTypeBuilder {
     ) -> Self {
         self.device_last_authenticated_date = input;
         self
+    }
+    /// <p>The date when the device was last authenticated.</p>
+    pub fn get_device_last_authenticated_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.device_last_authenticated_date
     }
     /// Consumes the builder and constructs a [`DeviceType`](crate::types::DeviceType).
     pub fn build(self) -> crate::types::DeviceType {

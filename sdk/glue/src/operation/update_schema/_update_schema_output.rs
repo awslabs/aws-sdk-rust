@@ -62,6 +62,10 @@ impl UpdateSchemaOutputBuilder {
         self.schema_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the schema.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_arn
+    }
     /// <p>The name of the schema.</p>
     pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_name = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl UpdateSchemaOutputBuilder {
     pub fn set_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_name = input;
         self
+    }
+    /// <p>The name of the schema.</p>
+    pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_name
     }
     /// <p>The name of the registry that contains the schema.</p>
     pub fn registry_name(
@@ -87,6 +95,10 @@ impl UpdateSchemaOutputBuilder {
     ) -> Self {
         self.registry_name = input;
         self
+    }
+    /// <p>The name of the registry that contains the schema.</p>
+    pub fn get_registry_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

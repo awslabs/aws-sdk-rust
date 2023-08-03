@@ -50,6 +50,10 @@ impl ListDeliverabilityTestReportsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token returned from a previous call to <code>ListDeliverabilityTestReports</code> to indicate the position in the list of predictive inbox placement tests.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The number of results to show in a single call to <code>ListDeliverabilityTestReports</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     /// <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
     pub fn page_size(mut self, input: i32) -> Self {
@@ -61,6 +65,11 @@ impl ListDeliverabilityTestReportsInputBuilder {
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.page_size = input;
         self
+    }
+    /// <p>The number of results to show in a single call to <code>ListDeliverabilityTestReports</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
+    /// <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        &self.page_size
     }
     /// Consumes the builder and constructs a [`ListDeliverabilityTestReportsInput`](crate::operation::list_deliverability_test_reports::ListDeliverabilityTestReportsInput).
     pub fn build(

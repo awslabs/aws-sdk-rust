@@ -98,6 +98,10 @@ impl CatalogItemBuilder {
         self.catalog_item_id = input;
         self
     }
+    /// <p> The ID of the catalog item. </p>
+    pub fn get_catalog_item_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_item_id
+    }
     /// <p> The status of a catalog item. </p>
     pub fn item_status(mut self, input: crate::types::CatalogItemStatus) -> Self {
         self.item_status = ::std::option::Option::Some(input);
@@ -110,6 +114,10 @@ impl CatalogItemBuilder {
     ) -> Self {
         self.item_status = input;
         self
+    }
+    /// <p> The status of a catalog item. </p>
+    pub fn get_item_status(&self) -> &::std::option::Option<crate::types::CatalogItemStatus> {
+        &self.item_status
     }
     /// Appends an item to `ec2_capacities`.
     ///
@@ -130,6 +138,12 @@ impl CatalogItemBuilder {
         self.ec2_capacities = input;
         self
     }
+    /// <p> Information about the EC2 capacity of an item. </p>
+    pub fn get_ec2_capacities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Ec2Capacity>> {
+        &self.ec2_capacities
+    }
     /// <p> Information about the power draw of an item. </p>
     pub fn power_kva(mut self, input: f32) -> Self {
         self.power_kva = ::std::option::Option::Some(input);
@@ -140,6 +154,10 @@ impl CatalogItemBuilder {
         self.power_kva = input;
         self
     }
+    /// <p> Information about the power draw of an item. </p>
+    pub fn get_power_kva(&self) -> &::std::option::Option<f32> {
+        &self.power_kva
+    }
     /// <p> The weight of the item in pounds. </p>
     pub fn weight_lbs(mut self, input: i32) -> Self {
         self.weight_lbs = ::std::option::Option::Some(input);
@@ -149,6 +167,10 @@ impl CatalogItemBuilder {
     pub fn set_weight_lbs(mut self, input: ::std::option::Option<i32>) -> Self {
         self.weight_lbs = input;
         self
+    }
+    /// <p> The weight of the item in pounds. </p>
+    pub fn get_weight_lbs(&self) -> &::std::option::Option<i32> {
+        &self.weight_lbs
     }
     /// Appends an item to `supported_uplink_gbps`.
     ///
@@ -169,6 +191,10 @@ impl CatalogItemBuilder {
         self.supported_uplink_gbps = input;
         self
     }
+    /// <p> The uplink speed this catalog item requires for the connection to the Region. </p>
+    pub fn get_supported_uplink_gbps(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.supported_uplink_gbps
+    }
     /// Appends an item to `supported_storage`.
     ///
     /// To override the contents of this collection use [`set_supported_storage`](Self::set_supported_storage).
@@ -187,6 +213,12 @@ impl CatalogItemBuilder {
     ) -> Self {
         self.supported_storage = input;
         self
+    }
+    /// <p> The supported storage options for the catalog item. </p>
+    pub fn get_supported_storage(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportedStorageEnum>> {
+        &self.supported_storage
     }
     /// Consumes the builder and constructs a [`CatalogItem`](crate::types::CatalogItem).
     pub fn build(self) -> crate::types::CatalogItem {

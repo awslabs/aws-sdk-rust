@@ -102,6 +102,10 @@ impl GetLinkOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the link.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The random ID string that Amazon Web Services generated as part of the link ARN.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -112,6 +116,10 @@ impl GetLinkOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The random ID string that Amazon Web Services generated as part of the link ARN.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The label that you assigned to this link, with the variables resolved to their actual values.</p>
     pub fn label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label = ::std::option::Option::Some(input.into());
@@ -121,6 +129,10 @@ impl GetLinkOutputBuilder {
     pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label = input;
         self
+    }
+    /// <p>The label that you assigned to this link, with the variables resolved to their actual values.</p>
+    pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label
     }
     /// <p>The exact label template that was specified when the link was created, with the template variables not resolved.</p>
     pub fn label_template(
@@ -137,6 +149,10 @@ impl GetLinkOutputBuilder {
     ) -> Self {
         self.label_template = input;
         self
+    }
+    /// <p>The exact label template that was specified when the link was created, with the template variables not resolved.</p>
+    pub fn get_label_template(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label_template
     }
     /// Appends an item to `resource_types`.
     ///
@@ -160,6 +176,12 @@ impl GetLinkOutputBuilder {
         self.resource_types = input;
         self
     }
+    /// <p>The resource types supported by this link.</p>
+    pub fn get_resource_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_types
+    }
     /// <p>The ARN of the sink that is used for this link.</p>
     pub fn sink_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sink_arn = ::std::option::Option::Some(input.into());
@@ -169,6 +191,10 @@ impl GetLinkOutputBuilder {
     pub fn set_sink_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sink_arn = input;
         self
+    }
+    /// <p>The ARN of the sink that is used for this link.</p>
+    pub fn get_sink_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sink_arn
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -194,6 +220,14 @@ impl GetLinkOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags assigned to the link.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

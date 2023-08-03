@@ -48,6 +48,10 @@ impl FindingIdentifierBuilder {
         self.scan_name = input;
         self
     }
+    /// <p>The name of the scan that generated the finding. </p>
+    pub fn get_scan_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scan_name
+    }
     /// <p>The identifier for a finding.</p>
     pub fn finding_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.finding_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl FindingIdentifierBuilder {
     pub fn set_finding_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.finding_id = input;
         self
+    }
+    /// <p>The identifier for a finding.</p>
+    pub fn get_finding_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.finding_id
     }
     /// Consumes the builder and constructs a [`FindingIdentifier`](crate::types::FindingIdentifier).
     pub fn build(self) -> crate::types::FindingIdentifier {

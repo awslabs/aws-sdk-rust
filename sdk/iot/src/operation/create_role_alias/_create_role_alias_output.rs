@@ -55,6 +55,10 @@ impl CreateRoleAliasOutputBuilder {
         self.role_alias = input;
         self
     }
+    /// <p>The role alias.</p>
+    pub fn get_role_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_alias
+    }
     /// <p>The role alias ARN.</p>
     pub fn role_alias_arn(
         mut self,
@@ -70,6 +74,10 @@ impl CreateRoleAliasOutputBuilder {
     ) -> Self {
         self.role_alias_arn = input;
         self
+    }
+    /// <p>The role alias ARN.</p>
+    pub fn get_role_alias_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_alias_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

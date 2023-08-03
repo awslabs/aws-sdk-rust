@@ -56,6 +56,10 @@ impl AttachmentReferenceBuilder {
         self.name = input;
         self
     }
+    /// <p>Identifier of the attachment reference.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The location path of the attachment reference.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl AttachmentReferenceBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The location path of the attachment reference.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// <p>Status of the attachment reference type.</p>
     pub fn status(mut self, input: crate::types::ReferenceStatus) -> Self {
@@ -78,6 +86,10 @@ impl AttachmentReferenceBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Status of the attachment reference type.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ReferenceStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`AttachmentReference`](crate::types::AttachmentReference).
     pub fn build(self) -> crate::types::AttachmentReference {

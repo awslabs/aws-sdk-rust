@@ -57,6 +57,12 @@ impl BatchGetObjectInformationResponseBuilder {
         self.schema_facets = input;
         self
     }
+    /// <p>The facets attached to the specified object.</p>
+    pub fn get_schema_facets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>> {
+        &self.schema_facets
+    }
     /// <p>The <code>ObjectIdentifier</code> of the specified object.</p>
     pub fn object_identifier(
         mut self,
@@ -72,6 +78,10 @@ impl BatchGetObjectInformationResponseBuilder {
     ) -> Self {
         self.object_identifier = input;
         self
+    }
+    /// <p>The <code>ObjectIdentifier</code> of the specified object.</p>
+    pub fn get_object_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_identifier
     }
     /// Consumes the builder and constructs a [`BatchGetObjectInformationResponse`](crate::types::BatchGetObjectInformationResponse).
     pub fn build(self) -> crate::types::BatchGetObjectInformationResponse {

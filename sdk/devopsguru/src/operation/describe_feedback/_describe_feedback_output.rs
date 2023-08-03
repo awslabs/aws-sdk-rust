@@ -50,6 +50,10 @@ impl DescribeFeedbackOutputBuilder {
         self.insight_feedback = input;
         self
     }
+    /// <p> Information about insight feedback received from a customer. </p>
+    pub fn get_insight_feedback(&self) -> &::std::option::Option<crate::types::InsightFeedback> {
+        &self.insight_feedback
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

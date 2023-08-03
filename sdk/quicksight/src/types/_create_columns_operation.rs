@@ -49,6 +49,12 @@ impl CreateColumnsOperationBuilder {
         self.columns = input;
         self
     }
+    /// <p>Calculated columns to create.</p>
+    pub fn get_columns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CalculatedColumn>> {
+        &self.columns
+    }
     /// Consumes the builder and constructs a [`CreateColumnsOperation`](crate::types::CreateColumnsOperation).
     pub fn build(self) -> crate::types::CreateColumnsOperation {
         crate::types::CreateColumnsOperation {

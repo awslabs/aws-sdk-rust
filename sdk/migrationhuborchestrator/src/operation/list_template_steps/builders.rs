@@ -36,6 +36,12 @@ impl ListTemplateStepsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListTemplateSteps as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_template_steps::builders::ListTemplateStepsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListTemplateStepsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results that can be returned.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -147,6 +157,10 @@ impl ListTemplateStepsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The ID of the template.</p>
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_id(input.into());
@@ -156,6 +170,10 @@ impl ListTemplateStepsFluentBuilder {
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_id(input);
         self
+    }
+    /// <p>The ID of the template.</p>
+    pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_id()
     }
     /// <p>The ID of the step group.</p>
     pub fn step_group_id(
@@ -172,5 +190,9 @@ impl ListTemplateStepsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_step_group_id(input);
         self
+    }
+    /// <p>The ID of the step group.</p>
+    pub fn get_step_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_step_group_id()
     }
 }

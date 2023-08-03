@@ -36,6 +36,10 @@ impl PurchaseReservedNodesOfferingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PurchaseReservedNodesOffering as a reference.
+    pub fn as_input(&self) -> &crate::operation::purchase_reserved_nodes_offering::builders::PurchaseReservedNodesOfferingInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl PurchaseReservedNodesOfferingFluentBuilder {
         self.inner = self.inner.set_reserved_nodes_offering_id(input);
         self
     }
+    /// <p>The ID of the reserved node offering to purchase.</p>
+    pub fn get_reserved_nodes_offering_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reserved_nodes_offering_id()
+    }
     /// <p>A customer-specified identifier to track this reservation.</p>
     pub fn reservation_id(
         mut self,
@@ -148,6 +156,10 @@ impl PurchaseReservedNodesOfferingFluentBuilder {
         self.inner = self.inner.set_reservation_id(input);
         self
     }
+    /// <p>A customer-specified identifier to track this reservation.</p>
+    pub fn get_reservation_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reservation_id()
+    }
     /// <p>The number of node instances to reserve.</p>
     pub fn node_count(mut self, input: i32) -> Self {
         self.inner = self.inner.node_count(input);
@@ -157,6 +169,10 @@ impl PurchaseReservedNodesOfferingFluentBuilder {
     pub fn set_node_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_node_count(input);
         self
+    }
+    /// <p>The number of node instances to reserve.</p>
+    pub fn get_node_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_node_count()
     }
     /// Appends an item to `Tags`.
     ///
@@ -174,5 +190,9 @@ impl PurchaseReservedNodesOfferingFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

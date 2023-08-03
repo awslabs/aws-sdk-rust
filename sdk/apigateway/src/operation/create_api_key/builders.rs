@@ -36,6 +36,12 @@ impl CreateApiKeyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateApiKey as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_api_key::builders::CreateApiKeyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl CreateApiKeyFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the ApiKey.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The description of the ApiKey.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -127,6 +137,10 @@ impl CreateApiKeyFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the ApiKey.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>Specifies whether the ApiKey can be used by callers.</p>
     pub fn enabled(mut self, input: bool) -> Self {
@@ -138,6 +152,10 @@ impl CreateApiKeyFluentBuilder {
         self.inner = self.inner.set_enabled(input);
         self
     }
+    /// <p>Specifies whether the ApiKey can be used by callers.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enabled()
+    }
     /// <p>Specifies whether (<code>true</code>) or not (<code>false</code>) the key identifier is distinct from the created API key value. This parameter is deprecated and should not be used.</p>
     pub fn generate_distinct_id(mut self, input: bool) -> Self {
         self.inner = self.inner.generate_distinct_id(input);
@@ -148,6 +166,10 @@ impl CreateApiKeyFluentBuilder {
         self.inner = self.inner.set_generate_distinct_id(input);
         self
     }
+    /// <p>Specifies whether (<code>true</code>) or not (<code>false</code>) the key identifier is distinct from the created API key value. This parameter is deprecated and should not be used.</p>
+    pub fn get_generate_distinct_id(&self) -> &::std::option::Option<bool> {
+        self.inner.get_generate_distinct_id()
+    }
     /// <p>Specifies a value of the API key.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.value(input.into());
@@ -157,6 +179,10 @@ impl CreateApiKeyFluentBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_value(input);
         self
+    }
+    /// <p>Specifies a value of the API key.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_value()
     }
     /// Appends an item to `stageKeys`.
     ///
@@ -175,6 +201,12 @@ impl CreateApiKeyFluentBuilder {
         self.inner = self.inner.set_stage_keys(input);
         self
     }
+    /// <p>DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API key.</p>
+    pub fn get_stage_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StageKey>> {
+        self.inner.get_stage_keys()
+    }
     /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
     pub fn customer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.customer_id(input.into());
@@ -184,6 +216,10 @@ impl CreateApiKeyFluentBuilder {
     pub fn set_customer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_customer_id(input);
         self
+    }
+    /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
+    pub fn get_customer_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_customer_id()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -207,5 +243,13 @@ impl CreateApiKeyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

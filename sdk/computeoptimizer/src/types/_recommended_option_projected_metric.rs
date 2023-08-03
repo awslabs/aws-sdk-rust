@@ -69,6 +69,10 @@ impl RecommendedOptionProjectedMetricBuilder {
         self.recommended_instance_type = input;
         self
     }
+    /// <p>The recommended instance type.</p>
+    pub fn get_recommended_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommended_instance_type
+    }
     /// <p>The rank of the recommendation option projected metric.</p>
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
     /// <p>The projected metric rank correlates to the recommendation option rank. For example, the projected metric ranked as <code>1</code> is related to the recommendation option that is also ranked as <code>1</code> in the same response.</p>
@@ -82,6 +86,12 @@ impl RecommendedOptionProjectedMetricBuilder {
     pub fn set_rank(mut self, input: ::std::option::Option<i32>) -> Self {
         self.rank = input;
         self
+    }
+    /// <p>The rank of the recommendation option projected metric.</p>
+    /// <p>The top recommendation option is ranked as <code>1</code>.</p>
+    /// <p>The projected metric rank correlates to the recommendation option rank. For example, the projected metric ranked as <code>1</code> is related to the recommendation option that is also ranked as <code>1</code> in the same response.</p>
+    pub fn get_rank(&self) -> &::std::option::Option<i32> {
+        &self.rank
     }
     /// Appends an item to `projected_metrics`.
     ///
@@ -101,6 +111,12 @@ impl RecommendedOptionProjectedMetricBuilder {
     ) -> Self {
         self.projected_metrics = input;
         self
+    }
+    /// <p>An array of objects that describe a projected utilization metric.</p>
+    pub fn get_projected_metrics(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectedMetric>> {
+        &self.projected_metrics
     }
     /// Consumes the builder and constructs a [`RecommendedOptionProjectedMetric`](crate::types::RecommendedOptionProjectedMetric).
     pub fn build(self) -> crate::types::RecommendedOptionProjectedMetric {

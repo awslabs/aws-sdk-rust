@@ -36,6 +36,10 @@ impl ListCustomLineItemVersionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListCustomLineItemVersions as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_custom_line_item_versions::builders::ListCustomLineItemVersionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl ListCustomLineItemVersionsFluentBuilder {
         self.inner = self.inner.set_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the custom line item.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
+    }
     /// <p>The maximum number of custom line item versions to retrieve.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -142,6 +150,10 @@ impl ListCustomLineItemVersionsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of custom line item versions to retrieve.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The pagination token that's used on subsequent calls to retrieve custom line item versions.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -151,6 +163,10 @@ impl ListCustomLineItemVersionsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The pagination token that's used on subsequent calls to retrieve custom line item versions.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>A <code>ListCustomLineItemVersionsFilter</code> that specifies the billing period range in which the custom line item versions are applied.</p>
     pub fn filters(mut self, input: crate::types::ListCustomLineItemVersionsFilter) -> Self {
@@ -164,5 +180,11 @@ impl ListCustomLineItemVersionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
+    }
+    /// <p>A <code>ListCustomLineItemVersionsFilter</code> that specifies the billing period range in which the custom line item versions are applied.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<crate::types::ListCustomLineItemVersionsFilter> {
+        self.inner.get_filters()
     }
 }

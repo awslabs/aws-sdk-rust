@@ -104,6 +104,10 @@ impl ListPackageVersionAssetsOutputBuilder {
         self.format = input;
         self
     }
+    /// <p> The format of the package that contains the requested package version assets. </p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::PackageFormat> {
+        &self.format
+    }
     /// <p>The namespace of the package version that contains the requested package version assets. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
     /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
@@ -124,6 +128,15 @@ impl ListPackageVersionAssetsOutputBuilder {
         self.namespace = input;
         self
     }
+    /// <p>The namespace of the package version that contains the requested package version assets. The package version component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
+    /// </ul>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
+    }
     /// <p> The name of the package that contains the requested package version assets. </p>
     pub fn package(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package = ::std::option::Option::Some(input.into());
@@ -134,6 +147,10 @@ impl ListPackageVersionAssetsOutputBuilder {
         self.package = input;
         self
     }
+    /// <p> The name of the package that contains the requested package version assets. </p>
+    pub fn get_package(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package
+    }
     /// <p> The version of the package associated with the requested assets. </p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -143,6 +160,10 @@ impl ListPackageVersionAssetsOutputBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p> The version of the package associated with the requested assets. </p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// <p> The current revision associated with the package version. </p>
     pub fn version_revision(
@@ -160,6 +181,10 @@ impl ListPackageVersionAssetsOutputBuilder {
         self.version_revision = input;
         self
     }
+    /// <p> The current revision associated with the package version. </p>
+    pub fn get_version_revision(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_revision
+    }
     /// <p> If there are additional results, this is the token for the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -169,6 +194,10 @@ impl ListPackageVersionAssetsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p> If there are additional results, this is the token for the next set of results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `assets`.
     ///
@@ -188,6 +217,12 @@ impl ListPackageVersionAssetsOutputBuilder {
     ) -> Self {
         self.assets = input;
         self
+    }
+    /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a> objects. </p>
+    pub fn get_assets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetSummary>> {
+        &self.assets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

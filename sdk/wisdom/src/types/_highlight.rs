@@ -48,6 +48,10 @@ impl HighlightBuilder {
         self.begin_offset_inclusive = input;
         self
     }
+    /// <p>The offset for the start of the highlight.</p>
+    pub fn get_begin_offset_inclusive(&self) -> &::std::option::Option<i32> {
+        &self.begin_offset_inclusive
+    }
     /// <p>The offset for the end of the highlight.</p>
     pub fn end_offset_exclusive(mut self, input: i32) -> Self {
         self.end_offset_exclusive = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl HighlightBuilder {
     pub fn set_end_offset_exclusive(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end_offset_exclusive = input;
         self
+    }
+    /// <p>The offset for the end of the highlight.</p>
+    pub fn get_end_offset_exclusive(&self) -> &::std::option::Option<i32> {
+        &self.end_offset_exclusive
     }
     /// Consumes the builder and constructs a [`Highlight`](crate::types::Highlight).
     pub fn build(self) -> crate::types::Highlight {

@@ -48,6 +48,10 @@ impl CodeLineBuilder {
         self.content = input;
         self
     }
+    /// <p>The content of a line of code</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
+    }
     /// <p>The line number that a section of code is located at.</p>
     pub fn line_number(mut self, input: i32) -> Self {
         self.line_number = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl CodeLineBuilder {
     pub fn set_line_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.line_number = input;
         self
+    }
+    /// <p>The line number that a section of code is located at.</p>
+    pub fn get_line_number(&self) -> &::std::option::Option<i32> {
+        &self.line_number
     }
     /// Consumes the builder and constructs a [`CodeLine`](crate::types::CodeLine).
     pub fn build(self) -> crate::types::CodeLine {

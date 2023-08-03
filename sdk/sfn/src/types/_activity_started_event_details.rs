@@ -40,6 +40,10 @@ impl ActivityStartedEventDetailsBuilder {
         self.worker_name = input;
         self
     }
+    /// <p>The name of the worker that the task is assigned to. These names are provided by the workers when calling <code>GetActivityTask</code>.</p>
+    pub fn get_worker_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.worker_name
+    }
     /// Consumes the builder and constructs a [`ActivityStartedEventDetails`](crate::types::ActivityStartedEventDetails).
     pub fn build(self) -> crate::types::ActivityStartedEventDetails {
         crate::types::ActivityStartedEventDetails {

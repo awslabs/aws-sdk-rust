@@ -58,6 +58,12 @@ impl CandidatePropertiesBuilder {
         self.candidate_artifact_locations = input;
         self
     }
+    /// <p>The Amazon S3 prefix to the artifacts generated for an AutoML candidate.</p>
+    pub fn get_candidate_artifact_locations(
+        &self,
+    ) -> &::std::option::Option<crate::types::CandidateArtifactLocations> {
+        &self.candidate_artifact_locations
+    }
     /// Appends an item to `candidate_metrics`.
     ///
     /// To override the contents of this collection use [`set_candidate_metrics`](Self::set_candidate_metrics).
@@ -76,6 +82,12 @@ impl CandidatePropertiesBuilder {
     ) -> Self {
         self.candidate_metrics = input;
         self
+    }
+    /// <p>Information about the candidate metrics for an AutoML job.</p>
+    pub fn get_candidate_metrics(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>> {
+        &self.candidate_metrics
     }
     /// Consumes the builder and constructs a [`CandidateProperties`](crate::types::CandidateProperties).
     pub fn build(self) -> crate::types::CandidateProperties {

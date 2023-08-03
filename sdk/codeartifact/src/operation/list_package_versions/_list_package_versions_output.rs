@@ -121,6 +121,14 @@ impl ListPackageVersionsOutputBuilder {
         self.default_display_version = input;
         self
     }
+    /// <p> The default package version to display. This depends on the package format: </p>
+    /// <ul>
+    /// <li> <p> For Maven and PyPI packages, it's the most recently published package version. </p> </li>
+    /// <li> <p> For npm packages, it's the version referenced by the <code>latest</code> tag. If the <code>latest</code> tag is not set, it's the most recently published package version. </p> </li>
+    /// </ul>
+    pub fn get_default_display_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_display_version
+    }
     /// <p> A format of the package. </p>
     pub fn format(mut self, input: crate::types::PackageFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
@@ -130,6 +138,10 @@ impl ListPackageVersionsOutputBuilder {
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::PackageFormat>) -> Self {
         self.format = input;
         self
+    }
+    /// <p> A format of the package. </p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::PackageFormat> {
+        &self.format
     }
     /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -151,6 +163,15 @@ impl ListPackageVersionsOutputBuilder {
         self.namespace = input;
         self
     }
+    /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+    /// </ul>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
+    }
     /// <p> The name of the package. </p>
     pub fn package(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package = ::std::option::Option::Some(input.into());
@@ -160,6 +181,10 @@ impl ListPackageVersionsOutputBuilder {
     pub fn set_package(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package = input;
         self
+    }
+    /// <p> The name of the package. </p>
+    pub fn get_package(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package
     }
     /// Appends an item to `versions`.
     ///
@@ -180,6 +205,12 @@ impl ListPackageVersionsOutputBuilder {
         self.versions = input;
         self
     }
+    /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a> objects. </p>
+    pub fn get_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PackageVersionSummary>> {
+        &self.versions
+    }
     /// <p> If there are additional results, this is the token for the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -189,6 +220,10 @@ impl ListPackageVersionsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p> If there are additional results, this is the token for the next set of results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -41,6 +41,10 @@ impl GetAgentConfigurationInputBuilder {
         self.agent_id = input;
         self
     }
+    /// <p>UUID of agent to get configuration information for.</p>
+    pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_id
+    }
     /// Consumes the builder and constructs a [`GetAgentConfigurationInput`](crate::operation::get_agent_configuration::GetAgentConfigurationInput).
     pub fn build(
         self,

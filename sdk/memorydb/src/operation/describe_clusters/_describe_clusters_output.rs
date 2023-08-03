@@ -55,6 +55,10 @@ impl DescribeClustersOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `clusters`.
     ///
     /// To override the contents of this collection use [`set_clusters`](Self::set_clusters).
@@ -73,6 +77,10 @@ impl DescribeClustersOutputBuilder {
     ) -> Self {
         self.clusters = input;
         self
+    }
+    /// <p>A list of clusters</p>
+    pub fn get_clusters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Cluster>> {
+        &self.clusters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

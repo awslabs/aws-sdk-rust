@@ -39,6 +39,10 @@ impl ForgetSmartHomeAppliancesInputBuilder {
         self.room_arn = input;
         self
     }
+    /// <p>The room that the appliances are associated with.</p>
+    pub fn get_room_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.room_arn
+    }
     /// Consumes the builder and constructs a [`ForgetSmartHomeAppliancesInput`](crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesInput).
     pub fn build(
         self,

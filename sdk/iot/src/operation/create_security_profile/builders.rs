@@ -37,6 +37,13 @@ impl CreateSecurityProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSecurityProfile as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_security_profile::builders::CreateSecurityProfileInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl CreateSecurityProfileFluentBuilder {
         self.inner = self.inner.set_security_profile_name(input);
         self
     }
+    /// <p>The name you are giving to the security profile.</p>
+    pub fn get_security_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_security_profile_name()
+    }
     /// <p>A description of the security profile.</p>
     pub fn security_profile_description(
         mut self,
@@ -148,6 +159,12 @@ impl CreateSecurityProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_security_profile_description(input);
         self
+    }
+    /// <p>A description of the security profile.</p>
+    pub fn get_security_profile_description(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_security_profile_description()
     }
     /// Appends an item to `behaviors`.
     ///
@@ -165,6 +182,10 @@ impl CreateSecurityProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_behaviors(input);
         self
+    }
+    /// <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
+    pub fn get_behaviors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Behavior>> {
+        self.inner.get_behaviors()
     }
     /// Adds a key-value pair to `alertTargets`.
     ///
@@ -188,6 +209,14 @@ impl CreateSecurityProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_alert_targets(input);
         self
+    }
+    /// <p>Specifies the destinations to which alerts are sent. (Alerts are always sent to the console.) Alerts are generated when a device (thing) violates a behavior.</p>
+    pub fn get_alert_targets(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<crate::types::AlertTargetType, crate::types::AlertTarget>,
+    > {
+        self.inner.get_alert_targets()
     }
     /// Appends an item to `additionalMetricsToRetain`.
     ///
@@ -213,6 +242,14 @@ impl CreateSecurityProfileFluentBuilder {
         self.inner = self.inner.set_additional_metrics_to_retain(input);
         self
     }
+    /// <p> <i>Please use <code>CreateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
+    /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
+    #[deprecated(note = "Use additionalMetricsToRetainV2.")]
+    pub fn get_additional_metrics_to_retain(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_additional_metrics_to_retain()
+    }
     /// Appends an item to `additionalMetricsToRetainV2`.
     ///
     /// To override the contents of this collection use [`set_additional_metrics_to_retain_v2`](Self::set_additional_metrics_to_retain_v2).
@@ -230,6 +267,12 @@ impl CreateSecurityProfileFluentBuilder {
         self.inner = self.inner.set_additional_metrics_to_retain_v2(input);
         self
     }
+    /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
+    pub fn get_additional_metrics_to_retain_v2(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricToRetain>> {
+        self.inner.get_additional_metrics_to_retain_v2()
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -246,5 +289,9 @@ impl CreateSecurityProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Metadata that can be used to manage the security profile.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

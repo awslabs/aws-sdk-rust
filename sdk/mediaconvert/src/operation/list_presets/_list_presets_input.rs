@@ -71,6 +71,10 @@ impl ListPresetsInputBuilder {
         self.category = input;
         self
     }
+    /// Optionally, specify a preset category to limit responses to only presets from that category.
+    pub fn get_category(&self) -> &::std::option::Option<::std::string::String> {
+        &self.category
+    }
     /// Optional. When you request a list of presets, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
     pub fn list_by(mut self, input: crate::types::PresetListBy) -> Self {
         self.list_by = ::std::option::Option::Some(input);
@@ -80,6 +84,10 @@ impl ListPresetsInputBuilder {
     pub fn set_list_by(mut self, input: ::std::option::Option<crate::types::PresetListBy>) -> Self {
         self.list_by = input;
         self
+    }
+    /// Optional. When you request a list of presets, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
+    pub fn get_list_by(&self) -> &::std::option::Option<crate::types::PresetListBy> {
+        &self.list_by
     }
     /// Optional. Number of presets, up to twenty, that will be returned at one time
     pub fn max_results(mut self, input: i32) -> Self {
@@ -91,6 +99,10 @@ impl ListPresetsInputBuilder {
         self.max_results = input;
         self
     }
+    /// Optional. Number of presets, up to twenty, that will be returned at one time
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// Use this string, provided with the response to a previous request, to request the next batch of presets.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -101,6 +113,10 @@ impl ListPresetsInputBuilder {
         self.next_token = input;
         self
     }
+    /// Use this string, provided with the response to a previous request, to request the next batch of presets.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
     pub fn order(mut self, input: crate::types::Order) -> Self {
         self.order = ::std::option::Option::Some(input);
@@ -110,6 +126,10 @@ impl ListPresetsInputBuilder {
     pub fn set_order(mut self, input: ::std::option::Option<crate::types::Order>) -> Self {
         self.order = input;
         self
+    }
+    /// Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
+    pub fn get_order(&self) -> &::std::option::Option<crate::types::Order> {
+        &self.order
     }
     /// Consumes the builder and constructs a [`ListPresetsInput`](crate::operation::list_presets::ListPresetsInput).
     pub fn build(

@@ -40,6 +40,10 @@ impl LocationConfigurationBuilder {
         self.location = input;
         self
     }
+    /// <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
+    }
     /// Consumes the builder and constructs a [`LocationConfiguration`](crate::types::LocationConfiguration).
     pub fn build(self) -> crate::types::LocationConfiguration {
         crate::types::LocationConfiguration {

@@ -50,6 +50,12 @@ impl DescribeServiceAccessPoliciesOutputBuilder {
         self.access_policies = input;
         self
     }
+    /// <p>The access rules configured for the domain specified in the request.</p>
+    pub fn get_access_policies(
+        &self,
+    ) -> &::std::option::Option<crate::types::AccessPoliciesStatus> {
+        &self.access_policies
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

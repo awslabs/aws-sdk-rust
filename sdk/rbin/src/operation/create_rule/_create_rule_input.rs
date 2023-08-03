@@ -86,6 +86,10 @@ impl CreateRuleInputBuilder {
         self.retention_period = input;
         self
     }
+    /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
+    pub fn get_retention_period(&self) -> &::std::option::Option<crate::types::RetentionPeriod> {
+        &self.retention_period
+    }
     /// <p>The retention rule description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -95,6 +99,10 @@ impl CreateRuleInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The retention rule description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `tags`.
     ///
@@ -115,6 +123,10 @@ impl CreateRuleInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Information about the tags to assign to the retention rule.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots and EBS-backed AMIs are supported. To retain snapshots, specify <code>EBS_SNAPSHOT</code>. To retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -127,6 +139,10 @@ impl CreateRuleInputBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots and EBS-backed AMIs are supported. To retain snapshots, specify <code>EBS_SNAPSHOT</code>. To retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
     }
     /// Appends an item to `resource_tags`.
     ///
@@ -151,6 +167,14 @@ impl CreateRuleInputBuilder {
         self.resource_tags = input;
         self
     }
+    /// <p>Specifies the resource tags to use to identify resources that are to be retained by a tag-level retention rule. For tag-level retention rules, only deleted resources, of the specified resource type, that have one or more of the specified tag key and value pairs are retained. If a resource is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule.</p>
+    /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
+    /// <p>To create a Region-level retention rule, omit this parameter. A Region-level retention rule does not have any resource tags specified. It retains all deleted resources of the specified resource type in the Region in which the rule is created, even if the resources are not tagged.</p>
+    pub fn get_resource_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
+        &self.resource_tags
+    }
     /// <p>Information about the retention rule lock configuration.</p>
     pub fn lock_configuration(mut self, input: crate::types::LockConfiguration) -> Self {
         self.lock_configuration = ::std::option::Option::Some(input);
@@ -163,6 +187,12 @@ impl CreateRuleInputBuilder {
     ) -> Self {
         self.lock_configuration = input;
         self
+    }
+    /// <p>Information about the retention rule lock configuration.</p>
+    pub fn get_lock_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::LockConfiguration> {
+        &self.lock_configuration
     }
     /// Consumes the builder and constructs a [`CreateRuleInput`](crate::operation::create_rule::CreateRuleInput).
     pub fn build(

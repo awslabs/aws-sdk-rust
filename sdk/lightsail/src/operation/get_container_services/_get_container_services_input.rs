@@ -44,6 +44,11 @@ impl GetContainerServicesInputBuilder {
         self.service_name = input;
         self
     }
+    /// <p>The name of the container service for which to return information.</p>
+    /// <p>When omitted, the response includes all of your container services in the Amazon Web Services Region where the request is made.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
+    }
     /// Consumes the builder and constructs a [`GetContainerServicesInput`](crate::operation::get_container_services::GetContainerServicesInput).
     pub fn build(
         self,

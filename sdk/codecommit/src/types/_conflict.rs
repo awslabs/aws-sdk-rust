@@ -51,6 +51,10 @@ impl ConflictBuilder {
         self.conflict_metadata = input;
         self
     }
+    /// <p>Metadata about a conflict in a merge operation.</p>
+    pub fn get_conflict_metadata(&self) -> &::std::option::Option<crate::types::ConflictMetadata> {
+        &self.conflict_metadata
+    }
     /// Appends an item to `merge_hunks`.
     ///
     /// To override the contents of this collection use [`set_merge_hunks`](Self::set_merge_hunks).
@@ -69,6 +73,12 @@ impl ConflictBuilder {
     ) -> Self {
         self.merge_hunks = input;
         self
+    }
+    /// <p>A list of hunks that contain the differences between files or lines causing the conflict.</p>
+    pub fn get_merge_hunks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MergeHunk>> {
+        &self.merge_hunks
     }
     /// Consumes the builder and constructs a [`Conflict`](crate::types::Conflict).
     pub fn build(self) -> crate::types::Conflict {

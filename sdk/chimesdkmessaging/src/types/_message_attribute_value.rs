@@ -52,6 +52,12 @@ impl MessageAttributeValueBuilder {
         self.string_values = input;
         self
     }
+    /// <p>The strings in a message attribute value.</p>
+    pub fn get_string_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.string_values
+    }
     /// Consumes the builder and constructs a [`MessageAttributeValue`](crate::types::MessageAttributeValue).
     pub fn build(self) -> crate::types::MessageAttributeValue {
         crate::types::MessageAttributeValue {

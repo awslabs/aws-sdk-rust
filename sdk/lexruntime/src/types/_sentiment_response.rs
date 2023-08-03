@@ -55,6 +55,10 @@ impl SentimentResponseBuilder {
         self.sentiment_label = input;
         self
     }
+    /// <p>The inferred sentiment that Amazon Comprehend has the highest confidence in.</p>
+    pub fn get_sentiment_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sentiment_label
+    }
     /// <p>The likelihood that the sentiment was correctly inferred.</p>
     pub fn sentiment_score(
         mut self,
@@ -70,6 +74,10 @@ impl SentimentResponseBuilder {
     ) -> Self {
         self.sentiment_score = input;
         self
+    }
+    /// <p>The likelihood that the sentiment was correctly inferred.</p>
+    pub fn get_sentiment_score(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sentiment_score
     }
     /// Consumes the builder and constructs a [`SentimentResponse`](crate::types::SentimentResponse).
     pub fn build(self) -> crate::types::SentimentResponse {

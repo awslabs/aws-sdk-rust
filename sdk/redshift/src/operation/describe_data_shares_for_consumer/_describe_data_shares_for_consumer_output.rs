@@ -63,6 +63,12 @@ impl DescribeDataSharesForConsumerOutputBuilder {
         self.data_shares = input;
         self
     }
+    /// <p>Shows the results of datashares available for consumers.</p>
+    pub fn get_data_shares(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataShare>> {
+        &self.data_shares
+    }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDataSharesForConsumer</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -72,6 +78,10 @@ impl DescribeDataSharesForConsumerOutputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDataSharesForConsumer</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

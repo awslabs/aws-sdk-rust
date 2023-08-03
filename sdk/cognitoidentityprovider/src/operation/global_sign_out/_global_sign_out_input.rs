@@ -45,6 +45,10 @@ impl GlobalSignOutInputBuilder {
         self.access_token = input;
         self
     }
+    /// <p>A valid access token that Amazon Cognito issued to the user who you want to sign out.</p>
+    pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_token
+    }
     /// Consumes the builder and constructs a [`GlobalSignOutInput`](crate::operation::global_sign_out::GlobalSignOutInput).
     pub fn build(
         self,

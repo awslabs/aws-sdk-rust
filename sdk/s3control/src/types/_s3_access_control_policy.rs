@@ -55,6 +55,12 @@ impl S3AccessControlPolicyBuilder {
         self
     }
     /// <p></p>
+    pub fn get_access_control_list(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3AccessControlList> {
+        &self.access_control_list
+    }
+    /// <p></p>
     pub fn canned_access_control_list(
         mut self,
         input: crate::types::S3CannedAccessControlList,
@@ -69,6 +75,12 @@ impl S3AccessControlPolicyBuilder {
     ) -> Self {
         self.canned_access_control_list = input;
         self
+    }
+    /// <p></p>
+    pub fn get_canned_access_control_list(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3CannedAccessControlList> {
+        &self.canned_access_control_list
     }
     /// Consumes the builder and constructs a [`S3AccessControlPolicy`](crate::types::S3AccessControlPolicy).
     pub fn build(self) -> crate::types::S3AccessControlPolicy {

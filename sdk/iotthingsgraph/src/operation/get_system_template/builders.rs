@@ -37,6 +37,12 @@ impl GetSystemTemplateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetSystemTemplate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_system_template::builders::GetSystemTemplateInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +137,12 @@ impl GetSystemTemplateFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The ID of the system to get. This ID must be in the user's namespace.</p>
+    /// <p>The ID should be in the following format.</p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The number that specifies the revision of the system to get.</p>
     pub fn revision_number(mut self, input: i64) -> Self {
         self.inner = self.inner.revision_number(input);
@@ -140,5 +152,9 @@ impl GetSystemTemplateFluentBuilder {
     pub fn set_revision_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_revision_number(input);
         self
+    }
+    /// <p>The number that specifies the revision of the system to get.</p>
+    pub fn get_revision_number(&self) -> &::std::option::Option<i64> {
+        self.inner.get_revision_number()
     }
 }

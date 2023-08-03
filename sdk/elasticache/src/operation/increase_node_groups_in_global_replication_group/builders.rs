@@ -36,6 +36,10 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the IncreaseNodeGroupsInGlobalReplicationGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::increase_node_groups_in_global_replication_group::builders::IncreaseNodeGroupsInGlobalReplicationGroupInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupFluentBuilder {
         self.inner = self.inner.set_global_replication_group_id(input);
         self
     }
+    /// <p>The name of the Global datastore</p>
+    pub fn get_global_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_global_replication_group_id()
+    }
     /// <p>The number of node groups you wish to add</p>
     pub fn node_group_count(mut self, input: i32) -> Self {
         self.inner = self.inner.node_group_count(input);
@@ -115,6 +123,10 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupFluentBuilder {
     pub fn set_node_group_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_node_group_count(input);
         self
+    }
+    /// <p>The number of node groups you wish to add</p>
+    pub fn get_node_group_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_node_group_count()
     }
     /// Appends an item to `RegionalConfigurations`.
     ///
@@ -133,6 +145,12 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupFluentBuilder {
         self.inner = self.inner.set_regional_configurations(input);
         self
     }
+    /// <p>Describes the replication group IDs, the Amazon regions where they are stored and the shard configuration for each that comprise the Global datastore</p>
+    pub fn get_regional_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RegionalConfiguration>> {
+        self.inner.get_regional_configurations()
+    }
     /// <p>Indicates that the process begins immediately. At present, the only permitted value for this parameter is true.</p>
     pub fn apply_immediately(mut self, input: bool) -> Self {
         self.inner = self.inner.apply_immediately(input);
@@ -142,5 +160,9 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupFluentBuilder {
     pub fn set_apply_immediately(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_apply_immediately(input);
         self
+    }
+    /// <p>Indicates that the process begins immediately. At present, the only permitted value for this parameter is true.</p>
+    pub fn get_apply_immediately(&self) -> &::std::option::Option<bool> {
+        self.inner.get_apply_immediately()
     }
 }

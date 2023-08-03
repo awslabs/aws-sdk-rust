@@ -58,6 +58,10 @@ impl SnapshotJobResultFileGroupBuilder {
         self.files = input;
         self
     }
+    /// <p> A list of <code>SnapshotFile</code> objects.</p>
+    pub fn get_files(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotFile>> {
+        &self.files
+    }
     /// Appends an item to `s3_results`.
     ///
     /// To override the contents of this collection use [`set_s3_results`](Self::set_s3_results).
@@ -76,6 +80,12 @@ impl SnapshotJobResultFileGroupBuilder {
     ) -> Self {
         self.s3_results = input;
         self
+    }
+    /// <p> A list of <code>SnapshotJobS3Result</code> objects.</p>
+    pub fn get_s3_results(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotJobS3Result>> {
+        &self.s3_results
     }
     /// Consumes the builder and constructs a [`SnapshotJobResultFileGroup`](crate::types::SnapshotJobResultFileGroup).
     pub fn build(self) -> crate::types::SnapshotJobResultFileGroup {

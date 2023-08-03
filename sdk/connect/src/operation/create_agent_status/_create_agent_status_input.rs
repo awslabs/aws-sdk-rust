@@ -88,6 +88,10 @@ impl CreateAgentStatusInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The name of the status.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -98,6 +102,10 @@ impl CreateAgentStatusInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the status.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the status.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -107,6 +115,10 @@ impl CreateAgentStatusInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the status.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The state of the status.</p>
     pub fn state(mut self, input: crate::types::AgentStatusState) -> Self {
@@ -121,6 +133,10 @@ impl CreateAgentStatusInputBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of the status.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::AgentStatusState> {
+        &self.state
+    }
     /// <p>The display order of the status.</p>
     pub fn display_order(mut self, input: i32) -> Self {
         self.display_order = ::std::option::Option::Some(input);
@@ -130,6 +146,10 @@ impl CreateAgentStatusInputBuilder {
     pub fn set_display_order(mut self, input: ::std::option::Option<i32>) -> Self {
         self.display_order = input;
         self
+    }
+    /// <p>The display order of the status.</p>
+    pub fn get_display_order(&self) -> &::std::option::Option<i32> {
+        &self.display_order
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -155,6 +175,14 @@ impl CreateAgentStatusInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateAgentStatusInput`](crate::operation::create_agent_status::CreateAgentStatusInput).
     pub fn build(

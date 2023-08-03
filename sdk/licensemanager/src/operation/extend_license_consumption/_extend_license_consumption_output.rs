@@ -62,6 +62,10 @@ impl ExtendLicenseConsumptionOutputBuilder {
         self.license_consumption_token = input;
         self
     }
+    /// <p>License consumption token.</p>
+    pub fn get_license_consumption_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_consumption_token
+    }
     /// <p>Date and time at which the license consumption expires.</p>
     pub fn expiration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expiration = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl ExtendLicenseConsumptionOutputBuilder {
     pub fn set_expiration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expiration = input;
         self
+    }
+    /// <p>Date and time at which the license consumption expires.</p>
+    pub fn get_expiration(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expiration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

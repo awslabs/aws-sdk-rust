@@ -36,6 +36,10 @@ impl BatchDeleteDevicePositionHistoryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchDeleteDevicePositionHistory as a reference.
+    pub fn as_input(&self) -> &crate::operation::batch_delete_device_position_history::builders::BatchDeleteDevicePositionHistoryInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl BatchDeleteDevicePositionHistoryFluentBuilder {
         self.inner = self.inner.set_tracker_name(input);
         self
     }
+    /// <p>The name of the tracker resource to delete the device position history from.</p>
+    pub fn get_tracker_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_tracker_name()
+    }
     /// Appends an item to `DeviceIds`.
     ///
     /// To override the contents of this collection use [`set_device_ids`](Self::set_device_ids).
@@ -122,5 +130,12 @@ impl BatchDeleteDevicePositionHistoryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_device_ids(input);
         self
+    }
+    /// <p>Devices whose position history you want to delete.</p>
+    /// <ul>
+    /// <li> <p>For example, for two devices: <code>“DeviceIds” : [DeviceId1,DeviceId2]</code> </p> </li>
+    /// </ul>
+    pub fn get_device_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_device_ids()
     }
 }

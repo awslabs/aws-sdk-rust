@@ -80,6 +80,10 @@ impl DialRequestBuilder {
         self.client_token = input;
         self
     }
+    /// Client provided parameter used for idempotency. Its value must be unique for each request.
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// The phone number of the customer, in E.164 format.
     pub fn phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl DialRequestBuilder {
     pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.phone_number = input;
         self
+    }
+    /// The phone number of the customer, in E.164 format.
+    pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number
     }
     /// Timestamp with no UTC offset or timezone
     pub fn expiration_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -102,6 +110,10 @@ impl DialRequestBuilder {
     ) -> Self {
         self.expiration_time = input;
         self
+    }
+    /// Timestamp with no UTC offset or timezone
+    pub fn get_expiration_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expiration_time
     }
     /// Adds a key-value pair to `attributes`.
     ///
@@ -127,6 +139,14 @@ impl DialRequestBuilder {
     ) -> Self {
         self.attributes = input;
         self
+    }
+    /// A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.attributes
     }
     /// Consumes the builder and constructs a [`DialRequest`](crate::types::DialRequest).
     pub fn build(self) -> crate::types::DialRequest {

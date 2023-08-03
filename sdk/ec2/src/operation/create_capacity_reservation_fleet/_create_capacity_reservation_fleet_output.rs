@@ -139,6 +139,12 @@ impl CreateCapacityReservationFleetOutputBuilder {
         self.capacity_reservation_fleet_id = input;
         self
     }
+    /// <p>The ID of the Capacity Reservation Fleet.</p>
+    pub fn get_capacity_reservation_fleet_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.capacity_reservation_fleet_id
+    }
     /// <p>The status of the Capacity Reservation Fleet.</p>
     pub fn state(mut self, input: crate::types::CapacityReservationFleetState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -152,6 +158,10 @@ impl CreateCapacityReservationFleetOutputBuilder {
         self.state = input;
         self
     }
+    /// <p>The status of the Capacity Reservation Fleet.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::CapacityReservationFleetState> {
+        &self.state
+    }
     /// <p>The total number of capacity units for which the Capacity Reservation Fleet reserves capacity.</p>
     pub fn total_target_capacity(mut self, input: i32) -> Self {
         self.total_target_capacity = ::std::option::Option::Some(input);
@@ -162,6 +172,10 @@ impl CreateCapacityReservationFleetOutputBuilder {
         self.total_target_capacity = input;
         self
     }
+    /// <p>The total number of capacity units for which the Capacity Reservation Fleet reserves capacity.</p>
+    pub fn get_total_target_capacity(&self) -> &::std::option::Option<i32> {
+        &self.total_target_capacity
+    }
     /// <p>The requested capacity units that have been successfully reserved.</p>
     pub fn total_fulfilled_capacity(mut self, input: f64) -> Self {
         self.total_fulfilled_capacity = ::std::option::Option::Some(input);
@@ -171,6 +185,10 @@ impl CreateCapacityReservationFleetOutputBuilder {
     pub fn set_total_fulfilled_capacity(mut self, input: ::std::option::Option<f64>) -> Self {
         self.total_fulfilled_capacity = input;
         self
+    }
+    /// <p>The requested capacity units that have been successfully reserved.</p>
+    pub fn get_total_fulfilled_capacity(&self) -> &::std::option::Option<f64> {
+        &self.total_fulfilled_capacity
     }
     /// <p>The instance matching criteria for the Capacity Reservation Fleet.</p>
     pub fn instance_match_criteria(
@@ -188,6 +206,12 @@ impl CreateCapacityReservationFleetOutputBuilder {
         self.instance_match_criteria = input;
         self
     }
+    /// <p>The instance matching criteria for the Capacity Reservation Fleet.</p>
+    pub fn get_instance_match_criteria(
+        &self,
+    ) -> &::std::option::Option<crate::types::FleetInstanceMatchCriteria> {
+        &self.instance_match_criteria
+    }
     /// <p>The allocation strategy used by the Capacity Reservation Fleet.</p>
     pub fn allocation_strategy(
         mut self,
@@ -204,6 +228,10 @@ impl CreateCapacityReservationFleetOutputBuilder {
         self.allocation_strategy = input;
         self
     }
+    /// <p>The allocation strategy used by the Capacity Reservation Fleet.</p>
+    pub fn get_allocation_strategy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.allocation_strategy
+    }
     /// <p>The date and time at which the Capacity Reservation Fleet was created.</p>
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
@@ -216,6 +244,10 @@ impl CreateCapacityReservationFleetOutputBuilder {
     ) -> Self {
         self.create_time = input;
         self
+    }
+    /// <p>The date and time at which the Capacity Reservation Fleet was created.</p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
     }
     /// <p>The date and time at which the Capacity Reservation Fleet expires.</p>
     pub fn end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -230,6 +262,10 @@ impl CreateCapacityReservationFleetOutputBuilder {
         self.end_date = input;
         self
     }
+    /// <p>The date and time at which the Capacity Reservation Fleet expires.</p>
+    pub fn get_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_date
+    }
     /// <p>Indicates the tenancy of Capacity Reservation Fleet.</p>
     pub fn tenancy(mut self, input: crate::types::FleetCapacityReservationTenancy) -> Self {
         self.tenancy = ::std::option::Option::Some(input);
@@ -242,6 +278,12 @@ impl CreateCapacityReservationFleetOutputBuilder {
     ) -> Self {
         self.tenancy = input;
         self
+    }
+    /// <p>Indicates the tenancy of Capacity Reservation Fleet.</p>
+    pub fn get_tenancy(
+        &self,
+    ) -> &::std::option::Option<crate::types::FleetCapacityReservationTenancy> {
+        &self.tenancy
     }
     /// Appends an item to `fleet_capacity_reservations`.
     ///
@@ -265,6 +307,12 @@ impl CreateCapacityReservationFleetOutputBuilder {
         self.fleet_capacity_reservations = input;
         self
     }
+    /// <p>Information about the individual Capacity Reservations in the Capacity Reservation Fleet.</p>
+    pub fn get_fleet_capacity_reservations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetCapacityReservation>> {
+        &self.fleet_capacity_reservations
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -283,6 +331,10 @@ impl CreateCapacityReservationFleetOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags assigned to the Capacity Reservation Fleet.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

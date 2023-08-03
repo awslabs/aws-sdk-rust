@@ -41,6 +41,10 @@ impl DescribeFleetMetricInputBuilder {
         self.metric_name = input;
         self
     }
+    /// <p>The name of the fleet metric to describe.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
+    }
     /// Consumes the builder and constructs a [`DescribeFleetMetricInput`](crate::operation::describe_fleet_metric::DescribeFleetMetricInput).
     pub fn build(
         self,

@@ -254,6 +254,58 @@ impl Ec2ConfigurationBuilder {
         self.image_type = input;
         self
     }
+    /// <p>The image type to match with the instance type to select an AMI. The supported values are different for <code>ECS</code> and <code>EKS</code> resources.</p>
+    /// <dl>
+    /// <dt>
+    /// ECS
+    /// </dt>
+    /// <dd>
+    /// <p>If the <code>imageIdOverride</code> parameter isn't specified, then a recent <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon ECS-optimized Amazon Linux 2 AMI</a> (<code>ECS_AL2</code>) is used. If a new image type is specified in an update, but neither an <code>imageId</code> nor a <code>imageIdOverride</code> parameter is specified, then the latest Amazon ECS optimized AMI for that image type that's supported by Batch is used.</p>
+    /// <dl>
+    /// <dt>
+    /// ECS_AL2
+    /// </dt>
+    /// <dd>
+    /// <p> <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon Linux 2</a>: Default for all non-GPU instance families.</p>
+    /// </dd>
+    /// <dt>
+    /// ECS_AL2_NVIDIA
+    /// </dt>
+    /// <dd>
+    /// <p> <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon Linux 2 (GPU)</a>: Default for all GPU instance families (for example <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
+    /// </dd>
+    /// <dt>
+    /// ECS_AL1
+    /// </dt>
+    /// <dd>
+    /// <p> <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon Linux</a>. Amazon Linux has reached the end-of-life of standard support. For more information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
+    /// </dd>
+    /// </dl>
+    /// </dd>
+    /// <dt>
+    /// EKS
+    /// </dt>
+    /// <dd>
+    /// <p>If the <code>imageIdOverride</code> parameter isn't specified, then a recent <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon EKS-optimized Amazon Linux AMI</a> (<code>EKS_AL2</code>) is used. If a new image type is specified in an update, but neither an <code>imageId</code> nor a <code>imageIdOverride</code> parameter is specified, then the latest Amazon EKS optimized AMI for that image type that Batch supports is used.</p>
+    /// <dl>
+    /// <dt>
+    /// EKS_AL2
+    /// </dt>
+    /// <dd>
+    /// <p> <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2</a>: Default for all non-GPU instance families.</p>
+    /// </dd>
+    /// <dt>
+    /// EKS_AL2_NVIDIA
+    /// </dt>
+    /// <dd>
+    /// <p> <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2 (accelerated)</a>: Default for all GPU instance families (for example, <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
+    /// </dd>
+    /// </dl>
+    /// </dd>
+    /// </dl>
+    pub fn get_image_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_type
+    }
     /// <p>The AMI ID used for instances launched in the compute environment that match the image type. This setting overrides the <code>imageId</code> set in the <code>computeResource</code> object.</p> <note>
     /// <p>The AMI that you choose for a compute environment must match the architecture of the instance types that you intend to use for that compute environment. For example, if your compute environment uses A1 instance types, the compute resource AMI that you choose must support ARM instances. Amazon ECS vends both x86 and ARM versions of the Amazon ECS-optimized Amazon Linux 2 AMI. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#ecs-optimized-ami-linux-variants.html">Amazon ECS-optimized Amazon Linux 2 AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// </note>
@@ -274,6 +326,12 @@ impl Ec2ConfigurationBuilder {
         self.image_id_override = input;
         self
     }
+    /// <p>The AMI ID used for instances launched in the compute environment that match the image type. This setting overrides the <code>imageId</code> set in the <code>computeResource</code> object.</p> <note>
+    /// <p>The AMI that you choose for a compute environment must match the architecture of the instance types that you intend to use for that compute environment. For example, if your compute environment uses A1 instance types, the compute resource AMI that you choose must support ARM instances. Amazon ECS vends both x86 and ARM versions of the Amazon ECS-optimized Amazon Linux 2 AMI. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#ecs-optimized-ami-linux-variants.html">Amazon ECS-optimized Amazon Linux 2 AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// </note>
+    pub fn get_image_id_override(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_id_override
+    }
     /// <p>The Kubernetes version for the compute environment. If you don't specify a value, the latest version that Batch supports is used.</p>
     pub fn image_kubernetes_version(
         mut self,
@@ -289,6 +347,10 @@ impl Ec2ConfigurationBuilder {
     ) -> Self {
         self.image_kubernetes_version = input;
         self
+    }
+    /// <p>The Kubernetes version for the compute environment. If you don't specify a value, the latest version that Batch supports is used.</p>
+    pub fn get_image_kubernetes_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_kubernetes_version
     }
     /// Consumes the builder and constructs a [`Ec2Configuration`](crate::types::Ec2Configuration).
     pub fn build(self) -> crate::types::Ec2Configuration {

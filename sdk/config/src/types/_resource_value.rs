@@ -43,6 +43,10 @@ impl ResourceValueBuilder {
         self.value = input;
         self
     }
+    /// <p>The value is a resource ID.</p>
+    pub fn get_value(&self) -> &::std::option::Option<crate::types::ResourceValueType> {
+        &self.value
+    }
     /// Consumes the builder and constructs a [`ResourceValue`](crate::types::ResourceValue).
     pub fn build(self) -> crate::types::ResourceValue {
         crate::types::ResourceValue { value: self.value }

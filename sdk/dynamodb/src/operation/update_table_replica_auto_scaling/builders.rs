@@ -38,6 +38,10 @@ impl UpdateTableReplicaAutoScalingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateTableReplicaAutoScaling as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_table_replica_auto_scaling::builders::UpdateTableReplicaAutoScalingInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +144,13 @@ impl UpdateTableReplicaAutoScalingFluentBuilder {
         self.inner = self.inner.set_global_secondary_index_updates(input);
         self
     }
+    /// <p>Represents the auto scaling settings of the global secondary indexes of the replica to be updated.</p>
+    pub fn get_global_secondary_index_updates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndexAutoScalingUpdate>>
+    {
+        self.inner.get_global_secondary_index_updates()
+    }
     /// <p>The name of the global table to be updated.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.table_name(input.into());
@@ -149,6 +160,10 @@ impl UpdateTableReplicaAutoScalingFluentBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_table_name(input);
         self
+    }
+    /// <p>The name of the global table to be updated.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_table_name()
     }
     /// <p>Represents the auto scaling settings to be modified for a global table or global secondary index.</p>
     pub fn provisioned_write_capacity_auto_scaling_update(
@@ -170,6 +185,13 @@ impl UpdateTableReplicaAutoScalingFluentBuilder {
             .set_provisioned_write_capacity_auto_scaling_update(input);
         self
     }
+    /// <p>Represents the auto scaling settings to be modified for a global table or global secondary index.</p>
+    pub fn get_provisioned_write_capacity_auto_scaling_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoScalingSettingsUpdate> {
+        self.inner
+            .get_provisioned_write_capacity_auto_scaling_update()
+    }
     /// Appends an item to `ReplicaUpdates`.
     ///
     /// To override the contents of this collection use [`set_replica_updates`](Self::set_replica_updates).
@@ -186,5 +208,11 @@ impl UpdateTableReplicaAutoScalingFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_replica_updates(input);
         self
+    }
+    /// <p>Represents the auto scaling settings of replicas of the table that will be modified.</p>
+    pub fn get_replica_updates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicaAutoScalingUpdate>> {
+        self.inner.get_replica_updates()
     }
 }

@@ -48,6 +48,10 @@ impl DescribeExecutionInputBuilder {
         self.task_id = input;
         self
     }
+    /// <p>The ID of the task that the action is describing.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
+    }
     /// <p>The ID of the managed device.</p>
     pub fn managed_device_id(
         mut self,
@@ -63,6 +67,10 @@ impl DescribeExecutionInputBuilder {
     ) -> Self {
         self.managed_device_id = input;
         self
+    }
+    /// <p>The ID of the managed device.</p>
+    pub fn get_managed_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.managed_device_id
     }
     /// Consumes the builder and constructs a [`DescribeExecutionInput`](crate::operation::describe_execution::DescribeExecutionInput).
     pub fn build(

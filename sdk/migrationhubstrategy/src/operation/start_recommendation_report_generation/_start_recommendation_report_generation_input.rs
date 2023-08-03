@@ -50,6 +50,10 @@ impl StartRecommendationReportGenerationInputBuilder {
         self.output_format = input;
         self
     }
+    /// <p> The output format for the recommendation report file. The default format is Microsoft Excel. </p>
+    pub fn get_output_format(&self) -> &::std::option::Option<crate::types::OutputFormat> {
+        &self.output_format
+    }
     /// Appends an item to `group_id_filter`.
     ///
     /// To override the contents of this collection use [`set_group_id_filter`](Self::set_group_id_filter).
@@ -68,6 +72,12 @@ impl StartRecommendationReportGenerationInputBuilder {
     ) -> Self {
         self.group_id_filter = input;
         self
+    }
+    /// <p> Groups the resources in the recommendation report with a unique name. </p>
+    pub fn get_group_id_filter(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Group>> {
+        &self.group_id_filter
     }
     /// Consumes the builder and constructs a [`StartRecommendationReportGenerationInput`](crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationInput, ::aws_smithy_http::operation::error::BuildError>{

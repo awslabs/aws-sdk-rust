@@ -46,6 +46,12 @@ impl DefaultGridLayoutConfigurationBuilder {
         self.canvas_size_options = input;
         self
     }
+    /// <p>Determines the screen canvas size options for a grid layout.</p>
+    pub fn get_canvas_size_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::GridLayoutCanvasSizeOptions> {
+        &self.canvas_size_options
+    }
     /// Consumes the builder and constructs a [`DefaultGridLayoutConfiguration`](crate::types::DefaultGridLayoutConfiguration).
     pub fn build(self) -> crate::types::DefaultGridLayoutConfiguration {
         crate::types::DefaultGridLayoutConfiguration {

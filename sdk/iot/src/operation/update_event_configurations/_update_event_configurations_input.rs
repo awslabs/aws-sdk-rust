@@ -62,6 +62,14 @@ impl UpdateEventConfigurationsInputBuilder {
         self.event_configurations = input;
         self
     }
+    /// <p>The new event configuration values.</p>
+    pub fn get_event_configurations(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<crate::types::EventType, crate::types::Configuration>,
+    > {
+        &self.event_configurations
+    }
     /// Consumes the builder and constructs a [`UpdateEventConfigurationsInput`](crate::operation::update_event_configurations::UpdateEventConfigurationsInput).
     pub fn build(
         self,

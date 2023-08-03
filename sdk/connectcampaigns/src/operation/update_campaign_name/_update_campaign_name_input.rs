@@ -49,6 +49,10 @@ impl UpdateCampaignNameInputBuilder {
         self.id = input;
         self
     }
+    /// Identifier representing a Campaign
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// The name of an Amazon Connect Campaign name.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl UpdateCampaignNameInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// The name of an Amazon Connect Campaign name.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`UpdateCampaignNameInput`](crate::operation::update_campaign_name::UpdateCampaignNameInput).
     pub fn build(

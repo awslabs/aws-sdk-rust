@@ -46,6 +46,10 @@ impl DeleteSkillGroupInputBuilder {
         self.skill_group_arn = input;
         self
     }
+    /// <p>The ARN of the skill group to delete. Required.</p>
+    pub fn get_skill_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.skill_group_arn
+    }
     /// Consumes the builder and constructs a [`DeleteSkillGroupInput`](crate::operation::delete_skill_group::DeleteSkillGroupInput).
     pub fn build(
         self,

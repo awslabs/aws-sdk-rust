@@ -64,6 +64,10 @@ impl AnalysisLoadBalancerTargetBuilder {
         self.address = input;
         self
     }
+    /// <p>The IP address.</p>
+    pub fn get_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address
+    }
     /// <p>The Availability Zone.</p>
     pub fn availability_zone(
         mut self,
@@ -80,6 +84,10 @@ impl AnalysisLoadBalancerTargetBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>The Availability Zone.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>Information about the instance.</p>
     pub fn instance(mut self, input: crate::types::AnalysisComponent) -> Self {
         self.instance = ::std::option::Option::Some(input);
@@ -93,6 +101,10 @@ impl AnalysisLoadBalancerTargetBuilder {
         self.instance = input;
         self
     }
+    /// <p>Information about the instance.</p>
+    pub fn get_instance(&self) -> &::std::option::Option<crate::types::AnalysisComponent> {
+        &self.instance
+    }
     /// <p>The port on which the target is listening.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl AnalysisLoadBalancerTargetBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
+    }
+    /// <p>The port on which the target is listening.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// Consumes the builder and constructs a [`AnalysisLoadBalancerTarget`](crate::types::AnalysisLoadBalancerTarget).
     pub fn build(self) -> crate::types::AnalysisLoadBalancerTarget {

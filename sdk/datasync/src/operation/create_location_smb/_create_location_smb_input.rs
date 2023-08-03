@@ -123,6 +123,11 @@ impl CreateLocationSmbInputBuilder {
         self.subdirectory = input;
         self
     }
+    /// <p>Specifies the name of the share exported by your SMB file server where DataSync will read or write data. You can include a subdirectory in the share path (for example, <code>/path/to/subdirectory</code>). Make sure that other SMB clients in your network can also mount this path.</p>
+    /// <p>To copy all data in the specified subdirectory, DataSync must be able to mount the SMB share and access all of its data. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
+    pub fn get_subdirectory(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subdirectory
+    }
     /// <p>Specifies the Domain Name Service (DNS) name or IP address of the SMB file server that your DataSync agent will mount.</p> <note>
     /// <p>You can't specify an IP version 6 (IPv6) address.</p>
     /// </note>
@@ -143,6 +148,12 @@ impl CreateLocationSmbInputBuilder {
         self.server_hostname = input;
         self
     }
+    /// <p>Specifies the Domain Name Service (DNS) name or IP address of the SMB file server that your DataSync agent will mount.</p> <note>
+    /// <p>You can't specify an IP version 6 (IPv6) address.</p>
+    /// </note>
+    pub fn get_server_hostname(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_hostname
+    }
     /// <p>Specifies the user name that can mount your SMB file server and has permission to access the files and folders involved in your transfer.</p>
     /// <p>For information about choosing a user with the right level of access for your transfer, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
     pub fn user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -154,6 +165,11 @@ impl CreateLocationSmbInputBuilder {
     pub fn set_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user = input;
         self
+    }
+    /// <p>Specifies the user name that can mount your SMB file server and has permission to access the files and folders involved in your transfer.</p>
+    /// <p>For information about choosing a user with the right level of access for your transfer, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
+    pub fn get_user(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user
     }
     /// <p>Specifies the Windows domain name that your SMB file server belongs to. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
@@ -167,6 +183,11 @@ impl CreateLocationSmbInputBuilder {
         self.domain = input;
         self
     }
+    /// <p>Specifies the Windows domain name that your SMB file server belongs to. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
+    }
     /// <p>Specifies the password of the user who can mount your SMB file server and has permission to access the files and folders involved in your transfer.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -178,6 +199,11 @@ impl CreateLocationSmbInputBuilder {
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.password = input;
         self
+    }
+    /// <p>Specifies the password of the user who can mount your SMB file server and has permission to access the files and folders involved in your transfer.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.password
     }
     /// Appends an item to `agent_arns`.
     ///
@@ -198,6 +224,10 @@ impl CreateLocationSmbInputBuilder {
         self.agent_arns = input;
         self
     }
+    /// <p>Specifies the DataSync agent (or agents) which you want to connect to your SMB file server. You specify an agent by using its Amazon Resource Name (ARN).</p>
+    pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.agent_arns
+    }
     /// <p>Specifies the version of the SMB protocol that DataSync uses to access your SMB file server.</p>
     pub fn mount_options(mut self, input: crate::types::SmbMountOptions) -> Self {
         self.mount_options = ::std::option::Option::Some(input);
@@ -210,6 +240,10 @@ impl CreateLocationSmbInputBuilder {
     ) -> Self {
         self.mount_options = input;
         self
+    }
+    /// <p>Specifies the version of the SMB protocol that DataSync uses to access your SMB file server.</p>
+    pub fn get_mount_options(&self) -> &::std::option::Option<crate::types::SmbMountOptions> {
+        &self.mount_options
     }
     /// Appends an item to `tags`.
     ///
@@ -229,6 +263,10 @@ impl CreateLocationSmbInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateLocationSmbInput`](crate::operation::create_location_smb::CreateLocationSmbInput).
     pub fn build(

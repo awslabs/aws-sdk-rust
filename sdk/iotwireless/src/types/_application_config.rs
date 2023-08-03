@@ -56,6 +56,10 @@ impl ApplicationConfigBuilder {
         self.f_port = input;
         self
     }
+    /// <p>The Fport value.</p>
+    pub fn get_f_port(&self) -> &::std::option::Option<i32> {
+        &self.f_port
+    }
     /// <p>Application type, which can be specified to obtain real-time position information of your LoRaWAN device.</p>
     pub fn r#type(mut self, input: crate::types::ApplicationConfigType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl ApplicationConfigBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>Application type, which can be specified to obtain real-time position information of your LoRaWAN device.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ApplicationConfigType> {
+        &self.r#type
     }
     /// <p>The name of the position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
     pub fn destination_name(
@@ -84,6 +92,10 @@ impl ApplicationConfigBuilder {
     ) -> Self {
         self.destination_name = input;
         self
+    }
+    /// <p>The name of the position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
+    pub fn get_destination_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_name
     }
     /// Consumes the builder and constructs a [`ApplicationConfig`](crate::types::ApplicationConfig).
     pub fn build(self) -> crate::types::ApplicationConfig {

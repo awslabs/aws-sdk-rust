@@ -66,6 +66,15 @@ impl ContactChannelAddressBuilder {
         self.simple_address = input;
         self
     }
+    /// <p>The format is dependent on the type of the contact channel. The following are the expected formats:</p>
+    /// <ul>
+    /// <li> <p>SMS - '+' followed by the country code and phone number</p> </li>
+    /// <li> <p>VOICE - '+' followed by the country code and phone number</p> </li>
+    /// <li> <p>EMAIL - any standard email format</p> </li>
+    /// </ul>
+    pub fn get_simple_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.simple_address
+    }
     /// Consumes the builder and constructs a [`ContactChannelAddress`](crate::types::ContactChannelAddress).
     pub fn build(self) -> crate::types::ContactChannelAddress {
         crate::types::ContactChannelAddress {

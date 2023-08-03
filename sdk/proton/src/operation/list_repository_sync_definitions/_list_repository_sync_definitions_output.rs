@@ -58,6 +58,10 @@ impl ListRepositorySyncDefinitionsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token that indicates the location of the next repository sync definition in the array of repository sync definitions, after the current requested list of repository sync definitions.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `sync_definitions`.
     ///
     /// To override the contents of this collection use [`set_sync_definitions`](Self::set_sync_definitions).
@@ -76,6 +80,12 @@ impl ListRepositorySyncDefinitionsOutputBuilder {
     ) -> Self {
         self.sync_definitions = input;
         self
+    }
+    /// <p>An array of repository sync definitions.</p>
+    pub fn get_sync_definitions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositorySyncDefinition>> {
+        &self.sync_definitions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

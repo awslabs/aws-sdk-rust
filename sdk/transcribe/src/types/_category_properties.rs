@@ -82,6 +82,10 @@ impl CategoryPropertiesBuilder {
         self.category_name = input;
         self
     }
+    /// <p>The name of the Call Analytics category. Category names are case sensitive and must be unique within an Amazon Web Services account.</p>
+    pub fn get_category_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.category_name
+    }
     /// Appends an item to `rules`.
     ///
     /// To override the contents of this collection use [`set_rules`](Self::set_rules).
@@ -101,6 +105,10 @@ impl CategoryPropertiesBuilder {
         self.rules = input;
         self
     }
+    /// <p>The rules used to define a Call Analytics category. Each category can have between 1 and 20 rules.</p>
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Rule>> {
+        &self.rules
+    }
     /// <p>The date and time the specified Call Analytics category was created.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -115,6 +123,11 @@ impl CategoryPropertiesBuilder {
     ) -> Self {
         self.create_time = input;
         self
+    }
+    /// <p>The date and time the specified Call Analytics category was created.</p>
+    /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
     }
     /// <p>The date and time the specified Call Analytics category was last updated.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-05T12:45:32.691000-07:00</code> represents 12:45 PM UTC-7 on May 5, 2022.</p>
@@ -131,6 +144,11 @@ impl CategoryPropertiesBuilder {
         self.last_update_time = input;
         self
     }
+    /// <p>The date and time the specified Call Analytics category was last updated.</p>
+    /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-05T12:45:32.691000-07:00</code> represents 12:45 PM UTC-7 on May 5, 2022.</p>
+    pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_update_time
+    }
     /// <p>The input type associated with the specified category. <code>POST_CALL</code> refers to a category that is applied to batch transcriptions; <code>REAL_TIME</code> refers to a category that is applied to streaming transcriptions.</p>
     pub fn input_type(mut self, input: crate::types::InputType) -> Self {
         self.input_type = ::std::option::Option::Some(input);
@@ -140,6 +158,10 @@ impl CategoryPropertiesBuilder {
     pub fn set_input_type(mut self, input: ::std::option::Option<crate::types::InputType>) -> Self {
         self.input_type = input;
         self
+    }
+    /// <p>The input type associated with the specified category. <code>POST_CALL</code> refers to a category that is applied to batch transcriptions; <code>REAL_TIME</code> refers to a category that is applied to streaming transcriptions.</p>
+    pub fn get_input_type(&self) -> &::std::option::Option<crate::types::InputType> {
+        &self.input_type
     }
     /// Consumes the builder and constructs a [`CategoryProperties`](crate::types::CategoryProperties).
     pub fn build(self) -> crate::types::CategoryProperties {

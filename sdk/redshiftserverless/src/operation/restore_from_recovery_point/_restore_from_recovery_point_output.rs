@@ -60,6 +60,10 @@ impl RestoreFromRecoveryPointOutputBuilder {
         self.recovery_point_id = input;
         self
     }
+    /// <p>The unique identifier of the recovery point used for the restore.</p>
+    pub fn get_recovery_point_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recovery_point_id
+    }
     /// <p>The namespace that data was restored into.</p>
     pub fn namespace(mut self, input: crate::types::Namespace) -> Self {
         self.namespace = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl RestoreFromRecoveryPointOutputBuilder {
     pub fn set_namespace(mut self, input: ::std::option::Option<crate::types::Namespace>) -> Self {
         self.namespace = input;
         self
+    }
+    /// <p>The namespace that data was restored into.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<crate::types::Namespace> {
+        &self.namespace
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

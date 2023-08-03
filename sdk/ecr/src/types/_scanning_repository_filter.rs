@@ -50,6 +50,10 @@ impl ScanningRepositoryFilterBuilder {
         self.filter = input;
         self
     }
+    /// <p>The filter to use when scanning.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter
+    }
     /// <p>The type associated with the filter.</p>
     pub fn filter_type(mut self, input: crate::types::ScanningRepositoryFilterType) -> Self {
         self.filter_type = ::std::option::Option::Some(input);
@@ -62,6 +66,12 @@ impl ScanningRepositoryFilterBuilder {
     ) -> Self {
         self.filter_type = input;
         self
+    }
+    /// <p>The type associated with the filter.</p>
+    pub fn get_filter_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScanningRepositoryFilterType> {
+        &self.filter_type
     }
     /// Consumes the builder and constructs a [`ScanningRepositoryFilter`](crate::types::ScanningRepositoryFilter).
     pub fn build(self) -> crate::types::ScanningRepositoryFilter {

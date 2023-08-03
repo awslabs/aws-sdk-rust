@@ -36,6 +36,12 @@ impl DeleteSubscriberFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteSubscriber as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_subscriber::builders::DeleteSubscriberInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl DeleteSubscriberFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_subscriber_id(input);
         self
+    }
+    /// <p>A value created by Security Lake that uniquely identifies your <code>DeleteSubscriber</code> API request.</p>
+    pub fn get_subscriber_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_subscriber_id()
     }
 }

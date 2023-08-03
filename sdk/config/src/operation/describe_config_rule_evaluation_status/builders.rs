@@ -36,6 +36,10 @@ impl DescribeConfigRuleEvaluationStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeConfigRuleEvaluationStatus as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_config_rule_evaluation_status::builders::DescribeConfigRuleEvaluationStatusInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -116,6 +120,12 @@ impl DescribeConfigRuleEvaluationStatusFluentBuilder {
         self.inner = self.inner.set_config_rule_names(input);
         self
     }
+    /// <p>The name of the Config managed rules for which you want status information. If you do not specify any names, Config returns status information for all Config managed rules that you use.</p>
+    pub fn get_config_rule_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_config_rule_names()
+    }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -125,6 +135,10 @@ impl DescribeConfigRuleEvaluationStatusFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The number of rule evaluation results that you want returned.</p>
     /// <p>This parameter is required if the rule limit for your account is more than the default of 150 rules.</p>
@@ -139,5 +153,11 @@ impl DescribeConfigRuleEvaluationStatusFluentBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
+    }
+    /// <p>The number of rule evaluation results that you want returned.</p>
+    /// <p>This parameter is required if the rule limit for your account is more than the default of 150 rules.</p>
+    /// <p>For information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
     }
 }

@@ -45,6 +45,10 @@ impl GetSavingsPlanPurchaseRecommendationDetailsInputBuilder {
         self.recommendation_detail_id = input;
         self
     }
+    /// <p>The ID that is associated with the Savings Plan recommendation.</p>
+    pub fn get_recommendation_detail_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommendation_detail_id
+    }
     /// Consumes the builder and constructs a [`GetSavingsPlanPurchaseRecommendationDetailsInput`](crate::operation::get_savings_plan_purchase_recommendation_details::GetSavingsPlanPurchaseRecommendationDetailsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_savings_plan_purchase_recommendation_details::GetSavingsPlanPurchaseRecommendationDetailsInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

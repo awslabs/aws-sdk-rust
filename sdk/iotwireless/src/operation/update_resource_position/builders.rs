@@ -36,6 +36,13 @@ impl UpdateResourcePositionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateResourcePosition as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_resource_position::builders::UpdateResourcePositionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl UpdateResourcePositionFluentBuilder {
         self.inner = self.inner.set_resource_identifier(input);
         self
     }
+    /// <p>The identifier of the resource for which position information is updated. It can be the wireless device ID or the wireless gateway ID, depending on the resource type.</p>
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_identifier()
+    }
     /// <p>The type of resource for which position information is updated, which can be a wireless device or a wireless gateway.</p>
     pub fn resource_type(mut self, input: crate::types::PositionResourceType) -> Self {
         self.inner = self.inner.resource_type(input);
@@ -145,6 +156,10 @@ impl UpdateResourcePositionFluentBuilder {
         self.inner = self.inner.set_resource_type(input);
         self
     }
+    /// <p>The type of resource for which position information is updated, which can be a wireless device or a wireless gateway.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::PositionResourceType> {
+        self.inner.get_resource_type()
+    }
     /// <p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href="https://geojson.org/">GeoJSON</a>.</p>
     pub fn geo_json_payload(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.geo_json_payload(input);
@@ -157,5 +172,9 @@ impl UpdateResourcePositionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_geo_json_payload(input);
         self
+    }
+    /// <p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href="https://geojson.org/">GeoJSON</a>.</p>
+    pub fn get_geo_json_payload(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        self.inner.get_geo_json_payload()
     }
 }

@@ -70,6 +70,12 @@ impl ListMonitoringAlertHistoryOutputBuilder {
         self.monitoring_alert_history = input;
         self
     }
+    /// <p>An alert history for a model monitoring schedule.</p>
+    pub fn get_monitoring_alert_history(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MonitoringAlertHistorySummary>> {
+        &self.monitoring_alert_history
+    }
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of alerts, use it in the subsequent request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -79,6 +85,10 @@ impl ListMonitoringAlertHistoryOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of alerts, use it in the subsequent request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

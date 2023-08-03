@@ -102,6 +102,10 @@ impl SourceBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The repository type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::SourceType> {
+        &self.r#type
+    }
     /// <p>The source URL. The following is an example of an Amazon S3 source URL: <code>https://s3.amazonaws.com/opsworks-demo-bucket/opsworks_cookbook_demo.tar.gz</code>.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
@@ -111,6 +115,10 @@ impl SourceBuilder {
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
+    }
+    /// <p>The source URL. The following is an example of an Amazon S3 source URL: <code>https://s3.amazonaws.com/opsworks-demo-bucket/opsworks_cookbook_demo.tar.gz</code>.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     /// <p>This parameter depends on the repository type.</p>
     /// <ul>
@@ -129,6 +137,14 @@ impl SourceBuilder {
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
+    }
+    /// <p>This parameter depends on the repository type.</p>
+    /// <ul>
+    /// <li> <p>For Amazon S3 bundles, set <code>Username</code> to the appropriate IAM access key ID.</p> </li>
+    /// <li> <p>For HTTP bundles, Git repositories, and Subversion repositories, set <code>Username</code> to the user name.</p> </li>
+    /// </ul>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
     }
     /// <p>When included in a request, the parameter depends on the repository type.</p>
     /// <ul>
@@ -152,6 +168,16 @@ impl SourceBuilder {
         self.password = input;
         self
     }
+    /// <p>When included in a request, the parameter depends on the repository type.</p>
+    /// <ul>
+    /// <li> <p>For Amazon S3 bundles, set <code>Password</code> to the appropriate IAM secret access key.</p> </li>
+    /// <li> <p>For HTTP bundles and Subversion repositories, set <code>Password</code> to the password.</p> </li>
+    /// </ul>
+    /// <p>For more information on how to safely handle IAM credentials, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.</p>
+    /// <p>In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.password
+    }
     /// <p>In requests, the repository's SSH key.</p>
     /// <p>In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
     pub fn ssh_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -164,6 +190,11 @@ impl SourceBuilder {
         self.ssh_key = input;
         self
     }
+    /// <p>In requests, the repository's SSH key.</p>
+    /// <p>In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
+    pub fn get_ssh_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ssh_key
+    }
     /// <p>The application's version. AWS OpsWorks Stacks enables you to easily deploy new versions of an application. One of the simplest approaches is to have branches or revisions in your repository that represent different versions that can potentially be deployed.</p>
     pub fn revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision = ::std::option::Option::Some(input.into());
@@ -173,6 +204,10 @@ impl SourceBuilder {
     pub fn set_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision = input;
         self
+    }
+    /// <p>The application's version. AWS OpsWorks Stacks enables you to easily deploy new versions of an application. One of the simplest approaches is to have branches or revisions in your repository that represent different versions that can potentially be deployed.</p>
+    pub fn get_revision(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision
     }
     /// Consumes the builder and constructs a [`Source`](crate::types::Source).
     pub fn build(self) -> crate::types::Source {

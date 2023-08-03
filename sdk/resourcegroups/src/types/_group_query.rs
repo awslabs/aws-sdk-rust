@@ -48,6 +48,10 @@ impl GroupQueryBuilder {
         self.group_name = input;
         self
     }
+    /// <p>The name of the resource group that is associated with the specified resource query.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
+    }
     /// <p>The resource query that determines which Amazon Web Services resources are members of the associated resource group.</p>
     pub fn resource_query(mut self, input: crate::types::ResourceQuery) -> Self {
         self.resource_query = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl GroupQueryBuilder {
     ) -> Self {
         self.resource_query = input;
         self
+    }
+    /// <p>The resource query that determines which Amazon Web Services resources are members of the associated resource group.</p>
+    pub fn get_resource_query(&self) -> &::std::option::Option<crate::types::ResourceQuery> {
+        &self.resource_query
     }
     /// Consumes the builder and constructs a [`GroupQuery`](crate::types::GroupQuery).
     pub fn build(self) -> crate::types::GroupQuery {

@@ -57,6 +57,10 @@ impl DescribeCommandsOutputBuilder {
         self.commands = input;
         self
     }
+    /// <p>An array of <code>Command</code> objects that describe each of the specified commands.</p>
+    pub fn get_commands(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Command>> {
+        &self.commands
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

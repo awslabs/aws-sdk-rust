@@ -46,6 +46,12 @@ impl UserPoolAddOnsTypeBuilder {
         self.advanced_security_mode = input;
         self
     }
+    /// <p>The advanced security mode.</p>
+    pub fn get_advanced_security_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::AdvancedSecurityModeType> {
+        &self.advanced_security_mode
+    }
     /// Consumes the builder and constructs a [`UserPoolAddOnsType`](crate::types::UserPoolAddOnsType).
     pub fn build(self) -> crate::types::UserPoolAddOnsType {
         crate::types::UserPoolAddOnsType {

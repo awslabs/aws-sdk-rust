@@ -191,6 +191,10 @@ impl GetTagsInputBuilder {
         self.search_string = input;
         self
     }
+    /// <p>The value that you want to search for.</p>
+    pub fn get_search_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.search_string
+    }
     /// <p>The start and end dates for retrieving the dimension values. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
     pub fn time_period(mut self, input: crate::types::DateInterval) -> Self {
         self.time_period = ::std::option::Option::Some(input);
@@ -204,6 +208,10 @@ impl GetTagsInputBuilder {
         self.time_period = input;
         self
     }
+    /// <p>The start and end dates for retrieving the dimension values. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
+    pub fn get_time_period(&self) -> &::std::option::Option<crate::types::DateInterval> {
+        &self.time_period
+    }
     /// <p>The key of the tag that you want to return values for.</p>
     pub fn tag_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tag_key = ::std::option::Option::Some(input.into());
@@ -213,6 +221,10 @@ impl GetTagsInputBuilder {
     pub fn set_tag_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tag_key = input;
         self
+    }
+    /// <p>The key of the tag that you want to return values for.</p>
+    pub fn get_tag_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tag_key
     }
     /// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p>
     /// <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
@@ -296,6 +308,46 @@ impl GetTagsInputBuilder {
         self.filter = input;
         self
     }
+    /// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p>
+    /// <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
+    /// <p>There are two patterns:</p>
+    /// <ul>
+    /// <li> <p>Simple dimension values.</p>
+    /// <ul>
+    /// <li> <p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p>
+    /// <ul>
+    /// <li> <p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p> </li>
+    /// <li> <p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p> </li>
+    /// <li> <p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p>
+    /// <ul>
+    /// <li> <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p> </li>
+    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] } }</code> </p> </li>
+    /// <li> <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p>
+    /// <ul>
+    /// <li> <p>For example, you can filter for linked account names that start with "a".</p> </li>
+    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code> </p> </li>
+    /// </ul> </li>
+    /// </ul> </li>
+    /// <li> <p>Compound <code>Expression</code> types with logical operations.</p>
+    /// <ul>
+    /// <li> <p>You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter by more advanced options.</p> </li>
+    /// <li> <p>For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.</p> </li>
+    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> </li>
+    /// </ul> <note>
+    /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error: <code> { "And": [ ... ], "Dimensions": { "Key": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p>
+    /// <p>The following is an example of the corresponding error message: <code>"Expression has more than one roots. Only one root operator is allowed for each expression: And, Or, Not, Dimensions, Tags, CostCategories"</code> </p>
+    /// </note> </li>
+    /// </ul> <note>
+    /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
+    /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
+    /// </note>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::Expression> {
+        &self.filter
+    }
     /// Appends an item to `sort_by`.
     ///
     /// To override the contents of this collection use [`set_sort_by`](Self::set_sort_by).
@@ -339,6 +391,24 @@ impl GetTagsInputBuilder {
         self.sort_by = input;
         self
     }
+    /// <p>The value that you want to sort the data by.</p>
+    /// <p>The key represents cost and usage metrics. The following values are supported:</p>
+    /// <ul>
+    /// <li> <p> <code>BlendedCost</code> </p> </li>
+    /// <li> <p> <code>UnblendedCost</code> </p> </li>
+    /// <li> <p> <code>AmortizedCost</code> </p> </li>
+    /// <li> <p> <code>NetAmortizedCost</code> </p> </li>
+    /// <li> <p> <code>NetUnblendedCost</code> </p> </li>
+    /// <li> <p> <code>UsageQuantity</code> </p> </li>
+    /// <li> <p> <code>NormalizedUsageAmount</code> </p> </li>
+    /// </ul>
+    /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
+    /// <p>When you use <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
+    pub fn get_sort_by(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SortDefinition>> {
+        &self.sort_by
+    }
     /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that are returned for this request. If MaxResults isn't specified with SortBy, the request returns 1000 results as the default value for this parameter.</p>
     /// <p>For <code>GetTags</code>, MaxResults has an upper quota of 1000.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -350,6 +420,11 @@ impl GetTagsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that are returned for this request. If MaxResults isn't specified with SortBy, the request returns 1000 results as the default value for this parameter.</p>
+    /// <p>For <code>GetTags</code>, MaxResults has an upper quota of 1000.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn next_page_token(
@@ -366,6 +441,10 @@ impl GetTagsInputBuilder {
     ) -> Self {
         self.next_page_token = input;
         self
+    }
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_page_token
     }
     /// Consumes the builder and constructs a [`GetTagsInput`](crate::operation::get_tags::GetTagsInput).
     pub fn build(

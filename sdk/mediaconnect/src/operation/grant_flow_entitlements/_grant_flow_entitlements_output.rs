@@ -65,6 +65,12 @@ impl GrantFlowEntitlementsOutputBuilder {
         self.entitlements = input;
         self
     }
+    /// The entitlements that were just granted.
+    pub fn get_entitlements(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Entitlement>> {
+        &self.entitlements
+    }
     /// The ARN of the flow that these entitlements were granted to.
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
@@ -74,6 +80,10 @@ impl GrantFlowEntitlementsOutputBuilder {
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_arn = input;
         self
+    }
+    /// The ARN of the flow that these entitlements were granted to.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

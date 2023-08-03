@@ -56,6 +56,10 @@ impl StreamSelectionBuilder {
         self.max_video_bits_per_second = input;
         self
     }
+    /// The maximum video bitrate (bps) to include in output.
+    pub fn get_max_video_bits_per_second(&self) -> &::std::option::Option<i32> {
+        &self.max_video_bits_per_second
+    }
     /// The minimum video bitrate (bps) to include in output.
     pub fn min_video_bits_per_second(mut self, input: i32) -> Self {
         self.min_video_bits_per_second = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl StreamSelectionBuilder {
     pub fn set_min_video_bits_per_second(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_video_bits_per_second = input;
         self
+    }
+    /// The minimum video bitrate (bps) to include in output.
+    pub fn get_min_video_bits_per_second(&self) -> &::std::option::Option<i32> {
+        &self.min_video_bits_per_second
     }
     /// A directive that determines the order of streams in the output.
     pub fn stream_order(mut self, input: crate::types::StreamOrder) -> Self {
@@ -78,6 +86,10 @@ impl StreamSelectionBuilder {
     ) -> Self {
         self.stream_order = input;
         self
+    }
+    /// A directive that determines the order of streams in the output.
+    pub fn get_stream_order(&self) -> &::std::option::Option<crate::types::StreamOrder> {
+        &self.stream_order
     }
     /// Consumes the builder and constructs a [`StreamSelection`](crate::types::StreamSelection).
     pub fn build(self) -> crate::types::StreamSelection {

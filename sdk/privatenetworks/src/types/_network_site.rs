@@ -126,6 +126,10 @@ impl NetworkSiteBuilder {
         self.network_site_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the network site.</p>
+    pub fn get_network_site_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_site_arn
+    }
     /// <p>The name of the network site.</p>
     pub fn network_site_name(
         mut self,
@@ -142,6 +146,10 @@ impl NetworkSiteBuilder {
         self.network_site_name = input;
         self
     }
+    /// <p>The name of the network site.</p>
+    pub fn get_network_site_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_site_name
+    }
     /// <p>The description of the network site.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -151,6 +159,10 @@ impl NetworkSiteBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the network site.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The status of the network site.</p>
     pub fn status(mut self, input: crate::types::NetworkSiteStatus) -> Self {
@@ -164,6 +176,10 @@ impl NetworkSiteBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the network site.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::NetworkSiteStatus> {
+        &self.status
     }
     /// <p>The status reason of the network site.</p>
     pub fn status_reason(
@@ -181,6 +197,10 @@ impl NetworkSiteBuilder {
         self.status_reason = input;
         self
     }
+    /// <p>The status reason of the network site.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
+    }
     /// <p>The Amazon Resource Name (ARN) of the network to which the network site belongs.</p>
     pub fn network_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_arn = ::std::option::Option::Some(input.into());
@@ -190,6 +210,10 @@ impl NetworkSiteBuilder {
     pub fn set_network_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the network to which the network site belongs.</p>
+    pub fn get_network_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_arn
     }
     /// <p>The pending plan of the network site.</p>
     pub fn pending_plan(mut self, input: crate::types::SitePlan) -> Self {
@@ -204,6 +228,10 @@ impl NetworkSiteBuilder {
         self.pending_plan = input;
         self
     }
+    /// <p>The pending plan of the network site.</p>
+    pub fn get_pending_plan(&self) -> &::std::option::Option<crate::types::SitePlan> {
+        &self.pending_plan
+    }
     /// <p>The current plan of the network site.</p>
     pub fn current_plan(mut self, input: crate::types::SitePlan) -> Self {
         self.current_plan = ::std::option::Option::Some(input);
@@ -217,6 +245,10 @@ impl NetworkSiteBuilder {
         self.current_plan = input;
         self
     }
+    /// <p>The current plan of the network site.</p>
+    pub fn get_current_plan(&self) -> &::std::option::Option<crate::types::SitePlan> {
+        &self.current_plan
+    }
     /// <p>The creation time of the network site.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -229,6 +261,10 @@ impl NetworkSiteBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The creation time of the network site.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p> The parent Availability Zone for the network site. </p>
     pub fn availability_zone(
@@ -246,6 +282,10 @@ impl NetworkSiteBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p> The parent Availability Zone for the network site. </p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p> The parent Availability Zone ID for the network site. </p>
     pub fn availability_zone_id(
         mut self,
@@ -261,6 +301,10 @@ impl NetworkSiteBuilder {
     ) -> Self {
         self.availability_zone_id = input;
         self
+    }
+    /// <p> The parent Availability Zone ID for the network site. </p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_id
     }
     /// Consumes the builder and constructs a [`NetworkSite`](crate::types::NetworkSite).
     pub fn build(self) -> crate::types::NetworkSite {

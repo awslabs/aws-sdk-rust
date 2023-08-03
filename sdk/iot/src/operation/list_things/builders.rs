@@ -39,6 +39,10 @@ impl ListThingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListThings as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_things::builders::ListThingsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl ListThingsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return in this operation.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -136,6 +144,10 @@ impl ListThingsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return in this operation.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The attribute name used to search for things.</p>
     pub fn attribute_name(
@@ -153,6 +165,10 @@ impl ListThingsFluentBuilder {
         self.inner = self.inner.set_attribute_name(input);
         self
     }
+    /// <p>The attribute name used to search for things.</p>
+    pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_attribute_name()
+    }
     /// <p>The attribute value used to search for things.</p>
     pub fn attribute_value(
         mut self,
@@ -168,6 +184,10 @@ impl ListThingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_attribute_value(input);
         self
+    }
+    /// <p>The attribute value used to search for things.</p>
+    pub fn get_attribute_value(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_attribute_value()
     }
     /// <p>The name of the thing type used to search for things.</p>
     pub fn thing_type_name(
@@ -185,6 +205,10 @@ impl ListThingsFluentBuilder {
         self.inner = self.inner.set_thing_type_name(input);
         self
     }
+    /// <p>The name of the thing type used to search for things.</p>
+    pub fn get_thing_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_thing_type_name()
+    }
     /// <p>When <code>true</code>, the action returns the thing resources with attribute values that start with the <code>attributeValue</code> provided.</p>
     /// <p>When <code>false</code>, or not present, the action returns only the thing resources with attribute values that match the entire <code>attributeValue</code> provided. </p>
     pub fn use_prefix_attribute_value(mut self, input: bool) -> Self {
@@ -196,5 +220,10 @@ impl ListThingsFluentBuilder {
     pub fn set_use_prefix_attribute_value(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_use_prefix_attribute_value(input);
         self
+    }
+    /// <p>When <code>true</code>, the action returns the thing resources with attribute values that start with the <code>attributeValue</code> provided.</p>
+    /// <p>When <code>false</code>, or not present, the action returns only the thing resources with attribute values that match the entire <code>attributeValue</code> provided. </p>
+    pub fn get_use_prefix_attribute_value(&self) -> &::std::option::Option<bool> {
+        self.inner.get_use_prefix_attribute_value()
     }
 }

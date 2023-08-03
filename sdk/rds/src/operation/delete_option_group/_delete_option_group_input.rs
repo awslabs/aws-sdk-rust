@@ -55,6 +55,12 @@ impl DeleteOptionGroupInputBuilder {
         self.option_group_name = input;
         self
     }
+    /// <p>The name of the option group to be deleted.</p> <note>
+    /// <p>You can't delete default option groups.</p>
+    /// </note>
+    pub fn get_option_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.option_group_name
+    }
     /// Consumes the builder and constructs a [`DeleteOptionGroupInput`](crate::operation::delete_option_group::DeleteOptionGroupInput).
     pub fn build(
         self,

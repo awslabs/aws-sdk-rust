@@ -55,6 +55,10 @@ impl ListConfigsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Next token returned in the response of a previous <code>ListConfigs</code> call. Used to get the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `config_list`.
     ///
     /// To override the contents of this collection use [`set_config_list`](Self::set_config_list).
@@ -73,6 +77,12 @@ impl ListConfigsOutputBuilder {
     ) -> Self {
         self.config_list = input;
         self
+    }
+    /// <p>List of <code>Config</code> items.</p>
+    pub fn get_config_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigListItem>> {
+        &self.config_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

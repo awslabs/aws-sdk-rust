@@ -47,6 +47,10 @@ impl UpdateDeviceInputBuilder {
         self.device_arn = input;
         self
     }
+    /// <p>The ARN of the device to update. Required.</p>
+    pub fn get_device_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_arn
+    }
     /// <p>The updated device name. Required.</p>
     pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_name = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl UpdateDeviceInputBuilder {
     pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_name = input;
         self
+    }
+    /// <p>The updated device name. Required.</p>
+    pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_name
     }
     /// Consumes the builder and constructs a [`UpdateDeviceInput`](crate::operation::update_device::UpdateDeviceInput).
     pub fn build(

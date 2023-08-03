@@ -40,6 +40,10 @@ impl DescribeHapgInputBuilder {
         self.hapg_arn = input;
         self
     }
+    /// <p>The ARN of the high-availability partition group to describe.</p>
+    pub fn get_hapg_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hapg_arn
+    }
     /// Consumes the builder and constructs a [`DescribeHapgInput`](crate::operation::describe_hapg::DescribeHapgInput).
     pub fn build(
         self,

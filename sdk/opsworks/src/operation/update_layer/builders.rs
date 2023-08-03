@@ -37,6 +37,10 @@ impl UpdateLayerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateLayer as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_layer::builders::UpdateLayerInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl UpdateLayerFluentBuilder {
         self.inner = self.inner.set_layer_id(input);
         self
     }
+    /// <p>The layer ID.</p>
+    pub fn get_layer_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_layer_id()
+    }
     /// <p>The layer name, which is used by the console.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -128,6 +136,10 @@ impl UpdateLayerFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The layer name, which is used by the console.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorks Stacks and by Chef. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.</p>
     /// <p>The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a> </p>
@@ -140,6 +152,11 @@ impl UpdateLayerFluentBuilder {
     pub fn set_shortname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_shortname(input);
         self
+    }
+    /// <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorks Stacks and by Chef. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.</p>
+    /// <p>The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a> </p>
+    pub fn get_shortname(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_shortname()
     }
     /// Adds a key-value pair to `Attributes`.
     ///
@@ -164,6 +181,14 @@ impl UpdateLayerFluentBuilder {
         self.inner = self.inner.set_attributes(input);
         self
     }
+    /// <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<crate::types::LayerAttributesKeys, ::std::string::String>,
+    > {
+        self.inner.get_attributes()
+    }
     /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <code>CloudWatchLogsLogStream</code>.</p>
     pub fn cloud_watch_logs_configuration(
         mut self,
@@ -179,6 +204,12 @@ impl UpdateLayerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cloud_watch_logs_configuration(input);
         self
+    }
+    /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <code>CloudWatchLogsLogStream</code>.</p>
+    pub fn get_cloud_watch_logs_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudWatchLogsConfiguration> {
+        self.inner.get_cloud_watch_logs_configuration()
     }
     /// <p>The ARN of an IAM profile to be used for all of the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub fn custom_instance_profile_arn(
@@ -196,6 +227,10 @@ impl UpdateLayerFluentBuilder {
         self.inner = self.inner.set_custom_instance_profile_arn(input);
         self
     }
+    /// <p>The ARN of an IAM profile to be used for all of the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+    pub fn get_custom_instance_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_custom_instance_profile_arn()
+    }
     /// <p>A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom JSON</a>. </p>
     pub fn custom_json(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.custom_json(input.into());
@@ -205,6 +240,10 @@ impl UpdateLayerFluentBuilder {
     pub fn set_custom_json(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_custom_json(input);
         self
+    }
+    /// <p>A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom JSON</a>. </p>
+    pub fn get_custom_json(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_custom_json()
     }
     /// Appends an item to `CustomSecurityGroupIds`.
     ///
@@ -226,6 +265,12 @@ impl UpdateLayerFluentBuilder {
         self.inner = self.inner.set_custom_security_group_ids(input);
         self
     }
+    /// <p>An array containing the layer's custom security group IDs.</p>
+    pub fn get_custom_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_custom_security_group_ids()
+    }
     /// Appends an item to `Packages`.
     ///
     /// To override the contents of this collection use [`set_packages`](Self::set_packages).
@@ -242,6 +287,10 @@ impl UpdateLayerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_packages(input);
         self
+    }
+    /// <p>An array of <code>Package</code> objects that describe the layer's packages.</p>
+    pub fn get_packages(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_packages()
     }
     /// Appends an item to `VolumeConfigurations`.
     ///
@@ -260,6 +309,12 @@ impl UpdateLayerFluentBuilder {
         self.inner = self.inner.set_volume_configurations(input);
         self
     }
+    /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
+    pub fn get_volume_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeConfiguration>> {
+        self.inner.get_volume_configurations()
+    }
     /// <p>Whether to disable auto healing for the layer.</p>
     pub fn enable_auto_healing(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_auto_healing(input);
@@ -269,6 +324,10 @@ impl UpdateLayerFluentBuilder {
     pub fn set_enable_auto_healing(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_auto_healing(input);
         self
+    }
+    /// <p>Whether to disable auto healing for the layer.</p>
+    pub fn get_enable_auto_healing(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_auto_healing()
     }
     /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
     pub fn auto_assign_elastic_ips(mut self, input: bool) -> Self {
@@ -280,6 +339,10 @@ impl UpdateLayerFluentBuilder {
         self.inner = self.inner.set_auto_assign_elastic_ips(input);
         self
     }
+    /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
+    pub fn get_auto_assign_elastic_ips(&self) -> &::std::option::Option<bool> {
+        self.inner.get_auto_assign_elastic_ips()
+    }
     /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
     pub fn auto_assign_public_ips(mut self, input: bool) -> Self {
         self.inner = self.inner.auto_assign_public_ips(input);
@@ -289,6 +352,10 @@ impl UpdateLayerFluentBuilder {
     pub fn set_auto_assign_public_ips(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_auto_assign_public_ips(input);
         self
+    }
+    /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
+    pub fn get_auto_assign_public_ips(&self) -> &::std::option::Option<bool> {
+        self.inner.get_auto_assign_public_ips()
     }
     /// <p>A <code>LayerCustomRecipes</code> object that specifies the layer's custom recipes.</p>
     pub fn custom_recipes(mut self, input: crate::types::Recipes) -> Self {
@@ -302,6 +369,10 @@ impl UpdateLayerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_custom_recipes(input);
         self
+    }
+    /// <p>A <code>LayerCustomRecipes</code> object that specifies the layer's custom recipes.</p>
+    pub fn get_custom_recipes(&self) -> &::std::option::Option<crate::types::Recipes> {
+        self.inner.get_custom_recipes()
     }
     /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
     /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
@@ -317,6 +388,12 @@ impl UpdateLayerFluentBuilder {
         self.inner = self.inner.set_install_updates_on_boot(input);
         self
     }
+    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
+    /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
+    /// </note>
+    pub fn get_install_updates_on_boot(&self) -> &::std::option::Option<bool> {
+        self.inner.get_install_updates_on_boot()
+    }
     /// <p>Whether to use Amazon EBS-optimized instances.</p>
     pub fn use_ebs_optimized_instances(mut self, input: bool) -> Self {
         self.inner = self.inner.use_ebs_optimized_instances(input);
@@ -326,6 +403,10 @@ impl UpdateLayerFluentBuilder {
     pub fn set_use_ebs_optimized_instances(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_use_ebs_optimized_instances(input);
         self
+    }
+    /// <p>Whether to use Amazon EBS-optimized instances.</p>
+    pub fn get_use_ebs_optimized_instances(&self) -> &::std::option::Option<bool> {
+        self.inner.get_use_ebs_optimized_instances()
     }
     /// <p></p>
     pub fn lifecycle_event_configuration(
@@ -342,5 +423,11 @@ impl UpdateLayerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_lifecycle_event_configuration(input);
         self
+    }
+    /// <p></p>
+    pub fn get_lifecycle_event_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::LifecycleEventConfiguration> {
+        self.inner.get_lifecycle_event_configuration()
     }
 }

@@ -38,6 +38,12 @@ impl SearchRelatedItemsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SearchRelatedItems as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::search_related_items::builders::SearchRelatedItemsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,6 +145,10 @@ impl SearchRelatedItemsFluentBuilder {
         self.inner = self.inner.set_domain_id(input);
         self
     }
+    /// <p>The unique identifier of the Cases domain. </p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_id()
+    }
     /// <p>A unique identifier of the case.</p>
     pub fn case_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.case_id(input.into());
@@ -148,6 +158,10 @@ impl SearchRelatedItemsFluentBuilder {
     pub fn set_case_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_case_id(input);
         self
+    }
+    /// <p>A unique identifier of the case.</p>
+    pub fn get_case_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_case_id()
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -159,6 +173,10 @@ impl SearchRelatedItemsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -168,6 +186,10 @@ impl SearchRelatedItemsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// Appends an item to `filters`.
     ///
@@ -185,5 +207,11 @@ impl SearchRelatedItemsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
+    }
+    /// <p>The list of types of related items and their parameters to use for filtering.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedItemTypeFilter>> {
+        self.inner.get_filters()
     }
 }

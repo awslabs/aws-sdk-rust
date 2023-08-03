@@ -37,6 +37,10 @@ impl DeleteIngestionDestinationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteIngestionDestination as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_ingestion_destination::builders::DeleteIngestionDestinationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl DeleteIngestionDestinationFluentBuilder {
         self.inner = self.inner.set_app_bundle_identifier(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
+    pub fn get_app_bundle_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_bundle_identifier()
+    }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</p>
     pub fn ingestion_identifier(
         mut self,
@@ -149,6 +157,10 @@ impl DeleteIngestionDestinationFluentBuilder {
         self.inner = self.inner.set_ingestion_identifier(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</p>
+    pub fn get_ingestion_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ingestion_identifier()
+    }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion destination to use for the request.</p>
     pub fn ingestion_destination_identifier(
         mut self,
@@ -164,5 +176,11 @@ impl DeleteIngestionDestinationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ingestion_destination_identifier(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion destination to use for the request.</p>
+    pub fn get_ingestion_destination_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ingestion_destination_identifier()
     }
 }

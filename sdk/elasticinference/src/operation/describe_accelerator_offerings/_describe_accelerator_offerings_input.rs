@@ -50,6 +50,10 @@ impl DescribeAcceleratorOfferingsInputBuilder {
         self.location_type = input;
         self
     }
+    /// <p> The location type that you want to describe accelerator type offerings for. It can assume the following values: region: will return the accelerator type offering at the regional level. availability-zone: will return the accelerator type offering at the availability zone level. availability-zone-id: will return the accelerator type offering at the availability zone level returning the availability zone id. </p>
+    pub fn get_location_type(&self) -> &::std::option::Option<crate::types::LocationType> {
+        &self.location_type
+    }
     /// Appends an item to `accelerator_types`.
     ///
     /// To override the contents of this collection use [`set_accelerator_types`](Self::set_accelerator_types).
@@ -71,6 +75,12 @@ impl DescribeAcceleratorOfferingsInputBuilder {
     ) -> Self {
         self.accelerator_types = input;
         self
+    }
+    /// <p> The list of accelerator types to describe. </p>
+    pub fn get_accelerator_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.accelerator_types
     }
     /// Consumes the builder and constructs a [`DescribeAcceleratorOfferingsInput`](crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsInput).
     pub fn build(

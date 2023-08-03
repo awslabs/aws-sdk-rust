@@ -36,6 +36,13 @@ impl PutResourcePermissionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutResourcePermission as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_resource_permission::builders::PutResourcePermissionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +137,10 @@ impl PutResourcePermissionFluentBuilder {
         self
     }
     /// <p></p>
+    pub fn get_action_type(&self) -> &::std::option::Option<crate::types::PermissionActionType> {
+        self.inner.get_action_type()
+    }
+    /// <p></p>
     pub fn source_resource_arn(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -146,6 +157,10 @@ impl PutResourcePermissionFluentBuilder {
         self
     }
     /// <p></p>
+    pub fn get_source_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_resource_arn()
+    }
+    /// <p></p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
@@ -154,5 +169,9 @@ impl PutResourcePermissionFluentBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
+    }
+    /// <p></p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
     }
 }

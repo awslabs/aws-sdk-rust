@@ -62,6 +62,10 @@ impl ImportTaskErrorBuilder {
         self.error_date_time = input;
         self
     }
+    /// <p>Import task error datetime.</p>
+    pub fn get_error_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_date_time
+    }
     /// <p>Import task error type.</p>
     pub fn error_type(mut self, input: crate::types::ImportErrorType) -> Self {
         self.error_type = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl ImportTaskErrorBuilder {
         self.error_type = input;
         self
     }
+    /// <p>Import task error type.</p>
+    pub fn get_error_type(&self) -> &::std::option::Option<crate::types::ImportErrorType> {
+        &self.error_type
+    }
     /// <p>Import task error data.</p>
     pub fn error_data(mut self, input: crate::types::ImportErrorData) -> Self {
         self.error_data = ::std::option::Option::Some(input);
@@ -87,6 +95,10 @@ impl ImportTaskErrorBuilder {
     ) -> Self {
         self.error_data = input;
         self
+    }
+    /// <p>Import task error data.</p>
+    pub fn get_error_data(&self) -> &::std::option::Option<crate::types::ImportErrorData> {
+        &self.error_data
     }
     /// Consumes the builder and constructs a [`ImportTaskError`](crate::types::ImportTaskError).
     pub fn build(self) -> crate::types::ImportTaskError {

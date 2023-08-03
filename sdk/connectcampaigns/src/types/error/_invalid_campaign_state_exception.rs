@@ -83,6 +83,10 @@ impl InvalidCampaignStateExceptionBuilder {
         self.state = input;
         self
     }
+    /// State of a campaign
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::CampaignState> {
+        &self.state
+    }
     #[allow(missing_docs)] // documentation missing in model
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -92,6 +96,10 @@ impl InvalidCampaignStateExceptionBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// A header that defines the error encountered while processing the request.
     pub fn x_amz_error_type(
@@ -108,6 +116,10 @@ impl InvalidCampaignStateExceptionBuilder {
     ) -> Self {
         self.x_amz_error_type = input;
         self
+    }
+    /// A header that defines the error encountered while processing the request.
+    pub fn get_x_amz_error_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.x_amz_error_type
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

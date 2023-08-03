@@ -96,6 +96,10 @@ impl ActionBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the action.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The description for the action.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl ActionBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description for the action.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `parameters`.
     ///
@@ -131,6 +139,14 @@ impl ActionBuilder {
         self.parameters = input;
         self
     }
+    /// <p>The action parameters, if applicable.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::ActionParameter>,
+    > {
+        &self.parameters
+    }
     /// Adds a key-value pair to `targets`.
     ///
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).
@@ -156,6 +172,14 @@ impl ActionBuilder {
         self.targets = input;
         self
     }
+    /// <p>The supported targets for the action.</p>
+    pub fn get_targets(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::ActionTarget>,
+    > {
+        &self.targets
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -180,6 +204,14 @@ impl ActionBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags for the action.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`Action`](crate::types::Action).
     pub fn build(self) -> crate::types::Action {

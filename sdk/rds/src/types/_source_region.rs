@@ -64,6 +64,10 @@ impl SourceRegionBuilder {
         self.region_name = input;
         self
     }
+    /// <p>The name of the source Amazon Web Services Region.</p>
+    pub fn get_region_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region_name
+    }
     /// <p>The endpoint for the source Amazon Web Services Region endpoint.</p>
     pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl SourceRegionBuilder {
         self.endpoint = input;
         self
     }
+    /// <p>The endpoint for the source Amazon Web Services Region endpoint.</p>
+    pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint
+    }
     /// <p>The status of the source Amazon Web Services Region.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl SourceRegionBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the source Amazon Web Services Region.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>Whether the source Amazon Web Services Region supports replicating automated backups to the current Amazon Web Services Region.</p>
     pub fn supports_db_instance_automated_backups_replication(mut self, input: bool) -> Self {
@@ -97,6 +109,12 @@ impl SourceRegionBuilder {
     ) -> Self {
         self.supports_db_instance_automated_backups_replication = input;
         self
+    }
+    /// <p>Whether the source Amazon Web Services Region supports replicating automated backups to the current Amazon Web Services Region.</p>
+    pub fn get_supports_db_instance_automated_backups_replication(
+        &self,
+    ) -> &::std::option::Option<bool> {
+        &self.supports_db_instance_automated_backups_replication
     }
     /// Consumes the builder and constructs a [`SourceRegion`](crate::types::SourceRegion).
     pub fn build(self) -> crate::types::SourceRegion {

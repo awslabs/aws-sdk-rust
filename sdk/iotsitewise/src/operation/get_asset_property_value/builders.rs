@@ -41,6 +41,13 @@ impl GetAssetPropertyValueFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetAssetPropertyValue as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_asset_property_value::builders::GetAssetPropertyValueInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +138,10 @@ impl GetAssetPropertyValueFluentBuilder {
         self.inner = self.inner.set_asset_id(input);
         self
     }
+    /// <p>The ID of the asset.</p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_asset_id()
+    }
     /// <p>The ID of the asset property.</p>
     pub fn property_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.property_id(input.into());
@@ -140,6 +151,10 @@ impl GetAssetPropertyValueFluentBuilder {
     pub fn set_property_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_property_id(input);
         self
+    }
+    /// <p>The ID of the asset property.</p>
+    pub fn get_property_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_property_id()
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn property_alias(
@@ -156,5 +171,9 @@ impl GetAssetPropertyValueFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_property_alias(input);
         self
+    }
+    /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_property_alias(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_property_alias()
     }
 }

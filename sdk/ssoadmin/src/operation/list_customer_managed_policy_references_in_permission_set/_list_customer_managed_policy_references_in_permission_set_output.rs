@@ -72,6 +72,12 @@ impl ListCustomerManagedPolicyReferencesInPermissionSetOutputBuilder {
         self.customer_managed_policy_references = input;
         self
     }
+    /// <p>Specifies the names and paths of the customer managed policies that you have attached to your permission set.</p>
+    pub fn get_customer_managed_policy_references(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomerManagedPolicyReference>> {
+        &self.customer_managed_policy_references
+    }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -81,6 +87,10 @@ impl ListCustomerManagedPolicyReferencesInPermissionSetOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

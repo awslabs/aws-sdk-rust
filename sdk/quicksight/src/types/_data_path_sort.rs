@@ -51,6 +51,10 @@ impl DataPathSortBuilder {
         self.direction = input;
         self
     }
+    /// <p>Determines the sort direction.</p>
+    pub fn get_direction(&self) -> &::std::option::Option<crate::types::SortDirection> {
+        &self.direction
+    }
     /// Appends an item to `sort_paths`.
     ///
     /// To override the contents of this collection use [`set_sort_paths`](Self::set_sort_paths).
@@ -69,6 +73,12 @@ impl DataPathSortBuilder {
     ) -> Self {
         self.sort_paths = input;
         self
+    }
+    /// <p>The list of data paths that need to be sorted.</p>
+    pub fn get_sort_paths(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataPathValue>> {
+        &self.sort_paths
     }
     /// Consumes the builder and constructs a [`DataPathSort`](crate::types::DataPathSort).
     pub fn build(self) -> crate::types::DataPathSort {

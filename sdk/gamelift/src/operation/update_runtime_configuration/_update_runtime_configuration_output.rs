@@ -51,6 +51,12 @@ impl UpdateRuntimeConfigurationOutputBuilder {
         self.runtime_configuration = input;
         self
     }
+    /// <p>The runtime configuration currently in use by all instances in the fleet. If the update was successful, all property changes are shown. </p>
+    pub fn get_runtime_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::RuntimeConfiguration> {
+        &self.runtime_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

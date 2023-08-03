@@ -48,6 +48,12 @@ impl BatchGetMemberEc2DeepInspectionStatusInputBuilder {
         self.account_ids = input;
         self
     }
+    /// <p>The unique identifiers for the Amazon Web Services accounts to retrieve Amazon Inspector deep inspection activation status for. </p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.account_ids
+    }
     /// Consumes the builder and constructs a [`BatchGetMemberEc2DeepInspectionStatusInput`](crate::operation::batch_get_member_ec2_deep_inspection_status::BatchGetMemberEc2DeepInspectionStatusInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_member_ec2_deep_inspection_status::BatchGetMemberEc2DeepInspectionStatusInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

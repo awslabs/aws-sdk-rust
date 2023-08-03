@@ -64,6 +64,10 @@ impl SourceCodeRepositoryBuilder {
         self.repository = input;
         self
     }
+    /// <p> The repository name for the source code. </p>
+    pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository
+    }
     /// <p> The branch of the source code. </p>
     pub fn branch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl SourceCodeRepositoryBuilder {
     pub fn set_branch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.branch = input;
         self
+    }
+    /// <p> The branch of the source code. </p>
+    pub fn get_branch(&self) -> &::std::option::Option<::std::string::String> {
+        &self.branch
     }
     /// <p> The type of repository to use for the source code. </p>
     pub fn version_control_type(
@@ -90,6 +98,10 @@ impl SourceCodeRepositoryBuilder {
         self.version_control_type = input;
         self
     }
+    /// <p> The type of repository to use for the source code. </p>
+    pub fn get_version_control_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_control_type
+    }
     /// <p>The name of the project.</p>
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
@@ -99,6 +111,10 @@ impl SourceCodeRepositoryBuilder {
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_name = input;
         self
+    }
+    /// <p>The name of the project.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
     }
     /// Consumes the builder and constructs a [`SourceCodeRepository`](crate::types::SourceCodeRepository).
     pub fn build(self) -> crate::types::SourceCodeRepository {

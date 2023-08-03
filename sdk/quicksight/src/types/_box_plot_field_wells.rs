@@ -51,6 +51,12 @@ impl BoxPlotFieldWellsBuilder {
         self.box_plot_aggregated_field_wells = input;
         self
     }
+    /// <p>The aggregated field wells of a box plot.</p>
+    pub fn get_box_plot_aggregated_field_wells(
+        &self,
+    ) -> &::std::option::Option<crate::types::BoxPlotAggregatedFieldWells> {
+        &self.box_plot_aggregated_field_wells
+    }
     /// Consumes the builder and constructs a [`BoxPlotFieldWells`](crate::types::BoxPlotFieldWells).
     pub fn build(self) -> crate::types::BoxPlotFieldWells {
         crate::types::BoxPlotFieldWells {

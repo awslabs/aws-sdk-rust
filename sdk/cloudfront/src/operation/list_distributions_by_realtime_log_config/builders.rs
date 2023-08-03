@@ -38,6 +38,10 @@ impl ListDistributionsByRealtimeLogConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListDistributionsByRealtimeLogConfig as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_distributions_by_realtime_log_config::builders::ListDistributionsByRealtimeLogConfigInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -102,6 +106,10 @@ impl ListDistributionsByRealtimeLogConfigFluentBuilder {
         self.inner = self.inner.set_marker(input);
         self
     }
+    /// <p>Use this field when paginating results to indicate where to begin in your list of distributions. The response includes distributions in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
+    }
     /// <p>The maximum number of distributions that you want in the response.</p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.inner = self.inner.max_items(input);
@@ -111,6 +119,10 @@ impl ListDistributionsByRealtimeLogConfigFluentBuilder {
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_items(input);
         self
+    }
+    /// <p>The maximum number of distributions that you want in the response.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_items()
     }
     /// <p>The name of the real-time log configuration whose associated distributions you want to list.</p>
     pub fn realtime_log_config_name(
@@ -128,6 +140,10 @@ impl ListDistributionsByRealtimeLogConfigFluentBuilder {
         self.inner = self.inner.set_realtime_log_config_name(input);
         self
     }
+    /// <p>The name of the real-time log configuration whose associated distributions you want to list.</p>
+    pub fn get_realtime_log_config_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_realtime_log_config_name()
+    }
     /// <p>The Amazon Resource Name (ARN) of the real-time log configuration whose associated distributions you want to list.</p>
     pub fn realtime_log_config_arn(
         mut self,
@@ -143,5 +159,9 @@ impl ListDistributionsByRealtimeLogConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_realtime_log_config_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the real-time log configuration whose associated distributions you want to list.</p>
+    pub fn get_realtime_log_config_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_realtime_log_config_arn()
     }
 }

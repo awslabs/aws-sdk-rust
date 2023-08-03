@@ -51,6 +51,10 @@ impl ParticipantDetailsToAddBuilder {
         self.participant_role = input;
         self
     }
+    /// <p>The role of the participant being added.</p>
+    pub fn get_participant_role(&self) -> &::std::option::Option<crate::types::ParticipantRole> {
+        &self.participant_role
+    }
     /// <p>The display name of the participant.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl ParticipantDetailsToAddBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
+    }
+    /// <p>The display name of the participant.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// Consumes the builder and constructs a [`ParticipantDetailsToAdd`](crate::types::ParticipantDetailsToAdd).
     pub fn build(self) -> crate::types::ParticipantDetailsToAdd {

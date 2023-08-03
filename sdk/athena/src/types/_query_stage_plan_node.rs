@@ -64,6 +64,10 @@ impl QueryStagePlanNodeBuilder {
         self.name = input;
         self
     }
+    /// <p>Name of the query stage plan that describes the operation this stage is performing as part of query execution.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Information about the operation this query stage plan node is performing.</p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl QueryStagePlanNodeBuilder {
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identifier = input;
         self
+    }
+    /// <p>Information about the operation this query stage plan node is performing.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
     }
     /// Appends an item to `children`.
     ///
@@ -92,6 +100,12 @@ impl QueryStagePlanNodeBuilder {
     ) -> Self {
         self.children = input;
         self
+    }
+    /// <p>Stage plan information such as name, identifier, sub plans, and remote sources of child plan nodes/</p>
+    pub fn get_children(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryStagePlanNode>> {
+        &self.children
     }
     /// Appends an item to `remote_sources`.
     ///
@@ -114,6 +128,12 @@ impl QueryStagePlanNodeBuilder {
     ) -> Self {
         self.remote_sources = input;
         self
+    }
+    /// <p>Source plan node IDs.</p>
+    pub fn get_remote_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.remote_sources
     }
     /// Consumes the builder and constructs a [`QueryStagePlanNode`](crate::types::QueryStagePlanNode).
     pub fn build(self) -> crate::types::QueryStagePlanNode {

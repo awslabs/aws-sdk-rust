@@ -145,6 +145,10 @@ impl CreateMetricSetInputBuilder {
         self.anomaly_detector_arn = input;
         self
     }
+    /// <p>The ARN of the anomaly detector that will use the dataset.</p>
+    pub fn get_anomaly_detector_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.anomaly_detector_arn
+    }
     /// <p>The name of the dataset.</p>
     pub fn metric_set_name(
         mut self,
@@ -161,6 +165,10 @@ impl CreateMetricSetInputBuilder {
         self.metric_set_name = input;
         self
     }
+    /// <p>The name of the dataset.</p>
+    pub fn get_metric_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_set_name
+    }
     /// <p>A description of the dataset you are creating.</p>
     pub fn metric_set_description(
         mut self,
@@ -176,6 +184,10 @@ impl CreateMetricSetInputBuilder {
     ) -> Self {
         self.metric_set_description = input;
         self
+    }
+    /// <p>A description of the dataset you are creating.</p>
+    pub fn get_metric_set_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_set_description
     }
     /// Appends an item to `metric_list`.
     ///
@@ -196,6 +208,10 @@ impl CreateMetricSetInputBuilder {
         self.metric_list = input;
         self
     }
+    /// <p>A list of metrics that the dataset will contain.</p>
+    pub fn get_metric_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Metric>> {
+        &self.metric_list
+    }
     /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3, Redshift, Athena and datasources.</p>
     pub fn offset(mut self, input: i32) -> Self {
         self.offset = ::std::option::Option::Some(input);
@@ -205,6 +221,10 @@ impl CreateMetricSetInputBuilder {
     pub fn set_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.offset = input;
         self
+    }
+    /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3, Redshift, Athena and datasources.</p>
+    pub fn get_offset(&self) -> &::std::option::Option<i32> {
+        &self.offset
     }
     /// <p>Contains information about the column used for tracking time in your source data.</p>
     pub fn timestamp_column(mut self, input: crate::types::TimestampColumn) -> Self {
@@ -218,6 +238,10 @@ impl CreateMetricSetInputBuilder {
     ) -> Self {
         self.timestamp_column = input;
         self
+    }
+    /// <p>Contains information about the column used for tracking time in your source data.</p>
+    pub fn get_timestamp_column(&self) -> &::std::option::Option<crate::types::TimestampColumn> {
+        &self.timestamp_column
     }
     /// Appends an item to `dimension_list`.
     ///
@@ -241,6 +265,12 @@ impl CreateMetricSetInputBuilder {
         self.dimension_list = input;
         self
     }
+    /// <p>A list of the fields you want to treat as dimensions.</p>
+    pub fn get_dimension_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.dimension_list
+    }
     /// <p>The frequency with which the source data will be analyzed for anomalies.</p>
     pub fn metric_set_frequency(mut self, input: crate::types::Frequency) -> Self {
         self.metric_set_frequency = ::std::option::Option::Some(input);
@@ -253,6 +283,10 @@ impl CreateMetricSetInputBuilder {
     ) -> Self {
         self.metric_set_frequency = input;
         self
+    }
+    /// <p>The frequency with which the source data will be analyzed for anomalies.</p>
+    pub fn get_metric_set_frequency(&self) -> &::std::option::Option<crate::types::Frequency> {
+        &self.metric_set_frequency
     }
     /// <p>Contains information about how the source data should be interpreted.</p>
     pub fn metric_source(mut self, input: crate::types::MetricSource) -> Self {
@@ -267,6 +301,10 @@ impl CreateMetricSetInputBuilder {
         self.metric_source = input;
         self
     }
+    /// <p>Contains information about how the source data should be interpreted.</p>
+    pub fn get_metric_source(&self) -> &::std::option::Option<crate::types::MetricSource> {
+        &self.metric_source
+    }
     /// <p>The time zone in which your source data was recorded.</p>
     pub fn timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timezone = ::std::option::Option::Some(input.into());
@@ -276,6 +314,10 @@ impl CreateMetricSetInputBuilder {
     pub fn set_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timezone = input;
         self
+    }
+    /// <p>The time zone in which your source data was recorded.</p>
+    pub fn get_timezone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timezone
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -302,6 +344,14 @@ impl CreateMetricSetInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the dataset.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// Appends an item to `dimension_filter_list`.
     ///
     /// To override the contents of this collection use [`set_dimension_filter_list`](Self::set_dimension_filter_list).
@@ -320,6 +370,12 @@ impl CreateMetricSetInputBuilder {
     ) -> Self {
         self.dimension_filter_list = input;
         self
+    }
+    /// <p>A list of filters that specify which data is kept for anomaly detection.</p>
+    pub fn get_dimension_filter_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricSetDimensionFilter>> {
+        &self.dimension_filter_list
     }
     /// Consumes the builder and constructs a [`CreateMetricSetInput`](crate::operation::create_metric_set::CreateMetricSetInput).
     pub fn build(

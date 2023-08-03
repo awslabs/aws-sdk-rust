@@ -49,6 +49,12 @@ impl UpdateDataRepositoryAssociationOutputBuilder {
         self.association = input;
         self
     }
+    /// <p>The response object returned after the data repository association is updated.</p>
+    pub fn get_association(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataRepositoryAssociation> {
+        &self.association
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

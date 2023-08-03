@@ -62,6 +62,10 @@ impl CreateWebLoginTokenOutputBuilder {
         self.web_token = input;
         self
     }
+    /// <p>An Airflow web server login token.</p>
+    pub fn get_web_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.web_token
+    }
     /// <p>The Airflow web server hostname for the environment.</p>
     pub fn web_server_hostname(
         mut self,
@@ -77,6 +81,10 @@ impl CreateWebLoginTokenOutputBuilder {
     ) -> Self {
         self.web_server_hostname = input;
         self
+    }
+    /// <p>The Airflow web server hostname for the environment.</p>
+    pub fn get_web_server_hostname(&self) -> &::std::option::Option<::std::string::String> {
+        &self.web_server_hostname
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

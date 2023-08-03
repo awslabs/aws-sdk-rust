@@ -49,6 +49,10 @@ impl GetVoiceConnectorTerminationOutputBuilder {
         self.termination = input;
         self
     }
+    /// <p>The termination setting details.</p>
+    pub fn get_termination(&self) -> &::std::option::Option<crate::types::Termination> {
+        &self.termination
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

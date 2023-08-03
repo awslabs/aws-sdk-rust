@@ -37,6 +37,12 @@ impl ListEmailTemplatesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListEmailTemplates as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_email_templates::builders::ListEmailTemplatesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +144,10 @@ impl ListEmailTemplatesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A token returned from a previous call to <code>ListEmailTemplates</code> to indicate the position in the list of email templates.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The number of results to show in a single call to <code>ListEmailTemplates</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     /// <p>The value you specify has to be at least 1, and can be no more than 10.</p>
     pub fn page_size(mut self, input: i32) -> Self {
@@ -149,5 +159,10 @@ impl ListEmailTemplatesFluentBuilder {
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_page_size(input);
         self
+    }
+    /// <p>The number of results to show in a single call to <code>ListEmailTemplates</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
+    /// <p>The value you specify has to be at least 1, and can be no more than 10.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        self.inner.get_page_size()
     }
 }

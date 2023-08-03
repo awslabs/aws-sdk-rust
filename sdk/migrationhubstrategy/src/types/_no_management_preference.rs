@@ -56,6 +56,12 @@ impl NoManagementPreferenceBuilder {
         self.target_destination = input;
         self
     }
+    /// <p> The choice of application destination that you specify. </p>
+    pub fn get_target_destination(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NoPreferenceTargetDestination>> {
+        &self.target_destination
+    }
     /// Consumes the builder and constructs a [`NoManagementPreference`](crate::types::NoManagementPreference).
     pub fn build(self) -> crate::types::NoManagementPreference {
         crate::types::NoManagementPreference {

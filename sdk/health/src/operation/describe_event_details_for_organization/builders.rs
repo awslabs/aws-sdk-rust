@@ -46,6 +46,10 @@ impl DescribeEventDetailsForOrganizationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeEventDetailsForOrganization as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_event_details_for_organization::builders::DescribeEventDetailsForOrganizationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -120,6 +124,12 @@ impl DescribeEventDetailsForOrganizationFluentBuilder {
         self.inner = self.inner.set_organization_event_detail_filters(input);
         self
     }
+    /// <p>A set of JSON elements that includes the <code>awsAccountId</code> and the <code>eventArn</code>.</p>
+    pub fn get_organization_event_detail_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventAccountFilter>> {
+        self.inner.get_organization_event_detail_filters()
+    }
     /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
     pub fn locale(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.locale(input.into());
@@ -129,5 +139,9 @@ impl DescribeEventDetailsForOrganizationFluentBuilder {
     pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_locale(input);
         self
+    }
+    /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
+    pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_locale()
     }
 }

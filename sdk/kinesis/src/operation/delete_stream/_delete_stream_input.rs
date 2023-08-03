@@ -56,6 +56,10 @@ impl DeleteStreamInputBuilder {
         self.stream_name = input;
         self
     }
+    /// <p>The name of the stream to delete.</p>
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_name
+    }
     /// <p>If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>, and the stream has registered consumers, the call to <code>DeleteStream</code> fails with a <code>ResourceInUseException</code>. </p>
     pub fn enforce_consumer_deletion(mut self, input: bool) -> Self {
         self.enforce_consumer_deletion = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl DeleteStreamInputBuilder {
         self.enforce_consumer_deletion = input;
         self
     }
+    /// <p>If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>, and the stream has registered consumers, the call to <code>DeleteStream</code> fails with a <code>ResourceInUseException</code>. </p>
+    pub fn get_enforce_consumer_deletion(&self) -> &::std::option::Option<bool> {
+        &self.enforce_consumer_deletion
+    }
     /// <p>The ARN of the stream.</p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_arn = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl DeleteStreamInputBuilder {
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_arn = input;
         self
+    }
+    /// <p>The ARN of the stream.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_arn
     }
     /// Consumes the builder and constructs a [`DeleteStreamInput`](crate::operation::delete_stream::DeleteStreamInput).
     pub fn build(

@@ -36,6 +36,12 @@ impl ListDataSetsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListDataSets as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_data_sets::builders::ListDataSetsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl ListDataSetsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results returned by a single call.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -139,6 +149,10 @@ impl ListDataSetsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
     pub fn origin(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.origin(input.into());
@@ -148,5 +162,9 @@ impl ListDataSetsFluentBuilder {
     pub fn set_origin(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_origin(input);
         self
+    }
+    /// <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
+    pub fn get_origin(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_origin()
     }
 }

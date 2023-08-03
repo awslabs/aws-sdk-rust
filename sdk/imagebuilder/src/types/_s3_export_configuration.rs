@@ -74,6 +74,10 @@ impl S3ExportConfigurationBuilder {
         self.role_name = input;
         self
     }
+    /// <p>The name of the role that grants VM Import/Export permission to export images to your S3 bucket.</p>
+    pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_name
+    }
     /// <p>Export the updated image to one of the following supported disk image formats:</p>
     /// <ul>
     /// <li> <p> <b>Virtual Hard Disk (VHD)</b> – Compatible with Citrix Xen and Microsoft Hyper-V virtualization products.</p> </li>
@@ -97,6 +101,15 @@ impl S3ExportConfigurationBuilder {
         self.disk_image_format = input;
         self
     }
+    /// <p>Export the updated image to one of the following supported disk image formats:</p>
+    /// <ul>
+    /// <li> <p> <b>Virtual Hard Disk (VHD)</b> – Compatible with Citrix Xen and Microsoft Hyper-V virtualization products.</p> </li>
+    /// <li> <p> <b>Stream-optimized ESX Virtual Machine Disk (VMDK)</b> – Compatible with VMware ESX and VMware vSphere versions 4, 5, and 6.</p> </li>
+    /// <li> <p> <b>Raw</b> – Raw format.</p> </li>
+    /// </ul>
+    pub fn get_disk_image_format(&self) -> &::std::option::Option<crate::types::DiskImageFormat> {
+        &self.disk_image_format
+    }
     /// <p>The S3 bucket in which to store the output disk images for your VM.</p>
     pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket = ::std::option::Option::Some(input.into());
@@ -107,6 +120,10 @@ impl S3ExportConfigurationBuilder {
         self.s3_bucket = input;
         self
     }
+    /// <p>The S3 bucket in which to store the output disk images for your VM.</p>
+    pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket
+    }
     /// <p>The Amazon S3 path for the bucket where the output disk images for your VM are stored.</p>
     pub fn s3_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_prefix = ::std::option::Option::Some(input.into());
@@ -116,6 +133,10 @@ impl S3ExportConfigurationBuilder {
     pub fn set_s3_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_prefix = input;
         self
+    }
+    /// <p>The Amazon S3 path for the bucket where the output disk images for your VM are stored.</p>
+    pub fn get_s3_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_prefix
     }
     /// Consumes the builder and constructs a [`S3ExportConfiguration`](crate::types::S3ExportConfiguration).
     pub fn build(self) -> crate::types::S3ExportConfiguration {

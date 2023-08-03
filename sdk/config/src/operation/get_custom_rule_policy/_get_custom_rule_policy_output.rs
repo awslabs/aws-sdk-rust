@@ -47,6 +47,10 @@ impl GetCustomRulePolicyOutputBuilder {
         self.policy_text = input;
         self
     }
+    /// <p>The policy definition containing the logic for your Config Custom Policy rule.</p>
+    pub fn get_policy_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_text
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

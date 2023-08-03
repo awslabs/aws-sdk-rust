@@ -82,6 +82,10 @@ impl RecipesBuilder {
         self.setup = input;
         self
     }
+    /// <p>An array of custom recipe names to be run following a <code>setup</code> event.</p>
+    pub fn get_setup(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.setup
+    }
     /// Appends an item to `configure`.
     ///
     /// To override the contents of this collection use [`set_configure`](Self::set_configure).
@@ -100,6 +104,10 @@ impl RecipesBuilder {
     ) -> Self {
         self.configure = input;
         self
+    }
+    /// <p>An array of custom recipe names to be run following a <code>configure</code> event.</p>
+    pub fn get_configure(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.configure
     }
     /// Appends an item to `deploy`.
     ///
@@ -120,6 +128,10 @@ impl RecipesBuilder {
         self.deploy = input;
         self
     }
+    /// <p>An array of custom recipe names to be run following a <code>deploy</code> event.</p>
+    pub fn get_deploy(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.deploy
+    }
     /// Appends an item to `undeploy`.
     ///
     /// To override the contents of this collection use [`set_undeploy`](Self::set_undeploy).
@@ -139,6 +151,10 @@ impl RecipesBuilder {
         self.undeploy = input;
         self
     }
+    /// <p>An array of custom recipe names to be run following a <code>undeploy</code> event.</p>
+    pub fn get_undeploy(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.undeploy
+    }
     /// Appends an item to `shutdown`.
     ///
     /// To override the contents of this collection use [`set_shutdown`](Self::set_shutdown).
@@ -157,6 +173,10 @@ impl RecipesBuilder {
     ) -> Self {
         self.shutdown = input;
         self
+    }
+    /// <p>An array of custom recipe names to be run following a <code>shutdown</code> event.</p>
+    pub fn get_shutdown(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.shutdown
     }
     /// Consumes the builder and constructs a [`Recipes`](crate::types::Recipes).
     pub fn build(self) -> crate::types::Recipes {

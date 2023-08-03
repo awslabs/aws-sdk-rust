@@ -48,6 +48,10 @@ impl AwsS3BucketWebsiteConfigurationRedirectToBuilder {
         self.hostname = input;
         self
     }
+    /// <p>The name of the host to redirect requests to.</p>
+    pub fn get_hostname(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hostname
+    }
     /// <p>The protocol to use when redirecting requests. By default, this field uses the same protocol as the original request. Valid values are <code>http</code> or <code>https</code>.</p>
     pub fn protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protocol = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl AwsS3BucketWebsiteConfigurationRedirectToBuilder {
     pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.protocol = input;
         self
+    }
+    /// <p>The protocol to use when redirecting requests. By default, this field uses the same protocol as the original request. Valid values are <code>http</code> or <code>https</code>.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<::std::string::String> {
+        &self.protocol
     }
     /// Consumes the builder and constructs a [`AwsS3BucketWebsiteConfigurationRedirectTo`](crate::types::AwsS3BucketWebsiteConfigurationRedirectTo).
     pub fn build(self) -> crate::types::AwsS3BucketWebsiteConfigurationRedirectTo {

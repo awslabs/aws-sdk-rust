@@ -53,6 +53,10 @@ impl DescribeAssetBundleImportJobInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account the import job was executed in. </p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The ID of the job. The job ID is set when you start a new job with a <code>StartAssetBundleImportJob</code> API call.</p>
     pub fn asset_bundle_import_job_id(
         mut self,
@@ -68,6 +72,10 @@ impl DescribeAssetBundleImportJobInputBuilder {
     ) -> Self {
         self.asset_bundle_import_job_id = input;
         self
+    }
+    /// <p>The ID of the job. The job ID is set when you start a new job with a <code>StartAssetBundleImportJob</code> API call.</p>
+    pub fn get_asset_bundle_import_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_bundle_import_job_id
     }
     /// Consumes the builder and constructs a [`DescribeAssetBundleImportJobInput`](crate::operation::describe_asset_bundle_import_job::DescribeAssetBundleImportJobInput).
     pub fn build(

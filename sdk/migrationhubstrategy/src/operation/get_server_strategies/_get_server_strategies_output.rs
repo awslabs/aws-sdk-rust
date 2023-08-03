@@ -58,6 +58,12 @@ impl GetServerStrategiesOutputBuilder {
         self.server_strategies = input;
         self
     }
+    /// <p> A list of strategy recommendations for the server. </p>
+    pub fn get_server_strategies(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerStrategy>> {
+        &self.server_strategies
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -36,6 +36,10 @@ impl ListAccountsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListAccounts as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_accounts::builders::ListAccountsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +133,10 @@ impl ListAccountsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>(Optional) When requesting subsequent pages, this is the page token from the previous response output.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>This is the number of items clients can request per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -139,6 +147,10 @@ impl ListAccountsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>This is the number of items clients can request per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>IAM Identity Center OIDC API Reference Guide</i>.</p>
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.access_token(input.into());
@@ -148,5 +160,9 @@ impl ListAccountsFluentBuilder {
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_access_token(input);
         self
+    }
+    /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>IAM Identity Center OIDC API Reference Guide</i>.</p>
+    pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_access_token()
     }
 }

@@ -37,6 +37,13 @@ impl DescribeEventCategoriesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeEventCategories as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_event_categories::builders::DescribeEventCategoriesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,5 +135,10 @@ impl DescribeEventCategoriesFluentBuilder {
     pub fn set_source_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_type(input);
         self
+    }
+    /// <p>The source type, such as cluster or parameter group, to which the described event categories apply.</p>
+    /// <p>Valid values: cluster, cluster-snapshot, cluster-parameter-group, cluster-security-group, and scheduled-action.</p>
+    pub fn get_source_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_type()
     }
 }

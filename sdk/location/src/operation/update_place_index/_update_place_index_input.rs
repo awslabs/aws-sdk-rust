@@ -75,6 +75,10 @@ impl UpdatePlaceIndexInputBuilder {
         self.index_name = input;
         self
     }
+    /// <p>The name of the place index resource to update.</p>
+    pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_name
+    }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(
         note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
@@ -96,6 +100,14 @@ impl UpdatePlaceIndexInputBuilder {
         self.pricing_plan = input;
         self
     }
+    /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
+    #[deprecated(
+        note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
+        since = "2022-02-01"
+    )]
+    pub fn get_pricing_plan(&self) -> &::std::option::Option<crate::types::PricingPlan> {
+        &self.pricing_plan
+    }
     /// <p>Updates the description for the place index resource.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -105,6 +117,10 @@ impl UpdatePlaceIndexInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Updates the description for the place index resource.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Updates the data storage option for the place index resource.</p>
     pub fn data_source_configuration(
@@ -121,6 +137,12 @@ impl UpdatePlaceIndexInputBuilder {
     ) -> Self {
         self.data_source_configuration = input;
         self
+    }
+    /// <p>Updates the data storage option for the place index resource.</p>
+    pub fn get_data_source_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataSourceConfiguration> {
+        &self.data_source_configuration
     }
     /// Consumes the builder and constructs a [`UpdatePlaceIndexInput`](crate::operation::update_place_index::UpdatePlaceIndexInput).
     pub fn build(

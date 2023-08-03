@@ -36,6 +36,13 @@ impl GetProfileObjectTypeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetProfileObjectType as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_profile_object_type::builders::GetProfileObjectTypeInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl GetProfileObjectTypeFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>The unique name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p>The name of the profile object type.</p>
     pub fn object_type_name(
         mut self,
@@ -141,5 +152,9 @@ impl GetProfileObjectTypeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_object_type_name(input);
         self
+    }
+    /// <p>The name of the profile object type.</p>
+    pub fn get_object_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_object_type_name()
     }
 }

@@ -61,6 +61,10 @@ impl OpsItemRelatedItemsFilterBuilder {
         self.key = input;
         self
     }
+    /// <p>The name of the filter key. Supported values include <code>ResourceUri</code>, <code>ResourceType</code>, or <code>AssociationId</code>.</p>
+    pub fn get_key(&self) -> &::std::option::Option<crate::types::OpsItemRelatedItemsFilterKey> {
+        &self.key
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -80,6 +84,10 @@ impl OpsItemRelatedItemsFilterBuilder {
         self.values = input;
         self
     }
+    /// <p>The values for the filter.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
+    }
     /// <p>The operator used by the filter call. The only supported operator is <code>EQUAL</code>.</p>
     pub fn operator(mut self, input: crate::types::OpsItemRelatedItemsFilterOperator) -> Self {
         self.operator = ::std::option::Option::Some(input);
@@ -92,6 +100,12 @@ impl OpsItemRelatedItemsFilterBuilder {
     ) -> Self {
         self.operator = input;
         self
+    }
+    /// <p>The operator used by the filter call. The only supported operator is <code>EQUAL</code>.</p>
+    pub fn get_operator(
+        &self,
+    ) -> &::std::option::Option<crate::types::OpsItemRelatedItemsFilterOperator> {
+        &self.operator
     }
     /// Consumes the builder and constructs a [`OpsItemRelatedItemsFilter`](crate::types::OpsItemRelatedItemsFilter).
     pub fn build(self) -> crate::types::OpsItemRelatedItemsFilter {

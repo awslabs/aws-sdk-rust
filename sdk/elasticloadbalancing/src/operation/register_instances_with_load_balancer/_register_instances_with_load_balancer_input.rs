@@ -54,6 +54,10 @@ impl RegisterInstancesWithLoadBalancerInputBuilder {
         self.load_balancer_name = input;
         self
     }
+    /// <p>The name of the load balancer.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.load_balancer_name
+    }
     /// Appends an item to `instances`.
     ///
     /// To override the contents of this collection use [`set_instances`](Self::set_instances).
@@ -72,6 +76,10 @@ impl RegisterInstancesWithLoadBalancerInputBuilder {
     ) -> Self {
         self.instances = input;
         self
+    }
+    /// <p>The IDs of the instances.</p>
+    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Instance>> {
+        &self.instances
     }
     /// Consumes the builder and constructs a [`RegisterInstancesWithLoadBalancerInput`](crate::operation::register_instances_with_load_balancer::RegisterInstancesWithLoadBalancerInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::register_instances_with_load_balancer::RegisterInstancesWithLoadBalancerInput, ::aws_smithy_http::operation::error::BuildError>{

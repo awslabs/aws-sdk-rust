@@ -40,6 +40,10 @@ impl GetContainerImagesInputBuilder {
         self.service_name = input;
         self
     }
+    /// <p>The name of the container service for which to return registered container images.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
+    }
     /// Consumes the builder and constructs a [`GetContainerImagesInput`](crate::operation::get_container_images::GetContainerImagesInput).
     pub fn build(
         self,

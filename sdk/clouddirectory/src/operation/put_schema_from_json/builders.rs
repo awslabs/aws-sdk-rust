@@ -36,6 +36,12 @@ impl PutSchemaFromJsonFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutSchemaFromJson as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_schema_from_json::builders::PutSchemaFromJsonInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl PutSchemaFromJsonFluentBuilder {
         self.inner = self.inner.set_schema_arn(input);
         self
     }
+    /// <p>The ARN of the schema to update.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schema_arn()
+    }
     /// <p>The replacement JSON schema.</p>
     pub fn document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.document(input.into());
@@ -135,5 +145,9 @@ impl PutSchemaFromJsonFluentBuilder {
     pub fn set_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_document(input);
         self
+    }
+    /// <p>The replacement JSON schema.</p>
+    pub fn get_document(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_document()
     }
 }

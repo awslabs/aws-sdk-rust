@@ -117,6 +117,10 @@ impl NodeGroupMemberUpdateStatusBuilder {
         self.cache_cluster_id = input;
         self
     }
+    /// <p>The cache cluster ID</p>
+    pub fn get_cache_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_cluster_id
+    }
     /// <p>The node ID of the cache cluster</p>
     pub fn cache_node_id(
         mut self,
@@ -133,6 +137,10 @@ impl NodeGroupMemberUpdateStatusBuilder {
         self.cache_node_id = input;
         self
     }
+    /// <p>The node ID of the cache cluster</p>
+    pub fn get_cache_node_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_node_id
+    }
     /// <p>The update status of the node</p>
     pub fn node_update_status(mut self, input: crate::types::NodeUpdateStatus) -> Self {
         self.node_update_status = ::std::option::Option::Some(input);
@@ -145,6 +153,10 @@ impl NodeGroupMemberUpdateStatusBuilder {
     ) -> Self {
         self.node_update_status = input;
         self
+    }
+    /// <p>The update status of the node</p>
+    pub fn get_node_update_status(&self) -> &::std::option::Option<crate::types::NodeUpdateStatus> {
+        &self.node_update_status
     }
     /// <p>The deletion date of the node</p>
     pub fn node_deletion_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -159,6 +171,10 @@ impl NodeGroupMemberUpdateStatusBuilder {
         self.node_deletion_date = input;
         self
     }
+    /// <p>The deletion date of the node</p>
+    pub fn get_node_deletion_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.node_deletion_date
+    }
     /// <p>The start date of the update for a node</p>
     pub fn node_update_start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.node_update_start_date = ::std::option::Option::Some(input);
@@ -171,6 +187,12 @@ impl NodeGroupMemberUpdateStatusBuilder {
     ) -> Self {
         self.node_update_start_date = input;
         self
+    }
+    /// <p>The start date of the update for a node</p>
+    pub fn get_node_update_start_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.node_update_start_date
     }
     /// <p>The end date of the update for a node</p>
     pub fn node_update_end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -185,6 +207,10 @@ impl NodeGroupMemberUpdateStatusBuilder {
         self.node_update_end_date = input;
         self
     }
+    /// <p>The end date of the update for a node</p>
+    pub fn get_node_update_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.node_update_end_date
+    }
     /// <p>Reflects whether the update was initiated by the customer or automatically applied</p>
     pub fn node_update_initiated_by(mut self, input: crate::types::NodeUpdateInitiatedBy) -> Self {
         self.node_update_initiated_by = ::std::option::Option::Some(input);
@@ -197,6 +223,12 @@ impl NodeGroupMemberUpdateStatusBuilder {
     ) -> Self {
         self.node_update_initiated_by = input;
         self
+    }
+    /// <p>Reflects whether the update was initiated by the customer or automatically applied</p>
+    pub fn get_node_update_initiated_by(
+        &self,
+    ) -> &::std::option::Option<crate::types::NodeUpdateInitiatedBy> {
+        &self.node_update_initiated_by
     }
     /// <p>The date when the update is triggered</p>
     pub fn node_update_initiated_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -211,6 +243,12 @@ impl NodeGroupMemberUpdateStatusBuilder {
         self.node_update_initiated_date = input;
         self
     }
+    /// <p>The date when the update is triggered</p>
+    pub fn get_node_update_initiated_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.node_update_initiated_date
+    }
     /// <p>The date when the NodeUpdateStatus was last modified</p>
     pub fn node_update_status_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.node_update_status_modified_date = ::std::option::Option::Some(input);
@@ -223,6 +261,12 @@ impl NodeGroupMemberUpdateStatusBuilder {
     ) -> Self {
         self.node_update_status_modified_date = input;
         self
+    }
+    /// <p>The date when the NodeUpdateStatus was last modified</p>
+    pub fn get_node_update_status_modified_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.node_update_status_modified_date
     }
     /// Consumes the builder and constructs a [`NodeGroupMemberUpdateStatus`](crate::types::NodeGroupMemberUpdateStatus).
     pub fn build(self) -> crate::types::NodeGroupMemberUpdateStatus {

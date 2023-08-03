@@ -56,6 +56,12 @@ impl TestAuthorizationOutputBuilder {
         self.auth_results = input;
         self
     }
+    /// <p>The authentication results.</p>
+    pub fn get_auth_results(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthResult>> {
+        &self.auth_results
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

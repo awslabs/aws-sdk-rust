@@ -52,6 +52,10 @@ impl CreateRemoteAccessSessionConfigurationBuilder {
         self.billing_method = input;
         self
     }
+    /// <p>The billing method for the remote access session.</p>
+    pub fn get_billing_method(&self) -> &::std::option::Option<crate::types::BillingMethod> {
+        &self.billing_method
+    }
     /// Appends an item to `vpce_configuration_arns`.
     ///
     /// To override the contents of this collection use [`set_vpce_configuration_arns`](Self::set_vpce_configuration_arns).
@@ -73,6 +77,12 @@ impl CreateRemoteAccessSessionConfigurationBuilder {
     ) -> Self {
         self.vpce_configuration_arns = input;
         self
+    }
+    /// <p>An array of ARNs included in the VPC endpoint configuration.</p>
+    pub fn get_vpce_configuration_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.vpce_configuration_arns
     }
     /// Consumes the builder and constructs a [`CreateRemoteAccessSessionConfiguration`](crate::types::CreateRemoteAccessSessionConfiguration).
     pub fn build(self) -> crate::types::CreateRemoteAccessSessionConfiguration {

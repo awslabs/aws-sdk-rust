@@ -76,6 +76,10 @@ impl DeleteAppInputSourceInputBuilder {
         self.app_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the imported resource you want to remove from the Resilience Hub application. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_arn = ::std::option::Option::Some(input.into());
@@ -85,6 +89,10 @@ impl DeleteAppInputSourceInputBuilder {
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the imported resource you want to remove from the Resilience Hub application. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_arn
     }
     /// <p>The imported Terraform s3 state ﬁle you want to remove from the Resilience Hub application.</p>
     pub fn terraform_source(mut self, input: crate::types::TerraformSource) -> Self {
@@ -99,6 +107,10 @@ impl DeleteAppInputSourceInputBuilder {
         self.terraform_source = input;
         self
     }
+    /// <p>The imported Terraform s3 state ﬁle you want to remove from the Resilience Hub application.</p>
+    pub fn get_terraform_source(&self) -> &::std::option::Option<crate::types::TerraformSource> {
+        &self.terraform_source
+    }
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -108,6 +120,10 @@ impl DeleteAppInputSourceInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>The namespace on your Amazon Elastic Kubernetes Service cluster that you want to delete from the Resilience Hub application.</p>
     pub fn eks_source_cluster_namespace(
@@ -124,6 +140,12 @@ impl DeleteAppInputSourceInputBuilder {
     ) -> Self {
         self.eks_source_cluster_namespace = input;
         self
+    }
+    /// <p>The namespace on your Amazon Elastic Kubernetes Service cluster that you want to delete from the Resilience Hub application.</p>
+    pub fn get_eks_source_cluster_namespace(
+        &self,
+    ) -> &::std::option::Option<crate::types::EksSourceClusterNamespace> {
+        &self.eks_source_cluster_namespace
     }
     /// Consumes the builder and constructs a [`DeleteAppInputSourceInput`](crate::operation::delete_app_input_source::DeleteAppInputSourceInput).
     pub fn build(

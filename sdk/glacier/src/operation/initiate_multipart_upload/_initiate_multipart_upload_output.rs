@@ -57,6 +57,10 @@ impl InitiateMultipartUploadOutputBuilder {
         self.location = input;
         self
     }
+    /// <p>The relative URI path of the multipart upload ID Amazon S3 Glacier created.</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
+    }
     /// <p>The ID of the multipart upload. This value is also included as part of the location.</p>
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upload_id = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl InitiateMultipartUploadOutputBuilder {
     pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.upload_id = input;
         self
+    }
+    /// <p>The ID of the multipart upload. This value is also included as part of the location.</p>
+    pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.upload_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

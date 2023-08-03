@@ -37,6 +37,10 @@ impl StartEdgeConfigurationUpdateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartEdgeConfigurationUpdate as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_edge_configuration_update::builders::StartEdgeConfigurationUpdateInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl StartEdgeConfigurationUpdateFluentBuilder {
         self.inner = self.inner.set_stream_name(input);
         self
     }
+    /// <p>The name of the stream whose edge configuration you want to update. Specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_name()
+    }
     /// <p> The Amazon Resource Name (ARN) of the stream. Specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stream_arn(input.into());
@@ -136,6 +144,10 @@ impl StartEdgeConfigurationUpdateFluentBuilder {
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stream_arn(input);
         self
+    }
+    /// <p> The Amazon Resource Name (ARN) of the stream. Specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_arn()
     }
     /// <p>The edge configuration details required to invoke the update process.</p>
     pub fn edge_config(mut self, input: crate::types::EdgeConfig) -> Self {
@@ -149,5 +161,9 @@ impl StartEdgeConfigurationUpdateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_edge_config(input);
         self
+    }
+    /// <p>The edge configuration details required to invoke the update process.</p>
+    pub fn get_edge_config(&self) -> &::std::option::Option<crate::types::EdgeConfig> {
+        self.inner.get_edge_config()
     }
 }

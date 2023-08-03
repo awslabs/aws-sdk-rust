@@ -39,6 +39,10 @@ impl DeleteInputInputBuilder {
         self.input_name = input;
         self
     }
+    /// <p>The name of the input to delete.</p>
+    pub fn get_input_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_name
+    }
     /// Consumes the builder and constructs a [`DeleteInputInput`](crate::operation::delete_input::DeleteInputInput).
     pub fn build(
         self,

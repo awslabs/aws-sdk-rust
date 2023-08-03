@@ -49,6 +49,10 @@ impl DomainBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The fully qualified domain name.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The hosted zone ID for a domain hosted in Route 53. Required when configuring a domain hosted in Route 53.</p>
     pub fn hosted_zone_id(
         mut self,
@@ -64,6 +68,10 @@ impl DomainBuilder {
     ) -> Self {
         self.hosted_zone_id = input;
         self
+    }
+    /// <p>The hosted zone ID for a domain hosted in Route 53. Required when configuring a domain hosted in Route 53.</p>
+    pub fn get_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hosted_zone_id
     }
     /// Consumes the builder and constructs a [`Domain`](crate::types::Domain).
     pub fn build(self) -> crate::types::Domain {

@@ -50,6 +50,10 @@ impl StartAppAssessmentOutputBuilder {
         self.assessment = input;
         self
     }
+    /// <p>The assessment created.</p>
+    pub fn get_assessment(&self) -> &::std::option::Option<crate::types::AppAssessment> {
+        &self.assessment
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

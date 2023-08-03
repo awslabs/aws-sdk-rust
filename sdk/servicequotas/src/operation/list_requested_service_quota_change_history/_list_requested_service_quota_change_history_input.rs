@@ -63,6 +63,10 @@ impl ListRequestedServiceQuotaChangeHistoryInputBuilder {
         self.service_code = input;
         self
     }
+    /// <p>The service identifier.</p>
+    pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_code
+    }
     /// <p>The status of the quota increase request.</p>
     pub fn status(mut self, input: crate::types::RequestStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl ListRequestedServiceQuotaChangeHistoryInputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RequestStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the quota increase request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::RequestStatus> {
+        &self.status
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -83,6 +91,10 @@ impl ListRequestedServiceQuotaChangeHistoryInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -92,6 +104,10 @@ impl ListRequestedServiceQuotaChangeHistoryInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListRequestedServiceQuotaChangeHistoryInput`](crate::operation::list_requested_service_quota_change_history::ListRequestedServiceQuotaChangeHistoryInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_requested_service_quota_change_history::ListRequestedServiceQuotaChangeHistoryInput, ::aws_smithy_http::operation::error::BuildError>{

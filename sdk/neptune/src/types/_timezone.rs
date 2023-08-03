@@ -46,6 +46,10 @@ impl TimezoneBuilder {
         self.timezone_name = input;
         self
     }
+    /// <p>The name of the time zone.</p>
+    pub fn get_timezone_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timezone_name
+    }
     /// Consumes the builder and constructs a [`Timezone`](crate::types::Timezone).
     pub fn build(self) -> crate::types::Timezone {
         crate::types::Timezone {

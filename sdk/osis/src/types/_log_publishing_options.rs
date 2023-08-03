@@ -51,6 +51,10 @@ impl LogPublishingOptionsBuilder {
         self.is_logging_enabled = input;
         self
     }
+    /// <p>Whether logs should be published.</p>
+    pub fn get_is_logging_enabled(&self) -> &::std::option::Option<bool> {
+        &self.is_logging_enabled
+    }
     /// <p>The destination for OpenSearch Ingestion logs sent to Amazon CloudWatch Logs. This parameter is required if <code>IsLoggingEnabled</code> is set to <code>true</code>.</p>
     pub fn cloud_watch_log_destination(
         mut self,
@@ -66,6 +70,12 @@ impl LogPublishingOptionsBuilder {
     ) -> Self {
         self.cloud_watch_log_destination = input;
         self
+    }
+    /// <p>The destination for OpenSearch Ingestion logs sent to Amazon CloudWatch Logs. This parameter is required if <code>IsLoggingEnabled</code> is set to <code>true</code>.</p>
+    pub fn get_cloud_watch_log_destination(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudWatchLogDestination> {
+        &self.cloud_watch_log_destination
     }
     /// Consumes the builder and constructs a [`LogPublishingOptions`](crate::types::LogPublishingOptions).
     pub fn build(self) -> crate::types::LogPublishingOptions {

@@ -56,6 +56,10 @@ impl UpdateEmailTemplateInputBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The name of the template.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
     pub fn template_content(mut self, input: crate::types::EmailTemplateContent) -> Self {
         self.template_content = ::std::option::Option::Some(input);
@@ -68,6 +72,12 @@ impl UpdateEmailTemplateInputBuilder {
     ) -> Self {
         self.template_content = input;
         self
+    }
+    /// <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
+    pub fn get_template_content(
+        &self,
+    ) -> &::std::option::Option<crate::types::EmailTemplateContent> {
+        &self.template_content
     }
     /// Consumes the builder and constructs a [`UpdateEmailTemplateInput`](crate::operation::update_email_template::UpdateEmailTemplateInput).
     pub fn build(

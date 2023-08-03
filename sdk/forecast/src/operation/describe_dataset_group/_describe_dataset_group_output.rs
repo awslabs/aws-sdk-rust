@@ -119,6 +119,10 @@ impl DescribeDatasetGroupOutputBuilder {
         self.dataset_group_name = input;
         self
     }
+    /// <p>The name of the dataset group.</p>
+    pub fn get_dataset_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_group_name
+    }
     /// <p>The ARN of the dataset group.</p>
     pub fn dataset_group_arn(
         mut self,
@@ -134,6 +138,10 @@ impl DescribeDatasetGroupOutputBuilder {
     ) -> Self {
         self.dataset_group_arn = input;
         self
+    }
+    /// <p>The ARN of the dataset group.</p>
+    pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_group_arn
     }
     /// Appends an item to `dataset_arns`.
     ///
@@ -154,6 +162,12 @@ impl DescribeDatasetGroupOutputBuilder {
         self.dataset_arns = input;
         self
     }
+    /// <p>An array of Amazon Resource Names (ARNs) of the datasets contained in the dataset group.</p>
+    pub fn get_dataset_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.dataset_arns
+    }
     /// <p>The domain associated with the dataset group.</p>
     pub fn domain(mut self, input: crate::types::Domain) -> Self {
         self.domain = ::std::option::Option::Some(input);
@@ -163,6 +177,10 @@ impl DescribeDatasetGroupOutputBuilder {
     pub fn set_domain(mut self, input: ::std::option::Option<crate::types::Domain>) -> Self {
         self.domain = input;
         self
+    }
+    /// <p>The domain associated with the dataset group.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<crate::types::Domain> {
+        &self.domain
     }
     /// <p>The status of the dataset group. States include:</p>
     /// <ul>
@@ -192,6 +210,19 @@ impl DescribeDatasetGroupOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the dataset group. States include:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li> <p> <code>UPDATE_PENDING</code>, <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li>
+    /// </ul>
+    /// <p>The <code>UPDATE</code> states apply when you call the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a> operation.</p> <note>
+    /// <p>The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before you can use the dataset group to create a predictor.</p>
+    /// </note>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>When the dataset group was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -205,6 +236,10 @@ impl DescribeDatasetGroupOutputBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>When the dataset group was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>When the dataset group was created or last updated from a call to the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a> operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the <code>DescribeDatasetGroup</code> call.</p>
     pub fn last_modification_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modification_time = ::std::option::Option::Some(input);
@@ -217,6 +252,12 @@ impl DescribeDatasetGroupOutputBuilder {
     ) -> Self {
         self.last_modification_time = input;
         self
+    }
+    /// <p>When the dataset group was created or last updated from a call to the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a> operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the <code>DescribeDatasetGroup</code> call.</p>
+    pub fn get_last_modification_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modification_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

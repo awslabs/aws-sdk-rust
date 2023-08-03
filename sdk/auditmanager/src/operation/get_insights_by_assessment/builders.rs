@@ -37,6 +37,13 @@ impl GetInsightsByAssessmentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetInsightsByAssessment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_insights_by_assessment::builders::GetInsightsByAssessmentInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +139,9 @@ impl GetInsightsByAssessmentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_assessment_id(input);
         self
+    }
+    /// <p>The unique identifier for the assessment. </p>
+    pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assessment_id()
     }
 }

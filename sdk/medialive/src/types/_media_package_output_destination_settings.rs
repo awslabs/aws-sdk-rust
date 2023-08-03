@@ -40,6 +40,10 @@ impl MediaPackageOutputDestinationSettingsBuilder {
         self.channel_id = input;
         self
     }
+    /// ID of the channel in MediaPackage that is the destination for this output group. You do not need to specify the individual inputs in MediaPackage; MediaLive will handle the connection of the two MediaLive pipelines to the two MediaPackage inputs. The MediaPackage channel and MediaLive channel must be in the same region.
+    pub fn get_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_id
+    }
     /// Consumes the builder and constructs a [`MediaPackageOutputDestinationSettings`](crate::types::MediaPackageOutputDestinationSettings).
     pub fn build(self) -> crate::types::MediaPackageOutputDestinationSettings {
         crate::types::MediaPackageOutputDestinationSettings {

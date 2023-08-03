@@ -36,6 +36,12 @@ impl GetDomainNamesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetDomainNames as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_domain_names::builders::GetDomainNamesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl GetDomainNamesFluentBuilder {
         self.inner = self.inner.set_position(input);
         self
     }
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn get_position(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_position()
+    }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -146,5 +156,9 @@ impl GetDomainNamesFluentBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
+    }
+    /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
     }
 }

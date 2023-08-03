@@ -51,6 +51,10 @@ impl LogTargetBuilder {
         self.target_type = input;
         self
     }
+    /// <p>The target type.</p>
+    pub fn get_target_type(&self) -> &::std::option::Option<crate::types::LogTargetType> {
+        &self.target_type
+    }
     /// <p>The target name.</p>
     pub fn target_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_name = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl LogTargetBuilder {
     pub fn set_target_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_name = input;
         self
+    }
+    /// <p>The target name.</p>
+    pub fn get_target_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_name
     }
     /// Consumes the builder and constructs a [`LogTarget`](crate::types::LogTarget).
     pub fn build(self) -> crate::types::LogTarget {

@@ -56,6 +56,13 @@ impl AwsS3BucketServerSideEncryptionConfigurationBuilder {
         self.rules = input;
         self
     }
+    /// <p>The encryption rules that are applied to the S3 bucket.</p>
+    pub fn get_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsS3BucketServerSideEncryptionRule>>
+    {
+        &self.rules
+    }
     /// Consumes the builder and constructs a [`AwsS3BucketServerSideEncryptionConfiguration`](crate::types::AwsS3BucketServerSideEncryptionConfiguration).
     pub fn build(self) -> crate::types::AwsS3BucketServerSideEncryptionConfiguration {
         crate::types::AwsS3BucketServerSideEncryptionConfiguration { rules: self.rules }

@@ -48,6 +48,10 @@ impl GetComputeAccessInputBuilder {
         self.fleet_id = input;
         self
     }
+    /// <p>A unique identifier for the fleet that the compute resource is registered to.</p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_id
+    }
     /// <p>The name of the compute resource you are requesting credentials for.</p>
     pub fn compute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compute_name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl GetComputeAccessInputBuilder {
     pub fn set_compute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.compute_name = input;
         self
+    }
+    /// <p>The name of the compute resource you are requesting credentials for.</p>
+    pub fn get_compute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.compute_name
     }
     /// Consumes the builder and constructs a [`GetComputeAccessInput`](crate::operation::get_compute_access::GetComputeAccessInput).
     pub fn build(

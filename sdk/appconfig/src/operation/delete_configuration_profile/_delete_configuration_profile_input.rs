@@ -53,6 +53,10 @@ impl DeleteConfigurationProfileInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The application ID that includes the configuration profile you want to delete.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The ID of the configuration profile you want to delete.</p>
     pub fn configuration_profile_id(
         mut self,
@@ -68,6 +72,10 @@ impl DeleteConfigurationProfileInputBuilder {
     ) -> Self {
         self.configuration_profile_id = input;
         self
+    }
+    /// <p>The ID of the configuration profile you want to delete.</p>
+    pub fn get_configuration_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_profile_id
     }
     /// Consumes the builder and constructs a [`DeleteConfigurationProfileInput`](crate::operation::delete_configuration_profile::DeleteConfigurationProfileInput).
     pub fn build(

@@ -54,6 +54,10 @@ impl HubContentDependencyBuilder {
         self.dependency_origin_path = input;
         self
     }
+    /// <p>The hub content dependency origin path.</p>
+    pub fn get_dependency_origin_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dependency_origin_path
+    }
     /// <p>The hub content dependency copy path.</p>
     pub fn dependency_copy_path(
         mut self,
@@ -69,6 +73,10 @@ impl HubContentDependencyBuilder {
     ) -> Self {
         self.dependency_copy_path = input;
         self
+    }
+    /// <p>The hub content dependency copy path.</p>
+    pub fn get_dependency_copy_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dependency_copy_path
     }
     /// Consumes the builder and constructs a [`HubContentDependency`](crate::types::HubContentDependency).
     pub fn build(self) -> crate::types::HubContentDependency {

@@ -80,6 +80,14 @@ impl GameConfigurationDetailsBuilder {
         self.sections = input;
         self
     }
+    /// <p>Configuration data, organized by section name.</p>
+    pub fn get_sections(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::Section>,
+    > {
+        &self.sections
+    }
     /// <p>The date when the game was created.</p>
     pub fn created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created = ::std::option::Option::Some(input);
@@ -93,6 +101,10 @@ impl GameConfigurationDetailsBuilder {
         self.created = input;
         self
     }
+    /// <p>The date when the game was created.</p>
+    pub fn get_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created
+    }
     /// <p>The date when the game was last modified.</p>
     pub fn last_updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated = ::std::option::Option::Some(input);
@@ -105,6 +117,10 @@ impl GameConfigurationDetailsBuilder {
     ) -> Self {
         self.last_updated = input;
         self
+    }
+    /// <p>The date when the game was last modified.</p>
+    pub fn get_last_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated
     }
     /// Consumes the builder and constructs a [`GameConfigurationDetails`](crate::types::GameConfigurationDetails).
     pub fn build(self) -> crate::types::GameConfigurationDetails {

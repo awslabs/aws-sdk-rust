@@ -82,6 +82,10 @@ impl GetBackupSelectionOutputBuilder {
         self.backup_selection = input;
         self
     }
+    /// <p>Specifies the body of a request to assign a set of resources to a backup plan.</p>
+    pub fn get_backup_selection(&self) -> &::std::option::Option<crate::types::BackupSelection> {
+        &self.backup_selection
+    }
     /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup plan.</p>
     pub fn selection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.selection_id = ::std::option::Option::Some(input.into());
@@ -91,6 +95,10 @@ impl GetBackupSelectionOutputBuilder {
     pub fn set_selection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.selection_id = input;
         self
+    }
+    /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup plan.</p>
+    pub fn get_selection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.selection_id
     }
     /// <p>Uniquely identifies a backup plan.</p>
     pub fn backup_plan_id(
@@ -108,6 +116,10 @@ impl GetBackupSelectionOutputBuilder {
         self.backup_plan_id = input;
         self
     }
+    /// <p>Uniquely identifies a backup plan.</p>
+    pub fn get_backup_plan_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_plan_id
+    }
     /// <p>The date and time a backup selection is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -120,6 +132,10 @@ impl GetBackupSelectionOutputBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>The date and time a backup selection is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
     }
     /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice.</p>
     pub fn creator_request_id(
@@ -136,6 +152,10 @@ impl GetBackupSelectionOutputBuilder {
     ) -> Self {
         self.creator_request_id = input;
         self
+    }
+    /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice.</p>
+    pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creator_request_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -36,6 +36,12 @@ impl CreateRecoveryGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateRecoveryGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_recovery_group::builders::CreateRecoveryGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl CreateRecoveryGroupFluentBuilder {
         self.inner = self.inner.set_cells(input);
         self
     }
+    /// <p>A list of the cell Amazon Resource Names (ARNs) in the recovery group.</p>
+    pub fn get_cells(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_cells()
+    }
     /// <p>The name of the recovery group to create.</p>
     pub fn recovery_group_name(
         mut self,
@@ -148,6 +158,10 @@ impl CreateRecoveryGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_recovery_group_name(input);
         self
+    }
+    /// <p>The name of the recovery group to create.</p>
+    pub fn get_recovery_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_recovery_group_name()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -171,5 +185,13 @@ impl CreateRecoveryGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A collection of tags associated with a resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

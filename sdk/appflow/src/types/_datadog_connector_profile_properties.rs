@@ -40,6 +40,10 @@ impl DatadogConnectorProfilePropertiesBuilder {
         self.instance_url = input;
         self
     }
+    /// <p> The location of the Datadog resource. </p>
+    pub fn get_instance_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_url
+    }
     /// Consumes the builder and constructs a [`DatadogConnectorProfileProperties`](crate::types::DatadogConnectorProfileProperties).
     pub fn build(self) -> crate::types::DatadogConnectorProfileProperties {
         crate::types::DatadogConnectorProfileProperties {

@@ -36,6 +36,10 @@ impl DeleteVpcEndpointServiceConfigurationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteVpcEndpointServiceConfigurations as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_vpc_endpoint_service_configurations::builders::DeleteVpcEndpointServiceConfigurationsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl DeleteVpcEndpointServiceConfigurationsFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// Appends an item to `ServiceIds`.
     ///
     /// To override the contents of this collection use [`set_service_ids`](Self::set_service_ids).
@@ -116,5 +124,11 @@ impl DeleteVpcEndpointServiceConfigurationsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_service_ids(input);
         self
+    }
+    /// <p>The IDs of the services.</p>
+    pub fn get_service_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_service_ids()
     }
 }

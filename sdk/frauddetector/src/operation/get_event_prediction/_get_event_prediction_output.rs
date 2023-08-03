@@ -76,6 +76,12 @@ impl GetEventPredictionOutputBuilder {
         self.model_scores = input;
         self
     }
+    /// <p>The model scores. Amazon Fraud Detector generates model scores between 0 and 1000, where 0 is low fraud risk and 1000 is high fraud risk. Model scores are directly related to the false positive rate (FPR). For example, a score of 600 corresponds to an estimated 10% false positive rate whereas a score of 900 corresponds to an estimated 2% false positive rate.</p>
+    pub fn get_model_scores(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelScores>> {
+        &self.model_scores
+    }
     /// Appends an item to `rule_results`.
     ///
     /// To override the contents of this collection use [`set_rule_results`](Self::set_rule_results).
@@ -95,6 +101,12 @@ impl GetEventPredictionOutputBuilder {
         self.rule_results = input;
         self
     }
+    /// <p>The results from the rules.</p>
+    pub fn get_rule_results(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleResult>> {
+        &self.rule_results
+    }
     /// Appends an item to `external_model_outputs`.
     ///
     /// To override the contents of this collection use [`set_external_model_outputs`](Self::set_external_model_outputs).
@@ -113,6 +125,12 @@ impl GetEventPredictionOutputBuilder {
     ) -> Self {
         self.external_model_outputs = input;
         self
+    }
+    /// <p>The model scores for Amazon SageMaker models.</p>
+    pub fn get_external_model_outputs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExternalModelOutputs>> {
+        &self.external_model_outputs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

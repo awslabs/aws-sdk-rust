@@ -80,6 +80,10 @@ impl ParentSavingsPlanOfferingBuilder {
         self.offering_id = input;
         self
     }
+    /// <p>The ID of the offering.</p>
+    pub fn get_offering_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.offering_id
+    }
     /// <p>The payment option.</p>
     pub fn payment_option(mut self, input: crate::types::SavingsPlanPaymentOption) -> Self {
         self.payment_option = ::std::option::Option::Some(input);
@@ -92,6 +96,12 @@ impl ParentSavingsPlanOfferingBuilder {
     ) -> Self {
         self.payment_option = input;
         self
+    }
+    /// <p>The payment option.</p>
+    pub fn get_payment_option(
+        &self,
+    ) -> &::std::option::Option<crate::types::SavingsPlanPaymentOption> {
+        &self.payment_option
     }
     /// <p>The plan type.</p>
     pub fn plan_type(mut self, input: crate::types::SavingsPlanType) -> Self {
@@ -106,6 +116,10 @@ impl ParentSavingsPlanOfferingBuilder {
         self.plan_type = input;
         self
     }
+    /// <p>The plan type.</p>
+    pub fn get_plan_type(&self) -> &::std::option::Option<crate::types::SavingsPlanType> {
+        &self.plan_type
+    }
     /// <p>The duration, in seconds.</p>
     pub fn duration_seconds(mut self, input: i64) -> Self {
         self.duration_seconds = ::std::option::Option::Some(input);
@@ -115,6 +129,10 @@ impl ParentSavingsPlanOfferingBuilder {
     pub fn set_duration_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.duration_seconds = input;
         self
+    }
+    /// <p>The duration, in seconds.</p>
+    pub fn get_duration_seconds(&self) -> &::std::option::Option<i64> {
+        &self.duration_seconds
     }
     /// <p>The currency.</p>
     pub fn currency(mut self, input: crate::types::CurrencyCode) -> Self {
@@ -128,6 +146,10 @@ impl ParentSavingsPlanOfferingBuilder {
     ) -> Self {
         self.currency = input;
         self
+    }
+    /// <p>The currency.</p>
+    pub fn get_currency(&self) -> &::std::option::Option<crate::types::CurrencyCode> {
+        &self.currency
     }
     /// <p>The description.</p>
     pub fn plan_description(
@@ -144,6 +166,10 @@ impl ParentSavingsPlanOfferingBuilder {
     ) -> Self {
         self.plan_description = input;
         self
+    }
+    /// <p>The description.</p>
+    pub fn get_plan_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.plan_description
     }
     /// Consumes the builder and constructs a [`ParentSavingsPlanOffering`](crate::types::ParentSavingsPlanOffering).
     pub fn build(self) -> crate::types::ParentSavingsPlanOffering {

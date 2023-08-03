@@ -56,6 +56,10 @@ impl RecipeVersionErrorDetailBuilder {
         self.error_code = input;
         self
     }
+    /// <p>The HTTP status code for the error.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
+    }
     /// <p>The text of the error message.</p>
     pub fn error_message(
         mut self,
@@ -72,6 +76,10 @@ impl RecipeVersionErrorDetailBuilder {
         self.error_message = input;
         self
     }
+    /// <p>The text of the error message.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// <p>The identifier for the recipe version associated with this error.</p>
     pub fn recipe_version(
         mut self,
@@ -87,6 +95,10 @@ impl RecipeVersionErrorDetailBuilder {
     ) -> Self {
         self.recipe_version = input;
         self
+    }
+    /// <p>The identifier for the recipe version associated with this error.</p>
+    pub fn get_recipe_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recipe_version
     }
     /// Consumes the builder and constructs a [`RecipeVersionErrorDetail`](crate::types::RecipeVersionErrorDetail).
     pub fn build(self) -> crate::types::RecipeVersionErrorDetail {

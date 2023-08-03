@@ -36,6 +36,13 @@ impl DescribeProcessingJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeProcessingJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_processing_job::builders::DescribeProcessingJobInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +138,9 @@ impl DescribeProcessingJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_processing_job_name(input);
         self
+    }
+    /// <p>The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+    pub fn get_processing_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_processing_job_name()
     }
 }

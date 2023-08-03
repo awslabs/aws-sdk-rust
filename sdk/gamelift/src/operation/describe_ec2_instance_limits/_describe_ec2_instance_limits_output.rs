@@ -56,6 +56,12 @@ impl DescribeEc2InstanceLimitsOutputBuilder {
         self.ec2_instance_limits = input;
         self
     }
+    /// <p>The maximum number of instances for the specified instance type.</p>
+    pub fn get_ec2_instance_limits(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Ec2InstanceLimit>> {
+        &self.ec2_instance_limits
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

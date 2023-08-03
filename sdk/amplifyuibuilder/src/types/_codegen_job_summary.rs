@@ -72,6 +72,10 @@ impl CodegenJobSummaryBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The unique ID of the Amplify app associated with the code generation job.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p>The name of the backend environment associated with the code generation job.</p>
     pub fn environment_name(
         mut self,
@@ -88,6 +92,10 @@ impl CodegenJobSummaryBuilder {
         self.environment_name = input;
         self
     }
+    /// <p>The name of the backend environment associated with the code generation job.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
+    }
     /// <p>The unique ID for the code generation job summary.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -97,6 +105,10 @@ impl CodegenJobSummaryBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The unique ID for the code generation job summary.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The time that the code generation job summary was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -111,6 +123,10 @@ impl CodegenJobSummaryBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The time that the code generation job summary was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The time that the code generation job summary was modified.</p>
     pub fn modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.modified_at = ::std::option::Option::Some(input);
@@ -123,6 +139,10 @@ impl CodegenJobSummaryBuilder {
     ) -> Self {
         self.modified_at = input;
         self
+    }
+    /// <p>The time that the code generation job summary was modified.</p>
+    pub fn get_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.modified_at
     }
     /// Consumes the builder and constructs a [`CodegenJobSummary`](crate::types::CodegenJobSummary).
     pub fn build(self) -> crate::types::CodegenJobSummary {

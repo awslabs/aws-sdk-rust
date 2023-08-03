@@ -36,6 +36,12 @@ impl PurchaseOfferingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PurchaseOffering as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::purchase_offering::builders::PurchaseOfferingInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl PurchaseOfferingFluentBuilder {
         self.inner = self.inner.set_count(input);
         self
     }
+    /// Number of resources
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_count()
+    }
     /// Name for the new reservation
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -136,6 +146,10 @@ impl PurchaseOfferingFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// Name for the new reservation
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// Offering to purchase, e.g. '87654321'
     pub fn offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.offering_id(input.into());
@@ -145,6 +159,10 @@ impl PurchaseOfferingFluentBuilder {
     pub fn set_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_offering_id(input);
         self
+    }
+    /// Offering to purchase, e.g. '87654321'
+    pub fn get_offering_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_offering_id()
     }
     /// Renewal settings for the reservation
     pub fn renewal_settings(mut self, input: crate::types::RenewalSettings) -> Self {
@@ -159,6 +177,10 @@ impl PurchaseOfferingFluentBuilder {
         self.inner = self.inner.set_renewal_settings(input);
         self
     }
+    /// Renewal settings for the reservation
+    pub fn get_renewal_settings(&self) -> &::std::option::Option<crate::types::RenewalSettings> {
+        self.inner.get_renewal_settings()
+    }
     /// Unique request ID to be specified. This is needed to prevent retries from creating multiple resources.
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.request_id(input.into());
@@ -169,6 +191,10 @@ impl PurchaseOfferingFluentBuilder {
         self.inner = self.inner.set_request_id(input);
         self
     }
+    /// Unique request ID to be specified. This is needed to prevent retries from creating multiple resources.
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_request_id()
+    }
     /// Requested reservation start time (UTC) in ISO-8601 format. The specified time must be between the first day of the current month and one year from now. If no value is given, the default is now.
     pub fn start(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.start(input.into());
@@ -178,6 +204,10 @@ impl PurchaseOfferingFluentBuilder {
     pub fn set_start(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_start(input);
         self
+    }
+    /// Requested reservation start time (UTC) in ISO-8601 format. The specified time must be between the first day of the current month and one year from now. If no value is given, the default is now.
+    pub fn get_start(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_start()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -201,5 +231,13 @@ impl PurchaseOfferingFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// A collection of key-value pairs
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

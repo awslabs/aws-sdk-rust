@@ -36,6 +36,12 @@ impl DescribeEndpointFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeEndpoint as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_endpoint::builders::DescribeEndpointInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DescribeEndpointFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the endpoint you want to get information about. For example, <code>"Name":"us-east-2-custom_bus_A-endpoint"</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The primary Region of the endpoint you want to get information about. For example <code>"HomeRegion": "us-east-1"</code>.</p>
     pub fn home_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.home_region(input.into());
@@ -135,5 +145,9 @@ impl DescribeEndpointFluentBuilder {
     pub fn set_home_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_home_region(input);
         self
+    }
+    /// <p>The primary Region of the endpoint you want to get information about. For example <code>"HomeRegion": "us-east-1"</code>.</p>
+    pub fn get_home_region(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_home_region()
     }
 }

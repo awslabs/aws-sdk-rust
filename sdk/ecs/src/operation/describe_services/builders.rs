@@ -36,6 +36,12 @@ impl DescribeServicesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeServices as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_services::builders::DescribeServicesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DescribeServicesFluentBuilder {
         self.inner = self.inner.set_cluster(input);
         self
     }
+    /// <p>The short name or full Amazon Resource Name (ARN)the cluster that hosts the service to describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required if the service or services you are describing were launched in any cluster other than the default cluster.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster()
+    }
     /// Appends an item to `services`.
     ///
     /// To override the contents of this collection use [`set_services`](Self::set_services).
@@ -143,6 +153,10 @@ impl DescribeServicesFluentBuilder {
         self.inner = self.inner.set_services(input);
         self
     }
+    /// <p>A list of services to describe. You may specify up to 10 services to describe in a single operation.</p>
+    pub fn get_services(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_services()
+    }
     /// Appends an item to `include`.
     ///
     /// To override the contents of this collection use [`set_include`](Self::set_include).
@@ -159,5 +173,11 @@ impl DescribeServicesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_include(input);
         self
+    }
+    /// <p>Determines whether you want to see the resource tags for the service. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
+    pub fn get_include(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceField>> {
+        self.inner.get_include()
     }
 }

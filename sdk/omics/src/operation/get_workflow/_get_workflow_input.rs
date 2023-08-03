@@ -55,6 +55,10 @@ impl GetWorkflowInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The workflow's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The workflow's type.</p>
     pub fn r#type(mut self, input: crate::types::WorkflowType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -64,6 +68,10 @@ impl GetWorkflowInputBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The workflow's type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
+        &self.r#type
     }
     /// Appends an item to `export`.
     ///
@@ -83,6 +91,12 @@ impl GetWorkflowInputBuilder {
     ) -> Self {
         self.export = input;
         self
+    }
+    /// <p>The export format for the workflow.</p>
+    pub fn get_export(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowExport>> {
+        &self.export
     }
     /// Consumes the builder and constructs a [`GetWorkflowInput`](crate::operation::get_workflow::GetWorkflowInput).
     pub fn build(

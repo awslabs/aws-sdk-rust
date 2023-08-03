@@ -63,6 +63,12 @@ impl AutoScalingConfigurationSummaryBuilder {
         self.auto_scaling_configuration_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of this auto scaling configuration.</p>
+    pub fn get_auto_scaling_configuration_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.auto_scaling_configuration_arn
+    }
     /// <p>The customer-provided auto scaling configuration name. It can be used in multiple revisions of a configuration.</p>
     pub fn auto_scaling_configuration_name(
         mut self,
@@ -79,6 +85,12 @@ impl AutoScalingConfigurationSummaryBuilder {
         self.auto_scaling_configuration_name = input;
         self
     }
+    /// <p>The customer-provided auto scaling configuration name. It can be used in multiple revisions of a configuration.</p>
+    pub fn get_auto_scaling_configuration_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.auto_scaling_configuration_name
+    }
     /// <p>The revision of this auto scaling configuration. It's unique among all the active configurations (<code>"Status": "ACTIVE"</code>) with the same <code>AutoScalingConfigurationName</code>.</p>
     pub fn auto_scaling_configuration_revision(mut self, input: i32) -> Self {
         self.auto_scaling_configuration_revision = ::std::option::Option::Some(input);
@@ -91,6 +103,10 @@ impl AutoScalingConfigurationSummaryBuilder {
     ) -> Self {
         self.auto_scaling_configuration_revision = input;
         self
+    }
+    /// <p>The revision of this auto scaling configuration. It's unique among all the active configurations (<code>"Status": "ACTIVE"</code>) with the same <code>AutoScalingConfigurationName</code>.</p>
+    pub fn get_auto_scaling_configuration_revision(&self) -> &::std::option::Option<i32> {
+        &self.auto_scaling_configuration_revision
     }
     /// Consumes the builder and constructs a [`AutoScalingConfigurationSummary`](crate::types::AutoScalingConfigurationSummary).
     pub fn build(self) -> crate::types::AutoScalingConfigurationSummary {

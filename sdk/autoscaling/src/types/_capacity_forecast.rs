@@ -57,6 +57,12 @@ impl CapacityForecastBuilder {
         self.timestamps = input;
         self
     }
+    /// <p>The timestamps for the data points, in UTC format.</p>
+    pub fn get_timestamps(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>> {
+        &self.timestamps
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -72,6 +78,10 @@ impl CapacityForecastBuilder {
     pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.values = input;
         self
+    }
+    /// <p>The values of the data points.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`CapacityForecast`](crate::types::CapacityForecast).
     pub fn build(self) -> crate::types::CapacityForecast {

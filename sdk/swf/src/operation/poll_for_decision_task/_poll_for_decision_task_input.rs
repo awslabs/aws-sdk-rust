@@ -99,6 +99,10 @@ impl PollForDecisionTaskInputBuilder {
         self.domain = input;
         self
     }
+    /// <p>The name of the domain containing the task lists to poll.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
+    }
     /// <p>Specifies the task list to poll for decision tasks.</p>
     /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
     pub fn task_list(mut self, input: crate::types::TaskList) -> Self {
@@ -111,6 +115,11 @@ impl PollForDecisionTaskInputBuilder {
         self.task_list = input;
         self
     }
+    /// <p>Specifies the task list to poll for decision tasks.</p>
+    /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
+    pub fn get_task_list(&self) -> &::std::option::Option<crate::types::TaskList> {
+        &self.task_list
+    }
     /// <p>Identity of the decider making the request, which is recorded in the DecisionTaskStarted event in the workflow history. This enables diagnostic tracing when problems arise. The form of this identity is user defined.</p>
     pub fn identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity = ::std::option::Option::Some(input.into());
@@ -120,6 +129,10 @@ impl PollForDecisionTaskInputBuilder {
     pub fn set_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity = input;
         self
+    }
+    /// <p>Identity of the decider making the request, which is recorded in the DecisionTaskStarted event in the workflow history. This enables diagnostic tracing when problems arise. The form of this identity is user defined.</p>
+    pub fn get_identity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity
     }
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p> <note>
@@ -143,6 +156,13 @@ impl PollForDecisionTaskInputBuilder {
         self.next_page_token = input;
         self
     }
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p> <note>
+    /// <p>The <code>nextPageToken</code> returned by this action cannot be used with <code>GetWorkflowExecutionHistory</code> to get the next page. You must call <code>PollForDecisionTask</code> again (with the <code>nextPageToken</code>) to retrieve the next page of history records. Calling <code>PollForDecisionTask</code> with a <code>nextPageToken</code> doesn't return a new decision task.</p>
+    /// </note>
+    pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_page_token
+    }
     /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
     /// <p>This is an upper limit only; the actual number of results returned per call may be fewer than the specified maximum.</p>
     pub fn maximum_page_size(mut self, input: i32) -> Self {
@@ -155,6 +175,11 @@ impl PollForDecisionTaskInputBuilder {
         self.maximum_page_size = input;
         self
     }
+    /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
+    /// <p>This is an upper limit only; the actual number of results returned per call may be fewer than the specified maximum.</p>
+    pub fn get_maximum_page_size(&self) -> &::std::option::Option<i32> {
+        &self.maximum_page_size
+    }
     /// <p>When set to <code>true</code>, returns the events in reverse order. By default the results are returned in ascending order of the <code>eventTimestamp</code> of the events.</p>
     pub fn reverse_order(mut self, input: bool) -> Self {
         self.reverse_order = ::std::option::Option::Some(input);
@@ -164,6 +189,10 @@ impl PollForDecisionTaskInputBuilder {
     pub fn set_reverse_order(mut self, input: ::std::option::Option<bool>) -> Self {
         self.reverse_order = input;
         self
+    }
+    /// <p>When set to <code>true</code>, returns the events in reverse order. By default the results are returned in ascending order of the <code>eventTimestamp</code> of the events.</p>
+    pub fn get_reverse_order(&self) -> &::std::option::Option<bool> {
+        &self.reverse_order
     }
     /// <p>When set to <code>true</code>, returns the events with <code>eventTimestamp</code> greater than or equal to <code>eventTimestamp</code> of the most recent <code>DecisionTaskStarted</code> event. By default, this parameter is set to <code>false</code>.</p>
     pub fn start_at_previous_started_event(mut self, input: bool) -> Self {
@@ -177,6 +206,10 @@ impl PollForDecisionTaskInputBuilder {
     ) -> Self {
         self.start_at_previous_started_event = input;
         self
+    }
+    /// <p>When set to <code>true</code>, returns the events with <code>eventTimestamp</code> greater than or equal to <code>eventTimestamp</code> of the most recent <code>DecisionTaskStarted</code> event. By default, this parameter is set to <code>false</code>.</p>
+    pub fn get_start_at_previous_started_event(&self) -> &::std::option::Option<bool> {
+        &self.start_at_previous_started_event
     }
     /// Consumes the builder and constructs a [`PollForDecisionTaskInput`](crate::operation::poll_for_decision_task::PollForDecisionTaskInput).
     pub fn build(

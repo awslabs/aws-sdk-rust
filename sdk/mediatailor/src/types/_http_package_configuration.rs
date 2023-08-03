@@ -56,6 +56,10 @@ impl HttpPackageConfigurationBuilder {
         self.path = input;
         self
     }
+    /// <p>The relative path to the URL for this VOD source. This is combined with <code>SourceLocation::HttpConfiguration::BaseUrl</code> to form a valid URL.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
+    }
     /// <p>The name of the source group. This has to match one of the <code>Channel::Outputs::SourceGroup</code>.</p>
     pub fn source_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_group = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl HttpPackageConfigurationBuilder {
         self.source_group = input;
         self
     }
+    /// <p>The name of the source group. This has to match one of the <code>Channel::Outputs::SourceGroup</code>.</p>
+    pub fn get_source_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_group
+    }
     /// <p>The streaming protocol for this package configuration. Supported values are <code>HLS</code> and <code>DASH</code>.</p>
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl HttpPackageConfigurationBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The streaming protocol for this package configuration. Supported values are <code>HLS</code> and <code>DASH</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`HttpPackageConfiguration`](crate::types::HttpPackageConfiguration).
     pub fn build(self) -> crate::types::HttpPackageConfiguration {

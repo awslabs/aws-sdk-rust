@@ -48,6 +48,10 @@ impl PutSchemaFromJsonInputBuilder {
         self.schema_arn = input;
         self
     }
+    /// <p>The ARN of the schema to update.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_arn
+    }
     /// <p>The replacement JSON schema.</p>
     pub fn document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl PutSchemaFromJsonInputBuilder {
     pub fn set_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document = input;
         self
+    }
+    /// <p>The replacement JSON schema.</p>
+    pub fn get_document(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document
     }
     /// Consumes the builder and constructs a [`PutSchemaFromJsonInput`](crate::operation::put_schema_from_json::PutSchemaFromJsonInput).
     pub fn build(

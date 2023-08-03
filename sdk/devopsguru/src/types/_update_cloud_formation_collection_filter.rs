@@ -49,6 +49,12 @@ impl UpdateCloudFormationCollectionFilterBuilder {
         self.stack_names = input;
         self
     }
+    /// <p> An array of the names of the Amazon Web Services CloudFormation stacks to update. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    pub fn get_stack_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.stack_names
+    }
     /// Consumes the builder and constructs a [`UpdateCloudFormationCollectionFilter`](crate::types::UpdateCloudFormationCollectionFilter).
     pub fn build(self) -> crate::types::UpdateCloudFormationCollectionFilter {
         crate::types::UpdateCloudFormationCollectionFilter {

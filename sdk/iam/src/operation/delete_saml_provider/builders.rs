@@ -39,6 +39,12 @@ impl DeleteSAMLProviderFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteSAMLProvider as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_saml_provider::builders::DeleteSamlProviderInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,5 +140,9 @@ impl DeleteSAMLProviderFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_saml_provider_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the SAML provider to delete.</p>
+    pub fn get_saml_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_saml_provider_arn()
     }
 }

@@ -62,6 +62,10 @@ impl DescribeTableOutputBuilder {
         self.table_name = input;
         self
     }
+    /// <p>The table name. </p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
+    }
     /// Appends an item to `column_list`.
     ///
     /// To override the contents of this collection use [`set_column_list`](Self::set_column_list).
@@ -81,6 +85,12 @@ impl DescribeTableOutputBuilder {
         self.column_list = input;
         self
     }
+    /// <p>A list of columns in the table. </p>
+    pub fn get_column_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>> {
+        &self.column_list
+    }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -90,6 +100,10 @@ impl DescribeTableOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -79,6 +79,10 @@ impl PropertyValidationExceptionBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Appends an item to `property_list`.
     ///
     /// To override the contents of this collection use [`set_property_list`](Self::set_property_list).
@@ -101,6 +105,13 @@ impl PropertyValidationExceptionBuilder {
     ) -> Self {
         self.property_list = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_property_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PropertyValidationExceptionProperty>>
+    {
+        &self.property_list
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

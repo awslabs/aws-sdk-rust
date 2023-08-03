@@ -36,6 +36,12 @@ impl UpdateVariableFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateVariable as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_variable::builders::UpdateVariableInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl UpdateVariableFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the variable.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The new default value of the variable.</p>
     pub fn default_value(
         mut self,
@@ -134,6 +144,10 @@ impl UpdateVariableFluentBuilder {
         self.inner = self.inner.set_default_value(input);
         self
     }
+    /// <p>The new default value of the variable.</p>
+    pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_default_value()
+    }
     /// <p>The new description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -143,6 +157,10 @@ impl UpdateVariableFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The new description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.</p>
     pub fn variable_type(
@@ -159,5 +177,9 @@ impl UpdateVariableFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_variable_type(input);
         self
+    }
+    /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.</p>
+    pub fn get_variable_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_variable_type()
     }
 }

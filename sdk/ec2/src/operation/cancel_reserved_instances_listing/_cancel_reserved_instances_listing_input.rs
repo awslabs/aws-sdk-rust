@@ -46,6 +46,12 @@ impl CancelReservedInstancesListingInputBuilder {
         self.reserved_instances_listing_id = input;
         self
     }
+    /// <p>The ID of the Reserved Instance listing.</p>
+    pub fn get_reserved_instances_listing_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.reserved_instances_listing_id
+    }
     /// Consumes the builder and constructs a [`CancelReservedInstancesListingInput`](crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingInput).
     pub fn build(
         self,

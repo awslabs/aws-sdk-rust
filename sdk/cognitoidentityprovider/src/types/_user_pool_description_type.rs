@@ -80,6 +80,10 @@ impl UserPoolDescriptionTypeBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID in a user pool description.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name in a user pool description.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl UserPoolDescriptionTypeBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name in a user pool description.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The Lambda configuration information in a user pool description.</p>
     pub fn lambda_config(mut self, input: crate::types::LambdaConfigType) -> Self {
@@ -103,6 +111,10 @@ impl UserPoolDescriptionTypeBuilder {
         self.lambda_config = input;
         self
     }
+    /// <p>The Lambda configuration information in a user pool description.</p>
+    pub fn get_lambda_config(&self) -> &::std::option::Option<crate::types::LambdaConfigType> {
+        &self.lambda_config
+    }
     /// <p>The user pool status in a user pool description.</p>
     pub fn status(mut self, input: crate::types::StatusType) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -112,6 +124,10 @@ impl UserPoolDescriptionTypeBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StatusType>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The user pool status in a user pool description.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::StatusType> {
+        &self.status
     }
     /// <p>The date the user pool description was last modified.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -126,6 +142,10 @@ impl UserPoolDescriptionTypeBuilder {
         self.last_modified_date = input;
         self
     }
+    /// <p>The date the user pool description was last modified.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_date
+    }
     /// <p>The date the user pool description was created.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -138,6 +158,10 @@ impl UserPoolDescriptionTypeBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>The date the user pool description was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
     }
     /// Consumes the builder and constructs a [`UserPoolDescriptionType`](crate::types::UserPoolDescriptionType).
     pub fn build(self) -> crate::types::UserPoolDescriptionType {

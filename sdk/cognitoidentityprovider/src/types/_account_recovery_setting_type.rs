@@ -53,6 +53,12 @@ impl AccountRecoverySettingTypeBuilder {
         self.recovery_mechanisms = input;
         self
     }
+    /// <p>The list of <code>RecoveryOptionTypes</code>.</p>
+    pub fn get_recovery_mechanisms(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecoveryOptionType>> {
+        &self.recovery_mechanisms
+    }
     /// Consumes the builder and constructs a [`AccountRecoverySettingType`](crate::types::AccountRecoverySettingType).
     pub fn build(self) -> crate::types::AccountRecoverySettingType {
         crate::types::AccountRecoverySettingType {

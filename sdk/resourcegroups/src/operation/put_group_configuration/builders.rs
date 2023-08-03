@@ -41,6 +41,13 @@ impl PutGroupConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutGroupConfiguration as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_group_configuration::builders::PutGroupConfigurationInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +138,10 @@ impl PutGroupConfigurationFluentBuilder {
         self.inner = self.inner.set_group(input);
         self
     }
+    /// <p>The name or ARN of the resource group with the configuration that you want to update.</p>
+    pub fn get_group(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group()
+    }
     /// Appends an item to `Configuration`.
     ///
     /// To override the contents of this collection use [`set_configuration`](Self::set_configuration).
@@ -153,5 +164,14 @@ impl PutGroupConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
+    }
+    /// <p>The new configuration to associate with the specified group. A configuration associates the resource group with an Amazon Web Services service and specifies how the service can interact with the resources in the group. A configuration is an array of <code>GroupConfigurationItem</code> elements.</p>
+    /// <p>For information about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p> <note>
+    /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
+    /// </note>
+    pub fn get_configuration(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupConfigurationItem>> {
+        self.inner.get_configuration()
     }
 }

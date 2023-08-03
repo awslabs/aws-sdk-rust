@@ -71,6 +71,10 @@ impl CreateProjectInputBuilder {
         self.project_name = input;
         self
     }
+    /// <p>The name of the project to create.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
+    }
     /// <p>An optional description for the project.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl CreateProjectInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>An optional description for the project.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The schema defining the placement to be created. A placement template defines placement default attributes and device templates. You cannot add or remove device templates after the project has been created. However, you can update <code>callbackOverrides</code> for the device templates using the <code>UpdateProject</code> API.</p>
     pub fn placement_template(mut self, input: crate::types::PlacementTemplate) -> Self {
@@ -93,6 +101,12 @@ impl CreateProjectInputBuilder {
     ) -> Self {
         self.placement_template = input;
         self
+    }
+    /// <p>The schema defining the placement to be created. A placement template defines placement default attributes and device templates. You cannot add or remove device templates after the project has been created. However, you can update <code>callbackOverrides</code> for the device templates using the <code>UpdateProject</code> API.</p>
+    pub fn get_placement_template(
+        &self,
+    ) -> &::std::option::Option<crate::types::PlacementTemplate> {
+        &self.placement_template
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -118,6 +132,14 @@ impl CreateProjectInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Optional tags (metadata key/value pairs) to be associated with the project. For example, <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateProjectInput`](crate::operation::create_project::CreateProjectInput).
     pub fn build(

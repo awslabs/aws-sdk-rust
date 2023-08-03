@@ -94,6 +94,11 @@ impl RestoreRequestBuilder {
         self.days = input;
         self
     }
+    /// <p>Lifetime of the active copy in days. Do not use with restores that specify <code>OutputLocation</code>.</p>
+    /// <p>The Days element is required for regular restores, and must not be provided for select requests.</p>
+    pub fn get_days(&self) -> &::std::option::Option<i32> {
+        &self.days
+    }
     /// <p>S3 Glacier related parameters pertaining to this job. Do not use with restores that specify <code>OutputLocation</code>.</p>
     pub fn glacier_job_parameters(mut self, input: crate::types::GlacierJobParameters) -> Self {
         self.glacier_job_parameters = ::std::option::Option::Some(input);
@@ -106,6 +111,12 @@ impl RestoreRequestBuilder {
     ) -> Self {
         self.glacier_job_parameters = input;
         self
+    }
+    /// <p>S3 Glacier related parameters pertaining to this job. Do not use with restores that specify <code>OutputLocation</code>.</p>
+    pub fn get_glacier_job_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::GlacierJobParameters> {
+        &self.glacier_job_parameters
     }
     /// <p>Type of restore request.</p>
     pub fn r#type(mut self, input: crate::types::RestoreRequestType) -> Self {
@@ -120,6 +131,10 @@ impl RestoreRequestBuilder {
         self.r#type = input;
         self
     }
+    /// <p>Type of restore request.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::RestoreRequestType> {
+        &self.r#type
+    }
     /// <p>Retrieval tier at which the restore will be processed.</p>
     pub fn tier(mut self, input: crate::types::Tier) -> Self {
         self.tier = ::std::option::Option::Some(input);
@@ -130,6 +145,10 @@ impl RestoreRequestBuilder {
         self.tier = input;
         self
     }
+    /// <p>Retrieval tier at which the restore will be processed.</p>
+    pub fn get_tier(&self) -> &::std::option::Option<crate::types::Tier> {
+        &self.tier
+    }
     /// <p>The optional description for the job.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -139,6 +158,10 @@ impl RestoreRequestBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The optional description for the job.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Describes the parameters for Select job types.</p>
     pub fn select_parameters(mut self, input: crate::types::SelectParameters) -> Self {
@@ -153,6 +176,10 @@ impl RestoreRequestBuilder {
         self.select_parameters = input;
         self
     }
+    /// <p>Describes the parameters for Select job types.</p>
+    pub fn get_select_parameters(&self) -> &::std::option::Option<crate::types::SelectParameters> {
+        &self.select_parameters
+    }
     /// <p>Describes the location where the restore job's output is stored.</p>
     pub fn output_location(mut self, input: crate::types::OutputLocation) -> Self {
         self.output_location = ::std::option::Option::Some(input);
@@ -165,6 +192,10 @@ impl RestoreRequestBuilder {
     ) -> Self {
         self.output_location = input;
         self
+    }
+    /// <p>Describes the location where the restore job's output is stored.</p>
+    pub fn get_output_location(&self) -> &::std::option::Option<crate::types::OutputLocation> {
+        &self.output_location
     }
     /// Consumes the builder and constructs a [`RestoreRequest`](crate::types::RestoreRequest).
     pub fn build(self) -> crate::types::RestoreRequest {

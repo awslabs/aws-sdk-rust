@@ -48,6 +48,10 @@ impl ActiveContextTimeToLiveBuilder {
         self.time_to_live_in_seconds = input;
         self
     }
+    /// <p>The number of seconds that the context is active. You can specify between 5 and 86400 seconds (24 hours).</p>
+    pub fn get_time_to_live_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.time_to_live_in_seconds
+    }
     /// <p>The number of turns that the context is active. You can specify up to 20 turns. Each request and response from the bot is a turn.</p>
     pub fn turns_to_live(mut self, input: i32) -> Self {
         self.turns_to_live = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ActiveContextTimeToLiveBuilder {
     pub fn set_turns_to_live(mut self, input: ::std::option::Option<i32>) -> Self {
         self.turns_to_live = input;
         self
+    }
+    /// <p>The number of turns that the context is active. You can specify up to 20 turns. Each request and response from the bot is a turn.</p>
+    pub fn get_turns_to_live(&self) -> &::std::option::Option<i32> {
+        &self.turns_to_live
     }
     /// Consumes the builder and constructs a [`ActiveContextTimeToLive`](crate::types::ActiveContextTimeToLive).
     pub fn build(self) -> crate::types::ActiveContextTimeToLive {

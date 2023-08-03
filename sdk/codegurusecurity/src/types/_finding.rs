@@ -163,6 +163,10 @@ impl FindingBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The time when the finding was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>A description of the finding.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -172,6 +176,10 @@ impl FindingBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the finding.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The identifier for the component that generated a finding such as AWSCodeGuruSecurity or AWSInspector.</p>
     pub fn generator_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -183,6 +191,10 @@ impl FindingBuilder {
         self.generator_id = input;
         self
     }
+    /// <p>The identifier for the component that generated a finding such as AWSCodeGuruSecurity or AWSInspector.</p>
+    pub fn get_generator_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.generator_id
+    }
     /// <p>The identifier for a finding.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -192,6 +204,10 @@ impl FindingBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The identifier for a finding.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The time when the finding was last updated. Findings are updated when you remediate them or when the finding code location changes. </p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -206,6 +222,10 @@ impl FindingBuilder {
         self.updated_at = input;
         self
     }
+    /// <p>The time when the finding was last updated. Findings are updated when you remediate them or when the finding code location changes. </p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
+    }
     /// <p>The type of finding. </p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -215,6 +235,10 @@ impl FindingBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of finding. </p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// <p>The status of the finding. A finding status can be open or closed. </p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
@@ -226,6 +250,10 @@ impl FindingBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the finding. A finding status can be open or closed. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
+    }
     /// <p>The resource where Amazon CodeGuru Security detected a finding.</p>
     pub fn resource(mut self, input: crate::types::Resource) -> Self {
         self.resource = ::std::option::Option::Some(input);
@@ -235,6 +263,10 @@ impl FindingBuilder {
     pub fn set_resource(mut self, input: ::std::option::Option<crate::types::Resource>) -> Self {
         self.resource = input;
         self
+    }
+    /// <p>The resource where Amazon CodeGuru Security detected a finding.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<crate::types::Resource> {
+        &self.resource
     }
     /// <p>An object that describes the detected security vulnerability.</p>
     pub fn vulnerability(mut self, input: crate::types::Vulnerability) -> Self {
@@ -249,6 +281,10 @@ impl FindingBuilder {
         self.vulnerability = input;
         self
     }
+    /// <p>An object that describes the detected security vulnerability.</p>
+    pub fn get_vulnerability(&self) -> &::std::option::Option<crate::types::Vulnerability> {
+        &self.vulnerability
+    }
     /// <p>The severity of the finding.</p>
     pub fn severity(mut self, input: crate::types::Severity) -> Self {
         self.severity = ::std::option::Option::Some(input);
@@ -258,6 +294,10 @@ impl FindingBuilder {
     pub fn set_severity(mut self, input: ::std::option::Option<crate::types::Severity>) -> Self {
         self.severity = input;
         self
+    }
+    /// <p>The severity of the finding.</p>
+    pub fn get_severity(&self) -> &::std::option::Option<crate::types::Severity> {
+        &self.severity
     }
     /// <p>An object that contains the details about how to remediate a finding.</p>
     pub fn remediation(mut self, input: crate::types::Remediation) -> Self {
@@ -272,6 +312,10 @@ impl FindingBuilder {
         self.remediation = input;
         self
     }
+    /// <p>An object that contains the details about how to remediate a finding.</p>
+    pub fn get_remediation(&self) -> &::std::option::Option<crate::types::Remediation> {
+        &self.remediation
+    }
     /// <p>The title of the finding.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
@@ -281,6 +325,10 @@ impl FindingBuilder {
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
+    }
+    /// <p>The title of the finding.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
     }
     /// Appends an item to `detector_tags`.
     ///
@@ -304,6 +352,12 @@ impl FindingBuilder {
         self.detector_tags = input;
         self
     }
+    /// <p>One or more tags or categorizations that are associated with a detector. These tags are defined by type, programming language, or other classification such as maintainability or consistency.</p>
+    pub fn get_detector_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.detector_tags
+    }
     /// <p>The identifier for the detector that detected the finding in your code. A detector is a defined rule based on industry standards and AWS best practices. </p>
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
@@ -313,6 +367,10 @@ impl FindingBuilder {
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_id = input;
         self
+    }
+    /// <p>The identifier for the detector that detected the finding in your code. A detector is a defined rule based on industry standards and AWS best practices. </p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
     }
     /// <p>The name of the detector that identified the security vulnerability in your code. </p>
     pub fn detector_name(
@@ -330,6 +388,10 @@ impl FindingBuilder {
         self.detector_name = input;
         self
     }
+    /// <p>The name of the detector that identified the security vulnerability in your code. </p>
+    pub fn get_detector_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_name
+    }
     /// <p>The identifier for the rule that generated the finding.</p>
     pub fn rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_id = ::std::option::Option::Some(input.into());
@@ -339,6 +401,10 @@ impl FindingBuilder {
     pub fn set_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_id = input;
         self
+    }
+    /// <p>The identifier for the rule that generated the finding.</p>
+    pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_id
     }
     /// Consumes the builder and constructs a [`Finding`](crate::types::Finding).
     pub fn build(self) -> crate::types::Finding {

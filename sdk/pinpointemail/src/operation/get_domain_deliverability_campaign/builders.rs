@@ -36,6 +36,10 @@ impl GetDomainDeliverabilityCampaignFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetDomainDeliverabilityCampaign as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_domain_deliverability_campaign::builders::GetDomainDeliverabilityCampaignInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -99,5 +103,9 @@ impl GetDomainDeliverabilityCampaignFluentBuilder {
     pub fn set_campaign_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_campaign_id(input);
         self
+    }
+    /// <p>The unique identifier for the campaign. Amazon Pinpoint automatically generates and assigns this identifier to a campaign. This value is not the same as the campaign identifier that Amazon Pinpoint assigns to campaigns that you create and manage by using the Amazon Pinpoint API or the Amazon Pinpoint console.</p>
+    pub fn get_campaign_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_campaign_id()
     }
 }

@@ -80,6 +80,10 @@ impl ImportCertificateInputBuilder {
         self.certificate_identifier = input;
         self
     }
+    /// <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
+    pub fn get_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_identifier
+    }
     /// <p>The contents of a <code>.pem</code> file, which contains an X.509 certificate.</p>
     pub fn certificate_pem(
         mut self,
@@ -96,6 +100,10 @@ impl ImportCertificateInputBuilder {
         self.certificate_pem = input;
         self
     }
+    /// <p>The contents of a <code>.pem</code> file, which contains an X.509 certificate.</p>
+    pub fn get_certificate_pem(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_pem
+    }
     /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Provide the name of a <code>.sso</code> file using the <code>fileb://</code> prefix. You can't provide the certificate inline.</p>
     /// <p>Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code> </p>
     pub fn certificate_wallet(mut self, input: ::aws_smithy_types::Blob) -> Self {
@@ -110,6 +118,11 @@ impl ImportCertificateInputBuilder {
     ) -> Self {
         self.certificate_wallet = input;
         self
+    }
+    /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Provide the name of a <code>.sso</code> file using the <code>fileb://</code> prefix. You can't provide the certificate inline.</p>
+    /// <p>Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code> </p>
+    pub fn get_certificate_wallet(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.certificate_wallet
     }
     /// Appends an item to `tags`.
     ///
@@ -129,6 +142,10 @@ impl ImportCertificateInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags associated with the certificate.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`ImportCertificateInput`](crate::operation::import_certificate::ImportCertificateInput).
     pub fn build(

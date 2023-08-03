@@ -59,6 +59,12 @@ impl GetContainerServiceDeploymentsOutputBuilder {
         self.deployments = input;
         self
     }
+    /// <p>An array of objects that describe deployments for a container service.</p>
+    pub fn get_deployments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerServiceDeployment>> {
+        &self.deployments
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

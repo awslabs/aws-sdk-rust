@@ -94,6 +94,10 @@ impl DatabaseResponseBuilder {
         self.database_id = input;
         self
     }
+    /// <p>The ID of a database in a Fleet Advisor collector inventory.</p>
+    pub fn get_database_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_id
+    }
     /// <p>The name of a database in a Fleet Advisor collector inventory. </p>
     pub fn database_name(
         mut self,
@@ -110,6 +114,10 @@ impl DatabaseResponseBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The name of a database in a Fleet Advisor collector inventory. </p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>The IP address of a database in a Fleet Advisor collector inventory. </p>
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_address = ::std::option::Option::Some(input.into());
@@ -120,6 +128,10 @@ impl DatabaseResponseBuilder {
         self.ip_address = input;
         self
     }
+    /// <p>The IP address of a database in a Fleet Advisor collector inventory. </p>
+    pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address
+    }
     /// <p>The number of schemas in a Fleet Advisor collector inventory database. </p>
     pub fn number_of_schemas(mut self, input: i64) -> Self {
         self.number_of_schemas = ::std::option::Option::Some(input);
@@ -129,6 +141,10 @@ impl DatabaseResponseBuilder {
     pub fn set_number_of_schemas(mut self, input: ::std::option::Option<i64>) -> Self {
         self.number_of_schemas = input;
         self
+    }
+    /// <p>The number of schemas in a Fleet Advisor collector inventory database. </p>
+    pub fn get_number_of_schemas(&self) -> &::std::option::Option<i64> {
+        &self.number_of_schemas
     }
     /// <p>The server name of a database in a Fleet Advisor collector inventory. </p>
     pub fn server(mut self, input: crate::types::ServerShortInfoResponse) -> Self {
@@ -142,6 +158,10 @@ impl DatabaseResponseBuilder {
     ) -> Self {
         self.server = input;
         self
+    }
+    /// <p>The server name of a database in a Fleet Advisor collector inventory. </p>
+    pub fn get_server(&self) -> &::std::option::Option<crate::types::ServerShortInfoResponse> {
+        &self.server
     }
     /// <p>The software details of a database in a Fleet Advisor collector inventory, such as database engine and version.</p>
     pub fn software_details(
@@ -158,6 +178,12 @@ impl DatabaseResponseBuilder {
     ) -> Self {
         self.software_details = input;
         self
+    }
+    /// <p>The software details of a database in a Fleet Advisor collector inventory, such as database engine and version.</p>
+    pub fn get_software_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::DatabaseInstanceSoftwareDetailsResponse> {
+        &self.software_details
     }
     /// Appends an item to `collectors`.
     ///
@@ -177,6 +203,12 @@ impl DatabaseResponseBuilder {
     ) -> Self {
         self.collectors = input;
         self
+    }
+    /// <p>A list of collectors associated with the database.</p>
+    pub fn get_collectors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CollectorShortInfoResponse>> {
+        &self.collectors
     }
     /// Consumes the builder and constructs a [`DatabaseResponse`](crate::types::DatabaseResponse).
     pub fn build(self) -> crate::types::DatabaseResponse {

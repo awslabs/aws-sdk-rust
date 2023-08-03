@@ -54,6 +54,10 @@ impl FacetAttributeReferenceBuilder {
         self.target_facet_name = input;
         self
     }
+    /// <p>The target facet name that is associated with the facet reference. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
+    pub fn get_target_facet_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_facet_name
+    }
     /// <p>The target attribute name that is associated with the facet reference. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
     pub fn target_attribute_name(
         mut self,
@@ -69,6 +73,10 @@ impl FacetAttributeReferenceBuilder {
     ) -> Self {
         self.target_attribute_name = input;
         self
+    }
+    /// <p>The target attribute name that is associated with the facet reference. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
+    pub fn get_target_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_attribute_name
     }
     /// Consumes the builder and constructs a [`FacetAttributeReference`](crate::types::FacetAttributeReference).
     pub fn build(self) -> crate::types::FacetAttributeReference {

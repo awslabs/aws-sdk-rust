@@ -64,6 +64,10 @@ impl ExtensionVersionDetailsBuilder {
         self.namespace = input;
         self
     }
+    /// <p>The namespace (qualifier) of the extension.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
+    }
     /// <p>The name of the extension.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl ExtensionVersionDetailsBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the extension.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The model that defines the interface for this extension version.</p>
     pub fn schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl ExtensionVersionDetailsBuilder {
         self.schema = input;
         self
     }
+    /// <p>The model that defines the interface for this extension version.</p>
+    pub fn get_schema(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema
+    }
     /// <p>The version of the extension.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl ExtensionVersionDetailsBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version of the extension.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`ExtensionVersionDetails`](crate::types::ExtensionVersionDetails).
     pub fn build(self) -> crate::types::ExtensionVersionDetails {

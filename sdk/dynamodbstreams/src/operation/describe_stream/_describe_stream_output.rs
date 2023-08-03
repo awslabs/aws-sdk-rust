@@ -50,6 +50,12 @@ impl DescribeStreamOutputBuilder {
         self.stream_description = input;
         self
     }
+    /// <p>A complete description of the stream, including its creation date and time, the DynamoDB table associated with the stream, the shard IDs within the stream, and the beginning and ending sequence numbers of stream records within the shards.</p>
+    pub fn get_stream_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::StreamDescription> {
+        &self.stream_description
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

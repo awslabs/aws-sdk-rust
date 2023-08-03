@@ -48,6 +48,10 @@ impl AddRegionActionBuilder {
         self.region_name = input;
         self
     }
+    /// <p>The Amazon Web Services Region name to add to the replication set.</p>
+    pub fn get_region_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region_name
+    }
     /// <p>The KMS key ID to use to encrypt your replication set.</p>
     pub fn sse_kms_key_id(
         mut self,
@@ -63,6 +67,10 @@ impl AddRegionActionBuilder {
     ) -> Self {
         self.sse_kms_key_id = input;
         self
+    }
+    /// <p>The KMS key ID to use to encrypt your replication set.</p>
+    pub fn get_sse_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sse_kms_key_id
     }
     /// Consumes the builder and constructs a [`AddRegionAction`](crate::types::AddRegionAction).
     pub fn build(self) -> crate::types::AddRegionAction {

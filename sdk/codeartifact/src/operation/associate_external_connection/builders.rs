@@ -38,6 +38,10 @@ impl AssociateExternalConnectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateExternalConnection as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_external_connection::builders::AssociateExternalConnectionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +132,10 @@ impl AssociateExternalConnectionFluentBuilder {
         self.inner = self.inner.set_domain(input);
         self
     }
+    /// <p>The name of the domain that contains the repository.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain()
+    }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_owner(input.into());
@@ -138,6 +146,10 @@ impl AssociateExternalConnectionFluentBuilder {
         self.inner = self.inner.set_domain_owner(input);
         self
     }
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_owner()
+    }
     /// <p> The name of the repository to which the external connection is added. </p>
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository(input.into());
@@ -147,6 +159,10 @@ impl AssociateExternalConnectionFluentBuilder {
     pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository(input);
         self
+    }
+    /// <p> The name of the repository to which the external connection is added. </p>
+    pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository()
     }
     /// <p> The name of the external connection to add to the repository. The following values are supported: </p>
     /// <ul>
@@ -183,5 +199,19 @@ impl AssociateExternalConnectionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_external_connection(input);
         self
+    }
+    /// <p> The name of the external connection to add to the repository. The following values are supported: </p>
+    /// <ul>
+    /// <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li>
+    /// <li> <p> <code>public:nuget-org</code> - for the NuGet Gallery. </p> </li>
+    /// <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li>
+    /// <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li>
+    /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>
+    /// <li> <p> <code>public:maven-gradleplugins</code> - for the Gradle plugins repository. </p> </li>
+    /// <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare Android repository. </p> </li>
+    /// <li> <p> <code>public:maven-clojars</code> - for the Clojars repository. </p> </li>
+    /// </ul>
+    pub fn get_external_connection(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_external_connection()
     }
 }

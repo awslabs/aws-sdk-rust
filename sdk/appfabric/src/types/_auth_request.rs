@@ -54,6 +54,10 @@ impl AuthRequestBuilder {
         self.redirect_uri = input;
         self
     }
+    /// <p>The redirect URL that is specified in the AuthURL and the application client.</p>
+    pub fn get_redirect_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.redirect_uri
+    }
     /// <p>The authorization code returned by the application after permission is granted in the application OAuth page (after clicking on the AuthURL).</p>
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl AuthRequestBuilder {
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code = input;
         self
+    }
+    /// <p>The authorization code returned by the application after permission is granted in the application OAuth page (after clicking on the AuthURL).</p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
     }
     /// Consumes the builder and constructs a [`AuthRequest`](crate::types::AuthRequest).
     pub fn build(self) -> crate::types::AuthRequest {

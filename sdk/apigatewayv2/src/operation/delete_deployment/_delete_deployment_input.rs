@@ -48,6 +48,10 @@ impl DeleteDeploymentInputBuilder {
         self.api_id = input;
         self
     }
+    /// <p>The API identifier.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
+    }
     /// <p>The deployment ID.</p>
     pub fn deployment_id(
         mut self,
@@ -63,6 +67,10 @@ impl DeleteDeploymentInputBuilder {
     ) -> Self {
         self.deployment_id = input;
         self
+    }
+    /// <p>The deployment ID.</p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
     }
     /// Consumes the builder and constructs a [`DeleteDeploymentInput`](crate::operation::delete_deployment::DeleteDeploymentInput).
     pub fn build(

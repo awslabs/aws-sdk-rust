@@ -188,6 +188,10 @@ impl AwsElasticsearchDomainDetailsBuilder {
         self.access_policies = input;
         self
     }
+    /// <p>IAM policy document specifying the access policies for the new Elasticsearch domain.</p>
+    pub fn get_access_policies(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_policies
+    }
     /// <p>Additional options for the domain endpoint.</p>
     pub fn domain_endpoint_options(
         mut self,
@@ -204,6 +208,12 @@ impl AwsElasticsearchDomainDetailsBuilder {
         self.domain_endpoint_options = input;
         self
     }
+    /// <p>Additional options for the domain endpoint.</p>
+    pub fn get_domain_endpoint_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsElasticsearchDomainDomainEndpointOptions> {
+        &self.domain_endpoint_options
+    }
     /// <p>Unique identifier for an Elasticsearch domain.</p>
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
@@ -213,6 +223,10 @@ impl AwsElasticsearchDomainDetailsBuilder {
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_id = input;
         self
+    }
+    /// <p>Unique identifier for an Elasticsearch domain.</p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_id
     }
     /// <p>Name of an Elasticsearch domain.</p>
     /// <p>Domain names are unique across all domains owned by the same account within an Amazon Web Services Region.</p>
@@ -230,6 +244,13 @@ impl AwsElasticsearchDomainDetailsBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>Name of an Elasticsearch domain.</p>
+    /// <p>Domain names are unique across all domains owned by the same account within an Amazon Web Services Region.</p>
+    /// <p>Domain names must start with a lowercase letter and must be between 3 and 28 characters.</p>
+    /// <p>Valid characters are a-z (lowercase only), 0-9, and – (hyphen). </p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>Domain-specific endpoint used to submit index, search, and data upload requests to an Elasticsearch domain.</p>
     /// <p>The endpoint is a service URL. </p>
     pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -241,6 +262,11 @@ impl AwsElasticsearchDomainDetailsBuilder {
     pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint = input;
         self
+    }
+    /// <p>Domain-specific endpoint used to submit index, search, and data upload requests to an Elasticsearch domain.</p>
+    /// <p>The endpoint is a service URL. </p>
+    pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint
     }
     /// Adds a key-value pair to `endpoints`.
     ///
@@ -267,6 +293,14 @@ impl AwsElasticsearchDomainDetailsBuilder {
         self.endpoints = input;
         self
     }
+    /// <p>The key-value pair that exists if the Elasticsearch domain uses VPC endpoints.</p>
+    pub fn get_endpoints(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.endpoints
+    }
     /// <p>OpenSearch version.</p>
     pub fn elasticsearch_version(
         mut self,
@@ -282,6 +316,10 @@ impl AwsElasticsearchDomainDetailsBuilder {
     ) -> Self {
         self.elasticsearch_version = input;
         self
+    }
+    /// <p>OpenSearch version.</p>
+    pub fn get_elasticsearch_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.elasticsearch_version
     }
     /// <p>Information about an OpenSearch cluster configuration.</p>
     pub fn elasticsearch_cluster_config(
@@ -301,6 +339,13 @@ impl AwsElasticsearchDomainDetailsBuilder {
         self.elasticsearch_cluster_config = input;
         self
     }
+    /// <p>Information about an OpenSearch cluster configuration.</p>
+    pub fn get_elasticsearch_cluster_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsElasticsearchDomainElasticsearchClusterConfigDetails>
+    {
+        &self.elasticsearch_cluster_config
+    }
     /// <p>Details about the configuration for encryption at rest.</p>
     pub fn encryption_at_rest_options(
         mut self,
@@ -317,6 +362,12 @@ impl AwsElasticsearchDomainDetailsBuilder {
         self.encryption_at_rest_options = input;
         self
     }
+    /// <p>Details about the configuration for encryption at rest.</p>
+    pub fn get_encryption_at_rest_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsElasticsearchDomainEncryptionAtRestOptions> {
+        &self.encryption_at_rest_options
+    }
     /// <p>Configures the CloudWatch Logs to publish for the Elasticsearch domain.</p>
     pub fn log_publishing_options(
         mut self,
@@ -332,6 +383,12 @@ impl AwsElasticsearchDomainDetailsBuilder {
     ) -> Self {
         self.log_publishing_options = input;
         self
+    }
+    /// <p>Configures the CloudWatch Logs to publish for the Elasticsearch domain.</p>
+    pub fn get_log_publishing_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsElasticsearchDomainLogPublishingOptions> {
+        &self.log_publishing_options
     }
     /// <p>Details about the configuration for node-to-node encryption.</p>
     pub fn node_to_node_encryption_options(
@@ -351,6 +408,13 @@ impl AwsElasticsearchDomainDetailsBuilder {
         self.node_to_node_encryption_options = input;
         self
     }
+    /// <p>Details about the configuration for node-to-node encryption.</p>
+    pub fn get_node_to_node_encryption_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsElasticsearchDomainNodeToNodeEncryptionOptions>
+    {
+        &self.node_to_node_encryption_options
+    }
     /// <p>Information about the status of a domain relative to the latest service software.</p>
     pub fn service_software_options(
         mut self,
@@ -367,6 +431,12 @@ impl AwsElasticsearchDomainDetailsBuilder {
         self.service_software_options = input;
         self
     }
+    /// <p>Information about the status of a domain relative to the latest service software.</p>
+    pub fn get_service_software_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsElasticsearchDomainServiceSoftwareOptions> {
+        &self.service_software_options
+    }
     /// <p>Information that OpenSearch derives based on <code>VPCOptions</code> for the domain.</p>
     pub fn vpc_options(mut self, input: crate::types::AwsElasticsearchDomainVpcOptions) -> Self {
         self.vpc_options = ::std::option::Option::Some(input);
@@ -379,6 +449,12 @@ impl AwsElasticsearchDomainDetailsBuilder {
     ) -> Self {
         self.vpc_options = input;
         self
+    }
+    /// <p>Information that OpenSearch derives based on <code>VPCOptions</code> for the domain.</p>
+    pub fn get_vpc_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsElasticsearchDomainVpcOptions> {
+        &self.vpc_options
     }
     /// Consumes the builder and constructs a [`AwsElasticsearchDomainDetails`](crate::types::AwsElasticsearchDomainDetails).
     pub fn build(self) -> crate::types::AwsElasticsearchDomainDetails {

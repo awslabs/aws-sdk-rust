@@ -39,6 +39,10 @@ impl ListExportsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A string (provided by the <code>ListExports</code> response output) that identifies the next page of exported output values that you asked to retrieve.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Consumes the builder and constructs a [`ListExportsInput`](crate::operation::list_exports::ListExportsInput).
     pub fn build(
         self,

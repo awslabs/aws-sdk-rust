@@ -83,6 +83,10 @@ impl BadRequestExceptionBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>Provides context for the cause of the bad request. The only supported value is <code>CODE_ERROR</code>.</p>
     pub fn reason(mut self, input: crate::types::BadRequestReason) -> Self {
         self.reason = ::std::option::Option::Some(input);
@@ -96,6 +100,10 @@ impl BadRequestExceptionBuilder {
         self.reason = input;
         self
     }
+    /// <p>Provides context for the cause of the bad request. The only supported value is <code>CODE_ERROR</code>.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<crate::types::BadRequestReason> {
+        &self.reason
+    }
     /// <p>Provides further details for the reason behind the bad request. For reason type <code>CODE_ERROR</code>, the detail will contain a list of code errors.</p>
     pub fn detail(mut self, input: crate::types::BadRequestDetail) -> Self {
         self.detail = ::std::option::Option::Some(input);
@@ -108,6 +116,10 @@ impl BadRequestExceptionBuilder {
     ) -> Self {
         self.detail = input;
         self
+    }
+    /// <p>Provides further details for the reason behind the bad request. For reason type <code>CODE_ERROR</code>, the detail will contain a list of code errors.</p>
+    pub fn get_detail(&self) -> &::std::option::Option<crate::types::BadRequestDetail> {
+        &self.detail
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

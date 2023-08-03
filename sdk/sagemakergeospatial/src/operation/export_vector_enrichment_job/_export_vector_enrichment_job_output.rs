@@ -83,6 +83,10 @@ impl ExportVectorEnrichmentJobOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job being exported.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The creation time.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -95,6 +99,10 @@ impl ExportVectorEnrichmentJobOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The creation time.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role with permission to upload to the location in OutputConfig.</p>
     pub fn execution_role_arn(
@@ -112,6 +120,10 @@ impl ExportVectorEnrichmentJobOutputBuilder {
         self.execution_role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role with permission to upload to the location in OutputConfig.</p>
+    pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_role_arn
+    }
     /// <p>The status of the results the Vector Enrichment job being exported.</p>
     pub fn export_status(mut self, input: crate::types::VectorEnrichmentJobExportStatus) -> Self {
         self.export_status = ::std::option::Option::Some(input);
@@ -124,6 +136,12 @@ impl ExportVectorEnrichmentJobOutputBuilder {
     ) -> Self {
         self.export_status = input;
         self
+    }
+    /// <p>The status of the results the Vector Enrichment job being exported.</p>
+    pub fn get_export_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::VectorEnrichmentJobExportStatus> {
+        &self.export_status
     }
     /// <p>Output location information for exporting Vector Enrichment Job results. </p>
     pub fn output_config(
@@ -140,6 +158,12 @@ impl ExportVectorEnrichmentJobOutputBuilder {
     ) -> Self {
         self.output_config = input;
         self
+    }
+    /// <p>Output location information for exporting Vector Enrichment Job results. </p>
+    pub fn get_output_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExportVectorEnrichmentJobOutputConfig> {
+        &self.output_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

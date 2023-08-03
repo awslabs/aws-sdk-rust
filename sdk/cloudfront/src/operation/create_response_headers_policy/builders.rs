@@ -39,6 +39,10 @@ impl CreateResponseHeadersPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateResponseHeadersPolicy as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_response_headers_policy::builders::CreateResponseHeadersPolicyInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,5 +138,11 @@ impl CreateResponseHeadersPolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_response_headers_policy_config(input);
         self
+    }
+    /// <p>Contains metadata about the response headers policy, and a set of configurations that specify the HTTP headers.</p>
+    pub fn get_response_headers_policy_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResponseHeadersPolicyConfig> {
+        self.inner.get_response_headers_policy_config()
     }
 }

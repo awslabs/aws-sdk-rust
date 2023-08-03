@@ -50,6 +50,10 @@ impl AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetailsBuilder {
         self.count = input;
         self
     }
+    /// <p> The number of Elastic Inference accelerators to attach to the instance. </p>
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        &self.count
+    }
     /// <p> The type of Elastic Inference accelerator. </p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -59,6 +63,10 @@ impl AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetailsBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p> The type of Elastic Inference accelerator. </p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails`](crate::types::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails).
     pub fn build(

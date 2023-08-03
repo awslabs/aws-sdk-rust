@@ -46,6 +46,12 @@ impl ObfuscationSettingBuilder {
         self.obfuscation_setting_type = input;
         self
     }
+    /// <p>Value that determines whether Amazon Lex obscures slot values in conversation logs. The default is to obscure the values.</p>
+    pub fn get_obfuscation_setting_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ObfuscationSettingType> {
+        &self.obfuscation_setting_type
+    }
     /// Consumes the builder and constructs a [`ObfuscationSetting`](crate::types::ObfuscationSetting).
     pub fn build(self) -> crate::types::ObfuscationSetting {
         crate::types::ObfuscationSetting {

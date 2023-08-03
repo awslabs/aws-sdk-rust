@@ -59,6 +59,10 @@ impl DriftCheckBiasBuilder {
         self.config_file = input;
         self
     }
+    /// <p>The bias config file for a model.</p>
+    pub fn get_config_file(&self) -> &::std::option::Option<crate::types::FileSource> {
+        &self.config_file
+    }
     /// <p>The pre-training constraints.</p>
     pub fn pre_training_constraints(mut self, input: crate::types::MetricsSource) -> Self {
         self.pre_training_constraints = ::std::option::Option::Some(input);
@@ -72,6 +76,12 @@ impl DriftCheckBiasBuilder {
         self.pre_training_constraints = input;
         self
     }
+    /// <p>The pre-training constraints.</p>
+    pub fn get_pre_training_constraints(
+        &self,
+    ) -> &::std::option::Option<crate::types::MetricsSource> {
+        &self.pre_training_constraints
+    }
     /// <p>The post-training constraints.</p>
     pub fn post_training_constraints(mut self, input: crate::types::MetricsSource) -> Self {
         self.post_training_constraints = ::std::option::Option::Some(input);
@@ -84,6 +94,12 @@ impl DriftCheckBiasBuilder {
     ) -> Self {
         self.post_training_constraints = input;
         self
+    }
+    /// <p>The post-training constraints.</p>
+    pub fn get_post_training_constraints(
+        &self,
+    ) -> &::std::option::Option<crate::types::MetricsSource> {
+        &self.post_training_constraints
     }
     /// Consumes the builder and constructs a [`DriftCheckBias`](crate::types::DriftCheckBias).
     pub fn build(self) -> crate::types::DriftCheckBias {

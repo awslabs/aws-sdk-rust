@@ -51,6 +51,12 @@ impl PieChartFieldWellsBuilder {
         self.pie_chart_aggregated_field_wells = input;
         self
     }
+    /// <p>The field well configuration of a pie chart.</p>
+    pub fn get_pie_chart_aggregated_field_wells(
+        &self,
+    ) -> &::std::option::Option<crate::types::PieChartAggregatedFieldWells> {
+        &self.pie_chart_aggregated_field_wells
+    }
     /// Consumes the builder and constructs a [`PieChartFieldWells`](crate::types::PieChartFieldWells).
     pub fn build(self) -> crate::types::PieChartFieldWells {
         crate::types::PieChartFieldWells {

@@ -48,6 +48,10 @@ impl PredictorEventBuilder {
         self.detail = input;
         self
     }
+    /// <p>The type of event. For example, <code>Retrain</code>. A retraining event denotes the timepoint when a predictor was retrained. Any monitor results from before the <code>Datetime</code> are from the previous predictor. Any new metrics are for the newly retrained predictor.</p>
+    pub fn get_detail(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detail
+    }
     /// <p>The timestamp for when the event occurred.</p>
     pub fn datetime(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.datetime = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl PredictorEventBuilder {
     ) -> Self {
         self.datetime = input;
         self
+    }
+    /// <p>The timestamp for when the event occurred.</p>
+    pub fn get_datetime(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.datetime
     }
     /// Consumes the builder and constructs a [`PredictorEvent`](crate::types::PredictorEvent).
     pub fn build(self) -> crate::types::PredictorEvent {

@@ -64,6 +64,10 @@ impl DefinitionBuilder {
         self.model_handle = input;
         self
     }
+    /// <p>The unique model handle.</p>
+    pub fn get_model_handle(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_handle
+    }
     /// <p>The absolute S3 location of the model.</p>
     pub fn s3_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_url = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl DefinitionBuilder {
     pub fn set_s3_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_url = input;
         self
+    }
+    /// <p>The absolute S3 location of the model.</p>
+    pub fn get_s3_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_url
     }
     /// <p>The checksum information of the model.</p>
     pub fn checksum(mut self, input: crate::types::Checksum) -> Self {
@@ -84,6 +92,10 @@ impl DefinitionBuilder {
         self.checksum = input;
         self
     }
+    /// <p>The checksum information of the model.</p>
+    pub fn get_checksum(&self) -> &::std::option::Option<crate::types::Checksum> {
+        &self.checksum
+    }
     /// <p>The desired state of the model.</p>
     pub fn state(mut self, input: crate::types::ModelState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl DefinitionBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ModelState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The desired state of the model.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ModelState> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`Definition`](crate::types::Definition).
     pub fn build(self) -> crate::types::Definition {

@@ -36,6 +36,10 @@ impl GetEvidenceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetEvidence as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_evidence::builders::GetEvidenceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl GetEvidenceFluentBuilder {
         self.inner = self.inner.set_assessment_id(input);
         self
     }
+    /// <p> The unique identifier for the assessment. </p>
+    pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assessment_id()
+    }
     /// <p> The unique identifier for the control set. </p>
     pub fn control_set_id(
         mut self,
@@ -139,6 +147,10 @@ impl GetEvidenceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_control_set_id(input);
         self
+    }
+    /// <p> The unique identifier for the control set. </p>
+    pub fn get_control_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_control_set_id()
     }
     /// <p> The unique identifier for the folder that the evidence is stored in. </p>
     pub fn evidence_folder_id(
@@ -156,6 +168,10 @@ impl GetEvidenceFluentBuilder {
         self.inner = self.inner.set_evidence_folder_id(input);
         self
     }
+    /// <p> The unique identifier for the folder that the evidence is stored in. </p>
+    pub fn get_evidence_folder_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_evidence_folder_id()
+    }
     /// <p> The unique identifier for the evidence. </p>
     pub fn evidence_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.evidence_id(input.into());
@@ -165,5 +181,9 @@ impl GetEvidenceFluentBuilder {
     pub fn set_evidence_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_evidence_id(input);
         self
+    }
+    /// <p> The unique identifier for the evidence. </p>
+    pub fn get_evidence_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_evidence_id()
     }
 }

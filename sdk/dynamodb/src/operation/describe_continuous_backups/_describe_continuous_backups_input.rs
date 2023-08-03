@@ -39,6 +39,10 @@ impl DescribeContinuousBackupsInputBuilder {
         self.table_name = input;
         self
     }
+    /// <p>Name of the table for which the customer wants to check the continuous backups and point in time recovery settings.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
+    }
     /// Consumes the builder and constructs a [`DescribeContinuousBackupsInput`](crate::operation::describe_continuous_backups::DescribeContinuousBackupsInput).
     pub fn build(
         self,

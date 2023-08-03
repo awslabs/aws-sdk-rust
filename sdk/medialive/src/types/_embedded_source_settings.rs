@@ -71,6 +71,12 @@ impl EmbeddedSourceSettingsBuilder {
         self.convert608_to708 = input;
         self
     }
+    /// If upconvert, 608 data is both passed through via the "608 compatibility bytes" fields of the 708 wrapper as well as translated into 708. 708 data present in the source content will be discarded.
+    pub fn get_convert608_to708(
+        &self,
+    ) -> &::std::option::Option<crate::types::EmbeddedConvert608To708> {
+        &self.convert608_to708
+    }
     /// Set to "auto" to handle streams with intermittent and/or non-aligned SCTE-20 and Embedded captions.
     pub fn scte20_detection(mut self, input: crate::types::EmbeddedScte20Detection) -> Self {
         self.scte20_detection = ::std::option::Option::Some(input);
@@ -84,6 +90,12 @@ impl EmbeddedSourceSettingsBuilder {
         self.scte20_detection = input;
         self
     }
+    /// Set to "auto" to handle streams with intermittent and/or non-aligned SCTE-20 and Embedded captions.
+    pub fn get_scte20_detection(
+        &self,
+    ) -> &::std::option::Option<crate::types::EmbeddedScte20Detection> {
+        &self.scte20_detection
+    }
     /// Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.
     pub fn source608_channel_number(mut self, input: i32) -> Self {
         self.source608_channel_number = ::std::option::Option::Some(input);
@@ -94,6 +106,10 @@ impl EmbeddedSourceSettingsBuilder {
         self.source608_channel_number = input;
         self
     }
+    /// Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.
+    pub fn get_source608_channel_number(&self) -> &::std::option::Option<i32> {
+        &self.source608_channel_number
+    }
     /// This field is unused and deprecated.
     pub fn source608_track_number(mut self, input: i32) -> Self {
         self.source608_track_number = ::std::option::Option::Some(input);
@@ -103,6 +119,10 @@ impl EmbeddedSourceSettingsBuilder {
     pub fn set_source608_track_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.source608_track_number = input;
         self
+    }
+    /// This field is unused and deprecated.
+    pub fn get_source608_track_number(&self) -> &::std::option::Option<i32> {
+        &self.source608_track_number
     }
     /// Consumes the builder and constructs a [`EmbeddedSourceSettings`](crate::types::EmbeddedSourceSettings).
     pub fn build(self) -> crate::types::EmbeddedSourceSettings {

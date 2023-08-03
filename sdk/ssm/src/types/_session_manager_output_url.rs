@@ -55,6 +55,10 @@ impl SessionManagerOutputUrlBuilder {
         self
     }
     /// <p>Reserved for future use.</p>
+    pub fn get_s3_output_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_output_url
+    }
+    /// <p>Reserved for future use.</p>
     pub fn cloud_watch_output_url(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -69,6 +73,10 @@ impl SessionManagerOutputUrlBuilder {
     ) -> Self {
         self.cloud_watch_output_url = input;
         self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_cloud_watch_output_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cloud_watch_output_url
     }
     /// Consumes the builder and constructs a [`SessionManagerOutputUrl`](crate::types::SessionManagerOutputUrl).
     pub fn build(self) -> crate::types::SessionManagerOutputUrl {

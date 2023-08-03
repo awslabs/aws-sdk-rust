@@ -41,6 +41,10 @@ impl StartModelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartModel as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_model::builders::StartModelInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -123,6 +127,10 @@ impl StartModelFluentBuilder {
         self.inner = self.inner.set_project_name(input);
         self
     }
+    /// <p>The name of the project that contains the model that you want to start.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_name()
+    }
     /// <p>The version of the model that you want to start.</p>
     pub fn model_version(
         mut self,
@@ -139,6 +147,10 @@ impl StartModelFluentBuilder {
         self.inner = self.inner.set_model_version(input);
         self
     }
+    /// <p>The version of the model that you want to start.</p>
+    pub fn get_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_model_version()
+    }
     /// <p>The minimum number of inference units to use. A single inference unit represents 1 hour of processing. Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference units that you use. </p>
     pub fn min_inference_units(mut self, input: i32) -> Self {
         self.inner = self.inner.min_inference_units(input);
@@ -148,6 +160,10 @@ impl StartModelFluentBuilder {
     pub fn set_min_inference_units(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_min_inference_units(input);
         self
+    }
+    /// <p>The minimum number of inference units to use. A single inference unit represents 1 hour of processing. Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference units that you use. </p>
+    pub fn get_min_inference_units(&self) -> &::std::option::Option<i32> {
+        self.inner.get_min_inference_units()
     }
     /// <p>ClientToken is an idempotency token that ensures a call to <code>StartModel</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>StartModel</code>. In this case, safely retry your call to <code>StartModel</code> by using the same <code>ClientToken</code> parameter value. </p>
     /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple start requests. You'll need to provide your own value for other use cases. </p>
@@ -163,6 +179,12 @@ impl StartModelFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>ClientToken is an idempotency token that ensures a call to <code>StartModel</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>StartModel</code>. In this case, safely retry your call to <code>StartModel</code> by using the same <code>ClientToken</code> parameter value. </p>
+    /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple start requests. You'll need to provide your own value for other use cases. </p>
+    /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>StartModel</code>. An idempotency token is active for 8 hours. </p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>The maximum number of inference units to use for auto-scaling the model. If you don't specify a value, Amazon Lookout for Vision doesn't auto-scale the model.</p>
     pub fn max_inference_units(mut self, input: i32) -> Self {
         self.inner = self.inner.max_inference_units(input);
@@ -172,5 +194,9 @@ impl StartModelFluentBuilder {
     pub fn set_max_inference_units(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_inference_units(input);
         self
+    }
+    /// <p>The maximum number of inference units to use for auto-scaling the model. If you don't specify a value, Amazon Lookout for Vision doesn't auto-scale the model.</p>
+    pub fn get_max_inference_units(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_inference_units()
     }
 }

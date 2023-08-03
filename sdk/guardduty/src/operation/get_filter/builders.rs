@@ -36,6 +36,10 @@ impl GetFilterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetFilter as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_filter::builders::GetFilterInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl GetFilterFluentBuilder {
         self.inner = self.inner.set_detector_id(input);
         self
     }
+    /// <p>The unique ID of the detector that the filter is associated with.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_id()
+    }
     /// <p>The name of the filter you want to get.</p>
     pub fn filter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.filter_name(input.into());
@@ -127,5 +135,9 @@ impl GetFilterFluentBuilder {
     pub fn set_filter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_filter_name(input);
         self
+    }
+    /// <p>The name of the filter you want to get.</p>
+    pub fn get_filter_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_filter_name()
     }
 }

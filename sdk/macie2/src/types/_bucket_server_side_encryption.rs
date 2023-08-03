@@ -64,6 +64,10 @@ impl BucketServerSideEncryptionBuilder {
         self.kms_master_key_id = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) or unique identifier (key ID) for the KMS key that's used by default to encrypt objects that are added to the bucket. This value is null if the bucket is configured to use an Amazon S3 managed key to encrypt new objects.</p>
+    pub fn get_kms_master_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_master_key_id
+    }
     /// <p>The server-side encryption algorithm that's used by default to encrypt objects that are added to the bucket. Possible values are:</p>
     /// <ul>
     /// <li><p>AES256 - New objects are encrypted with an Amazon S3 managed key. They use SSE-S3 encryption.</p></li>
@@ -83,6 +87,15 @@ impl BucketServerSideEncryptionBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The server-side encryption algorithm that's used by default to encrypt objects that are added to the bucket. Possible values are:</p>
+    /// <ul>
+    /// <li><p>AES256 - New objects are encrypted with an Amazon S3 managed key. They use SSE-S3 encryption.</p></li>
+    /// <li><p>aws:kms - New objects are encrypted with an KMS key (kmsMasterKeyId), either an Amazon Web Services managed key or a customer managed key. They use SSE-KMS encryption.</p></li>
+    /// <li><p>NONE - The bucket's default encryption settings don't specify server-side encryption behavior for new objects.</p></li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`BucketServerSideEncryption`](crate::types::BucketServerSideEncryption).
     pub fn build(self) -> crate::types::BucketServerSideEncryption {

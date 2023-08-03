@@ -40,6 +40,10 @@ impl DescribeWorkspaceInputBuilder {
         self.workspace_id = input;
         self
     }
+    /// <p>The ID of the workspace to display information about.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
+    }
     /// Consumes the builder and constructs a [`DescribeWorkspaceInput`](crate::operation::describe_workspace::DescribeWorkspaceInput).
     pub fn build(
         self,

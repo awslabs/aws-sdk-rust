@@ -40,6 +40,10 @@ impl LaunchTemplateBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the launch template.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`LaunchTemplate`](crate::types::LaunchTemplate).
     pub fn build(self) -> crate::types::LaunchTemplate {
         crate::types::LaunchTemplate { id: self.id }

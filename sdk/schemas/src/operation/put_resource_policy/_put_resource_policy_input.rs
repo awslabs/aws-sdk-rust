@@ -57,6 +57,10 @@ impl PutResourcePolicyInputBuilder {
         self.policy = input;
         self
     }
+    /// <p>The resource-based policy.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy
+    }
     /// <p>The name of the registry.</p>
     pub fn registry_name(
         mut self,
@@ -73,6 +77,10 @@ impl PutResourcePolicyInputBuilder {
         self.registry_name = input;
         self
     }
+    /// <p>The name of the registry.</p>
+    pub fn get_registry_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_name
+    }
     /// <p>The revision ID of the policy.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl PutResourcePolicyInputBuilder {
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision_id = input;
         self
+    }
+    /// <p>The revision ID of the policy.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_id
     }
     /// Consumes the builder and constructs a [`PutResourcePolicyInput`](crate::operation::put_resource_policy::PutResourcePolicyInput).
     pub fn build(

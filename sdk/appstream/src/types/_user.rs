@@ -126,6 +126,10 @@ impl UserBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the user.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The email address of the user.</p> <note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
@@ -140,6 +144,12 @@ impl UserBuilder {
         self.user_name = input;
         self
     }
+    /// <p>The email address of the user.</p> <note>
+    /// <p>Users' email addresses are case-sensitive.</p>
+    /// </note>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
+    }
     /// <p>Specifies whether the user in the user pool is enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -149,6 +159,10 @@ impl UserBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>Specifies whether the user in the user pool is enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// <p>The status of the user in the user pool. The status can be one of the following:</p>
     /// <ul>
@@ -174,6 +188,17 @@ impl UserBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the user in the user pool. The status can be one of the following:</p>
+    /// <ul>
+    /// <li> <p>UNCONFIRMED – The user is created but not confirmed.</p> </li>
+    /// <li> <p>CONFIRMED – The user is confirmed.</p> </li>
+    /// <li> <p>ARCHIVED – The user is no longer active.</p> </li>
+    /// <li> <p>COMPROMISED – The user is disabled because of a potential security threat.</p> </li>
+    /// <li> <p>UNKNOWN – The user status is not known.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The first name, or given name, of the user.</p>
     pub fn first_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.first_name = ::std::option::Option::Some(input.into());
@@ -184,6 +209,10 @@ impl UserBuilder {
         self.first_name = input;
         self
     }
+    /// <p>The first name, or given name, of the user.</p>
+    pub fn get_first_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.first_name
+    }
     /// <p>The last name, or surname, of the user.</p>
     pub fn last_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_name = ::std::option::Option::Some(input.into());
@@ -193,6 +222,10 @@ impl UserBuilder {
     pub fn set_last_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_name = input;
         self
+    }
+    /// <p>The last name, or surname, of the user.</p>
+    pub fn get_last_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_name
     }
     /// <p>The date and time the user was created in the user pool.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -207,6 +240,10 @@ impl UserBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The date and time the user was created in the user pool.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>The authentication type for the user.</p>
     pub fn authentication_type(mut self, input: crate::types::AuthenticationType) -> Self {
         self.authentication_type = ::std::option::Option::Some(input);
@@ -219,6 +256,12 @@ impl UserBuilder {
     ) -> Self {
         self.authentication_type = input;
         self
+    }
+    /// <p>The authentication type for the user.</p>
+    pub fn get_authentication_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthenticationType> {
+        &self.authentication_type
     }
     /// Consumes the builder and constructs a [`User`](crate::types::User).
     pub fn build(self) -> crate::types::User {

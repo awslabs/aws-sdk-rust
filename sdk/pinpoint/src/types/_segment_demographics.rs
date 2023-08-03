@@ -83,6 +83,10 @@ impl SegmentDemographicsBuilder {
         self.app_version = input;
         self
     }
+    /// <p>The app version criteria for the segment.</p>
+    pub fn get_app_version(&self) -> &::std::option::Option<crate::types::SetDimension> {
+        &self.app_version
+    }
     /// <p>The channel criteria for the segment.</p>
     pub fn channel(mut self, input: crate::types::SetDimension) -> Self {
         self.channel = ::std::option::Option::Some(input);
@@ -92,6 +96,10 @@ impl SegmentDemographicsBuilder {
     pub fn set_channel(mut self, input: ::std::option::Option<crate::types::SetDimension>) -> Self {
         self.channel = input;
         self
+    }
+    /// <p>The channel criteria for the segment.</p>
+    pub fn get_channel(&self) -> &::std::option::Option<crate::types::SetDimension> {
+        &self.channel
     }
     /// <p>The device type criteria for the segment.</p>
     pub fn device_type(mut self, input: crate::types::SetDimension) -> Self {
@@ -106,6 +114,10 @@ impl SegmentDemographicsBuilder {
         self.device_type = input;
         self
     }
+    /// <p>The device type criteria for the segment.</p>
+    pub fn get_device_type(&self) -> &::std::option::Option<crate::types::SetDimension> {
+        &self.device_type
+    }
     /// <p>The device make criteria for the segment.</p>
     pub fn make(mut self, input: crate::types::SetDimension) -> Self {
         self.make = ::std::option::Option::Some(input);
@@ -116,6 +128,10 @@ impl SegmentDemographicsBuilder {
         self.make = input;
         self
     }
+    /// <p>The device make criteria for the segment.</p>
+    pub fn get_make(&self) -> &::std::option::Option<crate::types::SetDimension> {
+        &self.make
+    }
     /// <p>The device model criteria for the segment.</p>
     pub fn model(mut self, input: crate::types::SetDimension) -> Self {
         self.model = ::std::option::Option::Some(input);
@@ -125,6 +141,10 @@ impl SegmentDemographicsBuilder {
     pub fn set_model(mut self, input: ::std::option::Option<crate::types::SetDimension>) -> Self {
         self.model = input;
         self
+    }
+    /// <p>The device model criteria for the segment.</p>
+    pub fn get_model(&self) -> &::std::option::Option<crate::types::SetDimension> {
+        &self.model
     }
     /// <p>The device platform criteria for the segment.</p>
     pub fn platform(mut self, input: crate::types::SetDimension) -> Self {
@@ -138,6 +158,10 @@ impl SegmentDemographicsBuilder {
     ) -> Self {
         self.platform = input;
         self
+    }
+    /// <p>The device platform criteria for the segment.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<crate::types::SetDimension> {
+        &self.platform
     }
     /// Consumes the builder and constructs a [`SegmentDemographics`](crate::types::SegmentDemographics).
     pub fn build(self) -> crate::types::SegmentDemographics {

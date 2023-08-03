@@ -72,6 +72,10 @@ impl AwsGroundStationAgentEndpointBuilder {
         self.name = input;
         self
     }
+    /// <p>Name string associated with AgentEndpoint. Used as a human-readable identifier for AgentEndpoint.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The egress address of AgentEndpoint.</p>
     pub fn egress_address(mut self, input: crate::types::ConnectionDetails) -> Self {
         self.egress_address = ::std::option::Option::Some(input);
@@ -84,6 +88,10 @@ impl AwsGroundStationAgentEndpointBuilder {
     ) -> Self {
         self.egress_address = input;
         self
+    }
+    /// <p>The egress address of AgentEndpoint.</p>
+    pub fn get_egress_address(&self) -> &::std::option::Option<crate::types::ConnectionDetails> {
+        &self.egress_address
     }
     /// <p>The ingress address of AgentEndpoint.</p>
     pub fn ingress_address(mut self, input: crate::types::RangedConnectionDetails) -> Self {
@@ -98,6 +106,12 @@ impl AwsGroundStationAgentEndpointBuilder {
         self.ingress_address = input;
         self
     }
+    /// <p>The ingress address of AgentEndpoint.</p>
+    pub fn get_ingress_address(
+        &self,
+    ) -> &::std::option::Option<crate::types::RangedConnectionDetails> {
+        &self.ingress_address
+    }
     /// <p>The status of AgentEndpoint.</p>
     pub fn agent_status(mut self, input: crate::types::AgentStatus) -> Self {
         self.agent_status = ::std::option::Option::Some(input);
@@ -111,6 +125,10 @@ impl AwsGroundStationAgentEndpointBuilder {
         self.agent_status = input;
         self
     }
+    /// <p>The status of AgentEndpoint.</p>
+    pub fn get_agent_status(&self) -> &::std::option::Option<crate::types::AgentStatus> {
+        &self.agent_status
+    }
     /// <p>The results of the audit.</p>
     pub fn audit_results(mut self, input: crate::types::AuditResults) -> Self {
         self.audit_results = ::std::option::Option::Some(input);
@@ -123,6 +141,10 @@ impl AwsGroundStationAgentEndpointBuilder {
     ) -> Self {
         self.audit_results = input;
         self
+    }
+    /// <p>The results of the audit.</p>
+    pub fn get_audit_results(&self) -> &::std::option::Option<crate::types::AuditResults> {
+        &self.audit_results
     }
     /// Consumes the builder and constructs a [`AwsGroundStationAgentEndpoint`](crate::types::AwsGroundStationAgentEndpoint).
     pub fn build(self) -> crate::types::AwsGroundStationAgentEndpoint {

@@ -45,6 +45,10 @@ impl UserDataBuilder {
         self.data = input;
         self
     }
+    /// <p>The user data. If you are using an Amazon Web Services SDK or command line tool, Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide Base64-encoded text.</p>
+    pub fn get_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data
+    }
     /// Consumes the builder and constructs a [`UserData`](crate::types::UserData).
     pub fn build(self) -> crate::types::UserData {
         crate::types::UserData { data: self.data }

@@ -59,6 +59,10 @@ impl UpdatePartnerAccountInputBuilder {
         self.sidewalk = input;
         self
     }
+    /// <p>The Sidewalk account credentials.</p>
+    pub fn get_sidewalk(&self) -> &::std::option::Option<crate::types::SidewalkUpdateAccount> {
+        &self.sidewalk
+    }
     /// <p>The ID of the partner account to update.</p>
     pub fn partner_account_id(
         mut self,
@@ -75,6 +79,10 @@ impl UpdatePartnerAccountInputBuilder {
         self.partner_account_id = input;
         self
     }
+    /// <p>The ID of the partner account to update.</p>
+    pub fn get_partner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.partner_account_id
+    }
     /// <p>The partner type.</p>
     pub fn partner_type(mut self, input: crate::types::PartnerType) -> Self {
         self.partner_type = ::std::option::Option::Some(input);
@@ -87,6 +95,10 @@ impl UpdatePartnerAccountInputBuilder {
     ) -> Self {
         self.partner_type = input;
         self
+    }
+    /// <p>The partner type.</p>
+    pub fn get_partner_type(&self) -> &::std::option::Option<crate::types::PartnerType> {
+        &self.partner_type
     }
     /// Consumes the builder and constructs a [`UpdatePartnerAccountInput`](crate::operation::update_partner_account::UpdatePartnerAccountInput).
     pub fn build(

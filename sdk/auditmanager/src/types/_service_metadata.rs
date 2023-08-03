@@ -64,6 +64,10 @@ impl ServiceMetadataBuilder {
         self.name = input;
         self
     }
+    /// <p> The name of the Amazon Web Service. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p> The display name of the Amazon Web Service. </p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl ServiceMetadataBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
+    }
+    /// <p> The display name of the Amazon Web Service. </p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// <p> The description of the Amazon Web Service. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl ServiceMetadataBuilder {
         self.description = input;
         self
     }
+    /// <p> The description of the Amazon Web Service. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p> The category that the Amazon Web Service belongs to, such as compute, storage, or database. </p>
     pub fn category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.category = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl ServiceMetadataBuilder {
     pub fn set_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.category = input;
         self
+    }
+    /// <p> The category that the Amazon Web Service belongs to, such as compute, storage, or database. </p>
+    pub fn get_category(&self) -> &::std::option::Option<::std::string::String> {
+        &self.category
     }
     /// Consumes the builder and constructs a [`ServiceMetadata`](crate::types::ServiceMetadata).
     pub fn build(self) -> crate::types::ServiceMetadata {

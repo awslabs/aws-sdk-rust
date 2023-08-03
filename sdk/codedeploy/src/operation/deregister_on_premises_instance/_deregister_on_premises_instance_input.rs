@@ -46,6 +46,10 @@ impl DeregisterOnPremisesInstanceInputBuilder {
         self.instance_name = input;
         self
     }
+    /// <p>The name of the on-premises instance to deregister.</p>
+    pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_name
+    }
     /// Consumes the builder and constructs a [`DeregisterOnPremisesInstanceInput`](crate::operation::deregister_on_premises_instance::DeregisterOnPremisesInstanceInput).
     pub fn build(
         self,

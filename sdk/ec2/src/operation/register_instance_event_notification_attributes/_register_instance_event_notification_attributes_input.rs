@@ -51,6 +51,10 @@ impl RegisterInstanceEventNotificationAttributesInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>Information about the tag keys to register.</p>
     pub fn instance_tag_attribute(
         mut self,
@@ -66,6 +70,12 @@ impl RegisterInstanceEventNotificationAttributesInputBuilder {
     ) -> Self {
         self.instance_tag_attribute = input;
         self
+    }
+    /// <p>Information about the tag keys to register.</p>
+    pub fn get_instance_tag_attribute(
+        &self,
+    ) -> &::std::option::Option<crate::types::RegisterInstanceTagAttributeRequest> {
+        &self.instance_tag_attribute
     }
     /// Consumes the builder and constructs a [`RegisterInstanceEventNotificationAttributesInput`](crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesInput, ::aws_smithy_http::operation::error::BuildError>{

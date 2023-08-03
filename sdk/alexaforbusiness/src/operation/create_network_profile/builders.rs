@@ -37,6 +37,12 @@ impl CreateNetworkProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateNetworkProfile as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_network_profile::builders::CreateNetworkProfileInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl CreateNetworkProfileFluentBuilder {
         self.inner = self.inner.set_network_profile_name(input);
         self
     }
+    /// <p>The name of the network profile associated with a device.</p>
+    pub fn get_network_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_network_profile_name()
+    }
     /// <p>Detailed information about a device's network profile.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -143,6 +153,10 @@ impl CreateNetworkProfileFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>Detailed information about a device's network profile.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The SSID of the Wi-Fi network.</p>
     pub fn ssid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ssid(input.into());
@@ -152,6 +166,10 @@ impl CreateNetworkProfileFluentBuilder {
     pub fn set_ssid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ssid(input);
         self
+    }
+    /// <p>The SSID of the Wi-Fi network.</p>
+    pub fn get_ssid(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ssid()
     }
     /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
     pub fn security_type(mut self, input: crate::types::NetworkSecurityType) -> Self {
@@ -166,6 +184,10 @@ impl CreateNetworkProfileFluentBuilder {
         self.inner = self.inner.set_security_type(input);
         self
     }
+    /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
+    pub fn get_security_type(&self) -> &::std::option::Option<crate::types::NetworkSecurityType> {
+        self.inner.get_security_type()
+    }
     /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported.</p>
     pub fn eap_method(mut self, input: crate::types::NetworkEapMethod) -> Self {
         self.inner = self.inner.eap_method(input);
@@ -178,6 +200,10 @@ impl CreateNetworkProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_eap_method(input);
         self
+    }
+    /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported.</p>
+    pub fn get_eap_method(&self) -> &::std::option::Option<crate::types::NetworkEapMethod> {
+        self.inner.get_eap_method()
     }
     /// <p>The current password of the Wi-Fi network.</p>
     pub fn current_password(
@@ -195,6 +221,10 @@ impl CreateNetworkProfileFluentBuilder {
         self.inner = self.inner.set_current_password(input);
         self
     }
+    /// <p>The current password of the Wi-Fi network.</p>
+    pub fn get_current_password(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_current_password()
+    }
     /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
     pub fn next_password(
         mut self,
@@ -211,6 +241,10 @@ impl CreateNetworkProfileFluentBuilder {
         self.inner = self.inner.set_next_password(input);
         self
     }
+    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
+    pub fn get_next_password(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_password()
+    }
     /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
     pub fn certificate_authority_arn(
         mut self,
@@ -226,6 +260,10 @@ impl CreateNetworkProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_certificate_authority_arn(input);
         self
+    }
+    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
+    pub fn get_certificate_authority_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate_authority_arn()
     }
     /// Appends an item to `TrustAnchors`.
     ///
@@ -247,6 +285,12 @@ impl CreateNetworkProfileFluentBuilder {
         self.inner = self.inner.set_trust_anchors(input);
         self
     }
+    /// <p>The root certificates of your authentication server that is installed on your devices and used to trust your authentication server during EAP negotiation. </p>
+    pub fn get_trust_anchors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_trust_anchors()
+    }
     /// <p>A unique, user-specified identifier for the request that ensures idempotency.</p>
     pub fn client_request_token(
         mut self,
@@ -262,6 +306,10 @@ impl CreateNetworkProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>A unique, user-specified identifier for the request that ensures idempotency.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
     /// Appends an item to `Tags`.
     ///
@@ -279,5 +327,9 @@ impl CreateNetworkProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags to be added to the specified resource. Do not provide system tags. </p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

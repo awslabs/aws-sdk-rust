@@ -52,6 +52,11 @@ impl EventCategoryGroupBuilder {
         self.source_type = input;
         self
     }
+    /// <p> The type of DMS resource that generates events. </p>
+    /// <p>Valid values: replication-instance | replication-server | security-group | replication-task</p>
+    pub fn get_source_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_type
+    }
     /// Appends an item to `event_categories`.
     ///
     /// To override the contents of this collection use [`set_event_categories`](Self::set_event_categories).
@@ -73,6 +78,12 @@ impl EventCategoryGroupBuilder {
     ) -> Self {
         self.event_categories = input;
         self
+    }
+    /// <p> A list of event categories from a source type that you've chosen.</p>
+    pub fn get_event_categories(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.event_categories
     }
     /// Consumes the builder and constructs a [`EventCategoryGroup`](crate::types::EventCategoryGroup).
     pub fn build(self) -> crate::types::EventCategoryGroup {

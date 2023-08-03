@@ -56,6 +56,10 @@ impl S3BucketLogDestinationBuilder {
         self.kms_key_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services Key Management Service (KMS) key for encrypting audio log files stored in an S3 bucket.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of an Amazon S3 bucket where audio log files are stored.</p>
     pub fn s3_bucket_arn(
         mut self,
@@ -72,6 +76,10 @@ impl S3BucketLogDestinationBuilder {
         self.s3_bucket_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of an Amazon S3 bucket where audio log files are stored.</p>
+    pub fn get_s3_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_arn
+    }
     /// <p>The S3 prefix to assign to audio log files.</p>
     pub fn log_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_prefix = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl S3BucketLogDestinationBuilder {
     pub fn set_log_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_prefix = input;
         self
+    }
+    /// <p>The S3 prefix to assign to audio log files.</p>
+    pub fn get_log_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_prefix
     }
     /// Consumes the builder and constructs a [`S3BucketLogDestination`](crate::types::S3BucketLogDestination).
     pub fn build(self) -> crate::types::S3BucketLogDestination {

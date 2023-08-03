@@ -100,6 +100,10 @@ impl WafInvalidParameterExceptionBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The settings where the invalid parameter was found. </p>
     pub fn field(mut self, input: crate::types::ParameterExceptionField) -> Self {
         self.field = ::std::option::Option::Some(input);
@@ -113,6 +117,10 @@ impl WafInvalidParameterExceptionBuilder {
         self.field = input;
         self
     }
+    /// <p>The settings where the invalid parameter was found. </p>
+    pub fn get_field(&self) -> &::std::option::Option<crate::types::ParameterExceptionField> {
+        &self.field
+    }
     /// <p>The invalid parameter that resulted in the exception. </p>
     pub fn parameter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter = ::std::option::Option::Some(input.into());
@@ -123,6 +131,10 @@ impl WafInvalidParameterExceptionBuilder {
         self.parameter = input;
         self
     }
+    /// <p>The invalid parameter that resulted in the exception. </p>
+    pub fn get_parameter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter
+    }
     /// <p>Additional information about the exception.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
@@ -132,6 +144,10 @@ impl WafInvalidParameterExceptionBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>Additional information about the exception.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

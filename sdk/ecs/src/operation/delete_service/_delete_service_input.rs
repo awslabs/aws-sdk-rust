@@ -55,6 +55,10 @@ impl DeleteServiceInputBuilder {
         self.cluster = input;
         self
     }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to delete. If you do not specify a cluster, the default cluster is assumed.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster
+    }
     /// <p>The name of the service to delete.</p>
     pub fn service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl DeleteServiceInputBuilder {
         self.service = input;
         self
     }
+    /// <p>The name of the service to delete.</p>
+    pub fn get_service(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service
+    }
     /// <p>If <code>true</code>, allows you to delete a service even if it wasn't scaled down to zero tasks. It's only necessary to use this if the service uses the <code>REPLICA</code> scheduling strategy.</p>
     pub fn force(mut self, input: bool) -> Self {
         self.force = ::std::option::Option::Some(input);
@@ -74,6 +82,10 @@ impl DeleteServiceInputBuilder {
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force = input;
         self
+    }
+    /// <p>If <code>true</code>, allows you to delete a service even if it wasn't scaled down to zero tasks. It's only necessary to use this if the service uses the <code>REPLICA</code> scheduling strategy.</p>
+    pub fn get_force(&self) -> &::std::option::Option<bool> {
+        &self.force
     }
     /// Consumes the builder and constructs a [`DeleteServiceInput`](crate::operation::delete_service::DeleteServiceInput).
     pub fn build(

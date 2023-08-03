@@ -39,6 +39,12 @@ impl DescribeBuildFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeBuild as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_build::builders::DescribeBuildInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -120,5 +126,9 @@ impl DescribeBuildFluentBuilder {
     pub fn set_build_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_build_id(input);
         self
+    }
+    /// <p>A unique identifier for the build to retrieve properties for. You can use either the build ID or ARN value. </p>
+    pub fn get_build_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_build_id()
     }
 }

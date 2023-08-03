@@ -48,6 +48,10 @@ impl QueryExecutionContextBuilder {
         self.database = input;
         self
     }
+    /// <p>The name of the database used in the query execution. The database must exist in the catalog.</p>
+    pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database
+    }
     /// <p>The name of the data catalog used in the query execution.</p>
     pub fn catalog(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl QueryExecutionContextBuilder {
     pub fn set_catalog(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.catalog = input;
         self
+    }
+    /// <p>The name of the data catalog used in the query execution.</p>
+    pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog
     }
     /// Consumes the builder and constructs a [`QueryExecutionContext`](crate::types::QueryExecutionContext).
     pub fn build(self) -> crate::types::QueryExecutionContext {

@@ -85,6 +85,10 @@ impl ThreatIntelIndicatorBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of threat intelligence indicator.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ThreatIntelIndicatorType> {
+        &self.r#type
+    }
     /// <p>The value of a threat intelligence indicator.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -94,6 +98,10 @@ impl ThreatIntelIndicatorBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of a threat intelligence indicator.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// <p>The category of a threat intelligence indicator.</p>
     pub fn category(mut self, input: crate::types::ThreatIntelIndicatorCategory) -> Self {
@@ -107,6 +115,12 @@ impl ThreatIntelIndicatorBuilder {
     ) -> Self {
         self.category = input;
         self
+    }
+    /// <p>The category of a threat intelligence indicator.</p>
+    pub fn get_category(
+        &self,
+    ) -> &::std::option::Option<crate::types::ThreatIntelIndicatorCategory> {
+        &self.category
     }
     /// <p>Indicates when the most recent instance of a threat intelligence indicator was observed.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -126,6 +140,11 @@ impl ThreatIntelIndicatorBuilder {
         self.last_observed_at = input;
         self
     }
+    /// <p>Indicates when the most recent instance of a threat intelligence indicator was observed.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_last_observed_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_observed_at
+    }
     /// <p>The source of the threat intelligence indicator.</p>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source = ::std::option::Option::Some(input.into());
@@ -136,6 +155,10 @@ impl ThreatIntelIndicatorBuilder {
         self.source = input;
         self
     }
+    /// <p>The source of the threat intelligence indicator.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
+    }
     /// <p>The URL to the page or site where you can get more information about the threat intelligence indicator.</p>
     pub fn source_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_url = ::std::option::Option::Some(input.into());
@@ -145,6 +168,10 @@ impl ThreatIntelIndicatorBuilder {
     pub fn set_source_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_url = input;
         self
+    }
+    /// <p>The URL to the page or site where you can get more information about the threat intelligence indicator.</p>
+    pub fn get_source_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_url
     }
     /// Consumes the builder and constructs a [`ThreatIntelIndicator`](crate::types::ThreatIntelIndicator).
     pub fn build(self) -> crate::types::ThreatIntelIndicator {

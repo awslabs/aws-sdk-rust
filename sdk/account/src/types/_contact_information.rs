@@ -144,6 +144,10 @@ impl ContactInformationBuilder {
         self.full_name = input;
         self
     }
+    /// <p>The full name of the primary contact address.</p>
+    pub fn get_full_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.full_name
+    }
     /// <p>The first line of the primary contact address.</p>
     pub fn address_line1(
         mut self,
@@ -159,6 +163,10 @@ impl ContactInformationBuilder {
     ) -> Self {
         self.address_line1 = input;
         self
+    }
+    /// <p>The first line of the primary contact address.</p>
+    pub fn get_address_line1(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address_line1
     }
     /// <p>The second line of the primary contact address, if any.</p>
     pub fn address_line2(
@@ -176,6 +184,10 @@ impl ContactInformationBuilder {
         self.address_line2 = input;
         self
     }
+    /// <p>The second line of the primary contact address, if any.</p>
+    pub fn get_address_line2(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address_line2
+    }
     /// <p>The third line of the primary contact address, if any.</p>
     pub fn address_line3(
         mut self,
@@ -192,6 +204,10 @@ impl ContactInformationBuilder {
         self.address_line3 = input;
         self
     }
+    /// <p>The third line of the primary contact address, if any.</p>
+    pub fn get_address_line3(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address_line3
+    }
     /// <p>The city of the primary contact address.</p>
     pub fn city(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.city = ::std::option::Option::Some(input.into());
@@ -201,6 +217,10 @@ impl ContactInformationBuilder {
     pub fn set_city(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.city = input;
         self
+    }
+    /// <p>The city of the primary contact address.</p>
+    pub fn get_city(&self) -> &::std::option::Option<::std::string::String> {
+        &self.city
     }
     /// <p>The state or region of the primary contact address. This field is required in selected countries.</p>
     pub fn state_or_region(
@@ -218,6 +238,10 @@ impl ContactInformationBuilder {
         self.state_or_region = input;
         self
     }
+    /// <p>The state or region of the primary contact address. This field is required in selected countries.</p>
+    pub fn get_state_or_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_or_region
+    }
     /// <p>The district or county of the primary contact address, if any.</p>
     pub fn district_or_county(
         mut self,
@@ -234,6 +258,10 @@ impl ContactInformationBuilder {
         self.district_or_county = input;
         self
     }
+    /// <p>The district or county of the primary contact address, if any.</p>
+    pub fn get_district_or_county(&self) -> &::std::option::Option<::std::string::String> {
+        &self.district_or_county
+    }
     /// <p>The postal code of the primary contact address.</p>
     pub fn postal_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.postal_code = ::std::option::Option::Some(input.into());
@@ -243,6 +271,10 @@ impl ContactInformationBuilder {
     pub fn set_postal_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.postal_code = input;
         self
+    }
+    /// <p>The postal code of the primary contact address.</p>
+    pub fn get_postal_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.postal_code
     }
     /// <p>The ISO-3166 two-letter country code for the primary contact address.</p>
     pub fn country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -254,6 +286,10 @@ impl ContactInformationBuilder {
         self.country_code = input;
         self
     }
+    /// <p>The ISO-3166 two-letter country code for the primary contact address.</p>
+    pub fn get_country_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.country_code
+    }
     /// <p>The phone number of the primary contact information. The number will be validated and, in some countries, checked for activation.</p>
     pub fn phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number = ::std::option::Option::Some(input.into());
@@ -263,6 +299,10 @@ impl ContactInformationBuilder {
     pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.phone_number = input;
         self
+    }
+    /// <p>The phone number of the primary contact information. The number will be validated and, in some countries, checked for activation.</p>
+    pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number
     }
     /// <p>The name of the company associated with the primary contact information, if any.</p>
     pub fn company_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -274,6 +314,10 @@ impl ContactInformationBuilder {
         self.company_name = input;
         self
     }
+    /// <p>The name of the company associated with the primary contact information, if any.</p>
+    pub fn get_company_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.company_name
+    }
     /// <p>The URL of the website associated with the primary contact information, if any.</p>
     pub fn website_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.website_url = ::std::option::Option::Some(input.into());
@@ -283,6 +327,10 @@ impl ContactInformationBuilder {
     pub fn set_website_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.website_url = input;
         self
+    }
+    /// <p>The URL of the website associated with the primary contact information, if any.</p>
+    pub fn get_website_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.website_url
     }
     /// Consumes the builder and constructs a [`ContactInformation`](crate::types::ContactInformation).
     pub fn build(self) -> crate::types::ContactInformation {

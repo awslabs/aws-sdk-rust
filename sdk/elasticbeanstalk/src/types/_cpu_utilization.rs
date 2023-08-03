@@ -108,6 +108,10 @@ impl CpuUtilizationBuilder {
         self.user = input;
         self
     }
+    /// <p>Percentage of time that the CPU has spent in the <code>User</code> state over the last 10 seconds.</p>
+    pub fn get_user(&self) -> &::std::option::Option<f64> {
+        &self.user
+    }
     /// <p>Available on Linux environments only.</p>
     /// <p>Percentage of time that the CPU has spent in the <code>Nice</code> state over the last 10 seconds.</p>
     pub fn nice(mut self, input: f64) -> Self {
@@ -121,6 +125,11 @@ impl CpuUtilizationBuilder {
         self
     }
     /// <p>Available on Linux environments only.</p>
+    /// <p>Percentage of time that the CPU has spent in the <code>Nice</code> state over the last 10 seconds.</p>
+    pub fn get_nice(&self) -> &::std::option::Option<f64> {
+        &self.nice
+    }
+    /// <p>Available on Linux environments only.</p>
     /// <p>Percentage of time that the CPU has spent in the <code>System</code> state over the last 10 seconds.</p>
     pub fn system(mut self, input: f64) -> Self {
         self.system = ::std::option::Option::Some(input);
@@ -132,6 +141,11 @@ impl CpuUtilizationBuilder {
         self.system = input;
         self
     }
+    /// <p>Available on Linux environments only.</p>
+    /// <p>Percentage of time that the CPU has spent in the <code>System</code> state over the last 10 seconds.</p>
+    pub fn get_system(&self) -> &::std::option::Option<f64> {
+        &self.system
+    }
     /// <p>Percentage of time that the CPU has spent in the <code>Idle</code> state over the last 10 seconds.</p>
     pub fn idle(mut self, input: f64) -> Self {
         self.idle = ::std::option::Option::Some(input);
@@ -141,6 +155,10 @@ impl CpuUtilizationBuilder {
     pub fn set_idle(mut self, input: ::std::option::Option<f64>) -> Self {
         self.idle = input;
         self
+    }
+    /// <p>Percentage of time that the CPU has spent in the <code>Idle</code> state over the last 10 seconds.</p>
+    pub fn get_idle(&self) -> &::std::option::Option<f64> {
+        &self.idle
     }
     /// <p>Available on Linux environments only.</p>
     /// <p>Percentage of time that the CPU has spent in the <code>I/O Wait</code> state over the last 10 seconds.</p>
@@ -155,6 +173,11 @@ impl CpuUtilizationBuilder {
         self
     }
     /// <p>Available on Linux environments only.</p>
+    /// <p>Percentage of time that the CPU has spent in the <code>I/O Wait</code> state over the last 10 seconds.</p>
+    pub fn get_io_wait(&self) -> &::std::option::Option<f64> {
+        &self.io_wait
+    }
+    /// <p>Available on Linux environments only.</p>
     /// <p>Percentage of time that the CPU has spent in the <code>IRQ</code> state over the last 10 seconds.</p>
     pub fn irq(mut self, input: f64) -> Self {
         self.irq = ::std::option::Option::Some(input);
@@ -165,6 +188,11 @@ impl CpuUtilizationBuilder {
     pub fn set_irq(mut self, input: ::std::option::Option<f64>) -> Self {
         self.irq = input;
         self
+    }
+    /// <p>Available on Linux environments only.</p>
+    /// <p>Percentage of time that the CPU has spent in the <code>IRQ</code> state over the last 10 seconds.</p>
+    pub fn get_irq(&self) -> &::std::option::Option<f64> {
+        &self.irq
     }
     /// <p>Available on Linux environments only.</p>
     /// <p>Percentage of time that the CPU has spent in the <code>SoftIRQ</code> state over the last 10 seconds.</p>
@@ -178,6 +206,11 @@ impl CpuUtilizationBuilder {
         self.soft_irq = input;
         self
     }
+    /// <p>Available on Linux environments only.</p>
+    /// <p>Percentage of time that the CPU has spent in the <code>SoftIRQ</code> state over the last 10 seconds.</p>
+    pub fn get_soft_irq(&self) -> &::std::option::Option<f64> {
+        &self.soft_irq
+    }
     /// <p>Available on Windows environments only.</p>
     /// <p>Percentage of time that the CPU has spent in the <code>Privileged</code> state over the last 10 seconds.</p>
     pub fn privileged(mut self, input: f64) -> Self {
@@ -189,6 +222,11 @@ impl CpuUtilizationBuilder {
     pub fn set_privileged(mut self, input: ::std::option::Option<f64>) -> Self {
         self.privileged = input;
         self
+    }
+    /// <p>Available on Windows environments only.</p>
+    /// <p>Percentage of time that the CPU has spent in the <code>Privileged</code> state over the last 10 seconds.</p>
+    pub fn get_privileged(&self) -> &::std::option::Option<f64> {
+        &self.privileged
     }
     /// Consumes the builder and constructs a [`CpuUtilization`](crate::types::CpuUtilization).
     pub fn build(self) -> crate::types::CpuUtilization {

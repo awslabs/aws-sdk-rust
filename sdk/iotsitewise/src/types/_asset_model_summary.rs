@@ -90,6 +90,10 @@ impl AssetModelSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the asset model (used with IoT SiteWise APIs).</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -102,6 +106,11 @@ impl AssetModelSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the asset model.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -112,6 +121,10 @@ impl AssetModelSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the asset model.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The asset model description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -121,6 +134,10 @@ impl AssetModelSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The asset model description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The date the asset model was created, in Unix epoch time.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -135,6 +152,10 @@ impl AssetModelSummaryBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>The date the asset model was created, in Unix epoch time.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
+    }
     /// <p>The date the asset model was last updated, in Unix epoch time.</p>
     pub fn last_update_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_update_date = ::std::option::Option::Some(input);
@@ -148,6 +169,10 @@ impl AssetModelSummaryBuilder {
         self.last_update_date = input;
         self
     }
+    /// <p>The date the asset model was last updated, in Unix epoch time.</p>
+    pub fn get_last_update_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_update_date
+    }
     /// <p>The current status of the asset model.</p>
     pub fn status(mut self, input: crate::types::AssetModelStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -160,6 +185,10 @@ impl AssetModelSummaryBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the asset model.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AssetModelStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`AssetModelSummary`](crate::types::AssetModelSummary).
     pub fn build(self) -> crate::types::AssetModelSummary {

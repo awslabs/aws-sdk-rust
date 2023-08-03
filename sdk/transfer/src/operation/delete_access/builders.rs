@@ -36,6 +36,10 @@ impl DeleteAccessFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteAccess as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_access::builders::DeleteAccessInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl DeleteAccessFluentBuilder {
         self.inner = self.inner.set_server_id(input);
         self
     }
+    /// <p>A system-assigned unique identifier for a server that has this user assigned.</p>
+    pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_server_id()
+    }
     /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
     /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
     /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
@@ -133,5 +141,12 @@ impl DeleteAccessFluentBuilder {
     pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_external_id(input);
         self
+    }
+    /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
+    /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
+    /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
+    /// <p>The regular expression used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
+    pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_external_id()
     }
 }

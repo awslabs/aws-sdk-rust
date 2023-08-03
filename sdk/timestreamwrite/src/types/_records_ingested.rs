@@ -56,6 +56,10 @@ impl RecordsIngestedBuilder {
         self.total = input;
         self
     }
+    /// <p>Total count of successfully ingested records.</p>
+    pub fn get_total(&self) -> &::std::option::Option<i32> {
+        &self.total
+    }
     /// <p>Count of records ingested into the memory store.</p>
     pub fn memory_store(mut self, input: i32) -> Self {
         self.memory_store = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl RecordsIngestedBuilder {
         self.memory_store = input;
         self
     }
+    /// <p>Count of records ingested into the memory store.</p>
+    pub fn get_memory_store(&self) -> &::std::option::Option<i32> {
+        &self.memory_store
+    }
     /// <p>Count of records ingested into the magnetic store.</p>
     pub fn magnetic_store(mut self, input: i32) -> Self {
         self.magnetic_store = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl RecordsIngestedBuilder {
     pub fn set_magnetic_store(mut self, input: ::std::option::Option<i32>) -> Self {
         self.magnetic_store = input;
         self
+    }
+    /// <p>Count of records ingested into the magnetic store.</p>
+    pub fn get_magnetic_store(&self) -> &::std::option::Option<i32> {
+        &self.magnetic_store
     }
     /// Consumes the builder and constructs a [`RecordsIngested`](crate::types::RecordsIngested).
     pub fn build(self) -> crate::types::RecordsIngested {

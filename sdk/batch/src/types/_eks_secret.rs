@@ -48,6 +48,10 @@ impl EksSecretBuilder {
         self.secret_name = input;
         self
     }
+    /// <p>The name of the secret. The name must be allowed as a DNS subdomain name. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#dns-subdomain-names">DNS subdomain names</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn get_secret_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_name
+    }
     /// <p>Specifies whether the secret or the secret's keys must be defined.</p>
     pub fn optional(mut self, input: bool) -> Self {
         self.optional = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl EksSecretBuilder {
     pub fn set_optional(mut self, input: ::std::option::Option<bool>) -> Self {
         self.optional = input;
         self
+    }
+    /// <p>Specifies whether the secret or the secret's keys must be defined.</p>
+    pub fn get_optional(&self) -> &::std::option::Option<bool> {
+        &self.optional
     }
     /// Consumes the builder and constructs a [`EksSecret`](crate::types::EksSecret).
     pub fn build(self) -> crate::types::EksSecret {

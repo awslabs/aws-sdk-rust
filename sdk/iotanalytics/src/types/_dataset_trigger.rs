@@ -48,6 +48,10 @@ impl DatasetTriggerBuilder {
         self.schedule = input;
         self
     }
+    /// <p>The Schedule when the trigger is initiated.</p>
+    pub fn get_schedule(&self) -> &::std::option::Option<crate::types::Schedule> {
+        &self.schedule
+    }
     /// <p>The dataset whose content creation triggers the creation of this dataset's contents.</p>
     pub fn dataset(mut self, input: crate::types::TriggeringDataset) -> Self {
         self.dataset = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl DatasetTriggerBuilder {
     ) -> Self {
         self.dataset = input;
         self
+    }
+    /// <p>The dataset whose content creation triggers the creation of this dataset's contents.</p>
+    pub fn get_dataset(&self) -> &::std::option::Option<crate::types::TriggeringDataset> {
+        &self.dataset
     }
     /// Consumes the builder and constructs a [`DatasetTrigger`](crate::types::DatasetTrigger).
     pub fn build(self) -> crate::types::DatasetTrigger {

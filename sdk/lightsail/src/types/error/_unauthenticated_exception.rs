@@ -92,6 +92,10 @@ impl UnauthenticatedExceptionBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
+    }
+    #[allow(missing_docs)] // documentation missing in model
     pub fn docs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.docs = ::std::option::Option::Some(input.into());
         self
@@ -100,6 +104,10 @@ impl UnauthenticatedExceptionBuilder {
     pub fn set_docs(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.docs = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_docs(&self) -> &::std::option::Option<::std::string::String> {
+        &self.docs
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -112,6 +120,10 @@ impl UnauthenticatedExceptionBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
+    #[allow(missing_docs)] // documentation missing in model
     pub fn tip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tip = ::std::option::Option::Some(input.into());
         self
@@ -120,6 +132,10 @@ impl UnauthenticatedExceptionBuilder {
     pub fn set_tip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tip = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_tip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tip
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

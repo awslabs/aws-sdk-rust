@@ -69,6 +69,10 @@ impl SearchFacesInputBuilder {
         self.collection_id = input;
         self
     }
+    /// <p>ID of the collection the face belongs to.</p>
+    pub fn get_collection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collection_id
+    }
     /// <p>ID of a face to find matches for in the collection.</p>
     pub fn face_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.face_id = ::std::option::Option::Some(input.into());
@@ -78,6 +82,10 @@ impl SearchFacesInputBuilder {
     pub fn set_face_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.face_id = input;
         self
+    }
+    /// <p>ID of a face to find matches for in the collection.</p>
+    pub fn get_face_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.face_id
     }
     /// <p>Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.</p>
     pub fn max_faces(mut self, input: i32) -> Self {
@@ -89,6 +97,10 @@ impl SearchFacesInputBuilder {
         self.max_faces = input;
         self
     }
+    /// <p>Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.</p>
+    pub fn get_max_faces(&self) -> &::std::option::Option<i32> {
+        &self.max_faces
+    }
     /// <p>Optional value specifying the minimum confidence in the face match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%. </p>
     pub fn face_match_threshold(mut self, input: f32) -> Self {
         self.face_match_threshold = ::std::option::Option::Some(input);
@@ -98,6 +110,10 @@ impl SearchFacesInputBuilder {
     pub fn set_face_match_threshold(mut self, input: ::std::option::Option<f32>) -> Self {
         self.face_match_threshold = input;
         self
+    }
+    /// <p>Optional value specifying the minimum confidence in the face match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%. </p>
+    pub fn get_face_match_threshold(&self) -> &::std::option::Option<f32> {
+        &self.face_match_threshold
     }
     /// Consumes the builder and constructs a [`SearchFacesInput`](crate::operation::search_faces::SearchFacesInput).
     pub fn build(

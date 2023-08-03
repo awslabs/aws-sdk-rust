@@ -49,6 +49,10 @@ impl SearchExpressionBuilder {
         self.filters = input;
         self
     }
+    /// <p>The search expression filters.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
+    }
     /// Consumes the builder and constructs a [`SearchExpression`](crate::types::SearchExpression).
     pub fn build(self) -> crate::types::SearchExpression {
         crate::types::SearchExpression {

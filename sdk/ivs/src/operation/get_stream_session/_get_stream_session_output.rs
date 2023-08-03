@@ -50,6 +50,10 @@ impl GetStreamSessionOutputBuilder {
         self.stream_session = input;
         self
     }
+    /// <p>List of stream details.</p>
+    pub fn get_stream_session(&self) -> &::std::option::Option<crate::types::StreamSession> {
+        &self.stream_session
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

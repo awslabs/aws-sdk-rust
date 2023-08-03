@@ -82,6 +82,18 @@ impl OriginRequestPolicyQueryStringsConfigBuilder {
         self.query_string_behavior = input;
         self
     }
+    /// <p>Determines whether any URL query strings in viewer requests are included in requests that CloudFront sends to the origin. Valid values are:</p>
+    /// <ul>
+    /// <li> <p> <code>none</code> – No query strings in viewer requests are included in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any query strings that are listed in a <code>CachePolicy</code> <i>are</i> included in origin requests.</p> </li>
+    /// <li> <p> <code>whitelist</code> – Only the query strings in viewer requests that are listed in the <code>QueryStringNames</code> type are included in requests that CloudFront sends to the origin.</p> </li>
+    /// <li> <p> <code>all</code> – All query strings in viewer requests are included in requests that CloudFront sends to the origin.</p> </li>
+    /// <li> <p> <code>allExcept</code> – All query strings in viewer requests are included in requests that CloudFront sends to the origin, <i> <b>except</b> </i> for those listed in the <code>QueryStringNames</code> type, which are not included.</p> </li>
+    /// </ul>
+    pub fn get_query_string_behavior(
+        &self,
+    ) -> &::std::option::Option<crate::types::OriginRequestPolicyQueryStringBehavior> {
+        &self.query_string_behavior
+    }
     /// <p>Contains the specific query strings in viewer requests that either <i> <b>are</b> </i> or <i> <b>are not</b> </i> included in requests that CloudFront sends to the origin. The behavior depends on whether the <code>QueryStringBehavior</code> field in the <code>OriginRequestPolicyQueryStringsConfig</code> type is set to <code>whitelist</code> (the listed query strings <i> <b>are</b> </i> included) or <code>allExcept</code> (the listed query strings <i> <b>are not</b> </i> included, but all other query strings are).</p>
     pub fn query_strings(mut self, input: crate::types::QueryStringNames) -> Self {
         self.query_strings = ::std::option::Option::Some(input);
@@ -94,6 +106,10 @@ impl OriginRequestPolicyQueryStringsConfigBuilder {
     ) -> Self {
         self.query_strings = input;
         self
+    }
+    /// <p>Contains the specific query strings in viewer requests that either <i> <b>are</b> </i> or <i> <b>are not</b> </i> included in requests that CloudFront sends to the origin. The behavior depends on whether the <code>QueryStringBehavior</code> field in the <code>OriginRequestPolicyQueryStringsConfig</code> type is set to <code>whitelist</code> (the listed query strings <i> <b>are</b> </i> included) or <code>allExcept</code> (the listed query strings <i> <b>are not</b> </i> included, but all other query strings are).</p>
+    pub fn get_query_strings(&self) -> &::std::option::Option<crate::types::QueryStringNames> {
+        &self.query_strings
     }
     /// Consumes the builder and constructs a [`OriginRequestPolicyQueryStringsConfig`](crate::types::OriginRequestPolicyQueryStringsConfig).
     pub fn build(self) -> crate::types::OriginRequestPolicyQueryStringsConfig {

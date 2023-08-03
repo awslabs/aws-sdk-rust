@@ -43,6 +43,10 @@ impl ServiceSpecificationBuilder {
         self.ec2_specification = input;
         self
     }
+    /// <p>The Amazon EC2 hardware specifications that you want Amazon Web Services to provide recommendations for.</p>
+    pub fn get_ec2_specification(&self) -> &::std::option::Option<crate::types::Ec2Specification> {
+        &self.ec2_specification
+    }
     /// Consumes the builder and constructs a [`ServiceSpecification`](crate::types::ServiceSpecification).
     pub fn build(self) -> crate::types::ServiceSpecification {
         crate::types::ServiceSpecification {

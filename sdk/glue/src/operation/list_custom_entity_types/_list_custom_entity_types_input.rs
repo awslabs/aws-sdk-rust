@@ -65,6 +65,10 @@ impl ListCustomEntityTypesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A paginated token to offset the results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl ListCustomEntityTypesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -99,6 +107,14 @@ impl ListCustomEntityTypesInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of key-value pair tags.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`ListCustomEntityTypesInput`](crate::operation::list_custom_entity_types::ListCustomEntityTypesInput).
     pub fn build(

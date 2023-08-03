@@ -56,6 +56,10 @@ impl DescribeReservedNodesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `reserved_nodes`.
     ///
     /// To override the contents of this collection use [`set_reserved_nodes`](Self::set_reserved_nodes).
@@ -74,6 +78,12 @@ impl DescribeReservedNodesOutputBuilder {
     ) -> Self {
         self.reserved_nodes = input;
         self
+    }
+    /// <p>Returns information about reserved nodes for this account, or about a specified reserved node.</p>
+    pub fn get_reserved_nodes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedNode>> {
+        &self.reserved_nodes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

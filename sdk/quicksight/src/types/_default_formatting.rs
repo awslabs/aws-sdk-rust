@@ -53,6 +53,10 @@ impl DefaultFormattingBuilder {
         self.display_format = input;
         self
     }
+    /// <p>The display format. Valid values for this structure are <code>AUTO</code>, <code>PERCENT</code>, <code>CURRENCY</code>, <code>NUMBER</code>, <code>DATE</code>, and <code>STRING</code>.</p>
+    pub fn get_display_format(&self) -> &::std::option::Option<crate::types::DisplayFormat> {
+        &self.display_format
+    }
     /// <p>The additional options for display formatting.</p>
     pub fn display_format_options(mut self, input: crate::types::DisplayFormatOptions) -> Self {
         self.display_format_options = ::std::option::Option::Some(input);
@@ -65,6 +69,12 @@ impl DefaultFormattingBuilder {
     ) -> Self {
         self.display_format_options = input;
         self
+    }
+    /// <p>The additional options for display formatting.</p>
+    pub fn get_display_format_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::DisplayFormatOptions> {
+        &self.display_format_options
     }
     /// Consumes the builder and constructs a [`DefaultFormatting`](crate::types::DefaultFormatting).
     pub fn build(self) -> crate::types::DefaultFormatting {

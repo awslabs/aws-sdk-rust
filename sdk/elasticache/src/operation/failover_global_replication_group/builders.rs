@@ -36,6 +36,10 @@ impl FailoverGlobalReplicationGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the FailoverGlobalReplicationGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::failover_global_replication_group::builders::FailoverGlobalReplicationGroupInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl FailoverGlobalReplicationGroupFluentBuilder {
         self.inner = self.inner.set_global_replication_group_id(input);
         self
     }
+    /// <p>The name of the Global datastore</p>
+    pub fn get_global_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_global_replication_group_id()
+    }
     /// <p>The Amazon region of the primary cluster of the Global datastore</p>
     pub fn primary_region(
         mut self,
@@ -122,6 +130,10 @@ impl FailoverGlobalReplicationGroupFluentBuilder {
         self.inner = self.inner.set_primary_region(input);
         self
     }
+    /// <p>The Amazon region of the primary cluster of the Global datastore</p>
+    pub fn get_primary_region(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_primary_region()
+    }
     /// <p>The name of the primary replication group</p>
     pub fn primary_replication_group_id(
         mut self,
@@ -137,5 +149,11 @@ impl FailoverGlobalReplicationGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_primary_replication_group_id(input);
         self
+    }
+    /// <p>The name of the primary replication group</p>
+    pub fn get_primary_replication_group_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_primary_replication_group_id()
     }
 }

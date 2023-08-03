@@ -37,6 +37,12 @@ impl DeleteScheduledAuditFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteScheduledAudit as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_scheduled_audit::builders::DeleteScheduledAuditInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +138,9 @@ impl DeleteScheduledAuditFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_scheduled_audit_name(input);
         self
+    }
+    /// <p>The name of the scheduled audit you want to delete.</p>
+    pub fn get_scheduled_audit_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_scheduled_audit_name()
     }
 }

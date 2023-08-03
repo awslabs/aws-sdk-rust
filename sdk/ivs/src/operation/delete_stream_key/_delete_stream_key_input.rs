@@ -39,6 +39,10 @@ impl DeleteStreamKeyInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>ARN of the stream key to be deleted.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`DeleteStreamKeyInput`](crate::operation::delete_stream_key::DeleteStreamKeyInput).
     pub fn build(
         self,

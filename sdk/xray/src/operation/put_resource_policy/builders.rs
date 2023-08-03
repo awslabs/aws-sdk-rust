@@ -36,6 +36,12 @@ impl PutResourcePolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutResourcePolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_resource_policy::builders::PutResourcePolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl PutResourcePolicyFluentBuilder {
         self.inner = self.inner.set_policy_name(input);
         self
     }
+    /// <p>The name of the resource policy. Must be unique within a specific Amazon Web Services account.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_name()
+    }
     /// <p>The resource policy document, which can be up to 5kb in size.</p>
     pub fn policy_document(
         mut self,
@@ -141,6 +151,10 @@ impl PutResourcePolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_policy_document(input);
         self
+    }
+    /// <p>The resource policy document, which can be up to 5kb in size.</p>
+    pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_document()
     }
     /// <p>Specifies a specific policy revision, to ensure an atomic create operation. By default the resource policy is created if it does not exist, or updated with an incremented revision id. The revision id is unique to each policy in the account.</p>
     /// <p>If the policy revision id does not match the latest revision id, the operation will fail with an <code>InvalidPolicyRevisionIdException</code> exception. You can also provide a <code>PolicyRevisionId</code> of 0. In this case, the operation will fail with an <code>InvalidPolicyRevisionIdException</code> exception if a resource policy with the same name already exists. </p>
@@ -160,6 +174,11 @@ impl PutResourcePolicyFluentBuilder {
         self.inner = self.inner.set_policy_revision_id(input);
         self
     }
+    /// <p>Specifies a specific policy revision, to ensure an atomic create operation. By default the resource policy is created if it does not exist, or updated with an incremented revision id. The revision id is unique to each policy in the account.</p>
+    /// <p>If the policy revision id does not match the latest revision id, the operation will fail with an <code>InvalidPolicyRevisionIdException</code> exception. You can also provide a <code>PolicyRevisionId</code> of 0. In this case, the operation will fail with an <code>InvalidPolicyRevisionIdException</code> exception if a resource policy with the same name already exists. </p>
+    pub fn get_policy_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_revision_id()
+    }
     /// <p>A flag to indicate whether to bypass the resource policy lockout safety check.</p> <important>
     /// <p>Setting this value to true increases the risk that the policy becomes unmanageable. Do not set this value to true indiscriminately.</p>
     /// </important>
@@ -177,5 +196,13 @@ impl PutResourcePolicyFluentBuilder {
     pub fn set_bypass_policy_lockout_check(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_bypass_policy_lockout_check(input);
         self
+    }
+    /// <p>A flag to indicate whether to bypass the resource policy lockout safety check.</p> <important>
+    /// <p>Setting this value to true increases the risk that the policy becomes unmanageable. Do not set this value to true indiscriminately.</p>
+    /// </important>
+    /// <p>Use this parameter only when you include a policy in the request and you intend to prevent the principal that is making the request from making a subsequent <code>PutResourcePolicy</code> request.</p>
+    /// <p>The default value is false.</p>
+    pub fn get_bypass_policy_lockout_check(&self) -> &::std::option::Option<bool> {
+        self.inner.get_bypass_policy_lockout_check()
     }
 }

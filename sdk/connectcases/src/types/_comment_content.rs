@@ -48,6 +48,10 @@ impl CommentContentBuilder {
         self.body = input;
         self
     }
+    /// <p>Text in the body of a <code>Comment</code> on a case.</p>
+    pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.body
+    }
     /// <p>Type of the text in the box of a <code>Comment</code> on a case.</p>
     pub fn content_type(mut self, input: crate::types::CommentBodyTextType) -> Self {
         self.content_type = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl CommentContentBuilder {
     ) -> Self {
         self.content_type = input;
         self
+    }
+    /// <p>Type of the text in the box of a <code>Comment</code> on a case.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<crate::types::CommentBodyTextType> {
+        &self.content_type
     }
     /// Consumes the builder and constructs a [`CommentContent`](crate::types::CommentContent).
     pub fn build(self) -> crate::types::CommentContent {

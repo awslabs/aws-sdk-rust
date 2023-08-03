@@ -54,6 +54,10 @@ impl DocumentTextBuilder {
         self.text = input;
         self
     }
+    /// <p>Text in the document.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
+    }
     /// Appends an item to `highlights`.
     ///
     /// To override the contents of this collection use [`set_highlights`](Self::set_highlights).
@@ -72,6 +76,12 @@ impl DocumentTextBuilder {
     ) -> Self {
         self.highlights = input;
         self
+    }
+    /// <p>Highlights in the document text.</p>
+    pub fn get_highlights(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Highlight>> {
+        &self.highlights
     }
     /// Consumes the builder and constructs a [`DocumentText`](crate::types::DocumentText).
     pub fn build(self) -> crate::types::DocumentText {

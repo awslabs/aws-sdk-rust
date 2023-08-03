@@ -37,6 +37,10 @@ impl ListCoverageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListCoverage as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_coverage::builders::ListCoverageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +134,10 @@ impl ListCoverageFluentBuilder {
         self.inner = self.inner.set_detector_id(input);
         self
     }
+    /// <p>The unique ID of the detector whose coverage details you want to retrieve.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_id()
+    }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the NextToken value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -140,6 +148,10 @@ impl ListCoverageFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the NextToken value returned from the previous request to continue listing results after the first page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -149,6 +161,10 @@ impl ListCoverageFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>Represents the criteria used to filter the coverage details.</p>
     pub fn filter_criteria(mut self, input: crate::types::CoverageFilterCriteria) -> Self {
@@ -163,6 +179,12 @@ impl ListCoverageFluentBuilder {
         self.inner = self.inner.set_filter_criteria(input);
         self
     }
+    /// <p>Represents the criteria used to filter the coverage details.</p>
+    pub fn get_filter_criteria(
+        &self,
+    ) -> &::std::option::Option<crate::types::CoverageFilterCriteria> {
+        self.inner.get_filter_criteria()
+    }
     /// <p>Represents the criteria used to sort the coverage details.</p>
     pub fn sort_criteria(mut self, input: crate::types::CoverageSortCriteria) -> Self {
         self.inner = self.inner.sort_criteria(input);
@@ -175,5 +197,9 @@ impl ListCoverageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sort_criteria(input);
         self
+    }
+    /// <p>Represents the criteria used to sort the coverage details.</p>
+    pub fn get_sort_criteria(&self) -> &::std::option::Option<crate::types::CoverageSortCriteria> {
+        self.inner.get_sort_criteria()
     }
 }

@@ -75,6 +75,10 @@ impl ListCommandsInputBuilder {
         self.command_id = input;
         self
     }
+    /// <p>(Optional) If provided, lists only the specified command.</p>
+    pub fn get_command_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.command_id
+    }
     /// <p>(Optional) Lists commands issued against this managed node ID.</p> <note>
     /// <p>You can't specify a managed node ID in the same command that you specify <code>Status</code> = <code>Pending</code>. This is because the command hasn't reached the managed node yet.</p>
     /// </note>
@@ -89,6 +93,12 @@ impl ListCommandsInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>(Optional) Lists commands issued against this managed node ID.</p> <note>
+    /// <p>You can't specify a managed node ID in the same command that you specify <code>Status</code> = <code>Pending</code>. This is because the command hasn't reached the managed node yet.</p>
+    /// </note>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>(Optional) The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -99,6 +109,10 @@ impl ListCommandsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>(Optional) The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -108,6 +122,10 @@ impl ListCommandsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `filters`.
     ///
@@ -127,6 +145,12 @@ impl ListCommandsInputBuilder {
     ) -> Self {
         self.filters = input;
         self
+    }
+    /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results. </p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CommandFilter>> {
+        &self.filters
     }
     /// Consumes the builder and constructs a [`ListCommandsInput`](crate::operation::list_commands::ListCommandsInput).
     pub fn build(

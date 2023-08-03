@@ -36,6 +36,12 @@ impl ListTestSetRecordsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListTestSetRecords as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_test_set_records::builders::ListTestSetRecordsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListTestSetRecordsFluentBuilder {
         self.inner = self.inner.set_test_set_id(input);
         self
     }
+    /// <p>The identifier of the test set to list its test set records.</p>
+    pub fn get_test_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_test_set_id()
+    }
     /// <p>The maximum number of test set records to return in each page. If there are fewer records than the max page size, only the actual number of records are returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -147,6 +157,10 @@ impl ListTestSetRecordsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of test set records to return in each page. If there are fewer records than the max page size, only the actual number of records are returned.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>If the response from the ListTestSetRecords operation contains more results than specified in the maxResults parameter, a token is returned in the response. Use that token in the nextToken parameter to return the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -156,5 +170,9 @@ impl ListTestSetRecordsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>If the response from the ListTestSetRecords operation contains more results than specified in the maxResults parameter, a token is returned in the response. Use that token in the nextToken parameter to return the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

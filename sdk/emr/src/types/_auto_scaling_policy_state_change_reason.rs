@@ -53,6 +53,12 @@ impl AutoScalingPolicyStateChangeReasonBuilder {
         self.code = input;
         self
     }
+    /// <p>The code indicating the reason for the change in status.<code>USER_REQUEST</code> indicates that the scaling policy status was changed by a user. <code>PROVISION_FAILURE</code> indicates that the status change was because the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates an error.</p>
+    pub fn get_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoScalingPolicyStateChangeReasonCode> {
+        &self.code
+    }
     /// <p>A friendly, more verbose message that accompanies an automatic scaling policy state change.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -62,6 +68,10 @@ impl AutoScalingPolicyStateChangeReasonBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>A friendly, more verbose message that accompanies an automatic scaling policy state change.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`AutoScalingPolicyStateChangeReason`](crate::types::AutoScalingPolicyStateChangeReason).
     pub fn build(self) -> crate::types::AutoScalingPolicyStateChangeReason {

@@ -40,6 +40,10 @@ impl ToolchainSourceBuilder {
         self.s3 = input;
         self
     }
+    /// <p>The Amazon S3 bucket where the toolchain template file provided with the project request is stored.</p>
+    pub fn get_s3(&self) -> &::std::option::Option<crate::types::S3Location> {
+        &self.s3
+    }
     /// Consumes the builder and constructs a [`ToolchainSource`](crate::types::ToolchainSource).
     pub fn build(self) -> crate::types::ToolchainSource {
         crate::types::ToolchainSource { s3: self.s3 }

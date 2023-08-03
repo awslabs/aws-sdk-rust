@@ -49,6 +49,10 @@ impl DissociatePackageInputBuilder {
         self.package_id = input;
         self
     }
+    /// <p>Internal ID of the package to dissociate from the domain. Use <code>ListPackagesForDomain</code> to find this value.</p>
+    pub fn get_package_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_id
+    }
     /// <p>Name of the domain to dissociate the package from.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl DissociatePackageInputBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
+    }
+    /// <p>Name of the domain to dissociate the package from.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// Consumes the builder and constructs a [`DissociatePackageInput`](crate::operation::dissociate_package::DissociatePackageInput).
     pub fn build(

@@ -116,6 +116,10 @@ impl RegisterAppInstanceUserEndpointInputBuilder {
         self.app_instance_user_arn = input;
         self
     }
+    /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    pub fn get_app_instance_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_instance_user_arn
+    }
     /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -125,6 +129,10 @@ impl RegisterAppInstanceUserEndpointInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The type of the <code>AppInstanceUserEndpoint</code>. Supported types:</p>
     /// <ul>
@@ -151,6 +159,16 @@ impl RegisterAppInstanceUserEndpointInputBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of the <code>AppInstanceUserEndpoint</code>. Supported types:</p>
+    /// <ul>
+    /// <li> <p> <code>APNS</code>: The mobile notification service for an Apple device.</p> </li>
+    /// <li> <p> <code>APNS_SANDBOX</code>: The sandbox environment of the mobile notification service for an Apple device.</p> </li>
+    /// <li> <p> <code>GCM</code>: The mobile notification service for an Android device.</p> </li>
+    /// </ul>
+    /// <p>Populate the <code>ResourceArn</code> value of each type as <code>PinpointAppArn</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::AppInstanceUserEndpointType> {
+        &self.r#type
+    }
     /// <p>The ARN of the resource to which the endpoint belongs.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -160,6 +178,10 @@ impl RegisterAppInstanceUserEndpointInputBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p>The ARN of the resource to which the endpoint belongs.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// <p>The attributes of an <code>Endpoint</code>.</p>
     pub fn endpoint_attributes(mut self, input: crate::types::EndpointAttributes) -> Self {
@@ -173,6 +195,12 @@ impl RegisterAppInstanceUserEndpointInputBuilder {
     ) -> Self {
         self.endpoint_attributes = input;
         self
+    }
+    /// <p>The attributes of an <code>Endpoint</code>.</p>
+    pub fn get_endpoint_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::EndpointAttributes> {
+        &self.endpoint_attributes
     }
     /// <p>The unique ID assigned to the request. Use different tokens to register other endpoints.</p>
     pub fn client_request_token(
@@ -190,6 +218,10 @@ impl RegisterAppInstanceUserEndpointInputBuilder {
         self.client_request_token = input;
         self
     }
+    /// <p>The unique ID assigned to the request. Use different tokens to register other endpoints.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
+    }
     /// <p>Boolean that controls whether the AppInstanceUserEndpoint is opted in to receive messages. <code>ALL</code> indicates the endpoint receives all messages. <code>NONE</code> indicates the endpoint receives no messages.</p>
     pub fn allow_messages(mut self, input: crate::types::AllowMessages) -> Self {
         self.allow_messages = ::std::option::Option::Some(input);
@@ -202,6 +234,10 @@ impl RegisterAppInstanceUserEndpointInputBuilder {
     ) -> Self {
         self.allow_messages = input;
         self
+    }
+    /// <p>Boolean that controls whether the AppInstanceUserEndpoint is opted in to receive messages. <code>ALL</code> indicates the endpoint receives all messages. <code>NONE</code> indicates the endpoint receives no messages.</p>
+    pub fn get_allow_messages(&self) -> &::std::option::Option<crate::types::AllowMessages> {
+        &self.allow_messages
     }
     /// Consumes the builder and constructs a [`RegisterAppInstanceUserEndpointInput`](crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointInput).
     pub fn build(

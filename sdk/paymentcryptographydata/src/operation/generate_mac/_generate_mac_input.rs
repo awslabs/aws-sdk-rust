@@ -69,6 +69,10 @@ impl GenerateMacInputBuilder {
         self.key_identifier = input;
         self
     }
+    /// <p>The <code>keyARN</code> of the MAC generation encryption key.</p>
+    pub fn get_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_identifier
+    }
     /// <p>The data for which a MAC is under generation.</p>
     pub fn message_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_data = ::std::option::Option::Some(input.into());
@@ -78,6 +82,10 @@ impl GenerateMacInputBuilder {
     pub fn set_message_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_data = input;
         self
+    }
+    /// <p>The data for which a MAC is under generation.</p>
+    pub fn get_message_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_data
     }
     /// <p>The attributes and data values to use for MAC generation within Amazon Web Services Payment Cryptography.</p>
     pub fn generation_attributes(mut self, input: crate::types::MacAttributes) -> Self {
@@ -92,6 +100,10 @@ impl GenerateMacInputBuilder {
         self.generation_attributes = input;
         self
     }
+    /// <p>The attributes and data values to use for MAC generation within Amazon Web Services Payment Cryptography.</p>
+    pub fn get_generation_attributes(&self) -> &::std::option::Option<crate::types::MacAttributes> {
+        &self.generation_attributes
+    }
     /// <p>The length of a MAC under generation.</p>
     pub fn mac_length(mut self, input: i32) -> Self {
         self.mac_length = ::std::option::Option::Some(input);
@@ -101,6 +113,10 @@ impl GenerateMacInputBuilder {
     pub fn set_mac_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.mac_length = input;
         self
+    }
+    /// <p>The length of a MAC under generation.</p>
+    pub fn get_mac_length(&self) -> &::std::option::Option<i32> {
+        &self.mac_length
     }
     /// Consumes the builder and constructs a [`GenerateMacInput`](crate::operation::generate_mac::GenerateMacInput).
     pub fn build(

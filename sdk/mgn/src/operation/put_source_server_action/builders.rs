@@ -36,6 +36,13 @@ impl PutSourceServerActionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutSourceServerAction as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_source_server_action::builders::PutSourceServerActionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl PutSourceServerActionFluentBuilder {
         self.inner = self.inner.set_source_server_id(input);
         self
     }
+    /// <p>Source server ID.</p>
+    pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_server_id()
+    }
     /// <p>Source server post migration custom action name.</p>
     pub fn action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.action_name(input.into());
@@ -141,6 +152,10 @@ impl PutSourceServerActionFluentBuilder {
     pub fn set_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_action_name(input);
         self
+    }
+    /// <p>Source server post migration custom action name.</p>
+    pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_action_name()
     }
     /// <p>Source server post migration custom action document identifier.</p>
     pub fn document_identifier(
@@ -158,6 +173,10 @@ impl PutSourceServerActionFluentBuilder {
         self.inner = self.inner.set_document_identifier(input);
         self
     }
+    /// <p>Source server post migration custom action document identifier.</p>
+    pub fn get_document_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_document_identifier()
+    }
     /// <p>Source server post migration custom action order.</p>
     pub fn order(mut self, input: i32) -> Self {
         self.inner = self.inner.order(input);
@@ -168,6 +187,10 @@ impl PutSourceServerActionFluentBuilder {
         self.inner = self.inner.set_order(input);
         self
     }
+    /// <p>Source server post migration custom action order.</p>
+    pub fn get_order(&self) -> &::std::option::Option<i32> {
+        self.inner.get_order()
+    }
     /// <p>Source server post migration custom action ID.</p>
     pub fn action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.action_id(input.into());
@@ -177,6 +200,10 @@ impl PutSourceServerActionFluentBuilder {
     pub fn set_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_action_id(input);
         self
+    }
+    /// <p>Source server post migration custom action ID.</p>
+    pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_action_id()
     }
     /// <p>Source server post migration custom action document version.</p>
     pub fn document_version(
@@ -194,6 +221,10 @@ impl PutSourceServerActionFluentBuilder {
         self.inner = self.inner.set_document_version(input);
         self
     }
+    /// <p>Source server post migration custom action document version.</p>
+    pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_document_version()
+    }
     /// <p>Source server post migration custom action active status.</p>
     pub fn active(mut self, input: bool) -> Self {
         self.inner = self.inner.active(input);
@@ -203,6 +234,10 @@ impl PutSourceServerActionFluentBuilder {
     pub fn set_active(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_active(input);
         self
+    }
+    /// <p>Source server post migration custom action active status.</p>
+    pub fn get_active(&self) -> &::std::option::Option<bool> {
+        self.inner.get_active()
     }
     /// <p>Source server post migration custom action timeout in seconds.</p>
     pub fn timeout_seconds(mut self, input: i32) -> Self {
@@ -214,6 +249,10 @@ impl PutSourceServerActionFluentBuilder {
         self.inner = self.inner.set_timeout_seconds(input);
         self
     }
+    /// <p>Source server post migration custom action timeout in seconds.</p>
+    pub fn get_timeout_seconds(&self) -> &::std::option::Option<i32> {
+        self.inner.get_timeout_seconds()
+    }
     /// <p>Source server post migration custom action must succeed for cutover.</p>
     pub fn must_succeed_for_cutover(mut self, input: bool) -> Self {
         self.inner = self.inner.must_succeed_for_cutover(input);
@@ -223,6 +262,10 @@ impl PutSourceServerActionFluentBuilder {
     pub fn set_must_succeed_for_cutover(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_must_succeed_for_cutover(input);
         self
+    }
+    /// <p>Source server post migration custom action must succeed for cutover.</p>
+    pub fn get_must_succeed_for_cutover(&self) -> &::std::option::Option<bool> {
+        self.inner.get_must_succeed_for_cutover()
     }
     /// Adds a key-value pair to `parameters`.
     ///
@@ -250,6 +293,17 @@ impl PutSourceServerActionFluentBuilder {
         self.inner = self.inner.set_parameters(input);
         self
     }
+    /// <p>Source server post migration custom action parameters.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::vec::Vec<crate::types::SsmParameterStoreParameter>,
+        >,
+    > {
+        self.inner.get_parameters()
+    }
     /// Adds a key-value pair to `externalParameters`.
     ///
     /// To override the contents of this collection use [`set_external_parameters`](Self::set_external_parameters).
@@ -273,6 +327,14 @@ impl PutSourceServerActionFluentBuilder {
         self.inner = self.inner.set_external_parameters(input);
         self
     }
+    /// <p>Source server post migration custom action external parameters.</p>
+    pub fn get_external_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>,
+    > {
+        self.inner.get_external_parameters()
+    }
     /// <p>Source server post migration custom action description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -282,6 +344,10 @@ impl PutSourceServerActionFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>Source server post migration custom action description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>Source server post migration custom action category.</p>
     pub fn category(mut self, input: crate::types::ActionCategory) -> Self {
@@ -296,6 +362,10 @@ impl PutSourceServerActionFluentBuilder {
         self.inner = self.inner.set_category(input);
         self
     }
+    /// <p>Source server post migration custom action category.</p>
+    pub fn get_category(&self) -> &::std::option::Option<crate::types::ActionCategory> {
+        self.inner.get_category()
+    }
     /// <p>Source server post migration custom account ID.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
@@ -305,5 +375,9 @@ impl PutSourceServerActionFluentBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
+    }
+    /// <p>Source server post migration custom account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
     }
 }

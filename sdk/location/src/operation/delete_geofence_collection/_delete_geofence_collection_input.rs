@@ -47,6 +47,10 @@ impl DeleteGeofenceCollectionInputBuilder {
         self.collection_name = input;
         self
     }
+    /// <p>The name of the geofence collection to be deleted.</p>
+    pub fn get_collection_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collection_name
+    }
     /// Consumes the builder and constructs a [`DeleteGeofenceCollectionInput`](crate::operation::delete_geofence_collection::DeleteGeofenceCollectionInput).
     pub fn build(
         self,

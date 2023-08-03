@@ -96,6 +96,10 @@ impl EnvironmentSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the runtime environment.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) of a particular runtime environment.</p>
     pub fn environment_arn(
         mut self,
@@ -111,6 +115,10 @@ impl EnvironmentSummaryBuilder {
     ) -> Self {
         self.environment_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a particular runtime environment.</p>
+    pub fn get_environment_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_arn
     }
     /// <p>The unique identifier of a particular runtime environment.</p>
     pub fn environment_id(
@@ -128,6 +136,10 @@ impl EnvironmentSummaryBuilder {
         self.environment_id = input;
         self
     }
+    /// <p>The unique identifier of a particular runtime environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
+    }
     /// <p>The instance type of the runtime environment.</p>
     pub fn instance_type(
         mut self,
@@ -144,6 +156,10 @@ impl EnvironmentSummaryBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The instance type of the runtime environment.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
+    }
     /// <p>The status of the runtime environment</p>
     pub fn status(mut self, input: crate::types::EnvironmentLifecycle) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -157,6 +173,10 @@ impl EnvironmentSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the runtime environment</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::EnvironmentLifecycle> {
+        &self.status
+    }
     /// <p>The target platform for the runtime environment.</p>
     pub fn engine_type(mut self, input: crate::types::EngineType) -> Self {
         self.engine_type = ::std::option::Option::Some(input);
@@ -169,6 +189,10 @@ impl EnvironmentSummaryBuilder {
     ) -> Self {
         self.engine_type = input;
         self
+    }
+    /// <p>The target platform for the runtime environment.</p>
+    pub fn get_engine_type(&self) -> &::std::option::Option<crate::types::EngineType> {
+        &self.engine_type
     }
     /// <p>The version of the runtime engine.</p>
     pub fn engine_version(
@@ -186,6 +210,10 @@ impl EnvironmentSummaryBuilder {
         self.engine_version = input;
         self
     }
+    /// <p>The version of the runtime engine.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
+    }
     /// <p>The timestamp when the runtime environment was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -198,6 +226,10 @@ impl EnvironmentSummaryBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The timestamp when the runtime environment was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// Consumes the builder and constructs a [`EnvironmentSummary`](crate::types::EnvironmentSummary).
     pub fn build(self) -> crate::types::EnvironmentSummary {

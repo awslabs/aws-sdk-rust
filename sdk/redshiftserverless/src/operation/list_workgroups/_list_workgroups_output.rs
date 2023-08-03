@@ -54,6 +54,10 @@ impl ListWorkgroupsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p> If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, make the call again using the returned token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `workgroups`.
     ///
     /// To override the contents of this collection use [`set_workgroups`](Self::set_workgroups).
@@ -72,6 +76,12 @@ impl ListWorkgroupsOutputBuilder {
     ) -> Self {
         self.workgroups = input;
         self
+    }
+    /// <p>The returned array of workgroups.</p>
+    pub fn get_workgroups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Workgroup>> {
+        &self.workgroups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

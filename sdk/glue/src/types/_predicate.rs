@@ -48,6 +48,10 @@ impl PredicateBuilder {
         self.logical = input;
         self
     }
+    /// <p>An optional field if only one condition is listed. If multiple conditions are listed, then this field is required.</p>
+    pub fn get_logical(&self) -> &::std::option::Option<crate::types::Logical> {
+        &self.logical
+    }
     /// Appends an item to `conditions`.
     ///
     /// To override the contents of this collection use [`set_conditions`](Self::set_conditions).
@@ -66,6 +70,12 @@ impl PredicateBuilder {
     ) -> Self {
         self.conditions = input;
         self
+    }
+    /// <p>A list of the conditions that determine when the trigger will fire.</p>
+    pub fn get_conditions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Condition>> {
+        &self.conditions
     }
     /// Consumes the builder and constructs a [`Predicate`](crate::types::Predicate).
     pub fn build(self) -> crate::types::Predicate {

@@ -78,6 +78,10 @@ impl ClientVpcConnectionBuilder {
         self.authentication = input;
         self
     }
+    /// <p>Information about the auth scheme of Vpc Connection.</p>
+    pub fn get_authentication(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication
+    }
     /// <p>Creation time of the Vpc Connection.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -91,6 +95,10 @@ impl ClientVpcConnectionBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>Creation time of the Vpc Connection.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>State of the Vpc Connection.</p>
     pub fn state(mut self, input: crate::types::VpcConnectionState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -103,6 +111,10 @@ impl ClientVpcConnectionBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>State of the Vpc Connection.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::VpcConnectionState> {
+        &self.state
     }
     /// <p>The ARN that identifies the Vpc Connection.</p>
     pub fn vpc_connection_arn(
@@ -120,6 +132,10 @@ impl ClientVpcConnectionBuilder {
         self.vpc_connection_arn = input;
         self
     }
+    /// <p>The ARN that identifies the Vpc Connection.</p>
+    pub fn get_vpc_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_connection_arn
+    }
     /// <p>The Owner of the Vpc Connection.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner = ::std::option::Option::Some(input.into());
@@ -129,6 +145,10 @@ impl ClientVpcConnectionBuilder {
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner = input;
         self
+    }
+    /// <p>The Owner of the Vpc Connection.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
     }
     /// Consumes the builder and constructs a [`ClientVpcConnection`](crate::types::ClientVpcConnection).
     pub fn build(self) -> crate::types::ClientVpcConnection {

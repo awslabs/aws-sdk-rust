@@ -74,6 +74,10 @@ impl ProfileTemplateBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The name of the profile template.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// Appends an item to `template_questions`.
     ///
     /// To override the contents of this collection use [`set_template_questions`](Self::set_template_questions).
@@ -93,6 +97,12 @@ impl ProfileTemplateBuilder {
         self.template_questions = input;
         self
     }
+    /// <p>Profile template questions.</p>
+    pub fn get_template_questions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfileTemplateQuestion>> {
+        &self.template_questions
+    }
     /// <p>The date and time recorded.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -107,6 +117,10 @@ impl ProfileTemplateBuilder {
         self
     }
     /// <p>The date and time recorded.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
+    /// <p>The date and time recorded.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
@@ -118,6 +132,10 @@ impl ProfileTemplateBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// <p>The date and time recorded.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     /// Consumes the builder and constructs a [`ProfileTemplate`](crate::types::ProfileTemplate).
     pub fn build(self) -> crate::types::ProfileTemplate {

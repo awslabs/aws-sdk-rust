@@ -48,6 +48,10 @@ impl EdgeModelSummaryBuilder {
         self.model_name = input;
         self
     }
+    /// <p>The name of the model.</p>
+    pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_name
+    }
     /// <p>The version model.</p>
     pub fn model_version(
         mut self,
@@ -63,6 +67,10 @@ impl EdgeModelSummaryBuilder {
     ) -> Self {
         self.model_version = input;
         self
+    }
+    /// <p>The version model.</p>
+    pub fn get_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_version
     }
     /// Consumes the builder and constructs a [`EdgeModelSummary`](crate::types::EdgeModelSummary).
     pub fn build(self) -> crate::types::EdgeModelSummary {

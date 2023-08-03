@@ -40,6 +40,10 @@ impl DescribeComponentInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`DescribeComponentInput`](crate::operation::describe_component::DescribeComponentInput).
     pub fn build(
         self,

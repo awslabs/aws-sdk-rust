@@ -43,6 +43,10 @@ impl AutomatedDiscoveryInformationBuilder {
         self.last_run_time = input;
         self
     }
+    /// <p>Time that automated discovery last ran.</p>
+    pub fn get_last_run_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_run_time
+    }
     /// Consumes the builder and constructs a [`AutomatedDiscoveryInformation`](crate::types::AutomatedDiscoveryInformation).
     pub fn build(self) -> crate::types::AutomatedDiscoveryInformation {
         crate::types::AutomatedDiscoveryInformation {

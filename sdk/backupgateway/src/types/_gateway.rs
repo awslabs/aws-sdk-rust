@@ -72,6 +72,10 @@ impl GatewayBuilder {
         self.gateway_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
+    }
     /// <p>The display name of the gateway.</p>
     pub fn gateway_display_name(
         mut self,
@@ -88,6 +92,10 @@ impl GatewayBuilder {
         self.gateway_display_name = input;
         self
     }
+    /// <p>The display name of the gateway.</p>
+    pub fn get_gateway_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_display_name
+    }
     /// <p>The type of the gateway.</p>
     pub fn gateway_type(mut self, input: crate::types::GatewayType) -> Self {
         self.gateway_type = ::std::option::Option::Some(input);
@@ -100,6 +108,10 @@ impl GatewayBuilder {
     ) -> Self {
         self.gateway_type = input;
         self
+    }
+    /// <p>The type of the gateway.</p>
+    pub fn get_gateway_type(&self) -> &::std::option::Option<crate::types::GatewayType> {
+        &self.gateway_type
     }
     /// <p>The hypervisor ID of the gateway.</p>
     pub fn hypervisor_id(
@@ -117,6 +129,10 @@ impl GatewayBuilder {
         self.hypervisor_id = input;
         self
     }
+    /// <p>The hypervisor ID of the gateway.</p>
+    pub fn get_hypervisor_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hypervisor_id
+    }
     /// <p>The last time Backup gateway communicated with the gateway, in Unix format and UTC time.</p>
     pub fn last_seen_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_seen_time = ::std::option::Option::Some(input);
@@ -129,6 +145,10 @@ impl GatewayBuilder {
     ) -> Self {
         self.last_seen_time = input;
         self
+    }
+    /// <p>The last time Backup gateway communicated with the gateway, in Unix format and UTC time.</p>
+    pub fn get_last_seen_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_seen_time
     }
     /// Consumes the builder and constructs a [`Gateway`](crate::types::Gateway).
     pub fn build(self) -> crate::types::Gateway {

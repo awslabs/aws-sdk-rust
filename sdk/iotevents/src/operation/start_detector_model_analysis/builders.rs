@@ -36,6 +36,10 @@ impl StartDetectorModelAnalysisFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartDetectorModelAnalysis as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_detector_model_analysis::builders::StartDetectorModelAnalysisInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +135,11 @@ impl StartDetectorModelAnalysisFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_detector_model_definition(input);
         self
+    }
+    /// <p>Information that defines how a detector operates.</p>
+    pub fn get_detector_model_definition(
+        &self,
+    ) -> &::std::option::Option<crate::types::DetectorModelDefinition> {
+        self.inner.get_detector_model_definition()
     }
 }

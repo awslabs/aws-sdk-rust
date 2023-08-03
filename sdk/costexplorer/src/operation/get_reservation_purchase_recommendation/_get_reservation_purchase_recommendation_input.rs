@@ -187,6 +187,10 @@ impl GetReservationPurchaseRecommendationInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The account ID that's associated with the recommendation. </p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The specific service that you want recommendations for.</p>
     pub fn service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service = ::std::option::Option::Some(input.into());
@@ -196,6 +200,10 @@ impl GetReservationPurchaseRecommendationInputBuilder {
     pub fn set_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service = input;
         self
+    }
+    /// <p>The specific service that you want recommendations for.</p>
+    pub fn get_service(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service
     }
     /// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p>
     /// <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
@@ -279,6 +287,46 @@ impl GetReservationPurchaseRecommendationInputBuilder {
         self.filter = input;
         self
     }
+    /// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p>
+    /// <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
+    /// <p>There are two patterns:</p>
+    /// <ul>
+    /// <li> <p>Simple dimension values.</p>
+    /// <ul>
+    /// <li> <p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p>
+    /// <ul>
+    /// <li> <p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p> </li>
+    /// <li> <p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p> </li>
+    /// <li> <p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p>
+    /// <ul>
+    /// <li> <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p> </li>
+    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] } }</code> </p> </li>
+    /// <li> <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p>
+    /// <ul>
+    /// <li> <p>For example, you can filter for linked account names that start with "a".</p> </li>
+    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code> </p> </li>
+    /// </ul> </li>
+    /// </ul> </li>
+    /// <li> <p>Compound <code>Expression</code> types with logical operations.</p>
+    /// <ul>
+    /// <li> <p>You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter by more advanced options.</p> </li>
+    /// <li> <p>For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.</p> </li>
+    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> </li>
+    /// </ul> <note>
+    /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error: <code> { "And": [ ... ], "Dimensions": { "Key": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p>
+    /// <p>The following is an example of the corresponding error message: <code>"Expression has more than one roots. Only one root operator is allowed for each expression: And, Or, Not, Dimensions, Tags, CostCategories"</code> </p>
+    /// </note> </li>
+    /// </ul> <note>
+    /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
+    /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
+    /// </note>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::Expression> {
+        &self.filter
+    }
     /// <p>The account scope that you want your recommendations for. Amazon Web Services calculates recommendations including the management account and member accounts if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.</p>
     pub fn account_scope(mut self, input: crate::types::AccountScope) -> Self {
         self.account_scope = ::std::option::Option::Some(input);
@@ -291,6 +339,10 @@ impl GetReservationPurchaseRecommendationInputBuilder {
     ) -> Self {
         self.account_scope = input;
         self
+    }
+    /// <p>The account scope that you want your recommendations for. Amazon Web Services calculates recommendations including the management account and member accounts if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.</p>
+    pub fn get_account_scope(&self) -> &::std::option::Option<crate::types::AccountScope> {
+        &self.account_scope
     }
     /// <p>The number of previous days that you want Amazon Web Services to consider when it calculates your recommendations.</p>
     pub fn lookback_period_in_days(mut self, input: crate::types::LookbackPeriodInDays) -> Self {
@@ -305,6 +357,12 @@ impl GetReservationPurchaseRecommendationInputBuilder {
         self.lookback_period_in_days = input;
         self
     }
+    /// <p>The number of previous days that you want Amazon Web Services to consider when it calculates your recommendations.</p>
+    pub fn get_lookback_period_in_days(
+        &self,
+    ) -> &::std::option::Option<crate::types::LookbackPeriodInDays> {
+        &self.lookback_period_in_days
+    }
     /// <p>The reservation term that you want recommendations for.</p>
     pub fn term_in_years(mut self, input: crate::types::TermInYears) -> Self {
         self.term_in_years = ::std::option::Option::Some(input);
@@ -317,6 +375,10 @@ impl GetReservationPurchaseRecommendationInputBuilder {
     ) -> Self {
         self.term_in_years = input;
         self
+    }
+    /// <p>The reservation term that you want recommendations for.</p>
+    pub fn get_term_in_years(&self) -> &::std::option::Option<crate::types::TermInYears> {
+        &self.term_in_years
     }
     /// <p>The reservation purchase option that you want recommendations for.</p>
     pub fn payment_option(mut self, input: crate::types::PaymentOption) -> Self {
@@ -331,6 +393,10 @@ impl GetReservationPurchaseRecommendationInputBuilder {
         self.payment_option = input;
         self
     }
+    /// <p>The reservation purchase option that you want recommendations for.</p>
+    pub fn get_payment_option(&self) -> &::std::option::Option<crate::types::PaymentOption> {
+        &self.payment_option
+    }
     /// <p>The hardware specifications for the service instances that you want recommendations for, such as standard or convertible Amazon EC2 instances.</p>
     pub fn service_specification(mut self, input: crate::types::ServiceSpecification) -> Self {
         self.service_specification = ::std::option::Option::Some(input);
@@ -344,6 +410,12 @@ impl GetReservationPurchaseRecommendationInputBuilder {
         self.service_specification = input;
         self
     }
+    /// <p>The hardware specifications for the service instances that you want recommendations for, such as standard or convertible Amazon EC2 instances.</p>
+    pub fn get_service_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServiceSpecification> {
+        &self.service_specification
+    }
     /// <p>The number of recommendations that you want returned in a single response object.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.page_size = ::std::option::Option::Some(input);
@@ -353,6 +425,10 @@ impl GetReservationPurchaseRecommendationInputBuilder {
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.page_size = input;
         self
+    }
+    /// <p>The number of recommendations that you want returned in a single response object.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        &self.page_size
     }
     /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
     pub fn next_page_token(
@@ -369,6 +445,10 @@ impl GetReservationPurchaseRecommendationInputBuilder {
     ) -> Self {
         self.next_page_token = input;
         self
+    }
+    /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
+    pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_page_token
     }
     /// Consumes the builder and constructs a [`GetReservationPurchaseRecommendationInput`](crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -38,6 +38,10 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RestoreDBClusterToPointInTime as a reference.
+    pub fn as_input(&self) -> &crate::operation::restore_db_cluster_to_point_in_time::builders::RestoreDbClusterToPointInTimeInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -120,6 +124,16 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
         self.inner = self.inner.set_db_cluster_identifier(input);
         self
     }
+    /// <p>The name of the new DB cluster to be created.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// </ul>
+    pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_cluster_identifier()
+    }
     /// <p>The type of restore to be performed. You can specify one of the following values:</p>
     /// <ul>
     /// <li> <p> <code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.</p> </li>
@@ -139,6 +153,15 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     pub fn set_restore_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_restore_type(input);
         self
+    }
+    /// <p>The type of restore to be performed. You can specify one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.</p> </li>
+    /// <li> <p> <code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.</p> </li>
+    /// </ul>
+    /// <p>If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy of the source DB cluster.</p>
+    pub fn get_restore_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_restore_type()
     }
     /// <p>The identifier of the source DB cluster from which to restore.</p>
     /// <p>Constraints:</p>
@@ -163,6 +186,16 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source_db_cluster_identifier(input);
         self
+    }
+    /// <p>The identifier of the source DB cluster from which to restore.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
+    /// </ul>
+    pub fn get_source_db_cluster_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_db_cluster_identifier()
     }
     /// <p>The date and time to restore the DB cluster to.</p>
     /// <p>Valid Values: Value must be a time in Universal Coordinated Time (UTC) format</p>
@@ -195,6 +228,19 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
         self.inner = self.inner.set_restore_to_time(input);
         self
     }
+    /// <p>The date and time to restore the DB cluster to.</p>
+    /// <p>Valid Values: Value must be a time in Universal Coordinated Time (UTC) format</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be before the latest restorable time for the DB instance</p> </li>
+    /// <li> <p>Must be specified if <code>UseLatestRestorableTime</code> parameter is not provided</p> </li>
+    /// <li> <p>Cannot be specified if <code>UseLatestRestorableTime</code> parameter is true</p> </li>
+    /// <li> <p>Cannot be specified if <code>RestoreType</code> parameter is <code>copy-on-write</code> </p> </li>
+    /// </ul>
+    /// <p>Example: <code>2015-03-07T23:45:00Z</code> </p>
+    pub fn get_restore_to_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_restore_to_time()
+    }
     /// <p>A value that is set to <code>true</code> to restore the DB cluster to the latest restorable backup time, and <code>false</code> otherwise.</p>
     /// <p>Default: <code>false</code> </p>
     /// <p>Constraints: Cannot be specified if <code>RestoreToTime</code> parameter is provided.</p>
@@ -209,6 +255,12 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
         self.inner = self.inner.set_use_latest_restorable_time(input);
         self
     }
+    /// <p>A value that is set to <code>true</code> to restore the DB cluster to the latest restorable backup time, and <code>false</code> otherwise.</p>
+    /// <p>Default: <code>false</code> </p>
+    /// <p>Constraints: Cannot be specified if <code>RestoreToTime</code> parameter is provided.</p>
+    pub fn get_use_latest_restorable_time(&self) -> &::std::option::Option<bool> {
+        self.inner.get_use_latest_restorable_time()
+    }
     /// <p>The port number on which the new DB cluster accepts connections.</p>
     /// <p>Constraints: Value must be <code>1150-65535</code> </p>
     /// <p>Default: The same port as the original DB cluster.</p>
@@ -222,6 +274,12 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_port(input);
         self
+    }
+    /// <p>The port number on which the new DB cluster accepts connections.</p>
+    /// <p>Constraints: Value must be <code>1150-65535</code> </p>
+    /// <p>Default: The same port as the original DB cluster.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        self.inner.get_port()
     }
     /// <p>The DB subnet group name to use for the new DB cluster.</p>
     /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
@@ -243,6 +301,12 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
         self.inner = self.inner.set_db_subnet_group_name(input);
         self
     }
+    /// <p>The DB subnet group name to use for the new DB cluster.</p>
+    /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
+    /// <p>Example: <code>mySubnetgroup</code> </p>
+    pub fn get_db_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_subnet_group_name()
+    }
     /// <p> <i>(Not supported by Neptune)</i> </p>
     pub fn option_group_name(
         mut self,
@@ -258,6 +322,10 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_option_group_name(input);
         self
+    }
+    /// <p> <i>(Not supported by Neptune)</i> </p>
+    pub fn get_option_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_option_group_name()
     }
     /// Appends an item to `VpcSecurityGroupIds`.
     ///
@@ -279,6 +347,12 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
         self.inner = self.inner.set_vpc_security_group_ids(input);
         self
     }
+    /// <p>A list of VPC security groups that the new DB cluster belongs to.</p>
+    pub fn get_vpc_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_vpc_security_group_ids()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -295,6 +369,10 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags to be applied to the restored DB cluster.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
     /// <p>The Amazon KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.</p>
     /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
@@ -322,6 +400,18 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }
+    /// <p>The Amazon KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.</p>
+    /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
+    /// <p>You can restore to a new DB cluster and encrypt the new DB cluster with a KMS key that is different than the KMS key used to encrypt the source DB cluster. The new DB cluster is encrypted with the KMS key identified by the <code>KmsKeyId</code> parameter.</p>
+    /// <p>If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following will occur:</p>
+    /// <ul>
+    /// <li> <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the source DB cluster.</p> </li>
+    /// <li> <p>If the DB cluster is not encrypted, then the restored DB cluster is not encrypted.</p> </li>
+    /// </ul>
+    /// <p>If <code>DBClusterIdentifier</code> refers to a DB cluster that is not encrypted, then the restore request is rejected.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_id()
+    }
     /// <p>True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and otherwise false.</p>
     /// <p>Default: <code>false</code> </p>
     pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
@@ -336,6 +426,11 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_enable_iam_database_authentication(input);
         self
+    }
+    /// <p>True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and otherwise false.</p>
+    /// <p>Default: <code>false</code> </p>
+    pub fn get_enable_iam_database_authentication(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_iam_database_authentication()
     }
     /// Appends an item to `EnableCloudwatchLogsExports`.
     ///
@@ -356,6 +451,12 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_enable_cloudwatch_logs_exports(input);
         self
+    }
+    /// <p>The list of logs that the restored DB cluster is to export to CloudWatch Logs.</p>
+    pub fn get_enable_cloudwatch_logs_exports(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_enable_cloudwatch_logs_exports()
     }
     /// <p>The name of the DB cluster parameter group to associate with the new DB cluster.</p>
     /// <p>Constraints:</p>
@@ -381,6 +482,16 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
         self.inner = self.inner.set_db_cluster_parameter_group_name(input);
         self
     }
+    /// <p>The name of the DB cluster parameter group to associate with the new DB cluster.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
+    /// </ul>
+    pub fn get_db_cluster_parameter_group_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_cluster_parameter_group_name()
+    }
     /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled. </p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
         self.inner = self.inner.deletion_protection(input);
@@ -390,6 +501,10 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_deletion_protection(input);
         self
+    }
+    /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled. </p>
+    pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
+        self.inner.get_deletion_protection()
     }
     /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
@@ -408,5 +523,12 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_serverless_v2_scaling_configuration(input);
         self
+    }
+    /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+    pub fn get_serverless_v2_scaling_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServerlessV2ScalingConfiguration> {
+        self.inner.get_serverless_v2_scaling_configuration()
     }
 }

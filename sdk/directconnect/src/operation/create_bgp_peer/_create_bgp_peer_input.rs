@@ -53,6 +53,10 @@ impl CreateBgpPeerInputBuilder {
         self.virtual_interface_id = input;
         self
     }
+    /// <p>The ID of the virtual interface.</p>
+    pub fn get_virtual_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_interface_id
+    }
     /// <p>Information about the BGP peer.</p>
     pub fn new_bgp_peer(mut self, input: crate::types::NewBgpPeer) -> Self {
         self.new_bgp_peer = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl CreateBgpPeerInputBuilder {
     ) -> Self {
         self.new_bgp_peer = input;
         self
+    }
+    /// <p>Information about the BGP peer.</p>
+    pub fn get_new_bgp_peer(&self) -> &::std::option::Option<crate::types::NewBgpPeer> {
+        &self.new_bgp_peer
     }
     /// Consumes the builder and constructs a [`CreateBgpPeerInput`](crate::operation::create_bgp_peer::CreateBgpPeerInput).
     pub fn build(

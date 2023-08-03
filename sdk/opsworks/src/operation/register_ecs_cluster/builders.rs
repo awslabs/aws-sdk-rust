@@ -37,6 +37,12 @@ impl RegisterEcsClusterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RegisterEcsCluster as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::register_ecs_cluster::builders::RegisterEcsClusterInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl RegisterEcsClusterFluentBuilder {
         self.inner = self.inner.set_ecs_cluster_arn(input);
         self
     }
+    /// <p>The cluster's ARN.</p>
+    pub fn get_ecs_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ecs_cluster_arn()
+    }
     /// <p>The stack ID.</p>
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_id(input.into());
@@ -142,5 +152,9 @@ impl RegisterEcsClusterFluentBuilder {
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_id(input);
         self
+    }
+    /// <p>The stack ID.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_id()
     }
 }

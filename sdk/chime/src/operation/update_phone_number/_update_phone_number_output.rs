@@ -50,6 +50,10 @@ impl UpdatePhoneNumberOutputBuilder {
         self.phone_number = input;
         self
     }
+    /// <p>The updated phone number details.</p>
+    pub fn get_phone_number(&self) -> &::std::option::Option<crate::types::PhoneNumber> {
+        &self.phone_number
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

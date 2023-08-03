@@ -39,6 +39,12 @@ impl CreateFunctionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateFunction as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_function::builders::CreateFunctionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +127,10 @@ impl CreateFunctionFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>A name to identify the function.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>Configuration information about the function, including an optional comment and the function's runtime.</p>
     pub fn function_config(mut self, input: crate::types::FunctionConfig) -> Self {
         self.inner = self.inner.function_config(input);
@@ -134,6 +144,10 @@ impl CreateFunctionFluentBuilder {
         self.inner = self.inner.set_function_config(input);
         self
     }
+    /// <p>Configuration information about the function, including an optional comment and the function's runtime.</p>
+    pub fn get_function_config(&self) -> &::std::option::Option<crate::types::FunctionConfig> {
+        self.inner.get_function_config()
+    }
     /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn function_code(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.function_code(input);
@@ -146,5 +160,9 @@ impl CreateFunctionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_function_code(input);
         self
+    }
+    /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn get_function_code(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        self.inner.get_function_code()
     }
 }

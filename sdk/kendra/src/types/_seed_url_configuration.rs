@@ -74,6 +74,11 @@ impl SeedUrlConfigurationBuilder {
         self.seed_urls = input;
         self
     }
+    /// <p>The list of seed or starting point URLs of the websites you want to crawl.</p>
+    /// <p>The list can include a maximum of 100 seed URLs.</p>
+    pub fn get_seed_urls(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.seed_urls
+    }
     /// <p>You can choose one of the following modes:</p>
     /// <ul>
     /// <li> <p> <code>HOST_ONLY</code>—crawl only the website host names. For example, if the seed URL is "abc.example.com", then only URLs with host name "abc.example.com" are crawled.</p> </li>
@@ -98,6 +103,16 @@ impl SeedUrlConfigurationBuilder {
     ) -> Self {
         self.web_crawler_mode = input;
         self
+    }
+    /// <p>You can choose one of the following modes:</p>
+    /// <ul>
+    /// <li> <p> <code>HOST_ONLY</code>—crawl only the website host names. For example, if the seed URL is "abc.example.com", then only URLs with host name "abc.example.com" are crawled.</p> </li>
+    /// <li> <p> <code>SUBDOMAINS</code>—crawl the website host names with subdomains. For example, if the seed URL is "abc.example.com", then "a.abc.example.com" and "b.abc.example.com" are also crawled.</p> </li>
+    /// <li> <p> <code>EVERYTHING</code>—crawl the website host names with subdomains and other domains that the web pages link to.</p> </li>
+    /// </ul>
+    /// <p>The default mode is set to <code>HOST_ONLY</code>.</p>
+    pub fn get_web_crawler_mode(&self) -> &::std::option::Option<crate::types::WebCrawlerMode> {
+        &self.web_crawler_mode
     }
     /// Consumes the builder and constructs a [`SeedUrlConfiguration`](crate::types::SeedUrlConfiguration).
     pub fn build(self) -> crate::types::SeedUrlConfiguration {

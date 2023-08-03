@@ -36,6 +36,13 @@ impl DeregisterTransitGatewayFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeregisterTransitGateway as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::deregister_transit_gateway::builders::DeregisterTransitGatewayInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl DeregisterTransitGatewayFluentBuilder {
         self.inner = self.inner.set_global_network_id(input);
         self
     }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_global_network_id()
+    }
     /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
     pub fn transit_gateway_arn(
         mut self,
@@ -147,5 +158,9 @@ impl DeregisterTransitGatewayFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_transit_gateway_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
+    pub fn get_transit_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_transit_gateway_arn()
     }
 }

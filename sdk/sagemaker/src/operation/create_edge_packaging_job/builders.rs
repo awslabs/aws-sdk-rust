@@ -37,6 +37,13 @@ impl CreateEdgePackagingJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateEdgePackagingJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_edge_packaging_job::builders::CreateEdgePackagingJobInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl CreateEdgePackagingJobFluentBuilder {
         self.inner = self.inner.set_edge_packaging_job_name(input);
         self
     }
+    /// <p>The name of the edge packaging job.</p>
+    pub fn get_edge_packaging_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_edge_packaging_job_name()
+    }
     /// <p>The name of the SageMaker Neo compilation job that will be used to locate model artifacts for packaging.</p>
     pub fn compilation_job_name(
         mut self,
@@ -149,6 +160,10 @@ impl CreateEdgePackagingJobFluentBuilder {
         self.inner = self.inner.set_compilation_job_name(input);
         self
     }
+    /// <p>The name of the SageMaker Neo compilation job that will be used to locate model artifacts for packaging.</p>
+    pub fn get_compilation_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_compilation_job_name()
+    }
     /// <p>The name of the model.</p>
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_name(input.into());
@@ -158,6 +173,10 @@ impl CreateEdgePackagingJobFluentBuilder {
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_name(input);
         self
+    }
+    /// <p>The name of the model.</p>
+    pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_model_name()
     }
     /// <p>The version of the model.</p>
     pub fn model_version(
@@ -175,6 +194,10 @@ impl CreateEdgePackagingJobFluentBuilder {
         self.inner = self.inner.set_model_version(input);
         self
     }
+    /// <p>The version of the model.</p>
+    pub fn get_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_model_version()
+    }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to download and upload the model, and to contact SageMaker Neo.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -184,6 +207,10 @@ impl CreateEdgePackagingJobFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to download and upload the model, and to contact SageMaker Neo.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// <p>Provides information about the output location for the packaged model.</p>
     pub fn output_config(mut self, input: crate::types::EdgeOutputConfig) -> Self {
@@ -198,6 +225,10 @@ impl CreateEdgePackagingJobFluentBuilder {
         self.inner = self.inner.set_output_config(input);
         self
     }
+    /// <p>Provides information about the output location for the packaged model.</p>
+    pub fn get_output_config(&self) -> &::std::option::Option<crate::types::EdgeOutputConfig> {
+        self.inner.get_output_config()
+    }
     /// <p>The Amazon Web Services KMS key to use when encrypting the EBS volume the edge packaging job runs on.</p>
     pub fn resource_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_key(input.into());
@@ -207,6 +238,10 @@ impl CreateEdgePackagingJobFluentBuilder {
     pub fn set_resource_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_key(input);
         self
+    }
+    /// <p>The Amazon Web Services KMS key to use when encrypting the EBS volume the edge packaging job runs on.</p>
+    pub fn get_resource_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_key()
     }
     /// Appends an item to `Tags`.
     ///
@@ -224,5 +259,9 @@ impl CreateEdgePackagingJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Creates tags for the packaging job.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

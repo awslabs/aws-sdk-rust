@@ -49,6 +49,12 @@ impl GetPublicKeyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetPublicKey as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_public_key::builders::GetPublicKeyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -149,6 +155,19 @@ impl GetPublicKeyFluentBuilder {
         self.inner = self.inner.set_key_id(input);
         self
     }
+    /// <p>Identifies the asymmetric KMS key that includes the public key.</p>
+    /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
+    /// <p>For example:</p>
+    /// <ul>
+    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+    /// <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>
+    /// <li> <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code> </p> </li>
+    /// </ul>
+    /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>. To get the alias name and alias ARN, use <code>ListAliases</code>.</p>
+    pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key_id()
+    }
     /// Appends an item to `GrantTokens`.
     ///
     /// To override the contents of this collection use [`set_grant_tokens`](Self::set_grant_tokens).
@@ -167,5 +186,12 @@ impl GetPublicKeyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_grant_tokens(input);
         self
+    }
+    /// <p>A list of grant tokens.</p>
+    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn get_grant_tokens(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_grant_tokens()
     }
 }

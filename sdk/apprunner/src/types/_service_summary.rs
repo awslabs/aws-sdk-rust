@@ -97,6 +97,10 @@ impl ServiceSummaryBuilder {
         self.service_name = input;
         self
     }
+    /// <p>The customer-provided service name.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
+    }
     /// <p>An ID that App Runner generated for this service. It's unique within the Amazon Web Services Region.</p>
     pub fn service_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_id = ::std::option::Option::Some(input.into());
@@ -106,6 +110,10 @@ impl ServiceSummaryBuilder {
     pub fn set_service_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_id = input;
         self
+    }
+    /// <p>An ID that App Runner generated for this service. It's unique within the Amazon Web Services Region.</p>
+    pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_id
     }
     /// <p>The Amazon Resource Name (ARN) of this service.</p>
     pub fn service_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -117,6 +125,10 @@ impl ServiceSummaryBuilder {
         self.service_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of this service.</p>
+    pub fn get_service_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_arn
+    }
     /// <p>A subdomain URL that App Runner generated for this service. You can use this URL to access your service web application.</p>
     pub fn service_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_url = ::std::option::Option::Some(input.into());
@@ -126,6 +138,10 @@ impl ServiceSummaryBuilder {
     pub fn set_service_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_url = input;
         self
+    }
+    /// <p>A subdomain URL that App Runner generated for this service. You can use this URL to access your service web application.</p>
+    pub fn get_service_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_url
     }
     /// <p>The time when the App Runner service was created. It's in the Unix time stamp format.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -140,6 +156,10 @@ impl ServiceSummaryBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The time when the App Runner service was created. It's in the Unix time stamp format.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The time when the App Runner service was last updated. It's in theUnix time stamp format.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -152,6 +172,10 @@ impl ServiceSummaryBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// <p>The time when the App Runner service was last updated. It's in theUnix time stamp format.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     /// <p>The current state of the App Runner service. These particular values mean the following.</p>
     /// <ul>
@@ -170,6 +194,14 @@ impl ServiceSummaryBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ServiceStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current state of the App Runner service. These particular values mean the following.</p>
+    /// <ul>
+    /// <li> <p> <code>CREATE_FAILED</code> – The service failed to create. Read the failure events and logs, change any parameters that need to be fixed, and retry the call to create the service.</p> <p>The failed service isn't usable, and still counts towards your service quota. When you're done analyzing the failure, delete the service.</p> </li>
+    /// <li> <p> <code>DELETE_FAILED</code> – The service failed to delete and can't be successfully recovered. Retry the service deletion call to ensure that all related resources are removed.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ServiceStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`ServiceSummary`](crate::types::ServiceSummary).
     pub fn build(self) -> crate::types::ServiceSummary {

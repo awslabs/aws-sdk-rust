@@ -56,6 +56,10 @@ impl S3LogDeliveryDescriptionBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The name of the S3 bucket that is the destination for log delivery.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>Specifies whether connector logs get sent to the specified Amazon S3 destination.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl S3LogDeliveryDescriptionBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Specifies whether connector logs get sent to the specified Amazon S3 destination.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>The S3 prefix that is the destination for log delivery.</p>
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl S3LogDeliveryDescriptionBuilder {
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix = input;
         self
+    }
+    /// <p>The S3 prefix that is the destination for log delivery.</p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
     }
     /// Consumes the builder and constructs a [`S3LogDeliveryDescription`](crate::types::S3LogDeliveryDescription).
     pub fn build(self) -> crate::types::S3LogDeliveryDescription {

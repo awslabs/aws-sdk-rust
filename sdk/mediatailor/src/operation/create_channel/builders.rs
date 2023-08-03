@@ -36,6 +36,12 @@ impl CreateChannelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateChannel as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_channel::builders::CreateChannelInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl CreateChannelFluentBuilder {
         self.inner = self.inner.set_channel_name(input);
         self
     }
+    /// <p>The name of the channel.</p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_name()
+    }
     /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
     pub fn filler_slate(mut self, input: crate::types::SlateSource) -> Self {
         self.inner = self.inner.filler_slate(input);
@@ -130,6 +140,10 @@ impl CreateChannelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_filler_slate(input);
         self
+    }
+    /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
+    pub fn get_filler_slate(&self) -> &::std::option::Option<crate::types::SlateSource> {
+        self.inner.get_filler_slate()
     }
     /// Appends an item to `Outputs`.
     ///
@@ -148,6 +162,12 @@ impl CreateChannelFluentBuilder {
         self.inner = self.inner.set_outputs(input);
         self
     }
+    /// <p>The channel's output properties.</p>
+    pub fn get_outputs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RequestOutputItem>> {
+        self.inner.get_outputs()
+    }
     /// <p>The type of playback mode to use for this channel.</p>
     /// <p> <code>LINEAR</code> - The programs in the schedule play once back-to-back in the schedule.</p>
     /// <p> <code>LOOP</code> - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
@@ -164,6 +184,12 @@ impl CreateChannelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_playback_mode(input);
         self
+    }
+    /// <p>The type of playback mode to use for this channel.</p>
+    /// <p> <code>LINEAR</code> - The programs in the schedule play once back-to-back in the schedule.</p>
+    /// <p> <code>LOOP</code> - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
+    pub fn get_playback_mode(&self) -> &::std::option::Option<crate::types::PlaybackMode> {
+        self.inner.get_playback_mode()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -188,6 +214,14 @@ impl CreateChannelFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>The tier of the channel.</p>
     pub fn tier(mut self, input: crate::types::Tier) -> Self {
         self.inner = self.inner.tier(input);
@@ -197,5 +231,9 @@ impl CreateChannelFluentBuilder {
     pub fn set_tier(mut self, input: ::std::option::Option<crate::types::Tier>) -> Self {
         self.inner = self.inner.set_tier(input);
         self
+    }
+    /// <p>The tier of the channel.</p>
+    pub fn get_tier(&self) -> &::std::option::Option<crate::types::Tier> {
+        self.inner.get_tier()
     }
 }

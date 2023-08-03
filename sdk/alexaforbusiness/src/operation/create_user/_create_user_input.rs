@@ -79,6 +79,10 @@ impl CreateUserInputBuilder {
         self.user_id = input;
         self
     }
+    /// <p>The ARN for the user.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
+    }
     /// <p>The first name for the user.</p>
     pub fn first_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.first_name = ::std::option::Option::Some(input.into());
@@ -88,6 +92,10 @@ impl CreateUserInputBuilder {
     pub fn set_first_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.first_name = input;
         self
+    }
+    /// <p>The first name for the user.</p>
+    pub fn get_first_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.first_name
     }
     /// <p>The last name for the user.</p>
     pub fn last_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -99,6 +107,10 @@ impl CreateUserInputBuilder {
         self.last_name = input;
         self
     }
+    /// <p>The last name for the user.</p>
+    pub fn get_last_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_name
+    }
     /// <p>The email address for the user.</p>
     pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email = ::std::option::Option::Some(input.into());
@@ -108,6 +120,10 @@ impl CreateUserInputBuilder {
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email = input;
         self
+    }
+    /// <p>The email address for the user.</p>
+    pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email
     }
     /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
     pub fn client_request_token(
@@ -124,6 +140,10 @@ impl CreateUserInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Appends an item to `tags`.
     ///
@@ -143,6 +163,10 @@ impl CreateUserInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags for the user.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateUserInput`](crate::operation::create_user::CreateUserInput).
     pub fn build(

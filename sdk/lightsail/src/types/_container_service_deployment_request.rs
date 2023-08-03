@@ -72,6 +72,14 @@ impl ContainerServiceDeploymentRequestBuilder {
         self.containers = input;
         self
     }
+    /// <p>An object that describes the configuration for the containers of the deployment.</p>
+    pub fn get_containers(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::Container>,
+    > {
+        &self.containers
+    }
     /// <p>An object that describes the endpoint of the deployment.</p>
     pub fn public_endpoint(mut self, input: crate::types::EndpointRequest) -> Self {
         self.public_endpoint = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl ContainerServiceDeploymentRequestBuilder {
     ) -> Self {
         self.public_endpoint = input;
         self
+    }
+    /// <p>An object that describes the endpoint of the deployment.</p>
+    pub fn get_public_endpoint(&self) -> &::std::option::Option<crate::types::EndpointRequest> {
+        &self.public_endpoint
     }
     /// Consumes the builder and constructs a [`ContainerServiceDeploymentRequest`](crate::types::ContainerServiceDeploymentRequest).
     pub fn build(self) -> crate::types::ContainerServiceDeploymentRequest {

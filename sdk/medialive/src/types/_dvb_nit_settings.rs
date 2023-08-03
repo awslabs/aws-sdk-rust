@@ -56,6 +56,10 @@ impl DvbNitSettingsBuilder {
         self.network_id = input;
         self
     }
+    /// The numeric value placed in the Network Information Table (NIT).
+    pub fn get_network_id(&self) -> &::std::option::Option<i32> {
+        &self.network_id
+    }
     /// The network name text placed in the networkNameDescriptor inside the Network Information Table. Maximum length is 256 characters.
     pub fn network_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_name = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl DvbNitSettingsBuilder {
         self.network_name = input;
         self
     }
+    /// The network name text placed in the networkNameDescriptor inside the Network Information Table. Maximum length is 256 characters.
+    pub fn get_network_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_name
+    }
     /// The number of milliseconds between instances of this table in the output transport stream.
     pub fn rep_interval(mut self, input: i32) -> Self {
         self.rep_interval = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl DvbNitSettingsBuilder {
     pub fn set_rep_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.rep_interval = input;
         self
+    }
+    /// The number of milliseconds between instances of this table in the output transport stream.
+    pub fn get_rep_interval(&self) -> &::std::option::Option<i32> {
+        &self.rep_interval
     }
     /// Consumes the builder and constructs a [`DvbNitSettings`](crate::types::DvbNitSettings).
     pub fn build(self) -> crate::types::DvbNitSettings {

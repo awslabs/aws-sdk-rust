@@ -54,6 +54,10 @@ impl MetricDimensionBuilder {
         self.comparison_operator = input;
         self
     }
+    /// <p>The operator to use when comparing metric values. Valid values are: GREATER_THAN, LESS_THAN, GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, and EQUAL.</p>
+    pub fn get_comparison_operator(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comparison_operator
+    }
     /// <p>The value to compare.</p>
     pub fn value(mut self, input: f64) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl MetricDimensionBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value to compare.</p>
+    pub fn get_value(&self) -> &::std::option::Option<f64> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`MetricDimension`](crate::types::MetricDimension).
     pub fn build(self) -> crate::types::MetricDimension {

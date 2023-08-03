@@ -104,6 +104,10 @@ impl ActivityBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The activity type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ActivityType> {
+        &self.r#type
+    }
     /// <p>The timestamp when the action was performed.</p>
     pub fn time_stamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.time_stamp = ::std::option::Option::Some(input);
@@ -117,6 +121,10 @@ impl ActivityBuilder {
         self.time_stamp = input;
         self
     }
+    /// <p>The timestamp when the action was performed.</p>
+    pub fn get_time_stamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.time_stamp
+    }
     /// <p>Indicates whether an activity is indirect or direct. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>
     pub fn is_indirect_activity(mut self, input: bool) -> Self {
         self.is_indirect_activity = ::std::option::Option::Some(input);
@@ -126,6 +134,10 @@ impl ActivityBuilder {
     pub fn set_is_indirect_activity(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_indirect_activity = input;
         self
+    }
+    /// <p>Indicates whether an activity is indirect or direct. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>
+    pub fn get_is_indirect_activity(&self) -> &::std::option::Option<bool> {
+        &self.is_indirect_activity
     }
     /// <p>The ID of the organization.</p>
     pub fn organization_id(
@@ -143,6 +155,10 @@ impl ActivityBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The ID of the organization.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>The user who performed the action.</p>
     pub fn initiator(mut self, input: crate::types::UserMetadata) -> Self {
         self.initiator = ::std::option::Option::Some(input);
@@ -155,6 +171,10 @@ impl ActivityBuilder {
     ) -> Self {
         self.initiator = input;
         self
+    }
+    /// <p>The user who performed the action.</p>
+    pub fn get_initiator(&self) -> &::std::option::Option<crate::types::UserMetadata> {
+        &self.initiator
     }
     /// <p>The list of users or groups impacted by this action. This is an optional field and is filled for the following sharing activities: DOCUMENT_SHARED, DOCUMENT_SHARED, DOCUMENT_UNSHARED, FOLDER_SHARED, FOLDER_UNSHARED.</p>
     pub fn participants(mut self, input: crate::types::Participants) -> Self {
@@ -169,6 +189,10 @@ impl ActivityBuilder {
         self.participants = input;
         self
     }
+    /// <p>The list of users or groups impacted by this action. This is an optional field and is filled for the following sharing activities: DOCUMENT_SHARED, DOCUMENT_SHARED, DOCUMENT_UNSHARED, FOLDER_SHARED, FOLDER_UNSHARED.</p>
+    pub fn get_participants(&self) -> &::std::option::Option<crate::types::Participants> {
+        &self.participants
+    }
     /// <p>The metadata of the resource involved in the user action.</p>
     pub fn resource_metadata(mut self, input: crate::types::ResourceMetadata) -> Self {
         self.resource_metadata = ::std::option::Option::Some(input);
@@ -181,6 +205,10 @@ impl ActivityBuilder {
     ) -> Self {
         self.resource_metadata = input;
         self
+    }
+    /// <p>The metadata of the resource involved in the user action.</p>
+    pub fn get_resource_metadata(&self) -> &::std::option::Option<crate::types::ResourceMetadata> {
+        &self.resource_metadata
     }
     /// <p>The original parent of the resource. This is an optional field and is filled for move activities.</p>
     pub fn original_parent(mut self, input: crate::types::ResourceMetadata) -> Self {
@@ -195,6 +223,10 @@ impl ActivityBuilder {
         self.original_parent = input;
         self
     }
+    /// <p>The original parent of the resource. This is an optional field and is filled for move activities.</p>
+    pub fn get_original_parent(&self) -> &::std::option::Option<crate::types::ResourceMetadata> {
+        &self.original_parent
+    }
     /// <p>Metadata of the commenting activity. This is an optional field and is filled for commenting activities.</p>
     pub fn comment_metadata(mut self, input: crate::types::CommentMetadata) -> Self {
         self.comment_metadata = ::std::option::Option::Some(input);
@@ -207,6 +239,10 @@ impl ActivityBuilder {
     ) -> Self {
         self.comment_metadata = input;
         self
+    }
+    /// <p>Metadata of the commenting activity. This is an optional field and is filled for commenting activities.</p>
+    pub fn get_comment_metadata(&self) -> &::std::option::Option<crate::types::CommentMetadata> {
+        &self.comment_metadata
     }
     /// Consumes the builder and constructs a [`Activity`](crate::types::Activity).
     pub fn build(self) -> crate::types::Activity {

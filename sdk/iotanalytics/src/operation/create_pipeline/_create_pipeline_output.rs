@@ -60,6 +60,10 @@ impl CreatePipelineOutputBuilder {
         self.pipeline_name = input;
         self
     }
+    /// <p>The name of the pipeline.</p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_name
+    }
     /// <p>The ARN of the pipeline.</p>
     pub fn pipeline_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_arn = ::std::option::Option::Some(input.into());
@@ -69,6 +73,10 @@ impl CreatePipelineOutputBuilder {
     pub fn set_pipeline_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_arn = input;
         self
+    }
+    /// <p>The ARN of the pipeline.</p>
+    pub fn get_pipeline_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -36,6 +36,12 @@ impl CreateResourceGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateResourceGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_resource_group::builders::CreateResourceGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,5 +140,12 @@ impl CreateResourceGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_group_tags(input);
         self
+    }
+    /// <p>A collection of keys and an array of possible values, '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
+    /// <p>For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.</p>
+    pub fn get_resource_group_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceGroupTag>> {
+        self.inner.get_resource_group_tags()
     }
 }

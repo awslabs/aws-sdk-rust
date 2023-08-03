@@ -72,6 +72,10 @@ impl ListStudioComponentsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The max number of results to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl ListStudioComponentsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `states`.
     ///
@@ -101,6 +109,12 @@ impl ListStudioComponentsInputBuilder {
         self.states = input;
         self
     }
+    /// <p>Filters the request to studio components that are in one of the given states. </p>
+    pub fn get_states(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StudioComponentState>> {
+        &self.states
+    }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
@@ -110,6 +124,10 @@ impl ListStudioComponentsInputBuilder {
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.studio_id = input;
         self
+    }
+    /// <p>The studio ID. </p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_id
     }
     /// Appends an item to `types`.
     ///
@@ -129,6 +147,12 @@ impl ListStudioComponentsInputBuilder {
     ) -> Self {
         self.types = input;
         self
+    }
+    /// <p>Filters the request to studio components that are of one of the given types.</p>
+    pub fn get_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StudioComponentType>> {
+        &self.types
     }
     /// Consumes the builder and constructs a [`ListStudioComponentsInput`](crate::operation::list_studio_components::ListStudioComponentsInput).
     pub fn build(

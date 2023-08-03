@@ -71,6 +71,10 @@ impl WordCloudChartConfigurationBuilder {
         self.field_wells = input;
         self
     }
+    /// <p>The field wells of the visual.</p>
+    pub fn get_field_wells(&self) -> &::std::option::Option<crate::types::WordCloudFieldWells> {
+        &self.field_wells
+    }
     /// <p>The sort configuration of a word cloud visual.</p>
     pub fn sort_configuration(mut self, input: crate::types::WordCloudSortConfiguration) -> Self {
         self.sort_configuration = ::std::option::Option::Some(input);
@@ -83,6 +87,12 @@ impl WordCloudChartConfigurationBuilder {
     ) -> Self {
         self.sort_configuration = input;
         self
+    }
+    /// <p>The sort configuration of a word cloud visual.</p>
+    pub fn get_sort_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::WordCloudSortConfiguration> {
+        &self.sort_configuration
     }
     /// <p>The label options (label text, label visibility, and sort icon visibility) for the word cloud category.</p>
     pub fn category_label_options(mut self, input: crate::types::ChartAxisLabelOptions) -> Self {
@@ -97,6 +107,12 @@ impl WordCloudChartConfigurationBuilder {
         self.category_label_options = input;
         self
     }
+    /// <p>The label options (label text, label visibility, and sort icon visibility) for the word cloud category.</p>
+    pub fn get_category_label_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::ChartAxisLabelOptions> {
+        &self.category_label_options
+    }
     /// <p>The options for a word cloud visual.</p>
     pub fn word_cloud_options(mut self, input: crate::types::WordCloudOptions) -> Self {
         self.word_cloud_options = ::std::option::Option::Some(input);
@@ -109,6 +125,10 @@ impl WordCloudChartConfigurationBuilder {
     ) -> Self {
         self.word_cloud_options = input;
         self
+    }
+    /// <p>The options for a word cloud visual.</p>
+    pub fn get_word_cloud_options(&self) -> &::std::option::Option<crate::types::WordCloudOptions> {
+        &self.word_cloud_options
     }
     /// Consumes the builder and constructs a [`WordCloudChartConfiguration`](crate::types::WordCloudChartConfiguration).
     pub fn build(self) -> crate::types::WordCloudChartConfiguration {

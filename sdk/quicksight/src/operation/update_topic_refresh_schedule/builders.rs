@@ -36,6 +36,10 @@ impl UpdateTopicRefreshScheduleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateTopicRefreshSchedule as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_topic_refresh_schedule::builders::UpdateTopicRefreshScheduleInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl UpdateTopicRefreshScheduleFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The ID of the Amazon Web Services account that contains the topic whose refresh schedule you want to update.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn topic_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.topic_id(input.into());
@@ -142,6 +150,10 @@ impl UpdateTopicRefreshScheduleFluentBuilder {
         self.inner = self.inner.set_topic_id(input);
         self
     }
+    /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    pub fn get_topic_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_topic_id()
+    }
     /// <p>The ID of the dataset.</p>
     pub fn dataset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_id(input.into());
@@ -151,6 +163,10 @@ impl UpdateTopicRefreshScheduleFluentBuilder {
     pub fn set_dataset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dataset_id(input);
         self
+    }
+    /// <p>The ID of the dataset.</p>
+    pub fn get_dataset_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dataset_id()
     }
     /// <p>The definition of a refresh schedule.</p>
     pub fn refresh_schedule(mut self, input: crate::types::TopicRefreshSchedule) -> Self {
@@ -164,5 +180,11 @@ impl UpdateTopicRefreshScheduleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_refresh_schedule(input);
         self
+    }
+    /// <p>The definition of a refresh schedule.</p>
+    pub fn get_refresh_schedule(
+        &self,
+    ) -> &::std::option::Option<crate::types::TopicRefreshSchedule> {
+        self.inner.get_refresh_schedule()
     }
 }

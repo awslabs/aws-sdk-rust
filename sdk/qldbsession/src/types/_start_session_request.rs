@@ -40,6 +40,10 @@ impl StartSessionRequestBuilder {
         self.ledger_name = input;
         self
     }
+    /// <p>The name of the ledger to start a new session against.</p>
+    pub fn get_ledger_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ledger_name
+    }
     /// Consumes the builder and constructs a [`StartSessionRequest`](crate::types::StartSessionRequest).
     pub fn build(self) -> crate::types::StartSessionRequest {
         crate::types::StartSessionRequest {

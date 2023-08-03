@@ -46,6 +46,10 @@ impl LabelingJobSnsDataSourceBuilder {
         self.sns_topic_arn = input;
         self
     }
+    /// <p>The Amazon SNS input topic Amazon Resource Name (ARN). Specify the ARN of the input topic you will use to send new data objects to a streaming labeling job.</p>
+    pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sns_topic_arn
+    }
     /// Consumes the builder and constructs a [`LabelingJobSnsDataSource`](crate::types::LabelingJobSnsDataSource).
     pub fn build(self) -> crate::types::LabelingJobSnsDataSource {
         crate::types::LabelingJobSnsDataSource {

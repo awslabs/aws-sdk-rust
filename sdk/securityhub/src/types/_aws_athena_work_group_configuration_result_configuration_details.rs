@@ -48,6 +48,10 @@ impl AwsAthenaWorkGroupConfigurationResultConfigurationDetailsBuilder {
         self.encryption_configuration = input;
         self
     }
+    /// <p> Specifies the method used to encrypt the user’s data stores in the Athena workgroup. </p>
+    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails>{
+        &self.encryption_configuration
+    }
     /// Consumes the builder and constructs a [`AwsAthenaWorkGroupConfigurationResultConfigurationDetails`](crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationDetails).
     pub fn build(self) -> crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationDetails {
         crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationDetails {

@@ -95,6 +95,10 @@ impl ListRestoreJobsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of items to be returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -104,6 +108,10 @@ impl ListRestoreJobsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of items to be returned.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The account ID to list the jobs from. Returns only restore jobs associated with the specified account ID.</p>
     pub fn by_account_id(
@@ -121,6 +129,10 @@ impl ListRestoreJobsInputBuilder {
         self.by_account_id = input;
         self
     }
+    /// <p>The account ID to list the jobs from. Returns only restore jobs associated with the specified account ID.</p>
+    pub fn get_by_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.by_account_id
+    }
     /// <p>Returns only restore jobs that were created before the specified date.</p>
     pub fn by_created_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.by_created_before = ::std::option::Option::Some(input);
@@ -133,6 +145,10 @@ impl ListRestoreJobsInputBuilder {
     ) -> Self {
         self.by_created_before = input;
         self
+    }
+    /// <p>Returns only restore jobs that were created before the specified date.</p>
+    pub fn get_by_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.by_created_before
     }
     /// <p>Returns only restore jobs that were created after the specified date.</p>
     pub fn by_created_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -147,6 +163,10 @@ impl ListRestoreJobsInputBuilder {
         self.by_created_after = input;
         self
     }
+    /// <p>Returns only restore jobs that were created after the specified date.</p>
+    pub fn get_by_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.by_created_after
+    }
     /// <p>Returns only restore jobs associated with the specified job status.</p>
     pub fn by_status(mut self, input: crate::types::RestoreJobStatus) -> Self {
         self.by_status = ::std::option::Option::Some(input);
@@ -159,6 +179,10 @@ impl ListRestoreJobsInputBuilder {
     ) -> Self {
         self.by_status = input;
         self
+    }
+    /// <p>Returns only restore jobs associated with the specified job status.</p>
+    pub fn get_by_status(&self) -> &::std::option::Option<crate::types::RestoreJobStatus> {
+        &self.by_status
     }
     /// <p>Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
     pub fn by_complete_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -173,6 +197,10 @@ impl ListRestoreJobsInputBuilder {
         self.by_complete_before = input;
         self
     }
+    /// <p>Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+    pub fn get_by_complete_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.by_complete_before
+    }
     /// <p>Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
     pub fn by_complete_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.by_complete_after = ::std::option::Option::Some(input);
@@ -185,6 +213,10 @@ impl ListRestoreJobsInputBuilder {
     ) -> Self {
         self.by_complete_after = input;
         self
+    }
+    /// <p>Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+    pub fn get_by_complete_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.by_complete_after
     }
     /// Consumes the builder and constructs a [`ListRestoreJobsInput`](crate::operation::list_restore_jobs::ListRestoreJobsInput).
     pub fn build(

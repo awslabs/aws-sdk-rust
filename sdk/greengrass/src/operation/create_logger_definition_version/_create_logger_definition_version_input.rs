@@ -61,6 +61,10 @@ impl CreateLoggerDefinitionVersionInputBuilder {
         self.amzn_client_token = input;
         self
     }
+    /// A client token used to correlate requests and responses.
+    pub fn get_amzn_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.amzn_client_token
+    }
     /// The ID of the logger definition.
     pub fn logger_definition_id(
         mut self,
@@ -76,6 +80,10 @@ impl CreateLoggerDefinitionVersionInputBuilder {
     ) -> Self {
         self.logger_definition_id = input;
         self
+    }
+    /// The ID of the logger definition.
+    pub fn get_logger_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.logger_definition_id
     }
     /// Appends an item to `loggers`.
     ///
@@ -95,6 +103,10 @@ impl CreateLoggerDefinitionVersionInputBuilder {
     ) -> Self {
         self.loggers = input;
         self
+    }
+    /// A list of loggers.
+    pub fn get_loggers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Logger>> {
+        &self.loggers
     }
     /// Consumes the builder and constructs a [`CreateLoggerDefinitionVersionInput`](crate::operation::create_logger_definition_version::CreateLoggerDefinitionVersionInput).
     pub fn build(

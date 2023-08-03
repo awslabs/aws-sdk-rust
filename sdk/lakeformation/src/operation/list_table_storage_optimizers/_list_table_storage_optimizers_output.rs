@@ -67,6 +67,12 @@ impl ListTableStorageOptimizersOutputBuilder {
         self.storage_optimizer_list = input;
         self
     }
+    /// <p>A list of the storage optimizers associated with a table.</p>
+    pub fn get_storage_optimizer_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageOptimizer>> {
+        &self.storage_optimizer_list
+    }
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -76,6 +82,10 @@ impl ListTableStorageOptimizersOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

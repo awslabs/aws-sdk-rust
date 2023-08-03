@@ -36,6 +36,12 @@ impl UpdateWorkflowStepFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateWorkflowStep as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_workflow_step::builders::UpdateWorkflowStepInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateWorkflowStepFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The ID of the step.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The ID of the step group.</p>
     pub fn step_group_id(
         mut self,
@@ -142,6 +152,10 @@ impl UpdateWorkflowStepFluentBuilder {
         self.inner = self.inner.set_step_group_id(input);
         self
     }
+    /// <p>The ID of the step group.</p>
+    pub fn get_step_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_step_group_id()
+    }
     /// <p>The ID of the migration workflow.</p>
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workflow_id(input.into());
@@ -151,6 +165,10 @@ impl UpdateWorkflowStepFluentBuilder {
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workflow_id(input);
         self
+    }
+    /// <p>The ID of the migration workflow.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workflow_id()
     }
     /// <p>The name of the step.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -162,6 +180,10 @@ impl UpdateWorkflowStepFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the step.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The description of the step.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -171,6 +193,10 @@ impl UpdateWorkflowStepFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the step.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
     pub fn step_action_type(mut self, input: crate::types::StepActionType) -> Self {
@@ -184,6 +210,10 @@ impl UpdateWorkflowStepFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_step_action_type(input);
         self
+    }
+    /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
+    pub fn get_step_action_type(&self) -> &::std::option::Option<crate::types::StepActionType> {
+        self.inner.get_step_action_type()
     }
     /// <p>The custom script to run tests on the source and target environments.</p>
     pub fn workflow_step_automation_configuration(
@@ -200,6 +230,12 @@ impl UpdateWorkflowStepFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_workflow_step_automation_configuration(input);
         self
+    }
+    /// <p>The custom script to run tests on the source and target environments.</p>
+    pub fn get_workflow_step_automation_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::WorkflowStepAutomationConfiguration> {
+        self.inner.get_workflow_step_automation_configuration()
     }
     /// Appends an item to `stepTarget`.
     ///
@@ -218,6 +254,12 @@ impl UpdateWorkflowStepFluentBuilder {
         self.inner = self.inner.set_step_target(input);
         self
     }
+    /// <p>The servers on which a step will be run.</p>
+    pub fn get_step_target(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_step_target()
+    }
     /// Appends an item to `outputs`.
     ///
     /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
@@ -234,6 +276,12 @@ impl UpdateWorkflowStepFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_outputs(input);
         self
+    }
+    /// <p>The outputs of a step.</p>
+    pub fn get_outputs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepOutput>> {
+        self.inner.get_outputs()
     }
     /// Appends an item to `previous`.
     ///
@@ -252,6 +300,10 @@ impl UpdateWorkflowStepFluentBuilder {
         self.inner = self.inner.set_previous(input);
         self
     }
+    /// <p>The previous step.</p>
+    pub fn get_previous(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_previous()
+    }
     /// Appends an item to `next`.
     ///
     /// To override the contents of this collection use [`set_next`](Self::set_next).
@@ -269,6 +321,10 @@ impl UpdateWorkflowStepFluentBuilder {
         self.inner = self.inner.set_next(input);
         self
     }
+    /// <p>The next step.</p>
+    pub fn get_next(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_next()
+    }
     /// <p>The status of the step.</p>
     pub fn status(mut self, input: crate::types::StepStatus) -> Self {
         self.inner = self.inner.status(input);
@@ -278,5 +334,9 @@ impl UpdateWorkflowStepFluentBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StepStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p>The status of the step.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::StepStatus> {
+        self.inner.get_status()
     }
 }

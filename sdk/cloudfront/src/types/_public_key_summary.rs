@@ -72,6 +72,10 @@ impl PublicKeySummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the public key.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>A name to help identify the public key.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl PublicKeySummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A name to help identify the public key.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The date and time when the public key was uploaded.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -95,6 +103,10 @@ impl PublicKeySummaryBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The date and time when the public key was uploaded.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>The public key.</p>
     pub fn encoded_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encoded_key = ::std::option::Option::Some(input.into());
@@ -105,6 +117,10 @@ impl PublicKeySummaryBuilder {
         self.encoded_key = input;
         self
     }
+    /// <p>The public key.</p>
+    pub fn get_encoded_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encoded_key
+    }
     /// <p>A comment to describe the public key. The comment cannot be longer than 128 characters.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
@@ -114,6 +130,10 @@ impl PublicKeySummaryBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment = input;
         self
+    }
+    /// <p>A comment to describe the public key. The comment cannot be longer than 128 characters.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment
     }
     /// Consumes the builder and constructs a [`PublicKeySummary`](crate::types::PublicKeySummary).
     pub fn build(self) -> crate::types::PublicKeySummary {

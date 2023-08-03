@@ -79,6 +79,10 @@ impl PutDestinationInputBuilder {
         self.destination_name = input;
         self
     }
+    /// <p>A name for the destination.</p>
+    pub fn get_destination_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_name
+    }
     /// <p>The ARN of an Amazon Kinesis stream to which to deliver matching log events.</p>
     pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_arn = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl PutDestinationInputBuilder {
         self.target_arn = input;
         self
     }
+    /// <p>The ARN of an Amazon Kinesis stream to which to deliver matching log events.</p>
+    pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_arn
+    }
     /// <p>The ARN of an IAM role that grants CloudWatch Logs permissions to call the Amazon Kinesis <code>PutRecord</code> operation on the destination stream.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -98,6 +106,10 @@ impl PutDestinationInputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The ARN of an IAM role that grants CloudWatch Logs permissions to call the Amazon Kinesis <code>PutRecord</code> operation on the destination stream.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -125,6 +137,15 @@ impl PutDestinationInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>An optional list of key-value pairs to associate with the resource.</p>
+    /// <p>For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`PutDestinationInput`](crate::operation::put_destination::PutDestinationInput).
     pub fn build(

@@ -39,6 +39,10 @@ impl DeleteProjectInputBuilder {
         self.project_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the project that you want to delete.</p>
+    pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_arn
+    }
     /// Consumes the builder and constructs a [`DeleteProjectInput`](crate::operation::delete_project::DeleteProjectInput).
     pub fn build(
         self,

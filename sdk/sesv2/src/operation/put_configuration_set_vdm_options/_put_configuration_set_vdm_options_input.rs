@@ -54,6 +54,10 @@ impl PutConfigurationSetVdmOptionsInputBuilder {
         self.configuration_set_name = input;
         self
     }
+    /// <p>The name of the configuration set.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set_name
+    }
     /// <p>The VDM options to apply to the configuration set.</p>
     pub fn vdm_options(mut self, input: crate::types::VdmOptions) -> Self {
         self.vdm_options = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl PutConfigurationSetVdmOptionsInputBuilder {
     ) -> Self {
         self.vdm_options = input;
         self
+    }
+    /// <p>The VDM options to apply to the configuration set.</p>
+    pub fn get_vdm_options(&self) -> &::std::option::Option<crate::types::VdmOptions> {
+        &self.vdm_options
     }
     /// Consumes the builder and constructs a [`PutConfigurationSetVdmOptionsInput`](crate::operation::put_configuration_set_vdm_options::PutConfigurationSetVdmOptionsInput).
     pub fn build(

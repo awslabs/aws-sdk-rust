@@ -53,6 +53,10 @@ impl CreateAppBlockBuilderStreamingUrlInputBuilder {
         self.app_block_builder_name = input;
         self
     }
+    /// <p>The name of the app block builder.</p>
+    pub fn get_app_block_builder_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_block_builder_name
+    }
     /// <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 3600 seconds.</p>
     pub fn validity(mut self, input: i64) -> Self {
         self.validity = ::std::option::Option::Some(input);
@@ -62,6 +66,10 @@ impl CreateAppBlockBuilderStreamingUrlInputBuilder {
     pub fn set_validity(mut self, input: ::std::option::Option<i64>) -> Self {
         self.validity = input;
         self
+    }
+    /// <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 3600 seconds.</p>
+    pub fn get_validity(&self) -> &::std::option::Option<i64> {
+        &self.validity
     }
     /// Consumes the builder and constructs a [`CreateAppBlockBuilderStreamingUrlInput`](crate::operation::create_app_block_builder_streaming_url::CreateAppBlockBuilderStreamingUrlInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_app_block_builder_streaming_url::CreateAppBlockBuilderStreamingUrlInput, ::aws_smithy_http::operation::error::BuildError>{

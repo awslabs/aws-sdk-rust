@@ -94,6 +94,10 @@ impl GetFolderOutputBuilder {
         self.commit_id = input;
         self
     }
+    /// <p>The full commit ID used as a reference for the returned version of the folder content.</p>
+    pub fn get_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.commit_id
+    }
     /// <p>The fully qualified path of the folder whose contents are returned.</p>
     pub fn folder_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.folder_path = ::std::option::Option::Some(input.into());
@@ -104,6 +108,10 @@ impl GetFolderOutputBuilder {
         self.folder_path = input;
         self
     }
+    /// <p>The fully qualified path of the folder whose contents are returned.</p>
+    pub fn get_folder_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.folder_path
+    }
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains the folder.</p>
     pub fn tree_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tree_id = ::std::option::Option::Some(input.into());
@@ -113,6 +121,10 @@ impl GetFolderOutputBuilder {
     pub fn set_tree_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tree_id = input;
         self
+    }
+    /// <p>The full SHA-1 pointer of the tree information for the commit that contains the folder.</p>
+    pub fn get_tree_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tree_id
     }
     /// Appends an item to `sub_folders`.
     ///
@@ -133,6 +145,10 @@ impl GetFolderOutputBuilder {
         self.sub_folders = input;
         self
     }
+    /// <p>The list of folders that exist under the specified folder, if any.</p>
+    pub fn get_sub_folders(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Folder>> {
+        &self.sub_folders
+    }
     /// Appends an item to `files`.
     ///
     /// To override the contents of this collection use [`set_files`](Self::set_files).
@@ -151,6 +167,10 @@ impl GetFolderOutputBuilder {
     ) -> Self {
         self.files = input;
         self
+    }
+    /// <p>The list of files in the specified folder, if any.</p>
+    pub fn get_files(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::File>> {
+        &self.files
     }
     /// Appends an item to `symbolic_links`.
     ///
@@ -171,6 +191,12 @@ impl GetFolderOutputBuilder {
         self.symbolic_links = input;
         self
     }
+    /// <p>The list of symbolic links to other files and folders in the specified folder, if any.</p>
+    pub fn get_symbolic_links(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SymbolicLink>> {
+        &self.symbolic_links
+    }
     /// Appends an item to `sub_modules`.
     ///
     /// To override the contents of this collection use [`set_sub_modules`](Self::set_sub_modules).
@@ -189,6 +215,12 @@ impl GetFolderOutputBuilder {
     ) -> Self {
         self.sub_modules = input;
         self
+    }
+    /// <p>The list of submodules in the specified folder, if any.</p>
+    pub fn get_sub_modules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SubModule>> {
+        &self.sub_modules
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -110,6 +110,10 @@ impl StartDataQualityRulesetEvaluationRunInputBuilder {
         self.data_source = input;
         self
     }
+    /// <p>The data source (Glue table) associated with this run.</p>
+    pub fn get_data_source(&self) -> &::std::option::Option<crate::types::DataSource> {
+        &self.data_source
+    }
     /// <p>An IAM role supplied to encrypt the results of the run.</p>
     pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role = ::std::option::Option::Some(input.into());
@@ -119,6 +123,10 @@ impl StartDataQualityRulesetEvaluationRunInputBuilder {
     pub fn set_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role = input;
         self
+    }
+    /// <p>An IAM role supplied to encrypt the results of the run.</p>
+    pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role
     }
     /// <p>The number of <code>G.1X</code> workers to be used in the run. The default is 5.</p>
     pub fn number_of_workers(mut self, input: i32) -> Self {
@@ -130,6 +138,10 @@ impl StartDataQualityRulesetEvaluationRunInputBuilder {
         self.number_of_workers = input;
         self
     }
+    /// <p>The number of <code>G.1X</code> workers to be used in the run. The default is 5.</p>
+    pub fn get_number_of_workers(&self) -> &::std::option::Option<i32> {
+        &self.number_of_workers
+    }
     /// <p>The timeout for a run in minutes. This is the maximum time that a run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
     pub fn timeout(mut self, input: i32) -> Self {
         self.timeout = ::std::option::Option::Some(input);
@@ -140,6 +152,10 @@ impl StartDataQualityRulesetEvaluationRunInputBuilder {
         self.timeout = input;
         self
     }
+    /// <p>The timeout for a run in minutes. This is the maximum time that a run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
+    pub fn get_timeout(&self) -> &::std::option::Option<i32> {
+        &self.timeout
+    }
     /// <p>Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -149,6 +165,10 @@ impl StartDataQualityRulesetEvaluationRunInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>Additional run options you can specify for an evaluation run.</p>
     pub fn additional_run_options(
@@ -165,6 +185,12 @@ impl StartDataQualityRulesetEvaluationRunInputBuilder {
     ) -> Self {
         self.additional_run_options = input;
         self
+    }
+    /// <p>Additional run options you can specify for an evaluation run.</p>
+    pub fn get_additional_run_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataQualityEvaluationRunAdditionalRunOptions> {
+        &self.additional_run_options
     }
     /// Appends an item to `ruleset_names`.
     ///
@@ -187,6 +213,12 @@ impl StartDataQualityRulesetEvaluationRunInputBuilder {
     ) -> Self {
         self.ruleset_names = input;
         self
+    }
+    /// <p>A list of ruleset names.</p>
+    pub fn get_ruleset_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ruleset_names
     }
     /// Adds a key-value pair to `additional_data_sources`.
     ///
@@ -212,6 +244,14 @@ impl StartDataQualityRulesetEvaluationRunInputBuilder {
     ) -> Self {
         self.additional_data_sources = input;
         self
+    }
+    /// <p>A map of reference strings to additional data sources you can specify for an evaluation run.</p>
+    pub fn get_additional_data_sources(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::DataSource>,
+    > {
+        &self.additional_data_sources
     }
     /// Consumes the builder and constructs a [`StartDataQualityRulesetEvaluationRunInput`](crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunInput, ::aws_smithy_http::operation::error::BuildError>{

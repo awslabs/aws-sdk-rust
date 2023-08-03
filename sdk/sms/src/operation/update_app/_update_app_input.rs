@@ -79,6 +79,10 @@ impl UpdateAppInputBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The ID of the application.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p>The new name of the application.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -88,6 +92,10 @@ impl UpdateAppInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The new name of the application.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The new description of the application.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -99,6 +107,10 @@ impl UpdateAppInputBuilder {
         self.description = input;
         self
     }
+    /// <p>The new description of the application.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The name of the service role in the customer's account used by Server Migration Service.</p>
     pub fn role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_name = ::std::option::Option::Some(input.into());
@@ -108,6 +120,10 @@ impl UpdateAppInputBuilder {
     pub fn set_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_name = input;
         self
+    }
+    /// <p>The name of the service role in the customer's account used by Server Migration Service.</p>
+    pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_name
     }
     /// Appends an item to `server_groups`.
     ///
@@ -128,6 +144,12 @@ impl UpdateAppInputBuilder {
         self.server_groups = input;
         self
     }
+    /// <p>The server groups in the application to update.</p>
+    pub fn get_server_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerGroup>> {
+        &self.server_groups
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -146,6 +168,10 @@ impl UpdateAppInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags to associate with the application.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`UpdateAppInput`](crate::operation::update_app::UpdateAppInput).
     pub fn build(

@@ -55,6 +55,10 @@ impl GetServiceQuotaIncreaseRequestFromTemplateInputBuilder {
         self.service_code = input;
         self
     }
+    /// <p>The service identifier.</p>
+    pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_code
+    }
     /// <p>The quota identifier.</p>
     pub fn quota_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quota_code = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl GetServiceQuotaIncreaseRequestFromTemplateInputBuilder {
         self.quota_code = input;
         self
     }
+    /// <p>The quota identifier.</p>
+    pub fn get_quota_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quota_code
+    }
     /// <p>The AWS Region.</p>
     pub fn aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_region = ::std::option::Option::Some(input.into());
@@ -74,6 +82,10 @@ impl GetServiceQuotaIncreaseRequestFromTemplateInputBuilder {
     pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_region = input;
         self
+    }
+    /// <p>The AWS Region.</p>
+    pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_region
     }
     /// Consumes the builder and constructs a [`GetServiceQuotaIncreaseRequestFromTemplateInput`](crate::operation::get_service_quota_increase_request_from_template::GetServiceQuotaIncreaseRequestFromTemplateInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_service_quota_increase_request_from_template::GetServiceQuotaIncreaseRequestFromTemplateInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -43,6 +43,12 @@ impl IncrementalRunConfigBuilder {
         self.incremental_run_type = input;
         self
     }
+    /// <p>The type of incremental run. It takes only one value: <code>IMMEDIATE</code>.</p>
+    pub fn get_incremental_run_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::IncrementalRunType> {
+        &self.incremental_run_type
+    }
     /// Consumes the builder and constructs a [`IncrementalRunConfig`](crate::types::IncrementalRunConfig).
     pub fn build(self) -> crate::types::IncrementalRunConfig {
         crate::types::IncrementalRunConfig {

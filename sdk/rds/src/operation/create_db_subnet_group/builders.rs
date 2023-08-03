@@ -36,6 +36,12 @@ impl CreateDBSubnetGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDBSubnetGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_db_subnet_group::builders::CreateDbSubnetGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -146,6 +152,17 @@ impl CreateDBSubnetGroupFluentBuilder {
         self.inner = self.inner.set_db_subnet_group_name(input);
         self
     }
+    /// <p>The name for the DB subnet group. This value is stored as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens.</p> </li>
+    /// <li> <p>Must not be default.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// </ul>
+    /// <p>Example: <code>mydbsubnetgroup</code> </p>
+    pub fn get_db_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_subnet_group_name()
+    }
     /// <p>The description for the DB subnet group.</p>
     pub fn db_subnet_group_description(
         mut self,
@@ -161,6 +178,10 @@ impl CreateDBSubnetGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_db_subnet_group_description(input);
         self
+    }
+    /// <p>The description for the DB subnet group.</p>
+    pub fn get_db_subnet_group_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_subnet_group_description()
     }
     /// Appends an item to `SubnetIds`.
     ///
@@ -179,6 +200,10 @@ impl CreateDBSubnetGroupFluentBuilder {
         self.inner = self.inner.set_subnet_ids(input);
         self
     }
+    /// <p>The EC2 Subnet IDs for the DB subnet group.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_subnet_ids()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -195,5 +220,9 @@ impl CreateDBSubnetGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Tags to assign to the DB subnet group.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

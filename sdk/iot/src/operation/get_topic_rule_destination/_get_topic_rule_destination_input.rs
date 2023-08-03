@@ -41,6 +41,10 @@ impl GetTopicRuleDestinationInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the topic rule destination.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`GetTopicRuleDestinationInput`](crate::operation::get_topic_rule_destination::GetTopicRuleDestinationInput).
     pub fn build(
         self,

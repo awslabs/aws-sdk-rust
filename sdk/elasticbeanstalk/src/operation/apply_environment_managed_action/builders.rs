@@ -36,6 +36,10 @@ impl ApplyEnvironmentManagedActionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ApplyEnvironmentManagedAction as a reference.
+    pub fn as_input(&self) -> &crate::operation::apply_environment_managed_action::builders::ApplyEnvironmentManagedActionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl ApplyEnvironmentManagedActionFluentBuilder {
         self.inner = self.inner.set_environment_name(input);
         self
     }
+    /// <p>The name of the target environment.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_name()
+    }
     /// <p>The environment ID of the target environment.</p>
     pub fn environment_id(
         mut self,
@@ -148,6 +156,10 @@ impl ApplyEnvironmentManagedActionFluentBuilder {
         self.inner = self.inner.set_environment_id(input);
         self
     }
+    /// <p>The environment ID of the target environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_id()
+    }
     /// <p>The action ID of the scheduled managed action to execute.</p>
     pub fn action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.action_id(input.into());
@@ -157,5 +169,9 @@ impl ApplyEnvironmentManagedActionFluentBuilder {
     pub fn set_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_action_id(input);
         self
+    }
+    /// <p>The action ID of the scheduled managed action to execute.</p>
+    pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_action_id()
     }
 }

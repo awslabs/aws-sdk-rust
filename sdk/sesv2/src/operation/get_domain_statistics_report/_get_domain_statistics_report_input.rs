@@ -56,6 +56,10 @@ impl GetDomainStatisticsReportInputBuilder {
         self.domain = input;
         self
     }
+    /// <p>The domain that you want to obtain deliverability metrics for.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
+    }
     /// <p>The first day (in Unix time) that you want to obtain domain deliverability metrics for.</p>
     pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_date = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl GetDomainStatisticsReportInputBuilder {
         self.start_date = input;
         self
     }
+    /// <p>The first day (in Unix time) that you want to obtain domain deliverability metrics for.</p>
+    pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_date
+    }
     /// <p>The last day (in Unix time) that you want to obtain domain deliverability metrics for. The <code>EndDate</code> that you specify has to be less than or equal to 30 days after the <code>StartDate</code>.</p>
     pub fn end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_date = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl GetDomainStatisticsReportInputBuilder {
     ) -> Self {
         self.end_date = input;
         self
+    }
+    /// <p>The last day (in Unix time) that you want to obtain domain deliverability metrics for. The <code>EndDate</code> that you specify has to be less than or equal to 30 days after the <code>StartDate</code>.</p>
+    pub fn get_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_date
     }
     /// Consumes the builder and constructs a [`GetDomainStatisticsReportInput`](crate::operation::get_domain_statistics_report::GetDomainStatisticsReportInput).
     pub fn build(

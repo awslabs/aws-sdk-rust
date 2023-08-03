@@ -59,6 +59,10 @@ impl LabelOptionsBuilder {
         self.visibility = input;
         self
     }
+    /// <p>Determines whether or not the label is visible.</p>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.visibility
+    }
     /// <p>The font configuration of the label.</p>
     pub fn font_configuration(mut self, input: crate::types::FontConfiguration) -> Self {
         self.font_configuration = ::std::option::Option::Some(input);
@@ -72,6 +76,12 @@ impl LabelOptionsBuilder {
         self.font_configuration = input;
         self
     }
+    /// <p>The font configuration of the label.</p>
+    pub fn get_font_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::FontConfiguration> {
+        &self.font_configuration
+    }
     /// <p>The text for the label.</p>
     pub fn custom_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_label = ::std::option::Option::Some(input.into());
@@ -81,6 +91,10 @@ impl LabelOptionsBuilder {
     pub fn set_custom_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_label = input;
         self
+    }
+    /// <p>The text for the label.</p>
+    pub fn get_custom_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_label
     }
     /// Consumes the builder and constructs a [`LabelOptions`](crate::types::LabelOptions).
     pub fn build(self) -> crate::types::LabelOptions {

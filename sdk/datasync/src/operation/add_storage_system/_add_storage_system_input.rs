@@ -109,6 +109,12 @@ impl AddStorageSystemInputBuilder {
         self.server_configuration = input;
         self
     }
+    /// <p>Specifies the server name and network port required to connect with the management interface of your on-premises storage system.</p>
+    pub fn get_server_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DiscoveryServerConfiguration> {
+        &self.server_configuration
+    }
     /// <p>Specifies the type of on-premises storage system that you want DataSync Discovery to collect information about.</p> <note>
     /// <p>DataSync Discovery currently supports NetApp Fabric-Attached Storage (FAS) and All Flash FAS (AFF) systems running ONTAP 9.7 or later.</p>
     /// </note>
@@ -125,6 +131,12 @@ impl AddStorageSystemInputBuilder {
     ) -> Self {
         self.system_type = input;
         self
+    }
+    /// <p>Specifies the type of on-premises storage system that you want DataSync Discovery to collect information about.</p> <note>
+    /// <p>DataSync Discovery currently supports NetApp Fabric-Attached Storage (FAS) and All Flash FAS (AFF) systems running ONTAP 9.7 or later.</p>
+    /// </note>
+    pub fn get_system_type(&self) -> &::std::option::Option<crate::types::DiscoverySystemType> {
+        &self.system_type
     }
     /// Appends an item to `agent_arns`.
     ///
@@ -145,6 +157,10 @@ impl AddStorageSystemInputBuilder {
         self.agent_arns = input;
         self
     }
+    /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that connects to and reads from your on-premises storage system's management interface. You can only specify one ARN.</p>
+    pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.agent_arns
+    }
     /// <p>Specifies the ARN of the Amazon CloudWatch log group for monitoring and logging discovery job events.</p>
     pub fn cloud_watch_log_group_arn(
         mut self,
@@ -160,6 +176,10 @@ impl AddStorageSystemInputBuilder {
     ) -> Self {
         self.cloud_watch_log_group_arn = input;
         self
+    }
+    /// <p>Specifies the ARN of the Amazon CloudWatch log group for monitoring and logging discovery job events.</p>
+    pub fn get_cloud_watch_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cloud_watch_log_group_arn
     }
     /// Appends an item to `tags`.
     ///
@@ -180,6 +200,10 @@ impl AddStorageSystemInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your on-premises storage system.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>> {
+        &self.tags
+    }
     /// <p>Specifies a familiar name for your on-premises storage system.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -190,6 +214,10 @@ impl AddStorageSystemInputBuilder {
         self.name = input;
         self
     }
+    /// <p>Specifies a familiar name for your on-premises storage system.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Specifies a client token to make sure requests with this API operation are idempotent. If you don't specify a client token, DataSync generates one for you automatically.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -199,6 +227,10 @@ impl AddStorageSystemInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Specifies a client token to make sure requests with this API operation are idempotent. If you don't specify a client token, DataSync generates one for you automatically.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>Specifies the user name and password for accessing your on-premises storage system's management interface.</p>
     pub fn credentials(mut self, input: crate::types::Credentials) -> Self {
@@ -212,6 +244,10 @@ impl AddStorageSystemInputBuilder {
     ) -> Self {
         self.credentials = input;
         self
+    }
+    /// <p>Specifies the user name and password for accessing your on-premises storage system's management interface.</p>
+    pub fn get_credentials(&self) -> &::std::option::Option<crate::types::Credentials> {
+        &self.credentials
     }
     /// Consumes the builder and constructs a [`AddStorageSystemInput`](crate::operation::add_storage_system::AddStorageSystemInput).
     pub fn build(

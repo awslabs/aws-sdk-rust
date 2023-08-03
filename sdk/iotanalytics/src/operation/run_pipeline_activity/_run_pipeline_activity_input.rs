@@ -52,6 +52,10 @@ impl RunPipelineActivityInputBuilder {
         self.pipeline_activity = input;
         self
     }
+    /// <p>The pipeline activity that is run. This must not be a channel activity or a data store activity because these activities are used in a pipeline only to load the original message and to store the (possibly) transformed message. If a Lambda activity is specified, only short-running Lambda functions (those with a timeout of less than 30 seconds or less) can be used.</p>
+    pub fn get_pipeline_activity(&self) -> &::std::option::Option<crate::types::PipelineActivity> {
+        &self.pipeline_activity
+    }
     /// Appends an item to `payloads`.
     ///
     /// To override the contents of this collection use [`set_payloads`](Self::set_payloads).
@@ -70,6 +74,12 @@ impl RunPipelineActivityInputBuilder {
     ) -> Self {
         self.payloads = input;
         self
+    }
+    /// <p>The sample message payloads on which the pipeline activity is run.</p>
+    pub fn get_payloads(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>> {
+        &self.payloads
     }
     /// Consumes the builder and constructs a [`RunPipelineActivityInput`](crate::operation::run_pipeline_activity::RunPipelineActivityInput).
     pub fn build(

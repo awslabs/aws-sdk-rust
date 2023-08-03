@@ -57,6 +57,10 @@ impl ListJobsByPipelineInputBuilder {
         self.pipeline_id = input;
         self
     }
+    /// <p>The ID of the pipeline for which you want to get job information.</p>
+    pub fn get_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_id
+    }
     /// <p> To list jobs in chronological order by the date and time that they were submitted, enter <code>true</code>. To list jobs in reverse chronological order, enter <code>false</code>. </p>
     pub fn ascending(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ascending = ::std::option::Option::Some(input.into());
@@ -67,6 +71,10 @@ impl ListJobsByPipelineInputBuilder {
         self.ascending = input;
         self
     }
+    /// <p> To list jobs in chronological order by the date and time that they were submitted, enter <code>true</code>. To list jobs in reverse chronological order, enter <code>false</code>. </p>
+    pub fn get_ascending(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ascending
+    }
     /// <p> When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
     pub fn page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.page_token = ::std::option::Option::Some(input.into());
@@ -76,6 +84,10 @@ impl ListJobsByPipelineInputBuilder {
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.page_token = input;
         self
+    }
+    /// <p> When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
+    pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.page_token
     }
     /// Consumes the builder and constructs a [`ListJobsByPipelineInput`](crate::operation::list_jobs_by_pipeline::ListJobsByPipelineInput).
     pub fn build(

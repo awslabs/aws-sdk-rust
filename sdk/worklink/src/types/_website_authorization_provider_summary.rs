@@ -73,6 +73,10 @@ impl WebsiteAuthorizationProviderSummaryBuilder {
         self.authorization_provider_id = input;
         self
     }
+    /// <p>A unique identifier for the authorization provider.</p>
+    pub fn get_authorization_provider_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authorization_provider_id
+    }
     /// <p>The authorization provider type.</p>
     pub fn authorization_provider_type(
         mut self,
@@ -89,6 +93,12 @@ impl WebsiteAuthorizationProviderSummaryBuilder {
         self.authorization_provider_type = input;
         self
     }
+    /// <p>The authorization provider type.</p>
+    pub fn get_authorization_provider_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthorizationProviderType> {
+        &self.authorization_provider_type
+    }
     /// <p>The domain name of the authorization provider. This applies only to SAML-based authorization providers.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
@@ -98,6 +108,10 @@ impl WebsiteAuthorizationProviderSummaryBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
+    }
+    /// <p>The domain name of the authorization provider. This applies only to SAML-based authorization providers.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// <p>The time of creation.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -111,6 +125,10 @@ impl WebsiteAuthorizationProviderSummaryBuilder {
     ) -> Self {
         self.created_time = input;
         self
+    }
+    /// <p>The time of creation.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
     }
     /// Consumes the builder and constructs a [`WebsiteAuthorizationProviderSummary`](crate::types::WebsiteAuthorizationProviderSummary).
     pub fn build(self) -> crate::types::WebsiteAuthorizationProviderSummary {

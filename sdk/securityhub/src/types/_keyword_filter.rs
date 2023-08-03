@@ -40,6 +40,10 @@ impl KeywordFilterBuilder {
         self.value = input;
         self
     }
+    /// <p>A value for the keyword.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// Consumes the builder and constructs a [`KeywordFilter`](crate::types::KeywordFilter).
     pub fn build(self) -> crate::types::KeywordFilter {
         crate::types::KeywordFilter { value: self.value }

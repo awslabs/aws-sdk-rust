@@ -48,6 +48,10 @@ impl IntentBuilder {
         self.intent_name = input;
         self
     }
+    /// <p>The name of the intent.</p>
+    pub fn get_intent_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.intent_name
+    }
     /// <p>The version of the intent.</p>
     pub fn intent_version(
         mut self,
@@ -63,6 +67,10 @@ impl IntentBuilder {
     ) -> Self {
         self.intent_version = input;
         self
+    }
+    /// <p>The version of the intent.</p>
+    pub fn get_intent_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.intent_version
     }
     /// Consumes the builder and constructs a [`Intent`](crate::types::Intent).
     pub fn build(self) -> crate::types::Intent {

@@ -110,6 +110,12 @@ impl ReservedNodeExchangeStatusBuilder {
         self.reserved_node_exchange_request_id = input;
         self
     }
+    /// <p>The identifier of the reserved-node exchange request.</p>
+    pub fn get_reserved_node_exchange_request_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.reserved_node_exchange_request_id
+    }
     /// <p>The status of the reserved-node exchange request. Statuses include in-progress and requested.</p>
     pub fn status(mut self, input: crate::types::ReservedNodeExchangeStatusType) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -123,6 +129,12 @@ impl ReservedNodeExchangeStatusBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the reserved-node exchange request. Statuses include in-progress and requested.</p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReservedNodeExchangeStatusType> {
+        &self.status
+    }
     /// <p>A date and time that indicate when the reserved-node exchange was requested.</p>
     pub fn request_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.request_time = ::std::option::Option::Some(input);
@@ -135,6 +147,10 @@ impl ReservedNodeExchangeStatusBuilder {
     ) -> Self {
         self.request_time = input;
         self
+    }
+    /// <p>A date and time that indicate when the reserved-node exchange was requested.</p>
+    pub fn get_request_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.request_time
     }
     /// <p>The identifier of the source reserved node.</p>
     pub fn source_reserved_node_id(
@@ -152,6 +168,10 @@ impl ReservedNodeExchangeStatusBuilder {
         self.source_reserved_node_id = input;
         self
     }
+    /// <p>The identifier of the source reserved node.</p>
+    pub fn get_source_reserved_node_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_reserved_node_id
+    }
     /// <p>The source reserved-node type, for example ds2.xlarge.</p>
     pub fn source_reserved_node_type(
         mut self,
@@ -168,6 +188,10 @@ impl ReservedNodeExchangeStatusBuilder {
         self.source_reserved_node_type = input;
         self
     }
+    /// <p>The source reserved-node type, for example ds2.xlarge.</p>
+    pub fn get_source_reserved_node_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_reserved_node_type
+    }
     /// <p>The source reserved-node count in the cluster.</p>
     pub fn source_reserved_node_count(mut self, input: i32) -> Self {
         self.source_reserved_node_count = ::std::option::Option::Some(input);
@@ -177,6 +201,10 @@ impl ReservedNodeExchangeStatusBuilder {
     pub fn set_source_reserved_node_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.source_reserved_node_count = input;
         self
+    }
+    /// <p>The source reserved-node count in the cluster.</p>
+    pub fn get_source_reserved_node_count(&self) -> &::std::option::Option<i32> {
+        &self.source_reserved_node_count
     }
     /// <p>The identifier of the target reserved node offering.</p>
     pub fn target_reserved_node_offering_id(
@@ -194,6 +222,12 @@ impl ReservedNodeExchangeStatusBuilder {
         self.target_reserved_node_offering_id = input;
         self
     }
+    /// <p>The identifier of the target reserved node offering.</p>
+    pub fn get_target_reserved_node_offering_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.target_reserved_node_offering_id
+    }
     /// <p>The node type of the target reserved node, for example ra3.4xlarge.</p>
     pub fn target_reserved_node_type(
         mut self,
@@ -210,6 +244,10 @@ impl ReservedNodeExchangeStatusBuilder {
         self.target_reserved_node_type = input;
         self
     }
+    /// <p>The node type of the target reserved node, for example ra3.4xlarge.</p>
+    pub fn get_target_reserved_node_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_reserved_node_type
+    }
     /// <p>The count of target reserved nodes in the cluster.</p>
     pub fn target_reserved_node_count(mut self, input: i32) -> Self {
         self.target_reserved_node_count = ::std::option::Option::Some(input);
@@ -219,6 +257,10 @@ impl ReservedNodeExchangeStatusBuilder {
     pub fn set_target_reserved_node_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.target_reserved_node_count = input;
         self
+    }
+    /// <p>The count of target reserved nodes in the cluster.</p>
+    pub fn get_target_reserved_node_count(&self) -> &::std::option::Option<i32> {
+        &self.target_reserved_node_count
     }
     /// Consumes the builder and constructs a [`ReservedNodeExchangeStatus`](crate::types::ReservedNodeExchangeStatus).
     pub fn build(self) -> crate::types::ReservedNodeExchangeStatus {

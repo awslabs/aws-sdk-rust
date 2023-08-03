@@ -57,6 +57,10 @@ impl DescribeDbSnapshotsOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// Appends an item to `db_snapshots`.
     ///
     /// To override the contents of this collection use [`set_db_snapshots`](Self::set_db_snapshots).
@@ -75,6 +79,12 @@ impl DescribeDbSnapshotsOutputBuilder {
     ) -> Self {
         self.db_snapshots = input;
         self
+    }
+    /// <p>A list of <code>DBSnapshot</code> instances.</p>
+    pub fn get_db_snapshots(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DbSnapshot>> {
+        &self.db_snapshots
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

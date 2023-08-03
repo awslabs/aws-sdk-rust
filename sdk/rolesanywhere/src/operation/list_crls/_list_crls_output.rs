@@ -54,6 +54,10 @@ impl ListCrlsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `crls`.
     ///
     /// To override the contents of this collection use [`set_crls`](Self::set_crls).
@@ -72,6 +76,10 @@ impl ListCrlsOutputBuilder {
     ) -> Self {
         self.crls = input;
         self
+    }
+    /// <p>A list of certificate revocation lists (CRL). </p>
+    pub fn get_crls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CrlDetail>> {
+        &self.crls
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

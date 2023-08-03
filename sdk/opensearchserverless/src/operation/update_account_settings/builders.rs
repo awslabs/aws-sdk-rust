@@ -36,6 +36,13 @@ impl UpdateAccountSettingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAccountSettings as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_account_settings::builders::UpdateAccountSettingsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,5 +135,9 @@ impl UpdateAccountSettingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_capacity_limits(input);
         self
+    }
+    /// <p>The maximum capacity limits for all OpenSearch Serverless collections, in OpenSearch Compute Units (OCUs). These limits are used to scale your collections based on the current workload. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-scaling.html">Managing capacity limits for Amazon OpenSearch Serverless</a>.</p>
+    pub fn get_capacity_limits(&self) -> &::std::option::Option<crate::types::CapacityLimits> {
+        self.inner.get_capacity_limits()
     }
 }

@@ -55,6 +55,10 @@ impl MaintenanceWindowTaskParameterValueExpressionBuilder {
         self.values = input;
         self
     }
+    /// <p>This field contains an array of 0 or more strings, each 1 to 255 characters in length.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
+    }
     /// Consumes the builder and constructs a [`MaintenanceWindowTaskParameterValueExpression`](crate::types::MaintenanceWindowTaskParameterValueExpression).
     pub fn build(self) -> crate::types::MaintenanceWindowTaskParameterValueExpression {
         crate::types::MaintenanceWindowTaskParameterValueExpression {

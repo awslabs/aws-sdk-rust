@@ -53,6 +53,12 @@ impl PivotTableSortConfigurationBuilder {
         self.field_sort_options = input;
         self
     }
+    /// <p>The field sort options for a pivot table sort configuration.</p>
+    pub fn get_field_sort_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PivotFieldSortOptions>> {
+        &self.field_sort_options
+    }
     /// Consumes the builder and constructs a [`PivotTableSortConfiguration`](crate::types::PivotTableSortConfiguration).
     pub fn build(self) -> crate::types::PivotTableSortConfiguration {
         crate::types::PivotTableSortConfiguration {

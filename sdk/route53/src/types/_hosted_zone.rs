@@ -82,6 +82,10 @@ impl HostedZoneBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID that Amazon Route 53 assigned to the hosted zone when you created it.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the domain. For public hosted zones, this is the name that you have registered with your DNS registrar.</p>
     /// <p>For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and <code>-</code> (hyphen) and how to specify internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html">CreateHostedZone</a>.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -93,6 +97,11 @@ impl HostedZoneBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the domain. For public hosted zones, this is the name that you have registered with your DNS registrar.</p>
+    /// <p>For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and <code>-</code> (hyphen) and how to specify internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html">CreateHostedZone</a>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The value that you specified for <code>CallerReference</code> when you created the hosted zone.</p>
     pub fn caller_reference(
@@ -110,6 +119,10 @@ impl HostedZoneBuilder {
         self.caller_reference = input;
         self
     }
+    /// <p>The value that you specified for <code>CallerReference</code> when you created the hosted zone.</p>
+    pub fn get_caller_reference(&self) -> &::std::option::Option<::std::string::String> {
+        &self.caller_reference
+    }
     /// <p>A complex type that includes the <code>Comment</code> and <code>PrivateZone</code> elements. If you omitted the <code>HostedZoneConfig</code> and <code>Comment</code> elements from the request, the <code>Config</code> and <code>Comment</code> elements don't appear in the response.</p>
     pub fn config(mut self, input: crate::types::HostedZoneConfig) -> Self {
         self.config = ::std::option::Option::Some(input);
@@ -123,6 +136,10 @@ impl HostedZoneBuilder {
         self.config = input;
         self
     }
+    /// <p>A complex type that includes the <code>Comment</code> and <code>PrivateZone</code> elements. If you omitted the <code>HostedZoneConfig</code> and <code>Comment</code> elements from the request, the <code>Config</code> and <code>Comment</code> elements don't appear in the response.</p>
+    pub fn get_config(&self) -> &::std::option::Option<crate::types::HostedZoneConfig> {
+        &self.config
+    }
     /// <p>The number of resource record sets in the hosted zone.</p>
     pub fn resource_record_set_count(mut self, input: i64) -> Self {
         self.resource_record_set_count = ::std::option::Option::Some(input);
@@ -132,6 +149,10 @@ impl HostedZoneBuilder {
     pub fn set_resource_record_set_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.resource_record_set_count = input;
         self
+    }
+    /// <p>The number of resource record sets in the hosted zone.</p>
+    pub fn get_resource_record_set_count(&self) -> &::std::option::Option<i64> {
+        &self.resource_record_set_count
     }
     /// <p>If the hosted zone was created by another service, the service that created the hosted zone. When a hosted zone is created by another service, you can't edit or delete it using Route 53. </p>
     pub fn linked_service(mut self, input: crate::types::LinkedService) -> Self {
@@ -145,6 +166,10 @@ impl HostedZoneBuilder {
     ) -> Self {
         self.linked_service = input;
         self
+    }
+    /// <p>If the hosted zone was created by another service, the service that created the hosted zone. When a hosted zone is created by another service, you can't edit or delete it using Route 53. </p>
+    pub fn get_linked_service(&self) -> &::std::option::Option<crate::types::LinkedService> {
+        &self.linked_service
     }
     /// Consumes the builder and constructs a [`HostedZone`](crate::types::HostedZone).
     pub fn build(self) -> crate::types::HostedZone {

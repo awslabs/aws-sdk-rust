@@ -57,6 +57,12 @@ impl PropertyValueHistoryBuilder {
         self.entity_property_reference = input;
         self
     }
+    /// <p>An object that uniquely identifies an entity property.</p>
+    pub fn get_entity_property_reference(
+        &self,
+    ) -> &::std::option::Option<crate::types::EntityPropertyReference> {
+        &self.entity_property_reference
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -75,6 +81,12 @@ impl PropertyValueHistoryBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>A list of objects that contain information about the values in the history of a time series property.</p>
+    pub fn get_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PropertyValue>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`PropertyValueHistory`](crate::types::PropertyValueHistory).
     pub fn build(self) -> crate::types::PropertyValueHistory {

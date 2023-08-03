@@ -71,6 +71,10 @@ impl OriginationIdentityMetadataBuilder {
         self.origination_identity_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) associated with the origination identity.</p>
+    pub fn get_origination_identity_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.origination_identity_arn
+    }
     /// <p>The unique identifier of the origination identity.</p>
     pub fn origination_identity(
         mut self,
@@ -87,6 +91,10 @@ impl OriginationIdentityMetadataBuilder {
         self.origination_identity = input;
         self
     }
+    /// <p>The unique identifier of the origination identity.</p>
+    pub fn get_origination_identity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.origination_identity
+    }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
     pub fn iso_country_code(
         mut self,
@@ -102,6 +110,10 @@ impl OriginationIdentityMetadataBuilder {
     ) -> Self {
         self.iso_country_code = input;
         self
+    }
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
+    pub fn get_iso_country_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iso_country_code
     }
     /// Appends an item to `number_capabilities`.
     ///
@@ -121,6 +133,12 @@ impl OriginationIdentityMetadataBuilder {
     ) -> Self {
         self.number_capabilities = input;
         self
+    }
+    /// <p>Describes if the origination identity can be used for text messages, voice calls or both.</p>
+    pub fn get_number_capabilities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>> {
+        &self.number_capabilities
     }
     /// Consumes the builder and constructs a [`OriginationIdentityMetadata`](crate::types::OriginationIdentityMetadata).
     pub fn build(self) -> crate::types::OriginationIdentityMetadata {

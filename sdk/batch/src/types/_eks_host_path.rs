@@ -40,6 +40,10 @@ impl EksHostPathBuilder {
         self.path = input;
         self
     }
+    /// <p>The path of the file or directory on the host to mount into containers on the pod.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
+    }
     /// Consumes the builder and constructs a [`EksHostPath`](crate::types::EksHostPath).
     pub fn build(self) -> crate::types::EksHostPath {
         crate::types::EksHostPath { path: self.path }

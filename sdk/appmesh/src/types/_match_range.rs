@@ -48,6 +48,10 @@ impl MatchRangeBuilder {
         self.start = input;
         self
     }
+    /// <p>The start of the range.</p>
+    pub fn get_start(&self) -> &::std::option::Option<i64> {
+        &self.start
+    }
     /// <p>The end of the range.</p>
     pub fn end(mut self, input: i64) -> Self {
         self.end = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl MatchRangeBuilder {
     pub fn set_end(mut self, input: ::std::option::Option<i64>) -> Self {
         self.end = input;
         self
+    }
+    /// <p>The end of the range.</p>
+    pub fn get_end(&self) -> &::std::option::Option<i64> {
+        &self.end
     }
     /// Consumes the builder and constructs a [`MatchRange`](crate::types::MatchRange).
     pub fn build(self) -> crate::types::MatchRange {

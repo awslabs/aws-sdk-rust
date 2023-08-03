@@ -40,6 +40,10 @@ impl DecimalPlacesConfigurationBuilder {
         self.decimal_places = input;
         self
     }
+    /// <p>The values of the decimal places.</p>
+    pub fn get_decimal_places(&self) -> &::std::option::Option<i64> {
+        &self.decimal_places
+    }
     /// Consumes the builder and constructs a [`DecimalPlacesConfiguration`](crate::types::DecimalPlacesConfiguration).
     pub fn build(self) -> crate::types::DecimalPlacesConfiguration {
         crate::types::DecimalPlacesConfiguration {

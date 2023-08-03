@@ -148,6 +148,10 @@ impl EndpointBuilder {
         self.endpoint_name = input;
         self
     }
+    /// <p>The name of the endpoint.</p>
+    pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
     pub fn endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_arn = ::std::option::Option::Some(input.into());
@@ -157,6 +161,10 @@ impl EndpointBuilder {
     pub fn set_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
+    pub fn get_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_arn
     }
     /// <p>The endpoint configuration associated with the endpoint.</p>
     pub fn endpoint_config_name(
@@ -173,6 +181,10 @@ impl EndpointBuilder {
     ) -> Self {
         self.endpoint_config_name = input;
         self
+    }
+    /// <p>The endpoint configuration associated with the endpoint.</p>
+    pub fn get_endpoint_config_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_config_name
     }
     /// Appends an item to `production_variants`.
     ///
@@ -193,6 +205,12 @@ impl EndpointBuilder {
         self.production_variants = input;
         self
     }
+    /// <p>A list of the production variants hosted on the endpoint. Each production variant is a model.</p>
+    pub fn get_production_variants(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantSummary>> {
+        &self.production_variants
+    }
     /// <p>The currently active data capture configuration used by your Endpoint.</p>
     pub fn data_capture_config(mut self, input: crate::types::DataCaptureConfigSummary) -> Self {
         self.data_capture_config = ::std::option::Option::Some(input);
@@ -206,6 +224,12 @@ impl EndpointBuilder {
         self.data_capture_config = input;
         self
     }
+    /// <p>The currently active data capture configuration used by your Endpoint.</p>
+    pub fn get_data_capture_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataCaptureConfigSummary> {
+        &self.data_capture_config
+    }
     /// <p>The status of the endpoint.</p>
     pub fn endpoint_status(mut self, input: crate::types::EndpointStatus) -> Self {
         self.endpoint_status = ::std::option::Option::Some(input);
@@ -218,6 +242,10 @@ impl EndpointBuilder {
     ) -> Self {
         self.endpoint_status = input;
         self
+    }
+    /// <p>The status of the endpoint.</p>
+    pub fn get_endpoint_status(&self) -> &::std::option::Option<crate::types::EndpointStatus> {
+        &self.endpoint_status
     }
     /// <p>If the endpoint failed, the reason it failed.</p>
     pub fn failure_reason(
@@ -235,6 +263,10 @@ impl EndpointBuilder {
         self.failure_reason = input;
         self
     }
+    /// <p>If the endpoint failed, the reason it failed.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
     /// <p>The time that the endpoint was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -248,6 +280,10 @@ impl EndpointBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time that the endpoint was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The last time the endpoint was modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -260,6 +296,10 @@ impl EndpointBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>The last time the endpoint was modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// Appends an item to `monitoring_schedules`.
     ///
@@ -280,6 +320,12 @@ impl EndpointBuilder {
         self.monitoring_schedules = input;
         self
     }
+    /// <p>A list of monitoring schedules for the endpoint. For information about model monitoring, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html">Amazon SageMaker Model Monitor</a>.</p>
+    pub fn get_monitoring_schedules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MonitoringSchedule>> {
+        &self.monitoring_schedules
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -298,6 +344,10 @@ impl EndpointBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of the tags associated with the endpoint. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Appends an item to `shadow_production_variants`.
     ///
@@ -320,6 +370,12 @@ impl EndpointBuilder {
     ) -> Self {
         self.shadow_production_variants = input;
         self
+    }
+    /// <p>A list of the shadow variants hosted on the endpoint. Each shadow variant is a model in shadow mode with production traffic replicated from the production variant.</p>
+    pub fn get_shadow_production_variants(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantSummary>> {
+        &self.shadow_production_variants
     }
     /// Consumes the builder and constructs a [`Endpoint`](crate::types::Endpoint).
     pub fn build(self) -> crate::types::Endpoint {

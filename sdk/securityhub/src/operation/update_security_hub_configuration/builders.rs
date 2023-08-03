@@ -36,6 +36,10 @@ impl UpdateSecurityHubConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateSecurityHubConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_security_hub_configuration::builders::UpdateSecurityHubConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -102,6 +106,11 @@ impl UpdateSecurityHubConfigurationFluentBuilder {
         self.inner = self.inner.set_auto_enable_controls(input);
         self
     }
+    /// <p>Whether to automatically enable new controls when they are added to standards that are enabled.</p>
+    /// <p>By default, this is set to <code>true</code>, and new controls are enabled automatically. To not automatically enable new controls, set this to <code>false</code>. </p>
+    pub fn get_auto_enable_controls(&self) -> &::std::option::Option<bool> {
+        self.inner.get_auto_enable_controls()
+    }
     /// <p>Updates whether the calling account has consolidated control findings turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control check even when the check applies to multiple enabled standards.</p>
     /// <p>If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for a control check when the check applies to multiple enabled standards.</p>
     /// <p>For accounts that are part of an organization, this value can only be updated in the administrator account.</p>
@@ -121,5 +130,13 @@ impl UpdateSecurityHubConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_control_finding_generator(input);
         self
+    }
+    /// <p>Updates whether the calling account has consolidated control findings turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control check even when the check applies to multiple enabled standards.</p>
+    /// <p>If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for a control check when the check applies to multiple enabled standards.</p>
+    /// <p>For accounts that are part of an organization, this value can only be updated in the administrator account.</p>
+    pub fn get_control_finding_generator(
+        &self,
+    ) -> &::std::option::Option<crate::types::ControlFindingGenerator> {
+        self.inner.get_control_finding_generator()
     }
 }

@@ -70,6 +70,14 @@ impl PutDashboardOutputBuilder {
         self.dashboard_validation_messages = input;
         self
     }
+    /// <p>If the input for <code>PutDashboard</code> was correct and the dashboard was successfully created or modified, this result is empty.</p>
+    /// <p>If this result includes only warning messages, then the input was valid enough for the dashboard to be created or modified, but some elements of the dashboard might not render.</p>
+    /// <p>If this result includes error messages, the input was not valid and the operation failed.</p>
+    pub fn get_dashboard_validation_messages(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DashboardValidationMessage>> {
+        &self.dashboard_validation_messages
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

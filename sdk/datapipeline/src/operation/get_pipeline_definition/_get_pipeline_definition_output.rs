@@ -77,6 +77,12 @@ impl GetPipelineDefinitionOutputBuilder {
         self.pipeline_objects = input;
         self
     }
+    /// <p>The objects defined in the pipeline.</p>
+    pub fn get_pipeline_objects(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>> {
+        &self.pipeline_objects
+    }
     /// Appends an item to `parameter_objects`.
     ///
     /// To override the contents of this collection use [`set_parameter_objects`](Self::set_parameter_objects).
@@ -96,6 +102,12 @@ impl GetPipelineDefinitionOutputBuilder {
         self.parameter_objects = input;
         self
     }
+    /// <p>The parameter objects used in the pipeline definition.</p>
+    pub fn get_parameter_objects(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterObject>> {
+        &self.parameter_objects
+    }
     /// Appends an item to `parameter_values`.
     ///
     /// To override the contents of this collection use [`set_parameter_values`](Self::set_parameter_values).
@@ -114,6 +126,12 @@ impl GetPipelineDefinitionOutputBuilder {
     ) -> Self {
         self.parameter_values = input;
         self
+    }
+    /// <p>The parameter values used in the pipeline definition.</p>
+    pub fn get_parameter_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>> {
+        &self.parameter_values
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

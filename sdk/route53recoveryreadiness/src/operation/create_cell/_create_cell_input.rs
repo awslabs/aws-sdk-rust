@@ -63,6 +63,10 @@ impl CreateCellInputBuilder {
         self.cell_name = input;
         self
     }
+    /// <p>The name of the cell to create.</p>
+    pub fn get_cell_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cell_name
+    }
     /// Appends an item to `cells`.
     ///
     /// To override the contents of this collection use [`set_cells`](Self::set_cells).
@@ -81,6 +85,10 @@ impl CreateCellInputBuilder {
     ) -> Self {
         self.cells = input;
         self
+    }
+    /// <p>A list of cell Amazon Resource Names (ARNs) contained within this cell, for use in nested cells. For example, Availability Zones within specific Amazon Web Services Regions.</p>
+    pub fn get_cells(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.cells
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -106,6 +114,14 @@ impl CreateCellInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A collection of tags associated with a resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateCellInput`](crate::operation::create_cell::CreateCellInput).
     pub fn build(

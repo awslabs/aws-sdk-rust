@@ -96,6 +96,10 @@ impl GeospatialMapConfigurationBuilder {
         self.field_wells = input;
         self
     }
+    /// <p>The field wells of the visual.</p>
+    pub fn get_field_wells(&self) -> &::std::option::Option<crate::types::GeospatialMapFieldWells> {
+        &self.field_wells
+    }
     /// <p>The legend display setup of the visual.</p>
     pub fn legend(mut self, input: crate::types::LegendOptions) -> Self {
         self.legend = ::std::option::Option::Some(input);
@@ -105,6 +109,10 @@ impl GeospatialMapConfigurationBuilder {
     pub fn set_legend(mut self, input: ::std::option::Option<crate::types::LegendOptions>) -> Self {
         self.legend = input;
         self
+    }
+    /// <p>The legend display setup of the visual.</p>
+    pub fn get_legend(&self) -> &::std::option::Option<crate::types::LegendOptions> {
+        &self.legend
     }
     /// <p>The tooltip display setup of the visual.</p>
     pub fn tooltip(mut self, input: crate::types::TooltipOptions) -> Self {
@@ -119,6 +127,10 @@ impl GeospatialMapConfigurationBuilder {
         self.tooltip = input;
         self
     }
+    /// <p>The tooltip display setup of the visual.</p>
+    pub fn get_tooltip(&self) -> &::std::option::Option<crate::types::TooltipOptions> {
+        &self.tooltip
+    }
     /// <p>The window options of the geospatial map.</p>
     pub fn window_options(mut self, input: crate::types::GeospatialWindowOptions) -> Self {
         self.window_options = ::std::option::Option::Some(input);
@@ -131,6 +143,12 @@ impl GeospatialMapConfigurationBuilder {
     ) -> Self {
         self.window_options = input;
         self
+    }
+    /// <p>The window options of the geospatial map.</p>
+    pub fn get_window_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::GeospatialWindowOptions> {
+        &self.window_options
     }
     /// <p>The map style options of the geospatial map.</p>
     pub fn map_style_options(mut self, input: crate::types::GeospatialMapStyleOptions) -> Self {
@@ -145,6 +163,12 @@ impl GeospatialMapConfigurationBuilder {
         self.map_style_options = input;
         self
     }
+    /// <p>The map style options of the geospatial map.</p>
+    pub fn get_map_style_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::GeospatialMapStyleOptions> {
+        &self.map_style_options
+    }
     /// <p>The point style options of the geospatial map.</p>
     pub fn point_style_options(mut self, input: crate::types::GeospatialPointStyleOptions) -> Self {
         self.point_style_options = ::std::option::Option::Some(input);
@@ -158,6 +182,12 @@ impl GeospatialMapConfigurationBuilder {
         self.point_style_options = input;
         self
     }
+    /// <p>The point style options of the geospatial map.</p>
+    pub fn get_point_style_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::GeospatialPointStyleOptions> {
+        &self.point_style_options
+    }
     /// <p>The visual display options for the visual palette.</p>
     pub fn visual_palette(mut self, input: crate::types::VisualPalette) -> Self {
         self.visual_palette = ::std::option::Option::Some(input);
@@ -170,6 +200,10 @@ impl GeospatialMapConfigurationBuilder {
     ) -> Self {
         self.visual_palette = input;
         self
+    }
+    /// <p>The visual display options for the visual palette.</p>
+    pub fn get_visual_palette(&self) -> &::std::option::Option<crate::types::VisualPalette> {
+        &self.visual_palette
     }
     /// Consumes the builder and constructs a [`GeospatialMapConfiguration`](crate::types::GeospatialMapConfiguration).
     pub fn build(self) -> crate::types::GeospatialMapConfiguration {

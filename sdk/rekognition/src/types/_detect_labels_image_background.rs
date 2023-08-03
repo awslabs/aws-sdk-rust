@@ -51,6 +51,10 @@ impl DetectLabelsImageBackgroundBuilder {
         self.quality = input;
         self
     }
+    /// <p>The quality of the image background as defined by brightness and sharpness.</p>
+    pub fn get_quality(&self) -> &::std::option::Option<crate::types::DetectLabelsImageQuality> {
+        &self.quality
+    }
     /// Appends an item to `dominant_colors`.
     ///
     /// To override the contents of this collection use [`set_dominant_colors`](Self::set_dominant_colors).
@@ -69,6 +73,12 @@ impl DetectLabelsImageBackgroundBuilder {
     ) -> Self {
         self.dominant_colors = input;
         self
+    }
+    /// <p>The dominant colors found in the background of an image, defined with RGB values, CSS color name, simplified color name, and PixelPercentage (the percentage of image pixels that have a particular color).</p>
+    pub fn get_dominant_colors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DominantColor>> {
+        &self.dominant_colors
     }
     /// Consumes the builder and constructs a [`DetectLabelsImageBackground`](crate::types::DetectLabelsImageBackground).
     pub fn build(self) -> crate::types::DetectLabelsImageBackground {

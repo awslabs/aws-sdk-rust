@@ -38,6 +38,10 @@ impl DescribeStackResourceDriftsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeStackResourceDrifts as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_stack_resource_drifts::builders::DescribeStackResourceDriftsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +138,10 @@ impl DescribeStackResourceDriftsFluentBuilder {
         self.inner = self.inner.set_stack_name(input);
         self
     }
+    /// <p>The name of the stack for which you want drift information.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_name()
+    }
     /// Appends an item to `StackResourceDriftStatusFilters`.
     ///
     /// To override the contents of this collection use [`set_stack_resource_drift_status_filters`](Self::set_stack_resource_drift_status_filters).
@@ -166,6 +174,18 @@ impl DescribeStackResourceDriftsFluentBuilder {
         self.inner = self.inner.set_stack_resource_drift_status_filters(input);
         self
     }
+    /// <p>The resource drift status values to use as filters for the resource drift results returned.</p>
+    /// <ul>
+    /// <li> <p> <code>DELETED</code>: The resource differs from its expected template configuration in that the resource has been deleted.</p> </li>
+    /// <li> <p> <code>MODIFIED</code>: One or more resource properties differ from their expected template values.</p> </li>
+    /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p> </li>
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p> </li>
+    /// </ul>
+    pub fn get_stack_resource_drift_status_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StackResourceDriftStatus>> {
+        self.inner.get_stack_resource_drift_status_filters()
+    }
     /// <p>A string that identifies the next page of stack resource drift results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -176,6 +196,10 @@ impl DescribeStackResourceDriftsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A string that identifies the next page of stack resource drift results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -185,5 +209,9 @@ impl DescribeStackResourceDriftsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

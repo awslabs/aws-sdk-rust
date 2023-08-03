@@ -40,6 +40,10 @@ impl MapStateStartedEventDetailsBuilder {
         self.length = input;
         self
     }
+    /// <p>The size of the array for Map state iterations.</p>
+    pub fn get_length(&self) -> &::std::option::Option<i32> {
+        &self.length
+    }
     /// Consumes the builder and constructs a [`MapStateStartedEventDetails`](crate::types::MapStateStartedEventDetails).
     pub fn build(self) -> crate::types::MapStateStartedEventDetails {
         crate::types::MapStateStartedEventDetails {

@@ -46,6 +46,12 @@ impl ServiceUpdateRequestBuilder {
         self.service_update_name_to_apply = input;
         self
     }
+    /// <p>The unique ID of the service update</p>
+    pub fn get_service_update_name_to_apply(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.service_update_name_to_apply
+    }
     /// Consumes the builder and constructs a [`ServiceUpdateRequest`](crate::types::ServiceUpdateRequest).
     pub fn build(self) -> crate::types::ServiceUpdateRequest {
         crate::types::ServiceUpdateRequest {

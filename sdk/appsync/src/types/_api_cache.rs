@@ -148,6 +148,11 @@ impl ApiCacheBuilder {
         self.ttl = input;
         self
     }
+    /// <p>TTL in seconds for cache entries.</p>
+    /// <p>Valid values are 1–3,600 seconds.</p>
+    pub fn get_ttl(&self) -> &::std::option::Option<i64> {
+        &self.ttl
+    }
     /// <p>Caching behavior.</p>
     /// <ul>
     /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>
@@ -169,6 +174,16 @@ impl ApiCacheBuilder {
         self.api_caching_behavior = input;
         self
     }
+    /// <p>Caching behavior.</p>
+    /// <ul>
+    /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>
+    /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li>
+    /// </ul>
+    pub fn get_api_caching_behavior(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApiCachingBehavior> {
+        &self.api_caching_behavior
+    }
     /// <p>Transit encryption flag when connecting to cache. You cannot update this setting after creation.</p>
     pub fn transit_encryption_enabled(mut self, input: bool) -> Self {
         self.transit_encryption_enabled = ::std::option::Option::Some(input);
@@ -179,6 +194,10 @@ impl ApiCacheBuilder {
         self.transit_encryption_enabled = input;
         self
     }
+    /// <p>Transit encryption flag when connecting to cache. You cannot update this setting after creation.</p>
+    pub fn get_transit_encryption_enabled(&self) -> &::std::option::Option<bool> {
+        &self.transit_encryption_enabled
+    }
     /// <p>At-rest encryption flag for cache. You cannot update this setting after creation.</p>
     pub fn at_rest_encryption_enabled(mut self, input: bool) -> Self {
         self.at_rest_encryption_enabled = ::std::option::Option::Some(input);
@@ -188,6 +207,10 @@ impl ApiCacheBuilder {
     pub fn set_at_rest_encryption_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.at_rest_encryption_enabled = input;
         self
+    }
+    /// <p>At-rest encryption flag for cache. You cannot update this setting after creation.</p>
+    pub fn get_at_rest_encryption_enabled(&self) -> &::std::option::Option<bool> {
+        &self.at_rest_encryption_enabled
     }
     /// <p>The cache instance type. Valid values are </p>
     /// <ul>
@@ -241,6 +264,31 @@ impl ApiCacheBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The cache instance type. Valid values are </p>
+    /// <ul>
+    /// <li> <p> <code>SMALL</code> </p> </li>
+    /// <li> <p> <code>MEDIUM</code> </p> </li>
+    /// <li> <p> <code>LARGE</code> </p> </li>
+    /// <li> <p> <code>XLARGE</code> </p> </li>
+    /// <li> <p> <code>LARGE_2X</code> </p> </li>
+    /// <li> <p> <code>LARGE_4X</code> </p> </li>
+    /// <li> <p> <code>LARGE_8X</code> (not available in all regions)</p> </li>
+    /// <li> <p> <code>LARGE_12X</code> </p> </li>
+    /// </ul>
+    /// <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p>
+    /// <p>The following legacy instance types are available, but their use is discouraged:</p>
+    /// <ul>
+    /// <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li>
+    /// <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li>
+    /// <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li>
+    /// <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li>
+    /// <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li>
+    /// <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li>
+    /// <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ApiCacheType> {
+        &self.r#type
+    }
     /// <p>The cache instance status.</p>
     /// <ul>
     /// <li> <p> <b>AVAILABLE</b>: The instance is available for use.</p> </li>
@@ -267,6 +315,17 @@ impl ApiCacheBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The cache instance status.</p>
+    /// <ul>
+    /// <li> <p> <b>AVAILABLE</b>: The instance is available for use.</p> </li>
+    /// <li> <p> <b>CREATING</b>: The instance is currently creating.</p> </li>
+    /// <li> <p> <b>DELETING</b>: The instance is currently deleting.</p> </li>
+    /// <li> <p> <b>MODIFYING</b>: The instance is currently modifying.</p> </li>
+    /// <li> <p> <b>FAILED</b>: The instance has failed creation.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ApiCacheStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`ApiCache`](crate::types::ApiCache).
     pub fn build(self) -> crate::types::ApiCache {

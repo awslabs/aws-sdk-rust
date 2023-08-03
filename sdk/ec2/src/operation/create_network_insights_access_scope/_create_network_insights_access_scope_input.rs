@@ -83,6 +83,12 @@ impl CreateNetworkInsightsAccessScopeInputBuilder {
         self.match_paths = input;
         self
     }
+    /// <p>The paths to match.</p>
+    pub fn get_match_paths(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessScopePathRequest>> {
+        &self.match_paths
+    }
     /// Appends an item to `exclude_paths`.
     ///
     /// To override the contents of this collection use [`set_exclude_paths`](Self::set_exclude_paths).
@@ -102,6 +108,12 @@ impl CreateNetworkInsightsAccessScopeInputBuilder {
         self.exclude_paths = input;
         self
     }
+    /// <p>The paths to exclude.</p>
+    pub fn get_exclude_paths(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessScopePathRequest>> {
+        &self.exclude_paths
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -111,6 +123,10 @@ impl CreateNetworkInsightsAccessScopeInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Appends an item to `tag_specifications`.
     ///
@@ -131,6 +147,12 @@ impl CreateNetworkInsightsAccessScopeInputBuilder {
         self.tag_specifications = input;
         self
     }
+    /// <p>The tags to apply.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -140,6 +162,10 @@ impl CreateNetworkInsightsAccessScopeInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`CreateNetworkInsightsAccessScopeInput`](crate::operation::create_network_insights_access_scope::CreateNetworkInsightsAccessScopeInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_network_insights_access_scope::CreateNetworkInsightsAccessScopeInput, ::aws_smithy_http::operation::error::BuildError>{

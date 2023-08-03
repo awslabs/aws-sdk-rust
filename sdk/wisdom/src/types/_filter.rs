@@ -56,6 +56,10 @@ impl FilterBuilder {
         self.field = input;
         self
     }
+    /// <p>The field on which to filter.</p>
+    pub fn get_field(&self) -> &::std::option::Option<crate::types::FilterField> {
+        &self.field
+    }
     /// <p>The operator to use for comparing the field’s value with the provided value.</p>
     pub fn operator(mut self, input: crate::types::FilterOperator) -> Self {
         self.operator = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl FilterBuilder {
         self.operator = input;
         self
     }
+    /// <p>The operator to use for comparing the field’s value with the provided value.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::FilterOperator> {
+        &self.operator
+    }
     /// <p>The desired field value on which to filter.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -78,6 +86,10 @@ impl FilterBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The desired field value on which to filter.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     pub fn build(self) -> crate::types::Filter {

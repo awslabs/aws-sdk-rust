@@ -37,6 +37,12 @@ impl DescribeInsightRulesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeInsightRules as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_insight_rules::builders::DescribeInsightRulesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +144,10 @@ impl DescribeInsightRulesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>Include this value, if it was returned by the previous operation, to get the next set of rules.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return in one operation. If you omit this parameter, the default of 500 is used.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -147,5 +157,9 @@ impl DescribeInsightRulesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return in one operation. If you omit this parameter, the default of 500 is used.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

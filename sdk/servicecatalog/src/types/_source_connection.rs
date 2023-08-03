@@ -51,6 +51,10 @@ impl SourceConnectionBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The only supported <code>SourceConnection</code> type is Codestar. </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::SourceType> {
+        &self.r#type
+    }
     /// <p>The connection details based on the connection <code>Type</code>. </p>
     pub fn connection_parameters(
         mut self,
@@ -66,6 +70,12 @@ impl SourceConnectionBuilder {
     ) -> Self {
         self.connection_parameters = input;
         self
+    }
+    /// <p>The connection details based on the connection <code>Type</code>. </p>
+    pub fn get_connection_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::SourceConnectionParameters> {
+        &self.connection_parameters
     }
     /// Consumes the builder and constructs a [`SourceConnection`](crate::types::SourceConnection).
     pub fn build(self) -> crate::types::SourceConnection {

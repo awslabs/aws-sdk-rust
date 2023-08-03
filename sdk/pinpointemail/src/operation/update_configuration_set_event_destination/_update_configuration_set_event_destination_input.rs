@@ -64,6 +64,10 @@ impl UpdateConfigurationSetEventDestinationInputBuilder {
         self.configuration_set_name = input;
         self
     }
+    /// <p>The name of the configuration set that contains the event destination that you want to modify.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set_name
+    }
     /// <p>The name of the event destination that you want to modify.</p>
     pub fn event_destination_name(
         mut self,
@@ -80,6 +84,10 @@ impl UpdateConfigurationSetEventDestinationInputBuilder {
         self.event_destination_name = input;
         self
     }
+    /// <p>The name of the event destination that you want to modify.</p>
+    pub fn get_event_destination_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_destination_name
+    }
     /// <p>An object that defines the event destination.</p>
     pub fn event_destination(mut self, input: crate::types::EventDestinationDefinition) -> Self {
         self.event_destination = ::std::option::Option::Some(input);
@@ -92,6 +100,12 @@ impl UpdateConfigurationSetEventDestinationInputBuilder {
     ) -> Self {
         self.event_destination = input;
         self
+    }
+    /// <p>An object that defines the event destination.</p>
+    pub fn get_event_destination(
+        &self,
+    ) -> &::std::option::Option<crate::types::EventDestinationDefinition> {
+        &self.event_destination
     }
     /// Consumes the builder and constructs a [`UpdateConfigurationSetEventDestinationInput`](crate::operation::update_configuration_set_event_destination::UpdateConfigurationSetEventDestinationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_configuration_set_event_destination::UpdateConfigurationSetEventDestinationInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -66,6 +66,10 @@ impl ConversationLogsDataSourceBuilder {
         self.bot_id = input;
         self
     }
+    /// <p>The bot Id from the conversation logs.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
     /// <p>The bot alias Id from the conversation logs.</p>
     pub fn bot_alias_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_alias_id = ::std::option::Option::Some(input.into());
@@ -76,6 +80,10 @@ impl ConversationLogsDataSourceBuilder {
         self.bot_alias_id = input;
         self
     }
+    /// <p>The bot alias Id from the conversation logs.</p>
+    pub fn get_bot_alias_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_alias_id
+    }
     /// <p>The locale Id of the conversation log.</p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
@@ -85,6 +93,10 @@ impl ConversationLogsDataSourceBuilder {
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.locale_id = input;
         self
+    }
+    /// <p>The locale Id of the conversation log.</p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale_id
     }
     /// <p>The filter for the data source of the conversation log.</p>
     pub fn filter(mut self, input: crate::types::ConversationLogsDataSourceFilterBy) -> Self {
@@ -98,6 +110,12 @@ impl ConversationLogsDataSourceBuilder {
     ) -> Self {
         self.filter = input;
         self
+    }
+    /// <p>The filter for the data source of the conversation log.</p>
+    pub fn get_filter(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConversationLogsDataSourceFilterBy> {
+        &self.filter
     }
     /// Consumes the builder and constructs a [`ConversationLogsDataSource`](crate::types::ConversationLogsDataSource).
     pub fn build(self) -> crate::types::ConversationLogsDataSource {

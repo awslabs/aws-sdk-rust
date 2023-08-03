@@ -63,6 +63,10 @@ impl UpdateAssessmentTargetInputBuilder {
         self.assessment_target_arn = input;
         self
     }
+    /// <p>The ARN of the assessment target that you want to update.</p>
+    pub fn get_assessment_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_target_arn
+    }
     /// <p>The name of the assessment target that you want to update.</p>
     pub fn assessment_target_name(
         mut self,
@@ -79,6 +83,10 @@ impl UpdateAssessmentTargetInputBuilder {
         self.assessment_target_name = input;
         self
     }
+    /// <p>The name of the assessment target that you want to update.</p>
+    pub fn get_assessment_target_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_target_name
+    }
     /// <p>The ARN of the resource group that is used to specify the new resource group to associate with the assessment target.</p>
     pub fn resource_group_arn(
         mut self,
@@ -94,6 +102,10 @@ impl UpdateAssessmentTargetInputBuilder {
     ) -> Self {
         self.resource_group_arn = input;
         self
+    }
+    /// <p>The ARN of the resource group that is used to specify the new resource group to associate with the assessment target.</p>
+    pub fn get_resource_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_group_arn
     }
     /// Consumes the builder and constructs a [`UpdateAssessmentTargetInput`](crate::operation::update_assessment_target::UpdateAssessmentTargetInput).
     pub fn build(

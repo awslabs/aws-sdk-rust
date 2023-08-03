@@ -39,6 +39,10 @@ impl DescribeProblemObservationsInputBuilder {
         self.problem_id = input;
         self
     }
+    /// <p>The ID of the problem.</p>
+    pub fn get_problem_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.problem_id
+    }
     /// Consumes the builder and constructs a [`DescribeProblemObservationsInput`](crate::operation::describe_problem_observations::DescribeProblemObservationsInput).
     pub fn build(
         self,

@@ -38,6 +38,10 @@ impl ListQueuesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListQueues as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_queues::builders::ListQueuesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl ListQueuesFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// Appends an item to `QueueTypes`.
     ///
     /// To override the contents of this collection use [`set_queue_types`](Self::set_queue_types).
@@ -143,6 +151,12 @@ impl ListQueuesFluentBuilder {
         self.inner = self.inner.set_queue_types(input);
         self
     }
+    /// <p>The type of queue.</p>
+    pub fn get_queue_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QueueType>> {
+        self.inner.get_queue_types()
+    }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -153,6 +167,10 @@ impl ListQueuesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -162,5 +180,9 @@ impl ListQueuesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

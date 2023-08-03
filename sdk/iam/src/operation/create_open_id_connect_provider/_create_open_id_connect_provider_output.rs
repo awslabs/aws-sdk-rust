@@ -61,6 +61,12 @@ impl CreateOpenIdConnectProviderOutputBuilder {
         self.open_id_connect_provider_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the new IAM OpenID Connect provider that is created. For more information, see <code>OpenIDConnectProviderListEntry</code>. </p>
+    pub fn get_open_id_connect_provider_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.open_id_connect_provider_arn
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -79,6 +85,10 @@ impl CreateOpenIdConnectProviderOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tags that are attached to the new IAM OIDC provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -98,6 +98,10 @@ impl ListPipesInputBuilder {
         self.name_prefix = input;
         self
     }
+    /// <p>A value that will return a subset of the pipes associated with this account. For example, <code>"NamePrefix": "ABC"</code> will return all endpoints with "ABC" in the name.</p>
+    pub fn get_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name_prefix
+    }
     /// <p>The state the pipe should be in.</p>
     pub fn desired_state(mut self, input: crate::types::RequestedPipeState) -> Self {
         self.desired_state = ::std::option::Option::Some(input);
@@ -111,6 +115,10 @@ impl ListPipesInputBuilder {
         self.desired_state = input;
         self
     }
+    /// <p>The state the pipe should be in.</p>
+    pub fn get_desired_state(&self) -> &::std::option::Option<crate::types::RequestedPipeState> {
+        &self.desired_state
+    }
     /// <p>The state the pipe is in.</p>
     pub fn current_state(mut self, input: crate::types::PipeState) -> Self {
         self.current_state = ::std::option::Option::Some(input);
@@ -123,6 +131,10 @@ impl ListPipesInputBuilder {
     ) -> Self {
         self.current_state = input;
         self
+    }
+    /// <p>The state the pipe is in.</p>
+    pub fn get_current_state(&self) -> &::std::option::Option<crate::types::PipeState> {
+        &self.current_state
     }
     /// <p>The prefix matching the pipe source.</p>
     pub fn source_prefix(
@@ -140,6 +152,10 @@ impl ListPipesInputBuilder {
         self.source_prefix = input;
         self
     }
+    /// <p>The prefix matching the pipe source.</p>
+    pub fn get_source_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_prefix
+    }
     /// <p>The prefix matching the pipe target.</p>
     pub fn target_prefix(
         mut self,
@@ -156,6 +172,10 @@ impl ListPipesInputBuilder {
         self.target_prefix = input;
         self
     }
+    /// <p>The prefix matching the pipe target.</p>
+    pub fn get_target_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_prefix
+    }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -166,6 +186,10 @@ impl ListPipesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of pipes to include in the response.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -175,6 +199,10 @@ impl ListPipesInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>The maximum number of pipes to include in the response.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// Consumes the builder and constructs a [`ListPipesInput`](crate::operation::list_pipes::ListPipesInput).
     pub fn build(

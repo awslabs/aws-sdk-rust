@@ -46,6 +46,10 @@ impl AttributeValueTargetBuilder {
         self.attribute_value = input;
         self
     }
+    /// <p>The value of the attribute.</p>
+    pub fn get_attribute_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_value
+    }
     /// Consumes the builder and constructs a [`AttributeValueTarget`](crate::types::AttributeValueTarget).
     pub fn build(self) -> crate::types::AttributeValueTarget {
         crate::types::AttributeValueTarget {

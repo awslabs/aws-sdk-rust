@@ -59,6 +59,12 @@ impl BatchCreateVariableInputBuilder {
         self.variable_entries = input;
         self
     }
+    /// <p>The list of variables for the batch create variable request.</p>
+    pub fn get_variable_entries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VariableEntry>> {
+        &self.variable_entries
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -77,6 +83,10 @@ impl BatchCreateVariableInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A collection of key and value pairs.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`BatchCreateVariableInput`](crate::operation::batch_create_variable::BatchCreateVariableInput).
     pub fn build(

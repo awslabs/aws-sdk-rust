@@ -49,6 +49,10 @@ impl GetPrefetchScheduleInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Returns information about the prefetch schedule for a specific playback configuration. If you call <code>GetPrefetchSchedule</code> on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code.</p>
     pub fn playback_configuration_name(
         mut self,
@@ -64,6 +68,10 @@ impl GetPrefetchScheduleInputBuilder {
     ) -> Self {
         self.playback_configuration_name = input;
         self
+    }
+    /// <p>Returns information about the prefetch schedule for a specific playback configuration. If you call <code>GetPrefetchSchedule</code> on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code.</p>
+    pub fn get_playback_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.playback_configuration_name
     }
     /// Consumes the builder and constructs a [`GetPrefetchScheduleInput`](crate::operation::get_prefetch_schedule::GetPrefetchScheduleInput).
     pub fn build(

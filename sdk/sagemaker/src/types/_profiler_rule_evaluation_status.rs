@@ -80,6 +80,10 @@ impl ProfilerRuleEvaluationStatusBuilder {
         self.rule_configuration_name = input;
         self
     }
+    /// <p>The name of the rule configuration.</p>
+    pub fn get_rule_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_configuration_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the rule evaluation job.</p>
     pub fn rule_evaluation_job_arn(
         mut self,
@@ -96,6 +100,10 @@ impl ProfilerRuleEvaluationStatusBuilder {
         self.rule_evaluation_job_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the rule evaluation job.</p>
+    pub fn get_rule_evaluation_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_evaluation_job_arn
+    }
     /// <p>Status of the rule evaluation.</p>
     pub fn rule_evaluation_status(mut self, input: crate::types::RuleEvaluationStatus) -> Self {
         self.rule_evaluation_status = ::std::option::Option::Some(input);
@@ -108,6 +116,12 @@ impl ProfilerRuleEvaluationStatusBuilder {
     ) -> Self {
         self.rule_evaluation_status = input;
         self
+    }
+    /// <p>Status of the rule evaluation.</p>
+    pub fn get_rule_evaluation_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::RuleEvaluationStatus> {
+        &self.rule_evaluation_status
     }
     /// <p>Details from the rule evaluation.</p>
     pub fn status_details(
@@ -125,6 +139,10 @@ impl ProfilerRuleEvaluationStatusBuilder {
         self.status_details = input;
         self
     }
+    /// <p>Details from the rule evaluation.</p>
+    pub fn get_status_details(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_details
+    }
     /// <p>Timestamp when the rule evaluation status was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -137,6 +155,10 @@ impl ProfilerRuleEvaluationStatusBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>Timestamp when the rule evaluation status was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// Consumes the builder and constructs a [`ProfilerRuleEvaluationStatus`](crate::types::ProfilerRuleEvaluationStatus).
     pub fn build(self) -> crate::types::ProfilerRuleEvaluationStatus {

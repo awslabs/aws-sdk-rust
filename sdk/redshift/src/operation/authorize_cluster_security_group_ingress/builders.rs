@@ -39,6 +39,10 @@ impl AuthorizeClusterSecurityGroupIngressFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AuthorizeClusterSecurityGroupIngress as a reference.
+    pub fn as_input(&self) -> &crate::operation::authorize_cluster_security_group_ingress::builders::AuthorizeClusterSecurityGroupIngressInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -109,6 +113,10 @@ impl AuthorizeClusterSecurityGroupIngressFluentBuilder {
         self.inner = self.inner.set_cluster_security_group_name(input);
         self
     }
+    /// <p>The name of the security group to which the ingress rule is added.</p>
+    pub fn get_cluster_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_security_group_name()
+    }
     /// <p>The IP range to be added the Amazon Redshift security group.</p>
     pub fn cidrip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cidrip(input.into());
@@ -118,6 +126,10 @@ impl AuthorizeClusterSecurityGroupIngressFluentBuilder {
     pub fn set_cidrip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cidrip(input);
         self
+    }
+    /// <p>The IP range to be added the Amazon Redshift security group.</p>
+    pub fn get_cidrip(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cidrip()
     }
     /// <p>The EC2 security group to be added the Amazon Redshift security group.</p>
     pub fn ec2_security_group_name(
@@ -134,6 +146,10 @@ impl AuthorizeClusterSecurityGroupIngressFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ec2_security_group_name(input);
         self
+    }
+    /// <p>The EC2 security group to be added the Amazon Redshift security group.</p>
+    pub fn get_ec2_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ec2_security_group_name()
     }
     /// <p>The Amazon Web Services account number of the owner of the security group specified by the <i>EC2SecurityGroupName</i> parameter. The Amazon Web Services Access Key ID is not an acceptable value. </p>
     /// <p>Example: <code>111122223333</code> </p>
@@ -152,5 +168,10 @@ impl AuthorizeClusterSecurityGroupIngressFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ec2_security_group_owner_id(input);
         self
+    }
+    /// <p>The Amazon Web Services account number of the owner of the security group specified by the <i>EC2SecurityGroupName</i> parameter. The Amazon Web Services Access Key ID is not an acceptable value. </p>
+    /// <p>Example: <code>111122223333</code> </p>
+    pub fn get_ec2_security_group_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ec2_security_group_owner_id()
     }
 }

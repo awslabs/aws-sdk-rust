@@ -39,6 +39,12 @@ impl StartInstanceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartInstance as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_instance::builders::StartInstanceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,5 +132,9 @@ impl StartInstanceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_instance_name(input);
         self
+    }
+    /// <p>The name of the instance (a virtual private server) to start.</p>
+    pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_name()
     }
 }

@@ -42,6 +42,10 @@ impl CancelServicePipelineDeploymentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CancelServicePipelineDeployment as a reference.
+    pub fn as_input(&self) -> &crate::operation::cancel_service_pipeline_deployment::builders::CancelServicePipelineDeploymentInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -105,5 +109,9 @@ impl CancelServicePipelineDeploymentFluentBuilder {
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_name(input);
         self
+    }
+    /// <p>The name of the service with the service pipeline deployment to cancel.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_name()
     }
 }

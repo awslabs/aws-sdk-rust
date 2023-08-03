@@ -36,6 +36,12 @@ impl CreateProjectFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateProject as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_project::builders::CreateProjectInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl CreateProjectFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The project's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>Sets the execution timeout value (in minutes) for a project. All test runs in this project use the specified execution timeout value unless overridden when scheduling a run.</p>
     pub fn default_job_timeout_minutes(mut self, input: i32) -> Self {
         self.inner = self.inner.default_job_timeout_minutes(input);
@@ -128,6 +138,10 @@ impl CreateProjectFluentBuilder {
         self.inner = self.inner.set_default_job_timeout_minutes(input);
         self
     }
+    /// <p>Sets the execution timeout value (in minutes) for a project. All test runs in this project use the specified execution timeout value unless overridden when scheduling a run.</p>
+    pub fn get_default_job_timeout_minutes(&self) -> &::std::option::Option<i32> {
+        self.inner.get_default_job_timeout_minutes()
+    }
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
         self.inner = self.inner.vpc_config(input);
@@ -137,5 +151,9 @@ impl CreateProjectFluentBuilder {
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
         self.inner = self.inner.set_vpc_config(input);
         self
+    }
+    /// <p>The VPC security groups and subnets that are attached to a project.</p>
+    pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
+        self.inner.get_vpc_config()
     }
 }

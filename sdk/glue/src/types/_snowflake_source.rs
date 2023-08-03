@@ -56,6 +56,10 @@ impl SnowflakeSourceBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the Snowflake data source.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Configuration for the Snowflake data source.</p>
     pub fn data(mut self, input: crate::types::SnowflakeNodeData) -> Self {
         self.data = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl SnowflakeSourceBuilder {
     ) -> Self {
         self.data = input;
         self
+    }
+    /// <p>Configuration for the Snowflake data source.</p>
+    pub fn get_data(&self) -> &::std::option::Option<crate::types::SnowflakeNodeData> {
+        &self.data
     }
     /// Appends an item to `output_schemas`.
     ///
@@ -87,6 +95,12 @@ impl SnowflakeSourceBuilder {
     ) -> Self {
         self.output_schemas = input;
         self
+    }
+    /// <p>Specifies user-defined schemas for your output data.</p>
+    pub fn get_output_schemas(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>> {
+        &self.output_schemas
     }
     /// Consumes the builder and constructs a [`SnowflakeSource`](crate::types::SnowflakeSource).
     pub fn build(self) -> crate::types::SnowflakeSource {

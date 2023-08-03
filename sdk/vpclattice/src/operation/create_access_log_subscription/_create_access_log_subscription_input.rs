@@ -71,6 +71,10 @@ impl CreateAccessLogSubscriptionInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
     pub fn resource_identifier(
         mut self,
@@ -87,6 +91,10 @@ impl CreateAccessLogSubscriptionInputBuilder {
         self.resource_identifier = input;
         self
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_identifier
+    }
     /// <p>The Amazon Resource Name (ARN) of the destination. The supported destination types are CloudWatch Log groups, Kinesis Data Firehose delivery streams, and Amazon S3 buckets.</p>
     pub fn destination_arn(
         mut self,
@@ -102,6 +110,10 @@ impl CreateAccessLogSubscriptionInputBuilder {
     ) -> Self {
         self.destination_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the destination. The supported destination types are CloudWatch Log groups, Kinesis Data Firehose delivery streams, and Amazon S3 buckets.</p>
+    pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_arn
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -127,6 +139,14 @@ impl CreateAccessLogSubscriptionInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags for the access log subscription.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateAccessLogSubscriptionInput`](crate::operation::create_access_log_subscription::CreateAccessLogSubscriptionInput).
     pub fn build(

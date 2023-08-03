@@ -50,6 +50,10 @@ impl UpdateGatewayRouteOutputBuilder {
         self.gateway_route = input;
         self
     }
+    /// <p>A full description of the gateway route that was updated.</p>
+    pub fn get_gateway_route(&self) -> &::std::option::Option<crate::types::GatewayRouteData> {
+        &self.gateway_route
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

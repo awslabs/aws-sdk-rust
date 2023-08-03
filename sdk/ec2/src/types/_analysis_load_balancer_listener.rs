@@ -48,6 +48,10 @@ impl AnalysisLoadBalancerListenerBuilder {
         self.load_balancer_port = input;
         self
     }
+    /// <p>The port on which the load balancer is listening.</p>
+    pub fn get_load_balancer_port(&self) -> &::std::option::Option<i32> {
+        &self.load_balancer_port
+    }
     /// <p>[Classic Load Balancers] The back-end port for the listener.</p>
     pub fn instance_port(mut self, input: i32) -> Self {
         self.instance_port = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl AnalysisLoadBalancerListenerBuilder {
     pub fn set_instance_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.instance_port = input;
         self
+    }
+    /// <p>[Classic Load Balancers] The back-end port for the listener.</p>
+    pub fn get_instance_port(&self) -> &::std::option::Option<i32> {
+        &self.instance_port
     }
     /// Consumes the builder and constructs a [`AnalysisLoadBalancerListener`](crate::types::AnalysisLoadBalancerListener).
     pub fn build(self) -> crate::types::AnalysisLoadBalancerListener {

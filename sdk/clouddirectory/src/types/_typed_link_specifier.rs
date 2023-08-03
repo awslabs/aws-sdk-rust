@@ -73,6 +73,12 @@ impl TypedLinkSpecifierBuilder {
         self.typed_link_facet = input;
         self
     }
+    /// <p>Identifies the typed link facet that is associated with the typed link.</p>
+    pub fn get_typed_link_facet(
+        &self,
+    ) -> &::std::option::Option<crate::types::TypedLinkSchemaAndFacetName> {
+        &self.typed_link_facet
+    }
     /// <p>Identifies the source object that the typed link will attach to.</p>
     pub fn source_object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.source_object_reference = ::std::option::Option::Some(input);
@@ -86,6 +92,12 @@ impl TypedLinkSpecifierBuilder {
         self.source_object_reference = input;
         self
     }
+    /// <p>Identifies the source object that the typed link will attach to.</p>
+    pub fn get_source_object_reference(
+        &self,
+    ) -> &::std::option::Option<crate::types::ObjectReference> {
+        &self.source_object_reference
+    }
     /// <p>Identifies the target object that the typed link will attach to.</p>
     pub fn target_object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.target_object_reference = ::std::option::Option::Some(input);
@@ -98,6 +110,12 @@ impl TypedLinkSpecifierBuilder {
     ) -> Self {
         self.target_object_reference = input;
         self
+    }
+    /// <p>Identifies the target object that the typed link will attach to.</p>
+    pub fn get_target_object_reference(
+        &self,
+    ) -> &::std::option::Option<crate::types::ObjectReference> {
+        &self.target_object_reference
     }
     /// Appends an item to `identity_attribute_values`.
     ///
@@ -117,6 +135,12 @@ impl TypedLinkSpecifierBuilder {
     ) -> Self {
         self.identity_attribute_values = input;
         self
+    }
+    /// <p>Identifies the attribute value to update.</p>
+    pub fn get_identity_attribute_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeNameAndValue>> {
+        &self.identity_attribute_values
     }
     /// Consumes the builder and constructs a [`TypedLinkSpecifier`](crate::types::TypedLinkSpecifier).
     pub fn build(self) -> crate::types::TypedLinkSpecifier {

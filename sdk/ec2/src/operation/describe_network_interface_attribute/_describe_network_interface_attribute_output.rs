@@ -82,6 +82,12 @@ impl DescribeNetworkInterfaceAttributeOutputBuilder {
         self.attachment = input;
         self
     }
+    /// <p>The attachment (if any) of the network interface.</p>
+    pub fn get_attachment(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkInterfaceAttachment> {
+        &self.attachment
+    }
     /// <p>The description of the network interface.</p>
     pub fn description(mut self, input: crate::types::AttributeValue) -> Self {
         self.description = ::std::option::Option::Some(input);
@@ -94,6 +100,10 @@ impl DescribeNetworkInterfaceAttributeOutputBuilder {
     ) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the network interface.</p>
+    pub fn get_description(&self) -> &::std::option::Option<crate::types::AttributeValue> {
+        &self.description
     }
     /// Appends an item to `groups`.
     ///
@@ -114,6 +124,12 @@ impl DescribeNetworkInterfaceAttributeOutputBuilder {
         self.groups = input;
         self
     }
+    /// <p>The security groups associated with the network interface.</p>
+    pub fn get_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>> {
+        &self.groups
+    }
     /// <p>The ID of the network interface.</p>
     pub fn network_interface_id(
         mut self,
@@ -130,6 +146,10 @@ impl DescribeNetworkInterfaceAttributeOutputBuilder {
         self.network_interface_id = input;
         self
     }
+    /// <p>The ID of the network interface.</p>
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_interface_id
+    }
     /// <p>Indicates whether source/destination checking is enabled.</p>
     pub fn source_dest_check(mut self, input: crate::types::AttributeBooleanValue) -> Self {
         self.source_dest_check = ::std::option::Option::Some(input);
@@ -142,6 +162,12 @@ impl DescribeNetworkInterfaceAttributeOutputBuilder {
     ) -> Self {
         self.source_dest_check = input;
         self
+    }
+    /// <p>Indicates whether source/destination checking is enabled.</p>
+    pub fn get_source_dest_check(
+        &self,
+    ) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
+        &self.source_dest_check
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -56,6 +56,10 @@ impl TestRoleOutputBuilder {
         self.success = input;
         self
     }
+    /// <p>If the operation is successful, this value is <code>true</code>; otherwise, the value is <code>false</code>.</p>
+    pub fn get_success(&self) -> &::std::option::Option<::std::string::String> {
+        &self.success
+    }
     /// Appends an item to `messages`.
     ///
     /// To override the contents of this collection use [`set_messages`](Self::set_messages).
@@ -74,6 +78,10 @@ impl TestRoleOutputBuilder {
     ) -> Self {
         self.messages = input;
         self
+    }
+    /// <p>If the <code>Success</code> element contains <code>false</code>, this value is an array of one or more error messages that were generated during the test process.</p>
+    pub fn get_messages(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.messages
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -64,6 +64,10 @@ impl GpuDeviceInfoBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the GPU accelerator.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The manufacturer of the GPU accelerator.</p>
     pub fn manufacturer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.manufacturer = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl GpuDeviceInfoBuilder {
         self.manufacturer = input;
         self
     }
+    /// <p>The manufacturer of the GPU accelerator.</p>
+    pub fn get_manufacturer(&self) -> &::std::option::Option<::std::string::String> {
+        &self.manufacturer
+    }
     /// <p>The number of GPUs for the instance type.</p>
     pub fn count(mut self, input: i32) -> Self {
         self.count = ::std::option::Option::Some(input);
@@ -83,6 +91,10 @@ impl GpuDeviceInfoBuilder {
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
+    }
+    /// <p>The number of GPUs for the instance type.</p>
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        &self.count
     }
     /// <p>Describes the memory available to the GPU accelerator.</p>
     pub fn memory_info(mut self, input: crate::types::GpuDeviceMemoryInfo) -> Self {
@@ -96,6 +108,10 @@ impl GpuDeviceInfoBuilder {
     ) -> Self {
         self.memory_info = input;
         self
+    }
+    /// <p>Describes the memory available to the GPU accelerator.</p>
+    pub fn get_memory_info(&self) -> &::std::option::Option<crate::types::GpuDeviceMemoryInfo> {
+        &self.memory_info
     }
     /// Consumes the builder and constructs a [`GpuDeviceInfo`](crate::types::GpuDeviceInfo).
     pub fn build(self) -> crate::types::GpuDeviceInfo {

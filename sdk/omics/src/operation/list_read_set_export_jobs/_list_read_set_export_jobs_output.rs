@@ -57,6 +57,10 @@ impl ListReadSetExportJobsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A pagination token that's included if more results are available.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `export_jobs`.
     ///
     /// To override the contents of this collection use [`set_export_jobs`](Self::set_export_jobs).
@@ -75,6 +79,12 @@ impl ListReadSetExportJobsOutputBuilder {
     ) -> Self {
         self.export_jobs = input;
         self
+    }
+    /// <p>A list of jobs.</p>
+    pub fn get_export_jobs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportReadSetJobDetail>> {
+        &self.export_jobs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

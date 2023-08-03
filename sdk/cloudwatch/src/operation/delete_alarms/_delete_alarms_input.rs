@@ -48,6 +48,12 @@ impl DeleteAlarmsInputBuilder {
         self.alarm_names = input;
         self
     }
+    /// <p>The alarms to be deleted. Do not enclose the alarm names in quote marks.</p>
+    pub fn get_alarm_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.alarm_names
+    }
     /// Consumes the builder and constructs a [`DeleteAlarmsInput`](crate::operation::delete_alarms::DeleteAlarmsInput).
     pub fn build(
         self,

@@ -47,6 +47,10 @@ impl DescribeLayersInputBuilder {
         self.stack_id = input;
         self
     }
+    /// <p>The stack ID.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_id
+    }
     /// Appends an item to `layer_ids`.
     ///
     /// To override the contents of this collection use [`set_layer_ids`](Self::set_layer_ids).
@@ -65,6 +69,10 @@ impl DescribeLayersInputBuilder {
     ) -> Self {
         self.layer_ids = input;
         self
+    }
+    /// <p>An array of layer IDs that specify the layers to be described. If you omit this parameter, <code>DescribeLayers</code> returns a description of every layer in the specified stack.</p>
+    pub fn get_layer_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.layer_ids
     }
     /// Consumes the builder and constructs a [`DescribeLayersInput`](crate::operation::describe_layers::DescribeLayersInput).
     pub fn build(

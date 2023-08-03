@@ -46,6 +46,10 @@ impl DeleteSubscriberInputBuilder {
         self.subscriber_id = input;
         self
     }
+    /// <p>A value created by Security Lake that uniquely identifies your <code>DeleteSubscriber</code> API request.</p>
+    pub fn get_subscriber_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscriber_id
+    }
     /// Consumes the builder and constructs a [`DeleteSubscriberInput`](crate::operation::delete_subscriber::DeleteSubscriberInput).
     pub fn build(
         self,

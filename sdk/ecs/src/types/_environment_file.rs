@@ -54,6 +54,10 @@ impl EnvironmentFileBuilder {
         self.value = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon S3 object containing the environment variable file.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// <p>The file type to use. The only supported value is <code>s3</code>.</p>
     pub fn r#type(mut self, input: crate::types::EnvironmentFileType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl EnvironmentFileBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The file type to use. The only supported value is <code>s3</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::EnvironmentFileType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`EnvironmentFile`](crate::types::EnvironmentFile).
     pub fn build(self) -> crate::types::EnvironmentFile {

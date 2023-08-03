@@ -54,6 +54,10 @@ impl SearchTablesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A continuation token, present if the current list segment is not the last.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `table_list`.
     ///
     /// To override the contents of this collection use [`set_table_list`](Self::set_table_list).
@@ -72,6 +76,10 @@ impl SearchTablesOutputBuilder {
     ) -> Self {
         self.table_list = input;
         self
+    }
+    /// <p>A list of the requested <code>Table</code> objects. The <code>SearchTables</code> response returns only the tables that you have access to.</p>
+    pub fn get_table_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Table>> {
+        &self.table_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

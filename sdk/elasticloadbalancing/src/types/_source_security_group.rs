@@ -48,6 +48,10 @@ impl SourceSecurityGroupBuilder {
         self.owner_alias = input;
         self
     }
+    /// <p>The owner of the security group.</p>
+    pub fn get_owner_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_alias
+    }
     /// <p>The name of the security group.</p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl SourceSecurityGroupBuilder {
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_name = input;
         self
+    }
+    /// <p>The name of the security group.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
     }
     /// Consumes the builder and constructs a [`SourceSecurityGroup`](crate::types::SourceSecurityGroup).
     pub fn build(self) -> crate::types::SourceSecurityGroup {

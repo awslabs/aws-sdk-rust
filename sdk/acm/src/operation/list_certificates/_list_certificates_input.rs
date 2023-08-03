@@ -93,6 +93,12 @@ impl ListCertificatesInputBuilder {
         self.certificate_statuses = input;
         self
     }
+    /// <p>Filter the certificate list by status value.</p>
+    pub fn get_certificate_statuses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateStatus>> {
+        &self.certificate_statuses
+    }
     /// <p>Filter the certificate list. For more information, see the <code>Filters</code> structure.</p>
     pub fn includes(mut self, input: crate::types::Filters) -> Self {
         self.includes = ::std::option::Option::Some(input);
@@ -102,6 +108,10 @@ impl ListCertificatesInputBuilder {
     pub fn set_includes(mut self, input: ::std::option::Option<crate::types::Filters>) -> Self {
         self.includes = input;
         self
+    }
+    /// <p>Filter the certificate list. For more information, see the <code>Filters</code> structure.</p>
+    pub fn get_includes(&self) -> &::std::option::Option<crate::types::Filters> {
+        &self.includes
     }
     /// <p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextToken</code> from the response you just received.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -113,6 +123,10 @@ impl ListCertificatesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextToken</code> from the response you just received.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>Use this parameter when paginating results to specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.max_items = ::std::option::Option::Some(input);
@@ -122,6 +136,10 @@ impl ListCertificatesInputBuilder {
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_items = input;
         self
+    }
+    /// <p>Use this parameter when paginating results to specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        &self.max_items
     }
     /// <p>Specifies the field to sort results by. If you specify <code>SortBy</code>, you must also specify <code>SortOrder</code>.</p>
     pub fn sort_by(mut self, input: crate::types::SortBy) -> Self {
@@ -133,6 +151,10 @@ impl ListCertificatesInputBuilder {
         self.sort_by = input;
         self
     }
+    /// <p>Specifies the field to sort results by. If you specify <code>SortBy</code>, you must also specify <code>SortOrder</code>.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SortBy> {
+        &self.sort_by
+    }
     /// <p>Specifies the order of sorted results. If you specify <code>SortOrder</code>, you must also specify <code>SortBy</code>.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -142,6 +164,10 @@ impl ListCertificatesInputBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p>Specifies the order of sorted results. If you specify <code>SortOrder</code>, you must also specify <code>SortBy</code>.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.sort_order
     }
     /// Consumes the builder and constructs a [`ListCertificatesInput`](crate::operation::list_certificates::ListCertificatesInput).
     pub fn build(

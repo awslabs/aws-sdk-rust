@@ -70,6 +70,10 @@ impl EventTypeSummaryBuilder {
         self.event_type_id = input;
         self
     }
+    /// <p>The system-generated ID of the event. For a complete list of event types and IDs, see <a href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification concepts</a> in the <i>Developer Tools Console User Guide</i>.</p>
+    pub fn get_event_type_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_type_id
+    }
     /// <p>The name of the service for which the event applies.</p>
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl EventTypeSummaryBuilder {
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_name = input;
         self
+    }
+    /// <p>The name of the service for which the event applies.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
     }
     /// <p>The name of the event.</p>
     pub fn event_type_name(
@@ -96,6 +104,10 @@ impl EventTypeSummaryBuilder {
         self.event_type_name = input;
         self
     }
+    /// <p>The name of the event.</p>
+    pub fn get_event_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_type_name
+    }
     /// <p>The resource type of the event.</p>
     pub fn resource_type(
         mut self,
@@ -111,6 +123,10 @@ impl EventTypeSummaryBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The resource type of the event.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
     }
     /// Consumes the builder and constructs a [`EventTypeSummary`](crate::types::EventTypeSummary).
     pub fn build(self) -> crate::types::EventTypeSummary {

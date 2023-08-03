@@ -40,6 +40,10 @@ impl StatelessCustomPublishMetricActionDimensionBuilder {
         self.value = input;
         self
     }
+    /// <p>The value to use for the custom metric dimension.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// Consumes the builder and constructs a [`StatelessCustomPublishMetricActionDimension`](crate::types::StatelessCustomPublishMetricActionDimension).
     pub fn build(self) -> crate::types::StatelessCustomPublishMetricActionDimension {
         crate::types::StatelessCustomPublishMetricActionDimension { value: self.value }

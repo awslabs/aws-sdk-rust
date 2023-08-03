@@ -114,6 +114,10 @@ impl AwsApiCallActionBuilder {
         self.api = input;
         self
     }
+    /// <p>The Amazon Web Services API name.</p>
+    pub fn get_api(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api
+    }
     /// <p>The Amazon Web Services API caller type.</p>
     pub fn caller_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.caller_type = ::std::option::Option::Some(input.into());
@@ -123,6 +127,10 @@ impl AwsApiCallActionBuilder {
     pub fn set_caller_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.caller_type = input;
         self
+    }
+    /// <p>The Amazon Web Services API caller type.</p>
+    pub fn get_caller_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.caller_type
     }
     /// <p>The domain information for the Amazon Web Services API call.</p>
     pub fn domain_details(mut self, input: crate::types::DomainDetails) -> Self {
@@ -137,6 +145,10 @@ impl AwsApiCallActionBuilder {
         self.domain_details = input;
         self
     }
+    /// <p>The domain information for the Amazon Web Services API call.</p>
+    pub fn get_domain_details(&self) -> &::std::option::Option<crate::types::DomainDetails> {
+        &self.domain_details
+    }
     /// <p>The error code of the failed Amazon Web Services API action.</p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
@@ -147,6 +159,10 @@ impl AwsApiCallActionBuilder {
         self.error_code = input;
         self
     }
+    /// <p>The error code of the failed Amazon Web Services API action.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
+    }
     /// <p>The agent through which the API request was made.</p>
     pub fn user_agent(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_agent = ::std::option::Option::Some(input.into());
@@ -156,6 +172,10 @@ impl AwsApiCallActionBuilder {
     pub fn set_user_agent(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_agent = input;
         self
+    }
+    /// <p>The agent through which the API request was made.</p>
+    pub fn get_user_agent(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_agent
     }
     /// <p>The remote IP information of the connection that initiated the Amazon Web Services API call.</p>
     pub fn remote_ip_details(mut self, input: crate::types::RemoteIpDetails) -> Self {
@@ -170,6 +190,10 @@ impl AwsApiCallActionBuilder {
         self.remote_ip_details = input;
         self
     }
+    /// <p>The remote IP information of the connection that initiated the Amazon Web Services API call.</p>
+    pub fn get_remote_ip_details(&self) -> &::std::option::Option<crate::types::RemoteIpDetails> {
+        &self.remote_ip_details
+    }
     /// <p>The Amazon Web Services service name whose API was invoked.</p>
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
@@ -179,6 +203,10 @@ impl AwsApiCallActionBuilder {
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_name = input;
         self
+    }
+    /// <p>The Amazon Web Services service name whose API was invoked.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
     }
     /// <p>The details of the Amazon Web Services account that made the API call. This field appears if the call was made from outside your account.</p>
     pub fn remote_account_details(mut self, input: crate::types::RemoteAccountDetails) -> Self {
@@ -192,6 +220,12 @@ impl AwsApiCallActionBuilder {
     ) -> Self {
         self.remote_account_details = input;
         self
+    }
+    /// <p>The details of the Amazon Web Services account that made the API call. This field appears if the call was made from outside your account.</p>
+    pub fn get_remote_account_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::RemoteAccountDetails> {
+        &self.remote_account_details
     }
     /// Adds a key-value pair to `affected_resources`.
     ///
@@ -217,6 +251,14 @@ impl AwsApiCallActionBuilder {
     ) -> Self {
         self.affected_resources = input;
         self
+    }
+    /// <p>The details of the Amazon Web Services account that made the API call. This field identifies the resources that were affected by this API call.</p>
+    pub fn get_affected_resources(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.affected_resources
     }
     /// Consumes the builder and constructs a [`AwsApiCallAction`](crate::types::AwsApiCallAction).
     pub fn build(self) -> crate::types::AwsApiCallAction {

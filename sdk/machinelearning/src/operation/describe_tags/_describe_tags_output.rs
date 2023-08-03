@@ -63,6 +63,10 @@ impl DescribeTagsOutputBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The ID of the tagged ML object.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>The type of the tagged ML object.</p>
     pub fn resource_type(mut self, input: crate::types::TaggableResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl DescribeTagsOutputBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The type of the tagged ML object.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::TaggableResourceType> {
+        &self.resource_type
     }
     /// Appends an item to `tags`.
     ///
@@ -94,6 +102,10 @@ impl DescribeTagsOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tags associated with the ML object.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

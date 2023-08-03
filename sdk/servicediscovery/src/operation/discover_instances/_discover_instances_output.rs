@@ -56,6 +56,12 @@ impl DiscoverInstancesOutputBuilder {
         self.instances = input;
         self
     }
+    /// <p>A complex type that contains one <code>HttpInstanceSummary</code> for each registered instance.</p>
+    pub fn get_instances(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HttpInstanceSummary>> {
+        &self.instances
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

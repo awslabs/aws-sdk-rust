@@ -47,6 +47,10 @@ impl GetGameSessionLogUrlInputBuilder {
         self.game_session_id = input;
         self
     }
+    /// <p>A unique identifier for the game session to get logs for. </p>
+    pub fn get_game_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.game_session_id
+    }
     /// Consumes the builder and constructs a [`GetGameSessionLogUrlInput`](crate::operation::get_game_session_log_url::GetGameSessionLogUrlInput).
     pub fn build(
         self,

@@ -52,6 +52,10 @@ impl CreateStudioLifecycleConfigOutputBuilder {
         self.studio_lifecycle_config_arn = input;
         self
     }
+    /// <p>The ARN of your created Lifecycle Configuration.</p>
+    pub fn get_studio_lifecycle_config_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_lifecycle_config_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

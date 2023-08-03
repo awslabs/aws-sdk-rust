@@ -47,6 +47,10 @@ impl CreateScalingPlanOutputBuilder {
         self.scaling_plan_version = input;
         self
     }
+    /// <p>The version number of the scaling plan. This value is always <code>1</code>. Currently, you cannot have multiple scaling plan versions.</p>
+    pub fn get_scaling_plan_version(&self) -> &::std::option::Option<i64> {
+        &self.scaling_plan_version
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

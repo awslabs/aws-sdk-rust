@@ -37,6 +37,10 @@ impl CancelSolNetworkOperationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CancelSolNetworkOperation as a reference.
+    pub fn as_input(&self) -> &crate::operation::cancel_sol_network_operation::builders::CancelSolNetworkOperationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +136,9 @@ impl CancelSolNetworkOperationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ns_lcm_op_occ_id(input);
         self
+    }
+    /// <p>The identifier of the network operation.</p>
+    pub fn get_ns_lcm_op_occ_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ns_lcm_op_occ_id()
     }
 }

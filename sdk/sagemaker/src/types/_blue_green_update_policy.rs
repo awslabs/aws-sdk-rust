@@ -65,6 +65,12 @@ impl BlueGreenUpdatePolicyBuilder {
         self.traffic_routing_configuration = input;
         self
     }
+    /// <p>Defines the traffic routing strategy to shift traffic from the old fleet to the new fleet during an endpoint deployment.</p>
+    pub fn get_traffic_routing_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::TrafficRoutingConfig> {
+        &self.traffic_routing_configuration
+    }
     /// <p>Additional waiting time in seconds after the completion of an endpoint deployment before terminating the old endpoint fleet. Default is 0.</p>
     pub fn termination_wait_in_seconds(mut self, input: i32) -> Self {
         self.termination_wait_in_seconds = ::std::option::Option::Some(input);
@@ -74,6 +80,10 @@ impl BlueGreenUpdatePolicyBuilder {
     pub fn set_termination_wait_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.termination_wait_in_seconds = input;
         self
+    }
+    /// <p>Additional waiting time in seconds after the completion of an endpoint deployment before terminating the old endpoint fleet. Default is 0.</p>
+    pub fn get_termination_wait_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.termination_wait_in_seconds
     }
     /// <p>Maximum execution timeout for the deployment. Note that the timeout value should be larger than the total waiting time specified in <code>TerminationWaitInSeconds</code> and <code>WaitIntervalInSeconds</code>.</p>
     pub fn maximum_execution_timeout_in_seconds(mut self, input: i32) -> Self {
@@ -87,6 +97,10 @@ impl BlueGreenUpdatePolicyBuilder {
     ) -> Self {
         self.maximum_execution_timeout_in_seconds = input;
         self
+    }
+    /// <p>Maximum execution timeout for the deployment. Note that the timeout value should be larger than the total waiting time specified in <code>TerminationWaitInSeconds</code> and <code>WaitIntervalInSeconds</code>.</p>
+    pub fn get_maximum_execution_timeout_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.maximum_execution_timeout_in_seconds
     }
     /// Consumes the builder and constructs a [`BlueGreenUpdatePolicy`](crate::types::BlueGreenUpdatePolicy).
     pub fn build(self) -> crate::types::BlueGreenUpdatePolicy {

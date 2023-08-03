@@ -81,6 +81,10 @@ impl S3JobManifestGeneratorBuilder {
         self.expected_bucket_owner = input;
         self
     }
+    /// <p>The Amazon Web Services account ID that owns the bucket the generated manifest is written to. If provided the generated manifest bucket's owner Amazon Web Services account ID must match this value, else the job fails.</p>
+    pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expected_bucket_owner
+    }
     /// <p>The source bucket used by the ManifestGenerator.</p>
     pub fn source_bucket(
         mut self,
@@ -96,6 +100,10 @@ impl S3JobManifestGeneratorBuilder {
     ) -> Self {
         self.source_bucket = input;
         self
+    }
+    /// <p>The source bucket used by the ManifestGenerator.</p>
+    pub fn get_source_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_bucket
     }
     /// <p>Specifies the location the generated manifest will be written to.</p>
     pub fn manifest_output_location(
@@ -113,6 +121,12 @@ impl S3JobManifestGeneratorBuilder {
         self.manifest_output_location = input;
         self
     }
+    /// <p>Specifies the location the generated manifest will be written to.</p>
+    pub fn get_manifest_output_location(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3ManifestOutputLocation> {
+        &self.manifest_output_location
+    }
     /// <p>Specifies rules the S3JobManifestGenerator should use to use to decide whether an object in the source bucket should or should not be included in the generated job manifest.</p>
     pub fn filter(mut self, input: crate::types::JobManifestGeneratorFilter) -> Self {
         self.filter = ::std::option::Option::Some(input);
@@ -126,6 +140,10 @@ impl S3JobManifestGeneratorBuilder {
         self.filter = input;
         self
     }
+    /// <p>Specifies rules the S3JobManifestGenerator should use to use to decide whether an object in the source bucket should or should not be included in the generated job manifest.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::JobManifestGeneratorFilter> {
+        &self.filter
+    }
     /// <p>Determines whether or not to write the job's generated manifest to a bucket.</p>
     pub fn enable_manifest_output(mut self, input: bool) -> Self {
         self.enable_manifest_output = ::std::option::Option::Some(input);
@@ -135,6 +153,10 @@ impl S3JobManifestGeneratorBuilder {
     pub fn set_enable_manifest_output(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_manifest_output = input;
         self
+    }
+    /// <p>Determines whether or not to write the job's generated manifest to a bucket.</p>
+    pub fn get_enable_manifest_output(&self) -> &::std::option::Option<bool> {
+        &self.enable_manifest_output
     }
     /// Consumes the builder and constructs a [`S3JobManifestGenerator`](crate::types::S3JobManifestGenerator).
     pub fn build(self) -> crate::types::S3JobManifestGenerator {

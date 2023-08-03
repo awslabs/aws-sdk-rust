@@ -58,6 +58,12 @@ impl DescribeLifecycleHookTypesOutputBuilder {
         self.lifecycle_hook_types = input;
         self
     }
+    /// <p>The lifecycle hook types.</p>
+    pub fn get_lifecycle_hook_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.lifecycle_hook_types
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

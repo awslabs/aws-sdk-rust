@@ -54,6 +54,10 @@ impl CompatibleKafkaVersionBuilder {
         self.source_version = input;
         self
     }
+    /// <p>An Apache Kafka version.</p>
+    pub fn get_source_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_version
+    }
     /// Appends an item to `target_versions`.
     ///
     /// To override the contents of this collection use [`set_target_versions`](Self::set_target_versions).
@@ -75,6 +79,12 @@ impl CompatibleKafkaVersionBuilder {
     ) -> Self {
         self.target_versions = input;
         self
+    }
+    /// <p>A list of Apache Kafka versions.</p>
+    pub fn get_target_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.target_versions
     }
     /// Consumes the builder and constructs a [`CompatibleKafkaVersion`](crate::types::CompatibleKafkaVersion).
     pub fn build(self) -> crate::types::CompatibleKafkaVersion {

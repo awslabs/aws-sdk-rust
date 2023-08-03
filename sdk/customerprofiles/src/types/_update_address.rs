@@ -112,6 +112,10 @@ impl UpdateAddressBuilder {
         self.address1 = input;
         self
     }
+    /// <p>The first line of a customer address.</p>
+    pub fn get_address1(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address1
+    }
     /// <p>The second line of a customer address.</p>
     pub fn address2(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address2 = ::std::option::Option::Some(input.into());
@@ -121,6 +125,10 @@ impl UpdateAddressBuilder {
     pub fn set_address2(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.address2 = input;
         self
+    }
+    /// <p>The second line of a customer address.</p>
+    pub fn get_address2(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address2
     }
     /// <p>The third line of a customer address.</p>
     pub fn address3(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -132,6 +140,10 @@ impl UpdateAddressBuilder {
         self.address3 = input;
         self
     }
+    /// <p>The third line of a customer address.</p>
+    pub fn get_address3(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address3
+    }
     /// <p>The fourth line of a customer address.</p>
     pub fn address4(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address4 = ::std::option::Option::Some(input.into());
@@ -141,6 +153,10 @@ impl UpdateAddressBuilder {
     pub fn set_address4(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.address4 = input;
         self
+    }
+    /// <p>The fourth line of a customer address.</p>
+    pub fn get_address4(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address4
     }
     /// <p>The city in which a customer lives.</p>
     pub fn city(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -152,6 +168,10 @@ impl UpdateAddressBuilder {
         self.city = input;
         self
     }
+    /// <p>The city in which a customer lives.</p>
+    pub fn get_city(&self) -> &::std::option::Option<::std::string::String> {
+        &self.city
+    }
     /// <p>The county in which a customer lives.</p>
     pub fn county(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.county = ::std::option::Option::Some(input.into());
@@ -161,6 +181,10 @@ impl UpdateAddressBuilder {
     pub fn set_county(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.county = input;
         self
+    }
+    /// <p>The county in which a customer lives.</p>
+    pub fn get_county(&self) -> &::std::option::Option<::std::string::String> {
+        &self.county
     }
     /// <p>The state in which a customer lives.</p>
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -172,6 +196,10 @@ impl UpdateAddressBuilder {
         self.state = input;
         self
     }
+    /// <p>The state in which a customer lives.</p>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
+    }
     /// <p>The province in which a customer lives.</p>
     pub fn province(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.province = ::std::option::Option::Some(input.into());
@@ -181,6 +209,10 @@ impl UpdateAddressBuilder {
     pub fn set_province(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.province = input;
         self
+    }
+    /// <p>The province in which a customer lives.</p>
+    pub fn get_province(&self) -> &::std::option::Option<::std::string::String> {
+        &self.province
     }
     /// <p>The country in which a customer lives.</p>
     pub fn country(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -192,6 +224,10 @@ impl UpdateAddressBuilder {
         self.country = input;
         self
     }
+    /// <p>The country in which a customer lives.</p>
+    pub fn get_country(&self) -> &::std::option::Option<::std::string::String> {
+        &self.country
+    }
     /// <p>The postal code of a customer address.</p>
     pub fn postal_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.postal_code = ::std::option::Option::Some(input.into());
@@ -201,6 +237,10 @@ impl UpdateAddressBuilder {
     pub fn set_postal_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.postal_code = input;
         self
+    }
+    /// <p>The postal code of a customer address.</p>
+    pub fn get_postal_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.postal_code
     }
     /// Consumes the builder and constructs a [`UpdateAddress`](crate::types::UpdateAddress).
     pub fn build(self) -> crate::types::UpdateAddress {

@@ -37,6 +37,10 @@ impl ListEnvironmentAccountConnectionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListEnvironmentAccountConnections as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_environment_account_connections::builders::ListEnvironmentAccountConnectionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -115,6 +119,13 @@ impl ListEnvironmentAccountConnectionsFluentBuilder {
         self.inner = self.inner.set_requested_by(input);
         self
     }
+    /// <p>The type of account making the <code>ListEnvironmentAccountConnections</code> request.</p>
+    pub fn get_requested_by(
+        &self,
+    ) -> &::std::option::Option<crate::types::EnvironmentAccountConnectionRequesterAccountType>
+    {
+        self.inner.get_requested_by()
+    }
     /// <p>The environment name that's associated with each listed environment account connection.</p>
     pub fn environment_name(
         mut self,
@@ -130,6 +141,10 @@ impl ListEnvironmentAccountConnectionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_environment_name(input);
         self
+    }
+    /// <p>The environment name that's associated with each listed environment account connection.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_name()
     }
     /// Appends an item to `statuses`.
     ///
@@ -150,6 +165,13 @@ impl ListEnvironmentAccountConnectionsFluentBuilder {
         self.inner = self.inner.set_statuses(input);
         self
     }
+    /// <p>The status details for each listed environment account connection.</p>
+    pub fn get_statuses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentAccountConnectionStatus>>
+    {
+        self.inner.get_statuses()
+    }
     /// <p>A token that indicates the location of the next environment account connection in the array of environment account connections, after the list of environment account connections that was previously requested.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -160,6 +182,10 @@ impl ListEnvironmentAccountConnectionsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A token that indicates the location of the next environment account connection in the array of environment account connections, after the list of environment account connections that was previously requested.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of environment account connections to list.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -169,5 +195,9 @@ impl ListEnvironmentAccountConnectionsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of environment account connections to list.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

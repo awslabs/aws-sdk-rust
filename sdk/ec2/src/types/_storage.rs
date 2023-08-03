@@ -40,6 +40,10 @@ impl StorageBuilder {
         self.s3 = input;
         self
     }
+    /// <p>An Amazon S3 storage location.</p>
+    pub fn get_s3(&self) -> &::std::option::Option<crate::types::S3Storage> {
+        &self.s3
+    }
     /// Consumes the builder and constructs a [`Storage`](crate::types::Storage).
     pub fn build(self) -> crate::types::Storage {
         crate::types::Storage { s3: self.s3 }

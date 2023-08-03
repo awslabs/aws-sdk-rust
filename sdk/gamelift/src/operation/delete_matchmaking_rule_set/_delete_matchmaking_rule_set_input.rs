@@ -41,6 +41,10 @@ impl DeleteMatchmakingRuleSetInputBuilder {
         self.name = input;
         self
     }
+    /// <p>A unique identifier for the matchmaking rule set to be deleted. (Note: The rule set name is different from the optional "name" field in the rule set body.) You can use either the rule set name or ARN value.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeleteMatchmakingRuleSetInput`](crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSetInput).
     pub fn build(
         self,

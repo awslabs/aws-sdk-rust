@@ -73,6 +73,12 @@ impl BatchUpdateFindingsOutputBuilder {
         self.processed_findings = input;
         self
     }
+    /// <p>The list of findings that were updated successfully.</p>
+    pub fn get_processed_findings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFindingIdentifier>> {
+        &self.processed_findings
+    }
     /// Appends an item to `unprocessed_findings`.
     ///
     /// To override the contents of this collection use [`set_unprocessed_findings`](Self::set_unprocessed_findings).
@@ -96,6 +102,13 @@ impl BatchUpdateFindingsOutputBuilder {
     ) -> Self {
         self.unprocessed_findings = input;
         self
+    }
+    /// <p>The list of findings that were not updated.</p>
+    pub fn get_unprocessed_findings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateFindingsUnprocessedFinding>>
+    {
+        &self.unprocessed_findings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

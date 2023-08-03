@@ -64,6 +64,12 @@ impl TlsBuilder {
         self.certificate_authority_arn_list = input;
         self
     }
+    /// <p>List of ACM Certificate Authority ARNs.</p>
+    pub fn get_certificate_authority_arn_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.certificate_authority_arn_list
+    }
     /// <p>Specifies whether you want to turn on or turn off TLS authentication.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -73,6 +79,10 @@ impl TlsBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>Specifies whether you want to turn on or turn off TLS authentication.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// Consumes the builder and constructs a [`Tls`](crate::types::Tls).
     pub fn build(self) -> crate::types::Tls {

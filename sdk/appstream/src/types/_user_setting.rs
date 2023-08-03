@@ -48,6 +48,10 @@ impl UserSettingBuilder {
         self.action = input;
         self
     }
+    /// <p>The action that is enabled or disabled.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::Action> {
+        &self.action
+    }
     /// <p>Indicates whether the action is enabled or disabled.</p>
     pub fn permission(mut self, input: crate::types::Permission) -> Self {
         self.permission = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl UserSettingBuilder {
     ) -> Self {
         self.permission = input;
         self
+    }
+    /// <p>Indicates whether the action is enabled or disabled.</p>
+    pub fn get_permission(&self) -> &::std::option::Option<crate::types::Permission> {
+        &self.permission
     }
     /// Consumes the builder and constructs a [`UserSetting`](crate::types::UserSetting).
     pub fn build(self) -> crate::types::UserSetting {

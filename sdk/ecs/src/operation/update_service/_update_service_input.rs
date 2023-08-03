@@ -232,6 +232,10 @@ impl UpdateServiceInputBuilder {
         self.cluster = input;
         self
     }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that your service runs on. If you do not specify a cluster, the default cluster is assumed.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster
+    }
     /// <p>The name of the service to update.</p>
     pub fn service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service = ::std::option::Option::Some(input.into());
@@ -242,6 +246,10 @@ impl UpdateServiceInputBuilder {
         self.service = input;
         self
     }
+    /// <p>The name of the service to update.</p>
+    pub fn get_service(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service
+    }
     /// <p>The number of instantiations of the task to place and keep running in your service.</p>
     pub fn desired_count(mut self, input: i32) -> Self {
         self.desired_count = ::std::option::Option::Some(input);
@@ -251,6 +259,10 @@ impl UpdateServiceInputBuilder {
     pub fn set_desired_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.desired_count = input;
         self
+    }
+    /// <p>The number of instantiations of the task to place and keep running in your service.</p>
+    pub fn get_desired_count(&self) -> &::std::option::Option<i32> {
+        &self.desired_count
     }
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task definition to run in your service. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is used. If you modify the task definition with <code>UpdateService</code>, Amazon ECS spawns a task with the new version of the task definition and then stops an old task after the new version is running.</p>
     pub fn task_definition(
@@ -267,6 +279,10 @@ impl UpdateServiceInputBuilder {
     ) -> Self {
         self.task_definition = input;
         self
+    }
+    /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task definition to run in your service. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is used. If you modify the task definition with <code>UpdateService</code>, Amazon ECS spawns a task with the new version of the task definition and then stops an old task after the new version is running.</p>
+    pub fn get_task_definition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_definition
     }
     /// Appends an item to `capacity_provider_strategy`.
     ///
@@ -302,6 +318,18 @@ impl UpdateServiceInputBuilder {
         self.capacity_provider_strategy = input;
         self
     }
+    /// <p>The capacity provider strategy to update the service to use.</p>
+    /// <p>if the service uses the default capacity provider strategy for the cluster, the service can be updated to use one or more capacity providers as opposed to the default capacity provider strategy. However, when a service is using a capacity provider strategy that's not the default capacity provider strategy, the service can't be updated to use the cluster's default capacity provider strategy.</p>
+    /// <p>A capacity provider strategy consists of one or more capacity providers along with the <code>base</code> and <code>weight</code> to assign to them. A capacity provider must be associated with the cluster to be used in a capacity provider strategy. The <code>PutClusterCapacityProviders</code> API is used to associate a capacity provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or <code>UPDATING</code> status can be used.</p>
+    /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New capacity providers can be created with the <code>CreateCapacityProvider</code> API operation.</p>
+    /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are available to all accounts and only need to be associated with a cluster to be used.</p>
+    /// <p>The <code>PutClusterCapacityProviders</code> API operation is used to update the list of available capacity providers for a cluster after the cluster is created.</p>
+    /// <p></p>
+    pub fn get_capacity_provider_strategy(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>> {
+        &self.capacity_provider_strategy
+    }
     /// <p>Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.</p>
     pub fn deployment_configuration(
         mut self,
@@ -318,6 +346,12 @@ impl UpdateServiceInputBuilder {
         self.deployment_configuration = input;
         self
     }
+    /// <p>Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.</p>
+    pub fn get_deployment_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeploymentConfiguration> {
+        &self.deployment_configuration
+    }
     /// <p>An object representing the network configuration for the service.</p>
     pub fn network_configuration(mut self, input: crate::types::NetworkConfiguration) -> Self {
         self.network_configuration = ::std::option::Option::Some(input);
@@ -330,6 +364,12 @@ impl UpdateServiceInputBuilder {
     ) -> Self {
         self.network_configuration = input;
         self
+    }
+    /// <p>An object representing the network configuration for the service.</p>
+    pub fn get_network_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkConfiguration> {
+        &self.network_configuration
     }
     /// Appends an item to `placement_constraints`.
     ///
@@ -352,6 +392,13 @@ impl UpdateServiceInputBuilder {
         self.placement_constraints = input;
         self
     }
+    /// <p>An array of task placement constraint objects to update the service to use. If no value is specified, the existing placement constraints for the service will remain unchanged. If this value is specified, it will override any existing placement constraints defined for the service. To remove all existing placement constraints, specify an empty array.</p>
+    /// <p>You can specify a maximum of 10 constraints for each task. This limit includes constraints in the task definition and those specified at runtime.</p>
+    pub fn get_placement_constraints(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PlacementConstraint>> {
+        &self.placement_constraints
+    }
     /// Appends an item to `placement_strategy`.
     ///
     /// To override the contents of this collection use [`set_placement_strategy`](Self::set_placement_strategy).
@@ -373,6 +420,13 @@ impl UpdateServiceInputBuilder {
         self.placement_strategy = input;
         self
     }
+    /// <p>The task placement strategy objects to update the service to use. If no value is specified, the existing placement strategy for the service will remain unchanged. If this value is specified, it will override the existing placement strategy defined for the service. To remove an existing placement strategy, specify an empty object.</p>
+    /// <p>You can specify a maximum of five strategy rules for each service.</p>
+    pub fn get_placement_strategy(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PlacementStrategy>> {
+        &self.placement_strategy
+    }
     /// <p>The platform version that your tasks in the service run on. A platform version is only specified for tasks using the Fargate launch type. If a platform version is not specified, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn platform_version(
         mut self,
@@ -389,6 +443,10 @@ impl UpdateServiceInputBuilder {
         self.platform_version = input;
         self
     }
+    /// <p>The platform version that your tasks in the service run on. A platform version is only specified for tasks using the Fargate launch type. If a platform version is not specified, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn get_platform_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_version
+    }
     /// <p>Determines whether to force a new deployment of the service. By default, deployments aren't forced. You can use this option to start a new deployment with no service definition changes. For example, you can update a service's tasks to use a newer Docker image with the same image/tag combination (<code>my_image:latest</code>) or to roll Fargate tasks onto a newer platform version.</p>
     pub fn force_new_deployment(mut self, input: bool) -> Self {
         self.force_new_deployment = ::std::option::Option::Some(input);
@@ -398,6 +456,10 @@ impl UpdateServiceInputBuilder {
     pub fn set_force_new_deployment(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force_new_deployment = input;
         self
+    }
+    /// <p>Determines whether to force a new deployment of the service. By default, deployments aren't forced. You can use this option to start a new deployment with no service definition changes. For example, you can update a service's tasks to use a newer Docker image with the same image/tag combination (<code>my_image:latest</code>) or to roll Fargate tasks onto a newer platform version.</p>
+    pub fn get_force_new_deployment(&self) -> &::std::option::Option<bool> {
+        &self.force_new_deployment
     }
     /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks after a task has first started. This is only valid if your service is configured to use a load balancer. If your service's tasks take a while to start and respond to Elastic Load Balancing health checks, you can specify a health check grace period of up to 2,147,483,647 seconds. During that time, the Amazon ECS service scheduler ignores the Elastic Load Balancing health check status. This grace period can prevent the ECS service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.</p>
     pub fn health_check_grace_period_seconds(mut self, input: i32) -> Self {
@@ -412,6 +474,10 @@ impl UpdateServiceInputBuilder {
         self.health_check_grace_period_seconds = input;
         self
     }
+    /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks after a task has first started. This is only valid if your service is configured to use a load balancer. If your service's tasks take a while to start and respond to Elastic Load Balancing health checks, you can specify a health check grace period of up to 2,147,483,647 seconds. During that time, the Amazon ECS service scheduler ignores the Elastic Load Balancing health check status. This grace period can prevent the ECS service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.</p>
+    pub fn get_health_check_grace_period_seconds(&self) -> &::std::option::Option<i32> {
+        &self.health_check_grace_period_seconds
+    }
     /// <p>If <code>true</code>, this enables execute command functionality on all task containers.</p>
     /// <p>If you do not want to override the value that was set when the service was created, you can set this to <code>null</code> when performing this action.</p>
     pub fn enable_execute_command(mut self, input: bool) -> Self {
@@ -424,6 +490,11 @@ impl UpdateServiceInputBuilder {
         self.enable_execute_command = input;
         self
     }
+    /// <p>If <code>true</code>, this enables execute command functionality on all task containers.</p>
+    /// <p>If you do not want to override the value that was set when the service was created, you can set this to <code>null</code> when performing this action.</p>
+    pub fn get_enable_execute_command(&self) -> &::std::option::Option<bool> {
+        &self.enable_execute_command
+    }
     /// <p>Determines whether to turn on Amazon ECS managed tags for the tasks in the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// <p>Only tasks launched after the update will reflect the update. To update the tags on all tasks, set <code>forceNewDeployment</code> to <code>true</code>, so that Amazon ECS starts new tasks with the updated tags.</p>
     pub fn enable_ecs_managed_tags(mut self, input: bool) -> Self {
@@ -435,6 +506,11 @@ impl UpdateServiceInputBuilder {
     pub fn set_enable_ecs_managed_tags(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_ecs_managed_tags = input;
         self
+    }
+    /// <p>Determines whether to turn on Amazon ECS managed tags for the tasks in the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>Only tasks launched after the update will reflect the update. To update the tags on all tasks, set <code>forceNewDeployment</code> to <code>true</code>, so that Amazon ECS starts new tasks with the updated tags.</p>
+    pub fn get_enable_ecs_managed_tags(&self) -> &::std::option::Option<bool> {
+        &self.enable_ecs_managed_tags
     }
     /// Appends an item to `load_balancers`.
     ///
@@ -465,6 +541,17 @@ impl UpdateServiceInputBuilder {
         self.load_balancers = input;
         self
     }
+    /// <p>A list of Elastic Load Balancing load balancer objects. It contains the load balancer name, the container name, and the container port to access from the load balancer. The container name is as it appears in a container definition.</p>
+    /// <p>When you add, update, or remove a load balancer configuration, Amazon ECS starts new tasks with the updated Elastic Load Balancing configuration, and then stops the old tasks when the new tasks are running.</p>
+    /// <p>For services that use rolling updates, you can add, update, or remove Elastic Load Balancing target groups. You can update from a single target group to multiple target groups and from multiple target groups to a single target group.</p>
+    /// <p>For services that use blue/green deployments, you can update Elastic Load Balancing target groups by using <code> <a href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a> </code> through CodeDeploy. Note that multiple target groups are not supported for blue/green deployments. For more information see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/register-multiple-targetgroups.html">Register multiple target groups with a service</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. </p>
+    /// <p>For services that use the external deployment controller, you can add, update, or remove load balancers by using <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateTaskSet.html">CreateTaskSet</a>. Note that multiple target groups are not supported for external deployments. For more information see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/register-multiple-targetgroups.html">Register multiple target groups with a service</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. </p>
+    /// <p>You can remove existing <code>loadBalancers</code> by passing an empty list.</p>
+    pub fn get_load_balancers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>> {
+        &self.load_balancers
+    }
     /// <p>Determines whether to propagate the tags from the task definition or the service to the task. If no value is specified, the tags aren't propagated.</p>
     /// <p>Only tasks launched after the update will reflect the update. To update the tags on all tasks, set <code>forceNewDeployment</code> to <code>true</code>, so that Amazon ECS starts new tasks with the updated tags.</p>
     pub fn propagate_tags(mut self, input: crate::types::PropagateTags) -> Self {
@@ -479,6 +566,11 @@ impl UpdateServiceInputBuilder {
     ) -> Self {
         self.propagate_tags = input;
         self
+    }
+    /// <p>Determines whether to propagate the tags from the task definition or the service to the task. If no value is specified, the tags aren't propagated.</p>
+    /// <p>Only tasks launched after the update will reflect the update. To update the tags on all tasks, set <code>forceNewDeployment</code> to <code>true</code>, so that Amazon ECS starts new tasks with the updated tags.</p>
+    pub fn get_propagate_tags(&self) -> &::std::option::Option<crate::types::PropagateTags> {
+        &self.propagate_tags
     }
     /// Appends an item to `service_registries`.
     ///
@@ -503,6 +595,14 @@ impl UpdateServiceInputBuilder {
         self.service_registries = input;
         self
     }
+    /// <p>The details for the service discovery registries to assign to this service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.</p>
+    /// <p>When you add, update, or remove the service registries configuration, Amazon ECS starts new tasks with the updated service registries configuration, and then stops the old tasks when the new tasks are running.</p>
+    /// <p>You can remove existing <code>serviceRegistries</code> by passing an empty list.</p>
+    pub fn get_service_registries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceRegistry>> {
+        &self.service_registries
+    }
     /// <p>The configuration for this service to discover and connect to services, and be discovered by, and connected from, other services within a namespace.</p>
     /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn service_connect_configuration(
@@ -520,6 +620,13 @@ impl UpdateServiceInputBuilder {
     ) -> Self {
         self.service_connect_configuration = input;
         self
+    }
+    /// <p>The configuration for this service to discover and connect to services, and be discovered by, and connected from, other services within a namespace.</p>
+    /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn get_service_connect_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServiceConnectConfiguration> {
+        &self.service_connect_configuration
     }
     /// Consumes the builder and constructs a [`UpdateServiceInput`](crate::operation::update_service::UpdateServiceInput).
     pub fn build(

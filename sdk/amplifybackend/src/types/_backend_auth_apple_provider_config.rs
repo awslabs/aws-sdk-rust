@@ -64,6 +64,10 @@ impl BackendAuthAppleProviderConfigBuilder {
         self.client_id = input;
         self
     }
+    /// <p>Describes the client_id (also called Services ID) that comes from Apple.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_id
+    }
     /// <p>Describes the key_id that comes from Apple.</p>
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_id = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl BackendAuthAppleProviderConfigBuilder {
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_id = input;
         self
+    }
+    /// <p>Describes the key_id that comes from Apple.</p>
+    pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_id
     }
     /// <p>Describes the private_key that comes from Apple.</p>
     pub fn private_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl BackendAuthAppleProviderConfigBuilder {
         self.private_key = input;
         self
     }
+    /// <p>Describes the private_key that comes from Apple.</p>
+    pub fn get_private_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_key
+    }
     /// <p>Describes the team_id that comes from Apple.</p>
     pub fn team_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.team_id = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl BackendAuthAppleProviderConfigBuilder {
     pub fn set_team_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.team_id = input;
         self
+    }
+    /// <p>Describes the team_id that comes from Apple.</p>
+    pub fn get_team_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.team_id
     }
     /// Consumes the builder and constructs a [`BackendAuthAppleProviderConfig`](crate::types::BackendAuthAppleProviderConfig).
     pub fn build(self) -> crate::types::BackendAuthAppleProviderConfig {

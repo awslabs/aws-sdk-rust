@@ -45,6 +45,12 @@ impl UpdateAccountConfigurationInputBuilder {
         self.account_configuration = input;
         self
     }
+    /// Placeholder documentation for AccountConfiguration
+    pub fn get_account_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AccountConfiguration> {
+        &self.account_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateAccountConfigurationInput`](crate::operation::update_account_configuration::UpdateAccountConfigurationInput).
     pub fn build(
         self,

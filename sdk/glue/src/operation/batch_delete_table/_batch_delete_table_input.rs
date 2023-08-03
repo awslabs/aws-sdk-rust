@@ -64,6 +64,10 @@ impl BatchDeleteTableInputBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p>The name of the catalog database in which the tables to delete reside. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn database_name(
         mut self,
@@ -79,6 +83,10 @@ impl BatchDeleteTableInputBuilder {
     ) -> Self {
         self.database_name = input;
         self
+    }
+    /// <p>The name of the catalog database in which the tables to delete reside. For Hive compatibility, this name is entirely lowercase.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
     }
     /// Appends an item to `tables_to_delete`.
     ///
@@ -102,6 +110,12 @@ impl BatchDeleteTableInputBuilder {
         self.tables_to_delete = input;
         self
     }
+    /// <p>A list of the table to delete.</p>
+    pub fn get_tables_to_delete(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tables_to_delete
+    }
     /// <p>The transaction ID at which to delete the table contents.</p>
     pub fn transaction_id(
         mut self,
@@ -117,6 +131,10 @@ impl BatchDeleteTableInputBuilder {
     ) -> Self {
         self.transaction_id = input;
         self
+    }
+    /// <p>The transaction ID at which to delete the table contents.</p>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transaction_id
     }
     /// Consumes the builder and constructs a [`BatchDeleteTableInput`](crate::operation::batch_delete_table::BatchDeleteTableInput).
     pub fn build(

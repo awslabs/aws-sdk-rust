@@ -47,6 +47,10 @@ impl UpdateDevicePolicyConfigurationInputBuilder {
         self.fleet_arn = input;
         self
     }
+    /// <p>The ARN of the fleet.</p>
+    pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_arn
+    }
     /// <p>The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.</p>
     pub fn device_ca_certificate(
         mut self,
@@ -62,6 +66,10 @@ impl UpdateDevicePolicyConfigurationInputBuilder {
     ) -> Self {
         self.device_ca_certificate = input;
         self
+    }
+    /// <p>The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.</p>
+    pub fn get_device_ca_certificate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_ca_certificate
     }
     /// Consumes the builder and constructs a [`UpdateDevicePolicyConfigurationInput`](crate::operation::update_device_policy_configuration::UpdateDevicePolicyConfigurationInput).
     pub fn build(

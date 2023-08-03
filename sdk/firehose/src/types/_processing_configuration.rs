@@ -48,6 +48,10 @@ impl ProcessingConfigurationBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Enables or disables data processing.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Appends an item to `processors`.
     ///
     /// To override the contents of this collection use [`set_processors`](Self::set_processors).
@@ -66,6 +70,12 @@ impl ProcessingConfigurationBuilder {
     ) -> Self {
         self.processors = input;
         self
+    }
+    /// <p>The data processors.</p>
+    pub fn get_processors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Processor>> {
+        &self.processors
     }
     /// Consumes the builder and constructs a [`ProcessingConfiguration`](crate::types::ProcessingConfiguration).
     pub fn build(self) -> crate::types::ProcessingConfiguration {

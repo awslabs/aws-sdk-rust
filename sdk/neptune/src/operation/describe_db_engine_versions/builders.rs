@@ -36,6 +36,10 @@ impl DescribeDBEngineVersionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeDBEngineVersions as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_db_engine_versions::builders::DescribeDbEngineVersionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +139,10 @@ impl DescribeDBEngineVersionsFluentBuilder {
         self.inner = self.inner.set_engine(input);
         self
     }
+    /// <p>The database engine to return.</p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_engine()
+    }
     /// <p>The database engine version to return.</p>
     /// <p>Example: <code>5.1.49</code> </p>
     pub fn engine_version(
@@ -152,6 +160,11 @@ impl DescribeDBEngineVersionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_engine_version(input);
         self
+    }
+    /// <p>The database engine version to return.</p>
+    /// <p>Example: <code>5.1.49</code> </p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_engine_version()
     }
     /// <p>The name of a specific DB parameter group family to return details for.</p>
     /// <p>Constraints:</p>
@@ -177,6 +190,14 @@ impl DescribeDBEngineVersionsFluentBuilder {
         self.inner = self.inner.set_db_parameter_group_family(input);
         self
     }
+    /// <p>The name of a specific DB parameter group family to return details for.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>If supplied, must match an existing DBParameterGroupFamily.</p> </li>
+    /// </ul>
+    pub fn get_db_parameter_group_family(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_parameter_group_family()
+    }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -194,6 +215,10 @@ impl DescribeDBEngineVersionsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>Not currently supported.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// <p> The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is available, a pagination token called a marker is included in the response so that the following results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
@@ -208,6 +233,12 @@ impl DescribeDBEngineVersionsFluentBuilder {
         self.inner = self.inner.set_max_records(input);
         self
     }
+    /// <p> The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is available, a pagination token called a marker is included in the response so that the following results can be retrieved.</p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
+    }
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -217,6 +248,10 @@ impl DescribeDBEngineVersionsFluentBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
+    }
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
     }
     /// <p>Indicates that only the default version of the specified engine or engine and major version combination is returned.</p>
     pub fn default_only(mut self, input: bool) -> Self {
@@ -228,6 +263,10 @@ impl DescribeDBEngineVersionsFluentBuilder {
         self.inner = self.inner.set_default_only(input);
         self
     }
+    /// <p>Indicates that only the default version of the specified engine or engine and major version combination is returned.</p>
+    pub fn get_default_only(&self) -> &::std::option::Option<bool> {
+        self.inner.get_default_only()
+    }
     /// <p>If this parameter is specified and the requested engine supports the <code>CharacterSetName</code> parameter for <code>CreateDBInstance</code>, the response includes a list of supported character sets for each engine version.</p>
     pub fn list_supported_character_sets(mut self, input: bool) -> Self {
         self.inner = self.inner.list_supported_character_sets(input);
@@ -238,6 +277,10 @@ impl DescribeDBEngineVersionsFluentBuilder {
         self.inner = self.inner.set_list_supported_character_sets(input);
         self
     }
+    /// <p>If this parameter is specified and the requested engine supports the <code>CharacterSetName</code> parameter for <code>CreateDBInstance</code>, the response includes a list of supported character sets for each engine version.</p>
+    pub fn get_list_supported_character_sets(&self) -> &::std::option::Option<bool> {
+        self.inner.get_list_supported_character_sets()
+    }
     /// <p>If this parameter is specified and the requested engine supports the <code>TimeZone</code> parameter for <code>CreateDBInstance</code>, the response includes a list of supported time zones for each engine version.</p>
     pub fn list_supported_timezones(mut self, input: bool) -> Self {
         self.inner = self.inner.list_supported_timezones(input);
@@ -247,5 +290,9 @@ impl DescribeDBEngineVersionsFluentBuilder {
     pub fn set_list_supported_timezones(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_list_supported_timezones(input);
         self
+    }
+    /// <p>If this parameter is specified and the requested engine supports the <code>TimeZone</code> parameter for <code>CreateDBInstance</code>, the response includes a list of supported time zones for each engine version.</p>
+    pub fn get_list_supported_timezones(&self) -> &::std::option::Option<bool> {
+        self.inner.get_list_supported_timezones()
     }
 }

@@ -47,6 +47,10 @@ impl CountPendingDecisionTasksInputBuilder {
         self.domain = input;
         self
     }
+    /// <p>The name of the domain that contains the task list.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
+    }
     /// <p>The name of the task list.</p>
     pub fn task_list(mut self, input: crate::types::TaskList) -> Self {
         self.task_list = ::std::option::Option::Some(input);
@@ -56,6 +60,10 @@ impl CountPendingDecisionTasksInputBuilder {
     pub fn set_task_list(mut self, input: ::std::option::Option<crate::types::TaskList>) -> Self {
         self.task_list = input;
         self
+    }
+    /// <p>The name of the task list.</p>
+    pub fn get_task_list(&self) -> &::std::option::Option<crate::types::TaskList> {
+        &self.task_list
     }
     /// Consumes the builder and constructs a [`CountPendingDecisionTasksInput`](crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksInput).
     pub fn build(

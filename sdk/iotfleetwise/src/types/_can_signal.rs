@@ -98,6 +98,10 @@ impl CanSignalBuilder {
         self.message_id = input;
         self
     }
+    /// <p>The ID of the message.</p>
+    pub fn get_message_id(&self) -> &::std::option::Option<i32> {
+        &self.message_id
+    }
     /// <p>Whether the byte ordering of a CAN message is big-endian.</p>
     pub fn is_big_endian(mut self, input: bool) -> Self {
         self.is_big_endian = ::std::option::Option::Some(input);
@@ -108,6 +112,10 @@ impl CanSignalBuilder {
         self.is_big_endian = input;
         self
     }
+    /// <p>Whether the byte ordering of a CAN message is big-endian.</p>
+    pub fn get_is_big_endian(&self) -> &::std::option::Option<bool> {
+        &self.is_big_endian
+    }
     /// <p>Whether the message data is specified as a signed value.</p>
     pub fn is_signed(mut self, input: bool) -> Self {
         self.is_signed = ::std::option::Option::Some(input);
@@ -117,6 +125,10 @@ impl CanSignalBuilder {
     pub fn set_is_signed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_signed = input;
         self
+    }
+    /// <p>Whether the message data is specified as a signed value.</p>
+    pub fn get_is_signed(&self) -> &::std::option::Option<bool> {
+        &self.is_signed
     }
     /// <p>Indicates the beginning of the CAN signal. This should always be the least significant bit (LSB).</p>
     /// <p>This value might be different from the value in a DBC file. For little endian signals, <code>startBit</code> is the same value as in the DBC file. For big endian signals in a DBC file, the start bit is the most significant bit (MSB). You will have to calculate the LSB instead and pass it as the <code>startBit</code>.</p>
@@ -130,6 +142,11 @@ impl CanSignalBuilder {
         self.start_bit = input;
         self
     }
+    /// <p>Indicates the beginning of the CAN signal. This should always be the least significant bit (LSB).</p>
+    /// <p>This value might be different from the value in a DBC file. For little endian signals, <code>startBit</code> is the same value as in the DBC file. For big endian signals in a DBC file, the start bit is the most significant bit (MSB). You will have to calculate the LSB instead and pass it as the <code>startBit</code>.</p>
+    pub fn get_start_bit(&self) -> &::std::option::Option<i32> {
+        &self.start_bit
+    }
     /// <p>The offset used to calculate the signal value. Combined with factor, the calculation is <code>value = raw_value * factor + offset</code>.</p>
     pub fn offset(mut self, input: f64) -> Self {
         self.offset = ::std::option::Option::Some(input);
@@ -139,6 +156,10 @@ impl CanSignalBuilder {
     pub fn set_offset(mut self, input: ::std::option::Option<f64>) -> Self {
         self.offset = input;
         self
+    }
+    /// <p>The offset used to calculate the signal value. Combined with factor, the calculation is <code>value = raw_value * factor + offset</code>.</p>
+    pub fn get_offset(&self) -> &::std::option::Option<f64> {
+        &self.offset
     }
     /// <p>A multiplier used to decode the CAN message.</p>
     pub fn factor(mut self, input: f64) -> Self {
@@ -150,6 +171,10 @@ impl CanSignalBuilder {
         self.factor = input;
         self
     }
+    /// <p>A multiplier used to decode the CAN message.</p>
+    pub fn get_factor(&self) -> &::std::option::Option<f64> {
+        &self.factor
+    }
     /// <p>How many bytes of data are in the message.</p>
     pub fn length(mut self, input: i32) -> Self {
         self.length = ::std::option::Option::Some(input);
@@ -160,6 +185,10 @@ impl CanSignalBuilder {
         self.length = input;
         self
     }
+    /// <p>How many bytes of data are in the message.</p>
+    pub fn get_length(&self) -> &::std::option::Option<i32> {
+        &self.length
+    }
     /// <p>The name of the signal.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -169,6 +198,10 @@ impl CanSignalBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the signal.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`CanSignal`](crate::types::CanSignal).
     pub fn build(self) -> crate::types::CanSignal {

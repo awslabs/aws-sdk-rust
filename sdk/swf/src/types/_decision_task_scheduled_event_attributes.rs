@@ -60,6 +60,10 @@ impl DecisionTaskScheduledEventAttributesBuilder {
         self.task_list = input;
         self
     }
+    /// <p>The name of the task list in which the decision task was scheduled.</p>
+    pub fn get_task_list(&self) -> &::std::option::Option<crate::types::TaskList> {
+        &self.task_list
+    }
     /// <p> A task priority that, if set, specifies the priority for this decision task. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     pub fn task_priority(
@@ -78,6 +82,11 @@ impl DecisionTaskScheduledEventAttributesBuilder {
         self.task_priority = input;
         self
     }
+    /// <p> A task priority that, if set, specifies the priority for this decision task. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+    /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    pub fn get_task_priority(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_priority
+    }
     /// <p>The maximum duration for this decision task. The task is considered timed out if it doesn't completed within this duration.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
     pub fn start_to_close_timeout(
@@ -95,6 +104,11 @@ impl DecisionTaskScheduledEventAttributesBuilder {
     ) -> Self {
         self.start_to_close_timeout = input;
         self
+    }
+    /// <p>The maximum duration for this decision task. The task is considered timed out if it doesn't completed within this duration.</p>
+    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    pub fn get_start_to_close_timeout(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_to_close_timeout
     }
     /// Consumes the builder and constructs a [`DecisionTaskScheduledEventAttributes`](crate::types::DecisionTaskScheduledEventAttributes).
     pub fn build(self) -> crate::types::DecisionTaskScheduledEventAttributes {

@@ -77,6 +77,13 @@ impl RecommendationRelatedAnomalyBuilder {
         self.resources = input;
         self
     }
+    /// <p> An array of objects that represent resources in which DevOps Guru detected anomalous behavior. Each object contains the name and type of the resource. </p>
+    pub fn get_resources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedAnomalyResource>>
+    {
+        &self.resources
+    }
     /// Appends an item to `source_details`.
     ///
     /// To override the contents of this collection use [`set_source_details`](Self::set_source_details).
@@ -101,6 +108,14 @@ impl RecommendationRelatedAnomalyBuilder {
         self.source_details = input;
         self
     }
+    /// <p> Information about where the anomalous behavior related the recommendation was found. For example, details in Amazon CloudWatch metrics. </p>
+    pub fn get_source_details(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::RecommendationRelatedAnomalySourceDetail>,
+    > {
+        &self.source_details
+    }
     /// <p>The ID of an anomaly that generated the insight with this recommendation.</p>
     pub fn anomaly_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_id = ::std::option::Option::Some(input.into());
@@ -110,6 +125,10 @@ impl RecommendationRelatedAnomalyBuilder {
     pub fn set_anomaly_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.anomaly_id = input;
         self
+    }
+    /// <p>The ID of an anomaly that generated the insight with this recommendation.</p>
+    pub fn get_anomaly_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.anomaly_id
     }
     /// Consumes the builder and constructs a [`RecommendationRelatedAnomaly`](crate::types::RecommendationRelatedAnomaly).
     pub fn build(self) -> crate::types::RecommendationRelatedAnomaly {

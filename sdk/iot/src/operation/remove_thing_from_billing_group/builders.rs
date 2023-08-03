@@ -39,6 +39,10 @@ impl RemoveThingFromBillingGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RemoveThingFromBillingGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::remove_thing_from_billing_group::builders::RemoveThingFromBillingGroupInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +139,10 @@ impl RemoveThingFromBillingGroupFluentBuilder {
         self.inner = self.inner.set_billing_group_name(input);
         self
     }
+    /// <p>The name of the billing group.</p>
+    pub fn get_billing_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_billing_group_name()
+    }
     /// <p>The ARN of the billing group.</p>
     pub fn billing_group_arn(
         mut self,
@@ -151,6 +159,10 @@ impl RemoveThingFromBillingGroupFluentBuilder {
         self.inner = self.inner.set_billing_group_arn(input);
         self
     }
+    /// <p>The ARN of the billing group.</p>
+    pub fn get_billing_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_billing_group_arn()
+    }
     /// <p>The name of the thing to be removed from the billing group.</p>
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.thing_name(input.into());
@@ -161,6 +173,10 @@ impl RemoveThingFromBillingGroupFluentBuilder {
         self.inner = self.inner.set_thing_name(input);
         self
     }
+    /// <p>The name of the thing to be removed from the billing group.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_thing_name()
+    }
     /// <p>The ARN of the thing to be removed from the billing group.</p>
     pub fn thing_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.thing_arn(input.into());
@@ -170,5 +186,9 @@ impl RemoveThingFromBillingGroupFluentBuilder {
     pub fn set_thing_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_thing_arn(input);
         self
+    }
+    /// <p>The ARN of the thing to be removed from the billing group.</p>
+    pub fn get_thing_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_thing_arn()
     }
 }

@@ -46,6 +46,12 @@ impl NotStatementBuilder {
         self.statement = input;
         self
     }
+    /// <p>The statement to negate. You can use any statement that can be nested.</p>
+    pub fn get_statement(
+        &self,
+    ) -> &::std::option::Option<::std::boxed::Box<crate::types::Statement>> {
+        &self.statement
+    }
     /// Consumes the builder and constructs a [`NotStatement`](crate::types::NotStatement).
     pub fn build(self) -> crate::types::NotStatement {
         crate::types::NotStatement {

@@ -105,6 +105,10 @@ impl PerformanceInsightsMetricsDetailBuilder {
         self.metric_display_name = input;
         self
     }
+    /// <p>The name used for a specific Performance Insights metric.</p>
+    pub fn get_metric_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_display_name
+    }
     /// <p>The unit of measure for a metric. For example, a session or a process.</p>
     pub fn unit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.unit = ::std::option::Option::Some(input.into());
@@ -114,6 +118,10 @@ impl PerformanceInsightsMetricsDetailBuilder {
     pub fn set_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unit = input;
         self
+    }
+    /// <p>The unit of measure for a metric. For example, a session or a process.</p>
+    pub fn get_unit(&self) -> &::std::option::Option<::std::string::String> {
+        &self.unit
     }
     /// <p>A single query to be processed for the metric. For more information, see <code> <a href="https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_PerformanceInsightsMetricQuery.html">PerformanceInsightsMetricQuery</a> </code>.</p>
     pub fn metric_query(mut self, input: crate::types::PerformanceInsightsMetricQuery) -> Self {
@@ -127,6 +135,12 @@ impl PerformanceInsightsMetricsDetailBuilder {
     ) -> Self {
         self.metric_query = input;
         self
+    }
+    /// <p>A single query to be processed for the metric. For more information, see <code> <a href="https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_PerformanceInsightsMetricQuery.html">PerformanceInsightsMetricQuery</a> </code>.</p>
+    pub fn get_metric_query(
+        &self,
+    ) -> &::std::option::Option<crate::types::PerformanceInsightsMetricQuery> {
+        &self.metric_query
     }
     /// Appends an item to `reference_data`.
     ///
@@ -149,6 +163,13 @@ impl PerformanceInsightsMetricsDetailBuilder {
         self.reference_data = input;
         self
     }
+    /// <p> For more information, see <code> <a href="https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_PerformanceInsightsReferenceData.html">PerformanceInsightsReferenceData</a> </code>. </p>
+    pub fn get_reference_data(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsReferenceData>>
+    {
+        &self.reference_data
+    }
     /// Appends an item to `stats_at_anomaly`.
     ///
     /// To override the contents of this collection use [`set_stats_at_anomaly`](Self::set_stats_at_anomaly).
@@ -168,6 +189,12 @@ impl PerformanceInsightsMetricsDetailBuilder {
         self.stats_at_anomaly = input;
         self
     }
+    /// <p>The metric statistics during the anomalous period detected by DevOps Guru;</p>
+    pub fn get_stats_at_anomaly(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsStat>> {
+        &self.stats_at_anomaly
+    }
     /// Appends an item to `stats_at_baseline`.
     ///
     /// To override the contents of this collection use [`set_stats_at_baseline`](Self::set_stats_at_baseline).
@@ -186,6 +213,12 @@ impl PerformanceInsightsMetricsDetailBuilder {
     ) -> Self {
         self.stats_at_baseline = input;
         self
+    }
+    /// <p>Typical metric statistics that are not considered anomalous. When DevOps Guru analyzes metrics, it compares them to <code>StatsAtBaseline</code> to help determine if they are anomalous.</p>
+    pub fn get_stats_at_baseline(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsStat>> {
+        &self.stats_at_baseline
     }
     /// Consumes the builder and constructs a [`PerformanceInsightsMetricsDetail`](crate::types::PerformanceInsightsMetricsDetail).
     pub fn build(self) -> crate::types::PerformanceInsightsMetricsDetail {

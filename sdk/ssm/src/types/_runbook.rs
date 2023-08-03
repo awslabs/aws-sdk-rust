@@ -142,6 +142,10 @@ impl RunbookBuilder {
         self.document_name = input;
         self
     }
+    /// <p>The name of the Automation runbook used in a runbook workflow.</p>
+    pub fn get_document_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_name
+    }
     /// <p>The version of the Automation runbook used in a runbook workflow.</p>
     pub fn document_version(
         mut self,
@@ -157,6 +161,10 @@ impl RunbookBuilder {
     ) -> Self {
         self.document_version = input;
         self
+    }
+    /// <p>The version of the Automation runbook used in a runbook workflow.</p>
+    pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_version
     }
     /// Adds a key-value pair to `parameters`.
     ///
@@ -186,6 +194,14 @@ impl RunbookBuilder {
         self.parameters = input;
         self
     }
+    /// <p>The key-value map of execution parameters, which were supplied when calling <code>StartChangeRequestExecution</code>.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    > {
+        &self.parameters
+    }
     /// <p>The name of the parameter used as the target resource for the rate-controlled runbook workflow. Required if you specify <code>Targets</code>. </p>
     pub fn target_parameter_name(
         mut self,
@@ -201,6 +217,10 @@ impl RunbookBuilder {
     ) -> Self {
         self.target_parameter_name = input;
         self
+    }
+    /// <p>The name of the parameter used as the target resource for the rate-controlled runbook workflow. Required if you specify <code>Targets</code>. </p>
+    pub fn get_target_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_parameter_name
     }
     /// Appends an item to `targets`.
     ///
@@ -220,6 +240,10 @@ impl RunbookBuilder {
     ) -> Self {
         self.targets = input;
         self
+    }
+    /// <p>A key-value mapping to target resources that the runbook operation performs tasks on. Required if you specify <code>TargetParameterName</code>.</p>
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
+        &self.targets
     }
     /// Appends an item to `target_maps`.
     ///
@@ -253,6 +277,19 @@ impl RunbookBuilder {
         self.target_maps = input;
         self
     }
+    /// <p>A key-value mapping of runbook parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+    pub fn get_target_maps(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<
+            ::std::collections::HashMap<
+                ::std::string::String,
+                ::std::vec::Vec<::std::string::String>,
+            >,
+        >,
+    > {
+        &self.target_maps
+    }
     /// <p>The <code>MaxConcurrency</code> value specified by the user when the operation started, indicating the maximum number of resources that the runbook operation can run on at the same time.</p>
     pub fn max_concurrency(
         mut self,
@@ -269,6 +306,10 @@ impl RunbookBuilder {
         self.max_concurrency = input;
         self
     }
+    /// <p>The <code>MaxConcurrency</code> value specified by the user when the operation started, indicating the maximum number of resources that the runbook operation can run on at the same time.</p>
+    pub fn get_max_concurrency(&self) -> &::std::option::Option<::std::string::String> {
+        &self.max_concurrency
+    }
     /// <p>The <code>MaxErrors</code> value specified by the user when the execution started, indicating the maximum number of errors that can occur during the operation before the updates are stopped or rolled back.</p>
     pub fn max_errors(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_errors = ::std::option::Option::Some(input.into());
@@ -278,6 +319,10 @@ impl RunbookBuilder {
     pub fn set_max_errors(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_errors = input;
         self
+    }
+    /// <p>The <code>MaxErrors</code> value specified by the user when the execution started, indicating the maximum number of errors that can occur during the operation before the updates are stopped or rolled back.</p>
+    pub fn get_max_errors(&self) -> &::std::option::Option<::std::string::String> {
+        &self.max_errors
     }
     /// Appends an item to `target_locations`.
     ///
@@ -297,6 +342,12 @@ impl RunbookBuilder {
     ) -> Self {
         self.target_locations = input;
         self
+    }
+    /// <p>Information about the Amazon Web Services Regions and Amazon Web Services accounts targeted by the current Runbook operation.</p>
+    pub fn get_target_locations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>> {
+        &self.target_locations
     }
     /// Consumes the builder and constructs a [`Runbook`](crate::types::Runbook).
     pub fn build(self) -> crate::types::Runbook {

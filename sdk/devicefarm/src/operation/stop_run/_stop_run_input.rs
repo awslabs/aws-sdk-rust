@@ -40,6 +40,10 @@ impl StopRunInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm run to stop.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`StopRunInput`](crate::operation::stop_run::StopRunInput).
     pub fn build(
         self,

@@ -61,6 +61,12 @@ impl FailedCreateStandbyWorkspacesRequestBuilder {
         self.standby_workspace_request = input;
         self
     }
+    /// <p>Information about the standby WorkSpace that could not be created.</p>
+    pub fn get_standby_workspace_request(
+        &self,
+    ) -> &::std::option::Option<crate::types::StandbyWorkspace> {
+        &self.standby_workspace_request
+    }
     /// <p>The error code that is returned if the standby WorkSpace could not be created.</p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
@@ -70,6 +76,10 @@ impl FailedCreateStandbyWorkspacesRequestBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The error code that is returned if the standby WorkSpace could not be created.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
     }
     /// <p>The text of the error message that is returned if the standby WorkSpace could not be created.</p>
     pub fn error_message(
@@ -86,6 +96,10 @@ impl FailedCreateStandbyWorkspacesRequestBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>The text of the error message that is returned if the standby WorkSpace could not be created.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`FailedCreateStandbyWorkspacesRequest`](crate::types::FailedCreateStandbyWorkspacesRequest).
     pub fn build(self) -> crate::types::FailedCreateStandbyWorkspacesRequest {

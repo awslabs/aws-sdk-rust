@@ -104,6 +104,10 @@ impl MonitoringScheduleSummaryBuilder {
         self.monitoring_schedule_name = input;
         self
     }
+    /// <p>The name of the monitoring schedule.</p>
+    pub fn get_monitoring_schedule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitoring_schedule_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
     pub fn monitoring_schedule_arn(
         mut self,
@@ -120,6 +124,10 @@ impl MonitoringScheduleSummaryBuilder {
         self.monitoring_schedule_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
+    pub fn get_monitoring_schedule_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitoring_schedule_arn
+    }
     /// <p>The creation time of the monitoring schedule.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -132,6 +140,10 @@ impl MonitoringScheduleSummaryBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The creation time of the monitoring schedule.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The last time the monitoring schedule was modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -146,6 +158,10 @@ impl MonitoringScheduleSummaryBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p>The last time the monitoring schedule was modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     /// <p>The status of the monitoring schedule.</p>
     pub fn monitoring_schedule_status(mut self, input: crate::types::ScheduleStatus) -> Self {
         self.monitoring_schedule_status = ::std::option::Option::Some(input);
@@ -158,6 +174,12 @@ impl MonitoringScheduleSummaryBuilder {
     ) -> Self {
         self.monitoring_schedule_status = input;
         self
+    }
+    /// <p>The status of the monitoring schedule.</p>
+    pub fn get_monitoring_schedule_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScheduleStatus> {
+        &self.monitoring_schedule_status
     }
     /// <p>The name of the endpoint using the monitoring schedule.</p>
     pub fn endpoint_name(
@@ -175,6 +197,10 @@ impl MonitoringScheduleSummaryBuilder {
         self.endpoint_name = input;
         self
     }
+    /// <p>The name of the endpoint using the monitoring schedule.</p>
+    pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_name
+    }
     /// <p>The name of the monitoring job definition that the schedule is for.</p>
     pub fn monitoring_job_definition_name(
         mut self,
@@ -191,6 +217,12 @@ impl MonitoringScheduleSummaryBuilder {
         self.monitoring_job_definition_name = input;
         self
     }
+    /// <p>The name of the monitoring job definition that the schedule is for.</p>
+    pub fn get_monitoring_job_definition_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.monitoring_job_definition_name
+    }
     /// <p>The type of the monitoring job definition that the schedule is for.</p>
     pub fn monitoring_type(mut self, input: crate::types::MonitoringType) -> Self {
         self.monitoring_type = ::std::option::Option::Some(input);
@@ -203,6 +235,10 @@ impl MonitoringScheduleSummaryBuilder {
     ) -> Self {
         self.monitoring_type = input;
         self
+    }
+    /// <p>The type of the monitoring job definition that the schedule is for.</p>
+    pub fn get_monitoring_type(&self) -> &::std::option::Option<crate::types::MonitoringType> {
+        &self.monitoring_type
     }
     /// Consumes the builder and constructs a [`MonitoringScheduleSummary`](crate::types::MonitoringScheduleSummary).
     pub fn build(self) -> crate::types::MonitoringScheduleSummary {

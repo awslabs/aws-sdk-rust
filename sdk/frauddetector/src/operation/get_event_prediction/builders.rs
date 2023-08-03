@@ -36,6 +36,12 @@ impl GetEventPredictionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetEventPrediction as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_event_prediction::builders::GetEventPredictionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl GetEventPredictionFluentBuilder {
         self.inner = self.inner.set_detector_id(input);
         self
     }
+    /// <p>The detector ID.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_id()
+    }
     /// <p>The detector version ID.</p>
     pub fn detector_version_id(
         mut self,
@@ -142,6 +152,10 @@ impl GetEventPredictionFluentBuilder {
         self.inner = self.inner.set_detector_version_id(input);
         self
     }
+    /// <p>The detector version ID.</p>
+    pub fn get_detector_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_version_id()
+    }
     /// <p>The unique ID used to identify the event.</p>
     pub fn event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_id(input.into());
@@ -151,6 +165,10 @@ impl GetEventPredictionFluentBuilder {
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_id(input);
         self
+    }
+    /// <p>The unique ID used to identify the event.</p>
+    pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_id()
     }
     /// <p>The event type associated with the detector specified for the prediction.</p>
     pub fn event_type_name(
@@ -167,6 +185,10 @@ impl GetEventPredictionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_event_type_name(input);
         self
+    }
+    /// <p>The event type associated with the detector specified for the prediction.</p>
+    pub fn get_event_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_type_name()
     }
     /// Appends an item to `entities`.
     ///
@@ -185,6 +207,10 @@ impl GetEventPredictionFluentBuilder {
         self.inner = self.inner.set_entities(input);
         self
     }
+    /// <p>The entity type (associated with the detector's event type) and specific entity ID representing who performed the event. If an entity id is not available, use "UNKNOWN."</p>
+    pub fn get_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Entity>> {
+        self.inner.get_entities()
+    }
     /// <p>Timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
     pub fn event_timestamp(
         mut self,
@@ -200,6 +226,10 @@ impl GetEventPredictionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_event_timestamp(input);
         self
+    }
+    /// <p>Timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
+    pub fn get_event_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_timestamp()
     }
     /// Adds a key-value pair to `eventVariables`.
     ///
@@ -238,6 +268,21 @@ impl GetEventPredictionFluentBuilder {
         self.inner = self.inner.set_event_variables(input);
         self
     }
+    /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p> <important>
+    /// <p>You must provide at least one eventVariable</p>
+    /// </important>
+    /// <p>To ensure most accurate fraud prediction and to simplify your data preparation, Amazon Fraud Detector will replace all missing variables or values as follows:</p>
+    /// <p> <b>For Amazon Fraud Detector trained models:</b> </p>
+    /// <p>If a null value is provided explicitly for a variable or if a variable is missing, model will replace the null value or the missing variable (no variable name in the eventVariables map) with calculated default mean/medians for numeric variables and with special values for categorical variables.</p>
+    /// <p> <b>For imported SageMaker models:</b> </p>
+    /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules will use the default value that is provided for the variable. </p>
+    pub fn get_event_variables(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_event_variables()
+    }
     /// Adds a key-value pair to `externalModelEndpointDataBlobs`.
     ///
     /// To override the contents of this collection use [`set_external_model_endpoint_data_blobs`](Self::set_external_model_endpoint_data_blobs).
@@ -260,5 +305,13 @@ impl GetEventPredictionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_external_model_endpoint_data_blobs(input);
         self
+    }
+    /// <p>The Amazon SageMaker model endpoint input data blobs.</p>
+    pub fn get_external_model_endpoint_data_blobs(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::ModelEndpointDataBlob>,
+    > {
+        self.inner.get_external_model_endpoint_data_blobs()
     }
 }

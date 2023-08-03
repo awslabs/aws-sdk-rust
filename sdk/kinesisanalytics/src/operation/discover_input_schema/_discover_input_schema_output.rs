@@ -81,6 +81,10 @@ impl DiscoverInputSchemaOutputBuilder {
         self.input_schema = input;
         self
     }
+    /// <p>Schema inferred from the streaming source. It identifies the format of the data in the streaming source and how each data element maps to corresponding columns in the in-application stream that you can create.</p>
+    pub fn get_input_schema(&self) -> &::std::option::Option<crate::types::SourceSchema> {
+        &self.input_schema
+    }
     /// Appends an item to `parsed_input_records`.
     ///
     /// To override the contents of this collection use [`set_parsed_input_records`](Self::set_parsed_input_records).
@@ -99,6 +103,12 @@ impl DiscoverInputSchemaOutputBuilder {
     ) -> Self {
         self.parsed_input_records = input;
         self
+    }
+    /// <p>An array of elements, where each element corresponds to a row in a stream record (a stream record can have more than one row).</p>
+    pub fn get_parsed_input_records(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
+        &self.parsed_input_records
     }
     /// Appends an item to `processed_input_records`.
     ///
@@ -122,6 +132,12 @@ impl DiscoverInputSchemaOutputBuilder {
         self.processed_input_records = input;
         self
     }
+    /// <p>Stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code> parameter.</p>
+    pub fn get_processed_input_records(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.processed_input_records
+    }
     /// Appends an item to `raw_input_records`.
     ///
     /// To override the contents of this collection use [`set_raw_input_records`](Self::set_raw_input_records).
@@ -143,6 +159,12 @@ impl DiscoverInputSchemaOutputBuilder {
     ) -> Self {
         self.raw_input_records = input;
         self
+    }
+    /// <p>Raw stream data that was sampled to infer the schema.</p>
+    pub fn get_raw_input_records(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.raw_input_records
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

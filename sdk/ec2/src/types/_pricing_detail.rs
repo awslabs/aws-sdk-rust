@@ -48,6 +48,10 @@ impl PricingDetailBuilder {
         self.count = input;
         self
     }
+    /// <p>The number of reservations available for the price.</p>
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        &self.count
+    }
     /// <p>The price per instance.</p>
     pub fn price(mut self, input: f64) -> Self {
         self.price = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl PricingDetailBuilder {
     pub fn set_price(mut self, input: ::std::option::Option<f64>) -> Self {
         self.price = input;
         self
+    }
+    /// <p>The price per instance.</p>
+    pub fn get_price(&self) -> &::std::option::Option<f64> {
+        &self.price
     }
     /// Consumes the builder and constructs a [`PricingDetail`](crate::types::PricingDetail).
     pub fn build(self) -> crate::types::PricingDetail {

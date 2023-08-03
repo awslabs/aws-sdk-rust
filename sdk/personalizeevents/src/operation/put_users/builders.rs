@@ -36,6 +36,10 @@ impl PutUsersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutUsers as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_users::builders::PutUsersInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl PutUsersFluentBuilder {
         self.inner = self.inner.set_dataset_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Users dataset you are adding the user or users to.</p>
+    pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dataset_arn()
+    }
     /// Appends an item to `users`.
     ///
     /// To override the contents of this collection use [`set_users`](Self::set_users).
@@ -134,5 +142,9 @@ impl PutUsersFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_users(input);
         self
+    }
+    /// <p>A list of user data.</p>
+    pub fn get_users(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::User>> {
+        self.inner.get_users()
     }
 }

@@ -58,6 +58,10 @@ impl AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetailsBuilder {
         self.days = input;
         self
     }
+    /// <p> The number of days that you want to specify for the default retention period. </p>
+    pub fn get_days(&self) -> &::std::option::Option<i32> {
+        &self.days
+    }
     /// <p> The default Object Lock retention mode you want to apply to new objects placed in the specified bucket. </p>
     pub fn mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mode = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetailsBuilder {
         self.mode = input;
         self
     }
+    /// <p> The default Object Lock retention mode you want to apply to new objects placed in the specified bucket. </p>
+    pub fn get_mode(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mode
+    }
     /// <p> The number of years that you want to specify for the default retention period. </p>
     pub fn years(mut self, input: i32) -> Self {
         self.years = ::std::option::Option::Some(input);
@@ -77,6 +85,10 @@ impl AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetailsBuilder {
     pub fn set_years(mut self, input: ::std::option::Option<i32>) -> Self {
         self.years = input;
         self
+    }
+    /// <p> The number of years that you want to specify for the default retention period. </p>
+    pub fn get_years(&self) -> &::std::option::Option<i32> {
+        &self.years
     }
     /// Consumes the builder and constructs a [`AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails`](crate::types::AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails).
     pub fn build(

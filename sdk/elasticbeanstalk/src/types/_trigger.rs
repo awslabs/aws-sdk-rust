@@ -40,6 +40,10 @@ impl TriggerBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the trigger.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`Trigger`](crate::types::Trigger).
     pub fn build(self) -> crate::types::Trigger {
         crate::types::Trigger { name: self.name }

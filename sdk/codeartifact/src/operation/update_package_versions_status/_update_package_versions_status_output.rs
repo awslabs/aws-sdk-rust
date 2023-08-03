@@ -97,6 +97,17 @@ impl UpdatePackageVersionsStatusOutputBuilder {
         self.successful_versions = input;
         self
     }
+    /// <p> A list of <code>PackageVersionError</code> objects, one for each package version with a status that failed to update. </p>
+    pub fn get_successful_versions(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::SuccessfulPackageVersionInfo,
+        >,
+    > {
+        &self.successful_versions
+    }
     /// Adds a key-value pair to `failed_versions`.
     ///
     /// To override the contents of this collection use [`set_failed_versions`](Self::set_failed_versions).
@@ -121,6 +132,14 @@ impl UpdatePackageVersionsStatusOutputBuilder {
     ) -> Self {
         self.failed_versions = input;
         self
+    }
+    /// <p> A list of <code>SuccessfulPackageVersionInfo</code> objects, one for each package version with a status that successfully updated. </p>
+    pub fn get_failed_versions(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::PackageVersionError>,
+    > {
+        &self.failed_versions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

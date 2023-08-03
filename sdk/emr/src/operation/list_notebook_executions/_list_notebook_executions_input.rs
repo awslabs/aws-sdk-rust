@@ -105,6 +105,10 @@ impl ListNotebookExecutionsInputBuilder {
         self.editor_id = input;
         self
     }
+    /// <p>The unique ID of the editor associated with the notebook execution.</p>
+    pub fn get_editor_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.editor_id
+    }
     /// <p>The status filter for listing notebook executions.</p>
     /// <ul>
     /// <li> <p> <code>START_PENDING</code> indicates that the cluster has received the execution request but execution has not begun.</p> </li>
@@ -142,6 +146,22 @@ impl ListNotebookExecutionsInputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status filter for listing notebook executions.</p>
+    /// <ul>
+    /// <li> <p> <code>START_PENDING</code> indicates that the cluster has received the execution request but execution has not begun.</p> </li>
+    /// <li> <p> <code>STARTING</code> indicates that the execution is starting on the cluster.</p> </li>
+    /// <li> <p> <code>RUNNING</code> indicates that the execution is being processed by the cluster.</p> </li>
+    /// <li> <p> <code>FINISHING</code> indicates that execution processing is in the final stages.</p> </li>
+    /// <li> <p> <code>FINISHED</code> indicates that the execution has completed without error.</p> </li>
+    /// <li> <p> <code>FAILING</code> indicates that the execution is failing and will not finish successfully.</p> </li>
+    /// <li> <p> <code>FAILED</code> indicates that the execution failed.</p> </li>
+    /// <li> <p> <code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code> request and the stop is pending.</p> </li>
+    /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li>
+    /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::NotebookExecutionStatus> {
+        &self.status
+    }
     /// <p>The beginning of time range filter for listing notebook executions. The default is the timestamp of 30 days ago.</p>
     pub fn from(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.from = ::std::option::Option::Some(input);
@@ -151,6 +171,10 @@ impl ListNotebookExecutionsInputBuilder {
     pub fn set_from(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.from = input;
         self
+    }
+    /// <p>The beginning of time range filter for listing notebook executions. The default is the timestamp of 30 days ago.</p>
+    pub fn get_from(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.from
     }
     /// <p>The end of time range filter for listing notebook executions. The default is the current timestamp.</p>
     pub fn to(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -162,6 +186,10 @@ impl ListNotebookExecutionsInputBuilder {
         self.to = input;
         self
     }
+    /// <p>The end of time range filter for listing notebook executions. The default is the current timestamp.</p>
+    pub fn get_to(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.to
+    }
     /// <p>The pagination token, returned by a previous <code>ListNotebookExecutions</code> call, that indicates the start of the list for this <code>ListNotebookExecutions</code> call.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -171,6 +199,10 @@ impl ListNotebookExecutionsInputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>The pagination token, returned by a previous <code>ListNotebookExecutions</code> call, that indicates the start of the list for this <code>ListNotebookExecutions</code> call.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// <p>The unique ID of the execution engine.</p>
     pub fn execution_engine_id(
@@ -187,6 +219,10 @@ impl ListNotebookExecutionsInputBuilder {
     ) -> Self {
         self.execution_engine_id = input;
         self
+    }
+    /// <p>The unique ID of the execution engine.</p>
+    pub fn get_execution_engine_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_engine_id
     }
     /// Consumes the builder and constructs a [`ListNotebookExecutionsInput`](crate::operation::list_notebook_executions::ListNotebookExecutionsInput).
     pub fn build(

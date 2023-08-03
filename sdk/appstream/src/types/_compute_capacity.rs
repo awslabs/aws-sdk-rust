@@ -40,6 +40,10 @@ impl ComputeCapacityBuilder {
         self.desired_instances = input;
         self
     }
+    /// <p>The desired number of streaming instances.</p>
+    pub fn get_desired_instances(&self) -> &::std::option::Option<i32> {
+        &self.desired_instances
+    }
     /// Consumes the builder and constructs a [`ComputeCapacity`](crate::types::ComputeCapacity).
     pub fn build(self) -> crate::types::ComputeCapacity {
         crate::types::ComputeCapacity {

@@ -43,6 +43,10 @@ impl UserPoolPolicyTypeBuilder {
         self.password_policy = input;
         self
     }
+    /// <p>The password policy.</p>
+    pub fn get_password_policy(&self) -> &::std::option::Option<crate::types::PasswordPolicyType> {
+        &self.password_policy
+    }
     /// Consumes the builder and constructs a [`UserPoolPolicyType`](crate::types::UserPoolPolicyType).
     pub fn build(self) -> crate::types::UserPoolPolicyType {
         crate::types::UserPoolPolicyType {

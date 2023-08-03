@@ -43,6 +43,12 @@ impl AnalyticsUtteranceAttributeBuilder {
         self.name = input;
         self
     }
+    /// <p>An attribute to return. The only available attribute is the intent that the bot mapped the utterance to.</p>
+    pub fn get_name(
+        &self,
+    ) -> &::std::option::Option<crate::types::AnalyticsUtteranceAttributeName> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`AnalyticsUtteranceAttribute`](crate::types::AnalyticsUtteranceAttribute).
     pub fn build(self) -> crate::types::AnalyticsUtteranceAttribute {
         crate::types::AnalyticsUtteranceAttribute { name: self.name }

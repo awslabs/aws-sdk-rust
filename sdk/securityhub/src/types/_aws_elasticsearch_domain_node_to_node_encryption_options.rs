@@ -41,6 +41,10 @@ impl AwsElasticsearchDomainNodeToNodeEncryptionOptionsBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Whether node-to-node encryption is enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Consumes the builder and constructs a [`AwsElasticsearchDomainNodeToNodeEncryptionOptions`](crate::types::AwsElasticsearchDomainNodeToNodeEncryptionOptions).
     pub fn build(self) -> crate::types::AwsElasticsearchDomainNodeToNodeEncryptionOptions {
         crate::types::AwsElasticsearchDomainNodeToNodeEncryptionOptions {

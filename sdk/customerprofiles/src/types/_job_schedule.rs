@@ -51,6 +51,12 @@ impl JobScheduleBuilder {
         self.day_of_the_week = input;
         self
     }
+    /// <p>The day when the Identity Resolution Job should run every week.</p>
+    pub fn get_day_of_the_week(
+        &self,
+    ) -> &::std::option::Option<crate::types::JobScheduleDayOfTheWeek> {
+        &self.day_of_the_week
+    }
     /// <p>The time when the Identity Resolution Job should run every week.</p>
     pub fn time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time = ::std::option::Option::Some(input.into());
@@ -60,6 +66,10 @@ impl JobScheduleBuilder {
     pub fn set_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.time = input;
         self
+    }
+    /// <p>The time when the Identity Resolution Job should run every week.</p>
+    pub fn get_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.time
     }
     /// Consumes the builder and constructs a [`JobSchedule`](crate::types::JobSchedule).
     pub fn build(self) -> crate::types::JobSchedule {

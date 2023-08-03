@@ -37,6 +37,10 @@ impl ListInferenceRecommendationsJobStepsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListInferenceRecommendationsJobSteps as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_inference_recommendations_job_steps::builders::ListInferenceRecommendationsJobStepsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -107,6 +111,10 @@ impl ListInferenceRecommendationsJobStepsFluentBuilder {
         self.inner = self.inner.set_job_name(input);
         self
     }
+    /// <p>The name for the Inference Recommender job.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_name()
+    }
     /// <p>A filter to return benchmarks of a specified status. If this field is left empty, then all benchmarks are returned.</p>
     pub fn status(mut self, input: crate::types::RecommendationJobStatus) -> Self {
         self.inner = self.inner.status(input);
@@ -119,6 +127,10 @@ impl ListInferenceRecommendationsJobStepsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p>A filter to return benchmarks of a specified status. If this field is left empty, then all benchmarks are returned.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::RecommendationJobStatus> {
+        self.inner.get_status()
     }
     /// <p>A filter to return details about the specified type of subtask.</p>
     /// <p> <code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
@@ -135,6 +147,11 @@ impl ListInferenceRecommendationsJobStepsFluentBuilder {
         self.inner = self.inner.set_step_type(input);
         self
     }
+    /// <p>A filter to return details about the specified type of subtask.</p>
+    /// <p> <code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
+    pub fn get_step_type(&self) -> &::std::option::Option<crate::types::RecommendationStepType> {
+        self.inner.get_step_type()
+    }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -145,6 +162,10 @@ impl ListInferenceRecommendationsJobStepsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>A token that you can specify to return more results from the list. Specify this field if you have a token that was returned from a previous request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -154,5 +175,9 @@ impl ListInferenceRecommendationsJobStepsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A token that you can specify to return more results from the list. Specify this field if you have a token that was returned from a previous request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

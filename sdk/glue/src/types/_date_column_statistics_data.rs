@@ -67,6 +67,10 @@ impl DateColumnStatisticsDataBuilder {
         self.minimum_value = input;
         self
     }
+    /// <p>The lowest value in the column.</p>
+    pub fn get_minimum_value(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.minimum_value
+    }
     /// <p>The highest value in the column.</p>
     pub fn maximum_value(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.maximum_value = ::std::option::Option::Some(input);
@@ -80,6 +84,10 @@ impl DateColumnStatisticsDataBuilder {
         self.maximum_value = input;
         self
     }
+    /// <p>The highest value in the column.</p>
+    pub fn get_maximum_value(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.maximum_value
+    }
     /// <p>The number of null values in the column.</p>
     pub fn number_of_nulls(mut self, input: i64) -> Self {
         self.number_of_nulls = ::std::option::Option::Some(input);
@@ -90,6 +98,10 @@ impl DateColumnStatisticsDataBuilder {
         self.number_of_nulls = input;
         self
     }
+    /// <p>The number of null values in the column.</p>
+    pub fn get_number_of_nulls(&self) -> &::std::option::Option<i64> {
+        &self.number_of_nulls
+    }
     /// <p>The number of distinct values in a column.</p>
     pub fn number_of_distinct_values(mut self, input: i64) -> Self {
         self.number_of_distinct_values = ::std::option::Option::Some(input);
@@ -99,6 +111,10 @@ impl DateColumnStatisticsDataBuilder {
     pub fn set_number_of_distinct_values(mut self, input: ::std::option::Option<i64>) -> Self {
         self.number_of_distinct_values = input;
         self
+    }
+    /// <p>The number of distinct values in a column.</p>
+    pub fn get_number_of_distinct_values(&self) -> &::std::option::Option<i64> {
+        &self.number_of_distinct_values
     }
     /// Consumes the builder and constructs a [`DateColumnStatisticsData`](crate::types::DateColumnStatisticsData).
     pub fn build(self) -> crate::types::DateColumnStatisticsData {

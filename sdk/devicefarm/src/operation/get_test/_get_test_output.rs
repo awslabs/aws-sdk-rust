@@ -47,6 +47,10 @@ impl GetTestOutputBuilder {
         self.test = input;
         self
     }
+    /// <p>A test condition that is evaluated.</p>
+    pub fn get_test(&self) -> &::std::option::Option<crate::types::Test> {
+        &self.test
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

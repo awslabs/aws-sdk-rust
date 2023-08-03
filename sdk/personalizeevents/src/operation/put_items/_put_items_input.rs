@@ -47,6 +47,10 @@ impl PutItemsInputBuilder {
         self.dataset_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Items dataset you are adding the item or items to.</p>
+    pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_arn
+    }
     /// Appends an item to `items`.
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
@@ -65,6 +69,10 @@ impl PutItemsInputBuilder {
     ) -> Self {
         self.items = input;
         self
+    }
+    /// <p>A list of item data.</p>
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Item>> {
+        &self.items
     }
     /// Consumes the builder and constructs a [`PutItemsInput`](crate::operation::put_items::PutItemsInput).
     pub fn build(

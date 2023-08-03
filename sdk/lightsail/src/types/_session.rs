@@ -63,6 +63,10 @@ impl SessionBuilder {
         self.name = input;
         self
     }
+    /// <p>The session name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The session URL.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl SessionBuilder {
         self.url = input;
         self
     }
+    /// <p>The session URL.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
+    }
     /// <p>When true, this Boolean value indicates the primary session for the specified resource.</p>
     pub fn is_primary(mut self, input: bool) -> Self {
         self.is_primary = ::std::option::Option::Some(input);
@@ -82,6 +90,10 @@ impl SessionBuilder {
     pub fn set_is_primary(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_primary = input;
         self
+    }
+    /// <p>When true, this Boolean value indicates the primary session for the specified resource.</p>
+    pub fn get_is_primary(&self) -> &::std::option::Option<bool> {
+        &self.is_primary
     }
     /// Consumes the builder and constructs a [`Session`](crate::types::Session).
     pub fn build(self) -> crate::types::Session {

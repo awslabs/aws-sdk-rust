@@ -36,6 +36,12 @@ impl DeleteVPCConnectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteVPCConnection as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_vpc_connection::builders::DeleteVpcConnectionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl DeleteVPCConnectionFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The Amazon Web Services account ID of the account where you want to delete a VPC connection.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The ID of the VPC connection that you're creating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.</p>
     pub fn vpc_connection_id(
         mut self,
@@ -147,5 +157,9 @@ impl DeleteVPCConnectionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_vpc_connection_id(input);
         self
+    }
+    /// <p>The ID of the VPC connection that you're creating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.</p>
+    pub fn get_vpc_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpc_connection_id()
     }
 }

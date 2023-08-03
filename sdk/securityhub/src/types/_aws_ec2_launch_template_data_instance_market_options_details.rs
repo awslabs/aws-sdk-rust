@@ -58,6 +58,10 @@ impl AwsEc2LaunchTemplateDataInstanceMarketOptionsDetailsBuilder {
         self.market_type = input;
         self
     }
+    /// <p> The market type. </p>
+    pub fn get_market_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.market_type
+    }
     /// <p> The options for Spot Instances. </p>
     pub fn spot_options(
         mut self,
@@ -75,6 +79,14 @@ impl AwsEc2LaunchTemplateDataInstanceMarketOptionsDetailsBuilder {
     ) -> Self {
         self.spot_options = input;
         self
+    }
+    /// <p> The options for Spot Instances. </p>
+    pub fn get_spot_options(
+        &self,
+    ) -> &::std::option::Option<
+        crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails,
+    > {
+        &self.spot_options
     }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails {

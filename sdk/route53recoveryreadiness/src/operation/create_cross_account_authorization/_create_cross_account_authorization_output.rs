@@ -52,6 +52,10 @@ impl CreateCrossAccountAuthorizationOutputBuilder {
         self.cross_account_authorization = input;
         self
     }
+    /// <p>The cross-account authorization.</p>
+    pub fn get_cross_account_authorization(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cross_account_authorization
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

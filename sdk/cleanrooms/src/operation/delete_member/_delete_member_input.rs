@@ -53,6 +53,10 @@ impl DeleteMemberInputBuilder {
         self.collaboration_identifier = input;
         self
     }
+    /// <p>The unique identifier for the associated collaboration.</p>
+    pub fn get_collaboration_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collaboration_identifier
+    }
     /// <p>The account ID of the member to remove.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl DeleteMemberInputBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>The account ID of the member to remove.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// Consumes the builder and constructs a [`DeleteMemberInput`](crate::operation::delete_member::DeleteMemberInput).
     pub fn build(

@@ -64,6 +64,10 @@ impl TreatmentConfigBuilder {
         self.name = input;
         self
     }
+    /// <p>A name for this treatment.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description for this treatment.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl TreatmentConfigBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description for this treatment.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The feature that this experiment is testing.</p>
     pub fn feature(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl TreatmentConfigBuilder {
         self.feature = input;
         self
     }
+    /// <p>The feature that this experiment is testing.</p>
+    pub fn get_feature(&self) -> &::std::option::Option<::std::string::String> {
+        &self.feature
+    }
     /// <p>The name of the variation to use as this treatment in the experiment.</p>
     pub fn variation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.variation = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl TreatmentConfigBuilder {
     pub fn set_variation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.variation = input;
         self
+    }
+    /// <p>The name of the variation to use as this treatment in the experiment.</p>
+    pub fn get_variation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.variation
     }
     /// Consumes the builder and constructs a [`TreatmentConfig`](crate::types::TreatmentConfig).
     pub fn build(self) -> crate::types::TreatmentConfig {

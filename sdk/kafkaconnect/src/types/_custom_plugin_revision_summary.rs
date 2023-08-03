@@ -87,6 +87,12 @@ impl CustomPluginRevisionSummaryBuilder {
         self.content_type = input;
         self
     }
+    /// <p>The format of the plugin file.</p>
+    pub fn get_content_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomPluginContentType> {
+        &self.content_type
+    }
     /// <p>The time that the custom plugin was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -100,6 +106,10 @@ impl CustomPluginRevisionSummaryBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time that the custom plugin was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The description of the custom plugin.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -109,6 +119,10 @@ impl CustomPluginRevisionSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the custom plugin.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Details about the custom plugin file.</p>
     pub fn file_description(mut self, input: crate::types::CustomPluginFileDescription) -> Self {
@@ -123,6 +137,12 @@ impl CustomPluginRevisionSummaryBuilder {
         self.file_description = input;
         self
     }
+    /// <p>Details about the custom plugin file.</p>
+    pub fn get_file_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomPluginFileDescription> {
+        &self.file_description
+    }
     /// <p>Information about the location of the custom plugin.</p>
     pub fn location(mut self, input: crate::types::CustomPluginLocationDescription) -> Self {
         self.location = ::std::option::Option::Some(input);
@@ -136,6 +156,12 @@ impl CustomPluginRevisionSummaryBuilder {
         self.location = input;
         self
     }
+    /// <p>Information about the location of the custom plugin.</p>
+    pub fn get_location(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomPluginLocationDescription> {
+        &self.location
+    }
     /// <p>The revision of the custom plugin.</p>
     pub fn revision(mut self, input: i64) -> Self {
         self.revision = ::std::option::Option::Some(input);
@@ -145,6 +171,10 @@ impl CustomPluginRevisionSummaryBuilder {
     pub fn set_revision(mut self, input: ::std::option::Option<i64>) -> Self {
         self.revision = input;
         self
+    }
+    /// <p>The revision of the custom plugin.</p>
+    pub fn get_revision(&self) -> &::std::option::Option<i64> {
+        &self.revision
     }
     /// Consumes the builder and constructs a [`CustomPluginRevisionSummary`](crate::types::CustomPluginRevisionSummary).
     pub fn build(self) -> crate::types::CustomPluginRevisionSummary {

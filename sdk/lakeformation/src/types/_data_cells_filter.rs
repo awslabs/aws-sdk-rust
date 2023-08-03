@@ -104,6 +104,10 @@ impl DataCellsFilterBuilder {
         self.table_catalog_id = input;
         self
     }
+    /// <p>The ID of the catalog to which the table belongs.</p>
+    pub fn get_table_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_catalog_id
+    }
     /// <p>A database in the Glue Data Catalog.</p>
     pub fn database_name(
         mut self,
@@ -120,6 +124,10 @@ impl DataCellsFilterBuilder {
         self.database_name = input;
         self
     }
+    /// <p>A database in the Glue Data Catalog.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>A table in the database.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
@@ -129,6 +137,10 @@ impl DataCellsFilterBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
+    }
+    /// <p>A table in the database.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// <p>The name given by the user to the data filter cell.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -140,6 +152,10 @@ impl DataCellsFilterBuilder {
         self.name = input;
         self
     }
+    /// <p>The name given by the user to the data filter cell.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A PartiQL predicate.</p>
     pub fn row_filter(mut self, input: crate::types::RowFilter) -> Self {
         self.row_filter = ::std::option::Option::Some(input);
@@ -149,6 +165,10 @@ impl DataCellsFilterBuilder {
     pub fn set_row_filter(mut self, input: ::std::option::Option<crate::types::RowFilter>) -> Self {
         self.row_filter = input;
         self
+    }
+    /// <p>A PartiQL predicate.</p>
+    pub fn get_row_filter(&self) -> &::std::option::Option<crate::types::RowFilter> {
+        &self.row_filter
     }
     /// Appends an item to `column_names`.
     ///
@@ -169,6 +189,12 @@ impl DataCellsFilterBuilder {
         self.column_names = input;
         self
     }
+    /// <p>A list of column names and/or nested column attributes. When specifying nested attributes, use a qualified dot (.) delimited format such as "address"."zip". Nested attributes within this list may not exceed a depth of 5.</p>
+    pub fn get_column_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.column_names
+    }
     /// <p>A wildcard with exclusions.</p>
     /// <p>You must specify either a <code>ColumnNames</code> list or the <code>ColumnWildCard</code>. </p>
     pub fn column_wildcard(mut self, input: crate::types::ColumnWildcard) -> Self {
@@ -184,6 +210,11 @@ impl DataCellsFilterBuilder {
         self.column_wildcard = input;
         self
     }
+    /// <p>A wildcard with exclusions.</p>
+    /// <p>You must specify either a <code>ColumnNames</code> list or the <code>ColumnWildCard</code>. </p>
+    pub fn get_column_wildcard(&self) -> &::std::option::Option<crate::types::ColumnWildcard> {
+        &self.column_wildcard
+    }
     /// <p>The ID of the data cells filter version.</p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_id = ::std::option::Option::Some(input.into());
@@ -193,6 +224,10 @@ impl DataCellsFilterBuilder {
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_id = input;
         self
+    }
+    /// <p>The ID of the data cells filter version.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
     }
     /// Consumes the builder and constructs a [`DataCellsFilter`](crate::types::DataCellsFilter).
     pub fn build(self) -> crate::types::DataCellsFilter {

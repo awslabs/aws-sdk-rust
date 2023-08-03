@@ -50,6 +50,10 @@ impl CreateAssessmentOutputBuilder {
         self.assessment = input;
         self
     }
+    /// <p> An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework. </p>
+    pub fn get_assessment(&self) -> &::std::option::Option<crate::types::Assessment> {
+        &self.assessment
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

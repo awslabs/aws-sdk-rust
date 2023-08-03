@@ -47,6 +47,10 @@ impl DeregisterRdsDbInstanceInputBuilder {
         self.rds_db_instance_arn = input;
         self
     }
+    /// <p>The Amazon RDS instance's ARN.</p>
+    pub fn get_rds_db_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rds_db_instance_arn
+    }
     /// Consumes the builder and constructs a [`DeregisterRdsDbInstanceInput`](crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceInput).
     pub fn build(
         self,

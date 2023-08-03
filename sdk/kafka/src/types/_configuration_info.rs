@@ -48,6 +48,10 @@ impl ConfigurationInfoBuilder {
         self.arn = input;
         self
     }
+    /// <p>ARN of the configuration to use.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The revision of the configuration to use.</p>
     pub fn revision(mut self, input: i64) -> Self {
         self.revision = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ConfigurationInfoBuilder {
     pub fn set_revision(mut self, input: ::std::option::Option<i64>) -> Self {
         self.revision = input;
         self
+    }
+    /// <p>The revision of the configuration to use.</p>
+    pub fn get_revision(&self) -> &::std::option::Option<i64> {
+        &self.revision
     }
     /// Consumes the builder and constructs a [`ConfigurationInfo`](crate::types::ConfigurationInfo).
     pub fn build(self) -> crate::types::ConfigurationInfo {

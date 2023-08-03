@@ -108,6 +108,10 @@ impl JobSummaryBuilder {
         self.job_arn = input;
         self
     }
+    /// <p>The job ARN.</p>
+    pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_arn
+    }
     /// <p>The unique identifier you assigned to this job when it was created.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
@@ -117,6 +121,10 @@ impl JobSummaryBuilder {
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
+    }
+    /// <p>The unique identifier you assigned to this job when it was created.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
     }
     /// <p>The ID of the thing group.</p>
     pub fn thing_group_id(
@@ -133,6 +141,10 @@ impl JobSummaryBuilder {
     ) -> Self {
         self.thing_group_id = input;
         self
+    }
+    /// <p>The ID of the thing group.</p>
+    pub fn get_thing_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_group_id
     }
     /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.</p> <note>
     /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p>
@@ -151,6 +163,12 @@ impl JobSummaryBuilder {
         self.target_selection = input;
         self
     }
+    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.</p> <note>
+    /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p>
+    /// </note>
+    pub fn get_target_selection(&self) -> &::std::option::Option<crate::types::TargetSelection> {
+        &self.target_selection
+    }
     /// <p>The job summary status.</p>
     pub fn status(mut self, input: crate::types::JobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -160,6 +178,10 @@ impl JobSummaryBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The job summary status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
+        &self.status
     }
     /// <p>The time, in seconds since the epoch, when the job was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -174,6 +196,10 @@ impl JobSummaryBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The time, in seconds since the epoch, when the job was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The time, in seconds since the epoch, when the job was last updated.</p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_at = ::std::option::Option::Some(input);
@@ -186,6 +212,10 @@ impl JobSummaryBuilder {
     ) -> Self {
         self.last_updated_at = input;
         self
+    }
+    /// <p>The time, in seconds since the epoch, when the job was last updated.</p>
+    pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_at
     }
     /// <p>The time, in seconds since the epoch, when the job completed.</p>
     pub fn completed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -200,6 +230,10 @@ impl JobSummaryBuilder {
         self.completed_at = input;
         self
     }
+    /// <p>The time, in seconds since the epoch, when the job completed.</p>
+    pub fn get_completed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.completed_at
+    }
     /// <p>Indicates whether a job is concurrent. Will be true when a job is rolling out new job executions or canceling previously created executions, otherwise false.</p>
     pub fn is_concurrent(mut self, input: bool) -> Self {
         self.is_concurrent = ::std::option::Option::Some(input);
@@ -209,6 +243,10 @@ impl JobSummaryBuilder {
     pub fn set_is_concurrent(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_concurrent = input;
         self
+    }
+    /// <p>Indicates whether a job is concurrent. Will be true when a job is rolling out new job executions or canceling previously created executions, otherwise false.</p>
+    pub fn get_is_concurrent(&self) -> &::std::option::Option<bool> {
+        &self.is_concurrent
     }
     /// Consumes the builder and constructs a [`JobSummary`](crate::types::JobSummary).
     pub fn build(self) -> crate::types::JobSummary {

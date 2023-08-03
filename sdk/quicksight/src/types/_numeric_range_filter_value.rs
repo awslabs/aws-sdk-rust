@@ -48,6 +48,10 @@ impl NumericRangeFilterValueBuilder {
         self.static_value = input;
         self
     }
+    /// <p>The static value of the numeric range filter.</p>
+    pub fn get_static_value(&self) -> &::std::option::Option<f64> {
+        &self.static_value
+    }
     /// <p>The parameter that is used in the numeric range.</p>
     pub fn parameter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl NumericRangeFilterValueBuilder {
     pub fn set_parameter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter = input;
         self
+    }
+    /// <p>The parameter that is used in the numeric range.</p>
+    pub fn get_parameter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter
     }
     /// Consumes the builder and constructs a [`NumericRangeFilterValue`](crate::types::NumericRangeFilterValue).
     pub fn build(self) -> crate::types::NumericRangeFilterValue {

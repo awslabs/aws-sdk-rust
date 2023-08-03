@@ -97,6 +97,10 @@ impl ListSolNetworkInstanceInfoBuilder {
         self.id = input;
         self
     }
+    /// <p>ID of the network instance.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>Network instance ARN.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -106,6 +110,10 @@ impl ListSolNetworkInstanceInfoBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>Network instance ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>Human-readable name of the network instance.</p>
     pub fn ns_instance_name(
@@ -123,6 +131,10 @@ impl ListSolNetworkInstanceInfoBuilder {
         self.ns_instance_name = input;
         self
     }
+    /// <p>Human-readable name of the network instance.</p>
+    pub fn get_ns_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ns_instance_name
+    }
     /// <p>Human-readable description of the network instance.</p>
     pub fn ns_instance_description(
         mut self,
@@ -139,6 +151,10 @@ impl ListSolNetworkInstanceInfoBuilder {
         self.ns_instance_description = input;
         self
     }
+    /// <p>Human-readable description of the network instance.</p>
+    pub fn get_ns_instance_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ns_instance_description
+    }
     /// <p>ID of the network service descriptor in the network package.</p>
     pub fn nsd_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nsd_id = ::std::option::Option::Some(input.into());
@@ -150,6 +166,10 @@ impl ListSolNetworkInstanceInfoBuilder {
         self
     }
     /// <p>ID of the network service descriptor in the network package.</p>
+    pub fn get_nsd_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nsd_id
+    }
+    /// <p>ID of the network service descriptor in the network package.</p>
     pub fn nsd_info_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nsd_info_id = ::std::option::Option::Some(input.into());
         self
@@ -158,6 +178,10 @@ impl ListSolNetworkInstanceInfoBuilder {
     pub fn set_nsd_info_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.nsd_info_id = input;
         self
+    }
+    /// <p>ID of the network service descriptor in the network package.</p>
+    pub fn get_nsd_info_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nsd_info_id
     }
     /// <p>The state of the network instance.</p>
     pub fn ns_state(mut self, input: crate::types::NsState) -> Self {
@@ -168,6 +192,10 @@ impl ListSolNetworkInstanceInfoBuilder {
     pub fn set_ns_state(mut self, input: ::std::option::Option<crate::types::NsState>) -> Self {
         self.ns_state = input;
         self
+    }
+    /// <p>The state of the network instance.</p>
+    pub fn get_ns_state(&self) -> &::std::option::Option<crate::types::NsState> {
+        &self.ns_state
     }
     /// <p>The metadata of the network instance.</p>
     pub fn metadata(mut self, input: crate::types::ListSolNetworkInstanceMetadata) -> Self {
@@ -181,6 +209,12 @@ impl ListSolNetworkInstanceInfoBuilder {
     ) -> Self {
         self.metadata = input;
         self
+    }
+    /// <p>The metadata of the network instance.</p>
+    pub fn get_metadata(
+        &self,
+    ) -> &::std::option::Option<crate::types::ListSolNetworkInstanceMetadata> {
+        &self.metadata
     }
     /// Consumes the builder and constructs a [`ListSolNetworkInstanceInfo`](crate::types::ListSolNetworkInstanceInfo).
     pub fn build(self) -> crate::types::ListSolNetworkInstanceInfo {

@@ -37,6 +37,10 @@ impl GetNetworkFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetNetwork as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_network::builders::GetNetworkInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,5 +122,9 @@ impl GetNetworkFluentBuilder {
     pub fn set_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_id(input);
         self
+    }
+    /// <p>The unique identifier of the network to get information about.</p>
+    pub fn get_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_network_id()
     }
 }

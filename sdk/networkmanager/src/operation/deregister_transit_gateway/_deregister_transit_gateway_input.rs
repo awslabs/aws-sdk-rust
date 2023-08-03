@@ -55,6 +55,10 @@ impl DeregisterTransitGatewayInputBuilder {
         self.global_network_id = input;
         self
     }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_network_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
     pub fn transit_gateway_arn(
         mut self,
@@ -70,6 +74,10 @@ impl DeregisterTransitGatewayInputBuilder {
     ) -> Self {
         self.transit_gateway_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
+    pub fn get_transit_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_arn
     }
     /// Consumes the builder and constructs a [`DeregisterTransitGatewayInput`](crate::operation::deregister_transit_gateway::DeregisterTransitGatewayInput).
     pub fn build(

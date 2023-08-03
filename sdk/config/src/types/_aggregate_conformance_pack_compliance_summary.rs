@@ -58,6 +58,12 @@ impl AggregateConformancePackComplianceSummaryBuilder {
         self.compliance_summary = input;
         self
     }
+    /// <p>Returns an <code>AggregateConformancePackComplianceCount</code> object. </p>
+    pub fn get_compliance_summary(
+        &self,
+    ) -> &::std::option::Option<crate::types::AggregateConformancePackComplianceCount> {
+        &self.compliance_summary
+    }
     /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
@@ -67,6 +73,10 @@ impl AggregateConformancePackComplianceSummaryBuilder {
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_name = input;
         self
+    }
+    /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
     }
     /// Consumes the builder and constructs a [`AggregateConformancePackComplianceSummary`](crate::types::AggregateConformancePackComplianceSummary).
     pub fn build(self) -> crate::types::AggregateConformancePackComplianceSummary {

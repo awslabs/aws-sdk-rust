@@ -44,6 +44,13 @@ impl ListChannelMembershipsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListChannelMemberships as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_channel_memberships::builders::ListChannelMembershipsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -146,6 +153,10 @@ impl ListChannelMembershipsFluentBuilder {
         self.inner = self.inner.set_channel_arn(input);
         self
     }
+    /// <p>The maximum number of channel memberships that you want returned.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_arn()
+    }
     /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned.</p>
     pub fn r#type(mut self, input: crate::types::ChannelMembershipType) -> Self {
         self.inner = self.inner.r#type(input);
@@ -159,6 +170,10 @@ impl ListChannelMembershipsFluentBuilder {
         self.inner = self.inner.set_type(input);
         self
     }
+    /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ChannelMembershipType> {
+        self.inner.get_type()
+    }
     /// <p>The maximum number of channel memberships that you want returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -168,6 +183,10 @@ impl ListChannelMembershipsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of channel memberships that you want returned.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -179,6 +198,10 @@ impl ListChannelMembershipsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.chime_bearer(input.into());
@@ -188,5 +211,9 @@ impl ListChannelMembershipsFluentBuilder {
     pub fn set_chime_bearer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_chime_bearer(input);
         self
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_chime_bearer()
     }
 }

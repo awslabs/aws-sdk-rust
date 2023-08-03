@@ -56,6 +56,10 @@ impl FieldOptionErrorBuilder {
         self.message = input;
         self
     }
+    /// <p>Error message from creating or updating field option.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>Error code from creating or updating field option.</p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl FieldOptionErrorBuilder {
         self.error_code = input;
         self
     }
+    /// <p>Error code from creating or updating field option.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
+    }
     /// <p>The field option value that caused the error.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl FieldOptionErrorBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The field option value that caused the error.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`FieldOptionError`](crate::types::FieldOptionError).
     pub fn build(self) -> crate::types::FieldOptionError {

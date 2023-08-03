@@ -61,6 +61,10 @@ impl ViewBillingOutputBuilder {
         self.next_page_marker = input;
         self
     }
+    /// <p>If there are more billing records than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
+    pub fn get_next_page_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_page_marker
+    }
     /// Appends an item to `billing_records`.
     ///
     /// To override the contents of this collection use [`set_billing_records`](Self::set_billing_records).
@@ -79,6 +83,12 @@ impl ViewBillingOutputBuilder {
     ) -> Self {
         self.billing_records = input;
         self
+    }
+    /// <p>A summary of billing records.</p>
+    pub fn get_billing_records(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BillingRecord>> {
+        &self.billing_records
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

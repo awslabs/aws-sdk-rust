@@ -64,6 +64,12 @@ impl ListGlobalTablesInputBuilder {
         self.exclusive_start_global_table_name = input;
         self
     }
+    /// <p>The first global table name that this operation will evaluate.</p>
+    pub fn get_exclusive_start_global_table_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.exclusive_start_global_table_name
+    }
     /// <p>The maximum number of table names to return, if the parameter is not specified DynamoDB defaults to 100.</p>
     /// <p>If the number of global tables DynamoDB finds reaches this limit, it stops the operation and returns the table names collected up to that point, with a table name in the <code>LastEvaluatedGlobalTableName</code> to apply in a subsequent operation to the <code>ExclusiveStartGlobalTableName</code> parameter.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -76,6 +82,11 @@ impl ListGlobalTablesInputBuilder {
         self.limit = input;
         self
     }
+    /// <p>The maximum number of table names to return, if the parameter is not specified DynamoDB defaults to 100.</p>
+    /// <p>If the number of global tables DynamoDB finds reaches this limit, it stops the operation and returns the table names collected up to that point, with a table name in the <code>LastEvaluatedGlobalTableName</code> to apply in a subsequent operation to the <code>ExclusiveStartGlobalTableName</code> parameter.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
+    }
     /// <p>Lists the global tables in a specific Region.</p>
     pub fn region_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region_name = ::std::option::Option::Some(input.into());
@@ -85,6 +96,10 @@ impl ListGlobalTablesInputBuilder {
     pub fn set_region_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region_name = input;
         self
+    }
+    /// <p>Lists the global tables in a specific Region.</p>
+    pub fn get_region_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region_name
     }
     /// Consumes the builder and constructs a [`ListGlobalTablesInput`](crate::operation::list_global_tables::ListGlobalTablesInput).
     pub fn build(

@@ -88,6 +88,10 @@ impl UpdateDataCatalogInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the data catalog to update. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
     pub fn r#type(mut self, input: crate::types::DataCatalogType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -98,6 +102,10 @@ impl UpdateDataCatalogInputBuilder {
         self.r#type = input;
         self
     }
+    /// <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::DataCatalogType> {
+        &self.r#type
+    }
     /// <p>New or modified text that describes the data catalog.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -107,6 +115,10 @@ impl UpdateDataCatalogInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>New or modified text that describes the data catalog.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `parameters`.
     ///
@@ -148,6 +160,22 @@ impl UpdateDataCatalogInputBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>Specifies the Lambda function or functions to use for updating the data catalog. This is a mapping whose values depend on the catalog type. </p>
+    /// <ul>
+    /// <li> <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p> <code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code> </p> </li>
+    /// <li> <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p>
+    /// <ul>
+    /// <li> <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p> <code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code> </p> </li>
+    /// <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
+    /// </ul> </li>
+    /// </ul>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.parameters
     }
     /// Consumes the builder and constructs a [`UpdateDataCatalogInput`](crate::operation::update_data_catalog::UpdateDataCatalogInput).
     pub fn build(

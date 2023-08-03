@@ -104,6 +104,10 @@ impl EncryptionBuilder {
         self.algorithm = input;
         self
     }
+    /// The type of algorithm that is used for the encryption (such as aes128, aes192, or aes256).
+    pub fn get_algorithm(&self) -> &::std::option::Option<crate::types::Algorithm> {
+        &self.algorithm
+    }
     /// A 128-bit, 16-byte hex value represented by a 32-character string, to be used with the key for encrypting content. This parameter is not valid for static key encryption.
     pub fn constant_initialization_vector(
         mut self,
@@ -120,6 +124,12 @@ impl EncryptionBuilder {
         self.constant_initialization_vector = input;
         self
     }
+    /// A 128-bit, 16-byte hex value represented by a 32-character string, to be used with the key for encrypting content. This parameter is not valid for static key encryption.
+    pub fn get_constant_initialization_vector(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.constant_initialization_vector
+    }
     /// The value of one of the devices that you configured with your digital rights management (DRM) platform key provider. This parameter is required for SPEKE encryption and is not valid for static key encryption.
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_id = ::std::option::Option::Some(input.into());
@@ -129,6 +139,10 @@ impl EncryptionBuilder {
     pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_id = input;
         self
+    }
+    /// The value of one of the devices that you configured with your digital rights management (DRM) platform key provider. This parameter is required for SPEKE encryption and is not valid for static key encryption.
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_id
     }
     /// The type of key that is used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
     pub fn key_type(mut self, input: crate::types::KeyType) -> Self {
@@ -140,6 +154,10 @@ impl EncryptionBuilder {
         self.key_type = input;
         self
     }
+    /// The type of key that is used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
+    pub fn get_key_type(&self) -> &::std::option::Option<crate::types::KeyType> {
+        &self.key_type
+    }
     /// The AWS Region that the API Gateway proxy endpoint was created in. This parameter is required for SPEKE encryption and is not valid for static key encryption.
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -149,6 +167,10 @@ impl EncryptionBuilder {
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
+    }
+    /// The AWS Region that the API Gateway proxy endpoint was created in. This parameter is required for SPEKE encryption and is not valid for static key encryption.
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// An identifier for the content. The service sends this value to the key server to identify the current endpoint. The resource ID is also known as the content ID. This parameter is required for SPEKE encryption and is not valid for static key encryption.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -160,6 +182,10 @@ impl EncryptionBuilder {
         self.resource_id = input;
         self
     }
+    /// An identifier for the content. The service sends this value to the key server to identify the current endpoint. The resource ID is also known as the content ID. This parameter is required for SPEKE encryption and is not valid for static key encryption.
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// The ARN of the role that you created during setup (when you set up AWS Elemental MediaConnect as a trusted entity).
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -169,6 +195,10 @@ impl EncryptionBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// The ARN of the role that you created during setup (when you set up AWS Elemental MediaConnect as a trusted entity).
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// The ARN of the secret that you created in AWS Secrets Manager to store the encryption key. This parameter is required for static key encryption and is not valid for SPEKE encryption.
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -180,6 +210,10 @@ impl EncryptionBuilder {
         self.secret_arn = input;
         self
     }
+    /// The ARN of the secret that you created in AWS Secrets Manager to store the encryption key. This parameter is required for static key encryption and is not valid for SPEKE encryption.
+    pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_arn
+    }
     /// The URL from the API Gateway proxy that you set up to talk to your key server. This parameter is required for SPEKE encryption and is not valid for static key encryption.
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
@@ -189,6 +223,10 @@ impl EncryptionBuilder {
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
+    }
+    /// The URL from the API Gateway proxy that you set up to talk to your key server. This parameter is required for SPEKE encryption and is not valid for static key encryption.
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     /// Consumes the builder and constructs a [`Encryption`](crate::types::Encryption).
     pub fn build(self) -> crate::types::Encryption {

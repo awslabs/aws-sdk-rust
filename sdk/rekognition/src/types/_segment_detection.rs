@@ -130,6 +130,10 @@ impl SegmentDetectionBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of the segment. Valid values are <code>TECHNICAL_CUE</code> and <code>SHOT</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::SegmentType> {
+        &self.r#type
+    }
     /// <p>The start time of the detected segment in milliseconds from the start of the video. This value is rounded down. For example, if the actual timestamp is 100.6667 milliseconds, Amazon Rekognition Video returns a value of 100 millis.</p>
     pub fn start_timestamp_millis(mut self, input: i64) -> Self {
         self.start_timestamp_millis = ::std::option::Option::Some(input);
@@ -139,6 +143,10 @@ impl SegmentDetectionBuilder {
     pub fn set_start_timestamp_millis(mut self, input: ::std::option::Option<i64>) -> Self {
         self.start_timestamp_millis = input;
         self
+    }
+    /// <p>The start time of the detected segment in milliseconds from the start of the video. This value is rounded down. For example, if the actual timestamp is 100.6667 milliseconds, Amazon Rekognition Video returns a value of 100 millis.</p>
+    pub fn get_start_timestamp_millis(&self) -> &::std::option::Option<i64> {
+        &self.start_timestamp_millis
     }
     /// <p>The end time of the detected segment, in milliseconds, from the start of the video. This value is rounded down.</p>
     pub fn end_timestamp_millis(mut self, input: i64) -> Self {
@@ -150,6 +158,10 @@ impl SegmentDetectionBuilder {
         self.end_timestamp_millis = input;
         self
     }
+    /// <p>The end time of the detected segment, in milliseconds, from the start of the video. This value is rounded down.</p>
+    pub fn get_end_timestamp_millis(&self) -> &::std::option::Option<i64> {
+        &self.end_timestamp_millis
+    }
     /// <p>The duration of the detected segment in milliseconds. </p>
     pub fn duration_millis(mut self, input: i64) -> Self {
         self.duration_millis = ::std::option::Option::Some(input);
@@ -159,6 +171,10 @@ impl SegmentDetectionBuilder {
     pub fn set_duration_millis(mut self, input: ::std::option::Option<i64>) -> Self {
         self.duration_millis = input;
         self
+    }
+    /// <p>The duration of the detected segment in milliseconds. </p>
+    pub fn get_duration_millis(&self) -> &::std::option::Option<i64> {
+        &self.duration_millis
     }
     /// <p>The frame-accurate SMPTE timecode, from the start of a video, for the start of a detected segment. <code>StartTimecode</code> is in <i>HH:MM:SS:fr</i> format (and <i>;fr</i> for drop frame-rates). </p>
     pub fn start_timecode_smpte(
@@ -176,6 +192,10 @@ impl SegmentDetectionBuilder {
         self.start_timecode_smpte = input;
         self
     }
+    /// <p>The frame-accurate SMPTE timecode, from the start of a video, for the start of a detected segment. <code>StartTimecode</code> is in <i>HH:MM:SS:fr</i> format (and <i>;fr</i> for drop frame-rates). </p>
+    pub fn get_start_timecode_smpte(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_timecode_smpte
+    }
     /// <p>The frame-accurate SMPTE timecode, from the start of a video, for the end of a detected segment. <code>EndTimecode</code> is in <i>HH:MM:SS:fr</i> format (and <i>;fr</i> for drop frame-rates).</p>
     pub fn end_timecode_smpte(
         mut self,
@@ -191,6 +211,10 @@ impl SegmentDetectionBuilder {
     ) -> Self {
         self.end_timecode_smpte = input;
         self
+    }
+    /// <p>The frame-accurate SMPTE timecode, from the start of a video, for the end of a detected segment. <code>EndTimecode</code> is in <i>HH:MM:SS:fr</i> format (and <i>;fr</i> for drop frame-rates).</p>
+    pub fn get_end_timecode_smpte(&self) -> &::std::option::Option<::std::string::String> {
+        &self.end_timecode_smpte
     }
     /// <p>The duration of the timecode for the detected segment in SMPTE format.</p>
     pub fn duration_smpte(
@@ -208,6 +232,10 @@ impl SegmentDetectionBuilder {
         self.duration_smpte = input;
         self
     }
+    /// <p>The duration of the timecode for the detected segment in SMPTE format.</p>
+    pub fn get_duration_smpte(&self) -> &::std::option::Option<::std::string::String> {
+        &self.duration_smpte
+    }
     /// <p>If the segment is a technical cue, contains information about the technical cue.</p>
     pub fn technical_cue_segment(mut self, input: crate::types::TechnicalCueSegment) -> Self {
         self.technical_cue_segment = ::std::option::Option::Some(input);
@@ -220,6 +248,12 @@ impl SegmentDetectionBuilder {
     ) -> Self {
         self.technical_cue_segment = input;
         self
+    }
+    /// <p>If the segment is a technical cue, contains information about the technical cue.</p>
+    pub fn get_technical_cue_segment(
+        &self,
+    ) -> &::std::option::Option<crate::types::TechnicalCueSegment> {
+        &self.technical_cue_segment
     }
     /// <p>If the segment is a shot detection, contains information about the shot detection.</p>
     pub fn shot_segment(mut self, input: crate::types::ShotSegment) -> Self {
@@ -234,6 +268,10 @@ impl SegmentDetectionBuilder {
         self.shot_segment = input;
         self
     }
+    /// <p>If the segment is a shot detection, contains information about the shot detection.</p>
+    pub fn get_shot_segment(&self) -> &::std::option::Option<crate::types::ShotSegment> {
+        &self.shot_segment
+    }
     /// <p> The frame number of the start of a video segment, using a frame index that starts with 0. </p>
     pub fn start_frame_number(mut self, input: i64) -> Self {
         self.start_frame_number = ::std::option::Option::Some(input);
@@ -243,6 +281,10 @@ impl SegmentDetectionBuilder {
     pub fn set_start_frame_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.start_frame_number = input;
         self
+    }
+    /// <p> The frame number of the start of a video segment, using a frame index that starts with 0. </p>
+    pub fn get_start_frame_number(&self) -> &::std::option::Option<i64> {
+        &self.start_frame_number
     }
     /// <p> The frame number at the end of a video segment, using a frame index that starts with 0. </p>
     pub fn end_frame_number(mut self, input: i64) -> Self {
@@ -254,6 +296,10 @@ impl SegmentDetectionBuilder {
         self.end_frame_number = input;
         self
     }
+    /// <p> The frame number at the end of a video segment, using a frame index that starts with 0. </p>
+    pub fn get_end_frame_number(&self) -> &::std::option::Option<i64> {
+        &self.end_frame_number
+    }
     /// <p> The duration of a video segment, expressed in frames. </p>
     pub fn duration_frames(mut self, input: i64) -> Self {
         self.duration_frames = ::std::option::Option::Some(input);
@@ -263,6 +309,10 @@ impl SegmentDetectionBuilder {
     pub fn set_duration_frames(mut self, input: ::std::option::Option<i64>) -> Self {
         self.duration_frames = input;
         self
+    }
+    /// <p> The duration of a video segment, expressed in frames. </p>
+    pub fn get_duration_frames(&self) -> &::std::option::Option<i64> {
+        &self.duration_frames
     }
     /// Consumes the builder and constructs a [`SegmentDetection`](crate::types::SegmentDetection).
     pub fn build(self) -> crate::types::SegmentDetection {

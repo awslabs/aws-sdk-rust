@@ -99,6 +99,10 @@ impl UpdateDocumentInputBuilder {
         self.content = input;
         self
     }
+    /// <p>A valid JSON or YAML string.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
+    }
     /// Appends an item to `attachments`.
     ///
     /// To override the contents of this collection use [`set_attachments`](Self::set_attachments).
@@ -118,6 +122,12 @@ impl UpdateDocumentInputBuilder {
         self.attachments = input;
         self
     }
+    /// <p>A list of key-value pairs that describe attachments to a version of a document.</p>
+    pub fn get_attachments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttachmentsSource>> {
+        &self.attachments
+    }
     /// <p>The name of the SSM document that you want to update.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -127,6 +137,10 @@ impl UpdateDocumentInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the SSM document that you want to update.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The friendly name of the SSM document that you want to update. This value can differ for each version of the document. If you don't specify a value for this parameter in your request, the existing value is applied to the new document version.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,6 +152,10 @@ impl UpdateDocumentInputBuilder {
         self.display_name = input;
         self
     }
+    /// <p>The friendly name of the SSM document that you want to update. This value can differ for each version of the document. If you don't specify a value for this parameter in your request, the existing value is applied to the new document version.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// <p>An optional field specifying the version of the artifact you are updating with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
     pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_name = ::std::option::Option::Some(input.into());
@@ -147,6 +165,10 @@ impl UpdateDocumentInputBuilder {
     pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_name = input;
         self
+    }
+    /// <p>An optional field specifying the version of the artifact you are updating with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
+    pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_name
     }
     /// <p>The version of the document that you want to update. Currently, Systems Manager supports updating only the latest version of the document. You can specify the version number of the latest version or use the <code>$LATEST</code> variable.</p> <note>
     /// <p>If you change a document version for a State Manager association, Systems Manager immediately runs the association unless you previously specifed the <code>apply-only-at-cron-interval</code> parameter.</p>
@@ -168,6 +190,12 @@ impl UpdateDocumentInputBuilder {
         self.document_version = input;
         self
     }
+    /// <p>The version of the document that you want to update. Currently, Systems Manager supports updating only the latest version of the document. You can specify the version number of the latest version or use the <code>$LATEST</code> variable.</p> <note>
+    /// <p>If you change a document version for a State Manager association, Systems Manager immediately runs the association unless you previously specifed the <code>apply-only-at-cron-interval</code> parameter.</p>
+    /// </note>
+    pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_version
+    }
     /// <p>Specify the document format for the new document version. Systems Manager supports JSON and YAML documents. JSON is the default format.</p>
     pub fn document_format(mut self, input: crate::types::DocumentFormat) -> Self {
         self.document_format = ::std::option::Option::Some(input);
@@ -181,6 +209,10 @@ impl UpdateDocumentInputBuilder {
         self.document_format = input;
         self
     }
+    /// <p>Specify the document format for the new document version. Systems Manager supports JSON and YAML documents. JSON is the default format.</p>
+    pub fn get_document_format(&self) -> &::std::option::Option<crate::types::DocumentFormat> {
+        &self.document_format
+    }
     /// <p>Specify a new target type for the document.</p>
     pub fn target_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_type = ::std::option::Option::Some(input.into());
@@ -190,6 +222,10 @@ impl UpdateDocumentInputBuilder {
     pub fn set_target_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_type = input;
         self
+    }
+    /// <p>Specify a new target type for the document.</p>
+    pub fn get_target_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_type
     }
     /// Consumes the builder and constructs a [`UpdateDocumentInput`](crate::operation::update_document::UpdateDocumentInput).
     pub fn build(

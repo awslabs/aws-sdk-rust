@@ -110,6 +110,10 @@ impl DescribeDeviceFleetOutputBuilder {
         self.device_fleet_name = input;
         self
     }
+    /// <p>The name of the fleet.</p>
+    pub fn get_device_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_fleet_name
+    }
     /// <p>The The Amazon Resource Name (ARN) of the fleet.</p>
     pub fn device_fleet_arn(
         mut self,
@@ -126,6 +130,10 @@ impl DescribeDeviceFleetOutputBuilder {
         self.device_fleet_arn = input;
         self
     }
+    /// <p>The The Amazon Resource Name (ARN) of the fleet.</p>
+    pub fn get_device_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_fleet_arn
+    }
     /// <p>The output configuration for storing sampled data.</p>
     pub fn output_config(mut self, input: crate::types::EdgeOutputConfig) -> Self {
         self.output_config = ::std::option::Option::Some(input);
@@ -139,6 +147,10 @@ impl DescribeDeviceFleetOutputBuilder {
         self.output_config = input;
         self
     }
+    /// <p>The output configuration for storing sampled data.</p>
+    pub fn get_output_config(&self) -> &::std::option::Option<crate::types::EdgeOutputConfig> {
+        &self.output_config
+    }
     /// <p>A description of the fleet.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -148,6 +160,10 @@ impl DescribeDeviceFleetOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the fleet.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Timestamp of when the device fleet was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -162,6 +178,10 @@ impl DescribeDeviceFleetOutputBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>Timestamp of when the device fleet was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>Timestamp of when the device fleet was last updated.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -175,6 +195,10 @@ impl DescribeDeviceFleetOutputBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p>Timestamp of when the device fleet was last updated.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     /// <p>The Amazon Resource Name (ARN) that has access to Amazon Web Services Internet of Things (IoT).</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -184,6 +208,10 @@ impl DescribeDeviceFleetOutputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) that has access to Amazon Web Services Internet of Things (IoT).</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The Amazon Resource Name (ARN) alias created in Amazon Web Services Internet of Things (IoT).</p>
     pub fn iot_role_alias(
@@ -200,6 +228,10 @@ impl DescribeDeviceFleetOutputBuilder {
     ) -> Self {
         self.iot_role_alias = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) alias created in Amazon Web Services Internet of Things (IoT).</p>
+    pub fn get_iot_role_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iot_role_alias
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

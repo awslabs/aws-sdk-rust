@@ -53,6 +53,10 @@ impl DeleteListenerInputBuilder {
         self.service_identifier = input;
         self
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    pub fn get_service_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_identifier
+    }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
     pub fn listener_identifier(
         mut self,
@@ -68,6 +72,10 @@ impl DeleteListenerInputBuilder {
     ) -> Self {
         self.listener_identifier = input;
         self
+    }
+    /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
+    pub fn get_listener_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.listener_identifier
     }
     /// Consumes the builder and constructs a [`DeleteListenerInput`](crate::operation::delete_listener::DeleteListenerInput).
     pub fn build(

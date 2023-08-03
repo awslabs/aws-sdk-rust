@@ -46,6 +46,10 @@ impl LocationSummaryBuilder {
         self.location_name = input;
         self
     }
+    /// <p>A string that specifies a location name.</p>
+    pub fn get_location_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_name
+    }
     /// Consumes the builder and constructs a [`LocationSummary`](crate::types::LocationSummary).
     pub fn build(self) -> crate::types::LocationSummary {
         crate::types::LocationSummary {

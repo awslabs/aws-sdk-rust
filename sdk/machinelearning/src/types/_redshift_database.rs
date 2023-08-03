@@ -54,6 +54,10 @@ impl RedshiftDatabaseBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The name of a database hosted on an Amazon Redshift cluster.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>The ID of an Amazon Redshift cluster.</p>
     pub fn cluster_identifier(
         mut self,
@@ -69,6 +73,10 @@ impl RedshiftDatabaseBuilder {
     ) -> Self {
         self.cluster_identifier = input;
         self
+    }
+    /// <p>The ID of an Amazon Redshift cluster.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_identifier
     }
     /// Consumes the builder and constructs a [`RedshiftDatabase`](crate::types::RedshiftDatabase).
     pub fn build(self) -> crate::types::RedshiftDatabase {

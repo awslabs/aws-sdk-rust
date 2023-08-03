@@ -45,6 +45,10 @@ impl CancelResizeInputBuilder {
         self.cluster_identifier = input;
         self
     }
+    /// <p>The unique identifier for the cluster that you want to cancel a resize operation for.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_identifier
+    }
     /// Consumes the builder and constructs a [`CancelResizeInput`](crate::operation::cancel_resize::CancelResizeInput).
     pub fn build(
         self,

@@ -36,6 +36,10 @@ impl CreateSimulationApplicationVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSimulationApplicationVersion as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_simulation_application_version::builders::CreateSimulationApplicationVersionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl CreateSimulationApplicationVersionFluentBuilder {
         self.inner = self.inner.set_application(input);
         self
     }
+    /// <p>The application information for the simulation application.</p>
+    pub fn get_application(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application()
+    }
     /// <p>The current revision id for the simulation application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
     pub fn current_revision_id(
         mut self,
@@ -115,6 +123,10 @@ impl CreateSimulationApplicationVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_current_revision_id(input);
         self
+    }
+    /// <p>The current revision id for the simulation application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
+    pub fn get_current_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_current_revision_id()
     }
     /// Appends an item to `s3Etags`.
     ///
@@ -133,6 +145,10 @@ impl CreateSimulationApplicationVersionFluentBuilder {
         self.inner = self.inner.set_s3_etags(input);
         self
     }
+    /// <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create the simulation application.</p>
+    pub fn get_s3_etags(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_s3_etags()
+    }
     /// <p>The SHA256 digest used to identify the Docker image URI used to created the simulation application.</p>
     pub fn image_digest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.image_digest(input.into());
@@ -142,5 +158,9 @@ impl CreateSimulationApplicationVersionFluentBuilder {
     pub fn set_image_digest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_image_digest(input);
         self
+    }
+    /// <p>The SHA256 digest used to identify the Docker image URI used to created the simulation application.</p>
+    pub fn get_image_digest(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_image_digest()
     }
 }

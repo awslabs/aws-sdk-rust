@@ -36,6 +36,10 @@ impl UpdateMobileDeviceAccessRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateMobileDeviceAccessRule as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_mobile_device_access_rule::builders::UpdateMobileDeviceAccessRuleInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl UpdateMobileDeviceAccessRuleFluentBuilder {
         self.inner = self.inner.set_organization_id(input);
         self
     }
+    /// <p>The WorkMail organization under which the rule will be updated.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
+    }
     /// <p>The identifier of the rule to be updated.</p>
     pub fn mobile_device_access_rule_id(
         mut self,
@@ -148,6 +156,12 @@ impl UpdateMobileDeviceAccessRuleFluentBuilder {
         self.inner = self.inner.set_mobile_device_access_rule_id(input);
         self
     }
+    /// <p>The identifier of the rule to be updated.</p>
+    pub fn get_mobile_device_access_rule_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_mobile_device_access_rule_id()
+    }
     /// <p>The updated rule name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -158,6 +172,10 @@ impl UpdateMobileDeviceAccessRuleFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The updated rule name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The updated rule description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -167,6 +185,10 @@ impl UpdateMobileDeviceAccessRuleFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The updated rule description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The effect of the rule when it matches. Allowed values are <code>ALLOW</code> or <code>DENY</code>.</p>
     pub fn effect(mut self, input: crate::types::MobileDeviceAccessRuleEffect) -> Self {
@@ -180,6 +202,10 @@ impl UpdateMobileDeviceAccessRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_effect(input);
         self
+    }
+    /// <p>The effect of the rule when it matches. Allowed values are <code>ALLOW</code> or <code>DENY</code>.</p>
+    pub fn get_effect(&self) -> &::std::option::Option<crate::types::MobileDeviceAccessRuleEffect> {
+        self.inner.get_effect()
     }
     /// Appends an item to `DeviceTypes`.
     ///
@@ -197,6 +223,12 @@ impl UpdateMobileDeviceAccessRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_device_types(input);
         self
+    }
+    /// <p>Device types that the updated rule will match.</p>
+    pub fn get_device_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_device_types()
     }
     /// Appends an item to `NotDeviceTypes`.
     ///
@@ -218,6 +250,12 @@ impl UpdateMobileDeviceAccessRuleFluentBuilder {
         self.inner = self.inner.set_not_device_types(input);
         self
     }
+    /// <p>Device types that the updated rule <b>will not</b> match. All other device types will match.</p>
+    pub fn get_not_device_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_not_device_types()
+    }
     /// Appends an item to `DeviceModels`.
     ///
     /// To override the contents of this collection use [`set_device_models`](Self::set_device_models).
@@ -237,6 +275,12 @@ impl UpdateMobileDeviceAccessRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_device_models(input);
         self
+    }
+    /// <p>Device models that the updated rule will match.</p>
+    pub fn get_device_models(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_device_models()
     }
     /// Appends an item to `NotDeviceModels`.
     ///
@@ -258,6 +302,12 @@ impl UpdateMobileDeviceAccessRuleFluentBuilder {
         self.inner = self.inner.set_not_device_models(input);
         self
     }
+    /// <p>Device models that the updated rule <b>will not</b> match. All other device models will match.</p>
+    pub fn get_not_device_models(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_not_device_models()
+    }
     /// Appends an item to `DeviceOperatingSystems`.
     ///
     /// To override the contents of this collection use [`set_device_operating_systems`](Self::set_device_operating_systems).
@@ -277,6 +327,12 @@ impl UpdateMobileDeviceAccessRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_device_operating_systems(input);
         self
+    }
+    /// <p>Device operating systems that the updated rule will match.</p>
+    pub fn get_device_operating_systems(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_device_operating_systems()
     }
     /// Appends an item to `NotDeviceOperatingSystems`.
     ///
@@ -298,6 +354,12 @@ impl UpdateMobileDeviceAccessRuleFluentBuilder {
         self.inner = self.inner.set_not_device_operating_systems(input);
         self
     }
+    /// <p>Device operating systems that the updated rule <b>will not</b> match. All other device operating systems will match.</p>
+    pub fn get_not_device_operating_systems(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_not_device_operating_systems()
+    }
     /// Appends an item to `DeviceUserAgents`.
     ///
     /// To override the contents of this collection use [`set_device_user_agents`](Self::set_device_user_agents).
@@ -318,6 +380,12 @@ impl UpdateMobileDeviceAccessRuleFluentBuilder {
         self.inner = self.inner.set_device_user_agents(input);
         self
     }
+    /// <p>User agents that the updated rule will match.</p>
+    pub fn get_device_user_agents(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_device_user_agents()
+    }
     /// Appends an item to `NotDeviceUserAgents`.
     ///
     /// To override the contents of this collection use [`set_not_device_user_agents`](Self::set_not_device_user_agents).
@@ -337,5 +405,11 @@ impl UpdateMobileDeviceAccessRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_not_device_user_agents(input);
         self
+    }
+    /// <p>User agents that the updated rule <b>will not</b> match. All other user agents will match.</p>
+    pub fn get_not_device_user_agents(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_not_device_user_agents()
     }
 }

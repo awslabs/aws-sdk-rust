@@ -53,6 +53,10 @@ impl BatchPutMetricsInputBuilder {
         self.trial_component_name = input;
         self
     }
+    /// <p>The name of the Trial Component to associate with the metrics.</p>
+    pub fn get_trial_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trial_component_name
+    }
     /// Appends an item to `metric_data`.
     ///
     /// To override the contents of this collection use [`set_metric_data`](Self::set_metric_data).
@@ -71,6 +75,12 @@ impl BatchPutMetricsInputBuilder {
     ) -> Self {
         self.metric_data = input;
         self
+    }
+    /// <p>A list of raw metric values to put.</p>
+    pub fn get_metric_data(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RawMetricData>> {
+        &self.metric_data
     }
     /// Consumes the builder and constructs a [`BatchPutMetricsInput`](crate::operation::batch_put_metrics::BatchPutMetricsInput).
     pub fn build(

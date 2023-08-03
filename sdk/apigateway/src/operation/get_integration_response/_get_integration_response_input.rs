@@ -66,6 +66,10 @@ impl GetIntegrationResponseInputBuilder {
         self.rest_api_id = input;
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
+    }
     /// <p>Specifies a get integration response request's resource identifier.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl GetIntegrationResponseInputBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>Specifies a get integration response request's resource identifier.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>Specifies a get integration response request's HTTP method.</p>
     pub fn http_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -86,6 +94,10 @@ impl GetIntegrationResponseInputBuilder {
         self.http_method = input;
         self
     }
+    /// <p>Specifies a get integration response request's HTTP method.</p>
+    pub fn get_http_method(&self) -> &::std::option::Option<::std::string::String> {
+        &self.http_method
+    }
     /// <p>Specifies a get integration response request's status code.</p>
     pub fn status_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_code = ::std::option::Option::Some(input.into());
@@ -95,6 +107,10 @@ impl GetIntegrationResponseInputBuilder {
     pub fn set_status_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_code = input;
         self
+    }
+    /// <p>Specifies a get integration response request's status code.</p>
+    pub fn get_status_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_code
     }
     /// Consumes the builder and constructs a [`GetIntegrationResponseInput`](crate::operation::get_integration_response::GetIntegrationResponseInput).
     pub fn build(

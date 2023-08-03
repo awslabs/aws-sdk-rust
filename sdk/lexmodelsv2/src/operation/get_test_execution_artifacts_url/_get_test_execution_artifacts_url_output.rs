@@ -60,6 +60,10 @@ impl GetTestExecutionArtifactsUrlOutputBuilder {
         self.test_execution_id = input;
         self
     }
+    /// <p>The unique identifier of the completed test execution.</p>
+    pub fn get_test_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_execution_id
+    }
     /// <p>The pre-signed Amazon S3 URL to download completed test execution.</p>
     pub fn download_artifacts_url(
         mut self,
@@ -75,6 +79,10 @@ impl GetTestExecutionArtifactsUrlOutputBuilder {
     ) -> Self {
         self.download_artifacts_url = input;
         self
+    }
+    /// <p>The pre-signed Amazon S3 URL to download completed test execution.</p>
+    pub fn get_download_artifacts_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.download_artifacts_url
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

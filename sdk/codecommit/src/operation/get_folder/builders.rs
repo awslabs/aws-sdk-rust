@@ -36,6 +36,10 @@ impl GetFolderFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetFolder as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_folder::builders::GetFolderInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl GetFolderFluentBuilder {
         self.inner = self.inner.set_repository_name(input);
         self
     }
+    /// <p>The name of the repository.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository_name()
+    }
     /// <p>A fully qualified reference used to identify a commit that contains the version of the folder's content to return. A fully qualified reference can be a commit ID, branch name, tag, or reference such as HEAD. If no specifier is provided, the folder content is returned as it exists in the HEAD commit.</p>
     pub fn commit_specifier(
         mut self,
@@ -140,6 +148,10 @@ impl GetFolderFluentBuilder {
         self.inner = self.inner.set_commit_specifier(input);
         self
     }
+    /// <p>A fully qualified reference used to identify a commit that contains the version of the folder's content to return. A fully qualified reference can be a commit ID, branch name, tag, or reference such as HEAD. If no specifier is provided, the folder content is returned as it exists in the HEAD commit.</p>
+    pub fn get_commit_specifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_commit_specifier()
+    }
     /// <p>The fully qualified path to the folder whose contents are returned, including the folder name. For example, /examples is a fully-qualified path to a folder named examples that was created off of the root directory (/) of a repository. </p>
     pub fn folder_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.folder_path(input.into());
@@ -149,5 +161,9 @@ impl GetFolderFluentBuilder {
     pub fn set_folder_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_folder_path(input);
         self
+    }
+    /// <p>The fully qualified path to the folder whose contents are returned, including the folder name. For example, /examples is a fully-qualified path to a folder named examples that was created off of the root directory (/) of a repository. </p>
+    pub fn get_folder_path(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_folder_path()
     }
 }

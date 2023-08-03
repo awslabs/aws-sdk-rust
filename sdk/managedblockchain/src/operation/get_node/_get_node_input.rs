@@ -57,6 +57,10 @@ impl GetNodeInputBuilder {
         self.network_id = input;
         self
     }
+    /// <p>The unique identifier of the network that the node is on.</p>
+    pub fn get_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_id
+    }
     /// <p>The unique identifier of the member that owns the node.</p>
     /// <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
     pub fn member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -69,6 +73,11 @@ impl GetNodeInputBuilder {
         self.member_id = input;
         self
     }
+    /// <p>The unique identifier of the member that owns the node.</p>
+    /// <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
+    pub fn get_member_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_id
+    }
     /// <p>The unique identifier of the node.</p>
     pub fn node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_id = ::std::option::Option::Some(input.into());
@@ -78,6 +87,10 @@ impl GetNodeInputBuilder {
     pub fn set_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_id = input;
         self
+    }
+    /// <p>The unique identifier of the node.</p>
+    pub fn get_node_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_id
     }
     /// Consumes the builder and constructs a [`GetNodeInput`](crate::operation::get_node::GetNodeInput).
     pub fn build(

@@ -46,6 +46,12 @@ impl CreateProjectVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateProjectVersion as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_project_version::builders::CreateProjectVersionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +142,10 @@ impl CreateProjectVersionFluentBuilder {
         self.inner = self.inner.set_project_arn(input);
         self
     }
+    /// <p>The ARN of the Amazon Rekognition Custom Labels project that manages the model that you want to train.</p>
+    pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_arn()
+    }
     /// <p>A name for the version of the model. This value must be unique.</p>
     pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version_name(input.into());
@@ -145,6 +155,10 @@ impl CreateProjectVersionFluentBuilder {
     pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version_name(input);
         self
+    }
+    /// <p>A name for the version of the model. This value must be unique.</p>
+    pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version_name()
     }
     /// <p>The Amazon S3 bucket location to store the results of training. The S3 bucket can be in any AWS account as long as the caller has <code>s3:PutObject</code> permissions on the S3 bucket.</p>
     pub fn output_config(mut self, input: crate::types::OutputConfig) -> Self {
@@ -159,6 +173,10 @@ impl CreateProjectVersionFluentBuilder {
         self.inner = self.inner.set_output_config(input);
         self
     }
+    /// <p>The Amazon S3 bucket location to store the results of training. The S3 bucket can be in any AWS account as long as the caller has <code>s3:PutObject</code> permissions on the S3 bucket.</p>
+    pub fn get_output_config(&self) -> &::std::option::Option<crate::types::OutputConfig> {
+        self.inner.get_output_config()
+    }
     /// <p>Specifies an external manifest that the services uses to train the model. If you specify <code>TrainingData</code> you must also specify <code>TestingData</code>. The project must not have any associated datasets. </p>
     pub fn training_data(mut self, input: crate::types::TrainingData) -> Self {
         self.inner = self.inner.training_data(input);
@@ -172,6 +190,10 @@ impl CreateProjectVersionFluentBuilder {
         self.inner = self.inner.set_training_data(input);
         self
     }
+    /// <p>Specifies an external manifest that the services uses to train the model. If you specify <code>TrainingData</code> you must also specify <code>TestingData</code>. The project must not have any associated datasets. </p>
+    pub fn get_training_data(&self) -> &::std::option::Option<crate::types::TrainingData> {
+        self.inner.get_training_data()
+    }
     /// <p>Specifies an external manifest that the service uses to test the model. If you specify <code>TestingData</code> you must also specify <code>TrainingData</code>. The project must not have any associated datasets.</p>
     pub fn testing_data(mut self, input: crate::types::TestingData) -> Self {
         self.inner = self.inner.testing_data(input);
@@ -184,6 +206,10 @@ impl CreateProjectVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_testing_data(input);
         self
+    }
+    /// <p>Specifies an external manifest that the service uses to test the model. If you specify <code>TestingData</code> you must also specify <code>TrainingData</code>. The project must not have any associated datasets.</p>
+    pub fn get_testing_data(&self) -> &::std::option::Option<crate::types::TestingData> {
+        self.inner.get_testing_data()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -207,6 +233,14 @@ impl CreateProjectVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p> A set of tags (key-value pairs) that you want to attach to the model. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
     /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training and test images copied into the service for model training. Your source images are unaffected. The key is also used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
     /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>
@@ -233,5 +267,17 @@ impl CreateProjectVersionFluentBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
+    }
+    /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training and test images copied into the service for model training. Your source images are unaffected. The key is also used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
+    /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>
+    /// <ul>
+    /// <li> <p>kms:CreateGrant</p> </li>
+    /// <li> <p>kms:DescribeKey</p> </li>
+    /// <li> <p>kms:GenerateDataKey</p> </li>
+    /// <li> <p>kms:Decrypt</p> </li>
+    /// </ul>
+    /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted using a key that AWS owns and manages.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_id()
     }
 }

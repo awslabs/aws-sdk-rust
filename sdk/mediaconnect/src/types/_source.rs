@@ -161,6 +161,10 @@ impl SourceBuilder {
         self.data_transfer_subscriber_fee_percent = input;
         self
     }
+    /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+    pub fn get_data_transfer_subscriber_fee_percent(&self) -> &::std::option::Option<i32> {
+        &self.data_transfer_subscriber_fee_percent
+    }
     /// The type of encryption that is used on the content ingested from this source.
     pub fn decryption(mut self, input: crate::types::Encryption) -> Self {
         self.decryption = ::std::option::Option::Some(input);
@@ -174,6 +178,10 @@ impl SourceBuilder {
         self.decryption = input;
         self
     }
+    /// The type of encryption that is used on the content ingested from this source.
+    pub fn get_decryption(&self) -> &::std::option::Option<crate::types::Encryption> {
+        &self.decryption
+    }
     /// A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -183,6 +191,10 @@ impl SourceBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// The ARN of the entitlement that allows you to subscribe to content that comes from another AWS account. The entitlement is set by the content originator and the ARN is generated as part of the originator's flow.
     pub fn entitlement_arn(
@@ -200,6 +212,10 @@ impl SourceBuilder {
         self.entitlement_arn = input;
         self
     }
+    /// The ARN of the entitlement that allows you to subscribe to content that comes from another AWS account. The entitlement is set by the content originator and the ARN is generated as part of the originator's flow.
+    pub fn get_entitlement_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entitlement_arn
+    }
     /// The IP address that the flow will be listening on for incoming content.
     pub fn ingest_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ingest_ip = ::std::option::Option::Some(input.into());
@@ -210,6 +226,10 @@ impl SourceBuilder {
         self.ingest_ip = input;
         self
     }
+    /// The IP address that the flow will be listening on for incoming content.
+    pub fn get_ingest_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ingest_ip
+    }
     /// The port that the flow will be listening on for incoming content.
     pub fn ingest_port(mut self, input: i32) -> Self {
         self.ingest_port = ::std::option::Option::Some(input);
@@ -219,6 +239,10 @@ impl SourceBuilder {
     pub fn set_ingest_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.ingest_port = input;
         self
+    }
+    /// The port that the flow will be listening on for incoming content.
+    pub fn get_ingest_port(&self) -> &::std::option::Option<i32> {
+        &self.ingest_port
     }
     /// Appends an item to `media_stream_source_configurations`.
     ///
@@ -242,6 +266,12 @@ impl SourceBuilder {
         self.media_stream_source_configurations = input;
         self
     }
+    /// The media streams that are associated with the source, and the parameters for those associations.
+    pub fn get_media_stream_source_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaStreamSourceConfiguration>> {
+        &self.media_stream_source_configurations
+    }
     /// The name of the source.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -252,6 +282,10 @@ impl SourceBuilder {
         self.name = input;
         self
     }
+    /// The name of the source.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// The port that the flow uses to send outbound requests to initiate connection with the sender.
     pub fn sender_control_port(mut self, input: i32) -> Self {
         self.sender_control_port = ::std::option::Option::Some(input);
@@ -261,6 +295,10 @@ impl SourceBuilder {
     pub fn set_sender_control_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.sender_control_port = input;
         self
+    }
+    /// The port that the flow uses to send outbound requests to initiate connection with the sender.
+    pub fn get_sender_control_port(&self) -> &::std::option::Option<i32> {
+        &self.sender_control_port
     }
     /// The IP address that the flow communicates with to initiate connection with the sender.
     pub fn sender_ip_address(
@@ -278,6 +316,10 @@ impl SourceBuilder {
         self.sender_ip_address = input;
         self
     }
+    /// The IP address that the flow communicates with to initiate connection with the sender.
+    pub fn get_sender_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sender_ip_address
+    }
     /// The ARN of the source.
     pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_arn = ::std::option::Option::Some(input.into());
@@ -288,6 +330,10 @@ impl SourceBuilder {
         self.source_arn = input;
         self
     }
+    /// The ARN of the source.
+    pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_arn
+    }
     /// Attributes related to the transport stream that are used in the source.
     pub fn transport(mut self, input: crate::types::Transport) -> Self {
         self.transport = ::std::option::Option::Some(input);
@@ -297,6 +343,10 @@ impl SourceBuilder {
     pub fn set_transport(mut self, input: ::std::option::Option<crate::types::Transport>) -> Self {
         self.transport = input;
         self
+    }
+    /// Attributes related to the transport stream that are used in the source.
+    pub fn get_transport(&self) -> &::std::option::Option<crate::types::Transport> {
+        &self.transport
     }
     /// The name of the VPC interface that is used for this source.
     pub fn vpc_interface_name(
@@ -314,6 +364,10 @@ impl SourceBuilder {
         self.vpc_interface_name = input;
         self
     }
+    /// The name of the VPC interface that is used for this source.
+    pub fn get_vpc_interface_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_interface_name
+    }
     /// The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
     pub fn whitelist_cidr(
         mut self,
@@ -330,6 +384,10 @@ impl SourceBuilder {
         self.whitelist_cidr = input;
         self
     }
+    /// The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+    pub fn get_whitelist_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.whitelist_cidr
+    }
     /// The source configuration for cloud flows receiving a stream from a bridge.
     pub fn gateway_bridge_source(mut self, input: crate::types::GatewayBridgeSource) -> Self {
         self.gateway_bridge_source = ::std::option::Option::Some(input);
@@ -342,6 +400,12 @@ impl SourceBuilder {
     ) -> Self {
         self.gateway_bridge_source = input;
         self
+    }
+    /// The source configuration for cloud flows receiving a stream from a bridge.
+    pub fn get_gateway_bridge_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::GatewayBridgeSource> {
+        &self.gateway_bridge_source
     }
     /// Consumes the builder and constructs a [`Source`](crate::types::Source).
     pub fn build(self) -> crate::types::Source {

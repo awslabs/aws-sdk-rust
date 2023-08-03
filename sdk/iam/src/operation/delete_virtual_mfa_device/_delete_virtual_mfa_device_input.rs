@@ -51,6 +51,11 @@ impl DeleteVirtualMfaDeviceInputBuilder {
         self.serial_number = input;
         self
     }
+    /// <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the same as the ARN.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@:/-</p>
+    pub fn get_serial_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.serial_number
+    }
     /// Consumes the builder and constructs a [`DeleteVirtualMfaDeviceInput`](crate::operation::delete_virtual_mfa_device::DeleteVirtualMfaDeviceInput).
     pub fn build(
         self,

@@ -65,6 +65,11 @@ impl UpdateTagsForResourceInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the resouce to be updated.</p>
+    /// <p>Must be the ARN of an Elastic Beanstalk resource.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Appends an item to `tags_to_add`.
     ///
     /// To override the contents of this collection use [`set_tags_to_add`](Self::set_tags_to_add).
@@ -85,6 +90,11 @@ impl UpdateTagsForResourceInputBuilder {
     ) -> Self {
         self.tags_to_add = input;
         self
+    }
+    /// <p>A list of tags to add or update. If a key of an existing tag is added, the tag's value is updated.</p>
+    /// <p>Specify at least one of these parameters: <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>
+    pub fn get_tags_to_add(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags_to_add
     }
     /// Appends an item to `tags_to_remove`.
     ///
@@ -109,6 +119,13 @@ impl UpdateTagsForResourceInputBuilder {
     ) -> Self {
         self.tags_to_remove = input;
         self
+    }
+    /// <p>A list of tag keys to remove. If a tag key doesn't exist, it is silently ignored.</p>
+    /// <p>Specify at least one of these parameters: <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>
+    pub fn get_tags_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tags_to_remove
     }
     /// Consumes the builder and constructs a [`UpdateTagsForResourceInput`](crate::operation::update_tags_for_resource::UpdateTagsForResourceInput).
     pub fn build(

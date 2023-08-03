@@ -40,6 +40,10 @@ impl KinesisDataStreamBuilder {
         self.arn = input;
         self
     }
+    /// <p>ARN of the output Amazon Kinesis Data Streams stream.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`KinesisDataStream`](crate::types::KinesisDataStream).
     pub fn build(self) -> crate::types::KinesisDataStream {
         crate::types::KinesisDataStream { arn: self.arn }

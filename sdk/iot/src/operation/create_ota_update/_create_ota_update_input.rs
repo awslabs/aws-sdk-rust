@@ -158,6 +158,10 @@ impl CreateOtaUpdateInputBuilder {
         self.ota_update_id = input;
         self
     }
+    /// <p>The ID of the OTA update to be created.</p>
+    pub fn get_ota_update_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ota_update_id
+    }
     /// <p>The description of the OTA update.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -167,6 +171,10 @@ impl CreateOtaUpdateInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the OTA update.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `targets`.
     ///
@@ -187,6 +195,10 @@ impl CreateOtaUpdateInputBuilder {
         self.targets = input;
         self
     }
+    /// <p>The devices targeted to receive OTA updates.</p>
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.targets
+    }
     /// Appends an item to `protocols`.
     ///
     /// To override the contents of this collection use [`set_protocols`](Self::set_protocols).
@@ -206,6 +218,10 @@ impl CreateOtaUpdateInputBuilder {
         self.protocols = input;
         self
     }
+    /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both HTTP and MQTT are specified, the target device can choose the protocol.</p>
+    pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Protocol>> {
+        &self.protocols
+    }
     /// <p>Specifies whether the update will continue to run (CONTINUOUS), or will be complete after all the things specified as targets have completed the update (SNAPSHOT). If continuous, the update may also be run on a thing when a change is detected in a target. For example, an update will run on a thing when the thing is added to a target group, even after the update was completed by all things originally in the group. Valid values: CONTINUOUS | SNAPSHOT.</p>
     pub fn target_selection(mut self, input: crate::types::TargetSelection) -> Self {
         self.target_selection = ::std::option::Option::Some(input);
@@ -218,6 +234,10 @@ impl CreateOtaUpdateInputBuilder {
     ) -> Self {
         self.target_selection = input;
         self
+    }
+    /// <p>Specifies whether the update will continue to run (CONTINUOUS), or will be complete after all the things specified as targets have completed the update (SNAPSHOT). If continuous, the update may also be run on a thing when a change is detected in a target. For example, an update will run on a thing when the thing is added to a target group, even after the update was completed by all things originally in the group. Valid values: CONTINUOUS | SNAPSHOT.</p>
+    pub fn get_target_selection(&self) -> &::std::option::Option<crate::types::TargetSelection> {
+        &self.target_selection
     }
     /// <p>Configuration for the rollout of OTA updates.</p>
     pub fn aws_job_executions_rollout_config(
@@ -235,6 +255,12 @@ impl CreateOtaUpdateInputBuilder {
         self.aws_job_executions_rollout_config = input;
         self
     }
+    /// <p>Configuration for the rollout of OTA updates.</p>
+    pub fn get_aws_job_executions_rollout_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsJobExecutionsRolloutConfig> {
+        &self.aws_job_executions_rollout_config
+    }
     /// <p>Configuration information for pre-signed URLs.</p>
     pub fn aws_job_presigned_url_config(
         mut self,
@@ -251,6 +277,12 @@ impl CreateOtaUpdateInputBuilder {
         self.aws_job_presigned_url_config = input;
         self
     }
+    /// <p>Configuration information for pre-signed URLs.</p>
+    pub fn get_aws_job_presigned_url_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsJobPresignedUrlConfig> {
+        &self.aws_job_presigned_url_config
+    }
     /// <p>The criteria that determine when and how a job abort takes place.</p>
     pub fn aws_job_abort_config(mut self, input: crate::types::AwsJobAbortConfig) -> Self {
         self.aws_job_abort_config = ::std::option::Option::Some(input);
@@ -264,6 +296,12 @@ impl CreateOtaUpdateInputBuilder {
         self.aws_job_abort_config = input;
         self
     }
+    /// <p>The criteria that determine when and how a job abort takes place.</p>
+    pub fn get_aws_job_abort_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsJobAbortConfig> {
+        &self.aws_job_abort_config
+    }
     /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
     pub fn aws_job_timeout_config(mut self, input: crate::types::AwsJobTimeoutConfig) -> Self {
         self.aws_job_timeout_config = ::std::option::Option::Some(input);
@@ -276,6 +314,12 @@ impl CreateOtaUpdateInputBuilder {
     ) -> Self {
         self.aws_job_timeout_config = input;
         self
+    }
+    /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
+    pub fn get_aws_job_timeout_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsJobTimeoutConfig> {
+        &self.aws_job_timeout_config
     }
     /// Appends an item to `files`.
     ///
@@ -296,6 +340,12 @@ impl CreateOtaUpdateInputBuilder {
         self.files = input;
         self
     }
+    /// <p>The files to be streamed by the OTA update.</p>
+    pub fn get_files(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OtaUpdateFile>> {
+        &self.files
+    }
     /// <p>The IAM role that grants Amazon Web Services IoT Core access to the Amazon S3, IoT jobs and Amazon Web Services Code Signing resources to create an OTA update job.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -305,6 +355,10 @@ impl CreateOtaUpdateInputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The IAM role that grants Amazon Web Services IoT Core access to the Amazon S3, IoT jobs and Amazon Web Services Code Signing resources to create an OTA update job.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Adds a key-value pair to `additional_parameters`.
     ///
@@ -331,6 +385,14 @@ impl CreateOtaUpdateInputBuilder {
         self.additional_parameters = input;
         self
     }
+    /// <p>A list of additional OTA update parameters which are name-value pairs.</p>
+    pub fn get_additional_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.additional_parameters
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -349,6 +411,10 @@ impl CreateOtaUpdateInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Metadata which can be used to manage updates.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateOtaUpdateInput`](crate::operation::create_ota_update::CreateOtaUpdateInput).
     pub fn build(

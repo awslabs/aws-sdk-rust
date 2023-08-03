@@ -54,6 +54,10 @@ impl CompatibleVersionsMapBuilder {
         self.source_version = input;
         self
     }
+    /// <p>The current version that the OpenSearch Service domain is running.</p>
+    pub fn get_source_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_version
+    }
     /// Appends an item to `target_versions`.
     ///
     /// To override the contents of this collection use [`set_target_versions`](Self::set_target_versions).
@@ -75,6 +79,12 @@ impl CompatibleVersionsMapBuilder {
     ) -> Self {
         self.target_versions = input;
         self
+    }
+    /// <p>The possible versions that you can upgrade the domain to.</p>
+    pub fn get_target_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.target_versions
     }
     /// Consumes the builder and constructs a [`CompatibleVersionsMap`](crate::types::CompatibleVersionsMap).
     pub fn build(self) -> crate::types::CompatibleVersionsMap {

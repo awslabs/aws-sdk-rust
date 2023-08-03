@@ -50,6 +50,12 @@ impl DeployAsApplicationConfigurationDescriptionBuilder {
         self.s3_content_location_description = input;
         self
     }
+    /// <p>The location that holds the data required to specify an Amazon Data Analytics application.</p>
+    pub fn get_s3_content_location_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3ContentBaseLocationDescription> {
+        &self.s3_content_location_description
+    }
     /// Consumes the builder and constructs a [`DeployAsApplicationConfigurationDescription`](crate::types::DeployAsApplicationConfigurationDescription).
     pub fn build(self) -> crate::types::DeployAsApplicationConfigurationDescription {
         crate::types::DeployAsApplicationConfigurationDescription {

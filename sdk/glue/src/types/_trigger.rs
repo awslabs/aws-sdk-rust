@@ -115,6 +115,10 @@ impl TriggerBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the trigger.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The name of the workflow associated with the trigger.</p>
     pub fn workflow_name(
         mut self,
@@ -131,6 +135,10 @@ impl TriggerBuilder {
         self.workflow_name = input;
         self
     }
+    /// <p>The name of the workflow associated with the trigger.</p>
+    pub fn get_workflow_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_name
+    }
     /// <p>Reserved for future use.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -140,6 +148,10 @@ impl TriggerBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The type of trigger that this is.</p>
     pub fn r#type(mut self, input: crate::types::TriggerType) -> Self {
@@ -151,6 +163,10 @@ impl TriggerBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of trigger that this is.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::TriggerType> {
+        &self.r#type
+    }
     /// <p>The current state of the trigger.</p>
     pub fn state(mut self, input: crate::types::TriggerState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -160,6 +176,10 @@ impl TriggerBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::TriggerState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The current state of the trigger.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::TriggerState> {
+        &self.state
     }
     /// <p>A description of this trigger.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -171,6 +191,10 @@ impl TriggerBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of this trigger.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
     pub fn schedule(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule = ::std::option::Option::Some(input.into());
@@ -180,6 +204,10 @@ impl TriggerBuilder {
     pub fn set_schedule(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schedule = input;
         self
+    }
+    /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
+    pub fn get_schedule(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schedule
     }
     /// Appends an item to `actions`.
     ///
@@ -200,6 +228,10 @@ impl TriggerBuilder {
         self.actions = input;
         self
     }
+    /// <p>The actions initiated by this trigger.</p>
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Action>> {
+        &self.actions
+    }
     /// <p>The predicate of this trigger, which defines when it will fire.</p>
     pub fn predicate(mut self, input: crate::types::Predicate) -> Self {
         self.predicate = ::std::option::Option::Some(input);
@@ -209,6 +241,10 @@ impl TriggerBuilder {
     pub fn set_predicate(mut self, input: ::std::option::Option<crate::types::Predicate>) -> Self {
         self.predicate = input;
         self
+    }
+    /// <p>The predicate of this trigger, which defines when it will fire.</p>
+    pub fn get_predicate(&self) -> &::std::option::Option<crate::types::Predicate> {
+        &self.predicate
     }
     /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
     pub fn event_batching_condition(mut self, input: crate::types::EventBatchingCondition) -> Self {
@@ -222,6 +258,12 @@ impl TriggerBuilder {
     ) -> Self {
         self.event_batching_condition = input;
         self
+    }
+    /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
+    pub fn get_event_batching_condition(
+        &self,
+    ) -> &::std::option::Option<crate::types::EventBatchingCondition> {
+        &self.event_batching_condition
     }
     /// Consumes the builder and constructs a [`Trigger`](crate::types::Trigger).
     pub fn build(self) -> crate::types::Trigger {

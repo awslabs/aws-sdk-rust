@@ -39,6 +39,10 @@ impl DeleteRulesetInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the ruleset to be deleted.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeleteRulesetInput`](crate::operation::delete_ruleset::DeleteRulesetInput).
     pub fn build(
         self,

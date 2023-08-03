@@ -65,6 +65,10 @@ impl CreateBillingGroupInputBuilder {
         self.billing_group_name = input;
         self
     }
+    /// <p>The name you wish to give to the billing group.</p>
+    pub fn get_billing_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.billing_group_name
+    }
     /// <p>The properties of the billing group.</p>
     pub fn billing_group_properties(mut self, input: crate::types::BillingGroupProperties) -> Self {
         self.billing_group_properties = ::std::option::Option::Some(input);
@@ -77,6 +81,12 @@ impl CreateBillingGroupInputBuilder {
     ) -> Self {
         self.billing_group_properties = input;
         self
+    }
+    /// <p>The properties of the billing group.</p>
+    pub fn get_billing_group_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::BillingGroupProperties> {
+        &self.billing_group_properties
     }
     /// Appends an item to `tags`.
     ///
@@ -96,6 +106,10 @@ impl CreateBillingGroupInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Metadata which can be used to manage the billing group.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateBillingGroupInput`](crate::operation::create_billing_group::CreateBillingGroupInput).
     pub fn build(

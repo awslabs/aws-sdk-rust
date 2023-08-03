@@ -69,6 +69,10 @@ impl GetImpersonationRoleEffectOutputBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The impersonation role type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ImpersonationRoleType> {
+        &self.r#type
+    }
     /// <p> <code></code>Effect of the impersonation role on the target user based on its rules. Available effects are <code>ALLOW</code> or <code>DENY</code>.</p>
     pub fn effect(mut self, input: crate::types::AccessEffect) -> Self {
         self.effect = ::std::option::Option::Some(input);
@@ -78,6 +82,10 @@ impl GetImpersonationRoleEffectOutputBuilder {
     pub fn set_effect(mut self, input: ::std::option::Option<crate::types::AccessEffect>) -> Self {
         self.effect = input;
         self
+    }
+    /// <p> <code></code>Effect of the impersonation role on the target user based on its rules. Available effects are <code>ALLOW</code> or <code>DENY</code>.</p>
+    pub fn get_effect(&self) -> &::std::option::Option<crate::types::AccessEffect> {
+        &self.effect
     }
     /// Appends an item to `matched_rules`.
     ///
@@ -97,6 +105,12 @@ impl GetImpersonationRoleEffectOutputBuilder {
     ) -> Self {
         self.matched_rules = input;
         self
+    }
+    /// <p>A list of the rules that match the input and produce the configured effect.</p>
+    pub fn get_matched_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImpersonationMatchedRule>> {
+        &self.matched_rules
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

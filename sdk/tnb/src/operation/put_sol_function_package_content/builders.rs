@@ -37,6 +37,10 @@ impl PutSolFunctionPackageContentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutSolFunctionPackageContent as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_sol_function_package_content::builders::PutSolFunctionPackageContentInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl PutSolFunctionPackageContentFluentBuilder {
         self.inner = self.inner.set_vnf_pkg_id(input);
         self
     }
+    /// <p>Function package ID.</p>
+    pub fn get_vnf_pkg_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vnf_pkg_id()
+    }
     /// <p>Function package content type.</p>
     pub fn content_type(mut self, input: crate::types::PackageContentType) -> Self {
         self.inner = self.inner.content_type(input);
@@ -140,6 +148,10 @@ impl PutSolFunctionPackageContentFluentBuilder {
         self.inner = self.inner.set_content_type(input);
         self
     }
+    /// <p>Function package content type.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<crate::types::PackageContentType> {
+        self.inner.get_content_type()
+    }
     /// <p>Function package file.</p>
     pub fn file(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.file(input);
@@ -149,5 +161,9 @@ impl PutSolFunctionPackageContentFluentBuilder {
     pub fn set_file(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_file(input);
         self
+    }
+    /// <p>Function package file.</p>
+    pub fn get_file(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        self.inner.get_file()
     }
 }

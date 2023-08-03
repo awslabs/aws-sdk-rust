@@ -58,6 +58,10 @@ impl DescribeBandwidthRateLimitScheduleOutputBuilder {
         self.gateway_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
+    }
     /// Appends an item to `bandwidth_rate_limit_intervals`.
     ///
     /// To override the contents of this collection use [`set_bandwidth_rate_limit_intervals`](Self::set_bandwidth_rate_limit_intervals).
@@ -79,6 +83,12 @@ impl DescribeBandwidthRateLimitScheduleOutputBuilder {
     ) -> Self {
         self.bandwidth_rate_limit_intervals = input;
         self
+    }
+    /// <p> An array that contains the bandwidth rate limit intervals for a tape or volume gateway. </p>
+    pub fn get_bandwidth_rate_limit_intervals(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BandwidthRateLimitInterval>> {
+        &self.bandwidth_rate_limit_intervals
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

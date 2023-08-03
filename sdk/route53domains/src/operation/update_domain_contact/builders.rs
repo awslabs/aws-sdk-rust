@@ -37,6 +37,12 @@ impl UpdateDomainContactFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDomainContact as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_domain_contact::builders::UpdateDomainContactInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl UpdateDomainContactFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>The name of the domain that you want to update contact information for.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p>Provides detailed contact information.</p>
     pub fn admin_contact(mut self, input: crate::types::ContactDetail) -> Self {
         self.inner = self.inner.admin_contact(input);
@@ -139,6 +149,10 @@ impl UpdateDomainContactFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_admin_contact(input);
         self
+    }
+    /// <p>Provides detailed contact information.</p>
+    pub fn get_admin_contact(&self) -> &::std::option::Option<crate::types::ContactDetail> {
+        self.inner.get_admin_contact()
     }
     /// <p>Provides detailed contact information.</p>
     pub fn registrant_contact(mut self, input: crate::types::ContactDetail) -> Self {
@@ -154,6 +168,10 @@ impl UpdateDomainContactFluentBuilder {
         self
     }
     /// <p>Provides detailed contact information.</p>
+    pub fn get_registrant_contact(&self) -> &::std::option::Option<crate::types::ContactDetail> {
+        self.inner.get_registrant_contact()
+    }
+    /// <p>Provides detailed contact information.</p>
     pub fn tech_contact(mut self, input: crate::types::ContactDetail) -> Self {
         self.inner = self.inner.tech_contact(input);
         self
@@ -166,6 +184,10 @@ impl UpdateDomainContactFluentBuilder {
         self.inner = self.inner.set_tech_contact(input);
         self
     }
+    /// <p>Provides detailed contact information.</p>
+    pub fn get_tech_contact(&self) -> &::std::option::Option<crate::types::ContactDetail> {
+        self.inner.get_tech_contact()
+    }
     /// <p> Customer's consent for the owner change request. Required if the domain is not free (consent price is more than $0.00).</p>
     pub fn consent(mut self, input: crate::types::Consent) -> Self {
         self.inner = self.inner.consent(input);
@@ -175,5 +197,9 @@ impl UpdateDomainContactFluentBuilder {
     pub fn set_consent(mut self, input: ::std::option::Option<crate::types::Consent>) -> Self {
         self.inner = self.inner.set_consent(input);
         self
+    }
+    /// <p> Customer's consent for the owner change request. Required if the domain is not free (consent price is more than $0.00).</p>
+    pub fn get_consent(&self) -> &::std::option::Option<crate::types::Consent> {
+        self.inner.get_consent()
     }
 }

@@ -62,6 +62,10 @@ impl EgressEndpointBuilder {
         self.packaging_configuration_id = input;
         self
     }
+    /// The ID of the PackagingConfiguration being applied to the Asset.
+    pub fn get_packaging_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.packaging_configuration_id
+    }
     /// The current processing status of the asset used for the packaging configuration. The status can be either QUEUED, PROCESSING, PLAYABLE, or FAILED. Status information won't be available for most assets ingested before 2021-09-30.
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl EgressEndpointBuilder {
         self.status = input;
         self
     }
+    /// The current processing status of the asset used for the packaging configuration. The status can be either QUEUED, PROCESSING, PLAYABLE, or FAILED. Status information won't be available for most assets ingested before 2021-09-30.
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// The URL of the parent manifest for the repackaged Asset.
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl EgressEndpointBuilder {
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
+    }
+    /// The URL of the parent manifest for the repackaged Asset.
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     /// Consumes the builder and constructs a [`EgressEndpoint`](crate::types::EgressEndpoint).
     pub fn build(self) -> crate::types::EgressEndpoint {

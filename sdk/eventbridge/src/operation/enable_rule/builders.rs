@@ -37,6 +37,10 @@ impl EnableRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the EnableRule as a reference.
+    pub fn as_input(&self) -> &crate::operation::enable_rule::builders::EnableRuleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl EnableRuleFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the rule.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
     pub fn event_bus_name(
         mut self,
@@ -134,5 +142,9 @@ impl EnableRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_event_bus_name(input);
         self
+    }
+    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
+    pub fn get_event_bus_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_bus_name()
     }
 }

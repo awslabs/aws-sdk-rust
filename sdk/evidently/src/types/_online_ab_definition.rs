@@ -58,6 +58,10 @@ impl OnlineAbDefinitionBuilder {
         self.control_treatment_name = input;
         self
     }
+    /// <p>The name of the variation that is the default variation that the other variations are compared to.</p>
+    pub fn get_control_treatment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_treatment_name
+    }
     /// Adds a key-value pair to `treatment_weights`.
     ///
     /// To override the contents of this collection use [`set_treatment_weights`](Self::set_treatment_weights).
@@ -80,6 +84,12 @@ impl OnlineAbDefinitionBuilder {
     ) -> Self {
         self.treatment_weights = input;
         self
+    }
+    /// <p>A set of key-value pairs. The keys are variation names, and the values are the portion of experiment traffic to be assigned to that variation. The traffic portion is specified in thousandths of a percent, so 20,000 for a variation would allocate 20% of the experiment traffic to that variation.</p>
+    pub fn get_treatment_weights(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, i64>> {
+        &self.treatment_weights
     }
     /// Consumes the builder and constructs a [`OnlineAbDefinition`](crate::types::OnlineAbDefinition).
     pub fn build(self) -> crate::types::OnlineAbDefinition {

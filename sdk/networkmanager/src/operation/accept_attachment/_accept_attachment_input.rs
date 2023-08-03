@@ -46,6 +46,10 @@ impl AcceptAttachmentInputBuilder {
         self.attachment_id = input;
         self
     }
+    /// <p>The ID of the attachment. </p>
+    pub fn get_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attachment_id
+    }
     /// Consumes the builder and constructs a [`AcceptAttachmentInput`](crate::operation::accept_attachment::AcceptAttachmentInput).
     pub fn build(
         self,

@@ -53,6 +53,10 @@ impl DeleteSubnetGroupOutputBuilder {
         self.deletion_message = input;
         self
     }
+    /// <p>A user-specified message for this action (i.e., a reason for deleting the subnet group).</p>
+    pub fn get_deletion_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deletion_message
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

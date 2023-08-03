@@ -36,6 +36,10 @@ impl UpdateTableFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateTable as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_table::builders::UpdateTableInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdateTableFluentBuilder {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
+    /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog_id()
+    }
     /// <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn database_name(
         mut self,
@@ -134,6 +142,10 @@ impl UpdateTableFluentBuilder {
         self.inner = self.inner.set_database_name(input);
         self
     }
+    /// <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_database_name()
+    }
     /// <p>An updated <code>TableInput</code> object to define the metadata table in the catalog.</p>
     pub fn table_input(mut self, input: crate::types::TableInput) -> Self {
         self.inner = self.inner.table_input(input);
@@ -147,6 +159,10 @@ impl UpdateTableFluentBuilder {
         self.inner = self.inner.set_table_input(input);
         self
     }
+    /// <p>An updated <code>TableInput</code> object to define the metadata table in the catalog.</p>
+    pub fn get_table_input(&self) -> &::std::option::Option<crate::types::TableInput> {
+        self.inner.get_table_input()
+    }
     /// <p>By default, <code>UpdateTable</code> always creates an archived version of the table before updating it. However, if <code>skipArchive</code> is set to true, <code>UpdateTable</code> does not create the archived version.</p>
     pub fn skip_archive(mut self, input: bool) -> Self {
         self.inner = self.inner.skip_archive(input);
@@ -156,6 +172,10 @@ impl UpdateTableFluentBuilder {
     pub fn set_skip_archive(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_skip_archive(input);
         self
+    }
+    /// <p>By default, <code>UpdateTable</code> always creates an archived version of the table before updating it. However, if <code>skipArchive</code> is set to true, <code>UpdateTable</code> does not create the archived version.</p>
+    pub fn get_skip_archive(&self) -> &::std::option::Option<bool> {
+        self.inner.get_skip_archive()
     }
     /// <p>The transaction ID at which to update the table contents. </p>
     pub fn transaction_id(
@@ -173,6 +193,10 @@ impl UpdateTableFluentBuilder {
         self.inner = self.inner.set_transaction_id(input);
         self
     }
+    /// <p>The transaction ID at which to update the table contents. </p>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_transaction_id()
+    }
     /// <p>The version ID at which to update the table contents. </p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version_id(input.into());
@@ -182,5 +206,9 @@ impl UpdateTableFluentBuilder {
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version_id(input);
         self
+    }
+    /// <p>The version ID at which to update the table contents. </p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version_id()
     }
 }

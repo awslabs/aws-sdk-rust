@@ -40,6 +40,10 @@ impl DeleteApplicationInputBuilder {
         self.application = input;
         self
     }
+    /// <p> The name, ID, or ARN of the application. </p>
+    pub fn get_application(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application
+    }
     /// Consumes the builder and constructs a [`DeleteApplicationInput`](crate::operation::delete_application::DeleteApplicationInput).
     pub fn build(
         self,

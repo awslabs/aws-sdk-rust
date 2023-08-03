@@ -37,6 +37,12 @@ impl DeleteTagsForDomainFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteTagsForDomain as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_tags_for_domain::builders::DeleteTagsForDomainInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl DeleteTagsForDomainFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>The domain for which you want to delete one or more tags.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// Appends an item to `TagsToDelete`.
     ///
     /// To override the contents of this collection use [`set_tags_to_delete`](Self::set_tags_to_delete).
@@ -146,5 +156,11 @@ impl DeleteTagsForDomainFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags_to_delete(input);
         self
+    }
+    /// <p>A list of tag keys to delete.</p>
+    pub fn get_tags_to_delete(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_tags_to_delete()
     }
 }

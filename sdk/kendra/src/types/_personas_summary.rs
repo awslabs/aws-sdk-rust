@@ -64,6 +64,10 @@ impl PersonasSummaryBuilder {
         self.entity_id = input;
         self
     }
+    /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_id
+    }
     /// <p>The persona that defines the specific permissions of the user or group in your IAM Identity Center identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
     pub fn persona(mut self, input: crate::types::Persona) -> Self {
         self.persona = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl PersonasSummaryBuilder {
     pub fn set_persona(mut self, input: ::std::option::Option<crate::types::Persona>) -> Self {
         self.persona = input;
         self
+    }
+    /// <p>The persona that defines the specific permissions of the user or group in your IAM Identity Center identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
+    pub fn get_persona(&self) -> &::std::option::Option<crate::types::Persona> {
+        &self.persona
     }
     /// <p>The Unix timestamp when the summary information was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -87,6 +95,10 @@ impl PersonasSummaryBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The Unix timestamp when the summary information was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The Unix timestamp when the summary information was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -99,6 +111,10 @@ impl PersonasSummaryBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// <p>The Unix timestamp when the summary information was last updated.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     /// Consumes the builder and constructs a [`PersonasSummary`](crate::types::PersonasSummary).
     pub fn build(self) -> crate::types::PersonasSummary {

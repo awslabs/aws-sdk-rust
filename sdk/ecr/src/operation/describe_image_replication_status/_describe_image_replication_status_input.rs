@@ -61,6 +61,10 @@ impl DescribeImageReplicationStatusInputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository that the image is in.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
     pub fn image_id(mut self, input: crate::types::ImageIdentifier) -> Self {
         self.image_id = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl DescribeImageReplicationStatusInputBuilder {
         self.image_id = input;
         self
     }
+    /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<crate::types::ImageIdentifier> {
+        &self.image_id
+    }
     /// <p>The Amazon Web Services account ID associated with the registry. If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_id = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl DescribeImageReplicationStatusInputBuilder {
     pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registry_id = input;
         self
+    }
+    /// <p>The Amazon Web Services account ID associated with the registry. If you do not specify a registry, the default registry is assumed.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
     }
     /// Consumes the builder and constructs a [`DescribeImageReplicationStatusInput`](crate::operation::describe_image_replication_status::DescribeImageReplicationStatusInput).
     pub fn build(

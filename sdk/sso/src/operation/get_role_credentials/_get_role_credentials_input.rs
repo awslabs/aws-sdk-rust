@@ -63,6 +63,10 @@ impl GetRoleCredentialsInputBuilder {
         self.role_name = input;
         self
     }
+    /// <p>The friendly name of the role that is assigned to the user.</p>
+    pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_name
+    }
     /// <p>The identifier for the AWS account that is assigned to the user.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl GetRoleCredentialsInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The identifier for the AWS account that is assigned to the user.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>IAM Identity Center OIDC API Reference Guide</i>.</p>
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_token = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl GetRoleCredentialsInputBuilder {
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_token = input;
         self
+    }
+    /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>IAM Identity Center OIDC API Reference Guide</i>.</p>
+    pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_token
     }
     /// Consumes the builder and constructs a [`GetRoleCredentialsInput`](crate::operation::get_role_credentials::GetRoleCredentialsInput).
     pub fn build(

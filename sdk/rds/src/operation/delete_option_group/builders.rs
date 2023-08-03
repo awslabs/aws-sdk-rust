@@ -36,6 +36,12 @@ impl DeleteOptionGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteOptionGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_option_group::builders::DeleteOptionGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,5 +141,11 @@ impl DeleteOptionGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_option_group_name(input);
         self
+    }
+    /// <p>The name of the option group to be deleted.</p> <note>
+    /// <p>You can't delete default option groups.</p>
+    /// </note>
+    pub fn get_option_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_option_group_name()
     }
 }

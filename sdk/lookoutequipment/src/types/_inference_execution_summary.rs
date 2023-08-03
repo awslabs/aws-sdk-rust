@@ -135,6 +135,10 @@ impl InferenceExecutionSummaryBuilder {
         self.model_name = input;
         self
     }
+    /// <p>The name of the ML model being used for the inference execution. </p>
+    pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the ML model used for the inference execution. </p>
     pub fn model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_arn = ::std::option::Option::Some(input.into());
@@ -144,6 +148,10 @@ impl InferenceExecutionSummaryBuilder {
     pub fn set_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the ML model used for the inference execution. </p>
+    pub fn get_model_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_arn
     }
     /// <p>The name of the inference scheduler being used for the inference execution. </p>
     pub fn inference_scheduler_name(
@@ -161,6 +169,10 @@ impl InferenceExecutionSummaryBuilder {
         self.inference_scheduler_name = input;
         self
     }
+    /// <p>The name of the inference scheduler being used for the inference execution. </p>
+    pub fn get_inference_scheduler_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.inference_scheduler_name
+    }
     /// <p> The Amazon Resource Name (ARN) of the inference scheduler being used for the inference execution. </p>
     pub fn inference_scheduler_arn(
         mut self,
@@ -177,6 +189,10 @@ impl InferenceExecutionSummaryBuilder {
         self.inference_scheduler_arn = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) of the inference scheduler being used for the inference execution. </p>
+    pub fn get_inference_scheduler_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.inference_scheduler_arn
+    }
     /// <p>Indicates the start time at which the inference scheduler began the specific inference execution. </p>
     pub fn scheduled_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.scheduled_start_time = ::std::option::Option::Some(input);
@@ -189,6 +205,10 @@ impl InferenceExecutionSummaryBuilder {
     ) -> Self {
         self.scheduled_start_time = input;
         self
+    }
+    /// <p>Indicates the start time at which the inference scheduler began the specific inference execution. </p>
+    pub fn get_scheduled_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.scheduled_start_time
     }
     /// <p>Indicates the time reference in the dataset at which the inference execution began. </p>
     pub fn data_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -203,6 +223,10 @@ impl InferenceExecutionSummaryBuilder {
         self.data_start_time = input;
         self
     }
+    /// <p>Indicates the time reference in the dataset at which the inference execution began. </p>
+    pub fn get_data_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.data_start_time
+    }
     /// <p>Indicates the time reference in the dataset at which the inference execution stopped. </p>
     pub fn data_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.data_end_time = ::std::option::Option::Some(input);
@@ -215,6 +239,10 @@ impl InferenceExecutionSummaryBuilder {
     ) -> Self {
         self.data_end_time = input;
         self
+    }
+    /// <p>Indicates the time reference in the dataset at which the inference execution stopped. </p>
+    pub fn get_data_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.data_end_time
     }
     /// <p> Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
     pub fn data_input_configuration(
@@ -232,6 +260,12 @@ impl InferenceExecutionSummaryBuilder {
         self.data_input_configuration = input;
         self
     }
+    /// <p> Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
+    pub fn get_data_input_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::InferenceInputConfiguration> {
+        &self.data_input_configuration
+    }
     /// <p> Specifies configuration information for the output results from for the inference execution, including the output Amazon S3 location. </p>
     pub fn data_output_configuration(
         mut self,
@@ -248,6 +282,12 @@ impl InferenceExecutionSummaryBuilder {
         self.data_output_configuration = input;
         self
     }
+    /// <p> Specifies configuration information for the output results from for the inference execution, including the output Amazon S3 location. </p>
+    pub fn get_data_output_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::InferenceOutputConfiguration> {
+        &self.data_output_configuration
+    }
     /// <p> </p>
     pub fn customer_result_object(mut self, input: crate::types::S3Object) -> Self {
         self.customer_result_object = ::std::option::Option::Some(input);
@@ -261,6 +301,10 @@ impl InferenceExecutionSummaryBuilder {
         self.customer_result_object = input;
         self
     }
+    /// <p> </p>
+    pub fn get_customer_result_object(&self) -> &::std::option::Option<crate::types::S3Object> {
+        &self.customer_result_object
+    }
     /// <p>Indicates the status of the inference execution. </p>
     pub fn status(mut self, input: crate::types::InferenceExecutionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -273,6 +317,10 @@ impl InferenceExecutionSummaryBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Indicates the status of the inference execution. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::InferenceExecutionStatus> {
+        &self.status
     }
     /// <p> Specifies the reason for failure when an inference execution has failed. </p>
     pub fn failed_reason(
@@ -289,6 +337,10 @@ impl InferenceExecutionSummaryBuilder {
     ) -> Self {
         self.failed_reason = input;
         self
+    }
+    /// <p> Specifies the reason for failure when an inference execution has failed. </p>
+    pub fn get_failed_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failed_reason
     }
     /// Consumes the builder and constructs a [`InferenceExecutionSummary`](crate::types::InferenceExecutionSummary).
     pub fn build(self) -> crate::types::InferenceExecutionSummary {

@@ -48,6 +48,10 @@ impl DeleteInboundConnectionInputBuilder {
         self.connection_id = input;
         self
     }
+    /// <p>The ID of the inbound connection to permanently delete.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_id
+    }
     /// Consumes the builder and constructs a [`DeleteInboundConnectionInput`](crate::operation::delete_inbound_connection::DeleteInboundConnectionInput).
     pub fn build(
         self,

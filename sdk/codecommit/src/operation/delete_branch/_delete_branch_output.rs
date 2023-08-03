@@ -50,6 +50,10 @@ impl DeleteBranchOutputBuilder {
         self.deleted_branch = input;
         self
     }
+    /// <p>Information about the branch deleted by the operation, including the branch name and the commit ID that was the tip of the branch.</p>
+    pub fn get_deleted_branch(&self) -> &::std::option::Option<crate::types::BranchInfo> {
+        &self.deleted_branch
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

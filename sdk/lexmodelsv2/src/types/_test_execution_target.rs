@@ -45,6 +45,12 @@ impl TestExecutionTargetBuilder {
         self.bot_alias_target = input;
         self
     }
+    /// <p>Contains information about the bot alias used for the test execution.</p>
+    pub fn get_bot_alias_target(
+        &self,
+    ) -> &::std::option::Option<crate::types::BotAliasTestExecutionTarget> {
+        &self.bot_alias_target
+    }
     /// Consumes the builder and constructs a [`TestExecutionTarget`](crate::types::TestExecutionTarget).
     pub fn build(self) -> crate::types::TestExecutionTarget {
         crate::types::TestExecutionTarget {

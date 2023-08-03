@@ -53,6 +53,10 @@ impl UpdateSnapshotInputBuilder {
         self.snapshot_name = input;
         self
     }
+    /// <p>The name of the snapshot.</p>
+    pub fn get_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_name
+    }
     /// <p>The new retention period of the snapshot.</p>
     pub fn retention_period(mut self, input: i32) -> Self {
         self.retention_period = ::std::option::Option::Some(input);
@@ -62,6 +66,10 @@ impl UpdateSnapshotInputBuilder {
     pub fn set_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.retention_period = input;
         self
+    }
+    /// <p>The new retention period of the snapshot.</p>
+    pub fn get_retention_period(&self) -> &::std::option::Option<i32> {
+        &self.retention_period
     }
     /// Consumes the builder and constructs a [`UpdateSnapshotInput`](crate::operation::update_snapshot::UpdateSnapshotInput).
     pub fn build(

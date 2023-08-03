@@ -52,6 +52,12 @@ impl ResizeClusterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ResizeCluster as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::resize_cluster::builders::ResizeClusterInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +146,10 @@ impl ResizeClusterFluentBuilder {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
+    /// <p>The unique identifier for the cluster to resize.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_identifier()
+    }
     /// <p>The new cluster type for the specified cluster.</p>
     pub fn cluster_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_type(input.into());
@@ -149,6 +159,10 @@ impl ResizeClusterFluentBuilder {
     pub fn set_cluster_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_type(input);
         self
+    }
+    /// <p>The new cluster type for the specified cluster.</p>
+    pub fn get_cluster_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_type()
     }
     /// <p>The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.</p>
     pub fn node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -160,6 +174,10 @@ impl ResizeClusterFluentBuilder {
         self.inner = self.inner.set_node_type(input);
         self
     }
+    /// <p>The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.</p>
+    pub fn get_node_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_node_type()
+    }
     /// <p>The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.</p>
     pub fn number_of_nodes(mut self, input: i32) -> Self {
         self.inner = self.inner.number_of_nodes(input);
@@ -170,6 +188,10 @@ impl ResizeClusterFluentBuilder {
         self.inner = self.inner.set_number_of_nodes(input);
         self
     }
+    /// <p>The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.</p>
+    pub fn get_number_of_nodes(&self) -> &::std::option::Option<i32> {
+        self.inner.get_number_of_nodes()
+    }
     /// <p>A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to <code>false</code>, the resize type is elastic. </p>
     pub fn classic(mut self, input: bool) -> Self {
         self.inner = self.inner.classic(input);
@@ -179,6 +201,10 @@ impl ResizeClusterFluentBuilder {
     pub fn set_classic(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_classic(input);
         self
+    }
+    /// <p>A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to <code>false</code>, the resize type is elastic. </p>
+    pub fn get_classic(&self) -> &::std::option::Option<bool> {
+        self.inner.get_classic()
     }
     /// <p>The identifier of the reserved node.</p>
     pub fn reserved_node_id(
@@ -196,6 +222,10 @@ impl ResizeClusterFluentBuilder {
         self.inner = self.inner.set_reserved_node_id(input);
         self
     }
+    /// <p>The identifier of the reserved node.</p>
+    pub fn get_reserved_node_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reserved_node_id()
+    }
     /// <p>The identifier of the target reserved node offering.</p>
     pub fn target_reserved_node_offering_id(
         mut self,
@@ -211,5 +241,11 @@ impl ResizeClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_target_reserved_node_offering_id(input);
         self
+    }
+    /// <p>The identifier of the target reserved node offering.</p>
+    pub fn get_target_reserved_node_offering_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_reserved_node_offering_id()
     }
 }

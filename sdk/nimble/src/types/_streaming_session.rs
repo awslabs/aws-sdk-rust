@@ -278,6 +278,10 @@ impl StreamingSessionBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The ISO timestamp in seconds for when the resource was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -291,6 +295,10 @@ impl StreamingSessionBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The ISO timestamp in seconds for when the resource was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The user ID of the user that created the streaming session.</p>
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
@@ -300,6 +308,10 @@ impl StreamingSessionBuilder {
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by = input;
         self
+    }
+    /// <p>The user ID of the user that created the streaming session.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by
     }
     /// <p>The EC2 Instance type used for the streaming session.</p>
     pub fn ec2_instance_type(
@@ -317,6 +329,10 @@ impl StreamingSessionBuilder {
         self.ec2_instance_type = input;
         self
     }
+    /// <p>The EC2 Instance type used for the streaming session.</p>
+    pub fn get_ec2_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ec2_instance_type
+    }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     pub fn launch_profile_id(
         mut self,
@@ -333,6 +349,10 @@ impl StreamingSessionBuilder {
         self.launch_profile_id = input;
         self
     }
+    /// <p>The ID of the launch profile used to control access from the streaming session.</p>
+    pub fn get_launch_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_profile_id
+    }
     /// <p>The user ID of the user that owns the streaming session. The user that owns the session will be logging into the session and interacting with the virtual workstation.</p>
     pub fn owned_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owned_by = ::std::option::Option::Some(input.into());
@@ -343,6 +363,10 @@ impl StreamingSessionBuilder {
         self.owned_by = input;
         self
     }
+    /// <p>The user ID of the user that owns the streaming session. The user that owns the session will be logging into the session and interacting with the virtual workstation.</p>
+    pub fn get_owned_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owned_by
+    }
     /// <p>The session ID.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
@@ -352,6 +376,10 @@ impl StreamingSessionBuilder {
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_id = input;
         self
+    }
+    /// <p>The session ID.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
     }
     /// <p>The current state.</p>
     pub fn state(mut self, input: crate::types::StreamingSessionState) -> Self {
@@ -366,6 +394,10 @@ impl StreamingSessionBuilder {
         self.state = input;
         self
     }
+    /// <p>The current state.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::StreamingSessionState> {
+        &self.state
+    }
     /// <p>The status code.</p>
     pub fn status_code(mut self, input: crate::types::StreamingSessionStatusCode) -> Self {
         self.status_code = ::std::option::Option::Some(input);
@@ -378,6 +410,12 @@ impl StreamingSessionBuilder {
     ) -> Self {
         self.status_code = input;
         self
+    }
+    /// <p>The status code.</p>
+    pub fn get_status_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::StreamingSessionStatusCode> {
+        &self.status_code
     }
     /// <p>The status message for the streaming session.</p>
     pub fn status_message(
@@ -395,6 +433,10 @@ impl StreamingSessionBuilder {
         self.status_message = input;
         self
     }
+    /// <p>The status message for the streaming session.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>The ID of the streaming image.</p>
     pub fn streaming_image_id(
         mut self,
@@ -410,6 +452,10 @@ impl StreamingSessionBuilder {
     ) -> Self {
         self.streaming_image_id = input;
         self
+    }
+    /// <p>The ID of the streaming image.</p>
+    pub fn get_streaming_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.streaming_image_id
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -436,6 +482,14 @@ impl StreamingSessionBuilder {
         self.tags = input;
         self
     }
+    /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The time the streaming session will automatically terminate if not terminated by the user.</p>
     pub fn terminate_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.terminate_at = ::std::option::Option::Some(input);
@@ -448,6 +502,10 @@ impl StreamingSessionBuilder {
     ) -> Self {
         self.terminate_at = input;
         self
+    }
+    /// <p>The time the streaming session will automatically terminate if not terminated by the user.</p>
+    pub fn get_terminate_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.terminate_at
     }
     /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -462,6 +520,10 @@ impl StreamingSessionBuilder {
         self.updated_at = input;
         self
     }
+    /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
+    }
     /// <p>The user ID of the user that most recently updated the resource.</p>
     pub fn updated_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.updated_by = ::std::option::Option::Some(input.into());
@@ -471,6 +533,10 @@ impl StreamingSessionBuilder {
     pub fn set_updated_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.updated_by = input;
         self
+    }
+    /// <p>The user ID of the user that most recently updated the resource.</p>
+    pub fn get_updated_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.updated_by
     }
     /// <p>The time the session entered <code>STOP_IN_PROGRESS</code> state.</p>
     pub fn stopped_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -485,6 +551,10 @@ impl StreamingSessionBuilder {
         self.stopped_at = input;
         self
     }
+    /// <p>The time the session entered <code>STOP_IN_PROGRESS</code> state.</p>
+    pub fn get_stopped_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.stopped_at
+    }
     /// <p>The user ID of the user that stopped the streaming session.</p>
     pub fn stopped_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stopped_by = ::std::option::Option::Some(input.into());
@@ -494,6 +564,10 @@ impl StreamingSessionBuilder {
     pub fn set_stopped_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stopped_by = input;
         self
+    }
+    /// <p>The user ID of the user that stopped the streaming session.</p>
+    pub fn get_stopped_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stopped_by
     }
     /// <p>The time the session entered <code>START_IN_PROGRESS</code> state.</p>
     pub fn started_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -508,6 +582,10 @@ impl StreamingSessionBuilder {
         self.started_at = input;
         self
     }
+    /// <p>The time the session entered <code>START_IN_PROGRESS</code> state.</p>
+    pub fn get_started_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.started_at
+    }
     /// <p>The user ID of the user that started the streaming session.</p>
     pub fn started_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.started_by = ::std::option::Option::Some(input.into());
@@ -517,6 +595,10 @@ impl StreamingSessionBuilder {
     pub fn set_started_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.started_by = input;
         self
+    }
+    /// <p>The user ID of the user that started the streaming session.</p>
+    pub fn get_started_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.started_by
     }
     /// <p>The time the streaming session will automatically be stopped if the user doesn’t stop the session themselves. </p>
     pub fn stop_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -530,6 +612,10 @@ impl StreamingSessionBuilder {
     ) -> Self {
         self.stop_at = input;
         self
+    }
+    /// <p>The time the streaming session will automatically be stopped if the user doesn’t stop the session themselves. </p>
+    pub fn get_stop_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.stop_at
     }
     /// <p>The backup ID used to restore a streaming session.</p>
     pub fn started_from_backup_id(
@@ -547,6 +633,10 @@ impl StreamingSessionBuilder {
         self.started_from_backup_id = input;
         self
     }
+    /// <p>The backup ID used to restore a streaming session.</p>
+    pub fn get_started_from_backup_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.started_from_backup_id
+    }
     /// <p>Shows the current backup setting of the session.</p>
     pub fn backup_mode(mut self, input: crate::types::SessionBackupMode) -> Self {
         self.backup_mode = ::std::option::Option::Some(input);
@@ -560,6 +650,10 @@ impl StreamingSessionBuilder {
         self.backup_mode = input;
         self
     }
+    /// <p>Shows the current backup setting of the session.</p>
+    pub fn get_backup_mode(&self) -> &::std::option::Option<crate::types::SessionBackupMode> {
+        &self.backup_mode
+    }
     /// <p>The maximum number of backups of a streaming session that you can have. When the maximum number of backups is reached, the oldest backup is deleted.</p>
     pub fn max_backups_to_retain(mut self, input: i32) -> Self {
         self.max_backups_to_retain = ::std::option::Option::Some(input);
@@ -569,6 +663,10 @@ impl StreamingSessionBuilder {
     pub fn set_max_backups_to_retain(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_backups_to_retain = input;
         self
+    }
+    /// <p>The maximum number of backups of a streaming session that you can have. When the maximum number of backups is reached, the oldest backup is deleted.</p>
+    pub fn get_max_backups_to_retain(&self) -> &::std::option::Option<i32> {
+        &self.max_backups_to_retain
     }
     /// <p>Determine if an EBS volume created from this streaming session will be backed up.</p>
     pub fn volume_retention_mode(mut self, input: crate::types::VolumeRetentionMode) -> Self {
@@ -583,6 +681,12 @@ impl StreamingSessionBuilder {
         self.volume_retention_mode = input;
         self
     }
+    /// <p>Determine if an EBS volume created from this streaming session will be backed up.</p>
+    pub fn get_volume_retention_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::VolumeRetentionMode> {
+        &self.volume_retention_mode
+    }
     /// <p>Determine if a streaming session created from this launch profile can configure persistent storage. This means that <code>volumeConfiguration</code> and <code>automaticTerminationMode</code> are configured.</p>
     pub fn session_persistence_mode(mut self, input: crate::types::SessionPersistenceMode) -> Self {
         self.session_persistence_mode = ::std::option::Option::Some(input);
@@ -595,6 +699,12 @@ impl StreamingSessionBuilder {
     ) -> Self {
         self.session_persistence_mode = input;
         self
+    }
+    /// <p>Determine if a streaming session created from this launch profile can configure persistent storage. This means that <code>volumeConfiguration</code> and <code>automaticTerminationMode</code> are configured.</p>
+    pub fn get_session_persistence_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::SessionPersistenceMode> {
+        &self.session_persistence_mode
     }
     /// <p>Custom volume configuration for the root volumes that are attached to streaming sessions.</p>
     /// <p>This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.</p>
@@ -610,6 +720,13 @@ impl StreamingSessionBuilder {
     ) -> Self {
         self.volume_configuration = input;
         self
+    }
+    /// <p>Custom volume configuration for the root volumes that are attached to streaming sessions.</p>
+    /// <p>This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.</p>
+    pub fn get_volume_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::VolumeConfiguration> {
+        &self.volume_configuration
     }
     /// <p>Indicates if a streaming session created from this launch profile should be terminated automatically or retained without termination after being in a <code>STOPPED</code> state.</p>
     /// <ul>
@@ -636,6 +753,17 @@ impl StreamingSessionBuilder {
     ) -> Self {
         self.automatic_termination_mode = input;
         self
+    }
+    /// <p>Indicates if a streaming session created from this launch profile should be terminated automatically or retained without termination after being in a <code>STOPPED</code> state.</p>
+    /// <ul>
+    /// <li> <p>When <code>ACTIVATED</code>, the streaming session is scheduled for termination after being in the <code>STOPPED</code> state for the time specified in <code>maxStoppedSessionLengthInMinutes</code>.</p> </li>
+    /// <li> <p>When <code>DEACTIVATED</code>, the streaming session can remain in the <code>STOPPED</code> state indefinitely.</p> </li>
+    /// </ul>
+    /// <p>This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>. When allowed, the default value for this parameter is <code>DEACTIVATED</code>.</p>
+    pub fn get_automatic_termination_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutomaticTerminationMode> {
+        &self.automatic_termination_mode
     }
     /// Consumes the builder and constructs a [`StreamingSession`](crate::types::StreamingSession).
     pub fn build(self) -> crate::types::StreamingSession {

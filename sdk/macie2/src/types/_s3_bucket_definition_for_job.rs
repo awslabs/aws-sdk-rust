@@ -48,6 +48,10 @@ impl S3BucketDefinitionForJobBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The unique identifier for the Amazon Web Services account that owns the buckets.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// Appends an item to `buckets`.
     ///
     /// To override the contents of this collection use [`set_buckets`](Self::set_buckets).
@@ -66,6 +70,10 @@ impl S3BucketDefinitionForJobBuilder {
     ) -> Self {
         self.buckets = input;
         self
+    }
+    /// <p>An array that lists the names of the buckets.</p>
+    pub fn get_buckets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.buckets
     }
     /// Consumes the builder and constructs a [`S3BucketDefinitionForJob`](crate::types::S3BucketDefinitionForJob).
     pub fn build(self) -> crate::types::S3BucketDefinitionForJob {

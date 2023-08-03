@@ -56,6 +56,10 @@ impl ComponentEventBuilder {
         self.action = input;
         self
     }
+    /// <p>The action to perform when a specific event is raised.</p>
+    pub fn get_action(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action
+    }
     /// <p>Describes information about the action.</p>
     pub fn parameters(mut self, input: crate::types::ActionParameters) -> Self {
         self.parameters = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl ComponentEventBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>Describes information about the action.</p>
+    pub fn get_parameters(&self) -> &::std::option::Option<crate::types::ActionParameters> {
+        &self.parameters
     }
     /// <p>Binds an event to an action on a component. When you specify a <code>bindingEvent</code>, the event is called when the action is performed.</p>
     pub fn binding_event(
@@ -84,6 +92,10 @@ impl ComponentEventBuilder {
     ) -> Self {
         self.binding_event = input;
         self
+    }
+    /// <p>Binds an event to an action on a component. When you specify a <code>bindingEvent</code>, the event is called when the action is performed.</p>
+    pub fn get_binding_event(&self) -> &::std::option::Option<::std::string::String> {
+        &self.binding_event
     }
     /// Consumes the builder and constructs a [`ComponentEvent`](crate::types::ComponentEvent).
     pub fn build(self) -> crate::types::ComponentEvent {

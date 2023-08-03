@@ -55,6 +55,10 @@ impl DescribeDatastoreOutputBuilder {
         self.datastore = input;
         self
     }
+    /// <p>Information about the data store.</p>
+    pub fn get_datastore(&self) -> &::std::option::Option<crate::types::Datastore> {
+        &self.datastore
+    }
     /// <p>Additional statistical information about the data store. Included if the <code>includeStatistics</code> parameter is set to <code>true</code> in the request.</p>
     pub fn statistics(mut self, input: crate::types::DatastoreStatistics) -> Self {
         self.statistics = ::std::option::Option::Some(input);
@@ -67,6 +71,10 @@ impl DescribeDatastoreOutputBuilder {
     ) -> Self {
         self.statistics = input;
         self
+    }
+    /// <p>Additional statistical information about the data store. Included if the <code>includeStatistics</code> parameter is set to <code>true</code> in the request.</p>
+    pub fn get_statistics(&self) -> &::std::option::Option<crate::types::DatastoreStatistics> {
+        &self.statistics
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

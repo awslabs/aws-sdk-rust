@@ -36,6 +36,12 @@ impl CreateLaunchProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateLaunchProfile as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_launch_profile::builders::CreateLaunchProfileInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateLaunchProfileFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>The description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -135,6 +145,10 @@ impl CreateLaunchProfileFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `ec2SubnetIds`.
     ///
@@ -156,6 +170,12 @@ impl CreateLaunchProfileFluentBuilder {
         self.inner = self.inner.set_ec2_subnet_ids(input);
         self
     }
+    /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from. These subnets must support the specified instance types. </p>
+    pub fn get_ec2_subnet_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_ec2_subnet_ids()
+    }
     /// Appends an item to `launchProfileProtocolVersions`.
     ///
     /// To override the contents of this collection use [`set_launch_profile_protocol_versions`](Self::set_launch_profile_protocol_versions).
@@ -176,6 +196,12 @@ impl CreateLaunchProfileFluentBuilder {
         self.inner = self.inner.set_launch_profile_protocol_versions(input);
         self
     }
+    /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
+    pub fn get_launch_profile_protocol_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_launch_profile_protocol_versions()
+    }
     /// <p>The name for the launch profile.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -185,6 +211,10 @@ impl CreateLaunchProfileFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name for the launch profile.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>A configuration for a streaming session.</p>
     pub fn stream_configuration(mut self, input: crate::types::StreamConfigurationCreate) -> Self {
@@ -198,6 +228,12 @@ impl CreateLaunchProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_stream_configuration(input);
         self
+    }
+    /// <p>A configuration for a streaming session.</p>
+    pub fn get_stream_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::StreamConfigurationCreate> {
+        self.inner.get_stream_configuration()
     }
     /// Appends an item to `studioComponentIds`.
     ///
@@ -219,6 +255,12 @@ impl CreateLaunchProfileFluentBuilder {
         self.inner = self.inner.set_studio_component_ids(input);
         self
     }
+    /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
+    pub fn get_studio_component_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_studio_component_ids()
+    }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.studio_id(input.into());
@@ -228,6 +270,10 @@ impl CreateLaunchProfileFluentBuilder {
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_studio_id(input);
         self
+    }
+    /// <p>The studio ID. </p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_studio_id()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -251,5 +297,13 @@ impl CreateLaunchProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

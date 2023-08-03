@@ -58,6 +58,12 @@ impl GetSendStatisticsOutputBuilder {
         self.send_data_points = input;
         self
     }
+    /// <p>A list of data points, each of which represents 15 minutes of activity.</p>
+    pub fn get_send_data_points(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SendDataPoint>> {
+        &self.send_data_points
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

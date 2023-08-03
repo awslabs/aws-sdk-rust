@@ -58,6 +58,10 @@ impl ContainerDistributionConfigurationBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the container distribution configuration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// Appends an item to `container_tags`.
     ///
     /// To override the contents of this collection use [`set_container_tags`](Self::set_container_tags).
@@ -80,6 +84,12 @@ impl ContainerDistributionConfigurationBuilder {
         self.container_tags = input;
         self
     }
+    /// <p>Tags that are attached to the container distribution configuration.</p>
+    pub fn get_container_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.container_tags
+    }
     /// <p>The destination repository for the container distribution configuration.</p>
     pub fn target_repository(mut self, input: crate::types::TargetContainerRepository) -> Self {
         self.target_repository = ::std::option::Option::Some(input);
@@ -92,6 +102,12 @@ impl ContainerDistributionConfigurationBuilder {
     ) -> Self {
         self.target_repository = input;
         self
+    }
+    /// <p>The destination repository for the container distribution configuration.</p>
+    pub fn get_target_repository(
+        &self,
+    ) -> &::std::option::Option<crate::types::TargetContainerRepository> {
+        &self.target_repository
     }
     /// Consumes the builder and constructs a [`ContainerDistributionConfiguration`](crate::types::ContainerDistributionConfiguration).
     pub fn build(self) -> crate::types::ContainerDistributionConfiguration {

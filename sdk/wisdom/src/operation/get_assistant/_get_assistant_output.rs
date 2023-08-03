@@ -49,6 +49,10 @@ impl GetAssistantOutputBuilder {
         self.assistant = input;
         self
     }
+    /// <p>Information about the assistant.</p>
+    pub fn get_assistant(&self) -> &::std::option::Option<crate::types::AssistantData> {
+        &self.assistant
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

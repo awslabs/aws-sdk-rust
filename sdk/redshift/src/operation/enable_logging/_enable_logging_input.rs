@@ -116,6 +116,11 @@ impl EnableLoggingInputBuilder {
         self.cluster_identifier = input;
         self
     }
+    /// <p>The identifier of the cluster on which logging is to be started.</p>
+    /// <p>Example: <code>examplecluster</code> </p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_identifier
+    }
     /// <p>The name of an existing S3 bucket where the log files are to be stored.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -135,6 +140,15 @@ impl EnableLoggingInputBuilder {
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_name = input;
         self
+    }
+    /// <p>The name of an existing S3 bucket where the log files are to be stored.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be in the same region as the cluster</p> </li>
+    /// <li> <p>The cluster must have read bucket and put object permissions</p> </li>
+    /// </ul>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
     }
     /// <p>The prefix applied to the log file names.</p>
     /// <p>Constraints:</p>
@@ -176,6 +190,22 @@ impl EnableLoggingInputBuilder {
         self.s3_key_prefix = input;
         self
     }
+    /// <p>The prefix applied to the log file names.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Cannot exceed 512 characters</p> </li>
+    /// <li> <p>Cannot contain spaces( ), double quotes ("), single quotes ('), a backslash (\), or control characters. The hexadecimal codes for invalid characters are: </p>
+    /// <ul>
+    /// <li> <p>x00 to x20</p> </li>
+    /// <li> <p>x22</p> </li>
+    /// <li> <p>x27</p> </li>
+    /// <li> <p>x5c</p> </li>
+    /// <li> <p>x7f or larger</p> </li>
+    /// </ul> </li>
+    /// </ul>
+    pub fn get_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_key_prefix
+    }
     /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
     pub fn log_destination_type(mut self, input: crate::types::LogDestinationType) -> Self {
         self.log_destination_type = ::std::option::Option::Some(input);
@@ -188,6 +218,12 @@ impl EnableLoggingInputBuilder {
     ) -> Self {
         self.log_destination_type = input;
         self
+    }
+    /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
+    pub fn get_log_destination_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::LogDestinationType> {
+        &self.log_destination_type
     }
     /// Appends an item to `log_exports`.
     ///
@@ -207,6 +243,12 @@ impl EnableLoggingInputBuilder {
     ) -> Self {
         self.log_exports = input;
         self
+    }
+    /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
+    pub fn get_log_exports(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.log_exports
     }
     /// Consumes the builder and constructs a [`EnableLoggingInput`](crate::operation::enable_logging::EnableLoggingInput).
     pub fn build(

@@ -73,6 +73,10 @@ impl ListNetworksInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the network.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>An optional framework specifier. If provided, only networks of this framework type are listed.</p>
     pub fn framework(mut self, input: crate::types::Framework) -> Self {
         self.framework = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl ListNetworksInputBuilder {
     pub fn set_framework(mut self, input: ::std::option::Option<crate::types::Framework>) -> Self {
         self.framework = input;
         self
+    }
+    /// <p>An optional framework specifier. If provided, only networks of this framework type are listed.</p>
+    pub fn get_framework(&self) -> &::std::option::Option<crate::types::Framework> {
+        &self.framework
     }
     /// <p>An optional status specifier. If provided, only networks currently in this status are listed.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
@@ -95,6 +103,11 @@ impl ListNetworksInputBuilder {
         self.status = input;
         self
     }
+    /// <p>An optional status specifier. If provided, only networks currently in this status are listed.</p>
+    /// <p>Applies only to Hyperledger Fabric.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::NetworkStatus> {
+        &self.status
+    }
     /// <p>The maximum number of networks to list.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -105,6 +118,10 @@ impl ListNetworksInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of networks to list.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -114,6 +131,10 @@ impl ListNetworksInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListNetworksInput`](crate::operation::list_networks::ListNetworksInput).
     pub fn build(

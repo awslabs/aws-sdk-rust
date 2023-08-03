@@ -46,6 +46,10 @@ impl RunStatementOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>Returns the Id of the statement that was run.</p>
+    pub fn get_id(&self) -> &::std::option::Option<i32> {
+        &self.id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

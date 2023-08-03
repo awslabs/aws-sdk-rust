@@ -46,6 +46,10 @@ impl GetQueryExecutionInputBuilder {
         self.query_execution_id = input;
         self
     }
+    /// <p>The unique ID of the query execution.</p>
+    pub fn get_query_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_execution_id
+    }
     /// Consumes the builder and constructs a [`GetQueryExecutionInput`](crate::operation::get_query_execution::GetQueryExecutionInput).
     pub fn build(
         self,

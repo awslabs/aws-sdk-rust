@@ -193,6 +193,12 @@ impl DescribeInstanceAttributeOutputBuilder {
         self.groups = input;
         self
     }
+    /// <p>The security groups associated with the instance.</p>
+    pub fn get_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>> {
+        &self.groups
+    }
     /// Appends an item to `block_device_mappings`.
     ///
     /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
@@ -215,6 +221,12 @@ impl DescribeInstanceAttributeOutputBuilder {
         self.block_device_mappings = input;
         self
     }
+    /// <p>The block device mapping of the instance.</p>
+    pub fn get_block_device_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>> {
+        &self.block_device_mappings
+    }
     /// <p>If the value is <code>true</code>, you can't terminate the instance through the Amazon EC2 console, CLI, or API; otherwise, you can.</p>
     pub fn disable_api_termination(mut self, input: crate::types::AttributeBooleanValue) -> Self {
         self.disable_api_termination = ::std::option::Option::Some(input);
@@ -227,6 +239,12 @@ impl DescribeInstanceAttributeOutputBuilder {
     ) -> Self {
         self.disable_api_termination = input;
         self
+    }
+    /// <p>If the value is <code>true</code>, you can't terminate the instance through the Amazon EC2 console, CLI, or API; otherwise, you can.</p>
+    pub fn get_disable_api_termination(
+        &self,
+    ) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
+        &self.disable_api_termination
     }
     /// <p>Indicates whether enhanced networking with ENA is enabled.</p>
     pub fn ena_support(mut self, input: crate::types::AttributeBooleanValue) -> Self {
@@ -241,6 +259,10 @@ impl DescribeInstanceAttributeOutputBuilder {
         self.ena_support = input;
         self
     }
+    /// <p>Indicates whether enhanced networking with ENA is enabled.</p>
+    pub fn get_ena_support(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
+        &self.ena_support
+    }
     /// <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
     pub fn enclave_options(mut self, input: crate::types::EnclaveOptions) -> Self {
         self.enclave_options = ::std::option::Option::Some(input);
@@ -253,6 +275,10 @@ impl DescribeInstanceAttributeOutputBuilder {
     ) -> Self {
         self.enclave_options = input;
         self
+    }
+    /// <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
+    pub fn get_enclave_options(&self) -> &::std::option::Option<crate::types::EnclaveOptions> {
+        &self.enclave_options
     }
     /// <p>Indicates whether the instance is optimized for Amazon EBS I/O.</p>
     pub fn ebs_optimized(mut self, input: crate::types::AttributeBooleanValue) -> Self {
@@ -267,6 +293,10 @@ impl DescribeInstanceAttributeOutputBuilder {
         self.ebs_optimized = input;
         self
     }
+    /// <p>Indicates whether the instance is optimized for Amazon EBS I/O.</p>
+    pub fn get_ebs_optimized(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
+        &self.ebs_optimized
+    }
     /// <p>The ID of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -276,6 +306,10 @@ impl DescribeInstanceAttributeOutputBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
+    }
+    /// <p>The ID of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
     pub fn instance_initiated_shutdown_behavior(
@@ -293,6 +327,12 @@ impl DescribeInstanceAttributeOutputBuilder {
         self.instance_initiated_shutdown_behavior = input;
         self
     }
+    /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
+    pub fn get_instance_initiated_shutdown_behavior(
+        &self,
+    ) -> &::std::option::Option<crate::types::AttributeValue> {
+        &self.instance_initiated_shutdown_behavior
+    }
     /// <p>The instance type.</p>
     pub fn instance_type(mut self, input: crate::types::AttributeValue) -> Self {
         self.instance_type = ::std::option::Option::Some(input);
@@ -306,6 +346,10 @@ impl DescribeInstanceAttributeOutputBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The instance type.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::AttributeValue> {
+        &self.instance_type
+    }
     /// <p>The kernel ID.</p>
     pub fn kernel_id(mut self, input: crate::types::AttributeValue) -> Self {
         self.kernel_id = ::std::option::Option::Some(input);
@@ -318,6 +362,10 @@ impl DescribeInstanceAttributeOutputBuilder {
     ) -> Self {
         self.kernel_id = input;
         self
+    }
+    /// <p>The kernel ID.</p>
+    pub fn get_kernel_id(&self) -> &::std::option::Option<crate::types::AttributeValue> {
+        &self.kernel_id
     }
     /// Appends an item to `product_codes`.
     ///
@@ -338,6 +386,12 @@ impl DescribeInstanceAttributeOutputBuilder {
         self.product_codes = input;
         self
     }
+    /// <p>A list of product codes.</p>
+    pub fn get_product_codes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductCode>> {
+        &self.product_codes
+    }
     /// <p>The RAM disk ID.</p>
     pub fn ramdisk_id(mut self, input: crate::types::AttributeValue) -> Self {
         self.ramdisk_id = ::std::option::Option::Some(input);
@@ -350,6 +404,10 @@ impl DescribeInstanceAttributeOutputBuilder {
     ) -> Self {
         self.ramdisk_id = input;
         self
+    }
+    /// <p>The RAM disk ID.</p>
+    pub fn get_ramdisk_id(&self) -> &::std::option::Option<crate::types::AttributeValue> {
+        &self.ramdisk_id
     }
     /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
     pub fn root_device_name(mut self, input: crate::types::AttributeValue) -> Self {
@@ -364,6 +422,10 @@ impl DescribeInstanceAttributeOutputBuilder {
         self.root_device_name = input;
         self
     }
+    /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
+    pub fn get_root_device_name(&self) -> &::std::option::Option<crate::types::AttributeValue> {
+        &self.root_device_name
+    }
     /// <p>Enable or disable source/destination checks, which ensure that the instance is either the source or the destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks are enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable source/destination checks if the instance runs services such as network address translation, routing, or firewalls.</p>
     pub fn source_dest_check(mut self, input: crate::types::AttributeBooleanValue) -> Self {
         self.source_dest_check = ::std::option::Option::Some(input);
@@ -376,6 +438,12 @@ impl DescribeInstanceAttributeOutputBuilder {
     ) -> Self {
         self.source_dest_check = input;
         self
+    }
+    /// <p>Enable or disable source/destination checks, which ensure that the instance is either the source or the destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks are enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable source/destination checks if the instance runs services such as network address translation, routing, or firewalls.</p>
+    pub fn get_source_dest_check(
+        &self,
+    ) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
+        &self.source_dest_check
     }
     /// <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.</p>
     pub fn sriov_net_support(mut self, input: crate::types::AttributeValue) -> Self {
@@ -390,6 +458,10 @@ impl DescribeInstanceAttributeOutputBuilder {
         self.sriov_net_support = input;
         self
     }
+    /// <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.</p>
+    pub fn get_sriov_net_support(&self) -> &::std::option::Option<crate::types::AttributeValue> {
+        &self.sriov_net_support
+    }
     /// <p>The user data.</p>
     pub fn user_data(mut self, input: crate::types::AttributeValue) -> Self {
         self.user_data = ::std::option::Option::Some(input);
@@ -403,6 +475,10 @@ impl DescribeInstanceAttributeOutputBuilder {
         self.user_data = input;
         self
     }
+    /// <p>The user data.</p>
+    pub fn get_user_data(&self) -> &::std::option::Option<crate::types::AttributeValue> {
+        &self.user_data
+    }
     /// <p>To enable the instance for Amazon Web Services Stop Protection, set this parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
     pub fn disable_api_stop(mut self, input: crate::types::AttributeBooleanValue) -> Self {
         self.disable_api_stop = ::std::option::Option::Some(input);
@@ -415,6 +491,12 @@ impl DescribeInstanceAttributeOutputBuilder {
     ) -> Self {
         self.disable_api_stop = input;
         self
+    }
+    /// <p>To enable the instance for Amazon Web Services Stop Protection, set this parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
+    pub fn get_disable_api_stop(
+        &self,
+    ) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
+        &self.disable_api_stop
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

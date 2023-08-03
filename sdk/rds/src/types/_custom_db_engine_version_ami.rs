@@ -48,6 +48,10 @@ impl CustomDbEngineVersionAmiBuilder {
         self.image_id = input;
         self
     }
+    /// <p>A value that indicates the ID of the AMI.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_id
+    }
     /// <p>A value that indicates the status of a custom engine version (CEV).</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl CustomDbEngineVersionAmiBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>A value that indicates the status of a custom engine version (CEV).</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`CustomDbEngineVersionAmi`](crate::types::CustomDbEngineVersionAmi).
     pub fn build(self) -> crate::types::CustomDbEngineVersionAmi {

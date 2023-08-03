@@ -38,6 +38,10 @@ impl GetCommentsForPullRequestFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetCommentsForPullRequest as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_comments_for_pull_request::builders::GetCommentsForPullRequestInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +144,10 @@ impl GetCommentsForPullRequestFluentBuilder {
         self.inner = self.inner.set_pull_request_id(input);
         self
     }
+    /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+    pub fn get_pull_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pull_request_id()
+    }
     /// <p>The name of the repository that contains the pull request.</p>
     pub fn repository_name(
         mut self,
@@ -155,6 +163,10 @@ impl GetCommentsForPullRequestFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
+    }
+    /// <p>The name of the repository that contains the pull request.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository_name()
     }
     /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was created.</p>
     pub fn before_commit_id(
@@ -172,6 +184,10 @@ impl GetCommentsForPullRequestFluentBuilder {
         self.inner = self.inner.set_before_commit_id(input);
         self
     }
+    /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was created.</p>
+    pub fn get_before_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_before_commit_id()
+    }
     /// <p>The full commit ID of the commit in the source branch that was the tip of the branch at the time the comment was made.</p>
     pub fn after_commit_id(
         mut self,
@@ -188,6 +204,10 @@ impl GetCommentsForPullRequestFluentBuilder {
         self.inner = self.inner.set_after_commit_id(input);
         self
     }
+    /// <p>The full commit ID of the commit in the source branch that was the tip of the branch at the time the comment was made.</p>
+    pub fn get_after_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_after_commit_id()
+    }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -198,6 +218,10 @@ impl GetCommentsForPullRequestFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is 100 comments. You can return up to 500 comments with a single request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -207,5 +231,9 @@ impl GetCommentsForPullRequestFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is 100 comments. You can return up to 500 comments with a single request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

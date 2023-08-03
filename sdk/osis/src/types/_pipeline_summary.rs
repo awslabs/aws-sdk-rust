@@ -99,6 +99,10 @@ impl PipelineSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The current status of the pipeline.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::PipelineStatus> {
+        &self.status
+    }
     /// <p>Information about a pipeline's current status.</p>
     pub fn status_reason(mut self, input: crate::types::PipelineStatusReason) -> Self {
         self.status_reason = ::std::option::Option::Some(input);
@@ -111,6 +115,10 @@ impl PipelineSummaryBuilder {
     ) -> Self {
         self.status_reason = input;
         self
+    }
+    /// <p>Information about a pipeline's current status.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<crate::types::PipelineStatusReason> {
+        &self.status_reason
     }
     /// <p>The name of the pipeline.</p>
     pub fn pipeline_name(
@@ -128,6 +136,10 @@ impl PipelineSummaryBuilder {
         self.pipeline_name = input;
         self
     }
+    /// <p>The name of the pipeline.</p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
     pub fn pipeline_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_arn = ::std::option::Option::Some(input.into());
@@ -137,6 +149,10 @@ impl PipelineSummaryBuilder {
     pub fn set_pipeline_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
+    pub fn get_pipeline_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_arn
     }
     /// <p>The minimum pipeline capacity, in Ingestion Compute Units (ICUs).</p>
     pub fn min_units(mut self, input: i32) -> Self {
@@ -148,6 +164,10 @@ impl PipelineSummaryBuilder {
         self.min_units = input;
         self
     }
+    /// <p>The minimum pipeline capacity, in Ingestion Compute Units (ICUs).</p>
+    pub fn get_min_units(&self) -> &::std::option::Option<i32> {
+        &self.min_units
+    }
     /// <p>The maximum pipeline capacity, in Ingestion Compute Units (ICUs).</p>
     pub fn max_units(mut self, input: i32) -> Self {
         self.max_units = ::std::option::Option::Some(input);
@@ -157,6 +177,10 @@ impl PipelineSummaryBuilder {
     pub fn set_max_units(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_units = input;
         self
+    }
+    /// <p>The maximum pipeline capacity, in Ingestion Compute Units (ICUs).</p>
+    pub fn get_max_units(&self) -> &::std::option::Option<i32> {
+        &self.max_units
     }
     /// <p>The date and time when the pipeline was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -171,6 +195,10 @@ impl PipelineSummaryBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The date and time when the pipeline was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The date and time when the pipeline was last updated.</p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_at = ::std::option::Option::Some(input);
@@ -183,6 +211,10 @@ impl PipelineSummaryBuilder {
     ) -> Self {
         self.last_updated_at = input;
         self
+    }
+    /// <p>The date and time when the pipeline was last updated.</p>
+    pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_at
     }
     /// Consumes the builder and constructs a [`PipelineSummary`](crate::types::PipelineSummary).
     pub fn build(self) -> crate::types::PipelineSummary {

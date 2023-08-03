@@ -86,6 +86,10 @@ impl RegisterClientOutputBuilder {
         self.client_id = input;
         self
     }
+    /// <p>The unique identifier string for each client. This client uses this identifier to get authenticated by the service in subsequent calls.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_id
+    }
     /// <p>A secret string generated for the client. The client will use this string to get authenticated by the service in subsequent calls.</p>
     pub fn client_secret(
         mut self,
@@ -102,6 +106,10 @@ impl RegisterClientOutputBuilder {
         self.client_secret = input;
         self
     }
+    /// <p>A secret string generated for the client. The client will use this string to get authenticated by the service in subsequent calls.</p>
+    pub fn get_client_secret(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_secret
+    }
     /// <p>Indicates the time at which the <code>clientId</code> and <code>clientSecret</code> were issued.</p>
     pub fn client_id_issued_at(mut self, input: i64) -> Self {
         self.client_id_issued_at = ::std::option::Option::Some(input);
@@ -112,6 +120,10 @@ impl RegisterClientOutputBuilder {
         self.client_id_issued_at = input;
         self
     }
+    /// <p>Indicates the time at which the <code>clientId</code> and <code>clientSecret</code> were issued.</p>
+    pub fn get_client_id_issued_at(&self) -> &::std::option::Option<i64> {
+        &self.client_id_issued_at
+    }
     /// <p>Indicates the time at which the <code>clientId</code> and <code>clientSecret</code> will become invalid.</p>
     pub fn client_secret_expires_at(mut self, input: i64) -> Self {
         self.client_secret_expires_at = ::std::option::Option::Some(input);
@@ -121,6 +133,10 @@ impl RegisterClientOutputBuilder {
     pub fn set_client_secret_expires_at(mut self, input: ::std::option::Option<i64>) -> Self {
         self.client_secret_expires_at = input;
         self
+    }
+    /// <p>Indicates the time at which the <code>clientId</code> and <code>clientSecret</code> will become invalid.</p>
+    pub fn get_client_secret_expires_at(&self) -> &::std::option::Option<i64> {
+        &self.client_secret_expires_at
     }
     /// <p>The endpoint where the client can request authorization.</p>
     pub fn authorization_endpoint(
@@ -138,6 +154,10 @@ impl RegisterClientOutputBuilder {
         self.authorization_endpoint = input;
         self
     }
+    /// <p>The endpoint where the client can request authorization.</p>
+    pub fn get_authorization_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authorization_endpoint
+    }
     /// <p>The endpoint where the client can get an access token.</p>
     pub fn token_endpoint(
         mut self,
@@ -153,6 +173,10 @@ impl RegisterClientOutputBuilder {
     ) -> Self {
         self.token_endpoint = input;
         self
+    }
+    /// <p>The endpoint where the client can get an access token.</p>
+    pub fn get_token_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token_endpoint
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

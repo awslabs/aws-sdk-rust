@@ -65,6 +65,12 @@ impl GetComplianceDetailsByResourceOutputBuilder {
         self.evaluation_results = input;
         self
     }
+    /// <p>Indicates whether the specified Amazon Web Services resource complies each Config rule.</p>
+    pub fn get_evaluation_results(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>> {
+        &self.evaluation_results
+    }
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -74,6 +80,10 @@ impl GetComplianceDetailsByResourceOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

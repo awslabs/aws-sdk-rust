@@ -74,6 +74,13 @@ impl DescribeDirectoriesOutputBuilder {
         self.directory_descriptions = input;
         self
     }
+    /// <p>The list of <code>DirectoryDescription</code> objects that were retrieved.</p>
+    /// <p>It is possible that this list contains less than the number of items specified in the <code>Limit</code> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
+    pub fn get_directory_descriptions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DirectoryDescription>> {
+        &self.directory_descriptions
+    }
     /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeDirectories</code> to retrieve the next set of items.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -83,6 +90,10 @@ impl DescribeDirectoriesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeDirectories</code> to retrieve the next set of items.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

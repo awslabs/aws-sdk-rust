@@ -75,6 +75,10 @@ impl ResultConfigurationBuilder {
         self.output_location = input;
         self
     }
+    /// <p>The location in Amazon S3 where your query and calculation results are stored, such as <code>s3://path/to/query/bucket/</code>. To run the query, you must specify the query results location using one of the ways: either for individual queries using either this setting (client-side), or in the workgroup, using <code>WorkGroupConfiguration</code>. If none of them is set, Athena issues an error that no output location is provided. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with query results, recent queries, and output files</a>. If workgroup settings override client-side settings, then the query uses the settings specified for the workgroup. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
+    pub fn get_output_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_location
+    }
     /// <p>If query and calculation results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key information. This is a client-side setting. If workgroup settings override client-side settings, then the query uses the encryption configuration that is specified for the workgroup, and also uses the location for storing query results specified in the workgroup. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code> and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
     pub fn encryption_configuration(
         mut self,
@@ -90,6 +94,12 @@ impl ResultConfigurationBuilder {
     ) -> Self {
         self.encryption_configuration = input;
         self
+    }
+    /// <p>If query and calculation results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key information. This is a client-side setting. If workgroup settings override client-side settings, then the query uses the encryption configuration that is specified for the workgroup, and also uses the location for storing query results specified in the workgroup. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code> and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+    pub fn get_encryption_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+        &self.encryption_configuration
     }
     /// <p>The Amazon Web Services account ID that you expect to be the owner of the Amazon S3 bucket specified by <code>ResultConfiguration$OutputLocation</code>. If set, Athena uses the value for <code>ExpectedBucketOwner</code> when it makes Amazon S3 calls to your specified output location. If the <code>ExpectedBucketOwner</code> Amazon Web Services account ID does not match the actual owner of the Amazon S3 bucket, the call fails with a permissions error.</p>
     /// <p>This is a client-side setting. If workgroup settings override client-side settings, then the query uses the <code>ExpectedBucketOwner</code> setting that is specified for the workgroup, and also uses the location for storing query results specified in the workgroup. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code> and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
@@ -109,6 +119,11 @@ impl ResultConfigurationBuilder {
         self.expected_bucket_owner = input;
         self
     }
+    /// <p>The Amazon Web Services account ID that you expect to be the owner of the Amazon S3 bucket specified by <code>ResultConfiguration$OutputLocation</code>. If set, Athena uses the value for <code>ExpectedBucketOwner</code> when it makes Amazon S3 calls to your specified output location. If the <code>ExpectedBucketOwner</code> Amazon Web Services account ID does not match the actual owner of the Amazon S3 bucket, the call fails with a permissions error.</p>
+    /// <p>This is a client-side setting. If workgroup settings override client-side settings, then the query uses the <code>ExpectedBucketOwner</code> setting that is specified for the workgroup, and also uses the location for storing query results specified in the workgroup. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code> and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+    pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expected_bucket_owner
+    }
     /// <p>Indicates that an Amazon S3 canned ACL should be set to control ownership of stored query results. Currently the only supported canned ACL is <code>BUCKET_OWNER_FULL_CONTROL</code>. This is a client-side setting. If workgroup settings override client-side settings, then the query uses the ACL configuration that is specified for the workgroup, and also uses the location for storing query results specified in the workgroup. For more information, see <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code> and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
     pub fn acl_configuration(mut self, input: crate::types::AclConfiguration) -> Self {
         self.acl_configuration = ::std::option::Option::Some(input);
@@ -121,6 +136,10 @@ impl ResultConfigurationBuilder {
     ) -> Self {
         self.acl_configuration = input;
         self
+    }
+    /// <p>Indicates that an Amazon S3 canned ACL should be set to control ownership of stored query results. Currently the only supported canned ACL is <code>BUCKET_OWNER_FULL_CONTROL</code>. This is a client-side setting. If workgroup settings override client-side settings, then the query uses the ACL configuration that is specified for the workgroup, and also uses the location for storing query results specified in the workgroup. For more information, see <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code> and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+    pub fn get_acl_configuration(&self) -> &::std::option::Option<crate::types::AclConfiguration> {
+        &self.acl_configuration
     }
     /// Consumes the builder and constructs a [`ResultConfiguration`](crate::types::ResultConfiguration).
     pub fn build(self) -> crate::types::ResultConfiguration {

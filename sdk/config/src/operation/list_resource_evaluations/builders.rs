@@ -37,6 +37,13 @@ impl ListResourceEvaluationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListResourceEvaluations as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_resource_evaluations::builders::ListResourceEvaluationsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,6 +146,10 @@ impl ListResourceEvaluationsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>Returns a <code>ResourceEvaluationFilters</code> object.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::ResourceEvaluationFilters> {
+        self.inner.get_filters()
+    }
     /// <p>The maximum number of evaluations returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -149,6 +160,10 @@ impl ListResourceEvaluationsFluentBuilder {
         self.inner = self.inner.set_limit(input);
         self
     }
+    /// <p>The maximum number of evaluations returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
+    }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -158,5 +173,9 @@ impl ListResourceEvaluationsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

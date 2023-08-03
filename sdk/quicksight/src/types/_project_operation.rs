@@ -52,6 +52,12 @@ impl ProjectOperationBuilder {
         self.projected_columns = input;
         self
     }
+    /// <p>Projected columns.</p>
+    pub fn get_projected_columns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.projected_columns
+    }
     /// Consumes the builder and constructs a [`ProjectOperation`](crate::types::ProjectOperation).
     pub fn build(self) -> crate::types::ProjectOperation {
         crate::types::ProjectOperation {

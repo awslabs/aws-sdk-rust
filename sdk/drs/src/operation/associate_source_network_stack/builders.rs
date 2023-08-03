@@ -36,6 +36,10 @@ impl AssociateSourceNetworkStackFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateSourceNetworkStack as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_source_network_stack::builders::AssociateSourceNetworkStackInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl AssociateSourceNetworkStackFluentBuilder {
         self.inner = self.inner.set_source_network_id(input);
         self
     }
+    /// <p>The Source Network ID to associate with CloudFormation template.</p>
+    pub fn get_source_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_network_id()
+    }
     /// <p>CloudFormation template to associate with a Source Network.</p>
     pub fn cfn_stack_name(
         mut self,
@@ -147,5 +155,9 @@ impl AssociateSourceNetworkStackFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cfn_stack_name(input);
         self
+    }
+    /// <p>CloudFormation template to associate with a Source Network.</p>
+    pub fn get_cfn_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cfn_stack_name()
     }
 }

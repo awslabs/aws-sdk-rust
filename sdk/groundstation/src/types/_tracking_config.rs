@@ -43,6 +43,10 @@ impl TrackingConfigBuilder {
         self.autotrack = input;
         self
     }
+    /// <p>Current setting for autotrack.</p>
+    pub fn get_autotrack(&self) -> &::std::option::Option<crate::types::Criticality> {
+        &self.autotrack
+    }
     /// Consumes the builder and constructs a [`TrackingConfig`](crate::types::TrackingConfig).
     pub fn build(self) -> crate::types::TrackingConfig {
         crate::types::TrackingConfig {

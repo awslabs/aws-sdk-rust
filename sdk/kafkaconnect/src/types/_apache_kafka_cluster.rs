@@ -54,6 +54,10 @@ impl ApacheKafkaClusterBuilder {
         self.bootstrap_servers = input;
         self
     }
+    /// <p>The bootstrap servers of the cluster.</p>
+    pub fn get_bootstrap_servers(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bootstrap_servers
+    }
     /// <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>
     pub fn vpc(mut self, input: crate::types::Vpc) -> Self {
         self.vpc = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl ApacheKafkaClusterBuilder {
     pub fn set_vpc(mut self, input: ::std::option::Option<crate::types::Vpc>) -> Self {
         self.vpc = input;
         self
+    }
+    /// <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>
+    pub fn get_vpc(&self) -> &::std::option::Option<crate::types::Vpc> {
+        &self.vpc
     }
     /// Consumes the builder and constructs a [`ApacheKafkaCluster`](crate::types::ApacheKafkaCluster).
     pub fn build(self) -> crate::types::ApacheKafkaCluster {

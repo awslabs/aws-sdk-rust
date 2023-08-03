@@ -87,6 +87,10 @@ impl UpdateProjectVisibilityInputBuilder {
         self.project_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the build project.</p>
+    pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_arn
+    }
     /// <p>Specifies the visibility of the project's builds. Possible values are:</p>
     /// <dl>
     /// <dt>
@@ -128,6 +132,26 @@ impl UpdateProjectVisibilityInputBuilder {
         self.project_visibility = input;
         self
     }
+    /// <p>Specifies the visibility of the project's builds. Possible values are:</p>
+    /// <dl>
+    /// <dt>
+    /// PUBLIC_READ
+    /// </dt>
+    /// <dd>
+    /// <p>The project builds are visible to the public.</p>
+    /// </dd>
+    /// <dt>
+    /// PRIVATE
+    /// </dt>
+    /// <dd>
+    /// <p>The project builds are not visible to the public.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_project_visibility(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProjectVisibilityType> {
+        &self.project_visibility
+    }
     /// <p>The ARN of the IAM role that enables CodeBuild to access the CloudWatch Logs and Amazon S3 artifacts for the project's builds.</p>
     pub fn resource_access_role(
         mut self,
@@ -143,6 +167,10 @@ impl UpdateProjectVisibilityInputBuilder {
     ) -> Self {
         self.resource_access_role = input;
         self
+    }
+    /// <p>The ARN of the IAM role that enables CodeBuild to access the CloudWatch Logs and Amazon S3 artifacts for the project's builds.</p>
+    pub fn get_resource_access_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_access_role
     }
     /// Consumes the builder and constructs a [`UpdateProjectVisibilityInput`](crate::operation::update_project_visibility::UpdateProjectVisibilityInput).
     pub fn build(

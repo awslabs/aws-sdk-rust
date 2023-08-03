@@ -57,6 +57,10 @@ impl DescribeStorageOutputBuilder {
         self.total_backup_size_in_mega_bytes = input;
         self
     }
+    /// <p>The total amount of storage currently used for snapshots.</p>
+    pub fn get_total_backup_size_in_mega_bytes(&self) -> &::std::option::Option<f64> {
+        &self.total_backup_size_in_mega_bytes
+    }
     /// <p>The total amount of storage currently provisioned.</p>
     pub fn total_provisioned_storage_in_mega_bytes(mut self, input: f64) -> Self {
         self.total_provisioned_storage_in_mega_bytes = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl DescribeStorageOutputBuilder {
     ) -> Self {
         self.total_provisioned_storage_in_mega_bytes = input;
         self
+    }
+    /// <p>The total amount of storage currently provisioned.</p>
+    pub fn get_total_provisioned_storage_in_mega_bytes(&self) -> &::std::option::Option<f64> {
+        &self.total_provisioned_storage_in_mega_bytes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

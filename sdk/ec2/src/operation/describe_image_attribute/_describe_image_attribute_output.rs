@@ -163,6 +163,12 @@ impl DescribeImageAttributeOutputBuilder {
         self.block_device_mappings = input;
         self
     }
+    /// <p>The block device mapping entries.</p>
+    pub fn get_block_device_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>> {
+        &self.block_device_mappings
+    }
     /// <p>The ID of the AMI.</p>
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
@@ -172,6 +178,10 @@ impl DescribeImageAttributeOutputBuilder {
     pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_id = input;
         self
+    }
+    /// <p>The ID of the AMI.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_id
     }
     /// Appends an item to `launch_permissions`.
     ///
@@ -192,6 +202,12 @@ impl DescribeImageAttributeOutputBuilder {
         self.launch_permissions = input;
         self
     }
+    /// <p>The launch permissions.</p>
+    pub fn get_launch_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchPermission>> {
+        &self.launch_permissions
+    }
     /// Appends an item to `product_codes`.
     ///
     /// To override the contents of this collection use [`set_product_codes`](Self::set_product_codes).
@@ -211,6 +227,12 @@ impl DescribeImageAttributeOutputBuilder {
         self.product_codes = input;
         self
     }
+    /// <p>The product codes.</p>
+    pub fn get_product_codes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductCode>> {
+        &self.product_codes
+    }
     /// <p>A description for the AMI.</p>
     pub fn description(mut self, input: crate::types::AttributeValue) -> Self {
         self.description = ::std::option::Option::Some(input);
@@ -223,6 +245,10 @@ impl DescribeImageAttributeOutputBuilder {
     ) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description for the AMI.</p>
+    pub fn get_description(&self) -> &::std::option::Option<crate::types::AttributeValue> {
+        &self.description
     }
     /// <p>The kernel ID.</p>
     pub fn kernel_id(mut self, input: crate::types::AttributeValue) -> Self {
@@ -237,6 +263,10 @@ impl DescribeImageAttributeOutputBuilder {
         self.kernel_id = input;
         self
     }
+    /// <p>The kernel ID.</p>
+    pub fn get_kernel_id(&self) -> &::std::option::Option<crate::types::AttributeValue> {
+        &self.kernel_id
+    }
     /// <p>The RAM disk ID.</p>
     pub fn ramdisk_id(mut self, input: crate::types::AttributeValue) -> Self {
         self.ramdisk_id = ::std::option::Option::Some(input);
@@ -249,6 +279,10 @@ impl DescribeImageAttributeOutputBuilder {
     ) -> Self {
         self.ramdisk_id = input;
         self
+    }
+    /// <p>The RAM disk ID.</p>
+    pub fn get_ramdisk_id(&self) -> &::std::option::Option<crate::types::AttributeValue> {
+        &self.ramdisk_id
     }
     /// <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.</p>
     pub fn sriov_net_support(mut self, input: crate::types::AttributeValue) -> Self {
@@ -263,6 +297,10 @@ impl DescribeImageAttributeOutputBuilder {
         self.sriov_net_support = input;
         self
     }
+    /// <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.</p>
+    pub fn get_sriov_net_support(&self) -> &::std::option::Option<crate::types::AttributeValue> {
+        &self.sriov_net_support
+    }
     /// <p>The boot mode.</p>
     pub fn boot_mode(mut self, input: crate::types::AttributeValue) -> Self {
         self.boot_mode = ::std::option::Option::Some(input);
@@ -275,6 +313,10 @@ impl DescribeImageAttributeOutputBuilder {
     ) -> Self {
         self.boot_mode = input;
         self
+    }
+    /// <p>The boot mode.</p>
+    pub fn get_boot_mode(&self) -> &::std::option::Option<crate::types::AttributeValue> {
+        &self.boot_mode
     }
     /// <p>If the image is configured for NitroTPM support, the value is <code>v2.0</code>.</p>
     pub fn tpm_support(mut self, input: crate::types::AttributeValue) -> Self {
@@ -289,6 +331,10 @@ impl DescribeImageAttributeOutputBuilder {
         self.tpm_support = input;
         self
     }
+    /// <p>If the image is configured for NitroTPM support, the value is <code>v2.0</code>.</p>
+    pub fn get_tpm_support(&self) -> &::std::option::Option<crate::types::AttributeValue> {
+        &self.tpm_support
+    }
     /// <p>Base64 representation of the non-volatile UEFI variable store. To retrieve the UEFI data, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a> command. You can inspect and modify the UEFI data by using the <a href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on GitHub. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn uefi_data(mut self, input: crate::types::AttributeValue) -> Self {
         self.uefi_data = ::std::option::Option::Some(input);
@@ -301,6 +347,10 @@ impl DescribeImageAttributeOutputBuilder {
     ) -> Self {
         self.uefi_data = input;
         self
+    }
+    /// <p>Base64 representation of the non-volatile UEFI variable store. To retrieve the UEFI data, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a> command. You can inspect and modify the UEFI data by using the <a href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on GitHub. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn get_uefi_data(&self) -> &::std::option::Option<crate::types::AttributeValue> {
+        &self.uefi_data
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was last used to launch an EC2 instance. When the AMI is used to launch an instance, there is a 24-hour delay before that usage is reported.</p> <note>
     /// <p> <code>lastLaunchedTime</code> data is available starting April 2017.</p>
@@ -319,6 +369,12 @@ impl DescribeImageAttributeOutputBuilder {
         self.last_launched_time = input;
         self
     }
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was last used to launch an EC2 instance. When the AMI is used to launch an instance, there is a 24-hour delay before that usage is reported.</p> <note>
+    /// <p> <code>lastLaunchedTime</code> data is available starting April 2017.</p>
+    /// </note>
+    pub fn get_last_launched_time(&self) -> &::std::option::Option<crate::types::AttributeValue> {
+        &self.last_launched_time
+    }
     /// <p>If <code>v2.0</code>, it indicates that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn imds_support(mut self, input: crate::types::AttributeValue) -> Self {
         self.imds_support = ::std::option::Option::Some(input);
@@ -331,6 +387,10 @@ impl DescribeImageAttributeOutputBuilder {
     ) -> Self {
         self.imds_support = input;
         self
+    }
+    /// <p>If <code>v2.0</code>, it indicates that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn get_imds_support(&self) -> &::std::option::Option<crate::types::AttributeValue> {
+        &self.imds_support
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

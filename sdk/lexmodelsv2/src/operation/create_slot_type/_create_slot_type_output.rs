@@ -143,6 +143,10 @@ impl CreateSlotTypeOutputBuilder {
         self.slot_type_id = input;
         self
     }
+    /// <p>The unique identifier assigned to the slot type. Use this to identify the slot type in the <code>UpdateSlotType</code> and <code>DeleteSlotType</code> operations.</p>
+    pub fn get_slot_type_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.slot_type_id
+    }
     /// <p>The name specified for the slot type.</p>
     pub fn slot_type_name(
         mut self,
@@ -159,6 +163,10 @@ impl CreateSlotTypeOutputBuilder {
         self.slot_type_name = input;
         self
     }
+    /// <p>The name specified for the slot type.</p>
+    pub fn get_slot_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.slot_type_name
+    }
     /// <p>The description specified for the slot type.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -168,6 +176,10 @@ impl CreateSlotTypeOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description specified for the slot type.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `slot_type_values`.
     ///
@@ -188,6 +200,12 @@ impl CreateSlotTypeOutputBuilder {
         self.slot_type_values = input;
         self
     }
+    /// <p>The list of values that the slot type can assume.</p>
+    pub fn get_slot_type_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SlotTypeValue>> {
+        &self.slot_type_values
+    }
     /// <p>The strategy that Amazon Lex uses to select a value from the list of possible values.</p>
     pub fn value_selection_setting(
         mut self,
@@ -203,6 +221,12 @@ impl CreateSlotTypeOutputBuilder {
     ) -> Self {
         self.value_selection_setting = input;
         self
+    }
+    /// <p>The strategy that Amazon Lex uses to select a value from the list of possible values.</p>
+    pub fn get_value_selection_setting(
+        &self,
+    ) -> &::std::option::Option<crate::types::SlotValueSelectionSetting> {
+        &self.value_selection_setting
     }
     /// <p>The signature of the base slot type specified for the slot type.</p>
     pub fn parent_slot_type_signature(
@@ -220,6 +244,10 @@ impl CreateSlotTypeOutputBuilder {
         self.parent_slot_type_signature = input;
         self
     }
+    /// <p>The signature of the base slot type specified for the slot type.</p>
+    pub fn get_parent_slot_type_signature(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_slot_type_signature
+    }
     /// <p>The identifier for the bot associated with the slot type.</p>
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
@@ -229,6 +257,10 @@ impl CreateSlotTypeOutputBuilder {
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_id = input;
         self
+    }
+    /// <p>The identifier for the bot associated with the slot type.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
     }
     /// <p>The version of the bot associated with the slot type.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -240,6 +272,10 @@ impl CreateSlotTypeOutputBuilder {
         self.bot_version = input;
         self
     }
+    /// <p>The version of the bot associated with the slot type.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_version
+    }
     /// <p>The specified language and local specified for the slot type.</p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
@@ -249,6 +285,10 @@ impl CreateSlotTypeOutputBuilder {
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.locale_id = input;
         self
+    }
+    /// <p>The specified language and local specified for the slot type.</p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale_id
     }
     /// <p>A timestamp of the date and time that the slot type was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -263,6 +303,10 @@ impl CreateSlotTypeOutputBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>A timestamp of the date and time that the slot type was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>The type of external information used to create the slot type.</p>
     pub fn external_source_setting(mut self, input: crate::types::ExternalSourceSetting) -> Self {
         self.external_source_setting = ::std::option::Option::Some(input);
@@ -275,6 +319,12 @@ impl CreateSlotTypeOutputBuilder {
     ) -> Self {
         self.external_source_setting = input;
         self
+    }
+    /// <p>The type of external information used to create the slot type.</p>
+    pub fn get_external_source_setting(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExternalSourceSetting> {
+        &self.external_source_setting
     }
     /// <p>Specifications for a composite slot type.</p>
     pub fn composite_slot_type_setting(
@@ -291,6 +341,12 @@ impl CreateSlotTypeOutputBuilder {
     ) -> Self {
         self.composite_slot_type_setting = input;
         self
+    }
+    /// <p>Specifications for a composite slot type.</p>
+    pub fn get_composite_slot_type_setting(
+        &self,
+    ) -> &::std::option::Option<crate::types::CompositeSlotTypeSetting> {
+        &self.composite_slot_type_setting
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

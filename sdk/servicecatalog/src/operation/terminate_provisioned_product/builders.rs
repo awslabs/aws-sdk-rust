@@ -38,6 +38,10 @@ impl TerminateProvisionedProductFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the TerminateProvisionedProduct as a reference.
+    pub fn as_input(&self) -> &crate::operation::terminate_provisioned_product::builders::TerminateProvisionedProductInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +138,10 @@ impl TerminateProvisionedProductFluentBuilder {
         self.inner = self.inner.set_provisioned_product_name(input);
         self
     }
+    /// <p>The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
+    pub fn get_provisioned_product_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_provisioned_product_name()
+    }
     /// <p>The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
     pub fn provisioned_product_id(
         mut self,
@@ -149,6 +157,10 @@ impl TerminateProvisionedProductFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_provisioned_product_id(input);
         self
+    }
+    /// <p>The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
+    pub fn get_provisioned_product_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_provisioned_product_id()
     }
     /// <p>An idempotency token that uniquely identifies the termination request. This token is only valid during the termination process. After the provisioned product is terminated, subsequent requests to terminate the same provisioned product always return <b>ResourceNotFound</b>.</p>
     pub fn terminate_token(
@@ -166,6 +178,10 @@ impl TerminateProvisionedProductFluentBuilder {
         self.inner = self.inner.set_terminate_token(input);
         self
     }
+    /// <p>An idempotency token that uniquely identifies the termination request. This token is only valid during the termination process. After the provisioned product is terminated, subsequent requests to terminate the same provisioned product always return <b>ResourceNotFound</b>.</p>
+    pub fn get_terminate_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_terminate_token()
+    }
     /// <p>If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
     pub fn ignore_errors(mut self, input: bool) -> Self {
         self.inner = self.inner.ignore_errors(input);
@@ -175,6 +191,10 @@ impl TerminateProvisionedProductFluentBuilder {
     pub fn set_ignore_errors(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_ignore_errors(input);
         self
+    }
+    /// <p>If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
+    pub fn get_ignore_errors(&self) -> &::std::option::Option<bool> {
+        self.inner.get_ignore_errors()
     }
     /// <p>The language code.</p>
     /// <ul>
@@ -200,6 +220,14 @@ impl TerminateProvisionedProductFluentBuilder {
         self.inner = self.inner.set_accept_language(input);
         self
     }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_accept_language()
+    }
     /// <p>When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes the Service Catalog provisioned product. However, it does not remove the CloudFormation stack, stack set, or the underlying resources of the deleted provisioned product. The default value is false.</p>
     pub fn retain_physical_resources(mut self, input: bool) -> Self {
         self.inner = self.inner.retain_physical_resources(input);
@@ -209,5 +237,9 @@ impl TerminateProvisionedProductFluentBuilder {
     pub fn set_retain_physical_resources(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_retain_physical_resources(input);
         self
+    }
+    /// <p>When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes the Service Catalog provisioned product. However, it does not remove the CloudFormation stack, stack set, or the underlying resources of the deleted provisioned product. The default value is false.</p>
+    pub fn get_retain_physical_resources(&self) -> &::std::option::Option<bool> {
+        self.inner.get_retain_physical_resources()
     }
 }

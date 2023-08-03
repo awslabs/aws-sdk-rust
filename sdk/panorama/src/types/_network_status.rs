@@ -67,6 +67,10 @@ impl NetworkStatusBuilder {
         self.ethernet0_status = input;
         self
     }
+    /// <p>The status of Ethernet port 0.</p>
+    pub fn get_ethernet0_status(&self) -> &::std::option::Option<crate::types::EthernetStatus> {
+        &self.ethernet0_status
+    }
     /// <p>The status of Ethernet port 1.</p>
     pub fn ethernet1_status(mut self, input: crate::types::EthernetStatus) -> Self {
         self.ethernet1_status = ::std::option::Option::Some(input);
@@ -80,6 +84,10 @@ impl NetworkStatusBuilder {
         self.ethernet1_status = input;
         self
     }
+    /// <p>The status of Ethernet port 1.</p>
+    pub fn get_ethernet1_status(&self) -> &::std::option::Option<crate::types::EthernetStatus> {
+        &self.ethernet1_status
+    }
     /// <p>Details about a network time protocol (NTP) server connection.</p>
     pub fn ntp_status(mut self, input: crate::types::NtpStatus) -> Self {
         self.ntp_status = ::std::option::Option::Some(input);
@@ -89,6 +97,10 @@ impl NetworkStatusBuilder {
     pub fn set_ntp_status(mut self, input: ::std::option::Option<crate::types::NtpStatus>) -> Self {
         self.ntp_status = input;
         self
+    }
+    /// <p>Details about a network time protocol (NTP) server connection.</p>
+    pub fn get_ntp_status(&self) -> &::std::option::Option<crate::types::NtpStatus> {
+        &self.ntp_status
     }
     /// <p>When the network status changed.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -102,6 +114,10 @@ impl NetworkStatusBuilder {
     ) -> Self {
         self.last_updated_time = input;
         self
+    }
+    /// <p>When the network status changed.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
     }
     /// Consumes the builder and constructs a [`NetworkStatus`](crate::types::NetworkStatus).
     pub fn build(self) -> crate::types::NetworkStatus {

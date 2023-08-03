@@ -90,6 +90,10 @@ impl BlockBuilder {
         self.id = input;
         self
     }
+    /// <p>Unique identifier for the block.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The block represents a line of text or one word of text.</p>
     /// <ul>
     /// <li> <p>WORD - A word that's detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p> </li>
@@ -108,6 +112,14 @@ impl BlockBuilder {
         self.block_type = input;
         self
     }
+    /// <p>The block represents a line of text or one word of text.</p>
+    /// <ul>
+    /// <li> <p>WORD - A word that's detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p> </li>
+    /// <li> <p>LINE - A string of tab-delimited, contiguous words that are detected on a document page</p> </li>
+    /// </ul>
+    pub fn get_block_type(&self) -> &::std::option::Option<crate::types::BlockType> {
+        &self.block_type
+    }
     /// <p>The word or line of text extracted from the block.</p>
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
@@ -117,6 +129,10 @@ impl BlockBuilder {
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.text = input;
         self
+    }
+    /// <p>The word or line of text extracted from the block.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
     }
     /// <p>Page number where the block appears.</p>
     pub fn page(mut self, input: i32) -> Self {
@@ -128,6 +144,10 @@ impl BlockBuilder {
         self.page = input;
         self
     }
+    /// <p>Page number where the block appears.</p>
+    pub fn get_page(&self) -> &::std::option::Option<i32> {
+        &self.page
+    }
     /// <p>Co-ordinates of the rectangle or polygon that contains the text.</p>
     pub fn geometry(mut self, input: crate::types::Geometry) -> Self {
         self.geometry = ::std::option::Option::Some(input);
@@ -137,6 +157,10 @@ impl BlockBuilder {
     pub fn set_geometry(mut self, input: ::std::option::Option<crate::types::Geometry>) -> Self {
         self.geometry = input;
         self
+    }
+    /// <p>Co-ordinates of the rectangle or polygon that contains the text.</p>
+    pub fn get_geometry(&self) -> &::std::option::Option<crate::types::Geometry> {
+        &self.geometry
     }
     /// Appends an item to `relationships`.
     ///
@@ -156,6 +180,12 @@ impl BlockBuilder {
     ) -> Self {
         self.relationships = input;
         self
+    }
+    /// <p>A list of child blocks of the current block. For example, a LINE object has child blocks for each WORD block that's part of the line of text. </p>
+    pub fn get_relationships(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RelationshipsListItem>> {
+        &self.relationships
     }
     /// Consumes the builder and constructs a [`Block`](crate::types::Block).
     pub fn build(self) -> crate::types::Block {

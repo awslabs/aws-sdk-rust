@@ -65,6 +65,12 @@ impl WaterfallChartAggregatedFieldWellsBuilder {
         self.categories = input;
         self
     }
+    /// <p>The category field wells of a waterfall visual.</p>
+    pub fn get_categories(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+        &self.categories
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -84,6 +90,12 @@ impl WaterfallChartAggregatedFieldWellsBuilder {
         self.values = input;
         self
     }
+    /// <p>The value field wells of a waterfall visual.</p>
+    pub fn get_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
+        &self.values
+    }
     /// Appends an item to `breakdowns`.
     ///
     /// To override the contents of this collection use [`set_breakdowns`](Self::set_breakdowns).
@@ -102,6 +114,12 @@ impl WaterfallChartAggregatedFieldWellsBuilder {
     ) -> Self {
         self.breakdowns = input;
         self
+    }
+    /// <p>The breakdown field wells of a waterfall visual.</p>
+    pub fn get_breakdowns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+        &self.breakdowns
     }
     /// Consumes the builder and constructs a [`WaterfallChartAggregatedFieldWells`](crate::types::WaterfallChartAggregatedFieldWells).
     pub fn build(self) -> crate::types::WaterfallChartAggregatedFieldWells {

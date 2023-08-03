@@ -48,6 +48,12 @@ impl BlockchainInstantBuilder {
         self.time = input;
         self
     }
+    /// <p>The container of the <code>Timestamp</code> of the blockchain instant.</p> <note>
+    /// <p>This <code>timestamp</code> will only be recorded up to the second.</p>
+    /// </note>
+    pub fn get_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.time
+    }
     /// Consumes the builder and constructs a [`BlockchainInstant`](crate::types::BlockchainInstant).
     pub fn build(self) -> crate::types::BlockchainInstant {
         crate::types::BlockchainInstant { time: self.time }

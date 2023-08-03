@@ -72,6 +72,10 @@ impl SpotDatafeedSubscriptionBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The name of the Amazon S3 bucket where the Spot Instance data feed is located.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>The fault codes for the Spot Instance request, if any.</p>
     pub fn fault(mut self, input: crate::types::SpotInstanceStateFault) -> Self {
         self.fault = ::std::option::Option::Some(input);
@@ -85,6 +89,10 @@ impl SpotDatafeedSubscriptionBuilder {
         self.fault = input;
         self
     }
+    /// <p>The fault codes for the Spot Instance request, if any.</p>
+    pub fn get_fault(&self) -> &::std::option::Option<crate::types::SpotInstanceStateFault> {
+        &self.fault
+    }
     /// <p>The Amazon Web Services account ID of the account.</p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_id = ::std::option::Option::Some(input.into());
@@ -95,6 +103,10 @@ impl SpotDatafeedSubscriptionBuilder {
         self.owner_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID of the account.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
+    }
     /// <p>The prefix for the data feed files.</p>
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix = ::std::option::Option::Some(input.into());
@@ -104,6 +116,10 @@ impl SpotDatafeedSubscriptionBuilder {
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix = input;
         self
+    }
+    /// <p>The prefix for the data feed files.</p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
     }
     /// <p>The state of the Spot Instance data feed subscription.</p>
     pub fn state(mut self, input: crate::types::DatafeedSubscriptionState) -> Self {
@@ -117,6 +133,10 @@ impl SpotDatafeedSubscriptionBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the Spot Instance data feed subscription.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::DatafeedSubscriptionState> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`SpotDatafeedSubscription`](crate::types::SpotDatafeedSubscription).
     pub fn build(self) -> crate::types::SpotDatafeedSubscription {

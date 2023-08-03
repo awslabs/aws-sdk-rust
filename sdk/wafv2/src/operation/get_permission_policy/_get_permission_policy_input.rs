@@ -41,6 +41,10 @@ impl GetPermissionPolicyInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the rule group for which you want to get the policy.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Consumes the builder and constructs a [`GetPermissionPolicyInput`](crate::operation::get_permission_policy::GetPermissionPolicyInput).
     pub fn build(
         self,

@@ -46,6 +46,10 @@ impl GetAccountOutputBuilder {
         self.account = input;
         self
     }
+    /// <p>The Amazon Chime account details.</p>
+    pub fn get_account(&self) -> &::std::option::Option<crate::types::Account> {
+        &self.account
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

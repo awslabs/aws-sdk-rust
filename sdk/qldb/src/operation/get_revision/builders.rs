@@ -36,6 +36,10 @@ impl GetRevisionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetRevision as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_revision::builders::GetRevisionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl GetRevisionFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the ledger.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The block location of the document revision to be verified. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
     /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
     pub fn block_address(mut self, input: crate::types::ValueHolder) -> Self {
@@ -133,6 +141,11 @@ impl GetRevisionFluentBuilder {
         self.inner = self.inner.set_block_address(input);
         self
     }
+    /// <p>The block location of the document revision to be verified. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
+    /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
+    pub fn get_block_address(&self) -> &::std::option::Option<crate::types::ValueHolder> {
+        self.inner.get_block_address()
+    }
     /// <p>The UUID (represented in Base62-encoded text) of the document to be verified.</p>
     pub fn document_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.document_id(input.into());
@@ -142,6 +155,10 @@ impl GetRevisionFluentBuilder {
     pub fn set_document_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_document_id(input);
         self
+    }
+    /// <p>The UUID (represented in Base62-encoded text) of the document to be verified.</p>
+    pub fn get_document_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_document_id()
     }
     /// <p>The latest block location covered by the digest for which to request a proof. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
     /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
@@ -157,5 +174,10 @@ impl GetRevisionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_digest_tip_address(input);
         self
+    }
+    /// <p>The latest block location covered by the digest for which to request a proof. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
+    /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
+    pub fn get_digest_tip_address(&self) -> &::std::option::Option<crate::types::ValueHolder> {
+        self.inner.get_digest_tip_address()
     }
 }

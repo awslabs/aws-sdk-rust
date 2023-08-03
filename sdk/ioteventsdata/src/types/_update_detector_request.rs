@@ -64,6 +64,10 @@ impl UpdateDetectorRequestBuilder {
         self.message_id = input;
         self
     }
+    /// <p>The ID to assign to the detector update <code>"message"</code>. Each <code>"messageId"</code> must be unique within each batch sent.</p>
+    pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_id
+    }
     /// <p>The name of the detector model that created the detectors (instances).</p>
     pub fn detector_model_name(
         mut self,
@@ -80,6 +84,10 @@ impl UpdateDetectorRequestBuilder {
         self.detector_model_name = input;
         self
     }
+    /// <p>The name of the detector model that created the detectors (instances).</p>
+    pub fn get_detector_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_model_name
+    }
     /// <p>The value of the input key attribute (identifying the device or system) that caused the creation of this detector (instance).</p>
     pub fn key_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_value = ::std::option::Option::Some(input.into());
@@ -89,6 +97,10 @@ impl UpdateDetectorRequestBuilder {
     pub fn set_key_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_value = input;
         self
+    }
+    /// <p>The value of the input key attribute (identifying the device or system) that caused the creation of this detector (instance).</p>
+    pub fn get_key_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_value
     }
     /// <p>The new state, variable values, and timer settings of the detector (instance).</p>
     pub fn state(mut self, input: crate::types::DetectorStateDefinition) -> Self {
@@ -102,6 +114,10 @@ impl UpdateDetectorRequestBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The new state, variable values, and timer settings of the detector (instance).</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::DetectorStateDefinition> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`UpdateDetectorRequest`](crate::types::UpdateDetectorRequest).
     pub fn build(self) -> crate::types::UpdateDetectorRequest {

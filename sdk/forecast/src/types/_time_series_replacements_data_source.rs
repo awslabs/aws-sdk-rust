@@ -64,6 +64,10 @@ impl TimeSeriesReplacementsDataSourceBuilder {
         self.s3_config = input;
         self
     }
+    /// <p>The path to the file(s) in an Amazon Simple Storage Service (Amazon S3) bucket, and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the file(s). Optionally, includes an Key Management Service (KMS) key. This object is part of the <code>DataSource</code> object that is submitted in the <code>CreateDatasetImportJob</code> request, and part of the <code>DataDestination</code> object.</p>
+    pub fn get_s3_config(&self) -> &::std::option::Option<crate::types::S3Config> {
+        &self.s3_config
+    }
     /// <p>Defines the fields of a dataset.</p>
     pub fn schema(mut self, input: crate::types::Schema) -> Self {
         self.schema = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl TimeSeriesReplacementsDataSourceBuilder {
         self.schema = input;
         self
     }
+    /// <p>Defines the fields of a dataset.</p>
+    pub fn get_schema(&self) -> &::std::option::Option<crate::types::Schema> {
+        &self.schema
+    }
     /// <p>The format of the replacement data, CSV or PARQUET.</p>
     pub fn format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.format = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl TimeSeriesReplacementsDataSourceBuilder {
     pub fn set_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.format = input;
         self
+    }
+    /// <p>The format of the replacement data, CSV or PARQUET.</p>
+    pub fn get_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.format
     }
     /// <p>The timestamp format of the replacement data.</p>
     pub fn timestamp_format(
@@ -99,6 +111,10 @@ impl TimeSeriesReplacementsDataSourceBuilder {
     ) -> Self {
         self.timestamp_format = input;
         self
+    }
+    /// <p>The timestamp format of the replacement data.</p>
+    pub fn get_timestamp_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timestamp_format
     }
     /// Consumes the builder and constructs a [`TimeSeriesReplacementsDataSource`](crate::types::TimeSeriesReplacementsDataSource).
     pub fn build(self) -> crate::types::TimeSeriesReplacementsDataSource {

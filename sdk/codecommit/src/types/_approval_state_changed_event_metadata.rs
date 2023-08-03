@@ -48,6 +48,10 @@ impl ApprovalStateChangedEventMetadataBuilder {
         self.revision_id = input;
         self
     }
+    /// <p>The revision ID of the pull request when the approval state changed.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_id
+    }
     /// <p>The approval status for the pull request.</p>
     pub fn approval_status(mut self, input: crate::types::ApprovalState) -> Self {
         self.approval_status = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl ApprovalStateChangedEventMetadataBuilder {
     ) -> Self {
         self.approval_status = input;
         self
+    }
+    /// <p>The approval status for the pull request.</p>
+    pub fn get_approval_status(&self) -> &::std::option::Option<crate::types::ApprovalState> {
+        &self.approval_status
     }
     /// Consumes the builder and constructs a [`ApprovalStateChangedEventMetadata`](crate::types::ApprovalStateChangedEventMetadata).
     pub fn build(self) -> crate::types::ApprovalStateChangedEventMetadata {

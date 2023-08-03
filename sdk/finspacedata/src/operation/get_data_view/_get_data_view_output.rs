@@ -158,6 +158,10 @@ impl GetDataViewOutputBuilder {
         self.auto_update = input;
         self
     }
+    /// <p>Flag to indicate Dataview should be updated automatically.</p>
+    pub fn get_auto_update(&self) -> &::std::option::Option<bool> {
+        &self.auto_update
+    }
     /// Appends an item to `partition_columns`.
     ///
     /// To override the contents of this collection use [`set_partition_columns`](Self::set_partition_columns).
@@ -180,6 +184,12 @@ impl GetDataViewOutputBuilder {
         self.partition_columns = input;
         self
     }
+    /// <p>Ordered set of column names used to partition data.</p>
+    pub fn get_partition_columns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.partition_columns
+    }
     /// <p>The unique identifier for the Dataset used in the Dataview.</p>
     pub fn dataset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_id = ::std::option::Option::Some(input.into());
@@ -190,6 +200,10 @@ impl GetDataViewOutputBuilder {
         self.dataset_id = input;
         self
     }
+    /// <p>The unique identifier for the Dataset used in the Dataview.</p>
+    pub fn get_dataset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_id
+    }
     /// <p>Time range to use for the Dataview. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn as_of_timestamp(mut self, input: i64) -> Self {
         self.as_of_timestamp = ::std::option::Option::Some(input);
@@ -199,6 +213,10 @@ impl GetDataViewOutputBuilder {
     pub fn set_as_of_timestamp(mut self, input: ::std::option::Option<i64>) -> Self {
         self.as_of_timestamp = input;
         self
+    }
+    /// <p>Time range to use for the Dataview. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    pub fn get_as_of_timestamp(&self) -> &::std::option::Option<i64> {
+        &self.as_of_timestamp
     }
     /// <p>Information about an error that occurred for the Dataview.</p>
     pub fn error_info(mut self, input: crate::types::DataViewErrorInfo) -> Self {
@@ -213,6 +231,10 @@ impl GetDataViewOutputBuilder {
         self.error_info = input;
         self
     }
+    /// <p>Information about an error that occurred for the Dataview.</p>
+    pub fn get_error_info(&self) -> &::std::option::Option<crate::types::DataViewErrorInfo> {
+        &self.error_info
+    }
     /// <p>The last time that a Dataview was modified. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn last_modified_time(mut self, input: i64) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -223,6 +245,10 @@ impl GetDataViewOutputBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p>The last time that a Dataview was modified. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<i64> {
+        &self.last_modified_time
+    }
     /// <p>The timestamp at which the Dataview was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn create_time(mut self, input: i64) -> Self {
         self.create_time = ::std::option::Option::Some(input);
@@ -232,6 +258,10 @@ impl GetDataViewOutputBuilder {
     pub fn set_create_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.create_time = input;
         self
+    }
+    /// <p>The timestamp at which the Dataview was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    pub fn get_create_time(&self) -> &::std::option::Option<i64> {
+        &self.create_time
     }
     /// Appends an item to `sort_columns`.
     ///
@@ -252,6 +282,12 @@ impl GetDataViewOutputBuilder {
         self.sort_columns = input;
         self
     }
+    /// <p>Columns to be used for sorting the data.</p>
+    pub fn get_sort_columns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.sort_columns
+    }
     /// <p>The unique identifier for the Dataview.</p>
     pub fn data_view_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_view_id = ::std::option::Option::Some(input.into());
@@ -261,6 +297,10 @@ impl GetDataViewOutputBuilder {
     pub fn set_data_view_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_view_id = input;
         self
+    }
+    /// <p>The unique identifier for the Dataview.</p>
+    pub fn get_data_view_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_view_id
     }
     /// <p>The ARN identifier of the Dataview.</p>
     pub fn data_view_arn(
@@ -278,6 +318,10 @@ impl GetDataViewOutputBuilder {
         self.data_view_arn = input;
         self
     }
+    /// <p>The ARN identifier of the Dataview.</p>
+    pub fn get_data_view_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_view_arn
+    }
     /// <p>Options that define the destination type for the Dataview.</p>
     pub fn destination_type_params(
         mut self,
@@ -293,6 +337,12 @@ impl GetDataViewOutputBuilder {
     ) -> Self {
         self.destination_type_params = input;
         self
+    }
+    /// <p>Options that define the destination type for the Dataview.</p>
+    pub fn get_destination_type_params(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataViewDestinationTypeParams> {
+        &self.destination_type_params
     }
     /// <p>The status of a Dataview creation.</p>
     /// <ul>
@@ -326,6 +376,20 @@ impl GetDataViewOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of a Dataview creation.</p>
+    /// <ul>
+    /// <li> <p> <code>RUNNING</code> – Dataview creation is running.</p> </li>
+    /// <li> <p> <code>STARTING</code> – Dataview creation is starting.</p> </li>
+    /// <li> <p> <code>FAILED</code> – Dataview creation has failed.</p> </li>
+    /// <li> <p> <code>CANCELLED</code> – Dataview creation has been cancelled.</p> </li>
+    /// <li> <p> <code>TIMEOUT</code> – Dataview creation has timed out.</p> </li>
+    /// <li> <p> <code>SUCCESS</code> – Dataview creation has succeeded.</p> </li>
+    /// <li> <p> <code>PENDING</code> – Dataview creation is pending.</p> </li>
+    /// <li> <p> <code>FAILED_CLEANUP_FAILED</code> – Dataview creation failed and resource cleanup failed.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DataViewStatus> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -47,6 +47,10 @@ impl GetCallAnalyticsCategoryInputBuilder {
         self.category_name = input;
         self
     }
+    /// <p>The name of the Call Analytics category you want information about. Category names are case sensitive.</p>
+    pub fn get_category_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.category_name
+    }
     /// Consumes the builder and constructs a [`GetCallAnalyticsCategoryInput`](crate::operation::get_call_analytics_category::GetCallAnalyticsCategoryInput).
     pub fn build(
         self,

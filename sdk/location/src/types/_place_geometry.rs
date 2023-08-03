@@ -67,6 +67,14 @@ impl PlaceGeometryBuilder {
         self.point = input;
         self
     }
+    /// <p>A single point geometry specifies a location for a Place using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a> coordinates:</p>
+    /// <ul>
+    /// <li> <p> <i>x</i> — Specifies the x coordinate or longitude. </p> </li>
+    /// <li> <p> <i>y</i> — Specifies the y coordinate or latitude. </p> </li>
+    /// </ul>
+    pub fn get_point(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+        &self.point
+    }
     /// Consumes the builder and constructs a [`PlaceGeometry`](crate::types::PlaceGeometry).
     pub fn build(self) -> crate::types::PlaceGeometry {
         crate::types::PlaceGeometry { point: self.point }

@@ -65,6 +65,12 @@ impl InstanceEventWindowAssociationTargetBuilder {
         self.instance_ids = input;
         self
     }
+    /// <p>The IDs of the instances associated with the event window.</p>
+    pub fn get_instance_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.instance_ids
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -83,6 +89,10 @@ impl InstanceEventWindowAssociationTargetBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The instance tags associated with the event window. Any instances associated with the tags will be associated with the event window.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Appends an item to `dedicated_host_ids`.
     ///
@@ -105,6 +115,12 @@ impl InstanceEventWindowAssociationTargetBuilder {
     ) -> Self {
         self.dedicated_host_ids = input;
         self
+    }
+    /// <p>The IDs of the Dedicated Hosts associated with the event window.</p>
+    pub fn get_dedicated_host_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.dedicated_host_ids
     }
     /// Consumes the builder and constructs a [`InstanceEventWindowAssociationTarget`](crate::types::InstanceEventWindowAssociationTarget).
     pub fn build(self) -> crate::types::InstanceEventWindowAssociationTarget {

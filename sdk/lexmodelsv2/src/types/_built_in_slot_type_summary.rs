@@ -54,6 +54,10 @@ impl BuiltInSlotTypeSummaryBuilder {
         self.slot_type_signature = input;
         self
     }
+    /// <p>The signature of the built-in slot type. Use this to specify the parent slot type of a derived slot type.</p>
+    pub fn get_slot_type_signature(&self) -> &::std::option::Option<::std::string::String> {
+        &self.slot_type_signature
+    }
     /// <p>The description of the built-in slot type.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl BuiltInSlotTypeSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the built-in slot type.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`BuiltInSlotTypeSummary`](crate::types::BuiltInSlotTypeSummary).
     pub fn build(self) -> crate::types::BuiltInSlotTypeSummary {

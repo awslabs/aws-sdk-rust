@@ -70,6 +70,10 @@ impl CreateFunctionDefinitionVersionInputBuilder {
         self.amzn_client_token = input;
         self
     }
+    /// A client token used to correlate requests and responses.
+    pub fn get_amzn_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.amzn_client_token
+    }
     /// The default configuration that applies to all Lambda functions in this function definition version. Individual Lambda functions can override these settings.
     pub fn default_config(mut self, input: crate::types::FunctionDefaultConfig) -> Self {
         self.default_config = ::std::option::Option::Some(input);
@@ -82,6 +86,12 @@ impl CreateFunctionDefinitionVersionInputBuilder {
     ) -> Self {
         self.default_config = input;
         self
+    }
+    /// The default configuration that applies to all Lambda functions in this function definition version. Individual Lambda functions can override these settings.
+    pub fn get_default_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::FunctionDefaultConfig> {
+        &self.default_config
     }
     /// The ID of the Lambda function definition.
     pub fn function_definition_id(
@@ -98,6 +108,10 @@ impl CreateFunctionDefinitionVersionInputBuilder {
     ) -> Self {
         self.function_definition_id = input;
         self
+    }
+    /// The ID of the Lambda function definition.
+    pub fn get_function_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_definition_id
     }
     /// Appends an item to `functions`.
     ///
@@ -117,6 +131,10 @@ impl CreateFunctionDefinitionVersionInputBuilder {
     ) -> Self {
         self.functions = input;
         self
+    }
+    /// A list of Lambda functions in this function definition version.
+    pub fn get_functions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Function>> {
+        &self.functions
     }
     /// Consumes the builder and constructs a [`CreateFunctionDefinitionVersionInput`](crate::operation::create_function_definition_version::CreateFunctionDefinitionVersionInput).
     pub fn build(

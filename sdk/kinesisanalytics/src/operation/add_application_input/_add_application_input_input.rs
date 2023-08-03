@@ -64,6 +64,10 @@ impl AddApplicationInputInputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>Name of your existing Amazon Kinesis Analytics application to which you want to add the streaming source.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>Current version of your Amazon Kinesis Analytics application. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to find the current application version.</p>
     pub fn current_application_version_id(mut self, input: i64) -> Self {
         self.current_application_version_id = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl AddApplicationInputInputBuilder {
         self.current_application_version_id = input;
         self
     }
+    /// <p>Current version of your Amazon Kinesis Analytics application. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to find the current application version.</p>
+    pub fn get_current_application_version_id(&self) -> &::std::option::Option<i64> {
+        &self.current_application_version_id
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_Input.html">Input</a> to add.</p>
     pub fn input(mut self, input: crate::types::Input) -> Self {
         self.input = ::std::option::Option::Some(input);
@@ -83,6 +91,10 @@ impl AddApplicationInputInputBuilder {
     pub fn set_input(mut self, input: ::std::option::Option<crate::types::Input>) -> Self {
         self.input = input;
         self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_Input.html">Input</a> to add.</p>
+    pub fn get_input(&self) -> &::std::option::Option<crate::types::Input> {
+        &self.input
     }
     /// Consumes the builder and constructs a [`AddApplicationInputInput`](crate::operation::add_application_input::AddApplicationInputInput).
     pub fn build(

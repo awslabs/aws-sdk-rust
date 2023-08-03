@@ -48,6 +48,10 @@ impl CancelCommandInputBuilder {
         self.command_id = input;
         self
     }
+    /// <p>The ID of the command you want to cancel.</p>
+    pub fn get_command_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.command_id
+    }
     /// Appends an item to `instance_ids`.
     ///
     /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
@@ -66,6 +70,12 @@ impl CancelCommandInputBuilder {
     ) -> Self {
         self.instance_ids = input;
         self
+    }
+    /// <p>(Optional) A list of managed node IDs on which you want to cancel the command. If not provided, the command is canceled on every node on which it was requested.</p>
+    pub fn get_instance_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.instance_ids
     }
     /// Consumes the builder and constructs a [`CancelCommandInput`](crate::operation::cancel_command::CancelCommandInput).
     pub fn build(

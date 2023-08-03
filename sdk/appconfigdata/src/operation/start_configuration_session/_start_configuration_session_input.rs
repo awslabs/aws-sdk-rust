@@ -69,6 +69,10 @@ impl StartConfigurationSessionInputBuilder {
         self.application_identifier = input;
         self
     }
+    /// <p>The application ID or the application name.</p>
+    pub fn get_application_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_identifier
+    }
     /// <p>The environment ID or the environment name.</p>
     pub fn environment_identifier(
         mut self,
@@ -84,6 +88,10 @@ impl StartConfigurationSessionInputBuilder {
     ) -> Self {
         self.environment_identifier = input;
         self
+    }
+    /// <p>The environment ID or the environment name.</p>
+    pub fn get_environment_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_identifier
     }
     /// <p>The configuration profile ID or the configuration profile name.</p>
     pub fn configuration_profile_identifier(
@@ -101,6 +109,12 @@ impl StartConfigurationSessionInputBuilder {
         self.configuration_profile_identifier = input;
         self
     }
+    /// <p>The configuration profile ID or the configuration profile name.</p>
+    pub fn get_configuration_profile_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_profile_identifier
+    }
     /// <p>Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that established the session can't call <code>GetLatestConfiguration</code> more frequently than every 60 seconds.</p>
     pub fn required_minimum_poll_interval_in_seconds(mut self, input: i32) -> Self {
         self.required_minimum_poll_interval_in_seconds = ::std::option::Option::Some(input);
@@ -113,6 +127,10 @@ impl StartConfigurationSessionInputBuilder {
     ) -> Self {
         self.required_minimum_poll_interval_in_seconds = input;
         self
+    }
+    /// <p>Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that established the session can't call <code>GetLatestConfiguration</code> more frequently than every 60 seconds.</p>
+    pub fn get_required_minimum_poll_interval_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.required_minimum_poll_interval_in_seconds
     }
     /// Consumes the builder and constructs a [`StartConfigurationSessionInput`](crate::operation::start_configuration_session::StartConfigurationSessionInput).
     pub fn build(

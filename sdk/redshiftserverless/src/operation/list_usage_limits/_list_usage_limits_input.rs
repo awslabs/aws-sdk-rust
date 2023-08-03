@@ -63,6 +63,10 @@ impl ListUsageLimitsInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) associated with the resource whose usage limits you want to list.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p>The Amazon Redshift Serverless feature whose limits you want to see.</p>
     pub fn usage_type(mut self, input: crate::types::UsageLimitUsageType) -> Self {
         self.usage_type = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl ListUsageLimitsInputBuilder {
         self.usage_type = input;
         self
     }
+    /// <p>The Amazon Redshift Serverless feature whose limits you want to see.</p>
+    pub fn get_usage_type(&self) -> &::std::option::Option<crate::types::UsageLimitUsageType> {
+        &self.usage_type
+    }
     /// <p>If your initial <code>ListUsageLimits</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListUsageLimits</code> operations, which returns results in the next page. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -86,6 +94,10 @@ impl ListUsageLimitsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If your initial <code>ListUsageLimits</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListUsageLimits</code> operations, which returns results in the next page. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results. The default is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -95,6 +107,10 @@ impl ListUsageLimitsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results. The default is 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListUsageLimitsInput`](crate::operation::list_usage_limits::ListUsageLimitsInput).
     pub fn build(

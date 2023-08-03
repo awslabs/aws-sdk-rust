@@ -40,6 +40,10 @@ impl DeleteJobQueueInputBuilder {
         self.job_queue = input;
         self
     }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the queue to delete.</p>
+    pub fn get_job_queue(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_queue
+    }
     /// Consumes the builder and constructs a [`DeleteJobQueueInput`](crate::operation::delete_job_queue::DeleteJobQueueInput).
     pub fn build(
         self,

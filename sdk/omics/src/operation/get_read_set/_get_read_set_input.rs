@@ -63,6 +63,10 @@ impl GetReadSetInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The read set's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The read set's sequence store ID.</p>
     pub fn sequence_store_id(
         mut self,
@@ -79,6 +83,10 @@ impl GetReadSetInputBuilder {
         self.sequence_store_id = input;
         self
     }
+    /// <p>The read set's sequence store ID.</p>
+    pub fn get_sequence_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sequence_store_id
+    }
     /// <p>The file to retrieve.</p>
     pub fn file(mut self, input: crate::types::ReadSetFile) -> Self {
         self.file = ::std::option::Option::Some(input);
@@ -89,6 +97,10 @@ impl GetReadSetInputBuilder {
         self.file = input;
         self
     }
+    /// <p>The file to retrieve.</p>
+    pub fn get_file(&self) -> &::std::option::Option<crate::types::ReadSetFile> {
+        &self.file
+    }
     /// <p>The part number to retrieve.</p>
     pub fn part_number(mut self, input: i32) -> Self {
         self.part_number = ::std::option::Option::Some(input);
@@ -98,6 +110,10 @@ impl GetReadSetInputBuilder {
     pub fn set_part_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.part_number = input;
         self
+    }
+    /// <p>The part number to retrieve.</p>
+    pub fn get_part_number(&self) -> &::std::option::Option<i32> {
+        &self.part_number
     }
     /// Consumes the builder and constructs a [`GetReadSetInput`](crate::operation::get_read_set::GetReadSetInput).
     pub fn build(

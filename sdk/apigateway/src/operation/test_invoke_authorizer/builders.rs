@@ -36,6 +36,12 @@ impl TestInvokeAuthorizerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the TestInvokeAuthorizer as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::test_invoke_authorizer::builders::TestInvokeAuthorizerInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl TestInvokeAuthorizerFluentBuilder {
         self.inner = self.inner.set_rest_api_id(input);
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rest_api_id()
+    }
     /// <p>Specifies a test invoke authorizer request's Authorizer ID.</p>
     pub fn authorizer_id(
         mut self,
@@ -141,6 +151,10 @@ impl TestInvokeAuthorizerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_authorizer_id(input);
         self
+    }
+    /// <p>Specifies a test invoke authorizer request's Authorizer ID.</p>
+    pub fn get_authorizer_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_authorizer_id()
     }
     /// Adds a key-value pair to `headers`.
     ///
@@ -164,6 +178,14 @@ impl TestInvokeAuthorizerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_headers(input);
         self
+    }
+    /// <p>A key-value map of headers to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, should be specified.</p>
+    pub fn get_headers(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_headers()
     }
     /// Adds a key-value pair to `multiValueHeaders`.
     ///
@@ -191,6 +213,14 @@ impl TestInvokeAuthorizerFluentBuilder {
         self.inner = self.inner.set_multi_value_headers(input);
         self
     }
+    /// <p>The headers as a map from string to list of values to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, may be specified.</p>
+    pub fn get_multi_value_headers(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    > {
+        self.inner.get_multi_value_headers()
+    }
     /// <p>The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.</p>
     pub fn path_with_query_string(
         mut self,
@@ -207,6 +237,10 @@ impl TestInvokeAuthorizerFluentBuilder {
         self.inner = self.inner.set_path_with_query_string(input);
         self
     }
+    /// <p>The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.</p>
+    pub fn get_path_with_query_string(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_path_with_query_string()
+    }
     /// <p>The simulated request body of an incoming invocation request.</p>
     pub fn body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.body(input.into());
@@ -216,6 +250,10 @@ impl TestInvokeAuthorizerFluentBuilder {
     pub fn set_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_body(input);
         self
+    }
+    /// <p>The simulated request body of an incoming invocation request.</p>
+    pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_body()
     }
     /// Adds a key-value pair to `stageVariables`.
     ///
@@ -240,6 +278,14 @@ impl TestInvokeAuthorizerFluentBuilder {
         self.inner = self.inner.set_stage_variables(input);
         self
     }
+    /// <p>A key-value map of stage variables to simulate an invocation on a deployed Stage.</p>
+    pub fn get_stage_variables(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_stage_variables()
+    }
     /// Adds a key-value pair to `additionalContext`.
     ///
     /// To override the contents of this collection use [`set_additional_context`](Self::set_additional_context).
@@ -262,5 +308,13 @@ impl TestInvokeAuthorizerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_additional_context(input);
         self
+    }
+    /// <p>A key-value map of additional context variables.</p>
+    pub fn get_additional_context(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_additional_context()
     }
 }

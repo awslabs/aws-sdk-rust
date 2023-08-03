@@ -57,6 +57,10 @@ impl CreatePortfolioOutputBuilder {
         self.portfolio_detail = input;
         self
     }
+    /// <p>Information about the portfolio.</p>
+    pub fn get_portfolio_detail(&self) -> &::std::option::Option<crate::types::PortfolioDetail> {
+        &self.portfolio_detail
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -75,6 +79,10 @@ impl CreatePortfolioOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Information about the tags associated with the portfolio.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -58,6 +58,10 @@ impl CreateCidrCollectionOutputBuilder {
         self.collection = input;
         self
     }
+    /// <p>A complex type that contains information about the CIDR collection.</p>
+    pub fn get_collection(&self) -> &::std::option::Option<crate::types::CidrCollection> {
+        &self.collection
+    }
     /// <p>A unique URL that represents the location for the CIDR collection.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
@@ -67,6 +71,10 @@ impl CreateCidrCollectionOutputBuilder {
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
+    }
+    /// <p>A unique URL that represents the location for the CIDR collection.</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

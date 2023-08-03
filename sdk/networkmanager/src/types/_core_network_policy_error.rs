@@ -56,6 +56,10 @@ impl CoreNetworkPolicyErrorBuilder {
         self.error_code = input;
         self
     }
+    /// <p>The error code associated with a core network policy error.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
+    }
     /// <p>The message associated with a core network policy error code.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl CoreNetworkPolicyErrorBuilder {
         self.message = input;
         self
     }
+    /// <p>The message associated with a core network policy error code.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The JSON path where the error was discovered in the policy document.</p>
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl CoreNetworkPolicyErrorBuilder {
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path = input;
         self
+    }
+    /// <p>The JSON path where the error was discovered in the policy document.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
     }
     /// Consumes the builder and constructs a [`CoreNetworkPolicyError`](crate::types::CoreNetworkPolicyError).
     pub fn build(self) -> crate::types::CoreNetworkPolicyError {

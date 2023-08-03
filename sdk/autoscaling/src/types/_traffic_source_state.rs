@@ -104,6 +104,11 @@ impl TrafficSourceStateBuilder {
         self.traffic_source = input;
         self
     }
+    /// <p>This is replaced by <code>Identifier</code>.</p>
+    #[deprecated(note = "TrafficSource has been replaced by Identifier")]
+    pub fn get_traffic_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.traffic_source
+    }
     /// <p>Describes the current state of a traffic source.</p>
     /// <p>The state values are as follows:</p>
     /// <ul>
@@ -130,6 +135,18 @@ impl TrafficSourceStateBuilder {
         self.state = input;
         self
     }
+    /// <p>Describes the current state of a traffic source.</p>
+    /// <p>The state values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>Adding</code> - The Auto Scaling instances are being registered with the load balancer or target group.</p> </li>
+    /// <li> <p> <code>Added</code> - All Auto Scaling instances are registered with the load balancer or target group.</p> </li>
+    /// <li> <p> <code>InService</code> - For an Elastic Load Balancing load balancer or target group, at least one Auto Scaling instance passed an <code>ELB</code> health check. For VPC Lattice, at least one Auto Scaling instance passed an <code>VPC_LATTICE</code> health check.</p> </li>
+    /// <li> <p> <code>Removing</code> - The Auto Scaling instances are being deregistered from the load balancer or target group. If connection draining (deregistration delay) is enabled, Elastic Load Balancing or VPC Lattice waits for in-flight requests to complete before deregistering the instances.</p> </li>
+    /// <li> <p> <code>Removed</code> - All Auto Scaling instances are deregistered from the load balancer or target group.</p> </li>
+    /// </ul>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
+    }
     /// <p>The unique identifier of the traffic source.</p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
@@ -139,6 +156,10 @@ impl TrafficSourceStateBuilder {
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identifier = input;
         self
+    }
+    /// <p>The unique identifier of the traffic source.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
     }
     /// <p>Provides additional context for the value of <code>Identifier</code>.</p>
     /// <p>The following lists the valid values:</p>
@@ -163,6 +184,17 @@ impl TrafficSourceStateBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>Provides additional context for the value of <code>Identifier</code>.</p>
+    /// <p>The following lists the valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>elb</code> if <code>Identifier</code> is the name of a Classic Load Balancer.</p> </li>
+    /// <li> <p> <code>elbv2</code> if <code>Identifier</code> is the ARN of an Application Load Balancer, Gateway Load Balancer, or Network Load Balancer target group.</p> </li>
+    /// <li> <p> <code>vpc-lattice</code> if <code>Identifier</code> is the ARN of a VPC Lattice target group.</p> </li>
+    /// </ul>
+    /// <p>Required if the identifier is the name of a Classic Load Balancer.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`TrafficSourceState`](crate::types::TrafficSourceState).
     pub fn build(self) -> crate::types::TrafficSourceState {

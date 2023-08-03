@@ -54,6 +54,10 @@ impl ColumnIdentifierBuilder {
         self.data_set_identifier = input;
         self
     }
+    /// <p>The data set that the column belongs to.</p>
+    pub fn get_data_set_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_set_identifier
+    }
     /// <p>The name of the column.</p>
     pub fn column_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.column_name = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl ColumnIdentifierBuilder {
     pub fn set_column_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.column_name = input;
         self
+    }
+    /// <p>The name of the column.</p>
+    pub fn get_column_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.column_name
     }
     /// Consumes the builder and constructs a [`ColumnIdentifier`](crate::types::ColumnIdentifier).
     pub fn build(self) -> crate::types::ColumnIdentifier {

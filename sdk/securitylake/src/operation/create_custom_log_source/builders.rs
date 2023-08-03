@@ -36,6 +36,13 @@ impl CreateCustomLogSourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateCustomLogSource as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_custom_log_source::builders::CreateCustomLogSourceInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl CreateCustomLogSourceFluentBuilder {
         self.inner = self.inner.set_source_name(input);
         self
     }
+    /// <p>Specify the name for a third-party custom source. This must be a Regionally unique value.</p>
+    pub fn get_source_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_name()
+    }
     /// <p>Specify the source version for the third-party custom source, to limit log collection to a specific version of custom data source.</p>
     pub fn source_version(
         mut self,
@@ -141,6 +152,10 @@ impl CreateCustomLogSourceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source_version(input);
         self
+    }
+    /// <p>Specify the source version for the third-party custom source, to limit log collection to a specific version of custom data source.</p>
+    pub fn get_source_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_version()
     }
     /// Appends an item to `eventClasses`.
     ///
@@ -224,6 +239,43 @@ impl CreateCustomLogSourceFluentBuilder {
         self.inner = self.inner.set_event_classes(input);
         self
     }
+    /// <p>The Open Cybersecurity Schema Framework (OCSF) event classes which describes the type of data that the custom source will send to Security Lake. The supported event classes are:</p>
+    /// <ul>
+    /// <li> <p> <code>ACCESS_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>FILE_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>KERNEL_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>KERNEL_EXTENSION</code> </p> </li>
+    /// <li> <p> <code>MEMORY_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>MODULE_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>PROCESS_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>REGISTRY_KEY_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>REGISTRY_VALUE_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>RESOURCE_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>SCHEDULED_JOB_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>SECURITY_FINDING</code> </p> </li>
+    /// <li> <p> <code>ACCOUNT_CHANGE</code> </p> </li>
+    /// <li> <p> <code>AUTHENTICATION</code> </p> </li>
+    /// <li> <p> <code>AUTHORIZATION</code> </p> </li>
+    /// <li> <p> <code>ENTITY_MANAGEMENT_AUDIT</code> </p> </li>
+    /// <li> <p> <code>DHCP_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>NETWORK_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>DNS_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>FTP_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>HTTP_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>RDP_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>SMB_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>SSH_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>CONFIG_STATE</code> </p> </li>
+    /// <li> <p> <code>INVENTORY_INFO</code> </p> </li>
+    /// <li> <p> <code>EMAIL_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>API_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>CLOUD_API</code> </p> </li>
+    /// </ul>
+    pub fn get_event_classes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_event_classes()
+    }
     /// <p>The configuration for the third-party custom source.</p>
     pub fn configuration(mut self, input: crate::types::CustomLogSourceConfiguration) -> Self {
         self.inner = self.inner.configuration(input);
@@ -236,5 +288,11 @@ impl CreateCustomLogSourceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
+    }
+    /// <p>The configuration for the third-party custom source.</p>
+    pub fn get_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomLogSourceConfiguration> {
+        self.inner.get_configuration()
     }
 }

@@ -36,6 +36,12 @@ impl GetResolverRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetResolverRule as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_resolver_rule::builders::GetResolverRuleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl GetResolverRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resolver_rule_id(input);
         self
+    }
+    /// <p>The ID of the Resolver rule that you want to get information about.</p>
+    pub fn get_resolver_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resolver_rule_id()
     }
 }

@@ -74,6 +74,12 @@ impl GetMetricDataOutputBuilder {
         self.metric_data_results = input;
         self
     }
+    /// <p>The metrics that are returned, including the metric name, namespace, and dimensions.</p>
+    pub fn get_metric_data_results(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDataResult>> {
+        &self.metric_data_results
+    }
     /// <p>A token that marks the next batch of returned results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -83,6 +89,10 @@ impl GetMetricDataOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token that marks the next batch of returned results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `messages`.
     ///
@@ -104,6 +114,13 @@ impl GetMetricDataOutputBuilder {
     ) -> Self {
         self.messages = input;
         self
+    }
+    /// <p>Contains a message about this <code>GetMetricData</code> operation, if the operation results in such a message. An example of a message that might be returned is <code>Maximum number of allowed metrics exceeded</code>. If there is a message, as much of the operation as possible is still executed.</p>
+    /// <p>A message appears here only if it is related to the global <code>GetMetricData</code> operation. Any message about a specific metric returned by the operation appears in the <code>MetricDataResult</code> object returned for that metric.</p>
+    pub fn get_messages(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageData>> {
+        &self.messages
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -54,6 +54,10 @@ impl IdentityPoolShortDescriptionBuilder {
         self.identity_pool_id = input;
         self
     }
+    /// <p>An identity pool ID in the format REGION:GUID.</p>
+    pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_pool_id
+    }
     /// <p>A string that you provide.</p>
     pub fn identity_pool_name(
         mut self,
@@ -69,6 +73,10 @@ impl IdentityPoolShortDescriptionBuilder {
     ) -> Self {
         self.identity_pool_name = input;
         self
+    }
+    /// <p>A string that you provide.</p>
+    pub fn get_identity_pool_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_pool_name
     }
     /// Consumes the builder and constructs a [`IdentityPoolShortDescription`](crate::types::IdentityPoolShortDescription).
     pub fn build(self) -> crate::types::IdentityPoolShortDescription {

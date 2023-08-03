@@ -36,6 +36,12 @@ impl DescribeChannelFlowFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeChannelFlow as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_channel_flow::builders::DescribeChannelFlowInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl DescribeChannelFlowFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_channel_flow_arn(input);
         self
+    }
+    /// <p>The ARN of the channel flow.</p>
+    pub fn get_channel_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_flow_arn()
     }
 }

@@ -112,6 +112,10 @@ impl StaticImageActivateScheduleActionSettingsBuilder {
         self.duration = input;
         self
     }
+    /// The duration in milliseconds for the image to remain on the video. If omitted or set to 0 the duration is unlimited and the image will remain until it is explicitly deactivated.
+    pub fn get_duration(&self) -> &::std::option::Option<i32> {
+        &self.duration
+    }
     /// The time in milliseconds for the image to fade in. The fade-in starts at the start time of the overlay. Default is 0 (no fade-in).
     pub fn fade_in(mut self, input: i32) -> Self {
         self.fade_in = ::std::option::Option::Some(input);
@@ -121,6 +125,10 @@ impl StaticImageActivateScheduleActionSettingsBuilder {
     pub fn set_fade_in(mut self, input: ::std::option::Option<i32>) -> Self {
         self.fade_in = input;
         self
+    }
+    /// The time in milliseconds for the image to fade in. The fade-in starts at the start time of the overlay. Default is 0 (no fade-in).
+    pub fn get_fade_in(&self) -> &::std::option::Option<i32> {
+        &self.fade_in
     }
     /// Applies only if a duration is specified. The time in milliseconds for the image to fade out. The fade-out starts when the duration time is hit, so it effectively extends the duration. Default is 0 (no fade-out).
     pub fn fade_out(mut self, input: i32) -> Self {
@@ -132,6 +140,10 @@ impl StaticImageActivateScheduleActionSettingsBuilder {
         self.fade_out = input;
         self
     }
+    /// Applies only if a duration is specified. The time in milliseconds for the image to fade out. The fade-out starts when the duration time is hit, so it effectively extends the duration. Default is 0 (no fade-out).
+    pub fn get_fade_out(&self) -> &::std::option::Option<i32> {
+        &self.fade_out
+    }
     /// The height of the image when inserted into the video, in pixels. The overlay will be scaled up or down to the specified height. Leave blank to use the native height of the overlay.
     pub fn height(mut self, input: i32) -> Self {
         self.height = ::std::option::Option::Some(input);
@@ -141,6 +153,10 @@ impl StaticImageActivateScheduleActionSettingsBuilder {
     pub fn set_height(mut self, input: ::std::option::Option<i32>) -> Self {
         self.height = input;
         self
+    }
+    /// The height of the image when inserted into the video, in pixels. The overlay will be scaled up or down to the specified height. Leave blank to use the native height of the overlay.
+    pub fn get_height(&self) -> &::std::option::Option<i32> {
+        &self.height
     }
     /// The location and filename of the image file to overlay on the video. The file must be a 32-bit BMP, PNG, or TGA file, and must not be larger (in pixels) than the input video.
     pub fn image(mut self, input: crate::types::InputLocation) -> Self {
@@ -152,6 +168,10 @@ impl StaticImageActivateScheduleActionSettingsBuilder {
         self.image = input;
         self
     }
+    /// The location and filename of the image file to overlay on the video. The file must be a 32-bit BMP, PNG, or TGA file, and must not be larger (in pixels) than the input video.
+    pub fn get_image(&self) -> &::std::option::Option<crate::types::InputLocation> {
+        &self.image
+    }
     /// Placement of the left edge of the overlay relative to the left edge of the video frame, in pixels. 0 (the default) is the left edge of the frame. If the placement causes the overlay to extend beyond the right edge of the underlying video, then the overlay is cropped on the right.
     pub fn image_x(mut self, input: i32) -> Self {
         self.image_x = ::std::option::Option::Some(input);
@@ -161,6 +181,10 @@ impl StaticImageActivateScheduleActionSettingsBuilder {
     pub fn set_image_x(mut self, input: ::std::option::Option<i32>) -> Self {
         self.image_x = input;
         self
+    }
+    /// Placement of the left edge of the overlay relative to the left edge of the video frame, in pixels. 0 (the default) is the left edge of the frame. If the placement causes the overlay to extend beyond the right edge of the underlying video, then the overlay is cropped on the right.
+    pub fn get_image_x(&self) -> &::std::option::Option<i32> {
+        &self.image_x
     }
     /// Placement of the top edge of the overlay relative to the top edge of the video frame, in pixels. 0 (the default) is the top edge of the frame. If the placement causes the overlay to extend beyond the bottom edge of the underlying video, then the overlay is cropped on the bottom.
     pub fn image_y(mut self, input: i32) -> Self {
@@ -172,6 +196,10 @@ impl StaticImageActivateScheduleActionSettingsBuilder {
         self.image_y = input;
         self
     }
+    /// Placement of the top edge of the overlay relative to the top edge of the video frame, in pixels. 0 (the default) is the top edge of the frame. If the placement causes the overlay to extend beyond the bottom edge of the underlying video, then the overlay is cropped on the bottom.
+    pub fn get_image_y(&self) -> &::std::option::Option<i32> {
+        &self.image_y
+    }
     /// The number of the layer, 0 to 7. There are 8 layers that can be overlaid on the video, each layer with a different image. The layers are in Z order, which means that overlays with higher values of layer are inserted on top of overlays with lower values of layer. Default is 0.
     pub fn layer(mut self, input: i32) -> Self {
         self.layer = ::std::option::Option::Some(input);
@@ -181,6 +209,10 @@ impl StaticImageActivateScheduleActionSettingsBuilder {
     pub fn set_layer(mut self, input: ::std::option::Option<i32>) -> Self {
         self.layer = input;
         self
+    }
+    /// The number of the layer, 0 to 7. There are 8 layers that can be overlaid on the video, each layer with a different image. The layers are in Z order, which means that overlays with higher values of layer are inserted on top of overlays with lower values of layer. Default is 0.
+    pub fn get_layer(&self) -> &::std::option::Option<i32> {
+        &self.layer
     }
     /// Opacity of image where 0 is transparent and 100 is fully opaque. Default is 100.
     pub fn opacity(mut self, input: i32) -> Self {
@@ -192,6 +224,10 @@ impl StaticImageActivateScheduleActionSettingsBuilder {
         self.opacity = input;
         self
     }
+    /// Opacity of image where 0 is transparent and 100 is fully opaque. Default is 100.
+    pub fn get_opacity(&self) -> &::std::option::Option<i32> {
+        &self.opacity
+    }
     /// The width of the image when inserted into the video, in pixels. The overlay will be scaled up or down to the specified width. Leave blank to use the native width of the overlay.
     pub fn width(mut self, input: i32) -> Self {
         self.width = ::std::option::Option::Some(input);
@@ -201,6 +237,10 @@ impl StaticImageActivateScheduleActionSettingsBuilder {
     pub fn set_width(mut self, input: ::std::option::Option<i32>) -> Self {
         self.width = input;
         self
+    }
+    /// The width of the image when inserted into the video, in pixels. The overlay will be scaled up or down to the specified width. Leave blank to use the native width of the overlay.
+    pub fn get_width(&self) -> &::std::option::Option<i32> {
+        &self.width
     }
     /// Consumes the builder and constructs a [`StaticImageActivateScheduleActionSettings`](crate::types::StaticImageActivateScheduleActionSettings).
     pub fn build(self) -> crate::types::StaticImageActivateScheduleActionSettings {

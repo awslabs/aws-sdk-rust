@@ -56,6 +56,10 @@ impl UpdateWorkerFleetInputBuilder {
         self.id = input;
         self
     }
+    /// Full ARN of the worker fleet.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Human friendly name of the resource.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl UpdateWorkerFleetInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// Human friendly name of the resource.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// JSON blob containing additional fixed properties regarding the worker fleet
     pub fn additional_fixed_properties(
@@ -81,6 +89,10 @@ impl UpdateWorkerFleetInputBuilder {
     ) -> Self {
         self.additional_fixed_properties = input;
         self
+    }
+    /// JSON blob containing additional fixed properties regarding the worker fleet
+    pub fn get_additional_fixed_properties(&self) -> &::std::option::Option<::std::string::String> {
+        &self.additional_fixed_properties
     }
     /// Consumes the builder and constructs a [`UpdateWorkerFleetInput`](crate::operation::update_worker_fleet::UpdateWorkerFleetInput).
     pub fn build(

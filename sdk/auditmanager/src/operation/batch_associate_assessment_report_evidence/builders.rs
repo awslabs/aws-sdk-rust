@@ -36,6 +36,10 @@ impl BatchAssociateAssessmentReportEvidenceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchAssociateAssessmentReportEvidence as a reference.
+    pub fn as_input(&self) -> &crate::operation::batch_associate_assessment_report_evidence::builders::BatchAssociateAssessmentReportEvidenceInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl BatchAssociateAssessmentReportEvidenceFluentBuilder {
         self.inner = self.inner.set_assessment_id(input);
         self
     }
+    /// <p> The identifier for the assessment. </p>
+    pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assessment_id()
+    }
     /// <p> The identifier for the folder that the evidence is stored in. </p>
     pub fn evidence_folder_id(
         mut self,
@@ -121,6 +129,10 @@ impl BatchAssociateAssessmentReportEvidenceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_evidence_folder_id(input);
         self
+    }
+    /// <p> The identifier for the folder that the evidence is stored in. </p>
+    pub fn get_evidence_folder_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_evidence_folder_id()
     }
     /// Appends an item to `evidenceIds`.
     ///
@@ -138,5 +150,11 @@ impl BatchAssociateAssessmentReportEvidenceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_evidence_ids(input);
         self
+    }
+    /// <p> The list of evidence identifiers. </p>
+    pub fn get_evidence_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_evidence_ids()
     }
 }

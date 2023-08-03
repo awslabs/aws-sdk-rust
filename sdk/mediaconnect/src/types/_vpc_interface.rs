@@ -82,6 +82,10 @@ impl VpcInterfaceBuilder {
         self.name = input;
         self
     }
+    /// Immutable and has to be a unique against other VpcInterfaces in this Flow.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `network_interface_ids`.
     ///
     /// To override the contents of this collection use [`set_network_interface_ids`](Self::set_network_interface_ids).
@@ -104,6 +108,12 @@ impl VpcInterfaceBuilder {
         self.network_interface_ids = input;
         self
     }
+    /// IDs of the network interfaces created in customer's account by MediaConnect.
+    pub fn get_network_interface_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.network_interface_ids
+    }
     /// The type of network interface.
     pub fn network_interface_type(mut self, input: crate::types::NetworkInterfaceType) -> Self {
         self.network_interface_type = ::std::option::Option::Some(input);
@@ -117,6 +127,12 @@ impl VpcInterfaceBuilder {
         self.network_interface_type = input;
         self
     }
+    /// The type of network interface.
+    pub fn get_network_interface_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkInterfaceType> {
+        &self.network_interface_type
+    }
     /// Role Arn MediaConnect can assumes to create ENIs in customer's account
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -126,6 +142,10 @@ impl VpcInterfaceBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// Role Arn MediaConnect can assumes to create ENIs in customer's account
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Appends an item to `security_group_ids`.
     ///
@@ -149,6 +169,12 @@ impl VpcInterfaceBuilder {
         self.security_group_ids = input;
         self
     }
+    /// Security Group IDs to be used on ENI.
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
+    }
     /// Subnet must be in the AZ of the Flow
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
@@ -158,6 +184,10 @@ impl VpcInterfaceBuilder {
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_id = input;
         self
+    }
+    /// Subnet must be in the AZ of the Flow
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
     }
     /// Consumes the builder and constructs a [`VpcInterface`](crate::types::VpcInterface).
     pub fn build(self) -> crate::types::VpcInterface {

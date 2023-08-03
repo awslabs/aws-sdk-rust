@@ -39,6 +39,12 @@ impl DescribeStreamFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeStream as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_stream::builders::DescribeStreamInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +127,10 @@ impl DescribeStreamFluentBuilder {
         self.inner = self.inner.set_stream_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the stream.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_arn()
+    }
     /// <p>The maximum number of shard objects to return. The upper limit is 100.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -130,6 +140,10 @@ impl DescribeStreamFluentBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
+    }
+    /// <p>The maximum number of shard objects to return. The upper limit is 100.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
     }
     /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>
     pub fn exclusive_start_shard_id(
@@ -146,5 +160,9 @@ impl DescribeStreamFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_exclusive_start_shard_id(input);
         self
+    }
+    /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>
+    pub fn get_exclusive_start_shard_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_exclusive_start_shard_id()
     }
 }

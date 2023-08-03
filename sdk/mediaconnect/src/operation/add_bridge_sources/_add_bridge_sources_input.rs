@@ -50,6 +50,10 @@ impl AddBridgeSourcesInputBuilder {
         self.bridge_arn = input;
         self
     }
+    /// The ARN of the bridge that you want to update.
+    pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bridge_arn
+    }
     /// Appends an item to `sources`.
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
@@ -68,6 +72,12 @@ impl AddBridgeSourcesInputBuilder {
     ) -> Self {
         self.sources = input;
         self
+    }
+    /// The sources that you want to add to this bridge.
+    pub fn get_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddBridgeSourceRequest>> {
+        &self.sources
     }
     /// Consumes the builder and constructs a [`AddBridgeSourcesInput`](crate::operation::add_bridge_sources::AddBridgeSourcesInput).
     pub fn build(

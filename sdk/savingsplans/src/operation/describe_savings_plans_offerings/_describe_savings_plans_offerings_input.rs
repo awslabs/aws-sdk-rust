@@ -152,6 +152,12 @@ impl DescribeSavingsPlansOfferingsInputBuilder {
         self.offering_ids = input;
         self
     }
+    /// <p>The IDs of the offerings.</p>
+    pub fn get_offering_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.offering_ids
+    }
     /// Appends an item to `payment_options`.
     ///
     /// To override the contents of this collection use [`set_payment_options`](Self::set_payment_options).
@@ -171,6 +177,12 @@ impl DescribeSavingsPlansOfferingsInputBuilder {
         self.payment_options = input;
         self
     }
+    /// <p>The payment options.</p>
+    pub fn get_payment_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanPaymentOption>> {
+        &self.payment_options
+    }
     /// <p>The product type.</p>
     pub fn product_type(mut self, input: crate::types::SavingsPlanProductType) -> Self {
         self.product_type = ::std::option::Option::Some(input);
@@ -183,6 +195,10 @@ impl DescribeSavingsPlansOfferingsInputBuilder {
     ) -> Self {
         self.product_type = input;
         self
+    }
+    /// <p>The product type.</p>
+    pub fn get_product_type(&self) -> &::std::option::Option<crate::types::SavingsPlanProductType> {
+        &self.product_type
     }
     /// Appends an item to `plan_types`.
     ///
@@ -203,6 +219,12 @@ impl DescribeSavingsPlansOfferingsInputBuilder {
         self.plan_types = input;
         self
     }
+    /// <p>The plan type.</p>
+    pub fn get_plan_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanType>> {
+        &self.plan_types
+    }
     /// Appends an item to `durations`.
     ///
     /// To override the contents of this collection use [`set_durations`](Self::set_durations).
@@ -218,6 +240,10 @@ impl DescribeSavingsPlansOfferingsInputBuilder {
     pub fn set_durations(mut self, input: ::std::option::Option<::std::vec::Vec<i64>>) -> Self {
         self.durations = input;
         self
+    }
+    /// <p>The durations, in seconds.</p>
+    pub fn get_durations(&self) -> &::std::option::Option<::std::vec::Vec<i64>> {
+        &self.durations
     }
     /// Appends an item to `currencies`.
     ///
@@ -238,6 +264,12 @@ impl DescribeSavingsPlansOfferingsInputBuilder {
         self.currencies = input;
         self
     }
+    /// <p>The currencies.</p>
+    pub fn get_currencies(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CurrencyCode>> {
+        &self.currencies
+    }
     /// Appends an item to `descriptions`.
     ///
     /// To override the contents of this collection use [`set_descriptions`](Self::set_descriptions).
@@ -256,6 +288,12 @@ impl DescribeSavingsPlansOfferingsInputBuilder {
     ) -> Self {
         self.descriptions = input;
         self
+    }
+    /// <p>The descriptions.</p>
+    pub fn get_descriptions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.descriptions
     }
     /// Appends an item to `service_codes`.
     ///
@@ -279,6 +317,12 @@ impl DescribeSavingsPlansOfferingsInputBuilder {
         self.service_codes = input;
         self
     }
+    /// <p>The services.</p>
+    pub fn get_service_codes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.service_codes
+    }
     /// Appends an item to `usage_types`.
     ///
     /// To override the contents of this collection use [`set_usage_types`](Self::set_usage_types).
@@ -298,6 +342,12 @@ impl DescribeSavingsPlansOfferingsInputBuilder {
         self.usage_types = input;
         self
     }
+    /// <p>The usage details of the line item in the billing report.</p>
+    pub fn get_usage_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.usage_types
+    }
     /// Appends an item to `operations`.
     ///
     /// To override the contents of this collection use [`set_operations`](Self::set_operations).
@@ -316,6 +366,10 @@ impl DescribeSavingsPlansOfferingsInputBuilder {
     ) -> Self {
         self.operations = input;
         self
+    }
+    /// <p>The specific AWS operation for the line item in the billing report.</p>
+    pub fn get_operations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.operations
     }
     /// Appends an item to `filters`.
     ///
@@ -338,6 +392,13 @@ impl DescribeSavingsPlansOfferingsInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>The filters.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanOfferingFilterElement>>
+    {
+        &self.filters
+    }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -348,6 +409,10 @@ impl DescribeSavingsPlansOfferingsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -357,6 +422,10 @@ impl DescribeSavingsPlansOfferingsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeSavingsPlansOfferingsInput`](crate::operation::describe_savings_plans_offerings::DescribeSavingsPlansOfferingsInput).
     pub fn build(

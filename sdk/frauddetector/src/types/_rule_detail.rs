@@ -126,6 +126,10 @@ impl RuleDetailBuilder {
         self.rule_id = input;
         self
     }
+    /// <p>The rule ID.</p>
+    pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_id
+    }
     /// <p>The rule description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -135,6 +139,10 @@ impl RuleDetailBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The rule description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The detector for which the rule is associated.</p>
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -146,6 +154,10 @@ impl RuleDetailBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The detector for which the rule is associated.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// <p>The rule version.</p>
     pub fn rule_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_version = ::std::option::Option::Some(input.into());
@@ -155,6 +167,10 @@ impl RuleDetailBuilder {
     pub fn set_rule_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_version = input;
         self
+    }
+    /// <p>The rule version.</p>
+    pub fn get_rule_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_version
     }
     /// <p>The rule expression.</p>
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -166,6 +182,10 @@ impl RuleDetailBuilder {
         self.expression = input;
         self
     }
+    /// <p>The rule expression.</p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expression
+    }
     /// <p>The rule language.</p>
     pub fn language(mut self, input: crate::types::Language) -> Self {
         self.language = ::std::option::Option::Some(input);
@@ -175,6 +195,10 @@ impl RuleDetailBuilder {
     pub fn set_language(mut self, input: ::std::option::Option<crate::types::Language>) -> Self {
         self.language = input;
         self
+    }
+    /// <p>The rule language.</p>
+    pub fn get_language(&self) -> &::std::option::Option<crate::types::Language> {
+        &self.language
     }
     /// Appends an item to `outcomes`.
     ///
@@ -195,6 +219,10 @@ impl RuleDetailBuilder {
         self.outcomes = input;
         self
     }
+    /// <p>The rule outcomes.</p>
+    pub fn get_outcomes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.outcomes
+    }
     /// <p>Timestamp of the last time the rule was updated.</p>
     pub fn last_updated_time(
         mut self,
@@ -211,6 +239,10 @@ impl RuleDetailBuilder {
         self.last_updated_time = input;
         self
     }
+    /// <p>Timestamp of the last time the rule was updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_updated_time
+    }
     /// <p>The timestamp of when the rule was created.</p>
     pub fn created_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_time = ::std::option::Option::Some(input.into());
@@ -221,6 +253,10 @@ impl RuleDetailBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The timestamp of when the rule was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_time
+    }
     /// <p>The rule ARN.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -230,6 +266,10 @@ impl RuleDetailBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The rule ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`RuleDetail`](crate::types::RuleDetail).
     pub fn build(self) -> crate::types::RuleDetail {

@@ -36,6 +36,12 @@ impl UpdateRecommenderFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateRecommender as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_recommender::builders::UpdateRecommenderInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateRecommenderFluentBuilder {
         self.inner = self.inner.set_recommender_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the recommender to modify.</p>
+    pub fn get_recommender_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_recommender_arn()
+    }
     /// <p>The configuration details of the recommender.</p>
     pub fn recommender_config(mut self, input: crate::types::RecommenderConfig) -> Self {
         self.inner = self.inner.recommender_config(input);
@@ -144,5 +154,11 @@ impl UpdateRecommenderFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_recommender_config(input);
         self
+    }
+    /// <p>The configuration details of the recommender.</p>
+    pub fn get_recommender_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecommenderConfig> {
+        self.inner.get_recommender_config()
     }
 }

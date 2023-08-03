@@ -88,6 +88,10 @@ impl VpcEndpointDetailBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier of the endpoint.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the endpoint.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -98,6 +102,10 @@ impl VpcEndpointDetailBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the endpoint.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The ID of the VPC from which you access OpenSearch Serverless.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -107,6 +115,10 @@ impl VpcEndpointDetailBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The ID of the VPC from which you access OpenSearch Serverless.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -126,6 +138,10 @@ impl VpcEndpointDetailBuilder {
     ) -> Self {
         self.subnet_ids = input;
         self
+    }
+    /// <p>The ID of the subnets from which you access OpenSearch Serverless.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
     }
     /// Appends an item to `security_group_ids`.
     ///
@@ -149,6 +165,12 @@ impl VpcEndpointDetailBuilder {
         self.security_group_ids = input;
         self
     }
+    /// <p>The unique identifiers of the security groups that define the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
+    }
     /// <p>The current status of the endpoint.</p>
     pub fn status(mut self, input: crate::types::VpcEndpointStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -162,6 +184,10 @@ impl VpcEndpointDetailBuilder {
         self.status = input;
         self
     }
+    /// <p>The current status of the endpoint.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::VpcEndpointStatus> {
+        &self.status
+    }
     /// <p>The date the endpoint was created.</p>
     pub fn created_date(mut self, input: i64) -> Self {
         self.created_date = ::std::option::Option::Some(input);
@@ -171,6 +197,10 @@ impl VpcEndpointDetailBuilder {
     pub fn set_created_date(mut self, input: ::std::option::Option<i64>) -> Self {
         self.created_date = input;
         self
+    }
+    /// <p>The date the endpoint was created.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<i64> {
+        &self.created_date
     }
     /// Consumes the builder and constructs a [`VpcEndpointDetail`](crate::types::VpcEndpointDetail).
     pub fn build(self) -> crate::types::VpcEndpointDetail {

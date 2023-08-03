@@ -149,6 +149,10 @@ impl EvaluationResultBuilder {
         self.eval_action_name = input;
         self
     }
+    /// <p>The name of the API operation tested on the indicated resource.</p>
+    pub fn get_eval_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.eval_action_name
+    }
     /// <p>The ARN of the resource that the indicated API operation was tested on.</p>
     pub fn eval_resource_name(
         mut self,
@@ -165,6 +169,10 @@ impl EvaluationResultBuilder {
         self.eval_resource_name = input;
         self
     }
+    /// <p>The ARN of the resource that the indicated API operation was tested on.</p>
+    pub fn get_eval_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.eval_resource_name
+    }
     /// <p>The result of the simulation.</p>
     pub fn eval_decision(mut self, input: crate::types::PolicyEvaluationDecisionType) -> Self {
         self.eval_decision = ::std::option::Option::Some(input);
@@ -177,6 +185,12 @@ impl EvaluationResultBuilder {
     ) -> Self {
         self.eval_decision = input;
         self
+    }
+    /// <p>The result of the simulation.</p>
+    pub fn get_eval_decision(
+        &self,
+    ) -> &::std::option::Option<crate::types::PolicyEvaluationDecisionType> {
+        &self.eval_decision
     }
     /// Appends an item to `matched_statements`.
     ///
@@ -196,6 +210,12 @@ impl EvaluationResultBuilder {
     ) -> Self {
         self.matched_statements = input;
         self
+    }
+    /// <p>A list of the statements in the input policies that determine the result for this scenario. Remember that even if multiple statements allow the operation on the resource, if only one statement denies that operation, then the explicit deny overrides any allow. In addition, the deny statement is the only entry included in the result.</p>
+    pub fn get_matched_statements(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Statement>> {
+        &self.matched_statements
     }
     /// Appends an item to `missing_context_values`.
     ///
@@ -219,6 +239,12 @@ impl EvaluationResultBuilder {
         self.missing_context_values = input;
         self
     }
+    /// <p>A list of context keys that are required by the included input policies but that were not provided by one of the input parameters. This list is used when the resource in a simulation is "*", either explicitly, or when the <code>ResourceArns</code> parameter blank. If you include a list of resources, then any missing context values are instead included under the <code>ResourceSpecificResults</code> section. To discover the context keys used by a set of policies, you can call <code>GetContextKeysForCustomPolicy</code> or <code>GetContextKeysForPrincipalPolicy</code>.</p>
+    pub fn get_missing_context_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.missing_context_values
+    }
     /// <p>A structure that details how Organizations and its service control policies affect the results of the simulation. Only applies if the simulated user's account is part of an organization.</p>
     pub fn organizations_decision_detail(
         mut self,
@@ -235,6 +261,12 @@ impl EvaluationResultBuilder {
         self.organizations_decision_detail = input;
         self
     }
+    /// <p>A structure that details how Organizations and its service control policies affect the results of the simulation. Only applies if the simulated user's account is part of an organization.</p>
+    pub fn get_organizations_decision_detail(
+        &self,
+    ) -> &::std::option::Option<crate::types::OrganizationsDecisionDetail> {
+        &self.organizations_decision_detail
+    }
     /// <p>Contains information about the effect that a permissions boundary has on a policy simulation when the boundary is applied to an IAM entity.</p>
     pub fn permissions_boundary_decision_detail(
         mut self,
@@ -250,6 +282,12 @@ impl EvaluationResultBuilder {
     ) -> Self {
         self.permissions_boundary_decision_detail = input;
         self
+    }
+    /// <p>Contains information about the effect that a permissions boundary has on a policy simulation when the boundary is applied to an IAM entity.</p>
+    pub fn get_permissions_boundary_decision_detail(
+        &self,
+    ) -> &::std::option::Option<crate::types::PermissionsBoundaryDecisionDetail> {
+        &self.permissions_boundary_decision_detail
     }
     /// Adds a key-value pair to `eval_decision_details`.
     ///
@@ -285,6 +323,20 @@ impl EvaluationResultBuilder {
         self.eval_decision_details = input;
         self
     }
+    /// <p>Additional details about the results of the cross-account evaluation decision. This parameter is populated for only cross-account simulations. It contains a brief summary of how each policy type contributes to the final evaluation decision.</p>
+    /// <p>If the simulation evaluates policies within the same account and includes a resource ARN, then the parameter is present but the response is empty. If the simulation evaluates policies within the same account and specifies all resources (<code>*</code>), then the parameter is not returned.</p>
+    /// <p>When you make a cross-account request, Amazon Web Services evaluates the request in the trusting account and the trusted account. The request is allowed only if both evaluations return <code>true</code>. For more information about how policies are evaluated, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics">Evaluating policies within a single account</a>.</p>
+    /// <p>If an Organizations SCP included in the evaluation denies access, the simulation ends. In this case, policy evaluation does not proceed any further and this parameter is not returned.</p>
+    pub fn get_eval_decision_details(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::PolicyEvaluationDecisionType,
+        >,
+    > {
+        &self.eval_decision_details
+    }
     /// Appends an item to `resource_specific_results`.
     ///
     /// To override the contents of this collection use [`set_resource_specific_results`](Self::set_resource_specific_results).
@@ -306,6 +358,12 @@ impl EvaluationResultBuilder {
     ) -> Self {
         self.resource_specific_results = input;
         self
+    }
+    /// <p>The individual results of the simulation of the API operation specified in EvalActionName on each resource.</p>
+    pub fn get_resource_specific_results(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceSpecificResult>> {
+        &self.resource_specific_results
     }
     /// Consumes the builder and constructs a [`EvaluationResult`](crate::types::EvaluationResult).
     pub fn build(self) -> crate::types::EvaluationResult {

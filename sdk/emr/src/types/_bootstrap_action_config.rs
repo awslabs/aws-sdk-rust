@@ -51,6 +51,10 @@ impl BootstrapActionConfigBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the bootstrap action.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The script run by the bootstrap action.</p>
     pub fn script_bootstrap_action(
         mut self,
@@ -66,6 +70,12 @@ impl BootstrapActionConfigBuilder {
     ) -> Self {
         self.script_bootstrap_action = input;
         self
+    }
+    /// <p>The script run by the bootstrap action.</p>
+    pub fn get_script_bootstrap_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScriptBootstrapActionConfig> {
+        &self.script_bootstrap_action
     }
     /// Consumes the builder and constructs a [`BootstrapActionConfig`](crate::types::BootstrapActionConfig).
     pub fn build(self) -> crate::types::BootstrapActionConfig {

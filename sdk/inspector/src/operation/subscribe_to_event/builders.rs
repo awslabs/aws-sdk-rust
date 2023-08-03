@@ -36,6 +36,12 @@ impl SubscribeToEventFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SubscribeToEvent as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::subscribe_to_event::builders::SubscribeToEventInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl SubscribeToEventFluentBuilder {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
+    /// <p>The ARN of the assessment template that is used during the event for which you want to receive SNS notifications.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
+    }
     /// <p>The event for which you want to receive SNS notifications.</p>
     pub fn event(mut self, input: crate::types::InspectorEvent) -> Self {
         self.inner = self.inner.event(input);
@@ -136,6 +146,10 @@ impl SubscribeToEventFluentBuilder {
         self.inner = self.inner.set_event(input);
         self
     }
+    /// <p>The event for which you want to receive SNS notifications.</p>
+    pub fn get_event(&self) -> &::std::option::Option<crate::types::InspectorEvent> {
+        self.inner.get_event()
+    }
     /// <p>The ARN of the SNS topic to which the SNS notifications are sent.</p>
     pub fn topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.topic_arn(input.into());
@@ -145,5 +159,9 @@ impl SubscribeToEventFluentBuilder {
     pub fn set_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_topic_arn(input);
         self
+    }
+    /// <p>The ARN of the SNS topic to which the SNS notifications are sent.</p>
+    pub fn get_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_topic_arn()
     }
 }

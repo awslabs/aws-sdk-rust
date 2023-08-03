@@ -54,6 +54,10 @@ impl DataflowEndpointListItemBuilder {
         self.dataflow_endpoint_group_id = input;
         self
     }
+    /// <p>UUID of a dataflow endpoint group.</p>
+    pub fn get_dataflow_endpoint_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataflow_endpoint_group_id
+    }
     /// <p>ARN of a dataflow endpoint group.</p>
     pub fn dataflow_endpoint_group_arn(
         mut self,
@@ -69,6 +73,10 @@ impl DataflowEndpointListItemBuilder {
     ) -> Self {
         self.dataflow_endpoint_group_arn = input;
         self
+    }
+    /// <p>ARN of a dataflow endpoint group.</p>
+    pub fn get_dataflow_endpoint_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataflow_endpoint_group_arn
     }
     /// Consumes the builder and constructs a [`DataflowEndpointListItem`](crate::types::DataflowEndpointListItem).
     pub fn build(self) -> crate::types::DataflowEndpointListItem {

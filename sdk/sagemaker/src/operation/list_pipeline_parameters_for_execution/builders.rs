@@ -36,6 +36,10 @@ impl ListPipelineParametersForExecutionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListPipelineParametersForExecution as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_pipeline_parameters_for_execution::builders::ListPipelineParametersForExecutionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -112,6 +116,10 @@ impl ListPipelineParametersForExecutionFluentBuilder {
         self.inner = self.inner.set_pipeline_execution_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    pub fn get_pipeline_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pipeline_execution_arn()
+    }
     /// <p>If the result of the previous <code>ListPipelineParametersForExecution</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of parameters, use the token in the next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -122,6 +130,10 @@ impl ListPipelineParametersForExecutionFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>If the result of the previous <code>ListPipelineParametersForExecution</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of parameters, use the token in the next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of parameters to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -131,5 +143,9 @@ impl ListPipelineParametersForExecutionFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of parameters to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

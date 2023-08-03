@@ -40,6 +40,10 @@ impl StopExecutionTriggerBuilder {
         self.reason = input;
         self
     }
+    /// <p>The user-specified reason the pipeline was stopped.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
+    }
     /// Consumes the builder and constructs a [`StopExecutionTrigger`](crate::types::StopExecutionTrigger).
     pub fn build(self) -> crate::types::StopExecutionTrigger {
         crate::types::StopExecutionTrigger {

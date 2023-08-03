@@ -47,6 +47,10 @@ impl ServerSideEncryptionConfigurationBuilder {
         self.kms_key_arn = input;
         self
     }
+    /// <p>The ARN of the KMS key used to encrypt the enrollment data in a voice profile domain. Asymmetric customer managed keys are not supported.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
+    }
     /// Consumes the builder and constructs a [`ServerSideEncryptionConfiguration`](crate::types::ServerSideEncryptionConfiguration).
     pub fn build(self) -> crate::types::ServerSideEncryptionConfiguration {
         crate::types::ServerSideEncryptionConfiguration {

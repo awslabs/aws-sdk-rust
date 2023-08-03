@@ -36,6 +36,13 @@ impl UpdateAccountSettingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAccountSettings as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_account_settings::builders::UpdateAccountSettingsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +141,11 @@ impl UpdateAccountSettingsFluentBuilder {
         self.inner = self.inner.set_pipeline_service_role_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed provisioning.</p>
+    /// <p>To remove a previously configured ARN, specify an empty string.</p>
+    pub fn get_pipeline_service_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pipeline_service_role_arn()
+    }
     /// <p>A linked repository for pipeline provisioning. Specify it if you have environments configured for self-managed provisioning with services that include pipelines. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
     /// <p>To remove a previously configured repository, set <code>deletePipelineProvisioningRepository</code> to <code>true</code>, and don't set <code>pipelineProvisioningRepository</code>.</p>
     pub fn pipeline_provisioning_repository(
@@ -152,6 +164,13 @@ impl UpdateAccountSettingsFluentBuilder {
         self.inner = self.inner.set_pipeline_provisioning_repository(input);
         self
     }
+    /// <p>A linked repository for pipeline provisioning. Specify it if you have environments configured for self-managed provisioning with services that include pipelines. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
+    /// <p>To remove a previously configured repository, set <code>deletePipelineProvisioningRepository</code> to <code>true</code>, and don't set <code>pipelineProvisioningRepository</code>.</p>
+    pub fn get_pipeline_provisioning_repository(
+        &self,
+    ) -> &::std::option::Option<crate::types::RepositoryBranchInput> {
+        self.inner.get_pipeline_provisioning_repository()
+    }
     /// <p>Set to <code>true</code> to remove a configured pipeline repository from the account settings. Don't set this field if you are updating the configured pipeline repository.</p>
     pub fn delete_pipeline_provisioning_repository(mut self, input: bool) -> Self {
         self.inner = self.inner.delete_pipeline_provisioning_repository(input);
@@ -166,6 +185,10 @@ impl UpdateAccountSettingsFluentBuilder {
             .inner
             .set_delete_pipeline_provisioning_repository(input);
         self
+    }
+    /// <p>Set to <code>true</code> to remove a configured pipeline repository from the account settings. Don't set this field if you are updating the configured pipeline repository.</p>
+    pub fn get_delete_pipeline_provisioning_repository(&self) -> &::std::option::Option<bool> {
+        self.inner.get_delete_pipeline_provisioning_repository()
     }
     /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Proton assumes this role for CodeBuild-based provisioning.</p>
     pub fn pipeline_codebuild_role_arn(
@@ -182,5 +205,9 @@ impl UpdateAccountSettingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_pipeline_codebuild_role_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Proton assumes this role for CodeBuild-based provisioning.</p>
+    pub fn get_pipeline_codebuild_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pipeline_codebuild_role_arn()
     }
 }

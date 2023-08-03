@@ -58,6 +58,10 @@ impl AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetailsBuilder {
         self.container_port = input;
         self
     }
+    /// <p>The port number on the container that is bound to the user-specified or automatically assigned host port.</p>
+    pub fn get_container_port(&self) -> &::std::option::Option<i32> {
+        &self.container_port
+    }
     /// <p>The port number on the container instance to reserve for the container.</p>
     pub fn host_port(mut self, input: i32) -> Self {
         self.host_port = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetailsBuilder {
         self.host_port = input;
         self
     }
+    /// <p>The port number on the container instance to reserve for the container.</p>
+    pub fn get_host_port(&self) -> &::std::option::Option<i32> {
+        &self.host_port
+    }
     /// <p>The protocol used for the port mapping. The default is <code>tcp</code>.</p>
     pub fn protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protocol = ::std::option::Option::Some(input.into());
@@ -77,6 +85,10 @@ impl AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetailsBuilder {
     pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.protocol = input;
         self
+    }
+    /// <p>The protocol used for the port mapping. The default is <code>tcp</code>.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<::std::string::String> {
+        &self.protocol
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails).
     pub fn build(

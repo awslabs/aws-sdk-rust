@@ -39,6 +39,10 @@ impl StopInferenceRecommendationsJobInputBuilder {
         self.job_name = input;
         self
     }
+    /// <p>The name of the job you want to stop.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
+    }
     /// Consumes the builder and constructs a [`StopInferenceRecommendationsJobInput`](crate::operation::stop_inference_recommendations_job::StopInferenceRecommendationsJobInput).
     pub fn build(
         self,

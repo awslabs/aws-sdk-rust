@@ -64,6 +64,10 @@ impl DeliveryStreamEncryptionConfigurationBuilder {
         self.key_arn = input;
         self
     }
+    /// <p>If <code>KeyType</code> is <code>CUSTOMER_MANAGED_CMK</code>, this field contains the ARN of the customer managed CMK. If <code>KeyType</code> is <code>Amazon Web Services_OWNED_CMK</code>, <code>DeliveryStreamEncryptionConfiguration</code> doesn't contain a value for <code>KeyARN</code>.</p>
+    pub fn get_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_arn
+    }
     /// <p>Indicates the type of customer master key (CMK) that is used for encryption. The default setting is <code>Amazon Web Services_OWNED_CMK</code>. For more information about CMKs, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys (CMKs)</a>.</p>
     pub fn key_type(mut self, input: crate::types::KeyType) -> Self {
         self.key_type = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl DeliveryStreamEncryptionConfigurationBuilder {
     pub fn set_key_type(mut self, input: ::std::option::Option<crate::types::KeyType>) -> Self {
         self.key_type = input;
         self
+    }
+    /// <p>Indicates the type of customer master key (CMK) that is used for encryption. The default setting is <code>Amazon Web Services_OWNED_CMK</code>. For more information about CMKs, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys (CMKs)</a>.</p>
+    pub fn get_key_type(&self) -> &::std::option::Option<crate::types::KeyType> {
+        &self.key_type
     }
     /// <p>This is the server-side encryption (SSE) status for the delivery stream. For a full description of the different values of this status, see <code>StartDeliveryStreamEncryption</code> and <code>StopDeliveryStreamEncryption</code>. If this status is <code>ENABLING_FAILED</code> or <code>DISABLING_FAILED</code>, it is the status of the most recent attempt to enable or disable SSE, respectively.</p>
     pub fn status(mut self, input: crate::types::DeliveryStreamEncryptionStatus) -> Self {
@@ -87,6 +95,12 @@ impl DeliveryStreamEncryptionConfigurationBuilder {
         self.status = input;
         self
     }
+    /// <p>This is the server-side encryption (SSE) status for the delivery stream. For a full description of the different values of this status, see <code>StartDeliveryStreamEncryption</code> and <code>StopDeliveryStreamEncryption</code>. If this status is <code>ENABLING_FAILED</code> or <code>DISABLING_FAILED</code>, it is the status of the most recent attempt to enable or disable SSE, respectively.</p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeliveryStreamEncryptionStatus> {
+        &self.status
+    }
     /// <p>Provides details in case one of the following operations fails due to an error related to KMS: <code>CreateDeliveryStream</code>, <code>DeleteDeliveryStream</code>, <code>StartDeliveryStreamEncryption</code>, <code>StopDeliveryStreamEncryption</code>.</p>
     pub fn failure_description(mut self, input: crate::types::FailureDescription) -> Self {
         self.failure_description = ::std::option::Option::Some(input);
@@ -99,6 +113,12 @@ impl DeliveryStreamEncryptionConfigurationBuilder {
     ) -> Self {
         self.failure_description = input;
         self
+    }
+    /// <p>Provides details in case one of the following operations fails due to an error related to KMS: <code>CreateDeliveryStream</code>, <code>DeleteDeliveryStream</code>, <code>StartDeliveryStreamEncryption</code>, <code>StopDeliveryStreamEncryption</code>.</p>
+    pub fn get_failure_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::FailureDescription> {
+        &self.failure_description
     }
     /// Consumes the builder and constructs a [`DeliveryStreamEncryptionConfiguration`](crate::types::DeliveryStreamEncryptionConfiguration).
     pub fn build(self) -> crate::types::DeliveryStreamEncryptionConfiguration {

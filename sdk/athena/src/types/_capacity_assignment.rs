@@ -52,6 +52,12 @@ impl CapacityAssignmentBuilder {
         self.work_group_names = input;
         self
     }
+    /// <p>The list of workgroup names for the capacity assignment.</p>
+    pub fn get_work_group_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.work_group_names
+    }
     /// Consumes the builder and constructs a [`CapacityAssignment`](crate::types::CapacityAssignment).
     pub fn build(self) -> crate::types::CapacityAssignment {
         crate::types::CapacityAssignment {

@@ -55,6 +55,10 @@ impl TagQueueInputBuilder {
         self.queue_url = input;
         self
     }
+    /// <p>The URL of the queue.</p>
+    pub fn get_queue_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.queue_url
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -79,6 +83,14 @@ impl TagQueueInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The list of tags to be added to the specified queue.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`TagQueueInput`](crate::operation::tag_queue::TagQueueInput).
     pub fn build(

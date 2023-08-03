@@ -44,6 +44,10 @@ impl GetDefaultPatchBaselineInputBuilder {
         self.operating_system = input;
         self
     }
+    /// <p>Returns the default patch baseline for the specified operating system.</p>
+    pub fn get_operating_system(&self) -> &::std::option::Option<crate::types::OperatingSystem> {
+        &self.operating_system
+    }
     /// Consumes the builder and constructs a [`GetDefaultPatchBaselineInput`](crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineInput).
     pub fn build(
         self,

@@ -55,6 +55,13 @@ impl EmergencyCallingConfigurationBuilder {
         self.dnis = input;
         self
     }
+    /// <p>The Dialed Number Identification Service (DNIS) emergency calling configuration details.</p>
+    pub fn get_dnis(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DnisEmergencyCallingConfiguration>>
+    {
+        &self.dnis
+    }
     /// Consumes the builder and constructs a [`EmergencyCallingConfiguration`](crate::types::EmergencyCallingConfiguration).
     pub fn build(self) -> crate::types::EmergencyCallingConfiguration {
         crate::types::EmergencyCallingConfiguration { dnis: self.dnis }

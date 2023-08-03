@@ -69,6 +69,10 @@ impl ListReadSetActivationJobsInputBuilder {
         self.sequence_store_id = input;
         self
     }
+    /// <p>The read set's sequence store ID.</p>
+    pub fn get_sequence_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sequence_store_id
+    }
     /// <p>The maximum number of read set activation jobs to return in one page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -79,6 +83,10 @@ impl ListReadSetActivationJobsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of read set activation jobs to return in one page of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -88,6 +96,10 @@ impl ListReadSetActivationJobsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>A filter to apply to the list.</p>
     pub fn filter(mut self, input: crate::types::ActivateReadSetFilter) -> Self {
@@ -101,6 +113,10 @@ impl ListReadSetActivationJobsInputBuilder {
     ) -> Self {
         self.filter = input;
         self
+    }
+    /// <p>A filter to apply to the list.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::ActivateReadSetFilter> {
+        &self.filter
     }
     /// Consumes the builder and constructs a [`ListReadSetActivationJobsInput`](crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsInput).
     pub fn build(

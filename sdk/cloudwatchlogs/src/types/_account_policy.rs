@@ -82,6 +82,10 @@ impl AccountPolicyBuilder {
         self.policy_name = input;
         self
     }
+    /// <p>The name of the account policy.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_name
+    }
     /// <p>The policy document for this account policy.</p>
     /// <p>The JSON specified in <code>policyDocument</code> can be up to 30,720 characters.</p>
     pub fn policy_document(
@@ -100,6 +104,11 @@ impl AccountPolicyBuilder {
         self.policy_document = input;
         self
     }
+    /// <p>The policy document for this account policy.</p>
+    /// <p>The JSON specified in <code>policyDocument</code> can be up to 30,720 characters.</p>
+    pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_document
+    }
     /// <p>The date and time that this policy was most recently updated.</p>
     pub fn last_updated_time(mut self, input: i64) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -109,6 +118,10 @@ impl AccountPolicyBuilder {
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.last_updated_time = input;
         self
+    }
+    /// <p>The date and time that this policy was most recently updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<i64> {
+        &self.last_updated_time
     }
     /// <p>The type of policy for this account policy.</p>
     pub fn policy_type(mut self, input: crate::types::PolicyType) -> Self {
@@ -123,6 +136,10 @@ impl AccountPolicyBuilder {
         self.policy_type = input;
         self
     }
+    /// <p>The type of policy for this account policy.</p>
+    pub fn get_policy_type(&self) -> &::std::option::Option<crate::types::PolicyType> {
+        &self.policy_type
+    }
     /// <p>The scope of the account policy.</p>
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
         self.scope = ::std::option::Option::Some(input);
@@ -133,6 +150,10 @@ impl AccountPolicyBuilder {
         self.scope = input;
         self
     }
+    /// <p>The scope of the account policy.</p>
+    pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
+        &self.scope
+    }
     /// <p>The Amazon Web Services account ID that the policy applies to.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -142,6 +163,10 @@ impl AccountPolicyBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>The Amazon Web Services account ID that the policy applies to.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// Consumes the builder and constructs a [`AccountPolicy`](crate::types::AccountPolicy).
     pub fn build(self) -> crate::types::AccountPolicy {

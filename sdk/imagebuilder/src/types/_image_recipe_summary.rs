@@ -96,6 +96,10 @@ impl ImageRecipeSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the image recipe.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the image recipe.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl ImageRecipeSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the image recipe.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The platform of the image recipe.</p>
     pub fn platform(mut self, input: crate::types::Platform) -> Self {
@@ -116,6 +124,10 @@ impl ImageRecipeSummaryBuilder {
         self.platform = input;
         self
     }
+    /// <p>The platform of the image recipe.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<crate::types::Platform> {
+        &self.platform
+    }
     /// <p>The owner of the image recipe.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner = ::std::option::Option::Some(input.into());
@@ -125,6 +137,10 @@ impl ImageRecipeSummaryBuilder {
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner = input;
         self
+    }
+    /// <p>The owner of the image recipe.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
     }
     /// <p>The base image of the image recipe.</p>
     pub fn parent_image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -136,6 +152,10 @@ impl ImageRecipeSummaryBuilder {
         self.parent_image = input;
         self
     }
+    /// <p>The base image of the image recipe.</p>
+    pub fn get_parent_image(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_image
+    }
     /// <p>The date on which this image recipe was created.</p>
     pub fn date_created(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.date_created = ::std::option::Option::Some(input.into());
@@ -145,6 +165,10 @@ impl ImageRecipeSummaryBuilder {
     pub fn set_date_created(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.date_created = input;
         self
+    }
+    /// <p>The date on which this image recipe was created.</p>
+    pub fn get_date_created(&self) -> &::std::option::Option<::std::string::String> {
+        &self.date_created
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -170,6 +194,14 @@ impl ImageRecipeSummaryBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags of the image recipe.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`ImageRecipeSummary`](crate::types::ImageRecipeSummary).
     pub fn build(self) -> crate::types::ImageRecipeSummary {

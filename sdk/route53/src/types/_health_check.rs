@@ -84,6 +84,10 @@ impl HealthCheckBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier that Amazon Route 53 assigned to the health check when you created it. When you add or update a resource record set, you use this value to specify which health check to use. The value can be up to 64 characters long. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>A unique string that you specified when you created the health check.</p>
     pub fn caller_reference(
         mut self,
@@ -100,6 +104,10 @@ impl HealthCheckBuilder {
         self.caller_reference = input;
         self
     }
+    /// <p>A unique string that you specified when you created the health check.</p>
+    pub fn get_caller_reference(&self) -> &::std::option::Option<::std::string::String> {
+        &self.caller_reference
+    }
     /// <p>If the health check was created by another service, the service that created the health check. When a health check is created by another service, you can't edit or delete it using Amazon Route 53. </p>
     pub fn linked_service(mut self, input: crate::types::LinkedService) -> Self {
         self.linked_service = ::std::option::Option::Some(input);
@@ -112,6 +120,10 @@ impl HealthCheckBuilder {
     ) -> Self {
         self.linked_service = input;
         self
+    }
+    /// <p>If the health check was created by another service, the service that created the health check. When a health check is created by another service, you can't edit or delete it using Amazon Route 53. </p>
+    pub fn get_linked_service(&self) -> &::std::option::Option<crate::types::LinkedService> {
+        &self.linked_service
     }
     /// <p>A complex type that contains detailed information about one health check.</p>
     pub fn health_check_config(mut self, input: crate::types::HealthCheckConfig) -> Self {
@@ -126,6 +138,12 @@ impl HealthCheckBuilder {
         self.health_check_config = input;
         self
     }
+    /// <p>A complex type that contains detailed information about one health check.</p>
+    pub fn get_health_check_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::HealthCheckConfig> {
+        &self.health_check_config
+    }
     /// <p>The version of the health check. You can optionally pass this value in a call to <code>UpdateHealthCheck</code> to prevent overwriting another change to the health check.</p>
     pub fn health_check_version(mut self, input: i64) -> Self {
         self.health_check_version = ::std::option::Option::Some(input);
@@ -135,6 +153,10 @@ impl HealthCheckBuilder {
     pub fn set_health_check_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.health_check_version = input;
         self
+    }
+    /// <p>The version of the health check. You can optionally pass this value in a call to <code>UpdateHealthCheck</code> to prevent overwriting another change to the health check.</p>
+    pub fn get_health_check_version(&self) -> &::std::option::Option<i64> {
+        &self.health_check_version
     }
     /// <p>A complex type that contains information about the CloudWatch alarm that Amazon Route 53 is monitoring for this health check.</p>
     pub fn cloud_watch_alarm_configuration(
@@ -151,6 +173,12 @@ impl HealthCheckBuilder {
     ) -> Self {
         self.cloud_watch_alarm_configuration = input;
         self
+    }
+    /// <p>A complex type that contains information about the CloudWatch alarm that Amazon Route 53 is monitoring for this health check.</p>
+    pub fn get_cloud_watch_alarm_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudWatchAlarmConfiguration> {
+        &self.cloud_watch_alarm_configuration
     }
     /// Consumes the builder and constructs a [`HealthCheck`](crate::types::HealthCheck).
     pub fn build(self) -> crate::types::HealthCheck {

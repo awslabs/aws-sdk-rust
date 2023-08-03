@@ -85,6 +85,14 @@ impl QuerySchemaVersionMetadataOutputBuilder {
         self.metadata_info_map = input;
         self
     }
+    /// <p>A map of a metadata key and associated values.</p>
+    pub fn get_metadata_info_map(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::MetadataInfo>,
+    > {
+        &self.metadata_info_map
+    }
     /// <p>The unique version ID of the schema version.</p>
     pub fn schema_version_id(
         mut self,
@@ -101,6 +109,10 @@ impl QuerySchemaVersionMetadataOutputBuilder {
         self.schema_version_id = input;
         self
     }
+    /// <p>The unique version ID of the schema version.</p>
+    pub fn get_schema_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_version_id
+    }
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -110,6 +122,10 @@ impl QuerySchemaVersionMetadataOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

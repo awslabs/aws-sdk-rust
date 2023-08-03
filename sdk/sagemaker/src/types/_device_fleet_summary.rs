@@ -70,6 +70,10 @@ impl DeviceFleetSummaryBuilder {
         self.device_fleet_arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the device fleet.</p>
+    pub fn get_device_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_fleet_arn
+    }
     /// <p>Name of the device fleet.</p>
     pub fn device_fleet_name(
         mut self,
@@ -86,6 +90,10 @@ impl DeviceFleetSummaryBuilder {
         self.device_fleet_name = input;
         self
     }
+    /// <p>Name of the device fleet.</p>
+    pub fn get_device_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_fleet_name
+    }
     /// <p>Timestamp of when the device fleet was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -99,6 +107,10 @@ impl DeviceFleetSummaryBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>Timestamp of when the device fleet was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>Timestamp of when the device fleet was last updated.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -111,6 +123,10 @@ impl DeviceFleetSummaryBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>Timestamp of when the device fleet was last updated.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// Consumes the builder and constructs a [`DeviceFleetSummary`](crate::types::DeviceFleetSummary).
     pub fn build(self) -> crate::types::DeviceFleetSummary {

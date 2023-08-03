@@ -40,6 +40,10 @@ impl ProgressEventBuilder {
         self.details = input;
         self
     }
+    /// <p>The Progress event details.</p>
+    pub fn get_details(&self) -> &::std::option::Option<crate::types::Progress> {
+        &self.details
+    }
     /// Consumes the builder and constructs a [`ProgressEvent`](crate::types::ProgressEvent).
     pub fn build(self) -> crate::types::ProgressEvent {
         crate::types::ProgressEvent {

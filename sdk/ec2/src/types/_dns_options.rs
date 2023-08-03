@@ -51,6 +51,10 @@ impl DnsOptionsBuilder {
         self.dns_record_ip_type = input;
         self
     }
+    /// <p>The DNS records created for the endpoint.</p>
+    pub fn get_dns_record_ip_type(&self) -> &::std::option::Option<crate::types::DnsRecordIpType> {
+        &self.dns_record_ip_type
+    }
     /// <p>Indicates whether to enable private DNS only for inbound endpoints.</p>
     pub fn private_dns_only_for_inbound_resolver_endpoint(mut self, input: bool) -> Self {
         self.private_dns_only_for_inbound_resolver_endpoint = ::std::option::Option::Some(input);
@@ -63,6 +67,12 @@ impl DnsOptionsBuilder {
     ) -> Self {
         self.private_dns_only_for_inbound_resolver_endpoint = input;
         self
+    }
+    /// <p>Indicates whether to enable private DNS only for inbound endpoints.</p>
+    pub fn get_private_dns_only_for_inbound_resolver_endpoint(
+        &self,
+    ) -> &::std::option::Option<bool> {
+        &self.private_dns_only_for_inbound_resolver_endpoint
     }
     /// Consumes the builder and constructs a [`DnsOptions`](crate::types::DnsOptions).
     pub fn build(self) -> crate::types::DnsOptions {

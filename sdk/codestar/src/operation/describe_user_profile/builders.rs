@@ -36,6 +36,12 @@ impl DescribeUserProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeUserProfile as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_user_profile::builders::DescribeUserProfileInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +131,9 @@ impl DescribeUserProfileFluentBuilder {
     pub fn set_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user.</p>
+    pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_arn()
     }
 }

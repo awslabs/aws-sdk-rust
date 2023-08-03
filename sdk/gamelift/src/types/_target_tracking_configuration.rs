@@ -41,6 +41,10 @@ impl TargetTrackingConfigurationBuilder {
         self.target_value = input;
         self
     }
+    /// <p>Desired value to use with a game server group target-based scaling policy. </p>
+    pub fn get_target_value(&self) -> &::std::option::Option<f64> {
+        &self.target_value
+    }
     /// Consumes the builder and constructs a [`TargetTrackingConfiguration`](crate::types::TargetTrackingConfiguration).
     pub fn build(self) -> crate::types::TargetTrackingConfiguration {
         crate::types::TargetTrackingConfiguration {

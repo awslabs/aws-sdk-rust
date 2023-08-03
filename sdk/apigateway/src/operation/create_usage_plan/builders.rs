@@ -36,6 +36,12 @@ impl CreateUsagePlanFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateUsagePlan as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_usage_plan::builders::CreateUsagePlanInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateUsagePlanFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the usage plan.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The description of the usage plan.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -135,6 +145,10 @@ impl CreateUsagePlanFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the usage plan.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `apiStages`.
     ///
@@ -153,6 +167,12 @@ impl CreateUsagePlanFluentBuilder {
         self.inner = self.inner.set_api_stages(input);
         self
     }
+    /// <p>The associated API stages of the usage plan.</p>
+    pub fn get_api_stages(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApiStage>> {
+        self.inner.get_api_stages()
+    }
     /// <p>The throttling limits of the usage plan.</p>
     pub fn throttle(mut self, input: crate::types::ThrottleSettings) -> Self {
         self.inner = self.inner.throttle(input);
@@ -166,6 +186,10 @@ impl CreateUsagePlanFluentBuilder {
         self.inner = self.inner.set_throttle(input);
         self
     }
+    /// <p>The throttling limits of the usage plan.</p>
+    pub fn get_throttle(&self) -> &::std::option::Option<crate::types::ThrottleSettings> {
+        self.inner.get_throttle()
+    }
     /// <p>The quota of the usage plan.</p>
     pub fn quota(mut self, input: crate::types::QuotaSettings) -> Self {
         self.inner = self.inner.quota(input);
@@ -175,6 +199,10 @@ impl CreateUsagePlanFluentBuilder {
     pub fn set_quota(mut self, input: ::std::option::Option<crate::types::QuotaSettings>) -> Self {
         self.inner = self.inner.set_quota(input);
         self
+    }
+    /// <p>The quota of the usage plan.</p>
+    pub fn get_quota(&self) -> &::std::option::Option<crate::types::QuotaSettings> {
+        self.inner.get_quota()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -198,5 +226,13 @@ impl CreateUsagePlanFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

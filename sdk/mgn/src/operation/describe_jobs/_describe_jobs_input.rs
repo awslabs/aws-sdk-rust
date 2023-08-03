@@ -66,6 +66,10 @@ impl DescribeJobsInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>Request to describe Job log filters.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::DescribeJobsRequestFilters> {
+        &self.filters
+    }
     /// <p>Request to describe job log items by max results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl DescribeJobsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>Request to describe job log items by max results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>Request to describe job log items by next token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -86,6 +94,10 @@ impl DescribeJobsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Request to describe job log items by next token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>Request to describe job log items by Account ID.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -95,6 +107,10 @@ impl DescribeJobsInputBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>Request to describe job log items by Account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// Consumes the builder and constructs a [`DescribeJobsInput`](crate::operation::describe_jobs::DescribeJobsInput).
     pub fn build(

@@ -55,6 +55,10 @@ impl UpdateBotInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The bot ID.</p>
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl UpdateBotInputBuilder {
         self.bot_id = input;
         self
     }
+    /// <p>The bot ID.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
     /// <p>When true, stops the specified bot from running in your account.</p>
     pub fn disabled(mut self, input: bool) -> Self {
         self.disabled = ::std::option::Option::Some(input);
@@ -74,6 +82,10 @@ impl UpdateBotInputBuilder {
     pub fn set_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disabled = input;
         self
+    }
+    /// <p>When true, stops the specified bot from running in your account.</p>
+    pub fn get_disabled(&self) -> &::std::option::Option<bool> {
+        &self.disabled
     }
     /// Consumes the builder and constructs a [`UpdateBotInput`](crate::operation::update_bot::UpdateBotInput).
     pub fn build(

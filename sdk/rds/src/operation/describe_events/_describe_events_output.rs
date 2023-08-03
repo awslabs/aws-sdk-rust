@@ -55,6 +55,10 @@ impl DescribeEventsOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p>An optional pagination token provided by a previous Events request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// Appends an item to `events`.
     ///
     /// To override the contents of this collection use [`set_events`](Self::set_events).
@@ -73,6 +77,10 @@ impl DescribeEventsOutputBuilder {
     ) -> Self {
         self.events = input;
         self
+    }
+    /// <p>A list of <code>Event</code> instances.</p>
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Event>> {
+        &self.events
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -62,6 +62,10 @@ impl GetManagedEndpointSessionCredentialsOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the session token returned.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The structure containing the session credentials.</p>
     pub fn credentials(mut self, input: crate::types::Credentials) -> Self {
         self.credentials = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl GetManagedEndpointSessionCredentialsOutputBuilder {
         self.credentials = input;
         self
     }
+    /// <p>The structure containing the session credentials.</p>
+    pub fn get_credentials(&self) -> &::std::option::Option<crate::types::Credentials> {
+        &self.credentials
+    }
     /// <p>The date and time when the session token will expire.</p>
     pub fn expires_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expires_at = ::std::option::Option::Some(input);
@@ -87,6 +95,10 @@ impl GetManagedEndpointSessionCredentialsOutputBuilder {
     ) -> Self {
         self.expires_at = input;
         self
+    }
+    /// <p>The date and time when the session token will expire.</p>
+    pub fn get_expires_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expires_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

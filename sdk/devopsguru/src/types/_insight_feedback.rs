@@ -48,6 +48,10 @@ impl InsightFeedbackBuilder {
         self.id = input;
         self
     }
+    /// <p> The insight feedback ID. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p> The feedback provided by the customer. </p>
     pub fn feedback(mut self, input: crate::types::InsightFeedbackOption) -> Self {
         self.feedback = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl InsightFeedbackBuilder {
     ) -> Self {
         self.feedback = input;
         self
+    }
+    /// <p> The feedback provided by the customer. </p>
+    pub fn get_feedback(&self) -> &::std::option::Option<crate::types::InsightFeedbackOption> {
+        &self.feedback
     }
     /// Consumes the builder and constructs a [`InsightFeedback`](crate::types::InsightFeedback).
     pub fn build(self) -> crate::types::InsightFeedback {

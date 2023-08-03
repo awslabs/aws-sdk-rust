@@ -36,6 +36,10 @@ impl UpdateCalculatedAttributeDefinitionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateCalculatedAttributeDefinition as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_calculated_attribute_definition::builders::UpdateCalculatedAttributeDefinitionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl UpdateCalculatedAttributeDefinitionFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>The unique name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p>The unique name of the calculated attribute.</p>
     pub fn calculated_attribute_name(
         mut self,
@@ -116,6 +124,10 @@ impl UpdateCalculatedAttributeDefinitionFluentBuilder {
         self.inner = self.inner.set_calculated_attribute_name(input);
         self
     }
+    /// <p>The unique name of the calculated attribute.</p>
+    pub fn get_calculated_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_calculated_attribute_name()
+    }
     /// <p>The display name of the calculated attribute.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
@@ -126,6 +138,10 @@ impl UpdateCalculatedAttributeDefinitionFluentBuilder {
         self.inner = self.inner.set_display_name(input);
         self
     }
+    /// <p>The display name of the calculated attribute.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_display_name()
+    }
     /// <p>The description of the calculated attribute.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -135,6 +151,10 @@ impl UpdateCalculatedAttributeDefinitionFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the calculated attribute.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The conditions including range, object count, and threshold for the calculated attribute.</p>
     pub fn conditions(mut self, input: crate::types::Conditions) -> Self {
@@ -148,5 +168,9 @@ impl UpdateCalculatedAttributeDefinitionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_conditions(input);
         self
+    }
+    /// <p>The conditions including range, object count, and threshold for the calculated attribute.</p>
+    pub fn get_conditions(&self) -> &::std::option::Option<crate::types::Conditions> {
+        self.inner.get_conditions()
     }
 }

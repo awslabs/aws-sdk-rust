@@ -43,6 +43,10 @@ impl BatchGetObjectInformationBuilder {
         self.object_reference = input;
         self
     }
+    /// <p>A reference to the object.</p>
+    pub fn get_object_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
+        &self.object_reference
+    }
     /// Consumes the builder and constructs a [`BatchGetObjectInformation`](crate::types::BatchGetObjectInformation).
     pub fn build(self) -> crate::types::BatchGetObjectInformation {
         crate::types::BatchGetObjectInformation {

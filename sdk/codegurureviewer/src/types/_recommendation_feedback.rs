@@ -88,6 +88,10 @@ impl RecommendationFeedbackBuilder {
         self.code_review_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
+    pub fn get_code_review_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code_review_arn
+    }
     /// <p>The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.</p>
     pub fn recommendation_id(
         mut self,
@@ -103,6 +107,10 @@ impl RecommendationFeedbackBuilder {
     ) -> Self {
         self.recommendation_id = input;
         self
+    }
+    /// <p>The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.</p>
+    pub fn get_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommendation_id
     }
     /// Appends an item to `reactions`.
     ///
@@ -123,6 +131,10 @@ impl RecommendationFeedbackBuilder {
         self.reactions = input;
         self
     }
+    /// <p>List for storing reactions. Reactions are utf-8 text code for emojis. You can send an empty list to clear off all your feedback.</p>
+    pub fn get_reactions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Reaction>> {
+        &self.reactions
+    }
     /// <p>The ID of the user that made the API call.</p>
     /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -134,6 +146,11 @@ impl RecommendationFeedbackBuilder {
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
+    }
+    /// <p>The ID of the user that made the API call.</p>
+    /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     /// <p>The time at which the feedback was created.</p>
     pub fn created_time_stamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -148,6 +165,10 @@ impl RecommendationFeedbackBuilder {
         self.created_time_stamp = input;
         self
     }
+    /// <p>The time at which the feedback was created.</p>
+    pub fn get_created_time_stamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time_stamp
+    }
     /// <p>The time at which the feedback was last updated.</p>
     pub fn last_updated_time_stamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time_stamp = ::std::option::Option::Some(input);
@@ -160,6 +181,12 @@ impl RecommendationFeedbackBuilder {
     ) -> Self {
         self.last_updated_time_stamp = input;
         self
+    }
+    /// <p>The time at which the feedback was last updated.</p>
+    pub fn get_last_updated_time_stamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time_stamp
     }
     /// Consumes the builder and constructs a [`RecommendationFeedback`](crate::types::RecommendationFeedback).
     pub fn build(self) -> crate::types::RecommendationFeedback {

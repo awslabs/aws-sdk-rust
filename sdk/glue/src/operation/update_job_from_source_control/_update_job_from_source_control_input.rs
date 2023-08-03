@@ -103,6 +103,10 @@ impl UpdateJobFromSourceControlInputBuilder {
         self.job_name = input;
         self
     }
+    /// <p>The name of the Glue job to be synchronized to or from the remote repository.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
+    }
     /// <p>The provider for the remote repository.</p>
     pub fn provider(mut self, input: crate::types::SourceControlProvider) -> Self {
         self.provider = ::std::option::Option::Some(input);
@@ -115,6 +119,10 @@ impl UpdateJobFromSourceControlInputBuilder {
     ) -> Self {
         self.provider = input;
         self
+    }
+    /// <p>The provider for the remote repository.</p>
+    pub fn get_provider(&self) -> &::std::option::Option<crate::types::SourceControlProvider> {
+        &self.provider
     }
     /// <p>The name of the remote repository that contains the job artifacts.</p>
     pub fn repository_name(
@@ -132,6 +140,10 @@ impl UpdateJobFromSourceControlInputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the remote repository that contains the job artifacts.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The owner of the remote repository that contains the job artifacts.</p>
     pub fn repository_owner(
         mut self,
@@ -148,6 +160,10 @@ impl UpdateJobFromSourceControlInputBuilder {
         self.repository_owner = input;
         self
     }
+    /// <p>The owner of the remote repository that contains the job artifacts.</p>
+    pub fn get_repository_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_owner
+    }
     /// <p>An optional branch in the remote repository.</p>
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch_name = ::std::option::Option::Some(input.into());
@@ -157,6 +173,10 @@ impl UpdateJobFromSourceControlInputBuilder {
     pub fn set_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.branch_name = input;
         self
+    }
+    /// <p>An optional branch in the remote repository.</p>
+    pub fn get_branch_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.branch_name
     }
     /// <p>An optional folder in the remote repository.</p>
     pub fn folder(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -168,6 +188,10 @@ impl UpdateJobFromSourceControlInputBuilder {
         self.folder = input;
         self
     }
+    /// <p>An optional folder in the remote repository.</p>
+    pub fn get_folder(&self) -> &::std::option::Option<::std::string::String> {
+        &self.folder
+    }
     /// <p>A commit ID for a commit in the remote repository.</p>
     pub fn commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.commit_id = ::std::option::Option::Some(input.into());
@@ -177,6 +201,10 @@ impl UpdateJobFromSourceControlInputBuilder {
     pub fn set_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.commit_id = input;
         self
+    }
+    /// <p>A commit ID for a commit in the remote repository.</p>
+    pub fn get_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.commit_id
     }
     /// <p>The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.</p>
     pub fn auth_strategy(mut self, input: crate::types::SourceControlAuthStrategy) -> Self {
@@ -191,6 +219,12 @@ impl UpdateJobFromSourceControlInputBuilder {
         self.auth_strategy = input;
         self
     }
+    /// <p>The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.</p>
+    pub fn get_auth_strategy(
+        &self,
+    ) -> &::std::option::Option<crate::types::SourceControlAuthStrategy> {
+        &self.auth_strategy
+    }
     /// <p>The value of the authorization token.</p>
     pub fn auth_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auth_token = ::std::option::Option::Some(input.into());
@@ -200,6 +234,10 @@ impl UpdateJobFromSourceControlInputBuilder {
     pub fn set_auth_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auth_token = input;
         self
+    }
+    /// <p>The value of the authorization token.</p>
+    pub fn get_auth_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auth_token
     }
     /// Consumes the builder and constructs a [`UpdateJobFromSourceControlInput`](crate::operation::update_job_from_source_control::UpdateJobFromSourceControlInput).
     pub fn build(

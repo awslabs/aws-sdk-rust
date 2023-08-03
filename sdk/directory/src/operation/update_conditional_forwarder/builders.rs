@@ -36,6 +36,10 @@ impl UpdateConditionalForwarderFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateConditionalForwarder as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_conditional_forwarder::builders::UpdateConditionalForwarderInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl UpdateConditionalForwarderFluentBuilder {
         self.inner = self.inner.set_directory_id(input);
         self
     }
+    /// <p>The directory ID of the Amazon Web Services directory for which to update the conditional forwarder.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_id()
+    }
     /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.</p>
     pub fn remote_domain_name(
         mut self,
@@ -141,6 +149,10 @@ impl UpdateConditionalForwarderFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_remote_domain_name(input);
         self
+    }
+    /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.</p>
+    pub fn get_remote_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_remote_domain_name()
     }
     /// Appends an item to `DnsIpAddrs`.
     ///
@@ -158,5 +170,11 @@ impl UpdateConditionalForwarderFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_dns_ip_addrs(input);
         self
+    }
+    /// <p>The updated IP addresses of the remote DNS server associated with the conditional forwarder.</p>
+    pub fn get_dns_ip_addrs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_dns_ip_addrs()
     }
 }

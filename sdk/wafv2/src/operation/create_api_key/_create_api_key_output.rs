@@ -46,6 +46,10 @@ impl CreateApiKeyOutputBuilder {
         self.api_key = input;
         self
     }
+    /// <p>The generated, encrypted API key. You can copy this for use in your JavaScript CAPTCHA integration. </p>
+    pub fn get_api_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_key
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

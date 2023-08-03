@@ -54,6 +54,11 @@ impl NameserverBuilder {
         self.name = input;
         self
     }
+    /// <p>The fully qualified host name of the name server.</p>
+    /// <p>Constraint: Maximum 255 characters</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `glue_ips`.
     ///
     /// To override the contents of this collection use [`set_glue_ips`](Self::set_glue_ips).
@@ -74,6 +79,11 @@ impl NameserverBuilder {
     ) -> Self {
         self.glue_ips = input;
         self
+    }
+    /// <p>Glue IP address of a name server entry. Glue IP addresses are required only when the name of the name server is a subdomain of the domain. For example, if your domain is example.com and the name server for the domain is ns.example.com, you need to specify the IP address for ns.example.com.</p>
+    /// <p>Constraints: The list can contain only one IPv4 and one IPv6 address.</p>
+    pub fn get_glue_ips(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.glue_ips
     }
     /// Consumes the builder and constructs a [`Nameserver`](crate::types::Nameserver).
     pub fn build(self) -> crate::types::Nameserver {

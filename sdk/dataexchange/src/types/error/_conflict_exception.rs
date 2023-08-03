@@ -83,6 +83,10 @@ impl ConflictExceptionBuilder {
         self.message = input;
         self
     }
+    /// <p>The request couldn't be completed because it conflicted with the current state of the resource.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The unique identifier for the resource with the conflict.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -92,6 +96,10 @@ impl ConflictExceptionBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The unique identifier for the resource with the conflict.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>The type of the resource with the conflict.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
@@ -105,6 +113,10 @@ impl ConflictExceptionBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The type of the resource with the conflict.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

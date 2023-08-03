@@ -71,6 +71,12 @@ impl ListDeliverabilityTestReportsOutputBuilder {
         self.deliverability_test_reports = input;
         self
     }
+    /// <p>An object that contains a lists of predictive inbox placement tests that you've performed.</p>
+    pub fn get_deliverability_test_reports(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeliverabilityTestReport>> {
+        &self.deliverability_test_reports
+    }
     /// <p>A token that indicates that there are additional predictive inbox placement tests to list. To view additional predictive inbox placement tests, issue another request to <code>ListDeliverabilityTestReports</code>, and pass this token in the <code>NextToken</code> parameter.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -80,6 +86,10 @@ impl ListDeliverabilityTestReportsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token that indicates that there are additional predictive inbox placement tests to list. To view additional predictive inbox placement tests, issue another request to <code>ListDeliverabilityTestReports</code>, and pass this token in the <code>NextToken</code> parameter.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

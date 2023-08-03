@@ -56,6 +56,10 @@ impl ReportedOsBuilder {
         self.family = input;
         self
     }
+    /// <p>The operating system family.</p>
+    pub fn get_family(&self) -> &::std::option::Option<::std::string::String> {
+        &self.family
+    }
     /// <p>The operating system name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl ReportedOsBuilder {
         self.name = input;
         self
     }
+    /// <p>The operating system name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The operating system version.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl ReportedOsBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The operating system version.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`ReportedOs`](crate::types::ReportedOs).
     pub fn build(self) -> crate::types::ReportedOs {

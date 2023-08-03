@@ -48,6 +48,10 @@ impl DeleteEntitlementInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the entitlement.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The name of the stack with which the entitlement is associated.</p>
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl DeleteEntitlementInputBuilder {
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_name = input;
         self
+    }
+    /// <p>The name of the stack with which the entitlement is associated.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_name
     }
     /// Consumes the builder and constructs a [`DeleteEntitlementInput`](crate::operation::delete_entitlement::DeleteEntitlementInput).
     pub fn build(

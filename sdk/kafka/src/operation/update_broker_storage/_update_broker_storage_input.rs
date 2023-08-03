@@ -61,6 +61,10 @@ impl UpdateBrokerStorageInputBuilder {
         self.cluster_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_arn
+    }
     /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
     pub fn current_version(
         mut self,
@@ -76,6 +80,10 @@ impl UpdateBrokerStorageInputBuilder {
     ) -> Self {
         self.current_version = input;
         self
+    }
+    /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
+    pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.current_version
     }
     /// Appends an item to `target_broker_ebs_volume_info`.
     ///
@@ -98,6 +106,12 @@ impl UpdateBrokerStorageInputBuilder {
     ) -> Self {
         self.target_broker_ebs_volume_info = input;
         self
+    }
+    /// <p>Describes the target volume size and the ID of the broker to apply the update to.</p>
+    pub fn get_target_broker_ebs_volume_info(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BrokerEbsVolumeInfo>> {
+        &self.target_broker_ebs_volume_info
     }
     /// Consumes the builder and constructs a [`UpdateBrokerStorageInput`](crate::operation::update_broker_storage::UpdateBrokerStorageInput).
     pub fn build(

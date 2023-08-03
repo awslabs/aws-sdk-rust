@@ -36,6 +36,10 @@ impl DescribeScalingPlanResourcesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeScalingPlanResources as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_scaling_plan_resources::builders::DescribeScalingPlanResourcesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl DescribeScalingPlanResourcesFluentBuilder {
         self.inner = self.inner.set_scaling_plan_name(input);
         self
     }
+    /// <p>The name of the scaling plan.</p>
+    pub fn get_scaling_plan_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_scaling_plan_name()
+    }
     /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
     pub fn scaling_plan_version(mut self, input: i64) -> Self {
         self.inner = self.inner.scaling_plan_version(input);
@@ -141,6 +149,10 @@ impl DescribeScalingPlanResourcesFluentBuilder {
     pub fn set_scaling_plan_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_scaling_plan_version(input);
         self
+    }
+    /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
+    pub fn get_scaling_plan_version(&self) -> &::std::option::Option<i64> {
+        self.inner.get_scaling_plan_version()
     }
     /// <p>The maximum number of scalable resources to return. The value must be between 1 and 50. The default value is 50.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -152,6 +164,10 @@ impl DescribeScalingPlanResourcesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of scalable resources to return. The value must be between 1 and 50. The default value is 50.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token for the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -161,5 +177,9 @@ impl DescribeScalingPlanResourcesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

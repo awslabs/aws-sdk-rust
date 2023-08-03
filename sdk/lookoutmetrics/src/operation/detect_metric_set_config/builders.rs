@@ -36,6 +36,13 @@ impl DetectMetricSetConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DetectMetricSetConfig as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::detect_metric_set_config::builders::DetectMetricSetConfigInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl DetectMetricSetConfigFluentBuilder {
         self.inner = self.inner.set_anomaly_detector_arn(input);
         self
     }
+    /// <p>An anomaly detector ARN.</p>
+    pub fn get_anomaly_detector_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_anomaly_detector_arn()
+    }
     /// <p>A data source.</p>
     pub fn auto_detection_metric_source(
         mut self,
@@ -147,5 +158,11 @@ impl DetectMetricSetConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_auto_detection_metric_source(input);
         self
+    }
+    /// <p>A data source.</p>
+    pub fn get_auto_detection_metric_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoDetectionMetricSource> {
+        self.inner.get_auto_detection_metric_source()
     }
 }

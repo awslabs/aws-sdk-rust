@@ -49,6 +49,10 @@ impl ContainerServiceEcrImagePullerRoleBuilder {
         self.is_active = input;
         self
     }
+    /// <p>A Boolean value that indicates whether the role is activated.</p>
+    pub fn get_is_active(&self) -> &::std::option::Option<bool> {
+        &self.is_active
+    }
     /// <p>The Amazon Resource Name (ARN) of the role, if it is activated.</p>
     pub fn principal_arn(
         mut self,
@@ -64,6 +68,10 @@ impl ContainerServiceEcrImagePullerRoleBuilder {
     ) -> Self {
         self.principal_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the role, if it is activated.</p>
+    pub fn get_principal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal_arn
     }
     /// Consumes the builder and constructs a [`ContainerServiceEcrImagePullerRole`](crate::types::ContainerServiceEcrImagePullerRole).
     pub fn build(self) -> crate::types::ContainerServiceEcrImagePullerRole {

@@ -97,6 +97,12 @@ impl ExecuteStatementOutputBuilder {
         self.records = input;
         self
     }
+    /// <p>The records returned by the SQL statement. This field is blank if the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
+    pub fn get_records(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::Field>>> {
+        &self.records
+    }
     /// Appends an item to `column_metadata`.
     ///
     /// To override the contents of this collection use [`set_column_metadata`](Self::set_column_metadata).
@@ -116,6 +122,12 @@ impl ExecuteStatementOutputBuilder {
         self.column_metadata = input;
         self
     }
+    /// <p>Metadata for the columns included in the results. This field is blank if the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
+    pub fn get_column_metadata(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>> {
+        &self.column_metadata
+    }
     /// <p>The number of records updated by the request.</p>
     pub fn number_of_records_updated(mut self, input: i64) -> Self {
         self.number_of_records_updated = ::std::option::Option::Some(input);
@@ -125,6 +137,10 @@ impl ExecuteStatementOutputBuilder {
     pub fn set_number_of_records_updated(mut self, input: ::std::option::Option<i64>) -> Self {
         self.number_of_records_updated = input;
         self
+    }
+    /// <p>The number of records updated by the request.</p>
+    pub fn get_number_of_records_updated(&self) -> &::std::option::Option<i64> {
+        &self.number_of_records_updated
     }
     /// Appends an item to `generated_fields`.
     ///
@@ -149,6 +165,14 @@ impl ExecuteStatementOutputBuilder {
         self.generated_fields = input;
         self
     }
+    /// <p>Values for fields generated during a DML request.</p> <note>
+    /// <p>The <code>generatedFields</code> data isn't supported by Aurora PostgreSQL. To get the values of generated fields, use the <code>RETURNING</code> clause. For more information, see <a href="https://www.postgresql.org/docs/10/dml-returning.html">Returning Data From Modified Rows</a> in the PostgreSQL documentation.</p>
+    /// </note>
+    pub fn get_generated_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Field>> {
+        &self.generated_fields
+    }
     /// <p>A string value that represents the result set of a <code>SELECT</code> statement in JSON format. This value is only present when the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
     /// <p>The size limit for this field is currently 10 MB. If the JSON-formatted string representing the result set requires more than 10 MB, the call returns an error.</p>
     pub fn formatted_records(
@@ -166,6 +190,11 @@ impl ExecuteStatementOutputBuilder {
     ) -> Self {
         self.formatted_records = input;
         self
+    }
+    /// <p>A string value that represents the result set of a <code>SELECT</code> statement in JSON format. This value is only present when the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
+    /// <p>The size limit for this field is currently 10 MB. If the JSON-formatted string representing the result set requires more than 10 MB, the call returns an error.</p>
+    pub fn get_formatted_records(&self) -> &::std::option::Option<::std::string::String> {
+        &self.formatted_records
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

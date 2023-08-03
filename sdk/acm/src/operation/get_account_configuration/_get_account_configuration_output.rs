@@ -51,6 +51,12 @@ impl GetAccountConfigurationOutputBuilder {
         self.expiry_events = input;
         self
     }
+    /// <p>Expiration events configuration options associated with the Amazon Web Services account.</p>
+    pub fn get_expiry_events(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExpiryEventsConfiguration> {
+        &self.expiry_events
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

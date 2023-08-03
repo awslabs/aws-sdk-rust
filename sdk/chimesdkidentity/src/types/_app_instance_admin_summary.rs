@@ -40,6 +40,10 @@ impl AppInstanceAdminSummaryBuilder {
         self.admin = input;
         self
     }
+    /// <p>The details of the <code>AppInstanceAdmin</code>.</p>
+    pub fn get_admin(&self) -> &::std::option::Option<crate::types::Identity> {
+        &self.admin
+    }
     /// Consumes the builder and constructs a [`AppInstanceAdminSummary`](crate::types::AppInstanceAdminSummary).
     pub fn build(self) -> crate::types::AppInstanceAdminSummary {
         crate::types::AppInstanceAdminSummary { admin: self.admin }

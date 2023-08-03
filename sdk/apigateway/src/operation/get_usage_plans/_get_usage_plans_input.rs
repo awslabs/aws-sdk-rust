@@ -56,6 +56,10 @@ impl GetUsagePlansInputBuilder {
         self.position = input;
         self
     }
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn get_position(&self) -> &::std::option::Option<::std::string::String> {
+        &self.position
+    }
     /// <p>The identifier of the API key associated with the usage plans.</p>
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_id = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl GetUsagePlansInputBuilder {
         self.key_id = input;
         self
     }
+    /// <p>The identifier of the API key associated with the usage plans.</p>
+    pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_id
+    }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl GetUsagePlansInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// Consumes the builder and constructs a [`GetUsagePlansInput`](crate::operation::get_usage_plans::GetUsagePlansInput).
     pub fn build(

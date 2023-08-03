@@ -88,6 +88,10 @@ impl Ac3SettingsBuilder {
         self.bitrate = input;
         self
     }
+    /// Average bitrate in bits/second. Valid bitrates depend on the coding mode.
+    pub fn get_bitrate(&self) -> &::std::option::Option<f64> {
+        &self.bitrate
+    }
     /// Specifies the bitstream mode (bsmod) for the emitted AC-3 stream. See ATSC A/52-2012 for background on these values.
     pub fn bitstream_mode(mut self, input: crate::types::Ac3BitstreamMode) -> Self {
         self.bitstream_mode = ::std::option::Option::Some(input);
@@ -100,6 +104,10 @@ impl Ac3SettingsBuilder {
     ) -> Self {
         self.bitstream_mode = input;
         self
+    }
+    /// Specifies the bitstream mode (bsmod) for the emitted AC-3 stream. See ATSC A/52-2012 for background on these values.
+    pub fn get_bitstream_mode(&self) -> &::std::option::Option<crate::types::Ac3BitstreamMode> {
+        &self.bitstream_mode
     }
     /// Dolby Digital coding mode. Determines number of channels.
     pub fn coding_mode(mut self, input: crate::types::Ac3CodingMode) -> Self {
@@ -114,6 +122,10 @@ impl Ac3SettingsBuilder {
         self.coding_mode = input;
         self
     }
+    /// Dolby Digital coding mode. Determines number of channels.
+    pub fn get_coding_mode(&self) -> &::std::option::Option<crate::types::Ac3CodingMode> {
+        &self.coding_mode
+    }
     /// Sets the dialnorm for the output. If excluded and input audio is Dolby Digital, dialnorm will be passed through.
     pub fn dialnorm(mut self, input: i32) -> Self {
         self.dialnorm = ::std::option::Option::Some(input);
@@ -123,6 +135,10 @@ impl Ac3SettingsBuilder {
     pub fn set_dialnorm(mut self, input: ::std::option::Option<i32>) -> Self {
         self.dialnorm = input;
         self
+    }
+    /// Sets the dialnorm for the output. If excluded and input audio is Dolby Digital, dialnorm will be passed through.
+    pub fn get_dialnorm(&self) -> &::std::option::Option<i32> {
+        &self.dialnorm
     }
     /// If set to filmStandard, adds dynamic range compression signaling to the output bitstream as defined in the Dolby Digital specification.
     pub fn drc_profile(mut self, input: crate::types::Ac3DrcProfile) -> Self {
@@ -137,6 +153,10 @@ impl Ac3SettingsBuilder {
         self.drc_profile = input;
         self
     }
+    /// If set to filmStandard, adds dynamic range compression signaling to the output bitstream as defined in the Dolby Digital specification.
+    pub fn get_drc_profile(&self) -> &::std::option::Option<crate::types::Ac3DrcProfile> {
+        &self.drc_profile
+    }
     /// When set to enabled, applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid in codingMode32Lfe mode.
     pub fn lfe_filter(mut self, input: crate::types::Ac3LfeFilter) -> Self {
         self.lfe_filter = ::std::option::Option::Some(input);
@@ -150,6 +170,10 @@ impl Ac3SettingsBuilder {
         self.lfe_filter = input;
         self
     }
+    /// When set to enabled, applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid in codingMode32Lfe mode.
+    pub fn get_lfe_filter(&self) -> &::std::option::Option<crate::types::Ac3LfeFilter> {
+        &self.lfe_filter
+    }
     /// When set to "followInput", encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
     pub fn metadata_control(mut self, input: crate::types::Ac3MetadataControl) -> Self {
         self.metadata_control = ::std::option::Option::Some(input);
@@ -162,6 +186,10 @@ impl Ac3SettingsBuilder {
     ) -> Self {
         self.metadata_control = input;
         self
+    }
+    /// When set to "followInput", encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
+    pub fn get_metadata_control(&self) -> &::std::option::Option<crate::types::Ac3MetadataControl> {
+        &self.metadata_control
     }
     /// Consumes the builder and constructs a [`Ac3Settings`](crate::types::Ac3Settings).
     pub fn build(self) -> crate::types::Ac3Settings {

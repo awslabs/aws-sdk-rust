@@ -64,6 +64,12 @@ impl ListProvisionedCapacityOutputBuilder {
         self.provisioned_capacity_list = input;
         self
     }
+    /// <p>The response body contains the following JSON fields.</p>
+    pub fn get_provisioned_capacity_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisionedCapacityDescription>> {
+        &self.provisioned_capacity_list
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

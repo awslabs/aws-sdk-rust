@@ -75,6 +75,10 @@ impl CreateSyncJobInputBuilder {
         self.workspace_id = input;
         self
     }
+    /// <p>The workspace ID.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
+    }
     /// <p>The sync source.</p> <note>
     /// <p>Currently the only supported syncSoource is <code>SITEWISE </code>.</p>
     /// </note>
@@ -89,6 +93,12 @@ impl CreateSyncJobInputBuilder {
         self.sync_source = input;
         self
     }
+    /// <p>The sync source.</p> <note>
+    /// <p>Currently the only supported syncSoource is <code>SITEWISE </code>.</p>
+    /// </note>
+    pub fn get_sync_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sync_source
+    }
     /// <p>The SyncJob IAM role. This IAM role is used by the SyncJob to read from the syncSource, and create, update, or delete the corresponding resources.</p>
     pub fn sync_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sync_role = ::std::option::Option::Some(input.into());
@@ -98,6 +108,10 @@ impl CreateSyncJobInputBuilder {
     pub fn set_sync_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sync_role = input;
         self
+    }
+    /// <p>The SyncJob IAM role. This IAM role is used by the SyncJob to read from the syncSource, and create, update, or delete the corresponding resources.</p>
+    pub fn get_sync_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sync_role
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -123,6 +137,14 @@ impl CreateSyncJobInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The SyncJob tags.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSyncJobInput`](crate::operation::create_sync_job::CreateSyncJobInput).
     pub fn build(

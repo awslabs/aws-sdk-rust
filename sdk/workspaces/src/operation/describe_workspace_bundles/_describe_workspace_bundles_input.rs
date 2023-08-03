@@ -68,6 +68,10 @@ impl DescribeWorkspaceBundlesInputBuilder {
         self.bundle_ids = input;
         self
     }
+    /// <p>The identifiers of the bundles. You cannot combine this parameter with any other filter.</p>
+    pub fn get_bundle_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.bundle_ids
+    }
     /// <p>The owner of the bundles. You cannot combine this parameter with any other filter.</p>
     /// <p>To describe the bundles provided by Amazon Web Services, specify <code>AMAZON</code>. To describe the bundles that belong to your account, don't specify a value.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -80,6 +84,11 @@ impl DescribeWorkspaceBundlesInputBuilder {
         self.owner = input;
         self
     }
+    /// <p>The owner of the bundles. You cannot combine this parameter with any other filter.</p>
+    /// <p>To describe the bundles provided by Amazon Web Services, specify <code>AMAZON</code>. To describe the bundles that belong to your account, don't specify a value.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
+    }
     /// <p>The token for the next set of results. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -89,6 +98,10 @@ impl DescribeWorkspaceBundlesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next set of results. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeWorkspaceBundlesInput`](crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesInput).
     pub fn build(

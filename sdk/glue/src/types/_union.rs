@@ -60,6 +60,10 @@ impl UnionBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the transform node.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `inputs`.
     ///
     /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
@@ -79,6 +83,10 @@ impl UnionBuilder {
         self.inputs = input;
         self
     }
+    /// <p>The node ID inputs to the transform.</p>
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inputs
+    }
     /// <p>Indicates the type of Union transform. </p>
     /// <p>Specify <code>ALL</code> to join all rows from data sources to the resulting DynamicFrame. The resulting union does not remove duplicate rows.</p>
     /// <p>Specify <code>DISTINCT</code> to remove duplicate rows in the resulting DynamicFrame.</p>
@@ -92,6 +100,12 @@ impl UnionBuilder {
     pub fn set_union_type(mut self, input: ::std::option::Option<crate::types::UnionType>) -> Self {
         self.union_type = input;
         self
+    }
+    /// <p>Indicates the type of Union transform. </p>
+    /// <p>Specify <code>ALL</code> to join all rows from data sources to the resulting DynamicFrame. The resulting union does not remove duplicate rows.</p>
+    /// <p>Specify <code>DISTINCT</code> to remove duplicate rows in the resulting DynamicFrame.</p>
+    pub fn get_union_type(&self) -> &::std::option::Option<crate::types::UnionType> {
+        &self.union_type
     }
     /// Consumes the builder and constructs a [`Union`](crate::types::Union).
     pub fn build(self) -> crate::types::Union {

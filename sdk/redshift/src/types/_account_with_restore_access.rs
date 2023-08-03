@@ -48,6 +48,10 @@ impl AccountWithRestoreAccessBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The identifier of an Amazon Web Services account authorized to restore a snapshot.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The identifier of an Amazon Web Services support account authorized to restore a snapshot. For Amazon Web Services Support, the identifier is <code>amazon-redshift-support</code>. </p>
     pub fn account_alias(
         mut self,
@@ -63,6 +67,10 @@ impl AccountWithRestoreAccessBuilder {
     ) -> Self {
         self.account_alias = input;
         self
+    }
+    /// <p>The identifier of an Amazon Web Services support account authorized to restore a snapshot. For Amazon Web Services Support, the identifier is <code>amazon-redshift-support</code>. </p>
+    pub fn get_account_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_alias
     }
     /// Consumes the builder and constructs a [`AccountWithRestoreAccess`](crate::types::AccountWithRestoreAccess).
     pub fn build(self) -> crate::types::AccountWithRestoreAccess {

@@ -54,6 +54,10 @@ impl CustomDnsServerBuilder {
         self.custom_dns_server_name = input;
         self
     }
+    /// <p>The name of the DNS server.</p>
+    pub fn get_custom_dns_server_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_dns_server_name
+    }
     /// <p>The IP address of the DNS server.</p>
     pub fn custom_dns_server_ip(
         mut self,
@@ -69,6 +73,10 @@ impl CustomDnsServerBuilder {
     ) -> Self {
         self.custom_dns_server_ip = input;
         self
+    }
+    /// <p>The IP address of the DNS server.</p>
+    pub fn get_custom_dns_server_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_dns_server_ip
     }
     /// Consumes the builder and constructs a [`CustomDnsServer`](crate::types::CustomDnsServer).
     pub fn build(self) -> crate::types::CustomDnsServer {

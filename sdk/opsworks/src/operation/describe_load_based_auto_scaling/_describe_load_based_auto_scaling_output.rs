@@ -67,6 +67,13 @@ impl DescribeLoadBasedAutoScalingOutputBuilder {
         self.load_based_auto_scaling_configurations = input;
         self
     }
+    /// <p>An array of <code>LoadBasedAutoScalingConfiguration</code> objects that describe each layer's configuration.</p>
+    pub fn get_load_based_auto_scaling_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBasedAutoScalingConfiguration>>
+    {
+        &self.load_based_auto_scaling_configurations
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

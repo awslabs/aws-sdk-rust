@@ -36,6 +36,12 @@ impl CreateQuantumTaskFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateQuantumTask as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_quantum_task::builders::CreateQuantumTaskInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateQuantumTaskFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>The client token associated with the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>The ARN of the device to run the task on.</p>
     pub fn device_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_arn(input.into());
@@ -135,6 +145,10 @@ impl CreateQuantumTaskFluentBuilder {
     pub fn set_device_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_arn(input);
         self
+    }
+    /// <p>The ARN of the device to run the task on.</p>
+    pub fn get_device_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_arn()
     }
     /// <p>The parameters for the device to run the task on.</p>
     pub fn device_parameters(
@@ -152,6 +166,10 @@ impl CreateQuantumTaskFluentBuilder {
         self.inner = self.inner.set_device_parameters(input);
         self
     }
+    /// <p>The parameters for the device to run the task on.</p>
+    pub fn get_device_parameters(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_parameters()
+    }
     /// <p>The number of shots to use for the task.</p>
     pub fn shots(mut self, input: i64) -> Self {
         self.inner = self.inner.shots(input);
@@ -161,6 +179,10 @@ impl CreateQuantumTaskFluentBuilder {
     pub fn set_shots(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_shots(input);
         self
+    }
+    /// <p>The number of shots to use for the task.</p>
+    pub fn get_shots(&self) -> &::std::option::Option<i64> {
+        self.inner.get_shots()
     }
     /// <p>The S3 bucket to store task result files in.</p>
     pub fn output_s3_bucket(
@@ -178,6 +200,10 @@ impl CreateQuantumTaskFluentBuilder {
         self.inner = self.inner.set_output_s3_bucket(input);
         self
     }
+    /// <p>The S3 bucket to store task result files in.</p>
+    pub fn get_output_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_output_s3_bucket()
+    }
     /// <p>The key prefix for the location in the S3 bucket to store task results in.</p>
     pub fn output_s3_key_prefix(
         mut self,
@@ -194,6 +220,10 @@ impl CreateQuantumTaskFluentBuilder {
         self.inner = self.inner.set_output_s3_key_prefix(input);
         self
     }
+    /// <p>The key prefix for the location in the S3 bucket to store task results in.</p>
+    pub fn get_output_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_output_s3_key_prefix()
+    }
     /// <p>The action associated with the task.</p>
     pub fn action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.action(input.into());
@@ -203,6 +233,10 @@ impl CreateQuantumTaskFluentBuilder {
     pub fn set_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_action(input);
         self
+    }
+    /// <p>The action associated with the task.</p>
+    pub fn get_action(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_action()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -227,6 +261,14 @@ impl CreateQuantumTaskFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Tags to be added to the quantum task you're creating.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>The token for an Amazon Braket job that associates it with the quantum task.</p>
     pub fn job_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_token(input.into());
@@ -236,5 +278,9 @@ impl CreateQuantumTaskFluentBuilder {
     pub fn set_job_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_token(input);
         self
+    }
+    /// <p>The token for an Amazon Braket job that associates it with the quantum task.</p>
+    pub fn get_job_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_token()
     }
 }

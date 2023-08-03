@@ -150,6 +150,10 @@ impl DescribeApplicationOutputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The unique Id of the web application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The ARN of the web application.</p>
     pub fn application_arn(
         mut self,
@@ -165,6 +169,10 @@ impl DescribeApplicationOutputBuilder {
     ) -> Self {
         self.application_arn = input;
         self
+    }
+    /// <p>The ARN of the web application.</p>
+    pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_arn
     }
     /// <p>The name of the web application.</p>
     pub fn application_name(
@@ -182,6 +190,10 @@ impl DescribeApplicationOutputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The name of the web application.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>An optional description of the web application.</p>
     pub fn application_description(
         mut self,
@@ -197,6 +209,10 @@ impl DescribeApplicationOutputBuilder {
     ) -> Self {
         self.application_description = input;
         self
+    }
+    /// <p>An optional description of the web application.</p>
+    pub fn get_application_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_description
     }
     /// <p>The URL of the web application.</p>
     pub fn application_url(
@@ -214,6 +230,10 @@ impl DescribeApplicationOutputBuilder {
         self.application_url = input;
         self
     }
+    /// <p>The URL of the web application.</p>
+    pub fn get_application_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_url
+    }
     /// <p>The current state of the web application.</p>
     pub fn application_state(mut self, input: crate::types::ApplicationState) -> Self {
         self.application_state = ::std::option::Option::Some(input);
@@ -227,6 +247,10 @@ impl DescribeApplicationOutputBuilder {
         self.application_state = input;
         self
     }
+    /// <p>The current state of the web application.</p>
+    pub fn get_application_state(&self) -> &::std::option::Option<crate::types::ApplicationState> {
+        &self.application_state
+    }
     /// <p>The date (in Unix epoch time) when the application was created.</p>
     pub fn application_creation_date(mut self, input: i64) -> Self {
         self.application_creation_date = ::std::option::Option::Some(input);
@@ -236,6 +260,10 @@ impl DescribeApplicationOutputBuilder {
     pub fn set_application_creation_date(mut self, input: ::std::option::Option<i64>) -> Self {
         self.application_creation_date = input;
         self
+    }
+    /// <p>The date (in Unix epoch time) when the application was created.</p>
+    pub fn get_application_creation_date(&self) -> &::std::option::Option<i64> {
+        &self.application_creation_date
     }
     /// <p>The date (in Unix epoch time) when the application was last updated.</p>
     pub fn application_last_update_date(mut self, input: i64) -> Self {
@@ -247,6 +275,10 @@ impl DescribeApplicationOutputBuilder {
         self.application_last_update_date = input;
         self
     }
+    /// <p>The date (in Unix epoch time) when the application was last updated.</p>
+    pub fn get_application_last_update_date(&self) -> &::std::option::Option<i64> {
+        &self.application_last_update_date
+    }
     /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -256,6 +288,10 @@ impl DescribeApplicationOutputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The Id of the single sign-on client that you use to authenticate and authorize users on the web application.</p>
     pub fn sso_client_id(
@@ -273,6 +309,10 @@ impl DescribeApplicationOutputBuilder {
         self.sso_client_id = input;
         self
     }
+    /// <p>The Id of the single sign-on client that you use to authenticate and authorize users on the web application.</p>
+    pub fn get_sso_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sso_client_id
+    }
     /// <p>A message indicating why the <code>DescribeApplication</code> API failed.</p>
     pub fn error_message(
         mut self,
@@ -288,6 +328,10 @@ impl DescribeApplicationOutputBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>A message indicating why the <code>DescribeApplication</code> API failed.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -313,6 +357,14 @@ impl DescribeApplicationOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A set of key/value pairs that you can use to manage the web application resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

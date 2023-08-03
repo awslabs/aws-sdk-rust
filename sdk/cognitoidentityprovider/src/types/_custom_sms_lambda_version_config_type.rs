@@ -54,6 +54,12 @@ impl CustomSmsLambdaVersionConfigTypeBuilder {
         self.lambda_version = input;
         self
     }
+    /// <p>Signature of the "request" attribute in the "event" information that Amazon Cognito passes to your custom SMS Lambda function. The only supported value is <code>V1_0</code>.</p>
+    pub fn get_lambda_version(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomSmsSenderLambdaVersionType> {
+        &self.lambda_version
+    }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function that Amazon Cognito activates to send SMS notifications to users.</p>
     pub fn lambda_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lambda_arn = ::std::option::Option::Some(input.into());
@@ -63,6 +69,10 @@ impl CustomSmsLambdaVersionConfigTypeBuilder {
     pub fn set_lambda_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lambda_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function that Amazon Cognito activates to send SMS notifications to users.</p>
+    pub fn get_lambda_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lambda_arn
     }
     /// Consumes the builder and constructs a [`CustomSmsLambdaVersionConfigType`](crate::types::CustomSmsLambdaVersionConfigType).
     pub fn build(self) -> crate::types::CustomSmsLambdaVersionConfigType {

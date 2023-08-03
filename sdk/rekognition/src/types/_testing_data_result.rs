@@ -56,6 +56,10 @@ impl TestingDataResultBuilder {
         self.input = input;
         self
     }
+    /// <p>The testing dataset that was supplied for training.</p>
+    pub fn get_input(&self) -> &::std::option::Option<crate::types::TestingData> {
+        &self.input
+    }
     /// <p>The subset of the dataset that was actually tested. Some images (assets) might not be tested due to file formatting and other issues. </p>
     pub fn output(mut self, input: crate::types::TestingData) -> Self {
         self.output = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl TestingDataResultBuilder {
     pub fn set_output(mut self, input: ::std::option::Option<crate::types::TestingData>) -> Self {
         self.output = input;
         self
+    }
+    /// <p>The subset of the dataset that was actually tested. Some images (assets) might not be tested due to file formatting and other issues. </p>
+    pub fn get_output(&self) -> &::std::option::Option<crate::types::TestingData> {
+        &self.output
     }
     /// <p>The location of the data validation manifest. The data validation manifest is created for the test dataset during model training.</p>
     pub fn validation(mut self, input: crate::types::ValidationData) -> Self {
@@ -78,6 +86,10 @@ impl TestingDataResultBuilder {
     ) -> Self {
         self.validation = input;
         self
+    }
+    /// <p>The location of the data validation manifest. The data validation manifest is created for the test dataset during model training.</p>
+    pub fn get_validation(&self) -> &::std::option::Option<crate::types::ValidationData> {
+        &self.validation
     }
     /// Consumes the builder and constructs a [`TestingDataResult`](crate::types::TestingDataResult).
     pub fn build(self) -> crate::types::TestingDataResult {

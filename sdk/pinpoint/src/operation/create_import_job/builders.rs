@@ -36,6 +36,12 @@ impl CreateImportJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateImportJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_import_job::builders::CreateImportJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl CreateImportJobFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>Specifies the settings for a job that imports endpoint definitions from an Amazon Simple Storage Service (Amazon S3) bucket.</p>
     pub fn import_job_request(mut self, input: crate::types::ImportJobRequest) -> Self {
         self.inner = self.inner.import_job_request(input);
@@ -144,5 +154,9 @@ impl CreateImportJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_import_job_request(input);
         self
+    }
+    /// <p>Specifies the settings for a job that imports endpoint definitions from an Amazon Simple Storage Service (Amazon S3) bucket.</p>
+    pub fn get_import_job_request(&self) -> &::std::option::Option<crate::types::ImportJobRequest> {
+        self.inner.get_import_job_request()
     }
 }

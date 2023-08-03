@@ -65,6 +65,10 @@ impl ContainerConfigurationBuilder {
         self.container_name = input;
         self
     }
+    /// <p> The name of the container. </p>
+    pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_name
+    }
     /// <p> The memory size configurations for the container. </p>
     pub fn memory_size_configuration(
         mut self,
@@ -81,6 +85,12 @@ impl ContainerConfigurationBuilder {
         self.memory_size_configuration = input;
         self
     }
+    /// <p> The memory size configurations for the container. </p>
+    pub fn get_memory_size_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::MemorySizeConfiguration> {
+        &self.memory_size_configuration
+    }
     /// <p> The number of CPU units reserved for the container. </p>
     pub fn cpu(mut self, input: i32) -> Self {
         self.cpu = ::std::option::Option::Some(input);
@@ -90,6 +100,10 @@ impl ContainerConfigurationBuilder {
     pub fn set_cpu(mut self, input: ::std::option::Option<i32>) -> Self {
         self.cpu = input;
         self
+    }
+    /// <p> The number of CPU units reserved for the container. </p>
+    pub fn get_cpu(&self) -> &::std::option::Option<i32> {
+        &self.cpu
     }
     /// Consumes the builder and constructs a [`ContainerConfiguration`](crate::types::ContainerConfiguration).
     pub fn build(self) -> crate::types::ContainerConfiguration {

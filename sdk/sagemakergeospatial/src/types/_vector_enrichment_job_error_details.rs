@@ -51,6 +51,12 @@ impl VectorEnrichmentJobErrorDetailsBuilder {
         self.error_type = input;
         self
     }
+    /// <p>The type of error generated during the Vector Enrichment job.</p>
+    pub fn get_error_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::VectorEnrichmentJobErrorType> {
+        &self.error_type
+    }
     /// <p>A message that you define and then is processed and rendered by the Vector Enrichment job when the error occurs.</p>
     pub fn error_message(
         mut self,
@@ -66,6 +72,10 @@ impl VectorEnrichmentJobErrorDetailsBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>A message that you define and then is processed and rendered by the Vector Enrichment job when the error occurs.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`VectorEnrichmentJobErrorDetails`](crate::types::VectorEnrichmentJobErrorDetails).
     pub fn build(self) -> crate::types::VectorEnrichmentJobErrorDetails {

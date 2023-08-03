@@ -56,6 +56,10 @@ impl ServiceEventBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID string for the event.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Unix timestamp for the time when the event was triggered.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl ServiceEventBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The Unix timestamp for the time when the event was triggered.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The event message.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -78,6 +86,10 @@ impl ServiceEventBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The event message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`ServiceEvent`](crate::types::ServiceEvent).
     pub fn build(self) -> crate::types::ServiceEvent {

@@ -36,6 +36,12 @@ impl CreateLicenseFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateLicense as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_license::builders::CreateLicenseInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl CreateLicenseFluentBuilder {
         self.inner = self.inner.set_license_name(input);
         self
     }
+    /// <p>License name.</p>
+    pub fn get_license_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_license_name()
+    }
     /// <p>Product name.</p>
     pub fn product_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.product_name(input.into());
@@ -127,6 +137,10 @@ impl CreateLicenseFluentBuilder {
     pub fn set_product_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_product_name(input);
         self
+    }
+    /// <p>Product name.</p>
+    pub fn get_product_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_product_name()
     }
     /// <p>Product SKU.</p>
     pub fn product_sku(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,6 +152,10 @@ impl CreateLicenseFluentBuilder {
         self.inner = self.inner.set_product_sku(input);
         self
     }
+    /// <p>Product SKU.</p>
+    pub fn get_product_sku(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_product_sku()
+    }
     /// <p>License issuer.</p>
     pub fn issuer(mut self, input: crate::types::Issuer) -> Self {
         self.inner = self.inner.issuer(input);
@@ -148,6 +166,10 @@ impl CreateLicenseFluentBuilder {
         self.inner = self.inner.set_issuer(input);
         self
     }
+    /// <p>License issuer.</p>
+    pub fn get_issuer(&self) -> &::std::option::Option<crate::types::Issuer> {
+        self.inner.get_issuer()
+    }
     /// <p>Home Region for the license.</p>
     pub fn home_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.home_region(input.into());
@@ -157,6 +179,10 @@ impl CreateLicenseFluentBuilder {
     pub fn set_home_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_home_region(input);
         self
+    }
+    /// <p>Home Region for the license.</p>
+    pub fn get_home_region(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_home_region()
     }
     /// <p>Date and time range during which the license is valid, in ISO8601-UTC format.</p>
     pub fn validity(mut self, input: crate::types::DatetimeRange) -> Self {
@@ -170,6 +196,10 @@ impl CreateLicenseFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_validity(input);
         self
+    }
+    /// <p>Date and time range during which the license is valid, in ISO8601-UTC format.</p>
+    pub fn get_validity(&self) -> &::std::option::Option<crate::types::DatetimeRange> {
+        self.inner.get_validity()
     }
     /// Appends an item to `Entitlements`.
     ///
@@ -188,6 +218,12 @@ impl CreateLicenseFluentBuilder {
         self.inner = self.inner.set_entitlements(input);
         self
     }
+    /// <p>License entitlements.</p>
+    pub fn get_entitlements(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Entitlement>> {
+        self.inner.get_entitlements()
+    }
     /// <p>License beneficiary.</p>
     pub fn beneficiary(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.beneficiary(input.into());
@@ -197,6 +233,10 @@ impl CreateLicenseFluentBuilder {
     pub fn set_beneficiary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_beneficiary(input);
         self
+    }
+    /// <p>License beneficiary.</p>
+    pub fn get_beneficiary(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_beneficiary()
     }
     /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.</p>
     pub fn consumption_configuration(
@@ -213,6 +253,12 @@ impl CreateLicenseFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_consumption_configuration(input);
         self
+    }
+    /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.</p>
+    pub fn get_consumption_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConsumptionConfiguration> {
+        self.inner.get_consumption_configuration()
     }
     /// Appends an item to `LicenseMetadata`.
     ///
@@ -231,6 +277,12 @@ impl CreateLicenseFluentBuilder {
         self.inner = self.inner.set_license_metadata(input);
         self
     }
+    /// <p>Information about the license.</p>
+    pub fn get_license_metadata(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Metadata>> {
+        self.inner.get_license_metadata()
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -240,5 +292,9 @@ impl CreateLicenseFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

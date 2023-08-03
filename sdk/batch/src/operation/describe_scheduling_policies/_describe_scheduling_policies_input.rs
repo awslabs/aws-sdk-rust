@@ -49,6 +49,10 @@ impl DescribeSchedulingPoliciesInputBuilder {
         self.arns = input;
         self
     }
+    /// <p>A list of up to 100 scheduling policy Amazon Resource Name (ARN) entries.</p>
+    pub fn get_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.arns
+    }
     /// Consumes the builder and constructs a [`DescribeSchedulingPoliciesInput`](crate::operation::describe_scheduling_policies::DescribeSchedulingPoliciesInput).
     pub fn build(
         self,

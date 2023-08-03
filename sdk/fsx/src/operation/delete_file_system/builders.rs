@@ -43,6 +43,12 @@ impl DeleteFileSystemFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteFileSystem as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_file_system::builders::DeleteFileSystemInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,6 +145,10 @@ impl DeleteFileSystemFluentBuilder {
         self.inner = self.inner.set_file_system_id(input);
         self
     }
+    /// <p>The ID of the file system that you want to delete.</p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_file_system_id()
+    }
     /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This token is automatically filled on your behalf when using the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn client_request_token(
         mut self,
@@ -154,6 +164,10 @@ impl DeleteFileSystemFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This token is automatically filled on your behalf when using the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
     /// <p>The configuration object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation.</p>
     pub fn windows_configuration(
@@ -171,6 +185,12 @@ impl DeleteFileSystemFluentBuilder {
         self.inner = self.inner.set_windows_configuration(input);
         self
     }
+    /// <p>The configuration object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation.</p>
+    pub fn get_windows_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeleteFileSystemWindowsConfiguration> {
+        self.inner.get_windows_configuration()
+    }
     /// <p>The configuration object for the Amazon FSx for Lustre file system being deleted in the <code>DeleteFileSystem</code> operation.</p>
     pub fn lustre_configuration(
         mut self,
@@ -187,6 +207,12 @@ impl DeleteFileSystemFluentBuilder {
         self.inner = self.inner.set_lustre_configuration(input);
         self
     }
+    /// <p>The configuration object for the Amazon FSx for Lustre file system being deleted in the <code>DeleteFileSystem</code> operation.</p>
+    pub fn get_lustre_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeleteFileSystemLustreConfiguration> {
+        self.inner.get_lustre_configuration()
+    }
     /// <p>The configuration object for the OpenZFS file system used in the <code>DeleteFileSystem</code> operation.</p>
     pub fn open_zfs_configuration(
         mut self,
@@ -202,5 +228,11 @@ impl DeleteFileSystemFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_open_zfs_configuration(input);
         self
+    }
+    /// <p>The configuration object for the OpenZFS file system used in the <code>DeleteFileSystem</code> operation.</p>
+    pub fn get_open_zfs_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeleteFileSystemOpenZfsConfiguration> {
+        self.inner.get_open_zfs_configuration()
     }
 }

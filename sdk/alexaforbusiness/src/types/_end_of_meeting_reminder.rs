@@ -65,6 +65,10 @@ impl EndOfMeetingReminderBuilder {
         self.reminder_at_minutes = input;
         self
     }
+    /// <p>A range of 3 to 15 minutes that determines when the reminder begins.</p>
+    pub fn get_reminder_at_minutes(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.reminder_at_minutes
+    }
     /// <p>The type of sound that users hear during the end of meeting reminder. </p>
     pub fn reminder_type(mut self, input: crate::types::EndOfMeetingReminderType) -> Self {
         self.reminder_type = ::std::option::Option::Some(input);
@@ -78,6 +82,12 @@ impl EndOfMeetingReminderBuilder {
         self.reminder_type = input;
         self
     }
+    /// <p>The type of sound that users hear during the end of meeting reminder. </p>
+    pub fn get_reminder_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::EndOfMeetingReminderType> {
+        &self.reminder_type
+    }
     /// <p>Whether an end of meeting reminder is enabled or not.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -87,6 +97,10 @@ impl EndOfMeetingReminderBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>Whether an end of meeting reminder is enabled or not.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// Consumes the builder and constructs a [`EndOfMeetingReminder`](crate::types::EndOfMeetingReminder).
     pub fn build(self) -> crate::types::EndOfMeetingReminder {

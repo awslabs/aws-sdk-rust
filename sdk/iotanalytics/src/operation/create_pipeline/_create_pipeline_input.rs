@@ -66,6 +66,10 @@ impl CreatePipelineInputBuilder {
         self.pipeline_name = input;
         self
     }
+    /// <p>The name of the pipeline.</p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_name
+    }
     /// Appends an item to `pipeline_activities`.
     ///
     /// To override the contents of this collection use [`set_pipeline_activities`](Self::set_pipeline_activities).
@@ -89,6 +93,14 @@ impl CreatePipelineInputBuilder {
         self.pipeline_activities = input;
         self
     }
+    /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such as removing, renaming or adding message attributes; filtering messages based on attribute values; invoking your Lambda unctions on messages for advanced processing; or performing mathematical transformations to normalize device data.</p>
+    /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must contain only one activity. For example:</p>
+    /// <p> <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</code> </p>
+    pub fn get_pipeline_activities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineActivity>> {
+        &self.pipeline_activities
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -107,6 +119,10 @@ impl CreatePipelineInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Metadata which can be used to manage the pipeline.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreatePipelineInput`](crate::operation::create_pipeline::CreatePipelineInput).
     pub fn build(

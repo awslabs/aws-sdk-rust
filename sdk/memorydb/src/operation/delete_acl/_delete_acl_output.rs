@@ -46,6 +46,10 @@ impl DeleteAclOutputBuilder {
         self.acl = input;
         self
     }
+    /// <p>The Access Control List object that has been deleted.</p>
+    pub fn get_acl(&self) -> &::std::option::Option<crate::types::Acl> {
+        &self.acl
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

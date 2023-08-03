@@ -135,6 +135,10 @@ impl ClaimedPhoneNumberSummaryBuilder {
         self.phone_number_id = input;
         self
     }
+    /// <p>A unique identifier for the phone number.</p>
+    pub fn get_phone_number_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
     pub fn phone_number_arn(
         mut self,
@@ -151,6 +155,10 @@ impl ClaimedPhoneNumberSummaryBuilder {
         self.phone_number_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
+    pub fn get_phone_number_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number_arn
+    }
     /// <p>The phone number. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
     pub fn phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number = ::std::option::Option::Some(input.into());
@@ -160,6 +168,10 @@ impl ClaimedPhoneNumberSummaryBuilder {
     pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.phone_number = input;
         self
+    }
+    /// <p>The phone number. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
+    pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number
     }
     /// <p>The ISO country code.</p>
     pub fn phone_number_country_code(
@@ -177,6 +189,12 @@ impl ClaimedPhoneNumberSummaryBuilder {
         self.phone_number_country_code = input;
         self
     }
+    /// <p>The ISO country code.</p>
+    pub fn get_phone_number_country_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::PhoneNumberCountryCode> {
+        &self.phone_number_country_code
+    }
     /// <p>The type of phone number.</p>
     pub fn phone_number_type(mut self, input: crate::types::PhoneNumberType) -> Self {
         self.phone_number_type = ::std::option::Option::Some(input);
@@ -189,6 +207,10 @@ impl ClaimedPhoneNumberSummaryBuilder {
     ) -> Self {
         self.phone_number_type = input;
         self
+    }
+    /// <p>The type of phone number.</p>
+    pub fn get_phone_number_type(&self) -> &::std::option::Option<crate::types::PhoneNumberType> {
+        &self.phone_number_type
     }
     /// <p>The description of the phone number.</p>
     pub fn phone_number_description(
@@ -206,6 +228,10 @@ impl ClaimedPhoneNumberSummaryBuilder {
         self.phone_number_description = input;
         self
     }
+    /// <p>The description of the phone number.</p>
+    pub fn get_phone_number_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number_description
+    }
     /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are claimed to.</p>
     pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_arn = ::std::option::Option::Some(input.into());
@@ -215,6 +241,10 @@ impl ClaimedPhoneNumberSummaryBuilder {
     pub fn set_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are claimed to.</p>
+    pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_arn
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -240,6 +270,14 @@ impl ClaimedPhoneNumberSummaryBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// <p>The status of the phone number.</p>
     /// <ul>
@@ -267,6 +305,19 @@ impl ClaimedPhoneNumberSummaryBuilder {
     ) -> Self {
         self.phone_number_status = input;
         self
+    }
+    /// <p>The status of the phone number.</p>
+    /// <ul>
+    /// <li> <p> <code>CLAIMED</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a> or <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a> operation succeeded.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> means a <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a> or <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a> operation is still in progress and has not yet completed. You can call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a> at a later time to verify if the previous operation has completed.</p> </li>
+    /// <li> <p> <code>FAILED</code> indicates that the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a> or <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a> operation has failed. It will include a message indicating the failure reason. A common reason for a failure may be that the <code>TargetArn</code> value you are claiming or updating a phone number to has reached its limit of total claimed numbers. If you received a <code>FAILED</code> status from a <code>ClaimPhoneNumber</code> API call, you have one day to retry claiming the phone number before the number is released back to the inventory for other customers to claim.</p> </li>
+    /// </ul> <note>
+    /// <p>You will not be billed for the phone number during the 1-day period if number claiming fails. </p>
+    /// </note>
+    pub fn get_phone_number_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::PhoneNumberStatus> {
+        &self.phone_number_status
     }
     /// Consumes the builder and constructs a [`ClaimedPhoneNumberSummary`](crate::types::ClaimedPhoneNumberSummary).
     pub fn build(self) -> crate::types::ClaimedPhoneNumberSummary {

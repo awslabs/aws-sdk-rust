@@ -95,6 +95,12 @@ impl GetAccuracyMetricsOutputBuilder {
         self.predictor_evaluation_results = input;
         self
     }
+    /// <p>An array of results from evaluating the predictor.</p>
+    pub fn get_predictor_evaluation_results(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>> {
+        &self.predictor_evaluation_results
+    }
     /// <p>Whether the predictor was created with <code>CreateAutoPredictor</code>.</p>
     pub fn is_auto_predictor(mut self, input: bool) -> Self {
         self.is_auto_predictor = ::std::option::Option::Some(input);
@@ -104,6 +110,10 @@ impl GetAccuracyMetricsOutputBuilder {
     pub fn set_is_auto_predictor(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_auto_predictor = input;
         self
+    }
+    /// <p>Whether the predictor was created with <code>CreateAutoPredictor</code>.</p>
+    pub fn get_is_auto_predictor(&self) -> &::std::option::Option<bool> {
+        &self.is_auto_predictor
     }
     /// <note>
     /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact Amazon Web Services Support or your account manager to learn more about access privileges. </p>
@@ -129,6 +139,16 @@ impl GetAccuracyMetricsOutputBuilder {
         self.auto_ml_override_strategy = input;
         self
     }
+    /// <note>
+    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact Amazon Web Services Support or your account manager to learn more about access privileges. </p>
+    /// </note>
+    /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes predictor accuracy.</p>
+    /// <p>This parameter is only valid for predictors trained using AutoML.</p>
+    pub fn get_auto_ml_override_strategy(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoMlOverrideStrategy> {
+        &self.auto_ml_override_strategy
+    }
     /// <p>The accuracy metric used to optimize the predictor.</p>
     pub fn optimization_metric(mut self, input: crate::types::OptimizationMetric) -> Self {
         self.optimization_metric = ::std::option::Option::Some(input);
@@ -141,6 +161,12 @@ impl GetAccuracyMetricsOutputBuilder {
     ) -> Self {
         self.optimization_metric = input;
         self
+    }
+    /// <p>The accuracy metric used to optimize the predictor.</p>
+    pub fn get_optimization_metric(
+        &self,
+    ) -> &::std::option::Option<crate::types::OptimizationMetric> {
+        &self.optimization_metric
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

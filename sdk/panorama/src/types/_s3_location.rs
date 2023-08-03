@@ -56,6 +56,10 @@ impl S3LocationBuilder {
         self.region = input;
         self
     }
+    /// <p>The bucket's Region.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
+    }
     /// <p>A bucket name.</p>
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_name = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl S3LocationBuilder {
         self.bucket_name = input;
         self
     }
+    /// <p>A bucket name.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
+    }
     /// <p>An object key.</p>
     pub fn object_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_key = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl S3LocationBuilder {
     pub fn set_object_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_key = input;
         self
+    }
+    /// <p>An object key.</p>
+    pub fn get_object_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_key
     }
     /// Consumes the builder and constructs a [`S3Location`](crate::types::S3Location).
     pub fn build(self) -> crate::types::S3Location {

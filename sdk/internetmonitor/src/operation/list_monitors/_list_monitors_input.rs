@@ -57,6 +57,10 @@ impl ListMonitorsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of results. You receive this token from a previous call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The number of monitor objects that you want to return with this call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl ListMonitorsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The number of monitor objects that you want to return with this call.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The status of a monitor. This includes the status of the data processing for the monitor and the status of the monitor itself.</p>
     /// <p>For information about the statuses for a monitor, see <a href="https://docs.aws.amazon.com/internet-monitor/latest/api/API_Monitor.html"> Monitor</a>.</p>
@@ -84,6 +92,11 @@ impl ListMonitorsInputBuilder {
     ) -> Self {
         self.monitor_status = input;
         self
+    }
+    /// <p>The status of a monitor. This includes the status of the data processing for the monitor and the status of the monitor itself.</p>
+    /// <p>For information about the statuses for a monitor, see <a href="https://docs.aws.amazon.com/internet-monitor/latest/api/API_Monitor.html"> Monitor</a>.</p>
+    pub fn get_monitor_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitor_status
     }
     /// Consumes the builder and constructs a [`ListMonitorsInput`](crate::operation::list_monitors::ListMonitorsInput).
     pub fn build(

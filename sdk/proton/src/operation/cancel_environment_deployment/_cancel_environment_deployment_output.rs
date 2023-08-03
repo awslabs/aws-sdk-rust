@@ -49,6 +49,10 @@ impl CancelEnvironmentDeploymentOutputBuilder {
         self.environment = input;
         self
     }
+    /// <p>The environment summary data that's returned by Proton.</p>
+    pub fn get_environment(&self) -> &::std::option::Option<crate::types::Environment> {
+        &self.environment
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

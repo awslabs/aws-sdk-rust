@@ -36,6 +36,10 @@ impl DescribeFraudsterRegistrationJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeFraudsterRegistrationJob as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_fraudster_registration_job::builders::DescribeFraudsterRegistrationJobInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl DescribeFraudsterRegistrationJobFluentBuilder {
         self.inner = self.inner.set_domain_id(input);
         self
     }
+    /// <p>The identifier of the domain that contains the fraudster registration job.</p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_id()
+    }
     /// <p>The identifier of the fraudster registration job you are describing.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_id(input.into());
@@ -109,5 +117,9 @@ impl DescribeFraudsterRegistrationJobFluentBuilder {
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_id(input);
         self
+    }
+    /// <p>The identifier of the fraudster registration job you are describing.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_id()
     }
 }

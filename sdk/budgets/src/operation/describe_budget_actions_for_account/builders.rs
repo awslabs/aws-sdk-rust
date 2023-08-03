@@ -36,6 +36,10 @@ impl DescribeBudgetActionsForAccountFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeBudgetActionsForAccount as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_budget_actions_for_account::builders::DescribeBudgetActionsForAccountInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl DescribeBudgetActionsForAccountFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The account ID of the user. It's a 12-digit number.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -116,6 +124,10 @@ impl DescribeBudgetActionsForAccountFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p> A generic string.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -125,5 +137,9 @@ impl DescribeBudgetActionsForAccountFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p> A generic string.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

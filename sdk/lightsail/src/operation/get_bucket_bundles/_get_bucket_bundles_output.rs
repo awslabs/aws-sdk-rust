@@ -56,6 +56,12 @@ impl GetBucketBundlesOutputBuilder {
         self.bundles = input;
         self
     }
+    /// <p>An object that describes bucket bundles.</p>
+    pub fn get_bundles(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BucketBundle>> {
+        &self.bundles
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

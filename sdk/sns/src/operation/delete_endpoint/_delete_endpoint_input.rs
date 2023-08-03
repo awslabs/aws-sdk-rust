@@ -40,6 +40,10 @@ impl DeleteEndpointInputBuilder {
         self.endpoint_arn = input;
         self
     }
+    /// <p>EndpointArn of endpoint to delete.</p>
+    pub fn get_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_arn
+    }
     /// Consumes the builder and constructs a [`DeleteEndpointInput`](crate::operation::delete_endpoint::DeleteEndpointInput).
     pub fn build(
         self,

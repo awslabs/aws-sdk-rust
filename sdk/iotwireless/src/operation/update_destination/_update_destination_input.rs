@@ -72,6 +72,10 @@ impl UpdateDestinationInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The new name of the resource.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type of value in <code>Expression</code>.</p>
     pub fn expression_type(mut self, input: crate::types::ExpressionType) -> Self {
         self.expression_type = ::std::option::Option::Some(input);
@@ -85,6 +89,10 @@ impl UpdateDestinationInputBuilder {
         self.expression_type = input;
         self
     }
+    /// <p>The type of value in <code>Expression</code>.</p>
+    pub fn get_expression_type(&self) -> &::std::option::Option<crate::types::ExpressionType> {
+        &self.expression_type
+    }
     /// <p>The new rule name or topic rule to send messages to.</p>
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression = ::std::option::Option::Some(input.into());
@@ -94,6 +102,10 @@ impl UpdateDestinationInputBuilder {
     pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expression = input;
         self
+    }
+    /// <p>The new rule name or topic rule to send messages to.</p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expression
     }
     /// <p>A new description of the resource.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -105,6 +117,10 @@ impl UpdateDestinationInputBuilder {
         self.description = input;
         self
     }
+    /// <p>A new description of the resource.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The ARN of the IAM Role that authorizes the destination.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -114,6 +130,10 @@ impl UpdateDestinationInputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The ARN of the IAM Role that authorizes the destination.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`UpdateDestinationInput`](crate::operation::update_destination::UpdateDestinationInput).
     pub fn build(

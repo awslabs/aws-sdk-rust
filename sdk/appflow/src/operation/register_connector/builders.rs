@@ -36,6 +36,12 @@ impl RegisterConnectorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RegisterConnector as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::register_connector::builders::RegisterConnectorInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl RegisterConnectorFluentBuilder {
         self.inner = self.inner.set_connector_label(input);
         self
     }
+    /// <p> The name of the connector. The name is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
+    pub fn get_connector_label(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connector_label()
+    }
     /// <p>A description about the connector that's being registered.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -141,6 +151,10 @@ impl RegisterConnectorFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description about the connector that's being registered.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The provisioning type of the connector. Currently the only supported value is LAMBDA. </p>
     pub fn connector_provisioning_type(
@@ -158,6 +172,12 @@ impl RegisterConnectorFluentBuilder {
         self.inner = self.inner.set_connector_provisioning_type(input);
         self
     }
+    /// <p>The provisioning type of the connector. Currently the only supported value is LAMBDA. </p>
+    pub fn get_connector_provisioning_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConnectorProvisioningType> {
+        self.inner.get_connector_provisioning_type()
+    }
     /// <p>The provisioning type of the connector. Currently the only supported value is LAMBDA.</p>
     pub fn connector_provisioning_config(
         mut self,
@@ -174,6 +194,12 @@ impl RegisterConnectorFluentBuilder {
         self.inner = self.inner.set_connector_provisioning_config(input);
         self
     }
+    /// <p>The provisioning type of the connector. Currently the only supported value is LAMBDA.</p>
+    pub fn get_connector_provisioning_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConnectorProvisioningConfig> {
+        self.inner.get_connector_provisioning_config()
+    }
     /// <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>RegisterConnector</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p>
     /// <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p>
     /// <p>If you specify input parameters that differ from your first request, an error occurs. If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>RegisterConnector</code>. The token is active for 8 hours.</p>
@@ -187,5 +213,11 @@ impl RegisterConnectorFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>RegisterConnector</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p>
+    /// <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p>
+    /// <p>If you specify input parameters that differ from your first request, an error occurs. If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>RegisterConnector</code>. The token is active for 8 hours.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

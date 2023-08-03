@@ -69,6 +69,10 @@ impl ChannelFlowSummaryBuilder {
         self.channel_flow_arn = input;
         self
     }
+    /// <p>The ARN of the channel flow.</p>
+    pub fn get_channel_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_flow_arn
+    }
     /// <p>The name of the channel flow.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -78,6 +82,10 @@ impl ChannelFlowSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the channel flow.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `processors`.
     ///
@@ -97,6 +105,12 @@ impl ChannelFlowSummaryBuilder {
     ) -> Self {
         self.processors = input;
         self
+    }
+    /// <p>Information about the processor Lambda functions.</p>
+    pub fn get_processors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Processor>> {
+        &self.processors
     }
     /// Consumes the builder and constructs a [`ChannelFlowSummary`](crate::types::ChannelFlowSummary).
     pub fn build(self) -> crate::types::ChannelFlowSummary {

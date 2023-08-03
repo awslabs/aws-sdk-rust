@@ -72,6 +72,12 @@ impl DescribeRecommendationExportJobsOutputBuilder {
         self.recommendation_export_jobs = input;
         self
     }
+    /// <p>An array of objects that describe recommendation export jobs.</p>
+    pub fn get_recommendation_export_jobs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationExportJob>> {
+        &self.recommendation_export_jobs
+    }
     /// <p>The token to use to advance to the next page of export jobs.</p>
     /// <p>This value is null when there are no more pages of export jobs to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -83,6 +89,11 @@ impl DescribeRecommendationExportJobsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to use to advance to the next page of export jobs.</p>
+    /// <p>This value is null when there are no more pages of export jobs to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

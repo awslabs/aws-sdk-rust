@@ -36,6 +36,13 @@ impl CreateInferenceSchedulerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateInferenceScheduler as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_inference_scheduler::builders::CreateInferenceSchedulerInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl CreateInferenceSchedulerFluentBuilder {
         self.inner = self.inner.set_model_name(input);
         self
     }
+    /// <p>The name of the previously trained ML model being used to create the inference scheduler. </p>
+    pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_model_name()
+    }
     /// <p>The name of the inference scheduler being created. </p>
     pub fn inference_scheduler_name(
         mut self,
@@ -142,6 +153,10 @@ impl CreateInferenceSchedulerFluentBuilder {
         self.inner = self.inner.set_inference_scheduler_name(input);
         self
     }
+    /// <p>The name of the inference scheduler being created. </p>
+    pub fn get_inference_scheduler_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_inference_scheduler_name()
+    }
     /// <p>The interval (in minutes) of planned delay at the start of each inference segment. For example, if inference is set to run every ten minutes, the delay is set to five minutes and the time is 09:08. The inference scheduler will wake up at the configured interval (which, without a delay configured, would be 09:10) plus the additional five minute delay time (so 09:15) to check your Amazon S3 bucket. The delay provides a buffer for you to upload data at the same frequency, so that you don't have to stop and restart the scheduler when uploading new data.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding the inference process</a>.</p>
     pub fn data_delay_offset_in_minutes(mut self, input: i64) -> Self {
@@ -153,6 +168,11 @@ impl CreateInferenceSchedulerFluentBuilder {
     pub fn set_data_delay_offset_in_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_data_delay_offset_in_minutes(input);
         self
+    }
+    /// <p>The interval (in minutes) of planned delay at the start of each inference segment. For example, if inference is set to run every ten minutes, the delay is set to five minutes and the time is 09:08. The inference scheduler will wake up at the configured interval (which, without a delay configured, would be 09:10) plus the additional five minute delay time (so 09:15) to check your Amazon S3 bucket. The delay provides a buffer for you to upload data at the same frequency, so that you don't have to stop and restart the scheduler when uploading new data.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding the inference process</a>.</p>
+    pub fn get_data_delay_offset_in_minutes(&self) -> &::std::option::Option<i64> {
+        self.inner.get_data_delay_offset_in_minutes()
     }
     /// <p> How often data is uploaded to the source Amazon S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment runs inference on your data.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding the inference process</a>.</p>
@@ -168,6 +188,13 @@ impl CreateInferenceSchedulerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_data_upload_frequency(input);
         self
+    }
+    /// <p> How often data is uploaded to the source Amazon S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment runs inference on your data.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding the inference process</a>.</p>
+    pub fn get_data_upload_frequency(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataUploadFrequency> {
+        self.inner.get_data_upload_frequency()
     }
     /// <p>Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
     pub fn data_input_configuration(
@@ -185,6 +212,12 @@ impl CreateInferenceSchedulerFluentBuilder {
         self.inner = self.inner.set_data_input_configuration(input);
         self
     }
+    /// <p>Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
+    pub fn get_data_input_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::InferenceInputConfiguration> {
+        self.inner.get_data_input_configuration()
+    }
     /// <p>Specifies configuration information for the output results for the inference scheduler, including the S3 location for the output. </p>
     pub fn data_output_configuration(
         mut self,
@@ -201,6 +234,12 @@ impl CreateInferenceSchedulerFluentBuilder {
         self.inner = self.inner.set_data_output_configuration(input);
         self
     }
+    /// <p>Specifies configuration information for the output results for the inference scheduler, including the S3 location for the output. </p>
+    pub fn get_data_output_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::InferenceOutputConfiguration> {
+        self.inner.get_data_output_configuration()
+    }
     /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source being used for the inference. </p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -210,6 +249,10 @@ impl CreateInferenceSchedulerFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source being used for the inference. </p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// <p>Provides the identifier of the KMS key used to encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
     pub fn server_side_kms_key_id(
@@ -227,6 +270,10 @@ impl CreateInferenceSchedulerFluentBuilder {
         self.inner = self.inner.set_server_side_kms_key_id(input);
         self
     }
+    /// <p>Provides the identifier of the KMS key used to encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
+    pub fn get_server_side_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_server_side_kms_key_id()
+    }
     /// <p> A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -236,6 +283,10 @@ impl CreateInferenceSchedulerFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p> A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// Appends an item to `Tags`.
     ///
@@ -253,5 +304,9 @@ impl CreateInferenceSchedulerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Any tags associated with the inference scheduler. </p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

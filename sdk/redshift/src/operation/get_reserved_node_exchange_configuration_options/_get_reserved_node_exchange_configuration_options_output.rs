@@ -58,6 +58,10 @@ impl GetReservedNodeExchangeConfigurationOptionsOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p>A pagination token provided by a previous <code>GetReservedNodeExchangeConfigurationOptions</code> request.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// Appends an item to `reserved_node_configuration_option_list`.
     ///
     /// To override the contents of this collection use [`set_reserved_node_configuration_option_list`](Self::set_reserved_node_configuration_option_list).
@@ -83,6 +87,13 @@ impl GetReservedNodeExchangeConfigurationOptionsOutputBuilder {
     ) -> Self {
         self.reserved_node_configuration_option_list = input;
         self
+    }
+    /// <p>the configuration options for the reserved-node exchange. These options include information about the source reserved node and target reserved node. Details include the node type, the price, the node count, and the offering type.</p>
+    pub fn get_reserved_node_configuration_option_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedNodeConfigurationOption>>
+    {
+        &self.reserved_node_configuration_option_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

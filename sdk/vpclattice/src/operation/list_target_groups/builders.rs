@@ -36,6 +36,12 @@ impl ListTargetGroupsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListTargetGroups as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_target_groups::builders::ListTargetGroupsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListTargetGroupsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>A pagination token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -146,6 +156,10 @@ impl ListTargetGroupsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A pagination token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
     pub fn vpc_identifier(
@@ -163,6 +177,10 @@ impl ListTargetGroupsFluentBuilder {
         self.inner = self.inner.set_vpc_identifier(input);
         self
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    pub fn get_vpc_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpc_identifier()
+    }
     /// <p>The target group type.</p>
     pub fn target_group_type(mut self, input: crate::types::TargetGroupType) -> Self {
         self.inner = self.inner.target_group_type(input);
@@ -175,5 +193,9 @@ impl ListTargetGroupsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_target_group_type(input);
         self
+    }
+    /// <p>The target group type.</p>
+    pub fn get_target_group_type(&self) -> &::std::option::Option<crate::types::TargetGroupType> {
+        self.inner.get_target_group_type()
     }
 }

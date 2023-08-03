@@ -35,6 +35,10 @@ impl ExportApiFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ExportApi as a reference.
+    pub fn as_input(&self) -> &crate::operation::export_api::builders::ExportApiInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -117,6 +121,10 @@ impl ExportApiFluentBuilder {
         self.inner = self.inner.set_api_id(input);
         self
     }
+    /// <p>The API identifier.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_api_id()
+    }
     /// <p>The version of the API Gateway export algorithm. API Gateway uses the latest version by default. Currently, the only supported version is 1.0.</p>
     pub fn export_version(
         mut self,
@@ -133,6 +141,10 @@ impl ExportApiFluentBuilder {
         self.inner = self.inner.set_export_version(input);
         self
     }
+    /// <p>The version of the API Gateway export algorithm. API Gateway uses the latest version by default. Currently, the only supported version is 1.0.</p>
+    pub fn get_export_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_export_version()
+    }
     /// <p>Specifies whether to include <a href="https://docs.aws.amazon.com//apigateway/latest/developerguide/api-gateway-swagger-extensions.html">API Gateway extensions</a> in the exported API definition. API Gateway extensions are included by default.</p>
     pub fn include_extensions(mut self, input: bool) -> Self {
         self.inner = self.inner.include_extensions(input);
@@ -143,6 +155,10 @@ impl ExportApiFluentBuilder {
         self.inner = self.inner.set_include_extensions(input);
         self
     }
+    /// <p>Specifies whether to include <a href="https://docs.aws.amazon.com//apigateway/latest/developerguide/api-gateway-swagger-extensions.html">API Gateway extensions</a> in the exported API definition. API Gateway extensions are included by default.</p>
+    pub fn get_include_extensions(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_extensions()
+    }
     /// <p>The output type of the exported definition file. Valid values are JSON and YAML.</p>
     pub fn output_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.output_type(input.into());
@@ -152,6 +168,10 @@ impl ExportApiFluentBuilder {
     pub fn set_output_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_output_type(input);
         self
+    }
+    /// <p>The output type of the exported definition file. Valid values are JSON and YAML.</p>
+    pub fn get_output_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_output_type()
     }
     /// <p>The version of the API specification to use. OAS30, for OpenAPI 3.0, is the only supported value.</p>
     pub fn specification(
@@ -169,6 +189,10 @@ impl ExportApiFluentBuilder {
         self.inner = self.inner.set_specification(input);
         self
     }
+    /// <p>The version of the API specification to use. OAS30, for OpenAPI 3.0, is the only supported value.</p>
+    pub fn get_specification(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_specification()
+    }
     /// <p>The name of the API stage to export. If you don't specify this property, a representation of the latest API configuration is exported.</p>
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stage_name(input.into());
@@ -178,5 +202,9 @@ impl ExportApiFluentBuilder {
     pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stage_name(input);
         self
+    }
+    /// <p>The name of the API stage to export. If you don't specify this property, a representation of the latest API configuration is exported.</p>
+    pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stage_name()
     }
 }

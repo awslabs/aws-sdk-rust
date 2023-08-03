@@ -67,6 +67,10 @@ impl DialogStateBuilder {
         self.dialog_action = input;
         self
     }
+    /// <p>Defines the action that the bot executes at runtime when the conversation reaches this step.</p>
+    pub fn get_dialog_action(&self) -> &::std::option::Option<crate::types::DialogAction> {
+        &self.dialog_action
+    }
     /// <p>Override settings to configure the intent state.</p>
     pub fn intent(mut self, input: crate::types::IntentOverride) -> Self {
         self.intent = ::std::option::Option::Some(input);
@@ -79,6 +83,10 @@ impl DialogStateBuilder {
     ) -> Self {
         self.intent = input;
         self
+    }
+    /// <p>Override settings to configure the intent state.</p>
+    pub fn get_intent(&self) -> &::std::option::Option<crate::types::IntentOverride> {
+        &self.intent
     }
     /// Adds a key-value pair to `session_attributes`.
     ///
@@ -104,6 +112,14 @@ impl DialogStateBuilder {
     ) -> Self {
         self.session_attributes = input;
         self
+    }
+    /// <p>Map of key/value pairs representing session-specific context information. It contains application information passed between Amazon Lex and a client application.</p>
+    pub fn get_session_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.session_attributes
     }
     /// Consumes the builder and constructs a [`DialogState`](crate::types::DialogState).
     pub fn build(self) -> crate::types::DialogState {

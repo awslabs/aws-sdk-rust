@@ -71,6 +71,10 @@ impl GetPredictiveScalingForecastInputBuilder {
         self.auto_scaling_group_name = input;
         self
     }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_scaling_group_name
+    }
     /// <p>The name of the policy.</p>
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl GetPredictiveScalingForecastInputBuilder {
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_name = input;
         self
+    }
+    /// <p>The name of the policy.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_name
     }
     /// <p>The inclusive start time of the time range for the forecast data to get. At most, the date and time can be one year before the current date and time.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -93,6 +101,10 @@ impl GetPredictiveScalingForecastInputBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>The inclusive start time of the time range for the forecast data to get. At most, the date and time can be one year before the current date and time.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>The exclusive end time of the time range for the forecast data to get. The maximum time duration between the start and end time is 30 days. </p>
     /// <p>Although this parameter can accept a date and time that is more than two days in the future, the availability of forecast data has limits. Amazon EC2 Auto Scaling only issues forecasts for periods of two days in advance.</p>
@@ -108,6 +120,11 @@ impl GetPredictiveScalingForecastInputBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The exclusive end time of the time range for the forecast data to get. The maximum time duration between the start and end time is 30 days. </p>
+    /// <p>Although this parameter can accept a date and time that is more than two days in the future, the availability of forecast data has limits. Amazon EC2 Auto Scaling only issues forecasts for periods of two days in advance.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// Consumes the builder and constructs a [`GetPredictiveScalingForecastInput`](crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecastInput).
     pub fn build(

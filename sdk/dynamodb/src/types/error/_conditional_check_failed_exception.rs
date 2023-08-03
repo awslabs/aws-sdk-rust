@@ -83,6 +83,10 @@ impl ConditionalCheckFailedExceptionBuilder {
         self.message = input;
         self
     }
+    /// <p>The conditional request failed.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Adds a key-value pair to `item`.
     ///
     /// To override the contents of this collection use [`set_item`](Self::set_item).
@@ -107,6 +111,14 @@ impl ConditionalCheckFailedExceptionBuilder {
     ) -> Self {
         self.item = input;
         self
+    }
+    /// <p>Item which caused the <code>ConditionalCheckFailedException</code>.</p>
+    pub fn get_item(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
+    > {
+        &self.item
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

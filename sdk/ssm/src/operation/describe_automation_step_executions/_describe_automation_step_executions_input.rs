@@ -77,6 +77,10 @@ impl DescribeAutomationStepExecutionsInputBuilder {
         self.automation_execution_id = input;
         self
     }
+    /// <p>The Automation execution ID for which you want step execution descriptions.</p>
+    pub fn get_automation_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.automation_execution_id
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -96,6 +100,12 @@ impl DescribeAutomationStepExecutionsInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>One or more filters to limit the number of step executions returned by the request.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StepExecutionFilter>> {
+        &self.filters
+    }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -105,6 +115,10 @@ impl DescribeAutomationStepExecutionsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -116,6 +130,10 @@ impl DescribeAutomationStepExecutionsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>Indicates whether to list step executions in reverse order by start time. The default value is 'false'.</p>
     pub fn reverse_order(mut self, input: bool) -> Self {
         self.reverse_order = ::std::option::Option::Some(input);
@@ -125,6 +143,10 @@ impl DescribeAutomationStepExecutionsInputBuilder {
     pub fn set_reverse_order(mut self, input: ::std::option::Option<bool>) -> Self {
         self.reverse_order = input;
         self
+    }
+    /// <p>Indicates whether to list step executions in reverse order by start time. The default value is 'false'.</p>
+    pub fn get_reverse_order(&self) -> &::std::option::Option<bool> {
+        &self.reverse_order
     }
     /// Consumes the builder and constructs a [`DescribeAutomationStepExecutionsInput`](crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -67,6 +67,10 @@ impl ListPoolOriginationIdentitiesInputBuilder {
         self.pool_id = input;
         self
     }
+    /// <p>The unique identifier for the pool. This value can be either the PoolId or PoolArn.</p>
+    pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pool_id
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -88,6 +92,13 @@ impl ListPoolOriginationIdentitiesInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>An array of PoolOriginationIdentitiesFilter objects to filter the results..</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PoolOriginationIdentitiesFilter>>
+    {
+        &self.filters
+    }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -98,6 +109,10 @@ impl ListPoolOriginationIdentitiesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return per each request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -107,6 +122,10 @@ impl ListPoolOriginationIdentitiesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return per each request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListPoolOriginationIdentitiesInput`](crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesInput).
     pub fn build(

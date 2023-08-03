@@ -73,6 +73,10 @@ impl RecoveryInstanceDataReplicationInfoReplicatedDiskBuilder {
         self.device_name = input;
         self
     }
+    /// <p>The name of the device.</p>
+    pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_name
+    }
     /// <p>The total amount of data to be replicated in bytes.</p>
     pub fn total_storage_bytes(mut self, input: i64) -> Self {
         self.total_storage_bytes = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl RecoveryInstanceDataReplicationInfoReplicatedDiskBuilder {
     pub fn set_total_storage_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_storage_bytes = input;
         self
+    }
+    /// <p>The total amount of data to be replicated in bytes.</p>
+    pub fn get_total_storage_bytes(&self) -> &::std::option::Option<i64> {
+        &self.total_storage_bytes
     }
     /// <p>The amount of data replicated so far in bytes.</p>
     pub fn replicated_storage_bytes(mut self, input: i64) -> Self {
@@ -93,6 +101,10 @@ impl RecoveryInstanceDataReplicationInfoReplicatedDiskBuilder {
         self.replicated_storage_bytes = input;
         self
     }
+    /// <p>The amount of data replicated so far in bytes.</p>
+    pub fn get_replicated_storage_bytes(&self) -> &::std::option::Option<i64> {
+        &self.replicated_storage_bytes
+    }
     /// <p>The amount of data to be rescanned in bytes.</p>
     pub fn rescanned_storage_bytes(mut self, input: i64) -> Self {
         self.rescanned_storage_bytes = ::std::option::Option::Some(input);
@@ -103,6 +115,10 @@ impl RecoveryInstanceDataReplicationInfoReplicatedDiskBuilder {
         self.rescanned_storage_bytes = input;
         self
     }
+    /// <p>The amount of data to be rescanned in bytes.</p>
+    pub fn get_rescanned_storage_bytes(&self) -> &::std::option::Option<i64> {
+        &self.rescanned_storage_bytes
+    }
     /// <p>The size of the replication backlog in bytes.</p>
     pub fn backlogged_storage_bytes(mut self, input: i64) -> Self {
         self.backlogged_storage_bytes = ::std::option::Option::Some(input);
@@ -112,6 +128,10 @@ impl RecoveryInstanceDataReplicationInfoReplicatedDiskBuilder {
     pub fn set_backlogged_storage_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.backlogged_storage_bytes = input;
         self
+    }
+    /// <p>The size of the replication backlog in bytes.</p>
+    pub fn get_backlogged_storage_bytes(&self) -> &::std::option::Option<i64> {
+        &self.backlogged_storage_bytes
     }
     /// Consumes the builder and constructs a [`RecoveryInstanceDataReplicationInfoReplicatedDisk`](crate::types::RecoveryInstanceDataReplicationInfoReplicatedDisk).
     pub fn build(self) -> crate::types::RecoveryInstanceDataReplicationInfoReplicatedDisk {

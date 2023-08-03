@@ -48,6 +48,10 @@ impl BucketBuilder {
         self.value = input;
         self
     }
+    /// <p>The facet value being counted.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// <p>The number of hits that contain the facet value in the specified facet field.</p>
     pub fn count(mut self, input: i64) -> Self {
         self.count = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl BucketBuilder {
     pub fn set_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.count = input;
         self
+    }
+    /// <p>The number of hits that contain the facet value in the specified facet field.</p>
+    pub fn get_count(&self) -> &::std::option::Option<i64> {
+        &self.count
     }
     /// Consumes the builder and constructs a [`Bucket`](crate::types::Bucket).
     pub fn build(self) -> crate::types::Bucket {

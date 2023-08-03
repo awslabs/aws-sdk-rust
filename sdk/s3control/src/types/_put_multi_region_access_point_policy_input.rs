@@ -48,6 +48,10 @@ impl PutMultiRegionAccessPointPolicyInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the Multi-Region Access Point associated with the request.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The policy details for the <code>PutMultiRegionAccessPoint</code> request.</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl PutMultiRegionAccessPointPolicyInputBuilder {
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy = input;
         self
+    }
+    /// <p>The policy details for the <code>PutMultiRegionAccessPoint</code> request.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy
     }
     /// Consumes the builder and constructs a [`PutMultiRegionAccessPointPolicyInput`](crate::types::PutMultiRegionAccessPointPolicyInput).
     pub fn build(self) -> crate::types::PutMultiRegionAccessPointPolicyInput {

@@ -47,6 +47,10 @@ impl CreateIpamScopeOutputBuilder {
         self.ipam_scope = input;
         self
     }
+    /// <p>Information about the created scope.</p>
+    pub fn get_ipam_scope(&self) -> &::std::option::Option<crate::types::IpamScope> {
+        &self.ipam_scope
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

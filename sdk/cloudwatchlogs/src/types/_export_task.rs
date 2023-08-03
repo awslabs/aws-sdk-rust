@@ -104,6 +104,10 @@ impl ExportTaskBuilder {
         self.task_id = input;
         self
     }
+    /// <p>The ID of the export task.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
+    }
     /// <p>The name of the export task.</p>
     pub fn task_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_name = ::std::option::Option::Some(input.into());
@@ -113,6 +117,10 @@ impl ExportTaskBuilder {
     pub fn set_task_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_name = input;
         self
+    }
+    /// <p>The name of the export task.</p>
+    pub fn get_task_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_name
     }
     /// <p>The name of the log group from which logs data was exported.</p>
     pub fn log_group_name(
@@ -130,6 +138,10 @@ impl ExportTaskBuilder {
         self.log_group_name = input;
         self
     }
+    /// <p>The name of the log group from which logs data was exported.</p>
+    pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group_name
+    }
     /// <p>The start time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not exported.</p>
     pub fn from(mut self, input: i64) -> Self {
         self.from = ::std::option::Option::Some(input);
@@ -139,6 +151,10 @@ impl ExportTaskBuilder {
     pub fn set_from(mut self, input: ::std::option::Option<i64>) -> Self {
         self.from = input;
         self
+    }
+    /// <p>The start time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not exported.</p>
+    pub fn get_from(&self) -> &::std::option::Option<i64> {
+        &self.from
     }
     /// <p>The end time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this time are not exported.</p>
     pub fn to(mut self, input: i64) -> Self {
@@ -150,6 +166,10 @@ impl ExportTaskBuilder {
         self.to = input;
         self
     }
+    /// <p>The end time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this time are not exported.</p>
+    pub fn get_to(&self) -> &::std::option::Option<i64> {
+        &self.to
+    }
     /// <p>The name of the S3 bucket to which the log data was exported.</p>
     pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination = ::std::option::Option::Some(input.into());
@@ -159,6 +179,10 @@ impl ExportTaskBuilder {
     pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination = input;
         self
+    }
+    /// <p>The name of the S3 bucket to which the log data was exported.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination
     }
     /// <p>The prefix that was used as the start of Amazon S3 key for every object exported.</p>
     pub fn destination_prefix(
@@ -176,6 +200,10 @@ impl ExportTaskBuilder {
         self.destination_prefix = input;
         self
     }
+    /// <p>The prefix that was used as the start of Amazon S3 key for every object exported.</p>
+    pub fn get_destination_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_prefix
+    }
     /// <p>The status of the export task.</p>
     pub fn status(mut self, input: crate::types::ExportTaskStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -189,6 +217,10 @@ impl ExportTaskBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the export task.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ExportTaskStatus> {
+        &self.status
+    }
     /// <p>Execution information about the export task.</p>
     pub fn execution_info(mut self, input: crate::types::ExportTaskExecutionInfo) -> Self {
         self.execution_info = ::std::option::Option::Some(input);
@@ -201,6 +233,12 @@ impl ExportTaskBuilder {
     ) -> Self {
         self.execution_info = input;
         self
+    }
+    /// <p>Execution information about the export task.</p>
+    pub fn get_execution_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExportTaskExecutionInfo> {
+        &self.execution_info
     }
     /// Consumes the builder and constructs a [`ExportTask`](crate::types::ExportTask).
     pub fn build(self) -> crate::types::ExportTask {

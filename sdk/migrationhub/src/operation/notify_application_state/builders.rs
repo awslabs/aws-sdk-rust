@@ -36,6 +36,13 @@ impl NotifyApplicationStateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the NotifyApplicationState as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::notify_application_state::builders::NotifyApplicationStateInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl NotifyApplicationStateFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The configurationId in Application Discovery Service that uniquely identifies the grouped application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>Status of the application - Not Started, In-Progress, Complete.</p>
     pub fn status(mut self, input: crate::types::ApplicationStatus) -> Self {
         self.inner = self.inner.status(input);
@@ -144,6 +155,10 @@ impl NotifyApplicationStateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p>Status of the application - Not Started, In-Progress, Complete.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ApplicationStatus> {
+        self.inner.get_status()
     }
     /// <p>The timestamp when the application state changed.</p>
     pub fn update_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -158,6 +173,10 @@ impl NotifyApplicationStateFluentBuilder {
         self.inner = self.inner.set_update_date_time(input);
         self
     }
+    /// <p>The timestamp when the application state changed.</p>
+    pub fn get_update_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_update_date_time()
+    }
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -167,5 +186,9 @@ impl NotifyApplicationStateFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

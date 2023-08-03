@@ -48,6 +48,10 @@ impl EcrRepositoryMetadataBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the Amazon ECR repository.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The frequency of scans.</p>
     pub fn scan_frequency(mut self, input: crate::types::EcrScanFrequency) -> Self {
         self.scan_frequency = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl EcrRepositoryMetadataBuilder {
     ) -> Self {
         self.scan_frequency = input;
         self
+    }
+    /// <p>The frequency of scans.</p>
+    pub fn get_scan_frequency(&self) -> &::std::option::Option<crate::types::EcrScanFrequency> {
+        &self.scan_frequency
     }
     /// Consumes the builder and constructs a [`EcrRepositoryMetadata`](crate::types::EcrRepositoryMetadata).
     pub fn build(self) -> crate::types::EcrRepositoryMetadata {

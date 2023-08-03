@@ -70,6 +70,10 @@ impl UpdateBridgeSourceInputBuilder {
         self.bridge_arn = input;
         self
     }
+    /// The ARN of the bridge that you want to update.
+    pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bridge_arn
+    }
     /// Update the flow source of the bridge.
     pub fn flow_source(mut self, input: crate::types::UpdateBridgeFlowSourceRequest) -> Self {
         self.flow_source = ::std::option::Option::Some(input);
@@ -82,6 +86,12 @@ impl UpdateBridgeSourceInputBuilder {
     ) -> Self {
         self.flow_source = input;
         self
+    }
+    /// Update the flow source of the bridge.
+    pub fn get_flow_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateBridgeFlowSourceRequest> {
+        &self.flow_source
     }
     /// Update the network source of the bridge.
     pub fn network_source(mut self, input: crate::types::UpdateBridgeNetworkSourceRequest) -> Self {
@@ -96,6 +106,12 @@ impl UpdateBridgeSourceInputBuilder {
         self.network_source = input;
         self
     }
+    /// Update the network source of the bridge.
+    pub fn get_network_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateBridgeNetworkSourceRequest> {
+        &self.network_source
+    }
     /// The name of the source that you want to update.
     pub fn source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_name = ::std::option::Option::Some(input.into());
@@ -105,6 +121,10 @@ impl UpdateBridgeSourceInputBuilder {
     pub fn set_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_name = input;
         self
+    }
+    /// The name of the source that you want to update.
+    pub fn get_source_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_name
     }
     /// Consumes the builder and constructs a [`UpdateBridgeSourceInput`](crate::operation::update_bridge_source::UpdateBridgeSourceInput).
     pub fn build(

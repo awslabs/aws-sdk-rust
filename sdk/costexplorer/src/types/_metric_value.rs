@@ -48,6 +48,10 @@ impl MetricValueBuilder {
         self.amount = input;
         self
     }
+    /// <p>The actual number that represents the metric.</p>
+    pub fn get_amount(&self) -> &::std::option::Option<::std::string::String> {
+        &self.amount
+    }
     /// <p>The unit that the metric is given in.</p>
     pub fn unit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.unit = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl MetricValueBuilder {
     pub fn set_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unit = input;
         self
+    }
+    /// <p>The unit that the metric is given in.</p>
+    pub fn get_unit(&self) -> &::std::option::Option<::std::string::String> {
+        &self.unit
     }
     /// Consumes the builder and constructs a [`MetricValue`](crate::types::MetricValue).
     pub fn build(self) -> crate::types::MetricValue {

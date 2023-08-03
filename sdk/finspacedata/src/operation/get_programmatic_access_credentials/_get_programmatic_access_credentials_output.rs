@@ -58,6 +58,10 @@ impl GetProgrammaticAccessCredentialsOutputBuilder {
         self.credentials = input;
         self
     }
+    /// <p>Returns the programmatic credentials.</p>
+    pub fn get_credentials(&self) -> &::std::option::Option<crate::types::Credentials> {
+        &self.credentials
+    }
     /// <p>Returns the duration in which the credentials will remain valid.</p>
     pub fn duration_in_minutes(mut self, input: i64) -> Self {
         self.duration_in_minutes = ::std::option::Option::Some(input);
@@ -67,6 +71,10 @@ impl GetProgrammaticAccessCredentialsOutputBuilder {
     pub fn set_duration_in_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.duration_in_minutes = input;
         self
+    }
+    /// <p>Returns the duration in which the credentials will remain valid.</p>
+    pub fn get_duration_in_minutes(&self) -> &::std::option::Option<i64> {
+        &self.duration_in_minutes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -64,6 +64,10 @@ impl AssociateRouteTableOutputBuilder {
         self.association_id = input;
         self
     }
+    /// <p>The route table association ID. This ID is required for disassociating the route table.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_id
+    }
     /// <p>The state of the association.</p>
     pub fn association_state(mut self, input: crate::types::RouteTableAssociationState) -> Self {
         self.association_state = ::std::option::Option::Some(input);
@@ -76,6 +80,12 @@ impl AssociateRouteTableOutputBuilder {
     ) -> Self {
         self.association_state = input;
         self
+    }
+    /// <p>The state of the association.</p>
+    pub fn get_association_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::RouteTableAssociationState> {
+        &self.association_state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

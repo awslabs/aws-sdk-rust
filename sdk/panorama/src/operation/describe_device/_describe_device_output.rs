@@ -216,6 +216,10 @@ impl DescribeDeviceOutputBuilder {
         self.device_id = input;
         self
     }
+    /// <p>The device's ID.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_id
+    }
     /// <p>The device's name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -225,6 +229,10 @@ impl DescribeDeviceOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The device's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The device's ARN.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -236,6 +244,10 @@ impl DescribeDeviceOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The device's ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The device's description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -246,6 +258,10 @@ impl DescribeDeviceOutputBuilder {
         self.description = input;
         self
     }
+    /// <p>The device's description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The device's type.</p>
     pub fn r#type(mut self, input: crate::types::DeviceType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -255,6 +271,10 @@ impl DescribeDeviceOutputBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DeviceType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The device's type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::DeviceType> {
+        &self.r#type
     }
     /// <p>The device's connection status.</p>
     pub fn device_connection_status(mut self, input: crate::types::DeviceConnectionStatus) -> Self {
@@ -269,6 +289,12 @@ impl DescribeDeviceOutputBuilder {
         self.device_connection_status = input;
         self
     }
+    /// <p>The device's connection status.</p>
+    pub fn get_device_connection_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeviceConnectionStatus> {
+        &self.device_connection_status
+    }
     /// <p>When the device was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
@@ -282,6 +308,10 @@ impl DescribeDeviceOutputBuilder {
         self.created_time = input;
         self
     }
+    /// <p>When the device was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>The device's provisioning status.</p>
     pub fn provisioning_status(mut self, input: crate::types::DeviceStatus) -> Self {
         self.provisioning_status = ::std::option::Option::Some(input);
@@ -294,6 +324,10 @@ impl DescribeDeviceOutputBuilder {
     ) -> Self {
         self.provisioning_status = input;
         self
+    }
+    /// <p>The device's provisioning status.</p>
+    pub fn get_provisioning_status(&self) -> &::std::option::Option<crate::types::DeviceStatus> {
+        &self.provisioning_status
     }
     /// <p>The latest software version available for the device.</p>
     pub fn latest_software(
@@ -311,6 +345,10 @@ impl DescribeDeviceOutputBuilder {
         self.latest_software = input;
         self
     }
+    /// <p>The latest software version available for the device.</p>
+    pub fn get_latest_software(&self) -> &::std::option::Option<::std::string::String> {
+        &self.latest_software
+    }
     /// <p>The device's current software version.</p>
     pub fn current_software(
         mut self,
@@ -327,6 +365,10 @@ impl DescribeDeviceOutputBuilder {
         self.current_software = input;
         self
     }
+    /// <p>The device's current software version.</p>
+    pub fn get_current_software(&self) -> &::std::option::Option<::std::string::String> {
+        &self.current_software
+    }
     /// <p>The device's serial number.</p>
     pub fn serial_number(
         mut self,
@@ -342,6 +384,10 @@ impl DescribeDeviceOutputBuilder {
     ) -> Self {
         self.serial_number = input;
         self
+    }
+    /// <p>The device's serial number.</p>
+    pub fn get_serial_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.serial_number
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -368,6 +414,14 @@ impl DescribeDeviceOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The device's tags.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The device's networking configuration.</p>
     pub fn networking_configuration(mut self, input: crate::types::NetworkPayload) -> Self {
         self.networking_configuration = ::std::option::Option::Some(input);
@@ -380,6 +434,12 @@ impl DescribeDeviceOutputBuilder {
     ) -> Self {
         self.networking_configuration = input;
         self
+    }
+    /// <p>The device's networking configuration.</p>
+    pub fn get_networking_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkPayload> {
+        &self.networking_configuration
     }
     /// <p>The device's networking status.</p>
     pub fn current_networking_status(mut self, input: crate::types::NetworkStatus) -> Self {
@@ -394,6 +454,12 @@ impl DescribeDeviceOutputBuilder {
         self.current_networking_status = input;
         self
     }
+    /// <p>The device's networking status.</p>
+    pub fn get_current_networking_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkStatus> {
+        &self.current_networking_status
+    }
     /// <p>The device's lease expiration time.</p>
     pub fn lease_expiration_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.lease_expiration_time = ::std::option::Option::Some(input);
@@ -406,6 +472,12 @@ impl DescribeDeviceOutputBuilder {
     ) -> Self {
         self.lease_expiration_time = input;
         self
+    }
+    /// <p>The device's lease expiration time.</p>
+    pub fn get_lease_expiration_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.lease_expiration_time
     }
     /// Appends an item to `alternate_softwares`.
     ///
@@ -426,6 +498,12 @@ impl DescribeDeviceOutputBuilder {
         self.alternate_softwares = input;
         self
     }
+    /// <p>Beta software releases available for the device.</p>
+    pub fn get_alternate_softwares(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AlternateSoftwareMetadata>> {
+        &self.alternate_softwares
+    }
     /// <p>The most recent beta software release.</p>
     pub fn latest_alternate_software(
         mut self,
@@ -442,6 +520,10 @@ impl DescribeDeviceOutputBuilder {
         self.latest_alternate_software = input;
         self
     }
+    /// <p>The most recent beta software release.</p>
+    pub fn get_latest_alternate_software(&self) -> &::std::option::Option<::std::string::String> {
+        &self.latest_alternate_software
+    }
     /// <p>The device's maker.</p>
     pub fn brand(mut self, input: crate::types::DeviceBrand) -> Self {
         self.brand = ::std::option::Option::Some(input);
@@ -451,6 +533,10 @@ impl DescribeDeviceOutputBuilder {
     pub fn set_brand(mut self, input: ::std::option::Option<crate::types::DeviceBrand>) -> Self {
         self.brand = input;
         self
+    }
+    /// <p>The device's maker.</p>
+    pub fn get_brand(&self) -> &::std::option::Option<crate::types::DeviceBrand> {
+        &self.brand
     }
     /// <p>A device's latest job. Includes the target image version, and the job status.</p>
     pub fn latest_device_job(mut self, input: crate::types::LatestDeviceJob) -> Self {
@@ -465,6 +551,10 @@ impl DescribeDeviceOutputBuilder {
         self.latest_device_job = input;
         self
     }
+    /// <p>A device's latest job. Includes the target image version, and the job status.</p>
+    pub fn get_latest_device_job(&self) -> &::std::option::Option<crate::types::LatestDeviceJob> {
+        &self.latest_device_job
+    }
     /// <p>A device's aggregated status. Including the device's connection status, provisioning status, and lease status.</p>
     pub fn device_aggregated_status(mut self, input: crate::types::DeviceAggregatedStatus) -> Self {
         self.device_aggregated_status = ::std::option::Option::Some(input);
@@ -477,6 +567,12 @@ impl DescribeDeviceOutputBuilder {
     ) -> Self {
         self.device_aggregated_status = input;
         self
+    }
+    /// <p>A device's aggregated status. Including the device's connection status, provisioning status, and lease status.</p>
+    pub fn get_device_aggregated_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeviceAggregatedStatus> {
+        &self.device_aggregated_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

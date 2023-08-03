@@ -161,6 +161,10 @@ impl Asn1SubjectBuilder {
         self.country = input;
         self
     }
+    /// <p>Two-digit code that specifies the country in which the certificate subject located.</p>
+    pub fn get_country(&self) -> &::std::option::Option<::std::string::String> {
+        &self.country
+    }
     /// <p>Legal name of the organization with which the certificate subject is affiliated. </p>
     pub fn organization(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization = ::std::option::Option::Some(input.into());
@@ -170,6 +174,10 @@ impl Asn1SubjectBuilder {
     pub fn set_organization(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization = input;
         self
+    }
+    /// <p>Legal name of the organization with which the certificate subject is affiliated. </p>
+    pub fn get_organization(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization
     }
     /// <p>A subdivision or unit of the organization (such as sales or finance) with which the certificate subject is affiliated.</p>
     pub fn organizational_unit(
@@ -187,6 +195,10 @@ impl Asn1SubjectBuilder {
         self.organizational_unit = input;
         self
     }
+    /// <p>A subdivision or unit of the organization (such as sales or finance) with which the certificate subject is affiliated.</p>
+    pub fn get_organizational_unit(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organizational_unit
+    }
     /// <p>Disambiguating information for the certificate subject.</p>
     pub fn distinguished_name_qualifier(
         mut self,
@@ -203,6 +215,12 @@ impl Asn1SubjectBuilder {
         self.distinguished_name_qualifier = input;
         self
     }
+    /// <p>Disambiguating information for the certificate subject.</p>
+    pub fn get_distinguished_name_qualifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.distinguished_name_qualifier
+    }
     /// <p>State in which the subject of the certificate is located.</p>
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state = ::std::option::Option::Some(input.into());
@@ -212,6 +230,10 @@ impl Asn1SubjectBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>State in which the subject of the certificate is located.</p>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
     }
     /// <p>For CA and end-entity certificates in a private PKI, the common name (CN) can be any string within the length limit. </p>
     /// <p>Note: In publicly trusted certificates, the common name must be a fully qualified domain name (FQDN) associated with the certificate subject.</p>
@@ -224,6 +246,11 @@ impl Asn1SubjectBuilder {
     pub fn set_common_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.common_name = input;
         self
+    }
+    /// <p>For CA and end-entity certificates in a private PKI, the common name (CN) can be any string within the length limit. </p>
+    /// <p>Note: In publicly trusted certificates, the common name must be a fully qualified domain name (FQDN) associated with the certificate subject.</p>
+    pub fn get_common_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.common_name
     }
     /// <p>The certificate serial number.</p>
     pub fn serial_number(
@@ -241,6 +268,10 @@ impl Asn1SubjectBuilder {
         self.serial_number = input;
         self
     }
+    /// <p>The certificate serial number.</p>
+    pub fn get_serial_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.serial_number
+    }
     /// <p>The locality (such as a city or town) in which the certificate subject is located.</p>
     pub fn locality(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locality = ::std::option::Option::Some(input.into());
@@ -250,6 +281,10 @@ impl Asn1SubjectBuilder {
     pub fn set_locality(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.locality = input;
         self
+    }
+    /// <p>The locality (such as a city or town) in which the certificate subject is located.</p>
+    pub fn get_locality(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locality
     }
     /// <p>A title such as Mr. or Ms., which is pre-pended to the name to refer formally to the certificate subject.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -261,6 +296,10 @@ impl Asn1SubjectBuilder {
         self.title = input;
         self
     }
+    /// <p>A title such as Mr. or Ms., which is pre-pended to the name to refer formally to the certificate subject.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
+    }
     /// <p>Family name. In the US and the UK, for example, the surname of an individual is ordered last. In Asian cultures the surname is typically ordered first.</p>
     pub fn surname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.surname = ::std::option::Option::Some(input.into());
@@ -270,6 +309,10 @@ impl Asn1SubjectBuilder {
     pub fn set_surname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.surname = input;
         self
+    }
+    /// <p>Family name. In the US and the UK, for example, the surname of an individual is ordered last. In Asian cultures the surname is typically ordered first.</p>
+    pub fn get_surname(&self) -> &::std::option::Option<::std::string::String> {
+        &self.surname
     }
     /// <p>First name.</p>
     pub fn given_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -281,6 +324,10 @@ impl Asn1SubjectBuilder {
         self.given_name = input;
         self
     }
+    /// <p>First name.</p>
+    pub fn get_given_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.given_name
+    }
     /// <p>Concatenation that typically contains the first letter of the <b>GivenName</b>, the first letter of the middle name if one exists, and the first letter of the <b>Surname</b>.</p>
     pub fn initials(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.initials = ::std::option::Option::Some(input.into());
@@ -291,6 +338,10 @@ impl Asn1SubjectBuilder {
         self.initials = input;
         self
     }
+    /// <p>Concatenation that typically contains the first letter of the <b>GivenName</b>, the first letter of the middle name if one exists, and the first letter of the <b>Surname</b>.</p>
+    pub fn get_initials(&self) -> &::std::option::Option<::std::string::String> {
+        &self.initials
+    }
     /// <p>Typically a shortened version of a longer <b>GivenName</b>. For example, Jonathan is often shortened to John. Elizabeth is often shortened to Beth, Liz, or Eliza.</p>
     pub fn pseudonym(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pseudonym = ::std::option::Option::Some(input.into());
@@ -300,6 +351,10 @@ impl Asn1SubjectBuilder {
     pub fn set_pseudonym(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pseudonym = input;
         self
+    }
+    /// <p>Typically a shortened version of a longer <b>GivenName</b>. For example, Jonathan is often shortened to John. Elizabeth is often shortened to Beth, Liz, or Eliza.</p>
+    pub fn get_pseudonym(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pseudonym
     }
     /// <p>Typically a qualifier appended to the name of an individual. Examples include Jr. for junior, Sr. for senior, and III for third.</p>
     pub fn generation_qualifier(
@@ -316,6 +371,10 @@ impl Asn1SubjectBuilder {
     ) -> Self {
         self.generation_qualifier = input;
         self
+    }
+    /// <p>Typically a qualifier appended to the name of an individual. Examples include Jr. for junior, Sr. for senior, and III for third.</p>
+    pub fn get_generation_qualifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.generation_qualifier
     }
     /// Appends an item to `custom_attributes`.
     ///
@@ -341,6 +400,15 @@ impl Asn1SubjectBuilder {
     ) -> Self {
         self.custom_attributes = input;
         self
+    }
+    /// <p></p>
+    /// <p>Contains a sequence of one or more X.500 relative distinguished names (RDNs), each of which consists of an object identifier (OID) and a value. For more information, see NIST’s definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p> <note>
+    /// <p>Custom attributes cannot be used in combination with standard attributes.</p>
+    /// </note>
+    pub fn get_custom_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomAttribute>> {
+        &self.custom_attributes
     }
     /// Consumes the builder and constructs a [`Asn1Subject`](crate::types::Asn1Subject).
     pub fn build(self) -> crate::types::Asn1Subject {

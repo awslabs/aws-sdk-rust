@@ -46,6 +46,10 @@ impl UpdateAgreementOutputBuilder {
         self.agreement_id = input;
         self
     }
+    /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
+    pub fn get_agreement_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agreement_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

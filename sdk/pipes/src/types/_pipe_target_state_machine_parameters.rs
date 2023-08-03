@@ -45,6 +45,12 @@ impl PipeTargetStateMachineParametersBuilder {
         self.invocation_type = input;
         self
     }
+    /// <p>Specify whether to wait for the state machine to finish or not.</p>
+    pub fn get_invocation_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::PipeTargetInvocationType> {
+        &self.invocation_type
+    }
     /// Consumes the builder and constructs a [`PipeTargetStateMachineParameters`](crate::types::PipeTargetStateMachineParameters).
     pub fn build(self) -> crate::types::PipeTargetStateMachineParameters {
         crate::types::PipeTargetStateMachineParameters {

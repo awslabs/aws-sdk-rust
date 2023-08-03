@@ -57,6 +57,12 @@ impl GetEffectivePoliciesOutputBuilder {
         self.effective_policies = input;
         self
     }
+    /// <p>The effective policies.</p>
+    pub fn get_effective_policies(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EffectivePolicy>> {
+        &self.effective_policies
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

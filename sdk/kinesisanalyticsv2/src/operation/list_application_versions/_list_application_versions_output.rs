@@ -76,6 +76,13 @@ impl ListApplicationVersionsOutputBuilder {
         self.application_version_summaries = input;
         self
     }
+    /// <p>A list of the application versions and the associated configuration summaries. The list includes application versions that were rolled back.</p>
+    /// <p>To get the complete description of a specific application version, invoke the <code>DescribeApplicationVersion</code> operation.</p>
+    pub fn get_application_version_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationVersionSummary>> {
+        &self.application_version_summaries
+    }
     /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results. To retrieve the next set of items, pass this token into a subsequent invocation of this operation. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -85,6 +92,10 @@ impl ListApplicationVersionsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results. To retrieve the next set of items, pass this token into a subsequent invocation of this operation. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

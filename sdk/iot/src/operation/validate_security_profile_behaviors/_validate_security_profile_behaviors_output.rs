@@ -55,6 +55,10 @@ impl ValidateSecurityProfileBehaviorsOutputBuilder {
         self.valid = input;
         self
     }
+    /// <p>True if the behaviors were valid.</p>
+    pub fn get_valid(&self) -> &::std::option::Option<bool> {
+        &self.valid
+    }
     /// Appends an item to `validation_errors`.
     ///
     /// To override the contents of this collection use [`set_validation_errors`](Self::set_validation_errors).
@@ -73,6 +77,12 @@ impl ValidateSecurityProfileBehaviorsOutputBuilder {
     ) -> Self {
         self.validation_errors = input;
         self
+    }
+    /// <p>The list of any errors found in the behaviors.</p>
+    pub fn get_validation_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationError>> {
+        &self.validation_errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

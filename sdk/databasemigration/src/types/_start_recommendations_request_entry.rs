@@ -48,6 +48,10 @@ impl StartRecommendationsRequestEntryBuilder {
         self.database_id = input;
         self
     }
+    /// <p>The identifier of the source database.</p>
+    pub fn get_database_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_id
+    }
     /// <p>The required target engine settings.</p>
     pub fn settings(mut self, input: crate::types::RecommendationSettings) -> Self {
         self.settings = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl StartRecommendationsRequestEntryBuilder {
     ) -> Self {
         self.settings = input;
         self
+    }
+    /// <p>The required target engine settings.</p>
+    pub fn get_settings(&self) -> &::std::option::Option<crate::types::RecommendationSettings> {
+        &self.settings
     }
     /// Consumes the builder and constructs a [`StartRecommendationsRequestEntry`](crate::types::StartRecommendationsRequestEntry).
     pub fn build(self) -> crate::types::StartRecommendationsRequestEntry {

@@ -72,6 +72,13 @@ impl DescribeClientAuthenticationSettingsOutputBuilder {
         self.client_authentication_settings_info = input;
         self
     }
+    /// <p>Information about the type of client authentication for the specified directory. The following information is retrieved: The date and time when the status of the client authentication type was last updated, whether the client authentication type is enabled or disabled, and the type of client authentication.</p>
+    pub fn get_client_authentication_settings_info(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClientAuthenticationSettingInfo>>
+    {
+        &self.client_authentication_settings_info
+    }
     /// <p>The next token used to retrieve the client authentication settings if the number of setting types exceeds page limit and there is another page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -81,6 +88,10 @@ impl DescribeClientAuthenticationSettingsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The next token used to retrieve the client authentication settings if the number of setting types exceeds page limit and there is another page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

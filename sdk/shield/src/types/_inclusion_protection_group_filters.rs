@@ -82,6 +82,12 @@ impl InclusionProtectionGroupFiltersBuilder {
         self.protection_group_ids = input;
         self
     }
+    /// <p>The ID of the protection group that you want to retrieve. </p>
+    pub fn get_protection_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.protection_group_ids
+    }
     /// Appends an item to `patterns`.
     ///
     /// To override the contents of this collection use [`set_patterns`](Self::set_patterns).
@@ -100,6 +106,12 @@ impl InclusionProtectionGroupFiltersBuilder {
     ) -> Self {
         self.patterns = input;
         self
+    }
+    /// <p>The pattern specification of the protection groups that you want to retrieve. </p>
+    pub fn get_patterns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProtectionGroupPattern>> {
+        &self.patterns
     }
     /// Appends an item to `resource_types`.
     ///
@@ -120,6 +132,12 @@ impl InclusionProtectionGroupFiltersBuilder {
         self.resource_types = input;
         self
     }
+    /// <p>The resource type configuration of the protection groups that you want to retrieve. In the protection group configuration, you specify the resource type when you set the group's <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code>. </p>
+    pub fn get_resource_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProtectedResourceType>> {
+        &self.resource_types
+    }
     /// Appends an item to `aggregations`.
     ///
     /// To override the contents of this collection use [`set_aggregations`](Self::set_aggregations).
@@ -138,6 +156,12 @@ impl InclusionProtectionGroupFiltersBuilder {
     ) -> Self {
         self.aggregations = input;
         self
+    }
+    /// <p>The aggregation setting of the protection groups that you want to retrieve. </p>
+    pub fn get_aggregations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProtectionGroupAggregation>> {
+        &self.aggregations
     }
     /// Consumes the builder and constructs a [`InclusionProtectionGroupFilters`](crate::types::InclusionProtectionGroupFilters).
     pub fn build(self) -> crate::types::InclusionProtectionGroupFilters {

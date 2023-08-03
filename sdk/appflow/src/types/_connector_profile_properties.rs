@@ -226,6 +226,12 @@ impl ConnectorProfilePropertiesBuilder {
         self.amplitude = input;
         self
     }
+    /// <p> The connector-specific properties required by Amplitude. </p>
+    pub fn get_amplitude(
+        &self,
+    ) -> &::std::option::Option<crate::types::AmplitudeConnectorProfileProperties> {
+        &self.amplitude
+    }
     /// <p> The connector-specific properties required by Datadog. </p>
     pub fn datadog(mut self, input: crate::types::DatadogConnectorProfileProperties) -> Self {
         self.datadog = ::std::option::Option::Some(input);
@@ -239,6 +245,12 @@ impl ConnectorProfilePropertiesBuilder {
         self.datadog = input;
         self
     }
+    /// <p> The connector-specific properties required by Datadog. </p>
+    pub fn get_datadog(
+        &self,
+    ) -> &::std::option::Option<crate::types::DatadogConnectorProfileProperties> {
+        &self.datadog
+    }
     /// <p> The connector-specific properties required by Dynatrace. </p>
     pub fn dynatrace(mut self, input: crate::types::DynatraceConnectorProfileProperties) -> Self {
         self.dynatrace = ::std::option::Option::Some(input);
@@ -251,6 +263,12 @@ impl ConnectorProfilePropertiesBuilder {
     ) -> Self {
         self.dynatrace = input;
         self
+    }
+    /// <p> The connector-specific properties required by Dynatrace. </p>
+    pub fn get_dynatrace(
+        &self,
+    ) -> &::std::option::Option<crate::types::DynatraceConnectorProfileProperties> {
+        &self.dynatrace
     }
     /// <p> The connector-specific properties required Google Analytics. </p>
     pub fn google_analytics(
@@ -268,6 +286,12 @@ impl ConnectorProfilePropertiesBuilder {
         self.google_analytics = input;
         self
     }
+    /// <p> The connector-specific properties required Google Analytics. </p>
+    pub fn get_google_analytics(
+        &self,
+    ) -> &::std::option::Option<crate::types::GoogleAnalyticsConnectorProfileProperties> {
+        &self.google_analytics
+    }
     /// <p> The connector-specific properties required by Amazon Honeycode. </p>
     pub fn honeycode(mut self, input: crate::types::HoneycodeConnectorProfileProperties) -> Self {
         self.honeycode = ::std::option::Option::Some(input);
@@ -280,6 +304,12 @@ impl ConnectorProfilePropertiesBuilder {
     ) -> Self {
         self.honeycode = input;
         self
+    }
+    /// <p> The connector-specific properties required by Amazon Honeycode. </p>
+    pub fn get_honeycode(
+        &self,
+    ) -> &::std::option::Option<crate::types::HoneycodeConnectorProfileProperties> {
+        &self.honeycode
     }
     /// <p> The connector-specific properties required by Infor Nexus. </p>
     pub fn infor_nexus(
@@ -297,6 +327,12 @@ impl ConnectorProfilePropertiesBuilder {
         self.infor_nexus = input;
         self
     }
+    /// <p> The connector-specific properties required by Infor Nexus. </p>
+    pub fn get_infor_nexus(
+        &self,
+    ) -> &::std::option::Option<crate::types::InforNexusConnectorProfileProperties> {
+        &self.infor_nexus
+    }
     /// <p> The connector-specific properties required by Marketo. </p>
     pub fn marketo(mut self, input: crate::types::MarketoConnectorProfileProperties) -> Self {
         self.marketo = ::std::option::Option::Some(input);
@@ -309,6 +345,12 @@ impl ConnectorProfilePropertiesBuilder {
     ) -> Self {
         self.marketo = input;
         self
+    }
+    /// <p> The connector-specific properties required by Marketo. </p>
+    pub fn get_marketo(
+        &self,
+    ) -> &::std::option::Option<crate::types::MarketoConnectorProfileProperties> {
+        &self.marketo
     }
     /// <p> The connector-specific properties required by Amazon Redshift. </p>
     pub fn redshift(mut self, input: crate::types::RedshiftConnectorProfileProperties) -> Self {
@@ -323,6 +365,12 @@ impl ConnectorProfilePropertiesBuilder {
         self.redshift = input;
         self
     }
+    /// <p> The connector-specific properties required by Amazon Redshift. </p>
+    pub fn get_redshift(
+        &self,
+    ) -> &::std::option::Option<crate::types::RedshiftConnectorProfileProperties> {
+        &self.redshift
+    }
     /// <p> The connector-specific properties required by Salesforce. </p>
     pub fn salesforce(mut self, input: crate::types::SalesforceConnectorProfileProperties) -> Self {
         self.salesforce = ::std::option::Option::Some(input);
@@ -335,6 +383,12 @@ impl ConnectorProfilePropertiesBuilder {
     ) -> Self {
         self.salesforce = input;
         self
+    }
+    /// <p> The connector-specific properties required by Salesforce. </p>
+    pub fn get_salesforce(
+        &self,
+    ) -> &::std::option::Option<crate::types::SalesforceConnectorProfileProperties> {
+        &self.salesforce
     }
     /// <p> The connector-specific properties required by serviceNow. </p>
     pub fn service_now(
@@ -352,6 +406,12 @@ impl ConnectorProfilePropertiesBuilder {
         self.service_now = input;
         self
     }
+    /// <p> The connector-specific properties required by serviceNow. </p>
+    pub fn get_service_now(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServiceNowConnectorProfileProperties> {
+        &self.service_now
+    }
     /// <p> The connector-specific properties required by Singular. </p>
     pub fn singular(mut self, input: crate::types::SingularConnectorProfileProperties) -> Self {
         self.singular = ::std::option::Option::Some(input);
@@ -364,6 +424,12 @@ impl ConnectorProfilePropertiesBuilder {
     ) -> Self {
         self.singular = input;
         self
+    }
+    /// <p> The connector-specific properties required by Singular. </p>
+    pub fn get_singular(
+        &self,
+    ) -> &::std::option::Option<crate::types::SingularConnectorProfileProperties> {
+        &self.singular
     }
     /// <p> The connector-specific properties required by Slack. </p>
     pub fn slack(mut self, input: crate::types::SlackConnectorProfileProperties) -> Self {
@@ -378,6 +444,12 @@ impl ConnectorProfilePropertiesBuilder {
         self.slack = input;
         self
     }
+    /// <p> The connector-specific properties required by Slack. </p>
+    pub fn get_slack(
+        &self,
+    ) -> &::std::option::Option<crate::types::SlackConnectorProfileProperties> {
+        &self.slack
+    }
     /// <p> The connector-specific properties required by Snowflake. </p>
     pub fn snowflake(mut self, input: crate::types::SnowflakeConnectorProfileProperties) -> Self {
         self.snowflake = ::std::option::Option::Some(input);
@@ -390,6 +462,12 @@ impl ConnectorProfilePropertiesBuilder {
     ) -> Self {
         self.snowflake = input;
         self
+    }
+    /// <p> The connector-specific properties required by Snowflake. </p>
+    pub fn get_snowflake(
+        &self,
+    ) -> &::std::option::Option<crate::types::SnowflakeConnectorProfileProperties> {
+        &self.snowflake
     }
     /// <p> The connector-specific properties required by Trend Micro. </p>
     pub fn trendmicro(mut self, input: crate::types::TrendmicroConnectorProfileProperties) -> Self {
@@ -404,6 +482,12 @@ impl ConnectorProfilePropertiesBuilder {
         self.trendmicro = input;
         self
     }
+    /// <p> The connector-specific properties required by Trend Micro. </p>
+    pub fn get_trendmicro(
+        &self,
+    ) -> &::std::option::Option<crate::types::TrendmicroConnectorProfileProperties> {
+        &self.trendmicro
+    }
     /// <p> The connector-specific properties required by Veeva. </p>
     pub fn veeva(mut self, input: crate::types::VeevaConnectorProfileProperties) -> Self {
         self.veeva = ::std::option::Option::Some(input);
@@ -416,6 +500,12 @@ impl ConnectorProfilePropertiesBuilder {
     ) -> Self {
         self.veeva = input;
         self
+    }
+    /// <p> The connector-specific properties required by Veeva. </p>
+    pub fn get_veeva(
+        &self,
+    ) -> &::std::option::Option<crate::types::VeevaConnectorProfileProperties> {
+        &self.veeva
     }
     /// <p> The connector-specific properties required by Zendesk. </p>
     pub fn zendesk(mut self, input: crate::types::ZendeskConnectorProfileProperties) -> Self {
@@ -430,6 +520,12 @@ impl ConnectorProfilePropertiesBuilder {
         self.zendesk = input;
         self
     }
+    /// <p> The connector-specific properties required by Zendesk. </p>
+    pub fn get_zendesk(
+        &self,
+    ) -> &::std::option::Option<crate::types::ZendeskConnectorProfileProperties> {
+        &self.zendesk
+    }
     /// <p> The connector-specific profile properties required when using SAPOData. </p>
     pub fn sapo_data(mut self, input: crate::types::SapoDataConnectorProfileProperties) -> Self {
         self.sapo_data = ::std::option::Option::Some(input);
@@ -442,6 +538,12 @@ impl ConnectorProfilePropertiesBuilder {
     ) -> Self {
         self.sapo_data = input;
         self
+    }
+    /// <p> The connector-specific profile properties required when using SAPOData. </p>
+    pub fn get_sapo_data(
+        &self,
+    ) -> &::std::option::Option<crate::types::SapoDataConnectorProfileProperties> {
+        &self.sapo_data
     }
     /// <p>The properties required by the custom connector.</p>
     pub fn custom_connector(
@@ -459,6 +561,12 @@ impl ConnectorProfilePropertiesBuilder {
         self.custom_connector = input;
         self
     }
+    /// <p>The properties required by the custom connector.</p>
+    pub fn get_custom_connector(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomConnectorProfileProperties> {
+        &self.custom_connector
+    }
     /// <p>The connector-specific properties required by Salesforce Pardot.</p>
     pub fn pardot(mut self, input: crate::types::PardotConnectorProfileProperties) -> Self {
         self.pardot = ::std::option::Option::Some(input);
@@ -471,6 +579,12 @@ impl ConnectorProfilePropertiesBuilder {
     ) -> Self {
         self.pardot = input;
         self
+    }
+    /// <p>The connector-specific properties required by Salesforce Pardot.</p>
+    pub fn get_pardot(
+        &self,
+    ) -> &::std::option::Option<crate::types::PardotConnectorProfileProperties> {
+        &self.pardot
     }
     /// Consumes the builder and constructs a [`ConnectorProfileProperties`](crate::types::ConnectorProfileProperties).
     pub fn build(self) -> crate::types::ConnectorProfileProperties {

@@ -40,6 +40,10 @@ impl ExportDestinationBuilder {
         self.s3 = input;
         self
     }
+    /// <p>An object that describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and object keys of a recommendations export file, and its associated metadata file.</p>
+    pub fn get_s3(&self) -> &::std::option::Option<crate::types::S3Destination> {
+        &self.s3
+    }
     /// Consumes the builder and constructs a [`ExportDestination`](crate::types::ExportDestination).
     pub fn build(self) -> crate::types::ExportDestination {
         crate::types::ExportDestination { s3: self.s3 }

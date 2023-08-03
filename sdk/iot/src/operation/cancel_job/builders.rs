@@ -37,6 +37,10 @@ impl CancelJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CancelJob as a reference.
+    pub fn as_input(&self) -> &crate::operation::cancel_job::builders::CancelJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl CancelJobFluentBuilder {
         self.inner = self.inner.set_job_id(input);
         self
     }
+    /// <p>The unique identifier you assigned to this job when it was created.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_id()
+    }
     /// <p>(Optional)A reason code string that explains why the job was canceled.</p>
     pub fn reason_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reason_code(input.into());
@@ -129,6 +137,10 @@ impl CancelJobFluentBuilder {
         self.inner = self.inner.set_reason_code(input);
         self
     }
+    /// <p>(Optional)A reason code string that explains why the job was canceled.</p>
+    pub fn get_reason_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reason_code()
+    }
     /// <p>An optional comment string describing why the job was canceled.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.comment(input.into());
@@ -138,6 +150,10 @@ impl CancelJobFluentBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_comment(input);
         self
+    }
+    /// <p>An optional comment string describing why the job was canceled.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_comment()
     }
     /// <p>(Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED" are canceled, otherwise only job executions with status "QUEUED" are canceled. The default is <code>false</code>.</p>
     /// <p>Canceling a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to update the job execution status. Use caution and ensure that each device executing a job which is canceled is able to recover to a valid state.</p>
@@ -150,5 +166,10 @@ impl CancelJobFluentBuilder {
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force(input);
         self
+    }
+    /// <p>(Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED" are canceled, otherwise only job executions with status "QUEUED" are canceled. The default is <code>false</code>.</p>
+    /// <p>Canceling a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to update the job execution status. Use caution and ensure that each device executing a job which is canceled is able to recover to a valid state.</p>
+    pub fn get_force(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force()
     }
 }

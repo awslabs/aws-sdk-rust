@@ -40,6 +40,10 @@ impl ParallelismConfigurationBuilder {
         self.max_parallel_execution_steps = input;
         self
     }
+    /// <p>The max number of steps that can be executed in parallel. </p>
+    pub fn get_max_parallel_execution_steps(&self) -> &::std::option::Option<i32> {
+        &self.max_parallel_execution_steps
+    }
     /// Consumes the builder and constructs a [`ParallelismConfiguration`](crate::types::ParallelismConfiguration).
     pub fn build(self) -> crate::types::ParallelismConfiguration {
         crate::types::ParallelismConfiguration {

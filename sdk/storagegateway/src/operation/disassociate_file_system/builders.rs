@@ -36,6 +36,13 @@ impl DisassociateFileSystemFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateFileSystem as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::disassociate_file_system::builders::DisassociateFileSystemInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl DisassociateFileSystemFluentBuilder {
         self.inner = self.inner.set_file_system_association_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the file system association to be deleted.</p>
+    pub fn get_file_system_association_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_file_system_association_arn()
+    }
     /// <p>If this value is set to true, the operation disassociates an Amazon FSx file system immediately. It ends all data uploads to the file system, and the file system association enters the <code>FORCE_DELETING</code> status. If this value is set to false, the Amazon FSx file system does not disassociate until all data is uploaded.</p>
     pub fn force_delete(mut self, input: bool) -> Self {
         self.inner = self.inner.force_delete(input);
@@ -141,5 +152,9 @@ impl DisassociateFileSystemFluentBuilder {
     pub fn set_force_delete(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force_delete(input);
         self
+    }
+    /// <p>If this value is set to true, the operation disassociates an Amazon FSx file system immediately. It ends all data uploads to the file system, and the file system association enters the <code>FORCE_DELETING</code> status. If this value is set to false, the Amazon FSx file system does not disassociate until all data is uploaded.</p>
+    pub fn get_force_delete(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force_delete()
     }
 }

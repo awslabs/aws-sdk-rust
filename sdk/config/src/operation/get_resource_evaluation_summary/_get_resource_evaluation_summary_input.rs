@@ -45,6 +45,10 @@ impl GetResourceEvaluationSummaryInputBuilder {
         self.resource_evaluation_id = input;
         self
     }
+    /// <p>The unique <code>ResourceEvaluationId</code> of Amazon Web Services resource execution for which you want to retrieve the evaluation summary.</p>
+    pub fn get_resource_evaluation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_evaluation_id
+    }
     /// Consumes the builder and constructs a [`GetResourceEvaluationSummaryInput`](crate::operation::get_resource_evaluation_summary::GetResourceEvaluationSummaryInput).
     pub fn build(
         self,

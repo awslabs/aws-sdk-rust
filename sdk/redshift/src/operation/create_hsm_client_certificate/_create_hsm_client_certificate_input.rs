@@ -54,6 +54,12 @@ impl CreateHsmClientCertificateInputBuilder {
         self.hsm_client_certificate_identifier = input;
         self
     }
+    /// <p>The identifier to be assigned to the new HSM client certificate that the cluster will use to connect to the HSM to use the database encryption keys.</p>
+    pub fn get_hsm_client_certificate_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.hsm_client_certificate_identifier
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -72,6 +78,10 @@ impl CreateHsmClientCertificateInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tag instances.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateHsmClientCertificateInput`](crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateInput).
     pub fn build(

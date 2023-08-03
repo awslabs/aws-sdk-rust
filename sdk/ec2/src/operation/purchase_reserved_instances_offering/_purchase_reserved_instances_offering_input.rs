@@ -72,6 +72,10 @@ impl PurchaseReservedInstancesOfferingInputBuilder {
         self.instance_count = input;
         self
     }
+    /// <p>The number of Reserved Instances to purchase.</p>
+    pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.instance_count
+    }
     /// <p>The ID of the Reserved Instance offering to purchase.</p>
     pub fn reserved_instances_offering_id(
         mut self,
@@ -88,6 +92,12 @@ impl PurchaseReservedInstancesOfferingInputBuilder {
         self.reserved_instances_offering_id = input;
         self
     }
+    /// <p>The ID of the Reserved Instance offering to purchase.</p>
+    pub fn get_reserved_instances_offering_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.reserved_instances_offering_id
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -97,6 +107,10 @@ impl PurchaseReservedInstancesOfferingInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// <p>Specified for Reserved Instance Marketplace offerings to limit the total order and ensure that the Reserved Instances are not purchased at unexpected prices.</p>
     pub fn limit_price(mut self, input: crate::types::ReservedInstanceLimitPrice) -> Self {
@@ -111,6 +125,12 @@ impl PurchaseReservedInstancesOfferingInputBuilder {
         self.limit_price = input;
         self
     }
+    /// <p>Specified for Reserved Instance Marketplace offerings to limit the total order and ensure that the Reserved Instances are not purchased at unexpected prices.</p>
+    pub fn get_limit_price(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReservedInstanceLimitPrice> {
+        &self.limit_price
+    }
     /// <p>The time at which to purchase the Reserved Instance, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
     pub fn purchase_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.purchase_time = ::std::option::Option::Some(input);
@@ -123,6 +143,10 @@ impl PurchaseReservedInstancesOfferingInputBuilder {
     ) -> Self {
         self.purchase_time = input;
         self
+    }
+    /// <p>The time at which to purchase the Reserved Instance, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+    pub fn get_purchase_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.purchase_time
     }
     /// Consumes the builder and constructs a [`PurchaseReservedInstancesOfferingInput`](crate::operation::purchase_reserved_instances_offering::PurchaseReservedInstancesOfferingInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::purchase_reserved_instances_offering::PurchaseReservedInstancesOfferingInput, ::aws_smithy_http::operation::error::BuildError>{

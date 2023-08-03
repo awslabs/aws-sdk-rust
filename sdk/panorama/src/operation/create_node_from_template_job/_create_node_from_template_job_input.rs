@@ -98,6 +98,10 @@ impl CreateNodeFromTemplateJobInputBuilder {
         self.template_type = input;
         self
     }
+    /// <p>The type of node.</p>
+    pub fn get_template_type(&self) -> &::std::option::Option<crate::types::TemplateType> {
+        &self.template_type
+    }
     /// <p>An output package name for the node.</p>
     pub fn output_package_name(
         mut self,
@@ -113,6 +117,10 @@ impl CreateNodeFromTemplateJobInputBuilder {
     ) -> Self {
         self.output_package_name = input;
         self
+    }
+    /// <p>An output package name for the node.</p>
+    pub fn get_output_package_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_package_name
     }
     /// <p>An output package version for the node.</p>
     pub fn output_package_version(
@@ -130,6 +138,10 @@ impl CreateNodeFromTemplateJobInputBuilder {
         self.output_package_version = input;
         self
     }
+    /// <p>An output package version for the node.</p>
+    pub fn get_output_package_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_package_version
+    }
     /// <p>A name for the node.</p>
     pub fn node_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_name = ::std::option::Option::Some(input.into());
@@ -139,6 +151,10 @@ impl CreateNodeFromTemplateJobInputBuilder {
     pub fn set_node_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_name = input;
         self
+    }
+    /// <p>A name for the node.</p>
+    pub fn get_node_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_name
     }
     /// <p>A description for the node.</p>
     pub fn node_description(
@@ -155,6 +171,10 @@ impl CreateNodeFromTemplateJobInputBuilder {
     ) -> Self {
         self.node_description = input;
         self
+    }
+    /// <p>A description for the node.</p>
+    pub fn get_node_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_description
     }
     /// Adds a key-value pair to `template_parameters`.
     ///
@@ -181,6 +201,14 @@ impl CreateNodeFromTemplateJobInputBuilder {
         self.template_parameters = input;
         self
     }
+    /// <p>Template parameters for the node.</p>
+    pub fn get_template_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.template_parameters
+    }
     /// Appends an item to `job_tags`.
     ///
     /// To override the contents of this collection use [`set_job_tags`](Self::set_job_tags).
@@ -199,6 +227,12 @@ impl CreateNodeFromTemplateJobInputBuilder {
     ) -> Self {
         self.job_tags = input;
         self
+    }
+    /// <p>Tags for the job.</p>
+    pub fn get_job_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobResourceTags>> {
+        &self.job_tags
     }
     /// Consumes the builder and constructs a [`CreateNodeFromTemplateJobInput`](crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobInput).
     pub fn build(

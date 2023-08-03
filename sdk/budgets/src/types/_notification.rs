@@ -83,6 +83,10 @@ impl NotificationBuilder {
         self.notification_type = input;
         self
     }
+    /// <p>Specifies whether the notification is for how much you have spent (<code>ACTUAL</code>) or for how much that you're forecasted to spend (<code>FORECASTED</code>).</p>
+    pub fn get_notification_type(&self) -> &::std::option::Option<crate::types::NotificationType> {
+        &self.notification_type
+    }
     /// <p>The comparison that's used for this notification.</p>
     pub fn comparison_operator(mut self, input: crate::types::ComparisonOperator) -> Self {
         self.comparison_operator = ::std::option::Option::Some(input);
@@ -96,6 +100,12 @@ impl NotificationBuilder {
         self.comparison_operator = input;
         self
     }
+    /// <p>The comparison that's used for this notification.</p>
+    pub fn get_comparison_operator(
+        &self,
+    ) -> &::std::option::Option<crate::types::ComparisonOperator> {
+        &self.comparison_operator
+    }
     /// <p>The threshold that's associated with a notification. Thresholds are always a percentage, and many customers find value being alerted between 50% - 200% of the budgeted amount. The maximum limit for your threshold is 1,000,000% above the budgeted amount.</p>
     pub fn threshold(mut self, input: f64) -> Self {
         self.threshold = ::std::option::Option::Some(input);
@@ -105,6 +115,10 @@ impl NotificationBuilder {
     pub fn set_threshold(mut self, input: ::std::option::Option<f64>) -> Self {
         self.threshold = input;
         self
+    }
+    /// <p>The threshold that's associated with a notification. Thresholds are always a percentage, and many customers find value being alerted between 50% - 200% of the budgeted amount. The maximum limit for your threshold is 1,000,000% above the budgeted amount.</p>
+    pub fn get_threshold(&self) -> &::std::option::Option<f64> {
+        &self.threshold
     }
     /// <p>The type of threshold for a notification. For <code>ABSOLUTE_VALUE</code> thresholds, Amazon Web Services notifies you when you go over or are forecasted to go over your total cost threshold. For <code>PERCENTAGE</code> thresholds, Amazon Web Services notifies you when you go over or are forecasted to go over a certain percentage of your forecasted spend. For example, if you have a budget for 200 dollars and you have a <code>PERCENTAGE</code> threshold of 80%, Amazon Web Services notifies you when you go over 160 dollars.</p>
     pub fn threshold_type(mut self, input: crate::types::ThresholdType) -> Self {
@@ -119,6 +133,10 @@ impl NotificationBuilder {
         self.threshold_type = input;
         self
     }
+    /// <p>The type of threshold for a notification. For <code>ABSOLUTE_VALUE</code> thresholds, Amazon Web Services notifies you when you go over or are forecasted to go over your total cost threshold. For <code>PERCENTAGE</code> thresholds, Amazon Web Services notifies you when you go over or are forecasted to go over a certain percentage of your forecasted spend. For example, if you have a budget for 200 dollars and you have a <code>PERCENTAGE</code> threshold of 80%, Amazon Web Services notifies you when you go over 160 dollars.</p>
+    pub fn get_threshold_type(&self) -> &::std::option::Option<crate::types::ThresholdType> {
+        &self.threshold_type
+    }
     /// <p>Specifies whether this notification is in alarm. If a budget notification is in the <code>ALARM</code> state, you passed the set threshold for the budget.</p>
     pub fn notification_state(mut self, input: crate::types::NotificationState) -> Self {
         self.notification_state = ::std::option::Option::Some(input);
@@ -131,6 +149,12 @@ impl NotificationBuilder {
     ) -> Self {
         self.notification_state = input;
         self
+    }
+    /// <p>Specifies whether this notification is in alarm. If a budget notification is in the <code>ALARM</code> state, you passed the set threshold for the budget.</p>
+    pub fn get_notification_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::NotificationState> {
+        &self.notification_state
     }
     /// Consumes the builder and constructs a [`Notification`](crate::types::Notification).
     pub fn build(self) -> crate::types::Notification {

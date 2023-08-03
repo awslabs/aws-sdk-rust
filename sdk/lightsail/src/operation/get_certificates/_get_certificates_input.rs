@@ -90,6 +90,14 @@ impl GetCertificatesInputBuilder {
         self.certificate_statuses = input;
         self
     }
+    /// <p>The status of the certificates for which to return information.</p>
+    /// <p>For example, specify <code>ISSUED</code> to return only certificates with an <code>ISSUED</code> status.</p>
+    /// <p>When omitted, the response includes all of your certificates in the Amazon Web Services Region where the request is made, regardless of their current status.</p>
+    pub fn get_certificate_statuses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateStatus>> {
+        &self.certificate_statuses
+    }
     /// <p>Indicates whether to include detailed information about the certificates in the response.</p>
     /// <p>When omitted, the response includes only the certificate names, Amazon Resource Names (ARNs), domain names, and tags.</p>
     pub fn include_certificate_details(mut self, input: bool) -> Self {
@@ -101,6 +109,11 @@ impl GetCertificatesInputBuilder {
     pub fn set_include_certificate_details(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_certificate_details = input;
         self
+    }
+    /// <p>Indicates whether to include detailed information about the certificates in the response.</p>
+    /// <p>When omitted, the response includes only the certificate names, Amazon Resource Names (ARNs), domain names, and tags.</p>
+    pub fn get_include_certificate_details(&self) -> &::std::option::Option<bool> {
+        &self.include_certificate_details
     }
     /// <p>The name for the certificate for which to return information.</p>
     /// <p>When omitted, the response includes all of your certificates in the Amazon Web Services Region where the request is made.</p>
@@ -120,6 +133,11 @@ impl GetCertificatesInputBuilder {
         self.certificate_name = input;
         self
     }
+    /// <p>The name for the certificate for which to return information.</p>
+    /// <p>When omitted, the response includes all of your certificates in the Amazon Web Services Region where the request is made.</p>
+    pub fn get_certificate_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_name
+    }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetCertificates</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     pub fn page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -131,6 +149,11 @@ impl GetCertificatesInputBuilder {
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.page_token = input;
         self
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetCertificates</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.page_token
     }
     /// Consumes the builder and constructs a [`GetCertificatesInput`](crate::operation::get_certificates::GetCertificatesInput).
     pub fn build(

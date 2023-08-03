@@ -81,6 +81,10 @@ impl BucketBundleBuilder {
         self.bundle_id = input;
         self
     }
+    /// <p>The ID of the bundle.</p>
+    pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bundle_id
+    }
     /// <p>The name of the bundle.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl BucketBundleBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the bundle.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The monthly price of the bundle, in US dollars.</p>
     pub fn price(mut self, input: f32) -> Self {
@@ -101,6 +109,10 @@ impl BucketBundleBuilder {
         self.price = input;
         self
     }
+    /// <p>The monthly price of the bundle, in US dollars.</p>
+    pub fn get_price(&self) -> &::std::option::Option<f32> {
+        &self.price
+    }
     /// <p>The storage size of the bundle, in GB.</p>
     pub fn storage_per_month_in_gb(mut self, input: i32) -> Self {
         self.storage_per_month_in_gb = ::std::option::Option::Some(input);
@@ -110,6 +122,10 @@ impl BucketBundleBuilder {
     pub fn set_storage_per_month_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
         self.storage_per_month_in_gb = input;
         self
+    }
+    /// <p>The storage size of the bundle, in GB.</p>
+    pub fn get_storage_per_month_in_gb(&self) -> &::std::option::Option<i32> {
+        &self.storage_per_month_in_gb
     }
     /// <p>The monthly network transfer quota of the bundle.</p>
     pub fn transfer_per_month_in_gb(mut self, input: i32) -> Self {
@@ -121,6 +137,10 @@ impl BucketBundleBuilder {
         self.transfer_per_month_in_gb = input;
         self
     }
+    /// <p>The monthly network transfer quota of the bundle.</p>
+    pub fn get_transfer_per_month_in_gb(&self) -> &::std::option::Option<i32> {
+        &self.transfer_per_month_in_gb
+    }
     /// <p>Indicates whether the bundle is active. Use for a new or existing bucket.</p>
     pub fn is_active(mut self, input: bool) -> Self {
         self.is_active = ::std::option::Option::Some(input);
@@ -130,6 +150,10 @@ impl BucketBundleBuilder {
     pub fn set_is_active(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_active = input;
         self
+    }
+    /// <p>Indicates whether the bundle is active. Use for a new or existing bucket.</p>
+    pub fn get_is_active(&self) -> &::std::option::Option<bool> {
+        &self.is_active
     }
     /// Consumes the builder and constructs a [`BucketBundle`](crate::types::BucketBundle).
     pub fn build(self) -> crate::types::BucketBundle {

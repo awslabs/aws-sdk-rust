@@ -36,6 +36,10 @@ impl CreateSpaceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSpace as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_space::builders::CreateSpaceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl CreateSpaceFluentBuilder {
         self.inner = self.inner.set_domain_id(input);
         self
     }
+    /// <p>The ID of the associated Domain.</p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_id()
+    }
     /// <p>The name of the space.</p>
     pub fn space_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.space_name(input.into());
@@ -127,6 +135,10 @@ impl CreateSpaceFluentBuilder {
     pub fn set_space_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_space_name(input);
         self
+    }
+    /// <p>The name of the space.</p>
+    pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_space_name()
     }
     /// Appends an item to `Tags`.
     ///
@@ -145,6 +157,10 @@ impl CreateSpaceFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Tags to associated with the space. Each tag consists of a key and an optional value. Tag keys must be unique for each resource. Tags are searchable using the <code>Search</code> API.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>A collection of space settings.</p>
     pub fn space_settings(mut self, input: crate::types::SpaceSettings) -> Self {
         self.inner = self.inner.space_settings(input);
@@ -157,5 +173,9 @@ impl CreateSpaceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_space_settings(input);
         self
+    }
+    /// <p>A collection of space settings.</p>
+    pub fn get_space_settings(&self) -> &::std::option::Option<crate::types::SpaceSettings> {
+        self.inner.get_space_settings()
     }
 }

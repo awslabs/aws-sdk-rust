@@ -46,6 +46,10 @@ impl DescribeSpeakerOutputBuilder {
         self.speaker = input;
         self
     }
+    /// <p>Information about the specified speaker.</p>
+    pub fn get_speaker(&self) -> &::std::option::Option<crate::types::Speaker> {
+        &self.speaker
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -126,6 +126,10 @@ impl IosImportClientBrandingAttributesBuilder {
         self.logo = input;
         self
     }
+    /// <p>The logo. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel is equal to one point. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
+    pub fn get_logo(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.logo
+    }
     /// <p>The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or @2x). The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p> <note>
     /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
     /// </note>
@@ -140,6 +144,12 @@ impl IosImportClientBrandingAttributesBuilder {
         self.logo2x = input;
         self
     }
+    /// <p>The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or @2x). The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p> <note>
+    /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
+    /// </note>
+    pub fn get_logo2x(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.logo2x
+    }
     /// <p>The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x). The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p> <note>
     /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
     /// </note>
@@ -153,6 +163,12 @@ impl IosImportClientBrandingAttributesBuilder {
     pub fn set_logo3x(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.logo3x = input;
         self
+    }
+    /// <p>The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x). The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p> <note>
+    /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
+    /// </note>
+    pub fn get_logo3x(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.logo3x
     }
     /// <p>The support email. The company's customer support email address.</p> <note>
     /// <ul>
@@ -180,6 +196,15 @@ impl IosImportClientBrandingAttributesBuilder {
         self.support_email = input;
         self
     }
+    /// <p>The support email. The company's customer support email address.</p> <note>
+    /// <ul>
+    /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
+    /// <li> <p>The default email is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+    /// </ul>
+    /// </note>
+    pub fn get_support_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.support_email
+    }
     /// <p>The support link. The link for the company's customer support page for their WorkSpace.</p> <note>
     /// <ul>
     /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
@@ -200,6 +225,15 @@ impl IosImportClientBrandingAttributesBuilder {
         self.support_link = input;
         self
     }
+    /// <p>The support link. The link for the company's customer support page for their WorkSpace.</p> <note>
+    /// <ul>
+    /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
+    /// <li> <p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+    /// </ul>
+    /// </note>
+    pub fn get_support_link(&self) -> &::std::option::Option<::std::string::String> {
+        &self.support_link
+    }
     /// <p>The forgotten password link. This is the web address that users can go to if they forget the password for their WorkSpace.</p>
     pub fn forgot_password_link(
         mut self,
@@ -215,6 +249,10 @@ impl IosImportClientBrandingAttributesBuilder {
     ) -> Self {
         self.forgot_password_link = input;
         self
+    }
+    /// <p>The forgotten password link. This is the web address that users can go to if they forget the password for their WorkSpace.</p>
+    pub fn get_forgot_password_link(&self) -> &::std::option::Option<::std::string::String> {
+        &self.forgot_password_link
     }
     /// Adds a key-value pair to `login_message`.
     ///
@@ -240,6 +278,14 @@ impl IosImportClientBrandingAttributesBuilder {
     ) -> Self {
         self.login_message = input;
         self
+    }
+    /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the following: <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
+    pub fn get_login_message(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.login_message
     }
     /// Consumes the builder and constructs a [`IosImportClientBrandingAttributes`](crate::types::IosImportClientBrandingAttributes).
     pub fn build(self) -> crate::types::IosImportClientBrandingAttributes {

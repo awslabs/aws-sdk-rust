@@ -43,6 +43,10 @@ impl LexTranscriptFilterBuilder {
         self.date_range_filter = input;
         self
     }
+    /// <p>The object that contains a date range filter that will be applied to the transcript. Specify this object if you want Amazon Lex to only read the files that are within the date range.</p>
+    pub fn get_date_range_filter(&self) -> &::std::option::Option<crate::types::DateRangeFilter> {
+        &self.date_range_filter
+    }
     /// Consumes the builder and constructs a [`LexTranscriptFilter`](crate::types::LexTranscriptFilter).
     pub fn build(self) -> crate::types::LexTranscriptFilter {
         crate::types::LexTranscriptFilter {

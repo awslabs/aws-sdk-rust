@@ -59,6 +59,10 @@ impl SnaplockRetentionPeriodBuilder {
         self.default_retention = input;
         self
     }
+    /// <p>The retention period assigned to a write once, read many (WORM) file by default if an explicit retention period is not set for an FSx for ONTAP SnapLock volume. The default retention period must be greater than or equal to the minimum retention period and less than or equal to the maximum retention period. </p>
+    pub fn get_default_retention(&self) -> &::std::option::Option<crate::types::RetentionPeriod> {
+        &self.default_retention
+    }
     /// <p>The shortest retention period that can be assigned to a WORM file on an FSx for ONTAP SnapLock volume. </p>
     pub fn minimum_retention(mut self, input: crate::types::RetentionPeriod) -> Self {
         self.minimum_retention = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl SnaplockRetentionPeriodBuilder {
         self.minimum_retention = input;
         self
     }
+    /// <p>The shortest retention period that can be assigned to a WORM file on an FSx for ONTAP SnapLock volume. </p>
+    pub fn get_minimum_retention(&self) -> &::std::option::Option<crate::types::RetentionPeriod> {
+        &self.minimum_retention
+    }
     /// <p>The longest retention period that can be assigned to a WORM file on an FSx for ONTAP SnapLock volume. </p>
     pub fn maximum_retention(mut self, input: crate::types::RetentionPeriod) -> Self {
         self.maximum_retention = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl SnaplockRetentionPeriodBuilder {
     ) -> Self {
         self.maximum_retention = input;
         self
+    }
+    /// <p>The longest retention period that can be assigned to a WORM file on an FSx for ONTAP SnapLock volume. </p>
+    pub fn get_maximum_retention(&self) -> &::std::option::Option<crate::types::RetentionPeriod> {
+        &self.maximum_retention
     }
     /// Consumes the builder and constructs a [`SnaplockRetentionPeriod`](crate::types::SnaplockRetentionPeriod).
     pub fn build(self) -> crate::types::SnaplockRetentionPeriod {

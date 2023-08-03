@@ -39,6 +39,13 @@ impl PutPositionConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutPositionConfiguration as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_position_configuration::builders::PutPositionConfigurationInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +142,10 @@ impl PutPositionConfigurationFluentBuilder {
         self.inner = self.inner.set_resource_identifier(input);
         self
     }
+    /// <p>Resource identifier used to update the position configuration.</p>
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_identifier()
+    }
     /// <p>Resource type of the resource for which you want to update the position configuration.</p>
     pub fn resource_type(mut self, input: crate::types::PositionResourceType) -> Self {
         self.inner = self.inner.resource_type(input);
@@ -147,6 +158,10 @@ impl PutPositionConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
+    }
+    /// <p>Resource type of the resource for which you want to update the position configuration.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::PositionResourceType> {
+        self.inner.get_resource_type()
     }
     /// <p>The positioning solvers used to update the position configuration of the resource.</p>
     pub fn solvers(mut self, input: crate::types::PositionSolverConfigurations) -> Self {
@@ -161,6 +176,12 @@ impl PutPositionConfigurationFluentBuilder {
         self.inner = self.inner.set_solvers(input);
         self
     }
+    /// <p>The positioning solvers used to update the position configuration of the resource.</p>
+    pub fn get_solvers(
+        &self,
+    ) -> &::std::option::Option<crate::types::PositionSolverConfigurations> {
+        self.inner.get_solvers()
+    }
     /// <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
     pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination(input.into());
@@ -170,5 +191,9 @@ impl PutPositionConfigurationFluentBuilder {
     pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination(input);
         self
+    }
+    /// <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination()
     }
 }

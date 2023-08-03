@@ -43,6 +43,12 @@ impl ListChannelMessagesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListChannelMessages as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_channel_messages::builders::ListChannelMessagesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -144,6 +150,10 @@ impl ListChannelMessagesFluentBuilder {
         self.inner = self.inner.set_channel_arn(input);
         self
     }
+    /// <p>The ARN of the channel.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_arn()
+    }
     /// <p>The order in which you want messages sorted. Default is Descending, based on time created.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.inner = self.inner.sort_order(input);
@@ -153,6 +163,10 @@ impl ListChannelMessagesFluentBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
+    }
+    /// <p>The order in which you want messages sorted. Default is Descending, based on time created.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        self.inner.get_sort_order()
     }
     /// <p>The initial or starting time stamp for your requested messages.</p>
     pub fn not_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -167,6 +181,10 @@ impl ListChannelMessagesFluentBuilder {
         self.inner = self.inner.set_not_before(input);
         self
     }
+    /// <p>The initial or starting time stamp for your requested messages.</p>
+    pub fn get_not_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_not_before()
+    }
     /// <p>The final or ending time stamp for your requested messages.</p>
     pub fn not_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.not_after(input);
@@ -180,6 +198,10 @@ impl ListChannelMessagesFluentBuilder {
         self.inner = self.inner.set_not_after(input);
         self
     }
+    /// <p>The final or ending time stamp for your requested messages.</p>
+    pub fn get_not_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_not_after()
+    }
     /// <p>The maximum number of messages that you want returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -189,6 +211,10 @@ impl ListChannelMessagesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of messages that you want returned.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The token passed by previous API calls until all requested messages are returned.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -200,6 +226,10 @@ impl ListChannelMessagesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token passed by previous API calls until all requested messages are returned.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.chime_bearer(input.into());
@@ -209,5 +239,9 @@ impl ListChannelMessagesFluentBuilder {
     pub fn set_chime_bearer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_chime_bearer(input);
         self
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_chime_bearer()
     }
 }

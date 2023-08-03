@@ -57,6 +57,10 @@ impl InsightResultsBuilder {
         self.insight_arn = input;
         self
     }
+    /// <p>The ARN of the insight whose results are returned by the <code>GetInsightResults</code> operation.</p>
+    pub fn get_insight_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.insight_arn
+    }
     /// <p>The attribute that the findings are grouped by for the insight whose results are returned by the <code>GetInsightResults</code> operation.</p>
     pub fn group_by_attribute(
         mut self,
@@ -72,6 +76,10 @@ impl InsightResultsBuilder {
     ) -> Self {
         self.group_by_attribute = input;
         self
+    }
+    /// <p>The attribute that the findings are grouped by for the insight whose results are returned by the <code>GetInsightResults</code> operation.</p>
+    pub fn get_group_by_attribute(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_by_attribute
     }
     /// Appends an item to `result_values`.
     ///
@@ -91,6 +99,12 @@ impl InsightResultsBuilder {
     ) -> Self {
         self.result_values = input;
         self
+    }
+    /// <p>The list of insight result values returned by the <code>GetInsightResults</code> operation.</p>
+    pub fn get_result_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightResultValue>> {
+        &self.result_values
     }
     /// Consumes the builder and constructs a [`InsightResults`](crate::types::InsightResults).
     pub fn build(self) -> crate::types::InsightResults {

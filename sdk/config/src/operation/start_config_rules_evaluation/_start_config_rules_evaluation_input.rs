@@ -52,6 +52,12 @@ impl StartConfigRulesEvaluationInputBuilder {
         self.config_rule_names = input;
         self
     }
+    /// <p>The list of names of Config rules that you want to run evaluations for.</p>
+    pub fn get_config_rule_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.config_rule_names
+    }
     /// Consumes the builder and constructs a [`StartConfigRulesEvaluationInput`](crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationInput).
     pub fn build(
         self,

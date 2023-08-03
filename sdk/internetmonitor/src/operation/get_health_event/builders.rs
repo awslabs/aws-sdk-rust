@@ -38,6 +38,12 @@ impl GetHealthEventFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetHealthEvent as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_health_event::builders::GetHealthEventInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +134,10 @@ impl GetHealthEventFluentBuilder {
         self.inner = self.inner.set_monitor_name(input);
         self
     }
+    /// <p>The name of the monitor.</p>
+    pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_monitor_name()
+    }
     /// <p>The internally generated identifier of a health event. Because <code>EventID</code> contains the forward slash (“/”) character, you must URL-encode the <code>EventID</code> field in the request URL.</p>
     pub fn event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_id(input.into());
@@ -137,5 +147,9 @@ impl GetHealthEventFluentBuilder {
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_id(input);
         self
+    }
+    /// <p>The internally generated identifier of a health event. Because <code>EventID</code> contains the forward slash (“/”) character, you must URL-encode the <code>EventID</code> field in the request URL.</p>
+    pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_id()
     }
 }

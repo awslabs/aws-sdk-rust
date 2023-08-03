@@ -54,6 +54,10 @@ impl GetDistributionLatestCacheResetOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the last cache reset.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The timestamp of the last cache reset (e.g., <code>1479734909.17</code>) in Unix time format.</p>
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl GetDistributionLatestCacheResetOutputBuilder {
     ) -> Self {
         self.create_time = input;
         self
+    }
+    /// <p>The timestamp of the last cache reset (e.g., <code>1479734909.17</code>) in Unix time format.</p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -40,6 +40,10 @@ impl TrendmicroSourcePropertiesBuilder {
         self.object = input;
         self
     }
+    /// <p> The object specified in the Trend Micro flow source. </p>
+    pub fn get_object(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object
+    }
     /// Consumes the builder and constructs a [`TrendmicroSourceProperties`](crate::types::TrendmicroSourceProperties).
     pub fn build(self) -> crate::types::TrendmicroSourceProperties {
         crate::types::TrendmicroSourceProperties {

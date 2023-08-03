@@ -64,6 +64,10 @@ impl TargetFailureBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the target. If the target type of the target group is <code>INSTANCE</code>, this is an instance ID. If the target type is <code>IP</code> , this is an IP address. If the target type is <code>LAMBDA</code>, this is the ARN of the Lambda function. If the target type is <code>ALB</code>, this is the ARN of the Application Load Balancer.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The port on which the target is listening. This parameter doesn't apply if the target is a Lambda function.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl TargetFailureBuilder {
         self.port = input;
         self
     }
+    /// <p>The port on which the target is listening. This parameter doesn't apply if the target is a Lambda function.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
+    }
     /// <p>The failure code.</p>
     pub fn failure_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_code = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl TargetFailureBuilder {
     pub fn set_failure_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_code = input;
         self
+    }
+    /// <p>The failure code.</p>
+    pub fn get_failure_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_code
     }
     /// <p>The failure message.</p>
     pub fn failure_message(
@@ -99,6 +111,10 @@ impl TargetFailureBuilder {
     ) -> Self {
         self.failure_message = input;
         self
+    }
+    /// <p>The failure message.</p>
+    pub fn get_failure_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_message
     }
     /// Consumes the builder and constructs a [`TargetFailure`](crate::types::TargetFailure).
     pub fn build(self) -> crate::types::TargetFailure {

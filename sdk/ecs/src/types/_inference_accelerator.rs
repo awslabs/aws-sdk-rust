@@ -48,6 +48,10 @@ impl InferenceAcceleratorBuilder {
         self.device_name = input;
         self
     }
+    /// <p>The Elastic Inference accelerator device name. The <code>deviceName</code> must also be referenced in a container definition as a <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ResourceRequirement.html">ResourceRequirement</a>.</p>
+    pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_name
+    }
     /// <p>The Elastic Inference accelerator type to use.</p>
     pub fn device_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_type = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl InferenceAcceleratorBuilder {
     pub fn set_device_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_type = input;
         self
+    }
+    /// <p>The Elastic Inference accelerator type to use.</p>
+    pub fn get_device_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_type
     }
     /// Consumes the builder and constructs a [`InferenceAccelerator`](crate::types::InferenceAccelerator).
     pub fn build(self) -> crate::types::InferenceAccelerator {

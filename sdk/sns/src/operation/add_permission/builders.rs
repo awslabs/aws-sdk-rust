@@ -38,6 +38,12 @@ impl AddPermissionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AddPermission as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::add_permission::builders::AddPermissionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -120,6 +126,10 @@ impl AddPermissionFluentBuilder {
         self.inner = self.inner.set_topic_arn(input);
         self
     }
+    /// <p>The ARN of the topic whose access control policy you wish to modify.</p>
+    pub fn get_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_topic_arn()
+    }
     /// <p>A unique identifier for the new policy statement.</p>
     pub fn label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.label(input.into());
@@ -129,6 +139,10 @@ impl AddPermissionFluentBuilder {
     pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_label(input);
         self
+    }
+    /// <p>A unique identifier for the new policy statement.</p>
+    pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_label()
     }
     /// Appends an item to `AWSAccountId`.
     ///
@@ -150,6 +164,12 @@ impl AddPermissionFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The Amazon Web Services account IDs of the users (principals) who will be given access to the specified actions. The users must have Amazon Web Services account, but do not need to be signed up for this service.</p>
+    pub fn get_aws_account_id(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_aws_account_id()
+    }
     /// Appends an item to `ActionName`.
     ///
     /// To override the contents of this collection use [`set_action_name`](Self::set_action_name).
@@ -168,5 +188,12 @@ impl AddPermissionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_action_name(input);
         self
+    }
+    /// <p>The action you want to allow for the specified principal(s).</p>
+    /// <p>Valid values: Any Amazon SNS action name, for example <code>Publish</code>.</p>
+    pub fn get_action_name(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_action_name()
     }
 }

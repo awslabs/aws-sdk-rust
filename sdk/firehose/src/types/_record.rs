@@ -40,6 +40,10 @@ impl RecordBuilder {
         self.data = input;
         self
     }
+    /// <p>The data blob, which is base64-encoded when the blob is serialized. The maximum size of the data blob, before base64-encoding, is 1,000 KiB.</p>
+    pub fn get_data(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.data
+    }
     /// Consumes the builder and constructs a [`Record`](crate::types::Record).
     pub fn build(self) -> crate::types::Record {
         crate::types::Record { data: self.data }

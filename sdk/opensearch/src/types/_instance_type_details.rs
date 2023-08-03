@@ -101,6 +101,12 @@ impl InstanceTypeDetailsBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The instance type.</p>
+    pub fn get_instance_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::OpenSearchPartitionInstanceType> {
+        &self.instance_type
+    }
     /// <p>Whether encryption at rest and node-to-node encryption are supported for the instance type.</p>
     pub fn encryption_enabled(mut self, input: bool) -> Self {
         self.encryption_enabled = ::std::option::Option::Some(input);
@@ -110,6 +116,10 @@ impl InstanceTypeDetailsBuilder {
     pub fn set_encryption_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.encryption_enabled = input;
         self
+    }
+    /// <p>Whether encryption at rest and node-to-node encryption are supported for the instance type.</p>
+    pub fn get_encryption_enabled(&self) -> &::std::option::Option<bool> {
+        &self.encryption_enabled
     }
     /// <p>Whether Amazon Cognito access is supported for the instance type.</p>
     pub fn cognito_enabled(mut self, input: bool) -> Self {
@@ -121,6 +131,10 @@ impl InstanceTypeDetailsBuilder {
         self.cognito_enabled = input;
         self
     }
+    /// <p>Whether Amazon Cognito access is supported for the instance type.</p>
+    pub fn get_cognito_enabled(&self) -> &::std::option::Option<bool> {
+        &self.cognito_enabled
+    }
     /// <p>Whether logging is supported for the instance type.</p>
     pub fn app_logs_enabled(mut self, input: bool) -> Self {
         self.app_logs_enabled = ::std::option::Option::Some(input);
@@ -130,6 +144,10 @@ impl InstanceTypeDetailsBuilder {
     pub fn set_app_logs_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.app_logs_enabled = input;
         self
+    }
+    /// <p>Whether logging is supported for the instance type.</p>
+    pub fn get_app_logs_enabled(&self) -> &::std::option::Option<bool> {
+        &self.app_logs_enabled
     }
     /// <p>Whether fine-grained access control is supported for the instance type.</p>
     pub fn advanced_security_enabled(mut self, input: bool) -> Self {
@@ -141,6 +159,10 @@ impl InstanceTypeDetailsBuilder {
         self.advanced_security_enabled = input;
         self
     }
+    /// <p>Whether fine-grained access control is supported for the instance type.</p>
+    pub fn get_advanced_security_enabled(&self) -> &::std::option::Option<bool> {
+        &self.advanced_security_enabled
+    }
     /// <p>Whether UltraWarm is supported for the instance type.</p>
     pub fn warm_enabled(mut self, input: bool) -> Self {
         self.warm_enabled = ::std::option::Option::Some(input);
@@ -150,6 +172,10 @@ impl InstanceTypeDetailsBuilder {
     pub fn set_warm_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.warm_enabled = input;
         self
+    }
+    /// <p>Whether UltraWarm is supported for the instance type.</p>
+    pub fn get_warm_enabled(&self) -> &::std::option::Option<bool> {
+        &self.warm_enabled
     }
     /// Appends an item to `instance_role`.
     ///
@@ -173,6 +199,12 @@ impl InstanceTypeDetailsBuilder {
         self.instance_role = input;
         self
     }
+    /// <p>Whether the instance acts as a data node, a dedicated master node, or an UltraWarm node.</p>
+    pub fn get_instance_role(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.instance_role
+    }
     /// Appends an item to `availability_zones`.
     ///
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
@@ -194,6 +226,12 @@ impl InstanceTypeDetailsBuilder {
     ) -> Self {
         self.availability_zones = input;
         self
+    }
+    /// <p>The supported Availability Zones for the instance type.</p>
+    pub fn get_availability_zones(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.availability_zones
     }
     /// Consumes the builder and constructs a [`InstanceTypeDetails`](crate::types::InstanceTypeDetails).
     pub fn build(self) -> crate::types::InstanceTypeDetails {

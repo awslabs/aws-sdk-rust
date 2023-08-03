@@ -47,6 +47,10 @@ impl GetSolFunctionPackageContentInputBuilder {
         self.vnf_pkg_id = input;
         self
     }
+    /// <p>ID of the function package.</p>
+    pub fn get_vnf_pkg_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vnf_pkg_id
+    }
     /// <p>The format of the package that you want to download from the function packages.</p>
     pub fn accept(mut self, input: crate::types::PackageContentType) -> Self {
         self.accept = ::std::option::Option::Some(input);
@@ -59,6 +63,10 @@ impl GetSolFunctionPackageContentInputBuilder {
     ) -> Self {
         self.accept = input;
         self
+    }
+    /// <p>The format of the package that you want to download from the function packages.</p>
+    pub fn get_accept(&self) -> &::std::option::Option<crate::types::PackageContentType> {
+        &self.accept
     }
     /// Consumes the builder and constructs a [`GetSolFunctionPackageContentInput`](crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentInput).
     pub fn build(

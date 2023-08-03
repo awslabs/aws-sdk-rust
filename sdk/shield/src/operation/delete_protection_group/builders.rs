@@ -36,6 +36,13 @@ impl DeleteProtectionGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteProtectionGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_protection_group::builders::DeleteProtectionGroupInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +138,9 @@ impl DeleteProtectionGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_protection_group_id(input);
         self
+    }
+    /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
+    pub fn get_protection_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_protection_group_id()
     }
 }

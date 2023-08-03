@@ -41,6 +41,10 @@ impl GetEarthObservationJobInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Earth Observation job.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`GetEarthObservationJobInput`](crate::operation::get_earth_observation_job::GetEarthObservationJobInput).
     pub fn build(
         self,

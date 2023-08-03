@@ -49,6 +49,12 @@ impl GetSmsChannelOutputBuilder {
         self.sms_channel_response = input;
         self
     }
+    /// <p>Provides information about the status and settings of the SMS channel for an application.</p>
+    pub fn get_sms_channel_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::SmsChannelResponse> {
+        &self.sms_channel_response
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

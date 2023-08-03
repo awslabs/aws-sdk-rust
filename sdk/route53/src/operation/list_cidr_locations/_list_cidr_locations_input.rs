@@ -64,6 +64,10 @@ impl ListCidrLocationsInputBuilder {
         self.collection_id = input;
         self
     }
+    /// <p>The CIDR collection ID.</p>
+    pub fn get_collection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collection_id
+    }
     /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
     /// <p>If no value is provided, the listing of results starts from the beginning.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -76,6 +80,11 @@ impl ListCidrLocationsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
+    /// <p>If no value is provided, the listing of results starts from the beginning.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of CIDR collection locations to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -85,6 +94,10 @@ impl ListCidrLocationsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of CIDR collection locations to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListCidrLocationsInput`](crate::operation::list_cidr_locations::ListCidrLocationsInput).
     pub fn build(

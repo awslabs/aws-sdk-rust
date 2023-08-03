@@ -48,6 +48,10 @@ impl AudioSpecificationBuilder {
         self.max_length_ms = input;
         self
     }
+    /// <p>Time for how long Amazon Lex waits before speech input is truncated and the speech is returned to application.</p>
+    pub fn get_max_length_ms(&self) -> &::std::option::Option<i32> {
+        &self.max_length_ms
+    }
     /// <p>Time for which a bot waits after the customer stops speaking to assume the utterance is finished.</p>
     pub fn end_timeout_ms(mut self, input: i32) -> Self {
         self.end_timeout_ms = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl AudioSpecificationBuilder {
     pub fn set_end_timeout_ms(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end_timeout_ms = input;
         self
+    }
+    /// <p>Time for which a bot waits after the customer stops speaking to assume the utterance is finished.</p>
+    pub fn get_end_timeout_ms(&self) -> &::std::option::Option<i32> {
+        &self.end_timeout_ms
     }
     /// Consumes the builder and constructs a [`AudioSpecification`](crate::types::AudioSpecification).
     pub fn build(self) -> crate::types::AudioSpecification {

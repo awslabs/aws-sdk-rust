@@ -71,6 +71,10 @@ impl CreateClusterV2InputBuilder {
         self.cluster_name = input;
         self
     }
+    /// <p>The name of the cluster.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_name
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -96,6 +100,14 @@ impl CreateClusterV2InputBuilder {
         self.tags = input;
         self
     }
+    /// <p>A map of tags that you want the cluster to have.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>Information about the provisioned cluster.</p>
     pub fn provisioned(mut self, input: crate::types::ProvisionedRequest) -> Self {
         self.provisioned = ::std::option::Option::Some(input);
@@ -109,6 +121,10 @@ impl CreateClusterV2InputBuilder {
         self.provisioned = input;
         self
     }
+    /// <p>Information about the provisioned cluster.</p>
+    pub fn get_provisioned(&self) -> &::std::option::Option<crate::types::ProvisionedRequest> {
+        &self.provisioned
+    }
     /// <p>Information about the serverless cluster.</p>
     pub fn serverless(mut self, input: crate::types::ServerlessRequest) -> Self {
         self.serverless = ::std::option::Option::Some(input);
@@ -121,6 +137,10 @@ impl CreateClusterV2InputBuilder {
     ) -> Self {
         self.serverless = input;
         self
+    }
+    /// <p>Information about the serverless cluster.</p>
+    pub fn get_serverless(&self) -> &::std::option::Option<crate::types::ServerlessRequest> {
+        &self.serverless
     }
     /// Consumes the builder and constructs a [`CreateClusterV2Input`](crate::operation::create_cluster_v2::CreateClusterV2Input).
     pub fn build(

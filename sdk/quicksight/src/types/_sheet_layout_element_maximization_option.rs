@@ -43,6 +43,12 @@ impl SheetLayoutElementMaximizationOptionBuilder {
         self.availability_status = input;
         self
     }
+    /// <p>The status of the sheet layout maximization options of a dashbaord.</p>
+    pub fn get_availability_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::DashboardBehavior> {
+        &self.availability_status
+    }
     /// Consumes the builder and constructs a [`SheetLayoutElementMaximizationOption`](crate::types::SheetLayoutElementMaximizationOption).
     pub fn build(self) -> crate::types::SheetLayoutElementMaximizationOption {
         crate::types::SheetLayoutElementMaximizationOption {

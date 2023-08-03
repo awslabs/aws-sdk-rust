@@ -94,6 +94,10 @@ impl CreateDatastoreInputBuilder {
         self.datastore_name = input;
         self
     }
+    /// <p>The name of the data store.</p>
+    pub fn get_datastore_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.datastore_name
+    }
     /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created. </p>
     pub fn datastore_storage(mut self, input: crate::types::DatastoreStorage) -> Self {
         self.datastore_storage = ::std::option::Option::Some(input);
@@ -107,6 +111,10 @@ impl CreateDatastoreInputBuilder {
         self.datastore_storage = input;
         self
     }
+    /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created. </p>
+    pub fn get_datastore_storage(&self) -> &::std::option::Option<crate::types::DatastoreStorage> {
+        &self.datastore_storage
+    }
     /// <p>How long, in days, message data is kept for the data store. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
     pub fn retention_period(mut self, input: crate::types::RetentionPeriod) -> Self {
         self.retention_period = ::std::option::Option::Some(input);
@@ -119,6 +127,10 @@ impl CreateDatastoreInputBuilder {
     ) -> Self {
         self.retention_period = input;
         self
+    }
+    /// <p>How long, in days, message data is kept for the data store. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
+    pub fn get_retention_period(&self) -> &::std::option::Option<crate::types::RetentionPeriod> {
+        &self.retention_period
     }
     /// Appends an item to `tags`.
     ///
@@ -138,6 +150,10 @@ impl CreateDatastoreInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Metadata which can be used to manage the data store.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
     /// <p>The default file format is JSON. You can specify only one format.</p>
@@ -159,6 +175,14 @@ impl CreateDatastoreInputBuilder {
         self.file_format_configuration = input;
         self
     }
+    /// <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+    /// <p>The default file format is JSON. You can specify only one format.</p>
+    /// <p>You can't change the file format after you create the data store.</p>
+    pub fn get_file_format_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::FileFormatConfiguration> {
+        &self.file_format_configuration
+    }
     /// <p> Contains information about the partition dimensions in a data store. </p>
     pub fn datastore_partitions(mut self, input: crate::types::DatastorePartitions) -> Self {
         self.datastore_partitions = ::std::option::Option::Some(input);
@@ -171,6 +195,12 @@ impl CreateDatastoreInputBuilder {
     ) -> Self {
         self.datastore_partitions = input;
         self
+    }
+    /// <p> Contains information about the partition dimensions in a data store. </p>
+    pub fn get_datastore_partitions(
+        &self,
+    ) -> &::std::option::Option<crate::types::DatastorePartitions> {
+        &self.datastore_partitions
     }
     /// Consumes the builder and constructs a [`CreateDatastoreInput`](crate::operation::create_datastore::CreateDatastoreInput).
     pub fn build(

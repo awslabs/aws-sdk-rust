@@ -43,6 +43,12 @@ impl DataPointDrillUpDownOptionBuilder {
         self.availability_status = input;
         self
     }
+    /// <p>The status of the drill down options of data points.</p>
+    pub fn get_availability_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::DashboardBehavior> {
+        &self.availability_status
+    }
     /// Consumes the builder and constructs a [`DataPointDrillUpDownOption`](crate::types::DataPointDrillUpDownOption).
     pub fn build(self) -> crate::types::DataPointDrillUpDownOption {
         crate::types::DataPointDrillUpDownOption {

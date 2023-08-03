@@ -48,6 +48,10 @@ impl OutputConfigBuilder {
         self.s3_bucket = input;
         self
     }
+    /// <p>The S3 bucket where training output is placed.</p>
+    pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket
+    }
     /// <p>The prefix applied to the training output files. </p>
     pub fn s3_key_prefix(
         mut self,
@@ -63,6 +67,10 @@ impl OutputConfigBuilder {
     ) -> Self {
         self.s3_key_prefix = input;
         self
+    }
+    /// <p>The prefix applied to the training output files. </p>
+    pub fn get_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_key_prefix
     }
     /// Consumes the builder and constructs a [`OutputConfig`](crate::types::OutputConfig).
     pub fn build(self) -> crate::types::OutputConfig {

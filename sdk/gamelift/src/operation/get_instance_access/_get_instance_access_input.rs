@@ -48,6 +48,10 @@ impl GetInstanceAccessInputBuilder {
         self.fleet_id = input;
         self
     }
+    /// <p>A unique identifier for the fleet that contains the instance you want access to. You can use either the fleet ID or ARN value. The fleet can be in any of the following statuses: <code>ACTIVATING</code>, <code>ACTIVE</code>, or <code>ERROR</code>. Fleets with an <code>ERROR</code> status may be accessible for a short time before they are deleted.</p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_id
+    }
     /// <p>A unique identifier for the instance you want to get access to. You can access an instance in any status.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl GetInstanceAccessInputBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
+    }
+    /// <p>A unique identifier for the instance you want to get access to. You can access an instance in any status.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// Consumes the builder and constructs a [`GetInstanceAccessInput`](crate::operation::get_instance_access::GetInstanceAccessInput).
     pub fn build(

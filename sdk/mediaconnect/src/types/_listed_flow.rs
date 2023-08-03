@@ -94,6 +94,10 @@ impl ListedFlowBuilder {
         self.availability_zone = input;
         self
     }
+    /// The Availability Zone that the flow was created in.
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// A description of the flow.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -103,6 +107,10 @@ impl ListedFlowBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// A description of the flow.
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// The ARN of the flow.
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -114,6 +122,10 @@ impl ListedFlowBuilder {
         self.flow_arn = input;
         self
     }
+    /// The ARN of the flow.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_arn
+    }
     /// The name of the flow.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -123,6 +135,10 @@ impl ListedFlowBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// The name of the flow.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// The type of source. This value is either owned (originated somewhere other than an AWS Elemental MediaConnect flow owned by another AWS account) or entitled (originated at an AWS Elemental MediaConnect flow owned by another AWS account).
     pub fn source_type(mut self, input: crate::types::SourceType) -> Self {
@@ -137,6 +153,10 @@ impl ListedFlowBuilder {
         self.source_type = input;
         self
     }
+    /// The type of source. This value is either owned (originated somewhere other than an AWS Elemental MediaConnect flow owned by another AWS account) or entitled (originated at an AWS Elemental MediaConnect flow owned by another AWS account).
+    pub fn get_source_type(&self) -> &::std::option::Option<crate::types::SourceType> {
+        &self.source_type
+    }
     /// The current status of the flow.
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -146,6 +166,10 @@ impl ListedFlowBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
         self
+    }
+    /// The current status of the flow.
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
     }
     /// The maintenance setting of a flow
     pub fn maintenance(mut self, input: crate::types::Maintenance) -> Self {
@@ -159,6 +183,10 @@ impl ListedFlowBuilder {
     ) -> Self {
         self.maintenance = input;
         self
+    }
+    /// The maintenance setting of a flow
+    pub fn get_maintenance(&self) -> &::std::option::Option<crate::types::Maintenance> {
+        &self.maintenance
     }
     /// Consumes the builder and constructs a [`ListedFlow`](crate::types::ListedFlow).
     pub fn build(self) -> crate::types::ListedFlow {

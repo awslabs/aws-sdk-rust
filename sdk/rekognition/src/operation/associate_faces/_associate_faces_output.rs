@@ -76,6 +76,12 @@ impl AssociateFacesOutputBuilder {
         self.associated_faces = input;
         self
     }
+    /// <p>An array of AssociatedFace objects containing FaceIDs that are successfully associated with the UserID is returned. Returned if the AssociateFaces action is successful.</p>
+    pub fn get_associated_faces(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociatedFace>> {
+        &self.associated_faces
+    }
     /// Appends an item to `unsuccessful_face_associations`.
     ///
     /// To override the contents of this collection use [`set_unsuccessful_face_associations`](Self::set_unsuccessful_face_associations).
@@ -98,6 +104,12 @@ impl AssociateFacesOutputBuilder {
         self.unsuccessful_face_associations = input;
         self
     }
+    /// <p>An array of UnsuccessfulAssociation objects containing FaceIDs that are not successfully associated along with the reasons. Returned if the AssociateFaces action is successful.</p>
+    pub fn get_unsuccessful_face_associations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceAssociation>> {
+        &self.unsuccessful_face_associations
+    }
     /// <p>The status of an update made to a UserID. Reflects if the UserID has been updated for every requested change.</p>
     pub fn user_status(mut self, input: crate::types::UserStatus) -> Self {
         self.user_status = ::std::option::Option::Some(input);
@@ -110,6 +122,10 @@ impl AssociateFacesOutputBuilder {
     ) -> Self {
         self.user_status = input;
         self
+    }
+    /// <p>The status of an update made to a UserID. Reflects if the UserID has been updated for every requested change.</p>
+    pub fn get_user_status(&self) -> &::std::option::Option<crate::types::UserStatus> {
+        &self.user_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

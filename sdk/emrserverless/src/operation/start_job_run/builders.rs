@@ -36,6 +36,10 @@ impl StartJobRunFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartJobRun as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_job_run::builders::StartJobRunInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl StartJobRunFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The ID of the application on which to run the job.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>The client idempotency token of the job run to start. Its value must be unique for each request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -133,6 +141,10 @@ impl StartJobRunFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>The client idempotency token of the job run to start. Its value must be unique for each request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// <p>The execution role ARN for the job run.</p>
     pub fn execution_role_arn(
@@ -150,6 +162,10 @@ impl StartJobRunFluentBuilder {
         self.inner = self.inner.set_execution_role_arn(input);
         self
     }
+    /// <p>The execution role ARN for the job run.</p>
+    pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_execution_role_arn()
+    }
     /// <p>The job driver for the job run.</p>
     pub fn job_driver(mut self, input: crate::types::JobDriver) -> Self {
         self.inner = self.inner.job_driver(input);
@@ -159,6 +175,10 @@ impl StartJobRunFluentBuilder {
     pub fn set_job_driver(mut self, input: ::std::option::Option<crate::types::JobDriver>) -> Self {
         self.inner = self.inner.set_job_driver(input);
         self
+    }
+    /// <p>The job driver for the job run.</p>
+    pub fn get_job_driver(&self) -> &::std::option::Option<crate::types::JobDriver> {
+        self.inner.get_job_driver()
     }
     /// <p>The configuration overrides for the job run.</p>
     pub fn configuration_overrides(mut self, input: crate::types::ConfigurationOverrides) -> Self {
@@ -172,6 +192,12 @@ impl StartJobRunFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_configuration_overrides(input);
         self
+    }
+    /// <p>The configuration overrides for the job run.</p>
+    pub fn get_configuration_overrides(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfigurationOverrides> {
+        self.inner.get_configuration_overrides()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -196,6 +222,14 @@ impl StartJobRunFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags assigned to the job run.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>The maximum duration for the job run to run. If the job run runs beyond this duration, it will be automatically cancelled.</p>
     pub fn execution_timeout_minutes(mut self, input: i64) -> Self {
         self.inner = self.inner.execution_timeout_minutes(input);
@@ -206,6 +240,10 @@ impl StartJobRunFluentBuilder {
         self.inner = self.inner.set_execution_timeout_minutes(input);
         self
     }
+    /// <p>The maximum duration for the job run to run. If the job run runs beyond this duration, it will be automatically cancelled.</p>
+    pub fn get_execution_timeout_minutes(&self) -> &::std::option::Option<i64> {
+        self.inner.get_execution_timeout_minutes()
+    }
     /// <p>The optional job run name. This doesn't have to be unique.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -215,5 +253,9 @@ impl StartJobRunFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The optional job run name. This doesn't have to be unique.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
 }

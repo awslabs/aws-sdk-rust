@@ -47,6 +47,10 @@ impl DeleteNotebookInstanceInputBuilder {
         self.notebook_instance_name = input;
         self
     }
+    /// <p>The name of the SageMaker notebook instance to delete.</p>
+    pub fn get_notebook_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notebook_instance_name
+    }
     /// Consumes the builder and constructs a [`DeleteNotebookInstanceInput`](crate::operation::delete_notebook_instance::DeleteNotebookInstanceInput).
     pub fn build(
         self,

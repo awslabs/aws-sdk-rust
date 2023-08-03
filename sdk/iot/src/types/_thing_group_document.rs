@@ -86,6 +86,10 @@ impl ThingGroupDocumentBuilder {
         self.thing_group_name = input;
         self
     }
+    /// <p>The thing group name.</p>
+    pub fn get_thing_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_group_name
+    }
     /// <p>The thing group ID.</p>
     pub fn thing_group_id(
         mut self,
@@ -102,6 +106,10 @@ impl ThingGroupDocumentBuilder {
         self.thing_group_id = input;
         self
     }
+    /// <p>The thing group ID.</p>
+    pub fn get_thing_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_group_id
+    }
     /// <p>The thing group description.</p>
     pub fn thing_group_description(
         mut self,
@@ -117,6 +125,10 @@ impl ThingGroupDocumentBuilder {
     ) -> Self {
         self.thing_group_description = input;
         self
+    }
+    /// <p>The thing group description.</p>
+    pub fn get_thing_group_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_group_description
     }
     /// Adds a key-value pair to `attributes`.
     ///
@@ -143,6 +155,14 @@ impl ThingGroupDocumentBuilder {
         self.attributes = input;
         self
     }
+    /// <p>The thing group attributes.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.attributes
+    }
     /// Appends an item to `parent_group_names`.
     ///
     /// To override the contents of this collection use [`set_parent_group_names`](Self::set_parent_group_names).
@@ -164,6 +184,12 @@ impl ThingGroupDocumentBuilder {
     ) -> Self {
         self.parent_group_names = input;
         self
+    }
+    /// <p>Parent group names.</p>
+    pub fn get_parent_group_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.parent_group_names
     }
     /// Consumes the builder and constructs a [`ThingGroupDocument`](crate::types::ThingGroupDocument).
     pub fn build(self) -> crate::types::ThingGroupDocument {

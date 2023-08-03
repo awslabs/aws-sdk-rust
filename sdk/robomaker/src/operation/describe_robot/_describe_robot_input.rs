@@ -42,6 +42,10 @@ impl DescribeRobotInputBuilder {
         self.robot = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the robot to be described.</p>
+    pub fn get_robot(&self) -> &::std::option::Option<::std::string::String> {
+        &self.robot
+    }
     /// Consumes the builder and constructs a [`DescribeRobotInput`](crate::operation::describe_robot::DescribeRobotInput).
     pub fn build(
         self,

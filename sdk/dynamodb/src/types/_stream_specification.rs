@@ -60,6 +60,10 @@ impl StreamSpecificationBuilder {
         self.stream_enabled = input;
         self
     }
+    /// <p>Indicates whether DynamoDB Streams is enabled (true) or disabled (false) on the table.</p>
+    pub fn get_stream_enabled(&self) -> &::std::option::Option<bool> {
+        &self.stream_enabled
+    }
     /// <p> When an item in the table is modified, <code>StreamViewType</code> determines what information is written to the stream for this table. Valid values for <code>StreamViewType</code> are:</p>
     /// <ul>
     /// <li> <p> <code>KEYS_ONLY</code> - Only the key attributes of the modified item are written to the stream.</p> </li>
@@ -84,6 +88,16 @@ impl StreamSpecificationBuilder {
     ) -> Self {
         self.stream_view_type = input;
         self
+    }
+    /// <p> When an item in the table is modified, <code>StreamViewType</code> determines what information is written to the stream for this table. Valid values for <code>StreamViewType</code> are:</p>
+    /// <ul>
+    /// <li> <p> <code>KEYS_ONLY</code> - Only the key attributes of the modified item are written to the stream.</p> </li>
+    /// <li> <p> <code>NEW_IMAGE</code> - The entire item, as it appears after it was modified, is written to the stream.</p> </li>
+    /// <li> <p> <code>OLD_IMAGE</code> - The entire item, as it appeared before it was modified, is written to the stream.</p> </li>
+    /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item are written to the stream.</p> </li>
+    /// </ul>
+    pub fn get_stream_view_type(&self) -> &::std::option::Option<crate::types::StreamViewType> {
+        &self.stream_view_type
     }
     /// Consumes the builder and constructs a [`StreamSpecification`](crate::types::StreamSpecification).
     pub fn build(self) -> crate::types::StreamSpecification {

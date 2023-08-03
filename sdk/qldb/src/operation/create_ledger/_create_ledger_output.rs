@@ -96,6 +96,10 @@ impl CreateLedgerOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the ledger.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) for the ledger.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -106,6 +110,10 @@ impl CreateLedgerOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the ledger.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The current status of the ledger.</p>
     pub fn state(mut self, input: crate::types::LedgerState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -115,6 +123,10 @@ impl CreateLedgerOutputBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::LedgerState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The current status of the ledger.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::LedgerState> {
+        &self.state
     }
     /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -129,6 +141,10 @@ impl CreateLedgerOutputBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>The permissions mode of the ledger that you created.</p>
     pub fn permissions_mode(mut self, input: crate::types::PermissionsMode) -> Self {
         self.permissions_mode = ::std::option::Option::Some(input);
@@ -142,6 +158,10 @@ impl CreateLedgerOutputBuilder {
         self.permissions_mode = input;
         self
     }
+    /// <p>The permissions mode of the ledger that you created.</p>
+    pub fn get_permissions_mode(&self) -> &::std::option::Option<crate::types::PermissionsMode> {
+        &self.permissions_mode
+    }
     /// <p>Specifies whether the ledger is protected from being deleted by any user. If not defined during ledger creation, this feature is enabled (<code>true</code>) by default.</p>
     /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set this parameter to <code>false</code>.</p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
@@ -154,6 +174,11 @@ impl CreateLedgerOutputBuilder {
         self.deletion_protection = input;
         self
     }
+    /// <p>Specifies whether the ledger is protected from being deleted by any user. If not defined during ledger creation, this feature is enabled (<code>true</code>) by default.</p>
+    /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set this parameter to <code>false</code>.</p>
+    pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
+        &self.deletion_protection
+    }
     /// <p>The ARN of the customer managed KMS key that the ledger uses for encryption at rest. If this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_arn = ::std::option::Option::Some(input.into());
@@ -163,6 +188,10 @@ impl CreateLedgerOutputBuilder {
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_arn = input;
         self
+    }
+    /// <p>The ARN of the customer managed KMS key that the ledger uses for encryption at rest. If this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

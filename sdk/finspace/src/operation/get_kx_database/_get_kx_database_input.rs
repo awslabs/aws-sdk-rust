@@ -53,6 +53,10 @@ impl GetKxDatabaseInputBuilder {
         self.environment_id = input;
         self
     }
+    /// <p>A unique identifier for the kdb environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
+    }
     /// <p>The name of the kdb database.</p>
     pub fn database_name(
         mut self,
@@ -68,6 +72,10 @@ impl GetKxDatabaseInputBuilder {
     ) -> Self {
         self.database_name = input;
         self
+    }
+    /// <p>The name of the kdb database.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
     }
     /// Consumes the builder and constructs a [`GetKxDatabaseInput`](crate::operation::get_kx_database::GetKxDatabaseInput).
     pub fn build(

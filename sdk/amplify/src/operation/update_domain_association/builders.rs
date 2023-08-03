@@ -37,6 +37,13 @@ impl UpdateDomainAssociationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDomainAssociation as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_domain_association::builders::UpdateDomainAssociationInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl UpdateDomainAssociationFluentBuilder {
         self.inner = self.inner.set_app_id(input);
         self
     }
+    /// <p> The unique ID for an Amplify app. </p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_id()
+    }
     /// <p> The name of the domain. </p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
@@ -137,6 +148,10 @@ impl UpdateDomainAssociationFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p> The name of the domain. </p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p> Enables the automated creation of subdomains for branches. </p>
     pub fn enable_auto_sub_domain(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_auto_sub_domain(input);
@@ -146,6 +161,10 @@ impl UpdateDomainAssociationFluentBuilder {
     pub fn set_enable_auto_sub_domain(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_auto_sub_domain(input);
         self
+    }
+    /// <p> Enables the automated creation of subdomains for branches. </p>
+    pub fn get_enable_auto_sub_domain(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_auto_sub_domain()
     }
     /// Appends an item to `subDomainSettings`.
     ///
@@ -163,6 +182,12 @@ impl UpdateDomainAssociationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sub_domain_settings(input);
         self
+    }
+    /// <p> Describes the settings for the subdomain. </p>
+    pub fn get_sub_domain_settings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SubDomainSetting>> {
+        self.inner.get_sub_domain_settings()
     }
     /// Appends an item to `autoSubDomainCreationPatterns`.
     ///
@@ -184,6 +209,12 @@ impl UpdateDomainAssociationFluentBuilder {
         self.inner = self.inner.set_auto_sub_domain_creation_patterns(input);
         self
     }
+    /// <p> Sets the branch patterns for automatic subdomain creation. </p>
+    pub fn get_auto_sub_domain_creation_patterns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_auto_sub_domain_creation_patterns()
+    }
     /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
     pub fn auto_sub_domain_iam_role(
         mut self,
@@ -199,5 +230,9 @@ impl UpdateDomainAssociationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_auto_sub_domain_iam_role(input);
         self
+    }
+    /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
+    pub fn get_auto_sub_domain_iam_role(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_auto_sub_domain_iam_role()
     }
 }

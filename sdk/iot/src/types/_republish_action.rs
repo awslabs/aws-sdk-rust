@@ -64,6 +64,10 @@ impl RepublishActionBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The ARN of the IAM role that grants access.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The name of the MQTT topic.</p>
     pub fn topic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl RepublishActionBuilder {
     pub fn set_topic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.topic = input;
         self
+    }
+    /// <p>The name of the MQTT topic.</p>
+    pub fn get_topic(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic
     }
     /// <p>The Quality of Service (QoS) level to use when republishing messages. The default value is 0.</p>
     pub fn qos(mut self, input: i32) -> Self {
@@ -84,6 +92,10 @@ impl RepublishActionBuilder {
         self.qos = input;
         self
     }
+    /// <p>The Quality of Service (QoS) level to use when republishing messages. The default value is 0.</p>
+    pub fn get_qos(&self) -> &::std::option::Option<i32> {
+        &self.qos
+    }
     /// <p>MQTT Version 5.0 headers information. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html"> MQTT</a> from the Amazon Web Services IoT Core Developer Guide.</p>
     pub fn headers(mut self, input: crate::types::MqttHeaders) -> Self {
         self.headers = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl RepublishActionBuilder {
     pub fn set_headers(mut self, input: ::std::option::Option<crate::types::MqttHeaders>) -> Self {
         self.headers = input;
         self
+    }
+    /// <p>MQTT Version 5.0 headers information. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html"> MQTT</a> from the Amazon Web Services IoT Core Developer Guide.</p>
+    pub fn get_headers(&self) -> &::std::option::Option<crate::types::MqttHeaders> {
+        &self.headers
     }
     /// Consumes the builder and constructs a [`RepublishAction`](crate::types::RepublishAction).
     pub fn build(self) -> crate::types::RepublishAction {

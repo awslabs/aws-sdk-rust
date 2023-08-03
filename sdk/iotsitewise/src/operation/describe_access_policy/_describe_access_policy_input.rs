@@ -46,6 +46,10 @@ impl DescribeAccessPolicyInputBuilder {
         self.access_policy_id = input;
         self
     }
+    /// <p>The ID of the access policy.</p>
+    pub fn get_access_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_policy_id
+    }
     /// Consumes the builder and constructs a [`DescribeAccessPolicyInput`](crate::operation::describe_access_policy::DescribeAccessPolicyInput).
     pub fn build(
         self,

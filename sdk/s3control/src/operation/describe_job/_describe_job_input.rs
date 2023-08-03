@@ -47,6 +47,10 @@ impl DescribeJobInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The ID for the job whose information you want to retrieve.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DescribeJobInputBuilder {
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
+    }
+    /// <p>The ID for the job whose information you want to retrieve.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
     }
     /// Consumes the builder and constructs a [`DescribeJobInput`](crate::operation::describe_job::DescribeJobInput).
     pub fn build(

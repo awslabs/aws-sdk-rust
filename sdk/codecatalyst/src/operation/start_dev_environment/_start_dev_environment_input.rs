@@ -81,6 +81,10 @@ impl StartDevEnvironmentInputBuilder {
         self.space_name = input;
         self
     }
+    /// <p>The name of the space.</p>
+    pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.space_name
+    }
     /// <p>The name of the project in the space.</p>
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
@@ -91,6 +95,10 @@ impl StartDevEnvironmentInputBuilder {
         self.project_name = input;
         self
     }
+    /// <p>The name of the project in the space.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
+    }
     /// <p>The system-generated unique ID of the Dev Environment. </p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -100,6 +108,10 @@ impl StartDevEnvironmentInputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The system-generated unique ID of the Dev Environment. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Appends an item to `ides`.
     ///
@@ -120,6 +132,12 @@ impl StartDevEnvironmentInputBuilder {
         self.ides = input;
         self
     }
+    /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment. </p>
+    pub fn get_ides(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>> {
+        &self.ides
+    }
     /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
     pub fn instance_type(mut self, input: crate::types::InstanceType) -> Self {
         self.instance_type = ::std::option::Option::Some(input);
@@ -133,6 +151,10 @@ impl StartDevEnvironmentInputBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
+        &self.instance_type
+    }
     /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.</p>
     pub fn inactivity_timeout_minutes(mut self, input: i32) -> Self {
         self.inactivity_timeout_minutes = ::std::option::Option::Some(input);
@@ -142,6 +164,10 @@ impl StartDevEnvironmentInputBuilder {
     pub fn set_inactivity_timeout_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inactivity_timeout_minutes = input;
         self
+    }
+    /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.</p>
+    pub fn get_inactivity_timeout_minutes(&self) -> &::std::option::Option<i32> {
+        &self.inactivity_timeout_minutes
     }
     /// Consumes the builder and constructs a [`StartDevEnvironmentInput`](crate::operation::start_dev_environment::StartDevEnvironmentInput).
     pub fn build(

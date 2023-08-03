@@ -36,6 +36,10 @@ impl UpdateRevealConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateRevealConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_reveal_configuration::builders::UpdateRevealConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,5 +132,9 @@ impl UpdateRevealConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
+    }
+    /// <p>The new configuration settings and the status of the configuration for the account.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::RevealConfiguration> {
+        self.inner.get_configuration()
     }
 }

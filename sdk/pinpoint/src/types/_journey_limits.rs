@@ -64,6 +64,10 @@ impl JourneyLimitsBuilder {
         self.daily_cap = input;
         self
     }
+    /// <p>The maximum number of messages that the journey can send to a single participant during a 24-hour period. The maximum value is 100.</p>
+    pub fn get_daily_cap(&self) -> &::std::option::Option<i32> {
+        &self.daily_cap
+    }
     /// <p>The maximum number of times that a participant can enter the journey. The maximum value is 100. To allow participants to enter the journey an unlimited number of times, set this value to 0.</p>
     pub fn endpoint_reentry_cap(mut self, input: i32) -> Self {
         self.endpoint_reentry_cap = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl JourneyLimitsBuilder {
         self.endpoint_reentry_cap = input;
         self
     }
+    /// <p>The maximum number of times that a participant can enter the journey. The maximum value is 100. To allow participants to enter the journey an unlimited number of times, set this value to 0.</p>
+    pub fn get_endpoint_reentry_cap(&self) -> &::std::option::Option<i32> {
+        &self.endpoint_reentry_cap
+    }
     /// <p>The maximum number of messages that the journey can send each second.</p>
     pub fn messages_per_second(mut self, input: i32) -> Self {
         self.messages_per_second = ::std::option::Option::Some(input);
@@ -83,6 +91,10 @@ impl JourneyLimitsBuilder {
     pub fn set_messages_per_second(mut self, input: ::std::option::Option<i32>) -> Self {
         self.messages_per_second = input;
         self
+    }
+    /// <p>The maximum number of messages that the journey can send each second.</p>
+    pub fn get_messages_per_second(&self) -> &::std::option::Option<i32> {
+        &self.messages_per_second
     }
     /// <p>Minimum time that must pass before an endpoint can re-enter a given journey. The duration should use an ISO 8601 format, such as PT1H. </p>
     pub fn endpoint_reentry_interval(
@@ -99,6 +111,10 @@ impl JourneyLimitsBuilder {
     ) -> Self {
         self.endpoint_reentry_interval = input;
         self
+    }
+    /// <p>Minimum time that must pass before an endpoint can re-enter a given journey. The duration should use an ISO 8601 format, such as PT1H. </p>
+    pub fn get_endpoint_reentry_interval(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_reentry_interval
     }
     /// Consumes the builder and constructs a [`JourneyLimits`](crate::types::JourneyLimits).
     pub fn build(self) -> crate::types::JourneyLimits {

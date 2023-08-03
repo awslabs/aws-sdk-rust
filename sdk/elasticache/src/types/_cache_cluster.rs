@@ -428,6 +428,10 @@ impl CacheClusterBuilder {
         self.cache_cluster_id = input;
         self
     }
+    /// <p>The user-supplied identifier of the cluster. This identifier is a unique key that identifies a cluster.</p>
+    pub fn get_cache_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_cluster_id
+    }
     /// <p>Represents a Memcached cluster endpoint which can be used by an application to connect to any node in the cluster. The configuration endpoint will always have <code>.cfg</code> in it.</p>
     /// <p>Example: <code>mem-3.9dvc4r<u>.cfg</u>.usw2.cache.amazonaws.com:11211</code> </p>
     pub fn configuration_endpoint(mut self, input: crate::types::Endpoint) -> Self {
@@ -442,6 +446,11 @@ impl CacheClusterBuilder {
     ) -> Self {
         self.configuration_endpoint = input;
         self
+    }
+    /// <p>Represents a Memcached cluster endpoint which can be used by an application to connect to any node in the cluster. The configuration endpoint will always have <code>.cfg</code> in it.</p>
+    /// <p>Example: <code>mem-3.9dvc4r<u>.cfg</u>.usw2.cache.amazonaws.com:11211</code> </p>
+    pub fn get_configuration_endpoint(&self) -> &::std::option::Option<crate::types::Endpoint> {
+        &self.configuration_endpoint
     }
     /// <p>The URL of the web page where you can download the latest ElastiCache client library.</p>
     pub fn client_download_landing_page(
@@ -458,6 +467,12 @@ impl CacheClusterBuilder {
     ) -> Self {
         self.client_download_landing_page = input;
         self
+    }
+    /// <p>The URL of the web page where you can download the latest ElastiCache client library.</p>
+    pub fn get_client_download_landing_page(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.client_download_landing_page
     }
     /// <p>The name of the compute and memory capacity node type for the cluster.</p>
     /// <p>The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts.</p>
@@ -531,6 +546,38 @@ impl CacheClusterBuilder {
         self.cache_node_type = input;
         self
     }
+    /// <p>The name of the compute and memory capacity node type for the cluster.</p>
+    /// <p>The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts.</p>
+    /// <ul>
+    /// <li> <p>General purpose:</p>
+    /// <ul>
+    /// <li> <p>Current generation: </p> <p> <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>, <code>cache.m6g.16xlarge</code> </p> <note>
+    /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a> </p>
+    /// </note> <p> <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code> </p> <p> <b>M4 node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>, <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16 onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>, <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b> <code>cache.t3.micro</code>, <code>cache.t3.small</code>, <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b> <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code> </p> </li>
+    /// <li> <p>Previous generation: (not recommended. Existing clusters are still supported but creation of new clusters is not supported for these types.)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p> <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>, <code>cache.m1.large</code>, <code>cache.m1.xlarge</code> </p> <p> <b>M3 node types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>Compute optimized:</p>
+    /// <ul>
+    /// <li> <p>Previous generation: (not recommended. Existing clusters are still supported but creation of new clusters is not supported for these types.)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>Memory optimized:</p>
+    /// <ul>
+    /// <li> <p>Current generation: </p> <p> <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p> <p> <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code> </p> <note>
+    /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a> </p>
+    /// </note> <p> <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code> </p> <p> <b>R4 node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>, <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li>
+    /// <li> <p>Previous generation: (not recommended. Existing clusters are still supported but creation of new clusters is not supported for these types.)</p> <p> <b>M2 node types:</b> <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code> </p> <p> <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> </li>
+    /// </ul> </li>
+    /// </ul>
+    /// <p> <b>Additional node type info</b> </p>
+    /// <ul>
+    /// <li> <p>All current generation instance types are created in Amazon VPC by default.</p> </li>
+    /// <li> <p>Redis append-only files (AOF) are not supported for T1 or T2 instances.</p> </li>
+    /// <li> <p>Redis Multi-AZ with automatic failover is not supported on T1 instances.</p> </li>
+    /// <li> <p>Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p> </li>
+    /// </ul>
+    pub fn get_cache_node_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_node_type
+    }
     /// <p>The name of the cache engine (<code>memcached</code> or <code>redis</code>) to be used for this cluster.</p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
@@ -540,6 +587,10 @@ impl CacheClusterBuilder {
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
+    }
+    /// <p>The name of the cache engine (<code>memcached</code> or <code>redis</code>) to be used for this cluster.</p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine
     }
     /// <p>The version of the cache engine that is used in this cluster.</p>
     pub fn engine_version(
@@ -557,6 +608,10 @@ impl CacheClusterBuilder {
         self.engine_version = input;
         self
     }
+    /// <p>The version of the cache engine that is used in this cluster.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
+    }
     /// <p>The current state of this cluster, one of the following values: <code>available</code>, <code>creating</code>, <code>deleted</code>, <code>deleting</code>, <code>incompatible-network</code>, <code>modifying</code>, <code>rebooting cluster nodes</code>, <code>restore-failed</code>, or <code>snapshotting</code>.</p>
     pub fn cache_cluster_status(
         mut self,
@@ -573,6 +628,10 @@ impl CacheClusterBuilder {
         self.cache_cluster_status = input;
         self
     }
+    /// <p>The current state of this cluster, one of the following values: <code>available</code>, <code>creating</code>, <code>deleted</code>, <code>deleting</code>, <code>incompatible-network</code>, <code>modifying</code>, <code>rebooting cluster nodes</code>, <code>restore-failed</code>, or <code>snapshotting</code>.</p>
+    pub fn get_cache_cluster_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_cluster_status
+    }
     /// <p>The number of cache nodes in the cluster.</p>
     /// <p>For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
     pub fn num_cache_nodes(mut self, input: i32) -> Self {
@@ -584,6 +643,11 @@ impl CacheClusterBuilder {
     pub fn set_num_cache_nodes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.num_cache_nodes = input;
         self
+    }
+    /// <p>The number of cache nodes in the cluster.</p>
+    /// <p>For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
+    pub fn get_num_cache_nodes(&self) -> &::std::option::Option<i32> {
+        &self.num_cache_nodes
     }
     /// <p>The name of the Availability Zone in which the cluster is located or "Multiple" if the cache nodes are located in different Availability Zones.</p>
     pub fn preferred_availability_zone(
@@ -601,6 +665,10 @@ impl CacheClusterBuilder {
         self.preferred_availability_zone = input;
         self
     }
+    /// <p>The name of the Availability Zone in which the cluster is located or "Multiple" if the cache nodes are located in different Availability Zones.</p>
+    pub fn get_preferred_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.preferred_availability_zone
+    }
     /// <p>The outpost ARN in which the cache cluster is created.</p>
     pub fn preferred_outpost_arn(
         mut self,
@@ -617,6 +685,10 @@ impl CacheClusterBuilder {
         self.preferred_outpost_arn = input;
         self
     }
+    /// <p>The outpost ARN in which the cache cluster is created.</p>
+    pub fn get_preferred_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.preferred_outpost_arn
+    }
     /// <p>The date and time when the cluster was created.</p>
     pub fn cache_cluster_create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.cache_cluster_create_time = ::std::option::Option::Some(input);
@@ -629,6 +701,12 @@ impl CacheClusterBuilder {
     ) -> Self {
         self.cache_cluster_create_time = input;
         self
+    }
+    /// <p>The date and time when the cluster was created.</p>
+    pub fn get_cache_cluster_create_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.cache_cluster_create_time
     }
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
@@ -668,6 +746,23 @@ impl CacheClusterBuilder {
         self.preferred_maintenance_window = input;
         self
     }
+    /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
+    /// <p>Valid values for <code>ddd</code> are:</p>
+    /// <ul>
+    /// <li> <p> <code>sun</code> </p> </li>
+    /// <li> <p> <code>mon</code> </p> </li>
+    /// <li> <p> <code>tue</code> </p> </li>
+    /// <li> <p> <code>wed</code> </p> </li>
+    /// <li> <p> <code>thu</code> </p> </li>
+    /// <li> <p> <code>fri</code> </p> </li>
+    /// <li> <p> <code>sat</code> </p> </li>
+    /// </ul>
+    /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
+    pub fn get_preferred_maintenance_window(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.preferred_maintenance_window
+    }
     /// <p>A group of settings that are applied to the cluster in the future, or that are currently being applied.</p>
     pub fn pending_modified_values(mut self, input: crate::types::PendingModifiedValues) -> Self {
         self.pending_modified_values = ::std::option::Option::Some(input);
@@ -680,6 +775,12 @@ impl CacheClusterBuilder {
     ) -> Self {
         self.pending_modified_values = input;
         self
+    }
+    /// <p>A group of settings that are applied to the cluster in the future, or that are currently being applied.</p>
+    pub fn get_pending_modified_values(
+        &self,
+    ) -> &::std::option::Option<crate::types::PendingModifiedValues> {
+        &self.pending_modified_values
     }
     /// <p>Describes a notification topic and its status. Notification topics are used for publishing ElastiCache events to subscribers using Amazon Simple Notification Service (SNS). </p>
     pub fn notification_configuration(
@@ -696,6 +797,12 @@ impl CacheClusterBuilder {
     ) -> Self {
         self.notification_configuration = input;
         self
+    }
+    /// <p>Describes a notification topic and its status. Notification topics are used for publishing ElastiCache events to subscribers using Amazon Simple Notification Service (SNS). </p>
+    pub fn get_notification_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::NotificationConfiguration> {
+        &self.notification_configuration
     }
     /// Appends an item to `cache_security_groups`.
     ///
@@ -719,6 +826,12 @@ impl CacheClusterBuilder {
         self.cache_security_groups = input;
         self
     }
+    /// <p>A list of cache security group elements, composed of name and status sub-elements.</p>
+    pub fn get_cache_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheSecurityGroupMembership>> {
+        &self.cache_security_groups
+    }
     /// <p>Status of the cache parameter group.</p>
     pub fn cache_parameter_group(mut self, input: crate::types::CacheParameterGroupStatus) -> Self {
         self.cache_parameter_group = ::std::option::Option::Some(input);
@@ -731,6 +844,12 @@ impl CacheClusterBuilder {
     ) -> Self {
         self.cache_parameter_group = input;
         self
+    }
+    /// <p>Status of the cache parameter group.</p>
+    pub fn get_cache_parameter_group(
+        &self,
+    ) -> &::std::option::Option<crate::types::CacheParameterGroupStatus> {
+        &self.cache_parameter_group
     }
     /// <p>The name of the cache subnet group associated with the cluster.</p>
     pub fn cache_subnet_group_name(
@@ -747,6 +866,10 @@ impl CacheClusterBuilder {
     ) -> Self {
         self.cache_subnet_group_name = input;
         self
+    }
+    /// <p>The name of the cache subnet group associated with the cluster.</p>
+    pub fn get_cache_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_subnet_group_name
     }
     /// Appends an item to `cache_nodes`.
     ///
@@ -767,6 +890,12 @@ impl CacheClusterBuilder {
         self.cache_nodes = input;
         self
     }
+    /// <p>A list of cache nodes that are members of the cluster.</p>
+    pub fn get_cache_nodes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheNode>> {
+        &self.cache_nodes
+    }
     /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp; </p>
     pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
         self.auto_minor_version_upgrade = ::std::option::Option::Some(input);
@@ -776,6 +905,10 @@ impl CacheClusterBuilder {
     pub fn set_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_minor_version_upgrade = input;
         self
+    }
+    /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp; </p>
+    pub fn get_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
+        &self.auto_minor_version_upgrade
     }
     /// Appends an item to `security_groups`.
     ///
@@ -796,6 +929,12 @@ impl CacheClusterBuilder {
         self.security_groups = input;
         self
     }
+    /// <p>A list of VPC Security Groups associated with the cluster.</p>
+    pub fn get_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupMembership>> {
+        &self.security_groups
+    }
     /// <p>The replication group to which this cluster belongs. If this field is empty, the cluster is not associated with any replication group.</p>
     pub fn replication_group_id(
         mut self,
@@ -812,6 +951,10 @@ impl CacheClusterBuilder {
         self.replication_group_id = input;
         self
     }
+    /// <p>The replication group to which this cluster belongs. If this field is empty, the cluster is not associated with any replication group.</p>
+    pub fn get_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_group_id
+    }
     /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p> <important>
     /// <p> If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
     /// </important>
@@ -825,6 +968,12 @@ impl CacheClusterBuilder {
     pub fn set_snapshot_retention_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.snapshot_retention_limit = input;
         self
+    }
+    /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p> <important>
+    /// <p> If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
+    /// </important>
+    pub fn get_snapshot_retention_limit(&self) -> &::std::option::Option<i32> {
+        &self.snapshot_retention_limit
     }
     /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cluster.</p>
     /// <p>Example: <code>05:00-09:00</code> </p>
@@ -844,6 +993,11 @@ impl CacheClusterBuilder {
         self.snapshot_window = input;
         self
     }
+    /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cluster.</p>
+    /// <p>Example: <code>05:00-09:00</code> </p>
+    pub fn get_snapshot_window(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_window
+    }
     /// <p>A flag that enables using an <code>AuthToken</code> (password) when issuing Redis commands.</p>
     /// <p>Default: <code>false</code> </p>
     pub fn auth_token_enabled(mut self, input: bool) -> Self {
@@ -855,6 +1009,11 @@ impl CacheClusterBuilder {
     pub fn set_auth_token_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auth_token_enabled = input;
         self
+    }
+    /// <p>A flag that enables using an <code>AuthToken</code> (password) when issuing Redis commands.</p>
+    /// <p>Default: <code>false</code> </p>
+    pub fn get_auth_token_enabled(&self) -> &::std::option::Option<bool> {
+        &self.auth_token_enabled
     }
     /// <p>The date the auth token was last modified</p>
     pub fn auth_token_last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -869,6 +1028,12 @@ impl CacheClusterBuilder {
         self.auth_token_last_modified_date = input;
         self
     }
+    /// <p>The date the auth token was last modified</p>
+    pub fn get_auth_token_last_modified_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.auth_token_last_modified_date
+    }
     /// <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
     /// <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
     /// <p>Default: <code>false</code> </p>
@@ -882,6 +1047,12 @@ impl CacheClusterBuilder {
     pub fn set_transit_encryption_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.transit_encryption_enabled = input;
         self
+    }
+    /// <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
+    /// <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
+    /// <p>Default: <code>false</code> </p>
+    pub fn get_transit_encryption_enabled(&self) -> &::std::option::Option<bool> {
+        &self.transit_encryption_enabled
     }
     /// <p>A flag that enables encryption at-rest when set to <code>true</code>.</p>
     /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the cluster is created. To enable at-rest encryption on a cluster you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create a cluster.</p>
@@ -899,6 +1070,13 @@ impl CacheClusterBuilder {
         self.at_rest_encryption_enabled = input;
         self
     }
+    /// <p>A flag that enables encryption at-rest when set to <code>true</code>.</p>
+    /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the cluster is created. To enable at-rest encryption on a cluster you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create a cluster.</p>
+    /// <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
+    /// <p>Default: <code>false</code> </p>
+    pub fn get_at_rest_encryption_enabled(&self) -> &::std::option::Option<bool> {
+        &self.at_rest_encryption_enabled
+    }
     /// <p>The ARN (Amazon Resource Name) of the cache cluster.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -908,6 +1086,10 @@ impl CacheClusterBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The ARN (Amazon Resource Name) of the cache cluster.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>A boolean value indicating whether log delivery is enabled for the replication group.</p>
     pub fn replication_group_log_delivery_enabled(mut self, input: bool) -> Self {
@@ -921,6 +1103,10 @@ impl CacheClusterBuilder {
     ) -> Self {
         self.replication_group_log_delivery_enabled = input;
         self
+    }
+    /// <p>A boolean value indicating whether log delivery is enabled for the replication group.</p>
+    pub fn get_replication_group_log_delivery_enabled(&self) -> &::std::option::Option<bool> {
+        &self.replication_group_log_delivery_enabled
     }
     /// Appends an item to `log_delivery_configurations`.
     ///
@@ -944,6 +1130,12 @@ impl CacheClusterBuilder {
         self.log_delivery_configurations = input;
         self
     }
+    /// <p>Returns the destination, format and type of the logs.</p>
+    pub fn get_log_delivery_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryConfiguration>> {
+        &self.log_delivery_configurations
+    }
     /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn network_type(mut self, input: crate::types::NetworkType) -> Self {
         self.network_type = ::std::option::Option::Some(input);
@@ -956,6 +1148,10 @@ impl CacheClusterBuilder {
     ) -> Self {
         self.network_type = input;
         self
+    }
+    /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
+        &self.network_type
     }
     /// <p>The network type associated with the cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn ip_discovery(mut self, input: crate::types::IpDiscovery) -> Self {
@@ -970,6 +1166,10 @@ impl CacheClusterBuilder {
         self.ip_discovery = input;
         self
     }
+    /// <p>The network type associated with the cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    pub fn get_ip_discovery(&self) -> &::std::option::Option<crate::types::IpDiscovery> {
+        &self.ip_discovery
+    }
     /// <p>A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.</p>
     pub fn transit_encryption_mode(mut self, input: crate::types::TransitEncryptionMode) -> Self {
         self.transit_encryption_mode = ::std::option::Option::Some(input);
@@ -982,6 +1182,12 @@ impl CacheClusterBuilder {
     ) -> Self {
         self.transit_encryption_mode = input;
         self
+    }
+    /// <p>A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.</p>
+    pub fn get_transit_encryption_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransitEncryptionMode> {
+        &self.transit_encryption_mode
     }
     /// Consumes the builder and constructs a [`CacheCluster`](crate::types::CacheCluster).
     pub fn build(self) -> crate::types::CacheCluster {

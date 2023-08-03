@@ -48,6 +48,10 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetailsBuilder
         self.primary = input;
         self
     }
+    /// <p> Indicates whether the private IPv4 address is the primary private IPv4 address. Only one IPv4 address can be designated as primary. </p>
+    pub fn get_primary(&self) -> &::std::option::Option<bool> {
+        &self.primary
+    }
     /// <p> The private IPv4 address. </p>
     pub fn private_ip_address(
         mut self,
@@ -63,6 +67,10 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetailsBuilder
     ) -> Self {
         self.private_ip_address = input;
         self
+    }
+    /// <p> The private IPv4 address. </p>
+    pub fn get_private_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_ip_address
     }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails`](crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails).
     pub fn build(

@@ -132,6 +132,10 @@ impl DescribeMapOutputBuilder {
         self.map_name = input;
         self
     }
+    /// <p>The map style selected from an available provider.</p>
+    pub fn get_map_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.map_name
+    }
     /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web Services.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
@@ -147,6 +151,13 @@ impl DescribeMapOutputBuilder {
     pub fn set_map_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.map_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web Services.</p>
+    /// <ul>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
+    /// </ul>
+    pub fn get_map_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.map_arn
     }
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
     #[deprecated(
@@ -169,6 +180,14 @@ impl DescribeMapOutputBuilder {
         self.pricing_plan = input;
         self
     }
+    /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
+    #[deprecated(
+        note = "Deprecated. Always returns RequestBasedUsage.",
+        since = "2022-02-01"
+    )]
+    pub fn get_pricing_plan(&self) -> &::std::option::Option<crate::types::PricingPlan> {
+        &self.pricing_plan
+    }
     /// <p>Specifies the data provider for the associated map tiles.</p>
     pub fn data_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source = ::std::option::Option::Some(input.into());
@@ -178,6 +197,10 @@ impl DescribeMapOutputBuilder {
     pub fn set_data_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source = input;
         self
+    }
+    /// <p>Specifies the data provider for the associated map tiles.</p>
+    pub fn get_data_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source
     }
     /// <p>Specifies the map tile style selected from a partner data provider.</p>
     pub fn configuration(mut self, input: crate::types::MapConfiguration) -> Self {
@@ -192,6 +215,10 @@ impl DescribeMapOutputBuilder {
         self.configuration = input;
         self
     }
+    /// <p>Specifies the map tile style selected from a partner data provider.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::MapConfiguration> {
+        &self.configuration
+    }
     /// <p>The optional description for the map resource.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -201,6 +228,10 @@ impl DescribeMapOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The optional description for the map resource.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -227,6 +258,14 @@ impl DescribeMapOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Tags associated with the map resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
@@ -240,6 +279,10 @@ impl DescribeMapOutputBuilder {
         self.create_time = input;
         self
     }
+    /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
+    }
     /// <p>The timestamp for when the map resource was last update in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
@@ -252,6 +295,10 @@ impl DescribeMapOutputBuilder {
     ) -> Self {
         self.update_time = input;
         self
+    }
+    /// <p>The timestamp for when the map resource was last update in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

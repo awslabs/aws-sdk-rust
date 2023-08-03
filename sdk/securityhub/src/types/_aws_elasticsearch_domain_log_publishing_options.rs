@@ -79,6 +79,13 @@ impl AwsElasticsearchDomainLogPublishingOptionsBuilder {
         self.index_slow_logs = input;
         self
     }
+    /// <p>Configures the OpenSearch index logs publishing.</p>
+    pub fn get_index_slow_logs(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsElasticsearchDomainLogPublishingOptionsLogConfig>
+    {
+        &self.index_slow_logs
+    }
     /// <p>Configures the OpenSearch search slow log publishing.</p>
     pub fn search_slow_logs(
         mut self,
@@ -97,6 +104,13 @@ impl AwsElasticsearchDomainLogPublishingOptionsBuilder {
         self.search_slow_logs = input;
         self
     }
+    /// <p>Configures the OpenSearch search slow log publishing.</p>
+    pub fn get_search_slow_logs(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsElasticsearchDomainLogPublishingOptionsLogConfig>
+    {
+        &self.search_slow_logs
+    }
     /// <p>The log configuration.</p>
     pub fn audit_logs(
         mut self,
@@ -114,6 +128,13 @@ impl AwsElasticsearchDomainLogPublishingOptionsBuilder {
     ) -> Self {
         self.audit_logs = input;
         self
+    }
+    /// <p>The log configuration.</p>
+    pub fn get_audit_logs(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsElasticsearchDomainLogPublishingOptionsLogConfig>
+    {
+        &self.audit_logs
     }
     /// Consumes the builder and constructs a [`AwsElasticsearchDomainLogPublishingOptions`](crate::types::AwsElasticsearchDomainLogPublishingOptions).
     pub fn build(self) -> crate::types::AwsElasticsearchDomainLogPublishingOptions {

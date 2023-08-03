@@ -113,6 +113,11 @@ impl ResponseHeadersPolicyConfigBuilder {
         self.comment = input;
         self
     }
+    /// <p>A comment to describe the response headers policy.</p>
+    /// <p>The comment cannot be longer than 128 characters.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment
+    }
     /// <p>A name to identify the response headers policy.</p>
     /// <p>The name must be unique for response headers policies in this Amazon Web Services account.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -124,6 +129,11 @@ impl ResponseHeadersPolicyConfigBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A name to identify the response headers policy.</p>
+    /// <p>The name must be unique for response headers policies in this Amazon Web Services account.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>A configuration for a set of HTTP response headers that are used for cross-origin resource sharing (CORS).</p>
     pub fn cors_config(mut self, input: crate::types::ResponseHeadersPolicyCorsConfig) -> Self {
@@ -137,6 +147,12 @@ impl ResponseHeadersPolicyConfigBuilder {
     ) -> Self {
         self.cors_config = input;
         self
+    }
+    /// <p>A configuration for a set of HTTP response headers that are used for cross-origin resource sharing (CORS).</p>
+    pub fn get_cors_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResponseHeadersPolicyCorsConfig> {
+        &self.cors_config
     }
     /// <p>A configuration for a set of security-related HTTP response headers.</p>
     pub fn security_headers_config(
@@ -154,6 +170,12 @@ impl ResponseHeadersPolicyConfigBuilder {
         self.security_headers_config = input;
         self
     }
+    /// <p>A configuration for a set of security-related HTTP response headers.</p>
+    pub fn get_security_headers_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResponseHeadersPolicySecurityHeadersConfig> {
+        &self.security_headers_config
+    }
     /// <p>A configuration for enabling the <code>Server-Timing</code> header in HTTP responses sent from CloudFront.</p>
     pub fn server_timing_headers_config(
         mut self,
@@ -169,6 +191,12 @@ impl ResponseHeadersPolicyConfigBuilder {
     ) -> Self {
         self.server_timing_headers_config = input;
         self
+    }
+    /// <p>A configuration for enabling the <code>Server-Timing</code> header in HTTP responses sent from CloudFront.</p>
+    pub fn get_server_timing_headers_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResponseHeadersPolicyServerTimingHeadersConfig> {
+        &self.server_timing_headers_config
     }
     /// <p>A configuration for a set of custom HTTP response headers.</p>
     pub fn custom_headers_config(
@@ -186,6 +214,12 @@ impl ResponseHeadersPolicyConfigBuilder {
         self.custom_headers_config = input;
         self
     }
+    /// <p>A configuration for a set of custom HTTP response headers.</p>
+    pub fn get_custom_headers_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResponseHeadersPolicyCustomHeadersConfig> {
+        &self.custom_headers_config
+    }
     /// <p>A configuration for a set of HTTP headers to remove from the HTTP response.</p>
     pub fn remove_headers_config(
         mut self,
@@ -201,6 +235,12 @@ impl ResponseHeadersPolicyConfigBuilder {
     ) -> Self {
         self.remove_headers_config = input;
         self
+    }
+    /// <p>A configuration for a set of HTTP headers to remove from the HTTP response.</p>
+    pub fn get_remove_headers_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResponseHeadersPolicyRemoveHeadersConfig> {
+        &self.remove_headers_config
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyConfig`](crate::types::ResponseHeadersPolicyConfig).
     pub fn build(self) -> crate::types::ResponseHeadersPolicyConfig {

@@ -53,6 +53,10 @@ impl CreateLabelingJobOutputBuilder {
         self.labeling_job_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the labeling job. You use this ARN to identify the labeling job.</p>
+    pub fn get_labeling_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.labeling_job_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

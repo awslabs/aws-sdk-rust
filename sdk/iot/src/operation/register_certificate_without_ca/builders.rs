@@ -36,6 +36,10 @@ impl RegisterCertificateWithoutCAFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RegisterCertificateWithoutCA as a reference.
+    pub fn as_input(&self) -> &crate::operation::register_certificate_without_ca::builders::RegisterCertificateWithoutCaInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl RegisterCertificateWithoutCAFluentBuilder {
         self.inner = self.inner.set_certificate_pem(input);
         self
     }
+    /// <p>The certificate data, in PEM format.</p>
+    pub fn get_certificate_pem(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate_pem()
+    }
     /// <p>The status of the register certificate request.</p>
     pub fn status(mut self, input: crate::types::CertificateStatus) -> Self {
         self.inner = self.inner.status(input);
@@ -144,5 +152,9 @@ impl RegisterCertificateWithoutCAFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p>The status of the register certificate request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CertificateStatus> {
+        self.inner.get_status()
     }
 }

@@ -48,6 +48,10 @@ impl ManagedRuleGroupVersionBuilder {
         self.name = input;
         self
     }
+    /// <p>The version name. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The date and time that the managed rule group owner updated the rule group version information. </p>
     pub fn last_update_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_update_timestamp = ::std::option::Option::Some(input);
@@ -60,6 +64,12 @@ impl ManagedRuleGroupVersionBuilder {
     ) -> Self {
         self.last_update_timestamp = input;
         self
+    }
+    /// <p>The date and time that the managed rule group owner updated the rule group version information. </p>
+    pub fn get_last_update_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_update_timestamp
     }
     /// Consumes the builder and constructs a [`ManagedRuleGroupVersion`](crate::types::ManagedRuleGroupVersion).
     pub fn build(self) -> crate::types::ManagedRuleGroupVersion {

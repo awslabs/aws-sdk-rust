@@ -37,6 +37,12 @@ impl UpdateEmailTemplateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateEmailTemplate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_email_template::builders::UpdateEmailTemplateInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl UpdateEmailTemplateFluentBuilder {
         self.inner = self.inner.set_template_name(input);
         self
     }
+    /// <p>The name of the template.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_name()
+    }
     /// <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
     pub fn template_content(mut self, input: crate::types::EmailTemplateContent) -> Self {
         self.inner = self.inner.template_content(input);
@@ -145,5 +155,11 @@ impl UpdateEmailTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_template_content(input);
         self
+    }
+    /// <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
+    pub fn get_template_content(
+        &self,
+    ) -> &::std::option::Option<crate::types::EmailTemplateContent> {
+        self.inner.get_template_content()
     }
 }

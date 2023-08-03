@@ -58,6 +58,10 @@ impl CreateSvmActiveDirectoryConfigurationBuilder {
         self.net_bios_name = input;
         self
     }
+    /// <p>The NetBIOS name of the Active Directory computer object that will be created for your SVM.</p>
+    pub fn get_net_bios_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.net_bios_name
+    }
     /// <p>The configuration that Amazon FSx uses to join a FSx for Windows File Server file system or an FSx for ONTAP storage virtual machine (SVM) to a self-managed (including on-premises) Microsoft Active Directory (AD) directory. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/self-managed-AD.html"> Using Amazon FSx for Windows with your self-managed Microsoft Active Directory</a> or <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing FSx for ONTAP SVMs</a>.</p>
     pub fn self_managed_active_directory_configuration(
         mut self,
@@ -73,6 +77,12 @@ impl CreateSvmActiveDirectoryConfigurationBuilder {
     ) -> Self {
         self.self_managed_active_directory_configuration = input;
         self
+    }
+    /// <p>The configuration that Amazon FSx uses to join a FSx for Windows File Server file system or an FSx for ONTAP storage virtual machine (SVM) to a self-managed (including on-premises) Microsoft Active Directory (AD) directory. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/self-managed-AD.html"> Using Amazon FSx for Windows with your self-managed Microsoft Active Directory</a> or <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing FSx for ONTAP SVMs</a>.</p>
+    pub fn get_self_managed_active_directory_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SelfManagedActiveDirectoryConfiguration> {
+        &self.self_managed_active_directory_configuration
     }
     /// Consumes the builder and constructs a [`CreateSvmActiveDirectoryConfiguration`](crate::types::CreateSvmActiveDirectoryConfiguration).
     pub fn build(self) -> crate::types::CreateSvmActiveDirectoryConfiguration {

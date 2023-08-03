@@ -77,6 +77,16 @@ impl AutoSnapshotAddOnRequestBuilder {
         self.snapshot_time_of_day = input;
         self
     }
+    /// <p>The daily time when an automatic snapshot will be created.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be in <code>HH:00</code> format, and in an hourly increment.</p> </li>
+    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
+    /// <li> <p>The snapshot will be automatically created between the time specified and up to 45 minutes after.</p> </li>
+    /// </ul>
+    pub fn get_snapshot_time_of_day(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_time_of_day
+    }
     /// Consumes the builder and constructs a [`AutoSnapshotAddOnRequest`](crate::types::AutoSnapshotAddOnRequest).
     pub fn build(self) -> crate::types::AutoSnapshotAddOnRequest {
         crate::types::AutoSnapshotAddOnRequest {

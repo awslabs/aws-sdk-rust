@@ -68,6 +68,15 @@ impl AdditionalLimitBuilder {
         self.limit_name = input;
         self
     }
+    /// <p> Name of Additional Limit is specific to a given InstanceType and for each of it's <code> <code>InstanceRole</code> </code> etc. <br><br> Attributes and their details: <br><br> </p>
+    /// <ul>
+    /// <li>MaximumNumberOfDataNodesSupported</li> This attribute will be present in Master node only to specify how much data nodes upto which given <code> <code>ESPartitionInstanceType</code> </code> can support as master node.
+    /// <li>MaximumNumberOfDataNodesWithoutMasterNode</li> This attribute will be present in Data node only to specify how much data nodes of given <code> <code>ESPartitionInstanceType</code> </code> upto which you don't need any master nodes to govern them.
+    /// </ul>
+    /// <p></p>
+    pub fn get_limit_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.limit_name
+    }
     /// Appends an item to `limit_values`.
     ///
     /// To override the contents of this collection use [`set_limit_values`](Self::set_limit_values).
@@ -86,6 +95,12 @@ impl AdditionalLimitBuilder {
     ) -> Self {
         self.limit_values = input;
         self
+    }
+    /// <p> Value for given <code> <code>AdditionalLimit$LimitName</code> </code> . </p>
+    pub fn get_limit_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.limit_values
     }
     /// Consumes the builder and constructs a [`AdditionalLimit`](crate::types::AdditionalLimit).
     pub fn build(self) -> crate::types::AdditionalLimit {

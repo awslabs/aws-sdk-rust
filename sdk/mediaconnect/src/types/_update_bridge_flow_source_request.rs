@@ -51,6 +51,10 @@ impl UpdateBridgeFlowSourceRequestBuilder {
         self.flow_arn = input;
         self
     }
+    /// The ARN of the cloud flow to use as a source of this bridge.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_arn
+    }
     /// The name of the VPC interface attachment to use for this source.
     pub fn flow_vpc_interface_attachment(
         mut self,
@@ -66,6 +70,12 @@ impl UpdateBridgeFlowSourceRequestBuilder {
     ) -> Self {
         self.flow_vpc_interface_attachment = input;
         self
+    }
+    /// The name of the VPC interface attachment to use for this source.
+    pub fn get_flow_vpc_interface_attachment(
+        &self,
+    ) -> &::std::option::Option<crate::types::VpcInterfaceAttachment> {
+        &self.flow_vpc_interface_attachment
     }
     /// Consumes the builder and constructs a [`UpdateBridgeFlowSourceRequest`](crate::types::UpdateBridgeFlowSourceRequest).
     pub fn build(self) -> crate::types::UpdateBridgeFlowSourceRequest {

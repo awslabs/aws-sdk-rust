@@ -48,6 +48,10 @@ impl ExpenseTypeBuilder {
         self.text = input;
         self
     }
+    /// <p>The word or line of text detected by Amazon Textract.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
+    }
     /// <p>The confidence of accuracy, as a percentage.</p>
     pub fn confidence(mut self, input: f32) -> Self {
         self.confidence = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ExpenseTypeBuilder {
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.confidence = input;
         self
+    }
+    /// <p>The confidence of accuracy, as a percentage.</p>
+    pub fn get_confidence(&self) -> &::std::option::Option<f32> {
+        &self.confidence
     }
     /// Consumes the builder and constructs a [`ExpenseType`](crate::types::ExpenseType).
     pub fn build(self) -> crate::types::ExpenseType {

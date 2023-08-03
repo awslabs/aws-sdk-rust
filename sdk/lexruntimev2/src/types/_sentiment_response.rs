@@ -52,6 +52,10 @@ impl SentimentResponseBuilder {
         self.sentiment = input;
         self
     }
+    /// <p>The overall sentiment expressed in the user's response. This is the sentiment most likely expressed by the user based on the analysis by Amazon Comprehend.</p>
+    pub fn get_sentiment(&self) -> &::std::option::Option<crate::types::SentimentType> {
+        &self.sentiment
+    }
     /// <p>The individual sentiment responses for the utterance.</p>
     pub fn sentiment_score(mut self, input: crate::types::SentimentScore) -> Self {
         self.sentiment_score = ::std::option::Option::Some(input);
@@ -64,6 +68,10 @@ impl SentimentResponseBuilder {
     ) -> Self {
         self.sentiment_score = input;
         self
+    }
+    /// <p>The individual sentiment responses for the utterance.</p>
+    pub fn get_sentiment_score(&self) -> &::std::option::Option<crate::types::SentimentScore> {
+        &self.sentiment_score
     }
     /// Consumes the builder and constructs a [`SentimentResponse`](crate::types::SentimentResponse).
     pub fn build(self) -> crate::types::SentimentResponse {

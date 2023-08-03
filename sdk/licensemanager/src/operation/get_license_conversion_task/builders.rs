@@ -36,6 +36,10 @@ impl GetLicenseConversionTaskFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetLicenseConversionTask as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_license_conversion_task::builders::GetLicenseConversionTaskInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +135,9 @@ impl GetLicenseConversionTaskFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_license_conversion_task_id(input);
         self
+    }
+    /// <p>ID of the license type conversion task to retrieve information on.</p>
+    pub fn get_license_conversion_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_license_conversion_task_id()
     }
 }

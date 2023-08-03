@@ -78,6 +78,12 @@ impl GetTimeSeriesServiceStatisticsOutputBuilder {
         self.time_series_service_statistics = input;
         self
     }
+    /// <p>The collection of statistics.</p>
+    pub fn get_time_series_service_statistics(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesServiceStatistics>> {
+        &self.time_series_service_statistics
+    }
     /// <p>A flag indicating whether or not a group's filter expression has been consistent, or if a returned aggregation might show statistics from an older version of the group's filter expression.</p>
     pub fn contains_old_group_versions(mut self, input: bool) -> Self {
         self.contains_old_group_versions = ::std::option::Option::Some(input);
@@ -88,6 +94,10 @@ impl GetTimeSeriesServiceStatisticsOutputBuilder {
         self.contains_old_group_versions = input;
         self
     }
+    /// <p>A flag indicating whether or not a group's filter expression has been consistent, or if a returned aggregation might show statistics from an older version of the group's filter expression.</p>
+    pub fn get_contains_old_group_versions(&self) -> &::std::option::Option<bool> {
+        &self.contains_old_group_versions
+    }
     /// <p>Pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -97,6 +107,10 @@ impl GetTimeSeriesServiceStatisticsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

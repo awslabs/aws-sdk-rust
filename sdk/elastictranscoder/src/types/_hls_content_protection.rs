@@ -92,6 +92,11 @@ impl HlsContentProtectionBuilder {
         self.method = input;
         self
     }
+    /// <p>The content protection method for your output. The only valid value is: <code>aes-128</code>.</p>
+    /// <p>This value is written into the method attribute of the <code>EXT-X-KEY</code> metadata tag in the output playlist.</p>
+    pub fn get_method(&self) -> &::std::option::Option<::std::string::String> {
+        &self.method
+    }
     /// <p>If you want Elastic Transcoder to generate a key for you, leave this field blank.</p>
     /// <p>If you choose to supply your own key, you must encrypt the key by using AWS KMS. The key must be base64-encoded, and it must be one of the following bit lengths before being base64-encoded:</p>
     /// <p> <code>128</code>, <code>192</code>, or <code>256</code>. </p>
@@ -106,6 +111,12 @@ impl HlsContentProtectionBuilder {
         self.key = input;
         self
     }
+    /// <p>If you want Elastic Transcoder to generate a key for you, leave this field blank.</p>
+    /// <p>If you choose to supply your own key, you must encrypt the key by using AWS KMS. The key must be base64-encoded, and it must be one of the following bit lengths before being base64-encoded:</p>
+    /// <p> <code>128</code>, <code>192</code>, or <code>256</code>. </p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>If Elastic Transcoder is generating your key for you, you must leave this field blank.</p>
     /// <p>The MD5 digest of the key that you want Elastic Transcoder to use to encrypt your output file, and that you want Elastic Transcoder to use as a checksum to make sure your key was not corrupted in transit. The key MD5 must be base64-encoded, and it must be exactly 16 bytes before being base64- encoded.</p>
     pub fn key_md5(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -117,6 +128,11 @@ impl HlsContentProtectionBuilder {
     pub fn set_key_md5(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_md5 = input;
         self
+    }
+    /// <p>If Elastic Transcoder is generating your key for you, you must leave this field blank.</p>
+    /// <p>The MD5 digest of the key that you want Elastic Transcoder to use to encrypt your output file, and that you want Elastic Transcoder to use as a checksum to make sure your key was not corrupted in transit. The key MD5 must be base64-encoded, and it must be exactly 16 bytes before being base64- encoded.</p>
+    pub fn get_key_md5(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_md5
     }
     /// <p>If Elastic Transcoder is generating your key for you, you must leave this field blank.</p>
     /// <p>The series of random bits created by a random bit generator, unique for every encryption operation, that you want Elastic Transcoder to use to encrypt your output files. The initialization vector must be base64-encoded, and it must be exactly 16 bytes before being base64-encoded.</p>
@@ -136,6 +152,11 @@ impl HlsContentProtectionBuilder {
         self.initialization_vector = input;
         self
     }
+    /// <p>If Elastic Transcoder is generating your key for you, you must leave this field blank.</p>
+    /// <p>The series of random bits created by a random bit generator, unique for every encryption operation, that you want Elastic Transcoder to use to encrypt your output files. The initialization vector must be base64-encoded, and it must be exactly 16 bytes before being base64-encoded.</p>
+    pub fn get_initialization_vector(&self) -> &::std::option::Option<::std::string::String> {
+        &self.initialization_vector
+    }
     /// <p>The location of the license key required to decrypt your HLS playlist. The URL must be an absolute path, and is referenced in the URI attribute of the EXT-X-KEY metadata tag in the playlist file.</p>
     pub fn license_acquisition_url(
         mut self,
@@ -152,6 +173,10 @@ impl HlsContentProtectionBuilder {
         self.license_acquisition_url = input;
         self
     }
+    /// <p>The location of the license key required to decrypt your HLS playlist. The URL must be an absolute path, and is referenced in the URI attribute of the EXT-X-KEY metadata tag in the playlist file.</p>
+    pub fn get_license_acquisition_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_acquisition_url
+    }
     /// <p>Specify whether you want Elastic Transcoder to write your HLS license key to an Amazon S3 bucket. If you choose <code>WithVariantPlaylists</code>, <code>LicenseAcquisitionUrl</code> must be left blank and Elastic Transcoder writes your data key into the same bucket as the associated playlist.</p>
     pub fn key_storage_policy(
         mut self,
@@ -167,6 +192,10 @@ impl HlsContentProtectionBuilder {
     ) -> Self {
         self.key_storage_policy = input;
         self
+    }
+    /// <p>Specify whether you want Elastic Transcoder to write your HLS license key to an Amazon S3 bucket. If you choose <code>WithVariantPlaylists</code>, <code>LicenseAcquisitionUrl</code> must be left blank and Elastic Transcoder writes your data key into the same bucket as the associated playlist.</p>
+    pub fn get_key_storage_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_storage_policy
     }
     /// Consumes the builder and constructs a [`HlsContentProtection`](crate::types::HlsContentProtection).
     pub fn build(self) -> crate::types::HlsContentProtection {

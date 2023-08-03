@@ -64,6 +64,10 @@ impl CvssScoreBuilder {
         self.base_score = input;
         self
     }
+    /// <p>The base CVSS score used for the finding.</p>
+    pub fn get_base_score(&self) -> &::std::option::Option<f64> {
+        &self.base_score
+    }
     /// <p>The vector string of the CVSS score.</p>
     pub fn scoring_vector(
         mut self,
@@ -80,6 +84,10 @@ impl CvssScoreBuilder {
         self.scoring_vector = input;
         self
     }
+    /// <p>The vector string of the CVSS score.</p>
+    pub fn get_scoring_vector(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scoring_vector
+    }
     /// <p>The source of the CVSS score.</p>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source = ::std::option::Option::Some(input.into());
@@ -90,6 +98,10 @@ impl CvssScoreBuilder {
         self.source = input;
         self
     }
+    /// <p>The source of the CVSS score.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
+    }
     /// <p>The version of CVSS used for the score.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -99,6 +111,10 @@ impl CvssScoreBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version of CVSS used for the score.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`CvssScore`](crate::types::CvssScore).
     pub fn build(self) -> crate::types::CvssScore {

@@ -70,6 +70,15 @@ impl DescribeStackEventsInputBuilder {
         self.stack_name = input;
         self
     }
+    /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p>
+    /// <ul>
+    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li>
+    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li>
+    /// </ul>
+    /// <p>Default: There is no default value.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_name
+    }
     /// <p>A string that identifies the next page of events that you want to retrieve.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -79,6 +88,10 @@ impl DescribeStackEventsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A string that identifies the next page of events that you want to retrieve.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeStackEventsInput`](crate::operation::describe_stack_events::DescribeStackEventsInput).
     pub fn build(

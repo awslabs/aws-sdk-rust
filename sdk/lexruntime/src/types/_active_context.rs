@@ -64,6 +64,10 @@ impl ActiveContextBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the context.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The length of time or number of turns that a context remains active.</p>
     pub fn time_to_live(mut self, input: crate::types::ActiveContextTimeToLive) -> Self {
         self.time_to_live = ::std::option::Option::Some(input);
@@ -76,6 +80,12 @@ impl ActiveContextBuilder {
     ) -> Self {
         self.time_to_live = input;
         self
+    }
+    /// <p>The length of time or number of turns that a context remains active.</p>
+    pub fn get_time_to_live(
+        &self,
+    ) -> &::std::option::Option<crate::types::ActiveContextTimeToLive> {
+        &self.time_to_live
     }
     /// Adds a key-value pair to `parameters`.
     ///
@@ -101,6 +111,14 @@ impl ActiveContextBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>State variables for the current context. You can use these values as default values for slots in subsequent events.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.parameters
     }
     /// Consumes the builder and constructs a [`ActiveContext`](crate::types::ActiveContext).
     pub fn build(self) -> crate::types::ActiveContext {

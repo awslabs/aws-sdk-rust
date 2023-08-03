@@ -36,6 +36,12 @@ impl UpdateSubscriberFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateSubscriber as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_subscriber::builders::UpdateSubscriberInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateSubscriberFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The <code>accountId</code> that is associated with the budget whose subscriber you want to update.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p>The name of the budget whose subscriber you want to update.</p>
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.budget_name(input.into());
@@ -135,6 +145,10 @@ impl UpdateSubscriberFluentBuilder {
     pub fn set_budget_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_budget_name(input);
         self
+    }
+    /// <p>The name of the budget whose subscriber you want to update.</p>
+    pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_budget_name()
     }
     /// <p>The notification whose subscriber you want to update.</p>
     pub fn notification(mut self, input: crate::types::Notification) -> Self {
@@ -149,6 +163,10 @@ impl UpdateSubscriberFluentBuilder {
         self.inner = self.inner.set_notification(input);
         self
     }
+    /// <p>The notification whose subscriber you want to update.</p>
+    pub fn get_notification(&self) -> &::std::option::Option<crate::types::Notification> {
+        self.inner.get_notification()
+    }
     /// <p>The previous subscriber that is associated with a budget notification.</p>
     pub fn old_subscriber(mut self, input: crate::types::Subscriber) -> Self {
         self.inner = self.inner.old_subscriber(input);
@@ -162,6 +180,10 @@ impl UpdateSubscriberFluentBuilder {
         self.inner = self.inner.set_old_subscriber(input);
         self
     }
+    /// <p>The previous subscriber that is associated with a budget notification.</p>
+    pub fn get_old_subscriber(&self) -> &::std::option::Option<crate::types::Subscriber> {
+        self.inner.get_old_subscriber()
+    }
     /// <p>The updated subscriber that is associated with a budget notification.</p>
     pub fn new_subscriber(mut self, input: crate::types::Subscriber) -> Self {
         self.inner = self.inner.new_subscriber(input);
@@ -174,5 +196,9 @@ impl UpdateSubscriberFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_new_subscriber(input);
         self
+    }
+    /// <p>The updated subscriber that is associated with a budget notification.</p>
+    pub fn get_new_subscriber(&self) -> &::std::option::Option<crate::types::Subscriber> {
+        self.inner.get_new_subscriber()
     }
 }

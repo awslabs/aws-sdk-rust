@@ -75,6 +75,10 @@ impl OfferingTransactionBuilder {
         self.offering_status = input;
         self
     }
+    /// <p>The status of an offering transaction.</p>
+    pub fn get_offering_status(&self) -> &::std::option::Option<crate::types::OfferingStatus> {
+        &self.offering_status
+    }
     /// <p>The transaction ID of the offering transaction.</p>
     pub fn transaction_id(
         mut self,
@@ -90,6 +94,10 @@ impl OfferingTransactionBuilder {
     ) -> Self {
         self.transaction_id = input;
         self
+    }
+    /// <p>The transaction ID of the offering transaction.</p>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transaction_id
     }
     /// <p>The ID that corresponds to a device offering promotion.</p>
     pub fn offering_promotion_id(
@@ -107,6 +115,10 @@ impl OfferingTransactionBuilder {
         self.offering_promotion_id = input;
         self
     }
+    /// <p>The ID that corresponds to a device offering promotion.</p>
+    pub fn get_offering_promotion_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.offering_promotion_id
+    }
     /// <p>The date on which an offering transaction was created.</p>
     pub fn created_on(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_on = ::std::option::Option::Some(input);
@@ -120,6 +132,10 @@ impl OfferingTransactionBuilder {
         self.created_on = input;
         self
     }
+    /// <p>The date on which an offering transaction was created.</p>
+    pub fn get_created_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_on
+    }
     /// <p>The cost of an offering transaction.</p>
     pub fn cost(mut self, input: crate::types::MonetaryAmount) -> Self {
         self.cost = ::std::option::Option::Some(input);
@@ -129,6 +145,10 @@ impl OfferingTransactionBuilder {
     pub fn set_cost(mut self, input: ::std::option::Option<crate::types::MonetaryAmount>) -> Self {
         self.cost = input;
         self
+    }
+    /// <p>The cost of an offering transaction.</p>
+    pub fn get_cost(&self) -> &::std::option::Option<crate::types::MonetaryAmount> {
+        &self.cost
     }
     /// Consumes the builder and constructs a [`OfferingTransaction`](crate::types::OfferingTransaction).
     pub fn build(self) -> crate::types::OfferingTransaction {

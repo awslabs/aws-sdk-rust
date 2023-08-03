@@ -41,6 +41,10 @@ impl CreateMatchmakingConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateMatchmakingConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_matchmaking_configuration::builders::CreateMatchmakingConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +135,10 @@ impl CreateMatchmakingConfigurationFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>A unique identifier for the matchmaking configuration. This name is used to identify the configuration associated with a matchmaking request or ticket.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A human-readable description of the matchmaking configuration. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -140,6 +148,10 @@ impl CreateMatchmakingConfigurationFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A human-readable description of the matchmaking configuration. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `GameSessionQueueArns`.
     ///
@@ -169,6 +181,16 @@ impl CreateMatchmakingConfigurationFluentBuilder {
         self.inner = self.inner.set_game_session_queue_arns(input);
         self
     }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+    /// <region>
+    /// ::gamesessionqueue/
+    /// <queue name></queue>
+    /// </region></code>. Queues can be located in any Region. Queues are used to start new Amazon GameLift-hosted game sessions for matches that are created with this matchmaking configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this parameter. </p>
+    pub fn get_game_session_queue_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_game_session_queue_arns()
+    }
     /// <p>The maximum duration, in seconds, that a matchmaking ticket can remain in process before timing out. Requests that fail due to timing out can be resubmitted as needed.</p>
     pub fn request_timeout_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.request_timeout_seconds(input);
@@ -178,6 +200,10 @@ impl CreateMatchmakingConfigurationFluentBuilder {
     pub fn set_request_timeout_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_request_timeout_seconds(input);
         self
+    }
+    /// <p>The maximum duration, in seconds, that a matchmaking ticket can remain in process before timing out. Requests that fail due to timing out can be resubmitted as needed.</p>
+    pub fn get_request_timeout_seconds(&self) -> &::std::option::Option<i32> {
+        self.inner.get_request_timeout_seconds()
     }
     /// <p>The length of time (in seconds) to wait for players to accept a proposed match, if acceptance is required. </p>
     pub fn acceptance_timeout_seconds(mut self, input: i32) -> Self {
@@ -189,6 +215,10 @@ impl CreateMatchmakingConfigurationFluentBuilder {
         self.inner = self.inner.set_acceptance_timeout_seconds(input);
         self
     }
+    /// <p>The length of time (in seconds) to wait for players to accept a proposed match, if acceptance is required. </p>
+    pub fn get_acceptance_timeout_seconds(&self) -> &::std::option::Option<i32> {
+        self.inner.get_acceptance_timeout_seconds()
+    }
     /// <p>A flag that determines whether a match that was created with this configuration must be accepted by the matched players. To require acceptance, set to <code>TRUE</code>. With this option enabled, matchmaking tickets use the status <code>REQUIRES_ACCEPTANCE</code> to indicate when a completed potential match is waiting for player acceptance. </p>
     pub fn acceptance_required(mut self, input: bool) -> Self {
         self.inner = self.inner.acceptance_required(input);
@@ -198,6 +228,10 @@ impl CreateMatchmakingConfigurationFluentBuilder {
     pub fn set_acceptance_required(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_acceptance_required(input);
         self
+    }
+    /// <p>A flag that determines whether a match that was created with this configuration must be accepted by the matched players. To require acceptance, set to <code>TRUE</code>. With this option enabled, matchmaking tickets use the status <code>REQUIRES_ACCEPTANCE</code> to indicate when a completed potential match is waiting for player acceptance. </p>
+    pub fn get_acceptance_required(&self) -> &::std::option::Option<bool> {
+        self.inner.get_acceptance_required()
     }
     /// <p>A unique identifier for the matchmaking rule set to use with this configuration. You can use either the rule set name or ARN value. A matchmaking configuration can only use rule sets that are defined in the same Region.</p>
     pub fn rule_set_name(
@@ -215,6 +249,10 @@ impl CreateMatchmakingConfigurationFluentBuilder {
         self.inner = self.inner.set_rule_set_name(input);
         self
     }
+    /// <p>A unique identifier for the matchmaking rule set to use with this configuration. You can use either the rule set name or ARN value. A matchmaking configuration can only use rule sets that are defined in the same Region.</p>
+    pub fn get_rule_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rule_set_name()
+    }
     /// <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html"> Setting up notifications for matchmaking</a> for more information.</p>
     pub fn notification_target(
         mut self,
@@ -231,6 +269,10 @@ impl CreateMatchmakingConfigurationFluentBuilder {
         self.inner = self.inner.set_notification_target(input);
         self
     }
+    /// <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html"> Setting up notifications for matchmaking</a> for more information.</p>
+    pub fn get_notification_target(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_notification_target()
+    }
     /// <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies a match for a single 10-person team, and the additional player count is set to 2, 10 players will be selected for the match and 2 more player slots will be open for future players. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
     pub fn additional_player_count(mut self, input: i32) -> Self {
         self.inner = self.inner.additional_player_count(input);
@@ -240,6 +282,10 @@ impl CreateMatchmakingConfigurationFluentBuilder {
     pub fn set_additional_player_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_additional_player_count(input);
         self
+    }
+    /// <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies a match for a single 10-person team, and the additional player count is set to 2, 10 players will be selected for the match and 2 more player slots will be open for future players. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+    pub fn get_additional_player_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_additional_player_count()
     }
     /// <p>Information to be added to all events related to this matchmaking configuration. </p>
     pub fn custom_event_data(
@@ -256,6 +302,10 @@ impl CreateMatchmakingConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_custom_event_data(input);
         self
+    }
+    /// <p>Information to be added to all events related to this matchmaking configuration. </p>
+    pub fn get_custom_event_data(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_custom_event_data()
     }
     /// Appends an item to `GameProperties`.
     ///
@@ -274,6 +324,12 @@ impl CreateMatchmakingConfigurationFluentBuilder {
         self.inner = self.inner.set_game_properties(input);
         self
     }
+    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+    pub fn get_game_properties(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GameProperty>> {
+        self.inner.get_game_properties()
+    }
     /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
     pub fn game_session_data(
         mut self,
@@ -290,6 +346,10 @@ impl CreateMatchmakingConfigurationFluentBuilder {
         self.inner = self.inner.set_game_session_data(input);
         self
     }
+    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+    pub fn get_game_session_data(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_game_session_data()
+    }
     /// <p>The method used to backfill game sessions that are created with this matchmaking configuration. Specify <code>MANUAL</code> when your game manages backfill requests manually or does not use the match backfill feature. Specify <code>AUTOMATIC</code> to have Amazon GameLift create a backfill request whenever a game session has one or more open slots. Learn more about manual and automatic backfill in <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html"> Backfill Existing Games with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
     pub fn backfill_mode(mut self, input: crate::types::BackfillMode) -> Self {
         self.inner = self.inner.backfill_mode(input);
@@ -302,6 +362,10 @@ impl CreateMatchmakingConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_backfill_mode(input);
         self
+    }
+    /// <p>The method used to backfill game sessions that are created with this matchmaking configuration. Specify <code>MANUAL</code> when your game manages backfill requests manually or does not use the match backfill feature. Specify <code>AUTOMATIC</code> to have Amazon GameLift create a backfill request whenever a game session has one or more open slots. Learn more about manual and automatic backfill in <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html"> Backfill Existing Games with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+    pub fn get_backfill_mode(&self) -> &::std::option::Option<crate::types::BackfillMode> {
+        self.inner.get_backfill_mode()
     }
     /// <p>Indicates whether this matchmaking configuration is being used with Amazon GameLift hosting or as a standalone matchmaking solution. </p>
     /// <ul>
@@ -324,6 +388,14 @@ impl CreateMatchmakingConfigurationFluentBuilder {
         self.inner = self.inner.set_flex_match_mode(input);
         self
     }
+    /// <p>Indicates whether this matchmaking configuration is being used with Amazon GameLift hosting or as a standalone matchmaking solution. </p>
+    /// <ul>
+    /// <li> <p> <b>STANDALONE</b> - FlexMatch forms matches and returns match information, including players and team assignments, in a <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded"> MatchmakingSucceeded</a> event.</p> </li>
+    /// <li> <p> <b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified Amazon GameLift queue to start a game session for the match. </p> </li>
+    /// </ul>
+    pub fn get_flex_match_mode(&self) -> &::std::option::Option<crate::types::FlexMatchMode> {
+        self.inner.get_flex_match_mode()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -340,5 +412,9 @@ impl CreateMatchmakingConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of labels to assign to the new matchmaking configuration resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

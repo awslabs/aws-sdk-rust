@@ -104,6 +104,10 @@ impl CreateDeploymentStrategyOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The deployment strategy ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the deployment strategy.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -113,6 +117,10 @@ impl CreateDeploymentStrategyOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the deployment strategy.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The description of the deployment strategy.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -124,6 +132,10 @@ impl CreateDeploymentStrategyOutputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the deployment strategy.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>Total amount of time the deployment lasted.</p>
     pub fn deployment_duration_in_minutes(mut self, input: i32) -> Self {
         self.deployment_duration_in_minutes = ::std::option::Option::Some(input);
@@ -133,6 +145,10 @@ impl CreateDeploymentStrategyOutputBuilder {
     pub fn set_deployment_duration_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.deployment_duration_in_minutes = input;
         self
+    }
+    /// <p>Total amount of time the deployment lasted.</p>
+    pub fn get_deployment_duration_in_minutes(&self) -> &::std::option::Option<i32> {
+        &self.deployment_duration_in_minutes
     }
     /// <p>The algorithm used to define how percentage grew over time.</p>
     pub fn growth_type(mut self, input: crate::types::GrowthType) -> Self {
@@ -147,6 +163,10 @@ impl CreateDeploymentStrategyOutputBuilder {
         self.growth_type = input;
         self
     }
+    /// <p>The algorithm used to define how percentage grew over time.</p>
+    pub fn get_growth_type(&self) -> &::std::option::Option<crate::types::GrowthType> {
+        &self.growth_type
+    }
     /// <p>The percentage of targets that received a deployed configuration during each interval.</p>
     pub fn growth_factor(mut self, input: f32) -> Self {
         self.growth_factor = ::std::option::Option::Some(input);
@@ -157,6 +177,10 @@ impl CreateDeploymentStrategyOutputBuilder {
         self.growth_factor = input;
         self
     }
+    /// <p>The percentage of targets that received a deployed configuration during each interval.</p>
+    pub fn get_growth_factor(&self) -> &::std::option::Option<f32> {
+        &self.growth_factor
+    }
     /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
     pub fn final_bake_time_in_minutes(mut self, input: i32) -> Self {
         self.final_bake_time_in_minutes = ::std::option::Option::Some(input);
@@ -166,6 +190,10 @@ impl CreateDeploymentStrategyOutputBuilder {
     pub fn set_final_bake_time_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.final_bake_time_in_minutes = input;
         self
+    }
+    /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
+    pub fn get_final_bake_time_in_minutes(&self) -> &::std::option::Option<i32> {
+        &self.final_bake_time_in_minutes
     }
     /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
     pub fn replicate_to(mut self, input: crate::types::ReplicateTo) -> Self {
@@ -179,6 +207,10 @@ impl CreateDeploymentStrategyOutputBuilder {
     ) -> Self {
         self.replicate_to = input;
         self
+    }
+    /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
+    pub fn get_replicate_to(&self) -> &::std::option::Option<crate::types::ReplicateTo> {
+        &self.replicate_to
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -64,6 +64,10 @@ impl ThreatBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the threat. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The severity of the threat. </p>
     pub fn severity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.severity = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl ThreatBuilder {
         self.severity = input;
         self
     }
+    /// <p>The severity of the threat. </p>
+    pub fn get_severity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.severity
+    }
     /// <p>This total number of items in which the threat has been detected. </p>
     pub fn item_count(mut self, input: i32) -> Self {
         self.item_count = ::std::option::Option::Some(input);
@@ -83,6 +91,10 @@ impl ThreatBuilder {
     pub fn set_item_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.item_count = input;
         self
+    }
+    /// <p>This total number of items in which the threat has been detected. </p>
+    pub fn get_item_count(&self) -> &::std::option::Option<i32> {
+        &self.item_count
     }
     /// Appends an item to `file_paths`.
     ///
@@ -102,6 +114,12 @@ impl ThreatBuilder {
     ) -> Self {
         self.file_paths = input;
         self
+    }
+    /// <p>Provides information about the file paths that were affected by the threat. </p>
+    pub fn get_file_paths(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FilePaths>> {
+        &self.file_paths
     }
     /// Consumes the builder and constructs a [`Threat`](crate::types::Threat).
     pub fn build(self) -> crate::types::Threat {

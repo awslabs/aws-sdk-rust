@@ -36,6 +36,12 @@ impl GetEventStreamFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetEventStream as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_event_stream::builders::GetEventStreamInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl GetEventStreamFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
+    }
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
     }
 }

@@ -88,6 +88,10 @@ impl CustomerAgentlessCollectorInfoBuilder {
         self.active_agentless_collectors = input;
         self
     }
+    /// <p>The number of active Agentless Collector collectors. </p>
+    pub fn get_active_agentless_collectors(&self) -> &::std::option::Option<i32> {
+        &self.active_agentless_collectors
+    }
     /// <p>The number of healthy Agentless Collector collectors. </p>
     pub fn healthy_agentless_collectors(mut self, input: i32) -> Self {
         self.healthy_agentless_collectors = ::std::option::Option::Some(input);
@@ -97,6 +101,10 @@ impl CustomerAgentlessCollectorInfoBuilder {
     pub fn set_healthy_agentless_collectors(mut self, input: ::std::option::Option<i32>) -> Self {
         self.healthy_agentless_collectors = input;
         self
+    }
+    /// <p>The number of healthy Agentless Collector collectors. </p>
+    pub fn get_healthy_agentless_collectors(&self) -> &::std::option::Option<i32> {
+        &self.healthy_agentless_collectors
     }
     /// <p>The number of deny-listed Agentless Collector collectors. </p>
     pub fn deny_listed_agentless_collectors(mut self, input: i32) -> Self {
@@ -111,6 +119,10 @@ impl CustomerAgentlessCollectorInfoBuilder {
         self.deny_listed_agentless_collectors = input;
         self
     }
+    /// <p>The number of deny-listed Agentless Collector collectors. </p>
+    pub fn get_deny_listed_agentless_collectors(&self) -> &::std::option::Option<i32> {
+        &self.deny_listed_agentless_collectors
+    }
     /// <p>The number of Agentless Collector collectors with <code>SHUTDOWN</code> status. </p>
     pub fn shutdown_agentless_collectors(mut self, input: i32) -> Self {
         self.shutdown_agentless_collectors = ::std::option::Option::Some(input);
@@ -120,6 +132,10 @@ impl CustomerAgentlessCollectorInfoBuilder {
     pub fn set_shutdown_agentless_collectors(mut self, input: ::std::option::Option<i32>) -> Self {
         self.shutdown_agentless_collectors = input;
         self
+    }
+    /// <p>The number of Agentless Collector collectors with <code>SHUTDOWN</code> status. </p>
+    pub fn get_shutdown_agentless_collectors(&self) -> &::std::option::Option<i32> {
+        &self.shutdown_agentless_collectors
     }
     /// <p> The number of unhealthy Agentless Collector collectors. </p>
     pub fn unhealthy_agentless_collectors(mut self, input: i32) -> Self {
@@ -131,6 +147,10 @@ impl CustomerAgentlessCollectorInfoBuilder {
         self.unhealthy_agentless_collectors = input;
         self
     }
+    /// <p> The number of unhealthy Agentless Collector collectors. </p>
+    pub fn get_unhealthy_agentless_collectors(&self) -> &::std::option::Option<i32> {
+        &self.unhealthy_agentless_collectors
+    }
     /// <p> The total number of Agentless Collector collectors. </p>
     pub fn total_agentless_collectors(mut self, input: i32) -> Self {
         self.total_agentless_collectors = ::std::option::Option::Some(input);
@@ -141,6 +161,10 @@ impl CustomerAgentlessCollectorInfoBuilder {
         self.total_agentless_collectors = input;
         self
     }
+    /// <p> The total number of Agentless Collector collectors. </p>
+    pub fn get_total_agentless_collectors(&self) -> &::std::option::Option<i32> {
+        &self.total_agentless_collectors
+    }
     /// <p> The number of unknown Agentless Collector collectors. </p>
     pub fn unknown_agentless_collectors(mut self, input: i32) -> Self {
         self.unknown_agentless_collectors = ::std::option::Option::Some(input);
@@ -150,6 +174,10 @@ impl CustomerAgentlessCollectorInfoBuilder {
     pub fn set_unknown_agentless_collectors(mut self, input: ::std::option::Option<i32>) -> Self {
         self.unknown_agentless_collectors = input;
         self
+    }
+    /// <p> The number of unknown Agentless Collector collectors. </p>
+    pub fn get_unknown_agentless_collectors(&self) -> &::std::option::Option<i32> {
+        &self.unknown_agentless_collectors
     }
     /// Consumes the builder and constructs a [`CustomerAgentlessCollectorInfo`](crate::types::CustomerAgentlessCollectorInfo).
     pub fn build(self) -> crate::types::CustomerAgentlessCollectorInfo {

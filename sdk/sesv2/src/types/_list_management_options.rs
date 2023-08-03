@@ -54,6 +54,10 @@ impl ListManagementOptionsBuilder {
         self.contact_list_name = input;
         self
     }
+    /// <p>The name of the contact list.</p>
+    pub fn get_contact_list_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_list_name
+    }
     /// <p>The name of the topic.</p>
     pub fn topic_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_name = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl ListManagementOptionsBuilder {
     pub fn set_topic_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.topic_name = input;
         self
+    }
+    /// <p>The name of the topic.</p>
+    pub fn get_topic_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_name
     }
     /// Consumes the builder and constructs a [`ListManagementOptions`](crate::types::ListManagementOptions).
     pub fn build(self) -> crate::types::ListManagementOptions {

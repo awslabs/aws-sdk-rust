@@ -36,6 +36,10 @@ impl GetSceneFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetScene as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_scene::builders::GetSceneInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl GetSceneFluentBuilder {
         self.inner = self.inner.set_workspace_id(input);
         self
     }
+    /// <p>The ID of the workspace that contains the scene.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workspace_id()
+    }
     /// <p>The ID of the scene.</p>
     pub fn scene_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.scene_id(input.into());
@@ -127,5 +135,9 @@ impl GetSceneFluentBuilder {
     pub fn set_scene_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_scene_id(input);
         self
+    }
+    /// <p>The ID of the scene.</p>
+    pub fn get_scene_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_scene_id()
     }
 }

@@ -66,6 +66,10 @@ impl MergeProfilesInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The unique name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The identifier of the profile to be taken.</p>
     pub fn main_profile_id(
         mut self,
@@ -81,6 +85,10 @@ impl MergeProfilesInputBuilder {
     ) -> Self {
         self.main_profile_id = input;
         self
+    }
+    /// <p>The identifier of the profile to be taken.</p>
+    pub fn get_main_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.main_profile_id
     }
     /// Appends an item to `profile_ids_to_be_merged`.
     ///
@@ -104,6 +112,12 @@ impl MergeProfilesInputBuilder {
         self.profile_ids_to_be_merged = input;
         self
     }
+    /// <p>The identifier of the profile to be merged into MainProfileId.</p>
+    pub fn get_profile_ids_to_be_merged(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.profile_ids_to_be_merged
+    }
     /// <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
     pub fn field_source_profile_ids(mut self, input: crate::types::FieldSourceProfileIds) -> Self {
         self.field_source_profile_ids = ::std::option::Option::Some(input);
@@ -116,6 +130,12 @@ impl MergeProfilesInputBuilder {
     ) -> Self {
         self.field_source_profile_ids = input;
         self
+    }
+    /// <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
+    pub fn get_field_source_profile_ids(
+        &self,
+    ) -> &::std::option::Option<crate::types::FieldSourceProfileIds> {
+        &self.field_source_profile_ids
     }
     /// Consumes the builder and constructs a [`MergeProfilesInput`](crate::operation::merge_profiles::MergeProfilesInput).
     pub fn build(

@@ -54,6 +54,10 @@ impl CustomAuthConfigBuilder {
         self.custom_authentication_type = input;
         self
     }
+    /// <p>The authentication type that the custom connector uses.</p>
+    pub fn get_custom_authentication_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_authentication_type
+    }
     /// Appends an item to `auth_parameters`.
     ///
     /// To override the contents of this collection use [`set_auth_parameters`](Self::set_auth_parameters).
@@ -72,6 +76,12 @@ impl CustomAuthConfigBuilder {
     ) -> Self {
         self.auth_parameters = input;
         self
+    }
+    /// <p>Information about authentication parameters required for authentication.</p>
+    pub fn get_auth_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthParameter>> {
+        &self.auth_parameters
     }
     /// Consumes the builder and constructs a [`CustomAuthConfig`](crate::types::CustomAuthConfig).
     pub fn build(self) -> crate::types::CustomAuthConfig {

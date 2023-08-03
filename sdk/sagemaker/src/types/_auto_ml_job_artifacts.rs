@@ -55,6 +55,12 @@ impl AutoMlJobArtifactsBuilder {
         self
     }
     /// <p>The URL of the notebook location.</p>
+    pub fn get_candidate_definition_notebook_location(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.candidate_definition_notebook_location
+    }
+    /// <p>The URL of the notebook location.</p>
     pub fn data_exploration_notebook_location(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -69,6 +75,12 @@ impl AutoMlJobArtifactsBuilder {
     ) -> Self {
         self.data_exploration_notebook_location = input;
         self
+    }
+    /// <p>The URL of the notebook location.</p>
+    pub fn get_data_exploration_notebook_location(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.data_exploration_notebook_location
     }
     /// Consumes the builder and constructs a [`AutoMlJobArtifacts`](crate::types::AutoMlJobArtifacts).
     pub fn build(self) -> crate::types::AutoMlJobArtifacts {

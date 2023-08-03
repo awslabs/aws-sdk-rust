@@ -49,6 +49,10 @@ impl UpdateWorkspaceOutputBuilder {
         self.update_date_time = input;
         self
     }
+    /// <p>The date and time of the current update.</p>
+    pub fn get_update_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_date_time
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

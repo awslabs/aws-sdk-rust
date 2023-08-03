@@ -120,6 +120,10 @@ impl UserSearchSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the user.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The directory identifier of the user.</p>
     pub fn directory_user_id(
         mut self,
@@ -135,6 +139,10 @@ impl UserSearchSummaryBuilder {
     ) -> Self {
         self.directory_user_id = input;
         self
+    }
+    /// <p>The directory identifier of the user.</p>
+    pub fn get_directory_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_user_id
     }
     /// <p>The identifier of the user's hierarchy group.</p>
     pub fn hierarchy_group_id(
@@ -152,6 +160,10 @@ impl UserSearchSummaryBuilder {
         self.hierarchy_group_id = input;
         self
     }
+    /// <p>The identifier of the user's hierarchy group.</p>
+    pub fn get_hierarchy_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hierarchy_group_id
+    }
     /// <p>The identifier of the user's summary.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -161,6 +173,10 @@ impl UserSearchSummaryBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The identifier of the user's summary.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The user's first name and last name.</p>
     pub fn identity_info(mut self, input: crate::types::UserIdentityInfoLite) -> Self {
@@ -175,6 +191,10 @@ impl UserSearchSummaryBuilder {
         self.identity_info = input;
         self
     }
+    /// <p>The user's first name and last name.</p>
+    pub fn get_identity_info(&self) -> &::std::option::Option<crate::types::UserIdentityInfoLite> {
+        &self.identity_info
+    }
     /// <p>Contains information about the phone configuration settings for a user.</p>
     pub fn phone_config(mut self, input: crate::types::UserPhoneConfig) -> Self {
         self.phone_config = ::std::option::Option::Some(input);
@@ -187,6 +207,10 @@ impl UserSearchSummaryBuilder {
     ) -> Self {
         self.phone_config = input;
         self
+    }
+    /// <p>Contains information about the phone configuration settings for a user.</p>
+    pub fn get_phone_config(&self) -> &::std::option::Option<crate::types::UserPhoneConfig> {
+        &self.phone_config
     }
     /// <p>The identifier of the user's routing profile.</p>
     pub fn routing_profile_id(
@@ -203,6 +227,10 @@ impl UserSearchSummaryBuilder {
     ) -> Self {
         self.routing_profile_id = input;
         self
+    }
+    /// <p>The identifier of the user's routing profile.</p>
+    pub fn get_routing_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.routing_profile_id
     }
     /// Appends an item to `security_profile_ids`.
     ///
@@ -225,6 +253,12 @@ impl UserSearchSummaryBuilder {
     ) -> Self {
         self.security_profile_ids = input;
         self
+    }
+    /// <p>The identifiers of the user's security profiles.</p>
+    pub fn get_security_profile_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_profile_ids
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -251,6 +285,14 @@ impl UserSearchSummaryBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The name of the user.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
@@ -260,6 +302,10 @@ impl UserSearchSummaryBuilder {
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
+    }
+    /// <p>The name of the user.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
     }
     /// Consumes the builder and constructs a [`UserSearchSummary`](crate::types::UserSearchSummary).
     pub fn build(self) -> crate::types::UserSearchSummary {

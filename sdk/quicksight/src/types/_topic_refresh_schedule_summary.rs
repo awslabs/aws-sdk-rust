@@ -64,6 +64,10 @@ impl TopicRefreshScheduleSummaryBuilder {
         self.dataset_id = input;
         self
     }
+    /// <p>The ID of the dataset.</p>
+    pub fn get_dataset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     pub fn dataset_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_arn = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl TopicRefreshScheduleSummaryBuilder {
         self.dataset_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
+    pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_arn
+    }
     /// <p>The name of the dataset.</p>
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_name = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl TopicRefreshScheduleSummaryBuilder {
     pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_name = input;
         self
+    }
+    /// <p>The name of the dataset.</p>
+    pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_name
     }
     /// <p>The definition of a refresh schedule.</p>
     pub fn refresh_schedule(mut self, input: crate::types::TopicRefreshSchedule) -> Self {
@@ -96,6 +108,12 @@ impl TopicRefreshScheduleSummaryBuilder {
     ) -> Self {
         self.refresh_schedule = input;
         self
+    }
+    /// <p>The definition of a refresh schedule.</p>
+    pub fn get_refresh_schedule(
+        &self,
+    ) -> &::std::option::Option<crate::types::TopicRefreshSchedule> {
+        &self.refresh_schedule
     }
     /// Consumes the builder and constructs a [`TopicRefreshScheduleSummary`](crate::types::TopicRefreshScheduleSummary).
     pub fn build(self) -> crate::types::TopicRefreshScheduleSummary {

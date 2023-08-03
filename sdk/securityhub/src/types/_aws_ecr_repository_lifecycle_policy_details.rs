@@ -54,6 +54,10 @@ impl AwsEcrRepositoryLifecyclePolicyDetailsBuilder {
         self.lifecycle_policy_text = input;
         self
     }
+    /// <p>The text of the lifecycle policy.</p>
+    pub fn get_lifecycle_policy_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lifecycle_policy_text
+    }
     /// <p>The Amazon Web Services account identifier that is associated with the registry that contains the repository.</p>
     pub fn registry_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_id = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl AwsEcrRepositoryLifecyclePolicyDetailsBuilder {
     pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registry_id = input;
         self
+    }
+    /// <p>The Amazon Web Services account identifier that is associated with the registry that contains the repository.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
     }
     /// Consumes the builder and constructs a [`AwsEcrRepositoryLifecyclePolicyDetails`](crate::types::AwsEcrRepositoryLifecyclePolicyDetails).
     pub fn build(self) -> crate::types::AwsEcrRepositoryLifecyclePolicyDetails {

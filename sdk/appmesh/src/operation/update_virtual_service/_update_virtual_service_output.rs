@@ -50,6 +50,10 @@ impl UpdateVirtualServiceOutputBuilder {
         self.virtual_service = input;
         self
     }
+    /// <p>A full description of the virtual service that was updated.</p>
+    pub fn get_virtual_service(&self) -> &::std::option::Option<crate::types::VirtualServiceData> {
+        &self.virtual_service
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

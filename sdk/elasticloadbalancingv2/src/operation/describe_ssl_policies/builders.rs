@@ -37,6 +37,12 @@ impl DescribeSSLPoliciesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeSSLPolicies as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_ssl_policies::builders::DescribeSslPoliciesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,10 @@ impl DescribeSSLPoliciesFluentBuilder {
         self.inner = self.inner.set_names(input);
         self
     }
+    /// <p>The names of the policies.</p>
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_names()
+    }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -144,6 +154,10 @@ impl DescribeSSLPoliciesFluentBuilder {
         self.inner = self.inner.set_marker(input);
         self
     }
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
+    }
     /// <p>The maximum number of results to return with this call.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.inner = self.inner.page_size(input);
@@ -153,6 +167,10 @@ impl DescribeSSLPoliciesFluentBuilder {
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_page_size(input);
         self
+    }
+    /// <p>The maximum number of results to return with this call.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        self.inner.get_page_size()
     }
     /// <p> The type of load balancer. The default lists the SSL policies for all load balancers.</p>
     pub fn load_balancer_type(mut self, input: crate::types::LoadBalancerTypeEnum) -> Self {
@@ -166,5 +184,11 @@ impl DescribeSSLPoliciesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_load_balancer_type(input);
         self
+    }
+    /// <p> The type of load balancer. The default lists the SSL policies for all load balancers.</p>
+    pub fn get_load_balancer_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::LoadBalancerTypeEnum> {
+        self.inner.get_load_balancer_type()
     }
 }

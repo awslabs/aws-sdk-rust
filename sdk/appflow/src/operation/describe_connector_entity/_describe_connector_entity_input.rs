@@ -71,6 +71,10 @@ impl DescribeConnectorEntityInputBuilder {
         self.connector_entity_name = input;
         self
     }
+    /// <p> The entity name for that connector. </p>
+    pub fn get_connector_entity_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connector_entity_name
+    }
     /// <p> The type of connector application, such as Salesforce, Amplitude, and so on. </p>
     pub fn connector_type(mut self, input: crate::types::ConnectorType) -> Self {
         self.connector_type = ::std::option::Option::Some(input);
@@ -83,6 +87,10 @@ impl DescribeConnectorEntityInputBuilder {
     ) -> Self {
         self.connector_type = input;
         self
+    }
+    /// <p> The type of connector application, such as Salesforce, Amplitude, and so on. </p>
+    pub fn get_connector_type(&self) -> &::std::option::Option<crate::types::ConnectorType> {
+        &self.connector_type
     }
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
     pub fn connector_profile_name(
@@ -100,6 +108,10 @@ impl DescribeConnectorEntityInputBuilder {
         self.connector_profile_name = input;
         self
     }
+    /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
+    pub fn get_connector_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connector_profile_name
+    }
     /// <p>The version of the API that's used by the connector.</p>
     pub fn api_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_version = ::std::option::Option::Some(input.into());
@@ -109,6 +121,10 @@ impl DescribeConnectorEntityInputBuilder {
     pub fn set_api_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_version = input;
         self
+    }
+    /// <p>The version of the API that's used by the connector.</p>
+    pub fn get_api_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_version
     }
     /// Consumes the builder and constructs a [`DescribeConnectorEntityInput`](crate::operation::describe_connector_entity::DescribeConnectorEntityInput).
     pub fn build(

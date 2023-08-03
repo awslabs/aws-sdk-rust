@@ -56,6 +56,12 @@ impl GetSamplingTargetsInputBuilder {
         self.sampling_statistics_documents = input;
         self
     }
+    /// <p>Information about rules that the service is using to sample requests.</p>
+    pub fn get_sampling_statistics_documents(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SamplingStatisticsDocument>> {
+        &self.sampling_statistics_documents
+    }
     /// Consumes the builder and constructs a [`GetSamplingTargetsInput`](crate::operation::get_sampling_targets::GetSamplingTargetsInput).
     pub fn build(
         self,

@@ -54,6 +54,12 @@ impl DescribeCertificateInputBuilder {
         self.certificate_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the ACM certificate. The ARN must have the following form:</p>
+    /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_arn
+    }
     /// Consumes the builder and constructs a [`DescribeCertificateInput`](crate::operation::describe_certificate::DescribeCertificateInput).
     pub fn build(
         self,

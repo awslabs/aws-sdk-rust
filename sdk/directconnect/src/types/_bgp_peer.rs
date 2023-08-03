@@ -136,6 +136,10 @@ impl BgpPeerBuilder {
         self.bgp_peer_id = input;
         self
     }
+    /// <p>The ID of the BGP peer.</p>
+    pub fn get_bgp_peer_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bgp_peer_id
+    }
     /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
     pub fn asn(mut self, input: i32) -> Self {
         self.asn = ::std::option::Option::Some(input);
@@ -146,6 +150,10 @@ impl BgpPeerBuilder {
         self.asn = input;
         self
     }
+    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    pub fn get_asn(&self) -> &::std::option::Option<i32> {
+        &self.asn
+    }
     /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
     pub fn auth_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auth_key = ::std::option::Option::Some(input.into());
@@ -155,6 +163,10 @@ impl BgpPeerBuilder {
     pub fn set_auth_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auth_key = input;
         self
+    }
+    /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
+    pub fn get_auth_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auth_key
     }
     /// <p>The address family for the BGP peer.</p>
     pub fn address_family(mut self, input: crate::types::AddressFamily) -> Self {
@@ -168,6 +180,10 @@ impl BgpPeerBuilder {
     ) -> Self {
         self.address_family = input;
         self
+    }
+    /// <p>The address family for the BGP peer.</p>
+    pub fn get_address_family(&self) -> &::std::option::Option<crate::types::AddressFamily> {
+        &self.address_family
     }
     /// <p>The IP address assigned to the Amazon interface.</p>
     pub fn amazon_address(
@@ -185,6 +201,10 @@ impl BgpPeerBuilder {
         self.amazon_address = input;
         self
     }
+    /// <p>The IP address assigned to the Amazon interface.</p>
+    pub fn get_amazon_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.amazon_address
+    }
     /// <p>The IP address assigned to the customer interface.</p>
     pub fn customer_address(
         mut self,
@@ -200,6 +220,10 @@ impl BgpPeerBuilder {
     ) -> Self {
         self.customer_address = input;
         self
+    }
+    /// <p>The IP address assigned to the customer interface.</p>
+    pub fn get_customer_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.customer_address
     }
     /// <p>The state of the BGP peer. The following are the possible values:</p>
     /// <ul>
@@ -228,6 +252,17 @@ impl BgpPeerBuilder {
         self.bgp_peer_state = input;
         self
     }
+    /// <p>The state of the BGP peer. The following are the possible values:</p>
+    /// <ul>
+    /// <li> <p> <code>verifying</code>: The BGP peering addresses or ASN require validation before the BGP peer can be created. This state applies only to public virtual interfaces.</p> </li>
+    /// <li> <p> <code>pending</code>: The BGP peer is created, and remains in this state until it is ready to be established.</p> </li>
+    /// <li> <p> <code>available</code>: The BGP peer is ready to be established.</p> </li>
+    /// <li> <p> <code>deleting</code>: The BGP peer is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The BGP peer is deleted and cannot be established.</p> </li>
+    /// </ul>
+    pub fn get_bgp_peer_state(&self) -> &::std::option::Option<crate::types::BgpPeerState> {
+        &self.bgp_peer_state
+    }
     /// <p>The status of the BGP peer. The following are the possible values:</p>
     /// <ul>
     /// <li> <p> <code>up</code>: The BGP peer is established. This state does not indicate the state of the routing function. Ensure that you are receiving routes over the BGP session.</p> </li>
@@ -248,6 +283,15 @@ impl BgpPeerBuilder {
         self.bgp_status = input;
         self
     }
+    /// <p>The status of the BGP peer. The following are the possible values:</p>
+    /// <ul>
+    /// <li> <p> <code>up</code>: The BGP peer is established. This state does not indicate the state of the routing function. Ensure that you are receiving routes over the BGP session.</p> </li>
+    /// <li> <p> <code>down</code>: The BGP peer is down.</p> </li>
+    /// <li> <p> <code>unknown</code>: The BGP peer status is not available.</p> </li>
+    /// </ul>
+    pub fn get_bgp_status(&self) -> &::std::option::Option<crate::types::BgpStatus> {
+        &self.bgp_status
+    }
     /// <p>The Direct Connect endpoint that terminates the BGP peer.</p>
     pub fn aws_device_v2(
         mut self,
@@ -264,6 +308,10 @@ impl BgpPeerBuilder {
         self.aws_device_v2 = input;
         self
     }
+    /// <p>The Direct Connect endpoint that terminates the BGP peer.</p>
+    pub fn get_aws_device_v2(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_device_v2
+    }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub fn aws_logical_device_id(
         mut self,
@@ -279,6 +327,10 @@ impl BgpPeerBuilder {
     ) -> Self {
         self.aws_logical_device_id = input;
         self
+    }
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
+    pub fn get_aws_logical_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_logical_device_id
     }
     /// Consumes the builder and constructs a [`BgpPeer`](crate::types::BgpPeer).
     pub fn build(self) -> crate::types::BgpPeer {

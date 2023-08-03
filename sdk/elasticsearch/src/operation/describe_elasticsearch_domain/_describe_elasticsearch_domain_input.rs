@@ -40,6 +40,10 @@ impl DescribeElasticsearchDomainInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The name of the Elasticsearch domain for which you want information.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// Consumes the builder and constructs a [`DescribeElasticsearchDomainInput`](crate::operation::describe_elasticsearch_domain::DescribeElasticsearchDomainInput).
     pub fn build(
         self,

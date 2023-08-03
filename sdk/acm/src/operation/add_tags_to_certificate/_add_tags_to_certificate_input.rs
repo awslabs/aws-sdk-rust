@@ -62,6 +62,12 @@ impl AddTagsToCertificateInputBuilder {
         self.certificate_arn = input;
         self
     }
+    /// <p>String that contains the ARN of the ACM certificate to which the tag is to be applied. This must be of the form:</p>
+    /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_arn
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -80,6 +86,10 @@ impl AddTagsToCertificateInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The key-value pair that defines the tag. The tag value is optional.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`AddTagsToCertificateInput`](crate::operation::add_tags_to_certificate::AddTagsToCertificateInput).
     pub fn build(

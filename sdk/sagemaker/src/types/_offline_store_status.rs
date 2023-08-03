@@ -51,6 +51,10 @@ impl OfflineStoreStatusBuilder {
         self.status = input;
         self
     }
+    /// <p>An <code>OfflineStore</code> status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::OfflineStoreStatusValue> {
+        &self.status
+    }
     /// <p>The justification for why the OfflineStoreStatus is Blocked (if applicable).</p>
     pub fn blocked_reason(
         mut self,
@@ -66,6 +70,10 @@ impl OfflineStoreStatusBuilder {
     ) -> Self {
         self.blocked_reason = input;
         self
+    }
+    /// <p>The justification for why the OfflineStoreStatus is Blocked (if applicable).</p>
+    pub fn get_blocked_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.blocked_reason
     }
     /// Consumes the builder and constructs a [`OfflineStoreStatus`](crate::types::OfflineStoreStatus).
     pub fn build(self) -> crate::types::OfflineStoreStatus {

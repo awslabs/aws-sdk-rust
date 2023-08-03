@@ -36,6 +36,10 @@ impl DeleteTLSInspectionConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteTLSInspectionConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_tls_inspection_configuration::builders::DeleteTlsInspectionConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -108,6 +112,13 @@ impl DeleteTLSInspectionConfigurationFluentBuilder {
         self.inner = self.inner.set_tls_inspection_configuration_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn get_tls_inspection_configuration_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_tls_inspection_configuration_arn()
+    }
     /// <p>The descriptive name of the TLS inspection configuration. You can't change the name of a TLS inspection configuration after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn tls_inspection_configuration_name(
@@ -125,5 +136,12 @@ impl DeleteTLSInspectionConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tls_inspection_configuration_name(input);
         self
+    }
+    /// <p>The descriptive name of the TLS inspection configuration. You can't change the name of a TLS inspection configuration after you create it.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn get_tls_inspection_configuration_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_tls_inspection_configuration_name()
     }
 }

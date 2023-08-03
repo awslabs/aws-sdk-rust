@@ -64,6 +64,10 @@ impl UpdateApplicationResourceLifecycleOutputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The name of the application.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>The lifecycle configuration.</p>
     pub fn resource_lifecycle_config(
         mut self,
@@ -79,6 +83,12 @@ impl UpdateApplicationResourceLifecycleOutputBuilder {
     ) -> Self {
         self.resource_lifecycle_config = input;
         self
+    }
+    /// <p>The lifecycle configuration.</p>
+    pub fn get_resource_lifecycle_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationResourceLifecycleConfig> {
+        &self.resource_lifecycle_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

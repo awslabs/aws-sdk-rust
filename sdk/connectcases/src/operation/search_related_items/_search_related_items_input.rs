@@ -72,6 +72,10 @@ impl SearchRelatedItemsInputBuilder {
         self.domain_id = input;
         self
     }
+    /// <p>The unique identifier of the Cases domain. </p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_id
+    }
     /// <p>A unique identifier of the case.</p>
     pub fn case_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.case_id = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl SearchRelatedItemsInputBuilder {
     pub fn set_case_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.case_id = input;
         self
+    }
+    /// <p>A unique identifier of the case.</p>
+    pub fn get_case_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.case_id
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -92,6 +100,10 @@ impl SearchRelatedItemsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -101,6 +113,10 @@ impl SearchRelatedItemsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `filters`.
     ///
@@ -120,6 +136,12 @@ impl SearchRelatedItemsInputBuilder {
     ) -> Self {
         self.filters = input;
         self
+    }
+    /// <p>The list of types of related items and their parameters to use for filtering.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedItemTypeFilter>> {
+        &self.filters
     }
     /// Consumes the builder and constructs a [`SearchRelatedItemsInput`](crate::operation::search_related_items::SearchRelatedItemsInput).
     pub fn build(

@@ -108,6 +108,10 @@ impl CreateResourcePolicyStatementInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p>The name of the statement. The ID is the same as the <code>Sid</code> IAM property. The statement name must be unique within the policy. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html">IAM JSON policy elements: Sid</a>. </p>
     pub fn statement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.statement_id = ::std::option::Option::Some(input.into());
@@ -118,6 +122,10 @@ impl CreateResourcePolicyStatementInputBuilder {
         self.statement_id = input;
         self
     }
+    /// <p>The name of the statement. The ID is the same as the <code>Sid</code> IAM property. The statement name must be unique within the policy. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html">IAM JSON policy elements: Sid</a>. </p>
+    pub fn get_statement_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.statement_id
+    }
     /// <p>Determines whether the statement allows or denies access to the resource.</p>
     pub fn effect(mut self, input: crate::types::Effect) -> Self {
         self.effect = ::std::option::Option::Some(input);
@@ -127,6 +135,10 @@ impl CreateResourcePolicyStatementInputBuilder {
     pub fn set_effect(mut self, input: ::std::option::Option<crate::types::Effect>) -> Self {
         self.effect = input;
         self
+    }
+    /// <p>Determines whether the statement allows or denies access to the resource.</p>
+    pub fn get_effect(&self) -> &::std::option::Option<crate::types::Effect> {
+        &self.effect
     }
     /// Appends an item to `principal`.
     ///
@@ -147,6 +159,12 @@ impl CreateResourcePolicyStatementInputBuilder {
         self.principal = input;
         self
     }
+    /// <p>An IAM principal, such as an IAM user, IAM role, or Amazon Web Services services that is allowed or denied access to a resource. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">Amazon Web Services JSON policy elements: Principal</a>.</p>
+    pub fn get_principal(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Principal>> {
+        &self.principal
+    }
     /// Appends an item to `action`.
     ///
     /// To override the contents of this collection use [`set_action`](Self::set_action).
@@ -165,6 +183,10 @@ impl CreateResourcePolicyStatementInputBuilder {
     ) -> Self {
         self.action = input;
         self
+    }
+    /// <p>The Amazon Lex action that this policy either allows or denies. The action must apply to the resource type of the specified ARN. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlexv2.html"> Actions, resources, and condition keys for Amazon Lex V2</a>.</p>
+    pub fn get_action(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.action
     }
     /// Adds a key-value pair to `condition`.
     ///
@@ -196,6 +218,18 @@ impl CreateResourcePolicyStatementInputBuilder {
         self.condition = input;
         self
     }
+    /// <p>Specifies a condition when the policy is in effect. If the principal of the policy is a service principal, you must provide two condition blocks, one with a SourceAccount global condition key and one with a SourceArn global condition key.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html">IAM JSON policy elements: Condition </a>.</p>
+    pub fn get_condition(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+        >,
+    > {
+        &self.condition
+    }
     /// <p>The identifier of the revision of the policy to edit. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
     /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of the policy with the new values.</p>
     pub fn expected_revision_id(
@@ -213,6 +247,11 @@ impl CreateResourcePolicyStatementInputBuilder {
     ) -> Self {
         self.expected_revision_id = input;
         self
+    }
+    /// <p>The identifier of the revision of the policy to edit. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
+    /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of the policy with the new values.</p>
+    pub fn get_expected_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expected_revision_id
     }
     /// Consumes the builder and constructs a [`CreateResourcePolicyStatementInput`](crate::operation::create_resource_policy_statement::CreateResourcePolicyStatementInput).
     pub fn build(

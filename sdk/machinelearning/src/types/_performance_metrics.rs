@@ -68,6 +68,14 @@ impl PerformanceMetricsBuilder {
         self.properties = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.properties
+    }
     /// Consumes the builder and constructs a [`PerformanceMetrics`](crate::types::PerformanceMetrics).
     pub fn build(self) -> crate::types::PerformanceMetrics {
         crate::types::PerformanceMetrics {

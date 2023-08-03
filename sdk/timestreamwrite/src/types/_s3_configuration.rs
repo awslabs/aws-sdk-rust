@@ -64,6 +64,10 @@ impl S3ConfigurationBuilder {
         self.bucket_name = input;
         self
     }
+    /// <p>The bucket name of the customer S3 bucket.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
+    }
     /// <p>The object key preview for the customer S3 location.</p>
     pub fn object_key_prefix(
         mut self,
@@ -80,6 +84,10 @@ impl S3ConfigurationBuilder {
         self.object_key_prefix = input;
         self
     }
+    /// <p>The object key preview for the customer S3 location.</p>
+    pub fn get_object_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_key_prefix
+    }
     /// <p>The encryption option for the customer S3 location. Options are S3 server-side encryption with an S3 managed key or Amazon Web Services managed key.</p>
     pub fn encryption_option(mut self, input: crate::types::S3EncryptionOption) -> Self {
         self.encryption_option = ::std::option::Option::Some(input);
@@ -93,6 +101,12 @@ impl S3ConfigurationBuilder {
         self.encryption_option = input;
         self
     }
+    /// <p>The encryption option for the customer S3 location. Options are S3 server-side encryption with an S3 managed key or Amazon Web Services managed key.</p>
+    pub fn get_encryption_option(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3EncryptionOption> {
+        &self.encryption_option
+    }
     /// <p>The KMS key ID for the customer S3 location when encrypting with an Amazon Web Services managed key.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -102,6 +116,10 @@ impl S3ConfigurationBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>The KMS key ID for the customer S3 location when encrypting with an Amazon Web Services managed key.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// Consumes the builder and constructs a [`S3Configuration`](crate::types::S3Configuration).
     pub fn build(self) -> crate::types::S3Configuration {

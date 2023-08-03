@@ -49,6 +49,12 @@ impl BatchPutPropertyErrorEntryBuilder {
         self.errors = input;
         self
     }
+    /// <p>A list of objects that contain information about errors returned by the <code>BatchPutProperty</code> action.</p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPutPropertyError>> {
+        &self.errors
+    }
     /// Consumes the builder and constructs a [`BatchPutPropertyErrorEntry`](crate::types::BatchPutPropertyErrorEntry).
     pub fn build(self) -> crate::types::BatchPutPropertyErrorEntry {
         crate::types::BatchPutPropertyErrorEntry {

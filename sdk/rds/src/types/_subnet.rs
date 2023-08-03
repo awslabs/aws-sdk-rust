@@ -76,6 +76,10 @@ impl SubnetBuilder {
         self.subnet_identifier = input;
         self
     }
+    /// <p>The identifier of the subnet.</p>
+    pub fn get_subnet_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_identifier
+    }
     /// <p>Contains Availability Zone information.</p>
     /// <p>This data type is used as an element in the <code>OrderableDBInstanceOption</code> data type.</p>
     pub fn subnet_availability_zone(mut self, input: crate::types::AvailabilityZone) -> Self {
@@ -90,6 +94,13 @@ impl SubnetBuilder {
     ) -> Self {
         self.subnet_availability_zone = input;
         self
+    }
+    /// <p>Contains Availability Zone information.</p>
+    /// <p>This data type is used as an element in the <code>OrderableDBInstanceOption</code> data type.</p>
+    pub fn get_subnet_availability_zone(
+        &self,
+    ) -> &::std::option::Option<crate::types::AvailabilityZone> {
+        &self.subnet_availability_zone
     }
     /// <p>If the subnet is associated with an Outpost, this value specifies the Outpost.</p>
     /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i> </p>
@@ -106,6 +117,11 @@ impl SubnetBuilder {
         self.subnet_outpost = input;
         self
     }
+    /// <p>If the subnet is associated with an Outpost, this value specifies the Outpost.</p>
+    /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i> </p>
+    pub fn get_subnet_outpost(&self) -> &::std::option::Option<crate::types::Outpost> {
+        &self.subnet_outpost
+    }
     /// <p>The status of the subnet.</p>
     pub fn subnet_status(
         mut self,
@@ -121,6 +137,10 @@ impl SubnetBuilder {
     ) -> Self {
         self.subnet_status = input;
         self
+    }
+    /// <p>The status of the subnet.</p>
+    pub fn get_subnet_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_status
     }
     /// Consumes the builder and constructs a [`Subnet`](crate::types::Subnet).
     pub fn build(self) -> crate::types::Subnet {

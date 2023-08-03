@@ -49,6 +49,12 @@ impl DetectStackResourceDriftOutputBuilder {
         self.stack_resource_drift = input;
         self
     }
+    /// <p>Information about whether the resource's actual configuration has drifted from its expected template configuration, including actual and expected property values and any differences detected.</p>
+    pub fn get_stack_resource_drift(
+        &self,
+    ) -> &::std::option::Option<crate::types::StackResourceDrift> {
+        &self.stack_resource_drift
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

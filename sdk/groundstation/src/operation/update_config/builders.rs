@@ -37,6 +37,10 @@ impl UpdateConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateConfig as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_config::builders::UpdateConfigInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl UpdateConfigFluentBuilder {
         self.inner = self.inner.set_config_id(input);
         self
     }
+    /// <p>UUID of a <code>Config</code>.</p>
+    pub fn get_config_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_config_id()
+    }
     /// <p>Name of a <code>Config</code>.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -128,6 +136,10 @@ impl UpdateConfigFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>Name of a <code>Config</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>Type of a <code>Config</code>.</p>
     pub fn config_type(mut self, input: crate::types::ConfigCapabilityType) -> Self {
@@ -142,6 +154,10 @@ impl UpdateConfigFluentBuilder {
         self.inner = self.inner.set_config_type(input);
         self
     }
+    /// <p>Type of a <code>Config</code>.</p>
+    pub fn get_config_type(&self) -> &::std::option::Option<crate::types::ConfigCapabilityType> {
+        self.inner.get_config_type()
+    }
     /// <p>Parameters of a <code>Config</code>.</p>
     pub fn config_data(mut self, input: crate::types::ConfigTypeData) -> Self {
         self.inner = self.inner.config_data(input);
@@ -154,5 +170,9 @@ impl UpdateConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_config_data(input);
         self
+    }
+    /// <p>Parameters of a <code>Config</code>.</p>
+    pub fn get_config_data(&self) -> &::std::option::Option<crate::types::ConfigTypeData> {
+        self.inner.get_config_data()
     }
 }

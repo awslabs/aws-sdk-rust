@@ -57,6 +57,12 @@ impl ConnectAppAuthorizationOutputBuilder {
         self.app_authorization_summary = input;
         self
     }
+    /// <p>Contains a summary of the app authorization.</p>
+    pub fn get_app_authorization_summary(
+        &self,
+    ) -> &::std::option::Option<crate::types::AppAuthorizationSummary> {
+        &self.app_authorization_summary
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

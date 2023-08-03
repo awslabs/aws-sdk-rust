@@ -36,6 +36,10 @@ impl GetSettingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetSettings as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_settings::builders::GetSettingsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -120,5 +124,9 @@ impl GetSettingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_attribute(input);
         self
+    }
+    /// <p> The list of setting attribute enum values. </p>
+    pub fn get_attribute(&self) -> &::std::option::Option<crate::types::SettingAttribute> {
+        self.inner.get_attribute()
     }
 }

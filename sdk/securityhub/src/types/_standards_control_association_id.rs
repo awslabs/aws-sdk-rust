@@ -54,6 +54,10 @@ impl StandardsControlAssociationIdBuilder {
         self.security_control_id = input;
         self
     }
+    /// <p> The unique identifier (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) of a security control across standards. </p>
+    pub fn get_security_control_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_control_id
+    }
     /// <p> The ARN of a standard. </p>
     pub fn standards_arn(
         mut self,
@@ -69,6 +73,10 @@ impl StandardsControlAssociationIdBuilder {
     ) -> Self {
         self.standards_arn = input;
         self
+    }
+    /// <p> The ARN of a standard. </p>
+    pub fn get_standards_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.standards_arn
     }
     /// Consumes the builder and constructs a [`StandardsControlAssociationId`](crate::types::StandardsControlAssociationId).
     pub fn build(self) -> crate::types::StandardsControlAssociationId {

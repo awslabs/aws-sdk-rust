@@ -36,6 +36,12 @@ impl CreatePackagingGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreatePackagingGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_packaging_group::builders::CreatePackagingGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl CreatePackagingGroupFluentBuilder {
         self.inner = self.inner.set_authorization(input);
         self
     }
+    /// CDN Authorization credentials
+    pub fn get_authorization(&self) -> &::std::option::Option<crate::types::Authorization> {
+        self.inner.get_authorization()
+    }
     /// Configure egress access logging.
     pub fn egress_access_logs(mut self, input: crate::types::EgressAccessLogs) -> Self {
         self.inner = self.inner.egress_access_logs(input);
@@ -142,6 +152,10 @@ impl CreatePackagingGroupFluentBuilder {
         self.inner = self.inner.set_egress_access_logs(input);
         self
     }
+    /// Configure egress access logging.
+    pub fn get_egress_access_logs(&self) -> &::std::option::Option<crate::types::EgressAccessLogs> {
+        self.inner.get_egress_access_logs()
+    }
     /// The ID of the PackagingGroup.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
@@ -151,6 +165,10 @@ impl CreatePackagingGroupFluentBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
+    }
+    /// The ID of the PackagingGroup.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -174,5 +192,13 @@ impl CreatePackagingGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// A collection of tags associated with a resource
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

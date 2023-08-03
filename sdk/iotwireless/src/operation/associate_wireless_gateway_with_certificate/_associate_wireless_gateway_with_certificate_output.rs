@@ -52,6 +52,10 @@ impl AssociateWirelessGatewayWithCertificateOutputBuilder {
         self.iot_certificate_id = input;
         self
     }
+    /// <p>The ID of the certificate associated with the wireless gateway.</p>
+    pub fn get_iot_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iot_certificate_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

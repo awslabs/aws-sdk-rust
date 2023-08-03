@@ -55,6 +55,10 @@ impl SearchDevicesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request continue results where the previous request ended.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -64,6 +68,10 @@ impl SearchDevicesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Appends an item to `filters`.
     ///
@@ -83,6 +91,12 @@ impl SearchDevicesInputBuilder {
     ) -> Self {
         self.filters = input;
         self
+    }
+    /// <p>The filter values to use to search for a device.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchDevicesFilter>> {
+        &self.filters
     }
     /// Consumes the builder and constructs a [`SearchDevicesInput`](crate::operation::search_devices::SearchDevicesInput).
     pub fn build(

@@ -68,6 +68,10 @@ impl CommitmentConfigurationBuilder {
         self.commitment_length = input;
         self
     }
+    /// <p>The duration of the commitment period for the radio unit. You can choose a 60-day, 1-year, or 3-year period.</p>
+    pub fn get_commitment_length(&self) -> &::std::option::Option<crate::types::CommitmentLength> {
+        &self.commitment_length
+    }
     /// <p>Determines whether the commitment period for a radio unit is set to automatically renew for an additional 1 year after your current commitment period expires.</p>
     /// <p>Set to <code>True</code>, if you want your commitment period to automatically renew. Set to <code>False</code> if you do not want your commitment to automatically renew.</p>
     /// <p>You can do the following:</p>
@@ -93,6 +97,18 @@ impl CommitmentConfigurationBuilder {
     pub fn set_automatic_renewal(mut self, input: ::std::option::Option<bool>) -> Self {
         self.automatic_renewal = input;
         self
+    }
+    /// <p>Determines whether the commitment period for a radio unit is set to automatically renew for an additional 1 year after your current commitment period expires.</p>
+    /// <p>Set to <code>True</code>, if you want your commitment period to automatically renew. Set to <code>False</code> if you do not want your commitment to automatically renew.</p>
+    /// <p>You can do the following:</p>
+    /// <ul>
+    /// <li> <p>Set a 1-year commitment to automatically renew for an additional 1 year. The hourly rate for the additional year will continue to be the same as your existing 1-year rate.</p> </li>
+    /// <li> <p>Set a 3-year commitment to automatically renew for an additional 1 year. The hourly rate for the additional year will continue to be the same as your existing 3-year rate.</p> </li>
+    /// <li> <p>Turn off a previously-enabled automatic renewal on a 1-year or 3-year commitment.</p> </li>
+    /// </ul>
+    /// <p>You cannot use the automatic-renewal option for a 60-day commitment.</p>
+    pub fn get_automatic_renewal(&self) -> &::std::option::Option<bool> {
+        &self.automatic_renewal
     }
     /// Consumes the builder and constructs a [`CommitmentConfiguration`](crate::types::CommitmentConfiguration).
     pub fn build(self) -> crate::types::CommitmentConfiguration {

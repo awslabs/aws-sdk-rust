@@ -48,6 +48,10 @@ impl DiskImageVolumeDescriptionBuilder {
         self.id = input;
         self
     }
+    /// <p>The volume identifier.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The size of the volume, in GiB.</p>
     pub fn size(mut self, input: i64) -> Self {
         self.size = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl DiskImageVolumeDescriptionBuilder {
     pub fn set_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.size = input;
         self
+    }
+    /// <p>The size of the volume, in GiB.</p>
+    pub fn get_size(&self) -> &::std::option::Option<i64> {
+        &self.size
     }
     /// Consumes the builder and constructs a [`DiskImageVolumeDescription`](crate::types::DiskImageVolumeDescription).
     pub fn build(self) -> crate::types::DiskImageVolumeDescription {

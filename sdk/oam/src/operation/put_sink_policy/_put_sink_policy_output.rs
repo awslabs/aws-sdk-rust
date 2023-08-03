@@ -62,6 +62,10 @@ impl PutSinkPolicyOutputBuilder {
         self.sink_arn = input;
         self
     }
+    /// <p>The ARN of the sink.</p>
+    pub fn get_sink_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sink_arn
+    }
     /// <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>
     pub fn sink_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sink_id = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl PutSinkPolicyOutputBuilder {
         self.sink_id = input;
         self
     }
+    /// <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>
+    pub fn get_sink_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sink_id
+    }
     /// <p>The policy that you specified.</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl PutSinkPolicyOutputBuilder {
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy = input;
         self
+    }
+    /// <p>The policy that you specified.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

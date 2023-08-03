@@ -49,6 +49,10 @@ impl StaticPolicyDefinitionDetailBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the static policy.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The content of the static policy written in the Cedar policy language.</p>
     pub fn statement(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.statement = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl StaticPolicyDefinitionDetailBuilder {
     pub fn set_statement(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.statement = input;
         self
+    }
+    /// <p>The content of the static policy written in the Cedar policy language.</p>
+    pub fn get_statement(&self) -> &::std::option::Option<::std::string::String> {
+        &self.statement
     }
     /// Consumes the builder and constructs a [`StaticPolicyDefinitionDetail`](crate::types::StaticPolicyDefinitionDetail).
     pub fn build(self) -> crate::types::StaticPolicyDefinitionDetail {

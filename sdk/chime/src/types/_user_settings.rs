@@ -43,6 +43,10 @@ impl UserSettingsBuilder {
         self.telephony = input;
         self
     }
+    /// <p>The telephony settings associated with the user.</p>
+    pub fn get_telephony(&self) -> &::std::option::Option<crate::types::TelephonySettings> {
+        &self.telephony
+    }
     /// Consumes the builder and constructs a [`UserSettings`](crate::types::UserSettings).
     pub fn build(self) -> crate::types::UserSettings {
         crate::types::UserSettings {

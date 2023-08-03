@@ -48,6 +48,10 @@ impl SetIdentityFeedbackForwardingEnabledInputBuilder {
         self.identity = input;
         self
     }
+    /// <p>The identity for which to set bounce and complaint notification forwarding. Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
+    pub fn get_identity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity
+    }
     /// <p>Sets whether Amazon SES will forward bounce and complaint notifications as email. <code>true</code> specifies that Amazon SES will forward bounce and complaint notifications as email, in addition to any Amazon SNS topic publishing otherwise specified. <code>false</code> specifies that Amazon SES will publish bounce and complaint notifications only through Amazon SNS. This value can only be set to <code>false</code> when Amazon SNS topics are set for both <code>Bounce</code> and <code>Complaint</code> notification types.</p>
     pub fn forwarding_enabled(mut self, input: bool) -> Self {
         self.forwarding_enabled = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl SetIdentityFeedbackForwardingEnabledInputBuilder {
     pub fn set_forwarding_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.forwarding_enabled = input;
         self
+    }
+    /// <p>Sets whether Amazon SES will forward bounce and complaint notifications as email. <code>true</code> specifies that Amazon SES will forward bounce and complaint notifications as email, in addition to any Amazon SNS topic publishing otherwise specified. <code>false</code> specifies that Amazon SES will publish bounce and complaint notifications only through Amazon SNS. This value can only be set to <code>false</code> when Amazon SNS topics are set for both <code>Bounce</code> and <code>Complaint</code> notification types.</p>
+    pub fn get_forwarding_enabled(&self) -> &::std::option::Option<bool> {
+        &self.forwarding_enabled
     }
     /// Consumes the builder and constructs a [`SetIdentityFeedbackForwardingEnabledInput`](crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabledInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabledInput, ::aws_smithy_http::operation::error::BuildError>{

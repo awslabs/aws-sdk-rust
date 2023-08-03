@@ -39,6 +39,10 @@ impl GetRecommendationReportDetailsInputBuilder {
         self.id = input;
         self
     }
+    /// <p> The recommendation report generation task <code>id</code> returned by <code>StartRecommendationReportGeneration</code>. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`GetRecommendationReportDetailsInput`](crate::operation::get_recommendation_report_details::GetRecommendationReportDetailsInput).
     pub fn build(
         self,

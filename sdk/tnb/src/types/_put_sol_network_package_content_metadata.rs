@@ -48,6 +48,11 @@ impl PutSolNetworkPackageContentMetadataBuilder {
         self.nsd = input;
         self
     }
+    /// <p>Metadata for network package artifacts.</p>
+    /// <p>Artifacts are the contents of the package descriptor file and the state of the package.</p>
+    pub fn get_nsd(&self) -> &::std::option::Option<crate::types::NetworkArtifactMeta> {
+        &self.nsd
+    }
     /// Consumes the builder and constructs a [`PutSolNetworkPackageContentMetadata`](crate::types::PutSolNetworkPackageContentMetadata).
     pub fn build(self) -> crate::types::PutSolNetworkPackageContentMetadata {
         crate::types::PutSolNetworkPackageContentMetadata { nsd: self.nsd }

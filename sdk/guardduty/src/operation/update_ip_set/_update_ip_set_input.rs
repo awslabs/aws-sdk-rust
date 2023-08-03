@@ -71,6 +71,10 @@ impl UpdateIpSetInputBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The detectorID that specifies the GuardDuty service whose IPSet you want to update.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// <p>The unique ID that specifies the IPSet that you want to update.</p>
     pub fn ip_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_set_id = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl UpdateIpSetInputBuilder {
         self
     }
     /// <p>The unique ID that specifies the IPSet that you want to update.</p>
+    pub fn get_ip_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_set_id
+    }
+    /// <p>The unique ID that specifies the IPSet that you want to update.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +98,10 @@ impl UpdateIpSetInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The unique ID that specifies the IPSet that you want to update.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The updated URI of the file that contains the IPSet. </p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -101,6 +113,10 @@ impl UpdateIpSetInputBuilder {
         self.location = input;
         self
     }
+    /// <p>The updated URI of the file that contains the IPSet. </p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
+    }
     /// <p>The updated Boolean value that specifies whether the IPSet is active or not.</p>
     pub fn activate(mut self, input: bool) -> Self {
         self.activate = ::std::option::Option::Some(input);
@@ -110,6 +126,10 @@ impl UpdateIpSetInputBuilder {
     pub fn set_activate(mut self, input: ::std::option::Option<bool>) -> Self {
         self.activate = input;
         self
+    }
+    /// <p>The updated Boolean value that specifies whether the IPSet is active or not.</p>
+    pub fn get_activate(&self) -> &::std::option::Option<bool> {
+        &self.activate
     }
     /// Consumes the builder and constructs a [`UpdateIpSetInput`](crate::operation::update_ip_set::UpdateIpSetInput).
     pub fn build(

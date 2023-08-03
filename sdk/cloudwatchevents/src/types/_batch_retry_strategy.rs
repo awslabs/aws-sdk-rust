@@ -40,6 +40,10 @@ impl BatchRetryStrategyBuilder {
         self.attempts = input;
         self
     }
+    /// <p>The number of times to attempt to retry, if the job fails. Valid values are 1–10.</p>
+    pub fn get_attempts(&self) -> &::std::option::Option<i32> {
+        &self.attempts
+    }
     /// Consumes the builder and constructs a [`BatchRetryStrategy`](crate::types::BatchRetryStrategy).
     pub fn build(self) -> crate::types::BatchRetryStrategy {
         crate::types::BatchRetryStrategy {

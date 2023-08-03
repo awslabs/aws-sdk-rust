@@ -78,6 +78,10 @@ impl AwsWafv2RulesDetailsBuilder {
         self.action = input;
         self
     }
+    /// <p> The action that WAF should take on a web request when it matches the rule statement. Settings at the web ACL level can override the rule action setting. </p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::AwsWafv2RulesActionDetails> {
+        &self.action
+    }
     /// <p> The name of the rule. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -87,6 +91,10 @@ impl AwsWafv2RulesDetailsBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p> The name of the rule. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p> The action to use in the place of the action that results from the rule group evaluation. </p>
     pub fn override_action(
@@ -104,6 +112,10 @@ impl AwsWafv2RulesDetailsBuilder {
         self.override_action = input;
         self
     }
+    /// <p> The action to use in the place of the action that results from the rule group evaluation. </p>
+    pub fn get_override_action(&self) -> &::std::option::Option<::std::string::String> {
+        &self.override_action
+    }
     /// <p> If you define more than one Rule in a WebACL, WAF evaluates each request against the Rules in order based on the value of <code>Priority</code>. WAF processes rules with lower priority first. The priorities don't need to be consecutive, but they must all be different. </p>
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
@@ -113,6 +125,10 @@ impl AwsWafv2RulesDetailsBuilder {
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
+    }
+    /// <p> If you define more than one Rule in a WebACL, WAF evaluates each request against the Rules in order based on the value of <code>Priority</code>. WAF processes rules with lower priority first. The priorities don't need to be consecutive, but they must all be different. </p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
     }
     /// <p> Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
     pub fn visibility_config(
@@ -129,6 +145,12 @@ impl AwsWafv2RulesDetailsBuilder {
     ) -> Self {
         self.visibility_config = input;
         self
+    }
+    /// <p> Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
+    pub fn get_visibility_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsWafv2VisibilityConfigDetails> {
+        &self.visibility_config
     }
     /// Consumes the builder and constructs a [`AwsWafv2RulesDetails`](crate::types::AwsWafv2RulesDetails).
     pub fn build(self) -> crate::types::AwsWafv2RulesDetails {

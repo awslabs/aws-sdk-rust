@@ -76,6 +76,13 @@ impl DisableFastSnapshotRestoresOutputBuilder {
         self.successful = input;
         self
     }
+    /// <p>Information about the snapshots for which fast snapshot restores were successfully disabled.</p>
+    pub fn get_successful(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DisableFastSnapshotRestoreSuccessItem>>
+    {
+        &self.successful
+    }
     /// Appends an item to `unsuccessful`.
     ///
     /// To override the contents of this collection use [`set_unsuccessful`](Self::set_unsuccessful).
@@ -99,6 +106,13 @@ impl DisableFastSnapshotRestoresOutputBuilder {
     ) -> Self {
         self.unsuccessful = input;
         self
+    }
+    /// <p>Information about the snapshots for which fast snapshot restores could not be disabled.</p>
+    pub fn get_unsuccessful(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DisableFastSnapshotRestoreErrorItem>>
+    {
+        &self.unsuccessful
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

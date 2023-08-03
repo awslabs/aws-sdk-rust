@@ -56,6 +56,10 @@ impl PutActionRevisionOutputBuilder {
         self.new_revision = input;
         self
     }
+    /// <p>Indicates whether the artifact revision was previously used in an execution of the specified pipeline.</p>
+    pub fn get_new_revision(&self) -> &::std::option::Option<bool> {
+        &self.new_revision
+    }
     /// <p>The ID of the current workflow state of the pipeline.</p>
     pub fn pipeline_execution_id(
         mut self,
@@ -71,6 +75,10 @@ impl PutActionRevisionOutputBuilder {
     ) -> Self {
         self.pipeline_execution_id = input;
         self
+    }
+    /// <p>The ID of the current workflow state of the pipeline.</p>
+    pub fn get_pipeline_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_execution_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

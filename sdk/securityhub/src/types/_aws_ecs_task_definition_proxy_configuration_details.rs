@@ -71,6 +71,10 @@ impl AwsEcsTaskDefinitionProxyConfigurationDetailsBuilder {
         self.container_name = input;
         self
     }
+    /// <p>The name of the container that will serve as the App Mesh proxy.</p>
+    pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_name
+    }
     /// Appends an item to `proxy_configuration_properties`.
     ///
     /// To override the contents of this collection use [`set_proxy_configuration_properties`](Self::set_proxy_configuration_properties).
@@ -93,6 +97,16 @@ impl AwsEcsTaskDefinitionProxyConfigurationDetailsBuilder {
         self.proxy_configuration_properties = input;
         self
     }
+    /// <p>The set of network configuration parameters to provide to the Container Network Interface (CNI) plugin, specified as key-value pairs.</p>
+    pub fn get_proxy_configuration_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<
+            crate::types::AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails,
+        >,
+    > {
+        &self.proxy_configuration_properties
+    }
     /// <p>The proxy type.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -102,6 +116,10 @@ impl AwsEcsTaskDefinitionProxyConfigurationDetailsBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The proxy type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionProxyConfigurationDetails`](crate::types::AwsEcsTaskDefinitionProxyConfigurationDetails).
     pub fn build(self) -> crate::types::AwsEcsTaskDefinitionProxyConfigurationDetails {

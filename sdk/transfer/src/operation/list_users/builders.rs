@@ -36,6 +36,10 @@ impl ListUsersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListUsers as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_users::builders::ListUsersInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl ListUsersFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>Specifies the number of users to return as a response to the <code>ListUsers</code> request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>When you can get additional results from the <code>ListUsers</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional users.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -134,6 +142,10 @@ impl ListUsersFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>When you can get additional results from the <code>ListUsers</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional users.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>A system-assigned unique identifier for a server that has users assigned to it.</p>
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.server_id(input.into());
@@ -143,5 +155,9 @@ impl ListUsersFluentBuilder {
     pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_server_id(input);
         self
+    }
+    /// <p>A system-assigned unique identifier for a server that has users assigned to it.</p>
+    pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_server_id()
     }
 }

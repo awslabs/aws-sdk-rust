@@ -56,6 +56,12 @@ impl S3InitiateRestoreObjectOperationBuilder {
         self.expiration_in_days = input;
         self
     }
+    /// <p>This argument specifies how long the S3 Glacier or S3 Glacier Deep Archive object remains available in Amazon S3. S3 Initiate Restore Object jobs that target S3 Glacier and S3 Glacier Deep Archive objects require <code>ExpirationInDays</code> set to 1 or greater.</p>
+    /// <p>Conversely, do <i>not</i> set <code>ExpirationInDays</code> when creating S3 Initiate Restore Object jobs that target S3 Intelligent-Tiering Archive Access and Deep Archive Access tier objects. Objects in S3 Intelligent-Tiering archive access tiers are not subject to restore expiry, so specifying <code>ExpirationInDays</code> results in restore request failure.</p>
+    /// <p>S3 Batch Operations jobs can operate either on S3 Glacier and S3 Glacier Deep Archive storage class objects or on S3 Intelligent-Tiering Archive Access and Deep Archive Access storage tier objects, but not both types in the same job. If you need to restore objects of both types you <i>must</i> create separate Batch Operations jobs. </p>
+    pub fn get_expiration_in_days(&self) -> &::std::option::Option<i32> {
+        &self.expiration_in_days
+    }
     /// <p>S3 Batch Operations supports <code>STANDARD</code> and <code>BULK</code> retrieval tiers, but not the <code>EXPEDITED</code> retrieval tier.</p>
     pub fn glacier_job_tier(mut self, input: crate::types::S3GlacierJobTier) -> Self {
         self.glacier_job_tier = ::std::option::Option::Some(input);
@@ -68,6 +74,10 @@ impl S3InitiateRestoreObjectOperationBuilder {
     ) -> Self {
         self.glacier_job_tier = input;
         self
+    }
+    /// <p>S3 Batch Operations supports <code>STANDARD</code> and <code>BULK</code> retrieval tiers, but not the <code>EXPEDITED</code> retrieval tier.</p>
+    pub fn get_glacier_job_tier(&self) -> &::std::option::Option<crate::types::S3GlacierJobTier> {
+        &self.glacier_job_tier
     }
     /// Consumes the builder and constructs a [`S3InitiateRestoreObjectOperation`](crate::types::S3InitiateRestoreObjectOperation).
     pub fn build(self) -> crate::types::S3InitiateRestoreObjectOperation {

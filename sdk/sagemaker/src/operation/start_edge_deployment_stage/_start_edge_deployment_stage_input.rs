@@ -55,6 +55,10 @@ impl StartEdgeDeploymentStageInputBuilder {
         self.edge_deployment_plan_name = input;
         self
     }
+    /// <p>The name of the edge deployment plan to start.</p>
+    pub fn get_edge_deployment_plan_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.edge_deployment_plan_name
+    }
     /// <p>The name of the stage to start.</p>
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_name = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl StartEdgeDeploymentStageInputBuilder {
     pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stage_name = input;
         self
+    }
+    /// <p>The name of the stage to start.</p>
+    pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stage_name
     }
     /// Consumes the builder and constructs a [`StartEdgeDeploymentStageInput`](crate::operation::start_edge_deployment_stage::StartEdgeDeploymentStageInput).
     pub fn build(

@@ -36,6 +36,12 @@ impl BatchGetCommitsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchGetCommits as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_get_commits::builders::BatchGetCommitsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,12 @@ impl BatchGetCommitsFluentBuilder {
         self.inner = self.inner.set_commit_ids(input);
         self
     }
+    /// <p>The full commit IDs of the commits to get information about.</p> <note>
+    /// <p>You must supply the full SHA IDs of each commit. You cannot use shortened SHA IDs.</p>
+    /// </note>
+    pub fn get_commit_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_commit_ids()
+    }
     /// <p>The name of the repository that contains the commits.</p>
     pub fn repository_name(
         mut self,
@@ -152,5 +164,9 @@ impl BatchGetCommitsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
+    }
+    /// <p>The name of the repository that contains the commits.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository_name()
     }
 }

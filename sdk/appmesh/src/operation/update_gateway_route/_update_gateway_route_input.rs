@@ -86,6 +86,10 @@ impl UpdateGatewayRouteInputBuilder {
         self.gateway_route_name = input;
         self
     }
+    /// <p>The name of the gateway route to update.</p>
+    pub fn get_gateway_route_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_route_name
+    }
     /// <p>The name of the service mesh that the gateway route resides in.</p>
     pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mesh_name = ::std::option::Option::Some(input.into());
@@ -95,6 +99,10 @@ impl UpdateGatewayRouteInputBuilder {
     pub fn set_mesh_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mesh_name = input;
         self
+    }
+    /// <p>The name of the service mesh that the gateway route resides in.</p>
+    pub fn get_mesh_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mesh_name
     }
     /// <p>The name of the virtual gateway that the gateway route is associated with.</p>
     pub fn virtual_gateway_name(
@@ -112,6 +120,10 @@ impl UpdateGatewayRouteInputBuilder {
         self.virtual_gateway_name = input;
         self
     }
+    /// <p>The name of the virtual gateway that the gateway route is associated with.</p>
+    pub fn get_virtual_gateway_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_gateway_name
+    }
     /// <p>The new gateway route specification to apply. This overwrites the existing data.</p>
     pub fn spec(mut self, input: crate::types::GatewayRouteSpec) -> Self {
         self.spec = ::std::option::Option::Some(input);
@@ -125,6 +137,10 @@ impl UpdateGatewayRouteInputBuilder {
         self.spec = input;
         self
     }
+    /// <p>The new gateway route specification to apply. This overwrites the existing data.</p>
+    pub fn get_spec(&self) -> &::std::option::Option<crate::types::GatewayRouteSpec> {
+        &self.spec
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -135,6 +151,10 @@ impl UpdateGatewayRouteInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mesh_owner = ::std::option::Option::Some(input.into());
@@ -144,6 +164,10 @@ impl UpdateGatewayRouteInputBuilder {
     pub fn set_mesh_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mesh_owner = input;
         self
+    }
+    /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn get_mesh_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mesh_owner
     }
     /// Consumes the builder and constructs a [`UpdateGatewayRouteInput`](crate::operation::update_gateway_route::UpdateGatewayRouteInput).
     pub fn build(

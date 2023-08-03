@@ -57,6 +57,13 @@ impl AwsCloudFrontDistributionCacheBehaviorsBuilder {
         self.items = input;
         self
     }
+    /// <p>The cache behaviors for the distribution.</p>
+    pub fn get_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsCloudFrontDistributionCacheBehavior>>
+    {
+        &self.items
+    }
     /// Consumes the builder and constructs a [`AwsCloudFrontDistributionCacheBehaviors`](crate::types::AwsCloudFrontDistributionCacheBehaviors).
     pub fn build(self) -> crate::types::AwsCloudFrontDistributionCacheBehaviors {
         crate::types::AwsCloudFrontDistributionCacheBehaviors { items: self.items }

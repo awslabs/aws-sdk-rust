@@ -37,6 +37,12 @@ impl AssociateElasticIpFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateElasticIp as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::associate_elastic_ip::builders::AssociateElasticIpInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl AssociateElasticIpFluentBuilder {
         self.inner = self.inner.set_elastic_ip(input);
         self
     }
+    /// <p>The Elastic IP address.</p>
+    pub fn get_elastic_ip(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_elastic_ip()
+    }
     /// <p>The instance ID.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
@@ -136,5 +146,9 @@ impl AssociateElasticIpFluentBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
+    }
+    /// <p>The instance ID.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
     }
 }

@@ -36,6 +36,12 @@ impl GetBatchImportJobsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetBatchImportJobs as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_batch_import_jobs::builders::GetBatchImportJobsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl GetBatchImportJobsFluentBuilder {
         self.inner = self.inner.set_job_id(input);
         self
     }
+    /// <p>The ID of the batch import job to get.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_id()
+    }
     /// <p>The maximum number of objects to return for request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -147,6 +157,10 @@ impl GetBatchImportJobsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of objects to return for request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The next token from the previous request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -156,5 +170,9 @@ impl GetBatchImportJobsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The next token from the previous request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

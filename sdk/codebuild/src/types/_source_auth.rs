@@ -61,6 +61,13 @@ impl SourceAuthBuilder {
         self.r#type = input;
         self
     }
+    /// <note>
+    /// <p> This data type is deprecated and is no longer accurate or used. </p>
+    /// </note>
+    /// <p>The authorization type to use. The only valid value is <code>OAUTH</code>, which represents the OAuth authorization type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::SourceAuthType> {
+        &self.r#type
+    }
     /// <p>The resource value that applies to the specified authorization type.</p>
     pub fn resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource = ::std::option::Option::Some(input.into());
@@ -70,6 +77,10 @@ impl SourceAuthBuilder {
     pub fn set_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource = input;
         self
+    }
+    /// <p>The resource value that applies to the specified authorization type.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource
     }
     /// Consumes the builder and constructs a [`SourceAuth`](crate::types::SourceAuth).
     pub fn build(self) -> crate::types::SourceAuth {

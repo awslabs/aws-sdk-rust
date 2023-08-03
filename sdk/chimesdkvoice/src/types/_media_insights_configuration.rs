@@ -54,6 +54,10 @@ impl MediaInsightsConfigurationBuilder {
         self.disabled = input;
         self
     }
+    /// <p>Denotes the configration as enabled or disabled.</p>
+    pub fn get_disabled(&self) -> &::std::option::Option<bool> {
+        &self.disabled
+    }
     /// <p>The configuration's ARN.</p>
     pub fn configuration_arn(
         mut self,
@@ -69,6 +73,10 @@ impl MediaInsightsConfigurationBuilder {
     ) -> Self {
         self.configuration_arn = input;
         self
+    }
+    /// <p>The configuration's ARN.</p>
+    pub fn get_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_arn
     }
     /// Consumes the builder and constructs a [`MediaInsightsConfiguration`](crate::types::MediaInsightsConfiguration).
     pub fn build(self) -> crate::types::MediaInsightsConfiguration {

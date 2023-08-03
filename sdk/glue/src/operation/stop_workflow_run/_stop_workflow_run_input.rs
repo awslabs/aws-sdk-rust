@@ -47,6 +47,10 @@ impl StopWorkflowRunInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the workflow to stop.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The ID of the workflow run to stop.</p>
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.run_id = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl StopWorkflowRunInputBuilder {
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.run_id = input;
         self
+    }
+    /// <p>The ID of the workflow run to stop.</p>
+    pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.run_id
     }
     /// Consumes the builder and constructs a [`StopWorkflowRunInput`](crate::operation::stop_workflow_run::StopWorkflowRunInput).
     pub fn build(

@@ -63,6 +63,10 @@ impl ListRumMetricsDestinationsInputBuilder {
         self.app_monitor_name = input;
         self
     }
+    /// <p>The name of the app monitor associated with the destinations that you want to retrieve.</p>
+    pub fn get_app_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_monitor_name
+    }
     /// <p>The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.</p>
     /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -75,6 +79,11 @@ impl ListRumMetricsDestinationsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.</p>
+    /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>Use the token returned by the previous operation to request the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -84,6 +93,10 @@ impl ListRumMetricsDestinationsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Use the token returned by the previous operation to request the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListRumMetricsDestinationsInput`](crate::operation::list_rum_metrics_destinations::ListRumMetricsDestinationsInput).
     pub fn build(

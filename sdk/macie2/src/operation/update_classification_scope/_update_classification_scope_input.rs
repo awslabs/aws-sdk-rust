@@ -47,6 +47,10 @@ impl UpdateClassificationScopeInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The S3 buckets to add or remove from the exclusion list defined by the classification scope.</p>
     pub fn s3(mut self, input: crate::types::S3ClassificationScopeUpdate) -> Self {
         self.s3 = ::std::option::Option::Some(input);
@@ -59,6 +63,10 @@ impl UpdateClassificationScopeInputBuilder {
     ) -> Self {
         self.s3 = input;
         self
+    }
+    /// <p>The S3 buckets to add or remove from the exclusion list defined by the classification scope.</p>
+    pub fn get_s3(&self) -> &::std::option::Option<crate::types::S3ClassificationScopeUpdate> {
+        &self.s3
     }
     /// Consumes the builder and constructs a [`UpdateClassificationScopeInput`](crate::operation::update_classification_scope::UpdateClassificationScopeInput).
     pub fn build(

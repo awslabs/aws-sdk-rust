@@ -59,6 +59,10 @@ impl TargetTrackingMetricStatBuilder {
         self.metric = input;
         self
     }
+    /// <p>The metric to use.</p>
+    pub fn get_metric(&self) -> &::std::option::Option<crate::types::Metric> {
+        &self.metric
+    }
     /// <p>The statistic to return. It can include any CloudWatch statistic or extended statistic. For a list of valid values, see the table in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Statistic">Statistics</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
     /// <p>The most commonly used metric for scaling is <code>Average</code>.</p>
     pub fn stat(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -71,6 +75,11 @@ impl TargetTrackingMetricStatBuilder {
         self.stat = input;
         self
     }
+    /// <p>The statistic to return. It can include any CloudWatch statistic or extended statistic. For a list of valid values, see the table in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Statistic">Statistics</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    /// <p>The most commonly used metric for scaling is <code>Average</code>.</p>
+    pub fn get_stat(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stat
+    }
     /// <p>The unit to use for the returned data points. For a complete list of the units that CloudWatch supports, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">MetricDatum</a> data type in the <i>Amazon CloudWatch API Reference</i>.</p>
     pub fn unit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.unit = ::std::option::Option::Some(input.into());
@@ -80,6 +89,10 @@ impl TargetTrackingMetricStatBuilder {
     pub fn set_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unit = input;
         self
+    }
+    /// <p>The unit to use for the returned data points. For a complete list of the units that CloudWatch supports, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">MetricDatum</a> data type in the <i>Amazon CloudWatch API Reference</i>.</p>
+    pub fn get_unit(&self) -> &::std::option::Option<::std::string::String> {
+        &self.unit
     }
     /// Consumes the builder and constructs a [`TargetTrackingMetricStat`](crate::types::TargetTrackingMetricStat).
     pub fn build(self) -> crate::types::TargetTrackingMetricStat {

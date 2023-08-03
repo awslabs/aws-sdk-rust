@@ -56,6 +56,10 @@ impl AssertionRuleUpdateBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the assertion rule. You can use any non-white space character in the name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) of the assertion rule.</p>
     pub fn safety_rule_arn(
         mut self,
@@ -72,6 +76,10 @@ impl AssertionRuleUpdateBuilder {
         self.safety_rule_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the assertion rule.</p>
+    pub fn get_safety_rule_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.safety_rule_arn
+    }
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
     pub fn wait_period_ms(mut self, input: i32) -> Self {
         self.wait_period_ms = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl AssertionRuleUpdateBuilder {
     pub fn set_wait_period_ms(mut self, input: ::std::option::Option<i32>) -> Self {
         self.wait_period_ms = input;
         self
+    }
+    /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
+    pub fn get_wait_period_ms(&self) -> &::std::option::Option<i32> {
+        &self.wait_period_ms
     }
     /// Consumes the builder and constructs a [`AssertionRuleUpdate`](crate::types::AssertionRuleUpdate).
     pub fn build(self) -> crate::types::AssertionRuleUpdate {

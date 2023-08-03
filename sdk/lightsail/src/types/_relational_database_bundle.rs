@@ -104,6 +104,10 @@ impl RelationalDatabaseBundleBuilder {
         self.bundle_id = input;
         self
     }
+    /// <p>The ID for the database bundle.</p>
+    pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bundle_id
+    }
     /// <p>The name for the database bundle.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -113,6 +117,10 @@ impl RelationalDatabaseBundleBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name for the database bundle.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The cost of the database bundle in US currency.</p>
     pub fn price(mut self, input: f32) -> Self {
@@ -124,6 +132,10 @@ impl RelationalDatabaseBundleBuilder {
         self.price = input;
         self
     }
+    /// <p>The cost of the database bundle in US currency.</p>
+    pub fn get_price(&self) -> &::std::option::Option<f32> {
+        &self.price
+    }
     /// <p>The amount of RAM in GB (for example, <code>2.0</code>) for the database bundle.</p>
     pub fn ram_size_in_gb(mut self, input: f32) -> Self {
         self.ram_size_in_gb = ::std::option::Option::Some(input);
@@ -133,6 +145,10 @@ impl RelationalDatabaseBundleBuilder {
     pub fn set_ram_size_in_gb(mut self, input: ::std::option::Option<f32>) -> Self {
         self.ram_size_in_gb = input;
         self
+    }
+    /// <p>The amount of RAM in GB (for example, <code>2.0</code>) for the database bundle.</p>
+    pub fn get_ram_size_in_gb(&self) -> &::std::option::Option<f32> {
+        &self.ram_size_in_gb
     }
     /// <p>The size of the disk for the database bundle.</p>
     pub fn disk_size_in_gb(mut self, input: i32) -> Self {
@@ -144,6 +160,10 @@ impl RelationalDatabaseBundleBuilder {
         self.disk_size_in_gb = input;
         self
     }
+    /// <p>The size of the disk for the database bundle.</p>
+    pub fn get_disk_size_in_gb(&self) -> &::std::option::Option<i32> {
+        &self.disk_size_in_gb
+    }
     /// <p>The data transfer rate per month in GB for the database bundle.</p>
     pub fn transfer_per_month_in_gb(mut self, input: i32) -> Self {
         self.transfer_per_month_in_gb = ::std::option::Option::Some(input);
@@ -153,6 +173,10 @@ impl RelationalDatabaseBundleBuilder {
     pub fn set_transfer_per_month_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
         self.transfer_per_month_in_gb = input;
         self
+    }
+    /// <p>The data transfer rate per month in GB for the database bundle.</p>
+    pub fn get_transfer_per_month_in_gb(&self) -> &::std::option::Option<i32> {
+        &self.transfer_per_month_in_gb
     }
     /// <p>The number of virtual CPUs (vCPUs) for the database bundle.</p>
     pub fn cpu_count(mut self, input: i32) -> Self {
@@ -164,6 +188,10 @@ impl RelationalDatabaseBundleBuilder {
         self.cpu_count = input;
         self
     }
+    /// <p>The number of virtual CPUs (vCPUs) for the database bundle.</p>
+    pub fn get_cpu_count(&self) -> &::std::option::Option<i32> {
+        &self.cpu_count
+    }
     /// <p>A Boolean value indicating whether the database bundle is encrypted.</p>
     pub fn is_encrypted(mut self, input: bool) -> Self {
         self.is_encrypted = ::std::option::Option::Some(input);
@@ -174,6 +202,10 @@ impl RelationalDatabaseBundleBuilder {
         self.is_encrypted = input;
         self
     }
+    /// <p>A Boolean value indicating whether the database bundle is encrypted.</p>
+    pub fn get_is_encrypted(&self) -> &::std::option::Option<bool> {
+        &self.is_encrypted
+    }
     /// <p>A Boolean value indicating whether the database bundle is active.</p>
     pub fn is_active(mut self, input: bool) -> Self {
         self.is_active = ::std::option::Option::Some(input);
@@ -183,6 +215,10 @@ impl RelationalDatabaseBundleBuilder {
     pub fn set_is_active(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_active = input;
         self
+    }
+    /// <p>A Boolean value indicating whether the database bundle is active.</p>
+    pub fn get_is_active(&self) -> &::std::option::Option<bool> {
+        &self.is_active
     }
     /// Consumes the builder and constructs a [`RelationalDatabaseBundle`](crate::types::RelationalDatabaseBundle).
     pub fn build(self) -> crate::types::RelationalDatabaseBundle {

@@ -53,6 +53,12 @@ impl ConformancePackComplianceScoresFiltersBuilder {
         self.conformance_pack_names = input;
         self
     }
+    /// <p>The names of the conformance packs whose compliance scores you want to include in the conformance pack compliance score result set. You can include up to 25 conformance packs in the <code>ConformancePackNames</code> array of strings, each with a character limit of 256 characters for the conformance pack name.</p>
+    pub fn get_conformance_pack_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.conformance_pack_names
+    }
     /// Consumes the builder and constructs a [`ConformancePackComplianceScoresFilters`](crate::types::ConformancePackComplianceScoresFilters).
     pub fn build(self) -> crate::types::ConformancePackComplianceScoresFilters {
         crate::types::ConformancePackComplianceScoresFilters {

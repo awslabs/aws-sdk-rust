@@ -74,6 +74,10 @@ impl GetContentModerationInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The identifier for the inappropriate, unwanted, or offensive content moderation job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetContentModeration</code>.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -84,6 +88,10 @@ impl GetContentModerationInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of content moderation labels.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -93,6 +101,10 @@ impl GetContentModerationInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of content moderation labels.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>Sort to use for elements in the <code>ModerationLabelDetections</code> array. Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected. Use <code>NAME</code> to alphabetically group elements for a label together. Within each label group, the array element are sorted by detection confidence. The default sort is by <code>TIMESTAMP</code>.</p>
     pub fn sort_by(mut self, input: crate::types::ContentModerationSortBy) -> Self {
@@ -107,6 +119,10 @@ impl GetContentModerationInputBuilder {
         self.sort_by = input;
         self
     }
+    /// <p>Sort to use for elements in the <code>ModerationLabelDetections</code> array. Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected. Use <code>NAME</code> to alphabetically group elements for a label together. Within each label group, the array element are sorted by detection confidence. The default sort is by <code>TIMESTAMP</code>.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ContentModerationSortBy> {
+        &self.sort_by
+    }
     /// <p>Defines how to aggregate results of the StartContentModeration request. Default aggregation option is TIMESTAMPS. SEGMENTS mode aggregates moderation labels over time.</p>
     pub fn aggregate_by(mut self, input: crate::types::ContentModerationAggregateBy) -> Self {
         self.aggregate_by = ::std::option::Option::Some(input);
@@ -119,6 +135,12 @@ impl GetContentModerationInputBuilder {
     ) -> Self {
         self.aggregate_by = input;
         self
+    }
+    /// <p>Defines how to aggregate results of the StartContentModeration request. Default aggregation option is TIMESTAMPS. SEGMENTS mode aggregates moderation labels over time.</p>
+    pub fn get_aggregate_by(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContentModerationAggregateBy> {
+        &self.aggregate_by
     }
     /// Consumes the builder and constructs a [`GetContentModerationInput`](crate::operation::get_content_moderation::GetContentModerationInput).
     pub fn build(

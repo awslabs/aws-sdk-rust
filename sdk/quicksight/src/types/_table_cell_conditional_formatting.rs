@@ -48,6 +48,10 @@ impl TableCellConditionalFormattingBuilder {
         self.field_id = input;
         self
     }
+    /// <p>The field ID of the cell for conditional formatting.</p>
+    pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_id
+    }
     /// <p>The text format of the cell for conditional formatting.</p>
     pub fn text_format(mut self, input: crate::types::TextConditionalFormat) -> Self {
         self.text_format = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl TableCellConditionalFormattingBuilder {
     ) -> Self {
         self.text_format = input;
         self
+    }
+    /// <p>The text format of the cell for conditional formatting.</p>
+    pub fn get_text_format(&self) -> &::std::option::Option<crate::types::TextConditionalFormat> {
+        &self.text_format
     }
     /// Consumes the builder and constructs a [`TableCellConditionalFormatting`](crate::types::TableCellConditionalFormatting).
     pub fn build(self) -> crate::types::TableCellConditionalFormatting {

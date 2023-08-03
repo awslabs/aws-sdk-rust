@@ -36,6 +36,10 @@ impl DescribePermissionSetProvisioningStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribePermissionSetProvisioningStatus as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_permission_set_provisioning_status::builders::DescribePermissionSetProvisioningStatusInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl DescribePermissionSetProvisioningStatusFluentBuilder {
         self.inner = self.inner.set_instance_arn(input);
         self
     }
+    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+    pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_arn()
+    }
     /// <p>The identifier that is provided by the <code>ProvisionPermissionSet</code> call to retrieve the current status of the provisioning workflow.</p>
     pub fn provision_permission_set_request_id(
         mut self,
@@ -115,5 +123,11 @@ impl DescribePermissionSetProvisioningStatusFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_provision_permission_set_request_id(input);
         self
+    }
+    /// <p>The identifier that is provided by the <code>ProvisionPermissionSet</code> call to retrieve the current status of the provisioning workflow.</p>
+    pub fn get_provision_permission_set_request_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_provision_permission_set_request_id()
     }
 }

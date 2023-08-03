@@ -46,6 +46,10 @@ impl GetByteMatchSetInputBuilder {
         self.byte_match_set_id = input;
         self
     }
+    /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to get. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
+    pub fn get_byte_match_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.byte_match_set_id
+    }
     /// Consumes the builder and constructs a [`GetByteMatchSetInput`](crate::operation::get_byte_match_set::GetByteMatchSetInput).
     pub fn build(
         self,

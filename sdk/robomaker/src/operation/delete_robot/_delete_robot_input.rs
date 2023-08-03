@@ -42,6 +42,10 @@ impl DeleteRobotInputBuilder {
         self.robot = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the robot.</p>
+    pub fn get_robot(&self) -> &::std::option::Option<::std::string::String> {
+        &self.robot
+    }
     /// Consumes the builder and constructs a [`DeleteRobotInput`](crate::operation::delete_robot::DeleteRobotInput).
     pub fn build(
         self,

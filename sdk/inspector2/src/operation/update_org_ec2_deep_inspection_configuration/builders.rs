@@ -36,6 +36,10 @@ impl UpdateOrgEc2DeepInspectionConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateOrgEc2DeepInspectionConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_org_ec2_deep_inspection_configuration::builders::UpdateOrgEc2DeepInspectionConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -109,5 +113,11 @@ impl UpdateOrgEc2DeepInspectionConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_org_package_paths(input);
         self
+    }
+    /// <p>The Amazon Inspector deep inspection custom paths you are adding for your organization.</p>
+    pub fn get_org_package_paths(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_org_package_paths()
     }
 }

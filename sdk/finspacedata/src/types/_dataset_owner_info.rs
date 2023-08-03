@@ -63,6 +63,10 @@ impl DatasetOwnerInfoBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the Dataset owner.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Phone number for the Dataset owner.</p>
     pub fn phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl DatasetOwnerInfoBuilder {
         self.phone_number = input;
         self
     }
+    /// <p>Phone number for the Dataset owner.</p>
+    pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number
+    }
     /// <p>Email address for the Dataset owner.</p>
     pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl DatasetOwnerInfoBuilder {
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email = input;
         self
+    }
+    /// <p>Email address for the Dataset owner.</p>
+    pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email
     }
     /// Consumes the builder and constructs a [`DatasetOwnerInfo`](crate::types::DatasetOwnerInfo).
     pub fn build(self) -> crate::types::DatasetOwnerInfo {

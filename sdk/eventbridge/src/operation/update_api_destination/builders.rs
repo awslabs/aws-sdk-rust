@@ -36,6 +36,12 @@ impl UpdateApiDestinationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateApiDestination as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_api_destination::builders::UpdateApiDestinationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl UpdateApiDestinationFluentBuilder {
         self
     }
     /// <p>The name of the API destination to update.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
+    /// <p>The name of the API destination to update.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
@@ -135,6 +145,10 @@ impl UpdateApiDestinationFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The name of the API destination to update.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The ARN of the connection to use for the API destination.</p>
     pub fn connection_arn(
@@ -152,6 +166,10 @@ impl UpdateApiDestinationFluentBuilder {
         self.inner = self.inner.set_connection_arn(input);
         self
     }
+    /// <p>The ARN of the connection to use for the API destination.</p>
+    pub fn get_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connection_arn()
+    }
     /// <p>The URL to the endpoint to use for the API destination.</p>
     pub fn invocation_endpoint(
         mut self,
@@ -168,6 +186,10 @@ impl UpdateApiDestinationFluentBuilder {
         self.inner = self.inner.set_invocation_endpoint(input);
         self
     }
+    /// <p>The URL to the endpoint to use for the API destination.</p>
+    pub fn get_invocation_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_invocation_endpoint()
+    }
     /// <p>The method to use for the API destination.</p>
     pub fn http_method(mut self, input: crate::types::ApiDestinationHttpMethod) -> Self {
         self.inner = self.inner.http_method(input);
@@ -181,6 +203,12 @@ impl UpdateApiDestinationFluentBuilder {
         self.inner = self.inner.set_http_method(input);
         self
     }
+    /// <p>The method to use for the API destination.</p>
+    pub fn get_http_method(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApiDestinationHttpMethod> {
+        self.inner.get_http_method()
+    }
     /// <p>The maximum number of invocations per second to send to the API destination.</p>
     pub fn invocation_rate_limit_per_second(mut self, input: i32) -> Self {
         self.inner = self.inner.invocation_rate_limit_per_second(input);
@@ -193,5 +221,9 @@ impl UpdateApiDestinationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_invocation_rate_limit_per_second(input);
         self
+    }
+    /// <p>The maximum number of invocations per second to send to the API destination.</p>
+    pub fn get_invocation_rate_limit_per_second(&self) -> &::std::option::Option<i32> {
+        self.inner.get_invocation_rate_limit_per_second()
     }
 }

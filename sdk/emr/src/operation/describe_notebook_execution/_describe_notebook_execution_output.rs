@@ -49,6 +49,12 @@ impl DescribeNotebookExecutionOutputBuilder {
         self.notebook_execution = input;
         self
     }
+    /// <p>Properties of the notebook execution.</p>
+    pub fn get_notebook_execution(
+        &self,
+    ) -> &::std::option::Option<crate::types::NotebookExecution> {
+        &self.notebook_execution
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -54,6 +54,10 @@ impl TenantBuilder {
         self.tenant_identifier = input;
         self
     }
+    /// <p>The ID of the application tenant.</p>
+    pub fn get_tenant_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tenant_identifier
+    }
     /// <p>The display name of the tenant.</p>
     pub fn tenant_display_name(
         mut self,
@@ -69,6 +73,10 @@ impl TenantBuilder {
     ) -> Self {
         self.tenant_display_name = input;
         self
+    }
+    /// <p>The display name of the tenant.</p>
+    pub fn get_tenant_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tenant_display_name
     }
     /// Consumes the builder and constructs a [`Tenant`](crate::types::Tenant).
     pub fn build(self) -> crate::types::Tenant {

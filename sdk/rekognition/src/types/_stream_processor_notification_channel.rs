@@ -48,6 +48,10 @@ impl StreamProcessorNotificationChannelBuilder {
         self.sns_topic_arn = input;
         self
     }
+    /// <p> The Amazon Resource Number (ARN) of the Amazon Amazon Simple Notification Service topic to which Amazon Rekognition posts the completion status. </p>
+    pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sns_topic_arn
+    }
     /// Consumes the builder and constructs a [`StreamProcessorNotificationChannel`](crate::types::StreamProcessorNotificationChannel).
     pub fn build(self) -> crate::types::StreamProcessorNotificationChannel {
         crate::types::StreamProcessorNotificationChannel {

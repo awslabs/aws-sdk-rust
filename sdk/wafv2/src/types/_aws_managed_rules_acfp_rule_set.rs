@@ -96,6 +96,11 @@ impl AwsManagedRulesAcfpRuleSetBuilder {
         self.creation_path = input;
         self
     }
+    /// <p>The path of the account creation endpoint for your application. This is the page on your website that accepts the completed registration form for a new user. This page must accept <code>POST</code> requests.</p>
+    /// <p>For example, for the URL <code>https://example.com/web/signup</code>, you would provide the path <code>/web/signup</code>.</p>
+    pub fn get_creation_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_path
+    }
     /// <p>The path of the account registration endpoint for your application. This is the page on your website that presents the registration form to new users. </p> <note>
     /// <p>This page must accept <code>GET</code> text/html requests.</p>
     /// </note>
@@ -118,6 +123,13 @@ impl AwsManagedRulesAcfpRuleSetBuilder {
         self.registration_page_path = input;
         self
     }
+    /// <p>The path of the account registration endpoint for your application. This is the page on your website that presents the registration form to new users. </p> <note>
+    /// <p>This page must accept <code>GET</code> text/html requests.</p>
+    /// </note>
+    /// <p>For example, for the URL <code>https://example.com/web/register</code>, you would provide the path <code>/web/register</code>.</p>
+    pub fn get_registration_page_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registration_page_path
+    }
     /// <p>The criteria for inspecting account creation requests, used by the ACFP rule group to validate and track account creation attempts. </p>
     pub fn request_inspection(mut self, input: crate::types::RequestInspectionAcfp) -> Self {
         self.request_inspection = ::std::option::Option::Some(input);
@@ -130,6 +142,12 @@ impl AwsManagedRulesAcfpRuleSetBuilder {
     ) -> Self {
         self.request_inspection = input;
         self
+    }
+    /// <p>The criteria for inspecting account creation requests, used by the ACFP rule group to validate and track account creation attempts. </p>
+    pub fn get_request_inspection(
+        &self,
+    ) -> &::std::option::Option<crate::types::RequestInspectionAcfp> {
+        &self.request_inspection
     }
     /// <p>The criteria for inspecting responses to account creation requests, used by the ACFP rule group to track account creation success rates. </p> <note>
     /// <p>Response inspection is available only in web ACLs that protect Amazon CloudFront distributions.</p>
@@ -150,6 +168,15 @@ impl AwsManagedRulesAcfpRuleSetBuilder {
         self.response_inspection = input;
         self
     }
+    /// <p>The criteria for inspecting responses to account creation requests, used by the ACFP rule group to track account creation success rates. </p> <note>
+    /// <p>Response inspection is available only in web ACLs that protect Amazon CloudFront distributions.</p>
+    /// </note>
+    /// <p>The ACFP rule group evaluates the responses that your protected resources send back to client account creation attempts, keeping count of successful and failed attempts from each IP address and client session. Using this information, the rule group labels and mitigates requests from client sessions and IP addresses that have had too many successful account creation attempts in a short amount of time. </p>
+    pub fn get_response_inspection(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResponseInspection> {
+        &self.response_inspection
+    }
     /// <p>Allow the use of regular expressions in the registration page path and the account creation path. </p>
     pub fn enable_regex_in_path(mut self, input: bool) -> Self {
         self.enable_regex_in_path = ::std::option::Option::Some(input);
@@ -159,6 +186,10 @@ impl AwsManagedRulesAcfpRuleSetBuilder {
     pub fn set_enable_regex_in_path(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_regex_in_path = input;
         self
+    }
+    /// <p>Allow the use of regular expressions in the registration page path and the account creation path. </p>
+    pub fn get_enable_regex_in_path(&self) -> &::std::option::Option<bool> {
+        &self.enable_regex_in_path
     }
     /// Consumes the builder and constructs a [`AwsManagedRulesAcfpRuleSet`](crate::types::AwsManagedRulesAcfpRuleSet).
     pub fn build(self) -> crate::types::AwsManagedRulesAcfpRuleSet {

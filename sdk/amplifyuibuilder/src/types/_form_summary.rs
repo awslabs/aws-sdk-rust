@@ -80,6 +80,10 @@ impl FormSummaryBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The unique ID for the app associated with the form summary.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p>The form's data source type.</p>
     pub fn data_type(mut self, input: crate::types::FormDataTypeConfig) -> Self {
         self.data_type = ::std::option::Option::Some(input);
@@ -92,6 +96,10 @@ impl FormSummaryBuilder {
     ) -> Self {
         self.data_type = input;
         self
+    }
+    /// <p>The form's data source type.</p>
+    pub fn get_data_type(&self) -> &::std::option::Option<crate::types::FormDataTypeConfig> {
+        &self.data_type
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
     pub fn environment_name(
@@ -109,6 +117,10 @@ impl FormSummaryBuilder {
         self.environment_name = input;
         self
     }
+    /// <p>The name of the backend environment that is part of the Amplify app.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
+    }
     /// <p>The type of operation to perform on the form.</p>
     pub fn form_action_type(mut self, input: crate::types::FormActionType) -> Self {
         self.form_action_type = ::std::option::Option::Some(input);
@@ -122,6 +134,10 @@ impl FormSummaryBuilder {
         self.form_action_type = input;
         self
     }
+    /// <p>The type of operation to perform on the form.</p>
+    pub fn get_form_action_type(&self) -> &::std::option::Option<crate::types::FormActionType> {
+        &self.form_action_type
+    }
     /// <p>The ID of the form.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -132,6 +148,10 @@ impl FormSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the form.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the form.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -141,6 +161,10 @@ impl FormSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the form.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`FormSummary`](crate::types::FormSummary).
     pub fn build(self) -> crate::types::FormSummary {

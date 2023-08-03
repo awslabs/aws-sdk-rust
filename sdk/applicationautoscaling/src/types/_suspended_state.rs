@@ -56,6 +56,10 @@ impl SuspendedStateBuilder {
         self.dynamic_scaling_in_suspended = input;
         self
     }
+    /// <p>Whether scale in by a target tracking scaling policy or a step scaling policy is suspended. Set the value to <code>true</code> if you don't want Application Auto Scaling to remove capacity when a scaling policy is triggered. The default is <code>false</code>. </p>
+    pub fn get_dynamic_scaling_in_suspended(&self) -> &::std::option::Option<bool> {
+        &self.dynamic_scaling_in_suspended
+    }
     /// <p>Whether scale out by a target tracking scaling policy or a step scaling policy is suspended. Set the value to <code>true</code> if you don't want Application Auto Scaling to add capacity when a scaling policy is triggered. The default is <code>false</code>. </p>
     pub fn dynamic_scaling_out_suspended(mut self, input: bool) -> Self {
         self.dynamic_scaling_out_suspended = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl SuspendedStateBuilder {
         self.dynamic_scaling_out_suspended = input;
         self
     }
+    /// <p>Whether scale out by a target tracking scaling policy or a step scaling policy is suspended. Set the value to <code>true</code> if you don't want Application Auto Scaling to add capacity when a scaling policy is triggered. The default is <code>false</code>. </p>
+    pub fn get_dynamic_scaling_out_suspended(&self) -> &::std::option::Option<bool> {
+        &self.dynamic_scaling_out_suspended
+    }
     /// <p>Whether scheduled scaling is suspended. Set the value to <code>true</code> if you don't want Application Auto Scaling to add or remove capacity by initiating scheduled actions. The default is <code>false</code>. </p>
     pub fn scheduled_scaling_suspended(mut self, input: bool) -> Self {
         self.scheduled_scaling_suspended = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl SuspendedStateBuilder {
     pub fn set_scheduled_scaling_suspended(mut self, input: ::std::option::Option<bool>) -> Self {
         self.scheduled_scaling_suspended = input;
         self
+    }
+    /// <p>Whether scheduled scaling is suspended. Set the value to <code>true</code> if you don't want Application Auto Scaling to add or remove capacity by initiating scheduled actions. The default is <code>false</code>. </p>
+    pub fn get_scheduled_scaling_suspended(&self) -> &::std::option::Option<bool> {
+        &self.scheduled_scaling_suspended
     }
     /// Consumes the builder and constructs a [`SuspendedState`](crate::types::SuspendedState).
     pub fn build(self) -> crate::types::SuspendedState {

@@ -45,6 +45,10 @@ impl DeleteAnomalySubscriptionInputBuilder {
         self.subscription_arn = input;
         self
     }
+    /// <p>The unique identifier of the cost anomaly subscription that you want to delete. </p>
+    pub fn get_subscription_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscription_arn
+    }
     /// Consumes the builder and constructs a [`DeleteAnomalySubscriptionInput`](crate::operation::delete_anomaly_subscription::DeleteAnomalySubscriptionInput).
     pub fn build(
         self,

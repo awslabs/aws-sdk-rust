@@ -68,6 +68,12 @@ impl ListLabelingJobsOutputBuilder {
         self.labeling_job_summary_list = input;
         self
     }
+    /// <p>An array of <code>LabelingJobSummary</code> objects, each describing a labeling job.</p>
+    pub fn get_labeling_job_summary_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LabelingJobSummary>> {
+        &self.labeling_job_summary_list
+    }
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of labeling jobs, use it in the subsequent request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -77,6 +83,10 @@ impl ListLabelingJobsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of labeling jobs, use it in the subsequent request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -60,6 +60,12 @@ impl DescribeComponentOutputBuilder {
         self.application_component = input;
         self
     }
+    /// <p>Describes a standalone resource or similarly grouped resources that the application is made up of.</p>
+    pub fn get_application_component(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationComponent> {
+        &self.application_component
+    }
     /// Appends an item to `resource_list`.
     ///
     /// To override the contents of this collection use [`set_resource_list`](Self::set_resource_list).
@@ -81,6 +87,12 @@ impl DescribeComponentOutputBuilder {
     ) -> Self {
         self.resource_list = input;
         self
+    }
+    /// <p>The list of resource ARNs that belong to the component.</p>
+    pub fn get_resource_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

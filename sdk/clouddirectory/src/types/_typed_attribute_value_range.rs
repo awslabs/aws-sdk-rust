@@ -64,6 +64,10 @@ impl TypedAttributeValueRangeBuilder {
         self.start_mode = input;
         self
     }
+    /// <p>The inclusive or exclusive range start.</p>
+    pub fn get_start_mode(&self) -> &::std::option::Option<crate::types::RangeMode> {
+        &self.start_mode
+    }
     /// <p>The value to start the range at.</p>
     pub fn start_value(mut self, input: crate::types::TypedAttributeValue) -> Self {
         self.start_value = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl TypedAttributeValueRangeBuilder {
         self.start_value = input;
         self
     }
+    /// <p>The value to start the range at.</p>
+    pub fn get_start_value(&self) -> &::std::option::Option<crate::types::TypedAttributeValue> {
+        &self.start_value
+    }
     /// <p>The inclusive or exclusive range end.</p>
     pub fn end_mode(mut self, input: crate::types::RangeMode) -> Self {
         self.end_mode = ::std::option::Option::Some(input);
@@ -86,6 +94,10 @@ impl TypedAttributeValueRangeBuilder {
     pub fn set_end_mode(mut self, input: ::std::option::Option<crate::types::RangeMode>) -> Self {
         self.end_mode = input;
         self
+    }
+    /// <p>The inclusive or exclusive range end.</p>
+    pub fn get_end_mode(&self) -> &::std::option::Option<crate::types::RangeMode> {
+        &self.end_mode
     }
     /// <p>The attribute value to terminate the range at.</p>
     pub fn end_value(mut self, input: crate::types::TypedAttributeValue) -> Self {
@@ -99,6 +111,10 @@ impl TypedAttributeValueRangeBuilder {
     ) -> Self {
         self.end_value = input;
         self
+    }
+    /// <p>The attribute value to terminate the range at.</p>
+    pub fn get_end_value(&self) -> &::std::option::Option<crate::types::TypedAttributeValue> {
+        &self.end_value
     }
     /// Consumes the builder and constructs a [`TypedAttributeValueRange`](crate::types::TypedAttributeValueRange).
     pub fn build(self) -> crate::types::TypedAttributeValueRange {

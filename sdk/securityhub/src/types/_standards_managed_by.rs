@@ -48,6 +48,10 @@ impl StandardsManagedByBuilder {
         self.company = input;
         self
     }
+    /// <p>An identifier for the company that manages a specific security standard. For existing standards, the value is equal to <code>Amazon Web Services</code>.</p>
+    pub fn get_company(&self) -> &::std::option::Option<::std::string::String> {
+        &self.company
+    }
     /// <p>An identifier for the product that manages a specific security standard. For existing standards, the value is equal to the Amazon Web Services service that manages the standard.</p>
     pub fn product(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl StandardsManagedByBuilder {
     pub fn set_product(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product = input;
         self
+    }
+    /// <p>An identifier for the product that manages a specific security standard. For existing standards, the value is equal to the Amazon Web Services service that manages the standard.</p>
+    pub fn get_product(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product
     }
     /// Consumes the builder and constructs a [`StandardsManagedBy`](crate::types::StandardsManagedBy).
     pub fn build(self) -> crate::types::StandardsManagedBy {

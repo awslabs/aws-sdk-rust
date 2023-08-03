@@ -56,6 +56,10 @@ impl UserPendingChangesBuilder {
         self.console_access = input;
         self
     }
+    /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
+    pub fn get_console_access(&self) -> &::std::option::Option<bool> {
+        &self.console_access
+    }
     /// Appends an item to `groups`.
     ///
     /// To override the contents of this collection use [`set_groups`](Self::set_groups).
@@ -75,6 +79,10 @@ impl UserPendingChangesBuilder {
         self.groups = input;
         self
     }
+    /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.groups
+    }
     /// <p>Required. The type of change pending for the ActiveMQ user.</p>
     pub fn pending_change(mut self, input: crate::types::ChangeType) -> Self {
         self.pending_change = ::std::option::Option::Some(input);
@@ -87,6 +95,10 @@ impl UserPendingChangesBuilder {
     ) -> Self {
         self.pending_change = input;
         self
+    }
+    /// <p>Required. The type of change pending for the ActiveMQ user.</p>
+    pub fn get_pending_change(&self) -> &::std::option::Option<crate::types::ChangeType> {
+        &self.pending_change
     }
     /// Consumes the builder and constructs a [`UserPendingChanges`](crate::types::UserPendingChanges).
     pub fn build(self) -> crate::types::UserPendingChanges {

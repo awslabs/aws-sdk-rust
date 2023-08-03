@@ -67,6 +67,14 @@ impl BatchDisassociateClientDeviceFromCoreDeviceInputBuilder {
         self.entries = input;
         self
     }
+    /// <p>The list of client devices to disassociate.</p>
+    pub fn get_entries(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::DisassociateClientDeviceFromCoreDeviceEntry>,
+    > {
+        &self.entries
+    }
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
     pub fn core_device_thing_name(
         mut self,
@@ -82,6 +90,10 @@ impl BatchDisassociateClientDeviceFromCoreDeviceInputBuilder {
     ) -> Self {
         self.core_device_thing_name = input;
         self
+    }
+    /// <p>The name of the core device. This is also the name of the IoT thing.</p>
+    pub fn get_core_device_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_device_thing_name
     }
     /// Consumes the builder and constructs a [`BatchDisassociateClientDeviceFromCoreDeviceInput`](crate::operation::batch_disassociate_client_device_from_core_device::BatchDisassociateClientDeviceFromCoreDeviceInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::batch_disassociate_client_device_from_core_device::BatchDisassociateClientDeviceFromCoreDeviceInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -47,6 +47,10 @@ impl DeleteHealthCheckInputBuilder {
         self.health_check_id = input;
         self
     }
+    /// <p>The ID of the health check that you want to delete.</p>
+    pub fn get_health_check_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.health_check_id
+    }
     /// Consumes the builder and constructs a [`DeleteHealthCheckInput`](crate::operation::delete_health_check::DeleteHealthCheckInput).
     pub fn build(
         self,

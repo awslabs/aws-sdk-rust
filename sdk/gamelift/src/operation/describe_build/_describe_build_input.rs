@@ -39,6 +39,10 @@ impl DescribeBuildInputBuilder {
         self.build_id = input;
         self
     }
+    /// <p>A unique identifier for the build to retrieve properties for. You can use either the build ID or ARN value. </p>
+    pub fn get_build_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.build_id
+    }
     /// Consumes the builder and constructs a [`DescribeBuildInput`](crate::operation::describe_build::DescribeBuildInput).
     pub fn build(
         self,

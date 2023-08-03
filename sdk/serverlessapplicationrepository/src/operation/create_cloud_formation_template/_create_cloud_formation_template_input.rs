@@ -55,6 +55,10 @@ impl CreateCloudFormationTemplateInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The semantic version of the application:</p>
     /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
     pub fn semantic_version(
@@ -72,6 +76,11 @@ impl CreateCloudFormationTemplateInputBuilder {
     ) -> Self {
         self.semantic_version = input;
         self
+    }
+    /// <p>The semantic version of the application:</p>
+    /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
+    pub fn get_semantic_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.semantic_version
     }
     /// Consumes the builder and constructs a [`CreateCloudFormationTemplateInput`](crate::operation::create_cloud_formation_template::CreateCloudFormationTemplateInput).
     pub fn build(

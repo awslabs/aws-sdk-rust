@@ -51,6 +51,10 @@ impl UplinkSpectrumConfigBuilder {
         self.center_frequency = input;
         self
     }
+    /// <p>Center frequency of an uplink spectral <code>Config</code>. Valid values are between 2025 to 2120 MHz.</p>
+    pub fn get_center_frequency(&self) -> &::std::option::Option<crate::types::Frequency> {
+        &self.center_frequency
+    }
     /// <p>Polarization of an uplink spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and <code>"LEFT_HAND"</code> polarization requires two separate configs.</p>
     pub fn polarization(mut self, input: crate::types::Polarization) -> Self {
         self.polarization = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl UplinkSpectrumConfigBuilder {
     ) -> Self {
         self.polarization = input;
         self
+    }
+    /// <p>Polarization of an uplink spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and <code>"LEFT_HAND"</code> polarization requires two separate configs.</p>
+    pub fn get_polarization(&self) -> &::std::option::Option<crate::types::Polarization> {
+        &self.polarization
     }
     /// Consumes the builder and constructs a [`UplinkSpectrumConfig`](crate::types::UplinkSpectrumConfig).
     pub fn build(self) -> crate::types::UplinkSpectrumConfig {

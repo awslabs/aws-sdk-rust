@@ -45,6 +45,12 @@ impl SseConfigurationBuilder {
         self.kms_encryption_config = input;
         self
     }
+    /// <p> The KMS encryption configuration used to provide details for data encryption. </p>
+    pub fn get_kms_encryption_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::KmsEncryptionConfig> {
+        &self.kms_encryption_config
+    }
     /// Consumes the builder and constructs a [`SseConfiguration`](crate::types::SseConfiguration).
     pub fn build(self) -> crate::types::SseConfiguration {
         crate::types::SseConfiguration {

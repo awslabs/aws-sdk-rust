@@ -40,6 +40,10 @@ impl PagerDutyIncidentConfigurationBuilder {
         self.service_id = input;
         self
     }
+    /// <p>The ID of the PagerDuty service that the response plan associates with an incident when it launches.</p>
+    pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_id
+    }
     /// Consumes the builder and constructs a [`PagerDutyIncidentConfiguration`](crate::types::PagerDutyIncidentConfiguration).
     pub fn build(self) -> crate::types::PagerDutyIncidentConfiguration {
         crate::types::PagerDutyIncidentConfiguration {

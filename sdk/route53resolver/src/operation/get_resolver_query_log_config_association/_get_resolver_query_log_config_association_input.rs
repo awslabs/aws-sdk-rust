@@ -46,6 +46,12 @@ impl GetResolverQueryLogConfigAssociationInputBuilder {
         self.resolver_query_log_config_association_id = input;
         self
     }
+    /// <p>The ID of the Resolver query logging configuration association that you want to get information about.</p>
+    pub fn get_resolver_query_log_config_association_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.resolver_query_log_config_association_id
+    }
     /// Consumes the builder and constructs a [`GetResolverQueryLogConfigAssociationInput`](crate::operation::get_resolver_query_log_config_association::GetResolverQueryLogConfigAssociationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_resolver_query_log_config_association::GetResolverQueryLogConfigAssociationInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

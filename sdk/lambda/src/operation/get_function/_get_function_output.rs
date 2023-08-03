@@ -81,6 +81,10 @@ impl GetFunctionOutputBuilder {
         self.configuration = input;
         self
     }
+    /// <p>The configuration of the function or version.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::FunctionConfiguration> {
+        &self.configuration
+    }
     /// <p>The deployment package of the function or version.</p>
     pub fn code(mut self, input: crate::types::FunctionCodeLocation) -> Self {
         self.code = ::std::option::Option::Some(input);
@@ -93,6 +97,10 @@ impl GetFunctionOutputBuilder {
     ) -> Self {
         self.code = input;
         self
+    }
+    /// <p>The deployment package of the function or version.</p>
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::FunctionCodeLocation> {
+        &self.code
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -119,6 +127,14 @@ impl GetFunctionOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved concurrency</a>.</p>
     pub fn concurrency(mut self, input: crate::types::Concurrency) -> Self {
         self.concurrency = ::std::option::Option::Some(input);
@@ -131,6 +147,10 @@ impl GetFunctionOutputBuilder {
     ) -> Self {
         self.concurrency = input;
         self
+    }
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved concurrency</a>.</p>
+    pub fn get_concurrency(&self) -> &::std::option::Option<crate::types::Concurrency> {
+        &self.concurrency
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

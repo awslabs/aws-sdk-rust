@@ -50,6 +50,10 @@ impl AvailabilityZoneBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the availability zone.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `supported_platforms`.
     ///
     /// To override the contents of this collection use [`set_supported_platforms`](Self::set_supported_platforms).
@@ -68,6 +72,12 @@ impl AvailabilityZoneBuilder {
     ) -> Self {
         self.supported_platforms = input;
         self
+    }
+    /// <p></p>
+    pub fn get_supported_platforms(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportedPlatform>> {
+        &self.supported_platforms
     }
     /// Consumes the builder and constructs a [`AvailabilityZone`](crate::types::AvailabilityZone).
     pub fn build(self) -> crate::types::AvailabilityZone {

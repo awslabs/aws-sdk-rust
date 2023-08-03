@@ -63,6 +63,12 @@ impl CancelReservedInstancesListingOutputBuilder {
         self.reserved_instances_listings = input;
         self
     }
+    /// <p>The Reserved Instance listing.</p>
+    pub fn get_reserved_instances_listings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesListing>> {
+        &self.reserved_instances_listings
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

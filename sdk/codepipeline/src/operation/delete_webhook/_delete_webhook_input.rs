@@ -39,6 +39,10 @@ impl DeleteWebhookInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the webhook you want to delete.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeleteWebhookInput`](crate::operation::delete_webhook::DeleteWebhookInput).
     pub fn build(
         self,

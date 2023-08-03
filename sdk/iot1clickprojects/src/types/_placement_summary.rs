@@ -64,6 +64,10 @@ impl PlacementSummaryBuilder {
         self.project_name = input;
         self
     }
+    /// <p>The name of the project containing the placement.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
+    }
     /// <p>The name of the placement being summarized.</p>
     pub fn placement_name(
         mut self,
@@ -80,6 +84,10 @@ impl PlacementSummaryBuilder {
         self.placement_name = input;
         self
     }
+    /// <p>The name of the placement being summarized.</p>
+    pub fn get_placement_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.placement_name
+    }
     /// <p>The date when the placement was originally created, in UNIX epoch time format.</p>
     pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_date = ::std::option::Option::Some(input);
@@ -93,6 +101,10 @@ impl PlacementSummaryBuilder {
         self.created_date = input;
         self
     }
+    /// <p>The date when the placement was originally created, in UNIX epoch time format.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_date
+    }
     /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
     pub fn updated_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_date = ::std::option::Option::Some(input);
@@ -105,6 +117,10 @@ impl PlacementSummaryBuilder {
     ) -> Self {
         self.updated_date = input;
         self
+    }
+    /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
+    pub fn get_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_date
     }
     /// Consumes the builder and constructs a [`PlacementSummary`](crate::types::PlacementSummary).
     pub fn build(self) -> crate::types::PlacementSummary {

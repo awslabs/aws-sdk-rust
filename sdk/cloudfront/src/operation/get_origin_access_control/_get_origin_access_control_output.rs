@@ -61,6 +61,12 @@ impl GetOriginAccessControlOutputBuilder {
         self.origin_access_control = input;
         self
     }
+    /// <p>Contains an origin access control, including its unique identifier.</p>
+    pub fn get_origin_access_control(
+        &self,
+    ) -> &::std::option::Option<crate::types::OriginAccessControl> {
+        &self.origin_access_control
+    }
     /// <p>The version identifier for the current version of the origin access control.</p>
     pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.e_tag = ::std::option::Option::Some(input.into());
@@ -70,6 +76,10 @@ impl GetOriginAccessControlOutputBuilder {
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.e_tag = input;
         self
+    }
+    /// <p>The version identifier for the current version of the origin access control.</p>
+    pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.e_tag
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

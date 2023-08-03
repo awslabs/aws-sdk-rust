@@ -65,6 +65,10 @@ impl UpdateFlywheelInputBuilder {
         self.flywheel_arn = input;
         self
     }
+    /// <p>The Amazon Resource Number (ARN) of the flywheel to update.</p>
+    pub fn get_flywheel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flywheel_arn
+    }
     /// <p>The Amazon Resource Number (ARN) of the active model version.</p>
     pub fn active_model_arn(
         mut self,
@@ -80,6 +84,10 @@ impl UpdateFlywheelInputBuilder {
     ) -> Self {
         self.active_model_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Number (ARN) of the active model version.</p>
+    pub fn get_active_model_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.active_model_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend permission to access the flywheel data.</p>
     pub fn data_access_role_arn(
@@ -97,6 +105,10 @@ impl UpdateFlywheelInputBuilder {
         self.data_access_role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend permission to access the flywheel data.</p>
+    pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_access_role_arn
+    }
     /// <p>Flywheel data security configuration.</p>
     pub fn data_security_config(mut self, input: crate::types::UpdateDataSecurityConfig) -> Self {
         self.data_security_config = ::std::option::Option::Some(input);
@@ -109,6 +121,12 @@ impl UpdateFlywheelInputBuilder {
     ) -> Self {
         self.data_security_config = input;
         self
+    }
+    /// <p>Flywheel data security configuration.</p>
+    pub fn get_data_security_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateDataSecurityConfig> {
+        &self.data_security_config
     }
     /// Consumes the builder and constructs a [`UpdateFlywheelInput`](crate::operation::update_flywheel::UpdateFlywheelInput).
     pub fn build(

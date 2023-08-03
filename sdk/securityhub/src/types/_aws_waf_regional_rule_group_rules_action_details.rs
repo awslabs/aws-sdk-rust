@@ -40,6 +40,10 @@ impl AwsWafRegionalRuleGroupRulesActionDetailsBuilder {
         self.r#type = input;
         self
     }
+    /// <p>Specifies the <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, and <code>SizeConstraintSet</code> objects that you want to add to a rule and, for each object, indicates whether you want to negate the settings.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// Consumes the builder and constructs a [`AwsWafRegionalRuleGroupRulesActionDetails`](crate::types::AwsWafRegionalRuleGroupRulesActionDetails).
     pub fn build(self) -> crate::types::AwsWafRegionalRuleGroupRulesActionDetails {
         crate::types::AwsWafRegionalRuleGroupRulesActionDetails {

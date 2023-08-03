@@ -62,6 +62,10 @@ impl TestSetStorageLocationBuilder {
         self.s3_bucket_name = input;
         self
     }
+    /// <p>The name of the Amazon S3 bucket in which the test set is stored.</p>
+    pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_name
+    }
     /// <p>The path inside the Amazon S3 bucket where the test set is stored.</p>
     pub fn s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_path = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl TestSetStorageLocationBuilder {
         self.s3_path = input;
         self
     }
+    /// <p>The path inside the Amazon S3 bucket where the test set is stored.</p>
+    pub fn get_s3_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_path
+    }
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services Key Management Service (KMS) key for encrypting the test set.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_arn = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl TestSetStorageLocationBuilder {
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services Key Management Service (KMS) key for encrypting the test set.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
     }
     /// Consumes the builder and constructs a [`TestSetStorageLocation`](crate::types::TestSetStorageLocation).
     pub fn build(self) -> crate::types::TestSetStorageLocation {

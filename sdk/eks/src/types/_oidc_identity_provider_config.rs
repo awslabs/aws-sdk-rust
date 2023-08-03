@@ -150,6 +150,12 @@ impl OidcIdentityProviderConfigBuilder {
         self.identity_provider_config_name = input;
         self
     }
+    /// <p>The name of the configuration.</p>
+    pub fn get_identity_provider_config_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.identity_provider_config_name
+    }
     /// <p>The ARN of the configuration.</p>
     pub fn identity_provider_config_arn(
         mut self,
@@ -166,6 +172,12 @@ impl OidcIdentityProviderConfigBuilder {
         self.identity_provider_config_arn = input;
         self
     }
+    /// <p>The ARN of the configuration.</p>
+    pub fn get_identity_provider_config_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.identity_provider_config_arn
+    }
     /// <p>The cluster that the configuration is associated to.</p>
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
@@ -175,6 +187,10 @@ impl OidcIdentityProviderConfigBuilder {
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_name = input;
         self
+    }
+    /// <p>The cluster that the configuration is associated to.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_name
     }
     /// <p>The URL of the OIDC identity provider that allows the API server to discover public signing keys for verifying tokens.</p>
     pub fn issuer_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -186,6 +202,10 @@ impl OidcIdentityProviderConfigBuilder {
         self.issuer_url = input;
         self
     }
+    /// <p>The URL of the OIDC identity provider that allows the API server to discover public signing keys for verifying tokens.</p>
+    pub fn get_issuer_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.issuer_url
+    }
     /// <p>This is also known as <i>audience</i>. The ID of the client application that makes authentication requests to the OIDC identity provider.</p>
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
@@ -195,6 +215,10 @@ impl OidcIdentityProviderConfigBuilder {
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_id = input;
         self
+    }
+    /// <p>This is also known as <i>audience</i>. The ID of the client application that makes authentication requests to the OIDC identity provider.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_id
     }
     /// <p>The JSON Web token (JWT) claim that is used as the username.</p>
     pub fn username_claim(
@@ -212,6 +236,10 @@ impl OidcIdentityProviderConfigBuilder {
         self.username_claim = input;
         self
     }
+    /// <p>The JSON Web token (JWT) claim that is used as the username.</p>
+    pub fn get_username_claim(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username_claim
+    }
     /// <p>The prefix that is prepended to username claims to prevent clashes with existing names. The prefix can't contain <code>system:</code> </p>
     pub fn username_prefix(
         mut self,
@@ -228,6 +256,10 @@ impl OidcIdentityProviderConfigBuilder {
         self.username_prefix = input;
         self
     }
+    /// <p>The prefix that is prepended to username claims to prevent clashes with existing names. The prefix can't contain <code>system:</code> </p>
+    pub fn get_username_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username_prefix
+    }
     /// <p>The JSON web token (JWT) claim that the provider uses to return your groups.</p>
     pub fn groups_claim(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.groups_claim = ::std::option::Option::Some(input.into());
@@ -237,6 +269,10 @@ impl OidcIdentityProviderConfigBuilder {
     pub fn set_groups_claim(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.groups_claim = input;
         self
+    }
+    /// <p>The JSON web token (JWT) claim that the provider uses to return your groups.</p>
+    pub fn get_groups_claim(&self) -> &::std::option::Option<::std::string::String> {
+        &self.groups_claim
     }
     /// <p>The prefix that is prepended to group claims to prevent clashes with existing names (such as <code>system:</code> groups). For example, the value<code> oidc:</code> creates group names like <code>oidc:engineering</code> and <code>oidc:infra</code>. The prefix can't contain <code>system:</code> </p>
     pub fn groups_prefix(
@@ -253,6 +289,10 @@ impl OidcIdentityProviderConfigBuilder {
     ) -> Self {
         self.groups_prefix = input;
         self
+    }
+    /// <p>The prefix that is prepended to group claims to prevent clashes with existing names (such as <code>system:</code> groups). For example, the value<code> oidc:</code> creates group names like <code>oidc:engineering</code> and <code>oidc:infra</code>. The prefix can't contain <code>system:</code> </p>
+    pub fn get_groups_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.groups_prefix
     }
     /// Adds a key-value pair to `required_claims`.
     ///
@@ -279,6 +319,14 @@ impl OidcIdentityProviderConfigBuilder {
         self.required_claims = input;
         self
     }
+    /// <p>The key-value pairs that describe required claims in the identity token. If set, each claim is verified to be present in the token with a matching value.</p>
+    pub fn get_required_claims(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.required_claims
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -304,6 +352,14 @@ impl OidcIdentityProviderConfigBuilder {
         self.tags = input;
         self
     }
+    /// <p>The metadata to apply to the provider configuration to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The status of the OIDC identity provider.</p>
     pub fn status(mut self, input: crate::types::ConfigStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -313,6 +369,10 @@ impl OidcIdentityProviderConfigBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ConfigStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the OIDC identity provider.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ConfigStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`OidcIdentityProviderConfig`](crate::types::OidcIdentityProviderConfig).
     pub fn build(self) -> crate::types::OidcIdentityProviderConfig {

@@ -86,6 +86,14 @@ impl DescribeInstancesHealthOutputBuilder {
         self.instance_health_list = input;
         self
     }
+    /// <p>Detailed health information about each instance.</p>
+    /// <p>The output differs slightly between Linux and Windows environments. There is a difference in the members that are supported under the <code>
+    /// <cpuutilization></cpuutilization></code> type.</p>
+    pub fn get_instance_health_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SingleInstanceHealth>> {
+        &self.instance_health_list
+    }
     /// <p>The date and time that the health information was retrieved.</p>
     pub fn refreshed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.refreshed_at = ::std::option::Option::Some(input);
@@ -99,6 +107,10 @@ impl DescribeInstancesHealthOutputBuilder {
         self.refreshed_at = input;
         self
     }
+    /// <p>The date and time that the health information was retrieved.</p>
+    pub fn get_refreshed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.refreshed_at
+    }
     /// <p>Pagination token for the next page of results, if available.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -108,6 +120,10 @@ impl DescribeInstancesHealthOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Pagination token for the next page of results, if available.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -171,6 +171,10 @@ impl UserBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the user.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The login name of the user.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
@@ -180,6 +184,10 @@ impl UserBuilder {
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
+    }
+    /// <p>The login name of the user.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
     }
     /// <p>The email address of the user.</p>
     pub fn email_address(
@@ -197,6 +205,10 @@ impl UserBuilder {
         self.email_address = input;
         self
     }
+    /// <p>The email address of the user.</p>
+    pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_address
+    }
     /// <p>The given name of the user.</p>
     pub fn given_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.given_name = ::std::option::Option::Some(input.into());
@@ -207,6 +219,10 @@ impl UserBuilder {
         self.given_name = input;
         self
     }
+    /// <p>The given name of the user.</p>
+    pub fn get_given_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.given_name
+    }
     /// <p>The surname of the user.</p>
     pub fn surname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.surname = ::std::option::Option::Some(input.into());
@@ -216,6 +232,10 @@ impl UserBuilder {
     pub fn set_surname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.surname = input;
         self
+    }
+    /// <p>The surname of the user.</p>
+    pub fn get_surname(&self) -> &::std::option::Option<::std::string::String> {
+        &self.surname
     }
     /// <p>The ID of the organization.</p>
     pub fn organization_id(
@@ -233,6 +253,10 @@ impl UserBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The ID of the organization.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>The ID of the root folder.</p>
     pub fn root_folder_id(
         mut self,
@@ -248,6 +272,10 @@ impl UserBuilder {
     ) -> Self {
         self.root_folder_id = input;
         self
+    }
+    /// <p>The ID of the root folder.</p>
+    pub fn get_root_folder_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.root_folder_id
     }
     /// <p>The ID of the recycle bin folder.</p>
     pub fn recycle_bin_folder_id(
@@ -265,6 +293,10 @@ impl UserBuilder {
         self.recycle_bin_folder_id = input;
         self
     }
+    /// <p>The ID of the recycle bin folder.</p>
+    pub fn get_recycle_bin_folder_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recycle_bin_folder_id
+    }
     /// <p>The status of the user.</p>
     pub fn status(mut self, input: crate::types::UserStatusType) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -278,6 +310,10 @@ impl UserBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the user.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::UserStatusType> {
+        &self.status
+    }
     /// <p>The type of user.</p>
     pub fn r#type(mut self, input: crate::types::UserType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -287,6 +323,10 @@ impl UserBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::UserType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of user.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::UserType> {
+        &self.r#type
     }
     /// <p>The time when the user was created.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -301,6 +341,10 @@ impl UserBuilder {
         self.created_timestamp = input;
         self
     }
+    /// <p>The time when the user was created.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
+    }
     /// <p>The time when the user was modified.</p>
     pub fn modified_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.modified_timestamp = ::std::option::Option::Some(input);
@@ -314,6 +358,10 @@ impl UserBuilder {
         self.modified_timestamp = input;
         self
     }
+    /// <p>The time when the user was modified.</p>
+    pub fn get_modified_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.modified_timestamp
+    }
     /// <p>The time zone ID of the user.</p>
     pub fn time_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time_zone_id = ::std::option::Option::Some(input.into());
@@ -324,6 +372,10 @@ impl UserBuilder {
         self.time_zone_id = input;
         self
     }
+    /// <p>The time zone ID of the user.</p>
+    pub fn get_time_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.time_zone_id
+    }
     /// <p>The locale of the user.</p>
     pub fn locale(mut self, input: crate::types::LocaleType) -> Self {
         self.locale = ::std::option::Option::Some(input);
@@ -333,6 +385,10 @@ impl UserBuilder {
     pub fn set_locale(mut self, input: ::std::option::Option<crate::types::LocaleType>) -> Self {
         self.locale = input;
         self
+    }
+    /// <p>The locale of the user.</p>
+    pub fn get_locale(&self) -> &::std::option::Option<crate::types::LocaleType> {
+        &self.locale
     }
     /// <p>The storage for the user.</p>
     pub fn storage(mut self, input: crate::types::UserStorageMetadata) -> Self {
@@ -346,6 +402,10 @@ impl UserBuilder {
     ) -> Self {
         self.storage = input;
         self
+    }
+    /// <p>The storage for the user.</p>
+    pub fn get_storage(&self) -> &::std::option::Option<crate::types::UserStorageMetadata> {
+        &self.storage
     }
     /// Consumes the builder and constructs a [`User`](crate::types::User).
     pub fn build(self) -> crate::types::User {

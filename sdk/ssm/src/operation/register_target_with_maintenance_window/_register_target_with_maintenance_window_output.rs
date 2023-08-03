@@ -52,6 +52,10 @@ impl RegisterTargetWithMaintenanceWindowOutputBuilder {
         self.window_target_id = input;
         self
     }
+    /// <p>The ID of the target definition in this maintenance window.</p>
+    pub fn get_window_target_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.window_target_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

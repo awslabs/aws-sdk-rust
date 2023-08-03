@@ -62,6 +62,10 @@ impl CreateLabelsInputBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The ID of the resource.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// Appends an item to `labels`.
     ///
     /// To override the contents of this collection use [`set_labels`](Self::set_labels).
@@ -81,6 +85,10 @@ impl CreateLabelsInputBuilder {
         self.labels = input;
         self
     }
+    /// <p>List of labels to add to the resource.</p>
+    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.labels
+    }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn authentication_token(
         mut self,
@@ -96,6 +104,10 @@ impl CreateLabelsInputBuilder {
     ) -> Self {
         self.authentication_token = input;
         self
+    }
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication_token
     }
     /// Consumes the builder and constructs a [`CreateLabelsInput`](crate::operation::create_labels::CreateLabelsInput).
     pub fn build(

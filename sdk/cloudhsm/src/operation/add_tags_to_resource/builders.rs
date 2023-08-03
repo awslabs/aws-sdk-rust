@@ -39,6 +39,12 @@ impl AddTagsToResourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AddTagsToResource as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::add_tags_to_resource::builders::AddTagsToResourceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl AddTagsToResourceFluentBuilder {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
+    }
     /// Appends an item to `TagList`.
     ///
     /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
@@ -145,5 +155,9 @@ impl AddTagsToResourceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tag_list(input);
         self
+    }
+    /// <p>One or more tags.</p>
+    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tag_list()
     }
 }

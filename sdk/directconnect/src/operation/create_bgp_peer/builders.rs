@@ -42,6 +42,12 @@ impl CreateBGPPeerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateBGPPeer as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_bgp_peer::builders::CreateBgpPeerInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +136,10 @@ impl CreateBGPPeerFluentBuilder {
         self.inner = self.inner.set_virtual_interface_id(input);
         self
     }
+    /// <p>The ID of the virtual interface.</p>
+    pub fn get_virtual_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_virtual_interface_id()
+    }
     /// <p>Information about the BGP peer.</p>
     pub fn new_bgp_peer(mut self, input: crate::types::NewBgpPeer) -> Self {
         self.inner = self.inner.new_bgp_peer(input);
@@ -142,5 +152,9 @@ impl CreateBGPPeerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_new_bgp_peer(input);
         self
+    }
+    /// <p>Information about the BGP peer.</p>
+    pub fn get_new_bgp_peer(&self) -> &::std::option::Option<crate::types::NewBgpPeer> {
+        self.inner.get_new_bgp_peer()
     }
 }

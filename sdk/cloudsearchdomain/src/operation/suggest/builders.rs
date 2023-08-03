@@ -38,6 +38,10 @@ impl SuggestFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the Suggest as a reference.
+    pub fn as_input(&self) -> &crate::operation::suggest::builders::SuggestInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -120,6 +124,10 @@ impl SuggestFluentBuilder {
         self.inner = self.inner.set_query(input);
         self
     }
+    /// <p>Specifies the string for which you want to get suggestions.</p>
+    pub fn get_query(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_query()
+    }
     /// <p>Specifies the name of the suggester to use to find suggested matches.</p>
     pub fn suggester(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.suggester(input.into());
@@ -130,6 +138,10 @@ impl SuggestFluentBuilder {
         self.inner = self.inner.set_suggester(input);
         self
     }
+    /// <p>Specifies the name of the suggester to use to find suggested matches.</p>
+    pub fn get_suggester(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_suggester()
+    }
     /// <p>Specifies the maximum number of suggestions to return. </p>
     pub fn size(mut self, input: i64) -> Self {
         self.inner = self.inner.size(input);
@@ -139,5 +151,9 @@ impl SuggestFluentBuilder {
     pub fn set_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_size(input);
         self
+    }
+    /// <p>Specifies the maximum number of suggestions to return. </p>
+    pub fn get_size(&self) -> &::std::option::Option<i64> {
+        self.inner.get_size()
     }
 }

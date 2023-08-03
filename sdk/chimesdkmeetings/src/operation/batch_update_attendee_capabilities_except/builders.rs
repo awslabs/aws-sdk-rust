@@ -44,6 +44,10 @@ impl BatchUpdateAttendeeCapabilitiesExceptFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchUpdateAttendeeCapabilitiesExcept as a reference.
+    pub fn as_input(&self) -> &crate::operation::batch_update_attendee_capabilities_except::builders::BatchUpdateAttendeeCapabilitiesExceptInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -108,6 +112,10 @@ impl BatchUpdateAttendeeCapabilitiesExceptFluentBuilder {
         self.inner = self.inner.set_meeting_id(input);
         self
     }
+    /// <p>The ID of the meeting associated with the update request.</p>
+    pub fn get_meeting_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_meeting_id()
+    }
     /// Appends an item to `ExcludedAttendeeIds`.
     ///
     /// To override the contents of this collection use [`set_excluded_attendee_ids`](Self::set_excluded_attendee_ids).
@@ -125,6 +133,12 @@ impl BatchUpdateAttendeeCapabilitiesExceptFluentBuilder {
         self.inner = self.inner.set_excluded_attendee_ids(input);
         self
     }
+    /// <p>The <code>AttendeeIDs</code> that you want to exclude from one or more capabilities.</p>
+    pub fn get_excluded_attendee_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttendeeIdItem>> {
+        self.inner.get_excluded_attendee_ids()
+    }
     /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to update.</p>
     pub fn capabilities(mut self, input: crate::types::AttendeeCapabilities) -> Self {
         self.inner = self.inner.capabilities(input);
@@ -137,5 +151,9 @@ impl BatchUpdateAttendeeCapabilitiesExceptFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_capabilities(input);
         self
+    }
+    /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to update.</p>
+    pub fn get_capabilities(&self) -> &::std::option::Option<crate::types::AttendeeCapabilities> {
+        self.inner.get_capabilities()
     }
 }

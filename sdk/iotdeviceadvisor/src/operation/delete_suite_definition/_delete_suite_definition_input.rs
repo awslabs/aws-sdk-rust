@@ -47,6 +47,10 @@ impl DeleteSuiteDefinitionInputBuilder {
         self.suite_definition_id = input;
         self
     }
+    /// <p>Suite definition ID of the test suite to be deleted.</p>
+    pub fn get_suite_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.suite_definition_id
+    }
     /// Consumes the builder and constructs a [`DeleteSuiteDefinitionInput`](crate::operation::delete_suite_definition::DeleteSuiteDefinitionInput).
     pub fn build(
         self,

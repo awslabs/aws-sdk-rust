@@ -71,6 +71,10 @@ impl ApplyEnvironmentManagedActionOutputBuilder {
         self.action_id = input;
         self
     }
+    /// <p>The action ID of the managed action.</p>
+    pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_id
+    }
     /// <p>A description of the managed action.</p>
     pub fn action_description(
         mut self,
@@ -87,6 +91,10 @@ impl ApplyEnvironmentManagedActionOutputBuilder {
         self.action_description = input;
         self
     }
+    /// <p>A description of the managed action.</p>
+    pub fn get_action_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_description
+    }
     /// <p>The type of managed action.</p>
     pub fn action_type(mut self, input: crate::types::ActionType) -> Self {
         self.action_type = ::std::option::Option::Some(input);
@@ -100,6 +108,10 @@ impl ApplyEnvironmentManagedActionOutputBuilder {
         self.action_type = input;
         self
     }
+    /// <p>The type of managed action.</p>
+    pub fn get_action_type(&self) -> &::std::option::Option<crate::types::ActionType> {
+        &self.action_type
+    }
     /// <p>The status of the managed action.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -109,6 +121,10 @@ impl ApplyEnvironmentManagedActionOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the managed action.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

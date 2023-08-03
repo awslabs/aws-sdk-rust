@@ -70,6 +70,10 @@ impl AsyncInferenceNotificationConfigBuilder {
         self.success_topic = input;
         self
     }
+    /// <p>Amazon SNS topic to post a notification to when inference completes successfully. If no topic is provided, no notification is sent on success.</p>
+    pub fn get_success_topic(&self) -> &::std::option::Option<::std::string::String> {
+        &self.success_topic
+    }
     /// <p>Amazon SNS topic to post a notification to when inference fails. If no topic is provided, no notification is sent on failure.</p>
     pub fn error_topic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_topic = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl AsyncInferenceNotificationConfigBuilder {
     pub fn set_error_topic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_topic = input;
         self
+    }
+    /// <p>Amazon SNS topic to post a notification to when inference fails. If no topic is provided, no notification is sent on failure.</p>
+    pub fn get_error_topic(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_topic
     }
     /// Appends an item to `include_inference_response_in`.
     ///
@@ -105,6 +113,14 @@ impl AsyncInferenceNotificationConfigBuilder {
     ) -> Self {
         self.include_inference_response_in = input;
         self
+    }
+    /// <p>The Amazon SNS topics where you want the inference response to be included.</p> <note>
+    /// <p>The inference response is included only if the response size is less than or equal to 128 KB.</p>
+    /// </note>
+    pub fn get_include_inference_response_in(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AsyncNotificationTopicTypes>> {
+        &self.include_inference_response_in
     }
     /// Consumes the builder and constructs a [`AsyncInferenceNotificationConfig`](crate::types::AsyncInferenceNotificationConfig).
     pub fn build(self) -> crate::types::AsyncInferenceNotificationConfig {

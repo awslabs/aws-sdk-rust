@@ -73,6 +73,10 @@ impl AwsLogSourceConfigurationBuilder {
         self.accounts = input;
         self
     }
+    /// <p>Specify the Amazon Web Services account information where you want to enable Security Lake.</p>
+    pub fn get_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.accounts
+    }
     /// Appends an item to `regions`.
     ///
     /// To override the contents of this collection use [`set_regions`](Self::set_regions).
@@ -92,6 +96,10 @@ impl AwsLogSourceConfigurationBuilder {
         self.regions = input;
         self
     }
+    /// <p>Specify the Regions where you want to enable Security Lake.</p>
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.regions
+    }
     /// <p>The name for a Amazon Web Services source. This must be a Regionally unique value.</p>
     pub fn source_name(mut self, input: crate::types::AwsLogSourceName) -> Self {
         self.source_name = ::std::option::Option::Some(input);
@@ -104,6 +112,10 @@ impl AwsLogSourceConfigurationBuilder {
     ) -> Self {
         self.source_name = input;
         self
+    }
+    /// <p>The name for a Amazon Web Services source. This must be a Regionally unique value.</p>
+    pub fn get_source_name(&self) -> &::std::option::Option<crate::types::AwsLogSourceName> {
+        &self.source_name
     }
     /// <p>The version for a Amazon Web Services source. This must be a Regionally unique value.</p>
     pub fn source_version(
@@ -120,6 +132,10 @@ impl AwsLogSourceConfigurationBuilder {
     ) -> Self {
         self.source_version = input;
         self
+    }
+    /// <p>The version for a Amazon Web Services source. This must be a Regionally unique value.</p>
+    pub fn get_source_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_version
     }
     /// Consumes the builder and constructs a [`AwsLogSourceConfiguration`](crate::types::AwsLogSourceConfiguration).
     pub fn build(self) -> crate::types::AwsLogSourceConfiguration {

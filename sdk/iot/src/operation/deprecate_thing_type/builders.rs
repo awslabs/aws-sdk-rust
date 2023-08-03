@@ -37,6 +37,12 @@ impl DeprecateThingTypeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeprecateThingType as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::deprecate_thing_type::builders::DeprecateThingTypeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl DeprecateThingTypeFluentBuilder {
         self.inner = self.inner.set_thing_type_name(input);
         self
     }
+    /// <p>The name of the thing type to deprecate.</p>
+    pub fn get_thing_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_thing_type_name()
+    }
     /// <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing type will not be deprecated anymore and you can associate it with things.</p>
     pub fn undo_deprecate(mut self, input: bool) -> Self {
         self.inner = self.inner.undo_deprecate(input);
@@ -142,5 +152,9 @@ impl DeprecateThingTypeFluentBuilder {
     pub fn set_undo_deprecate(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_undo_deprecate(input);
         self
+    }
+    /// <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing type will not be deprecated anymore and you can associate it with things.</p>
+    pub fn get_undo_deprecate(&self) -> &::std::option::Option<bool> {
+        self.inner.get_undo_deprecate()
     }
 }

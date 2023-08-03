@@ -88,6 +88,10 @@ impl CreateTaskInputBuilder {
         self.targets = input;
         self
     }
+    /// <p>A list of managed device IDs.</p>
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.targets
+    }
     /// <p>The task to be performed. Only one task is executed on a device at a time.</p>
     pub fn command(mut self, input: crate::types::Command) -> Self {
         self.command = ::std::option::Option::Some(input);
@@ -98,6 +102,10 @@ impl CreateTaskInputBuilder {
         self.command = input;
         self
     }
+    /// <p>The task to be performed. Only one task is executed on a device at a time.</p>
+    pub fn get_command(&self) -> &::std::option::Option<crate::types::Command> {
+        &self.command
+    }
     /// <p>A description of the task and its targets.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -107,6 +115,10 @@ impl CreateTaskInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the task and its targets.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -133,6 +145,14 @@ impl CreateTaskInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>A token ensuring that the action is called only once with the specified details.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -142,6 +162,10 @@ impl CreateTaskInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A token ensuring that the action is called only once with the specified details.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateTaskInput`](crate::operation::create_task::CreateTaskInput).
     pub fn build(

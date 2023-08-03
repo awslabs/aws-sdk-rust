@@ -65,6 +65,10 @@ impl DescribeRecordOutputBuilder {
         self.record_detail = input;
         self
     }
+    /// <p>Information about the product.</p>
+    pub fn get_record_detail(&self) -> &::std::option::Option<crate::types::RecordDetail> {
+        &self.record_detail
+    }
     /// Appends an item to `record_outputs`.
     ///
     /// To override the contents of this collection use [`set_record_outputs`](Self::set_record_outputs).
@@ -84,6 +88,12 @@ impl DescribeRecordOutputBuilder {
         self.record_outputs = input;
         self
     }
+    /// <p>Information about the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.</p>
+    pub fn get_record_outputs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecordOutput>> {
+        &self.record_outputs
+    }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub fn next_page_token(
         mut self,
@@ -99,6 +109,10 @@ impl DescribeRecordOutputBuilder {
     ) -> Self {
         self.next_page_token = input;
         self
+    }
+    /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_page_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

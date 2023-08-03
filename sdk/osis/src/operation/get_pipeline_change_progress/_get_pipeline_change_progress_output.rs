@@ -59,6 +59,12 @@ impl GetPipelineChangeProgressOutputBuilder {
         self.change_progress_statuses = input;
         self
     }
+    /// <p>The current status of the change happening on the pipeline.</p>
+    pub fn get_change_progress_statuses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangeProgressStatus>> {
+        &self.change_progress_statuses
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

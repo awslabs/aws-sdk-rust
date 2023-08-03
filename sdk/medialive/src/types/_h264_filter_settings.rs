@@ -46,6 +46,12 @@ impl H264FilterSettingsBuilder {
         self.temporal_filter_settings = input;
         self
     }
+    /// Temporal Filter Settings
+    pub fn get_temporal_filter_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::TemporalFilterSettings> {
+        &self.temporal_filter_settings
+    }
     /// Consumes the builder and constructs a [`H264FilterSettings`](crate::types::H264FilterSettings).
     pub fn build(self) -> crate::types::H264FilterSettings {
         crate::types::H264FilterSettings {

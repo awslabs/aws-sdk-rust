@@ -40,6 +40,10 @@ impl UndeprecateDomainInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the domain of the deprecated workflow type.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`UndeprecateDomainInput`](crate::operation::undeprecate_domain::UndeprecateDomainInput).
     pub fn build(
         self,

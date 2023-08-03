@@ -37,6 +37,12 @@ impl ImportTerminologyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ImportTerminology as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::import_terminology::builders::ImportTerminologyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl ImportTerminologyFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the custom terminology being imported.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The merge strategy of the custom terminology being imported. Currently, only the OVERWRITE merge strategy is supported. In this case, the imported terminology will overwrite an existing terminology of the same name.</p>
     pub fn merge_strategy(mut self, input: crate::types::MergeStrategy) -> Self {
         self.inner = self.inner.merge_strategy(input);
@@ -140,6 +150,10 @@ impl ImportTerminologyFluentBuilder {
         self.inner = self.inner.set_merge_strategy(input);
         self
     }
+    /// <p>The merge strategy of the custom terminology being imported. Currently, only the OVERWRITE merge strategy is supported. In this case, the imported terminology will overwrite an existing terminology of the same name.</p>
+    pub fn get_merge_strategy(&self) -> &::std::option::Option<crate::types::MergeStrategy> {
+        self.inner.get_merge_strategy()
+    }
     /// <p>The description of the custom terminology being imported.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -149,6 +163,10 @@ impl ImportTerminologyFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the custom terminology being imported.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The terminology data for the custom terminology being imported.</p>
     pub fn terminology_data(mut self, input: crate::types::TerminologyData) -> Self {
@@ -163,6 +181,10 @@ impl ImportTerminologyFluentBuilder {
         self.inner = self.inner.set_terminology_data(input);
         self
     }
+    /// <p>The terminology data for the custom terminology being imported.</p>
+    pub fn get_terminology_data(&self) -> &::std::option::Option<crate::types::TerminologyData> {
+        self.inner.get_terminology_data()
+    }
     /// <p>The encryption key for the custom terminology being imported.</p>
     pub fn encryption_key(mut self, input: crate::types::EncryptionKey) -> Self {
         self.inner = self.inner.encryption_key(input);
@@ -175,6 +197,10 @@ impl ImportTerminologyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_encryption_key(input);
         self
+    }
+    /// <p>The encryption key for the custom terminology being imported.</p>
+    pub fn get_encryption_key(&self) -> &::std::option::Option<crate::types::EncryptionKey> {
+        self.inner.get_encryption_key()
     }
     /// Appends an item to `Tags`.
     ///
@@ -192,5 +218,9 @@ impl ImportTerminologyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each tag key for the resource must be unique. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

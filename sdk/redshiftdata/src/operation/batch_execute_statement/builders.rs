@@ -46,6 +46,13 @@ impl BatchExecuteStatementFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchExecuteStatement as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_execute_statement::builders::BatchExecuteStatementInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +150,10 @@ impl BatchExecuteStatementFluentBuilder {
         self.inner = self.inner.set_sqls(input);
         self
     }
+    /// <p>One or more SQL statements to run. The SQL statements are run as a single transaction. They run serially in the order of the array. Subsequent SQL statements don't start until the previous statement in the array completes. If any SQL statement fails, then because they are run as one transaction, all work is rolled back.</p>
+    pub fn get_sqls(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_sqls()
+    }
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
     pub fn cluster_identifier(
         mut self,
@@ -159,6 +170,10 @@ impl BatchExecuteStatementFluentBuilder {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
+    /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_identifier()
+    }
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.secret_arn(input.into());
@@ -168,6 +183,10 @@ impl BatchExecuteStatementFluentBuilder {
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_secret_arn(input);
         self
+    }
+    /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
+    pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_secret_arn()
     }
     /// <p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials. </p>
     pub fn db_user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -179,6 +198,10 @@ impl BatchExecuteStatementFluentBuilder {
         self.inner = self.inner.set_db_user(input);
         self
     }
+    /// <p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials. </p>
+    pub fn get_db_user(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_user()
+    }
     /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database(input.into());
@@ -189,6 +212,10 @@ impl BatchExecuteStatementFluentBuilder {
         self.inner = self.inner.set_database(input);
         self
     }
+    /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+    pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_database()
+    }
     /// <p>A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statements run. </p>
     pub fn with_event(mut self, input: bool) -> Self {
         self.inner = self.inner.with_event(input);
@@ -198,6 +225,10 @@ impl BatchExecuteStatementFluentBuilder {
     pub fn set_with_event(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_with_event(input);
         self
+    }
+    /// <p>A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statements run. </p>
+    pub fn get_with_event(&self) -> &::std::option::Option<bool> {
+        self.inner.get_with_event()
     }
     /// <p>The name of the SQL statements. You can name the SQL statements when you create them to identify the query. </p>
     pub fn statement_name(
@@ -215,6 +246,10 @@ impl BatchExecuteStatementFluentBuilder {
         self.inner = self.inner.set_statement_name(input);
         self
     }
+    /// <p>The name of the SQL statements. You can name the SQL statements when you create them to identify the query. </p>
+    pub fn get_statement_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_statement_name()
+    }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
     pub fn workgroup_name(
         mut self,
@@ -231,6 +266,10 @@ impl BatchExecuteStatementFluentBuilder {
         self.inner = self.inner.set_workgroup_name(input);
         self
     }
+    /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
+    pub fn get_workgroup_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workgroup_name()
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -240,5 +279,9 @@ impl BatchExecuteStatementFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

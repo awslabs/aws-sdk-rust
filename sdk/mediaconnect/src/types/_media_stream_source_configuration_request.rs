@@ -63,6 +63,10 @@ impl MediaStreamSourceConfigurationRequestBuilder {
         self.encoding_name = input;
         self
     }
+    /// The format you want to use to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
+    pub fn get_encoding_name(&self) -> &::std::option::Option<crate::types::EncodingName> {
+        &self.encoding_name
+    }
     /// Appends an item to `input_configurations`.
     ///
     /// To override the contents of this collection use [`set_input_configurations`](Self::set_input_configurations).
@@ -82,6 +86,12 @@ impl MediaStreamSourceConfigurationRequestBuilder {
         self.input_configurations = input;
         self
     }
+    /// The transport parameters that you want to associate with the media stream.
+    pub fn get_input_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputConfigurationRequest>> {
+        &self.input_configurations
+    }
     /// The name of the media stream.
     pub fn media_stream_name(
         mut self,
@@ -97,6 +107,10 @@ impl MediaStreamSourceConfigurationRequestBuilder {
     ) -> Self {
         self.media_stream_name = input;
         self
+    }
+    /// The name of the media stream.
+    pub fn get_media_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.media_stream_name
     }
     /// Consumes the builder and constructs a [`MediaStreamSourceConfigurationRequest`](crate::types::MediaStreamSourceConfigurationRequest).
     pub fn build(self) -> crate::types::MediaStreamSourceConfigurationRequest {

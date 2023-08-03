@@ -41,6 +41,12 @@ impl CreateCollectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateCollection as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_collection::builders::CreateCollectionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl CreateCollectionFluentBuilder {
         self.inner = self.inner.set_collection_id(input);
         self
     }
+    /// <p>ID for the collection that you are creating.</p>
+    pub fn get_collection_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_collection_id()
+    }
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -159,5 +169,13 @@ impl CreateCollectionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p> A set of tags (key-value pairs) that you want to attach to the collection. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

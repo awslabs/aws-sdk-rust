@@ -53,6 +53,10 @@ impl CreateReplicationJobOutputBuilder {
         self.replication_job_id = input;
         self
     }
+    /// <p>The unique identifier of the replication job.</p>
+    pub fn get_replication_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_job_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

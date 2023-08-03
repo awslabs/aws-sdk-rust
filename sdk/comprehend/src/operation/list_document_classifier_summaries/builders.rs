@@ -36,6 +36,10 @@ impl ListDocumentClassifierSummariesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListDocumentClassifierSummaries as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_document_classifier_summaries::builders::ListDocumentClassifierSummariesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl ListDocumentClassifierSummariesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return on each page. The default is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -115,5 +123,9 @@ impl ListDocumentClassifierSummariesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return on each page. The default is 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

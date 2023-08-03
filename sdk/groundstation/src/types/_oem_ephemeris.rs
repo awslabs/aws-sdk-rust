@@ -48,6 +48,10 @@ impl OemEphemerisBuilder {
         self.s3_object = input;
         self
     }
+    /// <p>Identifies the S3 object to be used as the ephemeris.</p>
+    pub fn get_s3_object(&self) -> &::std::option::Option<crate::types::S3Object> {
+        &self.s3_object
+    }
     /// <p>The data for an OEM ephemeris, supplied directly in the request rather than through an S3 object.</p>
     pub fn oem_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.oem_data = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl OemEphemerisBuilder {
     pub fn set_oem_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.oem_data = input;
         self
+    }
+    /// <p>The data for an OEM ephemeris, supplied directly in the request rather than through an S3 object.</p>
+    pub fn get_oem_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.oem_data
     }
     /// Consumes the builder and constructs a [`OemEphemeris`](crate::types::OemEphemeris).
     pub fn build(self) -> crate::types::OemEphemeris {

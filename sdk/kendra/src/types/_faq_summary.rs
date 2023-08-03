@@ -88,6 +88,10 @@ impl FaqSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the FAQ.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name that you assigned the FAQ when you created or updated the FAQ.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -98,6 +102,10 @@ impl FaqSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name that you assigned the FAQ when you created or updated the FAQ.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The current status of the FAQ. When the status is <code>ACTIVE</code> the FAQ is ready for use.</p>
     pub fn status(mut self, input: crate::types::FaqStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -107,6 +115,10 @@ impl FaqSummaryBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FaqStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the FAQ. When the status is <code>ACTIVE</code> the FAQ is ready for use.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::FaqStatus> {
+        &self.status
     }
     /// <p>The Unix timestamp when the FAQ was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -121,6 +133,10 @@ impl FaqSummaryBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The Unix timestamp when the FAQ was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The Unix timestamp when the FAQ was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -134,6 +150,10 @@ impl FaqSummaryBuilder {
         self.updated_at = input;
         self
     }
+    /// <p>The Unix timestamp when the FAQ was last updated.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
+    }
     /// <p>The file type used to create the FAQ. </p>
     pub fn file_format(mut self, input: crate::types::FaqFileFormat) -> Self {
         self.file_format = ::std::option::Option::Some(input);
@@ -146,6 +166,10 @@ impl FaqSummaryBuilder {
     ) -> Self {
         self.file_format = input;
         self
+    }
+    /// <p>The file type used to create the FAQ. </p>
+    pub fn get_file_format(&self) -> &::std::option::Option<crate::types::FaqFileFormat> {
+        &self.file_format
     }
     /// <p>The code for a language. This shows a supported language for the FAQ document as part of the summary information for FAQs. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
     pub fn language_code(
@@ -162,6 +186,10 @@ impl FaqSummaryBuilder {
     ) -> Self {
         self.language_code = input;
         self
+    }
+    /// <p>The code for a language. This shows a supported language for the FAQ document as part of the summary information for FAQs. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.language_code
     }
     /// Consumes the builder and constructs a [`FaqSummary`](crate::types::FaqSummary).
     pub fn build(self) -> crate::types::FaqSummary {

@@ -61,6 +61,10 @@ impl CreateJobTemplateOutputBuilder {
         self.job_template_arn = input;
         self
     }
+    /// <p>The ARN of the job template.</p>
+    pub fn get_job_template_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_template_arn
+    }
     /// <p>The unique identifier of the job template.</p>
     pub fn job_template_id(
         mut self,
@@ -76,6 +80,10 @@ impl CreateJobTemplateOutputBuilder {
     ) -> Self {
         self.job_template_id = input;
         self
+    }
+    /// <p>The unique identifier of the job template.</p>
+    pub fn get_job_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_template_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

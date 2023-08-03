@@ -48,6 +48,10 @@ impl UpdateProjectInputBuilder {
         self.contents = input;
         self
     }
+    /// <p> ZIP or YAML file which contains project configuration to be updated. This should be the contents of the file downloaded from the URL provided in an export project operation. </p>
+    pub fn get_contents(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.contents
+    }
     /// <p> Unique project identifier. </p>
     pub fn project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl UpdateProjectInputBuilder {
     pub fn set_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_id = input;
         self
+    }
+    /// <p> Unique project identifier. </p>
+    pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_id
     }
     /// Consumes the builder and constructs a [`UpdateProjectInput`](crate::operation::update_project::UpdateProjectInput).
     pub fn build(

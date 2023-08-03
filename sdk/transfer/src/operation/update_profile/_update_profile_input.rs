@@ -47,6 +47,10 @@ impl UpdateProfileInputBuilder {
         self.profile_id = input;
         self
     }
+    /// <p>The identifier of the profile object that you are updating.</p>
+    pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_id
+    }
     /// Appends an item to `certificate_ids`.
     ///
     /// To override the contents of this collection use [`set_certificate_ids`](Self::set_certificate_ids).
@@ -68,6 +72,12 @@ impl UpdateProfileInputBuilder {
     ) -> Self {
         self.certificate_ids = input;
         self
+    }
+    /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
+    pub fn get_certificate_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.certificate_ids
     }
     /// Consumes the builder and constructs a [`UpdateProfileInput`](crate::operation::update_profile::UpdateProfileInput).
     pub fn build(

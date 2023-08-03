@@ -52,6 +52,10 @@ impl RuleGroupSourceStatelessRulesDetailsBuilder {
         self.priority = input;
         self
     }
+    /// <p>Indicates the order in which to run this rule relative to all of the rules in the stateless rule group.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
+    }
     /// <p>Provides the definition of the stateless rule.</p>
     pub fn rule_definition(
         mut self,
@@ -67,6 +71,12 @@ impl RuleGroupSourceStatelessRulesDetailsBuilder {
     ) -> Self {
         self.rule_definition = input;
         self
+    }
+    /// <p>Provides the definition of the stateless rule.</p>
+    pub fn get_rule_definition(
+        &self,
+    ) -> &::std::option::Option<crate::types::RuleGroupSourceStatelessRuleDefinition> {
+        &self.rule_definition
     }
     /// Consumes the builder and constructs a [`RuleGroupSourceStatelessRulesDetails`](crate::types::RuleGroupSourceStatelessRulesDetails).
     pub fn build(self) -> crate::types::RuleGroupSourceStatelessRulesDetails {

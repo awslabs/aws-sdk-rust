@@ -48,6 +48,10 @@ impl BatchGetDevicePositionErrorBuilder {
         self.device_id = input;
         self
     }
+    /// <p>The ID of the device that didn't return a position.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_id
+    }
     /// <p>Contains details related to the error code.</p>
     pub fn error(mut self, input: crate::types::BatchItemError) -> Self {
         self.error = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl BatchGetDevicePositionErrorBuilder {
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::BatchItemError>) -> Self {
         self.error = input;
         self
+    }
+    /// <p>Contains details related to the error code.</p>
+    pub fn get_error(&self) -> &::std::option::Option<crate::types::BatchItemError> {
+        &self.error
     }
     /// Consumes the builder and constructs a [`BatchGetDevicePositionError`](crate::types::BatchGetDevicePositionError).
     pub fn build(self) -> crate::types::BatchGetDevicePositionError {

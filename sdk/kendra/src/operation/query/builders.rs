@@ -44,6 +44,10 @@ impl QueryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the Query as a reference.
+    pub fn as_input(&self) -> &crate::operation::query::builders::QueryInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl QueryFluentBuilder {
         self.inner = self.inner.set_index_id(input);
         self
     }
+    /// <p>The identifier of the index for the search.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_index_id()
+    }
     /// <p>The input query text for the search. Amazon Kendra truncates queries at 30 token words, which excludes punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries. </p>
     pub fn query_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_text(input.into());
@@ -135,6 +143,10 @@ impl QueryFluentBuilder {
     pub fn set_query_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_text(input);
         self
+    }
+    /// <p>The input query text for the search. Amazon Kendra truncates queries at 30 token words, which excludes punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries. </p>
+    pub fn get_query_text(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_query_text()
     }
     /// <p>Filters search results by document fields/attributes. You can only provide one attribute filter; however, the <code>AndAllFilters</code>, <code>NotFilter</code>, and <code>OrAllFilters</code> parameters contain a list of other filters.</p>
     /// <p>The <code>AttributeFilter</code> parameter means you can create a set of filtering rules that a document must satisfy to be included in the query results.</p>
@@ -150,6 +162,11 @@ impl QueryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_attribute_filter(input);
         self
+    }
+    /// <p>Filters search results by document fields/attributes. You can only provide one attribute filter; however, the <code>AndAllFilters</code>, <code>NotFilter</code>, and <code>OrAllFilters</code> parameters contain a list of other filters.</p>
+    /// <p>The <code>AttributeFilter</code> parameter means you can create a set of filtering rules that a document must satisfy to be included in the query results.</p>
+    pub fn get_attribute_filter(&self) -> &::std::option::Option<crate::types::AttributeFilter> {
+        self.inner.get_attribute_filter()
     }
     /// Appends an item to `Facets`.
     ///
@@ -167,6 +184,10 @@ impl QueryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_facets(input);
         self
+    }
+    /// <p>An array of documents fields/attributes for faceted search. Amazon Kendra returns a count for each field key specified. This helps your users narrow their search.</p>
+    pub fn get_facets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Facet>> {
+        self.inner.get_facets()
     }
     /// Appends an item to `RequestedDocumentAttributes`.
     ///
@@ -188,6 +209,12 @@ impl QueryFluentBuilder {
         self.inner = self.inner.set_requested_document_attributes(input);
         self
     }
+    /// <p>An array of document fields/attributes to include in the response. You can limit the response to include certain document fields. By default, all document attributes are included in the response.</p>
+    pub fn get_requested_document_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_requested_document_attributes()
+    }
     /// <p>Sets the type of query result or response. Only results for the specified type are returned.</p>
     pub fn query_result_type_filter(mut self, input: crate::types::QueryResultType) -> Self {
         self.inner = self.inner.query_result_type_filter(input);
@@ -200,6 +227,12 @@ impl QueryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_query_result_type_filter(input);
         self
+    }
+    /// <p>Sets the type of query result or response. Only results for the specified type are returned.</p>
+    pub fn get_query_result_type_filter(
+        &self,
+    ) -> &::std::option::Option<crate::types::QueryResultType> {
+        self.inner.get_query_result_type_filter()
     }
     /// Appends an item to `DocumentRelevanceOverrideConfigurations`.
     ///
@@ -227,6 +260,14 @@ impl QueryFluentBuilder {
             .set_document_relevance_override_configurations(input);
         self
     }
+    /// <p>Overrides relevance tuning configurations of fields/attributes set at the index level.</p>
+    /// <p>If you use this API to override the relevance tuning configured at the index level, but there is no relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.</p>
+    /// <p>If there is relevance tuning configured for fields at the index level, and you use this API to override only some of these fields, then for the fields you did not override, the importance is set to 1.</p>
+    pub fn get_document_relevance_override_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentRelevanceConfiguration>> {
+        self.inner.get_document_relevance_override_configurations()
+    }
     /// <p>Query results are returned in pages the size of the <code>PageSize</code> parameter. By default, Amazon Kendra returns the first page of results. Use this parameter to get result pages after the first one.</p>
     pub fn page_number(mut self, input: i32) -> Self {
         self.inner = self.inner.page_number(input);
@@ -237,6 +278,10 @@ impl QueryFluentBuilder {
         self.inner = self.inner.set_page_number(input);
         self
     }
+    /// <p>Query results are returned in pages the size of the <code>PageSize</code> parameter. By default, Amazon Kendra returns the first page of results. Use this parameter to get result pages after the first one.</p>
+    pub fn get_page_number(&self) -> &::std::option::Option<i32> {
+        self.inner.get_page_number()
+    }
     /// <p>Sets the number of results that are returned in each page of results. The default page size is 10. The maximum number of results returned is 100. If you ask for more than 100 results, only 100 are returned.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.inner = self.inner.page_size(input);
@@ -246,6 +291,10 @@ impl QueryFluentBuilder {
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_page_size(input);
         self
+    }
+    /// <p>Sets the number of results that are returned in each page of results. The default page size is 10. The maximum number of results returned is 100. If you ask for more than 100 results, only 100 are returned.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        self.inner.get_page_size()
     }
     /// <p>Provides information that determines how the results of the query are sorted. You can set the field that Amazon Kendra should sort the results on, and specify whether the results should be sorted in ascending or descending order. In the case of ties in sorting the results, the results are sorted by relevance.</p>
     /// <p>If you don't provide sorting configuration, the results are sorted by the relevance that Amazon Kendra determines for the result.</p>
@@ -262,6 +311,13 @@ impl QueryFluentBuilder {
         self.inner = self.inner.set_sorting_configuration(input);
         self
     }
+    /// <p>Provides information that determines how the results of the query are sorted. You can set the field that Amazon Kendra should sort the results on, and specify whether the results should be sorted in ascending or descending order. In the case of ties in sorting the results, the results are sorted by relevance.</p>
+    /// <p>If you don't provide sorting configuration, the results are sorted by the relevance that Amazon Kendra determines for the result.</p>
+    pub fn get_sorting_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SortingConfiguration> {
+        self.inner.get_sorting_configuration()
+    }
     /// <p>The user context token or user and group information.</p>
     pub fn user_context(mut self, input: crate::types::UserContext) -> Self {
         self.inner = self.inner.user_context(input);
@@ -275,6 +331,10 @@ impl QueryFluentBuilder {
         self.inner = self.inner.set_user_context(input);
         self
     }
+    /// <p>The user context token or user and group information.</p>
+    pub fn get_user_context(&self) -> &::std::option::Option<crate::types::UserContext> {
+        self.inner.get_user_context()
+    }
     /// <p>Provides an identifier for a specific user. The <code>VisitorId</code> should be a unique identifier, such as a GUID. Don't use personally identifiable information, such as the user's email address, as the <code>VisitorId</code>.</p>
     pub fn visitor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.visitor_id(input.into());
@@ -284,6 +344,10 @@ impl QueryFluentBuilder {
     pub fn set_visitor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_visitor_id(input);
         self
+    }
+    /// <p>Provides an identifier for a specific user. The <code>VisitorId</code> should be a unique identifier, such as a GUID. Don't use personally identifiable information, such as the user's email address, as the <code>VisitorId</code>.</p>
+    pub fn get_visitor_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_visitor_id()
     }
     /// <p>Enables suggested spell corrections for queries.</p>
     pub fn spell_correction_configuration(
@@ -300,5 +364,11 @@ impl QueryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_spell_correction_configuration(input);
         self
+    }
+    /// <p>Enables suggested spell corrections for queries.</p>
+    pub fn get_spell_correction_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SpellCorrectionConfiguration> {
+        self.inner.get_spell_correction_configuration()
     }
 }

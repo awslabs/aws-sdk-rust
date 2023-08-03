@@ -41,6 +41,10 @@ impl StopGameSessionPlacementInputBuilder {
         self.placement_id = input;
         self
     }
+    /// <p>A unique identifier for a game session placement to stop.</p>
+    pub fn get_placement_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.placement_id
+    }
     /// Consumes the builder and constructs a [`StopGameSessionPlacementInput`](crate::operation::stop_game_session_placement::StopGameSessionPlacementInput).
     pub fn build(
         self,

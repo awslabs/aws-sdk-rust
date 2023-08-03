@@ -71,6 +71,10 @@ impl AllocateConnectionOnInterconnectInputBuilder {
         self.bandwidth = input;
         self
     }
+    /// <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners who have met specific requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.</p>
+    pub fn get_bandwidth(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bandwidth
+    }
     /// <p>The name of the provisioned connection.</p>
     pub fn connection_name(
         mut self,
@@ -86,6 +90,10 @@ impl AllocateConnectionOnInterconnectInputBuilder {
     ) -> Self {
         self.connection_name = input;
         self
+    }
+    /// <p>The name of the provisioned connection.</p>
+    pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_name
     }
     /// <p>The ID of the Amazon Web Services account of the customer for whom the connection will be provisioned.</p>
     pub fn owner_account(
@@ -103,6 +111,10 @@ impl AllocateConnectionOnInterconnectInputBuilder {
         self.owner_account = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account of the customer for whom the connection will be provisioned.</p>
+    pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_account
+    }
     /// <p>The ID of the interconnect on which the connection will be provisioned.</p>
     pub fn interconnect_id(
         mut self,
@@ -119,6 +131,10 @@ impl AllocateConnectionOnInterconnectInputBuilder {
         self.interconnect_id = input;
         self
     }
+    /// <p>The ID of the interconnect on which the connection will be provisioned.</p>
+    pub fn get_interconnect_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.interconnect_id
+    }
     /// <p>The dedicated VLAN provisioned to the connection.</p>
     pub fn vlan(mut self, input: i32) -> Self {
         self.vlan = ::std::option::Option::Some(input);
@@ -128,6 +144,10 @@ impl AllocateConnectionOnInterconnectInputBuilder {
     pub fn set_vlan(mut self, input: ::std::option::Option<i32>) -> Self {
         self.vlan = input;
         self
+    }
+    /// <p>The dedicated VLAN provisioned to the connection.</p>
+    pub fn get_vlan(&self) -> &::std::option::Option<i32> {
+        &self.vlan
     }
     /// Consumes the builder and constructs a [`AllocateConnectionOnInterconnectInput`](crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectInput, ::aws_smithy_http::operation::error::BuildError>{

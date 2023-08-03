@@ -36,6 +36,12 @@ impl DeleteTaskSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteTaskSet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_task_set::builders::DeleteTaskSetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl DeleteTaskSetFluentBuilder {
         self.inner = self.inner.set_cluster(input);
         self
     }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task set found in to delete.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster()
+    }
     /// <p>The short name or full Amazon Resource Name (ARN) of the service that hosts the task set to delete.</p>
     pub fn service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service(input.into());
@@ -127,6 +137,10 @@ impl DeleteTaskSetFluentBuilder {
     pub fn set_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service(input);
         self
+    }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the service that hosts the task set to delete.</p>
+    pub fn get_service(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service()
     }
     /// <p>The task set ID or full Amazon Resource Name (ARN) of the task set to delete.</p>
     pub fn task_set(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,6 +152,10 @@ impl DeleteTaskSetFluentBuilder {
         self.inner = self.inner.set_task_set(input);
         self
     }
+    /// <p>The task set ID or full Amazon Resource Name (ARN) of the task set to delete.</p>
+    pub fn get_task_set(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_task_set()
+    }
     /// <p>If <code>true</code>, you can delete a task set even if it hasn't been scaled down to zero.</p>
     pub fn force(mut self, input: bool) -> Self {
         self.inner = self.inner.force(input);
@@ -147,5 +165,9 @@ impl DeleteTaskSetFluentBuilder {
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force(input);
         self
+    }
+    /// <p>If <code>true</code>, you can delete a task set even if it hasn't been scaled down to zero.</p>
+    pub fn get_force(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force()
     }
 }

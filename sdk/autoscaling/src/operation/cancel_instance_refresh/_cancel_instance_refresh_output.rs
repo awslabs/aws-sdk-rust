@@ -54,6 +54,10 @@ impl CancelInstanceRefreshOutputBuilder {
         self.instance_refresh_id = input;
         self
     }
+    /// <p>The instance refresh ID associated with the request. This is the unique ID assigned to the instance refresh when it was started.</p>
+    pub fn get_instance_refresh_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_refresh_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

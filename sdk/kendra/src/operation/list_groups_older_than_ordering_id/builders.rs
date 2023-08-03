@@ -37,6 +37,10 @@ impl ListGroupsOlderThanOrderingIdFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListGroupsOlderThanOrderingId as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_groups_older_than_ordering_id::builders::ListGroupsOlderThanOrderingIdInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -107,6 +111,10 @@ impl ListGroupsOlderThanOrderingIdFluentBuilder {
         self.inner = self.inner.set_index_id(input);
         self
     }
+    /// <p>The identifier of the index for getting a list of groups mapped to users before a given ordering or timestamp identifier.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_index_id()
+    }
     /// <p>The identifier of the data source for getting a list of groups mapped to users before a given ordering timestamp identifier.</p>
     pub fn data_source_id(
         mut self,
@@ -123,6 +131,10 @@ impl ListGroupsOlderThanOrderingIdFluentBuilder {
         self.inner = self.inner.set_data_source_id(input);
         self
     }
+    /// <p>The identifier of the data source for getting a list of groups mapped to users before a given ordering timestamp identifier.</p>
+    pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_data_source_id()
+    }
     /// <p>The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
     pub fn ordering_id(mut self, input: i64) -> Self {
         self.inner = self.inner.ordering_id(input);
@@ -132,6 +144,10 @@ impl ListGroupsOlderThanOrderingIdFluentBuilder {
     pub fn set_ordering_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_ordering_id(input);
         self
+    }
+    /// <p>The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
+    pub fn get_ordering_id(&self) -> &::std::option::Option<i64> {
+        self.inner.get_ordering_id()
     }
     /// <p> If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of groups that are mapped to users before a given ordering or timestamp identifier. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -143,6 +159,10 @@ impl ListGroupsOlderThanOrderingIdFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p> If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of groups that are mapped to users before a given ordering or timestamp identifier. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p> The maximum number of returned groups that are mapped to users before a given ordering or timestamp identifier. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -152,5 +172,9 @@ impl ListGroupsOlderThanOrderingIdFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p> The maximum number of returned groups that are mapped to users before a given ordering or timestamp identifier. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

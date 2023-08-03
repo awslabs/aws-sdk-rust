@@ -108,6 +108,10 @@ impl AlreadyExistsExceptionBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
+    }
+    #[allow(missing_docs)] // documentation missing in model
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -116,6 +120,10 @@ impl AlreadyExistsExceptionBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// <p></p>
     pub fn creator_request_id(
@@ -134,6 +142,10 @@ impl AlreadyExistsExceptionBuilder {
         self
     }
     /// <p></p>
+    pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creator_request_id
+    }
+    /// <p></p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -142,6 +154,10 @@ impl AlreadyExistsExceptionBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p></p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p></p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -154,6 +170,10 @@ impl AlreadyExistsExceptionBuilder {
         self
     }
     /// <p></p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
+    /// <p></p>
     pub fn context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.context = ::std::option::Option::Some(input.into());
         self
@@ -162,6 +182,10 @@ impl AlreadyExistsExceptionBuilder {
     pub fn set_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.context = input;
         self
+    }
+    /// <p></p>
+    pub fn get_context(&self) -> &::std::option::Option<::std::string::String> {
+        &self.context
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

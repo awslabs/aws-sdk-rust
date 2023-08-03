@@ -80,6 +80,10 @@ impl UpdateBuilder {
         self.id = input;
         self
     }
+    /// <p>A UUID that is used to track the update.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The current status of the update.</p>
     pub fn status(mut self, input: crate::types::UpdateStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -90,6 +94,10 @@ impl UpdateBuilder {
         self.status = input;
         self
     }
+    /// <p>The current status of the update.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::UpdateStatus> {
+        &self.status
+    }
     /// <p>The type of the update.</p>
     pub fn r#type(mut self, input: crate::types::UpdateType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -99,6 +107,10 @@ impl UpdateBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::UpdateType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the update.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::UpdateType> {
+        &self.r#type
     }
     /// Appends an item to `params`.
     ///
@@ -119,6 +131,10 @@ impl UpdateBuilder {
         self.params = input;
         self
     }
+    /// <p>A key-value map that contains the parameters associated with the update.</p>
+    pub fn get_params(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateParam>> {
+        &self.params
+    }
     /// <p>The Unix epoch timestamp in seconds for when the update was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -131,6 +147,10 @@ impl UpdateBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The Unix epoch timestamp in seconds for when the update was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// Appends an item to `errors`.
     ///
@@ -150,6 +170,10 @@ impl UpdateBuilder {
     ) -> Self {
         self.errors = input;
         self
+    }
+    /// <p>Any errors associated with a <code>Failed</code> update.</p>
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>> {
+        &self.errors
     }
     /// Consumes the builder and constructs a [`Update`](crate::types::Update).
     pub fn build(self) -> crate::types::Update {

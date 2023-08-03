@@ -36,6 +36,10 @@ impl AssociateDelegateToResourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateDelegateToResource as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_delegate_to_resource::builders::AssociateDelegateToResourceInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl AssociateDelegateToResourceFluentBuilder {
         self.inner = self.inner.set_organization_id(input);
         self
     }
+    /// <p>The organization under which the resource exists.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
+    }
     /// <p>The resource for which members (users or groups) are associated.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
@@ -142,6 +150,10 @@ impl AssociateDelegateToResourceFluentBuilder {
         self.inner = self.inner.set_resource_id(input);
         self
     }
+    /// <p>The resource for which members (users or groups) are associated.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
+    }
     /// <p>The member (user or group) to associate to the resource.</p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.entity_id(input.into());
@@ -151,5 +163,9 @@ impl AssociateDelegateToResourceFluentBuilder {
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_entity_id(input);
         self
+    }
+    /// <p>The member (user or group) to associate to the resource.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_entity_id()
     }
 }

@@ -45,6 +45,10 @@ impl DeleteExtensionAssociationInputBuilder {
         self.extension_association_id = input;
         self
     }
+    /// <p>The ID of the extension association to delete.</p>
+    pub fn get_extension_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.extension_association_id
+    }
     /// Consumes the builder and constructs a [`DeleteExtensionAssociationInput`](crate::operation::delete_extension_association::DeleteExtensionAssociationInput).
     pub fn build(
         self,

@@ -45,6 +45,10 @@ impl PutAccountAliasInputBuilder {
         self.account_alias = input;
         self
     }
+    /// <p>An alias or short name for an Amazon Web Services account.</p>
+    pub fn get_account_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_alias
+    }
     /// Consumes the builder and constructs a [`PutAccountAliasInput`](crate::operation::put_account_alias::PutAccountAliasInput).
     pub fn build(
         self,

@@ -132,6 +132,10 @@ impl SkillDetailsBuilder {
         self.product_description = input;
         self
     }
+    /// <p>The description of the product.</p>
+    pub fn get_product_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_description
+    }
     /// <p>The phrase used to trigger the skill.</p>
     pub fn invocation_phrase(
         mut self,
@@ -148,6 +152,10 @@ impl SkillDetailsBuilder {
         self.invocation_phrase = input;
         self
     }
+    /// <p>The phrase used to trigger the skill.</p>
+    pub fn get_invocation_phrase(&self) -> &::std::option::Option<::std::string::String> {
+        &self.invocation_phrase
+    }
     /// <p>The date when the skill was released.</p>
     pub fn release_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.release_date = ::std::option::Option::Some(input.into());
@@ -157,6 +165,10 @@ impl SkillDetailsBuilder {
     pub fn set_release_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.release_date = input;
         self
+    }
+    /// <p>The date when the skill was released.</p>
+    pub fn get_release_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.release_date
     }
     /// <p>The URL of the end user license agreement.</p>
     pub fn end_user_license_agreement(
@@ -173,6 +185,10 @@ impl SkillDetailsBuilder {
     ) -> Self {
         self.end_user_license_agreement = input;
         self
+    }
+    /// <p>The URL of the end user license agreement.</p>
+    pub fn get_end_user_license_agreement(&self) -> &::std::option::Option<::std::string::String> {
+        &self.end_user_license_agreement
     }
     /// Appends an item to `generic_keywords`.
     ///
@@ -196,6 +212,12 @@ impl SkillDetailsBuilder {
         self.generic_keywords = input;
         self
     }
+    /// <p>The generic keywords associated with the skill that can be used to find a skill.</p>
+    pub fn get_generic_keywords(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.generic_keywords
+    }
     /// Appends an item to `bullet_points`.
     ///
     /// To override the contents of this collection use [`set_bullet_points`](Self::set_bullet_points).
@@ -217,6 +239,12 @@ impl SkillDetailsBuilder {
     ) -> Self {
         self.bullet_points = input;
         self
+    }
+    /// <p>The details about what the skill supports organized as bullet points.</p>
+    pub fn get_bullet_points(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.bullet_points
     }
     /// Appends an item to `new_in_this_version_bullet_points`.
     ///
@@ -240,6 +268,12 @@ impl SkillDetailsBuilder {
         self.new_in_this_version_bullet_points = input;
         self
     }
+    /// <p>The updates added in bullet points.</p>
+    pub fn get_new_in_this_version_bullet_points(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.new_in_this_version_bullet_points
+    }
     /// Appends an item to `skill_types`.
     ///
     /// To override the contents of this collection use [`set_skill_types`](Self::set_skill_types).
@@ -258,6 +292,12 @@ impl SkillDetailsBuilder {
     ) -> Self {
         self.skill_types = input;
         self
+    }
+    /// <p>The types of skills.</p>
+    pub fn get_skill_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.skill_types
     }
     /// Adds a key-value pair to `reviews`.
     ///
@@ -286,6 +326,15 @@ impl SkillDetailsBuilder {
         self.reviews = input;
         self
     }
+    /// <p> <i>This member has been deprecated.</i> </p>
+    /// <p>The list of reviews for the skill, including Key and Value pair.</p>
+    pub fn get_reviews(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.reviews
+    }
     /// <p>The details about the developer that published the skill.</p>
     pub fn developer_info(mut self, input: crate::types::DeveloperInfo) -> Self {
         self.developer_info = ::std::option::Option::Some(input);
@@ -298,6 +347,10 @@ impl SkillDetailsBuilder {
     ) -> Self {
         self.developer_info = input;
         self
+    }
+    /// <p>The details about the developer that published the skill.</p>
+    pub fn get_developer_info(&self) -> &::std::option::Option<crate::types::DeveloperInfo> {
+        &self.developer_info
     }
     /// Consumes the builder and constructs a [`SkillDetails`](crate::types::SkillDetails).
     pub fn build(self) -> crate::types::SkillDetails {

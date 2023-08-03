@@ -37,6 +37,12 @@ impl PutRetentionSettingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutRetentionSettings as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_retention_settings::builders::PutRetentionSettingsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl PutRetentionSettingsFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p>The retention settings.</p>
     pub fn retention_settings(mut self, input: crate::types::RetentionSettings) -> Self {
         self.inner = self.inner.retention_settings(input);
@@ -139,5 +149,11 @@ impl PutRetentionSettingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_retention_settings(input);
         self
+    }
+    /// <p>The retention settings.</p>
+    pub fn get_retention_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::RetentionSettings> {
+        self.inner.get_retention_settings()
     }
 }

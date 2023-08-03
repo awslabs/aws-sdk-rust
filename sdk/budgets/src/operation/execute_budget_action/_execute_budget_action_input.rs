@@ -65,6 +65,10 @@ impl ExecuteBudgetActionInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The account ID of the user. It's a 12-digit number.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.budget_name = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl ExecuteBudgetActionInputBuilder {
         self.budget_name = input;
         self
     }
+    /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.budget_name
+    }
     /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
     pub fn action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_id = ::std::option::Option::Some(input.into());
@@ -84,6 +92,10 @@ impl ExecuteBudgetActionInputBuilder {
     pub fn set_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action_id = input;
         self
+    }
+    /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
+    pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_id
     }
     /// <p> The type of execution. </p>
     pub fn execution_type(mut self, input: crate::types::ExecutionType) -> Self {
@@ -97,6 +109,10 @@ impl ExecuteBudgetActionInputBuilder {
     ) -> Self {
         self.execution_type = input;
         self
+    }
+    /// <p> The type of execution. </p>
+    pub fn get_execution_type(&self) -> &::std::option::Option<crate::types::ExecutionType> {
+        &self.execution_type
     }
     /// Consumes the builder and constructs a [`ExecuteBudgetActionInput`](crate::operation::execute_budget_action::ExecuteBudgetActionInput).
     pub fn build(

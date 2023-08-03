@@ -48,6 +48,10 @@ impl AwsLambdaFunctionLayerBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the function layer.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The size of the layer archive in bytes.</p>
     pub fn code_size(mut self, input: i32) -> Self {
         self.code_size = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl AwsLambdaFunctionLayerBuilder {
     pub fn set_code_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.code_size = input;
         self
+    }
+    /// <p>The size of the layer archive in bytes.</p>
+    pub fn get_code_size(&self) -> &::std::option::Option<i32> {
+        &self.code_size
     }
     /// Consumes the builder and constructs a [`AwsLambdaFunctionLayer`](crate::types::AwsLambdaFunctionLayer).
     pub fn build(self) -> crate::types::AwsLambdaFunctionLayer {

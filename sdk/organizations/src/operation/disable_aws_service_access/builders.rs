@@ -50,6 +50,13 @@ impl DisableAWSServiceAccessFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisableAWSServiceAccess as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::disable_aws_service_access::builders::DisableAwsServiceAccessInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -145,5 +152,9 @@ impl DisableAWSServiceAccessFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_service_principal(input);
         self
+    }
+    /// <p>The service principal name of the Amazon Web Services service for which you want to disable integration with your organization. This is typically in the form of a URL, such as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
+    pub fn get_service_principal(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_principal()
     }
 }

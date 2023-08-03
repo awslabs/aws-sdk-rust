@@ -47,6 +47,10 @@ impl GetTargetResourceTypeInputBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The resource type.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
+    }
     /// Consumes the builder and constructs a [`GetTargetResourceTypeInput`](crate::operation::get_target_resource_type::GetTargetResourceTypeInput).
     pub fn build(
         self,

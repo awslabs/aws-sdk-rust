@@ -99,6 +99,16 @@ impl SimpleScopeTermBuilder {
         self.comparator = input;
         self
     }
+    /// <p>The operator to use in the condition. Valid values for each supported property (key) are:</p>
+    /// <ul>
+    /// <li><p>OBJECT_EXTENSION - EQ (equals) or NE (not equals)</p></li>
+    /// <li><p>OBJECT_KEY - STARTS_WITH</p></li>
+    /// <li><p>OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS</p></li>
+    /// <li><p>OBJECT_SIZE - Any operator except CONTAINS</p></li>
+    /// </ul>
+    pub fn get_comparator(&self) -> &::std::option::Option<crate::types::JobComparator> {
+        &self.comparator
+    }
     /// <p>The object property to use in the condition.</p>
     pub fn key(mut self, input: crate::types::ScopeFilterKey) -> Self {
         self.key = ::std::option::Option::Some(input);
@@ -108,6 +118,10 @@ impl SimpleScopeTermBuilder {
     pub fn set_key(mut self, input: ::std::option::Option<crate::types::ScopeFilterKey>) -> Self {
         self.key = input;
         self
+    }
+    /// <p>The object property to use in the condition.</p>
+    pub fn get_key(&self) -> &::std::option::Option<crate::types::ScopeFilterKey> {
+        &self.key
     }
     /// Appends an item to `values`.
     ///
@@ -143,6 +157,18 @@ impl SimpleScopeTermBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>An array that lists the values to use in the condition. If the value for the key property is OBJECT_EXTENSION or OBJECT_KEY, this array can specify multiple values and Amazon Macie uses OR logic to join the values. Otherwise, this array can specify only one value.</p>
+    /// <p>Valid values for each supported property (key) are:</p>
+    /// <ul>
+    /// <li><p>OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: docx or pdf</p></li>
+    /// <li><p>OBJECT_KEY - A string that represents the key prefix (folder name or path) of an object. For example: logs or awslogs/eventlogs. This value applies a condition to objects whose keys (names) begin with the specified value.</p></li>
+    /// <li><p>OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO 8601 format) when an object was created or last changed, whichever is latest. For example: 2020-09-28T14:31:13Z</p></li>
+    /// <li><p>OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.</p></li>
+    /// </ul>
+    /// <p>Macie doesn't support use of wildcard characters in these values. Also, string values are case sensitive.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`SimpleScopeTerm`](crate::types::SimpleScopeTerm).
     pub fn build(self) -> crate::types::SimpleScopeTerm {

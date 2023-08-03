@@ -37,6 +37,13 @@ impl UpdateMedicalVocabularyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateMedicalVocabulary as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_medical_vocabulary::builders::UpdateMedicalVocabularyInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl UpdateMedicalVocabularyFluentBuilder {
         self.inner = self.inner.set_vocabulary_name(input);
         self
     }
+    /// <p>The name of the custom medical vocabulary you want to update. Custom medical vocabulary names are case sensitive.</p>
+    pub fn get_vocabulary_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vocabulary_name()
+    }
     /// <p>The language code that represents the language of the entries in the custom vocabulary you want to update. US English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.inner = self.inner.language_code(input);
@@ -145,6 +156,10 @@ impl UpdateMedicalVocabularyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
+    }
+    /// <p>The language code that represents the language of the entries in the custom vocabulary you want to update. US English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
+        self.inner.get_language_code()
     }
     /// <p>The Amazon S3 location of the text file that contains your custom medical vocabulary. The URI must be located in the same Amazon Web Services Region as the resource you're calling.</p>
     /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code> </p>
@@ -163,5 +178,10 @@ impl UpdateMedicalVocabularyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_vocabulary_file_uri(input);
         self
+    }
+    /// <p>The Amazon S3 location of the text file that contains your custom medical vocabulary. The URI must be located in the same Amazon Web Services Region as the resource you're calling.</p>
+    /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code> </p>
+    pub fn get_vocabulary_file_uri(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vocabulary_file_uri()
     }
 }

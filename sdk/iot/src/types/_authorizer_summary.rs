@@ -54,6 +54,10 @@ impl AuthorizerSummaryBuilder {
         self.authorizer_name = input;
         self
     }
+    /// <p>The authorizer name.</p>
+    pub fn get_authorizer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authorizer_name
+    }
     /// <p>The authorizer ARN.</p>
     pub fn authorizer_arn(
         mut self,
@@ -69,6 +73,10 @@ impl AuthorizerSummaryBuilder {
     ) -> Self {
         self.authorizer_arn = input;
         self
+    }
+    /// <p>The authorizer ARN.</p>
+    pub fn get_authorizer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authorizer_arn
     }
     /// Consumes the builder and constructs a [`AuthorizerSummary`](crate::types::AuthorizerSummary).
     pub fn build(self) -> crate::types::AuthorizerSummary {

@@ -47,6 +47,13 @@ impl LabelParameterVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the LabelParameterVersion as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::label_parameter_version::builders::LabelParameterVersionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +144,10 @@ impl LabelParameterVersionFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The parameter name on which you want to attach one or more labels.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The specific version of the parameter on which you want to attach one or more labels. If no version is specified, the system attaches the label to the latest version.</p>
     pub fn parameter_version(mut self, input: i64) -> Self {
         self.inner = self.inner.parameter_version(input);
@@ -146,6 +157,10 @@ impl LabelParameterVersionFluentBuilder {
     pub fn set_parameter_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_parameter_version(input);
         self
+    }
+    /// <p>The specific version of the parameter on which you want to attach one or more labels. If no version is specified, the system attaches the label to the latest version.</p>
+    pub fn get_parameter_version(&self) -> &::std::option::Option<i64> {
+        self.inner.get_parameter_version()
     }
     /// Appends an item to `Labels`.
     ///
@@ -163,5 +178,9 @@ impl LabelParameterVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_labels(input);
         self
+    }
+    /// <p>One or more labels to attach to the specified parameter version.</p>
+    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_labels()
     }
 }

@@ -39,6 +39,10 @@ impl StopPiiEntitiesDetectionJobInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The identifier of the PII entities detection job to stop.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// Consumes the builder and constructs a [`StopPiiEntitiesDetectionJobInput`](crate::operation::stop_pii_entities_detection_job::StopPiiEntitiesDetectionJobInput).
     pub fn build(
         self,

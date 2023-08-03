@@ -48,6 +48,10 @@ impl DeleteExperimentInputBuilder {
         self.project = input;
         self
     }
+    /// <p>The name or ARN of the project that contains the experiment to delete.</p>
+    pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project
+    }
     /// <p>The name of the experiment to delete.</p>
     pub fn experiment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.experiment = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl DeleteExperimentInputBuilder {
     pub fn set_experiment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.experiment = input;
         self
+    }
+    /// <p>The name of the experiment to delete.</p>
+    pub fn get_experiment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.experiment
     }
     /// Consumes the builder and constructs a [`DeleteExperimentInput`](crate::operation::delete_experiment::DeleteExperimentInput).
     pub fn build(

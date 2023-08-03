@@ -85,6 +85,12 @@ impl GetPortfolioPreferencesOutputBuilder {
         self.prioritize_business_goals = input;
         self
     }
+    /// <p> The rank of business goals based on priority. </p>
+    pub fn get_prioritize_business_goals(
+        &self,
+    ) -> &::std::option::Option<crate::types::PrioritizeBusinessGoals> {
+        &self.prioritize_business_goals
+    }
     /// <p> The transformation preferences for non-database applications. </p>
     pub fn application_preferences(mut self, input: crate::types::ApplicationPreferences) -> Self {
         self.application_preferences = ::std::option::Option::Some(input);
@@ -97,6 +103,12 @@ impl GetPortfolioPreferencesOutputBuilder {
     ) -> Self {
         self.application_preferences = input;
         self
+    }
+    /// <p> The transformation preferences for non-database applications. </p>
+    pub fn get_application_preferences(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationPreferences> {
+        &self.application_preferences
     }
     /// <p> The transformation preferences for database applications. </p>
     pub fn database_preferences(mut self, input: crate::types::DatabasePreferences) -> Self {
@@ -111,6 +123,12 @@ impl GetPortfolioPreferencesOutputBuilder {
         self.database_preferences = input;
         self
     }
+    /// <p> The transformation preferences for database applications. </p>
+    pub fn get_database_preferences(
+        &self,
+    ) -> &::std::option::Option<crate::types::DatabasePreferences> {
+        &self.database_preferences
+    }
     /// <p>The classification for application component types.</p>
     pub fn application_mode(mut self, input: crate::types::ApplicationMode) -> Self {
         self.application_mode = ::std::option::Option::Some(input);
@@ -123,6 +141,10 @@ impl GetPortfolioPreferencesOutputBuilder {
     ) -> Self {
         self.application_mode = input;
         self
+    }
+    /// <p>The classification for application component types.</p>
+    pub fn get_application_mode(&self) -> &::std::option::Option<crate::types::ApplicationMode> {
+        &self.application_mode
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

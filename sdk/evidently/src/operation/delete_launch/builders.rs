@@ -37,6 +37,10 @@ impl DeleteLaunchFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteLaunch as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_launch::builders::DeleteLaunchInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl DeleteLaunchFluentBuilder {
         self.inner = self.inner.set_project(input);
         self
     }
+    /// <p>The name or ARN of the project that contains the launch to delete.</p>
+    pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project()
+    }
     /// <p>The name of the launch to delete.</p>
     pub fn launch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.launch(input.into());
@@ -128,5 +136,9 @@ impl DeleteLaunchFluentBuilder {
     pub fn set_launch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_launch(input);
         self
+    }
+    /// <p>The name of the launch to delete.</p>
+    pub fn get_launch(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_launch()
     }
 }

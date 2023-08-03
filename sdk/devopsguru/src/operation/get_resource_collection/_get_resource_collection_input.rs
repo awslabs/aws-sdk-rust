@@ -55,6 +55,12 @@ impl GetResourceCollectionInputBuilder {
         self.resource_collection_type = input;
         self
     }
+    /// <p> The type of Amazon Web Services resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
+    pub fn get_resource_collection_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceCollectionType> {
+        &self.resource_collection_type
+    }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -64,6 +70,10 @@ impl GetResourceCollectionInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`GetResourceCollectionInput`](crate::operation::get_resource_collection::GetResourceCollectionInput).
     pub fn build(

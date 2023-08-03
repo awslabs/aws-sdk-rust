@@ -36,6 +36,10 @@ impl PrepareQueryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PrepareQuery as a reference.
+    pub fn as_input(&self) -> &crate::operation::prepare_query::builders::PrepareQueryInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl PrepareQueryFluentBuilder {
         self.inner = self.inner.set_query_string(input);
         self
     }
+    /// <p>The Timestream query string that you want to use as a prepared statement. Parameter names can be specified in the query string <code>@</code> character followed by an identifier. </p>
+    pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_query_string()
+    }
     /// <p>By setting this value to <code>true</code>, Timestream will only validate that the query string is a valid Timestream query, and not store the prepared query for later use.</p>
     pub fn validate_only(mut self, input: bool) -> Self {
         self.inner = self.inner.validate_only(input);
@@ -127,5 +135,9 @@ impl PrepareQueryFluentBuilder {
     pub fn set_validate_only(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_validate_only(input);
         self
+    }
+    /// <p>By setting this value to <code>true</code>, Timestream will only validate that the query string is a valid Timestream query, and not store the prepared query for later use.</p>
+    pub fn get_validate_only(&self) -> &::std::option::Option<bool> {
+        self.inner.get_validate_only()
     }
 }

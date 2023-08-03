@@ -59,6 +59,10 @@ impl EcrRescanDurationStateBuilder {
         self.rescan_duration = input;
         self
     }
+    /// <p>The ECR automated re-scan duration defines how long an ECR image will be actively scanned by Amazon Inspector. When the number of days since an image was last pushed exceeds the automated re-scan duration the monitoring state of that image becomes <code>inactive</code> and all associated findings are scheduled for closure.</p>
+    pub fn get_rescan_duration(&self) -> &::std::option::Option<crate::types::EcrRescanDuration> {
+        &self.rescan_duration
+    }
     /// <p>The status of changes to the ECR automated re-scan duration.</p>
     pub fn status(mut self, input: crate::types::EcrRescanDurationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl EcrRescanDurationStateBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of changes to the ECR automated re-scan duration.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::EcrRescanDurationStatus> {
+        &self.status
+    }
     /// <p>A timestamp representing when the last time the ECR scan duration setting was changed.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl EcrRescanDurationStateBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// <p>A timestamp representing when the last time the ECR scan duration setting was changed.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     /// Consumes the builder and constructs a [`EcrRescanDurationState`](crate::types::EcrRescanDurationState).
     pub fn build(self) -> crate::types::EcrRescanDurationState {

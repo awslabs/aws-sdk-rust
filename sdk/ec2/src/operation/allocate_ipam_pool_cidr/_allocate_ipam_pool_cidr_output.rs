@@ -51,6 +51,12 @@ impl AllocateIpamPoolCidrOutputBuilder {
         self.ipam_pool_allocation = input;
         self
     }
+    /// <p>Information about the allocation created.</p>
+    pub fn get_ipam_pool_allocation(
+        &self,
+    ) -> &::std::option::Option<crate::types::IpamPoolAllocation> {
+        &self.ipam_pool_allocation
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

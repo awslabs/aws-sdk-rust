@@ -84,6 +84,12 @@ impl DestinationParameterValueConfigurationBuilder {
         self.custom_values_configuration = input;
         self
     }
+    /// <p>The configuration of custom values for destination parameter in <code>DestinationParameterValueConfiguration</code>.</p>
+    pub fn get_custom_values_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomValuesConfiguration> {
+        &self.custom_values_configuration
+    }
     /// <p>The configuration that selects all options.</p>
     pub fn select_all_value_options(mut self, input: crate::types::SelectAllValueOptions) -> Self {
         self.select_all_value_options = ::std::option::Option::Some(input);
@@ -96,6 +102,12 @@ impl DestinationParameterValueConfigurationBuilder {
     ) -> Self {
         self.select_all_value_options = input;
         self
+    }
+    /// <p>The configuration that selects all options.</p>
+    pub fn get_select_all_value_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::SelectAllValueOptions> {
+        &self.select_all_value_options
     }
     /// <p>The source parameter name of the destination parameter.</p>
     pub fn source_parameter_name(
@@ -113,6 +125,10 @@ impl DestinationParameterValueConfigurationBuilder {
         self.source_parameter_name = input;
         self
     }
+    /// <p>The source parameter name of the destination parameter.</p>
+    pub fn get_source_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_parameter_name
+    }
     /// <p>The source field ID of the destination parameter.</p>
     pub fn source_field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_field = ::std::option::Option::Some(input.into());
@@ -122,6 +138,10 @@ impl DestinationParameterValueConfigurationBuilder {
     pub fn set_source_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_field = input;
         self
+    }
+    /// <p>The source field ID of the destination parameter.</p>
+    pub fn get_source_field(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_field
     }
     /// <p>A column of a data set.</p>
     pub fn source_column(mut self, input: crate::types::ColumnIdentifier) -> Self {
@@ -135,6 +155,10 @@ impl DestinationParameterValueConfigurationBuilder {
     ) -> Self {
         self.source_column = input;
         self
+    }
+    /// <p>A column of a data set.</p>
+    pub fn get_source_column(&self) -> &::std::option::Option<crate::types::ColumnIdentifier> {
+        &self.source_column
     }
     /// Consumes the builder and constructs a [`DestinationParameterValueConfiguration`](crate::types::DestinationParameterValueConfiguration).
     pub fn build(self) -> crate::types::DestinationParameterValueConfiguration {

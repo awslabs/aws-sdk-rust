@@ -50,6 +50,12 @@ impl StatelessCustomActionDefinitionBuilder {
         self.publish_metric_action = input;
         self
     }
+    /// <p>Information about metrics to publish to CloudWatch.</p>
+    pub fn get_publish_metric_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::StatelessCustomPublishMetricAction> {
+        &self.publish_metric_action
+    }
     /// Consumes the builder and constructs a [`StatelessCustomActionDefinition`](crate::types::StatelessCustomActionDefinition).
     pub fn build(self) -> crate::types::StatelessCustomActionDefinition {
         crate::types::StatelessCustomActionDefinition {

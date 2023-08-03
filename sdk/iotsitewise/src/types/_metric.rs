@@ -72,6 +72,11 @@ impl MetricBuilder {
         self.expression = input;
         self
     }
+    /// <p>The mathematical expression that defines the metric aggregation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expression
+    }
     /// Appends an item to `variables`.
     ///
     /// To override the contents of this collection use [`set_variables`](Self::set_variables).
@@ -91,6 +96,12 @@ impl MetricBuilder {
         self.variables = input;
         self
     }
+    /// <p>The list of variables used in the expression.</p>
+    pub fn get_variables(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExpressionVariable>> {
+        &self.variables
+    }
     /// <p>The window (time interval) over which IoT SiteWise computes the metric's aggregation expression. IoT SiteWise computes one data point per <code>window</code>.</p>
     pub fn window(mut self, input: crate::types::MetricWindow) -> Self {
         self.window = ::std::option::Option::Some(input);
@@ -100,6 +111,10 @@ impl MetricBuilder {
     pub fn set_window(mut self, input: ::std::option::Option<crate::types::MetricWindow>) -> Self {
         self.window = input;
         self
+    }
+    /// <p>The window (time interval) over which IoT SiteWise computes the metric's aggregation expression. IoT SiteWise computes one data point per <code>window</code>.</p>
+    pub fn get_window(&self) -> &::std::option::Option<crate::types::MetricWindow> {
+        &self.window
     }
     /// <p>The processing configuration for the given metric property. You can configure metrics to be computed at the edge or in the Amazon Web Services Cloud. By default, metrics are forwarded to the cloud.</p>
     pub fn processing_config(mut self, input: crate::types::MetricProcessingConfig) -> Self {
@@ -113,6 +128,12 @@ impl MetricBuilder {
     ) -> Self {
         self.processing_config = input;
         self
+    }
+    /// <p>The processing configuration for the given metric property. You can configure metrics to be computed at the edge or in the Amazon Web Services Cloud. By default, metrics are forwarded to the cloud.</p>
+    pub fn get_processing_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::MetricProcessingConfig> {
+        &self.processing_config
     }
     /// Consumes the builder and constructs a [`Metric`](crate::types::Metric).
     pub fn build(self) -> crate::types::Metric {

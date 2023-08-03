@@ -54,6 +54,10 @@ impl BatchGetDeploymentInstancesInputBuilder {
         self.deployment_id = input;
         self
     }
+    /// <p> The unique ID of a deployment. </p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
+    }
     /// Appends an item to `instance_ids`.
     ///
     /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
@@ -72,6 +76,12 @@ impl BatchGetDeploymentInstancesInputBuilder {
     ) -> Self {
         self.instance_ids = input;
         self
+    }
+    /// <p>The unique IDs of instances used in the deployment. The maximum number of instance IDs you can specify is 25.</p>
+    pub fn get_instance_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.instance_ids
     }
     /// Consumes the builder and constructs a [`BatchGetDeploymentInstancesInput`](crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesInput).
     pub fn build(

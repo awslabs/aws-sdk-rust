@@ -56,6 +56,12 @@ impl PutLifecycleConfigurationOutputBuilder {
         self.lifecycle_policies = input;
         self
     }
+    /// <p>An array of lifecycle management policies. EFS supports a maximum of one policy per file system.</p>
+    pub fn get_lifecycle_policies(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicy>> {
+        &self.lifecycle_policies
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

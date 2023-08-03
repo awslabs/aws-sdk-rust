@@ -55,6 +55,10 @@ impl GetDnssecOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>A string repesenting the status of DNSSEC.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DnssecStatus> {
+        &self.status
+    }
     /// Appends an item to `key_signing_keys`.
     ///
     /// To override the contents of this collection use [`set_key_signing_keys`](Self::set_key_signing_keys).
@@ -73,6 +77,12 @@ impl GetDnssecOutputBuilder {
     ) -> Self {
         self.key_signing_keys = input;
         self
+    }
+    /// <p>The key-signing keys (KSKs) in your account.</p>
+    pub fn get_key_signing_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KeySigningKey>> {
+        &self.key_signing_keys
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

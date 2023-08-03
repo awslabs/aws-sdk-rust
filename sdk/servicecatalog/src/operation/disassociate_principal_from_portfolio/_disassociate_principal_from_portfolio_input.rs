@@ -85,6 +85,14 @@ impl DisassociatePrincipalFromPortfolioInputBuilder {
         self.accept_language = input;
         self
     }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accept_language
+    }
     /// <p>The portfolio identifier.</p>
     pub fn portfolio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portfolio_id = ::std::option::Option::Some(input.into());
@@ -94,6 +102,10 @@ impl DisassociatePrincipalFromPortfolioInputBuilder {
     pub fn set_portfolio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.portfolio_id = input;
         self
+    }
+    /// <p>The portfolio identifier.</p>
+    pub fn get_portfolio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portfolio_id
     }
     /// <p>The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> with or without wildcard characters if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.</p>
     pub fn principal_arn(
@@ -111,6 +123,10 @@ impl DisassociatePrincipalFromPortfolioInputBuilder {
         self.principal_arn = input;
         self
     }
+    /// <p>The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> with or without wildcard characters if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.</p>
+    pub fn get_principal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal_arn
+    }
     /// <p>The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you specify an <code>IAM</code> ARN with no AccountId, with or without wildcard characters. </p>
     pub fn principal_type(mut self, input: crate::types::PrincipalType) -> Self {
         self.principal_type = ::std::option::Option::Some(input);
@@ -123,6 +139,10 @@ impl DisassociatePrincipalFromPortfolioInputBuilder {
     ) -> Self {
         self.principal_type = input;
         self
+    }
+    /// <p>The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you specify an <code>IAM</code> ARN with no AccountId, with or without wildcard characters. </p>
+    pub fn get_principal_type(&self) -> &::std::option::Option<crate::types::PrincipalType> {
+        &self.principal_type
     }
     /// Consumes the builder and constructs a [`DisassociatePrincipalFromPortfolioInput`](crate::operation::disassociate_principal_from_portfolio::DisassociatePrincipalFromPortfolioInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_principal_from_portfolio::DisassociatePrincipalFromPortfolioInput, ::aws_smithy_http::operation::error::BuildError>{

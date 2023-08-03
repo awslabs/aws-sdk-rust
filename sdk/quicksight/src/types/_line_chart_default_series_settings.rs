@@ -64,6 +64,10 @@ impl LineChartDefaultSeriesSettingsBuilder {
         self.axis_binding = input;
         self
     }
+    /// <p>The axis to which you are binding all line series to.</p>
+    pub fn get_axis_binding(&self) -> &::std::option::Option<crate::types::AxisBinding> {
+        &self.axis_binding
+    }
     /// <p>Line styles options for all line series in the visual.</p>
     pub fn line_style_settings(mut self, input: crate::types::LineChartLineStyleSettings) -> Self {
         self.line_style_settings = ::std::option::Option::Some(input);
@@ -76,6 +80,12 @@ impl LineChartDefaultSeriesSettingsBuilder {
     ) -> Self {
         self.line_style_settings = input;
         self
+    }
+    /// <p>Line styles options for all line series in the visual.</p>
+    pub fn get_line_style_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::LineChartLineStyleSettings> {
+        &self.line_style_settings
     }
     /// <p>Marker styles options for all line series in the visual.</p>
     pub fn marker_style_settings(
@@ -92,6 +102,12 @@ impl LineChartDefaultSeriesSettingsBuilder {
     ) -> Self {
         self.marker_style_settings = input;
         self
+    }
+    /// <p>Marker styles options for all line series in the visual.</p>
+    pub fn get_marker_style_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::LineChartMarkerStyleSettings> {
+        &self.marker_style_settings
     }
     /// Consumes the builder and constructs a [`LineChartDefaultSeriesSettings`](crate::types::LineChartDefaultSeriesSettings).
     pub fn build(self) -> crate::types::LineChartDefaultSeriesSettings {

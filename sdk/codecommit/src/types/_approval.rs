@@ -48,6 +48,10 @@ impl ApprovalBuilder {
         self.user_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the user.</p>
+    pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_arn
+    }
     /// <p>The state of the approval, APPROVE or REVOKE. REVOKE states are not stored.</p>
     pub fn approval_state(mut self, input: crate::types::ApprovalState) -> Self {
         self.approval_state = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl ApprovalBuilder {
     ) -> Self {
         self.approval_state = input;
         self
+    }
+    /// <p>The state of the approval, APPROVE or REVOKE. REVOKE states are not stored.</p>
+    pub fn get_approval_state(&self) -> &::std::option::Option<crate::types::ApprovalState> {
+        &self.approval_state
     }
     /// Consumes the builder and constructs a [`Approval`](crate::types::Approval).
     pub fn build(self) -> crate::types::Approval {

@@ -40,6 +40,10 @@ impl AttachmentInformationBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the attachment.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`AttachmentInformation`](crate::types::AttachmentInformation).
     pub fn build(self) -> crate::types::AttachmentInformation {
         crate::types::AttachmentInformation { name: self.name }

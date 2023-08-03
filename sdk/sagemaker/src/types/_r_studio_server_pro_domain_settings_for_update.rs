@@ -70,6 +70,10 @@ impl RStudioServerProDomainSettingsForUpdateBuilder {
         self.domain_execution_role_arn = input;
         self
     }
+    /// <p>The execution role for the <code>RStudioServerPro</code> Domain-level app.</p>
+    pub fn get_domain_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_execution_role_arn
+    }
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
     pub fn default_resource_spec(mut self, input: crate::types::ResourceSpec) -> Self {
         self.default_resource_spec = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl RStudioServerProDomainSettingsForUpdateBuilder {
     ) -> Self {
         self.default_resource_spec = input;
         self
+    }
+    /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
+    pub fn get_default_resource_spec(&self) -> &::std::option::Option<crate::types::ResourceSpec> {
+        &self.default_resource_spec
     }
     /// <p>A URL pointing to an RStudio Connect server.</p>
     pub fn r_studio_connect_url(
@@ -99,6 +107,10 @@ impl RStudioServerProDomainSettingsForUpdateBuilder {
         self.r_studio_connect_url = input;
         self
     }
+    /// <p>A URL pointing to an RStudio Connect server.</p>
+    pub fn get_r_studio_connect_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r_studio_connect_url
+    }
     /// <p>A URL pointing to an RStudio Package Manager server.</p>
     pub fn r_studio_package_manager_url(
         mut self,
@@ -114,6 +126,12 @@ impl RStudioServerProDomainSettingsForUpdateBuilder {
     ) -> Self {
         self.r_studio_package_manager_url = input;
         self
+    }
+    /// <p>A URL pointing to an RStudio Package Manager server.</p>
+    pub fn get_r_studio_package_manager_url(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.r_studio_package_manager_url
     }
     /// Consumes the builder and constructs a [`RStudioServerProDomainSettingsForUpdate`](crate::types::RStudioServerProDomainSettingsForUpdate).
     pub fn build(self) -> crate::types::RStudioServerProDomainSettingsForUpdate {

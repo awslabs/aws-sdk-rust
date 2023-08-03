@@ -36,6 +36,12 @@ impl DeleteSshPublicKeyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteSshPublicKey as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_ssh_public_key::builders::DeleteSshPublicKeyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DeleteSshPublicKeyFluentBuilder {
         self.inner = self.inner.set_server_id(input);
         self
     }
+    /// <p>A system-assigned unique identifier for a file transfer protocol-enabled server instance that has the user assigned to it.</p>
+    pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_server_id()
+    }
     /// <p>A unique identifier used to reference your user's specific SSH key.</p>
     pub fn ssh_public_key_id(
         mut self,
@@ -142,6 +152,10 @@ impl DeleteSshPublicKeyFluentBuilder {
         self.inner = self.inner.set_ssh_public_key_id(input);
         self
     }
+    /// <p>A unique identifier used to reference your user's specific SSH key.</p>
+    pub fn get_ssh_public_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ssh_public_key_id()
+    }
     /// <p>A unique string that identifies a user whose public key is being deleted.</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_name(input.into());
@@ -151,5 +165,9 @@ impl DeleteSshPublicKeyFluentBuilder {
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_name(input);
         self
+    }
+    /// <p>A unique string that identifies a user whose public key is being deleted.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_name()
     }
 }

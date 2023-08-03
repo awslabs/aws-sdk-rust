@@ -46,6 +46,12 @@ impl DeleteReplicationTaskAssessmentRunInputBuilder {
         self.replication_task_assessment_run_arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the premigration assessment run to be deleted.</p>
+    pub fn get_replication_task_assessment_run_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.replication_task_assessment_run_arn
+    }
     /// Consumes the builder and constructs a [`DeleteReplicationTaskAssessmentRunInput`](crate::operation::delete_replication_task_assessment_run::DeleteReplicationTaskAssessmentRunInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_replication_task_assessment_run::DeleteReplicationTaskAssessmentRunInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

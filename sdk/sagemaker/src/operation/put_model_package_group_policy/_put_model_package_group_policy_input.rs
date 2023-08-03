@@ -53,6 +53,10 @@ impl PutModelPackageGroupPolicyInputBuilder {
         self.model_package_group_name = input;
         self
     }
+    /// <p>The name of the model group to add a resource policy to.</p>
+    pub fn get_model_package_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_package_group_name
+    }
     /// <p>The resource policy for the model group.</p>
     pub fn resource_policy(
         mut self,
@@ -68,6 +72,10 @@ impl PutModelPackageGroupPolicyInputBuilder {
     ) -> Self {
         self.resource_policy = input;
         self
+    }
+    /// <p>The resource policy for the model group.</p>
+    pub fn get_resource_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_policy
     }
     /// Consumes the builder and constructs a [`PutModelPackageGroupPolicyInput`](crate::operation::put_model_package_group_policy::PutModelPackageGroupPolicyInput).
     pub fn build(

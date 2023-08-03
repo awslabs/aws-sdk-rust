@@ -43,6 +43,10 @@ impl InvalidParameterDetailBuilder {
         self.problem = input;
         self
     }
+    /// <p>The reason the parameter is invalid.</p>
+    pub fn get_problem(&self) -> &::std::option::Option<crate::types::InvalidParameterProblem> {
+        &self.problem
+    }
     /// Consumes the builder and constructs a [`InvalidParameterDetail`](crate::types::InvalidParameterDetail).
     pub fn build(self) -> crate::types::InvalidParameterDetail {
         crate::types::InvalidParameterDetail {

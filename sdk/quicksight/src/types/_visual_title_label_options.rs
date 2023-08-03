@@ -51,6 +51,10 @@ impl VisualTitleLabelOptionsBuilder {
         self.visibility = input;
         self
     }
+    /// <p>The visibility of the title label.</p>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.visibility
+    }
     /// <p>The short text format of the title label, such as plain text or rich text.</p>
     pub fn format_text(mut self, input: crate::types::ShortFormatText) -> Self {
         self.format_text = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl VisualTitleLabelOptionsBuilder {
     ) -> Self {
         self.format_text = input;
         self
+    }
+    /// <p>The short text format of the title label, such as plain text or rich text.</p>
+    pub fn get_format_text(&self) -> &::std::option::Option<crate::types::ShortFormatText> {
+        &self.format_text
     }
     /// Consumes the builder and constructs a [`VisualTitleLabelOptions`](crate::types::VisualTitleLabelOptions).
     pub fn build(self) -> crate::types::VisualTitleLabelOptions {

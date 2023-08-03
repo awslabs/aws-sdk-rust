@@ -50,6 +50,10 @@ impl PutRecordsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutRecords as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_records::builders::PutRecordsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,6 +143,12 @@ impl PutRecordsFluentBuilder {
         self.inner = self.inner.set_records(input);
         self
     }
+    /// <p>The records associated with the request.</p>
+    pub fn get_records(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PutRecordsRequestEntry>> {
+        self.inner.get_records()
+    }
     /// <p>The stream name associated with the request.</p>
     pub fn stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stream_name(input.into());
@@ -149,6 +159,10 @@ impl PutRecordsFluentBuilder {
         self.inner = self.inner.set_stream_name(input);
         self
     }
+    /// <p>The stream name associated with the request.</p>
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_name()
+    }
     /// <p>The ARN of the stream.</p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stream_arn(input.into());
@@ -158,5 +172,9 @@ impl PutRecordsFluentBuilder {
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stream_arn(input);
         self
+    }
+    /// <p>The ARN of the stream.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_arn()
     }
 }

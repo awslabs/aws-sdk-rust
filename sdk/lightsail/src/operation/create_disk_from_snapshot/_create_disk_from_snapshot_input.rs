@@ -149,6 +149,10 @@ impl CreateDiskFromSnapshotInputBuilder {
         self.disk_name = input;
         self
     }
+    /// <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+    pub fn get_disk_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.disk_name
+    }
     /// <p>The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to create the new storage disk.</p>
     /// <p>Constraint:</p>
     /// <ul>
@@ -173,6 +177,14 @@ impl CreateDiskFromSnapshotInputBuilder {
         self.disk_snapshot_name = input;
         self
     }
+    /// <p>The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to create the new storage disk.</p>
+    /// <p>Constraint:</p>
+    /// <ul>
+    /// <li> <p>This parameter cannot be defined together with the <code>source disk name</code> parameter. The <code>disk snapshot name</code> and <code>source disk name</code> parameters are mutually exclusive.</p> </li>
+    /// </ul>
+    pub fn get_disk_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.disk_snapshot_name
+    }
     /// <p>The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Choose the same Availability Zone as the Lightsail instance where you want to create the disk.</p>
     /// <p>Use the GetRegions operation to list the Availability Zones where Lightsail is currently available.</p>
     pub fn availability_zone(
@@ -191,6 +203,11 @@ impl CreateDiskFromSnapshotInputBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Choose the same Availability Zone as the Lightsail instance where you want to create the disk.</p>
+    /// <p>Use the GetRegions operation to list the Availability Zones where Lightsail is currently available.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
     pub fn size_in_gb(mut self, input: i32) -> Self {
         self.size_in_gb = ::std::option::Option::Some(input);
@@ -200,6 +217,10 @@ impl CreateDiskFromSnapshotInputBuilder {
     pub fn set_size_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
         self.size_in_gb = input;
         self
+    }
+    /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
+    pub fn get_size_in_gb(&self) -> &::std::option::Option<i32> {
+        &self.size_in_gb
     }
     /// Appends an item to `tags`.
     ///
@@ -222,6 +243,11 @@ impl CreateDiskFromSnapshotInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tag keys and optional values to add to the resource during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Appends an item to `add_ons`.
     ///
     /// To override the contents of this collection use [`set_add_ons`](Self::set_add_ons).
@@ -240,6 +266,12 @@ impl CreateDiskFromSnapshotInputBuilder {
     ) -> Self {
         self.add_ons = input;
         self
+    }
+    /// <p>An array of objects that represent the add-ons to enable for the new disk.</p>
+    pub fn get_add_ons(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddOnRequest>> {
+        &self.add_ons
     }
     /// <p>The name of the source disk from which the source automatic snapshot was created.</p>
     /// <p>Constraints:</p>
@@ -267,6 +299,15 @@ impl CreateDiskFromSnapshotInputBuilder {
         self.source_disk_name = input;
         self
     }
+    /// <p>The name of the source disk from which the source automatic snapshot was created.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>This parameter cannot be defined together with the <code>disk snapshot name</code> parameter. The <code>source disk name</code> and <code>disk snapshot name</code> parameters are mutually exclusive.</p> </li>
+    /// <li> <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
+    /// </ul>
+    pub fn get_source_disk_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_disk_name
+    }
     /// <p>The date of the automatic snapshot to use for the new disk. Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic snapshots.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -288,6 +329,16 @@ impl CreateDiskFromSnapshotInputBuilder {
     pub fn set_restore_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.restore_date = input;
         self
+    }
+    /// <p>The date of the automatic snapshot to use for the new disk. Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic snapshots.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be specified in <code>YYYY-MM-DD</code> format.</p> </li>
+    /// <li> <p>This parameter cannot be defined together with the <code>use latest restorable auto snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable auto snapshot</code> parameters are mutually exclusive.</p> </li>
+    /// <li> <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
+    /// </ul>
+    pub fn get_restore_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.restore_date
     }
     /// <p>A Boolean value to indicate whether to use the latest available automatic snapshot.</p>
     /// <p>Constraints:</p>
@@ -311,6 +362,15 @@ impl CreateDiskFromSnapshotInputBuilder {
     ) -> Self {
         self.use_latest_restorable_auto_snapshot = input;
         self
+    }
+    /// <p>A Boolean value to indicate whether to use the latest available automatic snapshot.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>This parameter cannot be defined together with the <code>restore date</code> parameter. The <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.</p> </li>
+    /// <li> <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
+    /// </ul>
+    pub fn get_use_latest_restorable_auto_snapshot(&self) -> &::std::option::Option<bool> {
+        &self.use_latest_restorable_auto_snapshot
     }
     /// Consumes the builder and constructs a [`CreateDiskFromSnapshotInput`](crate::operation::create_disk_from_snapshot::CreateDiskFromSnapshotInput).
     pub fn build(

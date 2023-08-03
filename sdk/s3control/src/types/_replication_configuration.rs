@@ -48,6 +48,10 @@ impl ReplicationConfigurationBuilder {
         self.role = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that S3 on Outposts assumes when replicating objects. For information about S3 replication on Outposts configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/outposts-replication-how-setup.html">Setting up replication</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role
+    }
     /// Appends an item to `rules`.
     ///
     /// To override the contents of this collection use [`set_rules`](Self::set_rules).
@@ -66,6 +70,12 @@ impl ReplicationConfigurationBuilder {
     ) -> Self {
         self.rules = input;
         self
+    }
+    /// <p>A container for one or more replication rules. A replication configuration must have at least one rule and can contain an array of 100 rules at the most. </p>
+    pub fn get_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationRule>> {
+        &self.rules
     }
     /// Consumes the builder and constructs a [`ReplicationConfiguration`](crate::types::ReplicationConfiguration).
     pub fn build(self) -> crate::types::ReplicationConfiguration {

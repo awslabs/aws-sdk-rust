@@ -51,6 +51,12 @@ impl DescribeAccountAttributesInputBuilder {
         self.attribute_names = input;
         self
     }
+    /// <p>A list of attribute names.</p>
+    pub fn get_attribute_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.attribute_names
+    }
     /// Consumes the builder and constructs a [`DescribeAccountAttributesInput`](crate::operation::describe_account_attributes::DescribeAccountAttributesInput).
     pub fn build(
         self,

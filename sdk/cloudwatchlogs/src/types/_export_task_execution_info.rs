@@ -48,6 +48,10 @@ impl ExportTaskExecutionInfoBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The creation time of the export task, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<i64> {
+        &self.creation_time
+    }
     /// <p>The completion time of the export task, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub fn completion_time(mut self, input: i64) -> Self {
         self.completion_time = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ExportTaskExecutionInfoBuilder {
     pub fn set_completion_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.completion_time = input;
         self
+    }
+    /// <p>The completion time of the export task, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
+    pub fn get_completion_time(&self) -> &::std::option::Option<i64> {
+        &self.completion_time
     }
     /// Consumes the builder and constructs a [`ExportTaskExecutionInfo`](crate::types::ExportTaskExecutionInfo).
     pub fn build(self) -> crate::types::ExportTaskExecutionInfo {

@@ -57,6 +57,10 @@ impl UpdateRoleAliasInputBuilder {
         self.role_alias = input;
         self
     }
+    /// <p>The role alias to update.</p>
+    pub fn get_role_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_alias
+    }
     /// <p>The role ARN.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl UpdateRoleAliasInputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The role ARN.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The number of seconds the credential will be valid.</p>
     /// <p>This value must be less than or equal to the maximum session duration of the IAM role that the role alias references.</p>
@@ -78,6 +86,11 @@ impl UpdateRoleAliasInputBuilder {
     pub fn set_credential_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.credential_duration_seconds = input;
         self
+    }
+    /// <p>The number of seconds the credential will be valid.</p>
+    /// <p>This value must be less than or equal to the maximum session duration of the IAM role that the role alias references.</p>
+    pub fn get_credential_duration_seconds(&self) -> &::std::option::Option<i32> {
+        &self.credential_duration_seconds
     }
     /// Consumes the builder and constructs a [`UpdateRoleAliasInput`](crate::operation::update_role_alias::UpdateRoleAliasInput).
     pub fn build(

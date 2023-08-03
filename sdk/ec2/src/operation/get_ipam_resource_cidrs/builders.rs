@@ -36,6 +36,13 @@ impl GetIpamResourceCidrsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetIpamResourceCidrs as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_ipam_resource_cidrs::builders::GetIpamResourceCidrsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +144,10 @@ impl GetIpamResourceCidrsFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -154,6 +165,10 @@ impl GetIpamResourceCidrsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>One or more filters for the request. For more information about filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Filtering CLI output</a>.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// <p>The maximum number of results to return in the request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -164,6 +179,10 @@ impl GetIpamResourceCidrsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return in the request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -173,6 +192,10 @@ impl GetIpamResourceCidrsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The ID of the scope that the resource is in.</p>
     pub fn ipam_scope_id(
@@ -190,6 +213,10 @@ impl GetIpamResourceCidrsFluentBuilder {
         self.inner = self.inner.set_ipam_scope_id(input);
         self
     }
+    /// <p>The ID of the scope that the resource is in.</p>
+    pub fn get_ipam_scope_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ipam_scope_id()
+    }
     /// <p>The ID of the IPAM pool that the resource is in.</p>
     pub fn ipam_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ipam_pool_id(input.into());
@@ -200,6 +227,10 @@ impl GetIpamResourceCidrsFluentBuilder {
         self.inner = self.inner.set_ipam_pool_id(input);
         self
     }
+    /// <p>The ID of the IPAM pool that the resource is in.</p>
+    pub fn get_ipam_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ipam_pool_id()
+    }
     /// <p>The ID of the resource.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
@@ -209,6 +240,10 @@ impl GetIpamResourceCidrsFluentBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_id(input);
         self
+    }
+    /// <p>The ID of the resource.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
     }
     /// <p>The resource type.</p>
     pub fn resource_type(mut self, input: crate::types::IpamResourceType) -> Self {
@@ -223,6 +258,10 @@ impl GetIpamResourceCidrsFluentBuilder {
         self.inner = self.inner.set_resource_type(input);
         self
     }
+    /// <p>The resource type.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::IpamResourceType> {
+        self.inner.get_resource_type()
+    }
     /// <p>The resource tag.</p>
     pub fn resource_tag(mut self, input: crate::types::RequestIpamResourceTag) -> Self {
         self.inner = self.inner.resource_tag(input);
@@ -235,6 +274,10 @@ impl GetIpamResourceCidrsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_tag(input);
         self
+    }
+    /// <p>The resource tag.</p>
+    pub fn get_resource_tag(&self) -> &::std::option::Option<crate::types::RequestIpamResourceTag> {
+        self.inner.get_resource_tag()
     }
     /// <p>The ID of the Amazon Web Services account that owns the resource.</p>
     pub fn resource_owner(
@@ -251,5 +294,9 @@ impl GetIpamResourceCidrsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_owner(input);
         self
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the resource.</p>
+    pub fn get_resource_owner(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_owner()
     }
 }

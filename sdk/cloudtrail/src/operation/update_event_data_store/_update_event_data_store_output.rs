@@ -140,6 +140,10 @@ impl UpdateEventDataStoreOutputBuilder {
         self.event_data_store_arn = input;
         self
     }
+    /// <p>The ARN of the event data store.</p>
+    pub fn get_event_data_store_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_data_store_arn
+    }
     /// <p>The name of the event data store.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -149,6 +153,10 @@ impl UpdateEventDataStoreOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the event data store.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The status of an event data store.</p>
     pub fn status(mut self, input: crate::types::EventDataStoreStatus) -> Self {
@@ -162,6 +170,10 @@ impl UpdateEventDataStoreOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of an event data store.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::EventDataStoreStatus> {
+        &self.status
     }
     /// Appends an item to `advanced_event_selectors`.
     ///
@@ -182,6 +194,12 @@ impl UpdateEventDataStoreOutputBuilder {
         self.advanced_event_selectors = input;
         self
     }
+    /// <p>The advanced event selectors that are applied to the event data store.</p>
+    pub fn get_advanced_event_selectors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>> {
+        &self.advanced_event_selectors
+    }
     /// <p>Indicates whether the event data store includes events from all Regions, or only from the Region in which it was created.</p>
     pub fn multi_region_enabled(mut self, input: bool) -> Self {
         self.multi_region_enabled = ::std::option::Option::Some(input);
@@ -191,6 +209,10 @@ impl UpdateEventDataStoreOutputBuilder {
     pub fn set_multi_region_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.multi_region_enabled = input;
         self
+    }
+    /// <p>Indicates whether the event data store includes events from all Regions, or only from the Region in which it was created.</p>
+    pub fn get_multi_region_enabled(&self) -> &::std::option::Option<bool> {
+        &self.multi_region_enabled
     }
     /// <p>Indicates whether an event data store is collecting logged events for an organization in Organizations.</p>
     pub fn organization_enabled(mut self, input: bool) -> Self {
@@ -202,6 +224,10 @@ impl UpdateEventDataStoreOutputBuilder {
         self.organization_enabled = input;
         self
     }
+    /// <p>Indicates whether an event data store is collecting logged events for an organization in Organizations.</p>
+    pub fn get_organization_enabled(&self) -> &::std::option::Option<bool> {
+        &self.organization_enabled
+    }
     /// <p>The retention period, in days.</p>
     pub fn retention_period(mut self, input: i32) -> Self {
         self.retention_period = ::std::option::Option::Some(input);
@@ -211,6 +237,10 @@ impl UpdateEventDataStoreOutputBuilder {
     pub fn set_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.retention_period = input;
         self
+    }
+    /// <p>The retention period, in days.</p>
+    pub fn get_retention_period(&self) -> &::std::option::Option<i32> {
+        &self.retention_period
     }
     /// <p>Indicates whether termination protection is enabled for the event data store.</p>
     pub fn termination_protection_enabled(mut self, input: bool) -> Self {
@@ -225,6 +255,10 @@ impl UpdateEventDataStoreOutputBuilder {
         self.termination_protection_enabled = input;
         self
     }
+    /// <p>Indicates whether termination protection is enabled for the event data store.</p>
+    pub fn get_termination_protection_enabled(&self) -> &::std::option::Option<bool> {
+        &self.termination_protection_enabled
+    }
     /// <p>The timestamp that shows when an event data store was first created.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_timestamp = ::std::option::Option::Some(input);
@@ -237,6 +271,10 @@ impl UpdateEventDataStoreOutputBuilder {
     ) -> Self {
         self.created_timestamp = input;
         self
+    }
+    /// <p>The timestamp that shows when an event data store was first created.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
     }
     /// <p>The timestamp that shows when the event data store was last updated. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
     pub fn updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -251,6 +289,10 @@ impl UpdateEventDataStoreOutputBuilder {
         self.updated_timestamp = input;
         self
     }
+    /// <p>The timestamp that shows when the event data store was last updated. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
+    pub fn get_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_timestamp
+    }
     /// <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
     /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -262,6 +304,11 @@ impl UpdateEventDataStoreOutputBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
+    /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -59,6 +59,12 @@ impl UpdateCachePolicyInputBuilder {
         self.cache_policy_config = input;
         self
     }
+    /// <p>A cache policy configuration.</p>
+    pub fn get_cache_policy_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::CachePolicyConfig> {
+        &self.cache_policy_config
+    }
     /// <p>The unique identifier for the cache policy that you are updating. The identifier is returned in a cache behavior's <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -69,6 +75,10 @@ impl UpdateCachePolicyInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier for the cache policy that you are updating. The identifier is returned in a cache behavior's <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The version of the cache policy that you are updating. The version is returned in the cache policy's <code>ETag</code> field in the response to <code>GetCachePolicyConfig</code>.</p>
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.if_match = ::std::option::Option::Some(input.into());
@@ -78,6 +88,10 @@ impl UpdateCachePolicyInputBuilder {
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.if_match = input;
         self
+    }
+    /// <p>The version of the cache policy that you are updating. The version is returned in the cache policy's <code>ETag</code> field in the response to <code>GetCachePolicyConfig</code>.</p>
+    pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
+        &self.if_match
     }
     /// Consumes the builder and constructs a [`UpdateCachePolicyInput`](crate::operation::update_cache_policy::UpdateCachePolicyInput).
     pub fn build(

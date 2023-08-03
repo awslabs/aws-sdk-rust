@@ -39,6 +39,12 @@ impl CreateExperimentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateExperiment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_experiment::builders::CreateExperimentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl CreateExperimentFluentBuilder {
         self.inner = self.inner.set_project(input);
         self
     }
+    /// <p>The name or ARN of the project that you want to create the new experiment in.</p>
+    pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project()
+    }
     /// <p>A name for the new experiment.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -139,6 +149,10 @@ impl CreateExperimentFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>A name for the new experiment.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>An optional description of the experiment.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -148,6 +162,10 @@ impl CreateExperimentFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>An optional description of the experiment.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `treatments`.
     ///
@@ -166,6 +184,12 @@ impl CreateExperimentFluentBuilder {
         self.inner = self.inner.set_treatments(input);
         self
     }
+    /// <p>An array of structures that describe the configuration of each feature variation used in the experiment.</p>
+    pub fn get_treatments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TreatmentConfig>> {
+        self.inner.get_treatments()
+    }
     /// Appends an item to `metricGoals`.
     ///
     /// To override the contents of this collection use [`set_metric_goals`](Self::set_metric_goals).
@@ -183,6 +207,12 @@ impl CreateExperimentFluentBuilder {
         self.inner = self.inner.set_metric_goals(input);
         self
     }
+    /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
+    pub fn get_metric_goals(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricGoalConfig>> {
+        self.inner.get_metric_goals()
+    }
     /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
     pub fn randomization_salt(
         mut self,
@@ -199,6 +229,10 @@ impl CreateExperimentFluentBuilder {
         self.inner = self.inner.set_randomization_salt(input);
         self
     }
+    /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
+    pub fn get_randomization_salt(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_randomization_salt()
+    }
     /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
     /// <p>This is represented in thousandths of a percent. For example, specify 10,000 to allocate 10% of the available audience.</p>
     pub fn sampling_rate(mut self, input: i64) -> Self {
@@ -210,6 +244,11 @@ impl CreateExperimentFluentBuilder {
     pub fn set_sampling_rate(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_sampling_rate(input);
         self
+    }
+    /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
+    /// <p>This is represented in thousandths of a percent. For example, specify 10,000 to allocate 10% of the available audience.</p>
+    pub fn get_sampling_rate(&self) -> &::std::option::Option<i64> {
+        self.inner.get_sampling_rate()
     }
     /// <p>A structure that contains the configuration of which variation to use as the "control" version. tThe "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
     pub fn online_ab_config(mut self, input: crate::types::OnlineAbConfig) -> Self {
@@ -224,6 +263,10 @@ impl CreateExperimentFluentBuilder {
         self.inner = self.inner.set_online_ab_config(input);
         self
     }
+    /// <p>A structure that contains the configuration of which variation to use as the "control" version. tThe "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
+    pub fn get_online_ab_config(&self) -> &::std::option::Option<crate::types::OnlineAbConfig> {
+        self.inner.get_online_ab_config()
+    }
     /// <p>Specifies an audience <i>segment</i> to use in the experiment. When a segment is used in an experiment, only user sessions that match the segment pattern are used in the experiment.</p>
     pub fn segment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.segment(input.into());
@@ -233,6 +276,10 @@ impl CreateExperimentFluentBuilder {
     pub fn set_segment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_segment(input);
         self
+    }
+    /// <p>Specifies an audience <i>segment</i> to use in the experiment. When a segment is used in an experiment, only user sessions that match the segment pattern are used in the experiment.</p>
+    pub fn get_segment(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_segment()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -264,5 +311,17 @@ impl CreateExperimentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Assigns one or more tags (key-value pairs) to the experiment.</p>
+    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
+    /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
+    /// <p>You can associate as many as 50 tags with an experiment.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

@@ -53,6 +53,10 @@ impl CreateAutoMlJobV2OutputBuilder {
         self.auto_ml_job_arn = input;
         self
     }
+    /// <p>The unique ARN assigned to the AutoMLJob when it is created.</p>
+    pub fn get_auto_ml_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_ml_job_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

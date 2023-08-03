@@ -39,6 +39,10 @@ impl SetVoiceMessageSpendLimitOverrideInputBuilder {
         self.monthly_limit = input;
         self
     }
+    /// <p>The new monthly limit to enforce on voice messages.</p>
+    pub fn get_monthly_limit(&self) -> &::std::option::Option<i64> {
+        &self.monthly_limit
+    }
     /// Consumes the builder and constructs a [`SetVoiceMessageSpendLimitOverrideInput`](crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

@@ -66,6 +66,17 @@ impl VariantPropertyBuilder {
         self.variant_property_type = input;
         self
     }
+    /// <p>The type of variant property. The supported values are:</p>
+    /// <ul>
+    /// <li> <p> <code>DesiredInstanceCount</code>: Overrides the existing variant instance counts using the <code>InitialInstanceCount</code> values in the <code>ProductionVariants</code> of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.</p> </li>
+    /// <li> <p> <code>DesiredWeight</code>: Overrides the existing variant weights using the <code>InitialVariantWeight</code> values in the <code>ProductionVariants</code> of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.</p> </li>
+    /// <li> <p> <code>DataCaptureConfig</code>: (Not currently supported.)</p> </li>
+    /// </ul>
+    pub fn get_variant_property_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::VariantPropertyType> {
+        &self.variant_property_type
+    }
     /// Consumes the builder and constructs a [`VariantProperty`](crate::types::VariantProperty).
     pub fn build(self) -> crate::types::VariantProperty {
         crate::types::VariantProperty {

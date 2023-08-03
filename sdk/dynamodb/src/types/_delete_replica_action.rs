@@ -40,6 +40,10 @@ impl DeleteReplicaActionBuilder {
         self.region_name = input;
         self
     }
+    /// <p>The Region of the replica to be removed.</p>
+    pub fn get_region_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region_name
+    }
     /// Consumes the builder and constructs a [`DeleteReplicaAction`](crate::types::DeleteReplicaAction).
     pub fn build(self) -> crate::types::DeleteReplicaAction {
         crate::types::DeleteReplicaAction {

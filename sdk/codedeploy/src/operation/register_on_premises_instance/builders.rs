@@ -38,6 +38,10 @@ impl RegisterOnPremisesInstanceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RegisterOnPremisesInstance as a reference.
+    pub fn as_input(&self) -> &crate::operation::register_on_premises_instance::builders::RegisterOnPremisesInstanceInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +138,10 @@ impl RegisterOnPremisesInstanceFluentBuilder {
         self.inner = self.inner.set_instance_name(input);
         self
     }
+    /// <p>The name of the on-premises instance to register.</p>
+    pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_name()
+    }
     /// <p>The ARN of the IAM session to associate with the on-premises instance.</p>
     pub fn iam_session_arn(
         mut self,
@@ -150,6 +158,10 @@ impl RegisterOnPremisesInstanceFluentBuilder {
         self.inner = self.inner.set_iam_session_arn(input);
         self
     }
+    /// <p>The ARN of the IAM session to associate with the on-premises instance.</p>
+    pub fn get_iam_session_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_iam_session_arn()
+    }
     /// <p>The ARN of the IAM user to associate with the on-premises instance.</p>
     pub fn iam_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.iam_user_arn(input.into());
@@ -159,5 +171,9 @@ impl RegisterOnPremisesInstanceFluentBuilder {
     pub fn set_iam_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_iam_user_arn(input);
         self
+    }
+    /// <p>The ARN of the IAM user to associate with the on-premises instance.</p>
+    pub fn get_iam_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_iam_user_arn()
     }
 }

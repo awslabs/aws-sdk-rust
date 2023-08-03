@@ -36,6 +36,10 @@ impl DeleteTokenFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteToken as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_token::builders::DeleteTokenInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl DeleteTokenFluentBuilder {
         self.inner = self.inner.set_app_id(input);
         self
     }
+    /// <p>The app ID.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_id()
+    }
     /// <p>The session ID.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.session_id(input.into());
@@ -127,5 +135,9 @@ impl DeleteTokenFluentBuilder {
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_session_id(input);
         self
+    }
+    /// <p>The session ID.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_session_id()
     }
 }

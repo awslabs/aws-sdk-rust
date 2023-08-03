@@ -68,6 +68,10 @@ impl GetFolderInputBuilder {
         self.authentication_token = input;
         self
     }
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication_token
+    }
     /// <p>The ID of the folder.</p>
     pub fn folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.folder_id = ::std::option::Option::Some(input.into());
@@ -78,6 +82,10 @@ impl GetFolderInputBuilder {
         self.folder_id = input;
         self
     }
+    /// <p>The ID of the folder.</p>
+    pub fn get_folder_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.folder_id
+    }
     /// <p>Set to TRUE to include custom metadata in the response.</p>
     pub fn include_custom_metadata(mut self, input: bool) -> Self {
         self.include_custom_metadata = ::std::option::Option::Some(input);
@@ -87,6 +95,10 @@ impl GetFolderInputBuilder {
     pub fn set_include_custom_metadata(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_custom_metadata = input;
         self
+    }
+    /// <p>Set to TRUE to include custom metadata in the response.</p>
+    pub fn get_include_custom_metadata(&self) -> &::std::option::Option<bool> {
+        &self.include_custom_metadata
     }
     /// Consumes the builder and constructs a [`GetFolderInput`](crate::operation::get_folder::GetFolderInput).
     pub fn build(

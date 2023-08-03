@@ -72,6 +72,12 @@ impl SensitivityInspectionTemplateIncludesBuilder {
         self.allow_list_ids = input;
         self
     }
+    /// <p>An array of unique identifiers, one for each allow list to include.</p>
+    pub fn get_allow_list_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.allow_list_ids
+    }
     /// Appends an item to `custom_data_identifier_ids`.
     ///
     /// To override the contents of this collection use [`set_custom_data_identifier_ids`](Self::set_custom_data_identifier_ids).
@@ -93,6 +99,12 @@ impl SensitivityInspectionTemplateIncludesBuilder {
     ) -> Self {
         self.custom_data_identifier_ids = input;
         self
+    }
+    /// <p>An array of unique identifiers, one for each custom data identifier to include.</p>
+    pub fn get_custom_data_identifier_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.custom_data_identifier_ids
     }
     /// Appends an item to `managed_data_identifier_ids`.
     ///
@@ -117,6 +129,13 @@ impl SensitivityInspectionTemplateIncludesBuilder {
     ) -> Self {
         self.managed_data_identifier_ids = input;
         self
+    }
+    /// <p>An array of unique identifiers, one for each managed data identifier to include.</p>
+    /// <p>Amazon Macie uses these managed data identifiers in addition to managed data identifiers that are subsequently released and recommended for automated sensitive data discovery. To retrieve a list of valid values for the managed data identifiers that are currently available, use the ListManagedDataIdentifiers operation.</p> <para />
+    pub fn get_managed_data_identifier_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.managed_data_identifier_ids
     }
     /// Consumes the builder and constructs a [`SensitivityInspectionTemplateIncludes`](crate::types::SensitivityInspectionTemplateIncludes).
     pub fn build(self) -> crate::types::SensitivityInspectionTemplateIncludes {

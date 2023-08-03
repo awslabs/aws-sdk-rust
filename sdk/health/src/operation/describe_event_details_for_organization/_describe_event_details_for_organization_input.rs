@@ -63,6 +63,12 @@ impl DescribeEventDetailsForOrganizationInputBuilder {
         self.organization_event_detail_filters = input;
         self
     }
+    /// <p>A set of JSON elements that includes the <code>awsAccountId</code> and the <code>eventArn</code>.</p>
+    pub fn get_organization_event_detail_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventAccountFilter>> {
+        &self.organization_event_detail_filters
+    }
     /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
     pub fn locale(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale = ::std::option::Option::Some(input.into());
@@ -72,6 +78,10 @@ impl DescribeEventDetailsForOrganizationInputBuilder {
     pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.locale = input;
         self
+    }
+    /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
+    pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale
     }
     /// Consumes the builder and constructs a [`DescribeEventDetailsForOrganizationInput`](crate::operation::describe_event_details_for_organization::DescribeEventDetailsForOrganizationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_event_details_for_organization::DescribeEventDetailsForOrganizationInput, ::aws_smithy_http::operation::error::BuildError>{

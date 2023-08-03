@@ -70,6 +70,10 @@ impl SourceNetworkDataBuilder {
         self.source_network_id = input;
         self
     }
+    /// <p>Source Network ID.</p>
+    pub fn get_source_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_network_id
+    }
     /// <p>VPC ID protected by the Source Network.</p>
     pub fn source_vpc(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_vpc = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl SourceNetworkDataBuilder {
     pub fn set_source_vpc(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_vpc = input;
         self
+    }
+    /// <p>VPC ID protected by the Source Network.</p>
+    pub fn get_source_vpc(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_vpc
     }
     /// <p>ID of the recovered VPC following Source Network recovery.</p>
     pub fn target_vpc(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -90,6 +98,10 @@ impl SourceNetworkDataBuilder {
         self.target_vpc = input;
         self
     }
+    /// <p>ID of the recovered VPC following Source Network recovery.</p>
+    pub fn get_target_vpc(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_vpc
+    }
     /// <p>CloudFormation stack name that was deployed for recovering the Source Network.</p>
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
@@ -99,6 +111,10 @@ impl SourceNetworkDataBuilder {
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_name = input;
         self
+    }
+    /// <p>CloudFormation stack name that was deployed for recovering the Source Network.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_name
     }
     /// Consumes the builder and constructs a [`SourceNetworkData`](crate::types::SourceNetworkData).
     pub fn build(self) -> crate::types::SourceNetworkData {

@@ -63,6 +63,10 @@ impl DescribeRulesInputBuilder {
         self.listener_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the listener.</p>
+    pub fn get_listener_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.listener_arn
+    }
     /// Appends an item to `rule_arns`.
     ///
     /// To override the contents of this collection use [`set_rule_arns`](Self::set_rule_arns).
@@ -82,6 +86,10 @@ impl DescribeRulesInputBuilder {
         self.rule_arns = input;
         self
     }
+    /// <p>The Amazon Resource Names (ARN) of the rules.</p>
+    pub fn get_rule_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.rule_arns
+    }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -92,6 +100,10 @@ impl DescribeRulesInputBuilder {
         self.marker = input;
         self
     }
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>The maximum number of results to return with this call.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.page_size = ::std::option::Option::Some(input);
@@ -101,6 +113,10 @@ impl DescribeRulesInputBuilder {
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.page_size = input;
         self
+    }
+    /// <p>The maximum number of results to return with this call.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        &self.page_size
     }
     /// Consumes the builder and constructs a [`DescribeRulesInput`](crate::operation::describe_rules::DescribeRulesInput).
     pub fn build(

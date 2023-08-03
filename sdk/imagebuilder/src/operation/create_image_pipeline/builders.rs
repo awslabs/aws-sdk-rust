@@ -36,6 +36,12 @@ impl CreateImagePipelineFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateImagePipeline as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_image_pipeline::builders::CreateImagePipelineInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateImagePipelineFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the image pipeline.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The description of the image pipeline.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -135,6 +145,10 @@ impl CreateImagePipelineFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the image pipeline.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The Amazon Resource Name (ARN) of the image recipe that will be used to configure images created by this image pipeline.</p>
     pub fn image_recipe_arn(
@@ -152,6 +166,10 @@ impl CreateImagePipelineFluentBuilder {
         self.inner = self.inner.set_image_recipe_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the image recipe that will be used to configure images created by this image pipeline.</p>
+    pub fn get_image_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_image_recipe_arn()
+    }
     /// <p>The Amazon Resource Name (ARN) of the container recipe that is used to configure images created by this container pipeline.</p>
     pub fn container_recipe_arn(
         mut self,
@@ -167,6 +185,10 @@ impl CreateImagePipelineFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_container_recipe_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the container recipe that is used to configure images created by this container pipeline.</p>
+    pub fn get_container_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_container_recipe_arn()
     }
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images created by this image pipeline.</p>
     pub fn infrastructure_configuration_arn(
@@ -184,6 +206,12 @@ impl CreateImagePipelineFluentBuilder {
         self.inner = self.inner.set_infrastructure_configuration_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images created by this image pipeline.</p>
+    pub fn get_infrastructure_configuration_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_infrastructure_configuration_arn()
+    }
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images created by this image pipeline.</p>
     pub fn distribution_configuration_arn(
         mut self,
@@ -199,6 +227,12 @@ impl CreateImagePipelineFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_distribution_configuration_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images created by this image pipeline.</p>
+    pub fn get_distribution_configuration_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_distribution_configuration_arn()
     }
     /// <p>The image test configuration of the image pipeline.</p>
     pub fn image_tests_configuration(
@@ -216,6 +250,12 @@ impl CreateImagePipelineFluentBuilder {
         self.inner = self.inner.set_image_tests_configuration(input);
         self
     }
+    /// <p>The image test configuration of the image pipeline.</p>
+    pub fn get_image_tests_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImageTestsConfiguration> {
+        self.inner.get_image_tests_configuration()
+    }
     /// <p>Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
     pub fn enhanced_image_metadata_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.enhanced_image_metadata_enabled(input);
@@ -229,6 +269,10 @@ impl CreateImagePipelineFluentBuilder {
         self.inner = self.inner.set_enhanced_image_metadata_enabled(input);
         self
     }
+    /// <p>Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
+    pub fn get_enhanced_image_metadata_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enhanced_image_metadata_enabled()
+    }
     /// <p>The schedule of the image pipeline.</p>
     pub fn schedule(mut self, input: crate::types::Schedule) -> Self {
         self.inner = self.inner.schedule(input);
@@ -238,6 +282,10 @@ impl CreateImagePipelineFluentBuilder {
     pub fn set_schedule(mut self, input: ::std::option::Option<crate::types::Schedule>) -> Self {
         self.inner = self.inner.set_schedule(input);
         self
+    }
+    /// <p>The schedule of the image pipeline.</p>
+    pub fn get_schedule(&self) -> &::std::option::Option<crate::types::Schedule> {
+        self.inner.get_schedule()
     }
     /// <p>The status of the image pipeline.</p>
     pub fn status(mut self, input: crate::types::PipelineStatus) -> Self {
@@ -251,6 +299,10 @@ impl CreateImagePipelineFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p>The status of the image pipeline.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::PipelineStatus> {
+        self.inner.get_status()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -275,6 +327,14 @@ impl CreateImagePipelineFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags of the image pipeline.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>The idempotency token used to make this request idempotent.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -284,6 +344,10 @@ impl CreateImagePipelineFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>The idempotency token used to make this request idempotent.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// <p>Contains settings for vulnerability scans.</p>
     pub fn image_scanning_configuration(
@@ -300,5 +364,11 @@ impl CreateImagePipelineFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_image_scanning_configuration(input);
         self
+    }
+    /// <p>Contains settings for vulnerability scans.</p>
+    pub fn get_image_scanning_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImageScanningConfiguration> {
+        self.inner.get_image_scanning_configuration()
     }
 }

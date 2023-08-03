@@ -64,6 +64,10 @@ impl ResourceInfoBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p>The IAM role that registered a resource.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl ResourceInfoBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The IAM role that registered a resource.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The date and time the resource was last modified.</p>
     pub fn last_modified(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -87,6 +95,10 @@ impl ResourceInfoBuilder {
         self.last_modified = input;
         self
     }
+    /// <p>The date and time the resource was last modified.</p>
+    pub fn get_last_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified
+    }
     /// <p>Whether or not the resource is a federated resource.</p>
     pub fn with_federation(mut self, input: bool) -> Self {
         self.with_federation = ::std::option::Option::Some(input);
@@ -96,6 +108,10 @@ impl ResourceInfoBuilder {
     pub fn set_with_federation(mut self, input: ::std::option::Option<bool>) -> Self {
         self.with_federation = input;
         self
+    }
+    /// <p>Whether or not the resource is a federated resource.</p>
+    pub fn get_with_federation(&self) -> &::std::option::Option<bool> {
+        &self.with_federation
     }
     /// Consumes the builder and constructs a [`ResourceInfo`](crate::types::ResourceInfo).
     pub fn build(self) -> crate::types::ResourceInfo {

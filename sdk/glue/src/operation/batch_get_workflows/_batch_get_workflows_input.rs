@@ -57,6 +57,10 @@ impl BatchGetWorkflowsInputBuilder {
         self.names = input;
         self
     }
+    /// <p>A list of workflow names, which may be the names returned from the <code>ListWorkflows</code> operation.</p>
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.names
+    }
     /// <p>Specifies whether to include a graph when returning the workflow resource metadata.</p>
     pub fn include_graph(mut self, input: bool) -> Self {
         self.include_graph = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl BatchGetWorkflowsInputBuilder {
     pub fn set_include_graph(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_graph = input;
         self
+    }
+    /// <p>Specifies whether to include a graph when returning the workflow resource metadata.</p>
+    pub fn get_include_graph(&self) -> &::std::option::Option<bool> {
+        &self.include_graph
     }
     /// Consumes the builder and constructs a [`BatchGetWorkflowsInput`](crate::operation::batch_get_workflows::BatchGetWorkflowsInput).
     pub fn build(

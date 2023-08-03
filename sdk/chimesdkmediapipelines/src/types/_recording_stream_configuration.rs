@@ -40,6 +40,10 @@ impl RecordingStreamConfigurationBuilder {
         self.stream_arn = input;
         self
     }
+    /// <p>The ARN of the recording stream.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_arn
+    }
     /// Consumes the builder and constructs a [`RecordingStreamConfiguration`](crate::types::RecordingStreamConfiguration).
     pub fn build(self) -> crate::types::RecordingStreamConfiguration {
         crate::types::RecordingStreamConfiguration {

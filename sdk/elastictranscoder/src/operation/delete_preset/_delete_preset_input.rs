@@ -40,6 +40,10 @@ impl DeletePresetInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the preset for which you want to get detailed information.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`DeletePresetInput`](crate::operation::delete_preset::DeletePresetInput).
     pub fn build(
         self,

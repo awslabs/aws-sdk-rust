@@ -40,6 +40,10 @@ impl AwsSecretsManagerSecretRotationRulesBuilder {
         self.automatically_after_days = input;
         self
     }
+    /// <p>The number of days after the previous rotation to rotate the secret.</p>
+    pub fn get_automatically_after_days(&self) -> &::std::option::Option<i32> {
+        &self.automatically_after_days
+    }
     /// Consumes the builder and constructs a [`AwsSecretsManagerSecretRotationRules`](crate::types::AwsSecretsManagerSecretRotationRules).
     pub fn build(self) -> crate::types::AwsSecretsManagerSecretRotationRules {
         crate::types::AwsSecretsManagerSecretRotationRules {

@@ -56,6 +56,10 @@ impl CodeGenEdgeBuilder {
         self.source = input;
         self
     }
+    /// <p>The ID of the node at which the edge starts.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
+    }
     /// <p>The ID of the node at which the edge ends.</p>
     pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl CodeGenEdgeBuilder {
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target = input;
         self
+    }
+    /// <p>The ID of the node at which the edge ends.</p>
+    pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target
     }
     /// <p>The target of the edge.</p>
     pub fn target_parameter(
@@ -81,6 +89,10 @@ impl CodeGenEdgeBuilder {
     ) -> Self {
         self.target_parameter = input;
         self
+    }
+    /// <p>The target of the edge.</p>
+    pub fn get_target_parameter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_parameter
     }
     /// Consumes the builder and constructs a [`CodeGenEdge`](crate::types::CodeGenEdge).
     pub fn build(self) -> crate::types::CodeGenEdge {

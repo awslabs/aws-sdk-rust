@@ -61,6 +61,12 @@ impl CreateTagsInputBuilder {
         self.configuration_ids = input;
         self
     }
+    /// <p>A list of configuration items that you want to tag.</p>
+    pub fn get_configuration_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.configuration_ids
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -81,6 +87,11 @@ impl CreateTagsInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Tags that you want to associate with one or more configuration items. Specify the tags that you want to create in a <i>key</i>-<i>value</i> format. For example:</p>
+    /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateTagsInput`](crate::operation::create_tags::CreateTagsInput).
     pub fn build(

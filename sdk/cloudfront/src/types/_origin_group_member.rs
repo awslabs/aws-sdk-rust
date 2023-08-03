@@ -40,6 +40,10 @@ impl OriginGroupMemberBuilder {
         self.origin_id = input;
         self
     }
+    /// <p>The ID for an origin in an origin group.</p>
+    pub fn get_origin_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.origin_id
+    }
     /// Consumes the builder and constructs a [`OriginGroupMember`](crate::types::OriginGroupMember).
     pub fn build(self) -> crate::types::OriginGroupMember {
         crate::types::OriginGroupMember {

@@ -62,6 +62,10 @@ impl UpdateCollaborationInputBuilder {
         self.collaboration_identifier = input;
         self
     }
+    /// <p>The identifier for the collaboration.</p>
+    pub fn get_collaboration_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collaboration_identifier
+    }
     /// <p>A human-readable identifier provided by the collaboration owner. Display names are not unique.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl UpdateCollaborationInputBuilder {
         self.name = input;
         self
     }
+    /// <p>A human-readable identifier provided by the collaboration owner. Display names are not unique.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description of the collaboration.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl UpdateCollaborationInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the collaboration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`UpdateCollaborationInput`](crate::operation::update_collaboration::UpdateCollaborationInput).
     pub fn build(

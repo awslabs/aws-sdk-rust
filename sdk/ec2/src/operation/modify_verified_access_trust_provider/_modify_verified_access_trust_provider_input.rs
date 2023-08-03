@@ -81,6 +81,12 @@ impl ModifyVerifiedAccessTrustProviderInputBuilder {
         self.verified_access_trust_provider_id = input;
         self
     }
+    /// <p>The ID of the Verified Access trust provider.</p>
+    pub fn get_verified_access_trust_provider_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.verified_access_trust_provider_id
+    }
     /// <p>The options for an OpenID Connect-compatible user-identity trust provider.</p>
     pub fn oidc_options(
         mut self,
@@ -97,6 +103,12 @@ impl ModifyVerifiedAccessTrustProviderInputBuilder {
         self.oidc_options = input;
         self
     }
+    /// <p>The options for an OpenID Connect-compatible user-identity trust provider.</p>
+    pub fn get_oidc_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::ModifyVerifiedAccessTrustProviderOidcOptions> {
+        &self.oidc_options
+    }
     /// <p>A description for the Verified Access trust provider.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -106,6 +118,10 @@ impl ModifyVerifiedAccessTrustProviderInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description for the Verified Access trust provider.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -117,6 +133,10 @@ impl ModifyVerifiedAccessTrustProviderInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -126,6 +146,10 @@ impl ModifyVerifiedAccessTrustProviderInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`ModifyVerifiedAccessTrustProviderInput`](crate::operation::modify_verified_access_trust_provider::ModifyVerifiedAccessTrustProviderInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::modify_verified_access_trust_provider::ModifyVerifiedAccessTrustProviderInput, ::aws_smithy_http::operation::error::BuildError>{

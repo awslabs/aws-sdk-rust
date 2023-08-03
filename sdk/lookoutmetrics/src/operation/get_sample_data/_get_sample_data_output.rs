@@ -67,6 +67,12 @@ impl GetSampleDataOutputBuilder {
         self.header_values = input;
         self
     }
+    /// <p>A list of header labels for the records.</p>
+    pub fn get_header_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.header_values
+    }
     /// Appends an item to `sample_rows`.
     ///
     /// To override the contents of this collection use [`set_sample_rows`](Self::set_sample_rows).
@@ -85,6 +91,12 @@ impl GetSampleDataOutputBuilder {
     ) -> Self {
         self.sample_rows = input;
         self
+    }
+    /// <p>A list of records.</p>
+    pub fn get_sample_rows(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
+        &self.sample_rows
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

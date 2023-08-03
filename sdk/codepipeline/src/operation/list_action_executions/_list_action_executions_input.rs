@@ -74,6 +74,10 @@ impl ListActionExecutionsInputBuilder {
         self.pipeline_name = input;
         self
     }
+    /// <p> The name of the pipeline for which you want to list action execution history.</p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_name
+    }
     /// <p>Input information used to filter action execution history.</p>
     pub fn filter(mut self, input: crate::types::ActionExecutionFilter) -> Self {
         self.filter = ::std::option::Option::Some(input);
@@ -86,6 +90,10 @@ impl ListActionExecutionsInputBuilder {
     ) -> Self {
         self.filter = input;
         self
+    }
+    /// <p>Input information used to filter action execution history.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::ActionExecutionFilter> {
+        &self.filter
     }
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value. Action execution history is retained for up to 12 months, based on action execution start times. Default value is 100. </p> <note>
     /// <p>Detailed execution history is available for executions run on or after February 21, 2019.</p>
@@ -101,6 +109,12 @@ impl ListActionExecutionsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value. Action execution history is retained for up to 12 months, based on action execution start times. Default value is 100. </p> <note>
+    /// <p>Detailed execution history is available for executions run on or after February 21, 2019.</p>
+    /// </note>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token that was returned from the previous <code>ListActionExecutions</code> call, which can be used to return the next set of action executions in the list.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -110,6 +124,10 @@ impl ListActionExecutionsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token that was returned from the previous <code>ListActionExecutions</code> call, which can be used to return the next set of action executions in the list.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListActionExecutionsInput`](crate::operation::list_action_executions::ListActionExecutionsInput).
     pub fn build(

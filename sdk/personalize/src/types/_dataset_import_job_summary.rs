@@ -102,6 +102,10 @@ impl DatasetImportJobSummaryBuilder {
         self.dataset_import_job_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
+    pub fn get_dataset_import_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_import_job_arn
+    }
     /// <p>The name of the dataset import job.</p>
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
@@ -111,6 +115,10 @@ impl DatasetImportJobSummaryBuilder {
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_name = input;
         self
+    }
+    /// <p>The name of the dataset import job.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
     }
     /// <p>The status of the dataset import job.</p>
     /// <p>A dataset import job can be in one of the following states:</p>
@@ -130,6 +138,14 @@ impl DatasetImportJobSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the dataset import job.</p>
+    /// <p>A dataset import job can be in one of the following states:</p>
+    /// <ul>
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The date and time (in Unix time) that the dataset import job was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
@@ -143,6 +159,10 @@ impl DatasetImportJobSummaryBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>The date and time (in Unix time) that the dataset import job was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>The date and time (in Unix time) that the dataset import job status was last updated.</p>
     pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date_time = ::std::option::Option::Some(input);
@@ -155,6 +175,12 @@ impl DatasetImportJobSummaryBuilder {
     ) -> Self {
         self.last_updated_date_time = input;
         self
+    }
+    /// <p>The date and time (in Unix time) that the dataset import job status was last updated.</p>
+    pub fn get_last_updated_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date_time
     }
     /// <p>If a dataset import job fails, the reason behind the failure.</p>
     pub fn failure_reason(
@@ -172,6 +198,10 @@ impl DatasetImportJobSummaryBuilder {
         self.failure_reason = input;
         self
     }
+    /// <p>If a dataset import job fails, the reason behind the failure.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
     /// <p>The import mode the dataset import job used to update the data in the dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/updating-existing-bulk-data.html">Updating existing bulk data</a>. </p>
     pub fn import_mode(mut self, input: crate::types::ImportMode) -> Self {
         self.import_mode = ::std::option::Option::Some(input);
@@ -184,6 +214,10 @@ impl DatasetImportJobSummaryBuilder {
     ) -> Self {
         self.import_mode = input;
         self
+    }
+    /// <p>The import mode the dataset import job used to update the data in the dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/updating-existing-bulk-data.html">Updating existing bulk data</a>. </p>
+    pub fn get_import_mode(&self) -> &::std::option::Option<crate::types::ImportMode> {
+        &self.import_mode
     }
     /// Consumes the builder and constructs a [`DatasetImportJobSummary`](crate::types::DatasetImportJobSummary).
     pub fn build(self) -> crate::types::DatasetImportJobSummary {

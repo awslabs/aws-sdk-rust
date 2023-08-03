@@ -67,6 +67,10 @@ impl UpdateObjectAttributesInputBuilder {
         self.directory_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_arn
+    }
     /// <p>The reference that identifies the object.</p>
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.object_reference = ::std::option::Option::Some(input);
@@ -79,6 +83,10 @@ impl UpdateObjectAttributesInputBuilder {
     ) -> Self {
         self.object_reference = input;
         self
+    }
+    /// <p>The reference that identifies the object.</p>
+    pub fn get_object_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
+        &self.object_reference
     }
     /// Appends an item to `attribute_updates`.
     ///
@@ -98,6 +106,12 @@ impl UpdateObjectAttributesInputBuilder {
     ) -> Self {
         self.attribute_updates = input;
         self
+    }
+    /// <p>The attributes update structure.</p>
+    pub fn get_attribute_updates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeUpdate>> {
+        &self.attribute_updates
     }
     /// Consumes the builder and constructs a [`UpdateObjectAttributesInput`](crate::operation::update_object_attributes::UpdateObjectAttributesInput).
     pub fn build(

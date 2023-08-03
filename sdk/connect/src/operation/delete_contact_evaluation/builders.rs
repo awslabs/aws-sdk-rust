@@ -37,6 +37,13 @@ impl DeleteContactEvaluationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteContactEvaluation as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_contact_evaluation::builders::DeleteContactEvaluationInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl DeleteContactEvaluationFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>A unique identifier for the contact evaluation.</p>
     pub fn evaluation_id(
         mut self,
@@ -142,5 +153,9 @@ impl DeleteContactEvaluationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_evaluation_id(input);
         self
+    }
+    /// <p>A unique identifier for the contact evaluation.</p>
+    pub fn get_evaluation_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_evaluation_id()
     }
 }

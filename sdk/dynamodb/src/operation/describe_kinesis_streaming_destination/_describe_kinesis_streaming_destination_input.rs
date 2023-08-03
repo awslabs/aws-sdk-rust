@@ -39,6 +39,10 @@ impl DescribeKinesisStreamingDestinationInputBuilder {
         self.table_name = input;
         self
     }
+    /// <p>The name of the table being described.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
+    }
     /// Consumes the builder and constructs a [`DescribeKinesisStreamingDestinationInput`](crate::operation::describe_kinesis_streaming_destination::DescribeKinesisStreamingDestinationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_kinesis_streaming_destination::DescribeKinesisStreamingDestinationInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

@@ -40,6 +40,10 @@ impl GetDataQualityResultInputBuilder {
         self.result_id = input;
         self
     }
+    /// <p>A unique result ID for the data quality result.</p>
+    pub fn get_result_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.result_id
+    }
     /// Consumes the builder and constructs a [`GetDataQualityResultInput`](crate::operation::get_data_quality_result::GetDataQualityResultInput).
     pub fn build(
         self,

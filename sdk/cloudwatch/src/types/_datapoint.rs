@@ -103,6 +103,10 @@ impl DatapointBuilder {
         self.timestamp = input;
         self
     }
+    /// <p>The time stamp used for the data point.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
+    }
     /// <p>The number of metric values that contributed to the aggregate value of this data point.</p>
     pub fn sample_count(mut self, input: f64) -> Self {
         self.sample_count = ::std::option::Option::Some(input);
@@ -112,6 +116,10 @@ impl DatapointBuilder {
     pub fn set_sample_count(mut self, input: ::std::option::Option<f64>) -> Self {
         self.sample_count = input;
         self
+    }
+    /// <p>The number of metric values that contributed to the aggregate value of this data point.</p>
+    pub fn get_sample_count(&self) -> &::std::option::Option<f64> {
+        &self.sample_count
     }
     /// <p>The average of the metric values that correspond to the data point.</p>
     pub fn average(mut self, input: f64) -> Self {
@@ -123,6 +131,10 @@ impl DatapointBuilder {
         self.average = input;
         self
     }
+    /// <p>The average of the metric values that correspond to the data point.</p>
+    pub fn get_average(&self) -> &::std::option::Option<f64> {
+        &self.average
+    }
     /// <p>The sum of the metric values for the data point.</p>
     pub fn sum(mut self, input: f64) -> Self {
         self.sum = ::std::option::Option::Some(input);
@@ -132,6 +144,10 @@ impl DatapointBuilder {
     pub fn set_sum(mut self, input: ::std::option::Option<f64>) -> Self {
         self.sum = input;
         self
+    }
+    /// <p>The sum of the metric values for the data point.</p>
+    pub fn get_sum(&self) -> &::std::option::Option<f64> {
+        &self.sum
     }
     /// <p>The minimum metric value for the data point.</p>
     pub fn minimum(mut self, input: f64) -> Self {
@@ -143,6 +159,10 @@ impl DatapointBuilder {
         self.minimum = input;
         self
     }
+    /// <p>The minimum metric value for the data point.</p>
+    pub fn get_minimum(&self) -> &::std::option::Option<f64> {
+        &self.minimum
+    }
     /// <p>The maximum metric value for the data point.</p>
     pub fn maximum(mut self, input: f64) -> Self {
         self.maximum = ::std::option::Option::Some(input);
@@ -153,6 +173,10 @@ impl DatapointBuilder {
         self.maximum = input;
         self
     }
+    /// <p>The maximum metric value for the data point.</p>
+    pub fn get_maximum(&self) -> &::std::option::Option<f64> {
+        &self.maximum
+    }
     /// <p>The standard unit for the data point.</p>
     pub fn unit(mut self, input: crate::types::StandardUnit) -> Self {
         self.unit = ::std::option::Option::Some(input);
@@ -162,6 +186,10 @@ impl DatapointBuilder {
     pub fn set_unit(mut self, input: ::std::option::Option<crate::types::StandardUnit>) -> Self {
         self.unit = input;
         self
+    }
+    /// <p>The standard unit for the data point.</p>
+    pub fn get_unit(&self) -> &::std::option::Option<crate::types::StandardUnit> {
+        &self.unit
     }
     /// Adds a key-value pair to `extended_statistics`.
     ///
@@ -185,6 +213,12 @@ impl DatapointBuilder {
     ) -> Self {
         self.extended_statistics = input;
         self
+    }
+    /// <p>The percentile statistic for the data point.</p>
+    pub fn get_extended_statistics(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, f64>> {
+        &self.extended_statistics
     }
     /// Consumes the builder and constructs a [`Datapoint`](crate::types::Datapoint).
     pub fn build(self) -> crate::types::Datapoint {

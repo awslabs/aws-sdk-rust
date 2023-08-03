@@ -37,6 +37,10 @@ impl DeleteTagsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteTags as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_tags::builders::DeleteTagsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl DeleteTagsFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// Appends an item to `Resources`.
     ///
     /// To override the contents of this collection use [`set_resources`](Self::set_resources).
@@ -137,6 +145,11 @@ impl DeleteTagsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resources(input);
         self
+    }
+    /// <p>The IDs of the resources, separated by spaces.</p>
+    /// <p>Constraints: Up to 1000 resource IDs. We recommend breaking up this request into smaller batches.</p>
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_resources()
     }
     /// Appends an item to `Tags`.
     ///
@@ -158,5 +171,11 @@ impl DeleteTagsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags to delete. Specify a tag key and an optional tag value to delete specific tags. If you specify a tag key without a tag value, we delete any tag with this key regardless of its value. If you specify a tag key with an empty string as the tag value, we delete the tag only if its value is an empty string.</p>
+    /// <p>If you omit this parameter, we delete all user-defined tags for the specified resources. We do not delete Amazon Web Services-generated tags (tags that have the <code>aws:</code> prefix).</p>
+    /// <p>Constraints: Up to 1000 tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

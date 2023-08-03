@@ -75,6 +75,10 @@ impl GetSdkTypeOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of an SdkType instance.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The user-friendly name of an SdkType instance.</p>
     pub fn friendly_name(
         mut self,
@@ -91,6 +95,10 @@ impl GetSdkTypeOutputBuilder {
         self.friendly_name = input;
         self
     }
+    /// <p>The user-friendly name of an SdkType instance.</p>
+    pub fn get_friendly_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.friendly_name
+    }
     /// <p>The description of an SdkType.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -100,6 +108,10 @@ impl GetSdkTypeOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of an SdkType.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `configuration_properties`.
     ///
@@ -122,6 +134,12 @@ impl GetSdkTypeOutputBuilder {
     ) -> Self {
         self.configuration_properties = input;
         self
+    }
+    /// <p>A list of configuration properties of an SdkType.</p>
+    pub fn get_configuration_properties(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SdkConfigurationProperty>> {
+        &self.configuration_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

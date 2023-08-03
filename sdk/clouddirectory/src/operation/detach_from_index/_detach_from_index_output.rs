@@ -53,6 +53,10 @@ impl DetachFromIndexOutputBuilder {
         self.detached_object_identifier = input;
         self
     }
+    /// <p>The <code>ObjectIdentifier</code> of the object that was detached from the index.</p>
+    pub fn get_detached_object_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detached_object_identifier
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -50,6 +50,12 @@ impl ListComponentsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListComponents as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_components::builders::ListComponentsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +149,10 @@ impl ListComponentsFluentBuilder {
         self.inner = self.inner.set_owner(input);
         self
     }
+    /// <p>Filters results based on the type of owner for the component. By default, this request returns a list of components that your account owns. To see results for other types of owners, you can specify components that Amazon manages, third party components, or components that other accounts have shared with you.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<crate::types::Ownership> {
+        self.inner.get_owner()
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -176,6 +186,18 @@ impl ListComponentsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>Use the following filters to streamline results:</p>
+    /// <ul>
+    /// <li> <p> <code>description</code> </p> </li>
+    /// <li> <p> <code>name</code> </p> </li>
+    /// <li> <p> <code>platform</code> </p> </li>
+    /// <li> <p> <code>supportedOsVersion</code> </p> </li>
+    /// <li> <p> <code>type</code> </p> </li>
+    /// <li> <p> <code>version</code> </p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// <p>Returns the list of components for the specified name.</p>
     pub fn by_name(mut self, input: bool) -> Self {
         self.inner = self.inner.by_name(input);
@@ -185,6 +207,10 @@ impl ListComponentsFluentBuilder {
     pub fn set_by_name(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_by_name(input);
         self
+    }
+    /// <p>Returns the list of components for the specified name.</p>
+    pub fn get_by_name(&self) -> &::std::option::Option<bool> {
+        self.inner.get_by_name()
     }
     /// <p>The maximum items to return in a request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -196,6 +222,10 @@ impl ListComponentsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum items to return in a request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -205,5 +235,9 @@ impl ListComponentsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

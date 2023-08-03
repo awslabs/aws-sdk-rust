@@ -47,6 +47,10 @@ impl DeleteNodegroupInputBuilder {
         self.cluster_name = input;
         self
     }
+    /// <p>The name of the Amazon EKS cluster that is associated with your node group.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_name
+    }
     /// <p>The name of the node group to delete.</p>
     pub fn nodegroup_name(
         mut self,
@@ -62,6 +66,10 @@ impl DeleteNodegroupInputBuilder {
     ) -> Self {
         self.nodegroup_name = input;
         self
+    }
+    /// <p>The name of the node group to delete.</p>
+    pub fn get_nodegroup_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nodegroup_name
     }
     /// Consumes the builder and constructs a [`DeleteNodegroupInput`](crate::operation::delete_nodegroup::DeleteNodegroupInput).
     pub fn build(

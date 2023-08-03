@@ -51,6 +51,10 @@ impl ClusterStateChangeReasonBuilder {
         self.code = input;
         self
     }
+    /// <p>The programmatic code for the state change reason.</p>
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::ClusterStateChangeReasonCode> {
+        &self.code
+    }
     /// <p>The descriptive message for the state change reason.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl ClusterStateChangeReasonBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The descriptive message for the state change reason.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`ClusterStateChangeReason`](crate::types::ClusterStateChangeReason).
     pub fn build(self) -> crate::types::ClusterStateChangeReason {

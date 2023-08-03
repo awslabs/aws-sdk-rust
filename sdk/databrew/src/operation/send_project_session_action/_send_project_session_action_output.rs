@@ -62,6 +62,10 @@ impl SendProjectSessionActionOutputBuilder {
         self.result = input;
         self
     }
+    /// <p>A message indicating the result of performing the action.</p>
+    pub fn get_result(&self) -> &::std::option::Option<::std::string::String> {
+        &self.result
+    }
     /// <p>The name of the project that was affected by the action.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl SendProjectSessionActionOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the project that was affected by the action.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A unique identifier for the action that was performed.</p>
     pub fn action_id(mut self, input: i32) -> Self {
         self.action_id = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl SendProjectSessionActionOutputBuilder {
     pub fn set_action_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.action_id = input;
         self
+    }
+    /// <p>A unique identifier for the action that was performed.</p>
+    pub fn get_action_id(&self) -> &::std::option::Option<i32> {
+        &self.action_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

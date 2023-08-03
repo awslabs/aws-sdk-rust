@@ -61,6 +61,14 @@ impl StorageLensDataExportBuilder {
         self.s3_bucket_destination = input;
         self
     }
+    /// <p>A container for the bucket where the S3 Storage Lens metrics export will be located.</p> <note>
+    /// <p>This bucket must be located in the same Region as the storage lens configuration. </p>
+    /// </note>
+    pub fn get_s3_bucket_destination(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3BucketDestination> {
+        &self.s3_bucket_destination
+    }
     /// <p>A container for enabling Amazon CloudWatch publishing for S3 Storage Lens metrics.</p>
     pub fn cloud_watch_metrics(mut self, input: crate::types::CloudWatchMetrics) -> Self {
         self.cloud_watch_metrics = ::std::option::Option::Some(input);
@@ -73,6 +81,12 @@ impl StorageLensDataExportBuilder {
     ) -> Self {
         self.cloud_watch_metrics = input;
         self
+    }
+    /// <p>A container for enabling Amazon CloudWatch publishing for S3 Storage Lens metrics.</p>
+    pub fn get_cloud_watch_metrics(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudWatchMetrics> {
+        &self.cloud_watch_metrics
     }
     /// Consumes the builder and constructs a [`StorageLensDataExport`](crate::types::StorageLensDataExport).
     pub fn build(self) -> crate::types::StorageLensDataExport {

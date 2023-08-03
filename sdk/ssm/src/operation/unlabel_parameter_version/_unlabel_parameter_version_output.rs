@@ -68,6 +68,12 @@ impl UnlabelParameterVersionOutputBuilder {
         self.removed_labels = input;
         self
     }
+    /// <p>A list of all labels deleted from the parameter.</p>
+    pub fn get_removed_labels(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.removed_labels
+    }
     /// Appends an item to `invalid_labels`.
     ///
     /// To override the contents of this collection use [`set_invalid_labels`](Self::set_invalid_labels).
@@ -89,6 +95,12 @@ impl UnlabelParameterVersionOutputBuilder {
     ) -> Self {
         self.invalid_labels = input;
         self
+    }
+    /// <p>The labels that aren't attached to the given parameter version.</p>
+    pub fn get_invalid_labels(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.invalid_labels
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

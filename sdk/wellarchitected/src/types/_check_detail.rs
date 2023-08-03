@@ -138,6 +138,10 @@ impl CheckDetailBuilder {
         self.id = input;
         self
     }
+    /// <p>Trusted Advisor check ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>Trusted Advisor check name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -148,6 +152,10 @@ impl CheckDetailBuilder {
         self.name = input;
         self
     }
+    /// <p>Trusted Advisor check name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Trusted Advisor check description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -157,6 +165,10 @@ impl CheckDetailBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Trusted Advisor check description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Provider of the check related to the best practice.</p>
     pub fn provider(mut self, input: crate::types::CheckProvider) -> Self {
@@ -171,6 +183,10 @@ impl CheckDetailBuilder {
         self.provider = input;
         self
     }
+    /// <p>Provider of the check related to the best practice.</p>
+    pub fn get_provider(&self) -> &::std::option::Option<crate::types::CheckProvider> {
+        &self.provider
+    }
     /// <p>Well-Architected Lens ARN associated to the check.</p>
     pub fn lens_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lens_arn = ::std::option::Option::Some(input.into());
@@ -180,6 +196,10 @@ impl CheckDetailBuilder {
     pub fn set_lens_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lens_arn = input;
         self
+    }
+    /// <p>Well-Architected Lens ARN associated to the check.</p>
+    pub fn get_lens_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lens_arn
     }
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
@@ -193,6 +213,11 @@ impl CheckDetailBuilder {
         self.pillar_id = input;
         self
     }
+    /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+    /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+    pub fn get_pillar_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pillar_id
+    }
     /// <p>The ID of the question.</p>
     pub fn question_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.question_id = ::std::option::Option::Some(input.into());
@@ -202,6 +227,10 @@ impl CheckDetailBuilder {
     pub fn set_question_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.question_id = input;
         self
+    }
+    /// <p>The ID of the question.</p>
+    pub fn get_question_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.question_id
     }
     /// <p>The ID of a choice.</p>
     pub fn choice_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -213,6 +242,10 @@ impl CheckDetailBuilder {
         self.choice_id = input;
         self
     }
+    /// <p>The ID of a choice.</p>
+    pub fn get_choice_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.choice_id
+    }
     /// <p>Status associated to the check.</p>
     pub fn status(mut self, input: crate::types::CheckStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -222,6 +255,10 @@ impl CheckDetailBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::CheckStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Status associated to the check.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CheckStatus> {
+        &self.status
     }
     /// <p>An Amazon Web Services account ID.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -233,6 +270,10 @@ impl CheckDetailBuilder {
         self.account_id = input;
         self
     }
+    /// <p>An Amazon Web Services account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>Count of flagged resources associated to the check.</p>
     pub fn flagged_resources(mut self, input: i32) -> Self {
         self.flagged_resources = ::std::option::Option::Some(input);
@@ -242,6 +283,10 @@ impl CheckDetailBuilder {
     pub fn set_flagged_resources(mut self, input: ::std::option::Option<i32>) -> Self {
         self.flagged_resources = input;
         self
+    }
+    /// <p>Count of flagged resources associated to the check.</p>
+    pub fn get_flagged_resources(&self) -> &::std::option::Option<i32> {
+        &self.flagged_resources
     }
     /// <p>Reason associated to the check.</p>
     pub fn reason(mut self, input: crate::types::CheckFailureReason) -> Self {
@@ -256,6 +301,10 @@ impl CheckDetailBuilder {
         self.reason = input;
         self
     }
+    /// <p>Reason associated to the check.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<crate::types::CheckFailureReason> {
+        &self.reason
+    }
     /// <p>The date and time recorded.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -268,6 +317,10 @@ impl CheckDetailBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// <p>The date and time recorded.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     /// Consumes the builder and constructs a [`CheckDetail`](crate::types::CheckDetail).
     pub fn build(self) -> crate::types::CheckDetail {

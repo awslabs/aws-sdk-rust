@@ -57,6 +57,10 @@ impl TopicRangeFilterConstantBuilder {
         self.constant_type = input;
         self
     }
+    /// <p>The data type of the constant value that is used in a range filter. Valid values for this structure are <code>RANGE</code>.</p>
+    pub fn get_constant_type(&self) -> &::std::option::Option<crate::types::ConstantType> {
+        &self.constant_type
+    }
     /// <p>The value of the constant that is used to specify the endpoints of a range filter.</p>
     pub fn range_constant(mut self, input: crate::types::RangeConstant) -> Self {
         self.range_constant = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl TopicRangeFilterConstantBuilder {
     ) -> Self {
         self.range_constant = input;
         self
+    }
+    /// <p>The value of the constant that is used to specify the endpoints of a range filter.</p>
+    pub fn get_range_constant(&self) -> &::std::option::Option<crate::types::RangeConstant> {
+        &self.range_constant
     }
     /// Consumes the builder and constructs a [`TopicRangeFilterConstant`](crate::types::TopicRangeFilterConstant).
     pub fn build(self) -> crate::types::TopicRangeFilterConstant {

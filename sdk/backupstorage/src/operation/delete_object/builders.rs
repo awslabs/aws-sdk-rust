@@ -36,6 +36,10 @@ impl DeleteObjectFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteObject as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_object::builders::DeleteObjectInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl DeleteObjectFluentBuilder {
         self.inner = self.inner.set_backup_job_id(input);
         self
     }
+    /// Backup job Id for the in-progress backup.
+    pub fn get_backup_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_backup_job_id()
+    }
     /// The name of the Object.
     pub fn object_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.object_name(input.into());
@@ -133,5 +141,9 @@ impl DeleteObjectFluentBuilder {
     pub fn set_object_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_object_name(input);
         self
+    }
+    /// The name of the Object.
+    pub fn get_object_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_object_name()
     }
 }

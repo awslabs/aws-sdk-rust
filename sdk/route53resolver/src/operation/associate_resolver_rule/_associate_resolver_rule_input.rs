@@ -63,6 +63,10 @@ impl AssociateResolverRuleInputBuilder {
         self.resolver_rule_id = input;
         self
     }
+    /// <p>The ID of the Resolver rule that you want to associate with the VPC. To list the existing Resolver rules, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a>.</p>
+    pub fn get_resolver_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resolver_rule_id
+    }
     /// <p>A name for the association that you're creating between a Resolver rule and a VPC.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl AssociateResolverRuleInputBuilder {
         self.name = input;
         self
     }
+    /// <p>A name for the association that you're creating between a Resolver rule and a VPC.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The ID of the VPC that you want to associate the Resolver rule with.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl AssociateResolverRuleInputBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The ID of the VPC that you want to associate the Resolver rule with.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Consumes the builder and constructs a [`AssociateResolverRuleInput`](crate::operation::associate_resolver_rule::AssociateResolverRuleInput).
     pub fn build(

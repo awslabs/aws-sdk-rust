@@ -44,6 +44,12 @@ impl DeletePermissionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeletePermission as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_permission::builders::DeletePermissionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -142,6 +148,11 @@ impl DeletePermissionFluentBuilder {
         self.inner = self.inner.set_certificate_authority_arn(input);
         self
     }
+    /// <p>The Amazon Resource Number (ARN) of the private CA that issued the permissions. You can find the CA's ARN by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must have the following form: </p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
+    pub fn get_certificate_authority_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate_authority_arn()
+    }
     /// <p>The Amazon Web Services service or identity that will have its CA permissions revoked. At this time, the only valid service principal is <code>acm.amazonaws.com</code> </p>
     pub fn principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.principal(input.into());
@@ -151,6 +162,10 @@ impl DeletePermissionFluentBuilder {
     pub fn set_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_principal(input);
         self
+    }
+    /// <p>The Amazon Web Services service or identity that will have its CA permissions revoked. At this time, the only valid service principal is <code>acm.amazonaws.com</code> </p>
+    pub fn get_principal(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_principal()
     }
     /// <p>The Amazon Web Services account that calls this action.</p>
     pub fn source_account(
@@ -167,5 +182,9 @@ impl DeletePermissionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source_account(input);
         self
+    }
+    /// <p>The Amazon Web Services account that calls this action.</p>
+    pub fn get_source_account(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_account()
     }
 }

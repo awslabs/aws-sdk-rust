@@ -47,6 +47,10 @@ impl ListProfilesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The number of resources in the paginated list. </p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.page_size = ::std::option::Option::Some(input);
@@ -56,6 +60,10 @@ impl ListProfilesInputBuilder {
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.page_size = input;
         self
+    }
+    /// <p>The number of resources in the paginated list. </p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        &self.page_size
     }
     /// Consumes the builder and constructs a [`ListProfilesInput`](crate::operation::list_profiles::ListProfilesInput).
     pub fn build(

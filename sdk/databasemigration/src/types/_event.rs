@@ -80,6 +80,10 @@ impl EventBuilder {
         self.source_identifier = input;
         self
     }
+    /// <p> The identifier of an event source.</p>
+    pub fn get_source_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_identifier
+    }
     /// <p> The type of DMS resource that generates events. </p>
     /// <p>Valid values: replication-instance | endpoint | replication-task</p>
     pub fn source_type(mut self, input: crate::types::SourceType) -> Self {
@@ -95,6 +99,11 @@ impl EventBuilder {
         self.source_type = input;
         self
     }
+    /// <p> The type of DMS resource that generates events. </p>
+    /// <p>Valid values: replication-instance | endpoint | replication-task</p>
+    pub fn get_source_type(&self) -> &::std::option::Option<crate::types::SourceType> {
+        &self.source_type
+    }
     /// <p>The event message.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -104,6 +113,10 @@ impl EventBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The event message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Appends an item to `event_categories`.
     ///
@@ -127,6 +140,12 @@ impl EventBuilder {
         self.event_categories = input;
         self
     }
+    /// <p>The event categories available for the specified source type.</p>
+    pub fn get_event_categories(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.event_categories
+    }
     /// <p>The date of the event.</p>
     pub fn date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.date = ::std::option::Option::Some(input);
@@ -136,6 +155,10 @@ impl EventBuilder {
     pub fn set_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.date = input;
         self
+    }
+    /// <p>The date of the event.</p>
+    pub fn get_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.date
     }
     /// Consumes the builder and constructs a [`Event`](crate::types::Event).
     pub fn build(self) -> crate::types::Event {

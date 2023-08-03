@@ -36,6 +36,12 @@ impl ConfirmDeviceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ConfirmDevice as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::confirm_device::builders::ConfirmDeviceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl ConfirmDeviceFluentBuilder {
         self.inner = self.inner.set_access_token(input);
         self
     }
+    /// <p>A valid access token that Amazon Cognito issued to the user whose device you want to confirm.</p>
+    pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_access_token()
+    }
     /// <p>The device key.</p>
     pub fn device_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_key(input.into());
@@ -127,6 +137,10 @@ impl ConfirmDeviceFluentBuilder {
     pub fn set_device_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_key(input);
         self
+    }
+    /// <p>The device key.</p>
+    pub fn get_device_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_key()
     }
     /// <p>The configuration of the device secret verifier.</p>
     pub fn device_secret_verifier_config(
@@ -144,6 +158,12 @@ impl ConfirmDeviceFluentBuilder {
         self.inner = self.inner.set_device_secret_verifier_config(input);
         self
     }
+    /// <p>The configuration of the device secret verifier.</p>
+    pub fn get_device_secret_verifier_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeviceSecretVerifierConfigType> {
+        self.inner.get_device_secret_verifier_config()
+    }
     /// <p>The device name.</p>
     pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_name(input.into());
@@ -153,5 +173,9 @@ impl ConfirmDeviceFluentBuilder {
     pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_name(input);
         self
+    }
+    /// <p>The device name.</p>
+    pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_name()
     }
 }

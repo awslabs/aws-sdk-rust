@@ -49,6 +49,10 @@ impl NotifyAppValidationOutputInputBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The ID of the application.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p>The notification information.</p>
     pub fn notification_context(mut self, input: crate::types::NotificationContext) -> Self {
         self.notification_context = ::std::option::Option::Some(input);
@@ -61,6 +65,12 @@ impl NotifyAppValidationOutputInputBuilder {
     ) -> Self {
         self.notification_context = input;
         self
+    }
+    /// <p>The notification information.</p>
+    pub fn get_notification_context(
+        &self,
+    ) -> &::std::option::Option<crate::types::NotificationContext> {
+        &self.notification_context
     }
     /// Consumes the builder and constructs a [`NotifyAppValidationOutputInput`](crate::operation::notify_app_validation_output::NotifyAppValidationOutputInput).
     pub fn build(

@@ -69,6 +69,10 @@ impl ListApplicationDependenciesInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The total number of items to return.</p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.max_items = ::std::option::Option::Some(input);
@@ -79,6 +83,10 @@ impl ListApplicationDependenciesInputBuilder {
         self.max_items = input;
         self
     }
+    /// <p>The total number of items to return.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        &self.max_items
+    }
     /// <p>A token to specify where to start paginating.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -88,6 +96,10 @@ impl ListApplicationDependenciesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token to specify where to start paginating.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The semantic version of the application to get.</p>
     pub fn semantic_version(
@@ -104,6 +116,10 @@ impl ListApplicationDependenciesInputBuilder {
     ) -> Self {
         self.semantic_version = input;
         self
+    }
+    /// <p>The semantic version of the application to get.</p>
+    pub fn get_semantic_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.semantic_version
     }
     /// Consumes the builder and constructs a [`ListApplicationDependenciesInput`](crate::operation::list_application_dependencies::ListApplicationDependenciesInput).
     pub fn build(

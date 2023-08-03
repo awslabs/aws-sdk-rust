@@ -48,6 +48,10 @@ impl SuccessfulPackageVersionInfoBuilder {
         self.revision = input;
         self
     }
+    /// <p> The revision of a package version. </p>
+    pub fn get_revision(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision
+    }
     /// <p> The status of a package version. </p>
     pub fn status(mut self, input: crate::types::PackageVersionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl SuccessfulPackageVersionInfoBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p> The status of a package version. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::PackageVersionStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`SuccessfulPackageVersionInfo`](crate::types::SuccessfulPackageVersionInfo).
     pub fn build(self) -> crate::types::SuccessfulPackageVersionInfo {

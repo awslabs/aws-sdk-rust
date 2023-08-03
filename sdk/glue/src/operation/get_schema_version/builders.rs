@@ -36,6 +36,12 @@ impl GetSchemaVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetSchemaVersion as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_schema_version::builders::GetSchemaVersionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,14 @@ impl GetSchemaVersionFluentBuilder {
         self.inner = self.inner.set_schema_id(input);
         self
     }
+    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
+    /// <ul>
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+    /// </ul>
+    pub fn get_schema_id(&self) -> &::std::option::Option<crate::types::SchemaId> {
+        self.inner.get_schema_id()
+    }
     /// <p>The <code>SchemaVersionId</code> of the schema version. This field is required for fetching by schema ID. Either this or the <code>SchemaId</code> wrapper has to be provided.</p>
     pub fn schema_version_id(
         mut self,
@@ -150,6 +164,10 @@ impl GetSchemaVersionFluentBuilder {
         self.inner = self.inner.set_schema_version_id(input);
         self
     }
+    /// <p>The <code>SchemaVersionId</code> of the schema version. This field is required for fetching by schema ID. Either this or the <code>SchemaId</code> wrapper has to be provided.</p>
+    pub fn get_schema_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schema_version_id()
+    }
     /// <p>The version number of the schema.</p>
     pub fn schema_version_number(mut self, input: crate::types::SchemaVersionNumber) -> Self {
         self.inner = self.inner.schema_version_number(input);
@@ -162,5 +180,11 @@ impl GetSchemaVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_schema_version_number(input);
         self
+    }
+    /// <p>The version number of the schema.</p>
+    pub fn get_schema_version_number(
+        &self,
+    ) -> &::std::option::Option<crate::types::SchemaVersionNumber> {
+        self.inner.get_schema_version_number()
     }
 }

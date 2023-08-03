@@ -60,6 +60,10 @@ impl LocationModelBuilder {
         self.location_name = input;
         self
     }
+    /// <p>The location's name.</p>
+    pub fn get_location_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_name
+    }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift location resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::location/location-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
@@ -75,6 +79,13 @@ impl LocationModelBuilder {
     pub fn set_location_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift location resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+    /// <region>
+    /// ::location/location-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
+    /// </region></code>.</p>
+    pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_arn
     }
     /// Consumes the builder and constructs a [`LocationModel`](crate::types::LocationModel).
     pub fn build(self) -> crate::types::LocationModel {

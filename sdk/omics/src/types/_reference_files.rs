@@ -51,6 +51,10 @@ impl ReferenceFilesBuilder {
         self.source = input;
         self
     }
+    /// <p>The source file's location in Amazon S3.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::FileInformation> {
+        &self.source
+    }
     /// <p>The files' index.</p>
     pub fn index(mut self, input: crate::types::FileInformation) -> Self {
         self.index = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl ReferenceFilesBuilder {
     ) -> Self {
         self.index = input;
         self
+    }
+    /// <p>The files' index.</p>
+    pub fn get_index(&self) -> &::std::option::Option<crate::types::FileInformation> {
+        &self.index
     }
     /// Consumes the builder and constructs a [`ReferenceFiles`](crate::types::ReferenceFiles).
     pub fn build(self) -> crate::types::ReferenceFiles {

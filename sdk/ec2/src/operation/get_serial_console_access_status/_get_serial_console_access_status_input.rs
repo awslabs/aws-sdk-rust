@@ -39,6 +39,10 @@ impl GetSerialConsoleAccessStatusInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// Consumes the builder and constructs a [`GetSerialConsoleAccessStatusInput`](crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusInput).
     pub fn build(
         self,

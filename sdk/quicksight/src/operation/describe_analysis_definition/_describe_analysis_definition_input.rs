@@ -53,6 +53,10 @@ impl DescribeAnalysisDefinitionInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account that contains the analysis. You must be using the Amazon Web Services account that the analysis is in.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The ID of the analysis that you're describing. The ID is part of the URL of the analysis.</p>
     pub fn analysis_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analysis_id = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl DescribeAnalysisDefinitionInputBuilder {
     pub fn set_analysis_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.analysis_id = input;
         self
+    }
+    /// <p>The ID of the analysis that you're describing. The ID is part of the URL of the analysis.</p>
+    pub fn get_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.analysis_id
     }
     /// Consumes the builder and constructs a [`DescribeAnalysisDefinitionInput`](crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionInput).
     pub fn build(

@@ -36,6 +36,10 @@ impl ModifyCertificateBasedAuthPropertiesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyCertificateBasedAuthProperties as a reference.
+    pub fn as_input(&self) -> &crate::operation::modify_certificate_based_auth_properties::builders::ModifyCertificateBasedAuthPropertiesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl ModifyCertificateBasedAuthPropertiesFluentBuilder {
         self.inner = self.inner.set_resource_id(input);
         self
     }
+    /// <p>The resource identifiers, in the form of directory IDs.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
+    }
     /// <p>The properties of the certificate-based authentication.</p>
     pub fn certificate_based_auth_properties(
         mut self,
@@ -115,6 +123,12 @@ impl ModifyCertificateBasedAuthPropertiesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_certificate_based_auth_properties(input);
         self
+    }
+    /// <p>The properties of the certificate-based authentication.</p>
+    pub fn get_certificate_based_auth_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::CertificateBasedAuthProperties> {
+        self.inner.get_certificate_based_auth_properties()
     }
     /// Appends an item to `PropertiesToDelete`.
     ///
@@ -137,5 +151,12 @@ impl ModifyCertificateBasedAuthPropertiesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_properties_to_delete(input);
         self
+    }
+    /// <p>The properties of the certificate-based authentication you want to delete.</p>
+    pub fn get_properties_to_delete(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeletableCertificateBasedAuthProperty>>
+    {
+        self.inner.get_properties_to_delete()
     }
 }

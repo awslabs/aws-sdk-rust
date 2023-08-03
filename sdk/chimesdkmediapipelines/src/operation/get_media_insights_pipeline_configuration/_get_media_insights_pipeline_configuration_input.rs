@@ -39,6 +39,10 @@ impl GetMediaInsightsPipelineConfigurationInputBuilder {
         self.identifier = input;
         self
     }
+    /// <p>The unique identifier of the requested resource. Valid values include the name and ARN of the media insights pipeline configuration.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
+    }
     /// Consumes the builder and constructs a [`GetMediaInsightsPipelineConfigurationInput`](crate::operation::get_media_insights_pipeline_configuration::GetMediaInsightsPipelineConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_media_insights_pipeline_configuration::GetMediaInsightsPipelineConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

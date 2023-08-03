@@ -71,6 +71,10 @@ impl DeleteLocalGatewayRouteInputBuilder {
         self.destination_cidr_block = input;
         self
     }
+    /// <p>The CIDR range for the route. This must match the CIDR for the route exactly.</p>
+    pub fn get_destination_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_cidr_block
+    }
     /// <p>The ID of the local gateway route table.</p>
     pub fn local_gateway_route_table_id(
         mut self,
@@ -87,6 +91,12 @@ impl DeleteLocalGatewayRouteInputBuilder {
         self.local_gateway_route_table_id = input;
         self
     }
+    /// <p>The ID of the local gateway route table.</p>
+    pub fn get_local_gateway_route_table_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.local_gateway_route_table_id
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -96,6 +106,10 @@ impl DeleteLocalGatewayRouteInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// <p> Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
     pub fn destination_prefix_list_id(
@@ -112,6 +126,10 @@ impl DeleteLocalGatewayRouteInputBuilder {
     ) -> Self {
         self.destination_prefix_list_id = input;
         self
+    }
+    /// <p> Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
+    pub fn get_destination_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_prefix_list_id
     }
     /// Consumes the builder and constructs a [`DeleteLocalGatewayRouteInput`](crate::operation::delete_local_gateway_route::DeleteLocalGatewayRouteInput).
     pub fn build(

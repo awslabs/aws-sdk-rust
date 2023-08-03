@@ -114,6 +114,10 @@ impl ResourceBuilder {
         self.arn = input;
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The resource type. This takes the form of: <code>service-code</code>:<code>resource-code</code>, and is case-insensitive. For example, an Amazon EC2 Subnet would be represented by the string <code>ec2:subnet</code>.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -123,6 +127,10 @@ impl ResourceBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The resource type. This takes the form of: <code>service-code</code>:<code>resource-code</code>, and is case-insensitive. For example, an Amazon EC2 Subnet would be represented by the string <code>ec2:subnet</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share this resource is associated with.</p>
     pub fn resource_share_arn(
@@ -140,6 +148,10 @@ impl ResourceBuilder {
         self.resource_share_arn = input;
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share this resource is associated with.</p>
+    pub fn get_resource_share_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_share_arn
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource group. This value is available only if the resource is part of a resource group.</p>
     pub fn resource_group_arn(
         mut self,
@@ -156,6 +168,10 @@ impl ResourceBuilder {
         self.resource_group_arn = input;
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource group. This value is available only if the resource is part of a resource group.</p>
+    pub fn get_resource_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_group_arn
+    }
     /// <p>The current status of the resource.</p>
     pub fn status(mut self, input: crate::types::ResourceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -168,6 +184,10 @@ impl ResourceBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the resource.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ResourceStatus> {
+        &self.status
     }
     /// <p>A message about the status of the resource.</p>
     pub fn status_message(
@@ -185,6 +205,10 @@ impl ResourceBuilder {
         self.status_message = input;
         self
     }
+    /// <p>A message about the status of the resource.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>The date and time when the resource was associated with the resource share.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -198,6 +222,10 @@ impl ResourceBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The date and time when the resource was associated with the resource share.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The date an time when the association between the resource and the resource share was last updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -210,6 +238,10 @@ impl ResourceBuilder {
     ) -> Self {
         self.last_updated_time = input;
         self
+    }
+    /// <p>The date an time when the association between the resource and the resource share was last updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
     }
     /// <p>Specifies the scope of visibility of this resource:</p>
     /// <ul>
@@ -231,6 +263,16 @@ impl ResourceBuilder {
     ) -> Self {
         self.resource_region_scope = input;
         self
+    }
+    /// <p>Specifies the scope of visibility of this resource:</p>
+    /// <ul>
+    /// <li> <p> <b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services Region in which the resource exists.</p> </li>
+    /// <li> <p> <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.</p> </li>
+    /// </ul>
+    pub fn get_resource_region_scope(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceRegionScope> {
+        &self.resource_region_scope
     }
     /// Consumes the builder and constructs a [`Resource`](crate::types::Resource).
     pub fn build(self) -> crate::types::Resource {

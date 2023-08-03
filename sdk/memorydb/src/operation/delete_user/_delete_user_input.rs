@@ -39,6 +39,10 @@ impl DeleteUserInputBuilder {
         self.user_name = input;
         self
     }
+    /// <p>The name of the user to delete</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
+    }
     /// Consumes the builder and constructs a [`DeleteUserInput`](crate::operation::delete_user::DeleteUserInput).
     pub fn build(
         self,

@@ -47,6 +47,10 @@ impl DescribeAggregationAuthorizationsInputBuilder {
         self.limit = input;
         self
     }
+    /// <p>The maximum number of AggregationAuthorizations returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
+    }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DescribeAggregationAuthorizationsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeAggregationAuthorizationsInput`](crate::operation::describe_aggregation_authorizations::DescribeAggregationAuthorizationsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_aggregation_authorizations::DescribeAggregationAuthorizationsInput, ::aws_smithy_http::operation::error::BuildError>{

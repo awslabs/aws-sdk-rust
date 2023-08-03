@@ -122,6 +122,10 @@ impl DescribeScheduleOutputBuilder {
         self.create_date = input;
         self
     }
+    /// <p>The date and time that the schedule was created.</p>
+    pub fn get_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_date
+    }
     /// <p>The identifier (user name) of the user who created the schedule. </p>
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
@@ -131,6 +135,10 @@ impl DescribeScheduleOutputBuilder {
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by = input;
         self
+    }
+    /// <p>The identifier (user name) of the user who created the schedule. </p>
+    pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by
     }
     /// Appends an item to `job_names`.
     ///
@@ -151,6 +159,10 @@ impl DescribeScheduleOutputBuilder {
         self.job_names = input;
         self
     }
+    /// <p>The name or names of one or more jobs to be run by using the schedule.</p>
+    pub fn get_job_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.job_names
+    }
     /// <p>The identifier (user name) of the user who last modified the schedule.</p>
     pub fn last_modified_by(
         mut self,
@@ -167,6 +179,10 @@ impl DescribeScheduleOutputBuilder {
         self.last_modified_by = input;
         self
     }
+    /// <p>The identifier (user name) of the user who last modified the schedule.</p>
+    pub fn get_last_modified_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_by
+    }
     /// <p>The date and time that the schedule was last modified.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input);
@@ -180,6 +196,10 @@ impl DescribeScheduleOutputBuilder {
         self.last_modified_date = input;
         self
     }
+    /// <p>The date and time that the schedule was last modified.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_date
+    }
     /// <p>The Amazon Resource Name (ARN) of the schedule.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -189,6 +209,10 @@ impl DescribeScheduleOutputBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the schedule.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// <p>The date or dates and time or times when the jobs are to be run for the schedule. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
     pub fn cron_expression(
@@ -205,6 +229,10 @@ impl DescribeScheduleOutputBuilder {
     ) -> Self {
         self.cron_expression = input;
         self
+    }
+    /// <p>The date or dates and time or times when the jobs are to be run for the schedule. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
+    pub fn get_cron_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cron_expression
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -231,6 +259,14 @@ impl DescribeScheduleOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Metadata tags associated with this schedule.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The name of the schedule.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -240,6 +276,10 @@ impl DescribeScheduleOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the schedule.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

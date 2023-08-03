@@ -36,6 +36,10 @@ impl GetApiKeyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetApiKey as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_api_key::builders::GetApiKeyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl GetApiKeyFluentBuilder {
         self.inner = self.inner.set_api_key(input);
         self
     }
+    /// <p>The identifier of the ApiKey resource.</p>
+    pub fn get_api_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_api_key()
+    }
     /// <p>A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains the key value.</p>
     pub fn include_value(mut self, input: bool) -> Self {
         self.inner = self.inner.include_value(input);
@@ -127,5 +135,9 @@ impl GetApiKeyFluentBuilder {
     pub fn set_include_value(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_value(input);
         self
+    }
+    /// <p>A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains the key value.</p>
+    pub fn get_include_value(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_value()
     }
 }

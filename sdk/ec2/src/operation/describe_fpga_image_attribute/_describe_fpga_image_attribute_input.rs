@@ -55,6 +55,10 @@ impl DescribeFpgaImageAttributeInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The ID of the AFI.</p>
     pub fn fpga_image_id(
         mut self,
@@ -71,6 +75,10 @@ impl DescribeFpgaImageAttributeInputBuilder {
         self.fpga_image_id = input;
         self
     }
+    /// <p>The ID of the AFI.</p>
+    pub fn get_fpga_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fpga_image_id
+    }
     /// <p>The AFI attribute.</p>
     pub fn attribute(mut self, input: crate::types::FpgaImageAttributeName) -> Self {
         self.attribute = ::std::option::Option::Some(input);
@@ -83,6 +91,10 @@ impl DescribeFpgaImageAttributeInputBuilder {
     ) -> Self {
         self.attribute = input;
         self
+    }
+    /// <p>The AFI attribute.</p>
+    pub fn get_attribute(&self) -> &::std::option::Option<crate::types::FpgaImageAttributeName> {
+        &self.attribute
     }
     /// Consumes the builder and constructs a [`DescribeFpgaImageAttributeInput`](crate::operation::describe_fpga_image_attribute::DescribeFpgaImageAttributeInput).
     pub fn build(

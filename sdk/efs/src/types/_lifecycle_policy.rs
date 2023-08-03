@@ -57,6 +57,12 @@ impl LifecyclePolicyBuilder {
         self.transition_to_ia = input;
         self
     }
+    /// <p> Describes the period of time that a file is not accessed, after which it transitions to IA storage. Metadata operations such as listing the contents of a directory don't count as file access events.</p>
+    pub fn get_transition_to_ia(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransitionToIaRules> {
+        &self.transition_to_ia
+    }
     /// <p>Describes when to transition a file from IA storage to primary storage. Metadata operations such as listing the contents of a directory don't count as file access events.</p>
     pub fn transition_to_primary_storage_class(
         mut self,
@@ -72,6 +78,12 @@ impl LifecyclePolicyBuilder {
     ) -> Self {
         self.transition_to_primary_storage_class = input;
         self
+    }
+    /// <p>Describes when to transition a file from IA storage to primary storage. Metadata operations such as listing the contents of a directory don't count as file access events.</p>
+    pub fn get_transition_to_primary_storage_class(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransitionToPrimaryStorageClassRules> {
+        &self.transition_to_primary_storage_class
     }
     /// Consumes the builder and constructs a [`LifecyclePolicy`](crate::types::LifecyclePolicy).
     pub fn build(self) -> crate::types::LifecyclePolicy {

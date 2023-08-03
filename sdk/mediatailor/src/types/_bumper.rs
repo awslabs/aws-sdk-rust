@@ -48,6 +48,10 @@ impl BumperBuilder {
         self.end_url = input;
         self
     }
+    /// <p>The URL for the end bumper asset.</p>
+    pub fn get_end_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.end_url
+    }
     /// <p>The URL for the start bumper asset.</p>
     pub fn start_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_url = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl BumperBuilder {
     pub fn set_start_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_url = input;
         self
+    }
+    /// <p>The URL for the start bumper asset.</p>
+    pub fn get_start_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_url
     }
     /// Consumes the builder and constructs a [`Bumper`](crate::types::Bumper).
     pub fn build(self) -> crate::types::Bumper {

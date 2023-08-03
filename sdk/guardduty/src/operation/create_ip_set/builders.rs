@@ -36,6 +36,10 @@ impl CreateIPSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateIPSet as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_ip_set::builders::CreateIpSetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl CreateIPSetFluentBuilder {
         self.inner = self.inner.set_detector_id(input);
         self
     }
+    /// <p>The unique ID of the detector of the GuardDuty account that you want to create an IPSet for.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_id()
+    }
     /// <p>The user-friendly name to identify the IPSet.</p>
     /// <p> Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -130,6 +138,11 @@ impl CreateIPSetFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The user-friendly name to identify the IPSet.</p>
+    /// <p> Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The format of the file that contains the IPSet.</p>
     pub fn format(mut self, input: crate::types::IpSetFormat) -> Self {
         self.inner = self.inner.format(input);
@@ -139,6 +152,10 @@ impl CreateIPSetFluentBuilder {
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::IpSetFormat>) -> Self {
         self.inner = self.inner.set_format(input);
         self
+    }
+    /// <p>The format of the file that contains the IPSet.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::IpSetFormat> {
+        self.inner.get_format()
     }
     /// <p>The URI of the file that contains the IPSet. </p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -150,6 +167,10 @@ impl CreateIPSetFluentBuilder {
         self.inner = self.inner.set_location(input);
         self
     }
+    /// <p>The URI of the file that contains the IPSet. </p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_location()
+    }
     /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.</p>
     pub fn activate(mut self, input: bool) -> Self {
         self.inner = self.inner.activate(input);
@@ -160,6 +181,10 @@ impl CreateIPSetFluentBuilder {
         self.inner = self.inner.set_activate(input);
         self
     }
+    /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.</p>
+    pub fn get_activate(&self) -> &::std::option::Option<bool> {
+        self.inner.get_activate()
+    }
     /// <p>The idempotency token for the create request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -169,6 +194,10 @@ impl CreateIPSetFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>The idempotency token for the create request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -192,5 +221,13 @@ impl CreateIPSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags to be added to a new IP set resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

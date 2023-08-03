@@ -47,6 +47,10 @@ impl DeleteEndpointInputBuilder {
         self.endpoint_id = input;
         self
     }
+    /// <p>The ID of the endpoint.</p>
+    pub fn get_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_id
+    }
     /// <p>The ID of the Outposts. </p>
     pub fn outpost_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_id = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DeleteEndpointInputBuilder {
     pub fn set_outpost_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_id = input;
         self
+    }
+    /// <p>The ID of the Outposts. </p>
+    pub fn get_outpost_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.outpost_id
     }
     /// Consumes the builder and constructs a [`DeleteEndpointInput`](crate::operation::delete_endpoint::DeleteEndpointInput).
     pub fn build(

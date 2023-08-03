@@ -40,6 +40,10 @@ impl LambdaFunctionBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the Lambda function.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`LambdaFunction`](crate::types::LambdaFunction).
     pub fn build(self) -> crate::types::LambdaFunction {
         crate::types::LambdaFunction { arn: self.arn }

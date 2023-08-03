@@ -63,6 +63,12 @@ impl GetSearchSuggestionsOutputBuilder {
         self.property_name_suggestions = input;
         self
     }
+    /// <p>A list of property names for a <code>Resource</code> that match a <code>SuggestionQuery</code>.</p>
+    pub fn get_property_name_suggestions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PropertyNameSuggestion>> {
+        &self.property_name_suggestions
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

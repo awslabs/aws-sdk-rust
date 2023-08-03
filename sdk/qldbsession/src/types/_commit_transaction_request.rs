@@ -56,6 +56,10 @@ impl CommitTransactionRequestBuilder {
         self.transaction_id = input;
         self
     }
+    /// <p>Specifies the transaction ID of the transaction to commit.</p>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transaction_id
+    }
     /// <p>Specifies the commit digest for the transaction to commit. For every active transaction, the commit digest must be passed. QLDB validates <code>CommitDigest</code> and rejects the commit with an error if the digest computed on the client does not match the digest computed by QLDB.</p>
     /// <p>The purpose of the <code>CommitDigest</code> parameter is to ensure that QLDB commits a transaction if and only if the server has processed the exact set of statements sent by the client, in the same order that client sent them, and with no duplicates.</p>
     pub fn commit_digest(mut self, input: ::aws_smithy_types::Blob) -> Self {
@@ -70,6 +74,11 @@ impl CommitTransactionRequestBuilder {
     ) -> Self {
         self.commit_digest = input;
         self
+    }
+    /// <p>Specifies the commit digest for the transaction to commit. For every active transaction, the commit digest must be passed. QLDB validates <code>CommitDigest</code> and rejects the commit with an error if the digest computed on the client does not match the digest computed by QLDB.</p>
+    /// <p>The purpose of the <code>CommitDigest</code> parameter is to ensure that QLDB commits a transaction if and only if the server has processed the exact set of statements sent by the client, in the same order that client sent them, and with no duplicates.</p>
+    pub fn get_commit_digest(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.commit_digest
     }
     /// Consumes the builder and constructs a [`CommitTransactionRequest`](crate::types::CommitTransactionRequest).
     pub fn build(self) -> crate::types::CommitTransactionRequest {

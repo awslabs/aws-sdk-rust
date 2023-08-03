@@ -78,6 +78,10 @@ impl CarrierGatewayBuilder {
         self.carrier_gateway_id = input;
         self
     }
+    /// <p>The ID of the carrier gateway.</p>
+    pub fn get_carrier_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.carrier_gateway_id
+    }
     /// <p>The ID of the VPC associated with the carrier gateway.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -87,6 +91,10 @@ impl CarrierGatewayBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The ID of the VPC associated with the carrier gateway.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// <p>The state of the carrier gateway.</p>
     pub fn state(mut self, input: crate::types::CarrierGatewayState) -> Self {
@@ -101,6 +109,10 @@ impl CarrierGatewayBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of the carrier gateway.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::CarrierGatewayState> {
+        &self.state
+    }
     /// <p>The Amazon Web Services account ID of the owner of the carrier gateway.</p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_id = ::std::option::Option::Some(input.into());
@@ -110,6 +122,10 @@ impl CarrierGatewayBuilder {
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_id = input;
         self
+    }
+    /// <p>The Amazon Web Services account ID of the owner of the carrier gateway.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
     }
     /// Appends an item to `tags`.
     ///
@@ -129,6 +145,10 @@ impl CarrierGatewayBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags assigned to the carrier gateway.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CarrierGateway`](crate::types::CarrierGateway).
     pub fn build(self) -> crate::types::CarrierGateway {

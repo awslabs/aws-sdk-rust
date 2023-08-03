@@ -48,6 +48,10 @@ impl DeleteFleetMetricInputBuilder {
         self.metric_name = input;
         self
     }
+    /// <p>The name of the fleet metric to delete.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
+    }
     /// <p>The expected version of the fleet metric to delete.</p>
     pub fn expected_version(mut self, input: i64) -> Self {
         self.expected_version = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl DeleteFleetMetricInputBuilder {
     pub fn set_expected_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.expected_version = input;
         self
+    }
+    /// <p>The expected version of the fleet metric to delete.</p>
+    pub fn get_expected_version(&self) -> &::std::option::Option<i64> {
+        &self.expected_version
     }
     /// Consumes the builder and constructs a [`DeleteFleetMetricInput`](crate::operation::delete_fleet_metric::DeleteFleetMetricInput).
     pub fn build(

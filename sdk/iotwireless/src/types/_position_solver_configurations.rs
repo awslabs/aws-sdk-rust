@@ -43,6 +43,12 @@ impl PositionSolverConfigurationsBuilder {
         self.semtech_gnss = input;
         self
     }
+    /// <p>The Semtech GNSS solver configuration object.</p>
+    pub fn get_semtech_gnss(
+        &self,
+    ) -> &::std::option::Option<crate::types::SemtechGnssConfiguration> {
+        &self.semtech_gnss
+    }
     /// Consumes the builder and constructs a [`PositionSolverConfigurations`](crate::types::PositionSolverConfigurations).
     pub fn build(self) -> crate::types::PositionSolverConfigurations {
         crate::types::PositionSolverConfigurations {

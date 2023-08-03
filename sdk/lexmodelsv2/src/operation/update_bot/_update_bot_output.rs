@@ -126,6 +126,10 @@ impl UpdateBotOutputBuilder {
         self.bot_id = input;
         self
     }
+    /// <p>The unique identifier of the bot that was updated.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
     /// <p>The name of the bot after the update.</p>
     pub fn bot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_name = ::std::option::Option::Some(input.into());
@@ -135,6 +139,10 @@ impl UpdateBotOutputBuilder {
     pub fn set_bot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_name = input;
         self
+    }
+    /// <p>The name of the bot after the update.</p>
+    pub fn get_bot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_name
     }
     /// <p>The description of the bot after the update.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -146,6 +154,10 @@ impl UpdateBotOutputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the bot after the update.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used by the bot after the update.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -155,6 +167,10 @@ impl UpdateBotOutputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role used by the bot after the update.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The data privacy settings for the bot after the update.</p>
     pub fn data_privacy(mut self, input: crate::types::DataPrivacy) -> Self {
@@ -169,6 +185,10 @@ impl UpdateBotOutputBuilder {
         self.data_privacy = input;
         self
     }
+    /// <p>The data privacy settings for the bot after the update.</p>
+    pub fn get_data_privacy(&self) -> &::std::option::Option<crate::types::DataPrivacy> {
+        &self.data_privacy
+    }
     /// <p>The session timeout, in seconds, for the bot after the update.</p>
     pub fn idle_session_ttl_in_seconds(mut self, input: i32) -> Self {
         self.idle_session_ttl_in_seconds = ::std::option::Option::Some(input);
@@ -179,6 +199,10 @@ impl UpdateBotOutputBuilder {
         self.idle_session_ttl_in_seconds = input;
         self
     }
+    /// <p>The session timeout, in seconds, for the bot after the update.</p>
+    pub fn get_idle_session_ttl_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.idle_session_ttl_in_seconds
+    }
     /// <p>Shows the current status of the bot. The bot is first in the <code>Creating</code> status. Once the bot is read for use, it changes to the <code>Available</code> status. After the bot is created, you can use the <code>DRAFT</code> version of the bot.</p>
     pub fn bot_status(mut self, input: crate::types::BotStatus) -> Self {
         self.bot_status = ::std::option::Option::Some(input);
@@ -188,6 +212,10 @@ impl UpdateBotOutputBuilder {
     pub fn set_bot_status(mut self, input: ::std::option::Option<crate::types::BotStatus>) -> Self {
         self.bot_status = input;
         self
+    }
+    /// <p>Shows the current status of the bot. The bot is first in the <code>Creating</code> status. Once the bot is read for use, it changes to the <code>Available</code> status. After the bot is created, you can use the <code>DRAFT</code> version of the bot.</p>
+    pub fn get_bot_status(&self) -> &::std::option::Option<crate::types::BotStatus> {
+        &self.bot_status
     }
     /// <p>A timestamp of the date and time that the bot was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -202,6 +230,10 @@ impl UpdateBotOutputBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>A timestamp of the date and time that the bot was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>A timestamp of the date and time that the bot was last updated.</p>
     pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date_time = ::std::option::Option::Some(input);
@@ -215,6 +247,12 @@ impl UpdateBotOutputBuilder {
         self.last_updated_date_time = input;
         self
     }
+    /// <p>A timestamp of the date and time that the bot was last updated.</p>
+    pub fn get_last_updated_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date_time
+    }
     /// <p>The type of the bot that was updated.</p>
     pub fn bot_type(mut self, input: crate::types::BotType) -> Self {
         self.bot_type = ::std::option::Option::Some(input);
@@ -224,6 +262,10 @@ impl UpdateBotOutputBuilder {
     pub fn set_bot_type(mut self, input: ::std::option::Option<crate::types::BotType>) -> Self {
         self.bot_type = input;
         self
+    }
+    /// <p>The type of the bot that was updated.</p>
+    pub fn get_bot_type(&self) -> &::std::option::Option<crate::types::BotType> {
+        &self.bot_type
     }
     /// Appends an item to `bot_members`.
     ///
@@ -243,6 +285,12 @@ impl UpdateBotOutputBuilder {
     ) -> Self {
         self.bot_members = input;
         self
+    }
+    /// <p>The list of bot members in the network that was updated.</p>
+    pub fn get_bot_members(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BotMember>> {
+        &self.bot_members
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

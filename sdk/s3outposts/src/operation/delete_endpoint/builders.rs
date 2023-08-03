@@ -44,6 +44,12 @@ impl DeleteEndpointFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteEndpoint as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_endpoint::builders::DeleteEndpointInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DeleteEndpointFluentBuilder {
         self.inner = self.inner.set_endpoint_id(input);
         self
     }
+    /// <p>The ID of the endpoint.</p>
+    pub fn get_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_endpoint_id()
+    }
     /// <p>The ID of the Outposts. </p>
     pub fn outpost_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.outpost_id(input.into());
@@ -135,5 +145,9 @@ impl DeleteEndpointFluentBuilder {
     pub fn set_outpost_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_outpost_id(input);
         self
+    }
+    /// <p>The ID of the Outposts. </p>
+    pub fn get_outpost_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_outpost_id()
     }
 }

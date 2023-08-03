@@ -69,6 +69,10 @@ impl StartVoiceToneAnalysisTaskInputBuilder {
         self.voice_connector_id = input;
         self
     }
+    /// <p>The Voice Connector ID.</p>
+    pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_connector_id
+    }
     /// <p>The transaction ID.</p>
     pub fn transaction_id(
         mut self,
@@ -85,6 +89,10 @@ impl StartVoiceToneAnalysisTaskInputBuilder {
         self.transaction_id = input;
         self
     }
+    /// <p>The transaction ID.</p>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transaction_id
+    }
     /// <p>The language code.</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
@@ -97,6 +105,10 @@ impl StartVoiceToneAnalysisTaskInputBuilder {
     ) -> Self {
         self.language_code = input;
         self
+    }
+    /// <p>The language code.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
+        &self.language_code
     }
     /// <p>The unique identifier for the client request. Use a different token for different voice tone analysis tasks.</p>
     pub fn client_request_token(
@@ -113,6 +125,10 @@ impl StartVoiceToneAnalysisTaskInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>The unique identifier for the client request. Use a different token for different voice tone analysis tasks.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Consumes the builder and constructs a [`StartVoiceToneAnalysisTaskInput`](crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskInput).
     pub fn build(

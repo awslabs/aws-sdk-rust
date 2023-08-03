@@ -48,6 +48,10 @@ impl ChannelDefinitionBuilder {
         self.channel_id = input;
         self
     }
+    /// <p>The channel ID.</p>
+    pub fn get_channel_id(&self) -> &::std::option::Option<i32> {
+        &self.channel_id
+    }
     /// <p>Specifies whether the audio in a channel belongs to the <code>AGENT</code> or <code>CUSTOMER</code>.</p>
     pub fn participant_role(mut self, input: crate::types::ParticipantRole) -> Self {
         self.participant_role = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl ChannelDefinitionBuilder {
     ) -> Self {
         self.participant_role = input;
         self
+    }
+    /// <p>Specifies whether the audio in a channel belongs to the <code>AGENT</code> or <code>CUSTOMER</code>.</p>
+    pub fn get_participant_role(&self) -> &::std::option::Option<crate::types::ParticipantRole> {
+        &self.participant_role
     }
     /// Consumes the builder and constructs a [`ChannelDefinition`](crate::types::ChannelDefinition).
     pub fn build(self) -> crate::types::ChannelDefinition {

@@ -59,6 +59,10 @@ impl BudgetedAndActualAmountsBuilder {
         self.budgeted_amount = input;
         self
     }
+    /// <p>The amount of cost or usage that you created the budget for.</p>
+    pub fn get_budgeted_amount(&self) -> &::std::option::Option<crate::types::Spend> {
+        &self.budgeted_amount
+    }
     /// <p>Your actual costs or usage for a budget period.</p>
     pub fn actual_amount(mut self, input: crate::types::Spend) -> Self {
         self.actual_amount = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl BudgetedAndActualAmountsBuilder {
     pub fn set_actual_amount(mut self, input: ::std::option::Option<crate::types::Spend>) -> Self {
         self.actual_amount = input;
         self
+    }
+    /// <p>Your actual costs or usage for a budget period.</p>
+    pub fn get_actual_amount(&self) -> &::std::option::Option<crate::types::Spend> {
+        &self.actual_amount
     }
     /// <p>The time period that's covered by this budget comparison.</p>
     pub fn time_period(mut self, input: crate::types::TimePeriod) -> Self {
@@ -81,6 +89,10 @@ impl BudgetedAndActualAmountsBuilder {
     ) -> Self {
         self.time_period = input;
         self
+    }
+    /// <p>The time period that's covered by this budget comparison.</p>
+    pub fn get_time_period(&self) -> &::std::option::Option<crate::types::TimePeriod> {
+        &self.time_period
     }
     /// Consumes the builder and constructs a [`BudgetedAndActualAmounts`](crate::types::BudgetedAndActualAmounts).
     pub fn build(self) -> crate::types::BudgetedAndActualAmounts {

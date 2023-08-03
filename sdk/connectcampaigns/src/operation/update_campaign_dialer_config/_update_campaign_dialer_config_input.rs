@@ -48,6 +48,10 @@ impl UpdateCampaignDialerConfigInputBuilder {
         self.id = input;
         self
     }
+    /// Identifier representing a Campaign
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// The possible types of dialer config parameters
     pub fn dialer_config(mut self, input: crate::types::DialerConfig) -> Self {
         self.dialer_config = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl UpdateCampaignDialerConfigInputBuilder {
     ) -> Self {
         self.dialer_config = input;
         self
+    }
+    /// The possible types of dialer config parameters
+    pub fn get_dialer_config(&self) -> &::std::option::Option<crate::types::DialerConfig> {
+        &self.dialer_config
     }
     /// Consumes the builder and constructs a [`UpdateCampaignDialerConfigInput`](crate::operation::update_campaign_dialer_config::UpdateCampaignDialerConfigInput).
     pub fn build(

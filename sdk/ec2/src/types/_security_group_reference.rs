@@ -56,6 +56,10 @@ impl SecurityGroupReferenceBuilder {
         self.group_id = input;
         self
     }
+    /// <p>The ID of your security group.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
+    }
     /// <p>The ID of the VPC with the referencing security group.</p>
     pub fn referencing_vpc_id(
         mut self,
@@ -72,6 +76,10 @@ impl SecurityGroupReferenceBuilder {
         self.referencing_vpc_id = input;
         self
     }
+    /// <p>The ID of the VPC with the referencing security group.</p>
+    pub fn get_referencing_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.referencing_vpc_id
+    }
     /// <p>The ID of the VPC peering connection.</p>
     pub fn vpc_peering_connection_id(
         mut self,
@@ -87,6 +95,10 @@ impl SecurityGroupReferenceBuilder {
     ) -> Self {
         self.vpc_peering_connection_id = input;
         self
+    }
+    /// <p>The ID of the VPC peering connection.</p>
+    pub fn get_vpc_peering_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_peering_connection_id
     }
     /// Consumes the builder and constructs a [`SecurityGroupReference`](crate::types::SecurityGroupReference).
     pub fn build(self) -> crate::types::SecurityGroupReference {

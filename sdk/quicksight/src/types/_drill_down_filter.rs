@@ -69,6 +69,12 @@ impl DrillDownFilterBuilder {
         self.numeric_equality_filter = input;
         self
     }
+    /// <p>The numeric equality type drill down filter. This filter is used for number type columns.</p>
+    pub fn get_numeric_equality_filter(
+        &self,
+    ) -> &::std::option::Option<crate::types::NumericEqualityDrillDownFilter> {
+        &self.numeric_equality_filter
+    }
     /// <p>The category type drill down filter. This filter is used for string type columns.</p>
     pub fn category_filter(mut self, input: crate::types::CategoryDrillDownFilter) -> Self {
         self.category_filter = ::std::option::Option::Some(input);
@@ -82,6 +88,12 @@ impl DrillDownFilterBuilder {
         self.category_filter = input;
         self
     }
+    /// <p>The category type drill down filter. This filter is used for string type columns.</p>
+    pub fn get_category_filter(
+        &self,
+    ) -> &::std::option::Option<crate::types::CategoryDrillDownFilter> {
+        &self.category_filter
+    }
     /// <p>The time range drill down filter. This filter is used for date time columns.</p>
     pub fn time_range_filter(mut self, input: crate::types::TimeRangeDrillDownFilter) -> Self {
         self.time_range_filter = ::std::option::Option::Some(input);
@@ -94,6 +106,12 @@ impl DrillDownFilterBuilder {
     ) -> Self {
         self.time_range_filter = input;
         self
+    }
+    /// <p>The time range drill down filter. This filter is used for date time columns.</p>
+    pub fn get_time_range_filter(
+        &self,
+    ) -> &::std::option::Option<crate::types::TimeRangeDrillDownFilter> {
+        &self.time_range_filter
     }
     /// Consumes the builder and constructs a [`DrillDownFilter`](crate::types::DrillDownFilter).
     pub fn build(self) -> crate::types::DrillDownFilter {

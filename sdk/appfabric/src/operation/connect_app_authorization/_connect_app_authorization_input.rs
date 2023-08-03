@@ -65,6 +65,10 @@ impl ConnectAppAuthorizationInputBuilder {
         self.app_bundle_identifier = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle that contains the app authorization to use for the request.</p>
+    pub fn get_app_bundle_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_bundle_identifier
+    }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.</p>
     pub fn app_authorization_identifier(
         mut self,
@@ -81,6 +85,12 @@ impl ConnectAppAuthorizationInputBuilder {
         self.app_authorization_identifier = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.</p>
+    pub fn get_app_authorization_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.app_authorization_identifier
+    }
     /// <p>Contains OAuth2 authorization information.</p>
     /// <p>This is required if the app authorization for the request is configured with an OAuth2 (<code>oauth2</code>) authorization type.</p>
     pub fn auth_request(mut self, input: crate::types::AuthRequest) -> Self {
@@ -95,6 +105,11 @@ impl ConnectAppAuthorizationInputBuilder {
     ) -> Self {
         self.auth_request = input;
         self
+    }
+    /// <p>Contains OAuth2 authorization information.</p>
+    /// <p>This is required if the app authorization for the request is configured with an OAuth2 (<code>oauth2</code>) authorization type.</p>
+    pub fn get_auth_request(&self) -> &::std::option::Option<crate::types::AuthRequest> {
+        &self.auth_request
     }
     /// Consumes the builder and constructs a [`ConnectAppAuthorizationInput`](crate::operation::connect_app_authorization::ConnectAppAuthorizationInput).
     pub fn build(

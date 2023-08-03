@@ -50,6 +50,10 @@ impl StartDeploymentOutputBuilder {
         self.job_summary = input;
         self
     }
+    /// <p> The summary for the job. </p>
+    pub fn get_job_summary(&self) -> &::std::option::Option<crate::types::JobSummary> {
+        &self.job_summary
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

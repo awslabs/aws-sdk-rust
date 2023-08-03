@@ -106,6 +106,10 @@ impl DomainPackageDetailsBuilder {
         self.package_id = input;
         self
     }
+    /// <p>Internal ID of the package.</p>
+    pub fn get_package_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_id
+    }
     /// <p>User specified name of the package.</p>
     pub fn package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_name = ::std::option::Option::Some(input.into());
@@ -115,6 +119,10 @@ impl DomainPackageDetailsBuilder {
     pub fn set_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_name = input;
         self
+    }
+    /// <p>User specified name of the package.</p>
+    pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_name
     }
     /// <p>Currently supports only TXT-DICTIONARY.</p>
     pub fn package_type(mut self, input: crate::types::PackageType) -> Self {
@@ -129,6 +137,10 @@ impl DomainPackageDetailsBuilder {
         self.package_type = input;
         self
     }
+    /// <p>Currently supports only TXT-DICTIONARY.</p>
+    pub fn get_package_type(&self) -> &::std::option::Option<crate::types::PackageType> {
+        &self.package_type
+    }
     /// <p>Timestamp of the most-recent update to the association status.</p>
     pub fn last_updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated = ::std::option::Option::Some(input);
@@ -142,6 +154,10 @@ impl DomainPackageDetailsBuilder {
         self.last_updated = input;
         self
     }
+    /// <p>Timestamp of the most-recent update to the association status.</p>
+    pub fn get_last_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated
+    }
     /// <p>Name of the domain you've associated a package with.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
@@ -151,6 +167,10 @@ impl DomainPackageDetailsBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
+    }
+    /// <p>Name of the domain you've associated a package with.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// <p>State of the association. Values are ASSOCIATING/ASSOCIATION_FAILED/ACTIVE/DISSOCIATING/DISSOCIATION_FAILED.</p>
     pub fn domain_package_status(mut self, input: crate::types::DomainPackageStatus) -> Self {
@@ -164,6 +184,12 @@ impl DomainPackageDetailsBuilder {
     ) -> Self {
         self.domain_package_status = input;
         self
+    }
+    /// <p>State of the association. Values are ASSOCIATING/ASSOCIATION_FAILED/ACTIVE/DISSOCIATING/DISSOCIATION_FAILED.</p>
+    pub fn get_domain_package_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::DomainPackageStatus> {
+        &self.domain_package_status
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn package_version(
@@ -181,6 +207,10 @@ impl DomainPackageDetailsBuilder {
         self.package_version = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_package_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_version
+    }
     /// <p>The relative path on Amazon ES nodes, which can be used as synonym_path when the package is synonym file.</p>
     pub fn reference_path(
         mut self,
@@ -197,6 +227,10 @@ impl DomainPackageDetailsBuilder {
         self.reference_path = input;
         self
     }
+    /// <p>The relative path on Amazon ES nodes, which can be used as synonym_path when the package is synonym file.</p>
+    pub fn get_reference_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reference_path
+    }
     /// <p>Additional information if the package is in an error state. Null otherwise.</p>
     pub fn error_details(mut self, input: crate::types::ErrorDetails) -> Self {
         self.error_details = ::std::option::Option::Some(input);
@@ -209,6 +243,10 @@ impl DomainPackageDetailsBuilder {
     ) -> Self {
         self.error_details = input;
         self
+    }
+    /// <p>Additional information if the package is in an error state. Null otherwise.</p>
+    pub fn get_error_details(&self) -> &::std::option::Option<crate::types::ErrorDetails> {
+        &self.error_details
     }
     /// Consumes the builder and constructs a [`DomainPackageDetails`](crate::types::DomainPackageDetails).
     pub fn build(self) -> crate::types::DomainPackageDetails {

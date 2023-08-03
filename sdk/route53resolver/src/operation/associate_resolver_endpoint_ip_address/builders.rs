@@ -37,6 +37,10 @@ impl AssociateResolverEndpointIpAddressFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateResolverEndpointIpAddress as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_resolver_endpoint_ip_address::builders::AssociateResolverEndpointIpAddressInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -107,6 +111,10 @@ impl AssociateResolverEndpointIpAddressFluentBuilder {
         self.inner = self.inner.set_resolver_endpoint_id(input);
         self
     }
+    /// <p>The ID of the Resolver endpoint that you want to associate IP addresses with.</p>
+    pub fn get_resolver_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resolver_endpoint_id()
+    }
     /// <p>Either the IPv4 address that you want to add to a Resolver endpoint or a subnet ID. If you specify a subnet ID, Resolver chooses an IP address for you from the available IPs in the specified subnet.</p>
     pub fn ip_address(mut self, input: crate::types::IpAddressUpdate) -> Self {
         self.inner = self.inner.ip_address(input);
@@ -119,5 +127,9 @@ impl AssociateResolverEndpointIpAddressFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ip_address(input);
         self
+    }
+    /// <p>Either the IPv4 address that you want to add to a Resolver endpoint or a subnet ID. If you specify a subnet ID, Resolver chooses an IP address for you from the available IPs in the specified subnet.</p>
+    pub fn get_ip_address(&self) -> &::std::option::Option<crate::types::IpAddressUpdate> {
+        self.inner.get_ip_address()
     }
 }

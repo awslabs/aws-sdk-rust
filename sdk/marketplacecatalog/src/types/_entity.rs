@@ -48,6 +48,10 @@ impl EntityBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of entity.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p>The identifier for the entity.</p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl EntityBuilder {
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identifier = input;
         self
+    }
+    /// <p>The identifier for the entity.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
     }
     /// Consumes the builder and constructs a [`Entity`](crate::types::Entity).
     pub fn build(self) -> crate::types::Entity {

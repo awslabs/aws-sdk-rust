@@ -114,6 +114,10 @@ impl HealthCheckConfigBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Indicates whether health checking is enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>The protocol used when performing health checks on targets. The possible protocols are <code>HTTP</code> and <code>HTTPS</code>. The default is <code>HTTP</code>.</p>
     pub fn protocol(mut self, input: crate::types::TargetGroupProtocol) -> Self {
         self.protocol = ::std::option::Option::Some(input);
@@ -126,6 +130,10 @@ impl HealthCheckConfigBuilder {
     ) -> Self {
         self.protocol = input;
         self
+    }
+    /// <p>The protocol used when performing health checks on targets. The possible protocols are <code>HTTP</code> and <code>HTTPS</code>. The default is <code>HTTP</code>.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::TargetGroupProtocol> {
+        &self.protocol
     }
     /// <p>The protocol version used when performing health checks on targets. The possible protocol versions are <code>HTTP1</code> and <code>HTTP2</code>.</p>
     pub fn protocol_version(mut self, input: crate::types::HealthCheckProtocolVersion) -> Self {
@@ -140,6 +148,12 @@ impl HealthCheckConfigBuilder {
         self.protocol_version = input;
         self
     }
+    /// <p>The protocol version used when performing health checks on targets. The possible protocol versions are <code>HTTP1</code> and <code>HTTP2</code>.</p>
+    pub fn get_protocol_version(
+        &self,
+    ) -> &::std::option::Option<crate::types::HealthCheckProtocolVersion> {
+        &self.protocol_version
+    }
     /// <p>The port used when performing health checks on targets. The default setting is the port that a target receives traffic on.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -149,6 +163,10 @@ impl HealthCheckConfigBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
+    }
+    /// <p>The port used when performing health checks on targets. The default setting is the port that a target receives traffic on.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// <p>The destination for health checks on the targets. If the protocol version is <code>HTTP/1.1</code> or <code>HTTP/2</code>, specify a valid URI (for example, <code>/path?query</code>). The default path is <code>/</code>. Health checks are not supported if the protocol version is <code>gRPC</code>, however, you can choose <code>HTTP/1.1</code> or <code>HTTP/2</code> and specify a valid URI.</p>
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -160,6 +178,10 @@ impl HealthCheckConfigBuilder {
         self.path = input;
         self
     }
+    /// <p>The destination for health checks on the targets. If the protocol version is <code>HTTP/1.1</code> or <code>HTTP/2</code>, specify a valid URI (for example, <code>/path?query</code>). The default path is <code>/</code>. Health checks are not supported if the protocol version is <code>gRPC</code>, however, you can choose <code>HTTP/1.1</code> or <code>HTTP/2</code> and specify a valid URI.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
+    }
     /// <p>The approximate amount of time, in seconds, between health checks of an individual target. The range is 5–300 seconds. The default is 30 seconds.</p>
     pub fn health_check_interval_seconds(mut self, input: i32) -> Self {
         self.health_check_interval_seconds = ::std::option::Option::Some(input);
@@ -169,6 +191,10 @@ impl HealthCheckConfigBuilder {
     pub fn set_health_check_interval_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.health_check_interval_seconds = input;
         self
+    }
+    /// <p>The approximate amount of time, in seconds, between health checks of an individual target. The range is 5–300 seconds. The default is 30 seconds.</p>
+    pub fn get_health_check_interval_seconds(&self) -> &::std::option::Option<i32> {
+        &self.health_check_interval_seconds
     }
     /// <p>The amount of time, in seconds, to wait before reporting a target as unhealthy. The range is 1–120 seconds. The default is 5 seconds.</p>
     pub fn health_check_timeout_seconds(mut self, input: i32) -> Self {
@@ -180,6 +206,10 @@ impl HealthCheckConfigBuilder {
         self.health_check_timeout_seconds = input;
         self
     }
+    /// <p>The amount of time, in seconds, to wait before reporting a target as unhealthy. The range is 1–120 seconds. The default is 5 seconds.</p>
+    pub fn get_health_check_timeout_seconds(&self) -> &::std::option::Option<i32> {
+        &self.health_check_timeout_seconds
+    }
     /// <p>The number of consecutive successful health checks required before considering an unhealthy target healthy. The range is 2–10. The default is 5.</p>
     pub fn healthy_threshold_count(mut self, input: i32) -> Self {
         self.healthy_threshold_count = ::std::option::Option::Some(input);
@@ -189,6 +219,10 @@ impl HealthCheckConfigBuilder {
     pub fn set_healthy_threshold_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.healthy_threshold_count = input;
         self
+    }
+    /// <p>The number of consecutive successful health checks required before considering an unhealthy target healthy. The range is 2–10. The default is 5.</p>
+    pub fn get_healthy_threshold_count(&self) -> &::std::option::Option<i32> {
+        &self.healthy_threshold_count
     }
     /// <p>The number of consecutive failed health checks required before considering a target unhealthy. The range is 2–10. The default is 2.</p>
     pub fn unhealthy_threshold_count(mut self, input: i32) -> Self {
@@ -200,6 +234,10 @@ impl HealthCheckConfigBuilder {
         self.unhealthy_threshold_count = input;
         self
     }
+    /// <p>The number of consecutive failed health checks required before considering a target unhealthy. The range is 2–10. The default is 2.</p>
+    pub fn get_unhealthy_threshold_count(&self) -> &::std::option::Option<i32> {
+        &self.unhealthy_threshold_count
+    }
     /// <p>The codes to use when checking for a successful response from a target. These are called <i>Success codes</i> in the console.</p>
     pub fn matcher(mut self, input: crate::types::Matcher) -> Self {
         self.matcher = ::std::option::Option::Some(input);
@@ -209,6 +247,10 @@ impl HealthCheckConfigBuilder {
     pub fn set_matcher(mut self, input: ::std::option::Option<crate::types::Matcher>) -> Self {
         self.matcher = input;
         self
+    }
+    /// <p>The codes to use when checking for a successful response from a target. These are called <i>Success codes</i> in the console.</p>
+    pub fn get_matcher(&self) -> &::std::option::Option<crate::types::Matcher> {
+        &self.matcher
     }
     /// Consumes the builder and constructs a [`HealthCheckConfig`](crate::types::HealthCheckConfig).
     pub fn build(self) -> crate::types::HealthCheckConfig {

@@ -53,6 +53,10 @@ impl PutRecordBatchInputBuilder {
         self.delivery_stream_name = input;
         self
     }
+    /// <p>The name of the delivery stream.</p>
+    pub fn get_delivery_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delivery_stream_name
+    }
     /// Appends an item to `records`.
     ///
     /// To override the contents of this collection use [`set_records`](Self::set_records).
@@ -71,6 +75,10 @@ impl PutRecordBatchInputBuilder {
     ) -> Self {
         self.records = input;
         self
+    }
+    /// <p>One or more records.</p>
+    pub fn get_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Record>> {
+        &self.records
     }
     /// Consumes the builder and constructs a [`PutRecordBatchInput`](crate::operation::put_record_batch::PutRecordBatchInput).
     pub fn build(

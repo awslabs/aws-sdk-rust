@@ -81,6 +81,11 @@ impl ResendValidationEmailInputBuilder {
         self.certificate_arn = input;
         self
     }
+    /// <p>String that contains the ARN of the requested certificate. The certificate ARN is generated and returned by the <code>RequestCertificate</code> action as soon as the request is made. By default, using this parameter causes email to be sent to all top-level domains you specified in the certificate request. The ARN must be of the form: </p>
+    /// <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_arn
+    }
     /// <p>The fully qualified domain name (FQDN) of the certificate that needs to be validated.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
@@ -90,6 +95,10 @@ impl ResendValidationEmailInputBuilder {
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
+    }
+    /// <p>The fully qualified domain name (FQDN) of the certificate that needs to be validated.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
     }
     /// <p>The base validation domain that will act as the suffix of the email addresses that are used to send the emails. This must be the same as the <code>Domain</code> value or a superdomain of the <code>Domain</code> value. For example, if you requested a certificate for <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends email to the domain registrant, technical contact, and administrative contact in WHOIS and the following five addresses:</p>
     /// <ul>
@@ -120,6 +129,17 @@ impl ResendValidationEmailInputBuilder {
     ) -> Self {
         self.validation_domain = input;
         self
+    }
+    /// <p>The base validation domain that will act as the suffix of the email addresses that are used to send the emails. This must be the same as the <code>Domain</code> value or a superdomain of the <code>Domain</code> value. For example, if you requested a certificate for <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends email to the domain registrant, technical contact, and administrative contact in WHOIS and the following five addresses:</p>
+    /// <ul>
+    /// <li> <p>admin@subdomain.example.com</p> </li>
+    /// <li> <p>administrator@subdomain.example.com</p> </li>
+    /// <li> <p>hostmaster@subdomain.example.com</p> </li>
+    /// <li> <p>postmaster@subdomain.example.com</p> </li>
+    /// <li> <p>webmaster@subdomain.example.com</p> </li>
+    /// </ul>
+    pub fn get_validation_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.validation_domain
     }
     /// Consumes the builder and constructs a [`ResendValidationEmailInput`](crate::operation::resend_validation_email::ResendValidationEmailInput).
     pub fn build(

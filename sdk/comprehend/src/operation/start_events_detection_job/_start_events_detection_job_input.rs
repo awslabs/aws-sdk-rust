@@ -100,6 +100,10 @@ impl StartEventsDetectionJobInputBuilder {
         self.input_data_config = input;
         self
     }
+    /// <p>Specifies the format and location of the input data for the job.</p>
+    pub fn get_input_data_config(&self) -> &::std::option::Option<crate::types::InputDataConfig> {
+        &self.input_data_config
+    }
     /// <p>Specifies where to send the output files.</p>
     pub fn output_data_config(mut self, input: crate::types::OutputDataConfig) -> Self {
         self.output_data_config = ::std::option::Option::Some(input);
@@ -112,6 +116,10 @@ impl StartEventsDetectionJobInputBuilder {
     ) -> Self {
         self.output_data_config = input;
         self
+    }
+    /// <p>Specifies where to send the output files.</p>
+    pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::OutputDataConfig> {
+        &self.output_data_config
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
     pub fn data_access_role_arn(
@@ -129,6 +137,10 @@ impl StartEventsDetectionJobInputBuilder {
         self.data_access_role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
+    pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_access_role_arn
+    }
     /// <p>The identifier of the events detection job.</p>
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
@@ -138,6 +150,10 @@ impl StartEventsDetectionJobInputBuilder {
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_name = input;
         self
+    }
+    /// <p>The identifier of the events detection job.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
     }
     /// <p>The language code of the input documents.</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
@@ -151,6 +167,10 @@ impl StartEventsDetectionJobInputBuilder {
     ) -> Self {
         self.language_code = input;
         self
+    }
+    /// <p>The language code of the input documents.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
+        &self.language_code
     }
     /// <p>An unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
     pub fn client_request_token(
@@ -167,6 +187,10 @@ impl StartEventsDetectionJobInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>An unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Appends an item to `target_event_types`.
     ///
@@ -190,6 +214,12 @@ impl StartEventsDetectionJobInputBuilder {
         self.target_event_types = input;
         self
     }
+    /// <p>The types of events to detect in the input documents.</p>
+    pub fn get_target_event_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.target_event_types
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -208,6 +238,10 @@ impl StartEventsDetectionJobInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Tags to associate with the events detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`StartEventsDetectionJobInput`](crate::operation::start_events_detection_job::StartEventsDetectionJobInput).
     pub fn build(

@@ -41,6 +41,10 @@ impl DisassociateElasticIpInputBuilder {
         self.elastic_ip = input;
         self
     }
+    /// <p>The Elastic IP address.</p>
+    pub fn get_elastic_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.elastic_ip
+    }
     /// Consumes the builder and constructs a [`DisassociateElasticIpInput`](crate::operation::disassociate_elastic_ip::DisassociateElasticIpInput).
     pub fn build(
         self,

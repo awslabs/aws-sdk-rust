@@ -38,6 +38,13 @@ impl UnlinkDeveloperIdentityFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UnlinkDeveloperIdentity as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::unlink_developer_identity::builders::UnlinkDeveloperIdentityInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +135,10 @@ impl UnlinkDeveloperIdentityFluentBuilder {
         self.inner = self.inner.set_identity_id(input);
         self
     }
+    /// <p>A unique identifier in the format REGION:GUID.</p>
+    pub fn get_identity_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_id()
+    }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     pub fn identity_pool_id(
         mut self,
@@ -143,6 +154,10 @@ impl UnlinkDeveloperIdentityFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_identity_pool_id(input);
         self
+    }
+    /// <p>An identity pool ID in the format REGION:GUID.</p>
+    pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_pool_id()
     }
     /// <p>The "domain" by which Cognito will refer to your users.</p>
     pub fn developer_provider_name(
@@ -160,6 +175,10 @@ impl UnlinkDeveloperIdentityFluentBuilder {
         self.inner = self.inner.set_developer_provider_name(input);
         self
     }
+    /// <p>The "domain" by which Cognito will refer to your users.</p>
+    pub fn get_developer_provider_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_developer_provider_name()
+    }
     /// <p>A unique ID used by your backend authentication process to identify a user.</p>
     pub fn developer_user_identifier(
         mut self,
@@ -175,5 +194,9 @@ impl UnlinkDeveloperIdentityFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_developer_user_identifier(input);
         self
+    }
+    /// <p>A unique ID used by your backend authentication process to identify a user.</p>
+    pub fn get_developer_user_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_developer_user_identifier()
     }
 }

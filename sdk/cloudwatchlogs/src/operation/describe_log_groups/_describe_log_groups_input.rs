@@ -104,6 +104,12 @@ impl DescribeLogGroupsInputBuilder {
         self.account_identifiers = input;
         self
     }
+    /// <p>When <code>includeLinkedAccounts</code> is set to <code>True</code>, use this parameter to specify the list of accounts to search. You can specify as many as 20 account IDs in the array. </p>
+    pub fn get_account_identifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.account_identifiers
+    }
     /// <p>The prefix to match.</p> <note>
     /// <p> <code>logGroupNamePrefix</code> and <code>logGroupNamePattern</code> are mutually exclusive. Only one of these parameters can be passed. </p>
     /// </note>
@@ -123,6 +129,12 @@ impl DescribeLogGroupsInputBuilder {
     ) -> Self {
         self.log_group_name_prefix = input;
         self
+    }
+    /// <p>The prefix to match.</p> <note>
+    /// <p> <code>logGroupNamePrefix</code> and <code>logGroupNamePattern</code> are mutually exclusive. Only one of these parameters can be passed. </p>
+    /// </note>
+    pub fn get_log_group_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group_name_prefix
     }
     /// <p>If you specify a string for this parameter, the operation returns only log groups that have names that match the string based on a case-sensitive substring search. For example, if you specify <code>Foo</code>, log groups named <code>FooBar</code>, <code>aws/Foo</code>, and <code>GroupFoo</code> would match, but <code>foo</code>, <code>F/o/o</code> and <code>Froo</code> would not match.</p>
     /// <p>If you specify <code>logGroupNamePattern</code> in your request, then only <code>arn</code>, <code>creationTime</code>, and <code>logGroupName</code> are included in the response. </p> <note>
@@ -146,6 +158,13 @@ impl DescribeLogGroupsInputBuilder {
         self.log_group_name_pattern = input;
         self
     }
+    /// <p>If you specify a string for this parameter, the operation returns only log groups that have names that match the string based on a case-sensitive substring search. For example, if you specify <code>Foo</code>, log groups named <code>FooBar</code>, <code>aws/Foo</code>, and <code>GroupFoo</code> would match, but <code>foo</code>, <code>F/o/o</code> and <code>Froo</code> would not match.</p>
+    /// <p>If you specify <code>logGroupNamePattern</code> in your request, then only <code>arn</code>, <code>creationTime</code>, and <code>logGroupName</code> are included in the response. </p> <note>
+    /// <p> <code>logGroupNamePattern</code> and <code>logGroupNamePrefix</code> are mutually exclusive. Only one of these parameters can be passed. </p>
+    /// </note>
+    pub fn get_log_group_name_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group_name_pattern
+    }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -156,6 +175,10 @@ impl DescribeLogGroupsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -165,6 +188,10 @@ impl DescribeLogGroupsInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// <p>If you are using a monitoring account, set this to <code>True</code> to have the operation return log groups in the accounts listed in <code>accountIdentifiers</code>.</p>
     /// <p>If this parameter is set to <code>true</code> and <code>accountIdentifiers</code> contains a null value, the operation returns all log groups in the monitoring account and all log groups in all source accounts that are linked to the monitoring account. </p>
@@ -177,6 +204,11 @@ impl DescribeLogGroupsInputBuilder {
     pub fn set_include_linked_accounts(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_linked_accounts = input;
         self
+    }
+    /// <p>If you are using a monitoring account, set this to <code>True</code> to have the operation return log groups in the accounts listed in <code>accountIdentifiers</code>.</p>
+    /// <p>If this parameter is set to <code>true</code> and <code>accountIdentifiers</code> contains a null value, the operation returns all log groups in the monitoring account and all log groups in all source accounts that are linked to the monitoring account. </p>
+    pub fn get_include_linked_accounts(&self) -> &::std::option::Option<bool> {
+        &self.include_linked_accounts
     }
     /// Consumes the builder and constructs a [`DescribeLogGroupsInput`](crate::operation::describe_log_groups::DescribeLogGroupsInput).
     pub fn build(

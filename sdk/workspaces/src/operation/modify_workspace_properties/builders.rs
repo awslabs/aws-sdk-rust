@@ -38,6 +38,10 @@ impl ModifyWorkspacePropertiesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyWorkspaceProperties as a reference.
+    pub fn as_input(&self) -> &crate::operation::modify_workspace_properties::builders::ModifyWorkspacePropertiesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +132,10 @@ impl ModifyWorkspacePropertiesFluentBuilder {
         self.inner = self.inner.set_workspace_id(input);
         self
     }
+    /// <p>The identifier of the WorkSpace.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workspace_id()
+    }
     /// <p>The properties of the WorkSpace.</p>
     pub fn workspace_properties(mut self, input: crate::types::WorkspaceProperties) -> Self {
         self.inner = self.inner.workspace_properties(input);
@@ -140,5 +148,11 @@ impl ModifyWorkspacePropertiesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_workspace_properties(input);
         self
+    }
+    /// <p>The properties of the WorkSpace.</p>
+    pub fn get_workspace_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::WorkspaceProperties> {
+        self.inner.get_workspace_properties()
     }
 }

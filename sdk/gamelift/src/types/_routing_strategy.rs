@@ -81,6 +81,15 @@ impl RoutingStrategyBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of routing strategy for the alias.</p>
+    /// <p>Possible routing types include the following:</p>
+    /// <ul>
+    /// <li> <p> <b>SIMPLE</b> - The alias resolves to one specific fleet. Use this type when routing to active fleets.</p> </li>
+    /// <li> <p> <b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the message embedded.</p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::RoutingStrategyType> {
+        &self.r#type
+    }
     /// <p>A unique identifier for the fleet that the alias points to. This value is the fleet ID, not the fleet ARN.</p>
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
@@ -91,6 +100,10 @@ impl RoutingStrategyBuilder {
         self.fleet_id = input;
         self
     }
+    /// <p>A unique identifier for the fleet that the alias points to. This value is the fleet ID, not the fleet ARN.</p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_id
+    }
     /// <p>The message text to be used with a terminal routing strategy.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -100,6 +113,10 @@ impl RoutingStrategyBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The message text to be used with a terminal routing strategy.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`RoutingStrategy`](crate::types::RoutingStrategy).
     pub fn build(self) -> crate::types::RoutingStrategy {

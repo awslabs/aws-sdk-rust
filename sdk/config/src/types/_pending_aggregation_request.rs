@@ -54,6 +54,10 @@ impl PendingAggregationRequestBuilder {
         self.requester_account_id = input;
         self
     }
+    /// <p>The 12-digit account ID of the account requesting to aggregate data.</p>
+    pub fn get_requester_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.requester_account_id
+    }
     /// <p>The region requesting to aggregate data. </p>
     pub fn requester_aws_region(
         mut self,
@@ -69,6 +73,10 @@ impl PendingAggregationRequestBuilder {
     ) -> Self {
         self.requester_aws_region = input;
         self
+    }
+    /// <p>The region requesting to aggregate data. </p>
+    pub fn get_requester_aws_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.requester_aws_region
     }
     /// Consumes the builder and constructs a [`PendingAggregationRequest`](crate::types::PendingAggregationRequest).
     pub fn build(self) -> crate::types::PendingAggregationRequest {

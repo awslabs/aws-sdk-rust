@@ -39,6 +39,10 @@ impl EnableCrlInputBuilder {
         self.crl_id = input;
         self
     }
+    /// <p>The unique identifier of the certificate revocation list (CRL).</p>
+    pub fn get_crl_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.crl_id
+    }
     /// Consumes the builder and constructs a [`EnableCrlInput`](crate::operation::enable_crl::EnableCrlInput).
     pub fn build(
         self,

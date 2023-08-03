@@ -47,6 +47,10 @@ impl GrantAccessInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The instance's AWS OpsWorks Stacks ID.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The length of time (in minutes) that the grant is valid. When the grant expires at the end of this period, the user will no longer be able to use the credentials to log in. If the user is logged in at the time, he or she automatically will be logged out.</p>
     pub fn valid_for_in_minutes(mut self, input: i32) -> Self {
         self.valid_for_in_minutes = ::std::option::Option::Some(input);
@@ -56,6 +60,10 @@ impl GrantAccessInputBuilder {
     pub fn set_valid_for_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.valid_for_in_minutes = input;
         self
+    }
+    /// <p>The length of time (in minutes) that the grant is valid. When the grant expires at the end of this period, the user will no longer be able to use the credentials to log in. If the user is logged in at the time, he or she automatically will be logged out.</p>
+    pub fn get_valid_for_in_minutes(&self) -> &::std::option::Option<i32> {
+        &self.valid_for_in_minutes
     }
     /// Consumes the builder and constructs a [`GrantAccessInput`](crate::operation::grant_access::GrantAccessInput).
     pub fn build(

@@ -99,6 +99,10 @@ impl ContactBuilder {
         self.contact_arn = input;
         self
     }
+    /// <p>The ARN of the contact.</p>
+    pub fn get_contact_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_arn
+    }
     /// <p>The name of the contact to display on the console.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -108,6 +112,10 @@ impl ContactBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
+    }
+    /// <p>The name of the contact to display on the console.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// <p>The first name of the contact, used to call the contact on the device.</p>
     pub fn first_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -119,6 +127,10 @@ impl ContactBuilder {
         self.first_name = input;
         self
     }
+    /// <p>The first name of the contact, used to call the contact on the device.</p>
+    pub fn get_first_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.first_name
+    }
     /// <p>The last name of the contact, used to call the contact on the device.</p>
     pub fn last_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_name = ::std::option::Option::Some(input.into());
@@ -129,6 +141,10 @@ impl ContactBuilder {
         self.last_name = input;
         self
     }
+    /// <p>The last name of the contact, used to call the contact on the device.</p>
+    pub fn get_last_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_name
+    }
     /// <p>The phone number of the contact. The phone number type defaults to WORK. You can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
     pub fn phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number = ::std::option::Option::Some(input.into());
@@ -138,6 +154,10 @@ impl ContactBuilder {
     pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.phone_number = input;
         self
+    }
+    /// <p>The phone number of the contact. The phone number type defaults to WORK. You can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
+    pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number
     }
     /// Appends an item to `phone_numbers`.
     ///
@@ -158,6 +178,12 @@ impl ContactBuilder {
         self.phone_numbers = input;
         self
     }
+    /// <p>The list of phone numbers for the contact.</p>
+    pub fn get_phone_numbers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>> {
+        &self.phone_numbers
+    }
     /// Appends an item to `sip_addresses`.
     ///
     /// To override the contents of this collection use [`set_sip_addresses`](Self::set_sip_addresses).
@@ -176,6 +202,12 @@ impl ContactBuilder {
     ) -> Self {
         self.sip_addresses = input;
         self
+    }
+    /// <p>The list of SIP addresses for the contact.</p>
+    pub fn get_sip_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SipAddress>> {
+        &self.sip_addresses
     }
     /// Consumes the builder and constructs a [`Contact`](crate::types::Contact).
     pub fn build(self) -> crate::types::Contact {

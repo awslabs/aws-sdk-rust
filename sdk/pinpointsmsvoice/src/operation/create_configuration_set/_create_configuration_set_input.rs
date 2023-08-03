@@ -48,6 +48,10 @@ impl CreateConfigurationSetInputBuilder {
         self.configuration_set_name = input;
         self
     }
+    /// The name that you want to give the configuration set.
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set_name
+    }
     /// Consumes the builder and constructs a [`CreateConfigurationSetInput`](crate::operation::create_configuration_set::CreateConfigurationSetInput).
     pub fn build(
         self,

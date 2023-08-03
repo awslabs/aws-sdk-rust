@@ -69,6 +69,12 @@ impl ListSmartHomeAppliancesOutputBuilder {
         self.smart_home_appliances = input;
         self
     }
+    /// <p>The smart home appliances.</p>
+    pub fn get_smart_home_appliances(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SmartHomeAppliance>> {
+        &self.smart_home_appliances
+    }
     /// <p>The tokens used for pagination.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -78,6 +84,10 @@ impl ListSmartHomeAppliancesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The tokens used for pagination.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

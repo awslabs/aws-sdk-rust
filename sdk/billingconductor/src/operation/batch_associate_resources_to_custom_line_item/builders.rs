@@ -36,6 +36,10 @@ impl BatchAssociateResourcesToCustomLineItemFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchAssociateResourcesToCustomLineItem as a reference.
+    pub fn as_input(&self) -> &crate::operation::batch_associate_resources_to_custom_line_item::builders::BatchAssociateResourcesToCustomLineItemInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl BatchAssociateResourcesToCustomLineItemFluentBuilder {
         self.inner = self.inner.set_target_arn(input);
         self
     }
+    /// <p> A percentage custom line item ARN to associate the resources to. </p>
+    pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_arn()
+    }
     /// Appends an item to `ResourceArns`.
     ///
     /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
@@ -120,6 +128,12 @@ impl BatchAssociateResourcesToCustomLineItemFluentBuilder {
         self.inner = self.inner.set_resource_arns(input);
         self
     }
+    /// <p> A list containing the ARNs of the resources to be associated. </p>
+    pub fn get_resource_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_resource_arns()
+    }
     /// <p>The billing period range in which the custom line item request will be applied.</p>
     pub fn billing_period_range(
         mut self,
@@ -135,5 +149,11 @@ impl BatchAssociateResourcesToCustomLineItemFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_billing_period_range(input);
         self
+    }
+    /// <p>The billing period range in which the custom line item request will be applied.</p>
+    pub fn get_billing_period_range(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomLineItemBillingPeriodRange> {
+        self.inner.get_billing_period_range()
     }
 }

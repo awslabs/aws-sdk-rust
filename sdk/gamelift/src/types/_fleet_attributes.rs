@@ -277,6 +277,10 @@ impl FleetAttributesBuilder {
         self.fleet_id = input;
         self
     }
+    /// <p>A unique identifier for the fleet.</p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_id
+    }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
@@ -293,6 +297,13 @@ impl FleetAttributesBuilder {
         self.fleet_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+    /// <region>
+    /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
+    /// </region></code>. In a GameLift fleet ARN, the resource ID matches the <code>FleetId</code> value.</p>
+    pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_arn
+    }
     /// <p>Indicates whether to use On-Demand or Spot instances for this fleet. By default, this property is set to <code>ON_DEMAND</code>. Learn more about when to use <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"> On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet is created.</p>
     pub fn fleet_type(mut self, input: crate::types::FleetType) -> Self {
         self.fleet_type = ::std::option::Option::Some(input);
@@ -302,6 +313,10 @@ impl FleetAttributesBuilder {
     pub fn set_fleet_type(mut self, input: ::std::option::Option<crate::types::FleetType>) -> Self {
         self.fleet_type = input;
         self
+    }
+    /// <p>Indicates whether to use On-Demand or Spot instances for this fleet. By default, this property is set to <code>ON_DEMAND</code>. Learn more about when to use <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"> On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet is created.</p>
+    pub fn get_fleet_type(&self) -> &::std::option::Option<crate::types::FleetType> {
+        &self.fleet_type
     }
     /// <p>The Amazon EC2 instance type that determines the computing resources of each instance in the fleet. Instance type defines the CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions.</p>
     pub fn instance_type(mut self, input: crate::types::Ec2InstanceType) -> Self {
@@ -316,6 +331,10 @@ impl FleetAttributesBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The Amazon EC2 instance type that determines the computing resources of each instance in the fleet. Instance type defines the CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::Ec2InstanceType> {
+        &self.instance_type
+    }
     /// <p>A human-readable description of the fleet.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -326,6 +345,10 @@ impl FleetAttributesBuilder {
         self.description = input;
         self
     }
+    /// <p>A human-readable description of the fleet.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>A descriptive label that is associated with a fleet. Fleet names do not need to be unique.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -335,6 +358,10 @@ impl FleetAttributesBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A descriptive label that is associated with a fleet. Fleet names do not need to be unique.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -349,6 +376,10 @@ impl FleetAttributesBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub fn termination_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.termination_time = ::std::option::Option::Some(input);
@@ -361,6 +392,10 @@ impl FleetAttributesBuilder {
     ) -> Self {
         self.termination_time = input;
         self
+    }
+    /// <p>A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    pub fn get_termination_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.termination_time
     }
     /// <p>Current status of the fleet. Possible fleet statuses include the following:</p>
     /// <ul>
@@ -388,6 +423,18 @@ impl FleetAttributesBuilder {
         self.status = input;
         self
     }
+    /// <p>Current status of the fleet. Possible fleet statuses include the following:</p>
+    /// <ul>
+    /// <li> <p> <b>NEW</b> -- A new fleet has been defined and desired instances is set to 1. </p> </li>
+    /// <li> <p> <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet, creating new instances with the game build or Realtime script and starting server processes.</p> </li>
+    /// <li> <p> <b>ACTIVE</b> -- Hosts can now accept game sessions.</p> </li>
+    /// <li> <p> <b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet.</p> </li>
+    /// <li> <p> <b>DELETING</b> -- Hosts are responding to a delete fleet request.</p> </li>
+    /// <li> <p> <b>TERMINATED</b> -- The fleet no longer exists.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::FleetStatus> {
+        &self.status
+    }
     /// <p>A unique identifier for the build resource that is deployed on instances in this fleet.</p>
     pub fn build_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.build_id = ::std::option::Option::Some(input.into());
@@ -397,6 +444,10 @@ impl FleetAttributesBuilder {
     pub fn set_build_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.build_id = input;
         self
+    }
+    /// <p>A unique identifier for the build resource that is deployed on instances in this fleet.</p>
+    pub fn get_build_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.build_id
     }
     /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the Amazon GameLift build resource that is deployed on instances in this fleet. In a GameLift build ARN, the resource ID matches the <code>BuildId</code> value.</p>
     pub fn build_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -408,6 +459,10 @@ impl FleetAttributesBuilder {
         self.build_arn = input;
         self
     }
+    /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the Amazon GameLift build resource that is deployed on instances in this fleet. In a GameLift build ARN, the resource ID matches the <code>BuildId</code> value.</p>
+    pub fn get_build_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.build_arn
+    }
     /// <p>A unique identifier for the Realtime script resource that is deployed on instances in this fleet.</p>
     pub fn script_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.script_id = ::std::option::Option::Some(input.into());
@@ -418,6 +473,10 @@ impl FleetAttributesBuilder {
         self.script_id = input;
         self
     }
+    /// <p>A unique identifier for the Realtime script resource that is deployed on instances in this fleet.</p>
+    pub fn get_script_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.script_id
+    }
     /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift script resource that is deployed on instances in this fleet. In a GameLift script ARN, the resource ID matches the <code>ScriptId</code> value.</p>
     pub fn script_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.script_arn = ::std::option::Option::Some(input.into());
@@ -427,6 +486,10 @@ impl FleetAttributesBuilder {
     pub fn set_script_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.script_arn = input;
         self
+    }
+    /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift script resource that is deployed on instances in this fleet. In a GameLift script ARN, the resource ID matches the <code>ScriptId</code> value.</p>
+    pub fn get_script_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.script_arn
     }
     /// <p> <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html">RuntimeConfiguration</a> . Requests that use this parameter instead continue to be valid.</p>
     pub fn server_launch_path(
@@ -444,6 +507,10 @@ impl FleetAttributesBuilder {
         self.server_launch_path = input;
         self
     }
+    /// <p> <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html">RuntimeConfiguration</a> . Requests that use this parameter instead continue to be valid.</p>
+    pub fn get_server_launch_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_launch_path
+    }
     /// <p> <b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's runtime configuration . Requests that use this parameter instead continue to be valid.</p>
     pub fn server_launch_parameters(
         mut self,
@@ -459,6 +526,10 @@ impl FleetAttributesBuilder {
     ) -> Self {
         self.server_launch_parameters = input;
         self
+    }
+    /// <p> <b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's runtime configuration . Requests that use this parameter instead continue to be valid.</p>
+    pub fn get_server_launch_parameters(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_launch_parameters
     }
     /// Appends an item to `log_paths`.
     ///
@@ -478,6 +549,10 @@ impl FleetAttributesBuilder {
     ) -> Self {
         self.log_paths = input;
         self
+    }
+    /// <p> <b>This parameter is no longer used.</b> Game session log paths are now defined using the Amazon GameLift server API <code>ProcessReady()</code> <code>logParameters</code>. See more information in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server API Reference</a>. </p>
+    pub fn get_log_paths(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.log_paths
     }
     /// <p>The type of game session protection to set on all new instances that are started in the fleet.</p>
     /// <ul>
@@ -503,6 +578,16 @@ impl FleetAttributesBuilder {
         self.new_game_session_protection_policy = input;
         self
     }
+    /// <p>The type of game session protection to set on all new instances that are started in the fleet.</p>
+    /// <ul>
+    /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
+    /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
+    /// </ul>
+    pub fn get_new_game_session_protection_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProtectionPolicy> {
+        &self.new_game_session_protection_policy
+    }
     /// <p>The operating system of the fleet's computing resources. A fleet's operating system is determined by the OS of the build or script that is deployed on this fleet.</p>
     pub fn operating_system(mut self, input: crate::types::OperatingSystem) -> Self {
         self.operating_system = ::std::option::Option::Some(input);
@@ -515,6 +600,10 @@ impl FleetAttributesBuilder {
     ) -> Self {
         self.operating_system = input;
         self
+    }
+    /// <p>The operating system of the fleet's computing resources. A fleet's operating system is determined by the OS of the build or script that is deployed on this fleet.</p>
+    pub fn get_operating_system(&self) -> &::std::option::Option<crate::types::OperatingSystem> {
+        &self.operating_system
     }
     /// <p>A policy that puts limits on the number of game sessions that a player can create within a specified span of time. With this policy, you can control players' ability to consume available resources.</p>
     /// <p>The policy is evaluated when a player tries to create a new game session. On receiving a <code>CreateGameSession</code> request, Amazon GameLift checks that the player (identified by <code>CreatorId</code>) has created fewer than game session limit in the specified time period.</p>
@@ -533,6 +622,13 @@ impl FleetAttributesBuilder {
     ) -> Self {
         self.resource_creation_limit_policy = input;
         self
+    }
+    /// <p>A policy that puts limits on the number of game sessions that a player can create within a specified span of time. With this policy, you can control players' ability to consume available resources.</p>
+    /// <p>The policy is evaluated when a player tries to create a new game session. On receiving a <code>CreateGameSession</code> request, Amazon GameLift checks that the player (identified by <code>CreatorId</code>) has created fewer than game session limit in the specified time period.</p>
+    pub fn get_resource_creation_limit_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceCreationLimitPolicy> {
+        &self.resource_creation_limit_policy
     }
     /// Appends an item to `metric_groups`.
     ///
@@ -556,6 +652,12 @@ impl FleetAttributesBuilder {
         self.metric_groups = input;
         self
     }
+    /// <p>Name of a metric group that metrics for this fleet are added to. In Amazon CloudWatch, you can view aggregated metrics for fleets that are in a metric group. A fleet can be included in only one metric group at a time.</p>
+    pub fn get_metric_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.metric_groups
+    }
     /// Appends an item to `stopped_actions`.
     ///
     /// To override the contents of this collection use [`set_stopped_actions`](Self::set_stopped_actions).
@@ -575,6 +677,12 @@ impl FleetAttributesBuilder {
         self.stopped_actions = input;
         self
     }
+    /// <p>A list of fleet activity that has been suspended using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html">StopFleetActions</a> . This includes fleet auto-scaling.</p>
+    pub fn get_stopped_actions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetAction>> {
+        &self.stopped_actions
+    }
     /// <p>A unique identifier for an IAM role that manages access to your Amazon Web Services services. With an instance role ARN set, any application that runs on an instance in this fleet can assume the role, including install scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the Amazon Web Services Management Console. Learn more about using on-box credentials for your game servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access external resources from a game server</a>.</p>
     pub fn instance_role_arn(
         mut self,
@@ -590,6 +698,10 @@ impl FleetAttributesBuilder {
     ) -> Self {
         self.instance_role_arn = input;
         self
+    }
+    /// <p>A unique identifier for an IAM role that manages access to your Amazon Web Services services. With an instance role ARN set, any application that runs on an instance in this fleet can assume the role, including install scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the Amazon Web Services Management Console. Learn more about using on-box credentials for your game servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access external resources from a game server</a>.</p>
+    pub fn get_instance_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_role_arn
     }
     /// <p>Determines whether a TLS/SSL certificate is generated for a fleet. This feature must be enabled when creating the fleet. All instances in a fleet share the same certificate. The certificate can be retrieved by calling the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">Amazon GameLift Server SDK</a> operation <code>GetInstanceCertificate</code>. </p>
     pub fn certificate_configuration(
@@ -607,6 +719,12 @@ impl FleetAttributesBuilder {
         self.certificate_configuration = input;
         self
     }
+    /// <p>Determines whether a TLS/SSL certificate is generated for a fleet. This feature must be enabled when creating the fleet. All instances in a fleet share the same certificate. The certificate can be retrieved by calling the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">Amazon GameLift Server SDK</a> operation <code>GetInstanceCertificate</code>. </p>
+    pub fn get_certificate_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CertificateConfiguration> {
+        &self.certificate_configuration
+    }
     /// <p>The type of compute resource used to host your game servers. You can use your own compute resources with Amazon GameLift Anywhere or use Amazon EC2 instances with managed Amazon GameLift.</p>
     pub fn compute_type(mut self, input: crate::types::ComputeType) -> Self {
         self.compute_type = ::std::option::Option::Some(input);
@@ -620,6 +738,10 @@ impl FleetAttributesBuilder {
         self.compute_type = input;
         self
     }
+    /// <p>The type of compute resource used to host your game servers. You can use your own compute resources with Amazon GameLift Anywhere or use Amazon EC2 instances with managed Amazon GameLift.</p>
+    pub fn get_compute_type(&self) -> &::std::option::Option<crate::types::ComputeType> {
+        &self.compute_type
+    }
     /// <p>Amazon GameLift Anywhere configuration options for your Anywhere fleets.</p>
     pub fn anywhere_configuration(mut self, input: crate::types::AnywhereConfiguration) -> Self {
         self.anywhere_configuration = ::std::option::Option::Some(input);
@@ -632,6 +754,12 @@ impl FleetAttributesBuilder {
     ) -> Self {
         self.anywhere_configuration = input;
         self
+    }
+    /// <p>Amazon GameLift Anywhere configuration options for your Anywhere fleets.</p>
+    pub fn get_anywhere_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AnywhereConfiguration> {
+        &self.anywhere_configuration
     }
     /// Consumes the builder and constructs a [`FleetAttributes`](crate::types::FleetAttributes).
     pub fn build(self) -> crate::types::FleetAttributes {

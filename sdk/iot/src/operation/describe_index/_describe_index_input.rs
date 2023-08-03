@@ -39,6 +39,10 @@ impl DescribeIndexInputBuilder {
         self.index_name = input;
         self
     }
+    /// <p>The index name.</p>
+    pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_name
+    }
     /// Consumes the builder and constructs a [`DescribeIndexInput`](crate::operation::describe_index::DescribeIndexInput).
     pub fn build(
         self,

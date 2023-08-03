@@ -41,6 +41,10 @@ impl StopCrawlerScheduleInputBuilder {
         self.crawler_name = input;
         self
     }
+    /// <p>Name of the crawler whose schedule state to set.</p>
+    pub fn get_crawler_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.crawler_name
+    }
     /// Consumes the builder and constructs a [`StopCrawlerScheduleInput`](crate::operation::stop_crawler_schedule::StopCrawlerScheduleInput).
     pub fn build(
         self,

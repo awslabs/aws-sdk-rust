@@ -38,6 +38,12 @@ impl GetCelebrityInfoFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetCelebrityInfo as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_celebrity_info::builders::GetCelebrityInfoInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,5 +133,9 @@ impl GetCelebrityInfoFluentBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
+    }
+    /// <p>The ID for the celebrity. You get the celebrity ID from a call to the <code>RecognizeCelebrities</code> operation, which recognizes celebrities in an image. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
     }
 }

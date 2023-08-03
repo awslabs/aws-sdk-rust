@@ -95,6 +95,10 @@ impl CreateFacetInputBuilder {
         self.schema_arn = input;
         self
     }
+    /// <p>The schema ARN in which the new <code>Facet</code> will be created. For more information, see <code>arns</code>.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_arn
+    }
     /// <p>The name of the <code>Facet</code>, which is unique for a given schema.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -104,6 +108,10 @@ impl CreateFacetInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the <code>Facet</code>, which is unique for a given schema.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `attributes`.
     ///
@@ -123,6 +131,12 @@ impl CreateFacetInputBuilder {
     ) -> Self {
         self.attributes = input;
         self
+    }
+    /// <p>The attributes that are associated with the <code>Facet</code>.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FacetAttribute>> {
+        &self.attributes
     }
     /// <p>Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p>
     /// <ul>
@@ -161,6 +175,22 @@ impl CreateFacetInputBuilder {
         self.object_type = input;
         self
     }
+    /// <p>Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p>
+    /// <ul>
+    /// <li> <p>Node: Can have multiple children but one parent.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>Leaf node: Cannot have children but can have multiple parents.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>Policy: Allows you to store a policy document and policy type. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>Index: Can be created with the Index API.</p> </li>
+    /// </ul>
+    pub fn get_object_type(&self) -> &::std::option::Option<crate::types::ObjectType> {
+        &self.object_type
+    }
     /// <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
     pub fn facet_style(mut self, input: crate::types::FacetStyle) -> Self {
         self.facet_style = ::std::option::Option::Some(input);
@@ -173,6 +203,10 @@ impl CreateFacetInputBuilder {
     ) -> Self {
         self.facet_style = input;
         self
+    }
+    /// <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
+    pub fn get_facet_style(&self) -> &::std::option::Option<crate::types::FacetStyle> {
+        &self.facet_style
     }
     /// Consumes the builder and constructs a [`CreateFacetInput`](crate::operation::create_facet::CreateFacetInput).
     pub fn build(

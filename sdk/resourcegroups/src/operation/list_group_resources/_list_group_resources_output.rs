@@ -91,6 +91,12 @@ impl ListGroupResourcesOutputBuilder {
         self.resources = input;
         self
     }
+    /// <p>An array of resources from which you can determine each resource's identity, type, and group membership status.</p>
+    pub fn get_resources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListGroupResourcesItem>> {
+        &self.resources
+    }
     /// Appends an item to `resource_identifiers`.
     ///
     /// To override the contents of this collection use [`set_resource_identifiers`](Self::set_resource_identifiers).
@@ -116,6 +122,15 @@ impl ListGroupResourcesOutputBuilder {
         self.resource_identifiers = input;
         self
     }
+    /// <important>
+    /// <p> <b> <i>Deprecated - don't use this parameter. Use the <code>Resources</code> response field instead.</i> </b> </p>
+    /// </important>
+    #[deprecated(note = "This field is deprecated, use Resources instead.")]
+    pub fn get_resource_identifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifier>> {
+        &self.resource_identifiers
+    }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -125,6 +140,10 @@ impl ListGroupResourcesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `query_errors`.
     ///
@@ -144,6 +163,12 @@ impl ListGroupResourcesOutputBuilder {
     ) -> Self {
         self.query_errors = input;
         self
+    }
+    /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures. Possible values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
+    pub fn get_query_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryError>> {
+        &self.query_errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

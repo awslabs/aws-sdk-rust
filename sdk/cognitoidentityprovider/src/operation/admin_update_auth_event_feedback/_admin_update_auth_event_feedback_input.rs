@@ -71,6 +71,10 @@ impl AdminUpdateAuthEventFeedbackInputBuilder {
         self.user_pool_id = input;
         self
     }
+    /// <p>The user pool ID.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool_id
+    }
     /// <p>The user pool username.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl AdminUpdateAuthEventFeedbackInputBuilder {
         self.username = input;
         self
     }
+    /// <p>The user pool username.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
+    }
     /// <p>The authentication event ID.</p>
     pub fn event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_id = ::std::option::Option::Some(input.into());
@@ -90,6 +98,10 @@ impl AdminUpdateAuthEventFeedbackInputBuilder {
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_id = input;
         self
+    }
+    /// <p>The authentication event ID.</p>
+    pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_id
     }
     /// <p>The authentication event feedback value.</p>
     pub fn feedback_value(mut self, input: crate::types::FeedbackValueType) -> Self {
@@ -103,6 +115,10 @@ impl AdminUpdateAuthEventFeedbackInputBuilder {
     ) -> Self {
         self.feedback_value = input;
         self
+    }
+    /// <p>The authentication event feedback value.</p>
+    pub fn get_feedback_value(&self) -> &::std::option::Option<crate::types::FeedbackValueType> {
+        &self.feedback_value
     }
     /// Consumes the builder and constructs a [`AdminUpdateAuthEventFeedbackInput`](crate::operation::admin_update_auth_event_feedback::AdminUpdateAuthEventFeedbackInput).
     pub fn build(

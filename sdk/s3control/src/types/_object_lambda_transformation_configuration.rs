@@ -72,6 +72,14 @@ impl ObjectLambdaTransformationConfigurationBuilder {
         self.actions = input;
         self
     }
+    /// <p>A container for the action of an Object Lambda Access Point configuration. Valid inputs are <code>GetObject</code>, <code>ListObjects</code>, <code>HeadObject</code>, and <code>ListObjectsV2</code>.</p>
+    pub fn get_actions(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::ObjectLambdaTransformationConfigurationAction>,
+    > {
+        &self.actions
+    }
     /// <p>A container for the content transformation of an Object Lambda Access Point configuration.</p>
     pub fn content_transformation(
         mut self,
@@ -87,6 +95,12 @@ impl ObjectLambdaTransformationConfigurationBuilder {
     ) -> Self {
         self.content_transformation = input;
         self
+    }
+    /// <p>A container for the content transformation of an Object Lambda Access Point configuration.</p>
+    pub fn get_content_transformation(
+        &self,
+    ) -> &::std::option::Option<crate::types::ObjectLambdaContentTransformation> {
+        &self.content_transformation
     }
     /// Consumes the builder and constructs a [`ObjectLambdaTransformationConfiguration`](crate::types::ObjectLambdaTransformationConfiguration).
     pub fn build(self) -> crate::types::ObjectLambdaTransformationConfiguration {

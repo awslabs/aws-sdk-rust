@@ -54,6 +54,10 @@ impl ListServersOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>When you can get additional results from the <code>ListServers</code> operation, a <code>NextToken</code> parameter is returned in the output. In a following command, you can pass in the <code>NextToken</code> parameter to continue listing additional servers.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `servers`.
     ///
     /// To override the contents of this collection use [`set_servers`](Self::set_servers).
@@ -72,6 +76,12 @@ impl ListServersOutputBuilder {
     ) -> Self {
         self.servers = input;
         self
+    }
+    /// <p>An array of servers that were listed.</p>
+    pub fn get_servers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedServer>> {
+        &self.servers
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

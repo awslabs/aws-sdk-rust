@@ -39,6 +39,12 @@ impl ResolveCustomerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ResolveCustomer as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::resolve_customer::builders::ResolveCustomerInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,5 +140,9 @@ impl ResolveCustomerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_registration_token(input);
         self
+    }
+    /// <p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a <code>CustomerIdentifier</code> along with the <code>CustomerAWSAccountId</code> and <code>ProductCode</code>.</p>
+    pub fn get_registration_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_registration_token()
     }
 }

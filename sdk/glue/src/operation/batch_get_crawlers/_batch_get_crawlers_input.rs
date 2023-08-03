@@ -52,6 +52,12 @@ impl BatchGetCrawlersInputBuilder {
         self.crawler_names = input;
         self
     }
+    /// <p>A list of crawler names, which might be the names returned from the <code>ListCrawlers</code> operation.</p>
+    pub fn get_crawler_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.crawler_names
+    }
     /// Consumes the builder and constructs a [`BatchGetCrawlersInput`](crate::operation::batch_get_crawlers::BatchGetCrawlersInput).
     pub fn build(
         self,

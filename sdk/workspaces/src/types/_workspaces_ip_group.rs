@@ -64,6 +64,10 @@ impl WorkspacesIpGroupBuilder {
         self.group_id = input;
         self
     }
+    /// <p>The identifier of the group.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
+    }
     /// <p>The name of the group.</p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl WorkspacesIpGroupBuilder {
         self.group_name = input;
         self
     }
+    /// <p>The name of the group.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
+    }
     /// <p>The description of the group.</p>
     pub fn group_desc(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_desc = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl WorkspacesIpGroupBuilder {
     pub fn set_group_desc(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_desc = input;
         self
+    }
+    /// <p>The description of the group.</p>
+    pub fn get_group_desc(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_desc
     }
     /// Appends an item to `user_rules`.
     ///
@@ -102,6 +114,12 @@ impl WorkspacesIpGroupBuilder {
     ) -> Self {
         self.user_rules = input;
         self
+    }
+    /// <p>The rules.</p>
+    pub fn get_user_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpRuleItem>> {
+        &self.user_rules
     }
     /// Consumes the builder and constructs a [`WorkspacesIpGroup`](crate::types::WorkspacesIpGroup).
     pub fn build(self) -> crate::types::WorkspacesIpGroup {

@@ -36,6 +36,12 @@ impl ImportKeyPairFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ImportKeyPair as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::import_key_pair::builders::ImportKeyPairInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl ImportKeyPairFluentBuilder {
         self.inner = self.inner.set_key_pair_name(input);
         self
     }
+    /// <p>The name of the key pair for which you want to import the public key.</p>
+    pub fn get_key_pair_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key_pair_name()
+    }
     /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
     pub fn public_key_base64(
         mut self,
@@ -139,5 +149,9 @@ impl ImportKeyPairFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_public_key_base64(input);
         self
+    }
+    /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
+    pub fn get_public_key_base64(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_public_key_base64()
     }
 }

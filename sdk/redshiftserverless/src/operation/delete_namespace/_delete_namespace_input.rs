@@ -61,6 +61,10 @@ impl DeleteNamespaceInputBuilder {
         self.namespace_name = input;
         self
     }
+    /// <p>The name of the namespace to delete.</p>
+    pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace_name
+    }
     /// <p>The name of the snapshot to be created before the namespace is deleted.</p>
     pub fn final_snapshot_name(
         mut self,
@@ -77,6 +81,10 @@ impl DeleteNamespaceInputBuilder {
         self.final_snapshot_name = input;
         self
     }
+    /// <p>The name of the snapshot to be created before the namespace is deleted.</p>
+    pub fn get_final_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.final_snapshot_name
+    }
     /// <p>How long to retain the final snapshot.</p>
     pub fn final_snapshot_retention_period(mut self, input: i32) -> Self {
         self.final_snapshot_retention_period = ::std::option::Option::Some(input);
@@ -89,6 +97,10 @@ impl DeleteNamespaceInputBuilder {
     ) -> Self {
         self.final_snapshot_retention_period = input;
         self
+    }
+    /// <p>How long to retain the final snapshot.</p>
+    pub fn get_final_snapshot_retention_period(&self) -> &::std::option::Option<i32> {
+        &self.final_snapshot_retention_period
     }
     /// Consumes the builder and constructs a [`DeleteNamespaceInput`](crate::operation::delete_namespace::DeleteNamespaceInput).
     pub fn build(

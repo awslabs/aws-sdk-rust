@@ -64,6 +64,10 @@ impl DescribeFlowLogsOutputBuilder {
         self.flow_logs = input;
         self
     }
+    /// <p>Information about the flow logs.</p>
+    pub fn get_flow_logs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FlowLog>> {
+        &self.flow_logs
+    }
     /// <p>The token to request the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl DescribeFlowLogsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to request the next page of items. This value is <code>null</code> when there are no more items to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

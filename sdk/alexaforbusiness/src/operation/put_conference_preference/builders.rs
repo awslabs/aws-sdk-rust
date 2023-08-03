@@ -38,6 +38,13 @@ impl PutConferencePreferenceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutConferencePreference as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_conference_preference::builders::PutConferencePreferenceInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,5 +137,11 @@ impl PutConferencePreferenceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_conference_preference(input);
         self
+    }
+    /// <p>The conference preference of a specific conference provider.</p>
+    pub fn get_conference_preference(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConferencePreference> {
+        self.inner.get_conference_preference()
     }
 }

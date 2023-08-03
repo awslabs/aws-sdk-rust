@@ -55,6 +55,10 @@ impl UpdateVolumeInputBuilder {
         self.volume_id = input;
         self
     }
+    /// <p>The volume ID.</p>
+    pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_id
+    }
     /// <p>The new name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl UpdateVolumeInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The new name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The new mount point.</p>
     pub fn mount_point(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mount_point = ::std::option::Option::Some(input.into());
@@ -74,6 +82,10 @@ impl UpdateVolumeInputBuilder {
     pub fn set_mount_point(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mount_point = input;
         self
+    }
+    /// <p>The new mount point.</p>
+    pub fn get_mount_point(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mount_point
     }
     /// Consumes the builder and constructs a [`UpdateVolumeInput`](crate::operation::update_volume::UpdateVolumeInput).
     pub fn build(

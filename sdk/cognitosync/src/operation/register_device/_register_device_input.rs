@@ -70,6 +70,10 @@ impl RegisterDeviceInputBuilder {
         self.identity_pool_id = input;
         self
     }
+    /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>
+    pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_pool_id
+    }
     /// <p>The unique ID for this identity.</p>
     pub fn identity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_id = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl RegisterDeviceInputBuilder {
     pub fn set_identity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_id = input;
         self
+    }
+    /// <p>The unique ID for this identity.</p>
+    pub fn get_identity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_id
     }
     /// <p>The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).</p>
     pub fn platform(mut self, input: crate::types::Platform) -> Self {
@@ -90,6 +98,10 @@ impl RegisterDeviceInputBuilder {
         self.platform = input;
         self
     }
+    /// <p>The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).</p>
+    pub fn get_platform(&self) -> &::std::option::Option<crate::types::Platform> {
+        &self.platform
+    }
     /// <p>The push token.</p>
     pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token = ::std::option::Option::Some(input.into());
@@ -99,6 +111,10 @@ impl RegisterDeviceInputBuilder {
     pub fn set_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.token = input;
         self
+    }
+    /// <p>The push token.</p>
+    pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token
     }
     /// Consumes the builder and constructs a [`RegisterDeviceInput`](crate::operation::register_device::RegisterDeviceInput).
     pub fn build(

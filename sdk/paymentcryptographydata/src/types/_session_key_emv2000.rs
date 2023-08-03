@@ -72,6 +72,10 @@ impl SessionKeyEmv2000Builder {
         self.primary_account_number = input;
         self
     }
+    /// <p>The Primary Account Number (PAN) of the cardholder. A PAN is a unique identifier for a payment credit or debit card and associates the card to a specific account holder.</p>
+    pub fn get_primary_account_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.primary_account_number
+    }
     /// <p>A number that identifies and differentiates payment cards with the same Primary Account Number (PAN).</p>
     pub fn pan_sequence_number(
         mut self,
@@ -88,6 +92,10 @@ impl SessionKeyEmv2000Builder {
         self.pan_sequence_number = input;
         self
     }
+    /// <p>A number that identifies and differentiates payment cards with the same Primary Account Number (PAN).</p>
+    pub fn get_pan_sequence_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pan_sequence_number
+    }
     /// <p>The transaction counter that is provided by the terminal during transaction processing.</p>
     pub fn application_transaction_counter(
         mut self,
@@ -103,6 +111,12 @@ impl SessionKeyEmv2000Builder {
     ) -> Self {
         self.application_transaction_counter = input;
         self
+    }
+    /// <p>The transaction counter that is provided by the terminal during transaction processing.</p>
+    pub fn get_application_transaction_counter(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.application_transaction_counter
     }
     /// Consumes the builder and constructs a [`SessionKeyEmv2000`](crate::types::SessionKeyEmv2000).
     pub fn build(self) -> crate::types::SessionKeyEmv2000 {

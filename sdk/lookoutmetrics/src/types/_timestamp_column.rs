@@ -48,6 +48,10 @@ impl TimestampColumnBuilder {
         self.column_name = input;
         self
     }
+    /// <p>The name of the timestamp column.</p>
+    pub fn get_column_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.column_name
+    }
     /// <p>The format of the timestamp column.</p>
     pub fn column_format(
         mut self,
@@ -63,6 +67,10 @@ impl TimestampColumnBuilder {
     ) -> Self {
         self.column_format = input;
         self
+    }
+    /// <p>The format of the timestamp column.</p>
+    pub fn get_column_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.column_format
     }
     /// Consumes the builder and constructs a [`TimestampColumn`](crate::types::TimestampColumn).
     pub fn build(self) -> crate::types::TimestampColumn {

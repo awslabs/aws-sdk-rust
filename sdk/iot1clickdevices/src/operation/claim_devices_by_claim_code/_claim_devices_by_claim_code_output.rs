@@ -56,6 +56,10 @@ impl ClaimDevicesByClaimCodeOutputBuilder {
         self.claim_code = input;
         self
     }
+    /// <p>The claim code provided by the device manufacturer.</p>
+    pub fn get_claim_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.claim_code
+    }
     /// <p>The total number of devices associated with the claim code that has been processed in the claim request.</p>
     pub fn total(mut self, input: i32) -> Self {
         self.total = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl ClaimDevicesByClaimCodeOutputBuilder {
     pub fn set_total(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total = input;
         self
+    }
+    /// <p>The total number of devices associated with the claim code that has been processed in the claim request.</p>
+    pub fn get_total(&self) -> &::std::option::Option<i32> {
+        &self.total
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -52,6 +52,10 @@ impl AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetailsBuilder 
         self.r#type = input;
         self
     }
+    /// <p>The type of resource to assign to a container. Valid values are <code>GPU</code> or <code>InferenceAccelerator</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p>The value for the specified resource type.</p>
     /// <p>For <code>GPU</code>, the value is the number of physical GPUs the Amazon ECS container agent reserves for the container.</p>
     /// <p>For <code>InferenceAccelerator</code>, the value should match the <code>DeviceName</code> attribute of an entry in <code>InferenceAccelerators</code>.</p>
@@ -65,6 +69,12 @@ impl AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetailsBuilder 
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value for the specified resource type.</p>
+    /// <p>For <code>GPU</code>, the value is the number of physical GPUs the Amazon ECS container agent reserves for the container.</p>
+    /// <p>For <code>InferenceAccelerator</code>, the value should match the <code>DeviceName</code> attribute of an entry in <code>InferenceAccelerators</code>.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails).
     pub fn build(

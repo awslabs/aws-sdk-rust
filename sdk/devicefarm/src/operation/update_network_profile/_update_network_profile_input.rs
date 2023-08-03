@@ -128,6 +128,10 @@ impl UpdateNetworkProfileInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the project for which you want to update network profile settings.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the network profile about which you are returning information.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -138,6 +142,10 @@ impl UpdateNetworkProfileInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the network profile about which you are returning information.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the network profile about which you are returning information.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -147,6 +155,10 @@ impl UpdateNetworkProfileInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the network profile about which you are returning information.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The type of network profile to return information about. Valid values are listed here.</p>
     pub fn r#type(mut self, input: crate::types::NetworkProfileType) -> Self {
@@ -161,6 +173,10 @@ impl UpdateNetworkProfileInputBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of network profile to return information about. Valid values are listed here.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::NetworkProfileType> {
+        &self.r#type
+    }
     /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
     pub fn uplink_bandwidth_bits(mut self, input: i64) -> Self {
         self.uplink_bandwidth_bits = ::std::option::Option::Some(input);
@@ -172,6 +188,10 @@ impl UpdateNetworkProfileInputBuilder {
         self
     }
     /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
+    pub fn get_uplink_bandwidth_bits(&self) -> &::std::option::Option<i64> {
+        &self.uplink_bandwidth_bits
+    }
+    /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
     pub fn downlink_bandwidth_bits(mut self, input: i64) -> Self {
         self.downlink_bandwidth_bits = ::std::option::Option::Some(input);
         self
@@ -180,6 +200,10 @@ impl UpdateNetworkProfileInputBuilder {
     pub fn set_downlink_bandwidth_bits(mut self, input: ::std::option::Option<i64>) -> Self {
         self.downlink_bandwidth_bits = input;
         self
+    }
+    /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
+    pub fn get_downlink_bandwidth_bits(&self) -> &::std::option::Option<i64> {
+        &self.downlink_bandwidth_bits
     }
     /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
     pub fn uplink_delay_ms(mut self, input: i64) -> Self {
@@ -192,6 +216,10 @@ impl UpdateNetworkProfileInputBuilder {
         self
     }
     /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
+    pub fn get_uplink_delay_ms(&self) -> &::std::option::Option<i64> {
+        &self.uplink_delay_ms
+    }
+    /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
     pub fn downlink_delay_ms(mut self, input: i64) -> Self {
         self.downlink_delay_ms = ::std::option::Option::Some(input);
         self
@@ -200,6 +228,10 @@ impl UpdateNetworkProfileInputBuilder {
     pub fn set_downlink_delay_ms(mut self, input: ::std::option::Option<i64>) -> Self {
         self.downlink_delay_ms = input;
         self
+    }
+    /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
+    pub fn get_downlink_delay_ms(&self) -> &::std::option::Option<i64> {
+        &self.downlink_delay_ms
     }
     /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
     pub fn uplink_jitter_ms(mut self, input: i64) -> Self {
@@ -212,6 +244,10 @@ impl UpdateNetworkProfileInputBuilder {
         self
     }
     /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
+    pub fn get_uplink_jitter_ms(&self) -> &::std::option::Option<i64> {
+        &self.uplink_jitter_ms
+    }
+    /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
     pub fn downlink_jitter_ms(mut self, input: i64) -> Self {
         self.downlink_jitter_ms = ::std::option::Option::Some(input);
         self
@@ -220,6 +256,10 @@ impl UpdateNetworkProfileInputBuilder {
     pub fn set_downlink_jitter_ms(mut self, input: ::std::option::Option<i64>) -> Self {
         self.downlink_jitter_ms = input;
         self
+    }
+    /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
+    pub fn get_downlink_jitter_ms(&self) -> &::std::option::Option<i64> {
+        &self.downlink_jitter_ms
     }
     /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100 percent.</p>
     pub fn uplink_loss_percent(mut self, input: i32) -> Self {
@@ -231,6 +271,10 @@ impl UpdateNetworkProfileInputBuilder {
         self.uplink_loss_percent = input;
         self
     }
+    /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100 percent.</p>
+    pub fn get_uplink_loss_percent(&self) -> &::std::option::Option<i32> {
+        &self.uplink_loss_percent
+    }
     /// <p>Proportion of received packets that fail to arrive from 0 to 100 percent.</p>
     pub fn downlink_loss_percent(mut self, input: i32) -> Self {
         self.downlink_loss_percent = ::std::option::Option::Some(input);
@@ -240,6 +284,10 @@ impl UpdateNetworkProfileInputBuilder {
     pub fn set_downlink_loss_percent(mut self, input: ::std::option::Option<i32>) -> Self {
         self.downlink_loss_percent = input;
         self
+    }
+    /// <p>Proportion of received packets that fail to arrive from 0 to 100 percent.</p>
+    pub fn get_downlink_loss_percent(&self) -> &::std::option::Option<i32> {
+        &self.downlink_loss_percent
     }
     /// Consumes the builder and constructs a [`UpdateNetworkProfileInput`](crate::operation::update_network_profile::UpdateNetworkProfileInput).
     pub fn build(

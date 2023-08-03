@@ -36,6 +36,10 @@ impl DisassociateAssessmentReportEvidenceFolderFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateAssessmentReportEvidenceFolder as a reference.
+    pub fn as_input(&self) -> &crate::operation::disassociate_assessment_report_evidence_folder::builders::DisassociateAssessmentReportEvidenceFolderInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl DisassociateAssessmentReportEvidenceFolderFluentBuilder {
         self.inner = self.inner.set_assessment_id(input);
         self
     }
+    /// <p> The unique identifier for the assessment. </p>
+    pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assessment_id()
+    }
     /// <p> The unique identifier for the folder that the evidence is stored in. </p>
     pub fn evidence_folder_id(
         mut self,
@@ -121,5 +129,9 @@ impl DisassociateAssessmentReportEvidenceFolderFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_evidence_folder_id(input);
         self
+    }
+    /// <p> The unique identifier for the folder that the evidence is stored in. </p>
+    pub fn get_evidence_folder_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_evidence_folder_id()
     }
 }

@@ -68,6 +68,10 @@ impl RegistryAliasBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the registry alias.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The status of the registry alias.</p>
     pub fn status(mut self, input: crate::types::RegistryAliasStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -80,6 +84,10 @@ impl RegistryAliasBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the registry alias.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::RegistryAliasStatus> {
+        &self.status
     }
     /// <p>Indicates whether the registry alias is the primary alias for the registry. If true, the alias is the primary registry alias and is displayed in both the repository URL and the image URI used in the <code>docker pull</code> commands on the Amazon ECR Public Gallery.</p> <note>
     /// <p>A registry alias that isn't the primary registry alias can be used in the repository URI in a <code>docker pull</code> command.</p>
@@ -95,6 +103,12 @@ impl RegistryAliasBuilder {
         self.primary_registry_alias = input;
         self
     }
+    /// <p>Indicates whether the registry alias is the primary alias for the registry. If true, the alias is the primary registry alias and is displayed in both the repository URL and the image URI used in the <code>docker pull</code> commands on the Amazon ECR Public Gallery.</p> <note>
+    /// <p>A registry alias that isn't the primary registry alias can be used in the repository URI in a <code>docker pull</code> command.</p>
+    /// </note>
+    pub fn get_primary_registry_alias(&self) -> &::std::option::Option<bool> {
+        &self.primary_registry_alias
+    }
     /// <p>Indicates whether the registry alias is the default alias for the registry. When the first public repository is created, your public registry is assigned a default registry alias.</p>
     pub fn default_registry_alias(mut self, input: bool) -> Self {
         self.default_registry_alias = ::std::option::Option::Some(input);
@@ -104,6 +118,10 @@ impl RegistryAliasBuilder {
     pub fn set_default_registry_alias(mut self, input: ::std::option::Option<bool>) -> Self {
         self.default_registry_alias = input;
         self
+    }
+    /// <p>Indicates whether the registry alias is the default alias for the registry. When the first public repository is created, your public registry is assigned a default registry alias.</p>
+    pub fn get_default_registry_alias(&self) -> &::std::option::Option<bool> {
+        &self.default_registry_alias
     }
     /// Consumes the builder and constructs a [`RegistryAlias`](crate::types::RegistryAlias).
     pub fn build(self) -> crate::types::RegistryAlias {

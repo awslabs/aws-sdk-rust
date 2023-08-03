@@ -51,6 +51,10 @@ impl IpamPoolCidrFailureReasonBuilder {
         self.code = input;
         self
     }
+    /// <p>An error code related to why an IPAM pool CIDR failed to be provisioned.</p>
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::IpamPoolCidrFailureCode> {
+        &self.code
+    }
     /// <p>A message related to why an IPAM pool CIDR failed to be provisioned.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl IpamPoolCidrFailureReasonBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>A message related to why an IPAM pool CIDR failed to be provisioned.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`IpamPoolCidrFailureReason`](crate::types::IpamPoolCidrFailureReason).
     pub fn build(self) -> crate::types::IpamPoolCidrFailureReason {

@@ -40,6 +40,12 @@ impl CreateActivityFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateActivity as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_activity::builders::CreateActivityInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +146,19 @@ impl CreateActivityFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the activity to create. This name must be unique for your Amazon Web Services account and region for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
+    /// <p>A name must <i>not</i> contain:</p>
+    /// <ul>
+    /// <li> <p>white space</p> </li>
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
+    /// </ul>
+    /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -160,5 +179,11 @@ impl CreateActivityFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The list of tags to add to a resource.</p>
+    /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
+    /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

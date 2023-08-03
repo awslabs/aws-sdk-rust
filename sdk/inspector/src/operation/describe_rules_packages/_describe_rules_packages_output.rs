@@ -73,6 +73,12 @@ impl DescribeRulesPackagesOutputBuilder {
         self.rules_packages = input;
         self
     }
+    /// <p>Information about the rules package.</p>
+    pub fn get_rules_packages(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RulesPackage>> {
+        &self.rules_packages
+    }
     /// Adds a key-value pair to `failed_items`.
     ///
     /// To override the contents of this collection use [`set_failed_items`](Self::set_failed_items).
@@ -97,6 +103,14 @@ impl DescribeRulesPackagesOutputBuilder {
     ) -> Self {
         self.failed_items = input;
         self
+    }
+    /// <p>Rules package details that cannot be described. An error code is provided for each failed item.</p>
+    pub fn get_failed_items(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>,
+    > {
+        &self.failed_items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

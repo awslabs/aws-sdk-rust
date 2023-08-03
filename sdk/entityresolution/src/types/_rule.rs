@@ -48,6 +48,10 @@ impl RuleBuilder {
         self.rule_name = input;
         self
     }
+    /// <p>A name for the matching rule.</p>
+    pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_name
+    }
     /// Appends an item to `matching_keys`.
     ///
     /// To override the contents of this collection use [`set_matching_keys`](Self::set_matching_keys).
@@ -69,6 +73,12 @@ impl RuleBuilder {
     ) -> Self {
         self.matching_keys = input;
         self
+    }
+    /// <p>A list of <code>MatchingKeys</code>. The <code>MatchingKeys</code> must have been defined in the <code>SchemaMapping</code>. Two records are considered to match according to this rule if all of the <code>MatchingKeys</code> match.</p>
+    pub fn get_matching_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.matching_keys
     }
     /// Consumes the builder and constructs a [`Rule`](crate::types::Rule).
     pub fn build(self) -> crate::types::Rule {

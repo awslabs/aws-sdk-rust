@@ -48,6 +48,10 @@ impl NoteUpdateBuilder {
         self.text = input;
         self
     }
+    /// <p>The updated note text.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
+    }
     /// <p>The principal that updated the note.</p>
     pub fn updated_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.updated_by = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl NoteUpdateBuilder {
     pub fn set_updated_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.updated_by = input;
         self
+    }
+    /// <p>The principal that updated the note.</p>
+    pub fn get_updated_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.updated_by
     }
     /// Consumes the builder and constructs a [`NoteUpdate`](crate::types::NoteUpdate).
     pub fn build(self) -> crate::types::NoteUpdate {

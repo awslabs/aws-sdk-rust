@@ -37,6 +37,13 @@ impl ImportSourceCredentialsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ImportSourceCredentials as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::import_source_credentials::builders::ImportSourceCredentialsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl ImportSourceCredentialsFluentBuilder {
         self.inner = self.inner.set_username(input);
         self
     }
+    /// <p> The Bitbucket username when the <code>authType</code> is BASIC_AUTH. This parameter is not valid for other types of source providers or connections. </p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_username()
+    }
     /// <p> For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is the app password. </p>
     pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.token(input.into());
@@ -136,6 +147,10 @@ impl ImportSourceCredentialsFluentBuilder {
     pub fn set_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_token(input);
         self
+    }
+    /// <p> For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is the app password. </p>
+    pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_token()
     }
     /// <p> The source provider used for this project. </p>
     pub fn server_type(mut self, input: crate::types::ServerType) -> Self {
@@ -150,6 +165,10 @@ impl ImportSourceCredentialsFluentBuilder {
         self.inner = self.inner.set_server_type(input);
         self
     }
+    /// <p> The source provider used for this project. </p>
+    pub fn get_server_type(&self) -> &::std::option::Option<crate::types::ServerType> {
+        self.inner.get_server_type()
+    }
     /// <p> The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An OAUTH connection is not supported by the API and must be created using the CodeBuild console. </p>
     pub fn auth_type(mut self, input: crate::types::AuthType) -> Self {
         self.inner = self.inner.auth_type(input);
@@ -160,6 +179,10 @@ impl ImportSourceCredentialsFluentBuilder {
         self.inner = self.inner.set_auth_type(input);
         self
     }
+    /// <p> The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An OAUTH connection is not supported by the API and must be created using the CodeBuild console. </p>
+    pub fn get_auth_type(&self) -> &::std::option::Option<crate::types::AuthType> {
+        self.inner.get_auth_type()
+    }
     /// <p> Set to <code>false</code> to prevent overwriting the repository source credentials. Set to <code>true</code> to overwrite the repository source credentials. The default value is <code>true</code>. </p>
     pub fn should_overwrite(mut self, input: bool) -> Self {
         self.inner = self.inner.should_overwrite(input);
@@ -169,5 +192,9 @@ impl ImportSourceCredentialsFluentBuilder {
     pub fn set_should_overwrite(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_should_overwrite(input);
         self
+    }
+    /// <p> Set to <code>false</code> to prevent overwriting the repository source credentials. Set to <code>true</code> to overwrite the repository source credentials. The default value is <code>true</code>. </p>
+    pub fn get_should_overwrite(&self) -> &::std::option::Option<bool> {
+        self.inner.get_should_overwrite()
     }
 }

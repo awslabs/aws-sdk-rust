@@ -46,6 +46,10 @@ impl DescribeConfigurationInputBuilder {
         self.configuration_id = input;
         self
     }
+    /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
+    pub fn get_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_id
+    }
     /// Consumes the builder and constructs a [`DescribeConfigurationInput`](crate::operation::describe_configuration::DescribeConfigurationInput).
     pub fn build(
         self,

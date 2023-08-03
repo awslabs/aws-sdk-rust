@@ -40,6 +40,10 @@ impl GetModelManifestInputBuilder {
         self.name = input;
         self
     }
+    /// <p> The name of the vehicle model to retrieve information about. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`GetModelManifestInput`](crate::operation::get_model_manifest::GetModelManifestInput).
     pub fn build(
         self,

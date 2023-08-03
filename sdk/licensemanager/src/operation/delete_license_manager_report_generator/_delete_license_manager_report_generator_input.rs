@@ -45,6 +45,12 @@ impl DeleteLicenseManagerReportGeneratorInputBuilder {
         self.license_manager_report_generator_arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the report generator to be deleted.</p>
+    pub fn get_license_manager_report_generator_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.license_manager_report_generator_arn
+    }
     /// Consumes the builder and constructs a [`DeleteLicenseManagerReportGeneratorInput`](crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

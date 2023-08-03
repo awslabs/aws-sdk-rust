@@ -40,6 +40,10 @@ impl KeyGroupSummaryBuilder {
         self.key_group = input;
         self
     }
+    /// <p>A key group.</p>
+    pub fn get_key_group(&self) -> &::std::option::Option<crate::types::KeyGroup> {
+        &self.key_group
+    }
     /// Consumes the builder and constructs a [`KeyGroupSummary`](crate::types::KeyGroupSummary).
     pub fn build(self) -> crate::types::KeyGroupSummary {
         crate::types::KeyGroupSummary {

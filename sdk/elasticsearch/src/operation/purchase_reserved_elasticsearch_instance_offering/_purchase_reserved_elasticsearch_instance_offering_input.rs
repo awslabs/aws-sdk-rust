@@ -64,6 +64,12 @@ impl PurchaseReservedElasticsearchInstanceOfferingInputBuilder {
         self.reserved_elasticsearch_instance_offering_id = input;
         self
     }
+    /// <p>The ID of the reserved Elasticsearch instance offering to purchase.</p>
+    pub fn get_reserved_elasticsearch_instance_offering_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.reserved_elasticsearch_instance_offering_id
+    }
     /// <p>A customer-specified identifier to track this reservation.</p>
     pub fn reservation_name(
         mut self,
@@ -80,6 +86,10 @@ impl PurchaseReservedElasticsearchInstanceOfferingInputBuilder {
         self.reservation_name = input;
         self
     }
+    /// <p>A customer-specified identifier to track this reservation.</p>
+    pub fn get_reservation_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reservation_name
+    }
     /// <p>The number of Elasticsearch instances to reserve.</p>
     pub fn instance_count(mut self, input: i32) -> Self {
         self.instance_count = ::std::option::Option::Some(input);
@@ -89,6 +99,10 @@ impl PurchaseReservedElasticsearchInstanceOfferingInputBuilder {
     pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.instance_count = input;
         self
+    }
+    /// <p>The number of Elasticsearch instances to reserve.</p>
+    pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.instance_count
     }
     /// Consumes the builder and constructs a [`PurchaseReservedElasticsearchInstanceOfferingInput`](crate::operation::purchase_reserved_elasticsearch_instance_offering::PurchaseReservedElasticsearchInstanceOfferingInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::purchase_reserved_elasticsearch_instance_offering::PurchaseReservedElasticsearchInstanceOfferingInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -112,6 +112,10 @@ impl DirectConnectGatewayAttachmentBuilder {
         self.direct_connect_gateway_id = input;
         self
     }
+    /// <p>The ID of the Direct Connect gateway.</p>
+    pub fn get_direct_connect_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.direct_connect_gateway_id
+    }
     /// <p>The ID of the virtual interface.</p>
     pub fn virtual_interface_id(
         mut self,
@@ -127,6 +131,10 @@ impl DirectConnectGatewayAttachmentBuilder {
     ) -> Self {
         self.virtual_interface_id = input;
         self
+    }
+    /// <p>The ID of the virtual interface.</p>
+    pub fn get_virtual_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_interface_id
     }
     /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
     pub fn virtual_interface_region(
@@ -144,6 +152,10 @@ impl DirectConnectGatewayAttachmentBuilder {
         self.virtual_interface_region = input;
         self
     }
+    /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
+    pub fn get_virtual_interface_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_interface_region
+    }
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
     pub fn virtual_interface_owner_account(
         mut self,
@@ -159,6 +171,12 @@ impl DirectConnectGatewayAttachmentBuilder {
     ) -> Self {
         self.virtual_interface_owner_account = input;
         self
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
+    pub fn get_virtual_interface_owner_account(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_interface_owner_account
     }
     /// <p>The state of the attachment. The following are the possible values:</p>
     /// <ul>
@@ -188,6 +206,18 @@ impl DirectConnectGatewayAttachmentBuilder {
         self.attachment_state = input;
         self
     }
+    /// <p>The state of the attachment. The following are the possible values:</p>
+    /// <ul>
+    /// <li> <p> <code>attaching</code>: The initial state after a virtual interface is created using the Direct Connect gateway.</p> </li>
+    /// <li> <p> <code>attached</code>: The Direct Connect gateway and virtual interface are attached and ready to pass traffic.</p> </li>
+    /// <li> <p> <code>detaching</code>: The initial state after calling <code>DeleteVirtualInterface</code>.</p> </li>
+    /// <li> <p> <code>detached</code>: The virtual interface is detached from the Direct Connect gateway. Traffic flow between the Direct Connect gateway and virtual interface is stopped.</p> </li>
+    /// </ul>
+    pub fn get_attachment_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::DirectConnectGatewayAttachmentState> {
+        &self.attachment_state
+    }
     /// <p>The type of attachment.</p>
     pub fn attachment_type(
         mut self,
@@ -204,6 +234,12 @@ impl DirectConnectGatewayAttachmentBuilder {
         self.attachment_type = input;
         self
     }
+    /// <p>The type of attachment.</p>
+    pub fn get_attachment_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::DirectConnectGatewayAttachmentType> {
+        &self.attachment_type
+    }
     /// <p>The error message if the state of an object failed to advance.</p>
     pub fn state_change_error(
         mut self,
@@ -219,6 +255,10 @@ impl DirectConnectGatewayAttachmentBuilder {
     ) -> Self {
         self.state_change_error = input;
         self
+    }
+    /// <p>The error message if the state of an object failed to advance.</p>
+    pub fn get_state_change_error(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_change_error
     }
     /// Consumes the builder and constructs a [`DirectConnectGatewayAttachment`](crate::types::DirectConnectGatewayAttachment).
     pub fn build(self) -> crate::types::DirectConnectGatewayAttachment {

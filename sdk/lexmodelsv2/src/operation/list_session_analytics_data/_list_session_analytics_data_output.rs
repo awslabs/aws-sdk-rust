@@ -64,6 +64,10 @@ impl ListSessionAnalyticsDataOutputBuilder {
         self.bot_id = input;
         self
     }
+    /// <p>The unique identifier of the bot that the sessions belong to.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
     /// <p>If the response from the ListSessionAnalyticsData operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p>
     /// <p>Use the returned token in the nextToken parameter of a ListSessionAnalyticsData request to return the next page of results. For a complete set of results, call the ListSessionAnalyticsData operation until the nextToken returned in the response is null.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -75,6 +79,11 @@ impl ListSessionAnalyticsDataOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the response from the ListSessionAnalyticsData operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p>
+    /// <p>Use the returned token in the nextToken parameter of a ListSessionAnalyticsData request to return the next page of results. For a complete set of results, call the ListSessionAnalyticsData operation until the nextToken returned in the response is null.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `sessions`.
     ///
@@ -94,6 +103,12 @@ impl ListSessionAnalyticsDataOutputBuilder {
     ) -> Self {
         self.sessions = input;
         self
+    }
+    /// <p>A list of objects, each of which contains information about a session with the bot.</p>
+    pub fn get_sessions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SessionSpecification>> {
+        &self.sessions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

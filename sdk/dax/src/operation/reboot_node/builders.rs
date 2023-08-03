@@ -38,6 +38,10 @@ impl RebootNodeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RebootNode as a reference.
+    pub fn as_input(&self) -> &crate::operation::reboot_node::builders::RebootNodeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -120,6 +124,10 @@ impl RebootNodeFluentBuilder {
         self.inner = self.inner.set_cluster_name(input);
         self
     }
+    /// <p>The name of the DAX cluster containing the node to be rebooted.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_name()
+    }
     /// <p>The system-assigned ID of the node to be rebooted.</p>
     pub fn node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.node_id(input.into());
@@ -129,5 +137,9 @@ impl RebootNodeFluentBuilder {
     pub fn set_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_node_id(input);
         self
+    }
+    /// <p>The system-assigned ID of the node to be rebooted.</p>
+    pub fn get_node_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_node_id()
     }
 }

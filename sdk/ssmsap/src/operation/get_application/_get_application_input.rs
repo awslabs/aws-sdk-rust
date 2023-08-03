@@ -61,6 +61,10 @@ impl GetApplicationInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The ID of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the application. </p>
     pub fn application_arn(
         mut self,
@@ -77,6 +81,10 @@ impl GetApplicationInputBuilder {
         self.application_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the application. </p>
+    pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the application registry.</p>
     pub fn app_registry_arn(
         mut self,
@@ -92,6 +100,10 @@ impl GetApplicationInputBuilder {
     ) -> Self {
         self.app_registry_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the application registry.</p>
+    pub fn get_app_registry_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_registry_arn
     }
     /// Consumes the builder and constructs a [`GetApplicationInput`](crate::operation::get_application::GetApplicationInput).
     pub fn build(

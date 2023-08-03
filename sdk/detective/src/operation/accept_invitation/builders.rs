@@ -38,6 +38,12 @@ impl AcceptInvitationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AcceptInvitation as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::accept_invitation::builders::AcceptInvitationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,5 +135,10 @@ impl AcceptInvitationFluentBuilder {
     pub fn set_graph_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_graph_arn(input);
         self
+    }
+    /// <p>The ARN of the behavior graph that the member account is accepting the invitation for.</p>
+    /// <p>The member account status in the behavior graph must be <code>INVITED</code>.</p>
+    pub fn get_graph_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_graph_arn()
     }
 }

@@ -56,6 +56,10 @@ impl TargetAddressBuilder {
         self.ip = input;
         self
     }
+    /// <p>One IPv4 address that you want to forward DNS queries to.</p>
+    pub fn get_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip
+    }
     /// <p>The port at <code>Ip</code> that you want to forward DNS queries to.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl TargetAddressBuilder {
         self.port = input;
         self
     }
+    /// <p>The port at <code>Ip</code> that you want to forward DNS queries to.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
+    }
     /// <p> One IPv6 address that you want to forward DNS queries to. </p>
     pub fn ipv6(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipv6 = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl TargetAddressBuilder {
     pub fn set_ipv6(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipv6 = input;
         self
+    }
+    /// <p> One IPv6 address that you want to forward DNS queries to. </p>
+    pub fn get_ipv6(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv6
     }
     /// Consumes the builder and constructs a [`TargetAddress`](crate::types::TargetAddress).
     pub fn build(self) -> crate::types::TargetAddress {

@@ -62,6 +62,10 @@ impl GetLineageGroupPolicyOutputBuilder {
         self.lineage_group_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
+    pub fn get_lineage_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lineage_group_arn
+    }
     /// <p>The resource policy that gives access to the lineage group in another account.</p>
     pub fn resource_policy(
         mut self,
@@ -77,6 +81,10 @@ impl GetLineageGroupPolicyOutputBuilder {
     ) -> Self {
         self.resource_policy = input;
         self
+    }
+    /// <p>The resource policy that gives access to the lineage group in another account.</p>
+    pub fn get_resource_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_policy
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

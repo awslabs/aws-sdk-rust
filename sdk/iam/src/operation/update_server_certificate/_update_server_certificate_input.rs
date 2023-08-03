@@ -71,6 +71,11 @@ impl UpdateServerCertificateInputBuilder {
         self.server_certificate_name = input;
         self
     }
+    /// <p>The name of the server certificate that you want to update.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn get_server_certificate_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_certificate_name
+    }
     /// <p>The new path for the server certificate. Include this only if you are updating the server certificate's path.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p>
     pub fn new_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -82,6 +87,11 @@ impl UpdateServerCertificateInputBuilder {
     pub fn set_new_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.new_path = input;
         self
+    }
+    /// <p>The new path for the server certificate. Include this only if you are updating the server certificate's path.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p>
+    pub fn get_new_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.new_path
     }
     /// <p>The new name for the server certificate. Include this only if you are updating the server certificate's name. The name of the certificate cannot contain any spaces.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
@@ -100,6 +110,11 @@ impl UpdateServerCertificateInputBuilder {
     ) -> Self {
         self.new_server_certificate_name = input;
         self
+    }
+    /// <p>The new name for the server certificate. Include this only if you are updating the server certificate's name. The name of the certificate cannot contain any spaces.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn get_new_server_certificate_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.new_server_certificate_name
     }
     /// Consumes the builder and constructs a [`UpdateServerCertificateInput`](crate::operation::update_server_certificate::UpdateServerCertificateInput).
     pub fn build(

@@ -52,6 +52,12 @@ impl LaunchOverridesBuilder {
         self.launch_commands = input;
         self
     }
+    /// <p>App launch commands and command line parameters that override the launch command configured in the simulation schema.</p>
+    pub fn get_launch_commands(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.launch_commands
+    }
     /// Consumes the builder and constructs a [`LaunchOverrides`](crate::types::LaunchOverrides).
     pub fn build(self) -> crate::types::LaunchOverrides {
         crate::types::LaunchOverrides {

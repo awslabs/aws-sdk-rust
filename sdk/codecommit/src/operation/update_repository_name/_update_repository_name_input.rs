@@ -49,6 +49,10 @@ impl UpdateRepositoryNameInputBuilder {
         self.old_name = input;
         self
     }
+    /// <p>The current name of the repository.</p>
+    pub fn get_old_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.old_name
+    }
     /// <p>The new name for the repository.</p>
     pub fn new_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.new_name = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl UpdateRepositoryNameInputBuilder {
     pub fn set_new_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.new_name = input;
         self
+    }
+    /// <p>The new name for the repository.</p>
+    pub fn get_new_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.new_name
     }
     /// Consumes the builder and constructs a [`UpdateRepositoryNameInput`](crate::operation::update_repository_name::UpdateRepositoryNameInput).
     pub fn build(

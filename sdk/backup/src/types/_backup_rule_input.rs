@@ -131,6 +131,10 @@ impl BackupRuleInputBuilder {
         self.rule_name = input;
         self
     }
+    /// <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.' characters.</p>
+    pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_name
+    }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub fn target_backup_vault_name(
         mut self,
@@ -146,6 +150,10 @@ impl BackupRuleInputBuilder {
     ) -> Self {
         self.target_backup_vault_name = input;
         self
+    }
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    pub fn get_target_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_backup_vault_name
     }
     /// <p>A CRON expression in UTC specifying when Backup initiates a backup job.</p>
     pub fn schedule_expression(
@@ -163,6 +171,10 @@ impl BackupRuleInputBuilder {
         self.schedule_expression = input;
         self
     }
+    /// <p>A CRON expression in UTC specifying when Backup initiates a backup job.</p>
+    pub fn get_schedule_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schedule_expression
+    }
     /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully. This value is optional. If this value is included, it must be at least 60 minutes to avoid errors.</p>
     /// <p>During the start window, the backup job status remains in <code>CREATED</code> status until it has successfully begun or until the start window time has run out. If within the start window time Backup receives an error that allows the job to be retried, Backup will automatically retry to begin the job at least every 10 minutes until the backup successfully begins (the job status changes to <code>RUNNING</code>) or until the job status changes to <code>EXPIRED</code> (which is expected to occur when the start window time is over).</p>
     pub fn start_window_minutes(mut self, input: i64) -> Self {
@@ -175,6 +187,11 @@ impl BackupRuleInputBuilder {
         self.start_window_minutes = input;
         self
     }
+    /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully. This value is optional. If this value is included, it must be at least 60 minutes to avoid errors.</p>
+    /// <p>During the start window, the backup job status remains in <code>CREATED</code> status until it has successfully begun or until the start window time has run out. If within the start window time Backup receives an error that allows the job to be retried, Backup will automatically retry to begin the job at least every 10 minutes until the backup successfully begins (the job status changes to <code>RUNNING</code>) or until the job status changes to <code>EXPIRED</code> (which is expected to occur when the start window time is over).</p>
+    pub fn get_start_window_minutes(&self) -> &::std::option::Option<i64> {
+        &self.start_window_minutes
+    }
     /// <p>A value in minutes after a backup job is successfully started before it must be completed or it will be canceled by Backup. This value is optional.</p>
     pub fn completion_window_minutes(mut self, input: i64) -> Self {
         self.completion_window_minutes = ::std::option::Option::Some(input);
@@ -184,6 +201,10 @@ impl BackupRuleInputBuilder {
     pub fn set_completion_window_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.completion_window_minutes = input;
         self
+    }
+    /// <p>A value in minutes after a backup job is successfully started before it must be completed or it will be canceled by Backup. This value is optional.</p>
+    pub fn get_completion_window_minutes(&self) -> &::std::option::Option<i64> {
+        &self.completion_window_minutes
     }
     /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup will transition and expire backups automatically according to the lifecycle that you define. </p>
     /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
@@ -198,6 +219,12 @@ impl BackupRuleInputBuilder {
     pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::Lifecycle>) -> Self {
         self.lifecycle = input;
         self
+    }
+    /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup will transition and expire backups automatically according to the lifecycle that you define. </p>
+    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
+    /// <p>Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
+    pub fn get_lifecycle(&self) -> &::std::option::Option<crate::types::Lifecycle> {
+        &self.lifecycle
     }
     /// Adds a key-value pair to `recovery_point_tags`.
     ///
@@ -224,6 +251,14 @@ impl BackupRuleInputBuilder {
         self.recovery_point_tags = input;
         self
     }
+    /// <p>To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair.</p>
+    pub fn get_recovery_point_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.recovery_point_tags
+    }
     /// Appends an item to `copy_actions`.
     ///
     /// To override the contents of this collection use [`set_copy_actions`](Self::set_copy_actions).
@@ -243,6 +278,12 @@ impl BackupRuleInputBuilder {
         self.copy_actions = input;
         self
     }
+    /// <p>An array of <code>CopyAction</code> objects, which contains the details of the copy operation.</p>
+    pub fn get_copy_actions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CopyAction>> {
+        &self.copy_actions
+    }
     /// <p>Specifies whether Backup creates continuous backups. True causes Backup to create continuous backups capable of point-in-time restore (PITR). False (or not specified) causes Backup to create snapshot backups.</p>
     pub fn enable_continuous_backup(mut self, input: bool) -> Self {
         self.enable_continuous_backup = ::std::option::Option::Some(input);
@@ -252,6 +293,10 @@ impl BackupRuleInputBuilder {
     pub fn set_enable_continuous_backup(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_continuous_backup = input;
         self
+    }
+    /// <p>Specifies whether Backup creates continuous backups. True causes Backup to create continuous backups capable of point-in-time restore (PITR). False (or not specified) causes Backup to create snapshot backups.</p>
+    pub fn get_enable_continuous_backup(&self) -> &::std::option::Option<bool> {
+        &self.enable_continuous_backup
     }
     /// Consumes the builder and constructs a [`BackupRuleInput`](crate::types::BackupRuleInput).
     pub fn build(self) -> crate::types::BackupRuleInput {

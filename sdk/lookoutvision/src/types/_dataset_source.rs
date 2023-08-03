@@ -49,6 +49,12 @@ impl DatasetSourceBuilder {
         self.ground_truth_manifest = input;
         self
     }
+    /// <p>Location information for the manifest file.</p>
+    pub fn get_ground_truth_manifest(
+        &self,
+    ) -> &::std::option::Option<crate::types::DatasetGroundTruthManifest> {
+        &self.ground_truth_manifest
+    }
     /// Consumes the builder and constructs a [`DatasetSource`](crate::types::DatasetSource).
     pub fn build(self) -> crate::types::DatasetSource {
         crate::types::DatasetSource {

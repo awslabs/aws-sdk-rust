@@ -55,6 +55,10 @@ impl ListOfferingsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// Token to retrieve the next page of results
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `offerings`.
     ///
     /// To override the contents of this collection use [`set_offerings`](Self::set_offerings).
@@ -73,6 +77,10 @@ impl ListOfferingsOutputBuilder {
     ) -> Self {
         self.offerings = input;
         self
+    }
+    /// List of offerings
+    pub fn get_offerings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Offering>> {
+        &self.offerings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

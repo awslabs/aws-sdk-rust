@@ -89,6 +89,10 @@ impl CreateSiteInputBuilder {
         self.global_network_id = input;
         self
     }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_network_id
+    }
     /// <p>A description of your site.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -100,6 +104,11 @@ impl CreateSiteInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of your site.</p>
+    /// <p>Constraints: Maximum length of 256 characters.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The site location. This information is used for visualization in the Network Manager console. If you specify the address, the latitude and longitude are automatically calculated.</p>
     /// <ul>
@@ -121,6 +130,15 @@ impl CreateSiteInputBuilder {
         self.location = input;
         self
     }
+    /// <p>The site location. This information is used for visualization in the Network Manager console. If you specify the address, the latitude and longitude are automatically calculated.</p>
+    /// <ul>
+    /// <li> <p> <code>Address</code>: The physical address of the site.</p> </li>
+    /// <li> <p> <code>Latitude</code>: The latitude of the site. </p> </li>
+    /// <li> <p> <code>Longitude</code>: The longitude of the site.</p> </li>
+    /// </ul>
+    pub fn get_location(&self) -> &::std::option::Option<crate::types::Location> {
+        &self.location
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -139,6 +157,10 @@ impl CreateSiteInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags to apply to the resource during creation.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSiteInput`](crate::operation::create_site::CreateSiteInput).
     pub fn build(

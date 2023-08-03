@@ -37,6 +37,12 @@ impl StartSchemaCreationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartSchemaCreation as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_schema_creation::builders::StartSchemaCreationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl StartSchemaCreationFluentBuilder {
         self.inner = self.inner.set_api_id(input);
         self
     }
+    /// <p>The API ID.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_api_id()
+    }
     /// <p>The schema definition, in GraphQL schema language format.</p>
     pub fn definition(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.definition(input);
@@ -139,5 +149,9 @@ impl StartSchemaCreationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_definition(input);
         self
+    }
+    /// <p>The schema definition, in GraphQL schema language format.</p>
+    pub fn get_definition(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        self.inner.get_definition()
     }
 }

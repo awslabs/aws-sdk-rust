@@ -56,6 +56,10 @@ impl HopDestinationBuilder {
         self.priority = input;
         self
     }
+    /// Optional. When you set up a job to use queue hopping, you can specify a different relative priority for the job in the destination queue. If you don't specify, the relative priority will remain the same as in the previous queue.
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
+    }
     /// Optional unless the job is submitted on the default queue. When you set up a job to use queue hopping, you can specify a destination queue. This queue cannot be the original queue to which the job is submitted. If the original queue isn't the default queue and you don't specify the destination queue, the job will move to the default queue.
     pub fn queue(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl HopDestinationBuilder {
         self.queue = input;
         self
     }
+    /// Optional unless the job is submitted on the default queue. When you set up a job to use queue hopping, you can specify a destination queue. This queue cannot be the original queue to which the job is submitted. If the original queue isn't the default queue and you don't specify the destination queue, the job will move to the default queue.
+    pub fn get_queue(&self) -> &::std::option::Option<::std::string::String> {
+        &self.queue
+    }
     /// Required for setting up a job to use queue hopping. Minimum wait time in minutes until the job can hop to the destination queue. Valid range is 1 to 4320 minutes, inclusive.
     pub fn wait_minutes(mut self, input: i32) -> Self {
         self.wait_minutes = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl HopDestinationBuilder {
     pub fn set_wait_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.wait_minutes = input;
         self
+    }
+    /// Required for setting up a job to use queue hopping. Minimum wait time in minutes until the job can hop to the destination queue. Valid range is 1 to 4320 minutes, inclusive.
+    pub fn get_wait_minutes(&self) -> &::std::option::Option<i32> {
+        &self.wait_minutes
     }
     /// Consumes the builder and constructs a [`HopDestination`](crate::types::HopDestination).
     pub fn build(self) -> crate::types::HopDestination {

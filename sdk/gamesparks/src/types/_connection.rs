@@ -48,6 +48,10 @@ impl ConnectionBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier used to indicate a specific WebSocket connection.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The date and time when the connection was created.</p>
     pub fn created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl ConnectionBuilder {
     ) -> Self {
         self.created = input;
         self
+    }
+    /// <p>The date and time when the connection was created.</p>
+    pub fn get_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created
     }
     /// Consumes the builder and constructs a [`Connection`](crate::types::Connection).
     pub fn build(self) -> crate::types::Connection {

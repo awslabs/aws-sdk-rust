@@ -56,6 +56,12 @@ impl ListResponseHeadersPoliciesOutputBuilder {
         self.response_headers_policy_list = input;
         self
     }
+    /// <p>A list of response headers policies.</p>
+    pub fn get_response_headers_policy_list(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResponseHeadersPolicyList> {
+        &self.response_headers_policy_list
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

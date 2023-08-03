@@ -36,6 +36,10 @@ impl RemoveLayerVersionPermissionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RemoveLayerVersionPermission as a reference.
+    pub fn as_input(&self) -> &crate::operation::remove_layer_version_permission::builders::RemoveLayerVersionPermissionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl RemoveLayerVersionPermissionFluentBuilder {
         self.inner = self.inner.set_layer_name(input);
         self
     }
+    /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
+    pub fn get_layer_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_layer_name()
+    }
     /// <p>The version number.</p>
     pub fn version_number(mut self, input: i64) -> Self {
         self.inner = self.inner.version_number(input);
@@ -135,6 +143,10 @@ impl RemoveLayerVersionPermissionFluentBuilder {
     pub fn set_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_version_number(input);
         self
+    }
+    /// <p>The version number.</p>
+    pub fn get_version_number(&self) -> &::std::option::Option<i64> {
+        self.inner.get_version_number()
     }
     /// <p>The identifier that was specified when the statement was added.</p>
     pub fn statement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -146,6 +158,10 @@ impl RemoveLayerVersionPermissionFluentBuilder {
         self.inner = self.inner.set_statement_id(input);
         self
     }
+    /// <p>The identifier that was specified when the statement was added.</p>
+    pub fn get_statement_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_statement_id()
+    }
     /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.revision_id(input.into());
@@ -155,5 +171,9 @@ impl RemoveLayerVersionPermissionFluentBuilder {
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_revision_id(input);
         self
+    }
+    /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_revision_id()
     }
 }

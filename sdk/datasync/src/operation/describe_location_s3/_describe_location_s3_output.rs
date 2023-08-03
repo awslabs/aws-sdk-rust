@@ -90,6 +90,10 @@ impl DescribeLocationS3OutputBuilder {
         self.location_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket or access point.</p>
+    pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_arn
+    }
     /// <p>The URL of the Amazon S3 location that was described.</p>
     pub fn location_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_uri = ::std::option::Option::Some(input.into());
@@ -99,6 +103,10 @@ impl DescribeLocationS3OutputBuilder {
     pub fn set_location_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location_uri = input;
         self
+    }
+    /// <p>The URL of the Amazon S3 location that was described.</p>
+    pub fn get_location_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_uri
     }
     /// <p>The Amazon S3 storage class that you chose to store your files in when this location is used as a task destination. For more information about S3 storage classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have behaviors that can affect your S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with S3 storage classes in DataSync</a>.</p>
     pub fn s3_storage_class(mut self, input: crate::types::S3StorageClass) -> Self {
@@ -113,6 +121,10 @@ impl DescribeLocationS3OutputBuilder {
         self.s3_storage_class = input;
         self
     }
+    /// <p>The Amazon S3 storage class that you chose to store your files in when this location is used as a task destination. For more information about S3 storage classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have behaviors that can affect your S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with S3 storage classes in DataSync</a>.</p>
+    pub fn get_s3_storage_class(&self) -> &::std::option::Option<crate::types::S3StorageClass> {
+        &self.s3_storage_class
+    }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket.</p>
     /// <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>DataSync User Guide</i>.</p>
     pub fn s3_config(mut self, input: crate::types::S3Config) -> Self {
@@ -124,6 +136,11 @@ impl DescribeLocationS3OutputBuilder {
     pub fn set_s3_config(mut self, input: ::std::option::Option<crate::types::S3Config>) -> Self {
         self.s3_config = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket.</p>
+    /// <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>DataSync User Guide</i>.</p>
+    pub fn get_s3_config(&self) -> &::std::option::Option<crate::types::S3Config> {
+        &self.s3_config
     }
     /// Appends an item to `agent_arns`.
     ///
@@ -144,6 +161,10 @@ impl DescribeLocationS3OutputBuilder {
         self.agent_arns = input;
         self
     }
+    /// <p>If you are using DataSync on an Amazon Web Services Outpost, the Amazon Resource Name (ARNs) of the EC2 agents deployed on your Outpost. For more information about launching a DataSync agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
+    pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.agent_arns
+    }
     /// <p>The time that the Amazon S3 bucket location was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -156,6 +177,10 @@ impl DescribeLocationS3OutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time that the Amazon S3 bucket location was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

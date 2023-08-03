@@ -75,6 +75,10 @@ impl WorkflowTypeInfoBuilder {
         self.workflow_type = input;
         self
     }
+    /// <p>The workflow type this information is about.</p>
+    pub fn get_workflow_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
+        &self.workflow_type
+    }
     /// <p>The current status of the workflow type.</p>
     pub fn status(mut self, input: crate::types::RegistrationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -88,6 +92,10 @@ impl WorkflowTypeInfoBuilder {
         self.status = input;
         self
     }
+    /// <p>The current status of the workflow type.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::RegistrationStatus> {
+        &self.status
+    }
     /// <p>The description of the type registered through <code>RegisterWorkflowType</code>.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -97,6 +105,10 @@ impl WorkflowTypeInfoBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the type registered through <code>RegisterWorkflowType</code>.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The date when this type was registered.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -111,6 +123,10 @@ impl WorkflowTypeInfoBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>The date when this type was registered.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
+    }
     /// <p>If the type is in deprecated state, then it is set to the date when the type was deprecated.</p>
     pub fn deprecation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.deprecation_date = ::std::option::Option::Some(input);
@@ -123,6 +139,10 @@ impl WorkflowTypeInfoBuilder {
     ) -> Self {
         self.deprecation_date = input;
         self
+    }
+    /// <p>If the type is in deprecated state, then it is set to the date when the type was deprecated.</p>
+    pub fn get_deprecation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.deprecation_date
     }
     /// Consumes the builder and constructs a [`WorkflowTypeInfo`](crate::types::WorkflowTypeInfo).
     pub fn build(self) -> crate::types::WorkflowTypeInfo {

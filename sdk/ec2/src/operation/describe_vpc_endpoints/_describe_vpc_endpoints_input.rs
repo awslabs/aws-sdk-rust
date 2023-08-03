@@ -106,6 +106,10 @@ impl DescribeVpcEndpointsInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// Appends an item to `vpc_endpoint_ids`.
     ///
     /// To override the contents of this collection use [`set_vpc_endpoint_ids`](Self::set_vpc_endpoint_ids).
@@ -127,6 +131,12 @@ impl DescribeVpcEndpointsInputBuilder {
     ) -> Self {
         self.vpc_endpoint_ids = input;
         self
+    }
+    /// <p>The IDs of the VPC endpoints.</p>
+    pub fn get_vpc_endpoint_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.vpc_endpoint_ids
     }
     /// Appends an item to `filters`.
     ///
@@ -179,6 +189,26 @@ impl DescribeVpcEndpointsInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>The filters.</p>
+    /// <ul>
+    /// <li> <p> <code>ip-address-type</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).</p> </li>
+    /// <li> <p> <code>service-name</code> - The name of the service.</p> </li>
+    /// <li> <p> <code>tag</code>:<key>
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
+    /// <code>Owner</code> and the value
+    /// <code>TeamA</code>, specify
+    /// <code>tag:Owner</code> for the filter name and
+    /// <code>TeamA</code> for the filter value.
+    /// </key></p> </li>
+    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
+    /// <li> <p> <code>vpc-id</code> - The ID of the VPC in which the endpoint resides.</p> </li>
+    /// <li> <p> <code>vpc-endpoint-id</code> - The ID of the endpoint.</p> </li>
+    /// <li> <p> <code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> | <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> | <code>rejected</code> | <code>failed</code>).</p> </li>
+    /// <li> <p> <code>vpc-endpoint-type</code> - The type of VPC endpoint (<code>Interface</code> | <code>Gateway</code> | <code>GatewayLoadBalancer</code>).</p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
+    }
     /// <p>The maximum number of items to return for this request. The request returns a token that you can specify in a subsequent call to get the next set of results.</p>
     /// <p>Constraint: If the value is greater than 1,000, we return only 1,000 items.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -191,6 +221,11 @@ impl DescribeVpcEndpointsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of items to return for this request. The request returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    /// <p>Constraint: If the value is greater than 1,000, we return only 1,000 items.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token for the next set of items to return. (You received this token from a prior call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -200,6 +235,10 @@ impl DescribeVpcEndpointsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a prior call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeVpcEndpointsInput`](crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsInput).
     pub fn build(

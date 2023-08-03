@@ -59,6 +59,10 @@ impl GetRandomPasswordOutputBuilder {
         self.random_password = input;
         self
     }
+    /// <p>A string with the password.</p>
+    pub fn get_random_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.random_password
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

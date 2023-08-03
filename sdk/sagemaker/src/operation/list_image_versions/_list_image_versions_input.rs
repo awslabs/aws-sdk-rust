@@ -109,6 +109,10 @@ impl ListImageVersionsInputBuilder {
         self.creation_time_after = input;
         self
     }
+    /// <p>A filter that returns only versions created on or after the specified time.</p>
+    pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_after
+    }
     /// <p>A filter that returns only versions created on or before the specified time.</p>
     pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time_before = ::std::option::Option::Some(input);
@@ -122,6 +126,10 @@ impl ListImageVersionsInputBuilder {
         self.creation_time_before = input;
         self
     }
+    /// <p>A filter that returns only versions created on or before the specified time.</p>
+    pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_before
+    }
     /// <p>The name of the image to list the versions of.</p>
     pub fn image_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_name = ::std::option::Option::Some(input.into());
@@ -131,6 +139,10 @@ impl ListImageVersionsInputBuilder {
     pub fn set_image_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_name = input;
         self
+    }
+    /// <p>The name of the image to list the versions of.</p>
+    pub fn get_image_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_name
     }
     /// <p>A filter that returns only versions modified on or after the specified time.</p>
     pub fn last_modified_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -145,6 +157,12 @@ impl ListImageVersionsInputBuilder {
         self.last_modified_time_after = input;
         self
     }
+    /// <p>A filter that returns only versions modified on or after the specified time.</p>
+    pub fn get_last_modified_time_after(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time_after
+    }
     /// <p>A filter that returns only versions modified on or before the specified time.</p>
     pub fn last_modified_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time_before = ::std::option::Option::Some(input);
@@ -158,6 +176,12 @@ impl ListImageVersionsInputBuilder {
         self.last_modified_time_before = input;
         self
     }
+    /// <p>A filter that returns only versions modified on or before the specified time.</p>
+    pub fn get_last_modified_time_before(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time_before
+    }
     /// <p>The maximum number of versions to return in the response. The default value is 10. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -168,6 +192,10 @@ impl ListImageVersionsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of versions to return in the response. The default value is 10. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>If the previous call to <code>ListImageVersions</code> didn't return the full set of versions, the call returns a token for getting the next set of versions.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -177,6 +205,10 @@ impl ListImageVersionsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the previous call to <code>ListImageVersions</code> didn't return the full set of versions, the call returns a token for getting the next set of versions.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The property used to sort results. The default value is <code>CREATION_TIME</code>.</p>
     pub fn sort_by(mut self, input: crate::types::ImageVersionSortBy) -> Self {
@@ -191,6 +223,10 @@ impl ListImageVersionsInputBuilder {
         self.sort_by = input;
         self
     }
+    /// <p>The property used to sort results. The default value is <code>CREATION_TIME</code>.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ImageVersionSortBy> {
+        &self.sort_by
+    }
     /// <p>The sort order. The default value is <code>DESCENDING</code>.</p>
     pub fn sort_order(mut self, input: crate::types::ImageVersionSortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -203,6 +239,10 @@ impl ListImageVersionsInputBuilder {
     ) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p>The sort order. The default value is <code>DESCENDING</code>.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::ImageVersionSortOrder> {
+        &self.sort_order
     }
     /// Consumes the builder and constructs a [`ListImageVersionsInput`](crate::operation::list_image_versions::ListImageVersionsInput).
     pub fn build(

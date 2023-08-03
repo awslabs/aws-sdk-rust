@@ -51,6 +51,10 @@ impl AutoTuneBuilder {
         self.auto_tune_type = input;
         self
     }
+    /// <p>The type of Auto-Tune action.</p>
+    pub fn get_auto_tune_type(&self) -> &::std::option::Option<crate::types::AutoTuneType> {
+        &self.auto_tune_type
+    }
     /// <p>Details about an Auto-Tune action.</p>
     pub fn auto_tune_details(mut self, input: crate::types::AutoTuneDetails) -> Self {
         self.auto_tune_details = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl AutoTuneBuilder {
     ) -> Self {
         self.auto_tune_details = input;
         self
+    }
+    /// <p>Details about an Auto-Tune action.</p>
+    pub fn get_auto_tune_details(&self) -> &::std::option::Option<crate::types::AutoTuneDetails> {
+        &self.auto_tune_details
     }
     /// Consumes the builder and constructs a [`AutoTune`](crate::types::AutoTune).
     pub fn build(self) -> crate::types::AutoTune {

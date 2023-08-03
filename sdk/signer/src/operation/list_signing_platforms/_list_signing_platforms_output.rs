@@ -64,6 +64,12 @@ impl ListSigningPlatformsOutputBuilder {
         self.platforms = input;
         self
     }
+    /// <p>A list of all platforms that match the request parameters.</p>
+    pub fn get_platforms(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SigningPlatform>> {
+        &self.platforms
+    }
     /// <p>Value for specifying the next set of paginated results to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -73,6 +79,10 @@ impl ListSigningPlatformsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Value for specifying the next set of paginated results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

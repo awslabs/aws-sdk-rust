@@ -36,6 +36,13 @@ impl ListAssessmentTargetsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListAssessmentTargets as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_assessment_targets::builders::ListAssessmentTargetsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -142,6 +149,11 @@ impl ListAssessmentTargetsFluentBuilder {
         self.inner = self.inner.set_filter(input);
         self
     }
+    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+    /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::AssessmentTargetFilter> {
+        self.inner.get_filter()
+    }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentTargets</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -152,6 +164,10 @@ impl ListAssessmentTargetsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentTargets</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -161,5 +177,9 @@ impl ListAssessmentTargetsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

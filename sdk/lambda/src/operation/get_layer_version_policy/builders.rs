@@ -36,6 +36,13 @@ impl GetLayerVersionPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetLayerVersionPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_layer_version_policy::builders::GetLayerVersionPolicyInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl GetLayerVersionPolicyFluentBuilder {
         self.inner = self.inner.set_layer_name(input);
         self
     }
+    /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
+    pub fn get_layer_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_layer_name()
+    }
     /// <p>The version number.</p>
     pub fn version_number(mut self, input: i64) -> Self {
         self.inner = self.inner.version_number(input);
@@ -135,5 +146,9 @@ impl GetLayerVersionPolicyFluentBuilder {
     pub fn set_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_version_number(input);
         self
+    }
+    /// <p>The version number.</p>
+    pub fn get_version_number(&self) -> &::std::option::Option<i64> {
+        self.inner.get_version_number()
     }
 }

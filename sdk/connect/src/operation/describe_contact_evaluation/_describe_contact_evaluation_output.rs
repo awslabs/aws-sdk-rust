@@ -57,6 +57,10 @@ impl DescribeContactEvaluationOutputBuilder {
         self.evaluation = input;
         self
     }
+    /// <p>Information about the evaluation form completed for a specific contact.</p>
+    pub fn get_evaluation(&self) -> &::std::option::Option<crate::types::Evaluation> {
+        &self.evaluation
+    }
     /// <p>Information about the evaluation form.</p>
     pub fn evaluation_form(mut self, input: crate::types::EvaluationFormContent) -> Self {
         self.evaluation_form = ::std::option::Option::Some(input);
@@ -69,6 +73,12 @@ impl DescribeContactEvaluationOutputBuilder {
     ) -> Self {
         self.evaluation_form = input;
         self
+    }
+    /// <p>Information about the evaluation form.</p>
+    pub fn get_evaluation_form(
+        &self,
+    ) -> &::std::option::Option<crate::types::EvaluationFormContent> {
+        &self.evaluation_form
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

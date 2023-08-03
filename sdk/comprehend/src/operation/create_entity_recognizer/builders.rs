@@ -36,6 +36,13 @@ impl CreateEntityRecognizerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateEntityRecognizer as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_entity_recognizer::builders::CreateEntityRecognizerInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl CreateEntityRecognizerFluentBuilder {
         self.inner = self.inner.set_recognizer_name(input);
         self
     }
+    /// <p>The name given to the newly created recognizer. Recognizer names can be a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The name must be unique in the account/Region.</p>
+    pub fn get_recognizer_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_recognizer_name()
+    }
     /// <p>The version name given to the newly created recognizer. Version names can be a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The version name must be unique among all models with the same recognizer name in the account/Region.</p>
     pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version_name(input.into());
@@ -141,6 +152,10 @@ impl CreateEntityRecognizerFluentBuilder {
     pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version_name(input);
         self
+    }
+    /// <p>The version name given to the newly created recognizer. Version names can be a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The version name must be unique among all models with the same recognizer name in the account/Region.</p>
+    pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version_name()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
     pub fn data_access_role_arn(
@@ -157,6 +172,10 @@ impl CreateEntityRecognizerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_data_access_role_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
+    pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_data_access_role_arn()
     }
     /// Appends an item to `Tags`.
     ///
@@ -175,6 +194,10 @@ impl CreateEntityRecognizerFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Tags to associate with the entity recognizer. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. </p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>Specifies the format and location of the input data. The S3 bucket containing the input data must be located in the same Region as the entity recognizer being created. </p>
     pub fn input_data_config(
         mut self,
@@ -190,6 +213,12 @@ impl CreateEntityRecognizerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_input_data_config(input);
         self
+    }
+    /// <p>Specifies the format and location of the input data. The S3 bucket containing the input data must be located in the same Region as the entity recognizer being created. </p>
+    pub fn get_input_data_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::EntityRecognizerInputDataConfig> {
+        self.inner.get_input_data_config()
     }
     /// <p> A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
     pub fn client_request_token(
@@ -207,6 +236,10 @@ impl CreateEntityRecognizerFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p> A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// <p> You can specify any of the following languages: English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). If you plan to use this entity recognizer with PDF, Word, or image input files, you must specify English as the language. All training documents must be in the same language.</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.inner = self.inner.language_code(input);
@@ -219,6 +252,10 @@ impl CreateEntityRecognizerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
+    }
+    /// <p> You can specify any of the following languages: English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). If you plan to use this entity recognizer with PDF, Word, or image input files, you must specify English as the language. All training documents must be in the same language.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
+        self.inner.get_language_code()
     }
     /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
@@ -244,6 +281,14 @@ impl CreateEntityRecognizerFluentBuilder {
         self.inner = self.inner.set_volume_kms_key_id(input);
         self
     }
+    /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <ul>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// </ul>
+    pub fn get_volume_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_volume_kms_key_id()
+    }
     /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your custom entity recognizer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
         self.inner = self.inner.vpc_config(input);
@@ -253,6 +298,10 @@ impl CreateEntityRecognizerFluentBuilder {
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
         self.inner = self.inner.set_vpc_config(input);
         self
+    }
+    /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your custom entity recognizer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
+    pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
+        self.inner.get_vpc_config()
     }
     /// <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
     /// <ul>
@@ -278,6 +327,14 @@ impl CreateEntityRecognizerFluentBuilder {
         self.inner = self.inner.set_model_kms_key_id(input);
         self
     }
+    /// <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
+    /// <ul>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// </ul>
+    pub fn get_model_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_model_kms_key_id()
+    }
     /// <p>The JSON resource-based policy to attach to your custom entity recognizer model. You can use this policy to allow another Amazon Web Services account to import your custom model.</p>
     /// <p>Provide your JSON as a UTF-8 encoded string without line breaks. To provide valid JSON for your policy, enclose the attribute names and values in double quotes. If the JSON body is also enclosed in double quotes, then you must escape the double quotes that are inside the policy:</p>
     /// <p> <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p>
@@ -295,5 +352,13 @@ impl CreateEntityRecognizerFluentBuilder {
     pub fn set_model_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_policy(input);
         self
+    }
+    /// <p>The JSON resource-based policy to attach to your custom entity recognizer model. You can use this policy to allow another Amazon Web Services account to import your custom model.</p>
+    /// <p>Provide your JSON as a UTF-8 encoded string without line breaks. To provide valid JSON for your policy, enclose the attribute names and values in double quotes. If the JSON body is also enclosed in double quotes, then you must escape the double quotes that are inside the policy:</p>
+    /// <p> <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p>
+    /// <p>To avoid escaping quotes, you can use single quotes to enclose the policy and double quotes to enclose the JSON names and values:</p>
+    /// <p> <code>'{"attribute": "value", "attribute": ["value"]}'</code> </p>
+    pub fn get_model_policy(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_model_policy()
     }
 }

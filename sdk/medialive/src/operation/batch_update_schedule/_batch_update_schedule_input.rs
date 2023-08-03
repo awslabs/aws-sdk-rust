@@ -62,6 +62,10 @@ impl BatchUpdateScheduleInputBuilder {
         self.channel_id = input;
         self
     }
+    /// Id of the channel whose schedule is being updated.
+    pub fn get_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_id
+    }
     /// Schedule actions to create in the schedule.
     pub fn creates(mut self, input: crate::types::BatchScheduleActionCreateRequest) -> Self {
         self.creates = ::std::option::Option::Some(input);
@@ -75,6 +79,12 @@ impl BatchUpdateScheduleInputBuilder {
         self.creates = input;
         self
     }
+    /// Schedule actions to create in the schedule.
+    pub fn get_creates(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchScheduleActionCreateRequest> {
+        &self.creates
+    }
     /// Schedule actions to delete from the schedule.
     pub fn deletes(mut self, input: crate::types::BatchScheduleActionDeleteRequest) -> Self {
         self.deletes = ::std::option::Option::Some(input);
@@ -87,6 +97,12 @@ impl BatchUpdateScheduleInputBuilder {
     ) -> Self {
         self.deletes = input;
         self
+    }
+    /// Schedule actions to delete from the schedule.
+    pub fn get_deletes(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchScheduleActionDeleteRequest> {
+        &self.deletes
     }
     /// Consumes the builder and constructs a [`BatchUpdateScheduleInput`](crate::operation::batch_update_schedule::BatchUpdateScheduleInput).
     pub fn build(

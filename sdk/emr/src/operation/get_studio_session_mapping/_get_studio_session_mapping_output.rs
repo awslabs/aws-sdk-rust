@@ -51,6 +51,12 @@ impl GetStudioSessionMappingOutputBuilder {
         self.session_mapping = input;
         self
     }
+    /// <p>The session mapping details for the specified Amazon EMR Studio and identity, including session policy ARN and creation time.</p>
+    pub fn get_session_mapping(
+        &self,
+    ) -> &::std::option::Option<crate::types::SessionMappingDetail> {
+        &self.session_mapping
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

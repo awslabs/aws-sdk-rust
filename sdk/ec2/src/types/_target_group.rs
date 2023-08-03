@@ -40,6 +40,10 @@ impl TargetGroupBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the target group.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`TargetGroup`](crate::types::TargetGroup).
     pub fn build(self) -> crate::types::TargetGroup {
         crate::types::TargetGroup { arn: self.arn }

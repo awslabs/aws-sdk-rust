@@ -37,6 +37,12 @@ impl BatchEnableStandardsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchEnableStandards as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_enable_standards::builders::BatchEnableStandardsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,5 +142,11 @@ impl BatchEnableStandardsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_standards_subscription_requests(input);
         self
+    }
+    /// <p>The list of standards checks to enable.</p>
+    pub fn get_standards_subscription_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StandardsSubscriptionRequest>> {
+        self.inner.get_standards_subscription_requests()
     }
 }

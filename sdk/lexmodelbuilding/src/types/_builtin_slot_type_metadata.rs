@@ -48,6 +48,10 @@ impl BuiltinSlotTypeMetadataBuilder {
         self.signature = input;
         self
     }
+    /// <p>A unique identifier for the built-in slot type. To find the signature for a slot type, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/slot-type-reference">Slot Type Reference</a> in the <i>Alexa Skills Kit</i>.</p>
+    pub fn get_signature(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signature
+    }
     /// Appends an item to `supported_locales`.
     ///
     /// To override the contents of this collection use [`set_supported_locales`](Self::set_supported_locales).
@@ -66,6 +70,12 @@ impl BuiltinSlotTypeMetadataBuilder {
     ) -> Self {
         self.supported_locales = input;
         self
+    }
+    /// <p>A list of target locales for the slot. </p>
+    pub fn get_supported_locales(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Locale>> {
+        &self.supported_locales
     }
     /// Consumes the builder and constructs a [`BuiltinSlotTypeMetadata`](crate::types::BuiltinSlotTypeMetadata).
     pub fn build(self) -> crate::types::BuiltinSlotTypeMetadata {

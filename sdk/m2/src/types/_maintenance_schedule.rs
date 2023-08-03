@@ -51,6 +51,10 @@ impl MaintenanceScheduleBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The time the scheduled maintenance is to start.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The time the scheduled maintenance is to end.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl MaintenanceScheduleBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The time the scheduled maintenance is to end.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// Consumes the builder and constructs a [`MaintenanceSchedule`](crate::types::MaintenanceSchedule).
     pub fn build(self) -> crate::types::MaintenanceSchedule {

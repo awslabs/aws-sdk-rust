@@ -37,6 +37,13 @@ impl ModifyClientVpnEndpointFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyClientVpnEndpoint as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::modify_client_vpn_endpoint::builders::ModifyClientVpnEndpointInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl ModifyClientVpnEndpointFluentBuilder {
         self.inner = self.inner.set_client_vpn_endpoint_id(input);
         self
     }
+    /// <p>The ID of the Client VPN endpoint to modify.</p>
+    pub fn get_client_vpn_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_vpn_endpoint_id()
+    }
     /// <p>The ARN of the server certificate to be used. The server certificate must be provisioned in Certificate Manager (ACM).</p>
     pub fn server_certificate_arn(
         mut self,
@@ -148,6 +159,10 @@ impl ModifyClientVpnEndpointFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_server_certificate_arn(input);
         self
+    }
+    /// <p>The ARN of the server certificate to be used. The server certificate must be provisioned in Certificate Manager (ACM).</p>
+    pub fn get_server_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_server_certificate_arn()
     }
     /// <p>Information about the client connection logging options.</p>
     /// <p>If you enable client connection logging, data about client connections is sent to a Cloudwatch Logs log stream. The following information is logged:</p>
@@ -176,6 +191,19 @@ impl ModifyClientVpnEndpointFluentBuilder {
         self.inner = self.inner.set_connection_log_options(input);
         self
     }
+    /// <p>Information about the client connection logging options.</p>
+    /// <p>If you enable client connection logging, data about client connections is sent to a Cloudwatch Logs log stream. The following information is logged:</p>
+    /// <ul>
+    /// <li> <p>Client connection requests</p> </li>
+    /// <li> <p>Client connection results (successful and unsuccessful)</p> </li>
+    /// <li> <p>Reasons for unsuccessful client connection requests</p> </li>
+    /// <li> <p>Client connection termination time</p> </li>
+    /// </ul>
+    pub fn get_connection_log_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConnectionLogOptions> {
+        self.inner.get_connection_log_options()
+    }
     /// <p>Information about the DNS servers to be used by Client VPN connections. A Client VPN endpoint can have up to two DNS servers.</p>
     pub fn dns_servers(mut self, input: crate::types::DnsServersOptionsModifyStructure) -> Self {
         self.inner = self.inner.dns_servers(input);
@@ -188,6 +216,12 @@ impl ModifyClientVpnEndpointFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_dns_servers(input);
         self
+    }
+    /// <p>Information about the DNS servers to be used by Client VPN connections. A Client VPN endpoint can have up to two DNS servers.</p>
+    pub fn get_dns_servers(
+        &self,
+    ) -> &::std::option::Option<crate::types::DnsServersOptionsModifyStructure> {
+        self.inner.get_dns_servers()
     }
     /// <p>The port number to assign to the Client VPN endpoint for TCP and UDP traffic.</p>
     /// <p>Valid Values: <code>443</code> | <code>1194</code> </p>
@@ -203,6 +237,12 @@ impl ModifyClientVpnEndpointFluentBuilder {
         self.inner = self.inner.set_vpn_port(input);
         self
     }
+    /// <p>The port number to assign to the Client VPN endpoint for TCP and UDP traffic.</p>
+    /// <p>Valid Values: <code>443</code> | <code>1194</code> </p>
+    /// <p>Default Value: <code>443</code> </p>
+    pub fn get_vpn_port(&self) -> &::std::option::Option<i32> {
+        self.inner.get_vpn_port()
+    }
     /// <p>A brief description of the Client VPN endpoint.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -212,6 +252,10 @@ impl ModifyClientVpnEndpointFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A brief description of the Client VPN endpoint.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>Indicates whether the VPN is split-tunnel.</p>
     /// <p>For information about split-tunnel VPN endpoints, see <a href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-tunnel Client VPN endpoint</a> in the <i>Client VPN Administrator Guide</i>.</p>
@@ -225,6 +269,11 @@ impl ModifyClientVpnEndpointFluentBuilder {
         self.inner = self.inner.set_split_tunnel(input);
         self
     }
+    /// <p>Indicates whether the VPN is split-tunnel.</p>
+    /// <p>For information about split-tunnel VPN endpoints, see <a href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-tunnel Client VPN endpoint</a> in the <i>Client VPN Administrator Guide</i>.</p>
+    pub fn get_split_tunnel(&self) -> &::std::option::Option<bool> {
+        self.inner.get_split_tunnel()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -234,6 +283,10 @@ impl ModifyClientVpnEndpointFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
     /// Appends an item to `SecurityGroupIds`.
     ///
@@ -255,6 +308,12 @@ impl ModifyClientVpnEndpointFluentBuilder {
         self.inner = self.inner.set_security_group_ids(input);
         self
     }
+    /// <p>The IDs of one or more security groups to apply to the target network.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_security_group_ids()
+    }
     /// <p>The ID of the VPC to associate with the Client VPN endpoint.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_id(input.into());
@@ -264,6 +323,10 @@ impl ModifyClientVpnEndpointFluentBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_id(input);
         self
+    }
+    /// <p>The ID of the VPC to associate with the Client VPN endpoint.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpc_id()
     }
     /// <p>Specify whether to enable the self-service portal for the Client VPN endpoint.</p>
     pub fn self_service_portal(mut self, input: crate::types::SelfServicePortal) -> Self {
@@ -278,6 +341,12 @@ impl ModifyClientVpnEndpointFluentBuilder {
         self.inner = self.inner.set_self_service_portal(input);
         self
     }
+    /// <p>Specify whether to enable the self-service portal for the Client VPN endpoint.</p>
+    pub fn get_self_service_portal(
+        &self,
+    ) -> &::std::option::Option<crate::types::SelfServicePortal> {
+        self.inner.get_self_service_portal()
+    }
     /// <p>The options for managing connection authorization for new client connections.</p>
     pub fn client_connect_options(mut self, input: crate::types::ClientConnectOptions) -> Self {
         self.inner = self.inner.client_connect_options(input);
@@ -290,6 +359,12 @@ impl ModifyClientVpnEndpointFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_connect_options(input);
         self
+    }
+    /// <p>The options for managing connection authorization for new client connections.</p>
+    pub fn get_client_connect_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::ClientConnectOptions> {
+        self.inner.get_client_connect_options()
     }
     /// <p>The maximum VPN session duration time in hours.</p>
     /// <p>Valid values: <code>8 | 10 | 12 | 24</code> </p>
@@ -304,6 +379,12 @@ impl ModifyClientVpnEndpointFluentBuilder {
     pub fn set_session_timeout_hours(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_session_timeout_hours(input);
         self
+    }
+    /// <p>The maximum VPN session duration time in hours.</p>
+    /// <p>Valid values: <code>8 | 10 | 12 | 24</code> </p>
+    /// <p>Default value: <code>24</code> </p>
+    pub fn get_session_timeout_hours(&self) -> &::std::option::Option<i32> {
+        self.inner.get_session_timeout_hours()
     }
     /// <p>Options for enabling a customizable text banner that will be displayed on Amazon Web Services provided clients when a VPN session is established.</p>
     pub fn client_login_banner_options(
@@ -320,5 +401,11 @@ impl ModifyClientVpnEndpointFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_login_banner_options(input);
         self
+    }
+    /// <p>Options for enabling a customizable text banner that will be displayed on Amazon Web Services provided clients when a VPN session is established.</p>
+    pub fn get_client_login_banner_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::ClientLoginBannerOptions> {
+        self.inner.get_client_login_banner_options()
     }
 }

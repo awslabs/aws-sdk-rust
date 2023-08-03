@@ -57,6 +57,10 @@ impl DescribeExpressionsInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The name of the domain you want to describe.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// Appends an item to `expression_names`.
     ///
     /// To override the contents of this collection use [`set_expression_names`](Self::set_expression_names).
@@ -79,6 +83,12 @@ impl DescribeExpressionsInputBuilder {
         self.expression_names = input;
         self
     }
+    /// <p>Limits the <code><code>DescribeExpressions</code></code> response to the specified expressions. If not specified, all expressions are shown.</p>
+    pub fn get_expression_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.expression_names
+    }
     /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
     pub fn deployed(mut self, input: bool) -> Self {
         self.deployed = ::std::option::Option::Some(input);
@@ -88,6 +98,10 @@ impl DescribeExpressionsInputBuilder {
     pub fn set_deployed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.deployed = input;
         self
+    }
+    /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
+    pub fn get_deployed(&self) -> &::std::option::Option<bool> {
+        &self.deployed
     }
     /// Consumes the builder and constructs a [`DescribeExpressionsInput`](crate::operation::describe_expressions::DescribeExpressionsInput).
     pub fn build(

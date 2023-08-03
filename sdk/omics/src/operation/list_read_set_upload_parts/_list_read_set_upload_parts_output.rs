@@ -57,6 +57,10 @@ impl ListReadSetUploadPartsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p> Next token returned in the response of a previous ListReadSetUploadParts call. Used to get the next page of results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `parts`.
     ///
     /// To override the contents of this collection use [`set_parts`](Self::set_parts).
@@ -75,6 +79,12 @@ impl ListReadSetUploadPartsOutputBuilder {
     ) -> Self {
         self.parts = input;
         self
+    }
+    /// <p> An array of upload parts. </p>
+    pub fn get_parts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReadSetUploadPartListItem>> {
+        &self.parts
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

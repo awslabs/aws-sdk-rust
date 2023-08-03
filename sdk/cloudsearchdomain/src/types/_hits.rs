@@ -64,6 +64,10 @@ impl HitsBuilder {
         self.found = input;
         self
     }
+    /// <p>The total number of documents that match the search request.</p>
+    pub fn get_found(&self) -> &::std::option::Option<i64> {
+        &self.found
+    }
     /// <p>The index of the first matching document.</p>
     pub fn start(mut self, input: i64) -> Self {
         self.start = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl HitsBuilder {
         self.start = input;
         self
     }
+    /// <p>The index of the first matching document.</p>
+    pub fn get_start(&self) -> &::std::option::Option<i64> {
+        &self.start
+    }
     /// <p>A cursor that can be used to retrieve the next set of matching documents when you want to page through a large result set.</p>
     pub fn cursor(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cursor = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl HitsBuilder {
     pub fn set_cursor(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cursor = input;
         self
+    }
+    /// <p>A cursor that can be used to retrieve the next set of matching documents when you want to page through a large result set.</p>
+    pub fn get_cursor(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cursor
     }
     /// Appends an item to `hit`.
     ///
@@ -102,6 +114,10 @@ impl HitsBuilder {
     ) -> Self {
         self.hit = input;
         self
+    }
+    /// <p>A document that matches the search request.</p>
+    pub fn get_hit(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Hit>> {
+        &self.hit
     }
     /// Consumes the builder and constructs a [`Hits`](crate::types::Hits).
     pub fn build(self) -> crate::types::Hits {

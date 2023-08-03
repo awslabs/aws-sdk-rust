@@ -75,6 +75,10 @@ impl RotateTunnelAccessTokenOutputBuilder {
         self.tunnel_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name for the tunnel.</p>
+    pub fn get_tunnel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tunnel_arn
+    }
     /// <p>The client access token that the source local proxy uses to connect to IoT Secure Tunneling.</p>
     pub fn source_access_token(
         mut self,
@@ -91,6 +95,10 @@ impl RotateTunnelAccessTokenOutputBuilder {
         self.source_access_token = input;
         self
     }
+    /// <p>The client access token that the source local proxy uses to connect to IoT Secure Tunneling.</p>
+    pub fn get_source_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_access_token
+    }
     /// <p>The client access token that the destination local proxy uses to connect to IoT Secure Tunneling.</p>
     pub fn destination_access_token(
         mut self,
@@ -106,6 +114,10 @@ impl RotateTunnelAccessTokenOutputBuilder {
     ) -> Self {
         self.destination_access_token = input;
         self
+    }
+    /// <p>The client access token that the destination local proxy uses to connect to IoT Secure Tunneling.</p>
+    pub fn get_destination_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_access_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

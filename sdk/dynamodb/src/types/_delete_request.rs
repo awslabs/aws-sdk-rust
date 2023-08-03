@@ -63,6 +63,14 @@ impl DeleteRequestBuilder {
         self.key = input;
         self
     }
+    /// <p>A map of attribute name to attribute values, representing the primary key of the item to delete. All of the table's primary key attributes must be specified, and their data types must match those of the table's key schema.</p>
+    pub fn get_key(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
+    > {
+        &self.key
+    }
     /// Consumes the builder and constructs a [`DeleteRequest`](crate::types::DeleteRequest).
     pub fn build(self) -> crate::types::DeleteRequest {
         crate::types::DeleteRequest { key: self.key }

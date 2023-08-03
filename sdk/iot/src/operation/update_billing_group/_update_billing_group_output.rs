@@ -47,6 +47,10 @@ impl UpdateBillingGroupOutputBuilder {
         self.version = input;
         self
     }
+    /// <p>The latest version of the billing group.</p>
+    pub fn get_version(&self) -> &::std::option::Option<i64> {
+        &self.version
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -90,6 +90,10 @@ impl ViolationDetailBuilder {
         self.policy_id = input;
         self
     }
+    /// <p>The ID of the Firewall Manager policy that the violation details were requested for.</p>
+    pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_id
+    }
     /// <p>The Amazon Web Services account that the violation details were requested for.</p>
     pub fn member_account(
         mut self,
@@ -106,6 +110,10 @@ impl ViolationDetailBuilder {
         self.member_account = input;
         self
     }
+    /// <p>The Amazon Web Services account that the violation details were requested for.</p>
+    pub fn get_member_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_account
+    }
     /// <p>The resource ID that the violation details were requested for.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -115,6 +123,10 @@ impl ViolationDetailBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The resource ID that the violation details were requested for.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>The resource type that the violation details were requested for.</p>
     pub fn resource_type(
@@ -131,6 +143,10 @@ impl ViolationDetailBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The resource type that the violation details were requested for.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
     }
     /// Appends an item to `resource_violations`.
     ///
@@ -151,6 +167,12 @@ impl ViolationDetailBuilder {
         self.resource_violations = input;
         self
     }
+    /// <p>List of violations for the requested resource.</p>
+    pub fn get_resource_violations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceViolation>> {
+        &self.resource_violations
+    }
     /// Appends an item to `resource_tags`.
     ///
     /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
@@ -170,6 +192,10 @@ impl ViolationDetailBuilder {
         self.resource_tags = input;
         self
     }
+    /// <p>The <code>ResourceTag</code> objects associated with the resource.</p>
+    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.resource_tags
+    }
     /// <p>Brief description for the requested resource.</p>
     pub fn resource_description(
         mut self,
@@ -185,6 +211,10 @@ impl ViolationDetailBuilder {
     ) -> Self {
         self.resource_description = input;
         self
+    }
+    /// <p>Brief description for the requested resource.</p>
+    pub fn get_resource_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_description
     }
     /// Consumes the builder and constructs a [`ViolationDetail`](crate::types::ViolationDetail).
     pub fn build(self) -> crate::types::ViolationDetail {

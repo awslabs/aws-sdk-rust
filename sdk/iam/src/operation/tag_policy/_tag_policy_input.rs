@@ -51,6 +51,11 @@ impl TagPolicyInputBuilder {
         self.policy_arn = input;
         self
     }
+    /// <p>The ARN of the IAM customer managed policy to which you want to add tags.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_arn
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -69,6 +74,10 @@ impl TagPolicyInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The list of tags that you want to attach to the IAM customer managed policy. Each tag consists of a key name and an associated value.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`TagPolicyInput`](crate::operation::tag_policy::TagPolicyInput).
     pub fn build(

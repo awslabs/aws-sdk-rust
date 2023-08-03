@@ -48,6 +48,10 @@ impl ResolutionBuilder {
         self.width = input;
         self
     }
+    /// <p>The screen resolution's width, expressed in pixels.</p>
+    pub fn get_width(&self) -> &::std::option::Option<i32> {
+        &self.width
+    }
     /// <p>The screen resolution's height, expressed in pixels.</p>
     pub fn height(mut self, input: i32) -> Self {
         self.height = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ResolutionBuilder {
     pub fn set_height(mut self, input: ::std::option::Option<i32>) -> Self {
         self.height = input;
         self
+    }
+    /// <p>The screen resolution's height, expressed in pixels.</p>
+    pub fn get_height(&self) -> &::std::option::Option<i32> {
+        &self.height
     }
     /// Consumes the builder and constructs a [`Resolution`](crate::types::Resolution).
     pub fn build(self) -> crate::types::Resolution {

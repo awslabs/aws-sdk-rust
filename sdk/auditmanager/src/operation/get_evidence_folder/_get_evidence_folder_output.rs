@@ -52,6 +52,12 @@ impl GetEvidenceFolderOutputBuilder {
         self.evidence_folder = input;
         self
     }
+    /// <p> The folder that the evidence is stored in. </p>
+    pub fn get_evidence_folder(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssessmentEvidenceFolder> {
+        &self.evidence_folder
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

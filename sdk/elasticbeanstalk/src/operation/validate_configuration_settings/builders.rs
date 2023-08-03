@@ -37,6 +37,10 @@ impl ValidateConfigurationSettingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ValidateConfigurationSettings as a reference.
+    pub fn as_input(&self) -> &crate::operation::validate_configuration_settings::builders::ValidateConfigurationSettingsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl ValidateConfigurationSettingsFluentBuilder {
         self.inner = self.inner.set_application_name(input);
         self
     }
+    /// <p>The name of the application that the configuration template or environment belongs to.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_name()
+    }
     /// <p>The name of the configuration template to validate the settings against.</p>
     /// <p>Condition: You cannot specify both this and an environment name.</p>
     pub fn template_name(
@@ -150,6 +158,11 @@ impl ValidateConfigurationSettingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
+    }
+    /// <p>The name of the configuration template to validate the settings against.</p>
+    /// <p>Condition: You cannot specify both this and an environment name.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_name()
     }
     /// <p>The name of the environment to validate the settings against.</p>
     /// <p>Condition: You cannot specify both this and a configuration template name.</p>
@@ -169,6 +182,11 @@ impl ValidateConfigurationSettingsFluentBuilder {
         self.inner = self.inner.set_environment_name(input);
         self
     }
+    /// <p>The name of the environment to validate the settings against.</p>
+    /// <p>Condition: You cannot specify both this and a configuration template name.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_name()
+    }
     /// Appends an item to `OptionSettings`.
     ///
     /// To override the contents of this collection use [`set_option_settings`](Self::set_option_settings).
@@ -185,5 +203,11 @@ impl ValidateConfigurationSettingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_option_settings(input);
         self
+    }
+    /// <p>A list of the options and desired values to evaluate.</p>
+    pub fn get_option_settings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>> {
+        self.inner.get_option_settings()
     }
 }

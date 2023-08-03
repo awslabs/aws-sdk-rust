@@ -58,6 +58,10 @@ impl GetRecommendationReportDetailsOutputBuilder {
         self.id = input;
         self
     }
+    /// <p> The ID of the recommendation report generation task. See the response of <code>StartRecommendationReportGeneration</code>. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p> Detailed information about the recommendation report. </p>
     pub fn recommendation_report_details(
         mut self,
@@ -73,6 +77,12 @@ impl GetRecommendationReportDetailsOutputBuilder {
     ) -> Self {
         self.recommendation_report_details = input;
         self
+    }
+    /// <p> Detailed information about the recommendation report. </p>
+    pub fn get_recommendation_report_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecommendationReportDetails> {
+        &self.recommendation_report_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -36,6 +36,12 @@ impl CreateScheduleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSchedule as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_schedule::builders::CreateScheduleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +131,10 @@ impl CreateScheduleFluentBuilder {
         self.inner = self.inner.set_job_names(input);
         self
     }
+    /// <p>The name or names of one or more jobs to be run.</p>
+    pub fn get_job_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_job_names()
+    }
     /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
     pub fn cron_expression(
         mut self,
@@ -140,6 +150,10 @@ impl CreateScheduleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cron_expression(input);
         self
+    }
+    /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
+    pub fn get_cron_expression(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cron_expression()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -164,6 +178,14 @@ impl CreateScheduleFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Metadata tags to apply to this schedule.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>A unique name for the schedule. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -173,5 +195,9 @@ impl CreateScheduleFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>A unique name for the schedule. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
 }

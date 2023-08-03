@@ -104,6 +104,10 @@ impl MetricDefinitionBuilder {
         self.metric_definition_id = input;
         self
     }
+    /// <p>The ID of this metric definition.</p>
+    pub fn get_metric_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_definition_id
+    }
     /// <p>The name of the metric that is defined in this structure.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -113,6 +117,10 @@ impl MetricDefinitionBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the metric that is defined in this structure.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The field within the event object that the metric value is sourced from.</p>
     pub fn value_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -124,6 +132,10 @@ impl MetricDefinitionBuilder {
         self.value_key = input;
         self
     }
+    /// <p>The field within the event object that the metric value is sourced from.</p>
+    pub fn get_value_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value_key
+    }
     /// <p>Use this field only if you are sending this metric to CloudWatch. It defines the CloudWatch metric unit that this metric is measured in. </p>
     pub fn unit_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.unit_label = ::std::option::Option::Some(input.into());
@@ -133,6 +145,10 @@ impl MetricDefinitionBuilder {
     pub fn set_unit_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unit_label = input;
         self
+    }
+    /// <p>Use this field only if you are sending this metric to CloudWatch. It defines the CloudWatch metric unit that this metric is measured in. </p>
+    pub fn get_unit_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.unit_label
     }
     /// Adds a key-value pair to `dimension_keys`.
     ///
@@ -159,6 +175,14 @@ impl MetricDefinitionBuilder {
         self.dimension_keys = input;
         self
     }
+    /// <p>This field is a map of field paths to dimension names. It defines the dimensions to associate with this metric in CloudWatch The value of this field is used only if the metric destination is <code>CloudWatch</code>. If the metric destination is <code>Evidently</code>, the value of <code>DimensionKeys</code> is ignored.</p>
+    pub fn get_dimension_keys(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.dimension_keys
+    }
     /// <p>The pattern that defines the metric. RUM checks events that happen in a user's session against the pattern, and events that match the pattern are sent to the metric destination.</p>
     /// <p>If the metrics destination is <code>CloudWatch</code> and the event also matches a value in <code>DimensionKeys</code>, then the metric is published with the specified dimensions. </p>
     pub fn event_pattern(
@@ -177,6 +201,11 @@ impl MetricDefinitionBuilder {
         self.event_pattern = input;
         self
     }
+    /// <p>The pattern that defines the metric. RUM checks events that happen in a user's session against the pattern, and events that match the pattern are sent to the metric destination.</p>
+    /// <p>If the metrics destination is <code>CloudWatch</code> and the event also matches a value in <code>DimensionKeys</code>, then the metric is published with the specified dimensions. </p>
+    pub fn get_event_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_pattern
+    }
     /// <p>If this metric definition is for a custom metric instead of an extended metric, this field displays the metric namespace that the custom metric is published to.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
@@ -186,6 +215,10 @@ impl MetricDefinitionBuilder {
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
         self
+    }
+    /// <p>If this metric definition is for a custom metric instead of an extended metric, this field displays the metric namespace that the custom metric is published to.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
     }
     /// Consumes the builder and constructs a [`MetricDefinition`](crate::types::MetricDefinition).
     pub fn build(self) -> crate::types::MetricDefinition {

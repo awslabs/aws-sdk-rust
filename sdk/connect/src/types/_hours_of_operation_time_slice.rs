@@ -48,6 +48,10 @@ impl HoursOfOperationTimeSliceBuilder {
         self.hours = input;
         self
     }
+    /// <p>The hours.</p>
+    pub fn get_hours(&self) -> &::std::option::Option<i32> {
+        &self.hours
+    }
     /// <p>The minutes.</p>
     pub fn minutes(mut self, input: i32) -> Self {
         self.minutes = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl HoursOfOperationTimeSliceBuilder {
     pub fn set_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.minutes = input;
         self
+    }
+    /// <p>The minutes.</p>
+    pub fn get_minutes(&self) -> &::std::option::Option<i32> {
+        &self.minutes
     }
     /// Consumes the builder and constructs a [`HoursOfOperationTimeSlice`](crate::types::HoursOfOperationTimeSlice).
     pub fn build(self) -> crate::types::HoursOfOperationTimeSlice {

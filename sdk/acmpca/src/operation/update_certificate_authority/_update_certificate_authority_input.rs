@@ -84,6 +84,11 @@ impl UpdateCertificateAuthorityInputBuilder {
         self.certificate_authority_arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to be revoked. This must be of the form:</p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
+    pub fn get_certificate_authority_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_authority_arn
+    }
     /// <p>Contains information to enable Online Certificate Status Protocol (OCSP) support, to enable a certificate revocation list (CRL), to enable both, or to enable neither. If this parameter is not supplied, existing capibilites remain unchanged. For more information, see the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a> and <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a> types.</p> <note>
     /// <p>The following requirements apply to revocation configurations.</p>
     /// <ul>
@@ -116,6 +121,20 @@ impl UpdateCertificateAuthorityInputBuilder {
         self.revocation_configuration = input;
         self
     }
+    /// <p>Contains information to enable Online Certificate Status Protocol (OCSP) support, to enable a certificate revocation list (CRL), to enable both, or to enable neither. If this parameter is not supplied, existing capibilites remain unchanged. For more information, see the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a> and <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a> types.</p> <note>
+    /// <p>The following requirements apply to revocation configurations.</p>
+    /// <ul>
+    /// <li> <p>A configuration disabling CRLs or OCSP must contain only the <code>Enabled=False</code> parameter, and will fail if other parameters such as <code>CustomCname</code> or <code>ExpirationInDays</code> are included.</p> </li>
+    /// <li> <p>In a CRL configuration, the <code>S3BucketName</code> parameter must conform to <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">Amazon S3 bucket naming rules</a>.</p> </li>
+    /// <li> <p>A configuration containing a custom Canonical Name (CNAME) parameter for CRLs or OCSP must conform to <a href="https://www.ietf.org/rfc/rfc2396.txt">RFC2396</a> restrictions on the use of special characters in a CNAME. </p> </li>
+    /// <li> <p>In a CRL or OCSP configuration, the value of a CNAME parameter must not include a protocol prefix such as "http://" or "https://".</p> </li>
+    /// </ul>
+    /// </note>
+    pub fn get_revocation_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::RevocationConfiguration> {
+        &self.revocation_configuration
+    }
     /// <p>Status of your private CA.</p>
     pub fn status(mut self, input: crate::types::CertificateAuthorityStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -128,6 +147,10 @@ impl UpdateCertificateAuthorityInputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Status of your private CA.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CertificateAuthorityStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`UpdateCertificateAuthorityInput`](crate::operation::update_certificate_authority::UpdateCertificateAuthorityInput).
     pub fn build(

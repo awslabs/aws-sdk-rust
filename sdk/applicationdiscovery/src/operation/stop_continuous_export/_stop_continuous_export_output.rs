@@ -58,6 +58,10 @@ impl StopContinuousExportOutputBuilder {
         self.start_time = input;
         self
     }
+    /// <p>Timestamp that represents when this continuous export started collecting data.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>Timestamp that represents when this continuous export was stopped.</p>
     pub fn stop_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.stop_time = ::std::option::Option::Some(input);
@@ -70,6 +74,10 @@ impl StopContinuousExportOutputBuilder {
     ) -> Self {
         self.stop_time = input;
         self
+    }
+    /// <p>Timestamp that represents when this continuous export was stopped.</p>
+    pub fn get_stop_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.stop_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

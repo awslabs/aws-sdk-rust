@@ -40,6 +40,10 @@ impl DescribeAgentInputBuilder {
         self.agent_arn = input;
         self
     }
+    /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent to describe.</p>
+    pub fn get_agent_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_arn
+    }
     /// Consumes the builder and constructs a [`DescribeAgentInput`](crate::operation::describe_agent::DescribeAgentInput).
     pub fn build(
         self,

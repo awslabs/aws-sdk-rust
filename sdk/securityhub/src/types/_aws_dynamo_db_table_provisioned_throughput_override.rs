@@ -41,6 +41,10 @@ impl AwsDynamoDbTableProvisionedThroughputOverrideBuilder {
         self.read_capacity_units = input;
         self
     }
+    /// <p>The read capacity units for the replica.</p>
+    pub fn get_read_capacity_units(&self) -> &::std::option::Option<i32> {
+        &self.read_capacity_units
+    }
     /// Consumes the builder and constructs a [`AwsDynamoDbTableProvisionedThroughputOverride`](crate::types::AwsDynamoDbTableProvisionedThroughputOverride).
     pub fn build(self) -> crate::types::AwsDynamoDbTableProvisionedThroughputOverride {
         crate::types::AwsDynamoDbTableProvisionedThroughputOverride {

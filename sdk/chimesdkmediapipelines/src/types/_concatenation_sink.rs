@@ -55,6 +55,10 @@ impl ConcatenationSinkBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of data sink in the configuration object.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ConcatenationSinkType> {
+        &self.r#type
+    }
     /// <p>The configuration settings for an Amazon S3 bucket sink.</p>
     pub fn s3_bucket_sink_configuration(
         mut self,
@@ -70,6 +74,12 @@ impl ConcatenationSinkBuilder {
     ) -> Self {
         self.s3_bucket_sink_configuration = input;
         self
+    }
+    /// <p>The configuration settings for an Amazon S3 bucket sink.</p>
+    pub fn get_s3_bucket_sink_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3BucketSinkConfiguration> {
+        &self.s3_bucket_sink_configuration
     }
     /// Consumes the builder and constructs a [`ConcatenationSink`](crate::types::ConcatenationSink).
     pub fn build(self) -> crate::types::ConcatenationSink {

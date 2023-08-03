@@ -48,6 +48,10 @@ impl CreateTestGridUrlInputBuilder {
         self.project_arn = input;
         self
     }
+    /// <p>ARN (from <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>) to associate with the short-term URL. </p>
+    pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_arn
+    }
     /// <p>Lifetime, in seconds, of the URL.</p>
     pub fn expires_in_seconds(mut self, input: i32) -> Self {
         self.expires_in_seconds = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl CreateTestGridUrlInputBuilder {
     pub fn set_expires_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.expires_in_seconds = input;
         self
+    }
+    /// <p>Lifetime, in seconds, of the URL.</p>
+    pub fn get_expires_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.expires_in_seconds
     }
     /// Consumes the builder and constructs a [`CreateTestGridUrlInput`](crate::operation::create_test_grid_url::CreateTestGridUrlInput).
     pub fn build(

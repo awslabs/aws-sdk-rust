@@ -53,6 +53,12 @@ impl AwsJobAbortConfigBuilder {
         self.abort_criteria_list = input;
         self
     }
+    /// <p>The list of criteria that determine when and how to abort the job.</p>
+    pub fn get_abort_criteria_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsJobAbortCriteria>> {
+        &self.abort_criteria_list
+    }
     /// Consumes the builder and constructs a [`AwsJobAbortConfig`](crate::types::AwsJobAbortConfig).
     pub fn build(self) -> crate::types::AwsJobAbortConfig {
         crate::types::AwsJobAbortConfig {

@@ -61,6 +61,12 @@ impl PivotTableFieldCollapseStateOptionBuilder {
         self.target = input;
         self
     }
+    /// <p>A tagged-union object that sets the collapse state.</p>
+    pub fn get_target(
+        &self,
+    ) -> &::std::option::Option<crate::types::PivotTableFieldCollapseStateTarget> {
+        &self.target
+    }
     /// <p>The state of the field target of a pivot table. Choose one of the following options:</p>
     /// <ul>
     /// <li> <p> <code>COLLAPSED</code> </p> </li>
@@ -81,6 +87,14 @@ impl PivotTableFieldCollapseStateOptionBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the field target of a pivot table. Choose one of the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>COLLAPSED</code> </p> </li>
+    /// <li> <p> <code>EXPANDED</code> </p> </li>
+    /// </ul>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::PivotTableFieldCollapseState> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`PivotTableFieldCollapseStateOption`](crate::types::PivotTableFieldCollapseStateOption).
     pub fn build(self) -> crate::types::PivotTableFieldCollapseStateOption {

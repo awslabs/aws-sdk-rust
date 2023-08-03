@@ -77,6 +77,10 @@ impl StatefulRuleGroupBuilder {
         self.rule_group_name = input;
         self
     }
+    /// <p>The name of the rule group.</p>
+    pub fn get_rule_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_group_name
+    }
     /// <p>The resource ID of the rule group.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -86,6 +90,10 @@ impl StatefulRuleGroupBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The resource ID of the rule group.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>An integer setting that indicates the order in which to run the stateful rule groups in a single Network Firewall firewall policy. This setting only applies to firewall policies that specify the <code>STRICT_ORDER</code> rule order in the stateful engine options settings.</p>
     /// <p> Network Firewall evalutes each stateful rule group against a packet starting with the group that has the lowest priority setting. You must ensure that the priority settings are unique within each policy. For information about </p>
@@ -100,6 +108,12 @@ impl StatefulRuleGroupBuilder {
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
+    }
+    /// <p>An integer setting that indicates the order in which to run the stateful rule groups in a single Network Firewall firewall policy. This setting only applies to firewall policies that specify the <code>STRICT_ORDER</code> rule order in the stateful engine options settings.</p>
+    /// <p> Network Firewall evalutes each stateful rule group against a packet starting with the group that has the lowest priority setting. You must ensure that the priority settings are unique within each policy. For information about </p>
+    /// <p> You can change the priority settings of your rule groups at any time. To make it easier to insert rule groups later, number them so there's a wide range in between, for example use 100, 200, and so on. </p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
     }
     /// <p>The action that allows the policy owner to override the behavior of the rule group within a policy.</p>
     pub fn r#override(
@@ -116,6 +130,12 @@ impl StatefulRuleGroupBuilder {
     ) -> Self {
         self.r#override = input;
         self
+    }
+    /// <p>The action that allows the policy owner to override the behavior of the rule group within a policy.</p>
+    pub fn get_override(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkFirewallStatefulRuleGroupOverride> {
+        &self.r#override
     }
     /// Consumes the builder and constructs a [`StatefulRuleGroup`](crate::types::StatefulRuleGroup).
     pub fn build(self) -> crate::types::StatefulRuleGroup {

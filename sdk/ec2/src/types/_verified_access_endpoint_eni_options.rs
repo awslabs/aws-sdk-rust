@@ -62,6 +62,10 @@ impl VerifiedAccessEndpointEniOptionsBuilder {
         self.network_interface_id = input;
         self
     }
+    /// <p>The ID of the network interface.</p>
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_interface_id
+    }
     /// <p>The IP protocol.</p>
     pub fn protocol(mut self, input: crate::types::VerifiedAccessEndpointProtocol) -> Self {
         self.protocol = ::std::option::Option::Some(input);
@@ -75,6 +79,12 @@ impl VerifiedAccessEndpointEniOptionsBuilder {
         self.protocol = input;
         self
     }
+    /// <p>The IP protocol.</p>
+    pub fn get_protocol(
+        &self,
+    ) -> &::std::option::Option<crate::types::VerifiedAccessEndpointProtocol> {
+        &self.protocol
+    }
     /// <p>The IP port number.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -84,6 +94,10 @@ impl VerifiedAccessEndpointEniOptionsBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
+    }
+    /// <p>The IP port number.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// Consumes the builder and constructs a [`VerifiedAccessEndpointEniOptions`](crate::types::VerifiedAccessEndpointEniOptions).
     pub fn build(self) -> crate::types::VerifiedAccessEndpointEniOptions {

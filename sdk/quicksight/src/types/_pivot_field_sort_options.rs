@@ -48,6 +48,10 @@ impl PivotFieldSortOptionsBuilder {
         self.field_id = input;
         self
     }
+    /// <p>The field ID for the field sort options.</p>
+    pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_id
+    }
     /// <p>The sort by field for the field sort options.</p>
     pub fn sort_by(mut self, input: crate::types::PivotTableSortBy) -> Self {
         self.sort_by = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl PivotFieldSortOptionsBuilder {
     ) -> Self {
         self.sort_by = input;
         self
+    }
+    /// <p>The sort by field for the field sort options.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::PivotTableSortBy> {
+        &self.sort_by
     }
     /// Consumes the builder and constructs a [`PivotFieldSortOptions`](crate::types::PivotFieldSortOptions).
     pub fn build(self) -> crate::types::PivotFieldSortOptions {

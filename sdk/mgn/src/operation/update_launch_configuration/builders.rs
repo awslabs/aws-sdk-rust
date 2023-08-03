@@ -36,6 +36,10 @@ impl UpdateLaunchConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateLaunchConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_launch_configuration::builders::UpdateLaunchConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl UpdateLaunchConfigurationFluentBuilder {
         self.inner = self.inner.set_source_server_id(input);
         self
     }
+    /// <p>Update Launch configuration by Source Server ID request.</p>
+    pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_server_id()
+    }
     /// <p>Update Launch configuration name request.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -141,6 +149,10 @@ impl UpdateLaunchConfigurationFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>Update Launch configuration name request.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>Update Launch configuration launch disposition request.</p>
     pub fn launch_disposition(mut self, input: crate::types::LaunchDisposition) -> Self {
@@ -154,6 +166,12 @@ impl UpdateLaunchConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_launch_disposition(input);
         self
+    }
+    /// <p>Update Launch configuration launch disposition request.</p>
+    pub fn get_launch_disposition(
+        &self,
+    ) -> &::std::option::Option<crate::types::LaunchDisposition> {
+        self.inner.get_launch_disposition()
     }
     /// <p>Update Launch configuration Target instance right sizing request.</p>
     pub fn target_instance_type_right_sizing_method(
@@ -173,6 +191,12 @@ impl UpdateLaunchConfigurationFluentBuilder {
             .set_target_instance_type_right_sizing_method(input);
         self
     }
+    /// <p>Update Launch configuration Target instance right sizing request.</p>
+    pub fn get_target_instance_type_right_sizing_method(
+        &self,
+    ) -> &::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod> {
+        self.inner.get_target_instance_type_right_sizing_method()
+    }
     /// <p>Update Launch configuration copy Private IP request.</p>
     pub fn copy_private_ip(mut self, input: bool) -> Self {
         self.inner = self.inner.copy_private_ip(input);
@@ -182,6 +206,10 @@ impl UpdateLaunchConfigurationFluentBuilder {
     pub fn set_copy_private_ip(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_copy_private_ip(input);
         self
+    }
+    /// <p>Update Launch configuration copy Private IP request.</p>
+    pub fn get_copy_private_ip(&self) -> &::std::option::Option<bool> {
+        self.inner.get_copy_private_ip()
     }
     /// <p>Update Launch configuration copy Tags request.</p>
     pub fn copy_tags(mut self, input: bool) -> Self {
@@ -193,6 +221,10 @@ impl UpdateLaunchConfigurationFluentBuilder {
         self.inner = self.inner.set_copy_tags(input);
         self
     }
+    /// <p>Update Launch configuration copy Tags request.</p>
+    pub fn get_copy_tags(&self) -> &::std::option::Option<bool> {
+        self.inner.get_copy_tags()
+    }
     /// <p>Update Launch configuration licensing request.</p>
     pub fn licensing(mut self, input: crate::types::Licensing) -> Self {
         self.inner = self.inner.licensing(input);
@@ -203,6 +235,10 @@ impl UpdateLaunchConfigurationFluentBuilder {
         self.inner = self.inner.set_licensing(input);
         self
     }
+    /// <p>Update Launch configuration licensing request.</p>
+    pub fn get_licensing(&self) -> &::std::option::Option<crate::types::Licensing> {
+        self.inner.get_licensing()
+    }
     /// <p>Update Launch configuration boot mode request.</p>
     pub fn boot_mode(mut self, input: crate::types::BootMode) -> Self {
         self.inner = self.inner.boot_mode(input);
@@ -212,6 +248,10 @@ impl UpdateLaunchConfigurationFluentBuilder {
     pub fn set_boot_mode(mut self, input: ::std::option::Option<crate::types::BootMode>) -> Self {
         self.inner = self.inner.set_boot_mode(input);
         self
+    }
+    /// <p>Update Launch configuration boot mode request.</p>
+    pub fn get_boot_mode(&self) -> &::std::option::Option<crate::types::BootMode> {
+        self.inner.get_boot_mode()
     }
     /// <p>Post Launch Actions to executed on the Test or Cutover instance.</p>
     pub fn post_launch_actions(mut self, input: crate::types::PostLaunchActions) -> Self {
@@ -226,6 +266,12 @@ impl UpdateLaunchConfigurationFluentBuilder {
         self.inner = self.inner.set_post_launch_actions(input);
         self
     }
+    /// <p>Post Launch Actions to executed on the Test or Cutover instance.</p>
+    pub fn get_post_launch_actions(
+        &self,
+    ) -> &::std::option::Option<crate::types::PostLaunchActions> {
+        self.inner.get_post_launch_actions()
+    }
     /// <p>Enable map auto tagging.</p>
     pub fn enable_map_auto_tagging(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_map_auto_tagging(input);
@@ -235,6 +281,10 @@ impl UpdateLaunchConfigurationFluentBuilder {
     pub fn set_enable_map_auto_tagging(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_map_auto_tagging(input);
         self
+    }
+    /// <p>Enable map auto tagging.</p>
+    pub fn get_enable_map_auto_tagging(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_map_auto_tagging()
     }
     /// <p>Launch configuration map auto tagging MPE ID.</p>
     pub fn map_auto_tagging_mpe_id(
@@ -252,6 +302,10 @@ impl UpdateLaunchConfigurationFluentBuilder {
         self.inner = self.inner.set_map_auto_tagging_mpe_id(input);
         self
     }
+    /// <p>Launch configuration map auto tagging MPE ID.</p>
+    pub fn get_map_auto_tagging_mpe_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_map_auto_tagging_mpe_id()
+    }
     /// <p>Update Launch configuration Account ID.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
@@ -261,5 +315,9 @@ impl UpdateLaunchConfigurationFluentBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
+    }
+    /// <p>Update Launch configuration Account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
     }
 }

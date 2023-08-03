@@ -134,6 +134,10 @@ impl BundleBuilder {
         self.price = input;
         self
     }
+    /// <p>The price in US dollars (e.g., <code>5.0</code>) of the bundle.</p>
+    pub fn get_price(&self) -> &::std::option::Option<f32> {
+        &self.price
+    }
     /// <p>The number of vCPUs included in the bundle (e.g., <code>2</code>).</p>
     pub fn cpu_count(mut self, input: i32) -> Self {
         self.cpu_count = ::std::option::Option::Some(input);
@@ -143,6 +147,10 @@ impl BundleBuilder {
     pub fn set_cpu_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.cpu_count = input;
         self
+    }
+    /// <p>The number of vCPUs included in the bundle (e.g., <code>2</code>).</p>
+    pub fn get_cpu_count(&self) -> &::std::option::Option<i32> {
+        &self.cpu_count
     }
     /// <p>The size of the SSD (e.g., <code>30</code>).</p>
     pub fn disk_size_in_gb(mut self, input: i32) -> Self {
@@ -154,6 +162,10 @@ impl BundleBuilder {
         self.disk_size_in_gb = input;
         self
     }
+    /// <p>The size of the SSD (e.g., <code>30</code>).</p>
+    pub fn get_disk_size_in_gb(&self) -> &::std::option::Option<i32> {
+        &self.disk_size_in_gb
+    }
     /// <p>The bundle ID (e.g., <code>micro_1_0</code>).</p>
     pub fn bundle_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bundle_id = ::std::option::Option::Some(input.into());
@@ -163,6 +175,10 @@ impl BundleBuilder {
     pub fn set_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bundle_id = input;
         self
+    }
+    /// <p>The bundle ID (e.g., <code>micro_1_0</code>).</p>
+    pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bundle_id
     }
     /// <p>The Amazon EC2 instance type (e.g., <code>t2.micro</code>).</p>
     pub fn instance_type(
@@ -180,6 +196,10 @@ impl BundleBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The Amazon EC2 instance type (e.g., <code>t2.micro</code>).</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
+    }
     /// <p>A Boolean value indicating whether the bundle is active.</p>
     pub fn is_active(mut self, input: bool) -> Self {
         self.is_active = ::std::option::Option::Some(input);
@@ -189,6 +209,10 @@ impl BundleBuilder {
     pub fn set_is_active(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_active = input;
         self
+    }
+    /// <p>A Boolean value indicating whether the bundle is active.</p>
+    pub fn get_is_active(&self) -> &::std::option::Option<bool> {
+        &self.is_active
     }
     /// <p>A friendly name for the bundle (e.g., <code>Micro</code>).</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -200,6 +224,10 @@ impl BundleBuilder {
         self.name = input;
         self
     }
+    /// <p>A friendly name for the bundle (e.g., <code>Micro</code>).</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A numeric value that represents the power of the bundle (e.g., <code>500</code>). You can use the bundle's power value in conjunction with a blueprint's minimum power value to determine whether the blueprint will run on the bundle. For example, you need a bundle with a power value of 500 or more to create an instance that uses a blueprint with a minimum power value of 500.</p>
     pub fn power(mut self, input: i32) -> Self {
         self.power = ::std::option::Option::Some(input);
@@ -209,6 +237,10 @@ impl BundleBuilder {
     pub fn set_power(mut self, input: ::std::option::Option<i32>) -> Self {
         self.power = input;
         self
+    }
+    /// <p>A numeric value that represents the power of the bundle (e.g., <code>500</code>). You can use the bundle's power value in conjunction with a blueprint's minimum power value to determine whether the blueprint will run on the bundle. For example, you need a bundle with a power value of 500 or more to create an instance that uses a blueprint with a minimum power value of 500.</p>
+    pub fn get_power(&self) -> &::std::option::Option<i32> {
+        &self.power
     }
     /// <p>The amount of RAM in GB (e.g., <code>2.0</code>).</p>
     pub fn ram_size_in_gb(mut self, input: f32) -> Self {
@@ -220,6 +252,10 @@ impl BundleBuilder {
         self.ram_size_in_gb = input;
         self
     }
+    /// <p>The amount of RAM in GB (e.g., <code>2.0</code>).</p>
+    pub fn get_ram_size_in_gb(&self) -> &::std::option::Option<f32> {
+        &self.ram_size_in_gb
+    }
     /// <p>The data transfer rate per month in GB (e.g., <code>2000</code>).</p>
     pub fn transfer_per_month_in_gb(mut self, input: i32) -> Self {
         self.transfer_per_month_in_gb = ::std::option::Option::Some(input);
@@ -229,6 +265,10 @@ impl BundleBuilder {
     pub fn set_transfer_per_month_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
         self.transfer_per_month_in_gb = input;
         self
+    }
+    /// <p>The data transfer rate per month in GB (e.g., <code>2000</code>).</p>
+    pub fn get_transfer_per_month_in_gb(&self) -> &::std::option::Option<i32> {
+        &self.transfer_per_month_in_gb
     }
     /// Appends an item to `supported_platforms`.
     ///
@@ -248,6 +288,12 @@ impl BundleBuilder {
     ) -> Self {
         self.supported_platforms = input;
         self
+    }
+    /// <p>The operating system platform (Linux/Unix-based or Windows Server-based) that the bundle supports. You can only launch a <code>WINDOWS</code> bundle on a blueprint that supports the <code>WINDOWS</code> platform. <code>LINUX_UNIX</code> blueprints require a <code>LINUX_UNIX</code> bundle.</p>
+    pub fn get_supported_platforms(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstancePlatform>> {
+        &self.supported_platforms
     }
     /// Appends an item to `supported_app_categories`.
     ///
@@ -271,6 +317,14 @@ impl BundleBuilder {
     ) -> Self {
         self.supported_app_categories = input;
         self
+    }
+    /// <p>Virtual computer blueprints that are supported by a Lightsail for Research bundle.</p> <important>
+    /// <p>This parameter only applies to Lightsail for Research resources.</p>
+    /// </important>
+    pub fn get_supported_app_categories(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppCategory>> {
+        &self.supported_app_categories
     }
     /// Consumes the builder and constructs a [`Bundle`](crate::types::Bundle).
     pub fn build(self) -> crate::types::Bundle {

@@ -56,6 +56,10 @@ impl DescribeLayersOutputBuilder {
         self.layers = input;
         self
     }
+    /// <p>An array of <code>Layer</code> objects that describe the layers.</p>
+    pub fn get_layers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Layer>> {
+        &self.layers
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

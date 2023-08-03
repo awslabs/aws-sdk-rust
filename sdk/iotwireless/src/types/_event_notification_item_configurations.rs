@@ -89,6 +89,12 @@ impl EventNotificationItemConfigurationsBuilder {
         self.device_registration_state = input;
         self
     }
+    /// <p>Device registration state event configuration for an event configuration item.</p>
+    pub fn get_device_registration_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeviceRegistrationStateEventConfiguration> {
+        &self.device_registration_state
+    }
     /// <p>Proximity event configuration for an event configuration item.</p>
     pub fn proximity(mut self, input: crate::types::ProximityEventConfiguration) -> Self {
         self.proximity = ::std::option::Option::Some(input);
@@ -102,6 +108,12 @@ impl EventNotificationItemConfigurationsBuilder {
         self.proximity = input;
         self
     }
+    /// <p>Proximity event configuration for an event configuration item.</p>
+    pub fn get_proximity(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProximityEventConfiguration> {
+        &self.proximity
+    }
     /// <p>Join event configuration for an event configuration item.</p>
     pub fn join(mut self, input: crate::types::JoinEventConfiguration) -> Self {
         self.join = ::std::option::Option::Some(input);
@@ -114,6 +126,10 @@ impl EventNotificationItemConfigurationsBuilder {
     ) -> Self {
         self.join = input;
         self
+    }
+    /// <p>Join event configuration for an event configuration item.</p>
+    pub fn get_join(&self) -> &::std::option::Option<crate::types::JoinEventConfiguration> {
+        &self.join
     }
     /// <p>Connection status event configuration for an event configuration item.</p>
     pub fn connection_status(
@@ -131,6 +147,12 @@ impl EventNotificationItemConfigurationsBuilder {
         self.connection_status = input;
         self
     }
+    /// <p>Connection status event configuration for an event configuration item.</p>
+    pub fn get_connection_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConnectionStatusEventConfiguration> {
+        &self.connection_status
+    }
     /// <p>Message delivery status event configuration for an event configuration item.</p>
     pub fn message_delivery_status(
         mut self,
@@ -146,6 +168,12 @@ impl EventNotificationItemConfigurationsBuilder {
     ) -> Self {
         self.message_delivery_status = input;
         self
+    }
+    /// <p>Message delivery status event configuration for an event configuration item.</p>
+    pub fn get_message_delivery_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::MessageDeliveryStatusEventConfiguration> {
+        &self.message_delivery_status
     }
     /// Consumes the builder and constructs a [`EventNotificationItemConfigurations`](crate::types::EventNotificationItemConfigurations).
     pub fn build(self) -> crate::types::EventNotificationItemConfigurations {

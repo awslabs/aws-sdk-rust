@@ -68,6 +68,15 @@ impl ModelInfrastructureConfigBuilder {
         self.infrastructure_type = input;
         self
     }
+    /// <p>The inference option to which to deploy your model. Possible values are the following:</p>
+    /// <ul>
+    /// <li> <p> <code>RealTime</code>: Deploy to real-time inference.</p> </li>
+    /// </ul>
+    pub fn get_infrastructure_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ModelInfrastructureType> {
+        &self.infrastructure_type
+    }
     /// <p>The infrastructure configuration for deploying the model to real-time inference.</p>
     pub fn real_time_inference_config(
         mut self,
@@ -83,6 +92,12 @@ impl ModelInfrastructureConfigBuilder {
     ) -> Self {
         self.real_time_inference_config = input;
         self
+    }
+    /// <p>The infrastructure configuration for deploying the model to real-time inference.</p>
+    pub fn get_real_time_inference_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::RealTimeInferenceConfig> {
+        &self.real_time_inference_config
     }
     /// Consumes the builder and constructs a [`ModelInfrastructureConfig`](crate::types::ModelInfrastructureConfig).
     pub fn build(self) -> crate::types::ModelInfrastructureConfig {

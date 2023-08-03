@@ -47,6 +47,11 @@ impl TemplateConfigurationBuilder {
         self.template = input;
         self
     }
+    /// <p>The template schema used for the data source, where templates schemas are supported.</p>
+    /// <p>See <a href="https://docs.aws.amazon.com/kendra/latest/dg/ds-schemas.html">Data source template schemas</a>.</p>
+    pub fn get_template(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
+        &self.template
+    }
     /// Consumes the builder and constructs a [`TemplateConfiguration`](crate::types::TemplateConfiguration).
     pub fn build(self) -> crate::types::TemplateConfiguration {
         crate::types::TemplateConfiguration {

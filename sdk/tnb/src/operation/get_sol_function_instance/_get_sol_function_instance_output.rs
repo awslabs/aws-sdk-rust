@@ -167,6 +167,10 @@ impl GetSolFunctionInstanceOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>Network function instance ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>Network function instance ARN.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -176,6 +180,10 @@ impl GetSolFunctionInstanceOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>Network function instance ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>Network instance ID.</p>
     pub fn ns_instance_id(
@@ -193,6 +201,10 @@ impl GetSolFunctionInstanceOutputBuilder {
         self.ns_instance_id = input;
         self
     }
+    /// <p>Network instance ID.</p>
+    pub fn get_ns_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ns_instance_id
+    }
     /// <p>Function package ID.</p>
     pub fn vnf_pkg_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vnf_pkg_id = ::std::option::Option::Some(input.into());
@@ -202,6 +214,10 @@ impl GetSolFunctionInstanceOutputBuilder {
     pub fn set_vnf_pkg_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vnf_pkg_id = input;
         self
+    }
+    /// <p>Function package ID.</p>
+    pub fn get_vnf_pkg_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vnf_pkg_id
     }
     /// <p>Function package descriptor ID.</p>
     pub fn vnfd_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -213,6 +229,10 @@ impl GetSolFunctionInstanceOutputBuilder {
         self.vnfd_id = input;
         self
     }
+    /// <p>Function package descriptor ID.</p>
+    pub fn get_vnfd_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vnfd_id
+    }
     /// <p>Network function provider.</p>
     pub fn vnf_provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vnf_provider = ::std::option::Option::Some(input.into());
@@ -222,6 +242,10 @@ impl GetSolFunctionInstanceOutputBuilder {
     pub fn set_vnf_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vnf_provider = input;
         self
+    }
+    /// <p>Network function provider.</p>
+    pub fn get_vnf_provider(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vnf_provider
     }
     /// <p>Network function product name.</p>
     pub fn vnf_product_name(
@@ -239,6 +263,10 @@ impl GetSolFunctionInstanceOutputBuilder {
         self.vnf_product_name = input;
         self
     }
+    /// <p>Network function product name.</p>
+    pub fn get_vnf_product_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vnf_product_name
+    }
     /// <p>Function package descriptor version.</p>
     pub fn vnfd_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vnfd_version = ::std::option::Option::Some(input.into());
@@ -248,6 +276,10 @@ impl GetSolFunctionInstanceOutputBuilder {
     pub fn set_vnfd_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vnfd_version = input;
         self
+    }
+    /// <p>Function package descriptor version.</p>
+    pub fn get_vnfd_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vnfd_version
     }
     /// <p>Network function instantiation state.</p>
     pub fn instantiation_state(mut self, input: crate::types::VnfInstantiationState) -> Self {
@@ -261,6 +293,12 @@ impl GetSolFunctionInstanceOutputBuilder {
     ) -> Self {
         self.instantiation_state = input;
         self
+    }
+    /// <p>Network function instantiation state.</p>
+    pub fn get_instantiation_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::VnfInstantiationState> {
+        &self.instantiation_state
     }
     /// <p>Information about the network function.</p>
     /// <p>A network function instance is a function in a function package .</p>
@@ -277,6 +315,11 @@ impl GetSolFunctionInstanceOutputBuilder {
         self.instantiated_vnf_info = input;
         self
     }
+    /// <p>Information about the network function.</p>
+    /// <p>A network function instance is a function in a function package .</p>
+    pub fn get_instantiated_vnf_info(&self) -> &::std::option::Option<crate::types::GetSolVnfInfo> {
+        &self.instantiated_vnf_info
+    }
     /// <p>The metadata of a network function instance.</p>
     /// <p>A network function instance is a function in a function package .</p>
     pub fn metadata(mut self, input: crate::types::GetSolFunctionInstanceMetadata) -> Self {
@@ -291,6 +334,13 @@ impl GetSolFunctionInstanceOutputBuilder {
     ) -> Self {
         self.metadata = input;
         self
+    }
+    /// <p>The metadata of a network function instance.</p>
+    /// <p>A network function instance is a function in a function package .</p>
+    pub fn get_metadata(
+        &self,
+    ) -> &::std::option::Option<crate::types::GetSolFunctionInstanceMetadata> {
+        &self.metadata
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -316,6 +366,14 @@ impl GetSolFunctionInstanceOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

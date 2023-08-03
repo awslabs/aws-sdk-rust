@@ -56,6 +56,10 @@ impl PutAutoScalingPolicyInputBuilder {
         self.cluster_id = input;
         self
     }
+    /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_id
+    }
     /// <p>Specifies the ID of the instance group to which the automatic scaling policy is applied.</p>
     pub fn instance_group_id(
         mut self,
@@ -72,6 +76,10 @@ impl PutAutoScalingPolicyInputBuilder {
         self.instance_group_id = input;
         self
     }
+    /// <p>Specifies the ID of the instance group to which the automatic scaling policy is applied.</p>
+    pub fn get_instance_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_group_id
+    }
     /// <p>Specifies the definition of the automatic scaling policy.</p>
     pub fn auto_scaling_policy(mut self, input: crate::types::AutoScalingPolicy) -> Self {
         self.auto_scaling_policy = ::std::option::Option::Some(input);
@@ -84,6 +92,12 @@ impl PutAutoScalingPolicyInputBuilder {
     ) -> Self {
         self.auto_scaling_policy = input;
         self
+    }
+    /// <p>Specifies the definition of the automatic scaling policy.</p>
+    pub fn get_auto_scaling_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoScalingPolicy> {
+        &self.auto_scaling_policy
     }
     /// Consumes the builder and constructs a [`PutAutoScalingPolicyInput`](crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyInput).
     pub fn build(

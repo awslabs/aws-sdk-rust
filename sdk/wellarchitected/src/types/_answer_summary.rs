@@ -120,6 +120,10 @@ impl AnswerSummaryBuilder {
         self.question_id = input;
         self
     }
+    /// <p>The ID of the question.</p>
+    pub fn get_question_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.question_id
+    }
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
     pub fn pillar_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -131,6 +135,11 @@ impl AnswerSummaryBuilder {
     pub fn set_pillar_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pillar_id = input;
         self
+    }
+    /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+    /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+    pub fn get_pillar_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pillar_id
     }
     /// <p>The title of the question.</p>
     pub fn question_title(
@@ -147,6 +156,10 @@ impl AnswerSummaryBuilder {
     ) -> Self {
         self.question_title = input;
         self
+    }
+    /// <p>The title of the question.</p>
+    pub fn get_question_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.question_title
     }
     /// Appends an item to `choices`.
     ///
@@ -166,6 +179,10 @@ impl AnswerSummaryBuilder {
     ) -> Self {
         self.choices = input;
         self
+    }
+    /// <p>List of choices available for a question.</p>
+    pub fn get_choices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Choice>> {
+        &self.choices
     }
     /// Appends an item to `selected_choices`.
     ///
@@ -191,6 +208,13 @@ impl AnswerSummaryBuilder {
         self.selected_choices = input;
         self
     }
+    /// <p>List of selected choice IDs in a question answer.</p>
+    /// <p>The values entered replace the previously selected choices.</p>
+    pub fn get_selected_choices(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.selected_choices
+    }
     /// Appends an item to `choice_answer_summaries`.
     ///
     /// To override the contents of this collection use [`set_choice_answer_summaries`](Self::set_choice_answer_summaries).
@@ -210,6 +234,12 @@ impl AnswerSummaryBuilder {
         self.choice_answer_summaries = input;
         self
     }
+    /// <p>A list of selected choices to a question in your workload.</p>
+    pub fn get_choice_answer_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChoiceAnswerSummary>> {
+        &self.choice_answer_summaries
+    }
     /// <p>Defines whether this question is applicable to a lens review.</p>
     pub fn is_applicable(mut self, input: bool) -> Self {
         self.is_applicable = ::std::option::Option::Some(input);
@@ -219,6 +249,10 @@ impl AnswerSummaryBuilder {
     pub fn set_is_applicable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_applicable = input;
         self
+    }
+    /// <p>Defines whether this question is applicable to a lens review.</p>
+    pub fn get_is_applicable(&self) -> &::std::option::Option<bool> {
+        &self.is_applicable
     }
     /// <p>The risk for a given workload, lens review, pillar, or question.</p>
     pub fn risk(mut self, input: crate::types::Risk) -> Self {
@@ -230,6 +264,10 @@ impl AnswerSummaryBuilder {
         self.risk = input;
         self
     }
+    /// <p>The risk for a given workload, lens review, pillar, or question.</p>
+    pub fn get_risk(&self) -> &::std::option::Option<crate::types::Risk> {
+        &self.risk
+    }
     /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
     pub fn reason(mut self, input: crate::types::AnswerReason) -> Self {
         self.reason = ::std::option::Option::Some(input);
@@ -239,6 +277,10 @@ impl AnswerSummaryBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<crate::types::AnswerReason>) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<crate::types::AnswerReason> {
+        &self.reason
     }
     /// <p>The type of the question.</p>
     pub fn question_type(mut self, input: crate::types::QuestionType) -> Self {
@@ -252,6 +294,10 @@ impl AnswerSummaryBuilder {
     ) -> Self {
         self.question_type = input;
         self
+    }
+    /// <p>The type of the question.</p>
+    pub fn get_question_type(&self) -> &::std::option::Option<crate::types::QuestionType> {
+        &self.question_type
     }
     /// Consumes the builder and constructs a [`AnswerSummary`](crate::types::AnswerSummary).
     pub fn build(self) -> crate::types::AnswerSummary {

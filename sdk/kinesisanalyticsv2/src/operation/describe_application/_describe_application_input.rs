@@ -54,6 +54,10 @@ impl DescribeApplicationInputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The name of the application.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>Displays verbose information about a Kinesis Data Analytics application, including the application's job plan.</p>
     pub fn include_additional_details(mut self, input: bool) -> Self {
         self.include_additional_details = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl DescribeApplicationInputBuilder {
     pub fn set_include_additional_details(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_additional_details = input;
         self
+    }
+    /// <p>Displays verbose information about a Kinesis Data Analytics application, including the application's job plan.</p>
+    pub fn get_include_additional_details(&self) -> &::std::option::Option<bool> {
+        &self.include_additional_details
     }
     /// Consumes the builder and constructs a [`DescribeApplicationInput`](crate::operation::describe_application::DescribeApplicationInput).
     pub fn build(

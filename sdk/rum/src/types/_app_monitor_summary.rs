@@ -72,6 +72,10 @@ impl AppMonitorSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of this app monitor.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The unique ID of this app monitor.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl AppMonitorSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique ID of this app monitor.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The date and time that the app monitor was created.</p>
     pub fn created(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl AppMonitorSummaryBuilder {
     pub fn set_created(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created = input;
         self
+    }
+    /// <p>The date and time that the app monitor was created.</p>
+    pub fn get_created(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created
     }
     /// <p>The date and time of the most recent changes to this app monitor's configuration.</p>
     pub fn last_modified(
@@ -108,6 +120,10 @@ impl AppMonitorSummaryBuilder {
         self.last_modified = input;
         self
     }
+    /// <p>The date and time of the most recent changes to this app monitor's configuration.</p>
+    pub fn get_last_modified(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified
+    }
     /// <p>The current state of this app monitor.</p>
     pub fn state(mut self, input: crate::types::StateEnum) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -117,6 +133,10 @@ impl AppMonitorSummaryBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::StateEnum>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The current state of this app monitor.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::StateEnum> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`AppMonitorSummary`](crate::types::AppMonitorSummary).
     pub fn build(self) -> crate::types::AppMonitorSummary {

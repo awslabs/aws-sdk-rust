@@ -50,6 +50,10 @@ impl CancelFlowExecutionsInputBuilder {
         self.flow_name = input;
         self
     }
+    /// <p>The name of a flow with active runs that you want to cancel.</p>
+    pub fn get_flow_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_name
+    }
     /// Appends an item to `execution_ids`.
     ///
     /// To override the contents of this collection use [`set_execution_ids`](Self::set_execution_ids).
@@ -73,6 +77,13 @@ impl CancelFlowExecutionsInputBuilder {
     ) -> Self {
         self.execution_ids = input;
         self
+    }
+    /// <p>The ID of each active run to cancel. These runs must belong to the flow you specify in your request.</p>
+    /// <p>If you omit this parameter, your request ends all active runs that belong to the flow.</p>
+    pub fn get_execution_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.execution_ids
     }
     /// Consumes the builder and constructs a [`CancelFlowExecutionsInput`](crate::operation::cancel_flow_executions::CancelFlowExecutionsInput).
     pub fn build(

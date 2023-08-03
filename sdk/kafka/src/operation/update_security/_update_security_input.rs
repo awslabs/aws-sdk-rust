@@ -68,6 +68,12 @@ impl UpdateSecurityInputBuilder {
         self.client_authentication = input;
         self
     }
+    /// <p>Includes all client authentication related information.</p>
+    pub fn get_client_authentication(
+        &self,
+    ) -> &::std::option::Option<crate::types::ClientAuthentication> {
+        &self.client_authentication
+    }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_arn = ::std::option::Option::Some(input.into());
@@ -77,6 +83,10 @@ impl UpdateSecurityInputBuilder {
     pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_arn
     }
     /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
     pub fn current_version(
@@ -94,6 +104,10 @@ impl UpdateSecurityInputBuilder {
         self.current_version = input;
         self
     }
+    /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
+    pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.current_version
+    }
     /// <p>Includes all encryption-related information.</p>
     pub fn encryption_info(mut self, input: crate::types::EncryptionInfo) -> Self {
         self.encryption_info = ::std::option::Option::Some(input);
@@ -106,6 +120,10 @@ impl UpdateSecurityInputBuilder {
     ) -> Self {
         self.encryption_info = input;
         self
+    }
+    /// <p>Includes all encryption-related information.</p>
+    pub fn get_encryption_info(&self) -> &::std::option::Option<crate::types::EncryptionInfo> {
+        &self.encryption_info
     }
     /// Consumes the builder and constructs a [`UpdateSecurityInput`](crate::operation::update_security::UpdateSecurityInput).
     pub fn build(

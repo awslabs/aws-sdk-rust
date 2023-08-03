@@ -51,6 +51,10 @@ impl RestoreTableFromBackupOutputBuilder {
         self.table_description = input;
         self
     }
+    /// <p>The description of the table created from an existing backup.</p>
+    pub fn get_table_description(&self) -> &::std::option::Option<crate::types::TableDescription> {
+        &self.table_description
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

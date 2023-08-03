@@ -81,6 +81,12 @@ impl ConformancePackEvaluationResultBuilder {
         self.compliance_type = input;
         self
     }
+    /// <p>The compliance type. The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
+    pub fn get_compliance_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConformancePackComplianceType> {
+        &self.compliance_type
+    }
     /// <p>Uniquely identifies an evaluation result.</p>
     pub fn evaluation_result_identifier(
         mut self,
@@ -97,6 +103,12 @@ impl ConformancePackEvaluationResultBuilder {
         self.evaluation_result_identifier = input;
         self
     }
+    /// <p>Uniquely identifies an evaluation result.</p>
+    pub fn get_evaluation_result_identifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::EvaluationResultIdentifier> {
+        &self.evaluation_result_identifier
+    }
     /// <p>The time when Config rule evaluated Amazon Web Services resource.</p>
     pub fn config_rule_invoked_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.config_rule_invoked_time = ::std::option::Option::Some(input);
@@ -109,6 +121,12 @@ impl ConformancePackEvaluationResultBuilder {
     ) -> Self {
         self.config_rule_invoked_time = input;
         self
+    }
+    /// <p>The time when Config rule evaluated Amazon Web Services resource.</p>
+    pub fn get_config_rule_invoked_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.config_rule_invoked_time
     }
     /// <p>The time when Config recorded the evaluation result. </p>
     pub fn result_recorded_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -123,6 +141,10 @@ impl ConformancePackEvaluationResultBuilder {
         self.result_recorded_time = input;
         self
     }
+    /// <p>The time when Config recorded the evaluation result. </p>
+    pub fn get_result_recorded_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.result_recorded_time
+    }
     /// <p>Supplementary information about how the evaluation determined the compliance. </p>
     pub fn annotation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.annotation = ::std::option::Option::Some(input.into());
@@ -132,6 +154,10 @@ impl ConformancePackEvaluationResultBuilder {
     pub fn set_annotation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.annotation = input;
         self
+    }
+    /// <p>Supplementary information about how the evaluation determined the compliance. </p>
+    pub fn get_annotation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.annotation
     }
     /// Consumes the builder and constructs a [`ConformancePackEvaluationResult`](crate::types::ConformancePackEvaluationResult).
     pub fn build(self) -> crate::types::ConformancePackEvaluationResult {

@@ -46,6 +46,12 @@ impl GetInfrastructureConfigurationInputBuilder {
         self.infrastructure_configuration_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to retrieve.</p>
+    pub fn get_infrastructure_configuration_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.infrastructure_configuration_arn
+    }
     /// Consumes the builder and constructs a [`GetInfrastructureConfigurationInput`](crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationInput).
     pub fn build(
         self,

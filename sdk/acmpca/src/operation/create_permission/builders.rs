@@ -43,6 +43,12 @@ impl CreatePermissionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreatePermission as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_permission::builders::CreatePermissionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -141,6 +147,11 @@ impl CreatePermissionFluentBuilder {
         self.inner = self.inner.set_certificate_authority_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the CA that grants the permissions. You can find the ARN by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must have the following form: </p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
+    pub fn get_certificate_authority_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate_authority_arn()
+    }
     /// <p>The Amazon Web Services service or identity that receives the permission. At this time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
     pub fn principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.principal(input.into());
@@ -150,6 +161,10 @@ impl CreatePermissionFluentBuilder {
     pub fn set_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_principal(input);
         self
+    }
+    /// <p>The Amazon Web Services service or identity that receives the permission. At this time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
+    pub fn get_principal(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_principal()
     }
     /// <p>The ID of the calling account.</p>
     pub fn source_account(
@@ -167,6 +182,10 @@ impl CreatePermissionFluentBuilder {
         self.inner = self.inner.set_source_account(input);
         self
     }
+    /// <p>The ID of the calling account.</p>
+    pub fn get_source_account(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_account()
+    }
     /// Appends an item to `Actions`.
     ///
     /// To override the contents of this collection use [`set_actions`](Self::set_actions).
@@ -183,5 +202,9 @@ impl CreatePermissionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_actions(input);
         self
+    }
+    /// <p>The actions that the specified Amazon Web Services service principal can use. These include <code>IssueCertificate</code>, <code>GetCertificate</code>, and <code>ListPermissions</code>.</p>
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionType>> {
+        self.inner.get_actions()
     }
 }

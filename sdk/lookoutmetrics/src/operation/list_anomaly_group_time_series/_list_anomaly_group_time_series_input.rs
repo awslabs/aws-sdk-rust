@@ -77,6 +77,10 @@ impl ListAnomalyGroupTimeSeriesInputBuilder {
         self.anomaly_detector_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    pub fn get_anomaly_detector_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.anomaly_detector_arn
+    }
     /// <p>The ID of the anomaly group.</p>
     pub fn anomaly_group_id(
         mut self,
@@ -93,6 +97,10 @@ impl ListAnomalyGroupTimeSeriesInputBuilder {
         self.anomaly_group_id = input;
         self
     }
+    /// <p>The ID of the anomaly group.</p>
+    pub fn get_anomaly_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.anomaly_group_id
+    }
     /// <p>The name of the measure field.</p>
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_name = ::std::option::Option::Some(input.into());
@@ -102,6 +110,10 @@ impl ListAnomalyGroupTimeSeriesInputBuilder {
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_name = input;
         self
+    }
+    /// <p>The name of the measure field.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -113,6 +125,10 @@ impl ListAnomalyGroupTimeSeriesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -122,6 +138,10 @@ impl ListAnomalyGroupTimeSeriesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListAnomalyGroupTimeSeriesInput`](crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesInput).
     pub fn build(

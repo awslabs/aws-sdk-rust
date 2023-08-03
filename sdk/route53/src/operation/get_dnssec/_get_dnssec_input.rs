@@ -45,6 +45,10 @@ impl GetDnssecInputBuilder {
         self.hosted_zone_id = input;
         self
     }
+    /// <p>A unique string used to identify a hosted zone.</p>
+    pub fn get_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hosted_zone_id
+    }
     /// Consumes the builder and constructs a [`GetDnssecInput`](crate::operation::get_dnssec::GetDnssecInput).
     pub fn build(
         self,

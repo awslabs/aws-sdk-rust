@@ -79,6 +79,15 @@ impl DescribeWorkflowTypeOutputBuilder {
         self.type_info = input;
         self
     }
+    /// <p>General information about the workflow type.</p>
+    /// <p>The status of the workflow type (returned in the WorkflowTypeInfo structure) can be one of the following.</p>
+    /// <ul>
+    /// <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running.</p> </li>
+    /// <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateWorkflowType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new workflow executions of this type.</p> </li>
+    /// </ul>
+    pub fn get_type_info(&self) -> &::std::option::Option<crate::types::WorkflowTypeInfo> {
+        &self.type_info
+    }
     /// <p>Configuration settings of the workflow type registered through <code>RegisterWorkflowType</code> </p>
     pub fn configuration(mut self, input: crate::types::WorkflowTypeConfiguration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
@@ -91,6 +100,12 @@ impl DescribeWorkflowTypeOutputBuilder {
     ) -> Self {
         self.configuration = input;
         self
+    }
+    /// <p>Configuration settings of the workflow type registered through <code>RegisterWorkflowType</code> </p>
+    pub fn get_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::WorkflowTypeConfiguration> {
+        &self.configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

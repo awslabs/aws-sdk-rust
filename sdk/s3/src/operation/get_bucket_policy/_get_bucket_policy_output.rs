@@ -54,6 +54,10 @@ impl GetBucketPolicyOutputBuilder {
         self.policy = input;
         self
     }
+    /// <p>The bucket policy as a JSON document.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy
+    }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
         self._extended_request_id = Some(extended_request_id.into());
         self

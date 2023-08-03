@@ -36,6 +36,12 @@ impl ListBackendJobsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListBackendJobs as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_backend_jobs::builders::ListBackendJobsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl ListBackendJobsFluentBuilder {
         self.inner = self.inner.set_app_id(input);
         self
     }
+    /// <p>The app ID.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_id()
+    }
     /// <p>The name of the backend environment.</p>
     pub fn backend_environment_name(
         mut self,
@@ -142,6 +152,10 @@ impl ListBackendJobsFluentBuilder {
         self.inner = self.inner.set_backend_environment_name(input);
         self
     }
+    /// <p>The name of the backend environment.</p>
+    pub fn get_backend_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_backend_environment_name()
+    }
     /// <p>The ID for the job.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_id(input.into());
@@ -151,6 +165,10 @@ impl ListBackendJobsFluentBuilder {
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_id(input);
         self
+    }
+    /// <p>The ID for the job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_id()
     }
     /// <p>The maximum number of results that you want in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -162,6 +180,10 @@ impl ListBackendJobsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results that you want in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token for the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -171,6 +193,10 @@ impl ListBackendJobsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>Filters the list of response objects to include only those with the specified operation name.</p>
     pub fn operation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -182,6 +208,10 @@ impl ListBackendJobsFluentBuilder {
         self.inner = self.inner.set_operation(input);
         self
     }
+    /// <p>Filters the list of response objects to include only those with the specified operation name.</p>
+    pub fn get_operation(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_operation()
+    }
     /// <p>Filters the list of response objects to include only those with the specified status.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.status(input.into());
@@ -191,5 +221,9 @@ impl ListBackendJobsFluentBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p>Filters the list of response objects to include only those with the specified status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_status()
     }
 }

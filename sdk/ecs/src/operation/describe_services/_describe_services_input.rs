@@ -56,6 +56,10 @@ impl DescribeServicesInputBuilder {
         self.cluster = input;
         self
     }
+    /// <p>The short name or full Amazon Resource Name (ARN)the cluster that hosts the service to describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required if the service or services you are describing were launched in any cluster other than the default cluster.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster
+    }
     /// Appends an item to `services`.
     ///
     /// To override the contents of this collection use [`set_services`](Self::set_services).
@@ -75,6 +79,10 @@ impl DescribeServicesInputBuilder {
         self.services = input;
         self
     }
+    /// <p>A list of services to describe. You may specify up to 10 services to describe in a single operation.</p>
+    pub fn get_services(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.services
+    }
     /// Appends an item to `include`.
     ///
     /// To override the contents of this collection use [`set_include`](Self::set_include).
@@ -93,6 +101,12 @@ impl DescribeServicesInputBuilder {
     ) -> Self {
         self.include = input;
         self
+    }
+    /// <p>Determines whether you want to see the resource tags for the service. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
+    pub fn get_include(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceField>> {
+        &self.include
     }
     /// Consumes the builder and constructs a [`DescribeServicesInput`](crate::operation::describe_services::DescribeServicesInput).
     pub fn build(

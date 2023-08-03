@@ -40,6 +40,10 @@ impl OpsItemIdentityBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM entity that created the OpsItem event.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`OpsItemIdentity`](crate::types::OpsItemIdentity).
     pub fn build(self) -> crate::types::OpsItemIdentity {
         crate::types::OpsItemIdentity { arn: self.arn }

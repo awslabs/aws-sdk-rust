@@ -122,6 +122,10 @@ impl UpdateDevEndpointInputBuilder {
         self.endpoint_name = input;
         self
     }
+    /// <p>The name of the <code>DevEndpoint</code> to be updated.</p>
+    pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_name
+    }
     /// <p>The public key for the <code>DevEndpoint</code> to use.</p>
     pub fn public_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_key = ::std::option::Option::Some(input.into());
@@ -131,6 +135,10 @@ impl UpdateDevEndpointInputBuilder {
     pub fn set_public_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_key = input;
         self
+    }
+    /// <p>The public key for the <code>DevEndpoint</code> to use.</p>
+    pub fn get_public_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_key
     }
     /// Appends an item to `add_public_keys`.
     ///
@@ -154,6 +162,12 @@ impl UpdateDevEndpointInputBuilder {
         self.add_public_keys = input;
         self
     }
+    /// <p>The list of public keys for the <code>DevEndpoint</code> to use.</p>
+    pub fn get_add_public_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.add_public_keys
+    }
     /// Appends an item to `delete_public_keys`.
     ///
     /// To override the contents of this collection use [`set_delete_public_keys`](Self::set_delete_public_keys).
@@ -176,6 +190,12 @@ impl UpdateDevEndpointInputBuilder {
         self.delete_public_keys = input;
         self
     }
+    /// <p>The list of public keys to be deleted from the <code>DevEndpoint</code>.</p>
+    pub fn get_delete_public_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.delete_public_keys
+    }
     /// <p>Custom Python or Java libraries to be loaded in the <code>DevEndpoint</code>.</p>
     pub fn custom_libraries(mut self, input: crate::types::DevEndpointCustomLibraries) -> Self {
         self.custom_libraries = ::std::option::Option::Some(input);
@@ -189,6 +209,12 @@ impl UpdateDevEndpointInputBuilder {
         self.custom_libraries = input;
         self
     }
+    /// <p>Custom Python or Java libraries to be loaded in the <code>DevEndpoint</code>.</p>
+    pub fn get_custom_libraries(
+        &self,
+    ) -> &::std::option::Option<crate::types::DevEndpointCustomLibraries> {
+        &self.custom_libraries
+    }
     /// <p> <code>True</code> if the list of custom libraries to be loaded in the development endpoint needs to be updated, or <code>False</code> if otherwise.</p>
     pub fn update_etl_libraries(mut self, input: bool) -> Self {
         self.update_etl_libraries = ::std::option::Option::Some(input);
@@ -198,6 +224,10 @@ impl UpdateDevEndpointInputBuilder {
     pub fn set_update_etl_libraries(mut self, input: ::std::option::Option<bool>) -> Self {
         self.update_etl_libraries = input;
         self
+    }
+    /// <p> <code>True</code> if the list of custom libraries to be loaded in the development endpoint needs to be updated, or <code>False</code> if otherwise.</p>
+    pub fn get_update_etl_libraries(&self) -> &::std::option::Option<bool> {
+        &self.update_etl_libraries
     }
     /// Appends an item to `delete_arguments`.
     ///
@@ -220,6 +250,12 @@ impl UpdateDevEndpointInputBuilder {
     ) -> Self {
         self.delete_arguments = input;
         self
+    }
+    /// <p>The list of argument keys to be deleted from the map of arguments used to configure the <code>DevEndpoint</code>.</p>
+    pub fn get_delete_arguments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.delete_arguments
     }
     /// Adds a key-value pair to `add_arguments`.
     ///
@@ -255,6 +291,19 @@ impl UpdateDevEndpointInputBuilder {
     ) -> Self {
         self.add_arguments = input;
         self
+    }
+    /// <p>The map of arguments to add the map of arguments used to configure the <code>DevEndpoint</code>.</p>
+    /// <p>Valid arguments are:</p>
+    /// <ul>
+    /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
+    /// </ul>
+    /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
+    pub fn get_add_arguments(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.add_arguments
     }
     /// Consumes the builder and constructs a [`UpdateDevEndpointInput`](crate::operation::update_dev_endpoint::UpdateDevEndpointInput).
     pub fn build(

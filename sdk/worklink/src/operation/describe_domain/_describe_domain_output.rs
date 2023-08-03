@@ -78,6 +78,10 @@ impl DescribeDomainOutputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The name to display.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -87,6 +91,10 @@ impl DescribeDomainOutputBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
+    }
+    /// <p>The name to display.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// <p>The time that the domain was added.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -101,6 +109,10 @@ impl DescribeDomainOutputBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The time that the domain was added.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>The current state for the domain.</p>
     pub fn domain_status(mut self, input: crate::types::DomainStatus) -> Self {
         self.domain_status = ::std::option::Option::Some(input);
@@ -113,6 +125,10 @@ impl DescribeDomainOutputBuilder {
     ) -> Self {
         self.domain_status = input;
         self
+    }
+    /// <p>The current state for the domain.</p>
+    pub fn get_domain_status(&self) -> &::std::option::Option<crate::types::DomainStatus> {
+        &self.domain_status
     }
     /// <p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>
     pub fn acm_certificate_arn(
@@ -129,6 +145,10 @@ impl DescribeDomainOutputBuilder {
     ) -> Self {
         self.acm_certificate_arn = input;
         self
+    }
+    /// <p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>
+    pub fn get_acm_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.acm_certificate_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

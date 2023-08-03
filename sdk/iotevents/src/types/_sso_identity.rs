@@ -54,6 +54,10 @@ impl SsoIdentityBuilder {
         self.identity_store_id = input;
         self
     }
+    /// <p>The ID of the AWS SSO identity store.</p>
+    pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_store_id
+    }
     /// <p>The user ID.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl SsoIdentityBuilder {
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
+    }
+    /// <p>The user ID.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     /// Consumes the builder and constructs a [`SsoIdentity`](crate::types::SsoIdentity).
     pub fn build(self) -> crate::types::SsoIdentity {

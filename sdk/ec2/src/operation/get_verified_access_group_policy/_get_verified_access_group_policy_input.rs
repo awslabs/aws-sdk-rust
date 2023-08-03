@@ -53,6 +53,10 @@ impl GetVerifiedAccessGroupPolicyInputBuilder {
         self.verified_access_group_id = input;
         self
     }
+    /// <p>The ID of the Verified Access group.</p>
+    pub fn get_verified_access_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.verified_access_group_id
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -62,6 +66,10 @@ impl GetVerifiedAccessGroupPolicyInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`GetVerifiedAccessGroupPolicyInput`](crate::operation::get_verified_access_group_policy::GetVerifiedAccessGroupPolicyInput).
     pub fn build(

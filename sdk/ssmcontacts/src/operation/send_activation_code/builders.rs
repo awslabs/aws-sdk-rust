@@ -36,6 +36,12 @@ impl SendActivationCodeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SendActivationCode as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::send_activation_code::builders::SendActivationCodeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl SendActivationCodeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_contact_channel_id(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
+    pub fn get_contact_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_contact_channel_id()
     }
 }

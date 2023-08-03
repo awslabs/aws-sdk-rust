@@ -56,6 +56,10 @@ impl ListTestSetRecordsInputBuilder {
         self.test_set_id = input;
         self
     }
+    /// <p>The identifier of the test set to list its test set records.</p>
+    pub fn get_test_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_set_id
+    }
     /// <p>The maximum number of test set records to return in each page. If there are fewer records than the max page size, only the actual number of records are returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl ListTestSetRecordsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of test set records to return in each page. If there are fewer records than the max page size, only the actual number of records are returned.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>If the response from the ListTestSetRecords operation contains more results than specified in the maxResults parameter, a token is returned in the response. Use that token in the nextToken parameter to return the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl ListTestSetRecordsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the response from the ListTestSetRecords operation contains more results than specified in the maxResults parameter, a token is returned in the response. Use that token in the nextToken parameter to return the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListTestSetRecordsInput`](crate::operation::list_test_set_records::ListTestSetRecordsInput).
     pub fn build(

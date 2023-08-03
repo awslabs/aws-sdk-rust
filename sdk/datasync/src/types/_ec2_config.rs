@@ -76,6 +76,17 @@ impl Ec2ConfigBuilder {
         self.subnet_arn = input;
         self
     }
+    /// <p>Specifies the ARN of a subnet where DataSync creates the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network interfaces</a> for managing traffic during your transfer.</p>
+    /// <p>The subnet must be located:</p>
+    /// <ul>
+    /// <li> <p>In the same virtual private cloud (VPC) as the Amazon EFS file system.</p> </li>
+    /// <li> <p>In the same Availability Zone as at least one mount target for the Amazon EFS file system.</p> </li>
+    /// </ul> <note>
+    /// <p>You don't need to specify a subnet that includes a file system mount target.</p>
+    /// </note>
+    pub fn get_subnet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_arn
+    }
     /// Appends an item to `security_group_arns`.
     ///
     /// To override the contents of this collection use [`set_security_group_arns`](Self::set_security_group_arns).
@@ -97,6 +108,12 @@ impl Ec2ConfigBuilder {
     ) -> Self {
         self.security_group_arns = input;
         self
+    }
+    /// <p>Specifies the Amazon Resource Names (ARNs) of the security groups associated with an Amazon EFS file system's mount target.</p>
+    pub fn get_security_group_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_arns
     }
     /// Consumes the builder and constructs a [`Ec2Config`](crate::types::Ec2Config).
     pub fn build(self) -> crate::types::Ec2Config {

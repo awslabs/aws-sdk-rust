@@ -57,6 +57,10 @@ impl UnlabelParameterVersionInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the parameter from which you want to delete one or more labels.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The specific version of the parameter which you want to delete one or more labels from. If it isn't present, the call will fail.</p>
     pub fn parameter_version(mut self, input: i64) -> Self {
         self.parameter_version = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl UnlabelParameterVersionInputBuilder {
     pub fn set_parameter_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.parameter_version = input;
         self
+    }
+    /// <p>The specific version of the parameter which you want to delete one or more labels from. If it isn't present, the call will fail.</p>
+    pub fn get_parameter_version(&self) -> &::std::option::Option<i64> {
+        &self.parameter_version
     }
     /// Appends an item to `labels`.
     ///
@@ -85,6 +93,10 @@ impl UnlabelParameterVersionInputBuilder {
     ) -> Self {
         self.labels = input;
         self
+    }
+    /// <p>One or more labels to delete from the specified parameter version.</p>
+    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.labels
     }
     /// Consumes the builder and constructs a [`UnlabelParameterVersionInput`](crate::operation::unlabel_parameter_version::UnlabelParameterVersionInput).
     pub fn build(

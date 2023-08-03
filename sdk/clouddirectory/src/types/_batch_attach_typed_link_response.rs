@@ -43,6 +43,12 @@ impl BatchAttachTypedLinkResponseBuilder {
         self.typed_link_specifier = input;
         self
     }
+    /// <p>Returns a typed link specifier as output.</p>
+    pub fn get_typed_link_specifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::TypedLinkSpecifier> {
+        &self.typed_link_specifier
+    }
     /// Consumes the builder and constructs a [`BatchAttachTypedLinkResponse`](crate::types::BatchAttachTypedLinkResponse).
     pub fn build(self) -> crate::types::BatchAttachTypedLinkResponse {
         crate::types::BatchAttachTypedLinkResponse {

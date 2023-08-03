@@ -95,6 +95,10 @@ impl UpdateBillingGroupInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the billing group being updated. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the billing group. The names must be unique to each billing group. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -104,6 +108,10 @@ impl UpdateBillingGroupInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the billing group. The names must be unique to each billing group. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The status of the billing group. Only one of the valid values can be used. </p>
     pub fn status(mut self, input: crate::types::BillingGroupStatus) -> Self {
@@ -118,6 +126,10 @@ impl UpdateBillingGroupInputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the billing group. Only one of the valid values can be used. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::BillingGroupStatus> {
+        &self.status
+    }
     /// <p> The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group. </p>
     pub fn computation_preference(mut self, input: crate::types::ComputationPreference) -> Self {
         self.computation_preference = ::std::option::Option::Some(input);
@@ -131,6 +143,12 @@ impl UpdateBillingGroupInputBuilder {
         self.computation_preference = input;
         self
     }
+    /// <p> The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group. </p>
+    pub fn get_computation_preference(
+        &self,
+    ) -> &::std::option::Option<crate::types::ComputationPreference> {
+        &self.computation_preference
+    }
     /// <p>A description of the billing group. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -140,6 +158,10 @@ impl UpdateBillingGroupInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the billing group. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.</p>
     pub fn account_grouping(
@@ -156,6 +178,12 @@ impl UpdateBillingGroupInputBuilder {
     ) -> Self {
         self.account_grouping = input;
         self
+    }
+    /// <p>Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.</p>
+    pub fn get_account_grouping(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateBillingGroupAccountGrouping> {
+        &self.account_grouping
     }
     /// Consumes the builder and constructs a [`UpdateBillingGroupInput`](crate::operation::update_billing_group::UpdateBillingGroupInput).
     pub fn build(

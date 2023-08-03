@@ -36,6 +36,10 @@ impl ListUsersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListUsers as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_users::builders::ListUsersInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl ListUsersFluentBuilder {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
+    /// <p>The user pool ID for the user pool on which the search should be performed.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_pool_id()
+    }
     /// Appends an item to `AttributesToGet`.
     ///
     /// To override the contents of this collection use [`set_attributes_to_get`](Self::set_attributes_to_get).
@@ -144,6 +152,12 @@ impl ListUsersFluentBuilder {
         self.inner = self.inner.set_attributes_to_get(input);
         self
     }
+    /// <p>An array of strings, where each string is the name of a user attribute to be returned for each user in the search results. If the array is null, all attributes are returned.</p>
+    pub fn get_attributes_to_get(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_attributes_to_get()
+    }
     /// <p>Maximum number of users to be returned.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -153,6 +167,10 @@ impl ListUsersFluentBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
+    }
+    /// <p>Maximum number of users to be returned.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn pagination_token(
@@ -169,6 +187,10 @@ impl ListUsersFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_pagination_token(input);
         self
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    pub fn get_pagination_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pagination_token()
     }
     /// <p>A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i> "<i>AttributeValue</i>"". Quotation marks within the filter string must be escaped using the backslash (\) character. For example, "<code>family_name</code> = \"Reddy\"".</p>
     /// <ul>
@@ -227,5 +249,33 @@ impl ListUsersFluentBuilder {
     pub fn set_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
+    }
+    /// <p>A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i> "<i>AttributeValue</i>"". Quotation marks within the filter string must be escaped using the backslash (\) character. For example, "<code>family_name</code> = \"Reddy\"".</p>
+    /// <ul>
+    /// <li> <p> <i>AttributeName</i>: The name of the attribute to search for. You can only search for one attribute at a time.</p> </li>
+    /// <li> <p> <i>Filter-Type</i>: For an exact match, use =, for example, "<code>given_name</code> = \"Jon\"". For a prefix ("starts with") match, use ^=, for example, "<code>given_name</code> ^= \"Jon\"". </p> </li>
+    /// <li> <p> <i>AttributeValue</i>: The attribute value that must be matched for each user.</p> </li>
+    /// </ul>
+    /// <p>If the filter string is empty, <code>ListUsers</code> returns all users in the user pool.</p>
+    /// <p>You can only search for the following standard attributes:</p>
+    /// <ul>
+    /// <li> <p> <code>username</code> (case-sensitive)</p> </li>
+    /// <li> <p> <code>email</code> </p> </li>
+    /// <li> <p> <code>phone_number</code> </p> </li>
+    /// <li> <p> <code>name</code> </p> </li>
+    /// <li> <p> <code>given_name</code> </p> </li>
+    /// <li> <p> <code>family_name</code> </p> </li>
+    /// <li> <p> <code>preferred_username</code> </p> </li>
+    /// <li> <p> <code>cognito:user_status</code> (called <b>Status</b> in the Console) (case-insensitive)</p> </li>
+    /// <li> <p> <code>status (called <b>Enabled</b> in the Console) (case-sensitive)</code> </p> </li>
+    /// <li> <p> <code>sub</code> </p> </li>
+    /// </ul>
+    /// <p>Custom attributes aren't searchable.</p> <note>
+    /// <p>You can also list users with a client-side filter. The server-side filter matches no more than one attribute. For an advanced search, use a client-side filter with the <code>--query</code> parameter of the <code>list-users</code> action in the CLI. When you use a client-side filter, ListUsers returns a paginated list of zero or more users. You can receive multiple pages in a row with zero results. Repeat the query with each pagination token that is returned until you receive a null pagination token value, and then review the combined result. </p>
+    /// <p>For more information about server-side and client-side filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">FilteringCLI output</a> in the <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Command Line Interface User Guide</a>. </p>
+    /// </note>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching for Users Using the ListUsers API</a> and <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples of Using the ListUsers API</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_filter()
     }
 }

@@ -40,6 +40,10 @@ impl StatisticalThresholdBuilder {
         self.statistic = input;
         self
     }
+    /// <p>The percentile that resolves to a threshold value by which compliance with a behavior is determined. Metrics are collected over the specified period (<code>durationSeconds</code>) from all reporting devices in your account and statistical ranks are calculated. Then, the measurements from a device are collected over the same period. If the accumulated measurements from the device fall above or below (<code>comparisonOperator</code>) the value associated with the percentile specified, then the device is considered to be in compliance with the behavior, otherwise a violation occurs.</p>
+    pub fn get_statistic(&self) -> &::std::option::Option<::std::string::String> {
+        &self.statistic
+    }
     /// Consumes the builder and constructs a [`StatisticalThreshold`](crate::types::StatisticalThreshold).
     pub fn build(self) -> crate::types::StatisticalThreshold {
         crate::types::StatisticalThreshold {

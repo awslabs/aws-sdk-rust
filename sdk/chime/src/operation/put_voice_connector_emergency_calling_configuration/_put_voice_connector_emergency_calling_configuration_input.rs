@@ -57,6 +57,10 @@ impl PutVoiceConnectorEmergencyCallingConfigurationInputBuilder {
         self.voice_connector_id = input;
         self
     }
+    /// <p>The Amazon Chime Voice Connector ID.</p>
+    pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_connector_id
+    }
     /// <p>The emergency calling configuration details.</p>
     pub fn emergency_calling_configuration(
         mut self,
@@ -72,6 +76,12 @@ impl PutVoiceConnectorEmergencyCallingConfigurationInputBuilder {
     ) -> Self {
         self.emergency_calling_configuration = input;
         self
+    }
+    /// <p>The emergency calling configuration details.</p>
+    pub fn get_emergency_calling_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::EmergencyCallingConfiguration> {
+        &self.emergency_calling_configuration
     }
     /// Consumes the builder and constructs a [`PutVoiceConnectorEmergencyCallingConfigurationInput`](crate::operation::put_voice_connector_emergency_calling_configuration::PutVoiceConnectorEmergencyCallingConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_voice_connector_emergency_calling_configuration::PutVoiceConnectorEmergencyCallingConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{

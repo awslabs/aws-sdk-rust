@@ -71,6 +71,10 @@ impl GetMobileDeviceAccessOverrideInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The WorkMail organization to which you want to apply the override.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>Identifies the WorkMail user for the override. Accepts the following types of user identities: </p>
     /// <ul>
     /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
@@ -91,6 +95,15 @@ impl GetMobileDeviceAccessOverrideInputBuilder {
         self.user_id = input;
         self
     }
+    /// <p>Identifies the WorkMail user for the override. Accepts the following types of user identities: </p>
+    /// <ul>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
+    /// </ul>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
+    }
     /// <p>The mobile device to which the override applies. <code>DeviceId</code> is case insensitive.</p>
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_id = ::std::option::Option::Some(input.into());
@@ -100,6 +113,10 @@ impl GetMobileDeviceAccessOverrideInputBuilder {
     pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_id = input;
         self
+    }
+    /// <p>The mobile device to which the override applies. <code>DeviceId</code> is case insensitive.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_id
     }
     /// Consumes the builder and constructs a [`GetMobileDeviceAccessOverrideInput`](crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverrideInput).
     pub fn build(

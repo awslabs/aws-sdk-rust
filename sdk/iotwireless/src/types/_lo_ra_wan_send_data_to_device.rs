@@ -50,6 +50,10 @@ impl LoRaWanSendDataToDeviceBuilder {
         self.f_port = input;
         self
     }
+    /// <p>The Fport value.</p>
+    pub fn get_f_port(&self) -> &::std::option::Option<i32> {
+        &self.f_port
+    }
     /// <p>Choose the gateways that you want to use for the downlink data traffic when the wireless device is running in class B or class C mode.</p>
     pub fn participating_gateways(mut self, input: crate::types::ParticipatingGateways) -> Self {
         self.participating_gateways = ::std::option::Option::Some(input);
@@ -62,6 +66,12 @@ impl LoRaWanSendDataToDeviceBuilder {
     ) -> Self {
         self.participating_gateways = input;
         self
+    }
+    /// <p>Choose the gateways that you want to use for the downlink data traffic when the wireless device is running in class B or class C mode.</p>
+    pub fn get_participating_gateways(
+        &self,
+    ) -> &::std::option::Option<crate::types::ParticipatingGateways> {
+        &self.participating_gateways
     }
     /// Consumes the builder and constructs a [`LoRaWanSendDataToDevice`](crate::types::LoRaWanSendDataToDevice).
     pub fn build(self) -> crate::types::LoRaWanSendDataToDevice {

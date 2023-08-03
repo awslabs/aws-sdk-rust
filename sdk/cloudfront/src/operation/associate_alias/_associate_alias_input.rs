@@ -53,6 +53,10 @@ impl AssociateAliasInputBuilder {
         self.target_distribution_id = input;
         self
     }
+    /// <p>The ID of the distribution that you're associating the alias with.</p>
+    pub fn get_target_distribution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_distribution_id
+    }
     /// <p>The alias (also known as a CNAME) to add to the target distribution.</p>
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl AssociateAliasInputBuilder {
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alias = input;
         self
+    }
+    /// <p>The alias (also known as a CNAME) to add to the target distribution.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias
     }
     /// Consumes the builder and constructs a [`AssociateAliasInput`](crate::operation::associate_alias::AssociateAliasInput).
     pub fn build(

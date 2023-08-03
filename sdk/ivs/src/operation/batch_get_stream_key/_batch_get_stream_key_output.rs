@@ -64,6 +64,12 @@ impl BatchGetStreamKeyOutputBuilder {
         self.stream_keys = input;
         self
     }
+    /// <p></p>
+    pub fn get_stream_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamKey>> {
+        &self.stream_keys
+    }
     /// Appends an item to `errors`.
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
@@ -82,6 +88,10 @@ impl BatchGetStreamKeyOutputBuilder {
     ) -> Self {
         self.errors = input;
         self
+    }
+    /// <p></p>
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchError>> {
+        &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

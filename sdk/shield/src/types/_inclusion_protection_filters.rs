@@ -69,6 +69,12 @@ impl InclusionProtectionFiltersBuilder {
         self.resource_arns = input;
         self
     }
+    /// <p>The ARN (Amazon Resource Name) of the resource whose protection you want to retrieve. </p>
+    pub fn get_resource_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_arns
+    }
     /// Appends an item to `protection_names`.
     ///
     /// To override the contents of this collection use [`set_protection_names`](Self::set_protection_names).
@@ -91,6 +97,12 @@ impl InclusionProtectionFiltersBuilder {
         self.protection_names = input;
         self
     }
+    /// <p>The name of the protection that you want to retrieve. </p>
+    pub fn get_protection_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.protection_names
+    }
     /// Appends an item to `resource_types`.
     ///
     /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
@@ -109,6 +121,12 @@ impl InclusionProtectionFiltersBuilder {
     ) -> Self {
         self.resource_types = input;
         self
+    }
+    /// <p>The type of protected resource whose protections you want to retrieve. </p>
+    pub fn get_resource_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProtectedResourceType>> {
+        &self.resource_types
     }
     /// Consumes the builder and constructs a [`InclusionProtectionFilters`](crate::types::InclusionProtectionFilters).
     pub fn build(self) -> crate::types::InclusionProtectionFilters {

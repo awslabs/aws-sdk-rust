@@ -56,6 +56,10 @@ impl ListCampaignsInputBuilder {
         self.max_results = input;
         self
     }
+    /// The maximum number of results to return per page.
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// The token for the next set of results.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl ListCampaignsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// The token for the next set of results.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Filter model by type
     pub fn filters(mut self, input: crate::types::CampaignFilters) -> Self {
@@ -78,6 +86,10 @@ impl ListCampaignsInputBuilder {
     ) -> Self {
         self.filters = input;
         self
+    }
+    /// Filter model by type
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::CampaignFilters> {
+        &self.filters
     }
     /// Consumes the builder and constructs a [`ListCampaignsInput`](crate::operation::list_campaigns::ListCampaignsInput).
     pub fn build(

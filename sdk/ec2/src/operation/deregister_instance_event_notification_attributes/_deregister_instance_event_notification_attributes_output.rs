@@ -56,6 +56,12 @@ impl DeregisterInstanceEventNotificationAttributesOutputBuilder {
         self.instance_tag_attribute = input;
         self
     }
+    /// <p>The resulting set of tag keys.</p>
+    pub fn get_instance_tag_attribute(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceTagNotificationAttribute> {
+        &self.instance_tag_attribute
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

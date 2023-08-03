@@ -55,6 +55,11 @@ impl CopyDbParameterGroupOutputBuilder {
         self.db_parameter_group = input;
         self
     }
+    /// <p>Contains the details of an Amazon Neptune DB parameter group.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.</p>
+    pub fn get_db_parameter_group(&self) -> &::std::option::Option<crate::types::DbParameterGroup> {
+        &self.db_parameter_group
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

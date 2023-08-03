@@ -73,6 +73,10 @@ impl BounceActionBuilder {
         self.topic_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the bounce action is taken. An example of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
+    pub fn get_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_arn
+    }
     /// <p>The SMTP reply code, as defined by <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p>
     pub fn smtp_reply_code(
         mut self,
@@ -89,6 +93,10 @@ impl BounceActionBuilder {
         self.smtp_reply_code = input;
         self
     }
+    /// <p>The SMTP reply code, as defined by <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p>
+    pub fn get_smtp_reply_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.smtp_reply_code
+    }
     /// <p>The SMTP enhanced status code, as defined by <a href="https://tools.ietf.org/html/rfc3463">RFC 3463</a>.</p>
     pub fn status_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_code = ::std::option::Option::Some(input.into());
@@ -98,6 +106,10 @@ impl BounceActionBuilder {
     pub fn set_status_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_code = input;
         self
+    }
+    /// <p>The SMTP enhanced status code, as defined by <a href="https://tools.ietf.org/html/rfc3463">RFC 3463</a>.</p>
+    pub fn get_status_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_code
     }
     /// <p>Human-readable text to include in the bounce message.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -109,6 +121,10 @@ impl BounceActionBuilder {
         self.message = input;
         self
     }
+    /// <p>Human-readable text to include in the bounce message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The email address of the sender of the bounced email. This is the address from which the bounce message will be sent.</p>
     pub fn sender(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sender = ::std::option::Option::Some(input.into());
@@ -118,6 +134,10 @@ impl BounceActionBuilder {
     pub fn set_sender(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sender = input;
         self
+    }
+    /// <p>The email address of the sender of the bounced email. This is the address from which the bounce message will be sent.</p>
+    pub fn get_sender(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sender
     }
     /// Consumes the builder and constructs a [`BounceAction`](crate::types::BounceAction).
     pub fn build(self) -> crate::types::BounceAction {

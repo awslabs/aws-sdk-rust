@@ -36,6 +36,10 @@ impl UpdateIntegrationResponseFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateIntegrationResponse as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_integration_response::builders::UpdateIntegrationResponseInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl UpdateIntegrationResponseFluentBuilder {
         self.inner = self.inner.set_api_id(input);
         self
     }
+    /// <p>The API identifier.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_api_id()
+    }
     /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>
     /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
     /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
@@ -148,6 +156,15 @@ impl UpdateIntegrationResponseFluentBuilder {
         self.inner = self.inner.set_content_handling_strategy(input);
         self
     }
+    /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>
+    /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
+    /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
+    /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
+    pub fn get_content_handling_strategy(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContentHandlingStrategy> {
+        self.inner.get_content_handling_strategy()
+    }
     /// <p>The integration ID.</p>
     pub fn integration_id(
         mut self,
@@ -163,6 +180,10 @@ impl UpdateIntegrationResponseFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_integration_id(input);
         self
+    }
+    /// <p>The integration ID.</p>
+    pub fn get_integration_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_integration_id()
     }
     /// <p>The integration response ID.</p>
     pub fn integration_response_id(
@@ -180,6 +201,10 @@ impl UpdateIntegrationResponseFluentBuilder {
         self.inner = self.inner.set_integration_response_id(input);
         self
     }
+    /// <p>The integration response ID.</p>
+    pub fn get_integration_response_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_integration_response_id()
+    }
     /// <p>The integration response key.</p>
     pub fn integration_response_key(
         mut self,
@@ -195,6 +220,10 @@ impl UpdateIntegrationResponseFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_integration_response_key(input);
         self
+    }
+    /// <p>The integration response key.</p>
+    pub fn get_integration_response_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_integration_response_key()
     }
     /// Adds a key-value pair to `ResponseParameters`.
     ///
@@ -239,6 +268,24 @@ impl UpdateIntegrationResponseFluentBuilder {
         self.inner = self.inner.set_response_parameters(input);
         self
     }
+    /// <p>A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.<replaceable>
+    /// {name}
+    /// </replaceable> , where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.<replaceable>
+    /// {name}
+    /// </replaceable> or integration.response.body.<replaceable>
+    /// {JSON-expression}
+    /// </replaceable> , where <replaceable>
+    /// {name}
+    /// </replaceable> is a valid and unique response header name and <replaceable>
+    /// {JSON-expression}
+    /// </replaceable> is a valid JSON expression without the $ prefix.</p>
+    pub fn get_response_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_response_parameters()
+    }
     /// Adds a key-value pair to `ResponseTemplates`.
     ///
     /// To override the contents of this collection use [`set_response_templates`](Self::set_response_templates).
@@ -262,6 +309,14 @@ impl UpdateIntegrationResponseFluentBuilder {
         self.inner = self.inner.set_response_templates(input);
         self
     }
+    /// <p>The collection of response templates for the integration response as a string-to-string map of key-value pairs. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
+    pub fn get_response_templates(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_response_templates()
+    }
     /// <p>The template selection expression for the integration response. Supported only for WebSocket APIs.</p>
     pub fn template_selection_expression(
         mut self,
@@ -277,5 +332,11 @@ impl UpdateIntegrationResponseFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_template_selection_expression(input);
         self
+    }
+    /// <p>The template selection expression for the integration response. Supported only for WebSocket APIs.</p>
+    pub fn get_template_selection_expression(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_selection_expression()
     }
 }

@@ -80,6 +80,10 @@ impl AllowDenyListBuilder {
         self.name = input;
         self
     }
+    /// <p> The name of the list. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p> The description of the list. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl AllowDenyListBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p> The description of the list. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p> The variable type of the list. </p>
     pub fn variable_type(
@@ -106,6 +114,10 @@ impl AllowDenyListBuilder {
         self.variable_type = input;
         self
     }
+    /// <p> The variable type of the list. </p>
+    pub fn get_variable_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.variable_type
+    }
     /// <p> The time the list was created. </p>
     pub fn created_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_time = ::std::option::Option::Some(input.into());
@@ -115,6 +127,10 @@ impl AllowDenyListBuilder {
     pub fn set_created_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_time = input;
         self
+    }
+    /// <p> The time the list was created. </p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_time
     }
     /// <p> The time the list was last updated. </p>
     pub fn updated_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -126,6 +142,10 @@ impl AllowDenyListBuilder {
         self.updated_time = input;
         self
     }
+    /// <p> The time the list was last updated. </p>
+    pub fn get_updated_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.updated_time
+    }
     /// <p> The ARN of the list. </p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -135,6 +155,10 @@ impl AllowDenyListBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p> The ARN of the list. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`AllowDenyList`](crate::types::AllowDenyList).
     pub fn build(self) -> crate::types::AllowDenyList {

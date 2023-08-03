@@ -58,6 +58,12 @@ impl DescribePhoneNumberOutputBuilder {
         self.claimed_phone_number_summary = input;
         self
     }
+    /// <p>Information about a phone number that's been claimed to your Amazon Connect instance or traffic distribution group.</p>
+    pub fn get_claimed_phone_number_summary(
+        &self,
+    ) -> &::std::option::Option<crate::types::ClaimedPhoneNumberSummary> {
+        &self.claimed_phone_number_summary
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

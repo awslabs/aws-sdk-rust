@@ -127,6 +127,10 @@ impl ComponentResponseBuilder {
         self.component_name = input;
         self
     }
+    /// <p>The name of the component.</p>
+    pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_name
+    }
     /// <p>The description of the component type.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -136,6 +140,10 @@ impl ComponentResponseBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the component type.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The ID of the component type.</p>
     pub fn component_type_id(
@@ -153,6 +161,10 @@ impl ComponentResponseBuilder {
         self.component_type_id = input;
         self
     }
+    /// <p>The ID of the component type.</p>
+    pub fn get_component_type_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_type_id
+    }
     /// <p>The status of the component type.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -163,6 +175,10 @@ impl ComponentResponseBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the component type.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
+    }
     /// <p>The name of the property definition set in the request.</p>
     pub fn defined_in(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.defined_in = ::std::option::Option::Some(input.into());
@@ -172,6 +188,10 @@ impl ComponentResponseBuilder {
     pub fn set_defined_in(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.defined_in = input;
         self
+    }
+    /// <p>The name of the property definition set in the request.</p>
+    pub fn get_defined_in(&self) -> &::std::option::Option<::std::string::String> {
+        &self.defined_in
     }
     /// Adds a key-value pair to `properties`.
     ///
@@ -197,6 +217,14 @@ impl ComponentResponseBuilder {
     ) -> Self {
         self.properties = input;
         self
+    }
+    /// <p>An object that maps strings to the properties to set in the component type. Each string in the mapping must be unique to this object.</p>
+    pub fn get_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::PropertyResponse>,
+    > {
+        &self.properties
     }
     /// Adds a key-value pair to `property_groups`.
     ///
@@ -226,6 +254,17 @@ impl ComponentResponseBuilder {
         self.property_groups = input;
         self
     }
+    /// <p>The property groups.</p>
+    pub fn get_property_groups(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::ComponentPropertyGroupResponse,
+        >,
+    > {
+        &self.property_groups
+    }
     /// <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
     pub fn sync_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sync_source = ::std::option::Option::Some(input.into());
@@ -235,6 +274,10 @@ impl ComponentResponseBuilder {
     pub fn set_sync_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sync_source = input;
         self
+    }
+    /// <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
+    pub fn get_sync_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sync_source
     }
     /// Consumes the builder and constructs a [`ComponentResponse`](crate::types::ComponentResponse).
     pub fn build(self) -> crate::types::ComponentResponse {

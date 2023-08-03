@@ -49,6 +49,12 @@ impl CloudFormationCollectionFilterBuilder {
         self.stack_names = input;
         self
     }
+    /// <p> An array of CloudFormation stack names. </p>
+    pub fn get_stack_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.stack_names
+    }
     /// Consumes the builder and constructs a [`CloudFormationCollectionFilter`](crate::types::CloudFormationCollectionFilter).
     pub fn build(self) -> crate::types::CloudFormationCollectionFilter {
         crate::types::CloudFormationCollectionFilter {

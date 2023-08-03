@@ -38,6 +38,12 @@ impl RegisterPublisherFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RegisterPublisher as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::register_publisher::builders::RegisterPublisherInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +136,11 @@ impl RegisterPublisherFluentBuilder {
         self.inner = self.inner.set_accept_terms_and_conditions(input);
         self
     }
+    /// <p>Whether you accept the <a href="https://cloudformation-registry-documents.s3.amazonaws.com/Terms_and_Conditions_for_AWS_CloudFormation_Registry_Publishers.pdf">Terms and Conditions</a> for publishing extensions in the CloudFormation registry. You must accept the terms and conditions in order to register to publish public extensions to the CloudFormation registry.</p>
+    /// <p>The default is <code>false</code>.</p>
+    pub fn get_accept_terms_and_conditions(&self) -> &::std::option::Option<bool> {
+        self.inner.get_accept_terms_and_conditions()
+    }
     /// <p>If you are using a Bitbucket or GitHub account for identity verification, the Amazon Resource Name (ARN) for your connection to that account.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-prereqs">Registering your account to publish CloudFormation extensions</a> in the <i>CloudFormation CLI User Guide</i>.</p>
     pub fn connection_arn(
@@ -147,5 +158,10 @@ impl RegisterPublisherFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_connection_arn(input);
         self
+    }
+    /// <p>If you are using a Bitbucket or GitHub account for identity verification, the Amazon Resource Name (ARN) for your connection to that account.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-prereqs">Registering your account to publish CloudFormation extensions</a> in the <i>CloudFormation CLI User Guide</i>.</p>
+    pub fn get_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connection_arn()
     }
 }

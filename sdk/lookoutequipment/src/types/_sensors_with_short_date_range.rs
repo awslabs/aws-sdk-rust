@@ -40,6 +40,10 @@ impl SensorsWithShortDateRangeBuilder {
         self.affected_sensor_count = input;
         self
     }
+    /// <p> Indicates the number of sensors that have less than 90 days of data. </p>
+    pub fn get_affected_sensor_count(&self) -> &::std::option::Option<i32> {
+        &self.affected_sensor_count
+    }
     /// Consumes the builder and constructs a [`SensorsWithShortDateRange`](crate::types::SensorsWithShortDateRange).
     pub fn build(self) -> crate::types::SensorsWithShortDateRange {
         crate::types::SensorsWithShortDateRange {

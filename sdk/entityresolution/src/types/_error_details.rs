@@ -46,6 +46,10 @@ impl ErrorDetailsBuilder {
         self.error_message = input;
         self
     }
+    /// <p>The error message from the job, if there is one.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// Consumes the builder and constructs a [`ErrorDetails`](crate::types::ErrorDetails).
     pub fn build(self) -> crate::types::ErrorDetails {
         crate::types::ErrorDetails {

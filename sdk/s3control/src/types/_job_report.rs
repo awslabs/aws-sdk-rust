@@ -84,6 +84,10 @@ impl JobReportBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the bucket where specified job-completion report will be stored.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>The format of the specified job-completion report.</p>
     pub fn format(mut self, input: crate::types::JobReportFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
@@ -97,6 +101,10 @@ impl JobReportBuilder {
         self.format = input;
         self
     }
+    /// <p>The format of the specified job-completion report.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::JobReportFormat> {
+        &self.format
+    }
     /// <p>Indicates whether the specified job will generate a job-completion report.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -106,6 +114,10 @@ impl JobReportBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>Indicates whether the specified job will generate a job-completion report.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// <p>An optional prefix to describe where in the specified bucket the job-completion report will be stored. Amazon S3 stores the job-completion report at <code>
     /// <prefix>
@@ -129,6 +141,16 @@ impl JobReportBuilder {
         self.prefix = input;
         self
     }
+    /// <p>An optional prefix to describe where in the specified bucket the job-completion report will be stored. Amazon S3 stores the job-completion report at <code>
+    /// <prefix>
+    /// /job-
+    /// <job-id>
+    /// /report.json
+    /// </job-id>
+    /// </prefix></code>.</p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
+    }
     /// <p>Indicates whether the job-completion report will include details of all tasks or only failed tasks.</p>
     pub fn report_scope(mut self, input: crate::types::JobReportScope) -> Self {
         self.report_scope = ::std::option::Option::Some(input);
@@ -141,6 +163,10 @@ impl JobReportBuilder {
     ) -> Self {
         self.report_scope = input;
         self
+    }
+    /// <p>Indicates whether the job-completion report will include details of all tasks or only failed tasks.</p>
+    pub fn get_report_scope(&self) -> &::std::option::Option<crate::types::JobReportScope> {
+        &self.report_scope
     }
     /// Consumes the builder and constructs a [`JobReport`](crate::types::JobReport).
     pub fn build(self) -> crate::types::JobReport {

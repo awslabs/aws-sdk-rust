@@ -55,6 +55,10 @@ impl GetApplicationVersionInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The unique identifier of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The specific version of the application.</p>
     pub fn application_version(mut self, input: i32) -> Self {
         self.application_version = ::std::option::Option::Some(input);
@@ -64,6 +68,10 @@ impl GetApplicationVersionInputBuilder {
     pub fn set_application_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.application_version = input;
         self
+    }
+    /// <p>The specific version of the application.</p>
+    pub fn get_application_version(&self) -> &::std::option::Option<i32> {
+        &self.application_version
     }
     /// Consumes the builder and constructs a [`GetApplicationVersionInput`](crate::operation::get_application_version::GetApplicationVersionInput).
     pub fn build(

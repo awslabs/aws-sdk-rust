@@ -36,6 +36,12 @@ impl DescribeExperienceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeExperience as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_experience::builders::DescribeExperienceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DescribeExperienceFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The identifier of your Amazon Kendra experience you want to get information on.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.index_id(input.into());
@@ -135,5 +145,9 @@ impl DescribeExperienceFluentBuilder {
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_index_id(input);
         self
+    }
+    /// <p>The identifier of the index for your Amazon Kendra experience.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_index_id()
     }
 }

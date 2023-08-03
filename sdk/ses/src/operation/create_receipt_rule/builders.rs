@@ -38,6 +38,12 @@ impl CreateReceiptRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateReceiptRule as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_receipt_rule::builders::CreateReceiptRuleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,10 @@ impl CreateReceiptRuleFluentBuilder {
         self.inner = self.inner.set_rule_set_name(input);
         self
     }
+    /// <p>The name of the rule set that the receipt rule will be added to.</p>
+    pub fn get_rule_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rule_set_name()
+    }
     /// <p>The name of an existing rule after which the new rule will be placed. If this parameter is null, the new rule will be inserted at the beginning of the rule list.</p>
     pub fn after(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.after(input.into());
@@ -144,6 +154,10 @@ impl CreateReceiptRuleFluentBuilder {
         self.inner = self.inner.set_after(input);
         self
     }
+    /// <p>The name of an existing rule after which the new rule will be placed. If this parameter is null, the new rule will be inserted at the beginning of the rule list.</p>
+    pub fn get_after(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_after()
+    }
     /// <p>A data structure that contains the specified rule's name, actions, recipients, domains, enabled status, scan status, and TLS policy.</p>
     pub fn rule(mut self, input: crate::types::ReceiptRule) -> Self {
         self.inner = self.inner.rule(input);
@@ -153,5 +167,9 @@ impl CreateReceiptRuleFluentBuilder {
     pub fn set_rule(mut self, input: ::std::option::Option<crate::types::ReceiptRule>) -> Self {
         self.inner = self.inner.set_rule(input);
         self
+    }
+    /// <p>A data structure that contains the specified rule's name, actions, recipients, domains, enabled status, scan status, and TLS policy.</p>
+    pub fn get_rule(&self) -> &::std::option::Option<crate::types::ReceiptRule> {
+        self.inner.get_rule()
     }
 }

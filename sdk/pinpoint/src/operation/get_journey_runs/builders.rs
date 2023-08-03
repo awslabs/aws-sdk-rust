@@ -36,6 +36,12 @@ impl GetJourneyRunsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetJourneyRuns as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_journey_runs::builders::GetJourneyRunsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl GetJourneyRunsFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>The unique identifier for the journey.</p>
     pub fn journey_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.journey_id(input.into());
@@ -141,6 +151,10 @@ impl GetJourneyRunsFluentBuilder {
     pub fn set_journey_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_journey_id(input);
         self
+    }
+    /// <p>The unique identifier for the journey.</p>
+    pub fn get_journey_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_journey_id()
     }
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     pub fn page_size(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -152,6 +166,10 @@ impl GetJourneyRunsFluentBuilder {
         self.inner = self.inner.set_page_size(input);
         self
     }
+    /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_page_size()
+    }
     /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
     pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.token(input.into());
@@ -161,5 +179,9 @@ impl GetJourneyRunsFluentBuilder {
     pub fn set_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_token(input);
         self
+    }
+    /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_token()
     }
 }

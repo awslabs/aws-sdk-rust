@@ -66,6 +66,12 @@ impl DataSourceConfigurationBuilder {
         self.data_source_s3_configuration = input;
         self
     }
+    /// <p>Configuration of an S3 location for a file which contains data to load.</p>
+    pub fn get_data_source_s3_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataSourceS3Configuration> {
+        &self.data_source_s3_configuration
+    }
     /// <p>A delimited data format where the column separator can be a comma and the record separator is a newline character.</p>
     pub fn csv_configuration(mut self, input: crate::types::CsvConfiguration) -> Self {
         self.csv_configuration = ::std::option::Option::Some(input);
@@ -79,6 +85,10 @@ impl DataSourceConfigurationBuilder {
         self.csv_configuration = input;
         self
     }
+    /// <p>A delimited data format where the column separator can be a comma and the record separator is a newline character.</p>
+    pub fn get_csv_configuration(&self) -> &::std::option::Option<crate::types::CsvConfiguration> {
+        &self.csv_configuration
+    }
     /// <p>This is currently CSV.</p>
     pub fn data_format(mut self, input: crate::types::BatchLoadDataFormat) -> Self {
         self.data_format = ::std::option::Option::Some(input);
@@ -91,6 +101,10 @@ impl DataSourceConfigurationBuilder {
     ) -> Self {
         self.data_format = input;
         self
+    }
+    /// <p>This is currently CSV.</p>
+    pub fn get_data_format(&self) -> &::std::option::Option<crate::types::BatchLoadDataFormat> {
+        &self.data_format
     }
     /// Consumes the builder and constructs a [`DataSourceConfiguration`](crate::types::DataSourceConfiguration).
     pub fn build(self) -> crate::types::DataSourceConfiguration {

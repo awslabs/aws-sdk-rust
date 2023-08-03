@@ -53,6 +53,10 @@ impl GetSuiteRunInputBuilder {
         self.suite_definition_id = input;
         self
     }
+    /// <p>Suite definition ID for the test suite run.</p>
+    pub fn get_suite_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.suite_definition_id
+    }
     /// <p>Suite run ID for the test suite run.</p>
     pub fn suite_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suite_run_id = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl GetSuiteRunInputBuilder {
     pub fn set_suite_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.suite_run_id = input;
         self
+    }
+    /// <p>Suite run ID for the test suite run.</p>
+    pub fn get_suite_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.suite_run_id
     }
     /// Consumes the builder and constructs a [`GetSuiteRunInput`](crate::operation::get_suite_run::GetSuiteRunInput).
     pub fn build(

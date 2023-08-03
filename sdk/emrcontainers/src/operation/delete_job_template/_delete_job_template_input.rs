@@ -40,6 +40,10 @@ impl DeleteJobTemplateInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the job template that will be deleted.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`DeleteJobTemplateInput`](crate::operation::delete_job_template::DeleteJobTemplateInput).
     pub fn build(
         self,

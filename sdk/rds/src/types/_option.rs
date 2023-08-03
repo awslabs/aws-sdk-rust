@@ -112,6 +112,10 @@ impl OptionBuilder {
         self.option_name = input;
         self
     }
+    /// <p>The name of the option.</p>
+    pub fn get_option_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.option_name
+    }
     /// <p>The description of the option.</p>
     pub fn option_description(
         mut self,
@@ -128,6 +132,10 @@ impl OptionBuilder {
         self.option_description = input;
         self
     }
+    /// <p>The description of the option.</p>
+    pub fn get_option_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.option_description
+    }
     /// <p>Indicate if this option is persistent.</p>
     pub fn persistent(mut self, input: bool) -> Self {
         self.persistent = ::std::option::Option::Some(input);
@@ -137,6 +145,10 @@ impl OptionBuilder {
     pub fn set_persistent(mut self, input: ::std::option::Option<bool>) -> Self {
         self.persistent = input;
         self
+    }
+    /// <p>Indicate if this option is persistent.</p>
+    pub fn get_persistent(&self) -> &::std::option::Option<bool> {
+        &self.persistent
     }
     /// <p>Indicate if this option is permanent.</p>
     pub fn permanent(mut self, input: bool) -> Self {
@@ -148,6 +160,10 @@ impl OptionBuilder {
         self.permanent = input;
         self
     }
+    /// <p>Indicate if this option is permanent.</p>
+    pub fn get_permanent(&self) -> &::std::option::Option<bool> {
+        &self.permanent
+    }
     /// <p>If required, the port configured for this option to use.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -157,6 +173,10 @@ impl OptionBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
+    }
+    /// <p>If required, the port configured for this option to use.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// <p>The version of the option.</p>
     pub fn option_version(
@@ -173,6 +193,10 @@ impl OptionBuilder {
     ) -> Self {
         self.option_version = input;
         self
+    }
+    /// <p>The version of the option.</p>
+    pub fn get_option_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.option_version
     }
     /// Appends an item to `option_settings`.
     ///
@@ -192,6 +216,12 @@ impl OptionBuilder {
     ) -> Self {
         self.option_settings = input;
         self
+    }
+    /// <p>The option settings for this option.</p>
+    pub fn get_option_settings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OptionSetting>> {
+        &self.option_settings
     }
     /// Appends an item to `db_security_group_memberships`.
     ///
@@ -215,6 +245,12 @@ impl OptionBuilder {
         self.db_security_group_memberships = input;
         self
     }
+    /// <p>If the option requires access to a port, then this DB security group allows access to the port.</p>
+    pub fn get_db_security_group_memberships(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DbSecurityGroupMembership>> {
+        &self.db_security_group_memberships
+    }
     /// Appends an item to `vpc_security_group_memberships`.
     ///
     /// To override the contents of this collection use [`set_vpc_security_group_memberships`](Self::set_vpc_security_group_memberships).
@@ -236,6 +272,12 @@ impl OptionBuilder {
     ) -> Self {
         self.vpc_security_group_memberships = input;
         self
+    }
+    /// <p>If the option requires access to a port, then this VPC security group allows access to the port.</p>
+    pub fn get_vpc_security_group_memberships(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>> {
+        &self.vpc_security_group_memberships
     }
     /// Consumes the builder and constructs a [`Option`](crate::types::Option).
     pub fn build(self) -> crate::types::Option {

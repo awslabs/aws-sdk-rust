@@ -51,6 +51,10 @@ impl CreateParticipantTokenOutputBuilder {
         self.participant_token = input;
         self
     }
+    /// <p>The participant token that was created.</p>
+    pub fn get_participant_token(&self) -> &::std::option::Option<crate::types::ParticipantToken> {
+        &self.participant_token
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

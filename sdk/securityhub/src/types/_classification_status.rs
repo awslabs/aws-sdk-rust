@@ -48,6 +48,10 @@ impl ClassificationStatusBuilder {
         self.code = input;
         self
     }
+    /// <p>The code that represents the status of the sensitive data detection.</p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
+    }
     /// <p>A longer description of the current status of the sensitive data detection.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ClassificationStatusBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>A longer description of the current status of the sensitive data detection.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
     }
     /// Consumes the builder and constructs a [`ClassificationStatus`](crate::types::ClassificationStatus).
     pub fn build(self) -> crate::types::ClassificationStatus {

@@ -54,6 +54,10 @@ impl TransitGatewayPolicyRuleMetaDataBuilder {
         self.meta_data_key = input;
         self
     }
+    /// <p>The key name for the transit gateway policy rule meta data tag.</p>
+    pub fn get_meta_data_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.meta_data_key
+    }
     /// <p>The value of the key for the transit gateway policy rule meta data tag.</p>
     pub fn meta_data_value(
         mut self,
@@ -69,6 +73,10 @@ impl TransitGatewayPolicyRuleMetaDataBuilder {
     ) -> Self {
         self.meta_data_value = input;
         self
+    }
+    /// <p>The value of the key for the transit gateway policy rule meta data tag.</p>
+    pub fn get_meta_data_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.meta_data_value
     }
     /// Consumes the builder and constructs a [`TransitGatewayPolicyRuleMetaData`](crate::types::TransitGatewayPolicyRuleMetaData).
     pub fn build(self) -> crate::types::TransitGatewayPolicyRuleMetaData {

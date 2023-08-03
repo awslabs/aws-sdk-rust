@@ -50,6 +50,12 @@ impl GetUserEndpointsOutputBuilder {
         self.endpoints_response = input;
         self
     }
+    /// <p>Provides information about all the endpoints that are associated with a user ID.</p>
+    pub fn get_endpoints_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::EndpointsResponse> {
+        &self.endpoints_response
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

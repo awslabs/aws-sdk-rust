@@ -60,6 +60,12 @@ impl GetCalendarStateInputBuilder {
         self.calendar_names = input;
         self
     }
+    /// <p>The names or Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that represent the calendar entries for which you want to get the state.</p>
+    pub fn get_calendar_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.calendar_names
+    }
     /// <p>(Optional) The specific time for which you want to get calendar state information, in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. If you don't specify a value or <code>AtTime</code>, the current time is used.</p>
     pub fn at_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.at_time = ::std::option::Option::Some(input.into());
@@ -69,6 +75,10 @@ impl GetCalendarStateInputBuilder {
     pub fn set_at_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.at_time = input;
         self
+    }
+    /// <p>(Optional) The specific time for which you want to get calendar state information, in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. If you don't specify a value or <code>AtTime</code>, the current time is used.</p>
+    pub fn get_at_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.at_time
     }
     /// Consumes the builder and constructs a [`GetCalendarStateInput`](crate::operation::get_calendar_state::GetCalendarStateInput).
     pub fn build(

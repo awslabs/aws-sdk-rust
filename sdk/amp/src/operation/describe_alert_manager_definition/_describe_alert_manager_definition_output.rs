@@ -57,6 +57,12 @@ impl DescribeAlertManagerDefinitionOutputBuilder {
         self.alert_manager_definition = input;
         self
     }
+    /// The properties of the selected workspace's alert manager definition.
+    pub fn get_alert_manager_definition(
+        &self,
+    ) -> &::std::option::Option<crate::types::AlertManagerDefinitionDescription> {
+        &self.alert_manager_definition
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -46,6 +46,10 @@ impl CreateKeyspaceOutputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The unique identifier of the keyspace in the format of an Amazon Resource Name (ARN).</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

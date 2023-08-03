@@ -36,6 +36,10 @@ impl GetDevicePoolCompatibilityFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetDevicePoolCompatibility as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_device_pool_compatibility::builders::GetDevicePoolCompatibilityInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl GetDevicePoolCompatibilityFluentBuilder {
         self.inner = self.inner.set_device_pool_arn(input);
         self
     }
+    /// <p>The device pool's ARN.</p>
+    pub fn get_device_pool_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_pool_arn()
+    }
     /// <p>The ARN of the app that is associated with the specified device pool.</p>
     pub fn app_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_arn(input.into());
@@ -141,6 +149,10 @@ impl GetDevicePoolCompatibilityFluentBuilder {
     pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_arn(input);
         self
+    }
+    /// <p>The ARN of the app that is associated with the specified device pool.</p>
+    pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_arn()
     }
     /// <p>The test type for the specified device pool.</p>
     /// <p>Allowed values include the following:</p>
@@ -194,6 +206,31 @@ impl GetDevicePoolCompatibilityFluentBuilder {
         self.inner = self.inner.set_test_type(input);
         self
     }
+    /// <p>The test type for the specified device pool.</p>
+    /// <p>Allowed values include the following:</p>
+    /// <ul>
+    /// <li> <p>BUILTIN_FUZZ.</p> </li>
+    /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT.</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG.</p> </li>
+    /// <li> <p>APPIUM_PYTHON.</p> </li>
+    /// <li> <p>APPIUM_NODE.</p> </li>
+    /// <li> <p>APPIUM_RUBY.</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT.</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG.</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON.</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE.</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY.</p> </li>
+    /// <li> <p>CALABASH.</p> </li>
+    /// <li> <p>INSTRUMENTATION.</p> </li>
+    /// <li> <p>UIAUTOMATION.</p> </li>
+    /// <li> <p>UIAUTOMATOR.</p> </li>
+    /// <li> <p>XCTEST.</p> </li>
+    /// <li> <p>XCTEST_UI.</p> </li>
+    /// </ul>
+    pub fn get_test_type(&self) -> &::std::option::Option<crate::types::TestType> {
+        self.inner.get_test_type()
+    }
     /// <p>Information about the uploaded test to be run against the device pool.</p>
     pub fn test(mut self, input: crate::types::ScheduleRunTest) -> Self {
         self.inner = self.inner.test(input);
@@ -203,6 +240,10 @@ impl GetDevicePoolCompatibilityFluentBuilder {
     pub fn set_test(mut self, input: ::std::option::Option<crate::types::ScheduleRunTest>) -> Self {
         self.inner = self.inner.set_test(input);
         self
+    }
+    /// <p>Information about the uploaded test to be run against the device pool.</p>
+    pub fn get_test(&self) -> &::std::option::Option<crate::types::ScheduleRunTest> {
+        self.inner.get_test()
     }
     /// <p>An object that contains information about the settings for a run.</p>
     pub fn configuration(mut self, input: crate::types::ScheduleRunConfiguration) -> Self {
@@ -216,5 +257,11 @@ impl GetDevicePoolCompatibilityFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
+    }
+    /// <p>An object that contains information about the settings for a run.</p>
+    pub fn get_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScheduleRunConfiguration> {
+        self.inner.get_configuration()
     }
 }

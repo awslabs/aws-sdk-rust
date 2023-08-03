@@ -47,6 +47,10 @@ impl DeleteSqlInjectionMatchSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteSqlInjectionMatchSet as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_sql_injection_match_set::builders::DeleteSqlInjectionMatchSetInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +147,10 @@ impl DeleteSqlInjectionMatchSetFluentBuilder {
         self.inner = self.inner.set_sql_injection_match_set_id(input);
         self
     }
+    /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to delete. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
+    pub fn get_sql_injection_match_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sql_injection_match_set_id()
+    }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.change_token(input.into());
@@ -152,5 +160,9 @@ impl DeleteSqlInjectionMatchSetFluentBuilder {
     pub fn set_change_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_change_token(input);
         self
+    }
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    pub fn get_change_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_change_token()
     }
 }

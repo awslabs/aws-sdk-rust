@@ -51,6 +51,10 @@ impl CertificateListBuilder {
         self.signing_alg = input;
         self
     }
+    /// <p>The certificate chain algorithm provided by sidewalk.</p>
+    pub fn get_signing_alg(&self) -> &::std::option::Option<crate::types::SigningAlg> {
+        &self.signing_alg
+    }
     /// <p>The value of the chosen sidewalk certificate.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl CertificateListBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of the chosen sidewalk certificate.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`CertificateList`](crate::types::CertificateList).
     pub fn build(self) -> crate::types::CertificateList {

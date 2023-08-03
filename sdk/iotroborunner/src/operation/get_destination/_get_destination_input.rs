@@ -39,6 +39,10 @@ impl GetDestinationInputBuilder {
         self.id = input;
         self
     }
+    /// Destination ARN.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`GetDestinationInput`](crate::operation::get_destination::GetDestinationInput).
     pub fn build(
         self,

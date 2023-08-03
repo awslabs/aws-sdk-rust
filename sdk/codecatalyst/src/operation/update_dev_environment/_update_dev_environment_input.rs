@@ -104,6 +104,10 @@ impl UpdateDevEnvironmentInputBuilder {
         self.space_name = input;
         self
     }
+    /// <p>The name of the space.</p>
+    pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.space_name
+    }
     /// <p>The name of the project in the space.</p>
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
@@ -113,6 +117,10 @@ impl UpdateDevEnvironmentInputBuilder {
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_name = input;
         self
+    }
+    /// <p>The name of the project in the space.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
     }
     /// <p>The system-generated unique ID of the Dev Environment. </p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -124,6 +132,10 @@ impl UpdateDevEnvironmentInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The system-generated unique ID of the Dev Environment. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The user-specified alias for the Dev Environment. Changing this value will not cause a restart.</p>
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias = ::std::option::Option::Some(input.into());
@@ -133,6 +145,10 @@ impl UpdateDevEnvironmentInputBuilder {
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alias = input;
         self
+    }
+    /// <p>The user-specified alias for the Dev Environment. Changing this value will not cause a restart.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias
     }
     /// Appends an item to `ides`.
     ///
@@ -153,6 +169,12 @@ impl UpdateDevEnvironmentInputBuilder {
         self.ides = input;
         self
     }
+    /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p>
+    pub fn get_ides(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>> {
+        &self.ides
+    }
     /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p> <note>
     /// <p>Changing this value will cause a restart of the Dev Environment if it is running.</p>
     /// </note>
@@ -170,6 +192,12 @@ impl UpdateDevEnvironmentInputBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p> <note>
+    /// <p>Changing this value will cause a restart of the Dev Environment if it is running.</p>
+    /// </note>
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
+        &self.instance_type
+    }
     /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.</p> <note>
     /// <p>Changing this value will cause a restart of the Dev Environment if it is running.</p>
     /// </note>
@@ -184,6 +212,12 @@ impl UpdateDevEnvironmentInputBuilder {
         self.inactivity_timeout_minutes = input;
         self
     }
+    /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.</p> <note>
+    /// <p>Changing this value will cause a restart of the Dev Environment if it is running.</p>
+    /// </note>
+    pub fn get_inactivity_timeout_minutes(&self) -> &::std::option::Option<i32> {
+        &self.inactivity_timeout_minutes
+    }
     /// <p>A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -193,6 +227,10 @@ impl UpdateDevEnvironmentInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateDevEnvironmentInput`](crate::operation::update_dev_environment::UpdateDevEnvironmentInput).
     pub fn build(

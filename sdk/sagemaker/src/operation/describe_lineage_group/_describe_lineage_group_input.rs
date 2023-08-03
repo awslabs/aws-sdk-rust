@@ -46,6 +46,10 @@ impl DescribeLineageGroupInputBuilder {
         self.lineage_group_name = input;
         self
     }
+    /// <p>The name of the lineage group.</p>
+    pub fn get_lineage_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lineage_group_name
+    }
     /// Consumes the builder and constructs a [`DescribeLineageGroupInput`](crate::operation::describe_lineage_group::DescribeLineageGroupInput).
     pub fn build(
         self,

@@ -56,6 +56,12 @@ impl GetApplicationDateRangeKpiOutputBuilder {
         self.application_date_range_kpi_response = input;
         self
     }
+    /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to an application, and provides information about that query.</p>
+    pub fn get_application_date_range_kpi_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationDateRangeKpiResponse> {
+        &self.application_date_range_kpi_response
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

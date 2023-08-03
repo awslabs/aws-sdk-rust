@@ -46,6 +46,10 @@ impl DescribeDbSnapshotAttributesInputBuilder {
         self.db_snapshot_identifier = input;
         self
     }
+    /// <p>The identifier for the DB snapshot to describe the attributes for.</p>
+    pub fn get_db_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_snapshot_identifier
+    }
     /// Consumes the builder and constructs a [`DescribeDbSnapshotAttributesInput`](crate::operation::describe_db_snapshot_attributes::DescribeDbSnapshotAttributesInput).
     pub fn build(
         self,

@@ -55,6 +55,10 @@ impl StartImageScanInputBuilder {
         self.registry_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to start an image scan request. If you do not specify a registry, the default registry is assumed.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
+    }
     /// <p>The name of the repository that contains the images to scan.</p>
     pub fn repository_name(
         mut self,
@@ -71,6 +75,10 @@ impl StartImageScanInputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository that contains the images to scan.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
     pub fn image_id(mut self, input: crate::types::ImageIdentifier) -> Self {
         self.image_id = ::std::option::Option::Some(input);
@@ -83,6 +91,10 @@ impl StartImageScanInputBuilder {
     ) -> Self {
         self.image_id = input;
         self
+    }
+    /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<crate::types::ImageIdentifier> {
+        &self.image_id
     }
     /// Consumes the builder and constructs a [`StartImageScanInput`](crate::operation::start_image_scan::StartImageScanInput).
     pub fn build(

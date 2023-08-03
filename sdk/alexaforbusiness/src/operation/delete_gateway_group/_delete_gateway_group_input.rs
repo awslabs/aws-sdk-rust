@@ -46,6 +46,10 @@ impl DeleteGatewayGroupInputBuilder {
         self.gateway_group_arn = input;
         self
     }
+    /// <p>The ARN of the gateway group to delete.</p>
+    pub fn get_gateway_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_group_arn
+    }
     /// Consumes the builder and constructs a [`DeleteGatewayGroupInput`](crate::operation::delete_gateway_group::DeleteGatewayGroupInput).
     pub fn build(
         self,

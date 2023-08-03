@@ -60,6 +60,10 @@ impl DescribeReceiptRuleSetOutputBuilder {
         self.metadata = input;
         self
     }
+    /// <p>The metadata for the receipt rule set, which consists of the rule set name and the timestamp of when the rule set was created.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::ReceiptRuleSetMetadata> {
+        &self.metadata
+    }
     /// Appends an item to `rules`.
     ///
     /// To override the contents of this collection use [`set_rules`](Self::set_rules).
@@ -78,6 +82,10 @@ impl DescribeReceiptRuleSetOutputBuilder {
     ) -> Self {
         self.rules = input;
         self
+    }
+    /// <p>A list of the receipt rules that belong to the specified receipt rule set.</p>
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReceiptRule>> {
+        &self.rules
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

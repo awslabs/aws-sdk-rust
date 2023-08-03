@@ -63,6 +63,10 @@ impl ListWorkersInputBuilder {
         self.site = input;
         self
     }
+    /// Site ARN.
+    pub fn get_site(&self) -> &::std::option::Option<::std::string::String> {
+        &self.site
+    }
     /// Maximum number of results to retrieve in a single ListWorkers call.
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl ListWorkersInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// Maximum number of results to retrieve in a single ListWorkers call.
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -83,6 +91,10 @@ impl ListWorkersInputBuilder {
         self.next_token = input;
         self
     }
+    /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Full ARN of the worker fleet.
     pub fn fleet(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet = ::std::option::Option::Some(input.into());
@@ -92,6 +104,10 @@ impl ListWorkersInputBuilder {
     pub fn set_fleet(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet = input;
         self
+    }
+    /// Full ARN of the worker fleet.
+    pub fn get_fleet(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet
     }
     /// Consumes the builder and constructs a [`ListWorkersInput`](crate::operation::list_workers::ListWorkersInput).
     pub fn build(

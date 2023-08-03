@@ -50,6 +50,12 @@ impl TestSetDiscrepancyReportResourceTargetBuilder {
         self.bot_alias_target = input;
         self
     }
+    /// <p>Contains information about the bot alias used as the resource for the test set discrepancy report.</p>
+    pub fn get_bot_alias_target(
+        &self,
+    ) -> &::std::option::Option<crate::types::TestSetDiscrepancyReportBotAliasTarget> {
+        &self.bot_alias_target
+    }
     /// Consumes the builder and constructs a [`TestSetDiscrepancyReportResourceTarget`](crate::types::TestSetDiscrepancyReportResourceTarget).
     pub fn build(self) -> crate::types::TestSetDiscrepancyReportResourceTarget {
         crate::types::TestSetDiscrepancyReportResourceTarget {

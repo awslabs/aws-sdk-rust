@@ -64,6 +64,10 @@ impl SearchBuilder {
         self.facetable = input;
         self
     }
+    /// <p>Indicates that the field can be used to create search facets, a count of results for each value in the field. The default is <code>false</code> .</p>
+    pub fn get_facetable(&self) -> &::std::option::Option<bool> {
+        &self.facetable
+    }
     /// <p>Determines whether the field is used in the search. If the <code>Searchable</code> field is <code>true</code>, you can use relevance tuning to manually tune how Amazon Kendra weights the field in the search. The default is <code>true</code> for string fields and <code>false</code> for number and date fields.</p>
     pub fn searchable(mut self, input: bool) -> Self {
         self.searchable = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl SearchBuilder {
     pub fn set_searchable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.searchable = input;
         self
+    }
+    /// <p>Determines whether the field is used in the search. If the <code>Searchable</code> field is <code>true</code>, you can use relevance tuning to manually tune how Amazon Kendra weights the field in the search. The default is <code>true</code> for string fields and <code>false</code> for number and date fields.</p>
+    pub fn get_searchable(&self) -> &::std::option::Option<bool> {
+        &self.searchable
     }
     /// <p>Determines whether the field is returned in the query response. The default is <code>true</code>.</p>
     pub fn displayable(mut self, input: bool) -> Self {
@@ -84,6 +92,10 @@ impl SearchBuilder {
         self.displayable = input;
         self
     }
+    /// <p>Determines whether the field is returned in the query response. The default is <code>true</code>.</p>
+    pub fn get_displayable(&self) -> &::std::option::Option<bool> {
+        &self.displayable
+    }
     /// <p>Determines whether the field can be used to sort the results of a query. If you specify sorting on a field that does not have <code>Sortable</code> set to <code>true</code>, Amazon Kendra returns an exception. The default is <code>false</code>.</p>
     pub fn sortable(mut self, input: bool) -> Self {
         self.sortable = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl SearchBuilder {
     pub fn set_sortable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.sortable = input;
         self
+    }
+    /// <p>Determines whether the field can be used to sort the results of a query. If you specify sorting on a field that does not have <code>Sortable</code> set to <code>true</code>, Amazon Kendra returns an exception. The default is <code>false</code>.</p>
+    pub fn get_sortable(&self) -> &::std::option::Option<bool> {
+        &self.sortable
     }
     /// Consumes the builder and constructs a [`Search`](crate::types::Search).
     pub fn build(self) -> crate::types::Search {

@@ -56,6 +56,12 @@ impl DeleteTransitGatewayPolicyTableOutputBuilder {
         self.transit_gateway_policy_table = input;
         self
     }
+    /// <p>Provides details about the deleted transit gateway policy table.</p>
+    pub fn get_transit_gateway_policy_table(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransitGatewayPolicyTable> {
+        &self.transit_gateway_policy_table
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

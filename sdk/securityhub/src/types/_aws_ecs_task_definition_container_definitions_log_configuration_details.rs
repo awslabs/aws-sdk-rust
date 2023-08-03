@@ -132,6 +132,28 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetailsBuilder {
         self.log_driver = input;
         self
     }
+    /// <p>The log driver to use for the container.</p>
+    /// <p>Valid values on Fargate are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>awsfirelens</code> </p> </li>
+    /// <li> <p> <code>awslogs</code> </p> </li>
+    /// <li> <p> <code>splunk</code> </p> </li>
+    /// </ul>
+    /// <p>Valid values on Amazon EC2 are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>awsfirelens</code> </p> </li>
+    /// <li> <p> <code>awslogs</code> </p> </li>
+    /// <li> <p> <code>fluentd</code> </p> </li>
+    /// <li> <p> <code>gelf</code> </p> </li>
+    /// <li> <p> <code>journald</code> </p> </li>
+    /// <li> <p> <code>json-file</code> </p> </li>
+    /// <li> <p> <code>logentries</code> </p> </li>
+    /// <li> <p> <code>splunk</code> </p> </li>
+    /// <li> <p> <code>syslog</code> </p> </li>
+    /// </ul>
+    pub fn get_log_driver(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_driver
+    }
     /// Adds a key-value pair to `options`.
     ///
     /// To override the contents of this collection use [`set_options`](Self::set_options).
@@ -157,6 +179,14 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetailsBuilder {
         self.options = input;
         self
     }
+    /// <p>The configuration options to send to the log driver. Requires version 1.19 of the Docker Remote API or greater on your container instance.</p>
+    pub fn get_options(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.options
+    }
     /// Appends an item to `secret_options`.
     ///
     /// To override the contents of this collection use [`set_secret_options`](Self::set_secret_options).
@@ -178,6 +208,10 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetailsBuilder {
     ) -> Self {
         self.secret_options = input;
         self
+    }
+    /// <p>The secrets to pass to the log configuration.</p>
+    pub fn get_secret_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails>>{
+        &self.secret_options
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails).
     pub fn build(

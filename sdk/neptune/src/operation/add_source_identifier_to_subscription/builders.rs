@@ -36,6 +36,10 @@ impl AddSourceIdentifierToSubscriptionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AddSourceIdentifierToSubscription as a reference.
+    pub fn as_input(&self) -> &crate::operation::add_source_identifier_to_subscription::builders::AddSourceIdentifierToSubscriptionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl AddSourceIdentifierToSubscriptionFluentBuilder {
         self.inner = self.inner.set_subscription_name(input);
         self
     }
+    /// <p>The name of the event notification subscription you want to add a source identifier to.</p>
+    pub fn get_subscription_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_subscription_name()
+    }
     /// <p>The identifier of the event source to be added.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -135,5 +143,16 @@ impl AddSourceIdentifierToSubscriptionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source_identifier(input);
         self
+    }
+    /// <p>The identifier of the event source to be added.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must be supplied.</p> </li>
+    /// <li> <p>If the source type is a DB security group, a <code>DBSecurityGroupName</code> must be supplied.</p> </li>
+    /// <li> <p>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must be supplied.</p> </li>
+    /// <li> <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</p> </li>
+    /// </ul>
+    pub fn get_source_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_identifier()
     }
 }

@@ -36,6 +36,12 @@ impl DeleteMembershipFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteMembership as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_membership::builders::DeleteMembershipInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl DeleteMembershipFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_membership_identifier(input);
         self
+    }
+    /// <p>The identifier for a membership resource.</p>
+    pub fn get_membership_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_membership_identifier()
     }
 }

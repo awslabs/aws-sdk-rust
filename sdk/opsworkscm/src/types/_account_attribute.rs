@@ -72,6 +72,14 @@ impl AccountAttributeBuilder {
         self.name = input;
         self
     }
+    /// <p> The attribute name. The following are supported attribute names. </p>
+    /// <ul>
+    /// <li> <p> <i>ServerLimit:</i> The number of current servers/maximum number of servers allowed. By default, you can have a maximum of 10 servers. </p> </li>
+    /// <li> <p> <i>ManualBackupLimit:</i> The number of current manual backups/maximum number of backups allowed. By default, you can have a maximum of 50 manual backups saved. </p> </li>
+    /// </ul>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p> The maximum allowed value. </p>
     pub fn maximum(mut self, input: i32) -> Self {
         self.maximum = ::std::option::Option::Some(input);
@@ -82,6 +90,10 @@ impl AccountAttributeBuilder {
         self.maximum = input;
         self
     }
+    /// <p> The maximum allowed value. </p>
+    pub fn get_maximum(&self) -> &::std::option::Option<i32> {
+        &self.maximum
+    }
     /// <p> The current usage, such as the current number of servers that are associated with the account. </p>
     pub fn used(mut self, input: i32) -> Self {
         self.used = ::std::option::Option::Some(input);
@@ -91,6 +103,10 @@ impl AccountAttributeBuilder {
     pub fn set_used(mut self, input: ::std::option::Option<i32>) -> Self {
         self.used = input;
         self
+    }
+    /// <p> The current usage, such as the current number of servers that are associated with the account. </p>
+    pub fn get_used(&self) -> &::std::option::Option<i32> {
+        &self.used
     }
     /// Consumes the builder and constructs a [`AccountAttribute`](crate::types::AccountAttribute).
     pub fn build(self) -> crate::types::AccountAttribute {

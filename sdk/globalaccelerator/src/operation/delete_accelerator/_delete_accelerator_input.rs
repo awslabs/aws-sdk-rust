@@ -46,6 +46,10 @@ impl DeleteAcceleratorInputBuilder {
         self.accelerator_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of an accelerator.</p>
+    pub fn get_accelerator_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accelerator_arn
+    }
     /// Consumes the builder and constructs a [`DeleteAcceleratorInput`](crate::operation::delete_accelerator::DeleteAcceleratorInput).
     pub fn build(
         self,

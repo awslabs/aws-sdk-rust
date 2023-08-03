@@ -36,6 +36,12 @@ impl UpdateTemplateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateTemplate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_template::builders::UpdateTemplateInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl UpdateTemplateFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The ID of the Amazon Web Services account that contains the template that you're updating.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The ID for the template.</p>
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_id(input.into());
@@ -133,6 +143,10 @@ impl UpdateTemplateFluentBuilder {
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_id(input);
         self
+    }
+    /// <p>The ID for the template.</p>
+    pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_id()
     }
     /// <p>The entity that you are using as a source when you update the template. In <code>SourceEntity</code>, you specify the type of object you're using as source: <code>SourceTemplate</code> for a template or <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the source template. For <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region;. </p>
     /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p>
@@ -148,6 +162,11 @@ impl UpdateTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source_entity(input);
         self
+    }
+    /// <p>The entity that you are using as a source when you update the template. In <code>SourceEntity</code>, you specify the type of object you're using as source: <code>SourceTemplate</code> for a template or <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the source template. For <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region;. </p>
+    /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p>
+    pub fn get_source_entity(&self) -> &::std::option::Option<crate::types::TemplateSourceEntity> {
+        self.inner.get_source_entity()
     }
     /// <p>A description of the current template version that is being updated. Every time you call <code>UpdateTemplate</code>, you create a new version of the template. Each version of the template maintains a description of the version in the <code>VersionDescription</code> field.</p>
     pub fn version_description(
@@ -165,6 +184,10 @@ impl UpdateTemplateFluentBuilder {
         self.inner = self.inner.set_version_description(input);
         self
     }
+    /// <p>A description of the current template version that is being updated. Every time you call <code>UpdateTemplate</code>, you create a new version of the template. Each version of the template maintains a description of the version in the <code>VersionDescription</code> field.</p>
+    pub fn get_version_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version_description()
+    }
     /// <p>The name for the template.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -174,6 +197,10 @@ impl UpdateTemplateFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name for the template.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The definition of a template.</p>
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
@@ -189,5 +216,12 @@ impl UpdateTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_definition(input);
         self
+    }
+    /// <p>The definition of a template.</p>
+    /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
+    pub fn get_definition(
+        &self,
+    ) -> &::std::option::Option<crate::types::TemplateVersionDefinition> {
+        self.inner.get_definition()
     }
 }

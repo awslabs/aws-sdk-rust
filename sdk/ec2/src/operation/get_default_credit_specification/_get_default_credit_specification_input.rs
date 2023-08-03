@@ -50,6 +50,10 @@ impl GetDefaultCreditSpecificationInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The instance family.</p>
     pub fn instance_family(
         mut self,
@@ -65,6 +69,12 @@ impl GetDefaultCreditSpecificationInputBuilder {
     ) -> Self {
         self.instance_family = input;
         self
+    }
+    /// <p>The instance family.</p>
+    pub fn get_instance_family(
+        &self,
+    ) -> &::std::option::Option<crate::types::UnlimitedSupportedInstanceFamily> {
+        &self.instance_family
     }
     /// Consumes the builder and constructs a [`GetDefaultCreditSpecificationInput`](crate::operation::get_default_credit_specification::GetDefaultCreditSpecificationInput).
     pub fn build(

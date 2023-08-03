@@ -85,6 +85,10 @@ impl DecryptOutputBuilder {
         self.key_id = input;
         self
     }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that was used to decrypt the ciphertext.</p>
+    pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_id
+    }
     /// <p>Decrypted plaintext data. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     /// <p>If the response includes the <code>CiphertextForRecipient</code> field, the <code>Plaintext</code> field is null or empty.</p>
     pub fn plaintext(mut self, input: ::aws_smithy_types::Blob) -> Self {
@@ -96,6 +100,11 @@ impl DecryptOutputBuilder {
     pub fn set_plaintext(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.plaintext = input;
         self
+    }
+    /// <p>Decrypted plaintext data. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    /// <p>If the response includes the <code>CiphertextForRecipient</code> field, the <code>Plaintext</code> field is null or empty.</p>
+    pub fn get_plaintext(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.plaintext
     }
     /// <p>The encryption algorithm that was used to decrypt the ciphertext.</p>
     pub fn encryption_algorithm(mut self, input: crate::types::EncryptionAlgorithmSpec) -> Self {
@@ -109,6 +118,12 @@ impl DecryptOutputBuilder {
     ) -> Self {
         self.encryption_algorithm = input;
         self
+    }
+    /// <p>The encryption algorithm that was used to decrypt the ciphertext.</p>
+    pub fn get_encryption_algorithm(
+        &self,
+    ) -> &::std::option::Option<crate::types::EncryptionAlgorithmSpec> {
+        &self.encryption_algorithm
     }
     /// <p>The plaintext data encrypted with the public key in the attestation document. </p>
     /// <p>This field is included in the response only when the <code>Recipient</code> parameter in the request includes a valid attestation document from an Amazon Web Services Nitro enclave. For information about the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
@@ -124,6 +139,11 @@ impl DecryptOutputBuilder {
     ) -> Self {
         self.ciphertext_for_recipient = input;
         self
+    }
+    /// <p>The plaintext data encrypted with the public key in the attestation document. </p>
+    /// <p>This field is included in the response only when the <code>Recipient</code> parameter in the request includes a valid attestation document from an Amazon Web Services Nitro enclave. For information about the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn get_ciphertext_for_recipient(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.ciphertext_for_recipient
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

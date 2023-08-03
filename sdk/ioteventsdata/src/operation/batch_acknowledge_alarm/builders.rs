@@ -36,6 +36,13 @@ impl BatchAcknowledgeAlarmFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchAcknowledgeAlarm as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_acknowledge_alarm::builders::BatchAcknowledgeAlarmInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,5 +142,11 @@ impl BatchAcknowledgeAlarmFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_acknowledge_action_requests(input);
         self
+    }
+    /// <p>The list of acknowledge action requests. You can specify up to 10 requests per operation.</p>
+    pub fn get_acknowledge_action_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AcknowledgeAlarmActionRequest>> {
+        self.inner.get_acknowledge_action_requests()
     }
 }

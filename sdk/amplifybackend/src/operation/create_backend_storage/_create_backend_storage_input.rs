@@ -68,6 +68,10 @@ impl CreateBackendStorageInputBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The app ID.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p>The name of the backend environment.</p>
     pub fn backend_environment_name(
         mut self,
@@ -83,6 +87,10 @@ impl CreateBackendStorageInputBuilder {
     ) -> Self {
         self.backend_environment_name = input;
         self
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn get_backend_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backend_environment_name
     }
     /// <p>The resource configuration for creating backend storage.</p>
     pub fn resource_config(
@@ -100,6 +108,12 @@ impl CreateBackendStorageInputBuilder {
         self.resource_config = input;
         self
     }
+    /// <p>The resource configuration for creating backend storage.</p>
+    pub fn get_resource_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateBackendStorageResourceConfig> {
+        &self.resource_config
+    }
     /// <p>The name of the storage resource.</p>
     pub fn resource_name(
         mut self,
@@ -115,6 +129,10 @@ impl CreateBackendStorageInputBuilder {
     ) -> Self {
         self.resource_name = input;
         self
+    }
+    /// <p>The name of the storage resource.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_name
     }
     /// Consumes the builder and constructs a [`CreateBackendStorageInput`](crate::operation::create_backend_storage::CreateBackendStorageInput).
     pub fn build(

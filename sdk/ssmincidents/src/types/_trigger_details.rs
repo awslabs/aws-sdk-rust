@@ -64,6 +64,10 @@ impl TriggerDetailsBuilder {
         self.source = input;
         self
     }
+    /// <p>Identifies the service that sourced the event. All events sourced from within Amazon Web Services begin with "<code>aws.</code>" Customer-generated events can have any value here, as long as it doesn't begin with "<code>aws.</code>" We recommend the use of Java package-name style reverse domain-name strings. </p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
+    }
     /// <p>The Amazon Resource Name (ARN) of the source that detected the incident.</p>
     pub fn trigger_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trigger_arn = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl TriggerDetailsBuilder {
     pub fn set_trigger_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trigger_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the source that detected the incident.</p>
+    pub fn get_trigger_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trigger_arn
     }
     /// <p>The time that the incident was detected.</p>
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -87,6 +95,10 @@ impl TriggerDetailsBuilder {
         self.timestamp = input;
         self
     }
+    /// <p>The time that the incident was detected.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
+    }
     /// <p>Raw data passed from either Amazon EventBridge, Amazon CloudWatch, or Incident Manager when an incident is created.</p>
     pub fn raw_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.raw_data = ::std::option::Option::Some(input.into());
@@ -96,6 +108,10 @@ impl TriggerDetailsBuilder {
     pub fn set_raw_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.raw_data = input;
         self
+    }
+    /// <p>Raw data passed from either Amazon EventBridge, Amazon CloudWatch, or Incident Manager when an incident is created.</p>
+    pub fn get_raw_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.raw_data
     }
     /// Consumes the builder and constructs a [`TriggerDetails`](crate::types::TriggerDetails).
     pub fn build(self) -> crate::types::TriggerDetails {

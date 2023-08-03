@@ -64,6 +64,10 @@ impl DomainSummaryBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The name of the domain that the summary information applies to.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>Indicates whether the domain is automatically renewed upon expiration.</p>
     pub fn auto_renew(mut self, input: bool) -> Self {
         self.auto_renew = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl DomainSummaryBuilder {
         self.auto_renew = input;
         self
     }
+    /// <p>Indicates whether the domain is automatically renewed upon expiration.</p>
+    pub fn get_auto_renew(&self) -> &::std::option::Option<bool> {
+        &self.auto_renew
+    }
     /// <p>Indicates whether a domain is locked from unauthorized transfer to another party.</p>
     pub fn transfer_lock(mut self, input: bool) -> Self {
         self.transfer_lock = ::std::option::Option::Some(input);
@@ -83,6 +91,10 @@ impl DomainSummaryBuilder {
     pub fn set_transfer_lock(mut self, input: ::std::option::Option<bool>) -> Self {
         self.transfer_lock = input;
         self
+    }
+    /// <p>Indicates whether a domain is locked from unauthorized transfer to another party.</p>
+    pub fn get_transfer_lock(&self) -> &::std::option::Option<bool> {
+        &self.transfer_lock
     }
     /// <p>Expiration date of the domain in Unix time format and Coordinated Universal Time (UTC).</p>
     pub fn expiry(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -96,6 +108,10 @@ impl DomainSummaryBuilder {
     ) -> Self {
         self.expiry = input;
         self
+    }
+    /// <p>Expiration date of the domain in Unix time format and Coordinated Universal Time (UTC).</p>
+    pub fn get_expiry(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expiry
     }
     /// Consumes the builder and constructs a [`DomainSummary`](crate::types::DomainSummary).
     pub fn build(self) -> crate::types::DomainSummary {

@@ -41,6 +41,10 @@ impl ResponseHeadersPolicyContentTypeOptionsBuilder {
         self.r#override = input;
         self
     }
+    /// <p>A Boolean that determines whether CloudFront overrides the <code>X-Content-Type-Options</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
+    pub fn get_override(&self) -> &::std::option::Option<bool> {
+        &self.r#override
+    }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyContentTypeOptions`](crate::types::ResponseHeadersPolicyContentTypeOptions).
     pub fn build(self) -> crate::types::ResponseHeadersPolicyContentTypeOptions {
         crate::types::ResponseHeadersPolicyContentTypeOptions {

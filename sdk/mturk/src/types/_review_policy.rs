@@ -48,6 +48,10 @@ impl ReviewPolicyBuilder {
         self.policy_name = input;
         self
     }
+    /// <p> Name of a Review Policy: SimplePlurality/2011-09-01 or ScoreMyKnownAnswers/2011-09-01 </p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_name
+    }
     /// Appends an item to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
@@ -66,6 +70,12 @@ impl ReviewPolicyBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>Name of the parameter from the Review policy.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyParameter>> {
+        &self.parameters
     }
     /// Consumes the builder and constructs a [`ReviewPolicy`](crate::types::ReviewPolicy).
     pub fn build(self) -> crate::types::ReviewPolicy {

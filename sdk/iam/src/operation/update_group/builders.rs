@@ -40,6 +40,10 @@ impl UpdateGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_group::builders::UpdateGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,11 @@ impl UpdateGroupFluentBuilder {
         self.inner = self.inner.set_group_name(input);
         self
     }
+    /// <p>Name of the IAM group to update. If you're changing the name of the group, this is the original name.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_name()
+    }
     /// <p>New path for the IAM group. Only include this if changing the group's path.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p>
     pub fn new_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -135,6 +144,11 @@ impl UpdateGroupFluentBuilder {
     pub fn set_new_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_new_path(input);
         self
+    }
+    /// <p>New path for the IAM group. Only include this if changing the group's path.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p>
+    pub fn get_new_path(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_new_path()
     }
     /// <p>New name for the IAM group. Only include this if changing the group's name.</p>
     /// <p>IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case. For example, you cannot create resources named both "MyResource" and "myresource".</p>
@@ -153,5 +167,10 @@ impl UpdateGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_new_group_name(input);
         self
+    }
+    /// <p>New name for the IAM group. Only include this if changing the group's name.</p>
+    /// <p>IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case. For example, you cannot create resources named both "MyResource" and "myresource".</p>
+    pub fn get_new_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_new_group_name()
     }
 }

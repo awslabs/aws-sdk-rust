@@ -62,6 +62,12 @@ impl DetailsBuilder {
         self.import_asset_from_signed_url_job_error_details = input;
         self
     }
+    /// <p>Information about the job error.</p>
+    pub fn get_import_asset_from_signed_url_job_error_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImportAssetFromSignedUrlJobErrorDetails> {
+        &self.import_asset_from_signed_url_job_error_details
+    }
     /// Appends an item to `import_assets_from_s3_job_error_details`.
     ///
     /// To override the contents of this collection use [`set_import_assets_from_s3_job_error_details`](Self::set_import_assets_from_s3_job_error_details).
@@ -85,6 +91,12 @@ impl DetailsBuilder {
     ) -> Self {
         self.import_assets_from_s3_job_error_details = input;
         self
+    }
+    /// <p>Details about the job error.</p>
+    pub fn get_import_assets_from_s3_job_error_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetSourceEntry>> {
+        &self.import_assets_from_s3_job_error_details
     }
     /// Consumes the builder and constructs a [`Details`](crate::types::Details).
     pub fn build(self) -> crate::types::Details {

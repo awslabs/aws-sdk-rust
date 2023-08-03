@@ -61,6 +61,10 @@ impl RescoreInputBuilder {
         self.rescore_execution_plan_id = input;
         self
     }
+    /// <p>The identifier of the rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the <code>Rescore</code> API.</p>
+    pub fn get_rescore_execution_plan_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rescore_execution_plan_id
+    }
     /// <p>The input query from the search service.</p>
     pub fn search_query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.search_query = ::std::option::Option::Some(input.into());
@@ -70,6 +74,10 @@ impl RescoreInputBuilder {
     pub fn set_search_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.search_query = input;
         self
+    }
+    /// <p>The input query from the search service.</p>
+    pub fn get_search_query(&self) -> &::std::option::Option<::std::string::String> {
+        &self.search_query
     }
     /// Appends an item to `documents`.
     ///
@@ -89,6 +97,10 @@ impl RescoreInputBuilder {
     ) -> Self {
         self.documents = input;
         self
+    }
+    /// <p>The list of documents for Amazon Kendra Intelligent Ranking to rescore or rank on.</p>
+    pub fn get_documents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Document>> {
+        &self.documents
     }
     /// Consumes the builder and constructs a [`RescoreInput`](crate::operation::rescore::RescoreInput).
     pub fn build(

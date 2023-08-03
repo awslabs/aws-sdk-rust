@@ -39,6 +39,10 @@ impl DeleteWorkflowInputBuilder {
         self.workflow_id = input;
         self
     }
+    /// <p>A unique identifier for the workflow.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_id
+    }
     /// Consumes the builder and constructs a [`DeleteWorkflowInput`](crate::operation::delete_workflow::DeleteWorkflowInput).
     pub fn build(
         self,

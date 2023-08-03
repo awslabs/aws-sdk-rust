@@ -68,6 +68,10 @@ impl StackInstanceBuilder {
         self.account = input;
         self
     }
+    /// <p>The name of the Amazon Web Services account that the stack instance is associated with.</p>
+    pub fn get_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account
+    }
     /// <p>The name of the Amazon Web Services Region that the stack instance is associated with.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -77,6 +81,10 @@ impl StackInstanceBuilder {
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
+    }
+    /// <p>The name of the Amazon Web Services Region that the stack instance is associated with.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set. </p>
     /// <ul>
@@ -100,6 +108,17 @@ impl StackInstanceBuilder {
     ) -> Self {
         self.stack_instance_status = input;
         self
+    }
+    /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set. </p>
+    /// <ul>
+    /// <li> <p> <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to true, to delete the stack instance, and then delete the stack manually. </p> </li>
+    /// <li> <p> <code>OUTDATED</code>: The stack isn't currently up to date with the stack set because either the associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation, or the stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated.</p> </li>
+    /// <li> <p> <code>CURRENT</code>: The stack is currently up to date with the stack set.</p> </li>
+    /// </ul>
+    pub fn get_stack_instance_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::StackInstanceStatus> {
+        &self.stack_instance_status
     }
     /// Consumes the builder and constructs a [`StackInstance`](crate::types::StackInstance).
     pub fn build(self) -> crate::types::StackInstance {

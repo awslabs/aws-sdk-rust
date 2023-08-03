@@ -37,6 +37,12 @@ impl GetPropertyValueFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetPropertyValue as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_property_value::builders::GetPropertyValueInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -144,6 +150,10 @@ impl GetPropertyValueFluentBuilder {
         self.inner = self.inner.set_component_name(input);
         self
     }
+    /// <p>The name of the component whose property values the operation returns.</p>
+    pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_component_name()
+    }
     /// <p>The ID of the component type whose property values the operation returns.</p>
     pub fn component_type_id(
         mut self,
@@ -160,6 +170,10 @@ impl GetPropertyValueFluentBuilder {
         self.inner = self.inner.set_component_type_id(input);
         self
     }
+    /// <p>The ID of the component type whose property values the operation returns.</p>
+    pub fn get_component_type_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_component_type_id()
+    }
     /// <p>The ID of the entity whose property values the operation returns.</p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.entity_id(input.into());
@@ -169,6 +183,10 @@ impl GetPropertyValueFluentBuilder {
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_entity_id(input);
         self
+    }
+    /// <p>The ID of the entity whose property values the operation returns.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_entity_id()
     }
     /// Appends an item to `selectedProperties`.
     ///
@@ -190,6 +208,12 @@ impl GetPropertyValueFluentBuilder {
         self.inner = self.inner.set_selected_properties(input);
         self
     }
+    /// <p>The properties whose values the operation returns.</p>
+    pub fn get_selected_properties(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_selected_properties()
+    }
     /// <p>The ID of the workspace whose values the operation returns.</p>
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workspace_id(input.into());
@@ -199,6 +223,10 @@ impl GetPropertyValueFluentBuilder {
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workspace_id(input);
         self
+    }
+    /// <p>The ID of the workspace whose values the operation returns.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workspace_id()
     }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
@@ -212,6 +240,11 @@ impl GetPropertyValueFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The string that specifies the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -221,6 +254,10 @@ impl GetPropertyValueFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The string that specifies the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The property group name.</p>
     pub fn property_group_name(
@@ -238,6 +275,10 @@ impl GetPropertyValueFluentBuilder {
         self.inner = self.inner.set_property_group_name(input);
         self
     }
+    /// <p>The property group name.</p>
+    pub fn get_property_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_property_group_name()
+    }
     /// <p>The tabular conditions.</p>
     pub fn tabular_conditions(mut self, input: crate::types::TabularConditions) -> Self {
         self.inner = self.inner.tabular_conditions(input);
@@ -250,5 +291,11 @@ impl GetPropertyValueFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tabular_conditions(input);
         self
+    }
+    /// <p>The tabular conditions.</p>
+    pub fn get_tabular_conditions(
+        &self,
+    ) -> &::std::option::Option<crate::types::TabularConditions> {
+        self.inner.get_tabular_conditions()
     }
 }

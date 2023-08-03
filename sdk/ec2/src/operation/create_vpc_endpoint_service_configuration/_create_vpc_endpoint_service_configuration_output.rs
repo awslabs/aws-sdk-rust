@@ -59,6 +59,12 @@ impl CreateVpcEndpointServiceConfigurationOutputBuilder {
         self.service_configuration = input;
         self
     }
+    /// <p>Information about the service configuration.</p>
+    pub fn get_service_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServiceConfiguration> {
+        &self.service_configuration
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -68,6 +74,10 @@ impl CreateVpcEndpointServiceConfigurationOutputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

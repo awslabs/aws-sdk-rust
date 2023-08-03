@@ -36,6 +36,10 @@ impl ListServicesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListServices as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_services::builders::ListServicesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +133,10 @@ impl ListServicesFluentBuilder {
         self.inner = self.inner.set_cluster(input);
         self
     }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to use when filtering the <code>ListServices</code> results. If you do not specify a cluster, the default cluster is assumed.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster()
+    }
     /// <p>The <code>nextToken</code> value returned from a <code>ListServices</code> request indicating that more results are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided, it is possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
@@ -143,6 +151,12 @@ impl ListServicesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The <code>nextToken</code> value returned from a <code>ListServices</code> request indicating that more results are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided, it is possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
+    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// </note>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of service results that <code>ListServices</code> returned in paginated output. When this parameter is used, <code>ListServices</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListServices</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListServices</code> returns up to 10 results and a <code>nextToken</code> value if applicable.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -152,6 +166,10 @@ impl ListServicesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of service results that <code>ListServices</code> returned in paginated output. When this parameter is used, <code>ListServices</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListServices</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListServices</code> returns up to 10 results and a <code>nextToken</code> value if applicable.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The launch type to use when filtering the <code>ListServices</code> results.</p>
     pub fn launch_type(mut self, input: crate::types::LaunchType) -> Self {
@@ -166,6 +184,10 @@ impl ListServicesFluentBuilder {
         self.inner = self.inner.set_launch_type(input);
         self
     }
+    /// <p>The launch type to use when filtering the <code>ListServices</code> results.</p>
+    pub fn get_launch_type(&self) -> &::std::option::Option<crate::types::LaunchType> {
+        self.inner.get_launch_type()
+    }
     /// <p>The scheduling strategy to use when filtering the <code>ListServices</code> results.</p>
     pub fn scheduling_strategy(mut self, input: crate::types::SchedulingStrategy) -> Self {
         self.inner = self.inner.scheduling_strategy(input);
@@ -178,5 +200,11 @@ impl ListServicesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_scheduling_strategy(input);
         self
+    }
+    /// <p>The scheduling strategy to use when filtering the <code>ListServices</code> results.</p>
+    pub fn get_scheduling_strategy(
+        &self,
+    ) -> &::std::option::Option<crate::types::SchedulingStrategy> {
+        self.inner.get_scheduling_strategy()
     }
 }

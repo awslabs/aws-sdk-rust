@@ -36,6 +36,12 @@ impl GetChangeLogsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetChangeLogs as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_change_logs::builders::GetChangeLogsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +141,10 @@ impl GetChangeLogsFluentBuilder {
         self.inner = self.inner.set_assessment_id(input);
         self
     }
+    /// <p>The unique identifier for the assessment. </p>
+    pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assessment_id()
+    }
     /// <p> The unique identifier for the control set. </p>
     pub fn control_set_id(
         mut self,
@@ -151,6 +161,10 @@ impl GetChangeLogsFluentBuilder {
         self.inner = self.inner.set_control_set_id(input);
         self
     }
+    /// <p> The unique identifier for the control set. </p>
+    pub fn get_control_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_control_set_id()
+    }
     /// <p> The unique identifier for the control. </p>
     pub fn control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.control_id(input.into());
@@ -160,6 +174,10 @@ impl GetChangeLogsFluentBuilder {
     pub fn set_control_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_control_id(input);
         self
+    }
+    /// <p> The unique identifier for the control. </p>
+    pub fn get_control_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_control_id()
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -171,6 +189,10 @@ impl GetChangeLogsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>Represents the maximum number of results on a page or for an API request call. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -180,5 +202,9 @@ impl GetChangeLogsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>Represents the maximum number of results on a page or for an API request call. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

@@ -47,6 +47,10 @@ impl StartCodegenJobOutputBuilder {
         self.entity = input;
         self
     }
+    /// <p>The code generation job for a UI component that is associated with an Amplify app.</p>
+    pub fn get_entity(&self) -> &::std::option::Option<crate::types::CodegenJob> {
+        &self.entity
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

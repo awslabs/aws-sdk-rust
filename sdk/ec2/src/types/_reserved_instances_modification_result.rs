@@ -57,6 +57,10 @@ impl ReservedInstancesModificationResultBuilder {
         self.reserved_instances_id = input;
         self
     }
+    /// <p>The ID for the Reserved Instances that were created as part of the modification request. This field is only available when the modification is fulfilled.</p>
+    pub fn get_reserved_instances_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reserved_instances_id
+    }
     /// <p>The target Reserved Instances configurations supplied as part of the modification request.</p>
     pub fn target_configuration(
         mut self,
@@ -72,6 +76,12 @@ impl ReservedInstancesModificationResultBuilder {
     ) -> Self {
         self.target_configuration = input;
         self
+    }
+    /// <p>The target Reserved Instances configurations supplied as part of the modification request.</p>
+    pub fn get_target_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReservedInstancesConfiguration> {
+        &self.target_configuration
     }
     /// Consumes the builder and constructs a [`ReservedInstancesModificationResult`](crate::types::ReservedInstancesModificationResult).
     pub fn build(self) -> crate::types::ReservedInstancesModificationResult {

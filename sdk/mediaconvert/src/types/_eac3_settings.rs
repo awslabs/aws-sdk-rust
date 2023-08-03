@@ -215,6 +215,12 @@ impl Eac3SettingsBuilder {
         self.attenuation_control = input;
         self
     }
+    /// If set to ATTENUATE_3_DB, applies a 3 dB attenuation to the surround channels. Only used for 3/2 coding mode.
+    pub fn get_attenuation_control(
+        &self,
+    ) -> &::std::option::Option<crate::types::Eac3AttenuationControl> {
+        &self.attenuation_control
+    }
     /// Specify the average bitrate in bits per second. The bitrate that you specify must be a multiple of 8000 within the allowed minimum and maximum values. Leave blank to use the default bitrate for the coding mode you select according ETSI TS 102 366. Valid bitrates for coding mode 1/0: Default: 96000. Minimum: 32000. Maximum: 3024000. Valid bitrates for coding mode 2/0: Default: 192000. Minimum: 96000. Maximum: 3024000. Valid bitrates for coding mode 3/2: Default: 384000. Minimum: 192000. Maximum: 3024000.
     pub fn bitrate(mut self, input: i32) -> Self {
         self.bitrate = ::std::option::Option::Some(input);
@@ -224,6 +230,10 @@ impl Eac3SettingsBuilder {
     pub fn set_bitrate(mut self, input: ::std::option::Option<i32>) -> Self {
         self.bitrate = input;
         self
+    }
+    /// Specify the average bitrate in bits per second. The bitrate that you specify must be a multiple of 8000 within the allowed minimum and maximum values. Leave blank to use the default bitrate for the coding mode you select according ETSI TS 102 366. Valid bitrates for coding mode 1/0: Default: 96000. Minimum: 32000. Maximum: 3024000. Valid bitrates for coding mode 2/0: Default: 192000. Minimum: 96000. Maximum: 3024000. Valid bitrates for coding mode 3/2: Default: 384000. Minimum: 192000. Maximum: 3024000.
+    pub fn get_bitrate(&self) -> &::std::option::Option<i32> {
+        &self.bitrate
     }
     /// Specify the bitstream mode for the E-AC-3 stream that the encoder emits. For more information about the EAC3 bitstream mode, see ATSC A/52-2012 (Annex E).
     pub fn bitstream_mode(mut self, input: crate::types::Eac3BitstreamMode) -> Self {
@@ -238,6 +248,10 @@ impl Eac3SettingsBuilder {
         self.bitstream_mode = input;
         self
     }
+    /// Specify the bitstream mode for the E-AC-3 stream that the encoder emits. For more information about the EAC3 bitstream mode, see ATSC A/52-2012 (Annex E).
+    pub fn get_bitstream_mode(&self) -> &::std::option::Option<crate::types::Eac3BitstreamMode> {
+        &self.bitstream_mode
+    }
     /// Dolby Digital Plus coding mode. Determines number of channels.
     pub fn coding_mode(mut self, input: crate::types::Eac3CodingMode) -> Self {
         self.coding_mode = ::std::option::Option::Some(input);
@@ -250,6 +264,10 @@ impl Eac3SettingsBuilder {
     ) -> Self {
         self.coding_mode = input;
         self
+    }
+    /// Dolby Digital Plus coding mode. Determines number of channels.
+    pub fn get_coding_mode(&self) -> &::std::option::Option<crate::types::Eac3CodingMode> {
+        &self.coding_mode
     }
     /// Activates a DC highpass filter for all input channels.
     pub fn dc_filter(mut self, input: crate::types::Eac3DcFilter) -> Self {
@@ -264,6 +282,10 @@ impl Eac3SettingsBuilder {
         self.dc_filter = input;
         self
     }
+    /// Activates a DC highpass filter for all input channels.
+    pub fn get_dc_filter(&self) -> &::std::option::Option<crate::types::Eac3DcFilter> {
+        &self.dc_filter
+    }
     /// Sets the dialnorm for the output. If blank and input audio is Dolby Digital Plus, dialnorm will be passed through.
     pub fn dialnorm(mut self, input: i32) -> Self {
         self.dialnorm = ::std::option::Option::Some(input);
@@ -273,6 +295,10 @@ impl Eac3SettingsBuilder {
     pub fn set_dialnorm(mut self, input: ::std::option::Option<i32>) -> Self {
         self.dialnorm = input;
         self
+    }
+    /// Sets the dialnorm for the output. If blank and input audio is Dolby Digital Plus, dialnorm will be passed through.
+    pub fn get_dialnorm(&self) -> &::std::option::Option<i32> {
+        &self.dialnorm
     }
     /// Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the line operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile. For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
     pub fn dynamic_range_compression_line(
@@ -290,6 +316,12 @@ impl Eac3SettingsBuilder {
         self.dynamic_range_compression_line = input;
         self
     }
+    /// Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the line operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile. For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+    pub fn get_dynamic_range_compression_line(
+        &self,
+    ) -> &::std::option::Option<crate::types::Eac3DynamicRangeCompressionLine> {
+        &self.dynamic_range_compression_line
+    }
     /// Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the RF operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile. For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
     pub fn dynamic_range_compression_rf(
         mut self,
@@ -306,6 +338,12 @@ impl Eac3SettingsBuilder {
         self.dynamic_range_compression_rf = input;
         self
     }
+    /// Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the RF operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile. For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+    pub fn get_dynamic_range_compression_rf(
+        &self,
+    ) -> &::std::option::Option<crate::types::Eac3DynamicRangeCompressionRf> {
+        &self.dynamic_range_compression_rf
+    }
     /// When encoding 3/2 audio, controls whether the LFE channel is enabled
     pub fn lfe_control(mut self, input: crate::types::Eac3LfeControl) -> Self {
         self.lfe_control = ::std::option::Option::Some(input);
@@ -318,6 +356,10 @@ impl Eac3SettingsBuilder {
     ) -> Self {
         self.lfe_control = input;
         self
+    }
+    /// When encoding 3/2 audio, controls whether the LFE channel is enabled
+    pub fn get_lfe_control(&self) -> &::std::option::Option<crate::types::Eac3LfeControl> {
+        &self.lfe_control
     }
     /// Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with 3_2_LFE coding mode.
     pub fn lfe_filter(mut self, input: crate::types::Eac3LfeFilter) -> Self {
@@ -332,6 +374,10 @@ impl Eac3SettingsBuilder {
         self.lfe_filter = input;
         self
     }
+    /// Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with 3_2_LFE coding mode.
+    pub fn get_lfe_filter(&self) -> &::std::option::Option<crate::types::Eac3LfeFilter> {
+        &self.lfe_filter
+    }
     /// Specify a value for the following Dolby Digital Plus setting: Left only/Right only center mix. MediaConvert uses this value for downmixing. How the service uses this value depends on the value that you choose for Stereo downmix. Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs for the setting Coding mode. If you choose a different value for Coding mode, the service ignores Left only/Right only center.
     pub fn lo_ro_center_mix_level(mut self, input: f64) -> Self {
         self.lo_ro_center_mix_level = ::std::option::Option::Some(input);
@@ -341,6 +387,10 @@ impl Eac3SettingsBuilder {
     pub fn set_lo_ro_center_mix_level(mut self, input: ::std::option::Option<f64>) -> Self {
         self.lo_ro_center_mix_level = input;
         self
+    }
+    /// Specify a value for the following Dolby Digital Plus setting: Left only/Right only center mix. MediaConvert uses this value for downmixing. How the service uses this value depends on the value that you choose for Stereo downmix. Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs for the setting Coding mode. If you choose a different value for Coding mode, the service ignores Left only/Right only center.
+    pub fn get_lo_ro_center_mix_level(&self) -> &::std::option::Option<f64> {
+        &self.lo_ro_center_mix_level
     }
     /// Specify a value for the following Dolby Digital Plus setting: Left only/Right only. MediaConvert uses this value for downmixing. How the service uses this value depends on the value that you choose for Stereo downmix. Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs for the setting Coding mode. If you choose a different value for Coding mode, the service ignores Left only/Right only surround.
     pub fn lo_ro_surround_mix_level(mut self, input: f64) -> Self {
@@ -352,6 +402,10 @@ impl Eac3SettingsBuilder {
         self.lo_ro_surround_mix_level = input;
         self
     }
+    /// Specify a value for the following Dolby Digital Plus setting: Left only/Right only. MediaConvert uses this value for downmixing. How the service uses this value depends on the value that you choose for Stereo downmix. Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs for the setting Coding mode. If you choose a different value for Coding mode, the service ignores Left only/Right only surround.
+    pub fn get_lo_ro_surround_mix_level(&self) -> &::std::option::Option<f64> {
+        &self.lo_ro_surround_mix_level
+    }
     /// Specify a value for the following Dolby Digital Plus setting: Left total/Right total center mix. MediaConvert uses this value for downmixing. How the service uses this value depends on the value that you choose for Stereo downmix. Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs for the setting Coding mode. If you choose a different value for Coding mode, the service ignores Left total/Right total center.
     pub fn lt_rt_center_mix_level(mut self, input: f64) -> Self {
         self.lt_rt_center_mix_level = ::std::option::Option::Some(input);
@@ -362,6 +416,10 @@ impl Eac3SettingsBuilder {
         self.lt_rt_center_mix_level = input;
         self
     }
+    /// Specify a value for the following Dolby Digital Plus setting: Left total/Right total center mix. MediaConvert uses this value for downmixing. How the service uses this value depends on the value that you choose for Stereo downmix. Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs for the setting Coding mode. If you choose a different value for Coding mode, the service ignores Left total/Right total center.
+    pub fn get_lt_rt_center_mix_level(&self) -> &::std::option::Option<f64> {
+        &self.lt_rt_center_mix_level
+    }
     /// Specify a value for the following Dolby Digital Plus setting: Left total/Right total surround mix. MediaConvert uses this value for downmixing. How the service uses this value depends on the value that you choose for Stereo downmix. Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs for the setting Coding mode. If you choose a different value for Coding mode, the service ignores Left total/Right total surround.
     pub fn lt_rt_surround_mix_level(mut self, input: f64) -> Self {
         self.lt_rt_surround_mix_level = ::std::option::Option::Some(input);
@@ -371,6 +429,10 @@ impl Eac3SettingsBuilder {
     pub fn set_lt_rt_surround_mix_level(mut self, input: ::std::option::Option<f64>) -> Self {
         self.lt_rt_surround_mix_level = input;
         self
+    }
+    /// Specify a value for the following Dolby Digital Plus setting: Left total/Right total surround mix. MediaConvert uses this value for downmixing. How the service uses this value depends on the value that you choose for Stereo downmix. Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs for the setting Coding mode. If you choose a different value for Coding mode, the service ignores Left total/Right total surround.
+    pub fn get_lt_rt_surround_mix_level(&self) -> &::std::option::Option<f64> {
+        &self.lt_rt_surround_mix_level
     }
     /// When set to FOLLOW_INPUT, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
     pub fn metadata_control(mut self, input: crate::types::Eac3MetadataControl) -> Self {
@@ -385,6 +447,12 @@ impl Eac3SettingsBuilder {
         self.metadata_control = input;
         self
     }
+    /// When set to FOLLOW_INPUT, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
+    pub fn get_metadata_control(
+        &self,
+    ) -> &::std::option::Option<crate::types::Eac3MetadataControl> {
+        &self.metadata_control
+    }
     /// When set to WHEN_POSSIBLE, input DD+ audio will be passed through if it is present on the input. this detection is dynamic over the life of the transcode. Inputs that alternate between DD+ and non-DD+ content will have a consistent DD+ output as the system alternates between passthrough and encoding.
     pub fn passthrough_control(mut self, input: crate::types::Eac3PassthroughControl) -> Self {
         self.passthrough_control = ::std::option::Option::Some(input);
@@ -397,6 +465,12 @@ impl Eac3SettingsBuilder {
     ) -> Self {
         self.passthrough_control = input;
         self
+    }
+    /// When set to WHEN_POSSIBLE, input DD+ audio will be passed through if it is present on the input. this detection is dynamic over the life of the transcode. Inputs that alternate between DD+ and non-DD+ content will have a consistent DD+ output as the system alternates between passthrough and encoding.
+    pub fn get_passthrough_control(
+        &self,
+    ) -> &::std::option::Option<crate::types::Eac3PassthroughControl> {
+        &self.passthrough_control
     }
     /// Controls the amount of phase-shift applied to the surround channels. Only used for 3/2 coding mode.
     pub fn phase_control(mut self, input: crate::types::Eac3PhaseControl) -> Self {
@@ -411,6 +485,10 @@ impl Eac3SettingsBuilder {
         self.phase_control = input;
         self
     }
+    /// Controls the amount of phase-shift applied to the surround channels. Only used for 3/2 coding mode.
+    pub fn get_phase_control(&self) -> &::std::option::Option<crate::types::Eac3PhaseControl> {
+        &self.phase_control
+    }
     /// This value is always 48000. It represents the sample rate in Hz.
     pub fn sample_rate(mut self, input: i32) -> Self {
         self.sample_rate = ::std::option::Option::Some(input);
@@ -420,6 +498,10 @@ impl Eac3SettingsBuilder {
     pub fn set_sample_rate(mut self, input: ::std::option::Option<i32>) -> Self {
         self.sample_rate = input;
         self
+    }
+    /// This value is always 48000. It represents the sample rate in Hz.
+    pub fn get_sample_rate(&self) -> &::std::option::Option<i32> {
+        &self.sample_rate
     }
     /// Choose how the service does stereo downmixing. This setting only applies if you keep the default value of 3/2 - L, R, C, Ls, Rs for the setting Coding mode. If you choose a different value for Coding mode, the service ignores Stereo downmix.
     pub fn stereo_downmix(mut self, input: crate::types::Eac3StereoDownmix) -> Self {
@@ -434,6 +516,10 @@ impl Eac3SettingsBuilder {
         self.stereo_downmix = input;
         self
     }
+    /// Choose how the service does stereo downmixing. This setting only applies if you keep the default value of 3/2 - L, R, C, Ls, Rs for the setting Coding mode. If you choose a different value for Coding mode, the service ignores Stereo downmix.
+    pub fn get_stereo_downmix(&self) -> &::std::option::Option<crate::types::Eac3StereoDownmix> {
+        &self.stereo_downmix
+    }
     /// When encoding 3/2 audio, sets whether an extra center back surround channel is matrix encoded into the left and right surround channels.
     pub fn surround_ex_mode(mut self, input: crate::types::Eac3SurroundExMode) -> Self {
         self.surround_ex_mode = ::std::option::Option::Some(input);
@@ -447,6 +533,10 @@ impl Eac3SettingsBuilder {
         self.surround_ex_mode = input;
         self
     }
+    /// When encoding 3/2 audio, sets whether an extra center back surround channel is matrix encoded into the left and right surround channels.
+    pub fn get_surround_ex_mode(&self) -> &::std::option::Option<crate::types::Eac3SurroundExMode> {
+        &self.surround_ex_mode
+    }
     /// When encoding 2/0 audio, sets whether Dolby Surround is matrix encoded into the two channels.
     pub fn surround_mode(mut self, input: crate::types::Eac3SurroundMode) -> Self {
         self.surround_mode = ::std::option::Option::Some(input);
@@ -459,6 +549,10 @@ impl Eac3SettingsBuilder {
     ) -> Self {
         self.surround_mode = input;
         self
+    }
+    /// When encoding 2/0 audio, sets whether Dolby Surround is matrix encoded into the two channels.
+    pub fn get_surround_mode(&self) -> &::std::option::Option<crate::types::Eac3SurroundMode> {
+        &self.surround_mode
     }
     /// Consumes the builder and constructs a [`Eac3Settings`](crate::types::Eac3Settings).
     pub fn build(self) -> crate::types::Eac3Settings {

@@ -40,6 +40,10 @@ impl IamRoleIdentityBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the IAM role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`IamRoleIdentity`](crate::types::IamRoleIdentity).
     pub fn build(self) -> crate::types::IamRoleIdentity {
         crate::types::IamRoleIdentity { arn: self.arn }

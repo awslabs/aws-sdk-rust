@@ -71,6 +71,12 @@ impl EmbeddedSourceSettingsBuilder {
         self.convert608_to708 = input;
         self
     }
+    /// Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert, MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
+    pub fn get_convert608_to708(
+        &self,
+    ) -> &::std::option::Option<crate::types::EmbeddedConvert608To708> {
+        &self.convert608_to708
+    }
     /// Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.
     pub fn source608_channel_number(mut self, input: i32) -> Self {
         self.source608_channel_number = ::std::option::Option::Some(input);
@@ -81,6 +87,10 @@ impl EmbeddedSourceSettingsBuilder {
         self.source608_channel_number = input;
         self
     }
+    /// Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.
+    pub fn get_source608_channel_number(&self) -> &::std::option::Option<i32> {
+        &self.source608_channel_number
+    }
     /// Specifies the video track index used for extracting captions. The system only supports one input video track, so this should always be set to '1'.
     pub fn source608_track_number(mut self, input: i32) -> Self {
         self.source608_track_number = ::std::option::Option::Some(input);
@@ -90,6 +100,10 @@ impl EmbeddedSourceSettingsBuilder {
     pub fn set_source608_track_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.source608_track_number = input;
         self
+    }
+    /// Specifies the video track index used for extracting captions. The system only supports one input video track, so this should always be set to '1'.
+    pub fn get_source608_track_number(&self) -> &::std::option::Option<i32> {
+        &self.source608_track_number
     }
     /// By default, the service terminates any unterminated captions at the end of each input. If you want the caption to continue onto your next input, disable this setting.
     pub fn terminate_captions(mut self, input: crate::types::EmbeddedTerminateCaptions) -> Self {
@@ -103,6 +117,12 @@ impl EmbeddedSourceSettingsBuilder {
     ) -> Self {
         self.terminate_captions = input;
         self
+    }
+    /// By default, the service terminates any unterminated captions at the end of each input. If you want the caption to continue onto your next input, disable this setting.
+    pub fn get_terminate_captions(
+        &self,
+    ) -> &::std::option::Option<crate::types::EmbeddedTerminateCaptions> {
+        &self.terminate_captions
     }
     /// Consumes the builder and constructs a [`EmbeddedSourceSettings`](crate::types::EmbeddedSourceSettings).
     pub fn build(self) -> crate::types::EmbeddedSourceSettings {

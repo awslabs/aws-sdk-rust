@@ -36,6 +36,13 @@ impl CreateConfiguredTableFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateConfiguredTable as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_configured_table::builders::CreateConfiguredTableInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl CreateConfiguredTableFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the configured table.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A description for the configured table.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -135,6 +146,10 @@ impl CreateConfiguredTableFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description for the configured table.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>A reference to the Glue table being configured.</p>
     pub fn table_reference(mut self, input: crate::types::TableReference) -> Self {
@@ -148,6 +163,10 @@ impl CreateConfiguredTableFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_table_reference(input);
         self
+    }
+    /// <p>A reference to the Glue table being configured.</p>
+    pub fn get_table_reference(&self) -> &::std::option::Option<crate::types::TableReference> {
+        self.inner.get_table_reference()
     }
     /// Appends an item to `allowedColumns`.
     ///
@@ -169,6 +188,12 @@ impl CreateConfiguredTableFluentBuilder {
         self.inner = self.inner.set_allowed_columns(input);
         self
     }
+    /// <p>The columns of the underlying table that can be used by collaborations or analysis rules.</p>
+    pub fn get_allowed_columns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_allowed_columns()
+    }
     /// <p>The analysis method for the configured tables. The only valid value is currently `DIRECT_QUERY`.</p>
     pub fn analysis_method(mut self, input: crate::types::AnalysisMethod) -> Self {
         self.inner = self.inner.analysis_method(input);
@@ -181,6 +206,10 @@ impl CreateConfiguredTableFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_analysis_method(input);
         self
+    }
+    /// <p>The analysis method for the configured tables. The only valid value is currently `DIRECT_QUERY`.</p>
+    pub fn get_analysis_method(&self) -> &::std::option::Option<crate::types::AnalysisMethod> {
+        self.inner.get_analysis_method()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -204,5 +233,13 @@ impl CreateConfiguredTableFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

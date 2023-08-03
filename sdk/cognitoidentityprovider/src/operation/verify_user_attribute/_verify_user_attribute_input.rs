@@ -65,6 +65,10 @@ impl VerifyUserAttributeInputBuilder {
         self.access_token = input;
         self
     }
+    /// <p>A valid access token that Amazon Cognito issued to the user whose user attributes you want to verify.</p>
+    pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_token
+    }
     /// <p>The attribute name in the request to verify user attributes.</p>
     pub fn attribute_name(
         mut self,
@@ -81,6 +85,10 @@ impl VerifyUserAttributeInputBuilder {
         self.attribute_name = input;
         self
     }
+    /// <p>The attribute name in the request to verify user attributes.</p>
+    pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_name
+    }
     /// <p>The verification code in the request to verify user attributes.</p>
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
@@ -90,6 +98,10 @@ impl VerifyUserAttributeInputBuilder {
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code = input;
         self
+    }
+    /// <p>The verification code in the request to verify user attributes.</p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
     }
     /// Consumes the builder and constructs a [`VerifyUserAttributeInput`](crate::operation::verify_user_attribute::VerifyUserAttributeInput).
     pub fn build(

@@ -53,6 +53,10 @@ impl UpdateCapacityProviderInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the capacity provider to update.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>An object that represent the parameters to update for the Auto Scaling group capacity provider.</p>
     pub fn auto_scaling_group_provider(
         mut self,
@@ -68,6 +72,12 @@ impl UpdateCapacityProviderInputBuilder {
     ) -> Self {
         self.auto_scaling_group_provider = input;
         self
+    }
+    /// <p>An object that represent the parameters to update for the Auto Scaling group capacity provider.</p>
+    pub fn get_auto_scaling_group_provider(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoScalingGroupProviderUpdate> {
+        &self.auto_scaling_group_provider
     }
     /// Consumes the builder and constructs a [`UpdateCapacityProviderInput`](crate::operation::update_capacity_provider::UpdateCapacityProviderInput).
     pub fn build(

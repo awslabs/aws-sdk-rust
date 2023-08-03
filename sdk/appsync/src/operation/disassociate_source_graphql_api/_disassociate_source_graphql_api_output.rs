@@ -56,6 +56,12 @@ impl DisassociateSourceGraphqlApiOutputBuilder {
         self.source_api_association_status = input;
         self
     }
+    /// <p>The state of the source API association.</p>
+    pub fn get_source_api_association_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::SourceApiAssociationStatus> {
+        &self.source_api_association_status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

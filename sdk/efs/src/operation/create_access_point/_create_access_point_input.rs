@@ -74,6 +74,10 @@ impl CreateAccessPointInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>A string of up to 64 ASCII characters that Amazon EFS uses to ensure idempotent creation.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -93,6 +97,10 @@ impl CreateAccessPointInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Creates tags associated with the access point. Each tag is a key-value pair, each key must be unique. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The ID of the EFS file system that the access point provides access to.</p>
     pub fn file_system_id(
         mut self,
@@ -109,6 +117,10 @@ impl CreateAccessPointInputBuilder {
         self.file_system_id = input;
         self
     }
+    /// <p>The ID of the EFS file system that the access point provides access to.</p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_system_id
+    }
     /// <p>The operating system user and group applied to all file system requests made using the access point.</p>
     pub fn posix_user(mut self, input: crate::types::PosixUser) -> Self {
         self.posix_user = ::std::option::Option::Some(input);
@@ -118,6 +130,10 @@ impl CreateAccessPointInputBuilder {
     pub fn set_posix_user(mut self, input: ::std::option::Option<crate::types::PosixUser>) -> Self {
         self.posix_user = input;
         self
+    }
+    /// <p>The operating system user and group applied to all file system requests made using the access point.</p>
+    pub fn get_posix_user(&self) -> &::std::option::Option<crate::types::PosixUser> {
+        &self.posix_user
     }
     /// <p>Specifies the directory on the Amazon EFS file system that the access point exposes as the root directory of your file system to NFS clients using the access point. The clients using the access point can only access the root directory and below. If the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist, EFS creates it and applies the <code>CreationInfo</code> settings when a client connects to an access point. When specifying a <code>RootDirectory</code>, you must provide the <code>Path</code>, and the <code>CreationInfo</code>.</p>
     /// <p>Amazon EFS creates a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and permissions for the directory. If you do not provide this information, Amazon EFS does not create the root directory. If the root directory does not exist, attempts to mount using the access point will fail.</p>
@@ -133,6 +149,11 @@ impl CreateAccessPointInputBuilder {
     ) -> Self {
         self.root_directory = input;
         self
+    }
+    /// <p>Specifies the directory on the Amazon EFS file system that the access point exposes as the root directory of your file system to NFS clients using the access point. The clients using the access point can only access the root directory and below. If the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist, EFS creates it and applies the <code>CreationInfo</code> settings when a client connects to an access point. When specifying a <code>RootDirectory</code>, you must provide the <code>Path</code>, and the <code>CreationInfo</code>.</p>
+    /// <p>Amazon EFS creates a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and permissions for the directory. If you do not provide this information, Amazon EFS does not create the root directory. If the root directory does not exist, attempts to mount using the access point will fail.</p>
+    pub fn get_root_directory(&self) -> &::std::option::Option<crate::types::RootDirectory> {
+        &self.root_directory
     }
     /// Consumes the builder and constructs a [`CreateAccessPointInput`](crate::operation::create_access_point::CreateAccessPointInput).
     pub fn build(

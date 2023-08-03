@@ -115,6 +115,24 @@ impl LogConfigBuilder {
         self.field_log_level = input;
         self
     }
+    /// <p>The field logging level. Values can be NONE, ERROR, or ALL.</p>
+    /// <ul>
+    /// <li> <p> <b>NONE</b>: No field-level logs are captured.</p> </li>
+    /// <li> <p> <b>ERROR</b>: Logs the following information only for the fields that are in error:</p>
+    /// <ul>
+    /// <li> <p>The error section in the server response.</p> </li>
+    /// <li> <p>Field-level errors.</p> </li>
+    /// <li> <p>The generated request/response functions that got resolved for error fields.</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <b>ALL</b>: The following information is logged for all fields in the query:</p>
+    /// <ul>
+    /// <li> <p>Field-level tracing information.</p> </li>
+    /// <li> <p>The generated request/response functions that got resolved for each field.</p> </li>
+    /// </ul> </li>
+    /// </ul>
+    pub fn get_field_log_level(&self) -> &::std::option::Option<crate::types::FieldLogLevel> {
+        &self.field_log_level
+    }
     /// <p>The service role that AppSync assumes to publish to CloudWatch logs in your account.</p>
     pub fn cloud_watch_logs_role_arn(
         mut self,
@@ -131,6 +149,10 @@ impl LogConfigBuilder {
         self.cloud_watch_logs_role_arn = input;
         self
     }
+    /// <p>The service role that AppSync assumes to publish to CloudWatch logs in your account.</p>
+    pub fn get_cloud_watch_logs_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cloud_watch_logs_role_arn
+    }
     /// <p>Set to TRUE to exclude sections that contain information such as headers, context, and evaluated mapping templates, regardless of logging level.</p>
     pub fn exclude_verbose_content(mut self, input: bool) -> Self {
         self.exclude_verbose_content = ::std::option::Option::Some(input);
@@ -140,6 +162,10 @@ impl LogConfigBuilder {
     pub fn set_exclude_verbose_content(mut self, input: ::std::option::Option<bool>) -> Self {
         self.exclude_verbose_content = input;
         self
+    }
+    /// <p>Set to TRUE to exclude sections that contain information such as headers, context, and evaluated mapping templates, regardless of logging level.</p>
+    pub fn get_exclude_verbose_content(&self) -> &::std::option::Option<bool> {
+        &self.exclude_verbose_content
     }
     /// Consumes the builder and constructs a [`LogConfig`](crate::types::LogConfig).
     pub fn build(self) -> crate::types::LogConfig {

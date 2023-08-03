@@ -37,6 +37,13 @@ impl UpdateAccountSettingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAccountSettings as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_account_settings::builders::UpdateAccountSettingsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +139,11 @@ impl UpdateAccountSettingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_group_lifecycle_events_desired_status(input);
         self
+    }
+    /// <p>Specifies whether you want to turn <a href="https://docs.aws.amazon.com/ARG/latest/userguide/monitor-groups.html">group lifecycle events</a> on or off.</p>
+    pub fn get_group_lifecycle_events_desired_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::GroupLifecycleEventsDesiredStatus> {
+        self.inner.get_group_lifecycle_events_desired_status()
     }
 }

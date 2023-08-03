@@ -39,6 +39,10 @@ impl StopTriggerInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the trigger to stop.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`StopTriggerInput`](crate::operation::stop_trigger::StopTriggerInput).
     pub fn build(
         self,

@@ -37,6 +37,12 @@ impl DeleteContactMethodFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteContactMethod as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_contact_method::builders::DeleteContactMethodInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,5 +139,11 @@ impl DeleteContactMethodFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_protocol(input);
         self
+    }
+    /// <p>The protocol that will be deleted, such as <code>Email</code> or <code>SMS</code> (text messaging).</p> <note>
+    /// <p>To delete an <code>Email</code> and an <code>SMS</code> contact method if you added both, you must run separate <code>DeleteContactMethod</code> actions to delete each protocol.</p>
+    /// </note>
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::ContactProtocol> {
+        self.inner.get_protocol()
     }
 }

@@ -60,6 +60,10 @@ impl DeleteRealtimeEndpointOutputBuilder {
         self.ml_model_id = input;
         self
     }
+    /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelId</code> in the request.</p>
+    pub fn get_ml_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ml_model_id
+    }
     /// <p>The endpoint information of the <code>MLModel</code> </p>
     pub fn realtime_endpoint_info(mut self, input: crate::types::RealtimeEndpointInfo) -> Self {
         self.realtime_endpoint_info = ::std::option::Option::Some(input);
@@ -72,6 +76,12 @@ impl DeleteRealtimeEndpointOutputBuilder {
     ) -> Self {
         self.realtime_endpoint_info = input;
         self
+    }
+    /// <p>The endpoint information of the <code>MLModel</code> </p>
+    pub fn get_realtime_endpoint_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::RealtimeEndpointInfo> {
+        &self.realtime_endpoint_info
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

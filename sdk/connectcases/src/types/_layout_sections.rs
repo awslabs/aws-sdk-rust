@@ -49,6 +49,10 @@ impl LayoutSectionsBuilder {
         self.sections = input;
         self
     }
+    /// <p>Ordered list containing different kinds of sections that can be added.</p>
+    pub fn get_sections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Section>> {
+        &self.sections
+    }
     /// Consumes the builder and constructs a [`LayoutSections`](crate::types::LayoutSections).
     pub fn build(self) -> crate::types::LayoutSections {
         crate::types::LayoutSections {

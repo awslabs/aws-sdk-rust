@@ -61,6 +61,10 @@ impl InstanceFleetTimelineBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>The time and date the instance fleet was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>The time and date the instance fleet was ready to run jobs.</p>
     pub fn ready_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.ready_date_time = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl InstanceFleetTimelineBuilder {
         self.ready_date_time = input;
         self
     }
+    /// <p>The time and date the instance fleet was ready to run jobs.</p>
+    pub fn get_ready_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.ready_date_time
+    }
     /// <p>The time and date the instance fleet terminated.</p>
     pub fn end_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_date_time = ::std::option::Option::Some(input);
@@ -86,6 +94,10 @@ impl InstanceFleetTimelineBuilder {
     ) -> Self {
         self.end_date_time = input;
         self
+    }
+    /// <p>The time and date the instance fleet terminated.</p>
+    pub fn get_end_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_date_time
     }
     /// Consumes the builder and constructs a [`InstanceFleetTimeline`](crate::types::InstanceFleetTimeline).
     pub fn build(self) -> crate::types::InstanceFleetTimeline {

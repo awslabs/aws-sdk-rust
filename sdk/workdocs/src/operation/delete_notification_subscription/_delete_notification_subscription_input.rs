@@ -53,6 +53,10 @@ impl DeleteNotificationSubscriptionInputBuilder {
         self.subscription_id = input;
         self
     }
+    /// <p>The ID of the subscription.</p>
+    pub fn get_subscription_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscription_id
+    }
     /// <p>The ID of the organization.</p>
     pub fn organization_id(
         mut self,
@@ -68,6 +72,10 @@ impl DeleteNotificationSubscriptionInputBuilder {
     ) -> Self {
         self.organization_id = input;
         self
+    }
+    /// <p>The ID of the organization.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
     }
     /// Consumes the builder and constructs a [`DeleteNotificationSubscriptionInput`](crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionInput).
     pub fn build(

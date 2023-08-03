@@ -50,6 +50,10 @@ impl PolicyRoleBuilder {
         self.role_name = input;
         self
     }
+    /// <p>The name (friendly name, not ARN) identifying the role.</p>
+    pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_name
+    }
     /// <p>The stable and unique string identifying the role. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
     pub fn role_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_id = ::std::option::Option::Some(input.into());
@@ -59,6 +63,10 @@ impl PolicyRoleBuilder {
     pub fn set_role_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_id = input;
         self
+    }
+    /// <p>The stable and unique string identifying the role. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
+    pub fn get_role_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_id
     }
     /// Consumes the builder and constructs a [`PolicyRole`](crate::types::PolicyRole).
     pub fn build(self) -> crate::types::PolicyRole {

@@ -48,6 +48,10 @@ impl FailureSummaryBuilder {
         self.total_failure_count = input;
         self
     }
+    /// <p>The total number of failures.</p>
+    pub fn get_total_failure_count(&self) -> &::std::option::Option<i32> {
+        &self.total_failure_count
+    }
     /// Appends an item to `failures`.
     ///
     /// To override the contents of this collection use [`set_failures`](Self::set_failures).
@@ -66,6 +70,12 @@ impl FailureSummaryBuilder {
     ) -> Self {
         self.failures = input;
         self
+    }
+    /// <p>The worlds that failed.</p>
+    pub fn get_failures(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorldFailure>> {
+        &self.failures
     }
     /// Consumes the builder and constructs a [`FailureSummary`](crate::types::FailureSummary).
     pub fn build(self) -> crate::types::FailureSummary {

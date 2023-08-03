@@ -57,6 +57,10 @@ impl ModifyLoadBalancerAttributesInputBuilder {
         self.load_balancer_name = input;
         self
     }
+    /// <p>The name of the load balancer.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.load_balancer_name
+    }
     /// <p>The attributes for the load balancer.</p>
     pub fn load_balancer_attributes(mut self, input: crate::types::LoadBalancerAttributes) -> Self {
         self.load_balancer_attributes = ::std::option::Option::Some(input);
@@ -69,6 +73,12 @@ impl ModifyLoadBalancerAttributesInputBuilder {
     ) -> Self {
         self.load_balancer_attributes = input;
         self
+    }
+    /// <p>The attributes for the load balancer.</p>
+    pub fn get_load_balancer_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::LoadBalancerAttributes> {
+        &self.load_balancer_attributes
     }
     /// Consumes the builder and constructs a [`ModifyLoadBalancerAttributesInput`](crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesInput).
     pub fn build(

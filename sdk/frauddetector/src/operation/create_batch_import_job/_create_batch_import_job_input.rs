@@ -82,6 +82,10 @@ impl CreateBatchImportJobInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The ID of the batch import job. The ID cannot be of a past job, unless the job exists in <code>CREATE_FAILED</code> state.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>The URI that points to the Amazon S3 location of your data file.</p>
     pub fn input_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_path = ::std::option::Option::Some(input.into());
@@ -92,6 +96,10 @@ impl CreateBatchImportJobInputBuilder {
         self.input_path = input;
         self
     }
+    /// <p>The URI that points to the Amazon S3 location of your data file.</p>
+    pub fn get_input_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_path
+    }
     /// <p>The URI that points to the Amazon S3 location for storing your results. </p>
     pub fn output_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_path = ::std::option::Option::Some(input.into());
@@ -101,6 +109,10 @@ impl CreateBatchImportJobInputBuilder {
     pub fn set_output_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_path = input;
         self
+    }
+    /// <p>The URI that points to the Amazon S3 location for storing your results. </p>
+    pub fn get_output_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_path
     }
     /// <p>The name of the event type.</p>
     pub fn event_type_name(
@@ -118,6 +130,10 @@ impl CreateBatchImportJobInputBuilder {
         self.event_type_name = input;
         self
     }
+    /// <p>The name of the event type.</p>
+    pub fn get_event_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_type_name
+    }
     /// <p>The ARN of the IAM role created for Amazon S3 bucket that holds your data file.</p>
     /// <p>The IAM role must have read permissions to your input S3 bucket and write permissions to your output S3 bucket. For more information about bucket permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User policy examples</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -129,6 +145,11 @@ impl CreateBatchImportJobInputBuilder {
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_role_arn = input;
         self
+    }
+    /// <p>The ARN of the IAM role created for Amazon S3 bucket that holds your data file.</p>
+    /// <p>The IAM role must have read permissions to your input S3 bucket and write permissions to your output S3 bucket. For more information about bucket permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User policy examples</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_role_arn
     }
     /// Appends an item to `tags`.
     ///
@@ -148,6 +169,10 @@ impl CreateBatchImportJobInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A collection of key-value pairs associated with this request. </p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateBatchImportJobInput`](crate::operation::create_batch_import_job::CreateBatchImportJobInput).
     pub fn build(

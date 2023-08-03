@@ -36,6 +36,10 @@ impl DeleteApplicationInputProcessingConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteApplicationInputProcessingConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_application_input_processing_configuration::builders::DeleteApplicationInputProcessingConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl DeleteApplicationInputProcessingConfigurationFluentBuilder {
         self.inner = self.inner.set_application_name(input);
         self
     }
+    /// <p>The name of the application.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_name()
+    }
     /// <p>The application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
     pub fn current_application_version_id(mut self, input: i64) -> Self {
         self.inner = self.inner.current_application_version_id(input);
@@ -116,6 +124,10 @@ impl DeleteApplicationInputProcessingConfigurationFluentBuilder {
         self.inner = self.inner.set_current_application_version_id(input);
         self
     }
+    /// <p>The application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
+    pub fn get_current_application_version_id(&self) -> &::std::option::Option<i64> {
+        self.inner.get_current_application_version_id()
+    }
     /// <p>The ID of the input configuration from which to delete the input processing configuration. You can get a list of the input IDs for an application by using the <code>DescribeApplication</code> operation.</p>
     pub fn input_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.input_id(input.into());
@@ -125,5 +137,9 @@ impl DeleteApplicationInputProcessingConfigurationFluentBuilder {
     pub fn set_input_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_input_id(input);
         self
+    }
+    /// <p>The ID of the input configuration from which to delete the input processing configuration. You can get a list of the input IDs for an application by using the <code>DescribeApplication</code> operation.</p>
+    pub fn get_input_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_input_id()
     }
 }

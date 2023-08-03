@@ -39,6 +39,10 @@ impl DeleteFilterInputBuilder {
         self.filter_arn = input;
         self
     }
+    /// <p>The ARN of the filter to delete.</p>
+    pub fn get_filter_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter_arn
+    }
     /// Consumes the builder and constructs a [`DeleteFilterInput`](crate::operation::delete_filter::DeleteFilterInput).
     pub fn build(
         self,

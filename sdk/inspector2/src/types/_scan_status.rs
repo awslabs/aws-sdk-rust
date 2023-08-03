@@ -51,6 +51,10 @@ impl ScanStatusBuilder {
         self.status_code = input;
         self
     }
+    /// <p>The status code of the scan.</p>
+    pub fn get_status_code(&self) -> &::std::option::Option<crate::types::ScanStatusCode> {
+        &self.status_code
+    }
     /// <p>The reason for the scan.</p>
     pub fn reason(mut self, input: crate::types::ScanStatusReason) -> Self {
         self.reason = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl ScanStatusBuilder {
     ) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>The reason for the scan.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<crate::types::ScanStatusReason> {
+        &self.reason
     }
     /// Consumes the builder and constructs a [`ScanStatus`](crate::types::ScanStatus).
     pub fn build(self) -> crate::types::ScanStatus {

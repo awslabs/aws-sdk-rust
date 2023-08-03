@@ -70,6 +70,10 @@ impl CreateScalingPlanInputBuilder {
         self.scaling_plan_name = input;
         self
     }
+    /// <p>The name of the scaling plan. Names cannot contain vertical bars, colons, or forward slashes.</p>
+    pub fn get_scaling_plan_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scaling_plan_name
+    }
     /// <p>A CloudFormation stack or set of tags. You can create one scaling plan per application source.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
     pub fn application_source(mut self, input: crate::types::ApplicationSource) -> Self {
@@ -84,6 +88,13 @@ impl CreateScalingPlanInputBuilder {
     ) -> Self {
         self.application_source = input;
         self
+    }
+    /// <p>A CloudFormation stack or set of tags. You can create one scaling plan per application source.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
+    pub fn get_application_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationSource> {
+        &self.application_source
     }
     /// Appends an item to `scaling_instructions`.
     ///
@@ -105,6 +116,13 @@ impl CreateScalingPlanInputBuilder {
     ) -> Self {
         self.scaling_instructions = input;
         self
+    }
+    /// <p>The scaling instructions.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
+    pub fn get_scaling_instructions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScalingInstruction>> {
+        &self.scaling_instructions
     }
     /// Consumes the builder and constructs a [`CreateScalingPlanInput`](crate::operation::create_scaling_plan::CreateScalingPlanInput).
     pub fn build(

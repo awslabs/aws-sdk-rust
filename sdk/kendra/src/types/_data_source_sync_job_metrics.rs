@@ -78,6 +78,10 @@ impl DataSourceSyncJobMetricsBuilder {
         self.documents_added = input;
         self
     }
+    /// <p>The number of documents added from the data source up to now in the data source sync.</p>
+    pub fn get_documents_added(&self) -> &::std::option::Option<::std::string::String> {
+        &self.documents_added
+    }
     /// <p>The number of documents modified in the data source up to now in the data source sync run.</p>
     pub fn documents_modified(
         mut self,
@@ -93,6 +97,10 @@ impl DataSourceSyncJobMetricsBuilder {
     ) -> Self {
         self.documents_modified = input;
         self
+    }
+    /// <p>The number of documents modified in the data source up to now in the data source sync run.</p>
+    pub fn get_documents_modified(&self) -> &::std::option::Option<::std::string::String> {
+        &self.documents_modified
     }
     /// <p>The number of documents deleted from the data source up to now in the data source sync run.</p>
     pub fn documents_deleted(
@@ -110,6 +118,10 @@ impl DataSourceSyncJobMetricsBuilder {
         self.documents_deleted = input;
         self
     }
+    /// <p>The number of documents deleted from the data source up to now in the data source sync run.</p>
+    pub fn get_documents_deleted(&self) -> &::std::option::Option<::std::string::String> {
+        &self.documents_deleted
+    }
     /// <p>The number of documents that failed to sync from the data source up to now in the data source sync run.</p>
     pub fn documents_failed(
         mut self,
@@ -126,6 +138,10 @@ impl DataSourceSyncJobMetricsBuilder {
         self.documents_failed = input;
         self
     }
+    /// <p>The number of documents that failed to sync from the data source up to now in the data source sync run.</p>
+    pub fn get_documents_failed(&self) -> &::std::option::Option<::std::string::String> {
+        &self.documents_failed
+    }
     /// <p>The current number of documents crawled by the current sync job in the data source.</p>
     pub fn documents_scanned(
         mut self,
@@ -141,6 +157,10 @@ impl DataSourceSyncJobMetricsBuilder {
     ) -> Self {
         self.documents_scanned = input;
         self
+    }
+    /// <p>The current number of documents crawled by the current sync job in the data source.</p>
+    pub fn get_documents_scanned(&self) -> &::std::option::Option<::std::string::String> {
+        &self.documents_scanned
     }
     /// Consumes the builder and constructs a [`DataSourceSyncJobMetrics`](crate::types::DataSourceSyncJobMetrics).
     pub fn build(self) -> crate::types::DataSourceSyncJobMetrics {

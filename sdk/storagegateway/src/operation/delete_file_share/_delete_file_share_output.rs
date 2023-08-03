@@ -54,6 +54,10 @@ impl DeleteFileShareOutputBuilder {
         self.file_share_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the deleted file share.</p>
+    pub fn get_file_share_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_share_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

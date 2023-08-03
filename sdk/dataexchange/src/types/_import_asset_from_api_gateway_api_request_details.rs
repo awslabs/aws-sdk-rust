@@ -110,6 +110,10 @@ impl ImportAssetFromApiGatewayApiRequestDetailsBuilder {
         self.api_description = input;
         self
     }
+    /// <p>The API description. Markdown supported.</p>
+    pub fn get_api_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_description
+    }
     /// <p>The API Gateway API ID.</p>
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
@@ -119,6 +123,10 @@ impl ImportAssetFromApiGatewayApiRequestDetailsBuilder {
     pub fn set_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_id = input;
         self
+    }
+    /// <p>The API Gateway API ID.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
     }
     /// <p>The API Gateway API key.</p>
     pub fn api_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -130,6 +138,10 @@ impl ImportAssetFromApiGatewayApiRequestDetailsBuilder {
         self.api_key = input;
         self
     }
+    /// <p>The API Gateway API key.</p>
+    pub fn get_api_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_key
+    }
     /// <p>The API name.</p>
     pub fn api_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_name = ::std::option::Option::Some(input.into());
@@ -139,6 +151,10 @@ impl ImportAssetFromApiGatewayApiRequestDetailsBuilder {
     pub fn set_api_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_name = input;
         self
+    }
+    /// <p>The API name.</p>
+    pub fn get_api_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_name
     }
     /// <p>The Base64-encoded MD5 hash of the OpenAPI 3.0 JSON API specification file. It is used to ensure the integrity of the file.</p>
     pub fn api_specification_md5_hash(
@@ -156,6 +172,10 @@ impl ImportAssetFromApiGatewayApiRequestDetailsBuilder {
         self.api_specification_md5_hash = input;
         self
     }
+    /// <p>The Base64-encoded MD5 hash of the OpenAPI 3.0 JSON API specification file. It is used to ensure the integrity of the file.</p>
+    pub fn get_api_specification_md5_hash(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_specification_md5_hash
+    }
     /// <p>The data set ID.</p>
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
@@ -165,6 +185,10 @@ impl ImportAssetFromApiGatewayApiRequestDetailsBuilder {
     pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_set_id = input;
         self
+    }
+    /// <p>The data set ID.</p>
+    pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_set_id
     }
     /// <p>The protocol type.</p>
     pub fn protocol_type(mut self, input: crate::types::ProtocolType) -> Self {
@@ -179,6 +203,10 @@ impl ImportAssetFromApiGatewayApiRequestDetailsBuilder {
         self.protocol_type = input;
         self
     }
+    /// <p>The protocol type.</p>
+    pub fn get_protocol_type(&self) -> &::std::option::Option<crate::types::ProtocolType> {
+        &self.protocol_type
+    }
     /// <p>The revision ID.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
@@ -189,6 +217,10 @@ impl ImportAssetFromApiGatewayApiRequestDetailsBuilder {
         self.revision_id = input;
         self
     }
+    /// <p>The revision ID.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_id
+    }
     /// <p>The API stage.</p>
     pub fn stage(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage = ::std::option::Option::Some(input.into());
@@ -198,6 +230,10 @@ impl ImportAssetFromApiGatewayApiRequestDetailsBuilder {
     pub fn set_stage(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stage = input;
         self
+    }
+    /// <p>The API stage.</p>
+    pub fn get_stage(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stage
     }
     /// Consumes the builder and constructs a [`ImportAssetFromApiGatewayApiRequestDetails`](crate::types::ImportAssetFromApiGatewayApiRequestDetails).
     pub fn build(self) -> crate::types::ImportAssetFromApiGatewayApiRequestDetails {

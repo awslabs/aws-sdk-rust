@@ -64,6 +64,10 @@ impl UpdateConfigurationInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The description of the configuration revision.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl UpdateConfigurationInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the configuration revision.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Contents of the <filename>
     /// server.properties
@@ -94,6 +102,14 @@ impl UpdateConfigurationInputBuilder {
     ) -> Self {
         self.server_properties = input;
         self
+    }
+    /// <p>Contents of the <filename>
+    /// server.properties
+    /// </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>
+    /// server.properties
+    /// </filename> can be in plaintext.</p>
+    pub fn get_server_properties(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.server_properties
     }
     /// Consumes the builder and constructs a [`UpdateConfigurationInput`](crate::operation::update_configuration::UpdateConfigurationInput).
     pub fn build(

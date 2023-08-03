@@ -85,6 +85,12 @@ impl WordCloudOptionsBuilder {
         self.word_orientation = input;
         self
     }
+    /// <p>The word orientation options (horizontal, horizontal_and_vertical) for the words in a word cloud.</p>
+    pub fn get_word_orientation(
+        &self,
+    ) -> &::std::option::Option<crate::types::WordCloudWordOrientation> {
+        &self.word_orientation
+    }
     /// <p>The word scaling options (emphasize, normal) for the words in a word cloud.</p>
     pub fn word_scaling(mut self, input: crate::types::WordCloudWordScaling) -> Self {
         self.word_scaling = ::std::option::Option::Some(input);
@@ -97,6 +103,10 @@ impl WordCloudOptionsBuilder {
     ) -> Self {
         self.word_scaling = input;
         self
+    }
+    /// <p>The word scaling options (emphasize, normal) for the words in a word cloud.</p>
+    pub fn get_word_scaling(&self) -> &::std::option::Option<crate::types::WordCloudWordScaling> {
+        &self.word_scaling
     }
     /// <p>The cloud layout options (fluid, normal) of a word cloud.</p>
     pub fn cloud_layout(mut self, input: crate::types::WordCloudCloudLayout) -> Self {
@@ -111,6 +121,10 @@ impl WordCloudOptionsBuilder {
         self.cloud_layout = input;
         self
     }
+    /// <p>The cloud layout options (fluid, normal) of a word cloud.</p>
+    pub fn get_cloud_layout(&self) -> &::std::option::Option<crate::types::WordCloudCloudLayout> {
+        &self.cloud_layout
+    }
     /// <p>The word casing options (lower_case, existing_case) for the words in a word cloud.</p>
     pub fn word_casing(mut self, input: crate::types::WordCloudWordCasing) -> Self {
         self.word_casing = ::std::option::Option::Some(input);
@@ -123,6 +137,10 @@ impl WordCloudOptionsBuilder {
     ) -> Self {
         self.word_casing = input;
         self
+    }
+    /// <p>The word casing options (lower_case, existing_case) for the words in a word cloud.</p>
+    pub fn get_word_casing(&self) -> &::std::option::Option<crate::types::WordCloudWordCasing> {
+        &self.word_casing
     }
     /// <p>The word padding options (none, small, medium, large) for the words in a word cloud.</p>
     pub fn word_padding(mut self, input: crate::types::WordCloudWordPadding) -> Self {
@@ -137,6 +155,10 @@ impl WordCloudOptionsBuilder {
         self.word_padding = input;
         self
     }
+    /// <p>The word padding options (none, small, medium, large) for the words in a word cloud.</p>
+    pub fn get_word_padding(&self) -> &::std::option::Option<crate::types::WordCloudWordPadding> {
+        &self.word_padding
+    }
     /// <p>The length limit of each word from 1-100.</p>
     pub fn maximum_string_length(mut self, input: i32) -> Self {
         self.maximum_string_length = ::std::option::Option::Some(input);
@@ -146,6 +168,10 @@ impl WordCloudOptionsBuilder {
     pub fn set_maximum_string_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_string_length = input;
         self
+    }
+    /// <p>The length limit of each word from 1-100.</p>
+    pub fn get_maximum_string_length(&self) -> &::std::option::Option<i32> {
+        &self.maximum_string_length
     }
     /// Consumes the builder and constructs a [`WordCloudOptions`](crate::types::WordCloudOptions).
     pub fn build(self) -> crate::types::WordCloudOptions {

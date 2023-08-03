@@ -56,6 +56,10 @@ impl NumberFilterBuilder {
         self.gte = input;
         self
     }
+    /// <p>The greater-than-equal condition to be applied to a single field when querying for findings. </p>
+    pub fn get_gte(&self) -> &::std::option::Option<f64> {
+        &self.gte
+    }
     /// <p>The less-than-equal condition to be applied to a single field when querying for findings. </p>
     pub fn lte(mut self, input: f64) -> Self {
         self.lte = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl NumberFilterBuilder {
         self.lte = input;
         self
     }
+    /// <p>The less-than-equal condition to be applied to a single field when querying for findings. </p>
+    pub fn get_lte(&self) -> &::std::option::Option<f64> {
+        &self.lte
+    }
     /// <p>The equal-to condition to be applied to a single field when querying for findings.</p>
     pub fn eq(mut self, input: f64) -> Self {
         self.eq = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl NumberFilterBuilder {
     pub fn set_eq(mut self, input: ::std::option::Option<f64>) -> Self {
         self.eq = input;
         self
+    }
+    /// <p>The equal-to condition to be applied to a single field when querying for findings.</p>
+    pub fn get_eq(&self) -> &::std::option::Option<f64> {
+        &self.eq
     }
     /// Consumes the builder and constructs a [`NumberFilter`](crate::types::NumberFilter).
     pub fn build(self) -> crate::types::NumberFilter {

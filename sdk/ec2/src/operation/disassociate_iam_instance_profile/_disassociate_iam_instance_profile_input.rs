@@ -45,6 +45,10 @@ impl DisassociateIamInstanceProfileInputBuilder {
         self.association_id = input;
         self
     }
+    /// <p>The ID of the IAM instance profile association.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_id
+    }
     /// Consumes the builder and constructs a [`DisassociateIamInstanceProfileInput`](crate::operation::disassociate_iam_instance_profile::DisassociateIamInstanceProfileInput).
     pub fn build(
         self,

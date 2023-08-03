@@ -86,6 +86,10 @@ impl NodeGroupMemberBuilder {
         self.cache_cluster_id = input;
         self
     }
+    /// <p>The ID of the cluster to which the node belongs.</p>
+    pub fn get_cache_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_cluster_id
+    }
     /// <p>The ID of the node within its cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
     pub fn cache_node_id(
         mut self,
@@ -102,6 +106,10 @@ impl NodeGroupMemberBuilder {
         self.cache_node_id = input;
         self
     }
+    /// <p>The ID of the node within its cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
+    pub fn get_cache_node_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_node_id
+    }
     /// <p>The information required for client programs to connect to a node for read operations. The read endpoint is only applicable on Redis (cluster mode disabled) clusters.</p>
     pub fn read_endpoint(mut self, input: crate::types::Endpoint) -> Self {
         self.read_endpoint = ::std::option::Option::Some(input);
@@ -114,6 +122,10 @@ impl NodeGroupMemberBuilder {
     ) -> Self {
         self.read_endpoint = input;
         self
+    }
+    /// <p>The information required for client programs to connect to a node for read operations. The read endpoint is only applicable on Redis (cluster mode disabled) clusters.</p>
+    pub fn get_read_endpoint(&self) -> &::std::option::Option<crate::types::Endpoint> {
+        &self.read_endpoint
     }
     /// <p>The name of the Availability Zone in which the node is located.</p>
     pub fn preferred_availability_zone(
@@ -131,6 +143,10 @@ impl NodeGroupMemberBuilder {
         self.preferred_availability_zone = input;
         self
     }
+    /// <p>The name of the Availability Zone in which the node is located.</p>
+    pub fn get_preferred_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.preferred_availability_zone
+    }
     /// <p>The outpost ARN of the node group member.</p>
     pub fn preferred_outpost_arn(
         mut self,
@@ -147,6 +163,10 @@ impl NodeGroupMemberBuilder {
         self.preferred_outpost_arn = input;
         self
     }
+    /// <p>The outpost ARN of the node group member.</p>
+    pub fn get_preferred_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.preferred_outpost_arn
+    }
     /// <p>The role that is currently assigned to the node - <code>primary</code> or <code>replica</code>. This member is only applicable for Redis (cluster mode disabled) replication groups.</p>
     pub fn current_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_role = ::std::option::Option::Some(input.into());
@@ -156,6 +176,10 @@ impl NodeGroupMemberBuilder {
     pub fn set_current_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.current_role = input;
         self
+    }
+    /// <p>The role that is currently assigned to the node - <code>primary</code> or <code>replica</code>. This member is only applicable for Redis (cluster mode disabled) replication groups.</p>
+    pub fn get_current_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.current_role
     }
     /// Consumes the builder and constructs a [`NodeGroupMember`](crate::types::NodeGroupMember).
     pub fn build(self) -> crate::types::NodeGroupMember {

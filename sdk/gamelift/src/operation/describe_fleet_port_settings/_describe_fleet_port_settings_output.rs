@@ -85,6 +85,10 @@ impl DescribeFleetPortSettingsOutputBuilder {
         self.fleet_id = input;
         self
     }
+    /// <p>A unique identifier for the fleet that was requested. </p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_id
+    }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
@@ -100,6 +104,13 @@ impl DescribeFleetPortSettingsOutputBuilder {
     pub fn set_fleet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+    /// <region>
+    /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
+    /// </region></code>.</p>
+    pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_arn
     }
     /// Appends an item to `inbound_permissions`.
     ///
@@ -120,6 +131,12 @@ impl DescribeFleetPortSettingsOutputBuilder {
         self.inbound_permissions = input;
         self
     }
+    /// <p>The port settings for the requested fleet ID.</p>
+    pub fn get_inbound_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpPermission>> {
+        &self.inbound_permissions
+    }
     /// <p>The current status of updates to the fleet's port settings in the requested fleet location. A status of <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed for the location.</p>
     pub fn update_status(mut self, input: crate::types::LocationUpdateStatus) -> Self {
         self.update_status = ::std::option::Option::Some(input);
@@ -133,6 +150,10 @@ impl DescribeFleetPortSettingsOutputBuilder {
         self.update_status = input;
         self
     }
+    /// <p>The current status of updates to the fleet's port settings in the requested fleet location. A status of <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed for the location.</p>
+    pub fn get_update_status(&self) -> &::std::option::Option<crate::types::LocationUpdateStatus> {
+        &self.update_status
+    }
     /// <p>The requested fleet location, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
@@ -142,6 +163,10 @@ impl DescribeFleetPortSettingsOutputBuilder {
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
+    }
+    /// <p>The requested fleet location, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

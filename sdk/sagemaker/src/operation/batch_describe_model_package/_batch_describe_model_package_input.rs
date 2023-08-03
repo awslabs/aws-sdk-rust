@@ -52,6 +52,12 @@ impl BatchDescribeModelPackageInputBuilder {
         self.model_package_arn_list = input;
         self
     }
+    /// <p>The list of Amazon Resource Name (ARN) of the model package groups.</p>
+    pub fn get_model_package_arn_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.model_package_arn_list
+    }
     /// Consumes the builder and constructs a [`BatchDescribeModelPackageInput`](crate::operation::batch_describe_model_package::BatchDescribeModelPackageInput).
     pub fn build(
         self,

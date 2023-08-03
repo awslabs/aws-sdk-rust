@@ -59,6 +59,10 @@ impl TargetHealthDescriptionBuilder {
         self.target = input;
         self
     }
+    /// <p>The description of the target.</p>
+    pub fn get_target(&self) -> &::std::option::Option<crate::types::TargetDescription> {
+        &self.target
+    }
     /// <p>The port to use to connect with the target.</p>
     pub fn health_check_port(
         mut self,
@@ -75,6 +79,10 @@ impl TargetHealthDescriptionBuilder {
         self.health_check_port = input;
         self
     }
+    /// <p>The port to use to connect with the target.</p>
+    pub fn get_health_check_port(&self) -> &::std::option::Option<::std::string::String> {
+        &self.health_check_port
+    }
     /// <p>The health information for the target.</p>
     pub fn target_health(mut self, input: crate::types::TargetHealth) -> Self {
         self.target_health = ::std::option::Option::Some(input);
@@ -87,6 +95,10 @@ impl TargetHealthDescriptionBuilder {
     ) -> Self {
         self.target_health = input;
         self
+    }
+    /// <p>The health information for the target.</p>
+    pub fn get_target_health(&self) -> &::std::option::Option<crate::types::TargetHealth> {
+        &self.target_health
     }
     /// Consumes the builder and constructs a [`TargetHealthDescription`](crate::types::TargetHealthDescription).
     pub fn build(self) -> crate::types::TargetHealthDescription {

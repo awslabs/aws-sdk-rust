@@ -54,6 +54,10 @@ impl SecurityGroupMembershipBuilder {
         self.security_group_id = input;
         self
     }
+    /// <p>The identifier of the security group.</p>
+    pub fn get_security_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_group_id
+    }
     /// <p>The status of the security group membership. The status changes whenever a security group is modified, or when the security groups assigned to a cluster are modified.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl SecurityGroupMembershipBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the security group membership. The status changes whenever a security group is modified, or when the security groups assigned to a cluster are modified.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`SecurityGroupMembership`](crate::types::SecurityGroupMembership).
     pub fn build(self) -> crate::types::SecurityGroupMembership {

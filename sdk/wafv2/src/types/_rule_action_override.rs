@@ -49,6 +49,10 @@ impl RuleActionOverrideBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the rule to override.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The override action to use, in place of the configured action of the rule in the rule group. </p>
     pub fn action_to_use(mut self, input: crate::types::RuleAction) -> Self {
         self.action_to_use = ::std::option::Option::Some(input);
@@ -61,6 +65,10 @@ impl RuleActionOverrideBuilder {
     ) -> Self {
         self.action_to_use = input;
         self
+    }
+    /// <p>The override action to use, in place of the configured action of the rule in the rule group. </p>
+    pub fn get_action_to_use(&self) -> &::std::option::Option<crate::types::RuleAction> {
+        &self.action_to_use
     }
     /// Consumes the builder and constructs a [`RuleActionOverride`](crate::types::RuleActionOverride).
     pub fn build(self) -> crate::types::RuleActionOverride {

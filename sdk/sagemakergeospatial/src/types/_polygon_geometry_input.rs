@@ -50,6 +50,12 @@ impl PolygonGeometryInputBuilder {
         self.coordinates = input;
         self
     }
+    /// <p>Coordinates representing a Polygon based on the <a href="https://www.rfc-editor.org/rfc/rfc7946#section-3.1.6">GeoJson spec</a>.</p>
+    pub fn get_coordinates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>> {
+        &self.coordinates
+    }
     /// Consumes the builder and constructs a [`PolygonGeometryInput`](crate::types::PolygonGeometryInput).
     pub fn build(self) -> crate::types::PolygonGeometryInput {
         crate::types::PolygonGeometryInput {

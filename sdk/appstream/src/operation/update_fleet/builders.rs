@@ -43,6 +43,10 @@ impl UpdateFleetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateFleet as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_fleet::builders::UpdateFleetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +129,10 @@ impl UpdateFleetFluentBuilder {
         self.inner = self.inner.set_image_name(input);
         self
     }
+    /// <p>The name of the image used to create the fleet.</p>
+    pub fn get_image_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_image_name()
+    }
     /// <p>The ARN of the public, private, or shared image to use.</p>
     pub fn image_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.image_arn(input.into());
@@ -135,6 +143,10 @@ impl UpdateFleetFluentBuilder {
         self.inner = self.inner.set_image_arn(input);
         self
     }
+    /// <p>The ARN of the public, private, or shared image to use.</p>
+    pub fn get_image_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_image_arn()
+    }
     /// <p>A unique name for the fleet.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -144,6 +156,10 @@ impl UpdateFleetFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>A unique name for the fleet.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
     /// <ul>
@@ -251,6 +267,55 @@ impl UpdateFleetFluentBuilder {
         self.inner = self.inner.set_instance_type(input);
         self
     }
+    /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
+    /// <ul>
+    /// <li> <p>stream.standard.small</p> </li>
+    /// <li> <p>stream.standard.medium</p> </li>
+    /// <li> <p>stream.standard.large</p> </li>
+    /// <li> <p>stream.standard.xlarge</p> </li>
+    /// <li> <p>stream.standard.2xlarge</p> </li>
+    /// <li> <p>stream.compute.large</p> </li>
+    /// <li> <p>stream.compute.xlarge</p> </li>
+    /// <li> <p>stream.compute.2xlarge</p> </li>
+    /// <li> <p>stream.compute.4xlarge</p> </li>
+    /// <li> <p>stream.compute.8xlarge</p> </li>
+    /// <li> <p>stream.memory.large</p> </li>
+    /// <li> <p>stream.memory.xlarge</p> </li>
+    /// <li> <p>stream.memory.2xlarge</p> </li>
+    /// <li> <p>stream.memory.4xlarge</p> </li>
+    /// <li> <p>stream.memory.8xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.large</p> </li>
+    /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.large</p> </li>
+    /// <li> <p>stream.graphics-design.xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
+    /// </ul>
+    /// <p>The following instance types are available for Elastic fleets:</p>
+    /// <ul>
+    /// <li> <p>stream.standard.small</p> </li>
+    /// <li> <p>stream.standard.medium</p> </li>
+    /// <li> <p>stream.standard.large</p> </li>
+    /// <li> <p>stream.standard.xlarge</p> </li>
+    /// <li> <p>stream.standard.2xlarge</p> </li>
+    /// </ul>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_type()
+    }
     /// <p>The desired capacity for the fleet. This is not allowed for Elastic fleets.</p>
     pub fn compute_capacity(mut self, input: crate::types::ComputeCapacity) -> Self {
         self.inner = self.inner.compute_capacity(input);
@@ -264,6 +329,10 @@ impl UpdateFleetFluentBuilder {
         self.inner = self.inner.set_compute_capacity(input);
         self
     }
+    /// <p>The desired capacity for the fleet. This is not allowed for Elastic fleets.</p>
+    pub fn get_compute_capacity(&self) -> &::std::option::Option<crate::types::ComputeCapacity> {
+        self.inner.get_compute_capacity()
+    }
     /// <p>The VPC configuration for the fleet. This is required for Elastic fleets, but not required for other fleet types. Elastic fleets require that you specify at least two subnets in different availability zones. </p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
         self.inner = self.inner.vpc_config(input);
@@ -273,6 +342,10 @@ impl UpdateFleetFluentBuilder {
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
         self.inner = self.inner.set_vpc_config(input);
         self
+    }
+    /// <p>The VPC configuration for the fleet. This is required for Elastic fleets, but not required for other fleet types. Elastic fleets require that you specify at least two subnets in different availability zones. </p>
+    pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
+        self.inner.get_vpc_config()
     }
     /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>
     /// <p>Specify a value between 600 and 432000.</p>
@@ -286,6 +359,11 @@ impl UpdateFleetFluentBuilder {
         self.inner = self.inner.set_max_user_duration_in_seconds(input);
         self
     }
+    /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>
+    /// <p>Specify a value between 600 and 432000.</p>
+    pub fn get_max_user_duration_in_seconds(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_user_duration_in_seconds()
+    }
     /// <p>The amount of time that a streaming session remains active after users disconnect. If users try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance. </p>
     /// <p>Specify a value between 60 and 360000.</p>
     pub fn disconnect_timeout_in_seconds(mut self, input: i32) -> Self {
@@ -297,6 +375,11 @@ impl UpdateFleetFluentBuilder {
     pub fn set_disconnect_timeout_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_disconnect_timeout_in_seconds(input);
         self
+    }
+    /// <p>The amount of time that a streaming session remains active after users disconnect. If users try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance. </p>
+    /// <p>Specify a value between 60 and 360000.</p>
+    pub fn get_disconnect_timeout_in_seconds(&self) -> &::std::option::Option<i32> {
+        self.inner.get_disconnect_timeout_in_seconds()
     }
     /// <p>Deletes the VPC association for the specified fleet.</p>
     #[deprecated]
@@ -310,6 +393,11 @@ impl UpdateFleetFluentBuilder {
         self.inner = self.inner.set_delete_vpc_config(input);
         self
     }
+    /// <p>Deletes the VPC association for the specified fleet.</p>
+    #[deprecated]
+    pub fn get_delete_vpc_config(&self) -> &::std::option::Option<bool> {
+        self.inner.get_delete_vpc_config()
+    }
     /// <p>The description to display.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -320,6 +408,10 @@ impl UpdateFleetFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The description to display.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The fleet name to display.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
@@ -329,6 +421,10 @@ impl UpdateFleetFluentBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_display_name(input);
         self
+    }
+    /// <p>The fleet name to display.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_display_name()
     }
     /// <p>Enables or disables default internet access for the fleet.</p>
     pub fn enable_default_internet_access(mut self, input: bool) -> Self {
@@ -343,6 +439,10 @@ impl UpdateFleetFluentBuilder {
         self.inner = self.inner.set_enable_default_internet_access(input);
         self
     }
+    /// <p>Enables or disables default internet access for the fleet.</p>
+    pub fn get_enable_default_internet_access(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_default_internet_access()
+    }
     /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. </p>
     pub fn domain_join_info(mut self, input: crate::types::DomainJoinInfo) -> Self {
         self.inner = self.inner.domain_join_info(input);
@@ -355,6 +455,10 @@ impl UpdateFleetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_domain_join_info(input);
         self
+    }
+    /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. </p>
+    pub fn get_domain_join_info(&self) -> &::std::option::Option<crate::types::DomainJoinInfo> {
+        self.inner.get_domain_join_info()
     }
     /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected. </p>
     /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>
@@ -375,6 +479,13 @@ impl UpdateFleetFluentBuilder {
         self.inner = self.inner.set_idle_disconnect_timeout_in_seconds(input);
         self
     }
+    /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected. </p>
+    /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>
+    /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
+    /// </note>
+    pub fn get_idle_disconnect_timeout_in_seconds(&self) -> &::std::option::Option<i32> {
+        self.inner.get_idle_disconnect_timeout_in_seconds()
+    }
     /// Appends an item to `AttributesToDelete`.
     ///
     /// To override the contents of this collection use [`set_attributes_to_delete`](Self::set_attributes_to_delete).
@@ -392,6 +503,12 @@ impl UpdateFleetFluentBuilder {
         self.inner = self.inner.set_attributes_to_delete(input);
         self
     }
+    /// <p>The fleet attributes to delete.</p>
+    pub fn get_attributes_to_delete(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetAttribute>> {
+        self.inner.get_attributes_to_delete()
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -403,6 +520,11 @@ impl UpdateFleetFluentBuilder {
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_iam_role_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_iam_role_arn()
     }
     /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
     /// <p>The default value is <code>APP</code>.</p>
@@ -419,6 +541,11 @@ impl UpdateFleetFluentBuilder {
         self.inner = self.inner.set_stream_view(input);
         self
     }
+    /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
+    /// <p>The default value is <code>APP</code>.</p>
+    pub fn get_stream_view(&self) -> &::std::option::Option<crate::types::StreamView> {
+        self.inner.get_stream_view()
+    }
     /// <p>The platform of the fleet. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets. </p>
     pub fn platform(mut self, input: crate::types::PlatformType) -> Self {
         self.inner = self.inner.platform(input);
@@ -432,6 +559,10 @@ impl UpdateFleetFluentBuilder {
         self.inner = self.inner.set_platform(input);
         self
     }
+    /// <p>The platform of the fleet. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets. </p>
+    pub fn get_platform(&self) -> &::std::option::Option<crate::types::PlatformType> {
+        self.inner.get_platform()
+    }
     /// <p>The maximum number of concurrent sessions for a fleet.</p>
     pub fn max_concurrent_sessions(mut self, input: i32) -> Self {
         self.inner = self.inner.max_concurrent_sessions(input);
@@ -441,6 +572,10 @@ impl UpdateFleetFluentBuilder {
     pub fn set_max_concurrent_sessions(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_concurrent_sessions(input);
         self
+    }
+    /// <p>The maximum number of concurrent sessions for a fleet.</p>
+    pub fn get_max_concurrent_sessions(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_concurrent_sessions()
     }
     /// Appends an item to `UsbDeviceFilterStrings`.
     ///
@@ -462,6 +597,12 @@ impl UpdateFleetFluentBuilder {
         self.inner = self.inner.set_usb_device_filter_strings(input);
         self
     }
+    /// <p>The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming session, when using the Windows native client. This is allowed but not required for Elastic fleets.</p>
+    pub fn get_usb_device_filter_strings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_usb_device_filter_strings()
+    }
     /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets. </p>
     pub fn session_script_s3_location(mut self, input: crate::types::S3Location) -> Self {
         self.inner = self.inner.session_script_s3_location(input);
@@ -474,5 +615,11 @@ impl UpdateFleetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_session_script_s3_location(input);
         self
+    }
+    /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets. </p>
+    pub fn get_session_script_s3_location(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3Location> {
+        self.inner.get_session_script_s3_location()
     }
 }

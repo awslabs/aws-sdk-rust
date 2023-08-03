@@ -38,6 +38,13 @@ impl PutAccountVdmAttributesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutAccountVdmAttributes as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_account_vdm_attributes::builders::PutAccountVdmAttributesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,5 +137,9 @@ impl PutAccountVdmAttributesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_vdm_attributes(input);
         self
+    }
+    /// <p>The VDM attributes that you wish to apply to your Amazon SES account.</p>
+    pub fn get_vdm_attributes(&self) -> &::std::option::Option<crate::types::VdmAttributes> {
+        self.inner.get_vdm_attributes()
     }
 }

@@ -63,6 +63,10 @@ impl UpdateLayoutInputBuilder {
         self.domain_id = input;
         self
     }
+    /// <p>The unique identifier of the Cases domain. </p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_id
+    }
     /// <p>The unique identifier of the layout.</p>
     pub fn layout_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.layout_id = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl UpdateLayoutInputBuilder {
         self.layout_id = input;
         self
     }
+    /// <p>The unique identifier of the layout.</p>
+    pub fn get_layout_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.layout_id
+    }
     /// <p>The name of the layout. It must be unique per domain.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl UpdateLayoutInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the layout. It must be unique per domain.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Information about which fields will be present in the layout, the order of the fields, and a read-only attribute of the field. </p>
     pub fn content(mut self, input: crate::types::LayoutContent) -> Self {
@@ -95,6 +107,10 @@ impl UpdateLayoutInputBuilder {
     ) -> Self {
         self.content = input;
         self
+    }
+    /// <p>Information about which fields will be present in the layout, the order of the fields, and a read-only attribute of the field. </p>
+    pub fn get_content(&self) -> &::std::option::Option<crate::types::LayoutContent> {
+        &self.content
     }
     /// Consumes the builder and constructs a [`UpdateLayoutInput`](crate::operation::update_layout::UpdateLayoutInput).
     pub fn build(

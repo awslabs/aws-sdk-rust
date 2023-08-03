@@ -49,6 +49,10 @@ impl CreateModelOutputBuilder {
         self.model_metadata = input;
         self
     }
+    /// <p>The response from a call to <code>CreateModel</code>.</p>
+    pub fn get_model_metadata(&self) -> &::std::option::Option<crate::types::ModelMetadata> {
+        &self.model_metadata
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -50,6 +50,10 @@ impl GetTableVersionOutputBuilder {
         self.table_version = input;
         self
     }
+    /// <p>The requested table version.</p>
+    pub fn get_table_version(&self) -> &::std::option::Option<crate::types::TableVersion> {
+        &self.table_version
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

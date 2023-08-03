@@ -48,6 +48,10 @@ impl PercentVisibleRangeBuilder {
         self.from = input;
         self
     }
+    /// <p>The lower bound of the range.</p>
+    pub fn get_from(&self) -> &::std::option::Option<f64> {
+        &self.from
+    }
     /// <p>The top bound of the range.</p>
     pub fn to(mut self, input: f64) -> Self {
         self.to = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl PercentVisibleRangeBuilder {
     pub fn set_to(mut self, input: ::std::option::Option<f64>) -> Self {
         self.to = input;
         self
+    }
+    /// <p>The top bound of the range.</p>
+    pub fn get_to(&self) -> &::std::option::Option<f64> {
+        &self.to
     }
     /// Consumes the builder and constructs a [`PercentVisibleRange`](crate::types::PercentVisibleRange).
     pub fn build(self) -> crate::types::PercentVisibleRange {

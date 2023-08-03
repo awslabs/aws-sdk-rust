@@ -57,6 +57,10 @@ impl GetExtensionVersionInputBuilder {
         self.namespace = input;
         self
     }
+    /// <p>The namespace (qualifier) of the extension.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
+    }
     /// <p>The name of the extension.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl GetExtensionVersionInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the extension.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The version of the extension.</p>
     pub fn extension_version(
@@ -82,6 +90,10 @@ impl GetExtensionVersionInputBuilder {
     ) -> Self {
         self.extension_version = input;
         self
+    }
+    /// <p>The version of the extension.</p>
+    pub fn get_extension_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.extension_version
     }
     /// Consumes the builder and constructs a [`GetExtensionVersionInput`](crate::operation::get_extension_version::GetExtensionVersionInput).
     pub fn build(

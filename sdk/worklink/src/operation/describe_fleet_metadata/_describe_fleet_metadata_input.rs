@@ -41,6 +41,10 @@ impl DescribeFleetMetadataInputBuilder {
         self.fleet_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_arn
+    }
     /// Consumes the builder and constructs a [`DescribeFleetMetadataInput`](crate::operation::describe_fleet_metadata::DescribeFleetMetadataInput).
     pub fn build(
         self,

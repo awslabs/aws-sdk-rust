@@ -72,6 +72,10 @@ impl AnalyticsIntentNodeSummaryBuilder {
         self.intent_name = input;
         self
     }
+    /// <p>The name of the intent at the end of the requested path.</p>
+    pub fn get_intent_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.intent_name
+    }
     /// <p>The path.</p>
     pub fn intent_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.intent_path = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl AnalyticsIntentNodeSummaryBuilder {
     pub fn set_intent_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.intent_path = input;
         self
+    }
+    /// <p>The path.</p>
+    pub fn get_intent_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.intent_path
     }
     /// <p>The total number of sessions that follow the given path to the given intent.</p>
     pub fn intent_count(mut self, input: i32) -> Self {
@@ -92,6 +100,10 @@ impl AnalyticsIntentNodeSummaryBuilder {
         self.intent_count = input;
         self
     }
+    /// <p>The total number of sessions that follow the given path to the given intent.</p>
+    pub fn get_intent_count(&self) -> &::std::option::Option<i32> {
+        &self.intent_count
+    }
     /// <p>The number of intents up to and including the requested path.</p>
     pub fn intent_level(mut self, input: i32) -> Self {
         self.intent_level = ::std::option::Option::Some(input);
@@ -101,6 +113,10 @@ impl AnalyticsIntentNodeSummaryBuilder {
     pub fn set_intent_level(mut self, input: ::std::option::Option<i32>) -> Self {
         self.intent_level = input;
         self
+    }
+    /// <p>The number of intents up to and including the requested path.</p>
+    pub fn get_intent_level(&self) -> &::std::option::Option<i32> {
+        &self.intent_level
     }
     /// <p>Specifies whether the node is the end of a path (<code>Exit</code>) or not (<code>Inner</code>).</p>
     pub fn node_type(mut self, input: crate::types::AnalyticsNodeType) -> Self {
@@ -114,6 +130,10 @@ impl AnalyticsIntentNodeSummaryBuilder {
     ) -> Self {
         self.node_type = input;
         self
+    }
+    /// <p>Specifies whether the node is the end of a path (<code>Exit</code>) or not (<code>Inner</code>).</p>
+    pub fn get_node_type(&self) -> &::std::option::Option<crate::types::AnalyticsNodeType> {
+        &self.node_type
     }
     /// Consumes the builder and constructs a [`AnalyticsIntentNodeSummary`](crate::types::AnalyticsIntentNodeSummary).
     pub fn build(self) -> crate::types::AnalyticsIntentNodeSummary {

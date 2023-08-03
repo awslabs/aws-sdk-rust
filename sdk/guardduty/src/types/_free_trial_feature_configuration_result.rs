@@ -51,6 +51,10 @@ impl FreeTrialFeatureConfigurationResultBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the feature for which the free trial is configured.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::FreeTrialFeatureResult> {
+        &self.name
+    }
     /// <p>The number of the remaining free trial days for the feature.</p>
     pub fn free_trial_days_remaining(mut self, input: i32) -> Self {
         self.free_trial_days_remaining = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl FreeTrialFeatureConfigurationResultBuilder {
     pub fn set_free_trial_days_remaining(mut self, input: ::std::option::Option<i32>) -> Self {
         self.free_trial_days_remaining = input;
         self
+    }
+    /// <p>The number of the remaining free trial days for the feature.</p>
+    pub fn get_free_trial_days_remaining(&self) -> &::std::option::Option<i32> {
+        &self.free_trial_days_remaining
     }
     /// Consumes the builder and constructs a [`FreeTrialFeatureConfigurationResult`](crate::types::FreeTrialFeatureConfigurationResult).
     pub fn build(self) -> crate::types::FreeTrialFeatureConfigurationResult {

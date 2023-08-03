@@ -75,6 +75,11 @@ impl NotificationBuilder {
         self.sns_topic_arn = input;
         self
     }
+    /// <p>The new SNS <code>TopicArn</code> that you want to associate with this job. You can create Amazon Resource Names (ARNs) for topics by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a> Amazon SNS API action.</p>
+    /// <p>You can subscribe email addresses to an Amazon SNS topic through the Amazon Web Services Management Console, or by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> Amazon Simple Notification Service (Amazon SNS) API action.</p>
+    pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sns_topic_arn
+    }
     /// Appends an item to `job_states_to_notify`.
     ///
     /// To override the contents of this collection use [`set_job_states_to_notify`](Self::set_job_states_to_notify).
@@ -94,6 +99,12 @@ impl NotificationBuilder {
         self.job_states_to_notify = input;
         self
     }
+    /// <p>The list of job states that will trigger a notification for this job.</p>
+    pub fn get_job_states_to_notify(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobState>> {
+        &self.job_states_to_notify
+    }
     /// <p>Any change in job state will trigger a notification for this job.</p>
     pub fn notify_all(mut self, input: bool) -> Self {
         self.notify_all = ::std::option::Option::Some(input);
@@ -103,6 +114,10 @@ impl NotificationBuilder {
     pub fn set_notify_all(mut self, input: ::std::option::Option<bool>) -> Self {
         self.notify_all = input;
         self
+    }
+    /// <p>Any change in job state will trigger a notification for this job.</p>
+    pub fn get_notify_all(&self) -> &::std::option::Option<bool> {
+        &self.notify_all
     }
     /// <p>Used to send SNS notifications for the person picking up the device (identified during job creation).</p>
     pub fn device_pickup_sns_topic_arn(
@@ -119,6 +134,10 @@ impl NotificationBuilder {
     ) -> Self {
         self.device_pickup_sns_topic_arn = input;
         self
+    }
+    /// <p>Used to send SNS notifications for the person picking up the device (identified during job creation).</p>
+    pub fn get_device_pickup_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_pickup_sns_topic_arn
     }
     /// Consumes the builder and constructs a [`Notification`](crate::types::Notification).
     pub fn build(self) -> crate::types::Notification {

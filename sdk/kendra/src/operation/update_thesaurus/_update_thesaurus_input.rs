@@ -79,6 +79,10 @@ impl UpdateThesaurusInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the thesaurus you want to update.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>A new name for the thesaurus.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -88,6 +92,10 @@ impl UpdateThesaurusInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A new name for the thesaurus.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The identifier of the index for the thesaurus.</p>
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -99,6 +107,10 @@ impl UpdateThesaurusInputBuilder {
         self.index_id = input;
         self
     }
+    /// <p>The identifier of the index for the thesaurus.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_id
+    }
     /// <p>A new description for the thesaurus.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -109,6 +121,10 @@ impl UpdateThesaurusInputBuilder {
         self.description = input;
         self
     }
+    /// <p>A new description for the thesaurus.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in <code>SourceS3Path</code>.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -118,6 +134,10 @@ impl UpdateThesaurusInputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in <code>SourceS3Path</code>.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
     pub fn source_s3_path(mut self, input: crate::types::S3Path) -> Self {
@@ -131,6 +151,10 @@ impl UpdateThesaurusInputBuilder {
     ) -> Self {
         self.source_s3_path = input;
         self
+    }
+    /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
+    pub fn get_source_s3_path(&self) -> &::std::option::Option<crate::types::S3Path> {
+        &self.source_s3_path
     }
     /// Consumes the builder and constructs a [`UpdateThesaurusInput`](crate::operation::update_thesaurus::UpdateThesaurusInput).
     pub fn build(

@@ -98,6 +98,20 @@ impl TypeFiltersBuilder {
         self.category = input;
         self
     }
+    /// <p>The category of extensions to return.</p>
+    /// <ul>
+    /// <li> <p> <code>REGISTERED</code>: Private extensions that have been registered for this account and Region.</p> </li>
+    /// <li> <p> <code>ACTIVATED</code>: Public extensions that have been activated for this account and Region.</p> </li>
+    /// <li> <p> <code>THIRD_PARTY</code>: Extensions available for use from publishers other than Amazon. This includes:</p>
+    /// <ul>
+    /// <li> <p>Private extensions registered in the account.</p> </li>
+    /// <li> <p>Public extensions from publishers other than Amazon, whether activated or not.</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>AWS_TYPES</code>: Extensions available for use from Amazon.</p> </li>
+    /// </ul>
+    pub fn get_category(&self) -> &::std::option::Option<crate::types::Category> {
+        &self.category
+    }
     /// <p>The id of the publisher of the extension.</p>
     /// <p>Extensions published by Amazon aren't assigned a publisher ID. Use the <code>AWS_TYPES</code> category to specify a list of types published by Amazon.</p>
     pub fn publisher_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -109,6 +123,11 @@ impl TypeFiltersBuilder {
     pub fn set_publisher_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.publisher_id = input;
         self
+    }
+    /// <p>The id of the publisher of the extension.</p>
+    /// <p>Extensions published by Amazon aren't assigned a publisher ID. Use the <code>AWS_TYPES</code> category to specify a list of types published by Amazon.</p>
+    pub fn get_publisher_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.publisher_id
     }
     /// <p>A prefix to use as a filter for results.</p>
     pub fn type_name_prefix(
@@ -125,6 +144,10 @@ impl TypeFiltersBuilder {
     ) -> Self {
         self.type_name_prefix = input;
         self
+    }
+    /// <p>A prefix to use as a filter for results.</p>
+    pub fn get_type_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.type_name_prefix
     }
     /// Consumes the builder and constructs a [`TypeFilters`](crate::types::TypeFilters).
     pub fn build(self) -> crate::types::TypeFilters {

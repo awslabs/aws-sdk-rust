@@ -63,6 +63,10 @@ impl ListDevicesInputBuilder {
         self.access_token = input;
         self
     }
+    /// <p>A valid access token that Amazon Cognito issued to the user whose list of devices you want to view.</p>
+    pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_token
+    }
     /// <p>The limit of the device request.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl ListDevicesInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>The limit of the device request.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// <p>The pagination token for the list request.</p>
     pub fn pagination_token(
@@ -88,6 +96,10 @@ impl ListDevicesInputBuilder {
     ) -> Self {
         self.pagination_token = input;
         self
+    }
+    /// <p>The pagination token for the list request.</p>
+    pub fn get_pagination_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pagination_token
     }
     /// Consumes the builder and constructs a [`ListDevicesInput`](crate::operation::list_devices::ListDevicesInput).
     pub fn build(

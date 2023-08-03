@@ -96,6 +96,10 @@ impl SsmAutomationBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the role that the automation document will assume when running commands.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The automation document's name.</p>
     pub fn document_name(
         mut self,
@@ -111,6 +115,10 @@ impl SsmAutomationBuilder {
     ) -> Self {
         self.document_name = input;
         self
+    }
+    /// <p>The automation document's name.</p>
+    pub fn get_document_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_name
     }
     /// <p>The automation document's version to use when running.</p>
     pub fn document_version(
@@ -128,6 +136,10 @@ impl SsmAutomationBuilder {
         self.document_version = input;
         self
     }
+    /// <p>The automation document's version to use when running.</p>
+    pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_version
+    }
     /// <p>The account that the automation document will be run in. This can be in either the management account or an application account.</p>
     pub fn target_account(mut self, input: crate::types::SsmTargetAccount) -> Self {
         self.target_account = ::std::option::Option::Some(input);
@@ -140,6 +152,10 @@ impl SsmAutomationBuilder {
     ) -> Self {
         self.target_account = input;
         self
+    }
+    /// <p>The account that the automation document will be run in. This can be in either the management account or an application account.</p>
+    pub fn get_target_account(&self) -> &::std::option::Option<crate::types::SsmTargetAccount> {
+        &self.target_account
     }
     /// Adds a key-value pair to `parameters`.
     ///
@@ -169,6 +185,14 @@ impl SsmAutomationBuilder {
         self.parameters = input;
         self
     }
+    /// <p>The key-value pair parameters to use when running the automation document.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    > {
+        &self.parameters
+    }
     /// Adds a key-value pair to `dynamic_parameters`.
     ///
     /// To override the contents of this collection use [`set_dynamic_parameters`](Self::set_dynamic_parameters).
@@ -196,6 +220,14 @@ impl SsmAutomationBuilder {
     ) -> Self {
         self.dynamic_parameters = input;
         self
+    }
+    /// <p>The key-value pair to resolve dynamic parameter values when processing a Systems Manager Automation runbook.</p>
+    pub fn get_dynamic_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::DynamicSsmParameterValue>,
+    > {
+        &self.dynamic_parameters
     }
     /// Consumes the builder and constructs a [`SsmAutomation`](crate::types::SsmAutomation).
     pub fn build(self) -> crate::types::SsmAutomation {

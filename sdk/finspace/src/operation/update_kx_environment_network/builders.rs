@@ -37,6 +37,10 @@ impl UpdateKxEnvironmentNetworkFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateKxEnvironmentNetwork as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_kx_environment_network::builders::UpdateKxEnvironmentNetworkInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl UpdateKxEnvironmentNetworkFluentBuilder {
         self.inner = self.inner.set_environment_id(input);
         self
     }
+    /// <p>A unique identifier for the kdb environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_id()
+    }
     /// <p>Specifies the transit gateway and network configuration to connect the kdb environment to an internal network.</p>
     pub fn transit_gateway_configuration(
         mut self,
@@ -148,6 +156,12 @@ impl UpdateKxEnvironmentNetworkFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_transit_gateway_configuration(input);
         self
+    }
+    /// <p>Specifies the transit gateway and network configuration to connect the kdb environment to an internal network.</p>
+    pub fn get_transit_gateway_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransitGatewayConfiguration> {
+        self.inner.get_transit_gateway_configuration()
     }
     /// Appends an item to `customDNSConfiguration`.
     ///
@@ -166,6 +180,12 @@ impl UpdateKxEnvironmentNetworkFluentBuilder {
         self.inner = self.inner.set_custom_dns_configuration(input);
         self
     }
+    /// <p>A list of DNS server name and server IP. This is used to set up Route-53 outbound resolvers.</p>
+    pub fn get_custom_dns_configuration(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomDnsServer>> {
+        self.inner.get_custom_dns_configuration()
+    }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -175,5 +195,9 @@ impl UpdateKxEnvironmentNetworkFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

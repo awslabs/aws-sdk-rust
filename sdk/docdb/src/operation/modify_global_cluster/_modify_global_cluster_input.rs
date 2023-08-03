@@ -88,6 +88,14 @@ impl ModifyGlobalClusterInputBuilder {
         self.global_cluster_identifier = input;
         self
     }
+    /// <p>The identifier for the global cluster being modified. This parameter isn't case-sensitive.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the identifier of an existing global cluster.</p> </li>
+    /// </ul>
+    pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_cluster_identifier
+    }
     /// <p>The new identifier for a global cluster when you modify a global cluster. This value is stored as a lowercase string.</p>
     /// <ul>
     /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> <p>The first character must be a letter</p> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
@@ -112,6 +120,16 @@ impl ModifyGlobalClusterInputBuilder {
         self.new_global_cluster_identifier = input;
         self
     }
+    /// <p>The new identifier for a global cluster when you modify a global cluster. This value is stored as a lowercase string.</p>
+    /// <ul>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> <p>The first character must be a letter</p> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// </ul>
+    /// <p>Example: <code>my-cluster2</code> </p>
+    pub fn get_new_global_cluster_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.new_global_cluster_identifier
+    }
     /// <p>Indicates if the global cluster has deletion protection enabled. The global cluster can't be deleted when deletion protection is enabled. </p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
         self.deletion_protection = ::std::option::Option::Some(input);
@@ -121,6 +139,10 @@ impl ModifyGlobalClusterInputBuilder {
     pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.deletion_protection = input;
         self
+    }
+    /// <p>Indicates if the global cluster has deletion protection enabled. The global cluster can't be deleted when deletion protection is enabled. </p>
+    pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
+        &self.deletion_protection
     }
     /// Consumes the builder and constructs a [`ModifyGlobalClusterInput`](crate::operation::modify_global_cluster::ModifyGlobalClusterInput).
     pub fn build(

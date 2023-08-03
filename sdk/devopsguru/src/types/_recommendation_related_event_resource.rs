@@ -48,6 +48,10 @@ impl RecommendationRelatedEventResourceBuilder {
         self.name = input;
         self
     }
+    /// <p> The name of the resource that emitted the event. This corresponds to the <code>Name</code> field in an <code>EventResource</code> object. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p> The type of the resource that emitted the event. This corresponds to the <code>Type</code> field in an <code>EventResource</code> object. </p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl RecommendationRelatedEventResourceBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p> The type of the resource that emitted the event. This corresponds to the <code>Type</code> field in an <code>EventResource</code> object. </p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`RecommendationRelatedEventResource`](crate::types::RecommendationRelatedEventResource).
     pub fn build(self) -> crate::types::RecommendationRelatedEventResource {

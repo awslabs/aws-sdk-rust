@@ -57,6 +57,12 @@ impl ListCloudFrontOriginAccessIdentitiesOutputBuilder {
         self.cloud_front_origin_access_identity_list = input;
         self
     }
+    /// <p>The <code>CloudFrontOriginAccessIdentityList</code> type.</p>
+    pub fn get_cloud_front_origin_access_identity_list(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudFrontOriginAccessIdentityList> {
+        &self.cloud_front_origin_access_identity_list
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

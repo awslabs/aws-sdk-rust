@@ -79,6 +79,10 @@ impl TsvStoreOptionsBuilder {
         self.annotation_type = input;
         self
     }
+    /// <p>The store's annotation type.</p>
+    pub fn get_annotation_type(&self) -> &::std::option::Option<crate::types::AnnotationType> {
+        &self.annotation_type
+    }
     /// Adds a key-value pair to `format_to_header`.
     ///
     /// To override the contents of this collection use [`set_format_to_header`](Self::set_format_to_header).
@@ -103,6 +107,14 @@ impl TsvStoreOptionsBuilder {
     ) -> Self {
         self.format_to_header = input;
         self
+    }
+    /// <p>The store's header key to column name mapping.</p>
+    pub fn get_format_to_header(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<crate::types::FormatToHeaderKey, ::std::string::String>,
+    > {
+        &self.format_to_header
     }
     /// Appends an item to `schema`.
     ///
@@ -129,6 +141,16 @@ impl TsvStoreOptionsBuilder {
     ) -> Self {
         self.schema = input;
         self
+    }
+    /// <p>The store's schema.</p>
+    pub fn get_schema(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<
+            ::std::collections::HashMap<::std::string::String, crate::types::SchemaValueType>,
+        >,
+    > {
+        &self.schema
     }
     /// Consumes the builder and constructs a [`TsvStoreOptions`](crate::types::TsvStoreOptions).
     pub fn build(self) -> crate::types::TsvStoreOptions {

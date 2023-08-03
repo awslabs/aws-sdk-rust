@@ -36,6 +36,10 @@ impl PutVoiceConnectorTerminationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutVoiceConnectorTermination as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_voice_connector_termination::builders::PutVoiceConnectorTerminationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl PutVoiceConnectorTerminationFluentBuilder {
         self.inner = self.inner.set_voice_connector_id(input);
         self
     }
+    /// <p>The Voice Connector ID.</p>
+    pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_voice_connector_id()
+    }
     /// <p>The termination settings to be updated.</p>
     pub fn termination(mut self, input: crate::types::Termination) -> Self {
         self.inner = self.inner.termination(input);
@@ -144,5 +152,9 @@ impl PutVoiceConnectorTerminationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_termination(input);
         self
+    }
+    /// <p>The termination settings to be updated.</p>
+    pub fn get_termination(&self) -> &::std::option::Option<crate::types::Termination> {
+        self.inner.get_termination()
     }
 }

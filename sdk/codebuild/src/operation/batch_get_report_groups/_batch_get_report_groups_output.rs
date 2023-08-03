@@ -66,6 +66,12 @@ impl BatchGetReportGroupsOutputBuilder {
         self.report_groups = input;
         self
     }
+    /// <p> The array of report groups returned by <code>BatchGetReportGroups</code>. </p>
+    pub fn get_report_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReportGroup>> {
+        &self.report_groups
+    }
     /// Appends an item to `report_groups_not_found`.
     ///
     /// To override the contents of this collection use [`set_report_groups_not_found`](Self::set_report_groups_not_found).
@@ -87,6 +93,12 @@ impl BatchGetReportGroupsOutputBuilder {
     ) -> Self {
         self.report_groups_not_found = input;
         self
+    }
+    /// <p> An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>ReportGroup</code>. </p>
+    pub fn get_report_groups_not_found(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.report_groups_not_found
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

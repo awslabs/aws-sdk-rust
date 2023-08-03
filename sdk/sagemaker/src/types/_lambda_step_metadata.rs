@@ -49,6 +49,10 @@ impl LambdaStepMetadataBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function that was run by this step execution.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Appends an item to `output_parameters`.
     ///
     /// To override the contents of this collection use [`set_output_parameters`](Self::set_output_parameters).
@@ -67,6 +71,12 @@ impl LambdaStepMetadataBuilder {
     ) -> Self {
         self.output_parameters = input;
         self
+    }
+    /// <p>A list of the output parameters of the Lambda step.</p>
+    pub fn get_output_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputParameter>> {
+        &self.output_parameters
     }
     /// Consumes the builder and constructs a [`LambdaStepMetadata`](crate::types::LambdaStepMetadata).
     pub fn build(self) -> crate::types::LambdaStepMetadata {

@@ -36,6 +36,10 @@ impl UntagProjectFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UntagProject as a reference.
+    pub fn as_input(&self) -> &crate::operation::untag_project::builders::UntagProjectInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UntagProjectFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The ID of the project to remove tags from.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -134,5 +142,9 @@ impl UntagProjectFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags to remove from the project.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_tags()
     }
 }

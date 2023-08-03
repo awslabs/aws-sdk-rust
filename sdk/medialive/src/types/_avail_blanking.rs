@@ -51,6 +51,10 @@ impl AvailBlankingBuilder {
         self.avail_blanking_image = input;
         self
     }
+    /// Blanking image to be used. Leave empty for solid black. Only bmp and png images are supported.
+    pub fn get_avail_blanking_image(&self) -> &::std::option::Option<crate::types::InputLocation> {
+        &self.avail_blanking_image
+    }
     /// When set to enabled, causes video, audio and captions to be blanked when insertion metadata is added.
     pub fn state(mut self, input: crate::types::AvailBlankingState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl AvailBlankingBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// When set to enabled, causes video, audio and captions to be blanked when insertion metadata is added.
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::AvailBlankingState> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`AvailBlanking`](crate::types::AvailBlanking).
     pub fn build(self) -> crate::types::AvailBlanking {

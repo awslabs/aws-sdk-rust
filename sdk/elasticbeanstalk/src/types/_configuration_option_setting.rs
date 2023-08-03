@@ -70,6 +70,10 @@ impl ConfigurationOptionSettingBuilder {
         self.resource_name = input;
         self
     }
+    /// <p>A unique resource name for the option setting. Use it for a time–based scaling configuration option.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_name
+    }
     /// <p>A unique namespace that identifies the option's associated AWS resource.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl ConfigurationOptionSettingBuilder {
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
         self
+    }
+    /// <p>A unique namespace that identifies the option's associated AWS resource.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
     }
     /// <p>The name of the configuration option.</p>
     pub fn option_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -90,6 +98,10 @@ impl ConfigurationOptionSettingBuilder {
         self.option_name = input;
         self
     }
+    /// <p>The name of the configuration option.</p>
+    pub fn get_option_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.option_name
+    }
     /// <p>The current value for the configuration option.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -99,6 +111,10 @@ impl ConfigurationOptionSettingBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The current value for the configuration option.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`ConfigurationOptionSetting`](crate::types::ConfigurationOptionSetting).
     pub fn build(self) -> crate::types::ConfigurationOptionSetting {

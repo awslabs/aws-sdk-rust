@@ -70,6 +70,12 @@ impl DescribeLoadBalancersInputBuilder {
         self.load_balancer_names = input;
         self
     }
+    /// <p>The names of the load balancers.</p>
+    pub fn get_load_balancer_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.load_balancer_names
+    }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -80,6 +86,10 @@ impl DescribeLoadBalancersInputBuilder {
         self.marker = input;
         self
     }
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>The maximum number of results to return with this call (a number from 1 to 400). The default is 400.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.page_size = ::std::option::Option::Some(input);
@@ -89,6 +99,10 @@ impl DescribeLoadBalancersInputBuilder {
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.page_size = input;
         self
+    }
+    /// <p>The maximum number of results to return with this call (a number from 1 to 400). The default is 400.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        &self.page_size
     }
     /// Consumes the builder and constructs a [`DescribeLoadBalancersInput`](crate::operation::describe_load_balancers::DescribeLoadBalancersInput).
     pub fn build(

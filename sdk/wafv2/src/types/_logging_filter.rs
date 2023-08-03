@@ -58,6 +58,10 @@ impl LoggingFilterBuilder {
         self.filters = input;
         self
     }
+    /// <p>The filters that you want to apply to the logs. </p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
+    }
     /// <p>Default handling for logs that don't match any of the specified filtering conditions. </p>
     pub fn default_behavior(mut self, input: crate::types::FilterBehavior) -> Self {
         self.default_behavior = ::std::option::Option::Some(input);
@@ -70,6 +74,10 @@ impl LoggingFilterBuilder {
     ) -> Self {
         self.default_behavior = input;
         self
+    }
+    /// <p>Default handling for logs that don't match any of the specified filtering conditions. </p>
+    pub fn get_default_behavior(&self) -> &::std::option::Option<crate::types::FilterBehavior> {
+        &self.default_behavior
     }
     /// Consumes the builder and constructs a [`LoggingFilter`](crate::types::LoggingFilter).
     pub fn build(self) -> crate::types::LoggingFilter {

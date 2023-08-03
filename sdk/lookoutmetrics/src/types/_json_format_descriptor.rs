@@ -51,6 +51,12 @@ impl JsonFormatDescriptorBuilder {
         self.file_compression = input;
         self
     }
+    /// <p>The level of compression of the source CSV file.</p>
+    pub fn get_file_compression(
+        &self,
+    ) -> &::std::option::Option<crate::types::JsonFileCompression> {
+        &self.file_compression
+    }
     /// <p>The character set in which the source JSON file is written.</p>
     pub fn charset(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.charset = ::std::option::Option::Some(input.into());
@@ -60,6 +66,10 @@ impl JsonFormatDescriptorBuilder {
     pub fn set_charset(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.charset = input;
         self
+    }
+    /// <p>The character set in which the source JSON file is written.</p>
+    pub fn get_charset(&self) -> &::std::option::Option<::std::string::String> {
+        &self.charset
     }
     /// Consumes the builder and constructs a [`JsonFormatDescriptor`](crate::types::JsonFormatDescriptor).
     pub fn build(self) -> crate::types::JsonFormatDescriptor {

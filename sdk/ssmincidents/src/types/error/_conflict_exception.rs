@@ -91,6 +91,10 @@ impl ConflictExceptionBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// The identifier of the requested resource
     pub fn resource_identifier(
         mut self,
@@ -107,6 +111,10 @@ impl ConflictExceptionBuilder {
         self.resource_identifier = input;
         self
     }
+    /// The identifier of the requested resource
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_identifier
+    }
     /// The resource type
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -120,6 +128,10 @@ impl ConflictExceptionBuilder {
         self.resource_type = input;
         self
     }
+    /// The resource type
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
+    }
     /// If present in the output, the operation can be retried after this time
     pub fn retry_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.retry_after = ::std::option::Option::Some(input);
@@ -132,6 +144,10 @@ impl ConflictExceptionBuilder {
     ) -> Self {
         self.retry_after = input;
         self
+    }
+    /// If present in the output, the operation can be retried after this time
+    pub fn get_retry_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.retry_after
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

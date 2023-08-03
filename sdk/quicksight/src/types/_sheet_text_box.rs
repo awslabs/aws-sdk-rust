@@ -54,6 +54,10 @@ impl SheetTextBoxBuilder {
         self.sheet_text_box_id = input;
         self
     }
+    /// <p>The unique identifier for a text box. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have text boxes that share identifiers.</p>
+    pub fn get_sheet_text_box_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sheet_text_box_id
+    }
     /// <p>The content that is displayed in the text box.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl SheetTextBoxBuilder {
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
+    }
+    /// <p>The content that is displayed in the text box.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
     }
     /// Consumes the builder and constructs a [`SheetTextBox`](crate::types::SheetTextBox).
     pub fn build(self) -> crate::types::SheetTextBox {

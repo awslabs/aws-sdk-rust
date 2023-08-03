@@ -57,6 +57,10 @@ impl SecretBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the secret.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The secret to expose to the container. The supported values are either the full Amazon Resource Name (ARN) of the Secrets Manager secret or the full ARN of the parameter in the Amazon Web Services Systems Manager Parameter Store.</p> <note>
     /// <p>If the Amazon Web Services Systems Manager Parameter Store parameter exists in the same Region as the job you're launching, then you can use either the full Amazon Resource Name (ARN) or name of the parameter. If the parameter exists in a different Region, then the full ARN must be specified.</p>
     /// </note>
@@ -70,6 +74,12 @@ impl SecretBuilder {
     pub fn set_value_from(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value_from = input;
         self
+    }
+    /// <p>The secret to expose to the container. The supported values are either the full Amazon Resource Name (ARN) of the Secrets Manager secret or the full ARN of the parameter in the Amazon Web Services Systems Manager Parameter Store.</p> <note>
+    /// <p>If the Amazon Web Services Systems Manager Parameter Store parameter exists in the same Region as the job you're launching, then you can use either the full Amazon Resource Name (ARN) or name of the parameter. If the parameter exists in a different Region, then the full ARN must be specified.</p>
+    /// </note>
+    pub fn get_value_from(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value_from
     }
     /// Consumes the builder and constructs a [`Secret`](crate::types::Secret).
     pub fn build(self) -> crate::types::Secret {

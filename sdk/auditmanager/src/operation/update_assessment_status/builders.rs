@@ -36,6 +36,13 @@ impl UpdateAssessmentStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAssessmentStatus as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_assessment_status::builders::UpdateAssessmentStatusInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl UpdateAssessmentStatusFluentBuilder {
         self.inner = self.inner.set_assessment_id(input);
         self
     }
+    /// <p> The unique identifier for the assessment. </p>
+    pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assessment_id()
+    }
     /// <p> The current status of the assessment. </p>
     pub fn status(mut self, input: crate::types::AssessmentStatus) -> Self {
         self.inner = self.inner.status(input);
@@ -144,5 +155,9 @@ impl UpdateAssessmentStatusFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p> The current status of the assessment. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AssessmentStatus> {
+        self.inner.get_status()
     }
 }

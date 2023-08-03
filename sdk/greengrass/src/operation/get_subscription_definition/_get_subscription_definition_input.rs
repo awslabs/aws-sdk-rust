@@ -45,6 +45,10 @@ impl GetSubscriptionDefinitionInputBuilder {
         self.subscription_definition_id = input;
         self
     }
+    /// The ID of the subscription definition.
+    pub fn get_subscription_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscription_definition_id
+    }
     /// Consumes the builder and constructs a [`GetSubscriptionDefinitionInput`](crate::operation::get_subscription_definition::GetSubscriptionDefinitionInput).
     pub fn build(
         self,

@@ -43,6 +43,12 @@ impl SetTaskStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SetTaskStatus as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::set_task_status::builders::SetTaskStatusInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +131,10 @@ impl SetTaskStatusFluentBuilder {
         self.inner = self.inner.set_task_id(input);
         self
     }
+    /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <code>PollForTask</code>.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_task_id()
+    }
     /// <p>If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended unsuccessfully. Preconditions use false.</p>
     pub fn task_status(mut self, input: crate::types::TaskStatus) -> Self {
         self.inner = self.inner.task_status(input);
@@ -138,6 +148,10 @@ impl SetTaskStatusFluentBuilder {
         self.inner = self.inner.set_task_status(input);
         self
     }
+    /// <p>If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended unsuccessfully. Preconditions use false.</p>
+    pub fn get_task_status(&self) -> &::std::option::Option<crate::types::TaskStatus> {
+        self.inner.get_task_status()
+    }
     /// <p>If an error occurred during the task, this value specifies the error code. This value is set on the physical attempt object. It is used to display error information to the user. It should not start with string "Service_" which is reserved by the system.</p>
     pub fn error_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.error_id(input.into());
@@ -147,6 +161,10 @@ impl SetTaskStatusFluentBuilder {
     pub fn set_error_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_error_id(input);
         self
+    }
+    /// <p>If an error occurred during the task, this value specifies the error code. This value is set on the physical attempt object. It is used to display error information to the user. It should not start with string "Service_" which is reserved by the system.</p>
+    pub fn get_error_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_error_id()
     }
     /// <p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
     pub fn error_message(
@@ -164,6 +182,10 @@ impl SetTaskStatusFluentBuilder {
         self.inner = self.inner.set_error_message(input);
         self
     }
+    /// <p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_error_message()
+    }
     /// <p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
     pub fn error_stack_trace(
         mut self,
@@ -179,5 +201,9 @@ impl SetTaskStatusFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_error_stack_trace(input);
         self
+    }
+    /// <p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
+    pub fn get_error_stack_trace(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_error_stack_trace()
     }
 }

@@ -36,6 +36,12 @@ impl UpdateCrawlerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateCrawler as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_crawler::builders::UpdateCrawlerInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl UpdateCrawlerFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>Name of the new crawler.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role that is used by the new crawler to access customer resources.</p>
     pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role(input.into());
@@ -127,6 +137,10 @@ impl UpdateCrawlerFluentBuilder {
     pub fn set_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role(input);
         self
+    }
+    /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role that is used by the new crawler to access customer resources.</p>
+    pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role()
     }
     /// <p>The Glue database where results are stored, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
     pub fn database_name(
@@ -144,6 +158,10 @@ impl UpdateCrawlerFluentBuilder {
         self.inner = self.inner.set_database_name(input);
         self
     }
+    /// <p>The Glue database where results are stored, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_database_name()
+    }
     /// <p>A description of the new crawler.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -153,6 +171,10 @@ impl UpdateCrawlerFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the new crawler.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>A list of targets to crawl.</p>
     pub fn targets(mut self, input: crate::types::CrawlerTargets) -> Self {
@@ -167,6 +189,10 @@ impl UpdateCrawlerFluentBuilder {
         self.inner = self.inner.set_targets(input);
         self
     }
+    /// <p>A list of targets to crawl.</p>
+    pub fn get_targets(&self) -> &::std::option::Option<crate::types::CrawlerTargets> {
+        self.inner.get_targets()
+    }
     /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
     pub fn schedule(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schedule(input.into());
@@ -176,6 +202,10 @@ impl UpdateCrawlerFluentBuilder {
     pub fn set_schedule(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schedule(input);
         self
+    }
+    /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
+    pub fn get_schedule(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schedule()
     }
     /// Appends an item to `Classifiers`.
     ///
@@ -194,6 +224,12 @@ impl UpdateCrawlerFluentBuilder {
         self.inner = self.inner.set_classifiers(input);
         self
     }
+    /// <p>A list of custom classifiers that the user has registered. By default, all built-in classifiers are included in a crawl, but these custom classifiers always override the default classifiers for a given classification.</p>
+    pub fn get_classifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_classifiers()
+    }
     /// <p>The table prefix used for catalog tables that are created.</p>
     pub fn table_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.table_prefix(input.into());
@@ -203,6 +239,10 @@ impl UpdateCrawlerFluentBuilder {
     pub fn set_table_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_table_prefix(input);
         self
+    }
+    /// <p>The table prefix used for catalog tables that are created.</p>
+    pub fn get_table_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_table_prefix()
     }
     /// <p>The policy for the crawler's update and deletion behavior.</p>
     pub fn schema_change_policy(mut self, input: crate::types::SchemaChangePolicy) -> Self {
@@ -217,6 +257,12 @@ impl UpdateCrawlerFluentBuilder {
         self.inner = self.inner.set_schema_change_policy(input);
         self
     }
+    /// <p>The policy for the crawler's update and deletion behavior.</p>
+    pub fn get_schema_change_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::SchemaChangePolicy> {
+        self.inner.get_schema_change_policy()
+    }
     /// <p>A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.</p>
     pub fn recrawl_policy(mut self, input: crate::types::RecrawlPolicy) -> Self {
         self.inner = self.inner.recrawl_policy(input);
@@ -230,6 +276,10 @@ impl UpdateCrawlerFluentBuilder {
         self.inner = self.inner.set_recrawl_policy(input);
         self
     }
+    /// <p>A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.</p>
+    pub fn get_recrawl_policy(&self) -> &::std::option::Option<crate::types::RecrawlPolicy> {
+        self.inner.get_recrawl_policy()
+    }
     /// <p>Specifies data lineage configuration settings for the crawler.</p>
     pub fn lineage_configuration(mut self, input: crate::types::LineageConfiguration) -> Self {
         self.inner = self.inner.lineage_configuration(input);
@@ -242,6 +292,12 @@ impl UpdateCrawlerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_lineage_configuration(input);
         self
+    }
+    /// <p>Specifies data lineage configuration settings for the crawler.</p>
+    pub fn get_lineage_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::LineageConfiguration> {
+        self.inner.get_lineage_configuration()
     }
     /// <p>Specifies Lake Formation configuration settings for the crawler.</p>
     pub fn lake_formation_configuration(
@@ -259,6 +315,12 @@ impl UpdateCrawlerFluentBuilder {
         self.inner = self.inner.set_lake_formation_configuration(input);
         self
     }
+    /// <p>Specifies Lake Formation configuration settings for the crawler.</p>
+    pub fn get_lake_formation_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::LakeFormationConfiguration> {
+        self.inner.get_lake_formation_configuration()
+    }
     /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting crawler configuration options</a>.</p>
     pub fn configuration(
         mut self,
@@ -275,6 +337,10 @@ impl UpdateCrawlerFluentBuilder {
         self.inner = self.inner.set_configuration(input);
         self
     }
+    /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting crawler configuration options</a>.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration()
+    }
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
     pub fn crawler_security_configuration(
         mut self,
@@ -290,5 +356,11 @@ impl UpdateCrawlerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_crawler_security_configuration(input);
         self
+    }
+    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
+    pub fn get_crawler_security_configuration(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_crawler_security_configuration()
     }
 }

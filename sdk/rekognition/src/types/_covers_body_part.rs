@@ -48,6 +48,10 @@ impl CoversBodyPartBuilder {
         self.confidence = input;
         self
     }
+    /// <p>The confidence that Amazon Rekognition has in the value of <code>Value</code>.</p>
+    pub fn get_confidence(&self) -> &::std::option::Option<f32> {
+        &self.confidence
+    }
     /// <p>True if the PPE covers the corresponding body part, otherwise false.</p>
     pub fn value(mut self, input: bool) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl CoversBodyPartBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<bool>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>True if the PPE covers the corresponding body part, otherwise false.</p>
+    pub fn get_value(&self) -> &::std::option::Option<bool> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`CoversBodyPart`](crate::types::CoversBodyPart).
     pub fn build(self) -> crate::types::CoversBodyPart {

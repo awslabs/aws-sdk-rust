@@ -75,6 +75,10 @@ impl GetSessionOutputBuilder {
         self.session_id = input;
         self
     }
+    /// <p>The identifier of the returned session.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
+    }
     /// Appends an item to `messages`.
     ///
     /// To override the contents of this collection use [`set_messages`](Self::set_messages).
@@ -93,6 +97,10 @@ impl GetSessionOutputBuilder {
     ) -> Self {
         self.messages = input;
         self
+    }
+    /// <p>A list of messages that were last sent to the user. The messages are ordered based on the order that your returned the messages from your Lambda function or the order that messages are defined in the bot. </p>
+    pub fn get_messages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Message>> {
+        &self.messages
     }
     /// Appends an item to `interpretations`.
     ///
@@ -115,6 +123,13 @@ impl GetSessionOutputBuilder {
         self.interpretations = input;
         self
     }
+    /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p>
+    /// <p>Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
+    pub fn get_interpretations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Interpretation>> {
+        &self.interpretations
+    }
     /// <p>Represents the current state of the dialog between the user and the bot.</p>
     /// <p>You can use this to determine the progress of the conversation and what the next action might be.</p>
     pub fn session_state(mut self, input: crate::types::SessionState) -> Self {
@@ -129,6 +144,11 @@ impl GetSessionOutputBuilder {
     ) -> Self {
         self.session_state = input;
         self
+    }
+    /// <p>Represents the current state of the dialog between the user and the bot.</p>
+    /// <p>You can use this to determine the progress of the conversation and what the next action might be.</p>
+    pub fn get_session_state(&self) -> &::std::option::Option<crate::types::SessionState> {
+        &self.session_state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

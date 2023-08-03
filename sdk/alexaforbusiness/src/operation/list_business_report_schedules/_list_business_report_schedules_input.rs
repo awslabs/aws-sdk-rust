@@ -47,6 +47,10 @@ impl ListBusinessReportSchedulesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token used to list the remaining schedules from the previous API call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of schedules listed in the call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -56,6 +60,10 @@ impl ListBusinessReportSchedulesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of schedules listed in the call.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListBusinessReportSchedulesInput`](crate::operation::list_business_report_schedules::ListBusinessReportSchedulesInput).
     pub fn build(

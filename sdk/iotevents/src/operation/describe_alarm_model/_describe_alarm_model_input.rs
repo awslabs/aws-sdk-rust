@@ -54,6 +54,10 @@ impl DescribeAlarmModelInputBuilder {
         self.alarm_model_name = input;
         self
     }
+    /// <p>The name of the alarm model.</p>
+    pub fn get_alarm_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alarm_model_name
+    }
     /// <p>The version of the alarm model.</p>
     pub fn alarm_model_version(
         mut self,
@@ -69,6 +73,10 @@ impl DescribeAlarmModelInputBuilder {
     ) -> Self {
         self.alarm_model_version = input;
         self
+    }
+    /// <p>The version of the alarm model.</p>
+    pub fn get_alarm_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alarm_model_version
     }
     /// Consumes the builder and constructs a [`DescribeAlarmModelInput`](crate::operation::describe_alarm_model::DescribeAlarmModelInput).
     pub fn build(

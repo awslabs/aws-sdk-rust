@@ -65,6 +65,10 @@ impl ListCustomLineItemsFilterBuilder {
         self.names = input;
         self
     }
+    /// <p>A list of custom line items to retrieve information.</p>
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.names
+    }
     /// Appends an item to `billing_groups`.
     ///
     /// To override the contents of this collection use [`set_billing_groups`](Self::set_billing_groups).
@@ -87,6 +91,12 @@ impl ListCustomLineItemsFilterBuilder {
         self.billing_groups = input;
         self
     }
+    /// <p>The billing group Amazon Resource Names (ARNs) to retrieve information.</p>
+    pub fn get_billing_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.billing_groups
+    }
     /// Appends an item to `arns`.
     ///
     /// To override the contents of this collection use [`set_arns`](Self::set_arns).
@@ -105,6 +115,10 @@ impl ListCustomLineItemsFilterBuilder {
     ) -> Self {
         self.arns = input;
         self
+    }
+    /// <p>A list of custom line item ARNs to retrieve information.</p>
+    pub fn get_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.arns
     }
     /// Consumes the builder and constructs a [`ListCustomLineItemsFilter`](crate::types::ListCustomLineItemsFilter).
     pub fn build(self) -> crate::types::ListCustomLineItemsFilter {

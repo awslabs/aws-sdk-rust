@@ -56,6 +56,10 @@ impl UnprocessedStatisticsBuilder {
         self.rule_name = input;
         self
     }
+    /// <p>The name of the sampling rule.</p>
+    pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_name
+    }
     /// <p>The error code.</p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl UnprocessedStatisticsBuilder {
         self.error_code = input;
         self
     }
+    /// <p>The error code.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
+    }
     /// <p>The error message.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl UnprocessedStatisticsBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The error message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`UnprocessedStatistics`](crate::types::UnprocessedStatistics).
     pub fn build(self) -> crate::types::UnprocessedStatistics {

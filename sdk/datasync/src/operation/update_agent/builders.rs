@@ -36,6 +36,10 @@ impl UpdateAgentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAgent as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_agent::builders::UpdateAgentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdateAgentFluentBuilder {
         self.inner = self.inner.set_agent_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the agent to update.</p>
+    pub fn get_agent_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_agent_arn()
+    }
     /// <p>The name that you want to use to configure the agent.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -127,5 +135,9 @@ impl UpdateAgentFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name that you want to use to configure the agent.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
 }

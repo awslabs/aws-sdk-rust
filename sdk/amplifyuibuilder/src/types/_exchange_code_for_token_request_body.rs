@@ -63,6 +63,10 @@ impl ExchangeCodeForTokenRequestBodyBuilder {
         self.code = input;
         self
     }
+    /// <p>The access code to send in the request.</p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
+    }
     /// <p>The location of the application that will receive the access code.</p>
     pub fn redirect_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.redirect_uri = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl ExchangeCodeForTokenRequestBodyBuilder {
         self.redirect_uri = input;
         self
     }
+    /// <p>The location of the application that will receive the access code.</p>
+    pub fn get_redirect_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.redirect_uri
+    }
     /// <p>The ID of the client to request the token from.</p>
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl ExchangeCodeForTokenRequestBodyBuilder {
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_id = input;
         self
+    }
+    /// <p>The ID of the client to request the token from.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_id
     }
     /// Consumes the builder and constructs a [`ExchangeCodeForTokenRequestBody`](crate::types::ExchangeCodeForTokenRequestBody).
     pub fn build(self) -> crate::types::ExchangeCodeForTokenRequestBody {

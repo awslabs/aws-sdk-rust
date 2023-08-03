@@ -65,6 +65,10 @@ impl GetViolationDetailsInputBuilder {
         self.policy_id = input;
         self
     }
+    /// <p>The ID of the Firewall Manager policy that you want the details for. This currently only supports security group content audit policies.</p>
+    pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_id
+    }
     /// <p>The Amazon Web Services account ID that you want the details for.</p>
     pub fn member_account(
         mut self,
@@ -81,6 +85,10 @@ impl GetViolationDetailsInputBuilder {
         self.member_account = input;
         self
     }
+    /// <p>The Amazon Web Services account ID that you want the details for.</p>
+    pub fn get_member_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_account
+    }
     /// <p>The ID of the resource that has violations.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -90,6 +98,10 @@ impl GetViolationDetailsInputBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The ID of the resource that has violations.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. Supported resource types are: <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>, <code>AWS::EC2::SecurityGroup</code>, <code>AWS::NetworkFirewall::FirewallPolicy</code>, and <code>AWS::EC2::Subnet</code>. </p>
     pub fn resource_type(
@@ -106,6 +118,10 @@ impl GetViolationDetailsInputBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. Supported resource types are: <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>, <code>AWS::EC2::SecurityGroup</code>, <code>AWS::NetworkFirewall::FirewallPolicy</code>, and <code>AWS::EC2::Subnet</code>. </p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
     }
     /// Consumes the builder and constructs a [`GetViolationDetailsInput`](crate::operation::get_violation_details::GetViolationDetailsInput).
     pub fn build(

@@ -58,6 +58,10 @@ impl LocationBuilder {
         self.file_path = input;
         self
     }
+    /// <p>The name of the file being compared, including its extension and subdirectory, if any.</p>
+    pub fn get_file_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_path
+    }
     /// <p>The position of a change in a compared file, in line number format.</p>
     pub fn file_position(mut self, input: i64) -> Self {
         self.file_position = ::std::option::Option::Some(input);
@@ -67,6 +71,10 @@ impl LocationBuilder {
     pub fn set_file_position(mut self, input: ::std::option::Option<i64>) -> Self {
         self.file_position = input;
         self
+    }
+    /// <p>The position of a change in a compared file, in line number format.</p>
+    pub fn get_file_position(&self) -> &::std::option::Option<i64> {
+        &self.file_position
     }
     /// <p>In a comparison of commits or a pull request, whether the change is in the before or after of that comparison.</p>
     pub fn relative_file_version(mut self, input: crate::types::RelativeFileVersionEnum) -> Self {
@@ -80,6 +88,12 @@ impl LocationBuilder {
     ) -> Self {
         self.relative_file_version = input;
         self
+    }
+    /// <p>In a comparison of commits or a pull request, whether the change is in the before or after of that comparison.</p>
+    pub fn get_relative_file_version(
+        &self,
+    ) -> &::std::option::Option<crate::types::RelativeFileVersionEnum> {
+        &self.relative_file_version
     }
     /// Consumes the builder and constructs a [`Location`](crate::types::Location).
     pub fn build(self) -> crate::types::Location {

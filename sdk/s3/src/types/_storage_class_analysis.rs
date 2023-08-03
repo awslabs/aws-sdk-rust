@@ -45,6 +45,12 @@ impl StorageClassAnalysisBuilder {
         self.data_export = input;
         self
     }
+    /// <p>Specifies how data related to the storage class analysis for an Amazon S3 bucket should be exported.</p>
+    pub fn get_data_export(
+        &self,
+    ) -> &::std::option::Option<crate::types::StorageClassAnalysisDataExport> {
+        &self.data_export
+    }
     /// Consumes the builder and constructs a [`StorageClassAnalysis`](crate::types::StorageClassAnalysis).
     pub fn build(self) -> crate::types::StorageClassAnalysis {
         crate::types::StorageClassAnalysis {

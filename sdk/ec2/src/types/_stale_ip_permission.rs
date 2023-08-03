@@ -81,6 +81,10 @@ impl StaleIpPermissionBuilder {
         self.from_port = input;
         self
     }
+    /// <p>The start of the port range for the TCP and UDP protocols, or an ICMP type number. A value of -1 indicates all ICMP types. </p>
+    pub fn get_from_port(&self) -> &::std::option::Option<i32> {
+        &self.from_port
+    }
     /// <p>The IP protocol name (for <code>tcp</code>, <code>udp</code>, and <code>icmp</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers)</a>.</p>
     pub fn ip_protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_protocol = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl StaleIpPermissionBuilder {
     pub fn set_ip_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_protocol = input;
         self
+    }
+    /// <p>The IP protocol name (for <code>tcp</code>, <code>udp</code>, and <code>icmp</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers)</a>.</p>
+    pub fn get_ip_protocol(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_protocol
     }
     /// Appends an item to `ip_ranges`.
     ///
@@ -109,6 +117,10 @@ impl StaleIpPermissionBuilder {
     ) -> Self {
         self.ip_ranges = input;
         self
+    }
+    /// <p>The IP ranges. Not applicable for stale security group rules.</p>
+    pub fn get_ip_ranges(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ip_ranges
     }
     /// Appends an item to `prefix_list_ids`.
     ///
@@ -132,6 +144,12 @@ impl StaleIpPermissionBuilder {
         self.prefix_list_ids = input;
         self
     }
+    /// <p>The prefix list IDs. Not applicable for stale security group rules.</p>
+    pub fn get_prefix_list_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.prefix_list_ids
+    }
     /// <p>The end of the port range for the TCP and UDP protocols, or an ICMP type number. A value of <code>-1</code> indicates all ICMP types. </p>
     pub fn to_port(mut self, input: i32) -> Self {
         self.to_port = ::std::option::Option::Some(input);
@@ -141,6 +159,10 @@ impl StaleIpPermissionBuilder {
     pub fn set_to_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.to_port = input;
         self
+    }
+    /// <p>The end of the port range for the TCP and UDP protocols, or an ICMP type number. A value of <code>-1</code> indicates all ICMP types. </p>
+    pub fn get_to_port(&self) -> &::std::option::Option<i32> {
+        &self.to_port
     }
     /// Appends an item to `user_id_group_pairs`.
     ///
@@ -160,6 +182,12 @@ impl StaleIpPermissionBuilder {
     ) -> Self {
         self.user_id_group_pairs = input;
         self
+    }
+    /// <p>The security group pairs. Returns the ID of the referenced security group and VPC, and the ID and status of the VPC peering connection.</p>
+    pub fn get_user_id_group_pairs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserIdGroupPair>> {
+        &self.user_id_group_pairs
     }
     /// Consumes the builder and constructs a [`StaleIpPermission`](crate::types::StaleIpPermission).
     pub fn build(self) -> crate::types::StaleIpPermission {

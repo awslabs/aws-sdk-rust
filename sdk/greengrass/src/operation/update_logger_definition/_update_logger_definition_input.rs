@@ -55,6 +55,10 @@ impl UpdateLoggerDefinitionInputBuilder {
         self.logger_definition_id = input;
         self
     }
+    /// The ID of the logger definition.
+    pub fn get_logger_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.logger_definition_id
+    }
     /// The name of the definition.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl UpdateLoggerDefinitionInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// The name of the definition.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`UpdateLoggerDefinitionInput`](crate::operation::update_logger_definition::UpdateLoggerDefinitionInput).
     pub fn build(

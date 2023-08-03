@@ -59,6 +59,12 @@ impl OriginationBuilder {
         self.routes = input;
         self
     }
+    /// <p>The call distribution properties defined for your SIP hosts. Valid range: Minimum value of 1. Maximum value of 20. This parameter is not required, but you must specify this parameter or <code>Disabled</code>.</p>
+    pub fn get_routes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OriginationRoute>> {
+        &self.routes
+    }
     /// <p>When origination settings are disabled, inbound calls are not enabled for your Amazon Chime Voice Connector. This parameter is not required, but you must specify this parameter or <code>Routes</code>.</p>
     pub fn disabled(mut self, input: bool) -> Self {
         self.disabled = ::std::option::Option::Some(input);
@@ -68,6 +74,10 @@ impl OriginationBuilder {
     pub fn set_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disabled = input;
         self
+    }
+    /// <p>When origination settings are disabled, inbound calls are not enabled for your Amazon Chime Voice Connector. This parameter is not required, but you must specify this parameter or <code>Routes</code>.</p>
+    pub fn get_disabled(&self) -> &::std::option::Option<bool> {
+        &self.disabled
     }
     /// Consumes the builder and constructs a [`Origination`](crate::types::Origination).
     pub fn build(self) -> crate::types::Origination {

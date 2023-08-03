@@ -53,6 +53,12 @@ impl AggregatedUtterancesSortByBuilder {
         self.attribute = input;
         self
     }
+    /// <p>The utterance attribute to sort by.</p>
+    pub fn get_attribute(
+        &self,
+    ) -> &::std::option::Option<crate::types::AggregatedUtterancesSortAttribute> {
+        &self.attribute
+    }
     /// <p>Specifies whether to sort the aggregated utterances in ascending or descending order.</p>
     pub fn order(mut self, input: crate::types::SortOrder) -> Self {
         self.order = ::std::option::Option::Some(input);
@@ -62,6 +68,10 @@ impl AggregatedUtterancesSortByBuilder {
     pub fn set_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.order = input;
         self
+    }
+    /// <p>Specifies whether to sort the aggregated utterances in ascending or descending order.</p>
+    pub fn get_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.order
     }
     /// Consumes the builder and constructs a [`AggregatedUtterancesSortBy`](crate::types::AggregatedUtterancesSortBy).
     pub fn build(self) -> crate::types::AggregatedUtterancesSortBy {

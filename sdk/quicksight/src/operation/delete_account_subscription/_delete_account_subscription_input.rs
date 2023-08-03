@@ -45,6 +45,10 @@ impl DeleteAccountSubscriptionInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID of the account that you want to delete.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// Consumes the builder and constructs a [`DeleteAccountSubscriptionInput`](crate::operation::delete_account_subscription::DeleteAccountSubscriptionInput).
     pub fn build(
         self,

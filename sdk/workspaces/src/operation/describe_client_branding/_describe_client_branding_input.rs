@@ -41,6 +41,10 @@ impl DescribeClientBrandingInputBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The directory identifier of the WorkSpace for which you want to view client branding information.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// Consumes the builder and constructs a [`DescribeClientBrandingInput`](crate::operation::describe_client_branding::DescribeClientBrandingInput).
     pub fn build(
         self,

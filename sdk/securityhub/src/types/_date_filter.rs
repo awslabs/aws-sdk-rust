@@ -62,6 +62,11 @@ impl DateFilterBuilder {
         self.start = input;
         self
     }
+    /// <p>A timestamp that provides the start date for the date filter.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
+    pub fn get_start(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start
+    }
     /// <p>A timestamp that provides the end date for the date filter.</p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn end(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -74,6 +79,11 @@ impl DateFilterBuilder {
         self.end = input;
         self
     }
+    /// <p>A timestamp that provides the end date for the date filter.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
+    pub fn get_end(&self) -> &::std::option::Option<::std::string::String> {
+        &self.end
+    }
     /// <p>A date range for the date filter.</p>
     pub fn date_range(mut self, input: crate::types::DateRange) -> Self {
         self.date_range = ::std::option::Option::Some(input);
@@ -83,6 +93,10 @@ impl DateFilterBuilder {
     pub fn set_date_range(mut self, input: ::std::option::Option<crate::types::DateRange>) -> Self {
         self.date_range = input;
         self
+    }
+    /// <p>A date range for the date filter.</p>
+    pub fn get_date_range(&self) -> &::std::option::Option<crate::types::DateRange> {
+        &self.date_range
     }
     /// Consumes the builder and constructs a [`DateFilter`](crate::types::DateFilter).
     pub fn build(self) -> crate::types::DateFilter {

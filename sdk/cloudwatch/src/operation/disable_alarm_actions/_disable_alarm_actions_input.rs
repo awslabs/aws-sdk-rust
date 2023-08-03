@@ -50,6 +50,12 @@ impl DisableAlarmActionsInputBuilder {
         self.alarm_names = input;
         self
     }
+    /// <p>The names of the alarms.</p>
+    pub fn get_alarm_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.alarm_names
+    }
     /// Consumes the builder and constructs a [`DisableAlarmActionsInput`](crate::operation::disable_alarm_actions::DisableAlarmActionsInput).
     pub fn build(
         self,

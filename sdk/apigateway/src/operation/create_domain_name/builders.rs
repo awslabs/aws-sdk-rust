@@ -36,6 +36,12 @@ impl CreateDomainNameFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDomainName as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_domain_name::builders::CreateDomainNameInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateDomainNameFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>The name of the DomainName resource.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p>The user-friendly name of the certificate that will be used by edge-optimized endpoint for this domain name.</p>
     pub fn certificate_name(
         mut self,
@@ -141,6 +151,10 @@ impl CreateDomainNameFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_certificate_name(input);
         self
+    }
+    /// <p>The user-friendly name of the certificate that will be used by edge-optimized endpoint for this domain name.</p>
+    pub fn get_certificate_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate_name()
     }
     /// <p>[Deprecated] The body of the server certificate that will be used by edge-optimized endpoint for this domain name provided by your certificate authority.</p>
     pub fn certificate_body(
@@ -158,6 +172,10 @@ impl CreateDomainNameFluentBuilder {
         self.inner = self.inner.set_certificate_body(input);
         self
     }
+    /// <p>[Deprecated] The body of the server certificate that will be used by edge-optimized endpoint for this domain name provided by your certificate authority.</p>
+    pub fn get_certificate_body(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate_body()
+    }
     /// <p>[Deprecated] Your edge-optimized endpoint's domain name certificate's private key.</p>
     pub fn certificate_private_key(
         mut self,
@@ -173,6 +191,10 @@ impl CreateDomainNameFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_certificate_private_key(input);
         self
+    }
+    /// <p>[Deprecated] Your edge-optimized endpoint's domain name certificate's private key.</p>
+    pub fn get_certificate_private_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate_private_key()
     }
     /// <p>[Deprecated] The intermediate certificates and optionally the root certificate, one after the other without any blank lines, used by an edge-optimized endpoint for this domain name. If you include the root certificate, your certificate chain must start with intermediate certificates and end with the root certificate. Use the intermediate certificates that were provided by your certificate authority. Do not include any intermediaries that are not in the chain of trust path.</p>
     pub fn certificate_chain(
@@ -190,6 +212,10 @@ impl CreateDomainNameFluentBuilder {
         self.inner = self.inner.set_certificate_chain(input);
         self
     }
+    /// <p>[Deprecated] The intermediate certificates and optionally the root certificate, one after the other without any blank lines, used by an edge-optimized endpoint for this domain name. If you include the root certificate, your certificate chain must start with intermediate certificates and end with the root certificate. Use the intermediate certificates that were provided by your certificate authority. Do not include any intermediaries that are not in the chain of trust path.</p>
+    pub fn get_certificate_chain(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate_chain()
+    }
     /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
     pub fn certificate_arn(
         mut self,
@@ -205,6 +231,10 @@ impl CreateDomainNameFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_certificate_arn(input);
         self
+    }
+    /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate_arn()
     }
     /// <p>The user-friendly name of the certificate that will be used by regional endpoint for this domain name.</p>
     pub fn regional_certificate_name(
@@ -222,6 +252,10 @@ impl CreateDomainNameFluentBuilder {
         self.inner = self.inner.set_regional_certificate_name(input);
         self
     }
+    /// <p>The user-friendly name of the certificate that will be used by regional endpoint for this domain name.</p>
+    pub fn get_regional_certificate_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_regional_certificate_name()
+    }
     /// <p>The reference to an AWS-managed certificate that will be used by regional endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
     pub fn regional_certificate_arn(
         mut self,
@@ -238,6 +272,10 @@ impl CreateDomainNameFluentBuilder {
         self.inner = self.inner.set_regional_certificate_arn(input);
         self
     }
+    /// <p>The reference to an AWS-managed certificate that will be used by regional endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
+    pub fn get_regional_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_regional_certificate_arn()
+    }
     /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name. </p>
     pub fn endpoint_configuration(mut self, input: crate::types::EndpointConfiguration) -> Self {
         self.inner = self.inner.endpoint_configuration(input);
@@ -250,6 +288,12 @@ impl CreateDomainNameFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_endpoint_configuration(input);
         self
+    }
+    /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name. </p>
+    pub fn get_endpoint_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::EndpointConfiguration> {
+        self.inner.get_endpoint_configuration()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -274,6 +318,14 @@ impl CreateDomainNameFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
     pub fn security_policy(mut self, input: crate::types::SecurityPolicy) -> Self {
         self.inner = self.inner.security_policy(input);
@@ -286,6 +338,10 @@ impl CreateDomainNameFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_security_policy(input);
         self
+    }
+    /// <p>The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
+    pub fn get_security_policy(&self) -> &::std::option::Option<crate::types::SecurityPolicy> {
+        self.inner.get_security_policy()
     }
     /// <p>The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.</p>
     pub fn mutual_tls_authentication(
@@ -302,6 +358,12 @@ impl CreateDomainNameFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_mutual_tls_authentication(input);
         self
+    }
+    /// <p>The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.</p>
+    pub fn get_mutual_tls_authentication(
+        &self,
+    ) -> &::std::option::Option<crate::types::MutualTlsAuthenticationInput> {
+        self.inner.get_mutual_tls_authentication()
     }
     /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
     pub fn ownership_verification_certificate_arn(
@@ -320,5 +382,11 @@ impl CreateDomainNameFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ownership_verification_certificate_arn(input);
         self
+    }
+    /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
+    pub fn get_ownership_verification_certificate_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ownership_verification_certificate_arn()
     }
 }

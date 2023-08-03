@@ -52,6 +52,10 @@ impl SimulationAppEndpointInfoBuilder {
         self.address = input;
         self
     }
+    /// <p>The IP address of the app. SimSpace Weaver dynamically assigns this IP address when the app starts.</p>
+    pub fn get_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address
+    }
     /// Appends an item to `ingress_port_mappings`.
     ///
     /// To override the contents of this collection use [`set_ingress_port_mappings`](Self::set_ingress_port_mappings).
@@ -70,6 +74,12 @@ impl SimulationAppEndpointInfoBuilder {
     ) -> Self {
         self.ingress_port_mappings = input;
         self
+    }
+    /// <p>The inbound TCP/UDP port numbers of the app. The combination of an IP address and a port number form a network endpoint.</p>
+    pub fn get_ingress_port_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SimulationAppPortMapping>> {
+        &self.ingress_port_mappings
     }
     /// Consumes the builder and constructs a [`SimulationAppEndpointInfo`](crate::types::SimulationAppEndpointInfo).
     pub fn build(self) -> crate::types::SimulationAppEndpointInfo {

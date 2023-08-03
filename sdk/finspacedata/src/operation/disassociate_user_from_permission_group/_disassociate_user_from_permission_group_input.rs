@@ -61,6 +61,10 @@ impl DisassociateUserFromPermissionGroupInputBuilder {
         self.permission_group_id = input;
         self
     }
+    /// <p>The unique identifier for the permission group.</p>
+    pub fn get_permission_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.permission_group_id
+    }
     /// <p>The unique identifier for the user.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl DisassociateUserFromPermissionGroupInputBuilder {
         self.user_id = input;
         self
     }
+    /// <p>The unique identifier for the user.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
+    }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -80,6 +88,10 @@ impl DisassociateUserFromPermissionGroupInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`DisassociateUserFromPermissionGroupInput`](crate::operation::disassociate_user_from_permission_group::DisassociateUserFromPermissionGroupInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_user_from_permission_group::DisassociateUserFromPermissionGroupInput, ::aws_smithy_http::operation::error::BuildError>{

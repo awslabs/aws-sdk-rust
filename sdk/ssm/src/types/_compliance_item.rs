@@ -120,6 +120,10 @@ impl ComplianceItemBuilder {
         self.compliance_type = input;
         self
     }
+    /// <p>The compliance type. For example, Association (for a State Manager association), Patch, or Custom:<code>string</code> are all valid compliance types.</p>
+    pub fn get_compliance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.compliance_type
+    }
     /// <p>The type of resource. <code>ManagedInstance</code> is currently the only supported resource type.</p>
     pub fn resource_type(
         mut self,
@@ -136,6 +140,10 @@ impl ComplianceItemBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The type of resource. <code>ManagedInstance</code> is currently the only supported resource type.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
+    }
     /// <p>An ID for the resource. For a managed node, this is the node ID.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -145,6 +153,10 @@ impl ComplianceItemBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>An ID for the resource. For a managed node, this is the node ID.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>An ID for the compliance item. For example, if the compliance item is a Windows patch, the ID could be the number of the KB article; for example: KB4010320.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -156,6 +168,10 @@ impl ComplianceItemBuilder {
         self.id = input;
         self
     }
+    /// <p>An ID for the compliance item. For example, if the compliance item is a Windows patch, the ID could be the number of the KB article; for example: KB4010320.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>A title for the compliance item. For example, if the compliance item is a Windows patch, the title could be the title of the KB article for the patch; for example: Security Update for Active Directory Federation Services.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
@@ -165,6 +181,10 @@ impl ComplianceItemBuilder {
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
+    }
+    /// <p>A title for the compliance item. For example, if the compliance item is a Windows patch, the title could be the title of the KB article for the patch; for example: Security Update for Active Directory Federation Services.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
     }
     /// <p>The status of the compliance item. An item is either COMPLIANT, NON_COMPLIANT, or an empty string (for Windows patches that aren't applicable).</p>
     pub fn status(mut self, input: crate::types::ComplianceStatus) -> Self {
@@ -179,6 +199,10 @@ impl ComplianceItemBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the compliance item. An item is either COMPLIANT, NON_COMPLIANT, or an empty string (for Windows patches that aren't applicable).</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ComplianceStatus> {
+        &self.status
+    }
     /// <p>The severity of the compliance status. Severity can be one of the following: Critical, High, Medium, Low, Informational, Unspecified.</p>
     pub fn severity(mut self, input: crate::types::ComplianceSeverity) -> Self {
         self.severity = ::std::option::Option::Some(input);
@@ -192,6 +216,10 @@ impl ComplianceItemBuilder {
         self.severity = input;
         self
     }
+    /// <p>The severity of the compliance status. Severity can be one of the following: Critical, High, Medium, Low, Informational, Unspecified.</p>
+    pub fn get_severity(&self) -> &::std::option::Option<crate::types::ComplianceSeverity> {
+        &self.severity
+    }
     /// <p>A summary for the compliance item. The summary includes an execution ID, the execution type (for example, command), and the execution time.</p>
     pub fn execution_summary(mut self, input: crate::types::ComplianceExecutionSummary) -> Self {
         self.execution_summary = ::std::option::Option::Some(input);
@@ -204,6 +232,12 @@ impl ComplianceItemBuilder {
     ) -> Self {
         self.execution_summary = input;
         self
+    }
+    /// <p>A summary for the compliance item. The summary includes an execution ID, the execution type (for example, command), and the execution time.</p>
+    pub fn get_execution_summary(
+        &self,
+    ) -> &::std::option::Option<crate::types::ComplianceExecutionSummary> {
+        &self.execution_summary
     }
     /// Adds a key-value pair to `details`.
     ///
@@ -229,6 +263,14 @@ impl ComplianceItemBuilder {
     ) -> Self {
         self.details = input;
         self
+    }
+    /// <p>A "Key": "Value" tag combination for the compliance item.</p>
+    pub fn get_details(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.details
     }
     /// Consumes the builder and constructs a [`ComplianceItem`](crate::types::ComplianceItem).
     pub fn build(self) -> crate::types::ComplianceItem {

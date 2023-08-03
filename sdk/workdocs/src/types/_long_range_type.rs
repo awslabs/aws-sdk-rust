@@ -48,6 +48,10 @@ impl LongRangeTypeBuilder {
         self.start_value = input;
         self
     }
+    /// <p>The size start range (in bytes).</p>
+    pub fn get_start_value(&self) -> &::std::option::Option<i64> {
+        &self.start_value
+    }
     /// <p>The size end range (in bytes).</p>
     pub fn end_value(mut self, input: i64) -> Self {
         self.end_value = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl LongRangeTypeBuilder {
     pub fn set_end_value(mut self, input: ::std::option::Option<i64>) -> Self {
         self.end_value = input;
         self
+    }
+    /// <p>The size end range (in bytes).</p>
+    pub fn get_end_value(&self) -> &::std::option::Option<i64> {
+        &self.end_value
     }
     /// Consumes the builder and constructs a [`LongRangeType`](crate::types::LongRangeType).
     pub fn build(self) -> crate::types::LongRangeType {

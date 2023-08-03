@@ -36,6 +36,12 @@ impl CreateProfileShareFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateProfileShare as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_profile_share::builders::CreateProfileShareInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateProfileShareFluentBuilder {
         self.inner = self.inner.set_profile_arn(input);
         self
     }
+    /// <p>The profile ARN.</p>
+    pub fn get_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_profile_arn()
+    }
     /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.</p>
     pub fn shared_with(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.shared_with(input.into());
@@ -135,6 +145,10 @@ impl CreateProfileShareFluentBuilder {
     pub fn set_shared_with(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_shared_with(input);
         self
+    }
+    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.</p>
+    pub fn get_shared_with(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_shared_with()
     }
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
@@ -157,5 +171,12 @@ impl CreateProfileShareFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
+    /// </important>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
 }

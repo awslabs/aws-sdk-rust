@@ -96,6 +96,10 @@ impl SubmitContainerStateChangeInputBuilder {
         self.cluster = input;
         self
     }
+    /// <p>The short name or full ARN of the cluster that hosts the container.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster
+    }
     /// <p>The task ID or full Amazon Resource Name (ARN) of the task that hosts the container.</p>
     pub fn task(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl SubmitContainerStateChangeInputBuilder {
     pub fn set_task(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task = input;
         self
+    }
+    /// <p>The task ID or full Amazon Resource Name (ARN) of the task that hosts the container.</p>
+    pub fn get_task(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task
     }
     /// <p>The name of the container.</p>
     pub fn container_name(
@@ -122,6 +130,10 @@ impl SubmitContainerStateChangeInputBuilder {
         self.container_name = input;
         self
     }
+    /// <p>The name of the container.</p>
+    pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_name
+    }
     /// <p>The ID of the Docker container.</p>
     pub fn runtime_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.runtime_id = ::std::option::Option::Some(input.into());
@@ -131,6 +143,10 @@ impl SubmitContainerStateChangeInputBuilder {
     pub fn set_runtime_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.runtime_id = input;
         self
+    }
+    /// <p>The ID of the Docker container.</p>
+    pub fn get_runtime_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.runtime_id
     }
     /// <p>The status of the state change request.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -142,6 +158,10 @@ impl SubmitContainerStateChangeInputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the state change request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The exit code that's returned for the state change request.</p>
     pub fn exit_code(mut self, input: i32) -> Self {
         self.exit_code = ::std::option::Option::Some(input);
@@ -152,6 +172,10 @@ impl SubmitContainerStateChangeInputBuilder {
         self.exit_code = input;
         self
     }
+    /// <p>The exit code that's returned for the state change request.</p>
+    pub fn get_exit_code(&self) -> &::std::option::Option<i32> {
+        &self.exit_code
+    }
     /// <p>The reason for the state change request.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
@@ -161,6 +185,10 @@ impl SubmitContainerStateChangeInputBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>The reason for the state change request.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
     }
     /// Appends an item to `network_bindings`.
     ///
@@ -180,6 +208,12 @@ impl SubmitContainerStateChangeInputBuilder {
     ) -> Self {
         self.network_bindings = input;
         self
+    }
+    /// <p>The network bindings of the container.</p>
+    pub fn get_network_bindings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkBinding>> {
+        &self.network_bindings
     }
     /// Consumes the builder and constructs a [`SubmitContainerStateChangeInput`](crate::operation::submit_container_state_change::SubmitContainerStateChangeInput).
     pub fn build(

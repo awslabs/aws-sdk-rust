@@ -58,6 +58,12 @@ impl DisassociateS3ResourcesOutputBuilder {
         self.failed_s3_resources = input;
         self
     }
+    /// <p>(Discontinued) S3 resources that couldn't be removed from being monitored and classified by Amazon Macie Classic. An error code and an error message are provided for each failed item. </p>
+    pub fn get_failed_s3_resources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedS3Resource>> {
+        &self.failed_s3_resources
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

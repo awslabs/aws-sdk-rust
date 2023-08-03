@@ -39,6 +39,10 @@ impl DeleteRotationInputBuilder {
         self.rotation_id = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the on-call rotation to delete.</p>
+    pub fn get_rotation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rotation_id
+    }
     /// Consumes the builder and constructs a [`DeleteRotationInput`](crate::operation::delete_rotation::DeleteRotationInput).
     pub fn build(
         self,

@@ -48,6 +48,10 @@ impl AcceptDomainTransferFromAnotherAwsAccountInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The name of the domain that was specified when another Amazon Web Services account submitted a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request. </p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The password that was returned by the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request. </p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl AcceptDomainTransferFromAnotherAwsAccountInputBuilder {
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.password = input;
         self
+    }
+    /// <p>The password that was returned by the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request. </p>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.password
     }
     /// Consumes the builder and constructs a [`AcceptDomainTransferFromAnotherAwsAccountInput`](crate::operation::accept_domain_transfer_from_another_aws_account::AcceptDomainTransferFromAnotherAwsAccountInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::accept_domain_transfer_from_another_aws_account::AcceptDomainTransferFromAnotherAwsAccountInput, ::aws_smithy_http::operation::error::BuildError>{

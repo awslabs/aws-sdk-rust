@@ -56,6 +56,10 @@ impl EncryptionConfigBuilder {
         self.enabled = input;
         self
     }
+    /// Boolean to indicate if custom encryption has been enabled.
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Server-side encryption type.
     pub fn encryption_type(mut self, input: crate::types::EncryptionType) -> Self {
         self.encryption_type = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl EncryptionConfigBuilder {
         self.encryption_type = input;
         self
     }
+    /// Server-side encryption type.
+    pub fn get_encryption_type(&self) -> &::std::option::Option<crate::types::EncryptionType> {
+        &self.encryption_type
+    }
     /// KMS key id/arn for encryption config.
     pub fn key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_arn = ::std::option::Option::Some(input.into());
@@ -78,6 +86,10 @@ impl EncryptionConfigBuilder {
     pub fn set_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_arn = input;
         self
+    }
+    /// KMS key id/arn for encryption config.
+    pub fn get_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_arn
     }
     /// Consumes the builder and constructs a [`EncryptionConfig`](crate::types::EncryptionConfig).
     pub fn build(self) -> crate::types::EncryptionConfig {

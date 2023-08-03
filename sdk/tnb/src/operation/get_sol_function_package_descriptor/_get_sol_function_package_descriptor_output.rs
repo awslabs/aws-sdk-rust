@@ -57,6 +57,10 @@ impl GetSolFunctionPackageDescriptorOutputBuilder {
         self.content_type = input;
         self
     }
+    /// <p>Indicates the media type of the resource.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<crate::types::DescriptorContentType> {
+        &self.content_type
+    }
     /// <p>Contents of the function package descriptor.</p>
     pub fn vnfd(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.vnfd = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl GetSolFunctionPackageDescriptorOutputBuilder {
     pub fn set_vnfd(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.vnfd = input;
         self
+    }
+    /// <p>Contents of the function package descriptor.</p>
+    pub fn get_vnfd(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.vnfd
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

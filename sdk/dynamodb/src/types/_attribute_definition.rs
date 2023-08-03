@@ -64,6 +64,10 @@ impl AttributeDefinitionBuilder {
         self.attribute_name = input;
         self
     }
+    /// <p>A name for the attribute.</p>
+    pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_name
+    }
     /// <p>The data type for the attribute, where:</p>
     /// <ul>
     /// <li> <p> <code>S</code> - the attribute is of type String</p> </li>
@@ -86,6 +90,15 @@ impl AttributeDefinitionBuilder {
     ) -> Self {
         self.attribute_type = input;
         self
+    }
+    /// <p>The data type for the attribute, where:</p>
+    /// <ul>
+    /// <li> <p> <code>S</code> - the attribute is of type String</p> </li>
+    /// <li> <p> <code>N</code> - the attribute is of type Number</p> </li>
+    /// <li> <p> <code>B</code> - the attribute is of type Binary</p> </li>
+    /// </ul>
+    pub fn get_attribute_type(&self) -> &::std::option::Option<crate::types::ScalarAttributeType> {
+        &self.attribute_type
     }
     /// Consumes the builder and constructs a [`AttributeDefinition`](crate::types::AttributeDefinition).
     pub fn build(self) -> crate::types::AttributeDefinition {

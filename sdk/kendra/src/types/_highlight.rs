@@ -64,6 +64,10 @@ impl HighlightBuilder {
         self.begin_offset = input;
         self
     }
+    /// <p>The zero-based location in the response string where the highlight starts.</p>
+    pub fn get_begin_offset(&self) -> &::std::option::Option<i32> {
+        &self.begin_offset
+    }
     /// <p>The zero-based location in the response string where the highlight ends.</p>
     pub fn end_offset(mut self, input: i32) -> Self {
         self.end_offset = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl HighlightBuilder {
     pub fn set_end_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end_offset = input;
         self
+    }
+    /// <p>The zero-based location in the response string where the highlight ends.</p>
+    pub fn get_end_offset(&self) -> &::std::option::Option<i32> {
+        &self.end_offset
     }
     /// <p>Indicates whether the response is the best response. True if this is the best response; otherwise, false.</p>
     pub fn top_answer(mut self, input: bool) -> Self {
@@ -84,6 +92,10 @@ impl HighlightBuilder {
         self.top_answer = input;
         self
     }
+    /// <p>Indicates whether the response is the best response. True if this is the best response; otherwise, false.</p>
+    pub fn get_top_answer(&self) -> &::std::option::Option<bool> {
+        &self.top_answer
+    }
     /// <p>The highlight type. </p>
     pub fn r#type(mut self, input: crate::types::HighlightType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl HighlightBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::HighlightType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The highlight type. </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::HighlightType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`Highlight`](crate::types::Highlight).
     pub fn build(self) -> crate::types::Highlight {

@@ -110,6 +110,10 @@ impl VerifiedAccessGroupBuilder {
         self.verified_access_group_id = input;
         self
     }
+    /// <p>The ID of the Verified Access group.</p>
+    pub fn get_verified_access_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.verified_access_group_id
+    }
     /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
     pub fn verified_access_instance_id(
         mut self,
@@ -126,6 +130,10 @@ impl VerifiedAccessGroupBuilder {
         self.verified_access_instance_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
+    pub fn get_verified_access_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.verified_access_instance_id
+    }
     /// <p>A description for the Amazon Web Services Verified Access group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -136,6 +144,10 @@ impl VerifiedAccessGroupBuilder {
         self.description = input;
         self
     }
+    /// <p>A description for the Amazon Web Services Verified Access group.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The Amazon Web Services account number that owns the group.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner = ::std::option::Option::Some(input.into());
@@ -145,6 +157,10 @@ impl VerifiedAccessGroupBuilder {
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner = input;
         self
+    }
+    /// <p>The Amazon Web Services account number that owns the group.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
     }
     /// <p>The ARN of the Verified Access group.</p>
     pub fn verified_access_group_arn(
@@ -162,6 +178,10 @@ impl VerifiedAccessGroupBuilder {
         self.verified_access_group_arn = input;
         self
     }
+    /// <p>The ARN of the Verified Access group.</p>
+    pub fn get_verified_access_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.verified_access_group_arn
+    }
     /// <p>The creation time.</p>
     pub fn creation_time(
         mut self,
@@ -177,6 +197,10 @@ impl VerifiedAccessGroupBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The creation time.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_time
     }
     /// <p>The last updated time.</p>
     pub fn last_updated_time(
@@ -194,6 +218,10 @@ impl VerifiedAccessGroupBuilder {
         self.last_updated_time = input;
         self
     }
+    /// <p>The last updated time.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_updated_time
+    }
     /// <p>The deletion time.</p>
     pub fn deletion_time(
         mut self,
@@ -209,6 +237,10 @@ impl VerifiedAccessGroupBuilder {
     ) -> Self {
         self.deletion_time = input;
         self
+    }
+    /// <p>The deletion time.</p>
+    pub fn get_deletion_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deletion_time
     }
     /// Appends an item to `tags`.
     ///
@@ -228,6 +260,10 @@ impl VerifiedAccessGroupBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`VerifiedAccessGroup`](crate::types::VerifiedAccessGroup).
     pub fn build(self) -> crate::types::VerifiedAccessGroup {

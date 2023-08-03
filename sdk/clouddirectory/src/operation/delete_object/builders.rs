@@ -36,6 +36,10 @@ impl DeleteObjectFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteObject as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_object::builders::DeleteObjectInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl DeleteObjectFluentBuilder {
         self.inner = self.inner.set_directory_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_arn()
+    }
     /// <p>A reference that identifies the object.</p>
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.inner = self.inner.object_reference(input);
@@ -136,5 +144,9 @@ impl DeleteObjectFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_object_reference(input);
         self
+    }
+    /// <p>A reference that identifies the object.</p>
+    pub fn get_object_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
+        self.inner.get_object_reference()
     }
 }

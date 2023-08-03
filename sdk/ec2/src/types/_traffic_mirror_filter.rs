@@ -98,6 +98,10 @@ impl TrafficMirrorFilterBuilder {
         self.traffic_mirror_filter_id = input;
         self
     }
+    /// <p>The ID of the Traffic Mirror filter.</p>
+    pub fn get_traffic_mirror_filter_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.traffic_mirror_filter_id
+    }
     /// Appends an item to `ingress_filter_rules`.
     ///
     /// To override the contents of this collection use [`set_ingress_filter_rules`](Self::set_ingress_filter_rules).
@@ -116,6 +120,12 @@ impl TrafficMirrorFilterBuilder {
     ) -> Self {
         self.ingress_filter_rules = input;
         self
+    }
+    /// <p>Information about the ingress rules that are associated with the Traffic Mirror filter.</p>
+    pub fn get_ingress_filter_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorFilterRule>> {
+        &self.ingress_filter_rules
     }
     /// Appends an item to `egress_filter_rules`.
     ///
@@ -136,6 +146,12 @@ impl TrafficMirrorFilterBuilder {
         self.egress_filter_rules = input;
         self
     }
+    /// <p>Information about the egress rules that are associated with the Traffic Mirror filter.</p>
+    pub fn get_egress_filter_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorFilterRule>> {
+        &self.egress_filter_rules
+    }
     /// Appends an item to `network_services`.
     ///
     /// To override the contents of this collection use [`set_network_services`](Self::set_network_services).
@@ -155,6 +171,12 @@ impl TrafficMirrorFilterBuilder {
         self.network_services = input;
         self
     }
+    /// <p>The network service traffic that is associated with the Traffic Mirror filter.</p>
+    pub fn get_network_services(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorNetworkService>> {
+        &self.network_services
+    }
     /// <p>The description of the Traffic Mirror filter.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -164,6 +186,10 @@ impl TrafficMirrorFilterBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the Traffic Mirror filter.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `tags`.
     ///
@@ -183,6 +209,10 @@ impl TrafficMirrorFilterBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags assigned to the Traffic Mirror filter.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`TrafficMirrorFilter`](crate::types::TrafficMirrorFilter).
     pub fn build(self) -> crate::types::TrafficMirrorFilter {

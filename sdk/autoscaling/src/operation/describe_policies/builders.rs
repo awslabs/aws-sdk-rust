@@ -36,6 +36,12 @@ impl DescribePoliciesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribePolicies as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_policies::builders::DescribePoliciesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +149,10 @@ impl DescribePoliciesFluentBuilder {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_auto_scaling_group_name()
+    }
     /// Appends an item to `PolicyNames`.
     ///
     /// To override the contents of this collection use [`set_policy_names`](Self::set_policy_names).
@@ -162,6 +172,13 @@ impl DescribePoliciesFluentBuilder {
         self.inner = self.inner.set_policy_names(input);
         self
     }
+    /// <p>The names of one or more policies. If you omit this property, all policies are described. If a group name is provided, the results are limited to that group. If you specify an unknown policy name, it is ignored with no error.</p>
+    /// <p>Array Members: Maximum number of 50 items.</p>
+    pub fn get_policy_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_policy_names()
+    }
     /// Appends an item to `PolicyTypes`.
     ///
     /// To override the contents of this collection use [`set_policy_types`](Self::set_policy_types).
@@ -179,6 +196,12 @@ impl DescribePoliciesFluentBuilder {
         self.inner = self.inner.set_policy_types(input);
         self
     }
+    /// <p>One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, <code>TargetTrackingScaling</code>, and <code>PredictiveScaling</code>.</p>
+    pub fn get_policy_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_policy_types()
+    }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -189,6 +212,10 @@ impl DescribePoliciesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of items to be returned with each call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.inner = self.inner.max_records(input);
@@ -198,5 +225,9 @@ impl DescribePoliciesFluentBuilder {
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_records(input);
         self
+    }
+    /// <p>The maximum number of items to be returned with each call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
     }
 }

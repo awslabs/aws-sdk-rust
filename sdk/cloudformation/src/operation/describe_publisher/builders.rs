@@ -42,6 +42,12 @@ impl DescribePublisherFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribePublisher as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_publisher::builders::DescribePublisherInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,5 +139,10 @@ impl DescribePublisherFluentBuilder {
     pub fn set_publisher_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_publisher_id(input);
         self
+    }
+    /// <p>The ID of the extension publisher.</p>
+    /// <p>If you don't supply a <code>PublisherId</code>, and you have registered as an extension publisher, <code>DescribePublisher</code> returns information about your own publisher account.</p>
+    pub fn get_publisher_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_publisher_id()
     }
 }

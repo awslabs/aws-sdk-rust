@@ -55,6 +55,10 @@ impl DescribeExecutionOutputBuilder {
         self.workflow_id = input;
         self
     }
+    /// <p>A unique identifier for the workflow.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_id
+    }
     /// <p>The structure that contains the details of the workflow' execution.</p>
     pub fn execution(mut self, input: crate::types::DescribedExecution) -> Self {
         self.execution = ::std::option::Option::Some(input);
@@ -67,6 +71,10 @@ impl DescribeExecutionOutputBuilder {
     ) -> Self {
         self.execution = input;
         self
+    }
+    /// <p>The structure that contains the details of the workflow' execution.</p>
+    pub fn get_execution(&self) -> &::std::option::Option<crate::types::DescribedExecution> {
+        &self.execution
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

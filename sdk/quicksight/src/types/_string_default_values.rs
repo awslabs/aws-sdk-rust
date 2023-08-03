@@ -51,6 +51,10 @@ impl StringDefaultValuesBuilder {
         self.dynamic_value = input;
         self
     }
+    /// <p>The dynamic value of the <code>StringDefaultValues</code>. Different defaults displayed according to users, groups, and values mapping.</p>
+    pub fn get_dynamic_value(&self) -> &::std::option::Option<crate::types::DynamicDefaultValue> {
+        &self.dynamic_value
+    }
     /// Appends an item to `static_values`.
     ///
     /// To override the contents of this collection use [`set_static_values`](Self::set_static_values).
@@ -72,6 +76,12 @@ impl StringDefaultValuesBuilder {
     ) -> Self {
         self.static_values = input;
         self
+    }
+    /// <p>The static values of the <code>DecimalDefaultValues</code>.</p>
+    pub fn get_static_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.static_values
     }
     /// Consumes the builder and constructs a [`StringDefaultValues`](crate::types::StringDefaultValues).
     pub fn build(self) -> crate::types::StringDefaultValues {

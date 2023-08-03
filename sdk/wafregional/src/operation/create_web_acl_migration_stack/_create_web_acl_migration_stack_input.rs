@@ -65,6 +65,10 @@ impl CreateWebAclMigrationStackInputBuilder {
         self.web_acl_id = input;
         self
     }
+    /// <p>The UUID of the WAF Classic web ACL that you want to migrate to WAF v2.</p>
+    pub fn get_web_acl_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.web_acl_id
+    }
     /// <p>The name of the Amazon S3 bucket to store the CloudFormation template in. The S3 bucket must be configured as follows for the migration: </p>
     /// <ul>
     /// <li> <p>The bucket name must start with <code>aws-waf-migration-</code>. For example, <code>aws-waf-migration-my-web-acl</code>.</p> </li>
@@ -91,6 +95,15 @@ impl CreateWebAclMigrationStackInputBuilder {
         self.s3_bucket_name = input;
         self
     }
+    /// <p>The name of the Amazon S3 bucket to store the CloudFormation template in. The S3 bucket must be configured as follows for the migration: </p>
+    /// <ul>
+    /// <li> <p>The bucket name must start with <code>aws-waf-migration-</code>. For example, <code>aws-waf-migration-my-web-acl</code>.</p> </li>
+    /// <li> <p>The bucket must be in the Region where you are deploying the template. For example, for a web ACL in us-west-2, you must use an Amazon S3 bucket in us-west-2 and you must deploy the template stack to us-west-2. </p> </li>
+    /// <li> <p>The bucket policies must permit the migration process to write data. For listings of the bucket policies, see the Examples section. </p> </li>
+    /// </ul>
+    pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_name
+    }
     /// <p>Indicates whether to exclude entities that can't be migrated or to stop the migration. Set this to true to ignore unsupported entities in the web ACL during the migration. Otherwise, if AWS WAF encounters unsupported entities, it stops the process and throws an exception. </p>
     pub fn ignore_unsupported_type(mut self, input: bool) -> Self {
         self.ignore_unsupported_type = ::std::option::Option::Some(input);
@@ -100,6 +113,10 @@ impl CreateWebAclMigrationStackInputBuilder {
     pub fn set_ignore_unsupported_type(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ignore_unsupported_type = input;
         self
+    }
+    /// <p>Indicates whether to exclude entities that can't be migrated or to stop the migration. Set this to true to ignore unsupported entities in the web ACL during the migration. Otherwise, if AWS WAF encounters unsupported entities, it stops the process and throws an exception. </p>
+    pub fn get_ignore_unsupported_type(&self) -> &::std::option::Option<bool> {
+        &self.ignore_unsupported_type
     }
     /// Consumes the builder and constructs a [`CreateWebAclMigrationStackInput`](crate::operation::create_web_acl_migration_stack::CreateWebAclMigrationStackInput).
     pub fn build(

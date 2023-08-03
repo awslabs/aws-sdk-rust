@@ -69,6 +69,10 @@ impl FilterConditionBuilder {
         self.name = input;
         self
     }
+    /// <p>Name of the field which should be used for filtering the list of domains.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::ListDomainsAttributeName> {
+        &self.name
+    }
     /// <p>The operator values for filtering domain names. The values can be:</p>
     /// <ul>
     /// <li> <p> <code>LE</code>: Less than, or equal to</p> </li>
@@ -89,6 +93,15 @@ impl FilterConditionBuilder {
         self.operator = input;
         self
     }
+    /// <p>The operator values for filtering domain names. The values can be:</p>
+    /// <ul>
+    /// <li> <p> <code>LE</code>: Less than, or equal to</p> </li>
+    /// <li> <p> <code>GE</code>: Greater than, or equal to</p> </li>
+    /// <li> <p> <code>BEGINS_WITH</code>: Begins with</p> </li>
+    /// </ul>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::Operator> {
+        &self.operator
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -107,6 +120,10 @@ impl FilterConditionBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p> An array of strings presenting values to compare. Only 1 item in the list is currently supported.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`FilterCondition`](crate::types::FilterCondition).
     pub fn build(self) -> crate::types::FilterCondition {

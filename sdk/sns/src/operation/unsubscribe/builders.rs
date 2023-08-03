@@ -39,6 +39,10 @@ impl UnsubscribeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the Unsubscribe as a reference.
+    pub fn as_input(&self) -> &crate::operation::unsubscribe::builders::UnsubscribeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,5 +130,9 @@ impl UnsubscribeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_subscription_arn(input);
         self
+    }
+    /// <p>The ARN of the subscription to be deleted.</p>
+    pub fn get_subscription_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_subscription_arn()
     }
 }

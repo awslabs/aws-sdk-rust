@@ -36,6 +36,12 @@ impl GetUsagePlanKeysFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetUsagePlanKeys as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_usage_plan_keys::builders::GetUsagePlanKeysInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +149,10 @@ impl GetUsagePlanKeysFluentBuilder {
         self.inner = self.inner.set_usage_plan_id(input);
         self
     }
+    /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
+    pub fn get_usage_plan_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_usage_plan_id()
+    }
     /// <p>The current pagination position in the paged result set.</p>
     pub fn position(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.position(input.into());
@@ -152,6 +162,10 @@ impl GetUsagePlanKeysFluentBuilder {
     pub fn set_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_position(input);
         self
+    }
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn get_position(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_position()
     }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -163,6 +177,10 @@ impl GetUsagePlanKeysFluentBuilder {
         self.inner = self.inner.set_limit(input);
         self
     }
+    /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
+    }
     /// <p>A query parameter specifying the name of the to-be-returned usage plan keys.</p>
     pub fn name_query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name_query(input.into());
@@ -172,5 +190,9 @@ impl GetUsagePlanKeysFluentBuilder {
     pub fn set_name_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name_query(input);
         self
+    }
+    /// <p>A query parameter specifying the name of the to-be-returned usage plan keys.</p>
+    pub fn get_name_query(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name_query()
     }
 }

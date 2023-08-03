@@ -48,6 +48,10 @@ impl DeleteEventStreamInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The unique name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The name of the event stream</p>
     pub fn event_stream_name(
         mut self,
@@ -63,6 +67,10 @@ impl DeleteEventStreamInputBuilder {
     ) -> Self {
         self.event_stream_name = input;
         self
+    }
+    /// <p>The name of the event stream</p>
+    pub fn get_event_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_stream_name
     }
     /// Consumes the builder and constructs a [`DeleteEventStreamInput`](crate::operation::delete_event_stream::DeleteEventStreamInput).
     pub fn build(

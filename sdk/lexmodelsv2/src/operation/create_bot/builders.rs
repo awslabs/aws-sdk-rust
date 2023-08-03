@@ -36,6 +36,10 @@ impl CreateBotFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateBot as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_bot::builders::CreateBotInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl CreateBotFluentBuilder {
         self.inner = self.inner.set_bot_name(input);
         self
     }
+    /// <p>The name of the bot. The bot name must be unique in the account that creates the bot.</p>
+    pub fn get_bot_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_name()
+    }
     /// <p>A description of the bot. It appears in lists to help you identify a particular bot.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -128,6 +136,10 @@ impl CreateBotFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>A description of the bot. It appears in lists to help you identify a particular bot.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access the bot.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -137,6 +149,10 @@ impl CreateBotFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access the bot.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// <p>Provides information on additional privacy protections Amazon Lex should use with the bot's data.</p>
     pub fn data_privacy(mut self, input: crate::types::DataPrivacy) -> Self {
@@ -151,6 +167,10 @@ impl CreateBotFluentBuilder {
         self.inner = self.inner.set_data_privacy(input);
         self
     }
+    /// <p>Provides information on additional privacy protections Amazon Lex should use with the bot's data.</p>
+    pub fn get_data_privacy(&self) -> &::std::option::Option<crate::types::DataPrivacy> {
+        self.inner.get_data_privacy()
+    }
     /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot. </p>
     /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
     /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
@@ -164,6 +184,12 @@ impl CreateBotFluentBuilder {
     pub fn set_idle_session_ttl_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_idle_session_ttl_in_seconds(input);
         self
+    }
+    /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot. </p>
+    /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
+    /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
+    pub fn get_idle_session_ttl_in_seconds(&self) -> &::std::option::Option<i32> {
+        self.inner.get_idle_session_ttl_in_seconds()
     }
     /// Adds a key-value pair to `botTags`.
     ///
@@ -188,6 +214,14 @@ impl CreateBotFluentBuilder {
         self.inner = self.inner.set_bot_tags(input);
         self
     }
+    /// <p>A list of tags to add to the bot. You can only add tags when you create a bot. You can't use the <code>UpdateBot</code> operation to update tags. To update tags, use the <code>TagResource</code> operation.</p>
+    pub fn get_bot_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_bot_tags()
+    }
     /// Adds a key-value pair to `testBotAliasTags`.
     ///
     /// To override the contents of this collection use [`set_test_bot_alias_tags`](Self::set_test_bot_alias_tags).
@@ -211,6 +245,14 @@ impl CreateBotFluentBuilder {
         self.inner = self.inner.set_test_bot_alias_tags(input);
         self
     }
+    /// <p>A list of tags to add to the test alias for a bot. You can only add tags when you create a bot. You can't use the <code>UpdateAlias</code> operation to update tags. To update tags on the test alias, use the <code>TagResource</code> operation.</p>
+    pub fn get_test_bot_alias_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_test_bot_alias_tags()
+    }
     /// <p>The type of a bot to create.</p>
     pub fn bot_type(mut self, input: crate::types::BotType) -> Self {
         self.inner = self.inner.bot_type(input);
@@ -220,6 +262,10 @@ impl CreateBotFluentBuilder {
     pub fn set_bot_type(mut self, input: ::std::option::Option<crate::types::BotType>) -> Self {
         self.inner = self.inner.set_bot_type(input);
         self
+    }
+    /// <p>The type of a bot to create.</p>
+    pub fn get_bot_type(&self) -> &::std::option::Option<crate::types::BotType> {
+        self.inner.get_bot_type()
     }
     /// Appends an item to `botMembers`.
     ///
@@ -237,5 +283,11 @@ impl CreateBotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_bot_members(input);
         self
+    }
+    /// <p>The list of bot members in a network to be created.</p>
+    pub fn get_bot_members(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BotMember>> {
+        self.inner.get_bot_members()
     }
 }

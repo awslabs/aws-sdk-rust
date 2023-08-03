@@ -55,6 +55,10 @@ impl AutomationRulesActionBuilder {
         self.r#type = input;
         self
     }
+    /// <p> Specifies that the rule action should update the <code>Types</code> finding field. The <code>Types</code> finding field classifies findings in the format of namespace/category/classifier. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format-type-taxonomy.html">Types taxonomy for ASFF</a> in the <i>Security Hub User Guide</i>. </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::AutomationRulesActionType> {
+        &self.r#type
+    }
     /// <p> Specifies that the automation rule action is an update to a finding field. </p>
     pub fn finding_fields_update(
         mut self,
@@ -70,6 +74,12 @@ impl AutomationRulesActionBuilder {
     ) -> Self {
         self.finding_fields_update = input;
         self
+    }
+    /// <p> Specifies that the automation rule action is an update to a finding field. </p>
+    pub fn get_finding_fields_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutomationRulesFindingFieldsUpdate> {
+        &self.finding_fields_update
     }
     /// Consumes the builder and constructs a [`AutomationRulesAction`](crate::types::AutomationRulesAction).
     pub fn build(self) -> crate::types::AutomationRulesAction {

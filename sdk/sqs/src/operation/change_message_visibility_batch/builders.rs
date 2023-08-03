@@ -38,6 +38,10 @@ impl ChangeMessageVisibilityBatchFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ChangeMessageVisibilityBatch as a reference.
+    pub fn as_input(&self) -> &crate::operation::change_message_visibility_batch::builders::ChangeMessageVisibilityBatchInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +134,11 @@ impl ChangeMessageVisibilityBatchFluentBuilder {
         self.inner = self.inner.set_queue_url(input);
         self
     }
+    /// <p>The URL of the Amazon SQS queue whose messages' visibility is changed.</p>
+    /// <p>Queue URLs and names are case-sensitive.</p>
+    pub fn get_queue_url(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_queue_url()
+    }
     /// Appends an item to `Entries`.
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
@@ -151,5 +160,13 @@ impl ChangeMessageVisibilityBatchFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_entries(input);
         self
+    }
+    /// <p>Lists the receipt handles of the messages for which the visibility timeout must be changed.</p>
+    pub fn get_entries(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::ChangeMessageVisibilityBatchRequestEntry>,
+    > {
+        self.inner.get_entries()
     }
 }

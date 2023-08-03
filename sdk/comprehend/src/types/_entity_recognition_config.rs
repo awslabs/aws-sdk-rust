@@ -50,6 +50,12 @@ impl EntityRecognitionConfigBuilder {
         self.entity_types = input;
         self
     }
+    /// <p>Up to 25 entity types that the model is trained to recognize.</p>
+    pub fn get_entity_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityTypesListItem>> {
+        &self.entity_types
+    }
     /// Consumes the builder and constructs a [`EntityRecognitionConfig`](crate::types::EntityRecognitionConfig).
     pub fn build(self) -> crate::types::EntityRecognitionConfig {
         crate::types::EntityRecognitionConfig {

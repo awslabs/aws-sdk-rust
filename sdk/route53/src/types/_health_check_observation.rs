@@ -59,6 +59,10 @@ impl HealthCheckObservationBuilder {
         self.region = input;
         self
     }
+    /// <p>The region of the Amazon Route 53 health checker that provided the status in <code>StatusReport</code>.</p>
+    pub fn get_region(&self) -> &::std::option::Option<crate::types::HealthCheckRegion> {
+        &self.region
+    }
     /// <p>The IP address of the Amazon Route 53 health checker that provided the failure reason in <code>StatusReport</code>.</p>
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_address = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl HealthCheckObservationBuilder {
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_address = input;
         self
+    }
+    /// <p>The IP address of the Amazon Route 53 health checker that provided the failure reason in <code>StatusReport</code>.</p>
+    pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address
     }
     /// <p>A complex type that contains the last failure reason as reported by one Amazon Route 53 health checker and the time of the failed health check.</p>
     pub fn status_report(mut self, input: crate::types::StatusReport) -> Self {
@@ -81,6 +89,10 @@ impl HealthCheckObservationBuilder {
     ) -> Self {
         self.status_report = input;
         self
+    }
+    /// <p>A complex type that contains the last failure reason as reported by one Amazon Route 53 health checker and the time of the failed health check.</p>
+    pub fn get_status_report(&self) -> &::std::option::Option<crate::types::StatusReport> {
+        &self.status_report
     }
     /// Consumes the builder and constructs a [`HealthCheckObservation`](crate::types::HealthCheckObservation).
     pub fn build(self) -> crate::types::HealthCheckObservation {

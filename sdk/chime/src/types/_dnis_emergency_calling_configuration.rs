@@ -69,6 +69,10 @@ impl DnisEmergencyCallingConfigurationBuilder {
         self.emergency_phone_number = input;
         self
     }
+    /// <p>The DNIS phone number to route emergency calls to, in E.164 format.</p>
+    pub fn get_emergency_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.emergency_phone_number
+    }
     /// <p>The DNIS phone number to route test emergency calls to, in E.164 format.</p>
     pub fn test_phone_number(
         mut self,
@@ -85,6 +89,10 @@ impl DnisEmergencyCallingConfigurationBuilder {
         self.test_phone_number = input;
         self
     }
+    /// <p>The DNIS phone number to route test emergency calls to, in E.164 format.</p>
+    pub fn get_test_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_phone_number
+    }
     /// <p>The country from which emergency calls are allowed, in ISO 3166-1 alpha-2 format.</p>
     pub fn calling_country(
         mut self,
@@ -100,6 +108,10 @@ impl DnisEmergencyCallingConfigurationBuilder {
     ) -> Self {
         self.calling_country = input;
         self
+    }
+    /// <p>The country from which emergency calls are allowed, in ISO 3166-1 alpha-2 format.</p>
+    pub fn get_calling_country(&self) -> &::std::option::Option<::std::string::String> {
+        &self.calling_country
     }
     /// Consumes the builder and constructs a [`DnisEmergencyCallingConfiguration`](crate::types::DnisEmergencyCallingConfiguration).
     pub fn build(self) -> crate::types::DnisEmergencyCallingConfiguration {

@@ -62,6 +62,10 @@ impl GetNotificationChannelOutputBuilder {
         self.sns_topic_arn = input;
         self
     }
+    /// <p>The SNS topic that records Firewall Manager activity. </p>
+    pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sns_topic_arn
+    }
     /// <p>The IAM role that is used by Firewall Manager to record activity to SNS.</p>
     pub fn sns_role_name(
         mut self,
@@ -77,6 +81,10 @@ impl GetNotificationChannelOutputBuilder {
     ) -> Self {
         self.sns_role_name = input;
         self
+    }
+    /// <p>The IAM role that is used by Firewall Manager to record activity to SNS.</p>
+    pub fn get_sns_role_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sns_role_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

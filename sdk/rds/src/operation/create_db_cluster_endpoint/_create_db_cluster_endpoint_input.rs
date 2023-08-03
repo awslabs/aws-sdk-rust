@@ -87,6 +87,10 @@ impl CreateDbClusterEndpointInputBuilder {
         self.db_cluster_identifier = input;
         self
     }
+    /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
+    pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_identifier
+    }
     /// <p>The identifier to use for the new endpoint. This parameter is stored as a lowercase string.</p>
     pub fn db_cluster_endpoint_identifier(
         mut self,
@@ -103,6 +107,12 @@ impl CreateDbClusterEndpointInputBuilder {
         self.db_cluster_endpoint_identifier = input;
         self
     }
+    /// <p>The identifier to use for the new endpoint. This parameter is stored as a lowercase string.</p>
+    pub fn get_db_cluster_endpoint_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_endpoint_identifier
+    }
     /// <p>The type of the endpoint, one of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
     pub fn endpoint_type(
         mut self,
@@ -118,6 +128,10 @@ impl CreateDbClusterEndpointInputBuilder {
     ) -> Self {
         self.endpoint_type = input;
         self
+    }
+    /// <p>The type of the endpoint, one of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
+    pub fn get_endpoint_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_type
     }
     /// Appends an item to `static_members`.
     ///
@@ -141,6 +155,12 @@ impl CreateDbClusterEndpointInputBuilder {
         self.static_members = input;
         self
     }
+    /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
+    pub fn get_static_members(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.static_members
+    }
     /// Appends an item to `excluded_members`.
     ///
     /// To override the contents of this collection use [`set_excluded_members`](Self::set_excluded_members).
@@ -163,6 +183,12 @@ impl CreateDbClusterEndpointInputBuilder {
         self.excluded_members = input;
         self
     }
+    /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. This parameter is relevant only if the list of static members is empty.</p>
+    pub fn get_excluded_members(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.excluded_members
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -181,6 +207,10 @@ impl CreateDbClusterEndpointInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags to be assigned to the Amazon RDS resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDbClusterEndpointInput`](crate::operation::create_db_cluster_endpoint::CreateDbClusterEndpointInput).
     pub fn build(

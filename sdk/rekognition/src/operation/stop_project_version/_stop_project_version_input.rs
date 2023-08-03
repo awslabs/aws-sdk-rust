@@ -50,6 +50,11 @@ impl StopProjectVersionInputBuilder {
         self.project_version_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
+    /// <p>This operation requires permissions to perform the <code>rekognition:StopProjectVersion</code> action.</p>
+    pub fn get_project_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_version_arn
+    }
     /// Consumes the builder and constructs a [`StopProjectVersionInput`](crate::operation::stop_project_version::StopProjectVersionInput).
     pub fn build(
         self,

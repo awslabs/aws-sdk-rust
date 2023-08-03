@@ -54,6 +54,10 @@ impl DeleteAutoSnapshotInputBuilder {
         self.resource_name = input;
         self
     }
+    /// <p>The name of the source instance or disk from which to delete the automatic snapshot.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_name
+    }
     /// <p>The date of the automatic snapshot to delete in <code>YYYY-MM-DD</code> format. Use the <code>get auto snapshots</code> operation to get the available automatic snapshots for a resource.</p>
     pub fn date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.date = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl DeleteAutoSnapshotInputBuilder {
     pub fn set_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.date = input;
         self
+    }
+    /// <p>The date of the automatic snapshot to delete in <code>YYYY-MM-DD</code> format. Use the <code>get auto snapshots</code> operation to get the available automatic snapshots for a resource.</p>
+    pub fn get_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.date
     }
     /// Consumes the builder and constructs a [`DeleteAutoSnapshotInput`](crate::operation::delete_auto_snapshot::DeleteAutoSnapshotInput).
     pub fn build(

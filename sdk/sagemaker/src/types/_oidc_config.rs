@@ -108,6 +108,10 @@ impl OidcConfigBuilder {
         self.client_id = input;
         self
     }
+    /// <p>The OIDC IdP client ID used to configure your private workforce.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_id
+    }
     /// <p>The OIDC IdP client secret used to configure your private workforce.</p>
     pub fn client_secret(
         mut self,
@@ -124,6 +128,10 @@ impl OidcConfigBuilder {
         self.client_secret = input;
         self
     }
+    /// <p>The OIDC IdP client secret used to configure your private workforce.</p>
+    pub fn get_client_secret(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_secret
+    }
     /// <p>The OIDC IdP issuer used to configure your private workforce.</p>
     pub fn issuer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.issuer = ::std::option::Option::Some(input.into());
@@ -133,6 +141,10 @@ impl OidcConfigBuilder {
     pub fn set_issuer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.issuer = input;
         self
+    }
+    /// <p>The OIDC IdP issuer used to configure your private workforce.</p>
+    pub fn get_issuer(&self) -> &::std::option::Option<::std::string::String> {
+        &self.issuer
     }
     /// <p>The OIDC IdP authorization endpoint used to configure your private workforce.</p>
     pub fn authorization_endpoint(
@@ -150,6 +162,10 @@ impl OidcConfigBuilder {
         self.authorization_endpoint = input;
         self
     }
+    /// <p>The OIDC IdP authorization endpoint used to configure your private workforce.</p>
+    pub fn get_authorization_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authorization_endpoint
+    }
     /// <p>The OIDC IdP token endpoint used to configure your private workforce.</p>
     pub fn token_endpoint(
         mut self,
@@ -165,6 +181,10 @@ impl OidcConfigBuilder {
     ) -> Self {
         self.token_endpoint = input;
         self
+    }
+    /// <p>The OIDC IdP token endpoint used to configure your private workforce.</p>
+    pub fn get_token_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token_endpoint
     }
     /// <p>The OIDC IdP user information endpoint used to configure your private workforce.</p>
     pub fn user_info_endpoint(
@@ -182,6 +202,10 @@ impl OidcConfigBuilder {
         self.user_info_endpoint = input;
         self
     }
+    /// <p>The OIDC IdP user information endpoint used to configure your private workforce.</p>
+    pub fn get_user_info_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_info_endpoint
+    }
     /// <p>The OIDC IdP logout endpoint used to configure your private workforce.</p>
     pub fn logout_endpoint(
         mut self,
@@ -198,6 +222,10 @@ impl OidcConfigBuilder {
         self.logout_endpoint = input;
         self
     }
+    /// <p>The OIDC IdP logout endpoint used to configure your private workforce.</p>
+    pub fn get_logout_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.logout_endpoint
+    }
     /// <p>The OIDC IdP JSON Web Key Set (Jwks) URI used to configure your private workforce.</p>
     pub fn jwks_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.jwks_uri = ::std::option::Option::Some(input.into());
@@ -207,6 +235,10 @@ impl OidcConfigBuilder {
     pub fn set_jwks_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.jwks_uri = input;
         self
+    }
+    /// <p>The OIDC IdP JSON Web Key Set (Jwks) URI used to configure your private workforce.</p>
+    pub fn get_jwks_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.jwks_uri
     }
     /// Consumes the builder and constructs a [`OidcConfig`](crate::types::OidcConfig).
     pub fn build(self) -> crate::types::OidcConfig {

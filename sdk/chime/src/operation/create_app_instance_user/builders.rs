@@ -40,6 +40,13 @@ impl CreateAppInstanceUserFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateAppInstanceUser as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_app_instance_user::builders::CreateAppInstanceUserInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +143,10 @@ impl CreateAppInstanceUserFluentBuilder {
         self.inner = self.inner.set_app_instance_arn(input);
         self
     }
+    /// <p>The ARN of the <code>AppInstance</code> request.</p>
+    pub fn get_app_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_instance_arn()
+    }
     /// <p>The user ID of the <code>AppInstance</code>.</p>
     pub fn app_instance_user_id(
         mut self,
@@ -152,6 +163,10 @@ impl CreateAppInstanceUserFluentBuilder {
         self.inner = self.inner.set_app_instance_user_id(input);
         self
     }
+    /// <p>The user ID of the <code>AppInstance</code>.</p>
+    pub fn get_app_instance_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_instance_user_id()
+    }
     /// <p>The user's name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -162,6 +177,10 @@ impl CreateAppInstanceUserFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The user's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The request's metadata. Limited to a 1KB string in UTF-8.</p>
     pub fn metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metadata(input.into());
@@ -171,6 +190,10 @@ impl CreateAppInstanceUserFluentBuilder {
     pub fn set_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_metadata(input);
         self
+    }
+    /// <p>The request's metadata. Limited to a 1KB string in UTF-8.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_metadata()
     }
     /// <p>The token assigned to the user requesting an <code>AppInstance</code>.</p>
     pub fn client_request_token(
@@ -188,6 +211,10 @@ impl CreateAppInstanceUserFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>The token assigned to the user requesting an <code>AppInstance</code>.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -204,5 +231,9 @@ impl CreateAppInstanceUserFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

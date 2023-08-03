@@ -62,6 +62,12 @@ impl AudioNormalizationSettingsBuilder {
         self.algorithm = input;
         self
     }
+    /// Audio normalization algorithm to use. itu17701 conforms to the CALM Act specification, itu17702 conforms to the EBU R-128 specification.
+    pub fn get_algorithm(
+        &self,
+    ) -> &::std::option::Option<crate::types::AudioNormalizationAlgorithm> {
+        &self.algorithm
+    }
     /// When set to correctAudio the output audio is corrected using the chosen algorithm. If set to measureOnly, the audio will be measured but not adjusted.
     pub fn algorithm_control(
         mut self,
@@ -78,6 +84,12 @@ impl AudioNormalizationSettingsBuilder {
         self.algorithm_control = input;
         self
     }
+    /// When set to correctAudio the output audio is corrected using the chosen algorithm. If set to measureOnly, the audio will be measured but not adjusted.
+    pub fn get_algorithm_control(
+        &self,
+    ) -> &::std::option::Option<crate::types::AudioNormalizationAlgorithmControl> {
+        &self.algorithm_control
+    }
     /// Target LKFS(loudness) to adjust volume to. If no value is entered, a default value will be used according to the chosen algorithm. The CALM Act (1770-1) recommends a target of -24 LKFS. The EBU R-128 specification (1770-2) recommends a target of -23 LKFS.
     pub fn target_lkfs(mut self, input: f64) -> Self {
         self.target_lkfs = ::std::option::Option::Some(input);
@@ -87,6 +99,10 @@ impl AudioNormalizationSettingsBuilder {
     pub fn set_target_lkfs(mut self, input: ::std::option::Option<f64>) -> Self {
         self.target_lkfs = input;
         self
+    }
+    /// Target LKFS(loudness) to adjust volume to. If no value is entered, a default value will be used according to the chosen algorithm. The CALM Act (1770-1) recommends a target of -24 LKFS. The EBU R-128 specification (1770-2) recommends a target of -23 LKFS.
+    pub fn get_target_lkfs(&self) -> &::std::option::Option<f64> {
+        &self.target_lkfs
     }
     /// Consumes the builder and constructs a [`AudioNormalizationSettings`](crate::types::AudioNormalizationSettings).
     pub fn build(self) -> crate::types::AudioNormalizationSettings {

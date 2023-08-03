@@ -112,6 +112,10 @@ impl PipeSourceKinesisStreamParametersBuilder {
         self.batch_size = input;
         self
     }
+    /// <p>The maximum number of records to include in each batch.</p>
+    pub fn get_batch_size(&self) -> &::std::option::Option<i32> {
+        &self.batch_size
+    }
     /// <p>Define the target queue to send dead-letter queue events to.</p>
     pub fn dead_letter_config(mut self, input: crate::types::DeadLetterConfig) -> Self {
         self.dead_letter_config = ::std::option::Option::Some(input);
@@ -124,6 +128,10 @@ impl PipeSourceKinesisStreamParametersBuilder {
     ) -> Self {
         self.dead_letter_config = input;
         self
+    }
+    /// <p>Define the target queue to send dead-letter queue events to.</p>
+    pub fn get_dead_letter_config(&self) -> &::std::option::Option<crate::types::DeadLetterConfig> {
+        &self.dead_letter_config
     }
     /// <p>(Streams only) Define how to handle item process failures. <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all the records are processed or there is one failed message left in the batch.</p>
     pub fn on_partial_batch_item_failure(
@@ -141,6 +149,12 @@ impl PipeSourceKinesisStreamParametersBuilder {
         self.on_partial_batch_item_failure = input;
         self
     }
+    /// <p>(Streams only) Define how to handle item process failures. <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all the records are processed or there is one failed message left in the batch.</p>
+    pub fn get_on_partial_batch_item_failure(
+        &self,
+    ) -> &::std::option::Option<crate::types::OnPartialBatchItemFailureStreams> {
+        &self.on_partial_batch_item_failure
+    }
     /// <p>The maximum length of a time to wait for events.</p>
     pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
         self.maximum_batching_window_in_seconds = ::std::option::Option::Some(input);
@@ -154,6 +168,10 @@ impl PipeSourceKinesisStreamParametersBuilder {
         self.maximum_batching_window_in_seconds = input;
         self
     }
+    /// <p>The maximum length of a time to wait for events.</p>
+    pub fn get_maximum_batching_window_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.maximum_batching_window_in_seconds
+    }
     /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, EventBridge never discards old records. </p>
     pub fn maximum_record_age_in_seconds(mut self, input: i32) -> Self {
         self.maximum_record_age_in_seconds = ::std::option::Option::Some(input);
@@ -163,6 +181,10 @@ impl PipeSourceKinesisStreamParametersBuilder {
     pub fn set_maximum_record_age_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_record_age_in_seconds = input;
         self
+    }
+    /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, EventBridge never discards old records. </p>
+    pub fn get_maximum_record_age_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.maximum_record_age_in_seconds
     }
     /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, EventBridge retries failed records until the record expires in the event source.</p>
     pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
@@ -174,6 +196,10 @@ impl PipeSourceKinesisStreamParametersBuilder {
         self.maximum_retry_attempts = input;
         self
     }
+    /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, EventBridge retries failed records until the record expires in the event source.</p>
+    pub fn get_maximum_retry_attempts(&self) -> &::std::option::Option<i32> {
+        &self.maximum_retry_attempts
+    }
     /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
     pub fn parallelization_factor(mut self, input: i32) -> Self {
         self.parallelization_factor = ::std::option::Option::Some(input);
@@ -183,6 +209,10 @@ impl PipeSourceKinesisStreamParametersBuilder {
     pub fn set_parallelization_factor(mut self, input: ::std::option::Option<i32>) -> Self {
         self.parallelization_factor = input;
         self
+    }
+    /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
+    pub fn get_parallelization_factor(&self) -> &::std::option::Option<i32> {
+        &self.parallelization_factor
     }
     /// <p>(Streams only) The position in a stream from which to start reading.</p>
     pub fn starting_position(mut self, input: crate::types::KinesisStreamStartPosition) -> Self {
@@ -197,6 +227,12 @@ impl PipeSourceKinesisStreamParametersBuilder {
         self.starting_position = input;
         self
     }
+    /// <p>(Streams only) The position in a stream from which to start reading.</p>
+    pub fn get_starting_position(
+        &self,
+    ) -> &::std::option::Option<crate::types::KinesisStreamStartPosition> {
+        &self.starting_position
+    }
     /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading, in Unix time seconds.</p>
     pub fn starting_position_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.starting_position_timestamp = ::std::option::Option::Some(input);
@@ -209,6 +245,12 @@ impl PipeSourceKinesisStreamParametersBuilder {
     ) -> Self {
         self.starting_position_timestamp = input;
         self
+    }
+    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading, in Unix time seconds.</p>
+    pub fn get_starting_position_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.starting_position_timestamp
     }
     /// Consumes the builder and constructs a [`PipeSourceKinesisStreamParameters`](crate::types::PipeSourceKinesisStreamParameters).
     pub fn build(self) -> crate::types::PipeSourceKinesisStreamParameters {

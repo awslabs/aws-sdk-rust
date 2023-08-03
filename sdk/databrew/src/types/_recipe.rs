@@ -154,6 +154,10 @@ impl RecipeBuilder {
         self.created_by = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the user who created the recipe.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by
+    }
     /// <p>The date and time that the recipe was created.</p>
     pub fn create_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_date = ::std::option::Option::Some(input);
@@ -166,6 +170,10 @@ impl RecipeBuilder {
     ) -> Self {
         self.create_date = input;
         self
+    }
+    /// <p>The date and time that the recipe was created.</p>
+    pub fn get_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_date
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last modified the recipe.</p>
     pub fn last_modified_by(
@@ -183,6 +191,10 @@ impl RecipeBuilder {
         self.last_modified_by = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the user who last modified the recipe.</p>
+    pub fn get_last_modified_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_by
+    }
     /// <p>The last modification date and time of the recipe.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input);
@@ -196,6 +208,10 @@ impl RecipeBuilder {
         self.last_modified_date = input;
         self
     }
+    /// <p>The last modification date and time of the recipe.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_date
+    }
     /// <p>The name of the project that the recipe is associated with.</p>
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
@@ -206,6 +222,10 @@ impl RecipeBuilder {
         self.project_name = input;
         self
     }
+    /// <p>The name of the project that the recipe is associated with.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the user who published the recipe.</p>
     pub fn published_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.published_by = ::std::option::Option::Some(input.into());
@@ -215,6 +235,10 @@ impl RecipeBuilder {
     pub fn set_published_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.published_by = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user who published the recipe.</p>
+    pub fn get_published_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.published_by
     }
     /// <p>The date and time when the recipe was published.</p>
     pub fn published_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -229,6 +253,10 @@ impl RecipeBuilder {
         self.published_date = input;
         self
     }
+    /// <p>The date and time when the recipe was published.</p>
+    pub fn get_published_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.published_date
+    }
     /// <p>The description of the recipe.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -238,6 +266,10 @@ impl RecipeBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the recipe.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The unique name for the recipe.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -249,6 +281,10 @@ impl RecipeBuilder {
         self.name = input;
         self
     }
+    /// <p>The unique name for the recipe.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) for the recipe.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -258,6 +294,10 @@ impl RecipeBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the recipe.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// Appends an item to `steps`.
     ///
@@ -277,6 +317,10 @@ impl RecipeBuilder {
     ) -> Self {
         self.steps = input;
         self
+    }
+    /// <p>A list of steps that are defined by the recipe.</p>
+    pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecipeStep>> {
+        &self.steps
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -303,6 +347,14 @@ impl RecipeBuilder {
         self.tags = input;
         self
     }
+    /// <p>Metadata tags that have been applied to the recipe.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The identifier for the version for the recipe. Must be one of the following:</p>
     /// <ul>
     /// <li> <p>Numeric version (<code>X.Y</code>) - <code>X</code> and <code>Y</code> stand for major and minor version numbers. The maximum length of each is 6 digits, and neither can be negative values. Both <code>X</code> and <code>Y</code> are required, and "0.0" isn't a valid version.</p> </li>
@@ -328,6 +380,15 @@ impl RecipeBuilder {
     ) -> Self {
         self.recipe_version = input;
         self
+    }
+    /// <p>The identifier for the version for the recipe. Must be one of the following:</p>
+    /// <ul>
+    /// <li> <p>Numeric version (<code>X.Y</code>) - <code>X</code> and <code>Y</code> stand for major and minor version numbers. The maximum length of each is 6 digits, and neither can be negative values. Both <code>X</code> and <code>Y</code> are required, and "0.0" isn't a valid version.</p> </li>
+    /// <li> <p> <code>LATEST_WORKING</code> - the most recent valid version being developed in a DataBrew project.</p> </li>
+    /// <li> <p> <code>LATEST_PUBLISHED</code> - the most recent published version.</p> </li>
+    /// </ul>
+    pub fn get_recipe_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recipe_version
     }
     /// Consumes the builder and constructs a [`Recipe`](crate::types::Recipe).
     pub fn build(self) -> crate::types::Recipe {

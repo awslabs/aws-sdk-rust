@@ -59,6 +59,10 @@ impl NestedFiltersBuilder {
         self.nested_property_name = input;
         self
     }
+    /// <p>The name of the property to use in the nested filters. The value must match a listed property name, such as <code>InputDataConfig</code>.</p>
+    pub fn get_nested_property_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nested_property_name
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -77,6 +81,10 @@ impl NestedFiltersBuilder {
     ) -> Self {
         self.filters = input;
         self
+    }
+    /// <p>A list of filters. Each filter acts on a property. Filters must contain at least one <code>Filters</code> value. For example, a <code>NestedFilters</code> call might include a filter on the <code>PropertyName</code> parameter of the <code>InputDataConfig</code> property: <code>InputDataConfig.DataSource.S3DataSource.S3Uri</code>.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
     }
     /// Consumes the builder and constructs a [`NestedFilters`](crate::types::NestedFilters).
     pub fn build(self) -> crate::types::NestedFilters {

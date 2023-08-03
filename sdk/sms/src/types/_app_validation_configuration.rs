@@ -75,6 +75,10 @@ impl AppValidationConfigurationBuilder {
         self.validation_id = input;
         self
     }
+    /// <p>The ID of the validation.</p>
+    pub fn get_validation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.validation_id
+    }
     /// <p>The name of the configuration.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -84,6 +88,10 @@ impl AppValidationConfigurationBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The validation strategy.</p>
     pub fn app_validation_strategy(mut self, input: crate::types::AppValidationStrategy) -> Self {
@@ -97,6 +105,12 @@ impl AppValidationConfigurationBuilder {
     ) -> Self {
         self.app_validation_strategy = input;
         self
+    }
+    /// <p>The validation strategy.</p>
+    pub fn get_app_validation_strategy(
+        &self,
+    ) -> &::std::option::Option<crate::types::AppValidationStrategy> {
+        &self.app_validation_strategy
     }
     /// <p>The validation parameters.</p>
     pub fn ssm_validation_parameters(
@@ -113,6 +127,12 @@ impl AppValidationConfigurationBuilder {
     ) -> Self {
         self.ssm_validation_parameters = input;
         self
+    }
+    /// <p>The validation parameters.</p>
+    pub fn get_ssm_validation_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::SsmValidationParameters> {
+        &self.ssm_validation_parameters
     }
     /// Consumes the builder and constructs a [`AppValidationConfiguration`](crate::types::AppValidationConfiguration).
     pub fn build(self) -> crate::types::AppValidationConfiguration {

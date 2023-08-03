@@ -60,6 +60,11 @@ impl ListDeadLetterSourceQueuesInputBuilder {
         self.queue_url = input;
         self
     }
+    /// <p>The URL of a dead-letter queue.</p>
+    /// <p>Queue URLs and names are case-sensitive.</p>
+    pub fn get_queue_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.queue_url
+    }
     /// <p>Pagination token to request the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -70,6 +75,10 @@ impl ListDeadLetterSourceQueuesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Pagination token to request the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>Maximum number of results to include in the response. Value range is 1 to 1000. You must set <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -79,6 +88,10 @@ impl ListDeadLetterSourceQueuesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>Maximum number of results to include in the response. Value range is 1 to 1000. You must set <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListDeadLetterSourceQueuesInput`](crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesInput).
     pub fn build(

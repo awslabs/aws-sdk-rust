@@ -54,6 +54,10 @@ impl NotificationConfigurationBuilder {
         self.status = input;
         self
     }
+    /// <p>Indicates if a notification configuration is enabled or disabled.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ConfigurationStatus> {
+        &self.status
+    }
     /// <p>The destination information required to deliver a notification to a customer.</p>
     pub fn destination_config(
         mut self,
@@ -69,6 +73,12 @@ impl NotificationConfigurationBuilder {
     ) -> Self {
         self.destination_config = input;
         self
+    }
+    /// <p>The destination information required to deliver a notification to a customer.</p>
+    pub fn get_destination_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::NotificationDestinationConfig> {
+        &self.destination_config
     }
     /// Consumes the builder and constructs a [`NotificationConfiguration`](crate::types::NotificationConfiguration).
     pub fn build(self) -> crate::types::NotificationConfiguration {

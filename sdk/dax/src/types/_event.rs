@@ -64,6 +64,10 @@ impl EventBuilder {
         self.source_name = input;
         self
     }
+    /// <p>The source of the event. For example, if the event occurred at the node level, the source would be the node ID.</p>
+    pub fn get_source_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_name
+    }
     /// <p>Specifies the origin of this event - a cluster, a parameter group, a node ID, etc.</p>
     pub fn source_type(mut self, input: crate::types::SourceType) -> Self {
         self.source_type = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl EventBuilder {
         self.source_type = input;
         self
     }
+    /// <p>Specifies the origin of this event - a cluster, a parameter group, a node ID, etc.</p>
+    pub fn get_source_type(&self) -> &::std::option::Option<crate::types::SourceType> {
+        &self.source_type
+    }
     /// <p>A user-defined message associated with the event.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -87,6 +95,10 @@ impl EventBuilder {
         self.message = input;
         self
     }
+    /// <p>A user-defined message associated with the event.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The date and time when the event occurred.</p>
     pub fn date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.date = ::std::option::Option::Some(input);
@@ -96,6 +108,10 @@ impl EventBuilder {
     pub fn set_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.date = input;
         self
+    }
+    /// <p>The date and time when the event occurred.</p>
+    pub fn get_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.date
     }
     /// Consumes the builder and constructs a [`Event`](crate::types::Event).
     pub fn build(self) -> crate::types::Event {

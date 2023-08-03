@@ -50,6 +50,12 @@ impl CategoryDetailsBuilder {
         self.points_of_interest = input;
         self
     }
+    /// <p>The section of audio where the category rule was detected.</p>
+    pub fn get_points_of_interest(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PointOfInterest>> {
+        &self.points_of_interest
+    }
     /// Consumes the builder and constructs a [`CategoryDetails`](crate::types::CategoryDetails).
     pub fn build(self) -> crate::types::CategoryDetails {
         crate::types::CategoryDetails {

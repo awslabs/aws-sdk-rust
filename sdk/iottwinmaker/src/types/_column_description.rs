@@ -48,6 +48,10 @@ impl ColumnDescriptionBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the column description.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type of the column description.</p>
     pub fn r#type(mut self, input: crate::types::ColumnType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ColumnDescriptionBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ColumnType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the column description.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ColumnType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`ColumnDescription`](crate::types::ColumnDescription).
     pub fn build(self) -> crate::types::ColumnDescription {

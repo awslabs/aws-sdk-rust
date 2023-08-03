@@ -62,6 +62,10 @@ impl CreateLicenseOutputBuilder {
         self.license_arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the license.</p>
+    pub fn get_license_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_arn
+    }
     /// <p>License status.</p>
     pub fn status(mut self, input: crate::types::LicenseStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl CreateLicenseOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>License status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::LicenseStatus> {
+        &self.status
+    }
     /// <p>License version.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl CreateLicenseOutputBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>License version.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

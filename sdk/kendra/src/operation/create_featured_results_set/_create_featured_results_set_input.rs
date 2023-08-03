@@ -98,6 +98,10 @@ impl CreateFeaturedResultsSetInputBuilder {
         self.index_id = input;
         self
     }
+    /// <p>The identifier of the index that you want to use for featuring results.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_id
+    }
     /// <p>A name for the set of featured results.</p>
     pub fn featured_results_set_name(
         mut self,
@@ -114,6 +118,10 @@ impl CreateFeaturedResultsSetInputBuilder {
         self.featured_results_set_name = input;
         self
     }
+    /// <p>A name for the set of featured results.</p>
+    pub fn get_featured_results_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.featured_results_set_name
+    }
     /// <p>A description for the set of featured results.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -124,6 +132,10 @@ impl CreateFeaturedResultsSetInputBuilder {
         self.description = input;
         self
     }
+    /// <p>A description for the set of featured results.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>A token that you provide to identify the request to create a set of featured results. Multiple calls to the <code>CreateFeaturedResultsSet</code> API with the same client token will create only one featured results set.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -133,6 +145,10 @@ impl CreateFeaturedResultsSetInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A token that you provide to identify the request to create a set of featured results. Multiple calls to the <code>CreateFeaturedResultsSet</code> API with the same client token will create only one featured results set.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>The current status of the set of featured results. When the value is <code>ACTIVE</code>, featured results are ready for use. You can still configure your settings before setting the status to <code>ACTIVE</code>. You can set the status to <code>ACTIVE</code> or <code>INACTIVE</code> using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateFeaturedResultsSet.html">UpdateFeaturedResultsSet</a> API. The queries you specify for featured results must be unique per featured results set for each index, whether the status is <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
     pub fn status(mut self, input: crate::types::FeaturedResultsSetStatus) -> Self {
@@ -146,6 +162,10 @@ impl CreateFeaturedResultsSetInputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the set of featured results. When the value is <code>ACTIVE</code>, featured results are ready for use. You can still configure your settings before setting the status to <code>ACTIVE</code>. You can set the status to <code>ACTIVE</code> or <code>INACTIVE</code> using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateFeaturedResultsSet.html">UpdateFeaturedResultsSet</a> API. The queries you specify for featured results must be unique per featured results set for each index, whether the status is <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::FeaturedResultsSetStatus> {
+        &self.status
     }
     /// Appends an item to `query_texts`.
     ///
@@ -166,6 +186,12 @@ impl CreateFeaturedResultsSetInputBuilder {
         self.query_texts = input;
         self
     }
+    /// <p>A list of queries for featuring results. For more information on the list of queries, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
+    pub fn get_query_texts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.query_texts
+    }
     /// Appends an item to `featured_documents`.
     ///
     /// To override the contents of this collection use [`set_featured_documents`](Self::set_featured_documents).
@@ -185,6 +211,12 @@ impl CreateFeaturedResultsSetInputBuilder {
         self.featured_documents = input;
         self
     }
+    /// <p>A list of document IDs for the documents you want to feature at the top of the search results page. For more information on the list of documents, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
+    pub fn get_featured_documents(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FeaturedDocument>> {
+        &self.featured_documents
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -203,6 +235,10 @@ impl CreateFeaturedResultsSetInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of key-value pairs that identify or categorize the featured results set. You can also use tags to help control access to the featured results set. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols:_ . : / = + - @.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateFeaturedResultsSetInput`](crate::operation::create_featured_results_set::CreateFeaturedResultsSetInput).
     pub fn build(

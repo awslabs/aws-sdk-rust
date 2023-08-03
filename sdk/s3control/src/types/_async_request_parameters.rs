@@ -74,6 +74,12 @@ impl AsyncRequestParametersBuilder {
         self.create_multi_region_access_point_request = input;
         self
     }
+    /// <p>A container of the parameters for a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html">CreateMultiRegionAccessPoint</a> request.</p>
+    pub fn get_create_multi_region_access_point_request(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateMultiRegionAccessPointInput> {
+        &self.create_multi_region_access_point_request
+    }
     /// <p>A container of the parameters for a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html">DeleteMultiRegionAccessPoint</a> request.</p>
     pub fn delete_multi_region_access_point_request(
         mut self,
@@ -90,6 +96,12 @@ impl AsyncRequestParametersBuilder {
         self.delete_multi_region_access_point_request = input;
         self
     }
+    /// <p>A container of the parameters for a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html">DeleteMultiRegionAccessPoint</a> request.</p>
+    pub fn get_delete_multi_region_access_point_request(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeleteMultiRegionAccessPointInput> {
+        &self.delete_multi_region_access_point_request
+    }
     /// <p>A container of the parameters for a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutMultiRegionAccessPoint.html">PutMultiRegionAccessPoint</a> request.</p>
     pub fn put_multi_region_access_point_policy_request(
         mut self,
@@ -105,6 +117,12 @@ impl AsyncRequestParametersBuilder {
     ) -> Self {
         self.put_multi_region_access_point_policy_request = input;
         self
+    }
+    /// <p>A container of the parameters for a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutMultiRegionAccessPoint.html">PutMultiRegionAccessPoint</a> request.</p>
+    pub fn get_put_multi_region_access_point_policy_request(
+        &self,
+    ) -> &::std::option::Option<crate::types::PutMultiRegionAccessPointPolicyInput> {
+        &self.put_multi_region_access_point_policy_request
     }
     /// Consumes the builder and constructs a [`AsyncRequestParameters`](crate::types::AsyncRequestParameters).
     pub fn build(self) -> crate::types::AsyncRequestParameters {

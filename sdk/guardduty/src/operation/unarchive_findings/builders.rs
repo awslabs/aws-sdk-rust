@@ -36,6 +36,12 @@ impl UnarchiveFindingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UnarchiveFindings as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::unarchive_findings::builders::UnarchiveFindingsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UnarchiveFindingsFluentBuilder {
         self.inner = self.inner.set_detector_id(input);
         self
     }
+    /// <p>The ID of the detector associated with the findings to unarchive.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_id()
+    }
     /// Appends an item to `FindingIds`.
     ///
     /// To override the contents of this collection use [`set_finding_ids`](Self::set_finding_ids).
@@ -142,5 +152,11 @@ impl UnarchiveFindingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_finding_ids(input);
         self
+    }
+    /// <p>The IDs of the findings to unarchive.</p>
+    pub fn get_finding_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_finding_ids()
     }
 }

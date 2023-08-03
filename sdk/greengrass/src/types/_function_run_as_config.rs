@@ -48,6 +48,10 @@ impl FunctionRunAsConfigBuilder {
         self.gid = input;
         self
     }
+    /// The group ID whose permissions are used to run a Lambda function.
+    pub fn get_gid(&self) -> &::std::option::Option<i32> {
+        &self.gid
+    }
     /// The user ID whose permissions are used to run a Lambda function.
     pub fn uid(mut self, input: i32) -> Self {
         self.uid = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl FunctionRunAsConfigBuilder {
     pub fn set_uid(mut self, input: ::std::option::Option<i32>) -> Self {
         self.uid = input;
         self
+    }
+    /// The user ID whose permissions are used to run a Lambda function.
+    pub fn get_uid(&self) -> &::std::option::Option<i32> {
+        &self.uid
     }
     /// Consumes the builder and constructs a [`FunctionRunAsConfig`](crate::types::FunctionRunAsConfig).
     pub fn build(self) -> crate::types::FunctionRunAsConfig {

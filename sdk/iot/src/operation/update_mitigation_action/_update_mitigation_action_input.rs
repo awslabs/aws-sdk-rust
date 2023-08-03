@@ -57,6 +57,10 @@ impl UpdateMitigationActionInputBuilder {
         self.action_name = input;
         self
     }
+    /// <p>The friendly name for the mitigation action. You cannot change the name by using <code>UpdateMitigationAction</code>. Instead, you must delete and recreate the mitigation action with the new name.</p>
+    pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_name
+    }
     /// <p>The ARN of the IAM role that is used to apply the mitigation action.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl UpdateMitigationActionInputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The ARN of the IAM role that is used to apply the mitigation action.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>Defines the type of action and the parameters for that action.</p>
     pub fn action_params(mut self, input: crate::types::MitigationActionParams) -> Self {
@@ -79,6 +87,12 @@ impl UpdateMitigationActionInputBuilder {
     ) -> Self {
         self.action_params = input;
         self
+    }
+    /// <p>Defines the type of action and the parameters for that action.</p>
+    pub fn get_action_params(
+        &self,
+    ) -> &::std::option::Option<crate::types::MitigationActionParams> {
+        &self.action_params
     }
     /// Consumes the builder and constructs a [`UpdateMitigationActionInput`](crate::operation::update_mitigation_action::UpdateMitigationActionInput).
     pub fn build(

@@ -57,6 +57,10 @@ impl RelationshipsListItemBuilder {
         self.ids = input;
         self
     }
+    /// <p>Identifers of the child blocks.</p>
+    pub fn get_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ids
+    }
     /// <p>Only supported relationship is a child relationship.</p>
     pub fn r#type(mut self, input: crate::types::RelationshipType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl RelationshipsListItemBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>Only supported relationship is a child relationship.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::RelationshipType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`RelationshipsListItem`](crate::types::RelationshipsListItem).
     pub fn build(self) -> crate::types::RelationshipsListItem {

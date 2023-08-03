@@ -64,6 +64,10 @@ impl LayerBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the function layer.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The size of the layer archive in bytes.</p>
     pub fn code_size(mut self, input: i64) -> Self {
         self.code_size = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl LayerBuilder {
     pub fn set_code_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.code_size = input;
         self
+    }
+    /// <p>The size of the layer archive in bytes.</p>
+    pub fn get_code_size(&self) -> &::std::option::Option<i64> {
+        &self.code_size
     }
     /// <p>The Amazon Resource Name (ARN) for a signing profile version.</p>
     pub fn signing_profile_version_arn(
@@ -90,6 +98,10 @@ impl LayerBuilder {
         self.signing_profile_version_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for a signing profile version.</p>
+    pub fn get_signing_profile_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signing_profile_version_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of a signing job.</p>
     pub fn signing_job_arn(
         mut self,
@@ -105,6 +117,10 @@ impl LayerBuilder {
     ) -> Self {
         self.signing_job_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a signing job.</p>
+    pub fn get_signing_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signing_job_arn
     }
     /// Consumes the builder and constructs a [`Layer`](crate::types::Layer).
     pub fn build(self) -> crate::types::Layer {

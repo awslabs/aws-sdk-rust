@@ -80,6 +80,10 @@ impl DescribeTableStatisticsInputBuilder {
         self.replication_task_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
+    pub fn get_replication_task_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_task_arn
+    }
     /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 500.</p>
@@ -94,6 +98,12 @@ impl DescribeTableStatisticsInputBuilder {
         self.max_records = input;
         self
     }
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 500.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        &self.max_records
+    }
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -103,6 +113,10 @@ impl DescribeTableStatisticsInputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// Appends an item to `filters`.
     ///
@@ -126,6 +140,12 @@ impl DescribeTableStatisticsInputBuilder {
     ) -> Self {
         self.filters = input;
         self
+    }
+    /// <p>Filters applied to table statistics.</p>
+    /// <p>Valid filter names: schema-name | table-name | table-state</p>
+    /// <p>A combination of filters creates an AND condition where each record matches all specified filters.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
     }
     /// Consumes the builder and constructs a [`DescribeTableStatisticsInput`](crate::operation::describe_table_statistics::DescribeTableStatisticsInput).
     pub fn build(

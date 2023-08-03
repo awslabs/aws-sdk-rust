@@ -61,6 +61,10 @@ impl EventParametersBuilder {
         self.event_type = input;
         self
     }
+    /// <p>The type of event. Currently, only snapshot sharing events are supported.</p>
+    pub fn get_event_type(&self) -> &::std::option::Option<crate::types::EventTypeValues> {
+        &self.event_type
+    }
     /// Appends an item to `snapshot_owner`.
     ///
     /// To override the contents of this collection use [`set_snapshot_owner`](Self::set_snapshot_owner).
@@ -83,6 +87,12 @@ impl EventParametersBuilder {
         self.snapshot_owner = input;
         self
     }
+    /// <p>The IDs of the Amazon Web Services accounts that can trigger policy by sharing snapshots with your account. The policy only runs if one of the specified Amazon Web Services accounts shares a snapshot with your account.</p>
+    pub fn get_snapshot_owner(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.snapshot_owner
+    }
     /// <p>The snapshot description that can trigger the policy. The description pattern is specified using a regular expression. The policy runs only if a snapshot with a description that matches the specified pattern is shared with your account.</p>
     /// <p>For example, specifying <code>^.*Created for policy: policy-1234567890abcdef0.*$</code> configures the policy to run only if snapshots created by policy <code>policy-1234567890abcdef0</code> are shared with your account.</p>
     pub fn description_regex(
@@ -100,6 +110,11 @@ impl EventParametersBuilder {
     ) -> Self {
         self.description_regex = input;
         self
+    }
+    /// <p>The snapshot description that can trigger the policy. The description pattern is specified using a regular expression. The policy runs only if a snapshot with a description that matches the specified pattern is shared with your account.</p>
+    /// <p>For example, specifying <code>^.*Created for policy: policy-1234567890abcdef0.*$</code> configures the policy to run only if snapshots created by policy <code>policy-1234567890abcdef0</code> are shared with your account.</p>
+    pub fn get_description_regex(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description_regex
     }
     /// Consumes the builder and constructs a [`EventParameters`](crate::types::EventParameters).
     pub fn build(self) -> crate::types::EventParameters {

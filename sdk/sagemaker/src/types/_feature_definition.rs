@@ -48,6 +48,10 @@ impl FeatureDefinitionBuilder {
         self.feature_name = input;
         self
     }
+    /// <p>The name of a feature. The type must be a string. <code>FeatureName</code> cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code>.</p>
+    pub fn get_feature_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.feature_name
+    }
     /// <p>The value type of a feature. Valid values are Integral, Fractional, or String.</p>
     pub fn feature_type(mut self, input: crate::types::FeatureType) -> Self {
         self.feature_type = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl FeatureDefinitionBuilder {
     ) -> Self {
         self.feature_type = input;
         self
+    }
+    /// <p>The value type of a feature. Valid values are Integral, Fractional, or String.</p>
+    pub fn get_feature_type(&self) -> &::std::option::Option<crate::types::FeatureType> {
+        &self.feature_type
     }
     /// Consumes the builder and constructs a [`FeatureDefinition`](crate::types::FeatureDefinition).
     pub fn build(self) -> crate::types::FeatureDefinition {

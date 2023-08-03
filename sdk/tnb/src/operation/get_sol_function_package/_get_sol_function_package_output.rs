@@ -154,6 +154,10 @@ impl GetSolFunctionPackageOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>Function package ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>Function package ARN.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -163,6 +167,10 @@ impl GetSolFunctionPackageOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>Function package ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>Function package onboarding state.</p>
     pub fn onboarding_state(mut self, input: crate::types::OnboardingState) -> Self {
@@ -177,6 +185,10 @@ impl GetSolFunctionPackageOutputBuilder {
         self.onboarding_state = input;
         self
     }
+    /// <p>Function package onboarding state.</p>
+    pub fn get_onboarding_state(&self) -> &::std::option::Option<crate::types::OnboardingState> {
+        &self.onboarding_state
+    }
     /// <p>Function package operational state.</p>
     pub fn operational_state(mut self, input: crate::types::OperationalState) -> Self {
         self.operational_state = ::std::option::Option::Some(input);
@@ -189,6 +201,10 @@ impl GetSolFunctionPackageOutputBuilder {
     ) -> Self {
         self.operational_state = input;
         self
+    }
+    /// <p>Function package operational state.</p>
+    pub fn get_operational_state(&self) -> &::std::option::Option<crate::types::OperationalState> {
+        &self.operational_state
     }
     /// <p>Function package usage state.</p>
     pub fn usage_state(mut self, input: crate::types::UsageState) -> Self {
@@ -203,6 +219,10 @@ impl GetSolFunctionPackageOutputBuilder {
         self.usage_state = input;
         self
     }
+    /// <p>Function package usage state.</p>
+    pub fn get_usage_state(&self) -> &::std::option::Option<crate::types::UsageState> {
+        &self.usage_state
+    }
     /// <p>Function package descriptor ID.</p>
     pub fn vnfd_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vnfd_id = ::std::option::Option::Some(input.into());
@@ -213,6 +233,10 @@ impl GetSolFunctionPackageOutputBuilder {
         self.vnfd_id = input;
         self
     }
+    /// <p>Function package descriptor ID.</p>
+    pub fn get_vnfd_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vnfd_id
+    }
     /// <p>Network function provider.</p>
     pub fn vnf_provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vnf_provider = ::std::option::Option::Some(input.into());
@@ -222,6 +246,10 @@ impl GetSolFunctionPackageOutputBuilder {
     pub fn set_vnf_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vnf_provider = input;
         self
+    }
+    /// <p>Network function provider.</p>
+    pub fn get_vnf_provider(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vnf_provider
     }
     /// <p>Network function product name.</p>
     pub fn vnf_product_name(
@@ -239,6 +267,10 @@ impl GetSolFunctionPackageOutputBuilder {
         self.vnf_product_name = input;
         self
     }
+    /// <p>Network function product name.</p>
+    pub fn get_vnf_product_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vnf_product_name
+    }
     /// <p>Function package descriptor version.</p>
     pub fn vnfd_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vnfd_version = ::std::option::Option::Some(input.into());
@@ -248,6 +280,10 @@ impl GetSolFunctionPackageOutputBuilder {
     pub fn set_vnfd_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vnfd_version = input;
         self
+    }
+    /// <p>Function package descriptor version.</p>
+    pub fn get_vnfd_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vnfd_version
     }
     /// <p>Metadata related to the function package.</p>
     /// <p>A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.</p>
@@ -263,6 +299,13 @@ impl GetSolFunctionPackageOutputBuilder {
     ) -> Self {
         self.metadata = input;
         self
+    }
+    /// <p>Metadata related to the function package.</p>
+    /// <p>A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.</p>
+    pub fn get_metadata(
+        &self,
+    ) -> &::std::option::Option<crate::types::GetSolFunctionPackageMetadata> {
+        &self.metadata
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -288,6 +331,14 @@ impl GetSolFunctionPackageOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

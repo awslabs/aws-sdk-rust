@@ -36,6 +36,10 @@ impl UpdateDirectConnectGatewayFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDirectConnectGateway as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_direct_connect_gateway::builders::UpdateDirectConnectGatewayInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl UpdateDirectConnectGatewayFluentBuilder {
         self.inner = self.inner.set_direct_connect_gateway_id(input);
         self
     }
+    /// <p>The ID of the Direct Connect gateway to update.</p>
+    pub fn get_direct_connect_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_direct_connect_gateway_id()
+    }
     /// <p>The new name for the Direct Connect gateway.</p>
     pub fn new_direct_connect_gateway_name(
         mut self,
@@ -147,5 +155,11 @@ impl UpdateDirectConnectGatewayFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_new_direct_connect_gateway_name(input);
         self
+    }
+    /// <p>The new name for the Direct Connect gateway.</p>
+    pub fn get_new_direct_connect_gateway_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_new_direct_connect_gateway_name()
     }
 }

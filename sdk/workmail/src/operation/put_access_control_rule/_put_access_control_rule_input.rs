@@ -130,6 +130,10 @@ impl PutAccessControlRuleInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The rule name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The rule effect.</p>
     pub fn effect(mut self, input: crate::types::AccessControlRuleEffect) -> Self {
         self.effect = ::std::option::Option::Some(input);
@@ -143,6 +147,10 @@ impl PutAccessControlRuleInputBuilder {
         self.effect = input;
         self
     }
+    /// <p>The rule effect.</p>
+    pub fn get_effect(&self) -> &::std::option::Option<crate::types::AccessControlRuleEffect> {
+        &self.effect
+    }
     /// <p>The rule description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -152,6 +160,10 @@ impl PutAccessControlRuleInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The rule description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `ip_ranges`.
     ///
@@ -171,6 +183,10 @@ impl PutAccessControlRuleInputBuilder {
     ) -> Self {
         self.ip_ranges = input;
         self
+    }
+    /// <p>IPv4 CIDR ranges to include in the rule.</p>
+    pub fn get_ip_ranges(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ip_ranges
     }
     /// Appends an item to `not_ip_ranges`.
     ///
@@ -194,6 +210,12 @@ impl PutAccessControlRuleInputBuilder {
         self.not_ip_ranges = input;
         self
     }
+    /// <p>IPv4 CIDR ranges to exclude from the rule.</p>
+    pub fn get_not_ip_ranges(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.not_ip_ranges
+    }
     /// Appends an item to `actions`.
     ///
     /// To override the contents of this collection use [`set_actions`](Self::set_actions).
@@ -212,6 +234,10 @@ impl PutAccessControlRuleInputBuilder {
     ) -> Self {
         self.actions = input;
         self
+    }
+    /// <p>Access protocol actions to include in the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.actions
     }
     /// Appends an item to `not_actions`.
     ///
@@ -232,6 +258,12 @@ impl PutAccessControlRuleInputBuilder {
         self.not_actions = input;
         self
     }
+    /// <p>Access protocol actions to exclude from the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+    pub fn get_not_actions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.not_actions
+    }
     /// Appends an item to `user_ids`.
     ///
     /// To override the contents of this collection use [`set_user_ids`](Self::set_user_ids).
@@ -250,6 +282,10 @@ impl PutAccessControlRuleInputBuilder {
     ) -> Self {
         self.user_ids = input;
         self
+    }
+    /// <p>User IDs to include in the rule.</p>
+    pub fn get_user_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.user_ids
     }
     /// Appends an item to `not_user_ids`.
     ///
@@ -270,6 +306,12 @@ impl PutAccessControlRuleInputBuilder {
         self.not_user_ids = input;
         self
     }
+    /// <p>User IDs to exclude from the rule.</p>
+    pub fn get_not_user_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.not_user_ids
+    }
     /// <p>The identifier of the organization.</p>
     pub fn organization_id(
         mut self,
@@ -285,6 +327,10 @@ impl PutAccessControlRuleInputBuilder {
     ) -> Self {
         self.organization_id = input;
         self
+    }
+    /// <p>The identifier of the organization.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
     }
     /// Appends an item to `impersonation_role_ids`.
     ///
@@ -308,6 +354,12 @@ impl PutAccessControlRuleInputBuilder {
         self.impersonation_role_ids = input;
         self
     }
+    /// <p>Impersonation role IDs to include in the rule.</p>
+    pub fn get_impersonation_role_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.impersonation_role_ids
+    }
     /// Appends an item to `not_impersonation_role_ids`.
     ///
     /// To override the contents of this collection use [`set_not_impersonation_role_ids`](Self::set_not_impersonation_role_ids).
@@ -329,6 +381,12 @@ impl PutAccessControlRuleInputBuilder {
     ) -> Self {
         self.not_impersonation_role_ids = input;
         self
+    }
+    /// <p>Impersonation role IDs to exclude from the rule.</p>
+    pub fn get_not_impersonation_role_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.not_impersonation_role_ids
     }
     /// Consumes the builder and constructs a [`PutAccessControlRuleInput`](crate::operation::put_access_control_rule::PutAccessControlRuleInput).
     pub fn build(

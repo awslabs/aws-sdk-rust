@@ -52,6 +52,13 @@ impl DescribeCustomKeyStoresFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeCustomKeyStores as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_custom_key_stores::builders::DescribeCustomKeyStoresInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -159,6 +166,11 @@ impl DescribeCustomKeyStoresFluentBuilder {
         self.inner = self.inner.set_custom_key_store_id(input);
         self
     }
+    /// <p>Gets only information about the specified custom key store. Enter the key store ID.</p>
+    /// <p>By default, this operation gets information about all custom key stores in the account and Region. To limit the output to a particular custom key store, provide either the <code>CustomKeyStoreId</code> or <code>CustomKeyStoreName</code> parameter, but not both.</p>
+    pub fn get_custom_key_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_custom_key_store_id()
+    }
     /// <p>Gets only information about the specified custom key store. Enter the friendly name of the custom key store.</p>
     /// <p>By default, this operation gets information about all custom key stores in the account and Region. To limit the output to a particular custom key store, provide either the <code>CustomKeyStoreId</code> or <code>CustomKeyStoreName</code> parameter, but not both.</p>
     pub fn custom_key_store_name(
@@ -177,6 +189,11 @@ impl DescribeCustomKeyStoresFluentBuilder {
         self.inner = self.inner.set_custom_key_store_name(input);
         self
     }
+    /// <p>Gets only information about the specified custom key store. Enter the friendly name of the custom key store.</p>
+    /// <p>By default, this operation gets information about all custom key stores in the account and Region. To limit the output to a particular custom key store, provide either the <code>CustomKeyStoreId</code> or <code>CustomKeyStoreName</code> parameter, but not both.</p>
+    pub fn get_custom_key_store_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_custom_key_store_name()
+    }
     /// <p>Use this parameter to specify the maximum number of items to return. When this value is present, KMS does not return more than the specified number of items, but it might return fewer.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -187,6 +204,10 @@ impl DescribeCustomKeyStoresFluentBuilder {
         self.inner = self.inner.set_limit(input);
         self
     }
+    /// <p>Use this parameter to specify the maximum number of items to return. When this value is present, KMS does not return more than the specified number of items, but it might return fewer.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
+    }
     /// <p>Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the truncated response you just received.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -196,5 +217,9 @@ impl DescribeCustomKeyStoresFluentBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
+    }
+    /// <p>Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the truncated response you just received.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
     }
 }

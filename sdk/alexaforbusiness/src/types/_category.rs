@@ -48,6 +48,10 @@ impl CategoryBuilder {
         self.category_id = input;
         self
     }
+    /// <p>The ID of the skill store category.</p>
+    pub fn get_category_id(&self) -> &::std::option::Option<i64> {
+        &self.category_id
+    }
     /// <p>The name of the skill store category.</p>
     pub fn category_name(
         mut self,
@@ -63,6 +67,10 @@ impl CategoryBuilder {
     ) -> Self {
         self.category_name = input;
         self
+    }
+    /// <p>The name of the skill store category.</p>
+    pub fn get_category_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.category_name
     }
     /// Consumes the builder and constructs a [`Category`](crate::types::Category).
     pub fn build(self) -> crate::types::Category {

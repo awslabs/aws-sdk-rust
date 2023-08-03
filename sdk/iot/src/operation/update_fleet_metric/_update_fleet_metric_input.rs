@@ -112,6 +112,10 @@ impl UpdateFleetMetricInputBuilder {
         self.metric_name = input;
         self
     }
+    /// <p>The name of the fleet metric to update.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
+    }
     /// <p>The search query string.</p>
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_string = ::std::option::Option::Some(input.into());
@@ -121,6 +125,10 @@ impl UpdateFleetMetricInputBuilder {
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_string = input;
         self
+    }
+    /// <p>The search query string.</p>
+    pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_string
     }
     /// <p>The type of the aggregation query.</p>
     pub fn aggregation_type(mut self, input: crate::types::AggregationType) -> Self {
@@ -135,6 +143,10 @@ impl UpdateFleetMetricInputBuilder {
         self.aggregation_type = input;
         self
     }
+    /// <p>The type of the aggregation query.</p>
+    pub fn get_aggregation_type(&self) -> &::std::option::Option<crate::types::AggregationType> {
+        &self.aggregation_type
+    }
     /// <p>The time in seconds between fleet metric emissions. Range [60(1 min), 86400(1 day)] and must be multiple of 60.</p>
     pub fn period(mut self, input: i32) -> Self {
         self.period = ::std::option::Option::Some(input);
@@ -144,6 +156,10 @@ impl UpdateFleetMetricInputBuilder {
     pub fn set_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.period = input;
         self
+    }
+    /// <p>The time in seconds between fleet metric emissions. Range [60(1 min), 86400(1 day)] and must be multiple of 60.</p>
+    pub fn get_period(&self) -> &::std::option::Option<i32> {
+        &self.period
     }
     /// <p>The field to aggregate.</p>
     pub fn aggregation_field(
@@ -161,6 +177,10 @@ impl UpdateFleetMetricInputBuilder {
         self.aggregation_field = input;
         self
     }
+    /// <p>The field to aggregate.</p>
+    pub fn get_aggregation_field(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aggregation_field
+    }
     /// <p>The description of the fleet metric.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -170,6 +190,10 @@ impl UpdateFleetMetricInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the fleet metric.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The version of the query.</p>
     pub fn query_version(
@@ -187,6 +211,10 @@ impl UpdateFleetMetricInputBuilder {
         self.query_version = input;
         self
     }
+    /// <p>The version of the query.</p>
+    pub fn get_query_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_version
+    }
     /// <p>The name of the index to search.</p>
     pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_name = ::std::option::Option::Some(input.into());
@@ -196,6 +224,10 @@ impl UpdateFleetMetricInputBuilder {
     pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.index_name = input;
         self
+    }
+    /// <p>The name of the index to search.</p>
+    pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_name
     }
     /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
     pub fn unit(mut self, input: crate::types::FleetMetricUnit) -> Self {
@@ -207,6 +239,10 @@ impl UpdateFleetMetricInputBuilder {
         self.unit = input;
         self
     }
+    /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
+    pub fn get_unit(&self) -> &::std::option::Option<crate::types::FleetMetricUnit> {
+        &self.unit
+    }
     /// <p>The expected version of the fleet metric record in the registry.</p>
     pub fn expected_version(mut self, input: i64) -> Self {
         self.expected_version = ::std::option::Option::Some(input);
@@ -216,6 +252,10 @@ impl UpdateFleetMetricInputBuilder {
     pub fn set_expected_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.expected_version = input;
         self
+    }
+    /// <p>The expected version of the fleet metric record in the registry.</p>
+    pub fn get_expected_version(&self) -> &::std::option::Option<i64> {
+        &self.expected_version
     }
     /// Consumes the builder and constructs a [`UpdateFleetMetricInput`](crate::operation::update_fleet_metric::UpdateFleetMetricInput).
     pub fn build(

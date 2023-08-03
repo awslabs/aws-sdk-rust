@@ -50,6 +50,10 @@ impl InstanceIdentityBuilder {
         self.document = input;
         self
     }
+    /// <p>A description of an EC2 instance that is generated when the instance is launched and exposed to the instance via the instance metadata service in the form of a JSON representation of an object.</p>
+    pub fn get_document(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document
+    }
     /// <p>A signature which can be used to verify the accuracy and authenticity of the information provided in the instance identity document.</p>
     pub fn signature(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signature = ::std::option::Option::Some(input.into());
@@ -59,6 +63,10 @@ impl InstanceIdentityBuilder {
     pub fn set_signature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signature = input;
         self
+    }
+    /// <p>A signature which can be used to verify the accuracy and authenticity of the information provided in the instance identity document.</p>
+    pub fn get_signature(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signature
     }
     /// Consumes the builder and constructs a [`InstanceIdentity`](crate::types::InstanceIdentity).
     pub fn build(self) -> crate::types::InstanceIdentity {

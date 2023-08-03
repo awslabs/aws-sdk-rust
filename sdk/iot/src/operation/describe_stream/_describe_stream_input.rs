@@ -39,6 +39,10 @@ impl DescribeStreamInputBuilder {
         self.stream_id = input;
         self
     }
+    /// <p>The stream ID.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_id
+    }
     /// Consumes the builder and constructs a [`DescribeStreamInput`](crate::operation::describe_stream::DescribeStreamInput).
     pub fn build(
         self,

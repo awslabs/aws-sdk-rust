@@ -36,6 +36,13 @@ impl DescribeSourceServersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeSourceServers as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_source_servers::builders::DescribeSourceServersInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +147,12 @@ impl DescribeSourceServersFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>Request to filter Source Servers list.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<crate::types::DescribeSourceServersRequestFilters> {
+        self.inner.get_filters()
+    }
     /// <p>Request to filter Source Servers list by maximum results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -149,6 +162,10 @@ impl DescribeSourceServersFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>Request to filter Source Servers list by maximum results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>Request to filter Source Servers list by next token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -160,6 +177,10 @@ impl DescribeSourceServersFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>Request to filter Source Servers list by next token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>Request to filter Source Servers list by Accoun ID.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
@@ -169,5 +190,9 @@ impl DescribeSourceServersFluentBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
+    }
+    /// <p>Request to filter Source Servers list by Accoun ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
     }
 }

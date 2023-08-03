@@ -50,6 +50,12 @@ impl DeleteElasticsearchDomainOutputBuilder {
         self.domain_status = input;
         self
     }
+    /// <p>The status of the Elasticsearch domain being deleted.</p>
+    pub fn get_domain_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ElasticsearchDomainStatus> {
+        &self.domain_status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -102,6 +102,19 @@ impl CreateDbClusterSnapshotInputBuilder {
         self.db_cluster_snapshot_identifier = input;
         self
     }
+    /// <p>The identifier of the cluster snapshot. This parameter is stored as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens. </p> </li>
+    /// </ul>
+    /// <p>Example: <code>my-cluster-snapshot1</code> </p>
+    pub fn get_db_cluster_snapshot_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_snapshot_identifier
+    }
     /// <p>The identifier of the cluster to create a snapshot for. This parameter is not case sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -128,6 +141,15 @@ impl CreateDbClusterSnapshotInputBuilder {
         self.db_cluster_identifier = input;
         self
     }
+    /// <p>The identifier of the cluster to create a snapshot for. This parameter is not case sensitive.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the identifier of an existing <code>DBCluster</code>.</p> </li>
+    /// </ul>
+    /// <p>Example: <code>my-cluster</code> </p>
+    pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_identifier
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -146,6 +168,10 @@ impl CreateDbClusterSnapshotInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags to be assigned to the cluster snapshot.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDbClusterSnapshotInput`](crate::operation::create_db_cluster_snapshot::CreateDbClusterSnapshotInput).
     pub fn build(

@@ -51,6 +51,10 @@ impl ExecutionTimeFilterBuilder {
         self.oldest_date = input;
         self
     }
+    /// <p>Specifies the oldest start or close date and time to return.</p>
+    pub fn get_oldest_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.oldest_date
+    }
     /// <p>Specifies the latest start or close date and time to return.</p>
     pub fn latest_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.latest_date = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl ExecutionTimeFilterBuilder {
     ) -> Self {
         self.latest_date = input;
         self
+    }
+    /// <p>Specifies the latest start or close date and time to return.</p>
+    pub fn get_latest_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.latest_date
     }
     /// Consumes the builder and constructs a [`ExecutionTimeFilter`](crate::types::ExecutionTimeFilter).
     pub fn build(self) -> crate::types::ExecutionTimeFilter {

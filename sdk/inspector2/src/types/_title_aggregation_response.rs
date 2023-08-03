@@ -64,6 +64,10 @@ impl TitleAggregationResponseBuilder {
         self.title = input;
         self
     }
+    /// <p>The title that the findings were aggregated on.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
+    }
     /// <p>The vulnerability ID of the finding.</p>
     pub fn vulnerability_id(
         mut self,
@@ -80,6 +84,10 @@ impl TitleAggregationResponseBuilder {
         self.vulnerability_id = input;
         self
     }
+    /// <p>The vulnerability ID of the finding.</p>
+    pub fn get_vulnerability_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vulnerability_id
+    }
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -89,6 +97,10 @@ impl TitleAggregationResponseBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>An object that represent the count of matched findings per severity.</p>
     pub fn severity_counts(mut self, input: crate::types::SeverityCounts) -> Self {
@@ -102,6 +114,10 @@ impl TitleAggregationResponseBuilder {
     ) -> Self {
         self.severity_counts = input;
         self
+    }
+    /// <p>An object that represent the count of matched findings per severity.</p>
+    pub fn get_severity_counts(&self) -> &::std::option::Option<crate::types::SeverityCounts> {
+        &self.severity_counts
     }
     /// Consumes the builder and constructs a [`TitleAggregationResponse`](crate::types::TitleAggregationResponse).
     pub fn build(self) -> crate::types::TitleAggregationResponse {

@@ -36,6 +36,12 @@ impl DeleteAssociationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteAssociation as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_association::builders::DeleteAssociationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DeleteAssociationFluentBuilder {
         self.inner = self.inner.set_source_arn(input);
         self
     }
+    /// <p>The ARN of the source.</p>
+    pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_arn()
+    }
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
     pub fn destination_arn(
         mut self,
@@ -141,5 +151,9 @@ impl DeleteAssociationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destination_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the destination.</p>
+    pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_arn()
     }
 }

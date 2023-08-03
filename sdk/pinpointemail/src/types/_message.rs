@@ -48,6 +48,10 @@ impl MessageBuilder {
         self.subject = input;
         self
     }
+    /// <p>The subject line of the email. The subject line can only contain 7-bit ASCII characters. However, you can specify non-ASCII characters in the subject line by using encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>.</p>
+    pub fn get_subject(&self) -> &::std::option::Option<crate::types::Content> {
+        &self.subject
+    }
     /// <p>The body of the message. You can specify an HTML version of the message, a text-only version of the message, or both.</p>
     pub fn body(mut self, input: crate::types::Body) -> Self {
         self.body = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl MessageBuilder {
     pub fn set_body(mut self, input: ::std::option::Option<crate::types::Body>) -> Self {
         self.body = input;
         self
+    }
+    /// <p>The body of the message. You can specify an HTML version of the message, a text-only version of the message, or both.</p>
+    pub fn get_body(&self) -> &::std::option::Option<crate::types::Body> {
+        &self.body
     }
     /// Consumes the builder and constructs a [`Message`](crate::types::Message).
     pub fn build(self) -> crate::types::Message {

@@ -40,6 +40,10 @@ impl CodegenJobAssetBuilder {
         self.download_url = input;
         self
     }
+    /// <p>The URL to use to access the asset.</p>
+    pub fn get_download_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.download_url
+    }
     /// Consumes the builder and constructs a [`CodegenJobAsset`](crate::types::CodegenJobAsset).
     pub fn build(self) -> crate::types::CodegenJobAsset {
         crate::types::CodegenJobAsset {

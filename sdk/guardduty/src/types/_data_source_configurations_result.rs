@@ -91,6 +91,12 @@ impl DataSourceConfigurationsResultBuilder {
         self.cloud_trail = input;
         self
     }
+    /// <p>An object that contains information on the status of CloudTrail as a data source.</p>
+    pub fn get_cloud_trail(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudTrailConfigurationResult> {
+        &self.cloud_trail
+    }
     /// <p>An object that contains information on the status of DNS logs as a data source.</p>
     pub fn dns_logs(mut self, input: crate::types::DnsLogsConfigurationResult) -> Self {
         self.dns_logs = ::std::option::Option::Some(input);
@@ -103,6 +109,10 @@ impl DataSourceConfigurationsResultBuilder {
     ) -> Self {
         self.dns_logs = input;
         self
+    }
+    /// <p>An object that contains information on the status of DNS logs as a data source.</p>
+    pub fn get_dns_logs(&self) -> &::std::option::Option<crate::types::DnsLogsConfigurationResult> {
+        &self.dns_logs
     }
     /// <p>An object that contains information on the status of VPC flow logs as a data source.</p>
     pub fn flow_logs(mut self, input: crate::types::FlowLogsConfigurationResult) -> Self {
@@ -117,6 +127,12 @@ impl DataSourceConfigurationsResultBuilder {
         self.flow_logs = input;
         self
     }
+    /// <p>An object that contains information on the status of VPC flow logs as a data source.</p>
+    pub fn get_flow_logs(
+        &self,
+    ) -> &::std::option::Option<crate::types::FlowLogsConfigurationResult> {
+        &self.flow_logs
+    }
     /// <p>An object that contains information on the status of S3 Data event logs as a data source.</p>
     pub fn s3_logs(mut self, input: crate::types::S3LogsConfigurationResult) -> Self {
         self.s3_logs = ::std::option::Option::Some(input);
@@ -130,6 +146,10 @@ impl DataSourceConfigurationsResultBuilder {
         self.s3_logs = input;
         self
     }
+    /// <p>An object that contains information on the status of S3 Data event logs as a data source.</p>
+    pub fn get_s3_logs(&self) -> &::std::option::Option<crate::types::S3LogsConfigurationResult> {
+        &self.s3_logs
+    }
     /// <p>An object that contains information on the status of all Kubernetes data sources.</p>
     pub fn kubernetes(mut self, input: crate::types::KubernetesConfigurationResult) -> Self {
         self.kubernetes = ::std::option::Option::Some(input);
@@ -142,6 +162,12 @@ impl DataSourceConfigurationsResultBuilder {
     ) -> Self {
         self.kubernetes = input;
         self
+    }
+    /// <p>An object that contains information on the status of all Kubernetes data sources.</p>
+    pub fn get_kubernetes(
+        &self,
+    ) -> &::std::option::Option<crate::types::KubernetesConfigurationResult> {
+        &self.kubernetes
     }
     /// <p>Describes the configuration of Malware Protection data sources.</p>
     pub fn malware_protection(
@@ -158,6 +184,12 @@ impl DataSourceConfigurationsResultBuilder {
     ) -> Self {
         self.malware_protection = input;
         self
+    }
+    /// <p>Describes the configuration of Malware Protection data sources.</p>
+    pub fn get_malware_protection(
+        &self,
+    ) -> &::std::option::Option<crate::types::MalwareProtectionConfigurationResult> {
+        &self.malware_protection
     }
     /// Consumes the builder and constructs a [`DataSourceConfigurationsResult`](crate::types::DataSourceConfigurationsResult).
     pub fn build(self) -> crate::types::DataSourceConfigurationsResult {

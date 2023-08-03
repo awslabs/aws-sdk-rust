@@ -136,6 +136,10 @@ impl SamplingRuleUpdateBuilder {
         self.rule_name = input;
         self
     }
+    /// <p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
+    pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_name
+    }
     /// <p>The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
     pub fn rule_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_arn = ::std::option::Option::Some(input.into());
@@ -145,6 +149,10 @@ impl SamplingRuleUpdateBuilder {
     pub fn set_rule_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_arn = input;
         self
+    }
+    /// <p>The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
+    pub fn get_rule_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_arn
     }
     /// <p>Matches the ARN of the Amazon Web Services resource on which the service runs.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -156,6 +164,10 @@ impl SamplingRuleUpdateBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>Matches the ARN of the Amazon Web Services resource on which the service runs.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p>The priority of the sampling rule.</p>
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
@@ -165,6 +177,10 @@ impl SamplingRuleUpdateBuilder {
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
+    }
+    /// <p>The priority of the sampling rule.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
     }
     /// <p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>
     pub fn fixed_rate(mut self, input: f64) -> Self {
@@ -176,6 +192,10 @@ impl SamplingRuleUpdateBuilder {
         self.fixed_rate = input;
         self
     }
+    /// <p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>
+    pub fn get_fixed_rate(&self) -> &::std::option::Option<f64> {
+        &self.fixed_rate
+    }
     /// <p>A fixed number of matching requests to instrument per second, prior to applying the fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.</p>
     pub fn reservoir_size(mut self, input: i32) -> Self {
         self.reservoir_size = ::std::option::Option::Some(input);
@@ -185,6 +205,10 @@ impl SamplingRuleUpdateBuilder {
     pub fn set_reservoir_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.reservoir_size = input;
         self
+    }
+    /// <p>A fixed number of matching requests to instrument per second, prior to applying the fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.</p>
+    pub fn get_reservoir_size(&self) -> &::std::option::Option<i32> {
+        &self.reservoir_size
     }
     /// <p>Matches the hostname from a request URL.</p>
     pub fn host(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -196,6 +220,10 @@ impl SamplingRuleUpdateBuilder {
         self.host = input;
         self
     }
+    /// <p>Matches the hostname from a request URL.</p>
+    pub fn get_host(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host
+    }
     /// <p>Matches the <code>name</code> that the service uses to identify itself in segments.</p>
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
@@ -205,6 +233,10 @@ impl SamplingRuleUpdateBuilder {
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_name = input;
         self
+    }
+    /// <p>Matches the <code>name</code> that the service uses to identify itself in segments.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
     }
     /// <p>Matches the <code>origin</code> that the service uses to identify its type in segments.</p>
     pub fn service_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -216,6 +248,10 @@ impl SamplingRuleUpdateBuilder {
         self.service_type = input;
         self
     }
+    /// <p>Matches the <code>origin</code> that the service uses to identify its type in segments.</p>
+    pub fn get_service_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_type
+    }
     /// <p>Matches the HTTP method of a request.</p>
     pub fn http_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.http_method = ::std::option::Option::Some(input.into());
@@ -226,6 +262,10 @@ impl SamplingRuleUpdateBuilder {
         self.http_method = input;
         self
     }
+    /// <p>Matches the HTTP method of a request.</p>
+    pub fn get_http_method(&self) -> &::std::option::Option<::std::string::String> {
+        &self.http_method
+    }
     /// <p>Matches the path from a request URL.</p>
     pub fn url_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url_path = ::std::option::Option::Some(input.into());
@@ -235,6 +275,10 @@ impl SamplingRuleUpdateBuilder {
     pub fn set_url_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url_path = input;
         self
+    }
+    /// <p>Matches the path from a request URL.</p>
+    pub fn get_url_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url_path
     }
     /// Adds a key-value pair to `attributes`.
     ///
@@ -260,6 +304,14 @@ impl SamplingRuleUpdateBuilder {
     ) -> Self {
         self.attributes = input;
         self
+    }
+    /// <p>Matches attributes derived from the request.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.attributes
     }
     /// Consumes the builder and constructs a [`SamplingRuleUpdate`](crate::types::SamplingRuleUpdate).
     pub fn build(self) -> crate::types::SamplingRuleUpdate {

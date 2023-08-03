@@ -68,6 +68,10 @@ impl CreateDatastoreOutputBuilder {
         self.datastore_name = input;
         self
     }
+    /// <p>The name of the data store.</p>
+    pub fn get_datastore_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.datastore_name
+    }
     /// <p>The ARN of the data store.</p>
     pub fn datastore_arn(
         mut self,
@@ -84,6 +88,10 @@ impl CreateDatastoreOutputBuilder {
         self.datastore_arn = input;
         self
     }
+    /// <p>The ARN of the data store.</p>
+    pub fn get_datastore_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.datastore_arn
+    }
     /// <p>How long, in days, message data is kept for the data store.</p>
     pub fn retention_period(mut self, input: crate::types::RetentionPeriod) -> Self {
         self.retention_period = ::std::option::Option::Some(input);
@@ -96,6 +104,10 @@ impl CreateDatastoreOutputBuilder {
     ) -> Self {
         self.retention_period = input;
         self
+    }
+    /// <p>How long, in days, message data is kept for the data store.</p>
+    pub fn get_retention_period(&self) -> &::std::option::Option<crate::types::RetentionPeriod> {
+        &self.retention_period
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

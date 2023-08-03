@@ -217,6 +217,10 @@ impl CreateInstanceInputBuilder {
         self.stack_id = input;
         self
     }
+    /// <p>The stack ID.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_id
+    }
     /// Appends an item to `layer_ids`.
     ///
     /// To override the contents of this collection use [`set_layer_ids`](Self::set_layer_ids).
@@ -236,6 +240,10 @@ impl CreateInstanceInputBuilder {
         self.layer_ids = input;
         self
     }
+    /// <p>An array that contains the instance's layer IDs.</p>
+    pub fn get_layer_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.layer_ids
+    }
     /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that you use to specify the various types are in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
     pub fn instance_type(
         mut self,
@@ -252,6 +260,10 @@ impl CreateInstanceInputBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that you use to specify the various types are in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
+    }
     /// <p>For load-based or time-based instances, the type. Windows stacks can use only time-based instances.</p>
     pub fn auto_scaling_type(mut self, input: crate::types::AutoScalingType) -> Self {
         self.auto_scaling_type = ::std::option::Option::Some(input);
@@ -265,6 +277,10 @@ impl CreateInstanceInputBuilder {
         self.auto_scaling_type = input;
         self
     }
+    /// <p>For load-based or time-based instances, the type. Windows stacks can use only time-based instances.</p>
+    pub fn get_auto_scaling_type(&self) -> &::std::option::Option<crate::types::AutoScalingType> {
+        &self.auto_scaling_type
+    }
     /// <p>The instance host name.</p>
     pub fn hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hostname = ::std::option::Option::Some(input.into());
@@ -274,6 +290,10 @@ impl CreateInstanceInputBuilder {
     pub fn set_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hostname = input;
         self
+    }
+    /// <p>The instance host name.</p>
+    pub fn get_hostname(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hostname
     }
     /// <p>The instance's operating system, which must be set to one of the following.</p>
     /// <ul>
@@ -305,6 +325,20 @@ impl CreateInstanceInputBuilder {
         self.os = input;
         self
     }
+    /// <p>The instance's operating system, which must be set to one of the following.</p>
+    /// <ul>
+    /// <li> <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li>
+    /// <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li>
+    /// <li> <p> <code>CentOS Linux 7</code> </p> </li>
+    /// <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
+    /// <li> <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
+    /// <li> <p>A custom AMI: <code>Custom</code>.</p> </li>
+    /// </ul>
+    /// <p>For more information about the supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
+    /// <p>The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you must use the <code>CreateInstance</code> action's AmiId parameter to specify the custom AMI that you want to use. Block device mappings are not supported if the value is <code>Custom</code>. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For more information about how to use custom AMIs with AWS OpsWorks Stacks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p>
+    pub fn get_os(&self) -> &::std::option::Option<::std::string::String> {
+        &self.os
+    }
     /// <p>A custom AMI ID to be used to create the instance. The AMI should be based on one of the supported operating systems. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> <note>
     /// <p>If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.</p>
     /// </note>
@@ -319,6 +353,12 @@ impl CreateInstanceInputBuilder {
         self.ami_id = input;
         self
     }
+    /// <p>A custom AMI ID to be used to create the instance. The AMI should be based on one of the supported operating systems. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> <note>
+    /// <p>If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.</p>
+    /// </note>
+    pub fn get_ami_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ami_id
+    }
     /// <p>The instance's Amazon EC2 key-pair name.</p>
     pub fn ssh_key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssh_key_name = ::std::option::Option::Some(input.into());
@@ -328,6 +368,10 @@ impl CreateInstanceInputBuilder {
     pub fn set_ssh_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ssh_key_name = input;
         self
+    }
+    /// <p>The instance's Amazon EC2 key-pair name.</p>
+    pub fn get_ssh_key_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ssh_key_name
     }
     /// <p>The instance Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     pub fn availability_zone(
@@ -345,6 +389,10 @@ impl CreateInstanceInputBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>The instance Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>The instance's virtualization type, <code>paravirtual</code> or <code>hvm</code>.</p>
     pub fn virtualization_type(
         mut self,
@@ -361,6 +409,10 @@ impl CreateInstanceInputBuilder {
         self.virtualization_type = input;
         self
     }
+    /// <p>The instance's virtualization type, <code>paravirtual</code> or <code>hvm</code>.</p>
+    pub fn get_virtualization_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtualization_type
+    }
     /// <p>The ID of the instance's subnet. If the stack is running in a VPC, you can use this parameter to override the stack's default subnet ID value and direct AWS OpsWorks Stacks to launch the instance in a different subnet.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
@@ -370,6 +422,10 @@ impl CreateInstanceInputBuilder {
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_id = input;
         self
+    }
+    /// <p>The ID of the instance's subnet. If the stack is running in a VPC, you can use this parameter to override the stack's default subnet ID value and direct AWS OpsWorks Stacks to launch the instance in a different subnet.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
     }
     /// <p>The instance architecture. The default option is <code>x86_64</code>. Instance types do not necessarily support both architectures. For a list of the architectures that are supported by the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.</p>
     pub fn architecture(mut self, input: crate::types::Architecture) -> Self {
@@ -384,6 +440,10 @@ impl CreateInstanceInputBuilder {
         self.architecture = input;
         self
     }
+    /// <p>The instance architecture. The default option is <code>x86_64</code>. Instance types do not necessarily support both architectures. For a list of the architectures that are supported by the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.</p>
+    pub fn get_architecture(&self) -> &::std::option::Option<crate::types::Architecture> {
+        &self.architecture
+    }
     /// <p>The instance root device type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
     pub fn root_device_type(mut self, input: crate::types::RootDeviceType) -> Self {
         self.root_device_type = ::std::option::Option::Some(input);
@@ -396,6 +456,10 @@ impl CreateInstanceInputBuilder {
     ) -> Self {
         self.root_device_type = input;
         self
+    }
+    /// <p>The instance root device type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+    pub fn get_root_device_type(&self) -> &::std::option::Option<crate::types::RootDeviceType> {
+        &self.root_device_type
     }
     /// Appends an item to `block_device_mappings`.
     ///
@@ -416,6 +480,12 @@ impl CreateInstanceInputBuilder {
         self.block_device_mappings = input;
         self
     }
+    /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block devices. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device Mapping</a>. Note that block device mappings are not supported for custom AMIs.</p>
+    pub fn get_block_device_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>> {
+        &self.block_device_mappings
+    }
     /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
     /// <p>We strongly recommend using the default value of <code>true</code> to ensure that your instances have the latest security updates.</p>
     /// </note>
@@ -430,6 +500,12 @@ impl CreateInstanceInputBuilder {
         self.install_updates_on_boot = input;
         self
     }
+    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
+    /// <p>We strongly recommend using the default value of <code>true</code> to ensure that your instances have the latest security updates.</p>
+    /// </note>
+    pub fn get_install_updates_on_boot(&self) -> &::std::option::Option<bool> {
+        &self.install_updates_on_boot
+    }
     /// <p>Whether to create an Amazon EBS-optimized instance.</p>
     pub fn ebs_optimized(mut self, input: bool) -> Self {
         self.ebs_optimized = ::std::option::Option::Some(input);
@@ -439,6 +515,10 @@ impl CreateInstanceInputBuilder {
     pub fn set_ebs_optimized(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ebs_optimized = input;
         self
+    }
+    /// <p>Whether to create an Amazon EBS-optimized instance.</p>
+    pub fn get_ebs_optimized(&self) -> &::std::option::Option<bool> {
+        &self.ebs_optimized
     }
     /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
     /// <ul>
@@ -466,6 +546,15 @@ impl CreateInstanceInputBuilder {
         self.agent_version = input;
         self
     }
+    /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>INHERIT</code> - Use the stack's default agent version setting.</p> </li>
+    /// <li> <p> <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To update the agent version, edit the instance configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the instance.</p> </li>
+    /// </ul>
+    /// <p>The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p>
+    pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_version
+    }
     /// <p>The instance's tenancy option. The default option is no tenancy, or if the instance is running in a VPC, inherit tenancy settings from the VPC. The following are valid values for this parameter: <code>dedicated</code>, <code>default</code>, or <code>host</code>. Because there are costs associated with changes in tenancy options, we recommend that you research tenancy options before choosing them for your instances. For more information about dedicated hosts, see <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts Overview</a> and <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2 Dedicated Hosts</a>. For more information about dedicated instances, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated Instances</a> and <a href="http://aws.amazon.com/ec2/purchasing-options/dedicated-instances/">Amazon EC2 Dedicated Instances</a>.</p>
     pub fn tenancy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tenancy = ::std::option::Option::Some(input.into());
@@ -475,6 +564,10 @@ impl CreateInstanceInputBuilder {
     pub fn set_tenancy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tenancy = input;
         self
+    }
+    /// <p>The instance's tenancy option. The default option is no tenancy, or if the instance is running in a VPC, inherit tenancy settings from the VPC. The following are valid values for this parameter: <code>dedicated</code>, <code>default</code>, or <code>host</code>. Because there are costs associated with changes in tenancy options, we recommend that you research tenancy options before choosing them for your instances. For more information about dedicated hosts, see <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts Overview</a> and <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2 Dedicated Hosts</a>. For more information about dedicated instances, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated Instances</a> and <a href="http://aws.amazon.com/ec2/purchasing-options/dedicated-instances/">Amazon EC2 Dedicated Instances</a>.</p>
+    pub fn get_tenancy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tenancy
     }
     /// Consumes the builder and constructs a [`CreateInstanceInput`](crate::operation::create_instance::CreateInstanceInput).
     pub fn build(

@@ -76,6 +76,10 @@ impl NotificationConfigurationBuilder {
         self.auto_scaling_group_name = input;
         self
     }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_scaling_group_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
     pub fn topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_arn = ::std::option::Option::Some(input.into());
@@ -85,6 +89,10 @@ impl NotificationConfigurationBuilder {
     pub fn set_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.topic_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
+    pub fn get_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_arn
     }
     /// <p>One of the following event notification types:</p>
     /// <ul>
@@ -115,6 +123,17 @@ impl NotificationConfigurationBuilder {
     ) -> Self {
         self.notification_type = input;
         self
+    }
+    /// <p>One of the following event notification types:</p>
+    /// <ul>
+    /// <li> <p> <code>autoscaling:EC2_INSTANCE_LAUNCH</code> </p> </li>
+    /// <li> <p> <code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code> </p> </li>
+    /// <li> <p> <code>autoscaling:EC2_INSTANCE_TERMINATE</code> </p> </li>
+    /// <li> <p> <code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code> </p> </li>
+    /// <li> <p> <code>autoscaling:TEST_NOTIFICATION</code> </p> </li>
+    /// </ul>
+    pub fn get_notification_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notification_type
     }
     /// Consumes the builder and constructs a [`NotificationConfiguration`](crate::types::NotificationConfiguration).
     pub fn build(self) -> crate::types::NotificationConfiguration {

@@ -36,6 +36,12 @@ impl CancelSigningProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CancelSigningProfile as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::cancel_signing_profile::builders::CancelSigningProfileInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +131,9 @@ impl CancelSigningProfileFluentBuilder {
     pub fn set_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_profile_name(input);
         self
+    }
+    /// <p>The name of the signing profile to be canceled.</p>
+    pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_profile_name()
     }
 }

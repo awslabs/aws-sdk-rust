@@ -36,6 +36,10 @@ impl ResetClusterParameterGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ResetClusterParameterGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::reset_cluster_parameter_group::builders::ResetClusterParameterGroupInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl ResetClusterParameterGroupFluentBuilder {
         self.inner = self.inner.set_parameter_group_name(input);
         self
     }
+    /// <p>The name of the cluster parameter group to be reset.</p>
+    pub fn get_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_parameter_group_name()
+    }
     /// <p>If <code>true</code>, all parameters in the specified parameter group will be reset to their default values. </p>
     /// <p>Default: <code>true</code> </p>
     pub fn reset_all_parameters(mut self, input: bool) -> Self {
@@ -143,6 +151,11 @@ impl ResetClusterParameterGroupFluentBuilder {
     pub fn set_reset_all_parameters(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_reset_all_parameters(input);
         self
+    }
+    /// <p>If <code>true</code>, all parameters in the specified parameter group will be reset to their default values. </p>
+    /// <p>Default: <code>true</code> </p>
+    pub fn get_reset_all_parameters(&self) -> &::std::option::Option<bool> {
+        self.inner.get_reset_all_parameters()
     }
     /// Appends an item to `Parameters`.
     ///
@@ -162,5 +175,12 @@ impl ResetClusterParameterGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
+    }
+    /// <p>An array of names of parameters to be reset. If <i>ResetAllParameters</i> option is not used, then at least one parameter name must be supplied. </p>
+    /// <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+        self.inner.get_parameters()
     }
 }

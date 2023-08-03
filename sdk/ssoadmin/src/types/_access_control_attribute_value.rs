@@ -49,6 +49,10 @@ impl AccessControlAttributeValueBuilder {
         self.source = input;
         self
     }
+    /// <p>The identity source to use when mapping a specified attribute to IAM Identity Center.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.source
+    }
     /// Consumes the builder and constructs a [`AccessControlAttributeValue`](crate::types::AccessControlAttributeValue).
     pub fn build(self) -> crate::types::AccessControlAttributeValue {
         crate::types::AccessControlAttributeValue {

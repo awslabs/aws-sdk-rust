@@ -45,6 +45,10 @@ impl DescribeInboundDmarcSettingsInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>Lists the ID of the given organization.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// Consumes the builder and constructs a [`DescribeInboundDmarcSettingsInput`](crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsInput).
     pub fn build(
         self,

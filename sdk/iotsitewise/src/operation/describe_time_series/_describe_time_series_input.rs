@@ -56,6 +56,10 @@ impl DescribeTimeSeriesInputBuilder {
         self.alias = input;
         self
     }
+    /// <p>The alias that identifies the time series.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias
+    }
     /// <p>The ID of the asset in which the asset property was created.</p>
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_id = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl DescribeTimeSeriesInputBuilder {
         self.asset_id = input;
         self
     }
+    /// <p>The ID of the asset in which the asset property was created.</p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_id
+    }
     /// <p>The ID of the asset property.</p>
     pub fn property_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.property_id = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl DescribeTimeSeriesInputBuilder {
     pub fn set_property_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.property_id = input;
         self
+    }
+    /// <p>The ID of the asset property.</p>
+    pub fn get_property_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.property_id
     }
     /// Consumes the builder and constructs a [`DescribeTimeSeriesInput`](crate::operation::describe_time_series::DescribeTimeSeriesInput).
     pub fn build(

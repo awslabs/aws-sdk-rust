@@ -64,6 +64,12 @@ impl GetFindingHistoryOutputBuilder {
         self.records = input;
         self
     }
+    /// <p> A list of events that altered the specified finding during the specified time period. </p>
+    pub fn get_records(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FindingHistoryRecord>> {
+        &self.records
+    }
     /// <p> A token for pagination purposes. Provide this token in the subsequent request to <code>GetFindingsHistory</code> to get up to an additional 100 results of history for the same finding that you specified in your initial request. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -73,6 +79,10 @@ impl GetFindingHistoryOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p> A token for pagination purposes. Provide this token in the subsequent request to <code>GetFindingsHistory</code> to get up to an additional 100 results of history for the same finding that you specified in your initial request. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -39,6 +39,13 @@ impl CreateBucketAccessKeyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateBucketAccessKey as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_bucket_access_key::builders::CreateBucketAccessKeyInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,5 +135,9 @@ impl CreateBucketAccessKeyFluentBuilder {
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bucket_name(input);
         self
+    }
+    /// <p>The name of the bucket that the new access key will belong to, and grant access to.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bucket_name()
     }
 }

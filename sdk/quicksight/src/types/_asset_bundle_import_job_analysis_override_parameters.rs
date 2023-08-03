@@ -49,6 +49,10 @@ impl AssetBundleImportJobAnalysisOverrideParametersBuilder {
         self.analysis_id = input;
         self
     }
+    /// <p>The ID of the analysis that you ant to apply overrides to.</p>
+    pub fn get_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.analysis_id
+    }
     /// <p>A new name for the analysis.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl AssetBundleImportJobAnalysisOverrideParametersBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A new name for the analysis.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`AssetBundleImportJobAnalysisOverrideParameters`](crate::types::AssetBundleImportJobAnalysisOverrideParameters).
     pub fn build(self) -> crate::types::AssetBundleImportJobAnalysisOverrideParameters {

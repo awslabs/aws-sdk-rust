@@ -58,6 +58,10 @@ impl MetricBuilder {
         self.metric_name = input;
         self
     }
+    /// <p>The name of the metric.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
+    }
     /// <p>The function with which the metric is calculated.</p>
     pub fn aggregation_function(mut self, input: crate::types::AggregationFunction) -> Self {
         self.aggregation_function = ::std::option::Option::Some(input);
@@ -71,6 +75,12 @@ impl MetricBuilder {
         self.aggregation_function = input;
         self
     }
+    /// <p>The function with which the metric is calculated.</p>
+    pub fn get_aggregation_function(
+        &self,
+    ) -> &::std::option::Option<crate::types::AggregationFunction> {
+        &self.aggregation_function
+    }
     /// <p>The namespace for the metric.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
@@ -80,6 +90,10 @@ impl MetricBuilder {
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
         self
+    }
+    /// <p>The namespace for the metric.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
     }
     /// Consumes the builder and constructs a [`Metric`](crate::types::Metric).
     pub fn build(self) -> crate::types::Metric {

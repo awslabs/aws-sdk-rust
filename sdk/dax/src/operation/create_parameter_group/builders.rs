@@ -36,6 +36,12 @@ impl CreateParameterGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateParameterGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_parameter_group::builders::CreateParameterGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl CreateParameterGroupFluentBuilder {
         self.inner = self.inner.set_parameter_group_name(input);
         self
     }
+    /// <p>The name of the parameter group to apply to all of the clusters in this replication group.</p>
+    pub fn get_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_parameter_group_name()
+    }
     /// <p>A description of the parameter group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -141,5 +151,9 @@ impl CreateParameterGroupFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the parameter group.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
 }

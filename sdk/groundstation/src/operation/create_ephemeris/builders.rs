@@ -36,6 +36,12 @@ impl CreateEphemerisFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateEphemeris as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_ephemeris::builders::CreateEphemerisInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateEphemerisFluentBuilder {
         self.inner = self.inner.set_satellite_id(input);
         self
     }
+    /// <p>AWS Ground Station satellite ID for this ephemeris.</p>
+    pub fn get_satellite_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_satellite_id()
+    }
     /// <p>Whether to set the ephemeris status to <code>ENABLED</code> after validation.</p>
     /// <p>Setting this to false will set the ephemeris status to <code>DISABLED</code> after validation.</p>
     pub fn enabled(mut self, input: bool) -> Self {
@@ -137,6 +147,11 @@ impl CreateEphemerisFluentBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enabled(input);
         self
+    }
+    /// <p>Whether to set the ephemeris status to <code>ENABLED</code> after validation.</p>
+    /// <p>Setting this to false will set the ephemeris status to <code>DISABLED</code> after validation.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enabled()
     }
     /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
     /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
@@ -152,6 +167,12 @@ impl CreateEphemerisFluentBuilder {
         self.inner = self.inner.set_priority(input);
         self
     }
+    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
+    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
+    /// <p>Priority must be 1 or greater</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        self.inner.get_priority()
+    }
     /// <p>An overall expiration time for the ephemeris in UTC, after which it will become <code>EXPIRED</code>.</p>
     pub fn expiration_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.expiration_time(input);
@@ -165,6 +186,10 @@ impl CreateEphemerisFluentBuilder {
         self.inner = self.inner.set_expiration_time(input);
         self
     }
+    /// <p>An overall expiration time for the ephemeris in UTC, after which it will become <code>EXPIRED</code>.</p>
+    pub fn get_expiration_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_expiration_time()
+    }
     /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -175,6 +200,10 @@ impl CreateEphemerisFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The ARN of a KMS key used to encrypt the ephemeris in Ground Station.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_arn(input.into());
@@ -184,6 +213,10 @@ impl CreateEphemerisFluentBuilder {
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_arn(input);
         self
+    }
+    /// <p>The ARN of a KMS key used to encrypt the ephemeris in Ground Station.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_arn()
     }
     /// <p>Ephemeris data.</p>
     pub fn ephemeris(mut self, input: crate::types::EphemerisData) -> Self {
@@ -197,6 +230,10 @@ impl CreateEphemerisFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ephemeris(input);
         self
+    }
+    /// <p>Ephemeris data.</p>
+    pub fn get_ephemeris(&self) -> &::std::option::Option<crate::types::EphemerisData> {
+        self.inner.get_ephemeris()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -220,5 +257,13 @@ impl CreateEphemerisFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Tags assigned to an ephemeris.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

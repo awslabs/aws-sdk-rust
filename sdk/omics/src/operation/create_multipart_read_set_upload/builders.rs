@@ -36,6 +36,10 @@ impl CreateMultipartReadSetUploadFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateMultipartReadSetUpload as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_multipart_read_set_upload::builders::CreateMultipartReadSetUploadInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl CreateMultipartReadSetUploadFluentBuilder {
         self.inner = self.inner.set_sequence_store_id(input);
         self
     }
+    /// <p> The sequence store ID for the store that is the destination of the multipart uploads. </p>
+    pub fn get_sequence_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sequence_store_id()
+    }
     /// <p> An idempotency token that can be used to avoid triggering multiple multipart uploads. </p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -141,6 +149,10 @@ impl CreateMultipartReadSetUploadFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p> An idempotency token that can be used to avoid triggering multiple multipart uploads. </p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// <p> The type of file being uploaded. </p>
     pub fn source_file_type(mut self, input: crate::types::FileType) -> Self {
@@ -155,6 +167,10 @@ impl CreateMultipartReadSetUploadFluentBuilder {
         self.inner = self.inner.set_source_file_type(input);
         self
     }
+    /// <p> The type of file being uploaded. </p>
+    pub fn get_source_file_type(&self) -> &::std::option::Option<crate::types::FileType> {
+        self.inner.get_source_file_type()
+    }
     /// <p> The source's subject ID. </p>
     pub fn subject_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subject_id(input.into());
@@ -165,6 +181,10 @@ impl CreateMultipartReadSetUploadFluentBuilder {
         self.inner = self.inner.set_subject_id(input);
         self
     }
+    /// <p> The source's subject ID. </p>
+    pub fn get_subject_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_subject_id()
+    }
     /// <p> The source's sample ID. </p>
     pub fn sample_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sample_id(input.into());
@@ -174,6 +194,10 @@ impl CreateMultipartReadSetUploadFluentBuilder {
     pub fn set_sample_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sample_id(input);
         self
+    }
+    /// <p> The source's sample ID. </p>
+    pub fn get_sample_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sample_id()
     }
     /// <p> Where the source originated. </p>
     pub fn generated_from(
@@ -191,6 +215,10 @@ impl CreateMultipartReadSetUploadFluentBuilder {
         self.inner = self.inner.set_generated_from(input);
         self
     }
+    /// <p> Where the source originated. </p>
+    pub fn get_generated_from(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_generated_from()
+    }
     /// <p> The ARN of the reference. </p>
     pub fn reference_arn(
         mut self,
@@ -207,6 +235,10 @@ impl CreateMultipartReadSetUploadFluentBuilder {
         self.inner = self.inner.set_reference_arn(input);
         self
     }
+    /// <p> The ARN of the reference. </p>
+    pub fn get_reference_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reference_arn()
+    }
     /// <p> The name of the read set. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -217,6 +249,10 @@ impl CreateMultipartReadSetUploadFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p> The name of the read set. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p> The description of the read set. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -226,6 +262,10 @@ impl CreateMultipartReadSetUploadFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p> The description of the read set. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -249,5 +289,13 @@ impl CreateMultipartReadSetUploadFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p> Any tags to add to the read set. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

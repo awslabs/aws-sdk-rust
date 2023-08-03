@@ -37,6 +37,12 @@ impl UpdateTrustAnchorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateTrustAnchor as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_trust_anchor::builders::UpdateTrustAnchorInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl UpdateTrustAnchorFluentBuilder {
         self.inner = self.inner.set_trust_anchor_id(input);
         self
     }
+    /// <p>The unique identifier of the trust anchor.</p>
+    pub fn get_trust_anchor_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_trust_anchor_id()
+    }
     /// <p>The name of the trust anchor.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -143,6 +153,10 @@ impl UpdateTrustAnchorFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the trust anchor.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The trust anchor type and its related certificate data.</p>
     pub fn source(mut self, input: crate::types::Source) -> Self {
         self.inner = self.inner.source(input);
@@ -152,5 +166,9 @@ impl UpdateTrustAnchorFluentBuilder {
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::Source>) -> Self {
         self.inner = self.inner.set_source(input);
         self
+    }
+    /// <p>The trust anchor type and its related certificate data.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::Source> {
+        self.inner.get_source()
     }
 }

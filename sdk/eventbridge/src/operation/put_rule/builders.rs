@@ -46,6 +46,10 @@ impl PutRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutRule as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_rule::builders::PutRuleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +132,10 @@ impl PutRuleFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the rule that you are creating or updating.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The scheduling expression. For example, "cron(0 20 * * ? *)" or "rate(5 minutes)".</p>
     pub fn schedule_expression(
         mut self,
@@ -143,6 +151,10 @@ impl PutRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_schedule_expression(input);
         self
+    }
+    /// <p>The scheduling expression. For example, "cron(0 20 * * ? *)" or "rate(5 minutes)".</p>
+    pub fn get_schedule_expression(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schedule_expression()
     }
     /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn event_pattern(
@@ -160,6 +172,10 @@ impl PutRuleFluentBuilder {
         self.inner = self.inner.set_event_pattern(input);
         self
     }
+    /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    pub fn get_event_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_pattern()
+    }
     /// <p>Indicates whether the rule is enabled or disabled.</p>
     pub fn state(mut self, input: crate::types::RuleState) -> Self {
         self.inner = self.inner.state(input);
@@ -170,6 +186,10 @@ impl PutRuleFluentBuilder {
         self.inner = self.inner.set_state(input);
         self
     }
+    /// <p>Indicates whether the rule is enabled or disabled.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::RuleState> {
+        self.inner.get_state()
+    }
     /// <p>A description of the rule.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -179,6 +199,10 @@ impl PutRuleFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the rule.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
     /// <p>If you're setting an event bus in another account as the target and that account granted permission to your account through an organization instead of directly by the account ID, you must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code> structure, instead of here in this parameter.</p>
@@ -191,6 +215,11 @@ impl PutRuleFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
+    /// <p>If you're setting an event bus in another account as the target and that account granted permission to your account through an organization instead of directly by the account ID, you must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code> structure, instead of here in this parameter.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// Appends an item to `Tags`.
     ///
@@ -209,6 +238,10 @@ impl PutRuleFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The list of key-value pairs to associate with the rule.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>The name or ARN of the event bus to associate with this rule. If you omit this, the default event bus is used.</p>
     pub fn event_bus_name(
         mut self,
@@ -224,5 +257,9 @@ impl PutRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_event_bus_name(input);
         self
+    }
+    /// <p>The name or ARN of the event bus to associate with this rule. If you omit this, the default event bus is used.</p>
+    pub fn get_event_bus_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_bus_name()
     }
 }

@@ -40,6 +40,10 @@ impl SelectedStepBuilder {
         self.step_name = input;
         self
     }
+    /// <p>The name of the pipeline step.</p>
+    pub fn get_step_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.step_name
+    }
     /// Consumes the builder and constructs a [`SelectedStep`](crate::types::SelectedStep).
     pub fn build(self) -> crate::types::SelectedStep {
         crate::types::SelectedStep {

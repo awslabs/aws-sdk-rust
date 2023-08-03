@@ -88,6 +88,10 @@ impl NewGatingRuleBuilder {
         self.control_panel_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
+    pub fn get_control_panel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_panel_arn
+    }
     /// Appends an item to `gating_controls`.
     ///
     /// To override the contents of this collection use [`set_gating_controls`](Self::set_gating_controls).
@@ -110,6 +114,12 @@ impl NewGatingRuleBuilder {
         self.gating_controls = input;
         self
     }
+    /// <p>The gating controls for the new gating rule. That is, routing controls that are evaluated by the rule configuration that you specify.</p>
+    pub fn get_gating_controls(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.gating_controls
+    }
     /// <p>The name for the new gating rule.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -119,6 +129,10 @@ impl NewGatingRuleBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name for the new gating rule.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The criteria that you set for specific gating controls (routing controls) that designate how many control states must be ON to allow you to change (set or unset) the target control states.</p>
     pub fn rule_config(mut self, input: crate::types::RuleConfig) -> Self {
@@ -132,6 +146,10 @@ impl NewGatingRuleBuilder {
     ) -> Self {
         self.rule_config = input;
         self
+    }
+    /// <p>The criteria that you set for specific gating controls (routing controls) that designate how many control states must be ON to allow you to change (set or unset) the target control states.</p>
+    pub fn get_rule_config(&self) -> &::std::option::Option<crate::types::RuleConfig> {
+        &self.rule_config
     }
     /// Appends an item to `target_controls`.
     ///
@@ -157,6 +175,13 @@ impl NewGatingRuleBuilder {
         self.target_controls = input;
         self
     }
+    /// <p>Routing controls that can only be set or unset if the specified RuleConfig evaluates to true for the specified GatingControls. For example, say you have three gating controls, one for each of three Amazon Web Services Regions. Now you specify ATLEAST 2 as your RuleConfig. With these settings, you can only change (set or unset) the routing controls that you have specified as TargetControls if that rule evaluates to true.</p>
+    /// <p>In other words, your ability to change the routing controls that you have specified as TargetControls is gated by the rule that you set for the routing controls in GatingControls.</p>
+    pub fn get_target_controls(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.target_controls
+    }
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
     pub fn wait_period_ms(mut self, input: i32) -> Self {
         self.wait_period_ms = ::std::option::Option::Some(input);
@@ -166,6 +191,10 @@ impl NewGatingRuleBuilder {
     pub fn set_wait_period_ms(mut self, input: ::std::option::Option<i32>) -> Self {
         self.wait_period_ms = input;
         self
+    }
+    /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
+    pub fn get_wait_period_ms(&self) -> &::std::option::Option<i32> {
+        &self.wait_period_ms
     }
     /// Consumes the builder and constructs a [`NewGatingRule`](crate::types::NewGatingRule).
     pub fn build(self) -> crate::types::NewGatingRule {

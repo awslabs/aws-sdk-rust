@@ -36,6 +36,12 @@ impl CreateConnectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateConnection as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_connection::builders::CreateConnectionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl CreateConnectionFluentBuilder {
         self.inner = self.inner.set_provider_type(input);
         self
     }
+    /// <p>The name of the external provider where your third-party code repository is configured.</p>
+    pub fn get_provider_type(&self) -> &::std::option::Option<crate::types::ProviderType> {
+        self.inner.get_provider_type()
+    }
     /// <p>The name of the connection to be created. The name must be unique in the calling AWS account.</p>
     pub fn connection_name(
         mut self,
@@ -144,6 +154,10 @@ impl CreateConnectionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_connection_name(input);
         self
+    }
+    /// <p>The name of the connection to be created. The name must be unique in the calling AWS account.</p>
+    pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connection_name()
     }
     /// Appends an item to `Tags`.
     ///
@@ -162,6 +176,10 @@ impl CreateConnectionFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The key-value pair to use when tagging the resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>The Amazon Resource Name (ARN) of the host associated with the connection to be created.</p>
     pub fn host_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.host_arn(input.into());
@@ -171,5 +189,9 @@ impl CreateConnectionFluentBuilder {
     pub fn set_host_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_host_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the host associated with the connection to be created.</p>
+    pub fn get_host_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_host_arn()
     }
 }

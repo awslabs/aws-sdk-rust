@@ -56,6 +56,10 @@ impl ResponsePlanSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the response plan. This can't include spaces.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl ResponsePlanSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the response plan. This can't include spaces.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The human readable name of the response plan. This can include spaces.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl ResponsePlanSummaryBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
+    }
+    /// <p>The human readable name of the response plan. This can include spaces.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// Consumes the builder and constructs a [`ResponsePlanSummary`](crate::types::ResponsePlanSummary).
     pub fn build(self) -> crate::types::ResponsePlanSummary {

@@ -67,6 +67,12 @@ impl DestinationBuilder {
         self.to_addresses = input;
         self
     }
+    /// <p>An array that contains the email addresses of the "To" recipients for the email.</p>
+    pub fn get_to_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.to_addresses
+    }
     /// Appends an item to `cc_addresses`.
     ///
     /// To override the contents of this collection use [`set_cc_addresses`](Self::set_cc_addresses).
@@ -85,6 +91,12 @@ impl DestinationBuilder {
     ) -> Self {
         self.cc_addresses = input;
         self
+    }
+    /// <p>An array that contains the email addresses of the "CC" (carbon copy) recipients for the email.</p>
+    pub fn get_cc_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.cc_addresses
     }
     /// Appends an item to `bcc_addresses`.
     ///
@@ -107,6 +119,12 @@ impl DestinationBuilder {
     ) -> Self {
         self.bcc_addresses = input;
         self
+    }
+    /// <p>An array that contains the email addresses of the "BCC" (blind carbon copy) recipients for the email.</p>
+    pub fn get_bcc_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.bcc_addresses
     }
     /// Consumes the builder and constructs a [`Destination`](crate::types::Destination).
     pub fn build(self) -> crate::types::Destination {

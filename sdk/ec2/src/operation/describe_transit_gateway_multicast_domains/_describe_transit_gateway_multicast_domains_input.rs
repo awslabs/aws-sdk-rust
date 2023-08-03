@@ -99,6 +99,12 @@ impl DescribeTransitGatewayMulticastDomainsInputBuilder {
         self.transit_gateway_multicast_domain_ids = input;
         self
     }
+    /// <p>The ID of the transit gateway multicast domain.</p>
+    pub fn get_transit_gateway_multicast_domain_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.transit_gateway_multicast_domain_ids
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -128,6 +134,15 @@ impl DescribeTransitGatewayMulticastDomainsInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>One or more filters. The possible values are:</p>
+    /// <ul>
+    /// <li> <p> <code>state</code> - The state of the transit gateway multicast domain. Valid values are <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>.</p> </li>
+    /// <li> <p> <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li>
+    /// <li> <p> <code>transit-gateway-multicast-domain-id</code> - The ID of the transit gateway multicast domain.</p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
+    }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -137,6 +152,10 @@ impl DescribeTransitGatewayMulticastDomainsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -148,6 +167,10 @@ impl DescribeTransitGatewayMulticastDomainsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -157,6 +180,10 @@ impl DescribeTransitGatewayMulticastDomainsInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`DescribeTransitGatewayMulticastDomainsInput`](crate::operation::describe_transit_gateway_multicast_domains::DescribeTransitGatewayMulticastDomainsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_transit_gateway_multicast_domains::DescribeTransitGatewayMulticastDomainsInput, ::aws_smithy_http::operation::error::BuildError>{

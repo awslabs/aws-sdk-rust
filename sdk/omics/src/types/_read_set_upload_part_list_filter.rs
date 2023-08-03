@@ -51,6 +51,10 @@ impl ReadSetUploadPartListFilterBuilder {
         self.created_after = input;
         self
     }
+    /// <p> Filters for read set uploads after a specified time. </p>
+    pub fn get_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_after
+    }
     /// <p> Filters for read set part uploads before a specified time. </p>
     pub fn created_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_before = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl ReadSetUploadPartListFilterBuilder {
     ) -> Self {
         self.created_before = input;
         self
+    }
+    /// <p> Filters for read set part uploads before a specified time. </p>
+    pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_before
     }
     /// Consumes the builder and constructs a [`ReadSetUploadPartListFilter`](crate::types::ReadSetUploadPartListFilter).
     pub fn build(self) -> crate::types::ReadSetUploadPartListFilter {

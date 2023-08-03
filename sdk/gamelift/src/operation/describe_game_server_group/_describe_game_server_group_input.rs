@@ -47,6 +47,10 @@ impl DescribeGameServerGroupInputBuilder {
         self.game_server_group_name = input;
         self
     }
+    /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
+    pub fn get_game_server_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.game_server_group_name
+    }
     /// Consumes the builder and constructs a [`DescribeGameServerGroupInput`](crate::operation::describe_game_server_group::DescribeGameServerGroupInput).
     pub fn build(
         self,

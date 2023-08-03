@@ -49,6 +49,10 @@ impl SummarizedAttackVectorBuilder {
         self.vector_type = input;
         self
     }
+    /// <p>The attack type, for example, SNMP reflection or SYN flood.</p>
+    pub fn get_vector_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vector_type
+    }
     /// Appends an item to `vector_counters`.
     ///
     /// To override the contents of this collection use [`set_vector_counters`](Self::set_vector_counters).
@@ -67,6 +71,12 @@ impl SummarizedAttackVectorBuilder {
     ) -> Self {
         self.vector_counters = input;
         self
+    }
+    /// <p>The list of counters that describe the details of the attack.</p>
+    pub fn get_vector_counters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SummarizedCounter>> {
+        &self.vector_counters
     }
     /// Consumes the builder and constructs a [`SummarizedAttackVector`](crate::types::SummarizedAttackVector).
     pub fn build(self) -> crate::types::SummarizedAttackVector {

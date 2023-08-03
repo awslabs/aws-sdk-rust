@@ -44,6 +44,10 @@ impl CreateStudioFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateStudio as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_studio::builders::CreateStudioInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl CreateStudioFluentBuilder {
         self.inner = self.inner.set_admin_role_arn(input);
         self
     }
+    /// <p>The IAM role that studio admins will assume when logging in to the Nimble Studio portal.</p>
+    pub fn get_admin_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_admin_role_arn()
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -142,6 +150,10 @@ impl CreateStudioFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>A friendly name for the studio.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
@@ -151,6 +163,10 @@ impl CreateStudioFluentBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_display_name(input);
         self
+    }
+    /// <p>A friendly name for the studio.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_display_name()
     }
     /// <p>The studio encryption configuration.</p>
     pub fn studio_encryption_configuration(
@@ -168,6 +184,12 @@ impl CreateStudioFluentBuilder {
         self.inner = self.inner.set_studio_encryption_configuration(input);
         self
     }
+    /// <p>The studio encryption configuration.</p>
+    pub fn get_studio_encryption_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::StudioEncryptionConfiguration> {
+        self.inner.get_studio_encryption_configuration()
+    }
     /// <p>The studio name that is used in the URL of the Nimble Studio portal when accessed by Nimble Studio users.</p>
     pub fn studio_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.studio_name(input.into());
@@ -177,6 +199,10 @@ impl CreateStudioFluentBuilder {
     pub fn set_studio_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_studio_name(input);
         self
+    }
+    /// <p>The studio name that is used in the URL of the Nimble Studio portal when accessed by Nimble Studio users.</p>
+    pub fn get_studio_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_studio_name()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -201,6 +227,14 @@ impl CreateStudioFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>The IAM role that studio users will assume when logging in to the Nimble Studio portal.</p>
     pub fn user_role_arn(
         mut self,
@@ -216,5 +250,9 @@ impl CreateStudioFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_user_role_arn(input);
         self
+    }
+    /// <p>The IAM role that studio users will assume when logging in to the Nimble Studio portal.</p>
+    pub fn get_user_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_role_arn()
     }
 }

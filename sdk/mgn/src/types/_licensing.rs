@@ -40,6 +40,10 @@ impl LicensingBuilder {
         self.os_byol = input;
         self
     }
+    /// <p>Configure BYOL OS licensing.</p>
+    pub fn get_os_byol(&self) -> &::std::option::Option<bool> {
+        &self.os_byol
+    }
     /// Consumes the builder and constructs a [`Licensing`](crate::types::Licensing).
     pub fn build(self) -> crate::types::Licensing {
         crate::types::Licensing {

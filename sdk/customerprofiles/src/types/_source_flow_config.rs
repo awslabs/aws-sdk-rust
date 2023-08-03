@@ -75,6 +75,10 @@ impl SourceFlowConfigBuilder {
         self.connector_profile_name = input;
         self
     }
+    /// <p>The name of the AppFlow connector profile. This name must be unique for each connector profile in the AWS account.</p>
+    pub fn get_connector_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connector_profile_name
+    }
     /// <p>The type of connector, such as Salesforce, Marketo, and so on.</p>
     pub fn connector_type(mut self, input: crate::types::SourceConnectorType) -> Self {
         self.connector_type = ::std::option::Option::Some(input);
@@ -88,6 +92,10 @@ impl SourceFlowConfigBuilder {
         self.connector_type = input;
         self
     }
+    /// <p>The type of connector, such as Salesforce, Marketo, and so on.</p>
+    pub fn get_connector_type(&self) -> &::std::option::Option<crate::types::SourceConnectorType> {
+        &self.connector_type
+    }
     /// <p>Defines the configuration for a scheduled incremental data pull. If a valid configuration is provided, the fields specified in the configuration are used when querying for the incremental data pull.</p>
     pub fn incremental_pull_config(mut self, input: crate::types::IncrementalPullConfig) -> Self {
         self.incremental_pull_config = ::std::option::Option::Some(input);
@@ -100,6 +108,12 @@ impl SourceFlowConfigBuilder {
     ) -> Self {
         self.incremental_pull_config = input;
         self
+    }
+    /// <p>Defines the configuration for a scheduled incremental data pull. If a valid configuration is provided, the fields specified in the configuration are used when querying for the incremental data pull.</p>
+    pub fn get_incremental_pull_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::IncrementalPullConfig> {
+        &self.incremental_pull_config
     }
     /// <p>Specifies the information that is required to query a particular source connector.</p>
     pub fn source_connector_properties(
@@ -116,6 +130,12 @@ impl SourceFlowConfigBuilder {
     ) -> Self {
         self.source_connector_properties = input;
         self
+    }
+    /// <p>Specifies the information that is required to query a particular source connector.</p>
+    pub fn get_source_connector_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::SourceConnectorProperties> {
+        &self.source_connector_properties
     }
     /// Consumes the builder and constructs a [`SourceFlowConfig`](crate::types::SourceFlowConfig).
     pub fn build(self) -> crate::types::SourceFlowConfig {

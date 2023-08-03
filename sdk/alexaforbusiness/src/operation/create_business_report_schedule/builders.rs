@@ -37,6 +37,10 @@ impl CreateBusinessReportScheduleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateBusinessReportSchedule as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_business_report_schedule::builders::CreateBusinessReportScheduleInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl CreateBusinessReportScheduleFluentBuilder {
         self.inner = self.inner.set_schedule_name(input);
         self
     }
+    /// <p>The name identifier of the schedule.</p>
+    pub fn get_schedule_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schedule_name()
+    }
     /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule. </p>
     pub fn s3_bucket_name(
         mut self,
@@ -148,6 +156,10 @@ impl CreateBusinessReportScheduleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_s3_bucket_name(input);
         self
+    }
+    /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule. </p>
+    pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_s3_bucket_name()
     }
     /// <p>The S3 key where the report is delivered.</p>
     pub fn s3_key_prefix(
@@ -165,6 +177,10 @@ impl CreateBusinessReportScheduleFluentBuilder {
         self.inner = self.inner.set_s3_key_prefix(input);
         self
     }
+    /// <p>The S3 key where the report is delivered.</p>
+    pub fn get_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_s3_key_prefix()
+    }
     /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
     pub fn format(mut self, input: crate::types::BusinessReportFormat) -> Self {
         self.inner = self.inner.format(input);
@@ -177,6 +193,10 @@ impl CreateBusinessReportScheduleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_format(input);
         self
+    }
+    /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::BusinessReportFormat> {
+        self.inner.get_format()
     }
     /// <p>The content range of the reports.</p>
     pub fn content_range(mut self, input: crate::types::BusinessReportContentRange) -> Self {
@@ -191,6 +211,12 @@ impl CreateBusinessReportScheduleFluentBuilder {
         self.inner = self.inner.set_content_range(input);
         self
     }
+    /// <p>The content range of the reports.</p>
+    pub fn get_content_range(
+        &self,
+    ) -> &::std::option::Option<crate::types::BusinessReportContentRange> {
+        self.inner.get_content_range()
+    }
     /// <p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called. </p>
     pub fn recurrence(mut self, input: crate::types::BusinessReportRecurrence) -> Self {
         self.inner = self.inner.recurrence(input);
@@ -203,6 +229,10 @@ impl CreateBusinessReportScheduleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_recurrence(input);
         self
+    }
+    /// <p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called. </p>
+    pub fn get_recurrence(&self) -> &::std::option::Option<crate::types::BusinessReportRecurrence> {
+        self.inner.get_recurrence()
     }
     /// <p>The client request token.</p>
     pub fn client_request_token(
@@ -220,6 +250,10 @@ impl CreateBusinessReportScheduleFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>The client request token.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -236,5 +270,9 @@ impl CreateBusinessReportScheduleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags for the business report schedule.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

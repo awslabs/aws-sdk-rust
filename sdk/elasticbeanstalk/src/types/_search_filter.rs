@@ -59,6 +59,10 @@ impl SearchFilterBuilder {
         self.attribute = input;
         self
     }
+    /// <p>The result attribute to which the filter values are applied. Valid values vary by API action.</p>
+    pub fn get_attribute(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute
+    }
     /// <p>The operator to apply to the <code>Attribute</code> with each of the <code>Values</code>. Valid values vary by <code>Attribute</code>.</p>
     pub fn operator(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operator = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl SearchFilterBuilder {
     pub fn set_operator(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operator = input;
         self
+    }
+    /// <p>The operator to apply to the <code>Attribute</code> with each of the <code>Values</code>. Valid values vary by <code>Attribute</code>.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operator
     }
     /// Appends an item to `values`.
     ///
@@ -87,6 +95,10 @@ impl SearchFilterBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>The list of values applied to the <code>Attribute</code> and <code>Operator</code> attributes. Number of values and valid values vary by <code>Attribute</code>.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`SearchFilter`](crate::types::SearchFilter).
     pub fn build(self) -> crate::types::SearchFilter {

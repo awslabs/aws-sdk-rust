@@ -47,6 +47,10 @@ impl DescribeMediaStorageConfigurationInputBuilder {
         self.channel_name = input;
         self
     }
+    /// <p>The name of the channel.</p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the channel.</p>
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DescribeMediaStorageConfigurationInputBuilder {
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the channel.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
     }
     /// Consumes the builder and constructs a [`DescribeMediaStorageConfigurationInput`](crate::operation::describe_media_storage_configuration::DescribeMediaStorageConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_media_storage_configuration::DescribeMediaStorageConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -52,6 +52,12 @@ impl PutLifecycleEventHookExecutionStatusOutputBuilder {
         self.lifecycle_event_hook_execution_id = input;
         self
     }
+    /// <p>The execution ID of the lifecycle event hook. A hook is specified in the <code>hooks</code> section of the deployment's AppSpec file.</p>
+    pub fn get_lifecycle_event_hook_execution_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.lifecycle_event_hook_execution_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

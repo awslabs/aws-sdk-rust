@@ -37,6 +37,13 @@ impl UpdatePipelineExecutionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdatePipelineExecution as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_pipeline_execution::builders::UpdatePipelineExecutionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl UpdatePipelineExecutionFluentBuilder {
         self.inner = self.inner.set_pipeline_execution_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    pub fn get_pipeline_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pipeline_execution_arn()
+    }
     /// <p>The description of the pipeline execution.</p>
     pub fn pipeline_execution_description(
         mut self,
@@ -148,6 +159,12 @@ impl UpdatePipelineExecutionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_pipeline_execution_description(input);
         self
+    }
+    /// <p>The description of the pipeline execution.</p>
+    pub fn get_pipeline_execution_description(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pipeline_execution_description()
     }
     /// <p>The display name of the pipeline execution.</p>
     pub fn pipeline_execution_display_name(
@@ -165,6 +182,12 @@ impl UpdatePipelineExecutionFluentBuilder {
         self.inner = self.inner.set_pipeline_execution_display_name(input);
         self
     }
+    /// <p>The display name of the pipeline execution.</p>
+    pub fn get_pipeline_execution_display_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pipeline_execution_display_name()
+    }
     /// <p>This configuration, if specified, overrides the parallelism configuration of the parent pipeline for this specific run.</p>
     pub fn parallelism_configuration(
         mut self,
@@ -180,5 +203,11 @@ impl UpdatePipelineExecutionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_parallelism_configuration(input);
         self
+    }
+    /// <p>This configuration, if specified, overrides the parallelism configuration of the parent pipeline for this specific run.</p>
+    pub fn get_parallelism_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ParallelismConfiguration> {
+        self.inner.get_parallelism_configuration()
     }
 }

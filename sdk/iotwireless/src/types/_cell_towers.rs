@@ -81,6 +81,10 @@ impl CellTowersBuilder {
         self.gsm = input;
         self
     }
+    /// <p>GSM object information.</p>
+    pub fn get_gsm(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GsmObj>> {
+        &self.gsm
+    }
     /// Appends an item to `wcdma`.
     ///
     /// To override the contents of this collection use [`set_wcdma`](Self::set_wcdma).
@@ -99,6 +103,10 @@ impl CellTowersBuilder {
     ) -> Self {
         self.wcdma = input;
         self
+    }
+    /// <p>WCDMA object information.</p>
+    pub fn get_wcdma(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WcdmaObj>> {
+        &self.wcdma
     }
     /// Appends an item to `tdscdma`.
     ///
@@ -119,6 +127,10 @@ impl CellTowersBuilder {
         self.tdscdma = input;
         self
     }
+    /// <p>TD-SCDMA object information.</p>
+    pub fn get_tdscdma(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TdscdmaObj>> {
+        &self.tdscdma
+    }
     /// Appends an item to `lte`.
     ///
     /// To override the contents of this collection use [`set_lte`](Self::set_lte).
@@ -138,6 +150,10 @@ impl CellTowersBuilder {
         self.lte = input;
         self
     }
+    /// <p>LTE object information.</p>
+    pub fn get_lte(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LteObj>> {
+        &self.lte
+    }
     /// Appends an item to `cdma`.
     ///
     /// To override the contents of this collection use [`set_cdma`](Self::set_cdma).
@@ -156,6 +172,10 @@ impl CellTowersBuilder {
     ) -> Self {
         self.cdma = input;
         self
+    }
+    /// <p>CDMA object information.</p>
+    pub fn get_cdma(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CdmaObj>> {
+        &self.cdma
     }
     /// Consumes the builder and constructs a [`CellTowers`](crate::types::CellTowers).
     pub fn build(self) -> crate::types::CellTowers {

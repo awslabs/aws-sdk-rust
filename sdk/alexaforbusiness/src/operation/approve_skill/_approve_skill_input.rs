@@ -39,6 +39,10 @@ impl ApproveSkillInputBuilder {
         self.skill_id = input;
         self
     }
+    /// <p>The unique identifier of the skill.</p>
+    pub fn get_skill_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.skill_id
+    }
     /// Consumes the builder and constructs a [`ApproveSkillInput`](crate::operation::approve_skill::ApproveSkillInput).
     pub fn build(
         self,

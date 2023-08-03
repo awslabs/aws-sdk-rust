@@ -63,6 +63,10 @@ impl UpdateCampaignInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The unique identifier for the campaign.</p>
     pub fn campaign_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.campaign_id = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl UpdateCampaignInputBuilder {
     pub fn set_campaign_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.campaign_id = input;
         self
+    }
+    /// <p>The unique identifier for the campaign.</p>
+    pub fn get_campaign_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.campaign_id
     }
     /// <p>Specifies the configuration and other settings for a campaign.</p>
     pub fn write_campaign_request(mut self, input: crate::types::WriteCampaignRequest) -> Self {
@@ -85,6 +93,12 @@ impl UpdateCampaignInputBuilder {
     ) -> Self {
         self.write_campaign_request = input;
         self
+    }
+    /// <p>Specifies the configuration and other settings for a campaign.</p>
+    pub fn get_write_campaign_request(
+        &self,
+    ) -> &::std::option::Option<crate::types::WriteCampaignRequest> {
+        &self.write_campaign_request
     }
     /// Consumes the builder and constructs a [`UpdateCampaignInput`](crate::operation::update_campaign::UpdateCampaignInput).
     pub fn build(

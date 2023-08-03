@@ -46,6 +46,10 @@ impl AdjustmentTypeBuilder {
         self.adjustment_type = input;
         self
     }
+    /// <p>The policy adjustment type. The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
+    pub fn get_adjustment_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.adjustment_type
+    }
     /// Consumes the builder and constructs a [`AdjustmentType`](crate::types::AdjustmentType).
     pub fn build(self) -> crate::types::AdjustmentType {
         crate::types::AdjustmentType {

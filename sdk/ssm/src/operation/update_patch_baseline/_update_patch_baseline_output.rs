@@ -156,6 +156,10 @@ impl UpdatePatchBaselineOutputBuilder {
         self.baseline_id = input;
         self
     }
+    /// <p>The ID of the deleted patch baseline.</p>
+    pub fn get_baseline_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.baseline_id
+    }
     /// <p>The name of the patch baseline.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -165,6 +169,10 @@ impl UpdatePatchBaselineOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the patch baseline.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The operating system rule used by the updated patch baseline.</p>
     pub fn operating_system(mut self, input: crate::types::OperatingSystem) -> Self {
@@ -179,6 +187,10 @@ impl UpdatePatchBaselineOutputBuilder {
         self.operating_system = input;
         self
     }
+    /// <p>The operating system rule used by the updated patch baseline.</p>
+    pub fn get_operating_system(&self) -> &::std::option::Option<crate::types::OperatingSystem> {
+        &self.operating_system
+    }
     /// <p>A set of global filters used to exclude patches from the baseline.</p>
     pub fn global_filters(mut self, input: crate::types::PatchFilterGroup) -> Self {
         self.global_filters = ::std::option::Option::Some(input);
@@ -192,6 +204,10 @@ impl UpdatePatchBaselineOutputBuilder {
         self.global_filters = input;
         self
     }
+    /// <p>A set of global filters used to exclude patches from the baseline.</p>
+    pub fn get_global_filters(&self) -> &::std::option::Option<crate::types::PatchFilterGroup> {
+        &self.global_filters
+    }
     /// <p>A set of rules used to include patches in the baseline.</p>
     pub fn approval_rules(mut self, input: crate::types::PatchRuleGroup) -> Self {
         self.approval_rules = ::std::option::Option::Some(input);
@@ -204,6 +220,10 @@ impl UpdatePatchBaselineOutputBuilder {
     ) -> Self {
         self.approval_rules = input;
         self
+    }
+    /// <p>A set of rules used to include patches in the baseline.</p>
+    pub fn get_approval_rules(&self) -> &::std::option::Option<crate::types::PatchRuleGroup> {
+        &self.approval_rules
     }
     /// Appends an item to `approved_patches`.
     ///
@@ -227,6 +247,12 @@ impl UpdatePatchBaselineOutputBuilder {
         self.approved_patches = input;
         self
     }
+    /// <p>A list of explicitly approved patches for the baseline.</p>
+    pub fn get_approved_patches(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.approved_patches
+    }
     /// <p>The compliance severity level assigned to the patch baseline after the update completed.</p>
     pub fn approved_patches_compliance_level(
         mut self,
@@ -243,6 +269,12 @@ impl UpdatePatchBaselineOutputBuilder {
         self.approved_patches_compliance_level = input;
         self
     }
+    /// <p>The compliance severity level assigned to the patch baseline after the update completed.</p>
+    pub fn get_approved_patches_compliance_level(
+        &self,
+    ) -> &::std::option::Option<crate::types::PatchComplianceLevel> {
+        &self.approved_patches_compliance_level
+    }
     /// <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
     pub fn approved_patches_enable_non_security(mut self, input: bool) -> Self {
         self.approved_patches_enable_non_security = ::std::option::Option::Some(input);
@@ -255,6 +287,10 @@ impl UpdatePatchBaselineOutputBuilder {
     ) -> Self {
         self.approved_patches_enable_non_security = input;
         self
+    }
+    /// <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
+    pub fn get_approved_patches_enable_non_security(&self) -> &::std::option::Option<bool> {
+        &self.approved_patches_enable_non_security
     }
     /// Appends an item to `rejected_patches`.
     ///
@@ -278,6 +314,12 @@ impl UpdatePatchBaselineOutputBuilder {
         self.rejected_patches = input;
         self
     }
+    /// <p>A list of explicitly rejected patches for the baseline.</p>
+    pub fn get_rejected_patches(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.rejected_patches
+    }
     /// <p>The action specified to take on patches included in the <code>RejectedPatches</code> list. A patch can be allowed only if it is a dependency of another package, or blocked entirely along with packages that include it as a dependency.</p>
     pub fn rejected_patches_action(mut self, input: crate::types::PatchAction) -> Self {
         self.rejected_patches_action = ::std::option::Option::Some(input);
@@ -290,6 +332,10 @@ impl UpdatePatchBaselineOutputBuilder {
     ) -> Self {
         self.rejected_patches_action = input;
         self
+    }
+    /// <p>The action specified to take on patches included in the <code>RejectedPatches</code> list. A patch can be allowed only if it is a dependency of another package, or blocked entirely along with packages that include it as a dependency.</p>
+    pub fn get_rejected_patches_action(&self) -> &::std::option::Option<crate::types::PatchAction> {
+        &self.rejected_patches_action
     }
     /// <p>The date when the patch baseline was created.</p>
     pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -304,6 +350,10 @@ impl UpdatePatchBaselineOutputBuilder {
         self.created_date = input;
         self
     }
+    /// <p>The date when the patch baseline was created.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_date
+    }
     /// <p>The date when the patch baseline was last modified.</p>
     pub fn modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.modified_date = ::std::option::Option::Some(input);
@@ -317,6 +367,10 @@ impl UpdatePatchBaselineOutputBuilder {
         self.modified_date = input;
         self
     }
+    /// <p>The date when the patch baseline was last modified.</p>
+    pub fn get_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.modified_date
+    }
     /// <p>A description of the patch baseline.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -326,6 +380,10 @@ impl UpdatePatchBaselineOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the patch baseline.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `sources`.
     ///
@@ -345,6 +403,12 @@ impl UpdatePatchBaselineOutputBuilder {
     ) -> Self {
         self.sources = input;
         self
+    }
+    /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
+    pub fn get_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchSource>> {
+        &self.sources
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

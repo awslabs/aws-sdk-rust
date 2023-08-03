@@ -58,6 +58,10 @@ impl GetPipelineOutputBuilder {
         self.pipeline = input;
         self
     }
+    /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
+    pub fn get_pipeline(&self) -> &::std::option::Option<crate::types::PipelineDeclaration> {
+        &self.pipeline
+    }
     /// <p>Represents the pipeline metadata information returned as part of the output of a <code>GetPipeline</code> action.</p>
     pub fn metadata(mut self, input: crate::types::PipelineMetadata) -> Self {
         self.metadata = ::std::option::Option::Some(input);
@@ -70,6 +74,10 @@ impl GetPipelineOutputBuilder {
     ) -> Self {
         self.metadata = input;
         self
+    }
+    /// <p>Represents the pipeline metadata information returned as part of the output of a <code>GetPipeline</code> action.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::PipelineMetadata> {
+        &self.metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

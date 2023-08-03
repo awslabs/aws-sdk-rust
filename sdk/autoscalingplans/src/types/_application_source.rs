@@ -54,6 +54,10 @@ impl ApplicationSourceBuilder {
         self.cloud_formation_stack_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of a AWS CloudFormation stack.</p>
+    pub fn get_cloud_formation_stack_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cloud_formation_stack_arn
+    }
     /// Appends an item to `tag_filters`.
     ///
     /// To override the contents of this collection use [`set_tag_filters`](Self::set_tag_filters).
@@ -72,6 +76,12 @@ impl ApplicationSourceBuilder {
     ) -> Self {
         self.tag_filters = input;
         self
+    }
+    /// <p>A set of tags (up to 50).</p>
+    pub fn get_tag_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagFilter>> {
+        &self.tag_filters
     }
     /// Consumes the builder and constructs a [`ApplicationSource`](crate::types::ApplicationSource).
     pub fn build(self) -> crate::types::ApplicationSource {

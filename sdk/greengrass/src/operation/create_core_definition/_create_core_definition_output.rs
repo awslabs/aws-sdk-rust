@@ -95,6 +95,10 @@ impl CreateCoreDefinitionOutputBuilder {
         self.arn = input;
         self
     }
+    /// The ARN of the definition.
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// The time, in milliseconds since the epoch, when the definition was created.
     pub fn creation_timestamp(
         mut self,
@@ -111,6 +115,10 @@ impl CreateCoreDefinitionOutputBuilder {
         self.creation_timestamp = input;
         self
     }
+    /// The time, in milliseconds since the epoch, when the definition was created.
+    pub fn get_creation_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_timestamp
+    }
     /// The ID of the definition.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -120,6 +128,10 @@ impl CreateCoreDefinitionOutputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// The ID of the definition.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// The time, in milliseconds since the epoch, when the definition was last updated.
     pub fn last_updated_timestamp(
@@ -137,6 +149,10 @@ impl CreateCoreDefinitionOutputBuilder {
         self.last_updated_timestamp = input;
         self
     }
+    /// The time, in milliseconds since the epoch, when the definition was last updated.
+    pub fn get_last_updated_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_updated_timestamp
+    }
     /// The ID of the latest version associated with the definition.
     pub fn latest_version(
         mut self,
@@ -152,6 +168,10 @@ impl CreateCoreDefinitionOutputBuilder {
     ) -> Self {
         self.latest_version = input;
         self
+    }
+    /// The ID of the latest version associated with the definition.
+    pub fn get_latest_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.latest_version
     }
     /// The ARN of the latest version associated with the definition.
     pub fn latest_version_arn(
@@ -169,6 +189,10 @@ impl CreateCoreDefinitionOutputBuilder {
         self.latest_version_arn = input;
         self
     }
+    /// The ARN of the latest version associated with the definition.
+    pub fn get_latest_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.latest_version_arn
+    }
     /// The name of the definition.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -178,6 +202,10 @@ impl CreateCoreDefinitionOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// The name of the definition.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

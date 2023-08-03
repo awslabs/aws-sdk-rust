@@ -39,6 +39,10 @@ impl DeleteRunGroupInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The run group's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`DeleteRunGroupInput`](crate::operation::delete_run_group::DeleteRunGroupInput).
     pub fn build(
         self,

@@ -44,6 +44,10 @@ impl GenerateEmbedUrlForRegisteredUserFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GenerateEmbedUrlForRegisteredUser as a reference.
+    pub fn as_input(&self) -> &crate::operation::generate_embed_url_for_registered_user::builders::GenerateEmbedUrlForRegisteredUserInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -114,6 +118,10 @@ impl GenerateEmbedUrlForRegisteredUserFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>How many minutes the session is valid. The session lifetime must be in [15-600] minutes range.</p>
     pub fn session_lifetime_in_minutes(mut self, input: i64) -> Self {
         self.inner = self.inner.session_lifetime_in_minutes(input);
@@ -124,6 +132,10 @@ impl GenerateEmbedUrlForRegisteredUserFluentBuilder {
         self.inner = self.inner.set_session_lifetime_in_minutes(input);
         self
     }
+    /// <p>How many minutes the session is valid. The session lifetime must be in [15-600] minutes range.</p>
+    pub fn get_session_lifetime_in_minutes(&self) -> &::std::option::Option<i64> {
+        self.inner.get_session_lifetime_in_minutes()
+    }
     /// <p>The Amazon Resource Name for the registered user.</p>
     pub fn user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_arn(input.into());
@@ -133,6 +145,10 @@ impl GenerateEmbedUrlForRegisteredUserFluentBuilder {
     pub fn set_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name for the registered user.</p>
+    pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_arn()
     }
     /// <p>The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q search bar, or the entire Amazon QuickSight console.</p>
     pub fn experience_configuration(
@@ -149,6 +165,12 @@ impl GenerateEmbedUrlForRegisteredUserFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_experience_configuration(input);
         self
+    }
+    /// <p>The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q search bar, or the entire Amazon QuickSight console.</p>
+    pub fn get_experience_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::RegisteredUserEmbeddingExperienceConfiguration> {
+        self.inner.get_experience_configuration()
     }
     /// Appends an item to `AllowedDomains`.
     ///
@@ -171,5 +193,12 @@ impl GenerateEmbedUrlForRegisteredUserFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_allowed_domains(input);
         self
+    }
+    /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
+    /// <p>To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example, <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
+    pub fn get_allowed_domains(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_allowed_domains()
     }
 }

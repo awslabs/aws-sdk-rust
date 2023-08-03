@@ -56,6 +56,10 @@ impl CustomRoutingDestinationDescriptionBuilder {
         self.from_port = input;
         self
     }
+    /// <p>The first port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.</p>
+    pub fn get_from_port(&self) -> &::std::option::Option<i32> {
+        &self.from_port
+    }
     /// <p>The last port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.</p>
     pub fn to_port(mut self, input: i32) -> Self {
         self.to_port = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl CustomRoutingDestinationDescriptionBuilder {
     pub fn set_to_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.to_port = input;
         self
+    }
+    /// <p>The last port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.</p>
+    pub fn get_to_port(&self) -> &::std::option::Option<i32> {
+        &self.to_port
     }
     /// Appends an item to `protocols`.
     ///
@@ -84,6 +92,10 @@ impl CustomRoutingDestinationDescriptionBuilder {
     ) -> Self {
         self.protocols = input;
         self
+    }
+    /// <p>The protocol for the endpoint group that is associated with a custom routing accelerator. The protocol can be either TCP or UDP.</p>
+    pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Protocol>> {
+        &self.protocols
     }
     /// Consumes the builder and constructs a [`CustomRoutingDestinationDescription`](crate::types::CustomRoutingDestinationDescription).
     pub fn build(self) -> crate::types::CustomRoutingDestinationDescription {

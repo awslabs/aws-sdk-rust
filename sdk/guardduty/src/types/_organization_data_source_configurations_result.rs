@@ -69,6 +69,12 @@ impl OrganizationDataSourceConfigurationsResultBuilder {
         self.s3_logs = input;
         self
     }
+    /// <p>Describes whether S3 data event logs are enabled as a data source.</p>
+    pub fn get_s3_logs(
+        &self,
+    ) -> &::std::option::Option<crate::types::OrganizationS3LogsConfigurationResult> {
+        &self.s3_logs
+    }
     /// <p>Describes the configuration of Kubernetes data sources.</p>
     pub fn kubernetes(
         mut self,
@@ -84,6 +90,12 @@ impl OrganizationDataSourceConfigurationsResultBuilder {
     ) -> Self {
         self.kubernetes = input;
         self
+    }
+    /// <p>Describes the configuration of Kubernetes data sources.</p>
+    pub fn get_kubernetes(
+        &self,
+    ) -> &::std::option::Option<crate::types::OrganizationKubernetesConfigurationResult> {
+        &self.kubernetes
     }
     /// <p>Describes the configuration of Malware Protection data source for an organization.</p>
     pub fn malware_protection(
@@ -102,6 +114,13 @@ impl OrganizationDataSourceConfigurationsResultBuilder {
     ) -> Self {
         self.malware_protection = input;
         self
+    }
+    /// <p>Describes the configuration of Malware Protection data source for an organization.</p>
+    pub fn get_malware_protection(
+        &self,
+    ) -> &::std::option::Option<crate::types::OrganizationMalwareProtectionConfigurationResult>
+    {
+        &self.malware_protection
     }
     /// Consumes the builder and constructs a [`OrganizationDataSourceConfigurationsResult`](crate::types::OrganizationDataSourceConfigurationsResult).
     pub fn build(self) -> crate::types::OrganizationDataSourceConfigurationsResult {

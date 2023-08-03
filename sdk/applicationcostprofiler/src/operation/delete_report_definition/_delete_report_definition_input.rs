@@ -41,6 +41,10 @@ impl DeleteReportDefinitionInputBuilder {
         self.report_id = input;
         self
     }
+    /// <p>Required. ID of the report to delete.</p>
+    pub fn get_report_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.report_id
+    }
     /// Consumes the builder and constructs a [`DeleteReportDefinitionInput`](crate::operation::delete_report_definition::DeleteReportDefinitionInput).
     pub fn build(
         self,

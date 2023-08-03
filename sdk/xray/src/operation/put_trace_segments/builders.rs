@@ -53,6 +53,12 @@ impl PutTraceSegmentsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutTraceSegments as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_trace_segments::builders::PutTraceSegmentsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -152,5 +158,11 @@ impl PutTraceSegmentsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_trace_segment_documents(input);
         self
+    }
+    /// <p>A string containing a JSON document defining one or more segments or subsegments.</p>
+    pub fn get_trace_segment_documents(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_trace_segment_documents()
     }
 }

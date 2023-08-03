@@ -42,6 +42,10 @@ impl SnsChannelConfigBuilder {
         self.topic_arn = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) of an Amazon Simple Notification Service topic. </p>
+    pub fn get_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_arn
+    }
     /// Consumes the builder and constructs a [`SnsChannelConfig`](crate::types::SnsChannelConfig).
     pub fn build(self) -> crate::types::SnsChannelConfig {
         crate::types::SnsChannelConfig {

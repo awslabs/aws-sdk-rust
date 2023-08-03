@@ -50,6 +50,10 @@ impl CreateRoomMembershipOutputBuilder {
         self.room_membership = input;
         self
     }
+    /// <p>The room membership details.</p>
+    pub fn get_room_membership(&self) -> &::std::option::Option<crate::types::RoomMembership> {
+        &self.room_membership
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

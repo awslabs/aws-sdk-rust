@@ -81,6 +81,12 @@ impl LambdaLayerAggregationBuilder {
         self.function_names = input;
         self
     }
+    /// <p>The names of the AWS Lambda functions associated with the layers.</p>
+    pub fn get_function_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.function_names
+    }
     /// Appends an item to `resource_ids`.
     ///
     /// To override the contents of this collection use [`set_resource_ids`](Self::set_resource_ids).
@@ -99,6 +105,12 @@ impl LambdaLayerAggregationBuilder {
     ) -> Self {
         self.resource_ids = input;
         self
+    }
+    /// <p>The resource IDs for the AWS Lambda function layers.</p>
+    pub fn get_resource_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.resource_ids
     }
     /// Appends an item to `layer_arns`.
     ///
@@ -119,6 +131,12 @@ impl LambdaLayerAggregationBuilder {
         self.layer_arns = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Lambda function layer. </p>
+    pub fn get_layer_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.layer_arns
+    }
     /// <p>The order to use for sorting the results.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -128,6 +146,10 @@ impl LambdaLayerAggregationBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p>The order to use for sorting the results.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.sort_order
     }
     /// <p>The finding severity to use for sorting the results.</p>
     pub fn sort_by(mut self, input: crate::types::LambdaLayerSortBy) -> Self {
@@ -141,6 +163,10 @@ impl LambdaLayerAggregationBuilder {
     ) -> Self {
         self.sort_by = input;
         self
+    }
+    /// <p>The finding severity to use for sorting the results.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::LambdaLayerSortBy> {
+        &self.sort_by
     }
     /// Consumes the builder and constructs a [`LambdaLayerAggregation`](crate::types::LambdaLayerAggregation).
     pub fn build(self) -> crate::types::LambdaLayerAggregation {

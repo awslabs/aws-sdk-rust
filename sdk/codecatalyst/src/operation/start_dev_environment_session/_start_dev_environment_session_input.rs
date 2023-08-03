@@ -67,6 +67,10 @@ impl StartDevEnvironmentSessionInputBuilder {
         self.space_name = input;
         self
     }
+    /// <p>The name of the space.</p>
+    pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.space_name
+    }
     /// <p>The name of the project in the space.</p>
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
@@ -77,6 +81,10 @@ impl StartDevEnvironmentSessionInputBuilder {
         self.project_name = input;
         self
     }
+    /// <p>The name of the project in the space.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
+    }
     /// <p>The system-generated unique ID of the Dev Environment.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -86,6 +94,10 @@ impl StartDevEnvironmentSessionInputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The system-generated unique ID of the Dev Environment.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>Information about the configuration of a Dev Environment session.</p>
     pub fn session_configuration(
@@ -102,6 +114,12 @@ impl StartDevEnvironmentSessionInputBuilder {
     ) -> Self {
         self.session_configuration = input;
         self
+    }
+    /// <p>Information about the configuration of a Dev Environment session.</p>
+    pub fn get_session_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DevEnvironmentSessionConfiguration> {
+        &self.session_configuration
     }
     /// Consumes the builder and constructs a [`StartDevEnvironmentSessionInput`](crate::operation::start_dev_environment_session::StartDevEnvironmentSessionInput).
     pub fn build(

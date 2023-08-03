@@ -36,6 +36,10 @@ impl GetModelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetModel as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_model::builders::GetModelInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl GetModelFluentBuilder {
         self.inner = self.inner.set_rest_api_id(input);
         self
     }
+    /// <p>The RestApi identifier under which the Model exists.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rest_api_id()
+    }
     /// <p>The name of the model as an identifier.</p>
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_name(input.into());
@@ -128,6 +136,10 @@ impl GetModelFluentBuilder {
         self.inner = self.inner.set_model_name(input);
         self
     }
+    /// <p>The name of the model as an identifier.</p>
+    pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_model_name()
+    }
     /// <p>A query parameter of a Boolean value to resolve (<code>true</code>) all external model references and returns a flattened model schema or not (<code>false</code>) The default is <code>false</code>.</p>
     pub fn flatten(mut self, input: bool) -> Self {
         self.inner = self.inner.flatten(input);
@@ -137,5 +149,9 @@ impl GetModelFluentBuilder {
     pub fn set_flatten(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_flatten(input);
         self
+    }
+    /// <p>A query parameter of a Boolean value to resolve (<code>true</code>) all external model references and returns a flattened model schema or not (<code>false</code>) The default is <code>false</code>.</p>
+    pub fn get_flatten(&self) -> &::std::option::Option<bool> {
+        self.inner.get_flatten()
     }
 }

@@ -39,6 +39,10 @@ impl CreateTrafficMirrorSessionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateTrafficMirrorSession as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_traffic_mirror_session::builders::CreateTrafficMirrorSessionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +139,10 @@ impl CreateTrafficMirrorSessionFluentBuilder {
         self.inner = self.inner.set_network_interface_id(input);
         self
     }
+    /// <p>The ID of the source network interface.</p>
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_network_interface_id()
+    }
     /// <p>The ID of the Traffic Mirror target.</p>
     pub fn traffic_mirror_target_id(
         mut self,
@@ -150,6 +158,10 @@ impl CreateTrafficMirrorSessionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_traffic_mirror_target_id(input);
         self
+    }
+    /// <p>The ID of the Traffic Mirror target.</p>
+    pub fn get_traffic_mirror_target_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_traffic_mirror_target_id()
     }
     /// <p>The ID of the Traffic Mirror filter.</p>
     pub fn traffic_mirror_filter_id(
@@ -167,6 +179,10 @@ impl CreateTrafficMirrorSessionFluentBuilder {
         self.inner = self.inner.set_traffic_mirror_filter_id(input);
         self
     }
+    /// <p>The ID of the Traffic Mirror filter.</p>
+    pub fn get_traffic_mirror_filter_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_traffic_mirror_filter_id()
+    }
     /// <p>The number of bytes in each packet to mirror. These are bytes after the VXLAN header. Do not specify this parameter when you want to mirror the entire packet. To mirror a subset of the packet, set this to the length (in bytes) that you want to mirror. For example, if you set this value to 100, then the first 100 bytes that meet the filter criteria are copied to the target.</p>
     /// <p>If you do not want to mirror the entire packet, use the <code>PacketLength</code> parameter to specify the number of bytes in each packet to mirror.</p>
     pub fn packet_length(mut self, input: i32) -> Self {
@@ -178,6 +194,11 @@ impl CreateTrafficMirrorSessionFluentBuilder {
     pub fn set_packet_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_packet_length(input);
         self
+    }
+    /// <p>The number of bytes in each packet to mirror. These are bytes after the VXLAN header. Do not specify this parameter when you want to mirror the entire packet. To mirror a subset of the packet, set this to the length (in bytes) that you want to mirror. For example, if you set this value to 100, then the first 100 bytes that meet the filter criteria are copied to the target.</p>
+    /// <p>If you do not want to mirror the entire packet, use the <code>PacketLength</code> parameter to specify the number of bytes in each packet to mirror.</p>
+    pub fn get_packet_length(&self) -> &::std::option::Option<i32> {
+        self.inner.get_packet_length()
     }
     /// <p>The session number determines the order in which sessions are evaluated when an interface is used by multiple sessions. The first session with a matching filter is the one that mirrors the packets.</p>
     /// <p>Valid values are 1-32766.</p>
@@ -191,6 +212,11 @@ impl CreateTrafficMirrorSessionFluentBuilder {
         self.inner = self.inner.set_session_number(input);
         self
     }
+    /// <p>The session number determines the order in which sessions are evaluated when an interface is used by multiple sessions. The first session with a matching filter is the one that mirrors the packets.</p>
+    /// <p>Valid values are 1-32766.</p>
+    pub fn get_session_number(&self) -> &::std::option::Option<i32> {
+        self.inner.get_session_number()
+    }
     /// <p>The VXLAN ID for the Traffic Mirror session. For more information about the VXLAN protocol, see <a href="https://tools.ietf.org/html/rfc7348">RFC 7348</a>. If you do not specify a <code>VirtualNetworkId</code>, an account-wide unique id is chosen at random.</p>
     pub fn virtual_network_id(mut self, input: i32) -> Self {
         self.inner = self.inner.virtual_network_id(input);
@@ -201,6 +227,10 @@ impl CreateTrafficMirrorSessionFluentBuilder {
         self.inner = self.inner.set_virtual_network_id(input);
         self
     }
+    /// <p>The VXLAN ID for the Traffic Mirror session. For more information about the VXLAN protocol, see <a href="https://tools.ietf.org/html/rfc7348">RFC 7348</a>. If you do not specify a <code>VirtualNetworkId</code>, an account-wide unique id is chosen at random.</p>
+    pub fn get_virtual_network_id(&self) -> &::std::option::Option<i32> {
+        self.inner.get_virtual_network_id()
+    }
     /// <p>The description of the Traffic Mirror session.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -210,6 +240,10 @@ impl CreateTrafficMirrorSessionFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the Traffic Mirror session.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `TagSpecifications`.
     ///
@@ -228,6 +262,12 @@ impl CreateTrafficMirrorSessionFluentBuilder {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
+    /// <p>The tags to assign to a Traffic Mirror session.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        self.inner.get_tag_specifications()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -238,6 +278,10 @@ impl CreateTrafficMirrorSessionFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -247,5 +291,9 @@ impl CreateTrafficMirrorSessionFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

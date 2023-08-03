@@ -62,6 +62,10 @@ impl NetworkInterfaceBuilder {
         self.network_interface_id = input;
         self
     }
+    /// <p>The ID of the network interface.</p>
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_interface_id
+    }
     /// <p>The IPv4 address of the network interface within the subnet.</p>
     pub fn private_ip_address(
         mut self,
@@ -78,6 +82,10 @@ impl NetworkInterfaceBuilder {
         self.private_ip_address = input;
         self
     }
+    /// <p>The IPv4 address of the network interface within the subnet.</p>
+    pub fn get_private_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_ip_address
+    }
     /// <p>The IPv4 public address of the network interface.</p>
     pub fn public_ip_address(
         mut self,
@@ -93,6 +101,10 @@ impl NetworkInterfaceBuilder {
     ) -> Self {
         self.public_ip_address = input;
         self
+    }
+    /// <p>The IPv4 public address of the network interface.</p>
+    pub fn get_public_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_ip_address
     }
     /// Consumes the builder and constructs a [`NetworkInterface`](crate::types::NetworkInterface).
     pub fn build(self) -> crate::types::NetworkInterface {

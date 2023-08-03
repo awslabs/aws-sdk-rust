@@ -50,6 +50,12 @@ impl RunCommandParametersBuilder {
         self.run_command_targets = input;
         self
     }
+    /// <p>Currently, we support including only one RunCommandTarget block, which specifies either an array of InstanceIds or a tag.</p>
+    pub fn get_run_command_targets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RunCommandTarget>> {
+        &self.run_command_targets
+    }
     /// Consumes the builder and constructs a [`RunCommandParameters`](crate::types::RunCommandParameters).
     pub fn build(self) -> crate::types::RunCommandParameters {
         crate::types::RunCommandParameters {

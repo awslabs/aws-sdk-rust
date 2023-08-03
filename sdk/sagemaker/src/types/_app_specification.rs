@@ -56,6 +56,10 @@ impl AppSpecificationBuilder {
         self.image_uri = input;
         self
     }
+    /// <p>The container image to be run by the processing job.</p>
+    pub fn get_image_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_uri
+    }
     /// Appends an item to `container_entrypoint`.
     ///
     /// To override the contents of this collection use [`set_container_entrypoint`](Self::set_container_entrypoint).
@@ -78,6 +82,12 @@ impl AppSpecificationBuilder {
         self.container_entrypoint = input;
         self
     }
+    /// <p>The entrypoint for a container used to run a processing job.</p>
+    pub fn get_container_entrypoint(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.container_entrypoint
+    }
     /// Appends an item to `container_arguments`.
     ///
     /// To override the contents of this collection use [`set_container_arguments`](Self::set_container_arguments).
@@ -99,6 +109,12 @@ impl AppSpecificationBuilder {
     ) -> Self {
         self.container_arguments = input;
         self
+    }
+    /// <p>The arguments for a container used to run a processing job.</p>
+    pub fn get_container_arguments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.container_arguments
     }
     /// Consumes the builder and constructs a [`AppSpecification`](crate::types::AppSpecification).
     pub fn build(self) -> crate::types::AppSpecification {

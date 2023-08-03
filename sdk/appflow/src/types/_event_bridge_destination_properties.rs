@@ -50,6 +50,10 @@ impl EventBridgeDestinationPropertiesBuilder {
         self.object = input;
         self
     }
+    /// <p> The object specified in the Amazon EventBridge flow destination. </p>
+    pub fn get_object(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object
+    }
     /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
     pub fn error_handling_config(mut self, input: crate::types::ErrorHandlingConfig) -> Self {
         self.error_handling_config = ::std::option::Option::Some(input);
@@ -62,6 +66,12 @@ impl EventBridgeDestinationPropertiesBuilder {
     ) -> Self {
         self.error_handling_config = input;
         self
+    }
+    /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
+    pub fn get_error_handling_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ErrorHandlingConfig> {
+        &self.error_handling_config
     }
     /// Consumes the builder and constructs a [`EventBridgeDestinationProperties`](crate::types::EventBridgeDestinationProperties).
     pub fn build(self) -> crate::types::EventBridgeDestinationProperties {

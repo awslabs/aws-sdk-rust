@@ -80,6 +80,10 @@ impl EventSourceBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the event source.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the partner that created the event source.</p>
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl EventSourceBuilder {
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by = input;
         self
+    }
+    /// <p>The name of the partner that created the event source.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by
     }
     /// <p>The date and time the event source was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -103,6 +111,10 @@ impl EventSourceBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The date and time the event source was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The date and time that the event source will expire, if the Amazon Web Services account doesn't create a matching event bus for it.</p>
     pub fn expiration_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expiration_time = ::std::option::Option::Some(input);
@@ -116,6 +128,10 @@ impl EventSourceBuilder {
         self.expiration_time = input;
         self
     }
+    /// <p>The date and time that the event source will expire, if the Amazon Web Services account doesn't create a matching event bus for it.</p>
+    pub fn get_expiration_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expiration_time
+    }
     /// <p>The name of the event source.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -125,6 +141,10 @@ impl EventSourceBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the event source.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has since been deleted.</p>
     pub fn state(mut self, input: crate::types::EventSourceState) -> Self {
@@ -138,6 +158,10 @@ impl EventSourceBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has since been deleted.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::EventSourceState> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`EventSource`](crate::types::EventSource).
     pub fn build(self) -> crate::types::EventSource {

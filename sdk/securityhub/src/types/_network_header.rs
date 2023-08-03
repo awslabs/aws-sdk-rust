@@ -56,6 +56,10 @@ impl NetworkHeaderBuilder {
         self.protocol = input;
         self
     }
+    /// <p>The protocol used for the component.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<::std::string::String> {
+        &self.protocol
+    }
     /// <p>Information about the destination of the component.</p>
     pub fn destination(mut self, input: crate::types::NetworkPathComponentDetails) -> Self {
         self.destination = ::std::option::Option::Some(input);
@@ -69,6 +73,12 @@ impl NetworkHeaderBuilder {
         self.destination = input;
         self
     }
+    /// <p>Information about the destination of the component.</p>
+    pub fn get_destination(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkPathComponentDetails> {
+        &self.destination
+    }
     /// <p>Information about the origin of the component.</p>
     pub fn source(mut self, input: crate::types::NetworkPathComponentDetails) -> Self {
         self.source = ::std::option::Option::Some(input);
@@ -81,6 +91,10 @@ impl NetworkHeaderBuilder {
     ) -> Self {
         self.source = input;
         self
+    }
+    /// <p>Information about the origin of the component.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::NetworkPathComponentDetails> {
+        &self.source
     }
     /// Consumes the builder and constructs a [`NetworkHeader`](crate::types::NetworkHeader).
     pub fn build(self) -> crate::types::NetworkHeader {

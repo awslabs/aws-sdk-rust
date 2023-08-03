@@ -59,6 +59,10 @@ impl FilterExpressionBuilder {
         self.operation = input;
         self
     }
+    /// <p>The type of operation to perform in the expression.</p>
+    pub fn get_operation(&self) -> &::std::option::Option<crate::types::FilterOperation> {
+        &self.operation
+    }
     /// <p>Whether the expression is to be negated.</p>
     pub fn negated(mut self, input: bool) -> Self {
         self.negated = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl FilterExpressionBuilder {
     pub fn set_negated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.negated = input;
         self
+    }
+    /// <p>Whether the expression is to be negated.</p>
+    pub fn get_negated(&self) -> &::std::option::Option<bool> {
+        &self.negated
     }
     /// Appends an item to `values`.
     ///
@@ -87,6 +95,10 @@ impl FilterExpressionBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>A list of filter values.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterValue>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`FilterExpression`](crate::types::FilterExpression).
     pub fn build(self) -> crate::types::FilterExpression {

@@ -127,6 +127,10 @@ impl AuthenticateCognitoActionConfigBuilder {
         self.user_pool_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Cognito user pool.</p>
+    pub fn get_user_pool_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool_arn
+    }
     /// <p>The ID of the Amazon Cognito user pool client.</p>
     pub fn user_pool_client_id(
         mut self,
@@ -142,6 +146,10 @@ impl AuthenticateCognitoActionConfigBuilder {
     ) -> Self {
         self.user_pool_client_id = input;
         self
+    }
+    /// <p>The ID of the Amazon Cognito user pool client.</p>
+    pub fn get_user_pool_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool_client_id
     }
     /// <p>The domain prefix or fully-qualified domain name of the Amazon Cognito user pool.</p>
     pub fn user_pool_domain(
@@ -159,6 +167,10 @@ impl AuthenticateCognitoActionConfigBuilder {
         self.user_pool_domain = input;
         self
     }
+    /// <p>The domain prefix or fully-qualified domain name of the Amazon Cognito user pool.</p>
+    pub fn get_user_pool_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool_domain
+    }
     /// <p>The name of the cookie used to maintain session information. The default is AWSELBAuthSessionCookie.</p>
     pub fn session_cookie_name(
         mut self,
@@ -175,6 +187,10 @@ impl AuthenticateCognitoActionConfigBuilder {
         self.session_cookie_name = input;
         self
     }
+    /// <p>The name of the cookie used to maintain session information. The default is AWSELBAuthSessionCookie.</p>
+    pub fn get_session_cookie_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_cookie_name
+    }
     /// <p>The set of user claims to be requested from the IdP. The default is <code>openid</code>.</p>
     /// <p>To verify which scope values your IdP supports and how to separate multiple values, see the documentation for your IdP.</p>
     pub fn scope(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -187,6 +203,11 @@ impl AuthenticateCognitoActionConfigBuilder {
         self.scope = input;
         self
     }
+    /// <p>The set of user claims to be requested from the IdP. The default is <code>openid</code>.</p>
+    /// <p>To verify which scope values your IdP supports and how to separate multiple values, see the documentation for your IdP.</p>
+    pub fn get_scope(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scope
+    }
     /// <p>The maximum duration of the authentication session, in seconds. The default is 604800 seconds (7 days).</p>
     pub fn session_timeout(mut self, input: i64) -> Self {
         self.session_timeout = ::std::option::Option::Some(input);
@@ -196,6 +217,10 @@ impl AuthenticateCognitoActionConfigBuilder {
     pub fn set_session_timeout(mut self, input: ::std::option::Option<i64>) -> Self {
         self.session_timeout = input;
         self
+    }
+    /// <p>The maximum duration of the authentication session, in seconds. The default is 604800 seconds (7 days).</p>
+    pub fn get_session_timeout(&self) -> &::std::option::Option<i64> {
+        &self.session_timeout
     }
     /// Adds a key-value pair to `authentication_request_extra_params`.
     ///
@@ -221,6 +246,14 @@ impl AuthenticateCognitoActionConfigBuilder {
     ) -> Self {
         self.authentication_request_extra_params = input;
         self
+    }
+    /// <p>The query parameters (up to 10) to include in the redirect request to the authorization endpoint.</p>
+    pub fn get_authentication_request_extra_params(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.authentication_request_extra_params
     }
     /// <p>The behavior if the user is not authenticated. The following are possible values:</p>
     /// <ul>
@@ -249,6 +282,18 @@ impl AuthenticateCognitoActionConfigBuilder {
     ) -> Self {
         self.on_unauthenticated_request = input;
         self
+    }
+    /// <p>The behavior if the user is not authenticated. The following are possible values:</p>
+    /// <ul>
+    /// <li> <p>deny<code></code> - Return an HTTP 401 Unauthorized error.</p> </li>
+    /// <li> <p>allow<code></code> - Allow the request to be forwarded to the target.</p> </li>
+    /// <li> <p>authenticate<code></code> - Redirect the request to the IdP authorization endpoint. This is the default value.</p> </li>
+    /// </ul>
+    pub fn get_on_unauthenticated_request(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthenticateCognitoActionConditionalBehaviorEnum>
+    {
+        &self.on_unauthenticated_request
     }
     /// Consumes the builder and constructs a [`AuthenticateCognitoActionConfig`](crate::types::AuthenticateCognitoActionConfig).
     pub fn build(self) -> crate::types::AuthenticateCognitoActionConfig {

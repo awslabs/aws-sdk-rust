@@ -57,6 +57,12 @@ impl ResourceErrorsDetailsBuilder {
         self.resource_errors = input;
         self
     }
+    /// <p> A list of errors retrieving an application's resources. </p>
+    pub fn get_resource_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceError>> {
+        &self.resource_errors
+    }
     /// <p> This indicates if there are more errors not listed in the resourceErrors list. </p>
     pub fn has_more_errors(mut self, input: bool) -> Self {
         self.has_more_errors = ::std::option::Option::Some(input);
@@ -66,6 +72,10 @@ impl ResourceErrorsDetailsBuilder {
     pub fn set_has_more_errors(mut self, input: ::std::option::Option<bool>) -> Self {
         self.has_more_errors = input;
         self
+    }
+    /// <p> This indicates if there are more errors not listed in the resourceErrors list. </p>
+    pub fn get_has_more_errors(&self) -> &::std::option::Option<bool> {
+        &self.has_more_errors
     }
     /// Consumes the builder and constructs a [`ResourceErrorsDetails`](crate::types::ResourceErrorsDetails).
     pub fn build(self) -> crate::types::ResourceErrorsDetails {

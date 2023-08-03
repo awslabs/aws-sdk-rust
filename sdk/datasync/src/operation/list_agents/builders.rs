@@ -38,6 +38,10 @@ impl ListAgentsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListAgents as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_agents::builders::ListAgentsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl ListAgentsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>Specifies the maximum number of DataSync agents to list in a response. By default, a response shows a maximum of 100 agents.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -135,5 +143,9 @@ impl ListAgentsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

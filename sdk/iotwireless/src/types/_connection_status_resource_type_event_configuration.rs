@@ -54,6 +54,13 @@ impl ConnectionStatusResourceTypeEventConfigurationBuilder {
         self.lo_ra_wan = input;
         self
     }
+    /// <p>Connection status resource type event configuration object for enabling or disabling LoRaWAN related event topics.</p>
+    pub fn get_lo_ra_wan(
+        &self,
+    ) -> &::std::option::Option<crate::types::LoRaWanConnectionStatusResourceTypeEventConfiguration>
+    {
+        &self.lo_ra_wan
+    }
     /// Consumes the builder and constructs a [`ConnectionStatusResourceTypeEventConfiguration`](crate::types::ConnectionStatusResourceTypeEventConfiguration).
     pub fn build(self) -> crate::types::ConnectionStatusResourceTypeEventConfiguration {
         crate::types::ConnectionStatusResourceTypeEventConfiguration {

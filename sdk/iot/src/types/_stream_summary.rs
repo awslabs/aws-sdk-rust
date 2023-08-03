@@ -64,6 +64,10 @@ impl StreamSummaryBuilder {
         self.stream_id = input;
         self
     }
+    /// <p>The stream ID.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_id
+    }
     /// <p>The stream ARN.</p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_arn = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl StreamSummaryBuilder {
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_arn = input;
         self
+    }
+    /// <p>The stream ARN.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_arn
     }
     /// <p>The stream version.</p>
     pub fn stream_version(mut self, input: i32) -> Self {
@@ -84,6 +92,10 @@ impl StreamSummaryBuilder {
         self.stream_version = input;
         self
     }
+    /// <p>The stream version.</p>
+    pub fn get_stream_version(&self) -> &::std::option::Option<i32> {
+        &self.stream_version
+    }
     /// <p>A description of the stream.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl StreamSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the stream.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`StreamSummary`](crate::types::StreamSummary).
     pub fn build(self) -> crate::types::StreamSummary {

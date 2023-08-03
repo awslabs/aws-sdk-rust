@@ -36,6 +36,13 @@ impl CreateConnectorProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateConnectorProfile as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_connector_profile::builders::CreateConnectorProfileInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl CreateConnectorProfileFluentBuilder {
         self.inner = self.inner.set_connector_profile_name(input);
         self
     }
+    /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
+    pub fn get_connector_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connector_profile_name()
+    }
     /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
     pub fn kms_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_arn(input.into());
@@ -141,6 +152,10 @@ impl CreateConnectorProfileFluentBuilder {
     pub fn set_kms_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_arn(input);
         self
+    }
+    /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
+    pub fn get_kms_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_arn()
     }
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
     pub fn connector_type(mut self, input: crate::types::ConnectorType) -> Self {
@@ -154,6 +169,10 @@ impl CreateConnectorProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_connector_type(input);
         self
+    }
+    /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
+    pub fn get_connector_type(&self) -> &::std::option::Option<crate::types::ConnectorType> {
+        self.inner.get_connector_type()
     }
     /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
     pub fn connector_label(
@@ -171,6 +190,10 @@ impl CreateConnectorProfileFluentBuilder {
         self.inner = self.inner.set_connector_label(input);
         self
     }
+    /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
+    pub fn get_connector_label(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connector_label()
+    }
     /// <p> Indicates the connection mode and specifies whether it is public or private. Private flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the public internet. </p>
     pub fn connection_mode(mut self, input: crate::types::ConnectionMode) -> Self {
         self.inner = self.inner.connection_mode(input);
@@ -183,6 +206,10 @@ impl CreateConnectorProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_connection_mode(input);
         self
+    }
+    /// <p> Indicates the connection mode and specifies whether it is public or private. Private flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the public internet. </p>
+    pub fn get_connection_mode(&self) -> &::std::option::Option<crate::types::ConnectionMode> {
+        self.inner.get_connection_mode()
     }
     /// <p> Defines the connector-specific configuration and credentials. </p>
     pub fn connector_profile_config(mut self, input: crate::types::ConnectorProfileConfig) -> Self {
@@ -197,6 +224,12 @@ impl CreateConnectorProfileFluentBuilder {
         self.inner = self.inner.set_connector_profile_config(input);
         self
     }
+    /// <p> Defines the connector-specific configuration and credentials. </p>
+    pub fn get_connector_profile_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConnectorProfileConfig> {
+        self.inner.get_connector_profile_config()
+    }
     /// <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>CreateConnectorProfile</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p>
     /// <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p>
     /// <p>If you specify input parameters that differ from your first request, an error occurs. If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>CreateConnectorProfile</code>. The token is active for 8 hours.</p>
@@ -210,5 +243,11 @@ impl CreateConnectorProfileFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>CreateConnectorProfile</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p>
+    /// <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p>
+    /// <p>If you specify input parameters that differ from your first request, an error occurs. If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>CreateConnectorProfile</code>. The token is active for 8 hours.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

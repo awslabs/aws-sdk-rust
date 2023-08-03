@@ -51,6 +51,10 @@ impl NewLaunchProfileMemberBuilder {
         self.persona = input;
         self
     }
+    /// <p>The persona.</p>
+    pub fn get_persona(&self) -> &::std::option::Option<crate::types::LaunchProfilePersona> {
+        &self.persona
+    }
     /// <p>The principal ID.</p>
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_id = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl NewLaunchProfileMemberBuilder {
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal_id = input;
         self
+    }
+    /// <p>The principal ID.</p>
+    pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal_id
     }
     /// Consumes the builder and constructs a [`NewLaunchProfileMember`](crate::types::NewLaunchProfileMember).
     pub fn build(self) -> crate::types::NewLaunchProfileMember {

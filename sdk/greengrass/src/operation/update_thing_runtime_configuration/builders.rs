@@ -36,6 +36,10 @@ impl UpdateThingRuntimeConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateThingRuntimeConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_thing_runtime_configuration::builders::UpdateThingRuntimeConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,12 @@ impl UpdateThingRuntimeConfigurationFluentBuilder {
         self.inner = self.inner.set_telemetry_configuration(input);
         self
     }
+    /// Configuration for telemetry service.
+    pub fn get_telemetry_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::TelemetryConfigurationUpdate> {
+        self.inner.get_telemetry_configuration()
+    }
     /// The thing name.
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.thing_name(input.into());
@@ -115,5 +125,9 @@ impl UpdateThingRuntimeConfigurationFluentBuilder {
     pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_thing_name(input);
         self
+    }
+    /// The thing name.
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_thing_name()
     }
 }

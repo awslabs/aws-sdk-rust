@@ -163,6 +163,12 @@ impl RuleGroupResponseBuilder {
         self.rule_group_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the rule group.</p> <note>
+    /// <p>If this response is for a create request that had <code>DryRun</code> set to <code>TRUE</code>, then this ARN is a placeholder that isn't attached to a valid resource.</p>
+    /// </note>
+    pub fn get_rule_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_group_arn
+    }
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     pub fn rule_group_name(
         mut self,
@@ -178,6 +184,10 @@ impl RuleGroupResponseBuilder {
     ) -> Self {
         self.rule_group_name = input;
         self
+    }
+    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
+    pub fn get_rule_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_group_name
     }
     /// <p>The unique identifier for the rule group. </p>
     pub fn rule_group_id(
@@ -195,6 +205,10 @@ impl RuleGroupResponseBuilder {
         self.rule_group_id = input;
         self
     }
+    /// <p>The unique identifier for the rule group. </p>
+    pub fn get_rule_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_group_id
+    }
     /// <p>A description of the rule group. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -205,6 +219,10 @@ impl RuleGroupResponseBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the rule group. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p>
     pub fn r#type(mut self, input: crate::types::RuleGroupType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -214,6 +232,10 @@ impl RuleGroupResponseBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RuleGroupType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::RuleGroupType> {
+        &self.r#type
     }
     /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group. </p>
     /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>. </p>
@@ -227,6 +249,11 @@ impl RuleGroupResponseBuilder {
         self.capacity = input;
         self
     }
+    /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group. </p>
+    /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>. </p>
+    pub fn get_capacity(&self) -> &::std::option::Option<i32> {
+        &self.capacity
+    }
     /// <p>Detailed information about the current status of a rule group. </p>
     pub fn rule_group_status(mut self, input: crate::types::ResourceStatus) -> Self {
         self.rule_group_status = ::std::option::Option::Some(input);
@@ -239,6 +266,10 @@ impl RuleGroupResponseBuilder {
     ) -> Self {
         self.rule_group_status = input;
         self
+    }
+    /// <p>Detailed information about the current status of a rule group. </p>
+    pub fn get_rule_group_status(&self) -> &::std::option::Option<crate::types::ResourceStatus> {
+        &self.rule_group_status
     }
     /// Appends an item to `tags`.
     ///
@@ -259,6 +290,10 @@ impl RuleGroupResponseBuilder {
         self.tags = input;
         self
     }
+    /// <p>The key:value pairs to associate with the resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The number of capacity units currently consumed by the rule group rules. </p>
     pub fn consumed_capacity(mut self, input: i32) -> Self {
         self.consumed_capacity = ::std::option::Option::Some(input);
@@ -269,6 +304,10 @@ impl RuleGroupResponseBuilder {
         self.consumed_capacity = input;
         self
     }
+    /// <p>The number of capacity units currently consumed by the rule group rules. </p>
+    pub fn get_consumed_capacity(&self) -> &::std::option::Option<i32> {
+        &self.consumed_capacity
+    }
     /// <p>The number of firewall policies that use this rule group.</p>
     pub fn number_of_associations(mut self, input: i32) -> Self {
         self.number_of_associations = ::std::option::Option::Some(input);
@@ -278,6 +317,10 @@ impl RuleGroupResponseBuilder {
     pub fn set_number_of_associations(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_associations = input;
         self
+    }
+    /// <p>The number of firewall policies that use this rule group.</p>
+    pub fn get_number_of_associations(&self) -> &::std::option::Option<i32> {
+        &self.number_of_associations
     }
     /// <p>A complex type that contains the Amazon Web Services KMS encryption configuration settings for your rule group.</p>
     pub fn encryption_configuration(
@@ -295,6 +338,12 @@ impl RuleGroupResponseBuilder {
         self.encryption_configuration = input;
         self
     }
+    /// <p>A complex type that contains the Amazon Web Services KMS encryption configuration settings for your rule group.</p>
+    pub fn get_encryption_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+        &self.encryption_configuration
+    }
     /// <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to track the version updates made to the originating rule group.</p>
     pub fn source_metadata(mut self, input: crate::types::SourceMetadata) -> Self {
         self.source_metadata = ::std::option::Option::Some(input);
@@ -308,6 +357,10 @@ impl RuleGroupResponseBuilder {
         self.source_metadata = input;
         self
     }
+    /// <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to track the version updates made to the originating rule group.</p>
+    pub fn get_source_metadata(&self) -> &::std::option::Option<crate::types::SourceMetadata> {
+        &self.source_metadata
+    }
     /// <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to record changes to the managed rule group. You can subscribe to the SNS topic to receive notifications when the managed rule group is modified, such as for new versions and for version expiration. For more information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer Guide.</a>.</p>
     pub fn sns_topic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic = ::std::option::Option::Some(input.into());
@@ -317,6 +370,10 @@ impl RuleGroupResponseBuilder {
     pub fn set_sns_topic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sns_topic = input;
         self
+    }
+    /// <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to record changes to the managed rule group. You can subscribe to the SNS topic to receive notifications when the managed rule group is modified, such as for new versions and for version expiration. For more information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer Guide.</a>.</p>
+    pub fn get_sns_topic(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sns_topic
     }
     /// <p>The last time that the rule group was changed.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -330,6 +387,10 @@ impl RuleGroupResponseBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>The last time that the rule group was changed.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// Consumes the builder and constructs a [`RuleGroupResponse`](crate::types::RuleGroupResponse).
     pub fn build(self) -> crate::types::RuleGroupResponse {

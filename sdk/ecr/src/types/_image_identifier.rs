@@ -48,6 +48,10 @@ impl ImageIdentifierBuilder {
         self.image_digest = input;
         self
     }
+    /// <p>The <code>sha256</code> digest of the image manifest.</p>
+    pub fn get_image_digest(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_digest
+    }
     /// <p>The tag used for the image.</p>
     pub fn image_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_tag = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ImageIdentifierBuilder {
     pub fn set_image_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_tag = input;
         self
+    }
+    /// <p>The tag used for the image.</p>
+    pub fn get_image_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_tag
     }
     /// Consumes the builder and constructs a [`ImageIdentifier`](crate::types::ImageIdentifier).
     pub fn build(self) -> crate::types::ImageIdentifier {

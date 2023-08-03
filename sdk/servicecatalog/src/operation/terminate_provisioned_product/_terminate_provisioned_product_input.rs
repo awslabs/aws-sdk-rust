@@ -93,6 +93,10 @@ impl TerminateProvisionedProductInputBuilder {
         self.provisioned_product_name = input;
         self
     }
+    /// <p>The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
+    pub fn get_provisioned_product_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provisioned_product_name
+    }
     /// <p>The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
     pub fn provisioned_product_id(
         mut self,
@@ -108,6 +112,10 @@ impl TerminateProvisionedProductInputBuilder {
     ) -> Self {
         self.provisioned_product_id = input;
         self
+    }
+    /// <p>The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
+    pub fn get_provisioned_product_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provisioned_product_id
     }
     /// <p>An idempotency token that uniquely identifies the termination request. This token is only valid during the termination process. After the provisioned product is terminated, subsequent requests to terminate the same provisioned product always return <b>ResourceNotFound</b>.</p>
     pub fn terminate_token(
@@ -125,6 +133,10 @@ impl TerminateProvisionedProductInputBuilder {
         self.terminate_token = input;
         self
     }
+    /// <p>An idempotency token that uniquely identifies the termination request. This token is only valid during the termination process. After the provisioned product is terminated, subsequent requests to terminate the same provisioned product always return <b>ResourceNotFound</b>.</p>
+    pub fn get_terminate_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.terminate_token
+    }
     /// <p>If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
     pub fn ignore_errors(mut self, input: bool) -> Self {
         self.ignore_errors = ::std::option::Option::Some(input);
@@ -134,6 +146,10 @@ impl TerminateProvisionedProductInputBuilder {
     pub fn set_ignore_errors(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ignore_errors = input;
         self
+    }
+    /// <p>If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
+    pub fn get_ignore_errors(&self) -> &::std::option::Option<bool> {
+        &self.ignore_errors
     }
     /// <p>The language code.</p>
     /// <ul>
@@ -159,6 +175,14 @@ impl TerminateProvisionedProductInputBuilder {
         self.accept_language = input;
         self
     }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accept_language
+    }
     /// <p>When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes the Service Catalog provisioned product. However, it does not remove the CloudFormation stack, stack set, or the underlying resources of the deleted provisioned product. The default value is false.</p>
     pub fn retain_physical_resources(mut self, input: bool) -> Self {
         self.retain_physical_resources = ::std::option::Option::Some(input);
@@ -168,6 +192,10 @@ impl TerminateProvisionedProductInputBuilder {
     pub fn set_retain_physical_resources(mut self, input: ::std::option::Option<bool>) -> Self {
         self.retain_physical_resources = input;
         self
+    }
+    /// <p>When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes the Service Catalog provisioned product. However, it does not remove the CloudFormation stack, stack set, or the underlying resources of the deleted provisioned product. The default value is false.</p>
+    pub fn get_retain_physical_resources(&self) -> &::std::option::Option<bool> {
+        &self.retain_physical_resources
     }
     /// Consumes the builder and constructs a [`TerminateProvisionedProductInput`](crate::operation::terminate_provisioned_product::TerminateProvisionedProductInput).
     pub fn build(

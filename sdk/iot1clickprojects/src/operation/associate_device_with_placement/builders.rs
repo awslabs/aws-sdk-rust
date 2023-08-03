@@ -36,6 +36,10 @@ impl AssociateDeviceWithPlacementFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateDeviceWithPlacement as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_device_with_placement::builders::AssociateDeviceWithPlacementInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl AssociateDeviceWithPlacementFluentBuilder {
         self.inner = self.inner.set_project_name(input);
         self
     }
+    /// <p>The name of the project containing the placement in which to associate the device.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_name()
+    }
     /// <p>The name of the placement in which to associate the device.</p>
     pub fn placement_name(
         mut self,
@@ -142,6 +150,10 @@ impl AssociateDeviceWithPlacementFluentBuilder {
         self.inner = self.inner.set_placement_name(input);
         self
     }
+    /// <p>The name of the placement in which to associate the device.</p>
+    pub fn get_placement_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_placement_name()
+    }
     /// <p>The ID of the physical device to be associated with the given placement in the project. Note that a mandatory 4 character prefix is required for all <code>deviceId</code> values.</p>
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_id(input.into());
@@ -151,6 +163,10 @@ impl AssociateDeviceWithPlacementFluentBuilder {
     pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_id(input);
         self
+    }
+    /// <p>The ID of the physical device to be associated with the given placement in the project. Note that a mandatory 4 character prefix is required for all <code>deviceId</code> values.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_id()
     }
     /// <p>The device template name to associate with the device ID.</p>
     pub fn device_template_name(
@@ -167,5 +183,9 @@ impl AssociateDeviceWithPlacementFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_device_template_name(input);
         self
+    }
+    /// <p>The device template name to associate with the device ID.</p>
+    pub fn get_device_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_template_name()
     }
 }

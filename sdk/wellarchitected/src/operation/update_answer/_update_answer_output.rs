@@ -77,6 +77,10 @@ impl UpdateAnswerOutputBuilder {
         self.workload_id = input;
         self
     }
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workload_id
+    }
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
@@ -93,6 +97,13 @@ impl UpdateAnswerOutputBuilder {
         self.lens_alias = input;
         self
     }
+    /// <p>The alias of the lens.</p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    pub fn get_lens_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lens_alias
+    }
     /// <p>The ARN for the lens.</p>
     pub fn lens_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lens_arn = ::std::option::Option::Some(input.into());
@@ -103,6 +114,10 @@ impl UpdateAnswerOutputBuilder {
         self.lens_arn = input;
         self
     }
+    /// <p>The ARN for the lens.</p>
+    pub fn get_lens_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lens_arn
+    }
     /// <p>An answer of the question.</p>
     pub fn answer(mut self, input: crate::types::Answer) -> Self {
         self.answer = ::std::option::Option::Some(input);
@@ -112,6 +127,10 @@ impl UpdateAnswerOutputBuilder {
     pub fn set_answer(mut self, input: ::std::option::Option<crate::types::Answer>) -> Self {
         self.answer = input;
         self
+    }
+    /// <p>An answer of the question.</p>
+    pub fn get_answer(&self) -> &::std::option::Option<crate::types::Answer> {
+        &self.answer
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -35,6 +35,10 @@ impl ExportSchemaFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ExportSchema as a reference.
+    pub fn as_input(&self) -> &crate::operation::export_schema::builders::ExportSchemaInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -123,6 +127,10 @@ impl ExportSchemaFluentBuilder {
         self.inner = self.inner.set_registry_name(input);
         self
     }
+    /// <p>The name of the registry.</p>
+    pub fn get_registry_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_registry_name()
+    }
     /// <p>The name of the schema.</p>
     pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schema_name(input.into());
@@ -132,6 +140,10 @@ impl ExportSchemaFluentBuilder {
     pub fn set_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schema_name(input);
         self
+    }
+    /// <p>The name of the schema.</p>
+    pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schema_name()
     }
     /// <p>Specifying this limits the results to only this schema version.</p>
     pub fn schema_version(
@@ -149,6 +161,10 @@ impl ExportSchemaFluentBuilder {
         self.inner = self.inner.set_schema_version(input);
         self
     }
+    /// <p>Specifying this limits the results to only this schema version.</p>
+    pub fn get_schema_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schema_version()
+    }
     #[allow(missing_docs)] // documentation missing in model
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.r#type(input.into());
@@ -158,5 +174,9 @@ impl ExportSchemaFluentBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_type(input);
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_type()
     }
 }

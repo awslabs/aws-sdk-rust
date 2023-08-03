@@ -36,6 +36,12 @@ impl StartExperimentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartExperiment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_experiment::builders::StartExperimentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl StartExperimentFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>The ID of the experiment template.</p>
     pub fn experiment_template_id(
         mut self,
@@ -141,6 +151,10 @@ impl StartExperimentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_experiment_template_id(input);
         self
+    }
+    /// <p>The ID of the experiment template.</p>
+    pub fn get_experiment_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_experiment_template_id()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -164,5 +178,13 @@ impl StartExperimentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags to apply to the experiment.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

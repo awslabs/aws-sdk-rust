@@ -54,6 +54,10 @@ impl ConfigureLogsForPlaybackConfigurationOutputBuilder {
         self.percent_enabled = input;
         self
     }
+    /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account.</p>
+    pub fn get_percent_enabled(&self) -> &::std::option::Option<i32> {
+        &self.percent_enabled
+    }
     /// <p>The name of the playback configuration.</p>
     pub fn playback_configuration_name(
         mut self,
@@ -69,6 +73,10 @@ impl ConfigureLogsForPlaybackConfigurationOutputBuilder {
     ) -> Self {
         self.playback_configuration_name = input;
         self
+    }
+    /// <p>The name of the playback configuration.</p>
+    pub fn get_playback_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.playback_configuration_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

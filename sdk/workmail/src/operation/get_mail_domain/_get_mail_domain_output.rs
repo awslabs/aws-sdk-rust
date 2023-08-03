@@ -94,6 +94,10 @@ impl GetMailDomainOutputBuilder {
         self.records = input;
         self
     }
+    /// <p>A list of the DNS records that WorkMail recommends adding in your DNS provider for the best user experience. The records configure your domain with DMARC, SPF, DKIM, and direct incoming email traffic to SES. See admin guide for more details.</p>
+    pub fn get_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DnsRecord>> {
+        &self.records
+    }
     /// <p>Specifies whether the domain is a test domain provided by WorkMail, or a custom domain.</p>
     pub fn is_test_domain(mut self, input: bool) -> Self {
         self.is_test_domain = ::std::option::Option::Some(input);
@@ -104,6 +108,10 @@ impl GetMailDomainOutputBuilder {
         self.is_test_domain = input;
         self
     }
+    /// <p>Specifies whether the domain is a test domain provided by WorkMail, or a custom domain.</p>
+    pub fn get_is_test_domain(&self) -> &::std::option::Option<bool> {
+        &self.is_test_domain
+    }
     /// <p>Specifies whether the domain is the default domain for your organization.</p>
     pub fn is_default(mut self, input: bool) -> Self {
         self.is_default = ::std::option::Option::Some(input);
@@ -113,6 +121,10 @@ impl GetMailDomainOutputBuilder {
     pub fn set_is_default(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_default = input;
         self
+    }
+    /// <p>Specifies whether the domain is the default domain for your organization.</p>
+    pub fn get_is_default(&self) -> &::std::option::Option<bool> {
+        &self.is_default
     }
     /// <p> Indicates the status of the domain ownership verification.</p>
     pub fn ownership_verification_status(
@@ -130,6 +142,12 @@ impl GetMailDomainOutputBuilder {
         self.ownership_verification_status = input;
         self
     }
+    /// <p> Indicates the status of the domain ownership verification.</p>
+    pub fn get_ownership_verification_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::DnsRecordVerificationStatus> {
+        &self.ownership_verification_status
+    }
     /// <p>Indicates the status of a DKIM verification.</p>
     pub fn dkim_verification_status(
         mut self,
@@ -145,6 +163,12 @@ impl GetMailDomainOutputBuilder {
     ) -> Self {
         self.dkim_verification_status = input;
         self
+    }
+    /// <p>Indicates the status of a DKIM verification.</p>
+    pub fn get_dkim_verification_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::DnsRecordVerificationStatus> {
+        &self.dkim_verification_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

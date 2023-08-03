@@ -73,6 +73,10 @@ impl IcebergTargetBuilder {
         self.paths = input;
         self
     }
+    /// <p>One or more Amazon S3 paths that contains Iceberg metadata folders as <code>s3://bucket/prefix</code>.</p>
+    pub fn get_paths(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.paths
+    }
     /// <p>The name of the connection to use to connect to the Iceberg target.</p>
     pub fn connection_name(
         mut self,
@@ -88,6 +92,10 @@ impl IcebergTargetBuilder {
     ) -> Self {
         self.connection_name = input;
         self
+    }
+    /// <p>The name of the connection to use to connect to the Iceberg target.</p>
+    pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_name
     }
     /// Appends an item to `exclusions`.
     ///
@@ -108,6 +116,10 @@ impl IcebergTargetBuilder {
         self.exclusions = input;
         self
     }
+    /// <p>A list of glob patterns used to exclude from the crawl. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
+    pub fn get_exclusions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.exclusions
+    }
     /// <p>The maximum depth of Amazon S3 paths that the crawler can traverse to discover the Iceberg metadata folder in your Amazon S3 path. Used to limit the crawler run time.</p>
     pub fn maximum_traversal_depth(mut self, input: i32) -> Self {
         self.maximum_traversal_depth = ::std::option::Option::Some(input);
@@ -117,6 +129,10 @@ impl IcebergTargetBuilder {
     pub fn set_maximum_traversal_depth(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_traversal_depth = input;
         self
+    }
+    /// <p>The maximum depth of Amazon S3 paths that the crawler can traverse to discover the Iceberg metadata folder in your Amazon S3 path. Used to limit the crawler run time.</p>
+    pub fn get_maximum_traversal_depth(&self) -> &::std::option::Option<i32> {
+        &self.maximum_traversal_depth
     }
     /// Consumes the builder and constructs a [`IcebergTarget`](crate::types::IcebergTarget).
     pub fn build(self) -> crate::types::IcebergTarget {

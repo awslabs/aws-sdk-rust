@@ -70,6 +70,12 @@ impl ListAppComponentRecommendationsOutputBuilder {
         self.component_recommendations = input;
         self
     }
+    /// <p>The recommendations for an Resilience Hub Application Component, returned as an object. This object contains the names of the Application Components, configuration recommendations, and recommendation statuses.</p>
+    pub fn get_component_recommendations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentRecommendation>> {
+        &self.component_recommendations
+    }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -79,6 +85,10 @@ impl ListAppComponentRecommendationsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

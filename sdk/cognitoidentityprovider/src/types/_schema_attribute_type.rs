@@ -104,6 +104,10 @@ impl SchemaAttributeTypeBuilder {
         self.name = input;
         self
     }
+    /// <p>A schema attribute of the name type.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The attribute data type.</p>
     pub fn attribute_data_type(mut self, input: crate::types::AttributeDataType) -> Self {
         self.attribute_data_type = ::std::option::Option::Some(input);
@@ -116,6 +120,12 @@ impl SchemaAttributeTypeBuilder {
     ) -> Self {
         self.attribute_data_type = input;
         self
+    }
+    /// <p>The attribute data type.</p>
+    pub fn get_attribute_data_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::AttributeDataType> {
+        &self.attribute_data_type
     }
     /// <note>
     /// <p>You should use <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UserPoolClientType.html#CognitoUserPools-Type-UserPoolClientType-WriteAttributes">WriteAttributes</a> in the user pool client to control how attributes can be mutated for new use cases instead of using <code>DeveloperOnlyAttribute</code>.</p>
@@ -133,6 +143,13 @@ impl SchemaAttributeTypeBuilder {
         self.developer_only_attribute = input;
         self
     }
+    /// <note>
+    /// <p>You should use <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UserPoolClientType.html#CognitoUserPools-Type-UserPoolClientType-WriteAttributes">WriteAttributes</a> in the user pool client to control how attributes can be mutated for new use cases instead of using <code>DeveloperOnlyAttribute</code>.</p>
+    /// </note>
+    /// <p>Specifies whether the attribute type is developer only. This attribute can only be modified by an administrator. Users won't be able to modify this attribute using their access token. For example, <code>DeveloperOnlyAttribute</code> can be modified using AdminUpdateUserAttributes but can't be updated using UpdateUserAttributes.</p>
+    pub fn get_developer_only_attribute(&self) -> &::std::option::Option<bool> {
+        &self.developer_only_attribute
+    }
     /// <p>Specifies whether the value of the attribute can be changed.</p>
     /// <p>For any user pool attribute that is mapped to an IdP attribute, you must set this parameter to <code>true</code>. Amazon Cognito updates mapped attributes when users sign in to your application through an IdP. If an attribute is immutable, Amazon Cognito throws an error when it attempts to update the attribute. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying Identity Provider Attribute Mappings for Your User Pool</a>.</p>
     pub fn mutable(mut self, input: bool) -> Self {
@@ -145,6 +162,11 @@ impl SchemaAttributeTypeBuilder {
         self.mutable = input;
         self
     }
+    /// <p>Specifies whether the value of the attribute can be changed.</p>
+    /// <p>For any user pool attribute that is mapped to an IdP attribute, you must set this parameter to <code>true</code>. Amazon Cognito updates mapped attributes when users sign in to your application through an IdP. If an attribute is immutable, Amazon Cognito throws an error when it attempts to update the attribute. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying Identity Provider Attribute Mappings for Your User Pool</a>.</p>
+    pub fn get_mutable(&self) -> &::std::option::Option<bool> {
+        &self.mutable
+    }
     /// <p>Specifies whether a user pool attribute is required. If the attribute is required and the user doesn't provide a value, registration or sign-in will fail.</p>
     pub fn required(mut self, input: bool) -> Self {
         self.required = ::std::option::Option::Some(input);
@@ -154,6 +176,10 @@ impl SchemaAttributeTypeBuilder {
     pub fn set_required(mut self, input: ::std::option::Option<bool>) -> Self {
         self.required = input;
         self
+    }
+    /// <p>Specifies whether a user pool attribute is required. If the attribute is required and the user doesn't provide a value, registration or sign-in will fail.</p>
+    pub fn get_required(&self) -> &::std::option::Option<bool> {
+        &self.required
     }
     /// <p>Specifies the constraints for an attribute of the number type.</p>
     pub fn number_attribute_constraints(
@@ -171,6 +197,12 @@ impl SchemaAttributeTypeBuilder {
         self.number_attribute_constraints = input;
         self
     }
+    /// <p>Specifies the constraints for an attribute of the number type.</p>
+    pub fn get_number_attribute_constraints(
+        &self,
+    ) -> &::std::option::Option<crate::types::NumberAttributeConstraintsType> {
+        &self.number_attribute_constraints
+    }
     /// <p>Specifies the constraints for an attribute of the string type.</p>
     pub fn string_attribute_constraints(
         mut self,
@@ -186,6 +218,12 @@ impl SchemaAttributeTypeBuilder {
     ) -> Self {
         self.string_attribute_constraints = input;
         self
+    }
+    /// <p>Specifies the constraints for an attribute of the string type.</p>
+    pub fn get_string_attribute_constraints(
+        &self,
+    ) -> &::std::option::Option<crate::types::StringAttributeConstraintsType> {
+        &self.string_attribute_constraints
     }
     /// Consumes the builder and constructs a [`SchemaAttributeType`](crate::types::SchemaAttributeType).
     pub fn build(self) -> crate::types::SchemaAttributeType {

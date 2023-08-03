@@ -61,6 +61,10 @@ impl LoggingConfigurationBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with <code>LogDestinationConfigs</code>.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Appends an item to `log_destination_configs`.
     ///
     /// To override the contents of this collection use [`set_log_destination_configs`](Self::set_log_destination_configs).
@@ -83,6 +87,12 @@ impl LoggingConfigurationBuilder {
         self.log_destination_configs = input;
         self
     }
+    /// <p>An array of Amazon Kinesis Data Firehose ARNs.</p>
+    pub fn get_log_destination_configs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.log_destination_configs
+    }
     /// Appends an item to `redacted_fields`.
     ///
     /// To override the contents of this collection use [`set_redacted_fields`](Self::set_redacted_fields).
@@ -101,6 +111,12 @@ impl LoggingConfigurationBuilder {
     ) -> Self {
         self.redacted_fields = input;
         self
+    }
+    /// <p>The parts of the request that you want redacted from the logs. For example, if you redact the cookie field, the cookie field in the firehose will be <code>xxx</code>. </p>
+    pub fn get_redacted_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldToMatch>> {
+        &self.redacted_fields
     }
     /// Consumes the builder and constructs a [`LoggingConfiguration`](crate::types::LoggingConfiguration).
     pub fn build(self) -> crate::types::LoggingConfiguration {

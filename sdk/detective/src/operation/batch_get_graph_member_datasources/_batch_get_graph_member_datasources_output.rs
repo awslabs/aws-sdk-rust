@@ -71,6 +71,12 @@ impl BatchGetGraphMemberDatasourcesOutputBuilder {
         self.member_datasources = input;
         self
     }
+    /// <p>Details on the status of data source packages for members of the behavior graph.</p>
+    pub fn get_member_datasources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MembershipDatasources>> {
+        &self.member_datasources
+    }
     /// Appends an item to `unprocessed_accounts`.
     ///
     /// To override the contents of this collection use [`set_unprocessed_accounts`](Self::set_unprocessed_accounts).
@@ -89,6 +95,12 @@ impl BatchGetGraphMemberDatasourcesOutputBuilder {
     ) -> Self {
         self.unprocessed_accounts = input;
         self
+    }
+    /// <p>Accounts that data source package information could not be retrieved for.</p>
+    pub fn get_unprocessed_accounts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>> {
+        &self.unprocessed_accounts
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

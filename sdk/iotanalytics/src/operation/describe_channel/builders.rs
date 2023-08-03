@@ -36,6 +36,12 @@ impl DescribeChannelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeChannel as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_channel::builders::DescribeChannelInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DescribeChannelFluentBuilder {
         self.inner = self.inner.set_channel_name(input);
         self
     }
+    /// <p>The name of the channel whose information is retrieved.</p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_name()
+    }
     /// <p>If true, additional statistical information about the channel is included in the response. This feature can't be used with a channel whose S3 storage is customer-managed.</p>
     pub fn include_statistics(mut self, input: bool) -> Self {
         self.inner = self.inner.include_statistics(input);
@@ -135,5 +145,9 @@ impl DescribeChannelFluentBuilder {
     pub fn set_include_statistics(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_statistics(input);
         self
+    }
+    /// <p>If true, additional statistical information about the channel is included in the response. This feature can't be used with a channel whose S3 storage is customer-managed.</p>
+    pub fn get_include_statistics(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_statistics()
     }
 }

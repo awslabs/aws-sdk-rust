@@ -39,6 +39,10 @@ impl CancelJobInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The unique identifier for a job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// Consumes the builder and constructs a [`CancelJobInput`](crate::operation::cancel_job::CancelJobInput).
     pub fn build(
         self,

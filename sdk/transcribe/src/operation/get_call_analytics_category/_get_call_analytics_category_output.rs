@@ -49,6 +49,12 @@ impl GetCallAnalyticsCategoryOutputBuilder {
         self.category_properties = input;
         self
     }
+    /// <p>Provides you with the properties of the Call Analytics category you specified in your <code>GetCallAnalyticsCategory</code> request.</p>
+    pub fn get_category_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::CategoryProperties> {
+        &self.category_properties
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

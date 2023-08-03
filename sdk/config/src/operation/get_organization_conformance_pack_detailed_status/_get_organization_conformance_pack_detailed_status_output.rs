@@ -77,6 +77,14 @@ impl GetOrganizationConformancePackDetailedStatusOutputBuilder {
         self.organization_conformance_pack_detailed_statuses = input;
         self
     }
+    /// <p>A list of <code>OrganizationConformancePackDetailedStatus</code> objects. </p>
+    pub fn get_organization_conformance_pack_detailed_statuses(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::OrganizationConformancePackDetailedStatus>,
+    > {
+        &self.organization_conformance_pack_detailed_statuses
+    }
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -86,6 +94,10 @@ impl GetOrganizationConformancePackDetailedStatusOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

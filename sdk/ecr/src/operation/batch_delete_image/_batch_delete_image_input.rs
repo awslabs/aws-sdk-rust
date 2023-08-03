@@ -57,6 +57,10 @@ impl BatchDeleteImageInputBuilder {
         self.registry_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the image to delete. If you do not specify a registry, the default registry is assumed.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
+    }
     /// <p>The repository that contains the image to delete.</p>
     pub fn repository_name(
         mut self,
@@ -72,6 +76,10 @@ impl BatchDeleteImageInputBuilder {
     ) -> Self {
         self.repository_name = input;
         self
+    }
+    /// <p>The repository that contains the image to delete.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
     }
     /// Appends an item to `image_ids`.
     ///
@@ -91,6 +99,12 @@ impl BatchDeleteImageInputBuilder {
     ) -> Self {
         self.image_ids = input;
         self
+    }
+    /// <p>A list of image ID references that correspond to images to delete. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
+    pub fn get_image_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>> {
+        &self.image_ids
     }
     /// Consumes the builder and constructs a [`BatchDeleteImageInput`](crate::operation::batch_delete_image::BatchDeleteImageInput).
     pub fn build(

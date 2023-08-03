@@ -82,6 +82,10 @@ impl DescribeAssetPropertyOutputBuilder {
         self.asset_id = input;
         self
     }
+    /// <p>The ID of the asset.</p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_id
+    }
     /// <p>The name of the asset.</p>
     pub fn asset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_name = ::std::option::Option::Some(input.into());
@@ -91,6 +95,10 @@ impl DescribeAssetPropertyOutputBuilder {
     pub fn set_asset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_name = input;
         self
+    }
+    /// <p>The name of the asset.</p>
+    pub fn get_asset_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_name
     }
     /// <p>The ID of the asset model.</p>
     pub fn asset_model_id(
@@ -108,6 +116,10 @@ impl DescribeAssetPropertyOutputBuilder {
         self.asset_model_id = input;
         self
     }
+    /// <p>The ID of the asset model.</p>
+    pub fn get_asset_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_model_id
+    }
     /// <p>The asset property's definition, alias, and notification state.</p>
     /// <p>This response includes this object for normal asset properties. If you describe an asset property in a composite model, this response includes the asset property information in <code>compositeModel</code>.</p>
     pub fn asset_property(mut self, input: crate::types::Property) -> Self {
@@ -123,6 +135,11 @@ impl DescribeAssetPropertyOutputBuilder {
         self.asset_property = input;
         self
     }
+    /// <p>The asset property's definition, alias, and notification state.</p>
+    /// <p>This response includes this object for normal asset properties. If you describe an asset property in a composite model, this response includes the asset property information in <code>compositeModel</code>.</p>
+    pub fn get_asset_property(&self) -> &::std::option::Option<crate::types::Property> {
+        &self.asset_property
+    }
     /// <p>The composite asset model that declares this asset property, if this asset property exists in a composite model.</p>
     pub fn composite_model(mut self, input: crate::types::CompositeModelProperty) -> Self {
         self.composite_model = ::std::option::Option::Some(input);
@@ -135,6 +152,12 @@ impl DescribeAssetPropertyOutputBuilder {
     ) -> Self {
         self.composite_model = input;
         self
+    }
+    /// <p>The composite asset model that declares this asset property, if this asset property exists in a composite model.</p>
+    pub fn get_composite_model(
+        &self,
+    ) -> &::std::option::Option<crate::types::CompositeModelProperty> {
+        &self.composite_model
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

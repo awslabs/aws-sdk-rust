@@ -68,6 +68,12 @@ impl GetDecryptedApiKeyOutputBuilder {
         self.token_domains = input;
         self
     }
+    /// <p>The token domains that are defined in this API key. </p>
+    pub fn get_token_domains(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.token_domains
+    }
     /// <p>The date and time that the key was created. </p>
     pub fn creation_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_timestamp = ::std::option::Option::Some(input);
@@ -80,6 +86,10 @@ impl GetDecryptedApiKeyOutputBuilder {
     ) -> Self {
         self.creation_timestamp = input;
         self
+    }
+    /// <p>The date and time that the key was created. </p>
+    pub fn get_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

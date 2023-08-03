@@ -102,6 +102,10 @@ impl VolumeConfigurationBuilder {
         self.mount_point = input;
         self
     }
+    /// <p>The volume mount point. For example "/dev/sdh".</p>
+    pub fn get_mount_point(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mount_point
+    }
     /// <p>The volume <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.</p>
     pub fn raid_level(mut self, input: i32) -> Self {
         self.raid_level = ::std::option::Option::Some(input);
@@ -111,6 +115,10 @@ impl VolumeConfigurationBuilder {
     pub fn set_raid_level(mut self, input: ::std::option::Option<i32>) -> Self {
         self.raid_level = input;
         self
+    }
+    /// <p>The volume <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.</p>
+    pub fn get_raid_level(&self) -> &::std::option::Option<i32> {
+        &self.raid_level
     }
     /// <p>The number of disks in the volume.</p>
     pub fn number_of_disks(mut self, input: i32) -> Self {
@@ -122,6 +130,10 @@ impl VolumeConfigurationBuilder {
         self.number_of_disks = input;
         self
     }
+    /// <p>The number of disks in the volume.</p>
+    pub fn get_number_of_disks(&self) -> &::std::option::Option<i32> {
+        &self.number_of_disks
+    }
     /// <p>The volume size.</p>
     pub fn size(mut self, input: i32) -> Self {
         self.size = ::std::option::Option::Some(input);
@@ -131,6 +143,10 @@ impl VolumeConfigurationBuilder {
     pub fn set_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.size = input;
         self
+    }
+    /// <p>The volume size.</p>
+    pub fn get_size(&self) -> &::std::option::Option<i32> {
+        &self.size
     }
     /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.</p>
     /// <ul>
@@ -156,6 +172,17 @@ impl VolumeConfigurationBuilder {
         self.volume_type = input;
         self
     }
+    /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.</p>
+    /// <ul>
+    /// <li> <p> <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024 GiB.</p> </li>
+    /// <li> <p> <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of 16384 GiB.</p> </li>
+    /// <li> <p> <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p> </li>
+    /// <li> <p> <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
+    /// <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
+    /// </ul>
+    pub fn get_volume_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_type
+    }
     /// <p>For PIOPS volumes, the IOPS per disk.</p>
     pub fn iops(mut self, input: i32) -> Self {
         self.iops = ::std::option::Option::Some(input);
@@ -166,6 +193,10 @@ impl VolumeConfigurationBuilder {
         self.iops = input;
         self
     }
+    /// <p>For PIOPS volumes, the IOPS per disk.</p>
+    pub fn get_iops(&self) -> &::std::option::Option<i32> {
+        &self.iops
+    }
     /// <p>Specifies whether an Amazon EBS volume is encrypted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.</p>
     pub fn encrypted(mut self, input: bool) -> Self {
         self.encrypted = ::std::option::Option::Some(input);
@@ -175,6 +206,10 @@ impl VolumeConfigurationBuilder {
     pub fn set_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.encrypted = input;
         self
+    }
+    /// <p>Specifies whether an Amazon EBS volume is encrypted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.</p>
+    pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
+        &self.encrypted
     }
     /// Consumes the builder and constructs a [`VolumeConfiguration`](crate::types::VolumeConfiguration).
     pub fn build(self) -> crate::types::VolumeConfiguration {

@@ -36,6 +36,10 @@ impl EnableVgwRoutePropagationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the EnableVgwRoutePropagation as a reference.
+    pub fn as_input(&self) -> &crate::operation::enable_vgw_route_propagation::builders::EnableVgwRoutePropagationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl EnableVgwRoutePropagationFluentBuilder {
         self.inner = self.inner.set_gateway_id(input);
         self
     }
+    /// <p>The ID of the virtual private gateway that is attached to a VPC. The virtual private gateway must be attached to the same VPC that the routing tables are associated with. </p>
+    pub fn get_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gateway_id()
+    }
     /// <p>The ID of the route table. The routing table must be associated with the same VPC that the virtual private gateway is attached to. </p>
     pub fn route_table_id(
         mut self,
@@ -142,6 +150,10 @@ impl EnableVgwRoutePropagationFluentBuilder {
         self.inner = self.inner.set_route_table_id(input);
         self
     }
+    /// <p>The ID of the route table. The routing table must be associated with the same VPC that the virtual private gateway is attached to. </p>
+    pub fn get_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_route_table_id()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -151,5 +163,9 @@ impl EnableVgwRoutePropagationFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

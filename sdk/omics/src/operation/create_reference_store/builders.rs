@@ -36,6 +36,12 @@ impl CreateReferenceStoreFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateReferenceStore as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_reference_store::builders::CreateReferenceStoreInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateReferenceStoreFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>A name for the store.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A description for the store.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -136,6 +146,10 @@ impl CreateReferenceStoreFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>A description for the store.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>Server-side encryption (SSE) settings for the store.</p>
     pub fn sse_config(mut self, input: crate::types::SseConfig) -> Self {
         self.inner = self.inner.sse_config(input);
@@ -145,6 +159,10 @@ impl CreateReferenceStoreFluentBuilder {
     pub fn set_sse_config(mut self, input: ::std::option::Option<crate::types::SseConfig>) -> Self {
         self.inner = self.inner.set_sse_config(input);
         self
+    }
+    /// <p>Server-side encryption (SSE) settings for the store.</p>
+    pub fn get_sse_config(&self) -> &::std::option::Option<crate::types::SseConfig> {
+        self.inner.get_sse_config()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -169,6 +187,14 @@ impl CreateReferenceStoreFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Tags for the store.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>To ensure that requests don't run multiple times, specify a unique token for each request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -178,5 +204,9 @@ impl CreateReferenceStoreFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>To ensure that requests don't run multiple times, specify a unique token for each request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

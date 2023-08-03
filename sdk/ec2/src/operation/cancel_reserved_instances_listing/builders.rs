@@ -37,6 +37,10 @@ impl CancelReservedInstancesListingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CancelReservedInstancesListing as a reference.
+    pub fn as_input(&self) -> &crate::operation::cancel_reserved_instances_listing::builders::CancelReservedInstancesListingInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,5 +110,11 @@ impl CancelReservedInstancesListingFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_reserved_instances_listing_id(input);
         self
+    }
+    /// <p>The ID of the Reserved Instance listing.</p>
+    pub fn get_reserved_instances_listing_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reserved_instances_listing_id()
     }
 }

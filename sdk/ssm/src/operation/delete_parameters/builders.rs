@@ -36,6 +36,12 @@ impl DeleteParametersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteParameters as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_parameters::builders::DeleteParametersInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +138,9 @@ impl DeleteParametersFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_names(input);
         self
+    }
+    /// <p>The names of the parameters to delete. After deleting a parameter, wait for at least 30 seconds to create a parameter with the same name.</p>
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_names()
     }
 }

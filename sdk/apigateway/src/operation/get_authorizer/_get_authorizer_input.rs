@@ -48,6 +48,10 @@ impl GetAuthorizerInputBuilder {
         self.rest_api_id = input;
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
+    }
     /// <p>The identifier of the Authorizer resource.</p>
     pub fn authorizer_id(
         mut self,
@@ -63,6 +67,10 @@ impl GetAuthorizerInputBuilder {
     ) -> Self {
         self.authorizer_id = input;
         self
+    }
+    /// <p>The identifier of the Authorizer resource.</p>
+    pub fn get_authorizer_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authorizer_id
     }
     /// Consumes the builder and constructs a [`GetAuthorizerInput`](crate::operation::get_authorizer::GetAuthorizerInput).
     pub fn build(

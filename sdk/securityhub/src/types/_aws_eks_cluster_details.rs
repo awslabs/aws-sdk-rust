@@ -124,6 +124,10 @@ impl AwsEksClusterDetailsBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the cluster.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The certificate authority data for the cluster.</p>
     pub fn certificate_authority_data(
         mut self,
@@ -139,6 +143,10 @@ impl AwsEksClusterDetailsBuilder {
     ) -> Self {
         self.certificate_authority_data = input;
         self
+    }
+    /// <p>The certificate authority data for the cluster.</p>
+    pub fn get_certificate_authority_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_authority_data
     }
     /// <p>The status of the cluster. Valid values are as follows:</p>
     /// <ul>
@@ -172,6 +180,18 @@ impl AwsEksClusterDetailsBuilder {
         self.cluster_status = input;
         self
     }
+    /// <p>The status of the cluster. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATING</code> </p> </li>
+    /// <li> <p> <code>DELETING</code> </p> </li>
+    /// <li> <p> <code>FAILED</code> </p> </li>
+    /// <li> <p> <code>PENDING</code> </p> </li>
+    /// <li> <p> <code>UPDATING</code> </p> </li>
+    /// </ul>
+    pub fn get_cluster_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_status
+    }
     /// <p>The endpoint for the Amazon EKS API server.</p>
     pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint = ::std::option::Option::Some(input.into());
@@ -182,6 +202,10 @@ impl AwsEksClusterDetailsBuilder {
         self.endpoint = input;
         self
     }
+    /// <p>The endpoint for the Amazon EKS API server.</p>
+    pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint
+    }
     /// <p>The name of the cluster.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -191,6 +215,10 @@ impl AwsEksClusterDetailsBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the cluster.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The VPC configuration used by the cluster control plane.</p>
     pub fn resources_vpc_config(
@@ -208,6 +236,12 @@ impl AwsEksClusterDetailsBuilder {
         self.resources_vpc_config = input;
         self
     }
+    /// <p>The VPC configuration used by the cluster control plane.</p>
+    pub fn get_resources_vpc_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsEksClusterResourcesVpcConfigDetails> {
+        &self.resources_vpc_config
+    }
     /// <p>The ARN of the IAM role that provides permissions for the Amazon EKS control plane to make calls to Amazon Web Services API operations on your behalf.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -218,6 +252,10 @@ impl AwsEksClusterDetailsBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The ARN of the IAM role that provides permissions for the Amazon EKS control plane to make calls to Amazon Web Services API operations on your behalf.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The Amazon EKS server version for the cluster.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -227,6 +265,10 @@ impl AwsEksClusterDetailsBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The Amazon EKS server version for the cluster.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// <p>The logging configuration for the cluster.</p>
     pub fn logging(mut self, input: crate::types::AwsEksClusterLoggingDetails) -> Self {
@@ -240,6 +282,10 @@ impl AwsEksClusterDetailsBuilder {
     ) -> Self {
         self.logging = input;
         self
+    }
+    /// <p>The logging configuration for the cluster.</p>
+    pub fn get_logging(&self) -> &::std::option::Option<crate::types::AwsEksClusterLoggingDetails> {
+        &self.logging
     }
     /// Consumes the builder and constructs a [`AwsEksClusterDetails`](crate::types::AwsEksClusterDetails).
     pub fn build(self) -> crate::types::AwsEksClusterDetails {

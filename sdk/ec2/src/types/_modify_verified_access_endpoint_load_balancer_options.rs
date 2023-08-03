@@ -66,6 +66,10 @@ impl ModifyVerifiedAccessEndpointLoadBalancerOptionsBuilder {
         self.subnet_ids = input;
         self
     }
+    /// <p>The IDs of the subnets.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
+    }
     /// <p>The IP protocol.</p>
     pub fn protocol(mut self, input: crate::types::VerifiedAccessEndpointProtocol) -> Self {
         self.protocol = ::std::option::Option::Some(input);
@@ -79,6 +83,12 @@ impl ModifyVerifiedAccessEndpointLoadBalancerOptionsBuilder {
         self.protocol = input;
         self
     }
+    /// <p>The IP protocol.</p>
+    pub fn get_protocol(
+        &self,
+    ) -> &::std::option::Option<crate::types::VerifiedAccessEndpointProtocol> {
+        &self.protocol
+    }
     /// <p>The IP port number.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -88,6 +98,10 @@ impl ModifyVerifiedAccessEndpointLoadBalancerOptionsBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
+    }
+    /// <p>The IP port number.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// Consumes the builder and constructs a [`ModifyVerifiedAccessEndpointLoadBalancerOptions`](crate::types::ModifyVerifiedAccessEndpointLoadBalancerOptions).
     pub fn build(self) -> crate::types::ModifyVerifiedAccessEndpointLoadBalancerOptions {

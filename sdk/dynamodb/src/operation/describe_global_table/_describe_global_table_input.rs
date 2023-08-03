@@ -47,6 +47,10 @@ impl DescribeGlobalTableInputBuilder {
         self.global_table_name = input;
         self
     }
+    /// <p>The name of the global table.</p>
+    pub fn get_global_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_table_name
+    }
     /// Consumes the builder and constructs a [`DescribeGlobalTableInput`](crate::operation::describe_global_table::DescribeGlobalTableInput).
     pub fn build(
         self,

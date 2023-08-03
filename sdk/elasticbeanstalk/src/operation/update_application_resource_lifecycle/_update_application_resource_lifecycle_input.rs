@@ -57,6 +57,10 @@ impl UpdateApplicationResourceLifecycleInputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The name of the application.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>The lifecycle configuration.</p>
     pub fn resource_lifecycle_config(
         mut self,
@@ -72,6 +76,12 @@ impl UpdateApplicationResourceLifecycleInputBuilder {
     ) -> Self {
         self.resource_lifecycle_config = input;
         self
+    }
+    /// <p>The lifecycle configuration.</p>
+    pub fn get_resource_lifecycle_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationResourceLifecycleConfig> {
+        &self.resource_lifecycle_config
     }
     /// Consumes the builder and constructs a [`UpdateApplicationResourceLifecycleInput`](crate::operation::update_application_resource_lifecycle::UpdateApplicationResourceLifecycleInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_application_resource_lifecycle::UpdateApplicationResourceLifecycleInput, ::aws_smithy_http::operation::error::BuildError>{

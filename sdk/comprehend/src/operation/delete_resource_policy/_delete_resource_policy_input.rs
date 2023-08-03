@@ -48,6 +48,10 @@ impl DeleteResourcePolicyInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the custom model version that has the policy to delete.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p>The revision ID of the policy to delete.</p>
     pub fn policy_revision_id(
         mut self,
@@ -63,6 +67,10 @@ impl DeleteResourcePolicyInputBuilder {
     ) -> Self {
         self.policy_revision_id = input;
         self
+    }
+    /// <p>The revision ID of the policy to delete.</p>
+    pub fn get_policy_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_revision_id
     }
     /// Consumes the builder and constructs a [`DeleteResourcePolicyInput`](crate::operation::delete_resource_policy::DeleteResourcePolicyInput).
     pub fn build(

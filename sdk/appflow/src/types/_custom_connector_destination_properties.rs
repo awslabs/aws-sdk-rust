@@ -82,6 +82,10 @@ impl CustomConnectorDestinationPropertiesBuilder {
         self.entity_name = input;
         self
     }
+    /// <p>The entity specified in the custom connector as a destination in the flow.</p>
+    pub fn get_entity_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_name
+    }
     /// <p>The settings that determine how Amazon AppFlow handles an error when placing data in the custom connector as destination.</p>
     pub fn error_handling_config(mut self, input: crate::types::ErrorHandlingConfig) -> Self {
         self.error_handling_config = ::std::option::Option::Some(input);
@@ -95,6 +99,12 @@ impl CustomConnectorDestinationPropertiesBuilder {
         self.error_handling_config = input;
         self
     }
+    /// <p>The settings that determine how Amazon AppFlow handles an error when placing data in the custom connector as destination.</p>
+    pub fn get_error_handling_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ErrorHandlingConfig> {
+        &self.error_handling_config
+    }
     /// <p>Specifies the type of write operation to be performed in the custom connector when it's used as destination.</p>
     pub fn write_operation_type(mut self, input: crate::types::WriteOperationType) -> Self {
         self.write_operation_type = ::std::option::Option::Some(input);
@@ -107,6 +117,12 @@ impl CustomConnectorDestinationPropertiesBuilder {
     ) -> Self {
         self.write_operation_type = input;
         self
+    }
+    /// <p>Specifies the type of write operation to be performed in the custom connector when it's used as destination.</p>
+    pub fn get_write_operation_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::WriteOperationType> {
+        &self.write_operation_type
     }
     /// Appends an item to `id_field_names`.
     ///
@@ -129,6 +145,12 @@ impl CustomConnectorDestinationPropertiesBuilder {
     ) -> Self {
         self.id_field_names = input;
         self
+    }
+    /// <p>The name of the field that Amazon AppFlow uses as an ID when performing a write operation such as update, delete, or upsert.</p>
+    pub fn get_id_field_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.id_field_names
     }
     /// Adds a key-value pair to `custom_properties`.
     ///
@@ -154,6 +176,14 @@ impl CustomConnectorDestinationPropertiesBuilder {
     ) -> Self {
         self.custom_properties = input;
         self
+    }
+    /// <p>The custom properties that are specific to the connector when it's used as a destination in the flow.</p>
+    pub fn get_custom_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.custom_properties
     }
     /// Consumes the builder and constructs a [`CustomConnectorDestinationProperties`](crate::types::CustomConnectorDestinationProperties).
     pub fn build(self) -> crate::types::CustomConnectorDestinationProperties {

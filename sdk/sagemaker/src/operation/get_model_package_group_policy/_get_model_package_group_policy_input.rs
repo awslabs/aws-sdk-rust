@@ -45,6 +45,10 @@ impl GetModelPackageGroupPolicyInputBuilder {
         self.model_package_group_name = input;
         self
     }
+    /// <p>The name of the model group for which to get the resource policy.</p>
+    pub fn get_model_package_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_package_group_name
+    }
     /// Consumes the builder and constructs a [`GetModelPackageGroupPolicyInput`](crate::operation::get_model_package_group_policy::GetModelPackageGroupPolicyInput).
     pub fn build(
         self,

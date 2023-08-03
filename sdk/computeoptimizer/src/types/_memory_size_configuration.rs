@@ -48,6 +48,10 @@ impl MemorySizeConfigurationBuilder {
         self.memory = input;
         self
     }
+    /// <p> The amount of memory in the container. </p>
+    pub fn get_memory(&self) -> &::std::option::Option<i32> {
+        &self.memory
+    }
     /// <p> The limit of memory reserve for the container. </p>
     pub fn memory_reservation(mut self, input: i32) -> Self {
         self.memory_reservation = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl MemorySizeConfigurationBuilder {
     pub fn set_memory_reservation(mut self, input: ::std::option::Option<i32>) -> Self {
         self.memory_reservation = input;
         self
+    }
+    /// <p> The limit of memory reserve for the container. </p>
+    pub fn get_memory_reservation(&self) -> &::std::option::Option<i32> {
+        &self.memory_reservation
     }
     /// Consumes the builder and constructs a [`MemorySizeConfiguration`](crate::types::MemorySizeConfiguration).
     pub fn build(self) -> crate::types::MemorySizeConfiguration {

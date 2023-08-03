@@ -36,6 +36,10 @@ impl BatchReadFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchRead as a reference.
+    pub fn as_input(&self) -> &crate::operation::batch_read::builders::BatchReadInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl BatchReadFluentBuilder {
         self.inner = self.inner.set_directory_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_arn()
+    }
     /// Appends an item to `Operations`.
     ///
     /// To override the contents of this collection use [`set_operations`](Self::set_operations).
@@ -141,6 +149,12 @@ impl BatchReadFluentBuilder {
         self.inner = self.inner.set_operations(input);
         self
     }
+    /// <p>A list of operations that are part of the batch.</p>
+    pub fn get_operations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchReadOperation>> {
+        self.inner.get_operations()
+    }
     /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
     pub fn consistency_level(mut self, input: crate::types::ConsistencyLevel) -> Self {
         self.inner = self.inner.consistency_level(input);
@@ -153,5 +167,9 @@ impl BatchReadFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_consistency_level(input);
         self
+    }
+    /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
+    pub fn get_consistency_level(&self) -> &::std::option::Option<crate::types::ConsistencyLevel> {
+        self.inner.get_consistency_level()
     }
 }

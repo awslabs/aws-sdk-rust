@@ -36,6 +36,12 @@ impl DeregisterClusterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeregisterCluster as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::deregister_cluster::builders::DeregisterClusterInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +131,9 @@ impl DeregisterClusterFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the connected cluster to deregister.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
 }

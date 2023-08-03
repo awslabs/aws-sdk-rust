@@ -59,6 +59,11 @@ impl ModifyClusterDbRevisionInputBuilder {
         self.cluster_identifier = input;
         self
     }
+    /// <p>The unique identifier of a cluster whose database revision you want to modify. </p>
+    /// <p>Example: <code>examplecluster</code> </p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_identifier
+    }
     /// <p>The identifier of the database revision. You can retrieve this value from the response to the <code>DescribeClusterDbRevisions</code> request.</p>
     pub fn revision_target(
         mut self,
@@ -74,6 +79,10 @@ impl ModifyClusterDbRevisionInputBuilder {
     ) -> Self {
         self.revision_target = input;
         self
+    }
+    /// <p>The identifier of the database revision. You can retrieve this value from the response to the <code>DescribeClusterDbRevisions</code> request.</p>
+    pub fn get_revision_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_target
     }
     /// Consumes the builder and constructs a [`ModifyClusterDbRevisionInput`](crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionInput).
     pub fn build(

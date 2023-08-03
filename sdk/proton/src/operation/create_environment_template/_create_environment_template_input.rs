@@ -91,6 +91,10 @@ impl CreateEnvironmentTemplateInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the environment template.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The environment template name as displayed in the developer interface.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -101,6 +105,10 @@ impl CreateEnvironmentTemplateInputBuilder {
         self.display_name = input;
         self
     }
+    /// <p>The environment template name as displayed in the developer interface.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// <p>A description of the environment template.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -110,6 +118,10 @@ impl CreateEnvironmentTemplateInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the environment template.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>A customer provided encryption key that Proton uses to encrypt data.</p>
     pub fn encryption_key(
@@ -127,6 +139,10 @@ impl CreateEnvironmentTemplateInputBuilder {
         self.encryption_key = input;
         self
     }
+    /// <p>A customer provided encryption key that Proton uses to encrypt data.</p>
+    pub fn get_encryption_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encryption_key
+    }
     /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
     pub fn provisioning(mut self, input: crate::types::Provisioning) -> Self {
         self.provisioning = ::std::option::Option::Some(input);
@@ -139,6 +155,10 @@ impl CreateEnvironmentTemplateInputBuilder {
     ) -> Self {
         self.provisioning = input;
         self
+    }
+    /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
+    pub fn get_provisioning(&self) -> &::std::option::Option<crate::types::Provisioning> {
+        &self.provisioning
     }
     /// Appends an item to `tags`.
     ///
@@ -160,6 +180,11 @@ impl CreateEnvironmentTemplateInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>An optional list of metadata items that you can associate with the Proton environment template. A tag is a key-value pair.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateEnvironmentTemplateInput`](crate::operation::create_environment_template::CreateEnvironmentTemplateInput).
     pub fn build(

@@ -56,6 +56,10 @@ impl FailedWorkspaceChangeRequestBuilder {
         self.workspace_id = input;
         self
     }
+    /// <p>The identifier of the WorkSpace.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
+    }
     /// <p>The error code that is returned if the WorkSpace cannot be rebooted.</p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl FailedWorkspaceChangeRequestBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The error code that is returned if the WorkSpace cannot be rebooted.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
     }
     /// <p>The text of the error message that is returned if the WorkSpace cannot be rebooted.</p>
     pub fn error_message(
@@ -81,6 +89,10 @@ impl FailedWorkspaceChangeRequestBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>The text of the error message that is returned if the WorkSpace cannot be rebooted.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`FailedWorkspaceChangeRequest`](crate::types::FailedWorkspaceChangeRequest).
     pub fn build(self) -> crate::types::FailedWorkspaceChangeRequest {

@@ -96,6 +96,10 @@ impl ListedCertificateBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the specified certificate.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
     pub fn certificate_id(
         mut self,
@@ -112,6 +116,10 @@ impl ListedCertificateBuilder {
         self.certificate_id = input;
         self
     }
+    /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
+    pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_id
+    }
     /// <p>Specifies whether this certificate is used for signing or encryption.</p>
     pub fn usage(mut self, input: crate::types::CertificateUsageType) -> Self {
         self.usage = ::std::option::Option::Some(input);
@@ -124,6 +132,10 @@ impl ListedCertificateBuilder {
     ) -> Self {
         self.usage = input;
         self
+    }
+    /// <p>Specifies whether this certificate is used for signing or encryption.</p>
+    pub fn get_usage(&self) -> &::std::option::Option<crate::types::CertificateUsageType> {
+        &self.usage
     }
     /// <p>The certificate can be either <code>ACTIVE</code>, <code>PENDING_ROTATION</code>, or <code>INACTIVE</code>. <code>PENDING_ROTATION</code> means that this certificate will replace the current certificate when it expires.</p>
     pub fn status(mut self, input: crate::types::CertificateStatusType) -> Self {
@@ -138,6 +150,10 @@ impl ListedCertificateBuilder {
         self.status = input;
         self
     }
+    /// <p>The certificate can be either <code>ACTIVE</code>, <code>PENDING_ROTATION</code>, or <code>INACTIVE</code>. <code>PENDING_ROTATION</code> means that this certificate will replace the current certificate when it expires.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CertificateStatusType> {
+        &self.status
+    }
     /// <p>An optional date that specifies when the certificate becomes active.</p>
     pub fn active_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.active_date = ::std::option::Option::Some(input);
@@ -150,6 +166,10 @@ impl ListedCertificateBuilder {
     ) -> Self {
         self.active_date = input;
         self
+    }
+    /// <p>An optional date that specifies when the certificate becomes active.</p>
+    pub fn get_active_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.active_date
     }
     /// <p>An optional date that specifies when the certificate becomes inactive.</p>
     pub fn inactive_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -164,6 +184,10 @@ impl ListedCertificateBuilder {
         self.inactive_date = input;
         self
     }
+    /// <p>An optional date that specifies when the certificate becomes inactive.</p>
+    pub fn get_inactive_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.inactive_date
+    }
     /// <p>The type for the certificate. If a private key has been specified for the certificate, its type is <code>CERTIFICATE_WITH_PRIVATE_KEY</code>. If there is no private key, the type is <code>CERTIFICATE</code>.</p>
     pub fn r#type(mut self, input: crate::types::CertificateType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -174,6 +198,10 @@ impl ListedCertificateBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type for the certificate. If a private key has been specified for the certificate, its type is <code>CERTIFICATE_WITH_PRIVATE_KEY</code>. If there is no private key, the type is <code>CERTIFICATE</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::CertificateType> {
+        &self.r#type
+    }
     /// <p>The name or short description that's used to identify the certificate.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -183,6 +211,10 @@ impl ListedCertificateBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The name or short description that's used to identify the certificate.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`ListedCertificate`](crate::types::ListedCertificate).
     pub fn build(self) -> crate::types::ListedCertificate {

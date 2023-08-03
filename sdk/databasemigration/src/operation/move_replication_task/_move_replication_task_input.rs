@@ -56,6 +56,10 @@ impl MoveReplicationTaskInputBuilder {
         self.replication_task_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the task that you want to move.</p>
+    pub fn get_replication_task_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_task_arn
+    }
     /// <p>The ARN of the replication instance where you want to move the task to.</p>
     pub fn target_replication_instance_arn(
         mut self,
@@ -71,6 +75,12 @@ impl MoveReplicationTaskInputBuilder {
     ) -> Self {
         self.target_replication_instance_arn = input;
         self
+    }
+    /// <p>The ARN of the replication instance where you want to move the task to.</p>
+    pub fn get_target_replication_instance_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.target_replication_instance_arn
     }
     /// Consumes the builder and constructs a [`MoveReplicationTaskInput`](crate::operation::move_replication_task::MoveReplicationTaskInput).
     pub fn build(

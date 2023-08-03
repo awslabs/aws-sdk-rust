@@ -36,6 +36,12 @@ impl ListRunTasksFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListRunTasks as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_run_tasks::builders::ListRunTasksInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl ListRunTasksFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The run's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>Filter the list by status.</p>
     pub fn status(mut self, input: crate::types::TaskStatus) -> Self {
         self.inner = self.inner.status(input);
@@ -138,6 +148,10 @@ impl ListRunTasksFluentBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TaskStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p>Filter the list by status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TaskStatus> {
+        self.inner.get_status()
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn starting_token(
@@ -155,6 +169,10 @@ impl ListRunTasksFluentBuilder {
         self.inner = self.inner.set_starting_token(input);
         self
     }
+    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    pub fn get_starting_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_starting_token()
+    }
     /// <p>The maximum number of run tasks to return in one page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -164,5 +182,9 @@ impl ListRunTasksFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of run tasks to return in one page of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

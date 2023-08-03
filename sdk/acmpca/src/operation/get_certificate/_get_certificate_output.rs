@@ -54,6 +54,10 @@ impl GetCertificateOutputBuilder {
         self.certificate = input;
         self
     }
+    /// <p>The base64 PEM-encoded certificate specified by the <code>CertificateArn</code> parameter.</p>
+    pub fn get_certificate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate
+    }
     /// <p>The base64 PEM-encoded certificate chain that chains up to the root CA certificate that you used to sign your private CA certificate. </p>
     pub fn certificate_chain(
         mut self,
@@ -69,6 +73,10 @@ impl GetCertificateOutputBuilder {
     ) -> Self {
         self.certificate_chain = input;
         self
+    }
+    /// <p>The base64 PEM-encoded certificate chain that chains up to the root CA certificate that you used to sign your private CA certificate. </p>
+    pub fn get_certificate_chain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_chain
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

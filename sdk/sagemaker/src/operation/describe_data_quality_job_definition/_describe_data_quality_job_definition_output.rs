@@ -147,6 +147,10 @@ impl DescribeDataQualityJobDefinitionOutputBuilder {
         self.job_definition_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the data quality monitoring job definition.</p>
+    pub fn get_job_definition_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_definition_arn
+    }
     /// <p>The name of the data quality monitoring job definition.</p>
     pub fn job_definition_name(
         mut self,
@@ -163,6 +167,10 @@ impl DescribeDataQualityJobDefinitionOutputBuilder {
         self.job_definition_name = input;
         self
     }
+    /// <p>The name of the data quality monitoring job definition.</p>
+    pub fn get_job_definition_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_definition_name
+    }
     /// <p>The time that the data quality monitoring job definition was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -175,6 +183,10 @@ impl DescribeDataQualityJobDefinitionOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time that the data quality monitoring job definition was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The constraints and baselines for the data quality monitoring job definition.</p>
     pub fn data_quality_baseline_config(
@@ -192,6 +204,12 @@ impl DescribeDataQualityJobDefinitionOutputBuilder {
         self.data_quality_baseline_config = input;
         self
     }
+    /// <p>The constraints and baselines for the data quality monitoring job definition.</p>
+    pub fn get_data_quality_baseline_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataQualityBaselineConfig> {
+        &self.data_quality_baseline_config
+    }
     /// <p>Information about the container that runs the data quality monitoring job.</p>
     pub fn data_quality_app_specification(
         mut self,
@@ -208,6 +226,12 @@ impl DescribeDataQualityJobDefinitionOutputBuilder {
         self.data_quality_app_specification = input;
         self
     }
+    /// <p>Information about the container that runs the data quality monitoring job.</p>
+    pub fn get_data_quality_app_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataQualityAppSpecification> {
+        &self.data_quality_app_specification
+    }
     /// <p>The list of inputs for the data quality monitoring job. Currently endpoints are supported.</p>
     pub fn data_quality_job_input(mut self, input: crate::types::DataQualityJobInput) -> Self {
         self.data_quality_job_input = ::std::option::Option::Some(input);
@@ -220,6 +244,12 @@ impl DescribeDataQualityJobDefinitionOutputBuilder {
     ) -> Self {
         self.data_quality_job_input = input;
         self
+    }
+    /// <p>The list of inputs for the data quality monitoring job. Currently endpoints are supported.</p>
+    pub fn get_data_quality_job_input(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataQualityJobInput> {
+        &self.data_quality_job_input
     }
     /// <p>The output configuration for monitoring jobs.</p>
     pub fn data_quality_job_output_config(
@@ -237,6 +267,12 @@ impl DescribeDataQualityJobDefinitionOutputBuilder {
         self.data_quality_job_output_config = input;
         self
     }
+    /// <p>The output configuration for monitoring jobs.</p>
+    pub fn get_data_quality_job_output_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::MonitoringOutputConfig> {
+        &self.data_quality_job_output_config
+    }
     /// <p>Identifies the resources to deploy for a monitoring job.</p>
     pub fn job_resources(mut self, input: crate::types::MonitoringResources) -> Self {
         self.job_resources = ::std::option::Option::Some(input);
@@ -249,6 +285,10 @@ impl DescribeDataQualityJobDefinitionOutputBuilder {
     ) -> Self {
         self.job_resources = input;
         self
+    }
+    /// <p>Identifies the resources to deploy for a monitoring job.</p>
+    pub fn get_job_resources(&self) -> &::std::option::Option<crate::types::MonitoringResources> {
+        &self.job_resources
     }
     /// <p>The networking configuration for the data quality monitoring job.</p>
     pub fn network_config(mut self, input: crate::types::MonitoringNetworkConfig) -> Self {
@@ -263,6 +303,12 @@ impl DescribeDataQualityJobDefinitionOutputBuilder {
         self.network_config = input;
         self
     }
+    /// <p>The networking configuration for the data quality monitoring job.</p>
+    pub fn get_network_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::MonitoringNetworkConfig> {
+        &self.network_config
+    }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -272,6 +318,10 @@ impl DescribeDataQualityJobDefinitionOutputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
     pub fn stopping_condition(mut self, input: crate::types::MonitoringStoppingCondition) -> Self {
@@ -285,6 +335,12 @@ impl DescribeDataQualityJobDefinitionOutputBuilder {
     ) -> Self {
         self.stopping_condition = input;
         self
+    }
+    /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
+    pub fn get_stopping_condition(
+        &self,
+    ) -> &::std::option::Option<crate::types::MonitoringStoppingCondition> {
+        &self.stopping_condition
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

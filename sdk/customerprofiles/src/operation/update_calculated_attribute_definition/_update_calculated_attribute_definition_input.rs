@@ -71,6 +71,10 @@ impl UpdateCalculatedAttributeDefinitionInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The unique name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The unique name of the calculated attribute.</p>
     pub fn calculated_attribute_name(
         mut self,
@@ -87,6 +91,10 @@ impl UpdateCalculatedAttributeDefinitionInputBuilder {
         self.calculated_attribute_name = input;
         self
     }
+    /// <p>The unique name of the calculated attribute.</p>
+    pub fn get_calculated_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.calculated_attribute_name
+    }
     /// <p>The display name of the calculated attribute.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -97,6 +105,10 @@ impl UpdateCalculatedAttributeDefinitionInputBuilder {
         self.display_name = input;
         self
     }
+    /// <p>The display name of the calculated attribute.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// <p>The description of the calculated attribute.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -106,6 +118,10 @@ impl UpdateCalculatedAttributeDefinitionInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the calculated attribute.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The conditions including range, object count, and threshold for the calculated attribute.</p>
     pub fn conditions(mut self, input: crate::types::Conditions) -> Self {
@@ -119,6 +135,10 @@ impl UpdateCalculatedAttributeDefinitionInputBuilder {
     ) -> Self {
         self.conditions = input;
         self
+    }
+    /// <p>The conditions including range, object count, and threshold for the calculated attribute.</p>
+    pub fn get_conditions(&self) -> &::std::option::Option<crate::types::Conditions> {
+        &self.conditions
     }
     /// Consumes the builder and constructs a [`UpdateCalculatedAttributeDefinitionInput`](crate::operation::update_calculated_attribute_definition::UpdateCalculatedAttributeDefinitionInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_calculated_attribute_definition::UpdateCalculatedAttributeDefinitionInput, ::aws_smithy_http::operation::error::BuildError>{

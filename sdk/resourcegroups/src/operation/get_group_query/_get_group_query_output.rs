@@ -49,6 +49,10 @@ impl GetGroupQueryOutputBuilder {
         self.group_query = input;
         self
     }
+    /// <p>The resource query associated with the specified group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>.</p>
+    pub fn get_group_query(&self) -> &::std::option::Option<crate::types::GroupQuery> {
+        &self.group_query
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

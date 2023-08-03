@@ -36,6 +36,10 @@ impl ListResourceProfileArtifactsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListResourceProfileArtifacts as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_resource_profile_artifacts::builders::ListResourceProfileArtifactsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl ListResourceProfileArtifactsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
@@ -141,5 +149,9 @@ impl ListResourceProfileArtifactsFluentBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
     }
 }

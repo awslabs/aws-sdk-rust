@@ -48,6 +48,10 @@ impl CompliantSummaryBuilder {
         self.compliant_count = input;
         self
     }
+    /// <p>The total number of resources that are compliant.</p>
+    pub fn get_compliant_count(&self) -> &::std::option::Option<i32> {
+        &self.compliant_count
+    }
     /// <p>A summary of the compliance severity by compliance type.</p>
     pub fn severity_summary(mut self, input: crate::types::SeveritySummary) -> Self {
         self.severity_summary = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl CompliantSummaryBuilder {
     ) -> Self {
         self.severity_summary = input;
         self
+    }
+    /// <p>A summary of the compliance severity by compliance type.</p>
+    pub fn get_severity_summary(&self) -> &::std::option::Option<crate::types::SeveritySummary> {
+        &self.severity_summary
     }
     /// Consumes the builder and constructs a [`CompliantSummary`](crate::types::CompliantSummary).
     pub fn build(self) -> crate::types::CompliantSummary {

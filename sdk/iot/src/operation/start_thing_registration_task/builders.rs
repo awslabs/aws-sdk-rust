@@ -37,6 +37,10 @@ impl StartThingRegistrationTaskFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartThingRegistrationTask as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_thing_registration_task::builders::StartThingRegistrationTaskInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl StartThingRegistrationTaskFluentBuilder {
         self.inner = self.inner.set_template_body(input);
         self
     }
+    /// <p>The provisioning template.</p>
+    pub fn get_template_body(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_body()
+    }
     /// <p>The S3 bucket that contains the input file.</p>
     pub fn input_file_bucket(
         mut self,
@@ -148,6 +156,10 @@ impl StartThingRegistrationTaskFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_input_file_bucket(input);
         self
+    }
+    /// <p>The S3 bucket that contains the input file.</p>
+    pub fn get_input_file_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_input_file_bucket()
     }
     /// <p>The name of input file within the S3 bucket. This file contains a newline delimited JSON file. Each line contains the parameter values to provision one device (thing).</p>
     pub fn input_file_key(
@@ -165,6 +177,10 @@ impl StartThingRegistrationTaskFluentBuilder {
         self.inner = self.inner.set_input_file_key(input);
         self
     }
+    /// <p>The name of input file within the S3 bucket. This file contains a newline delimited JSON file. Each line contains the parameter values to provision one device (thing).</p>
+    pub fn get_input_file_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_input_file_key()
+    }
     /// <p>The IAM role ARN that grants permission the input file.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -174,5 +190,9 @@ impl StartThingRegistrationTaskFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>The IAM role ARN that grants permission the input file.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
 }

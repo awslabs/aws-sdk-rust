@@ -146,6 +146,10 @@ impl DescribePipelineOutputBuilder {
         self.pipeline_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
+    pub fn get_pipeline_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_arn
+    }
     /// <p>The name of the pipeline.</p>
     pub fn pipeline_name(
         mut self,
@@ -161,6 +165,10 @@ impl DescribePipelineOutputBuilder {
     ) -> Self {
         self.pipeline_name = input;
         self
+    }
+    /// <p>The name of the pipeline.</p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_name
     }
     /// <p>The display name of the pipeline.</p>
     pub fn pipeline_display_name(
@@ -178,6 +186,10 @@ impl DescribePipelineOutputBuilder {
         self.pipeline_display_name = input;
         self
     }
+    /// <p>The display name of the pipeline.</p>
+    pub fn get_pipeline_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_display_name
+    }
     /// <p>The JSON pipeline definition.</p>
     pub fn pipeline_definition(
         mut self,
@@ -193,6 +205,10 @@ impl DescribePipelineOutputBuilder {
     ) -> Self {
         self.pipeline_definition = input;
         self
+    }
+    /// <p>The JSON pipeline definition.</p>
+    pub fn get_pipeline_definition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_definition
     }
     /// <p>The description of the pipeline.</p>
     pub fn pipeline_description(
@@ -210,6 +226,10 @@ impl DescribePipelineOutputBuilder {
         self.pipeline_description = input;
         self
     }
+    /// <p>The description of the pipeline.</p>
+    pub fn get_pipeline_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_description
+    }
     /// <p>The Amazon Resource Name (ARN) that the pipeline uses to execute.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -219,6 +239,10 @@ impl DescribePipelineOutputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) that the pipeline uses to execute.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The status of the pipeline execution.</p>
     pub fn pipeline_status(mut self, input: crate::types::PipelineStatus) -> Self {
@@ -233,6 +257,10 @@ impl DescribePipelineOutputBuilder {
         self.pipeline_status = input;
         self
     }
+    /// <p>The status of the pipeline execution.</p>
+    pub fn get_pipeline_status(&self) -> &::std::option::Option<crate::types::PipelineStatus> {
+        &self.pipeline_status
+    }
     /// <p>The time when the pipeline was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -245,6 +273,10 @@ impl DescribePipelineOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time when the pipeline was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The time when the pipeline was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -259,6 +291,10 @@ impl DescribePipelineOutputBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p>The time when the pipeline was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     /// <p>The time when the pipeline was last run.</p>
     pub fn last_run_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_run_time = ::std::option::Option::Some(input);
@@ -271,6 +307,10 @@ impl DescribePipelineOutputBuilder {
     ) -> Self {
         self.last_run_time = input;
         self
+    }
+    /// <p>The time when the pipeline was last run.</p>
+    pub fn get_last_run_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_run_time
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn created_by(mut self, input: crate::types::UserContext) -> Self {
@@ -286,6 +326,10 @@ impl DescribePipelineOutputBuilder {
         self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<crate::types::UserContext> {
+        &self.created_by
+    }
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn last_modified_by(mut self, input: crate::types::UserContext) -> Self {
         self.last_modified_by = ::std::option::Option::Some(input);
         self
@@ -297,6 +341,10 @@ impl DescribePipelineOutputBuilder {
     ) -> Self {
         self.last_modified_by = input;
         self
+    }
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    pub fn get_last_modified_by(&self) -> &::std::option::Option<crate::types::UserContext> {
+        &self.last_modified_by
     }
     /// <p>Lists the parallelism configuration applied to the pipeline.</p>
     pub fn parallelism_configuration(
@@ -313,6 +361,12 @@ impl DescribePipelineOutputBuilder {
     ) -> Self {
         self.parallelism_configuration = input;
         self
+    }
+    /// <p>Lists the parallelism configuration applied to the pipeline.</p>
+    pub fn get_parallelism_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ParallelismConfiguration> {
+        &self.parallelism_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

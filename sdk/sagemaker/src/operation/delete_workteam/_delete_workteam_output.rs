@@ -46,6 +46,10 @@ impl DeleteWorkteamOutputBuilder {
         self.success = input;
         self
     }
+    /// <p>Returns <code>true</code> if the work team was successfully deleted; otherwise, returns <code>false</code>.</p>
+    pub fn get_success(&self) -> &::std::option::Option<bool> {
+        &self.success
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

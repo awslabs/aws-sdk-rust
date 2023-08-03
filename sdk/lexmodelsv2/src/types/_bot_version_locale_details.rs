@@ -46,6 +46,10 @@ impl BotVersionLocaleDetailsBuilder {
         self.source_bot_version = input;
         self
     }
+    /// <p>The version of a bot used for a bot locale.</p>
+    pub fn get_source_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_bot_version
+    }
     /// Consumes the builder and constructs a [`BotVersionLocaleDetails`](crate::types::BotVersionLocaleDetails).
     pub fn build(self) -> crate::types::BotVersionLocaleDetails {
         crate::types::BotVersionLocaleDetails {

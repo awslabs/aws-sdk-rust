@@ -57,6 +57,10 @@ impl GetSolNetworkPackageDescriptorOutputBuilder {
         self.content_type = input;
         self
     }
+    /// <p>Indicates the media type of the resource.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<crate::types::DescriptorContentType> {
+        &self.content_type
+    }
     /// <p>Contents of the network service descriptor in the network package.</p>
     pub fn nsd(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.nsd = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl GetSolNetworkPackageDescriptorOutputBuilder {
     pub fn set_nsd(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.nsd = input;
         self
+    }
+    /// <p>Contents of the network service descriptor in the network package.</p>
+    pub fn get_nsd(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.nsd
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -56,6 +56,10 @@ impl UnfilteredPartitionBuilder {
         self.partition = input;
         self
     }
+    /// <p>The partition object.</p>
+    pub fn get_partition(&self) -> &::std::option::Option<crate::types::Partition> {
+        &self.partition
+    }
     /// Appends an item to `authorized_columns`.
     ///
     /// To override the contents of this collection use [`set_authorized_columns`](Self::set_authorized_columns).
@@ -78,6 +82,12 @@ impl UnfilteredPartitionBuilder {
         self.authorized_columns = input;
         self
     }
+    /// <p>The list of columns the user has permissions to access.</p>
+    pub fn get_authorized_columns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.authorized_columns
+    }
     /// <p>A Boolean value indicating that the partition location is registered with Lake Formation.</p>
     pub fn is_registered_with_lake_formation(mut self, input: bool) -> Self {
         self.is_registered_with_lake_formation = ::std::option::Option::Some(input);
@@ -90,6 +100,10 @@ impl UnfilteredPartitionBuilder {
     ) -> Self {
         self.is_registered_with_lake_formation = input;
         self
+    }
+    /// <p>A Boolean value indicating that the partition location is registered with Lake Formation.</p>
+    pub fn get_is_registered_with_lake_formation(&self) -> &::std::option::Option<bool> {
+        &self.is_registered_with_lake_formation
     }
     /// Consumes the builder and constructs a [`UnfilteredPartition`](crate::types::UnfilteredPartition).
     pub fn build(self) -> crate::types::UnfilteredPartition {

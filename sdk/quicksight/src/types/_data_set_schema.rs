@@ -50,6 +50,12 @@ impl DataSetSchemaBuilder {
         self.column_schema_list = input;
         self
     }
+    /// <p>A structure containing the list of column schemas.</p>
+    pub fn get_column_schema_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnSchema>> {
+        &self.column_schema_list
+    }
     /// Consumes the builder and constructs a [`DataSetSchema`](crate::types::DataSetSchema).
     pub fn build(self) -> crate::types::DataSetSchema {
         crate::types::DataSetSchema {

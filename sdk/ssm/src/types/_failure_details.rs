@@ -70,6 +70,10 @@ impl FailureDetailsBuilder {
         self.failure_stage = input;
         self
     }
+    /// <p>The stage of the Automation execution when the failure occurred. The stages include the following: InputValidation, PreVerification, Invocation, PostVerification.</p>
+    pub fn get_failure_stage(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_stage
+    }
     /// <p>The type of Automation failure. Failure types include the following: Action, Permission, Throttling, Verification, Internal.</p>
     pub fn failure_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_type = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl FailureDetailsBuilder {
     pub fn set_failure_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_type = input;
         self
+    }
+    /// <p>The type of Automation failure. Failure types include the following: Action, Permission, Throttling, Verification, Internal.</p>
+    pub fn get_failure_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_type
     }
     /// Adds a key-value pair to `details`.
     ///
@@ -107,6 +115,14 @@ impl FailureDetailsBuilder {
     ) -> Self {
         self.details = input;
         self
+    }
+    /// <p>Detailed information about the Automation step failure.</p>
+    pub fn get_details(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    > {
+        &self.details
     }
     /// Consumes the builder and constructs a [`FailureDetails`](crate::types::FailureDetails).
     pub fn build(self) -> crate::types::FailureDetails {

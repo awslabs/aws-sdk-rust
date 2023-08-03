@@ -61,6 +61,10 @@ impl GetRuleInputBuilder {
         self.service_identifier = input;
         self
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    pub fn get_service_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_identifier
+    }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
     pub fn listener_identifier(
         mut self,
@@ -77,6 +81,10 @@ impl GetRuleInputBuilder {
         self.listener_identifier = input;
         self
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
+    pub fn get_listener_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.listener_identifier
+    }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener rule.</p>
     pub fn rule_identifier(
         mut self,
@@ -92,6 +100,10 @@ impl GetRuleInputBuilder {
     ) -> Self {
         self.rule_identifier = input;
         self
+    }
+    /// <p>The ID or Amazon Resource Name (ARN) of the listener rule.</p>
+    pub fn get_rule_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_identifier
     }
     /// Consumes the builder and constructs a [`GetRuleInput`](crate::operation::get_rule::GetRuleInput).
     pub fn build(

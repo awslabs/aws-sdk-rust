@@ -50,6 +50,12 @@ impl ServerSideEncryptionConfigurationBuilder {
         self.rules = input;
         self
     }
+    /// <p>Container for information about a particular server-side encryption configuration rule.</p>
+    pub fn get_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerSideEncryptionRule>> {
+        &self.rules
+    }
     /// Consumes the builder and constructs a [`ServerSideEncryptionConfiguration`](crate::types::ServerSideEncryptionConfiguration).
     pub fn build(self) -> crate::types::ServerSideEncryptionConfiguration {
         crate::types::ServerSideEncryptionConfiguration { rules: self.rules }

@@ -53,6 +53,10 @@ impl BatchDetectDominantLanguageInputBuilder {
         self.text_list = input;
         self
     }
+    /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. Each document should contain at least 20 characters. The maximum size of each document is 5 KB.</p>
+    pub fn get_text_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.text_list
+    }
     /// Consumes the builder and constructs a [`BatchDetectDominantLanguageInput`](crate::operation::batch_detect_dominant_language::BatchDetectDominantLanguageInput).
     pub fn build(
         self,

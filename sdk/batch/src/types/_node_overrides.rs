@@ -74,6 +74,15 @@ impl NodeOverridesBuilder {
         self.num_nodes = input;
         self
     }
+    /// <p>The number of nodes to use with a multi-node parallel job. This value overrides the number of nodes that are specified in the job definition. To use this override, you must meet the following conditions:</p>
+    /// <ul>
+    /// <li> <p>There must be at least one node range in your job definition that has an open upper boundary, such as <code>:</code> or <code>n:</code>.</p> </li>
+    /// <li> <p>The lower boundary of the node range that's specified in the job definition must be fewer than the number of nodes specified in the override.</p> </li>
+    /// <li> <p>The main node index that's specified in the job definition must be fewer than the number of nodes specified in the override.</p> </li>
+    /// </ul>
+    pub fn get_num_nodes(&self) -> &::std::option::Option<i32> {
+        &self.num_nodes
+    }
     /// Appends an item to `node_property_overrides`.
     ///
     /// To override the contents of this collection use [`set_node_property_overrides`](Self::set_node_property_overrides).
@@ -92,6 +101,12 @@ impl NodeOverridesBuilder {
     ) -> Self {
         self.node_property_overrides = input;
         self
+    }
+    /// <p>The node property overrides for the job.</p>
+    pub fn get_node_property_overrides(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NodePropertyOverride>> {
+        &self.node_property_overrides
     }
     /// Consumes the builder and constructs a [`NodeOverrides`](crate::types::NodeOverrides).
     pub fn build(self) -> crate::types::NodeOverrides {

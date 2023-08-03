@@ -58,6 +58,10 @@ impl GetReportGroupTrendOutputBuilder {
         self.stats = input;
         self
     }
+    /// <p>Contains the accumulated trend data.</p>
+    pub fn get_stats(&self) -> &::std::option::Option<crate::types::ReportGroupTrendStats> {
+        &self.stats
+    }
     /// Appends an item to `raw_data`.
     ///
     /// To override the contents of this collection use [`set_raw_data`](Self::set_raw_data).
@@ -76,6 +80,12 @@ impl GetReportGroupTrendOutputBuilder {
     ) -> Self {
         self.raw_data = input;
         self
+    }
+    /// <p>An array that contains the raw data for each report.</p>
+    pub fn get_raw_data(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReportWithRawData>> {
+        &self.raw_data
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

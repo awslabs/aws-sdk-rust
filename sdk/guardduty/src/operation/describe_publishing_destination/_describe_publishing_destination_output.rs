@@ -86,6 +86,10 @@ impl DescribePublishingDestinationOutputBuilder {
         self.destination_id = input;
         self
     }
+    /// <p>The ID of the publishing destination.</p>
+    pub fn get_destination_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_id
+    }
     /// <p>The type of publishing destination. Currently, only Amazon S3 buckets are supported.</p>
     pub fn destination_type(mut self, input: crate::types::DestinationType) -> Self {
         self.destination_type = ::std::option::Option::Some(input);
@@ -98,6 +102,10 @@ impl DescribePublishingDestinationOutputBuilder {
     ) -> Self {
         self.destination_type = input;
         self
+    }
+    /// <p>The type of publishing destination. Currently, only Amazon S3 buckets are supported.</p>
+    pub fn get_destination_type(&self) -> &::std::option::Option<crate::types::DestinationType> {
+        &self.destination_type
     }
     /// <p>The status of the publishing destination.</p>
     pub fn status(mut self, input: crate::types::PublishingStatus) -> Self {
@@ -112,6 +120,10 @@ impl DescribePublishingDestinationOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the publishing destination.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::PublishingStatus> {
+        &self.status
+    }
     /// <p>The time, in epoch millisecond format, at which GuardDuty was first unable to publish findings to the destination.</p>
     pub fn publishing_failure_start_timestamp(mut self, input: i64) -> Self {
         self.publishing_failure_start_timestamp = ::std::option::Option::Some(input);
@@ -125,6 +137,10 @@ impl DescribePublishingDestinationOutputBuilder {
         self.publishing_failure_start_timestamp = input;
         self
     }
+    /// <p>The time, in epoch millisecond format, at which GuardDuty was first unable to publish findings to the destination.</p>
+    pub fn get_publishing_failure_start_timestamp(&self) -> &::std::option::Option<i64> {
+        &self.publishing_failure_start_timestamp
+    }
     /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
     pub fn destination_properties(mut self, input: crate::types::DestinationProperties) -> Self {
         self.destination_properties = ::std::option::Option::Some(input);
@@ -137,6 +153,12 @@ impl DescribePublishingDestinationOutputBuilder {
     ) -> Self {
         self.destination_properties = input;
         self
+    }
+    /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
+    pub fn get_destination_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::DestinationProperties> {
+        &self.destination_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

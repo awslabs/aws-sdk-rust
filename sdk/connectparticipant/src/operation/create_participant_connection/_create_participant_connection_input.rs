@@ -66,6 +66,12 @@ impl CreateParticipantConnectionInputBuilder {
         self.r#type = input;
         self
     }
+    /// <p>Type of connection information required. This can be omitted if <code>ConnectParticipant</code> is <code>true</code>.</p>
+    pub fn get_type(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectionType>> {
+        &self.r#type
+    }
     /// <p>This is a header parameter.</p>
     /// <p>The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a> API response.</p>
     pub fn participant_token(
@@ -84,6 +90,11 @@ impl CreateParticipantConnectionInputBuilder {
         self.participant_token = input;
         self
     }
+    /// <p>This is a header parameter.</p>
+    /// <p>The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a> API response.</p>
+    pub fn get_participant_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.participant_token
+    }
     /// <p>Amazon Connect Participant is used to mark the participant as connected for customer participant in message streaming, as well as for agent or manager participant in non-streaming chats.</p>
     pub fn connect_participant(mut self, input: bool) -> Self {
         self.connect_participant = ::std::option::Option::Some(input);
@@ -93,6 +104,10 @@ impl CreateParticipantConnectionInputBuilder {
     pub fn set_connect_participant(mut self, input: ::std::option::Option<bool>) -> Self {
         self.connect_participant = input;
         self
+    }
+    /// <p>Amazon Connect Participant is used to mark the participant as connected for customer participant in message streaming, as well as for agent or manager participant in non-streaming chats.</p>
+    pub fn get_connect_participant(&self) -> &::std::option::Option<bool> {
+        &self.connect_participant
     }
     /// Consumes the builder and constructs a [`CreateParticipantConnectionInput`](crate::operation::create_participant_connection::CreateParticipantConnectionInput).
     pub fn build(

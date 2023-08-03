@@ -39,6 +39,10 @@ impl GetSegmentInputBuilder {
         self.segment = input;
         self
     }
+    /// <p>The ARN of the segment to return information for.</p>
+    pub fn get_segment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.segment
+    }
     /// Consumes the builder and constructs a [`GetSegmentInput`](crate::operation::get_segment::GetSegmentInput).
     pub fn build(
         self,

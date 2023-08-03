@@ -67,6 +67,12 @@ impl ParallelismConfigurationBuilder {
         self.configuration_type = input;
         self
     }
+    /// <p>Describes whether the application uses the default parallelism for the Kinesis Data Analytics service. You must set this property to <code>CUSTOM</code> in order to change your application's <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or <code>ParallelismPerKPU</code> properties.</p>
+    pub fn get_configuration_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfigurationType> {
+        &self.configuration_type
+    }
     /// <p>Describes the initial number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform. If <code>AutoScalingEnabled</code> is set to True, Kinesis Data Analytics increases the <code>CurrentParallelism</code> value in response to application load. The service can increase the <code>CurrentParallelism</code> value up to the maximum parallelism, which is <code>ParalellismPerKPU</code> times the maximum KPUs for the application. The maximum KPUs for an application is 32 by default, and can be increased by requesting a limit increase. If application load is reduced, the service can reduce the <code>CurrentParallelism</code> value down to the <code>Parallelism</code> setting.</p>
     pub fn parallelism(mut self, input: i32) -> Self {
         self.parallelism = ::std::option::Option::Some(input);
@@ -76,6 +82,10 @@ impl ParallelismConfigurationBuilder {
     pub fn set_parallelism(mut self, input: ::std::option::Option<i32>) -> Self {
         self.parallelism = input;
         self
+    }
+    /// <p>Describes the initial number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform. If <code>AutoScalingEnabled</code> is set to True, Kinesis Data Analytics increases the <code>CurrentParallelism</code> value in response to application load. The service can increase the <code>CurrentParallelism</code> value up to the maximum parallelism, which is <code>ParalellismPerKPU</code> times the maximum KPUs for the application. The maximum KPUs for an application is 32 by default, and can be increased by requesting a limit increase. If application load is reduced, the service can reduce the <code>CurrentParallelism</code> value down to the <code>Parallelism</code> setting.</p>
+    pub fn get_parallelism(&self) -> &::std::option::Option<i32> {
+        &self.parallelism
     }
     /// <p>Describes the number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform per Kinesis Processing Unit (KPU) used by the application. For more information about KPUs, see <a href="http://aws.amazon.com/kinesis/data-analytics/pricing/">Amazon Kinesis Data Analytics Pricing</a>.</p>
     pub fn parallelism_per_kpu(mut self, input: i32) -> Self {
@@ -87,6 +97,10 @@ impl ParallelismConfigurationBuilder {
         self.parallelism_per_kpu = input;
         self
     }
+    /// <p>Describes the number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform per Kinesis Processing Unit (KPU) used by the application. For more information about KPUs, see <a href="http://aws.amazon.com/kinesis/data-analytics/pricing/">Amazon Kinesis Data Analytics Pricing</a>.</p>
+    pub fn get_parallelism_per_kpu(&self) -> &::std::option::Option<i32> {
+        &self.parallelism_per_kpu
+    }
     /// <p>Describes whether the Kinesis Data Analytics service can increase the parallelism of the application in response to increased throughput.</p>
     pub fn auto_scaling_enabled(mut self, input: bool) -> Self {
         self.auto_scaling_enabled = ::std::option::Option::Some(input);
@@ -96,6 +110,10 @@ impl ParallelismConfigurationBuilder {
     pub fn set_auto_scaling_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_scaling_enabled = input;
         self
+    }
+    /// <p>Describes whether the Kinesis Data Analytics service can increase the parallelism of the application in response to increased throughput.</p>
+    pub fn get_auto_scaling_enabled(&self) -> &::std::option::Option<bool> {
+        &self.auto_scaling_enabled
     }
     /// Consumes the builder and constructs a [`ParallelismConfiguration`](crate::types::ParallelismConfiguration).
     pub fn build(self) -> crate::types::ParallelismConfiguration {

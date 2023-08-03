@@ -106,6 +106,21 @@ impl ListNetworksInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>The filters.</p>
+    /// <ul>
+    /// <li> <p> <code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>CREATED</code> | <code>DELETED</code> | <code>DEPROVISIONING</code> | <code>PROVISIONING</code>).</p> </li>
+    /// </ul>
+    /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::NetworkFilterKeys,
+            ::std::vec::Vec<::std::string::String>,
+        >,
+    > {
+        &self.filters
+    }
     /// <p>The token for the next page of results.</p>
     pub fn start_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_token = ::std::option::Option::Some(input.into());
@@ -116,6 +131,10 @@ impl ListNetworksInputBuilder {
         self.start_token = input;
         self
     }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_start_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_token
+    }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -125,6 +144,10 @@ impl ListNetworksInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListNetworksInput`](crate::operation::list_networks::ListNetworksInput).
     pub fn build(

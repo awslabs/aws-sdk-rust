@@ -40,6 +40,10 @@ impl Phase2DhGroupNumbersListValueBuilder {
         self.value = input;
         self
     }
+    /// <p>The Diffie-Hellmann group number.</p>
+    pub fn get_value(&self) -> &::std::option::Option<i32> {
+        &self.value
+    }
     /// Consumes the builder and constructs a [`Phase2DhGroupNumbersListValue`](crate::types::Phase2DhGroupNumbersListValue).
     pub fn build(self) -> crate::types::Phase2DhGroupNumbersListValue {
         crate::types::Phase2DhGroupNumbersListValue { value: self.value }

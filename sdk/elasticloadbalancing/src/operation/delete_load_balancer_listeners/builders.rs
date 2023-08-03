@@ -36,6 +36,10 @@ impl DeleteLoadBalancerListenersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteLoadBalancerListeners as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_load_balancer_listeners::builders::DeleteLoadBalancerListenersInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl DeleteLoadBalancerListenersFluentBuilder {
         self.inner = self.inner.set_load_balancer_name(input);
         self
     }
+    /// <p>The name of the load balancer.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_load_balancer_name()
+    }
     /// Appends an item to `LoadBalancerPorts`.
     ///
     /// To override the contents of this collection use [`set_load_balancer_ports`](Self::set_load_balancer_ports).
@@ -148,5 +156,9 @@ impl DeleteLoadBalancerListenersFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_load_balancer_ports(input);
         self
+    }
+    /// <p>The client port numbers of the listeners.</p>
+    pub fn get_load_balancer_ports(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        self.inner.get_load_balancer_ports()
     }
 }

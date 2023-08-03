@@ -54,6 +54,10 @@ impl EmailTemplateMetadataBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The name of the template.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// <p>The time and date the template was created.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_timestamp = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl EmailTemplateMetadataBuilder {
     ) -> Self {
         self.created_timestamp = input;
         self
+    }
+    /// <p>The time and date the template was created.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
     }
     /// Consumes the builder and constructs a [`EmailTemplateMetadata`](crate::types::EmailTemplateMetadata).
     pub fn build(self) -> crate::types::EmailTemplateMetadata {

@@ -106,6 +106,10 @@ impl SchemaResponseBuilder {
         self.code_line_count = input;
         self
     }
+    /// <p>The number of lines of code in a schema in a Fleet Advisor collector inventory.</p>
+    pub fn get_code_line_count(&self) -> &::std::option::Option<i64> {
+        &self.code_line_count
+    }
     /// <p>The size level of the code in a schema in a Fleet Advisor collector inventory.</p>
     pub fn code_size(mut self, input: i64) -> Self {
         self.code_size = ::std::option::Option::Some(input);
@@ -116,6 +120,10 @@ impl SchemaResponseBuilder {
         self.code_size = input;
         self
     }
+    /// <p>The size level of the code in a schema in a Fleet Advisor collector inventory.</p>
+    pub fn get_code_size(&self) -> &::std::option::Option<i64> {
+        &self.code_size
+    }
     /// <p>The complexity level of the code in a schema in a Fleet Advisor collector inventory.</p>
     pub fn complexity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.complexity = ::std::option::Option::Some(input.into());
@@ -125,6 +133,10 @@ impl SchemaResponseBuilder {
     pub fn set_complexity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.complexity = input;
         self
+    }
+    /// <p>The complexity level of the code in a schema in a Fleet Advisor collector inventory.</p>
+    pub fn get_complexity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.complexity
     }
     /// <p>The database server for a schema in a Fleet Advisor collector inventory.</p>
     pub fn server(mut self, input: crate::types::ServerShortInfoResponse) -> Self {
@@ -139,6 +151,10 @@ impl SchemaResponseBuilder {
         self.server = input;
         self
     }
+    /// <p>The database server for a schema in a Fleet Advisor collector inventory.</p>
+    pub fn get_server(&self) -> &::std::option::Option<crate::types::ServerShortInfoResponse> {
+        &self.server
+    }
     /// <p>The database for a schema in a Fleet Advisor collector inventory.</p>
     pub fn database_instance(mut self, input: crate::types::DatabaseShortInfoResponse) -> Self {
         self.database_instance = ::std::option::Option::Some(input);
@@ -152,6 +168,12 @@ impl SchemaResponseBuilder {
         self.database_instance = input;
         self
     }
+    /// <p>The database for a schema in a Fleet Advisor collector inventory.</p>
+    pub fn get_database_instance(
+        &self,
+    ) -> &::std::option::Option<crate::types::DatabaseShortInfoResponse> {
+        &self.database_instance
+    }
     /// <p>The ID of a schema in a Fleet Advisor collector inventory.</p>
     pub fn schema_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_id = ::std::option::Option::Some(input.into());
@@ -162,6 +184,10 @@ impl SchemaResponseBuilder {
         self.schema_id = input;
         self
     }
+    /// <p>The ID of a schema in a Fleet Advisor collector inventory.</p>
+    pub fn get_schema_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_id
+    }
     /// <p>The name of a schema in a Fleet Advisor collector inventory.</p>
     pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_name = ::std::option::Option::Some(input.into());
@@ -171,6 +197,10 @@ impl SchemaResponseBuilder {
     pub fn set_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_name = input;
         self
+    }
+    /// <p>The name of a schema in a Fleet Advisor collector inventory.</p>
+    pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_name
     }
     /// <p>Describes a schema in a Fleet Advisor collector inventory.</p>
     pub fn original_schema(mut self, input: crate::types::SchemaShortInfoResponse) -> Self {
@@ -185,6 +215,12 @@ impl SchemaResponseBuilder {
         self.original_schema = input;
         self
     }
+    /// <p>Describes a schema in a Fleet Advisor collector inventory.</p>
+    pub fn get_original_schema(
+        &self,
+    ) -> &::std::option::Option<crate::types::SchemaShortInfoResponse> {
+        &self.original_schema
+    }
     /// <p>The similarity value for a schema in a Fleet Advisor collector inventory. A higher similarity value indicates that a schema is likely to be a duplicate.</p>
     pub fn similarity(mut self, input: f64) -> Self {
         self.similarity = ::std::option::Option::Some(input);
@@ -194,6 +230,10 @@ impl SchemaResponseBuilder {
     pub fn set_similarity(mut self, input: ::std::option::Option<f64>) -> Self {
         self.similarity = input;
         self
+    }
+    /// <p>The similarity value for a schema in a Fleet Advisor collector inventory. A higher similarity value indicates that a schema is likely to be a duplicate.</p>
+    pub fn get_similarity(&self) -> &::std::option::Option<f64> {
+        &self.similarity
     }
     /// Consumes the builder and constructs a [`SchemaResponse`](crate::types::SchemaResponse).
     pub fn build(self) -> crate::types::SchemaResponse {

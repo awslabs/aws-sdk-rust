@@ -48,6 +48,10 @@ impl NetworkBuilder {
         self.as_name = input;
         self
     }
+    /// <p>The internet provider name or network name.</p>
+    pub fn get_as_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.as_name
+    }
     /// <p>The Autonomous System Number (ASN) of the internet provider or network.</p>
     pub fn as_number(mut self, input: i64) -> Self {
         self.as_number = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl NetworkBuilder {
     pub fn set_as_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.as_number = input;
         self
+    }
+    /// <p>The Autonomous System Number (ASN) of the internet provider or network.</p>
+    pub fn get_as_number(&self) -> &::std::option::Option<i64> {
+        &self.as_number
     }
     /// Consumes the builder and constructs a [`Network`](crate::types::Network).
     pub fn build(self) -> crate::types::Network {

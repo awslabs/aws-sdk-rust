@@ -40,6 +40,10 @@ impl LifecyclePolicyPreviewSummaryBuilder {
         self.expiring_image_total_count = input;
         self
     }
+    /// <p>The number of expiring images.</p>
+    pub fn get_expiring_image_total_count(&self) -> &::std::option::Option<i32> {
+        &self.expiring_image_total_count
+    }
     /// Consumes the builder and constructs a [`LifecyclePolicyPreviewSummary`](crate::types::LifecyclePolicyPreviewSummary).
     pub fn build(self) -> crate::types::LifecyclePolicyPreviewSummary {
         crate::types::LifecyclePolicyPreviewSummary {

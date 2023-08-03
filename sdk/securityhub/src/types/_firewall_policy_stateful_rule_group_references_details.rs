@@ -41,6 +41,10 @@ impl FirewallPolicyStatefulRuleGroupReferencesDetailsBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The ARN of the stateful rule group.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Consumes the builder and constructs a [`FirewallPolicyStatefulRuleGroupReferencesDetails`](crate::types::FirewallPolicyStatefulRuleGroupReferencesDetails).
     pub fn build(self) -> crate::types::FirewallPolicyStatefulRuleGroupReferencesDetails {
         crate::types::FirewallPolicyStatefulRuleGroupReferencesDetails {

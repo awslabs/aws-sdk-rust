@@ -73,6 +73,10 @@ impl SourceConnectionDetailBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The only supported <code>SourceConnection</code> type is Codestar.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::SourceType> {
+        &self.r#type
+    }
     /// <p>The connection details based on the connection <code>Type</code>.</p>
     pub fn connection_parameters(
         mut self,
@@ -88,6 +92,12 @@ impl SourceConnectionDetailBuilder {
     ) -> Self {
         self.connection_parameters = input;
         self
+    }
+    /// <p>The connection details based on the connection <code>Type</code>.</p>
+    pub fn get_connection_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::SourceConnectionParameters> {
+        &self.connection_parameters
     }
     /// <p>Provides details about the product's connection sync and contains the following sub-fields. </p>
     /// <ul>
@@ -112,6 +122,17 @@ impl SourceConnectionDetailBuilder {
     pub fn set_last_sync(mut self, input: ::std::option::Option<crate::types::LastSync>) -> Self {
         self.last_sync = input;
         self
+    }
+    /// <p>Provides details about the product's connection sync and contains the following sub-fields. </p>
+    /// <ul>
+    /// <li> <p> <code>LastSyncTime</code> </p> </li>
+    /// <li> <p> <code>LastSyncStatus</code> </p> </li>
+    /// <li> <p> <code>LastSyncStatusMessage</code> </p> </li>
+    /// <li> <p> <code>LastSuccessfulSyncTime</code> </p> </li>
+    /// <li> <p> <code>LastSuccessfulSyncProvisioningArtifactID</code> </p> </li>
+    /// </ul>
+    pub fn get_last_sync(&self) -> &::std::option::Option<crate::types::LastSync> {
+        &self.last_sync
     }
     /// Consumes the builder and constructs a [`SourceConnectionDetail`](crate::types::SourceConnectionDetail).
     pub fn build(self) -> crate::types::SourceConnectionDetail {

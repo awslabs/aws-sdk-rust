@@ -36,6 +36,10 @@ impl TestHypervisorConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the TestHypervisorConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::test_hypervisor_configuration::builders::TestHypervisorConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl TestHypervisorConfigurationFluentBuilder {
         self.inner = self.inner.set_gateway_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway to the hypervisor to test.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gateway_arn()
+    }
     /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
     pub fn host(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.host(input.into());
@@ -135,6 +143,10 @@ impl TestHypervisorConfigurationFluentBuilder {
     pub fn set_host(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_host(input);
         self
+    }
+    /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
+    pub fn get_host(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_host()
     }
     /// <p>The username for the hypervisor.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -146,6 +158,10 @@ impl TestHypervisorConfigurationFluentBuilder {
         self.inner = self.inner.set_username(input);
         self
     }
+    /// <p>The username for the hypervisor.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_username()
+    }
     /// <p>The password for the hypervisor.</p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.password(input.into());
@@ -155,5 +171,9 @@ impl TestHypervisorConfigurationFluentBuilder {
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_password(input);
         self
+    }
+    /// <p>The password for the hypervisor.</p>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_password()
     }
 }

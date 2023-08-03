@@ -37,6 +37,13 @@ impl ListOutgoingTypedLinksFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListOutgoingTypedLinks as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_outgoing_typed_links::builders::ListOutgoingTypedLinksInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl ListOutgoingTypedLinksFluentBuilder {
         self.inner = self.inner.set_directory_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed links.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_arn()
+    }
     /// <p>A reference that identifies the object whose attributes will be listed.</p>
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.inner = self.inner.object_reference(input);
@@ -145,6 +156,10 @@ impl ListOutgoingTypedLinksFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_object_reference(input);
         self
+    }
+    /// <p>A reference that identifies the object whose attributes will be listed.</p>
+    pub fn get_object_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
+        self.inner.get_object_reference()
     }
     /// Appends an item to `FilterAttributeRanges`.
     ///
@@ -163,6 +178,12 @@ impl ListOutgoingTypedLinksFluentBuilder {
         self.inner = self.inner.set_filter_attribute_ranges(input);
         self
     }
+    /// <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
+    pub fn get_filter_attribute_ranges(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TypedLinkAttributeRange>> {
+        self.inner.get_filter_attribute_ranges()
+    }
     /// <p>Filters are interpreted in the order of the attributes defined on the typed link facet, not the order they are supplied to any API calls.</p>
     pub fn filter_typed_link(mut self, input: crate::types::TypedLinkSchemaAndFacetName) -> Self {
         self.inner = self.inner.filter_typed_link(input);
@@ -176,6 +197,12 @@ impl ListOutgoingTypedLinksFluentBuilder {
         self.inner = self.inner.set_filter_typed_link(input);
         self
     }
+    /// <p>Filters are interpreted in the order of the attributes defined on the typed link facet, not the order they are supplied to any API calls.</p>
+    pub fn get_filter_typed_link(
+        &self,
+    ) -> &::std::option::Option<crate::types::TypedLinkSchemaAndFacetName> {
+        self.inner.get_filter_typed_link()
+    }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -186,6 +213,10 @@ impl ListOutgoingTypedLinksFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to retrieve.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -195,6 +226,10 @@ impl ListOutgoingTypedLinksFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to retrieve.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The consistency level to execute the request at.</p>
     pub fn consistency_level(mut self, input: crate::types::ConsistencyLevel) -> Self {
@@ -208,5 +243,9 @@ impl ListOutgoingTypedLinksFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_consistency_level(input);
         self
+    }
+    /// <p>The consistency level to execute the request at.</p>
+    pub fn get_consistency_level(&self) -> &::std::option::Option<crate::types::ConsistencyLevel> {
+        self.inner.get_consistency_level()
     }
 }

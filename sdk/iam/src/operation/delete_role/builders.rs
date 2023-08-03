@@ -44,6 +44,10 @@ impl DeleteRoleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteRole as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_role::builders::DeleteRoleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,5 +131,10 @@ impl DeleteRoleFluentBuilder {
     pub fn set_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_name(input);
         self
+    }
+    /// <p>The name of the role to delete.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_name()
     }
 }

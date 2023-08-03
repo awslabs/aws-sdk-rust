@@ -45,6 +45,10 @@ impl DeleteSubscriptionDefinitionInputBuilder {
         self.subscription_definition_id = input;
         self
     }
+    /// The ID of the subscription definition.
+    pub fn get_subscription_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscription_definition_id
+    }
     /// Consumes the builder and constructs a [`DeleteSubscriptionDefinitionInput`](crate::operation::delete_subscription_definition::DeleteSubscriptionDefinitionInput).
     pub fn build(
         self,

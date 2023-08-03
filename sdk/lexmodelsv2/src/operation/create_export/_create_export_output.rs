@@ -81,6 +81,10 @@ impl CreateExportOutputBuilder {
         self.export_id = input;
         self
     }
+    /// <p>An identifier for a specific request to create an export.</p>
+    pub fn get_export_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.export_id
+    }
     /// <p>A description of the type of resource that was exported, either a bot or a bot locale.</p>
     pub fn resource_specification(
         mut self,
@@ -97,6 +101,12 @@ impl CreateExportOutputBuilder {
         self.resource_specification = input;
         self
     }
+    /// <p>A description of the type of resource that was exported, either a bot or a bot locale.</p>
+    pub fn get_resource_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExportResourceSpecification> {
+        &self.resource_specification
+    }
     /// <p>The file format used for the bot or bot locale definition files.</p>
     pub fn file_format(mut self, input: crate::types::ImportExportFileFormat) -> Self {
         self.file_format = ::std::option::Option::Some(input);
@@ -109,6 +119,10 @@ impl CreateExportOutputBuilder {
     ) -> Self {
         self.file_format = input;
         self
+    }
+    /// <p>The file format used for the bot or bot locale definition files.</p>
+    pub fn get_file_format(&self) -> &::std::option::Option<crate::types::ImportExportFileFormat> {
+        &self.file_format
     }
     /// <p>The status of the export. When the status is <code>Completed</code>, you can use the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html">DescribeExport</a> operation to get the pre-signed S3 URL link to your exported bot or bot locale.</p>
     pub fn export_status(mut self, input: crate::types::ExportStatus) -> Self {
@@ -123,6 +137,10 @@ impl CreateExportOutputBuilder {
         self.export_status = input;
         self
     }
+    /// <p>The status of the export. When the status is <code>Completed</code>, you can use the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html">DescribeExport</a> operation to get the pre-signed S3 URL link to your exported bot or bot locale.</p>
+    pub fn get_export_status(&self) -> &::std::option::Option<crate::types::ExportStatus> {
+        &self.export_status
+    }
     /// <p>The date and time that the request to export a bot was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
@@ -135,6 +153,10 @@ impl CreateExportOutputBuilder {
     ) -> Self {
         self.creation_date_time = input;
         self
+    }
+    /// <p>The date and time that the request to export a bot was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

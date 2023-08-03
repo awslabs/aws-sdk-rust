@@ -62,6 +62,10 @@ impl DescribeComponentConfigurationOutputBuilder {
         self.monitor = input;
         self
     }
+    /// <p>Indicates whether the application component is monitored.</p>
+    pub fn get_monitor(&self) -> &::std::option::Option<bool> {
+        &self.monitor
+    }
     /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code> </p>
     pub fn tier(mut self, input: crate::types::Tier) -> Self {
         self.tier = ::std::option::Option::Some(input);
@@ -71,6 +75,10 @@ impl DescribeComponentConfigurationOutputBuilder {
     pub fn set_tier(mut self, input: ::std::option::Option<crate::types::Tier>) -> Self {
         self.tier = input;
         self
+    }
+    /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code> </p>
+    pub fn get_tier(&self) -> &::std::option::Option<crate::types::Tier> {
+        &self.tier
     }
     /// <p>The configuration settings of the component. The value is the escaped JSON of the configuration.</p>
     pub fn component_configuration(
@@ -87,6 +95,10 @@ impl DescribeComponentConfigurationOutputBuilder {
     ) -> Self {
         self.component_configuration = input;
         self
+    }
+    /// <p>The configuration settings of the component. The value is the escaped JSON of the configuration.</p>
+    pub fn get_component_configuration(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

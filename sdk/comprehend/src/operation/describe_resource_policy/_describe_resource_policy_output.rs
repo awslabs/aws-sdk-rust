@@ -78,6 +78,10 @@ impl DescribeResourcePolicyOutputBuilder {
         self.resource_policy = input;
         self
     }
+    /// <p>The JSON body of the resource-based policy.</p>
+    pub fn get_resource_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_policy
+    }
     /// <p>The time at which the policy was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -91,6 +95,10 @@ impl DescribeResourcePolicyOutputBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time at which the policy was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The time at which the policy was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -103,6 +111,10 @@ impl DescribeResourcePolicyOutputBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>The time at which the policy was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// <p>The revision ID of the policy. Each time you modify a policy, Amazon Comprehend assigns a new revision ID, and it deletes the prior version of the policy.</p>
     pub fn policy_revision_id(
@@ -119,6 +131,10 @@ impl DescribeResourcePolicyOutputBuilder {
     ) -> Self {
         self.policy_revision_id = input;
         self
+    }
+    /// <p>The revision ID of the policy. Each time you modify a policy, Amazon Comprehend assigns a new revision ID, and it deletes the prior version of the policy.</p>
+    pub fn get_policy_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_revision_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

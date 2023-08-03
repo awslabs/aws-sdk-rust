@@ -47,6 +47,10 @@ impl GetSiteAddressInputBuilder {
         self.site_id = input;
         self
     }
+    /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
+    pub fn get_site_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.site_id
+    }
     /// <p>The type of the address you request. </p>
     pub fn address_type(mut self, input: crate::types::AddressType) -> Self {
         self.address_type = ::std::option::Option::Some(input);
@@ -59,6 +63,10 @@ impl GetSiteAddressInputBuilder {
     ) -> Self {
         self.address_type = input;
         self
+    }
+    /// <p>The type of the address you request. </p>
+    pub fn get_address_type(&self) -> &::std::option::Option<crate::types::AddressType> {
+        &self.address_type
     }
     /// Consumes the builder and constructs a [`GetSiteAddressInput`](crate::operation::get_site_address::GetSiteAddressInput).
     pub fn build(

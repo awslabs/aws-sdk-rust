@@ -74,6 +74,10 @@ impl ActivateDeviceIdentifierOutputBuilder {
         self.device_identifier = input;
         self
     }
+    /// <p>Information about the device identifier.</p>
+    pub fn get_device_identifier(&self) -> &::std::option::Option<crate::types::DeviceIdentifier> {
+        &self.device_identifier
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -98,6 +102,14 @@ impl ActivateDeviceIdentifierOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p> The tags on the device identifier. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

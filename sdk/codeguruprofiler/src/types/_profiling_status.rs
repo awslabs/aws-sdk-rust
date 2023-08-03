@@ -67,6 +67,12 @@ impl ProfilingStatusBuilder {
         self.latest_agent_profile_reported_at = input;
         self
     }
+    /// <p>The date and time when the most recent profile was received. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+    pub fn get_latest_agent_profile_reported_at(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.latest_agent_profile_reported_at
+    }
     /// <p> An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AggregatedProfileTime.html"> <code>AggregatedProfileTime</code> </a> object that contains the aggregation period and start time for an aggregated profile. </p>
     pub fn latest_aggregated_profile(mut self, input: crate::types::AggregatedProfileTime) -> Self {
         self.latest_aggregated_profile = ::std::option::Option::Some(input);
@@ -80,6 +86,12 @@ impl ProfilingStatusBuilder {
         self.latest_aggregated_profile = input;
         self
     }
+    /// <p> An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AggregatedProfileTime.html"> <code>AggregatedProfileTime</code> </a> object that contains the aggregation period and start time for an aggregated profile. </p>
+    pub fn get_latest_aggregated_profile(
+        &self,
+    ) -> &::std::option::Option<crate::types::AggregatedProfileTime> {
+        &self.latest_aggregated_profile
+    }
     /// <p>The date and time when the profiling agent most recently pinged back. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     pub fn latest_agent_orchestrated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.latest_agent_orchestrated_at = ::std::option::Option::Some(input);
@@ -92,6 +104,12 @@ impl ProfilingStatusBuilder {
     ) -> Self {
         self.latest_agent_orchestrated_at = input;
         self
+    }
+    /// <p>The date and time when the profiling agent most recently pinged back. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+    pub fn get_latest_agent_orchestrated_at(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.latest_agent_orchestrated_at
     }
     /// Consumes the builder and constructs a [`ProfilingStatus`](crate::types::ProfilingStatus).
     pub fn build(self) -> crate::types::ProfilingStatus {

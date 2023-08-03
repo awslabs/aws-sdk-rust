@@ -90,6 +90,10 @@ impl WorkloadShareBuilder {
         self.share_id = input;
         self
     }
+    /// <p>The ID associated with the share.</p>
+    pub fn get_share_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.share_id
+    }
     /// <p>An Amazon Web Services account ID.</p>
     pub fn shared_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shared_by = ::std::option::Option::Some(input.into());
@@ -100,6 +104,10 @@ impl WorkloadShareBuilder {
         self.shared_by = input;
         self
     }
+    /// <p>An Amazon Web Services account ID.</p>
+    pub fn get_shared_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shared_by
+    }
     /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.</p>
     pub fn shared_with(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shared_with = ::std::option::Option::Some(input.into());
@@ -109,6 +117,10 @@ impl WorkloadShareBuilder {
     pub fn set_shared_with(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.shared_with = input;
         self
+    }
+    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.</p>
+    pub fn get_shared_with(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shared_with
     }
     /// <p>Permission granted on a share request.</p>
     pub fn permission_type(mut self, input: crate::types::PermissionType) -> Self {
@@ -123,6 +135,10 @@ impl WorkloadShareBuilder {
         self.permission_type = input;
         self
     }
+    /// <p>Permission granted on a share request.</p>
+    pub fn get_permission_type(&self) -> &::std::option::Option<crate::types::PermissionType> {
+        &self.permission_type
+    }
     /// <p>The status of the share request.</p>
     pub fn status(mut self, input: crate::types::ShareStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -132,6 +148,10 @@ impl WorkloadShareBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ShareStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the share request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ShareStatus> {
+        &self.status
     }
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
@@ -151,6 +171,11 @@ impl WorkloadShareBuilder {
         self.workload_name = input;
         self
     }
+    /// <p>The name of the workload.</p>
+    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
+    pub fn get_workload_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workload_name
+    }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn workload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workload_id = ::std::option::Option::Some(input.into());
@@ -160,6 +185,10 @@ impl WorkloadShareBuilder {
     pub fn set_workload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workload_id = input;
         self
+    }
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workload_id
     }
     /// Consumes the builder and constructs a [`WorkloadShare`](crate::types::WorkloadShare).
     pub fn build(self) -> crate::types::WorkloadShare {

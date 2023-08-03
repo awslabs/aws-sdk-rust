@@ -61,6 +61,11 @@ impl CreateGroupInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name for the group. It can include any Unicode characters.</p>
+    /// <p>The names for all groups in your account, across all Regions, must be unique.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -87,6 +92,15 @@ impl CreateGroupInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of key-value pairs to associate with the group. You can associate as many as 50 tags with a group.</p>
+    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateGroupInput`](crate::operation::create_group::CreateGroupInput).
     pub fn build(

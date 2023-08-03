@@ -49,6 +49,10 @@ impl CategoricalParameterRangeSpecificationBuilder {
         self.values = input;
         self
     }
+    /// <p>The allowed categories for the hyperparameter.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
+    }
     /// Consumes the builder and constructs a [`CategoricalParameterRangeSpecification`](crate::types::CategoricalParameterRangeSpecification).
     pub fn build(self) -> crate::types::CategoricalParameterRangeSpecification {
         crate::types::CategoricalParameterRangeSpecification {

@@ -48,6 +48,10 @@ impl CreateLocationNfsOutputBuilder {
         self.location_arn = input;
         self
     }
+    /// <p>The ARN of the transfer location that you created for your NFS file server.</p>
+    pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

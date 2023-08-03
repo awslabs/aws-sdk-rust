@@ -37,6 +37,10 @@ impl GetReusableDelegationSetLimitFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetReusableDelegationSetLimit as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_reusable_delegation_set_limit::builders::GetReusableDelegationSetLimitInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +134,10 @@ impl GetReusableDelegationSetLimitFluentBuilder {
         self.inner = self.inner.set_type(input);
         self
     }
+    /// <p>Specify <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code> to get the maximum number of hosted zones that you can associate with the specified reusable delegation set.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ReusableDelegationSetLimitType> {
+        self.inner.get_type()
+    }
     /// <p>The ID of the delegation set that you want to get the limit for.</p>
     pub fn delegation_set_id(
         mut self,
@@ -145,5 +153,9 @@ impl GetReusableDelegationSetLimitFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_delegation_set_id(input);
         self
+    }
+    /// <p>The ID of the delegation set that you want to get the limit for.</p>
+    pub fn get_delegation_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_delegation_set_id()
     }
 }

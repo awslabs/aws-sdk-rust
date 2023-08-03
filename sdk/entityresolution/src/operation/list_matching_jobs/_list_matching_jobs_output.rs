@@ -64,6 +64,10 @@ impl ListMatchingJobsOutputBuilder {
         self.jobs = input;
         self
     }
+    /// <p>A list of JobSummary objects, each of which contain the ID, status, start time, and end time of a job.</p>
+    pub fn get_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobSummary>> {
+        &self.jobs
+    }
     /// <p>The pagination token from the previous <code>ListSchemaMappings</code> API call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl ListMatchingJobsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination token from the previous <code>ListSchemaMappings</code> API call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

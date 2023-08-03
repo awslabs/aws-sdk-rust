@@ -79,6 +79,10 @@ impl ListenerBuilder {
         self.protocol = input;
         self
     }
+    /// <p>The load balancer transport protocol to use for routing: HTTP, HTTPS, TCP, or SSL.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<::std::string::String> {
+        &self.protocol
+    }
     /// <p>The port on which the load balancer is listening. On EC2-VPC, you can specify any port from the range 1-65535. On EC2-Classic, you can specify any port from the following list: 25, 80, 443, 465, 587, 1024-65535.</p>
     pub fn load_balancer_port(mut self, input: i32) -> Self {
         self.load_balancer_port = ::std::option::Option::Some(input);
@@ -88,6 +92,10 @@ impl ListenerBuilder {
     pub fn set_load_balancer_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.load_balancer_port = input;
         self
+    }
+    /// <p>The port on which the load balancer is listening. On EC2-VPC, you can specify any port from the range 1-65535. On EC2-Classic, you can specify any port from the following list: 25, 80, 443, 465, 587, 1024-65535.</p>
+    pub fn get_load_balancer_port(&self) -> &::std::option::Option<i32> {
+        &self.load_balancer_port
     }
     /// <p>The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or SSL.</p>
     /// <p>If the front-end protocol is TCP or SSL, the back-end protocol must be TCP or SSL. If the front-end protocol is HTTP or HTTPS, the back-end protocol must be HTTP or HTTPS.</p>
@@ -111,6 +119,13 @@ impl ListenerBuilder {
         self.instance_protocol = input;
         self
     }
+    /// <p>The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or SSL.</p>
+    /// <p>If the front-end protocol is TCP or SSL, the back-end protocol must be TCP or SSL. If the front-end protocol is HTTP or HTTPS, the back-end protocol must be HTTP or HTTPS.</p>
+    /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's <code>InstanceProtocol</code> must also be secure.</p>
+    /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is HTTP or TCP, the listener's <code>InstanceProtocol</code> must be HTTP or TCP.</p>
+    pub fn get_instance_protocol(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_protocol
+    }
     /// <p>The port on which the instance is listening.</p>
     pub fn instance_port(mut self, input: i32) -> Self {
         self.instance_port = ::std::option::Option::Some(input);
@@ -120,6 +135,10 @@ impl ListenerBuilder {
     pub fn set_instance_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.instance_port = input;
         self
+    }
+    /// <p>The port on which the instance is listening.</p>
+    pub fn get_instance_port(&self) -> &::std::option::Option<i32> {
+        &self.instance_port
     }
     /// <p>The Amazon Resource Name (ARN) of the server certificate.</p>
     pub fn ssl_certificate_id(
@@ -136,6 +155,10 @@ impl ListenerBuilder {
     ) -> Self {
         self.ssl_certificate_id = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the server certificate.</p>
+    pub fn get_ssl_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ssl_certificate_id
     }
     /// Consumes the builder and constructs a [`Listener`](crate::types::Listener).
     pub fn build(self) -> crate::types::Listener {

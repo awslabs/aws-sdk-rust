@@ -39,6 +39,10 @@ impl TagStreamFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the TagStream as a reference.
+    pub fn as_input(&self) -> &crate::operation::tag_stream::builders::TagStreamInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +125,10 @@ impl TagStreamFluentBuilder {
         self.inner = self.inner.set_stream_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the resource that you want to add the tag or tags to.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_arn()
+    }
     /// <p>The name of the stream that you want to add the tag or tags to.</p>
     pub fn stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stream_name(input.into());
@@ -130,6 +138,10 @@ impl TagStreamFluentBuilder {
     pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stream_name(input);
         self
+    }
+    /// <p>The name of the stream that you want to add the tag or tags to.</p>
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_name()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -153,5 +165,13 @@ impl TagStreamFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

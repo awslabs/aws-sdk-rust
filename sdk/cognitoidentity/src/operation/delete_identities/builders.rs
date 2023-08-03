@@ -37,6 +37,12 @@ impl DeleteIdentitiesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteIdentities as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_identities::builders::DeleteIdentitiesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,5 +142,11 @@ impl DeleteIdentitiesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_identity_ids_to_delete(input);
         self
+    }
+    /// <p>A list of 1-60 identities that you want to delete.</p>
+    pub fn get_identity_ids_to_delete(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_identity_ids_to_delete()
     }
 }

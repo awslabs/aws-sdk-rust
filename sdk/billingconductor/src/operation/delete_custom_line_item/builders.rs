@@ -36,6 +36,13 @@ impl DeleteCustomLineItemFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteCustomLineItem as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_custom_line_item::builders::DeleteCustomLineItemInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl DeleteCustomLineItemFluentBuilder {
         self.inner = self.inner.set_arn(input);
         self
     }
+    /// <p> The ARN of the custom line item to be deleted. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
+    }
     /// <p>The billing period range in which the custom line item request will be applied.</p>
     pub fn billing_period_range(
         mut self,
@@ -141,5 +152,11 @@ impl DeleteCustomLineItemFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_billing_period_range(input);
         self
+    }
+    /// <p>The billing period range in which the custom line item request will be applied.</p>
+    pub fn get_billing_period_range(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomLineItemBillingPeriodRange> {
+        self.inner.get_billing_period_range()
     }
 }

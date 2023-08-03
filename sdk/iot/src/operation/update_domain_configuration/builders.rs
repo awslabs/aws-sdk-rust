@@ -37,6 +37,10 @@ impl UpdateDomainConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDomainConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_domain_configuration::builders::UpdateDomainConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl UpdateDomainConfigurationFluentBuilder {
         self.inner = self.inner.set_domain_configuration_name(input);
         self
     }
+    /// <p>The name of the domain configuration to be updated.</p>
+    pub fn get_domain_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_configuration_name()
+    }
     /// <p>An object that specifies the authorization service for a domain.</p>
     pub fn authorizer_config(mut self, input: crate::types::AuthorizerConfig) -> Self {
         self.inner = self.inner.authorizer_config(input);
@@ -145,6 +153,10 @@ impl UpdateDomainConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_authorizer_config(input);
         self
+    }
+    /// <p>An object that specifies the authorization service for a domain.</p>
+    pub fn get_authorizer_config(&self) -> &::std::option::Option<crate::types::AuthorizerConfig> {
+        self.inner.get_authorizer_config()
     }
     /// <p>The status to which the domain configuration should be updated.</p>
     pub fn domain_configuration_status(
@@ -162,6 +174,12 @@ impl UpdateDomainConfigurationFluentBuilder {
         self.inner = self.inner.set_domain_configuration_status(input);
         self
     }
+    /// <p>The status to which the domain configuration should be updated.</p>
+    pub fn get_domain_configuration_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::DomainConfigurationStatus> {
+        self.inner.get_domain_configuration_status()
+    }
     /// <p>Removes the authorization configuration from a domain.</p>
     pub fn remove_authorizer_config(mut self, input: bool) -> Self {
         self.inner = self.inner.remove_authorizer_config(input);
@@ -172,6 +190,10 @@ impl UpdateDomainConfigurationFluentBuilder {
         self.inner = self.inner.set_remove_authorizer_config(input);
         self
     }
+    /// <p>Removes the authorization configuration from a domain.</p>
+    pub fn get_remove_authorizer_config(&self) -> &::std::option::Option<bool> {
+        self.inner.get_remove_authorizer_config()
+    }
     /// <p>An object that specifies the TLS configuration for a domain.</p>
     pub fn tls_config(mut self, input: crate::types::TlsConfig) -> Self {
         self.inner = self.inner.tls_config(input);
@@ -181,5 +203,9 @@ impl UpdateDomainConfigurationFluentBuilder {
     pub fn set_tls_config(mut self, input: ::std::option::Option<crate::types::TlsConfig>) -> Self {
         self.inner = self.inner.set_tls_config(input);
         self
+    }
+    /// <p>An object that specifies the TLS configuration for a domain.</p>
+    pub fn get_tls_config(&self) -> &::std::option::Option<crate::types::TlsConfig> {
+        self.inner.get_tls_config()
     }
 }

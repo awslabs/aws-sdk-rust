@@ -38,6 +38,12 @@ impl DescribeEventBusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeEventBus as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_event_bus::builders::DescribeEventBusInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,5 +133,9 @@ impl DescribeEventBusFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name or ARN of the event bus to show details for. If you omit this, the default event bus is displayed.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
 }

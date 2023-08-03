@@ -78,6 +78,10 @@ impl AgentTurnResultBuilder {
         self.expected_agent_prompt = input;
         self
     }
+    /// <p>The expected agent prompt for the agent turn in a test set execution.</p>
+    pub fn get_expected_agent_prompt(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expected_agent_prompt
+    }
     /// <p>The actual agent prompt for the agent turn in a test set execution.</p>
     pub fn actual_agent_prompt(
         mut self,
@@ -94,6 +98,10 @@ impl AgentTurnResultBuilder {
         self.actual_agent_prompt = input;
         self
     }
+    /// <p>The actual agent prompt for the agent turn in a test set execution.</p>
+    pub fn get_actual_agent_prompt(&self) -> &::std::option::Option<::std::string::String> {
+        &self.actual_agent_prompt
+    }
     /// <p>Details about an error in an execution of a test set.</p>
     pub fn error_details(mut self, input: crate::types::ExecutionErrorDetails) -> Self {
         self.error_details = ::std::option::Option::Some(input);
@@ -106,6 +114,10 @@ impl AgentTurnResultBuilder {
     ) -> Self {
         self.error_details = input;
         self
+    }
+    /// <p>Details about an error in an execution of a test set.</p>
+    pub fn get_error_details(&self) -> &::std::option::Option<crate::types::ExecutionErrorDetails> {
+        &self.error_details
     }
     /// <p>The actual elicited slot for the agent turn in a test set execution.</p>
     pub fn actual_elicited_slot(
@@ -123,6 +135,10 @@ impl AgentTurnResultBuilder {
         self.actual_elicited_slot = input;
         self
     }
+    /// <p>The actual elicited slot for the agent turn in a test set execution.</p>
+    pub fn get_actual_elicited_slot(&self) -> &::std::option::Option<::std::string::String> {
+        &self.actual_elicited_slot
+    }
     /// <p>The actual intent for the agent turn in a test set execution.</p>
     pub fn actual_intent(
         mut self,
@@ -138,6 +154,10 @@ impl AgentTurnResultBuilder {
     ) -> Self {
         self.actual_intent = input;
         self
+    }
+    /// <p>The actual intent for the agent turn in a test set execution.</p>
+    pub fn get_actual_intent(&self) -> &::std::option::Option<::std::string::String> {
+        &self.actual_intent
     }
     /// Consumes the builder and constructs a [`AgentTurnResult`](crate::types::AgentTurnResult).
     pub fn build(self) -> crate::types::AgentTurnResult {

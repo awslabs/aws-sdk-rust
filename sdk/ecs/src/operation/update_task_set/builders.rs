@@ -36,6 +36,12 @@ impl UpdateTaskSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateTaskSet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_task_set::builders::UpdateTaskSetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl UpdateTaskSetFluentBuilder {
         self.inner = self.inner.set_cluster(input);
         self
     }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task set is found in.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster()
+    }
     /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task set is found in.</p>
     pub fn service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service(input.into());
@@ -127,6 +137,10 @@ impl UpdateTaskSetFluentBuilder {
     pub fn set_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service(input);
         self
+    }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task set is found in.</p>
+    pub fn get_service(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service()
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the task set to update.</p>
     pub fn task_set(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,6 +152,10 @@ impl UpdateTaskSetFluentBuilder {
         self.inner = self.inner.set_task_set(input);
         self
     }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the task set to update.</p>
+    pub fn get_task_set(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_task_set()
+    }
     /// <p>A floating-point percentage of the desired number of tasks to place and keep running in the task set.</p>
     pub fn scale(mut self, input: crate::types::Scale) -> Self {
         self.inner = self.inner.scale(input);
@@ -147,5 +165,9 @@ impl UpdateTaskSetFluentBuilder {
     pub fn set_scale(mut self, input: ::std::option::Option<crate::types::Scale>) -> Self {
         self.inner = self.inner.set_scale(input);
         self
+    }
+    /// <p>A floating-point percentage of the desired number of tasks to place and keep running in the task set.</p>
+    pub fn get_scale(&self) -> &::std::option::Option<crate::types::Scale> {
+        self.inner.get_scale()
     }
 }

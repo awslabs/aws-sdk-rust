@@ -52,6 +52,12 @@ impl PathFormatBuilder {
         self.object_prefixes = input;
         self
     }
+    /// <p>A list of Amazon S3 prefixes that points to sub-folders in the Amazon S3 bucket. Specify this list if you only want Lex to read the files under this set of sub-folders.</p>
+    pub fn get_object_prefixes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.object_prefixes
+    }
     /// Consumes the builder and constructs a [`PathFormat`](crate::types::PathFormat).
     pub fn build(self) -> crate::types::PathFormat {
         crate::types::PathFormat {

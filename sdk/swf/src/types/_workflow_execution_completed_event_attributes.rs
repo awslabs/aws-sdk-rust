@@ -48,6 +48,10 @@ impl WorkflowExecutionCompletedEventAttributesBuilder {
         self.result = input;
         self
     }
+    /// <p>The result produced by the workflow execution upon successful completion.</p>
+    pub fn get_result(&self) -> &::std::option::Option<::std::string::String> {
+        &self.result
+    }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>CompleteWorkflowExecution</code> decision to complete this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn decision_task_completed_event_id(mut self, input: i64) -> Self {
         self.decision_task_completed_event_id = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl WorkflowExecutionCompletedEventAttributesBuilder {
     ) -> Self {
         self.decision_task_completed_event_id = input;
         self
+    }
+    /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>CompleteWorkflowExecution</code> decision to complete this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    pub fn get_decision_task_completed_event_id(&self) -> &::std::option::Option<i64> {
+        &self.decision_task_completed_event_id
     }
     /// Consumes the builder and constructs a [`WorkflowExecutionCompletedEventAttributes`](crate::types::WorkflowExecutionCompletedEventAttributes).
     pub fn build(self) -> crate::types::WorkflowExecutionCompletedEventAttributes {

@@ -125,6 +125,10 @@ impl DkimAttributesBuilder {
         self.signing_enabled = input;
         self
     }
+    /// <p>If the value is <code>true</code>, then the messages that you send from the identity are signed using DKIM. If the value is <code>false</code>, then the messages that you send from the identity aren't DKIM-signed.</p>
+    pub fn get_signing_enabled(&self) -> &::std::option::Option<bool> {
+        &self.signing_enabled
+    }
     /// <p>Describes whether or not Amazon SES has successfully located the DKIM records in the DNS records for the domain. The status can be one of the following:</p>
     /// <ul>
     /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet detected the DKIM records in the DNS configuration for the domain.</p> </li>
@@ -149,6 +153,17 @@ impl DkimAttributesBuilder {
         self.status = input;
         self
     }
+    /// <p>Describes whether or not Amazon SES has successfully located the DKIM records in the DNS records for the domain. The status can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet detected the DKIM records in the DNS configuration for the domain.</p> </li>
+    /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li>
+    /// <li> <p> <code>FAILED</code> – The verification process failed. This typically occurs when Amazon SES fails to find the DKIM records in the DNS configuration of the domain.</p> </li>
+    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM authentication status of the domain.</p> </li>
+    /// <li> <p> <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DkimStatus> {
+        &self.status
+    }
     /// Appends an item to `tokens`.
     ///
     /// To override the contents of this collection use [`set_tokens`](Self::set_tokens).
@@ -171,6 +186,12 @@ impl DkimAttributesBuilder {
     ) -> Self {
         self.tokens = input;
         self
+    }
+    /// <p>If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to configure DKIM authentication for the domain, then this object contains a set of unique strings that you use to create a set of CNAME records that you add to the DNS configuration for your domain. When Amazon SES detects these records in the DNS configuration for your domain, the DKIM authentication process is complete.</p>
+    /// <p>If you configured DKIM authentication for the domain by providing your own public-private key pair, then this object contains the selector for the public key.</p>
+    /// <p>Regardless of the DKIM authentication method you use, Amazon SES searches for the appropriate records in the DNS configuration of the domain for up to 72 hours.</p>
+    pub fn get_tokens(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tokens
     }
     /// <p>A string that indicates how DKIM was configured for the identity. These are the possible values:</p>
     /// <ul>
@@ -196,6 +217,16 @@ impl DkimAttributesBuilder {
         self.signing_attributes_origin = input;
         self
     }
+    /// <p>A string that indicates how DKIM was configured for the identity. These are the possible values:</p>
+    /// <ul>
+    /// <li> <p> <code>AWS_SES</code> – Indicates that DKIM was configured for the identity by using <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p> </li>
+    /// <li> <p> <code>EXTERNAL</code> – Indicates that DKIM was configured for the identity by using Bring Your Own DKIM (BYODKIM).</p> </li>
+    /// </ul>
+    pub fn get_signing_attributes_origin(
+        &self,
+    ) -> &::std::option::Option<crate::types::DkimSigningAttributesOrigin> {
+        &self.signing_attributes_origin
+    }
     /// <p>[Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.</p>
     pub fn next_signing_key_length(mut self, input: crate::types::DkimSigningKeyLength) -> Self {
         self.next_signing_key_length = ::std::option::Option::Some(input);
@@ -208,6 +239,12 @@ impl DkimAttributesBuilder {
     ) -> Self {
         self.next_signing_key_length = input;
         self
+    }
+    /// <p>[Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.</p>
+    pub fn get_next_signing_key_length(
+        &self,
+    ) -> &::std::option::Option<crate::types::DkimSigningKeyLength> {
+        &self.next_signing_key_length
     }
     /// <p>[Easy DKIM] The key length of the DKIM key pair in use.</p>
     pub fn current_signing_key_length(mut self, input: crate::types::DkimSigningKeyLength) -> Self {
@@ -222,6 +259,12 @@ impl DkimAttributesBuilder {
         self.current_signing_key_length = input;
         self
     }
+    /// <p>[Easy DKIM] The key length of the DKIM key pair in use.</p>
+    pub fn get_current_signing_key_length(
+        &self,
+    ) -> &::std::option::Option<crate::types::DkimSigningKeyLength> {
+        &self.current_signing_key_length
+    }
     /// <p>[Easy DKIM] The last time a key pair was generated for this identity.</p>
     pub fn last_key_generation_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_key_generation_timestamp = ::std::option::Option::Some(input);
@@ -234,6 +277,12 @@ impl DkimAttributesBuilder {
     ) -> Self {
         self.last_key_generation_timestamp = input;
         self
+    }
+    /// <p>[Easy DKIM] The last time a key pair was generated for this identity.</p>
+    pub fn get_last_key_generation_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_key_generation_timestamp
     }
     /// Consumes the builder and constructs a [`DkimAttributes`](crate::types::DkimAttributes).
     pub fn build(self) -> crate::types::DkimAttributes {

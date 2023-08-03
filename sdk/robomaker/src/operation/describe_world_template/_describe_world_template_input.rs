@@ -41,6 +41,10 @@ impl DescribeWorldTemplateInputBuilder {
         self.template = input;
         self
     }
+    /// <p>The Amazon Resource Name (arn) of the world template you want to describe.</p>
+    pub fn get_template(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template
+    }
     /// Consumes the builder and constructs a [`DescribeWorldTemplateInput`](crate::operation::describe_world_template::DescribeWorldTemplateInput).
     pub fn build(
         self,

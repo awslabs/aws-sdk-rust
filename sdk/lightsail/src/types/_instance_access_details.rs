@@ -118,6 +118,10 @@ impl InstanceAccessDetailsBuilder {
         self.cert_key = input;
         self
     }
+    /// <p>For SSH access, the public key to use when accessing your instance For OpenSSH clients (e.g., command line SSH), you should save this value to <code>tempkey-cert.pub</code>.</p>
+    pub fn get_cert_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cert_key
+    }
     /// <p>For SSH access, the date on which the temporary keys expire.</p>
     pub fn expires_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expires_at = ::std::option::Option::Some(input);
@@ -131,6 +135,10 @@ impl InstanceAccessDetailsBuilder {
         self.expires_at = input;
         self
     }
+    /// <p>For SSH access, the date on which the temporary keys expire.</p>
+    pub fn get_expires_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expires_at
+    }
     /// <p>The public IP address of the Amazon Lightsail instance.</p>
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_address = ::std::option::Option::Some(input.into());
@@ -140,6 +148,10 @@ impl InstanceAccessDetailsBuilder {
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_address = input;
         self
+    }
+    /// <p>The public IP address of the Amazon Lightsail instance.</p>
+    pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address
     }
     /// <p>For RDP access, the password for your Amazon Lightsail instance. Password will be an empty string if the password for your new instance is not ready yet. When you create an instance, it can take up to 15 minutes for the instance to be ready.</p> <note>
     /// <p>If you create an instance using any key pair other than the default (<code>LightsailDefaultKeyPair</code>), <code>password</code> will always be an empty string.</p>
@@ -157,6 +169,13 @@ impl InstanceAccessDetailsBuilder {
         self.password = input;
         self
     }
+    /// <p>For RDP access, the password for your Amazon Lightsail instance. Password will be an empty string if the password for your new instance is not ready yet. When you create an instance, it can take up to 15 minutes for the instance to be ready.</p> <note>
+    /// <p>If you create an instance using any key pair other than the default (<code>LightsailDefaultKeyPair</code>), <code>password</code> will always be an empty string.</p>
+    /// <p>If you change the Administrator password on the instance, Lightsail will continue to return the original password value. When accessing the instance using RDP, you need to manually enter the Administrator password after changing it from the default.</p>
+    /// </note>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.password
+    }
     /// <p>For a Windows Server-based instance, an object with the data you can use to retrieve your password. This is only needed if <code>password</code> is empty and the instance is not new (and therefore the password is not ready yet). When you create an instance, it can take up to 15 minutes for the instance to be ready.</p>
     pub fn password_data(mut self, input: crate::types::PasswordData) -> Self {
         self.password_data = ::std::option::Option::Some(input);
@@ -170,6 +189,10 @@ impl InstanceAccessDetailsBuilder {
         self.password_data = input;
         self
     }
+    /// <p>For a Windows Server-based instance, an object with the data you can use to retrieve your password. This is only needed if <code>password</code> is empty and the instance is not new (and therefore the password is not ready yet). When you create an instance, it can take up to 15 minutes for the instance to be ready.</p>
+    pub fn get_password_data(&self) -> &::std::option::Option<crate::types::PasswordData> {
+        &self.password_data
+    }
     /// <p>For SSH access, the temporary private key. For OpenSSH clients (e.g., command line SSH), you should save this value to <code>tempkey</code>).</p>
     pub fn private_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_key = ::std::option::Option::Some(input.into());
@@ -179,6 +202,10 @@ impl InstanceAccessDetailsBuilder {
     pub fn set_private_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.private_key = input;
         self
+    }
+    /// <p>For SSH access, the temporary private key. For OpenSSH clients (e.g., command line SSH), you should save this value to <code>tempkey</code>).</p>
+    pub fn get_private_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_key
     }
     /// <p>The protocol for these Amazon Lightsail instance access details.</p>
     pub fn protocol(mut self, input: crate::types::InstanceAccessProtocol) -> Self {
@@ -192,6 +219,10 @@ impl InstanceAccessDetailsBuilder {
     ) -> Self {
         self.protocol = input;
         self
+    }
+    /// <p>The protocol for these Amazon Lightsail instance access details.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::InstanceAccessProtocol> {
+        &self.protocol
     }
     /// <p>The name of this Amazon Lightsail instance.</p>
     pub fn instance_name(
@@ -209,6 +240,10 @@ impl InstanceAccessDetailsBuilder {
         self.instance_name = input;
         self
     }
+    /// <p>The name of this Amazon Lightsail instance.</p>
+    pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_name
+    }
     /// <p>The user name to use when logging in to the Amazon Lightsail instance.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
@@ -218,6 +253,10 @@ impl InstanceAccessDetailsBuilder {
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
+    }
+    /// <p>The user name to use when logging in to the Amazon Lightsail instance.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
     }
     /// Appends an item to `host_keys`.
     ///
@@ -237,6 +276,12 @@ impl InstanceAccessDetailsBuilder {
     ) -> Self {
         self.host_keys = input;
         self
+    }
+    /// <p>Describes the public SSH host keys or the RDP certificate.</p>
+    pub fn get_host_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HostKeyAttributes>> {
+        &self.host_keys
     }
     /// Consumes the builder and constructs a [`InstanceAccessDetails`](crate::types::InstanceAccessDetails).
     pub fn build(self) -> crate::types::InstanceAccessDetails {

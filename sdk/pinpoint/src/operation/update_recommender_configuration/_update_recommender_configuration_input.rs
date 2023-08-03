@@ -57,6 +57,10 @@ impl UpdateRecommenderConfigurationInputBuilder {
         self.recommender_id = input;
         self
     }
+    /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
+    pub fn get_recommender_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommender_id
+    }
     /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
     pub fn update_recommender_configuration(
         mut self,
@@ -72,6 +76,12 @@ impl UpdateRecommenderConfigurationInputBuilder {
     ) -> Self {
         self.update_recommender_configuration = input;
         self
+    }
+    /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
+    pub fn get_update_recommender_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateRecommenderConfigurationShape> {
+        &self.update_recommender_configuration
     }
     /// Consumes the builder and constructs a [`UpdateRecommenderConfigurationInput`](crate::operation::update_recommender_configuration::UpdateRecommenderConfigurationInput).
     pub fn build(

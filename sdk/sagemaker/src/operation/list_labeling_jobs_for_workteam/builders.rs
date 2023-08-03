@@ -36,6 +36,10 @@ impl ListLabelingJobsForWorkteamFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListLabelingJobsForWorkteam as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_labeling_jobs_for_workteam::builders::ListLabelingJobsForWorkteamInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl ListLabelingJobsForWorkteamFluentBuilder {
         self.inner = self.inner.set_workteam_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the work team for which you want to see labeling jobs for.</p>
+    pub fn get_workteam_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workteam_arn()
+    }
     /// <p>The maximum number of labeling jobs to return in each page of the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -142,6 +150,10 @@ impl ListLabelingJobsForWorkteamFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of labeling jobs to return in each page of the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>If the result of the previous <code>ListLabelingJobsForWorkteam</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs, use the token in the next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -151,6 +163,10 @@ impl ListLabelingJobsForWorkteamFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>If the result of the previous <code>ListLabelingJobsForWorkteam</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs, use the token in the next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>A filter that returns only labeling jobs created after the specified time (timestamp).</p>
     pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -165,6 +181,10 @@ impl ListLabelingJobsForWorkteamFluentBuilder {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
+    /// <p>A filter that returns only labeling jobs created after the specified time (timestamp).</p>
+    pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_creation_time_after()
+    }
     /// <p>A filter that returns only labeling jobs created before the specified time (timestamp).</p>
     pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_before(input);
@@ -177,6 +197,10 @@ impl ListLabelingJobsForWorkteamFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
+    }
+    /// <p>A filter that returns only labeling jobs created before the specified time (timestamp).</p>
+    pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_creation_time_before()
     }
     /// <p>A filter the limits jobs to only the ones whose job reference code contains the specified string.</p>
     pub fn job_reference_code_contains(
@@ -194,6 +218,10 @@ impl ListLabelingJobsForWorkteamFluentBuilder {
         self.inner = self.inner.set_job_reference_code_contains(input);
         self
     }
+    /// <p>A filter the limits jobs to only the ones whose job reference code contains the specified string.</p>
+    pub fn get_job_reference_code_contains(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_reference_code_contains()
+    }
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
     pub fn sort_by(
         mut self,
@@ -210,6 +238,12 @@ impl ListLabelingJobsForWorkteamFluentBuilder {
         self.inner = self.inner.set_sort_by(input);
         self
     }
+    /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
+    pub fn get_sort_by(
+        &self,
+    ) -> &::std::option::Option<crate::types::ListLabelingJobsForWorkteamSortByOptions> {
+        self.inner.get_sort_by()
+    }
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.inner = self.inner.sort_order(input);
@@ -219,5 +253,9 @@ impl ListLabelingJobsForWorkteamFluentBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
+    }
+    /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        self.inner.get_sort_order()
     }
 }

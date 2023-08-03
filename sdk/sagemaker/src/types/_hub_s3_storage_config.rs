@@ -46,6 +46,10 @@ impl HubS3StorageConfigBuilder {
         self.s3_output_path = input;
         self
     }
+    /// <p>The Amazon S3 bucket prefix for hosting hub content.</p>
+    pub fn get_s3_output_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_output_path
+    }
     /// Consumes the builder and constructs a [`HubS3StorageConfig`](crate::types::HubS3StorageConfig).
     pub fn build(self) -> crate::types::HubS3StorageConfig {
         crate::types::HubS3StorageConfig {

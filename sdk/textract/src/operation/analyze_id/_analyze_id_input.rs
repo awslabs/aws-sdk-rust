@@ -48,6 +48,12 @@ impl AnalyzeIdInputBuilder {
         self.document_pages = input;
         self
     }
+    /// <p>The document being passed to AnalyzeID.</p>
+    pub fn get_document_pages(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Document>> {
+        &self.document_pages
+    }
     /// Consumes the builder and constructs a [`AnalyzeIdInput`](crate::operation::analyze_id::AnalyzeIdInput).
     pub fn build(
         self,

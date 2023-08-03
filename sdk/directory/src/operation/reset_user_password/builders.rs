@@ -41,6 +41,12 @@ impl ResetUserPasswordFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ResetUserPassword as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::reset_user_password::builders::ResetUserPasswordInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +137,10 @@ impl ResetUserPasswordFluentBuilder {
         self.inner = self.inner.set_directory_id(input);
         self
     }
+    /// <p>Identifier of the Managed Microsoft AD or Simple AD directory in which the user resides.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_id()
+    }
     /// <p>The user name of the user whose password will be reset.</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_name(input.into());
@@ -141,6 +151,10 @@ impl ResetUserPasswordFluentBuilder {
         self.inner = self.inner.set_user_name(input);
         self
     }
+    /// <p>The user name of the user whose password will be reset.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_name()
+    }
     /// <p>The new password that will be reset.</p>
     pub fn new_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.new_password(input.into());
@@ -150,5 +164,9 @@ impl ResetUserPasswordFluentBuilder {
     pub fn set_new_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_new_password(input);
         self
+    }
+    /// <p>The new password that will be reset.</p>
+    pub fn get_new_password(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_new_password()
     }
 }

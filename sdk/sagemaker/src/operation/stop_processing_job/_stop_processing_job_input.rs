@@ -46,6 +46,10 @@ impl StopProcessingJobInputBuilder {
         self.processing_job_name = input;
         self
     }
+    /// <p>The name of the processing job to stop.</p>
+    pub fn get_processing_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.processing_job_name
+    }
     /// Consumes the builder and constructs a [`StopProcessingJobInput`](crate::operation::stop_processing_job::StopProcessingJobInput).
     pub fn build(
         self,

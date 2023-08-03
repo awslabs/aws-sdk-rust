@@ -36,6 +36,12 @@ impl BatchResetAlarmFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchResetAlarm as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_reset_alarm::builders::BatchResetAlarmInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +138,11 @@ impl BatchResetAlarmFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_reset_action_requests(input);
         self
+    }
+    /// <p>The list of reset action requests. You can specify up to 10 requests per operation.</p>
+    pub fn get_reset_action_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResetAlarmActionRequest>> {
+        self.inner.get_reset_action_requests()
     }
 }

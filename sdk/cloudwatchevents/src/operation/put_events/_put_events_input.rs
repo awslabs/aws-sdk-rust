@@ -48,6 +48,12 @@ impl PutEventsInputBuilder {
         self.entries = input;
         self
     }
+    /// <p>The entry that defines an event in your system. You can specify several parameters for the entry such as the source and type of the event, resources associated with the event, and so on.</p>
+    pub fn get_entries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PutEventsRequestEntry>> {
+        &self.entries
+    }
     /// Consumes the builder and constructs a [`PutEventsInput`](crate::operation::put_events::PutEventsInput).
     pub fn build(
         self,

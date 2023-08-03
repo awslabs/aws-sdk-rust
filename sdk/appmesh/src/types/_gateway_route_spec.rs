@@ -64,6 +64,10 @@ impl GatewayRouteSpecBuilder {
         self.priority = input;
         self
     }
+    /// <p>The ordering of the gateway routes spec.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
+    }
     /// <p>An object that represents the specification of an HTTP gateway route.</p>
     pub fn http_route(mut self, input: crate::types::HttpGatewayRoute) -> Self {
         self.http_route = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl GatewayRouteSpecBuilder {
     ) -> Self {
         self.http_route = input;
         self
+    }
+    /// <p>An object that represents the specification of an HTTP gateway route.</p>
+    pub fn get_http_route(&self) -> &::std::option::Option<crate::types::HttpGatewayRoute> {
+        &self.http_route
     }
     /// <p>An object that represents the specification of an HTTP/2 gateway route.</p>
     pub fn http2_route(mut self, input: crate::types::HttpGatewayRoute) -> Self {
@@ -90,6 +98,10 @@ impl GatewayRouteSpecBuilder {
         self.http2_route = input;
         self
     }
+    /// <p>An object that represents the specification of an HTTP/2 gateway route.</p>
+    pub fn get_http2_route(&self) -> &::std::option::Option<crate::types::HttpGatewayRoute> {
+        &self.http2_route
+    }
     /// <p>An object that represents the specification of a gRPC gateway route.</p>
     pub fn grpc_route(mut self, input: crate::types::GrpcGatewayRoute) -> Self {
         self.grpc_route = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl GatewayRouteSpecBuilder {
     ) -> Self {
         self.grpc_route = input;
         self
+    }
+    /// <p>An object that represents the specification of a gRPC gateway route.</p>
+    pub fn get_grpc_route(&self) -> &::std::option::Option<crate::types::GrpcGatewayRoute> {
+        &self.grpc_route
     }
     /// Consumes the builder and constructs a [`GatewayRouteSpec`](crate::types::GatewayRouteSpec).
     pub fn build(self) -> crate::types::GatewayRouteSpec {

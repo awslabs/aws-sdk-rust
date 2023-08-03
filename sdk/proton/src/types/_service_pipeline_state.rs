@@ -72,6 +72,10 @@ impl ServicePipelineStateBuilder {
         self.spec = input;
         self
     }
+    /// <p>The service spec that was used to create the service pipeline.</p>
+    pub fn get_spec(&self) -> &::std::option::Option<::std::string::String> {
+        &self.spec
+    }
     /// <p>The name of the service template that was used to create the service pipeline.</p>
     pub fn template_name(
         mut self,
@@ -87,6 +91,10 @@ impl ServicePipelineStateBuilder {
     ) -> Self {
         self.template_name = input;
         self
+    }
+    /// <p>The name of the service template that was used to create the service pipeline.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
     }
     /// <p>The major version of the service template that was used to create the service pipeline.</p>
     pub fn template_major_version(
@@ -104,6 +112,10 @@ impl ServicePipelineStateBuilder {
         self.template_major_version = input;
         self
     }
+    /// <p>The major version of the service template that was used to create the service pipeline.</p>
+    pub fn get_template_major_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_major_version
+    }
     /// <p>The minor version of the service template that was used to create the service pipeline.</p>
     pub fn template_minor_version(
         mut self,
@@ -119,6 +131,10 @@ impl ServicePipelineStateBuilder {
     ) -> Self {
         self.template_minor_version = input;
         self
+    }
+    /// <p>The minor version of the service template that was used to create the service pipeline.</p>
+    pub fn get_template_minor_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_minor_version
     }
     /// Consumes the builder and constructs a [`ServicePipelineState`](crate::types::ServicePipelineState).
     pub fn build(self) -> crate::types::ServicePipelineState {

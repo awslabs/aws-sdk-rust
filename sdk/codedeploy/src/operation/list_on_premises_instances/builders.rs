@@ -38,6 +38,13 @@ impl ListOnPremisesInstancesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListOnPremisesInstances as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_on_premises_instances::builders::ListOnPremisesInstancesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,6 +146,16 @@ impl ListOnPremisesInstancesFluentBuilder {
         self.inner = self.inner.set_registration_status(input);
         self
     }
+    /// <p>The registration status of the on-premises instances:</p>
+    /// <ul>
+    /// <li> <p> <code>Deregistered</code>: Include deregistered on-premises instances in the resulting list.</p> </li>
+    /// <li> <p> <code>Registered</code>: Include registered on-premises instances in the resulting list.</p> </li>
+    /// </ul>
+    pub fn get_registration_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::RegistrationStatus> {
+        self.inner.get_registration_status()
+    }
     /// Appends an item to `tagFilters`.
     ///
     /// To override the contents of this collection use [`set_tag_filters`](Self::set_tag_filters).
@@ -156,6 +173,12 @@ impl ListOnPremisesInstancesFluentBuilder {
         self.inner = self.inner.set_tag_filters(input);
         self
     }
+    /// <p>The on-premises instance tags that are used to restrict the on-premises instance names returned.</p>
+    pub fn get_tag_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagFilter>> {
+        self.inner.get_tag_filters()
+    }
     /// <p>An identifier returned from the previous list on-premises instances call. It can be used to return the next set of on-premises instances in the list.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -165,5 +188,9 @@ impl ListOnPremisesInstancesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>An identifier returned from the previous list on-premises instances call. It can be used to return the next set of on-premises instances in the list.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

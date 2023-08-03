@@ -48,6 +48,10 @@ impl SortBuilder {
         self.key = input;
         self
     }
+    /// <p>The sort key of a sort object.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>The sort value of a sort object.</p>
     pub fn value(mut self, input: crate::types::SortValue) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl SortBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::SortValue>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The sort value of a sort object.</p>
+    pub fn get_value(&self) -> &::std::option::Option<crate::types::SortValue> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`Sort`](crate::types::Sort).
     pub fn build(self) -> crate::types::Sort {

@@ -55,6 +55,10 @@ impl CreateInvalidationInputBuilder {
         self.distribution_id = input;
         self
     }
+    /// <p>The distribution's id.</p>
+    pub fn get_distribution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.distribution_id
+    }
     /// <p>The batch information for the invalidation.</p>
     pub fn invalidation_batch(mut self, input: crate::types::InvalidationBatch) -> Self {
         self.invalidation_batch = ::std::option::Option::Some(input);
@@ -67,6 +71,12 @@ impl CreateInvalidationInputBuilder {
     ) -> Self {
         self.invalidation_batch = input;
         self
+    }
+    /// <p>The batch information for the invalidation.</p>
+    pub fn get_invalidation_batch(
+        &self,
+    ) -> &::std::option::Option<crate::types::InvalidationBatch> {
+        &self.invalidation_batch
     }
     /// Consumes the builder and constructs a [`CreateInvalidationInput`](crate::operation::create_invalidation::CreateInvalidationInput).
     pub fn build(

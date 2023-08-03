@@ -75,6 +75,12 @@ impl AwsNetworkFirewallFirewallPolicyDetailsBuilder {
         self.firewall_policy = input;
         self
     }
+    /// <p>The firewall policy configuration.</p>
+    pub fn get_firewall_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::FirewallPolicyDetails> {
+        &self.firewall_policy
+    }
     /// <p>The ARN of the firewall policy.</p>
     pub fn firewall_policy_arn(
         mut self,
@@ -90,6 +96,10 @@ impl AwsNetworkFirewallFirewallPolicyDetailsBuilder {
     ) -> Self {
         self.firewall_policy_arn = input;
         self
+    }
+    /// <p>The ARN of the firewall policy.</p>
+    pub fn get_firewall_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.firewall_policy_arn
     }
     /// <p>The identifier of the firewall policy.</p>
     pub fn firewall_policy_id(
@@ -107,6 +117,10 @@ impl AwsNetworkFirewallFirewallPolicyDetailsBuilder {
         self.firewall_policy_id = input;
         self
     }
+    /// <p>The identifier of the firewall policy.</p>
+    pub fn get_firewall_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.firewall_policy_id
+    }
     /// <p>The name of the firewall policy.</p>
     pub fn firewall_policy_name(
         mut self,
@@ -123,6 +137,10 @@ impl AwsNetworkFirewallFirewallPolicyDetailsBuilder {
         self.firewall_policy_name = input;
         self
     }
+    /// <p>The name of the firewall policy.</p>
+    pub fn get_firewall_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.firewall_policy_name
+    }
     /// <p>A description of the firewall policy.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -132,6 +150,10 @@ impl AwsNetworkFirewallFirewallPolicyDetailsBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the firewall policy.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`AwsNetworkFirewallFirewallPolicyDetails`](crate::types::AwsNetworkFirewallFirewallPolicyDetails).
     pub fn build(self) -> crate::types::AwsNetworkFirewallFirewallPolicyDetails {

@@ -53,6 +53,10 @@ impl DeleteProvisioningTemplateVersionInputBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The name of the provisioning template version to delete.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// <p>The provisioning template version ID to delete.</p>
     pub fn version_id(mut self, input: i32) -> Self {
         self.version_id = ::std::option::Option::Some(input);
@@ -62,6 +66,10 @@ impl DeleteProvisioningTemplateVersionInputBuilder {
     pub fn set_version_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.version_id = input;
         self
+    }
+    /// <p>The provisioning template version ID to delete.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<i32> {
+        &self.version_id
     }
     /// Consumes the builder and constructs a [`DeleteProvisioningTemplateVersionInput`](crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -55,6 +55,10 @@ impl ListAgreementsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of agreements to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>When you can get additional results from the <code>ListAgreements</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional agreements.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl ListAgreementsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>When you can get additional results from the <code>ListAgreements</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional agreements.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The identifier of the server for which you want a list of agreements.</p>
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
@@ -74,6 +82,10 @@ impl ListAgreementsInputBuilder {
     pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_id = input;
         self
+    }
+    /// <p>The identifier of the server for which you want a list of agreements.</p>
+    pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_id
     }
     /// Consumes the builder and constructs a [`ListAgreementsInput`](crate::operation::list_agreements::ListAgreementsInput).
     pub fn build(

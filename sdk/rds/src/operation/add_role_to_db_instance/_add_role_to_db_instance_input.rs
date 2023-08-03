@@ -62,6 +62,10 @@ impl AddRoleToDbInstanceInputBuilder {
         self.db_instance_identifier = input;
         self
     }
+    /// <p>The name of the DB instance to associate the IAM role with.</p>
+    pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_identifier
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the DB instance, for example <code>arn:aws:iam::123456789012:role/AccessRole</code>.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl AddRoleToDbInstanceInputBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the DB instance, for example <code>arn:aws:iam::123456789012:role/AccessRole</code>.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The name of the feature for the DB instance that the IAM role is to be associated with. For information about supported feature names, see <code>DBEngineVersion</code>.</p>
     pub fn feature_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_name = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl AddRoleToDbInstanceInputBuilder {
     pub fn set_feature_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature_name = input;
         self
+    }
+    /// <p>The name of the feature for the DB instance that the IAM role is to be associated with. For information about supported feature names, see <code>DBEngineVersion</code>.</p>
+    pub fn get_feature_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.feature_name
     }
     /// Consumes the builder and constructs a [`AddRoleToDbInstanceInput`](crate::operation::add_role_to_db_instance::AddRoleToDbInstanceInput).
     pub fn build(

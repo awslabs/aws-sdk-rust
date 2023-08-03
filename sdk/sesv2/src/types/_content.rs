@@ -48,6 +48,10 @@ impl ContentBuilder {
         self.data = input;
         self
     }
+    /// <p>The content of the message itself.</p>
+    pub fn get_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data
+    }
     /// <p>The character set for the content. Because of the constraints of the SMTP protocol, Amazon SES uses 7-bit ASCII by default. If the text includes characters outside of the ASCII range, you have to specify a character set. For example, you could specify <code>UTF-8</code>, <code>ISO-8859-1</code>, or <code>Shift_JIS</code>.</p>
     pub fn charset(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.charset = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ContentBuilder {
     pub fn set_charset(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.charset = input;
         self
+    }
+    /// <p>The character set for the content. Because of the constraints of the SMTP protocol, Amazon SES uses 7-bit ASCII by default. If the text includes characters outside of the ASCII range, you have to specify a character set. For example, you could specify <code>UTF-8</code>, <code>ISO-8859-1</code>, or <code>Shift_JIS</code>.</p>
+    pub fn get_charset(&self) -> &::std::option::Option<::std::string::String> {
+        &self.charset
     }
     /// Consumes the builder and constructs a [`Content`](crate::types::Content).
     pub fn build(self) -> crate::types::Content {

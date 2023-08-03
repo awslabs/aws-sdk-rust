@@ -39,6 +39,10 @@ impl DeleteWorkerInputBuilder {
         self.id = input;
         self
     }
+    /// Full ARN of the worker.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`DeleteWorkerInput`](crate::operation::delete_worker::DeleteWorkerInput).
     pub fn build(
         self,

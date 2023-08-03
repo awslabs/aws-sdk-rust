@@ -36,6 +36,12 @@ impl DescribeDataSourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeDataSource as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_data_source::builders::DescribeDataSourceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl DescribeDataSourceFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn data_source_id(
         mut self,
@@ -147,5 +157,9 @@ impl DescribeDataSourceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_data_source_id(input);
         self
+    }
+    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_data_source_id()
     }
 }

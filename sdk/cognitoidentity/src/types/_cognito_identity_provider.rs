@@ -66,6 +66,10 @@ impl CognitoIdentityProviderBuilder {
         self.provider_name = input;
         self
     }
+    /// <p>The provider name for an Amazon Cognito user pool. For example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
+    pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provider_name
+    }
     /// <p>The client ID for the Amazon Cognito user pool.</p>
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl CognitoIdentityProviderBuilder {
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_id = input;
         self
+    }
+    /// <p>The client ID for the Amazon Cognito user pool.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_id
     }
     /// <p>TRUE if server-side token validation is enabled for the identity provider’s token.</p>
     /// <p>Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that identity pool will check with the integrated user pools to make sure that the user has not been globally signed out or deleted before the identity pool provides an OIDC token or AWS credentials for the user.</p>
@@ -89,6 +97,12 @@ impl CognitoIdentityProviderBuilder {
     pub fn set_server_side_token_check(mut self, input: ::std::option::Option<bool>) -> Self {
         self.server_side_token_check = input;
         self
+    }
+    /// <p>TRUE if server-side token validation is enabled for the identity provider’s token.</p>
+    /// <p>Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that identity pool will check with the integrated user pools to make sure that the user has not been globally signed out or deleted before the identity pool provides an OIDC token or AWS credentials for the user.</p>
+    /// <p>If the user is signed out or deleted, the identity pool will return a 400 Not Authorized error.</p>
+    pub fn get_server_side_token_check(&self) -> &::std::option::Option<bool> {
+        &self.server_side_token_check
     }
     /// Consumes the builder and constructs a [`CognitoIdentityProvider`](crate::types::CognitoIdentityProvider).
     pub fn build(self) -> crate::types::CognitoIdentityProvider {

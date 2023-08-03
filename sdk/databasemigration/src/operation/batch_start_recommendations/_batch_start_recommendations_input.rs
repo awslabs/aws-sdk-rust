@@ -52,6 +52,13 @@ impl BatchStartRecommendationsInputBuilder {
         self.data = input;
         self
     }
+    /// <p>Provides information about source databases to analyze. After this analysis, Fleet Advisor recommends target engines for each source database.</p>
+    pub fn get_data(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StartRecommendationsRequestEntry>>
+    {
+        &self.data
+    }
     /// Consumes the builder and constructs a [`BatchStartRecommendationsInput`](crate::operation::batch_start_recommendations::BatchStartRecommendationsInput).
     pub fn build(
         self,

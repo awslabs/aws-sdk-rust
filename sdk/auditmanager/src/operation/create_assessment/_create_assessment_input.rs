@@ -100,6 +100,10 @@ impl CreateAssessmentInputBuilder {
         self.name = input;
         self
     }
+    /// <p> The name of the assessment to be created. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p> The optional description of the assessment to be created. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -109,6 +113,10 @@ impl CreateAssessmentInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p> The optional description of the assessment to be created. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p> The assessment report storage destination for the assessment that's being created. </p>
     pub fn assessment_reports_destination(
@@ -126,6 +134,12 @@ impl CreateAssessmentInputBuilder {
         self.assessment_reports_destination = input;
         self
     }
+    /// <p> The assessment report storage destination for the assessment that's being created. </p>
+    pub fn get_assessment_reports_destination(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssessmentReportsDestination> {
+        &self.assessment_reports_destination
+    }
     /// <p> The wrapper that contains the Amazon Web Services accounts and services that are in scope for the assessment. </p>
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
         self.scope = ::std::option::Option::Some(input);
@@ -135,6 +149,10 @@ impl CreateAssessmentInputBuilder {
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::Scope>) -> Self {
         self.scope = input;
         self
+    }
+    /// <p> The wrapper that contains the Amazon Web Services accounts and services that are in scope for the assessment. </p>
+    pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
+        &self.scope
     }
     /// Appends an item to `roles`.
     ///
@@ -155,6 +173,10 @@ impl CreateAssessmentInputBuilder {
         self.roles = input;
         self
     }
+    /// <p> The list of roles for the assessment. </p>
+    pub fn get_roles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Role>> {
+        &self.roles
+    }
     /// <p> The identifier for the framework that the assessment will be created from. </p>
     pub fn framework_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework_id = ::std::option::Option::Some(input.into());
@@ -164,6 +186,10 @@ impl CreateAssessmentInputBuilder {
     pub fn set_framework_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.framework_id = input;
         self
+    }
+    /// <p> The identifier for the framework that the assessment will be created from. </p>
+    pub fn get_framework_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.framework_id
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -189,6 +215,14 @@ impl CreateAssessmentInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p> The tags that are associated with the assessment. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateAssessmentInput`](crate::operation::create_assessment::CreateAssessmentInput).
     pub fn build(

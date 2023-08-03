@@ -48,6 +48,10 @@ impl ReportFrequencyBuilder {
         self.value = input;
         self
     }
+    /// <p>Number of times within the frequency period that a report is generated. The only supported value is <code>1</code>.</p>
+    pub fn get_value(&self) -> &::std::option::Option<i32> {
+        &self.value
+    }
     /// <p>Time period between each report. The period can be daily, weekly, or monthly.</p>
     pub fn period(mut self, input: crate::types::ReportFrequencyType) -> Self {
         self.period = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl ReportFrequencyBuilder {
     ) -> Self {
         self.period = input;
         self
+    }
+    /// <p>Time period between each report. The period can be daily, weekly, or monthly.</p>
+    pub fn get_period(&self) -> &::std::option::Option<crate::types::ReportFrequencyType> {
+        &self.period
     }
     /// Consumes the builder and constructs a [`ReportFrequency`](crate::types::ReportFrequency).
     pub fn build(self) -> crate::types::ReportFrequency {

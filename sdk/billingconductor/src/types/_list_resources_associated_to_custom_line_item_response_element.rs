@@ -57,6 +57,10 @@ impl ListResourcesAssociatedToCustomLineItemResponseElementBuilder {
         self.arn = input;
         self
     }
+    /// <p> The ARN of the associated resource. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p> The type of relationship between the custom line item and the associated resource. </p>
     pub fn relationship(mut self, input: crate::types::CustomLineItemRelationship) -> Self {
         self.relationship = ::std::option::Option::Some(input);
@@ -69,6 +73,12 @@ impl ListResourcesAssociatedToCustomLineItemResponseElementBuilder {
     ) -> Self {
         self.relationship = input;
         self
+    }
+    /// <p> The type of relationship between the custom line item and the associated resource. </p>
+    pub fn get_relationship(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomLineItemRelationship> {
+        &self.relationship
     }
     /// <p>The end billing period of the associated resource.</p>
     pub fn end_billing_period(
@@ -85,6 +95,10 @@ impl ListResourcesAssociatedToCustomLineItemResponseElementBuilder {
     ) -> Self {
         self.end_billing_period = input;
         self
+    }
+    /// <p>The end billing period of the associated resource.</p>
+    pub fn get_end_billing_period(&self) -> &::std::option::Option<::std::string::String> {
+        &self.end_billing_period
     }
     /// Consumes the builder and constructs a [`ListResourcesAssociatedToCustomLineItemResponseElement`](crate::types::ListResourcesAssociatedToCustomLineItemResponseElement).
     pub fn build(self) -> crate::types::ListResourcesAssociatedToCustomLineItemResponseElement {

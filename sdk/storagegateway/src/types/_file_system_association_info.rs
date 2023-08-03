@@ -122,6 +122,10 @@ impl FileSystemAssociationInfoBuilder {
         self.file_system_association_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the file system association.</p>
+    pub fn get_file_system_association_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_system_association_arn
+    }
     /// <p>The ARN of the backend Amazon FSx file system used for storing file data. For information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_FileSystem.html">FileSystem</a> in the <i>Amazon FSx API Reference</i>.</p>
     pub fn location_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_arn = ::std::option::Option::Some(input.into());
@@ -131,6 +135,10 @@ impl FileSystemAssociationInfoBuilder {
     pub fn set_location_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location_arn = input;
         self
+    }
+    /// <p>The ARN of the backend Amazon FSx file system used for storing file data. For information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_FileSystem.html">FileSystem</a> in the <i>Amazon FSx API Reference</i>.</p>
+    pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_arn
     }
     /// <p>The status of the file system association. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code> </p>
     pub fn file_system_association_status(
@@ -148,6 +156,12 @@ impl FileSystemAssociationInfoBuilder {
         self.file_system_association_status = input;
         self
     }
+    /// <p>The status of the file system association. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code> </p>
+    pub fn get_file_system_association_status(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.file_system_association_status
+    }
     /// <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
     pub fn audit_destination_arn(
         mut self,
@@ -164,6 +178,10 @@ impl FileSystemAssociationInfoBuilder {
         self.audit_destination_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
+    pub fn get_audit_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.audit_destination_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
@@ -173,6 +191,10 @@ impl FileSystemAssociationInfoBuilder {
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
     }
     /// Appends an item to `tags`.
     ///
@@ -193,6 +215,10 @@ impl FileSystemAssociationInfoBuilder {
         self.tags = input;
         self
     }
+    /// <p>A list of up to 50 tags assigned to the SMB file share, sorted alphabetically by key name. Each tag is a key-value pair.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The refresh cache information for the file share or FSx file systems.</p>
     pub fn cache_attributes(mut self, input: crate::types::CacheAttributes) -> Self {
         self.cache_attributes = ::std::option::Option::Some(input);
@@ -205,6 +231,10 @@ impl FileSystemAssociationInfoBuilder {
     ) -> Self {
         self.cache_attributes = input;
         self
+    }
+    /// <p>The refresh cache information for the file share or FSx file systems.</p>
+    pub fn get_cache_attributes(&self) -> &::std::option::Option<crate::types::CacheAttributes> {
+        &self.cache_attributes
     }
     /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p> <note>
     /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p>
@@ -225,6 +255,14 @@ impl FileSystemAssociationInfoBuilder {
     ) -> Self {
         self.endpoint_network_configuration = input;
         self
+    }
+    /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p> <note>
+    /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p>
+    /// </note>
+    pub fn get_endpoint_network_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::EndpointNetworkConfiguration> {
+        &self.endpoint_network_configuration
     }
     /// Appends an item to `file_system_association_status_details`.
     ///
@@ -251,6 +289,13 @@ impl FileSystemAssociationInfoBuilder {
     ) -> Self {
         self.file_system_association_status_details = input;
         self
+    }
+    /// <p>An array containing the FileSystemAssociationStatusDetail data type, which provides detailed information on file system association status.</p>
+    pub fn get_file_system_association_status_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FileSystemAssociationStatusDetail>>
+    {
+        &self.file_system_association_status_details
     }
     /// Consumes the builder and constructs a [`FileSystemAssociationInfo`](crate::types::FileSystemAssociationInfo).
     pub fn build(self) -> crate::types::FileSystemAssociationInfo {

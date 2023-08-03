@@ -61,6 +61,10 @@ impl ListMissionProfilesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Next token returned in the response of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `mission_profile_list`.
     ///
     /// To override the contents of this collection use [`set_mission_profile_list`](Self::set_mission_profile_list).
@@ -79,6 +83,12 @@ impl ListMissionProfilesOutputBuilder {
     ) -> Self {
         self.mission_profile_list = input;
         self
+    }
+    /// <p>List of mission profiles.</p>
+    pub fn get_mission_profile_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MissionProfileListItem>> {
+        &self.mission_profile_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

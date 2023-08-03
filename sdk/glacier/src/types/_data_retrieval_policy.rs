@@ -49,6 +49,12 @@ impl DataRetrievalPolicyBuilder {
         self.rules = input;
         self
     }
+    /// <p>The policy rule. Although this is a list type, currently there must be only one rule, which contains a Strategy field and optionally a BytesPerHour field.</p>
+    pub fn get_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataRetrievalRule>> {
+        &self.rules
+    }
     /// Consumes the builder and constructs a [`DataRetrievalPolicy`](crate::types::DataRetrievalPolicy).
     pub fn build(self) -> crate::types::DataRetrievalPolicy {
         crate::types::DataRetrievalPolicy { rules: self.rules }

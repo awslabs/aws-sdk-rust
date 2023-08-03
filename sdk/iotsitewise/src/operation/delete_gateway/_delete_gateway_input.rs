@@ -39,6 +39,10 @@ impl DeleteGatewayInputBuilder {
         self.gateway_id = input;
         self
     }
+    /// <p>The ID of the gateway to delete.</p>
+    pub fn get_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_id
+    }
     /// Consumes the builder and constructs a [`DeleteGatewayInput`](crate::operation::delete_gateway::DeleteGatewayInput).
     pub fn build(
         self,

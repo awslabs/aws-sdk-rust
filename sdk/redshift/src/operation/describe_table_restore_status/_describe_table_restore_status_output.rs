@@ -68,6 +68,12 @@ impl DescribeTableRestoreStatusOutputBuilder {
         self.table_restore_status_details = input;
         self
     }
+    /// <p>A list of status details for one or more table restore requests.</p>
+    pub fn get_table_restore_status_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TableRestoreStatus>> {
+        &self.table_restore_status_details
+    }
     /// <p>A pagination token that can be used in a subsequent <code>DescribeTableRestoreStatus</code> request.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -77,6 +83,10 @@ impl DescribeTableRestoreStatusOutputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>A pagination token that can be used in a subsequent <code>DescribeTableRestoreStatus</code> request.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

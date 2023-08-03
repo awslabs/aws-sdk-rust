@@ -40,6 +40,10 @@ impl GetLifecyclePolicyInputBuilder {
         self.policy_id = input;
         self
     }
+    /// <p>The identifier of the lifecycle policy.</p>
+    pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_id
+    }
     /// Consumes the builder and constructs a [`GetLifecyclePolicyInput`](crate::operation::get_lifecycle_policy::GetLifecyclePolicyInput).
     pub fn build(
         self,

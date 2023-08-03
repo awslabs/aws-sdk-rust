@@ -40,6 +40,10 @@ impl KinesisFirehoseInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Consumes the builder and constructs a [`KinesisFirehoseInput`](crate::types::KinesisFirehoseInput).
     pub fn build(self) -> crate::types::KinesisFirehoseInput {
         crate::types::KinesisFirehoseInput {

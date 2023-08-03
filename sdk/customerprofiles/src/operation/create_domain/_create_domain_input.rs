@@ -99,6 +99,10 @@ impl CreateDomainInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The unique name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The default number of days until the data within the domain expires.</p>
     pub fn default_expiration_days(mut self, input: i32) -> Self {
         self.default_expiration_days = ::std::option::Option::Some(input);
@@ -108,6 +112,10 @@ impl CreateDomainInputBuilder {
     pub fn set_default_expiration_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.default_expiration_days = input;
         self
+    }
+    /// <p>The default number of days until the data within the domain expires.</p>
+    pub fn get_default_expiration_days(&self) -> &::std::option::Option<i32> {
+        &self.default_expiration_days
     }
     /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
     pub fn default_encryption_key(
@@ -125,6 +133,10 @@ impl CreateDomainInputBuilder {
         self.default_encryption_key = input;
         self
     }
+    /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
+    pub fn get_default_encryption_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_encryption_key
+    }
     /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.</p>
     pub fn dead_letter_queue_url(
         mut self,
@@ -141,6 +153,10 @@ impl CreateDomainInputBuilder {
         self.dead_letter_queue_url = input;
         self
     }
+    /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.</p>
+    pub fn get_dead_letter_queue_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dead_letter_queue_url
+    }
     /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
     /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
     pub fn matching(mut self, input: crate::types::MatchingRequest) -> Self {
@@ -156,6 +172,11 @@ impl CreateDomainInputBuilder {
         self.matching = input;
         self
     }
+    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+    /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
+    pub fn get_matching(&self) -> &::std::option::Option<crate::types::MatchingRequest> {
+        &self.matching
+    }
     /// <p>The process of matching duplicate profiles using the Rule-Based matching. If <code>RuleBasedMatching</code> = true, Amazon Connect Customer Profiles will start to match and merge your profiles according to your configuration in the <code>RuleBasedMatchingRequest</code>. You can use the <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to return and review the results. Also, if you have configured <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you can download the results from S3.</p>
     pub fn rule_based_matching(mut self, input: crate::types::RuleBasedMatchingRequest) -> Self {
         self.rule_based_matching = ::std::option::Option::Some(input);
@@ -168,6 +189,12 @@ impl CreateDomainInputBuilder {
     ) -> Self {
         self.rule_based_matching = input;
         self
+    }
+    /// <p>The process of matching duplicate profiles using the Rule-Based matching. If <code>RuleBasedMatching</code> = true, Amazon Connect Customer Profiles will start to match and merge your profiles according to your configuration in the <code>RuleBasedMatchingRequest</code>. You can use the <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to return and review the results. Also, if you have configured <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you can download the results from S3.</p>
+    pub fn get_rule_based_matching(
+        &self,
+    ) -> &::std::option::Option<crate::types::RuleBasedMatchingRequest> {
+        &self.rule_based_matching
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -193,6 +220,14 @@ impl CreateDomainInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDomainInput`](crate::operation::create_domain::CreateDomainInput).
     pub fn build(

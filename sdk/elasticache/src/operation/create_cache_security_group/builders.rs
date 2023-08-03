@@ -37,6 +37,10 @@ impl CreateCacheSecurityGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateCacheSecurityGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_cache_security_group::builders::CreateCacheSecurityGroupInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +141,12 @@ impl CreateCacheSecurityGroupFluentBuilder {
         self.inner = self.inner.set_cache_security_group_name(input);
         self
     }
+    /// <p>A name for the cache security group. This value is stored as a lowercase string.</p>
+    /// <p>Constraints: Must contain no more than 255 alphanumeric characters. Cannot be the word "Default".</p>
+    /// <p>Example: <code>mysecuritygroup</code> </p>
+    pub fn get_cache_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cache_security_group_name()
+    }
     /// <p>A description for the cache security group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -146,6 +156,10 @@ impl CreateCacheSecurityGroupFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description for the cache security group.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `Tags`.
     ///
@@ -163,5 +177,9 @@ impl CreateCacheSecurityGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

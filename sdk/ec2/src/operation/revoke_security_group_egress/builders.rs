@@ -40,6 +40,10 @@ impl RevokeSecurityGroupEgressFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RevokeSecurityGroupEgress as a reference.
+    pub fn as_input(&self) -> &crate::operation::revoke_security_group_egress::builders::RevokeSecurityGroupEgressInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +134,10 @@ impl RevokeSecurityGroupEgressFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>The ID of the security group.</p>
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_id(input.into());
@@ -139,6 +147,10 @@ impl RevokeSecurityGroupEgressFluentBuilder {
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_id(input);
         self
+    }
+    /// <p>The ID of the security group.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_id()
     }
     /// Appends an item to `IpPermissions`.
     ///
@@ -156,6 +168,12 @@ impl RevokeSecurityGroupEgressFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ip_permissions(input);
         self
+    }
+    /// <p>The sets of IP permissions. You can't specify a destination security group and a CIDR IP address range in the same set of permissions.</p>
+    pub fn get_ip_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpPermission>> {
+        self.inner.get_ip_permissions()
     }
     /// Appends an item to `SecurityGroupRuleIds`.
     ///
@@ -177,6 +195,12 @@ impl RevokeSecurityGroupEgressFluentBuilder {
         self.inner = self.inner.set_security_group_rule_ids(input);
         self
     }
+    /// <p>The IDs of the security group rules.</p>
+    pub fn get_security_group_rule_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_security_group_rule_ids()
+    }
     /// <p>Not supported. Use a set of IP permissions to specify the CIDR.</p>
     pub fn cidr_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cidr_ip(input.into());
@@ -186,6 +210,10 @@ impl RevokeSecurityGroupEgressFluentBuilder {
     pub fn set_cidr_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cidr_ip(input);
         self
+    }
+    /// <p>Not supported. Use a set of IP permissions to specify the CIDR.</p>
+    pub fn get_cidr_ip(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cidr_ip()
     }
     /// <p>Not supported. Use a set of IP permissions to specify the port.</p>
     pub fn from_port(mut self, input: i32) -> Self {
@@ -197,6 +225,10 @@ impl RevokeSecurityGroupEgressFluentBuilder {
         self.inner = self.inner.set_from_port(input);
         self
     }
+    /// <p>Not supported. Use a set of IP permissions to specify the port.</p>
+    pub fn get_from_port(&self) -> &::std::option::Option<i32> {
+        self.inner.get_from_port()
+    }
     /// <p>Not supported. Use a set of IP permissions to specify the protocol name or number.</p>
     pub fn ip_protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ip_protocol(input.into());
@@ -207,6 +239,10 @@ impl RevokeSecurityGroupEgressFluentBuilder {
         self.inner = self.inner.set_ip_protocol(input);
         self
     }
+    /// <p>Not supported. Use a set of IP permissions to specify the protocol name or number.</p>
+    pub fn get_ip_protocol(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ip_protocol()
+    }
     /// <p>Not supported. Use a set of IP permissions to specify the port.</p>
     pub fn to_port(mut self, input: i32) -> Self {
         self.inner = self.inner.to_port(input);
@@ -216,6 +252,10 @@ impl RevokeSecurityGroupEgressFluentBuilder {
     pub fn set_to_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_to_port(input);
         self
+    }
+    /// <p>Not supported. Use a set of IP permissions to specify the port.</p>
+    pub fn get_to_port(&self) -> &::std::option::Option<i32> {
+        self.inner.get_to_port()
     }
     /// <p>Not supported. Use a set of IP permissions to specify a destination security group.</p>
     pub fn source_security_group_name(
@@ -234,6 +274,10 @@ impl RevokeSecurityGroupEgressFluentBuilder {
         self
     }
     /// <p>Not supported. Use a set of IP permissions to specify a destination security group.</p>
+    pub fn get_source_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_security_group_name()
+    }
+    /// <p>Not supported. Use a set of IP permissions to specify a destination security group.</p>
     pub fn source_security_group_owner_id(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -248,5 +292,11 @@ impl RevokeSecurityGroupEgressFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source_security_group_owner_id(input);
         self
+    }
+    /// <p>Not supported. Use a set of IP permissions to specify a destination security group.</p>
+    pub fn get_source_security_group_owner_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_security_group_owner_id()
     }
 }

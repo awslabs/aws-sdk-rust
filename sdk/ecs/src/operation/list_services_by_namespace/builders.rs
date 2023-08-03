@@ -37,6 +37,13 @@ impl ListServicesByNamespaceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListServicesByNamespace as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_services_by_namespace::builders::ListServicesByNamespaceInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +145,11 @@ impl ListServicesByNamespaceFluentBuilder {
         self.inner = self.inner.set_namespace(input);
         self
     }
+    /// <p>The namespace name or full Amazon Resource Name (ARN) of the Cloud Map namespace to list the services in.</p>
+    /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace()
+    }
     /// <p>The <code>nextToken</code> value that's returned from a <code>ListServicesByNamespace</code> request. It indicates that more results are available to fulfill the request and further calls are needed. If <code>maxResults</code> is returned, it is possible the number of results is less than <code>maxResults</code>.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -148,6 +160,10 @@ impl ListServicesByNamespaceFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The <code>nextToken</code> value that's returned from a <code>ListServicesByNamespace</code> request. It indicates that more results are available to fulfill the request and further calls are needed. If <code>maxResults</code> is returned, it is possible the number of results is less than <code>maxResults</code>.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of service results that <code>ListServicesByNamespace</code> returns in paginated output. When this parameter is used, <code>ListServicesByNamespace</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListServicesByNamespace</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListServicesByNamespace</code> returns up to 10 results and a <code>nextToken</code> value if applicable.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -157,5 +173,9 @@ impl ListServicesByNamespaceFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of service results that <code>ListServicesByNamespace</code> returns in paginated output. When this parameter is used, <code>ListServicesByNamespace</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListServicesByNamespace</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListServicesByNamespace</code> returns up to 10 results and a <code>nextToken</code> value if applicable.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

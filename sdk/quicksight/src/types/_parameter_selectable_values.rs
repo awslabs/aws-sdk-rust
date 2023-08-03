@@ -59,6 +59,10 @@ impl ParameterSelectableValuesBuilder {
         self.values = input;
         self
     }
+    /// <p>The values that are used in <code>ParameterSelectableValues</code>.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
+    }
     /// <p>The column identifier that fetches values from the data set.</p>
     pub fn link_to_data_set_column(mut self, input: crate::types::ColumnIdentifier) -> Self {
         self.link_to_data_set_column = ::std::option::Option::Some(input);
@@ -71,6 +75,12 @@ impl ParameterSelectableValuesBuilder {
     ) -> Self {
         self.link_to_data_set_column = input;
         self
+    }
+    /// <p>The column identifier that fetches values from the data set.</p>
+    pub fn get_link_to_data_set_column(
+        &self,
+    ) -> &::std::option::Option<crate::types::ColumnIdentifier> {
+        &self.link_to_data_set_column
     }
     /// Consumes the builder and constructs a [`ParameterSelectableValues`](crate::types::ParameterSelectableValues).
     pub fn build(self) -> crate::types::ParameterSelectableValues {

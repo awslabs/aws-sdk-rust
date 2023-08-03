@@ -48,6 +48,10 @@ impl PortRangeBuilder {
         self.from_port = input;
         self
     }
+    /// <p>The first port in the range of ports, inclusive.</p>
+    pub fn get_from_port(&self) -> &::std::option::Option<i32> {
+        &self.from_port
+    }
     /// <p>The last port in the range of ports, inclusive.</p>
     pub fn to_port(mut self, input: i32) -> Self {
         self.to_port = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl PortRangeBuilder {
     pub fn set_to_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.to_port = input;
         self
+    }
+    /// <p>The last port in the range of ports, inclusive.</p>
+    pub fn get_to_port(&self) -> &::std::option::Option<i32> {
+        &self.to_port
     }
     /// Consumes the builder and constructs a [`PortRange`](crate::types::PortRange).
     pub fn build(self) -> crate::types::PortRange {

@@ -47,6 +47,10 @@ impl DescribeGatewayInstanceInputBuilder {
         self.gateway_instance_arn = input;
         self
     }
+    /// The Amazon Resource Name (ARN) of the gateway instance that you want to describe.
+    pub fn get_gateway_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_instance_arn
+    }
     /// Consumes the builder and constructs a [`DescribeGatewayInstanceInput`](crate::operation::describe_gateway_instance::DescribeGatewayInstanceInput).
     pub fn build(
         self,

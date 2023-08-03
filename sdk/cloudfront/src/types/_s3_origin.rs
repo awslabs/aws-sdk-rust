@@ -56,6 +56,10 @@ impl S3OriginBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The DNS name of the Amazon S3 origin.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The CloudFront origin access identity to associate with the distribution. Use an origin access identity to configure the distribution so that end users can only access objects in an Amazon S3 bucket through CloudFront.</p>
     /// <p>If you want end users to be able to access objects using either the CloudFront URL or the Amazon S3 URL, specify an empty <code>OriginAccessIdentity</code> element.</p>
     /// <p>To delete the origin access identity from an existing distribution, update the distribution configuration and include an empty <code>OriginAccessIdentity</code> element.</p>
@@ -79,6 +83,14 @@ impl S3OriginBuilder {
     ) -> Self {
         self.origin_access_identity = input;
         self
+    }
+    /// <p>The CloudFront origin access identity to associate with the distribution. Use an origin access identity to configure the distribution so that end users can only access objects in an Amazon S3 bucket through CloudFront.</p>
+    /// <p>If you want end users to be able to access objects using either the CloudFront URL or the Amazon S3 URL, specify an empty <code>OriginAccessIdentity</code> element.</p>
+    /// <p>To delete the origin access identity from an existing distribution, update the distribution configuration and include an empty <code>OriginAccessIdentity</code> element.</p>
+    /// <p>To replace the origin access identity, update the distribution configuration and specify the new origin access identity.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in the <i> Amazon CloudFront Developer Guide</i>.</p>
+    pub fn get_origin_access_identity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.origin_access_identity
     }
     /// Consumes the builder and constructs a [`S3Origin`](crate::types::S3Origin).
     pub fn build(self) -> crate::types::S3Origin {

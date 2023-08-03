@@ -36,6 +36,13 @@ impl DeleteAppInstanceBotFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteAppInstanceBot as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_app_instance_bot::builders::DeleteAppInstanceBotInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +138,9 @@ impl DeleteAppInstanceBotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_app_instance_bot_arn(input);
         self
+    }
+    /// <p>The ARN of the <code>AppInstanceBot</code> being deleted.</p>
+    pub fn get_app_instance_bot_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_instance_bot_arn()
     }
 }

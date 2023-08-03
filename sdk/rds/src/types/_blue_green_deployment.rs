@@ -152,6 +152,12 @@ impl BlueGreenDeploymentBuilder {
         self.blue_green_deployment_identifier = input;
         self
     }
+    /// <p>The unique identifier of the blue/green deployment.</p>
+    pub fn get_blue_green_deployment_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.blue_green_deployment_identifier
+    }
     /// <p>The user-supplied name of the blue/green deployment.</p>
     pub fn blue_green_deployment_name(
         mut self,
@@ -168,6 +174,10 @@ impl BlueGreenDeploymentBuilder {
         self.blue_green_deployment_name = input;
         self
     }
+    /// <p>The user-supplied name of the blue/green deployment.</p>
+    pub fn get_blue_green_deployment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.blue_green_deployment_name
+    }
     /// <p>The source database for the blue/green deployment.</p>
     /// <p>Before switchover, the source database is the production database in the blue environment.</p>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -180,6 +190,11 @@ impl BlueGreenDeploymentBuilder {
         self.source = input;
         self
     }
+    /// <p>The source database for the blue/green deployment.</p>
+    /// <p>Before switchover, the source database is the production database in the blue environment.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
+    }
     /// <p>The target database for the blue/green deployment.</p>
     /// <p>Before switchover, the target database is the clone database in the green environment.</p>
     pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -191,6 +206,11 @@ impl BlueGreenDeploymentBuilder {
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target = input;
         self
+    }
+    /// <p>The target database for the blue/green deployment.</p>
+    /// <p>Before switchover, the target database is the clone database in the green environment.</p>
+    pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target
     }
     /// Appends an item to `switchover_details`.
     ///
@@ -211,6 +231,12 @@ impl BlueGreenDeploymentBuilder {
         self.switchover_details = input;
         self
     }
+    /// <p>The details about each source and target resource in the blue/green deployment.</p>
+    pub fn get_switchover_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SwitchoverDetail>> {
+        &self.switchover_details
+    }
     /// Appends an item to `tasks`.
     ///
     /// To override the contents of this collection use [`set_tasks`](Self::set_tasks).
@@ -229,6 +255,12 @@ impl BlueGreenDeploymentBuilder {
     ) -> Self {
         self.tasks = input;
         self
+    }
+    /// <p>Either tasks to be performed or tasks that have been completed on the target database before switchover.</p>
+    pub fn get_tasks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BlueGreenDeploymentTask>> {
+        &self.tasks
     }
     /// <p>The status of the blue/green deployment.</p>
     /// <p>Valid Values:</p>
@@ -260,6 +292,20 @@ impl BlueGreenDeploymentBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the blue/green deployment.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li> <p> <code>PROVISIONING</code> - Resources are being created in the green environment.</p> </li>
+    /// <li> <p> <code>AVAILABLE</code> - Resources are available in the green environment.</p> </li>
+    /// <li> <p> <code>SWITCHOVER_IN_PROGRESS</code> - The deployment is being switched from the blue environment to the green environment.</p> </li>
+    /// <li> <p> <code>SWITCHOVER_COMPLETED</code> - Switchover from the blue environment to the green environment is complete.</p> </li>
+    /// <li> <p> <code>INVALID_CONFIGURATION</code> - Resources in the green environment are invalid, so switchover isn't possible.</p> </li>
+    /// <li> <p> <code>SWITCHOVER_FAILED</code> - Switchover was attempted but failed.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The blue/green deployment is being deleted.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>Additional information about the status of the blue/green deployment.</p>
     pub fn status_details(
         mut self,
@@ -276,6 +322,10 @@ impl BlueGreenDeploymentBuilder {
         self.status_details = input;
         self
     }
+    /// <p>Additional information about the status of the blue/green deployment.</p>
+    pub fn get_status_details(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_details
+    }
     /// <p>The time when the blue/green deployment was created, in Universal Coordinated Time (UTC).</p>
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
@@ -289,6 +339,10 @@ impl BlueGreenDeploymentBuilder {
         self.create_time = input;
         self
     }
+    /// <p>The time when the blue/green deployment was created, in Universal Coordinated Time (UTC).</p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
+    }
     /// <p>The time when the blue/green deployment was deleted, in Universal Coordinated Time (UTC).</p>
     pub fn delete_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.delete_time = ::std::option::Option::Some(input);
@@ -301,6 +355,10 @@ impl BlueGreenDeploymentBuilder {
     ) -> Self {
         self.delete_time = input;
         self
+    }
+    /// <p>The time when the blue/green deployment was deleted, in Universal Coordinated Time (UTC).</p>
+    pub fn get_delete_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.delete_time
     }
     /// Appends an item to `tag_list`.
     ///
@@ -320,6 +378,10 @@ impl BlueGreenDeploymentBuilder {
     ) -> Self {
         self.tag_list = input;
         self
+    }
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tag_list
     }
     /// Consumes the builder and constructs a [`BlueGreenDeployment`](crate::types::BlueGreenDeployment).
     pub fn build(self) -> crate::types::BlueGreenDeployment {

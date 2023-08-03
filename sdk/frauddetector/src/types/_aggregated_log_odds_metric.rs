@@ -61,6 +61,12 @@ impl AggregatedLogOddsMetricBuilder {
         self.variable_names = input;
         self
     }
+    /// <p> The names of all the variables. </p>
+    pub fn get_variable_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.variable_names
+    }
     /// <p> The relative importance of the variables in the list to the other event variable. </p>
     pub fn aggregated_variables_importance(mut self, input: f32) -> Self {
         self.aggregated_variables_importance = ::std::option::Option::Some(input);
@@ -73,6 +79,10 @@ impl AggregatedLogOddsMetricBuilder {
     ) -> Self {
         self.aggregated_variables_importance = input;
         self
+    }
+    /// <p> The relative importance of the variables in the list to the other event variable. </p>
+    pub fn get_aggregated_variables_importance(&self) -> &::std::option::Option<f32> {
+        &self.aggregated_variables_importance
     }
     /// Consumes the builder and constructs a [`AggregatedLogOddsMetric`](crate::types::AggregatedLogOddsMetric).
     pub fn build(self) -> crate::types::AggregatedLogOddsMetric {

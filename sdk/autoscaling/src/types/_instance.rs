@@ -108,6 +108,10 @@ impl InstanceBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The ID of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The instance type of the EC2 instance.</p>
     pub fn instance_type(
         mut self,
@@ -123,6 +127,10 @@ impl InstanceBuilder {
     ) -> Self {
         self.instance_type = input;
         self
+    }
+    /// <p>The instance type of the EC2 instance.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
     }
     /// <p>The Availability Zone in which the instance is running.</p>
     pub fn availability_zone(
@@ -140,6 +148,10 @@ impl InstanceBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>The Availability Zone in which the instance is running.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>A description of the current lifecycle state. The <code>Quarantined</code> state is not used. For information about lifecycle states, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
     pub fn lifecycle_state(mut self, input: crate::types::LifecycleState) -> Self {
         self.lifecycle_state = ::std::option::Option::Some(input);
@@ -152,6 +164,10 @@ impl InstanceBuilder {
     ) -> Self {
         self.lifecycle_state = input;
         self
+    }
+    /// <p>A description of the current lifecycle state. The <code>Quarantined</code> state is not used. For information about lifecycle states, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
+    pub fn get_lifecycle_state(&self) -> &::std::option::Option<crate::types::LifecycleState> {
+        &self.lifecycle_state
     }
     /// <p>The last reported health status of the instance. <code>Healthy</code> means that the instance is healthy and should remain in service. <code>Unhealthy</code> means that the instance is unhealthy and that Amazon EC2 Auto Scaling should terminate and replace it.</p>
     pub fn health_status(
@@ -169,6 +185,10 @@ impl InstanceBuilder {
         self.health_status = input;
         self
     }
+    /// <p>The last reported health status of the instance. <code>Healthy</code> means that the instance is healthy and should remain in service. <code>Unhealthy</code> means that the instance is unhealthy and that Amazon EC2 Auto Scaling should terminate and replace it.</p>
+    pub fn get_health_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.health_status
+    }
     /// <p>The launch configuration associated with the instance.</p>
     pub fn launch_configuration_name(
         mut self,
@@ -185,6 +205,10 @@ impl InstanceBuilder {
         self.launch_configuration_name = input;
         self
     }
+    /// <p>The launch configuration associated with the instance.</p>
+    pub fn get_launch_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_configuration_name
+    }
     /// <p>The launch template for the instance.</p>
     pub fn launch_template(mut self, input: crate::types::LaunchTemplateSpecification) -> Self {
         self.launch_template = ::std::option::Option::Some(input);
@@ -198,6 +222,12 @@ impl InstanceBuilder {
         self.launch_template = input;
         self
     }
+    /// <p>The launch template for the instance.</p>
+    pub fn get_launch_template(
+        &self,
+    ) -> &::std::option::Option<crate::types::LaunchTemplateSpecification> {
+        &self.launch_template
+    }
     /// <p>Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.</p>
     pub fn protected_from_scale_in(mut self, input: bool) -> Self {
         self.protected_from_scale_in = ::std::option::Option::Some(input);
@@ -207,6 +237,10 @@ impl InstanceBuilder {
     pub fn set_protected_from_scale_in(mut self, input: ::std::option::Option<bool>) -> Self {
         self.protected_from_scale_in = input;
         self
+    }
+    /// <p>Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.</p>
+    pub fn get_protected_from_scale_in(&self) -> &::std::option::Option<bool> {
+        &self.protected_from_scale_in
     }
     /// <p>The number of capacity units contributed by the instance based on its instance type.</p>
     /// <p>Valid Range: Minimum value of 1. Maximum value of 999.</p>
@@ -225,6 +259,11 @@ impl InstanceBuilder {
     ) -> Self {
         self.weighted_capacity = input;
         self
+    }
+    /// <p>The number of capacity units contributed by the instance based on its instance type.</p>
+    /// <p>Valid Range: Minimum value of 1. Maximum value of 999.</p>
+    pub fn get_weighted_capacity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.weighted_capacity
     }
     /// Consumes the builder and constructs a [`Instance`](crate::types::Instance).
     pub fn build(self) -> crate::types::Instance {

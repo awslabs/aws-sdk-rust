@@ -41,6 +41,10 @@ impl GetPlaybackConfigurationInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The identifier for the playback configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`GetPlaybackConfigurationInput`](crate::operation::get_playback_configuration::GetPlaybackConfigurationInput).
     pub fn build(
         self,

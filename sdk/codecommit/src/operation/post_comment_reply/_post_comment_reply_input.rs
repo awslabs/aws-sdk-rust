@@ -56,6 +56,10 @@ impl PostCommentReplyInputBuilder {
         self.in_reply_to = input;
         self
     }
+    /// <p>The system-generated ID of the comment to which you want to reply. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
+    pub fn get_in_reply_to(&self) -> &::std::option::Option<::std::string::String> {
+        &self.in_reply_to
+    }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
     pub fn client_request_token(
         mut self,
@@ -72,6 +76,10 @@ impl PostCommentReplyInputBuilder {
         self.client_request_token = input;
         self
     }
+    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
+    }
     /// <p>The contents of your reply to a comment.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl PostCommentReplyInputBuilder {
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
+    }
+    /// <p>The contents of your reply to a comment.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
     }
     /// Consumes the builder and constructs a [`PostCommentReplyInput`](crate::operation::post_comment_reply::PostCommentReplyInput).
     pub fn build(

@@ -186,6 +186,10 @@ impl StartSyncExecutionOutputBuilder {
         self.execution_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
+    pub fn get_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_arn
+    }
     /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
     pub fn state_machine_arn(
         mut self,
@@ -202,6 +206,10 @@ impl StartSyncExecutionOutputBuilder {
         self.state_machine_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
+    pub fn get_state_machine_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_machine_arn
+    }
     /// <p>The name of the execution.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -211,6 +219,10 @@ impl StartSyncExecutionOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the execution.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The date the execution is started.</p>
     pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -225,6 +237,10 @@ impl StartSyncExecutionOutputBuilder {
         self.start_date = input;
         self
     }
+    /// <p>The date the execution is started.</p>
+    pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_date
+    }
     /// <p>If the execution has already ended, the date the execution stopped.</p>
     pub fn stop_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.stop_date = ::std::option::Option::Some(input);
@@ -237,6 +253,10 @@ impl StartSyncExecutionOutputBuilder {
     ) -> Self {
         self.stop_date = input;
         self
+    }
+    /// <p>If the execution has already ended, the date the execution stopped.</p>
+    pub fn get_stop_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.stop_date
     }
     /// <p>The current status of the execution.</p>
     pub fn status(mut self, input: crate::types::SyncExecutionStatus) -> Self {
@@ -251,6 +271,10 @@ impl StartSyncExecutionOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The current status of the execution.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SyncExecutionStatus> {
+        &self.status
+    }
     /// <p>The error code of the failure.</p>
     pub fn error(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error = ::std::option::Option::Some(input.into());
@@ -260,6 +284,10 @@ impl StartSyncExecutionOutputBuilder {
     pub fn set_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error = input;
         self
+    }
+    /// <p>The error code of the failure.</p>
+    pub fn get_error(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error
     }
     /// <p>A more detailed explanation of the cause of the failure.</p>
     pub fn cause(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -271,6 +299,10 @@ impl StartSyncExecutionOutputBuilder {
         self.cause = input;
         self
     }
+    /// <p>A more detailed explanation of the cause of the failure.</p>
+    pub fn get_cause(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cause
+    }
     /// <p>The string that contains the JSON input data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn input(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input = ::std::option::Option::Some(input.into());
@@ -280,6 +312,10 @@ impl StartSyncExecutionOutputBuilder {
     pub fn set_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input = input;
         self
+    }
+    /// <p>The string that contains the JSON input data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    pub fn get_input(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input
     }
     /// <p>Provides details about execution input or output.</p>
     pub fn input_details(
@@ -297,6 +333,12 @@ impl StartSyncExecutionOutputBuilder {
         self.input_details = input;
         self
     }
+    /// <p>Provides details about execution input or output.</p>
+    pub fn get_input_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudWatchEventsExecutionDataDetails> {
+        &self.input_details
+    }
     /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note>
     /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p>
     /// </note>
@@ -310,6 +352,12 @@ impl StartSyncExecutionOutputBuilder {
     pub fn set_output(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output = input;
         self
+    }
+    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note>
+    /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p>
+    /// </note>
+    pub fn get_output(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output
     }
     /// <p>Provides details about execution input or output.</p>
     pub fn output_details(
@@ -327,6 +375,12 @@ impl StartSyncExecutionOutputBuilder {
         self.output_details = input;
         self
     }
+    /// <p>Provides details about execution input or output.</p>
+    pub fn get_output_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudWatchEventsExecutionDataDetails> {
+        &self.output_details
+    }
     /// <p>The X-Ray trace header that was passed to the execution.</p>
     pub fn trace_header(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trace_header = ::std::option::Option::Some(input.into());
@@ -336,6 +390,10 @@ impl StartSyncExecutionOutputBuilder {
     pub fn set_trace_header(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trace_header = input;
         self
+    }
+    /// <p>The X-Ray trace header that was passed to the execution.</p>
+    pub fn get_trace_header(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trace_header
     }
     /// <p>An object that describes workflow billing details, including billed duration and memory use.</p>
     pub fn billing_details(mut self, input: crate::types::BillingDetails) -> Self {
@@ -349,6 +407,10 @@ impl StartSyncExecutionOutputBuilder {
     ) -> Self {
         self.billing_details = input;
         self
+    }
+    /// <p>An object that describes workflow billing details, including billed duration and memory use.</p>
+    pub fn get_billing_details(&self) -> &::std::option::Option<crate::types::BillingDetails> {
+        &self.billing_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

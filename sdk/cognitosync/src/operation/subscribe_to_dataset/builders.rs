@@ -61,6 +61,12 @@ impl SubscribeToDatasetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SubscribeToDataset as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::subscribe_to_dataset::builders::SubscribeToDatasetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -157,6 +163,10 @@ impl SubscribeToDatasetFluentBuilder {
         self.inner = self.inner.set_identity_pool_id(input);
         self
     }
+    /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which the identity belongs.</p>
+    pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_pool_id()
+    }
     /// <p>Unique ID for this identity.</p>
     pub fn identity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_id(input.into());
@@ -166,6 +176,10 @@ impl SubscribeToDatasetFluentBuilder {
     pub fn set_identity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_id(input);
         self
+    }
+    /// <p>Unique ID for this identity.</p>
+    pub fn get_identity_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_id()
     }
     /// <p>The name of the dataset to subcribe to.</p>
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -177,6 +191,10 @@ impl SubscribeToDatasetFluentBuilder {
         self.inner = self.inner.set_dataset_name(input);
         self
     }
+    /// <p>The name of the dataset to subcribe to.</p>
+    pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dataset_name()
+    }
     /// <p>The unique ID generated for this device by Cognito.</p>
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_id(input.into());
@@ -186,5 +204,9 @@ impl SubscribeToDatasetFluentBuilder {
     pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_id(input);
         self
+    }
+    /// <p>The unique ID generated for this device by Cognito.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_id()
     }
 }

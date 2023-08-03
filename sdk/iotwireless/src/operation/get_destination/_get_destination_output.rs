@@ -86,6 +86,10 @@ impl GetDestinationOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name of the resource.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the resource.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -96,6 +100,10 @@ impl GetDestinationOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the resource.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The rule name or topic rule to send messages to.</p>
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression = ::std::option::Option::Some(input.into());
@@ -105,6 +113,10 @@ impl GetDestinationOutputBuilder {
     pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expression = input;
         self
+    }
+    /// <p>The rule name or topic rule to send messages to.</p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expression
     }
     /// <p>The type of value in <code>Expression</code>.</p>
     pub fn expression_type(mut self, input: crate::types::ExpressionType) -> Self {
@@ -119,6 +131,10 @@ impl GetDestinationOutputBuilder {
         self.expression_type = input;
         self
     }
+    /// <p>The type of value in <code>Expression</code>.</p>
+    pub fn get_expression_type(&self) -> &::std::option::Option<crate::types::ExpressionType> {
+        &self.expression_type
+    }
     /// <p>The description of the resource.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -129,6 +145,10 @@ impl GetDestinationOutputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the resource.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The ARN of the IAM Role that authorizes the destination.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -138,6 +158,10 @@ impl GetDestinationOutputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The ARN of the IAM Role that authorizes the destination.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

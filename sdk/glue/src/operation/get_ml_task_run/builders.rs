@@ -36,6 +36,12 @@ impl GetMLTaskRunFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetMLTaskRun as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_ml_task_run::builders::GetMlTaskRunInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl GetMLTaskRunFluentBuilder {
         self.inner = self.inner.set_transform_id(input);
         self
     }
+    /// <p>The unique identifier of the machine learning transform.</p>
+    pub fn get_transform_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_transform_id()
+    }
     /// <p>The unique identifier of the task run.</p>
     pub fn task_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.task_run_id(input.into());
@@ -127,5 +137,9 @@ impl GetMLTaskRunFluentBuilder {
     pub fn set_task_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_task_run_id(input);
         self
+    }
+    /// <p>The unique identifier of the task run.</p>
+    pub fn get_task_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_task_run_id()
     }
 }

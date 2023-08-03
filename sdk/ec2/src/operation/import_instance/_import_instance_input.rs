@@ -75,6 +75,10 @@ impl ImportInstanceInputBuilder {
         self.description = input;
         self
     }
+    /// <p>A description for the instance being imported.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// Appends an item to `disk_images`.
     ///
     /// To override the contents of this collection use [`set_disk_images`](Self::set_disk_images).
@@ -94,6 +98,12 @@ impl ImportInstanceInputBuilder {
         self.disk_images = input;
         self
     }
+    /// <p>The disk image.</p>
+    pub fn get_disk_images(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DiskImage>> {
+        &self.disk_images
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -103,6 +113,10 @@ impl ImportInstanceInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// <p>The launch specification.</p>
     pub fn launch_specification(
@@ -120,6 +134,12 @@ impl ImportInstanceInputBuilder {
         self.launch_specification = input;
         self
     }
+    /// <p>The launch specification.</p>
+    pub fn get_launch_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImportInstanceLaunchSpecification> {
+        &self.launch_specification
+    }
     /// <p>The instance operating system.</p>
     pub fn platform(mut self, input: crate::types::PlatformValues) -> Self {
         self.platform = ::std::option::Option::Some(input);
@@ -132,6 +152,10 @@ impl ImportInstanceInputBuilder {
     ) -> Self {
         self.platform = input;
         self
+    }
+    /// <p>The instance operating system.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<crate::types::PlatformValues> {
+        &self.platform
     }
     /// Consumes the builder and constructs a [`ImportInstanceInput`](crate::operation::import_instance::ImportInstanceInput).
     pub fn build(

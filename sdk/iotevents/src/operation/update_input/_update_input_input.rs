@@ -55,6 +55,10 @@ impl UpdateInputInputBuilder {
         self.input_name = input;
         self
     }
+    /// <p>The name of the input you want to update.</p>
+    pub fn get_input_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_name
+    }
     /// <p>A brief description of the input.</p>
     pub fn input_description(
         mut self,
@@ -71,6 +75,10 @@ impl UpdateInputInputBuilder {
         self.input_description = input;
         self
     }
+    /// <p>A brief description of the input.</p>
+    pub fn get_input_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_description
+    }
     /// <p>The definition of the input.</p>
     pub fn input_definition(mut self, input: crate::types::InputDefinition) -> Self {
         self.input_definition = ::std::option::Option::Some(input);
@@ -83,6 +91,10 @@ impl UpdateInputInputBuilder {
     ) -> Self {
         self.input_definition = input;
         self
+    }
+    /// <p>The definition of the input.</p>
+    pub fn get_input_definition(&self) -> &::std::option::Option<crate::types::InputDefinition> {
+        &self.input_definition
     }
     /// Consumes the builder and constructs a [`UpdateInputInput`](crate::operation::update_input::UpdateInputInput).
     pub fn build(

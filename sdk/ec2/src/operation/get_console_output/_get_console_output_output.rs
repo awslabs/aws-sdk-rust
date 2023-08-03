@@ -63,6 +63,10 @@ impl GetConsoleOutputOutputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The ID of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The console output, base64-encoded. If you are using a command line tool, the tool decodes the output for you.</p>
     pub fn output(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl GetConsoleOutputOutputBuilder {
     pub fn set_output(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output = input;
         self
+    }
+    /// <p>The console output, base64-encoded. If you are using a command line tool, the tool decodes the output for you.</p>
+    pub fn get_output(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output
     }
     /// <p>The time at which the output was last updated.</p>
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -85,6 +93,10 @@ impl GetConsoleOutputOutputBuilder {
     ) -> Self {
         self.timestamp = input;
         self
+    }
+    /// <p>The time at which the output was last updated.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

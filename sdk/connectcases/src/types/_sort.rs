@@ -48,6 +48,10 @@ impl SortBuilder {
         self.field_id = input;
         self
     }
+    /// <p>Unique identifier of a field.</p>
+    pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_id
+    }
     /// <p>A structured set of sort terms</p>
     pub fn sort_order(mut self, input: crate::types::Order) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl SortBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::Order>) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p>A structured set of sort terms</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::Order> {
+        &self.sort_order
     }
     /// Consumes the builder and constructs a [`Sort`](crate::types::Sort).
     pub fn build(self) -> crate::types::Sort {

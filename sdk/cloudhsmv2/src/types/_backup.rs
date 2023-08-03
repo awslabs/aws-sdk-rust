@@ -120,6 +120,10 @@ impl BackupBuilder {
         self.backup_id = input;
         self
     }
+    /// <p>The identifier (ID) of the backup.</p>
+    pub fn get_backup_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_id
+    }
     /// <p>The state of the backup.</p>
     pub fn backup_state(mut self, input: crate::types::BackupState) -> Self {
         self.backup_state = ::std::option::Option::Some(input);
@@ -133,6 +137,10 @@ impl BackupBuilder {
         self.backup_state = input;
         self
     }
+    /// <p>The state of the backup.</p>
+    pub fn get_backup_state(&self) -> &::std::option::Option<crate::types::BackupState> {
+        &self.backup_state
+    }
     /// <p>The identifier (ID) of the cluster that was backed up.</p>
     pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_id = ::std::option::Option::Some(input.into());
@@ -142,6 +150,10 @@ impl BackupBuilder {
     pub fn set_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_id = input;
         self
+    }
+    /// <p>The identifier (ID) of the cluster that was backed up.</p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_id
     }
     /// <p>The date and time when the backup was created.</p>
     pub fn create_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -156,6 +168,10 @@ impl BackupBuilder {
         self.create_timestamp = input;
         self
     }
+    /// <p>The date and time when the backup was created.</p>
+    pub fn get_create_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_timestamp
+    }
     /// <p>The date and time when the backup was copied from a source backup.</p>
     pub fn copy_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.copy_timestamp = ::std::option::Option::Some(input);
@@ -169,6 +185,10 @@ impl BackupBuilder {
         self.copy_timestamp = input;
         self
     }
+    /// <p>The date and time when the backup was copied from a source backup.</p>
+    pub fn get_copy_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.copy_timestamp
+    }
     /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
     pub fn never_expires(mut self, input: bool) -> Self {
         self.never_expires = ::std::option::Option::Some(input);
@@ -178,6 +198,10 @@ impl BackupBuilder {
     pub fn set_never_expires(mut self, input: ::std::option::Option<bool>) -> Self {
         self.never_expires = input;
         self
+    }
+    /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
+    pub fn get_never_expires(&self) -> &::std::option::Option<bool> {
+        &self.never_expires
     }
     /// <p>The AWS Region that contains the source backup from which the new backup was copied.</p>
     pub fn source_region(
@@ -195,6 +219,10 @@ impl BackupBuilder {
         self.source_region = input;
         self
     }
+    /// <p>The AWS Region that contains the source backup from which the new backup was copied.</p>
+    pub fn get_source_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_region
+    }
     /// <p>The identifier (ID) of the source backup from which the new backup was copied.</p>
     pub fn source_backup(
         mut self,
@@ -210,6 +238,10 @@ impl BackupBuilder {
     ) -> Self {
         self.source_backup = input;
         self
+    }
+    /// <p>The identifier (ID) of the source backup from which the new backup was copied.</p>
+    pub fn get_source_backup(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_backup
     }
     /// <p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>
     pub fn source_cluster(
@@ -227,6 +259,10 @@ impl BackupBuilder {
         self.source_cluster = input;
         self
     }
+    /// <p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>
+    pub fn get_source_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_cluster
+    }
     /// <p>The date and time when the backup will be permanently deleted.</p>
     pub fn delete_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.delete_timestamp = ::std::option::Option::Some(input);
@@ -239,6 +275,10 @@ impl BackupBuilder {
     ) -> Self {
         self.delete_timestamp = input;
         self
+    }
+    /// <p>The date and time when the backup will be permanently deleted.</p>
+    pub fn get_delete_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.delete_timestamp
     }
     /// Appends an item to `tag_list`.
     ///
@@ -258,6 +298,10 @@ impl BackupBuilder {
     ) -> Self {
         self.tag_list = input;
         self
+    }
+    /// <p>The list of tags for the backup.</p>
+    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tag_list
     }
     /// Consumes the builder and constructs a [`Backup`](crate::types::Backup).
     pub fn build(self) -> crate::types::Backup {

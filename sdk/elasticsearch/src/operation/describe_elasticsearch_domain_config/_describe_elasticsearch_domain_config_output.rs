@@ -50,6 +50,12 @@ impl DescribeElasticsearchDomainConfigOutputBuilder {
         self.domain_config = input;
         self
     }
+    /// <p>The configuration information of the domain requested in the <code>DescribeElasticsearchDomainConfig</code> request.</p>
+    pub fn get_domain_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ElasticsearchDomainConfig> {
+        &self.domain_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

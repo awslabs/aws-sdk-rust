@@ -54,6 +54,10 @@ impl ExternalModelSummaryBuilder {
         self.model_endpoint = input;
         self
     }
+    /// <p>The endpoint of the Amazon SageMaker model.</p>
+    pub fn get_model_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_endpoint
+    }
     /// <p>The source of the model.</p>
     pub fn model_source(mut self, input: crate::types::ModelSource) -> Self {
         self.model_source = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl ExternalModelSummaryBuilder {
     ) -> Self {
         self.model_source = input;
         self
+    }
+    /// <p>The source of the model.</p>
+    pub fn get_model_source(&self) -> &::std::option::Option<crate::types::ModelSource> {
+        &self.model_source
     }
     /// Consumes the builder and constructs a [`ExternalModelSummary`](crate::types::ExternalModelSummary).
     pub fn build(self) -> crate::types::ExternalModelSummary {

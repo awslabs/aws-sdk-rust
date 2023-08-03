@@ -36,6 +36,12 @@ impl UntagResourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UntagResource as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::untag_resource::builders::UntagResourceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl UntagResourceFluentBuilder {
         self.inner = self.inner.set_resource(input);
         self
     }
+    /// <p>An ARN of a CloudFront resource.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource()
+    }
     /// <p>A complex type that contains zero or more <code>Tag</code> key elements.</p>
     pub fn tag_keys(mut self, input: crate::types::TagKeys) -> Self {
         self.inner = self.inner.tag_keys(input);
@@ -127,5 +137,9 @@ impl UntagResourceFluentBuilder {
     pub fn set_tag_keys(mut self, input: ::std::option::Option<crate::types::TagKeys>) -> Self {
         self.inner = self.inner.set_tag_keys(input);
         self
+    }
+    /// <p>A complex type that contains zero or more <code>Tag</code> key elements.</p>
+    pub fn get_tag_keys(&self) -> &::std::option::Option<crate::types::TagKeys> {
+        self.inner.get_tag_keys()
     }
 }

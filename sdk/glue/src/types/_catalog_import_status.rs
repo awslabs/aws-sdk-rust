@@ -56,6 +56,10 @@ impl CatalogImportStatusBuilder {
         self.import_completed = input;
         self
     }
+    /// <p> <code>True</code> if the migration has completed, or <code>False</code> otherwise.</p>
+    pub fn get_import_completed(&self) -> &::std::option::Option<bool> {
+        &self.import_completed
+    }
     /// <p>The time that the migration was started.</p>
     pub fn import_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.import_time = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl CatalogImportStatusBuilder {
         self.import_time = input;
         self
     }
+    /// <p>The time that the migration was started.</p>
+    pub fn get_import_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.import_time
+    }
     /// <p>The name of the person who initiated the migration.</p>
     pub fn imported_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.imported_by = ::std::option::Option::Some(input.into());
@@ -78,6 +86,10 @@ impl CatalogImportStatusBuilder {
     pub fn set_imported_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.imported_by = input;
         self
+    }
+    /// <p>The name of the person who initiated the migration.</p>
+    pub fn get_imported_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.imported_by
     }
     /// Consumes the builder and constructs a [`CatalogImportStatus`](crate::types::CatalogImportStatus).
     pub fn build(self) -> crate::types::CatalogImportStatus {

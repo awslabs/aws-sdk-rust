@@ -56,6 +56,10 @@ impl EmailTemplateContentBuilder {
         self.subject = input;
         self
     }
+    /// <p>The subject line of the email.</p>
+    pub fn get_subject(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subject
+    }
     /// <p>The email body that will be visible to recipients whose email clients do not display HTML.</p>
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl EmailTemplateContentBuilder {
         self.text = input;
         self
     }
+    /// <p>The email body that will be visible to recipients whose email clients do not display HTML.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
+    }
     /// <p>The HTML body of the email.</p>
     pub fn html(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.html = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl EmailTemplateContentBuilder {
     pub fn set_html(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.html = input;
         self
+    }
+    /// <p>The HTML body of the email.</p>
+    pub fn get_html(&self) -> &::std::option::Option<::std::string::String> {
+        &self.html
     }
     /// Consumes the builder and constructs a [`EmailTemplateContent`](crate::types::EmailTemplateContent).
     pub fn build(self) -> crate::types::EmailTemplateContent {

@@ -48,6 +48,10 @@ impl AssociateResourceResponseElementBuilder {
         self.arn = input;
         self
     }
+    /// <p>The resource ARN that was associated to the custom line item.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>An <code>AssociateResourceError</code> that will populate if the resource association fails.</p>
     pub fn error(mut self, input: crate::types::AssociateResourceError) -> Self {
         self.error = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl AssociateResourceResponseElementBuilder {
     ) -> Self {
         self.error = input;
         self
+    }
+    /// <p>An <code>AssociateResourceError</code> that will populate if the resource association fails.</p>
+    pub fn get_error(&self) -> &::std::option::Option<crate::types::AssociateResourceError> {
+        &self.error
     }
     /// Consumes the builder and constructs a [`AssociateResourceResponseElement`](crate::types::AssociateResourceResponseElement).
     pub fn build(self) -> crate::types::AssociateResourceResponseElement {

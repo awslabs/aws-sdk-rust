@@ -57,6 +57,10 @@ impl ListPackagingGroupsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// A token that can be used to resume pagination from the end of the collection.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `packaging_groups`.
     ///
     /// To override the contents of this collection use [`set_packaging_groups`](Self::set_packaging_groups).
@@ -75,6 +79,12 @@ impl ListPackagingGroupsOutputBuilder {
     ) -> Self {
         self.packaging_groups = input;
         self
+    }
+    /// A list of MediaPackage VOD PackagingGroup resources.
+    pub fn get_packaging_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PackagingGroup>> {
+        &self.packaging_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

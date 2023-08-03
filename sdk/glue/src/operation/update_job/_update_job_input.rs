@@ -47,6 +47,10 @@ impl UpdateJobInputBuilder {
         self.job_name = input;
         self
     }
+    /// <p>The name of the job definition to update.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
+    }
     /// <p>Specifies the values with which to update the job definition. Unspecified configuration is removed or reset to default values.</p>
     pub fn job_update(mut self, input: crate::types::JobUpdate) -> Self {
         self.job_update = ::std::option::Option::Some(input);
@@ -56,6 +60,10 @@ impl UpdateJobInputBuilder {
     pub fn set_job_update(mut self, input: ::std::option::Option<crate::types::JobUpdate>) -> Self {
         self.job_update = input;
         self
+    }
+    /// <p>Specifies the values with which to update the job definition. Unspecified configuration is removed or reset to default values.</p>
+    pub fn get_job_update(&self) -> &::std::option::Option<crate::types::JobUpdate> {
+        &self.job_update
     }
     /// Consumes the builder and constructs a [`UpdateJobInput`](crate::operation::update_job::UpdateJobInput).
     pub fn build(

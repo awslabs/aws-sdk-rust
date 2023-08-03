@@ -48,6 +48,10 @@ impl EventInfoBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the event. The possible names are <code>pull_request</code>, <code>workflow_dispatch</code>, <code>schedule</code>, and <code>push</code> </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The state of an event. The state might be open, closed, or another state.</p>
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl EventInfoBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of an event. The state might be open, closed, or another state.</p>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`EventInfo`](crate::types::EventInfo).
     pub fn build(self) -> crate::types::EventInfo {

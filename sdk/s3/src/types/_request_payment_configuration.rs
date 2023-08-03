@@ -40,6 +40,10 @@ impl RequestPaymentConfigurationBuilder {
         self.payer = input;
         self
     }
+    /// <p>Specifies who pays for the download and request fees.</p>
+    pub fn get_payer(&self) -> &::std::option::Option<crate::types::Payer> {
+        &self.payer
+    }
     /// Consumes the builder and constructs a [`RequestPaymentConfiguration`](crate::types::RequestPaymentConfiguration).
     pub fn build(self) -> crate::types::RequestPaymentConfiguration {
         crate::types::RequestPaymentConfiguration { payer: self.payer }

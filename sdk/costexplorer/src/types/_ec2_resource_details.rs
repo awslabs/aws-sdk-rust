@@ -110,6 +110,10 @@ impl Ec2ResourceDetailsBuilder {
         self.hourly_on_demand_rate = input;
         self
     }
+    /// <p>The hourly public On-Demand rate for the instance type.</p>
+    pub fn get_hourly_on_demand_rate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hourly_on_demand_rate
+    }
     /// <p>The type of Amazon Web Services instance.</p>
     pub fn instance_type(
         mut self,
@@ -126,6 +130,10 @@ impl Ec2ResourceDetailsBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The type of Amazon Web Services instance.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
+    }
     /// <p>The platform of the Amazon Web Services instance. The platform is the specific combination of operating system, license model, and software on an instance.</p>
     pub fn platform(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform = ::std::option::Option::Some(input.into());
@@ -135,6 +143,10 @@ impl Ec2ResourceDetailsBuilder {
     pub fn set_platform(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform = input;
         self
+    }
+    /// <p>The platform of the Amazon Web Services instance. The platform is the specific combination of operating system, license model, and software on an instance.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform
     }
     /// <p>The Amazon Web Services Region of the instance.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -146,6 +158,10 @@ impl Ec2ResourceDetailsBuilder {
         self.region = input;
         self
     }
+    /// <p>The Amazon Web Services Region of the instance.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
+    }
     /// <p>The SKU of the product.</p>
     pub fn sku(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sku = ::std::option::Option::Some(input.into());
@@ -156,6 +172,10 @@ impl Ec2ResourceDetailsBuilder {
         self.sku = input;
         self
     }
+    /// <p>The SKU of the product.</p>
+    pub fn get_sku(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sku
+    }
     /// <p>The memory capacity of the Amazon Web Services instance.</p>
     pub fn memory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.memory = ::std::option::Option::Some(input.into());
@@ -165,6 +185,10 @@ impl Ec2ResourceDetailsBuilder {
     pub fn set_memory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.memory = input;
         self
+    }
+    /// <p>The memory capacity of the Amazon Web Services instance.</p>
+    pub fn get_memory(&self) -> &::std::option::Option<::std::string::String> {
+        &self.memory
     }
     /// <p>The network performance capacity of the Amazon Web Services instance.</p>
     pub fn network_performance(
@@ -182,6 +206,10 @@ impl Ec2ResourceDetailsBuilder {
         self.network_performance = input;
         self
     }
+    /// <p>The network performance capacity of the Amazon Web Services instance.</p>
+    pub fn get_network_performance(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_performance
+    }
     /// <p>The disk storage of the Amazon Web Services instance. This doesn't include EBS storage.</p>
     pub fn storage(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage = ::std::option::Option::Some(input.into());
@@ -192,6 +220,10 @@ impl Ec2ResourceDetailsBuilder {
         self.storage = input;
         self
     }
+    /// <p>The disk storage of the Amazon Web Services instance. This doesn't include EBS storage.</p>
+    pub fn get_storage(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage
+    }
     /// <p>The number of VCPU cores in the Amazon Web Services instance type.</p>
     pub fn vcpu(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vcpu = ::std::option::Option::Some(input.into());
@@ -201,6 +233,10 @@ impl Ec2ResourceDetailsBuilder {
     pub fn set_vcpu(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vcpu = input;
         self
+    }
+    /// <p>The number of VCPU cores in the Amazon Web Services instance type.</p>
+    pub fn get_vcpu(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vcpu
     }
     /// Consumes the builder and constructs a [`Ec2ResourceDetails`](crate::types::Ec2ResourceDetails).
     pub fn build(self) -> crate::types::Ec2ResourceDetails {

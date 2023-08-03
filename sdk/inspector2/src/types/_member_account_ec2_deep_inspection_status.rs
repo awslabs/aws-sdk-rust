@@ -48,6 +48,10 @@ impl MemberAccountEc2DeepInspectionStatusBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The unique identifier for the Amazon Web Services account of the organization member.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>Whether Amazon Inspector deep inspection is active in the account. If <code>TRUE</code> Amazon Inspector deep inspection is active, if <code>FALSE</code> it is not active.</p>
     pub fn activate_deep_inspection(mut self, input: bool) -> Self {
         self.activate_deep_inspection = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl MemberAccountEc2DeepInspectionStatusBuilder {
     pub fn set_activate_deep_inspection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.activate_deep_inspection = input;
         self
+    }
+    /// <p>Whether Amazon Inspector deep inspection is active in the account. If <code>TRUE</code> Amazon Inspector deep inspection is active, if <code>FALSE</code> it is not active.</p>
+    pub fn get_activate_deep_inspection(&self) -> &::std::option::Option<bool> {
+        &self.activate_deep_inspection
     }
     /// Consumes the builder and constructs a [`MemberAccountEc2DeepInspectionStatus`](crate::types::MemberAccountEc2DeepInspectionStatus).
     pub fn build(self) -> crate::types::MemberAccountEc2DeepInspectionStatus {

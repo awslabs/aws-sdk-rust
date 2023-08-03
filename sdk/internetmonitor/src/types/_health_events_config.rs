@@ -48,6 +48,10 @@ impl HealthEventsConfigBuilder {
         self.availability_score_threshold = input;
         self
     }
+    /// <p>The health event threshold percentage set for availability scores.</p>
+    pub fn get_availability_score_threshold(&self) -> &::std::option::Option<f64> {
+        &self.availability_score_threshold
+    }
     /// <p>The health event threshold percentage set for performance scores.</p>
     pub fn performance_score_threshold(mut self, input: f64) -> Self {
         self.performance_score_threshold = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl HealthEventsConfigBuilder {
     pub fn set_performance_score_threshold(mut self, input: ::std::option::Option<f64>) -> Self {
         self.performance_score_threshold = input;
         self
+    }
+    /// <p>The health event threshold percentage set for performance scores.</p>
+    pub fn get_performance_score_threshold(&self) -> &::std::option::Option<f64> {
+        &self.performance_score_threshold
     }
     /// Consumes the builder and constructs a [`HealthEventsConfig`](crate::types::HealthEventsConfig).
     pub fn build(self) -> crate::types::HealthEventsConfig {

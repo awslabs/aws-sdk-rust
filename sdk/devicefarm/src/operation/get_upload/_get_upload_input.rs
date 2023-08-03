@@ -40,6 +40,10 @@ impl GetUploadInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The upload's ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`GetUploadInput`](crate::operation::get_upload::GetUploadInput).
     pub fn build(
         self,

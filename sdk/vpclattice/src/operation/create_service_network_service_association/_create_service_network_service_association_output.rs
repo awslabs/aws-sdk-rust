@@ -88,6 +88,10 @@ impl CreateServiceNetworkServiceAssociationOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the association.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The operation's status.</p>
     pub fn status(mut self, input: crate::types::ServiceNetworkServiceAssociationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -101,6 +105,12 @@ impl CreateServiceNetworkServiceAssociationOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The operation's status.</p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServiceNetworkServiceAssociationStatus> {
+        &self.status
+    }
     /// <p>The Amazon Resource Name (ARN) of the association.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -111,6 +121,10 @@ impl CreateServiceNetworkServiceAssociationOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the association.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The account that created the association.</p>
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
@@ -120,6 +134,10 @@ impl CreateServiceNetworkServiceAssociationOutputBuilder {
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by = input;
         self
+    }
+    /// <p>The account that created the association.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by
     }
     /// <p>The custom domain name of the service.</p>
     pub fn custom_domain_name(
@@ -137,6 +155,10 @@ impl CreateServiceNetworkServiceAssociationOutputBuilder {
         self.custom_domain_name = input;
         self
     }
+    /// <p>The custom domain name of the service.</p>
+    pub fn get_custom_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_domain_name
+    }
     /// <p>The DNS name of the service.</p>
     pub fn dns_entry(mut self, input: crate::types::DnsEntry) -> Self {
         self.dns_entry = ::std::option::Option::Some(input);
@@ -146,6 +168,10 @@ impl CreateServiceNetworkServiceAssociationOutputBuilder {
     pub fn set_dns_entry(mut self, input: ::std::option::Option<crate::types::DnsEntry>) -> Self {
         self.dns_entry = input;
         self
+    }
+    /// <p>The DNS name of the service.</p>
+    pub fn get_dns_entry(&self) -> &::std::option::Option<crate::types::DnsEntry> {
+        &self.dns_entry
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

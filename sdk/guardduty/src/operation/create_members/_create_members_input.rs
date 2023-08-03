@@ -47,6 +47,10 @@ impl CreateMembersInputBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The unique ID of the detector of the GuardDuty account that you want to associate member accounts with.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// Appends an item to `account_details`.
     ///
     /// To override the contents of this collection use [`set_account_details`](Self::set_account_details).
@@ -65,6 +69,12 @@ impl CreateMembersInputBuilder {
     ) -> Self {
         self.account_details = input;
         self
+    }
+    /// <p>A list of account ID and email address pairs of the accounts that you want to associate with the GuardDuty administrator account.</p>
+    pub fn get_account_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountDetail>> {
+        &self.account_details
     }
     /// Consumes the builder and constructs a [`CreateMembersInput`](crate::operation::create_members::CreateMembersInput).
     pub fn build(

@@ -39,6 +39,10 @@ impl StopChannelInputBuilder {
         self.channel_name = input;
         self
     }
+    /// <p>The name of the channel.</p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_name
+    }
     /// Consumes the builder and constructs a [`StopChannelInput`](crate::operation::stop_channel::StopChannelInput).
     pub fn build(
         self,

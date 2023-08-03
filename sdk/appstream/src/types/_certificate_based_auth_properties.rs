@@ -51,6 +51,10 @@ impl CertificateBasedAuthPropertiesBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the certificate-based authentication properties.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CertificateBasedAuthStatus> {
+        &self.status
+    }
     /// <p>The ARN of the AWS Certificate Manager Private CA resource.</p>
     pub fn certificate_authority_arn(
         mut self,
@@ -66,6 +70,10 @@ impl CertificateBasedAuthPropertiesBuilder {
     ) -> Self {
         self.certificate_authority_arn = input;
         self
+    }
+    /// <p>The ARN of the AWS Certificate Manager Private CA resource.</p>
+    pub fn get_certificate_authority_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_authority_arn
     }
     /// Consumes the builder and constructs a [`CertificateBasedAuthProperties`](crate::types::CertificateBasedAuthProperties).
     pub fn build(self) -> crate::types::CertificateBasedAuthProperties {

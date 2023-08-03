@@ -36,6 +36,12 @@ impl AddInstanceGroupsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AddInstanceGroups as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::add_instance_groups::builders::AddInstanceGroupsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,12 @@ impl AddInstanceGroupsFluentBuilder {
         self.inner = self.inner.set_instance_groups(input);
         self
     }
+    /// <p>Instance groups to add.</p>
+    pub fn get_instance_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupConfig>> {
+        self.inner.get_instance_groups()
+    }
     /// <p>Job flow in which to add the instance groups.</p>
     pub fn job_flow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_flow_id(input.into());
@@ -142,5 +154,9 @@ impl AddInstanceGroupsFluentBuilder {
     pub fn set_job_flow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_flow_id(input);
         self
+    }
+    /// <p>Job flow in which to add the instance groups.</p>
+    pub fn get_job_flow_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_flow_id()
     }
 }

@@ -47,6 +47,10 @@ impl UntagProjectInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the project to remove tags from.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -65,6 +69,10 @@ impl UntagProjectInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags to remove from the project.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`UntagProjectInput`](crate::operation::untag_project::UntagProjectInput).
     pub fn build(

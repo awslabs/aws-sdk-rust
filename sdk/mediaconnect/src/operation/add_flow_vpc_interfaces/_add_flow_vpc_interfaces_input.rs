@@ -50,6 +50,10 @@ impl AddFlowVpcInterfacesInputBuilder {
         self.flow_arn = input;
         self
     }
+    /// The flow that you want to mutate.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_arn
+    }
     /// Appends an item to `vpc_interfaces`.
     ///
     /// To override the contents of this collection use [`set_vpc_interfaces`](Self::set_vpc_interfaces).
@@ -68,6 +72,12 @@ impl AddFlowVpcInterfacesInputBuilder {
     ) -> Self {
         self.vpc_interfaces = input;
         self
+    }
+    /// A list of VPC interfaces that you want to add.
+    pub fn get_vpc_interfaces(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcInterfaceRequest>> {
+        &self.vpc_interfaces
     }
     /// Consumes the builder and constructs a [`AddFlowVpcInterfacesInput`](crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesInput).
     pub fn build(

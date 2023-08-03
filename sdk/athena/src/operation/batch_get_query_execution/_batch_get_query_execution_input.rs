@@ -54,6 +54,12 @@ impl BatchGetQueryExecutionInputBuilder {
         self.query_execution_ids = input;
         self
     }
+    /// <p>An array of query execution IDs.</p>
+    pub fn get_query_execution_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.query_execution_ids
+    }
     /// Consumes the builder and constructs a [`BatchGetQueryExecutionInput`](crate::operation::batch_get_query_execution::BatchGetQueryExecutionInput).
     pub fn build(
         self,

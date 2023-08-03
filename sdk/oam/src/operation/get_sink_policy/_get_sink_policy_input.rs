@@ -45,6 +45,10 @@ impl GetSinkPolicyInputBuilder {
         self.sink_identifier = input;
         self
     }
+    /// <p>The ARN of the sink to retrieve the policy of.</p>
+    pub fn get_sink_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sink_identifier
+    }
     /// Consumes the builder and constructs a [`GetSinkPolicyInput`](crate::operation::get_sink_policy::GetSinkPolicyInput).
     pub fn build(
         self,

@@ -83,6 +83,12 @@ impl GetFederationTokenOutputBuilder {
         self.credentials = input;
         self
     }
+    /// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p> <note>
+    /// <p>The size of the security token that STS API operations return is not fixed. We strongly recommend that you make no assumptions about the maximum size.</p>
+    /// </note>
+    pub fn get_credentials(&self) -> &::std::option::Option<crate::types::Credentials> {
+        &self.credentials
+    }
     /// <p>Identifiers for the federated user associated with the credentials (such as <code>arn:aws:sts::123456789012:federated-user/Bob</code> or <code>123456789012:Bob</code>). You can use the federated user's ARN in your resource-based policies, such as an Amazon S3 bucket policy. </p>
     pub fn federated_user(mut self, input: crate::types::FederatedUser) -> Self {
         self.federated_user = ::std::option::Option::Some(input);
@@ -96,6 +102,10 @@ impl GetFederationTokenOutputBuilder {
         self.federated_user = input;
         self
     }
+    /// <p>Identifiers for the federated user associated with the credentials (such as <code>arn:aws:sts::123456789012:federated-user/Bob</code> or <code>123456789012:Bob</code>). You can use the federated user's ARN in your resource-based policies, such as an Amazon S3 bucket policy. </p>
+    pub fn get_federated_user(&self) -> &::std::option::Option<crate::types::FederatedUser> {
+        &self.federated_user
+    }
     /// <p>A percentage value that indicates the packed size of the session policies and session tags combined passed in the request. The request fails if the packed size is greater than 100 percent, which means the policies and tags exceeded the allowed space.</p>
     pub fn packed_policy_size(mut self, input: i32) -> Self {
         self.packed_policy_size = ::std::option::Option::Some(input);
@@ -105,6 +115,10 @@ impl GetFederationTokenOutputBuilder {
     pub fn set_packed_policy_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.packed_policy_size = input;
         self
+    }
+    /// <p>A percentage value that indicates the packed size of the session policies and session tags combined passed in the request. The request fails if the packed size is greater than 100 percent, which means the policies and tags exceeded the allowed space.</p>
+    pub fn get_packed_policy_size(&self) -> &::std::option::Option<i32> {
+        &self.packed_policy_size
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

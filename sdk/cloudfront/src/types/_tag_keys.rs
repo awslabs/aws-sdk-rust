@@ -49,6 +49,10 @@ impl TagKeysBuilder {
         self.items = input;
         self
     }
+    /// <p>A complex type that contains <code>Tag</code> key elements.</p>
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.items
+    }
     /// Consumes the builder and constructs a [`TagKeys`](crate::types::TagKeys).
     pub fn build(self) -> crate::types::TagKeys {
         crate::types::TagKeys { items: self.items }

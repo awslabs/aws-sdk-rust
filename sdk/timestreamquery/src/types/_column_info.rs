@@ -48,6 +48,10 @@ impl ColumnInfoBuilder {
         self.name = input;
         self
     }
+    /// <p> The name of the result set column. The name of the result set is available for columns of all data types except for arrays. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The data type of the result set column. The data type can be a scalar or complex. Scalar data types are integers, strings, doubles, Booleans, and others. Complex data types are types such as arrays, rows, and others. </p>
     pub fn r#type(
         mut self,
@@ -63,6 +67,10 @@ impl ColumnInfoBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The data type of the result set column. The data type can be a scalar or complex. Scalar data types are integers, strings, doubles, Booleans, and others. Complex data types are types such as arrays, rows, and others. </p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::boxed::Box<crate::types::Type>> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`ColumnInfo`](crate::types::ColumnInfo).
     pub fn build(self) -> crate::types::ColumnInfo {

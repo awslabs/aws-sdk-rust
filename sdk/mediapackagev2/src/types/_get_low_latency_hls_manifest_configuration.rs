@@ -88,6 +88,10 @@ impl GetLowLatencyHlsManifestConfigurationBuilder {
         self.manifest_name = input;
         self
     }
+    /// <p>A short short string that's appended to the endpoint URL. The manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default manifest name, index. MediaPackage automatically inserts the format extension, such as .m3u8. You can't use the same manifest name if you use HLS manifest and low-latency HLS manifest. The manifestName on the HLSManifest object overrides the manifestName you provided on the originEndpoint object.</p>
+    pub fn get_manifest_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.manifest_name
+    }
     /// <p>The egress domain URL for stream delivery from MediaPackage.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
@@ -97,6 +101,10 @@ impl GetLowLatencyHlsManifestConfigurationBuilder {
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
+    }
+    /// <p>The egress domain URL for stream delivery from MediaPackage.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     /// <p>A short string that's appended to the endpoint URL. The child manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default child manifest name, index_1. The manifestName on the HLSManifest object overrides the manifestName you provided on the originEndpoint object.</p>
     pub fn child_manifest_name(
@@ -114,6 +122,10 @@ impl GetLowLatencyHlsManifestConfigurationBuilder {
         self.child_manifest_name = input;
         self
     }
+    /// <p>A short string that's appended to the endpoint URL. The child manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default child manifest name, index_1. The manifestName on the HLSManifest object overrides the manifestName you provided on the originEndpoint object.</p>
+    pub fn get_child_manifest_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.child_manifest_name
+    }
     /// <p>The total duration (in seconds) of the manifest's content.</p>
     pub fn manifest_window_seconds(mut self, input: i32) -> Self {
         self.manifest_window_seconds = ::std::option::Option::Some(input);
@@ -123,6 +135,10 @@ impl GetLowLatencyHlsManifestConfigurationBuilder {
     pub fn set_manifest_window_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.manifest_window_seconds = input;
         self
+    }
+    /// <p>The total duration (in seconds) of the manifest's content.</p>
+    pub fn get_manifest_window_seconds(&self) -> &::std::option::Option<i32> {
+        &self.manifest_window_seconds
     }
     /// <p>Inserts EXT-X-PROGRAM-DATE-TIME tags in the output manifest at the interval that you specify. If you don't enter an interval, EXT-X-PROGRAM-DATE-TIME tags aren't included in the manifest. The tags sync the stream to the wall clock so that viewers can seek to a specific time in the playback timeline on the player. ID3Timed metadata messages generate every 5 seconds whenever the content is ingested.</p>
     /// <p>Irrespective of this parameter, if any ID3Timed metadata is in the HLS input, it is passed through to the HLS output.</p>
@@ -139,6 +155,11 @@ impl GetLowLatencyHlsManifestConfigurationBuilder {
         self.program_date_time_interval_seconds = input;
         self
     }
+    /// <p>Inserts EXT-X-PROGRAM-DATE-TIME tags in the output manifest at the interval that you specify. If you don't enter an interval, EXT-X-PROGRAM-DATE-TIME tags aren't included in the manifest. The tags sync the stream to the wall clock so that viewers can seek to a specific time in the playback timeline on the player. ID3Timed metadata messages generate every 5 seconds whenever the content is ingested.</p>
+    /// <p>Irrespective of this parameter, if any ID3Timed metadata is in the HLS input, it is passed through to the HLS output.</p>
+    pub fn get_program_date_time_interval_seconds(&self) -> &::std::option::Option<i32> {
+        &self.program_date_time_interval_seconds
+    }
     /// <p>The SCTE configuration.</p>
     pub fn scte_hls(mut self, input: crate::types::ScteHls) -> Self {
         self.scte_hls = ::std::option::Option::Some(input);
@@ -148,6 +169,10 @@ impl GetLowLatencyHlsManifestConfigurationBuilder {
     pub fn set_scte_hls(mut self, input: ::std::option::Option<crate::types::ScteHls>) -> Self {
         self.scte_hls = input;
         self
+    }
+    /// <p>The SCTE configuration.</p>
+    pub fn get_scte_hls(&self) -> &::std::option::Option<crate::types::ScteHls> {
+        &self.scte_hls
     }
     /// Consumes the builder and constructs a [`GetLowLatencyHlsManifestConfiguration`](crate::types::GetLowLatencyHlsManifestConfiguration).
     pub fn build(self) -> crate::types::GetLowLatencyHlsManifestConfiguration {

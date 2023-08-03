@@ -68,6 +68,10 @@ impl DialogCodeHookInvocationSettingBuilder {
         self.enable_code_hook_invocation = input;
         self
     }
+    /// <p>Indicates whether a Lambda function should be invoked for the dialog.</p>
+    pub fn get_enable_code_hook_invocation(&self) -> &::std::option::Option<bool> {
+        &self.enable_code_hook_invocation
+    }
     /// <p>Determines whether a dialog code hook is used when the intent is activated.</p>
     pub fn active(mut self, input: bool) -> Self {
         self.active = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl DialogCodeHookInvocationSettingBuilder {
     pub fn set_active(mut self, input: ::std::option::Option<bool>) -> Self {
         self.active = input;
         self
+    }
+    /// <p>Determines whether a dialog code hook is used when the intent is activated.</p>
+    pub fn get_active(&self) -> &::std::option::Option<bool> {
+        &self.active
     }
     /// <p>A label that indicates the dialog step from which the dialog code hook is happening.</p>
     pub fn invocation_label(
@@ -94,6 +102,10 @@ impl DialogCodeHookInvocationSettingBuilder {
         self.invocation_label = input;
         self
     }
+    /// <p>A label that indicates the dialog step from which the dialog code hook is happening.</p>
+    pub fn get_invocation_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.invocation_label
+    }
     /// <p>Contains the responses and actions that Amazon Lex takes after the Lambda function is complete.</p>
     pub fn post_code_hook_specification(
         mut self,
@@ -109,6 +121,12 @@ impl DialogCodeHookInvocationSettingBuilder {
     ) -> Self {
         self.post_code_hook_specification = input;
         self
+    }
+    /// <p>Contains the responses and actions that Amazon Lex takes after the Lambda function is complete.</p>
+    pub fn get_post_code_hook_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::PostDialogCodeHookInvocationSpecification> {
+        &self.post_code_hook_specification
     }
     /// Consumes the builder and constructs a [`DialogCodeHookInvocationSetting`](crate::types::DialogCodeHookInvocationSetting).
     pub fn build(self) -> crate::types::DialogCodeHookInvocationSetting {

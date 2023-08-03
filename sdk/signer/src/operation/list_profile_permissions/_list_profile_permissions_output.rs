@@ -72,6 +72,10 @@ impl ListProfilePermissionsOutputBuilder {
         self.revision_id = input;
         self
     }
+    /// <p>The identifier for the current revision of profile permissions.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_id
+    }
     /// <p>Total size of the policy associated with the Signing Profile in bytes.</p>
     pub fn policy_size_bytes(mut self, input: i32) -> Self {
         self.policy_size_bytes = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl ListProfilePermissionsOutputBuilder {
     pub fn set_policy_size_bytes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.policy_size_bytes = input;
         self
+    }
+    /// <p>Total size of the policy associated with the Signing Profile in bytes.</p>
+    pub fn get_policy_size_bytes(&self) -> &::std::option::Option<i32> {
+        &self.policy_size_bytes
     }
     /// Appends an item to `permissions`.
     ///
@@ -101,6 +109,12 @@ impl ListProfilePermissionsOutputBuilder {
         self.permissions = input;
         self
     }
+    /// <p>List of permissions associated with the Signing Profile.</p>
+    pub fn get_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
+        &self.permissions
+    }
     /// <p>String for specifying the next set of paginated results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -110,6 +124,10 @@ impl ListProfilePermissionsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>String for specifying the next set of paginated results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

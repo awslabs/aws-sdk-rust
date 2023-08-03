@@ -39,6 +39,12 @@ impl SetUICustomizationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SetUICustomization as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::set_ui_customization::builders::SetUiCustomizationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl SetUICustomizationFluentBuilder {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
+    /// <p>The user pool ID for the user pool.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_pool_id()
+    }
     /// <p>The client ID for the client app.</p>
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_id(input.into());
@@ -139,6 +149,10 @@ impl SetUICustomizationFluentBuilder {
         self.inner = self.inner.set_client_id(input);
         self
     }
+    /// <p>The client ID for the client app.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_id()
+    }
     /// <p>The CSS values in the UI customization.</p>
     pub fn css(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.css(input.into());
@@ -148,6 +162,10 @@ impl SetUICustomizationFluentBuilder {
     pub fn set_css(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_css(input);
         self
+    }
+    /// <p>The CSS values in the UI customization.</p>
+    pub fn get_css(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_css()
     }
     /// <p>The uploaded logo image for the UI customization.</p>
     pub fn image_file(mut self, input: ::aws_smithy_types::Blob) -> Self {
@@ -161,5 +179,9 @@ impl SetUICustomizationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_image_file(input);
         self
+    }
+    /// <p>The uploaded logo image for the UI customization.</p>
+    pub fn get_image_file(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        self.inner.get_image_file()
     }
 }

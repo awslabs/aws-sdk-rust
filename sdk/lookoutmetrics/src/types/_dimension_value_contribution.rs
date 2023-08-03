@@ -54,6 +54,10 @@ impl DimensionValueContributionBuilder {
         self.dimension_value = input;
         self
     }
+    /// <p>The value of the dimension.</p>
+    pub fn get_dimension_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dimension_value
+    }
     /// <p>The severity score of the value.</p>
     pub fn contribution_score(mut self, input: f64) -> Self {
         self.contribution_score = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl DimensionValueContributionBuilder {
     pub fn set_contribution_score(mut self, input: ::std::option::Option<f64>) -> Self {
         self.contribution_score = input;
         self
+    }
+    /// <p>The severity score of the value.</p>
+    pub fn get_contribution_score(&self) -> &::std::option::Option<f64> {
+        &self.contribution_score
     }
     /// Consumes the builder and constructs a [`DimensionValueContribution`](crate::types::DimensionValueContribution).
     pub fn build(self) -> crate::types::DimensionValueContribution {

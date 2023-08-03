@@ -70,6 +70,10 @@ impl ListIdentitiesInputBuilder {
         self.identity_pool_id = input;
         self
     }
+    /// <p>An identity pool ID in the format REGION:GUID.</p>
+    pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_pool_id
+    }
     /// <p>The maximum number of identities to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -79,6 +83,10 @@ impl ListIdentitiesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of identities to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>A pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -90,6 +98,10 @@ impl ListIdentitiesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>An optional boolean parameter that allows you to hide disabled identities. If omitted, the ListIdentities API will include disabled identities in the response.</p>
     pub fn hide_disabled(mut self, input: bool) -> Self {
         self.hide_disabled = ::std::option::Option::Some(input);
@@ -99,6 +111,10 @@ impl ListIdentitiesInputBuilder {
     pub fn set_hide_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.hide_disabled = input;
         self
+    }
+    /// <p>An optional boolean parameter that allows you to hide disabled identities. If omitted, the ListIdentities API will include disabled identities in the response.</p>
+    pub fn get_hide_disabled(&self) -> &::std::option::Option<bool> {
+        &self.hide_disabled
     }
     /// Consumes the builder and constructs a [`ListIdentitiesInput`](crate::operation::list_identities::ListIdentitiesInput).
     pub fn build(

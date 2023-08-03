@@ -73,6 +73,10 @@ impl VerifySoftwareTokenInputBuilder {
         self.access_token = input;
         self
     }
+    /// <p>A valid access token that Amazon Cognito issued to the user whose software token you want to verify.</p>
+    pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_token
+    }
     /// <p>The session that should be passed both ways in challenge-response calls to the service.</p>
     pub fn session(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session = ::std::option::Option::Some(input.into());
@@ -83,6 +87,10 @@ impl VerifySoftwareTokenInputBuilder {
         self.session = input;
         self
     }
+    /// <p>The session that should be passed both ways in challenge-response calls to the service.</p>
+    pub fn get_session(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session
+    }
     /// <p>The one- time password computed using the secret code returned by <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken</a>.</p>
     pub fn user_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_code = ::std::option::Option::Some(input.into());
@@ -92,6 +100,10 @@ impl VerifySoftwareTokenInputBuilder {
     pub fn set_user_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_code = input;
         self
+    }
+    /// <p>The one- time password computed using the secret code returned by <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken</a>.</p>
+    pub fn get_user_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_code
     }
     /// <p>The friendly device name.</p>
     pub fn friendly_device_name(
@@ -108,6 +120,10 @@ impl VerifySoftwareTokenInputBuilder {
     ) -> Self {
         self.friendly_device_name = input;
         self
+    }
+    /// <p>The friendly device name.</p>
+    pub fn get_friendly_device_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.friendly_device_name
     }
     /// Consumes the builder and constructs a [`VerifySoftwareTokenInput`](crate::operation::verify_software_token::VerifySoftwareTokenInput).
     pub fn build(

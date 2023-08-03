@@ -70,6 +70,12 @@ impl VpcOutputSettingsBuilder {
         self.public_address_allocation_ids = input;
         self
     }
+    /// List of public address allocation ids to associate with ENIs that will be created in Output VPC. Must specify one for SINGLE_PIPELINE, two for STANDARD channels
+    pub fn get_public_address_allocation_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.public_address_allocation_ids
+    }
     /// Appends an item to `security_group_ids`.
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
@@ -92,6 +98,12 @@ impl VpcOutputSettingsBuilder {
         self.security_group_ids = input;
         self
     }
+    /// A list of up to 5 EC2 VPC security group IDs to attach to the Output VPC network interfaces. If none are specified then the VPC default security group will be used
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
+    }
     /// Appends an item to `subnet_ids`.
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
@@ -110,6 +122,10 @@ impl VpcOutputSettingsBuilder {
     ) -> Self {
         self.subnet_ids = input;
         self
+    }
+    /// A list of VPC subnet IDs from the same VPC. If STANDARD channel, subnet IDs must be mapped to two unique availability zones (AZ).
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
     }
     /// Consumes the builder and constructs a [`VpcOutputSettings`](crate::types::VpcOutputSettings).
     pub fn build(self) -> crate::types::VpcOutputSettings {

@@ -37,6 +37,12 @@ impl SetV2LoggingOptionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SetV2LoggingOptions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::set_v2_logging_options::builders::SetV2LoggingOptionsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl SetV2LoggingOptionsFluentBuilder {
         self.inner = self.inner.set_role_arn(input);
         self
     }
+    /// <p>The ARN of the role that allows IoT to write to Cloudwatch logs.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
+    }
     /// <p>The default logging level.</p>
     pub fn default_log_level(mut self, input: crate::types::LogLevel) -> Self {
         self.inner = self.inner.default_log_level(input);
@@ -140,6 +150,10 @@ impl SetV2LoggingOptionsFluentBuilder {
         self.inner = self.inner.set_default_log_level(input);
         self
     }
+    /// <p>The default logging level.</p>
+    pub fn get_default_log_level(&self) -> &::std::option::Option<crate::types::LogLevel> {
+        self.inner.get_default_log_level()
+    }
     /// <p>If true all logs are disabled. The default is false.</p>
     pub fn disable_all_logs(mut self, input: bool) -> Self {
         self.inner = self.inner.disable_all_logs(input);
@@ -149,5 +163,9 @@ impl SetV2LoggingOptionsFluentBuilder {
     pub fn set_disable_all_logs(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_disable_all_logs(input);
         self
+    }
+    /// <p>If true all logs are disabled. The default is false.</p>
+    pub fn get_disable_all_logs(&self) -> &::std::option::Option<bool> {
+        self.inner.get_disable_all_logs()
     }
 }

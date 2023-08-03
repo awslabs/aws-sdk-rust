@@ -65,6 +65,10 @@ impl PutWorkflowRunPropertiesInputBuilder {
         self.name = input;
         self
     }
+    /// <p>Name of the workflow which was run.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The ID of the workflow run for which the run properties should be updated.</p>
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.run_id = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl PutWorkflowRunPropertiesInputBuilder {
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.run_id = input;
         self
+    }
+    /// <p>The ID of the workflow run for which the run properties should be updated.</p>
+    pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.run_id
     }
     /// Adds a key-value pair to `run_properties`.
     ///
@@ -99,6 +107,14 @@ impl PutWorkflowRunPropertiesInputBuilder {
     ) -> Self {
         self.run_properties = input;
         self
+    }
+    /// <p>The properties to put for the specified run.</p>
+    pub fn get_run_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.run_properties
     }
     /// Consumes the builder and constructs a [`PutWorkflowRunPropertiesInput`](crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesInput).
     pub fn build(

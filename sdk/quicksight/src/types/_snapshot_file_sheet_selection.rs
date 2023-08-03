@@ -67,6 +67,10 @@ impl SnapshotFileSheetSelectionBuilder {
         self.sheet_id = input;
         self
     }
+    /// <p>The sheet ID of the dashboard to generate the snapshot artifact from. This value is required for CSV or PDF format types.</p>
+    pub fn get_sheet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sheet_id
+    }
     /// <p>The selection scope of the visuals on a sheet of a dashboard that you are generating a snapthot of. You can choose one of the following options.</p>
     /// <ul>
     /// <li> <p> <code>ALL_VISUALS</code> - Selects all visuals that are on the sheet. This value is required if the snapshot is a PDF.</p> </li>
@@ -88,6 +92,16 @@ impl SnapshotFileSheetSelectionBuilder {
         self.selection_scope = input;
         self
     }
+    /// <p>The selection scope of the visuals on a sheet of a dashboard that you are generating a snapthot of. You can choose one of the following options.</p>
+    /// <ul>
+    /// <li> <p> <code>ALL_VISUALS</code> - Selects all visuals that are on the sheet. This value is required if the snapshot is a PDF.</p> </li>
+    /// <li> <p> <code>SELECTED_VISUALS</code> - Select the visual that you want to add to the snapshot. This value is required if the snapshot is a CSV.</p> </li>
+    /// </ul>
+    pub fn get_selection_scope(
+        &self,
+    ) -> &::std::option::Option<crate::types::SnapshotFileSheetSelectionScope> {
+        &self.selection_scope
+    }
     /// Appends an item to `visual_ids`.
     ///
     /// To override the contents of this collection use [`set_visual_ids`](Self::set_visual_ids).
@@ -106,6 +120,10 @@ impl SnapshotFileSheetSelectionBuilder {
     ) -> Self {
         self.visual_ids = input;
         self
+    }
+    /// <p> A structure that lists the IDs of the visuals in the selected sheet. Supported visual types are table, pivot table visuals. This value is required if you are generating a CSV. This value supports a maximum of 1 visual ID. </p>
+    pub fn get_visual_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.visual_ids
     }
     /// Consumes the builder and constructs a [`SnapshotFileSheetSelection`](crate::types::SnapshotFileSheetSelection).
     pub fn build(self) -> crate::types::SnapshotFileSheetSelection {

@@ -51,6 +51,10 @@ impl GetDeploymentTargetOutputBuilder {
         self.deployment_target = input;
         self
     }
+    /// <p> A deployment target that contains information about a deployment such as its status, lifecycle events, and when it was last updated. It also contains metadata about the deployment target. The deployment target metadata depends on the deployment target's type (<code>instanceTarget</code>, <code>lambdaTarget</code>, or <code>ecsTarget</code>). </p>
+    pub fn get_deployment_target(&self) -> &::std::option::Option<crate::types::DeploymentTarget> {
+        &self.deployment_target
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

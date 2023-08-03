@@ -60,6 +60,10 @@ impl ListEventSourceMappingsOutputBuilder {
         self.next_marker = input;
         self
     }
+    /// <p>A pagination token that's returned when the response doesn't contain all event source mappings.</p>
+    pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_marker
+    }
     /// Appends an item to `event_source_mappings`.
     ///
     /// To override the contents of this collection use [`set_event_source_mappings`](Self::set_event_source_mappings).
@@ -83,6 +87,13 @@ impl ListEventSourceMappingsOutputBuilder {
     ) -> Self {
         self.event_source_mappings = input;
         self
+    }
+    /// <p>A list of event source mappings.</p>
+    pub fn get_event_source_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventSourceMappingConfiguration>>
+    {
+        &self.event_source_mappings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

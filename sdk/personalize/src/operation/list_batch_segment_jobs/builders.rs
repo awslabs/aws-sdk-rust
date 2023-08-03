@@ -36,6 +36,13 @@ impl ListBatchSegmentJobsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListBatchSegmentJobs as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_batch_segment_jobs::builders::ListBatchSegmentJobsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +150,10 @@ impl ListBatchSegmentJobsFluentBuilder {
         self.inner = self.inner.set_solution_version_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the solution version that the batch segment jobs used to generate batch segments.</p>
+    pub fn get_solution_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_solution_version_arn()
+    }
     /// <p>The token to request the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -153,6 +164,10 @@ impl ListBatchSegmentJobsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token to request the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of batch segment job results to return in each page. The default value is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -162,5 +177,9 @@ impl ListBatchSegmentJobsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of batch segment job results to return in each page. The default value is 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

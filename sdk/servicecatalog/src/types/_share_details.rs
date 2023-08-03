@@ -60,6 +60,12 @@ impl ShareDetailsBuilder {
         self.successful_shares = input;
         self
     }
+    /// <p>List of accounts for whom the operation succeeded.</p>
+    pub fn get_successful_shares(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.successful_shares
+    }
     /// Appends an item to `share_errors`.
     ///
     /// To override the contents of this collection use [`set_share_errors`](Self::set_share_errors).
@@ -78,6 +84,12 @@ impl ShareDetailsBuilder {
     ) -> Self {
         self.share_errors = input;
         self
+    }
+    /// <p>List of errors.</p>
+    pub fn get_share_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ShareError>> {
+        &self.share_errors
     }
     /// Consumes the builder and constructs a [`ShareDetails`](crate::types::ShareDetails).
     pub fn build(self) -> crate::types::ShareDetails {

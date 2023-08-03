@@ -70,6 +70,10 @@ impl AssociatedRoleBuilder {
         self.associated_role_arn = input;
         self
     }
+    /// <p>The ARN of the associated IAM role.</p>
+    pub fn get_associated_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.associated_role_arn
+    }
     /// <p>The name of the Amazon S3 bucket in which the Amazon S3 object is stored.</p>
     pub fn certificate_s3_bucket_name(
         mut self,
@@ -85,6 +89,10 @@ impl AssociatedRoleBuilder {
     ) -> Self {
         self.certificate_s3_bucket_name = input;
         self
+    }
+    /// <p>The name of the Amazon S3 bucket in which the Amazon S3 object is stored.</p>
+    pub fn get_certificate_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_s3_bucket_name
     }
     /// <p>The key of the Amazon S3 object ey where the certificate, certificate chain, and encrypted private key bundle is stored. The object key is formated as follows: <code>role_arn</code>/<code>certificate_arn</code>. </p>
     pub fn certificate_s3_object_key(
@@ -102,6 +110,10 @@ impl AssociatedRoleBuilder {
         self.certificate_s3_object_key = input;
         self
     }
+    /// <p>The key of the Amazon S3 object ey where the certificate, certificate chain, and encrypted private key bundle is stored. The object key is formated as follows: <code>role_arn</code>/<code>certificate_arn</code>. </p>
+    pub fn get_certificate_s3_object_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_s3_object_key
+    }
     /// <p>The ID of the KMS customer master key (CMK) used to encrypt the private key.</p>
     pub fn encryption_kms_key_id(
         mut self,
@@ -117,6 +129,10 @@ impl AssociatedRoleBuilder {
     ) -> Self {
         self.encryption_kms_key_id = input;
         self
+    }
+    /// <p>The ID of the KMS customer master key (CMK) used to encrypt the private key.</p>
+    pub fn get_encryption_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encryption_kms_key_id
     }
     /// Consumes the builder and constructs a [`AssociatedRole`](crate::types::AssociatedRole).
     pub fn build(self) -> crate::types::AssociatedRole {

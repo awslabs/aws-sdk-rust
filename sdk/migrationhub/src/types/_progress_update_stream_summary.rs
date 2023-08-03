@@ -46,6 +46,10 @@ impl ProgressUpdateStreamSummaryBuilder {
         self.progress_update_stream_name = input;
         self
     }
+    /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
+    pub fn get_progress_update_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.progress_update_stream_name
+    }
     /// Consumes the builder and constructs a [`ProgressUpdateStreamSummary`](crate::types::ProgressUpdateStreamSummary).
     pub fn build(self) -> crate::types::ProgressUpdateStreamSummary {
         crate::types::ProgressUpdateStreamSummary {

@@ -38,6 +38,10 @@ impl UpdateLedgerPermissionsModeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateLedgerPermissionsMode as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_ledger_permissions_mode::builders::UpdateLedgerPermissionsModeInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +132,10 @@ impl UpdateLedgerPermissionsModeFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the ledger.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The permissions mode to assign to the ledger. This parameter can have one of the following values:</p>
     /// <ul>
     /// <li> <p> <code>ALLOW_ALL</code>: A legacy permissions mode that enables access control with API-level granularity for ledgers.</p> <p>This mode allows users who have the <code>SendCommand</code> API permission for this ledger to run all PartiQL commands (hence, <code>ALLOW_ALL</code>) on any tables in the specified ledger. This mode disregards any table-level or command-level IAM permissions policies that you create for the ledger.</p> </li>
@@ -152,5 +160,15 @@ impl UpdateLedgerPermissionsModeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_permissions_mode(input);
         self
+    }
+    /// <p>The permissions mode to assign to the ledger. This parameter can have one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>ALLOW_ALL</code>: A legacy permissions mode that enables access control with API-level granularity for ledgers.</p> <p>This mode allows users who have the <code>SendCommand</code> API permission for this ledger to run all PartiQL commands (hence, <code>ALLOW_ALL</code>) on any tables in the specified ledger. This mode disregards any table-level or command-level IAM permissions policies that you create for the ledger.</p> </li>
+    /// <li> <p> <code>STANDARD</code>: (<i>Recommended</i>) A permissions mode that enables access control with finer granularity for ledgers, tables, and PartiQL commands.</p> <p>By default, this mode denies all user requests to run any PartiQL commands on any tables in this ledger. To allow PartiQL commands to run, you must create IAM permissions policies for specific table resources and PartiQL actions, in addition to the <code>SendCommand</code> API permission for the ledger. For information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/getting-started-standard-mode.html">Getting started with the standard permissions mode</a> in the <i>Amazon QLDB Developer Guide</i>.</p> </li>
+    /// </ul> <note>
+    /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize the security of your ledger data.</p>
+    /// </note>
+    pub fn get_permissions_mode(&self) -> &::std::option::Option<crate::types::PermissionsMode> {
+        self.inner.get_permissions_mode()
     }
 }

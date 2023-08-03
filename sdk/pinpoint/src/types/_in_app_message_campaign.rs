@@ -96,6 +96,10 @@ impl InAppMessageCampaignBuilder {
         self.campaign_id = input;
         self
     }
+    /// <p>Campaign id of the corresponding campaign.</p>
+    pub fn get_campaign_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.campaign_id
+    }
     /// <p>Daily cap which controls the number of times any in-app messages can be shown to the endpoint during a day.</p>
     pub fn daily_cap(mut self, input: i32) -> Self {
         self.daily_cap = ::std::option::Option::Some(input);
@@ -105,6 +109,10 @@ impl InAppMessageCampaignBuilder {
     pub fn set_daily_cap(mut self, input: ::std::option::Option<i32>) -> Self {
         self.daily_cap = input;
         self
+    }
+    /// <p>Daily cap which controls the number of times any in-app messages can be shown to the endpoint during a day.</p>
+    pub fn get_daily_cap(&self) -> &::std::option::Option<i32> {
+        &self.daily_cap
     }
     /// <p>In-app message content with all fields required for rendering an in-app message.</p>
     pub fn in_app_message(mut self, input: crate::types::InAppMessage) -> Self {
@@ -119,6 +127,10 @@ impl InAppMessageCampaignBuilder {
         self.in_app_message = input;
         self
     }
+    /// <p>In-app message content with all fields required for rendering an in-app message.</p>
+    pub fn get_in_app_message(&self) -> &::std::option::Option<crate::types::InAppMessage> {
+        &self.in_app_message
+    }
     /// <p>Priority of the in-app message.</p>
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
@@ -128,6 +140,10 @@ impl InAppMessageCampaignBuilder {
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
+    }
+    /// <p>Priority of the in-app message.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
     }
     /// <p>Schedule of the campaign.</p>
     pub fn schedule(mut self, input: crate::types::InAppCampaignSchedule) -> Self {
@@ -142,6 +158,10 @@ impl InAppMessageCampaignBuilder {
         self.schedule = input;
         self
     }
+    /// <p>Schedule of the campaign.</p>
+    pub fn get_schedule(&self) -> &::std::option::Option<crate::types::InAppCampaignSchedule> {
+        &self.schedule
+    }
     /// <p>Session cap which controls the number of times an in-app message can be shown to the endpoint during an application session.</p>
     pub fn session_cap(mut self, input: i32) -> Self {
         self.session_cap = ::std::option::Option::Some(input);
@@ -151,6 +171,10 @@ impl InAppMessageCampaignBuilder {
     pub fn set_session_cap(mut self, input: ::std::option::Option<i32>) -> Self {
         self.session_cap = input;
         self
+    }
+    /// <p>Session cap which controls the number of times an in-app message can be shown to the endpoint during an application session.</p>
+    pub fn get_session_cap(&self) -> &::std::option::Option<i32> {
+        &self.session_cap
     }
     /// <p>Total cap which controls the number of times an in-app message can be shown to the endpoint.</p>
     pub fn total_cap(mut self, input: i32) -> Self {
@@ -162,6 +186,10 @@ impl InAppMessageCampaignBuilder {
         self.total_cap = input;
         self
     }
+    /// <p>Total cap which controls the number of times an in-app message can be shown to the endpoint.</p>
+    pub fn get_total_cap(&self) -> &::std::option::Option<i32> {
+        &self.total_cap
+    }
     /// <p>Treatment id of the campaign.</p>
     pub fn treatment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.treatment_id = ::std::option::Option::Some(input.into());
@@ -171,6 +199,10 @@ impl InAppMessageCampaignBuilder {
     pub fn set_treatment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.treatment_id = input;
         self
+    }
+    /// <p>Treatment id of the campaign.</p>
+    pub fn get_treatment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.treatment_id
     }
     /// Consumes the builder and constructs a [`InAppMessageCampaign`](crate::types::InAppMessageCampaign).
     pub fn build(self) -> crate::types::InAppMessageCampaign {

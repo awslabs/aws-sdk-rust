@@ -36,6 +36,12 @@ impl DeleteFlowLogsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteFlowLogs as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_flow_logs::builders::DeleteFlowLogsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DeleteFlowLogsFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// Appends an item to `FlowLogIds`.
     ///
     /// To override the contents of this collection use [`set_flow_log_ids`](Self::set_flow_log_ids).
@@ -144,5 +154,12 @@ impl DeleteFlowLogsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_flow_log_ids(input);
         self
+    }
+    /// <p>One or more flow log IDs.</p>
+    /// <p>Constraint: Maximum of 1000 flow log IDs.</p>
+    pub fn get_flow_log_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_flow_log_ids()
     }
 }

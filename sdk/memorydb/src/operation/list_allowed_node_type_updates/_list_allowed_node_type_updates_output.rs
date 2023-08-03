@@ -66,6 +66,12 @@ impl ListAllowedNodeTypeUpdatesOutputBuilder {
         self.scale_up_node_types = input;
         self
     }
+    /// <p>A list node types which you can use to scale up your cluster.</p>
+    pub fn get_scale_up_node_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.scale_up_node_types
+    }
     /// Appends an item to `scale_down_node_types`.
     ///
     /// To override the contents of this collection use [`set_scale_down_node_types`](Self::set_scale_down_node_types).
@@ -87,6 +93,12 @@ impl ListAllowedNodeTypeUpdatesOutputBuilder {
     ) -> Self {
         self.scale_down_node_types = input;
         self
+    }
+    /// <p>A list node types which you can use to scale down your cluster.</p>
+    pub fn get_scale_down_node_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.scale_down_node_types
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

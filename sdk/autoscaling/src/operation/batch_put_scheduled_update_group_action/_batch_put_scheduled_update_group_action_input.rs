@@ -57,6 +57,10 @@ impl BatchPutScheduledUpdateGroupActionInputBuilder {
         self.auto_scaling_group_name = input;
         self
     }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_scaling_group_name
+    }
     /// Appends an item to `scheduled_update_group_actions`.
     ///
     /// To override the contents of this collection use [`set_scheduled_update_group_actions`](Self::set_scheduled_update_group_actions).
@@ -80,6 +84,13 @@ impl BatchPutScheduledUpdateGroupActionInputBuilder {
     ) -> Self {
         self.scheduled_update_group_actions = input;
         self
+    }
+    /// <p>One or more scheduled actions. The maximum number allowed is 50.</p>
+    pub fn get_scheduled_update_group_actions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledUpdateGroupActionRequest>>
+    {
+        &self.scheduled_update_group_actions
     }
     /// Consumes the builder and constructs a [`BatchPutScheduledUpdateGroupActionInput`](crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionInput, ::aws_smithy_http::operation::error::BuildError>{

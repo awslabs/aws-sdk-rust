@@ -86,6 +86,10 @@ impl ListChannelsInputBuilder {
         self.app_instance_arn = input;
         self
     }
+    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    pub fn get_app_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_instance_arn
+    }
     /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels. </p>
     pub fn privacy(mut self, input: crate::types::ChannelPrivacy) -> Self {
         self.privacy = ::std::option::Option::Some(input);
@@ -99,6 +103,10 @@ impl ListChannelsInputBuilder {
         self.privacy = input;
         self
     }
+    /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels. </p>
+    pub fn get_privacy(&self) -> &::std::option::Option<crate::types::ChannelPrivacy> {
+        &self.privacy
+    }
     /// <p>The maximum number of channels that you want to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -108,6 +116,10 @@ impl ListChannelsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of channels that you want to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The token passed by previous API calls until all requested channels are returned.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -119,6 +131,10 @@ impl ListChannelsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token passed by previous API calls until all requested channels are returned.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.chime_bearer = ::std::option::Option::Some(input.into());
@@ -128,6 +144,10 @@ impl ListChannelsInputBuilder {
     pub fn set_chime_bearer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.chime_bearer = input;
         self
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
+        &self.chime_bearer
     }
     /// Consumes the builder and constructs a [`ListChannelsInput`](crate::operation::list_channels::ListChannelsInput).
     pub fn build(

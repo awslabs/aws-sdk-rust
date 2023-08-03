@@ -54,6 +54,10 @@ impl DeleteBotOutputBuilder {
         self.bot_id = input;
         self
     }
+    /// <p>The unique identifier of the bot that Amazon Lex is deleting.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
     /// <p>The current status of the bot. The status is <code>Deleting</code> while the bot and its associated resources are being deleted.</p>
     pub fn bot_status(mut self, input: crate::types::BotStatus) -> Self {
         self.bot_status = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl DeleteBotOutputBuilder {
     pub fn set_bot_status(mut self, input: ::std::option::Option<crate::types::BotStatus>) -> Self {
         self.bot_status = input;
         self
+    }
+    /// <p>The current status of the bot. The status is <code>Deleting</code> while the bot and its associated resources are being deleted.</p>
+    pub fn get_bot_status(&self) -> &::std::option::Option<crate::types::BotStatus> {
+        &self.bot_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

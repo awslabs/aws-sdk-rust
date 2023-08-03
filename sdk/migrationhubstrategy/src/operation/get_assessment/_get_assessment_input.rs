@@ -39,6 +39,10 @@ impl GetAssessmentInputBuilder {
         self.id = input;
         self
     }
+    /// <p> The <code>assessmentid</code> returned by <code>StartAssessment</code>.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`GetAssessmentInput`](crate::operation::get_assessment::GetAssessmentInput).
     pub fn build(
         self,

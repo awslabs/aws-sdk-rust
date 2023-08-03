@@ -38,6 +38,13 @@ impl GetSolFunctionInstanceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetSolFunctionInstance as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_sol_function_instance::builders::GetSolFunctionInstanceInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,5 +140,9 @@ impl GetSolFunctionInstanceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_vnf_instance_id(input);
         self
+    }
+    /// <p>ID of the network function.</p>
+    pub fn get_vnf_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vnf_instance_id()
     }
 }

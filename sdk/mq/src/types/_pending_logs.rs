@@ -48,6 +48,10 @@ impl PendingLogsBuilder {
         self.audit = input;
         self
     }
+    /// <p>Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.</p>
+    pub fn get_audit(&self) -> &::std::option::Option<bool> {
+        &self.audit
+    }
     /// <p>Enables general logging.</p>
     pub fn general(mut self, input: bool) -> Self {
         self.general = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl PendingLogsBuilder {
     pub fn set_general(mut self, input: ::std::option::Option<bool>) -> Self {
         self.general = input;
         self
+    }
+    /// <p>Enables general logging.</p>
+    pub fn get_general(&self) -> &::std::option::Option<bool> {
+        &self.general
     }
     /// Consumes the builder and constructs a [`PendingLogs`](crate::types::PendingLogs).
     pub fn build(self) -> crate::types::PendingLogs {

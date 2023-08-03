@@ -57,6 +57,10 @@ impl StatementBuilder {
         self.messages = input;
         self
     }
+    /// <p>A collection of message objects.</p>
+    pub fn get_messages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Message>> {
+        &self.messages
+    }
     /// <p> At runtime, if the client is using the <a href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> API, Amazon Lex includes the response card in the response. It substitutes all of the session attributes and slot values for placeholders in the response card. </p>
     pub fn response_card(
         mut self,
@@ -72,6 +76,10 @@ impl StatementBuilder {
     ) -> Self {
         self.response_card = input;
         self
+    }
+    /// <p> At runtime, if the client is using the <a href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> API, Amazon Lex includes the response card in the response. It substitutes all of the session attributes and slot values for placeholders in the response card. </p>
+    pub fn get_response_card(&self) -> &::std::option::Option<::std::string::String> {
+        &self.response_card
     }
     /// Consumes the builder and constructs a [`Statement`](crate::types::Statement).
     pub fn build(self) -> crate::types::Statement {

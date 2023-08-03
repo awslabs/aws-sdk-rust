@@ -47,6 +47,10 @@ impl GetTimelineEventOutputBuilder {
         self.event = input;
         self
     }
+    /// <p>Details about the timeline event.</p>
+    pub fn get_event(&self) -> &::std::option::Option<crate::types::TimelineEvent> {
+        &self.event
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

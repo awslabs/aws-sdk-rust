@@ -43,6 +43,10 @@ impl S3LogsConfigurationResultBuilder {
         self.status = input;
         self
     }
+    /// <p>A value that describes whether S3 data event logs are automatically enabled for new members of the organization.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DataSourceStatus> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`S3LogsConfigurationResult`](crate::types::S3LogsConfigurationResult).
     pub fn build(self) -> crate::types::S3LogsConfigurationResult {
         crate::types::S3LogsConfigurationResult {

@@ -54,6 +54,12 @@ impl RouteAnalysisEndpointOptionsSpecificationBuilder {
         self.transit_gateway_attachment_arn = input;
         self
     }
+    /// <p>The ARN of the transit gateway attachment.</p>
+    pub fn get_transit_gateway_attachment_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_attachment_arn
+    }
     /// <p>The IP address.</p>
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_address = ::std::option::Option::Some(input.into());
@@ -63,6 +69,10 @@ impl RouteAnalysisEndpointOptionsSpecificationBuilder {
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_address = input;
         self
+    }
+    /// <p>The IP address.</p>
+    pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address
     }
     /// Consumes the builder and constructs a [`RouteAnalysisEndpointOptionsSpecification`](crate::types::RouteAnalysisEndpointOptionsSpecification).
     pub fn build(self) -> crate::types::RouteAnalysisEndpointOptionsSpecification {

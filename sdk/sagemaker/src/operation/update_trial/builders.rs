@@ -36,6 +36,10 @@ impl UpdateTrialFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateTrial as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_trial::builders::UpdateTrialInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdateTrialFluentBuilder {
         self.inner = self.inner.set_trial_name(input);
         self
     }
+    /// <p>The name of the trial to update.</p>
+    pub fn get_trial_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_trial_name()
+    }
     /// <p>The name of the trial as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
@@ -127,5 +135,9 @@ impl UpdateTrialFluentBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_display_name(input);
         self
+    }
+    /// <p>The name of the trial as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_display_name()
     }
 }

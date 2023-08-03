@@ -45,6 +45,12 @@ impl KpiProgressBarConditionalFormattingBuilder {
         self.foreground_color = input;
         self
     }
+    /// <p>The conditional formatting of the progress bar's foreground color.</p>
+    pub fn get_foreground_color(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConditionalFormattingColor> {
+        &self.foreground_color
+    }
     /// Consumes the builder and constructs a [`KpiProgressBarConditionalFormatting`](crate::types::KpiProgressBarConditionalFormatting).
     pub fn build(self) -> crate::types::KpiProgressBarConditionalFormatting {
         crate::types::KpiProgressBarConditionalFormatting {

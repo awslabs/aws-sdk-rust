@@ -36,6 +36,10 @@ impl UpdateContactFlowModuleMetadataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateContactFlowModuleMetadata as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_contact_flow_module_metadata::builders::UpdateContactFlowModuleMetadataInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl UpdateContactFlowModuleMetadataFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>The identifier of the flow module.</p>
     pub fn contact_flow_module_id(
         mut self,
@@ -116,6 +124,10 @@ impl UpdateContactFlowModuleMetadataFluentBuilder {
         self.inner = self.inner.set_contact_flow_module_id(input);
         self
     }
+    /// <p>The identifier of the flow module.</p>
+    pub fn get_contact_flow_module_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_contact_flow_module_id()
+    }
     /// <p>The name of the flow module.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -126,6 +138,10 @@ impl UpdateContactFlowModuleMetadataFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the flow module.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The description of the flow module.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -135,6 +151,10 @@ impl UpdateContactFlowModuleMetadataFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the flow module.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The state of flow module.</p>
     pub fn state(mut self, input: crate::types::ContactFlowModuleState) -> Self {
@@ -148,5 +168,9 @@ impl UpdateContactFlowModuleMetadataFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_state(input);
         self
+    }
+    /// <p>The state of flow module.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ContactFlowModuleState> {
+        self.inner.get_state()
     }
 }

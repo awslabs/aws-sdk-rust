@@ -73,6 +73,10 @@ impl TableWithColumnsResourceBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The identifier for the Data Catalog. By default, it is the account ID of the caller.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p>The name of the database for the table with columns resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database privileges to a principal. </p>
     pub fn database_name(
         mut self,
@@ -89,6 +93,10 @@ impl TableWithColumnsResourceBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The name of the database for the table with columns resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database privileges to a principal. </p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>The name of the table resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -98,6 +106,10 @@ impl TableWithColumnsResourceBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the table resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `column_names`.
     ///
@@ -118,6 +130,12 @@ impl TableWithColumnsResourceBuilder {
         self.column_names = input;
         self
     }
+    /// <p>The list of column names for the table. At least one of <code>ColumnNames</code> or <code>ColumnWildcard</code> is required.</p>
+    pub fn get_column_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.column_names
+    }
     /// <p>A wildcard specified by a <code>ColumnWildcard</code> object. At least one of <code>ColumnNames</code> or <code>ColumnWildcard</code> is required.</p>
     pub fn column_wildcard(mut self, input: crate::types::ColumnWildcard) -> Self {
         self.column_wildcard = ::std::option::Option::Some(input);
@@ -130,6 +148,10 @@ impl TableWithColumnsResourceBuilder {
     ) -> Self {
         self.column_wildcard = input;
         self
+    }
+    /// <p>A wildcard specified by a <code>ColumnWildcard</code> object. At least one of <code>ColumnNames</code> or <code>ColumnWildcard</code> is required.</p>
+    pub fn get_column_wildcard(&self) -> &::std::option::Option<crate::types::ColumnWildcard> {
+        &self.column_wildcard
     }
     /// Consumes the builder and constructs a [`TableWithColumnsResource`](crate::types::TableWithColumnsResource).
     pub fn build(self) -> crate::types::TableWithColumnsResource {

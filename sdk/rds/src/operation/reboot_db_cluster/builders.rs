@@ -39,6 +39,12 @@ impl RebootDBClusterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RebootDBCluster as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::reboot_db_cluster::builders::RebootDbClusterInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -142,5 +148,13 @@ impl RebootDBClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_db_cluster_identifier(input);
         self
+    }
+    /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
+    /// </ul>
+    pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_cluster_identifier()
     }
 }

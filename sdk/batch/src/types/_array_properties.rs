@@ -40,6 +40,10 @@ impl ArrayPropertiesBuilder {
         self.size = input;
         self
     }
+    /// <p>The size of the array job.</p>
+    pub fn get_size(&self) -> &::std::option::Option<i32> {
+        &self.size
+    }
     /// Consumes the builder and constructs a [`ArrayProperties`](crate::types::ArrayProperties).
     pub fn build(self) -> crate::types::ArrayProperties {
         crate::types::ArrayProperties { size: self.size }

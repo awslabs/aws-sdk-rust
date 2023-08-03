@@ -49,6 +49,10 @@ impl DataModelS3ConfigurationBuilder {
         self
     }
     /// <p></p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
+    }
+    /// <p></p>
     pub fn object_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_key = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +61,10 @@ impl DataModelS3ConfigurationBuilder {
     pub fn set_object_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_key = input;
         self
+    }
+    /// <p></p>
+    pub fn get_object_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_key
     }
     /// Consumes the builder and constructs a [`DataModelS3Configuration`](crate::types::DataModelS3Configuration).
     pub fn build(self) -> crate::types::DataModelS3Configuration {

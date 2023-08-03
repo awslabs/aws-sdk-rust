@@ -48,6 +48,10 @@ impl GcmChannelRequestBuilder {
         self.api_key = input;
         self
     }
+    /// <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>, that you received from Google to communicate with Google services.</p>
+    pub fn get_api_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_key
+    }
     /// <p>Specifies whether to enable the GCM channel for the application.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl GcmChannelRequestBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>Specifies whether to enable the GCM channel for the application.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// Consumes the builder and constructs a [`GcmChannelRequest`](crate::types::GcmChannelRequest).
     pub fn build(self) -> crate::types::GcmChannelRequest {

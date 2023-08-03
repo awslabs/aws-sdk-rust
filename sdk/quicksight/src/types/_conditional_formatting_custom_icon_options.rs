@@ -48,6 +48,10 @@ impl ConditionalFormattingCustomIconOptionsBuilder {
         self.icon = input;
         self
     }
+    /// <p>Determines the type of icon.</p>
+    pub fn get_icon(&self) -> &::std::option::Option<crate::types::Icon> {
+        &self.icon
+    }
     /// <p>Determines the Unicode icon type.</p>
     pub fn unicode_icon(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.unicode_icon = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ConditionalFormattingCustomIconOptionsBuilder {
     pub fn set_unicode_icon(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unicode_icon = input;
         self
+    }
+    /// <p>Determines the Unicode icon type.</p>
+    pub fn get_unicode_icon(&self) -> &::std::option::Option<::std::string::String> {
+        &self.unicode_icon
     }
     /// Consumes the builder and constructs a [`ConditionalFormattingCustomIconOptions`](crate::types::ConditionalFormattingCustomIconOptions).
     pub fn build(self) -> crate::types::ConditionalFormattingCustomIconOptions {

@@ -48,6 +48,10 @@ impl TemplateLocationBuilder {
         self.s3_bucket = input;
         self
     }
+    /// <p>The Amazon S3 bucket name.</p>
+    pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket
+    }
     /// <p>The list of S3 keys identifying the data source files.</p>
     pub fn s3_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_key = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl TemplateLocationBuilder {
     pub fn set_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_key = input;
         self
+    }
+    /// <p>The list of S3 keys identifying the data source files.</p>
+    pub fn get_s3_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_key
     }
     /// Consumes the builder and constructs a [`TemplateLocation`](crate::types::TemplateLocation).
     pub fn build(self) -> crate::types::TemplateLocation {

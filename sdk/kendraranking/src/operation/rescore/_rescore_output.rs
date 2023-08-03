@@ -55,6 +55,10 @@ impl RescoreOutputBuilder {
         self.rescore_id = input;
         self
     }
+    /// <p>The identifier associated with the scores that Amazon Kendra Intelligent Ranking gives to the results. Amazon Kendra Intelligent Ranking rescores or re-ranks the results for the search service.</p>
+    pub fn get_rescore_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rescore_id
+    }
     /// Appends an item to `result_items`.
     ///
     /// To override the contents of this collection use [`set_result_items`](Self::set_result_items).
@@ -73,6 +77,12 @@ impl RescoreOutputBuilder {
     ) -> Self {
         self.result_items = input;
         self
+    }
+    /// <p>A list of result items for documents with new relevancy scores. The results are in descending order.</p>
+    pub fn get_result_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RescoreResultItem>> {
+        &self.result_items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

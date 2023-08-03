@@ -65,6 +65,10 @@ impl ListPolicyPrincipalsOutputBuilder {
         self.principals = input;
         self
     }
+    /// <p>The descriptions of the principals.</p>
+    pub fn get_principals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.principals
+    }
     /// <p>The marker for the next set of results, or null if there are no additional results.</p>
     pub fn next_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_marker = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl ListPolicyPrincipalsOutputBuilder {
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_marker = input;
         self
+    }
+    /// <p>The marker for the next set of results, or null if there are no additional results.</p>
+    pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -47,6 +47,10 @@ impl AssociateTagOptionWithResourceInputBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The resource identifier.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>The TagOption identifier.</p>
     pub fn tag_option_id(
         mut self,
@@ -62,6 +66,10 @@ impl AssociateTagOptionWithResourceInputBuilder {
     ) -> Self {
         self.tag_option_id = input;
         self
+    }
+    /// <p>The TagOption identifier.</p>
+    pub fn get_tag_option_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tag_option_id
     }
     /// Consumes the builder and constructs a [`AssociateTagOptionWithResourceInput`](crate::operation::associate_tag_option_with_resource::AssociateTagOptionWithResourceInput).
     pub fn build(

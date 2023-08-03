@@ -189,6 +189,10 @@ impl PutSessionOutputBuilder {
         self.content_type = input;
         self
     }
+    /// <p>Content type as specified in the <code>Accept</code> HTTP header in the request.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
+    }
     /// <p>The name of the current intent.</p>
     pub fn intent_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.intent_name = ::std::option::Option::Some(input.into());
@@ -198,6 +202,10 @@ impl PutSessionOutputBuilder {
     pub fn set_intent_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.intent_name = input;
         self
+    }
+    /// <p>The name of the current intent.</p>
+    pub fn get_intent_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.intent_name
     }
     /// <p>Map of zero or more intent slots Amazon Lex detected from the user input during the conversation.</p>
     /// <p>Amazon Lex creates a resolution list containing likely values for a slot. The value that it returns is determined by the <code>valueSelectionStrategy</code> selected when the slot type was created or updated. If <code>valueSelectionStrategy</code> is set to <code>ORIGINAL_VALUE</code>, the value provided by the user is returned, if the user value is similar to the slot values. If <code>valueSelectionStrategy</code> is set to <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the resolution list or, if there is no resolution list, null. If you don't specify a <code>valueSelectionStrategy</code> the default is <code>ORIGINAL_VALUE</code>. </p>
@@ -210,6 +218,11 @@ impl PutSessionOutputBuilder {
     pub fn set_slots(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.slots = input;
         self
+    }
+    /// <p>Map of zero or more intent slots Amazon Lex detected from the user input during the conversation.</p>
+    /// <p>Amazon Lex creates a resolution list containing likely values for a slot. The value that it returns is determined by the <code>valueSelectionStrategy</code> selected when the slot type was created or updated. If <code>valueSelectionStrategy</code> is set to <code>ORIGINAL_VALUE</code>, the value provided by the user is returned, if the user value is similar to the slot values. If <code>valueSelectionStrategy</code> is set to <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the resolution list or, if there is no resolution list, null. If you don't specify a <code>valueSelectionStrategy</code> the default is <code>ORIGINAL_VALUE</code>. </p>
+    pub fn get_slots(&self) -> &::std::option::Option<::std::string::String> {
+        &self.slots
     }
     /// <p>Map of key/value pairs representing session-specific context information.</p>
     pub fn session_attributes(
@@ -226,6 +239,10 @@ impl PutSessionOutputBuilder {
     ) -> Self {
         self.session_attributes = input;
         self
+    }
+    /// <p>Map of key/value pairs representing session-specific context information.</p>
+    pub fn get_session_attributes(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_attributes
     }
     /// <p>The next message that should be presented to the user.</p>
     /// <p>You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the <code>message</code> field is null. You should use the <code>encodedMessage</code> field instead.</p>
@@ -246,6 +263,14 @@ impl PutSessionOutputBuilder {
         self
     }
     /// <p>The next message that should be presented to the user.</p>
+    /// <p>You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the <code>message</code> field is null. You should use the <code>encodedMessage</code> field instead.</p>
+    #[deprecated(
+        note = "The message field is deprecated, use the encodedMessage field instead. The message field is available only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR and it-IT locales."
+    )]
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
+    /// <p>The next message that should be presented to the user.</p>
     /// <p>The <code>encodedMessage</code> field is base-64 encoded. You must decode the field before you can use the value.</p>
     pub fn encoded_message(
         mut self,
@@ -262,6 +287,11 @@ impl PutSessionOutputBuilder {
     ) -> Self {
         self.encoded_message = input;
         self
+    }
+    /// <p>The next message that should be presented to the user.</p>
+    /// <p>The <code>encodedMessage</code> field is base-64 encoded. You must decode the field before you can use the value.</p>
+    pub fn get_encoded_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encoded_message
     }
     /// <p>The format of the response message. One of the following values:</p>
     /// <ul>
@@ -287,6 +317,16 @@ impl PutSessionOutputBuilder {
     ) -> Self {
         self.message_format = input;
         self
+    }
+    /// <p>The format of the response message. One of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>PlainText</code> - The message contains plain UTF-8 text.</p> </li>
+    /// <li> <p> <code>CustomPayload</code> - The message is a custom format for the client.</p> </li>
+    /// <li> <p> <code>SSML</code> - The message contains text formatted for voice output.</p> </li>
+    /// <li> <p> <code>Composite</code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p> </li>
+    /// </ul>
+    pub fn get_message_format(&self) -> &::std::option::Option<crate::types::MessageFormatType> {
+        &self.message_format
     }
     /// <p></p>
     /// <ul>
@@ -317,6 +357,18 @@ impl PutSessionOutputBuilder {
         self.dialog_state = input;
         self
     }
+    /// <p></p>
+    /// <ul>
+    /// <li> <p> <code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no" response to confirm the intent before fulfilling an intent.</p> </li>
+    /// <li> <p> <code>ElicitIntent</code> - Amazon Lex wants to elicit the user's intent.</p> </li>
+    /// <li> <p> <code>ElicitSlot</code> - Amazon Lex is expecting the value of a slot for the current intent.</p> </li>
+    /// <li> <p> <code>Failed</code> - Conveys that the conversation with the user has failed. This can happen for various reasons, including the user does not provide an appropriate response to prompts from the service, or if the Lambda function fails to fulfill the intent.</p> </li>
+    /// <li> <p> <code>Fulfilled</code> - Conveys that the Lambda function has sucessfully fulfilled the intent.</p> </li>
+    /// <li> <p> <code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the intent.</p> </li>
+    /// </ul>
+    pub fn get_dialog_state(&self) -> &::std::option::Option<crate::types::DialogState> {
+        &self.dialog_state
+    }
     /// <p>If the <code>dialogState</code> is <code>ElicitSlot</code>, returns the name of the slot for which Amazon Lex is eliciting a value.</p>
     pub fn slot_to_elicit(
         mut self,
@@ -333,6 +385,10 @@ impl PutSessionOutputBuilder {
         self.slot_to_elicit = input;
         self
     }
+    /// <p>If the <code>dialogState</code> is <code>ElicitSlot</code>, returns the name of the slot for which Amazon Lex is eliciting a value.</p>
+    pub fn get_slot_to_elicit(&self) -> &::std::option::Option<::std::string::String> {
+        &self.slot_to_elicit
+    }
     /// <p>The audio version of the message to convey to the user.</p>
     pub fn audio_stream(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
         self.audio_stream = ::std::option::Option::Some(input);
@@ -346,6 +402,12 @@ impl PutSessionOutputBuilder {
         self.audio_stream = input;
         self
     }
+    /// <p>The audio version of the message to convey to the user.</p>
+    pub fn get_audio_stream(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+        &self.audio_stream
+    }
     /// <p>A unique identifier for the session.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
@@ -355,6 +417,10 @@ impl PutSessionOutputBuilder {
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_id = input;
         self
+    }
+    /// <p>A unique identifier for the session.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
     }
     /// <p>A list of active contexts for the session.</p>
     pub fn active_contexts(
@@ -371,6 +437,10 @@ impl PutSessionOutputBuilder {
     ) -> Self {
         self.active_contexts = input;
         self
+    }
+    /// <p>A list of active contexts for the session.</p>
+    pub fn get_active_contexts(&self) -> &::std::option::Option<::std::string::String> {
+        &self.active_contexts
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

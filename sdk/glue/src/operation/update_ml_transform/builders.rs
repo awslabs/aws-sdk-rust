@@ -37,6 +37,12 @@ impl UpdateMLTransformFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateMLTransform as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_ml_transform::builders::UpdateMlTransformInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl UpdateMLTransformFluentBuilder {
         self.inner = self.inner.set_transform_id(input);
         self
     }
+    /// <p>A unique identifier that was generated when the transform was created.</p>
+    pub fn get_transform_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_transform_id()
+    }
     /// <p>The unique name that you gave the transform when you created it.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -137,6 +147,10 @@ impl UpdateMLTransformFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The unique name that you gave the transform when you created it.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A description of the transform. The default is an empty string.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -146,6 +160,10 @@ impl UpdateMLTransformFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the transform. The default is an empty string.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The configuration parameters that are specific to the transform type (algorithm) used. Conditionally dependent on the transform type.</p>
     pub fn parameters(mut self, input: crate::types::TransformParameters) -> Self {
@@ -160,6 +178,10 @@ impl UpdateMLTransformFluentBuilder {
         self.inner = self.inner.set_parameters(input);
         self
     }
+    /// <p>The configuration parameters that are specific to the transform type (algorithm) used. Conditionally dependent on the transform type.</p>
+    pub fn get_parameters(&self) -> &::std::option::Option<crate::types::TransformParameters> {
+        self.inner.get_parameters()
+    }
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions.</p>
     pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role(input.into());
@@ -170,6 +192,10 @@ impl UpdateMLTransformFluentBuilder {
         self.inner = self.inner.set_role(input);
         self
     }
+    /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions.</p>
+    pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role()
+    }
     /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
     pub fn glue_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.glue_version(input.into());
@@ -179,6 +205,10 @@ impl UpdateMLTransformFluentBuilder {
     pub fn set_glue_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_glue_version(input);
         self
+    }
+    /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+    pub fn get_glue_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_glue_version()
     }
     /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
     /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
@@ -191,6 +221,11 @@ impl UpdateMLTransformFluentBuilder {
     pub fn set_max_capacity(mut self, input: ::std::option::Option<f64>) -> Self {
         self.inner = self.inner.set_max_capacity(input);
         self
+    }
+    /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
+    /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
+    pub fn get_max_capacity(&self) -> &::std::option::Option<f64> {
+        self.inner.get_max_capacity()
     }
     /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
     /// <ul>
@@ -215,6 +250,15 @@ impl UpdateMLTransformFluentBuilder {
         self.inner = self.inner.set_worker_type(input);
         self
     }
+    /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
+    /// <ul>
+    /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+    /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
+    /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
+    /// </ul>
+    pub fn get_worker_type(&self) -> &::std::option::Option<crate::types::WorkerType> {
+        self.inner.get_worker_type()
+    }
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when this task runs.</p>
     pub fn number_of_workers(mut self, input: i32) -> Self {
         self.inner = self.inner.number_of_workers(input);
@@ -224,6 +268,10 @@ impl UpdateMLTransformFluentBuilder {
     pub fn set_number_of_workers(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_number_of_workers(input);
         self
+    }
+    /// <p>The number of workers of a defined <code>workerType</code> that are allocated when this task runs.</p>
+    pub fn get_number_of_workers(&self) -> &::std::option::Option<i32> {
+        self.inner.get_number_of_workers()
     }
     /// <p>The timeout for a task run for this transform in minutes. This is the maximum time that a task run for this transform can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
     pub fn timeout(mut self, input: i32) -> Self {
@@ -235,6 +283,10 @@ impl UpdateMLTransformFluentBuilder {
         self.inner = self.inner.set_timeout(input);
         self
     }
+    /// <p>The timeout for a task run for this transform in minutes. This is the maximum time that a task run for this transform can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
+    pub fn get_timeout(&self) -> &::std::option::Option<i32> {
+        self.inner.get_timeout()
+    }
     /// <p>The maximum number of times to retry a task for this transform after a task run fails.</p>
     pub fn max_retries(mut self, input: i32) -> Self {
         self.inner = self.inner.max_retries(input);
@@ -244,5 +296,9 @@ impl UpdateMLTransformFluentBuilder {
     pub fn set_max_retries(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_retries(input);
         self
+    }
+    /// <p>The maximum number of times to retry a task for this transform after a task run fails.</p>
+    pub fn get_max_retries(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_retries()
     }
 }

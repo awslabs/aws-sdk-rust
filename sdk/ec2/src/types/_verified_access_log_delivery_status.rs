@@ -53,6 +53,12 @@ impl VerifiedAccessLogDeliveryStatusBuilder {
         self.code = input;
         self
     }
+    /// <p>The status code.</p>
+    pub fn get_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::VerifiedAccessLogDeliveryStatusCode> {
+        &self.code
+    }
     /// <p>The status message.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -62,6 +68,10 @@ impl VerifiedAccessLogDeliveryStatusBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The status message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`VerifiedAccessLogDeliveryStatus`](crate::types::VerifiedAccessLogDeliveryStatus).
     pub fn build(self) -> crate::types::VerifiedAccessLogDeliveryStatus {

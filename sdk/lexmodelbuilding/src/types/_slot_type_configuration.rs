@@ -45,6 +45,12 @@ impl SlotTypeConfigurationBuilder {
         self.regex_configuration = input;
         self
     }
+    /// <p>A regular expression used to validate the value of a slot.</p>
+    pub fn get_regex_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SlotTypeRegexConfiguration> {
+        &self.regex_configuration
+    }
     /// Consumes the builder and constructs a [`SlotTypeConfiguration`](crate::types::SlotTypeConfiguration).
     pub fn build(self) -> crate::types::SlotTypeConfiguration {
         crate::types::SlotTypeConfiguration {

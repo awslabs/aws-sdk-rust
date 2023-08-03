@@ -66,6 +66,10 @@ impl RequestUploadCredentialsOutputBuilder {
         self.upload_credentials = input;
         self
     }
+    /// <p>Amazon Web Services credentials required when uploading a game build to the storage location. These credentials have a limited lifespan and are valid only for the build they were issued for.</p>
+    pub fn get_upload_credentials(&self) -> &::std::option::Option<crate::types::AwsCredentials> {
+        &self.upload_credentials
+    }
     /// <p>Amazon S3 path and key, identifying where the game build files are stored.</p>
     pub fn storage_location(mut self, input: crate::types::S3Location) -> Self {
         self.storage_location = ::std::option::Option::Some(input);
@@ -78,6 +82,10 @@ impl RequestUploadCredentialsOutputBuilder {
     ) -> Self {
         self.storage_location = input;
         self
+    }
+    /// <p>Amazon S3 path and key, identifying where the game build files are stored.</p>
+    pub fn get_storage_location(&self) -> &::std::option::Option<crate::types::S3Location> {
+        &self.storage_location
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

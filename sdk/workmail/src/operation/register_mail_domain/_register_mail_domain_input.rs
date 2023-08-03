@@ -56,6 +56,10 @@ impl RegisterMailDomainInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>Idempotency token used when retrying requests.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The WorkMail organization under which you're creating the domain.</p>
     pub fn organization_id(
         mut self,
@@ -72,6 +76,10 @@ impl RegisterMailDomainInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The WorkMail organization under which you're creating the domain.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>The name of the mail domain to create in WorkMail and SES.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl RegisterMailDomainInputBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
+    }
+    /// <p>The name of the mail domain to create in WorkMail and SES.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// Consumes the builder and constructs a [`RegisterMailDomainInput`](crate::operation::register_mail_domain::RegisterMailDomainInput).
     pub fn build(

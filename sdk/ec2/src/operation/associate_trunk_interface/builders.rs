@@ -41,6 +41,13 @@ impl AssociateTrunkInterfaceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateTrunkInterface as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::associate_trunk_interface::builders::AssociateTrunkInterfaceInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +144,10 @@ impl AssociateTrunkInterfaceFluentBuilder {
         self.inner = self.inner.set_branch_interface_id(input);
         self
     }
+    /// <p>The ID of the branch network interface.</p>
+    pub fn get_branch_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_branch_interface_id()
+    }
     /// <p>The ID of the trunk network interface.</p>
     pub fn trunk_interface_id(
         mut self,
@@ -153,6 +164,10 @@ impl AssociateTrunkInterfaceFluentBuilder {
         self.inner = self.inner.set_trunk_interface_id(input);
         self
     }
+    /// <p>The ID of the trunk network interface.</p>
+    pub fn get_trunk_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_trunk_interface_id()
+    }
     /// <p>The ID of the VLAN. This applies to the VLAN protocol.</p>
     pub fn vlan_id(mut self, input: i32) -> Self {
         self.inner = self.inner.vlan_id(input);
@@ -162,6 +177,10 @@ impl AssociateTrunkInterfaceFluentBuilder {
     pub fn set_vlan_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_vlan_id(input);
         self
+    }
+    /// <p>The ID of the VLAN. This applies to the VLAN protocol.</p>
+    pub fn get_vlan_id(&self) -> &::std::option::Option<i32> {
+        self.inner.get_vlan_id()
     }
     /// <p>The application key. This applies to the GRE protocol.</p>
     pub fn gre_key(mut self, input: i32) -> Self {
@@ -173,6 +192,10 @@ impl AssociateTrunkInterfaceFluentBuilder {
         self.inner = self.inner.set_gre_key(input);
         self
     }
+    /// <p>The application key. This applies to the GRE protocol.</p>
+    pub fn get_gre_key(&self) -> &::std::option::Option<i32> {
+        self.inner.get_gre_key()
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -183,6 +206,10 @@ impl AssociateTrunkInterfaceFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -192,5 +219,9 @@ impl AssociateTrunkInterfaceFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

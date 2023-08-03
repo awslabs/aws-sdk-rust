@@ -40,6 +40,10 @@ impl DeleteInputInputBuilder {
         self.input_id = input;
         self
     }
+    /// Unique ID of the input
+    pub fn get_input_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_id
+    }
     /// Consumes the builder and constructs a [`DeleteInputInput`](crate::operation::delete_input::DeleteInputInput).
     pub fn build(
         self,

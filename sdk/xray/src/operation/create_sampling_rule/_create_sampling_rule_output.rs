@@ -50,6 +50,12 @@ impl CreateSamplingRuleOutputBuilder {
         self.sampling_rule_record = input;
         self
     }
+    /// <p>The saved rule definition and metadata.</p>
+    pub fn get_sampling_rule_record(
+        &self,
+    ) -> &::std::option::Option<crate::types::SamplingRuleRecord> {
+        &self.sampling_rule_record
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

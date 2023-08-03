@@ -60,6 +60,10 @@ impl ListNotificationRulesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `notification_rules`.
     ///
     /// To override the contents of this collection use [`set_notification_rules`](Self::set_notification_rules).
@@ -78,6 +82,12 @@ impl ListNotificationRulesOutputBuilder {
     ) -> Self {
         self.notification_rules = input;
         self
+    }
+    /// <p>The list of notification rules for the Amazon Web Services account, by Amazon Resource Name (ARN) and ID. </p>
+    pub fn get_notification_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationRuleSummary>> {
+        &self.notification_rules
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -70,6 +70,10 @@ impl SnapshotErrorMessageBuilder {
         self.snapshot_identifier = input;
         self
     }
+    /// <p>A unique identifier for the snapshot returning the error.</p>
+    pub fn get_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_identifier
+    }
     /// <p>A unique identifier for the cluster.</p>
     pub fn snapshot_cluster_identifier(
         mut self,
@@ -86,6 +90,10 @@ impl SnapshotErrorMessageBuilder {
         self.snapshot_cluster_identifier = input;
         self
     }
+    /// <p>A unique identifier for the cluster.</p>
+    pub fn get_snapshot_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_cluster_identifier
+    }
     /// <p>The failure code for the error.</p>
     pub fn failure_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_code = ::std::option::Option::Some(input.into());
@@ -95,6 +103,10 @@ impl SnapshotErrorMessageBuilder {
     pub fn set_failure_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_code = input;
         self
+    }
+    /// <p>The failure code for the error.</p>
+    pub fn get_failure_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_code
     }
     /// <p>The text message describing the error.</p>
     pub fn failure_reason(
@@ -111,6 +123,10 @@ impl SnapshotErrorMessageBuilder {
     ) -> Self {
         self.failure_reason = input;
         self
+    }
+    /// <p>The text message describing the error.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     /// Consumes the builder and constructs a [`SnapshotErrorMessage`](crate::types::SnapshotErrorMessage).
     pub fn build(self) -> crate::types::SnapshotErrorMessage {

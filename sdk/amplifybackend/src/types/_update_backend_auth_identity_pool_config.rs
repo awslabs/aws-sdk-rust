@@ -40,6 +40,10 @@ impl UpdateBackendAuthIdentityPoolConfigBuilder {
         self.unauthenticated_login = input;
         self
     }
+    /// <p>A boolean value that can be set to allow or disallow guest-level authorization into your Amplify app.</p>
+    pub fn get_unauthenticated_login(&self) -> &::std::option::Option<bool> {
+        &self.unauthenticated_login
+    }
     /// Consumes the builder and constructs a [`UpdateBackendAuthIdentityPoolConfig`](crate::types::UpdateBackendAuthIdentityPoolConfig).
     pub fn build(self) -> crate::types::UpdateBackendAuthIdentityPoolConfig {
         crate::types::UpdateBackendAuthIdentityPoolConfig {

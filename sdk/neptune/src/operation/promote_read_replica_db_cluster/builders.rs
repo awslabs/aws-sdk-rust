@@ -36,6 +36,10 @@ impl PromoteReadReplicaDBClusterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PromoteReadReplicaDBCluster as a reference.
+    pub fn as_input(&self) -> &crate::operation::promote_read_replica_db_cluster::builders::PromoteReadReplicaDbClusterInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +135,9 @@ impl PromoteReadReplicaDBClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_db_cluster_identifier(input);
         self
+    }
+    /// <p>Not supported.</p>
+    pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_cluster_identifier()
     }
 }

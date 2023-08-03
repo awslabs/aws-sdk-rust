@@ -50,6 +50,10 @@ impl UpdateFirewallConfigOutputBuilder {
         self.firewall_config = input;
         self
     }
+    /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC. </p>
+    pub fn get_firewall_config(&self) -> &::std::option::Option<crate::types::FirewallConfig> {
+        &self.firewall_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

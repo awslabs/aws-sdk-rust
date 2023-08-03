@@ -72,6 +72,10 @@ impl LayerVersionContentInputBuilder {
         self.s3_bucket = input;
         self
     }
+    /// <p>The Amazon S3 bucket of the layer archive.</p>
+    pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket
+    }
     /// <p>The Amazon S3 key of the layer archive.</p>
     pub fn s3_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_key = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl LayerVersionContentInputBuilder {
     pub fn set_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_key = input;
         self
+    }
+    /// <p>The Amazon S3 key of the layer archive.</p>
+    pub fn get_s3_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_key
     }
     /// <p>For versioned objects, the version of the layer archive object to use.</p>
     pub fn s3_object_version(
@@ -98,6 +106,10 @@ impl LayerVersionContentInputBuilder {
         self.s3_object_version = input;
         self
     }
+    /// <p>For versioned objects, the version of the layer archive object to use.</p>
+    pub fn get_s3_object_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_object_version
+    }
     /// <p>The base64-encoded contents of the layer archive. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
     pub fn zip_file(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.zip_file = ::std::option::Option::Some(input);
@@ -107,6 +119,10 @@ impl LayerVersionContentInputBuilder {
     pub fn set_zip_file(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.zip_file = input;
         self
+    }
+    /// <p>The base64-encoded contents of the layer archive. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
+    pub fn get_zip_file(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.zip_file
     }
     /// Consumes the builder and constructs a [`LayerVersionContentInput`](crate::types::LayerVersionContentInput).
     pub fn build(self) -> crate::types::LayerVersionContentInput {

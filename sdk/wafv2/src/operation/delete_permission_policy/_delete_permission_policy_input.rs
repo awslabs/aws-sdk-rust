@@ -45,6 +45,11 @@ impl DeletePermissionPolicyInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the rule group from which you want to delete the policy.</p>
+    /// <p>You must be the owner of the rule group to perform this operation.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Consumes the builder and constructs a [`DeletePermissionPolicyInput`](crate::operation::delete_permission_policy::DeletePermissionPolicyInput).
     pub fn build(
         self,

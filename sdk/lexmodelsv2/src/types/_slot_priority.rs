@@ -48,6 +48,10 @@ impl SlotPriorityBuilder {
         self.priority = input;
         self
     }
+    /// <p>The priority that Amazon Lex should apply to the slot.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
+    }
     /// <p>The unique identifier of the slot.</p>
     pub fn slot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.slot_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl SlotPriorityBuilder {
     pub fn set_slot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.slot_id = input;
         self
+    }
+    /// <p>The unique identifier of the slot.</p>
+    pub fn get_slot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.slot_id
     }
     /// Consumes the builder and constructs a [`SlotPriority`](crate::types::SlotPriority).
     pub fn build(self) -> crate::types::SlotPriority {

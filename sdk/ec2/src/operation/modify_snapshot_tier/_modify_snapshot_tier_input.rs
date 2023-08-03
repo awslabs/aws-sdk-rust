@@ -56,6 +56,10 @@ impl ModifySnapshotTierInputBuilder {
         self.snapshot_id = input;
         self
     }
+    /// <p>The ID of the snapshot.</p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_id
+    }
     /// <p>The name of the storage tier. You must specify <code>archive</code>.</p>
     pub fn storage_tier(mut self, input: crate::types::TargetStorageTier) -> Self {
         self.storage_tier = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl ModifySnapshotTierInputBuilder {
         self.storage_tier = input;
         self
     }
+    /// <p>The name of the storage tier. You must specify <code>archive</code>.</p>
+    pub fn get_storage_tier(&self) -> &::std::option::Option<crate::types::TargetStorageTier> {
+        &self.storage_tier
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -78,6 +86,10 @@ impl ModifySnapshotTierInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`ModifySnapshotTierInput`](crate::operation::modify_snapshot_tier::ModifySnapshotTierInput).
     pub fn build(

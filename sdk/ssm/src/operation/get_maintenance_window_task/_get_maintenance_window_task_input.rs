@@ -49,6 +49,10 @@ impl GetMaintenanceWindowTaskInputBuilder {
         self.window_id = input;
         self
     }
+    /// <p>The maintenance window ID that includes the task to retrieve.</p>
+    pub fn get_window_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.window_id
+    }
     /// <p>The maintenance window task ID to retrieve.</p>
     pub fn window_task_id(
         mut self,
@@ -64,6 +68,10 @@ impl GetMaintenanceWindowTaskInputBuilder {
     ) -> Self {
         self.window_task_id = input;
         self
+    }
+    /// <p>The maintenance window task ID to retrieve.</p>
+    pub fn get_window_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.window_task_id
     }
     /// Consumes the builder and constructs a [`GetMaintenanceWindowTaskInput`](crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskInput).
     pub fn build(

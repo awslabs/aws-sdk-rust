@@ -82,6 +82,10 @@ impl MedicalItemBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The start time, in milliseconds, of the transcribed item.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<f64> {
+        &self.start_time
+    }
     /// <p>The end time, in milliseconds, of the transcribed item.</p>
     pub fn end_time(mut self, input: f64) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -91,6 +95,10 @@ impl MedicalItemBuilder {
     pub fn set_end_time(mut self, input: ::std::option::Option<f64>) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The end time, in milliseconds, of the transcribed item.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<f64> {
+        &self.end_time
     }
     /// <p>The type of item identified. Options are: <code>PRONUNCIATION</code> (spoken words) and <code>PUNCTUATION</code>.</p>
     pub fn r#type(mut self, input: crate::types::ItemType) -> Self {
@@ -102,6 +110,10 @@ impl MedicalItemBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of item identified. Options are: <code>PRONUNCIATION</code> (spoken words) and <code>PUNCTUATION</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ItemType> {
+        &self.r#type
+    }
     /// <p>The word or punctuation that was transcribed.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
@@ -111,6 +123,10 @@ impl MedicalItemBuilder {
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
+    }
+    /// <p>The word or punctuation that was transcribed.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
     }
     /// <p>The confidence score associated with a word or phrase in your transcript.</p>
     /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified item correctly matches the item spoken in your media.</p>
@@ -124,6 +140,11 @@ impl MedicalItemBuilder {
         self.confidence = input;
         self
     }
+    /// <p>The confidence score associated with a word or phrase in your transcript.</p>
+    /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified item correctly matches the item spoken in your media.</p>
+    pub fn get_confidence(&self) -> &::std::option::Option<f64> {
+        &self.confidence
+    }
     /// <p>If speaker partitioning is enabled, <code>Speaker</code> labels the speaker of the specified item.</p>
     pub fn speaker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.speaker = ::std::option::Option::Some(input.into());
@@ -133,6 +154,10 @@ impl MedicalItemBuilder {
     pub fn set_speaker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.speaker = input;
         self
+    }
+    /// <p>If speaker partitioning is enabled, <code>Speaker</code> labels the speaker of the specified item.</p>
+    pub fn get_speaker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.speaker
     }
     /// Consumes the builder and constructs a [`MedicalItem`](crate::types::MedicalItem).
     pub fn build(self) -> crate::types::MedicalItem {

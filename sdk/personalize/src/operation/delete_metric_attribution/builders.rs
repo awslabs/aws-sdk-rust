@@ -37,6 +37,13 @@ impl DeleteMetricAttributionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteMetricAttribution as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_metric_attribution::builders::DeleteMetricAttributionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +139,9 @@ impl DeleteMetricAttributionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_metric_attribution_arn(input);
         self
+    }
+    /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
+    pub fn get_metric_attribution_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_metric_attribution_arn()
     }
 }

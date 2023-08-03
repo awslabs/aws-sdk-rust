@@ -55,6 +55,10 @@ impl GetArtifactUrlOutputBuilder {
         self.artifact_id = input;
         self
     }
+    /// <p> The unique ID for an artifact. </p>
+    pub fn get_artifact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.artifact_id
+    }
     /// <p> The presigned URL for the artifact. </p>
     pub fn artifact_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.artifact_url = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl GetArtifactUrlOutputBuilder {
     pub fn set_artifact_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.artifact_url = input;
         self
+    }
+    /// <p> The presigned URL for the artifact. </p>
+    pub fn get_artifact_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.artifact_url
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -70,6 +70,10 @@ impl RestoreSummaryBuilder {
         self.source_backup_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the backup from which the table was restored.</p>
+    pub fn get_source_backup_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_backup_arn
+    }
     /// <p>The ARN of the source table of the backup that is being restored.</p>
     pub fn source_table_arn(
         mut self,
@@ -86,6 +90,10 @@ impl RestoreSummaryBuilder {
         self.source_table_arn = input;
         self
     }
+    /// <p>The ARN of the source table of the backup that is being restored.</p>
+    pub fn get_source_table_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_table_arn
+    }
     /// <p>Point in time or source backup time.</p>
     pub fn restore_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.restore_date_time = ::std::option::Option::Some(input);
@@ -99,6 +107,10 @@ impl RestoreSummaryBuilder {
         self.restore_date_time = input;
         self
     }
+    /// <p>Point in time or source backup time.</p>
+    pub fn get_restore_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.restore_date_time
+    }
     /// <p>Indicates if a restore is in progress or not.</p>
     pub fn restore_in_progress(mut self, input: bool) -> Self {
         self.restore_in_progress = ::std::option::Option::Some(input);
@@ -108,6 +120,10 @@ impl RestoreSummaryBuilder {
     pub fn set_restore_in_progress(mut self, input: ::std::option::Option<bool>) -> Self {
         self.restore_in_progress = input;
         self
+    }
+    /// <p>Indicates if a restore is in progress or not.</p>
+    pub fn get_restore_in_progress(&self) -> &::std::option::Option<bool> {
+        &self.restore_in_progress
     }
     /// Consumes the builder and constructs a [`RestoreSummary`](crate::types::RestoreSummary).
     pub fn build(self) -> crate::types::RestoreSummary {

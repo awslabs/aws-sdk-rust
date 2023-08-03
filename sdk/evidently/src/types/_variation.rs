@@ -48,6 +48,10 @@ impl VariationBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the variation.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The value assigned to this variation.</p>
     pub fn value(mut self, input: crate::types::VariableValue) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl VariationBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::VariableValue>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value assigned to this variation.</p>
+    pub fn get_value(&self) -> &::std::option::Option<crate::types::VariableValue> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`Variation`](crate::types::Variation).
     pub fn build(self) -> crate::types::Variation {

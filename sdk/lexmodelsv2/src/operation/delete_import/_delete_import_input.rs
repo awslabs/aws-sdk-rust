@@ -39,6 +39,10 @@ impl DeleteImportInputBuilder {
         self.import_id = input;
         self
     }
+    /// <p>The unique identifier of the import to delete.</p>
+    pub fn get_import_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.import_id
+    }
     /// Consumes the builder and constructs a [`DeleteImportInput`](crate::operation::delete_import::DeleteImportInput).
     pub fn build(
         self,

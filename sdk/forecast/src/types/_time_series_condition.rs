@@ -62,6 +62,10 @@ impl TimeSeriesConditionBuilder {
         self.attribute_name = input;
         self
     }
+    /// <p>The item_id, dimension name, IM name, or timestamp that you are modifying.</p>
+    pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_name
+    }
     /// <p>The value that is applied for the chosen <code>Condition</code>.</p>
     pub fn attribute_value(
         mut self,
@@ -78,6 +82,10 @@ impl TimeSeriesConditionBuilder {
         self.attribute_value = input;
         self
     }
+    /// <p>The value that is applied for the chosen <code>Condition</code>.</p>
+    pub fn get_attribute_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_value
+    }
     /// <p>The condition to apply. Valid values are <code>EQUALS</code>, <code>NOT_EQUALS</code>, <code>LESS_THAN</code> and <code>GREATER_THAN</code>.</p>
     pub fn condition(mut self, input: crate::types::Condition) -> Self {
         self.condition = ::std::option::Option::Some(input);
@@ -87,6 +95,10 @@ impl TimeSeriesConditionBuilder {
     pub fn set_condition(mut self, input: ::std::option::Option<crate::types::Condition>) -> Self {
         self.condition = input;
         self
+    }
+    /// <p>The condition to apply. Valid values are <code>EQUALS</code>, <code>NOT_EQUALS</code>, <code>LESS_THAN</code> and <code>GREATER_THAN</code>.</p>
+    pub fn get_condition(&self) -> &::std::option::Option<crate::types::Condition> {
+        &self.condition
     }
     /// Consumes the builder and constructs a [`TimeSeriesCondition`](crate::types::TimeSeriesCondition).
     pub fn build(self) -> crate::types::TimeSeriesCondition {

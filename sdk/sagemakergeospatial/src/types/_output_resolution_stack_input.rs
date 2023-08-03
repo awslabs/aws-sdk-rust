@@ -51,6 +51,10 @@ impl OutputResolutionStackInputBuilder {
         self.predefined = input;
         self
     }
+    /// <p>A string value representing Predefined Output Resolution for a stacking operation. Allowed values are <code>HIGHEST</code>, <code>LOWEST</code>, and <code>AVERAGE</code>.</p>
+    pub fn get_predefined(&self) -> &::std::option::Option<crate::types::PredefinedResolution> {
+        &self.predefined
+    }
     /// <p>The structure representing User Output Resolution for a Stacking operation defined as a value and unit.</p>
     pub fn user_defined(mut self, input: crate::types::UserDefined) -> Self {
         self.user_defined = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl OutputResolutionStackInputBuilder {
     ) -> Self {
         self.user_defined = input;
         self
+    }
+    /// <p>The structure representing User Output Resolution for a Stacking operation defined as a value and unit.</p>
+    pub fn get_user_defined(&self) -> &::std::option::Option<crate::types::UserDefined> {
+        &self.user_defined
     }
     /// Consumes the builder and constructs a [`OutputResolutionStackInput`](crate::types::OutputResolutionStackInput).
     pub fn build(self) -> crate::types::OutputResolutionStackInput {

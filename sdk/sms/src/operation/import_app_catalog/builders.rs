@@ -36,6 +36,12 @@ impl ImportAppCatalogFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ImportAppCatalog as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::import_app_catalog::builders::ImportAppCatalogInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +131,9 @@ impl ImportAppCatalogFluentBuilder {
     pub fn set_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_name(input);
         self
+    }
+    /// <p>The name of the service role. If you omit this parameter, we create a service-linked role for Migration Hub in your account. Otherwise, the role that you provide must have the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/new-customer-setup.html#sms-managed">policy and trust policy</a> described in the <i>Migration Hub User Guide</i>.</p>
+    pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_name()
     }
 }

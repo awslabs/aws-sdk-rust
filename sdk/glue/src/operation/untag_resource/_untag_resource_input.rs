@@ -47,6 +47,10 @@ impl UntagResourceInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the resource from which to remove the tags.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Appends an item to `tags_to_remove`.
     ///
     /// To override the contents of this collection use [`set_tags_to_remove`](Self::set_tags_to_remove).
@@ -68,6 +72,12 @@ impl UntagResourceInputBuilder {
     ) -> Self {
         self.tags_to_remove = input;
         self
+    }
+    /// <p>Tags to remove from this resource.</p>
+    pub fn get_tags_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tags_to_remove
     }
     /// Consumes the builder and constructs a [`UntagResourceInput`](crate::operation::untag_resource::UntagResourceInput).
     pub fn build(

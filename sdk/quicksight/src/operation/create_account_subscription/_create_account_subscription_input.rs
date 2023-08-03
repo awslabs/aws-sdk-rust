@@ -184,6 +184,17 @@ impl CreateAccountSubscriptionInputBuilder {
         self.edition = input;
         self
     }
+    /// <p>The edition of Amazon QuickSight that you want your account to have. Currently, you can choose from <code>ENTERPRISE</code> or <code>ENTERPRISE_AND_Q</code>.</p>
+    /// <p>If you choose <code>ENTERPRISE_AND_Q</code>, the following parameters are required:</p>
+    /// <ul>
+    /// <li> <p> <code>FirstName</code> </p> </li>
+    /// <li> <p> <code>LastName</code> </p> </li>
+    /// <li> <p> <code>EmailAddress</code> </p> </li>
+    /// <li> <p> <code>ContactNumber</code> </p> </li>
+    /// </ul>
+    pub fn get_edition(&self) -> &::std::option::Option<crate::types::Edition> {
+        &self.edition
+    }
     /// <p>The method that you want to use to authenticate your Amazon QuickSight account. Currently, the valid values for this parameter are <code>IAM_AND_QUICKSIGHT</code>, <code>IAM_ONLY</code>, and <code>ACTIVE_DIRECTORY</code>.</p>
     /// <p>If you choose <code>ACTIVE_DIRECTORY</code>, provide an <code>ActiveDirectoryName</code> and an <code>AdminGroup</code> associated with your Active Directory.</p>
     pub fn authentication_method(
@@ -202,6 +213,13 @@ impl CreateAccountSubscriptionInputBuilder {
         self.authentication_method = input;
         self
     }
+    /// <p>The method that you want to use to authenticate your Amazon QuickSight account. Currently, the valid values for this parameter are <code>IAM_AND_QUICKSIGHT</code>, <code>IAM_ONLY</code>, and <code>ACTIVE_DIRECTORY</code>.</p>
+    /// <p>If you choose <code>ACTIVE_DIRECTORY</code>, provide an <code>ActiveDirectoryName</code> and an <code>AdminGroup</code> associated with your Active Directory.</p>
+    pub fn get_authentication_method(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthenticationMethodOption> {
+        &self.authentication_method
+    }
     /// <p>The Amazon Web Services account ID of the account that you're using to create your Amazon QuickSight account.</p>
     pub fn aws_account_id(
         mut self,
@@ -218,6 +236,10 @@ impl CreateAccountSubscriptionInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID of the account that you're using to create your Amazon QuickSight account.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The name of your Amazon QuickSight account. This name is unique over all of Amazon Web Services, and it appears only when users sign in. You can't change <code>AccountName</code> value after the Amazon QuickSight account is created.</p>
     pub fn account_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_name = ::std::option::Option::Some(input.into());
@@ -227,6 +249,10 @@ impl CreateAccountSubscriptionInputBuilder {
     pub fn set_account_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_name = input;
         self
+    }
+    /// <p>The name of your Amazon QuickSight account. This name is unique over all of Amazon Web Services, and it appears only when users sign in. You can't change <code>AccountName</code> value after the Amazon QuickSight account is created.</p>
+    pub fn get_account_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_name
     }
     /// <p>The email address that you want Amazon QuickSight to send notifications to regarding your Amazon QuickSight account or Amazon QuickSight subscription.</p>
     pub fn notification_email(
@@ -244,6 +270,10 @@ impl CreateAccountSubscriptionInputBuilder {
         self.notification_email = input;
         self
     }
+    /// <p>The email address that you want Amazon QuickSight to send notifications to regarding your Amazon QuickSight account or Amazon QuickSight subscription.</p>
+    pub fn get_notification_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notification_email
+    }
     /// <p>The name of your Active Directory. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new Amazon QuickSight account.</p>
     pub fn active_directory_name(
         mut self,
@@ -260,6 +290,10 @@ impl CreateAccountSubscriptionInputBuilder {
         self.active_directory_name = input;
         self
     }
+    /// <p>The name of your Active Directory. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new Amazon QuickSight account.</p>
+    pub fn get_active_directory_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.active_directory_name
+    }
     /// <p>The realm of the Active Directory that is associated with your Amazon QuickSight account. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new Amazon QuickSight account.</p>
     pub fn realm(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.realm = ::std::option::Option::Some(input.into());
@@ -270,6 +304,10 @@ impl CreateAccountSubscriptionInputBuilder {
         self.realm = input;
         self
     }
+    /// <p>The realm of the Active Directory that is associated with your Amazon QuickSight account. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new Amazon QuickSight account.</p>
+    pub fn get_realm(&self) -> &::std::option::Option<::std::string::String> {
+        &self.realm
+    }
     /// <p>The ID of the Active Directory that is associated with your Amazon QuickSight account.</p>
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
@@ -279,6 +317,10 @@ impl CreateAccountSubscriptionInputBuilder {
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_id = input;
         self
+    }
+    /// <p>The ID of the Active Directory that is associated with your Amazon QuickSight account.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
     }
     /// Appends an item to `admin_group`.
     ///
@@ -299,6 +341,12 @@ impl CreateAccountSubscriptionInputBuilder {
         self.admin_group = input;
         self
     }
+    /// <p>The admin group associated with your Active Directory. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new Amazon QuickSight account. For more information about using Active Directory in Amazon QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.</p>
+    pub fn get_admin_group(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.admin_group
+    }
     /// Appends an item to `author_group`.
     ///
     /// To override the contents of this collection use [`set_author_group`](Self::set_author_group).
@@ -317,6 +365,12 @@ impl CreateAccountSubscriptionInputBuilder {
     ) -> Self {
         self.author_group = input;
         self
+    }
+    /// <p>The author group associated with your Active Directory. For more information about using Active Directory in Amazon QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.</p>
+    pub fn get_author_group(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.author_group
     }
     /// Appends an item to `reader_group`.
     ///
@@ -337,6 +391,12 @@ impl CreateAccountSubscriptionInputBuilder {
         self.reader_group = input;
         self
     }
+    /// <p>The reader group associated with your Active Direcrtory. For more information about using Active Directory in Amazon QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon QuickSight Enterprise Edition</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    pub fn get_reader_group(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.reader_group
+    }
     /// <p>The first name of the author of the Amazon QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon QuickSight account.</p>
     pub fn first_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.first_name = ::std::option::Option::Some(input.into());
@@ -347,6 +407,10 @@ impl CreateAccountSubscriptionInputBuilder {
         self.first_name = input;
         self
     }
+    /// <p>The first name of the author of the Amazon QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon QuickSight account.</p>
+    pub fn get_first_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.first_name
+    }
     /// <p>The last name of the author of the Amazon QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon QuickSight account.</p>
     pub fn last_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_name = ::std::option::Option::Some(input.into());
@@ -356,6 +420,10 @@ impl CreateAccountSubscriptionInputBuilder {
     pub fn set_last_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_name = input;
         self
+    }
+    /// <p>The last name of the author of the Amazon QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon QuickSight account.</p>
+    pub fn get_last_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_name
     }
     /// <p>The email address of the author of the Amazon QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon QuickSight account.</p>
     pub fn email_address(
@@ -373,6 +441,10 @@ impl CreateAccountSubscriptionInputBuilder {
         self.email_address = input;
         self
     }
+    /// <p>The email address of the author of the Amazon QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon QuickSight account.</p>
+    pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_address
+    }
     /// <p>A 10-digit phone number for the author of the Amazon QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon QuickSight account.</p>
     pub fn contact_number(
         mut self,
@@ -388,6 +460,10 @@ impl CreateAccountSubscriptionInputBuilder {
     ) -> Self {
         self.contact_number = input;
         self
+    }
+    /// <p>A 10-digit phone number for the author of the Amazon QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon QuickSight account.</p>
+    pub fn get_contact_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_number
     }
     /// Consumes the builder and constructs a [`CreateAccountSubscriptionInput`](crate::operation::create_account_subscription::CreateAccountSubscriptionInput).
     pub fn build(

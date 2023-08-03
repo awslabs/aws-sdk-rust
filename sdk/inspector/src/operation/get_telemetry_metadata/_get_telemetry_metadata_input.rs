@@ -46,6 +46,10 @@ impl GetTelemetryMetadataInputBuilder {
         self.assessment_run_arn = input;
         self
     }
+    /// <p>The ARN that specifies the assessment run that has the telemetry data that you want to obtain.</p>
+    pub fn get_assessment_run_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_run_arn
+    }
     /// Consumes the builder and constructs a [`GetTelemetryMetadataInput`](crate::operation::get_telemetry_metadata::GetTelemetryMetadataInput).
     pub fn build(
         self,

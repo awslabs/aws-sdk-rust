@@ -67,6 +67,12 @@ impl AddEndpointsOutputBuilder {
         self.endpoint_descriptions = input;
         self
     }
+    /// <p>The list of endpoint objects.</p>
+    pub fn get_endpoint_descriptions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointDescription>> {
+        &self.endpoint_descriptions
+    }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     pub fn endpoint_group_arn(
         mut self,
@@ -82,6 +88,10 @@ impl AddEndpointsOutputBuilder {
     ) -> Self {
         self.endpoint_group_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+    pub fn get_endpoint_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_group_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -56,6 +56,10 @@ impl ControlCommentBuilder {
         self.author_name = input;
         self
     }
+    /// <p> The name of the user who authored the comment. </p>
+    pub fn get_author_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.author_name
+    }
     /// <p> The body text of a control comment. </p>
     pub fn comment_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment_body = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl ControlCommentBuilder {
     pub fn set_comment_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment_body = input;
         self
+    }
+    /// <p> The body text of a control comment. </p>
+    pub fn get_comment_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment_body
     }
     /// <p> The time when the comment was posted. </p>
     pub fn posted_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -78,6 +86,10 @@ impl ControlCommentBuilder {
     ) -> Self {
         self.posted_date = input;
         self
+    }
+    /// <p> The time when the comment was posted. </p>
+    pub fn get_posted_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.posted_date
     }
     /// Consumes the builder and constructs a [`ControlComment`](crate::types::ControlComment).
     pub fn build(self) -> crate::types::ControlComment {

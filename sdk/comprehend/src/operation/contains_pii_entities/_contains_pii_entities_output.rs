@@ -57,6 +57,10 @@ impl ContainsPiiEntitiesOutputBuilder {
         self.labels = input;
         self
     }
+    /// <p>The labels used in the document being analyzed. Individual labels represent personally identifiable information (PII) entity types.</p>
+    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityLabel>> {
+        &self.labels
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

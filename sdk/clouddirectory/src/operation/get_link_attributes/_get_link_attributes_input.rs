@@ -70,6 +70,10 @@ impl GetLinkAttributesInputBuilder {
         self.directory_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_arn
+    }
     /// <p>Allows a typed link specifier to be accepted as input.</p>
     pub fn typed_link_specifier(mut self, input: crate::types::TypedLinkSpecifier) -> Self {
         self.typed_link_specifier = ::std::option::Option::Some(input);
@@ -82,6 +86,12 @@ impl GetLinkAttributesInputBuilder {
     ) -> Self {
         self.typed_link_specifier = input;
         self
+    }
+    /// <p>Allows a typed link specifier to be accepted as input.</p>
+    pub fn get_typed_link_specifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::TypedLinkSpecifier> {
+        &self.typed_link_specifier
     }
     /// Appends an item to `attribute_names`.
     ///
@@ -105,6 +115,12 @@ impl GetLinkAttributesInputBuilder {
         self.attribute_names = input;
         self
     }
+    /// <p>A list of attribute names whose values will be retrieved.</p>
+    pub fn get_attribute_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.attribute_names
+    }
     /// <p>The consistency level at which to retrieve the attributes on a typed link.</p>
     pub fn consistency_level(mut self, input: crate::types::ConsistencyLevel) -> Self {
         self.consistency_level = ::std::option::Option::Some(input);
@@ -117,6 +133,10 @@ impl GetLinkAttributesInputBuilder {
     ) -> Self {
         self.consistency_level = input;
         self
+    }
+    /// <p>The consistency level at which to retrieve the attributes on a typed link.</p>
+    pub fn get_consistency_level(&self) -> &::std::option::Option<crate::types::ConsistencyLevel> {
+        &self.consistency_level
     }
     /// Consumes the builder and constructs a [`GetLinkAttributesInput`](crate::operation::get_link_attributes::GetLinkAttributesInput).
     pub fn build(

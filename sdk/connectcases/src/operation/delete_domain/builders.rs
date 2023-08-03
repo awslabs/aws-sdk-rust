@@ -38,6 +38,10 @@ impl DeleteDomainFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteDomain as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_domain::builders::DeleteDomainInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,5 +123,9 @@ impl DeleteDomainFluentBuilder {
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_id(input);
         self
+    }
+    /// <p>The unique identifier of the Cases domain. </p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_id()
     }
 }

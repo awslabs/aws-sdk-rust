@@ -56,6 +56,12 @@ impl BatchGetOnPremisesInstancesOutputBuilder {
         self.instance_infos = input;
         self
     }
+    /// <p>Information about the on-premises instances.</p>
+    pub fn get_instance_infos(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceInfo>> {
+        &self.instance_infos
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

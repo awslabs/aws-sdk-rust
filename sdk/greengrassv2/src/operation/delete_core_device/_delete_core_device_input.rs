@@ -46,6 +46,10 @@ impl DeleteCoreDeviceInputBuilder {
         self.core_device_thing_name = input;
         self
     }
+    /// <p>The name of the core device. This is also the name of the IoT thing.</p>
+    pub fn get_core_device_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_device_thing_name
+    }
     /// Consumes the builder and constructs a [`DeleteCoreDeviceInput`](crate::operation::delete_core_device::DeleteCoreDeviceInput).
     pub fn build(
         self,

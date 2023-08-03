@@ -72,6 +72,16 @@ impl ConstraintSummaryBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of constraint.</p>
+    /// <ul>
+    /// <li> <p> <code>LAUNCH</code> </p> </li>
+    /// <li> <p> <code>NOTIFICATION</code> </p> </li>
+    /// <li> <p>STACKSET</p> </li>
+    /// <li> <p> <code>TEMPLATE</code> </p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p>The description of the constraint.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -81,6 +91,10 @@ impl ConstraintSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the constraint.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`ConstraintSummary`](crate::types::ConstraintSummary).
     pub fn build(self) -> crate::types::ConstraintSummary {

@@ -80,6 +80,12 @@ impl CreateMountTargetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateMountTarget as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_mount_target::builders::CreateMountTargetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -176,6 +182,10 @@ impl CreateMountTargetFluentBuilder {
         self.inner = self.inner.set_file_system_id(input);
         self
     }
+    /// <p>The ID of the file system for which to create the mount target.</p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_file_system_id()
+    }
     /// <p>The ID of the subnet to add the mount target in. For file systems that use One Zone storage classes, use the subnet that is associated with the file system's Availability Zone.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subnet_id(input.into());
@@ -186,6 +196,10 @@ impl CreateMountTargetFluentBuilder {
         self.inner = self.inner.set_subnet_id(input);
         self
     }
+    /// <p>The ID of the subnet to add the mount target in. For file systems that use One Zone storage classes, use the subnet that is associated with the file system's Availability Zone.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_subnet_id()
+    }
     /// <p>Valid IPv4 address within the address range of the specified subnet.</p>
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ip_address(input.into());
@@ -195,6 +209,10 @@ impl CreateMountTargetFluentBuilder {
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ip_address(input);
         self
+    }
+    /// <p>Valid IPv4 address within the address range of the specified subnet.</p>
+    pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ip_address()
     }
     /// Appends an item to `SecurityGroups`.
     ///
@@ -215,5 +233,11 @@ impl CreateMountTargetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_security_groups(input);
         self
+    }
+    /// <p>Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>. These must be for the same VPC as subnet specified.</p>
+    pub fn get_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_security_groups()
     }
 }

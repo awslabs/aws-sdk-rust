@@ -43,6 +43,10 @@ impl GatewayRouteStatusBuilder {
         self.status = input;
         self
     }
+    /// <p>The current status for the gateway route.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::GatewayRouteStatusCode> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`GatewayRouteStatus`](crate::types::GatewayRouteStatus).
     pub fn build(self) -> crate::types::GatewayRouteStatus {
         crate::types::GatewayRouteStatus {

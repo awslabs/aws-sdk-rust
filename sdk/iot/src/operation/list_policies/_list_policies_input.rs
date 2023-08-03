@@ -56,6 +56,10 @@ impl ListPoliciesInputBuilder {
         self.marker = input;
         self
     }
+    /// <p>The marker for the next set of results.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>The result page size.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.page_size = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl ListPoliciesInputBuilder {
         self.page_size = input;
         self
     }
+    /// <p>The result page size.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        &self.page_size
+    }
     /// <p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>
     pub fn ascending_order(mut self, input: bool) -> Self {
         self.ascending_order = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl ListPoliciesInputBuilder {
     pub fn set_ascending_order(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ascending_order = input;
         self
+    }
+    /// <p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>
+    pub fn get_ascending_order(&self) -> &::std::option::Option<bool> {
+        &self.ascending_order
     }
     /// Consumes the builder and constructs a [`ListPoliciesInput`](crate::operation::list_policies::ListPoliciesInput).
     pub fn build(

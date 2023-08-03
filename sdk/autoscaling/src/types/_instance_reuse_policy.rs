@@ -41,6 +41,10 @@ impl InstanceReusePolicyBuilder {
         self.reuse_on_scale_in = input;
         self
     }
+    /// <p>Specifies whether instances in the Auto Scaling group can be returned to the warm pool on scale in. </p>
+    pub fn get_reuse_on_scale_in(&self) -> &::std::option::Option<bool> {
+        &self.reuse_on_scale_in
+    }
     /// Consumes the builder and constructs a [`InstanceReusePolicy`](crate::types::InstanceReusePolicy).
     pub fn build(self) -> crate::types::InstanceReusePolicy {
         crate::types::InstanceReusePolicy {

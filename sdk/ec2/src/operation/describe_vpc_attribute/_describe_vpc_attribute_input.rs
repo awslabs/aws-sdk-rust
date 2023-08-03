@@ -59,6 +59,10 @@ impl DescribeVpcAttributeInputBuilder {
         self.attribute = input;
         self
     }
+    /// <p>The VPC attribute.</p>
+    pub fn get_attribute(&self) -> &::std::option::Option<crate::types::VpcAttributeName> {
+        &self.attribute
+    }
     /// <p>The ID of the VPC.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -69,6 +73,10 @@ impl DescribeVpcAttributeInputBuilder {
         self.vpc_id = input;
         self
     }
+    /// <p>The ID of the VPC.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -78,6 +86,10 @@ impl DescribeVpcAttributeInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`DescribeVpcAttributeInput`](crate::operation::describe_vpc_attribute::DescribeVpcAttributeInput).
     pub fn build(

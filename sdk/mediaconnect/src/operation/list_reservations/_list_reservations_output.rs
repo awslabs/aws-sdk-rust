@@ -55,6 +55,10 @@ impl ListReservationsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// The token that identifies which batch of results that you want to see. For example, you submit a ListReservations request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListReservations request a second time and specify the NextToken value.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `reservations`.
     ///
     /// To override the contents of this collection use [`set_reservations`](Self::set_reservations).
@@ -73,6 +77,12 @@ impl ListReservationsOutputBuilder {
     ) -> Self {
         self.reservations = input;
         self
+    }
+    /// A list of all reservations that have been purchased by this account in the current AWS Region.
+    pub fn get_reservations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Reservation>> {
+        &self.reservations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -47,6 +47,12 @@ impl DeviceRegistrationStateResourceTypeEventConfigurationBuilder {
         self.sidewalk = input;
         self
     }
+    /// <p>Device registration resource type state event configuration object for enabling or disabling Sidewalk related event topics.</p>
+    pub fn get_sidewalk(
+        &self,
+    ) -> &::std::option::Option<crate::types::SidewalkResourceTypeEventConfiguration> {
+        &self.sidewalk
+    }
     /// Consumes the builder and constructs a [`DeviceRegistrationStateResourceTypeEventConfiguration`](crate::types::DeviceRegistrationStateResourceTypeEventConfiguration).
     pub fn build(self) -> crate::types::DeviceRegistrationStateResourceTypeEventConfiguration {
         crate::types::DeviceRegistrationStateResourceTypeEventConfiguration {

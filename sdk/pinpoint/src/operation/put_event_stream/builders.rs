@@ -36,6 +36,12 @@ impl PutEventStreamFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutEventStream as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_event_stream::builders::PutEventStreamInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl PutEventStreamFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>Specifies the Amazon Resource Name (ARN) of an event stream to publish events to and the AWS Identity and Access Management (IAM) role to use when publishing those events.</p>
     pub fn write_event_stream(mut self, input: crate::types::WriteEventStream) -> Self {
         self.inner = self.inner.write_event_stream(input);
@@ -144,5 +154,9 @@ impl PutEventStreamFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_write_event_stream(input);
         self
+    }
+    /// <p>Specifies the Amazon Resource Name (ARN) of an event stream to publish events to and the AWS Identity and Access Management (IAM) role to use when publishing those events.</p>
+    pub fn get_write_event_stream(&self) -> &::std::option::Option<crate::types::WriteEventStream> {
+        self.inner.get_write_event_stream()
     }
 }

@@ -61,6 +61,10 @@ impl UpdateBasePathMappingInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The domain name of the BasePathMapping resource to change.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The base path of the BasePathMapping resource to change.</p>
     /// <p>To specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
     pub fn base_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -72,6 +76,11 @@ impl UpdateBasePathMappingInputBuilder {
     pub fn set_base_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.base_path = input;
         self
+    }
+    /// <p>The base path of the BasePathMapping resource to change.</p>
+    /// <p>To specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
+    pub fn get_base_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.base_path
     }
     /// Appends an item to `patch_operations`.
     ///
@@ -91,6 +100,12 @@ impl UpdateBasePathMappingInputBuilder {
     ) -> Self {
         self.patch_operations = input;
         self
+    }
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    pub fn get_patch_operations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
+        &self.patch_operations
     }
     /// Consumes the builder and constructs a [`UpdateBasePathMappingInput`](crate::operation::update_base_path_mapping::UpdateBasePathMappingInput).
     pub fn build(

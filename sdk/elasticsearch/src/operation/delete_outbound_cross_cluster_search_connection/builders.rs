@@ -36,6 +36,10 @@ impl DeleteOutboundCrossClusterSearchConnectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteOutboundCrossClusterSearchConnection as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_outbound_cross_cluster_search_connection::builders::DeleteOutboundCrossClusterSearchConnectionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -105,5 +109,11 @@ impl DeleteOutboundCrossClusterSearchConnectionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cross_cluster_search_connection_id(input);
         self
+    }
+    /// <p>The id of the outbound connection that you want to permanently delete.</p>
+    pub fn get_cross_cluster_search_connection_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cross_cluster_search_connection_id()
     }
 }

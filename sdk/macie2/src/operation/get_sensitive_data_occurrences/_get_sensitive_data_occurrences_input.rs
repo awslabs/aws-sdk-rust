@@ -39,6 +39,10 @@ impl GetSensitiveDataOccurrencesInputBuilder {
         self.finding_id = input;
         self
     }
+    /// <p>The unique identifier for the finding.</p>
+    pub fn get_finding_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.finding_id
+    }
     /// Consumes the builder and constructs a [`GetSensitiveDataOccurrencesInput`](crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesInput).
     pub fn build(
         self,

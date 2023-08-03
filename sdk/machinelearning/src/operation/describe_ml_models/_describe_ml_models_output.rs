@@ -65,6 +65,10 @@ impl DescribeMlModelsOutputBuilder {
         self.results = input;
         self
     }
+    /// <p>A list of <code>MLModel</code> that meet the search criteria.</p>
+    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MlModel>> {
+        &self.results
+    }
     /// <p>The ID of the next page in the paginated results that indicates at least one more page follows.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl DescribeMlModelsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The ID of the next page in the paginated results that indicates at least one more page follows.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

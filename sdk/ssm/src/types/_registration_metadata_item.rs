@@ -49,6 +49,10 @@ impl RegistrationMetadataItemBuilder {
         self
     }
     /// <p>Reserved for internal use.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
+    /// <p>Reserved for internal use.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +61,10 @@ impl RegistrationMetadataItemBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`RegistrationMetadataItem`](crate::types::RegistrationMetadataItem).
     pub fn build(self) -> crate::types::RegistrationMetadataItem {

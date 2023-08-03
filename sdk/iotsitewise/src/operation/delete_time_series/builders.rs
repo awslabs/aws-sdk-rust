@@ -45,6 +45,12 @@ impl DeleteTimeSeriesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteTimeSeries as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_time_series::builders::DeleteTimeSeriesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +141,10 @@ impl DeleteTimeSeriesFluentBuilder {
         self.inner = self.inner.set_alias(input);
         self
     }
+    /// <p>The alias that identifies the time series.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_alias()
+    }
     /// <p>The ID of the asset in which the asset property was created.</p>
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.asset_id(input.into());
@@ -144,6 +154,10 @@ impl DeleteTimeSeriesFluentBuilder {
     pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_asset_id(input);
         self
+    }
+    /// <p>The ID of the asset in which the asset property was created.</p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_asset_id()
     }
     /// <p>The ID of the asset property.</p>
     pub fn property_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -155,6 +169,10 @@ impl DeleteTimeSeriesFluentBuilder {
         self.inner = self.inner.set_property_id(input);
         self
     }
+    /// <p>The ID of the asset property.</p>
+    pub fn get_property_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_property_id()
+    }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -164,5 +182,9 @@ impl DeleteTimeSeriesFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

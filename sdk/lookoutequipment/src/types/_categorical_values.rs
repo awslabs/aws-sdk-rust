@@ -51,6 +51,10 @@ impl CategoricalValuesBuilder {
         self.status = input;
         self
     }
+    /// <p> Indicates whether there is a potential data issue related to categorical values. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::StatisticalIssueStatus> {
+        &self.status
+    }
     /// <p> Indicates the number of categories in the data. </p>
     pub fn number_of_category(mut self, input: i32) -> Self {
         self.number_of_category = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl CategoricalValuesBuilder {
     pub fn set_number_of_category(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_category = input;
         self
+    }
+    /// <p> Indicates the number of categories in the data. </p>
+    pub fn get_number_of_category(&self) -> &::std::option::Option<i32> {
+        &self.number_of_category
     }
     /// Consumes the builder and constructs a [`CategoricalValues`](crate::types::CategoricalValues).
     pub fn build(self) -> crate::types::CategoricalValues {

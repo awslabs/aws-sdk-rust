@@ -61,6 +61,12 @@ impl GetCheckerIpRangesOutputBuilder {
         self.checker_ip_ranges = input;
         self
     }
+    /// <p>A complex type that contains sorted list of IP ranges in CIDR format for Amazon Route 53 health checkers.</p>
+    pub fn get_checker_ip_ranges(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.checker_ip_ranges
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

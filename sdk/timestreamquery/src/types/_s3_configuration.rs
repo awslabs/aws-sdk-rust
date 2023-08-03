@@ -56,6 +56,10 @@ impl S3ConfigurationBuilder {
         self.bucket_name = input;
         self
     }
+    /// <p> Name of the S3 bucket under which error reports will be created.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
+    }
     /// <p> Prefix for the error report key. Timestream by default adds the following prefix to the error report path. </p>
     pub fn object_key_prefix(
         mut self,
@@ -72,6 +76,10 @@ impl S3ConfigurationBuilder {
         self.object_key_prefix = input;
         self
     }
+    /// <p> Prefix for the error report key. Timestream by default adds the following prefix to the error report path. </p>
+    pub fn get_object_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_key_prefix
+    }
     /// <p> Encryption at rest options for the error reports. If no encryption option is specified, Timestream will choose SSE_S3 as default. </p>
     pub fn encryption_option(mut self, input: crate::types::S3EncryptionOption) -> Self {
         self.encryption_option = ::std::option::Option::Some(input);
@@ -84,6 +92,12 @@ impl S3ConfigurationBuilder {
     ) -> Self {
         self.encryption_option = input;
         self
+    }
+    /// <p> Encryption at rest options for the error reports. If no encryption option is specified, Timestream will choose SSE_S3 as default. </p>
+    pub fn get_encryption_option(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3EncryptionOption> {
+        &self.encryption_option
     }
     /// Consumes the builder and constructs a [`S3Configuration`](crate::types::S3Configuration).
     pub fn build(self) -> crate::types::S3Configuration {

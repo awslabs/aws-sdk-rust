@@ -52,6 +52,10 @@ impl CopyProductOutputBuilder {
         self.copy_product_token = input;
         self
     }
+    /// <p>The token to use to track the progress of the operation.</p>
+    pub fn get_copy_product_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.copy_product_token
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

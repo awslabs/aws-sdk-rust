@@ -72,6 +72,10 @@ impl DeleteLifecyclePolicyOutputBuilder {
         self.registry_id = input;
         self
     }
+    /// <p>The registry ID associated with the request.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
+    }
     /// <p>The repository name associated with the request.</p>
     pub fn repository_name(
         mut self,
@@ -87,6 +91,10 @@ impl DeleteLifecyclePolicyOutputBuilder {
     ) -> Self {
         self.repository_name = input;
         self
+    }
+    /// <p>The repository name associated with the request.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
     }
     /// <p>The JSON lifecycle policy text.</p>
     pub fn lifecycle_policy_text(
@@ -104,6 +112,10 @@ impl DeleteLifecyclePolicyOutputBuilder {
         self.lifecycle_policy_text = input;
         self
     }
+    /// <p>The JSON lifecycle policy text.</p>
+    pub fn get_lifecycle_policy_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lifecycle_policy_text
+    }
     /// <p>The time stamp of the last time that the lifecycle policy was run.</p>
     pub fn last_evaluated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_evaluated_at = ::std::option::Option::Some(input);
@@ -116,6 +128,10 @@ impl DeleteLifecyclePolicyOutputBuilder {
     ) -> Self {
         self.last_evaluated_at = input;
         self
+    }
+    /// <p>The time stamp of the last time that the lifecycle policy was run.</p>
+    pub fn get_last_evaluated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_evaluated_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -36,6 +36,13 @@ impl DescribeIdentityProviderFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeIdentityProvider as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_identity_provider::builders::DescribeIdentityProviderInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl DescribeIdentityProviderFluentBuilder {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
+    /// <p>The user pool ID.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_pool_id()
+    }
     /// <p>The IdP name.</p>
     pub fn provider_name(
         mut self,
@@ -141,5 +152,9 @@ impl DescribeIdentityProviderFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_provider_name(input);
         self
+    }
+    /// <p>The IdP name.</p>
+    pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_provider_name()
     }
 }

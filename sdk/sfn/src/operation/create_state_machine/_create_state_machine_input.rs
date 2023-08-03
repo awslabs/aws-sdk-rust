@@ -165,6 +165,19 @@ impl CreateStateMachineInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the state machine. </p>
+    /// <p>A name must <i>not</i> contain:</p>
+    /// <ul>
+    /// <li> <p>white space</p> </li>
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
+    /// </ul>
+    /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
     pub fn definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.definition = ::std::option::Option::Some(input.into());
@@ -175,6 +188,10 @@ impl CreateStateMachineInputBuilder {
         self.definition = input;
         self
     }
+    /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
+    pub fn get_definition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.definition
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to use for this state machine.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -184,6 +201,10 @@ impl CreateStateMachineInputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to use for this state machine.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>Determines whether a Standard or Express state machine is created. The default is <code>STANDARD</code>. You cannot update the <code>type</code> of a state machine once it has been created.</p>
     pub fn r#type(mut self, input: crate::types::StateMachineType) -> Self {
@@ -197,6 +218,10 @@ impl CreateStateMachineInputBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>Determines whether a Standard or Express state machine is created. The default is <code>STANDARD</code>. You cannot update the <code>type</code> of a state machine once it has been created.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::StateMachineType> {
+        &self.r#type
     }
     /// <p>Defines what execution history events are logged and where they are logged.</p> <note>
     /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the Step Functions User Guide.</p>
@@ -214,6 +239,14 @@ impl CreateStateMachineInputBuilder {
     ) -> Self {
         self.logging_configuration = input;
         self
+    }
+    /// <p>Defines what execution history events are logged and where they are logged.</p> <note>
+    /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the Step Functions User Guide.</p>
+    /// </note>
+    pub fn get_logging_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::LoggingConfiguration> {
+        &self.logging_configuration
     }
     /// Appends an item to `tags`.
     ///
@@ -238,6 +271,12 @@ impl CreateStateMachineInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Tags to be added when creating a state machine.</p>
+    /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
+    /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>Selects whether X-Ray tracing is enabled.</p>
     pub fn tracing_configuration(mut self, input: crate::types::TracingConfiguration) -> Self {
         self.tracing_configuration = ::std::option::Option::Some(input);
@@ -251,6 +290,12 @@ impl CreateStateMachineInputBuilder {
         self.tracing_configuration = input;
         self
     }
+    /// <p>Selects whether X-Ray tracing is enabled.</p>
+    pub fn get_tracing_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::TracingConfiguration> {
+        &self.tracing_configuration
+    }
     /// <p>Set to <code>true</code> to publish the first version of the state machine during creation. The default is <code>false</code>.</p>
     pub fn publish(mut self, input: bool) -> Self {
         self.publish = ::std::option::Option::Some(input);
@@ -260,6 +305,10 @@ impl CreateStateMachineInputBuilder {
     pub fn set_publish(mut self, input: ::std::option::Option<bool>) -> Self {
         self.publish = input;
         self
+    }
+    /// <p>Set to <code>true</code> to publish the first version of the state machine during creation. The default is <code>false</code>.</p>
+    pub fn get_publish(&self) -> &::std::option::Option<bool> {
+        &self.publish
     }
     /// <p>Sets description about the state machine version. You can only set the description if the <code>publish</code> parameter is set to <code>true</code>. Otherwise, if you set <code>versionDescription</code>, but <code>publish</code> to <code>false</code>, this API action throws <code>ValidationException</code>.</p>
     pub fn version_description(
@@ -276,6 +325,10 @@ impl CreateStateMachineInputBuilder {
     ) -> Self {
         self.version_description = input;
         self
+    }
+    /// <p>Sets description about the state machine version. You can only set the description if the <code>publish</code> parameter is set to <code>true</code>. Otherwise, if you set <code>versionDescription</code>, but <code>publish</code> to <code>false</code>, this API action throws <code>ValidationException</code>.</p>
+    pub fn get_version_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_description
     }
     /// Consumes the builder and constructs a [`CreateStateMachineInput`](crate::operation::create_state_machine::CreateStateMachineInput).
     pub fn build(

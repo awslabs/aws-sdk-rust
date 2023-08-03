@@ -118,6 +118,12 @@ impl MsSmoothGroupSettingsBuilder {
         self.additional_manifests = input;
         self
     }
+    /// By default, the service creates one .ism Microsoft Smooth Streaming manifest for each Microsoft Smooth Streaming output group in your job. This default manifest references every output in the output group. To create additional manifests that reference a subset of the outputs in the output group, specify a list of them here.
+    pub fn get_additional_manifests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MsSmoothAdditionalManifest>> {
+        &self.additional_manifests
+    }
     /// COMBINE_DUPLICATE_STREAMS combines identical audio encoding settings across a Microsoft Smooth output group into a single audio stream.
     pub fn audio_deduplication(mut self, input: crate::types::MsSmoothAudioDeduplication) -> Self {
         self.audio_deduplication = ::std::option::Option::Some(input);
@@ -131,6 +137,12 @@ impl MsSmoothGroupSettingsBuilder {
         self.audio_deduplication = input;
         self
     }
+    /// COMBINE_DUPLICATE_STREAMS combines identical audio encoding settings across a Microsoft Smooth output group into a single audio stream.
+    pub fn get_audio_deduplication(
+        &self,
+    ) -> &::std::option::Option<crate::types::MsSmoothAudioDeduplication> {
+        &self.audio_deduplication
+    }
     /// Use Destination to specify the S3 output location and the output filename base. Destination accepts format identifiers. If you do not specify the base filename in the URI, the service will use the filename of the input file. If your job has multiple inputs, the service uses the filename of the first input file.
     pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination = ::std::option::Option::Some(input.into());
@@ -140,6 +152,10 @@ impl MsSmoothGroupSettingsBuilder {
     pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination = input;
         self
+    }
+    /// Use Destination to specify the S3 output location and the output filename base. Destination accepts format identifiers. If you do not specify the base filename in the URI, the service will use the filename of the input file. If your job has multiple inputs, the service uses the filename of the first input file.
+    pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination
     }
     /// Settings associated with the destination. Will vary based on the type of destination
     pub fn destination_settings(mut self, input: crate::types::DestinationSettings) -> Self {
@@ -154,6 +170,12 @@ impl MsSmoothGroupSettingsBuilder {
         self.destination_settings = input;
         self
     }
+    /// Settings associated with the destination. Will vary based on the type of destination
+    pub fn get_destination_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::DestinationSettings> {
+        &self.destination_settings
+    }
     /// If you are using DRM, set DRM System to specify the value SpekeKeyProvider.
     pub fn encryption(mut self, input: crate::types::MsSmoothEncryptionSettings) -> Self {
         self.encryption = ::std::option::Option::Some(input);
@@ -167,6 +189,12 @@ impl MsSmoothGroupSettingsBuilder {
         self.encryption = input;
         self
     }
+    /// If you are using DRM, set DRM System to specify the value SpekeKeyProvider.
+    pub fn get_encryption(
+        &self,
+    ) -> &::std::option::Option<crate::types::MsSmoothEncryptionSettings> {
+        &self.encryption
+    }
     /// Specify how you want MediaConvert to determine the fragment length. Choose Exact to have the encoder use the exact length that you specify with the setting Fragment length. This might result in extra I-frames. Choose Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
     pub fn fragment_length(mut self, input: i32) -> Self {
         self.fragment_length = ::std::option::Option::Some(input);
@@ -176,6 +204,10 @@ impl MsSmoothGroupSettingsBuilder {
     pub fn set_fragment_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.fragment_length = input;
         self
+    }
+    /// Specify how you want MediaConvert to determine the fragment length. Choose Exact to have the encoder use the exact length that you specify with the setting Fragment length. This might result in extra I-frames. Choose Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
+    pub fn get_fragment_length(&self) -> &::std::option::Option<i32> {
+        &self.fragment_length
     }
     /// Specify how you want MediaConvert to determine the fragment length. Choose Exact to have the encoder use the exact length that you specify with the setting Fragment length. This might result in extra I-frames. Choose Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
     pub fn fragment_length_control(
@@ -193,6 +225,12 @@ impl MsSmoothGroupSettingsBuilder {
         self.fragment_length_control = input;
         self
     }
+    /// Specify how you want MediaConvert to determine the fragment length. Choose Exact to have the encoder use the exact length that you specify with the setting Fragment length. This might result in extra I-frames. Choose Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
+    pub fn get_fragment_length_control(
+        &self,
+    ) -> &::std::option::Option<crate::types::MsSmoothFragmentLengthControl> {
+        &self.fragment_length_control
+    }
     /// Use Manifest encoding to specify the encoding format for the server and client manifest. Valid options are utf8 and utf16.
     pub fn manifest_encoding(mut self, input: crate::types::MsSmoothManifestEncoding) -> Self {
         self.manifest_encoding = ::std::option::Option::Some(input);
@@ -205,6 +243,12 @@ impl MsSmoothGroupSettingsBuilder {
     ) -> Self {
         self.manifest_encoding = input;
         self
+    }
+    /// Use Manifest encoding to specify the encoding format for the server and client manifest. Valid options are utf8 and utf16.
+    pub fn get_manifest_encoding(
+        &self,
+    ) -> &::std::option::Option<crate::types::MsSmoothManifestEncoding> {
+        &self.manifest_encoding
     }
     /// Consumes the builder and constructs a [`MsSmoothGroupSettings`](crate::types::MsSmoothGroupSettings).
     pub fn build(self) -> crate::types::MsSmoothGroupSettings {

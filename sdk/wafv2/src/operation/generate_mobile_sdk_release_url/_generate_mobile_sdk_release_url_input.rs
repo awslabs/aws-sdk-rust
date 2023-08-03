@@ -47,6 +47,10 @@ impl GenerateMobileSdkReleaseUrlInputBuilder {
         self.platform = input;
         self
     }
+    /// <p>The device platform.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<crate::types::Platform> {
+        &self.platform
+    }
     /// <p>The release version. For the latest available version, specify <code>LATEST</code>.</p>
     pub fn release_version(
         mut self,
@@ -62,6 +66,10 @@ impl GenerateMobileSdkReleaseUrlInputBuilder {
     ) -> Self {
         self.release_version = input;
         self
+    }
+    /// <p>The release version. For the latest available version, specify <code>LATEST</code>.</p>
+    pub fn get_release_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.release_version
     }
     /// Consumes the builder and constructs a [`GenerateMobileSdkReleaseUrlInput`](crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrlInput).
     pub fn build(

@@ -65,6 +65,10 @@ impl ListAnnotationImportJobsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of jobs to return in one page of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// Appends an item to `ids`.
     ///
     /// To override the contents of this collection use [`set_ids`](Self::set_ids).
@@ -84,6 +88,10 @@ impl ListAnnotationImportJobsInputBuilder {
         self.ids = input;
         self
     }
+    /// <p>IDs of annotation import jobs to retrieve.</p>
+    pub fn get_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ids
+    }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -93,6 +101,10 @@ impl ListAnnotationImportJobsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>A filter to apply to the list.</p>
     pub fn filter(mut self, input: crate::types::ListAnnotationImportJobsFilter) -> Self {
@@ -106,6 +118,12 @@ impl ListAnnotationImportJobsInputBuilder {
     ) -> Self {
         self.filter = input;
         self
+    }
+    /// <p>A filter to apply to the list.</p>
+    pub fn get_filter(
+        &self,
+    ) -> &::std::option::Option<crate::types::ListAnnotationImportJobsFilter> {
+        &self.filter
     }
     /// Consumes the builder and constructs a [`ListAnnotationImportJobsInput`](crate::operation::list_annotation_import_jobs::ListAnnotationImportJobsInput).
     pub fn build(

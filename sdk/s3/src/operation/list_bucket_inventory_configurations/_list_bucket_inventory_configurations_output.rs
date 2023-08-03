@@ -87,6 +87,10 @@ impl ListBucketInventoryConfigurationsOutputBuilder {
         self.continuation_token = input;
         self
     }
+    /// <p>If sent in the request, the marker that is used as a starting point for this inventory configuration list response.</p>
+    pub fn get_continuation_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.continuation_token
+    }
     /// Appends an item to `inventory_configuration_list`.
     ///
     /// To override the contents of this collection use [`set_inventory_configuration_list`](Self::set_inventory_configuration_list).
@@ -109,6 +113,12 @@ impl ListBucketInventoryConfigurationsOutputBuilder {
         self.inventory_configuration_list = input;
         self
     }
+    /// <p>The list of inventory configurations for a bucket.</p>
+    pub fn get_inventory_configuration_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryConfiguration>> {
+        &self.inventory_configuration_list
+    }
     /// <p>Tells whether the returned list of inventory configurations is complete. A value of true indicates that the list is not complete and the NextContinuationToken is provided for a subsequent request.</p>
     pub fn is_truncated(mut self, input: bool) -> Self {
         self.is_truncated = ::std::option::Option::Some(input);
@@ -118,6 +128,10 @@ impl ListBucketInventoryConfigurationsOutputBuilder {
     pub fn set_is_truncated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_truncated = input;
         self
+    }
+    /// <p>Tells whether the returned list of inventory configurations is complete. A value of true indicates that the list is not complete and the NextContinuationToken is provided for a subsequent request.</p>
+    pub fn get_is_truncated(&self) -> &::std::option::Option<bool> {
+        &self.is_truncated
     }
     /// <p>The marker used to continue this inventory configuration listing. Use the <code>NextContinuationToken</code> from this response to continue the listing in a subsequent request. The continuation token is an opaque value that Amazon S3 understands.</p>
     pub fn next_continuation_token(
@@ -134,6 +148,10 @@ impl ListBucketInventoryConfigurationsOutputBuilder {
     ) -> Self {
         self.next_continuation_token = input;
         self
+    }
+    /// <p>The marker used to continue this inventory configuration listing. Use the <code>NextContinuationToken</code> from this response to continue the listing in a subsequent request. The continuation token is an opaque value that Amazon S3 understands.</p>
+    pub fn get_next_continuation_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_continuation_token
     }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
         self._extended_request_id = Some(extended_request_id.into());

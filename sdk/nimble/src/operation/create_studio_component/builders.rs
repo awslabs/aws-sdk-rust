@@ -36,6 +36,13 @@ impl CreateStudioComponentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateStudioComponent as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_studio_component::builders::CreateStudioComponentInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl CreateStudioComponentFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>The configuration of the studio component, based on component type.</p>
     pub fn configuration(mut self, input: crate::types::StudioComponentConfiguration) -> Self {
         self.inner = self.inner.configuration(input);
@@ -139,6 +150,12 @@ impl CreateStudioComponentFluentBuilder {
         self.inner = self.inner.set_configuration(input);
         self
     }
+    /// <p>The configuration of the studio component, based on component type.</p>
+    pub fn get_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::StudioComponentConfiguration> {
+        self.inner.get_configuration()
+    }
     /// <p>The description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -148,6 +165,10 @@ impl CreateStudioComponentFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `ec2SecurityGroupIds`.
     ///
@@ -168,6 +189,12 @@ impl CreateStudioComponentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ec2_security_group_ids(input);
         self
+    }
+    /// <p>The EC2 security groups that control access to the studio component.</p>
+    pub fn get_ec2_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_ec2_security_group_ids()
     }
     /// Appends an item to `initializationScripts`.
     ///
@@ -191,6 +218,13 @@ impl CreateStudioComponentFluentBuilder {
         self.inner = self.inner.set_initialization_scripts(input);
         self
     }
+    /// <p>Initialization scripts for studio components.</p>
+    pub fn get_initialization_scripts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StudioComponentInitializationScript>>
+    {
+        self.inner.get_initialization_scripts()
+    }
     /// <p>The name for the studio component.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -200,6 +234,10 @@ impl CreateStudioComponentFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name for the studio component.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// Appends an item to `scriptParameters`.
     ///
@@ -218,6 +256,12 @@ impl CreateStudioComponentFluentBuilder {
         self.inner = self.inner.set_script_parameters(input);
         self
     }
+    /// <p>Parameters for the studio component scripts.</p>
+    pub fn get_script_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScriptParameterKeyValue>> {
+        self.inner.get_script_parameters()
+    }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.studio_id(input.into());
@@ -227,6 +271,10 @@ impl CreateStudioComponentFluentBuilder {
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_studio_id(input);
         self
+    }
+    /// <p>The studio ID. </p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_studio_id()
     }
     /// <p>The specific subtype of a studio component.</p>
     pub fn subtype(mut self, input: crate::types::StudioComponentSubtype) -> Self {
@@ -240,6 +288,10 @@ impl CreateStudioComponentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_subtype(input);
         self
+    }
+    /// <p>The specific subtype of a studio component.</p>
+    pub fn get_subtype(&self) -> &::std::option::Option<crate::types::StudioComponentSubtype> {
+        self.inner.get_subtype()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -264,6 +316,14 @@ impl CreateStudioComponentFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>The type of the studio component.</p>
     pub fn r#type(mut self, input: crate::types::StudioComponentType) -> Self {
         self.inner = self.inner.r#type(input);
@@ -276,6 +336,10 @@ impl CreateStudioComponentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_type(input);
         self
+    }
+    /// <p>The type of the studio component.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::StudioComponentType> {
+        self.inner.get_type()
     }
     /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
     pub fn secure_initialization_role_arn(
@@ -293,6 +357,12 @@ impl CreateStudioComponentFluentBuilder {
         self.inner = self.inner.set_secure_initialization_role_arn(input);
         self
     }
+    /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
+    pub fn get_secure_initialization_role_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_secure_initialization_role_arn()
+    }
     /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
     pub fn runtime_role_arn(
         mut self,
@@ -308,5 +378,9 @@ impl CreateStudioComponentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_runtime_role_arn(input);
         self
+    }
+    /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
+    pub fn get_runtime_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_runtime_role_arn()
     }
 }

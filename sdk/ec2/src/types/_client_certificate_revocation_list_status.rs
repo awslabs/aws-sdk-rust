@@ -53,6 +53,12 @@ impl ClientCertificateRevocationListStatusBuilder {
         self.code = input;
         self
     }
+    /// <p>The state of the client certificate revocation list.</p>
+    pub fn get_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::ClientCertificateRevocationListStatusCode> {
+        &self.code
+    }
     /// <p>A message about the status of the client certificate revocation list, if applicable.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -62,6 +68,10 @@ impl ClientCertificateRevocationListStatusBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>A message about the status of the client certificate revocation list, if applicable.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`ClientCertificateRevocationListStatus`](crate::types::ClientCertificateRevocationListStatus).
     pub fn build(self) -> crate::types::ClientCertificateRevocationListStatus {

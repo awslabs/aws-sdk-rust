@@ -72,6 +72,10 @@ impl GetApiKeysInputBuilder {
         self.position = input;
         self
     }
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn get_position(&self) -> &::std::option::Option<::std::string::String> {
+        &self.position
+    }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl GetApiKeysInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// <p>The name of queried API keys.</p>
     pub fn name_query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -92,6 +100,10 @@ impl GetApiKeysInputBuilder {
         self.name_query = input;
         self
     }
+    /// <p>The name of queried API keys.</p>
+    pub fn get_name_query(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name_query
+    }
     /// <p>The identifier of a customer in AWS Marketplace or an external system, such as a developer portal.</p>
     pub fn customer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_id = ::std::option::Option::Some(input.into());
@@ -102,6 +114,10 @@ impl GetApiKeysInputBuilder {
         self.customer_id = input;
         self
     }
+    /// <p>The identifier of a customer in AWS Marketplace or an external system, such as a developer portal.</p>
+    pub fn get_customer_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.customer_id
+    }
     /// <p>A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains key values.</p>
     pub fn include_values(mut self, input: bool) -> Self {
         self.include_values = ::std::option::Option::Some(input);
@@ -111,6 +127,10 @@ impl GetApiKeysInputBuilder {
     pub fn set_include_values(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_values = input;
         self
+    }
+    /// <p>A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains key values.</p>
+    pub fn get_include_values(&self) -> &::std::option::Option<bool> {
+        &self.include_values
     }
     /// Consumes the builder and constructs a [`GetApiKeysInput`](crate::operation::get_api_keys::GetApiKeysInput).
     pub fn build(

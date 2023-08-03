@@ -37,6 +37,12 @@ impl DetachTrafficSourcesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DetachTrafficSources as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::detach_traffic_sources::builders::DetachTrafficSourcesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl DetachTrafficSourcesFluentBuilder {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_auto_scaling_group_name()
+    }
     /// Appends an item to `TrafficSources`.
     ///
     /// To override the contents of this collection use [`set_traffic_sources`](Self::set_traffic_sources).
@@ -149,5 +159,11 @@ impl DetachTrafficSourcesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_traffic_sources(input);
         self
+    }
+    /// <p>The unique identifiers of one or more traffic sources. You can specify up to 10 traffic sources.</p>
+    pub fn get_traffic_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficSourceIdentifier>> {
+        self.inner.get_traffic_sources()
     }
 }

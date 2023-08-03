@@ -45,6 +45,12 @@ impl PivotTableConditionalFormattingOptionBuilder {
         self.cell = input;
         self
     }
+    /// <p>The cell conditional formatting option for a pivot table.</p>
+    pub fn get_cell(
+        &self,
+    ) -> &::std::option::Option<crate::types::PivotTableCellConditionalFormatting> {
+        &self.cell
+    }
     /// Consumes the builder and constructs a [`PivotTableConditionalFormattingOption`](crate::types::PivotTableConditionalFormattingOption).
     pub fn build(self) -> crate::types::PivotTableConditionalFormattingOption {
         crate::types::PivotTableConditionalFormattingOption { cell: self.cell }

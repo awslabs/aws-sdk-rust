@@ -60,6 +60,10 @@ impl DisassociateTrialComponentOutputBuilder {
         self.trial_component_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
+    pub fn get_trial_component_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trial_component_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the trial.</p>
     pub fn trial_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trial_arn = ::std::option::Option::Some(input.into());
@@ -69,6 +73,10 @@ impl DisassociateTrialComponentOutputBuilder {
     pub fn set_trial_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trial_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the trial.</p>
+    pub fn get_trial_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trial_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

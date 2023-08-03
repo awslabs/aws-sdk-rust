@@ -56,6 +56,10 @@ impl S3DestinationBuilder {
         self.bucket_name = input;
         self
     }
+    /// The name of an S3 bucket within which harvested content will be exported
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
+    }
     /// The key in the specified S3 bucket where the harvested top-level manifest will be placed.
     pub fn manifest_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.manifest_key = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl S3DestinationBuilder {
         self.manifest_key = input;
         self
     }
+    /// The key in the specified S3 bucket where the harvested top-level manifest will be placed.
+    pub fn get_manifest_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.manifest_key
+    }
     /// The IAM role used to write to the specified S3 bucket
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl S3DestinationBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// The IAM role used to write to the specified S3 bucket
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`S3Destination`](crate::types::S3Destination).
     pub fn build(self) -> crate::types::S3Destination {

@@ -59,6 +59,10 @@ impl MonitoringDatasetFormatBuilder {
         self.csv = input;
         self
     }
+    /// <p>The CSV dataset used in the monitoring job.</p>
+    pub fn get_csv(&self) -> &::std::option::Option<crate::types::MonitoringCsvDatasetFormat> {
+        &self.csv
+    }
     /// <p>The JSON dataset used in the monitoring job</p>
     pub fn json(mut self, input: crate::types::MonitoringJsonDatasetFormat) -> Self {
         self.json = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl MonitoringDatasetFormatBuilder {
         self.json = input;
         self
     }
+    /// <p>The JSON dataset used in the monitoring job</p>
+    pub fn get_json(&self) -> &::std::option::Option<crate::types::MonitoringJsonDatasetFormat> {
+        &self.json
+    }
     /// <p>The Parquet dataset used in the monitoring job</p>
     pub fn parquet(mut self, input: crate::types::MonitoringParquetDatasetFormat) -> Self {
         self.parquet = ::std::option::Option::Some(input);
@@ -84,6 +92,12 @@ impl MonitoringDatasetFormatBuilder {
     ) -> Self {
         self.parquet = input;
         self
+    }
+    /// <p>The Parquet dataset used in the monitoring job</p>
+    pub fn get_parquet(
+        &self,
+    ) -> &::std::option::Option<crate::types::MonitoringParquetDatasetFormat> {
+        &self.parquet
     }
     /// Consumes the builder and constructs a [`MonitoringDatasetFormat`](crate::types::MonitoringDatasetFormat).
     pub fn build(self) -> crate::types::MonitoringDatasetFormat {

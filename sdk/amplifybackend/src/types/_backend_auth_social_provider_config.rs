@@ -48,6 +48,10 @@ impl BackendAuthSocialProviderConfigBuilder {
         self.client_id = input;
         self
     }
+    /// <p>Describes the client_id, which can be obtained from the third-party social federation provider.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_id
+    }
     /// <p>Describes the client_secret, which can be obtained from third-party social federation providers.</p>
     pub fn client_secret(
         mut self,
@@ -63,6 +67,10 @@ impl BackendAuthSocialProviderConfigBuilder {
     ) -> Self {
         self.client_secret = input;
         self
+    }
+    /// <p>Describes the client_secret, which can be obtained from third-party social federation providers.</p>
+    pub fn get_client_secret(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_secret
     }
     /// Consumes the builder and constructs a [`BackendAuthSocialProviderConfig`](crate::types::BackendAuthSocialProviderConfig).
     pub fn build(self) -> crate::types::BackendAuthSocialProviderConfig {

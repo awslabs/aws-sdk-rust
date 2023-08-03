@@ -142,6 +142,10 @@ impl RaidArrayBuilder {
         self.raid_array_id = input;
         self
     }
+    /// <p>The array ID.</p>
+    pub fn get_raid_array_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.raid_array_id
+    }
     /// <p>The instance ID.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -151,6 +155,10 @@ impl RaidArrayBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
+    }
+    /// <p>The instance ID.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// <p>The array name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -162,6 +170,10 @@ impl RaidArrayBuilder {
         self.name = input;
         self
     }
+    /// <p>The array name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.</p>
     pub fn raid_level(mut self, input: i32) -> Self {
         self.raid_level = ::std::option::Option::Some(input);
@@ -171,6 +183,10 @@ impl RaidArrayBuilder {
     pub fn set_raid_level(mut self, input: ::std::option::Option<i32>) -> Self {
         self.raid_level = input;
         self
+    }
+    /// <p>The <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.</p>
+    pub fn get_raid_level(&self) -> &::std::option::Option<i32> {
+        &self.raid_level
     }
     /// <p>The number of disks in the array.</p>
     pub fn number_of_disks(mut self, input: i32) -> Self {
@@ -182,6 +198,10 @@ impl RaidArrayBuilder {
         self.number_of_disks = input;
         self
     }
+    /// <p>The number of disks in the array.</p>
+    pub fn get_number_of_disks(&self) -> &::std::option::Option<i32> {
+        &self.number_of_disks
+    }
     /// <p>The array's size.</p>
     pub fn size(mut self, input: i32) -> Self {
         self.size = ::std::option::Option::Some(input);
@@ -191,6 +211,10 @@ impl RaidArrayBuilder {
     pub fn set_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.size = input;
         self
+    }
+    /// <p>The array's size.</p>
+    pub fn get_size(&self) -> &::std::option::Option<i32> {
+        &self.size
     }
     /// <p>The array's Linux device. For example /dev/mdadm0.</p>
     pub fn device(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -202,6 +226,10 @@ impl RaidArrayBuilder {
         self.device = input;
         self
     }
+    /// <p>The array's Linux device. For example /dev/mdadm0.</p>
+    pub fn get_device(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device
+    }
     /// <p>The array's mount point.</p>
     pub fn mount_point(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mount_point = ::std::option::Option::Some(input.into());
@@ -211,6 +239,10 @@ impl RaidArrayBuilder {
     pub fn set_mount_point(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mount_point = input;
         self
+    }
+    /// <p>The array's mount point.</p>
+    pub fn get_mount_point(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mount_point
     }
     /// <p>The array's Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     pub fn availability_zone(
@@ -228,6 +260,10 @@ impl RaidArrayBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>The array's Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>When the RAID array was created.</p>
     pub fn created_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_at = ::std::option::Option::Some(input.into());
@@ -237,6 +273,10 @@ impl RaidArrayBuilder {
     pub fn set_created_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>When the RAID array was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_at
     }
     /// <p>The stack ID.</p>
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -248,6 +288,10 @@ impl RaidArrayBuilder {
         self.stack_id = input;
         self
     }
+    /// <p>The stack ID.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_id
+    }
     /// <p>The volume type, standard or PIOPS.</p>
     pub fn volume_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_type = ::std::option::Option::Some(input.into());
@@ -258,6 +302,10 @@ impl RaidArrayBuilder {
         self.volume_type = input;
         self
     }
+    /// <p>The volume type, standard or PIOPS.</p>
+    pub fn get_volume_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_type
+    }
     /// <p>For PIOPS volumes, the IOPS per disk.</p>
     pub fn iops(mut self, input: i32) -> Self {
         self.iops = ::std::option::Option::Some(input);
@@ -267,6 +315,10 @@ impl RaidArrayBuilder {
     pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
         self.iops = input;
         self
+    }
+    /// <p>For PIOPS volumes, the IOPS per disk.</p>
+    pub fn get_iops(&self) -> &::std::option::Option<i32> {
+        &self.iops
     }
     /// Consumes the builder and constructs a [`RaidArray`](crate::types::RaidArray).
     pub fn build(self) -> crate::types::RaidArray {

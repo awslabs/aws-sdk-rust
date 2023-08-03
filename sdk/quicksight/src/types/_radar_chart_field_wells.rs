@@ -50,6 +50,12 @@ impl RadarChartFieldWellsBuilder {
         self.radar_chart_aggregated_field_wells = input;
         self
     }
+    /// <p>The aggregated field wells of a radar chart visual.</p>
+    pub fn get_radar_chart_aggregated_field_wells(
+        &self,
+    ) -> &::std::option::Option<crate::types::RadarChartAggregatedFieldWells> {
+        &self.radar_chart_aggregated_field_wells
+    }
     /// Consumes the builder and constructs a [`RadarChartFieldWells`](crate::types::RadarChartFieldWells).
     pub fn build(self) -> crate::types::RadarChartFieldWells {
         crate::types::RadarChartFieldWells {

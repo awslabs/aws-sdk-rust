@@ -64,6 +64,10 @@ impl UpdateConfigInputBuilder {
         self.config_id = input;
         self
     }
+    /// <p>UUID of a <code>Config</code>.</p>
+    pub fn get_config_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.config_id
+    }
     /// <p>Name of a <code>Config</code>.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl UpdateConfigInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>Name of a <code>Config</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Type of a <code>Config</code>.</p>
     pub fn config_type(mut self, input: crate::types::ConfigCapabilityType) -> Self {
@@ -87,6 +95,10 @@ impl UpdateConfigInputBuilder {
         self.config_type = input;
         self
     }
+    /// <p>Type of a <code>Config</code>.</p>
+    pub fn get_config_type(&self) -> &::std::option::Option<crate::types::ConfigCapabilityType> {
+        &self.config_type
+    }
     /// <p>Parameters of a <code>Config</code>.</p>
     pub fn config_data(mut self, input: crate::types::ConfigTypeData) -> Self {
         self.config_data = ::std::option::Option::Some(input);
@@ -99,6 +111,10 @@ impl UpdateConfigInputBuilder {
     ) -> Self {
         self.config_data = input;
         self
+    }
+    /// <p>Parameters of a <code>Config</code>.</p>
+    pub fn get_config_data(&self) -> &::std::option::Option<crate::types::ConfigTypeData> {
+        &self.config_data
     }
     /// Consumes the builder and constructs a [`UpdateConfigInput`](crate::operation::update_config::UpdateConfigInput).
     pub fn build(

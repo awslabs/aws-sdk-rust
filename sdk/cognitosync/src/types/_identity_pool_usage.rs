@@ -70,6 +70,10 @@ impl IdentityPoolUsageBuilder {
         self.identity_pool_id = input;
         self
     }
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_pool_id
+    }
     /// Number of sync sessions for the identity pool.
     pub fn sync_sessions_count(mut self, input: i64) -> Self {
         self.sync_sessions_count = ::std::option::Option::Some(input);
@@ -80,6 +84,10 @@ impl IdentityPoolUsageBuilder {
         self.sync_sessions_count = input;
         self
     }
+    /// Number of sync sessions for the identity pool.
+    pub fn get_sync_sessions_count(&self) -> &::std::option::Option<i64> {
+        &self.sync_sessions_count
+    }
     /// Data storage information for the identity pool.
     pub fn data_storage(mut self, input: i64) -> Self {
         self.data_storage = ::std::option::Option::Some(input);
@@ -89,6 +97,10 @@ impl IdentityPoolUsageBuilder {
     pub fn set_data_storage(mut self, input: ::std::option::Option<i64>) -> Self {
         self.data_storage = input;
         self
+    }
+    /// Data storage information for the identity pool.
+    pub fn get_data_storage(&self) -> &::std::option::Option<i64> {
+        &self.data_storage
     }
     /// Date on which the identity pool was last modified.
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -102,6 +114,10 @@ impl IdentityPoolUsageBuilder {
     ) -> Self {
         self.last_modified_date = input;
         self
+    }
+    /// Date on which the identity pool was last modified.
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_date
     }
     /// Consumes the builder and constructs a [`IdentityPoolUsage`](crate::types::IdentityPoolUsage).
     pub fn build(self) -> crate::types::IdentityPoolUsage {

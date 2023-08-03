@@ -36,6 +36,10 @@ impl DeleteBackupVaultNotificationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteBackupVaultNotifications as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_backup_vault_notifications::builders::DeleteBackupVaultNotificationsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -105,5 +109,9 @@ impl DeleteBackupVaultNotificationsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_backup_vault_name(input);
         self
+    }
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_backup_vault_name()
     }
 }

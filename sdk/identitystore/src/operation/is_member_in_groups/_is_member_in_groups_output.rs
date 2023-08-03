@@ -60,6 +60,12 @@ impl IsMemberInGroupsOutputBuilder {
         self.results = input;
         self
     }
+    /// <p>A list containing the results of membership existence checks.</p>
+    pub fn get_results(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupMembershipExistenceResult>> {
+        &self.results
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

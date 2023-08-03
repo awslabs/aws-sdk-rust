@@ -47,6 +47,10 @@ impl GetSolFunctionPackageDescriptorInputBuilder {
         self.vnf_pkg_id = input;
         self
     }
+    /// <p>ID of the function package.</p>
+    pub fn get_vnf_pkg_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vnf_pkg_id
+    }
     /// <p>Indicates which content types, expressed as MIME types, the client is able to understand.</p>
     pub fn accept(mut self, input: crate::types::DescriptorContentType) -> Self {
         self.accept = ::std::option::Option::Some(input);
@@ -59,6 +63,10 @@ impl GetSolFunctionPackageDescriptorInputBuilder {
     ) -> Self {
         self.accept = input;
         self
+    }
+    /// <p>Indicates which content types, expressed as MIME types, the client is able to understand.</p>
+    pub fn get_accept(&self) -> &::std::option::Option<crate::types::DescriptorContentType> {
+        &self.accept
     }
     /// Consumes the builder and constructs a [`GetSolFunctionPackageDescriptorInput`](crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorInput).
     pub fn build(

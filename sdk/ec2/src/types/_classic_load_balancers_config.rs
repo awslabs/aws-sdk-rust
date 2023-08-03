@@ -53,6 +53,12 @@ impl ClassicLoadBalancersConfigBuilder {
         self.classic_load_balancers = input;
         self
     }
+    /// <p>One or more Classic Load Balancers.</p>
+    pub fn get_classic_load_balancers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClassicLoadBalancer>> {
+        &self.classic_load_balancers
+    }
     /// Consumes the builder and constructs a [`ClassicLoadBalancersConfig`](crate::types::ClassicLoadBalancersConfig).
     pub fn build(self) -> crate::types::ClassicLoadBalancersConfig {
         crate::types::ClassicLoadBalancersConfig {

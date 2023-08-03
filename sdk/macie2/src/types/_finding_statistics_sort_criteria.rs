@@ -57,6 +57,12 @@ impl FindingStatisticsSortCriteriaBuilder {
         self.attribute_name = input;
         self
     }
+    /// <p>The grouping to sort the results by. Valid values are: count, sort the results by the number of findings in each group of results; and, groupKey, sort the results by the name of each group of results.</p>
+    pub fn get_attribute_name(
+        &self,
+    ) -> &::std::option::Option<crate::types::FindingStatisticsSortAttributeName> {
+        &self.attribute_name
+    }
     /// <p>The sort order to apply to the results, based on the value for the property specified by the attributeName property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.</p>
     pub fn order_by(mut self, input: crate::types::OrderBy) -> Self {
         self.order_by = ::std::option::Option::Some(input);
@@ -66,6 +72,10 @@ impl FindingStatisticsSortCriteriaBuilder {
     pub fn set_order_by(mut self, input: ::std::option::Option<crate::types::OrderBy>) -> Self {
         self.order_by = input;
         self
+    }
+    /// <p>The sort order to apply to the results, based on the value for the property specified by the attributeName property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.</p>
+    pub fn get_order_by(&self) -> &::std::option::Option<crate::types::OrderBy> {
+        &self.order_by
     }
     /// Consumes the builder and constructs a [`FindingStatisticsSortCriteria`](crate::types::FindingStatisticsSortCriteria).
     pub fn build(self) -> crate::types::FindingStatisticsSortCriteria {

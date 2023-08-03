@@ -36,6 +36,10 @@ impl ListCustomerManagedPolicyReferencesInPermissionSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListCustomerManagedPolicyReferencesInPermissionSet as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_customer_managed_policy_references_in_permission_set::builders::ListCustomerManagedPolicyReferencesInPermissionSetInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl ListCustomerManagedPolicyReferencesInPermissionSetFluentBuilder {
         self.inner = self.inner.set_instance_arn(input);
         self
     }
+    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
+    pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_arn()
+    }
     /// <p>The ARN of the <code>PermissionSet</code>. </p>
     pub fn permission_set_arn(
         mut self,
@@ -122,6 +130,10 @@ impl ListCustomerManagedPolicyReferencesInPermissionSetFluentBuilder {
         self.inner = self.inner.set_permission_set_arn(input);
         self
     }
+    /// <p>The ARN of the <code>PermissionSet</code>. </p>
+    pub fn get_permission_set_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_permission_set_arn()
+    }
     /// <p>The maximum number of results to display for the list call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -132,6 +144,10 @@ impl ListCustomerManagedPolicyReferencesInPermissionSetFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to display for the list call.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -141,5 +157,9 @@ impl ListCustomerManagedPolicyReferencesInPermissionSetFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

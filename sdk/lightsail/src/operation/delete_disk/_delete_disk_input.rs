@@ -47,6 +47,10 @@ impl DeleteDiskInputBuilder {
         self.disk_name = input;
         self
     }
+    /// <p>The unique name of the disk you want to delete (e.g., <code>my-disk</code>).</p>
+    pub fn get_disk_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.disk_name
+    }
     /// <p>A Boolean value to indicate whether to delete all add-ons for the disk.</p>
     pub fn force_delete_add_ons(mut self, input: bool) -> Self {
         self.force_delete_add_ons = ::std::option::Option::Some(input);
@@ -56,6 +60,10 @@ impl DeleteDiskInputBuilder {
     pub fn set_force_delete_add_ons(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force_delete_add_ons = input;
         self
+    }
+    /// <p>A Boolean value to indicate whether to delete all add-ons for the disk.</p>
+    pub fn get_force_delete_add_ons(&self) -> &::std::option::Option<bool> {
+        &self.force_delete_add_ons
     }
     /// Consumes the builder and constructs a [`DeleteDiskInput`](crate::operation::delete_disk::DeleteDiskInput).
     pub fn build(

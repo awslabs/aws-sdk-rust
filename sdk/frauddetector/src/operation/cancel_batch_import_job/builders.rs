@@ -36,6 +36,13 @@ impl CancelBatchImportJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CancelBatchImportJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::cancel_batch_import_job::builders::CancelBatchImportJobInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,5 +134,10 @@ impl CancelBatchImportJobFluentBuilder {
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_id(input);
         self
+    }
+    /// <p> The ID of an in-progress batch import job to cancel. </p>
+    /// <p>Amazon Fraud Detector will throw an error if the batch import job is in <code>FAILED</code>, <code>CANCELED</code>, or <code>COMPLETED</code> state.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_id()
     }
 }

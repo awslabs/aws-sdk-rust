@@ -48,6 +48,10 @@ impl InstanceExportDetailsBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The ID of the resource being exported.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The target virtualization environment.</p>
     pub fn target_environment(mut self, input: crate::types::ExportEnvironment) -> Self {
         self.target_environment = ::std::option::Option::Some(input);
@@ -60,6 +64,12 @@ impl InstanceExportDetailsBuilder {
     ) -> Self {
         self.target_environment = input;
         self
+    }
+    /// <p>The target virtualization environment.</p>
+    pub fn get_target_environment(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExportEnvironment> {
+        &self.target_environment
     }
     /// Consumes the builder and constructs a [`InstanceExportDetails`](crate::types::InstanceExportDetails).
     pub fn build(self) -> crate::types::InstanceExportDetails {

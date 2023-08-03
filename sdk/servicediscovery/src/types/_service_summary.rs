@@ -167,6 +167,10 @@ impl ServiceSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID that Cloud Map assigned to the service when you created it.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the service when you create it.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -177,6 +181,10 @@ impl ServiceSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the service when you create it.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the service.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -186,6 +194,10 @@ impl ServiceSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the service.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Describes the systems that can be used to discover the service instances.</p>
     /// <dl>
@@ -237,6 +249,30 @@ impl ServiceSummaryBuilder {
         self.r#type = input;
         self
     }
+    /// <p>Describes the systems that can be used to discover the service instances.</p>
+    /// <dl>
+    /// <dt>
+    /// DNS_HTTP
+    /// </dt>
+    /// <dd>
+    /// <p>The service instances can be discovered using either DNS queries or the <code>DiscoverInstances</code> API operation.</p>
+    /// </dd>
+    /// <dt>
+    /// HTTP
+    /// </dt>
+    /// <dd>
+    /// <p>The service instances can only be discovered using the <code>DiscoverInstances</code> API operation.</p>
+    /// </dd>
+    /// <dt>
+    /// DNS
+    /// </dt>
+    /// <dd>
+    /// <p>Reserved.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ServiceType> {
+        &self.r#type
+    }
     /// <p>The description that you specify when you create the service.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -246,6 +282,10 @@ impl ServiceSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description that you specify when you create the service.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The number of instances that are currently associated with the service. Instances that were previously associated with the service but that are deleted aren't included in the count. The count might not reflect pending registrations and deregistrations.</p>
     pub fn instance_count(mut self, input: i32) -> Self {
@@ -257,6 +297,10 @@ impl ServiceSummaryBuilder {
         self.instance_count = input;
         self
     }
+    /// <p>The number of instances that are currently associated with the service. Instances that were previously associated with the service but that are deleted aren't included in the count. The count might not reflect pending registrations and deregistrations.</p>
+    pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.instance_count
+    }
     /// <p>Information about the Route&nbsp;53 DNS records that you want Cloud Map to create when you register an instance.</p>
     pub fn dns_config(mut self, input: crate::types::DnsConfig) -> Self {
         self.dns_config = ::std::option::Option::Some(input);
@@ -266,6 +310,10 @@ impl ServiceSummaryBuilder {
     pub fn set_dns_config(mut self, input: ::std::option::Option<crate::types::DnsConfig>) -> Self {
         self.dns_config = input;
         self
+    }
+    /// <p>Information about the Route&nbsp;53 DNS records that you want Cloud Map to create when you register an instance.</p>
+    pub fn get_dns_config(&self) -> &::std::option::Option<crate::types::DnsConfig> {
+        &self.dns_config
     }
     /// <p> <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
     pub fn health_check_config(mut self, input: crate::types::HealthCheckConfig) -> Self {
@@ -279,6 +327,12 @@ impl ServiceSummaryBuilder {
     ) -> Self {
         self.health_check_config = input;
         self
+    }
+    /// <p> <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
+    pub fn get_health_check_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::HealthCheckConfig> {
+        &self.health_check_config
     }
     /// <p>Information about an optional custom health check. A custom health check, which requires that you use a third-party health checker to evaluate the health of your resources, is useful in the following circumstances:</p>
     /// <ul>
@@ -308,6 +362,18 @@ impl ServiceSummaryBuilder {
         self.health_check_custom_config = input;
         self
     }
+    /// <p>Information about an optional custom health check. A custom health check, which requires that you use a third-party health checker to evaluate the health of your resources, is useful in the following circumstances:</p>
+    /// <ul>
+    /// <li> <p>You can't use a health check that's defined by <code>HealthCheckConfig</code> because the resource isn't available over the internet. For example, you can use a custom health check when the instance is in an Amazon VPC. (To check the health of resources in a VPC, the health checker must also be in the VPC.)</p> </li>
+    /// <li> <p>You want to use a third-party health checker regardless of where your resources are located.</p> </li>
+    /// </ul> <important>
+    /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
+    /// </important>
+    pub fn get_health_check_custom_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::HealthCheckCustomConfig> {
+        &self.health_check_custom_config
+    }
     /// <p>The date and time that the service was created.</p>
     pub fn create_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_date = ::std::option::Option::Some(input);
@@ -320,6 +386,10 @@ impl ServiceSummaryBuilder {
     ) -> Self {
         self.create_date = input;
         self
+    }
+    /// <p>The date and time that the service was created.</p>
+    pub fn get_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_date
     }
     /// Consumes the builder and constructs a [`ServiceSummary`](crate::types::ServiceSummary).
     pub fn build(self) -> crate::types::ServiceSummary {

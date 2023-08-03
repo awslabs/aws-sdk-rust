@@ -158,6 +158,10 @@ impl UpdateImageVersionInputBuilder {
         self.image_name = input;
         self
     }
+    /// <p>The name of the image.</p>
+    pub fn get_image_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_name
+    }
     /// <p>The alias of the image version.</p>
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias = ::std::option::Option::Some(input.into());
@@ -168,6 +172,10 @@ impl UpdateImageVersionInputBuilder {
         self.alias = input;
         self
     }
+    /// <p>The alias of the image version.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias
+    }
     /// <p>The version of the image.</p>
     pub fn version(mut self, input: i32) -> Self {
         self.version = ::std::option::Option::Some(input);
@@ -177,6 +185,10 @@ impl UpdateImageVersionInputBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version of the image.</p>
+    pub fn get_version(&self) -> &::std::option::Option<i32> {
+        &self.version
     }
     /// Appends an item to `aliases_to_add`.
     ///
@@ -200,6 +212,12 @@ impl UpdateImageVersionInputBuilder {
         self.aliases_to_add = input;
         self
     }
+    /// <p>A list of aliases to add.</p>
+    pub fn get_aliases_to_add(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.aliases_to_add
+    }
     /// Appends an item to `aliases_to_delete`.
     ///
     /// To override the contents of this collection use [`set_aliases_to_delete`](Self::set_aliases_to_delete).
@@ -221,6 +239,12 @@ impl UpdateImageVersionInputBuilder {
     ) -> Self {
         self.aliases_to_delete = input;
         self
+    }
+    /// <p>A list of aliases to delete.</p>
+    pub fn get_aliases_to_delete(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.aliases_to_delete
     }
     /// <p>The availability of the image version specified by the maintainer.</p>
     /// <ul>
@@ -247,6 +271,16 @@ impl UpdateImageVersionInputBuilder {
         self.vendor_guidance = input;
         self
     }
+    /// <p>The availability of the image version specified by the maintainer.</p>
+    /// <ul>
+    /// <li> <p> <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p> </li>
+    /// <li> <p> <code>STABLE</code>: The image version is stable.</p> </li>
+    /// <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li>
+    /// <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li>
+    /// </ul>
+    pub fn get_vendor_guidance(&self) -> &::std::option::Option<crate::types::VendorGuidance> {
+        &self.vendor_guidance
+    }
     /// <p>Indicates SageMaker job type compatibility.</p>
     /// <ul>
     /// <li> <p> <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p> </li>
@@ -267,6 +301,15 @@ impl UpdateImageVersionInputBuilder {
         self.job_type = input;
         self
     }
+    /// <p>Indicates SageMaker job type compatibility.</p>
+    /// <ul>
+    /// <li> <p> <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p> </li>
+    /// <li> <p> <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p> </li>
+    /// <li> <p> <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p> </li>
+    /// </ul>
+    pub fn get_job_type(&self) -> &::std::option::Option<crate::types::JobType> {
+        &self.job_type
+    }
     /// <p>The machine learning framework vended in the image version.</p>
     pub fn ml_framework(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ml_framework = ::std::option::Option::Some(input.into());
@@ -276,6 +319,10 @@ impl UpdateImageVersionInputBuilder {
     pub fn set_ml_framework(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ml_framework = input;
         self
+    }
+    /// <p>The machine learning framework vended in the image version.</p>
+    pub fn get_ml_framework(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ml_framework
     }
     /// <p>The supported programming language and its version.</p>
     pub fn programming_lang(
@@ -292,6 +339,10 @@ impl UpdateImageVersionInputBuilder {
     ) -> Self {
         self.programming_lang = input;
         self
+    }
+    /// <p>The supported programming language and its version.</p>
+    pub fn get_programming_lang(&self) -> &::std::option::Option<::std::string::String> {
+        &self.programming_lang
     }
     /// <p>Indicates CPU or GPU compatibility.</p>
     /// <ul>
@@ -311,6 +362,14 @@ impl UpdateImageVersionInputBuilder {
         self.processor = input;
         self
     }
+    /// <p>Indicates CPU or GPU compatibility.</p>
+    /// <ul>
+    /// <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li>
+    /// <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li>
+    /// </ul>
+    pub fn get_processor(&self) -> &::std::option::Option<crate::types::Processor> {
+        &self.processor
+    }
     /// <p>Indicates Horovod compatibility.</p>
     pub fn horovod(mut self, input: bool) -> Self {
         self.horovod = ::std::option::Option::Some(input);
@@ -320,6 +379,10 @@ impl UpdateImageVersionInputBuilder {
     pub fn set_horovod(mut self, input: ::std::option::Option<bool>) -> Self {
         self.horovod = input;
         self
+    }
+    /// <p>Indicates Horovod compatibility.</p>
+    pub fn get_horovod(&self) -> &::std::option::Option<bool> {
+        &self.horovod
     }
     /// <p>The maintainer description of the image version.</p>
     pub fn release_notes(
@@ -336,6 +399,10 @@ impl UpdateImageVersionInputBuilder {
     ) -> Self {
         self.release_notes = input;
         self
+    }
+    /// <p>The maintainer description of the image version.</p>
+    pub fn get_release_notes(&self) -> &::std::option::Option<::std::string::String> {
+        &self.release_notes
     }
     /// Consumes the builder and constructs a [`UpdateImageVersionInput`](crate::operation::update_image_version::UpdateImageVersionInput).
     pub fn build(

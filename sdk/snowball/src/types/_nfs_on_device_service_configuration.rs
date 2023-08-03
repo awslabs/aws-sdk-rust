@@ -50,6 +50,10 @@ impl NfsOnDeviceServiceConfigurationBuilder {
         self.storage_limit = input;
         self
     }
+    /// <p>The maximum NFS storage for one Snow Family device.</p>
+    pub fn get_storage_limit(&self) -> &::std::option::Option<i32> {
+        &self.storage_limit
+    }
     /// <p>The scale unit of the NFS storage on the device.</p>
     /// <p>Valid values: TB.</p>
     pub fn storage_unit(mut self, input: crate::types::StorageUnit) -> Self {
@@ -64,6 +68,11 @@ impl NfsOnDeviceServiceConfigurationBuilder {
     ) -> Self {
         self.storage_unit = input;
         self
+    }
+    /// <p>The scale unit of the NFS storage on the device.</p>
+    /// <p>Valid values: TB.</p>
+    pub fn get_storage_unit(&self) -> &::std::option::Option<crate::types::StorageUnit> {
+        &self.storage_unit
     }
     /// Consumes the builder and constructs a [`NfsOnDeviceServiceConfiguration`](crate::types::NfsOnDeviceServiceConfiguration).
     pub fn build(self) -> crate::types::NfsOnDeviceServiceConfiguration {

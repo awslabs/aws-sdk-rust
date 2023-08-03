@@ -89,6 +89,10 @@ impl ComponentRequestBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the component request.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The ID of the component type.</p>
     pub fn component_type_id(
         mut self,
@@ -104,6 +108,10 @@ impl ComponentRequestBuilder {
     ) -> Self {
         self.component_type_id = input;
         self
+    }
+    /// <p>The ID of the component type.</p>
+    pub fn get_component_type_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_type_id
     }
     /// Adds a key-value pair to `properties`.
     ///
@@ -129,6 +137,14 @@ impl ComponentRequestBuilder {
     ) -> Self {
         self.properties = input;
         self
+    }
+    /// <p>An object that maps strings to the properties to set in the component type. Each string in the mapping must be unique to this object.</p>
+    pub fn get_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::PropertyRequest>,
+    > {
+        &self.properties
     }
     /// Adds a key-value pair to `property_groups`.
     ///
@@ -157,6 +173,17 @@ impl ComponentRequestBuilder {
     ) -> Self {
         self.property_groups = input;
         self
+    }
+    /// <p>The property groups.</p>
+    pub fn get_property_groups(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::ComponentPropertyGroupRequest,
+        >,
+    > {
+        &self.property_groups
     }
     /// Consumes the builder and constructs a [`ComponentRequest`](crate::types::ComponentRequest).
     pub fn build(self) -> crate::types::ComponentRequest {

@@ -95,6 +95,10 @@ impl RespondToAuthChallengeOutputBuilder {
         self.challenge_name = input;
         self
     }
+    /// <p>The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
+    pub fn get_challenge_name(&self) -> &::std::option::Option<crate::types::ChallengeNameType> {
+        &self.challenge_name
+    }
     /// <p>The session that should be passed both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
     pub fn session(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session = ::std::option::Option::Some(input.into());
@@ -104,6 +108,10 @@ impl RespondToAuthChallengeOutputBuilder {
     pub fn set_session(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session = input;
         self
+    }
+    /// <p>The session that should be passed both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
+    pub fn get_session(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session
     }
     /// Adds a key-value pair to `challenge_parameters`.
     ///
@@ -130,6 +138,14 @@ impl RespondToAuthChallengeOutputBuilder {
         self.challenge_parameters = input;
         self
     }
+    /// <p>The challenge parameters. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
+    pub fn get_challenge_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.challenge_parameters
+    }
     /// <p>The result returned by the server in response to the request to respond to the authentication challenge.</p>
     pub fn authentication_result(mut self, input: crate::types::AuthenticationResultType) -> Self {
         self.authentication_result = ::std::option::Option::Some(input);
@@ -142,6 +158,12 @@ impl RespondToAuthChallengeOutputBuilder {
     ) -> Self {
         self.authentication_result = input;
         self
+    }
+    /// <p>The result returned by the server in response to the request to respond to the authentication challenge.</p>
+    pub fn get_authentication_result(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthenticationResultType> {
+        &self.authentication_result
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

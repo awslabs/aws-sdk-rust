@@ -39,6 +39,10 @@ impl DescribeDBClusterBacktracksFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeDBClusterBacktracks as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_db_cluster_backtracks::builders::DescribeDbClusterBacktracksInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -155,6 +159,17 @@ impl DescribeDBClusterBacktracksFluentBuilder {
         self.inner = self.inner.set_db_cluster_identifier(input);
         self
     }
+    /// <p>The DB cluster identifier of the DB cluster to be described. This parameter is stored as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// </ul>
+    /// <p>Example: <code>my-cluster1</code> </p>
+    pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_cluster_identifier()
+    }
     /// <p>If specified, this value is the backtrack identifier of the backtrack to be described.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -180,6 +195,15 @@ impl DescribeDBClusterBacktracksFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_backtrack_identifier(input);
         self
+    }
+    /// <p>If specified, this value is the backtrack identifier of the backtrack to be described.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain a valid universally unique identifier (UUID). For more information about UUIDs, see <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Universally unique identifier</a>.</p> </li>
+    /// </ul>
+    /// <p>Example: <code>123e4567-e89b-12d3-a456-426655440000</code> </p>
+    pub fn get_backtrack_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_backtrack_identifier()
     }
     /// Appends an item to `Filters`.
     ///
@@ -218,6 +242,20 @@ impl DescribeDBClusterBacktracksFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>A filter that specifies one or more DB clusters to describe. Supported filters include the following:</p>
+    /// <ul>
+    /// <li> <p> <code>db-cluster-backtrack-id</code> - Accepts backtrack identifiers. The results list includes information about only the backtracks identified by these identifiers.</p> </li>
+    /// <li> <p> <code>db-cluster-backtrack-status</code> - Accepts any of the following backtrack status values:</p>
+    /// <ul>
+    /// <li> <p> <code>applying</code> </p> </li>
+    /// <li> <p> <code>completed</code> </p> </li>
+    /// <li> <p> <code>failed</code> </p> </li>
+    /// <li> <p> <code>pending</code> </p> </li>
+    /// </ul> <p>The results list includes information about only the backtracks identified by these values.</p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
@@ -232,6 +270,12 @@ impl DescribeDBClusterBacktracksFluentBuilder {
         self.inner = self.inner.set_max_records(input);
         self
     }
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
+    }
     /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterBacktracks</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -241,5 +285,9 @@ impl DescribeDBClusterBacktracksFluentBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
+    }
+    /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterBacktracks</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
     }
 }

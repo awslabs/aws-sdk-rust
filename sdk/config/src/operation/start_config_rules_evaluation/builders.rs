@@ -48,6 +48,10 @@ impl StartConfigRulesEvaluationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartConfigRulesEvaluation as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_config_rules_evaluation::builders::StartConfigRulesEvaluationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -147,5 +151,11 @@ impl StartConfigRulesEvaluationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_config_rule_names(input);
         self
+    }
+    /// <p>The list of names of Config rules that you want to run evaluations for.</p>
+    pub fn get_config_rule_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_config_rule_names()
     }
 }

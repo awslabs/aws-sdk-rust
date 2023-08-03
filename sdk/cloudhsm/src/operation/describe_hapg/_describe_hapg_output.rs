@@ -113,6 +113,10 @@ impl DescribeHapgOutputBuilder {
         self.hapg_arn = input;
         self
     }
+    /// <p>The ARN of the high-availability partition group.</p>
+    pub fn get_hapg_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hapg_arn
+    }
     /// <p>The serial number of the high-availability partition group.</p>
     pub fn hapg_serial(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hapg_serial = ::std::option::Option::Some(input.into());
@@ -122,6 +126,10 @@ impl DescribeHapgOutputBuilder {
     pub fn set_hapg_serial(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hapg_serial = input;
         self
+    }
+    /// <p>The serial number of the high-availability partition group.</p>
+    pub fn get_hapg_serial(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hapg_serial
     }
     /// Appends an item to `hsms_last_action_failed`.
     ///
@@ -145,6 +153,12 @@ impl DescribeHapgOutputBuilder {
         self.hsms_last_action_failed = input;
         self
     }
+    /// <p></p>
+    pub fn get_hsms_last_action_failed(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.hsms_last_action_failed
+    }
     /// Appends an item to `hsms_pending_deletion`.
     ///
     /// To override the contents of this collection use [`set_hsms_pending_deletion`](Self::set_hsms_pending_deletion).
@@ -166,6 +180,12 @@ impl DescribeHapgOutputBuilder {
     ) -> Self {
         self.hsms_pending_deletion = input;
         self
+    }
+    /// <p></p>
+    pub fn get_hsms_pending_deletion(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.hsms_pending_deletion
     }
     /// Appends an item to `hsms_pending_registration`.
     ///
@@ -189,6 +209,12 @@ impl DescribeHapgOutputBuilder {
         self.hsms_pending_registration = input;
         self
     }
+    /// <p></p>
+    pub fn get_hsms_pending_registration(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.hsms_pending_registration
+    }
     /// <p>The label for the high-availability partition group.</p>
     pub fn label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label = ::std::option::Option::Some(input.into());
@@ -198,6 +224,10 @@ impl DescribeHapgOutputBuilder {
     pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label = input;
         self
+    }
+    /// <p>The label for the high-availability partition group.</p>
+    pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label
     }
     /// <p>The date and time the high-availability partition group was last modified.</p>
     pub fn last_modified_timestamp(
@@ -214,6 +244,10 @@ impl DescribeHapgOutputBuilder {
     ) -> Self {
         self.last_modified_timestamp = input;
         self
+    }
+    /// <p>The date and time the high-availability partition group was last modified.</p>
+    pub fn get_last_modified_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_timestamp
     }
     /// Appends an item to `partition_serial_list`.
     ///
@@ -237,6 +271,12 @@ impl DescribeHapgOutputBuilder {
         self.partition_serial_list = input;
         self
     }
+    /// <p>The list of partition serial numbers that belong to the high-availability partition group.</p>
+    pub fn get_partition_serial_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.partition_serial_list
+    }
     /// <p>The state of the high-availability partition group.</p>
     pub fn state(mut self, input: crate::types::CloudHsmObjectState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -249,6 +289,10 @@ impl DescribeHapgOutputBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the high-availability partition group.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::CloudHsmObjectState> {
+        &self.state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

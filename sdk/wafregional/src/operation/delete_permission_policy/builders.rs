@@ -41,6 +41,13 @@ impl DeletePermissionPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeletePermissionPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_permission_policy::builders::DeletePermissionPolicyInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +139,10 @@ impl DeletePermissionPolicyFluentBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the RuleGroup from which you want to delete the policy.</p>
+    /// <p>The user making the request must be the owner of the RuleGroup.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
     }
 }

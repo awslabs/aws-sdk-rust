@@ -65,6 +65,10 @@ impl CreateRoutingControlInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The Amazon Resource Name (ARN) of the cluster that includes the routing control.</p>
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_arn = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl CreateRoutingControlInputBuilder {
     pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the cluster that includes the routing control.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the control panel that includes the routing control.</p>
     pub fn control_panel_arn(
@@ -91,6 +99,10 @@ impl CreateRoutingControlInputBuilder {
         self.control_panel_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the control panel that includes the routing control.</p>
+    pub fn get_control_panel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_panel_arn
+    }
     /// <p>The name of the routing control.</p>
     pub fn routing_control_name(
         mut self,
@@ -106,6 +118,10 @@ impl CreateRoutingControlInputBuilder {
     ) -> Self {
         self.routing_control_name = input;
         self
+    }
+    /// <p>The name of the routing control.</p>
+    pub fn get_routing_control_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.routing_control_name
     }
     /// Consumes the builder and constructs a [`CreateRoutingControlInput`](crate::operation::create_routing_control::CreateRoutingControlInput).
     pub fn build(

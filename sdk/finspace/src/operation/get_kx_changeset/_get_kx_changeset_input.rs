@@ -61,6 +61,10 @@ impl GetKxChangesetInputBuilder {
         self.environment_id = input;
         self
     }
+    /// <p>A unique identifier for the kdb environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
+    }
     /// <p>The name of the kdb database.</p>
     pub fn database_name(
         mut self,
@@ -77,6 +81,10 @@ impl GetKxChangesetInputBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The name of the kdb database.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>A unique identifier of the changeset for which you want to retrieve data.</p>
     pub fn changeset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.changeset_id = ::std::option::Option::Some(input.into());
@@ -86,6 +94,10 @@ impl GetKxChangesetInputBuilder {
     pub fn set_changeset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.changeset_id = input;
         self
+    }
+    /// <p>A unique identifier of the changeset for which you want to retrieve data.</p>
+    pub fn get_changeset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.changeset_id
     }
     /// Consumes the builder and constructs a [`GetKxChangesetInput`](crate::operation::get_kx_changeset::GetKxChangesetInput).
     pub fn build(

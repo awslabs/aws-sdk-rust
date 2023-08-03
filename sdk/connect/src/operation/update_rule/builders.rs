@@ -37,6 +37,10 @@ impl UpdateRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateRule as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_rule::builders::UpdateRuleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl UpdateRuleFluentBuilder {
         self.inner = self.inner.set_rule_id(input);
         self
     }
+    /// <p>A unique identifier for the rule.</p>
+    pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rule_id()
+    }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
@@ -128,6 +136,10 @@ impl UpdateRuleFluentBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
     }
     /// <p>The name of the rule. You can change the name only if <code>TriggerEventSource</code> is one of the following values: <code>OnZendeskTicketCreate</code> | <code>OnZendeskTicketStatusUpdate</code> | <code>OnSalesforceCaseCreate</code> </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -139,6 +151,10 @@ impl UpdateRuleFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the rule. You can change the name only if <code>TriggerEventSource</code> is one of the following values: <code>OnZendeskTicketCreate</code> | <code>OnZendeskTicketStatusUpdate</code> | <code>OnSalesforceCaseCreate</code> </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The conditions of the rule.</p>
     pub fn function(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.function(input.into());
@@ -148,6 +164,10 @@ impl UpdateRuleFluentBuilder {
     pub fn set_function(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_function(input);
         self
+    }
+    /// <p>The conditions of the rule.</p>
+    pub fn get_function(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_function()
     }
     /// Appends an item to `Actions`.
     ///
@@ -166,6 +186,10 @@ impl UpdateRuleFluentBuilder {
         self.inner = self.inner.set_actions(input);
         self
     }
+    /// <p>A list of actions to be run when the rule is triggered.</p>
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleAction>> {
+        self.inner.get_actions()
+    }
     /// <p>The publish status of the rule.</p>
     pub fn publish_status(mut self, input: crate::types::RulePublishStatus) -> Self {
         self.inner = self.inner.publish_status(input);
@@ -178,5 +202,9 @@ impl UpdateRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_publish_status(input);
         self
+    }
+    /// <p>The publish status of the rule.</p>
+    pub fn get_publish_status(&self) -> &::std::option::Option<crate::types::RulePublishStatus> {
+        self.inner.get_publish_status()
     }
 }

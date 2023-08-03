@@ -40,6 +40,10 @@ impl DescribeResourceInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The resource ARN.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Consumes the builder and constructs a [`DescribeResourceInput`](crate::operation::describe_resource::DescribeResourceInput).
     pub fn build(
         self,

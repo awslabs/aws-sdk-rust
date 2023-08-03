@@ -96,6 +96,10 @@ impl ServiceQuotaIncreaseRequestInTemplateBuilder {
         self.service_code = input;
         self
     }
+    /// <p>The service identifier.</p>
+    pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_code
+    }
     /// <p>The service name.</p>
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl ServiceQuotaIncreaseRequestInTemplateBuilder {
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_name = input;
         self
+    }
+    /// <p>The service name.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
     }
     /// <p>The quota identifier.</p>
     pub fn quota_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -116,6 +124,10 @@ impl ServiceQuotaIncreaseRequestInTemplateBuilder {
         self.quota_code = input;
         self
     }
+    /// <p>The quota identifier.</p>
+    pub fn get_quota_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quota_code
+    }
     /// <p>The quota name.</p>
     pub fn quota_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quota_name = ::std::option::Option::Some(input.into());
@@ -125,6 +137,10 @@ impl ServiceQuotaIncreaseRequestInTemplateBuilder {
     pub fn set_quota_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.quota_name = input;
         self
+    }
+    /// <p>The quota name.</p>
+    pub fn get_quota_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quota_name
     }
     /// <p>The new, increased value of the quota.</p>
     pub fn desired_value(mut self, input: f64) -> Self {
@@ -136,6 +152,10 @@ impl ServiceQuotaIncreaseRequestInTemplateBuilder {
         self.desired_value = input;
         self
     }
+    /// <p>The new, increased value of the quota.</p>
+    pub fn get_desired_value(&self) -> &::std::option::Option<f64> {
+        &self.desired_value
+    }
     /// <p>The AWS Region.</p>
     pub fn aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_region = ::std::option::Option::Some(input.into());
@@ -145,6 +165,10 @@ impl ServiceQuotaIncreaseRequestInTemplateBuilder {
     pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_region = input;
         self
+    }
+    /// <p>The AWS Region.</p>
+    pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_region
     }
     /// <p>The unit of measurement.</p>
     pub fn unit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -156,6 +180,10 @@ impl ServiceQuotaIncreaseRequestInTemplateBuilder {
         self.unit = input;
         self
     }
+    /// <p>The unit of measurement.</p>
+    pub fn get_unit(&self) -> &::std::option::Option<::std::string::String> {
+        &self.unit
+    }
     /// <p>Indicates whether the quota is global.</p>
     pub fn global_quota(mut self, input: bool) -> Self {
         self.global_quota = ::std::option::Option::Some(input);
@@ -165,6 +193,10 @@ impl ServiceQuotaIncreaseRequestInTemplateBuilder {
     pub fn set_global_quota(mut self, input: ::std::option::Option<bool>) -> Self {
         self.global_quota = input;
         self
+    }
+    /// <p>Indicates whether the quota is global.</p>
+    pub fn get_global_quota(&self) -> &::std::option::Option<bool> {
+        &self.global_quota
     }
     /// Consumes the builder and constructs a [`ServiceQuotaIncreaseRequestInTemplate`](crate::types::ServiceQuotaIncreaseRequestInTemplate).
     pub fn build(self) -> crate::types::ServiceQuotaIncreaseRequestInTemplate {

@@ -64,6 +64,10 @@ impl ReferenceFilterBuilder {
         self.name = input;
         self
     }
+    /// <p>A name to filter on.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>An MD5 checksum to filter on.</p>
     pub fn md5(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.md5 = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl ReferenceFilterBuilder {
     pub fn set_md5(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.md5 = input;
         self
+    }
+    /// <p>An MD5 checksum to filter on.</p>
+    pub fn get_md5(&self) -> &::std::option::Option<::std::string::String> {
+        &self.md5
     }
     /// <p>The filter's start date.</p>
     pub fn created_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -87,6 +95,10 @@ impl ReferenceFilterBuilder {
         self.created_after = input;
         self
     }
+    /// <p>The filter's start date.</p>
+    pub fn get_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_after
+    }
     /// <p>The filter's end date.</p>
     pub fn created_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_before = ::std::option::Option::Some(input);
@@ -99,6 +111,10 @@ impl ReferenceFilterBuilder {
     ) -> Self {
         self.created_before = input;
         self
+    }
+    /// <p>The filter's end date.</p>
+    pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_before
     }
     /// Consumes the builder and constructs a [`ReferenceFilter`](crate::types::ReferenceFilter).
     pub fn build(self) -> crate::types::ReferenceFilter {

@@ -70,6 +70,10 @@ impl ScheduledSplitConfigBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The date and time that this step of the launch starts.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// Adds a key-value pair to `group_weights`.
     ///
     /// To override the contents of this collection use [`set_group_weights`](Self::set_group_weights).
@@ -97,6 +101,14 @@ impl ScheduledSplitConfigBuilder {
         self.group_weights = input;
         self
     }
+    /// <p>The traffic allocation percentages among the feature variations during one step of a launch. This is a set of key-value pairs. The keys are variation names. The values represent the percentage of traffic to allocate to that variation during this step.</p>
+    /// <p>The values is expressed in thousandths of a percent, so assigning a weight of 50000 assigns 50% of traffic to that variation.</p>
+    /// <p>If the sum of the weights for all the variations in a segment override does not add up to 100,000, then the remaining traffic that matches this segment is not assigned by this segment override, and instead moves on to the next segment override or the default traffic split.</p>
+    pub fn get_group_weights(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, i64>> {
+        &self.group_weights
+    }
     /// Appends an item to `segment_overrides`.
     ///
     /// To override the contents of this collection use [`set_segment_overrides`](Self::set_segment_overrides).
@@ -117,6 +129,13 @@ impl ScheduledSplitConfigBuilder {
     ) -> Self {
         self.segment_overrides = input;
         self
+    }
+    /// <p>Use this parameter to specify different traffic splits for one or more audience <i>segments</i>. A segment is a portion of your audience that share one or more characteristics. Examples could be Chrome browser users, users in Europe, or Firefox browser users in Europe who also fit other criteria that your application collects, such as age.</p>
+    /// <p>This parameter is an array of up to six segment override objects. Each of these objects specifies a segment that you have already created, and defines the traffic split for that segment.</p>
+    pub fn get_segment_overrides(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SegmentOverride>> {
+        &self.segment_overrides
     }
     /// Consumes the builder and constructs a [`ScheduledSplitConfig`](crate::types::ScheduledSplitConfig).
     pub fn build(self) -> crate::types::ScheduledSplitConfig {

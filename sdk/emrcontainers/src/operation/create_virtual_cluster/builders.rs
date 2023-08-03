@@ -36,6 +36,12 @@ impl CreateVirtualClusterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateVirtualCluster as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_virtual_cluster::builders::CreateVirtualClusterInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateVirtualClusterFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The specified name of the virtual cluster.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The container provider of the virtual cluster.</p>
     pub fn container_provider(mut self, input: crate::types::ContainerProvider) -> Self {
         self.inner = self.inner.container_provider(input);
@@ -139,6 +149,12 @@ impl CreateVirtualClusterFluentBuilder {
         self.inner = self.inner.set_container_provider(input);
         self
     }
+    /// <p>The container provider of the virtual cluster.</p>
+    pub fn get_container_provider(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContainerProvider> {
+        self.inner.get_container_provider()
+    }
     /// <p>The client token of the virtual cluster.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -148,6 +164,10 @@ impl CreateVirtualClusterFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>The client token of the virtual cluster.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -171,5 +191,13 @@ impl CreateVirtualClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags assigned to the virtual cluster.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

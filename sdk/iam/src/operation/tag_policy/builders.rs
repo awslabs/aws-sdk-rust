@@ -46,6 +46,10 @@ impl TagPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the TagPolicy as a reference.
+    pub fn as_input(&self) -> &crate::operation::tag_policy::builders::TagPolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +134,11 @@ impl TagPolicyFluentBuilder {
         self.inner = self.inner.set_policy_arn(input);
         self
     }
+    /// <p>The ARN of the IAM customer managed policy to which you want to add tags.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_arn()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -146,5 +155,9 @@ impl TagPolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The list of tags that you want to attach to the IAM customer managed policy. Each tag consists of a key name and an associated value.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

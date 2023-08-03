@@ -56,6 +56,10 @@ impl TransitGatewayPeeringBuilder {
         self.peering = input;
         self
     }
+    /// <p>Describes a transit gateway peer connection.</p>
+    pub fn get_peering(&self) -> &::std::option::Option<crate::types::Peering> {
+        &self.peering
+    }
     /// <p>The ARN of the transit gateway.</p>
     pub fn transit_gateway_arn(
         mut self,
@@ -72,6 +76,10 @@ impl TransitGatewayPeeringBuilder {
         self.transit_gateway_arn = input;
         self
     }
+    /// <p>The ARN of the transit gateway.</p>
+    pub fn get_transit_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_arn
+    }
     /// <p>The ID of the transit gateway peering attachment.</p>
     pub fn transit_gateway_peering_attachment_id(
         mut self,
@@ -87,6 +95,12 @@ impl TransitGatewayPeeringBuilder {
     ) -> Self {
         self.transit_gateway_peering_attachment_id = input;
         self
+    }
+    /// <p>The ID of the transit gateway peering attachment.</p>
+    pub fn get_transit_gateway_peering_attachment_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_peering_attachment_id
     }
     /// Consumes the builder and constructs a [`TransitGatewayPeering`](crate::types::TransitGatewayPeering).
     pub fn build(self) -> crate::types::TransitGatewayPeering {

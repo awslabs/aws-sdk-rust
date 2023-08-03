@@ -76,6 +76,12 @@ impl EndpointInputConfigurationBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The instance types to use for the load test.</p>
+    pub fn get_instance_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProductionVariantInstanceType> {
+        &self.instance_type
+    }
     /// <p>The inference specification name in the model package version.</p>
     pub fn inference_specification_name(
         mut self,
@@ -91,6 +97,12 @@ impl EndpointInputConfigurationBuilder {
     ) -> Self {
         self.inference_specification_name = input;
         self
+    }
+    /// <p>The inference specification name in the model package version.</p>
+    pub fn get_inference_specification_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.inference_specification_name
     }
     /// <p> The parameter you want to benchmark against.</p>
     pub fn environment_parameter_ranges(
@@ -108,6 +120,12 @@ impl EndpointInputConfigurationBuilder {
         self.environment_parameter_ranges = input;
         self
     }
+    /// <p> The parameter you want to benchmark against.</p>
+    pub fn get_environment_parameter_ranges(
+        &self,
+    ) -> &::std::option::Option<crate::types::EnvironmentParameterRanges> {
+        &self.environment_parameter_ranges
+    }
     /// <p>Specifies the serverless configuration for an endpoint variant.</p>
     pub fn serverless_config(
         mut self,
@@ -123,6 +141,12 @@ impl EndpointInputConfigurationBuilder {
     ) -> Self {
         self.serverless_config = input;
         self
+    }
+    /// <p>Specifies the serverless configuration for an endpoint variant.</p>
+    pub fn get_serverless_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProductionVariantServerlessConfig> {
+        &self.serverless_config
     }
     /// Consumes the builder and constructs a [`EndpointInputConfiguration`](crate::types::EndpointInputConfiguration).
     pub fn build(self) -> crate::types::EndpointInputConfiguration {

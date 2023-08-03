@@ -51,6 +51,10 @@ impl BackupRetentionPolicyBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of backup retention policy. For the <code>DAYS</code> type, the value is the number of days to retain backups.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::BackupRetentionType> {
+        &self.r#type
+    }
     /// <p>Use a value between 7 - 379.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl BackupRetentionPolicyBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>Use a value between 7 - 379.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`BackupRetentionPolicy`](crate::types::BackupRetentionPolicy).
     pub fn build(self) -> crate::types::BackupRetentionPolicy {

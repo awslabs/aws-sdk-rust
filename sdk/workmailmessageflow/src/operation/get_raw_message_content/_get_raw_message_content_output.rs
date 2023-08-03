@@ -48,6 +48,12 @@ impl GetRawMessageContentOutputBuilder {
         self.message_content = input;
         self
     }
+    /// <p>The raw content of the email message, in MIME format.</p>
+    pub fn get_message_content(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+        &self.message_content
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -48,6 +48,10 @@ impl EventCategoriesMapBuilder {
         self.source_type = input;
         self
     }
+    /// <p>The source type that the returned categories belong to</p>
+    pub fn get_source_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_type
+    }
     /// Appends an item to `event_categories`.
     ///
     /// To override the contents of this collection use [`set_event_categories`](Self::set_event_categories).
@@ -69,6 +73,12 @@ impl EventCategoriesMapBuilder {
     ) -> Self {
         self.event_categories = input;
         self
+    }
+    /// <p>The event categories for the specified source type</p>
+    pub fn get_event_categories(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.event_categories
     }
     /// Consumes the builder and constructs a [`EventCategoriesMap`](crate::types::EventCategoriesMap).
     pub fn build(self) -> crate::types::EventCategoriesMap {

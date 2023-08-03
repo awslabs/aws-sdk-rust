@@ -90,6 +90,10 @@ impl UpdateSimulationApplicationInputBuilder {
         self.application = input;
         self
     }
+    /// <p>The application information for the simulation application.</p>
+    pub fn get_application(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application
+    }
     /// Appends an item to `sources`.
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
@@ -109,6 +113,12 @@ impl UpdateSimulationApplicationInputBuilder {
         self.sources = input;
         self
     }
+    /// <p>The sources of the simulation application.</p>
+    pub fn get_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceConfig>> {
+        &self.sources
+    }
     /// <p>The simulation software suite used by the simulation application.</p>
     pub fn simulation_software_suite(
         mut self,
@@ -125,6 +135,12 @@ impl UpdateSimulationApplicationInputBuilder {
         self.simulation_software_suite = input;
         self
     }
+    /// <p>The simulation software suite used by the simulation application.</p>
+    pub fn get_simulation_software_suite(
+        &self,
+    ) -> &::std::option::Option<crate::types::SimulationSoftwareSuite> {
+        &self.simulation_software_suite
+    }
     /// <p>Information about the robot software suite (ROS distribution).</p>
     pub fn robot_software_suite(mut self, input: crate::types::RobotSoftwareSuite) -> Self {
         self.robot_software_suite = ::std::option::Option::Some(input);
@@ -138,6 +154,12 @@ impl UpdateSimulationApplicationInputBuilder {
         self.robot_software_suite = input;
         self
     }
+    /// <p>Information about the robot software suite (ROS distribution).</p>
+    pub fn get_robot_software_suite(
+        &self,
+    ) -> &::std::option::Option<crate::types::RobotSoftwareSuite> {
+        &self.robot_software_suite
+    }
     /// <p>The rendering engine for the simulation application.</p>
     pub fn rendering_engine(mut self, input: crate::types::RenderingEngine) -> Self {
         self.rendering_engine = ::std::option::Option::Some(input);
@@ -150,6 +172,10 @@ impl UpdateSimulationApplicationInputBuilder {
     ) -> Self {
         self.rendering_engine = input;
         self
+    }
+    /// <p>The rendering engine for the simulation application.</p>
+    pub fn get_rendering_engine(&self) -> &::std::option::Option<crate::types::RenderingEngine> {
+        &self.rendering_engine
     }
     /// <p>The revision id for the robot application.</p>
     pub fn current_revision_id(
@@ -167,6 +193,10 @@ impl UpdateSimulationApplicationInputBuilder {
         self.current_revision_id = input;
         self
     }
+    /// <p>The revision id for the robot application.</p>
+    pub fn get_current_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.current_revision_id
+    }
     /// <p>The object that contains the Docker image URI for your simulation application.</p>
     pub fn environment(mut self, input: crate::types::Environment) -> Self {
         self.environment = ::std::option::Option::Some(input);
@@ -179,6 +209,10 @@ impl UpdateSimulationApplicationInputBuilder {
     ) -> Self {
         self.environment = input;
         self
+    }
+    /// <p>The object that contains the Docker image URI for your simulation application.</p>
+    pub fn get_environment(&self) -> &::std::option::Option<crate::types::Environment> {
+        &self.environment
     }
     /// Consumes the builder and constructs a [`UpdateSimulationApplicationInput`](crate::operation::update_simulation_application::UpdateSimulationApplicationInput).
     pub fn build(

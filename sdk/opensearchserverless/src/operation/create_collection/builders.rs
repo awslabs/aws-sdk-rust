@@ -36,6 +36,12 @@ impl CreateCollectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateCollection as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_collection::builders::CreateCollectionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateCollectionFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>Name of the collection.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The type of collection.</p>
     pub fn r#type(mut self, input: crate::types::CollectionType) -> Self {
         self.inner = self.inner.r#type(input);
@@ -136,6 +146,10 @@ impl CreateCollectionFluentBuilder {
         self.inner = self.inner.set_type(input);
         self
     }
+    /// <p>The type of collection.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::CollectionType> {
+        self.inner.get_type()
+    }
     /// <p>Description of the collection.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -145,6 +159,10 @@ impl CreateCollectionFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>Description of the collection.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `tags`.
     ///
@@ -163,6 +181,10 @@ impl CreateCollectionFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>An arbitrary set of tags (key–value pairs) to associate with the OpenSearch Serverless collection.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -172,5 +194,9 @@ impl CreateCollectionFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

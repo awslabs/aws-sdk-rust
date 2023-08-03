@@ -62,6 +62,10 @@ impl GetConfigOutputBuilder {
         self.config_type = input;
         self
     }
+    /// <p>The type of credentials.</p>
+    pub fn get_config_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.config_type
+    }
     /// <p>The chrystoki.conf configuration file.</p>
     pub fn config_file(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_file = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl GetConfigOutputBuilder {
         self.config_file = input;
         self
     }
+    /// <p>The chrystoki.conf configuration file.</p>
+    pub fn get_config_file(&self) -> &::std::option::Option<::std::string::String> {
+        &self.config_file
+    }
     /// <p>The certificate file containing the server.pem files of the HSMs.</p>
     pub fn config_cred(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_cred = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl GetConfigOutputBuilder {
     pub fn set_config_cred(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.config_cred = input;
         self
+    }
+    /// <p>The certificate file containing the server.pem files of the HSMs.</p>
+    pub fn get_config_cred(&self) -> &::std::option::Option<::std::string::String> {
+        &self.config_cred
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

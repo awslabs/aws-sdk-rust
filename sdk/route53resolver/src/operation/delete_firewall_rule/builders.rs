@@ -36,6 +36,12 @@ impl DeleteFirewallRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteFirewallRule as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_firewall_rule::builders::DeleteFirewallRuleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl DeleteFirewallRuleFluentBuilder {
         self.inner = self.inner.set_firewall_rule_group_id(input);
         self
     }
+    /// <p>The unique identifier of the firewall rule group that you want to delete the rule from. </p>
+    pub fn get_firewall_rule_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_firewall_rule_group_id()
+    }
     /// <p>The ID of the domain list that's used in the rule. </p>
     pub fn firewall_domain_list_id(
         mut self,
@@ -147,5 +157,9 @@ impl DeleteFirewallRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_firewall_domain_list_id(input);
         self
+    }
+    /// <p>The ID of the domain list that's used in the rule. </p>
+    pub fn get_firewall_domain_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_firewall_domain_list_id()
     }
 }

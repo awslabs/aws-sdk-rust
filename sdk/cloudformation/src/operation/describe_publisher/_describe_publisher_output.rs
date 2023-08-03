@@ -71,6 +71,10 @@ impl DescribePublisherOutputBuilder {
         self.publisher_id = input;
         self
     }
+    /// <p>The ID of the extension publisher.</p>
+    pub fn get_publisher_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.publisher_id
+    }
     /// <p>Whether the publisher is verified. Currently, all registered publishers are verified.</p>
     pub fn publisher_status(mut self, input: crate::types::PublisherStatus) -> Self {
         self.publisher_status = ::std::option::Option::Some(input);
@@ -84,6 +88,10 @@ impl DescribePublisherOutputBuilder {
         self.publisher_status = input;
         self
     }
+    /// <p>Whether the publisher is verified. Currently, all registered publishers are verified.</p>
+    pub fn get_publisher_status(&self) -> &::std::option::Option<crate::types::PublisherStatus> {
+        &self.publisher_status
+    }
     /// <p>The type of account used as the identity provider when registering this publisher with CloudFormation.</p>
     pub fn identity_provider(mut self, input: crate::types::IdentityProvider) -> Self {
         self.identity_provider = ::std::option::Option::Some(input);
@@ -96,6 +104,10 @@ impl DescribePublisherOutputBuilder {
     ) -> Self {
         self.identity_provider = input;
         self
+    }
+    /// <p>The type of account used as the identity provider when registering this publisher with CloudFormation.</p>
+    pub fn get_identity_provider(&self) -> &::std::option::Option<crate::types::IdentityProvider> {
+        &self.identity_provider
     }
     /// <p>The URL to the publisher's profile with the identity provider.</p>
     pub fn publisher_profile(
@@ -112,6 +124,10 @@ impl DescribePublisherOutputBuilder {
     ) -> Self {
         self.publisher_profile = input;
         self
+    }
+    /// <p>The URL to the publisher's profile with the identity provider.</p>
+    pub fn get_publisher_profile(&self) -> &::std::option::Option<::std::string::String> {
+        &self.publisher_profile
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -56,6 +56,12 @@ impl DeleteTransitGatewayRouteTableAnnouncementOutputBuilder {
         self.transit_gateway_route_table_announcement = input;
         self
     }
+    /// <p>Provides details about a deleted transit gateway route table.</p>
+    pub fn get_transit_gateway_route_table_announcement(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransitGatewayRouteTableAnnouncement> {
+        &self.transit_gateway_route_table_announcement
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

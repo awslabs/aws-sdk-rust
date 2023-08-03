@@ -86,6 +86,10 @@ impl PeriodToDateComputationBuilder {
         self.computation_id = input;
         self
     }
+    /// <p>The ID for a computation.</p>
+    pub fn get_computation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.computation_id
+    }
     /// <p>The name of a computation.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -95,6 +99,10 @@ impl PeriodToDateComputationBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of a computation.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The time field that is used in a computation.</p>
     pub fn time(mut self, input: crate::types::DimensionField) -> Self {
@@ -106,6 +114,10 @@ impl PeriodToDateComputationBuilder {
         self.time = input;
         self
     }
+    /// <p>The time field that is used in a computation.</p>
+    pub fn get_time(&self) -> &::std::option::Option<crate::types::DimensionField> {
+        &self.time
+    }
     /// <p>The value field that is used in a computation.</p>
     pub fn value(mut self, input: crate::types::MeasureField) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -115,6 +127,10 @@ impl PeriodToDateComputationBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::MeasureField>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value field that is used in a computation.</p>
+    pub fn get_value(&self) -> &::std::option::Option<crate::types::MeasureField> {
+        &self.value
     }
     /// <p>The time granularity setup of period to date computation. Choose from the following options:</p>
     /// <ul>
@@ -136,6 +152,16 @@ impl PeriodToDateComputationBuilder {
     ) -> Self {
         self.period_time_granularity = input;
         self
+    }
+    /// <p>The time granularity setup of period to date computation. Choose from the following options:</p>
+    /// <ul>
+    /// <li> <p>YEAR: Year to date.</p> </li>
+    /// <li> <p>MONTH: Month to date.</p> </li>
+    /// </ul>
+    pub fn get_period_time_granularity(
+        &self,
+    ) -> &::std::option::Option<crate::types::TimeGranularity> {
+        &self.period_time_granularity
     }
     /// Consumes the builder and constructs a [`PeriodToDateComputation`](crate::types::PeriodToDateComputation).
     pub fn build(self) -> crate::types::PeriodToDateComputation {

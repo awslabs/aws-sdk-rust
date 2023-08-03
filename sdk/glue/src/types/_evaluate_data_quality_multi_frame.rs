@@ -109,6 +109,10 @@ impl EvaluateDataQualityMultiFrameBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the data quality evaluation.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `inputs`.
     ///
     /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
@@ -127,6 +131,10 @@ impl EvaluateDataQualityMultiFrameBuilder {
     ) -> Self {
         self.inputs = input;
         self
+    }
+    /// <p>The inputs of your data quality evaluation. The first input in this list is the primary data source.</p>
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inputs
     }
     /// Adds a key-value pair to `additional_data_sources`.
     ///
@@ -153,6 +161,14 @@ impl EvaluateDataQualityMultiFrameBuilder {
         self.additional_data_sources = input;
         self
     }
+    /// <p>The aliases of all data sources except primary.</p>
+    pub fn get_additional_data_sources(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.additional_data_sources
+    }
     /// <p>The ruleset for your data quality evaluation.</p>
     pub fn ruleset(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ruleset = ::std::option::Option::Some(input.into());
@@ -162,6 +178,10 @@ impl EvaluateDataQualityMultiFrameBuilder {
     pub fn set_ruleset(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ruleset = input;
         self
+    }
+    /// <p>The ruleset for your data quality evaluation.</p>
+    pub fn get_ruleset(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ruleset
     }
     /// <p>Options to configure how your results are published.</p>
     pub fn publishing_options(mut self, input: crate::types::DqResultsPublishingOptions) -> Self {
@@ -175,6 +195,12 @@ impl EvaluateDataQualityMultiFrameBuilder {
     ) -> Self {
         self.publishing_options = input;
         self
+    }
+    /// <p>Options to configure how your results are published.</p>
+    pub fn get_publishing_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::DqResultsPublishingOptions> {
+        &self.publishing_options
     }
     /// Adds a key-value pair to `additional_options`.
     ///
@@ -201,6 +227,14 @@ impl EvaluateDataQualityMultiFrameBuilder {
         self.additional_options = input;
         self
     }
+    /// <p>Options to configure runtime behavior of the transform.</p>
+    pub fn get_additional_options(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<crate::types::AdditionalOptionKeys, ::std::string::String>,
+    > {
+        &self.additional_options
+    }
     /// <p>Options to configure how your job will stop if your data quality evaluation fails.</p>
     pub fn stop_job_on_failure_options(
         mut self,
@@ -216,6 +250,12 @@ impl EvaluateDataQualityMultiFrameBuilder {
     ) -> Self {
         self.stop_job_on_failure_options = input;
         self
+    }
+    /// <p>Options to configure how your job will stop if your data quality evaluation fails.</p>
+    pub fn get_stop_job_on_failure_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::DqStopJobOnFailureOptions> {
+        &self.stop_job_on_failure_options
     }
     /// Consumes the builder and constructs a [`EvaluateDataQualityMultiFrame`](crate::types::EvaluateDataQualityMultiFrame).
     pub fn build(self) -> crate::types::EvaluateDataQualityMultiFrame {

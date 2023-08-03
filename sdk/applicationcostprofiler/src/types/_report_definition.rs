@@ -88,6 +88,10 @@ impl ReportDefinitionBuilder {
         self.report_id = input;
         self
     }
+    /// <p>The ID of the report.</p>
+    pub fn get_report_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.report_id
+    }
     /// <p>Description of the report</p>
     pub fn report_description(
         mut self,
@@ -104,6 +108,10 @@ impl ReportDefinitionBuilder {
         self.report_description = input;
         self
     }
+    /// <p>Description of the report</p>
+    pub fn get_report_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.report_description
+    }
     /// <p>The cadence at which the report is generated.</p>
     pub fn report_frequency(mut self, input: crate::types::ReportFrequency) -> Self {
         self.report_frequency = ::std::option::Option::Some(input);
@@ -117,6 +125,10 @@ impl ReportDefinitionBuilder {
         self.report_frequency = input;
         self
     }
+    /// <p>The cadence at which the report is generated.</p>
+    pub fn get_report_frequency(&self) -> &::std::option::Option<crate::types::ReportFrequency> {
+        &self.report_frequency
+    }
     /// <p>The format used for the generated reports.</p>
     pub fn format(mut self, input: crate::types::Format) -> Self {
         self.format = ::std::option::Option::Some(input);
@@ -126,6 +138,10 @@ impl ReportDefinitionBuilder {
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::Format>) -> Self {
         self.format = input;
         self
+    }
+    /// <p>The format used for the generated reports.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::Format> {
+        &self.format
     }
     /// <p>The location in Amazon Simple Storage Service (Amazon S3) the reports should be saved to.</p>
     pub fn destination_s3_location(mut self, input: crate::types::S3Location) -> Self {
@@ -140,6 +156,10 @@ impl ReportDefinitionBuilder {
         self.destination_s3_location = input;
         self
     }
+    /// <p>The location in Amazon Simple Storage Service (Amazon S3) the reports should be saved to.</p>
+    pub fn get_destination_s3_location(&self) -> &::std::option::Option<crate::types::S3Location> {
+        &self.destination_s3_location
+    }
     /// <p>Timestamp (milliseconds) when this report definition was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -153,6 +173,10 @@ impl ReportDefinitionBuilder {
         self.created_at = input;
         self
     }
+    /// <p>Timestamp (milliseconds) when this report definition was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>Timestamp (milliseconds) when this report definition was last updated.</p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_at = ::std::option::Option::Some(input);
@@ -165,6 +189,10 @@ impl ReportDefinitionBuilder {
     ) -> Self {
         self.last_updated_at = input;
         self
+    }
+    /// <p>Timestamp (milliseconds) when this report definition was last updated.</p>
+    pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_at
     }
     /// Consumes the builder and constructs a [`ReportDefinition`](crate::types::ReportDefinition).
     pub fn build(self) -> crate::types::ReportDefinition {

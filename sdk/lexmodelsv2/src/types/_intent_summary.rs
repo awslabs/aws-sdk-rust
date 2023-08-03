@@ -88,6 +88,10 @@ impl IntentSummaryBuilder {
         self.intent_id = input;
         self
     }
+    /// <p>The unique identifier assigned to the intent. Use this ID to get detailed information about the intent with the <code>DescribeIntent</code> operation.</p>
+    pub fn get_intent_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.intent_id
+    }
     /// <p>The name of the intent.</p>
     pub fn intent_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.intent_name = ::std::option::Option::Some(input.into());
@@ -98,6 +102,10 @@ impl IntentSummaryBuilder {
         self.intent_name = input;
         self
     }
+    /// <p>The name of the intent.</p>
+    pub fn get_intent_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.intent_name
+    }
     /// <p>The description of the intent.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -107,6 +115,10 @@ impl IntentSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the intent.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>If this intent is derived from a built-in intent, the name of the parent intent.</p>
     pub fn parent_intent_signature(
@@ -123,6 +135,10 @@ impl IntentSummaryBuilder {
     ) -> Self {
         self.parent_intent_signature = input;
         self
+    }
+    /// <p>If this intent is derived from a built-in intent, the name of the parent intent.</p>
+    pub fn get_parent_intent_signature(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_intent_signature
     }
     /// Appends an item to `input_contexts`.
     ///
@@ -143,6 +159,12 @@ impl IntentSummaryBuilder {
         self.input_contexts = input;
         self
     }
+    /// <p>The input contexts that must be active for this intent to be considered for recognition.</p>
+    pub fn get_input_contexts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputContext>> {
+        &self.input_contexts
+    }
     /// Appends an item to `output_contexts`.
     ///
     /// To override the contents of this collection use [`set_output_contexts`](Self::set_output_contexts).
@@ -162,6 +184,12 @@ impl IntentSummaryBuilder {
         self.output_contexts = input;
         self
     }
+    /// <p>The output contexts that are activated when this intent is fulfilled.</p>
+    pub fn get_output_contexts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputContext>> {
+        &self.output_contexts
+    }
     /// <p>The timestamp of the date and time that the intent was last updated.</p>
     pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date_time = ::std::option::Option::Some(input);
@@ -174,6 +202,12 @@ impl IntentSummaryBuilder {
     ) -> Self {
         self.last_updated_date_time = input;
         self
+    }
+    /// <p>The timestamp of the date and time that the intent was last updated.</p>
+    pub fn get_last_updated_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date_time
     }
     /// Consumes the builder and constructs a [`IntentSummary`](crate::types::IntentSummary).
     pub fn build(self) -> crate::types::IntentSummary {

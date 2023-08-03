@@ -72,6 +72,10 @@ impl SlotBuilder {
         self.value = input;
         self
     }
+    /// <p>The current value of the slot.</p>
+    pub fn get_value(&self) -> &::std::option::Option<crate::types::Value> {
+        &self.value
+    }
     /// <p>When the <code>shape</code> value is <code>List</code>, it indicates that the <code>values</code> field contains a list of slot values. When the value is <code>Scalar</code>, it indicates that the <code>value</code> field contains a single value.</p>
     pub fn shape(mut self, input: crate::types::Shape) -> Self {
         self.shape = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl SlotBuilder {
     pub fn set_shape(mut self, input: ::std::option::Option<crate::types::Shape>) -> Self {
         self.shape = input;
         self
+    }
+    /// <p>When the <code>shape</code> value is <code>List</code>, it indicates that the <code>values</code> field contains a list of slot values. When the value is <code>Scalar</code>, it indicates that the <code>value</code> field contains a single value.</p>
+    pub fn get_shape(&self) -> &::std::option::Option<crate::types::Shape> {
+        &self.shape
     }
     /// Appends an item to `values`.
     ///
@@ -100,6 +108,10 @@ impl SlotBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>A list of one or more values that the user provided for the slot. For example, if a for a slot that elicits pizza toppings, the values might be "pepperoni" and "pineapple." </p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Slot>> {
+        &self.values
     }
     /// Adds a key-value pair to `sub_slots`.
     ///
@@ -125,6 +137,14 @@ impl SlotBuilder {
     ) -> Self {
         self.sub_slots = input;
         self
+    }
+    /// <p>The constituent sub slots of a composite slot.</p>
+    pub fn get_sub_slots(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::Slot>,
+    > {
+        &self.sub_slots
     }
     /// Consumes the builder and constructs a [`Slot`](crate::types::Slot).
     pub fn build(self) -> crate::types::Slot {

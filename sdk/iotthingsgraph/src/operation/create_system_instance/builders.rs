@@ -41,6 +41,12 @@ impl CreateSystemInstanceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSystemInstance as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_system_instance::builders::CreateSystemInstanceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +144,10 @@ impl CreateSystemInstanceFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Metadata, consisting of key-value pairs, that can be used to categorize your system instances.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>A document that defines an entity. </p>
     pub fn definition(mut self, input: crate::types::DefinitionDocument) -> Self {
         self.inner = self.inner.definition(input);
@@ -151,6 +161,10 @@ impl CreateSystemInstanceFluentBuilder {
         self.inner = self.inner.set_definition(input);
         self
     }
+    /// <p>A document that defines an entity. </p>
+    pub fn get_definition(&self) -> &::std::option::Option<crate::types::DefinitionDocument> {
+        self.inner.get_definition()
+    }
     /// <p>The target type of the deployment. Valid values are <code>GREENGRASS</code> and <code>CLOUD</code>.</p>
     pub fn target(mut self, input: crate::types::DeploymentTarget) -> Self {
         self.inner = self.inner.target(input);
@@ -163,6 +177,10 @@ impl CreateSystemInstanceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_target(input);
         self
+    }
+    /// <p>The target type of the deployment. Valid values are <code>GREENGRASS</code> and <code>CLOUD</code>.</p>
+    pub fn get_target(&self) -> &::std::option::Option<crate::types::DeploymentTarget> {
+        self.inner.get_target()
     }
     /// <p>The name of the Greengrass group where the system instance will be deployed. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
     pub fn greengrass_group_name(
@@ -180,6 +198,10 @@ impl CreateSystemInstanceFluentBuilder {
         self.inner = self.inner.set_greengrass_group_name(input);
         self
     }
+    /// <p>The name of the Greengrass group where the system instance will be deployed. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
+    pub fn get_greengrass_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_greengrass_group_name()
+    }
     /// <p>The name of the Amazon Simple Storage Service bucket that will be used to store and deploy the system instance's resource file. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
     pub fn s3_bucket_name(
         mut self,
@@ -196,6 +218,10 @@ impl CreateSystemInstanceFluentBuilder {
         self.inner = self.inner.set_s3_bucket_name(input);
         self
     }
+    /// <p>The name of the Amazon Simple Storage Service bucket that will be used to store and deploy the system instance's resource file. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
+    pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_s3_bucket_name()
+    }
     /// <p>An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics.</p>
     pub fn metrics_configuration(mut self, input: crate::types::MetricsConfiguration) -> Self {
         self.inner = self.inner.metrics_configuration(input);
@@ -208,6 +234,12 @@ impl CreateSystemInstanceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_metrics_configuration(input);
         self
+    }
+    /// <p>An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics.</p>
+    pub fn get_metrics_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::MetricsConfiguration> {
+        self.inner.get_metrics_configuration()
     }
     /// <p>The ARN of the IAM role that AWS IoT Things Graph will assume when it executes the flow. This role must have read and write access to AWS Lambda and AWS IoT and any other AWS services that the flow uses when it executes. This value is required if the value of the <code>target</code> parameter is <code>CLOUD</code>.</p>
     pub fn flow_actions_role_arn(
@@ -224,5 +256,9 @@ impl CreateSystemInstanceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_flow_actions_role_arn(input);
         self
+    }
+    /// <p>The ARN of the IAM role that AWS IoT Things Graph will assume when it executes the flow. This role must have read and write access to AWS Lambda and AWS IoT and any other AWS services that the flow uses when it executes. This value is required if the value of the <code>target</code> parameter is <code>CLOUD</code>.</p>
+    pub fn get_flow_actions_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_flow_actions_role_arn()
     }
 }

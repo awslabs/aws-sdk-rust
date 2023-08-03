@@ -64,6 +64,12 @@ impl HsmStatusBuilder {
         self.hsm_client_certificate_identifier = input;
         self
     }
+    /// <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
+    pub fn get_hsm_client_certificate_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.hsm_client_certificate_identifier
+    }
     /// <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
     pub fn hsm_configuration_identifier(
         mut self,
@@ -80,6 +86,12 @@ impl HsmStatusBuilder {
         self.hsm_configuration_identifier = input;
         self
     }
+    /// <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
+    pub fn get_hsm_configuration_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.hsm_configuration_identifier
+    }
     /// <p>Reports whether the Amazon Redshift cluster has finished applying any HSM settings changes specified in a modify cluster command.</p>
     /// <p>Values: active, applying</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -91,6 +103,11 @@ impl HsmStatusBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Reports whether the Amazon Redshift cluster has finished applying any HSM settings changes specified in a modify cluster command.</p>
+    /// <p>Values: active, applying</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`HsmStatus`](crate::types::HsmStatus).
     pub fn build(self) -> crate::types::HsmStatus {

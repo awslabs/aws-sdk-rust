@@ -82,6 +82,10 @@ impl PutBackupVaultNotificationsInputBuilder {
         self.backup_vault_name = input;
         self
     }
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_vault_name
+    }
     /// <p>The Amazon Resource Name (ARN) that specifies the topic for a backup vault’s events; for example, <code>arn:aws:sns:us-west-2:111122223333:MyVaultTopic</code>.</p>
     pub fn sns_topic_arn(
         mut self,
@@ -97,6 +101,10 @@ impl PutBackupVaultNotificationsInputBuilder {
     ) -> Self {
         self.sns_topic_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) that specifies the topic for a backup vault’s events; for example, <code>arn:aws:sns:us-west-2:111122223333:MyVaultTopic</code>.</p>
+    pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sns_topic_arn
     }
     /// Appends an item to `backup_vault_events`.
     ///
@@ -136,6 +144,22 @@ impl PutBackupVaultNotificationsInputBuilder {
     ) -> Self {
         self.backup_vault_events = input;
         self
+    }
+    /// <p>An array of events that indicate the status of jobs to back up resources to the backup vault.</p>
+    /// <p>For common use cases and code samples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using Amazon SNS to track Backup events</a>.</p>
+    /// <p>The following events are supported:</p>
+    /// <ul>
+    /// <li> <p> <code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code> </p> </li>
+    /// <li> <p> <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> | <code>COPY_JOB_FAILED</code> </p> </li>
+    /// <li> <p> <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> | <code>RECOVERY_POINT_MODIFIED</code> </p> </li>
+    /// <li> <p> <code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code> </p> </li>
+    /// </ul> <note>
+    /// <p>The list below shows items that are deprecated events (for reference) and are no longer in use. They are no longer supported and will not return statuses or notifications. Refer to the list above for current supported events.</p>
+    /// </note>
+    pub fn get_backup_vault_events(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BackupVaultEvent>> {
+        &self.backup_vault_events
     }
     /// Consumes the builder and constructs a [`PutBackupVaultNotificationsInput`](crate::operation::put_backup_vault_notifications::PutBackupVaultNotificationsInput).
     pub fn build(

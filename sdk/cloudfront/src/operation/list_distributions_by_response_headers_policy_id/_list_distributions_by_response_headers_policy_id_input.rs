@@ -55,6 +55,10 @@ impl ListDistributionsByResponseHeadersPolicyIdInputBuilder {
         self.marker = input;
         self
     }
+    /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>The maximum number of distribution IDs that you want to get in the response.</p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.max_items = ::std::option::Option::Some(input);
@@ -64,6 +68,10 @@ impl ListDistributionsByResponseHeadersPolicyIdInputBuilder {
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_items = input;
         self
+    }
+    /// <p>The maximum number of distribution IDs that you want to get in the response.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        &self.max_items
     }
     /// <p>The ID of the response headers policy whose associated distribution IDs you want to list.</p>
     pub fn response_headers_policy_id(
@@ -80,6 +88,10 @@ impl ListDistributionsByResponseHeadersPolicyIdInputBuilder {
     ) -> Self {
         self.response_headers_policy_id = input;
         self
+    }
+    /// <p>The ID of the response headers policy whose associated distribution IDs you want to list.</p>
+    pub fn get_response_headers_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.response_headers_policy_id
     }
     /// Consumes the builder and constructs a [`ListDistributionsByResponseHeadersPolicyIdInput`](crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdInput, ::aws_smithy_http::operation::error::BuildError>{

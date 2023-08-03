@@ -36,6 +36,13 @@ impl UpdateResiliencyPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateResiliencyPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_resiliency_policy::builders::UpdateResiliencyPolicyInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl UpdateResiliencyPolicyFluentBuilder {
         self.inner = self.inner.set_policy_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_arn()
+    }
     /// <p>The name of the policy</p>
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_name(input.into());
@@ -135,6 +146,10 @@ impl UpdateResiliencyPolicyFluentBuilder {
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_name(input);
         self
+    }
+    /// <p>The name of the policy</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_name()
     }
     /// <p>The description for the policy.</p>
     pub fn policy_description(
@@ -152,6 +167,10 @@ impl UpdateResiliencyPolicyFluentBuilder {
         self.inner = self.inner.set_policy_description(input);
         self
     }
+    /// <p>The description for the policy.</p>
+    pub fn get_policy_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_description()
+    }
     /// <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
     pub fn data_location_constraint(mut self, input: crate::types::DataLocationConstraint) -> Self {
         self.inner = self.inner.data_location_constraint(input);
@@ -165,6 +184,12 @@ impl UpdateResiliencyPolicyFluentBuilder {
         self.inner = self.inner.set_data_location_constraint(input);
         self
     }
+    /// <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
+    pub fn get_data_location_constraint(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataLocationConstraint> {
+        self.inner.get_data_location_constraint()
+    }
     /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
     pub fn tier(mut self, input: crate::types::ResiliencyPolicyTier) -> Self {
         self.inner = self.inner.tier(input);
@@ -177,6 +202,10 @@ impl UpdateResiliencyPolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tier(input);
         self
+    }
+    /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
+    pub fn get_tier(&self) -> &::std::option::Option<crate::types::ResiliencyPolicyTier> {
+        self.inner.get_tier()
     }
     /// Adds a key-value pair to `policy`.
     ///
@@ -200,5 +229,13 @@ impl UpdateResiliencyPolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_policy(input);
         self
+    }
+    /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
+    pub fn get_policy(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<crate::types::DisruptionType, crate::types::FailurePolicy>,
+    > {
+        self.inner.get_policy()
     }
 }

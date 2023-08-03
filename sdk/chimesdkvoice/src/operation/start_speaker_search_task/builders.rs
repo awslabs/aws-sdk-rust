@@ -39,6 +39,13 @@ impl StartSpeakerSearchTaskFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartSpeakerSearchTask as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_speaker_search_task::builders::StartSpeakerSearchTaskInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +142,10 @@ impl StartSpeakerSearchTaskFluentBuilder {
         self.inner = self.inner.set_voice_connector_id(input);
         self
     }
+    /// <p>The Voice Connector ID.</p>
+    pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_voice_connector_id()
+    }
     /// <p>The transaction ID of the call being analyzed.</p>
     pub fn transaction_id(
         mut self,
@@ -150,6 +161,10 @@ impl StartSpeakerSearchTaskFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_transaction_id(input);
         self
+    }
+    /// <p>The transaction ID of the call being analyzed.</p>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_transaction_id()
     }
     /// <p>The ID of the voice profile domain that will store the voice profile.</p>
     pub fn voice_profile_domain_id(
@@ -167,6 +182,10 @@ impl StartSpeakerSearchTaskFluentBuilder {
         self.inner = self.inner.set_voice_profile_domain_id(input);
         self
     }
+    /// <p>The ID of the voice profile domain that will store the voice profile.</p>
+    pub fn get_voice_profile_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_voice_profile_domain_id()
+    }
     /// <p>The unique identifier for the client request. Use a different token for different speaker search tasks.</p>
     pub fn client_request_token(
         mut self,
@@ -183,6 +202,10 @@ impl StartSpeakerSearchTaskFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>The unique identifier for the client request. Use a different token for different speaker search tasks.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// <p>Specifies which call leg to stream for speaker search.</p>
     pub fn call_leg(mut self, input: crate::types::CallLegType) -> Self {
         self.inner = self.inner.call_leg(input);
@@ -192,5 +215,9 @@ impl StartSpeakerSearchTaskFluentBuilder {
     pub fn set_call_leg(mut self, input: ::std::option::Option<crate::types::CallLegType>) -> Self {
         self.inner = self.inner.set_call_leg(input);
         self
+    }
+    /// <p>Specifies which call leg to stream for speaker search.</p>
+    pub fn get_call_leg(&self) -> &::std::option::Option<crate::types::CallLegType> {
+        self.inner.get_call_leg()
     }
 }

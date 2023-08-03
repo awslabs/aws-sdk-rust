@@ -52,6 +52,10 @@ impl DocumentReviewsBuilder {
         self.action = input;
         self
     }
+    /// <p>The action to take on a document approval review request.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::DocumentReviewAction> {
+        &self.action
+    }
     /// Appends an item to `comment`.
     ///
     /// To override the contents of this collection use [`set_comment`](Self::set_comment).
@@ -70,6 +74,12 @@ impl DocumentReviewsBuilder {
     ) -> Self {
         self.comment = input;
         self
+    }
+    /// <p>A comment entered by a user in your organization about the document review request.</p>
+    pub fn get_comment(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentReviewCommentSource>> {
+        &self.comment
     }
     /// Consumes the builder and constructs a [`DocumentReviews`](crate::types::DocumentReviews).
     pub fn build(self) -> crate::types::DocumentReviews {

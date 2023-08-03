@@ -56,6 +56,10 @@ impl PoseBuilder {
         self.roll = input;
         self
     }
+    /// <p>Value representing the face rotation on the roll axis.</p>
+    pub fn get_roll(&self) -> &::std::option::Option<f32> {
+        &self.roll
+    }
     /// <p>Value representing the face rotation on the yaw axis.</p>
     pub fn yaw(mut self, input: f32) -> Self {
         self.yaw = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl PoseBuilder {
         self.yaw = input;
         self
     }
+    /// <p>Value representing the face rotation on the yaw axis.</p>
+    pub fn get_yaw(&self) -> &::std::option::Option<f32> {
+        &self.yaw
+    }
     /// <p>Value representing the face rotation on the pitch axis.</p>
     pub fn pitch(mut self, input: f32) -> Self {
         self.pitch = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl PoseBuilder {
     pub fn set_pitch(mut self, input: ::std::option::Option<f32>) -> Self {
         self.pitch = input;
         self
+    }
+    /// <p>Value representing the face rotation on the pitch axis.</p>
+    pub fn get_pitch(&self) -> &::std::option::Option<f32> {
+        &self.pitch
     }
     /// Consumes the builder and constructs a [`Pose`](crate::types::Pose).
     pub fn build(self) -> crate::types::Pose {

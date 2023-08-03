@@ -46,6 +46,10 @@ impl DeleteMeshOutputBuilder {
         self.mesh = input;
         self
     }
+    /// <p>The service mesh that was deleted.</p>
+    pub fn get_mesh(&self) -> &::std::option::Option<crate::types::MeshData> {
+        &self.mesh
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -76,6 +76,10 @@ impl DescribeInstancesHealthInputBuilder {
         self.environment_name = input;
         self
     }
+    /// <p>Specify the AWS Elastic Beanstalk environment by name.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
+    }
     /// <p>Specify the AWS Elastic Beanstalk environment by ID.</p>
     pub fn environment_id(
         mut self,
@@ -91,6 +95,10 @@ impl DescribeInstancesHealthInputBuilder {
     ) -> Self {
         self.environment_id = input;
         self
+    }
+    /// <p>Specify the AWS Elastic Beanstalk environment by ID.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
     }
     /// Appends an item to `attribute_names`.
     ///
@@ -111,6 +119,12 @@ impl DescribeInstancesHealthInputBuilder {
         self.attribute_names = input;
         self
     }
+    /// <p>Specifies the response elements you wish to receive. To retrieve all attributes, set to <code>All</code>. If no attribute names are specified, returns a list of instances.</p>
+    pub fn get_attribute_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstancesHealthAttribute>> {
+        &self.attribute_names
+    }
     /// <p>Specify the pagination token returned by a previous call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -120,6 +134,10 @@ impl DescribeInstancesHealthInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Specify the pagination token returned by a previous call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeInstancesHealthInput`](crate::operation::describe_instances_health::DescribeInstancesHealthInput).
     pub fn build(

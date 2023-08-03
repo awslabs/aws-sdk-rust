@@ -38,6 +38,12 @@ impl UpdateFunctionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateFunction as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_function::builders::UpdateFunctionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -120,6 +126,10 @@ impl UpdateFunctionFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the function that you are updating.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The current version (<code>ETag</code> value) of the function that you are updating, which you can get using <code>DescribeFunction</code>.</p>
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.if_match(input.into());
@@ -129,6 +139,10 @@ impl UpdateFunctionFluentBuilder {
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_if_match(input);
         self
+    }
+    /// <p>The current version (<code>ETag</code> value) of the function that you are updating, which you can get using <code>DescribeFunction</code>.</p>
+    pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_if_match()
     }
     /// <p>Configuration information about the function.</p>
     pub fn function_config(mut self, input: crate::types::FunctionConfig) -> Self {
@@ -143,6 +157,10 @@ impl UpdateFunctionFluentBuilder {
         self.inner = self.inner.set_function_config(input);
         self
     }
+    /// <p>Configuration information about the function.</p>
+    pub fn get_function_config(&self) -> &::std::option::Option<crate::types::FunctionConfig> {
+        self.inner.get_function_config()
+    }
     /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn function_code(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.function_code(input);
@@ -155,5 +173,9 @@ impl UpdateFunctionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_function_code(input);
         self
+    }
+    /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn get_function_code(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        self.inner.get_function_code()
     }
 }

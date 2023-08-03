@@ -96,6 +96,13 @@ impl TranscriptFilterBuilder {
         self.transcript_filter_type = input;
         self
     }
+    /// <p>Flag the presence or absence of an exact match to the phrases that you specify. For example, if you specify the phrase "speak to a manager" as your <code>Targets</code> value, only that exact phrase is flagged.</p>
+    /// <p>Note that semantic matching is not supported. For example, if your customer says "speak to <i>the</i> manager", instead of "speak to <i>a</i> manager", your content is not flagged.</p>
+    pub fn get_transcript_filter_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::TranscriptFilterType> {
+        &self.transcript_filter_type
+    }
     /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for the specified key words or phrases. See for more detail.</p>
     pub fn absolute_time_range(mut self, input: crate::types::AbsoluteTimeRange) -> Self {
         self.absolute_time_range = ::std::option::Option::Some(input);
@@ -108,6 +115,12 @@ impl TranscriptFilterBuilder {
     ) -> Self {
         self.absolute_time_range = input;
         self
+    }
+    /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for the specified key words or phrases. See for more detail.</p>
+    pub fn get_absolute_time_range(
+        &self,
+    ) -> &::std::option::Option<crate::types::AbsoluteTimeRange> {
+        &self.absolute_time_range
     }
     /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for the specified key words or phrases. See for more detail.</p>
     pub fn relative_time_range(mut self, input: crate::types::RelativeTimeRange) -> Self {
@@ -122,6 +135,12 @@ impl TranscriptFilterBuilder {
         self.relative_time_range = input;
         self
     }
+    /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for the specified key words or phrases. See for more detail.</p>
+    pub fn get_relative_time_range(
+        &self,
+    ) -> &::std::option::Option<crate::types::RelativeTimeRange> {
+        &self.relative_time_range
+    }
     /// <p>Specify the participant that you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
     pub fn participant_role(mut self, input: crate::types::ParticipantRole) -> Self {
         self.participant_role = ::std::option::Option::Some(input);
@@ -135,6 +154,10 @@ impl TranscriptFilterBuilder {
         self.participant_role = input;
         self
     }
+    /// <p>Specify the participant that you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
+    pub fn get_participant_role(&self) -> &::std::option::Option<crate::types::ParticipantRole> {
+        &self.participant_role
+    }
     /// <p>Set to <code>TRUE</code> to flag the absence of the phrase that you specified in your request. Set to <code>FALSE</code> to flag the presence of the phrase that you specified in your request.</p>
     pub fn negate(mut self, input: bool) -> Self {
         self.negate = ::std::option::Option::Some(input);
@@ -144,6 +167,10 @@ impl TranscriptFilterBuilder {
     pub fn set_negate(mut self, input: ::std::option::Option<bool>) -> Self {
         self.negate = input;
         self
+    }
+    /// <p>Set to <code>TRUE</code> to flag the absence of the phrase that you specified in your request. Set to <code>FALSE</code> to flag the presence of the phrase that you specified in your request.</p>
+    pub fn get_negate(&self) -> &::std::option::Option<bool> {
+        &self.negate
     }
     /// Appends an item to `targets`.
     ///
@@ -163,6 +190,10 @@ impl TranscriptFilterBuilder {
     ) -> Self {
         self.targets = input;
         self
+    }
+    /// <p>Specify the phrases that you want to flag.</p>
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.targets
     }
     /// Consumes the builder and constructs a [`TranscriptFilter`](crate::types::TranscriptFilter).
     pub fn build(self) -> crate::types::TranscriptFilter {

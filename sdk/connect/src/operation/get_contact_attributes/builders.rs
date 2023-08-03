@@ -36,6 +36,12 @@ impl GetContactAttributesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetContactAttributes as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_contact_attributes::builders::GetContactAttributesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl GetContactAttributesFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The identifier of the Amazon Connect instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>The identifier of the initial contact.</p>
     pub fn initial_contact_id(
         mut self,
@@ -141,5 +151,9 @@ impl GetContactAttributesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_initial_contact_id(input);
         self
+    }
+    /// <p>The identifier of the initial contact.</p>
+    pub fn get_initial_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_initial_contact_id()
     }
 }

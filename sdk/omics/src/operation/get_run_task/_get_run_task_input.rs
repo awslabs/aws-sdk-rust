@@ -48,6 +48,10 @@ impl GetRunTaskInputBuilder {
         self
     }
     /// <p>The task's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
+    /// <p>The task's ID.</p>
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +60,10 @@ impl GetRunTaskInputBuilder {
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_id = input;
         self
+    }
+    /// <p>The task's ID.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
     }
     /// Consumes the builder and constructs a [`GetRunTaskInput`](crate::operation::get_run_task::GetRunTaskInput).
     pub fn build(

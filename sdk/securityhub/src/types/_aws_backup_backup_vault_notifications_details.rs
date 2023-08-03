@@ -84,6 +84,18 @@ impl AwsBackupBackupVaultNotificationsDetailsBuilder {
         self.backup_vault_events = input;
         self
     }
+    /// <p>An array of events that indicate the status of jobs to back up resources to the backup vault. The following events are supported:</p>
+    /// <ul>
+    /// <li> <p> <code>BACKUP_JOB_STARTED | BACKUP_JOB_COMPLETED</code> </p> </li>
+    /// <li> <p> <code>COPY_JOB_STARTED | COPY_JOB_SUCCESSFUL | COPY_JOB_FAILED</code> </p> </li>
+    /// <li> <p> <code>RESTORE_JOB_STARTED | RESTORE_JOB_COMPLETED | RECOVERY_POINT_MODIFIED</code> </p> </li>
+    /// <li> <p> <code>S3_BACKUP_OBJECT_FAILED | S3_RESTORE_OBJECT_FAILED</code> </p> </li>
+    /// </ul>
+    pub fn get_backup_vault_events(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.backup_vault_events
+    }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the Amazon SNS topic for a backup vault's events. </p>
     pub fn sns_topic_arn(
         mut self,
@@ -99,6 +111,10 @@ impl AwsBackupBackupVaultNotificationsDetailsBuilder {
     ) -> Self {
         self.sns_topic_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the Amazon SNS topic for a backup vault's events. </p>
+    pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sns_topic_arn
     }
     /// Consumes the builder and constructs a [`AwsBackupBackupVaultNotificationsDetails`](crate::types::AwsBackupBackupVaultNotificationsDetails).
     pub fn build(self) -> crate::types::AwsBackupBackupVaultNotificationsDetails {

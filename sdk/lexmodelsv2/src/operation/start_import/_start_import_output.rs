@@ -81,6 +81,10 @@ impl StartImportOutputBuilder {
         self.import_id = input;
         self
     }
+    /// <p>A unique identifier for the import.</p>
+    pub fn get_import_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.import_id
+    }
     /// <p>The parameters used when importing the resource.</p>
     pub fn resource_specification(
         mut self,
@@ -97,6 +101,12 @@ impl StartImportOutputBuilder {
         self.resource_specification = input;
         self
     }
+    /// <p>The parameters used when importing the resource.</p>
+    pub fn get_resource_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImportResourceSpecification> {
+        &self.resource_specification
+    }
     /// <p>The strategy used when there was a name conflict between the imported resource and an existing resource. When the merge strategy is <code>FailOnConflict</code> existing resources are not overwritten and the import fails.</p>
     pub fn merge_strategy(mut self, input: crate::types::MergeStrategy) -> Self {
         self.merge_strategy = ::std::option::Option::Some(input);
@@ -109,6 +119,10 @@ impl StartImportOutputBuilder {
     ) -> Self {
         self.merge_strategy = input;
         self
+    }
+    /// <p>The strategy used when there was a name conflict between the imported resource and an existing resource. When the merge strategy is <code>FailOnConflict</code> existing resources are not overwritten and the import fails.</p>
+    pub fn get_merge_strategy(&self) -> &::std::option::Option<crate::types::MergeStrategy> {
+        &self.merge_strategy
     }
     /// <p>The current status of the import. When the status is <code>Complete</code> the bot, bot alias, or custom vocabulary is ready to use.</p>
     pub fn import_status(mut self, input: crate::types::ImportStatus) -> Self {
@@ -123,6 +137,10 @@ impl StartImportOutputBuilder {
         self.import_status = input;
         self
     }
+    /// <p>The current status of the import. When the status is <code>Complete</code> the bot, bot alias, or custom vocabulary is ready to use.</p>
+    pub fn get_import_status(&self) -> &::std::option::Option<crate::types::ImportStatus> {
+        &self.import_status
+    }
     /// <p>The date and time that the import request was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
@@ -135,6 +153,10 @@ impl StartImportOutputBuilder {
     ) -> Self {
         self.creation_date_time = input;
         self
+    }
+    /// <p>The date and time that the import request was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -50,6 +50,10 @@ impl DescribeGameServerOutputBuilder {
         self.game_server = input;
         self
     }
+    /// <p>Object that describes the requested game server.</p>
+    pub fn get_game_server(&self) -> &::std::option::Option<crate::types::GameServer> {
+        &self.game_server
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

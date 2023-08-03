@@ -56,6 +56,10 @@ impl CreateTapesOutputBuilder {
         self.tape_ar_ns = input;
         self
     }
+    /// <p>A list of unique Amazon Resource Names (ARNs) that represents the virtual tapes that were created.</p>
+    pub fn get_tape_ar_ns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tape_ar_ns
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -40,6 +40,10 @@ impl DeregisterDelegatedAdministratorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeregisterDelegatedAdministrator as a reference.
+    pub fn as_input(&self) -> &crate::operation::deregister_delegated_administrator::builders::DeregisterDelegatedAdministratorInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -104,6 +108,10 @@ impl DeregisterDelegatedAdministratorFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The account ID number of the member account in the organization that you want to deregister as a delegated administrator.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p>The service principal name of an Amazon Web Services service for which the account is a delegated administrator.</p>
     /// <p>Delegated administrator privileges are revoked for only the specified Amazon Web Services service from the member account. If the specified service is the only service for which the member account is a delegated administrator, the operation also revokes Organizations read action permissions.</p>
     pub fn service_principal(
@@ -121,5 +129,10 @@ impl DeregisterDelegatedAdministratorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_service_principal(input);
         self
+    }
+    /// <p>The service principal name of an Amazon Web Services service for which the account is a delegated administrator.</p>
+    /// <p>Delegated administrator privileges are revoked for only the specified Amazon Web Services service from the member account. If the specified service is the only service for which the member account is a delegated administrator, the operation also revokes Organizations read action permissions.</p>
+    pub fn get_service_principal(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_principal()
     }
 }

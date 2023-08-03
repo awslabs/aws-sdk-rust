@@ -40,6 +40,10 @@ impl DeleteHsmInputBuilder {
         self.hsm_arn = input;
         self
     }
+    /// <p>The ARN of the HSM to delete.</p>
+    pub fn get_hsm_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hsm_arn
+    }
     /// Consumes the builder and constructs a [`DeleteHsmInput`](crate::operation::delete_hsm::DeleteHsmInput).
     pub fn build(
         self,

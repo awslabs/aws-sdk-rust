@@ -73,6 +73,10 @@ impl CreateRoleAliasInputBuilder {
         self.role_alias = input;
         self
     }
+    /// <p>The role alias that points to a role ARN. This allows you to change the role without having to update the device.</p>
+    pub fn get_role_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_alias
+    }
     /// <p>The role ARN.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl CreateRoleAliasInputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The role ARN.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>How long (in seconds) the credentials will be valid. The default value is 3,600 seconds.</p>
     /// <p>This value must be less than or equal to the maximum session duration of the IAM role that the role alias references.</p>
@@ -94,6 +102,11 @@ impl CreateRoleAliasInputBuilder {
     pub fn set_credential_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.credential_duration_seconds = input;
         self
+    }
+    /// <p>How long (in seconds) the credentials will be valid. The default value is 3,600 seconds.</p>
+    /// <p>This value must be less than or equal to the maximum session duration of the IAM role that the role alias references.</p>
+    pub fn get_credential_duration_seconds(&self) -> &::std::option::Option<i32> {
+        &self.credential_duration_seconds
     }
     /// Appends an item to `tags`.
     ///
@@ -121,6 +134,14 @@ impl CreateRoleAliasInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Metadata which can be used to manage the role alias.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
+    /// </note>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateRoleAliasInput`](crate::operation::create_role_alias::CreateRoleAliasInput).
     pub fn build(

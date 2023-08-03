@@ -68,6 +68,12 @@ impl MultiConditionalSplitActivityBuilder {
         self.branches = input;
         self
     }
+    /// <p>The paths for the activity, including the conditions for entering each path and the activity to perform for each path.</p>
+    pub fn get_branches(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MultiConditionalBranch>> {
+        &self.branches
+    }
     /// <p>The unique identifier for the activity to perform for participants who don't meet any of the conditions specified for other paths in the activity.</p>
     pub fn default_activity(
         mut self,
@@ -84,6 +90,10 @@ impl MultiConditionalSplitActivityBuilder {
         self.default_activity = input;
         self
     }
+    /// <p>The unique identifier for the activity to perform for participants who don't meet any of the conditions specified for other paths in the activity.</p>
+    pub fn get_default_activity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_activity
+    }
     /// <p>The amount of time to wait or the date and time when Amazon Pinpoint determines whether the conditions are met.</p>
     pub fn evaluation_wait_time(mut self, input: crate::types::WaitTime) -> Self {
         self.evaluation_wait_time = ::std::option::Option::Some(input);
@@ -96,6 +106,10 @@ impl MultiConditionalSplitActivityBuilder {
     ) -> Self {
         self.evaluation_wait_time = input;
         self
+    }
+    /// <p>The amount of time to wait or the date and time when Amazon Pinpoint determines whether the conditions are met.</p>
+    pub fn get_evaluation_wait_time(&self) -> &::std::option::Option<crate::types::WaitTime> {
+        &self.evaluation_wait_time
     }
     /// Consumes the builder and constructs a [`MultiConditionalSplitActivity`](crate::types::MultiConditionalSplitActivity).
     pub fn build(self) -> crate::types::MultiConditionalSplitActivity {

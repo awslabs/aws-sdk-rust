@@ -46,6 +46,10 @@ impl DescribeMetricSetInputBuilder {
         self.metric_set_arn = input;
         self
     }
+    /// <p>The ARN of the dataset.</p>
+    pub fn get_metric_set_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_set_arn
+    }
     /// Consumes the builder and constructs a [`DescribeMetricSetInput`](crate::operation::describe_metric_set::DescribeMetricSetInput).
     pub fn build(
         self,

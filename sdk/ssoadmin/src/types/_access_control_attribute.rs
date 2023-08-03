@@ -48,6 +48,10 @@ impl AccessControlAttributeBuilder {
         self.key = input;
         self
     }
+    /// <p>The name of the attribute associated with your identities in your identity source. This is used to map a specified attribute in your identity source with an attribute in IAM Identity Center.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>The value used for mapping a specified attribute to an identity source.</p>
     pub fn value(mut self, input: crate::types::AccessControlAttributeValue) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl AccessControlAttributeBuilder {
     ) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value used for mapping a specified attribute to an identity source.</p>
+    pub fn get_value(&self) -> &::std::option::Option<crate::types::AccessControlAttributeValue> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`AccessControlAttribute`](crate::types::AccessControlAttribute).
     pub fn build(self) -> crate::types::AccessControlAttribute {

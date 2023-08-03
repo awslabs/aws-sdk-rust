@@ -58,6 +58,10 @@ impl AuthorizeSecurityGroupIngressOutputBuilder {
         self.r#return = input;
         self
     }
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
+    pub fn get_return(&self) -> &::std::option::Option<bool> {
+        &self.r#return
+    }
     /// Appends an item to `security_group_rules`.
     ///
     /// To override the contents of this collection use [`set_security_group_rules`](Self::set_security_group_rules).
@@ -76,6 +80,12 @@ impl AuthorizeSecurityGroupIngressOutputBuilder {
     ) -> Self {
         self.security_group_rules = input;
         self
+    }
+    /// <p>Information about the inbound (ingress) security group rules that were added.</p>
+    pub fn get_security_group_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupRule>> {
+        &self.security_group_rules
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

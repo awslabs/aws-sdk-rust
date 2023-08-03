@@ -50,6 +50,12 @@ impl TableCellImageSizingConfigurationBuilder {
         self.table_cell_image_scaling_configuration = input;
         self
     }
+    /// <p>The cell scaling configuration of the sizing options for the table image configuration.</p>
+    pub fn get_table_cell_image_scaling_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::TableCellImageScalingConfiguration> {
+        &self.table_cell_image_scaling_configuration
+    }
     /// Consumes the builder and constructs a [`TableCellImageSizingConfiguration`](crate::types::TableCellImageSizingConfiguration).
     pub fn build(self) -> crate::types::TableCellImageSizingConfiguration {
         crate::types::TableCellImageSizingConfiguration {

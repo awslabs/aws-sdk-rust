@@ -53,6 +53,10 @@ impl DetachLoadBalancerTargetGroupsInputBuilder {
         self.auto_scaling_group_name = input;
         self
     }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_scaling_group_name
+    }
     /// Appends an item to `target_group_ar_ns`.
     ///
     /// To override the contents of this collection use [`set_target_group_ar_ns`](Self::set_target_group_ar_ns).
@@ -74,6 +78,12 @@ impl DetachLoadBalancerTargetGroupsInputBuilder {
     ) -> Self {
         self.target_group_ar_ns = input;
         self
+    }
+    /// <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target groups.</p>
+    pub fn get_target_group_ar_ns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.target_group_ar_ns
     }
     /// Consumes the builder and constructs a [`DetachLoadBalancerTargetGroupsInput`](crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroupsInput).
     pub fn build(

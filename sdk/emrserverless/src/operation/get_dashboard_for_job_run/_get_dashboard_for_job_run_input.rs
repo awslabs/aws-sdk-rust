@@ -55,6 +55,10 @@ impl GetDashboardForJobRunInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The ID of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The ID of the job run.</p>
     pub fn job_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_run_id = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl GetDashboardForJobRunInputBuilder {
     pub fn set_job_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_run_id = input;
         self
+    }
+    /// <p>The ID of the job run.</p>
+    pub fn get_job_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_run_id
     }
     /// Consumes the builder and constructs a [`GetDashboardForJobRunInput`](crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunInput).
     pub fn build(

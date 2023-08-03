@@ -112,6 +112,10 @@ impl TransactionEventBuilder {
         self.network = input;
         self
     }
+    /// <p>The blockchain network where the transaction occurred.</p>
+    pub fn get_network(&self) -> &::std::option::Option<crate::types::QueryNetwork> {
+        &self.network
+    }
     /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
     pub fn transaction_hash(
         mut self,
@@ -128,6 +132,10 @@ impl TransactionEventBuilder {
         self.transaction_hash = input;
         self
     }
+    /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
+    pub fn get_transaction_hash(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transaction_hash
+    }
     /// <p>The type of transaction event.</p>
     pub fn event_type(mut self, input: crate::types::QueryTransactionEventType) -> Self {
         self.event_type = ::std::option::Option::Some(input);
@@ -141,6 +149,12 @@ impl TransactionEventBuilder {
         self.event_type = input;
         self
     }
+    /// <p>The type of transaction event.</p>
+    pub fn get_event_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::QueryTransactionEventType> {
+        &self.event_type
+    }
     /// <p>The wallet address initiating the transaction. It can either be a public key or a contract.</p>
     pub fn from(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.from = ::std::option::Option::Some(input.into());
@@ -150,6 +164,10 @@ impl TransactionEventBuilder {
     pub fn set_from(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.from = input;
         self
+    }
+    /// <p>The wallet address initiating the transaction. It can either be a public key or a contract.</p>
+    pub fn get_from(&self) -> &::std::option::Option<::std::string::String> {
+        &self.from
     }
     /// <p>The wallet address receiving the transaction. It can either be a public key or a contract.</p>
     pub fn to(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -161,6 +179,10 @@ impl TransactionEventBuilder {
         self.to = input;
         self
     }
+    /// <p>The wallet address receiving the transaction. It can either be a public key or a contract.</p>
+    pub fn get_to(&self) -> &::std::option::Option<::std::string::String> {
+        &self.to
+    }
     /// <p>The value that was transacted.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -170,6 +192,10 @@ impl TransactionEventBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value that was transacted.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// <p>The blockchain address. for the contract</p>
     pub fn contract_address(
@@ -187,6 +213,10 @@ impl TransactionEventBuilder {
         self.contract_address = input;
         self
     }
+    /// <p>The blockchain address. for the contract</p>
+    pub fn get_contract_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contract_address
+    }
     /// <p>The unique identifier for the token involved in the transaction.</p>
     pub fn token_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token_id = ::std::option::Option::Some(input.into());
@@ -196,6 +226,10 @@ impl TransactionEventBuilder {
     pub fn set_token_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.token_id = input;
         self
+    }
+    /// <p>The unique identifier for the token involved in the transaction.</p>
+    pub fn get_token_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token_id
     }
     /// <p>The unique identifier of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
     pub fn transaction_id(
@@ -213,6 +247,10 @@ impl TransactionEventBuilder {
         self.transaction_id = input;
         self
     }
+    /// <p>The unique identifier of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transaction_id
+    }
     /// <p>The position of the vout in the transaction output list.</p>
     pub fn vout_index(mut self, input: i32) -> Self {
         self.vout_index = ::std::option::Option::Some(input);
@@ -222,6 +260,10 @@ impl TransactionEventBuilder {
     pub fn set_vout_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.vout_index = input;
         self
+    }
+    /// <p>The position of the vout in the transaction output list.</p>
+    pub fn get_vout_index(&self) -> &::std::option::Option<i32> {
+        &self.vout_index
     }
     /// Consumes the builder and constructs a [`TransactionEvent`](crate::types::TransactionEvent).
     pub fn build(self) -> crate::types::TransactionEvent {

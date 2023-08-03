@@ -40,6 +40,10 @@ impl DeregisterVolumeInputBuilder {
         self.volume_id = input;
         self
     }
+    /// <p>The AWS OpsWorks Stacks volume ID, which is the GUID that AWS OpsWorks Stacks assigned to the instance when you registered the volume with the stack, not the Amazon EC2 volume ID.</p>
+    pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_id
+    }
     /// Consumes the builder and constructs a [`DeregisterVolumeInput`](crate::operation::deregister_volume::DeregisterVolumeInput).
     pub fn build(
         self,

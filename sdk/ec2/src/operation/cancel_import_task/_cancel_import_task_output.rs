@@ -69,6 +69,10 @@ impl CancelImportTaskOutputBuilder {
         self.import_task_id = input;
         self
     }
+    /// <p>The ID of the task being canceled.</p>
+    pub fn get_import_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.import_task_id
+    }
     /// <p>The current state of the task being canceled.</p>
     pub fn previous_state(
         mut self,
@@ -86,6 +90,10 @@ impl CancelImportTaskOutputBuilder {
         self
     }
     /// <p>The current state of the task being canceled.</p>
+    pub fn get_previous_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.previous_state
+    }
+    /// <p>The current state of the task being canceled.</p>
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +102,10 @@ impl CancelImportTaskOutputBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The current state of the task being canceled.</p>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

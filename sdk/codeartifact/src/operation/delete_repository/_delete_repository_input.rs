@@ -56,6 +56,10 @@ impl DeleteRepositoryInputBuilder {
         self.domain = input;
         self
     }
+    /// <p> The name of the domain that contains the repository to delete. </p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
+    }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_owner = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl DeleteRepositoryInputBuilder {
         self.domain_owner = input;
         self
     }
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_owner
+    }
     /// <p> The name of the repository to delete. </p>
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl DeleteRepositoryInputBuilder {
     pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository = input;
         self
+    }
+    /// <p> The name of the repository to delete. </p>
+    pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository
     }
     /// Consumes the builder and constructs a [`DeleteRepositoryInput`](crate::operation::delete_repository::DeleteRepositoryInput).
     pub fn build(

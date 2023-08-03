@@ -46,6 +46,10 @@ impl CancelTransactionInputBuilder {
         self.transaction_id = input;
         self
     }
+    /// <p>The transaction to cancel.</p>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transaction_id
+    }
     /// Consumes the builder and constructs a [`CancelTransactionInput`](crate::operation::cancel_transaction::CancelTransactionInput).
     pub fn build(
         self,

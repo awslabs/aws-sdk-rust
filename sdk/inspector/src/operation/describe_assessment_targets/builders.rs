@@ -36,6 +36,10 @@ impl DescribeAssessmentTargetsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeAssessmentTargets as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_assessment_targets::builders::DescribeAssessmentTargetsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,5 +139,11 @@ impl DescribeAssessmentTargetsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_assessment_target_arns(input);
         self
+    }
+    /// <p>The ARNs that specifies the assessment targets that you want to describe.</p>
+    pub fn get_assessment_target_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_assessment_target_arns()
     }
 }

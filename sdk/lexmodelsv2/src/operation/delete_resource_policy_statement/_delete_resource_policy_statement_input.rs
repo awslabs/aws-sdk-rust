@@ -57,6 +57,10 @@ impl DeleteResourcePolicyStatementInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p>The name of the statement (SID) to delete from the policy.</p>
     pub fn statement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.statement_id = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl DeleteResourcePolicyStatementInputBuilder {
     pub fn set_statement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.statement_id = input;
         self
+    }
+    /// <p>The name of the statement (SID) to delete from the policy.</p>
+    pub fn get_statement_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.statement_id
     }
     /// <p>The identifier of the revision of the policy to delete the statement from. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
     /// <p>If you don't specify a revision, Amazon Lex removes the current contents of the statement. </p>
@@ -84,6 +92,11 @@ impl DeleteResourcePolicyStatementInputBuilder {
     ) -> Self {
         self.expected_revision_id = input;
         self
+    }
+    /// <p>The identifier of the revision of the policy to delete the statement from. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
+    /// <p>If you don't specify a revision, Amazon Lex removes the current contents of the statement. </p>
+    pub fn get_expected_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expected_revision_id
     }
     /// Consumes the builder and constructs a [`DeleteResourcePolicyStatementInput`](crate::operation::delete_resource_policy_statement::DeleteResourcePolicyStatementInput).
     pub fn build(

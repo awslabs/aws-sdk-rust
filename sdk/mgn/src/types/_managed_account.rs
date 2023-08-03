@@ -40,6 +40,10 @@ impl ManagedAccountBuilder {
         self.account_id = input;
         self
     }
+    /// <p>Managed account, account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// Consumes the builder and constructs a [`ManagedAccount`](crate::types::ManagedAccount).
     pub fn build(self) -> crate::types::ManagedAccount {
         crate::types::ManagedAccount {

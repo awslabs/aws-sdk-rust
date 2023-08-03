@@ -153,6 +153,10 @@ impl ServiceBuilder {
         self.reference_id = input;
         self
     }
+    /// <p>Identifier for the service. Unique within the service map.</p>
+    pub fn get_reference_id(&self) -> &::std::option::Option<i32> {
+        &self.reference_id
+    }
     /// <p>The canonical name of the service.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -162,6 +166,10 @@ impl ServiceBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The canonical name of the service.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `names`.
     ///
@@ -182,6 +190,10 @@ impl ServiceBuilder {
         self.names = input;
         self
     }
+    /// <p>A list of names for the service, including the canonical name.</p>
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.names
+    }
     /// <p>Indicates that the service was the first service to process a request.</p>
     pub fn root(mut self, input: bool) -> Self {
         self.root = ::std::option::Option::Some(input);
@@ -192,6 +204,10 @@ impl ServiceBuilder {
         self.root = input;
         self
     }
+    /// <p>Indicates that the service was the first service to process a request.</p>
+    pub fn get_root(&self) -> &::std::option::Option<bool> {
+        &self.root
+    }
     /// <p>Identifier of the Amazon Web Services account in which the service runs.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -201,6 +217,10 @@ impl ServiceBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>Identifier of the Amazon Web Services account in which the service runs.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>The type of service.</p>
     /// <ul>
@@ -224,6 +244,16 @@ impl ServiceBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of service.</p>
+    /// <ul>
+    /// <li> <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, <code>AWS::EC2::Instance</code> for an application running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table that the application used.</p> </li>
+    /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, <code>AWS::DynamoDB</code> for downstream calls to Amazon DynamoDB that didn't target a specific table.</p> </li>
+    /// <li> <p> <code>client</code> - Represents the clients that sent requests to a root service.</p> </li>
+    /// <li> <p> <code>remote</code> - A downstream service of indeterminate type.</p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p>The service's state.</p>
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state = ::std::option::Option::Some(input.into());
@@ -233,6 +263,10 @@ impl ServiceBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The service's state.</p>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
     }
     /// <p>The start time of the first segment that the service generated.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -247,6 +281,10 @@ impl ServiceBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The start time of the first segment that the service generated.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The end time of the last segment that the service generated.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -259,6 +297,10 @@ impl ServiceBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The end time of the last segment that the service generated.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// Appends an item to `edges`.
     ///
@@ -279,6 +321,10 @@ impl ServiceBuilder {
         self.edges = input;
         self
     }
+    /// <p>Connections to downstream services.</p>
+    pub fn get_edges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Edge>> {
+        &self.edges
+    }
     /// <p>Aggregated statistics for the service.</p>
     pub fn summary_statistics(mut self, input: crate::types::ServiceStatistics) -> Self {
         self.summary_statistics = ::std::option::Option::Some(input);
@@ -291,6 +337,12 @@ impl ServiceBuilder {
     ) -> Self {
         self.summary_statistics = input;
         self
+    }
+    /// <p>Aggregated statistics for the service.</p>
+    pub fn get_summary_statistics(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServiceStatistics> {
+        &self.summary_statistics
     }
     /// Appends an item to `duration_histogram`.
     ///
@@ -311,6 +363,12 @@ impl ServiceBuilder {
         self.duration_histogram = input;
         self
     }
+    /// <p>A histogram that maps the spread of service durations.</p>
+    pub fn get_duration_histogram(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HistogramEntry>> {
+        &self.duration_histogram
+    }
     /// Appends an item to `response_time_histogram`.
     ///
     /// To override the contents of this collection use [`set_response_time_histogram`](Self::set_response_time_histogram).
@@ -329,6 +387,12 @@ impl ServiceBuilder {
     ) -> Self {
         self.response_time_histogram = input;
         self
+    }
+    /// <p>A histogram that maps the spread of service response times.</p>
+    pub fn get_response_time_histogram(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HistogramEntry>> {
+        &self.response_time_histogram
     }
     /// Consumes the builder and constructs a [`Service`](crate::types::Service).
     pub fn build(self) -> crate::types::Service {

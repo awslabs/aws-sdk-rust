@@ -36,6 +36,10 @@ impl BatchDeleteFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchDelete as a reference.
+    pub fn as_input(&self) -> &crate::operation::batch_delete::builders::BatchDeleteInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +129,12 @@ impl BatchDeleteFluentBuilder {
         self.inner = self.inner.set_channel_ids(input);
         self
     }
+    /// List of channel IDs
+    pub fn get_channel_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_channel_ids()
+    }
     /// Appends an item to `InputIds`.
     ///
     /// To override the contents of this collection use [`set_input_ids`](Self::set_input_ids).
@@ -141,6 +151,10 @@ impl BatchDeleteFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_input_ids(input);
         self
+    }
+    /// List of input IDs
+    pub fn get_input_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_input_ids()
     }
     /// Appends an item to `InputSecurityGroupIds`.
     ///
@@ -162,6 +176,12 @@ impl BatchDeleteFluentBuilder {
         self.inner = self.inner.set_input_security_group_ids(input);
         self
     }
+    /// List of input security group IDs
+    pub fn get_input_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_input_security_group_ids()
+    }
     /// Appends an item to `MultiplexIds`.
     ///
     /// To override the contents of this collection use [`set_multiplex_ids`](Self::set_multiplex_ids).
@@ -181,5 +201,11 @@ impl BatchDeleteFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_multiplex_ids(input);
         self
+    }
+    /// List of multiplex IDs
+    pub fn get_multiplex_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_multiplex_ids()
     }
 }

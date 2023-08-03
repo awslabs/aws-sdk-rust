@@ -39,6 +39,10 @@ impl DisassociateWirelessGatewayFromThingInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the resource to update.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`DisassociateWirelessGatewayFromThingInput`](crate::operation::disassociate_wireless_gateway_from_thing::DisassociateWirelessGatewayFromThingInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_wireless_gateway_from_thing::DisassociateWirelessGatewayFromThingInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

@@ -77,6 +77,12 @@ impl UpdateConnectionOAuthRequestParametersBuilder {
         self.client_parameters = input;
         self
     }
+    /// <p>A <code>UpdateConnectionOAuthClientRequestParameters</code> object that contains the client parameters to use for the connection when OAuth is specified as the authorization type.</p>
+    pub fn get_client_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateConnectionOAuthClientRequestParameters> {
+        &self.client_parameters
+    }
     /// <p>The URL to the authorization endpoint when OAuth is specified as the authorization type.</p>
     pub fn authorization_endpoint(
         mut self,
@@ -93,6 +99,10 @@ impl UpdateConnectionOAuthRequestParametersBuilder {
         self.authorization_endpoint = input;
         self
     }
+    /// <p>The URL to the authorization endpoint when OAuth is specified as the authorization type.</p>
+    pub fn get_authorization_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authorization_endpoint
+    }
     /// <p>The method used to connect to the HTTP endpoint.</p>
     pub fn http_method(mut self, input: crate::types::ConnectionOAuthHttpMethod) -> Self {
         self.http_method = ::std::option::Option::Some(input);
@@ -106,6 +116,12 @@ impl UpdateConnectionOAuthRequestParametersBuilder {
         self.http_method = input;
         self
     }
+    /// <p>The method used to connect to the HTTP endpoint.</p>
+    pub fn get_http_method(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConnectionOAuthHttpMethod> {
+        &self.http_method
+    }
     /// <p>The additional HTTP parameters used for the OAuth authorization request.</p>
     pub fn o_auth_http_parameters(mut self, input: crate::types::ConnectionHttpParameters) -> Self {
         self.o_auth_http_parameters = ::std::option::Option::Some(input);
@@ -118,6 +134,12 @@ impl UpdateConnectionOAuthRequestParametersBuilder {
     ) -> Self {
         self.o_auth_http_parameters = input;
         self
+    }
+    /// <p>The additional HTTP parameters used for the OAuth authorization request.</p>
+    pub fn get_o_auth_http_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConnectionHttpParameters> {
+        &self.o_auth_http_parameters
     }
     /// Consumes the builder and constructs a [`UpdateConnectionOAuthRequestParameters`](crate::types::UpdateConnectionOAuthRequestParameters).
     pub fn build(self) -> crate::types::UpdateConnectionOAuthRequestParameters {

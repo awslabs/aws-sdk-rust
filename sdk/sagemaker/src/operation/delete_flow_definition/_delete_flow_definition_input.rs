@@ -46,6 +46,10 @@ impl DeleteFlowDefinitionInputBuilder {
         self.flow_definition_name = input;
         self
     }
+    /// <p>The name of the flow definition you are deleting.</p>
+    pub fn get_flow_definition_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_definition_name
+    }
     /// Consumes the builder and constructs a [`DeleteFlowDefinitionInput`](crate::operation::delete_flow_definition::DeleteFlowDefinitionInput).
     pub fn build(
         self,

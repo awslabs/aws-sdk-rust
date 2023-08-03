@@ -45,6 +45,12 @@ impl DescribeTestSetDiscrepancyReportInputBuilder {
         self.test_set_discrepancy_report_id = input;
         self
     }
+    /// <p>The unique identifier of the test set discrepancy report.</p>
+    pub fn get_test_set_discrepancy_report_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.test_set_discrepancy_report_id
+    }
     /// Consumes the builder and constructs a [`DescribeTestSetDiscrepancyReportInput`](crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

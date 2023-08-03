@@ -72,6 +72,10 @@ impl CapacityBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the type of capacity, such as memory.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The unit of measure for the type of capacity.</p>
     pub fn unit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.unit = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl CapacityBuilder {
     pub fn set_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unit = input;
         self
+    }
+    /// <p>The unit of measure for the type of capacity.</p>
+    pub fn get_unit(&self) -> &::std::option::Option<::std::string::String> {
+        &self.unit
     }
     /// <p>The total capacity on the device.</p>
     pub fn total(mut self, input: i64) -> Self {
@@ -92,6 +100,10 @@ impl CapacityBuilder {
         self.total = input;
         self
     }
+    /// <p>The total capacity on the device.</p>
+    pub fn get_total(&self) -> &::std::option::Option<i64> {
+        &self.total
+    }
     /// <p>The amount of capacity used on the device.</p>
     pub fn used(mut self, input: i64) -> Self {
         self.used = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl CapacityBuilder {
         self.used = input;
         self
     }
+    /// <p>The amount of capacity used on the device.</p>
+    pub fn get_used(&self) -> &::std::option::Option<i64> {
+        &self.used
+    }
     /// <p>The amount of capacity available for use on the device.</p>
     pub fn available(mut self, input: i64) -> Self {
         self.available = ::std::option::Option::Some(input);
@@ -111,6 +127,10 @@ impl CapacityBuilder {
     pub fn set_available(mut self, input: ::std::option::Option<i64>) -> Self {
         self.available = input;
         self
+    }
+    /// <p>The amount of capacity available for use on the device.</p>
+    pub fn get_available(&self) -> &::std::option::Option<i64> {
+        &self.available
     }
     /// Consumes the builder and constructs a [`Capacity`](crate::types::Capacity).
     pub fn build(self) -> crate::types::Capacity {

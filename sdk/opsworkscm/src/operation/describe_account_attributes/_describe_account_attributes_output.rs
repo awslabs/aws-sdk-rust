@@ -55,6 +55,12 @@ impl DescribeAccountAttributesOutputBuilder {
         self.attributes = input;
         self
     }
+    /// <p> The attributes that are currently set for the account. </p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountAttribute>> {
+        &self.attributes
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

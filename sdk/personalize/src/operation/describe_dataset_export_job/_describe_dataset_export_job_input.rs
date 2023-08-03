@@ -47,6 +47,10 @@ impl DescribeDatasetExportJobInputBuilder {
         self.dataset_export_job_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the dataset export job to describe.</p>
+    pub fn get_dataset_export_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_export_job_arn
+    }
     /// Consumes the builder and constructs a [`DescribeDatasetExportJobInput`](crate::operation::describe_dataset_export_job::DescribeDatasetExportJobInput).
     pub fn build(
         self,

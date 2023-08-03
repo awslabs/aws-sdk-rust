@@ -36,6 +36,10 @@ impl CreateStageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateStage as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_stage::builders::CreateStageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl CreateStageFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>Optional name that can be specified for the stage being created.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// Appends an item to `participantTokenConfigurations`.
     ///
     /// To override the contents of this collection use [`set_participant_token_configurations`](Self::set_participant_token_configurations).
@@ -137,6 +145,12 @@ impl CreateStageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_participant_token_configurations(input);
         self
+    }
+    /// <p>Array of participant token configuration objects to attach to the new stage.</p>
+    pub fn get_participant_token_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParticipantTokenConfiguration>> {
+        self.inner.get_participant_token_configurations()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -160,5 +174,13 @@ impl CreateStageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no constraints on tags beyond what is documented there. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

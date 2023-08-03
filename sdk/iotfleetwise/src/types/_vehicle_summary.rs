@@ -81,6 +81,10 @@ impl VehicleSummaryBuilder {
         self.vehicle_name = input;
         self
     }
+    /// <p>The unique ID of the vehicle.</p>
+    pub fn get_vehicle_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vehicle_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the vehicle.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl VehicleSummaryBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the vehicle.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The ARN of a vehicle model (model manifest) associated with the vehicle.</p>
     pub fn model_manifest_arn(
@@ -107,6 +115,10 @@ impl VehicleSummaryBuilder {
         self.model_manifest_arn = input;
         self
     }
+    /// <p>The ARN of a vehicle model (model manifest) associated with the vehicle.</p>
+    pub fn get_model_manifest_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_manifest_arn
+    }
     /// <p>The ARN of a decoder manifest associated with the vehicle.</p>
     pub fn decoder_manifest_arn(
         mut self,
@@ -123,6 +135,10 @@ impl VehicleSummaryBuilder {
         self.decoder_manifest_arn = input;
         self
     }
+    /// <p>The ARN of a decoder manifest associated with the vehicle.</p>
+    pub fn get_decoder_manifest_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.decoder_manifest_arn
+    }
     /// <p>The time the vehicle was created in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -136,6 +152,10 @@ impl VehicleSummaryBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time the vehicle was created in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The time the vehicle was last updated in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     pub fn last_modification_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modification_time = ::std::option::Option::Some(input);
@@ -148,6 +168,12 @@ impl VehicleSummaryBuilder {
     ) -> Self {
         self.last_modification_time = input;
         self
+    }
+    /// <p>The time the vehicle was last updated in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
+    pub fn get_last_modification_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modification_time
     }
     /// Consumes the builder and constructs a [`VehicleSummary`](crate::types::VehicleSummary).
     pub fn build(self) -> crate::types::VehicleSummary {

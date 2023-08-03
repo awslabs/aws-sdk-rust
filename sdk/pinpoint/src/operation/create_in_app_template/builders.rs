@@ -36,6 +36,12 @@ impl CreateInAppTemplateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateInAppTemplate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_in_app_template::builders::CreateInAppTemplateInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,12 @@ impl CreateInAppTemplateFluentBuilder {
         self.inner = self.inner.set_in_app_template_request(input);
         self
     }
+    /// <p>InApp Template Request.</p>
+    pub fn get_in_app_template_request(
+        &self,
+    ) -> &::std::option::Option<crate::types::InAppTemplateRequest> {
+        self.inner.get_in_app_template_request()
+    }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     pub fn template_name(
         mut self,
@@ -144,5 +156,9 @@ impl CreateInAppTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
+    }
+    /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_name()
     }
 }

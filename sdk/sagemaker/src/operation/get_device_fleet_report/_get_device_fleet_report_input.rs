@@ -46,6 +46,10 @@ impl GetDeviceFleetReportInputBuilder {
         self.device_fleet_name = input;
         self
     }
+    /// <p>The name of the fleet.</p>
+    pub fn get_device_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_fleet_name
+    }
     /// Consumes the builder and constructs a [`GetDeviceFleetReportInput`](crate::operation::get_device_fleet_report::GetDeviceFleetReportInput).
     pub fn build(
         self,

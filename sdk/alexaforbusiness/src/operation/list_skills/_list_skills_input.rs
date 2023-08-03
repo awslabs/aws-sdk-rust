@@ -77,6 +77,10 @@ impl ListSkillsInputBuilder {
         self.skill_group_arn = input;
         self
     }
+    /// <p>The ARN of the skill group for which to list enabled skills.</p>
+    pub fn get_skill_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.skill_group_arn
+    }
     /// <p>Whether the skill is enabled under the user's account.</p>
     pub fn enablement_type(mut self, input: crate::types::EnablementTypeFilter) -> Self {
         self.enablement_type = ::std::option::Option::Some(input);
@@ -89,6 +93,12 @@ impl ListSkillsInputBuilder {
     ) -> Self {
         self.enablement_type = input;
         self
+    }
+    /// <p>Whether the skill is enabled under the user's account.</p>
+    pub fn get_enablement_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::EnablementTypeFilter> {
+        &self.enablement_type
     }
     /// <p>Whether the skill is publicly available or is a private skill.</p>
     pub fn skill_type(mut self, input: crate::types::SkillTypeFilter) -> Self {
@@ -103,6 +113,10 @@ impl ListSkillsInputBuilder {
         self.skill_type = input;
         self
     }
+    /// <p>Whether the skill is publicly available or is a private skill.</p>
+    pub fn get_skill_type(&self) -> &::std::option::Option<crate::types::SkillTypeFilter> {
+        &self.skill_type
+    }
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -113,6 +127,10 @@ impl ListSkillsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -122,6 +140,10 @@ impl ListSkillsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListSkillsInput`](crate::operation::list_skills::ListSkillsInput).
     pub fn build(

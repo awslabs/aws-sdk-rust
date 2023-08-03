@@ -70,6 +70,10 @@ impl ResourceCatalogBuilder {
         self.resource_catalog_arn = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) of the <code>ResourceCatalog</code>. </p>
+    pub fn get_resource_catalog_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_catalog_arn
+    }
     /// <p> The name of the <code>ResourceCatalog</code>. </p>
     pub fn resource_catalog_name(
         mut self,
@@ -86,6 +90,10 @@ impl ResourceCatalogBuilder {
         self.resource_catalog_name = input;
         self
     }
+    /// <p> The name of the <code>ResourceCatalog</code>. </p>
+    pub fn get_resource_catalog_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_catalog_name
+    }
     /// <p> A free form description of the <code>ResourceCatalog</code>. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -95,6 +103,10 @@ impl ResourceCatalogBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p> A free form description of the <code>ResourceCatalog</code>. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p> The time the <code>ResourceCatalog</code> was created. </p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -108,6 +120,10 @@ impl ResourceCatalogBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p> The time the <code>ResourceCatalog</code> was created. </p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// Consumes the builder and constructs a [`ResourceCatalog`](crate::types::ResourceCatalog).
     pub fn build(self) -> crate::types::ResourceCatalog {

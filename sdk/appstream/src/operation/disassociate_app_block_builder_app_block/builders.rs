@@ -36,6 +36,10 @@ impl DisassociateAppBlockBuilderAppBlockFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateAppBlockBuilderAppBlock as a reference.
+    pub fn as_input(&self) -> &crate::operation::disassociate_app_block_builder_app_block::builders::DisassociateAppBlockBuilderAppBlockInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl DisassociateAppBlockBuilderAppBlockFluentBuilder {
         self.inner = self.inner.set_app_block_arn(input);
         self
     }
+    /// <p>The ARN of the app block.</p>
+    pub fn get_app_block_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_block_arn()
+    }
     /// <p>The name of the app block builder.</p>
     pub fn app_block_builder_name(
         mut self,
@@ -121,5 +129,9 @@ impl DisassociateAppBlockBuilderAppBlockFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_app_block_builder_name(input);
         self
+    }
+    /// <p>The name of the app block builder.</p>
+    pub fn get_app_block_builder_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_block_builder_name()
     }
 }

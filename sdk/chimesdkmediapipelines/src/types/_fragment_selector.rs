@@ -61,6 +61,12 @@ impl FragmentSelectorBuilder {
         self.fragment_selector_type = input;
         self
     }
+    /// <p>The origin of the timestamps to use, <code>Server</code> or <code>Producer</code>. For more information, see <a href="kinesisvideostreams/latest/dg/API_dataplane_StartSelector.html#KinesisVideo-Type-dataplane_StartSelector-StartSelectorType">StartSelectorType</a> in the <i>Amazon Kinesis Video Streams Developer Guide</i>.</p>
+    pub fn get_fragment_selector_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::FragmentSelectorType> {
+        &self.fragment_selector_type
+    }
     /// <p>The range of timestamps to return.</p>
     pub fn timestamp_range(mut self, input: crate::types::TimestampRange) -> Self {
         self.timestamp_range = ::std::option::Option::Some(input);
@@ -73,6 +79,10 @@ impl FragmentSelectorBuilder {
     ) -> Self {
         self.timestamp_range = input;
         self
+    }
+    /// <p>The range of timestamps to return.</p>
+    pub fn get_timestamp_range(&self) -> &::std::option::Option<crate::types::TimestampRange> {
+        &self.timestamp_range
     }
     /// Consumes the builder and constructs a [`FragmentSelector`](crate::types::FragmentSelector).
     pub fn build(self) -> crate::types::FragmentSelector {

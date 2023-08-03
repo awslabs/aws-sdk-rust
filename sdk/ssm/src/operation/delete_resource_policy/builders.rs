@@ -36,6 +36,12 @@ impl DeleteResourcePolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteResourcePolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_resource_policy::builders::DeleteResourcePolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DeleteResourcePolicyFluentBuilder {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the resource to which the policies are attached.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
+    }
     /// <p>The policy ID.</p>
     pub fn policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_id(input.into());
@@ -136,6 +146,10 @@ impl DeleteResourcePolicyFluentBuilder {
         self.inner = self.inner.set_policy_id(input);
         self
     }
+    /// <p>The policy ID.</p>
+    pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_id()
+    }
     /// <p>ID of the current policy version. The hash helps to prevent multiple calls from attempting to overwrite a policy.</p>
     pub fn policy_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_hash(input.into());
@@ -145,5 +159,9 @@ impl DeleteResourcePolicyFluentBuilder {
     pub fn set_policy_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_hash(input);
         self
+    }
+    /// <p>ID of the current policy version. The hash helps to prevent multiple calls from attempting to overwrite a policy.</p>
+    pub fn get_policy_hash(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_hash()
     }
 }

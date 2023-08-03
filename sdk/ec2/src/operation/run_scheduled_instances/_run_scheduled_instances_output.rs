@@ -61,6 +61,12 @@ impl RunScheduledInstancesOutputBuilder {
         self.instance_id_set = input;
         self
     }
+    /// <p>The IDs of the newly launched instances.</p>
+    pub fn get_instance_id_set(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.instance_id_set
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

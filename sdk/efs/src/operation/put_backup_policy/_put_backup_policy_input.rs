@@ -53,6 +53,10 @@ impl PutBackupPolicyInputBuilder {
         self.file_system_id = input;
         self
     }
+    /// <p>Specifies which EFS file system to update the backup policy for.</p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_system_id
+    }
     /// <p>The backup policy included in the <code>PutBackupPolicy</code> request.</p>
     pub fn backup_policy(mut self, input: crate::types::BackupPolicy) -> Self {
         self.backup_policy = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl PutBackupPolicyInputBuilder {
     ) -> Self {
         self.backup_policy = input;
         self
+    }
+    /// <p>The backup policy included in the <code>PutBackupPolicy</code> request.</p>
+    pub fn get_backup_policy(&self) -> &::std::option::Option<crate::types::BackupPolicy> {
+        &self.backup_policy
     }
     /// Consumes the builder and constructs a [`PutBackupPolicyInput`](crate::operation::put_backup_policy::PutBackupPolicyInput).
     pub fn build(

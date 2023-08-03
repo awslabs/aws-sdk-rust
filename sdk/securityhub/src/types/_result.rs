@@ -48,6 +48,10 @@ impl ResultBuilder {
         self.account_id = input;
         self
     }
+    /// <p>An Amazon Web Services account ID of the account that was not processed.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The reason that the account was not processed.</p>
     pub fn processing_result(
         mut self,
@@ -63,6 +67,10 @@ impl ResultBuilder {
     ) -> Self {
         self.processing_result = input;
         self
+    }
+    /// <p>The reason that the account was not processed.</p>
+    pub fn get_processing_result(&self) -> &::std::option::Option<::std::string::String> {
+        &self.processing_result
     }
     /// Consumes the builder and constructs a [`Result`](crate::types::Result).
     pub fn build(self) -> crate::types::Result {

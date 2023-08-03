@@ -51,6 +51,12 @@ impl PolicyQualifierInfoBuilder {
         self.policy_qualifier_id = input;
         self
     }
+    /// <p>Identifies the qualifier modifying a <code>CertPolicyId</code>.</p>
+    pub fn get_policy_qualifier_id(
+        &self,
+    ) -> &::std::option::Option<crate::types::PolicyQualifierId> {
+        &self.policy_qualifier_id
+    }
     /// <p>Defines the qualifier type. Amazon Web Services Private CA supports the use of a URI for a CPS qualifier in this field.</p>
     pub fn qualifier(mut self, input: crate::types::Qualifier) -> Self {
         self.qualifier = ::std::option::Option::Some(input);
@@ -60,6 +66,10 @@ impl PolicyQualifierInfoBuilder {
     pub fn set_qualifier(mut self, input: ::std::option::Option<crate::types::Qualifier>) -> Self {
         self.qualifier = input;
         self
+    }
+    /// <p>Defines the qualifier type. Amazon Web Services Private CA supports the use of a URI for a CPS qualifier in this field.</p>
+    pub fn get_qualifier(&self) -> &::std::option::Option<crate::types::Qualifier> {
+        &self.qualifier
     }
     /// Consumes the builder and constructs a [`PolicyQualifierInfo`](crate::types::PolicyQualifierInfo).
     pub fn build(self) -> crate::types::PolicyQualifierInfo {

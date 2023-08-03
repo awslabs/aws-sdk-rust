@@ -41,6 +41,10 @@ impl GetAutoTerminationPolicyInputBuilder {
         self.cluster_id = input;
         self
     }
+    /// <p>Specifies the ID of the Amazon EMR cluster for which the auto-termination policy will be fetched.</p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_id
+    }
     /// Consumes the builder and constructs a [`GetAutoTerminationPolicyInput`](crate::operation::get_auto_termination_policy::GetAutoTerminationPolicyInput).
     pub fn build(
         self,

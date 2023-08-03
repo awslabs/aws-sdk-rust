@@ -54,6 +54,10 @@ impl CharacterSetBuilder {
         self.character_set_name = input;
         self
     }
+    /// <p>The name of the character set.</p>
+    pub fn get_character_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.character_set_name
+    }
     /// <p>The description of the character set.</p>
     pub fn character_set_description(
         mut self,
@@ -69,6 +73,10 @@ impl CharacterSetBuilder {
     ) -> Self {
         self.character_set_description = input;
         self
+    }
+    /// <p>The description of the character set.</p>
+    pub fn get_character_set_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.character_set_description
     }
     /// Consumes the builder and constructs a [`CharacterSet`](crate::types::CharacterSet).
     pub fn build(self) -> crate::types::CharacterSet {

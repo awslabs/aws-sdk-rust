@@ -158,6 +158,17 @@ impl DialogActionBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
+    /// <ul>
+    /// <li> <p> <code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p> </li>
+    /// <li> <p> <code>Close</code> - Indicates that the there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p> </li>
+    /// <li> <p> <code>Delegate</code> - The next action is determined by Amazon Lex.</p> </li>
+    /// <li> <p> <code>ElicitIntent</code> - The next action is to determine the intent that the user wants to fulfill.</p> </li>
+    /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::DialogActionType> {
+        &self.r#type
+    }
     /// <p>The name of the intent.</p>
     pub fn intent_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.intent_name = ::std::option::Option::Some(input.into());
@@ -167,6 +178,10 @@ impl DialogActionBuilder {
     pub fn set_intent_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.intent_name = input;
         self
+    }
+    /// <p>The name of the intent.</p>
+    pub fn get_intent_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.intent_name
     }
     /// Adds a key-value pair to `slots`.
     ///
@@ -193,6 +208,14 @@ impl DialogActionBuilder {
         self.slots = input;
         self
     }
+    /// <p>Map of the slots that have been gathered and their values. </p>
+    pub fn get_slots(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.slots
+    }
     /// <p>The name of the slot that should be elicited from the user.</p>
     pub fn slot_to_elicit(
         mut self,
@@ -208,6 +231,10 @@ impl DialogActionBuilder {
     ) -> Self {
         self.slot_to_elicit = input;
         self
+    }
+    /// <p>The name of the slot that should be elicited from the user.</p>
+    pub fn get_slot_to_elicit(&self) -> &::std::option::Option<::std::string::String> {
+        &self.slot_to_elicit
     }
     /// <p>The fulfillment state of the intent. The possible values are:</p>
     /// <ul>
@@ -232,6 +259,15 @@ impl DialogActionBuilder {
         self.fulfillment_state = input;
         self
     }
+    /// <p>The fulfillment state of the intent. The possible values are:</p>
+    /// <ul>
+    /// <li> <p> <code>Failed</code> - The Lambda function associated with the intent failed to fulfill the intent.</p> </li>
+    /// <li> <p> <code>Fulfilled</code> - The intent has fulfilled by the Lambda function associated with the intent. </p> </li>
+    /// <li> <p> <code>ReadyForFulfillment</code> - All of the information necessary for the intent is present and the intent ready to be fulfilled by the client application.</p> </li>
+    /// </ul>
+    pub fn get_fulfillment_state(&self) -> &::std::option::Option<crate::types::FulfillmentState> {
+        &self.fulfillment_state
+    }
     /// <p>The message that should be shown to the user. If you don't specify a message, Amazon Lex will use the message configured for the intent.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -241,6 +277,10 @@ impl DialogActionBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The message that should be shown to the user. If you don't specify a message, Amazon Lex will use the message configured for the intent.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// <ul>
     /// <li> <p> <code>PlainText</code> - The message contains plain UTF-8 text.</p> </li>
@@ -264,6 +304,15 @@ impl DialogActionBuilder {
     ) -> Self {
         self.message_format = input;
         self
+    }
+    /// <ul>
+    /// <li> <p> <code>PlainText</code> - The message contains plain UTF-8 text.</p> </li>
+    /// <li> <p> <code>CustomPayload</code> - The message is a custom format for the client.</p> </li>
+    /// <li> <p> <code>SSML</code> - The message contains text formatted for voice output.</p> </li>
+    /// <li> <p> <code>Composite</code> - The message contains an escaped JSON object containing one or more messages. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/howitworks-manage-prompts.html">Message Groups</a>. </p> </li>
+    /// </ul>
+    pub fn get_message_format(&self) -> &::std::option::Option<crate::types::MessageFormatType> {
+        &self.message_format
     }
     /// Consumes the builder and constructs a [`DialogAction`](crate::types::DialogAction).
     pub fn build(self) -> crate::types::DialogAction {

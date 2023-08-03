@@ -36,6 +36,13 @@ impl CreateEventIntegrationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateEventIntegration as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_event_integration::builders::CreateEventIntegrationInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl CreateEventIntegrationFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the event integration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The description of the event integration.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -135,6 +146,10 @@ impl CreateEventIntegrationFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the event integration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The event filter.</p>
     pub fn event_filter(mut self, input: crate::types::EventFilter) -> Self {
@@ -148,6 +163,10 @@ impl CreateEventIntegrationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_event_filter(input);
         self
+    }
+    /// <p>The event filter.</p>
+    pub fn get_event_filter(&self) -> &::std::option::Option<crate::types::EventFilter> {
+        self.inner.get_event_filter()
     }
     /// <p>The EventBridge bus.</p>
     pub fn event_bridge_bus(
@@ -165,6 +184,10 @@ impl CreateEventIntegrationFluentBuilder {
         self.inner = self.inner.set_event_bridge_bus(input);
         self
     }
+    /// <p>The EventBridge bus.</p>
+    pub fn get_event_bridge_bus(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_bridge_bus()
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -174,6 +197,10 @@ impl CreateEventIntegrationFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -197,5 +224,13 @@ impl CreateEventIntegrationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

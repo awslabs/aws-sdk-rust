@@ -199,6 +199,10 @@ impl TopicCalculatedFieldBuilder {
         self.calculated_field_name = input;
         self
     }
+    /// <p>The calculated field name.</p>
+    pub fn get_calculated_field_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.calculated_field_name
+    }
     /// <p>The calculated field description.</p>
     pub fn calculated_field_description(
         mut self,
@@ -215,6 +219,12 @@ impl TopicCalculatedFieldBuilder {
         self.calculated_field_description = input;
         self
     }
+    /// <p>The calculated field description.</p>
+    pub fn get_calculated_field_description(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.calculated_field_description
+    }
     /// <p>The calculated field expression.</p>
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression = ::std::option::Option::Some(input.into());
@@ -224,6 +234,10 @@ impl TopicCalculatedFieldBuilder {
     pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expression = input;
         self
+    }
+    /// <p>The calculated field expression.</p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expression
     }
     /// Appends an item to `calculated_field_synonyms`.
     ///
@@ -247,6 +261,12 @@ impl TopicCalculatedFieldBuilder {
         self.calculated_field_synonyms = input;
         self
     }
+    /// <p>The other names or aliases for the calculated field.</p>
+    pub fn get_calculated_field_synonyms(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.calculated_field_synonyms
+    }
     /// <p>A boolean value that indicates if a calculated field is included in the topic.</p>
     pub fn is_included_in_topic(mut self, input: bool) -> Self {
         self.is_included_in_topic = ::std::option::Option::Some(input);
@@ -257,6 +277,10 @@ impl TopicCalculatedFieldBuilder {
         self.is_included_in_topic = input;
         self
     }
+    /// <p>A boolean value that indicates if a calculated field is included in the topic.</p>
+    pub fn get_is_included_in_topic(&self) -> &::std::option::Option<bool> {
+        &self.is_included_in_topic
+    }
     /// <p>A Boolean value that indicates if a calculated field is visible in the autocomplete.</p>
     pub fn disable_indexing(mut self, input: bool) -> Self {
         self.disable_indexing = ::std::option::Option::Some(input);
@@ -266,6 +290,10 @@ impl TopicCalculatedFieldBuilder {
     pub fn set_disable_indexing(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disable_indexing = input;
         self
+    }
+    /// <p>A Boolean value that indicates if a calculated field is visible in the autocomplete.</p>
+    pub fn get_disable_indexing(&self) -> &::std::option::Option<bool> {
+        &self.disable_indexing
     }
     /// <p>The column data role for a calculated field. Valid values for this structure are <code>DIMENSION</code> and <code>MEASURE</code>.</p>
     pub fn column_data_role(mut self, input: crate::types::ColumnDataRole) -> Self {
@@ -280,6 +308,10 @@ impl TopicCalculatedFieldBuilder {
         self.column_data_role = input;
         self
     }
+    /// <p>The column data role for a calculated field. Valid values for this structure are <code>DIMENSION</code> and <code>MEASURE</code>.</p>
+    pub fn get_column_data_role(&self) -> &::std::option::Option<crate::types::ColumnDataRole> {
+        &self.column_data_role
+    }
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
     pub fn time_granularity(mut self, input: crate::types::TopicTimeGranularity) -> Self {
         self.time_granularity = ::std::option::Option::Some(input);
@@ -292,6 +324,12 @@ impl TopicCalculatedFieldBuilder {
     ) -> Self {
         self.time_granularity = input;
         self
+    }
+    /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
+    pub fn get_time_granularity(
+        &self,
+    ) -> &::std::option::Option<crate::types::TopicTimeGranularity> {
+        &self.time_granularity
     }
     /// <p>The default formatting definition.</p>
     pub fn default_formatting(mut self, input: crate::types::DefaultFormatting) -> Self {
@@ -306,6 +344,12 @@ impl TopicCalculatedFieldBuilder {
         self.default_formatting = input;
         self
     }
+    /// <p>The default formatting definition.</p>
+    pub fn get_default_formatting(
+        &self,
+    ) -> &::std::option::Option<crate::types::DefaultFormatting> {
+        &self.default_formatting
+    }
     /// <p>The default aggregation. Valid values for this structure are <code>SUM</code>, <code>MAX</code>, <code>MIN</code>, <code>COUNT</code>, <code>DISTINCT_COUNT</code>, and <code>AVERAGE</code>.</p>
     pub fn aggregation(mut self, input: crate::types::DefaultAggregation) -> Self {
         self.aggregation = ::std::option::Option::Some(input);
@@ -318,6 +362,10 @@ impl TopicCalculatedFieldBuilder {
     ) -> Self {
         self.aggregation = input;
         self
+    }
+    /// <p>The default aggregation. Valid values for this structure are <code>SUM</code>, <code>MAX</code>, <code>MIN</code>, <code>COUNT</code>, <code>DISTINCT_COUNT</code>, and <code>AVERAGE</code>.</p>
+    pub fn get_aggregation(&self) -> &::std::option::Option<crate::types::DefaultAggregation> {
+        &self.aggregation
     }
     /// <p>The order in which data is displayed for the calculated field when it's used in a comparative context.</p>
     pub fn comparative_order(mut self, input: crate::types::ComparativeOrder) -> Self {
@@ -332,6 +380,10 @@ impl TopicCalculatedFieldBuilder {
         self.comparative_order = input;
         self
     }
+    /// <p>The order in which data is displayed for the calculated field when it's used in a comparative context.</p>
+    pub fn get_comparative_order(&self) -> &::std::option::Option<crate::types::ComparativeOrder> {
+        &self.comparative_order
+    }
     /// <p>The semantic type.</p>
     pub fn semantic_type(mut self, input: crate::types::SemanticType) -> Self {
         self.semantic_type = ::std::option::Option::Some(input);
@@ -344,6 +396,10 @@ impl TopicCalculatedFieldBuilder {
     ) -> Self {
         self.semantic_type = input;
         self
+    }
+    /// <p>The semantic type.</p>
+    pub fn get_semantic_type(&self) -> &::std::option::Option<crate::types::SemanticType> {
+        &self.semantic_type
     }
     /// Appends an item to `allowed_aggregations`.
     ///
@@ -363,6 +419,12 @@ impl TopicCalculatedFieldBuilder {
     ) -> Self {
         self.allowed_aggregations = input;
         self
+    }
+    /// <p>The list of aggregation types that are allowed for the calculated field. Valid values for this structure are <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MIN</code>, <code>MAX</code>, <code>MEDIAN</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, <code>VARP</code>, and <code>PERCENTILE</code>.</p>
+    pub fn get_allowed_aggregations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthorSpecifiedAggregation>> {
+        &self.allowed_aggregations
     }
     /// Appends an item to `not_allowed_aggregations`.
     ///
@@ -386,6 +448,12 @@ impl TopicCalculatedFieldBuilder {
         self.not_allowed_aggregations = input;
         self
     }
+    /// <p>The list of aggregation types that are not allowed for the calculated field. Valid values for this structure are <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MIN</code>, <code>MAX</code>, <code>MEDIAN</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, <code>VARP</code>, and <code>PERCENTILE</code>.</p>
+    pub fn get_not_allowed_aggregations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthorSpecifiedAggregation>> {
+        &self.not_allowed_aggregations
+    }
     /// <p>A Boolean value that indicates whether to never aggregate calculated field in filters.</p>
     pub fn never_aggregate_in_filter(mut self, input: bool) -> Self {
         self.never_aggregate_in_filter = ::std::option::Option::Some(input);
@@ -395,6 +463,10 @@ impl TopicCalculatedFieldBuilder {
     pub fn set_never_aggregate_in_filter(mut self, input: ::std::option::Option<bool>) -> Self {
         self.never_aggregate_in_filter = input;
         self
+    }
+    /// <p>A Boolean value that indicates whether to never aggregate calculated field in filters.</p>
+    pub fn get_never_aggregate_in_filter(&self) -> &::std::option::Option<bool> {
+        &self.never_aggregate_in_filter
     }
     /// Appends an item to `cell_value_synonyms`.
     ///
@@ -414,6 +486,12 @@ impl TopicCalculatedFieldBuilder {
     ) -> Self {
         self.cell_value_synonyms = input;
         self
+    }
+    /// <p>The other names or aliases for the calculated field cell value.</p>
+    pub fn get_cell_value_synonyms(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CellValueSynonym>> {
+        &self.cell_value_synonyms
     }
     /// Consumes the builder and constructs a [`TopicCalculatedField`](crate::types::TopicCalculatedField).
     pub fn build(self) -> crate::types::TopicCalculatedField {

@@ -112,6 +112,10 @@ impl SegmentBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the segment.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the segment.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -122,6 +126,10 @@ impl SegmentBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the segment.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The pattern that defines the attributes to use to evalute whether a user session will be in the segment. For more information about the pattern syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Segment rule pattern syntax</a>.</p>
     pub fn pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pattern = ::std::option::Option::Some(input.into());
@@ -131,6 +139,10 @@ impl SegmentBuilder {
     pub fn set_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pattern = input;
         self
+    }
+    /// <p>The pattern that defines the attributes to use to evalute whether a user session will be in the segment. For more information about the pattern syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Segment rule pattern syntax</a>.</p>
+    pub fn get_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pattern
     }
     /// <p>The date and time that this segment was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -145,6 +157,10 @@ impl SegmentBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The date and time that this segment was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>The date and time that this segment was most recently updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -158,6 +174,10 @@ impl SegmentBuilder {
         self.last_updated_time = input;
         self
     }
+    /// <p>The date and time that this segment was most recently updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
+    }
     /// <p>The customer-created description for this segment.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -167,6 +187,10 @@ impl SegmentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The customer-created description for this segment.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The number of experiments that this segment is used in. This count includes all current experiments, not just those that are currently running.</p>
     pub fn experiment_count(mut self, input: i64) -> Self {
@@ -178,6 +202,10 @@ impl SegmentBuilder {
         self.experiment_count = input;
         self
     }
+    /// <p>The number of experiments that this segment is used in. This count includes all current experiments, not just those that are currently running.</p>
+    pub fn get_experiment_count(&self) -> &::std::option::Option<i64> {
+        &self.experiment_count
+    }
     /// <p>The number of launches that this segment is used in. This count includes all current launches, not just those that are currently running.</p>
     pub fn launch_count(mut self, input: i64) -> Self {
         self.launch_count = ::std::option::Option::Some(input);
@@ -187,6 +215,10 @@ impl SegmentBuilder {
     pub fn set_launch_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.launch_count = input;
         self
+    }
+    /// <p>The number of launches that this segment is used in. This count includes all current launches, not just those that are currently running.</p>
+    pub fn get_launch_count(&self) -> &::std::option::Option<i64> {
+        &self.launch_count
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -212,6 +244,14 @@ impl SegmentBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The list of tag keys and values associated with this launch.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`Segment`](crate::types::Segment).
     pub fn build(self) -> crate::types::Segment {

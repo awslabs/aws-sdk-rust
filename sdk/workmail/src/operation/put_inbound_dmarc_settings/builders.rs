@@ -37,6 +37,13 @@ impl PutInboundDmarcSettingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutInboundDmarcSettings as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_inbound_dmarc_settings::builders::PutInboundDmarcSettingsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl PutInboundDmarcSettingsFluentBuilder {
         self.inner = self.inner.set_organization_id(input);
         self
     }
+    /// <p>The ID of the organization that you are applying the DMARC policy to.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
+    }
     /// <p>Enforces or suspends a policy after it's applied.</p>
     pub fn enforced(mut self, input: bool) -> Self {
         self.inner = self.inner.enforced(input);
@@ -142,5 +153,9 @@ impl PutInboundDmarcSettingsFluentBuilder {
     pub fn set_enforced(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enforced(input);
         self
+    }
+    /// <p>Enforces or suspends a policy after it's applied.</p>
+    pub fn get_enforced(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enforced()
     }
 }

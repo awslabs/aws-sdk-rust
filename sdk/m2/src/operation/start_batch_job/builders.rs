@@ -36,6 +36,12 @@ impl StartBatchJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartBatchJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_batch_job::builders::StartBatchJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl StartBatchJobFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The unique identifier of the application associated with this batch job.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>The unique identifier of the batch job.</p>
     pub fn batch_job_identifier(mut self, input: crate::types::BatchJobIdentifier) -> Self {
         self.inner = self.inner.batch_job_identifier(input);
@@ -136,6 +146,12 @@ impl StartBatchJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_batch_job_identifier(input);
         self
+    }
+    /// <p>The unique identifier of the batch job.</p>
+    pub fn get_batch_job_identifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchJobIdentifier> {
+        self.inner.get_batch_job_identifier()
     }
     /// Adds a key-value pair to `jobParams`.
     ///
@@ -159,5 +175,13 @@ impl StartBatchJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_job_params(input);
         self
+    }
+    /// <p>The collection of batch job parameters. For details about limits for keys and values, see <a href="https://www.ibm.com/docs/en/workload-automation/9.3.0?topic=zos-coding-variables-in-jcl">Coding variables in JCL</a>.</p>
+    pub fn get_job_params(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_job_params()
     }
 }

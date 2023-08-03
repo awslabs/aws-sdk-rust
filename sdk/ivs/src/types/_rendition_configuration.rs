@@ -62,6 +62,12 @@ impl RenditionConfigurationBuilder {
         self.rendition_selection = input;
         self
     }
+    /// <p>Indicates which set of renditions are recorded for a stream. For <code>BASIC</code> channels, the <code>CUSTOM</code> value has no effect. If <code>CUSTOM</code> is specified, a set of renditions must be specified in the <code>renditions</code> field. Default: <code>ALL</code>.</p>
+    pub fn get_rendition_selection(
+        &self,
+    ) -> &::std::option::Option<crate::types::RenditionConfigurationRenditionSelection> {
+        &self.rendition_selection
+    }
     /// Appends an item to `renditions`.
     ///
     /// To override the contents of this collection use [`set_renditions`](Self::set_renditions).
@@ -82,6 +88,13 @@ impl RenditionConfigurationBuilder {
     ) -> Self {
         self.renditions = input;
         self
+    }
+    /// <p>Indicates which renditions are recorded for a stream, if <code>renditionSelection</code> is <code>CUSTOM</code>; otherwise, this field is irrelevant. The selected renditions are recorded if they are available during the stream. If a selected rendition is unavailable, the best available rendition is recorded. For details on the resolution dimensions of each rendition, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/record-to-s3.html">Auto-Record to Amazon S3</a>.</p>
+    pub fn get_renditions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RenditionConfigurationRendition>>
+    {
+        &self.renditions
     }
     /// Consumes the builder and constructs a [`RenditionConfiguration`](crate::types::RenditionConfiguration).
     pub fn build(self) -> crate::types::RenditionConfiguration {

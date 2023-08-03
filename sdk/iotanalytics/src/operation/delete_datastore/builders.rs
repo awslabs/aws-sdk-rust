@@ -36,6 +36,12 @@ impl DeleteDatastoreFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteDatastore as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_datastore::builders::DeleteDatastoreInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl DeleteDatastoreFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_datastore_name(input);
         self
+    }
+    /// <p>The name of the data store to delete.</p>
+    pub fn get_datastore_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_datastore_name()
     }
 }

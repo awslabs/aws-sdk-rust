@@ -59,6 +59,10 @@ impl UpdateCertificateInputBuilder {
         self.certificate_id = input;
         self
     }
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
+    pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_id
+    }
     /// <p>The new status.</p>
     /// <p> <b>Note:</b> Setting the status to PENDING_TRANSFER or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They are not intended for developer use.</p>
     /// <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
@@ -75,6 +79,12 @@ impl UpdateCertificateInputBuilder {
     ) -> Self {
         self.new_status = input;
         self
+    }
+    /// <p>The new status.</p>
+    /// <p> <b>Note:</b> Setting the status to PENDING_TRANSFER or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They are not intended for developer use.</p>
+    /// <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
+    pub fn get_new_status(&self) -> &::std::option::Option<crate::types::CertificateStatus> {
+        &self.new_status
     }
     /// Consumes the builder and constructs a [`UpdateCertificateInput`](crate::operation::update_certificate::UpdateCertificateInput).
     pub fn build(

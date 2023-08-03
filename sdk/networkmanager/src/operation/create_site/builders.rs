@@ -36,6 +36,10 @@ impl CreateSiteFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSite as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_site::builders::CreateSiteInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl CreateSiteFluentBuilder {
         self.inner = self.inner.set_global_network_id(input);
         self
     }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_global_network_id()
+    }
     /// <p>A description of your site.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -135,6 +143,11 @@ impl CreateSiteFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of your site.</p>
+    /// <p>Constraints: Maximum length of 256 characters.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The site location. This information is used for visualization in the Network Manager console. If you specify the address, the latitude and longitude are automatically calculated.</p>
     /// <ul>
@@ -156,6 +169,15 @@ impl CreateSiteFluentBuilder {
         self.inner = self.inner.set_location(input);
         self
     }
+    /// <p>The site location. This information is used for visualization in the Network Manager console. If you specify the address, the latitude and longitude are automatically calculated.</p>
+    /// <ul>
+    /// <li> <p> <code>Address</code>: The physical address of the site.</p> </li>
+    /// <li> <p> <code>Latitude</code>: The latitude of the site. </p> </li>
+    /// <li> <p> <code>Longitude</code>: The longitude of the site.</p> </li>
+    /// </ul>
+    pub fn get_location(&self) -> &::std::option::Option<crate::types::Location> {
+        self.inner.get_location()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -172,5 +194,9 @@ impl CreateSiteFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags to apply to the resource during creation.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

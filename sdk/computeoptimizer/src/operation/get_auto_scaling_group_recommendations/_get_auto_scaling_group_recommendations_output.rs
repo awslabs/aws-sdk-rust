@@ -72,6 +72,11 @@ impl GetAutoScalingGroupRecommendationsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to use to advance to the next page of Auto Scaling group recommendations.</p>
+    /// <p>This value is null when there are no more pages of Auto Scaling group recommendations to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `auto_scaling_group_recommendations`.
     ///
     /// To override the contents of this collection use [`set_auto_scaling_group_recommendations`](Self::set_auto_scaling_group_recommendations).
@@ -94,6 +99,12 @@ impl GetAutoScalingGroupRecommendationsOutputBuilder {
         self.auto_scaling_group_recommendations = input;
         self
     }
+    /// <p>An array of objects that describe Auto Scaling group recommendations.</p>
+    pub fn get_auto_scaling_group_recommendations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroupRecommendation>> {
+        &self.auto_scaling_group_recommendations
+    }
     /// Appends an item to `errors`.
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
@@ -114,6 +125,13 @@ impl GetAutoScalingGroupRecommendationsOutputBuilder {
     ) -> Self {
         self.errors = input;
         self
+    }
+    /// <p>An array of objects that describe errors of the request.</p>
+    /// <p>For example, an error is returned if you request recommendations for an unsupported Auto Scaling group.</p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GetRecommendationError>> {
+        &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

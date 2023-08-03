@@ -61,6 +61,10 @@ impl CreateVpcAssociationAuthorizationOutputBuilder {
         self.hosted_zone_id = input;
         self
     }
+    /// <p>The ID of the hosted zone that you authorized associating a VPC with.</p>
+    pub fn get_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hosted_zone_id
+    }
     /// <p>The VPC that you authorized associating with a hosted zone.</p>
     pub fn vpc(mut self, input: crate::types::Vpc) -> Self {
         self.vpc = ::std::option::Option::Some(input);
@@ -70,6 +74,10 @@ impl CreateVpcAssociationAuthorizationOutputBuilder {
     pub fn set_vpc(mut self, input: ::std::option::Option<crate::types::Vpc>) -> Self {
         self.vpc = input;
         self
+    }
+    /// <p>The VPC that you authorized associating with a hosted zone.</p>
+    pub fn get_vpc(&self) -> &::std::option::Option<crate::types::Vpc> {
+        &self.vpc
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

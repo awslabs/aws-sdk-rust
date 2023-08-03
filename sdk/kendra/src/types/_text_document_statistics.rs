@@ -48,6 +48,10 @@ impl TextDocumentStatisticsBuilder {
         self.indexed_text_documents_count = input;
         self
     }
+    /// <p>The number of text documents indexed.</p>
+    pub fn get_indexed_text_documents_count(&self) -> &::std::option::Option<i32> {
+        &self.indexed_text_documents_count
+    }
     /// <p>The total size, in bytes, of the indexed documents.</p>
     pub fn indexed_text_bytes(mut self, input: i64) -> Self {
         self.indexed_text_bytes = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl TextDocumentStatisticsBuilder {
     pub fn set_indexed_text_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.indexed_text_bytes = input;
         self
+    }
+    /// <p>The total size, in bytes, of the indexed documents.</p>
+    pub fn get_indexed_text_bytes(&self) -> &::std::option::Option<i64> {
+        &self.indexed_text_bytes
     }
     /// Consumes the builder and constructs a [`TextDocumentStatistics`](crate::types::TextDocumentStatistics).
     pub fn build(self) -> crate::types::TextDocumentStatistics {

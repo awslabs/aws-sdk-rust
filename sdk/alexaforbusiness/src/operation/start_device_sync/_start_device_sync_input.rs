@@ -55,6 +55,10 @@ impl StartDeviceSyncInputBuilder {
         self.room_arn = input;
         self
     }
+    /// <p>The ARN of the room with which the device to sync is associated. Required.</p>
+    pub fn get_room_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.room_arn
+    }
     /// <p>The ARN of the device to sync. Required.</p>
     pub fn device_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_arn = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl StartDeviceSyncInputBuilder {
     pub fn set_device_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_arn = input;
         self
+    }
+    /// <p>The ARN of the device to sync. Required.</p>
+    pub fn get_device_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_arn
     }
     /// Appends an item to `features`.
     ///
@@ -83,6 +91,10 @@ impl StartDeviceSyncInputBuilder {
     ) -> Self {
         self.features = input;
         self
+    }
+    /// <p>Request structure to start the device sync. Required.</p>
+    pub fn get_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Feature>> {
+        &self.features
     }
     /// Consumes the builder and constructs a [`StartDeviceSyncInput`](crate::operation::start_device_sync::StartDeviceSyncInput).
     pub fn build(

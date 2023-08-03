@@ -36,6 +36,12 @@ impl GetDataSetDetailsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetDataSetDetails as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_data_set_details::builders::GetDataSetDetailsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl GetDataSetDetailsFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The unique identifier of the application that this data set is associated with.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>The name of the data set.</p>
     pub fn data_set_name(
         mut self,
@@ -147,5 +157,9 @@ impl GetDataSetDetailsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_data_set_name(input);
         self
+    }
+    /// <p>The name of the data set.</p>
+    pub fn get_data_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_data_set_name()
     }
 }

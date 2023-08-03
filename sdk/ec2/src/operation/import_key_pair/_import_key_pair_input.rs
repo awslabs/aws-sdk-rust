@@ -64,6 +64,10 @@ impl ImportKeyPairInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>A unique name for the key pair.</p>
     pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_name = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl ImportKeyPairInputBuilder {
     pub fn set_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_name = input;
         self
+    }
+    /// <p>A unique name for the key pair.</p>
+    pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_name
     }
     /// <p>The public key. For API calls, the text must be base64-encoded. For command line tools, base64 encoding is performed for you.</p>
     pub fn public_key_material(mut self, input: ::aws_smithy_types::Blob) -> Self {
@@ -86,6 +94,10 @@ impl ImportKeyPairInputBuilder {
     ) -> Self {
         self.public_key_material = input;
         self
+    }
+    /// <p>The public key. For API calls, the text must be base64-encoded. For command line tools, base64 encoding is performed for you.</p>
+    pub fn get_public_key_material(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.public_key_material
     }
     /// Appends an item to `tag_specifications`.
     ///
@@ -105,6 +117,12 @@ impl ImportKeyPairInputBuilder {
     ) -> Self {
         self.tag_specifications = input;
         self
+    }
+    /// <p>The tags to apply to the imported key pair.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
     }
     /// Consumes the builder and constructs a [`ImportKeyPairInput`](crate::operation::import_key_pair::ImportKeyPairInput).
     pub fn build(

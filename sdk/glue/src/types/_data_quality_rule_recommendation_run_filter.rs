@@ -59,6 +59,10 @@ impl DataQualityRuleRecommendationRunFilterBuilder {
         self.data_source = input;
         self
     }
+    /// <p>Filter based on a specified data source (Glue table).</p>
+    pub fn get_data_source(&self) -> &::std::option::Option<crate::types::DataSource> {
+        &self.data_source
+    }
     /// <p>Filter based on time for results started before provided time.</p>
     pub fn started_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.started_before = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl DataQualityRuleRecommendationRunFilterBuilder {
         self.started_before = input;
         self
     }
+    /// <p>Filter based on time for results started before provided time.</p>
+    pub fn get_started_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.started_before
+    }
     /// <p>Filter based on time for results started after provided time.</p>
     pub fn started_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.started_after = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl DataQualityRuleRecommendationRunFilterBuilder {
     ) -> Self {
         self.started_after = input;
         self
+    }
+    /// <p>Filter based on time for results started after provided time.</p>
+    pub fn get_started_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.started_after
     }
     /// Consumes the builder and constructs a [`DataQualityRuleRecommendationRunFilter`](crate::types::DataQualityRuleRecommendationRunFilter).
     pub fn build(self) -> crate::types::DataQualityRuleRecommendationRunFilter {

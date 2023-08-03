@@ -69,6 +69,10 @@ impl ListClustersV2InputBuilder {
         self.cluster_name_filter = input;
         self
     }
+    /// <p>Specify a prefix of the names of the clusters that you want to list. The service lists all the clusters whose names start with this prefix.</p>
+    pub fn get_cluster_name_filter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_name_filter
+    }
     /// <p>Specify either PROVISIONED or SERVERLESS.</p>
     pub fn cluster_type_filter(
         mut self,
@@ -85,6 +89,10 @@ impl ListClustersV2InputBuilder {
         self.cluster_type_filter = input;
         self
     }
+    /// <p>Specify either PROVISIONED or SERVERLESS.</p>
+    pub fn get_cluster_type_filter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_type_filter
+    }
     /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -95,6 +103,10 @@ impl ListClustersV2InputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -104,6 +116,10 @@ impl ListClustersV2InputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListClustersV2Input`](crate::operation::list_clusters_v2::ListClustersV2Input).
     pub fn build(

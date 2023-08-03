@@ -39,6 +39,10 @@ impl DescribeRxNormInferenceJobInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The identifier that Amazon Comprehend Medical generated for the job. The StartRxNormInferenceJob operation returns this identifier in its response.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// Consumes the builder and constructs a [`DescribeRxNormInferenceJobInput`](crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobInput).
     pub fn build(
         self,

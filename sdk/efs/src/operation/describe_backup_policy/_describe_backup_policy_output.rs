@@ -50,6 +50,10 @@ impl DescribeBackupPolicyOutputBuilder {
         self.backup_policy = input;
         self
     }
+    /// <p>Describes the file system's backup policy, indicating whether automatic backups are turned on or off.</p>
+    pub fn get_backup_policy(&self) -> &::std::option::Option<crate::types::BackupPolicy> {
+        &self.backup_policy
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

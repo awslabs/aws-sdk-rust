@@ -60,6 +60,10 @@ impl StartConnectionOutputBuilder {
         self.connection_id = input;
         self
     }
+    /// <p> The ID of the connection. </p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_id
+    }
     /// <p> The underlay IP address. </p>
     pub fn underlay_ip_address(
         mut self,
@@ -75,6 +79,10 @@ impl StartConnectionOutputBuilder {
     ) -> Self {
         self.underlay_ip_address = input;
         self
+    }
+    /// <p> The underlay IP address. </p>
+    pub fn get_underlay_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.underlay_ip_address
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

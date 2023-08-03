@@ -36,6 +36,12 @@ impl GetStreamSessionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetStreamSession as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_stream_session::builders::GetStreamSessionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl GetStreamSessionFluentBuilder {
         self.inner = self.inner.set_channel_arn(input);
         self
     }
+    /// <p>ARN of the channel resource</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_arn()
+    }
     /// <p>Unique identifier for a live or previously live stream in the specified channel. If no <code>streamId</code> is provided, this returns the most recent stream session for the channel, if it exists.</p>
     pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stream_id(input.into());
@@ -135,5 +145,9 @@ impl GetStreamSessionFluentBuilder {
     pub fn set_stream_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stream_id(input);
         self
+    }
+    /// <p>Unique identifier for a live or previously live stream in the specified channel. If no <code>streamId</code> is provided, this returns the most recent stream session for the channel, if it exists.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_id()
     }
 }

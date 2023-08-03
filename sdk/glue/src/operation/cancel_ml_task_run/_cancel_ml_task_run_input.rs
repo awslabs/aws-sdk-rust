@@ -48,6 +48,10 @@ impl CancelMlTaskRunInputBuilder {
         self.transform_id = input;
         self
     }
+    /// <p>The unique identifier of the machine learning transform.</p>
+    pub fn get_transform_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transform_id
+    }
     /// <p>A unique identifier for the task run.</p>
     pub fn task_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_run_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl CancelMlTaskRunInputBuilder {
     pub fn set_task_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_run_id = input;
         self
+    }
+    /// <p>A unique identifier for the task run.</p>
+    pub fn get_task_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_run_id
     }
     /// Consumes the builder and constructs a [`CancelMlTaskRunInput`](crate::operation::cancel_ml_task_run::CancelMlTaskRunInput).
     pub fn build(

@@ -49,6 +49,12 @@ impl DqStopJobOnFailureOptionsBuilder {
         self.stop_job_on_failure_timing = input;
         self
     }
+    /// <p>When to stop job if your data quality evaluation fails. Options are Immediate or AfterDataLoad.</p>
+    pub fn get_stop_job_on_failure_timing(
+        &self,
+    ) -> &::std::option::Option<crate::types::DqStopJobOnFailureTiming> {
+        &self.stop_job_on_failure_timing
+    }
     /// Consumes the builder and constructs a [`DqStopJobOnFailureOptions`](crate::types::DqStopJobOnFailureOptions).
     pub fn build(self) -> crate::types::DqStopJobOnFailureOptions {
         crate::types::DqStopJobOnFailureOptions {

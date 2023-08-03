@@ -48,6 +48,10 @@ impl UploadEntityDefinitionsOutputBuilder {
         self.upload_id = input;
         self
     }
+    /// <p>The ID that specifies the upload action. You can use this to track the status of the upload.</p>
+    pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.upload_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

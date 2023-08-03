@@ -48,6 +48,10 @@ impl ProvisionedThroughputBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Provisioned throughput is enabled or not.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>Throughput value of the EBS volumes for the data drive on each kafka broker node in MiB per second.</p>
     pub fn volume_throughput(mut self, input: i32) -> Self {
         self.volume_throughput = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ProvisionedThroughputBuilder {
     pub fn set_volume_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
         self.volume_throughput = input;
         self
+    }
+    /// <p>Throughput value of the EBS volumes for the data drive on each kafka broker node in MiB per second.</p>
+    pub fn get_volume_throughput(&self) -> &::std::option::Option<i32> {
+        &self.volume_throughput
     }
     /// Consumes the builder and constructs a [`ProvisionedThroughput`](crate::types::ProvisionedThroughput).
     pub fn build(self) -> crate::types::ProvisionedThroughput {

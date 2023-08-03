@@ -72,6 +72,10 @@ impl CreateDelegationRequestBuilder {
         self.comment = input;
         self
     }
+    /// <p> A comment that's related to the delegation request. </p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment
+    }
     /// <p> The unique identifier for the control set. </p>
     pub fn control_set_id(
         mut self,
@@ -88,6 +92,10 @@ impl CreateDelegationRequestBuilder {
         self.control_set_id = input;
         self
     }
+    /// <p> The unique identifier for the control set. </p>
+    pub fn get_control_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_set_id
+    }
     /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -97,6 +105,10 @@ impl CreateDelegationRequestBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p> The type of customer persona. </p> <note>
     /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>. </p>
@@ -115,6 +127,14 @@ impl CreateDelegationRequestBuilder {
     pub fn set_role_type(mut self, input: ::std::option::Option<crate::types::RoleType>) -> Self {
         self.role_type = input;
         self
+    }
+    /// <p> The type of customer persona. </p> <note>
+    /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>. </p>
+    /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.</p>
+    /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be <code>RESOURCE_OWNER</code>.</p>
+    /// </note>
+    pub fn get_role_type(&self) -> &::std::option::Option<crate::types::RoleType> {
+        &self.role_type
     }
     /// Consumes the builder and constructs a [`CreateDelegationRequest`](crate::types::CreateDelegationRequest).
     pub fn build(self) -> crate::types::CreateDelegationRequest {

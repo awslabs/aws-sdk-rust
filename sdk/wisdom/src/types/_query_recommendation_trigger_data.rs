@@ -45,6 +45,10 @@ impl QueryRecommendationTriggerDataBuilder {
         self.text = input;
         self
     }
+    /// <p>The text associated with the recommendation trigger.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
+    }
     /// Consumes the builder and constructs a [`QueryRecommendationTriggerData`](crate::types::QueryRecommendationTriggerData).
     pub fn build(self) -> crate::types::QueryRecommendationTriggerData {
         crate::types::QueryRecommendationTriggerData { text: self.text }

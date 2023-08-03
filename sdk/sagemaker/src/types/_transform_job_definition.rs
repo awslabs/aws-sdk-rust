@@ -98,6 +98,10 @@ impl TransformJobDefinitionBuilder {
         self.max_concurrent_transforms = input;
         self
     }
+    /// <p>The maximum number of parallel requests that can be sent to each instance in a transform job. The default value is 1.</p>
+    pub fn get_max_concurrent_transforms(&self) -> &::std::option::Option<i32> {
+        &self.max_concurrent_transforms
+    }
     /// <p>The maximum payload size allowed, in MB. A payload is the data portion of a record (without metadata).</p>
     pub fn max_payload_in_mb(mut self, input: i32) -> Self {
         self.max_payload_in_mb = ::std::option::Option::Some(input);
@@ -107,6 +111,10 @@ impl TransformJobDefinitionBuilder {
     pub fn set_max_payload_in_mb(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_payload_in_mb = input;
         self
+    }
+    /// <p>The maximum payload size allowed, in MB. A payload is the data portion of a record (without metadata).</p>
+    pub fn get_max_payload_in_mb(&self) -> &::std::option::Option<i32> {
+        &self.max_payload_in_mb
     }
     /// <p>A string that determines the number of records included in a single mini-batch.</p>
     /// <p> <code>SingleRecord</code> means only one record is used per mini-batch. <code>MultiRecord</code> means a mini-batch is set to contain as many records that can fit within the <code>MaxPayloadInMB</code> limit.</p>
@@ -122,6 +130,11 @@ impl TransformJobDefinitionBuilder {
     ) -> Self {
         self.batch_strategy = input;
         self
+    }
+    /// <p>A string that determines the number of records included in a single mini-batch.</p>
+    /// <p> <code>SingleRecord</code> means only one record is used per mini-batch. <code>MultiRecord</code> means a mini-batch is set to contain as many records that can fit within the <code>MaxPayloadInMB</code> limit.</p>
+    pub fn get_batch_strategy(&self) -> &::std::option::Option<crate::types::BatchStrategy> {
+        &self.batch_strategy
     }
     /// Adds a key-value pair to `environment`.
     ///
@@ -148,6 +161,14 @@ impl TransformJobDefinitionBuilder {
         self.environment = input;
         self
     }
+    /// <p>The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.</p>
+    pub fn get_environment(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.environment
+    }
     /// <p>A description of the input source and the way the transform job consumes it.</p>
     pub fn transform_input(mut self, input: crate::types::TransformInput) -> Self {
         self.transform_input = ::std::option::Option::Some(input);
@@ -160,6 +181,10 @@ impl TransformJobDefinitionBuilder {
     ) -> Self {
         self.transform_input = input;
         self
+    }
+    /// <p>A description of the input source and the way the transform job consumes it.</p>
+    pub fn get_transform_input(&self) -> &::std::option::Option<crate::types::TransformInput> {
+        &self.transform_input
     }
     /// <p>Identifies the Amazon S3 location where you want Amazon SageMaker to save the results from the transform job.</p>
     pub fn transform_output(mut self, input: crate::types::TransformOutput) -> Self {
@@ -174,6 +199,10 @@ impl TransformJobDefinitionBuilder {
         self.transform_output = input;
         self
     }
+    /// <p>Identifies the Amazon S3 location where you want Amazon SageMaker to save the results from the transform job.</p>
+    pub fn get_transform_output(&self) -> &::std::option::Option<crate::types::TransformOutput> {
+        &self.transform_output
+    }
     /// <p>Identifies the ML compute instances for the transform job.</p>
     pub fn transform_resources(mut self, input: crate::types::TransformResources) -> Self {
         self.transform_resources = ::std::option::Option::Some(input);
@@ -186,6 +215,12 @@ impl TransformJobDefinitionBuilder {
     ) -> Self {
         self.transform_resources = input;
         self
+    }
+    /// <p>Identifies the ML compute instances for the transform job.</p>
+    pub fn get_transform_resources(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransformResources> {
+        &self.transform_resources
     }
     /// Consumes the builder and constructs a [`TransformJobDefinition`](crate::types::TransformJobDefinition).
     pub fn build(self) -> crate::types::TransformJobDefinition {

@@ -105,6 +105,12 @@ impl SnapshotScheduleBuilder {
         self.schedule_definitions = input;
         self
     }
+    /// <p>A list of ScheduleDefinitions.</p>
+    pub fn get_schedule_definitions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.schedule_definitions
+    }
     /// <p>A unique identifier for the schedule.</p>
     pub fn schedule_identifier(
         mut self,
@@ -121,6 +127,10 @@ impl SnapshotScheduleBuilder {
         self.schedule_identifier = input;
         self
     }
+    /// <p>A unique identifier for the schedule.</p>
+    pub fn get_schedule_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schedule_identifier
+    }
     /// <p>The description of the schedule.</p>
     pub fn schedule_description(
         mut self,
@@ -136,6 +146,10 @@ impl SnapshotScheduleBuilder {
     ) -> Self {
         self.schedule_description = input;
         self
+    }
+    /// <p>The description of the schedule.</p>
+    pub fn get_schedule_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schedule_description
     }
     /// Appends an item to `tags`.
     ///
@@ -156,6 +170,10 @@ impl SnapshotScheduleBuilder {
         self.tags = input;
         self
     }
+    /// <p>An optional set of tags describing the schedule.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Appends an item to `next_invocations`.
     ///
     /// To override the contents of this collection use [`set_next_invocations`](Self::set_next_invocations).
@@ -175,6 +193,12 @@ impl SnapshotScheduleBuilder {
         self.next_invocations = input;
         self
     }
+    /// <p></p>
+    pub fn get_next_invocations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>> {
+        &self.next_invocations
+    }
     /// <p>The number of clusters associated with the schedule.</p>
     pub fn associated_cluster_count(mut self, input: i32) -> Self {
         self.associated_cluster_count = ::std::option::Option::Some(input);
@@ -184,6 +208,10 @@ impl SnapshotScheduleBuilder {
     pub fn set_associated_cluster_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.associated_cluster_count = input;
         self
+    }
+    /// <p>The number of clusters associated with the schedule.</p>
+    pub fn get_associated_cluster_count(&self) -> &::std::option::Option<i32> {
+        &self.associated_cluster_count
     }
     /// Appends an item to `associated_clusters`.
     ///
@@ -203,6 +231,12 @@ impl SnapshotScheduleBuilder {
     ) -> Self {
         self.associated_clusters = input;
         self
+    }
+    /// <p>A list of clusters associated with the schedule. A maximum of 100 clusters is returned.</p>
+    pub fn get_associated_clusters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterAssociatedToSchedule>> {
+        &self.associated_clusters
     }
     /// Consumes the builder and constructs a [`SnapshotSchedule`](crate::types::SnapshotSchedule).
     pub fn build(self) -> crate::types::SnapshotSchedule {

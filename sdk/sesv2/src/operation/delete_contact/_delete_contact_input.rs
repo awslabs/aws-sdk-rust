@@ -53,6 +53,10 @@ impl DeleteContactInputBuilder {
         self.contact_list_name = input;
         self
     }
+    /// <p>The name of the contact list from which the contact should be removed.</p>
+    pub fn get_contact_list_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_list_name
+    }
     /// <p>The contact's email address.</p>
     pub fn email_address(
         mut self,
@@ -68,6 +72,10 @@ impl DeleteContactInputBuilder {
     ) -> Self {
         self.email_address = input;
         self
+    }
+    /// <p>The contact's email address.</p>
+    pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_address
     }
     /// Consumes the builder and constructs a [`DeleteContactInput`](crate::operation::delete_contact::DeleteContactInput).
     pub fn build(

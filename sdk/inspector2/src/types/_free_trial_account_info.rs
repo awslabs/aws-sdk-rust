@@ -48,6 +48,10 @@ impl FreeTrialAccountInfoBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The account associated with the Amazon Inspector free trial information.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// Appends an item to `free_trial_info`.
     ///
     /// To override the contents of this collection use [`set_free_trial_info`](Self::set_free_trial_info).
@@ -66,6 +70,12 @@ impl FreeTrialAccountInfoBuilder {
     ) -> Self {
         self.free_trial_info = input;
         self
+    }
+    /// <p>Contains information about the Amazon Inspector free trial for an account.</p>
+    pub fn get_free_trial_info(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FreeTrialInfo>> {
+        &self.free_trial_info
     }
     /// Consumes the builder and constructs a [`FreeTrialAccountInfo`](crate::types::FreeTrialAccountInfo).
     pub fn build(self) -> crate::types::FreeTrialAccountInfo {

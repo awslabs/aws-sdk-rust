@@ -123,6 +123,10 @@ impl WorkloadSummaryBuilder {
         self.workload_id = input;
         self
     }
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workload_id
+    }
     /// <p>The ARN for the workload.</p>
     pub fn workload_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workload_arn = ::std::option::Option::Some(input.into());
@@ -132,6 +136,10 @@ impl WorkloadSummaryBuilder {
     pub fn set_workload_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workload_arn = input;
         self
+    }
+    /// <p>The ARN for the workload.</p>
+    pub fn get_workload_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workload_arn
     }
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
@@ -151,6 +159,11 @@ impl WorkloadSummaryBuilder {
         self.workload_name = input;
         self
     }
+    /// <p>The name of the workload.</p>
+    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
+    pub fn get_workload_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workload_name
+    }
     /// <p>An Amazon Web Services account ID.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner = ::std::option::Option::Some(input.into());
@@ -160,6 +173,10 @@ impl WorkloadSummaryBuilder {
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner = input;
         self
+    }
+    /// <p>An Amazon Web Services account ID.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
     }
     /// <p>The date and time recorded.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -173,6 +190,10 @@ impl WorkloadSummaryBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// <p>The date and time recorded.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     /// Appends an item to `lenses`.
     ///
@@ -193,6 +214,10 @@ impl WorkloadSummaryBuilder {
         self.lenses = input;
         self
     }
+    /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    pub fn get_lenses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.lenses
+    }
     /// Adds a key-value pair to `risk_counts`.
     ///
     /// To override the contents of this collection use [`set_risk_counts`](Self::set_risk_counts).
@@ -212,6 +237,12 @@ impl WorkloadSummaryBuilder {
         self.risk_counts = input;
         self
     }
+    /// <p>A map from risk names to the count of how many questions have that rating.</p>
+    pub fn get_risk_counts(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>> {
+        &self.risk_counts
+    }
     /// <p>The improvement status for a workload.</p>
     pub fn improvement_status(mut self, input: crate::types::WorkloadImprovementStatus) -> Self {
         self.improvement_status = ::std::option::Option::Some(input);
@@ -224,6 +255,12 @@ impl WorkloadSummaryBuilder {
     ) -> Self {
         self.improvement_status = input;
         self
+    }
+    /// <p>The improvement status for a workload.</p>
+    pub fn get_improvement_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::WorkloadImprovementStatus> {
+        &self.improvement_status
     }
     /// Appends an item to `profiles`.
     ///
@@ -244,6 +281,12 @@ impl WorkloadSummaryBuilder {
         self.profiles = input;
         self
     }
+    /// <p>Profile associated with a workload.</p>
+    pub fn get_profiles(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkloadProfile>> {
+        &self.profiles
+    }
     /// Adds a key-value pair to `prioritized_risk_counts`.
     ///
     /// To override the contents of this collection use [`set_prioritized_risk_counts`](Self::set_prioritized_risk_counts).
@@ -262,6 +305,12 @@ impl WorkloadSummaryBuilder {
     ) -> Self {
         self.prioritized_risk_counts = input;
         self
+    }
+    /// <p>A map from risk names to the count of how many questions have that rating.</p>
+    pub fn get_prioritized_risk_counts(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>> {
+        &self.prioritized_risk_counts
     }
     /// Consumes the builder and constructs a [`WorkloadSummary`](crate::types::WorkloadSummary).
     pub fn build(self) -> crate::types::WorkloadSummary {

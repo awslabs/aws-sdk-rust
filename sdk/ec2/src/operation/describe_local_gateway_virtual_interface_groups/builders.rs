@@ -36,6 +36,10 @@ impl DescribeLocalGatewayVirtualInterfaceGroupsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeLocalGatewayVirtualInterfaceGroups as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_local_gateway_virtual_interface_groups::builders::DescribeLocalGatewayVirtualInterfaceGroupsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -120,6 +124,12 @@ impl DescribeLocalGatewayVirtualInterfaceGroupsFluentBuilder {
             .set_local_gateway_virtual_interface_group_ids(input);
         self
     }
+    /// <p>The IDs of the virtual interface groups.</p>
+    pub fn get_local_gateway_virtual_interface_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_local_gateway_virtual_interface_group_ids()
+    }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -149,6 +159,16 @@ impl DescribeLocalGatewayVirtualInterfaceGroupsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>One or more filters.</p>
+    /// <ul>
+    /// <li> <p> <code>local-gateway-id</code> - The ID of a local gateway.</p> </li>
+    /// <li> <p> <code>local-gateway-virtual-interface-group-id</code> - The ID of the virtual interface group.</p> </li>
+    /// <li> <p> <code>local-gateway-virtual-interface-id</code> - The ID of the virtual interface.</p> </li>
+    /// <li> <p> <code>owner-id</code> - The ID of the Amazon Web Services account that owns the local gateway virtual interface group.</p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -158,6 +178,10 @@ impl DescribeLocalGatewayVirtualInterfaceGroupsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -169,6 +193,10 @@ impl DescribeLocalGatewayVirtualInterfaceGroupsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -178,5 +206,9 @@ impl DescribeLocalGatewayVirtualInterfaceGroupsFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

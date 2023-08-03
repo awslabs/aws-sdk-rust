@@ -36,6 +36,12 @@ impl DescribeEnvironmentsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeEnvironments as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_environments::builders::DescribeEnvironmentsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,5 +141,11 @@ impl DescribeEnvironmentsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_environment_ids(input);
         self
+    }
+    /// <p>The IDs of individual environments to get information about.</p>
+    pub fn get_environment_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_environment_ids()
     }
 }

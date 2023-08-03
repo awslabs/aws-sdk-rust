@@ -36,6 +36,10 @@ impl CopyImageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CopyImage as a reference.
+    pub fn as_input(&self) -> &crate::operation::copy_image::builders::CopyImageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl CopyImageFluentBuilder {
         self.inner = self.inner.set_source_image_name(input);
         self
     }
+    /// <p>The name of the image to copy.</p>
+    pub fn get_source_image_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_image_name()
+    }
     /// <p>The name that the image will have when it is copied to the destination.</p>
     pub fn destination_image_name(
         mut self,
@@ -139,6 +147,10 @@ impl CopyImageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destination_image_name(input);
         self
+    }
+    /// <p>The name that the image will have when it is copied to the destination.</p>
+    pub fn get_destination_image_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_image_name()
     }
     /// <p>The destination region to which the image will be copied. This parameter is required, even if you are copying an image within the same region.</p>
     pub fn destination_region(
@@ -156,6 +168,10 @@ impl CopyImageFluentBuilder {
         self.inner = self.inner.set_destination_region(input);
         self
     }
+    /// <p>The destination region to which the image will be copied. This parameter is required, even if you are copying an image within the same region.</p>
+    pub fn get_destination_region(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_region()
+    }
     /// <p>The description that the image will have when it is copied to the destination.</p>
     pub fn destination_image_description(
         mut self,
@@ -171,5 +187,11 @@ impl CopyImageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destination_image_description(input);
         self
+    }
+    /// <p>The description that the image will have when it is copied to the destination.</p>
+    pub fn get_destination_image_description(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_image_description()
     }
 }

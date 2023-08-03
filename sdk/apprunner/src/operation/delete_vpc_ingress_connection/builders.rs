@@ -42,6 +42,10 @@ impl DeleteVpcIngressConnectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteVpcIngressConnection as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_vpc_ingress_connection::builders::DeleteVpcIngressConnectionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,5 +141,9 @@ impl DeleteVpcIngressConnectionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_vpc_ingress_connection_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the App Runner VPC Ingress Connection that you want to delete.</p>
+    pub fn get_vpc_ingress_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpc_ingress_connection_arn()
     }
 }

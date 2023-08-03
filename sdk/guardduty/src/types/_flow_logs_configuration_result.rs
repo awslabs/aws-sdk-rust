@@ -43,6 +43,10 @@ impl FlowLogsConfigurationResultBuilder {
         self.status = input;
         self
     }
+    /// <p>Denotes whether VPC flow logs is enabled as a data source.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DataSourceStatus> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`FlowLogsConfigurationResult`](crate::types::FlowLogsConfigurationResult).
     pub fn build(self) -> crate::types::FlowLogsConfigurationResult {
         crate::types::FlowLogsConfigurationResult {

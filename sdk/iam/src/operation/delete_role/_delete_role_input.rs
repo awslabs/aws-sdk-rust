@@ -43,6 +43,11 @@ impl DeleteRoleInputBuilder {
         self.role_name = input;
         self
     }
+    /// <p>The name of the role to delete.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_name
+    }
     /// Consumes the builder and constructs a [`DeleteRoleInput`](crate::operation::delete_role::DeleteRoleInput).
     pub fn build(
         self,

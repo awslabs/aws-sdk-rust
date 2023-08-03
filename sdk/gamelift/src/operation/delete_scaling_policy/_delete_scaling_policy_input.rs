@@ -49,6 +49,10 @@ impl DeleteScalingPolicyInputBuilder {
         self.name = input;
         self
     }
+    /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A unique identifier for the fleet to be deleted. You can use either the fleet ID or ARN value.</p>
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl DeleteScalingPolicyInputBuilder {
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet_id = input;
         self
+    }
+    /// <p>A unique identifier for the fleet to be deleted. You can use either the fleet ID or ARN value.</p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_id
     }
     /// Consumes the builder and constructs a [`DeleteScalingPolicyInput`](crate::operation::delete_scaling_policy::DeleteScalingPolicyInput).
     pub fn build(

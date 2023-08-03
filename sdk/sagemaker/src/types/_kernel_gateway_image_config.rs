@@ -57,6 +57,12 @@ impl KernelGatewayImageConfigBuilder {
         self.kernel_specs = input;
         self
     }
+    /// <p>The specification of the Jupyter kernels in the image.</p>
+    pub fn get_kernel_specs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KernelSpec>> {
+        &self.kernel_specs
+    }
     /// <p>The Amazon Elastic File System (EFS) storage configuration for a SageMaker image.</p>
     pub fn file_system_config(mut self, input: crate::types::FileSystemConfig) -> Self {
         self.file_system_config = ::std::option::Option::Some(input);
@@ -69,6 +75,10 @@ impl KernelGatewayImageConfigBuilder {
     ) -> Self {
         self.file_system_config = input;
         self
+    }
+    /// <p>The Amazon Elastic File System (EFS) storage configuration for a SageMaker image.</p>
+    pub fn get_file_system_config(&self) -> &::std::option::Option<crate::types::FileSystemConfig> {
+        &self.file_system_config
     }
     /// Consumes the builder and constructs a [`KernelGatewayImageConfig`](crate::types::KernelGatewayImageConfig).
     pub fn build(self) -> crate::types::KernelGatewayImageConfig {

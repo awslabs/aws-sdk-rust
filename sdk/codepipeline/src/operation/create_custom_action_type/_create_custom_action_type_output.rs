@@ -60,6 +60,10 @@ impl CreateCustomActionTypeOutputBuilder {
         self.action_type = input;
         self
     }
+    /// <p>Returns information about the details of an action type.</p>
+    pub fn get_action_type(&self) -> &::std::option::Option<crate::types::ActionType> {
+        &self.action_type
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -78,6 +82,10 @@ impl CreateCustomActionTypeOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Specifies the tags applied to the custom action.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -48,6 +48,10 @@ impl ReadinessCheckSummaryBuilder {
         self.readiness = input;
         self
     }
+    /// <p>The readiness status of this readiness check.</p>
+    pub fn get_readiness(&self) -> &::std::option::Option<crate::types::Readiness> {
+        &self.readiness
+    }
     /// <p>The name of a readiness check.</p>
     pub fn readiness_check_name(
         mut self,
@@ -63,6 +67,10 @@ impl ReadinessCheckSummaryBuilder {
     ) -> Self {
         self.readiness_check_name = input;
         self
+    }
+    /// <p>The name of a readiness check.</p>
+    pub fn get_readiness_check_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.readiness_check_name
     }
     /// Consumes the builder and constructs a [`ReadinessCheckSummary`](crate::types::ReadinessCheckSummary).
     pub fn build(self) -> crate::types::ReadinessCheckSummary {

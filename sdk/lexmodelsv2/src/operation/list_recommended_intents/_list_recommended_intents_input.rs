@@ -81,6 +81,10 @@ impl ListRecommendedIntentsInputBuilder {
         self.bot_id = input;
         self
     }
+    /// <p>The unique identifier of the bot associated with the recommended intents.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
     /// <p>The version of the bot that contains the recommended intents.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
@@ -91,6 +95,10 @@ impl ListRecommendedIntentsInputBuilder {
         self.bot_version = input;
         self
     }
+    /// <p>The version of the bot that contains the recommended intents.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_version
+    }
     /// <p>The identifier of the language and locale of the recommended intents.</p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
@@ -100,6 +108,10 @@ impl ListRecommendedIntentsInputBuilder {
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.locale_id = input;
         self
+    }
+    /// <p>The identifier of the language and locale of the recommended intents.</p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale_id
     }
     /// <p>The identifier of the bot recommendation that contains the recommended intents.</p>
     pub fn bot_recommendation_id(
@@ -117,6 +129,10 @@ impl ListRecommendedIntentsInputBuilder {
         self.bot_recommendation_id = input;
         self
     }
+    /// <p>The identifier of the bot recommendation that contains the recommended intents.</p>
+    pub fn get_bot_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_recommendation_id
+    }
     /// <p>If the response from the ListRecommendedIntents operation contains more results than specified in the maxResults parameter, a token is returned in the response. Use that token in the nextToken parameter to return the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -127,6 +143,10 @@ impl ListRecommendedIntentsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If the response from the ListRecommendedIntents operation contains more results than specified in the maxResults parameter, a token is returned in the response. Use that token in the nextToken parameter to return the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of bot recommendations to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -136,6 +156,10 @@ impl ListRecommendedIntentsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of bot recommendations to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListRecommendedIntentsInput`](crate::operation::list_recommended_intents::ListRecommendedIntentsInput).
     pub fn build(

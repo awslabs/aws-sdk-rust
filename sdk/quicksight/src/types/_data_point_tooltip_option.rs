@@ -43,6 +43,12 @@ impl DataPointTooltipOptionBuilder {
         self.availability_status = input;
         self
     }
+    /// <p>The status of the data point tool tip options.</p>
+    pub fn get_availability_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::DashboardBehavior> {
+        &self.availability_status
+    }
     /// Consumes the builder and constructs a [`DataPointTooltipOption`](crate::types::DataPointTooltipOption).
     pub fn build(self) -> crate::types::DataPointTooltipOption {
         crate::types::DataPointTooltipOption {

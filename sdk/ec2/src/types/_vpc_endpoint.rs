@@ -191,6 +191,10 @@ impl VpcEndpointBuilder {
         self.vpc_endpoint_id = input;
         self
     }
+    /// <p>The ID of the endpoint.</p>
+    pub fn get_vpc_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_endpoint_id
+    }
     /// <p>The type of endpoint.</p>
     pub fn vpc_endpoint_type(mut self, input: crate::types::VpcEndpointType) -> Self {
         self.vpc_endpoint_type = ::std::option::Option::Some(input);
@@ -204,6 +208,10 @@ impl VpcEndpointBuilder {
         self.vpc_endpoint_type = input;
         self
     }
+    /// <p>The type of endpoint.</p>
+    pub fn get_vpc_endpoint_type(&self) -> &::std::option::Option<crate::types::VpcEndpointType> {
+        &self.vpc_endpoint_type
+    }
     /// <p>The ID of the VPC to which the endpoint is associated.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -213,6 +221,10 @@ impl VpcEndpointBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The ID of the VPC to which the endpoint is associated.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// <p>The name of the service to which the endpoint is associated.</p>
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -224,6 +236,10 @@ impl VpcEndpointBuilder {
         self.service_name = input;
         self
     }
+    /// <p>The name of the service to which the endpoint is associated.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
+    }
     /// <p>The state of the endpoint.</p>
     pub fn state(mut self, input: crate::types::State) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -233,6 +249,10 @@ impl VpcEndpointBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::State>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the endpoint.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::State> {
+        &self.state
     }
     /// <p>The policy document associated with the endpoint, if applicable.</p>
     pub fn policy_document(
@@ -249,6 +269,10 @@ impl VpcEndpointBuilder {
     ) -> Self {
         self.policy_document = input;
         self
+    }
+    /// <p>The policy document associated with the endpoint, if applicable.</p>
+    pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_document
     }
     /// Appends an item to `route_table_ids`.
     ///
@@ -272,6 +296,12 @@ impl VpcEndpointBuilder {
         self.route_table_ids = input;
         self
     }
+    /// <p>(Gateway endpoint) The IDs of the route tables associated with the endpoint.</p>
+    pub fn get_route_table_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.route_table_ids
+    }
     /// Appends an item to `subnet_ids`.
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
@@ -290,6 +320,10 @@ impl VpcEndpointBuilder {
     ) -> Self {
         self.subnet_ids = input;
         self
+    }
+    /// <p>(Interface endpoint) The subnets for the endpoint.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
     }
     /// Appends an item to `groups`.
     ///
@@ -310,6 +344,12 @@ impl VpcEndpointBuilder {
         self.groups = input;
         self
     }
+    /// <p>(Interface endpoint) Information about the security groups that are associated with the network interface.</p>
+    pub fn get_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupIdentifier>> {
+        &self.groups
+    }
     /// <p>The IP address type for the endpoint.</p>
     pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
         self.ip_address_type = ::std::option::Option::Some(input);
@@ -322,6 +362,10 @@ impl VpcEndpointBuilder {
     ) -> Self {
         self.ip_address_type = input;
         self
+    }
+    /// <p>The IP address type for the endpoint.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        &self.ip_address_type
     }
     /// <p>The DNS options for the endpoint.</p>
     pub fn dns_options(mut self, input: crate::types::DnsOptions) -> Self {
@@ -336,6 +380,10 @@ impl VpcEndpointBuilder {
         self.dns_options = input;
         self
     }
+    /// <p>The DNS options for the endpoint.</p>
+    pub fn get_dns_options(&self) -> &::std::option::Option<crate::types::DnsOptions> {
+        &self.dns_options
+    }
     /// <p>(Interface endpoint) Indicates whether the VPC is associated with a private hosted zone.</p>
     pub fn private_dns_enabled(mut self, input: bool) -> Self {
         self.private_dns_enabled = ::std::option::Option::Some(input);
@@ -346,6 +394,10 @@ impl VpcEndpointBuilder {
         self.private_dns_enabled = input;
         self
     }
+    /// <p>(Interface endpoint) Indicates whether the VPC is associated with a private hosted zone.</p>
+    pub fn get_private_dns_enabled(&self) -> &::std::option::Option<bool> {
+        &self.private_dns_enabled
+    }
     /// <p>Indicates whether the endpoint is being managed by its service.</p>
     pub fn requester_managed(mut self, input: bool) -> Self {
         self.requester_managed = ::std::option::Option::Some(input);
@@ -355,6 +407,10 @@ impl VpcEndpointBuilder {
     pub fn set_requester_managed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.requester_managed = input;
         self
+    }
+    /// <p>Indicates whether the endpoint is being managed by its service.</p>
+    pub fn get_requester_managed(&self) -> &::std::option::Option<bool> {
+        &self.requester_managed
     }
     /// Appends an item to `network_interface_ids`.
     ///
@@ -378,6 +434,12 @@ impl VpcEndpointBuilder {
         self.network_interface_ids = input;
         self
     }
+    /// <p>(Interface endpoint) The network interfaces for the endpoint.</p>
+    pub fn get_network_interface_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.network_interface_ids
+    }
     /// Appends an item to `dns_entries`.
     ///
     /// To override the contents of this collection use [`set_dns_entries`](Self::set_dns_entries).
@@ -397,6 +459,12 @@ impl VpcEndpointBuilder {
         self.dns_entries = input;
         self
     }
+    /// <p>(Interface endpoint) The DNS entries for the endpoint.</p>
+    pub fn get_dns_entries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DnsEntry>> {
+        &self.dns_entries
+    }
     /// <p>The date and time that the endpoint was created.</p>
     pub fn creation_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_timestamp = ::std::option::Option::Some(input);
@@ -409,6 +477,10 @@ impl VpcEndpointBuilder {
     ) -> Self {
         self.creation_timestamp = input;
         self
+    }
+    /// <p>The date and time that the endpoint was created.</p>
+    pub fn get_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_timestamp
     }
     /// Appends an item to `tags`.
     ///
@@ -429,6 +501,10 @@ impl VpcEndpointBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags assigned to the endpoint.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The ID of the Amazon Web Services account that owns the endpoint.</p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_id = ::std::option::Option::Some(input.into());
@@ -439,6 +515,10 @@ impl VpcEndpointBuilder {
         self.owner_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account that owns the endpoint.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
+    }
     /// <p>The last error that occurred for endpoint.</p>
     pub fn last_error(mut self, input: crate::types::LastError) -> Self {
         self.last_error = ::std::option::Option::Some(input);
@@ -448,6 +528,10 @@ impl VpcEndpointBuilder {
     pub fn set_last_error(mut self, input: ::std::option::Option<crate::types::LastError>) -> Self {
         self.last_error = input;
         self
+    }
+    /// <p>The last error that occurred for endpoint.</p>
+    pub fn get_last_error(&self) -> &::std::option::Option<crate::types::LastError> {
+        &self.last_error
     }
     /// Consumes the builder and constructs a [`VpcEndpoint`](crate::types::VpcEndpoint).
     pub fn build(self) -> crate::types::VpcEndpoint {

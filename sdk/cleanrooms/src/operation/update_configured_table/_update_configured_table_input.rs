@@ -63,6 +63,10 @@ impl UpdateConfiguredTableInputBuilder {
         self.configured_table_identifier = input;
         self
     }
+    /// <p>The identifier for the configured table to update. Currently accepts the configured table ID.</p>
+    pub fn get_configured_table_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configured_table_identifier
+    }
     /// <p>A new name for the configured table.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl UpdateConfiguredTableInputBuilder {
         self.name = input;
         self
     }
+    /// <p>A new name for the configured table.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A new description for the configured table.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl UpdateConfiguredTableInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A new description for the configured table.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`UpdateConfiguredTableInput`](crate::operation::update_configured_table::UpdateConfiguredTableInput).
     pub fn build(

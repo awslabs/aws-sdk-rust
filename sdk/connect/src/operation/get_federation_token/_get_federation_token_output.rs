@@ -74,6 +74,10 @@ impl GetFederationTokenOutputBuilder {
         self.credentials = input;
         self
     }
+    /// <p>The credentials to use for federation.</p>
+    pub fn get_credentials(&self) -> &::std::option::Option<crate::types::Credentials> {
+        &self.credentials
+    }
     /// <p>The URL to sign into the user's instance. </p>
     pub fn sign_in_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sign_in_url = ::std::option::Option::Some(input.into());
@@ -83,6 +87,10 @@ impl GetFederationTokenOutputBuilder {
     pub fn set_sign_in_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sign_in_url = input;
         self
+    }
+    /// <p>The URL to sign into the user's instance. </p>
+    pub fn get_sign_in_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sign_in_url
     }
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
     pub fn user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -94,6 +102,10 @@ impl GetFederationTokenOutputBuilder {
         self.user_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the user.</p>
+    pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_arn
+    }
     /// <p>The identifier for the user.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
@@ -103,6 +115,10 @@ impl GetFederationTokenOutputBuilder {
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
+    }
+    /// <p>The identifier for the user.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

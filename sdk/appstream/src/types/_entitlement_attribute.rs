@@ -92,6 +92,21 @@ impl EntitlementAttributeBuilder {
         self.name = input;
         self
     }
+    /// <p>A supported AWS IAM SAML <code>PrincipalTag</code> attribute that is matched to the associated value when a user identity federates into an Amazon AppStream 2.0 SAML application.</p>
+    /// <p>The following are valid values:</p>
+    /// <ul>
+    /// <li> <p>roles</p> </li>
+    /// <li> <p>department </p> </li>
+    /// <li> <p>organization </p> </li>
+    /// <li> <p>groups </p> </li>
+    /// <li> <p>title </p> </li>
+    /// <li> <p>costCenter </p> </li>
+    /// <li> <p>userType</p> </li>
+    /// </ul>
+    /// <p> </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A value that is matched to a supported SAML attribute name when a user identity federates into an Amazon AppStream 2.0 SAML application. </p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -101,6 +116,10 @@ impl EntitlementAttributeBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>A value that is matched to a supported SAML attribute name when a user identity federates into an Amazon AppStream 2.0 SAML application. </p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`EntitlementAttribute`](crate::types::EntitlementAttribute).
     pub fn build(self) -> crate::types::EntitlementAttribute {

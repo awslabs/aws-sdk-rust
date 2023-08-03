@@ -58,6 +58,10 @@ impl ResponseCardBuilder {
         self.version = input;
         self
     }
+    /// <p>The version of the response card format.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
+    }
     /// <p>The content type of the response.</p>
     pub fn content_type(mut self, input: crate::types::ContentType) -> Self {
         self.content_type = ::std::option::Option::Some(input);
@@ -70,6 +74,10 @@ impl ResponseCardBuilder {
     ) -> Self {
         self.content_type = input;
         self
+    }
+    /// <p>The content type of the response.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<crate::types::ContentType> {
+        &self.content_type
     }
     /// Appends an item to `generic_attachments`.
     ///
@@ -89,6 +97,12 @@ impl ResponseCardBuilder {
     ) -> Self {
         self.generic_attachments = input;
         self
+    }
+    /// <p>An array of attachment objects representing options.</p>
+    pub fn get_generic_attachments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GenericAttachment>> {
+        &self.generic_attachments
     }
     /// Consumes the builder and constructs a [`ResponseCard`](crate::types::ResponseCard).
     pub fn build(self) -> crate::types::ResponseCard {

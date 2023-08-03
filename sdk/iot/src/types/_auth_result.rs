@@ -73,6 +73,10 @@ impl AuthResultBuilder {
         self.auth_info = input;
         self
     }
+    /// <p>Authorization information.</p>
+    pub fn get_auth_info(&self) -> &::std::option::Option<crate::types::AuthInfo> {
+        &self.auth_info
+    }
     /// <p>The policies and statements that allowed the specified action.</p>
     pub fn allowed(mut self, input: crate::types::Allowed) -> Self {
         self.allowed = ::std::option::Option::Some(input);
@@ -83,6 +87,10 @@ impl AuthResultBuilder {
         self.allowed = input;
         self
     }
+    /// <p>The policies and statements that allowed the specified action.</p>
+    pub fn get_allowed(&self) -> &::std::option::Option<crate::types::Allowed> {
+        &self.allowed
+    }
     /// <p>The policies and statements that denied the specified action.</p>
     pub fn denied(mut self, input: crate::types::Denied) -> Self {
         self.denied = ::std::option::Option::Some(input);
@@ -92,6 +100,10 @@ impl AuthResultBuilder {
     pub fn set_denied(mut self, input: ::std::option::Option<crate::types::Denied>) -> Self {
         self.denied = input;
         self
+    }
+    /// <p>The policies and statements that denied the specified action.</p>
+    pub fn get_denied(&self) -> &::std::option::Option<crate::types::Denied> {
+        &self.denied
     }
     /// <p>The final authorization decision of this scenario. Multiple statements are taken into account when determining the authorization decision. An explicit deny statement can override multiple allow statements.</p>
     pub fn auth_decision(mut self, input: crate::types::AuthDecision) -> Self {
@@ -105,6 +117,10 @@ impl AuthResultBuilder {
     ) -> Self {
         self.auth_decision = input;
         self
+    }
+    /// <p>The final authorization decision of this scenario. Multiple statements are taken into account when determining the authorization decision. An explicit deny statement can override multiple allow statements.</p>
+    pub fn get_auth_decision(&self) -> &::std::option::Option<crate::types::AuthDecision> {
+        &self.auth_decision
     }
     /// Appends an item to `missing_context_values`.
     ///
@@ -127,6 +143,12 @@ impl AuthResultBuilder {
     ) -> Self {
         self.missing_context_values = input;
         self
+    }
+    /// <p>Contains any missing context values found while evaluating policy.</p>
+    pub fn get_missing_context_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.missing_context_values
     }
     /// Consumes the builder and constructs a [`AuthResult`](crate::types::AuthResult).
     pub fn build(self) -> crate::types::AuthResult {

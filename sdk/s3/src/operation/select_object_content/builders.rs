@@ -87,6 +87,12 @@ impl SelectObjectContentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SelectObjectContent as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::select_object_content::builders::SelectObjectContentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -177,6 +183,10 @@ impl SelectObjectContentFluentBuilder {
         self.inner = self.inner.set_bucket(input);
         self
     }
+    /// <p>The S3 bucket.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bucket()
+    }
     /// <p>The object key.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key(input.into());
@@ -186,6 +196,10 @@ impl SelectObjectContentFluentBuilder {
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key(input);
         self
+    }
+    /// <p>The object key.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key()
     }
     /// <p>The server-side encryption (SSE) algorithm used to encrypt the object. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn sse_customer_algorithm(
@@ -203,6 +217,10 @@ impl SelectObjectContentFluentBuilder {
         self.inner = self.inner.set_sse_customer_algorithm(input);
         self
     }
+    /// <p>The server-side encryption (SSE) algorithm used to encrypt the object. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_sse_customer_algorithm(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sse_customer_algorithm()
+    }
     /// <p>The server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn sse_customer_key(
         mut self,
@@ -218,6 +236,10 @@ impl SelectObjectContentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sse_customer_key(input);
         self
+    }
+    /// <p>The server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_sse_customer_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sse_customer_key()
     }
     /// <p>The MD5 server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn sse_customer_key_md5(
@@ -235,6 +257,10 @@ impl SelectObjectContentFluentBuilder {
         self.inner = self.inner.set_sse_customer_key_md5(input);
         self
     }
+    /// <p>The MD5 server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_sse_customer_key_md5(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sse_customer_key_md5()
+    }
     /// <p>The expression that is used to query the object.</p>
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.expression(input.into());
@@ -244,6 +270,10 @@ impl SelectObjectContentFluentBuilder {
     pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_expression(input);
         self
+    }
+    /// <p>The expression that is used to query the object.</p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_expression()
     }
     /// <p>The type of the provided expression (for example, SQL).</p>
     pub fn expression_type(mut self, input: crate::types::ExpressionType) -> Self {
@@ -258,6 +288,10 @@ impl SelectObjectContentFluentBuilder {
         self.inner = self.inner.set_expression_type(input);
         self
     }
+    /// <p>The type of the provided expression (for example, SQL).</p>
+    pub fn get_expression_type(&self) -> &::std::option::Option<crate::types::ExpressionType> {
+        self.inner.get_expression_type()
+    }
     /// <p>Specifies if periodic request progress information should be enabled.</p>
     pub fn request_progress(mut self, input: crate::types::RequestProgress) -> Self {
         self.inner = self.inner.request_progress(input);
@@ -270,6 +304,10 @@ impl SelectObjectContentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_request_progress(input);
         self
+    }
+    /// <p>Specifies if periodic request progress information should be enabled.</p>
+    pub fn get_request_progress(&self) -> &::std::option::Option<crate::types::RequestProgress> {
+        self.inner.get_request_progress()
     }
     /// <p>Describes the format of the data in the object that is being queried.</p>
     pub fn input_serialization(mut self, input: crate::types::InputSerialization) -> Self {
@@ -284,6 +322,12 @@ impl SelectObjectContentFluentBuilder {
         self.inner = self.inner.set_input_serialization(input);
         self
     }
+    /// <p>Describes the format of the data in the object that is being queried.</p>
+    pub fn get_input_serialization(
+        &self,
+    ) -> &::std::option::Option<crate::types::InputSerialization> {
+        self.inner.get_input_serialization()
+    }
     /// <p>Describes the format of the data that you want Amazon S3 to return in response.</p>
     pub fn output_serialization(mut self, input: crate::types::OutputSerialization) -> Self {
         self.inner = self.inner.output_serialization(input);
@@ -296,6 +340,12 @@ impl SelectObjectContentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_output_serialization(input);
         self
+    }
+    /// <p>Describes the format of the data that you want Amazon S3 to return in response.</p>
+    pub fn get_output_serialization(
+        &self,
+    ) -> &::std::option::Option<crate::types::OutputSerialization> {
+        self.inner.get_output_serialization()
     }
     /// <p>Specifies the byte range of the object to get the records from. A record is processed when its first byte is contained by the range. This parameter is optional, but when specified, it must not be empty. See RFC 2616, Section 14.35.1 about how to specify the start and end of the range.</p>
     /// <p> <code>ScanRange</code>may be used in the following ways:</p>
@@ -355,6 +405,34 @@ impl SelectObjectContentFluentBuilder {
         self.inner = self.inner.set_scan_range(input);
         self
     }
+    /// <p>Specifies the byte range of the object to get the records from. A record is processed when its first byte is contained by the range. This parameter is optional, but when specified, it must not be empty. See RFC 2616, Section 14.35.1 about how to specify the start and end of the range.</p>
+    /// <p> <code>ScanRange</code>may be used in the following ways:</p>
+    /// <ul>
+    /// <li> <p> <code>
+    /// <scanrange>
+    /// <start>
+    /// 50
+    /// </start>
+    /// <end>
+    /// 100
+    /// </end>
+    /// </scanrange></code> - process only the records starting between the bytes 50 and 100 (inclusive, counting from zero)</p> </li>
+    /// <li> <p> <code>
+    /// <scanrange>
+    /// <start>
+    /// 50
+    /// </start>
+    /// </scanrange></code> - process only the records starting after the byte 50</p> </li>
+    /// <li> <p> <code>
+    /// <scanrange>
+    /// <end>
+    /// 50
+    /// </end>
+    /// </scanrange></code> - process only the records within the last 50 bytes of the file.</p> </li>
+    /// </ul>
+    pub fn get_scan_range(&self) -> &::std::option::Option<crate::types::ScanRange> {
+        self.inner.get_scan_range()
+    }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(
         mut self,
@@ -370,5 +448,9 @@ impl SelectObjectContentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_expected_bucket_owner(input);
         self
+    }
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+    pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_expected_bucket_owner()
     }
 }

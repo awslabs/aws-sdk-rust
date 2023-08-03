@@ -40,6 +40,10 @@ impl MonitoringGroundTruthS3InputBuilder {
         self.s3_uri = input;
         self
     }
+    /// <p>The address of the Amazon S3 location of the ground truth labels.</p>
+    pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_uri
+    }
     /// Consumes the builder and constructs a [`MonitoringGroundTruthS3Input`](crate::types::MonitoringGroundTruthS3Input).
     pub fn build(self) -> crate::types::MonitoringGroundTruthS3Input {
         crate::types::MonitoringGroundTruthS3Input {

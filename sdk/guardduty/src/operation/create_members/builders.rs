@@ -39,6 +39,12 @@ impl CreateMembersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateMembers as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_members::builders::CreateMembersInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +127,10 @@ impl CreateMembersFluentBuilder {
         self.inner = self.inner.set_detector_id(input);
         self
     }
+    /// <p>The unique ID of the detector of the GuardDuty account that you want to associate member accounts with.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_id()
+    }
     /// Appends an item to `AccountDetails`.
     ///
     /// To override the contents of this collection use [`set_account_details`](Self::set_account_details).
@@ -137,5 +147,11 @@ impl CreateMembersFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_account_details(input);
         self
+    }
+    /// <p>A list of account ID and email address pairs of the accounts that you want to associate with the GuardDuty administrator account.</p>
+    pub fn get_account_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountDetail>> {
+        self.inner.get_account_details()
     }
 }

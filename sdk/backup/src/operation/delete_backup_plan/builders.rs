@@ -36,6 +36,12 @@ impl DeleteBackupPlanFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteBackupPlan as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_backup_plan::builders::DeleteBackupPlanInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl DeleteBackupPlanFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_backup_plan_id(input);
         self
+    }
+    /// <p>Uniquely identifies a backup plan.</p>
+    pub fn get_backup_plan_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_backup_plan_id()
     }
 }

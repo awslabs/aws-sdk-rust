@@ -69,6 +69,12 @@ impl DescribeDirectoryConfigsInputBuilder {
         self.directory_names = input;
         self
     }
+    /// <p>The directory names.</p>
+    pub fn get_directory_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.directory_names
+    }
     /// <p>The maximum size of each page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -79,6 +85,10 @@ impl DescribeDirectoryConfigsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum size of each page of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -88,6 +98,10 @@ impl DescribeDirectoryConfigsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeDirectoryConfigsInput`](crate::operation::describe_directory_configs::DescribeDirectoryConfigsInput).
     pub fn build(

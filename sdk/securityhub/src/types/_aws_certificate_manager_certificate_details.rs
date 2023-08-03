@@ -275,6 +275,10 @@ impl AwsCertificateManagerCertificateDetailsBuilder {
         self.certificate_authority_arn = input;
         self
     }
+    /// <p>The ARN of the private certificate authority (CA) that will be used to issue the certificate.</p>
+    pub fn get_certificate_authority_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_authority_arn
+    }
     /// <p>Indicates when the certificate was requested.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn created_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -287,6 +291,11 @@ impl AwsCertificateManagerCertificateDetailsBuilder {
         self.created_at = input;
         self
     }
+    /// <p>Indicates when the certificate was requested.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_at
+    }
     /// <p>The fully qualified domain name (FQDN), such as www.example.com, that is secured by the certificate.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
@@ -296,6 +305,10 @@ impl AwsCertificateManagerCertificateDetailsBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
+    }
+    /// <p>The fully qualified domain name (FQDN), such as www.example.com, that is secured by the certificate.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// Appends an item to `domain_validation_options`.
     ///
@@ -323,6 +336,15 @@ impl AwsCertificateManagerCertificateDetailsBuilder {
         self.domain_validation_options = input;
         self
     }
+    /// <p>Contains information about the initial validation of each domain name that occurs as a result of the <code>RequestCertificate</code> request.</p>
+    /// <p>Only provided if the certificate type is <code>AMAZON_ISSUED</code>.</p>
+    pub fn get_domain_validation_options(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::AwsCertificateManagerCertificateDomainValidationOption>,
+    > {
+        &self.domain_validation_options
+    }
     /// Appends an item to `extended_key_usages`.
     ///
     /// To override the contents of this collection use [`set_extended_key_usages`](Self::set_extended_key_usages).
@@ -347,6 +369,14 @@ impl AwsCertificateManagerCertificateDetailsBuilder {
         self.extended_key_usages = input;
         self
     }
+    /// <p>Contains a list of Extended Key Usage X.509 v3 extension objects. Each object specifies a purpose for which the certificate public key can be used and consists of a name and an object identifier (OID).</p>
+    pub fn get_extended_key_usages(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::AwsCertificateManagerCertificateExtendedKeyUsage>,
+    > {
+        &self.extended_key_usages
+    }
     /// <p>For a failed certificate request, the reason for the failure.</p>
     /// <p>Valid values: <code>NO_AVAILABLE_CONTACTS</code> | <code>ADDITIONAL_VERIFICATION_REQUIRED</code> | <code>DOMAIN_NOT_ALLOWED</code> | <code>INVALID_PUBLIC_DOMAIN</code> | <code>DOMAIN_VALIDATION_DENIED</code> | <code>CAA_ERROR</code> | <code>PCA_LIMIT_EXCEEDED</code> | <code>PCA_INVALID_ARN</code> | <code>PCA_INVALID_STATE</code> | <code>PCA_REQUEST_FAILED</code> | <code>PCA_NAME_CONSTRAINTS_VALIDATION</code> | <code>PCA_RESOURCE_NOT_FOUND</code> | <code>PCA_INVALID_ARGS</code> | <code>PCA_INVALID_DURATION</code> | <code>PCA_ACCESS_DENIED</code> | <code>SLR_NOT_FOUND</code> | <code>OTHER</code> </p>
     pub fn failure_reason(
@@ -365,6 +395,11 @@ impl AwsCertificateManagerCertificateDetailsBuilder {
         self.failure_reason = input;
         self
     }
+    /// <p>For a failed certificate request, the reason for the failure.</p>
+    /// <p>Valid values: <code>NO_AVAILABLE_CONTACTS</code> | <code>ADDITIONAL_VERIFICATION_REQUIRED</code> | <code>DOMAIN_NOT_ALLOWED</code> | <code>INVALID_PUBLIC_DOMAIN</code> | <code>DOMAIN_VALIDATION_DENIED</code> | <code>CAA_ERROR</code> | <code>PCA_LIMIT_EXCEEDED</code> | <code>PCA_INVALID_ARN</code> | <code>PCA_INVALID_STATE</code> | <code>PCA_REQUEST_FAILED</code> | <code>PCA_NAME_CONSTRAINTS_VALIDATION</code> | <code>PCA_RESOURCE_NOT_FOUND</code> | <code>PCA_INVALID_ARGS</code> | <code>PCA_INVALID_DURATION</code> | <code>PCA_ACCESS_DENIED</code> | <code>SLR_NOT_FOUND</code> | <code>OTHER</code> </p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
     /// <p>Indicates when the certificate was imported. Provided if the certificate type is <code>IMPORTED</code>.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn imported_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -376,6 +411,11 @@ impl AwsCertificateManagerCertificateDetailsBuilder {
     pub fn set_imported_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.imported_at = input;
         self
+    }
+    /// <p>Indicates when the certificate was imported. Provided if the certificate type is <code>IMPORTED</code>.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_imported_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.imported_at
     }
     /// Appends an item to `in_use_by`.
     ///
@@ -396,6 +436,10 @@ impl AwsCertificateManagerCertificateDetailsBuilder {
         self.in_use_by = input;
         self
     }
+    /// <p>The list of ARNs for the Amazon Web Services resources that use the certificate.</p>
+    pub fn get_in_use_by(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.in_use_by
+    }
     /// <p>Indicates when the certificate was issued. Provided if the certificate type is <code>AMAZON_ISSUED</code>.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn issued_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -408,6 +452,11 @@ impl AwsCertificateManagerCertificateDetailsBuilder {
         self.issued_at = input;
         self
     }
+    /// <p>Indicates when the certificate was issued. Provided if the certificate type is <code>AMAZON_ISSUED</code>.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_issued_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.issued_at
+    }
     /// <p>The name of the certificate authority that issued and signed the certificate.</p>
     pub fn issuer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.issuer = ::std::option::Option::Some(input.into());
@@ -417,6 +466,10 @@ impl AwsCertificateManagerCertificateDetailsBuilder {
     pub fn set_issuer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.issuer = input;
         self
+    }
+    /// <p>The name of the certificate authority that issued and signed the certificate.</p>
+    pub fn get_issuer(&self) -> &::std::option::Option<::std::string::String> {
+        &self.issuer
     }
     /// <p>The algorithm that was used to generate the public-private key pair.</p>
     /// <p>Valid values: <code>RSA_2048</code> | <code>RSA_1024</code> |<code> RSA_4096</code> | <code>EC_prime256v1</code> | <code>EC_secp384r1</code> | <code>EC_secp521r1</code> </p>
@@ -435,6 +488,11 @@ impl AwsCertificateManagerCertificateDetailsBuilder {
     ) -> Self {
         self.key_algorithm = input;
         self
+    }
+    /// <p>The algorithm that was used to generate the public-private key pair.</p>
+    /// <p>Valid values: <code>RSA_2048</code> | <code>RSA_1024</code> |<code> RSA_4096</code> | <code>EC_prime256v1</code> | <code>EC_secp384r1</code> | <code>EC_secp521r1</code> </p>
+    pub fn get_key_algorithm(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_algorithm
     }
     /// Appends an item to `key_usages`.
     ///
@@ -460,6 +518,14 @@ impl AwsCertificateManagerCertificateDetailsBuilder {
         self.key_usages = input;
         self
     }
+    /// <p>A list of key usage X.509 v3 extension objects.</p>
+    pub fn get_key_usages(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::AwsCertificateManagerCertificateKeyUsage>,
+    > {
+        &self.key_usages
+    }
     /// <p>The time after which the certificate becomes invalid.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn not_after(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -471,6 +537,11 @@ impl AwsCertificateManagerCertificateDetailsBuilder {
     pub fn set_not_after(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.not_after = input;
         self
+    }
+    /// <p>The time after which the certificate becomes invalid.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_not_after(&self) -> &::std::option::Option<::std::string::String> {
+        &self.not_after
     }
     /// <p>The time before which the certificate is not valid.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -484,6 +555,11 @@ impl AwsCertificateManagerCertificateDetailsBuilder {
         self.not_before = input;
         self
     }
+    /// <p>The time before which the certificate is not valid.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_not_before(&self) -> &::std::option::Option<::std::string::String> {
+        &self.not_before
+    }
     /// <p>Provides a value that specifies whether to add the certificate to a transparency log.</p>
     pub fn options(mut self, input: crate::types::AwsCertificateManagerCertificateOptions) -> Self {
         self.options = ::std::option::Option::Some(input);
@@ -496,6 +572,12 @@ impl AwsCertificateManagerCertificateDetailsBuilder {
     ) -> Self {
         self.options = input;
         self
+    }
+    /// <p>Provides a value that specifies whether to add the certificate to a transparency log.</p>
+    pub fn get_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsCertificateManagerCertificateOptions> {
+        &self.options
     }
     /// <p>Whether the certificate is eligible for renewal.</p>
     /// <p>Valid values: <code>ELIGIBLE</code> | <code>INELIGIBLE</code> </p>
@@ -515,6 +597,11 @@ impl AwsCertificateManagerCertificateDetailsBuilder {
         self.renewal_eligibility = input;
         self
     }
+    /// <p>Whether the certificate is eligible for renewal.</p>
+    /// <p>Valid values: <code>ELIGIBLE</code> | <code>INELIGIBLE</code> </p>
+    pub fn get_renewal_eligibility(&self) -> &::std::option::Option<::std::string::String> {
+        &self.renewal_eligibility
+    }
     /// <p>Information about the status of the Certificate Manager managed renewal for the certificate. Provided only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
     pub fn renewal_summary(
         mut self,
@@ -531,6 +618,12 @@ impl AwsCertificateManagerCertificateDetailsBuilder {
         self.renewal_summary = input;
         self
     }
+    /// <p>Information about the status of the Certificate Manager managed renewal for the certificate. Provided only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
+    pub fn get_renewal_summary(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsCertificateManagerCertificateRenewalSummary> {
+        &self.renewal_summary
+    }
     /// <p>The serial number of the certificate.</p>
     pub fn serial(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.serial = ::std::option::Option::Some(input.into());
@@ -540,6 +633,10 @@ impl AwsCertificateManagerCertificateDetailsBuilder {
     pub fn set_serial(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.serial = input;
         self
+    }
+    /// <p>The serial number of the certificate.</p>
+    pub fn get_serial(&self) -> &::std::option::Option<::std::string::String> {
+        &self.serial
     }
     /// <p>The algorithm that was used to sign the certificate.</p>
     pub fn signature_algorithm(
@@ -557,6 +654,10 @@ impl AwsCertificateManagerCertificateDetailsBuilder {
         self.signature_algorithm = input;
         self
     }
+    /// <p>The algorithm that was used to sign the certificate.</p>
+    pub fn get_signature_algorithm(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signature_algorithm
+    }
     /// <p>The status of the certificate.</p>
     /// <p>Valid values: <code>PENDING_VALIDATION</code> | <code>ISSUED</code> | <code>INACTIVE</code> | <code>EXPIRED</code> | <code>VALIDATION_TIMED_OUT</code> | <code>REVOKED</code> | <code>FAILED</code> </p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -569,6 +670,11 @@ impl AwsCertificateManagerCertificateDetailsBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the certificate.</p>
+    /// <p>Valid values: <code>PENDING_VALIDATION</code> | <code>ISSUED</code> | <code>INACTIVE</code> | <code>EXPIRED</code> | <code>VALIDATION_TIMED_OUT</code> | <code>REVOKED</code> | <code>FAILED</code> </p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The name of the entity that is associated with the public key contained in the certificate.</p>
     pub fn subject(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subject = ::std::option::Option::Some(input.into());
@@ -578,6 +684,10 @@ impl AwsCertificateManagerCertificateDetailsBuilder {
     pub fn set_subject(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subject = input;
         self
+    }
+    /// <p>The name of the entity that is associated with the public key contained in the certificate.</p>
+    pub fn get_subject(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subject
     }
     /// Appends an item to `subject_alternative_names`.
     ///
@@ -603,6 +713,13 @@ impl AwsCertificateManagerCertificateDetailsBuilder {
         self.subject_alternative_names = input;
         self
     }
+    /// <p>One or more domain names (subject alternative names) included in the certificate. This list contains the domain names that are bound to the public key that is contained in the certificate.</p>
+    /// <p>The subject alternative names include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect to the website.</p>
+    pub fn get_subject_alternative_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subject_alternative_names
+    }
     /// <p>The source of the certificate. For certificates that Certificate Manager provides, <code>Type</code> is <code>AMAZON_ISSUED</code>. For certificates that are imported with <code>ImportCertificate</code>, <code>Type</code> is <code>IMPORTED</code>.</p>
     /// <p>Valid values: <code>IMPORTED</code> | <code>AMAZON_ISSUED</code> | <code>PRIVATE</code> </p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -614,6 +731,11 @@ impl AwsCertificateManagerCertificateDetailsBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The source of the certificate. For certificates that Certificate Manager provides, <code>Type</code> is <code>AMAZON_ISSUED</code>. For certificates that are imported with <code>ImportCertificate</code>, <code>Type</code> is <code>IMPORTED</code>.</p>
+    /// <p>Valid values: <code>IMPORTED</code> | <code>AMAZON_ISSUED</code> | <code>PRIVATE</code> </p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`AwsCertificateManagerCertificateDetails`](crate::types::AwsCertificateManagerCertificateDetails).
     pub fn build(self) -> crate::types::AwsCertificateManagerCertificateDetails {

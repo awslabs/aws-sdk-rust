@@ -40,6 +40,10 @@ impl UpdateAccountSendingEnabledInputBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS Region.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Consumes the builder and constructs a [`UpdateAccountSendingEnabledInput`](crate::operation::update_account_sending_enabled::UpdateAccountSendingEnabledInput).
     pub fn build(
         self,

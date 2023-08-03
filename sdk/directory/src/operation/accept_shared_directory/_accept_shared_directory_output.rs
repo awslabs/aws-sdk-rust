@@ -51,6 +51,10 @@ impl AcceptSharedDirectoryOutputBuilder {
         self.shared_directory = input;
         self
     }
+    /// <p>The shared directory in the directory consumer account.</p>
+    pub fn get_shared_directory(&self) -> &::std::option::Option<crate::types::SharedDirectory> {
+        &self.shared_directory
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

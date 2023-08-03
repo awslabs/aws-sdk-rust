@@ -36,6 +36,12 @@ impl GetMigrationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetMigrations as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_migrations::builders::GetMigrationsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,12 @@ impl GetMigrationsFluentBuilder {
         self.inner = self.inner.set_sort_by_attribute(input);
         self
     }
+    /// <p>The field to sort the list of migrations by. You can sort by the Amazon Lex V1 bot name or the date and time that the migration was started.</p>
+    pub fn get_sort_by_attribute(
+        &self,
+    ) -> &::std::option::Option<crate::types::MigrationSortAttribute> {
+        self.inner.get_sort_by_attribute()
+    }
     /// <p>The order so sort the list.</p>
     pub fn sort_by_order(mut self, input: crate::types::SortOrder) -> Self {
         self.inner = self.inner.sort_by_order(input);
@@ -144,6 +156,10 @@ impl GetMigrationsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sort_by_order(input);
         self
+    }
+    /// <p>The order so sort the list.</p>
+    pub fn get_sort_by_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        self.inner.get_sort_by_order()
     }
     /// <p>Filters the list to contain only bots whose name contains the specified string. The string is matched anywhere in bot name.</p>
     pub fn v1_bot_name_contains(
@@ -161,6 +177,10 @@ impl GetMigrationsFluentBuilder {
         self.inner = self.inner.set_v1_bot_name_contains(input);
         self
     }
+    /// <p>Filters the list to contain only bots whose name contains the specified string. The string is matched anywhere in bot name.</p>
+    pub fn get_v1_bot_name_contains(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_v1_bot_name_contains()
+    }
     /// <p>Filters the list to contain only migrations in the specified state.</p>
     pub fn migration_status_equals(mut self, input: crate::types::MigrationStatus) -> Self {
         self.inner = self.inner.migration_status_equals(input);
@@ -174,6 +194,12 @@ impl GetMigrationsFluentBuilder {
         self.inner = self.inner.set_migration_status_equals(input);
         self
     }
+    /// <p>Filters the list to contain only migrations in the specified state.</p>
+    pub fn get_migration_status_equals(
+        &self,
+    ) -> &::std::option::Option<crate::types::MigrationStatus> {
+        self.inner.get_migration_status_equals()
+    }
     /// <p>The maximum number of migrations to return in the response. The default is 10.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -184,6 +210,10 @@ impl GetMigrationsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of migrations to return in the response. The default is 10.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>A pagination token that fetches the next page of migrations. If the response to this operation is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of migrations, specify the pagination token in the request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -193,5 +223,9 @@ impl GetMigrationsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A pagination token that fetches the next page of migrations. If the response to this operation is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of migrations, specify the pagination token in the request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

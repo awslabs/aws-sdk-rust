@@ -36,6 +36,10 @@ impl CreateNetworkAnalyzerConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateNetworkAnalyzerConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_network_analyzer_configuration::builders::CreateNetworkAnalyzerConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl CreateNetworkAnalyzerConfigurationFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>Name of the network analyzer configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>Trace content for your wireless gateway and wireless device resources.</p>
     pub fn trace_content(mut self, input: crate::types::TraceContent) -> Self {
         self.inner = self.inner.trace_content(input);
@@ -112,6 +120,10 @@ impl CreateNetworkAnalyzerConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_trace_content(input);
         self
+    }
+    /// <p>Trace content for your wireless gateway and wireless device resources.</p>
+    pub fn get_trace_content(&self) -> &::std::option::Option<crate::types::TraceContent> {
+        self.inner.get_trace_content()
     }
     /// Appends an item to `WirelessDevices`.
     ///
@@ -133,6 +145,12 @@ impl CreateNetworkAnalyzerConfigurationFluentBuilder {
         self.inner = self.inner.set_wireless_devices(input);
         self
     }
+    /// <p>Wireless device resources to add to the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resource to add in the input array.</p>
+    pub fn get_wireless_devices(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_wireless_devices()
+    }
     /// Appends an item to `WirelessGateways`.
     ///
     /// To override the contents of this collection use [`set_wireless_gateways`](Self::set_wireless_gateways).
@@ -153,6 +171,12 @@ impl CreateNetworkAnalyzerConfigurationFluentBuilder {
         self.inner = self.inner.set_wireless_gateways(input);
         self
     }
+    /// <p>Wireless gateway resources to add to the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resource to add in the input array.</p>
+    pub fn get_wireless_gateways(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_wireless_gateways()
+    }
     /// <p>The description of the new resource.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -162,6 +186,10 @@ impl CreateNetworkAnalyzerConfigurationFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the new resource.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `Tags`.
     ///
@@ -180,6 +208,10 @@ impl CreateNetworkAnalyzerConfigurationFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
     pub fn client_request_token(
         mut self,
@@ -195,6 +227,10 @@ impl CreateNetworkAnalyzerConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
     /// Appends an item to `MulticastGroups`.
     ///
@@ -215,5 +251,11 @@ impl CreateNetworkAnalyzerConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_multicast_groups(input);
         self
+    }
+    /// <p>Multicast Group resources to add to the network analyzer configruation. Provide the <code>MulticastGroupId</code> of the resource to add in the input array.</p>
+    pub fn get_multicast_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_multicast_groups()
     }
 }

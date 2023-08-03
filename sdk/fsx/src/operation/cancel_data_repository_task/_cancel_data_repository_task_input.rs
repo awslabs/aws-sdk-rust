@@ -42,6 +42,10 @@ impl CancelDataRepositoryTaskInputBuilder {
         self.task_id = input;
         self
     }
+    /// <p>Specifies the data repository task to cancel.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
+    }
     /// Consumes the builder and constructs a [`CancelDataRepositoryTaskInput`](crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskInput).
     pub fn build(
         self,

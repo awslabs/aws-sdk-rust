@@ -46,6 +46,10 @@ impl GetMatchIdOutputBuilder {
         self.match_id = input;
         self
     }
+    /// <p>The unique identifiers for this group of match records.</p>
+    pub fn get_match_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.match_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

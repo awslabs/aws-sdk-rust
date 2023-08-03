@@ -51,6 +51,13 @@ impl ChangeMessageVisibilityFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ChangeMessageVisibility as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::change_message_visibility::builders::ChangeMessageVisibilityInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +150,11 @@ impl ChangeMessageVisibilityFluentBuilder {
         self.inner = self.inner.set_queue_url(input);
         self
     }
+    /// <p>The URL of the Amazon SQS queue whose message's visibility is changed.</p>
+    /// <p>Queue URLs and names are case-sensitive.</p>
+    pub fn get_queue_url(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_queue_url()
+    }
     /// <p>The receipt handle associated with the message, whose visibility timeout is changed. This parameter is returned by the <code> <code>ReceiveMessage</code> </code> action.</p>
     pub fn receipt_handle(
         mut self,
@@ -159,6 +171,10 @@ impl ChangeMessageVisibilityFluentBuilder {
         self.inner = self.inner.set_receipt_handle(input);
         self
     }
+    /// <p>The receipt handle associated with the message, whose visibility timeout is changed. This parameter is returned by the <code> <code>ReceiveMessage</code> </code> action.</p>
+    pub fn get_receipt_handle(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_receipt_handle()
+    }
     /// <p>The new value for the message's visibility timeout (in seconds). Values range: <code>0</code> to <code>43200</code>. Maximum: 12 hours.</p>
     pub fn visibility_timeout(mut self, input: i32) -> Self {
         self.inner = self.inner.visibility_timeout(input);
@@ -168,5 +184,9 @@ impl ChangeMessageVisibilityFluentBuilder {
     pub fn set_visibility_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_visibility_timeout(input);
         self
+    }
+    /// <p>The new value for the message's visibility timeout (in seconds). Values range: <code>0</code> to <code>43200</code>. Maximum: 12 hours.</p>
+    pub fn get_visibility_timeout(&self) -> &::std::option::Option<i32> {
+        self.inner.get_visibility_timeout()
     }
 }

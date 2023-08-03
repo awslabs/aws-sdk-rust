@@ -40,6 +40,12 @@ impl PutResourceConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutResourceConfig as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_resource_config::builders::PutResourceConfigInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +146,12 @@ impl PutResourceConfigFluentBuilder {
         self.inner = self.inner.set_resource_type(input);
         self
     }
+    /// <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p> <note>
+    /// <p>You cannot use the organization names “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first part of the ResourceType up to the first ::.</p>
+    /// </note>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_type()
+    }
     /// <p>Version of the schema registered for the ResourceType in CloudFormation.</p>
     pub fn schema_version_id(
         mut self,
@@ -156,6 +168,10 @@ impl PutResourceConfigFluentBuilder {
         self.inner = self.inner.set_schema_version_id(input);
         self
     }
+    /// <p>Version of the schema registered for the ResourceType in CloudFormation.</p>
+    pub fn get_schema_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schema_version_id()
+    }
     /// <p>Unique identifier of the resource.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
@@ -165,6 +181,10 @@ impl PutResourceConfigFluentBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_id(input);
         self
+    }
+    /// <p>Unique identifier of the resource.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
     }
     /// <p>Name of the resource.</p>
     pub fn resource_name(
@@ -181,6 +201,10 @@ impl PutResourceConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_name(input);
         self
+    }
+    /// <p>Name of the resource.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_name()
     }
     /// <p>The configuration object of the resource in valid JSON format. It must match the schema registered with CloudFormation.</p> <note>
     /// <p>The configuration JSON must not exceed 64 KB.</p>
@@ -201,6 +225,12 @@ impl PutResourceConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
+    }
+    /// <p>The configuration object of the resource in valid JSON format. It must match the schema registered with CloudFormation.</p> <note>
+    /// <p>The configuration JSON must not exceed 64 KB.</p>
+    /// </note>
+    pub fn get_configuration(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -228,5 +258,15 @@ impl PutResourceConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Tags associated with the resource.</p> <note>
+    /// <p>This field is not to be confused with the Amazon Web Services-wide tag feature for Amazon Web Services resources. Tags for <code>PutResourceConfig</code> are tags that you supply for the configuration items of your custom resources.</p>
+    /// </note>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

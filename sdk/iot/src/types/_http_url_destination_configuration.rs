@@ -46,6 +46,10 @@ impl HttpUrlDestinationConfigurationBuilder {
         self.confirmation_url = input;
         self
     }
+    /// <p>The URL IoT uses to confirm ownership of or access to the topic rule destination URL.</p>
+    pub fn get_confirmation_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.confirmation_url
+    }
     /// Consumes the builder and constructs a [`HttpUrlDestinationConfiguration`](crate::types::HttpUrlDestinationConfiguration).
     pub fn build(self) -> crate::types::HttpUrlDestinationConfiguration {
         crate::types::HttpUrlDestinationConfiguration {

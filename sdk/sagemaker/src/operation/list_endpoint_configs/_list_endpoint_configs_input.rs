@@ -92,6 +92,10 @@ impl ListEndpointConfigsInputBuilder {
         self.sort_by = input;
         self
     }
+    /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::EndpointConfigSortKey> {
+        &self.sort_by
+    }
     /// <p>The sort order for results. The default is <code>Descending</code>.</p>
     pub fn sort_order(mut self, input: crate::types::OrderKey) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -101,6 +105,10 @@ impl ListEndpointConfigsInputBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::OrderKey>) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p>The sort order for results. The default is <code>Descending</code>.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::OrderKey> {
+        &self.sort_order
     }
     /// <p>If the result of the previous <code>ListEndpointConfig</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of endpoint configurations, use the token in the next request. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -112,6 +120,10 @@ impl ListEndpointConfigsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If the result of the previous <code>ListEndpointConfig</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of endpoint configurations, use the token in the next request. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of training jobs to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -121,6 +133,10 @@ impl ListEndpointConfigsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of training jobs to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>A string in the endpoint configuration name. This filter returns only endpoint configurations whose name contains the specified string. </p>
     pub fn name_contains(
@@ -138,6 +154,10 @@ impl ListEndpointConfigsInputBuilder {
         self.name_contains = input;
         self
     }
+    /// <p>A string in the endpoint configuration name. This filter returns only endpoint configurations whose name contains the specified string. </p>
+    pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name_contains
+    }
     /// <p>A filter that returns only endpoint configurations created before the specified time (timestamp).</p>
     pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time_before = ::std::option::Option::Some(input);
@@ -151,6 +171,10 @@ impl ListEndpointConfigsInputBuilder {
         self.creation_time_before = input;
         self
     }
+    /// <p>A filter that returns only endpoint configurations created before the specified time (timestamp).</p>
+    pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_before
+    }
     /// <p>A filter that returns only endpoint configurations with a creation time greater than or equal to the specified time (timestamp).</p>
     pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time_after = ::std::option::Option::Some(input);
@@ -163,6 +187,10 @@ impl ListEndpointConfigsInputBuilder {
     ) -> Self {
         self.creation_time_after = input;
         self
+    }
+    /// <p>A filter that returns only endpoint configurations with a creation time greater than or equal to the specified time (timestamp).</p>
+    pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_after
     }
     /// Consumes the builder and constructs a [`ListEndpointConfigsInput`](crate::operation::list_endpoint_configs::ListEndpointConfigsInput).
     pub fn build(

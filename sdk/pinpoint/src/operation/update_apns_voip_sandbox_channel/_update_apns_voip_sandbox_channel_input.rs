@@ -57,6 +57,12 @@ impl UpdateApnsVoipSandboxChannelInputBuilder {
         self.apns_voip_sandbox_channel_request = input;
         self
     }
+    /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
+    pub fn get_apns_voip_sandbox_channel_request(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApnsVoipSandboxChannelRequest> {
+        &self.apns_voip_sandbox_channel_request
+    }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub fn application_id(
         mut self,
@@ -72,6 +78,10 @@ impl UpdateApnsVoipSandboxChannelInputBuilder {
     ) -> Self {
         self.application_id = input;
         self
+    }
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
     }
     /// Consumes the builder and constructs a [`UpdateApnsVoipSandboxChannelInput`](crate::operation::update_apns_voip_sandbox_channel::UpdateApnsVoipSandboxChannelInput).
     pub fn build(

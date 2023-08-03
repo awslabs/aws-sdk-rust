@@ -314,6 +314,10 @@ impl ClusterBuilder {
         self.cluster_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that identifies the cluster. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_arn
+    }
     /// <p>A user-generated string that you use to identify your cluster.</p>
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
@@ -323,6 +327,10 @@ impl ClusterBuilder {
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_name = input;
         self
+    }
+    /// <p>A user-generated string that you use to identify your cluster.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_name
     }
     /// <p>The execute command configuration for the cluster.</p>
     pub fn configuration(mut self, input: crate::types::ClusterConfiguration) -> Self {
@@ -336,6 +344,10 @@ impl ClusterBuilder {
     ) -> Self {
         self.configuration = input;
         self
+    }
+    /// <p>The execute command configuration for the cluster.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ClusterConfiguration> {
+        &self.configuration
     }
     /// <p>The status of the cluster. The following are the possible states that are returned.</p>
     /// <dl>
@@ -411,6 +423,42 @@ impl ClusterBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the cluster. The following are the possible states that are returned.</p>
+    /// <dl>
+    /// <dt>
+    /// ACTIVE
+    /// </dt>
+    /// <dd>
+    /// <p>The cluster is ready to accept tasks and if applicable you can register container instances with the cluster.</p>
+    /// </dd>
+    /// <dt>
+    /// PROVISIONING
+    /// </dt>
+    /// <dd>
+    /// <p>The cluster has capacity providers that are associated with it and the resources needed for the capacity provider are being created.</p>
+    /// </dd>
+    /// <dt>
+    /// DEPROVISIONING
+    /// </dt>
+    /// <dd>
+    /// <p>The cluster has capacity providers that are associated with it and the resources needed for the capacity provider are being deleted.</p>
+    /// </dd>
+    /// <dt>
+    /// FAILED
+    /// </dt>
+    /// <dd>
+    /// <p>The cluster has capacity providers that are associated with it and the resources needed for the capacity provider have failed to create.</p>
+    /// </dd>
+    /// <dt>
+    /// INACTIVE
+    /// </dt>
+    /// <dd>
+    /// <p>The cluster has been deleted. Clusters with an <code>INACTIVE</code> status may remain discoverable in your account for a period of time. However, this behavior is subject to change in the future. We don't recommend that you rely on <code>INACTIVE</code> clusters persisting.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The number of container instances registered into the cluster. This includes container instances in both <code>ACTIVE</code> and <code>DRAINING</code> status.</p>
     pub fn registered_container_instances_count(mut self, input: i32) -> Self {
         self.registered_container_instances_count = ::std::option::Option::Some(input);
@@ -424,6 +472,10 @@ impl ClusterBuilder {
         self.registered_container_instances_count = input;
         self
     }
+    /// <p>The number of container instances registered into the cluster. This includes container instances in both <code>ACTIVE</code> and <code>DRAINING</code> status.</p>
+    pub fn get_registered_container_instances_count(&self) -> &::std::option::Option<i32> {
+        &self.registered_container_instances_count
+    }
     /// <p>The number of tasks in the cluster that are in the <code>RUNNING</code> state.</p>
     pub fn running_tasks_count(mut self, input: i32) -> Self {
         self.running_tasks_count = ::std::option::Option::Some(input);
@@ -433,6 +485,10 @@ impl ClusterBuilder {
     pub fn set_running_tasks_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.running_tasks_count = input;
         self
+    }
+    /// <p>The number of tasks in the cluster that are in the <code>RUNNING</code> state.</p>
+    pub fn get_running_tasks_count(&self) -> &::std::option::Option<i32> {
+        &self.running_tasks_count
     }
     /// <p>The number of tasks in the cluster that are in the <code>PENDING</code> state.</p>
     pub fn pending_tasks_count(mut self, input: i32) -> Self {
@@ -444,6 +500,10 @@ impl ClusterBuilder {
         self.pending_tasks_count = input;
         self
     }
+    /// <p>The number of tasks in the cluster that are in the <code>PENDING</code> state.</p>
+    pub fn get_pending_tasks_count(&self) -> &::std::option::Option<i32> {
+        &self.pending_tasks_count
+    }
     /// <p>The number of services that are running on the cluster in an <code>ACTIVE</code> state. You can view these services with <code>ListServices</code>.</p>
     pub fn active_services_count(mut self, input: i32) -> Self {
         self.active_services_count = ::std::option::Option::Some(input);
@@ -453,6 +513,10 @@ impl ClusterBuilder {
     pub fn set_active_services_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.active_services_count = input;
         self
+    }
+    /// <p>The number of services that are running on the cluster in an <code>ACTIVE</code> state. You can view these services with <code>ListServices</code>.</p>
+    pub fn get_active_services_count(&self) -> &::std::option::Option<i32> {
+        &self.active_services_count
     }
     /// Appends an item to `statistics`.
     ///
@@ -493,6 +557,22 @@ impl ClusterBuilder {
         self.statistics = input;
         self
     }
+    /// <p>Additional information about your clusters that are separated by launch type. They include the following:</p>
+    /// <ul>
+    /// <li> <p>runningEC2TasksCount</p> </li>
+    /// <li> <p>RunningFargateTasksCount</p> </li>
+    /// <li> <p>pendingEC2TasksCount</p> </li>
+    /// <li> <p>pendingFargateTasksCount</p> </li>
+    /// <li> <p>activeEC2ServiceCount</p> </li>
+    /// <li> <p>activeFargateServiceCount</p> </li>
+    /// <li> <p>drainingEC2ServiceCount</p> </li>
+    /// <li> <p>drainingFargateServiceCount</p> </li>
+    /// </ul>
+    pub fn get_statistics(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>> {
+        &self.statistics
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -532,6 +612,20 @@ impl ClusterBuilder {
         self.tags = input;
         self
     }
+    /// <p>The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p>
+    /// <p>The following basic restrictions apply to tags:</p>
+    /// <ul>
+    /// <li> <p>Maximum number of tags per resource - 50</p> </li>
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+    /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
+    /// </ul>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Appends an item to `settings`.
     ///
     /// To override the contents of this collection use [`set_settings`](Self::set_settings).
@@ -550,6 +644,12 @@ impl ClusterBuilder {
     ) -> Self {
         self.settings = input;
         self
+    }
+    /// <p>The settings for the cluster. This parameter indicates whether CloudWatch Container Insights is on or off for a cluster.</p>
+    pub fn get_settings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterSetting>> {
+        &self.settings
     }
     /// Appends an item to `capacity_providers`.
     ///
@@ -573,6 +673,12 @@ impl ClusterBuilder {
         self.capacity_providers = input;
         self
     }
+    /// <p>The capacity providers associated with the cluster.</p>
+    pub fn get_capacity_providers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.capacity_providers
+    }
     /// Appends an item to `default_capacity_provider_strategy`.
     ///
     /// To override the contents of this collection use [`set_default_capacity_provider_strategy`](Self::set_default_capacity_provider_strategy).
@@ -595,6 +701,12 @@ impl ClusterBuilder {
         self.default_capacity_provider_strategy = input;
         self
     }
+    /// <p>The default capacity provider strategy for the cluster. When services or tasks are run in the cluster with no launch type or capacity provider strategy specified, the default capacity provider strategy is used.</p>
+    pub fn get_default_capacity_provider_strategy(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>> {
+        &self.default_capacity_provider_strategy
+    }
     /// Appends an item to `attachments`.
     ///
     /// To override the contents of this collection use [`set_attachments`](Self::set_attachments).
@@ -613,6 +725,12 @@ impl ClusterBuilder {
     ) -> Self {
         self.attachments = input;
         self
+    }
+    /// <p>The resources attached to a cluster. When using a capacity provider with a cluster, the capacity provider and associated resources are returned as cluster attachments.</p>
+    pub fn get_attachments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Attachment>> {
+        &self.attachments
     }
     /// <p>The status of the capacity providers associated with the cluster. The following are the states that are returned.</p>
     /// <dl>
@@ -670,6 +788,30 @@ impl ClusterBuilder {
         self.attachments_status = input;
         self
     }
+    /// <p>The status of the capacity providers associated with the cluster. The following are the states that are returned.</p>
+    /// <dl>
+    /// <dt>
+    /// UPDATE_IN_PROGRESS
+    /// </dt>
+    /// <dd>
+    /// <p>The available capacity providers for the cluster are updating.</p>
+    /// </dd>
+    /// <dt>
+    /// UPDATE_COMPLETE
+    /// </dt>
+    /// <dd>
+    /// <p>The capacity providers have successfully updated.</p>
+    /// </dd>
+    /// <dt>
+    /// UPDATE_FAILED
+    /// </dt>
+    /// <dd>
+    /// <p>The capacity provider updates failed.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_attachments_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attachments_status
+    }
     /// <p>Use this parameter to set a default Service Connect namespace. After you set a default Service Connect namespace, any new services with Service Connect turned on that are created in the cluster are added as client services in the namespace. This setting only applies to new services that set the <code>enabled</code> parameter to <code>true</code> in the <code>ServiceConnectConfiguration</code>. You can set the namespace of each service individually in the <code>ServiceConnectConfiguration</code> to override this default parameter.</p>
     /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn service_connect_defaults(
@@ -687,6 +829,13 @@ impl ClusterBuilder {
     ) -> Self {
         self.service_connect_defaults = input;
         self
+    }
+    /// <p>Use this parameter to set a default Service Connect namespace. After you set a default Service Connect namespace, any new services with Service Connect turned on that are created in the cluster are added as client services in the namespace. This setting only applies to new services that set the <code>enabled</code> parameter to <code>true</code> in the <code>ServiceConnectConfiguration</code>. You can set the namespace of each service individually in the <code>ServiceConnectConfiguration</code> to override this default parameter.</p>
+    /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn get_service_connect_defaults(
+        &self,
+    ) -> &::std::option::Option<crate::types::ClusterServiceConnectDefaults> {
+        &self.service_connect_defaults
     }
     /// Consumes the builder and constructs a [`Cluster`](crate::types::Cluster).
     pub fn build(self) -> crate::types::Cluster {

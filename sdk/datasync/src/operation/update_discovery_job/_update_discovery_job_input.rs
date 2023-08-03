@@ -54,6 +54,10 @@ impl UpdateDiscoveryJobInputBuilder {
         self.discovery_job_arn = input;
         self
     }
+    /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want to update.</p>
+    pub fn get_discovery_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.discovery_job_arn
+    }
     /// <p>Specifies in minutes how long that you want the discovery job to run. (You can't set this parameter to less than the number of minutes that the job has already run for.)</p>
     pub fn collection_duration_minutes(mut self, input: i32) -> Self {
         self.collection_duration_minutes = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl UpdateDiscoveryJobInputBuilder {
     pub fn set_collection_duration_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.collection_duration_minutes = input;
         self
+    }
+    /// <p>Specifies in minutes how long that you want the discovery job to run. (You can't set this parameter to less than the number of minutes that the job has already run for.)</p>
+    pub fn get_collection_duration_minutes(&self) -> &::std::option::Option<i32> {
+        &self.collection_duration_minutes
     }
     /// Consumes the builder and constructs a [`UpdateDiscoveryJobInput`](crate::operation::update_discovery_job::UpdateDiscoveryJobInput).
     pub fn build(

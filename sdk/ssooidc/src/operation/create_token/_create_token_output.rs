@@ -82,6 +82,10 @@ impl CreateTokenOutputBuilder {
         self.access_token = input;
         self
     }
+    /// <p>An opaque token to access IAM Identity Center resources assigned to a user.</p>
+    pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_token
+    }
     /// <p>Used to notify the client that the returned token is an access token. The supported type is <code>BearerToken</code>.</p>
     pub fn token_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token_type = ::std::option::Option::Some(input.into());
@@ -92,6 +96,10 @@ impl CreateTokenOutputBuilder {
         self.token_type = input;
         self
     }
+    /// <p>Used to notify the client that the returned token is an access token. The supported type is <code>BearerToken</code>.</p>
+    pub fn get_token_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token_type
+    }
     /// <p>Indicates the time in seconds when an access token will expire.</p>
     pub fn expires_in(mut self, input: i32) -> Self {
         self.expires_in = ::std::option::Option::Some(input);
@@ -101,6 +109,10 @@ impl CreateTokenOutputBuilder {
     pub fn set_expires_in(mut self, input: ::std::option::Option<i32>) -> Self {
         self.expires_in = input;
         self
+    }
+    /// <p>Indicates the time in seconds when an access token will expire.</p>
+    pub fn get_expires_in(&self) -> &::std::option::Option<i32> {
+        &self.expires_in
     }
     /// <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
     /// <p>A token that, if present, can be used to refresh a previously issued access token that might have expired.</p>
@@ -120,6 +132,11 @@ impl CreateTokenOutputBuilder {
         self.refresh_token = input;
         self
     }
+    /// <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
+    /// <p>A token that, if present, can be used to refresh a previously issued access token that might have expired.</p>
+    pub fn get_refresh_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.refresh_token
+    }
     /// <p>Currently, <code>idToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
     /// <p>The identifier of the user that associated with the access token, if present.</p>
     pub fn id_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -131,6 +148,11 @@ impl CreateTokenOutputBuilder {
     pub fn set_id_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id_token = input;
         self
+    }
+    /// <p>Currently, <code>idToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
+    /// <p>The identifier of the user that associated with the access token, if present.</p>
+    pub fn get_id_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

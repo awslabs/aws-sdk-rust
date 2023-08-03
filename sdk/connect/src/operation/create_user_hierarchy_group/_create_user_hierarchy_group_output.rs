@@ -60,6 +60,10 @@ impl CreateUserHierarchyGroupOutputBuilder {
         self.hierarchy_group_id = input;
         self
     }
+    /// <p>The identifier of the hierarchy group.</p>
+    pub fn get_hierarchy_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hierarchy_group_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the hierarchy group. </p>
     pub fn hierarchy_group_arn(
         mut self,
@@ -75,6 +79,10 @@ impl CreateUserHierarchyGroupOutputBuilder {
     ) -> Self {
         self.hierarchy_group_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the hierarchy group. </p>
+    pub fn get_hierarchy_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hierarchy_group_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

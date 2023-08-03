@@ -47,6 +47,10 @@ impl GetKxUserInputBuilder {
         self.user_name = input;
         self
     }
+    /// <p>A unique identifier for the user.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
+    }
     /// <p>A unique identifier for the kdb environment.</p>
     pub fn environment_id(
         mut self,
@@ -62,6 +66,10 @@ impl GetKxUserInputBuilder {
     ) -> Self {
         self.environment_id = input;
         self
+    }
+    /// <p>A unique identifier for the kdb environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
     }
     /// Consumes the builder and constructs a [`GetKxUserInput`](crate::operation::get_kx_user::GetKxUserInput).
     pub fn build(

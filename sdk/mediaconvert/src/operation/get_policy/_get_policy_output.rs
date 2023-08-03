@@ -46,6 +46,10 @@ impl GetPolicyOutputBuilder {
         self.policy = input;
         self
     }
+    /// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+    pub fn get_policy(&self) -> &::std::option::Option<crate::types::Policy> {
+        &self.policy
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

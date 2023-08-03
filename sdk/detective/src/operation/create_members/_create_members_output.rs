@@ -67,6 +67,12 @@ impl CreateMembersOutputBuilder {
         self.members = input;
         self
     }
+    /// <p>The set of member account invitation or enablement requests that Detective was able to process. This includes accounts that are being verified, that failed verification, and that passed verification and are being sent an invitation or are being enabled.</p>
+    pub fn get_members(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberDetail>> {
+        &self.members
+    }
     /// Appends an item to `unprocessed_accounts`.
     ///
     /// To override the contents of this collection use [`set_unprocessed_accounts`](Self::set_unprocessed_accounts).
@@ -85,6 +91,12 @@ impl CreateMembersOutputBuilder {
     ) -> Self {
         self.unprocessed_accounts = input;
         self
+    }
+    /// <p>The list of accounts for which Detective was unable to process the invitation or enablement request. For each account, the list provides the reason why the request could not be processed. The list includes accounts that are already member accounts in the behavior graph.</p>
+    pub fn get_unprocessed_accounts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>> {
+        &self.unprocessed_accounts
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

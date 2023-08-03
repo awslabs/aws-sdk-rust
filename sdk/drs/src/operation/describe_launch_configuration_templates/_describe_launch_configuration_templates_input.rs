@@ -71,6 +71,12 @@ impl DescribeLaunchConfigurationTemplatesInputBuilder {
         self.launch_configuration_template_i_ds = input;
         self
     }
+    /// <p>Request to filter Launch Configuration Templates list by Launch Configuration Template ID.</p>
+    pub fn get_launch_configuration_template_i_ds(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.launch_configuration_template_i_ds
+    }
     /// <p>Maximum results to be returned in DescribeLaunchConfigurationTemplates.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -81,6 +87,10 @@ impl DescribeLaunchConfigurationTemplatesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>Maximum results to be returned in DescribeLaunchConfigurationTemplates.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token of the next Launch Configuration Template to retrieve.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -90,6 +100,10 @@ impl DescribeLaunchConfigurationTemplatesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token of the next Launch Configuration Template to retrieve.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeLaunchConfigurationTemplatesInput`](crate::operation::describe_launch_configuration_templates::DescribeLaunchConfigurationTemplatesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_launch_configuration_templates::DescribeLaunchConfigurationTemplatesInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -39,6 +39,10 @@ impl DescribeWorldGenerationJobInputBuilder {
         self.job = input;
         self
     }
+    /// <p>The Amazon Resource Name (arn) of the world generation job to describe.</p>
+    pub fn get_job(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job
+    }
     /// Consumes the builder and constructs a [`DescribeWorldGenerationJobInput`](crate::operation::describe_world_generation_job::DescribeWorldGenerationJobInput).
     pub fn build(
         self,

@@ -46,6 +46,10 @@ impl LocalNavigationConfigurationBuilder {
         self.target_sheet_id = input;
         self
     }
+    /// <p>The sheet that is targeted for navigation in the same analysis.</p>
+    pub fn get_target_sheet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_sheet_id
+    }
     /// Consumes the builder and constructs a [`LocalNavigationConfiguration`](crate::types::LocalNavigationConfiguration).
     pub fn build(self) -> crate::types::LocalNavigationConfiguration {
         crate::types::LocalNavigationConfiguration {

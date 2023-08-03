@@ -72,6 +72,10 @@ impl HttpsNotificationConfigurationBuilder {
         self.endpoint = input;
         self
     }
+    /// <p>The subscription endpoint in Security Lake. If you prefer notification with an HTTPs endpoint, populate this field.</p>
+    pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint
+    }
     /// <p>The key name for the notification subscription.</p>
     pub fn authorization_api_key_name(
         mut self,
@@ -87,6 +91,10 @@ impl HttpsNotificationConfigurationBuilder {
     ) -> Self {
         self.authorization_api_key_name = input;
         self
+    }
+    /// <p>The key name for the notification subscription.</p>
+    pub fn get_authorization_api_key_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authorization_api_key_name
     }
     /// <p>The key value for the notification subscription.</p>
     pub fn authorization_api_key_value(
@@ -104,6 +112,10 @@ impl HttpsNotificationConfigurationBuilder {
         self.authorization_api_key_value = input;
         self
     }
+    /// <p>The key value for the notification subscription.</p>
+    pub fn get_authorization_api_key_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authorization_api_key_value
+    }
     /// <p>The HTTPS method used for the notification subscription.</p>
     pub fn http_method(mut self, input: crate::types::HttpMethod) -> Self {
         self.http_method = ::std::option::Option::Some(input);
@@ -116,6 +128,10 @@ impl HttpsNotificationConfigurationBuilder {
     ) -> Self {
         self.http_method = input;
         self
+    }
+    /// <p>The HTTPS method used for the notification subscription.</p>
+    pub fn get_http_method(&self) -> &::std::option::Option<crate::types::HttpMethod> {
+        &self.http_method
     }
     /// <p>The Amazon Resource Name (ARN) of the EventBridge API destinations IAM role that you created. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com//security-lake/latest/userguide/subscriber-data-access.html">Managing data access</a> and <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/security-iam-awsmanpol.html">Amazon Web Services Managed Policies</a> in the <i>Amazon Security Lake User Guide</i>.</p>
     pub fn target_role_arn(
@@ -132,6 +148,10 @@ impl HttpsNotificationConfigurationBuilder {
     ) -> Self {
         self.target_role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the EventBridge API destinations IAM role that you created. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com//security-lake/latest/userguide/subscriber-data-access.html">Managing data access</a> and <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/security-iam-awsmanpol.html">Amazon Web Services Managed Policies</a> in the <i>Amazon Security Lake User Guide</i>.</p>
+    pub fn get_target_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_role_arn
     }
     /// Consumes the builder and constructs a [`HttpsNotificationConfiguration`](crate::types::HttpsNotificationConfiguration).
     pub fn build(self) -> crate::types::HttpsNotificationConfiguration {

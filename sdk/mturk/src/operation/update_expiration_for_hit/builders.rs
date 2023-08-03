@@ -37,6 +37,13 @@ impl UpdateExpirationForHITFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateExpirationForHIT as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_expiration_for_hit::builders::UpdateExpirationForHitInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl UpdateExpirationForHITFluentBuilder {
         self.inner = self.inner.set_hit_id(input);
         self
     }
+    /// <p> The HIT to update. </p>
+    pub fn get_hit_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hit_id()
+    }
     /// <p> The date and time at which you want the HIT to expire </p>
     pub fn expire_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.expire_at(input);
@@ -139,5 +150,9 @@ impl UpdateExpirationForHITFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_expire_at(input);
         self
+    }
+    /// <p> The date and time at which you want the HIT to expire </p>
+    pub fn get_expire_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_expire_at()
     }
 }

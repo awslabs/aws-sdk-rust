@@ -46,6 +46,10 @@ impl GetEndpointAccessInputBuilder {
         self.endpoint_name = input;
         self
     }
+    /// <p>The name of the VPC endpoint to return information for.</p>
+    pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_name
+    }
     /// Consumes the builder and constructs a [`GetEndpointAccessInput`](crate::operation::get_endpoint_access::GetEndpointAccessInput).
     pub fn build(
         self,

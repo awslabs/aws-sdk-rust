@@ -41,6 +41,10 @@ impl CancelWorldGenerationJobInputBuilder {
         self.job = input;
         self
     }
+    /// <p>The Amazon Resource Name (arn) of the world generator job to cancel.</p>
+    pub fn get_job(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job
+    }
     /// Consumes the builder and constructs a [`CancelWorldGenerationJobInput`](crate::operation::cancel_world_generation_job::CancelWorldGenerationJobInput).
     pub fn build(
         self,

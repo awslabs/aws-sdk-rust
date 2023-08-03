@@ -57,6 +57,11 @@ impl SetTypeConfigurationOutputBuilder {
         self.configuration_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the configuration data, in this account and Region.</p>
+    /// <p>Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and <code>TypeName</code>.</p>
+    pub fn get_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -56,6 +56,10 @@ impl DelegationSetBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID that Amazon Route 53 assigns to a reusable delegation set.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The value that you specified for <code>CallerReference</code> when you created the reusable delegation set.</p>
     pub fn caller_reference(
         mut self,
@@ -71,6 +75,10 @@ impl DelegationSetBuilder {
     ) -> Self {
         self.caller_reference = input;
         self
+    }
+    /// <p>The value that you specified for <code>CallerReference</code> when you created the reusable delegation set.</p>
+    pub fn get_caller_reference(&self) -> &::std::option::Option<::std::string::String> {
+        &self.caller_reference
     }
     /// Appends an item to `name_servers`.
     ///
@@ -90,6 +98,12 @@ impl DelegationSetBuilder {
     ) -> Self {
         self.name_servers = input;
         self
+    }
+    /// <p>A complex type that contains a list of the authoritative name servers for a hosted zone or for a reusable delegation set.</p>
+    pub fn get_name_servers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.name_servers
     }
     /// Consumes the builder and constructs a [`DelegationSet`](crate::types::DelegationSet).
     pub fn build(self) -> crate::types::DelegationSet {

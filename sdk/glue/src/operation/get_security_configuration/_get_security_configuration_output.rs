@@ -53,6 +53,12 @@ impl GetSecurityConfigurationOutputBuilder {
         self.security_configuration = input;
         self
     }
+    /// <p>The requested security configuration.</p>
+    pub fn get_security_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SecurityConfiguration> {
+        &self.security_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

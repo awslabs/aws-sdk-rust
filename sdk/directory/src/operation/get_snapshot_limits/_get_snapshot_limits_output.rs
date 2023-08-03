@@ -51,6 +51,10 @@ impl GetSnapshotLimitsOutputBuilder {
         self.snapshot_limits = input;
         self
     }
+    /// <p>A <code>SnapshotLimits</code> object that contains the manual snapshot limits for the specified directory.</p>
+    pub fn get_snapshot_limits(&self) -> &::std::option::Option<crate::types::SnapshotLimits> {
+        &self.snapshot_limits
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

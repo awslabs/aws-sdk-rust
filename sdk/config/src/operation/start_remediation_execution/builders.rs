@@ -37,6 +37,10 @@ impl StartRemediationExecutionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartRemediationExecution as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_remediation_execution::builders::StartRemediationExecutionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl StartRemediationExecutionFluentBuilder {
         self.inner = self.inner.set_config_rule_name(input);
         self
     }
+    /// <p>The list of names of Config rules that you want to run remediation execution for.</p>
+    pub fn get_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_config_rule_name()
+    }
     /// Appends an item to `ResourceKeys`.
     ///
     /// To override the contents of this collection use [`set_resource_keys`](Self::set_resource_keys).
@@ -149,5 +157,11 @@ impl StartRemediationExecutionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_keys(input);
         self
+    }
+    /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID. </p>
+    pub fn get_resource_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>> {
+        self.inner.get_resource_keys()
     }
 }

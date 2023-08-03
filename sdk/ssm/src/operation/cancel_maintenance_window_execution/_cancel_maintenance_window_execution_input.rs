@@ -45,6 +45,10 @@ impl CancelMaintenanceWindowExecutionInputBuilder {
         self.window_execution_id = input;
         self
     }
+    /// <p>The ID of the maintenance window execution to stop.</p>
+    pub fn get_window_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.window_execution_id
+    }
     /// Consumes the builder and constructs a [`CancelMaintenanceWindowExecutionInput`](crate::operation::cancel_maintenance_window_execution::CancelMaintenanceWindowExecutionInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::cancel_maintenance_window_execution::CancelMaintenanceWindowExecutionInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

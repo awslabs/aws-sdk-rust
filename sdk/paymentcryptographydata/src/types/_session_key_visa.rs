@@ -60,6 +60,10 @@ impl SessionKeyVisaBuilder {
         self.primary_account_number = input;
         self
     }
+    /// <p>The Primary Account Number (PAN) of the cardholder. A PAN is a unique identifier for a payment credit or debit card and associates the card to a specific account holder.</p>
+    pub fn get_primary_account_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.primary_account_number
+    }
     /// <p>A number that identifies and differentiates payment cards with the same Primary Account Number (PAN).</p>
     pub fn pan_sequence_number(
         mut self,
@@ -75,6 +79,10 @@ impl SessionKeyVisaBuilder {
     ) -> Self {
         self.pan_sequence_number = input;
         self
+    }
+    /// <p>A number that identifies and differentiates payment cards with the same Primary Account Number (PAN).</p>
+    pub fn get_pan_sequence_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pan_sequence_number
     }
     /// Consumes the builder and constructs a [`SessionKeyVisa`](crate::types::SessionKeyVisa).
     pub fn build(self) -> crate::types::SessionKeyVisa {

@@ -106,6 +106,14 @@ impl EventDestinationBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the event destination. The name must:</p>
+    /// <ul>
+    /// <li> <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+    /// <li> <p>Contain less than 64 characters.</p> </li>
+    /// </ul>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Sets whether Amazon SES publishes events to this destination when you send an email with the associated configuration set. Set to <code>true</code> to enable publishing to this destination; set to <code>false</code> to prevent publishing to this destination. The default value is <code>false</code>.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -115,6 +123,10 @@ impl EventDestinationBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>Sets whether Amazon SES publishes events to this destination when you send an email with the associated configuration set. Set to <code>true</code> to enable publishing to this destination; set to <code>false</code> to prevent publishing to this destination. The default value is <code>false</code>.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// Appends an item to `matching_event_types`.
     ///
@@ -135,6 +147,12 @@ impl EventDestinationBuilder {
         self.matching_event_types = input;
         self
     }
+    /// <p>The type of email sending events to publish to the event destination.</p>
+    pub fn get_matching_event_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventType>> {
+        &self.matching_event_types
+    }
     /// <p>An object that contains the delivery stream ARN and the IAM role ARN associated with an Amazon Kinesis Firehose event destination.</p>
     pub fn kinesis_firehose_destination(
         mut self,
@@ -151,6 +169,12 @@ impl EventDestinationBuilder {
         self.kinesis_firehose_destination = input;
         self
     }
+    /// <p>An object that contains the delivery stream ARN and the IAM role ARN associated with an Amazon Kinesis Firehose event destination.</p>
+    pub fn get_kinesis_firehose_destination(
+        &self,
+    ) -> &::std::option::Option<crate::types::KinesisFirehoseDestination> {
+        &self.kinesis_firehose_destination
+    }
     /// <p>An object that contains the names, default values, and sources of the dimensions associated with an Amazon CloudWatch event destination.</p>
     pub fn cloud_watch_destination(mut self, input: crate::types::CloudWatchDestination) -> Self {
         self.cloud_watch_destination = ::std::option::Option::Some(input);
@@ -164,6 +188,12 @@ impl EventDestinationBuilder {
         self.cloud_watch_destination = input;
         self
     }
+    /// <p>An object that contains the names, default values, and sources of the dimensions associated with an Amazon CloudWatch event destination.</p>
+    pub fn get_cloud_watch_destination(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudWatchDestination> {
+        &self.cloud_watch_destination
+    }
     /// <p>An object that contains the topic ARN associated with an Amazon Simple Notification Service (Amazon SNS) event destination.</p>
     pub fn sns_destination(mut self, input: crate::types::SnsDestination) -> Self {
         self.sns_destination = ::std::option::Option::Some(input);
@@ -176,6 +206,10 @@ impl EventDestinationBuilder {
     ) -> Self {
         self.sns_destination = input;
         self
+    }
+    /// <p>An object that contains the topic ARN associated with an Amazon Simple Notification Service (Amazon SNS) event destination.</p>
+    pub fn get_sns_destination(&self) -> &::std::option::Option<crate::types::SnsDestination> {
+        &self.sns_destination
     }
     /// Consumes the builder and constructs a [`EventDestination`](crate::types::EventDestination).
     pub fn build(self) -> crate::types::EventDestination {

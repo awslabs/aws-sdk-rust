@@ -89,6 +89,10 @@ impl CreateProfileInputBuilder {
         self.profile_name = input;
         self
     }
+    /// <p>Name of the profile.</p>
+    pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_name
+    }
     /// <p>The profile description.</p>
     pub fn profile_description(
         mut self,
@@ -104,6 +108,10 @@ impl CreateProfileInputBuilder {
     ) -> Self {
         self.profile_description = input;
         self
+    }
+    /// <p>The profile description.</p>
+    pub fn get_profile_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_description
     }
     /// Appends an item to `profile_questions`.
     ///
@@ -123,6 +131,12 @@ impl CreateProfileInputBuilder {
     ) -> Self {
         self.profile_questions = input;
         self
+    }
+    /// <p>The profile questions.</p>
+    pub fn get_profile_questions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfileQuestionUpdate>> {
+        &self.profile_questions
     }
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
@@ -145,6 +159,13 @@ impl CreateProfileInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
+    /// </important>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -170,6 +191,14 @@ impl CreateProfileInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags assigned to the profile.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateProfileInput`](crate::operation::create_profile::CreateProfileInput).
     pub fn build(

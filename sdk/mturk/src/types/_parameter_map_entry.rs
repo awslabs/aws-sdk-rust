@@ -48,6 +48,10 @@ impl ParameterMapEntryBuilder {
         self.key = input;
         self
     }
+    /// <p> The QuestionID from the HIT that is used to identify which question requires Mechanical Turk to score as part of the ScoreMyKnownAnswers/2011-09-01 Review Policy. </p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -66,6 +70,10 @@ impl ParameterMapEntryBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p> The list of answers to the question specified in the MapEntry Key element. The Worker must match all values in order for the answer to be scored correctly. </p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`ParameterMapEntry`](crate::types::ParameterMapEntry).
     pub fn build(self) -> crate::types::ParameterMapEntry {

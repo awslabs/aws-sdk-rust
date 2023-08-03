@@ -49,6 +49,10 @@ impl AssociateVPCWithHostedZoneFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateVPCWithHostedZone as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_vpc_with_hosted_zone::builders::AssociateVpcWithHostedZoneInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -147,6 +151,11 @@ impl AssociateVPCWithHostedZoneFluentBuilder {
         self.inner = self.inner.set_hosted_zone_id(input);
         self
     }
+    /// <p>The ID of the private hosted zone that you want to associate an Amazon VPC with.</p>
+    /// <p>Note that you can't associate a VPC with a hosted zone that doesn't have an existing VPC association.</p>
+    pub fn get_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hosted_zone_id()
+    }
     /// <p>A complex type that contains information about the VPC that you want to associate with a private hosted zone.</p>
     pub fn vpc(mut self, input: crate::types::Vpc) -> Self {
         self.inner = self.inner.vpc(input);
@@ -157,6 +166,10 @@ impl AssociateVPCWithHostedZoneFluentBuilder {
         self.inner = self.inner.set_vpc(input);
         self
     }
+    /// <p>A complex type that contains information about the VPC that you want to associate with a private hosted zone.</p>
+    pub fn get_vpc(&self) -> &::std::option::Option<crate::types::Vpc> {
+        self.inner.get_vpc()
+    }
     /// <p> <i>Optional:</i> A comment about the association request.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.comment(input.into());
@@ -166,5 +179,9 @@ impl AssociateVPCWithHostedZoneFluentBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_comment(input);
         self
+    }
+    /// <p> <i>Optional:</i> A comment about the association request.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_comment()
     }
 }

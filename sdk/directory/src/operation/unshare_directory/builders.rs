@@ -36,6 +36,12 @@ impl UnshareDirectoryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UnshareDirectory as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::unshare_directory::builders::UnshareDirectoryInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UnshareDirectoryFluentBuilder {
         self.inner = self.inner.set_directory_id(input);
         self
     }
+    /// <p>The identifier of the Managed Microsoft AD directory that you want to stop sharing.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_id()
+    }
     /// <p>Identifier for the directory consumer account with whom the directory has to be unshared.</p>
     pub fn unshare_target(mut self, input: crate::types::UnshareTarget) -> Self {
         self.inner = self.inner.unshare_target(input);
@@ -138,5 +148,9 @@ impl UnshareDirectoryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_unshare_target(input);
         self
+    }
+    /// <p>Identifier for the directory consumer account with whom the directory has to be unshared.</p>
+    pub fn get_unshare_target(&self) -> &::std::option::Option<crate::types::UnshareTarget> {
+        self.inner.get_unshare_target()
     }
 }

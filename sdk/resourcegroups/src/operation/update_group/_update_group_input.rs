@@ -59,6 +59,11 @@ impl UpdateGroupInputBuilder {
         self.group_name = input;
         self
     }
+    /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
+    #[deprecated(note = "This field is deprecated, use Group instead.")]
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
+    }
     /// <p>The name or the ARN of the resource group to modify.</p>
     pub fn group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group = ::std::option::Option::Some(input.into());
@@ -69,6 +74,10 @@ impl UpdateGroupInputBuilder {
         self.group = input;
         self
     }
+    /// <p>The name or the ARN of the resource group to modify.</p>
+    pub fn get_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group
+    }
     /// <p>The new description that you want to update the resource group with. Descriptions can contain letters, numbers, hyphens, underscores, periods, and spaces.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -78,6 +87,10 @@ impl UpdateGroupInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The new description that you want to update the resource group with. Descriptions can contain letters, numbers, hyphens, underscores, periods, and spaces.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`UpdateGroupInput`](crate::operation::update_group::UpdateGroupInput).
     pub fn build(

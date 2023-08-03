@@ -54,6 +54,10 @@ impl DevEnvironmentAccessDetailsBuilder {
         self.stream_url = input;
         self
     }
+    /// <p>The URL used to send commands to and from the Dev Environment.</p>
+    pub fn get_stream_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_url
+    }
     /// <p>An encrypted token value that contains session and caller information used to authenticate the connection.</p>
     pub fn token_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token_value = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl DevEnvironmentAccessDetailsBuilder {
     pub fn set_token_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.token_value = input;
         self
+    }
+    /// <p>An encrypted token value that contains session and caller information used to authenticate the connection.</p>
+    pub fn get_token_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token_value
     }
     /// Consumes the builder and constructs a [`DevEnvironmentAccessDetails`](crate::types::DevEnvironmentAccessDetails).
     pub fn build(self) -> crate::types::DevEnvironmentAccessDetails {

@@ -55,6 +55,10 @@ impl GetRegionsOutputBuilder {
         self.regions = input;
         self
     }
+    /// <p>An array of key-value pairs containing information about your get regions request.</p>
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Region>> {
+        &self.regions
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

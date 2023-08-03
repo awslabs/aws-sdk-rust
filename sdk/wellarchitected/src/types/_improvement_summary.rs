@@ -90,6 +90,10 @@ impl ImprovementSummaryBuilder {
         self.question_id = input;
         self
     }
+    /// <p>The ID of the question.</p>
+    pub fn get_question_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.question_id
+    }
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
     pub fn pillar_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -101,6 +105,11 @@ impl ImprovementSummaryBuilder {
     pub fn set_pillar_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pillar_id = input;
         self
+    }
+    /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+    /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+    pub fn get_pillar_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pillar_id
     }
     /// <p>The title of the question.</p>
     pub fn question_title(
@@ -118,6 +127,10 @@ impl ImprovementSummaryBuilder {
         self.question_title = input;
         self
     }
+    /// <p>The title of the question.</p>
+    pub fn get_question_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.question_title
+    }
     /// <p>The risk for a given workload, lens review, pillar, or question.</p>
     pub fn risk(mut self, input: crate::types::Risk) -> Self {
         self.risk = ::std::option::Option::Some(input);
@@ -127,6 +140,10 @@ impl ImprovementSummaryBuilder {
     pub fn set_risk(mut self, input: ::std::option::Option<crate::types::Risk>) -> Self {
         self.risk = input;
         self
+    }
+    /// <p>The risk for a given workload, lens review, pillar, or question.</p>
+    pub fn get_risk(&self) -> &::std::option::Option<crate::types::Risk> {
+        &self.risk
     }
     /// <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p>
     /// <p>This value is only available if the question has been answered.</p>
@@ -148,6 +165,12 @@ impl ImprovementSummaryBuilder {
         self.improvement_plan_url = input;
         self
     }
+    /// <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p>
+    /// <p>This value is only available if the question has been answered.</p>
+    /// <p>This value does not apply to custom lenses.</p>
+    pub fn get_improvement_plan_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.improvement_plan_url
+    }
     /// Appends an item to `improvement_plans`.
     ///
     /// To override the contents of this collection use [`set_improvement_plans`](Self::set_improvement_plans).
@@ -166,6 +189,12 @@ impl ImprovementSummaryBuilder {
     ) -> Self {
         self.improvement_plans = input;
         self
+    }
+    /// <p>The improvement plan details.</p>
+    pub fn get_improvement_plans(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChoiceImprovementPlan>> {
+        &self.improvement_plans
     }
     /// Consumes the builder and constructs a [`ImprovementSummary`](crate::types::ImprovementSummary).
     pub fn build(self) -> crate::types::ImprovementSummary {

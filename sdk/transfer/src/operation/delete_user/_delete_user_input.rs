@@ -47,6 +47,10 @@ impl DeleteUserInputBuilder {
         self.server_id = input;
         self
     }
+    /// <p>A system-assigned unique identifier for a server instance that has the user assigned to it.</p>
+    pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_id
+    }
     /// <p>A unique string that identifies a user that is being deleted from a server.</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DeleteUserInputBuilder {
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_name = input;
         self
+    }
+    /// <p>A unique string that identifies a user that is being deleted from a server.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
     }
     /// Consumes the builder and constructs a [`DeleteUserInput`](crate::operation::delete_user::DeleteUserInput).
     pub fn build(

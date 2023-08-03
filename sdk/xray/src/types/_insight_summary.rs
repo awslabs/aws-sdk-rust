@@ -148,6 +148,10 @@ impl InsightSummaryBuilder {
         self.insight_id = input;
         self
     }
+    /// <p>The insights unique identifier. </p>
+    pub fn get_insight_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.insight_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the group that the insight belongs to.</p>
     pub fn group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_arn = ::std::option::Option::Some(input.into());
@@ -158,6 +162,10 @@ impl InsightSummaryBuilder {
         self.group_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the group that the insight belongs to.</p>
+    pub fn get_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_arn
+    }
     /// <p>The name of the group that the insight belongs to.</p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
@@ -167,6 +175,10 @@ impl InsightSummaryBuilder {
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_name = input;
         self
+    }
+    /// <p>The name of the group that the insight belongs to.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
     }
     /// <p></p>
     pub fn root_cause_service_id(mut self, input: crate::types::ServiceId) -> Self {
@@ -180,6 +192,10 @@ impl InsightSummaryBuilder {
     ) -> Self {
         self.root_cause_service_id = input;
         self
+    }
+    /// <p></p>
+    pub fn get_root_cause_service_id(&self) -> &::std::option::Option<crate::types::ServiceId> {
+        &self.root_cause_service_id
     }
     /// Appends an item to `categories`.
     ///
@@ -200,6 +216,12 @@ impl InsightSummaryBuilder {
         self.categories = input;
         self
     }
+    /// <p> Categories The categories that label and describe the type of insight.</p>
+    pub fn get_categories(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightCategory>> {
+        &self.categories
+    }
     /// <p>The current state of the insight.</p>
     pub fn state(mut self, input: crate::types::InsightState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -209,6 +231,10 @@ impl InsightSummaryBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::InsightState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The current state of the insight.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::InsightState> {
+        &self.state
     }
     /// <p>The time, in Unix seconds, at which the insight began.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -223,6 +249,10 @@ impl InsightSummaryBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The time, in Unix seconds, at which the insight began.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The time, in Unix seconds, at which the insight ended.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -236,6 +266,10 @@ impl InsightSummaryBuilder {
         self.end_time = input;
         self
     }
+    /// <p>The time, in Unix seconds, at which the insight ended.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>A brief description of the insight.</p>
     pub fn summary(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.summary = ::std::option::Option::Some(input.into());
@@ -245,6 +279,10 @@ impl InsightSummaryBuilder {
     pub fn set_summary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.summary = input;
         self
+    }
+    /// <p>A brief description of the insight.</p>
+    pub fn get_summary(&self) -> &::std::option::Option<::std::string::String> {
+        &self.summary
     }
     /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay. </p>
     pub fn client_request_impact_statistics(
@@ -262,6 +300,12 @@ impl InsightSummaryBuilder {
         self.client_request_impact_statistics = input;
         self
     }
+    /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay. </p>
+    pub fn get_client_request_impact_statistics(
+        &self,
+    ) -> &::std::option::Option<crate::types::RequestImpactStatistics> {
+        &self.client_request_impact_statistics
+    }
     /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay. </p>
     pub fn root_cause_service_request_impact_statistics(
         mut self,
@@ -277,6 +321,12 @@ impl InsightSummaryBuilder {
     ) -> Self {
         self.root_cause_service_request_impact_statistics = input;
         self
+    }
+    /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay. </p>
+    pub fn get_root_cause_service_request_impact_statistics(
+        &self,
+    ) -> &::std::option::Option<crate::types::RequestImpactStatistics> {
+        &self.root_cause_service_request_impact_statistics
     }
     /// Appends an item to `top_anomalous_services`.
     ///
@@ -297,6 +347,12 @@ impl InsightSummaryBuilder {
         self.top_anomalous_services = input;
         self
     }
+    /// <p>The service within the insight that is most impacted by the incident.</p>
+    pub fn get_top_anomalous_services(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnomalousService>> {
+        &self.top_anomalous_services
+    }
     /// <p>The time, in Unix seconds, that the insight was last updated.</p>
     pub fn last_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_update_time = ::std::option::Option::Some(input);
@@ -309,6 +365,10 @@ impl InsightSummaryBuilder {
     ) -> Self {
         self.last_update_time = input;
         self
+    }
+    /// <p>The time, in Unix seconds, that the insight was last updated.</p>
+    pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_update_time
     }
     /// Consumes the builder and constructs a [`InsightSummary`](crate::types::InsightSummary).
     pub fn build(self) -> crate::types::InsightSummary {

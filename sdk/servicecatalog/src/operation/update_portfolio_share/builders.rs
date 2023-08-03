@@ -42,6 +42,12 @@ impl UpdatePortfolioShareFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdatePortfolioShare as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_portfolio_share::builders::UpdatePortfolioShareInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -146,6 +152,14 @@ impl UpdatePortfolioShareFluentBuilder {
         self.inner = self.inner.set_accept_language(input);
         self
     }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_accept_language()
+    }
     /// <p>The unique identifier of the portfolio for which the share will be updated.</p>
     pub fn portfolio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.portfolio_id(input.into());
@@ -156,6 +170,10 @@ impl UpdatePortfolioShareFluentBuilder {
         self.inner = self.inner.set_portfolio_id(input);
         self
     }
+    /// <p>The unique identifier of the portfolio for which the share will be updated.</p>
+    pub fn get_portfolio_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_portfolio_id()
+    }
     /// <p>The Amazon Web Services account Id of the recipient account. This field is required when updating an external account to account type share.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
@@ -165,6 +183,10 @@ impl UpdatePortfolioShareFluentBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
+    }
+    /// <p>The Amazon Web Services account Id of the recipient account. This field is required when updating an external account to account type share.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
     }
     /// <p>Information about the organization node.</p>
     pub fn organization_node(mut self, input: crate::types::OrganizationNode) -> Self {
@@ -179,6 +201,10 @@ impl UpdatePortfolioShareFluentBuilder {
         self.inner = self.inner.set_organization_node(input);
         self
     }
+    /// <p>Information about the organization node.</p>
+    pub fn get_organization_node(&self) -> &::std::option::Option<crate::types::OrganizationNode> {
+        self.inner.get_organization_node()
+    }
     /// <p>Enables or disables <code>TagOptions</code> sharing for the portfolio share. If this field is not provided, the current state of TagOptions sharing on the portfolio share will not be modified.</p>
     pub fn share_tag_options(mut self, input: bool) -> Self {
         self.inner = self.inner.share_tag_options(input);
@@ -189,6 +215,10 @@ impl UpdatePortfolioShareFluentBuilder {
         self.inner = self.inner.set_share_tag_options(input);
         self
     }
+    /// <p>Enables or disables <code>TagOptions</code> sharing for the portfolio share. If this field is not provided, the current state of TagOptions sharing on the portfolio share will not be modified.</p>
+    pub fn get_share_tag_options(&self) -> &::std::option::Option<bool> {
+        self.inner.get_share_tag_options()
+    }
     /// <p>A flag to enables or disables <code>Principals</code> sharing in the portfolio. If this field is not provided, the current state of the <code>Principals</code> sharing on the portfolio share will not be modified. </p>
     pub fn share_principals(mut self, input: bool) -> Self {
         self.inner = self.inner.share_principals(input);
@@ -198,5 +228,9 @@ impl UpdatePortfolioShareFluentBuilder {
     pub fn set_share_principals(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_share_principals(input);
         self
+    }
+    /// <p>A flag to enables or disables <code>Principals</code> sharing in the portfolio. If this field is not provided, the current state of the <code>Principals</code> sharing on the portfolio share will not be modified. </p>
+    pub fn get_share_principals(&self) -> &::std::option::Option<bool> {
+        self.inner.get_share_principals()
     }
 }

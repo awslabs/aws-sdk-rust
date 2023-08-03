@@ -127,6 +127,10 @@ impl UpdateJobInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The job ID of the job that you want to update, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this job. To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>Identity and Access Management (IAM) API action.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -136,6 +140,10 @@ impl UpdateJobInputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this job. To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>Identity and Access Management (IAM) API action.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The new or updated <code>Notification</code> object.</p>
     pub fn notification(mut self, input: crate::types::Notification) -> Self {
@@ -150,6 +158,10 @@ impl UpdateJobInputBuilder {
         self.notification = input;
         self
     }
+    /// <p>The new or updated <code>Notification</code> object.</p>
+    pub fn get_notification(&self) -> &::std::option::Option<crate::types::Notification> {
+        &self.notification
+    }
     /// <p>The updated <code>JobResource</code> object, or the updated <code>JobResource</code> object. </p>
     pub fn resources(mut self, input: crate::types::JobResource) -> Self {
         self.resources = ::std::option::Option::Some(input);
@@ -162,6 +174,10 @@ impl UpdateJobInputBuilder {
     ) -> Self {
         self.resources = input;
         self
+    }
+    /// <p>The updated <code>JobResource</code> object, or the updated <code>JobResource</code> object. </p>
+    pub fn get_resources(&self) -> &::std::option::Option<crate::types::JobResource> {
+        &self.resources
     }
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
     pub fn on_device_service_configuration(
@@ -179,6 +195,12 @@ impl UpdateJobInputBuilder {
         self.on_device_service_configuration = input;
         self
     }
+    /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
+    pub fn get_on_device_service_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::OnDeviceServiceConfiguration> {
+        &self.on_device_service_configuration
+    }
     /// <p>The ID of the updated <code>Address</code> object.</p>
     pub fn address_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address_id = ::std::option::Option::Some(input.into());
@@ -188,6 +210,10 @@ impl UpdateJobInputBuilder {
     pub fn set_address_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.address_id = input;
         self
+    }
+    /// <p>The ID of the updated <code>Address</code> object.</p>
+    pub fn get_address_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address_id
     }
     /// <p>The updated shipping option value of this job's <code>ShippingDetails</code> object.</p>
     pub fn shipping_option(mut self, input: crate::types::ShippingOption) -> Self {
@@ -202,6 +228,10 @@ impl UpdateJobInputBuilder {
         self.shipping_option = input;
         self
     }
+    /// <p>The updated shipping option value of this job's <code>ShippingDetails</code> object.</p>
+    pub fn get_shipping_option(&self) -> &::std::option::Option<crate::types::ShippingOption> {
+        &self.shipping_option
+    }
     /// <p>The updated description of this job's <code>JobMetadata</code> object.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -211,6 +241,10 @@ impl UpdateJobInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The updated description of this job's <code>JobMetadata</code> object.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The updated <code>SnowballCapacityPreference</code> of this job's <code>JobMetadata</code> object. The 50 TB Snowballs are only available in the US regions.</p>
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
@@ -226,6 +260,13 @@ impl UpdateJobInputBuilder {
     ) -> Self {
         self.snowball_capacity_preference = input;
         self
+    }
+    /// <p>The updated <code>SnowballCapacityPreference</code> of this job's <code>JobMetadata</code> object. The 50 TB Snowballs are only available in the US regions.</p>
+    /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+    pub fn get_snowball_capacity_preference(
+        &self,
+    ) -> &::std::option::Option<crate::types::SnowballCapacity> {
+        &self.snowball_capacity_preference
     }
     /// <p>The updated ID for the forwarding address for a job. This field is not supported in most regions.</p>
     pub fn forwarding_address_id(
@@ -243,6 +284,10 @@ impl UpdateJobInputBuilder {
         self.forwarding_address_id = input;
         self
     }
+    /// <p>The updated ID for the forwarding address for a job. This field is not supported in most regions.</p>
+    pub fn get_forwarding_address_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.forwarding_address_id
+    }
     /// <p>Information identifying the person picking up the device.</p>
     pub fn pickup_details(mut self, input: crate::types::PickupDetails) -> Self {
         self.pickup_details = ::std::option::Option::Some(input);
@@ -255,6 +300,10 @@ impl UpdateJobInputBuilder {
     ) -> Self {
         self.pickup_details = input;
         self
+    }
+    /// <p>Information identifying the person picking up the device.</p>
+    pub fn get_pickup_details(&self) -> &::std::option::Option<crate::types::PickupDetails> {
+        &self.pickup_details
     }
     /// Consumes the builder and constructs a [`UpdateJobInput`](crate::operation::update_job::UpdateJobInput).
     pub fn build(

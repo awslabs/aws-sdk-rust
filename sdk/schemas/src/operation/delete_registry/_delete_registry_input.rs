@@ -45,6 +45,10 @@ impl DeleteRegistryInputBuilder {
         self.registry_name = input;
         self
     }
+    /// <p>The name of the registry.</p>
+    pub fn get_registry_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_name
+    }
     /// Consumes the builder and constructs a [`DeleteRegistryInput`](crate::operation::delete_registry::DeleteRegistryInput).
     pub fn build(
         self,

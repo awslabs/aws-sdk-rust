@@ -69,6 +69,10 @@ impl UnassignPrivateNatGatewayAddressInputBuilder {
         self.nat_gateway_id = input;
         self
     }
+    /// <p>The ID of the NAT gateway.</p>
+    pub fn get_nat_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nat_gateway_id
+    }
     /// Appends an item to `private_ip_addresses`.
     ///
     /// To override the contents of this collection use [`set_private_ip_addresses`](Self::set_private_ip_addresses).
@@ -91,6 +95,12 @@ impl UnassignPrivateNatGatewayAddressInputBuilder {
         self.private_ip_addresses = input;
         self
     }
+    /// <p>The private IPv4 addresses you want to unassign.</p>
+    pub fn get_private_ip_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.private_ip_addresses
+    }
     /// <p>The maximum amount of time to wait (in seconds) before forcibly releasing the IP addresses if connections are still in progress. Default value is 350 seconds.</p>
     pub fn max_drain_duration_seconds(mut self, input: i32) -> Self {
         self.max_drain_duration_seconds = ::std::option::Option::Some(input);
@@ -101,6 +111,10 @@ impl UnassignPrivateNatGatewayAddressInputBuilder {
         self.max_drain_duration_seconds = input;
         self
     }
+    /// <p>The maximum amount of time to wait (in seconds) before forcibly releasing the IP addresses if connections are still in progress. Default value is 350 seconds.</p>
+    pub fn get_max_drain_duration_seconds(&self) -> &::std::option::Option<i32> {
+        &self.max_drain_duration_seconds
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -110,6 +124,10 @@ impl UnassignPrivateNatGatewayAddressInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`UnassignPrivateNatGatewayAddressInput`](crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressInput, ::aws_smithy_http::operation::error::BuildError>{

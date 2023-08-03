@@ -39,6 +39,10 @@ impl ListLexiconsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>An opaque pagination token returned from previous <code>ListLexicons</code> operation. If present, indicates where to continue the list of lexicons.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Consumes the builder and constructs a [`ListLexiconsInput`](crate::operation::list_lexicons::ListLexiconsInput).
     pub fn build(
         self,

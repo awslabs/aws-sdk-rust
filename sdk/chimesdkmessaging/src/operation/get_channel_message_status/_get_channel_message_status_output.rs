@@ -51,6 +51,12 @@ impl GetChannelMessageStatusOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The message status and details.</p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ChannelMessageStatusStructure> {
+        &self.status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

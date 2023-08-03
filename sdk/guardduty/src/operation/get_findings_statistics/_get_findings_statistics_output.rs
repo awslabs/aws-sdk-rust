@@ -51,6 +51,12 @@ impl GetFindingsStatisticsOutputBuilder {
         self.finding_statistics = input;
         self
     }
+    /// <p>The finding statistics object.</p>
+    pub fn get_finding_statistics(
+        &self,
+    ) -> &::std::option::Option<crate::types::FindingStatistics> {
+        &self.finding_statistics
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

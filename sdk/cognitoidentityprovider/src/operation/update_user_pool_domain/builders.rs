@@ -43,6 +43,13 @@ impl UpdateUserPoolDomainFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateUserPoolDomain as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_user_pool_domain::builders::UpdateUserPoolDomainInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +142,11 @@ impl UpdateUserPoolDomainFluentBuilder {
         self.inner = self.inner.set_domain(input);
         self
     }
+    /// <p>The domain name for the custom domain that hosts the sign-up and sign-in pages for your application. One example might be <code>auth.example.com</code>. </p>
+    /// <p>This string can include only lowercase letters, numbers, and hyphens. Don't use a hyphen for the first or last character. Use periods to separate subdomain names.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain()
+    }
     /// <p>The ID of the user pool that is associated with the custom domain whose certificate you're updating.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
@@ -144,6 +156,10 @@ impl UpdateUserPoolDomainFluentBuilder {
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_pool_id(input);
         self
+    }
+    /// <p>The ID of the user pool that is associated with the custom domain whose certificate you're updating.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_pool_id()
     }
     /// <p>The configuration for a custom domain that hosts the sign-up and sign-in pages for your application. Use this object to specify an SSL certificate that is managed by ACM.</p>
     pub fn custom_domain_config(mut self, input: crate::types::CustomDomainConfigType) -> Self {
@@ -157,5 +173,11 @@ impl UpdateUserPoolDomainFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_custom_domain_config(input);
         self
+    }
+    /// <p>The configuration for a custom domain that hosts the sign-up and sign-in pages for your application. Use this object to specify an SSL certificate that is managed by ACM.</p>
+    pub fn get_custom_domain_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomDomainConfigType> {
+        self.inner.get_custom_domain_config()
     }
 }

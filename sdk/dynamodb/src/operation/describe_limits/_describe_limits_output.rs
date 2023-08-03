@@ -74,6 +74,10 @@ impl DescribeLimitsOutputBuilder {
         self.account_max_read_capacity_units = input;
         self
     }
+    /// <p>The maximum total read capacity units that your account allows you to provision across all of your tables in this Region.</p>
+    pub fn get_account_max_read_capacity_units(&self) -> &::std::option::Option<i64> {
+        &self.account_max_read_capacity_units
+    }
     /// <p>The maximum total write capacity units that your account allows you to provision across all of your tables in this Region.</p>
     pub fn account_max_write_capacity_units(mut self, input: i64) -> Self {
         self.account_max_write_capacity_units = ::std::option::Option::Some(input);
@@ -87,6 +91,10 @@ impl DescribeLimitsOutputBuilder {
         self.account_max_write_capacity_units = input;
         self
     }
+    /// <p>The maximum total write capacity units that your account allows you to provision across all of your tables in this Region.</p>
+    pub fn get_account_max_write_capacity_units(&self) -> &::std::option::Option<i64> {
+        &self.account_max_write_capacity_units
+    }
     /// <p>The maximum read capacity units that your account allows you to provision for a new table that you are creating in this Region, including the read capacity units provisioned for its global secondary indexes (GSIs).</p>
     pub fn table_max_read_capacity_units(mut self, input: i64) -> Self {
         self.table_max_read_capacity_units = ::std::option::Option::Some(input);
@@ -97,6 +105,10 @@ impl DescribeLimitsOutputBuilder {
         self.table_max_read_capacity_units = input;
         self
     }
+    /// <p>The maximum read capacity units that your account allows you to provision for a new table that you are creating in this Region, including the read capacity units provisioned for its global secondary indexes (GSIs).</p>
+    pub fn get_table_max_read_capacity_units(&self) -> &::std::option::Option<i64> {
+        &self.table_max_read_capacity_units
+    }
     /// <p>The maximum write capacity units that your account allows you to provision for a new table that you are creating in this Region, including the write capacity units provisioned for its global secondary indexes (GSIs).</p>
     pub fn table_max_write_capacity_units(mut self, input: i64) -> Self {
         self.table_max_write_capacity_units = ::std::option::Option::Some(input);
@@ -106,6 +118,10 @@ impl DescribeLimitsOutputBuilder {
     pub fn set_table_max_write_capacity_units(mut self, input: ::std::option::Option<i64>) -> Self {
         self.table_max_write_capacity_units = input;
         self
+    }
+    /// <p>The maximum write capacity units that your account allows you to provision for a new table that you are creating in this Region, including the write capacity units provisioned for its global secondary indexes (GSIs).</p>
+    pub fn get_table_max_write_capacity_units(&self) -> &::std::option::Option<i64> {
+        &self.table_max_write_capacity_units
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

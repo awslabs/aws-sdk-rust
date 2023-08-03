@@ -55,6 +55,12 @@ impl CreateMembersOutputBuilder {
         self.unprocessed_accounts = input;
         self
     }
+    /// <p>The list of Amazon Web Services accounts that were not processed. For each account, the list includes the account ID and the email address.</p>
+    pub fn get_unprocessed_accounts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Result>> {
+        &self.unprocessed_accounts
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -41,6 +41,10 @@ impl GetLoggingConfigurationInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the web ACL for which you want to get the <code>LoggingConfiguration</code>.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Consumes the builder and constructs a [`GetLoggingConfigurationInput`](crate::operation::get_logging_configuration::GetLoggingConfigurationInput).
     pub fn build(
         self,

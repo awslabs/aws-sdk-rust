@@ -51,6 +51,12 @@ impl CreateReplaceRootVolumeTaskOutputBuilder {
         self.replace_root_volume_task = input;
         self
     }
+    /// <p>Information about the root volume replacement task.</p>
+    pub fn get_replace_root_volume_task(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReplaceRootVolumeTask> {
+        &self.replace_root_volume_task
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

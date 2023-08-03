@@ -76,6 +76,10 @@ impl CreateDirectoryOutputBuilder {
         self.directory_arn = input;
         self
     }
+    /// <p>The ARN that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_arn
+    }
     /// <p>The name of the <code>Directory</code>.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -85,6 +89,10 @@ impl CreateDirectoryOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the <code>Directory</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The root object node of the created directory.</p>
     pub fn object_identifier(
@@ -102,6 +110,10 @@ impl CreateDirectoryOutputBuilder {
         self.object_identifier = input;
         self
     }
+    /// <p>The root object node of the created directory.</p>
+    pub fn get_object_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_identifier
+    }
     /// <p>The ARN of the published schema in the <code>Directory</code>. Once a published schema is copied into the directory, it has its own ARN, which is referred to applied schema ARN. For more information, see <code>arns</code>.</p>
     pub fn applied_schema_arn(
         mut self,
@@ -117,6 +129,10 @@ impl CreateDirectoryOutputBuilder {
     ) -> Self {
         self.applied_schema_arn = input;
         self
+    }
+    /// <p>The ARN of the published schema in the <code>Directory</code>. Once a published schema is copied into the directory, it has its own ARN, which is referred to applied schema ARN. For more information, see <code>arns</code>.</p>
+    pub fn get_applied_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.applied_schema_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

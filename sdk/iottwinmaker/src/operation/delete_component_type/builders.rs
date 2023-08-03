@@ -36,6 +36,12 @@ impl DeleteComponentTypeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteComponentType as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_component_type::builders::DeleteComponentTypeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DeleteComponentTypeFluentBuilder {
         self.inner = self.inner.set_workspace_id(input);
         self
     }
+    /// <p>The ID of the workspace that contains the component type.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workspace_id()
+    }
     /// <p>The ID of the component type to delete.</p>
     pub fn component_type_id(
         mut self,
@@ -141,5 +151,9 @@ impl DeleteComponentTypeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_component_type_id(input);
         self
+    }
+    /// <p>The ID of the component type to delete.</p>
+    pub fn get_component_type_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_component_type_id()
     }
 }

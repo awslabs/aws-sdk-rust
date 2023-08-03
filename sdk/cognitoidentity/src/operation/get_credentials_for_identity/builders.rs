@@ -37,6 +37,10 @@ impl GetCredentialsForIdentityFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetCredentialsForIdentity as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_credentials_for_identity::builders::GetCredentialsForIdentityInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl GetCredentialsForIdentityFluentBuilder {
         self.inner = self.inner.set_identity_id(input);
         self
     }
+    /// <p>A unique identifier in the format REGION:GUID.</p>
+    pub fn get_identity_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_id()
+    }
     /// Adds a key-value pair to `Logins`.
     ///
     /// To override the contents of this collection use [`set_logins`](Self::set_logins).
@@ -154,6 +162,16 @@ impl GetCredentialsForIdentityFluentBuilder {
         self.inner = self.inner.set_logins(input);
         self
     }
+    /// <p>A set of optional name-value pairs that map provider names to provider tokens. The name-value pair will follow the syntax "provider_name": "provider_user_identifier".</p>
+    /// <p>Logins should not be specified when trying to get credentials for an unauthenticated identity.</p>
+    /// <p>The Logins parameter is required when using identities associated with external identity providers such as Facebook. For examples of <code>Logins</code> maps, see the code examples in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External Identity Providers</a> section of the Amazon Cognito Developer Guide.</p>
+    pub fn get_logins(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_logins()
+    }
     /// <p>The Amazon Resource Name (ARN) of the role to be assumed when multiple roles were received in the token from the identity provider. For example, a SAML-based identity provider. This parameter is optional for identity providers that do not support role customization.</p>
     pub fn custom_role_arn(
         mut self,
@@ -169,5 +187,9 @@ impl GetCredentialsForIdentityFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_custom_role_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the role to be assumed when multiple roles were received in the token from the identity provider. For example, a SAML-based identity provider. This parameter is optional for identity providers that do not support role customization.</p>
+    pub fn get_custom_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_custom_role_arn()
     }
 }

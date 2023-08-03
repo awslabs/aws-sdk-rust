@@ -49,6 +49,10 @@ impl CloudWatchLogsConfigurationBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Whether CloudWatch Logs is enabled for a layer.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Appends an item to `log_streams`.
     ///
     /// To override the contents of this collection use [`set_log_streams`](Self::set_log_streams).
@@ -67,6 +71,12 @@ impl CloudWatchLogsConfigurationBuilder {
     ) -> Self {
         self.log_streams = input;
         self
+    }
+    /// <p>A list of configuration options for CloudWatch Logs.</p>
+    pub fn get_log_streams(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLogsLogStream>> {
+        &self.log_streams
     }
     /// Consumes the builder and constructs a [`CloudWatchLogsConfiguration`](crate::types::CloudWatchLogsConfiguration).
     pub fn build(self) -> crate::types::CloudWatchLogsConfiguration {

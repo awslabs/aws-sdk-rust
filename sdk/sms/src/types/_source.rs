@@ -43,6 +43,10 @@ impl SourceBuilder {
         self.s3_location = input;
         self
     }
+    /// <p>Location of an Amazon S3 object.</p>
+    pub fn get_s3_location(&self) -> &::std::option::Option<crate::types::S3Location> {
+        &self.s3_location
+    }
     /// Consumes the builder and constructs a [`Source`](crate::types::Source).
     pub fn build(self) -> crate::types::Source {
         crate::types::Source {

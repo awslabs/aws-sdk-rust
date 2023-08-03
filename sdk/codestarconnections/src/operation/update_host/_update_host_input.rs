@@ -55,6 +55,10 @@ impl UpdateHostInputBuilder {
         self.host_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the host to be updated.</p>
+    pub fn get_host_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_arn
+    }
     /// <p>The URL or endpoint of the host to be updated.</p>
     pub fn provider_endpoint(
         mut self,
@@ -71,6 +75,10 @@ impl UpdateHostInputBuilder {
         self.provider_endpoint = input;
         self
     }
+    /// <p>The URL or endpoint of the host to be updated.</p>
+    pub fn get_provider_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provider_endpoint
+    }
     /// <p>The VPC configuration of the host to be updated. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.</p>
     pub fn vpc_configuration(mut self, input: crate::types::VpcConfiguration) -> Self {
         self.vpc_configuration = ::std::option::Option::Some(input);
@@ -83,6 +91,10 @@ impl UpdateHostInputBuilder {
     ) -> Self {
         self.vpc_configuration = input;
         self
+    }
+    /// <p>The VPC configuration of the host to be updated. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.</p>
+    pub fn get_vpc_configuration(&self) -> &::std::option::Option<crate::types::VpcConfiguration> {
+        &self.vpc_configuration
     }
     /// Consumes the builder and constructs a [`UpdateHostInput`](crate::operation::update_host::UpdateHostInput).
     pub fn build(

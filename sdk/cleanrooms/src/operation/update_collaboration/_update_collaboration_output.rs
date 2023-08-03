@@ -51,6 +51,10 @@ impl UpdateCollaborationOutputBuilder {
         self.collaboration = input;
         self
     }
+    /// <p>The entire collaboration that has been updated.</p>
+    pub fn get_collaboration(&self) -> &::std::option::Option<crate::types::Collaboration> {
+        &self.collaboration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

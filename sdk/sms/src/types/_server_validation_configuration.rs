@@ -79,6 +79,10 @@ impl ServerValidationConfigurationBuilder {
         self.server = input;
         self
     }
+    /// <p>Represents a server.</p>
+    pub fn get_server(&self) -> &::std::option::Option<crate::types::Server> {
+        &self.server
+    }
     /// <p>The ID of the validation.</p>
     pub fn validation_id(
         mut self,
@@ -95,6 +99,10 @@ impl ServerValidationConfigurationBuilder {
         self.validation_id = input;
         self
     }
+    /// <p>The ID of the validation.</p>
+    pub fn get_validation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.validation_id
+    }
     /// <p>The name of the configuration.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -104,6 +112,10 @@ impl ServerValidationConfigurationBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The validation strategy.</p>
     pub fn server_validation_strategy(
@@ -121,6 +133,12 @@ impl ServerValidationConfigurationBuilder {
         self.server_validation_strategy = input;
         self
     }
+    /// <p>The validation strategy.</p>
+    pub fn get_server_validation_strategy(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServerValidationStrategy> {
+        &self.server_validation_strategy
+    }
     /// <p>The validation parameters.</p>
     pub fn user_data_validation_parameters(
         mut self,
@@ -136,6 +154,12 @@ impl ServerValidationConfigurationBuilder {
     ) -> Self {
         self.user_data_validation_parameters = input;
         self
+    }
+    /// <p>The validation parameters.</p>
+    pub fn get_user_data_validation_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::UserDataValidationParameters> {
+        &self.user_data_validation_parameters
     }
     /// Consumes the builder and constructs a [`ServerValidationConfiguration`](crate::types::ServerValidationConfiguration).
     pub fn build(self) -> crate::types::ServerValidationConfiguration {

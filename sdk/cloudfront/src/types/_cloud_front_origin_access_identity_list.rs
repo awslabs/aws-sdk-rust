@@ -84,6 +84,10 @@ impl CloudFrontOriginAccessIdentityListBuilder {
         self.marker = input;
         self
     }
+    /// <p>Use this when paginating results to indicate where to begin in your list of origin access identities. The results include identities in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last identity on that page).</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value you can use for the <code>Marker</code> request parameter to continue listing your origin access identities where they left off.</p>
     pub fn next_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_marker = ::std::option::Option::Some(input.into());
@@ -93,6 +97,10 @@ impl CloudFrontOriginAccessIdentityListBuilder {
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_marker = input;
         self
+    }
+    /// <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value you can use for the <code>Marker</code> request parameter to continue listing your origin access identities where they left off.</p>
+    pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_marker
     }
     /// <p>The maximum number of origin access identities you want in the response body.</p>
     pub fn max_items(mut self, input: i32) -> Self {
@@ -104,6 +112,10 @@ impl CloudFrontOriginAccessIdentityListBuilder {
         self.max_items = input;
         self
     }
+    /// <p>The maximum number of origin access identities you want in the response body.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        &self.max_items
+    }
     /// <p>A flag that indicates whether more origin access identities remain to be listed. If your results were truncated, you can make a follow-up pagination request using the <code>Marker</code> request parameter to retrieve more items in the list.</p>
     pub fn is_truncated(mut self, input: bool) -> Self {
         self.is_truncated = ::std::option::Option::Some(input);
@@ -114,6 +126,10 @@ impl CloudFrontOriginAccessIdentityListBuilder {
         self.is_truncated = input;
         self
     }
+    /// <p>A flag that indicates whether more origin access identities remain to be listed. If your results were truncated, you can make a follow-up pagination request using the <code>Marker</code> request parameter to retrieve more items in the list.</p>
+    pub fn get_is_truncated(&self) -> &::std::option::Option<bool> {
+        &self.is_truncated
+    }
     /// <p>The number of CloudFront origin access identities that were created by the current Amazon Web Services account.</p>
     pub fn quantity(mut self, input: i32) -> Self {
         self.quantity = ::std::option::Option::Some(input);
@@ -123,6 +139,10 @@ impl CloudFrontOriginAccessIdentityListBuilder {
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.quantity = input;
         self
+    }
+    /// <p>The number of CloudFront origin access identities that were created by the current Amazon Web Services account.</p>
+    pub fn get_quantity(&self) -> &::std::option::Option<i32> {
+        &self.quantity
     }
     /// Appends an item to `items`.
     ///
@@ -144,6 +164,13 @@ impl CloudFrontOriginAccessIdentityListBuilder {
     ) -> Self {
         self.items = input;
         self
+    }
+    /// <p>A complex type that contains one <code>CloudFrontOriginAccessIdentitySummary</code> element for each origin access identity that was created by the current Amazon Web Services account.</p>
+    pub fn get_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudFrontOriginAccessIdentitySummary>>
+    {
+        &self.items
     }
     /// Consumes the builder and constructs a [`CloudFrontOriginAccessIdentityList`](crate::types::CloudFrontOriginAccessIdentityList).
     pub fn build(self) -> crate::types::CloudFrontOriginAccessIdentityList {

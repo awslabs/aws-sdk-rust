@@ -60,6 +60,13 @@ impl AppSpecContentBuilder {
         self.content = input;
         self
     }
+    /// <p> The YAML-formatted or JSON-formatted revision string. </p>
+    /// <p> For an Lambda deployment, the content includes a Lambda function name, the alias for its original version, and the alias for its replacement version. The deployment shifts traffic from the original version of the Lambda function to the replacement version. </p>
+    /// <p> For an Amazon ECS deployment, the content includes the task name, information about the load balancer that serves traffic to the container, and more. </p>
+    /// <p> For both types of deployments, the content can specify Lambda functions that run at specified hooks, such as <code>BeforeInstall</code>, during a deployment. </p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
+    }
     /// <p> The SHA256 hash value of the revision content. </p>
     pub fn sha256(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sha256 = ::std::option::Option::Some(input.into());
@@ -69,6 +76,10 @@ impl AppSpecContentBuilder {
     pub fn set_sha256(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sha256 = input;
         self
+    }
+    /// <p> The SHA256 hash value of the revision content. </p>
+    pub fn get_sha256(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sha256
     }
     /// Consumes the builder and constructs a [`AppSpecContent`](crate::types::AppSpecContent).
     pub fn build(self) -> crate::types::AppSpecContent {

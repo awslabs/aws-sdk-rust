@@ -48,6 +48,10 @@ impl UpdateNodegroupConfigOutputBuilder {
         self.update = input;
         self
     }
+    /// <p>An object representing an asynchronous update.</p>
+    pub fn get_update(&self) -> &::std::option::Option<crate::types::Update> {
+        &self.update
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -91,6 +91,14 @@ impl DimensionKeyDescriptionBuilder {
         self.dimensions = input;
         self
     }
+    /// <p>A map of name-value pairs for the dimensions in the group.</p>
+    pub fn get_dimensions(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.dimensions
+    }
     /// <p>The aggregated metric value for the dimensions, over the requested time range.</p>
     pub fn total(mut self, input: f64) -> Self {
         self.total = ::std::option::Option::Some(input);
@@ -100,6 +108,10 @@ impl DimensionKeyDescriptionBuilder {
     pub fn set_total(mut self, input: ::std::option::Option<f64>) -> Self {
         self.total = input;
         self
+    }
+    /// <p>The aggregated metric value for the dimensions, over the requested time range.</p>
+    pub fn get_total(&self) -> &::std::option::Option<f64> {
+        &self.total
     }
     /// Adds a key-value pair to `additional_metrics`.
     ///
@@ -124,6 +136,12 @@ impl DimensionKeyDescriptionBuilder {
         self.additional_metrics = input;
         self
     }
+    /// <p>A map that contains the value for each additional metric.</p>
+    pub fn get_additional_metrics(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, f64>> {
+        &self.additional_metrics
+    }
     /// Appends an item to `partitions`.
     ///
     /// To override the contents of this collection use [`set_partitions`](Self::set_partitions).
@@ -139,6 +157,10 @@ impl DimensionKeyDescriptionBuilder {
     pub fn set_partitions(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.partitions = input;
         self
+    }
+    /// <p>If <code>PartitionBy</code> was specified, <code>PartitionKeys</code> contains the dimensions that were.</p>
+    pub fn get_partitions(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+        &self.partitions
     }
     /// Consumes the builder and constructs a [`DimensionKeyDescription`](crate::types::DimensionKeyDescription).
     pub fn build(self) -> crate::types::DimensionKeyDescription {

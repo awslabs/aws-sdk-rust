@@ -51,6 +51,10 @@ impl LanguageCodeItemBuilder {
         self.language_code = input;
         self
     }
+    /// <p>Provides the language code for each language identified in your media.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
+        &self.language_code
+    }
     /// <p>Provides the total time, in seconds, each identified language is spoken in your media.</p>
     pub fn duration_in_seconds(mut self, input: f32) -> Self {
         self.duration_in_seconds = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl LanguageCodeItemBuilder {
     pub fn set_duration_in_seconds(mut self, input: ::std::option::Option<f32>) -> Self {
         self.duration_in_seconds = input;
         self
+    }
+    /// <p>Provides the total time, in seconds, each identified language is spoken in your media.</p>
+    pub fn get_duration_in_seconds(&self) -> &::std::option::Option<f32> {
+        &self.duration_in_seconds
     }
     /// Consumes the builder and constructs a [`LanguageCodeItem`](crate::types::LanguageCodeItem).
     pub fn build(self) -> crate::types::LanguageCodeItem {

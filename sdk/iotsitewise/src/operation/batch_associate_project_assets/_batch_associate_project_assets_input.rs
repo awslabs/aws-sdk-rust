@@ -55,6 +55,10 @@ impl BatchAssociateProjectAssetsInputBuilder {
         self.project_id = input;
         self
     }
+    /// <p>The ID of the project to which to associate the assets.</p>
+    pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_id
+    }
     /// Appends an item to `asset_ids`.
     ///
     /// To override the contents of this collection use [`set_asset_ids`](Self::set_asset_ids).
@@ -74,6 +78,10 @@ impl BatchAssociateProjectAssetsInputBuilder {
         self.asset_ids = input;
         self
     }
+    /// <p>The IDs of the assets to be associated to the project.</p>
+    pub fn get_asset_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.asset_ids
+    }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl BatchAssociateProjectAssetsInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`BatchAssociateProjectAssetsInput`](crate::operation::batch_associate_project_assets::BatchAssociateProjectAssetsInput).
     pub fn build(

@@ -48,6 +48,10 @@ impl CsvOptionsBuilder {
         self.delimiter = input;
         self
     }
+    /// <p>A single character that specifies the delimiter being used in the CSV file.</p>
+    pub fn get_delimiter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delimiter
+    }
     /// <p>A variable that specifies whether the first row in the file is parsed as the header. If this value is false, column names are auto-generated.</p>
     pub fn header_row(mut self, input: bool) -> Self {
         self.header_row = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl CsvOptionsBuilder {
     pub fn set_header_row(mut self, input: ::std::option::Option<bool>) -> Self {
         self.header_row = input;
         self
+    }
+    /// <p>A variable that specifies whether the first row in the file is parsed as the header. If this value is false, column names are auto-generated.</p>
+    pub fn get_header_row(&self) -> &::std::option::Option<bool> {
+        &self.header_row
     }
     /// Consumes the builder and constructs a [`CsvOptions`](crate::types::CsvOptions).
     pub fn build(self) -> crate::types::CsvOptions {

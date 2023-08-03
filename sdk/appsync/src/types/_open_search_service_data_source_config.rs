@@ -48,6 +48,10 @@ impl OpenSearchServiceDataSourceConfigBuilder {
         self.endpoint = input;
         self
     }
+    /// <p>The endpoint.</p>
+    pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint
+    }
     /// <p>The Amazon Web Services Region.</p>
     pub fn aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_region = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl OpenSearchServiceDataSourceConfigBuilder {
     pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_region = input;
         self
+    }
+    /// <p>The Amazon Web Services Region.</p>
+    pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_region
     }
     /// Consumes the builder and constructs a [`OpenSearchServiceDataSourceConfig`](crate::types::OpenSearchServiceDataSourceConfig).
     pub fn build(self) -> crate::types::OpenSearchServiceDataSourceConfig {

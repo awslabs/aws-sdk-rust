@@ -106,6 +106,10 @@ impl ExportJournalToS3InputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the ledger.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The inclusive start date and time for the range of journal contents to export.</p>
     /// <p>The <code>InclusiveStartTime</code> must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
     /// <p>The <code>InclusiveStartTime</code> must be before <code>ExclusiveEndTime</code>.</p>
@@ -125,6 +129,13 @@ impl ExportJournalToS3InputBuilder {
         self.inclusive_start_time = input;
         self
     }
+    /// <p>The inclusive start date and time for the range of journal contents to export.</p>
+    /// <p>The <code>InclusiveStartTime</code> must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
+    /// <p>The <code>InclusiveStartTime</code> must be before <code>ExclusiveEndTime</code>.</p>
+    /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's <code>CreationDateTime</code>, Amazon QLDB defaults it to the ledger's <code>CreationDateTime</code>.</p>
+    pub fn get_inclusive_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.inclusive_start_time
+    }
     /// <p>The exclusive end date and time for the range of journal contents to export.</p>
     /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
     /// <p>The <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date and time.</p>
@@ -142,6 +153,12 @@ impl ExportJournalToS3InputBuilder {
         self.exclusive_end_time = input;
         self
     }
+    /// <p>The exclusive end date and time for the range of journal contents to export.</p>
+    /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
+    /// <p>The <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date and time.</p>
+    pub fn get_exclusive_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.exclusive_end_time
+    }
     /// <p>The configuration settings of the Amazon S3 bucket destination for your export request.</p>
     pub fn s3_export_configuration(mut self, input: crate::types::S3ExportConfiguration) -> Self {
         self.s3_export_configuration = ::std::option::Option::Some(input);
@@ -154,6 +171,12 @@ impl ExportJournalToS3InputBuilder {
     ) -> Self {
         self.s3_export_configuration = input;
         self
+    }
+    /// <p>The configuration settings of the Amazon S3 bucket destination for your export request.</p>
+    pub fn get_s3_export_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3ExportConfiguration> {
+        &self.s3_export_configuration
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p>
     /// <ul>
@@ -175,6 +198,15 @@ impl ExportJournalToS3InputBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p>
+    /// <ul>
+    /// <li> <p>Write objects into your Amazon S3 bucket.</p> </li>
+    /// <li> <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li>
+    /// </ul>
+    /// <p>To pass a role to QLDB when requesting a journal export, you must have permissions to perform the <code>iam:PassRole</code> action on the IAM role resource. This is required for all journal export requests.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The output format of your exported journal data. A journal export job can write the data objects in either the text or binary representation of <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/ion.html">Amazon Ion</a> format, or in <a href="https://jsonlines.org/">JSON Lines</a> text format.</p>
     /// <p>Default: <code>ION_TEXT</code> </p>
     /// <p>In JSON Lines format, each journal block in an exported data object is a valid JSON object that is delimited by a newline. You can use this format to directly integrate JSON exports with analytics tools such as Amazon Athena and Glue because these services can parse newline-delimited JSON automatically.</p>
@@ -191,6 +223,12 @@ impl ExportJournalToS3InputBuilder {
     ) -> Self {
         self.output_format = input;
         self
+    }
+    /// <p>The output format of your exported journal data. A journal export job can write the data objects in either the text or binary representation of <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/ion.html">Amazon Ion</a> format, or in <a href="https://jsonlines.org/">JSON Lines</a> text format.</p>
+    /// <p>Default: <code>ION_TEXT</code> </p>
+    /// <p>In JSON Lines format, each journal block in an exported data object is a valid JSON object that is delimited by a newline. You can use this format to directly integrate JSON exports with analytics tools such as Amazon Athena and Glue because these services can parse newline-delimited JSON automatically.</p>
+    pub fn get_output_format(&self) -> &::std::option::Option<crate::types::OutputFormat> {
+        &self.output_format
     }
     /// Consumes the builder and constructs a [`ExportJournalToS3Input`](crate::operation::export_journal_to_s3::ExportJournalToS3Input).
     pub fn build(

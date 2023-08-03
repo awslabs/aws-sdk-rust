@@ -47,6 +47,10 @@ impl DeleteEdgeDeploymentPlanInputBuilder {
         self.edge_deployment_plan_name = input;
         self
     }
+    /// <p>The name of the edge deployment plan to delete.</p>
+    pub fn get_edge_deployment_plan_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.edge_deployment_plan_name
+    }
     /// Consumes the builder and constructs a [`DeleteEdgeDeploymentPlanInput`](crate::operation::delete_edge_deployment_plan::DeleteEdgeDeploymentPlanInput).
     pub fn build(
         self,

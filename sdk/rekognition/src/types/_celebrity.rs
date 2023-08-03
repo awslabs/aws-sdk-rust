@@ -89,6 +89,10 @@ impl CelebrityBuilder {
         self.urls = input;
         self
     }
+    /// <p>An array of URLs pointing to additional information about the celebrity. If there is no additional information about the celebrity, this list is empty.</p>
+    pub fn get_urls(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.urls
+    }
     /// <p>The name of the celebrity.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -98,6 +102,10 @@ impl CelebrityBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the celebrity.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>A unique identifier for the celebrity. </p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -109,6 +117,10 @@ impl CelebrityBuilder {
         self.id = input;
         self
     }
+    /// <p>A unique identifier for the celebrity. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>Provides information about the celebrity's face, such as its location on the image.</p>
     pub fn face(mut self, input: crate::types::ComparedFace) -> Self {
         self.face = ::std::option::Option::Some(input);
@@ -119,6 +131,10 @@ impl CelebrityBuilder {
         self.face = input;
         self
     }
+    /// <p>Provides information about the celebrity's face, such as its location on the image.</p>
+    pub fn get_face(&self) -> &::std::option::Option<crate::types::ComparedFace> {
+        &self.face
+    }
     /// <p>The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity.</p>
     pub fn match_confidence(mut self, input: f32) -> Self {
         self.match_confidence = ::std::option::Option::Some(input);
@@ -128,6 +144,10 @@ impl CelebrityBuilder {
     pub fn set_match_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.match_confidence = input;
         self
+    }
+    /// <p>The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity.</p>
+    pub fn get_match_confidence(&self) -> &::std::option::Option<f32> {
+        &self.match_confidence
     }
     /// <p>The known gender identity for the celebrity that matches the provided ID. The known gender identity can be Male, Female, Nonbinary, or Unlisted.</p>
     pub fn known_gender(mut self, input: crate::types::KnownGender) -> Self {
@@ -141,6 +161,10 @@ impl CelebrityBuilder {
     ) -> Self {
         self.known_gender = input;
         self
+    }
+    /// <p>The known gender identity for the celebrity that matches the provided ID. The known gender identity can be Male, Female, Nonbinary, or Unlisted.</p>
+    pub fn get_known_gender(&self) -> &::std::option::Option<crate::types::KnownGender> {
+        &self.known_gender
     }
     /// Consumes the builder and constructs a [`Celebrity`](crate::types::Celebrity).
     pub fn build(self) -> crate::types::Celebrity {

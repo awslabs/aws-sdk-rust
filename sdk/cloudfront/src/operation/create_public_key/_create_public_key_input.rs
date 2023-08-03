@@ -42,6 +42,10 @@ impl CreatePublicKeyInputBuilder {
         self.public_key_config = input;
         self
     }
+    /// <p>A CloudFront public key configuration.</p>
+    pub fn get_public_key_config(&self) -> &::std::option::Option<crate::types::PublicKeyConfig> {
+        &self.public_key_config
+    }
     /// Consumes the builder and constructs a [`CreatePublicKeyInput`](crate::operation::create_public_key::CreatePublicKeyInput).
     pub fn build(
         self,

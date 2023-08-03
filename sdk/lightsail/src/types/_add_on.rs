@@ -96,6 +96,10 @@ impl AddOnBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the add-on.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The status of the add-on.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl AddOnBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the add-on.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>The daily time when an automatic snapshot is created.</p>
     /// <p>The time shown is in <code>HH:00</code> format, and in Coordinated Universal Time (UTC).</p>
@@ -126,6 +134,12 @@ impl AddOnBuilder {
         self.snapshot_time_of_day = input;
         self
     }
+    /// <p>The daily time when an automatic snapshot is created.</p>
+    /// <p>The time shown is in <code>HH:00</code> format, and in Coordinated Universal Time (UTC).</p>
+    /// <p>The snapshot is automatically created between the time shown and up to 45 minutes after.</p>
+    pub fn get_snapshot_time_of_day(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_time_of_day
+    }
     /// <p>The next daily time an automatic snapshot will be created.</p>
     /// <p>The time shown is in <code>HH:00</code> format, and in Coordinated Universal Time (UTC).</p>
     /// <p>The snapshot is automatically created between the time shown and up to 45 minutes after.</p>
@@ -146,6 +160,12 @@ impl AddOnBuilder {
         self.next_snapshot_time_of_day = input;
         self
     }
+    /// <p>The next daily time an automatic snapshot will be created.</p>
+    /// <p>The time shown is in <code>HH:00</code> format, and in Coordinated Universal Time (UTC).</p>
+    /// <p>The snapshot is automatically created between the time shown and up to 45 minutes after.</p>
+    pub fn get_next_snapshot_time_of_day(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_snapshot_time_of_day
+    }
     /// <p>The trigger threshold of the action.</p> <important>
     /// <p>This add-on only applies to Lightsail for Research resources.</p>
     /// </important>
@@ -160,6 +180,12 @@ impl AddOnBuilder {
         self.threshold = input;
         self
     }
+    /// <p>The trigger threshold of the action.</p> <important>
+    /// <p>This add-on only applies to Lightsail for Research resources.</p>
+    /// </important>
+    pub fn get_threshold(&self) -> &::std::option::Option<::std::string::String> {
+        &self.threshold
+    }
     /// <p>The amount of idle time in minutes after which your virtual computer will automatically stop.</p> <important>
     /// <p>This add-on only applies to Lightsail for Research resources.</p>
     /// </important>
@@ -173,6 +199,12 @@ impl AddOnBuilder {
     pub fn set_duration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.duration = input;
         self
+    }
+    /// <p>The amount of idle time in minutes after which your virtual computer will automatically stop.</p> <important>
+    /// <p>This add-on only applies to Lightsail for Research resources.</p>
+    /// </important>
+    pub fn get_duration(&self) -> &::std::option::Option<::std::string::String> {
+        &self.duration
     }
     /// Consumes the builder and constructs a [`AddOn`](crate::types::AddOn).
     pub fn build(self) -> crate::types::AddOn {

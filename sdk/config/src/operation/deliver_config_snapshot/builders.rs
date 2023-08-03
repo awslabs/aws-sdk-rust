@@ -41,6 +41,13 @@ impl DeliverConfigSnapshotFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeliverConfigSnapshot as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::deliver_config_snapshot::builders::DeliverConfigSnapshotInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,5 +143,9 @@ impl DeliverConfigSnapshotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_delivery_channel_name(input);
         self
+    }
+    /// <p>The name of the delivery channel through which the snapshot is delivered.</p>
+    pub fn get_delivery_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_delivery_channel_name()
     }
 }

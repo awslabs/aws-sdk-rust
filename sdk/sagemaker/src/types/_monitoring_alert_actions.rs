@@ -50,6 +50,12 @@ impl MonitoringAlertActionsBuilder {
         self.model_dashboard_indicator = input;
         self
     }
+    /// <p>An alert action taken to light up an icon on the Model Dashboard when an alert goes into <code>InAlert</code> status.</p>
+    pub fn get_model_dashboard_indicator(
+        &self,
+    ) -> &::std::option::Option<crate::types::ModelDashboardIndicatorAction> {
+        &self.model_dashboard_indicator
+    }
     /// Consumes the builder and constructs a [`MonitoringAlertActions`](crate::types::MonitoringAlertActions).
     pub fn build(self) -> crate::types::MonitoringAlertActions {
         crate::types::MonitoringAlertActions {

@@ -65,6 +65,10 @@ impl SignUpOutputBuilder {
         self.user_confirmed = input;
         self
     }
+    /// <p>A response from the server indicating that a user registration has been confirmed.</p>
+    pub fn get_user_confirmed(&self) -> &::std::option::Option<bool> {
+        &self.user_confirmed
+    }
     /// <p>The code delivery details returned by the server response to the user registration request.</p>
     pub fn code_delivery_details(mut self, input: crate::types::CodeDeliveryDetailsType) -> Self {
         self.code_delivery_details = ::std::option::Option::Some(input);
@@ -78,6 +82,12 @@ impl SignUpOutputBuilder {
         self.code_delivery_details = input;
         self
     }
+    /// <p>The code delivery details returned by the server response to the user registration request.</p>
+    pub fn get_code_delivery_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::CodeDeliveryDetailsType> {
+        &self.code_delivery_details
+    }
     /// <p>The UUID of the authenticated user. This isn't the same as <code>username</code>.</p>
     pub fn user_sub(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_sub = ::std::option::Option::Some(input.into());
@@ -87,6 +97,10 @@ impl SignUpOutputBuilder {
     pub fn set_user_sub(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_sub = input;
         self
+    }
+    /// <p>The UUID of the authenticated user. This isn't the same as <code>username</code>.</p>
+    pub fn get_user_sub(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_sub
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

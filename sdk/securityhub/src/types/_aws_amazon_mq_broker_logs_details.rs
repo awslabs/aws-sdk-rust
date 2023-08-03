@@ -74,6 +74,10 @@ impl AwsAmazonMqBrokerLogsDetailsBuilder {
         self.audit = input;
         self
     }
+    /// <p> Activates audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. Doesn't apply to RabbitMQ brokers. </p>
+    pub fn get_audit(&self) -> &::std::option::Option<bool> {
+        &self.audit
+    }
     /// <p> Activates general logging. </p>
     pub fn general(mut self, input: bool) -> Self {
         self.general = ::std::option::Option::Some(input);
@@ -83,6 +87,10 @@ impl AwsAmazonMqBrokerLogsDetailsBuilder {
     pub fn set_general(mut self, input: ::std::option::Option<bool>) -> Self {
         self.general = input;
         self
+    }
+    /// <p> Activates general logging. </p>
+    pub fn get_general(&self) -> &::std::option::Option<bool> {
+        &self.general
     }
     /// <p> The location of the CloudWatch Logs log group where audit logs are sent. </p>
     pub fn audit_log_group(
@@ -100,6 +108,10 @@ impl AwsAmazonMqBrokerLogsDetailsBuilder {
         self.audit_log_group = input;
         self
     }
+    /// <p> The location of the CloudWatch Logs log group where audit logs are sent. </p>
+    pub fn get_audit_log_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.audit_log_group
+    }
     /// <p> The location of the CloudWatch Logs log group where general logs are sent. </p>
     pub fn general_log_group(
         mut self,
@@ -116,6 +128,10 @@ impl AwsAmazonMqBrokerLogsDetailsBuilder {
         self.general_log_group = input;
         self
     }
+    /// <p> The location of the CloudWatch Logs log group where general logs are sent. </p>
+    pub fn get_general_log_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.general_log_group
+    }
     /// <p> The list of information about logs that are to be turned on for the specified broker. </p>
     pub fn pending(mut self, input: crate::types::AwsAmazonMqBrokerLogsPendingDetails) -> Self {
         self.pending = ::std::option::Option::Some(input);
@@ -128,6 +144,12 @@ impl AwsAmazonMqBrokerLogsDetailsBuilder {
     ) -> Self {
         self.pending = input;
         self
+    }
+    /// <p> The list of information about logs that are to be turned on for the specified broker. </p>
+    pub fn get_pending(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsAmazonMqBrokerLogsPendingDetails> {
+        &self.pending
     }
     /// Consumes the builder and constructs a [`AwsAmazonMqBrokerLogsDetails`](crate::types::AwsAmazonMqBrokerLogsDetails).
     pub fn build(self) -> crate::types::AwsAmazonMqBrokerLogsDetails {

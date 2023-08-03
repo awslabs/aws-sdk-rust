@@ -41,6 +41,12 @@ impl RegisterRobotFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RegisterRobot as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::register_robot::builders::RegisterRobotInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -123,6 +129,10 @@ impl RegisterRobotFluentBuilder {
         self.inner = self.inner.set_fleet(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    pub fn get_fleet(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fleet()
+    }
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
     pub fn robot(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.robot(input.into());
@@ -132,5 +142,9 @@ impl RegisterRobotFluentBuilder {
     pub fn set_robot(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_robot(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the robot.</p>
+    pub fn get_robot(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_robot()
     }
 }

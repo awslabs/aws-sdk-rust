@@ -107,6 +107,10 @@ impl LifecycleHookSpecificationBuilder {
         self.lifecycle_hook_name = input;
         self
     }
+    /// <p>The name of the lifecycle hook.</p>
+    pub fn get_lifecycle_hook_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lifecycle_hook_name
+    }
     /// <p>The lifecycle transition. For Auto Scaling groups, there are two major lifecycle transitions.</p>
     /// <ul>
     /// <li> <p>To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.</p> </li>
@@ -131,6 +135,14 @@ impl LifecycleHookSpecificationBuilder {
         self.lifecycle_transition = input;
         self
     }
+    /// <p>The lifecycle transition. For Auto Scaling groups, there are two major lifecycle transitions.</p>
+    /// <ul>
+    /// <li> <p>To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.</p> </li>
+    /// <li> <p>To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.</p> </li>
+    /// </ul>
+    pub fn get_lifecycle_transition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lifecycle_transition
+    }
     /// <p>Additional information that you want to include any time Amazon EC2 Auto Scaling sends a message to the notification target.</p>
     pub fn notification_metadata(
         mut self,
@@ -147,6 +159,10 @@ impl LifecycleHookSpecificationBuilder {
         self.notification_metadata = input;
         self
     }
+    /// <p>Additional information that you want to include any time Amazon EC2 Auto Scaling sends a message to the notification target.</p>
+    pub fn get_notification_metadata(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notification_metadata
+    }
     /// <p>The maximum time, in seconds, that can elapse before the lifecycle hook times out. The range is from <code>30</code> to <code>7200</code> seconds. The default value is <code>3600</code> seconds (1 hour).</p>
     pub fn heartbeat_timeout(mut self, input: i32) -> Self {
         self.heartbeat_timeout = ::std::option::Option::Some(input);
@@ -156,6 +172,10 @@ impl LifecycleHookSpecificationBuilder {
     pub fn set_heartbeat_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.heartbeat_timeout = input;
         self
+    }
+    /// <p>The maximum time, in seconds, that can elapse before the lifecycle hook times out. The range is from <code>30</code> to <code>7200</code> seconds. The default value is <code>3600</code> seconds (1 hour).</p>
+    pub fn get_heartbeat_timeout(&self) -> &::std::option::Option<i32> {
+        &self.heartbeat_timeout
     }
     /// <p>The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected failure occurs. The default value is <code>ABANDON</code>.</p>
     /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code> </p>
@@ -175,6 +195,11 @@ impl LifecycleHookSpecificationBuilder {
         self.default_result = input;
         self
     }
+    /// <p>The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected failure occurs. The default value is <code>ABANDON</code>.</p>
+    /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code> </p>
+    pub fn get_default_result(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_result
+    }
     /// <p>The Amazon Resource Name (ARN) of the notification target that Amazon EC2 Auto Scaling sends notifications to when an instance is in a wait state for the lifecycle hook. You can specify an Amazon SNS topic or an Amazon SQS queue.</p>
     pub fn notification_target_arn(
         mut self,
@@ -191,6 +216,10 @@ impl LifecycleHookSpecificationBuilder {
         self.notification_target_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the notification target that Amazon EC2 Auto Scaling sends notifications to when an instance is in a wait state for the lifecycle hook. You can specify an Amazon SNS topic or an Amazon SQS queue.</p>
+    pub fn get_notification_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notification_target_arn
+    }
     /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target. For information about creating this role, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/prepare-for-lifecycle-notifications.html#lifecycle-hook-notification-target">Configure a notification target for a lifecycle hook</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// <p>Valid only if the notification target is an Amazon SNS topic or an Amazon SQS queue.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -202,6 +231,11 @@ impl LifecycleHookSpecificationBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target. For information about creating this role, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/prepare-for-lifecycle-notifications.html#lifecycle-hook-notification-target">Configure a notification target for a lifecycle hook</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>Valid only if the notification target is an Amazon SNS topic or an Amazon SQS queue.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`LifecycleHookSpecification`](crate::types::LifecycleHookSpecification).
     pub fn build(self) -> crate::types::LifecycleHookSpecification {

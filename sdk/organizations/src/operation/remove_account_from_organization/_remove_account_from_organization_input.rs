@@ -43,6 +43,11 @@ impl RemoveAccountFromOrganizationInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The unique identifier (ID) of the member account that you want to remove from the organization.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// Consumes the builder and constructs a [`RemoveAccountFromOrganizationInput`](crate::operation::remove_account_from_organization::RemoveAccountFromOrganizationInput).
     pub fn build(
         self,

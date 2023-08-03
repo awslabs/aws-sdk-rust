@@ -62,6 +62,10 @@ impl TransactionOutputItemBuilder {
         self.transaction_hash = input;
         self
     }
+    /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
+    pub fn get_transaction_hash(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transaction_hash
+    }
     /// <p>The blockchain network where the transaction occurred.</p>
     pub fn network(mut self, input: crate::types::QueryNetwork) -> Self {
         self.network = ::std::option::Option::Some(input);
@@ -71,6 +75,10 @@ impl TransactionOutputItemBuilder {
     pub fn set_network(mut self, input: ::std::option::Option<crate::types::QueryNetwork>) -> Self {
         self.network = input;
         self
+    }
+    /// <p>The blockchain network where the transaction occurred.</p>
+    pub fn get_network(&self) -> &::std::option::Option<crate::types::QueryNetwork> {
+        &self.network
     }
     /// <p>The time when the transaction occurred.</p>
     pub fn transaction_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -84,6 +92,12 @@ impl TransactionOutputItemBuilder {
     ) -> Self {
         self.transaction_timestamp = input;
         self
+    }
+    /// <p>The time when the transaction occurred.</p>
+    pub fn get_transaction_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.transaction_timestamp
     }
     /// Consumes the builder and constructs a [`TransactionOutputItem`](crate::types::TransactionOutputItem).
     pub fn build(self) -> crate::types::TransactionOutputItem {

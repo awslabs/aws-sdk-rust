@@ -56,6 +56,10 @@ impl AccountAttributeBuilder {
         self.attribute_name = input;
         self
     }
+    /// <p>The name of the attribute.</p>
+    pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_name
+    }
     /// Appends an item to `attribute_values`.
     ///
     /// To override the contents of this collection use [`set_attribute_values`](Self::set_attribute_values).
@@ -74,6 +78,12 @@ impl AccountAttributeBuilder {
     ) -> Self {
         self.attribute_values = input;
         self
+    }
+    /// <p>A list of attribute values.</p>
+    pub fn get_attribute_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeValueTarget>> {
+        &self.attribute_values
     }
     /// Consumes the builder and constructs a [`AccountAttribute`](crate::types::AccountAttribute).
     pub fn build(self) -> crate::types::AccountAttribute {

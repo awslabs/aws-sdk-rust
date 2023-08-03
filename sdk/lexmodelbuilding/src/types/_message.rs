@@ -59,6 +59,10 @@ impl MessageBuilder {
         self.content_type = input;
         self
     }
+    /// <p>The content type of the message string.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<crate::types::ContentType> {
+        &self.content_type
+    }
     /// <p>The text of the message.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
@@ -69,6 +73,10 @@ impl MessageBuilder {
         self.content = input;
         self
     }
+    /// <p>The text of the message.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
+    }
     /// <p>Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon Lex returns one message from each group in the response.</p>
     pub fn group_number(mut self, input: i32) -> Self {
         self.group_number = ::std::option::Option::Some(input);
@@ -78,6 +86,10 @@ impl MessageBuilder {
     pub fn set_group_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.group_number = input;
         self
+    }
+    /// <p>Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon Lex returns one message from each group in the response.</p>
+    pub fn get_group_number(&self) -> &::std::option::Option<i32> {
+        &self.group_number
     }
     /// Consumes the builder and constructs a [`Message`](crate::types::Message).
     pub fn build(self) -> crate::types::Message {

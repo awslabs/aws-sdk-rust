@@ -40,6 +40,10 @@ impl NotificationConfigurationFilterBuilder {
         self.key = input;
         self
     }
+    /// <p>A container for object key name prefix and suffix filtering rules.</p>
+    pub fn get_key(&self) -> &::std::option::Option<crate::types::S3KeyFilter> {
+        &self.key
+    }
     /// Consumes the builder and constructs a [`NotificationConfigurationFilter`](crate::types::NotificationConfigurationFilter).
     pub fn build(self) -> crate::types::NotificationConfigurationFilter {
         crate::types::NotificationConfigurationFilter { key: self.key }

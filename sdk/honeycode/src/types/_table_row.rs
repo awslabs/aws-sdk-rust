@@ -48,6 +48,10 @@ impl TableRowBuilder {
         self.row_id = input;
         self
     }
+    /// <p>The id of the row in the table.</p>
+    pub fn get_row_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.row_id
+    }
     /// Appends an item to `cells`.
     ///
     /// To override the contents of this collection use [`set_cells`](Self::set_cells).
@@ -66,6 +70,10 @@ impl TableRowBuilder {
     ) -> Self {
         self.cells = input;
         self
+    }
+    /// <p>A list of cells in the table row. The cells appear in the same order as the columns of the table. </p>
+    pub fn get_cells(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Cell>> {
+        &self.cells
     }
     /// Consumes the builder and constructs a [`TableRow`](crate::types::TableRow).
     pub fn build(self) -> crate::types::TableRow {

@@ -72,6 +72,10 @@ impl EvaluateOnExitBuilder {
         self.on_status_reason = input;
         self
     }
+    /// <p>Contains a glob pattern to match against the <code>StatusReason</code> returned for a job. The pattern can contain up to 512 characters. It can contain letters, numbers, periods (.), colons (:), and white spaces (including spaces or tabs). It can optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.</p>
+    pub fn get_on_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.on_status_reason
+    }
     /// <p>Contains a glob pattern to match against the <code>Reason</code> returned for a job. The pattern can contain up to 512 characters. It can contain letters, numbers, periods (.), colons (:), and white space (including spaces and tabs). It can optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.</p>
     pub fn on_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.on_reason = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl EvaluateOnExitBuilder {
     pub fn set_on_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.on_reason = input;
         self
+    }
+    /// <p>Contains a glob pattern to match against the <code>Reason</code> returned for a job. The pattern can contain up to 512 characters. It can contain letters, numbers, periods (.), colons (:), and white space (including spaces and tabs). It can optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.</p>
+    pub fn get_on_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.on_reason
     }
     /// <p>Contains a glob pattern to match against the decimal representation of the <code>ExitCode</code> returned for a job. The pattern can be up to 512 characters long. It can contain only numbers, and can end with an asterisk (*) so that only the start of the string needs to be an exact match.</p>
     /// <p>The string can contain up to 512 characters.</p>
@@ -94,6 +102,11 @@ impl EvaluateOnExitBuilder {
         self.on_exit_code = input;
         self
     }
+    /// <p>Contains a glob pattern to match against the decimal representation of the <code>ExitCode</code> returned for a job. The pattern can be up to 512 characters long. It can contain only numbers, and can end with an asterisk (*) so that only the start of the string needs to be an exact match.</p>
+    /// <p>The string can contain up to 512 characters.</p>
+    pub fn get_on_exit_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.on_exit_code
+    }
     /// <p>Specifies the action to take if all of the specified conditions (<code>onStatusReason</code>, <code>onReason</code>, and <code>onExitCode</code>) are met. The values aren't case sensitive.</p>
     pub fn action(mut self, input: crate::types::RetryAction) -> Self {
         self.action = ::std::option::Option::Some(input);
@@ -103,6 +116,10 @@ impl EvaluateOnExitBuilder {
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::RetryAction>) -> Self {
         self.action = input;
         self
+    }
+    /// <p>Specifies the action to take if all of the specified conditions (<code>onStatusReason</code>, <code>onReason</code>, and <code>onExitCode</code>) are met. The values aren't case sensitive.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::RetryAction> {
+        &self.action
     }
     /// Consumes the builder and constructs a [`EvaluateOnExit`](crate::types::EvaluateOnExit).
     pub fn build(self) -> crate::types::EvaluateOnExit {

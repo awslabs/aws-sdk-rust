@@ -56,6 +56,10 @@ impl StageDeclarationBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the stage.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `blockers`.
     ///
     /// To override the contents of this collection use [`set_blockers`](Self::set_blockers).
@@ -75,6 +79,12 @@ impl StageDeclarationBuilder {
         self.blockers = input;
         self
     }
+    /// <p>Reserved for future use.</p>
+    pub fn get_blockers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BlockerDeclaration>> {
+        &self.blockers
+    }
     /// Appends an item to `actions`.
     ///
     /// To override the contents of this collection use [`set_actions`](Self::set_actions).
@@ -93,6 +103,12 @@ impl StageDeclarationBuilder {
     ) -> Self {
         self.actions = input;
         self
+    }
+    /// <p>The actions included in a stage.</p>
+    pub fn get_actions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionDeclaration>> {
+        &self.actions
     }
     /// Consumes the builder and constructs a [`StageDeclaration`](crate::types::StageDeclaration).
     pub fn build(self) -> crate::types::StageDeclaration {

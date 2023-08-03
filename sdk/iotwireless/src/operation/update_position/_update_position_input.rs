@@ -62,6 +62,10 @@ impl UpdatePositionInputBuilder {
         self.resource_identifier = input;
         self
     }
+    /// <p>Resource identifier of the resource for which position is updated.</p>
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_identifier
+    }
     /// <p>Resource type of the resource for which position is updated.</p>
     pub fn resource_type(mut self, input: crate::types::PositionResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl UpdatePositionInputBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>Resource type of the resource for which position is updated.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::PositionResourceType> {
+        &self.resource_type
     }
     /// Appends an item to `position`.
     ///
@@ -90,6 +98,10 @@ impl UpdatePositionInputBuilder {
     pub fn set_position(mut self, input: ::std::option::Option<::std::vec::Vec<f32>>) -> Self {
         self.position = input;
         self
+    }
+    /// <p>The position information of the resource.</p>
+    pub fn get_position(&self) -> &::std::option::Option<::std::vec::Vec<f32>> {
+        &self.position
     }
     /// Consumes the builder and constructs a [`UpdatePositionInput`](crate::operation::update_position::UpdatePositionInput).
     pub fn build(

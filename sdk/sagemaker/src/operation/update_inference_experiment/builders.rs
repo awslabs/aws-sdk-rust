@@ -36,6 +36,10 @@ impl UpdateInferenceExperimentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateInferenceExperiment as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_inference_experiment::builders::UpdateInferenceExperimentInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl UpdateInferenceExperimentFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the inference experiment to be updated.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p> The duration for which the inference experiment will run. If the status of the inference experiment is <code>Created</code>, then you can update both the start and end dates. If the status of the inference experiment is <code>Running</code>, then you can update only the end date. </p>
     pub fn schedule(mut self, input: crate::types::InferenceExperimentSchedule) -> Self {
         self.inner = self.inner.schedule(input);
@@ -139,6 +147,12 @@ impl UpdateInferenceExperimentFluentBuilder {
         self.inner = self.inner.set_schedule(input);
         self
     }
+    /// <p> The duration for which the inference experiment will run. If the status of the inference experiment is <code>Created</code>, then you can update both the start and end dates. If the status of the inference experiment is <code>Running</code>, then you can update only the end date. </p>
+    pub fn get_schedule(
+        &self,
+    ) -> &::std::option::Option<crate::types::InferenceExperimentSchedule> {
+        self.inner.get_schedule()
+    }
     /// <p>The description of the inference experiment.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -148,6 +162,10 @@ impl UpdateInferenceExperimentFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the inference experiment.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `ModelVariants`.
     ///
@@ -166,6 +184,12 @@ impl UpdateInferenceExperimentFluentBuilder {
         self.inner = self.inner.set_model_variants(input);
         self
     }
+    /// <p> An array of <code>ModelVariantConfig</code> objects. There is one for each variant, whose infrastructure configuration you want to update. </p>
+    pub fn get_model_variants(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelVariantConfig>> {
+        self.inner.get_model_variants()
+    }
     /// <p>The Amazon S3 location and configuration for storing inference request and response data.</p>
     pub fn data_storage_config(
         mut self,
@@ -182,6 +206,12 @@ impl UpdateInferenceExperimentFluentBuilder {
         self.inner = self.inner.set_data_storage_config(input);
         self
     }
+    /// <p>The Amazon S3 location and configuration for storing inference request and response data.</p>
+    pub fn get_data_storage_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::InferenceExperimentDataStorageConfig> {
+        self.inner.get_data_storage_config()
+    }
     /// <p> The configuration of <code>ShadowMode</code> inference experiment type. Use this field to specify a production variant which takes all the inference requests, and a shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant also specify the percentage of requests that Amazon SageMaker replicates. </p>
     pub fn shadow_mode_config(mut self, input: crate::types::ShadowModeConfig) -> Self {
         self.inner = self.inner.shadow_mode_config(input);
@@ -194,5 +224,9 @@ impl UpdateInferenceExperimentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_shadow_mode_config(input);
         self
+    }
+    /// <p> The configuration of <code>ShadowMode</code> inference experiment type. Use this field to specify a production variant which takes all the inference requests, and a shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant also specify the percentage of requests that Amazon SageMaker replicates. </p>
+    pub fn get_shadow_mode_config(&self) -> &::std::option::Option<crate::types::ShadowModeConfig> {
+        self.inner.get_shadow_mode_config()
     }
 }

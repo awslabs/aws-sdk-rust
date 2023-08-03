@@ -53,6 +53,12 @@ impl GetNetworkInsightsAccessScopeContentInputBuilder {
         self.network_insights_access_scope_id = input;
         self
     }
+    /// <p>The ID of the Network Access Scope.</p>
+    pub fn get_network_insights_access_scope_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.network_insights_access_scope_id
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -62,6 +68,10 @@ impl GetNetworkInsightsAccessScopeContentInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`GetNetworkInsightsAccessScopeContentInput`](crate::operation::get_network_insights_access_scope_content::GetNetworkInsightsAccessScopeContentInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_network_insights_access_scope_content::GetNetworkInsightsAccessScopeContentInput, ::aws_smithy_http::operation::error::BuildError>{

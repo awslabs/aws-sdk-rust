@@ -39,6 +39,10 @@ impl DescribeAliasInputBuilder {
         self.alias_id = input;
         self
     }
+    /// <p>The unique identifier for the fleet alias that you want to retrieve. You can use either the alias ID or ARN value. </p>
+    pub fn get_alias_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias_id
+    }
     /// Consumes the builder and constructs a [`DescribeAliasInput`](crate::operation::describe_alias::DescribeAliasInput).
     pub fn build(
         self,

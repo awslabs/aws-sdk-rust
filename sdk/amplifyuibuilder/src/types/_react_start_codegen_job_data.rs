@@ -72,6 +72,10 @@ impl ReactStartCodegenJobDataBuilder {
         self.module = input;
         self
     }
+    /// <p>The JavaScript module type.</p>
+    pub fn get_module(&self) -> &::std::option::Option<crate::types::JsModule> {
+        &self.module
+    }
     /// <p>The ECMAScript specification to use.</p>
     pub fn target(mut self, input: crate::types::JsTarget) -> Self {
         self.target = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl ReactStartCodegenJobDataBuilder {
     pub fn set_target(mut self, input: ::std::option::Option<crate::types::JsTarget>) -> Self {
         self.target = input;
         self
+    }
+    /// <p>The ECMAScript specification to use.</p>
+    pub fn get_target(&self) -> &::std::option::Option<crate::types::JsTarget> {
+        &self.target
     }
     /// <p>The file type to use for a JavaScript project.</p>
     pub fn script(mut self, input: crate::types::JsScript) -> Self {
@@ -92,6 +100,10 @@ impl ReactStartCodegenJobDataBuilder {
         self.script = input;
         self
     }
+    /// <p>The file type to use for a JavaScript project.</p>
+    pub fn get_script(&self) -> &::std::option::Option<crate::types::JsScript> {
+        &self.script
+    }
     /// <p>Specifies whether the code generation job should render type declaration files.</p>
     pub fn render_type_declarations(mut self, input: bool) -> Self {
         self.render_type_declarations = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl ReactStartCodegenJobDataBuilder {
         self.render_type_declarations = input;
         self
     }
+    /// <p>Specifies whether the code generation job should render type declaration files.</p>
+    pub fn get_render_type_declarations(&self) -> &::std::option::Option<bool> {
+        &self.render_type_declarations
+    }
     /// <p>Specifies whether the code generation job should render inline source maps.</p>
     pub fn inline_source_map(mut self, input: bool) -> Self {
         self.inline_source_map = ::std::option::Option::Some(input);
@@ -111,6 +127,10 @@ impl ReactStartCodegenJobDataBuilder {
     pub fn set_inline_source_map(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inline_source_map = input;
         self
+    }
+    /// <p>Specifies whether the code generation job should render inline source maps.</p>
+    pub fn get_inline_source_map(&self) -> &::std::option::Option<bool> {
+        &self.inline_source_map
     }
     /// Consumes the builder and constructs a [`ReactStartCodegenJobData`](crate::types::ReactStartCodegenJobData).
     pub fn build(self) -> crate::types::ReactStartCodegenJobData {

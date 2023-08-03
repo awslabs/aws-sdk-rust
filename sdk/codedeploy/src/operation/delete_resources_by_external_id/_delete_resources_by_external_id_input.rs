@@ -39,6 +39,10 @@ impl DeleteResourcesByExternalIdInputBuilder {
         self.external_id = input;
         self
     }
+    /// <p>The unique ID of an external resource (for example, a CloudFormation stack ID) that is linked to one or more CodeDeploy resources.</p>
+    pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_id
+    }
     /// Consumes the builder and constructs a [`DeleteResourcesByExternalIdInput`](crate::operation::delete_resources_by_external_id::DeleteResourcesByExternalIdInput).
     pub fn build(
         self,

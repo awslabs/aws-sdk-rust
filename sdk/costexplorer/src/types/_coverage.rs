@@ -62,6 +62,10 @@ impl CoverageBuilder {
         self.coverage_hours = input;
         self
     }
+    /// <p>The amount of instance usage that the reservation covered, in hours.</p>
+    pub fn get_coverage_hours(&self) -> &::std::option::Option<crate::types::CoverageHours> {
+        &self.coverage_hours
+    }
     /// <p>The amount of instance usage that the reservation covered, in normalized units.</p>
     pub fn coverage_normalized_units(
         mut self,
@@ -78,6 +82,12 @@ impl CoverageBuilder {
         self.coverage_normalized_units = input;
         self
     }
+    /// <p>The amount of instance usage that the reservation covered, in normalized units.</p>
+    pub fn get_coverage_normalized_units(
+        &self,
+    ) -> &::std::option::Option<crate::types::CoverageNormalizedUnits> {
+        &self.coverage_normalized_units
+    }
     /// <p>The amount of cost that the reservation covered.</p>
     pub fn coverage_cost(mut self, input: crate::types::CoverageCost) -> Self {
         self.coverage_cost = ::std::option::Option::Some(input);
@@ -90,6 +100,10 @@ impl CoverageBuilder {
     ) -> Self {
         self.coverage_cost = input;
         self
+    }
+    /// <p>The amount of cost that the reservation covered.</p>
+    pub fn get_coverage_cost(&self) -> &::std::option::Option<crate::types::CoverageCost> {
+        &self.coverage_cost
     }
     /// Consumes the builder and constructs a [`Coverage`](crate::types::Coverage).
     pub fn build(self) -> crate::types::Coverage {

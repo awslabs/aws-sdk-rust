@@ -46,6 +46,12 @@ impl DeleteHsmClientCertificateInputBuilder {
         self.hsm_client_certificate_identifier = input;
         self
     }
+    /// <p>The identifier of the HSM client certificate to be deleted.</p>
+    pub fn get_hsm_client_certificate_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.hsm_client_certificate_identifier
+    }
     /// Consumes the builder and constructs a [`DeleteHsmClientCertificateInput`](crate::operation::delete_hsm_client_certificate::DeleteHsmClientCertificateInput).
     pub fn build(
         self,

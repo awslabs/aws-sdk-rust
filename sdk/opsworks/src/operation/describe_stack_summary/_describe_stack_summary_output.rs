@@ -51,6 +51,10 @@ impl DescribeStackSummaryOutputBuilder {
         self.stack_summary = input;
         self
     }
+    /// <p>A <code>StackSummary</code> object that contains the results.</p>
+    pub fn get_stack_summary(&self) -> &::std::option::Option<crate::types::StackSummary> {
+        &self.stack_summary
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

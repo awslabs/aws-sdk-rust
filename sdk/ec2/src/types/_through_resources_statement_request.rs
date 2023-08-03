@@ -45,6 +45,12 @@ impl ThroughResourcesStatementRequestBuilder {
         self.resource_statement = input;
         self
     }
+    /// <p>The resource statement.</p>
+    pub fn get_resource_statement(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceStatementRequest> {
+        &self.resource_statement
+    }
     /// Consumes the builder and constructs a [`ThroughResourcesStatementRequest`](crate::types::ThroughResourcesStatementRequest).
     pub fn build(self) -> crate::types::ThroughResourcesStatementRequest {
         crate::types::ThroughResourcesStatementRequest {

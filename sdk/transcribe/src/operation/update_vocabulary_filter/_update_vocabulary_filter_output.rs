@@ -72,6 +72,10 @@ impl UpdateVocabularyFilterOutputBuilder {
         self.vocabulary_filter_name = input;
         self
     }
+    /// <p>The name of the updated custom vocabulary filter.</p>
+    pub fn get_vocabulary_filter_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vocabulary_filter_name
+    }
     /// <p>The language code you selected for your custom vocabulary filter.</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
@@ -84,6 +88,10 @@ impl UpdateVocabularyFilterOutputBuilder {
     ) -> Self {
         self.language_code = input;
         self
+    }
+    /// <p>The language code you selected for your custom vocabulary filter.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
+        &self.language_code
     }
     /// <p>The date and time the specified custom vocabulary filter was last updated.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
@@ -99,6 +107,11 @@ impl UpdateVocabularyFilterOutputBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>The date and time the specified custom vocabulary filter was last updated.</p>
+    /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

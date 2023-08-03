@@ -39,6 +39,10 @@ impl GetStoredQueryInputBuilder {
         self.query_name = input;
         self
     }
+    /// <p>The name of the query.</p>
+    pub fn get_query_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_name
+    }
     /// Consumes the builder and constructs a [`GetStoredQueryInput`](crate::operation::get_stored_query::GetStoredQueryInput).
     pub fn build(
         self,

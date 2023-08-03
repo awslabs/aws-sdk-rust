@@ -49,6 +49,12 @@ impl ClusterHealthBuilder {
         self.issues = input;
         self
     }
+    /// <p>An object representing the health issues of your local Amazon EKS cluster on an Amazon Web Services Outpost.</p>
+    pub fn get_issues(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterIssue>> {
+        &self.issues
+    }
     /// Consumes the builder and constructs a [`ClusterHealth`](crate::types::ClusterHealth).
     pub fn build(self) -> crate::types::ClusterHealth {
         crate::types::ClusterHealth {

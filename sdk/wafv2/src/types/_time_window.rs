@@ -53,6 +53,10 @@ impl TimeWindowBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The beginning of the time range from which you want <code>GetSampledRequests</code> to return a sample of the requests that your Amazon Web Services resource received. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The end of the time range from which you want <code>GetSampledRequests</code> to return a sample of the requests that your Amazon Web Services resource received. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl TimeWindowBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The end of the time range from which you want <code>GetSampledRequests</code> to return a sample of the requests that your Amazon Web Services resource received. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// Consumes the builder and constructs a [`TimeWindow`](crate::types::TimeWindow).
     pub fn build(self) -> crate::types::TimeWindow {

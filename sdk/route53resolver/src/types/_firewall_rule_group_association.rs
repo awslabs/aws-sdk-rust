@@ -140,6 +140,10 @@ impl FirewallRuleGroupAssociationBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier for the association.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Amazon Resource Name (ARN) of the firewall rule group association.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -149,6 +153,10 @@ impl FirewallRuleGroupAssociationBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the firewall rule group association.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The unique identifier of the firewall rule group. </p>
     pub fn firewall_rule_group_id(
@@ -166,6 +174,10 @@ impl FirewallRuleGroupAssociationBuilder {
         self.firewall_rule_group_id = input;
         self
     }
+    /// <p>The unique identifier of the firewall rule group. </p>
+    pub fn get_firewall_rule_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.firewall_rule_group_id
+    }
     /// <p>The unique identifier of the VPC that is associated with the rule group. </p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -175,6 +187,10 @@ impl FirewallRuleGroupAssociationBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The unique identifier of the VPC that is associated with the rule group. </p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// <p>The name of the association.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -186,6 +202,10 @@ impl FirewallRuleGroupAssociationBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the association.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The setting that determines the processing order of the rule group among the rule groups that are associated with a single VPC. DNS Firewall filters VPC traffic starting from rule group with the lowest numeric priority setting. </p>
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
@@ -195,6 +215,10 @@ impl FirewallRuleGroupAssociationBuilder {
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
+    }
+    /// <p>The setting that determines the processing order of the rule group among the rule groups that are associated with a single VPC. DNS Firewall filters VPC traffic starting from rule group with the lowest numeric priority setting. </p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
     }
     /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections. </p>
     pub fn mutation_protection(mut self, input: crate::types::MutationProtectionStatus) -> Self {
@@ -208,6 +232,12 @@ impl FirewallRuleGroupAssociationBuilder {
     ) -> Self {
         self.mutation_protection = input;
         self
+    }
+    /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections. </p>
+    pub fn get_mutation_protection(
+        &self,
+    ) -> &::std::option::Option<crate::types::MutationProtectionStatus> {
+        &self.mutation_protection
     }
     /// <p>The owner of the association, used only for associations that are not managed by you. If you use Firewall Manager to manage your DNS Firewalls, then this reports Firewall Manager as the managed owner.</p>
     pub fn managed_owner_name(
@@ -225,6 +255,10 @@ impl FirewallRuleGroupAssociationBuilder {
         self.managed_owner_name = input;
         self
     }
+    /// <p>The owner of the association, used only for associations that are not managed by you. If you use Firewall Manager to manage your DNS Firewalls, then this reports Firewall Manager as the managed owner.</p>
+    pub fn get_managed_owner_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.managed_owner_name
+    }
     /// <p>The current status of the association.</p>
     pub fn status(mut self, input: crate::types::FirewallRuleGroupAssociationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -237,6 +271,12 @@ impl FirewallRuleGroupAssociationBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the association.</p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::FirewallRuleGroupAssociationStatus> {
+        &self.status
     }
     /// <p>Additional information about the status of the response, if available.</p>
     pub fn status_message(
@@ -254,6 +294,10 @@ impl FirewallRuleGroupAssociationBuilder {
         self.status_message = input;
         self
     }
+    /// <p>Additional information about the status of the response, if available.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp. </p>
     pub fn creator_request_id(
         mut self,
@@ -269,6 +313,10 @@ impl FirewallRuleGroupAssociationBuilder {
     ) -> Self {
         self.creator_request_id = input;
         self
+    }
+    /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp. </p>
+    pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creator_request_id
     }
     /// <p>The date and time that the association was created, in Unix time format and Coordinated Universal Time (UTC). </p>
     pub fn creation_time(
@@ -286,6 +334,10 @@ impl FirewallRuleGroupAssociationBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The date and time that the association was created, in Unix time format and Coordinated Universal Time (UTC). </p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_time
+    }
     /// <p>The date and time that the association was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub fn modification_time(
         mut self,
@@ -301,6 +353,10 @@ impl FirewallRuleGroupAssociationBuilder {
     ) -> Self {
         self.modification_time = input;
         self
+    }
+    /// <p>The date and time that the association was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
+    pub fn get_modification_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.modification_time
     }
     /// Consumes the builder and constructs a [`FirewallRuleGroupAssociation`](crate::types::FirewallRuleGroupAssociation).
     pub fn build(self) -> crate::types::FirewallRuleGroupAssociation {

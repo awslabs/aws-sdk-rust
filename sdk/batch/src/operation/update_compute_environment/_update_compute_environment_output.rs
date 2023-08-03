@@ -62,6 +62,10 @@ impl UpdateComputeEnvironmentOutputBuilder {
         self.compute_environment_name = input;
         self
     }
+    /// <p>The name of the compute environment. It can be up to 128 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
+    pub fn get_compute_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.compute_environment_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
     pub fn compute_environment_arn(
         mut self,
@@ -77,6 +81,10 @@ impl UpdateComputeEnvironmentOutputBuilder {
     ) -> Self {
         self.compute_environment_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
+    pub fn get_compute_environment_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.compute_environment_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -36,6 +36,10 @@ impl ListSuppressedDestinationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListSuppressedDestinations as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_suppressed_destinations::builders::ListSuppressedDestinationsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,6 +143,12 @@ impl ListSuppressedDestinationsFluentBuilder {
         self.inner = self.inner.set_reasons(input);
         self
     }
+    /// <p>The factors that caused the email address to be added to .</p>
+    pub fn get_reasons(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>> {
+        self.inner.get_reasons()
+    }
     /// <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list after a specific date.</p>
     pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_date(input);
@@ -151,6 +161,10 @@ impl ListSuppressedDestinationsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_start_date(input);
         self
+    }
+    /// <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list after a specific date.</p>
+    pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_date()
     }
     /// <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list before a specific date.</p>
     pub fn end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -165,6 +179,10 @@ impl ListSuppressedDestinationsFluentBuilder {
         self.inner = self.inner.set_end_date(input);
         self
     }
+    /// <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list before a specific date.</p>
+    pub fn get_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_date()
+    }
     /// <p>A token returned from a previous call to <code>ListSuppressedDestinations</code> to indicate the position in the list of suppressed email addresses.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -175,6 +193,10 @@ impl ListSuppressedDestinationsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A token returned from a previous call to <code>ListSuppressedDestinations</code> to indicate the position in the list of suppressed email addresses.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The number of results to show in a single call to <code>ListSuppressedDestinations</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.inner = self.inner.page_size(input);
@@ -184,5 +206,9 @@ impl ListSuppressedDestinationsFluentBuilder {
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_page_size(input);
         self
+    }
+    /// <p>The number of results to show in a single call to <code>ListSuppressedDestinations</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        self.inner.get_page_size()
     }
 }

@@ -51,6 +51,10 @@ impl GetSearchSuggestionsInputBuilder {
         self.resource = input;
         self
     }
+    /// <p>The name of the SageMaker resource to search for.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource
+    }
     /// <p>Limits the property names that are included in the response.</p>
     pub fn suggestion_query(mut self, input: crate::types::SuggestionQuery) -> Self {
         self.suggestion_query = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl GetSearchSuggestionsInputBuilder {
     ) -> Self {
         self.suggestion_query = input;
         self
+    }
+    /// <p>Limits the property names that are included in the response.</p>
+    pub fn get_suggestion_query(&self) -> &::std::option::Option<crate::types::SuggestionQuery> {
+        &self.suggestion_query
     }
     /// Consumes the builder and constructs a [`GetSearchSuggestionsInput`](crate::operation::get_search_suggestions::GetSearchSuggestionsInput).
     pub fn build(

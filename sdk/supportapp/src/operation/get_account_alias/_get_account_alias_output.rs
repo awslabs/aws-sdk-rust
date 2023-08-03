@@ -53,6 +53,10 @@ impl GetAccountAliasOutputBuilder {
         self.account_alias = input;
         self
     }
+    /// <p>An alias or short name for an Amazon Web Services account.</p>
+    pub fn get_account_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_alias
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

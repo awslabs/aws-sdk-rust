@@ -61,6 +61,14 @@ impl BatchGetRepositoriesInputBuilder {
         self.repository_names = input;
         self
     }
+    /// <p>The names of the repositories to get information about.</p> <note>
+    /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
+    /// </note>
+    pub fn get_repository_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.repository_names
+    }
     /// Consumes the builder and constructs a [`BatchGetRepositoriesInput`](crate::operation::batch_get_repositories::BatchGetRepositoriesInput).
     pub fn build(
         self,

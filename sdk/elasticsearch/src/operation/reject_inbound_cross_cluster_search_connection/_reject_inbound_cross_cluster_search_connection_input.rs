@@ -46,6 +46,12 @@ impl RejectInboundCrossClusterSearchConnectionInputBuilder {
         self.cross_cluster_search_connection_id = input;
         self
     }
+    /// <p>The id of the inbound connection that you want to reject.</p>
+    pub fn get_cross_cluster_search_connection_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.cross_cluster_search_connection_id
+    }
     /// Consumes the builder and constructs a [`RejectInboundCrossClusterSearchConnectionInput`](crate::operation::reject_inbound_cross_cluster_search_connection::RejectInboundCrossClusterSearchConnectionInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::reject_inbound_cross_cluster_search_connection::RejectInboundCrossClusterSearchConnectionInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

@@ -45,6 +45,12 @@ impl SourceConfigurationBuilder {
         self.selected_video_streams = input;
         self
     }
+    /// <p>The selected video streams to capture for a specified media capture pipeline. The number of video streams can't exceed 25.</p>
+    pub fn get_selected_video_streams(
+        &self,
+    ) -> &::std::option::Option<crate::types::SelectedVideoStreams> {
+        &self.selected_video_streams
+    }
     /// Consumes the builder and constructs a [`SourceConfiguration`](crate::types::SourceConfiguration).
     pub fn build(self) -> crate::types::SourceConfiguration {
         crate::types::SourceConfiguration {

@@ -78,6 +78,10 @@ impl IpAccessSettingsSummaryBuilder {
         self.ip_access_settings_arn = input;
         self
     }
+    /// <p>The ARN of IP access settings.</p>
+    pub fn get_ip_access_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_access_settings_arn
+    }
     /// <p>The display name of the IP access settings.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -88,6 +92,10 @@ impl IpAccessSettingsSummaryBuilder {
         self.display_name = input;
         self
     }
+    /// <p>The display name of the IP access settings.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// <p>The description of the IP access settings.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -97,6 +105,10 @@ impl IpAccessSettingsSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the IP access settings.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The creation date timestamp of the IP access settings.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -110,6 +122,10 @@ impl IpAccessSettingsSummaryBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>The creation date timestamp of the IP access settings.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
     }
     /// Consumes the builder and constructs a [`IpAccessSettingsSummary`](crate::types::IpAccessSettingsSummary).
     pub fn build(self) -> crate::types::IpAccessSettingsSummary {

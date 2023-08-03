@@ -172,6 +172,10 @@ impl DescribeWhatIfForecastOutputBuilder {
         self.what_if_forecast_name = input;
         self
     }
+    /// <p>The name of the what-if forecast.</p>
+    pub fn get_what_if_forecast_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.what_if_forecast_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast.</p>
     pub fn what_if_forecast_arn(
         mut self,
@@ -187,6 +191,10 @@ impl DescribeWhatIfForecastOutputBuilder {
     ) -> Self {
         self.what_if_forecast_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the what-if forecast.</p>
+    pub fn get_what_if_forecast_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.what_if_forecast_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the what-if analysis that contains this forecast.</p>
     pub fn what_if_analysis_arn(
@@ -204,6 +212,10 @@ impl DescribeWhatIfForecastOutputBuilder {
         self.what_if_analysis_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the what-if analysis that contains this forecast.</p>
+    pub fn get_what_if_analysis_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.what_if_analysis_arn
+    }
     /// <p>The approximate time remaining to complete the what-if forecast, in minutes.</p>
     pub fn estimated_time_remaining_in_minutes(mut self, input: i64) -> Self {
         self.estimated_time_remaining_in_minutes = ::std::option::Option::Some(input);
@@ -216,6 +228,10 @@ impl DescribeWhatIfForecastOutputBuilder {
     ) -> Self {
         self.estimated_time_remaining_in_minutes = input;
         self
+    }
+    /// <p>The approximate time remaining to complete the what-if forecast, in minutes.</p>
+    pub fn get_estimated_time_remaining_in_minutes(&self) -> &::std::option::Option<i64> {
+        &self.estimated_time_remaining_in_minutes
     }
     /// <p>The status of the what-if forecast. States include:</p>
     /// <ul>
@@ -243,6 +259,18 @@ impl DescribeWhatIfForecastOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the what-if forecast. States include:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// </ul> <note>
+    /// <p>The <code>Status</code> of the what-if forecast must be <code>ACTIVE</code> before you can access the forecast.</p>
+    /// </note>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>If an error occurred, an informational message about the error.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -252,6 +280,10 @@ impl DescribeWhatIfForecastOutputBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>If an error occurred, an informational message about the error.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// <p>When the what-if forecast was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -265,6 +297,10 @@ impl DescribeWhatIfForecastOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>When the what-if forecast was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
@@ -293,6 +329,19 @@ impl DescribeWhatIfForecastOutputBuilder {
         self.last_modification_time = input;
         self
     }
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
+    /// </ul>
+    pub fn get_last_modification_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modification_time
+    }
     /// Appends an item to `time_series_transformations`.
     ///
     /// To override the contents of this collection use [`set_time_series_transformations`](Self::set_time_series_transformations).
@@ -315,6 +364,12 @@ impl DescribeWhatIfForecastOutputBuilder {
         self.time_series_transformations = input;
         self
     }
+    /// <p>An array of <code>Action</code> and <code>TimeSeriesConditions</code> elements that describe what transformations were applied to which time series.</p>
+    pub fn get_time_series_transformations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesTransformation>> {
+        &self.time_series_transformations
+    }
     /// <p>An array of <code>S3Config</code>, <code>Schema</code>, and <code>Format</code> elements that describe the replacement time series.</p>
     pub fn time_series_replacements_data_source(
         mut self,
@@ -330,6 +385,12 @@ impl DescribeWhatIfForecastOutputBuilder {
     ) -> Self {
         self.time_series_replacements_data_source = input;
         self
+    }
+    /// <p>An array of <code>S3Config</code>, <code>Schema</code>, and <code>Format</code> elements that describe the replacement time series.</p>
+    pub fn get_time_series_replacements_data_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::TimeSeriesReplacementsDataSource> {
+        &self.time_series_replacements_data_source
     }
     /// Appends an item to `forecast_types`.
     ///
@@ -352,6 +413,12 @@ impl DescribeWhatIfForecastOutputBuilder {
     ) -> Self {
         self.forecast_types = input;
         self
+    }
+    /// <p>The quantiles at which probabilistic forecasts are generated. You can specify up to five quantiles per what-if forecast in the <code>CreateWhatIfForecast</code> operation. If you didn't specify quantiles, the default values are <code>["0.1", "0.5", "0.9"]</code>. </p>
+    pub fn get_forecast_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.forecast_types
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

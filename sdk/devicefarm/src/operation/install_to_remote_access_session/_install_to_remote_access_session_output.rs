@@ -47,6 +47,10 @@ impl InstallToRemoteAccessSessionOutputBuilder {
         self.app_upload = input;
         self
     }
+    /// <p>An app to upload or that has been uploaded.</p>
+    pub fn get_app_upload(&self) -> &::std::option::Option<crate::types::Upload> {
+        &self.app_upload
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

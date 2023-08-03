@@ -46,6 +46,10 @@ impl BatchAttachObjectResponseBuilder {
         self.attached_object_identifier = input;
         self
     }
+    /// <p>The <code>ObjectIdentifier</code> of the object that has been attached.</p>
+    pub fn get_attached_object_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attached_object_identifier
+    }
     /// Consumes the builder and constructs a [`BatchAttachObjectResponse`](crate::types::BatchAttachObjectResponse).
     pub fn build(self) -> crate::types::BatchAttachObjectResponse {
         crate::types::BatchAttachObjectResponse {

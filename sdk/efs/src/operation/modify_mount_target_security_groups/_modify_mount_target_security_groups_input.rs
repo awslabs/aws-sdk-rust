@@ -54,6 +54,10 @@ impl ModifyMountTargetSecurityGroupsInputBuilder {
         self.mount_target_id = input;
         self
     }
+    /// <p>The ID of the mount target whose security groups you want to modify.</p>
+    pub fn get_mount_target_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mount_target_id
+    }
     /// Appends an item to `security_groups`.
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
@@ -75,6 +79,12 @@ impl ModifyMountTargetSecurityGroupsInputBuilder {
     ) -> Self {
         self.security_groups = input;
         self
+    }
+    /// <p>An array of up to five VPC security group IDs.</p>
+    pub fn get_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_groups
     }
     /// Consumes the builder and constructs a [`ModifyMountTargetSecurityGroupsInput`](crate::operation::modify_mount_target_security_groups::ModifyMountTargetSecurityGroupsInput).
     pub fn build(

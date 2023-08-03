@@ -64,6 +64,10 @@ impl UpdateLinkAttributesInputBuilder {
         self.directory_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the updated typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_arn
+    }
     /// <p>Allows a typed link specifier to be accepted as input.</p>
     pub fn typed_link_specifier(mut self, input: crate::types::TypedLinkSpecifier) -> Self {
         self.typed_link_specifier = ::std::option::Option::Some(input);
@@ -76,6 +80,12 @@ impl UpdateLinkAttributesInputBuilder {
     ) -> Self {
         self.typed_link_specifier = input;
         self
+    }
+    /// <p>Allows a typed link specifier to be accepted as input.</p>
+    pub fn get_typed_link_specifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::TypedLinkSpecifier> {
+        &self.typed_link_specifier
     }
     /// Appends an item to `attribute_updates`.
     ///
@@ -95,6 +105,12 @@ impl UpdateLinkAttributesInputBuilder {
     ) -> Self {
         self.attribute_updates = input;
         self
+    }
+    /// <p>The attributes update structure.</p>
+    pub fn get_attribute_updates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LinkAttributeUpdate>> {
+        &self.attribute_updates
     }
     /// Consumes the builder and constructs a [`UpdateLinkAttributesInput`](crate::operation::update_link_attributes::UpdateLinkAttributesInput).
     pub fn build(

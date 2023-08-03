@@ -48,6 +48,10 @@ impl DescribeReceiptRuleSetInputBuilder {
         self.rule_set_name = input;
         self
     }
+    /// <p>The name of the receipt rule set to describe.</p>
+    pub fn get_rule_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_set_name
+    }
     /// Consumes the builder and constructs a [`DescribeReceiptRuleSetInput`](crate::operation::describe_receipt_rule_set::DescribeReceiptRuleSetInput).
     pub fn build(
         self,

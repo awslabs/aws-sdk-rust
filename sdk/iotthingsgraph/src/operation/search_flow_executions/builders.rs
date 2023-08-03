@@ -37,6 +37,12 @@ impl SearchFlowExecutionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SearchFlowExecutions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::search_flow_executions::builders::SearchFlowExecutionsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -144,6 +150,10 @@ impl SearchFlowExecutionsFluentBuilder {
         self.inner = self.inner.set_system_instance_id(input);
         self
     }
+    /// <p>The ID of the system instance that contains the flow.</p>
+    pub fn get_system_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_system_instance_id()
+    }
     /// <p>The ID of a flow execution.</p>
     pub fn flow_execution_id(
         mut self,
@@ -160,6 +170,10 @@ impl SearchFlowExecutionsFluentBuilder {
         self.inner = self.inner.set_flow_execution_id(input);
         self
     }
+    /// <p>The ID of a flow execution.</p>
+    pub fn get_flow_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_flow_execution_id()
+    }
     /// <p>The date and time of the earliest flow execution to return.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
@@ -172,6 +186,10 @@ impl SearchFlowExecutionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
+    }
+    /// <p>The date and time of the earliest flow execution to return.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
     }
     /// <p>The date and time of the latest flow execution to return.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -186,6 +204,10 @@ impl SearchFlowExecutionsFluentBuilder {
         self.inner = self.inner.set_end_time(input);
         self
     }
+    /// <p>The date and time of the latest flow execution to return.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time()
+    }
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -196,6 +218,10 @@ impl SearchFlowExecutionsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -205,5 +231,9 @@ impl SearchFlowExecutionsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

@@ -48,6 +48,10 @@ impl DeleteAssociationInputBuilder {
         self.source_arn = input;
         self
     }
+    /// <p>The ARN of the source.</p>
+    pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
     pub fn destination_arn(
         mut self,
@@ -63,6 +67,10 @@ impl DeleteAssociationInputBuilder {
     ) -> Self {
         self.destination_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the destination.</p>
+    pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_arn
     }
     /// Consumes the builder and constructs a [`DeleteAssociationInput`](crate::operation::delete_association::DeleteAssociationInput).
     pub fn build(

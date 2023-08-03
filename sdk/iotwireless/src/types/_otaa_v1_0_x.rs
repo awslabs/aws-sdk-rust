@@ -56,6 +56,10 @@ impl OtaaV10XBuilder {
         self.app_key = input;
         self
     }
+    /// <p>The AppKey value.</p>
+    pub fn get_app_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_key
+    }
     /// <p>The AppEUI value.</p>
     pub fn app_eui(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_eui = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl OtaaV10XBuilder {
         self.app_eui = input;
         self
     }
+    /// <p>The AppEUI value.</p>
+    pub fn get_app_eui(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_eui
+    }
     /// <p>The GenAppKey value.</p>
     pub fn gen_app_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gen_app_key = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl OtaaV10XBuilder {
     pub fn set_gen_app_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gen_app_key = input;
         self
+    }
+    /// <p>The GenAppKey value.</p>
+    pub fn get_gen_app_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gen_app_key
     }
     /// Consumes the builder and constructs a [`OtaaV10X`](crate::types::OtaaV10X).
     pub fn build(self) -> crate::types::OtaaV10X {

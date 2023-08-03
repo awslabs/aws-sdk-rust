@@ -36,6 +36,12 @@ impl DescribeSchemaFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeSchema as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_schema::builders::DescribeSchemaInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -117,5 +123,9 @@ impl DescribeSchemaFluentBuilder {
     pub fn set_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schema_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the schema to retrieve.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schema_arn()
     }
 }

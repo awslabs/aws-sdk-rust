@@ -47,6 +47,10 @@ impl GetAccessTokenInputBuilder {
         self.token = input;
         self
     }
+    /// <p>Refresh token, encoded as a JWT token.</p>
+    pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token
+    }
     /// Appends an item to `token_properties`.
     ///
     /// To override the contents of this collection use [`set_token_properties`](Self::set_token_properties).
@@ -68,6 +72,12 @@ impl GetAccessTokenInputBuilder {
     ) -> Self {
         self.token_properties = input;
         self
+    }
+    /// <p>Token properties to validate against those present in the JWT token.</p>
+    pub fn get_token_properties(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.token_properties
     }
     /// Consumes the builder and constructs a [`GetAccessTokenInput`](crate::operation::get_access_token::GetAccessTokenInput).
     pub fn build(

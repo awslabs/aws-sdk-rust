@@ -59,6 +59,12 @@ impl AppInstanceStreamingConfigurationBuilder {
         self.app_instance_data_type = input;
         self
     }
+    /// <p>The type of data to be streamed.</p>
+    pub fn get_app_instance_data_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::AppInstanceDataType> {
+        &self.app_instance_data_type
+    }
     /// <p>The resource ARN.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -68,6 +74,10 @@ impl AppInstanceStreamingConfigurationBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p>The resource ARN.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// Consumes the builder and constructs a [`AppInstanceStreamingConfiguration`](crate::types::AppInstanceStreamingConfiguration).
     pub fn build(self) -> crate::types::AppInstanceStreamingConfiguration {

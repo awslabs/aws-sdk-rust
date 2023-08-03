@@ -49,6 +49,12 @@ impl CreateRecommenderConfigurationInputBuilder {
         self.create_recommender_configuration = input;
         self
     }
+    /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
+    pub fn get_create_recommender_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateRecommenderConfigurationShape> {
+        &self.create_recommender_configuration
+    }
     /// Consumes the builder and constructs a [`CreateRecommenderConfigurationInput`](crate::operation::create_recommender_configuration::CreateRecommenderConfigurationInput).
     pub fn build(
         self,

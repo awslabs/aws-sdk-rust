@@ -53,6 +53,10 @@ impl DescribeConfigurationRevisionInputBuilder {
         self.configuration_id = input;
         self
     }
+    /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
+    pub fn get_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_id
+    }
     /// <p>The revision of the configuration.</p>
     pub fn configuration_revision(
         mut self,
@@ -68,6 +72,10 @@ impl DescribeConfigurationRevisionInputBuilder {
     ) -> Self {
         self.configuration_revision = input;
         self
+    }
+    /// <p>The revision of the configuration.</p>
+    pub fn get_configuration_revision(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_revision
     }
     /// Consumes the builder and constructs a [`DescribeConfigurationRevisionInput`](crate::operation::describe_configuration_revision::DescribeConfigurationRevisionInput).
     pub fn build(

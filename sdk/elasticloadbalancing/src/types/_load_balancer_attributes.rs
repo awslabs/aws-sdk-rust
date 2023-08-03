@@ -95,6 +95,13 @@ impl LoadBalancerAttributesBuilder {
         self.cross_zone_load_balancing = input;
         self
     }
+    /// <p>If enabled, the load balancer routes the request traffic evenly across all instances regardless of the Availability Zones.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html">Configure Cross-Zone Load Balancing</a> in the <i>Classic Load Balancers Guide</i>.</p>
+    pub fn get_cross_zone_load_balancing(
+        &self,
+    ) -> &::std::option::Option<crate::types::CrossZoneLoadBalancing> {
+        &self.cross_zone_load_balancing
+    }
     /// <p>If enabled, the load balancer captures detailed information of all requests and delivers the information to the Amazon S3 bucket that you specify.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable Access Logs</a> in the <i>Classic Load Balancers Guide</i>.</p>
     pub fn access_log(mut self, input: crate::types::AccessLog) -> Self {
@@ -106,6 +113,11 @@ impl LoadBalancerAttributesBuilder {
     pub fn set_access_log(mut self, input: ::std::option::Option<crate::types::AccessLog>) -> Self {
         self.access_log = input;
         self
+    }
+    /// <p>If enabled, the load balancer captures detailed information of all requests and delivers the information to the Amazon S3 bucket that you specify.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable Access Logs</a> in the <i>Classic Load Balancers Guide</i>.</p>
+    pub fn get_access_log(&self) -> &::std::option::Option<crate::types::AccessLog> {
+        &self.access_log
     }
     /// <p>If enabled, the load balancer allows existing requests to complete before the load balancer shifts traffic away from a deregistered or unhealthy instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure Connection Draining</a> in the <i>Classic Load Balancers Guide</i>.</p>
@@ -122,6 +134,13 @@ impl LoadBalancerAttributesBuilder {
         self.connection_draining = input;
         self
     }
+    /// <p>If enabled, the load balancer allows existing requests to complete before the load balancer shifts traffic away from a deregistered or unhealthy instance.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure Connection Draining</a> in the <i>Classic Load Balancers Guide</i>.</p>
+    pub fn get_connection_draining(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConnectionDraining> {
+        &self.connection_draining
+    }
     /// <p>If enabled, the load balancer allows the connections to remain idle (no data is sent over the connection) for the specified duration.</p>
     /// <p>By default, Elastic Load Balancing maintains a 60-second idle connection timeout for both front-end and back-end connections of your load balancer. For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure Idle Connection Timeout</a> in the <i>Classic Load Balancers Guide</i>.</p>
     pub fn connection_settings(mut self, input: crate::types::ConnectionSettings) -> Self {
@@ -136,6 +155,13 @@ impl LoadBalancerAttributesBuilder {
     ) -> Self {
         self.connection_settings = input;
         self
+    }
+    /// <p>If enabled, the load balancer allows the connections to remain idle (no data is sent over the connection) for the specified duration.</p>
+    /// <p>By default, Elastic Load Balancing maintains a 60-second idle connection timeout for both front-end and back-end connections of your load balancer. For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure Idle Connection Timeout</a> in the <i>Classic Load Balancers Guide</i>.</p>
+    pub fn get_connection_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConnectionSettings> {
+        &self.connection_settings
     }
     /// Appends an item to `additional_attributes`.
     ///
@@ -155,6 +181,12 @@ impl LoadBalancerAttributesBuilder {
     ) -> Self {
         self.additional_attributes = input;
         self
+    }
+    /// <p>Any additional attributes.</p>
+    pub fn get_additional_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalAttribute>> {
+        &self.additional_attributes
     }
     /// Consumes the builder and constructs a [`LoadBalancerAttributes`](crate::types::LoadBalancerAttributes).
     pub fn build(self) -> crate::types::LoadBalancerAttributes {

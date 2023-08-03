@@ -143,6 +143,17 @@ impl WorkflowStepBuilder {
         self.r#type = input;
         self
     }
+    /// <p> Currently, the following step types are supported. </p>
+    /// <ul>
+    /// <li> <p> <b> <code>COPY</code> </b> - Copy the file to another location.</p> </li>
+    /// <li> <p> <b> <code>CUSTOM</code> </b> - Perform a custom step with an Lambda function target.</p> </li>
+    /// <li> <p> <b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was uploaded.</p> </li>
+    /// <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p> </li>
+    /// <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::WorkflowStepType> {
+        &self.r#type
+    }
     /// <p>Details for a step that performs a file copy.</p>
     /// <p> Consists of the following values: </p>
     /// <ul>
@@ -168,6 +179,16 @@ impl WorkflowStepBuilder {
         self.copy_step_details = input;
         self
     }
+    /// <p>Details for a step that performs a file copy.</p>
+    /// <p> Consists of the following values: </p>
+    /// <ul>
+    /// <li> <p>A description</p> </li>
+    /// <li> <p>An Amazon S3 location for the destination of the file copy.</p> </li>
+    /// <li> <p>A flag that indicates whether to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p> </li>
+    /// </ul>
+    pub fn get_copy_step_details(&self) -> &::std::option::Option<crate::types::CopyStepDetails> {
+        &self.copy_step_details
+    }
     /// <p>Details for a step that invokes an Lambda function.</p>
     /// <p>Consists of the Lambda function's name, target, and timeout (in seconds). </p>
     pub fn custom_step_details(mut self, input: crate::types::CustomStepDetails) -> Self {
@@ -183,6 +204,13 @@ impl WorkflowStepBuilder {
         self.custom_step_details = input;
         self
     }
+    /// <p>Details for a step that invokes an Lambda function.</p>
+    /// <p>Consists of the Lambda function's name, target, and timeout (in seconds). </p>
+    pub fn get_custom_step_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomStepDetails> {
+        &self.custom_step_details
+    }
     /// <p>Details for a step that deletes the file.</p>
     pub fn delete_step_details(mut self, input: crate::types::DeleteStepDetails) -> Self {
         self.delete_step_details = ::std::option::Option::Some(input);
@@ -195,6 +223,12 @@ impl WorkflowStepBuilder {
     ) -> Self {
         self.delete_step_details = input;
         self
+    }
+    /// <p>Details for a step that deletes the file.</p>
+    pub fn get_delete_step_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeleteStepDetails> {
+        &self.delete_step_details
     }
     /// <p>Details for a step that creates one or more tags.</p>
     /// <p>You specify one or more tags. Each tag contains a key-value pair.</p>
@@ -210,6 +244,11 @@ impl WorkflowStepBuilder {
     ) -> Self {
         self.tag_step_details = input;
         self
+    }
+    /// <p>Details for a step that creates one or more tags.</p>
+    /// <p>You specify one or more tags. Each tag contains a key-value pair.</p>
+    pub fn get_tag_step_details(&self) -> &::std::option::Option<crate::types::TagStepDetails> {
+        &self.tag_step_details
     }
     /// <p>Details for a step that decrypts an encrypted file.</p>
     /// <p>Consists of the following values:</p>
@@ -239,6 +278,20 @@ impl WorkflowStepBuilder {
     ) -> Self {
         self.decrypt_step_details = input;
         self
+    }
+    /// <p>Details for a step that decrypts an encrypted file.</p>
+    /// <p>Consists of the following values:</p>
+    /// <ul>
+    /// <li> <p>A descriptive name</p> </li>
+    /// <li> <p>An Amazon S3 or Amazon Elastic File System (Amazon EFS) location for the source file to decrypt.</p> </li>
+    /// <li> <p>An S3 or Amazon EFS location for the destination of the file decryption.</p> </li>
+    /// <li> <p>A flag that indicates whether to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p> </li>
+    /// <li> <p>The type of encryption that's used. Currently, only PGP encryption is supported.</p> </li>
+    /// </ul>
+    pub fn get_decrypt_step_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::DecryptStepDetails> {
+        &self.decrypt_step_details
     }
     /// Consumes the builder and constructs a [`WorkflowStep`](crate::types::WorkflowStep).
     pub fn build(self) -> crate::types::WorkflowStep {

@@ -48,6 +48,10 @@ impl UpdateBackendAuthMfaConfigBuilder {
         self.mfa_mode = input;
         self
     }
+    /// <p>The MFA mode for the backend of your Amplify project.</p>
+    pub fn get_mfa_mode(&self) -> &::std::option::Option<crate::types::MfaMode> {
+        &self.mfa_mode
+    }
     /// <p>The settings of your MFA configuration for the backend of your Amplify project.</p>
     pub fn settings(mut self, input: crate::types::Settings) -> Self {
         self.settings = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl UpdateBackendAuthMfaConfigBuilder {
     pub fn set_settings(mut self, input: ::std::option::Option<crate::types::Settings>) -> Self {
         self.settings = input;
         self
+    }
+    /// <p>The settings of your MFA configuration for the backend of your Amplify project.</p>
+    pub fn get_settings(&self) -> &::std::option::Option<crate::types::Settings> {
+        &self.settings
     }
     /// Consumes the builder and constructs a [`UpdateBackendAuthMfaConfig`](crate::types::UpdateBackendAuthMfaConfig).
     pub fn build(self) -> crate::types::UpdateBackendAuthMfaConfig {

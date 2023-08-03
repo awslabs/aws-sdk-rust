@@ -36,6 +36,12 @@ impl CreateDatasetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDataset as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_dataset::builders::CreateDatasetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl CreateDatasetFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>Display title for a FinSpace Dataset.</p>
     pub fn dataset_title(
         mut self,
@@ -133,6 +143,10 @@ impl CreateDatasetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_dataset_title(input);
         self
+    }
+    /// <p>Display title for a FinSpace Dataset.</p>
+    pub fn get_dataset_title(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dataset_title()
     }
     /// <p>The format in which Dataset data is structured.</p>
     /// <ul>
@@ -152,6 +166,14 @@ impl CreateDatasetFluentBuilder {
         self.inner = self.inner.set_kind(input);
         self
     }
+    /// <p>The format in which Dataset data is structured.</p>
+    /// <ul>
+    /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li>
+    /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li>
+    /// </ul>
+    pub fn get_kind(&self) -> &::std::option::Option<crate::types::DatasetKind> {
+        self.inner.get_kind()
+    }
     /// <p>Description of a Dataset.</p>
     pub fn dataset_description(
         mut self,
@@ -168,6 +190,10 @@ impl CreateDatasetFluentBuilder {
         self.inner = self.inner.set_dataset_description(input);
         self
     }
+    /// <p>Description of a Dataset.</p>
+    pub fn get_dataset_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dataset_description()
+    }
     /// <p>Contact information for a Dataset owner.</p>
     pub fn owner_info(mut self, input: crate::types::DatasetOwnerInfo) -> Self {
         self.inner = self.inner.owner_info(input);
@@ -180,6 +206,10 @@ impl CreateDatasetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_owner_info(input);
         self
+    }
+    /// <p>Contact information for a Dataset owner.</p>
+    pub fn get_owner_info(&self) -> &::std::option::Option<crate::types::DatasetOwnerInfo> {
+        self.inner.get_owner_info()
     }
     /// <p>Permission group parameters for Dataset permissions.</p>
     pub fn permission_group_params(mut self, input: crate::types::PermissionGroupParams) -> Self {
@@ -194,6 +224,12 @@ impl CreateDatasetFluentBuilder {
         self.inner = self.inner.set_permission_group_params(input);
         self
     }
+    /// <p>Permission group parameters for Dataset permissions.</p>
+    pub fn get_permission_group_params(
+        &self,
+    ) -> &::std::option::Option<crate::types::PermissionGroupParams> {
+        self.inner.get_permission_group_params()
+    }
     /// <p>The unique resource identifier for a Dataset.</p>
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.alias(input.into());
@@ -203,6 +239,10 @@ impl CreateDatasetFluentBuilder {
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_alias(input);
         self
+    }
+    /// <p>The unique resource identifier for a Dataset.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_alias()
     }
     /// <p>Definition for a schema on a tabular Dataset.</p>
     pub fn schema_definition(mut self, input: crate::types::SchemaUnion) -> Self {
@@ -216,5 +256,9 @@ impl CreateDatasetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_schema_definition(input);
         self
+    }
+    /// <p>Definition for a schema on a tabular Dataset.</p>
+    pub fn get_schema_definition(&self) -> &::std::option::Option<crate::types::SchemaUnion> {
+        self.inner.get_schema_definition()
     }
 }

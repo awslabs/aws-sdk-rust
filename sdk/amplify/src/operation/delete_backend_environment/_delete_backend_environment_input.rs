@@ -50,6 +50,10 @@ impl DeleteBackendEnvironmentInputBuilder {
         self.app_id = input;
         self
     }
+    /// <p> The unique ID of an Amplify app. </p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p> The name of a backend environment of an Amplify app. </p>
     pub fn environment_name(
         mut self,
@@ -65,6 +69,10 @@ impl DeleteBackendEnvironmentInputBuilder {
     ) -> Self {
         self.environment_name = input;
         self
+    }
+    /// <p> The name of a backend environment of an Amplify app. </p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
     }
     /// Consumes the builder and constructs a [`DeleteBackendEnvironmentInput`](crate::operation::delete_backend_environment::DeleteBackendEnvironmentInput).
     pub fn build(

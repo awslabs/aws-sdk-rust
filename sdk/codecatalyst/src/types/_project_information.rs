@@ -48,6 +48,10 @@ impl ProjectInformationBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the project in the space.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The system-generated unique ID of the project.</p>
     pub fn project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ProjectInformationBuilder {
     pub fn set_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_id = input;
         self
+    }
+    /// <p>The system-generated unique ID of the project.</p>
+    pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_id
     }
     /// Consumes the builder and constructs a [`ProjectInformation`](crate::types::ProjectInformation).
     pub fn build(self) -> crate::types::ProjectInformation {

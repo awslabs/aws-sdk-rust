@@ -82,6 +82,13 @@ impl GetConsolidatedReportOutputBuilder {
         self.metrics = input;
         self
     }
+    /// <p>The metrics that make up the consolidated report.</p>
+    /// <p>Only returned when <code>JSON</code> format is requested.</p>
+    pub fn get_metrics(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConsolidatedReportMetric>> {
+        &self.metrics
+    }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -91,6 +98,10 @@ impl GetConsolidatedReportOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to use to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The Base64-encoded string representation of a lens review report.</p>
     /// <p>This data can be used to create a PDF file.</p>
@@ -111,6 +122,12 @@ impl GetConsolidatedReportOutputBuilder {
     ) -> Self {
         self.base64_string = input;
         self
+    }
+    /// <p>The Base64-encoded string representation of a lens review report.</p>
+    /// <p>This data can be used to create a PDF file.</p>
+    /// <p>Only returned by <code>GetConsolidatedReport</code> when <code>PDF</code> format is requested.</p>
+    pub fn get_base64_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.base64_string
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

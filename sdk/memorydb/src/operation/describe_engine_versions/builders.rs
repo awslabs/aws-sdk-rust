@@ -36,6 +36,13 @@ impl DescribeEngineVersionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeEngineVersions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_engine_versions::builders::DescribeEngineVersionsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -144,6 +151,10 @@ impl DescribeEngineVersionsFluentBuilder {
         self.inner = self.inner.set_engine_version(input);
         self
     }
+    /// <p>The Redis engine version</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_engine_version()
+    }
     /// <p>The name of a specific parameter group family to return details for.</p>
     pub fn parameter_group_family(
         mut self,
@@ -160,6 +171,10 @@ impl DescribeEngineVersionsFluentBuilder {
         self.inner = self.inner.set_parameter_group_family(input);
         self
     }
+    /// <p>The name of a specific parameter group family to return details for.</p>
+    pub fn get_parameter_group_family(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_parameter_group_family()
+    }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -169,6 +184,10 @@ impl DescribeEngineVersionsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -180,6 +199,10 @@ impl DescribeEngineVersionsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>If true, specifies that only the default version of the specified engine or engine and major version combination is to be returned.</p>
     pub fn default_only(mut self, input: bool) -> Self {
         self.inner = self.inner.default_only(input);
@@ -189,5 +212,9 @@ impl DescribeEngineVersionsFluentBuilder {
     pub fn set_default_only(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_default_only(input);
         self
+    }
+    /// <p>If true, specifies that only the default version of the specified engine or engine and major version combination is to be returned.</p>
+    pub fn get_default_only(&self) -> &::std::option::Option<bool> {
+        self.inner.get_default_only()
     }
 }

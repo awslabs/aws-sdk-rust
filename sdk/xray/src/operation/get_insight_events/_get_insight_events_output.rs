@@ -64,6 +64,12 @@ impl GetInsightEventsOutputBuilder {
         self.insight_events = input;
         self
     }
+    /// <p>A detailed description of the event. This includes the time of the event, client and root cause impact statistics, and the top anomalous service at the time of the event.</p>
+    pub fn get_insight_events(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightEvent>> {
+        &self.insight_events
+    }
     /// <p>Use this token to retrieve the next page of insight events.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -73,6 +79,10 @@ impl GetInsightEventsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Use this token to retrieve the next page of insight events.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -38,6 +38,10 @@ impl TestRoleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the TestRole as a reference.
+    pub fn as_input(&self) -> &crate::operation::test_role::builders::TestRoleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -120,6 +124,10 @@ impl TestRoleFluentBuilder {
         self.inner = self.inner.set_role(input);
         self
     }
+    /// <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to test.</p>
+    pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role()
+    }
     /// <p>The Amazon S3 bucket that contains media files to be transcoded. The action attempts to read from this bucket.</p>
     pub fn input_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.input_bucket(input.into());
@@ -129,6 +137,10 @@ impl TestRoleFluentBuilder {
     pub fn set_input_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_input_bucket(input);
         self
+    }
+    /// <p>The Amazon S3 bucket that contains media files to be transcoded. The action attempts to read from this bucket.</p>
+    pub fn get_input_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_input_bucket()
     }
     /// <p>The Amazon S3 bucket that Elastic Transcoder writes transcoded media files to. The action attempts to read from this bucket.</p>
     pub fn output_bucket(
@@ -146,6 +158,10 @@ impl TestRoleFluentBuilder {
         self.inner = self.inner.set_output_bucket(input);
         self
     }
+    /// <p>The Amazon S3 bucket that Elastic Transcoder writes transcoded media files to. The action attempts to read from this bucket.</p>
+    pub fn get_output_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_output_bucket()
+    }
     /// Appends an item to `Topics`.
     ///
     /// To override the contents of this collection use [`set_topics`](Self::set_topics).
@@ -162,5 +178,9 @@ impl TestRoleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_topics(input);
         self
+    }
+    /// <p>The ARNs of one or more Amazon Simple Notification Service (Amazon SNS) topics that you want the action to send a test notification to.</p>
+    pub fn get_topics(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_topics()
     }
 }

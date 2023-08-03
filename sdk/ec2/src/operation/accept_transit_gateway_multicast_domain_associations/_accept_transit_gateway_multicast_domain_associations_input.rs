@@ -69,6 +69,12 @@ impl AcceptTransitGatewayMulticastDomainAssociationsInputBuilder {
         self.transit_gateway_multicast_domain_id = input;
         self
     }
+    /// <p>The ID of the transit gateway multicast domain.</p>
+    pub fn get_transit_gateway_multicast_domain_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_multicast_domain_id
+    }
     /// <p>The ID of the transit gateway attachment.</p>
     pub fn transit_gateway_attachment_id(
         mut self,
@@ -84,6 +90,12 @@ impl AcceptTransitGatewayMulticastDomainAssociationsInputBuilder {
     ) -> Self {
         self.transit_gateway_attachment_id = input;
         self
+    }
+    /// <p>The ID of the transit gateway attachment.</p>
+    pub fn get_transit_gateway_attachment_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_attachment_id
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -104,6 +116,10 @@ impl AcceptTransitGatewayMulticastDomainAssociationsInputBuilder {
         self.subnet_ids = input;
         self
     }
+    /// <p>The IDs of the subnets to associate with the transit gateway multicast domain.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -113,6 +129,10 @@ impl AcceptTransitGatewayMulticastDomainAssociationsInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`AcceptTransitGatewayMulticastDomainAssociationsInput`](crate::operation::accept_transit_gateway_multicast_domain_associations::AcceptTransitGatewayMulticastDomainAssociationsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::accept_transit_gateway_multicast_domain_associations::AcceptTransitGatewayMulticastDomainAssociationsInput, ::aws_smithy_http::operation::error::BuildError>{

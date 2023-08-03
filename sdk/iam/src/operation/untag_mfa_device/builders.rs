@@ -36,6 +36,12 @@ impl UntagMFADeviceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UntagMFADevice as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::untag_mfa_device::builders::UntagMfaDeviceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,11 @@ impl UntagMFADeviceFluentBuilder {
         self.inner = self.inner.set_serial_number(input);
         self
     }
+    /// <p>The unique identifier for the IAM virtual MFA device from which you want to remove tags. For virtual MFA devices, the serial number is the same as the ARN.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn get_serial_number(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_serial_number()
+    }
     /// Appends an item to `TagKeys`.
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
@@ -150,5 +161,9 @@ impl UntagMFADeviceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tag_keys(input);
         self
+    }
+    /// <p>A list of key names as a simple array of strings. The tags with matching keys are removed from the specified instance profile.</p>
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_tag_keys()
     }
 }

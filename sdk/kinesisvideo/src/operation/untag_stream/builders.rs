@@ -37,6 +37,10 @@ impl UntagStreamFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UntagStream as a reference.
+    pub fn as_input(&self) -> &crate::operation::untag_stream::builders::UntagStreamInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl UntagStreamFluentBuilder {
         self.inner = self.inner.set_stream_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the stream that you want to remove tags from.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_arn()
+    }
     /// <p>The name of the stream that you want to remove tags from.</p>
     pub fn stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stream_name(input.into());
@@ -128,6 +136,10 @@ impl UntagStreamFluentBuilder {
     pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stream_name(input);
         self
+    }
+    /// <p>The name of the stream that you want to remove tags from.</p>
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_name()
     }
     /// Appends an item to `TagKeyList`.
     ///
@@ -145,5 +157,11 @@ impl UntagStreamFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tag_key_list(input);
         self
+    }
+    /// <p>A list of the keys of the tags that you want to remove.</p>
+    pub fn get_tag_key_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_tag_key_list()
     }
 }

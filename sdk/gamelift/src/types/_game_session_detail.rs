@@ -59,6 +59,10 @@ impl GameSessionDetailBuilder {
         self.game_session = input;
         self
     }
+    /// <p>Object that describes a game session.</p>
+    pub fn get_game_session(&self) -> &::std::option::Option<crate::types::GameSession> {
+        &self.game_session
+    }
     /// <p>Current status of protection for the game session.</p>
     /// <ul>
     /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
@@ -79,6 +83,14 @@ impl GameSessionDetailBuilder {
     ) -> Self {
         self.protection_policy = input;
         self
+    }
+    /// <p>Current status of protection for the game session.</p>
+    /// <ul>
+    /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
+    /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
+    /// </ul>
+    pub fn get_protection_policy(&self) -> &::std::option::Option<crate::types::ProtectionPolicy> {
+        &self.protection_policy
     }
     /// Consumes the builder and constructs a [`GameSessionDetail`](crate::types::GameSessionDetail).
     pub fn build(self) -> crate::types::GameSessionDetail {

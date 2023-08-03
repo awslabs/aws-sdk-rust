@@ -108,6 +108,10 @@ impl ServiceSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the service.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description of the service.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -118,6 +122,10 @@ impl ServiceSummaryBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the service.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -127,6 +135,10 @@ impl ServiceSummaryBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the service.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The name of the service template.</p>
     pub fn template_name(
@@ -144,6 +156,10 @@ impl ServiceSummaryBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The name of the service template.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// <p>The time when the service was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -156,6 +172,10 @@ impl ServiceSummaryBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The time when the service was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>The time when the service was last modified.</p>
     pub fn last_modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -170,6 +190,10 @@ impl ServiceSummaryBuilder {
         self.last_modified_at = input;
         self
     }
+    /// <p>The time when the service was last modified.</p>
+    pub fn get_last_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_at
+    }
     /// <p>The status of the service.</p>
     pub fn status(mut self, input: crate::types::ServiceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -179,6 +203,10 @@ impl ServiceSummaryBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ServiceStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the service.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ServiceStatus> {
+        &self.status
     }
     /// <p>A service status message.</p>
     pub fn status_message(
@@ -195,6 +223,10 @@ impl ServiceSummaryBuilder {
     ) -> Self {
         self.status_message = input;
         self
+    }
+    /// <p>A service status message.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// Consumes the builder and constructs a [`ServiceSummary`](crate::types::ServiceSummary).
     pub fn build(self) -> crate::types::ServiceSummary {

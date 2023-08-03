@@ -55,6 +55,10 @@ impl UpdateWorkspaceInputBuilder {
         self.workspace_id = input;
         self
     }
+    /// <p>The ID of the workspace.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
+    }
     /// <p>The description of the workspace.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl UpdateWorkspaceInputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the workspace.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The ARN of the execution role associated with the workspace.</p>
     pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role = ::std::option::Option::Some(input.into());
@@ -74,6 +82,10 @@ impl UpdateWorkspaceInputBuilder {
     pub fn set_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role = input;
         self
+    }
+    /// <p>The ARN of the execution role associated with the workspace.</p>
+    pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role
     }
     /// Consumes the builder and constructs a [`UpdateWorkspaceInput`](crate::operation::update_workspace::UpdateWorkspaceInput).
     pub fn build(

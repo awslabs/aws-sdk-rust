@@ -46,6 +46,10 @@ impl BulkPublishInputBuilder {
         self.identity_pool_id = input;
         self
     }
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_pool_id
+    }
     /// Consumes the builder and constructs a [`BulkPublishInput`](crate::operation::bulk_publish::BulkPublishInput).
     pub fn build(
         self,

@@ -114,6 +114,10 @@ impl AnalyzerSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the analyzer.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the analyzer.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -124,6 +128,10 @@ impl AnalyzerSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the analyzer.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type of analyzer, which corresponds to the zone of trust chosen for the analyzer.</p>
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -133,6 +141,10 @@ impl AnalyzerSummaryBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of analyzer, which corresponds to the zone of trust chosen for the analyzer.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
+        &self.r#type
     }
     /// <p>A timestamp for the time at which the analyzer was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -146,6 +158,10 @@ impl AnalyzerSummaryBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>A timestamp for the time at which the analyzer was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>The resource that was most recently analyzed by the analyzer.</p>
     pub fn last_resource_analyzed(
@@ -163,6 +179,10 @@ impl AnalyzerSummaryBuilder {
         self.last_resource_analyzed = input;
         self
     }
+    /// <p>The resource that was most recently analyzed by the analyzer.</p>
+    pub fn get_last_resource_analyzed(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_resource_analyzed
+    }
     /// <p>The time at which the most recently analyzed resource was analyzed.</p>
     pub fn last_resource_analyzed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_resource_analyzed_at = ::std::option::Option::Some(input);
@@ -175,6 +195,12 @@ impl AnalyzerSummaryBuilder {
     ) -> Self {
         self.last_resource_analyzed_at = input;
         self
+    }
+    /// <p>The time at which the most recently analyzed resource was analyzed.</p>
+    pub fn get_last_resource_analyzed_at(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_resource_analyzed_at
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -201,6 +227,14 @@ impl AnalyzerSummaryBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags added to the analyzer.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The status of the analyzer. An <code>Active</code> analyzer successfully monitors supported resources and generates new findings. The analyzer is <code>Disabled</code> when a user action, such as removing trusted access for Identity and Access Management Access Analyzer from Organizations, causes the analyzer to stop generating new findings. The status is <code>Creating</code> when the analyzer creation is in progress and <code>Failed</code> when the analyzer creation has failed. </p>
     pub fn status(mut self, input: crate::types::AnalyzerStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -214,6 +248,10 @@ impl AnalyzerSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the analyzer. An <code>Active</code> analyzer successfully monitors supported resources and generates new findings. The analyzer is <code>Disabled</code> when a user action, such as removing trusted access for Identity and Access Management Access Analyzer from Organizations, causes the analyzer to stop generating new findings. The status is <code>Creating</code> when the analyzer creation is in progress and <code>Failed</code> when the analyzer creation has failed. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AnalyzerStatus> {
+        &self.status
+    }
     /// <p>The <code>statusReason</code> provides more details about the current status of the analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code> status is returned. For an analyzer with organization as the type, this failure can be due to an issue with creating the service-linked roles required in the member accounts of the Amazon Web Services organization.</p>
     pub fn status_reason(mut self, input: crate::types::StatusReason) -> Self {
         self.status_reason = ::std::option::Option::Some(input);
@@ -226,6 +264,10 @@ impl AnalyzerSummaryBuilder {
     ) -> Self {
         self.status_reason = input;
         self
+    }
+    /// <p>The <code>statusReason</code> provides more details about the current status of the analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code> status is returned. For an analyzer with organization as the type, this failure can be due to an issue with creating the service-linked roles required in the member accounts of the Amazon Web Services organization.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<crate::types::StatusReason> {
+        &self.status_reason
     }
     /// Consumes the builder and constructs a [`AnalyzerSummary`](crate::types::AnalyzerSummary).
     pub fn build(self) -> crate::types::AnalyzerSummary {

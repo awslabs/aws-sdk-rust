@@ -238,6 +238,10 @@ impl UpdateReplicationConfigurationOutputBuilder {
         self.source_server_id = input;
         self
     }
+    /// <p>Replication Configuration Source Server ID.</p>
+    pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_server_id
+    }
     /// <p>Replication Configuration name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -247,6 +251,10 @@ impl UpdateReplicationConfigurationOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>Replication Configuration name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Replication Configuration Staging Area subnet ID.</p>
     pub fn staging_area_subnet_id(
@@ -264,6 +272,10 @@ impl UpdateReplicationConfigurationOutputBuilder {
         self.staging_area_subnet_id = input;
         self
     }
+    /// <p>Replication Configuration Staging Area subnet ID.</p>
+    pub fn get_staging_area_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.staging_area_subnet_id
+    }
     /// <p>Replication Configuration associate default Application Migration Service Security Group.</p>
     pub fn associate_default_security_group(mut self, input: bool) -> Self {
         self.associate_default_security_group = ::std::option::Option::Some(input);
@@ -276,6 +288,10 @@ impl UpdateReplicationConfigurationOutputBuilder {
     ) -> Self {
         self.associate_default_security_group = input;
         self
+    }
+    /// <p>Replication Configuration associate default Application Migration Service Security Group.</p>
+    pub fn get_associate_default_security_group(&self) -> &::std::option::Option<bool> {
+        &self.associate_default_security_group
     }
     /// Appends an item to `replication_servers_security_groups_i_ds`.
     ///
@@ -301,6 +317,12 @@ impl UpdateReplicationConfigurationOutputBuilder {
         self.replication_servers_security_groups_i_ds = input;
         self
     }
+    /// <p>Replication Configuration Replication Server Security Group IDs.</p>
+    pub fn get_replication_servers_security_groups_i_ds(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.replication_servers_security_groups_i_ds
+    }
     /// <p>Replication Configuration Replication Server instance type.</p>
     pub fn replication_server_instance_type(
         mut self,
@@ -317,6 +339,12 @@ impl UpdateReplicationConfigurationOutputBuilder {
         self.replication_server_instance_type = input;
         self
     }
+    /// <p>Replication Configuration Replication Server instance type.</p>
+    pub fn get_replication_server_instance_type(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.replication_server_instance_type
+    }
     /// <p>Replication Configuration use Dedicated Replication Server.</p>
     pub fn use_dedicated_replication_server(mut self, input: bool) -> Self {
         self.use_dedicated_replication_server = ::std::option::Option::Some(input);
@@ -329,6 +357,10 @@ impl UpdateReplicationConfigurationOutputBuilder {
     ) -> Self {
         self.use_dedicated_replication_server = input;
         self
+    }
+    /// <p>Replication Configuration use Dedicated Replication Server.</p>
+    pub fn get_use_dedicated_replication_server(&self) -> &::std::option::Option<bool> {
+        &self.use_dedicated_replication_server
     }
     /// <p>Replication Configuration use default large Staging Disks.</p>
     pub fn default_large_staging_disk_type(
@@ -347,6 +379,13 @@ impl UpdateReplicationConfigurationOutputBuilder {
     ) -> Self {
         self.default_large_staging_disk_type = input;
         self
+    }
+    /// <p>Replication Configuration use default large Staging Disks.</p>
+    pub fn get_default_large_staging_disk_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReplicationConfigurationDefaultLargeStagingDiskType>
+    {
+        &self.default_large_staging_disk_type
     }
     /// Appends an item to `replicated_disks`.
     ///
@@ -372,6 +411,13 @@ impl UpdateReplicationConfigurationOutputBuilder {
         self.replicated_disks = input;
         self
     }
+    /// <p>Replication Configuration replicated disks.</p>
+    pub fn get_replicated_disks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationConfigurationReplicatedDisk>>
+    {
+        &self.replicated_disks
+    }
     /// <p>Replication Configuration EBS encryption.</p>
     pub fn ebs_encryption(
         mut self,
@@ -387,6 +433,12 @@ impl UpdateReplicationConfigurationOutputBuilder {
     ) -> Self {
         self.ebs_encryption = input;
         self
+    }
+    /// <p>Replication Configuration EBS encryption.</p>
+    pub fn get_ebs_encryption(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReplicationConfigurationEbsEncryption> {
+        &self.ebs_encryption
     }
     /// <p>Replication Configuration EBS encryption key ARN.</p>
     pub fn ebs_encryption_key_arn(
@@ -404,6 +456,10 @@ impl UpdateReplicationConfigurationOutputBuilder {
         self.ebs_encryption_key_arn = input;
         self
     }
+    /// <p>Replication Configuration EBS encryption key ARN.</p>
+    pub fn get_ebs_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ebs_encryption_key_arn
+    }
     /// <p>Replication Configuration set bandwidth throttling.</p>
     pub fn bandwidth_throttling(mut self, input: i64) -> Self {
         self.bandwidth_throttling = ::std::option::Option::Some(input);
@@ -413,6 +469,10 @@ impl UpdateReplicationConfigurationOutputBuilder {
     pub fn set_bandwidth_throttling(mut self, input: ::std::option::Option<i64>) -> Self {
         self.bandwidth_throttling = input;
         self
+    }
+    /// <p>Replication Configuration set bandwidth throttling.</p>
+    pub fn get_bandwidth_throttling(&self) -> &::std::option::Option<i64> {
+        &self.bandwidth_throttling
     }
     /// <p>Replication Configuration data plane routing.</p>
     pub fn data_plane_routing(
@@ -430,6 +490,12 @@ impl UpdateReplicationConfigurationOutputBuilder {
         self.data_plane_routing = input;
         self
     }
+    /// <p>Replication Configuration data plane routing.</p>
+    pub fn get_data_plane_routing(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReplicationConfigurationDataPlaneRouting> {
+        &self.data_plane_routing
+    }
     /// <p>Replication Configuration create Public IP.</p>
     pub fn create_public_ip(mut self, input: bool) -> Self {
         self.create_public_ip = ::std::option::Option::Some(input);
@@ -439,6 +505,10 @@ impl UpdateReplicationConfigurationOutputBuilder {
     pub fn set_create_public_ip(mut self, input: ::std::option::Option<bool>) -> Self {
         self.create_public_ip = input;
         self
+    }
+    /// <p>Replication Configuration create Public IP.</p>
+    pub fn get_create_public_ip(&self) -> &::std::option::Option<bool> {
+        &self.create_public_ip
     }
     /// Adds a key-value pair to `staging_area_tags`.
     ///
@@ -465,6 +535,14 @@ impl UpdateReplicationConfigurationOutputBuilder {
         self.staging_area_tags = input;
         self
     }
+    /// <p>Replication Configuration Staging Area tags.</p>
+    pub fn get_staging_area_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.staging_area_tags
+    }
     /// <p>Replication Configuration use Fips Endpoint.</p>
     pub fn use_fips_endpoint(mut self, input: bool) -> Self {
         self.use_fips_endpoint = ::std::option::Option::Some(input);
@@ -474,6 +552,10 @@ impl UpdateReplicationConfigurationOutputBuilder {
     pub fn set_use_fips_endpoint(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_fips_endpoint = input;
         self
+    }
+    /// <p>Replication Configuration use Fips Endpoint.</p>
+    pub fn get_use_fips_endpoint(&self) -> &::std::option::Option<bool> {
+        &self.use_fips_endpoint
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

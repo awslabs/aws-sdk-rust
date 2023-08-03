@@ -37,6 +37,12 @@ impl UpdateSkillGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateSkillGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_skill_group::builders::UpdateSkillGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl UpdateSkillGroupFluentBuilder {
         self.inner = self.inner.set_skill_group_arn(input);
         self
     }
+    /// <p>The ARN of the skill group to update. </p>
+    pub fn get_skill_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_skill_group_arn()
+    }
     /// <p>The updated name for the skill group.</p>
     pub fn skill_group_name(
         mut self,
@@ -149,6 +159,10 @@ impl UpdateSkillGroupFluentBuilder {
         self.inner = self.inner.set_skill_group_name(input);
         self
     }
+    /// <p>The updated name for the skill group.</p>
+    pub fn get_skill_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_skill_group_name()
+    }
     /// <p>The updated description for the skill group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -158,5 +172,9 @@ impl UpdateSkillGroupFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The updated description for the skill group.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
 }

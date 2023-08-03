@@ -71,6 +71,10 @@ impl ListAliasesInputBuilder {
         self.image_name = input;
         self
     }
+    /// <p>The name of the image.</p>
+    pub fn get_image_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_name
+    }
     /// <p>The alias of the image version.</p>
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl ListAliasesInputBuilder {
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alias = input;
         self
+    }
+    /// <p>The alias of the image version.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias
     }
     /// <p>The version of the image. If image version is not specified, the aliases of all versions of the image are listed.</p>
     pub fn version(mut self, input: i32) -> Self {
@@ -91,6 +99,10 @@ impl ListAliasesInputBuilder {
         self.version = input;
         self
     }
+    /// <p>The version of the image. If image version is not specified, the aliases of all versions of the image are listed.</p>
+    pub fn get_version(&self) -> &::std::option::Option<i32> {
+        &self.version
+    }
     /// <p>The maximum number of aliases to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -101,6 +113,10 @@ impl ListAliasesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of aliases to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>If the previous call to <code>ListAliases</code> didn't return the full set of aliases, the call returns a token for retrieving the next set of aliases.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -110,6 +126,10 @@ impl ListAliasesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the previous call to <code>ListAliases</code> didn't return the full set of aliases, the call returns a token for retrieving the next set of aliases.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListAliasesInput`](crate::operation::list_aliases::ListAliasesInput).
     pub fn build(

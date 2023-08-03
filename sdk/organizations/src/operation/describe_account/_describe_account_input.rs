@@ -43,6 +43,11 @@ impl DescribeAccountInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The unique identifier (ID) of the Amazon Web Services account that you want information about. You can get the ID from the <code>ListAccounts</code> or <code>ListAccountsForParent</code> operations.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// Consumes the builder and constructs a [`DescribeAccountInput`](crate::operation::describe_account::DescribeAccountInput).
     pub fn build(
         self,

@@ -56,6 +56,10 @@ impl PolicyInformationBuilder {
         self.cert_policy_id = input;
         self
     }
+    /// <p>Specifies the object identifier (OID) of the certificate policy under which the certificate was issued. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p>
+    pub fn get_cert_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cert_policy_id
+    }
     /// Appends an item to `policy_qualifiers`.
     ///
     /// To override the contents of this collection use [`set_policy_qualifiers`](Self::set_policy_qualifiers).
@@ -74,6 +78,12 @@ impl PolicyInformationBuilder {
     ) -> Self {
         self.policy_qualifiers = input;
         self
+    }
+    /// <p>Modifies the given <code>CertPolicyId</code> with a qualifier. Amazon Web Services Private CA supports the certification practice statement (CPS) qualifier.</p>
+    pub fn get_policy_qualifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyQualifierInfo>> {
+        &self.policy_qualifiers
     }
     /// Consumes the builder and constructs a [`PolicyInformation`](crate::types::PolicyInformation).
     pub fn build(self) -> crate::types::PolicyInformation {

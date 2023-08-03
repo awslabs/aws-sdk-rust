@@ -37,6 +37,10 @@ impl GetSlotTypeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetSlotType as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_slot_type::builders::GetSlotTypeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl GetSlotTypeFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the slot type. The name is case sensitive. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The version of the slot type. </p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version(input.into());
@@ -128,5 +136,9 @@ impl GetSlotTypeFluentBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version(input);
         self
+    }
+    /// <p>The version of the slot type. </p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version()
     }
 }

@@ -37,6 +37,13 @@ impl ImportStacksToStackSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ImportStacksToStackSet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::import_stacks_to_stack_set::builders::ImportStacksToStackSetInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl ImportStacksToStackSetFluentBuilder {
         self.inner = self.inner.set_stack_set_name(input);
         self
     }
+    /// <p>The name of the stack set. The name must be unique in the Region where you create your stack set.</p>
+    pub fn get_stack_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_set_name()
+    }
     /// Appends an item to `StackIds`.
     ///
     /// To override the contents of this collection use [`set_stack_ids`](Self::set_stack_ids).
@@ -152,6 +163,11 @@ impl ImportStacksToStackSetFluentBuilder {
         self.inner = self.inner.set_stack_ids(input);
         self
     }
+    /// <p>The IDs of the stacks you are importing into a stack set. You import up to 10 stacks per stack set at a time.</p>
+    /// <p>Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.</p>
+    pub fn get_stack_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_stack_ids()
+    }
     /// <p>The Amazon S3 URL which contains list of stack ids to be inputted.</p>
     /// <p>Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.</p>
     pub fn stack_ids_url(
@@ -169,6 +185,11 @@ impl ImportStacksToStackSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_stack_ids_url(input);
         self
+    }
+    /// <p>The Amazon S3 URL which contains list of stack ids to be inputted.</p>
+    /// <p>Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.</p>
+    pub fn get_stack_ids_url(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_ids_url()
     }
     /// Appends an item to `OrganizationalUnitIds`.
     ///
@@ -190,6 +211,12 @@ impl ImportStacksToStackSetFluentBuilder {
         self.inner = self.inner.set_organizational_unit_ids(input);
         self
     }
+    /// <p>The list of OU ID's to which the stacks being imported has to be mapped as deployment target.</p>
+    pub fn get_organizational_unit_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_organizational_unit_ids()
+    }
     /// <p>The user-specified preferences for how CloudFormation performs a stack set operation.</p>
     /// <p>For more information about maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
     pub fn operation_preferences(
@@ -208,6 +235,13 @@ impl ImportStacksToStackSetFluentBuilder {
         self.inner = self.inner.set_operation_preferences(input);
         self
     }
+    /// <p>The user-specified preferences for how CloudFormation performs a stack set operation.</p>
+    /// <p>For more information about maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
+    pub fn get_operation_preferences(
+        &self,
+    ) -> &::std::option::Option<crate::types::StackSetOperationPreferences> {
+        self.inner.get_operation_preferences()
+    }
     /// <p>A unique, user defined, identifier for the stack set operation.</p>
     pub fn operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.operation_id(input.into());
@@ -217,6 +251,10 @@ impl ImportStacksToStackSetFluentBuilder {
     pub fn set_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_operation_id(input);
         self
+    }
+    /// <p>A unique, user defined, identifier for the stack set operation.</p>
+    pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_operation_id()
     }
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
     /// <ul>
@@ -235,5 +273,13 @@ impl ImportStacksToStackSetFluentBuilder {
     pub fn set_call_as(mut self, input: ::std::option::Option<crate::types::CallAs>) -> Self {
         self.inner = self.inner.set_call_as(input);
         self
+    }
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <ul>
+    /// <li> <p>If you are signed in to the management account, specify <code>SELF</code>.</p> </li>
+    /// <li> <p>For service managed stack sets, specify <code>DELEGATED_ADMIN</code>.</p> </li>
+    /// </ul>
+    pub fn get_call_as(&self) -> &::std::option::Option<crate::types::CallAs> {
+        self.inner.get_call_as()
     }
 }

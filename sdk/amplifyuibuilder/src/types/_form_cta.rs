@@ -67,6 +67,10 @@ impl FormCtaBuilder {
         self.position = input;
         self
     }
+    /// <p>The position of the button.</p>
+    pub fn get_position(&self) -> &::std::option::Option<crate::types::FormButtonsPosition> {
+        &self.position
+    }
     /// <p>Displays a clear button.</p>
     pub fn clear(mut self, input: crate::types::FormButton) -> Self {
         self.clear = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl FormCtaBuilder {
     pub fn set_clear(mut self, input: ::std::option::Option<crate::types::FormButton>) -> Self {
         self.clear = input;
         self
+    }
+    /// <p>Displays a clear button.</p>
+    pub fn get_clear(&self) -> &::std::option::Option<crate::types::FormButton> {
+        &self.clear
     }
     /// <p>Displays a cancel button.</p>
     pub fn cancel(mut self, input: crate::types::FormButton) -> Self {
@@ -87,6 +95,10 @@ impl FormCtaBuilder {
         self.cancel = input;
         self
     }
+    /// <p>Displays a cancel button.</p>
+    pub fn get_cancel(&self) -> &::std::option::Option<crate::types::FormButton> {
+        &self.cancel
+    }
     /// <p>Displays a submit button.</p>
     pub fn submit(mut self, input: crate::types::FormButton) -> Self {
         self.submit = ::std::option::Option::Some(input);
@@ -96,6 +108,10 @@ impl FormCtaBuilder {
     pub fn set_submit(mut self, input: ::std::option::Option<crate::types::FormButton>) -> Self {
         self.submit = input;
         self
+    }
+    /// <p>Displays a submit button.</p>
+    pub fn get_submit(&self) -> &::std::option::Option<crate::types::FormButton> {
+        &self.submit
     }
     /// Consumes the builder and constructs a [`FormCta`](crate::types::FormCta).
     pub fn build(self) -> crate::types::FormCta {

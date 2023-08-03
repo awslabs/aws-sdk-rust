@@ -36,6 +36,12 @@ impl DeleteControlPanelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteControlPanel as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_control_panel::builders::DeleteControlPanelInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl DeleteControlPanelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_control_panel_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
+    pub fn get_control_panel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_control_panel_arn()
     }
 }

@@ -38,6 +38,10 @@ impl UpdateRelationalDatabaseParametersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateRelationalDatabaseParameters as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_relational_database_parameters::builders::UpdateRelationalDatabaseParametersInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -108,6 +112,10 @@ impl UpdateRelationalDatabaseParametersFluentBuilder {
         self.inner = self.inner.set_relational_database_name(input);
         self
     }
+    /// <p>The name of your database for which to update parameters.</p>
+    pub fn get_relational_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_relational_database_name()
+    }
     /// Appends an item to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
@@ -124,5 +132,11 @@ impl UpdateRelationalDatabaseParametersFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
+    }
+    /// <p>The database parameters to update.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseParameter>> {
+        self.inner.get_parameters()
     }
 }

@@ -81,6 +81,10 @@ impl ListDeploymentsInputBuilder {
         self.target_arn = input;
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
+    pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_arn
+    }
     /// <p>The filter for the list of deployments. Choose one of the following options:</p>
     /// <ul>
     /// <li> <p> <code>ALL</code> – The list includes all deployments.</p> </li>
@@ -104,6 +108,17 @@ impl ListDeploymentsInputBuilder {
         self.history_filter = input;
         self
     }
+    /// <p>The filter for the list of deployments. Choose one of the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>ALL</code> – The list includes all deployments.</p> </li>
+    /// <li> <p> <code>LATEST_ONLY</code> – The list includes only the latest revision of each deployment.</p> </li>
+    /// </ul>
+    /// <p>Default: <code>LATEST_ONLY</code> </p>
+    pub fn get_history_filter(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeploymentHistoryFilter> {
+        &self.history_filter
+    }
     /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
     pub fn parent_target_arn(
         mut self,
@@ -120,6 +135,10 @@ impl ListDeploymentsInputBuilder {
         self.parent_target_arn = input;
         self
     }
+    /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
+    pub fn get_parent_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_target_arn
+    }
     /// <p>The maximum number of results to be returned per paginated request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -130,6 +149,10 @@ impl ListDeploymentsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to be returned per paginated request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -139,6 +162,10 @@ impl ListDeploymentsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListDeploymentsInput`](crate::operation::list_deployments::ListDeploymentsInput).
     pub fn build(

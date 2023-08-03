@@ -55,6 +55,12 @@ impl ListTagsForCertificateInputBuilder {
         self.certificate_arn = input;
         self
     }
+    /// <p>String that contains the ARN of the ACM certificate for which you want to list the tags. This must have the following form:</p>
+    /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_arn
+    }
     /// Consumes the builder and constructs a [`ListTagsForCertificateInput`](crate::operation::list_tags_for_certificate::ListTagsForCertificateInput).
     pub fn build(
         self,

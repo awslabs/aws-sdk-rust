@@ -67,6 +67,10 @@ impl CreateExtendedSourceServerInputBuilder {
         self.source_server_arn = input;
         self
     }
+    /// <p>This defines the ARN of the source server in staging Account based on which you want to create an extended source server.</p>
+    pub fn get_source_server_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_server_arn
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -91,6 +95,14 @@ impl CreateExtendedSourceServerInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tags associated with the extended source server.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateExtendedSourceServerInput`](crate::operation::create_extended_source_server::CreateExtendedSourceServerInput).
     pub fn build(

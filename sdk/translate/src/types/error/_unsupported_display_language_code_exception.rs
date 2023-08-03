@@ -80,6 +80,10 @@ impl UnsupportedDisplayLanguageCodeExceptionBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>Language code passed in with the request.</p>
     pub fn display_language_code(
         mut self,
@@ -95,6 +99,10 @@ impl UnsupportedDisplayLanguageCodeExceptionBuilder {
     ) -> Self {
         self.display_language_code = input;
         self
+    }
+    /// <p>Language code passed in with the request.</p>
+    pub fn get_display_language_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_language_code
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

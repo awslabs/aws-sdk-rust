@@ -39,6 +39,10 @@ impl GetWebAclInputBuilder {
         self.web_acl_id = input;
         self
     }
+    /// <p>The <code>WebACLId</code> of the <code>WebACL</code> that you want to get. <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
+    pub fn get_web_acl_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.web_acl_id
+    }
     /// Consumes the builder and constructs a [`GetWebAclInput`](crate::operation::get_web_acl::GetWebAclInput).
     pub fn build(
         self,

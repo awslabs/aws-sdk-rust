@@ -93,6 +93,19 @@ impl DescribeEnvironmentStatusOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the environment. Available values include:</p>
+    /// <ul>
+    /// <li> <p> <code>connecting</code>: The environment is connecting.</p> </li>
+    /// <li> <p> <code>creating</code>: The environment is being created.</p> </li>
+    /// <li> <p> <code>deleting</code>: The environment is being deleted.</p> </li>
+    /// <li> <p> <code>error</code>: The environment is in an error state.</p> </li>
+    /// <li> <p> <code>ready</code>: The environment is ready.</p> </li>
+    /// <li> <p> <code>stopped</code>: The environment is stopped.</p> </li>
+    /// <li> <p> <code>stopping</code>: The environment is stopping.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::EnvironmentStatus> {
+        &self.status
+    }
     /// <p>Any informational message about the status of the environment.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -102,6 +115,10 @@ impl DescribeEnvironmentStatusOutputBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>Any informational message about the status of the environment.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -62,6 +62,10 @@ impl NetworkInterfaceBuilder {
         self.attachment_id = input;
         self
     }
+    /// <p>The attachment ID for the network interface.</p>
+    pub fn get_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attachment_id
+    }
     /// <p>The private IPv4 address for the network interface.</p>
     pub fn private_ipv4_address(
         mut self,
@@ -78,6 +82,10 @@ impl NetworkInterfaceBuilder {
         self.private_ipv4_address = input;
         self
     }
+    /// <p>The private IPv4 address for the network interface.</p>
+    pub fn get_private_ipv4_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_ipv4_address
+    }
     /// <p>The private IPv6 address for the network interface.</p>
     pub fn ipv6_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipv6_address = ::std::option::Option::Some(input.into());
@@ -87,6 +95,10 @@ impl NetworkInterfaceBuilder {
     pub fn set_ipv6_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipv6_address = input;
         self
+    }
+    /// <p>The private IPv6 address for the network interface.</p>
+    pub fn get_ipv6_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv6_address
     }
     /// Consumes the builder and constructs a [`NetworkInterface`](crate::types::NetworkInterface).
     pub fn build(self) -> crate::types::NetworkInterface {

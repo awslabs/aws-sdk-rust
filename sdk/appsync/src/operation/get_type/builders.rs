@@ -36,6 +36,10 @@ impl GetTypeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetType as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_type::builders::GetTypeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl GetTypeFluentBuilder {
         self.inner = self.inner.set_api_id(input);
         self
     }
+    /// <p>The API ID.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_api_id()
+    }
     /// <p>The type name.</p>
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.type_name(input.into());
@@ -127,6 +135,10 @@ impl GetTypeFluentBuilder {
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_type_name(input);
         self
+    }
+    /// <p>The type name.</p>
+    pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_type_name()
     }
     /// <p>The type format: SDL or JSON.</p>
     pub fn format(mut self, input: crate::types::TypeDefinitionFormat) -> Self {
@@ -140,5 +152,9 @@ impl GetTypeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_format(input);
         self
+    }
+    /// <p>The type format: SDL or JSON.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::TypeDefinitionFormat> {
+        self.inner.get_format()
     }
 }

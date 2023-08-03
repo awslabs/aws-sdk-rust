@@ -84,6 +84,10 @@ impl WirelessGatewayStatisticsBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name of the resource.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The ID of the wireless gateway reporting the data.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -93,6 +97,10 @@ impl WirelessGatewayStatisticsBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The ID of the wireless gateway reporting the data.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The name of the resource.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -104,6 +112,10 @@ impl WirelessGatewayStatisticsBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the resource.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the resource.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -113,6 +125,10 @@ impl WirelessGatewayStatisticsBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the resource.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>LoRaWAN gateway info.</p>
     pub fn lo_ra_wan(mut self, input: crate::types::LoRaWanGateway) -> Self {
@@ -126,6 +142,10 @@ impl WirelessGatewayStatisticsBuilder {
     ) -> Self {
         self.lo_ra_wan = input;
         self
+    }
+    /// <p>LoRaWAN gateway info.</p>
+    pub fn get_lo_ra_wan(&self) -> &::std::option::Option<crate::types::LoRaWanGateway> {
+        &self.lo_ra_wan
     }
     /// <p>The date and time when the most recent uplink was received.</p> <note>
     /// <p>This value is only valid for 3 months.</p>
@@ -146,6 +166,12 @@ impl WirelessGatewayStatisticsBuilder {
     ) -> Self {
         self.last_uplink_received_at = input;
         self
+    }
+    /// <p>The date and time when the most recent uplink was received.</p> <note>
+    /// <p>This value is only valid for 3 months.</p>
+    /// </note>
+    pub fn get_last_uplink_received_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_uplink_received_at
     }
     /// Consumes the builder and constructs a [`WirelessGatewayStatistics`](crate::types::WirelessGatewayStatistics).
     pub fn build(self) -> crate::types::WirelessGatewayStatistics {

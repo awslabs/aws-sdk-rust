@@ -36,6 +36,10 @@ impl RequestServiceQuotaIncreaseFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RequestServiceQuotaIncrease as a reference.
+    pub fn as_input(&self) -> &crate::operation::request_service_quota_increase::builders::RequestServiceQuotaIncreaseInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl RequestServiceQuotaIncreaseFluentBuilder {
         self.inner = self.inner.set_service_code(input);
         self
     }
+    /// <p>The service identifier.</p>
+    pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_code()
+    }
     /// <p>The quota identifier.</p>
     pub fn quota_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.quota_code(input.into());
@@ -136,6 +144,10 @@ impl RequestServiceQuotaIncreaseFluentBuilder {
         self.inner = self.inner.set_quota_code(input);
         self
     }
+    /// <p>The quota identifier.</p>
+    pub fn get_quota_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_quota_code()
+    }
     /// <p>The new, increased value for the quota.</p>
     pub fn desired_value(mut self, input: f64) -> Self {
         self.inner = self.inner.desired_value(input);
@@ -145,5 +157,9 @@ impl RequestServiceQuotaIncreaseFluentBuilder {
     pub fn set_desired_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.inner = self.inner.set_desired_value(input);
         self
+    }
+    /// <p>The new, increased value for the quota.</p>
+    pub fn get_desired_value(&self) -> &::std::option::Option<f64> {
+        self.inner.get_desired_value()
     }
 }

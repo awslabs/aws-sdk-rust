@@ -50,6 +50,12 @@ impl HlsIngestBuilder {
         self.ingest_endpoints = input;
         self
     }
+    /// A list of endpoints to which the source stream should be sent.
+    pub fn get_ingest_endpoints(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IngestEndpoint>> {
+        &self.ingest_endpoints
+    }
     /// Consumes the builder and constructs a [`HlsIngest`](crate::types::HlsIngest).
     pub fn build(self) -> crate::types::HlsIngest {
         crate::types::HlsIngest {

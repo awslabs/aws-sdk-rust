@@ -36,6 +36,13 @@ impl GetIpamAddressHistoryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetIpamAddressHistory as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_ipam_address_history::builders::GetIpamAddressHistoryInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +144,10 @@ impl GetIpamAddressHistoryFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>The CIDR you want the history of. The CIDR can be an IPv4 or IPv6 IP address range. If you enter a /16 IPv4 CIDR, you will get records that match it exactly. You will not get records for any subnets within the /16 CIDR.</p>
     pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cidr(input.into());
@@ -146,6 +157,10 @@ impl GetIpamAddressHistoryFluentBuilder {
     pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cidr(input);
         self
+    }
+    /// <p>The CIDR you want the history of. The CIDR can be an IPv4 or IPv6 IP address range. If you enter a /16 IPv4 CIDR, you will get records that match it exactly. You will not get records for any subnets within the /16 CIDR.</p>
+    pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cidr()
     }
     /// <p>The ID of the IPAM scope that the CIDR is in.</p>
     pub fn ipam_scope_id(
@@ -163,6 +178,10 @@ impl GetIpamAddressHistoryFluentBuilder {
         self.inner = self.inner.set_ipam_scope_id(input);
         self
     }
+    /// <p>The ID of the IPAM scope that the CIDR is in.</p>
+    pub fn get_ipam_scope_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ipam_scope_id()
+    }
     /// <p>The ID of the VPC you want your history records filtered by.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_id(input.into());
@@ -172,6 +191,10 @@ impl GetIpamAddressHistoryFluentBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_id(input);
         self
+    }
+    /// <p>The ID of the VPC you want your history records filtered by.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpc_id()
     }
     /// <p>The start of the time period for which you are looking for history. If you omit this option, it will default to the value of EndTime.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -186,6 +209,10 @@ impl GetIpamAddressHistoryFluentBuilder {
         self.inner = self.inner.set_start_time(input);
         self
     }
+    /// <p>The start of the time period for which you are looking for history. If you omit this option, it will default to the value of EndTime.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
+    }
     /// <p>The end of the time period for which you are looking for history. If you omit this option, it will default to the current time.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time(input);
@@ -199,6 +226,10 @@ impl GetIpamAddressHistoryFluentBuilder {
         self.inner = self.inner.set_end_time(input);
         self
     }
+    /// <p>The end of the time period for which you are looking for history. If you omit this option, it will default to the current time.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time()
+    }
     /// <p>The maximum number of historical results you would like returned per page. Defaults to 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -209,6 +240,10 @@ impl GetIpamAddressHistoryFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of historical results you would like returned per page. Defaults to 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -218,5 +253,9 @@ impl GetIpamAddressHistoryFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

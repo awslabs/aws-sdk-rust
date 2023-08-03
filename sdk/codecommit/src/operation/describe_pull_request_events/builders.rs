@@ -36,6 +36,10 @@ impl DescribePullRequestEventsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribePullRequestEvents as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_pull_request_events::builders::DescribePullRequestEventsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -141,6 +145,10 @@ impl DescribePullRequestEventsFluentBuilder {
         self.inner = self.inner.set_pull_request_id(input);
         self
     }
+    /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+    pub fn get_pull_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pull_request_id()
+    }
     /// <p>Optional. The pull request event type about which you want to return information.</p>
     pub fn pull_request_event_type(mut self, input: crate::types::PullRequestEventType) -> Self {
         self.inner = self.inner.pull_request_event_type(input);
@@ -154,6 +162,12 @@ impl DescribePullRequestEventsFluentBuilder {
         self.inner = self.inner.set_pull_request_event_type(input);
         self
     }
+    /// <p>Optional. The pull request event type about which you want to return information.</p>
+    pub fn get_pull_request_event_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::PullRequestEventType> {
+        self.inner.get_pull_request_event_type()
+    }
     /// <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples include updating the pull request with more commits or changing the status of a pull request.</p>
     pub fn actor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.actor_arn(input.into());
@@ -163,6 +177,10 @@ impl DescribePullRequestEventsFluentBuilder {
     pub fn set_actor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_actor_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples include updating the pull request with more commits or changing the status of a pull request.</p>
+    pub fn get_actor_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_actor_arn()
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -174,6 +192,10 @@ impl DescribePullRequestEventsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is 100 events, which is also the maximum number of events that can be returned in a result.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -183,5 +205,9 @@ impl DescribePullRequestEventsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is 100 events, which is also the maximum number of events that can be returned in a result.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

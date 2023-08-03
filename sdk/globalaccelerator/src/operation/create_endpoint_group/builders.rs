@@ -36,6 +36,12 @@ impl CreateEndpointGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateEndpointGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_endpoint_group::builders::CreateEndpointGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateEndpointGroupFluentBuilder {
         self.inner = self.inner.set_listener_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the listener.</p>
+    pub fn get_listener_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_listener_arn()
+    }
     /// <p>The Amazon Web Services Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>
     pub fn endpoint_group_region(
         mut self,
@@ -141,6 +151,10 @@ impl CreateEndpointGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_endpoint_group_region(input);
         self
+    }
+    /// <p>The Amazon Web Services Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>
+    pub fn get_endpoint_group_region(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_endpoint_group_region()
     }
     /// Appends an item to `EndpointConfigurations`.
     ///
@@ -159,6 +173,12 @@ impl CreateEndpointGroupFluentBuilder {
         self.inner = self.inner.set_endpoint_configurations(input);
         self
     }
+    /// <p>The list of endpoint objects.</p>
+    pub fn get_endpoint_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointConfiguration>> {
+        self.inner.get_endpoint_configurations()
+    }
     /// <p>The percentage of traffic to send to an Amazon Web Services Region. Additional traffic is distributed to other endpoint groups for this listener. </p>
     /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
     /// <p>The default value is 100.</p>
@@ -173,6 +193,12 @@ impl CreateEndpointGroupFluentBuilder {
         self.inner = self.inner.set_traffic_dial_percentage(input);
         self
     }
+    /// <p>The percentage of traffic to send to an Amazon Web Services Region. Additional traffic is distributed to other endpoint groups for this listener. </p>
+    /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
+    /// <p>The default value is 100.</p>
+    pub fn get_traffic_dial_percentage(&self) -> &::std::option::Option<f32> {
+        self.inner.get_traffic_dial_percentage()
+    }
     /// <p>The port that Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If listener port is a list of ports, Global Accelerator uses the first port in the list.</p>
     pub fn health_check_port(mut self, input: i32) -> Self {
         self.inner = self.inner.health_check_port(input);
@@ -182,6 +208,10 @@ impl CreateEndpointGroupFluentBuilder {
     pub fn set_health_check_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_health_check_port(input);
         self
+    }
+    /// <p>The port that Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If listener port is a list of ports, Global Accelerator uses the first port in the list.</p>
+    pub fn get_health_check_port(&self) -> &::std::option::Option<i32> {
+        self.inner.get_health_check_port()
     }
     /// <p>The protocol that Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.</p>
     pub fn health_check_protocol(mut self, input: crate::types::HealthCheckProtocol) -> Self {
@@ -195,6 +225,12 @@ impl CreateEndpointGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_health_check_protocol(input);
         self
+    }
+    /// <p>The protocol that Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.</p>
+    pub fn get_health_check_protocol(
+        &self,
+    ) -> &::std::option::Option<crate::types::HealthCheckProtocol> {
+        self.inner.get_health_check_protocol()
     }
     /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The default value is slash (/).</p>
     pub fn health_check_path(
@@ -212,6 +248,10 @@ impl CreateEndpointGroupFluentBuilder {
         self.inner = self.inner.set_health_check_path(input);
         self
     }
+    /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The default value is slash (/).</p>
+    pub fn get_health_check_path(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_health_check_path()
+    }
     /// <p>The time—10 seconds or 30 seconds—between each health check for an endpoint. The default value is 30.</p>
     pub fn health_check_interval_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.health_check_interval_seconds(input);
@@ -222,6 +262,10 @@ impl CreateEndpointGroupFluentBuilder {
         self.inner = self.inner.set_health_check_interval_seconds(input);
         self
     }
+    /// <p>The time—10 seconds or 30 seconds—between each health check for an endpoint. The default value is 30.</p>
+    pub fn get_health_check_interval_seconds(&self) -> &::std::option::Option<i32> {
+        self.inner.get_health_check_interval_seconds()
+    }
     /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.</p>
     pub fn threshold_count(mut self, input: i32) -> Self {
         self.inner = self.inner.threshold_count(input);
@@ -231,6 +275,10 @@ impl CreateEndpointGroupFluentBuilder {
     pub fn set_threshold_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_threshold_count(input);
         self
+    }
+    /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.</p>
+    pub fn get_threshold_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_threshold_count()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
     pub fn idempotency_token(
@@ -247,6 +295,10 @@ impl CreateEndpointGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
+    pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_idempotency_token()
     }
     /// Appends an item to `PortOverrides`.
     ///
@@ -266,5 +318,12 @@ impl CreateEndpointGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_port_overrides(input);
         self
+    }
+    /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Overriding listener ports</a> in the <i>Global Accelerator Developer Guide</i>.</p>
+    pub fn get_port_overrides(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PortOverride>> {
+        self.inner.get_port_overrides()
     }
 }

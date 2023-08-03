@@ -46,6 +46,10 @@ impl HumanLoopInputBuilder {
         self.input_content = input;
         self
     }
+    /// <p>Serialized input from the human loop. The input must be a string representation of a file in JSON format.</p>
+    pub fn get_input_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_content
+    }
     /// Consumes the builder and constructs a [`HumanLoopInput`](crate::types::HumanLoopInput).
     pub fn build(self) -> crate::types::HumanLoopInput {
         crate::types::HumanLoopInput {

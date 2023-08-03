@@ -78,6 +78,10 @@ impl UpdateAccessLogSubscriptionOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the access log subscription.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Amazon Resource Name (ARN) of the access log subscription.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -87,6 +91,10 @@ impl UpdateAccessLogSubscriptionOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the access log subscription.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The ID of the resource.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -98,6 +106,10 @@ impl UpdateAccessLogSubscriptionOutputBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The ID of the resource.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the access log subscription.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -107,6 +119,10 @@ impl UpdateAccessLogSubscriptionOutputBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the access log subscription.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the access log destination.</p>
     pub fn destination_arn(
@@ -123,6 +139,10 @@ impl UpdateAccessLogSubscriptionOutputBuilder {
     ) -> Self {
         self.destination_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the access log destination.</p>
+    pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

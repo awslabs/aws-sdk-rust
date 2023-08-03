@@ -36,6 +36,12 @@ impl GetRepositoryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetRepository as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_repository::builders::GetRepositoryInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +127,10 @@ impl GetRepositoryFluentBuilder {
         self.inner = self.inner.set_provider(input);
         self
     }
+    /// <p>The repository provider.</p>
+    pub fn get_provider(&self) -> &::std::option::Option<crate::types::RepositoryProvider> {
+        self.inner.get_provider()
+    }
     /// <p>The repository name, for example <code>myrepos/myrepo</code>.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -130,5 +140,9 @@ impl GetRepositoryFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The repository name, for example <code>myrepos/myrepo</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
 }

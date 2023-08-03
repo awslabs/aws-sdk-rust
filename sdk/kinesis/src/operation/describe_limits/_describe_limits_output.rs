@@ -70,6 +70,10 @@ impl DescribeLimitsOutputBuilder {
         self.shard_limit = input;
         self
     }
+    /// <p>The maximum number of shards.</p>
+    pub fn get_shard_limit(&self) -> &::std::option::Option<i32> {
+        &self.shard_limit
+    }
     /// <p>The number of open shards.</p>
     pub fn open_shard_count(mut self, input: i32) -> Self {
         self.open_shard_count = ::std::option::Option::Some(input);
@@ -79,6 +83,10 @@ impl DescribeLimitsOutputBuilder {
     pub fn set_open_shard_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.open_shard_count = input;
         self
+    }
+    /// <p>The number of open shards.</p>
+    pub fn get_open_shard_count(&self) -> &::std::option::Option<i32> {
+        &self.open_shard_count
     }
     /// <p> Indicates the number of data streams with the on-demand capacity mode.</p>
     pub fn on_demand_stream_count(mut self, input: i32) -> Self {
@@ -90,6 +98,10 @@ impl DescribeLimitsOutputBuilder {
         self.on_demand_stream_count = input;
         self
     }
+    /// <p> Indicates the number of data streams with the on-demand capacity mode.</p>
+    pub fn get_on_demand_stream_count(&self) -> &::std::option::Option<i32> {
+        &self.on_demand_stream_count
+    }
     /// <p> The maximum number of data streams with the on-demand capacity mode. </p>
     pub fn on_demand_stream_count_limit(mut self, input: i32) -> Self {
         self.on_demand_stream_count_limit = ::std::option::Option::Some(input);
@@ -99,6 +111,10 @@ impl DescribeLimitsOutputBuilder {
     pub fn set_on_demand_stream_count_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.on_demand_stream_count_limit = input;
         self
+    }
+    /// <p> The maximum number of data streams with the on-demand capacity mode. </p>
+    pub fn get_on_demand_stream_count_limit(&self) -> &::std::option::Option<i32> {
+        &self.on_demand_stream_count_limit
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

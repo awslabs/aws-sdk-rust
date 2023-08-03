@@ -40,6 +40,10 @@ impl DeleteSimulationInputBuilder {
         self.simulation = input;
         self
     }
+    /// <p>The name of the simulation.</p>
+    pub fn get_simulation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.simulation
+    }
     /// Consumes the builder and constructs a [`DeleteSimulationInput`](crate::operation::delete_simulation::DeleteSimulationInput).
     pub fn build(
         self,

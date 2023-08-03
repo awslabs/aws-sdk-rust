@@ -60,6 +60,10 @@ impl ExportRevisionsToS3RequestDetailsBuilder {
         self.data_set_id = input;
         self
     }
+    /// <p>The unique identifier for the data set associated with this export job.</p>
+    pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_set_id
+    }
     /// <p>Encryption configuration for the export job.</p>
     pub fn encryption(mut self, input: crate::types::ExportServerSideEncryption) -> Self {
         self.encryption = ::std::option::Option::Some(input);
@@ -72,6 +76,12 @@ impl ExportRevisionsToS3RequestDetailsBuilder {
     ) -> Self {
         self.encryption = input;
         self
+    }
+    /// <p>Encryption configuration for the export job.</p>
+    pub fn get_encryption(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExportServerSideEncryption> {
+        &self.encryption
     }
     /// Appends an item to `revision_destinations`.
     ///
@@ -91,6 +101,12 @@ impl ExportRevisionsToS3RequestDetailsBuilder {
     ) -> Self {
         self.revision_destinations = input;
         self
+    }
+    /// <p>The destination for the revision.</p>
+    pub fn get_revision_destinations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RevisionDestinationEntry>> {
+        &self.revision_destinations
     }
     /// Consumes the builder and constructs a [`ExportRevisionsToS3RequestDetails`](crate::types::ExportRevisionsToS3RequestDetails).
     pub fn build(self) -> crate::types::ExportRevisionsToS3RequestDetails {

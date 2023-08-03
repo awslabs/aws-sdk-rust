@@ -70,6 +70,12 @@ impl DescribeClustersInputBuilder {
         self.cluster_names = input;
         self
     }
+    /// <p>The names of the DAX clusters being described.</p>
+    pub fn get_cluster_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.cluster_names
+    }
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -82,6 +88,11 @@ impl DescribeClustersInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -91,6 +102,10 @@ impl DescribeClustersInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeClustersInput`](crate::operation::describe_clusters::DescribeClustersInput).
     pub fn build(

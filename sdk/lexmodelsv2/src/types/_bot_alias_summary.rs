@@ -88,6 +88,10 @@ impl BotAliasSummaryBuilder {
         self.bot_alias_id = input;
         self
     }
+    /// <p>The unique identifier assigned to the bot alias. You can use this ID to get detailed information about the alias using the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBotAlias.html">DescribeBotAlias</a> operation.</p>
+    pub fn get_bot_alias_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_alias_id
+    }
     /// <p>The name of the bot alias.</p>
     pub fn bot_alias_name(
         mut self,
@@ -104,6 +108,10 @@ impl BotAliasSummaryBuilder {
         self.bot_alias_name = input;
         self
     }
+    /// <p>The name of the bot alias.</p>
+    pub fn get_bot_alias_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_alias_name
+    }
     /// <p>The description of the bot alias.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -114,6 +122,10 @@ impl BotAliasSummaryBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the bot alias.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The version of the bot that the bot alias references.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
@@ -123,6 +135,10 @@ impl BotAliasSummaryBuilder {
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_version = input;
         self
+    }
+    /// <p>The version of the bot that the bot alias references.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_version
     }
     /// <p>The current state of the bot alias. If the status is <code>Available</code>, the alias is ready for use.</p>
     pub fn bot_alias_status(mut self, input: crate::types::BotAliasStatus) -> Self {
@@ -137,6 +153,10 @@ impl BotAliasSummaryBuilder {
         self.bot_alias_status = input;
         self
     }
+    /// <p>The current state of the bot alias. If the status is <code>Available</code>, the alias is ready for use.</p>
+    pub fn get_bot_alias_status(&self) -> &::std::option::Option<crate::types::BotAliasStatus> {
+        &self.bot_alias_status
+    }
     /// <p>A timestamp of the date and time that the bot alias was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
@@ -150,6 +170,10 @@ impl BotAliasSummaryBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>A timestamp of the date and time that the bot alias was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>A timestamp of the date and time that the bot alias was last updated.</p>
     pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date_time = ::std::option::Option::Some(input);
@@ -162,6 +186,12 @@ impl BotAliasSummaryBuilder {
     ) -> Self {
         self.last_updated_date_time = input;
         self
+    }
+    /// <p>A timestamp of the date and time that the bot alias was last updated.</p>
+    pub fn get_last_updated_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date_time
     }
     /// Consumes the builder and constructs a [`BotAliasSummary`](crate::types::BotAliasSummary).
     pub fn build(self) -> crate::types::BotAliasSummary {

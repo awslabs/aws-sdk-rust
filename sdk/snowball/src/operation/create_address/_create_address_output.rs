@@ -46,6 +46,10 @@ impl CreateAddressOutputBuilder {
         self.address_id = input;
         self
     }
+    /// <p>The automatically generated ID for a specific address. You'll use this ID when you create a job to specify which address you want the Snow device for that job shipped to.</p>
+    pub fn get_address_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

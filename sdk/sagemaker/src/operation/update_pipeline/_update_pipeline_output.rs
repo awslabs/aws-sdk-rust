@@ -46,6 +46,10 @@ impl UpdatePipelineOutputBuilder {
         self.pipeline_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the updated pipeline.</p>
+    pub fn get_pipeline_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

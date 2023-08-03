@@ -52,6 +52,10 @@ impl GlobalSecondaryIndexAutoScalingUpdateBuilder {
         self.index_name = input;
         self
     }
+    /// <p>The name of the global secondary index.</p>
+    pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_name
+    }
     /// <p>Represents the auto scaling settings to be modified for a global table or global secondary index.</p>
     pub fn provisioned_write_capacity_auto_scaling_update(
         mut self,
@@ -67,6 +71,12 @@ impl GlobalSecondaryIndexAutoScalingUpdateBuilder {
     ) -> Self {
         self.provisioned_write_capacity_auto_scaling_update = input;
         self
+    }
+    /// <p>Represents the auto scaling settings to be modified for a global table or global secondary index.</p>
+    pub fn get_provisioned_write_capacity_auto_scaling_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoScalingSettingsUpdate> {
+        &self.provisioned_write_capacity_auto_scaling_update
     }
     /// Consumes the builder and constructs a [`GlobalSecondaryIndexAutoScalingUpdate`](crate::types::GlobalSecondaryIndexAutoScalingUpdate).
     pub fn build(self) -> crate::types::GlobalSecondaryIndexAutoScalingUpdate {

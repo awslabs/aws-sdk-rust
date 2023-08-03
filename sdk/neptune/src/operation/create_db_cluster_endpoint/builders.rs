@@ -37,6 +37,13 @@ impl CreateDBClusterEndpointFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDBClusterEndpoint as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_db_cluster_endpoint::builders::CreateDbClusterEndpointInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl CreateDBClusterEndpointFluentBuilder {
         self.inner = self.inner.set_db_cluster_identifier(input);
         self
     }
+    /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
+    pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_cluster_identifier()
+    }
     /// <p>The identifier to use for the new endpoint. This parameter is stored as a lowercase string.</p>
     pub fn db_cluster_endpoint_identifier(
         mut self,
@@ -149,6 +160,12 @@ impl CreateDBClusterEndpointFluentBuilder {
         self.inner = self.inner.set_db_cluster_endpoint_identifier(input);
         self
     }
+    /// <p>The identifier to use for the new endpoint. This parameter is stored as a lowercase string.</p>
+    pub fn get_db_cluster_endpoint_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_cluster_endpoint_identifier()
+    }
     /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
     pub fn endpoint_type(
         mut self,
@@ -164,6 +181,10 @@ impl CreateDBClusterEndpointFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_endpoint_type(input);
         self
+    }
+    /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
+    pub fn get_endpoint_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_endpoint_type()
     }
     /// Appends an item to `StaticMembers`.
     ///
@@ -185,6 +206,12 @@ impl CreateDBClusterEndpointFluentBuilder {
         self.inner = self.inner.set_static_members(input);
         self
     }
+    /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
+    pub fn get_static_members(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_static_members()
+    }
     /// Appends an item to `ExcludedMembers`.
     ///
     /// To override the contents of this collection use [`set_excluded_members`](Self::set_excluded_members).
@@ -205,6 +232,12 @@ impl CreateDBClusterEndpointFluentBuilder {
         self.inner = self.inner.set_excluded_members(input);
         self
     }
+    /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
+    pub fn get_excluded_members(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_excluded_members()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -221,5 +254,9 @@ impl CreateDBClusterEndpointFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags to be assigned to the Amazon Neptune resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

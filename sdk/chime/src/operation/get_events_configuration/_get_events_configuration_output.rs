@@ -53,6 +53,12 @@ impl GetEventsConfigurationOutputBuilder {
         self.events_configuration = input;
         self
     }
+    /// <p>The events configuration details.</p>
+    pub fn get_events_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::EventsConfiguration> {
+        &self.events_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

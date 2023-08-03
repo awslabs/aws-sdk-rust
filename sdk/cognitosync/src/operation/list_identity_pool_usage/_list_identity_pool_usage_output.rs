@@ -86,6 +86,12 @@ impl ListIdentityPoolUsageOutputBuilder {
         self.identity_pool_usages = input;
         self
     }
+    /// Usage information for the identity pools.
+    pub fn get_identity_pool_usages(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IdentityPoolUsage>> {
+        &self.identity_pool_usages
+    }
     /// The maximum number of results to be returned.
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -95,6 +101,10 @@ impl ListIdentityPoolUsageOutputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// The maximum number of results to be returned.
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Total number of identities for the identity pool.
     pub fn count(mut self, input: i32) -> Self {
@@ -106,6 +116,10 @@ impl ListIdentityPoolUsageOutputBuilder {
         self.count = input;
         self
     }
+    /// Total number of identities for the identity pool.
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        &self.count
+    }
     /// A pagination token for obtaining the next page of results.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -115,6 +129,10 @@ impl ListIdentityPoolUsageOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// A pagination token for obtaining the next page of results.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

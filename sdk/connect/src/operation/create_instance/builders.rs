@@ -38,6 +38,12 @@ impl CreateInstanceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateInstance as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_instance::builders::CreateInstanceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -120,6 +126,10 @@ impl CreateInstanceFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>The idempotency token.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>The type of identity management for your Amazon Connect users.</p>
     pub fn identity_management_type(mut self, input: crate::types::DirectoryType) -> Self {
         self.inner = self.inner.identity_management_type(input);
@@ -132,6 +142,12 @@ impl CreateInstanceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_identity_management_type(input);
         self
+    }
+    /// <p>The type of identity management for your Amazon Connect users.</p>
+    pub fn get_identity_management_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::DirectoryType> {
+        self.inner.get_identity_management_type()
     }
     /// <p>The name for your instance.</p>
     pub fn instance_alias(
@@ -149,6 +165,10 @@ impl CreateInstanceFluentBuilder {
         self.inner = self.inner.set_instance_alias(input);
         self
     }
+    /// <p>The name for your instance.</p>
+    pub fn get_instance_alias(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_alias()
+    }
     /// <p>The identifier for the directory.</p>
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.directory_id(input.into());
@@ -158,6 +178,10 @@ impl CreateInstanceFluentBuilder {
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_directory_id(input);
         self
+    }
+    /// <p>The identifier for the directory.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_id()
     }
     /// <p>Your contact center handles incoming contacts.</p>
     pub fn inbound_calls_enabled(mut self, input: bool) -> Self {
@@ -169,6 +193,10 @@ impl CreateInstanceFluentBuilder {
         self.inner = self.inner.set_inbound_calls_enabled(input);
         self
     }
+    /// <p>Your contact center handles incoming contacts.</p>
+    pub fn get_inbound_calls_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_inbound_calls_enabled()
+    }
     /// <p>Your contact center allows outbound calls.</p>
     pub fn outbound_calls_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.outbound_calls_enabled(input);
@@ -178,5 +206,9 @@ impl CreateInstanceFluentBuilder {
     pub fn set_outbound_calls_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_outbound_calls_enabled(input);
         self
+    }
+    /// <p>Your contact center allows outbound calls.</p>
+    pub fn get_outbound_calls_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_outbound_calls_enabled()
     }
 }

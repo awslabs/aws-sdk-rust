@@ -36,6 +36,12 @@ impl ListManagedEndpointsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListManagedEndpoints as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_managed_endpoints::builders::ListManagedEndpointsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +149,10 @@ impl ListManagedEndpointsFluentBuilder {
         self.inner = self.inner.set_virtual_cluster_id(input);
         self
     }
+    /// <p>The ID of the virtual cluster.</p>
+    pub fn get_virtual_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_virtual_cluster_id()
+    }
     /// <p>The date and time before which the endpoints are created.</p>
     pub fn created_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.created_before(input);
@@ -156,6 +166,10 @@ impl ListManagedEndpointsFluentBuilder {
         self.inner = self.inner.set_created_before(input);
         self
     }
+    /// <p>The date and time before which the endpoints are created.</p>
+    pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_created_before()
+    }
     /// <p> The date and time after which the endpoints are created.</p>
     pub fn created_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.created_after(input);
@@ -168,6 +182,10 @@ impl ListManagedEndpointsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_created_after(input);
         self
+    }
+    /// <p> The date and time after which the endpoints are created.</p>
+    pub fn get_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_created_after()
     }
     /// Appends an item to `types`.
     ///
@@ -186,6 +204,10 @@ impl ListManagedEndpointsFluentBuilder {
         self.inner = self.inner.set_types(input);
         self
     }
+    /// <p>The types of the managed endpoints.</p>
+    pub fn get_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_types()
+    }
     /// Appends an item to `states`.
     ///
     /// To override the contents of this collection use [`set_states`](Self::set_states).
@@ -203,6 +225,12 @@ impl ListManagedEndpointsFluentBuilder {
         self.inner = self.inner.set_states(input);
         self
     }
+    /// <p>The states of the managed endpoints.</p>
+    pub fn get_states(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointState>> {
+        self.inner.get_states()
+    }
     /// <p>The maximum number of managed endpoints that can be listed.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -213,6 +241,10 @@ impl ListManagedEndpointsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of managed endpoints that can be listed.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p> The token for the next set of managed endpoints to return. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -222,5 +254,9 @@ impl ListManagedEndpointsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p> The token for the next set of managed endpoints to return. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

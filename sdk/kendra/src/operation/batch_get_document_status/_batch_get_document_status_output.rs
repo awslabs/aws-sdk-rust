@@ -71,6 +71,13 @@ impl BatchGetDocumentStatusOutputBuilder {
         self.errors = input;
         self
     }
+    /// <p>A list of documents that Amazon Kendra couldn't get the status for. The list includes the ID of the document and the reason that the status couldn't be found.</p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetDocumentStatusResponseError>>
+    {
+        &self.errors
+    }
     /// Appends an item to `document_status_list`.
     ///
     /// To override the contents of this collection use [`set_document_status_list`](Self::set_document_status_list).
@@ -89,6 +96,12 @@ impl BatchGetDocumentStatusOutputBuilder {
     ) -> Self {
         self.document_status_list = input;
         self
+    }
+    /// <p>The status of documents. The status indicates if the document is waiting to be indexed, is in the process of indexing, has completed indexing, or failed indexing. If a document failed indexing, the status provides the reason why.</p>
+    pub fn get_document_status_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Status>> {
+        &self.document_status_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

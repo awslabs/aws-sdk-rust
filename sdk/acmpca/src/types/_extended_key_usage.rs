@@ -53,6 +53,12 @@ impl ExtendedKeyUsageBuilder {
         self.extended_key_usage_type = input;
         self
     }
+    /// <p>Specifies a standard <code>ExtendedKeyUsage</code> as defined as in <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.12">RFC 5280</a>.</p>
+    pub fn get_extended_key_usage_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExtendedKeyUsageType> {
+        &self.extended_key_usage_type
+    }
     /// <p>Specifies a custom <code>ExtendedKeyUsage</code> with an object identifier (OID).</p>
     pub fn extended_key_usage_object_identifier(
         mut self,
@@ -68,6 +74,12 @@ impl ExtendedKeyUsageBuilder {
     ) -> Self {
         self.extended_key_usage_object_identifier = input;
         self
+    }
+    /// <p>Specifies a custom <code>ExtendedKeyUsage</code> with an object identifier (OID).</p>
+    pub fn get_extended_key_usage_object_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.extended_key_usage_object_identifier
     }
     /// Consumes the builder and constructs a [`ExtendedKeyUsage`](crate::types::ExtendedKeyUsage).
     pub fn build(self) -> crate::types::ExtendedKeyUsage {

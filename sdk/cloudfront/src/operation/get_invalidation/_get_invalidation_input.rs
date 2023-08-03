@@ -54,6 +54,10 @@ impl GetInvalidationInputBuilder {
         self.distribution_id = input;
         self
     }
+    /// <p>The distribution's ID.</p>
+    pub fn get_distribution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.distribution_id
+    }
     /// <p>The identifier for the invalidation request, for example, <code>IDFDVBD632BHDS5</code>.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl GetInvalidationInputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The identifier for the invalidation request, for example, <code>IDFDVBD632BHDS5</code>.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`GetInvalidationInput`](crate::operation::get_invalidation::GetInvalidationInput).
     pub fn build(

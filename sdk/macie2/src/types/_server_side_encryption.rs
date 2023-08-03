@@ -51,6 +51,10 @@ impl ServerSideEncryptionBuilder {
         self.encryption_type = input;
         self
     }
+    /// <p>The server-side encryption algorithm that's used when storing data in the bucket or object. If default encryption settings aren't configured for the bucket or the object isn't encrypted using server-side encryption, this value is NONE.</p>
+    pub fn get_encryption_type(&self) -> &::std::option::Option<crate::types::EncryptionType> {
+        &self.encryption_type
+    }
     /// <p>The Amazon Resource Name (ARN) or unique identifier (key ID) for the KMS key that's used to encrypt data in the bucket or the object. This value is null if an KMS key isn't used to encrypt the data.</p>
     pub fn kms_master_key_id(
         mut self,
@@ -66,6 +70,10 @@ impl ServerSideEncryptionBuilder {
     ) -> Self {
         self.kms_master_key_id = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) or unique identifier (key ID) for the KMS key that's used to encrypt data in the bucket or the object. This value is null if an KMS key isn't used to encrypt the data.</p>
+    pub fn get_kms_master_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_master_key_id
     }
     /// Consumes the builder and constructs a [`ServerSideEncryption`](crate::types::ServerSideEncryption).
     pub fn build(self) -> crate::types::ServerSideEncryption {

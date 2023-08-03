@@ -44,6 +44,12 @@ impl UpdateTimeToLiveFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateTimeToLive as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_time_to_live::builders::UpdateTimeToLiveInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,10 @@ impl UpdateTimeToLiveFluentBuilder {
         self.inner = self.inner.set_table_name(input);
         self
     }
+    /// <p>The name of the table to be configured.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_table_name()
+    }
     /// <p>Represents the settings used to enable or disable Time to Live for the specified table.</p>
     pub fn time_to_live_specification(
         mut self,
@@ -149,5 +159,11 @@ impl UpdateTimeToLiveFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_time_to_live_specification(input);
         self
+    }
+    /// <p>Represents the settings used to enable or disable Time to Live for the specified table.</p>
+    pub fn get_time_to_live_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::TimeToLiveSpecification> {
+        self.inner.get_time_to_live_specification()
     }
 }

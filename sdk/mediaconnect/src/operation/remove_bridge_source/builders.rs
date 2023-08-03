@@ -36,6 +36,12 @@ impl RemoveBridgeSourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RemoveBridgeSource as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::remove_bridge_source::builders::RemoveBridgeSourceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl RemoveBridgeSourceFluentBuilder {
         self.inner = self.inner.set_bridge_arn(input);
         self
     }
+    /// The ARN of the bridge that you want to update.
+    pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bridge_arn()
+    }
     /// The name of the bridge source that you want to remove.
     pub fn source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_name(input.into());
@@ -135,5 +145,9 @@ impl RemoveBridgeSourceFluentBuilder {
     pub fn set_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_name(input);
         self
+    }
+    /// The name of the bridge source that you want to remove.
+    pub fn get_source_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_name()
     }
 }

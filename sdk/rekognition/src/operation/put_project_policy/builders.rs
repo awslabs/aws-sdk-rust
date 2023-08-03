@@ -41,6 +41,12 @@ impl PutProjectPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutProjectPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_project_policy::builders::PutProjectPolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +137,10 @@ impl PutProjectPolicyFluentBuilder {
         self.inner = self.inner.set_project_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the project that the project policy is attached to.</p>
+    pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_arn()
+    }
     /// <p>A name for the policy.</p>
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_name(input.into());
@@ -140,6 +150,10 @@ impl PutProjectPolicyFluentBuilder {
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_name(input);
         self
+    }
+    /// <p>A name for the policy.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_name()
     }
     /// <p>The revision ID for the Project Policy. Each time you modify a policy, Amazon Rekognition Custom Labels generates and assigns a new <code>PolicyRevisionId</code> and then deletes the previous version of the policy.</p>
     pub fn policy_revision_id(
@@ -157,6 +171,10 @@ impl PutProjectPolicyFluentBuilder {
         self.inner = self.inner.set_policy_revision_id(input);
         self
     }
+    /// <p>The revision ID for the Project Policy. Each time you modify a policy, Amazon Rekognition Custom Labels generates and assigns a new <code>PolicyRevisionId</code> and then deletes the previous version of the policy.</p>
+    pub fn get_policy_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_revision_id()
+    }
     /// <p>A resource policy to add to the model. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON policy reference</a>. </p>
     pub fn policy_document(
         mut self,
@@ -172,5 +190,9 @@ impl PutProjectPolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_policy_document(input);
         self
+    }
+    /// <p>A resource policy to add to the model. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON policy reference</a>. </p>
+    pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_document()
     }
 }

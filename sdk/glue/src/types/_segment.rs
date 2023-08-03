@@ -48,6 +48,10 @@ impl SegmentBuilder {
         self.segment_number = input;
         self
     }
+    /// <p>The zero-based index number of the segment. For example, if the total number of segments is 4, <code>SegmentNumber</code> values range from 0 through 3.</p>
+    pub fn get_segment_number(&self) -> &::std::option::Option<i32> {
+        &self.segment_number
+    }
     /// <p>The total number of segments.</p>
     pub fn total_segments(mut self, input: i32) -> Self {
         self.total_segments = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl SegmentBuilder {
     pub fn set_total_segments(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_segments = input;
         self
+    }
+    /// <p>The total number of segments.</p>
+    pub fn get_total_segments(&self) -> &::std::option::Option<i32> {
+        &self.total_segments
     }
     /// Consumes the builder and constructs a [`Segment`](crate::types::Segment).
     pub fn build(self) -> crate::types::Segment {

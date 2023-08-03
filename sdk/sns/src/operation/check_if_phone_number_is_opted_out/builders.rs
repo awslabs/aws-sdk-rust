@@ -37,6 +37,10 @@ impl CheckIfPhoneNumberIsOptedOutFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CheckIfPhoneNumberIsOptedOut as a reference.
+    pub fn as_input(&self) -> &crate::operation::check_if_phone_number_is_opted_out::builders::CheckIfPhoneNumberIsOptedOutInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,5 +130,9 @@ impl CheckIfPhoneNumberIsOptedOutFluentBuilder {
     pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_phone_number(input);
         self
+    }
+    /// <p>The phone number for which you want to check the opt out status.</p>
+    pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_phone_number()
     }
 }

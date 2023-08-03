@@ -70,6 +70,12 @@ impl CreateDhcpOptionsInputBuilder {
         self.dhcp_configurations = input;
         self
     }
+    /// <p>A DHCP configuration option.</p>
+    pub fn get_dhcp_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NewDhcpConfiguration>> {
+        &self.dhcp_configurations
+    }
     /// Appends an item to `tag_specifications`.
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
@@ -89,6 +95,12 @@ impl CreateDhcpOptionsInputBuilder {
         self.tag_specifications = input;
         self
     }
+    /// <p>The tags to assign to the DHCP option.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -98,6 +110,10 @@ impl CreateDhcpOptionsInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`CreateDhcpOptionsInput`](crate::operation::create_dhcp_options::CreateDhcpOptionsInput).
     pub fn build(

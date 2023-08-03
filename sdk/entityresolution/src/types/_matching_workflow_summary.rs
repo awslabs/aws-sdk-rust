@@ -70,6 +70,10 @@ impl MatchingWorkflowSummaryBuilder {
         self.workflow_name = input;
         self
     }
+    /// <p>The name of the workflow.</p>
+    pub fn get_workflow_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_name
+    }
     /// <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>MatchingWorkflow</code>.</p>
     pub fn workflow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_arn = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl MatchingWorkflowSummaryBuilder {
     pub fn set_workflow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_arn = input;
         self
+    }
+    /// <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>MatchingWorkflow</code>.</p>
+    pub fn get_workflow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_arn
     }
     /// <p>The timestamp of when the workflow was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -93,6 +101,10 @@ impl MatchingWorkflowSummaryBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The timestamp of when the workflow was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The timestamp of when the workflow was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -105,6 +117,10 @@ impl MatchingWorkflowSummaryBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// <p>The timestamp of when the workflow was last updated.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     /// Consumes the builder and constructs a [`MatchingWorkflowSummary`](crate::types::MatchingWorkflowSummary).
     pub fn build(self) -> crate::types::MatchingWorkflowSummary {

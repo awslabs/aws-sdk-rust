@@ -40,6 +40,10 @@ impl SecurityConfigStatsBuilder {
         self.saml_config_count = input;
         self
     }
+    /// <p>The number of security configurations in the current account.</p>
+    pub fn get_saml_config_count(&self) -> &::std::option::Option<i64> {
+        &self.saml_config_count
+    }
     /// Consumes the builder and constructs a [`SecurityConfigStats`](crate::types::SecurityConfigStats).
     pub fn build(self) -> crate::types::SecurityConfigStats {
         crate::types::SecurityConfigStats {

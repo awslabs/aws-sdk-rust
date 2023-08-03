@@ -56,6 +56,12 @@ impl SampleChannelDataOutputBuilder {
         self.payloads = input;
         self
     }
+    /// <p>The list of message samples. Each sample message is returned as a base64-encoded string.</p>
+    pub fn get_payloads(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>> {
+        &self.payloads
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

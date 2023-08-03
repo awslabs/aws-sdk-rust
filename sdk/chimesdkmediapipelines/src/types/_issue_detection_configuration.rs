@@ -40,6 +40,10 @@ impl IssueDetectionConfigurationBuilder {
         self.rule_name = input;
         self
     }
+    /// <p>The name of the issue detection rule.</p>
+    pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_name
+    }
     /// Consumes the builder and constructs a [`IssueDetectionConfiguration`](crate::types::IssueDetectionConfiguration).
     pub fn build(self) -> crate::types::IssueDetectionConfiguration {
         crate::types::IssueDetectionConfiguration {

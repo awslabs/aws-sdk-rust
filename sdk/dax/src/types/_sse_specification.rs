@@ -40,6 +40,10 @@ impl SseSpecificationBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Indicates whether server-side encryption is enabled (true) or disabled (false) on the cluster.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Consumes the builder and constructs a [`SseSpecification`](crate::types::SseSpecification).
     pub fn build(self) -> crate::types::SseSpecification {
         crate::types::SseSpecification {

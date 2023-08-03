@@ -79,6 +79,11 @@ impl QueryTableRowsInputBuilder {
         self.workbook_id = input;
         self
     }
+    /// <p>The ID of the workbook whose table rows are being queried.</p>
+    /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    pub fn get_workbook_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workbook_id
+    }
     /// <p>The ID of the table whose rows are being queried.</p>
     /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
     pub fn table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -90,6 +95,11 @@ impl QueryTableRowsInputBuilder {
     pub fn set_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_id = input;
         self
+    }
+    /// <p>The ID of the table whose rows are being queried.</p>
+    /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    pub fn get_table_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_id
     }
     /// <p>An object that represents a filter formula along with the id of the context row under which the filter function needs to evaluate.</p>
     pub fn filter_formula(mut self, input: crate::types::Filter) -> Self {
@@ -104,6 +114,10 @@ impl QueryTableRowsInputBuilder {
         self.filter_formula = input;
         self
     }
+    /// <p>An object that represents a filter formula along with the id of the context row under which the filter function needs to evaluate.</p>
+    pub fn get_filter_formula(&self) -> &::std::option::Option<crate::types::Filter> {
+        &self.filter_formula
+    }
     /// <p>The maximum number of rows to return in each page of the results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -113,6 +127,10 @@ impl QueryTableRowsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of rows to return in each page of the results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
     /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
@@ -125,6 +143,11 @@ impl QueryTableRowsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
+    /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`QueryTableRowsInput`](crate::operation::query_table_rows::QueryTableRowsInput).
     pub fn build(

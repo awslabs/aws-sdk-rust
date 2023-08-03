@@ -56,6 +56,12 @@ impl GetLoggingOptionsOutputBuilder {
         self.cloud_watch_log_delivery = input;
         self
     }
+    /// <p>Returns information about log delivery to Amazon CloudWatch Logs.</p>
+    pub fn get_cloud_watch_log_delivery(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudWatchLogDeliveryOptions> {
+        &self.cloud_watch_log_delivery
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -46,6 +46,10 @@ impl SqsParametersBuilder {
         self.message_group_id = input;
         self
     }
+    /// <p>The FIFO message group ID to use as the target.</p>
+    pub fn get_message_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_group_id
+    }
     /// Consumes the builder and constructs a [`SqsParameters`](crate::types::SqsParameters).
     pub fn build(self) -> crate::types::SqsParameters {
         crate::types::SqsParameters {

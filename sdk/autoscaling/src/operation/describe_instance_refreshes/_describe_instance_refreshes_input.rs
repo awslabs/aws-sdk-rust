@@ -69,6 +69,10 @@ impl DescribeInstanceRefreshesInputBuilder {
         self.auto_scaling_group_name = input;
         self
     }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_scaling_group_name
+    }
     /// Appends an item to `instance_refresh_ids`.
     ///
     /// To override the contents of this collection use [`set_instance_refresh_ids`](Self::set_instance_refresh_ids).
@@ -91,6 +95,12 @@ impl DescribeInstanceRefreshesInputBuilder {
         self.instance_refresh_ids = input;
         self
     }
+    /// <p>One or more instance refresh IDs.</p>
+    pub fn get_instance_refresh_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.instance_refresh_ids
+    }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -101,6 +111,10 @@ impl DescribeInstanceRefreshesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.max_records = ::std::option::Option::Some(input);
@@ -110,6 +124,10 @@ impl DescribeInstanceRefreshesInputBuilder {
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_records = input;
         self
+    }
+    /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        &self.max_records
     }
     /// Consumes the builder and constructs a [`DescribeInstanceRefreshesInput`](crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesInput).
     pub fn build(

@@ -39,6 +39,10 @@ impl ResumeSessionInputBuilder {
         self.session_id = input;
         self
     }
+    /// <p>The ID of the disconnected session to resume.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
+    }
     /// Consumes the builder and constructs a [`ResumeSessionInput`](crate::operation::resume_session::ResumeSessionInput).
     pub fn build(
         self,

@@ -95,6 +95,10 @@ impl GlobalConfigurationBuilder {
         self.initial_audio_gain = input;
         self
     }
+    /// Value to set the initial audio gain for the Live Event.
+    pub fn get_initial_audio_gain(&self) -> &::std::option::Option<i32> {
+        &self.initial_audio_gain
+    }
     /// Indicates the action to take when the current input completes (e.g. end-of-file). When switchAndLoopInputs is configured the encoder will restart at the beginning of the first input. When "none" is configured the encoder will transcode either black, a solid color, or a user specified slate images per the "Input Loss Behavior" configuration until the next input switch occurs (which is controlled through the Channel Schedule API).
     pub fn input_end_action(
         mut self,
@@ -111,6 +115,12 @@ impl GlobalConfigurationBuilder {
         self.input_end_action = input;
         self
     }
+    /// Indicates the action to take when the current input completes (e.g. end-of-file). When switchAndLoopInputs is configured the encoder will restart at the beginning of the first input. When "none" is configured the encoder will transcode either black, a solid color, or a user specified slate images per the "Input Loss Behavior" configuration until the next input switch occurs (which is controlled through the Channel Schedule API).
+    pub fn get_input_end_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::GlobalConfigurationInputEndAction> {
+        &self.input_end_action
+    }
     /// Settings for system actions when input is lost.
     pub fn input_loss_behavior(mut self, input: crate::types::InputLossBehavior) -> Self {
         self.input_loss_behavior = ::std::option::Option::Some(input);
@@ -123,6 +133,12 @@ impl GlobalConfigurationBuilder {
     ) -> Self {
         self.input_loss_behavior = input;
         self
+    }
+    /// Settings for system actions when input is lost.
+    pub fn get_input_loss_behavior(
+        &self,
+    ) -> &::std::option::Option<crate::types::InputLossBehavior> {
+        &self.input_loss_behavior
     }
     /// Indicates how MediaLive pipelines are synchronized. PIPELINE_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other. EPOCH_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
     pub fn output_locking_mode(
@@ -140,6 +156,12 @@ impl GlobalConfigurationBuilder {
         self.output_locking_mode = input;
         self
     }
+    /// Indicates how MediaLive pipelines are synchronized. PIPELINE_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other. EPOCH_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
+    pub fn get_output_locking_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::GlobalConfigurationOutputLockingMode> {
+        &self.output_locking_mode
+    }
     /// Indicates whether the rate of frames emitted by the Live encoder should be paced by its system clock (which optionally may be locked to another source via NTP) or should be locked to the clock of the source that is providing the input stream.
     pub fn output_timing_source(
         mut self,
@@ -156,6 +178,12 @@ impl GlobalConfigurationBuilder {
         self.output_timing_source = input;
         self
     }
+    /// Indicates whether the rate of frames emitted by the Live encoder should be paced by its system clock (which optionally may be locked to another source via NTP) or should be locked to the clock of the source that is providing the input stream.
+    pub fn get_output_timing_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::GlobalConfigurationOutputTimingSource> {
+        &self.output_timing_source
+    }
     /// Adjusts video input buffer for streams with very low video framerates. This is commonly set to enabled for music channels with less than one video frame per second.
     pub fn support_low_framerate_inputs(
         mut self,
@@ -171,6 +199,12 @@ impl GlobalConfigurationBuilder {
     ) -> Self {
         self.support_low_framerate_inputs = input;
         self
+    }
+    /// Adjusts video input buffer for streams with very low video framerates. This is commonly set to enabled for music channels with less than one video frame per second.
+    pub fn get_support_low_framerate_inputs(
+        &self,
+    ) -> &::std::option::Option<crate::types::GlobalConfigurationLowFramerateInputs> {
+        &self.support_low_framerate_inputs
     }
     /// Consumes the builder and constructs a [`GlobalConfiguration`](crate::types::GlobalConfiguration).
     pub fn build(self) -> crate::types::GlobalConfiguration {

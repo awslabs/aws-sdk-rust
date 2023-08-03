@@ -46,6 +46,10 @@ impl GetDirectoryOutputBuilder {
         self.directory = input;
         self
     }
+    /// <p>Metadata about the directory.</p>
+    pub fn get_directory(&self) -> &::std::option::Option<crate::types::Directory> {
+        &self.directory
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

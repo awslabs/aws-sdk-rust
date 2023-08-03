@@ -148,6 +148,12 @@ impl TransportBuilder {
         self.cidr_allow_list = input;
         self
     }
+    /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+    pub fn get_cidr_allow_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.cidr_allow_list
+    }
     /// The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams.
     pub fn max_bitrate(mut self, input: i32) -> Self {
         self.max_bitrate = ::std::option::Option::Some(input);
@@ -157,6 +163,10 @@ impl TransportBuilder {
     pub fn set_max_bitrate(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_bitrate = input;
         self
+    }
+    /// The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams.
+    pub fn get_max_bitrate(&self) -> &::std::option::Option<i32> {
+        &self.max_bitrate
     }
     /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
     pub fn max_latency(mut self, input: i32) -> Self {
@@ -168,6 +178,10 @@ impl TransportBuilder {
         self.max_latency = input;
         self
     }
+    /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
+    pub fn get_max_latency(&self) -> &::std::option::Option<i32> {
+        &self.max_latency
+    }
     /// The size of the buffer (in milliseconds) to use to sync incoming source data.
     pub fn max_sync_buffer(mut self, input: i32) -> Self {
         self.max_sync_buffer = ::std::option::Option::Some(input);
@@ -177,6 +191,10 @@ impl TransportBuilder {
     pub fn set_max_sync_buffer(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_sync_buffer = input;
         self
+    }
+    /// The size of the buffer (in milliseconds) to use to sync incoming source data.
+    pub fn get_max_sync_buffer(&self) -> &::std::option::Option<i32> {
+        &self.max_sync_buffer
     }
     /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
     pub fn min_latency(mut self, input: i32) -> Self {
@@ -188,6 +206,10 @@ impl TransportBuilder {
         self.min_latency = input;
         self
     }
+    /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
+    pub fn get_min_latency(&self) -> &::std::option::Option<i32> {
+        &self.min_latency
+    }
     /// The protocol that is used by the source or output.
     pub fn protocol(mut self, input: crate::types::Protocol) -> Self {
         self.protocol = ::std::option::Option::Some(input);
@@ -197,6 +219,10 @@ impl TransportBuilder {
     pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::Protocol>) -> Self {
         self.protocol = input;
         self
+    }
+    /// The protocol that is used by the source or output.
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::Protocol> {
+        &self.protocol
     }
     /// The remote ID for the Zixi-pull stream.
     pub fn remote_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -208,6 +234,10 @@ impl TransportBuilder {
         self.remote_id = input;
         self
     }
+    /// The remote ID for the Zixi-pull stream.
+    pub fn get_remote_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.remote_id
+    }
     /// The port that the flow uses to send outbound requests to initiate connection with the sender.
     pub fn sender_control_port(mut self, input: i32) -> Self {
         self.sender_control_port = ::std::option::Option::Some(input);
@@ -217,6 +247,10 @@ impl TransportBuilder {
     pub fn set_sender_control_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.sender_control_port = input;
         self
+    }
+    /// The port that the flow uses to send outbound requests to initiate connection with the sender.
+    pub fn get_sender_control_port(&self) -> &::std::option::Option<i32> {
+        &self.sender_control_port
     }
     /// The IP address that the flow communicates with to initiate connection with the sender.
     pub fn sender_ip_address(
@@ -234,6 +268,10 @@ impl TransportBuilder {
         self.sender_ip_address = input;
         self
     }
+    /// The IP address that the flow communicates with to initiate connection with the sender.
+    pub fn get_sender_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sender_ip_address
+    }
     /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
     pub fn smoothing_latency(mut self, input: i32) -> Self {
         self.smoothing_latency = ::std::option::Option::Some(input);
@@ -243,6 +281,10 @@ impl TransportBuilder {
     pub fn set_smoothing_latency(mut self, input: ::std::option::Option<i32>) -> Self {
         self.smoothing_latency = input;
         self
+    }
+    /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
+    pub fn get_smoothing_latency(&self) -> &::std::option::Option<i32> {
+        &self.smoothing_latency
     }
     /// Source IP or domain name for SRT-caller protocol.
     pub fn source_listener_address(
@@ -260,6 +302,10 @@ impl TransportBuilder {
         self.source_listener_address = input;
         self
     }
+    /// Source IP or domain name for SRT-caller protocol.
+    pub fn get_source_listener_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_listener_address
+    }
     /// Source port for SRT-caller protocol.
     pub fn source_listener_port(mut self, input: i32) -> Self {
         self.source_listener_port = ::std::option::Option::Some(input);
@@ -270,6 +316,10 @@ impl TransportBuilder {
         self.source_listener_port = input;
         self
     }
+    /// Source port for SRT-caller protocol.
+    pub fn get_source_listener_port(&self) -> &::std::option::Option<i32> {
+        &self.source_listener_port
+    }
     /// The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based streams.
     pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_id = ::std::option::Option::Some(input.into());
@@ -279,6 +329,10 @@ impl TransportBuilder {
     pub fn set_stream_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_id = input;
         self
+    }
+    /// The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based streams.
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_id
     }
     /// Consumes the builder and constructs a [`Transport`](crate::types::Transport).
     pub fn build(self) -> crate::types::Transport {

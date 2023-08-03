@@ -37,6 +37,13 @@ impl DeleteV2LoggingLevelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteV2LoggingLevel as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_v2_logging_level::builders::DeleteV2LoggingLevelInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +137,10 @@ impl DeleteV2LoggingLevelFluentBuilder {
         self.inner = self.inner.set_target_type(input);
         self
     }
+    /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
+    pub fn get_target_type(&self) -> &::std::option::Option<crate::types::LogTargetType> {
+        self.inner.get_target_type()
+    }
     /// <p>The name of the resource for which you are configuring logging.</p>
     pub fn target_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_name(input.into());
@@ -139,5 +150,9 @@ impl DeleteV2LoggingLevelFluentBuilder {
     pub fn set_target_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_name(input);
         self
+    }
+    /// <p>The name of the resource for which you are configuring logging.</p>
+    pub fn get_target_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_name()
     }
 }

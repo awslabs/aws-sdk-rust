@@ -46,6 +46,10 @@ impl DeleteVerifiedEmailAddressInputBuilder {
         self.email_address = input;
         self
     }
+    /// <p>An email address to be removed from the list of verified addresses.</p>
+    pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_address
+    }
     /// Consumes the builder and constructs a [`DeleteVerifiedEmailAddressInput`](crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressInput).
     pub fn build(
         self,

@@ -69,6 +69,10 @@ impl DescribeRemediationExecutionStatusInputBuilder {
         self.config_rule_name = input;
         self
     }
+    /// <p>A list of Config rule names.</p>
+    pub fn get_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.config_rule_name
+    }
     /// Appends an item to `resource_keys`.
     ///
     /// To override the contents of this collection use [`set_resource_keys`](Self::set_resource_keys).
@@ -88,6 +92,12 @@ impl DescribeRemediationExecutionStatusInputBuilder {
         self.resource_keys = input;
         self
     }
+    /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID. </p>
+    pub fn get_resource_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>> {
+        &self.resource_keys
+    }
     /// <p>The maximum number of RemediationExecutionStatuses returned on each page. The default is maximum. If you specify 0, Config uses the default. </p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -98,6 +108,10 @@ impl DescribeRemediationExecutionStatusInputBuilder {
         self.limit = input;
         self
     }
+    /// <p>The maximum number of RemediationExecutionStatuses returned on each page. The default is maximum. If you specify 0, Config uses the default. </p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
+    }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -107,6 +121,10 @@ impl DescribeRemediationExecutionStatusInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeRemediationExecutionStatusInput`](crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusInput, ::aws_smithy_http::operation::error::BuildError>{

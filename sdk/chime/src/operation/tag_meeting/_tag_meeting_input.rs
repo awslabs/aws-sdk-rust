@@ -47,6 +47,10 @@ impl TagMeetingInputBuilder {
         self.meeting_id = input;
         self
     }
+    /// <p>The Amazon Chime SDK meeting ID.</p>
+    pub fn get_meeting_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.meeting_id
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -65,6 +69,10 @@ impl TagMeetingInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tag key-value pairs.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`TagMeetingInput`](crate::operation::tag_meeting::TagMeetingInput).
     pub fn build(

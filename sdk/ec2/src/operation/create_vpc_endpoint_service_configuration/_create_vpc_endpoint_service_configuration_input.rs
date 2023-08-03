@@ -99,6 +99,10 @@ impl CreateVpcEndpointServiceConfigurationInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>Indicates whether requests from service consumers to create an endpoint to your service must be accepted manually.</p>
     pub fn acceptance_required(mut self, input: bool) -> Self {
         self.acceptance_required = ::std::option::Option::Some(input);
@@ -108,6 +112,10 @@ impl CreateVpcEndpointServiceConfigurationInputBuilder {
     pub fn set_acceptance_required(mut self, input: ::std::option::Option<bool>) -> Self {
         self.acceptance_required = input;
         self
+    }
+    /// <p>Indicates whether requests from service consumers to create an endpoint to your service must be accepted manually.</p>
+    pub fn get_acceptance_required(&self) -> &::std::option::Option<bool> {
+        &self.acceptance_required
     }
     /// <p>(Interface endpoint configuration) The private DNS name to assign to the VPC endpoint service.</p>
     pub fn private_dns_name(
@@ -124,6 +132,10 @@ impl CreateVpcEndpointServiceConfigurationInputBuilder {
     ) -> Self {
         self.private_dns_name = input;
         self
+    }
+    /// <p>(Interface endpoint configuration) The private DNS name to assign to the VPC endpoint service.</p>
+    pub fn get_private_dns_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_dns_name
     }
     /// Appends an item to `network_load_balancer_arns`.
     ///
@@ -147,6 +159,12 @@ impl CreateVpcEndpointServiceConfigurationInputBuilder {
         self.network_load_balancer_arns = input;
         self
     }
+    /// <p>The Amazon Resource Names (ARNs) of the Network Load Balancers.</p>
+    pub fn get_network_load_balancer_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.network_load_balancer_arns
+    }
     /// Appends an item to `gateway_load_balancer_arns`.
     ///
     /// To override the contents of this collection use [`set_gateway_load_balancer_arns`](Self::set_gateway_load_balancer_arns).
@@ -168,6 +186,12 @@ impl CreateVpcEndpointServiceConfigurationInputBuilder {
     ) -> Self {
         self.gateway_load_balancer_arns = input;
         self
+    }
+    /// <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers.</p>
+    pub fn get_gateway_load_balancer_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.gateway_load_balancer_arns
     }
     /// Appends an item to `supported_ip_address_types`.
     ///
@@ -191,6 +215,12 @@ impl CreateVpcEndpointServiceConfigurationInputBuilder {
         self.supported_ip_address_types = input;
         self
     }
+    /// <p>The supported IP address types. The possible values are <code>ipv4</code> and <code>ipv6</code>.</p>
+    pub fn get_supported_ip_address_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.supported_ip_address_types
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -200,6 +230,10 @@ impl CreateVpcEndpointServiceConfigurationInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Appends an item to `tag_specifications`.
     ///
@@ -219,6 +253,12 @@ impl CreateVpcEndpointServiceConfigurationInputBuilder {
     ) -> Self {
         self.tag_specifications = input;
         self
+    }
+    /// <p>The tags to associate with the service.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
     }
     /// Consumes the builder and constructs a [`CreateVpcEndpointServiceConfigurationInput`](crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{

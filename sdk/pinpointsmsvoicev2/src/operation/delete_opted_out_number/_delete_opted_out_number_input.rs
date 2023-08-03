@@ -54,6 +54,10 @@ impl DeleteOptedOutNumberInputBuilder {
         self.opt_out_list_name = input;
         self
     }
+    /// <p>The OptOutListName or OptOutListArn to remove the phone number from.</p>
+    pub fn get_opt_out_list_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.opt_out_list_name
+    }
     /// <p>The phone number, in E.164 format, to remove from the OptOutList.</p>
     pub fn opted_out_number(
         mut self,
@@ -69,6 +73,10 @@ impl DeleteOptedOutNumberInputBuilder {
     ) -> Self {
         self.opted_out_number = input;
         self
+    }
+    /// <p>The phone number, in E.164 format, to remove from the OptOutList.</p>
+    pub fn get_opted_out_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.opted_out_number
     }
     /// Consumes the builder and constructs a [`DeleteOptedOutNumberInput`](crate::operation::delete_opted_out_number::DeleteOptedOutNumberInput).
     pub fn build(

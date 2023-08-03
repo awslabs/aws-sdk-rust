@@ -45,6 +45,10 @@ impl DeleteDataQualityJobDefinitionInputBuilder {
         self.job_definition_name = input;
         self
     }
+    /// <p>The name of the data quality monitoring job definition to delete.</p>
+    pub fn get_job_definition_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_definition_name
+    }
     /// Consumes the builder and constructs a [`DeleteDataQualityJobDefinitionInput`](crate::operation::delete_data_quality_job_definition::DeleteDataQualityJobDefinitionInput).
     pub fn build(
         self,

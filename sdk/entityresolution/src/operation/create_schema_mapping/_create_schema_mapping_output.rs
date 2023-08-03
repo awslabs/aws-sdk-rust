@@ -76,6 +76,10 @@ impl CreateSchemaMappingOutputBuilder {
         self.schema_name = input;
         self
     }
+    /// <p>The name of the schema.</p>
+    pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_name
+    }
     /// <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>SchemaMapping</code>.</p>
     pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_arn = ::std::option::Option::Some(input.into());
@@ -86,6 +90,10 @@ impl CreateSchemaMappingOutputBuilder {
         self.schema_arn = input;
         self
     }
+    /// <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>SchemaMapping</code>.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_arn
+    }
     /// <p>A description of the schema.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -95,6 +103,10 @@ impl CreateSchemaMappingOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the schema.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `mapped_input_fields`.
     ///
@@ -114,6 +126,12 @@ impl CreateSchemaMappingOutputBuilder {
     ) -> Self {
         self.mapped_input_fields = input;
         self
+    }
+    /// <p>A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information that Entity Resolution uses for matching.</p>
+    pub fn get_mapped_input_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaInputAttribute>> {
+        &self.mapped_input_fields
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

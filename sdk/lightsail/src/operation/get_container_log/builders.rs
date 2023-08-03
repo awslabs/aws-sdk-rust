@@ -39,6 +39,12 @@ impl GetContainerLogFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetContainerLog as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_container_log::builders::GetContainerLogInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl GetContainerLogFluentBuilder {
         self.inner = self.inner.set_service_name(input);
         self
     }
+    /// <p>The name of the container service for which to get a container log.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_name()
+    }
     /// <p>The name of the container that is either running or previously ran on the container service for which to return a log.</p>
     pub fn container_name(
         mut self,
@@ -144,6 +154,10 @@ impl GetContainerLogFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_container_name(input);
         self
+    }
+    /// <p>The name of the container that is either running or previously ran on the container service for which to return a log.</p>
+    pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_container_name()
     }
     /// <p>The start of the time interval for which to get log data.</p>
     /// <p>Constraints:</p>
@@ -170,6 +184,16 @@ impl GetContainerLogFluentBuilder {
         self.inner = self.inner.set_start_time(input);
         self
     }
+    /// <p>The start of the time interval for which to get log data.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
+    /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, specify <code>1538424000</code> as the start time.</p> </li>
+    /// </ul>
+    /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
+    }
     /// <p>The end of the time interval for which to get log data.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -194,6 +218,16 @@ impl GetContainerLogFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
+    }
+    /// <p>The end of the time interval for which to get log data.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
+    /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 9 PM UTC, specify <code>1538427600</code> as the end time.</p> </li>
+    /// </ul>
+    /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time()
     }
     /// <p>The pattern to use to filter the returned log events to a specific term.</p>
     /// <p>The following are a few examples of filter patterns that you can specify:</p>
@@ -227,6 +261,18 @@ impl GetContainerLogFluentBuilder {
         self.inner = self.inner.set_filter_pattern(input);
         self
     }
+    /// <p>The pattern to use to filter the returned log events to a specific term.</p>
+    /// <p>The following are a few examples of filter patterns that you can specify:</p>
+    /// <ul>
+    /// <li> <p>To return all log events, specify a filter pattern of <code>""</code>.</p> </li>
+    /// <li> <p>To exclude log events that contain the <code>ERROR</code> term, and return all other log events, specify a filter pattern of <code>"-ERROR"</code>.</p> </li>
+    /// <li> <p>To return log events that contain the <code>ERROR</code> term, specify a filter pattern of <code>"ERROR"</code>.</p> </li>
+    /// <li> <p>To return log events that contain both the <code>ERROR</code> and <code>Exception</code> terms, specify a filter pattern of <code>"ERROR Exception"</code>.</p> </li>
+    /// <li> <p>To return log events that contain the <code>ERROR</code> <i>or</i> the <code>Exception</code> term, specify a filter pattern of <code>"?ERROR ?Exception"</code>.</p> </li>
+    /// </ul>
+    pub fn get_filter_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_filter_pattern()
+    }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetContainerLog</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     pub fn page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -238,5 +284,10 @@ impl GetContainerLogFluentBuilder {
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_page_token(input);
         self
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetContainerLog</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_page_token()
     }
 }

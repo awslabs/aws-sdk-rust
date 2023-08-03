@@ -36,6 +36,12 @@ impl DescribeLabelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeLabel as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_label::builders::DescribeLabelInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl DescribeLabelFluentBuilder {
         self.inner = self.inner.set_label_group_name(input);
         self
     }
+    /// <p> Returns the name of the group containing the label. </p>
+    pub fn get_label_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_label_group_name()
+    }
     /// <p> Returns the ID of the label. </p>
     pub fn label_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.label_id(input.into());
@@ -133,5 +143,9 @@ impl DescribeLabelFluentBuilder {
     pub fn set_label_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_label_id(input);
         self
+    }
+    /// <p> Returns the ID of the label. </p>
+    pub fn get_label_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_label_id()
     }
 }

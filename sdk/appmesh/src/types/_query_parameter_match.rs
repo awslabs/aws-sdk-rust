@@ -40,6 +40,10 @@ impl QueryParameterMatchBuilder {
         self.exact = input;
         self
     }
+    /// <p>The exact query parameter to match on.</p>
+    pub fn get_exact(&self) -> &::std::option::Option<::std::string::String> {
+        &self.exact
+    }
     /// Consumes the builder and constructs a [`QueryParameterMatch`](crate::types::QueryParameterMatch).
     pub fn build(self) -> crate::types::QueryParameterMatch {
         crate::types::QueryParameterMatch { exact: self.exact }

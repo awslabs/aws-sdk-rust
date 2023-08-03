@@ -45,6 +45,12 @@ impl BootstrapActionDetailBuilder {
         self.bootstrap_action_config = input;
         self
     }
+    /// <p>A description of the bootstrap action.</p>
+    pub fn get_bootstrap_action_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::BootstrapActionConfig> {
+        &self.bootstrap_action_config
+    }
     /// Consumes the builder and constructs a [`BootstrapActionDetail`](crate::types::BootstrapActionDetail).
     pub fn build(self) -> crate::types::BootstrapActionDetail {
         crate::types::BootstrapActionDetail {

@@ -48,6 +48,10 @@ impl CreateServiceLinkedRoleOutputBuilder {
         self.role = input;
         self
     }
+    /// <p>A <code>Role</code> object that contains details about the newly created role.</p>
+    pub fn get_role(&self) -> &::std::option::Option<crate::types::Role> {
+        &self.role
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

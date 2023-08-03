@@ -40,6 +40,10 @@ impl DynatraceConnectorProfileCredentialsBuilder {
         self.api_token = input;
         self
     }
+    /// <p> The API tokens used by Dynatrace API to authenticate various API calls. </p>
+    pub fn get_api_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_token
+    }
     /// Consumes the builder and constructs a [`DynatraceConnectorProfileCredentials`](crate::types::DynatraceConnectorProfileCredentials).
     pub fn build(self) -> crate::types::DynatraceConnectorProfileCredentials {
         crate::types::DynatraceConnectorProfileCredentials {

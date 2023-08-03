@@ -36,6 +36,10 @@ impl DescribeDomainChangeProgressFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeDomainChangeProgress as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_domain_change_progress::builders::DescribeDomainChangeProgressInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl DescribeDomainChangeProgressFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>The name of the domain to get progress information for.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p>The specific change ID for which you want to get progress information. If omitted, the request returns information about the most recent configuration change.</p>
     pub fn change_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.change_id(input.into());
@@ -135,5 +143,9 @@ impl DescribeDomainChangeProgressFluentBuilder {
     pub fn set_change_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_change_id(input);
         self
+    }
+    /// <p>The specific change ID for which you want to get progress information. If omitted, the request returns information about the most recent configuration change.</p>
+    pub fn get_change_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_change_id()
     }
 }

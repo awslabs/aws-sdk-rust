@@ -48,6 +48,10 @@ impl CreateSampleFindingsInputBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The ID of the detector to create sample findings for.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// Appends an item to `finding_types`.
     ///
     /// To override the contents of this collection use [`set_finding_types`](Self::set_finding_types).
@@ -69,6 +73,12 @@ impl CreateSampleFindingsInputBuilder {
     ) -> Self {
         self.finding_types = input;
         self
+    }
+    /// <p>The types of sample findings to generate.</p>
+    pub fn get_finding_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.finding_types
     }
     /// Consumes the builder and constructs a [`CreateSampleFindingsInput`](crate::operation::create_sample_findings::CreateSampleFindingsInput).
     pub fn build(

@@ -88,6 +88,10 @@ impl ListVectorEnrichmentJobsInputBuilder {
         self.status_equals = input;
         self
     }
+    /// <p>A filter that retrieves only jobs with a specific status.</p>
+    pub fn get_status_equals(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_equals
+    }
     /// <p>An optional value that specifies whether you want the results sorted in <code>Ascending</code> or <code>Descending</code> order.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -97,6 +101,10 @@ impl ListVectorEnrichmentJobsInputBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p>An optional value that specifies whether you want the results sorted in <code>Ascending</code> or <code>Descending</code> order.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.sort_order
     }
     /// <p>The parameter by which to sort the results.</p>
     pub fn sort_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -108,6 +116,10 @@ impl ListVectorEnrichmentJobsInputBuilder {
         self.sort_by = input;
         self
     }
+    /// <p>The parameter by which to sort the results.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sort_by
+    }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -118,6 +130,10 @@ impl ListVectorEnrichmentJobsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of items to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -127,6 +143,10 @@ impl ListVectorEnrichmentJobsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of items to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListVectorEnrichmentJobsInput`](crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsInput).
     pub fn build(

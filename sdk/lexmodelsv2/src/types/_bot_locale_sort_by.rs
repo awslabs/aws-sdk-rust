@@ -51,6 +51,10 @@ impl BotLocaleSortByBuilder {
         self.attribute = input;
         self
     }
+    /// <p>The bot locale attribute to sort by.</p>
+    pub fn get_attribute(&self) -> &::std::option::Option<crate::types::BotLocaleSortAttribute> {
+        &self.attribute
+    }
     /// <p>Specifies whether to sort the bot locales in ascending or descending order.</p>
     pub fn order(mut self, input: crate::types::SortOrder) -> Self {
         self.order = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl BotLocaleSortByBuilder {
     pub fn set_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.order = input;
         self
+    }
+    /// <p>Specifies whether to sort the bot locales in ascending or descending order.</p>
+    pub fn get_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.order
     }
     /// Consumes the builder and constructs a [`BotLocaleSortBy`](crate::types::BotLocaleSortBy).
     pub fn build(self) -> crate::types::BotLocaleSortBy {

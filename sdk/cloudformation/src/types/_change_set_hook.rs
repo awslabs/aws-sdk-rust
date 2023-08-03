@@ -115,6 +115,12 @@ impl ChangeSetHookBuilder {
         self.invocation_point = input;
         self
     }
+    /// <p>Specifies the points in provisioning logic where a hook is invoked.</p>
+    pub fn get_invocation_point(
+        &self,
+    ) -> &::std::option::Option<crate::types::HookInvocationPoint> {
+        &self.invocation_point
+    }
     /// <p>Specify the hook failure mode for non-compliant resources in the followings ways.</p>
     /// <ul>
     /// <li> <p> <code>FAIL</code> Stops provisioning resources.</p> </li>
@@ -135,6 +141,14 @@ impl ChangeSetHookBuilder {
     ) -> Self {
         self.failure_mode = input;
         self
+    }
+    /// <p>Specify the hook failure mode for non-compliant resources in the followings ways.</p>
+    /// <ul>
+    /// <li> <p> <code>FAIL</code> Stops provisioning resources.</p> </li>
+    /// <li> <p> <code>WARN</code> Allows provisioning to continue with a warning message.</p> </li>
+    /// </ul>
+    pub fn get_failure_mode(&self) -> &::std::option::Option<crate::types::HookFailureMode> {
+        &self.failure_mode
     }
     /// <p>The unique name for your hook. Specifies a three-part namespace for your hook, with a recommended pattern of <code>Organization::Service::Hook</code>.</p> <note>
     /// <p>The following organization namespaces are reserved and can't be used in your hook type names:</p>
@@ -168,6 +182,21 @@ impl ChangeSetHookBuilder {
         self.type_name = input;
         self
     }
+    /// <p>The unique name for your hook. Specifies a three-part namespace for your hook, with a recommended pattern of <code>Organization::Service::Hook</code>.</p> <note>
+    /// <p>The following organization namespaces are reserved and can't be used in your hook type names:</p>
+    /// <ul>
+    /// <li> <p> <code>Alexa</code> </p> </li>
+    /// <li> <p> <code>AMZN</code> </p> </li>
+    /// <li> <p> <code>Amazon</code> </p> </li>
+    /// <li> <p> <code>ASK</code> </p> </li>
+    /// <li> <p> <code>AWS</code> </p> </li>
+    /// <li> <p> <code>Custom</code> </p> </li>
+    /// <li> <p> <code>Dev</code> </p> </li>
+    /// </ul>
+    /// </note>
+    pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.type_name
+    }
     /// <p>The version ID of the type specified.</p>
     pub fn type_version_id(
         mut self,
@@ -183,6 +212,10 @@ impl ChangeSetHookBuilder {
     ) -> Self {
         self.type_version_id = input;
         self
+    }
+    /// <p>The version ID of the type specified.</p>
+    pub fn get_type_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.type_version_id
     }
     /// <p>The version ID of the type configuration.</p>
     pub fn type_configuration_version_id(
@@ -200,6 +233,12 @@ impl ChangeSetHookBuilder {
         self.type_configuration_version_id = input;
         self
     }
+    /// <p>The version ID of the type configuration.</p>
+    pub fn get_type_configuration_version_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.type_configuration_version_id
+    }
     /// <p>Specifies details about the target that the hook will run against.</p>
     pub fn target_details(mut self, input: crate::types::ChangeSetHookTargetDetails) -> Self {
         self.target_details = ::std::option::Option::Some(input);
@@ -212,6 +251,12 @@ impl ChangeSetHookBuilder {
     ) -> Self {
         self.target_details = input;
         self
+    }
+    /// <p>Specifies details about the target that the hook will run against.</p>
+    pub fn get_target_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::ChangeSetHookTargetDetails> {
+        &self.target_details
     }
     /// Consumes the builder and constructs a [`ChangeSetHook`](crate::types::ChangeSetHook).
     pub fn build(self) -> crate::types::ChangeSetHook {

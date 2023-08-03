@@ -36,6 +36,12 @@ impl DescribeSessionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeSessions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_sessions::builders::DescribeSessionsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DescribeSessionsFluentBuilder {
         self.inner = self.inner.set_stack_name(input);
         self
     }
+    /// <p>The name of the stack. This value is case-sensitive.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_name()
+    }
     /// <p>The name of the fleet. This value is case-sensitive.</p>
     pub fn fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet_name(input.into());
@@ -135,6 +145,10 @@ impl DescribeSessionsFluentBuilder {
     pub fn set_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fleet_name(input);
         self
+    }
+    /// <p>The name of the fleet. This value is case-sensitive.</p>
+    pub fn get_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fleet_name()
     }
     /// <p>The user identifier (ID). If you specify a user ID, you must also specify the authentication type.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -146,6 +160,10 @@ impl DescribeSessionsFluentBuilder {
         self.inner = self.inner.set_user_id(input);
         self
     }
+    /// <p>The user identifier (ID). If you specify a user ID, you must also specify the authentication type.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_id()
+    }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -156,6 +174,10 @@ impl DescribeSessionsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The size of each page of results. The default value is 20 and the maximum value is 50.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -165,6 +187,10 @@ impl DescribeSessionsFluentBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
+    }
+    /// <p>The size of each page of results. The default value is 20 and the maximum value is 50.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
     }
     /// <p>The authentication method. Specify <code>API</code> for a user authenticated using a streaming URL or <code>SAML</code> for a SAML federated user. The default is to authenticate users using a streaming URL.</p>
     pub fn authentication_type(mut self, input: crate::types::AuthenticationType) -> Self {
@@ -178,5 +204,11 @@ impl DescribeSessionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_authentication_type(input);
         self
+    }
+    /// <p>The authentication method. Specify <code>API</code> for a user authenticated using a streaming URL or <code>SAML</code> for a SAML federated user. The default is to authenticate users using a streaming URL.</p>
+    pub fn get_authentication_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthenticationType> {
+        self.inner.get_authentication_type()
     }
 }

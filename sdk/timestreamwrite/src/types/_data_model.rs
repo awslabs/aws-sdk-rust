@@ -87,6 +87,10 @@ impl DataModelBuilder {
         self.time_column = input;
         self
     }
+    /// <p>Source column to be mapped to time.</p>
+    pub fn get_time_column(&self) -> &::std::option::Option<::std::string::String> {
+        &self.time_column
+    }
     /// <p> The granularity of the timestamp unit. It indicates if the time value is in seconds, milliseconds, nanoseconds, or other supported values. Default is <code>MILLISECONDS</code>. </p>
     pub fn time_unit(mut self, input: crate::types::TimeUnit) -> Self {
         self.time_unit = ::std::option::Option::Some(input);
@@ -96,6 +100,10 @@ impl DataModelBuilder {
     pub fn set_time_unit(mut self, input: ::std::option::Option<crate::types::TimeUnit>) -> Self {
         self.time_unit = input;
         self
+    }
+    /// <p> The granularity of the timestamp unit. It indicates if the time value is in seconds, milliseconds, nanoseconds, or other supported values. Default is <code>MILLISECONDS</code>. </p>
+    pub fn get_time_unit(&self) -> &::std::option::Option<crate::types::TimeUnit> {
+        &self.time_unit
     }
     /// Appends an item to `dimension_mappings`.
     ///
@@ -116,6 +124,12 @@ impl DataModelBuilder {
         self.dimension_mappings = input;
         self
     }
+    /// <p>Source to target mappings for dimensions.</p>
+    pub fn get_dimension_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionMapping>> {
+        &self.dimension_mappings
+    }
     /// <p>Source to target mappings for multi-measure records.</p>
     pub fn multi_measure_mappings(mut self, input: crate::types::MultiMeasureMappings) -> Self {
         self.multi_measure_mappings = ::std::option::Option::Some(input);
@@ -128,6 +142,12 @@ impl DataModelBuilder {
     ) -> Self {
         self.multi_measure_mappings = input;
         self
+    }
+    /// <p>Source to target mappings for multi-measure records.</p>
+    pub fn get_multi_measure_mappings(
+        &self,
+    ) -> &::std::option::Option<crate::types::MultiMeasureMappings> {
+        &self.multi_measure_mappings
     }
     /// Appends an item to `mixed_measure_mappings`.
     ///
@@ -148,6 +168,12 @@ impl DataModelBuilder {
         self.mixed_measure_mappings = input;
         self
     }
+    /// <p>Source to target mappings for measures.</p>
+    pub fn get_mixed_measure_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MixedMeasureMapping>> {
+        &self.mixed_measure_mappings
+    }
     /// <p></p>
     pub fn measure_name_column(
         mut self,
@@ -163,6 +189,10 @@ impl DataModelBuilder {
     ) -> Self {
         self.measure_name_column = input;
         self
+    }
+    /// <p></p>
+    pub fn get_measure_name_column(&self) -> &::std::option::Option<::std::string::String> {
+        &self.measure_name_column
     }
     /// Consumes the builder and constructs a [`DataModel`](crate::types::DataModel).
     pub fn build(self) -> crate::types::DataModel {

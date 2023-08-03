@@ -46,6 +46,10 @@ impl LambdaConflictHandlerConfigBuilder {
         self.lambda_conflict_handler_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the Lambda function to use as the Conflict Handler.</p>
+    pub fn get_lambda_conflict_handler_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lambda_conflict_handler_arn
+    }
     /// Consumes the builder and constructs a [`LambdaConflictHandlerConfig`](crate::types::LambdaConflictHandlerConfig).
     pub fn build(self) -> crate::types::LambdaConflictHandlerConfig {
         crate::types::LambdaConflictHandlerConfig {

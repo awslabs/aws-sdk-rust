@@ -40,6 +40,10 @@ impl ProblemDetailBuilder {
         self.message = input;
         self
     }
+    /// <p>The problem detail's message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Consumes the builder and constructs a [`ProblemDetail`](crate::types::ProblemDetail).
     pub fn build(self) -> crate::types::ProblemDetail {
         crate::types::ProblemDetail {

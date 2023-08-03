@@ -153,6 +153,12 @@ impl MobileDeviceAccessRuleBuilder {
         self.mobile_device_access_rule_id = input;
         self
     }
+    /// <p>The ID assigned to a mobile access rule.</p>
+    pub fn get_mobile_device_access_rule_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.mobile_device_access_rule_id
+    }
     /// <p>The name of a mobile access rule.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -163,6 +169,10 @@ impl MobileDeviceAccessRuleBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of a mobile access rule.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of a mobile access rule.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -172,6 +182,10 @@ impl MobileDeviceAccessRuleBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of a mobile access rule.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The effect of the rule when it matches. Allowed values are <code>ALLOW</code> or <code>DENY</code>.</p>
     pub fn effect(mut self, input: crate::types::MobileDeviceAccessRuleEffect) -> Self {
@@ -185,6 +199,10 @@ impl MobileDeviceAccessRuleBuilder {
     ) -> Self {
         self.effect = input;
         self
+    }
+    /// <p>The effect of the rule when it matches. Allowed values are <code>ALLOW</code> or <code>DENY</code>.</p>
+    pub fn get_effect(&self) -> &::std::option::Option<crate::types::MobileDeviceAccessRuleEffect> {
+        &self.effect
     }
     /// Appends an item to `device_types`.
     ///
@@ -204,6 +222,12 @@ impl MobileDeviceAccessRuleBuilder {
     ) -> Self {
         self.device_types = input;
         self
+    }
+    /// <p>Device types that a rule will match.</p>
+    pub fn get_device_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.device_types
     }
     /// Appends an item to `not_device_types`.
     ///
@@ -227,6 +251,12 @@ impl MobileDeviceAccessRuleBuilder {
         self.not_device_types = input;
         self
     }
+    /// <p>Device types that a rule <b>will not</b> match. All other device types will match.</p>
+    pub fn get_not_device_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.not_device_types
+    }
     /// Appends an item to `device_models`.
     ///
     /// To override the contents of this collection use [`set_device_models`](Self::set_device_models).
@@ -248,6 +278,12 @@ impl MobileDeviceAccessRuleBuilder {
     ) -> Self {
         self.device_models = input;
         self
+    }
+    /// <p>Device models that a rule will match.</p>
+    pub fn get_device_models(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.device_models
     }
     /// Appends an item to `not_device_models`.
     ///
@@ -271,6 +307,12 @@ impl MobileDeviceAccessRuleBuilder {
         self.not_device_models = input;
         self
     }
+    /// <p>Device models that a rule <b>will not</b> match. All other device models will match.</p>
+    pub fn get_not_device_models(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.not_device_models
+    }
     /// Appends an item to `device_operating_systems`.
     ///
     /// To override the contents of this collection use [`set_device_operating_systems`](Self::set_device_operating_systems).
@@ -292,6 +334,12 @@ impl MobileDeviceAccessRuleBuilder {
     ) -> Self {
         self.device_operating_systems = input;
         self
+    }
+    /// <p>Device operating systems that a rule will match.</p>
+    pub fn get_device_operating_systems(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.device_operating_systems
     }
     /// Appends an item to `not_device_operating_systems`.
     ///
@@ -315,6 +363,12 @@ impl MobileDeviceAccessRuleBuilder {
         self.not_device_operating_systems = input;
         self
     }
+    /// <p>Device operating systems that a rule <b>will not</b> match. All other device types will match.</p>
+    pub fn get_not_device_operating_systems(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.not_device_operating_systems
+    }
     /// Appends an item to `device_user_agents`.
     ///
     /// To override the contents of this collection use [`set_device_user_agents`](Self::set_device_user_agents).
@@ -336,6 +390,12 @@ impl MobileDeviceAccessRuleBuilder {
     ) -> Self {
         self.device_user_agents = input;
         self
+    }
+    /// <p>Device user agents that a rule will match.</p>
+    pub fn get_device_user_agents(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.device_user_agents
     }
     /// Appends an item to `not_device_user_agents`.
     ///
@@ -359,6 +419,12 @@ impl MobileDeviceAccessRuleBuilder {
         self.not_device_user_agents = input;
         self
     }
+    /// <p>Device user agents that a rule <b>will not</b> match. All other device user agents will match.</p>
+    pub fn get_not_device_user_agents(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.not_device_user_agents
+    }
     /// <p>The date and time at which an access rule was created.</p>
     pub fn date_created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.date_created = ::std::option::Option::Some(input);
@@ -372,6 +438,10 @@ impl MobileDeviceAccessRuleBuilder {
         self.date_created = input;
         self
     }
+    /// <p>The date and time at which an access rule was created.</p>
+    pub fn get_date_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.date_created
+    }
     /// <p>The date and time at which an access rule was modified.</p>
     pub fn date_modified(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.date_modified = ::std::option::Option::Some(input);
@@ -384,6 +454,10 @@ impl MobileDeviceAccessRuleBuilder {
     ) -> Self {
         self.date_modified = input;
         self
+    }
+    /// <p>The date and time at which an access rule was modified.</p>
+    pub fn get_date_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.date_modified
     }
     /// Consumes the builder and constructs a [`MobileDeviceAccessRule`](crate::types::MobileDeviceAccessRule).
     pub fn build(self) -> crate::types::MobileDeviceAccessRule {

@@ -65,6 +65,10 @@ impl ValidationExceptionBuilder {
         self.message = input;
         self
     }
+    /// <p>Error or informational message that can contain more detail about a validation failure. </p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);

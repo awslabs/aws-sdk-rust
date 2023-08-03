@@ -114,6 +114,10 @@ impl DeviceBuilder {
         self.device_arn = input;
         self
     }
+    /// <p>The ARN of a device.</p>
+    pub fn get_device_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_arn
+    }
     /// <p>The serial number of a device.</p>
     pub fn device_serial_number(
         mut self,
@@ -130,6 +134,10 @@ impl DeviceBuilder {
         self.device_serial_number = input;
         self
     }
+    /// <p>The serial number of a device.</p>
+    pub fn get_device_serial_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_serial_number
+    }
     /// <p>The type of a device.</p>
     pub fn device_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_type = ::std::option::Option::Some(input.into());
@@ -140,6 +148,10 @@ impl DeviceBuilder {
         self.device_type = input;
         self
     }
+    /// <p>The type of a device.</p>
+    pub fn get_device_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_type
+    }
     /// <p>The name of a device.</p>
     pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_name = ::std::option::Option::Some(input.into());
@@ -149,6 +161,10 @@ impl DeviceBuilder {
     pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_name = input;
         self
+    }
+    /// <p>The name of a device.</p>
+    pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_name
     }
     /// <p>The software version of a device.</p>
     pub fn software_version(
@@ -166,6 +182,10 @@ impl DeviceBuilder {
         self.software_version = input;
         self
     }
+    /// <p>The software version of a device.</p>
+    pub fn get_software_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.software_version
+    }
     /// <p>The MAC address of a device.</p>
     pub fn mac_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mac_address = ::std::option::Option::Some(input.into());
@@ -176,6 +196,10 @@ impl DeviceBuilder {
         self.mac_address = input;
         self
     }
+    /// <p>The MAC address of a device.</p>
+    pub fn get_mac_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mac_address
+    }
     /// <p>The room ARN of a device.</p>
     pub fn room_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.room_arn = ::std::option::Option::Some(input.into());
@@ -185,6 +209,10 @@ impl DeviceBuilder {
     pub fn set_room_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.room_arn = input;
         self
+    }
+    /// <p>The room ARN of a device.</p>
+    pub fn get_room_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.room_arn
     }
     /// <p>The status of a device. If the status is not READY, check the DeviceStatusInfo value for details.</p>
     pub fn device_status(mut self, input: crate::types::DeviceStatus) -> Self {
@@ -199,6 +227,10 @@ impl DeviceBuilder {
         self.device_status = input;
         self
     }
+    /// <p>The status of a device. If the status is not READY, check the DeviceStatusInfo value for details.</p>
+    pub fn get_device_status(&self) -> &::std::option::Option<crate::types::DeviceStatus> {
+        &self.device_status
+    }
     /// <p>Detailed information about a device's status.</p>
     pub fn device_status_info(mut self, input: crate::types::DeviceStatusInfo) -> Self {
         self.device_status_info = ::std::option::Option::Some(input);
@@ -212,6 +244,10 @@ impl DeviceBuilder {
         self.device_status_info = input;
         self
     }
+    /// <p>Detailed information about a device's status.</p>
+    pub fn get_device_status_info(&self) -> &::std::option::Option<crate::types::DeviceStatusInfo> {
+        &self.device_status_info
+    }
     /// <p>Detailed information about a device's network profile.</p>
     pub fn network_profile_info(mut self, input: crate::types::DeviceNetworkProfileInfo) -> Self {
         self.network_profile_info = ::std::option::Option::Some(input);
@@ -224,6 +260,12 @@ impl DeviceBuilder {
     ) -> Self {
         self.network_profile_info = input;
         self
+    }
+    /// <p>Detailed information about a device's network profile.</p>
+    pub fn get_network_profile_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeviceNetworkProfileInfo> {
+        &self.network_profile_info
     }
     /// Consumes the builder and constructs a [`Device`](crate::types::Device).
     pub fn build(self) -> crate::types::Device {

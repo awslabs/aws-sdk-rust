@@ -50,6 +50,10 @@ impl StartPipelineExecutionInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the pipeline to start.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The system-generated unique ID used to identify a unique execution request.</p>
     pub fn client_request_token(
         mut self,
@@ -65,6 +69,10 @@ impl StartPipelineExecutionInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>The system-generated unique ID used to identify a unique execution request.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Consumes the builder and constructs a [`StartPipelineExecutionInput`](crate::operation::start_pipeline_execution::StartPipelineExecutionInput).
     pub fn build(

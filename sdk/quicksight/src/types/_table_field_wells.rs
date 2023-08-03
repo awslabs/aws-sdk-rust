@@ -63,6 +63,12 @@ impl TableFieldWellsBuilder {
         self.table_aggregated_field_wells = input;
         self
     }
+    /// <p>The aggregated field well for the table.</p>
+    pub fn get_table_aggregated_field_wells(
+        &self,
+    ) -> &::std::option::Option<crate::types::TableAggregatedFieldWells> {
+        &self.table_aggregated_field_wells
+    }
     /// <p>The unaggregated field well for the table.</p>
     pub fn table_unaggregated_field_wells(
         mut self,
@@ -78,6 +84,12 @@ impl TableFieldWellsBuilder {
     ) -> Self {
         self.table_unaggregated_field_wells = input;
         self
+    }
+    /// <p>The unaggregated field well for the table.</p>
+    pub fn get_table_unaggregated_field_wells(
+        &self,
+    ) -> &::std::option::Option<crate::types::TableUnaggregatedFieldWells> {
+        &self.table_unaggregated_field_wells
     }
     /// Consumes the builder and constructs a [`TableFieldWells`](crate::types::TableFieldWells).
     pub fn build(self) -> crate::types::TableFieldWells {

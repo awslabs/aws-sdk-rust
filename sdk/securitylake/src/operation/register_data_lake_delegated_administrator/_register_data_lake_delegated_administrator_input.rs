@@ -39,6 +39,10 @@ impl RegisterDataLakeDelegatedAdministratorInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID of the Security Lake delegated administrator.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// Consumes the builder and constructs a [`RegisterDataLakeDelegatedAdministratorInput`](crate::operation::register_data_lake_delegated_administrator::RegisterDataLakeDelegatedAdministratorInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::register_data_lake_delegated_administrator::RegisterDataLakeDelegatedAdministratorInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

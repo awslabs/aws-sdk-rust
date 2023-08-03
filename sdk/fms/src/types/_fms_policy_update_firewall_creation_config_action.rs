@@ -48,6 +48,10 @@ impl FmsPolicyUpdateFirewallCreationConfigActionBuilder {
         self.description = input;
         self
     }
+    /// <p>Describes the remedial action.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>A <code>FirewallCreationConfig</code> that you can copy into your current policy's <a href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_SecurityServicePolicyData.html">SecurityServiceData</a> in order to remedy scope violations.</p>
     pub fn firewall_creation_config(
         mut self,
@@ -63,6 +67,10 @@ impl FmsPolicyUpdateFirewallCreationConfigActionBuilder {
     ) -> Self {
         self.firewall_creation_config = input;
         self
+    }
+    /// <p>A <code>FirewallCreationConfig</code> that you can copy into your current policy's <a href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_SecurityServicePolicyData.html">SecurityServiceData</a> in order to remedy scope violations.</p>
+    pub fn get_firewall_creation_config(&self) -> &::std::option::Option<::std::string::String> {
+        &self.firewall_creation_config
     }
     /// Consumes the builder and constructs a [`FmsPolicyUpdateFirewallCreationConfigAction`](crate::types::FmsPolicyUpdateFirewallCreationConfigAction).
     pub fn build(self) -> crate::types::FmsPolicyUpdateFirewallCreationConfigAction {

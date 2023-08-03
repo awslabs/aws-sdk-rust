@@ -79,6 +79,10 @@ impl SearchOutputBuilder {
         self.resources = input;
         self
     }
+    /// <p>The list of structures that describe the resources that match the query.</p>
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
+        &self.resources
+    }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -88,6 +92,10 @@ impl SearchOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that this operation used to perform the search.</p>
     pub fn view_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -99,6 +107,10 @@ impl SearchOutputBuilder {
         self.view_arn = input;
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that this operation used to perform the search.</p>
+    pub fn get_view_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.view_arn
+    }
     /// <p>The number of resources that match the query.</p>
     pub fn count(mut self, input: crate::types::ResourceCount) -> Self {
         self.count = ::std::option::Option::Some(input);
@@ -108,6 +120,10 @@ impl SearchOutputBuilder {
     pub fn set_count(mut self, input: ::std::option::Option<crate::types::ResourceCount>) -> Self {
         self.count = input;
         self
+    }
+    /// <p>The number of resources that match the query.</p>
+    pub fn get_count(&self) -> &::std::option::Option<crate::types::ResourceCount> {
+        &self.count
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

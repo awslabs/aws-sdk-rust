@@ -178,6 +178,26 @@ impl AdministrativeActionBuilder {
         self.administrative_action_type = input;
         self
     }
+    /// <p>Describes the type of administrative action, as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>FILE_SYSTEM_UPDATE</code> - A file system update administrative action initiated from the Amazon FSx console, API (<code>UpdateFileSystem</code>), or CLI (<code>update-file-system</code>).</p> </li>
+    /// <li> <p> <code>STORAGE_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's storage capacity has been completed successfully, a <code>STORAGE_OPTIMIZATION</code> task starts. </p>
+    /// <ul>
+    /// <li> <p>For Windows and ONTAP, storage optimization is the process of migrating the file system data to newer larger disks.</p> </li>
+    /// <li> <p>For Lustre, storage optimization consists of rebalancing the data across the existing and newly added file servers.</p> </li>
+    /// </ul> <p>You can track the storage-optimization progress using the <code>ProgressPercent</code> property. When <code>STORAGE_OPTIMIZATION</code> has been completed successfully, the parent <code>FILE_SYSTEM_UPDATE</code> action status changes to <code>COMPLETED</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>, <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>, and <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-storage-capacity.html">Managing storage capacity and provisioned IOPS</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p> </li>
+    /// <li> <p> <code>FILE_SYSTEM_ALIAS_ASSOCIATION</code> - A file system update to associate a new Domain Name System (DNS) alias with the file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_AssociateFileSystemAliases.html"> AssociateFileSystemAliases</a>.</p> </li>
+    /// <li> <p> <code>FILE_SYSTEM_ALIAS_DISASSOCIATION</code> - A file system update to disassociate a DNS alias from the file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DisassociateFileSystemAliases.html">DisassociateFileSystemAliases</a>.</p> </li>
+    /// <li> <p> <code>VOLUME_UPDATE</code> - A volume update to an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume initiated from the Amazon FSx console, API (<code>UpdateVolume</code>), or CLI (<code>update-volume</code>).</p> </li>
+    /// <li> <p> <code>VOLUME_RESTORE</code> - An Amazon FSx for OpenZFS volume is returned to the state saved by the specified snapshot, initiated from an API (<code>RestoreVolumeFromSnapshot</code>) or CLI (<code>restore-volume-from-snapshot</code>).</p> </li>
+    /// <li> <p> <code>SNAPSHOT_UPDATE</code> - A snapshot update to an Amazon FSx for OpenZFS volume initiated from the Amazon FSx console, API (<code>UpdateSnapshot</code>), or CLI (<code>update-snapshot</code>).</p> </li>
+    /// <li> <p> <code>RELEASE_NFS_V3_LOCKS</code> - Tracks the release of Network File System (NFS) V3 locks on an Amazon FSx for OpenZFS file system.</p> </li>
+    /// </ul>
+    pub fn get_administrative_action_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::AdministrativeActionType> {
+        &self.administrative_action_type
+    }
     /// <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code> administrative action. Does not apply to any other administrative action type.</p>
     pub fn progress_percent(mut self, input: i32) -> Self {
         self.progress_percent = ::std::option::Option::Some(input);
@@ -187,6 +207,10 @@ impl AdministrativeActionBuilder {
     pub fn set_progress_percent(mut self, input: ::std::option::Option<i32>) -> Self {
         self.progress_percent = input;
         self
+    }
+    /// <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code> administrative action. Does not apply to any other administrative action type.</p>
+    pub fn get_progress_percent(&self) -> &::std::option::Option<i32> {
+        &self.progress_percent
     }
     /// <p>The time that the administrative action request was received.</p>
     pub fn request_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -200,6 +224,10 @@ impl AdministrativeActionBuilder {
     ) -> Self {
         self.request_time = input;
         self
+    }
+    /// <p>The time that the administrative action request was received.</p>
+    pub fn get_request_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.request_time
     }
     /// <p>Describes the status of the administrative action, as follows:</p>
     /// <ul>
@@ -225,6 +253,17 @@ impl AdministrativeActionBuilder {
         self.status = input;
         self
     }
+    /// <p>Describes the status of the administrative action, as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>FAILED</code> - Amazon FSx failed to process the administrative action successfully.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> - Amazon FSx is processing the administrative action.</p> </li>
+    /// <li> <p> <code>PENDING</code> - Amazon FSx is waiting to process the administrative action.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> - Amazon FSx has finished processing the administrative task.</p> </li>
+    /// <li> <p> <code>UPDATED_OPTIMIZING</code> - For a storage-capacity increase update, Amazon FSx has updated the file system with the new storage capacity, and is now performing the storage-optimization process. </p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
+    }
     /// <p>Describes the target value for the administration action, provided in the <code>UpdateFileSystem</code> operation. Returned for <code>FILE_SYSTEM_UPDATE</code> administrative actions. </p>
     pub fn target_file_system_values(mut self, input: crate::types::FileSystem) -> Self {
         self.target_file_system_values = ::std::option::Option::Some(input);
@@ -237,6 +276,12 @@ impl AdministrativeActionBuilder {
     ) -> Self {
         self.target_file_system_values = input;
         self
+    }
+    /// <p>Describes the target value for the administration action, provided in the <code>UpdateFileSystem</code> operation. Returned for <code>FILE_SYSTEM_UPDATE</code> administrative actions. </p>
+    pub fn get_target_file_system_values(
+        &self,
+    ) -> &::std::option::Option<crate::types::FileSystem> {
+        &self.target_file_system_values
     }
     /// <p>Provides information about a failed administrative action.</p>
     pub fn failure_details(
@@ -254,6 +299,12 @@ impl AdministrativeActionBuilder {
         self.failure_details = input;
         self
     }
+    /// <p>Provides information about a failed administrative action.</p>
+    pub fn get_failure_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::AdministrativeActionFailureDetails> {
+        &self.failure_details
+    }
     /// <p>Describes an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume.</p>
     pub fn target_volume_values(mut self, input: crate::types::Volume) -> Self {
         self.target_volume_values = ::std::option::Option::Some(input);
@@ -267,6 +318,10 @@ impl AdministrativeActionBuilder {
         self.target_volume_values = input;
         self
     }
+    /// <p>Describes an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume.</p>
+    pub fn get_target_volume_values(&self) -> &::std::option::Option<crate::types::Volume> {
+        &self.target_volume_values
+    }
     /// <p>A snapshot of an Amazon FSx for OpenZFS volume.</p>
     pub fn target_snapshot_values(mut self, input: crate::types::Snapshot) -> Self {
         self.target_snapshot_values = ::std::option::Option::Some(input);
@@ -279,6 +334,10 @@ impl AdministrativeActionBuilder {
     ) -> Self {
         self.target_snapshot_values = input;
         self
+    }
+    /// <p>A snapshot of an Amazon FSx for OpenZFS volume.</p>
+    pub fn get_target_snapshot_values(&self) -> &::std::option::Option<crate::types::Snapshot> {
+        &self.target_snapshot_values
     }
     /// Consumes the builder and constructs a [`AdministrativeAction`](crate::types::AdministrativeAction).
     pub fn build(self) -> crate::types::AdministrativeAction {

@@ -47,6 +47,10 @@ impl DeleteDatasetImportJobInputBuilder {
         self.dataset_import_job_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the dataset import job to delete.</p>
+    pub fn get_dataset_import_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_import_job_arn
+    }
     /// Consumes the builder and constructs a [`DeleteDatasetImportJobInput`](crate::operation::delete_dataset_import_job::DeleteDatasetImportJobInput).
     pub fn build(
         self,

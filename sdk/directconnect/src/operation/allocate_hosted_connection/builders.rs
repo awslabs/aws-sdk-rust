@@ -39,6 +39,13 @@ impl AllocateHostedConnectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AllocateHostedConnection as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::allocate_hosted_connection::builders::AllocateHostedConnectionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +142,10 @@ impl AllocateHostedConnectionFluentBuilder {
         self.inner = self.inner.set_connection_id(input);
         self
     }
+    /// <p>The ID of the interconnect or LAG.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connection_id()
+    }
     /// <p>The ID of the Amazon Web Services account ID of the customer for the connection.</p>
     pub fn owner_account(
         mut self,
@@ -151,6 +162,10 @@ impl AllocateHostedConnectionFluentBuilder {
         self.inner = self.inner.set_owner_account(input);
         self
     }
+    /// <p>The ID of the Amazon Web Services account ID of the customer for the connection.</p>
+    pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_owner_account()
+    }
     /// <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners who have met specific requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection. </p>
     pub fn bandwidth(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bandwidth(input.into());
@@ -160,6 +175,10 @@ impl AllocateHostedConnectionFluentBuilder {
     pub fn set_bandwidth(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bandwidth(input);
         self
+    }
+    /// <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners who have met specific requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection. </p>
+    pub fn get_bandwidth(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bandwidth()
     }
     /// <p>The name of the hosted connection.</p>
     pub fn connection_name(
@@ -177,6 +196,10 @@ impl AllocateHostedConnectionFluentBuilder {
         self.inner = self.inner.set_connection_name(input);
         self
     }
+    /// <p>The name of the hosted connection.</p>
+    pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connection_name()
+    }
     /// <p>The dedicated VLAN provisioned to the hosted connection.</p>
     pub fn vlan(mut self, input: i32) -> Self {
         self.inner = self.inner.vlan(input);
@@ -186,6 +209,10 @@ impl AllocateHostedConnectionFluentBuilder {
     pub fn set_vlan(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_vlan(input);
         self
+    }
+    /// <p>The dedicated VLAN provisioned to the hosted connection.</p>
+    pub fn get_vlan(&self) -> &::std::option::Option<i32> {
+        self.inner.get_vlan()
     }
     /// Appends an item to `tags`.
     ///
@@ -203,5 +230,9 @@ impl AllocateHostedConnectionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags associated with the connection.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

@@ -63,6 +63,10 @@ impl BatchGetJobsOutputBuilder {
         self.jobs = input;
         self
     }
+    /// <p>A list of job definitions.</p>
+    pub fn get_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Job>> {
+        &self.jobs
+    }
     /// Appends an item to `jobs_not_found`.
     ///
     /// To override the contents of this collection use [`set_jobs_not_found`](Self::set_jobs_not_found).
@@ -84,6 +88,12 @@ impl BatchGetJobsOutputBuilder {
     ) -> Self {
         self.jobs_not_found = input;
         self
+    }
+    /// <p>A list of names of jobs not found.</p>
+    pub fn get_jobs_not_found(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.jobs_not_found
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

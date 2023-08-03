@@ -148,6 +148,10 @@ impl MatchmakingTicketBuilder {
         self.ticket_id = input;
         self
     }
+    /// <p>A unique identifier for a matchmaking ticket.</p>
+    pub fn get_ticket_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ticket_id
+    }
     /// <p>Name of the matchmaking configuration that is used with this ticket. Matchmaking configurations determine how players are grouped into a match and how a new game session is created for the match.</p>
     pub fn configuration_name(
         mut self,
@@ -164,6 +168,10 @@ impl MatchmakingTicketBuilder {
         self.configuration_name = input;
         self
     }
+    /// <p>Name of the matchmaking configuration that is used with this ticket. Matchmaking configurations determine how players are grouped into a match and how a new game session is created for the match.</p>
+    pub fn get_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_name
+    }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift matchmaking configuration resource that is used with this ticket.</p>
     pub fn configuration_arn(
         mut self,
@@ -179,6 +187,10 @@ impl MatchmakingTicketBuilder {
     ) -> Self {
         self.configuration_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift matchmaking configuration resource that is used with this ticket.</p>
+    pub fn get_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_arn
     }
     /// <p>Current status of the matchmaking request.</p>
     /// <ul>
@@ -217,6 +229,24 @@ impl MatchmakingTicketBuilder {
         self.status = input;
         self
     }
+    /// <p>Current status of the matchmaking request.</p>
+    /// <ul>
+    /// <li> <p> <b>QUEUED</b> -- The matchmaking request has been received and is currently waiting to be processed.</p> </li>
+    /// <li> <p> <b>SEARCHING</b> -- The matchmaking request is currently being processed. </p> </li>
+    /// <li> <p> <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match. This status is used only with requests that use a matchmaking configuration with a player acceptance requirement.</p> </li>
+    /// <li> <p> <b>PLACING</b> -- The FlexMatch engine has matched players and is in the process of placing a new game session for the match.</p> </li>
+    /// <li> <p> <b>COMPLETED</b> -- Players have been matched and a game session is ready to host the players. A ticket in this state contains the necessary connection information for players.</p> </li>
+    /// <li> <p> <b>FAILED</b> -- The matchmaking request was not completed.</p> </li>
+    /// <li> <p> <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a <code>StopMatchmaking</code> operation or a proposed match that one or more players failed to accept.</p> </li>
+    /// <li> <p> <b>TIMED_OUT</b> -- The matchmaking request was not successful within the duration specified in the matchmaking configuration. </p> </li>
+    /// </ul> <note>
+    /// <p>Matchmaking requests that fail to successfully complete (statuses FAILED, CANCELLED, TIMED_OUT) can be resubmitted as new requests with new ticket IDs.</p>
+    /// </note>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::MatchmakingConfigurationStatus> {
+        &self.status
+    }
     /// <p>Code to explain the current status. For example, a status reason may indicate when a ticket has returned to <code>SEARCHING</code> status after a proposed match fails to receive player acceptances.</p>
     pub fn status_reason(
         mut self,
@@ -232,6 +262,10 @@ impl MatchmakingTicketBuilder {
     ) -> Self {
         self.status_reason = input;
         self
+    }
+    /// <p>Code to explain the current status. For example, a status reason may indicate when a ticket has returned to <code>SEARCHING</code> status after a proposed match fails to receive player acceptances.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
     }
     /// <p>Additional information about the current status.</p>
     pub fn status_message(
@@ -249,6 +283,10 @@ impl MatchmakingTicketBuilder {
         self.status_message = input;
         self
     }
+    /// <p>Additional information about the current status.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>Time stamp indicating when this matchmaking request was received. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -262,6 +300,10 @@ impl MatchmakingTicketBuilder {
         self.start_time = input;
         self
     }
+    /// <p>Time stamp indicating when this matchmaking request was received. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>Time stamp indicating when the matchmaking request stopped being processed due to successful completion, timeout, or cancellation. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -274,6 +316,10 @@ impl MatchmakingTicketBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>Time stamp indicating when the matchmaking request stopped being processed due to successful completion, timeout, or cancellation. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// Appends an item to `players`.
     ///
@@ -294,6 +340,10 @@ impl MatchmakingTicketBuilder {
         self.players = input;
         self
     }
+    /// <p>A set of <code>Player</code> objects, each representing a player to find matches for. Players are identified by a unique player ID and may include latency data for use during matchmaking. If the ticket is in status <code>COMPLETED</code>, the <code>Player</code> objects include the team the players were assigned to in the resulting match.</p>
+    pub fn get_players(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Player>> {
+        &self.players
+    }
     /// <p>Connection information for a new game session. Once a match is made, the FlexMatch engine creates a new game session for it. This information is added to the matchmaking ticket, which you can be retrieve by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeMatchmaking.html">DescribeMatchmaking</a> .</p>
     pub fn game_session_connection_info(
         mut self,
@@ -310,6 +360,12 @@ impl MatchmakingTicketBuilder {
         self.game_session_connection_info = input;
         self
     }
+    /// <p>Connection information for a new game session. Once a match is made, the FlexMatch engine creates a new game session for it. This information is added to the matchmaking ticket, which you can be retrieve by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeMatchmaking.html">DescribeMatchmaking</a> .</p>
+    pub fn get_game_session_connection_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::GameSessionConnectionInfo> {
+        &self.game_session_connection_info
+    }
     /// <p>Average amount of time (in seconds) that players are currently waiting for a match. If there is not enough recent data, this property may be empty.</p>
     pub fn estimated_wait_time(mut self, input: i32) -> Self {
         self.estimated_wait_time = ::std::option::Option::Some(input);
@@ -319,6 +375,10 @@ impl MatchmakingTicketBuilder {
     pub fn set_estimated_wait_time(mut self, input: ::std::option::Option<i32>) -> Self {
         self.estimated_wait_time = input;
         self
+    }
+    /// <p>Average amount of time (in seconds) that players are currently waiting for a match. If there is not enough recent data, this property may be empty.</p>
+    pub fn get_estimated_wait_time(&self) -> &::std::option::Option<i32> {
+        &self.estimated_wait_time
     }
     /// Consumes the builder and constructs a [`MatchmakingTicket`](crate::types::MatchmakingTicket).
     pub fn build(self) -> crate::types::MatchmakingTicket {

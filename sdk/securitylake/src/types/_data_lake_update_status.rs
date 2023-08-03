@@ -56,6 +56,10 @@ impl DataLakeUpdateStatusBuilder {
         self.request_id = input;
         self
     }
+    /// <p>The unique ID for the last <code>UpdateDataLake</code> or <code>DeleteDataLake</code> API request.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
+    }
     /// <p>The status of the last <code>UpdateDataLake</code> or <code>DeleteDataLake</code> API request that was requested.</p>
     pub fn status(mut self, input: crate::types::DataLakeStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl DataLakeUpdateStatusBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the last <code>UpdateDataLake</code> or <code>DeleteDataLake</code> API request that was requested.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DataLakeStatus> {
+        &self.status
+    }
     /// <p>The details of the last <code>UpdateDataLake</code>or <code>DeleteDataLake</code> API request which failed.</p>
     pub fn exception(mut self, input: crate::types::DataLakeUpdateException) -> Self {
         self.exception = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl DataLakeUpdateStatusBuilder {
     ) -> Self {
         self.exception = input;
         self
+    }
+    /// <p>The details of the last <code>UpdateDataLake</code>or <code>DeleteDataLake</code> API request which failed.</p>
+    pub fn get_exception(&self) -> &::std::option::Option<crate::types::DataLakeUpdateException> {
+        &self.exception
     }
     /// Consumes the builder and constructs a [`DataLakeUpdateStatus`](crate::types::DataLakeUpdateStatus).
     pub fn build(self) -> crate::types::DataLakeUpdateStatus {

@@ -37,6 +37,13 @@ impl UpdateMemberDetectorsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateMemberDetectors as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_member_detectors::builders::UpdateMemberDetectorsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl UpdateMemberDetectorsFluentBuilder {
         self.inner = self.inner.set_detector_id(input);
         self
     }
+    /// <p>The detector ID of the administrator account.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_id()
+    }
     /// Appends an item to `AccountIds`.
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
@@ -144,6 +155,12 @@ impl UpdateMemberDetectorsFluentBuilder {
         self.inner = self.inner.set_account_ids(input);
         self
     }
+    /// <p>A list of member account IDs to be updated.</p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_account_ids()
+    }
     /// <p>Describes which data sources will be updated.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
     pub fn data_sources(mut self, input: crate::types::DataSourceConfigurations) -> Self {
@@ -158,6 +175,13 @@ impl UpdateMemberDetectorsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_data_sources(input);
         self
+    }
+    /// <p>Describes which data sources will be updated.</p>
+    #[deprecated(note = "This parameter is deprecated, use Features instead")]
+    pub fn get_data_sources(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataSourceConfigurations> {
+        self.inner.get_data_sources()
     }
     /// Appends an item to `Features`.
     ///
@@ -175,5 +199,11 @@ impl UpdateMemberDetectorsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_features(input);
         self
+    }
+    /// <p>A list of features that will be updated for the specified member accounts.</p>
+    pub fn get_features(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberFeaturesConfiguration>> {
+        self.inner.get_features()
     }
 }

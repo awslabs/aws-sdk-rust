@@ -56,6 +56,12 @@ impl DescribeChannelMembershipForAppInstanceUserOutputBuilder {
         self.channel_membership = input;
         self
     }
+    /// <p>The channel to which a user belongs.</p>
+    pub fn get_channel_membership(
+        &self,
+    ) -> &::std::option::Option<crate::types::ChannelMembershipForAppInstanceUserSummary> {
+        &self.channel_membership
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

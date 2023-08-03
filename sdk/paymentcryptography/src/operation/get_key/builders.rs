@@ -43,6 +43,10 @@ impl GetKeyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetKey as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_key::builders::GetKeyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,5 +134,9 @@ impl GetKeyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_key_identifier(input);
         self
+    }
+    /// <p>The <code>KeyARN</code> of the Amazon Web Services Payment Cryptography key.</p>
+    pub fn get_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key_identifier()
     }
 }

@@ -47,6 +47,10 @@ impl GetRunOutputBuilder {
         self.run = input;
         self
     }
+    /// <p>The run to get results from.</p>
+    pub fn get_run(&self) -> &::std::option::Option<crate::types::Run> {
+        &self.run
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

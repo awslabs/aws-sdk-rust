@@ -184,6 +184,10 @@ impl DescribeIndexOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the index.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The identifier of the index.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -193,6 +197,10 @@ impl DescribeIndexOutputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The identifier of the index.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The Amazon Kendra edition used for the index. You decide the edition when you create the index.</p>
     pub fn edition(mut self, input: crate::types::IndexEdition) -> Self {
@@ -204,6 +212,10 @@ impl DescribeIndexOutputBuilder {
         self.edition = input;
         self
     }
+    /// <p>The Amazon Kendra edition used for the index. You decide the edition when you create the index.</p>
+    pub fn get_edition(&self) -> &::std::option::Option<crate::types::IndexEdition> {
+        &self.edition
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that gives Amazon Kendra permission to write to your Amazon Cloudwatch logs.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -213,6 +225,10 @@ impl DescribeIndexOutputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that gives Amazon Kendra permission to write to your Amazon Cloudwatch logs.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The identifier of the KMScustomer master key (CMK) that is used to encrypt your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
     pub fn server_side_encryption_configuration(
@@ -230,6 +246,12 @@ impl DescribeIndexOutputBuilder {
         self.server_side_encryption_configuration = input;
         self
     }
+    /// <p>The identifier of the KMScustomer master key (CMK) that is used to encrypt your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
+    pub fn get_server_side_encryption_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServerSideEncryptionConfiguration> {
+        &self.server_side_encryption_configuration
+    }
     /// <p>The current status of the index. When the value is <code>ACTIVE</code>, the index is ready for use. If the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
     pub fn status(mut self, input: crate::types::IndexStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -240,6 +262,10 @@ impl DescribeIndexOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The current status of the index. When the value is <code>ACTIVE</code>, the index is ready for use. If the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::IndexStatus> {
+        &self.status
+    }
     /// <p>The description for the index.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -249,6 +275,10 @@ impl DescribeIndexOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description for the index.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The Unix timestamp when the index was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -263,6 +293,10 @@ impl DescribeIndexOutputBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The Unix timestamp when the index was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The Unix when the index was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -275,6 +309,10 @@ impl DescribeIndexOutputBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// <p>The Unix when the index was last updated.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     /// Appends an item to `document_metadata_configurations`.
     ///
@@ -298,6 +336,12 @@ impl DescribeIndexOutputBuilder {
         self.document_metadata_configurations = input;
         self
     }
+    /// <p>Configuration information for document metadata or fields. Document metadata are fields or attributes associated with your documents. For example, the company department name associated with each document.</p>
+    pub fn get_document_metadata_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentMetadataConfiguration>> {
+        &self.document_metadata_configurations
+    }
     /// <p>Provides information about the number of FAQ questions and answers and the number of text documents indexed.</p>
     pub fn index_statistics(mut self, input: crate::types::IndexStatistics) -> Self {
         self.index_statistics = ::std::option::Option::Some(input);
@@ -310,6 +354,10 @@ impl DescribeIndexOutputBuilder {
     ) -> Self {
         self.index_statistics = input;
         self
+    }
+    /// <p>Provides information about the number of FAQ questions and answers and the number of text documents indexed.</p>
+    pub fn get_index_statistics(&self) -> &::std::option::Option<crate::types::IndexStatistics> {
+        &self.index_statistics
     }
     /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
     pub fn error_message(
@@ -327,6 +375,10 @@ impl DescribeIndexOutputBuilder {
         self.error_message = input;
         self
     }
+    /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// <p>For Enterprise Edition indexes, you can choose to use additional capacity to meet the needs of your application. This contains the capacity units used for the index. A query or document storage capacity of zero indicates that the index is using the default capacity. For more information on the default capacity for an index and adjusting this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
     pub fn capacity_units(mut self, input: crate::types::CapacityUnitsConfiguration) -> Self {
         self.capacity_units = ::std::option::Option::Some(input);
@@ -339,6 +391,12 @@ impl DescribeIndexOutputBuilder {
     ) -> Self {
         self.capacity_units = input;
         self
+    }
+    /// <p>For Enterprise Edition indexes, you can choose to use additional capacity to meet the needs of your application. This contains the capacity units used for the index. A query or document storage capacity of zero indicates that the index is using the default capacity. For more information on the default capacity for an index and adjusting this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
+    pub fn get_capacity_units(
+        &self,
+    ) -> &::std::option::Option<crate::types::CapacityUnitsConfiguration> {
+        &self.capacity_units
     }
     /// Appends an item to `user_token_configurations`.
     ///
@@ -362,6 +420,12 @@ impl DescribeIndexOutputBuilder {
         self.user_token_configurations = input;
         self
     }
+    /// <p>The user token configuration for the Amazon Kendra index.</p>
+    pub fn get_user_token_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserTokenConfiguration>> {
+        &self.user_token_configurations
+    }
     /// <p>The user context policy for the Amazon Kendra index.</p>
     pub fn user_context_policy(mut self, input: crate::types::UserContextPolicy) -> Self {
         self.user_context_policy = ::std::option::Option::Some(input);
@@ -374,6 +438,12 @@ impl DescribeIndexOutputBuilder {
     ) -> Self {
         self.user_context_policy = input;
         self
+    }
+    /// <p>The user context policy for the Amazon Kendra index.</p>
+    pub fn get_user_context_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::UserContextPolicy> {
+        &self.user_context_policy
     }
     /// <p>Whether you have enabled the configuration for fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source.</p>
     pub fn user_group_resolution_configuration(
@@ -390,6 +460,12 @@ impl DescribeIndexOutputBuilder {
     ) -> Self {
         self.user_group_resolution_configuration = input;
         self
+    }
+    /// <p>Whether you have enabled the configuration for fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source.</p>
+    pub fn get_user_group_resolution_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::UserGroupResolutionConfiguration> {
+        &self.user_group_resolution_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

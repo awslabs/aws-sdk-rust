@@ -36,6 +36,12 @@ impl UpdatePartnerAccountFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdatePartnerAccount as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_partner_account::builders::UpdatePartnerAccountInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl UpdatePartnerAccountFluentBuilder {
         self.inner = self.inner.set_sidewalk(input);
         self
     }
+    /// <p>The Sidewalk account credentials.</p>
+    pub fn get_sidewalk(&self) -> &::std::option::Option<crate::types::SidewalkUpdateAccount> {
+        self.inner.get_sidewalk()
+    }
     /// <p>The ID of the partner account to update.</p>
     pub fn partner_account_id(
         mut self,
@@ -145,6 +155,10 @@ impl UpdatePartnerAccountFluentBuilder {
         self.inner = self.inner.set_partner_account_id(input);
         self
     }
+    /// <p>The ID of the partner account to update.</p>
+    pub fn get_partner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_partner_account_id()
+    }
     /// <p>The partner type.</p>
     pub fn partner_type(mut self, input: crate::types::PartnerType) -> Self {
         self.inner = self.inner.partner_type(input);
@@ -157,5 +171,9 @@ impl UpdatePartnerAccountFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_partner_type(input);
         self
+    }
+    /// <p>The partner type.</p>
+    pub fn get_partner_type(&self) -> &::std::option::Option<crate::types::PartnerType> {
+        self.inner.get_partner_type()
     }
 }

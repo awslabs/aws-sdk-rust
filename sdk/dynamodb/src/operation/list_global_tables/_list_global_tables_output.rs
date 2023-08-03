@@ -64,6 +64,12 @@ impl ListGlobalTablesOutputBuilder {
         self.global_tables = input;
         self
     }
+    /// <p>List of global table names.</p>
+    pub fn get_global_tables(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalTable>> {
+        &self.global_tables
+    }
     /// <p>Last evaluated global table name.</p>
     pub fn last_evaluated_global_table_name(
         mut self,
@@ -79,6 +85,12 @@ impl ListGlobalTablesOutputBuilder {
     ) -> Self {
         self.last_evaluated_global_table_name = input;
         self
+    }
+    /// <p>Last evaluated global table name.</p>
+    pub fn get_last_evaluated_global_table_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.last_evaluated_global_table_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

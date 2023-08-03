@@ -36,6 +36,12 @@ impl GetLegalHoldFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetLegalHold as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_legal_hold::builders::GetLegalHoldInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -123,5 +129,9 @@ impl GetLegalHoldFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_legal_hold_id(input);
         self
+    }
+    /// <p>This is the ID required to use <code>GetLegalHold</code>. This unique ID is associated with a specific legal hold.</p>
+    pub fn get_legal_hold_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_legal_hold_id()
     }
 }

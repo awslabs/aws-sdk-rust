@@ -63,6 +63,12 @@ impl ListAccessPreviewFindingsOutputBuilder {
         self.findings = input;
         self
     }
+    /// <p>A list of access preview findings that match the specified filter criteria.</p>
+    pub fn get_findings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessPreviewFinding>> {
+        &self.findings
+    }
     /// <p>A token used for pagination of results returned.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -72,6 +78,10 @@ impl ListAccessPreviewFindingsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token used for pagination of results returned.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

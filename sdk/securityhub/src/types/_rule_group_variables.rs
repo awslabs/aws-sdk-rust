@@ -53,6 +53,12 @@ impl RuleGroupVariablesBuilder {
         self.ip_sets = input;
         self
     }
+    /// <p>A list of IP addresses and address ranges, in CIDR notation.</p>
+    pub fn get_ip_sets(
+        &self,
+    ) -> &::std::option::Option<crate::types::RuleGroupVariablesIpSetsDetails> {
+        &self.ip_sets
+    }
     /// <p>A list of port ranges.</p>
     pub fn port_sets(mut self, input: crate::types::RuleGroupVariablesPortSetsDetails) -> Self {
         self.port_sets = ::std::option::Option::Some(input);
@@ -65,6 +71,12 @@ impl RuleGroupVariablesBuilder {
     ) -> Self {
         self.port_sets = input;
         self
+    }
+    /// <p>A list of port ranges.</p>
+    pub fn get_port_sets(
+        &self,
+    ) -> &::std::option::Option<crate::types::RuleGroupVariablesPortSetsDetails> {
+        &self.port_sets
     }
     /// Consumes the builder and constructs a [`RuleGroupVariables`](crate::types::RuleGroupVariables).
     pub fn build(self) -> crate::types::RuleGroupVariables {

@@ -47,6 +47,12 @@ impl ListObjectsV2FluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListObjectsV2 as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_objects_v2::builders::ListObjectsV2InputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -144,6 +150,12 @@ impl ListObjectsV2FluentBuilder {
         self.inner = self.inner.set_bucket(input);
         self
     }
+    /// <p>Bucket name to list. </p>
+    /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bucket()
+    }
     /// <p>A delimiter is a character that you use to group keys.</p>
     pub fn delimiter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.delimiter(input.into());
@@ -153,6 +165,10 @@ impl ListObjectsV2FluentBuilder {
     pub fn set_delimiter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_delimiter(input);
         self
+    }
+    /// <p>A delimiter is a character that you use to group keys.</p>
+    pub fn get_delimiter(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_delimiter()
     }
     /// <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
     pub fn encoding_type(mut self, input: crate::types::EncodingType) -> Self {
@@ -167,6 +183,10 @@ impl ListObjectsV2FluentBuilder {
         self.inner = self.inner.set_encoding_type(input);
         self
     }
+    /// <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
+    pub fn get_encoding_type(&self) -> &::std::option::Option<crate::types::EncodingType> {
+        self.inner.get_encoding_type()
+    }
     /// <p>Sets the maximum number of keys returned in the response. By default, the action returns up to 1,000 key names. The response might contain fewer keys but will never contain more.</p>
     pub fn max_keys(mut self, input: i32) -> Self {
         self.inner = self.inner.max_keys(input);
@@ -177,6 +197,10 @@ impl ListObjectsV2FluentBuilder {
         self.inner = self.inner.set_max_keys(input);
         self
     }
+    /// <p>Sets the maximum number of keys returned in the response. By default, the action returns up to 1,000 key names. The response might contain fewer keys but will never contain more.</p>
+    pub fn get_max_keys(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_keys()
+    }
     /// <p>Limits the response to keys that begin with the specified prefix.</p>
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.prefix(input.into());
@@ -186,6 +210,10 @@ impl ListObjectsV2FluentBuilder {
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_prefix(input);
         self
+    }
+    /// <p>Limits the response to keys that begin with the specified prefix.</p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_prefix()
     }
     /// <p> <code>ContinuationToken</code> indicates to Amazon S3 that the list is being continued on this bucket with a token. <code>ContinuationToken</code> is obfuscated and is not a real key.</p>
     pub fn continuation_token(
@@ -203,6 +231,10 @@ impl ListObjectsV2FluentBuilder {
         self.inner = self.inner.set_continuation_token(input);
         self
     }
+    /// <p> <code>ContinuationToken</code> indicates to Amazon S3 that the list is being continued on this bucket with a token. <code>ContinuationToken</code> is obfuscated and is not a real key.</p>
+    pub fn get_continuation_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_continuation_token()
+    }
     /// <p>The owner field is not present in <code>ListObjectsV2</code> by default. If you want to return the owner field with each key in the result, then set the <code>FetchOwner</code> field to <code>true</code>.</p>
     pub fn fetch_owner(mut self, input: bool) -> Self {
         self.inner = self.inner.fetch_owner(input);
@@ -213,6 +245,10 @@ impl ListObjectsV2FluentBuilder {
         self.inner = self.inner.set_fetch_owner(input);
         self
     }
+    /// <p>The owner field is not present in <code>ListObjectsV2</code> by default. If you want to return the owner field with each key in the result, then set the <code>FetchOwner</code> field to <code>true</code>.</p>
+    pub fn get_fetch_owner(&self) -> &::std::option::Option<bool> {
+        self.inner.get_fetch_owner()
+    }
     /// <p>StartAfter is where you want Amazon S3 to start listing from. Amazon S3 starts listing after this specified key. StartAfter can be any key in the bucket.</p>
     pub fn start_after(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.start_after(input.into());
@@ -222,6 +258,10 @@ impl ListObjectsV2FluentBuilder {
     pub fn set_start_after(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_start_after(input);
         self
+    }
+    /// <p>StartAfter is where you want Amazon S3 to start listing from. Amazon S3 starts listing after this specified key. StartAfter can be any key in the bucket.</p>
+    pub fn get_start_after(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_start_after()
     }
     /// <p>Confirms that the requester knows that she or he will be charged for the list objects request in V2 style. Bucket owners need not specify this parameter in their requests.</p>
     pub fn request_payer(mut self, input: crate::types::RequestPayer) -> Self {
@@ -235,6 +275,10 @@ impl ListObjectsV2FluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_request_payer(input);
         self
+    }
+    /// <p>Confirms that the requester knows that she or he will be charged for the list objects request in V2 style. Bucket owners need not specify this parameter in their requests.</p>
+    pub fn get_request_payer(&self) -> &::std::option::Option<crate::types::RequestPayer> {
+        self.inner.get_request_payer()
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(
@@ -251,6 +295,10 @@ impl ListObjectsV2FluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_expected_bucket_owner(input);
         self
+    }
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+    pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_expected_bucket_owner()
     }
     /// Appends an item to `OptionalObjectAttributes`.
     ///
@@ -271,5 +319,11 @@ impl ListObjectsV2FluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_optional_object_attributes(input);
         self
+    }
+    /// <p>Specifies the optional fields that you want returned in the response. Fields that you do not specify are not returned.</p>
+    pub fn get_optional_object_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OptionalObjectAttributes>> {
+        self.inner.get_optional_object_attributes()
     }
 }

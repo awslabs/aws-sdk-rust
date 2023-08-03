@@ -36,6 +36,12 @@ impl ListWorkflowsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListWorkflows as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_workflows::builders::ListWorkflowsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl ListWorkflowsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results that can be returned.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -139,6 +149,10 @@ impl ListWorkflowsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The ID of the template.</p>
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_id(input.into());
@@ -148,6 +162,10 @@ impl ListWorkflowsFluentBuilder {
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_id(input);
         self
+    }
+    /// <p>The ID of the template.</p>
+    pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_id()
     }
     /// <p>The name of the application configured in Application Discovery Service.</p>
     pub fn ads_application_configuration_name(
@@ -165,6 +183,12 @@ impl ListWorkflowsFluentBuilder {
         self.inner = self.inner.set_ads_application_configuration_name(input);
         self
     }
+    /// <p>The name of the application configured in Application Discovery Service.</p>
+    pub fn get_ads_application_configuration_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ads_application_configuration_name()
+    }
     /// <p>The status of the migration workflow.</p>
     pub fn status(mut self, input: crate::types::MigrationWorkflowStatusEnum) -> Self {
         self.inner = self.inner.status(input);
@@ -178,6 +202,10 @@ impl ListWorkflowsFluentBuilder {
         self.inner = self.inner.set_status(input);
         self
     }
+    /// <p>The status of the migration workflow.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::MigrationWorkflowStatusEnum> {
+        self.inner.get_status()
+    }
     /// <p>The name of the migration workflow.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -187,5 +215,9 @@ impl ListWorkflowsFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the migration workflow.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
 }

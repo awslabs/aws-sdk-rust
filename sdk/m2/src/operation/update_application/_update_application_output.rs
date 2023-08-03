@@ -47,6 +47,10 @@ impl UpdateApplicationOutputBuilder {
         self.application_version = input;
         self
     }
+    /// <p>The new version of the application.</p>
+    pub fn get_application_version(&self) -> &::std::option::Option<i32> {
+        &self.application_version
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

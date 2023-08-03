@@ -58,6 +58,12 @@ impl EncryptionAlgorithmOptionsBuilder {
         self.allowed_values = input;
         self
     }
+    /// <p>The set of accepted encryption algorithms that are allowed in a code signing job.</p>
+    pub fn get_allowed_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EncryptionAlgorithm>> {
+        &self.allowed_values
+    }
     /// <p>The default encryption algorithm that is used by a code signing job.</p>
     pub fn default_value(mut self, input: crate::types::EncryptionAlgorithm) -> Self {
         self.default_value = ::std::option::Option::Some(input);
@@ -70,6 +76,10 @@ impl EncryptionAlgorithmOptionsBuilder {
     ) -> Self {
         self.default_value = input;
         self
+    }
+    /// <p>The default encryption algorithm that is used by a code signing job.</p>
+    pub fn get_default_value(&self) -> &::std::option::Option<crate::types::EncryptionAlgorithm> {
+        &self.default_value
     }
     /// Consumes the builder and constructs a [`EncryptionAlgorithmOptions`](crate::types::EncryptionAlgorithmOptions).
     pub fn build(self) -> crate::types::EncryptionAlgorithmOptions {

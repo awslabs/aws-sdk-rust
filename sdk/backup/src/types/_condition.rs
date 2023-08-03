@@ -59,6 +59,10 @@ impl ConditionBuilder {
         self.condition_type = input;
         self
     }
+    /// <p>An operation applied to a key-value pair used to assign resources to your backup plan. Condition only supports <code>StringEquals</code>. For more flexible assignment options, including <code>StringLike</code> and the ability to exclude resources from your backup plan, use <code>Conditions</code> (with an "s" on the end) for your <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BackupSelection.html"> <code>BackupSelection</code> </a>.</p>
+    pub fn get_condition_type(&self) -> &::std::option::Option<crate::types::ConditionType> {
+        &self.condition_type
+    }
     /// <p>The key in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Department</code> is the key.</p>
     pub fn condition_key(
         mut self,
@@ -75,6 +79,10 @@ impl ConditionBuilder {
         self.condition_key = input;
         self
     }
+    /// <p>The key in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Department</code> is the key.</p>
+    pub fn get_condition_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.condition_key
+    }
     /// <p>The value in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Accounting</code> is the value.</p>
     pub fn condition_value(
         mut self,
@@ -90,6 +98,10 @@ impl ConditionBuilder {
     ) -> Self {
         self.condition_value = input;
         self
+    }
+    /// <p>The value in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Accounting</code> is the value.</p>
+    pub fn get_condition_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.condition_value
     }
     /// Consumes the builder and constructs a [`Condition`](crate::types::Condition).
     pub fn build(self) -> crate::types::Condition {

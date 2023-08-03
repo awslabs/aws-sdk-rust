@@ -52,6 +52,10 @@ impl DetachPrincipalPolicyInputBuilder {
         self.policy_name = input;
         self
     }
+    /// <p>The name of the policy to detach.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_name
+    }
     /// <p>The principal.</p>
     /// <p>Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
     pub fn principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,6 +67,11 @@ impl DetachPrincipalPolicyInputBuilder {
     pub fn set_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal = input;
         self
+    }
+    /// <p>The principal.</p>
+    /// <p>Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
+    pub fn get_principal(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal
     }
     /// Consumes the builder and constructs a [`DetachPrincipalPolicyInput`](crate::operation::detach_principal_policy::DetachPrincipalPolicyInput).
     pub fn build(

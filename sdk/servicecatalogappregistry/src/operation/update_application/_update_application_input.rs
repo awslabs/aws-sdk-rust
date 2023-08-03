@@ -58,6 +58,10 @@ impl UpdateApplicationInputBuilder {
         self.application = input;
         self
     }
+    /// <p> The name, ID, or ARN of the application that will be updated. </p>
+    pub fn get_application(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application
+    }
     /// <p>Deprecated: The new name of the application. The name must be unique in the region in which you are updating the application. Please do not use this field as we have stopped supporting name updates.</p>
     #[deprecated(note = "Name update for application is deprecated.")]
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -70,6 +74,11 @@ impl UpdateApplicationInputBuilder {
         self.name = input;
         self
     }
+    /// <p>Deprecated: The new name of the application. The name must be unique in the region in which you are updating the application. Please do not use this field as we have stopped supporting name updates.</p>
+    #[deprecated(note = "Name update for application is deprecated.")]
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The new description of the application.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -79,6 +88,10 @@ impl UpdateApplicationInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The new description of the application.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
     pub fn build(

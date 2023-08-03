@@ -45,6 +45,10 @@ impl DescribeInferenceSchedulerInputBuilder {
         self.inference_scheduler_name = input;
         self
     }
+    /// <p>The name of the inference scheduler being described. </p>
+    pub fn get_inference_scheduler_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.inference_scheduler_name
+    }
     /// Consumes the builder and constructs a [`DescribeInferenceSchedulerInput`](crate::operation::describe_inference_scheduler::DescribeInferenceSchedulerInput).
     pub fn build(
         self,

@@ -46,6 +46,10 @@ impl RejectInvitationInputBuilder {
         self.invitation_id = input;
         self
     }
+    /// <p>The unique identifier of the invitation to reject.</p>
+    pub fn get_invitation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.invitation_id
+    }
     /// Consumes the builder and constructs a [`RejectInvitationInput`](crate::operation::reject_invitation::RejectInvitationInput).
     pub fn build(
         self,

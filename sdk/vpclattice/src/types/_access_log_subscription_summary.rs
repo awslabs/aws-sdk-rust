@@ -88,6 +88,10 @@ impl AccessLogSubscriptionSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the access log subscription.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Amazon Resource Name (ARN) of the access log subscription</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -97,6 +101,10 @@ impl AccessLogSubscriptionSummaryBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the access log subscription</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The ID of the service or service network.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -108,6 +116,10 @@ impl AccessLogSubscriptionSummaryBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The ID of the service or service network.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the service or service network.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -117,6 +129,10 @@ impl AccessLogSubscriptionSummaryBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the service or service network.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
     pub fn destination_arn(
@@ -134,6 +150,10 @@ impl AccessLogSubscriptionSummaryBuilder {
         self.destination_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the destination.</p>
+    pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_arn
+    }
     /// <p>The date and time that the access log subscription was created, specified in ISO-8601 format.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -147,6 +167,10 @@ impl AccessLogSubscriptionSummaryBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The date and time that the access log subscription was created, specified in ISO-8601 format.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The date and time that the access log subscription was last updated, specified in ISO-8601 format.</p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_at = ::std::option::Option::Some(input);
@@ -159,6 +183,10 @@ impl AccessLogSubscriptionSummaryBuilder {
     ) -> Self {
         self.last_updated_at = input;
         self
+    }
+    /// <p>The date and time that the access log subscription was last updated, specified in ISO-8601 format.</p>
+    pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_at
     }
     /// Consumes the builder and constructs a [`AccessLogSubscriptionSummary`](crate::types::AccessLogSubscriptionSummary).
     pub fn build(self) -> crate::types::AccessLogSubscriptionSummary {

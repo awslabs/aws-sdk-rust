@@ -61,6 +61,10 @@ impl CancelChangeSetOutputBuilder {
         self.change_set_id = input;
         self
     }
+    /// <p>The unique identifier for the change set referenced in this request.</p>
+    pub fn get_change_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_set_id
+    }
     /// <p>The ARN associated with the change set referenced in this request.</p>
     pub fn change_set_arn(
         mut self,
@@ -76,6 +80,10 @@ impl CancelChangeSetOutputBuilder {
     ) -> Self {
         self.change_set_arn = input;
         self
+    }
+    /// <p>The ARN associated with the change set referenced in this request.</p>
+    pub fn get_change_set_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_set_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

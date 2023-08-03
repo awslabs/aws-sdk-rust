@@ -54,6 +54,10 @@ impl DescribeRecoverySnapshotsRequestFiltersBuilder {
         self.from_date_time = input;
         self
     }
+    /// <p>The start date in a date range query.</p>
+    pub fn get_from_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.from_date_time
+    }
     /// <p>The end date in a date range query.</p>
     pub fn to_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.to_date_time = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl DescribeRecoverySnapshotsRequestFiltersBuilder {
     pub fn set_to_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.to_date_time = input;
         self
+    }
+    /// <p>The end date in a date range query.</p>
+    pub fn get_to_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.to_date_time
     }
     /// Consumes the builder and constructs a [`DescribeRecoverySnapshotsRequestFilters`](crate::types::DescribeRecoverySnapshotsRequestFilters).
     pub fn build(self) -> crate::types::DescribeRecoverySnapshotsRequestFilters {

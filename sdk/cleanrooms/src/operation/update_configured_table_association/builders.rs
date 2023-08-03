@@ -36,6 +36,10 @@ impl UpdateConfiguredTableAssociationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateConfiguredTableAssociation as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_configured_table_association::builders::UpdateConfiguredTableAssociationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -110,6 +114,12 @@ impl UpdateConfiguredTableAssociationFluentBuilder {
             .set_configured_table_association_identifier(input);
         self
     }
+    /// <p>The unique identifier for the configured table association to update. Currently accepts the configured table association ID.</p>
+    pub fn get_configured_table_association_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configured_table_association_identifier()
+    }
     /// <p>The unique ID for the membership that the configured table association belongs to.</p>
     pub fn membership_identifier(
         mut self,
@@ -126,6 +136,10 @@ impl UpdateConfiguredTableAssociationFluentBuilder {
         self.inner = self.inner.set_membership_identifier(input);
         self
     }
+    /// <p>The unique ID for the membership that the configured table association belongs to.</p>
+    pub fn get_membership_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_membership_identifier()
+    }
     /// <p>A new description for the configured table association.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -136,6 +150,10 @@ impl UpdateConfiguredTableAssociationFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>A new description for the configured table association.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The service will assume this role to access catalog metadata and query the table.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -145,5 +163,9 @@ impl UpdateConfiguredTableAssociationFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>The service will assume this role to access catalog metadata and query the table.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
 }

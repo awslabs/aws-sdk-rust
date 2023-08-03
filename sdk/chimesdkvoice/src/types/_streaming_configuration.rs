@@ -72,6 +72,10 @@ impl StreamingConfigurationBuilder {
         self.data_retention_in_hours = input;
         self
     }
+    /// <p>The amount of time, in hours, to the Kinesis data.</p>
+    pub fn get_data_retention_in_hours(&self) -> &::std::option::Option<i32> {
+        &self.data_retention_in_hours
+    }
     /// <p>When true, streaming to Kinesis is off.</p>
     pub fn disabled(mut self, input: bool) -> Self {
         self.disabled = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl StreamingConfigurationBuilder {
     pub fn set_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disabled = input;
         self
+    }
+    /// <p>When true, streaming to Kinesis is off.</p>
+    pub fn get_disabled(&self) -> &::std::option::Option<bool> {
+        &self.disabled
     }
     /// Appends an item to `streaming_notification_targets`.
     ///
@@ -104,6 +112,12 @@ impl StreamingConfigurationBuilder {
         self.streaming_notification_targets = input;
         self
     }
+    /// <p>The streaming notification targets.</p>
+    pub fn get_streaming_notification_targets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamingNotificationTarget>> {
+        &self.streaming_notification_targets
+    }
     /// <p>The call analytics configuration.</p>
     pub fn media_insights_configuration(
         mut self,
@@ -119,6 +133,12 @@ impl StreamingConfigurationBuilder {
     ) -> Self {
         self.media_insights_configuration = input;
         self
+    }
+    /// <p>The call analytics configuration.</p>
+    pub fn get_media_insights_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::MediaInsightsConfiguration> {
+        &self.media_insights_configuration
     }
     /// Consumes the builder and constructs a [`StreamingConfiguration`](crate::types::StreamingConfiguration).
     pub fn build(self) -> crate::types::StreamingConfiguration {

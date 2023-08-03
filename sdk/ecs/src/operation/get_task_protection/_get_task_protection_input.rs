@@ -48,6 +48,10 @@ impl GetTaskProtectionInputBuilder {
         self.cluster = input;
         self
     }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task sets exist in.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster
+    }
     /// Appends an item to `tasks`.
     ///
     /// To override the contents of this collection use [`set_tasks`](Self::set_tasks).
@@ -66,6 +70,10 @@ impl GetTaskProtectionInputBuilder {
     ) -> Self {
         self.tasks = input;
         self
+    }
+    /// <p>A list of up to 100 task IDs or full ARN entries.</p>
+    pub fn get_tasks(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tasks
     }
     /// Consumes the builder and constructs a [`GetTaskProtectionInput`](crate::operation::get_task_protection::GetTaskProtectionInput).
     pub fn build(

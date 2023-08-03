@@ -65,6 +65,12 @@ impl CreateRateBasedRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateRateBasedRule as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_rate_based_rule::builders::CreateRateBasedRuleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -155,6 +161,10 @@ impl CreateRateBasedRuleFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>A friendly name or description of the <code>RateBasedRule</code>. You can't change the name of a <code>RateBasedRule</code> after you create it.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A friendly name or description for the metrics for this <code>RateBasedRule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>RateBasedRule</code>.</p>
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metric_name(input.into());
@@ -164,6 +174,10 @@ impl CreateRateBasedRuleFluentBuilder {
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_metric_name(input);
         self
+    }
+    /// <p>A friendly name or description for the metrics for this <code>RateBasedRule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>RateBasedRule</code>.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_metric_name()
     }
     /// <p>The field that AWS WAF uses to determine if requests are likely arriving from a single source and thus subject to rate monitoring. The only valid value for <code>RateKey</code> is <code>IP</code>. <code>IP</code> indicates that requests that arrive from the same IP address are subject to the <code>RateLimit</code> that is specified in the <code>RateBasedRule</code>.</p>
     pub fn rate_key(mut self, input: crate::types::RateKey) -> Self {
@@ -175,6 +189,10 @@ impl CreateRateBasedRuleFluentBuilder {
         self.inner = self.inner.set_rate_key(input);
         self
     }
+    /// <p>The field that AWS WAF uses to determine if requests are likely arriving from a single source and thus subject to rate monitoring. The only valid value for <code>RateKey</code> is <code>IP</code>. <code>IP</code> indicates that requests that arrive from the same IP address are subject to the <code>RateLimit</code> that is specified in the <code>RateBasedRule</code>.</p>
+    pub fn get_rate_key(&self) -> &::std::option::Option<crate::types::RateKey> {
+        self.inner.get_rate_key()
+    }
     /// <p>The maximum number of requests, which have an identical value in the field that is specified by <code>RateKey</code>, allowed in a five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule are also met, AWS WAF triggers the action that is specified for this rule.</p>
     pub fn rate_limit(mut self, input: i64) -> Self {
         self.inner = self.inner.rate_limit(input);
@@ -185,6 +203,10 @@ impl CreateRateBasedRuleFluentBuilder {
         self.inner = self.inner.set_rate_limit(input);
         self
     }
+    /// <p>The maximum number of requests, which have an identical value in the field that is specified by <code>RateKey</code>, allowed in a five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule are also met, AWS WAF triggers the action that is specified for this rule.</p>
+    pub fn get_rate_limit(&self) -> &::std::option::Option<i64> {
+        self.inner.get_rate_limit()
+    }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRateBasedRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.change_token(input.into());
@@ -194,6 +216,10 @@ impl CreateRateBasedRuleFluentBuilder {
     pub fn set_change_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_change_token(input);
         self
+    }
+    /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRateBasedRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
+    pub fn get_change_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_change_token()
     }
     /// Appends an item to `Tags`.
     ///
@@ -211,5 +237,9 @@ impl CreateRateBasedRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p></p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

@@ -40,6 +40,10 @@ impl SnsConfigurationBuilder {
         self.topic_arn = input;
         self
     }
+    /// <p>SNS topic ARN that the scheduled query status notifications will be sent to.</p>
+    pub fn get_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_arn
+    }
     /// Consumes the builder and constructs a [`SnsConfiguration`](crate::types::SnsConfiguration).
     pub fn build(self) -> crate::types::SnsConfiguration {
         crate::types::SnsConfiguration {

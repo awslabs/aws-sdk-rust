@@ -56,6 +56,10 @@ impl OutputLogEventBuilder {
         self.timestamp = input;
         self
     }
+    /// <p>The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<i64> {
+        &self.timestamp
+    }
     /// <p>The data contained in the log event.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl OutputLogEventBuilder {
         self.message = input;
         self
     }
+    /// <p>The data contained in the log event.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The time the event was ingested, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub fn ingestion_time(mut self, input: i64) -> Self {
         self.ingestion_time = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl OutputLogEventBuilder {
     pub fn set_ingestion_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.ingestion_time = input;
         self
+    }
+    /// <p>The time the event was ingested, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
+    pub fn get_ingestion_time(&self) -> &::std::option::Option<i64> {
+        &self.ingestion_time
     }
     /// Consumes the builder and constructs a [`OutputLogEvent`](crate::types::OutputLogEvent).
     pub fn build(self) -> crate::types::OutputLogEvent {

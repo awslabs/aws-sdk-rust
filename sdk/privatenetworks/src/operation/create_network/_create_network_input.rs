@@ -79,6 +79,10 @@ impl CreateNetworkInputBuilder {
         self.network_name = input;
         self
     }
+    /// <p>The name of the network. You can't change the name after you create the network.</p>
+    pub fn get_network_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_name
+    }
     /// <p>The description of the network.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl CreateNetworkInputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the network.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -98,6 +106,10 @@ impl CreateNetworkInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -123,6 +135,14 @@ impl CreateNetworkInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p> The tags to apply to the network. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateNetworkInput`](crate::operation::create_network::CreateNetworkInput).
     pub fn build(

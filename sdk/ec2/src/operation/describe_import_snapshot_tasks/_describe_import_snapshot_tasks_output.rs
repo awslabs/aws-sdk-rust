@@ -67,6 +67,12 @@ impl DescribeImportSnapshotTasksOutputBuilder {
         self.import_snapshot_tasks = input;
         self
     }
+    /// <p>A list of zero or more import snapshot tasks that are currently active or were completed or canceled in the previous 7 days.</p>
+    pub fn get_import_snapshot_tasks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportSnapshotTask>> {
+        &self.import_snapshot_tasks
+    }
     /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -76,6 +82,10 @@ impl DescribeImportSnapshotTasksOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

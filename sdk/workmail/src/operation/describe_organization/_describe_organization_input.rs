@@ -47,6 +47,10 @@ impl DescribeOrganizationInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The identifier for the organization to be described.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// Consumes the builder and constructs a [`DescribeOrganizationInput`](crate::operation::describe_organization::DescribeOrganizationInput).
     pub fn build(
         self,

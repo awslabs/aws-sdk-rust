@@ -51,6 +51,12 @@ impl ExternalMetricStatusBuilder {
         self.status_code = input;
         self
     }
+    /// <p> The status code for Compute Optimizer's integration with an external metrics provider. </p>
+    pub fn get_status_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExternalMetricStatusCode> {
+        &self.status_code
+    }
     /// <p> The reason for Compute Optimizer's integration status with your external metric provider. </p>
     pub fn status_reason(
         mut self,
@@ -66,6 +72,10 @@ impl ExternalMetricStatusBuilder {
     ) -> Self {
         self.status_reason = input;
         self
+    }
+    /// <p> The reason for Compute Optimizer's integration status with your external metric provider. </p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
     }
     /// Consumes the builder and constructs a [`ExternalMetricStatus`](crate::types::ExternalMetricStatus).
     pub fn build(self) -> crate::types::ExternalMetricStatus {

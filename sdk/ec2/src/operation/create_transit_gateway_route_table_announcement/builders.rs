@@ -36,6 +36,10 @@ impl CreateTransitGatewayRouteTableAnnouncementFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateTransitGatewayRouteTableAnnouncement as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_transit_gateway_route_table_announcement::builders::CreateTransitGatewayRouteTableAnnouncementInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,12 @@ impl CreateTransitGatewayRouteTableAnnouncementFluentBuilder {
         self.inner = self.inner.set_transit_gateway_route_table_id(input);
         self
     }
+    /// <p>The ID of the transit gateway route table.</p>
+    pub fn get_transit_gateway_route_table_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_transit_gateway_route_table_id()
+    }
     /// <p>The ID of the peering attachment.</p>
     pub fn peering_attachment_id(
         mut self,
@@ -121,6 +131,10 @@ impl CreateTransitGatewayRouteTableAnnouncementFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_peering_attachment_id(input);
         self
+    }
+    /// <p>The ID of the peering attachment.</p>
+    pub fn get_peering_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_peering_attachment_id()
     }
     /// Appends an item to `TagSpecifications`.
     ///
@@ -139,6 +153,12 @@ impl CreateTransitGatewayRouteTableAnnouncementFluentBuilder {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
+    /// <p>The tags specifications applied to the transit gateway route table announcement.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        self.inner.get_tag_specifications()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -148,5 +168,9 @@ impl CreateTransitGatewayRouteTableAnnouncementFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

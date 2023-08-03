@@ -36,6 +36,10 @@ impl SignPayloadFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SignPayload as a reference.
+    pub fn as_input(&self) -> &crate::operation::sign_payload::builders::SignPayloadInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl SignPayloadFluentBuilder {
         self.inner = self.inner.set_profile_name(input);
         self
     }
+    /// <p>The name of the signing profile.</p>
+    pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_profile_name()
+    }
     /// <p>The AWS account ID of the profile owner.</p>
     pub fn profile_owner(
         mut self,
@@ -134,6 +142,10 @@ impl SignPayloadFluentBuilder {
         self.inner = self.inner.set_profile_owner(input);
         self
     }
+    /// <p>The AWS account ID of the profile owner.</p>
+    pub fn get_profile_owner(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_profile_owner()
+    }
     /// <p>Specifies the object digest (hash) to sign.</p>
     pub fn payload(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.payload(input);
@@ -143,6 +155,10 @@ impl SignPayloadFluentBuilder {
     pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_payload(input);
         self
+    }
+    /// <p>Specifies the object digest (hash) to sign.</p>
+    pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        self.inner.get_payload()
     }
     /// <p>Payload content type</p>
     pub fn payload_format(
@@ -159,5 +175,9 @@ impl SignPayloadFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_payload_format(input);
         self
+    }
+    /// <p>Payload content type</p>
+    pub fn get_payload_format(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_payload_format()
     }
 }

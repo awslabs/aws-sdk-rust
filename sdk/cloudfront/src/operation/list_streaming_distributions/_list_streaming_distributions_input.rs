@@ -48,6 +48,10 @@ impl ListStreamingDistributionsInputBuilder {
         self.marker = input;
         self
     }
+    /// <p>The value that you provided for the <code>Marker</code> request parameter.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>The value that you provided for the <code>MaxItems</code> request parameter.</p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.max_items = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ListStreamingDistributionsInputBuilder {
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_items = input;
         self
+    }
+    /// <p>The value that you provided for the <code>MaxItems</code> request parameter.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        &self.max_items
     }
     /// Consumes the builder and constructs a [`ListStreamingDistributionsInput`](crate::operation::list_streaming_distributions::ListStreamingDistributionsInput).
     pub fn build(

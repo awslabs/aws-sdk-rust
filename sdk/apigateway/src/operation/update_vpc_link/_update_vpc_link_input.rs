@@ -49,6 +49,10 @@ impl UpdateVpcLinkInputBuilder {
         self.vpc_link_id = input;
         self
     }
+    /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
+    pub fn get_vpc_link_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_link_id
+    }
     /// Appends an item to `patch_operations`.
     ///
     /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
@@ -67,6 +71,12 @@ impl UpdateVpcLinkInputBuilder {
     ) -> Self {
         self.patch_operations = input;
         self
+    }
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    pub fn get_patch_operations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
+        &self.patch_operations
     }
     /// Consumes the builder and constructs a [`UpdateVpcLinkInput`](crate::operation::update_vpc_link::UpdateVpcLinkInput).
     pub fn build(

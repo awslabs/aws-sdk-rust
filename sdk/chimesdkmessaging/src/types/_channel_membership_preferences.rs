@@ -45,6 +45,12 @@ impl ChannelMembershipPreferencesBuilder {
         self.push_notifications = input;
         self
     }
+    /// <p>The push notification configuration of a message.</p>
+    pub fn get_push_notifications(
+        &self,
+    ) -> &::std::option::Option<crate::types::PushNotificationPreferences> {
+        &self.push_notifications
+    }
     /// Consumes the builder and constructs a [`ChannelMembershipPreferences`](crate::types::ChannelMembershipPreferences).
     pub fn build(self) -> crate::types::ChannelMembershipPreferences {
         crate::types::ChannelMembershipPreferences {

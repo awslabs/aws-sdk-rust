@@ -50,6 +50,10 @@ impl HttpDataSourceConfigBuilder {
         self.endpoint = input;
         self
     }
+    /// <p>The HTTP URL endpoint. You can specify either the domain name or IP, and port combination, and the URL scheme must be HTTP or HTTPS. If you don't specify the port, AppSync uses the default port 80 for the HTTP endpoint and port 443 for HTTPS endpoints.</p>
+    pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint
+    }
     /// <p>The authorization configuration in case the HTTP endpoint requires authorization.</p>
     pub fn authorization_config(mut self, input: crate::types::AuthorizationConfig) -> Self {
         self.authorization_config = ::std::option::Option::Some(input);
@@ -62,6 +66,12 @@ impl HttpDataSourceConfigBuilder {
     ) -> Self {
         self.authorization_config = input;
         self
+    }
+    /// <p>The authorization configuration in case the HTTP endpoint requires authorization.</p>
+    pub fn get_authorization_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthorizationConfig> {
+        &self.authorization_config
     }
     /// Consumes the builder and constructs a [`HttpDataSourceConfig`](crate::types::HttpDataSourceConfig).
     pub fn build(self) -> crate::types::HttpDataSourceConfig {

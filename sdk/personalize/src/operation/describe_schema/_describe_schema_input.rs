@@ -39,6 +39,10 @@ impl DescribeSchemaInputBuilder {
         self.schema_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the schema to retrieve.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_arn
+    }
     /// Consumes the builder and constructs a [`DescribeSchemaInput`](crate::operation::describe_schema::DescribeSchemaInput).
     pub fn build(
         self,

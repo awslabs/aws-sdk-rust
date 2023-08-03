@@ -48,6 +48,10 @@ impl RenameColumnOperationBuilder {
         self.column_name = input;
         self
     }
+    /// <p>The name of the column to be renamed.</p>
+    pub fn get_column_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.column_name
+    }
     /// <p>The new name for the column.</p>
     pub fn new_column_name(
         mut self,
@@ -63,6 +67,10 @@ impl RenameColumnOperationBuilder {
     ) -> Self {
         self.new_column_name = input;
         self
+    }
+    /// <p>The new name for the column.</p>
+    pub fn get_new_column_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.new_column_name
     }
     /// Consumes the builder and constructs a [`RenameColumnOperation`](crate::types::RenameColumnOperation).
     pub fn build(self) -> crate::types::RenameColumnOperation {

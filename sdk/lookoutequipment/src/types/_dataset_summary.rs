@@ -64,6 +64,10 @@ impl DatasetSummaryBuilder {
         self.dataset_name = input;
         self
     }
+    /// <p>The name of the dataset. </p>
+    pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the specified dataset. </p>
     pub fn dataset_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_arn = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl DatasetSummaryBuilder {
         self.dataset_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the specified dataset. </p>
+    pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_arn
+    }
     /// <p>Indicates the status of the dataset. </p>
     pub fn status(mut self, input: crate::types::DatasetStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -83,6 +91,10 @@ impl DatasetSummaryBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DatasetStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Indicates the status of the dataset. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DatasetStatus> {
+        &self.status
     }
     /// <p>The time at which the dataset was created in Amazon Lookout for Equipment. </p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -96,6 +108,10 @@ impl DatasetSummaryBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The time at which the dataset was created in Amazon Lookout for Equipment. </p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// Consumes the builder and constructs a [`DatasetSummary`](crate::types::DatasetSummary).
     pub fn build(self) -> crate::types::DatasetSummary {

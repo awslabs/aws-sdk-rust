@@ -37,6 +37,10 @@ impl PurchaseReservedNodeOfferingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PurchaseReservedNodeOffering as a reference.
+    pub fn as_input(&self) -> &crate::operation::purchase_reserved_node_offering::builders::PurchaseReservedNodeOfferingInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl PurchaseReservedNodeOfferingFluentBuilder {
         self.inner = self.inner.set_reserved_node_offering_id(input);
         self
     }
+    /// <p>The unique identifier of the reserved node offering you want to purchase.</p>
+    pub fn get_reserved_node_offering_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reserved_node_offering_id()
+    }
     /// <p>The number of reserved nodes that you want to purchase.</p>
     /// <p>Default: <code>1</code> </p>
     pub fn node_count(mut self, input: i32) -> Self {
@@ -144,5 +152,10 @@ impl PurchaseReservedNodeOfferingFluentBuilder {
     pub fn set_node_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_node_count(input);
         self
+    }
+    /// <p>The number of reserved nodes that you want to purchase.</p>
+    /// <p>Default: <code>1</code> </p>
+    pub fn get_node_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_node_count()
     }
 }

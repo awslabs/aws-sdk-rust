@@ -60,6 +60,10 @@ impl UnsuccessfulFaceDisassociationBuilder {
         self.face_id = input;
         self
     }
+    /// <p>A unique identifier assigned to the face. </p>
+    pub fn get_face_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.face_id
+    }
     /// <p>A provided ID for the UserID. Unique within the collection. </p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
@@ -69,6 +73,10 @@ impl UnsuccessfulFaceDisassociationBuilder {
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
+    }
+    /// <p>A provided ID for the UserID. Unique within the collection. </p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     /// Appends an item to `reasons`.
     ///
@@ -90,6 +98,13 @@ impl UnsuccessfulFaceDisassociationBuilder {
     ) -> Self {
         self.reasons = input;
         self
+    }
+    /// <p>The reason why the deletion was unsuccessful. </p>
+    pub fn get_reasons(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceDisassociationReason>>
+    {
+        &self.reasons
     }
     /// Consumes the builder and constructs a [`UnsuccessfulFaceDisassociation`](crate::types::UnsuccessfulFaceDisassociation).
     pub fn build(self) -> crate::types::UnsuccessfulFaceDisassociation {

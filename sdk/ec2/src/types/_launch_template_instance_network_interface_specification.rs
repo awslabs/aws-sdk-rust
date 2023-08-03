@@ -203,6 +203,11 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationBuilder {
         self.associate_carrier_ip_address = input;
         self
     }
+    /// <p>Indicates whether to associate a Carrier IP address with eth0 for a new network interface.</p>
+    /// <p>Use this option when you launch an instance in a Wavelength Zone and want to associate a Carrier IP address with the network interface. For more information about Carrier IP addresses, see <a href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip">Carrier IP addresses</a> in the <i>Wavelength Developer Guide</i>.</p>
+    pub fn get_associate_carrier_ip_address(&self) -> &::std::option::Option<bool> {
+        &self.associate_carrier_ip_address
+    }
     /// <p>Indicates whether to associate a public IPv4 address with eth0 for a new network interface.</p>
     pub fn associate_public_ip_address(mut self, input: bool) -> Self {
         self.associate_public_ip_address = ::std::option::Option::Some(input);
@@ -212,6 +217,10 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationBuilder {
     pub fn set_associate_public_ip_address(mut self, input: ::std::option::Option<bool>) -> Self {
         self.associate_public_ip_address = input;
         self
+    }
+    /// <p>Indicates whether to associate a public IPv4 address with eth0 for a new network interface.</p>
+    pub fn get_associate_public_ip_address(&self) -> &::std::option::Option<bool> {
+        &self.associate_public_ip_address
     }
     /// <p>Indicates whether the network interface is deleted when the instance is terminated.</p>
     pub fn delete_on_termination(mut self, input: bool) -> Self {
@@ -223,6 +232,10 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationBuilder {
         self.delete_on_termination = input;
         self
     }
+    /// <p>Indicates whether the network interface is deleted when the instance is terminated.</p>
+    pub fn get_delete_on_termination(&self) -> &::std::option::Option<bool> {
+        &self.delete_on_termination
+    }
     /// <p>A description for the network interface.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -233,6 +246,10 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationBuilder {
         self.description = input;
         self
     }
+    /// <p>A description for the network interface.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The device index for the network interface attachment.</p>
     pub fn device_index(mut self, input: i32) -> Self {
         self.device_index = ::std::option::Option::Some(input);
@@ -242,6 +259,10 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationBuilder {
     pub fn set_device_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.device_index = input;
         self
+    }
+    /// <p>The device index for the network interface attachment.</p>
+    pub fn get_device_index(&self) -> &::std::option::Option<i32> {
+        &self.device_index
     }
     /// Appends an item to `groups`.
     ///
@@ -262,6 +283,10 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationBuilder {
         self.groups = input;
         self
     }
+    /// <p>The IDs of one or more security groups.</p>
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.groups
+    }
     /// <p>The type of network interface.</p>
     pub fn interface_type(
         mut self,
@@ -278,6 +303,10 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationBuilder {
         self.interface_type = input;
         self
     }
+    /// <p>The type of network interface.</p>
+    pub fn get_interface_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.interface_type
+    }
     /// <p>The number of IPv6 addresses for the network interface.</p>
     pub fn ipv6_address_count(mut self, input: i32) -> Self {
         self.ipv6_address_count = ::std::option::Option::Some(input);
@@ -287,6 +316,10 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationBuilder {
     pub fn set_ipv6_address_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.ipv6_address_count = input;
         self
+    }
+    /// <p>The number of IPv6 addresses for the network interface.</p>
+    pub fn get_ipv6_address_count(&self) -> &::std::option::Option<i32> {
+        &self.ipv6_address_count
     }
     /// Appends an item to `ipv6_addresses`.
     ///
@@ -307,6 +340,12 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationBuilder {
         self.ipv6_addresses = input;
         self
     }
+    /// <p>The IPv6 addresses for the network interface.</p>
+    pub fn get_ipv6_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceIpv6Address>> {
+        &self.ipv6_addresses
+    }
     /// <p>The ID of the network interface.</p>
     pub fn network_interface_id(
         mut self,
@@ -323,6 +362,10 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationBuilder {
         self.network_interface_id = input;
         self
     }
+    /// <p>The ID of the network interface.</p>
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_interface_id
+    }
     /// <p>The primary private IPv4 address of the network interface.</p>
     pub fn private_ip_address(
         mut self,
@@ -338,6 +381,10 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationBuilder {
     ) -> Self {
         self.private_ip_address = input;
         self
+    }
+    /// <p>The primary private IPv4 address of the network interface.</p>
+    pub fn get_private_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_ip_address
     }
     /// Appends an item to `private_ip_addresses`.
     ///
@@ -361,6 +408,12 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationBuilder {
         self.private_ip_addresses = input;
         self
     }
+    /// <p>One or more private IPv4 addresses.</p>
+    pub fn get_private_ip_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PrivateIpAddressSpecification>> {
+        &self.private_ip_addresses
+    }
     /// <p>The number of secondary private IPv4 addresses for the network interface.</p>
     pub fn secondary_private_ip_address_count(mut self, input: i32) -> Self {
         self.secondary_private_ip_address_count = ::std::option::Option::Some(input);
@@ -374,6 +427,10 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationBuilder {
         self.secondary_private_ip_address_count = input;
         self
     }
+    /// <p>The number of secondary private IPv4 addresses for the network interface.</p>
+    pub fn get_secondary_private_ip_address_count(&self) -> &::std::option::Option<i32> {
+        &self.secondary_private_ip_address_count
+    }
     /// <p>The ID of the subnet for the network interface.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
@@ -384,6 +441,10 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationBuilder {
         self.subnet_id = input;
         self
     }
+    /// <p>The ID of the subnet for the network interface.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
+    }
     /// <p>The index of the network card.</p>
     pub fn network_card_index(mut self, input: i32) -> Self {
         self.network_card_index = ::std::option::Option::Some(input);
@@ -393,6 +454,10 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationBuilder {
     pub fn set_network_card_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.network_card_index = input;
         self
+    }
+    /// <p>The index of the network card.</p>
+    pub fn get_network_card_index(&self) -> &::std::option::Option<i32> {
+        &self.network_card_index
     }
     /// Appends an item to `ipv4_prefixes`.
     ///
@@ -415,6 +480,13 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationBuilder {
         self.ipv4_prefixes = input;
         self
     }
+    /// <p>One or more IPv4 prefixes assigned to the network interface.</p>
+    pub fn get_ipv4_prefixes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Ipv4PrefixSpecificationResponse>>
+    {
+        &self.ipv4_prefixes
+    }
     /// <p>The number of IPv4 prefixes that Amazon Web Services automatically assigned to the network interface.</p>
     pub fn ipv4_prefix_count(mut self, input: i32) -> Self {
         self.ipv4_prefix_count = ::std::option::Option::Some(input);
@@ -424,6 +496,10 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationBuilder {
     pub fn set_ipv4_prefix_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.ipv4_prefix_count = input;
         self
+    }
+    /// <p>The number of IPv4 prefixes that Amazon Web Services automatically assigned to the network interface.</p>
+    pub fn get_ipv4_prefix_count(&self) -> &::std::option::Option<i32> {
+        &self.ipv4_prefix_count
     }
     /// Appends an item to `ipv6_prefixes`.
     ///
@@ -446,6 +522,13 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationBuilder {
         self.ipv6_prefixes = input;
         self
     }
+    /// <p>One or more IPv6 prefixes assigned to the network interface.</p>
+    pub fn get_ipv6_prefixes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Ipv6PrefixSpecificationResponse>>
+    {
+        &self.ipv6_prefixes
+    }
     /// <p>The number of IPv6 prefixes that Amazon Web Services automatically assigned to the network interface.</p>
     pub fn ipv6_prefix_count(mut self, input: i32) -> Self {
         self.ipv6_prefix_count = ::std::option::Option::Some(input);
@@ -455,6 +538,10 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationBuilder {
     pub fn set_ipv6_prefix_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.ipv6_prefix_count = input;
         self
+    }
+    /// <p>The number of IPv6 prefixes that Amazon Web Services automatically assigned to the network interface.</p>
+    pub fn get_ipv6_prefix_count(&self) -> &::std::option::Option<i32> {
+        &self.ipv6_prefix_count
     }
     /// Consumes the builder and constructs a [`LaunchTemplateInstanceNetworkInterfaceSpecification`](crate::types::LaunchTemplateInstanceNetworkInterfaceSpecification).
     pub fn build(self) -> crate::types::LaunchTemplateInstanceNetworkInterfaceSpecification {

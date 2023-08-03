@@ -45,6 +45,10 @@ impl StopGuiSessionInputBuilder {
         self.resource_name = input;
         self
     }
+    /// <p>The resource name.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_name
+    }
     /// Consumes the builder and constructs a [`StopGuiSessionInput`](crate::operation::stop_gui_session::StopGuiSessionInput).
     pub fn build(
         self,

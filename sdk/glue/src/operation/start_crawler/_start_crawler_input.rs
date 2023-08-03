@@ -39,6 +39,10 @@ impl StartCrawlerInputBuilder {
         self.name = input;
         self
     }
+    /// <p>Name of the crawler to start.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`StartCrawlerInput`](crate::operation::start_crawler::StartCrawlerInput).
     pub fn build(
         self,

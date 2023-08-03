@@ -46,6 +46,10 @@ impl DeleteAlarmModelInputBuilder {
         self.alarm_model_name = input;
         self
     }
+    /// <p>The name of the alarm model.</p>
+    pub fn get_alarm_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alarm_model_name
+    }
     /// Consumes the builder and constructs a [`DeleteAlarmModelInput`](crate::operation::delete_alarm_model::DeleteAlarmModelInput).
     pub fn build(
         self,

@@ -36,6 +36,10 @@ impl DisassociateConfigurationItemsFromApplicationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateConfigurationItemsFromApplication as a reference.
+    pub fn as_input(&self) -> &crate::operation::disassociate_configuration_items_from_application::builders::DisassociateConfigurationItemsFromApplicationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,12 @@ impl DisassociateConfigurationItemsFromApplicationFluentBuilder {
         self.inner = self.inner.set_application_configuration_id(input);
         self
     }
+    /// <p>Configuration ID of an application from which each item is disassociated.</p>
+    pub fn get_application_configuration_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_configuration_id()
+    }
     /// Appends an item to `configurationIds`.
     ///
     /// To override the contents of this collection use [`set_configuration_ids`](Self::set_configuration_ids).
@@ -125,5 +135,11 @@ impl DisassociateConfigurationItemsFromApplicationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_configuration_ids(input);
         self
+    }
+    /// <p>Configuration ID of each item to be disassociated from an application.</p>
+    pub fn get_configuration_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_configuration_ids()
     }
 }

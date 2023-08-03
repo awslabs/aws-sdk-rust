@@ -43,6 +43,10 @@ impl SnapshotBuilder {
         self.snapshot_time = input;
         self
     }
+    /// <p>The time when the snapshot was created.</p>
+    pub fn get_snapshot_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.snapshot_time
+    }
     /// Consumes the builder and constructs a [`Snapshot`](crate::types::Snapshot).
     pub fn build(self) -> crate::types::Snapshot {
         crate::types::Snapshot {

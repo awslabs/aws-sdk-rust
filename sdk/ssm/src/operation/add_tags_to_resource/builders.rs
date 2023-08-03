@@ -47,6 +47,12 @@ impl AddTagsToResourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AddTagsToResource as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::add_tags_to_resource::builders::AddTagsToResourceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -144,6 +150,14 @@ impl AddTagsToResourceFluentBuilder {
         self.inner = self.inner.set_resource_type(input);
         self
     }
+    /// <p>Specifies the type of resource you are tagging.</p> <note>
+    /// <p>The <code>ManagedInstance</code> type for this API operation is for on-premises managed nodes. You must specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
+    /// </note>
+    pub fn get_resource_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceTypeForTagging> {
+        self.inner.get_resource_type()
+    }
     /// <p>The resource ID you want to tag.</p>
     /// <p>Use the ID of the resource. Here are some examples:</p>
     /// <p> <code>MaintenanceWindow</code>: <code>mw-012345abcde</code> </p>
@@ -172,6 +186,19 @@ impl AddTagsToResourceFluentBuilder {
         self.inner = self.inner.set_resource_id(input);
         self
     }
+    /// <p>The resource ID you want to tag.</p>
+    /// <p>Use the ID of the resource. Here are some examples:</p>
+    /// <p> <code>MaintenanceWindow</code>: <code>mw-012345abcde</code> </p>
+    /// <p> <code>PatchBaseline</code>: <code>pb-012345abcde</code> </p>
+    /// <p> <code>Automation</code>: <code>example-c160-4567-8519-012345abcde</code> </p>
+    /// <p> <code>OpsMetadata</code> object: <code>ResourceID</code> for tagging is created from the Amazon Resource Name (ARN) for the object. Specifically, <code>ResourceID</code> is created from the strings that come after the word <code>opsmetadata</code> in the ARN. For example, an OpsMetadata object with an ARN of <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code> has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code> or <code>/aws/ssm/MyGroup/appmanager</code>.</p>
+    /// <p>For the <code>Document</code> and <code>Parameter</code> values, use the name of the resource. If you're tagging a shared document, you must use the full ARN of the document.</p>
+    /// <p> <code>ManagedInstance</code>: <code>mi-012345abcde</code> </p> <note>
+    /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises managed nodes. You must specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
+    /// </note>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -192,5 +219,11 @@ impl AddTagsToResourceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>One or more tags. The value parameter is required.</p> <important>
+    /// <p>Don't enter personally identifiable information in this field.</p>
+    /// </important>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

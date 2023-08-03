@@ -47,6 +47,10 @@ impl DescribeFraudsterOutputBuilder {
         self.fraudster = input;
         self
     }
+    /// <p>Information about the specified fraudster.</p>
+    pub fn get_fraudster(&self) -> &::std::option::Option<crate::types::Fraudster> {
+        &self.fraudster
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

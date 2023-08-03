@@ -60,6 +60,12 @@ impl SendBulkEmailOutputBuilder {
         self.bulk_email_entry_results = input;
         self
     }
+    /// <p>One object per intended recipient. Check each response object and retry any messages with a failure status.</p>
+    pub fn get_bulk_email_entry_results(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BulkEmailEntryResult>> {
+        &self.bulk_email_entry_results
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

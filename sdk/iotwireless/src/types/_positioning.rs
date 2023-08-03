@@ -57,6 +57,10 @@ impl PositioningBuilder {
         self
     }
     /// <p>The Fport value.</p>
+    pub fn get_clock_sync(&self) -> &::std::option::Option<i32> {
+        &self.clock_sync
+    }
+    /// <p>The Fport value.</p>
     pub fn stream(mut self, input: i32) -> Self {
         self.stream = ::std::option::Option::Some(input);
         self
@@ -67,6 +71,10 @@ impl PositioningBuilder {
         self
     }
     /// <p>The Fport value.</p>
+    pub fn get_stream(&self) -> &::std::option::Option<i32> {
+        &self.stream
+    }
+    /// <p>The Fport value.</p>
     pub fn gnss(mut self, input: i32) -> Self {
         self.gnss = ::std::option::Option::Some(input);
         self
@@ -75,6 +83,10 @@ impl PositioningBuilder {
     pub fn set_gnss(mut self, input: ::std::option::Option<i32>) -> Self {
         self.gnss = input;
         self
+    }
+    /// <p>The Fport value.</p>
+    pub fn get_gnss(&self) -> &::std::option::Option<i32> {
+        &self.gnss
     }
     /// Consumes the builder and constructs a [`Positioning`](crate::types::Positioning).
     pub fn build(self) -> crate::types::Positioning {

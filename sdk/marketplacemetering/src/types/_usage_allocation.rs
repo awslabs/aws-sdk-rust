@@ -49,6 +49,10 @@ impl UsageAllocationBuilder {
         self.allocated_usage_quantity = input;
         self
     }
+    /// <p>The total quantity allocated to this bucket of usage.</p>
+    pub fn get_allocated_usage_quantity(&self) -> &::std::option::Option<i32> {
+        &self.allocated_usage_quantity
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -67,6 +71,10 @@ impl UsageAllocationBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The set of tags that define the bucket of usage. For the bucket of items with no tags, this parameter can be left out.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`UsageAllocation`](crate::types::UsageAllocation).
     pub fn build(self) -> crate::types::UsageAllocation {

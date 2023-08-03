@@ -48,6 +48,10 @@ impl RemoveRegionsFromReplicationInputBuilder {
         self.secret_id = input;
         self
     }
+    /// <p>The ARN or name of the secret.</p>
+    pub fn get_secret_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_id
+    }
     /// Appends an item to `remove_replica_regions`.
     ///
     /// To override the contents of this collection use [`set_remove_replica_regions`](Self::set_remove_replica_regions).
@@ -69,6 +73,12 @@ impl RemoveRegionsFromReplicationInputBuilder {
     ) -> Self {
         self.remove_replica_regions = input;
         self
+    }
+    /// <p>The Regions of the replicas to remove.</p>
+    pub fn get_remove_replica_regions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.remove_replica_regions
     }
     /// Consumes the builder and constructs a [`RemoveRegionsFromReplicationInput`](crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationInput).
     pub fn build(

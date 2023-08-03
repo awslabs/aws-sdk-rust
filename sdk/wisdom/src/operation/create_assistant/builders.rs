@@ -36,6 +36,12 @@ impl CreateAssistantFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateAssistant as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_assistant::builders::CreateAssistantInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateAssistantFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>The name of the assistant.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -135,6 +145,10 @@ impl CreateAssistantFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the assistant.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The type of assistant.</p>
     pub fn r#type(mut self, input: crate::types::AssistantType) -> Self {
@@ -146,6 +160,10 @@ impl CreateAssistantFluentBuilder {
         self.inner = self.inner.set_type(input);
         self
     }
+    /// <p>The type of assistant.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::AssistantType> {
+        self.inner.get_type()
+    }
     /// <p>The description of the assistant.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -155,6 +173,10 @@ impl CreateAssistantFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the assistant.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -179,6 +201,14 @@ impl CreateAssistantFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>The KMS key used for encryption.</p>
     pub fn server_side_encryption_configuration(
         mut self,
@@ -194,5 +224,11 @@ impl CreateAssistantFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_server_side_encryption_configuration(input);
         self
+    }
+    /// <p>The KMS key used for encryption.</p>
+    pub fn get_server_side_encryption_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServerSideEncryptionConfiguration> {
+        self.inner.get_server_side_encryption_configuration()
     }
 }

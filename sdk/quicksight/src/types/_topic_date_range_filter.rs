@@ -54,6 +54,10 @@ impl TopicDateRangeFilterBuilder {
         self.inclusive = input;
         self
     }
+    /// <p>A Boolean value that indicates whether the date range filter should include the boundary values. If set to true, the filter includes the start and end dates. If set to false, the filter excludes them.</p>
+    pub fn get_inclusive(&self) -> &::std::option::Option<bool> {
+        &self.inclusive
+    }
     /// <p>The constant used in a date range filter.</p>
     pub fn constant(mut self, input: crate::types::TopicRangeFilterConstant) -> Self {
         self.constant = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl TopicDateRangeFilterBuilder {
     ) -> Self {
         self.constant = input;
         self
+    }
+    /// <p>The constant used in a date range filter.</p>
+    pub fn get_constant(&self) -> &::std::option::Option<crate::types::TopicRangeFilterConstant> {
+        &self.constant
     }
     /// Consumes the builder and constructs a [`TopicDateRangeFilter`](crate::types::TopicDateRangeFilter).
     pub fn build(self) -> crate::types::TopicDateRangeFilter {

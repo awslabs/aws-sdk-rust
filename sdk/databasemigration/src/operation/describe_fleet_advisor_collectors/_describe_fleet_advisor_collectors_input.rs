@@ -84,6 +84,15 @@ impl DescribeFleetAdvisorCollectorsInputBuilder {
         self.filters = input;
         self
     }
+    /// <p> If you specify any of the following filters, the output includes information for only those collectors that meet the filter criteria:</p>
+    /// <ul>
+    /// <li> <p> <code>collector-referenced-id</code> – The ID of the collector agent, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li>
+    /// <li> <p> <code>collector-name</code> – The name of the collector agent.</p> </li>
+    /// </ul>
+    /// <p>An example is: <code>describe-fleet-advisor-collectors --filter Name="collector-referenced-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code> </p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
+    }
     /// <p>Sets the maximum number of records returned in the response.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.max_records = ::std::option::Option::Some(input);
@@ -94,6 +103,10 @@ impl DescribeFleetAdvisorCollectorsInputBuilder {
         self.max_records = input;
         self
     }
+    /// <p>Sets the maximum number of records returned in the response.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        &self.max_records
+    }
     /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -103,6 +116,10 @@ impl DescribeFleetAdvisorCollectorsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeFleetAdvisorCollectorsInput`](crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectorsInput).
     pub fn build(

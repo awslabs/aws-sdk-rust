@@ -56,6 +56,10 @@ impl AnomalySourceMetadataBuilder {
         self.source = input;
         self
     }
+    /// <p>The source of the anomaly.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
+    }
     /// <p>The name of the anomaly's resource.</p>
     pub fn source_resource_name(
         mut self,
@@ -72,6 +76,10 @@ impl AnomalySourceMetadataBuilder {
         self.source_resource_name = input;
         self
     }
+    /// <p>The name of the anomaly's resource.</p>
+    pub fn get_source_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_resource_name
+    }
     /// <p>The anomaly's resource type.</p>
     pub fn source_resource_type(
         mut self,
@@ -87,6 +95,10 @@ impl AnomalySourceMetadataBuilder {
     ) -> Self {
         self.source_resource_type = input;
         self
+    }
+    /// <p>The anomaly's resource type.</p>
+    pub fn get_source_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_resource_type
     }
     /// Consumes the builder and constructs a [`AnomalySourceMetadata`](crate::types::AnomalySourceMetadata).
     pub fn build(self) -> crate::types::AnomalySourceMetadata {

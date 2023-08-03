@@ -37,6 +37,12 @@ impl DescribeAcceleratorsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeAccelerators as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_accelerators::builders::DescribeAcceleratorsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -148,6 +154,12 @@ impl DescribeAcceleratorsFluentBuilder {
         self.inner = self.inner.set_accelerator_ids(input);
         self
     }
+    /// <p> The IDs of the accelerators to describe. </p>
+    pub fn get_accelerator_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_accelerator_ids()
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -165,6 +177,10 @@ impl DescribeAcceleratorsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p> One or more filters. Filter names and values are case-sensitive. Valid filter names are: accelerator-types: can provide a list of accelerator type names to filter for. instance-id: can provide a list of EC2 instance ids to filter for. </p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// <p> The total number of items to return in the command's output. If the total number of items available is more than the value specified, a NextToken is provided in the command's output. To resume pagination, provide the NextToken value in the starting-token argument of a subsequent command. Do not use the NextToken response element directly outside of the AWS CLI. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -175,6 +191,10 @@ impl DescribeAcceleratorsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p> The total number of items to return in the command's output. If the total number of items available is more than the value specified, a NextToken is provided in the command's output. To resume pagination, provide the NextToken value in the starting-token argument of a subsequent command. Do not use the NextToken response element directly outside of the AWS CLI. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p> A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -184,5 +204,9 @@ impl DescribeAcceleratorsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p> A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

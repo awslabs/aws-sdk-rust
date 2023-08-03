@@ -62,6 +62,10 @@ impl GetAuthorizationTokenOutputBuilder {
         self.authorization_token = input;
         self
     }
+    /// <p> The returned authentication token. </p>
+    pub fn get_authorization_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authorization_token
+    }
     /// <p> A timestamp that specifies the date and time the authorization token expires. </p>
     pub fn expiration(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expiration = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl GetAuthorizationTokenOutputBuilder {
     ) -> Self {
         self.expiration = input;
         self
+    }
+    /// <p> A timestamp that specifies the date and time the authorization token expires. </p>
+    pub fn get_expiration(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expiration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

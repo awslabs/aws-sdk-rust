@@ -75,6 +75,10 @@ impl HlsPackageBuilder {
         self.encryption = input;
         self
     }
+    /// An HTTP Live Streaming (HLS) encryption configuration.
+    pub fn get_encryption(&self) -> &::std::option::Option<crate::types::HlsEncryption> {
+        &self.encryption
+    }
     /// Appends an item to `hls_manifests`.
     ///
     /// To override the contents of this collection use [`set_hls_manifests`](Self::set_hls_manifests).
@@ -94,6 +98,12 @@ impl HlsPackageBuilder {
         self.hls_manifests = input;
         self
     }
+    /// A list of HLS manifest configurations.
+    pub fn get_hls_manifests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HlsManifest>> {
+        &self.hls_manifests
+    }
     /// When enabled, MediaPackage passes through digital video broadcasting (DVB) subtitles into the output.
     pub fn include_dvb_subtitles(mut self, input: bool) -> Self {
         self.include_dvb_subtitles = ::std::option::Option::Some(input);
@@ -103,6 +113,10 @@ impl HlsPackageBuilder {
     pub fn set_include_dvb_subtitles(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_dvb_subtitles = input;
         self
+    }
+    /// When enabled, MediaPackage passes through digital video broadcasting (DVB) subtitles into the output.
+    pub fn get_include_dvb_subtitles(&self) -> &::std::option::Option<bool> {
+        &self.include_dvb_subtitles
     }
     /// Duration (in seconds) of each fragment. Actual fragments will be rounded to the nearest multiple of the source fragment duration.
     pub fn segment_duration_seconds(mut self, input: i32) -> Self {
@@ -114,6 +128,10 @@ impl HlsPackageBuilder {
         self.segment_duration_seconds = input;
         self
     }
+    /// Duration (in seconds) of each fragment. Actual fragments will be rounded to the nearest multiple of the source fragment duration.
+    pub fn get_segment_duration_seconds(&self) -> &::std::option::Option<i32> {
+        &self.segment_duration_seconds
+    }
     /// When enabled, audio streams will be placed in rendition groups in the output.
     pub fn use_audio_rendition_group(mut self, input: bool) -> Self {
         self.use_audio_rendition_group = ::std::option::Option::Some(input);
@@ -123,6 +141,10 @@ impl HlsPackageBuilder {
     pub fn set_use_audio_rendition_group(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_audio_rendition_group = input;
         self
+    }
+    /// When enabled, audio streams will be placed in rendition groups in the output.
+    pub fn get_use_audio_rendition_group(&self) -> &::std::option::Option<bool> {
+        &self.use_audio_rendition_group
     }
     /// Consumes the builder and constructs a [`HlsPackage`](crate::types::HlsPackage).
     pub fn build(self) -> crate::types::HlsPackage {

@@ -56,6 +56,12 @@ impl DescribeKeyPairsOutputBuilder {
         self.key_pairs = input;
         self
     }
+    /// <p>Information about the key pairs.</p>
+    pub fn get_key_pairs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyPairInfo>> {
+        &self.key_pairs
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

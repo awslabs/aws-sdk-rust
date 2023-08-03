@@ -48,6 +48,10 @@ impl QuietTimeBuilder {
         self.end = input;
         self
     }
+    /// <p>The specific time when quiet time ends. This value has to use 24-hour notation and be in HH:MM format, where HH is the hour (with a leading zero, if applicable) and MM is the minutes. For example, use 02:30 to represent 2:30 AM, or 14:30 to represent 2:30 PM.</p>
+    pub fn get_end(&self) -> &::std::option::Option<::std::string::String> {
+        &self.end
+    }
     /// <p>The specific time when quiet time begins. This value has to use 24-hour notation and be in HH:MM format, where HH is the hour (with a leading zero, if applicable) and MM is the minutes. For example, use 02:30 to represent 2:30 AM, or 14:30 to represent 2:30 PM.</p>
     pub fn start(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl QuietTimeBuilder {
     pub fn set_start(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start = input;
         self
+    }
+    /// <p>The specific time when quiet time begins. This value has to use 24-hour notation and be in HH:MM format, where HH is the hour (with a leading zero, if applicable) and MM is the minutes. For example, use 02:30 to represent 2:30 AM, or 14:30 to represent 2:30 PM.</p>
+    pub fn get_start(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start
     }
     /// Consumes the builder and constructs a [`QuietTime`](crate::types::QuietTime).
     pub fn build(self) -> crate::types::QuietTime {

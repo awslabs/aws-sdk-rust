@@ -53,6 +53,10 @@ impl DisassociateConnectionFromLagInputBuilder {
         self.connection_id = input;
         self
     }
+    /// <p>The ID of the connection.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_id
+    }
     /// <p>The ID of the LAG.</p>
     pub fn lag_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lag_id = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl DisassociateConnectionFromLagInputBuilder {
     pub fn set_lag_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lag_id = input;
         self
+    }
+    /// <p>The ID of the LAG.</p>
+    pub fn get_lag_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lag_id
     }
     /// Consumes the builder and constructs a [`DisassociateConnectionFromLagInput`](crate::operation::disassociate_connection_from_lag::DisassociateConnectionFromLagInput).
     pub fn build(

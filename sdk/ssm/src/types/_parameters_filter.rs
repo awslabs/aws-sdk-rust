@@ -51,6 +51,10 @@ impl ParametersFilterBuilder {
         self.key = input;
         self
     }
+    /// <p>The name of the filter.</p>
+    pub fn get_key(&self) -> &::std::option::Option<crate::types::ParametersFilterKey> {
+        &self.key
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -69,6 +73,10 @@ impl ParametersFilterBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>The filter values.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`ParametersFilter`](crate::types::ParametersFilter).
     pub fn build(self) -> crate::types::ParametersFilter {

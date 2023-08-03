@@ -40,6 +40,10 @@ impl LexV2BotBuilder {
         self.alias_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Lex V2 bot.</p>
+    pub fn get_alias_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias_arn
+    }
     /// Consumes the builder and constructs a [`LexV2Bot`](crate::types::LexV2Bot).
     pub fn build(self) -> crate::types::LexV2Bot {
         crate::types::LexV2Bot {

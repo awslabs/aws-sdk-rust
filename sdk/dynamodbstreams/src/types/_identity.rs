@@ -48,6 +48,10 @@ impl IdentityBuilder {
         self.principal_id = input;
         self
     }
+    /// <p>A unique identifier for the entity that made the call. For Time To Live, the principalId is "dynamodb.amazonaws.com".</p>
+    pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal_id
+    }
     /// <p>The type of the identity. For Time To Live, the type is "Service".</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl IdentityBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the identity. For Time To Live, the type is "Service".</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`Identity`](crate::types::Identity).
     pub fn build(self) -> crate::types::Identity {

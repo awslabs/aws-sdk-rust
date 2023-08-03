@@ -57,6 +57,10 @@ impl CreateHomeRegionControlInputBuilder {
         self.home_region = input;
         self
     }
+    /// <p>The name of the home region of the calling account.</p>
+    pub fn get_home_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.home_region
+    }
     /// <p>The account for which this command sets up a home region control. The <code>Target</code> is always of type <code>ACCOUNT</code>.</p>
     pub fn target(mut self, input: crate::types::Target) -> Self {
         self.target = ::std::option::Option::Some(input);
@@ -67,6 +71,10 @@ impl CreateHomeRegionControlInputBuilder {
         self.target = input;
         self
     }
+    /// <p>The account for which this command sets up a home region control. The <code>Target</code> is always of type <code>ACCOUNT</code>.</p>
+    pub fn get_target(&self) -> &::std::option::Option<crate::types::Target> {
+        &self.target
+    }
     /// <p>Optional Boolean flag to indicate whether any effect should take place. It tests whether the caller has permission to make the call.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -76,6 +84,10 @@ impl CreateHomeRegionControlInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Optional Boolean flag to indicate whether any effect should take place. It tests whether the caller has permission to make the call.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`CreateHomeRegionControlInput`](crate::operation::create_home_region_control::CreateHomeRegionControlInput).
     pub fn build(

@@ -68,6 +68,10 @@ impl ServiceCatalogProvisioningDetailsBuilder {
         self.product_id = input;
         self
     }
+    /// <p>The ID of the product to provision.</p>
+    pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_id
+    }
     /// <p>The ID of the provisioning artifact.</p>
     pub fn provisioning_artifact_id(
         mut self,
@@ -84,6 +88,10 @@ impl ServiceCatalogProvisioningDetailsBuilder {
         self.provisioning_artifact_id = input;
         self
     }
+    /// <p>The ID of the provisioning artifact.</p>
+    pub fn get_provisioning_artifact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provisioning_artifact_id
+    }
     /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. </p>
     pub fn path_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path_id = ::std::option::Option::Some(input.into());
@@ -93,6 +101,10 @@ impl ServiceCatalogProvisioningDetailsBuilder {
     pub fn set_path_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path_id = input;
         self
+    }
+    /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. </p>
+    pub fn get_path_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path_id
     }
     /// Appends an item to `provisioning_parameters`.
     ///
@@ -112,6 +124,12 @@ impl ServiceCatalogProvisioningDetailsBuilder {
     ) -> Self {
         self.provisioning_parameters = input;
         self
+    }
+    /// <p>A list of key value pairs that you specify when you provision a product.</p>
+    pub fn get_provisioning_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisioningParameter>> {
+        &self.provisioning_parameters
     }
     /// Consumes the builder and constructs a [`ServiceCatalogProvisioningDetails`](crate::types::ServiceCatalogProvisioningDetails).
     pub fn build(self) -> crate::types::ServiceCatalogProvisioningDetails {

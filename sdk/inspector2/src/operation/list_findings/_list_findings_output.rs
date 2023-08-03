@@ -54,6 +54,10 @@ impl ListFindingsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `findings`.
     ///
     /// To override the contents of this collection use [`set_findings`](Self::set_findings).
@@ -72,6 +76,10 @@ impl ListFindingsOutputBuilder {
     ) -> Self {
         self.findings = input;
         self
+    }
+    /// <p>Contains details on the findings in your environment.</p>
+    pub fn get_findings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Finding>> {
+        &self.findings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

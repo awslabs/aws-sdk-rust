@@ -90,6 +90,10 @@ impl UpdateRuleVersionInputBuilder {
         self.rule = input;
         self
     }
+    /// <p>The rule to update.</p>
+    pub fn get_rule(&self) -> &::std::option::Option<crate::types::Rule> {
+        &self.rule
+    }
     /// <p>The description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -99,6 +103,10 @@ impl UpdateRuleVersionInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The rule expression.</p>
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -110,6 +118,10 @@ impl UpdateRuleVersionInputBuilder {
         self.expression = input;
         self
     }
+    /// <p>The rule expression.</p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expression
+    }
     /// <p>The language.</p>
     pub fn language(mut self, input: crate::types::Language) -> Self {
         self.language = ::std::option::Option::Some(input);
@@ -119,6 +131,10 @@ impl UpdateRuleVersionInputBuilder {
     pub fn set_language(mut self, input: ::std::option::Option<crate::types::Language>) -> Self {
         self.language = input;
         self
+    }
+    /// <p>The language.</p>
+    pub fn get_language(&self) -> &::std::option::Option<crate::types::Language> {
+        &self.language
     }
     /// Appends an item to `outcomes`.
     ///
@@ -139,6 +155,10 @@ impl UpdateRuleVersionInputBuilder {
         self.outcomes = input;
         self
     }
+    /// <p>The outcomes.</p>
+    pub fn get_outcomes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.outcomes
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -157,6 +177,10 @@ impl UpdateRuleVersionInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags to assign to the rule version.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`UpdateRuleVersionInput`](crate::operation::update_rule_version::UpdateRuleVersionInput).
     pub fn build(

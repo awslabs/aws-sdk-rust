@@ -55,6 +55,10 @@ impl GetSourceRepositoryCloneUrlsInputBuilder {
         self.space_name = input;
         self
     }
+    /// <p>The name of the space.</p>
+    pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.space_name
+    }
     /// <p>The name of the project in the space.</p>
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl GetSourceRepositoryCloneUrlsInputBuilder {
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_name = input;
         self
+    }
+    /// <p>The name of the project in the space.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
     }
     /// <p>The name of the source repository.</p>
     pub fn source_repository_name(
@@ -80,6 +88,10 @@ impl GetSourceRepositoryCloneUrlsInputBuilder {
     ) -> Self {
         self.source_repository_name = input;
         self
+    }
+    /// <p>The name of the source repository.</p>
+    pub fn get_source_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_repository_name
     }
     /// Consumes the builder and constructs a [`GetSourceRepositoryCloneUrlsInput`](crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsInput).
     pub fn build(

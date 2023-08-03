@@ -52,6 +52,12 @@ impl GeneratedPolicyResultBuilder {
         self.properties = input;
         self
     }
+    /// <p>A <code>GeneratedPolicyProperties</code> object that contains properties of the generated policy.</p>
+    pub fn get_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::GeneratedPolicyProperties> {
+        &self.properties
+    }
     /// Appends an item to `generated_policies`.
     ///
     /// To override the contents of this collection use [`set_generated_policies`](Self::set_generated_policies).
@@ -70,6 +76,12 @@ impl GeneratedPolicyResultBuilder {
     ) -> Self {
         self.generated_policies = input;
         self
+    }
+    /// <p>The text to use as the content for the new policy. The policy is created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
+    pub fn get_generated_policies(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GeneratedPolicy>> {
+        &self.generated_policies
     }
     /// Consumes the builder and constructs a [`GeneratedPolicyResult`](crate::types::GeneratedPolicyResult).
     pub fn build(self) -> crate::types::GeneratedPolicyResult {

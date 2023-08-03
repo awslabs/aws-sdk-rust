@@ -80,6 +80,10 @@ impl PackageImportJobBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The job's ID.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>The job's type.</p>
     pub fn job_type(mut self, input: crate::types::PackageImportJobType) -> Self {
         self.job_type = ::std::option::Option::Some(input);
@@ -93,6 +97,10 @@ impl PackageImportJobBuilder {
         self.job_type = input;
         self
     }
+    /// <p>The job's type.</p>
+    pub fn get_job_type(&self) -> &::std::option::Option<crate::types::PackageImportJobType> {
+        &self.job_type
+    }
     /// <p>The job's status.</p>
     pub fn status(mut self, input: crate::types::PackageImportJobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -105,6 +113,10 @@ impl PackageImportJobBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The job's status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::PackageImportJobStatus> {
+        &self.status
     }
     /// <p>The job's status message.</p>
     pub fn status_message(
@@ -122,6 +134,10 @@ impl PackageImportJobBuilder {
         self.status_message = input;
         self
     }
+    /// <p>The job's status message.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>When the job was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
@@ -135,6 +151,10 @@ impl PackageImportJobBuilder {
         self.created_time = input;
         self
     }
+    /// <p>When the job was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>When the job was updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -147,6 +167,10 @@ impl PackageImportJobBuilder {
     ) -> Self {
         self.last_updated_time = input;
         self
+    }
+    /// <p>When the job was updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
     }
     /// Consumes the builder and constructs a [`PackageImportJob`](crate::types::PackageImportJob).
     pub fn build(self) -> crate::types::PackageImportJob {

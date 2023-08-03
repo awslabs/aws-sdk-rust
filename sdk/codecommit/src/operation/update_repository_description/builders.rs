@@ -38,6 +38,10 @@ impl UpdateRepositoryDescriptionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateRepositoryDescription as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_repository_description::builders::UpdateRepositoryDescriptionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +138,10 @@ impl UpdateRepositoryDescriptionFluentBuilder {
         self.inner = self.inner.set_repository_name(input);
         self
     }
+    /// <p>The name of the repository to set or change the comment or description for.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository_name()
+    }
     /// <p>The new comment or description for the specified repository. Repository descriptions are limited to 1,000 characters.</p>
     pub fn repository_description(
         mut self,
@@ -149,5 +157,9 @@ impl UpdateRepositoryDescriptionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_repository_description(input);
         self
+    }
+    /// <p>The new comment or description for the specified repository. Repository descriptions are limited to 1,000 characters.</p>
+    pub fn get_repository_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository_description()
     }
 }

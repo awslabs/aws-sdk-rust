@@ -36,6 +36,12 @@ impl DeleteSessionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteSession as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_session::builders::DeleteSessionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl DeleteSessionFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The ID of the session to be deleted.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The name of the origin of the delete session request.</p>
     pub fn request_origin(
         mut self,
@@ -133,5 +143,9 @@ impl DeleteSessionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_request_origin(input);
         self
+    }
+    /// <p>The name of the origin of the delete session request.</p>
+    pub fn get_request_origin(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_request_origin()
     }
 }

@@ -61,6 +61,10 @@ impl CreateSubscriptionDefinitionVersionInputBuilder {
         self.amzn_client_token = input;
         self
     }
+    /// A client token used to correlate requests and responses.
+    pub fn get_amzn_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.amzn_client_token
+    }
     /// The ID of the subscription definition.
     pub fn subscription_definition_id(
         mut self,
@@ -76,6 +80,10 @@ impl CreateSubscriptionDefinitionVersionInputBuilder {
     ) -> Self {
         self.subscription_definition_id = input;
         self
+    }
+    /// The ID of the subscription definition.
+    pub fn get_subscription_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscription_definition_id
     }
     /// Appends an item to `subscriptions`.
     ///
@@ -95,6 +103,12 @@ impl CreateSubscriptionDefinitionVersionInputBuilder {
     ) -> Self {
         self.subscriptions = input;
         self
+    }
+    /// A list of subscriptions.
+    pub fn get_subscriptions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscription>> {
+        &self.subscriptions
     }
     /// Consumes the builder and constructs a [`CreateSubscriptionDefinitionVersionInput`](crate::operation::create_subscription_definition_version::CreateSubscriptionDefinitionVersionInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_subscription_definition_version::CreateSubscriptionDefinitionVersionInput, ::aws_smithy_http::operation::error::BuildError>{

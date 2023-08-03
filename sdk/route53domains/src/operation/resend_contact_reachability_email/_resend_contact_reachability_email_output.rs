@@ -62,6 +62,10 @@ impl ResendContactReachabilityEmailOutputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The domain name for which you requested a confirmation email.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The email address for the registrant contact at the time that we sent the verification email.</p>
     pub fn email_address(
         mut self,
@@ -78,6 +82,10 @@ impl ResendContactReachabilityEmailOutputBuilder {
         self.email_address = input;
         self
     }
+    /// <p>The email address for the registrant contact at the time that we sent the verification email.</p>
+    pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_address
+    }
     /// <p> <code>True</code> if the email address for the registrant contact has already been verified, and <code>false</code> otherwise. If the email address has already been verified, we don't send another confirmation email.</p>
     pub fn is_already_verified(mut self, input: bool) -> Self {
         self.is_already_verified = ::std::option::Option::Some(input);
@@ -87,6 +95,10 @@ impl ResendContactReachabilityEmailOutputBuilder {
     pub fn set_is_already_verified(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_already_verified = input;
         self
+    }
+    /// <p> <code>True</code> if the email address for the registrant contact has already been verified, and <code>false</code> otherwise. If the email address has already been verified, we don't send another confirmation email.</p>
+    pub fn get_is_already_verified(&self) -> &::std::option::Option<bool> {
+        &self.is_already_verified
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

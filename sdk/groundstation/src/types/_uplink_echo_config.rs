@@ -49,6 +49,10 @@ impl UplinkEchoConfigBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Whether or not an uplink <code>Config</code> is enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>ARN of an uplink <code>Config</code>.</p>
     pub fn antenna_uplink_config_arn(
         mut self,
@@ -64,6 +68,10 @@ impl UplinkEchoConfigBuilder {
     ) -> Self {
         self.antenna_uplink_config_arn = input;
         self
+    }
+    /// <p>ARN of an uplink <code>Config</code>.</p>
+    pub fn get_antenna_uplink_config_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.antenna_uplink_config_arn
     }
     /// Consumes the builder and constructs a [`UplinkEchoConfig`](crate::types::UplinkEchoConfig).
     pub fn build(self) -> crate::types::UplinkEchoConfig {

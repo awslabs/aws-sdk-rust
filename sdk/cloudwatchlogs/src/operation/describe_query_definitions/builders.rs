@@ -37,6 +37,13 @@ impl DescribeQueryDefinitionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeQueryDefinitions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_query_definitions::builders::DescribeQueryDefinitionsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,12 @@ impl DescribeQueryDefinitionsFluentBuilder {
         self.inner = self.inner.set_query_definition_name_prefix(input);
         self
     }
+    /// <p>Use this parameter to filter your results to only the query definitions that have names that start with the prefix you specify.</p>
+    pub fn get_query_definition_name_prefix(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_query_definition_name_prefix()
+    }
     /// <p>Limits the number of returned query definitions to the specified number.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -143,6 +156,10 @@ impl DescribeQueryDefinitionsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>Limits the number of returned query definitions to the specified number.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -152,5 +169,9 @@ impl DescribeQueryDefinitionsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

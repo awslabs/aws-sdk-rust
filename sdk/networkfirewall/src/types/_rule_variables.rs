@@ -79,6 +79,14 @@ impl RuleVariablesBuilder {
         self.ip_sets = input;
         self
     }
+    /// <p>A list of IP addresses and address ranges, in CIDR notation. </p>
+    pub fn get_ip_sets(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::IpSet>,
+    > {
+        &self.ip_sets
+    }
     /// Adds a key-value pair to `port_sets`.
     ///
     /// To override the contents of this collection use [`set_port_sets`](Self::set_port_sets).
@@ -103,6 +111,14 @@ impl RuleVariablesBuilder {
     ) -> Self {
         self.port_sets = input;
         self
+    }
+    /// <p>A list of port ranges. </p>
+    pub fn get_port_sets(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::PortSet>,
+    > {
+        &self.port_sets
     }
     /// Consumes the builder and constructs a [`RuleVariables`](crate::types::RuleVariables).
     pub fn build(self) -> crate::types::RuleVariables {

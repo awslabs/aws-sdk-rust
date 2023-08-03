@@ -48,6 +48,10 @@ impl GetServiceInstanceInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of a service instance that you want to get the detailed data for.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The name of the service that you want the service instance input for.</p>
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl GetServiceInstanceInputBuilder {
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_name = input;
         self
+    }
+    /// <p>The name of the service that you want the service instance input for.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
     }
     /// Consumes the builder and constructs a [`GetServiceInstanceInput`](crate::operation::get_service_instance::GetServiceInstanceInput).
     pub fn build(

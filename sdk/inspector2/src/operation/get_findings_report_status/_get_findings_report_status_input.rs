@@ -41,6 +41,10 @@ impl GetFindingsReportStatusInputBuilder {
         self.report_id = input;
         self
     }
+    /// <p>The ID of the report to retrieve the status of.</p>
+    pub fn get_report_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.report_id
+    }
     /// Consumes the builder and constructs a [`GetFindingsReportStatusInput`](crate::operation::get_findings_report_status::GetFindingsReportStatusInput).
     pub fn build(
         self,

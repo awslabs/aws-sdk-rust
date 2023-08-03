@@ -54,6 +54,10 @@ impl AccessLogSettingsBuilder {
         self.destination_arn = input;
         self
     }
+    /// <p>The ARN of the CloudWatch Logs log group to receive access logs.</p>
+    pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_arn
+    }
     /// <p>A single line format of the access logs of data, as specified by selected $context variables. The format must include at least $context.requestId.</p>
     pub fn format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.format = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl AccessLogSettingsBuilder {
     pub fn set_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.format = input;
         self
+    }
+    /// <p>A single line format of the access logs of data, as specified by selected $context variables. The format must include at least $context.requestId.</p>
+    pub fn get_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.format
     }
     /// Consumes the builder and constructs a [`AccessLogSettings`](crate::types::AccessLogSettings).
     pub fn build(self) -> crate::types::AccessLogSettings {

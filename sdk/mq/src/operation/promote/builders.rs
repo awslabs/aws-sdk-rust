@@ -36,6 +36,10 @@ impl PromoteFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the Promote as a reference.
+    pub fn as_input(&self) -> &crate::operation::promote::builders::PromoteInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl PromoteFluentBuilder {
         self.inner = self.inner.set_broker_id(input);
         self
     }
+    /// <p>The unique ID that Amazon MQ generates for the broker.</p>
+    pub fn get_broker_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_broker_id()
+    }
     /// <p>The Promote mode requested. Note: Valid values for the parameter are SWITCHOVER, FAILOVER.</p>
     pub fn mode(mut self, input: crate::types::PromoteMode) -> Self {
         self.inner = self.inner.mode(input);
@@ -127,5 +135,9 @@ impl PromoteFluentBuilder {
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::PromoteMode>) -> Self {
         self.inner = self.inner.set_mode(input);
         self
+    }
+    /// <p>The Promote mode requested. Note: Valid values for the parameter are SWITCHOVER, FAILOVER.</p>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::PromoteMode> {
+        self.inner.get_mode()
     }
 }

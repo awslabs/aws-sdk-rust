@@ -40,6 +40,10 @@ impl SnapshotOptionsBuilder {
         self.automated_snapshot_start_hour = input;
         self
     }
+    /// <p>The time, in UTC format, when OpenSearch Service takes a daily automated snapshot of the specified domain. Default is <code>0</code> hours.</p>
+    pub fn get_automated_snapshot_start_hour(&self) -> &::std::option::Option<i32> {
+        &self.automated_snapshot_start_hour
+    }
     /// Consumes the builder and constructs a [`SnapshotOptions`](crate::types::SnapshotOptions).
     pub fn build(self) -> crate::types::SnapshotOptions {
         crate::types::SnapshotOptions {

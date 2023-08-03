@@ -39,6 +39,13 @@ impl BatchGetDocumentStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchGetDocumentStatus as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_get_document_status::builders::BatchGetDocumentStatusInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +136,10 @@ impl BatchGetDocumentStatusFluentBuilder {
         self.inner = self.inner.set_index_id(input);
         self
     }
+    /// <p>The identifier of the index to add documents to. The index ID is returned by the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html">CreateIndex </a> API.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_index_id()
+    }
     /// Appends an item to `DocumentInfoList`.
     ///
     /// To override the contents of this collection use [`set_document_info_list`](Self::set_document_info_list).
@@ -145,5 +156,11 @@ impl BatchGetDocumentStatusFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_document_info_list(input);
         self
+    }
+    /// <p>A list of <code>DocumentInfo</code> objects that identify the documents for which to get the status. You identify the documents by their document ID and optional attributes.</p>
+    pub fn get_document_info_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentInfo>> {
+        self.inner.get_document_info_list()
     }
 }

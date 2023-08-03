@@ -39,6 +39,10 @@ impl DisassociateUserAccessLoggingSettingsInputBuilder {
         self.portal_arn = input;
         self
     }
+    /// <p>The ARN of the web portal.</p>
+    pub fn get_portal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portal_arn
+    }
     /// Consumes the builder and constructs a [`DisassociateUserAccessLoggingSettingsInput`](crate::operation::disassociate_user_access_logging_settings::DisassociateUserAccessLoggingSettingsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_user_access_logging_settings::DisassociateUserAccessLoggingSettingsInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

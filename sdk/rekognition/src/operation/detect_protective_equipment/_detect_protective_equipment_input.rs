@@ -51,6 +51,10 @@ impl DetectProtectiveEquipmentInputBuilder {
         self.image = input;
         self
     }
+    /// <p>The image in which you want to detect PPE on detected persons. The image can be passed as image bytes or you can reference an image stored in an Amazon S3 bucket. </p>
+    pub fn get_image(&self) -> &::std::option::Option<crate::types::Image> {
+        &self.image
+    }
     /// <p>An array of PPE types that you want to summarize.</p>
     pub fn summarization_attributes(
         mut self,
@@ -66,6 +70,12 @@ impl DetectProtectiveEquipmentInputBuilder {
     ) -> Self {
         self.summarization_attributes = input;
         self
+    }
+    /// <p>An array of PPE types that you want to summarize.</p>
+    pub fn get_summarization_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProtectiveEquipmentSummarizationAttributes> {
+        &self.summarization_attributes
     }
     /// Consumes the builder and constructs a [`DetectProtectiveEquipmentInput`](crate::operation::detect_protective_equipment::DetectProtectiveEquipmentInput).
     pub fn build(

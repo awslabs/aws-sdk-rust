@@ -40,6 +40,10 @@ impl DetectorStateSummaryBuilder {
         self.state_name = input;
         self
     }
+    /// <p>The name of the state.</p>
+    pub fn get_state_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_name
+    }
     /// Consumes the builder and constructs a [`DetectorStateSummary`](crate::types::DetectorStateSummary).
     pub fn build(self) -> crate::types::DetectorStateSummary {
         crate::types::DetectorStateSummary {

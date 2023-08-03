@@ -36,6 +36,12 @@ impl UpdateArchiveRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateArchiveRule as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_archive_rule::builders::UpdateArchiveRuleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateArchiveRuleFluentBuilder {
         self.inner = self.inner.set_analyzer_name(input);
         self
     }
+    /// <p>The name of the analyzer to update the archive rules for.</p>
+    pub fn get_analyzer_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_analyzer_name()
+    }
     /// <p>The name of the rule to update.</p>
     pub fn rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rule_name(input.into());
@@ -141,6 +151,10 @@ impl UpdateArchiveRuleFluentBuilder {
     pub fn set_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rule_name(input);
         self
+    }
+    /// <p>The name of the rule to update.</p>
+    pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rule_name()
     }
     /// Adds a key-value pair to `filter`.
     ///
@@ -165,6 +179,14 @@ impl UpdateArchiveRuleFluentBuilder {
         self.inner = self.inner.set_filter(input);
         self
     }
+    /// <p>A filter to match for the rules to update. Only rules that match the filter are updated.</p>
+    pub fn get_filter(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::Criterion>,
+    > {
+        self.inner.get_filter()
+    }
     /// <p>A client token.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -174,5 +196,9 @@ impl UpdateArchiveRuleFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A client token.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

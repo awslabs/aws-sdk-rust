@@ -67,6 +67,12 @@ impl DisableFastSnapshotRestoresInputBuilder {
         self.availability_zones = input;
         self
     }
+    /// <p>One or more Availability Zones. For example, <code>us-east-2a</code>.</p>
+    pub fn get_availability_zones(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.availability_zones
+    }
     /// Appends an item to `source_snapshot_ids`.
     ///
     /// To override the contents of this collection use [`set_source_snapshot_ids`](Self::set_source_snapshot_ids).
@@ -89,6 +95,12 @@ impl DisableFastSnapshotRestoresInputBuilder {
         self.source_snapshot_ids = input;
         self
     }
+    /// <p>The IDs of one or more snapshots. For example, <code>snap-1234567890abcdef0</code>.</p>
+    pub fn get_source_snapshot_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.source_snapshot_ids
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -98,6 +110,10 @@ impl DisableFastSnapshotRestoresInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`DisableFastSnapshotRestoresInput`](crate::operation::disable_fast_snapshot_restores::DisableFastSnapshotRestoresInput).
     pub fn build(

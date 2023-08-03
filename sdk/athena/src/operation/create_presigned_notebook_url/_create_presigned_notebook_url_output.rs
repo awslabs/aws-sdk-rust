@@ -62,6 +62,10 @@ impl CreatePresignedNotebookUrlOutputBuilder {
         self.notebook_url = input;
         self
     }
+    /// <p>The URL of the notebook. The URL includes the authentication token and notebook file name and points directly to the opened notebook.</p>
+    pub fn get_notebook_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notebook_url
+    }
     /// <p>The authentication token for the notebook.</p>
     pub fn auth_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auth_token = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl CreatePresignedNotebookUrlOutputBuilder {
         self.auth_token = input;
         self
     }
+    /// <p>The authentication token for the notebook.</p>
+    pub fn get_auth_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auth_token
+    }
     /// <p>The UTC epoch time when the authentication token expires.</p>
     pub fn auth_token_expiration_time(mut self, input: i64) -> Self {
         self.auth_token_expiration_time = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl CreatePresignedNotebookUrlOutputBuilder {
     pub fn set_auth_token_expiration_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.auth_token_expiration_time = input;
         self
+    }
+    /// <p>The UTC epoch time when the authentication token expires.</p>
+    pub fn get_auth_token_expiration_time(&self) -> &::std::option::Option<i64> {
+        &self.auth_token_expiration_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

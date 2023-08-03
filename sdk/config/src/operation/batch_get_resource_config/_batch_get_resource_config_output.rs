@@ -71,6 +71,12 @@ impl BatchGetResourceConfigOutputBuilder {
         self.base_configuration_items = input;
         self
     }
+    /// <p>A list that contains the current configuration of one or more resources.</p>
+    pub fn get_base_configuration_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BaseConfigurationItem>> {
+        &self.base_configuration_items
+    }
     /// Appends an item to `unprocessed_resource_keys`.
     ///
     /// To override the contents of this collection use [`set_unprocessed_resource_keys`](Self::set_unprocessed_resource_keys).
@@ -89,6 +95,12 @@ impl BatchGetResourceConfigOutputBuilder {
     ) -> Self {
         self.unprocessed_resource_keys = input;
         self
+    }
+    /// <p>A list of resource keys that were not processed with the current response. The unprocessesResourceKeys value is in the same form as ResourceKeys, so the value can be directly provided to a subsequent BatchGetResourceConfig operation. If there are no unprocessed resource keys, the response contains an empty unprocessedResourceKeys list. </p>
+    pub fn get_unprocessed_resource_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>> {
+        &self.unprocessed_resource_keys
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

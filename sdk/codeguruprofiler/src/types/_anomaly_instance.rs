@@ -64,6 +64,10 @@ impl AnomalyInstanceBuilder {
         self.id = input;
         self
     }
+    /// <p> The universally unique identifier (UUID) of an instance of an anomaly in a metric. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p> The start time of the period during which the metric is flagged as anomalous. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl AnomalyInstanceBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p> The start time of the period during which the metric is flagged as anomalous. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p> The end time of the period during which the metric is flagged as anomalous. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -90,6 +98,10 @@ impl AnomalyInstanceBuilder {
         self.end_time = input;
         self
     }
+    /// <p> The end time of the period during which the metric is flagged as anomalous. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>Feedback type on a specific instance of anomaly submitted by the user.</p>
     pub fn user_feedback(mut self, input: crate::types::UserFeedback) -> Self {
         self.user_feedback = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl AnomalyInstanceBuilder {
     ) -> Self {
         self.user_feedback = input;
         self
+    }
+    /// <p>Feedback type on a specific instance of anomaly submitted by the user.</p>
+    pub fn get_user_feedback(&self) -> &::std::option::Option<crate::types::UserFeedback> {
+        &self.user_feedback
     }
     /// Consumes the builder and constructs a [`AnomalyInstance`](crate::types::AnomalyInstance).
     pub fn build(self) -> crate::types::AnomalyInstance {

@@ -37,6 +37,13 @@ impl ActivateAnomalyDetectorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ActivateAnomalyDetector as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::activate_anomaly_detector::builders::ActivateAnomalyDetectorInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +139,9 @@ impl ActivateAnomalyDetectorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_anomaly_detector_arn(input);
         self
+    }
+    /// <p>The ARN of the anomaly detector.</p>
+    pub fn get_anomaly_detector_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_anomaly_detector_arn()
     }
 }

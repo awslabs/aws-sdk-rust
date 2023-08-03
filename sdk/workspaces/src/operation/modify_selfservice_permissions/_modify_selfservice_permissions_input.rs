@@ -49,6 +49,10 @@ impl ModifySelfservicePermissionsInputBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The identifier of the directory.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>The permissions to enable or disable self-service capabilities.</p>
     pub fn selfservice_permissions(mut self, input: crate::types::SelfservicePermissions) -> Self {
         self.selfservice_permissions = ::std::option::Option::Some(input);
@@ -61,6 +65,12 @@ impl ModifySelfservicePermissionsInputBuilder {
     ) -> Self {
         self.selfservice_permissions = input;
         self
+    }
+    /// <p>The permissions to enable or disable self-service capabilities.</p>
+    pub fn get_selfservice_permissions(
+        &self,
+    ) -> &::std::option::Option<crate::types::SelfservicePermissions> {
+        &self.selfservice_permissions
     }
     /// Consumes the builder and constructs a [`ModifySelfservicePermissionsInput`](crate::operation::modify_selfservice_permissions::ModifySelfservicePermissionsInput).
     pub fn build(

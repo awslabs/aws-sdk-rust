@@ -72,6 +72,10 @@ impl SpigotBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the transform node.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `inputs`.
     ///
     /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
@@ -91,6 +95,10 @@ impl SpigotBuilder {
         self.inputs = input;
         self
     }
+    /// <p>The data inputs identified by their node names.</p>
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inputs
+    }
     /// <p>A path in Amazon S3 where the transform will write a subset of records from the dataset to a JSON file in an Amazon S3 bucket.</p>
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path = ::std::option::Option::Some(input.into());
@@ -100,6 +108,10 @@ impl SpigotBuilder {
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path = input;
         self
+    }
+    /// <p>A path in Amazon S3 where the transform will write a subset of records from the dataset to a JSON file in an Amazon S3 bucket.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
     }
     /// <p>Specifies a number of records to write starting from the beginning of the dataset.</p>
     pub fn topk(mut self, input: i32) -> Self {
@@ -111,6 +123,10 @@ impl SpigotBuilder {
         self.topk = input;
         self
     }
+    /// <p>Specifies a number of records to write starting from the beginning of the dataset.</p>
+    pub fn get_topk(&self) -> &::std::option::Option<i32> {
+        &self.topk
+    }
     /// <p>The probability (a decimal value with a maximum value of 1) of picking any given record. A value of 1 indicates that each row read from the dataset should be included in the sample output.</p>
     pub fn prob(mut self, input: f64) -> Self {
         self.prob = ::std::option::Option::Some(input);
@@ -120,6 +136,10 @@ impl SpigotBuilder {
     pub fn set_prob(mut self, input: ::std::option::Option<f64>) -> Self {
         self.prob = input;
         self
+    }
+    /// <p>The probability (a decimal value with a maximum value of 1) of picking any given record. A value of 1 indicates that each row read from the dataset should be included in the sample output.</p>
+    pub fn get_prob(&self) -> &::std::option::Option<f64> {
+        &self.prob
     }
     /// Consumes the builder and constructs a [`Spigot`](crate::types::Spigot).
     pub fn build(self) -> crate::types::Spigot {

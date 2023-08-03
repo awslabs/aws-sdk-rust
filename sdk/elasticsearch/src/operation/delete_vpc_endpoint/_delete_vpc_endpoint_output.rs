@@ -51,6 +51,12 @@ impl DeleteVpcEndpointOutputBuilder {
         self.vpc_endpoint_summary = input;
         self
     }
+    /// <p>Information about the deleted endpoint, including its current status (<code>DELETING</code> or <code>DELETE_FAILED</code>).</p>
+    pub fn get_vpc_endpoint_summary(
+        &self,
+    ) -> &::std::option::Option<crate::types::VpcEndpointSummary> {
+        &self.vpc_endpoint_summary
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

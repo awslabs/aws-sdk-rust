@@ -52,6 +52,10 @@ impl GroupConfigurationItemBuilder {
         self.r#type = input;
         self
     }
+    /// <p>Specifies the type of group configuration item. Each item must have a unique value for <code>type</code>. For the list of types that you can specify for a configuration item, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource types and parameters</a>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// Appends an item to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
@@ -70,6 +74,12 @@ impl GroupConfigurationItemBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>A collection of parameters for this group configuration item. For the list of parameters that you can use with each configuration item type, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource types and parameters</a>.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupConfigurationParameter>> {
+        &self.parameters
     }
     /// Consumes the builder and constructs a [`GroupConfigurationItem`](crate::types::GroupConfigurationItem).
     pub fn build(self) -> crate::types::GroupConfigurationItem {

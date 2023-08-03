@@ -130,6 +130,14 @@ impl SearchProvisionedProductsInputBuilder {
         self.accept_language = input;
         self
     }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accept_language
+    }
     /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
     pub fn access_level_filter(mut self, input: crate::types::AccessLevelFilter) -> Self {
         self.access_level_filter = ::std::option::Option::Some(input);
@@ -142,6 +150,12 @@ impl SearchProvisionedProductsInputBuilder {
     ) -> Self {
         self.access_level_filter = input;
         self
+    }
+    /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
+    pub fn get_access_level_filter(
+        &self,
+    ) -> &::std::option::Option<crate::types::AccessLevelFilter> {
+        &self.access_level_filter
     }
     /// Adds a key-value pair to `filters`.
     ///
@@ -175,6 +189,19 @@ impl SearchProvisionedProductsInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>The search filters.</p>
+    /// <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>, <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>, <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and <code>provisioningArtifactName</code>.</p>
+    /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::ProvisionedProductViewFilterBy,
+            ::std::vec::Vec<::std::string::String>,
+        >,
+    > {
+        &self.filters
+    }
     /// <p>The sort field. If no value is specified, the results are not sorted. The valid values are <code>arn</code>, <code>id</code>, <code>name</code>, and <code>lastRecordId</code>.</p>
     pub fn sort_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sort_by = ::std::option::Option::Some(input.into());
@@ -184,6 +211,10 @@ impl SearchProvisionedProductsInputBuilder {
     pub fn set_sort_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sort_by = input;
         self
+    }
+    /// <p>The sort field. If no value is specified, the results are not sorted. The valid values are <code>arn</code>, <code>id</code>, <code>name</code>, and <code>lastRecordId</code>.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sort_by
     }
     /// <p>The sort order. If no value is specified, the results are not sorted.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
@@ -195,6 +226,10 @@ impl SearchProvisionedProductsInputBuilder {
         self.sort_order = input;
         self
     }
+    /// <p>The sort order. If no value is specified, the results are not sorted.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.sort_order
+    }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.page_size = ::std::option::Option::Some(input);
@@ -205,6 +240,10 @@ impl SearchProvisionedProductsInputBuilder {
         self.page_size = input;
         self
     }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        &self.page_size
+    }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.page_token = ::std::option::Option::Some(input.into());
@@ -214,6 +253,10 @@ impl SearchProvisionedProductsInputBuilder {
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.page_token = input;
         self
+    }
+    /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.page_token
     }
     /// Consumes the builder and constructs a [`SearchProvisionedProductsInput`](crate::operation::search_provisioned_products::SearchProvisionedProductsInput).
     pub fn build(

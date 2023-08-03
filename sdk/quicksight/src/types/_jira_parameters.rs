@@ -46,6 +46,10 @@ impl JiraParametersBuilder {
         self.site_base_url = input;
         self
     }
+    /// <p>The base URL of the Jira site.</p>
+    pub fn get_site_base_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.site_base_url
+    }
     /// Consumes the builder and constructs a [`JiraParameters`](crate::types::JiraParameters).
     pub fn build(self) -> crate::types::JiraParameters {
         crate::types::JiraParameters {

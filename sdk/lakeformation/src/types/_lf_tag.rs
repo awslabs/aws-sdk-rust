@@ -48,6 +48,10 @@ impl LfTagBuilder {
         self.tag_key = input;
         self
     }
+    /// <p>The key-name for the LF-tag.</p>
+    pub fn get_tag_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tag_key
+    }
     /// Appends an item to `tag_values`.
     ///
     /// To override the contents of this collection use [`set_tag_values`](Self::set_tag_values).
@@ -66,6 +70,10 @@ impl LfTagBuilder {
     ) -> Self {
         self.tag_values = input;
         self
+    }
+    /// <p>A list of possible values an attribute can take.</p>
+    pub fn get_tag_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tag_values
     }
     /// Consumes the builder and constructs a [`LfTag`](crate::types::LfTag).
     pub fn build(self) -> crate::types::LfTag {

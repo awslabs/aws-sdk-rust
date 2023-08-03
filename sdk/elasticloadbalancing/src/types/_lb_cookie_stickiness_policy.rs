@@ -48,6 +48,10 @@ impl LbCookieStickinessPolicyBuilder {
         self.policy_name = input;
         self
     }
+    /// <p>The name of the policy. This name must be unique within the set of policies for this load balancer.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_name
+    }
     /// <p>The time period, in seconds, after which the cookie should be considered stale. If this parameter is not specified, the stickiness session lasts for the duration of the browser session.</p>
     pub fn cookie_expiration_period(mut self, input: i64) -> Self {
         self.cookie_expiration_period = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl LbCookieStickinessPolicyBuilder {
     pub fn set_cookie_expiration_period(mut self, input: ::std::option::Option<i64>) -> Self {
         self.cookie_expiration_period = input;
         self
+    }
+    /// <p>The time period, in seconds, after which the cookie should be considered stale. If this parameter is not specified, the stickiness session lasts for the duration of the browser session.</p>
+    pub fn get_cookie_expiration_period(&self) -> &::std::option::Option<i64> {
+        &self.cookie_expiration_period
     }
     /// Consumes the builder and constructs a [`LbCookieStickinessPolicy`](crate::types::LbCookieStickinessPolicy).
     pub fn build(self) -> crate::types::LbCookieStickinessPolicy {

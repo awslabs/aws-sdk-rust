@@ -54,6 +54,10 @@ impl NodeFabricAttributesBuilder {
         self.peer_endpoint = input;
         self
     }
+    /// <p>The endpoint that identifies the peer node for all services except peer channel-based event services.</p>
+    pub fn get_peer_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.peer_endpoint
+    }
     /// <p>The endpoint that identifies the peer node for peer channel-based event services.</p>
     pub fn peer_event_endpoint(
         mut self,
@@ -69,6 +73,10 @@ impl NodeFabricAttributesBuilder {
     ) -> Self {
         self.peer_event_endpoint = input;
         self
+    }
+    /// <p>The endpoint that identifies the peer node for peer channel-based event services.</p>
+    pub fn get_peer_event_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.peer_event_endpoint
     }
     /// Consumes the builder and constructs a [`NodeFabricAttributes`](crate::types::NodeFabricAttributes).
     pub fn build(self) -> crate::types::NodeFabricAttributes {

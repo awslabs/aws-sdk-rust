@@ -79,6 +79,10 @@ impl ResponseHeadersPolicyAccessControlAllowMethodsBuilder {
         self.quantity = input;
         self
     }
+    /// <p>The number of HTTP methods in the list.</p>
+    pub fn get_quantity(&self) -> &::std::option::Option<i32> {
+        &self.quantity
+    }
     /// Appends an item to `items`.
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
@@ -124,6 +128,25 @@ impl ResponseHeadersPolicyAccessControlAllowMethodsBuilder {
     ) -> Self {
         self.items = input;
         self
+    }
+    /// <p>The list of HTTP methods. Valid values are:</p>
+    /// <ul>
+    /// <li> <p> <code>GET</code> </p> </li>
+    /// <li> <p> <code>DELETE</code> </p> </li>
+    /// <li> <p> <code>HEAD</code> </p> </li>
+    /// <li> <p> <code>OPTIONS</code> </p> </li>
+    /// <li> <p> <code>PATCH</code> </p> </li>
+    /// <li> <p> <code>POST</code> </p> </li>
+    /// <li> <p> <code>PUT</code> </p> </li>
+    /// <li> <p> <code>ALL</code> </p> </li>
+    /// </ul>
+    /// <p> <code>ALL</code> is a special value that includes all of the listed HTTP methods.</p>
+    pub fn get_items(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::ResponseHeadersPolicyAccessControlAllowMethodsValues>,
+    > {
+        &self.items
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyAccessControlAllowMethods`](crate::types::ResponseHeadersPolicyAccessControlAllowMethods).
     pub fn build(self) -> crate::types::ResponseHeadersPolicyAccessControlAllowMethods {

@@ -49,6 +49,12 @@ impl OwnershipControlsBuilder {
         self.rules = input;
         self
     }
+    /// <p>The container element for an ownership control rule.</p>
+    pub fn get_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OwnershipControlsRule>> {
+        &self.rules
+    }
     /// Consumes the builder and constructs a [`OwnershipControls`](crate::types::OwnershipControls).
     pub fn build(self) -> crate::types::OwnershipControls {
         crate::types::OwnershipControls { rules: self.rules }

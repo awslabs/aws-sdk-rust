@@ -45,6 +45,12 @@ impl S3SetObjectAclOperationBuilder {
         self.access_control_policy = input;
         self
     }
+    /// <p></p>
+    pub fn get_access_control_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3AccessControlPolicy> {
+        &self.access_control_policy
+    }
     /// Consumes the builder and constructs a [`S3SetObjectAclOperation`](crate::types::S3SetObjectAclOperation).
     pub fn build(self) -> crate::types::S3SetObjectAclOperation {
         crate::types::S3SetObjectAclOperation {

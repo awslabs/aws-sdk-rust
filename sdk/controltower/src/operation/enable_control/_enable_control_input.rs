@@ -53,6 +53,10 @@ impl EnableControlInputBuilder {
         self.control_identifier = input;
         self
     }
+    /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> guardrail.</p>
+    pub fn get_control_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_identifier
+    }
     /// <p>The ARN of the organizational unit.</p>
     pub fn target_identifier(
         mut self,
@@ -68,6 +72,10 @@ impl EnableControlInputBuilder {
     ) -> Self {
         self.target_identifier = input;
         self
+    }
+    /// <p>The ARN of the organizational unit.</p>
+    pub fn get_target_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_identifier
     }
     /// Consumes the builder and constructs a [`EnableControlInput`](crate::operation::enable_control::EnableControlInput).
     pub fn build(

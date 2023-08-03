@@ -41,6 +41,10 @@ impl GetBootstrapBrokersInputBuilder {
         self.cluster_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_arn
+    }
     /// Consumes the builder and constructs a [`GetBootstrapBrokersInput`](crate::operation::get_bootstrap_brokers::GetBootstrapBrokersInput).
     pub fn build(
         self,

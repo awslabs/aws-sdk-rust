@@ -63,6 +63,10 @@ impl CreateUsagePlanKeyInputBuilder {
         self.usage_plan_id = input;
         self
     }
+    /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-created UsagePlanKey resource representing a plan customer.</p>
+    pub fn get_usage_plan_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.usage_plan_id
+    }
     /// <p>The identifier of a UsagePlanKey resource for a plan customer.</p>
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_id = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl CreateUsagePlanKeyInputBuilder {
         self.key_id = input;
         self
     }
+    /// <p>The identifier of a UsagePlanKey resource for a plan customer.</p>
+    pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_id
+    }
     /// <p>The type of a UsagePlanKey resource for a plan customer.</p>
     pub fn key_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_type = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl CreateUsagePlanKeyInputBuilder {
     pub fn set_key_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_type = input;
         self
+    }
+    /// <p>The type of a UsagePlanKey resource for a plan customer.</p>
+    pub fn get_key_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_type
     }
     /// Consumes the builder and constructs a [`CreateUsagePlanKeyInput`](crate::operation::create_usage_plan_key::CreateUsagePlanKeyInput).
     pub fn build(

@@ -63,6 +63,10 @@ impl GetCalendarStateOutputBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of the calendar. An <code>OPEN</code> calendar indicates that actions are allowed to proceed, and a <code>CLOSED</code> calendar indicates that actions aren't allowed to proceed.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::CalendarState> {
+        &self.state
+    }
     /// <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string, that you specified in your command. If you don't specify a time, <code>GetCalendarState</code> uses the current time.</p>
     pub fn at_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.at_time = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl GetCalendarStateOutputBuilder {
     pub fn set_at_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.at_time = input;
         self
+    }
+    /// <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string, that you specified in your command. If you don't specify a time, <code>GetCalendarState</code> uses the current time.</p>
+    pub fn get_at_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.at_time
     }
     /// <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string, that the calendar state will change. If the current calendar state is <code>OPEN</code>, <code>NextTransitionTime</code> indicates when the calendar state changes to <code>CLOSED</code>, and vice-versa.</p>
     pub fn next_transition_time(
@@ -88,6 +96,10 @@ impl GetCalendarStateOutputBuilder {
     ) -> Self {
         self.next_transition_time = input;
         self
+    }
+    /// <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string, that the calendar state will change. If the current calendar state is <code>OPEN</code>, <code>NextTransitionTime</code> indicates when the calendar state changes to <code>CLOSED</code>, and vice-versa.</p>
+    pub fn get_next_transition_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_transition_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

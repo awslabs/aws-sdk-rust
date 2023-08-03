@@ -79,6 +79,10 @@ impl AddThingToThingGroupInputBuilder {
         self.thing_group_name = input;
         self
     }
+    /// <p>The name of the group to which you are adding a thing.</p>
+    pub fn get_thing_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_group_name
+    }
     /// <p>The ARN of the group to which you are adding a thing.</p>
     pub fn thing_group_arn(
         mut self,
@@ -95,6 +99,10 @@ impl AddThingToThingGroupInputBuilder {
         self.thing_group_arn = input;
         self
     }
+    /// <p>The ARN of the group to which you are adding a thing.</p>
+    pub fn get_thing_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_group_arn
+    }
     /// <p>The name of the thing to add to a group.</p>
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_name = ::std::option::Option::Some(input.into());
@@ -104,6 +112,10 @@ impl AddThingToThingGroupInputBuilder {
     pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_name = input;
         self
+    }
+    /// <p>The name of the thing to add to a group.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_name
     }
     /// <p>The ARN of the thing to add to a group.</p>
     pub fn thing_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -115,6 +127,10 @@ impl AddThingToThingGroupInputBuilder {
         self.thing_arn = input;
         self
     }
+    /// <p>The ARN of the thing to add to a group.</p>
+    pub fn get_thing_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_arn
+    }
     /// <p>Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group.</p>
     pub fn override_dynamic_groups(mut self, input: bool) -> Self {
         self.override_dynamic_groups = ::std::option::Option::Some(input);
@@ -124,6 +140,10 @@ impl AddThingToThingGroupInputBuilder {
     pub fn set_override_dynamic_groups(mut self, input: ::std::option::Option<bool>) -> Self {
         self.override_dynamic_groups = input;
         self
+    }
+    /// <p>Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group.</p>
+    pub fn get_override_dynamic_groups(&self) -> &::std::option::Option<bool> {
+        &self.override_dynamic_groups
     }
     /// Consumes the builder and constructs a [`AddThingToThingGroupInput`](crate::operation::add_thing_to_thing_group::AddThingToThingGroupInput).
     pub fn build(

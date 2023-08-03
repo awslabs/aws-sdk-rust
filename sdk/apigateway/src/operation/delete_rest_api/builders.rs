@@ -36,6 +36,12 @@ impl DeleteRestApiFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteRestApi as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_rest_api::builders::DeleteRestApiInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -117,5 +123,9 @@ impl DeleteRestApiFluentBuilder {
     pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rest_api_id(input);
         self
+    }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rest_api_id()
     }
 }

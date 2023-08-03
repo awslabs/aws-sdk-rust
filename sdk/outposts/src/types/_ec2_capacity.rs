@@ -56,6 +56,10 @@ impl Ec2CapacityBuilder {
         self.family = input;
         self
     }
+    /// <p> The family of the EC2 capacity. </p>
+    pub fn get_family(&self) -> &::std::option::Option<::std::string::String> {
+        &self.family
+    }
     /// <p> The maximum size of the EC2 capacity. </p>
     pub fn max_size(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_size = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl Ec2CapacityBuilder {
         self.max_size = input;
         self
     }
+    /// <p> The maximum size of the EC2 capacity. </p>
+    pub fn get_max_size(&self) -> &::std::option::Option<::std::string::String> {
+        &self.max_size
+    }
     /// <p> The quantity of the EC2 capacity. </p>
     pub fn quantity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quantity = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl Ec2CapacityBuilder {
     pub fn set_quantity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.quantity = input;
         self
+    }
+    /// <p> The quantity of the EC2 capacity. </p>
+    pub fn get_quantity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quantity
     }
     /// Consumes the builder and constructs a [`Ec2Capacity`](crate::types::Ec2Capacity).
     pub fn build(self) -> crate::types::Ec2Capacity {

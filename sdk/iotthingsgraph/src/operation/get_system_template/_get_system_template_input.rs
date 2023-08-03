@@ -56,6 +56,12 @@ impl GetSystemTemplateInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the system to get. This ID must be in the user's namespace.</p>
+    /// <p>The ID should be in the following format.</p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The number that specifies the revision of the system to get.</p>
     pub fn revision_number(mut self, input: i64) -> Self {
         self.revision_number = ::std::option::Option::Some(input);
@@ -65,6 +71,10 @@ impl GetSystemTemplateInputBuilder {
     pub fn set_revision_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.revision_number = input;
         self
+    }
+    /// <p>The number that specifies the revision of the system to get.</p>
+    pub fn get_revision_number(&self) -> &::std::option::Option<i64> {
+        &self.revision_number
     }
     /// Consumes the builder and constructs a [`GetSystemTemplateInput`](crate::operation::get_system_template::GetSystemTemplateInput).
     pub fn build(

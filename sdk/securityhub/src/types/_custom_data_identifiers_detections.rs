@@ -64,6 +64,10 @@ impl CustomDataIdentifiersDetectionsBuilder {
         self.count = input;
         self
     }
+    /// <p>The total number of occurrences of sensitive data that were detected.</p>
+    pub fn get_count(&self) -> &::std::option::Option<i64> {
+        &self.count
+    }
     /// <p>The ARN of the custom identifier that was used to detect the sensitive data.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl CustomDataIdentifiersDetectionsBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the custom identifier that was used to detect the sensitive data.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>he name of the custom identifier that detected the sensitive data.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl CustomDataIdentifiersDetectionsBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>he name of the custom identifier that detected the sensitive data.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Details about the sensitive data that was detected.</p>
     pub fn occurrences(mut self, input: crate::types::Occurrences) -> Self {
@@ -96,6 +108,10 @@ impl CustomDataIdentifiersDetectionsBuilder {
     ) -> Self {
         self.occurrences = input;
         self
+    }
+    /// <p>Details about the sensitive data that was detected.</p>
+    pub fn get_occurrences(&self) -> &::std::option::Option<crate::types::Occurrences> {
+        &self.occurrences
     }
     /// Consumes the builder and constructs a [`CustomDataIdentifiersDetections`](crate::types::CustomDataIdentifiersDetections).
     pub fn build(self) -> crate::types::CustomDataIdentifiersDetections {

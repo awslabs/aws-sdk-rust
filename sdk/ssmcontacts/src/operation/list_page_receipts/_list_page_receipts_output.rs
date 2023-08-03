@@ -55,6 +55,10 @@ impl ListPageReceiptsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The pagination token to continue to the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `receipts`.
     ///
     /// To override the contents of this collection use [`set_receipts`](Self::set_receipts).
@@ -73,6 +77,10 @@ impl ListPageReceiptsOutputBuilder {
     ) -> Self {
         self.receipts = input;
         self
+    }
+    /// <p>A list of each acknowledgement.</p>
+    pub fn get_receipts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Receipt>> {
+        &self.receipts
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

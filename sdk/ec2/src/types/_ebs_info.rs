@@ -69,6 +69,12 @@ impl EbsInfoBuilder {
         self.ebs_optimized_support = input;
         self
     }
+    /// <p>Indicates whether the instance type is Amazon EBS-optimized. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-optimized instances</a> in <i>Amazon EC2 User Guide</i>.</p>
+    pub fn get_ebs_optimized_support(
+        &self,
+    ) -> &::std::option::Option<crate::types::EbsOptimizedSupport> {
+        &self.ebs_optimized_support
+    }
     /// <p>Indicates whether Amazon EBS encryption is supported.</p>
     pub fn encryption_support(mut self, input: crate::types::EbsEncryptionSupport) -> Self {
         self.encryption_support = ::std::option::Option::Some(input);
@@ -81,6 +87,12 @@ impl EbsInfoBuilder {
     ) -> Self {
         self.encryption_support = input;
         self
+    }
+    /// <p>Indicates whether Amazon EBS encryption is supported.</p>
+    pub fn get_encryption_support(
+        &self,
+    ) -> &::std::option::Option<crate::types::EbsEncryptionSupport> {
+        &self.encryption_support
     }
     /// <p>Describes the optimized EBS performance for the instance type.</p>
     pub fn ebs_optimized_info(mut self, input: crate::types::EbsOptimizedInfo) -> Self {
@@ -95,6 +107,10 @@ impl EbsInfoBuilder {
         self.ebs_optimized_info = input;
         self
     }
+    /// <p>Describes the optimized EBS performance for the instance type.</p>
+    pub fn get_ebs_optimized_info(&self) -> &::std::option::Option<crate::types::EbsOptimizedInfo> {
+        &self.ebs_optimized_info
+    }
     /// <p>Indicates whether non-volatile memory express (NVMe) is supported.</p>
     pub fn nvme_support(mut self, input: crate::types::EbsNvmeSupport) -> Self {
         self.nvme_support = ::std::option::Option::Some(input);
@@ -107,6 +123,10 @@ impl EbsInfoBuilder {
     ) -> Self {
         self.nvme_support = input;
         self
+    }
+    /// <p>Indicates whether non-volatile memory express (NVMe) is supported.</p>
+    pub fn get_nvme_support(&self) -> &::std::option::Option<crate::types::EbsNvmeSupport> {
+        &self.nvme_support
     }
     /// Consumes the builder and constructs a [`EbsInfo`](crate::types::EbsInfo).
     pub fn build(self) -> crate::types::EbsInfo {

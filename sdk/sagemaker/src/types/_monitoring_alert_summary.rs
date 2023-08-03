@@ -94,6 +94,10 @@ impl MonitoringAlertSummaryBuilder {
         self.monitoring_alert_name = input;
         self
     }
+    /// <p>The name of a monitoring alert.</p>
+    pub fn get_monitoring_alert_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitoring_alert_name
+    }
     /// <p>A timestamp that indicates when a monitor alert was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -106,6 +110,10 @@ impl MonitoringAlertSummaryBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>A timestamp that indicates when a monitor alert was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>A timestamp that indicates when a monitor alert was last updated.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -120,6 +128,10 @@ impl MonitoringAlertSummaryBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p>A timestamp that indicates when a monitor alert was last updated.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     /// <p>The current status of an alert.</p>
     pub fn alert_status(mut self, input: crate::types::MonitoringAlertStatus) -> Self {
         self.alert_status = ::std::option::Option::Some(input);
@@ -133,6 +145,10 @@ impl MonitoringAlertSummaryBuilder {
         self.alert_status = input;
         self
     }
+    /// <p>The current status of an alert.</p>
+    pub fn get_alert_status(&self) -> &::std::option::Option<crate::types::MonitoringAlertStatus> {
+        &self.alert_status
+    }
     /// <p>Within <code>EvaluationPeriod</code>, how many execution failures will raise an alert.</p>
     pub fn datapoints_to_alert(mut self, input: i32) -> Self {
         self.datapoints_to_alert = ::std::option::Option::Some(input);
@@ -143,6 +159,10 @@ impl MonitoringAlertSummaryBuilder {
         self.datapoints_to_alert = input;
         self
     }
+    /// <p>Within <code>EvaluationPeriod</code>, how many execution failures will raise an alert.</p>
+    pub fn get_datapoints_to_alert(&self) -> &::std::option::Option<i32> {
+        &self.datapoints_to_alert
+    }
     /// <p>The number of most recent monitoring executions to consider when evaluating alert status.</p>
     pub fn evaluation_period(mut self, input: i32) -> Self {
         self.evaluation_period = ::std::option::Option::Some(input);
@@ -152,6 +172,10 @@ impl MonitoringAlertSummaryBuilder {
     pub fn set_evaluation_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.evaluation_period = input;
         self
+    }
+    /// <p>The number of most recent monitoring executions to consider when evaluating alert status.</p>
+    pub fn get_evaluation_period(&self) -> &::std::option::Option<i32> {
+        &self.evaluation_period
     }
     /// <p>A list of alert actions taken in response to an alert going into <code>InAlert</code> status.</p>
     pub fn actions(mut self, input: crate::types::MonitoringAlertActions) -> Self {
@@ -165,6 +189,10 @@ impl MonitoringAlertSummaryBuilder {
     ) -> Self {
         self.actions = input;
         self
+    }
+    /// <p>A list of alert actions taken in response to an alert going into <code>InAlert</code> status.</p>
+    pub fn get_actions(&self) -> &::std::option::Option<crate::types::MonitoringAlertActions> {
+        &self.actions
     }
     /// Consumes the builder and constructs a [`MonitoringAlertSummary`](crate::types::MonitoringAlertSummary).
     pub fn build(self) -> crate::types::MonitoringAlertSummary {

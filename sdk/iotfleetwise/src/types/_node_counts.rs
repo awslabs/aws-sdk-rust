@@ -72,6 +72,10 @@ impl NodeCountsBuilder {
         self.total_nodes = input;
         self
     }
+    /// <p>The total number of nodes in a vehicle network.</p>
+    pub fn get_total_nodes(&self) -> &::std::option::Option<i32> {
+        &self.total_nodes
+    }
     /// <p>The total number of nodes in a vehicle network that represent branches.</p>
     pub fn total_branches(mut self, input: i32) -> Self {
         self.total_branches = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl NodeCountsBuilder {
     pub fn set_total_branches(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_branches = input;
         self
+    }
+    /// <p>The total number of nodes in a vehicle network that represent branches.</p>
+    pub fn get_total_branches(&self) -> &::std::option::Option<i32> {
+        &self.total_branches
     }
     /// <p>The total number of nodes in a vehicle network that represent sensors.</p>
     pub fn total_sensors(mut self, input: i32) -> Self {
@@ -92,6 +100,10 @@ impl NodeCountsBuilder {
         self.total_sensors = input;
         self
     }
+    /// <p>The total number of nodes in a vehicle network that represent sensors.</p>
+    pub fn get_total_sensors(&self) -> &::std::option::Option<i32> {
+        &self.total_sensors
+    }
     /// <p>The total number of nodes in a vehicle network that represent attributes.</p>
     pub fn total_attributes(mut self, input: i32) -> Self {
         self.total_attributes = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl NodeCountsBuilder {
         self.total_attributes = input;
         self
     }
+    /// <p>The total number of nodes in a vehicle network that represent attributes.</p>
+    pub fn get_total_attributes(&self) -> &::std::option::Option<i32> {
+        &self.total_attributes
+    }
     /// <p>The total number of nodes in a vehicle network that represent actuators.</p>
     pub fn total_actuators(mut self, input: i32) -> Self {
         self.total_actuators = ::std::option::Option::Some(input);
@@ -111,6 +127,10 @@ impl NodeCountsBuilder {
     pub fn set_total_actuators(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_actuators = input;
         self
+    }
+    /// <p>The total number of nodes in a vehicle network that represent actuators.</p>
+    pub fn get_total_actuators(&self) -> &::std::option::Option<i32> {
+        &self.total_actuators
     }
     /// Consumes the builder and constructs a [`NodeCounts`](crate::types::NodeCounts).
     pub fn build(self) -> crate::types::NodeCounts {

@@ -87,6 +87,10 @@ impl CreateDatasetInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
     pub fn format(mut self, input: crate::types::InputFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
@@ -96,6 +100,10 @@ impl CreateDatasetInputBuilder {
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::InputFormat>) -> Self {
         self.format = input;
         self
+    }
+    /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::InputFormat> {
+        &self.format
     }
     /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
     pub fn format_options(mut self, input: crate::types::FormatOptions) -> Self {
@@ -110,6 +118,10 @@ impl CreateDatasetInputBuilder {
         self.format_options = input;
         self
     }
+    /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
+    pub fn get_format_options(&self) -> &::std::option::Option<crate::types::FormatOptions> {
+        &self.format_options
+    }
     /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
     pub fn input(mut self, input: crate::types::Input) -> Self {
         self.input = ::std::option::Option::Some(input);
@@ -119,6 +131,10 @@ impl CreateDatasetInputBuilder {
     pub fn set_input(mut self, input: ::std::option::Option<crate::types::Input>) -> Self {
         self.input = input;
         self
+    }
+    /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
+    pub fn get_input(&self) -> &::std::option::Option<crate::types::Input> {
+        &self.input
     }
     /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
     pub fn path_options(mut self, input: crate::types::PathOptions) -> Self {
@@ -132,6 +148,10 @@ impl CreateDatasetInputBuilder {
     ) -> Self {
         self.path_options = input;
         self
+    }
+    /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
+    pub fn get_path_options(&self) -> &::std::option::Option<crate::types::PathOptions> {
+        &self.path_options
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -157,6 +177,14 @@ impl CreateDatasetInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Metadata tags to apply to this dataset.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDatasetInput`](crate::operation::create_dataset::CreateDatasetInput).
     pub fn build(

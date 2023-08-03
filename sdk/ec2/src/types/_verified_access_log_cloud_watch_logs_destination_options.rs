@@ -49,6 +49,10 @@ impl VerifiedAccessLogCloudWatchLogsDestinationOptionsBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Indicates whether logging is enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>The ID of the CloudWatch Logs log group.</p>
     pub fn log_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl VerifiedAccessLogCloudWatchLogsDestinationOptionsBuilder {
     pub fn set_log_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_group = input;
         self
+    }
+    /// <p>The ID of the CloudWatch Logs log group.</p>
+    pub fn get_log_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group
     }
     /// Consumes the builder and constructs a [`VerifiedAccessLogCloudWatchLogsDestinationOptions`](crate::types::VerifiedAccessLogCloudWatchLogsDestinationOptions).
     pub fn build(self) -> crate::types::VerifiedAccessLogCloudWatchLogsDestinationOptions {

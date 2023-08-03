@@ -66,6 +66,10 @@ impl CreateVpcIngressConnectionInputBuilder {
         self.service_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for this App Runner service that is used to create the VPC Ingress Connection resource.</p>
+    pub fn get_service_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_arn
+    }
     /// <p>A name for the VPC Ingress Connection resource. It must be unique across all the active VPC Ingress Connections in your Amazon Web Services account in the Amazon Web Services Region. </p>
     pub fn vpc_ingress_connection_name(
         mut self,
@@ -82,6 +86,10 @@ impl CreateVpcIngressConnectionInputBuilder {
         self.vpc_ingress_connection_name = input;
         self
     }
+    /// <p>A name for the VPC Ingress Connection resource. It must be unique across all the active VPC Ingress Connections in your Amazon Web Services account in the Amazon Web Services Region. </p>
+    pub fn get_vpc_ingress_connection_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_ingress_connection_name
+    }
     /// <p>Specifications for the customer’s Amazon VPC and the related Amazon Web Services PrivateLink VPC endpoint that are used to create the VPC Ingress Connection resource.</p>
     pub fn ingress_vpc_configuration(
         mut self,
@@ -97,6 +105,12 @@ impl CreateVpcIngressConnectionInputBuilder {
     ) -> Self {
         self.ingress_vpc_configuration = input;
         self
+    }
+    /// <p>Specifications for the customer’s Amazon VPC and the related Amazon Web Services PrivateLink VPC endpoint that are used to create the VPC Ingress Connection resource.</p>
+    pub fn get_ingress_vpc_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::IngressVpcConfiguration> {
+        &self.ingress_vpc_configuration
     }
     /// Appends an item to `tags`.
     ///
@@ -116,6 +130,10 @@ impl CreateVpcIngressConnectionInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>An optional list of metadata items that you can associate with the VPC Ingress Connection resource. A tag is a key-value pair.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateVpcIngressConnectionInput`](crate::operation::create_vpc_ingress_connection::CreateVpcIngressConnectionInput).
     pub fn build(

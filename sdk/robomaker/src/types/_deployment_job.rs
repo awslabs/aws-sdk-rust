@@ -100,6 +100,10 @@ impl DeploymentJobBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the deployment job.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
     pub fn fleet(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet = ::std::option::Option::Some(input.into());
@@ -109,6 +113,10 @@ impl DeploymentJobBuilder {
     pub fn set_fleet(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    pub fn get_fleet(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet
     }
     /// <p>The status of the deployment job.</p>
     pub fn status(mut self, input: crate::types::DeploymentStatus) -> Self {
@@ -122,6 +130,10 @@ impl DeploymentJobBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the deployment job.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DeploymentStatus> {
+        &self.status
     }
     /// Appends an item to `deployment_application_configs`.
     ///
@@ -145,6 +157,12 @@ impl DeploymentJobBuilder {
         self.deployment_application_configs = input;
         self
     }
+    /// <p>The deployment application configuration.</p>
+    pub fn get_deployment_application_configs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentApplicationConfig>> {
+        &self.deployment_application_configs
+    }
     /// <p>The deployment configuration.</p>
     pub fn deployment_config(mut self, input: crate::types::DeploymentConfig) -> Self {
         self.deployment_config = ::std::option::Option::Some(input);
@@ -157,6 +175,10 @@ impl DeploymentJobBuilder {
     ) -> Self {
         self.deployment_config = input;
         self
+    }
+    /// <p>The deployment configuration.</p>
+    pub fn get_deployment_config(&self) -> &::std::option::Option<crate::types::DeploymentConfig> {
+        &self.deployment_config
     }
     /// <p>A short description of the reason why the deployment job failed.</p>
     pub fn failure_reason(
@@ -174,6 +196,10 @@ impl DeploymentJobBuilder {
         self.failure_reason = input;
         self
     }
+    /// <p>A short description of the reason why the deployment job failed.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
     /// <p>The deployment job failure code.</p>
     pub fn failure_code(mut self, input: crate::types::DeploymentJobErrorCode) -> Self {
         self.failure_code = ::std::option::Option::Some(input);
@@ -187,6 +213,10 @@ impl DeploymentJobBuilder {
         self.failure_code = input;
         self
     }
+    /// <p>The deployment job failure code.</p>
+    pub fn get_failure_code(&self) -> &::std::option::Option<crate::types::DeploymentJobErrorCode> {
+        &self.failure_code
+    }
     /// <p>The time, in milliseconds since the epoch, when the deployment job was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -199,6 +229,10 @@ impl DeploymentJobBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The time, in milliseconds since the epoch, when the deployment job was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// Consumes the builder and constructs a [`DeploymentJob`](crate::types::DeploymentJob).
     pub fn build(self) -> crate::types::DeploymentJob {

@@ -36,6 +36,10 @@ impl PutFeedbackFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutFeedback as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_feedback::builders::PutFeedbackInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl PutFeedbackFluentBuilder {
         self.inner = self.inner.set_anomaly_detector_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    pub fn get_anomaly_detector_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_anomaly_detector_arn()
+    }
     /// <p>Feedback for an anomalous metric.</p>
     pub fn anomaly_group_time_series_feedback(
         mut self,
@@ -139,5 +147,11 @@ impl PutFeedbackFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_anomaly_group_time_series_feedback(input);
         self
+    }
+    /// <p>Feedback for an anomalous metric.</p>
+    pub fn get_anomaly_group_time_series_feedback(
+        &self,
+    ) -> &::std::option::Option<crate::types::AnomalyGroupTimeSeriesFeedback> {
+        self.inner.get_anomaly_group_time_series_feedback()
     }
 }

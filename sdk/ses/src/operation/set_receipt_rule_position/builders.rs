@@ -39,6 +39,13 @@ impl SetReceiptRulePositionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SetReceiptRulePosition as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::set_receipt_rule_position::builders::SetReceiptRulePositionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +142,10 @@ impl SetReceiptRulePositionFluentBuilder {
         self.inner = self.inner.set_rule_set_name(input);
         self
     }
+    /// <p>The name of the receipt rule set that contains the receipt rule to reposition.</p>
+    pub fn get_rule_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rule_set_name()
+    }
     /// <p>The name of the receipt rule to reposition.</p>
     pub fn rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rule_name(input.into());
@@ -145,6 +156,10 @@ impl SetReceiptRulePositionFluentBuilder {
         self.inner = self.inner.set_rule_name(input);
         self
     }
+    /// <p>The name of the receipt rule to reposition.</p>
+    pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rule_name()
+    }
     /// <p>The name of the receipt rule after which to place the specified receipt rule.</p>
     pub fn after(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.after(input.into());
@@ -154,5 +169,9 @@ impl SetReceiptRulePositionFluentBuilder {
     pub fn set_after(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_after(input);
         self
+    }
+    /// <p>The name of the receipt rule after which to place the specified receipt rule.</p>
+    pub fn get_after(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_after()
     }
 }

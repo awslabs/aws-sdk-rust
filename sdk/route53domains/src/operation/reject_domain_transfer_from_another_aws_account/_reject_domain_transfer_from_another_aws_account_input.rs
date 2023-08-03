@@ -40,6 +40,10 @@ impl RejectDomainTransferFromAnotherAwsAccountInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The name of the domain that was specified when another Amazon Web Services account submitted a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request. </p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// Consumes the builder and constructs a [`RejectDomainTransferFromAnotherAwsAccountInput`](crate::operation::reject_domain_transfer_from_another_aws_account::RejectDomainTransferFromAnotherAwsAccountInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::reject_domain_transfer_from_another_aws_account::RejectDomainTransferFromAnotherAwsAccountInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

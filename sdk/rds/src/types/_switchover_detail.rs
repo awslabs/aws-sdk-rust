@@ -83,6 +83,10 @@ impl SwitchoverDetailBuilder {
         self.source_member = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of a resource in the blue environment.</p>
+    pub fn get_source_member(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_member
+    }
     /// <p>The Amazon Resource Name (ARN) of a resource in the green environment.</p>
     pub fn target_member(
         mut self,
@@ -98,6 +102,10 @@ impl SwitchoverDetailBuilder {
     ) -> Self {
         self.target_member = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a resource in the green environment.</p>
+    pub fn get_target_member(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_member
     }
     /// <p>The switchover status of a resource in a blue/green deployment.</p>
     /// <p>Values:</p>
@@ -128,6 +136,20 @@ impl SwitchoverDetailBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The switchover status of a resource in a blue/green deployment.</p>
+    /// <p>Values:</p>
+    /// <ul>
+    /// <li> <p> <code>PROVISIONING</code> - The resource is being prepared to switch over.</p> </li>
+    /// <li> <p> <code>AVAILABLE</code> - The resource is ready to switch over.</p> </li>
+    /// <li> <p> <code>SWITCHOVER_IN_PROGRESS</code> - The resource is being switched over.</p> </li>
+    /// <li> <p> <code>SWITCHOVER_COMPLETED</code> - The resource has been switched over.</p> </li>
+    /// <li> <p> <code>SWITCHOVER_FAILED</code> - The resource attempted to switch over but failed.</p> </li>
+    /// <li> <p> <code>MISSING_SOURCE</code> - The source resource has been deleted.</p> </li>
+    /// <li> <p> <code>MISSING_TARGET</code> - The target resource has been deleted.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`SwitchoverDetail`](crate::types::SwitchoverDetail).
     pub fn build(self) -> crate::types::SwitchoverDetail {

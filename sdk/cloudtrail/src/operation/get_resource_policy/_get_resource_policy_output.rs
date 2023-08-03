@@ -55,6 +55,10 @@ impl GetResourcePolicyOutputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) of the CloudTrail channel attached to resource-based policy. </p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p> A JSON-formatted string that contains the resource-based policy attached to the CloudTrail channel. </p>
     pub fn resource_policy(
         mut self,
@@ -70,6 +74,10 @@ impl GetResourcePolicyOutputBuilder {
     ) -> Self {
         self.resource_policy = input;
         self
+    }
+    /// <p> A JSON-formatted string that contains the resource-based policy attached to the CloudTrail channel. </p>
+    pub fn get_resource_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_policy
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -118,6 +118,10 @@ impl ExportImageOutputBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the image being exported.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The disk image format for the exported image.</p>
     pub fn disk_image_format(mut self, input: crate::types::DiskImageFormat) -> Self {
         self.disk_image_format = ::std::option::Option::Some(input);
@@ -130,6 +134,10 @@ impl ExportImageOutputBuilder {
     ) -> Self {
         self.disk_image_format = input;
         self
+    }
+    /// <p>The disk image format for the exported image.</p>
+    pub fn get_disk_image_format(&self) -> &::std::option::Option<crate::types::DiskImageFormat> {
+        &self.disk_image_format
     }
     /// <p>The ID of the export image task.</p>
     pub fn export_image_task_id(
@@ -147,6 +155,10 @@ impl ExportImageOutputBuilder {
         self.export_image_task_id = input;
         self
     }
+    /// <p>The ID of the export image task.</p>
+    pub fn get_export_image_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.export_image_task_id
+    }
     /// <p>The ID of the image.</p>
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
@@ -156,6 +168,10 @@ impl ExportImageOutputBuilder {
     pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_id = input;
         self
+    }
+    /// <p>The ID of the image.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_id
     }
     /// <p>The name of the role that grants VM Import/Export permission to export images to your Amazon S3 bucket.</p>
     pub fn role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -167,6 +183,10 @@ impl ExportImageOutputBuilder {
         self.role_name = input;
         self
     }
+    /// <p>The name of the role that grants VM Import/Export permission to export images to your Amazon S3 bucket.</p>
+    pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_name
+    }
     /// <p>The percent complete of the export image task.</p>
     pub fn progress(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.progress = ::std::option::Option::Some(input.into());
@@ -176,6 +196,10 @@ impl ExportImageOutputBuilder {
     pub fn set_progress(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.progress = input;
         self
+    }
+    /// <p>The percent complete of the export image task.</p>
+    pub fn get_progress(&self) -> &::std::option::Option<::std::string::String> {
+        &self.progress
     }
     /// <p>Information about the destination Amazon S3 bucket.</p>
     pub fn s3_export_location(mut self, input: crate::types::ExportTaskS3Location) -> Self {
@@ -190,6 +214,12 @@ impl ExportImageOutputBuilder {
         self.s3_export_location = input;
         self
     }
+    /// <p>Information about the destination Amazon S3 bucket.</p>
+    pub fn get_s3_export_location(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExportTaskS3Location> {
+        &self.s3_export_location
+    }
     /// <p>The status of the export image task. The possible values are <code>active</code>, <code>completed</code>, <code>deleting</code>, and <code>deleted</code>.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -199,6 +229,10 @@ impl ExportImageOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the export image task. The possible values are <code>active</code>, <code>completed</code>, <code>deleting</code>, and <code>deleted</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>The status message for the export image task.</p>
     pub fn status_message(
@@ -215,6 +249,10 @@ impl ExportImageOutputBuilder {
     ) -> Self {
         self.status_message = input;
         self
+    }
+    /// <p>The status message for the export image task.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// Appends an item to `tags`.
     ///
@@ -234,6 +272,10 @@ impl ExportImageOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Any tags assigned to the export image task.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

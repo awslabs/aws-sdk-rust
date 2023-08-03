@@ -36,6 +36,13 @@ impl EnableStageTransitionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the EnableStageTransition as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::enable_stage_transition::builders::EnableStageTransitionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl EnableStageTransitionFluentBuilder {
         self.inner = self.inner.set_pipeline_name(input);
         self
     }
+    /// <p>The name of the pipeline in which you want to enable the flow of artifacts from one stage to another.</p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pipeline_name()
+    }
     /// <p>The name of the stage where you want to enable the transition of artifacts, either into the stage (inbound) or from that stage to the next stage (outbound).</p>
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stage_name(input.into());
@@ -141,6 +152,10 @@ impl EnableStageTransitionFluentBuilder {
     pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stage_name(input);
         self
+    }
+    /// <p>The name of the stage where you want to enable the transition of artifacts, either into the stage (inbound) or from that stage to the next stage (outbound).</p>
+    pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stage_name()
     }
     /// <p>Specifies whether artifacts are allowed to enter the stage and be processed by the actions in that stage (inbound) or whether already processed artifacts are allowed to transition to the next stage (outbound).</p>
     pub fn transition_type(mut self, input: crate::types::StageTransitionType) -> Self {
@@ -154,5 +169,9 @@ impl EnableStageTransitionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_transition_type(input);
         self
+    }
+    /// <p>Specifies whether artifacts are allowed to enter the stage and be processed by the actions in that stage (inbound) or whether already processed artifacts are allowed to transition to the next stage (outbound).</p>
+    pub fn get_transition_type(&self) -> &::std::option::Option<crate::types::StageTransitionType> {
+        self.inner.get_transition_type()
     }
 }

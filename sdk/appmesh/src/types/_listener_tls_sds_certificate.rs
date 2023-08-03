@@ -40,6 +40,10 @@ impl ListenerTlsSdsCertificateBuilder {
         self.secret_name = input;
         self
     }
+    /// <p>A reference to an object that represents the name of the secret requested from the Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or certificate chain.</p>
+    pub fn get_secret_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_name
+    }
     /// Consumes the builder and constructs a [`ListenerTlsSdsCertificate`](crate::types::ListenerTlsSdsCertificate).
     pub fn build(self) -> crate::types::ListenerTlsSdsCertificate {
         crate::types::ListenerTlsSdsCertificate {

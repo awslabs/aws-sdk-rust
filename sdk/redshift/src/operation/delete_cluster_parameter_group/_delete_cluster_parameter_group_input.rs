@@ -66,6 +66,15 @@ impl DeleteClusterParameterGroupInputBuilder {
         self.parameter_group_name = input;
         self
     }
+    /// <p>The name of the parameter group to be deleted.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be the name of an existing cluster parameter group.</p> </li>
+    /// <li> <p>Cannot delete a default cluster parameter group.</p> </li>
+    /// </ul>
+    pub fn get_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_group_name
+    }
     /// Consumes the builder and constructs a [`DeleteClusterParameterGroupInput`](crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupInput).
     pub fn build(
         self,

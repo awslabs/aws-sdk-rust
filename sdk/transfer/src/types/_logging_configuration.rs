@@ -48,6 +48,10 @@ impl LoggingConfigurationBuilder {
         self.logging_role = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your CloudWatch logs.</p>
+    pub fn get_logging_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.logging_role
+    }
     /// <p>The name of the CloudWatch logging group for the Transfer Family server to which this workflow belongs.</p>
     pub fn log_group_name(
         mut self,
@@ -63,6 +67,10 @@ impl LoggingConfigurationBuilder {
     ) -> Self {
         self.log_group_name = input;
         self
+    }
+    /// <p>The name of the CloudWatch logging group for the Transfer Family server to which this workflow belongs.</p>
+    pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group_name
     }
     /// Consumes the builder and constructs a [`LoggingConfiguration`](crate::types::LoggingConfiguration).
     pub fn build(self) -> crate::types::LoggingConfiguration {

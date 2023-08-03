@@ -62,6 +62,10 @@ impl QueueTransitionBuilder {
         self.destination_queue = input;
         self
     }
+    /// The queue that the job was on after the transition.
+    pub fn get_destination_queue(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_queue
+    }
     /// The queue that the job was on before the transition.
     pub fn source_queue(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_queue = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl QueueTransitionBuilder {
     pub fn set_source_queue(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_queue = input;
         self
+    }
+    /// The queue that the job was on before the transition.
+    pub fn get_source_queue(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_queue
     }
     /// The time, in Unix epoch format, that the job moved from the source queue to the destination queue.
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -84,6 +92,10 @@ impl QueueTransitionBuilder {
     ) -> Self {
         self.timestamp = input;
         self
+    }
+    /// The time, in Unix epoch format, that the job moved from the source queue to the destination queue.
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
     }
     /// Consumes the builder and constructs a [`QueueTransition`](crate::types::QueueTransition).
     pub fn build(self) -> crate::types::QueueTransition {

@@ -41,6 +41,10 @@ impl DeleteSequenceStoreInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The sequence store's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`DeleteSequenceStoreInput`](crate::operation::delete_sequence_store::DeleteSequenceStoreInput).
     pub fn build(
         self,

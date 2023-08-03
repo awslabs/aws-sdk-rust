@@ -39,6 +39,10 @@ impl DisassociateDeviceFromRoomInputBuilder {
         self.device_arn = input;
         self
     }
+    /// <p>The ARN of the device to disassociate from a room. Required.</p>
+    pub fn get_device_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_arn
+    }
     /// Consumes the builder and constructs a [`DisassociateDeviceFromRoomInput`](crate::operation::disassociate_device_from_room::DisassociateDeviceFromRoomInput).
     pub fn build(
         self,

@@ -48,6 +48,10 @@ impl Ec2AmiResourceBuilder {
         self.ami_id = input;
         self
     }
+    /// <p>The ID of the AMI in Amazon EC2.</p>
+    pub fn get_ami_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ami_id
+    }
     /// <p>The ID of the AMI on the Snow device.</p>
     pub fn snowball_ami_id(
         mut self,
@@ -63,6 +67,10 @@ impl Ec2AmiResourceBuilder {
     ) -> Self {
         self.snowball_ami_id = input;
         self
+    }
+    /// <p>The ID of the AMI on the Snow device.</p>
+    pub fn get_snowball_ami_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snowball_ami_id
     }
     /// Consumes the builder and constructs a [`Ec2AmiResource`](crate::types::Ec2AmiResource).
     pub fn build(self) -> crate::types::Ec2AmiResource {

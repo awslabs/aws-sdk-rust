@@ -45,6 +45,10 @@ impl DeleteBackupVaultLockConfigurationInputBuilder {
         self.backup_vault_name = input;
         self
     }
+    /// <p>The name of the backup vault from which to delete Backup Vault Lock.</p>
+    pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_vault_name
+    }
     /// Consumes the builder and constructs a [`DeleteBackupVaultLockConfigurationInput`](crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

@@ -36,6 +36,12 @@ impl DescribeExecutionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeExecution as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_execution::builders::DescribeExecutionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DescribeExecutionFluentBuilder {
         self.inner = self.inner.set_task_id(input);
         self
     }
+    /// <p>The ID of the task that the action is describing.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_task_id()
+    }
     /// <p>The ID of the managed device.</p>
     pub fn managed_device_id(
         mut self,
@@ -141,5 +151,9 @@ impl DescribeExecutionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_managed_device_id(input);
         self
+    }
+    /// <p>The ID of the managed device.</p>
+    pub fn get_managed_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_managed_device_id()
     }
 }

@@ -82,6 +82,10 @@ impl ListThingsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return in this operation.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -91,6 +95,10 @@ impl ListThingsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return in this operation.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The attribute name used to search for things.</p>
     pub fn attribute_name(
@@ -108,6 +116,10 @@ impl ListThingsInputBuilder {
         self.attribute_name = input;
         self
     }
+    /// <p>The attribute name used to search for things.</p>
+    pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_name
+    }
     /// <p>The attribute value used to search for things.</p>
     pub fn attribute_value(
         mut self,
@@ -123,6 +135,10 @@ impl ListThingsInputBuilder {
     ) -> Self {
         self.attribute_value = input;
         self
+    }
+    /// <p>The attribute value used to search for things.</p>
+    pub fn get_attribute_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_value
     }
     /// <p>The name of the thing type used to search for things.</p>
     pub fn thing_type_name(
@@ -140,6 +156,10 @@ impl ListThingsInputBuilder {
         self.thing_type_name = input;
         self
     }
+    /// <p>The name of the thing type used to search for things.</p>
+    pub fn get_thing_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_type_name
+    }
     /// <p>When <code>true</code>, the action returns the thing resources with attribute values that start with the <code>attributeValue</code> provided.</p>
     /// <p>When <code>false</code>, or not present, the action returns only the thing resources with attribute values that match the entire <code>attributeValue</code> provided. </p>
     pub fn use_prefix_attribute_value(mut self, input: bool) -> Self {
@@ -151,6 +171,11 @@ impl ListThingsInputBuilder {
     pub fn set_use_prefix_attribute_value(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_prefix_attribute_value = input;
         self
+    }
+    /// <p>When <code>true</code>, the action returns the thing resources with attribute values that start with the <code>attributeValue</code> provided.</p>
+    /// <p>When <code>false</code>, or not present, the action returns only the thing resources with attribute values that match the entire <code>attributeValue</code> provided. </p>
+    pub fn get_use_prefix_attribute_value(&self) -> &::std::option::Option<bool> {
+        &self.use_prefix_attribute_value
     }
     /// Consumes the builder and constructs a [`ListThingsInput`](crate::operation::list_things::ListThingsInput).
     pub fn build(

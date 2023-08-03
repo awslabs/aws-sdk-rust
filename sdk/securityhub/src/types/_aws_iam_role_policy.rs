@@ -40,6 +40,10 @@ impl AwsIamRolePolicyBuilder {
         self.policy_name = input;
         self
     }
+    /// <p>The name of the policy.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_name
+    }
     /// Consumes the builder and constructs a [`AwsIamRolePolicy`](crate::types::AwsIamRolePolicy).
     pub fn build(self) -> crate::types::AwsIamRolePolicy {
         crate::types::AwsIamRolePolicy {

@@ -79,6 +79,10 @@ impl ResolverDnssecConfigBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID for a configuration for DNSSEC validation.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The owner account ID of the virtual private cloud (VPC) for a configuration for DNSSEC validation.</p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_id = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl ResolverDnssecConfigBuilder {
         self.owner_id = input;
         self
     }
+    /// <p>The owner account ID of the virtual private cloud (VPC) for a configuration for DNSSEC validation.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
+    }
     /// <p>The ID of the virtual private cloud (VPC) that you're configuring the DNSSEC validation status for.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -98,6 +106,10 @@ impl ResolverDnssecConfigBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The ID of the virtual private cloud (VPC) that you're configuring the DNSSEC validation status for.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>The validation status for a DNSSEC configuration. The status can be one of the following:</p>
     /// <ul>
@@ -126,6 +138,18 @@ impl ResolverDnssecConfigBuilder {
     ) -> Self {
         self.validation_status = input;
         self
+    }
+    /// <p>The validation status for a DNSSEC configuration. The status can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <b>ENABLING:</b> DNSSEC validation is being enabled but is not complete.</p> </li>
+    /// <li> <p> <b>ENABLED:</b> DNSSEC validation is enabled.</p> </li>
+    /// <li> <p> <b>DISABLING:</b> DNSSEC validation is being disabled but is not complete.</p> </li>
+    /// <li> <p> <b>DISABLED</b> DNSSEC validation is disabled.</p> </li>
+    /// </ul>
+    pub fn get_validation_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResolverDnssecValidationStatus> {
+        &self.validation_status
     }
     /// Consumes the builder and constructs a [`ResolverDnssecConfig`](crate::types::ResolverDnssecConfig).
     pub fn build(self) -> crate::types::ResolverDnssecConfig {

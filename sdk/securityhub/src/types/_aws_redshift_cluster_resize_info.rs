@@ -50,6 +50,10 @@ impl AwsRedshiftClusterResizeInfoBuilder {
         self.allow_cancel_resize = input;
         self
     }
+    /// <p>Indicates whether the resize operation can be canceled.</p>
+    pub fn get_allow_cancel_resize(&self) -> &::std::option::Option<bool> {
+        &self.allow_cancel_resize
+    }
     /// <p>The type of resize operation.</p>
     /// <p>Valid values: <code>ClassicResize</code> </p>
     pub fn resize_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -61,6 +65,11 @@ impl AwsRedshiftClusterResizeInfoBuilder {
     pub fn set_resize_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resize_type = input;
         self
+    }
+    /// <p>The type of resize operation.</p>
+    /// <p>Valid values: <code>ClassicResize</code> </p>
+    pub fn get_resize_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resize_type
     }
     /// Consumes the builder and constructs a [`AwsRedshiftClusterResizeInfo`](crate::types::AwsRedshiftClusterResizeInfo).
     pub fn build(self) -> crate::types::AwsRedshiftClusterResizeInfo {

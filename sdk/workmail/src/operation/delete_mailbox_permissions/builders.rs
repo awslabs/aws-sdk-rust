@@ -36,6 +36,13 @@ impl DeleteMailboxPermissionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteMailboxPermissions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_mailbox_permissions::builders::DeleteMailboxPermissionsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl DeleteMailboxPermissionsFluentBuilder {
         self.inner = self.inner.set_organization_id(input);
         self
     }
+    /// <p>The identifier of the organization under which the member (user or group) exists.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
+    }
     /// <p>The identifier of the member (user or group) that owns the mailbox.</p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.entity_id(input.into());
@@ -142,6 +153,10 @@ impl DeleteMailboxPermissionsFluentBuilder {
         self.inner = self.inner.set_entity_id(input);
         self
     }
+    /// <p>The identifier of the member (user or group) that owns the mailbox.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_entity_id()
+    }
     /// <p>The identifier of the member (user or group) for which to delete granted permissions.</p>
     pub fn grantee_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.grantee_id(input.into());
@@ -151,5 +166,9 @@ impl DeleteMailboxPermissionsFluentBuilder {
     pub fn set_grantee_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_grantee_id(input);
         self
+    }
+    /// <p>The identifier of the member (user or group) for which to delete granted permissions.</p>
+    pub fn get_grantee_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_grantee_id()
     }
 }

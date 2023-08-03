@@ -48,6 +48,10 @@ impl JobErrorBuilder {
         self.code = input;
         self
     }
+    /// <p>The job error code.</p>
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::JobErrorCode> {
+        &self.code
+    }
     /// <p>Specific information about the error. For example, which service quota was exceeded or which resource was not found.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl JobErrorBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>Specific information about the error. For example, which service quota was exceeded or which resource was not found.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`JobError`](crate::types::JobError).
     pub fn build(self) -> crate::types::JobError {

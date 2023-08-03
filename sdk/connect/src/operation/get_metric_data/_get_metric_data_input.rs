@@ -468,6 +468,10 @@ impl GetMetricDataInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the retrieval of historical metrics data. The time must be specified using a multiple of 5 minutes, such as 10:05, 10:10, 10:15.</p>
     /// <p>The start time cannot be earlier than 24 hours before the time of the request. Historical metrics are available only for 24 hours.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -482,6 +486,11 @@ impl GetMetricDataInputBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the retrieval of historical metrics data. The time must be specified using a multiple of 5 minutes, such as 10:05, 10:10, 10:15.</p>
+    /// <p>The start time cannot be earlier than 24 hours before the time of the request. Historical metrics are available only for 24 hours.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the retrieval of historical metrics data. The time must be specified using an interval of 5 minutes, such as 11:00, 11:05, 11:10, and must be later than the start time timestamp.</p>
     /// <p>The time range between the start and end time must be less than 24 hours.</p>
@@ -498,6 +507,11 @@ impl GetMetricDataInputBuilder {
         self.end_time = input;
         self
     }
+    /// <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the retrieval of historical metrics data. The time must be specified using an interval of 5 minutes, such as 11:00, 11:05, 11:10, and must be later than the start time timestamp.</p>
+    /// <p>The time range between the start and end time must be less than 24 hours.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only for the resources associated with the queues or channels included in the filter. You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p> <note>
     /// <p>To filter by <code>Queues</code>, enter the queue ID/ARN, not the name of the queue.</p>
     /// </note>
@@ -511,6 +525,12 @@ impl GetMetricDataInputBuilder {
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::Filters>) -> Self {
         self.filters = input;
         self
+    }
+    /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only for the resources associated with the queues or channels included in the filter. You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p> <note>
+    /// <p>To filter by <code>Queues</code>, enter the queue ID/ARN, not the name of the queue.</p>
+    /// </note>
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::Filters> {
+        &self.filters
     }
     /// Appends an item to `groupings`.
     ///
@@ -532,6 +552,11 @@ impl GetMetricDataInputBuilder {
     ) -> Self {
         self.groupings = input;
         self
+    }
+    /// <p>The grouping applied to the metrics returned. For example, when results are grouped by queue, the metrics returned are grouped by queue. The values returned apply to the metrics for each queue rather than aggregated for all queues.</p>
+    /// <p>If no grouping is specified, a summary of metrics for all queues is returned.</p>
+    pub fn get_groupings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Grouping>> {
+        &self.groupings
     }
     /// Appends an item to `historical_metrics`.
     ///
@@ -914,6 +939,193 @@ impl GetMetricDataInputBuilder {
         self.historical_metrics = input;
         self
     }
+    /// <p>The metrics to retrieve. Specify the name, unit, and statistic for each metric. The following historical metrics are available. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p> <note>
+    /// <p>This API does not support a contacts incoming metric (there's no CONTACTS_INCOMING metric missing from the documented list). </p>
+    /// </note>
+    /// <dl>
+    /// <dt>
+    /// ABANDON_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: SECONDS</p>
+    /// <p>Statistic: AVG</p>
+    /// </dd>
+    /// <dt>
+    /// AFTER_CONTACT_WORK_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: SECONDS</p>
+    /// <p>Statistic: AVG</p>
+    /// </dd>
+    /// <dt>
+    /// API_CONTACTS_HANDLED
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: COUNT</p>
+    /// <p>Statistic: SUM</p>
+    /// </dd>
+    /// <dt>
+    /// CALLBACK_CONTACTS_HANDLED
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: COUNT</p>
+    /// <p>Statistic: SUM</p>
+    /// </dd>
+    /// <dt>
+    /// CONTACTS_ABANDONED
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: COUNT</p>
+    /// <p>Statistic: SUM</p>
+    /// </dd>
+    /// <dt>
+    /// CONTACTS_AGENT_HUNG_UP_FIRST
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: COUNT</p>
+    /// <p>Statistic: SUM</p>
+    /// </dd>
+    /// <dt>
+    /// CONTACTS_CONSULTED
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: COUNT</p>
+    /// <p>Statistic: SUM</p>
+    /// </dd>
+    /// <dt>
+    /// CONTACTS_HANDLED
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: COUNT</p>
+    /// <p>Statistic: SUM</p>
+    /// </dd>
+    /// <dt>
+    /// CONTACTS_HANDLED_INCOMING
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: COUNT</p>
+    /// <p>Statistic: SUM</p>
+    /// </dd>
+    /// <dt>
+    /// CONTACTS_HANDLED_OUTBOUND
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: COUNT</p>
+    /// <p>Statistic: SUM</p>
+    /// </dd>
+    /// <dt>
+    /// CONTACTS_HOLD_ABANDONS
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: COUNT</p>
+    /// <p>Statistic: SUM</p>
+    /// </dd>
+    /// <dt>
+    /// CONTACTS_MISSED
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: COUNT</p>
+    /// <p>Statistic: SUM</p>
+    /// </dd>
+    /// <dt>
+    /// CONTACTS_QUEUED
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: COUNT</p>
+    /// <p>Statistic: SUM</p>
+    /// </dd>
+    /// <dt>
+    /// CONTACTS_TRANSFERRED_IN
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: COUNT</p>
+    /// <p>Statistic: SUM</p>
+    /// </dd>
+    /// <dt>
+    /// CONTACTS_TRANSFERRED_IN_FROM_QUEUE
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: COUNT</p>
+    /// <p>Statistic: SUM</p>
+    /// </dd>
+    /// <dt>
+    /// CONTACTS_TRANSFERRED_OUT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: COUNT</p>
+    /// <p>Statistic: SUM</p>
+    /// </dd>
+    /// <dt>
+    /// CONTACTS_TRANSFERRED_OUT_FROM_QUEUE
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: COUNT</p>
+    /// <p>Statistic: SUM</p>
+    /// </dd>
+    /// <dt>
+    /// HANDLE_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: SECONDS</p>
+    /// <p>Statistic: AVG</p>
+    /// </dd>
+    /// <dt>
+    /// HOLD_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: SECONDS</p>
+    /// <p>Statistic: AVG</p>
+    /// </dd>
+    /// <dt>
+    /// INTERACTION_AND_HOLD_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: SECONDS</p>
+    /// <p>Statistic: AVG</p>
+    /// </dd>
+    /// <dt>
+    /// INTERACTION_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: SECONDS</p>
+    /// <p>Statistic: AVG</p>
+    /// </dd>
+    /// <dt>
+    /// OCCUPANCY
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: PERCENT</p>
+    /// <p>Statistic: AVG</p>
+    /// </dd>
+    /// <dt>
+    /// QUEUE_ANSWER_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: SECONDS</p>
+    /// <p>Statistic: AVG</p>
+    /// </dd>
+    /// <dt>
+    /// QUEUED_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: SECONDS</p>
+    /// <p>Statistic: MAX</p>
+    /// </dd>
+    /// <dt>
+    /// SERVICE_LEVEL
+    /// </dt>
+    /// <dd>
+    /// <p>You can include up to 20 SERVICE_LEVEL metrics in a request.</p>
+    /// <p>Unit: PERCENT</p>
+    /// <p>Statistic: AVG</p>
+    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
+    /// </dd>
+    /// </dl>
+    pub fn get_historical_metrics(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetric>> {
+        &self.historical_metrics
+    }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -924,6 +1136,10 @@ impl GetMetricDataInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -933,6 +1149,10 @@ impl GetMetricDataInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`GetMetricDataInput`](crate::operation::get_metric_data::GetMetricDataInput).
     pub fn build(

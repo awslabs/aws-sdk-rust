@@ -56,6 +56,10 @@ impl AnalyzedResourceSummaryBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The ARN of the analyzed resource.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p>The Amazon Web Services account ID that owns the resource.</p>
     pub fn resource_owner_account(
         mut self,
@@ -72,6 +76,10 @@ impl AnalyzedResourceSummaryBuilder {
         self.resource_owner_account = input;
         self
     }
+    /// <p>The Amazon Web Services account ID that owns the resource.</p>
+    pub fn get_resource_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_owner_account
+    }
     /// <p>The type of resource that was analyzed.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl AnalyzedResourceSummaryBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The type of resource that was analyzed.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
     }
     /// Consumes the builder and constructs a [`AnalyzedResourceSummary`](crate::types::AnalyzedResourceSummary).
     pub fn build(self) -> crate::types::AnalyzedResourceSummary {

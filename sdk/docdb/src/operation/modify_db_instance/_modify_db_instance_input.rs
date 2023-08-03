@@ -181,6 +181,14 @@ impl ModifyDbInstanceInputBuilder {
         self.db_instance_identifier = input;
         self
     }
+    /// <p>The instance identifier. This value is stored as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the identifier of an existing <code>DBInstance</code>.</p> </li>
+    /// </ul>
+    pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_identifier
+    }
     /// <p>The new compute and memory capacity of the instance; for example, <code>db.r5.large</code>. Not all instance classes are available in all Amazon Web Services Regions. </p>
     /// <p>If you modify the instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is specified as <code>true</code> for this request. </p>
     /// <p>Default: Uses existing setting.</p>
@@ -201,6 +209,12 @@ impl ModifyDbInstanceInputBuilder {
         self.db_instance_class = input;
         self
     }
+    /// <p>The new compute and memory capacity of the instance; for example, <code>db.r5.large</code>. Not all instance classes are available in all Amazon Web Services Regions. </p>
+    /// <p>If you modify the instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is specified as <code>true</code> for this request. </p>
+    /// <p>Default: Uses existing setting.</p>
+    pub fn get_db_instance_class(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_class
+    }
     /// <p>Specifies whether the modifications in this request and any pending modifications are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the instance. </p>
     /// <p> If this parameter is set to <code>false</code>, changes to the instance are applied during the next maintenance window. Some parameter changes can cause an outage and are applied on the next reboot.</p>
     /// <p>Default: <code>false</code> </p>
@@ -214,6 +228,12 @@ impl ModifyDbInstanceInputBuilder {
     pub fn set_apply_immediately(mut self, input: ::std::option::Option<bool>) -> Self {
         self.apply_immediately = input;
         self
+    }
+    /// <p>Specifies whether the modifications in this request and any pending modifications are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the instance. </p>
+    /// <p> If this parameter is set to <code>false</code>, changes to the instance are applied during the next maintenance window. Some parameter changes can cause an outage and are applied on the next reboot.</p>
+    /// <p>Default: <code>false</code> </p>
+    pub fn get_apply_immediately(&self) -> &::std::option::Option<bool> {
+        &self.apply_immediately
     }
     /// <p>The weekly time range (in UTC) during which system maintenance can occur, which might result in an outage. Changing this parameter doesn't result in an outage except in the following situation, and the change is asynchronously applied as soon as possible. If there are pending actions that cause a reboot, and the maintenance window is changed to include the current time, changing this parameter causes a reboot of the instance. If you are moving this window to the current time, there must be at least 30 minutes between the current time and end of the window to ensure that pending changes are applied.</p>
     /// <p>Default: Uses existing setting.</p>
@@ -239,6 +259,16 @@ impl ModifyDbInstanceInputBuilder {
         self.preferred_maintenance_window = input;
         self
     }
+    /// <p>The weekly time range (in UTC) during which system maintenance can occur, which might result in an outage. Changing this parameter doesn't result in an outage except in the following situation, and the change is asynchronously applied as soon as possible. If there are pending actions that cause a reboot, and the maintenance window is changed to include the current time, changing this parameter causes a reboot of the instance. If you are moving this window to the current time, there must be at least 30 minutes between the current time and end of the window to ensure that pending changes are applied.</p>
+    /// <p>Default: Uses existing setting.</p>
+    /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+    /// <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
+    /// <p>Constraints: Must be at least 30 minutes.</p>
+    pub fn get_preferred_maintenance_window(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.preferred_maintenance_window
+    }
     /// <p>This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor version upgrades regardless of the value set.</p>
     pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
         self.auto_minor_version_upgrade = ::std::option::Option::Some(input);
@@ -248,6 +278,10 @@ impl ModifyDbInstanceInputBuilder {
     pub fn set_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_minor_version_upgrade = input;
         self
+    }
+    /// <p>This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor version upgrades regardless of the value set.</p>
+    pub fn get_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
+        &self.auto_minor_version_upgrade
     }
     /// <p> The new instance identifier for the instance when renaming an instance. When you change the instance identifier, an instance reboot occurs immediately if you set <code>Apply Immediately</code> to <code>true</code>. It occurs during the next maintenance window if you set <code>Apply Immediately</code> to <code>false</code>. This value is stored as a lowercase string. </p>
     /// <p>Constraints:</p>
@@ -279,6 +313,17 @@ impl ModifyDbInstanceInputBuilder {
         self.new_db_instance_identifier = input;
         self
     }
+    /// <p> The new instance identifier for the instance when renaming an instance. When you change the instance identifier, an instance reboot occurs immediately if you set <code>Apply Immediately</code> to <code>true</code>. It occurs during the next maintenance window if you set <code>Apply Immediately</code> to <code>false</code>. This value is stored as a lowercase string. </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// </ul>
+    /// <p>Example: <code>mydbinstance</code> </p>
+    pub fn get_new_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.new_db_instance_identifier
+    }
     /// <p>Indicates the certificate that needs to be associated with the instance.</p>
     pub fn ca_certificate_identifier(
         mut self,
@@ -295,6 +340,10 @@ impl ModifyDbInstanceInputBuilder {
         self.ca_certificate_identifier = input;
         self
     }
+    /// <p>Indicates the certificate that needs to be associated with the instance.</p>
+    pub fn get_ca_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ca_certificate_identifier
+    }
     /// <p>A value that indicates whether to copy all tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
     pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
         self.copy_tags_to_snapshot = ::std::option::Option::Some(input);
@@ -304,6 +353,10 @@ impl ModifyDbInstanceInputBuilder {
     pub fn set_copy_tags_to_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
         self.copy_tags_to_snapshot = input;
         self
+    }
+    /// <p>A value that indicates whether to copy all tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
+    pub fn get_copy_tags_to_snapshot(&self) -> &::std::option::Option<bool> {
+        &self.copy_tags_to_snapshot
     }
     /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance.</p>
     /// <p>Default: 1</p>
@@ -319,6 +372,12 @@ impl ModifyDbInstanceInputBuilder {
         self.promotion_tier = input;
         self
     }
+    /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance.</p>
+    /// <p>Default: 1</p>
+    /// <p>Valid values: 0-15</p>
+    pub fn get_promotion_tier(&self) -> &::std::option::Option<i32> {
+        &self.promotion_tier
+    }
     /// <p>A value that indicates whether to enable Performance Insights for the DB Instance. For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/performance-insights.html">Using Amazon Performance Insights</a>.</p>
     pub fn enable_performance_insights(mut self, input: bool) -> Self {
         self.enable_performance_insights = ::std::option::Option::Some(input);
@@ -328,6 +387,10 @@ impl ModifyDbInstanceInputBuilder {
     pub fn set_enable_performance_insights(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_performance_insights = input;
         self
+    }
+    /// <p>A value that indicates whether to enable Performance Insights for the DB Instance. For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/performance-insights.html">Using Amazon Performance Insights</a>.</p>
+    pub fn get_enable_performance_insights(&self) -> &::std::option::Option<bool> {
+        &self.enable_performance_insights
     }
     /// <p>The KMS key identifier for encryption of Performance Insights data.</p>
     /// <p>The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
@@ -348,6 +411,14 @@ impl ModifyDbInstanceInputBuilder {
     ) -> Self {
         self.performance_insights_kms_key_id = input;
         self
+    }
+    /// <p>The KMS key identifier for encryption of Performance Insights data.</p>
+    /// <p>The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+    /// <p>If you do not specify a value for PerformanceInsightsKMSKeyId, then Amazon DocumentDB uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services region.</p>
+    pub fn get_performance_insights_kms_key_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.performance_insights_kms_key_id
     }
     /// Consumes the builder and constructs a [`ModifyDbInstanceInput`](crate::operation::modify_db_instance::ModifyDbInstanceInput).
     pub fn build(

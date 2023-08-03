@@ -51,6 +51,10 @@ impl DescribeConnectorInputBuilder {
         self.connector_type = input;
         self
     }
+    /// <p>The connector type, such as CUSTOMCONNECTOR, Saleforce, Marketo. Please choose CUSTOMCONNECTOR for Lambda based custom connectors.</p>
+    pub fn get_connector_type(&self) -> &::std::option::Option<crate::types::ConnectorType> {
+        &self.connector_type
+    }
     /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
     pub fn connector_label(
         mut self,
@@ -66,6 +70,10 @@ impl DescribeConnectorInputBuilder {
     ) -> Self {
         self.connector_label = input;
         self
+    }
+    /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
+    pub fn get_connector_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connector_label
     }
     /// Consumes the builder and constructs a [`DescribeConnectorInput`](crate::operation::describe_connector::DescribeConnectorInput).
     pub fn build(

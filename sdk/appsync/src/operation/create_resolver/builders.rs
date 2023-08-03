@@ -37,6 +37,12 @@ impl CreateResolverFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateResolver as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_resolver::builders::CreateResolverInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +125,10 @@ impl CreateResolverFluentBuilder {
         self.inner = self.inner.set_api_id(input);
         self
     }
+    /// <p>The ID for the GraphQL API for which the resolver is being created.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_api_id()
+    }
     /// <p>The name of the <code>Type</code>.</p>
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.type_name(input.into());
@@ -129,6 +139,10 @@ impl CreateResolverFluentBuilder {
         self.inner = self.inner.set_type_name(input);
         self
     }
+    /// <p>The name of the <code>Type</code>.</p>
+    pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_type_name()
+    }
     /// <p>The name of the field to attach the resolver to.</p>
     pub fn field_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.field_name(input.into());
@@ -138,6 +152,10 @@ impl CreateResolverFluentBuilder {
     pub fn set_field_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_field_name(input);
         self
+    }
+    /// <p>The name of the field to attach the resolver to.</p>
+    pub fn get_field_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_field_name()
     }
     /// <p>The name of the data source for which the resolver is being created.</p>
     pub fn data_source_name(
@@ -154,6 +172,10 @@ impl CreateResolverFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_data_source_name(input);
         self
+    }
+    /// <p>The name of the data source for which the resolver is being created.</p>
+    pub fn get_data_source_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_data_source_name()
     }
     /// <p>The mapping template to use for requests.</p>
     /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p>
@@ -175,6 +197,12 @@ impl CreateResolverFluentBuilder {
         self.inner = self.inner.set_request_mapping_template(input);
         self
     }
+    /// <p>The mapping template to use for requests.</p>
+    /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p>
+    /// <p>VTL request mapping templates are optional when using an Lambda data source. For all other data sources, VTL request and response mapping templates are required.</p>
+    pub fn get_request_mapping_template(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_request_mapping_template()
+    }
     /// <p>The mapping template to use for responses from the data source.</p>
     pub fn response_mapping_template(
         mut self,
@@ -190,6 +218,10 @@ impl CreateResolverFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_response_mapping_template(input);
         self
+    }
+    /// <p>The mapping template to use for responses from the data source.</p>
+    pub fn get_response_mapping_template(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_response_mapping_template()
     }
     /// <p>The resolver type.</p>
     /// <ul>
@@ -209,6 +241,14 @@ impl CreateResolverFluentBuilder {
         self.inner = self.inner.set_kind(input);
         self
     }
+    /// <p>The resolver type.</p>
+    /// <ul>
+    /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. You can use a UNIT resolver to run a GraphQL query against a single data source.</p> </li>
+    /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of <code>Function</code> objects in a serial manner. You can use a pipeline resolver to run a GraphQL query against multiple data sources.</p> </li>
+    /// </ul>
+    pub fn get_kind(&self) -> &::std::option::Option<crate::types::ResolverKind> {
+        self.inner.get_kind()
+    }
     /// <p>The <code>PipelineConfig</code>.</p>
     pub fn pipeline_config(mut self, input: crate::types::PipelineConfig) -> Self {
         self.inner = self.inner.pipeline_config(input);
@@ -221,6 +261,10 @@ impl CreateResolverFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_pipeline_config(input);
         self
+    }
+    /// <p>The <code>PipelineConfig</code>.</p>
+    pub fn get_pipeline_config(&self) -> &::std::option::Option<crate::types::PipelineConfig> {
+        self.inner.get_pipeline_config()
     }
     /// <p>The <code>SyncConfig</code> for a resolver attached to a versioned data source.</p>
     pub fn sync_config(mut self, input: crate::types::SyncConfig) -> Self {
@@ -235,6 +279,10 @@ impl CreateResolverFluentBuilder {
         self.inner = self.inner.set_sync_config(input);
         self
     }
+    /// <p>The <code>SyncConfig</code> for a resolver attached to a versioned data source.</p>
+    pub fn get_sync_config(&self) -> &::std::option::Option<crate::types::SyncConfig> {
+        self.inner.get_sync_config()
+    }
     /// <p>The caching configuration for the resolver.</p>
     pub fn caching_config(mut self, input: crate::types::CachingConfig) -> Self {
         self.inner = self.inner.caching_config(input);
@@ -248,6 +296,10 @@ impl CreateResolverFluentBuilder {
         self.inner = self.inner.set_caching_config(input);
         self
     }
+    /// <p>The caching configuration for the resolver.</p>
+    pub fn get_caching_config(&self) -> &::std::option::Option<crate::types::CachingConfig> {
+        self.inner.get_caching_config()
+    }
     /// <p>The maximum batching size for a resolver.</p>
     pub fn max_batch_size(mut self, input: i32) -> Self {
         self.inner = self.inner.max_batch_size(input);
@@ -257,6 +309,10 @@ impl CreateResolverFluentBuilder {
     pub fn set_max_batch_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_batch_size(input);
         self
+    }
+    /// <p>The maximum batching size for a resolver.</p>
+    pub fn get_max_batch_size(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_batch_size()
     }
     /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
     pub fn runtime(mut self, input: crate::types::AppSyncRuntime) -> Self {
@@ -271,6 +327,10 @@ impl CreateResolverFluentBuilder {
         self.inner = self.inner.set_runtime(input);
         self
     }
+    /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
+    pub fn get_runtime(&self) -> &::std::option::Option<crate::types::AppSyncRuntime> {
+        self.inner.get_runtime()
+    }
     /// <p>The <code>resolver</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.code(input.into());
@@ -280,5 +340,9 @@ impl CreateResolverFluentBuilder {
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_code(input);
         self
+    }
+    /// <p>The <code>resolver</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_code()
     }
 }

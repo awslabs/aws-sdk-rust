@@ -36,6 +36,10 @@ impl UpdateUsageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateUsage as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_usage::builders::UpdateUsageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl UpdateUsageFluentBuilder {
         self.inner = self.inner.set_usage_plan_id(input);
         self
     }
+    /// <p>The Id of the usage plan associated with the usage data.</p>
+    pub fn get_usage_plan_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_usage_plan_id()
+    }
     /// <p>The identifier of the API key associated with the usage plan in which a temporary extension is granted to the remaining quota.</p>
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key_id(input.into());
@@ -133,6 +141,10 @@ impl UpdateUsageFluentBuilder {
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key_id(input);
         self
+    }
+    /// <p>The identifier of the API key associated with the usage plan in which a temporary extension is granted to the remaining quota.</p>
+    pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key_id()
     }
     /// Appends an item to `patchOperations`.
     ///
@@ -150,5 +162,11 @@ impl UpdateUsageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_patch_operations(input);
         self
+    }
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    pub fn get_patch_operations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
+        self.inner.get_patch_operations()
     }
 }

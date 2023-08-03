@@ -48,6 +48,10 @@ impl BatchRestrictionsBuilder {
         self.maximum_builds_allowed = input;
         self
     }
+    /// <p>Specifies the maximum number of builds allowed.</p>
+    pub fn get_maximum_builds_allowed(&self) -> &::std::option::Option<i32> {
+        &self.maximum_builds_allowed
+    }
     /// Appends an item to `compute_types_allowed`.
     ///
     /// To override the contents of this collection use [`set_compute_types_allowed`](Self::set_compute_types_allowed).
@@ -69,6 +73,12 @@ impl BatchRestrictionsBuilder {
     ) -> Self {
         self.compute_types_allowed = input;
         self
+    }
+    /// <p>An array of strings that specify the compute types that are allowed for the batch build. See <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment compute types</a> in the <i>CodeBuild User Guide</i> for these values. </p>
+    pub fn get_compute_types_allowed(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.compute_types_allowed
     }
     /// Consumes the builder and constructs a [`BatchRestrictions`](crate::types::BatchRestrictions).
     pub fn build(self) -> crate::types::BatchRestrictions {

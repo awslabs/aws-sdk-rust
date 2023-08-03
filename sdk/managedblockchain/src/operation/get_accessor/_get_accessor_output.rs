@@ -46,6 +46,10 @@ impl GetAccessorOutputBuilder {
         self.accessor = input;
         self
     }
+    /// <p>The properties of the accessor.</p>
+    pub fn get_accessor(&self) -> &::std::option::Option<crate::types::Accessor> {
+        &self.accessor
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

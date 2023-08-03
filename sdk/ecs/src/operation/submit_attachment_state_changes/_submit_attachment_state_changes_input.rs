@@ -48,6 +48,10 @@ impl SubmitAttachmentStateChangesInputBuilder {
         self.cluster = input;
         self
     }
+    /// <p>The short name or full ARN of the cluster that hosts the container instance the attachment belongs to.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster
+    }
     /// Appends an item to `attachments`.
     ///
     /// To override the contents of this collection use [`set_attachments`](Self::set_attachments).
@@ -66,6 +70,12 @@ impl SubmitAttachmentStateChangesInputBuilder {
     ) -> Self {
         self.attachments = input;
         self
+    }
+    /// <p>Any attachments associated with the state change request.</p>
+    pub fn get_attachments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttachmentStateChange>> {
+        &self.attachments
     }
     /// Consumes the builder and constructs a [`SubmitAttachmentStateChangesInput`](crate::operation::submit_attachment_state_changes::SubmitAttachmentStateChangesInput).
     pub fn build(

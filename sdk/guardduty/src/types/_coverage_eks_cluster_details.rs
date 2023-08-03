@@ -64,6 +64,10 @@ impl CoverageEksClusterDetailsBuilder {
         self.cluster_name = input;
         self
     }
+    /// <p>Name of the EKS cluster.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_name
+    }
     /// <p>Represents the nodes within the EKS cluster that have a <code>HEALTHY</code> coverage status.</p>
     pub fn covered_nodes(mut self, input: i64) -> Self {
         self.covered_nodes = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl CoverageEksClusterDetailsBuilder {
         self.covered_nodes = input;
         self
     }
+    /// <p>Represents the nodes within the EKS cluster that have a <code>HEALTHY</code> coverage status.</p>
+    pub fn get_covered_nodes(&self) -> &::std::option::Option<i64> {
+        &self.covered_nodes
+    }
     /// <p>Represents all the nodes within the EKS cluster in your account.</p>
     pub fn compatible_nodes(mut self, input: i64) -> Self {
         self.compatible_nodes = ::std::option::Option::Some(input);
@@ -83,6 +91,10 @@ impl CoverageEksClusterDetailsBuilder {
     pub fn set_compatible_nodes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.compatible_nodes = input;
         self
+    }
+    /// <p>Represents all the nodes within the EKS cluster in your account.</p>
+    pub fn get_compatible_nodes(&self) -> &::std::option::Option<i64> {
+        &self.compatible_nodes
     }
     /// <p>Information about the installed EKS add-on.</p>
     pub fn addon_details(mut self, input: crate::types::AddonDetails) -> Self {
@@ -96,6 +108,10 @@ impl CoverageEksClusterDetailsBuilder {
     ) -> Self {
         self.addon_details = input;
         self
+    }
+    /// <p>Information about the installed EKS add-on.</p>
+    pub fn get_addon_details(&self) -> &::std::option::Option<crate::types::AddonDetails> {
+        &self.addon_details
     }
     /// Consumes the builder and constructs a [`CoverageEksClusterDetails`](crate::types::CoverageEksClusterDetails).
     pub fn build(self) -> crate::types::CoverageEksClusterDetails {

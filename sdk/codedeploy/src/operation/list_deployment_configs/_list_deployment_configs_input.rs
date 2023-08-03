@@ -42,6 +42,10 @@ impl ListDeploymentConfigsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>An identifier returned from the previous <code>ListDeploymentConfigs</code> call. It can be used to return the next set of deployment configurations in the list. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Consumes the builder and constructs a [`ListDeploymentConfigsInput`](crate::operation::list_deployment_configs::ListDeploymentConfigsInput).
     pub fn build(
         self,

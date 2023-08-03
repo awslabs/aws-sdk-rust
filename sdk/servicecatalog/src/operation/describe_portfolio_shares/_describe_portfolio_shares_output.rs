@@ -66,6 +66,10 @@ impl DescribePortfolioSharesOutputBuilder {
         self.next_page_token = input;
         self
     }
+    /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_page_token
+    }
     /// Appends an item to `portfolio_share_details`.
     ///
     /// To override the contents of this collection use [`set_portfolio_share_details`](Self::set_portfolio_share_details).
@@ -84,6 +88,12 @@ impl DescribePortfolioSharesOutputBuilder {
     ) -> Self {
         self.portfolio_share_details = input;
         self
+    }
+    /// <p>Summaries about each of the portfolio shares.</p>
+    pub fn get_portfolio_share_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PortfolioShareDetail>> {
+        &self.portfolio_share_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

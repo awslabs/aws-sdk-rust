@@ -64,6 +64,10 @@ impl DescribeSnapshotsOutputBuilder {
         self.snapshots = input;
         self
     }
+    /// <p>Information about the snapshots.</p>
+    pub fn get_snapshots(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Snapshot>> {
+        &self.snapshots
+    }
     /// <p>The token to include in another request to return the next page of snapshots. This value is <code>null</code> when there are no more snapshots to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl DescribeSnapshotsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to include in another request to return the next page of snapshots. This value is <code>null</code> when there are no more snapshots to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

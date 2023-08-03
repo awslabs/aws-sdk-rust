@@ -48,6 +48,10 @@ impl DelegatedAdminBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator for your organization.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The status of the Amazon Inspector delegated administrator.</p>
     pub fn relationship_status(mut self, input: crate::types::RelationshipStatus) -> Self {
         self.relationship_status = ::std::option::Option::Some(input);
@@ -60,6 +64,12 @@ impl DelegatedAdminBuilder {
     ) -> Self {
         self.relationship_status = input;
         self
+    }
+    /// <p>The status of the Amazon Inspector delegated administrator.</p>
+    pub fn get_relationship_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::RelationshipStatus> {
+        &self.relationship_status
     }
     /// Consumes the builder and constructs a [`DelegatedAdmin`](crate::types::DelegatedAdmin).
     pub fn build(self) -> crate::types::DelegatedAdmin {

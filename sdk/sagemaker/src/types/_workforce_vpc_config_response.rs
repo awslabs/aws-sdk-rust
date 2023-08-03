@@ -64,6 +64,10 @@ impl WorkforceVpcConfigResponseBuilder {
         self.vpc_id = input;
         self
     }
+    /// <p>The ID of the VPC that the workforce uses for communication.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
+    }
     /// Appends an item to `security_group_ids`.
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
@@ -86,6 +90,12 @@ impl WorkforceVpcConfigResponseBuilder {
         self.security_group_ids = input;
         self
     }
+    /// <p>The VPC security group IDs, in the form sg-xxxxxxxx. The security groups must be for the same VPC as specified in the subnet.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
+    }
     /// Appends an item to `subnets`.
     ///
     /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
@@ -105,6 +115,10 @@ impl WorkforceVpcConfigResponseBuilder {
         self.subnets = input;
         self
     }
+    /// <p>The ID of the subnets in the VPC that you want to connect.</p>
+    pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnets
+    }
     /// <p>The IDs for the VPC service endpoints of your VPC workforce when it is created and updated.</p>
     pub fn vpc_endpoint_id(
         mut self,
@@ -120,6 +134,10 @@ impl WorkforceVpcConfigResponseBuilder {
     ) -> Self {
         self.vpc_endpoint_id = input;
         self
+    }
+    /// <p>The IDs for the VPC service endpoints of your VPC workforce when it is created and updated.</p>
+    pub fn get_vpc_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_endpoint_id
     }
     /// Consumes the builder and constructs a [`WorkforceVpcConfigResponse`](crate::types::WorkforceVpcConfigResponse).
     pub fn build(self) -> crate::types::WorkforceVpcConfigResponse {

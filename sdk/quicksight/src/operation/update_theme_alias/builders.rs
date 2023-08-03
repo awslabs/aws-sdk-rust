@@ -36,6 +36,12 @@ impl UpdateThemeAliasFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateThemeAlias as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_theme_alias::builders::UpdateThemeAliasInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateThemeAliasFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The ID of the Amazon Web Services account that contains the theme alias that you're updating.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The ID for the theme.</p>
     pub fn theme_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.theme_id(input.into());
@@ -141,6 +151,10 @@ impl UpdateThemeAliasFluentBuilder {
     pub fn set_theme_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_theme_id(input);
         self
+    }
+    /// <p>The ID for the theme.</p>
+    pub fn get_theme_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_theme_id()
     }
     /// <p>The name of the theme alias that you want to update.</p>
     pub fn alias_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -152,6 +166,10 @@ impl UpdateThemeAliasFluentBuilder {
         self.inner = self.inner.set_alias_name(input);
         self
     }
+    /// <p>The name of the theme alias that you want to update.</p>
+    pub fn get_alias_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_alias_name()
+    }
     /// <p>The version number of the theme that the alias should reference.</p>
     pub fn theme_version_number(mut self, input: i64) -> Self {
         self.inner = self.inner.theme_version_number(input);
@@ -161,5 +179,9 @@ impl UpdateThemeAliasFluentBuilder {
     pub fn set_theme_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_theme_version_number(input);
         self
+    }
+    /// <p>The version number of the theme that the alias should reference.</p>
+    pub fn get_theme_version_number(&self) -> &::std::option::Option<i64> {
+        self.inner.get_theme_version_number()
     }
 }

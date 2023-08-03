@@ -56,6 +56,12 @@ impl EncryptionKeyBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID used to identify the key. For an Amazon Web Services KMS key, you can use the key ID, the key ARN, or the alias ARN.</p> <note>
+    /// <p>Aliases are recognized only in the account that created the KMS key. For cross-account actions, you can only use the key ID or key ARN to identify the key. Cross-account actions involve using the role from the other account (AccountB), so specifying the key ID will use the key from the other account (AccountB).</p>
+    /// </note>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The type of encryption key, such as an Amazon Web Services KMS key. When creating or updating a pipeline, the value must be set to 'KMS'.</p>
     pub fn r#type(mut self, input: crate::types::EncryptionKeyType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -68,6 +74,10 @@ impl EncryptionKeyBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of encryption key, such as an Amazon Web Services KMS key. When creating or updating a pipeline, the value must be set to 'KMS'.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::EncryptionKeyType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`EncryptionKey`](crate::types::EncryptionKey).
     pub fn build(self) -> crate::types::EncryptionKey {

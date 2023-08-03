@@ -36,6 +36,12 @@ impl CreateDatasetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDataset as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_dataset::builders::CreateDatasetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl CreateDatasetFluentBuilder {
         self.inner = self.inner.set_flywheel_arn(input);
         self
     }
+    /// <p>The Amazon Resource Number (ARN) of the flywheel of the flywheel to receive the data.</p>
+    pub fn get_flywheel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_flywheel_arn()
+    }
     /// <p>Name of the dataset.</p>
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_name(input.into());
@@ -127,6 +137,10 @@ impl CreateDatasetFluentBuilder {
     pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dataset_name(input);
         self
+    }
+    /// <p>Name of the dataset.</p>
+    pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dataset_name()
     }
     /// <p>The dataset type. You can specify that the data in a dataset is for training the model or for testing the model.</p>
     pub fn dataset_type(mut self, input: crate::types::DatasetType) -> Self {
@@ -141,6 +155,10 @@ impl CreateDatasetFluentBuilder {
         self.inner = self.inner.set_dataset_type(input);
         self
     }
+    /// <p>The dataset type. You can specify that the data in a dataset is for training the model or for testing the model.</p>
+    pub fn get_dataset_type(&self) -> &::std::option::Option<crate::types::DatasetType> {
+        self.inner.get_dataset_type()
+    }
     /// <p>Description of the dataset.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -150,6 +168,10 @@ impl CreateDatasetFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>Description of the dataset.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>Information about the input data configuration. The type of input data varies based on the format of the input and whether the data is for a classifier model or an entity recognition model.</p>
     pub fn input_data_config(mut self, input: crate::types::DatasetInputDataConfig) -> Self {
@@ -163,6 +185,12 @@ impl CreateDatasetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_input_data_config(input);
         self
+    }
+    /// <p>Information about the input data configuration. The type of input data varies based on the format of the input and whether the data is for a classifier model or an entity recognition model.</p>
+    pub fn get_input_data_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::DatasetInputDataConfig> {
+        self.inner.get_input_data_config()
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
     pub fn client_request_token(
@@ -180,6 +208,10 @@ impl CreateDatasetFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -196,5 +228,9 @@ impl CreateDatasetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Tags for the dataset.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

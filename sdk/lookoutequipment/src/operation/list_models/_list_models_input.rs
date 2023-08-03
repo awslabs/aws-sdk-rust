@@ -71,6 +71,10 @@ impl ListModelsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p> An opaque pagination token indicating where to continue the listing of ML models. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p> Specifies the maximum number of ML models to list. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl ListModelsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p> Specifies the maximum number of ML models to list. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The status of the ML model. </p>
     pub fn status(mut self, input: crate::types::ModelStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -90,6 +98,10 @@ impl ListModelsInputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ModelStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the ML model. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ModelStatus> {
+        &self.status
     }
     /// <p>The beginning of the name of the ML models being listed. </p>
     pub fn model_name_begins_with(
@@ -107,6 +119,10 @@ impl ListModelsInputBuilder {
         self.model_name_begins_with = input;
         self
     }
+    /// <p>The beginning of the name of the ML models being listed. </p>
+    pub fn get_model_name_begins_with(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_name_begins_with
+    }
     /// <p>The beginning of the name of the dataset of the ML models to be listed. </p>
     pub fn dataset_name_begins_with(
         mut self,
@@ -122,6 +138,10 @@ impl ListModelsInputBuilder {
     ) -> Self {
         self.dataset_name_begins_with = input;
         self
+    }
+    /// <p>The beginning of the name of the dataset of the ML models to be listed. </p>
+    pub fn get_dataset_name_begins_with(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_name_begins_with
     }
     /// Consumes the builder and constructs a [`ListModelsInput`](crate::operation::list_models::ListModelsInput).
     pub fn build(

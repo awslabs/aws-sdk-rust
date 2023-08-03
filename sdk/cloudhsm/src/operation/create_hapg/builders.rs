@@ -38,6 +38,10 @@ impl CreateHapgFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateHapg as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_hapg::builders::CreateHapgInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,5 +123,9 @@ impl CreateHapgFluentBuilder {
     pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_label(input);
         self
+    }
+    /// <p>The label of the new high-availability partition group.</p>
+    pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_label()
     }
 }

@@ -36,6 +36,12 @@ impl CreateWorkgroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateWorkgroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_workgroup::builders::CreateWorkgroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl CreateWorkgroupFluentBuilder {
         self.inner = self.inner.set_workgroup_name(input);
         self
     }
+    /// <p>The name of the created workgroup.</p>
+    pub fn get_workgroup_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workgroup_name()
+    }
     /// <p>The name of the namespace to associate with the workgroup.</p>
     pub fn namespace_name(
         mut self,
@@ -148,6 +158,10 @@ impl CreateWorkgroupFluentBuilder {
         self.inner = self.inner.set_namespace_name(input);
         self
     }
+    /// <p>The name of the namespace to associate with the workgroup.</p>
+    pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace_name()
+    }
     /// <p>The base data warehouse capacity of the workgroup in Redshift Processing Units (RPUs).</p>
     pub fn base_capacity(mut self, input: i32) -> Self {
         self.inner = self.inner.base_capacity(input);
@@ -158,6 +172,10 @@ impl CreateWorkgroupFluentBuilder {
         self.inner = self.inner.set_base_capacity(input);
         self
     }
+    /// <p>The base data warehouse capacity of the workgroup in Redshift Processing Units (RPUs).</p>
+    pub fn get_base_capacity(&self) -> &::std::option::Option<i32> {
+        self.inner.get_base_capacity()
+    }
     /// <p>The value that specifies whether to turn on enhanced virtual private cloud (VPC) routing, which forces Amazon Redshift Serverless to route traffic through your VPC instead of over the internet.</p>
     pub fn enhanced_vpc_routing(mut self, input: bool) -> Self {
         self.inner = self.inner.enhanced_vpc_routing(input);
@@ -167,6 +185,10 @@ impl CreateWorkgroupFluentBuilder {
     pub fn set_enhanced_vpc_routing(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enhanced_vpc_routing(input);
         self
+    }
+    /// <p>The value that specifies whether to turn on enhanced virtual private cloud (VPC) routing, which forces Amazon Redshift Serverless to route traffic through your VPC instead of over the internet.</p>
+    pub fn get_enhanced_vpc_routing(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enhanced_vpc_routing()
     }
     /// Appends an item to `configParameters`.
     ///
@@ -184,6 +206,12 @@ impl CreateWorkgroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_config_parameters(input);
         self
+    }
+    /// <p>An array of parameters to set for advanced control over a database. The options are <code>auto_mv</code>, <code>datestyle</code>, <code>enable_case_sensitivity_identifier</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, <code>search_path</code>, and query monitoring metrics that let you define performance boundaries. For more information about query monitoring rules and available metrics, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless"> Query monitoring metrics for Amazon Redshift Serverless</a>.</p>
+    pub fn get_config_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigParameter>> {
+        self.inner.get_config_parameters()
     }
     /// Appends an item to `securityGroupIds`.
     ///
@@ -205,6 +233,12 @@ impl CreateWorkgroupFluentBuilder {
         self.inner = self.inner.set_security_group_ids(input);
         self
     }
+    /// <p>An array of security group IDs to associate with the workgroup.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_security_group_ids()
+    }
     /// Appends an item to `subnetIds`.
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
@@ -222,6 +256,10 @@ impl CreateWorkgroupFluentBuilder {
         self.inner = self.inner.set_subnet_ids(input);
         self
     }
+    /// <p>An array of VPC subnet IDs to associate with the workgroup.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_subnet_ids()
+    }
     /// <p>A value that specifies whether the workgroup can be accessed from a public network.</p>
     pub fn publicly_accessible(mut self, input: bool) -> Self {
         self.inner = self.inner.publicly_accessible(input);
@@ -231,6 +269,10 @@ impl CreateWorkgroupFluentBuilder {
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_publicly_accessible(input);
         self
+    }
+    /// <p>A value that specifies whether the workgroup can be accessed from a public network.</p>
+    pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
+        self.inner.get_publicly_accessible()
     }
     /// Appends an item to `tags`.
     ///
@@ -249,6 +291,10 @@ impl CreateWorkgroupFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>A array of tag instances.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.inner = self.inner.port(input);
@@ -258,5 +304,9 @@ impl CreateWorkgroupFluentBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_port(input);
         self
+    }
+    /// <p>The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        self.inner.get_port()
     }
 }

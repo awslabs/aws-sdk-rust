@@ -48,6 +48,10 @@ impl GetProgrammaticAccessCredentialsInputBuilder {
         self.duration_in_minutes = input;
         self
     }
+    /// <p>The time duration in which the credentials remain valid. </p>
+    pub fn get_duration_in_minutes(&self) -> &::std::option::Option<i64> {
+        &self.duration_in_minutes
+    }
     /// <p>The FinSpace environment identifier.</p>
     pub fn environment_id(
         mut self,
@@ -63,6 +67,10 @@ impl GetProgrammaticAccessCredentialsInputBuilder {
     ) -> Self {
         self.environment_id = input;
         self
+    }
+    /// <p>The FinSpace environment identifier.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
     }
     /// Consumes the builder and constructs a [`GetProgrammaticAccessCredentialsInput`](crate::operation::get_programmatic_access_credentials::GetProgrammaticAccessCredentialsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_programmatic_access_credentials::GetProgrammaticAccessCredentialsInput, ::aws_smithy_http::operation::error::BuildError>{

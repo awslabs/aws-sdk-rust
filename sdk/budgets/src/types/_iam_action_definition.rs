@@ -64,6 +64,10 @@ impl IamActionDefinitionBuilder {
         self.policy_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the policy to be attached. </p>
+    pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_arn
+    }
     /// Appends an item to `roles`.
     ///
     /// To override the contents of this collection use [`set_roles`](Self::set_roles).
@@ -82,6 +86,10 @@ impl IamActionDefinitionBuilder {
     ) -> Self {
         self.roles = input;
         self
+    }
+    /// <p>A list of roles to be attached. There must be at least one role. </p>
+    pub fn get_roles(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.roles
     }
     /// Appends an item to `groups`.
     ///
@@ -102,6 +110,10 @@ impl IamActionDefinitionBuilder {
         self.groups = input;
         self
     }
+    /// <p>A list of groups to be attached. There must be at least one group. </p>
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.groups
+    }
     /// Appends an item to `users`.
     ///
     /// To override the contents of this collection use [`set_users`](Self::set_users).
@@ -120,6 +132,10 @@ impl IamActionDefinitionBuilder {
     ) -> Self {
         self.users = input;
         self
+    }
+    /// <p>A list of users to be attached. There must be at least one user. </p>
+    pub fn get_users(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.users
     }
     /// Consumes the builder and constructs a [`IamActionDefinition`](crate::types::IamActionDefinition).
     pub fn build(self) -> crate::types::IamActionDefinition {

@@ -64,6 +64,10 @@ impl BatchGetFindingsErrorBuilder {
         self.scan_name = input;
         self
     }
+    /// <p>The name of the scan that generated the finding.</p>
+    pub fn get_scan_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scan_name
+    }
     /// <p>The finding ID of the finding that was not fetched.</p>
     pub fn finding_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.finding_id = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl BatchGetFindingsErrorBuilder {
     pub fn set_finding_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.finding_id = input;
         self
+    }
+    /// <p>The finding ID of the finding that was not fetched.</p>
+    pub fn get_finding_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.finding_id
     }
     /// <p>A code associated with the type of error.</p>
     pub fn error_code(mut self, input: crate::types::ErrorCode) -> Self {
@@ -84,6 +92,10 @@ impl BatchGetFindingsErrorBuilder {
         self.error_code = input;
         self
     }
+    /// <p>A code associated with the type of error.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
+        &self.error_code
+    }
     /// <p>Describes the error.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl BatchGetFindingsErrorBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>Describes the error.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`BatchGetFindingsError`](crate::types::BatchGetFindingsError).
     pub fn build(self) -> crate::types::BatchGetFindingsError {

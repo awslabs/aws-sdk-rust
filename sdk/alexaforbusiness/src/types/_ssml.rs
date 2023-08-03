@@ -48,6 +48,10 @@ impl SsmlBuilder {
         self.locale = input;
         self
     }
+    /// <p>The locale of the SSML message. Currently, en-US is supported.</p>
+    pub fn get_locale(&self) -> &::std::option::Option<crate::types::Locale> {
+        &self.locale
+    }
     /// <p>The value of the SSML message in the correct SSML format. The audio tag is not supported.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl SsmlBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of the SSML message in the correct SSML format. The audio tag is not supported.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`Ssml`](crate::types::Ssml).
     pub fn build(self) -> crate::types::Ssml {

@@ -64,6 +64,10 @@ impl FileBuilder {
         self.blob_id = input;
         self
     }
+    /// <p>The blob ID that contains the file information.</p>
+    pub fn get_blob_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.blob_id
+    }
     /// <p>The fully qualified path to the file in the repository.</p>
     pub fn absolute_path(
         mut self,
@@ -79,6 +83,10 @@ impl FileBuilder {
     ) -> Self {
         self.absolute_path = input;
         self
+    }
+    /// <p>The fully qualified path to the file in the repository.</p>
+    pub fn get_absolute_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.absolute_path
     }
     /// <p>The relative path of the file from the folder where the query originated.</p>
     pub fn relative_path(
@@ -96,6 +104,10 @@ impl FileBuilder {
         self.relative_path = input;
         self
     }
+    /// <p>The relative path of the file from the folder where the query originated.</p>
+    pub fn get_relative_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.relative_path
+    }
     /// <p>The extrapolated file mode permissions for the file. Valid values include EXECUTABLE and NORMAL.</p>
     pub fn file_mode(mut self, input: crate::types::FileModeTypeEnum) -> Self {
         self.file_mode = ::std::option::Option::Some(input);
@@ -108,6 +120,10 @@ impl FileBuilder {
     ) -> Self {
         self.file_mode = input;
         self
+    }
+    /// <p>The extrapolated file mode permissions for the file. Valid values include EXECUTABLE and NORMAL.</p>
+    pub fn get_file_mode(&self) -> &::std::option::Option<crate::types::FileModeTypeEnum> {
+        &self.file_mode
     }
     /// Consumes the builder and constructs a [`File`](crate::types::File).
     pub fn build(self) -> crate::types::File {

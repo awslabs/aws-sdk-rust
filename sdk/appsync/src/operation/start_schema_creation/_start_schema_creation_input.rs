@@ -49,6 +49,10 @@ impl StartSchemaCreationInputBuilder {
         self.api_id = input;
         self
     }
+    /// <p>The API ID.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
+    }
     /// <p>The schema definition, in GraphQL schema language format.</p>
     pub fn definition(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.definition = ::std::option::Option::Some(input);
@@ -61,6 +65,10 @@ impl StartSchemaCreationInputBuilder {
     ) -> Self {
         self.definition = input;
         self
+    }
+    /// <p>The schema definition, in GraphQL schema language format.</p>
+    pub fn get_definition(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.definition
     }
     /// Consumes the builder and constructs a [`StartSchemaCreationInput`](crate::operation::start_schema_creation::StartSchemaCreationInput).
     pub fn build(

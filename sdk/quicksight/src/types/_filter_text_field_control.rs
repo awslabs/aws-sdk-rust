@@ -72,6 +72,10 @@ impl FilterTextFieldControlBuilder {
         self.filter_control_id = input;
         self
     }
+    /// <p>The ID of the <code>FilterTextFieldControl</code>.</p>
+    pub fn get_filter_control_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter_control_id
+    }
     /// <p>The title of the <code>FilterTextFieldControl</code>.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl FilterTextFieldControlBuilder {
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
+    }
+    /// <p>The title of the <code>FilterTextFieldControl</code>.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
     }
     /// <p>The source filter ID of the <code>FilterTextFieldControl</code>.</p>
     pub fn source_filter_id(
@@ -98,6 +106,10 @@ impl FilterTextFieldControlBuilder {
         self.source_filter_id = input;
         self
     }
+    /// <p>The source filter ID of the <code>FilterTextFieldControl</code>.</p>
+    pub fn get_source_filter_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_filter_id
+    }
     /// <p>The display options of a control.</p>
     pub fn display_options(mut self, input: crate::types::TextFieldControlDisplayOptions) -> Self {
         self.display_options = ::std::option::Option::Some(input);
@@ -110,6 +122,12 @@ impl FilterTextFieldControlBuilder {
     ) -> Self {
         self.display_options = input;
         self
+    }
+    /// <p>The display options of a control.</p>
+    pub fn get_display_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::TextFieldControlDisplayOptions> {
+        &self.display_options
     }
     /// Consumes the builder and constructs a [`FilterTextFieldControl`](crate::types::FilterTextFieldControl).
     pub fn build(self) -> crate::types::FilterTextFieldControl {

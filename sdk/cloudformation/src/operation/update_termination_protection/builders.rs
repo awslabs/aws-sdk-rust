@@ -37,6 +37,10 @@ impl UpdateTerminationProtectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateTerminationProtection as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_termination_protection::builders::UpdateTerminationProtectionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl UpdateTerminationProtectionFluentBuilder {
         self.inner = self.inner.set_enable_termination_protection(input);
         self
     }
+    /// <p>Whether to enable termination protection on the specified stack.</p>
+    pub fn get_enable_termination_protection(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_termination_protection()
+    }
     /// <p>The name or unique ID of the stack for which you want to set termination protection.</p>
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_name(input.into());
@@ -136,5 +144,9 @@ impl UpdateTerminationProtectionFluentBuilder {
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_name(input);
         self
+    }
+    /// <p>The name or unique ID of the stack for which you want to set termination protection.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_name()
     }
 }

@@ -36,6 +36,12 @@ impl CreateWirelessDeviceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateWirelessDevice as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_wireless_device::builders::CreateWirelessDeviceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl CreateWirelessDeviceFluentBuilder {
         self.inner = self.inner.set_type(input);
         self
     }
+    /// <p>The wireless device type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::WirelessDeviceType> {
+        self.inner.get_type()
+    }
     /// <p>The name of the new resource.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -139,6 +149,10 @@ impl CreateWirelessDeviceFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the new resource.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The description of the new resource.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -148,6 +162,10 @@ impl CreateWirelessDeviceFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the new resource.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The name of the destination to assign to the new wireless device.</p>
     pub fn destination_name(
@@ -165,6 +183,10 @@ impl CreateWirelessDeviceFluentBuilder {
         self.inner = self.inner.set_destination_name(input);
         self
     }
+    /// <p>The name of the destination to assign to the new wireless device.</p>
+    pub fn get_destination_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_name()
+    }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
     pub fn client_request_token(
         mut self,
@@ -181,6 +203,10 @@ impl CreateWirelessDeviceFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// <p>The device configuration information to use to create the wireless device.</p>
     pub fn lo_ra_wan(mut self, input: crate::types::LoRaWanDevice) -> Self {
         self.inner = self.inner.lo_ra_wan(input);
@@ -193,6 +219,10 @@ impl CreateWirelessDeviceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_lo_ra_wan(input);
         self
+    }
+    /// <p>The device configuration information to use to create the wireless device.</p>
+    pub fn get_lo_ra_wan(&self) -> &::std::option::Option<crate::types::LoRaWanDevice> {
+        self.inner.get_lo_ra_wan()
     }
     /// Appends an item to `Tags`.
     ///
@@ -211,6 +241,10 @@ impl CreateWirelessDeviceFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags to attach to the new wireless device. Tags are metadata that you can use to manage a resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
     pub fn positioning(mut self, input: crate::types::PositioningConfigStatus) -> Self {
         self.inner = self.inner.positioning(input);
@@ -224,6 +258,10 @@ impl CreateWirelessDeviceFluentBuilder {
         self.inner = self.inner.set_positioning(input);
         self
     }
+    /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+    pub fn get_positioning(&self) -> &::std::option::Option<crate::types::PositioningConfigStatus> {
+        self.inner.get_positioning()
+    }
     /// <p>The device configuration information to use to create the Sidewalk device.</p>
     pub fn sidewalk(mut self, input: crate::types::SidewalkCreateWirelessDevice) -> Self {
         self.inner = self.inner.sidewalk(input);
@@ -236,5 +274,11 @@ impl CreateWirelessDeviceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sidewalk(input);
         self
+    }
+    /// <p>The device configuration information to use to create the Sidewalk device.</p>
+    pub fn get_sidewalk(
+        &self,
+    ) -> &::std::option::Option<crate::types::SidewalkCreateWirelessDevice> {
+        self.inner.get_sidewalk()
     }
 }

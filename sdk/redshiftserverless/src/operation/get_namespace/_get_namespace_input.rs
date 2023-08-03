@@ -45,6 +45,10 @@ impl GetNamespaceInputBuilder {
         self.namespace_name = input;
         self
     }
+    /// <p>The name of the namespace to retrieve information for.</p>
+    pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace_name
+    }
     /// Consumes the builder and constructs a [`GetNamespaceInput`](crate::operation::get_namespace::GetNamespaceInput).
     pub fn build(
         self,

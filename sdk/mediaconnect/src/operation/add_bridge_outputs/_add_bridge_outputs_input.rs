@@ -50,6 +50,10 @@ impl AddBridgeOutputsInputBuilder {
         self.bridge_arn = input;
         self
     }
+    /// The ARN of the bridge that you want to update.
+    pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bridge_arn
+    }
     /// Appends an item to `outputs`.
     ///
     /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
@@ -68,6 +72,12 @@ impl AddBridgeOutputsInputBuilder {
     ) -> Self {
         self.outputs = input;
         self
+    }
+    /// The outputs that you want to add to this bridge.
+    pub fn get_outputs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddBridgeOutputRequest>> {
+        &self.outputs
     }
     /// Consumes the builder and constructs a [`AddBridgeOutputsInput`](crate::operation::add_bridge_outputs::AddBridgeOutputsInput).
     pub fn build(

@@ -36,6 +36,12 @@ impl CreateControlPanelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateControlPanel as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_control_panel::builders::CreateControlPanelInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateControlPanelFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>The Amazon Resource Name (ARN) of the cluster for the control panel.</p>
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_arn(input.into());
@@ -135,6 +145,10 @@ impl CreateControlPanelFluentBuilder {
     pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the cluster for the control panel.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_arn()
     }
     /// <p>The name of the control panel.</p>
     pub fn control_panel_name(
@@ -151,6 +165,10 @@ impl CreateControlPanelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_control_panel_name(input);
         self
+    }
+    /// <p>The name of the control panel.</p>
+    pub fn get_control_panel_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_control_panel_name()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -174,5 +192,13 @@ impl CreateControlPanelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags associated with the control panel.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

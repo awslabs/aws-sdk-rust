@@ -56,6 +56,10 @@ impl DescribeRaidArraysInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The instance ID. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the RAID arrays associated with the specified instance. </p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The stack ID.</p>
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_id = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl DescribeRaidArraysInputBuilder {
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_id = input;
         self
+    }
+    /// <p>The stack ID.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_id
     }
     /// Appends an item to `raid_array_ids`.
     ///
@@ -87,6 +95,12 @@ impl DescribeRaidArraysInputBuilder {
     ) -> Self {
         self.raid_array_ids = input;
         self
+    }
+    /// <p>An array of RAID array IDs. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the specified arrays. Otherwise, it returns a description of every array.</p>
+    pub fn get_raid_array_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.raid_array_ids
     }
     /// Consumes the builder and constructs a [`DescribeRaidArraysInput`](crate::operation::describe_raid_arrays::DescribeRaidArraysInput).
     pub fn build(

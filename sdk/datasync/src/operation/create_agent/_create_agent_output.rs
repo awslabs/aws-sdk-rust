@@ -47,6 +47,10 @@ impl CreateAgentOutputBuilder {
         self.agent_arn = input;
         self
     }
+    /// <p>The ARN of the agent that you just activated. Use the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListAgents.html">ListAgents</a> operation to return a list of agents in your Amazon Web Services account and Amazon Web Services Region.</p>
+    pub fn get_agent_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

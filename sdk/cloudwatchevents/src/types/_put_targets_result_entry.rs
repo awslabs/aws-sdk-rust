@@ -56,6 +56,10 @@ impl PutTargetsResultEntryBuilder {
         self.target_id = input;
         self
     }
+    /// <p>The ID of the target.</p>
+    pub fn get_target_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_id
+    }
     /// <p>The error code that indicates why the target addition failed. If the value is <code>ConcurrentModificationException</code>, too many requests were made at the same time.</p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl PutTargetsResultEntryBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The error code that indicates why the target addition failed. If the value is <code>ConcurrentModificationException</code>, too many requests were made at the same time.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
     }
     /// <p>The error message that explains why the target addition failed.</p>
     pub fn error_message(
@@ -81,6 +89,10 @@ impl PutTargetsResultEntryBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>The error message that explains why the target addition failed.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`PutTargetsResultEntry`](crate::types::PutTargetsResultEntry).
     pub fn build(self) -> crate::types::PutTargetsResultEntry {

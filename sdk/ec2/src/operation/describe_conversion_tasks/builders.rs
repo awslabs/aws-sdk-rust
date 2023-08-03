@@ -38,6 +38,13 @@ impl DescribeConversionTasksFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeConversionTasks as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_conversion_tasks::builders::DescribeConversionTasksInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +145,12 @@ impl DescribeConversionTasksFluentBuilder {
         self.inner = self.inner.set_conversion_task_ids(input);
         self
     }
+    /// <p>The conversion task IDs.</p>
+    pub fn get_conversion_task_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_conversion_task_ids()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -147,5 +160,9 @@ impl DescribeConversionTasksFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

@@ -40,6 +40,10 @@ impl WithdrawByoipCidrInputBuilder {
         self.cidr = input;
         self
     }
+    /// <p>The address range, in CIDR notation.</p>
+    pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr
+    }
     /// Consumes the builder and constructs a [`WithdrawByoipCidrInput`](crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrInput).
     pub fn build(
         self,

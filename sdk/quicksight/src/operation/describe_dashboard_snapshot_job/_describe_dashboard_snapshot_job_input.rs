@@ -61,6 +61,10 @@ impl DescribeDashboardSnapshotJobInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account that the dashboard snapshot job is executed in.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The ID of the dashboard that you have started a snapshot job for.</p>
     pub fn dashboard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dashboard_id = ::std::option::Option::Some(input.into());
@@ -70,6 +74,10 @@ impl DescribeDashboardSnapshotJobInputBuilder {
     pub fn set_dashboard_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dashboard_id = input;
         self
+    }
+    /// <p>The ID of the dashboard that you have started a snapshot job for.</p>
+    pub fn get_dashboard_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dashboard_id
     }
     /// <p>The ID of the job to be described. The job ID is set when you start a new job with a <code>StartDashboardSnapshotJob</code> API call.</p>
     pub fn snapshot_job_id(
@@ -86,6 +94,10 @@ impl DescribeDashboardSnapshotJobInputBuilder {
     ) -> Self {
         self.snapshot_job_id = input;
         self
+    }
+    /// <p>The ID of the job to be described. The job ID is set when you start a new job with a <code>StartDashboardSnapshotJob</code> API call.</p>
+    pub fn get_snapshot_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_job_id
     }
     /// Consumes the builder and constructs a [`DescribeDashboardSnapshotJobInput`](crate::operation::describe_dashboard_snapshot_job::DescribeDashboardSnapshotJobInput).
     pub fn build(

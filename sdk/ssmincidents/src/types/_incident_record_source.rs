@@ -64,6 +64,10 @@ impl IncidentRecordSourceBuilder {
         self.created_by = input;
         self
     }
+    /// <p>The principal that started the incident.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by
+    }
     /// <p>The service principal that assumed the role specified in <code>createdBy</code>. If no service principal assumed the role this will be left blank.</p>
     pub fn invoked_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.invoked_by = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl IncidentRecordSourceBuilder {
     pub fn set_invoked_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.invoked_by = input;
         self
+    }
+    /// <p>The service principal that assumed the role specified in <code>createdBy</code>. If no service principal assumed the role this will be left blank.</p>
+    pub fn get_invoked_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.invoked_by
     }
     /// <p>The resource that caused the incident to be created.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl IncidentRecordSourceBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The resource that caused the incident to be created.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p>The service that started the incident. This can be manually created from Incident Manager, automatically created using an Amazon CloudWatch alarm, or Amazon EventBridge event.</p>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl IncidentRecordSourceBuilder {
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source = input;
         self
+    }
+    /// <p>The service that started the incident. This can be manually created from Incident Manager, automatically created using an Amazon CloudWatch alarm, or Amazon EventBridge event.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
     }
     /// Consumes the builder and constructs a [`IncidentRecordSource`](crate::types::IncidentRecordSource).
     pub fn build(self) -> crate::types::IncidentRecordSource {

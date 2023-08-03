@@ -40,6 +40,10 @@ impl DatasetContentVersionValueBuilder {
         self.dataset_name = input;
         self
     }
+    /// <p>The name of the dataset whose latest contents are used as input to the notebook or application.</p>
+    pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_name
+    }
     /// Consumes the builder and constructs a [`DatasetContentVersionValue`](crate::types::DatasetContentVersionValue).
     pub fn build(self) -> crate::types::DatasetContentVersionValue {
         crate::types::DatasetContentVersionValue {

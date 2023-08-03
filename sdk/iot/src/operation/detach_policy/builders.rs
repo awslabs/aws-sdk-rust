@@ -39,6 +39,10 @@ impl DetachPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DetachPolicy as a reference.
+    pub fn as_input(&self) -> &crate::operation::detach_policy::builders::DetachPolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +125,10 @@ impl DetachPolicyFluentBuilder {
         self.inner = self.inner.set_policy_name(input);
         self
     }
+    /// <p>The policy to detach.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_name()
+    }
     /// <p>The target from which the policy will be detached.</p>
     pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target(input.into());
@@ -130,5 +138,9 @@ impl DetachPolicyFluentBuilder {
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target(input);
         self
+    }
+    /// <p>The target from which the policy will be detached.</p>
+    pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target()
     }
 }

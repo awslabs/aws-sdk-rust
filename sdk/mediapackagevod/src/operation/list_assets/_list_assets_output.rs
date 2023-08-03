@@ -63,6 +63,12 @@ impl ListAssetsOutputBuilder {
         self.assets = input;
         self
     }
+    /// A list of MediaPackage VOD Asset resources.
+    pub fn get_assets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetShallow>> {
+        &self.assets
+    }
     /// A token that can be used to resume pagination from the end of the collection.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -72,6 +78,10 @@ impl ListAssetsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// A token that can be used to resume pagination from the end of the collection.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

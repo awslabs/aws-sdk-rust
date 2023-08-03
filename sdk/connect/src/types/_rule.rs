@@ -130,6 +130,10 @@ impl RuleBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the rule.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A unique identifier for the rule.</p>
     pub fn rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_id = ::std::option::Option::Some(input.into());
@@ -140,6 +144,10 @@ impl RuleBuilder {
         self.rule_id = input;
         self
     }
+    /// <p>A unique identifier for the rule.</p>
+    pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
     pub fn rule_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_arn = ::std::option::Option::Some(input.into());
@@ -149,6 +157,10 @@ impl RuleBuilder {
     pub fn set_rule_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the rule.</p>
+    pub fn get_rule_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_arn
     }
     /// <p>The event source to trigger the rule.</p>
     pub fn trigger_event_source(mut self, input: crate::types::RuleTriggerEventSource) -> Self {
@@ -163,6 +175,12 @@ impl RuleBuilder {
         self.trigger_event_source = input;
         self
     }
+    /// <p>The event source to trigger the rule.</p>
+    pub fn get_trigger_event_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::RuleTriggerEventSource> {
+        &self.trigger_event_source
+    }
     /// <p>The conditions of the rule.</p>
     pub fn function(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function = ::std::option::Option::Some(input.into());
@@ -172,6 +190,10 @@ impl RuleBuilder {
     pub fn set_function(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function = input;
         self
+    }
+    /// <p>The conditions of the rule.</p>
+    pub fn get_function(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function
     }
     /// Appends an item to `actions`.
     ///
@@ -192,6 +214,10 @@ impl RuleBuilder {
         self.actions = input;
         self
     }
+    /// <p>A list of actions to be run when the rule is triggered.</p>
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleAction>> {
+        &self.actions
+    }
     /// <p>The publish status of the rule.</p>
     pub fn publish_status(mut self, input: crate::types::RulePublishStatus) -> Self {
         self.publish_status = ::std::option::Option::Some(input);
@@ -204,6 +230,10 @@ impl RuleBuilder {
     ) -> Self {
         self.publish_status = input;
         self
+    }
+    /// <p>The publish status of the rule.</p>
+    pub fn get_publish_status(&self) -> &::std::option::Option<crate::types::RulePublishStatus> {
+        &self.publish_status
     }
     /// <p>The timestamp for when the rule was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -218,6 +248,10 @@ impl RuleBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The timestamp for when the rule was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>The timestamp for the when the rule was last updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -230,6 +264,10 @@ impl RuleBuilder {
     ) -> Self {
         self.last_updated_time = input;
         self
+    }
+    /// <p>The timestamp for the when the rule was last updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the rule.</p>
     pub fn last_updated_by(
@@ -246,6 +284,10 @@ impl RuleBuilder {
     ) -> Self {
         self.last_updated_by = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user who last updated the rule.</p>
+    pub fn get_last_updated_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_updated_by
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -271,6 +313,14 @@ impl RuleBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`Rule`](crate::types::Rule).
     pub fn build(self) -> crate::types::Rule {

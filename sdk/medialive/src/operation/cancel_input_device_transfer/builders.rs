@@ -36,6 +36,10 @@ impl CancelInputDeviceTransferFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CancelInputDeviceTransfer as a reference.
+    pub fn as_input(&self) -> &crate::operation::cancel_input_device_transfer::builders::CancelInputDeviceTransferInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +135,9 @@ impl CancelInputDeviceTransferFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_input_device_id(input);
         self
+    }
+    /// The unique ID of the input device to cancel. For example, hd-123456789abcdef.
+    pub fn get_input_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_input_device_id()
     }
 }

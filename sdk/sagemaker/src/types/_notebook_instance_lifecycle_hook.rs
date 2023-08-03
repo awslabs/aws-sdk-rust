@@ -45,6 +45,10 @@ impl NotebookInstanceLifecycleHookBuilder {
         self.content = input;
         self
     }
+    /// <p>A base64-encoded string that contains a shell script for a notebook instance lifecycle configuration.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
+    }
     /// Consumes the builder and constructs a [`NotebookInstanceLifecycleHook`](crate::types::NotebookInstanceLifecycleHook).
     pub fn build(self) -> crate::types::NotebookInstanceLifecycleHook {
         crate::types::NotebookInstanceLifecycleHook {

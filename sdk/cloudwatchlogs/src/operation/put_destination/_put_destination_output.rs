@@ -49,6 +49,10 @@ impl PutDestinationOutputBuilder {
         self.destination = input;
         self
     }
+    /// <p>The destination.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::Destination> {
+        &self.destination
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

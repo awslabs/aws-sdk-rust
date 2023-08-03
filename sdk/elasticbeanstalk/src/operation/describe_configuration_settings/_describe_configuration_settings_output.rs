@@ -65,6 +65,13 @@ impl DescribeConfigurationSettingsOutputBuilder {
         self.configuration_settings = input;
         self
     }
+    /// <p> A list of <code>ConfigurationSettingsDescription</code>. </p>
+    pub fn get_configuration_settings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSettingsDescription>>
+    {
+        &self.configuration_settings
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -62,6 +62,10 @@ impl SigningProfileParameterBuilder {
         self.certificate_arn = input;
         self
     }
+    /// <p>Certificate ARN.</p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_arn
+    }
     /// <p>The hardware platform of your device.</p>
     pub fn platform(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl SigningProfileParameterBuilder {
     pub fn set_platform(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform = input;
         self
+    }
+    /// <p>The hardware platform of your device.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform
     }
     /// <p>The location of the code-signing certificate on your device.</p>
     pub fn certificate_path_on_device(
@@ -87,6 +95,10 @@ impl SigningProfileParameterBuilder {
     ) -> Self {
         self.certificate_path_on_device = input;
         self
+    }
+    /// <p>The location of the code-signing certificate on your device.</p>
+    pub fn get_certificate_path_on_device(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_path_on_device
     }
     /// Consumes the builder and constructs a [`SigningProfileParameter`](crate::types::SigningProfileParameter).
     pub fn build(self) -> crate::types::SigningProfileParameter {

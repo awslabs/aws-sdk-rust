@@ -55,6 +55,12 @@ impl TestExecutionResultFilterByBuilder {
         self.result_type_filter = input;
         self
     }
+    /// <p>Specifies which results to filter. See <a href="https://docs.aws.amazon.com/lexv2/latest/dg/test-results-details-test-set.html">Test result details"&gt;Test results details</a> for details about different types of results.</p>
+    pub fn get_result_type_filter(
+        &self,
+    ) -> &::std::option::Option<crate::types::TestResultTypeFilter> {
+        &self.result_type_filter
+    }
     /// <p>Contains information about the method for filtering Conversation level test results.</p>
     pub fn conversation_level_test_results_filter_by(
         mut self,
@@ -70,6 +76,12 @@ impl TestExecutionResultFilterByBuilder {
     ) -> Self {
         self.conversation_level_test_results_filter_by = input;
         self
+    }
+    /// <p>Contains information about the method for filtering Conversation level test results.</p>
+    pub fn get_conversation_level_test_results_filter_by(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConversationLevelTestResultsFilterBy> {
+        &self.conversation_level_test_results_filter_by
     }
     /// Consumes the builder and constructs a [`TestExecutionResultFilterBy`](crate::types::TestExecutionResultFilterBy).
     pub fn build(self) -> crate::types::TestExecutionResultFilterBy {

@@ -80,6 +80,10 @@ impl AssertionAttributesBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the attribute within the SAML assertion to use as the user full "friendly" names for SAML users.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The name of the attribute within the SAML assertion to use as the login names for SAML users.</p>
     pub fn login(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.login = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl AssertionAttributesBuilder {
     pub fn set_login(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.login = input;
         self
+    }
+    /// <p>The name of the attribute within the SAML assertion to use as the login names for SAML users.</p>
+    pub fn get_login(&self) -> &::std::option::Option<::std::string::String> {
+        &self.login
     }
     /// <p>The name of the attribute within the SAML assertion to use as the email names for SAML users.</p>
     pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -100,6 +108,10 @@ impl AssertionAttributesBuilder {
         self.email = input;
         self
     }
+    /// <p>The name of the attribute within the SAML assertion to use as the email names for SAML users.</p>
+    pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email
+    }
     /// <p>The name of the attribute within the SAML assertion to use as the user full "friendly" names for user groups.</p>
     pub fn groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.groups = ::std::option::Option::Some(input.into());
@@ -109,6 +121,10 @@ impl AssertionAttributesBuilder {
     pub fn set_groups(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.groups = input;
         self
+    }
+    /// <p>The name of the attribute within the SAML assertion to use as the user full "friendly" names for user groups.</p>
+    pub fn get_groups(&self) -> &::std::option::Option<::std::string::String> {
+        &self.groups
     }
     /// <p>The name of the attribute within the SAML assertion to use as the user roles.</p>
     pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -120,6 +136,10 @@ impl AssertionAttributesBuilder {
         self.role = input;
         self
     }
+    /// <p>The name of the attribute within the SAML assertion to use as the user roles.</p>
+    pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role
+    }
     /// <p>The name of the attribute within the SAML assertion to use as the user full "friendly" names for the users' organizations.</p>
     pub fn org(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.org = ::std::option::Option::Some(input.into());
@@ -129,6 +149,10 @@ impl AssertionAttributesBuilder {
     pub fn set_org(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.org = input;
         self
+    }
+    /// <p>The name of the attribute within the SAML assertion to use as the user full "friendly" names for the users' organizations.</p>
+    pub fn get_org(&self) -> &::std::option::Option<::std::string::String> {
+        &self.org
     }
     /// Consumes the builder and constructs a [`AssertionAttributes`](crate::types::AssertionAttributes).
     pub fn build(self) -> crate::types::AssertionAttributes {

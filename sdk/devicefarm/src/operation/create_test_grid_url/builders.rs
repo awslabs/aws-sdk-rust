@@ -36,6 +36,12 @@ impl CreateTestGridUrlFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateTestGridUrl as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_test_grid_url::builders::CreateTestGridUrlInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateTestGridUrlFluentBuilder {
         self.inner = self.inner.set_project_arn(input);
         self
     }
+    /// <p>ARN (from <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>) to associate with the short-term URL. </p>
+    pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_arn()
+    }
     /// <p>Lifetime, in seconds, of the URL.</p>
     pub fn expires_in_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.expires_in_seconds(input);
@@ -135,5 +145,9 @@ impl CreateTestGridUrlFluentBuilder {
     pub fn set_expires_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_expires_in_seconds(input);
         self
+    }
+    /// <p>Lifetime, in seconds, of the URL.</p>
+    pub fn get_expires_in_seconds(&self) -> &::std::option::Option<i32> {
+        self.inner.get_expires_in_seconds()
     }
 }

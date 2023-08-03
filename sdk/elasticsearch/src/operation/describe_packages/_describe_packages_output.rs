@@ -66,6 +66,12 @@ impl DescribePackagesOutputBuilder {
         self.package_details_list = input;
         self
     }
+    /// <p>List of <code>PackageDetails</code> objects.</p>
+    pub fn get_package_details_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PackageDetails>> {
+        &self.package_details_list
+    }
     #[allow(missing_docs)] // documentation missing in model
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -75,6 +81,10 @@ impl DescribePackagesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

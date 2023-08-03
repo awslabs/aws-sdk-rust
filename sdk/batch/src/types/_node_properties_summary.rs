@@ -56,6 +56,10 @@ impl NodePropertiesSummaryBuilder {
         self.is_main_node = input;
         self
     }
+    /// <p>Specifies whether the current node is the main node for a multi-node parallel job.</p>
+    pub fn get_is_main_node(&self) -> &::std::option::Option<bool> {
+        &self.is_main_node
+    }
     /// <p>The number of nodes that are associated with a multi-node parallel job.</p>
     pub fn num_nodes(mut self, input: i32) -> Self {
         self.num_nodes = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl NodePropertiesSummaryBuilder {
         self.num_nodes = input;
         self
     }
+    /// <p>The number of nodes that are associated with a multi-node parallel job.</p>
+    pub fn get_num_nodes(&self) -> &::std::option::Option<i32> {
+        &self.num_nodes
+    }
     /// <p>The node index for the node. Node index numbering begins at zero. This index is also available on the node with the <code>AWS_BATCH_JOB_NODE_INDEX</code> environment variable.</p>
     pub fn node_index(mut self, input: i32) -> Self {
         self.node_index = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl NodePropertiesSummaryBuilder {
     pub fn set_node_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.node_index = input;
         self
+    }
+    /// <p>The node index for the node. Node index numbering begins at zero. This index is also available on the node with the <code>AWS_BATCH_JOB_NODE_INDEX</code> environment variable.</p>
+    pub fn get_node_index(&self) -> &::std::option::Option<i32> {
+        &self.node_index
     }
     /// Consumes the builder and constructs a [`NodePropertiesSummary`](crate::types::NodePropertiesSummary).
     pub fn build(self) -> crate::types::NodePropertiesSummary {

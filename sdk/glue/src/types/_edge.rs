@@ -48,6 +48,10 @@ impl EdgeBuilder {
         self.source_id = input;
         self
     }
+    /// <p>The unique of the node within the workflow where the edge starts.</p>
+    pub fn get_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_id
+    }
     /// <p>The unique of the node within the workflow where the edge ends.</p>
     pub fn destination_id(
         mut self,
@@ -63,6 +67,10 @@ impl EdgeBuilder {
     ) -> Self {
         self.destination_id = input;
         self
+    }
+    /// <p>The unique of the node within the workflow where the edge ends.</p>
+    pub fn get_destination_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_id
     }
     /// Consumes the builder and constructs a [`Edge`](crate::types::Edge).
     pub fn build(self) -> crate::types::Edge {

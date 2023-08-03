@@ -46,6 +46,10 @@ impl DeleteConnectInstanceConfigInputBuilder {
         self.connect_instance_id = input;
         self
     }
+    /// Amazon Connect Instance Id
+    pub fn get_connect_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connect_instance_id
+    }
     /// Consumes the builder and constructs a [`DeleteConnectInstanceConfigInput`](crate::operation::delete_connect_instance_config::DeleteConnectInstanceConfigInput).
     pub fn build(
         self,

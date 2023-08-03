@@ -88,6 +88,10 @@ impl SessionMappingDetailBuilder {
         self.studio_id = input;
         self
     }
+    /// <p>The ID of the Amazon EMR Studio.</p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_id
+    }
     /// <p>The globally unique identifier (GUID) of the user or group.</p>
     pub fn identity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_id = ::std::option::Option::Some(input.into());
@@ -97,6 +101,10 @@ impl SessionMappingDetailBuilder {
     pub fn set_identity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_id = input;
         self
+    }
+    /// <p>The globally unique identifier (GUID) of the user or group.</p>
+    pub fn get_identity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_id
     }
     /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>.</p>
     pub fn identity_name(
@@ -114,6 +122,10 @@ impl SessionMappingDetailBuilder {
         self.identity_name = input;
         self
     }
+    /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>.</p>
+    pub fn get_identity_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_name
+    }
     /// <p>Specifies whether the identity mapped to the Amazon EMR Studio is a user or a group.</p>
     pub fn identity_type(mut self, input: crate::types::IdentityType) -> Self {
         self.identity_type = ::std::option::Option::Some(input);
@@ -126,6 +138,10 @@ impl SessionMappingDetailBuilder {
     ) -> Self {
         self.identity_type = input;
         self
+    }
+    /// <p>Specifies whether the identity mapped to the Amazon EMR Studio is a user or a group.</p>
+    pub fn get_identity_type(&self) -> &::std::option::Option<crate::types::IdentityType> {
+        &self.identity_type
     }
     /// <p>The Amazon Resource Name (ARN) of the session policy associated with the user or group.</p>
     pub fn session_policy_arn(
@@ -143,6 +159,10 @@ impl SessionMappingDetailBuilder {
         self.session_policy_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the session policy associated with the user or group.</p>
+    pub fn get_session_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_policy_arn
+    }
     /// <p>The time the session mapping was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -156,6 +176,10 @@ impl SessionMappingDetailBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time the session mapping was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The time the session mapping was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -168,6 +192,10 @@ impl SessionMappingDetailBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>The time the session mapping was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// Consumes the builder and constructs a [`SessionMappingDetail`](crate::types::SessionMappingDetail).
     pub fn build(self) -> crate::types::SessionMappingDetail {

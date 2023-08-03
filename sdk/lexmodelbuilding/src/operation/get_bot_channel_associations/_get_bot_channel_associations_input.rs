@@ -71,6 +71,10 @@ impl GetBotChannelAssociationsInputBuilder {
         self.bot_name = input;
         self
     }
+    /// <p>The name of the Amazon Lex bot in the association.</p>
+    pub fn get_bot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_name
+    }
     /// <p>An alias pointing to the specific version of the Amazon Lex bot to which this association is being made.</p>
     pub fn bot_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_alias = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl GetBotChannelAssociationsInputBuilder {
     pub fn set_bot_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_alias = input;
         self
+    }
+    /// <p>An alias pointing to the specific version of the Amazon Lex bot to which this association is being made.</p>
+    pub fn get_bot_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_alias
     }
     /// <p>A pagination token for fetching the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -91,6 +99,10 @@ impl GetBotChannelAssociationsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A pagination token for fetching the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of associations to return in the response. The default is 50. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -100,6 +112,10 @@ impl GetBotChannelAssociationsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of associations to return in the response. The default is 50. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz." To return all bot channel associations, use a hyphen ("-") as the <code>nameContains</code> parameter.</p>
     pub fn name_contains(
@@ -116,6 +132,10 @@ impl GetBotChannelAssociationsInputBuilder {
     ) -> Self {
         self.name_contains = input;
         self
+    }
+    /// <p>Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz." To return all bot channel associations, use a hyphen ("-") as the <code>nameContains</code> parameter.</p>
+    pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name_contains
     }
     /// Consumes the builder and constructs a [`GetBotChannelAssociationsInput`](crate::operation::get_bot_channel_associations::GetBotChannelAssociationsInput).
     pub fn build(

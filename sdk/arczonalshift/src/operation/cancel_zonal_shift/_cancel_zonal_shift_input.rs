@@ -46,6 +46,10 @@ impl CancelZonalShiftInputBuilder {
         self.zonal_shift_id = input;
         self
     }
+    /// <p>The internally-generated identifier of a zonal shift.</p>
+    pub fn get_zonal_shift_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.zonal_shift_id
+    }
     /// Consumes the builder and constructs a [`CancelZonalShiftInput`](crate::operation::cancel_zonal_shift::CancelZonalShiftInput).
     pub fn build(
         self,

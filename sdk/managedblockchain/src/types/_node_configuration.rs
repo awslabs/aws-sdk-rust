@@ -76,6 +76,10 @@ impl NodeConfigurationBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The Amazon Managed Blockchain instance type for the node.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
+    }
     /// <p>The Availability Zone in which the node exists. Required for Ethereum nodes. </p>
     pub fn availability_zone(
         mut self,
@@ -91,6 +95,10 @@ impl NodeConfigurationBuilder {
     ) -> Self {
         self.availability_zone = input;
         self
+    }
+    /// <p>The Availability Zone in which the node exists. Required for Ethereum nodes. </p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
     }
     /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain. </p>
     pub fn log_publishing_configuration(
@@ -108,6 +116,12 @@ impl NodeConfigurationBuilder {
         self.log_publishing_configuration = input;
         self
     }
+    /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain. </p>
+    pub fn get_log_publishing_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::NodeLogPublishingConfiguration> {
+        &self.log_publishing_configuration
+    }
     /// <p>The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>. When using an Amazon Managed Blockchain network with Hyperledger Fabric version 1.4 or later, the default is <code>CouchDB</code>.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
     pub fn state_db(mut self, input: crate::types::StateDbType) -> Self {
@@ -119,6 +133,11 @@ impl NodeConfigurationBuilder {
     pub fn set_state_db(mut self, input: ::std::option::Option<crate::types::StateDbType>) -> Self {
         self.state_db = input;
         self
+    }
+    /// <p>The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>. When using an Amazon Managed Blockchain network with Hyperledger Fabric version 1.4 or later, the default is <code>CouchDB</code>.</p>
+    /// <p>Applies only to Hyperledger Fabric.</p>
+    pub fn get_state_db(&self) -> &::std::option::Option<crate::types::StateDbType> {
+        &self.state_db
     }
     /// Consumes the builder and constructs a [`NodeConfiguration`](crate::types::NodeConfiguration).
     pub fn build(self) -> crate::types::NodeConfiguration {

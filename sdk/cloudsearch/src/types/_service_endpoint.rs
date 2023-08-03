@@ -40,6 +40,10 @@ impl ServiceEndpointBuilder {
         self.endpoint = input;
         self
     }
+    /// <p>The endpoint to which service requests can be submitted. For example, <code>search-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code> or <code>doc-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code>.</p>
+    pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint
+    }
     /// Consumes the builder and constructs a [`ServiceEndpoint`](crate::types::ServiceEndpoint).
     pub fn build(self) -> crate::types::ServiceEndpoint {
         crate::types::ServiceEndpoint {

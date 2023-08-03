@@ -104,6 +104,10 @@ impl OptionSettingBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the option that has settings that you can set.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The current value of the option setting.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -113,6 +117,10 @@ impl OptionSettingBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The current value of the option setting.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// <p>The default value of the option setting.</p>
     pub fn default_value(
@@ -130,6 +138,10 @@ impl OptionSettingBuilder {
         self.default_value = input;
         self
     }
+    /// <p>The default value of the option setting.</p>
+    pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_value
+    }
     /// <p>The description of the option setting.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -139,6 +151,10 @@ impl OptionSettingBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the option setting.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The DB engine specific parameter type.</p>
     pub fn apply_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -150,6 +166,10 @@ impl OptionSettingBuilder {
         self.apply_type = input;
         self
     }
+    /// <p>The DB engine specific parameter type.</p>
+    pub fn get_apply_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.apply_type
+    }
     /// <p>The data type of the option setting.</p>
     pub fn data_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_type = ::std::option::Option::Some(input.into());
@@ -159,6 +179,10 @@ impl OptionSettingBuilder {
     pub fn set_data_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_type = input;
         self
+    }
+    /// <p>The data type of the option setting.</p>
+    pub fn get_data_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_type
     }
     /// <p>The allowed values of the option setting.</p>
     pub fn allowed_values(
@@ -176,6 +200,10 @@ impl OptionSettingBuilder {
         self.allowed_values = input;
         self
     }
+    /// <p>The allowed values of the option setting.</p>
+    pub fn get_allowed_values(&self) -> &::std::option::Option<::std::string::String> {
+        &self.allowed_values
+    }
     /// <p>A Boolean value that, when true, indicates the option setting can be modified from the default.</p>
     pub fn is_modifiable(mut self, input: bool) -> Self {
         self.is_modifiable = ::std::option::Option::Some(input);
@@ -186,6 +214,10 @@ impl OptionSettingBuilder {
         self.is_modifiable = input;
         self
     }
+    /// <p>A Boolean value that, when true, indicates the option setting can be modified from the default.</p>
+    pub fn get_is_modifiable(&self) -> &::std::option::Option<bool> {
+        &self.is_modifiable
+    }
     /// <p>Indicates if the option setting is part of a collection.</p>
     pub fn is_collection(mut self, input: bool) -> Self {
         self.is_collection = ::std::option::Option::Some(input);
@@ -195,6 +227,10 @@ impl OptionSettingBuilder {
     pub fn set_is_collection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_collection = input;
         self
+    }
+    /// <p>Indicates if the option setting is part of a collection.</p>
+    pub fn get_is_collection(&self) -> &::std::option::Option<bool> {
+        &self.is_collection
     }
     /// Consumes the builder and constructs a [`OptionSetting`](crate::types::OptionSetting).
     pub fn build(self) -> crate::types::OptionSetting {

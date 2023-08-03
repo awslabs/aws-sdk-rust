@@ -63,6 +63,10 @@ impl DeleteHsmInputBuilder {
         self.cluster_id = input;
         self
     }
+    /// <p>The identifier (ID) of the cluster that contains the HSM that you are deleting.</p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_id
+    }
     /// <p>The identifier (ID) of the HSM that you are deleting.</p>
     pub fn hsm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hsm_id = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl DeleteHsmInputBuilder {
     pub fn set_hsm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hsm_id = input;
         self
+    }
+    /// <p>The identifier (ID) of the HSM that you are deleting.</p>
+    pub fn get_hsm_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hsm_id
     }
     /// <p>The identifier (ID) of the elastic network interface (ENI) of the HSM that you are deleting.</p>
     pub fn eni_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -83,6 +91,10 @@ impl DeleteHsmInputBuilder {
         self.eni_id = input;
         self
     }
+    /// <p>The identifier (ID) of the elastic network interface (ENI) of the HSM that you are deleting.</p>
+    pub fn get_eni_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.eni_id
+    }
     /// <p>The IP address of the elastic network interface (ENI) of the HSM that you are deleting.</p>
     pub fn eni_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.eni_ip = ::std::option::Option::Some(input.into());
@@ -92,6 +104,10 @@ impl DeleteHsmInputBuilder {
     pub fn set_eni_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.eni_ip = input;
         self
+    }
+    /// <p>The IP address of the elastic network interface (ENI) of the HSM that you are deleting.</p>
+    pub fn get_eni_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.eni_ip
     }
     /// Consumes the builder and constructs a [`DeleteHsmInput`](crate::operation::delete_hsm::DeleteHsmInput).
     pub fn build(

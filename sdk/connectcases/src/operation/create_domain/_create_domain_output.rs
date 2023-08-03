@@ -62,6 +62,10 @@ impl CreateDomainOutputBuilder {
         self.domain_id = input;
         self
     }
+    /// <p>The unique identifier of the Cases domain. </p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_id
+    }
     /// <p>The Amazon Resource Name (ARN) for the Cases domain.</p>
     pub fn domain_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_arn = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl CreateDomainOutputBuilder {
     pub fn set_domain_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the Cases domain.</p>
+    pub fn get_domain_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_arn
     }
     /// <p>The status of the domain.</p>
     pub fn domain_status(mut self, input: crate::types::DomainStatus) -> Self {
@@ -84,6 +92,10 @@ impl CreateDomainOutputBuilder {
     ) -> Self {
         self.domain_status = input;
         self
+    }
+    /// <p>The status of the domain.</p>
+    pub fn get_domain_status(&self) -> &::std::option::Option<crate::types::DomainStatus> {
+        &self.domain_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

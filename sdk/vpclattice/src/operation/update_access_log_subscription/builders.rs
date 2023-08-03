@@ -36,6 +36,10 @@ impl UpdateAccessLogSubscriptionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAccessLogSubscription as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_access_log_subscription::builders::UpdateAccessLogSubscriptionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,12 @@ impl UpdateAccessLogSubscriptionFluentBuilder {
         self.inner = self.inner.set_access_log_subscription_identifier(input);
         self
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
+    pub fn get_access_log_subscription_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_access_log_subscription_identifier()
+    }
     /// <p>The Amazon Resource Name (ARN) of the access log destination.</p>
     pub fn destination_arn(
         mut self,
@@ -147,5 +157,9 @@ impl UpdateAccessLogSubscriptionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destination_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the access log destination.</p>
+    pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_arn()
     }
 }

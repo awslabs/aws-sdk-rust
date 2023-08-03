@@ -69,6 +69,10 @@ impl UpdateEvaluationFormOutputBuilder {
         self.evaluation_form_id = input;
         self
     }
+    /// <p>The unique identifier for the evaluation form.</p>
+    pub fn get_evaluation_form_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_form_id
+    }
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
     pub fn evaluation_form_arn(
         mut self,
@@ -85,6 +89,10 @@ impl UpdateEvaluationFormOutputBuilder {
         self.evaluation_form_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
+    pub fn get_evaluation_form_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_form_arn
+    }
     /// <p>The version of the updated evaluation form resource.</p>
     pub fn evaluation_form_version(mut self, input: i32) -> Self {
         self.evaluation_form_version = ::std::option::Option::Some(input);
@@ -94,6 +102,10 @@ impl UpdateEvaluationFormOutputBuilder {
     pub fn set_evaluation_form_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.evaluation_form_version = input;
         self
+    }
+    /// <p>The version of the updated evaluation form resource.</p>
+    pub fn get_evaluation_form_version(&self) -> &::std::option::Option<i32> {
+        &self.evaluation_form_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

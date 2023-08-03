@@ -36,6 +36,10 @@ impl StartNextPendingJobExecutionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartNextPendingJobExecution as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_next_pending_job_execution::builders::StartNextPendingJobExecutionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl StartNextPendingJobExecutionFluentBuilder {
         self.inner = self.inner.set_thing_name(input);
         self
     }
+    /// <p>The name of the thing associated with the device.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_thing_name()
+    }
     /// Adds a key-value pair to `statusDetails`.
     ///
     /// To override the contents of this collection use [`set_status_details`](Self::set_status_details).
@@ -149,6 +157,14 @@ impl StartNextPendingJobExecutionFluentBuilder {
         self.inner = self.inner.set_status_details(input);
         self
     }
+    /// <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
+    pub fn get_status_details(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_status_details()
+    }
     /// <p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in field <code>stepTimeoutInMinutes</code>) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
     pub fn step_timeout_in_minutes(mut self, input: i64) -> Self {
         self.inner = self.inner.step_timeout_in_minutes(input);
@@ -158,5 +174,9 @@ impl StartNextPendingJobExecutionFluentBuilder {
     pub fn set_step_timeout_in_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_step_timeout_in_minutes(input);
         self
+    }
+    /// <p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in field <code>stepTimeoutInMinutes</code>) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
+    pub fn get_step_timeout_in_minutes(&self) -> &::std::option::Option<i64> {
+        self.inner.get_step_timeout_in_minutes()
     }
 }

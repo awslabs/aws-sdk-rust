@@ -54,6 +54,10 @@ impl ParameterNameValueBuilder {
         self.parameter_name = input;
         self
     }
+    /// <p>The name of the parameter</p>
+    pub fn get_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_name
+    }
     /// <p>The value of the parameter</p>
     pub fn parameter_value(
         mut self,
@@ -69,6 +73,10 @@ impl ParameterNameValueBuilder {
     ) -> Self {
         self.parameter_value = input;
         self
+    }
+    /// <p>The value of the parameter</p>
+    pub fn get_parameter_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_value
     }
     /// Consumes the builder and constructs a [`ParameterNameValue`](crate::types::ParameterNameValue).
     pub fn build(self) -> crate::types::ParameterNameValue {

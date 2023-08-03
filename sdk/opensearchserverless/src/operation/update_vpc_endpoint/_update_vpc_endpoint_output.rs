@@ -56,6 +56,12 @@ impl UpdateVpcEndpointOutputBuilder {
         self.update_vpc_endpoint_detail = input;
         self
     }
+    /// <p>Details about the updated VPC endpoint.</p>
+    pub fn get_update_vpc_endpoint_detail(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateVpcEndpointDetail> {
+        &self.update_vpc_endpoint_detail
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

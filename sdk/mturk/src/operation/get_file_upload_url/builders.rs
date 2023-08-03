@@ -36,6 +36,12 @@ impl GetFileUploadURLFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetFileUploadURL as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_file_upload_url::builders::GetFileUploadUrlInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl GetFileUploadURLFluentBuilder {
         self.inner = self.inner.set_assignment_id(input);
         self
     }
+    /// <p>The ID of the assignment that contains the question with a FileUploadAnswer.</p>
+    pub fn get_assignment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assignment_id()
+    }
     /// <p>The identifier of the question with a FileUploadAnswer, as specified in the QuestionForm of the HIT.</p>
     pub fn question_identifier(
         mut self,
@@ -147,5 +157,9 @@ impl GetFileUploadURLFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_question_identifier(input);
         self
+    }
+    /// <p>The identifier of the question with a FileUploadAnswer, as specified in the QuestionForm of the HIT.</p>
+    pub fn get_question_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_question_identifier()
     }
 }

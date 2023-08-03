@@ -57,6 +57,10 @@ impl UpdateDocumentationVersionInputBuilder {
         self.rest_api_id = input;
         self
     }
+    /// <p>The string identifier of the associated RestApi..</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
+    }
     /// <p>The version identifier of the to-be-updated documentation version.</p>
     pub fn documentation_version(
         mut self,
@@ -72,6 +76,10 @@ impl UpdateDocumentationVersionInputBuilder {
     ) -> Self {
         self.documentation_version = input;
         self
+    }
+    /// <p>The version identifier of the to-be-updated documentation version.</p>
+    pub fn get_documentation_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.documentation_version
     }
     /// Appends an item to `patch_operations`.
     ///
@@ -91,6 +99,12 @@ impl UpdateDocumentationVersionInputBuilder {
     ) -> Self {
         self.patch_operations = input;
         self
+    }
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    pub fn get_patch_operations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
+        &self.patch_operations
     }
     /// Consumes the builder and constructs a [`UpdateDocumentationVersionInput`](crate::operation::update_documentation_version::UpdateDocumentationVersionInput).
     pub fn build(

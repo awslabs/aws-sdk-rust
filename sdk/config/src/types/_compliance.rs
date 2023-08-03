@@ -71,6 +71,14 @@ impl ComplianceBuilder {
         self.compliance_type = input;
         self
     }
+    /// <p>Indicates whether an Amazon Web Services resource or Config rule is compliant.</p>
+    /// <p>A resource is compliant if it complies with all of the Config rules that evaluate it. A resource is noncompliant if it does not comply with one or more of these rules.</p>
+    /// <p>A rule is compliant if all of the resources that the rule evaluates comply with it. A rule is noncompliant if any of these resources do not comply.</p>
+    /// <p>Config returns the <code>INSUFFICIENT_DATA</code> value when no evaluation results are available for the Amazon Web Services resource or Config rule.</p>
+    /// <p>For the <code>Compliance</code> data type, Config supports only <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code> values. Config does not support the <code>NOT_APPLICABLE</code> value for the <code>Compliance</code> data type.</p>
+    pub fn get_compliance_type(&self) -> &::std::option::Option<crate::types::ComplianceType> {
+        &self.compliance_type
+    }
     /// <p>The number of Amazon Web Services resources or Config rules that cause a result of <code>NON_COMPLIANT</code>, up to a maximum number.</p>
     pub fn compliance_contributor_count(
         mut self,
@@ -86,6 +94,12 @@ impl ComplianceBuilder {
     ) -> Self {
         self.compliance_contributor_count = input;
         self
+    }
+    /// <p>The number of Amazon Web Services resources or Config rules that cause a result of <code>NON_COMPLIANT</code>, up to a maximum number.</p>
+    pub fn get_compliance_contributor_count(
+        &self,
+    ) -> &::std::option::Option<crate::types::ComplianceContributorCount> {
+        &self.compliance_contributor_count
     }
     /// Consumes the builder and constructs a [`Compliance`](crate::types::Compliance).
     pub fn build(self) -> crate::types::Compliance {

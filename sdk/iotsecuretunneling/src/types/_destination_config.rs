@@ -48,6 +48,10 @@ impl DestinationConfigBuilder {
         self.thing_name = input;
         self
     }
+    /// <p>The name of the IoT thing to which you want to connect.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_name
+    }
     /// Appends an item to `services`.
     ///
     /// To override the contents of this collection use [`set_services`](Self::set_services).
@@ -66,6 +70,10 @@ impl DestinationConfigBuilder {
     ) -> Self {
         self.services = input;
         self
+    }
+    /// <p>A list of service names that identify the target application. The IoT client running on the destination device reads this value and uses it to look up a port or an IP address and a port. The IoT client instantiates the local proxy, which uses this information to connect to the destination application.</p>
+    pub fn get_services(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.services
     }
     /// Consumes the builder and constructs a [`DestinationConfig`](crate::types::DestinationConfig).
     pub fn build(self) -> crate::types::DestinationConfig {

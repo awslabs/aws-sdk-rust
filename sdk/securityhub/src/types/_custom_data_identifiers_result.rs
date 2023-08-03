@@ -63,6 +63,13 @@ impl CustomDataIdentifiersResultBuilder {
         self.detections = input;
         self
     }
+    /// <p>The list of detected instances of sensitive data.</p>
+    pub fn get_detections(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomDataIdentifiersDetections>>
+    {
+        &self.detections
+    }
     /// <p>The total number of occurrences of sensitive data.</p>
     pub fn total_count(mut self, input: i64) -> Self {
         self.total_count = ::std::option::Option::Some(input);
@@ -72,6 +79,10 @@ impl CustomDataIdentifiersResultBuilder {
     pub fn set_total_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_count = input;
         self
+    }
+    /// <p>The total number of occurrences of sensitive data.</p>
+    pub fn get_total_count(&self) -> &::std::option::Option<i64> {
+        &self.total_count
     }
     /// Consumes the builder and constructs a [`CustomDataIdentifiersResult`](crate::types::CustomDataIdentifiersResult).
     pub fn build(self) -> crate::types::CustomDataIdentifiersResult {

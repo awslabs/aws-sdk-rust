@@ -56,6 +56,10 @@ impl JobDetailsBuilder {
         self.translated_documents_count = input;
         self
     }
+    /// <p>The number of documents successfully processed during a translation job.</p>
+    pub fn get_translated_documents_count(&self) -> &::std::option::Option<i32> {
+        &self.translated_documents_count
+    }
     /// <p>The number of documents that could not be processed during a translation job.</p>
     pub fn documents_with_errors_count(mut self, input: i32) -> Self {
         self.documents_with_errors_count = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl JobDetailsBuilder {
         self.documents_with_errors_count = input;
         self
     }
+    /// <p>The number of documents that could not be processed during a translation job.</p>
+    pub fn get_documents_with_errors_count(&self) -> &::std::option::Option<i32> {
+        &self.documents_with_errors_count
+    }
     /// <p>The number of documents used as input in a translation job.</p>
     pub fn input_documents_count(mut self, input: i32) -> Self {
         self.input_documents_count = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl JobDetailsBuilder {
     pub fn set_input_documents_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.input_documents_count = input;
         self
+    }
+    /// <p>The number of documents used as input in a translation job.</p>
+    pub fn get_input_documents_count(&self) -> &::std::option::Option<i32> {
+        &self.input_documents_count
     }
     /// Consumes the builder and constructs a [`JobDetails`](crate::types::JobDetails).
     pub fn build(self) -> crate::types::JobDetails {

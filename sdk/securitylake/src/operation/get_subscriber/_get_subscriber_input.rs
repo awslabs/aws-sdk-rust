@@ -45,6 +45,10 @@ impl GetSubscriberInputBuilder {
         self.subscriber_id = input;
         self
     }
+    /// <p>A value created by Amazon Security Lake that uniquely identifies your <code>GetSubscriber</code> API request.</p>
+    pub fn get_subscriber_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscriber_id
+    }
     /// Consumes the builder and constructs a [`GetSubscriberInput`](crate::operation::get_subscriber::GetSubscriberInput).
     pub fn build(
         self,

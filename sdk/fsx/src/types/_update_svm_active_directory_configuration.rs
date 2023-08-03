@@ -58,6 +58,12 @@ impl UpdateSvmActiveDirectoryConfigurationBuilder {
         self.self_managed_active_directory_configuration = input;
         self
     }
+    /// <p>Specifies changes you are making to the self-managed Microsoft Active Directory (AD) configuration to which an FSx for Windows File Server file system or an FSx for ONTAP SVM is joined.</p>
+    pub fn get_self_managed_active_directory_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SelfManagedActiveDirectoryConfigurationUpdates> {
+        &self.self_managed_active_directory_configuration
+    }
     /// <p>Specifies an updated NetBIOS name of the AD computer object <code>NetBiosName</code> to which an SVM is joined.</p>
     pub fn net_bios_name(
         mut self,
@@ -73,6 +79,10 @@ impl UpdateSvmActiveDirectoryConfigurationBuilder {
     ) -> Self {
         self.net_bios_name = input;
         self
+    }
+    /// <p>Specifies an updated NetBIOS name of the AD computer object <code>NetBiosName</code> to which an SVM is joined.</p>
+    pub fn get_net_bios_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.net_bios_name
     }
     /// Consumes the builder and constructs a [`UpdateSvmActiveDirectoryConfiguration`](crate::types::UpdateSvmActiveDirectoryConfiguration).
     pub fn build(self) -> crate::types::UpdateSvmActiveDirectoryConfiguration {

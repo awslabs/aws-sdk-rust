@@ -46,6 +46,12 @@ impl EvaluationContextBuilder {
         self.evaluation_context_identifier = input;
         self
     }
+    /// <p>A unique EvaluationContextIdentifier ID for an EvaluationContext.</p>
+    pub fn get_evaluation_context_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_context_identifier
+    }
     /// Consumes the builder and constructs a [`EvaluationContext`](crate::types::EvaluationContext).
     pub fn build(self) -> crate::types::EvaluationContext {
         crate::types::EvaluationContext {

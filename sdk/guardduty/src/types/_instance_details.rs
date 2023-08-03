@@ -143,6 +143,10 @@ impl InstanceDetailsBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>The Availability Zone of the EC2 instance.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>The profile information of the EC2 instance.</p>
     pub fn iam_instance_profile(mut self, input: crate::types::IamInstanceProfile) -> Self {
         self.iam_instance_profile = ::std::option::Option::Some(input);
@@ -155,6 +159,12 @@ impl InstanceDetailsBuilder {
     ) -> Self {
         self.iam_instance_profile = input;
         self
+    }
+    /// <p>The profile information of the EC2 instance.</p>
+    pub fn get_iam_instance_profile(
+        &self,
+    ) -> &::std::option::Option<crate::types::IamInstanceProfile> {
+        &self.iam_instance_profile
     }
     /// <p>The image description of the EC2 instance.</p>
     pub fn image_description(
@@ -172,6 +182,10 @@ impl InstanceDetailsBuilder {
         self.image_description = input;
         self
     }
+    /// <p>The image description of the EC2 instance.</p>
+    pub fn get_image_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_description
+    }
     /// <p>The image ID of the EC2 instance.</p>
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
@@ -182,6 +196,10 @@ impl InstanceDetailsBuilder {
         self.image_id = input;
         self
     }
+    /// <p>The image ID of the EC2 instance.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_id
+    }
     /// <p>The ID of the EC2 instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -191,6 +209,10 @@ impl InstanceDetailsBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
+    }
+    /// <p>The ID of the EC2 instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// <p>The state of the EC2 instance.</p>
     pub fn instance_state(
@@ -208,6 +230,10 @@ impl InstanceDetailsBuilder {
         self.instance_state = input;
         self
     }
+    /// <p>The state of the EC2 instance.</p>
+    pub fn get_instance_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_state
+    }
     /// <p>The type of the EC2 instance.</p>
     pub fn instance_type(
         mut self,
@@ -224,6 +250,10 @@ impl InstanceDetailsBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The type of the EC2 instance.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
+    }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost. Only applicable to Amazon Web Services Outposts instances.</p>
     pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_arn = ::std::option::Option::Some(input.into());
@@ -234,6 +264,10 @@ impl InstanceDetailsBuilder {
         self.outpost_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost. Only applicable to Amazon Web Services Outposts instances.</p>
+    pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.outpost_arn
+    }
     /// <p>The launch time of the EC2 instance.</p>
     pub fn launch_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_time = ::std::option::Option::Some(input.into());
@@ -243,6 +277,10 @@ impl InstanceDetailsBuilder {
     pub fn set_launch_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launch_time = input;
         self
+    }
+    /// <p>The launch time of the EC2 instance.</p>
+    pub fn get_launch_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_time
     }
     /// Appends an item to `network_interfaces`.
     ///
@@ -263,6 +301,12 @@ impl InstanceDetailsBuilder {
         self.network_interfaces = input;
         self
     }
+    /// <p>The elastic network interface information of the EC2 instance.</p>
+    pub fn get_network_interfaces(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>> {
+        &self.network_interfaces
+    }
     /// <p>The platform of the EC2 instance.</p>
     pub fn platform(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform = ::std::option::Option::Some(input.into());
@@ -272,6 +316,10 @@ impl InstanceDetailsBuilder {
     pub fn set_platform(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform = input;
         self
+    }
+    /// <p>The platform of the EC2 instance.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform
     }
     /// Appends an item to `product_codes`.
     ///
@@ -292,6 +340,12 @@ impl InstanceDetailsBuilder {
         self.product_codes = input;
         self
     }
+    /// <p>The product code of the EC2 instance.</p>
+    pub fn get_product_codes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductCode>> {
+        &self.product_codes
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -310,6 +364,10 @@ impl InstanceDetailsBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags of the EC2 instance.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`InstanceDetails`](crate::types::InstanceDetails).
     pub fn build(self) -> crate::types::InstanceDetails {

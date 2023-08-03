@@ -59,6 +59,10 @@ impl ListQueuedMessagesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `downlink_queue_messages_list`.
     ///
     /// To override the contents of this collection use [`set_downlink_queue_messages_list`](Self::set_downlink_queue_messages_list).
@@ -80,6 +84,12 @@ impl ListQueuedMessagesOutputBuilder {
     ) -> Self {
         self.downlink_queue_messages_list = input;
         self
+    }
+    /// <p>The messages in the downlink queue.</p>
+    pub fn get_downlink_queue_messages_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DownlinkQueueMessage>> {
+        &self.downlink_queue_messages_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

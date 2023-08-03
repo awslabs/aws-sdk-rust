@@ -68,6 +68,10 @@ impl CreateSchedulingPolicyInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the scheduling policy. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The fair share policy of the scheduling policy.</p>
     pub fn fairshare_policy(mut self, input: crate::types::FairsharePolicy) -> Self {
         self.fairshare_policy = ::std::option::Option::Some(input);
@@ -80,6 +84,10 @@ impl CreateSchedulingPolicyInputBuilder {
     ) -> Self {
         self.fairshare_policy = input;
         self
+    }
+    /// <p>The fair share policy of the scheduling policy.</p>
+    pub fn get_fairshare_policy(&self) -> &::std::option::Option<crate::types::FairsharePolicy> {
+        &self.fairshare_policy
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -107,6 +115,15 @@ impl CreateSchedulingPolicyInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags that you apply to the scheduling policy to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>These tags can be updated or removed using the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API operations.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSchedulingPolicyInput`](crate::operation::create_scheduling_policy::CreateSchedulingPolicyInput).
     pub fn build(

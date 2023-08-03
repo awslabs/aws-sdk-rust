@@ -36,6 +36,10 @@ impl GetManagedEndpointSessionCredentialsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetManagedEndpointSessionCredentials as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_managed_endpoint_session_credentials::builders::GetManagedEndpointSessionCredentialsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl GetManagedEndpointSessionCredentialsFluentBuilder {
         self.inner = self.inner.set_endpoint_identifier(input);
         self
     }
+    /// <p>The ARN of the managed endpoint for which the request is submitted. </p>
+    pub fn get_endpoint_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_endpoint_identifier()
+    }
     /// <p>The ARN of the Virtual Cluster which the Managed Endpoint belongs to. </p>
     pub fn virtual_cluster_identifier(
         mut self,
@@ -121,6 +129,10 @@ impl GetManagedEndpointSessionCredentialsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_virtual_cluster_identifier(input);
         self
+    }
+    /// <p>The ARN of the Virtual Cluster which the Managed Endpoint belongs to. </p>
+    pub fn get_virtual_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_virtual_cluster_identifier()
     }
     /// <p>The IAM Execution Role ARN that will be used by the job run. </p>
     pub fn execution_role_arn(
@@ -138,6 +150,10 @@ impl GetManagedEndpointSessionCredentialsFluentBuilder {
         self.inner = self.inner.set_execution_role_arn(input);
         self
     }
+    /// <p>The IAM Execution Role ARN that will be used by the job run. </p>
+    pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_execution_role_arn()
+    }
     /// <p>Type of the token requested. Currently supported and default value of this field is “TOKEN.”</p>
     pub fn credential_type(
         mut self,
@@ -154,6 +170,10 @@ impl GetManagedEndpointSessionCredentialsFluentBuilder {
         self.inner = self.inner.set_credential_type(input);
         self
     }
+    /// <p>Type of the token requested. Currently supported and default value of this field is “TOKEN.”</p>
+    pub fn get_credential_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_credential_type()
+    }
     /// <p>Duration in seconds for which the session token is valid. The default duration is 15 minutes and the maximum is 12 hours.</p>
     pub fn duration_in_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.duration_in_seconds(input);
@@ -163,6 +183,10 @@ impl GetManagedEndpointSessionCredentialsFluentBuilder {
     pub fn set_duration_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_duration_in_seconds(input);
         self
+    }
+    /// <p>Duration in seconds for which the session token is valid. The default duration is 15 minutes and the maximum is 12 hours.</p>
+    pub fn get_duration_in_seconds(&self) -> &::std::option::Option<i32> {
+        self.inner.get_duration_in_seconds()
     }
     /// <p>String identifier used to separate sections of the execution logs uploaded to S3.</p>
     pub fn log_context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -174,6 +198,10 @@ impl GetManagedEndpointSessionCredentialsFluentBuilder {
         self.inner = self.inner.set_log_context(input);
         self
     }
+    /// <p>String identifier used to separate sections of the execution logs uploaded to S3.</p>
+    pub fn get_log_context(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_log_context()
+    }
     /// <p>The client idempotency token of the job run request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -183,5 +211,9 @@ impl GetManagedEndpointSessionCredentialsFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>The client idempotency token of the job run request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

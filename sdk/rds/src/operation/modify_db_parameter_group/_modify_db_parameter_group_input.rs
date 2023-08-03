@@ -86,6 +86,14 @@ impl ModifyDbParameterGroupInputBuilder {
         self.db_parameter_group_name = input;
         self
     }
+    /// <p>The name of the DB parameter group.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>If supplied, must match the name of an existing <code>DBParameterGroup</code>.</p> </li>
+    /// </ul>
+    pub fn get_db_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_parameter_group_name
+    }
     /// Appends an item to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
@@ -118,6 +126,19 @@ impl ModifyDbParameterGroupInputBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>An array of parameter names, values, and the application methods for the parameter update. At least one parameter name, value, and application method must be supplied; later arguments are optional. A maximum of 20 parameters can be modified in a single request.</p>
+    /// <p>Valid Values (for the application method): <code>immediate | pending-reboot</code> </p>
+    /// <p>You can use the <code>immediate</code> value with dynamic parameters only. You can use the <code>pending-reboot</code> value for both dynamic and static parameters.</p>
+    /// <p>When the application method is <code>immediate</code>, changes to dynamic parameters are applied immediately to the DB instances associated with the parameter group.</p>
+    /// <p>When the application method is <code>pending-reboot</code>, changes to dynamic and static parameters are applied after a reboot without failover to the DB instances associated with the parameter group.</p> <note>
+    /// <p>You can't use <code>pending-reboot</code> with dynamic parameters on RDS for SQL Server DB instances. Use <code>immediate</code>.</p>
+    /// </note>
+    /// <p>For more information on modifying DB parameters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithParamGroups.html">Working with DB parameter groups</a> in the <i>Amazon RDS User Guide</i>.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+        &self.parameters
     }
     /// Consumes the builder and constructs a [`ModifyDbParameterGroupInput`](crate::operation::modify_db_parameter_group::ModifyDbParameterGroupInput).
     pub fn build(

@@ -55,6 +55,10 @@ impl CreateConnectClientAddInInputBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The directory identifier for which to configure the client add-in.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>The name of the client add-in.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl CreateConnectClientAddInInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the client add-in.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The endpoint URL of the Amazon Connect client add-in.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
@@ -74,6 +82,10 @@ impl CreateConnectClientAddInInputBuilder {
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
+    }
+    /// <p>The endpoint URL of the Amazon Connect client add-in.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     /// Consumes the builder and constructs a [`CreateConnectClientAddInInput`](crate::operation::create_connect_client_add_in::CreateConnectClientAddInInput).
     pub fn build(

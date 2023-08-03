@@ -39,6 +39,13 @@ impl CancelMailboxExportJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CancelMailboxExportJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::cancel_mailbox_export_job::builders::CancelMailboxExportJobInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +136,10 @@ impl CancelMailboxExportJobFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>The idempotency token for the client request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>The job ID.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_id(input.into());
@@ -138,6 +149,10 @@ impl CancelMailboxExportJobFluentBuilder {
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_id(input);
         self
+    }
+    /// <p>The job ID.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_id()
     }
     /// <p>The organization ID.</p>
     pub fn organization_id(
@@ -154,5 +169,9 @@ impl CancelMailboxExportJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
+    }
+    /// <p>The organization ID.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
     }
 }

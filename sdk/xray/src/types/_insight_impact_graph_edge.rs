@@ -40,6 +40,10 @@ impl InsightImpactGraphEdgeBuilder {
         self.reference_id = input;
         self
     }
+    /// <p>Identifier of the edge. Unique within a service map.</p>
+    pub fn get_reference_id(&self) -> &::std::option::Option<i32> {
+        &self.reference_id
+    }
     /// Consumes the builder and constructs a [`InsightImpactGraphEdge`](crate::types::InsightImpactGraphEdge).
     pub fn build(self) -> crate::types::InsightImpactGraphEdge {
         crate::types::InsightImpactGraphEdge {

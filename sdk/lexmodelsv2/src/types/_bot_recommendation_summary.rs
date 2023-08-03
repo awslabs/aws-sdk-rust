@@ -77,6 +77,13 @@ impl BotRecommendationSummaryBuilder {
         self.bot_recommendation_status = input;
         self
     }
+    /// <p>The status of the bot recommendation.</p>
+    /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
+    pub fn get_bot_recommendation_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::BotRecommendationStatus> {
+        &self.bot_recommendation_status
+    }
     /// <p>The unique identifier of the bot recommendation to be updated.</p>
     pub fn bot_recommendation_id(
         mut self,
@@ -93,6 +100,10 @@ impl BotRecommendationSummaryBuilder {
         self.bot_recommendation_id = input;
         self
     }
+    /// <p>The unique identifier of the bot recommendation to be updated.</p>
+    pub fn get_bot_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_recommendation_id
+    }
     /// <p>A timestamp of the date and time that the bot recommendation was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
@@ -106,6 +117,10 @@ impl BotRecommendationSummaryBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>A timestamp of the date and time that the bot recommendation was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>A timestamp of the date and time that the bot recommendation was last updated.</p>
     pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date_time = ::std::option::Option::Some(input);
@@ -118,6 +133,12 @@ impl BotRecommendationSummaryBuilder {
     ) -> Self {
         self.last_updated_date_time = input;
         self
+    }
+    /// <p>A timestamp of the date and time that the bot recommendation was last updated.</p>
+    pub fn get_last_updated_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date_time
     }
     /// Consumes the builder and constructs a [`BotRecommendationSummary`](crate::types::BotRecommendationSummary).
     pub fn build(self) -> crate::types::BotRecommendationSummary {

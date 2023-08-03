@@ -63,6 +63,10 @@ impl CacheParameterGroupStatusBuilder {
         self.cache_parameter_group_name = input;
         self
     }
+    /// <p>The name of the cache parameter group.</p>
+    pub fn get_cache_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_parameter_group_name
+    }
     /// <p>The status of parameter updates.</p>
     pub fn parameter_apply_status(
         mut self,
@@ -78,6 +82,10 @@ impl CacheParameterGroupStatusBuilder {
     ) -> Self {
         self.parameter_apply_status = input;
         self
+    }
+    /// <p>The status of parameter updates.</p>
+    pub fn get_parameter_apply_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_apply_status
     }
     /// Appends an item to `cache_node_ids_to_reboot`.
     ///
@@ -100,6 +108,12 @@ impl CacheParameterGroupStatusBuilder {
     ) -> Self {
         self.cache_node_ids_to_reboot = input;
         self
+    }
+    /// <p>A list of the cache node IDs which need to be rebooted for parameter changes to be applied. A node ID is a numeric identifier (0001, 0002, etc.).</p>
+    pub fn get_cache_node_ids_to_reboot(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.cache_node_ids_to_reboot
     }
     /// Consumes the builder and constructs a [`CacheParameterGroupStatus`](crate::types::CacheParameterGroupStatus).
     pub fn build(self) -> crate::types::CacheParameterGroupStatus {

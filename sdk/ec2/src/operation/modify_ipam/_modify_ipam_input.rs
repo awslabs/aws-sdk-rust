@@ -81,6 +81,10 @@ impl ModifyIpamInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The ID of the IPAM you want to modify.</p>
     pub fn ipam_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_id = ::std::option::Option::Some(input.into());
@@ -91,6 +95,10 @@ impl ModifyIpamInputBuilder {
         self.ipam_id = input;
         self
     }
+    /// <p>The ID of the IPAM you want to modify.</p>
+    pub fn get_ipam_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipam_id
+    }
     /// <p>The description of the IPAM you want to modify.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -100,6 +108,10 @@ impl ModifyIpamInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the IPAM you want to modify.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `add_operating_regions`.
     ///
@@ -122,6 +134,13 @@ impl ModifyIpamInputBuilder {
         self.add_operating_regions = input;
         self
     }
+    /// <p>Choose the operating Regions for the IPAM. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
+    /// <p>For more information about operating Regions, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    pub fn get_add_operating_regions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>> {
+        &self.add_operating_regions
+    }
     /// Appends an item to `remove_operating_regions`.
     ///
     /// To override the contents of this collection use [`set_remove_operating_regions`](Self::set_remove_operating_regions).
@@ -143,6 +162,12 @@ impl ModifyIpamInputBuilder {
     ) -> Self {
         self.remove_operating_regions = input;
         self
+    }
+    /// <p>The operating Regions to remove.</p>
+    pub fn get_remove_operating_regions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RemoveIpamOperatingRegion>> {
+        &self.remove_operating_regions
     }
     /// Consumes the builder and constructs a [`ModifyIpamInput`](crate::operation::modify_ipam::ModifyIpamInput).
     pub fn build(

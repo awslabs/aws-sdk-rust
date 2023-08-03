@@ -56,6 +56,10 @@ impl ContainerImageBuilder {
         self.image = input;
         self
     }
+    /// <p>The name of the container image.</p>
+    pub fn get_image(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image
+    }
     /// <p>The digest of the container image.</p>
     pub fn digest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.digest = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl ContainerImageBuilder {
     pub fn set_digest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.digest = input;
         self
+    }
+    /// <p>The digest of the container image.</p>
+    pub fn get_digest(&self) -> &::std::option::Option<::std::string::String> {
+        &self.digest
     }
     /// <p>The timestamp when the container image was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -78,6 +86,10 @@ impl ContainerImageBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The timestamp when the container image was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// Consumes the builder and constructs a [`ContainerImage`](crate::types::ContainerImage).
     pub fn build(self) -> crate::types::ContainerImage {

@@ -48,6 +48,10 @@ impl AddTagsInputBuilder {
         self.arn = input;
         self
     }
+    /// <p> Specify the <code>ARN</code> for which you want to add the tags.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Appends an item to `tag_list`.
     ///
     /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
@@ -66,6 +70,10 @@ impl AddTagsInputBuilder {
     ) -> Self {
         self.tag_list = input;
         self
+    }
+    /// <p> List of <code>Tag</code> that need to be added for the Elasticsearch domain. </p>
+    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tag_list
     }
     /// Consumes the builder and constructs a [`AddTagsInput`](crate::operation::add_tags::AddTagsInput).
     pub fn build(

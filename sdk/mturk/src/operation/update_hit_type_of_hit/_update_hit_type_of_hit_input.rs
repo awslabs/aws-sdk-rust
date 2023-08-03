@@ -49,6 +49,10 @@ impl UpdateHitTypeOfHitInputBuilder {
         self.hit_id = input;
         self
     }
+    /// <p>The HIT to update.</p>
+    pub fn get_hit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hit_id
+    }
     /// <p>The ID of the new HIT type.</p>
     pub fn hit_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hit_type_id = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl UpdateHitTypeOfHitInputBuilder {
     pub fn set_hit_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hit_type_id = input;
         self
+    }
+    /// <p>The ID of the new HIT type.</p>
+    pub fn get_hit_type_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hit_type_id
     }
     /// Consumes the builder and constructs a [`UpdateHitTypeOfHitInput`](crate::operation::update_hit_type_of_hit::UpdateHitTypeOfHitInput).
     pub fn build(

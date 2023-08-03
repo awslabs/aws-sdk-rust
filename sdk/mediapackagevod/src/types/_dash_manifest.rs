@@ -83,6 +83,10 @@ impl DashManifestBuilder {
         self.manifest_layout = input;
         self
     }
+    /// Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
+    pub fn get_manifest_layout(&self) -> &::std::option::Option<crate::types::ManifestLayout> {
+        &self.manifest_layout
+    }
     /// An optional string to include in the name of the manifest.
     pub fn manifest_name(
         mut self,
@@ -99,6 +103,10 @@ impl DashManifestBuilder {
         self.manifest_name = input;
         self
     }
+    /// An optional string to include in the name of the manifest.
+    pub fn get_manifest_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.manifest_name
+    }
     /// Minimum duration (in seconds) that a player will buffer media before starting the presentation.
     pub fn min_buffer_time_seconds(mut self, input: i32) -> Self {
         self.min_buffer_time_seconds = ::std::option::Option::Some(input);
@@ -109,6 +117,10 @@ impl DashManifestBuilder {
         self.min_buffer_time_seconds = input;
         self
     }
+    /// Minimum duration (in seconds) that a player will buffer media before starting the presentation.
+    pub fn get_min_buffer_time_seconds(&self) -> &::std::option::Option<i32> {
+        &self.min_buffer_time_seconds
+    }
     /// The Dynamic Adaptive Streaming over HTTP (DASH) profile type. When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled.
     pub fn profile(mut self, input: crate::types::Profile) -> Self {
         self.profile = ::std::option::Option::Some(input);
@@ -118,6 +130,10 @@ impl DashManifestBuilder {
     pub fn set_profile(mut self, input: ::std::option::Option<crate::types::Profile>) -> Self {
         self.profile = input;
         self
+    }
+    /// The Dynamic Adaptive Streaming over HTTP (DASH) profile type. When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled.
+    pub fn get_profile(&self) -> &::std::option::Option<crate::types::Profile> {
+        &self.profile
     }
     /// The source of scte markers used. When set to SEGMENTS, the scte markers are sourced from the segments of the ingested content. When set to MANIFEST, the scte markers are sourced from the manifest of the ingested content.
     pub fn scte_markers_source(mut self, input: crate::types::ScteMarkersSource) -> Self {
@@ -132,6 +148,12 @@ impl DashManifestBuilder {
         self.scte_markers_source = input;
         self
     }
+    /// The source of scte markers used. When set to SEGMENTS, the scte markers are sourced from the segments of the ingested content. When set to MANIFEST, the scte markers are sourced from the manifest of the ingested content.
+    pub fn get_scte_markers_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScteMarkersSource> {
+        &self.scte_markers_source
+    }
     /// A StreamSelection configuration.
     pub fn stream_selection(mut self, input: crate::types::StreamSelection) -> Self {
         self.stream_selection = ::std::option::Option::Some(input);
@@ -144,6 +166,10 @@ impl DashManifestBuilder {
     ) -> Self {
         self.stream_selection = input;
         self
+    }
+    /// A StreamSelection configuration.
+    pub fn get_stream_selection(&self) -> &::std::option::Option<crate::types::StreamSelection> {
+        &self.stream_selection
     }
     /// Consumes the builder and constructs a [`DashManifest`](crate::types::DashManifest).
     pub fn build(self) -> crate::types::DashManifest {

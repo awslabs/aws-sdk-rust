@@ -37,6 +37,10 @@ impl UpdateEventConfigurationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateEventConfigurations as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_event_configurations::builders::UpdateEventConfigurationsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,5 +143,13 @@ impl UpdateEventConfigurationsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_event_configurations(input);
         self
+    }
+    /// <p>The new event configuration values.</p>
+    pub fn get_event_configurations(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<crate::types::EventType, crate::types::Configuration>,
+    > {
+        self.inner.get_event_configurations()
     }
 }

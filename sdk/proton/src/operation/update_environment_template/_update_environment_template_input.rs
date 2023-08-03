@@ -62,6 +62,10 @@ impl UpdateEnvironmentTemplateInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the environment template to update.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The name of the environment template to update as displayed in the developer interface.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl UpdateEnvironmentTemplateInputBuilder {
         self.display_name = input;
         self
     }
+    /// <p>The name of the environment template to update as displayed in the developer interface.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// <p>A description of the environment template update.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl UpdateEnvironmentTemplateInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the environment template update.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`UpdateEnvironmentTemplateInput`](crate::operation::update_environment_template::UpdateEnvironmentTemplateInput).
     pub fn build(

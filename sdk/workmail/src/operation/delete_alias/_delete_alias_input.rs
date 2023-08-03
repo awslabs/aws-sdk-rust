@@ -61,6 +61,10 @@ impl DeleteAliasInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The identifier for the organization under which the user exists.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>The identifier for the member (user or group) from which to have the aliases removed.</p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl DeleteAliasInputBuilder {
         self.entity_id = input;
         self
     }
+    /// <p>The identifier for the member (user or group) from which to have the aliases removed.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_id
+    }
     /// <p>The aliases to be removed from the user's set of aliases. Duplicate entries in the list are collapsed into single entries (the list is transformed into a set).</p>
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias = ::std::option::Option::Some(input.into());
@@ -80,6 +88,10 @@ impl DeleteAliasInputBuilder {
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alias = input;
         self
+    }
+    /// <p>The aliases to be removed from the user's set of aliases. Duplicate entries in the list are collapsed into single entries (the list is transformed into a set).</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias
     }
     /// Consumes the builder and constructs a [`DeleteAliasInput`](crate::operation::delete_alias::DeleteAliasInput).
     pub fn build(

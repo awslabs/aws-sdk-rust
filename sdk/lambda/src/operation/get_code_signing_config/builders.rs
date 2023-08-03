@@ -36,6 +36,13 @@ impl GetCodeSigningConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetCodeSigningConfig as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_code_signing_config::builders::GetCodeSigningConfigInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +138,9 @@ impl GetCodeSigningConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_code_signing_config_arn(input);
         self
+    }
+    /// <p>The The Amazon Resource Name (ARN) of the code signing configuration. </p>
+    pub fn get_code_signing_config_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_code_signing_config_arn()
     }
 }

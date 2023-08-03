@@ -70,6 +70,10 @@ impl ExportKeyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ExportKey as a reference.
+    pub fn as_input(&self) -> &crate::operation::export_key::builders::ExportKeyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -155,6 +159,10 @@ impl ExportKeyFluentBuilder {
         self.inner = self.inner.set_key_material(input);
         self
     }
+    /// <p>The key block format type, for example, TR-34 or TR-31, to use during key material export.</p>
+    pub fn get_key_material(&self) -> &::std::option::Option<crate::types::ExportKeyMaterial> {
+        self.inner.get_key_material()
+    }
     /// <p>The <code>KeyARN</code> of the key under export from Amazon Web Services Payment Cryptography.</p>
     pub fn export_key_identifier(
         mut self,
@@ -170,5 +178,9 @@ impl ExportKeyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_export_key_identifier(input);
         self
+    }
+    /// <p>The <code>KeyARN</code> of the key under export from Amazon Web Services Payment Cryptography.</p>
+    pub fn get_export_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_export_key_identifier()
     }
 }

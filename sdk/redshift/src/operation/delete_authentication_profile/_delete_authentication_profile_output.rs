@@ -52,6 +52,10 @@ impl DeleteAuthenticationProfileOutputBuilder {
         self.authentication_profile_name = input;
         self
     }
+    /// <p>The name of the authentication profile that was deleted.</p>
+    pub fn get_authentication_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication_profile_name
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

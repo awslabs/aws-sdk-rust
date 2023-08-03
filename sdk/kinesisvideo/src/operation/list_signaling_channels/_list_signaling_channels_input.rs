@@ -59,6 +59,10 @@ impl ListSignalingChannelsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of channels to return in the response. The default is 500.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>If you specify this parameter, when the result of a <code>ListSignalingChannels</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of channels, provide this token in your next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl ListSignalingChannelsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If you specify this parameter, when the result of a <code>ListSignalingChannels</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of channels, provide this token in your next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>Optional: Returns only the channels that satisfy a specific condition.</p>
     pub fn channel_name_condition(mut self, input: crate::types::ChannelNameCondition) -> Self {
@@ -81,6 +89,12 @@ impl ListSignalingChannelsInputBuilder {
     ) -> Self {
         self.channel_name_condition = input;
         self
+    }
+    /// <p>Optional: Returns only the channels that satisfy a specific condition.</p>
+    pub fn get_channel_name_condition(
+        &self,
+    ) -> &::std::option::Option<crate::types::ChannelNameCondition> {
+        &self.channel_name_condition
     }
     /// Consumes the builder and constructs a [`ListSignalingChannelsInput`](crate::operation::list_signaling_channels::ListSignalingChannelsInput).
     pub fn build(

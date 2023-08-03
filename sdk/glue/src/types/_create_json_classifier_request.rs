@@ -48,6 +48,10 @@ impl CreateJsonClassifierRequestBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the classifier.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify. Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
     pub fn json_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.json_path = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl CreateJsonClassifierRequestBuilder {
     pub fn set_json_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.json_path = input;
         self
+    }
+    /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify. Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
+    pub fn get_json_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.json_path
     }
     /// Consumes the builder and constructs a [`CreateJsonClassifierRequest`](crate::types::CreateJsonClassifierRequest).
     pub fn build(self) -> crate::types::CreateJsonClassifierRequest {

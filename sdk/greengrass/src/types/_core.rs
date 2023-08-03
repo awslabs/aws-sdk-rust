@@ -70,6 +70,10 @@ impl CoreBuilder {
         self.certificate_arn = input;
         self
     }
+    /// The ARN of the certificate associated with the core.
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_arn
+    }
     /// A descriptive or arbitrary ID for the core. This value must be unique within the core definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl CoreBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// A descriptive or arbitrary ID for the core. This value must be unique within the core definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// If true, the core's local shadow is automatically synced with the cloud.
     pub fn sync_shadow(mut self, input: bool) -> Self {
@@ -90,6 +98,10 @@ impl CoreBuilder {
         self.sync_shadow = input;
         self
     }
+    /// If true, the core's local shadow is automatically synced with the cloud.
+    pub fn get_sync_shadow(&self) -> &::std::option::Option<bool> {
+        &self.sync_shadow
+    }
     /// The ARN of the thing which is the core.
     pub fn thing_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_arn = ::std::option::Option::Some(input.into());
@@ -99,6 +111,10 @@ impl CoreBuilder {
     pub fn set_thing_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_arn = input;
         self
+    }
+    /// The ARN of the thing which is the core.
+    pub fn get_thing_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_arn
     }
     /// Consumes the builder and constructs a [`Core`](crate::types::Core).
     pub fn build(self) -> crate::types::Core {

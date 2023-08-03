@@ -56,6 +56,10 @@ impl HeaderFooterSectionConfigurationBuilder {
         self.section_id = input;
         self
     }
+    /// <p>The unique identifier of the header or footer section.</p>
+    pub fn get_section_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.section_id
+    }
     /// <p>The layout configuration of the header or footer section.</p>
     pub fn layout(mut self, input: crate::types::SectionLayoutConfiguration) -> Self {
         self.layout = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl HeaderFooterSectionConfigurationBuilder {
         self.layout = input;
         self
     }
+    /// <p>The layout configuration of the header or footer section.</p>
+    pub fn get_layout(&self) -> &::std::option::Option<crate::types::SectionLayoutConfiguration> {
+        &self.layout
+    }
     /// <p>The style options of a header or footer section.</p>
     pub fn style(mut self, input: crate::types::SectionStyle) -> Self {
         self.style = ::std::option::Option::Some(input);
@@ -78,6 +86,10 @@ impl HeaderFooterSectionConfigurationBuilder {
     pub fn set_style(mut self, input: ::std::option::Option<crate::types::SectionStyle>) -> Self {
         self.style = input;
         self
+    }
+    /// <p>The style options of a header or footer section.</p>
+    pub fn get_style(&self) -> &::std::option::Option<crate::types::SectionStyle> {
+        &self.style
     }
     /// Consumes the builder and constructs a [`HeaderFooterSectionConfiguration`](crate::types::HeaderFooterSectionConfiguration).
     pub fn build(self) -> crate::types::HeaderFooterSectionConfiguration {

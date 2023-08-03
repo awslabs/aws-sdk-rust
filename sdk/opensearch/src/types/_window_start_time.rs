@@ -48,6 +48,10 @@ impl WindowStartTimeBuilder {
         self.hours = input;
         self
     }
+    /// <p>The start hour of the window in Coordinated Universal Time (UTC), using 24-hour time. For example, <code>17</code> refers to 5:00 P.M. UTC.</p>
+    pub fn get_hours(&self) -> &::std::option::Option<i64> {
+        &self.hours
+    }
     /// <p>The start minute of the window, in UTC.</p>
     pub fn minutes(mut self, input: i64) -> Self {
         self.minutes = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl WindowStartTimeBuilder {
     pub fn set_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.minutes = input;
         self
+    }
+    /// <p>The start minute of the window, in UTC.</p>
+    pub fn get_minutes(&self) -> &::std::option::Option<i64> {
+        &self.minutes
     }
     /// Consumes the builder and constructs a [`WindowStartTime`](crate::types::WindowStartTime).
     pub fn build(self) -> crate::types::WindowStartTime {

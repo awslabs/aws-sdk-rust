@@ -40,6 +40,10 @@ impl AssociateProactiveEngagementDetailsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateProactiveEngagementDetails as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_proactive_engagement_details::builders::AssociateProactiveEngagementDetailsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -116,5 +120,14 @@ impl AssociateProactiveEngagementDetailsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_emergency_contact_list(input);
         self
+    }
+    /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you for escalations to the SRT and to initiate proactive customer support. </p>
+    /// <p>To enable proactive engagement, the contact list must include at least one phone number.</p> <note>
+    /// <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here. </p>
+    /// </note>
+    pub fn get_emergency_contact_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EmergencyContact>> {
+        self.inner.get_emergency_contact_list()
     }
 }

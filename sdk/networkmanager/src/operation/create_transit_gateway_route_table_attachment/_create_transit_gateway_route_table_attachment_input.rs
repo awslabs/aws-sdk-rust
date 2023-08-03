@@ -63,6 +63,10 @@ impl CreateTransitGatewayRouteTableAttachmentInputBuilder {
         self.peering_id = input;
         self
     }
+    /// <p>The ID of the peer for the </p>
+    pub fn get_peering_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.peering_id
+    }
     /// <p>The ARN of the transit gateway route table for the attachment request. For example, <code>"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
     pub fn transit_gateway_route_table_arn(
         mut self,
@@ -78,6 +82,12 @@ impl CreateTransitGatewayRouteTableAttachmentInputBuilder {
     ) -> Self {
         self.transit_gateway_route_table_arn = input;
         self
+    }
+    /// <p>The ARN of the transit gateway route table for the attachment request. For example, <code>"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
+    pub fn get_transit_gateway_route_table_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_route_table_arn
     }
     /// Appends an item to `tags`.
     ///
@@ -98,6 +108,10 @@ impl CreateTransitGatewayRouteTableAttachmentInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The list of key-value tags associated with the request.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The client token associated with the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -107,6 +121,10 @@ impl CreateTransitGatewayRouteTableAttachmentInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>The client token associated with the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateTransitGatewayRouteTableAttachmentInput`](crate::operation::create_transit_gateway_route_table_attachment::CreateTransitGatewayRouteTableAttachmentInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_transit_gateway_route_table_attachment::CreateTransitGatewayRouteTableAttachmentInput, ::aws_smithy_http::operation::error::BuildError>{

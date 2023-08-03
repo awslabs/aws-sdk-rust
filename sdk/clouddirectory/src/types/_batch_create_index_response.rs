@@ -46,6 +46,10 @@ impl BatchCreateIndexResponseBuilder {
         self.object_identifier = input;
         self
     }
+    /// <p>The <code>ObjectIdentifier</code> of the index created by this operation.</p>
+    pub fn get_object_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_identifier
+    }
     /// Consumes the builder and constructs a [`BatchCreateIndexResponse`](crate::types::BatchCreateIndexResponse).
     pub fn build(self) -> crate::types::BatchCreateIndexResponse {
         crate::types::BatchCreateIndexResponse {

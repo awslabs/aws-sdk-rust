@@ -36,6 +36,10 @@ impl DeleteIpamResourceDiscoveryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteIpamResourceDiscovery as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_ipam_resource_discovery::builders::DeleteIpamResourceDiscoveryInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl DeleteIpamResourceDiscoveryFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>The IPAM resource discovery ID.</p>
     pub fn ipam_resource_discovery_id(
         mut self,
@@ -141,5 +149,9 @@ impl DeleteIpamResourceDiscoveryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ipam_resource_discovery_id(input);
         self
+    }
+    /// <p>The IPAM resource discovery ID.</p>
+    pub fn get_ipam_resource_discovery_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ipam_resource_discovery_id()
     }
 }

@@ -62,6 +62,10 @@ impl CredentialsBuilder {
         self.access_key_id = input;
         self
     }
+    /// <p>The access key identifier.</p>
+    pub fn get_access_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_key_id
+    }
     /// <p>The access key.</p>
     pub fn secret_access_key(
         mut self,
@@ -78,6 +82,10 @@ impl CredentialsBuilder {
         self.secret_access_key = input;
         self
     }
+    /// <p>The access key.</p>
+    pub fn get_secret_access_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_access_key
+    }
     /// <p>The session token.</p>
     pub fn session_token(
         mut self,
@@ -93,6 +101,10 @@ impl CredentialsBuilder {
     ) -> Self {
         self.session_token = input;
         self
+    }
+    /// <p>The session token.</p>
+    pub fn get_session_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_token
     }
     /// Consumes the builder and constructs a [`Credentials`](crate::types::Credentials).
     pub fn build(self) -> crate::types::Credentials {

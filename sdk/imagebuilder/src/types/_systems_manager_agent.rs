@@ -40,6 +40,10 @@ impl SystemsManagerAgentBuilder {
         self.uninstall_after_build = input;
         self
     }
+    /// <p>Controls whether the Systems Manager agent is removed from your final build image, prior to creating the new AMI. If this is set to true, then the agent is removed from the final image. If it's set to false, then the agent is left in, so that it is included in the new AMI. The default value is false.</p>
+    pub fn get_uninstall_after_build(&self) -> &::std::option::Option<bool> {
+        &self.uninstall_after_build
+    }
     /// Consumes the builder and constructs a [`SystemsManagerAgent`](crate::types::SystemsManagerAgent).
     pub fn build(self) -> crate::types::SystemsManagerAgent {
         crate::types::SystemsManagerAgent {

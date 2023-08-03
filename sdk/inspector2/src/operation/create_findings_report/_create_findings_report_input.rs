@@ -59,6 +59,10 @@ impl CreateFindingsReportInputBuilder {
         self.filter_criteria = input;
         self
     }
+    /// <p>The filter criteria to apply to the results of the finding report.</p>
+    pub fn get_filter_criteria(&self) -> &::std::option::Option<crate::types::FilterCriteria> {
+        &self.filter_criteria
+    }
     /// <p>The format to generate the report in.</p>
     pub fn report_format(mut self, input: crate::types::ReportFormat) -> Self {
         self.report_format = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl CreateFindingsReportInputBuilder {
         self.report_format = input;
         self
     }
+    /// <p>The format to generate the report in.</p>
+    pub fn get_report_format(&self) -> &::std::option::Option<crate::types::ReportFormat> {
+        &self.report_format
+    }
     /// <p>The Amazon S3 export destination for the report.</p>
     pub fn s3_destination(mut self, input: crate::types::Destination) -> Self {
         self.s3_destination = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl CreateFindingsReportInputBuilder {
     ) -> Self {
         self.s3_destination = input;
         self
+    }
+    /// <p>The Amazon S3 export destination for the report.</p>
+    pub fn get_s3_destination(&self) -> &::std::option::Option<crate::types::Destination> {
+        &self.s3_destination
     }
     /// Consumes the builder and constructs a [`CreateFindingsReportInput`](crate::operation::create_findings_report::CreateFindingsReportInput).
     pub fn build(

@@ -57,6 +57,10 @@ impl DescribeServicesOutputBuilder {
         self.services = input;
         self
     }
+    /// <p>A JSON-formatted list of Amazon Web Services services.</p>
+    pub fn get_services(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Service>> {
+        &self.services
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

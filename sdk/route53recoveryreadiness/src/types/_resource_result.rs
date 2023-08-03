@@ -64,6 +64,10 @@ impl ResourceResultBuilder {
         self.component_id = input;
         self
     }
+    /// <p>The component id of the resource.</p>
+    pub fn get_component_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_id
+    }
     /// <p>The time (UTC) that the resource was last checked for readiness, in ISO-8601 format.</p>
     pub fn last_checked_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_checked_timestamp = ::std::option::Option::Some(input);
@@ -77,6 +81,12 @@ impl ResourceResultBuilder {
         self.last_checked_timestamp = input;
         self
     }
+    /// <p>The time (UTC) that the resource was last checked for readiness, in ISO-8601 format.</p>
+    pub fn get_last_checked_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_checked_timestamp
+    }
     /// <p>The readiness of a resource.</p>
     pub fn readiness(mut self, input: crate::types::Readiness) -> Self {
         self.readiness = ::std::option::Option::Some(input);
@@ -87,6 +97,10 @@ impl ResourceResultBuilder {
         self.readiness = input;
         self
     }
+    /// <p>The readiness of a resource.</p>
+    pub fn get_readiness(&self) -> &::std::option::Option<crate::types::Readiness> {
+        &self.readiness
+    }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -96,6 +110,10 @@ impl ResourceResultBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// Consumes the builder and constructs a [`ResourceResult`](crate::types::ResourceResult).
     pub fn build(self) -> crate::types::ResourceResult {

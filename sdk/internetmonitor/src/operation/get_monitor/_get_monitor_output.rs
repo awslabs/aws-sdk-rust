@@ -158,6 +158,10 @@ impl GetMonitorOutputBuilder {
         self.monitor_name = input;
         self
     }
+    /// <p>The name of the monitor.</p>
+    pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitor_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the monitor.</p>
     pub fn monitor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitor_arn = ::std::option::Option::Some(input.into());
@@ -167,6 +171,10 @@ impl GetMonitorOutputBuilder {
     pub fn set_monitor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monitor_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the monitor.</p>
+    pub fn get_monitor_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitor_arn
     }
     /// Appends an item to `resources`.
     ///
@@ -187,6 +195,10 @@ impl GetMonitorOutputBuilder {
         self.resources = input;
         self
     }
+    /// <p>The resources that have been added for the monitor. Resources are listed by their Amazon Resource Names (ARNs).</p>
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resources
+    }
     /// <p>The status of the monitor.</p>
     pub fn status(mut self, input: crate::types::MonitorConfigState) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -199,6 +211,10 @@ impl GetMonitorOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the monitor.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::MonitorConfigState> {
+        &self.status
     }
     /// <p>The time when the monitor was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -213,6 +229,10 @@ impl GetMonitorOutputBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The time when the monitor was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The last time that the monitor was modified.</p>
     pub fn modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.modified_at = ::std::option::Option::Some(input);
@@ -226,6 +246,10 @@ impl GetMonitorOutputBuilder {
         self.modified_at = input;
         self
     }
+    /// <p>The last time that the monitor was modified.</p>
+    pub fn get_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.modified_at
+    }
     /// <p>The health of the data processing for the monitor.</p>
     pub fn processing_status(mut self, input: crate::types::MonitorProcessingStatusCode) -> Self {
         self.processing_status = ::std::option::Option::Some(input);
@@ -238,6 +262,12 @@ impl GetMonitorOutputBuilder {
     ) -> Self {
         self.processing_status = input;
         self
+    }
+    /// <p>The health of the data processing for the monitor.</p>
+    pub fn get_processing_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::MonitorProcessingStatusCode> {
+        &self.processing_status
     }
     /// <p>Additional information about the health of the data processing for the monitor.</p>
     pub fn processing_status_info(
@@ -254,6 +284,10 @@ impl GetMonitorOutputBuilder {
     ) -> Self {
         self.processing_status_info = input;
         self
+    }
+    /// <p>Additional information about the health of the data processing for the monitor.</p>
+    pub fn get_processing_status_info(&self) -> &::std::option::Option<::std::string::String> {
+        &self.processing_status_info
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -280,6 +314,14 @@ impl GetMonitorOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags that have been added to monitor.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the network or ASN, such as an internet service provider (ISP), that clients access the resources through. This limit helps control billing costs.</p>
     /// <p>To learn more, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMCityNetworksMaximum.html">Choosing a city-network maximum value </a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
     pub fn max_city_networks_to_monitor(mut self, input: i32) -> Self {
@@ -291,6 +333,11 @@ impl GetMonitorOutputBuilder {
     pub fn set_max_city_networks_to_monitor(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_city_networks_to_monitor = input;
         self
+    }
+    /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the network or ASN, such as an internet service provider (ISP), that clients access the resources through. This limit helps control billing costs.</p>
+    /// <p>To learn more, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMCityNetworksMaximum.html">Choosing a city-network maximum value </a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
+    pub fn get_max_city_networks_to_monitor(&self) -> &::std::option::Option<i32> {
+        &self.max_city_networks_to_monitor
     }
     /// <p>Publish internet measurements for Internet Monitor to another location, such as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch Logs.</p>
     pub fn internet_measurements_log_delivery(
@@ -308,6 +355,12 @@ impl GetMonitorOutputBuilder {
         self.internet_measurements_log_delivery = input;
         self
     }
+    /// <p>Publish internet measurements for Internet Monitor to another location, such as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch Logs.</p>
+    pub fn get_internet_measurements_log_delivery(
+        &self,
+    ) -> &::std::option::Option<crate::types::InternetMeasurementsLogDelivery> {
+        &self.internet_measurements_log_delivery
+    }
     /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.</p>
     pub fn traffic_percentage_to_monitor(mut self, input: i32) -> Self {
         self.traffic_percentage_to_monitor = ::std::option::Option::Some(input);
@@ -317,6 +370,10 @@ impl GetMonitorOutputBuilder {
     pub fn set_traffic_percentage_to_monitor(mut self, input: ::std::option::Option<i32>) -> Self {
         self.traffic_percentage_to_monitor = input;
         self
+    }
+    /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.</p>
+    pub fn get_traffic_percentage_to_monitor(&self) -> &::std::option::Option<i32> {
+        &self.traffic_percentage_to_monitor
     }
     /// <p>The list of health event thresholds. A health event threshold percentage, for performance and availability, determines the level of impact at which Amazon CloudWatch Internet Monitor creates a health event when there's an internet issue that affects your application end users.</p>
     pub fn health_events_config(mut self, input: crate::types::HealthEventsConfig) -> Self {
@@ -330,6 +387,12 @@ impl GetMonitorOutputBuilder {
     ) -> Self {
         self.health_events_config = input;
         self
+    }
+    /// <p>The list of health event thresholds. A health event threshold percentage, for performance and availability, determines the level of impact at which Amazon CloudWatch Internet Monitor creates a health event when there's an internet issue that affects your application end users.</p>
+    pub fn get_health_events_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::HealthEventsConfig> {
+        &self.health_events_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

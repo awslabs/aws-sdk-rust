@@ -62,6 +62,10 @@ impl VpcEndpointBuilder {
         self.vpc_endpoint_id = input;
         self
     }
+    /// <p>The unique identifier of the endpoint.</p>
+    pub fn get_vpc_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_endpoint_id
+    }
     /// <p>The ID for your VPC. Amazon Web Services PrivateLink generates this value when you create a VPC.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl VpcEndpointBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The ID for your VPC. Amazon Web Services PrivateLink generates this value when you create a VPC.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// <p>Information about the VPC, including associated subnets and security groups.</p>
     pub fn vpc_options(mut self, input: crate::types::VpcOptions) -> Self {
@@ -84,6 +92,10 @@ impl VpcEndpointBuilder {
     ) -> Self {
         self.vpc_options = input;
         self
+    }
+    /// <p>Information about the VPC, including associated subnets and security groups.</p>
+    pub fn get_vpc_options(&self) -> &::std::option::Option<crate::types::VpcOptions> {
+        &self.vpc_options
     }
     /// Consumes the builder and constructs a [`VpcEndpoint`](crate::types::VpcEndpoint).
     pub fn build(self) -> crate::types::VpcEndpoint {

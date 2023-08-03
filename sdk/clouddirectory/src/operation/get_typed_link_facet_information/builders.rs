@@ -36,6 +36,10 @@ impl GetTypedLinkFacetInformationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetTypedLinkFacetInformation as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_typed_link_facet_information::builders::GetTypedLinkFacetInformationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl GetTypedLinkFacetInformationFluentBuilder {
         self.inner = self.inner.set_schema_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schema_arn()
+    }
     /// <p>The unique name of the typed link facet.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -135,5 +143,9 @@ impl GetTypedLinkFacetInformationFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The unique name of the typed link facet.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
 }

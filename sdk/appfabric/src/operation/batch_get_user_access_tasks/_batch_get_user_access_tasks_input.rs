@@ -55,6 +55,10 @@ impl BatchGetUserAccessTasksInputBuilder {
         self.app_bundle_identifier = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
+    pub fn get_app_bundle_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_bundle_identifier
+    }
     /// Appends an item to `task_id_list`.
     ///
     /// To override the contents of this collection use [`set_task_id_list`](Self::set_task_id_list).
@@ -73,6 +77,12 @@ impl BatchGetUserAccessTasksInputBuilder {
     ) -> Self {
         self.task_id_list = input;
         self
+    }
+    /// <p>The tasks IDs to use for the request.</p>
+    pub fn get_task_id_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.task_id_list
     }
     /// Consumes the builder and constructs a [`BatchGetUserAccessTasksInput`](crate::operation::batch_get_user_access_tasks::BatchGetUserAccessTasksInput).
     pub fn build(

@@ -81,6 +81,10 @@ impl UpdateStreamingImageInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -91,6 +95,10 @@ impl UpdateStreamingImageInputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The name for the streaming image.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -100,6 +108,10 @@ impl UpdateStreamingImageInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name for the streaming image.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The streaming image ID.</p>
     pub fn streaming_image_id(
@@ -117,6 +129,10 @@ impl UpdateStreamingImageInputBuilder {
         self.streaming_image_id = input;
         self
     }
+    /// <p>The streaming image ID.</p>
+    pub fn get_streaming_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.streaming_image_id
+    }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
@@ -126,6 +142,10 @@ impl UpdateStreamingImageInputBuilder {
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.studio_id = input;
         self
+    }
+    /// <p>The studio ID. </p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_id
     }
     /// Consumes the builder and constructs a [`UpdateStreamingImageInput`](crate::operation::update_streaming_image::UpdateStreamingImageInput).
     pub fn build(

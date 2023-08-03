@@ -44,6 +44,12 @@ impl CreateDistributionInputBuilder {
         self.distribution_config = input;
         self
     }
+    /// <p>The distribution's configuration information.</p>
+    pub fn get_distribution_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::DistributionConfig> {
+        &self.distribution_config
+    }
     /// Consumes the builder and constructs a [`CreateDistributionInput`](crate::operation::create_distribution::CreateDistributionInput).
     pub fn build(
         self,

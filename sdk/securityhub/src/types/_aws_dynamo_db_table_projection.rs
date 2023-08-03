@@ -70,6 +70,12 @@ impl AwsDynamoDbTableProjectionBuilder {
         self.non_key_attributes = input;
         self
     }
+    /// <p>The nonkey attributes that are projected into the index. For each attribute, provide the attribute name.</p>
+    pub fn get_non_key_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.non_key_attributes
+    }
     /// <p>The types of attributes that are projected into the index. Valid values are as follows:</p>
     /// <ul>
     /// <li> <p> <code>ALL</code> </p> </li>
@@ -95,6 +101,15 @@ impl AwsDynamoDbTableProjectionBuilder {
     ) -> Self {
         self.projection_type = input;
         self
+    }
+    /// <p>The types of attributes that are projected into the index. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>ALL</code> </p> </li>
+    /// <li> <p> <code>INCLUDE</code> </p> </li>
+    /// <li> <p> <code>KEYS_ONLY</code> </p> </li>
+    /// </ul>
+    pub fn get_projection_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.projection_type
     }
     /// Consumes the builder and constructs a [`AwsDynamoDbTableProjection`](crate::types::AwsDynamoDbTableProjection).
     pub fn build(self) -> crate::types::AwsDynamoDbTableProjection {

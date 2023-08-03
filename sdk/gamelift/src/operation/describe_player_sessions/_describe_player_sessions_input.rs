@@ -101,6 +101,10 @@ impl DescribePlayerSessionsInputBuilder {
         self.game_session_id = input;
         self
     }
+    /// <p>A unique identifier for the game session to retrieve player sessions for.</p>
+    pub fn get_game_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.game_session_id
+    }
     /// <p>A unique identifier for a player to retrieve player sessions for.</p>
     pub fn player_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.player_id = ::std::option::Option::Some(input.into());
@@ -110,6 +114,10 @@ impl DescribePlayerSessionsInputBuilder {
     pub fn set_player_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.player_id = input;
         self
+    }
+    /// <p>A unique identifier for a player to retrieve player sessions for.</p>
+    pub fn get_player_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.player_id
     }
     /// <p>A unique identifier for a player session to retrieve.</p>
     pub fn player_session_id(
@@ -126,6 +134,10 @@ impl DescribePlayerSessionsInputBuilder {
     ) -> Self {
         self.player_session_id = input;
         self
+    }
+    /// <p>A unique identifier for a player session to retrieve.</p>
+    pub fn get_player_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.player_session_id
     }
     /// <p>Player session status to filter results on. Note that when a PlayerSessionId or PlayerId is provided in a DescribePlayerSessions request, then the PlayerSessionStatusFilter has no effect on the response.</p>
     /// <p>Possible player session statuses include the following:</p>
@@ -157,6 +169,19 @@ impl DescribePlayerSessionsInputBuilder {
         self.player_session_status_filter = input;
         self
     }
+    /// <p>Player session status to filter results on. Note that when a PlayerSessionId or PlayerId is provided in a DescribePlayerSessions request, then the PlayerSessionStatusFilter has no effect on the response.</p>
+    /// <p>Possible player session statuses include the following:</p>
+    /// <ul>
+    /// <li> <p> <b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated. </p> </li>
+    /// <li> <p> <b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p> </li>
+    /// <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p> </li>
+    /// <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p> </li>
+    /// </ul>
+    pub fn get_player_session_status_filter(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.player_session_status_filter
+    }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. If a player session ID is specified, this parameter is ignored.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -167,6 +192,10 @@ impl DescribePlayerSessionsInputBuilder {
         self.limit = input;
         self
     }
+    /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. If a player session ID is specified, this parameter is ignored.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
+    }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. If a player session ID is specified, this parameter is ignored.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -176,6 +205,10 @@ impl DescribePlayerSessionsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. If a player session ID is specified, this parameter is ignored.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribePlayerSessionsInput`](crate::operation::describe_player_sessions::DescribePlayerSessionsInput).
     pub fn build(

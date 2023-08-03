@@ -48,6 +48,10 @@ impl DeleteConnectionInputBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p>The name of the connection to delete.</p>
     pub fn connection_name(
         mut self,
@@ -63,6 +67,10 @@ impl DeleteConnectionInputBuilder {
     ) -> Self {
         self.connection_name = input;
         self
+    }
+    /// <p>The name of the connection to delete.</p>
+    pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_name
     }
     /// Consumes the builder and constructs a [`DeleteConnectionInput`](crate::operation::delete_connection::DeleteConnectionInput).
     pub fn build(

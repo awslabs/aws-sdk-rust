@@ -206,6 +206,10 @@ impl RegisterImageInputBuilder {
         self.image_location = input;
         self
     }
+    /// <p>The full path to your AMI manifest in Amazon S3 storage. The specified bucket must have the <code>aws-exec-read</code> canned access control list (ACL) to ensure that it can be accessed by Amazon EC2. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned ACLs</a> in the <i>Amazon S3 Service Developer Guide</i>.</p>
+    pub fn get_image_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_location
+    }
     /// <p>The architecture of the AMI.</p>
     /// <p>Default: For Amazon EBS-backed AMIs, <code>i386</code>. For instance store-backed AMIs, the architecture specified in the manifest file.</p>
     pub fn architecture(mut self, input: crate::types::ArchitectureValues) -> Self {
@@ -220,6 +224,11 @@ impl RegisterImageInputBuilder {
     ) -> Self {
         self.architecture = input;
         self
+    }
+    /// <p>The architecture of the AMI.</p>
+    /// <p>Default: For Amazon EBS-backed AMIs, <code>i386</code>. For instance store-backed AMIs, the architecture specified in the manifest file.</p>
+    pub fn get_architecture(&self) -> &::std::option::Option<crate::types::ArchitectureValues> {
+        &self.architecture
     }
     /// Appends an item to `block_device_mappings`.
     ///
@@ -244,6 +253,14 @@ impl RegisterImageInputBuilder {
         self.block_device_mappings = input;
         self
     }
+    /// <p>The block device mapping entries.</p>
+    /// <p>If you specify an Amazon EBS volume using the ID of an Amazon EBS snapshot, you can't specify the encryption state of the volume.</p>
+    /// <p>If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the Region of that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on the same Outpost only. For more information, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn get_block_device_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>> {
+        &self.block_device_mappings
+    }
     /// <p>A description for your AMI.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -254,6 +271,10 @@ impl RegisterImageInputBuilder {
         self.description = input;
         self
     }
+    /// <p>A description for your AMI.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -263,6 +284,10 @@ impl RegisterImageInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// <p>Set to <code>true</code> to enable enhanced networking with ENA for the AMI and any instances that you launch from the AMI.</p>
     /// <p>This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances launched from the AMI unreachable.</p>
@@ -276,6 +301,11 @@ impl RegisterImageInputBuilder {
         self.ena_support = input;
         self
     }
+    /// <p>Set to <code>true</code> to enable enhanced networking with ENA for the AMI and any instances that you launch from the AMI.</p>
+    /// <p>This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances launched from the AMI unreachable.</p>
+    pub fn get_ena_support(&self) -> &::std::option::Option<bool> {
+        &self.ena_support
+    }
     /// <p>The ID of the kernel.</p>
     pub fn kernel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kernel_id = ::std::option::Option::Some(input.into());
@@ -285,6 +315,10 @@ impl RegisterImageInputBuilder {
     pub fn set_kernel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kernel_id = input;
         self
+    }
+    /// <p>The ID of the kernel.</p>
+    pub fn get_kernel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kernel_id
     }
     /// <p>A name for your AMI.</p>
     /// <p>Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets ([]), spaces ( ), periods (.), slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)</p>
@@ -297,6 +331,11 @@ impl RegisterImageInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A name for your AMI.</p>
+    /// <p>Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets ([]), spaces ( ), periods (.), slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `billing_products`.
     ///
@@ -322,6 +361,13 @@ impl RegisterImageInputBuilder {
         self.billing_products = input;
         self
     }
+    /// <p>The billing product codes. Your account must be authorized to specify billing product codes.</p>
+    /// <p>If your account is not authorized to specify billing product codes, you can publish AMIs that include billable software and list them on the Amazon Web Services Marketplace. You must first register as a seller on the Amazon Web Services Marketplace. For more information, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/user-guide-for-sellers.html">Getting started as a seller</a> and <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/ami-products.html">AMI-based products</a> in the <i>Amazon Web Services Marketplace Seller Guide</i>.</p>
+    pub fn get_billing_products(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.billing_products
+    }
     /// <p>The ID of the RAM disk.</p>
     pub fn ramdisk_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ramdisk_id = ::std::option::Option::Some(input.into());
@@ -331,6 +377,10 @@ impl RegisterImageInputBuilder {
     pub fn set_ramdisk_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ramdisk_id = input;
         self
+    }
+    /// <p>The ID of the RAM disk.</p>
+    pub fn get_ramdisk_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ramdisk_id
     }
     /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
     pub fn root_device_name(
@@ -347,6 +397,10 @@ impl RegisterImageInputBuilder {
     ) -> Self {
         self.root_device_name = input;
         self
+    }
+    /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
+    pub fn get_root_device_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.root_device_name
     }
     /// <p>Set to <code>simple</code> to enable enhanced networking with the Intel 82599 Virtual Function interface for the AMI and any instances that you launch from the AMI.</p>
     /// <p>There is no way to disable <code>sriovNetSupport</code> at this time.</p>
@@ -368,6 +422,12 @@ impl RegisterImageInputBuilder {
         self.sriov_net_support = input;
         self
     }
+    /// <p>Set to <code>simple</code> to enable enhanced networking with the Intel 82599 Virtual Function interface for the AMI and any instances that you launch from the AMI.</p>
+    /// <p>There is no way to disable <code>sriovNetSupport</code> at this time.</p>
+    /// <p>This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances launched from the AMI unreachable.</p>
+    pub fn get_sriov_net_support(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sriov_net_support
+    }
     /// <p>The type of virtualization (<code>hvm</code> | <code>paravirtual</code>).</p>
     /// <p>Default: <code>paravirtual</code> </p>
     pub fn virtualization_type(
@@ -385,6 +445,11 @@ impl RegisterImageInputBuilder {
     ) -> Self {
         self.virtualization_type = input;
         self
+    }
+    /// <p>The type of virtualization (<code>hvm</code> | <code>paravirtual</code>).</p>
+    /// <p>Default: <code>paravirtual</code> </p>
+    pub fn get_virtualization_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtualization_type
     }
     /// <p>The boot mode of the AMI. A value of <code>uefi-preferred</code> indicates that the AMI supports both UEFI and Legacy BIOS.</p> <note>
     /// <p>The operating system contained in the AMI must be configured to support the specified boot mode.</p>
@@ -405,6 +470,13 @@ impl RegisterImageInputBuilder {
         self.boot_mode = input;
         self
     }
+    /// <p>The boot mode of the AMI. A value of <code>uefi-preferred</code> indicates that the AMI supports both UEFI and Legacy BIOS.</p> <note>
+    /// <p>The operating system contained in the AMI must be configured to support the specified boot mode.</p>
+    /// </note>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn get_boot_mode(&self) -> &::std::option::Option<crate::types::BootModeValues> {
+        &self.boot_mode
+    }
     /// <p>Set to <code>v2.0</code> to enable Trusted Platform Module (TPM) support. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn tpm_support(mut self, input: crate::types::TpmSupportValues) -> Self {
         self.tpm_support = ::std::option::Option::Some(input);
@@ -418,6 +490,10 @@ impl RegisterImageInputBuilder {
         self.tpm_support = input;
         self
     }
+    /// <p>Set to <code>v2.0</code> to enable Trusted Platform Module (TPM) support. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn get_tpm_support(&self) -> &::std::option::Option<crate::types::TpmSupportValues> {
+        &self.tpm_support
+    }
     /// <p>Base64 representation of the non-volatile UEFI variable store. To retrieve the UEFI data, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a> command. You can inspect and modify the UEFI data by using the <a href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on GitHub. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn uefi_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.uefi_data = ::std::option::Option::Some(input.into());
@@ -427,6 +503,10 @@ impl RegisterImageInputBuilder {
     pub fn set_uefi_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.uefi_data = input;
         self
+    }
+    /// <p>Base64 representation of the non-volatile UEFI variable store. To retrieve the UEFI data, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a> command. You can inspect and modify the UEFI data by using the <a href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on GitHub. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn get_uefi_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uefi_data
     }
     /// <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p> <note>
     /// <p>If you set the value to <code>v2.0</code>, make sure that your AMI software can support IMDSv2.</p>
@@ -444,6 +524,12 @@ impl RegisterImageInputBuilder {
     ) -> Self {
         self.imds_support = input;
         self
+    }
+    /// <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p> <note>
+    /// <p>If you set the value to <code>v2.0</code>, make sure that your AMI software can support IMDSv2.</p>
+    /// </note>
+    pub fn get_imds_support(&self) -> &::std::option::Option<crate::types::ImdsSupportValues> {
+        &self.imds_support
     }
     /// Consumes the builder and constructs a [`RegisterImageInput`](crate::operation::register_image::RegisterImageInput).
     pub fn build(

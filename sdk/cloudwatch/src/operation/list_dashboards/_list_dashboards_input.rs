@@ -53,6 +53,10 @@ impl ListDashboardsInputBuilder {
         self.dashboard_name_prefix = input;
         self
     }
+    /// <p>If you specify this parameter, only the dashboards with names starting with the specified string are listed. The maximum length is 255, and valid characters are A-Z, a-z, 0-9, ".", "-", and "_". </p>
+    pub fn get_dashboard_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dashboard_name_prefix
+    }
     /// <p>The token returned by a previous call to indicate that there is more data available.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl ListDashboardsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token returned by a previous call to indicate that there is more data available.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListDashboardsInput`](crate::operation::list_dashboards::ListDashboardsInput).
     pub fn build(

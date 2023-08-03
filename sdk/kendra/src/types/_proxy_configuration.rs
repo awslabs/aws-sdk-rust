@@ -64,6 +64,11 @@ impl ProxyConfigurationBuilder {
         self.host = input;
         self
     }
+    /// <p>The name of the website host you want to connect to via a web proxy server.</p>
+    /// <p>For example, the host name of https://a.example.com/page1.html is "a.example.com".</p>
+    pub fn get_host(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host
+    }
     /// <p>The port number of the website host you want to connect to via a web proxy server. </p>
     /// <p>For example, the port for https://a.example.com/page1.html is 443, the standard port for HTTPS.</p>
     pub fn port(mut self, input: i32) -> Self {
@@ -76,6 +81,11 @@ impl ProxyConfigurationBuilder {
         self.port = input;
         self
     }
+    /// <p>The port number of the website host you want to connect to via a web proxy server. </p>
+    /// <p>For example, the port for https://a.example.com/page1.html is 443, the standard port for HTTPS.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
+    }
     /// <p>Your secret ARN, which you can create in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a> </p>
     /// <p>The credentials are optional. You use a secret if web proxy credentials are required to connect to a website host. Amazon Kendra currently support basic authentication to connect to a web proxy server. The secret stores your credentials.</p>
     pub fn credentials(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -87,6 +97,11 @@ impl ProxyConfigurationBuilder {
     pub fn set_credentials(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.credentials = input;
         self
+    }
+    /// <p>Your secret ARN, which you can create in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a> </p>
+    /// <p>The credentials are optional. You use a secret if web proxy credentials are required to connect to a website host. Amazon Kendra currently support basic authentication to connect to a web proxy server. The secret stores your credentials.</p>
+    pub fn get_credentials(&self) -> &::std::option::Option<::std::string::String> {
+        &self.credentials
     }
     /// Consumes the builder and constructs a [`ProxyConfiguration`](crate::types::ProxyConfiguration).
     pub fn build(self) -> crate::types::ProxyConfiguration {

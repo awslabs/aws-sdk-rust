@@ -36,6 +36,10 @@ impl GetAccountFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetAccount as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_account::builders::GetAccountInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -117,5 +121,9 @@ impl GetAccountFluentBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
+    }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
     }
 }

@@ -40,6 +40,10 @@ impl OrganizationConfigurationBuilder {
         self.enable_integration = input;
         self
     }
+    /// <p>Enables Organizations integration.</p>
+    pub fn get_enable_integration(&self) -> &::std::option::Option<bool> {
+        &self.enable_integration
+    }
     /// Consumes the builder and constructs a [`OrganizationConfiguration`](crate::types::OrganizationConfiguration).
     pub fn build(self) -> crate::types::OrganizationConfiguration {
         crate::types::OrganizationConfiguration {

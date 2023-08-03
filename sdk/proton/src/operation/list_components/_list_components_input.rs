@@ -71,6 +71,10 @@ impl ListComponentsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token that indicates the location of the next component in the array of components, after the list of components that was previously requested.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The name of an environment for result list filtering. Proton returns components associated with the environment or attached to service instances running in it.</p>
     pub fn environment_name(
         mut self,
@@ -87,6 +91,10 @@ impl ListComponentsInputBuilder {
         self.environment_name = input;
         self
     }
+    /// <p>The name of an environment for result list filtering. Proton returns components associated with the environment or attached to service instances running in it.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
+    }
     /// <p>The name of a service for result list filtering. Proton returns components attached to service instances of the service.</p>
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
@@ -96,6 +104,10 @@ impl ListComponentsInputBuilder {
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_name = input;
         self
+    }
+    /// <p>The name of a service for result list filtering. Proton returns components attached to service instances of the service.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
     }
     /// <p>The name of a service instance for result list filtering. Proton returns the component attached to the service instance, if any.</p>
     pub fn service_instance_name(
@@ -113,6 +125,10 @@ impl ListComponentsInputBuilder {
         self.service_instance_name = input;
         self
     }
+    /// <p>The name of a service instance for result list filtering. Proton returns the component attached to the service instance, if any.</p>
+    pub fn get_service_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_instance_name
+    }
     /// <p>The maximum number of components to list.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -122,6 +138,10 @@ impl ListComponentsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of components to list.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListComponentsInput`](crate::operation::list_components::ListComponentsInput).
     pub fn build(

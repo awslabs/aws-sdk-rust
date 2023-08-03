@@ -82,6 +82,10 @@ impl AwsWafRegionalWebAclDetailsBuilder {
         self.default_action = input;
         self
     }
+    /// <p>The action to perform if none of the rules contained in the web ACL match. </p>
+    pub fn get_default_action(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_action
+    }
     /// <p>A name for the metrics for this web ACL. </p>
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_name = ::std::option::Option::Some(input.into());
@@ -92,6 +96,10 @@ impl AwsWafRegionalWebAclDetailsBuilder {
         self.metric_name = input;
         self
     }
+    /// <p>A name for the metrics for this web ACL. </p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
+    }
     /// <p>A descriptive name for the web ACL. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -101,6 +109,10 @@ impl AwsWafRegionalWebAclDetailsBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A descriptive name for the web ACL. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `rules_list`.
     ///
@@ -123,6 +135,13 @@ impl AwsWafRegionalWebAclDetailsBuilder {
         self.rules_list = input;
         self
     }
+    /// <p>An array that contains the action for each rule in a web ACL, the priority of the rule, and the ID of the rule. </p>
+    pub fn get_rules_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsWafRegionalWebAclRulesListDetails>>
+    {
+        &self.rules_list
+    }
     /// <p>The ID of the web ACL. </p>
     pub fn web_acl_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.web_acl_id = ::std::option::Option::Some(input.into());
@@ -132,6 +151,10 @@ impl AwsWafRegionalWebAclDetailsBuilder {
     pub fn set_web_acl_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.web_acl_id = input;
         self
+    }
+    /// <p>The ID of the web ACL. </p>
+    pub fn get_web_acl_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.web_acl_id
     }
     /// Consumes the builder and constructs a [`AwsWafRegionalWebAclDetails`](crate::types::AwsWafRegionalWebAclDetails).
     pub fn build(self) -> crate::types::AwsWafRegionalWebAclDetails {

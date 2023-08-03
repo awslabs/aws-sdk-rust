@@ -51,6 +51,10 @@ impl GetAdministratorAccountOutputBuilder {
         self.administrator = input;
         self
     }
+    /// <p>The Amazon Web Services account ID for the administrator account. If the accounts are associated by an Amazon Macie membership invitation, this object also provides details about the invitation that was sent to establish the relationship between the accounts.</p>
+    pub fn get_administrator(&self) -> &::std::option::Option<crate::types::Invitation> {
+        &self.administrator
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

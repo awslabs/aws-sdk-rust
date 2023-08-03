@@ -54,6 +54,10 @@ impl DescribeFleetsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `fleets`.
     ///
     /// To override the contents of this collection use [`set_fleets`](Self::set_fleets).
@@ -72,6 +76,10 @@ impl DescribeFleetsOutputBuilder {
     ) -> Self {
         self.fleets = input;
         self
+    }
+    /// <p>Information about the EC2 Fleets.</p>
+    pub fn get_fleets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetData>> {
+        &self.fleets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

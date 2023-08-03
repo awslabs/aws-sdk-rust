@@ -47,6 +47,10 @@ impl GetQueueUrlOutputBuilder {
         self.queue_url = input;
         self
     }
+    /// <p>The URL of the queue.</p>
+    pub fn get_queue_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.queue_url
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

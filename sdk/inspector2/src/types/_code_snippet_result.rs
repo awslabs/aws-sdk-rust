@@ -72,6 +72,10 @@ impl CodeSnippetResultBuilder {
         self.finding_arn = input;
         self
     }
+    /// <p>The ARN of a finding that the code snippet is associated with.</p>
+    pub fn get_finding_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.finding_arn
+    }
     /// <p>The line number of the first line of a code snippet.</p>
     pub fn start_line(mut self, input: i32) -> Self {
         self.start_line = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl CodeSnippetResultBuilder {
         self.start_line = input;
         self
     }
+    /// <p>The line number of the first line of a code snippet.</p>
+    pub fn get_start_line(&self) -> &::std::option::Option<i32> {
+        &self.start_line
+    }
     /// <p>The line number of the last line of a code snippet.</p>
     pub fn end_line(mut self, input: i32) -> Self {
         self.end_line = ::std::option::Option::Some(input);
@@ -91,6 +99,10 @@ impl CodeSnippetResultBuilder {
     pub fn set_end_line(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end_line = input;
         self
+    }
+    /// <p>The line number of the last line of a code snippet.</p>
+    pub fn get_end_line(&self) -> &::std::option::Option<i32> {
+        &self.end_line
     }
     /// Appends an item to `code_snippet`.
     ///
@@ -111,6 +123,12 @@ impl CodeSnippetResultBuilder {
         self.code_snippet = input;
         self
     }
+    /// <p>Contains information on the retrieved code snippet.</p>
+    pub fn get_code_snippet(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeLine>> {
+        &self.code_snippet
+    }
     /// Appends an item to `suggested_fixes`.
     ///
     /// To override the contents of this collection use [`set_suggested_fixes`](Self::set_suggested_fixes).
@@ -129,6 +147,12 @@ impl CodeSnippetResultBuilder {
     ) -> Self {
         self.suggested_fixes = input;
         self
+    }
+    /// <p>Details of a suggested code fix.</p>
+    pub fn get_suggested_fixes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SuggestedFix>> {
+        &self.suggested_fixes
     }
     /// Consumes the builder and constructs a [`CodeSnippetResult`](crate::types::CodeSnippetResult).
     pub fn build(self) -> crate::types::CodeSnippetResult {

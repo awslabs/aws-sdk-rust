@@ -88,6 +88,10 @@ impl BatchLoadTaskBuilder {
         self.task_id = input;
         self
     }
+    /// <p>The ID of the batch load task.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
+    }
     /// <p>Status of the batch load task.</p>
     pub fn task_status(mut self, input: crate::types::BatchLoadStatus) -> Self {
         self.task_status = ::std::option::Option::Some(input);
@@ -100,6 +104,10 @@ impl BatchLoadTaskBuilder {
     ) -> Self {
         self.task_status = input;
         self
+    }
+    /// <p>Status of the batch load task.</p>
+    pub fn get_task_status(&self) -> &::std::option::Option<crate::types::BatchLoadStatus> {
+        &self.task_status
     }
     /// <p>Database name for the database into which a batch load task loads data.</p>
     pub fn database_name(
@@ -117,6 +125,10 @@ impl BatchLoadTaskBuilder {
         self.database_name = input;
         self
     }
+    /// <p>Database name for the database into which a batch load task loads data.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>Table name for the table into which a batch load task loads data.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
@@ -126,6 +138,10 @@ impl BatchLoadTaskBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
+    }
+    /// <p>Table name for the table into which a batch load task loads data.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// <p>The time when the Timestream batch load task was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -140,6 +156,10 @@ impl BatchLoadTaskBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time when the Timestream batch load task was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The time when the Timestream batch load task was last updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -153,6 +173,10 @@ impl BatchLoadTaskBuilder {
         self.last_updated_time = input;
         self
     }
+    /// <p>The time when the Timestream batch load task was last updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
+    }
     /// <p> </p>
     pub fn resumable_until(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.resumable_until = ::std::option::Option::Some(input);
@@ -165,6 +189,10 @@ impl BatchLoadTaskBuilder {
     ) -> Self {
         self.resumable_until = input;
         self
+    }
+    /// <p> </p>
+    pub fn get_resumable_until(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.resumable_until
     }
     /// Consumes the builder and constructs a [`BatchLoadTask`](crate::types::BatchLoadTask).
     pub fn build(self) -> crate::types::BatchLoadTask {

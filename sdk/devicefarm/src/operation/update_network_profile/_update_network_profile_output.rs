@@ -50,6 +50,10 @@ impl UpdateNetworkProfileOutputBuilder {
         self.network_profile = input;
         self
     }
+    /// <p>A list of the available network profiles.</p>
+    pub fn get_network_profile(&self) -> &::std::option::Option<crate::types::NetworkProfile> {
+        &self.network_profile
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

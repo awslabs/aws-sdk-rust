@@ -55,6 +55,10 @@ impl DescribeEffectivePatchesForPatchBaselineInputBuilder {
         self.baseline_id = input;
         self
     }
+    /// <p>The ID of the patch baseline to retrieve the effective patches for.</p>
+    pub fn get_baseline_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.baseline_id
+    }
     /// <p>The maximum number of patches to return (per page).</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl DescribeEffectivePatchesForPatchBaselineInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of patches to return (per page).</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -74,6 +82,10 @@ impl DescribeEffectivePatchesForPatchBaselineInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeEffectivePatchesForPatchBaselineInput`](crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineInput, ::aws_smithy_http::operation::error::BuildError>{

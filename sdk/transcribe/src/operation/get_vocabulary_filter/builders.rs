@@ -37,6 +37,12 @@ impl GetVocabularyFilterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetVocabularyFilter as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_vocabulary_filter::builders::GetVocabularyFilterInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +138,9 @@ impl GetVocabularyFilterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_vocabulary_filter_name(input);
         self
+    }
+    /// <p>The name of the custom vocabulary filter you want information about. Custom vocabulary filter names are case sensitive.</p>
+    pub fn get_vocabulary_filter_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vocabulary_filter_name()
     }
 }

@@ -88,6 +88,10 @@ impl HyperParameterSpecificationBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of this hyperparameter. The name must be unique.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A brief description of the hyperparameter.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -97,6 +101,10 @@ impl HyperParameterSpecificationBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A brief description of the hyperparameter.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The type of this hyperparameter. The valid types are <code>Integer</code>, <code>Continuous</code>, <code>Categorical</code>, and <code>FreeText</code>.</p>
     pub fn r#type(mut self, input: crate::types::ParameterType) -> Self {
@@ -108,6 +116,10 @@ impl HyperParameterSpecificationBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of this hyperparameter. The valid types are <code>Integer</code>, <code>Continuous</code>, <code>Categorical</code>, and <code>FreeText</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ParameterType> {
+        &self.r#type
+    }
     /// <p>The allowed range for this hyperparameter.</p>
     pub fn range(mut self, input: crate::types::ParameterRange) -> Self {
         self.range = ::std::option::Option::Some(input);
@@ -117,6 +129,10 @@ impl HyperParameterSpecificationBuilder {
     pub fn set_range(mut self, input: ::std::option::Option<crate::types::ParameterRange>) -> Self {
         self.range = input;
         self
+    }
+    /// <p>The allowed range for this hyperparameter.</p>
+    pub fn get_range(&self) -> &::std::option::Option<crate::types::ParameterRange> {
+        &self.range
     }
     /// <p>Indicates whether this hyperparameter is tunable in a hyperparameter tuning job.</p>
     pub fn is_tunable(mut self, input: bool) -> Self {
@@ -128,6 +144,10 @@ impl HyperParameterSpecificationBuilder {
         self.is_tunable = input;
         self
     }
+    /// <p>Indicates whether this hyperparameter is tunable in a hyperparameter tuning job.</p>
+    pub fn get_is_tunable(&self) -> &::std::option::Option<bool> {
+        &self.is_tunable
+    }
     /// <p>Indicates whether this hyperparameter is required.</p>
     pub fn is_required(mut self, input: bool) -> Self {
         self.is_required = ::std::option::Option::Some(input);
@@ -137,6 +157,10 @@ impl HyperParameterSpecificationBuilder {
     pub fn set_is_required(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_required = input;
         self
+    }
+    /// <p>Indicates whether this hyperparameter is required.</p>
+    pub fn get_is_required(&self) -> &::std::option::Option<bool> {
+        &self.is_required
     }
     /// <p>The default value for this hyperparameter. If a default value is specified, a hyperparameter cannot be required.</p>
     pub fn default_value(
@@ -153,6 +177,10 @@ impl HyperParameterSpecificationBuilder {
     ) -> Self {
         self.default_value = input;
         self
+    }
+    /// <p>The default value for this hyperparameter. If a default value is specified, a hyperparameter cannot be required.</p>
+    pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_value
     }
     /// Consumes the builder and constructs a [`HyperParameterSpecification`](crate::types::HyperParameterSpecification).
     pub fn build(self) -> crate::types::HyperParameterSpecification {

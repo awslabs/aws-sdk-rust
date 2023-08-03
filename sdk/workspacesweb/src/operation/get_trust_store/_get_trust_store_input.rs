@@ -45,6 +45,10 @@ impl GetTrustStoreInputBuilder {
         self.trust_store_arn = input;
         self
     }
+    /// <p>The ARN of the trust store.</p>
+    pub fn get_trust_store_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trust_store_arn
+    }
     /// Consumes the builder and constructs a [`GetTrustStoreInput`](crate::operation::get_trust_store::GetTrustStoreInput).
     pub fn build(
         self,

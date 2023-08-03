@@ -37,6 +37,10 @@ impl DeleteBlueGreenDeploymentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteBlueGreenDeployment as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_blue_green_deployment::builders::DeleteBlueGreenDeploymentInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -141,6 +145,16 @@ impl DeleteBlueGreenDeploymentFluentBuilder {
         self.inner = self.inner.set_blue_green_deployment_identifier(input);
         self
     }
+    /// <p>The unique identifier of the blue/green deployment to delete. This parameter isn't case-sensitive.</p>
+    /// <p>Constraints: </p>
+    /// <ul>
+    /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
+    /// </ul>
+    pub fn get_blue_green_deployment_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_blue_green_deployment_identifier()
+    }
     /// <p>Specifies whether to delete the resources in the green environment. You can't specify this option if the blue/green deployment <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BlueGreenDeployment.html">status</a> is <code>SWITCHOVER_COMPLETED</code>.</p>
     pub fn delete_target(mut self, input: bool) -> Self {
         self.inner = self.inner.delete_target(input);
@@ -150,5 +164,9 @@ impl DeleteBlueGreenDeploymentFluentBuilder {
     pub fn set_delete_target(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_delete_target(input);
         self
+    }
+    /// <p>Specifies whether to delete the resources in the green environment. You can't specify this option if the blue/green deployment <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BlueGreenDeployment.html">status</a> is <code>SWITCHOVER_COMPLETED</code>.</p>
+    pub fn get_delete_target(&self) -> &::std::option::Option<bool> {
+        self.inner.get_delete_target()
     }
 }

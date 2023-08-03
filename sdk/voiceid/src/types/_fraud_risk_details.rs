@@ -51,6 +51,12 @@ impl FraudRiskDetailsBuilder {
         self.known_fraudster_risk = input;
         self
     }
+    /// <p>The details resulting from 'Known Fraudster Risk' analysis of the speaker.</p>
+    pub fn get_known_fraudster_risk(
+        &self,
+    ) -> &::std::option::Option<crate::types::KnownFraudsterRisk> {
+        &self.known_fraudster_risk
+    }
     /// <p>The details resulting from 'Voice Spoofing Risk' analysis of the speaker.</p>
     pub fn voice_spoofing_risk(mut self, input: crate::types::VoiceSpoofingRisk) -> Self {
         self.voice_spoofing_risk = ::std::option::Option::Some(input);
@@ -63,6 +69,12 @@ impl FraudRiskDetailsBuilder {
     ) -> Self {
         self.voice_spoofing_risk = input;
         self
+    }
+    /// <p>The details resulting from 'Voice Spoofing Risk' analysis of the speaker.</p>
+    pub fn get_voice_spoofing_risk(
+        &self,
+    ) -> &::std::option::Option<crate::types::VoiceSpoofingRisk> {
+        &self.voice_spoofing_risk
     }
     /// Consumes the builder and constructs a [`FraudRiskDetails`](crate::types::FraudRiskDetails).
     pub fn build(self) -> crate::types::FraudRiskDetails {

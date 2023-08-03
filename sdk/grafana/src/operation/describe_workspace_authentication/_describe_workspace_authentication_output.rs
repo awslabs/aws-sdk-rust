@@ -51,6 +51,12 @@ impl DescribeWorkspaceAuthenticationOutputBuilder {
         self.authentication = input;
         self
     }
+    /// <p>A structure containing information about the authentication methods used in the workspace.</p>
+    pub fn get_authentication(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthenticationDescription> {
+        &self.authentication
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

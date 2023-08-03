@@ -39,6 +39,10 @@ impl SetTextMessageSpendLimitOverrideInputBuilder {
         self.monthly_limit = input;
         self
     }
+    /// <p>The new monthly limit to enforce on text messages.</p>
+    pub fn get_monthly_limit(&self) -> &::std::option::Option<i64> {
+        &self.monthly_limit
+    }
     /// Consumes the builder and constructs a [`SetTextMessageSpendLimitOverrideInput`](crate::operation::set_text_message_spend_limit_override::SetTextMessageSpendLimitOverrideInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::set_text_message_spend_limit_override::SetTextMessageSpendLimitOverrideInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

@@ -41,6 +41,10 @@ impl DescribeUserProfileInputBuilder {
         self.user_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the user.</p>
+    pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_arn
+    }
     /// Consumes the builder and constructs a [`DescribeUserProfileInput`](crate::operation::describe_user_profile::DescribeUserProfileInput).
     pub fn build(
         self,

@@ -56,6 +56,10 @@ impl TableVersionErrorBuilder {
         self.table_name = input;
         self
     }
+    /// <p>The name of the table in question.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
+    }
     /// <p>The ID value of the version in question. A <code>VersionID</code> is a string representation of an integer. Each version is incremented by 1.</p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_id = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl TableVersionErrorBuilder {
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_id = input;
         self
+    }
+    /// <p>The ID value of the version in question. A <code>VersionID</code> is a string representation of an integer. Each version is incremented by 1.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
     }
     /// <p>The details about the error.</p>
     pub fn error_detail(mut self, input: crate::types::ErrorDetail) -> Self {
@@ -78,6 +86,10 @@ impl TableVersionErrorBuilder {
     ) -> Self {
         self.error_detail = input;
         self
+    }
+    /// <p>The details about the error.</p>
+    pub fn get_error_detail(&self) -> &::std::option::Option<crate::types::ErrorDetail> {
+        &self.error_detail
     }
     /// Consumes the builder and constructs a [`TableVersionError`](crate::types::TableVersionError).
     pub fn build(self) -> crate::types::TableVersionError {

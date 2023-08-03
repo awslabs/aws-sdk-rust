@@ -63,6 +63,10 @@ impl InitiateJobOutputBuilder {
         self.location = input;
         self
     }
+    /// <p>The relative URI path of the job.</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
+    }
     /// <p>The ID of the job.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl InitiateJobOutputBuilder {
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
+    }
+    /// <p>The ID of the job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
     }
     /// <p>The path to the location of where the select results are stored.</p>
     pub fn job_output_path(
@@ -88,6 +96,10 @@ impl InitiateJobOutputBuilder {
     ) -> Self {
         self.job_output_path = input;
         self
+    }
+    /// <p>The path to the location of where the select results are stored.</p>
+    pub fn get_job_output_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_output_path
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

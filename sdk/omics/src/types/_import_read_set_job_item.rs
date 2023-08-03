@@ -80,6 +80,10 @@ impl ImportReadSetJobItemBuilder {
         self.id = input;
         self
     }
+    /// <p>The job's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The job's sequence store ID.</p>
     pub fn sequence_store_id(
         mut self,
@@ -96,6 +100,10 @@ impl ImportReadSetJobItemBuilder {
         self.sequence_store_id = input;
         self
     }
+    /// <p>The job's sequence store ID.</p>
+    pub fn get_sequence_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sequence_store_id
+    }
     /// <p>The job's service role ARN.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -105,6 +113,10 @@ impl ImportReadSetJobItemBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The job's service role ARN.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The job's status.</p>
     pub fn status(mut self, input: crate::types::ReadSetImportJobStatus) -> Self {
@@ -119,6 +131,10 @@ impl ImportReadSetJobItemBuilder {
         self.status = input;
         self
     }
+    /// <p>The job's status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ReadSetImportJobStatus> {
+        &self.status
+    }
     /// <p>When the job was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -132,6 +148,10 @@ impl ImportReadSetJobItemBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>When the job was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>When the job completed.</p>
     pub fn completion_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.completion_time = ::std::option::Option::Some(input);
@@ -144,6 +164,10 @@ impl ImportReadSetJobItemBuilder {
     ) -> Self {
         self.completion_time = input;
         self
+    }
+    /// <p>When the job completed.</p>
+    pub fn get_completion_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.completion_time
     }
     /// Consumes the builder and constructs a [`ImportReadSetJobItem`](crate::types::ImportReadSetJobItem).
     pub fn build(self) -> crate::types::ImportReadSetJobItem {

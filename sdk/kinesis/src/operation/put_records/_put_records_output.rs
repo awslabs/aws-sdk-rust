@@ -71,6 +71,10 @@ impl PutRecordsOutputBuilder {
         self.failed_record_count = input;
         self
     }
+    /// <p>The number of unsuccessfully processed records in a <code>PutRecords</code> request.</p>
+    pub fn get_failed_record_count(&self) -> &::std::option::Option<i32> {
+        &self.failed_record_count
+    }
     /// Appends an item to `records`.
     ///
     /// To override the contents of this collection use [`set_records`](Self::set_records).
@@ -89,6 +93,12 @@ impl PutRecordsOutputBuilder {
     ) -> Self {
         self.records = input;
         self
+    }
+    /// <p>An array of successfully and unsuccessfully processed record results. A record that is successfully added to a stream includes <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record that fails to be added to a stream includes <code>ErrorCode</code> and <code>ErrorMessage</code> in the result.</p>
+    pub fn get_records(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PutRecordsResultEntry>> {
+        &self.records
     }
     /// <p>The encryption type used on the records. This parameter can be one of the following values:</p>
     /// <ul>
@@ -110,6 +120,14 @@ impl PutRecordsOutputBuilder {
     ) -> Self {
         self.encryption_type = input;
         self
+    }
+    /// <p>The encryption type used on the records. This parameter can be one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>NONE</code>: Do not encrypt the records.</p> </li>
+    /// <li> <p> <code>KMS</code>: Use server-side encryption on the records using a customer-managed Amazon Web Services KMS key.</p> </li>
+    /// </ul>
+    pub fn get_encryption_type(&self) -> &::std::option::Option<crate::types::EncryptionType> {
+        &self.encryption_type
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

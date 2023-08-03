@@ -48,6 +48,10 @@ impl FeatureValueBuilder {
         self.feature_name = input;
         self
     }
+    /// <p>The name of a feature that a feature value corresponds to.</p>
+    pub fn get_feature_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.feature_name
+    }
     /// <p>The value associated with a feature, in string format. Note that features types can be String, Integral, or Fractional. This value represents all three types as a string.</p>
     pub fn value_as_string(
         mut self,
@@ -63,6 +67,10 @@ impl FeatureValueBuilder {
     ) -> Self {
         self.value_as_string = input;
         self
+    }
+    /// <p>The value associated with a feature, in string format. Note that features types can be String, Integral, or Fractional. This value represents all three types as a string.</p>
+    pub fn get_value_as_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value_as_string
     }
     /// Consumes the builder and constructs a [`FeatureValue`](crate::types::FeatureValue).
     pub fn build(self) -> crate::types::FeatureValue {

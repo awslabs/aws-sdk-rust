@@ -64,6 +64,10 @@ impl CreatePackageInputBuilder {
         self.package_name = input;
         self
     }
+    /// <p>Unique identifier for the package.</p>
+    pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_name
+    }
     /// <p>Type of package. Currently supports only TXT-DICTIONARY.</p>
     pub fn package_type(mut self, input: crate::types::PackageType) -> Self {
         self.package_type = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl CreatePackageInputBuilder {
     ) -> Self {
         self.package_type = input;
         self
+    }
+    /// <p>Type of package. Currently supports only TXT-DICTIONARY.</p>
+    pub fn get_package_type(&self) -> &::std::option::Option<crate::types::PackageType> {
+        &self.package_type
     }
     /// <p>Description of the package.</p>
     pub fn package_description(
@@ -93,6 +101,10 @@ impl CreatePackageInputBuilder {
         self.package_description = input;
         self
     }
+    /// <p>Description of the package.</p>
+    pub fn get_package_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_description
+    }
     /// <p>The customer S3 location <code>PackageSource</code> for importing the package.</p>
     pub fn package_source(mut self, input: crate::types::PackageSource) -> Self {
         self.package_source = ::std::option::Option::Some(input);
@@ -105,6 +117,10 @@ impl CreatePackageInputBuilder {
     ) -> Self {
         self.package_source = input;
         self
+    }
+    /// <p>The customer S3 location <code>PackageSource</code> for importing the package.</p>
+    pub fn get_package_source(&self) -> &::std::option::Option<crate::types::PackageSource> {
+        &self.package_source
     }
     /// Consumes the builder and constructs a [`CreatePackageInput`](crate::operation::create_package::CreatePackageInput).
     pub fn build(

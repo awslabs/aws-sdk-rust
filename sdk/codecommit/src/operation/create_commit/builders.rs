@@ -36,6 +36,10 @@ impl CreateCommitFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateCommit as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_commit::builders::CreateCommitInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl CreateCommitFluentBuilder {
         self.inner = self.inner.set_repository_name(input);
         self
     }
+    /// <p>The name of the repository where you create the commit.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository_name()
+    }
     /// <p>The name of the branch where you create the commit.</p>
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.branch_name(input.into());
@@ -133,6 +141,10 @@ impl CreateCommitFluentBuilder {
     pub fn set_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_branch_name(input);
         self
+    }
+    /// <p>The name of the branch where you create the commit.</p>
+    pub fn get_branch_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_branch_name()
     }
     /// <p>The ID of the commit that is the parent of the commit you create. Not required if this is an empty repository.</p>
     pub fn parent_commit_id(
@@ -150,6 +162,10 @@ impl CreateCommitFluentBuilder {
         self.inner = self.inner.set_parent_commit_id(input);
         self
     }
+    /// <p>The ID of the commit that is the parent of the commit you create. Not required if this is an empty repository.</p>
+    pub fn get_parent_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_parent_commit_id()
+    }
     /// <p>The name of the author who created the commit. This information is used as both the author and committer for the commit.</p>
     pub fn author_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.author_name(input.into());
@@ -160,6 +176,10 @@ impl CreateCommitFluentBuilder {
         self.inner = self.inner.set_author_name(input);
         self
     }
+    /// <p>The name of the author who created the commit. This information is used as both the author and committer for the commit.</p>
+    pub fn get_author_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_author_name()
+    }
     /// <p>The email address of the person who created the commit.</p>
     pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.email(input.into());
@@ -169,6 +189,10 @@ impl CreateCommitFluentBuilder {
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_email(input);
         self
+    }
+    /// <p>The email address of the person who created the commit.</p>
+    pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_email()
     }
     /// <p>The commit message you want to include in the commit. Commit messages are limited to 256 KB. If no message is specified, a default message is used.</p>
     pub fn commit_message(
@@ -186,6 +210,10 @@ impl CreateCommitFluentBuilder {
         self.inner = self.inner.set_commit_message(input);
         self
     }
+    /// <p>The commit message you want to include in the commit. Commit messages are limited to 256 KB. If no message is specified, a default message is used.</p>
+    pub fn get_commit_message(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_commit_message()
+    }
     /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If true, a ..gitkeep file is created for empty folders. The default is false.</p>
     pub fn keep_empty_folders(mut self, input: bool) -> Self {
         self.inner = self.inner.keep_empty_folders(input);
@@ -195,6 +223,10 @@ impl CreateCommitFluentBuilder {
     pub fn set_keep_empty_folders(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_keep_empty_folders(input);
         self
+    }
+    /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If true, a ..gitkeep file is created for empty folders. The default is false.</p>
+    pub fn get_keep_empty_folders(&self) -> &::std::option::Option<bool> {
+        self.inner.get_keep_empty_folders()
     }
     /// Appends an item to `putFiles`.
     ///
@@ -213,6 +245,12 @@ impl CreateCommitFluentBuilder {
         self.inner = self.inner.set_put_files(input);
         self
     }
+    /// <p>The files to add or update in this commit.</p>
+    pub fn get_put_files(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PutFileEntry>> {
+        self.inner.get_put_files()
+    }
     /// Appends an item to `deleteFiles`.
     ///
     /// To override the contents of this collection use [`set_delete_files`](Self::set_delete_files).
@@ -230,6 +268,12 @@ impl CreateCommitFluentBuilder {
         self.inner = self.inner.set_delete_files(input);
         self
     }
+    /// <p>The files to delete in this commit. These files still exist in earlier commits.</p>
+    pub fn get_delete_files(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteFileEntry>> {
+        self.inner.get_delete_files()
+    }
     /// Appends an item to `setFileModes`.
     ///
     /// To override the contents of this collection use [`set_set_file_modes`](Self::set_set_file_modes).
@@ -246,5 +290,11 @@ impl CreateCommitFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_set_file_modes(input);
         self
+    }
+    /// <p>The file modes to update for files in this commit.</p>
+    pub fn get_set_file_modes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SetFileModeEntry>> {
+        self.inner.get_set_file_modes()
     }
 }

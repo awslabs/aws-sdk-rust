@@ -46,6 +46,12 @@ impl AcceptInboundCrossClusterSearchConnectionInputBuilder {
         self.cross_cluster_search_connection_id = input;
         self
     }
+    /// <p>The id of the inbound connection that you want to accept.</p>
+    pub fn get_cross_cluster_search_connection_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.cross_cluster_search_connection_id
+    }
     /// Consumes the builder and constructs a [`AcceptInboundCrossClusterSearchConnectionInput`](crate::operation::accept_inbound_cross_cluster_search_connection::AcceptInboundCrossClusterSearchConnectionInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::accept_inbound_cross_cluster_search_connection::AcceptInboundCrossClusterSearchConnectionInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

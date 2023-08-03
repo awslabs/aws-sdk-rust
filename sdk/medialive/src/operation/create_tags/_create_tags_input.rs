@@ -56,6 +56,10 @@ impl CreateTagsInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// Placeholder documentation for __string
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -80,6 +84,14 @@ impl CreateTagsInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// Placeholder documentation for Tags
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateTagsInput`](crate::operation::create_tags::CreateTagsInput).
     pub fn build(

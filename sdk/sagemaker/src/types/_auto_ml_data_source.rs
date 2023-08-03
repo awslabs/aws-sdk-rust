@@ -43,6 +43,10 @@ impl AutoMlDataSourceBuilder {
         self.s3_data_source = input;
         self
     }
+    /// <p>The Amazon S3 location of the input data.</p>
+    pub fn get_s3_data_source(&self) -> &::std::option::Option<crate::types::AutoMls3DataSource> {
+        &self.s3_data_source
+    }
     /// Consumes the builder and constructs a [`AutoMlDataSource`](crate::types::AutoMlDataSource).
     pub fn build(self) -> crate::types::AutoMlDataSource {
         crate::types::AutoMlDataSource {

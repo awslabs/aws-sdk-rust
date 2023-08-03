@@ -39,6 +39,10 @@ impl DescribeSentimentDetectionJobInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// Consumes the builder and constructs a [`DescribeSentimentDetectionJobInput`](crate::operation::describe_sentiment_detection_job::DescribeSentimentDetectionJobInput).
     pub fn build(
         self,

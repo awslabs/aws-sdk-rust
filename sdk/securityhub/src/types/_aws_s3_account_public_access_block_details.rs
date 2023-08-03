@@ -64,6 +64,10 @@ impl AwsS3AccountPublicAccessBlockDetailsBuilder {
         self.block_public_acls = input;
         self
     }
+    /// <p>Indicates whether to reject calls to update an S3 bucket if the calls include a public access control list (ACL).</p>
+    pub fn get_block_public_acls(&self) -> &::std::option::Option<bool> {
+        &self.block_public_acls
+    }
     /// <p>Indicates whether to reject calls to update the access policy for an S3 bucket or access point if the policy allows public access.</p>
     pub fn block_public_policy(mut self, input: bool) -> Self {
         self.block_public_policy = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl AwsS3AccountPublicAccessBlockDetailsBuilder {
     pub fn set_block_public_policy(mut self, input: ::std::option::Option<bool>) -> Self {
         self.block_public_policy = input;
         self
+    }
+    /// <p>Indicates whether to reject calls to update the access policy for an S3 bucket or access point if the policy allows public access.</p>
+    pub fn get_block_public_policy(&self) -> &::std::option::Option<bool> {
+        &self.block_public_policy
     }
     /// <p>Indicates whether Amazon S3 ignores public ACLs that are associated with an S3 bucket.</p>
     pub fn ignore_public_acls(mut self, input: bool) -> Self {
@@ -84,6 +92,10 @@ impl AwsS3AccountPublicAccessBlockDetailsBuilder {
         self.ignore_public_acls = input;
         self
     }
+    /// <p>Indicates whether Amazon S3 ignores public ACLs that are associated with an S3 bucket.</p>
+    pub fn get_ignore_public_acls(&self) -> &::std::option::Option<bool> {
+        &self.ignore_public_acls
+    }
     /// <p>Indicates whether to restrict access to an access point or S3 bucket that has a public policy to only Amazon Web Services service principals and authorized users within the S3 bucket owner's account.</p>
     pub fn restrict_public_buckets(mut self, input: bool) -> Self {
         self.restrict_public_buckets = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl AwsS3AccountPublicAccessBlockDetailsBuilder {
     pub fn set_restrict_public_buckets(mut self, input: ::std::option::Option<bool>) -> Self {
         self.restrict_public_buckets = input;
         self
+    }
+    /// <p>Indicates whether to restrict access to an access point or S3 bucket that has a public policy to only Amazon Web Services service principals and authorized users within the S3 bucket owner's account.</p>
+    pub fn get_restrict_public_buckets(&self) -> &::std::option::Option<bool> {
+        &self.restrict_public_buckets
     }
     /// Consumes the builder and constructs a [`AwsS3AccountPublicAccessBlockDetails`](crate::types::AwsS3AccountPublicAccessBlockDetails).
     pub fn build(self) -> crate::types::AwsS3AccountPublicAccessBlockDetails {

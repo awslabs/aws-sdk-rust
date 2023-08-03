@@ -65,6 +65,12 @@ impl BatchCreateVehicleOutputBuilder {
         self.vehicles = input;
         self
     }
+    /// <p> A list of information about a batch of created vehicles. For more information, see the API data type.</p>
+    pub fn get_vehicles(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateVehicleResponseItem>> {
+        &self.vehicles
+    }
     /// Appends an item to `errors`.
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
@@ -83,6 +89,12 @@ impl BatchCreateVehicleOutputBuilder {
     ) -> Self {
         self.errors = input;
         self
+    }
+    /// <p>A list of information about creation errors, or an empty list if there aren't any errors. </p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateVehicleError>> {
+        &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

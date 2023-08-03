@@ -64,6 +64,10 @@ impl EventStreamDestinationDetailsBuilder {
         self.uri = input;
         self
     }
+    /// <p>The StreamARN of the destination to deliver profile events to. For example, arn:aws:kinesis:region:account-id:stream/stream-name.</p>
+    pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uri
+    }
     /// <p>The status of enabling the Kinesis stream as a destination for export.</p>
     pub fn status(mut self, input: crate::types::EventStreamDestinationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl EventStreamDestinationDetailsBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of enabling the Kinesis stream as a destination for export.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::EventStreamDestinationStatus> {
+        &self.status
     }
     /// <p>The timestamp when the status last changed to <code>UNHEALHY</code>.</p>
     pub fn unhealthy_since(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -90,6 +98,10 @@ impl EventStreamDestinationDetailsBuilder {
         self.unhealthy_since = input;
         self
     }
+    /// <p>The timestamp when the status last changed to <code>UNHEALHY</code>.</p>
+    pub fn get_unhealthy_since(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.unhealthy_since
+    }
     /// <p>The human-readable string that corresponds to the error or success while enabling the streaming destination.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -99,6 +111,10 @@ impl EventStreamDestinationDetailsBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The human-readable string that corresponds to the error or success while enabling the streaming destination.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`EventStreamDestinationDetails`](crate::types::EventStreamDestinationDetails).
     pub fn build(self) -> crate::types::EventStreamDestinationDetails {

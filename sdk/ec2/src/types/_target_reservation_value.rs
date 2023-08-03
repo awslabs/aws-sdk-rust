@@ -53,6 +53,10 @@ impl TargetReservationValueBuilder {
         self.reservation_value = input;
         self
     }
+    /// <p>The total value of the Convertible Reserved Instances that make up the exchange. This is the sum of the list value, remaining upfront price, and additional upfront cost of the exchange.</p>
+    pub fn get_reservation_value(&self) -> &::std::option::Option<crate::types::ReservationValue> {
+        &self.reservation_value
+    }
     /// <p>The configuration of the Convertible Reserved Instances that make up the exchange.</p>
     pub fn target_configuration(mut self, input: crate::types::TargetConfiguration) -> Self {
         self.target_configuration = ::std::option::Option::Some(input);
@@ -65,6 +69,12 @@ impl TargetReservationValueBuilder {
     ) -> Self {
         self.target_configuration = input;
         self
+    }
+    /// <p>The configuration of the Convertible Reserved Instances that make up the exchange.</p>
+    pub fn get_target_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::TargetConfiguration> {
+        &self.target_configuration
     }
     /// Consumes the builder and constructs a [`TargetReservationValue`](crate::types::TargetReservationValue).
     pub fn build(self) -> crate::types::TargetReservationValue {

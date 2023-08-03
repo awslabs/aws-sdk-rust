@@ -45,6 +45,10 @@ impl DeleteAlgorithmInputBuilder {
         self.algorithm_name = input;
         self
     }
+    /// <p>The name of the algorithm to delete.</p>
+    pub fn get_algorithm_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.algorithm_name
+    }
     /// Consumes the builder and constructs a [`DeleteAlgorithmInput`](crate::operation::delete_algorithm::DeleteAlgorithmInput).
     pub fn build(
         self,

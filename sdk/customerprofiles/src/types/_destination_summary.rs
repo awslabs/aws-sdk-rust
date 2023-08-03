@@ -56,6 +56,10 @@ impl DestinationSummaryBuilder {
         self.uri = input;
         self
     }
+    /// <p>The StreamARN of the destination to deliver profile events to. For example, arn:aws:kinesis:region:account-id:stream/stream-name.</p>
+    pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uri
+    }
     /// <p>The status of enabling the Kinesis stream as a destination for export.</p>
     pub fn status(mut self, input: crate::types::EventStreamDestinationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl DestinationSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of enabling the Kinesis stream as a destination for export.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::EventStreamDestinationStatus> {
+        &self.status
+    }
     /// <p>The timestamp when the status last changed to <code>UNHEALHY</code>.</p>
     pub fn unhealthy_since(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.unhealthy_since = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl DestinationSummaryBuilder {
     ) -> Self {
         self.unhealthy_since = input;
         self
+    }
+    /// <p>The timestamp when the status last changed to <code>UNHEALHY</code>.</p>
+    pub fn get_unhealthy_since(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.unhealthy_since
     }
     /// Consumes the builder and constructs a [`DestinationSummary`](crate::types::DestinationSummary).
     pub fn build(self) -> crate::types::DestinationSummary {

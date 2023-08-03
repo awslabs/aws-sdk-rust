@@ -43,6 +43,10 @@ impl DatasetGroundTruthManifestBuilder {
         self.s3_object = input;
         self
     }
+    /// <p>The S3 bucket location for the manifest file.</p>
+    pub fn get_s3_object(&self) -> &::std::option::Option<crate::types::InputS3Object> {
+        &self.s3_object
+    }
     /// Consumes the builder and constructs a [`DatasetGroundTruthManifest`](crate::types::DatasetGroundTruthManifest).
     pub fn build(self) -> crate::types::DatasetGroundTruthManifest {
         crate::types::DatasetGroundTruthManifest {

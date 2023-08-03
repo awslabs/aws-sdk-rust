@@ -66,6 +66,10 @@ impl EventsConfigurationBuilder {
         self.bot_id = input;
         self
     }
+    /// <p>The bot ID.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
     /// <p>HTTPS endpoint that allows a bot to receive outgoing events.</p>
     pub fn outbound_events_https_endpoint(
         mut self,
@@ -82,6 +86,12 @@ impl EventsConfigurationBuilder {
         self.outbound_events_https_endpoint = input;
         self
     }
+    /// <p>HTTPS endpoint that allows a bot to receive outgoing events.</p>
+    pub fn get_outbound_events_https_endpoint(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.outbound_events_https_endpoint
+    }
     /// <p>Lambda function ARN that allows a bot to receive outgoing events.</p>
     pub fn lambda_function_arn(
         mut self,
@@ -97,6 +107,10 @@ impl EventsConfigurationBuilder {
     ) -> Self {
         self.lambda_function_arn = input;
         self
+    }
+    /// <p>Lambda function ARN that allows a bot to receive outgoing events.</p>
+    pub fn get_lambda_function_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lambda_function_arn
     }
     /// Consumes the builder and constructs a [`EventsConfiguration`](crate::types::EventsConfiguration).
     pub fn build(self) -> crate::types::EventsConfiguration {

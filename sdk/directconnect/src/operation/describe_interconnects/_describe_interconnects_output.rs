@@ -57,6 +57,12 @@ impl DescribeInterconnectsOutputBuilder {
         self.interconnects = input;
         self
     }
+    /// <p>The interconnects.</p>
+    pub fn get_interconnects(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Interconnect>> {
+        &self.interconnects
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

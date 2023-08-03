@@ -50,6 +50,10 @@ impl DescribeHostKeyOutputBuilder {
         self.host_key = input;
         self
     }
+    /// <p>Returns the details for the specified host key.</p>
+    pub fn get_host_key(&self) -> &::std::option::Option<crate::types::DescribedHostKey> {
+        &self.host_key
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

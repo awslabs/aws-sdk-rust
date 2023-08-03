@@ -48,6 +48,10 @@ impl UpdateRadiusInputBuilder {
         self.directory_id = input;
         self
     }
+    /// <p>The identifier of the directory for which to update the RADIUS server information.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
     /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
     pub fn radius_settings(mut self, input: crate::types::RadiusSettings) -> Self {
         self.radius_settings = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl UpdateRadiusInputBuilder {
     ) -> Self {
         self.radius_settings = input;
         self
+    }
+    /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
+    pub fn get_radius_settings(&self) -> &::std::option::Option<crate::types::RadiusSettings> {
+        &self.radius_settings
     }
     /// Consumes the builder and constructs a [`UpdateRadiusInput`](crate::operation::update_radius::UpdateRadiusInput).
     pub fn build(

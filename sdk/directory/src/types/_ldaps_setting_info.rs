@@ -59,6 +59,10 @@ impl LdapsSettingInfoBuilder {
         self.ldaps_status = input;
         self
     }
+    /// <p>The state of the LDAPS settings.</p>
+    pub fn get_ldaps_status(&self) -> &::std::option::Option<crate::types::LdapsStatus> {
+        &self.ldaps_status
+    }
     /// <p>Describes a state change for LDAPS.</p>
     pub fn ldaps_status_reason(
         mut self,
@@ -75,6 +79,10 @@ impl LdapsSettingInfoBuilder {
         self.ldaps_status_reason = input;
         self
     }
+    /// <p>Describes a state change for LDAPS.</p>
+    pub fn get_ldaps_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ldaps_status_reason
+    }
     /// <p>The date and time when the LDAPS settings were last updated.</p>
     pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date_time = ::std::option::Option::Some(input);
@@ -87,6 +95,12 @@ impl LdapsSettingInfoBuilder {
     ) -> Self {
         self.last_updated_date_time = input;
         self
+    }
+    /// <p>The date and time when the LDAPS settings were last updated.</p>
+    pub fn get_last_updated_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date_time
     }
     /// Consumes the builder and constructs a [`LdapsSettingInfo`](crate::types::LdapsSettingInfo).
     pub fn build(self) -> crate::types::LdapsSettingInfo {

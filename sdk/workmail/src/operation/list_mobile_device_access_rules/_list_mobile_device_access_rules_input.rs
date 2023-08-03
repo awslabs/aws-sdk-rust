@@ -45,6 +45,10 @@ impl ListMobileDeviceAccessRulesInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The WorkMail organization for which to list the rules.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// Consumes the builder and constructs a [`ListMobileDeviceAccessRulesInput`](crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesInput).
     pub fn build(
         self,

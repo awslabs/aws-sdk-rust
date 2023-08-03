@@ -47,6 +47,10 @@ impl PublishRecipeInputBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the recipe to be published, for this version of the recipe.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The name of the recipe to be published.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl PublishRecipeInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the recipe to be published.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`PublishRecipeInput`](crate::operation::publish_recipe::PublishRecipeInput).
     pub fn build(

@@ -39,6 +39,10 @@ impl DescribeHubInputBuilder {
         self.hub_name = input;
         self
     }
+    /// <p>The name of the hub to describe.</p>
+    pub fn get_hub_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hub_name
+    }
     /// Consumes the builder and constructs a [`DescribeHubInput`](crate::operation::describe_hub::DescribeHubInput).
     pub fn build(
         self,

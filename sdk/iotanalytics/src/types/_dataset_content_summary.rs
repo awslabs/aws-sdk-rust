@@ -72,6 +72,10 @@ impl DatasetContentSummaryBuilder {
         self.version = input;
         self
     }
+    /// <p>The version of the dataset contents.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
+    }
     /// <p>The status of the dataset contents.</p>
     pub fn status(mut self, input: crate::types::DatasetContentStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -84,6 +88,10 @@ impl DatasetContentSummaryBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the dataset contents.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DatasetContentStatus> {
+        &self.status
     }
     /// <p>The actual time the creation of the dataset contents was started.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -98,6 +106,10 @@ impl DatasetContentSummaryBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The actual time the creation of the dataset contents was started.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The time the creation of the dataset contents was scheduled to start.</p>
     pub fn schedule_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.schedule_time = ::std::option::Option::Some(input);
@@ -111,6 +123,10 @@ impl DatasetContentSummaryBuilder {
         self.schedule_time = input;
         self
     }
+    /// <p>The time the creation of the dataset contents was scheduled to start.</p>
+    pub fn get_schedule_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.schedule_time
+    }
     /// <p>The time the dataset content status was updated to SUCCEEDED or FAILED.</p>
     pub fn completion_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.completion_time = ::std::option::Option::Some(input);
@@ -123,6 +139,10 @@ impl DatasetContentSummaryBuilder {
     ) -> Self {
         self.completion_time = input;
         self
+    }
+    /// <p>The time the dataset content status was updated to SUCCEEDED or FAILED.</p>
+    pub fn get_completion_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.completion_time
     }
     /// Consumes the builder and constructs a [`DatasetContentSummary`](crate::types::DatasetContentSummary).
     pub fn build(self) -> crate::types::DatasetContentSummary {

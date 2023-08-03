@@ -56,6 +56,12 @@ impl DescribeLoggingConfigurationOutputBuilder {
         self.logging_configuration = input;
         self
     }
+    /// Metadata object containing information about the logging configuration of a workspace.
+    pub fn get_logging_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::LoggingConfigurationMetadata> {
+        &self.logging_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

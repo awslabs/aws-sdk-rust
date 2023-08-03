@@ -63,6 +63,10 @@ impl SnapshotCopyGrantBuilder {
         self.snapshot_copy_grant_name = input;
         self
     }
+    /// <p>The name of the snapshot copy grant.</p>
+    pub fn get_snapshot_copy_grant_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_copy_grant_name
+    }
     /// <p>The unique identifier of the encrypted symmetric key in Amazon Web Services KMS to which Amazon Redshift is granted permission.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl SnapshotCopyGrantBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>The unique identifier of the encrypted symmetric key in Amazon Web Services KMS to which Amazon Redshift is granted permission.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// Appends an item to `tags`.
     ///
@@ -91,6 +99,10 @@ impl SnapshotCopyGrantBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tag instances.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`SnapshotCopyGrant`](crate::types::SnapshotCopyGrant).
     pub fn build(self) -> crate::types::SnapshotCopyGrant {

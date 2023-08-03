@@ -40,6 +40,10 @@ impl SearchedFaceBuilder {
         self.face_id = input;
         self
     }
+    /// <p> Unique identifier assigned to the face.</p>
+    pub fn get_face_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.face_id
+    }
     /// Consumes the builder and constructs a [`SearchedFace`](crate::types::SearchedFace).
     pub fn build(self) -> crate::types::SearchedFace {
         crate::types::SearchedFace {

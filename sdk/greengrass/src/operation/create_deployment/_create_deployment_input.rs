@@ -78,6 +78,10 @@ impl CreateDeploymentInputBuilder {
         self.amzn_client_token = input;
         self
     }
+    /// A client token used to correlate requests and responses.
+    pub fn get_amzn_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.amzn_client_token
+    }
     /// The ID of the deployment if you wish to redeploy a previous deployment.
     pub fn deployment_id(
         mut self,
@@ -94,6 +98,10 @@ impl CreateDeploymentInputBuilder {
         self.deployment_id = input;
         self
     }
+    /// The ID of the deployment if you wish to redeploy a previous deployment.
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
+    }
     /// The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid.
     pub fn deployment_type(mut self, input: crate::types::DeploymentType) -> Self {
         self.deployment_type = ::std::option::Option::Some(input);
@@ -107,6 +115,10 @@ impl CreateDeploymentInputBuilder {
         self.deployment_type = input;
         self
     }
+    /// The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid.
+    pub fn get_deployment_type(&self) -> &::std::option::Option<crate::types::DeploymentType> {
+        &self.deployment_type
+    }
     /// The ID of the Greengrass group.
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
@@ -116,6 +128,10 @@ impl CreateDeploymentInputBuilder {
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_id = input;
         self
+    }
+    /// The ID of the Greengrass group.
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
     }
     /// The ID of the group version to be deployed.
     pub fn group_version_id(
@@ -132,6 +148,10 @@ impl CreateDeploymentInputBuilder {
     ) -> Self {
         self.group_version_id = input;
         self
+    }
+    /// The ID of the group version to be deployed.
+    pub fn get_group_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_version_id
     }
     /// Consumes the builder and constructs a [`CreateDeploymentInput`](crate::operation::create_deployment::CreateDeploymentInput).
     pub fn build(

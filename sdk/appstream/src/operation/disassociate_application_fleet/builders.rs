@@ -36,6 +36,10 @@ impl DisassociateApplicationFleetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateApplicationFleet as a reference.
+    pub fn as_input(&self) -> &crate::operation::disassociate_application_fleet::builders::DisassociateApplicationFleetInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl DisassociateApplicationFleetFluentBuilder {
         self.inner = self.inner.set_fleet_name(input);
         self
     }
+    /// <p>The name of the fleet.</p>
+    pub fn get_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fleet_name()
+    }
     /// <p>The ARN of the application.</p>
     pub fn application_arn(
         mut self,
@@ -141,5 +149,9 @@ impl DisassociateApplicationFleetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_application_arn(input);
         self
+    }
+    /// <p>The ARN of the application.</p>
+    pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_arn()
     }
 }

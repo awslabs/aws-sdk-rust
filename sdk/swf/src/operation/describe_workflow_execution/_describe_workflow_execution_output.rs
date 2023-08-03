@@ -88,6 +88,12 @@ impl DescribeWorkflowExecutionOutputBuilder {
         self.execution_info = input;
         self
     }
+    /// <p>Information about the workflow execution.</p>
+    pub fn get_execution_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::WorkflowExecutionInfo> {
+        &self.execution_info
+    }
     /// <p>The configuration settings for this workflow execution including timeout values, tasklist etc.</p>
     pub fn execution_configuration(
         mut self,
@@ -104,6 +110,12 @@ impl DescribeWorkflowExecutionOutputBuilder {
         self.execution_configuration = input;
         self
     }
+    /// <p>The configuration settings for this workflow execution including timeout values, tasklist etc.</p>
+    pub fn get_execution_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::WorkflowExecutionConfiguration> {
+        &self.execution_configuration
+    }
     /// <p>The number of tasks for this workflow execution. This includes open and closed tasks of all types.</p>
     pub fn open_counts(mut self, input: crate::types::WorkflowExecutionOpenCounts) -> Self {
         self.open_counts = ::std::option::Option::Some(input);
@@ -117,6 +129,12 @@ impl DescribeWorkflowExecutionOutputBuilder {
         self.open_counts = input;
         self
     }
+    /// <p>The number of tasks for this workflow execution. This includes open and closed tasks of all types.</p>
+    pub fn get_open_counts(
+        &self,
+    ) -> &::std::option::Option<crate::types::WorkflowExecutionOpenCounts> {
+        &self.open_counts
+    }
     /// <p>The time when the last activity task was scheduled for this workflow execution. You can use this information to determine if the workflow has not made progress for an unusually long period of time and might require a corrective action.</p>
     pub fn latest_activity_task_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.latest_activity_task_timestamp = ::std::option::Option::Some(input);
@@ -129,6 +147,12 @@ impl DescribeWorkflowExecutionOutputBuilder {
     ) -> Self {
         self.latest_activity_task_timestamp = input;
         self
+    }
+    /// <p>The time when the last activity task was scheduled for this workflow execution. You can use this information to determine if the workflow has not made progress for an unusually long period of time and might require a corrective action.</p>
+    pub fn get_latest_activity_task_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.latest_activity_task_timestamp
     }
     /// <p>The latest executionContext provided by the decider for this workflow execution. A decider can provide an executionContext (a free-form string) when closing a decision task using <code>RespondDecisionTaskCompleted</code>.</p>
     pub fn latest_execution_context(
@@ -145,6 +169,10 @@ impl DescribeWorkflowExecutionOutputBuilder {
     ) -> Self {
         self.latest_execution_context = input;
         self
+    }
+    /// <p>The latest executionContext provided by the decider for this workflow execution. A decider can provide an executionContext (a free-form string) when closing a decision task using <code>RespondDecisionTaskCompleted</code>.</p>
+    pub fn get_latest_execution_context(&self) -> &::std::option::Option<::std::string::String> {
+        &self.latest_execution_context
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

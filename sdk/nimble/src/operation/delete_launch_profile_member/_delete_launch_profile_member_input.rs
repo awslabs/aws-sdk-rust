@@ -63,6 +63,10 @@ impl DeleteLaunchProfileMemberInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     pub fn launch_profile_id(
         mut self,
@@ -79,6 +83,10 @@ impl DeleteLaunchProfileMemberInputBuilder {
         self.launch_profile_id = input;
         self
     }
+    /// <p>The ID of the launch profile used to control access from the streaming session.</p>
+    pub fn get_launch_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_profile_id
+    }
     /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_id = ::std::option::Option::Some(input.into());
@@ -89,6 +97,10 @@ impl DeleteLaunchProfileMemberInputBuilder {
         self.principal_id = input;
         self
     }
+    /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
+    pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal_id
+    }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
@@ -98,6 +110,10 @@ impl DeleteLaunchProfileMemberInputBuilder {
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.studio_id = input;
         self
+    }
+    /// <p>The studio ID. </p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_id
     }
     /// Consumes the builder and constructs a [`DeleteLaunchProfileMemberInput`](crate::operation::delete_launch_profile_member::DeleteLaunchProfileMemberInput).
     pub fn build(

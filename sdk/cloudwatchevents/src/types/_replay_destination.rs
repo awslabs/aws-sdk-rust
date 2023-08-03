@@ -48,6 +48,10 @@ impl ReplayDestinationBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the event bus to replay event to. You can replay events only to the event bus specified to create the archive.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Appends an item to `filter_arns`.
     ///
     /// To override the contents of this collection use [`set_filter_arns`](Self::set_filter_arns).
@@ -66,6 +70,12 @@ impl ReplayDestinationBuilder {
     ) -> Self {
         self.filter_arns = input;
         self
+    }
+    /// <p>A list of ARNs for rules to replay events to.</p>
+    pub fn get_filter_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.filter_arns
     }
     /// Consumes the builder and constructs a [`ReplayDestination`](crate::types::ReplayDestination).
     pub fn build(self) -> crate::types::ReplayDestination {

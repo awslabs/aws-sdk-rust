@@ -323,6 +323,12 @@ impl Mpeg2SettingsBuilder {
         self.adaptive_quantization = input;
         self
     }
+    /// Specify the strength of any adaptive quantization filters that you enable. The value that you choose here applies to the following settings: Spatial adaptive quantization, and Temporal adaptive quantization.
+    pub fn get_adaptive_quantization(
+        &self,
+    ) -> &::std::option::Option<crate::types::Mpeg2AdaptiveQuantization> {
+        &self.adaptive_quantization
+    }
     /// Specify the average bitrate in bits per second. Required for VBR and CBR. For MS Smooth outputs, bitrates must be unique when rounded down to the nearest multiple of 1000.
     pub fn bitrate(mut self, input: i32) -> Self {
         self.bitrate = ::std::option::Option::Some(input);
@@ -332,6 +338,10 @@ impl Mpeg2SettingsBuilder {
     pub fn set_bitrate(mut self, input: ::std::option::Option<i32>) -> Self {
         self.bitrate = input;
         self
+    }
+    /// Specify the average bitrate in bits per second. Required for VBR and CBR. For MS Smooth outputs, bitrates must be unique when rounded down to the nearest multiple of 1000.
+    pub fn get_bitrate(&self) -> &::std::option::Option<i32> {
+        &self.bitrate
     }
     /// Use Level to set the MPEG-2 level for the video output.
     pub fn codec_level(mut self, input: crate::types::Mpeg2CodecLevel) -> Self {
@@ -346,6 +356,10 @@ impl Mpeg2SettingsBuilder {
         self.codec_level = input;
         self
     }
+    /// Use Level to set the MPEG-2 level for the video output.
+    pub fn get_codec_level(&self) -> &::std::option::Option<crate::types::Mpeg2CodecLevel> {
+        &self.codec_level
+    }
     /// Use Profile to set the MPEG-2 profile for the video output.
     pub fn codec_profile(mut self, input: crate::types::Mpeg2CodecProfile) -> Self {
         self.codec_profile = ::std::option::Option::Some(input);
@@ -358,6 +372,10 @@ impl Mpeg2SettingsBuilder {
     ) -> Self {
         self.codec_profile = input;
         self
+    }
+    /// Use Profile to set the MPEG-2 profile for the video output.
+    pub fn get_codec_profile(&self) -> &::std::option::Option<crate::types::Mpeg2CodecProfile> {
+        &self.codec_profile
     }
     /// Choose Adaptive to improve subjective video quality for high-motion content. This will cause the service to use fewer B-frames (which infer information based on other frames) for high-motion portions of the video and more B-frames for low-motion portions. The maximum number of B-frames is limited by the value you provide for the setting B frames between reference frames.
     pub fn dynamic_sub_gop(mut self, input: crate::types::Mpeg2DynamicSubGop) -> Self {
@@ -372,6 +390,10 @@ impl Mpeg2SettingsBuilder {
         self.dynamic_sub_gop = input;
         self
     }
+    /// Choose Adaptive to improve subjective video quality for high-motion content. This will cause the service to use fewer B-frames (which infer information based on other frames) for high-motion portions of the video and more B-frames for low-motion portions. The maximum number of B-frames is limited by the value you provide for the setting B frames between reference frames.
+    pub fn get_dynamic_sub_gop(&self) -> &::std::option::Option<crate::types::Mpeg2DynamicSubGop> {
+        &self.dynamic_sub_gop
+    }
     /// If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
     pub fn framerate_control(mut self, input: crate::types::Mpeg2FramerateControl) -> Self {
         self.framerate_control = ::std::option::Option::Some(input);
@@ -384,6 +406,12 @@ impl Mpeg2SettingsBuilder {
     ) -> Self {
         self.framerate_control = input;
         self
+    }
+    /// If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
+    pub fn get_framerate_control(
+        &self,
+    ) -> &::std::option::Option<crate::types::Mpeg2FramerateControl> {
+        &self.framerate_control
     }
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96.
     pub fn framerate_conversion_algorithm(
@@ -401,6 +429,12 @@ impl Mpeg2SettingsBuilder {
         self.framerate_conversion_algorithm = input;
         self
     }
+    /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96.
+    pub fn get_framerate_conversion_algorithm(
+        &self,
+    ) -> &::std::option::Option<crate::types::Mpeg2FramerateConversionAlgorithm> {
+        &self.framerate_conversion_algorithm
+    }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub fn framerate_denominator(mut self, input: i32) -> Self {
         self.framerate_denominator = ::std::option::Option::Some(input);
@@ -410,6 +444,10 @@ impl Mpeg2SettingsBuilder {
     pub fn set_framerate_denominator(mut self, input: ::std::option::Option<i32>) -> Self {
         self.framerate_denominator = input;
         self
+    }
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    pub fn get_framerate_denominator(&self) -> &::std::option::Option<i32> {
+        &self.framerate_denominator
     }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub fn framerate_numerator(mut self, input: i32) -> Self {
@@ -421,6 +459,10 @@ impl Mpeg2SettingsBuilder {
         self.framerate_numerator = input;
         self
     }
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    pub fn get_framerate_numerator(&self) -> &::std::option::Option<i32> {
+        &self.framerate_numerator
+    }
     /// Specify the relative frequency of open to closed GOPs in this output. For example, if you want to allow four open GOPs and then require a closed GOP, set this value to 5. When you create a streaming output, we recommend that you keep the default value, 1, so that players starting mid-stream receive an IDR frame as quickly as possible. Don't set this value to 0; that would break output segmenting.
     pub fn gop_closed_cadence(mut self, input: i32) -> Self {
         self.gop_closed_cadence = ::std::option::Option::Some(input);
@@ -431,6 +473,10 @@ impl Mpeg2SettingsBuilder {
         self.gop_closed_cadence = input;
         self
     }
+    /// Specify the relative frequency of open to closed GOPs in this output. For example, if you want to allow four open GOPs and then require a closed GOP, set this value to 5. When you create a streaming output, we recommend that you keep the default value, 1, so that players starting mid-stream receive an IDR frame as quickly as possible. Don't set this value to 0; that would break output segmenting.
+    pub fn get_gop_closed_cadence(&self) -> &::std::option::Option<i32> {
+        &self.gop_closed_cadence
+    }
     /// Specify the interval between keyframes, in seconds or frames, for this output. Default: 12 Related settings: When you specify the GOP size in seconds, set GOP mode control to Specified, seconds. The default value for GOP mode control is Frames.
     pub fn gop_size(mut self, input: f64) -> Self {
         self.gop_size = ::std::option::Option::Some(input);
@@ -440,6 +486,10 @@ impl Mpeg2SettingsBuilder {
     pub fn set_gop_size(mut self, input: ::std::option::Option<f64>) -> Self {
         self.gop_size = input;
         self
+    }
+    /// Specify the interval between keyframes, in seconds or frames, for this output. Default: 12 Related settings: When you specify the GOP size in seconds, set GOP mode control to Specified, seconds. The default value for GOP mode control is Frames.
+    pub fn get_gop_size(&self) -> &::std::option::Option<f64> {
+        &self.gop_size
     }
     /// Specify the units for GOP size. If you don't specify a value here, by default the encoder measures GOP size in frames.
     pub fn gop_size_units(mut self, input: crate::types::Mpeg2GopSizeUnits) -> Self {
@@ -454,6 +504,10 @@ impl Mpeg2SettingsBuilder {
         self.gop_size_units = input;
         self
     }
+    /// Specify the units for GOP size. If you don't specify a value here, by default the encoder measures GOP size in frames.
+    pub fn get_gop_size_units(&self) -> &::std::option::Option<crate::types::Mpeg2GopSizeUnits> {
+        &self.gop_size_units
+    }
     /// If your downstream systems have strict buffer requirements: Specify the minimum percentage of the HRD buffer that's available at the end of each encoded video segment. For the best video quality: Set to 0 or leave blank to automatically determine the final buffer fill percentage.
     pub fn hrd_buffer_final_fill_percentage(mut self, input: i32) -> Self {
         self.hrd_buffer_final_fill_percentage = ::std::option::Option::Some(input);
@@ -466,6 +520,10 @@ impl Mpeg2SettingsBuilder {
     ) -> Self {
         self.hrd_buffer_final_fill_percentage = input;
         self
+    }
+    /// If your downstream systems have strict buffer requirements: Specify the minimum percentage of the HRD buffer that's available at the end of each encoded video segment. For the best video quality: Set to 0 or leave blank to automatically determine the final buffer fill percentage.
+    pub fn get_hrd_buffer_final_fill_percentage(&self) -> &::std::option::Option<i32> {
+        &self.hrd_buffer_final_fill_percentage
     }
     /// Percentage of the buffer that should initially be filled (HRD buffer model).
     pub fn hrd_buffer_initial_fill_percentage(mut self, input: i32) -> Self {
@@ -480,6 +538,10 @@ impl Mpeg2SettingsBuilder {
         self.hrd_buffer_initial_fill_percentage = input;
         self
     }
+    /// Percentage of the buffer that should initially be filled (HRD buffer model).
+    pub fn get_hrd_buffer_initial_fill_percentage(&self) -> &::std::option::Option<i32> {
+        &self.hrd_buffer_initial_fill_percentage
+    }
     /// Size of buffer (HRD buffer model) in bits. For example, enter five megabits as 5000000.
     pub fn hrd_buffer_size(mut self, input: i32) -> Self {
         self.hrd_buffer_size = ::std::option::Option::Some(input);
@@ -489,6 +551,10 @@ impl Mpeg2SettingsBuilder {
     pub fn set_hrd_buffer_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.hrd_buffer_size = input;
         self
+    }
+    /// Size of buffer (HRD buffer model) in bits. For example, enter five megabits as 5000000.
+    pub fn get_hrd_buffer_size(&self) -> &::std::option::Option<i32> {
+        &self.hrd_buffer_size
     }
     /// Choose the scan line type for the output. Keep the default value, Progressive to create a progressive output, regardless of the scan type of your input. Use Top field first or Bottom field first to create an output that's interlaced with the same field polarity throughout. Use Follow, default top or Follow, default bottom to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
     pub fn interlace_mode(mut self, input: crate::types::Mpeg2InterlaceMode) -> Self {
@@ -503,6 +569,10 @@ impl Mpeg2SettingsBuilder {
         self.interlace_mode = input;
         self
     }
+    /// Choose the scan line type for the output. Keep the default value, Progressive to create a progressive output, regardless of the scan type of your input. Use Top field first or Bottom field first to create an output that's interlaced with the same field polarity throughout. Use Follow, default top or Follow, default bottom to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
+    pub fn get_interlace_mode(&self) -> &::std::option::Option<crate::types::Mpeg2InterlaceMode> {
+        &self.interlace_mode
+    }
     /// Use Intra DC precision to set quantization precision for intra-block DC coefficients. If you choose the value auto, the service will automatically select the precision based on the per-frame compression ratio.
     pub fn intra_dc_precision(mut self, input: crate::types::Mpeg2IntraDcPrecision) -> Self {
         self.intra_dc_precision = ::std::option::Option::Some(input);
@@ -516,6 +586,12 @@ impl Mpeg2SettingsBuilder {
         self.intra_dc_precision = input;
         self
     }
+    /// Use Intra DC precision to set quantization precision for intra-block DC coefficients. If you choose the value auto, the service will automatically select the precision based on the per-frame compression ratio.
+    pub fn get_intra_dc_precision(
+        &self,
+    ) -> &::std::option::Option<crate::types::Mpeg2IntraDcPrecision> {
+        &self.intra_dc_precision
+    }
     /// Maximum bitrate in bits/second. For example, enter five megabits per second as 5000000.
     pub fn max_bitrate(mut self, input: i32) -> Self {
         self.max_bitrate = ::std::option::Option::Some(input);
@@ -526,6 +602,10 @@ impl Mpeg2SettingsBuilder {
         self.max_bitrate = input;
         self
     }
+    /// Maximum bitrate in bits/second. For example, enter five megabits per second as 5000000.
+    pub fn get_max_bitrate(&self) -> &::std::option::Option<i32> {
+        &self.max_bitrate
+    }
     /// Use this setting only when you also enable Scene change detection. This setting determines how the encoder manages the spacing between I-frames that it inserts as part of the I-frame cadence and the I-frames that it inserts for Scene change detection. When you specify a value for this setting, the encoder determines whether to skip a cadence-driven I-frame by the value you set. For example, if you set Min I interval to 5 and a cadence-driven I-frame would fall within 5 frames of a scene-change I-frame, then the encoder skips the cadence-driven I-frame. In this way, one GOP is shrunk slightly and one GOP is stretched slightly. When the cadence-driven I-frames are farther from the scene-change I-frame than the value you set, then the encoder leaves all I-frames in place and the GOPs surrounding the scene change are smaller than the usual cadence GOPs.
     pub fn min_i_interval(mut self, input: i32) -> Self {
         self.min_i_interval = ::std::option::Option::Some(input);
@@ -535,6 +615,10 @@ impl Mpeg2SettingsBuilder {
     pub fn set_min_i_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_i_interval = input;
         self
+    }
+    /// Use this setting only when you also enable Scene change detection. This setting determines how the encoder manages the spacing between I-frames that it inserts as part of the I-frame cadence and the I-frames that it inserts for Scene change detection. When you specify a value for this setting, the encoder determines whether to skip a cadence-driven I-frame by the value you set. For example, if you set Min I interval to 5 and a cadence-driven I-frame would fall within 5 frames of a scene-change I-frame, then the encoder skips the cadence-driven I-frame. In this way, one GOP is shrunk slightly and one GOP is stretched slightly. When the cadence-driven I-frames are farther from the scene-change I-frame than the value you set, then the encoder leaves all I-frames in place and the GOPs surrounding the scene change are smaller than the usual cadence GOPs.
+    pub fn get_min_i_interval(&self) -> &::std::option::Option<i32> {
+        &self.min_i_interval
     }
     /// Specify the number of B-frames that MediaConvert puts between reference frames in this output. Valid values are whole numbers from 0 through 7. When you don't specify a value, MediaConvert defaults to 2.
     pub fn number_b_frames_between_reference_frames(mut self, input: i32) -> Self {
@@ -549,6 +633,10 @@ impl Mpeg2SettingsBuilder {
         self.number_b_frames_between_reference_frames = input;
         self
     }
+    /// Specify the number of B-frames that MediaConvert puts between reference frames in this output. Valid values are whole numbers from 0 through 7. When you don't specify a value, MediaConvert defaults to 2.
+    pub fn get_number_b_frames_between_reference_frames(&self) -> &::std::option::Option<i32> {
+        &self.number_b_frames_between_reference_frames
+    }
     /// Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source, uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
     pub fn par_control(mut self, input: crate::types::Mpeg2ParControl) -> Self {
         self.par_control = ::std::option::Option::Some(input);
@@ -562,6 +650,10 @@ impl Mpeg2SettingsBuilder {
         self.par_control = input;
         self
     }
+    /// Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source, uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
+    pub fn get_par_control(&self) -> &::std::option::Option<crate::types::Mpeg2ParControl> {
+        &self.par_control
+    }
     /// Required when you set Pixel aspect ratio to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parDenominator is 33.
     pub fn par_denominator(mut self, input: i32) -> Self {
         self.par_denominator = ::std::option::Option::Some(input);
@@ -572,6 +664,10 @@ impl Mpeg2SettingsBuilder {
         self.par_denominator = input;
         self
     }
+    /// Required when you set Pixel aspect ratio to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parDenominator is 33.
+    pub fn get_par_denominator(&self) -> &::std::option::Option<i32> {
+        &self.par_denominator
+    }
     /// Required when you set Pixel aspect ratio to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parNumerator is 40.
     pub fn par_numerator(mut self, input: i32) -> Self {
         self.par_numerator = ::std::option::Option::Some(input);
@@ -581,6 +677,10 @@ impl Mpeg2SettingsBuilder {
     pub fn set_par_numerator(mut self, input: ::std::option::Option<i32>) -> Self {
         self.par_numerator = input;
         self
+    }
+    /// Required when you set Pixel aspect ratio to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parNumerator is 40.
+    pub fn get_par_numerator(&self) -> &::std::option::Option<i32> {
+        &self.par_numerator
     }
     /// Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
     pub fn quality_tuning_level(mut self, input: crate::types::Mpeg2QualityTuningLevel) -> Self {
@@ -595,6 +695,12 @@ impl Mpeg2SettingsBuilder {
         self.quality_tuning_level = input;
         self
     }
+    /// Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
+    pub fn get_quality_tuning_level(
+        &self,
+    ) -> &::std::option::Option<crate::types::Mpeg2QualityTuningLevel> {
+        &self.quality_tuning_level
+    }
     /// Use Rate control mode to specify whether the bitrate is variable (vbr) or constant (cbr).
     pub fn rate_control_mode(mut self, input: crate::types::Mpeg2RateControlMode) -> Self {
         self.rate_control_mode = ::std::option::Option::Some(input);
@@ -607,6 +713,12 @@ impl Mpeg2SettingsBuilder {
     ) -> Self {
         self.rate_control_mode = input;
         self
+    }
+    /// Use Rate control mode to specify whether the bitrate is variable (vbr) or constant (cbr).
+    pub fn get_rate_control_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::Mpeg2RateControlMode> {
+        &self.rate_control_mode
     }
     /// Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this situation, choose Optimized interlacing to create a better quality interlaced output. In this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic interlacing, for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you must set Telecine to None or Soft. You can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode to a value other than Progressive.
     pub fn scan_type_conversion_mode(
@@ -624,6 +736,12 @@ impl Mpeg2SettingsBuilder {
         self.scan_type_conversion_mode = input;
         self
     }
+    /// Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this situation, choose Optimized interlacing to create a better quality interlaced output. In this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic interlacing, for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you must set Telecine to None or Soft. You can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode to a value other than Progressive.
+    pub fn get_scan_type_conversion_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::Mpeg2ScanTypeConversionMode> {
+        &self.scan_type_conversion_mode
+    }
     /// Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves video quality and is enabled by default.
     pub fn scene_change_detect(mut self, input: crate::types::Mpeg2SceneChangeDetect) -> Self {
         self.scene_change_detect = ::std::option::Option::Some(input);
@@ -636,6 +754,12 @@ impl Mpeg2SettingsBuilder {
     ) -> Self {
         self.scene_change_detect = input;
         self
+    }
+    /// Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves video quality and is enabled by default.
+    pub fn get_scene_change_detect(
+        &self,
+    ) -> &::std::option::Option<crate::types::Mpeg2SceneChangeDetect> {
+        &self.scene_change_detect
     }
     /// Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the duration of your video. Required settings: You must also set Framerate to 25.
     pub fn slow_pal(mut self, input: crate::types::Mpeg2SlowPal) -> Self {
@@ -650,6 +774,10 @@ impl Mpeg2SettingsBuilder {
         self.slow_pal = input;
         self
     }
+    /// Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the duration of your video. Required settings: You must also set Framerate to 25.
+    pub fn get_slow_pal(&self) -> &::std::option::Option<crate::types::Mpeg2SlowPal> {
+        &self.slow_pal
+    }
     /// Ignore this setting unless you need to comply with a specification that requires a specific value. If you don't have a specification requirement, we recommend that you adjust the softness of your output by using a lower value for the setting Sharpness or by enabling a noise reducer filter. The Softness setting specifies the quantization matrices that the encoder uses. Keep the default value, 0, to use the AWS Elemental default matrices. Choose a value from 17 to 128 to use planar interpolation. Increasing values from 17 to 128 result in increasing reduction of high-frequency data. The value 128 results in the softest video.
     pub fn softness(mut self, input: i32) -> Self {
         self.softness = ::std::option::Option::Some(input);
@@ -659,6 +787,10 @@ impl Mpeg2SettingsBuilder {
     pub fn set_softness(mut self, input: ::std::option::Option<i32>) -> Self {
         self.softness = input;
         self
+    }
+    /// Ignore this setting unless you need to comply with a specification that requires a specific value. If you don't have a specification requirement, we recommend that you adjust the softness of your output by using a lower value for the setting Sharpness or by enabling a noise reducer filter. The Softness setting specifies the quantization matrices that the encoder uses. Keep the default value, 0, to use the AWS Elemental default matrices. Choose a value from 17 to 128 to use planar interpolation. Increasing values from 17 to 128 result in increasing reduction of high-frequency data. The value 128 results in the softest video.
+    pub fn get_softness(&self) -> &::std::option::Option<i32> {
+        &self.softness
     }
     /// Keep the default value, Enabled, to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher.
     pub fn spatial_adaptive_quantization(
@@ -676,6 +808,12 @@ impl Mpeg2SettingsBuilder {
         self.spatial_adaptive_quantization = input;
         self
     }
+    /// Keep the default value, Enabled, to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher.
+    pub fn get_spatial_adaptive_quantization(
+        &self,
+    ) -> &::std::option::Option<crate::types::Mpeg2SpatialAdaptiveQuantization> {
+        &self.spatial_adaptive_quantization
+    }
     /// Specify whether this output's video uses the D10 syntax. Keep the default value to not use the syntax. Related settings: When you choose D10 for your MXF profile, you must also set this value to D10.
     pub fn syntax(mut self, input: crate::types::Mpeg2Syntax) -> Self {
         self.syntax = ::std::option::Option::Some(input);
@@ -685,6 +823,10 @@ impl Mpeg2SettingsBuilder {
     pub fn set_syntax(mut self, input: ::std::option::Option<crate::types::Mpeg2Syntax>) -> Self {
         self.syntax = input;
         self
+    }
+    /// Specify whether this output's video uses the D10 syntax. Keep the default value to not use the syntax. Related settings: When you choose D10 for your MXF profile, you must also set this value to D10.
+    pub fn get_syntax(&self) -> &::std::option::Option<crate::types::Mpeg2Syntax> {
+        &self.syntax
     }
     /// When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is interlaced, you can optionally enable hard or soft telecine to create a smoother picture. Hard telecine produces a 29.97i output. Soft telecine produces an output with a 23.976 output that signals to the video player device to do the conversion during play back. When you keep the default value, None, MediaConvert does a standard frame rate conversion to 29.97 without doing anything with the field polarity to create a smoother picture.
     pub fn telecine(mut self, input: crate::types::Mpeg2Telecine) -> Self {
@@ -698,6 +840,10 @@ impl Mpeg2SettingsBuilder {
     ) -> Self {
         self.telecine = input;
         self
+    }
+    /// When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is interlaced, you can optionally enable hard or soft telecine to create a smoother picture. Hard telecine produces a 29.97i output. Soft telecine produces an output with a 23.976 output that signals to the video player device to do the conversion during play back. When you keep the default value, None, MediaConvert does a standard frame rate conversion to 29.97 without doing anything with the field polarity to create a smoother picture.
+    pub fn get_telecine(&self) -> &::std::option::Option<crate::types::Mpeg2Telecine> {
+        &self.telecine
     }
     /// Keep the default value, Enabled, to adjust quantization within each frame based on temporal variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas of the frame that aren't moving and uses more bits on complex objects with sharp edges that move a lot. For example, this feature improves the readability of text tickers on newscasts and scoreboards on sports matches. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen that doesn't have moving objects with sharp edges, such as sports athletes' faces, you might choose to disable this feature. Related setting: When you enable temporal quantization, adjust the strength of the filter with the setting Adaptive quantization.
     pub fn temporal_adaptive_quantization(
@@ -714,6 +860,12 @@ impl Mpeg2SettingsBuilder {
     ) -> Self {
         self.temporal_adaptive_quantization = input;
         self
+    }
+    /// Keep the default value, Enabled, to adjust quantization within each frame based on temporal variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas of the frame that aren't moving and uses more bits on complex objects with sharp edges that move a lot. For example, this feature improves the readability of text tickers on newscasts and scoreboards on sports matches. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen that doesn't have moving objects with sharp edges, such as sports athletes' faces, you might choose to disable this feature. Related setting: When you enable temporal quantization, adjust the strength of the filter with the setting Adaptive quantization.
+    pub fn get_temporal_adaptive_quantization(
+        &self,
+    ) -> &::std::option::Option<crate::types::Mpeg2TemporalAdaptiveQuantization> {
+        &self.temporal_adaptive_quantization
     }
     /// Consumes the builder and constructs a [`Mpeg2Settings`](crate::types::Mpeg2Settings).
     pub fn build(self) -> crate::types::Mpeg2Settings {

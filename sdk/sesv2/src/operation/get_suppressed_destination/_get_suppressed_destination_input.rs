@@ -48,6 +48,10 @@ impl GetSuppressedDestinationInputBuilder {
         self.email_address = input;
         self
     }
+    /// <p>The email address that's on the account suppression list.</p>
+    pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_address
+    }
     /// Consumes the builder and constructs a [`GetSuppressedDestinationInput`](crate::operation::get_suppressed_destination::GetSuppressedDestinationInput).
     pub fn build(
         self,

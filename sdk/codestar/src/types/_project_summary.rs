@@ -48,6 +48,10 @@ impl ProjectSummaryBuilder {
         self.project_id = input;
         self
     }
+    /// <p>The ID of the project.</p>
+    pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
     pub fn project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_arn = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ProjectSummaryBuilder {
     pub fn set_project_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the project.</p>
+    pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_arn
     }
     /// Consumes the builder and constructs a [`ProjectSummary`](crate::types::ProjectSummary).
     pub fn build(self) -> crate::types::ProjectSummary {

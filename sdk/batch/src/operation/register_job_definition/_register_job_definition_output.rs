@@ -70,6 +70,10 @@ impl RegisterJobDefinitionOutputBuilder {
         self.job_definition_name = input;
         self
     }
+    /// <p>The name of the job definition.</p>
+    pub fn get_job_definition_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_definition_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the job definition.</p>
     pub fn job_definition_arn(
         mut self,
@@ -86,6 +90,10 @@ impl RegisterJobDefinitionOutputBuilder {
         self.job_definition_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the job definition.</p>
+    pub fn get_job_definition_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_definition_arn
+    }
     /// <p>The revision of the job definition.</p>
     pub fn revision(mut self, input: i32) -> Self {
         self.revision = ::std::option::Option::Some(input);
@@ -95,6 +103,10 @@ impl RegisterJobDefinitionOutputBuilder {
     pub fn set_revision(mut self, input: ::std::option::Option<i32>) -> Self {
         self.revision = input;
         self
+    }
+    /// <p>The revision of the job definition.</p>
+    pub fn get_revision(&self) -> &::std::option::Option<i32> {
+        &self.revision
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

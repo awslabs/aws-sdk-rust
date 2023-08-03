@@ -66,6 +66,12 @@ impl ContinuousDeploymentPolicyConfigBuilder {
         self.staging_distribution_dns_names = input;
         self
     }
+    /// <p>The CloudFront domain name of the staging distribution. For example: <code>d111111abcdef8.cloudfront.net</code>.</p>
+    pub fn get_staging_distribution_dns_names(
+        &self,
+    ) -> &::std::option::Option<crate::types::StagingDistributionDnsNames> {
+        &self.staging_distribution_dns_names
+    }
     /// <p>A Boolean that indicates whether this continuous deployment policy is enabled (in effect). When this value is <code>true</code>, this policy is enabled and in effect. When this value is <code>false</code>, this policy is not enabled and has no effect.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -75,6 +81,10 @@ impl ContinuousDeploymentPolicyConfigBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>A Boolean that indicates whether this continuous deployment policy is enabled (in effect). When this value is <code>true</code>, this policy is enabled and in effect. When this value is <code>false</code>, this policy is not enabled and has no effect.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// <p>Contains the parameters for routing production traffic from your primary to staging distributions.</p>
     pub fn traffic_config(mut self, input: crate::types::TrafficConfig) -> Self {
@@ -88,6 +98,10 @@ impl ContinuousDeploymentPolicyConfigBuilder {
     ) -> Self {
         self.traffic_config = input;
         self
+    }
+    /// <p>Contains the parameters for routing production traffic from your primary to staging distributions.</p>
+    pub fn get_traffic_config(&self) -> &::std::option::Option<crate::types::TrafficConfig> {
+        &self.traffic_config
     }
     /// Consumes the builder and constructs a [`ContinuousDeploymentPolicyConfig`](crate::types::ContinuousDeploymentPolicyConfig).
     pub fn build(self) -> crate::types::ContinuousDeploymentPolicyConfig {

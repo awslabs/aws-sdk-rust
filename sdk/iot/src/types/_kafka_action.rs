@@ -86,6 +86,10 @@ impl KafkaActionBuilder {
         self.destination_arn = input;
         self
     }
+    /// <p>The ARN of Kafka action's VPC <code>TopicRuleDestination</code>.</p>
+    pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_arn
+    }
     /// <p>The Kafka topic for messages to be sent to the Kafka broker.</p>
     pub fn topic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic = ::std::option::Option::Some(input.into());
@@ -95,6 +99,10 @@ impl KafkaActionBuilder {
     pub fn set_topic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.topic = input;
         self
+    }
+    /// <p>The Kafka topic for messages to be sent to the Kafka broker.</p>
+    pub fn get_topic(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic
     }
     /// <p>The Kafka message key.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -106,6 +114,10 @@ impl KafkaActionBuilder {
         self.key = input;
         self
     }
+    /// <p>The Kafka message key.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>The Kafka message partition.</p>
     pub fn partition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.partition = ::std::option::Option::Some(input.into());
@@ -115,6 +127,10 @@ impl KafkaActionBuilder {
     pub fn set_partition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.partition = input;
         self
+    }
+    /// <p>The Kafka message partition.</p>
+    pub fn get_partition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.partition
     }
     /// Adds a key-value pair to `client_properties`.
     ///
@@ -140,6 +156,14 @@ impl KafkaActionBuilder {
     ) -> Self {
         self.client_properties = input;
         self
+    }
+    /// <p>Properties of the Apache Kafka producer client.</p>
+    pub fn get_client_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.client_properties
     }
     /// Consumes the builder and constructs a [`KafkaAction`](crate::types::KafkaAction).
     pub fn build(self) -> crate::types::KafkaAction {

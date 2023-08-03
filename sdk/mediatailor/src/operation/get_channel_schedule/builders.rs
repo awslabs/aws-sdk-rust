@@ -36,6 +36,12 @@ impl GetChannelScheduleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetChannelSchedule as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_channel_schedule::builders::GetChannelScheduleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl GetChannelScheduleFluentBuilder {
         self.inner = self.inner.set_channel_name(input);
         self
     }
+    /// <p>The name of the channel associated with this Channel Schedule.</p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_name()
+    }
     /// <p>The duration in minutes of the channel schedule.</p>
     pub fn duration_minutes(
         mut self,
@@ -153,6 +163,10 @@ impl GetChannelScheduleFluentBuilder {
         self.inner = self.inner.set_duration_minutes(input);
         self
     }
+    /// <p>The duration in minutes of the channel schedule.</p>
+    pub fn get_duration_minutes(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_duration_minutes()
+    }
     /// <p>The maximum number of channel schedules that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> channel schedules, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -162,6 +176,10 @@ impl GetChannelScheduleFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of channel schedules that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> channel schedules, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> channel schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
     /// <p>For the first <code>GetChannelScheduleRequest</code> request, omit this value.</p>
@@ -178,5 +196,12 @@ impl GetChannelScheduleFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> channel schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
+    /// <p>For the first <code>GetChannelScheduleRequest</code> request, omit this value.</p>
+    /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
+    /// <p>If the previous response didn't include a <code>NextToken</code> element, there are no more channel schedules to get.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

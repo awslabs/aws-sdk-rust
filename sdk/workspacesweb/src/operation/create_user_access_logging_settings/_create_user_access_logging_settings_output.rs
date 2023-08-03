@@ -52,6 +52,12 @@ impl CreateUserAccessLoggingSettingsOutputBuilder {
         self.user_access_logging_settings_arn = input;
         self
     }
+    /// <p>The ARN of the user access logging settings.</p>
+    pub fn get_user_access_logging_settings_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.user_access_logging_settings_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

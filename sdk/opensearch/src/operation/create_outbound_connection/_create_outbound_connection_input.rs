@@ -83,6 +83,12 @@ impl CreateOutboundConnectionInputBuilder {
         self.local_domain_info = input;
         self
     }
+    /// <p>Name and Region of the source (local) domain.</p>
+    pub fn get_local_domain_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::DomainInformationContainer> {
+        &self.local_domain_info
+    }
     /// <p>Name and Region of the destination (remote) domain.</p>
     pub fn remote_domain_info(mut self, input: crate::types::DomainInformationContainer) -> Self {
         self.remote_domain_info = ::std::option::Option::Some(input);
@@ -95,6 +101,12 @@ impl CreateOutboundConnectionInputBuilder {
     ) -> Self {
         self.remote_domain_info = input;
         self
+    }
+    /// <p>Name and Region of the destination (remote) domain.</p>
+    pub fn get_remote_domain_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::DomainInformationContainer> {
+        &self.remote_domain_info
     }
     /// <p>Name of the connection.</p>
     pub fn connection_alias(
@@ -112,6 +124,10 @@ impl CreateOutboundConnectionInputBuilder {
         self.connection_alias = input;
         self
     }
+    /// <p>Name of the connection.</p>
+    pub fn get_connection_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_alias
+    }
     /// <p>The connection mode.</p>
     pub fn connection_mode(mut self, input: crate::types::ConnectionMode) -> Self {
         self.connection_mode = ::std::option::Option::Some(input);
@@ -125,6 +141,10 @@ impl CreateOutboundConnectionInputBuilder {
         self.connection_mode = input;
         self
     }
+    /// <p>The connection mode.</p>
+    pub fn get_connection_mode(&self) -> &::std::option::Option<crate::types::ConnectionMode> {
+        &self.connection_mode
+    }
     /// <p>The <code>ConnectionProperties</code> for the outbound connection.</p>
     pub fn connection_properties(mut self, input: crate::types::ConnectionProperties) -> Self {
         self.connection_properties = ::std::option::Option::Some(input);
@@ -137,6 +157,12 @@ impl CreateOutboundConnectionInputBuilder {
     ) -> Self {
         self.connection_properties = input;
         self
+    }
+    /// <p>The <code>ConnectionProperties</code> for the outbound connection.</p>
+    pub fn get_connection_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConnectionProperties> {
+        &self.connection_properties
     }
     /// Consumes the builder and constructs a [`CreateOutboundConnectionInput`](crate::operation::create_outbound_connection::CreateOutboundConnectionInput).
     pub fn build(

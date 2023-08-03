@@ -65,6 +65,10 @@ impl S3DataAccessAssetSourceEntryBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The Amazon S3 bucket used for hosting shared data in the Amazon S3 data access.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// Appends an item to `key_prefixes`.
     ///
     /// To override the contents of this collection use [`set_key_prefixes`](Self::set_key_prefixes).
@@ -83,6 +87,12 @@ impl S3DataAccessAssetSourceEntryBuilder {
     ) -> Self {
         self.key_prefixes = input;
         self
+    }
+    /// <p>Organizes Amazon S3 asset key prefixes stored in an Amazon S3 bucket.</p>
+    pub fn get_key_prefixes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.key_prefixes
     }
     /// Appends an item to `keys`.
     ///
@@ -103,6 +113,10 @@ impl S3DataAccessAssetSourceEntryBuilder {
         self.keys = input;
         self
     }
+    /// <p>The keys used to create the Amazon S3 data access.</p>
+    pub fn get_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.keys
+    }
     /// Appends an item to `kms_keys_to_grant`.
     ///
     /// To override the contents of this collection use [`set_kms_keys_to_grant`](Self::set_kms_keys_to_grant).
@@ -121,6 +135,12 @@ impl S3DataAccessAssetSourceEntryBuilder {
     ) -> Self {
         self.kms_keys_to_grant = input;
         self
+    }
+    /// <p>List of AWS KMS CMKs (Key Management System Customer Managed Keys) and ARNs used to encrypt S3 objects being shared in this S3 Data Access asset.</p>
+    pub fn get_kms_keys_to_grant(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KmsKeyToGrant>> {
+        &self.kms_keys_to_grant
     }
     /// Consumes the builder and constructs a [`S3DataAccessAssetSourceEntry`](crate::types::S3DataAccessAssetSourceEntry).
     pub fn build(self) -> crate::types::S3DataAccessAssetSourceEntry {

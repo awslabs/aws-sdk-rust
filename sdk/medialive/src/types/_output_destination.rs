@@ -73,6 +73,10 @@ impl OutputDestinationBuilder {
         self.id = input;
         self
     }
+    /// User-specified id. This is used in an output group or an output.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Appends an item to `media_package_settings`.
     ///
     /// To override the contents of this collection use [`set_media_package_settings`](Self::set_media_package_settings).
@@ -97,6 +101,13 @@ impl OutputDestinationBuilder {
         self.media_package_settings = input;
         self
     }
+    /// Destination settings for a MediaPackage output; one destination for both encoders.
+    pub fn get_media_package_settings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaPackageOutputDestinationSettings>>
+    {
+        &self.media_package_settings
+    }
     /// Destination settings for a Multiplex output; one destination for both encoders.
     pub fn multiplex_settings(
         mut self,
@@ -112,6 +123,12 @@ impl OutputDestinationBuilder {
     ) -> Self {
         self.multiplex_settings = input;
         self
+    }
+    /// Destination settings for a Multiplex output; one destination for both encoders.
+    pub fn get_multiplex_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::MultiplexProgramChannelDestinationSettings> {
+        &self.multiplex_settings
     }
     /// Appends an item to `settings`.
     ///
@@ -131,6 +148,12 @@ impl OutputDestinationBuilder {
     ) -> Self {
         self.settings = input;
         self
+    }
+    /// Destination settings for a standard output; one destination for each redundant encoder.
+    pub fn get_settings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputDestinationSettings>> {
+        &self.settings
     }
     /// Consumes the builder and constructs a [`OutputDestination`](crate::types::OutputDestination).
     pub fn build(self) -> crate::types::OutputDestination {

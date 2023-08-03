@@ -37,6 +37,10 @@ impl DisassociateSkillGroupFromRoomFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateSkillGroupFromRoom as a reference.
+    pub fn as_input(&self) -> &crate::operation::disassociate_skill_group_from_room::builders::DisassociateSkillGroupFromRoomInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -107,6 +111,10 @@ impl DisassociateSkillGroupFromRoomFluentBuilder {
         self.inner = self.inner.set_skill_group_arn(input);
         self
     }
+    /// <p>The ARN of the skill group to disassociate from a room. Required.</p>
+    pub fn get_skill_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_skill_group_arn()
+    }
     /// <p>The ARN of the room from which the skill group is to be disassociated. Required.</p>
     pub fn room_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.room_arn(input.into());
@@ -116,5 +124,9 @@ impl DisassociateSkillGroupFromRoomFluentBuilder {
     pub fn set_room_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_room_arn(input);
         self
+    }
+    /// <p>The ARN of the room from which the skill group is to be disassociated. Required.</p>
+    pub fn get_room_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_room_arn()
     }
 }

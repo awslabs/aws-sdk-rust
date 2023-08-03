@@ -64,6 +64,14 @@ impl RoleBuilder {
         self.role_type = input;
         self
     }
+    /// <p> The type of customer persona. </p> <note>
+    /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>. </p>
+    /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.</p>
+    /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be <code>RESOURCE_OWNER</code>.</p>
+    /// </note>
+    pub fn get_role_type(&self) -> &::std::option::Option<crate::types::RoleType> {
+        &self.role_type
+    }
     /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -73,6 +81,10 @@ impl RoleBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`Role`](crate::types::Role).
     pub fn build(self) -> crate::types::Role {

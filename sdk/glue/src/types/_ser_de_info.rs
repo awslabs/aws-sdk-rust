@@ -64,6 +64,10 @@ impl SerDeInfoBuilder {
         self.name = input;
         self
     }
+    /// <p>Name of the SerDe.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Usually the class that implements the SerDe. An example is <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.</p>
     pub fn serialization_library(
         mut self,
@@ -79,6 +83,10 @@ impl SerDeInfoBuilder {
     ) -> Self {
         self.serialization_library = input;
         self
+    }
+    /// <p>Usually the class that implements the SerDe. An example is <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.</p>
+    pub fn get_serialization_library(&self) -> &::std::option::Option<::std::string::String> {
+        &self.serialization_library
     }
     /// Adds a key-value pair to `parameters`.
     ///
@@ -104,6 +112,14 @@ impl SerDeInfoBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>These key-value pairs define initialization parameters for the SerDe.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.parameters
     }
     /// Consumes the builder and constructs a [`SerDeInfo`](crate::types::SerDeInfo).
     pub fn build(self) -> crate::types::SerDeInfo {

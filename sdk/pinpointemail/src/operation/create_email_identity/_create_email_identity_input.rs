@@ -56,6 +56,10 @@ impl CreateEmailIdentityInputBuilder {
         self.email_identity = input;
         self
     }
+    /// <p>The email address or domain that you want to verify.</p>
+    pub fn get_email_identity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_identity
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -74,6 +78,10 @@ impl CreateEmailIdentityInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>An array of objects that define the tags (keys and values) that you want to associate with the email identity.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateEmailIdentityInput`](crate::operation::create_email_identity::CreateEmailIdentityInput).
     pub fn build(

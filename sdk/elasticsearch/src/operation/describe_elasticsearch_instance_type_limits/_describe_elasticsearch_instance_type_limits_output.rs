@@ -94,6 +94,20 @@ impl DescribeElasticsearchInstanceTypeLimitsOutputBuilder {
         self.limits_by_role = input;
         self
     }
+    /// <p> Map of Role of the Instance and Limits that are applicable. Role performed by given Instance in Elasticsearch can be one of the following: </p>
+    /// <ul>
+    /// <li>data: If the given InstanceType is used as data node</li>
+    /// <li>master: If the given InstanceType is used as master node</li>
+    /// <li>ultra_warm: If the given InstanceType is used as warm node</li>
+    /// </ul>
+    /// <p></p>
+    pub fn get_limits_by_role(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::Limits>,
+    > {
+        &self.limits_by_role
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

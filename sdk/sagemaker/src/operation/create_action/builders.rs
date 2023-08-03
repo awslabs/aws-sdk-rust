@@ -36,6 +36,10 @@ impl CreateActionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateAction as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_action::builders::CreateActionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl CreateActionFluentBuilder {
         self.inner = self.inner.set_action_name(input);
         self
     }
+    /// <p>The name of the action. Must be unique to your account in an Amazon Web Services Region.</p>
+    pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_action_name()
+    }
     /// <p>The source type, ID, and URI.</p>
     pub fn source(mut self, input: crate::types::ActionSource) -> Self {
         self.inner = self.inner.source(input);
@@ -127,6 +135,10 @@ impl CreateActionFluentBuilder {
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::ActionSource>) -> Self {
         self.inner = self.inner.set_source(input);
         self
+    }
+    /// <p>The source type, ID, and URI.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::ActionSource> {
+        self.inner.get_source()
     }
     /// <p>The action type.</p>
     pub fn action_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,6 +150,10 @@ impl CreateActionFluentBuilder {
         self.inner = self.inner.set_action_type(input);
         self
     }
+    /// <p>The action type.</p>
+    pub fn get_action_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_action_type()
+    }
     /// <p>The description of the action.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -148,6 +164,10 @@ impl CreateActionFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The description of the action.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The status of the action.</p>
     pub fn status(mut self, input: crate::types::ActionStatus) -> Self {
         self.inner = self.inner.status(input);
@@ -157,6 +177,10 @@ impl CreateActionFluentBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ActionStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p>The status of the action.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ActionStatus> {
+        self.inner.get_status()
     }
     /// Adds a key-value pair to `Properties`.
     ///
@@ -181,6 +205,14 @@ impl CreateActionFluentBuilder {
         self.inner = self.inner.set_properties(input);
         self
     }
+    /// <p>A list of properties to add to the action.</p>
+    pub fn get_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_properties()
+    }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     pub fn metadata_properties(mut self, input: crate::types::MetadataProperties) -> Self {
         self.inner = self.inner.metadata_properties(input);
@@ -193,6 +225,12 @@ impl CreateActionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_metadata_properties(input);
         self
+    }
+    /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
+    pub fn get_metadata_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::MetadataProperties> {
+        self.inner.get_metadata_properties()
     }
     /// Appends an item to `Tags`.
     ///
@@ -210,5 +248,9 @@ impl CreateActionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of tags to apply to the action.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

@@ -63,6 +63,10 @@ impl HiveBuilder {
         self.query = input;
         self
     }
+    /// <p>The query for the Hive job run.</p>
+    pub fn get_query(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query
+    }
     /// <p>The query file for the Hive job run.</p>
     pub fn init_query_file(
         mut self,
@@ -79,6 +83,10 @@ impl HiveBuilder {
         self.init_query_file = input;
         self
     }
+    /// <p>The query file for the Hive job run.</p>
+    pub fn get_init_query_file(&self) -> &::std::option::Option<::std::string::String> {
+        &self.init_query_file
+    }
     /// <p>The parameters for the Hive job run.</p>
     pub fn parameters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameters = ::std::option::Option::Some(input.into());
@@ -88,6 +96,10 @@ impl HiveBuilder {
     pub fn set_parameters(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>The parameters for the Hive job run.</p>
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameters
     }
     /// Consumes the builder and constructs a [`Hive`](crate::types::Hive).
     pub fn build(self) -> crate::types::Hive {

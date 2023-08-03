@@ -42,6 +42,12 @@ impl DisassociateThirdPartyFirewallInputBuilder {
         self.third_party_firewall = input;
         self
     }
+    /// <p>The name of the third-party firewall vendor.</p>
+    pub fn get_third_party_firewall(
+        &self,
+    ) -> &::std::option::Option<crate::types::ThirdPartyFirewall> {
+        &self.third_party_firewall
+    }
     /// Consumes the builder and constructs a [`DisassociateThirdPartyFirewallInput`](crate::operation::disassociate_third_party_firewall::DisassociateThirdPartyFirewallInput).
     pub fn build(
         self,

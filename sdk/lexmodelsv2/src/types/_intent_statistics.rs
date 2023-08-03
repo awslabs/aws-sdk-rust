@@ -40,6 +40,10 @@ impl IntentStatisticsBuilder {
         self.discovered_intent_count = input;
         self
     }
+    /// <p>The number of recommended intents associated with the bot recommendation.</p>
+    pub fn get_discovered_intent_count(&self) -> &::std::option::Option<i32> {
+        &self.discovered_intent_count
+    }
     /// Consumes the builder and constructs a [`IntentStatistics`](crate::types::IntentStatistics).
     pub fn build(self) -> crate::types::IntentStatistics {
         crate::types::IntentStatistics {

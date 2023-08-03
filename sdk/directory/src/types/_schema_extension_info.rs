@@ -90,6 +90,10 @@ impl SchemaExtensionInfoBuilder {
         self.directory_id = input;
         self
     }
+    /// <p>The identifier of the directory to which the schema extension is applied.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
     /// <p>The identifier of the schema extension.</p>
     pub fn schema_extension_id(
         mut self,
@@ -106,6 +110,10 @@ impl SchemaExtensionInfoBuilder {
         self.schema_extension_id = input;
         self
     }
+    /// <p>The identifier of the schema extension.</p>
+    pub fn get_schema_extension_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_extension_id
+    }
     /// <p>A description of the schema extension.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -115,6 +123,10 @@ impl SchemaExtensionInfoBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the schema extension.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The current status of the schema extension.</p>
     pub fn schema_extension_status(mut self, input: crate::types::SchemaExtensionStatus) -> Self {
@@ -128,6 +140,12 @@ impl SchemaExtensionInfoBuilder {
     ) -> Self {
         self.schema_extension_status = input;
         self
+    }
+    /// <p>The current status of the schema extension.</p>
+    pub fn get_schema_extension_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::SchemaExtensionStatus> {
+        &self.schema_extension_status
     }
     /// <p>The reason for the <code>SchemaExtensionStatus</code>.</p>
     pub fn schema_extension_status_reason(
@@ -145,6 +163,12 @@ impl SchemaExtensionInfoBuilder {
         self.schema_extension_status_reason = input;
         self
     }
+    /// <p>The reason for the <code>SchemaExtensionStatus</code>.</p>
+    pub fn get_schema_extension_status_reason(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.schema_extension_status_reason
+    }
     /// <p>The date and time that the schema extension started being applied to the directory.</p>
     pub fn start_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_date_time = ::std::option::Option::Some(input);
@@ -158,6 +182,10 @@ impl SchemaExtensionInfoBuilder {
         self.start_date_time = input;
         self
     }
+    /// <p>The date and time that the schema extension started being applied to the directory.</p>
+    pub fn get_start_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_date_time
+    }
     /// <p>The date and time that the schema extension was completed.</p>
     pub fn end_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_date_time = ::std::option::Option::Some(input);
@@ -170,6 +198,10 @@ impl SchemaExtensionInfoBuilder {
     ) -> Self {
         self.end_date_time = input;
         self
+    }
+    /// <p>The date and time that the schema extension was completed.</p>
+    pub fn get_end_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_date_time
     }
     /// Consumes the builder and constructs a [`SchemaExtensionInfo`](crate::types::SchemaExtensionInfo).
     pub fn build(self) -> crate::types::SchemaExtensionInfo {

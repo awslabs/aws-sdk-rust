@@ -51,6 +51,10 @@ impl DescribeEffectivePolicyOutputBuilder {
         self.effective_policy = input;
         self
     }
+    /// <p>The contents of the effective policy.</p>
+    pub fn get_effective_policy(&self) -> &::std::option::Option<crate::types::EffectivePolicy> {
+        &self.effective_policy
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

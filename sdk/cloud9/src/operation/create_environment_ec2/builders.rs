@@ -36,6 +36,12 @@ impl CreateEnvironmentEC2FluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateEnvironmentEC2 as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_environment_ec2::builders::CreateEnvironmentEc2InputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +134,11 @@ impl CreateEnvironmentEC2FluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the environment to create.</p>
+    /// <p>This name is visible to other IAM users in the same Amazon Web Services account.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The description of the environment to create.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -137,6 +148,10 @@ impl CreateEnvironmentEC2FluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the environment to create.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>A unique, case-sensitive string that helps Cloud9 to ensure this operation completes no more than one time.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Client Tokens</a> in the <i>Amazon EC2 API Reference</i>.</p>
@@ -156,6 +171,11 @@ impl CreateEnvironmentEC2FluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>A unique, case-sensitive string that helps Cloud9 to ensure this operation completes no more than one time.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Client Tokens</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// <p>The type of instance to connect to the environment (for example, <code>t2.micro</code>).</p>
     pub fn instance_type(
         mut self,
@@ -172,6 +192,10 @@ impl CreateEnvironmentEC2FluentBuilder {
         self.inner = self.inner.set_instance_type(input);
         self
     }
+    /// <p>The type of instance to connect to the environment (for example, <code>t2.micro</code>).</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_type()
+    }
     /// <p>The ID of the subnet in Amazon VPC that Cloud9 will use to communicate with the Amazon EC2 instance.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subnet_id(input.into());
@@ -181,6 +205,10 @@ impl CreateEnvironmentEC2FluentBuilder {
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subnet_id(input);
         self
+    }
+    /// <p>The ID of the subnet in Amazon VPC that Cloud9 will use to communicate with the Amazon EC2 instance.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_subnet_id()
     }
     /// <p>The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI for the instance, you must specify a valid AMI alias or a valid Amazon EC2 Systems Manager (SSM) path.</p>
     /// <p>The default Amazon Linux AMI is currently used if the parameter isn't explicitly assigned a value in the request. </p>
@@ -220,6 +248,24 @@ impl CreateEnvironmentEC2FluentBuilder {
         self.inner = self.inner.set_image_id(input);
         self
     }
+    /// <p>The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI for the instance, you must specify a valid AMI alias or a valid Amazon EC2 Systems Manager (SSM) path.</p>
+    /// <p>The default Amazon Linux AMI is currently used if the parameter isn't explicitly assigned a value in the request. </p>
+    /// <p>In the future the parameter for Amazon Linux will no longer be available when you specify an AMI for your instance. Amazon Linux 2 will then become the default AMI, which is used to launch your instance if no parameter is explicitly defined.</p>
+    /// <p> <b>AMI aliases </b> </p>
+    /// <ul>
+    /// <li> <p> <b>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </b> </p> </li>
+    /// <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li>
+    /// <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li>
+    /// </ul>
+    /// <p> <b>SSM paths</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p> </li>
+    /// <li> <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p> </li>
+    /// <li> <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li>
+    /// </ul>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_image_id()
+    }
     /// <p>The number of minutes until the running instance is shut down after the environment has last been used.</p>
     pub fn automatic_stop_time_minutes(mut self, input: i32) -> Self {
         self.inner = self.inner.automatic_stop_time_minutes(input);
@@ -230,6 +276,10 @@ impl CreateEnvironmentEC2FluentBuilder {
         self.inner = self.inner.set_automatic_stop_time_minutes(input);
         self
     }
+    /// <p>The number of minutes until the running instance is shut down after the environment has last been used.</p>
+    pub fn get_automatic_stop_time_minutes(&self) -> &::std::option::Option<i32> {
+        self.inner.get_automatic_stop_time_minutes()
+    }
     /// <p>The Amazon Resource Name (ARN) of the environment owner. This ARN can be the ARN of any IAM principal. If this value is not specified, the ARN defaults to this environment's creator.</p>
     pub fn owner_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.owner_arn(input.into());
@@ -239,6 +289,10 @@ impl CreateEnvironmentEC2FluentBuilder {
     pub fn set_owner_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_owner_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the environment owner. This ARN can be the ARN of any IAM principal. If this value is not specified, the ARN defaults to this environment's creator.</p>
+    pub fn get_owner_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_owner_arn()
     }
     /// Appends an item to `tags`.
     ///
@@ -257,6 +311,10 @@ impl CreateEnvironmentEC2FluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>An array of key-value pairs that will be associated with the new Cloud9 development environment.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through Amazon EC2 Systems Manager).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing no-ingress EC2 instances with Amazon EC2 Systems Manager</a> in the <i>Cloud9 User Guide</i>.</p>
     pub fn connection_type(mut self, input: crate::types::ConnectionType) -> Self {
@@ -272,6 +330,11 @@ impl CreateEnvironmentEC2FluentBuilder {
         self.inner = self.inner.set_connection_type(input);
         self
     }
+    /// <p>The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through Amazon EC2 Systems Manager).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing no-ingress EC2 instances with Amazon EC2 Systems Manager</a> in the <i>Cloud9 User Guide</i>.</p>
+    pub fn get_connection_type(&self) -> &::std::option::Option<crate::types::ConnectionType> {
+        self.inner.get_connection_type()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -281,5 +344,9 @@ impl CreateEnvironmentEC2FluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

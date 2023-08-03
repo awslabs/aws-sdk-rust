@@ -48,6 +48,10 @@ impl UpdateBudgetInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The <code>accountId</code> that is associated with the budget that you want to update.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The budget that you want to update your budget to.</p>
     pub fn new_budget(mut self, input: crate::types::Budget) -> Self {
         self.new_budget = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl UpdateBudgetInputBuilder {
     pub fn set_new_budget(mut self, input: ::std::option::Option<crate::types::Budget>) -> Self {
         self.new_budget = input;
         self
+    }
+    /// <p>The budget that you want to update your budget to.</p>
+    pub fn get_new_budget(&self) -> &::std::option::Option<crate::types::Budget> {
+        &self.new_budget
     }
     /// Consumes the builder and constructs a [`UpdateBudgetInput`](crate::operation::update_budget::UpdateBudgetInput).
     pub fn build(

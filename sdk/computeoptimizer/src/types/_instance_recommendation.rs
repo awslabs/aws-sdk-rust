@@ -279,6 +279,10 @@ impl InstanceRecommendationBuilder {
         self.instance_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the current instance.</p>
+    pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_arn
+    }
     /// <p>The Amazon Web Services account ID of the instance.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -288,6 +292,10 @@ impl InstanceRecommendationBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>The Amazon Web Services account ID of the instance.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>The name of the current instance.</p>
     pub fn instance_name(
@@ -305,6 +313,10 @@ impl InstanceRecommendationBuilder {
         self.instance_name = input;
         self
     }
+    /// <p>The name of the current instance.</p>
+    pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_name
+    }
     /// <p>The instance type of the current instance.</p>
     pub fn current_instance_type(
         mut self,
@@ -320,6 +332,10 @@ impl InstanceRecommendationBuilder {
     ) -> Self {
         self.current_instance_type = input;
         self
+    }
+    /// <p>The instance type of the current instance.</p>
+    pub fn get_current_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.current_instance_type
     }
     /// <p>The finding classification of the instance.</p>
     /// <p>Findings for instances include:</p>
@@ -342,6 +358,16 @@ impl InstanceRecommendationBuilder {
     pub fn set_finding(mut self, input: ::std::option::Option<crate::types::Finding>) -> Self {
         self.finding = input;
         self
+    }
+    /// <p>The finding classification of the instance.</p>
+    /// <p>Findings for instances include:</p>
+    /// <ul>
+    /// <li> <p> <b> <code>Underprovisioned</code> </b>—An instance is considered under-provisioned when at least one specification of your instance, such as CPU, memory, or network, does not meet the performance requirements of your workload. Under-provisioned instances may lead to poor application performance.</p> </li>
+    /// <li> <p> <b> <code>Overprovisioned</code> </b>—An instance is considered over-provisioned when at least one specification of your instance, such as CPU, memory, or network, can be sized down while still meeting the performance requirements of your workload, and no specification is under-provisioned. Over-provisioned instances may lead to unnecessary infrastructure cost.</p> </li>
+    /// <li> <p> <b> <code>Optimized</code> </b>—An instance is considered optimized when all specifications of your instance, such as CPU, memory, and network, meet the performance requirements of your workload and is not over provisioned. For optimized resources, Compute Optimizer might recommend a new generation instance type.</p> </li>
+    /// </ul>
+    pub fn get_finding(&self) -> &::std::option::Option<crate::types::Finding> {
+        &self.finding
     }
     /// Appends an item to `finding_reason_codes`.
     ///
@@ -413,6 +439,37 @@ impl InstanceRecommendationBuilder {
         self.finding_reason_codes = input;
         self
     }
+    /// <p>The reason for the finding classification of the instance.</p>
+    /// <p>Finding reason codes for instances include:</p>
+    /// <ul>
+    /// <li> <p> <b> <code>CPUOverprovisioned</code> </b> — The instance’s CPU configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current instance during the look-back period.</p> </li>
+    /// <li> <p> <b> <code>CPUUnderprovisioned</code> </b> — The instance’s CPU configuration doesn't meet the performance requirements of your workload and there is an alternative instance type that provides better CPU performance. This is identified by analyzing the <code>CPUUtilization</code> metric of the current instance during the look-back period.</p> </li>
+    /// <li> <p> <b> <code>MemoryOverprovisioned</code> </b> — The instance’s memory configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the memory utilization metric of the current instance during the look-back period.</p> </li>
+    /// <li> <p> <b> <code>MemoryUnderprovisioned</code> </b> — The instance’s memory configuration doesn't meet the performance requirements of your workload and there is an alternative instance type that provides better memory performance. This is identified by analyzing the memory utilization metric of the current instance during the look-back period.</p> <note>
+    /// <p>Memory utilization is analyzed only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling memory utilization with the Amazon CloudWatch Agent</a> in the <i>Compute Optimizer User Guide</i>. On Linux instances, Compute Optimizer analyses the <code>mem_used_percent</code> metric in the <code>CWAgent</code> namespace, or the legacy <code>MemoryUtilization</code> metric in the <code>System/Linux</code> namespace. On Windows instances, Compute Optimizer analyses the <code>Memory % Committed Bytes In Use</code> metric in the <code>CWAgent</code> namespace.</p>
+    /// </note> </li>
+    /// <li> <p> <b> <code>EBSThroughputOverprovisioned</code> </b> — The instance’s EBS throughput configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code> metrics of EBS volumes attached to the current instance during the look-back period.</p> </li>
+    /// <li> <p> <b> <code>EBSThroughputUnderprovisioned</code> </b> — The instance’s EBS throughput configuration doesn't meet the performance requirements of your workload and there is an alternative instance type that provides better EBS throughput performance. This is identified by analyzing the <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code> metrics of EBS volumes attached to the current instance during the look-back period.</p> </li>
+    /// <li> <p> <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS IOPS configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>VolumeReadOps</code> and <code>VolumeWriteOps</code> metric of EBS volumes attached to the current instance during the look-back period.</p> </li>
+    /// <li> <p> <b> <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS configuration doesn't meet the performance requirements of your workload and there is an alternative instance type that provides better EBS IOPS performance. This is identified by analyzing the <code>VolumeReadOps</code> and <code>VolumeWriteOps</code> metric of EBS volumes attached to the current instance during the look-back period.</p> </li>
+    /// <li> <p> <b> <code>NetworkBandwidthOverprovisioned</code> </b> — The instance’s network bandwidth configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>NetworkIn</code> and <code>NetworkOut</code> metrics of the current instance during the look-back period.</p> </li>
+    /// <li> <p> <b> <code>NetworkBandwidthUnderprovisioned</code> </b> — The instance’s network bandwidth configuration doesn't meet the performance requirements of your workload and there is an alternative instance type that provides better network bandwidth performance. This is identified by analyzing the <code>NetworkIn</code> and <code>NetworkOut</code> metrics of the current instance during the look-back period. This finding reason happens when the <code>NetworkIn</code> or <code>NetworkOut</code> performance of an instance is impacted.</p> </li>
+    /// <li> <p> <b> <code>NetworkPPSOverprovisioned</code> </b> — The instance’s network PPS (packets per second) configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>NetworkPacketsIn</code> and <code>NetworkPacketsIn</code> metrics of the current instance during the look-back period.</p> </li>
+    /// <li> <p> <b> <code>NetworkPPSUnderprovisioned</code> </b> — The instance’s network PPS (packets per second) configuration doesn't meet the performance requirements of your workload and there is an alternative instance type that provides better network PPS performance. This is identified by analyzing the <code>NetworkPacketsIn</code> and <code>NetworkPacketsIn</code> metrics of the current instance during the look-back period.</p> </li>
+    /// <li> <p> <b> <code>DiskIOPSOverprovisioned</code> </b> — The instance’s disk IOPS configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>DiskReadOps</code> and <code>DiskWriteOps</code> metrics of the current instance during the look-back period.</p> </li>
+    /// <li> <p> <b> <code>DiskIOPSUnderprovisioned</code> </b> — The instance’s disk IOPS configuration doesn't meet the performance requirements of your workload and there is an alternative instance type that provides better disk IOPS performance. This is identified by analyzing the <code>DiskReadOps</code> and <code>DiskWriteOps</code> metrics of the current instance during the look-back period.</p> </li>
+    /// <li> <p> <b> <code>DiskThroughputOverprovisioned</code> </b> — The instance’s disk throughput configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>DiskReadBytes</code> and <code>DiskWriteBytes</code> metrics of the current instance during the look-back period.</p> </li>
+    /// <li> <p> <b> <code>DiskThroughputUnderprovisioned</code> </b> — The instance’s disk throughput configuration doesn't meet the performance requirements of your workload and there is an alternative instance type that provides better disk throughput performance. This is identified by analyzing the <code>DiskReadBytes</code> and <code>DiskWriteBytes</code> metrics of the current instance during the look-back period.</p> </li>
+    /// </ul> <note>
+    /// <p>For more information about instance metrics, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/viewing_metrics_with_cloudwatch.html">List the available CloudWatch metrics for your instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For more information about EBS volume metrics, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cloudwatch_ebs.html">Amazon CloudWatch metrics for Amazon EBS</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// </note>
+    pub fn get_finding_reason_codes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::InstanceRecommendationFindingReasonCode>,
+    > {
+        &self.finding_reason_codes
+    }
     /// Appends an item to `utilization_metrics`.
     ///
     /// To override the contents of this collection use [`set_utilization_metrics`](Self::set_utilization_metrics).
@@ -432,6 +489,12 @@ impl InstanceRecommendationBuilder {
         self.utilization_metrics = input;
         self
     }
+    /// <p>An array of objects that describe the utilization metrics of the instance.</p>
+    pub fn get_utilization_metrics(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UtilizationMetric>> {
+        &self.utilization_metrics
+    }
     /// <p>The number of days for which utilization metrics were analyzed for the instance.</p>
     pub fn look_back_period_in_days(mut self, input: f64) -> Self {
         self.look_back_period_in_days = ::std::option::Option::Some(input);
@@ -441,6 +504,10 @@ impl InstanceRecommendationBuilder {
     pub fn set_look_back_period_in_days(mut self, input: ::std::option::Option<f64>) -> Self {
         self.look_back_period_in_days = input;
         self
+    }
+    /// <p>The number of days for which utilization metrics were analyzed for the instance.</p>
+    pub fn get_look_back_period_in_days(&self) -> &::std::option::Option<f64> {
+        &self.look_back_period_in_days
     }
     /// Appends an item to `recommendation_options`.
     ///
@@ -464,6 +531,12 @@ impl InstanceRecommendationBuilder {
         self.recommendation_options = input;
         self
     }
+    /// <p>An array of objects that describe the recommendation options for the instance.</p>
+    pub fn get_recommendation_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceRecommendationOption>> {
+        &self.recommendation_options
+    }
     /// Appends an item to `recommendation_sources`.
     ///
     /// To override the contents of this collection use [`set_recommendation_sources`](Self::set_recommendation_sources).
@@ -483,6 +556,12 @@ impl InstanceRecommendationBuilder {
         self.recommendation_sources = input;
         self
     }
+    /// <p>An array of objects that describe the source resource of the recommendation.</p>
+    pub fn get_recommendation_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationSource>> {
+        &self.recommendation_sources
+    }
     /// <p>The timestamp of when the instance recommendation was last generated.</p>
     pub fn last_refresh_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_refresh_timestamp = ::std::option::Option::Some(input);
@@ -496,6 +575,12 @@ impl InstanceRecommendationBuilder {
         self.last_refresh_timestamp = input;
         self
     }
+    /// <p>The timestamp of when the instance recommendation was last generated.</p>
+    pub fn get_last_refresh_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_refresh_timestamp
+    }
     /// <p>The risk of the current instance not meeting the performance needs of its workloads. The higher the risk, the more likely the current instance cannot meet the performance requirements of its workload.</p>
     pub fn current_performance_risk(mut self, input: crate::types::CurrentPerformanceRisk) -> Self {
         self.current_performance_risk = ::std::option::Option::Some(input);
@@ -508,6 +593,12 @@ impl InstanceRecommendationBuilder {
     ) -> Self {
         self.current_performance_risk = input;
         self
+    }
+    /// <p>The risk of the current instance not meeting the performance needs of its workloads. The higher the risk, the more likely the current instance cannot meet the performance requirements of its workload.</p>
+    pub fn get_current_performance_risk(
+        &self,
+    ) -> &::std::option::Option<crate::types::CurrentPerformanceRisk> {
+        &self.current_performance_risk
     }
     /// <p>An object that describes the effective recommendation preferences for the instance.</p>
     pub fn effective_recommendation_preferences(
@@ -524,6 +615,12 @@ impl InstanceRecommendationBuilder {
     ) -> Self {
         self.effective_recommendation_preferences = input;
         self
+    }
+    /// <p>An object that describes the effective recommendation preferences for the instance.</p>
+    pub fn get_effective_recommendation_preferences(
+        &self,
+    ) -> &::std::option::Option<crate::types::EffectiveRecommendationPreferences> {
+        &self.effective_recommendation_preferences
     }
     /// Appends an item to `inferred_workload_types`.
     ///
@@ -568,6 +665,24 @@ impl InstanceRecommendationBuilder {
         self.inferred_workload_types = input;
         self
     }
+    /// <p>The applications that might be running on the instance as inferred by Compute Optimizer.</p>
+    /// <p>Compute Optimizer can infer if one of the following applications might be running on the instance:</p>
+    /// <ul>
+    /// <li> <p> <code>AmazonEmr</code> - Infers that Amazon EMR might be running on the instance.</p> </li>
+    /// <li> <p> <code>ApacheCassandra</code> - Infers that Apache Cassandra might be running on the instance.</p> </li>
+    /// <li> <p> <code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the instance.</p> </li>
+    /// <li> <p> <code>Memcached</code> - Infers that Memcached might be running on the instance.</p> </li>
+    /// <li> <p> <code>NGINX</code> - Infers that NGINX might be running on the instance.</p> </li>
+    /// <li> <p> <code>PostgreSql</code> - Infers that PostgreSQL might be running on the instance.</p> </li>
+    /// <li> <p> <code>Redis</code> - Infers that Redis might be running on the instance.</p> </li>
+    /// <li> <p> <code>Kafka</code> - Infers that Kafka might be running on the instance.</p> </li>
+    /// <li> <p> <code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p> </li>
+    /// </ul>
+    pub fn get_inferred_workload_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadType>> {
+        &self.inferred_workload_types
+    }
     /// <p> The state of the instance when the recommendation was generated. </p>
     pub fn instance_state(mut self, input: crate::types::InstanceState) -> Self {
         self.instance_state = ::std::option::Option::Some(input);
@@ -580,6 +695,10 @@ impl InstanceRecommendationBuilder {
     ) -> Self {
         self.instance_state = input;
         self
+    }
+    /// <p> The state of the instance when the recommendation was generated. </p>
+    pub fn get_instance_state(&self) -> &::std::option::Option<crate::types::InstanceState> {
+        &self.instance_state
     }
     /// Appends an item to `tags`.
     ///
@@ -600,6 +719,10 @@ impl InstanceRecommendationBuilder {
         self.tags = input;
         self
     }
+    /// <p> A list of tags assigned to your Amazon EC2 instance recommendations. </p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p> An object that describes Compute Optimizer's integration status with your external metrics provider. </p>
     pub fn external_metric_status(mut self, input: crate::types::ExternalMetricStatus) -> Self {
         self.external_metric_status = ::std::option::Option::Some(input);
@@ -612,6 +735,12 @@ impl InstanceRecommendationBuilder {
     ) -> Self {
         self.external_metric_status = input;
         self
+    }
+    /// <p> An object that describes Compute Optimizer's integration status with your external metrics provider. </p>
+    pub fn get_external_metric_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExternalMetricStatus> {
+        &self.external_metric_status
     }
     /// Consumes the builder and constructs a [`InstanceRecommendation`](crate::types::InstanceRecommendation).
     pub fn build(self) -> crate::types::InstanceRecommendation {

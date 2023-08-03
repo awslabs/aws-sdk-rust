@@ -72,6 +72,10 @@ impl RefreshSchemasStatusBuilder {
         self.endpoint_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
+    pub fn get_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
     pub fn replication_instance_arn(
         mut self,
@@ -88,6 +92,10 @@ impl RefreshSchemasStatusBuilder {
         self.replication_instance_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+    pub fn get_replication_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_instance_arn
+    }
     /// <p>The status of the schema.</p>
     pub fn status(mut self, input: crate::types::RefreshSchemasStatusTypeValue) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -101,6 +109,12 @@ impl RefreshSchemasStatusBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the schema.</p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::RefreshSchemasStatusTypeValue> {
+        &self.status
+    }
     /// <p>The date the schema was last refreshed.</p>
     pub fn last_refresh_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_refresh_date = ::std::option::Option::Some(input);
@@ -113,6 +127,10 @@ impl RefreshSchemasStatusBuilder {
     ) -> Self {
         self.last_refresh_date = input;
         self
+    }
+    /// <p>The date the schema was last refreshed.</p>
+    pub fn get_last_refresh_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_refresh_date
     }
     /// <p>The last failure message for the schema.</p>
     pub fn last_failure_message(
@@ -129,6 +147,10 @@ impl RefreshSchemasStatusBuilder {
     ) -> Self {
         self.last_failure_message = input;
         self
+    }
+    /// <p>The last failure message for the schema.</p>
+    pub fn get_last_failure_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_failure_message
     }
     /// Consumes the builder and constructs a [`RefreshSchemasStatus`](crate::types::RefreshSchemasStatus).
     pub fn build(self) -> crate::types::RefreshSchemasStatus {

@@ -82,6 +82,12 @@ impl PieChartSortConfigurationBuilder {
         self.category_sort = input;
         self
     }
+    /// <p>The sort configuration of the category fields.</p>
+    pub fn get_category_sort(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>> {
+        &self.category_sort
+    }
     /// <p>The limit on the number of categories that are displayed in a pie chart.</p>
     pub fn category_items_limit(mut self, input: crate::types::ItemsLimitConfiguration) -> Self {
         self.category_items_limit = ::std::option::Option::Some(input);
@@ -94,6 +100,12 @@ impl PieChartSortConfigurationBuilder {
     ) -> Self {
         self.category_items_limit = input;
         self
+    }
+    /// <p>The limit on the number of categories that are displayed in a pie chart.</p>
+    pub fn get_category_items_limit(
+        &self,
+    ) -> &::std::option::Option<crate::types::ItemsLimitConfiguration> {
+        &self.category_items_limit
     }
     /// Appends an item to `small_multiples_sort`.
     ///
@@ -114,6 +126,12 @@ impl PieChartSortConfigurationBuilder {
         self.small_multiples_sort = input;
         self
     }
+    /// <p>The sort configuration of the small multiples field.</p>
+    pub fn get_small_multiples_sort(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>> {
+        &self.small_multiples_sort
+    }
     /// <p>The limit on the number of small multiples panels that are displayed.</p>
     pub fn small_multiples_limit_configuration(
         mut self,
@@ -129,6 +147,12 @@ impl PieChartSortConfigurationBuilder {
     ) -> Self {
         self.small_multiples_limit_configuration = input;
         self
+    }
+    /// <p>The limit on the number of small multiples panels that are displayed.</p>
+    pub fn get_small_multiples_limit_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ItemsLimitConfiguration> {
+        &self.small_multiples_limit_configuration
     }
     /// Consumes the builder and constructs a [`PieChartSortConfiguration`](crate::types::PieChartSortConfiguration).
     pub fn build(self) -> crate::types::PieChartSortConfiguration {

@@ -48,6 +48,10 @@ impl SchemaFacetBuilder {
         self.schema_arn = input;
         self
     }
+    /// <p>The ARN of the schema that contains the facet with no minor component. See <code>arns</code> and <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_inplaceschemaupgrade.html">In-Place Schema Upgrade</a> for a description of when to provide minor versions. If this value is set, FacetName must also be set.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_arn
+    }
     /// <p>The name of the facet. If this value is set, SchemaArn must also be set.</p>
     pub fn facet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.facet_name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl SchemaFacetBuilder {
     pub fn set_facet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.facet_name = input;
         self
+    }
+    /// <p>The name of the facet. If this value is set, SchemaArn must also be set.</p>
+    pub fn get_facet_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.facet_name
     }
     /// Consumes the builder and constructs a [`SchemaFacet`](crate::types::SchemaFacet).
     pub fn build(self) -> crate::types::SchemaFacet {

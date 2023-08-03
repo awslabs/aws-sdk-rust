@@ -78,6 +78,10 @@ impl IpAddressDetailsBuilder {
         self.ip_address_v4 = input;
         self
     }
+    /// <p>The Internet Protocol version 4 (IPv4) address of the device.</p>
+    pub fn get_ip_address_v4(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address_v4
+    }
     /// <p>The city that the IP address originated from.</p>
     pub fn ip_city(mut self, input: crate::types::IpCity) -> Self {
         self.ip_city = ::std::option::Option::Some(input);
@@ -88,6 +92,10 @@ impl IpAddressDetailsBuilder {
         self.ip_city = input;
         self
     }
+    /// <p>The city that the IP address originated from.</p>
+    pub fn get_ip_city(&self) -> &::std::option::Option<crate::types::IpCity> {
+        &self.ip_city
+    }
     /// <p>The country that the IP address originated from.</p>
     pub fn ip_country(mut self, input: crate::types::IpCountry) -> Self {
         self.ip_country = ::std::option::Option::Some(input);
@@ -97,6 +105,10 @@ impl IpAddressDetailsBuilder {
     pub fn set_ip_country(mut self, input: ::std::option::Option<crate::types::IpCountry>) -> Self {
         self.ip_country = input;
         self
+    }
+    /// <p>The country that the IP address originated from.</p>
+    pub fn get_ip_country(&self) -> &::std::option::Option<crate::types::IpCountry> {
+        &self.ip_country
     }
     /// <p>The geographic coordinates of the location that the IP address originated from.</p>
     pub fn ip_geo_location(mut self, input: crate::types::IpGeoLocation) -> Self {
@@ -111,6 +123,10 @@ impl IpAddressDetailsBuilder {
         self.ip_geo_location = input;
         self
     }
+    /// <p>The geographic coordinates of the location that the IP address originated from.</p>
+    pub fn get_ip_geo_location(&self) -> &::std::option::Option<crate::types::IpGeoLocation> {
+        &self.ip_geo_location
+    }
     /// <p>The registered owner of the IP address.</p>
     pub fn ip_owner(mut self, input: crate::types::IpOwner) -> Self {
         self.ip_owner = ::std::option::Option::Some(input);
@@ -120,6 +136,10 @@ impl IpAddressDetailsBuilder {
     pub fn set_ip_owner(mut self, input: ::std::option::Option<crate::types::IpOwner>) -> Self {
         self.ip_owner = input;
         self
+    }
+    /// <p>The registered owner of the IP address.</p>
+    pub fn get_ip_owner(&self) -> &::std::option::Option<crate::types::IpOwner> {
+        &self.ip_owner
     }
     /// Consumes the builder and constructs a [`IpAddressDetails`](crate::types::IpAddressDetails).
     pub fn build(self) -> crate::types::IpAddressDetails {

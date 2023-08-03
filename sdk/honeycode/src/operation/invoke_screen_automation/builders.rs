@@ -36,6 +36,13 @@ impl InvokeScreenAutomationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the InvokeScreenAutomation as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::invoke_screen_automation::builders::InvokeScreenAutomationInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl InvokeScreenAutomationFluentBuilder {
         self.inner = self.inner.set_workbook_id(input);
         self
     }
+    /// <p>The ID of the workbook that contains the screen automation.</p>
+    pub fn get_workbook_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workbook_id()
+    }
     /// <p>The ID of the app that contains the screen automation.</p>
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_id(input.into());
@@ -136,6 +147,10 @@ impl InvokeScreenAutomationFluentBuilder {
         self.inner = self.inner.set_app_id(input);
         self
     }
+    /// <p>The ID of the app that contains the screen automation.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_id()
+    }
     /// <p>The ID of the screen that contains the screen automation.</p>
     pub fn screen_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.screen_id(input.into());
@@ -145,6 +160,10 @@ impl InvokeScreenAutomationFluentBuilder {
     pub fn set_screen_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_screen_id(input);
         self
+    }
+    /// <p>The ID of the screen that contains the screen automation.</p>
+    pub fn get_screen_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_screen_id()
     }
     /// <p>The ID of the automation action to be performed.</p>
     pub fn screen_automation_id(
@@ -161,6 +180,10 @@ impl InvokeScreenAutomationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_screen_automation_id(input);
         self
+    }
+    /// <p>The ID of the automation action to be performed.</p>
+    pub fn get_screen_automation_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_screen_automation_id()
     }
     /// Adds a key-value pair to `variables`.
     ///
@@ -185,6 +208,14 @@ impl InvokeScreenAutomationFluentBuilder {
         self.inner = self.inner.set_variables(input);
         self
     }
+    /// <p> Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. Any variables defined in a screen are required to be passed in the call. </p>
+    pub fn get_variables(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::VariableValue>,
+    > {
+        self.inner.get_variables()
+    }
     /// <p> The row ID for the automation if the automation is defined inside a block with source or list. </p>
     pub fn row_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.row_id(input.into());
@@ -194,6 +225,10 @@ impl InvokeScreenAutomationFluentBuilder {
     pub fn set_row_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_row_id(input);
         self
+    }
+    /// <p> The row ID for the automation if the automation is defined inside a block with source or list. </p>
+    pub fn get_row_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_row_id()
     }
     /// <p> The request token for performing the automation action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will return the response of the previous call rather than performing the action again. </p>
     /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
@@ -212,5 +247,10 @@ impl InvokeScreenAutomationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p> The request token for performing the automation action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will return the response of the previous call rather than performing the action again. </p>
+    /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
 }

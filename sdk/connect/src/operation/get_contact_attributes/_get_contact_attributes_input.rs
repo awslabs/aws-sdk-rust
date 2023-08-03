@@ -48,6 +48,10 @@ impl GetContactAttributesInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The identifier of the initial contact.</p>
     pub fn initial_contact_id(
         mut self,
@@ -63,6 +67,10 @@ impl GetContactAttributesInputBuilder {
     ) -> Self {
         self.initial_contact_id = input;
         self
+    }
+    /// <p>The identifier of the initial contact.</p>
+    pub fn get_initial_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.initial_contact_id
     }
     /// Consumes the builder and constructs a [`GetContactAttributesInput`](crate::operation::get_contact_attributes::GetContactAttributesInput).
     pub fn build(

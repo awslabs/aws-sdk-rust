@@ -47,6 +47,10 @@ impl DeleteProfileInputBuilder {
         self.profile_id = input;
         self
     }
+    /// <p>The unique identifier of a customer profile.</p>
+    pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_id
+    }
     /// <p>The unique name of the domain.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DeleteProfileInputBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
+    }
+    /// <p>The unique name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// Consumes the builder and constructs a [`DeleteProfileInput`](crate::operation::delete_profile::DeleteProfileInput).
     pub fn build(

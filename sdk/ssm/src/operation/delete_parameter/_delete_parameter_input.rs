@@ -39,6 +39,10 @@ impl DeleteParameterInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the parameter to delete.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeleteParameterInput`](crate::operation::delete_parameter::DeleteParameterInput).
     pub fn build(
         self,

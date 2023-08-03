@@ -38,6 +38,12 @@ impl CreateEmailIdentityFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateEmailIdentity as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_email_identity::builders::CreateEmailIdentityInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,10 @@ impl CreateEmailIdentityFluentBuilder {
         self.inner = self.inner.set_email_identity(input);
         self
     }
+    /// <p>The email address or domain that you want to verify.</p>
+    pub fn get_email_identity(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_email_identity()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -150,5 +160,9 @@ impl CreateEmailIdentityFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>An array of objects that define the tags (keys and values) that you want to associate with the email identity.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

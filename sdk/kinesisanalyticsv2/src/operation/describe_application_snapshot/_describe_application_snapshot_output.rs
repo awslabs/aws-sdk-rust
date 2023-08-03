@@ -49,6 +49,10 @@ impl DescribeApplicationSnapshotOutputBuilder {
         self.snapshot_details = input;
         self
     }
+    /// <p>An object containing information about the application snapshot.</p>
+    pub fn get_snapshot_details(&self) -> &::std::option::Option<crate::types::SnapshotDetails> {
+        &self.snapshot_details
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

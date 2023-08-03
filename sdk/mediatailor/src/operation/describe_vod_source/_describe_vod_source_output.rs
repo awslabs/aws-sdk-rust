@@ -107,6 +107,10 @@ impl DescribeVodSourceOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the VOD source.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The timestamp that indicates when the VOD source was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -119,6 +123,10 @@ impl DescribeVodSourceOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The timestamp that indicates when the VOD source was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// Appends an item to `http_package_configurations`.
     ///
@@ -142,6 +150,12 @@ impl DescribeVodSourceOutputBuilder {
         self.http_package_configurations = input;
         self
     }
+    /// <p>The HTTP package configurations.</p>
+    pub fn get_http_package_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HttpPackageConfiguration>> {
+        &self.http_package_configurations
+    }
     /// <p>The last modified time of the VOD source.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -154,6 +168,10 @@ impl DescribeVodSourceOutputBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>The last modified time of the VOD source.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// <p>The name of the source location associated with the VOD source.</p>
     pub fn source_location_name(
@@ -170,6 +188,10 @@ impl DescribeVodSourceOutputBuilder {
     ) -> Self {
         self.source_location_name = input;
         self
+    }
+    /// <p>The name of the source location associated with the VOD source.</p>
+    pub fn get_source_location_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_location_name
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -196,6 +218,14 @@ impl DescribeVodSourceOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags assigned to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The name of the VOD source.</p>
     pub fn vod_source_name(
         mut self,
@@ -211,6 +241,10 @@ impl DescribeVodSourceOutputBuilder {
     ) -> Self {
         self.vod_source_name = input;
         self
+    }
+    /// <p>The name of the VOD source.</p>
+    pub fn get_vod_source_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vod_source_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

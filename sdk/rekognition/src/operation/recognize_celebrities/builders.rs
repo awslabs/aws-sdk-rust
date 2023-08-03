@@ -42,6 +42,12 @@ impl RecognizeCelebritiesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RecognizeCelebrities as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::recognize_celebrities::builders::RecognizeCelebritiesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,5 +139,10 @@ impl RecognizeCelebritiesFluentBuilder {
     pub fn set_image(mut self, input: ::std::option::Option<crate::types::Image>) -> Self {
         self.inner = self.inner.set_image(input);
         self
+    }
+    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
+    pub fn get_image(&self) -> &::std::option::Option<crate::types::Image> {
+        self.inner.get_image()
     }
 }

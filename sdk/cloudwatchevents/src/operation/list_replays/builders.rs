@@ -36,6 +36,10 @@ impl ListReplaysFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListReplays as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_replays::builders::ListReplaysInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl ListReplaysFluentBuilder {
         self.inner = self.inner.set_name_prefix(input);
         self
     }
+    /// <p>A name prefix to filter the replays returned. Only replays with name that match the prefix are returned.</p>
+    pub fn get_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name_prefix()
+    }
     /// <p>The state of the replay.</p>
     pub fn state(mut self, input: crate::types::ReplayState) -> Self {
         self.inner = self.inner.state(input);
@@ -127,6 +135,10 @@ impl ListReplaysFluentBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ReplayState>) -> Self {
         self.inner = self.inner.set_state(input);
         self
+    }
+    /// <p>The state of the replay.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ReplayState> {
+        self.inner.get_state()
     }
     /// <p>The ARN of the archive from which the events are replayed.</p>
     pub fn event_source_arn(
@@ -144,6 +156,10 @@ impl ListReplaysFluentBuilder {
         self.inner = self.inner.set_event_source_arn(input);
         self
     }
+    /// <p>The ARN of the archive from which the events are replayed.</p>
+    pub fn get_event_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_source_arn()
+    }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -154,6 +170,10 @@ impl ListReplaysFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of replays to retrieve.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -163,5 +183,9 @@ impl ListReplaysFluentBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
+    }
+    /// <p>The maximum number of replays to retrieve.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
     }
 }

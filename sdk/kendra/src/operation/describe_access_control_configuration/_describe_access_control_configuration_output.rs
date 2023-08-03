@@ -82,6 +82,10 @@ impl DescribeAccessControlConfigurationOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name for the access control configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description for the access control configuration.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -91,6 +95,10 @@ impl DescribeAccessControlConfigurationOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description for the access control configuration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The error message containing details if there are issues processing the access control configuration.</p>
     pub fn error_message(
@@ -107,6 +115,10 @@ impl DescribeAccessControlConfigurationOutputBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>The error message containing details if there are issues processing the access control configuration.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Appends an item to `access_control_list`.
     ///
@@ -126,6 +138,12 @@ impl DescribeAccessControlConfigurationOutputBuilder {
     ) -> Self {
         self.access_control_list = input;
         self
+    }
+    /// <p>Information on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
+    pub fn get_access_control_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Principal>> {
+        &self.access_control_list
     }
     /// Appends an item to `hierarchical_access_control_list`.
     ///
@@ -148,6 +166,12 @@ impl DescribeAccessControlConfigurationOutputBuilder {
     ) -> Self {
         self.hierarchical_access_control_list = input;
         self
+    }
+    /// <p>The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
+    pub fn get_hierarchical_access_control_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HierarchicalPrincipal>> {
+        &self.hierarchical_access_control_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

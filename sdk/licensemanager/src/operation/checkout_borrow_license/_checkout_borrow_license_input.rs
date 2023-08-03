@@ -84,6 +84,10 @@ impl CheckoutBorrowLicenseInputBuilder {
         self.license_arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the license. The license must use the borrow consumption configuration.</p>
+    pub fn get_license_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_arn
+    }
     /// Appends an item to `entitlements`.
     ///
     /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
@@ -103,6 +107,12 @@ impl CheckoutBorrowLicenseInputBuilder {
         self.entitlements = input;
         self
     }
+    /// <p>License entitlements. Partial checkouts are not supported.</p>
+    pub fn get_entitlements(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>> {
+        &self.entitlements
+    }
     /// <p>Digital signature method. The possible value is JSON Web Signature (JWS) algorithm PS384. For more information, see <a href="https://tools.ietf.org/html/rfc7518#section-3.5">RFC 7518 Digital Signature with RSASSA-PSS</a>.</p>
     pub fn digital_signature_method(mut self, input: crate::types::DigitalSignatureMethod) -> Self {
         self.digital_signature_method = ::std::option::Option::Some(input);
@@ -116,6 +126,12 @@ impl CheckoutBorrowLicenseInputBuilder {
         self.digital_signature_method = input;
         self
     }
+    /// <p>Digital signature method. The possible value is JSON Web Signature (JWS) algorithm PS384. For more information, see <a href="https://tools.ietf.org/html/rfc7518#section-3.5">RFC 7518 Digital Signature with RSASSA-PSS</a>.</p>
+    pub fn get_digital_signature_method(
+        &self,
+    ) -> &::std::option::Option<crate::types::DigitalSignatureMethod> {
+        &self.digital_signature_method
+    }
     /// <p>Node ID.</p>
     pub fn node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_id = ::std::option::Option::Some(input.into());
@@ -125,6 +141,10 @@ impl CheckoutBorrowLicenseInputBuilder {
     pub fn set_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_id = input;
         self
+    }
+    /// <p>Node ID.</p>
+    pub fn get_node_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_id
     }
     /// Appends an item to `checkout_metadata`.
     ///
@@ -145,6 +165,12 @@ impl CheckoutBorrowLicenseInputBuilder {
         self.checkout_metadata = input;
         self
     }
+    /// <p>Information about constraints.</p>
+    pub fn get_checkout_metadata(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Metadata>> {
+        &self.checkout_metadata
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -154,6 +180,10 @@ impl CheckoutBorrowLicenseInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`CheckoutBorrowLicenseInput`](crate::operation::checkout_borrow_license::CheckoutBorrowLicenseInput).
     pub fn build(

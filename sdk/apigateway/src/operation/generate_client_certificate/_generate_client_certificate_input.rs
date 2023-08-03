@@ -56,6 +56,10 @@ impl GenerateClientCertificateInputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the ClientCertificate.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -80,6 +84,14 @@ impl GenerateClientCertificateInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`GenerateClientCertificateInput`](crate::operation::generate_client_certificate::GenerateClientCertificateInput).
     pub fn build(

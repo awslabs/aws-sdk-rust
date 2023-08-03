@@ -85,6 +85,10 @@ impl DescribeWorkerConfigurationOutputBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time that the worker configuration was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The description of the worker configuration.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -94,6 +98,10 @@ impl DescribeWorkerConfigurationOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the worker configuration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The latest revision of the custom configuration.</p>
     pub fn latest_revision(
@@ -111,6 +119,12 @@ impl DescribeWorkerConfigurationOutputBuilder {
         self.latest_revision = input;
         self
     }
+    /// <p>The latest revision of the custom configuration.</p>
+    pub fn get_latest_revision(
+        &self,
+    ) -> &::std::option::Option<crate::types::WorkerConfigurationRevisionDescription> {
+        &self.latest_revision
+    }
     /// <p>The name of the worker configuration.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -120,6 +134,10 @@ impl DescribeWorkerConfigurationOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the worker configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of the custom configuration.</p>
     pub fn worker_configuration_arn(
@@ -136,6 +154,10 @@ impl DescribeWorkerConfigurationOutputBuilder {
     ) -> Self {
         self.worker_configuration_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the custom configuration.</p>
+    pub fn get_worker_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.worker_configuration_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

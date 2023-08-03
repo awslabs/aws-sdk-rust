@@ -40,6 +40,10 @@ impl UpdateRuntimeConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateRuntimeConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_runtime_configuration::builders::UpdateRuntimeConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +134,10 @@ impl UpdateRuntimeConfigurationFluentBuilder {
         self.inner = self.inner.set_fleet_id(input);
         self
     }
+    /// <p>A unique identifier for the fleet to update runtime configuration for. You can use either the fleet ID or ARN value.</p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fleet_id()
+    }
     /// <p>Instructions for launching server processes on each instance in the fleet. Server processes run either a custom game build executable or a Realtime Servers script. The runtime configuration lists the types of server processes to run on an instance, how to launch them, and the number of processes to run concurrently.</p>
     pub fn runtime_configuration(mut self, input: crate::types::RuntimeConfiguration) -> Self {
         self.inner = self.inner.runtime_configuration(input);
@@ -142,5 +150,11 @@ impl UpdateRuntimeConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_runtime_configuration(input);
         self
+    }
+    /// <p>Instructions for launching server processes on each instance in the fleet. Server processes run either a custom game build executable or a Realtime Servers script. The runtime configuration lists the types of server processes to run on an instance, how to launch them, and the number of processes to run concurrently.</p>
+    pub fn get_runtime_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::RuntimeConfiguration> {
+        self.inner.get_runtime_configuration()
     }
 }

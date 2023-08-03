@@ -63,6 +63,12 @@ impl CreateAppBundleInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value</a>.</p>
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
+    /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key to use to encrypt the application data. If this is not specified, an Amazon Web Services owned key is used for encryption.</p>
     pub fn customer_managed_key_identifier(
         mut self,
@@ -78,6 +84,12 @@ impl CreateAppBundleInputBuilder {
     ) -> Self {
         self.customer_managed_key_identifier = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key to use to encrypt the application data. If this is not specified, an Amazon Web Services owned key is used for encryption.</p>
+    pub fn get_customer_managed_key_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.customer_managed_key_identifier
     }
     /// Appends an item to `tags`.
     ///
@@ -97,6 +109,10 @@ impl CreateAppBundleInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A map of the key-value pairs of the tag or tags to assign to the resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateAppBundleInput`](crate::operation::create_app_bundle::CreateAppBundleInput).
     pub fn build(

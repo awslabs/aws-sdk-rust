@@ -61,6 +61,11 @@ impl AddTagsToOnPremisesInstancesInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tag key-value pairs to add to the on-premises instances.</p>
+    /// <p>Keys and values are both required. Keys cannot be null or empty strings. Value-only tags are not allowed.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Appends an item to `instance_names`.
     ///
     /// To override the contents of this collection use [`set_instance_names`](Self::set_instance_names).
@@ -82,6 +87,12 @@ impl AddTagsToOnPremisesInstancesInputBuilder {
     ) -> Self {
         self.instance_names = input;
         self
+    }
+    /// <p>The names of the on-premises instances to which to add tags.</p>
+    pub fn get_instance_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.instance_names
     }
     /// Consumes the builder and constructs a [`AddTagsToOnPremisesInstancesInput`](crate::operation::add_tags_to_on_premises_instances::AddTagsToOnPremisesInstancesInput).
     pub fn build(

@@ -49,6 +49,10 @@ impl ProvideAnomalyFeedbackInputBuilder {
         self.anomaly_id = input;
         self
     }
+    /// <p>A cost anomaly ID. </p>
+    pub fn get_anomaly_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.anomaly_id
+    }
     /// <p>Describes whether the cost anomaly was a planned activity or you considered it an anomaly. </p>
     pub fn feedback(mut self, input: crate::types::AnomalyFeedbackType) -> Self {
         self.feedback = ::std::option::Option::Some(input);
@@ -61,6 +65,10 @@ impl ProvideAnomalyFeedbackInputBuilder {
     ) -> Self {
         self.feedback = input;
         self
+    }
+    /// <p>Describes whether the cost anomaly was a planned activity or you considered it an anomaly. </p>
+    pub fn get_feedback(&self) -> &::std::option::Option<crate::types::AnomalyFeedbackType> {
+        &self.feedback
     }
     /// Consumes the builder and constructs a [`ProvideAnomalyFeedbackInput`](crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackInput).
     pub fn build(

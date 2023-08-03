@@ -88,6 +88,12 @@ impl CustomFilterListConfigurationBuilder {
         self.match_operator = input;
         self
     }
+    /// <p>The match operator that is used to determine if a filter should be applied.</p>
+    pub fn get_match_operator(
+        &self,
+    ) -> &::std::option::Option<crate::types::CategoryFilterMatchOperator> {
+        &self.match_operator
+    }
     /// Appends an item to `category_values`.
     ///
     /// To override the contents of this collection use [`set_category_values`](Self::set_category_values).
@@ -109,6 +115,12 @@ impl CustomFilterListConfigurationBuilder {
     ) -> Self {
         self.category_values = input;
         self
+    }
+    /// <p>The list of category values for the filter.</p>
+    pub fn get_category_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.category_values
     }
     /// <p>Select all of the values. Null is not the assigned value of select all.</p>
     /// <ul>
@@ -132,6 +144,15 @@ impl CustomFilterListConfigurationBuilder {
         self.select_all_options = input;
         self
     }
+    /// <p>Select all of the values. Null is not the assigned value of select all.</p>
+    /// <ul>
+    /// <li> <p> <code>FILTER_ALL_VALUES</code> </p> </li>
+    /// </ul>
+    pub fn get_select_all_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::CategoryFilterSelectAllOptions> {
+        &self.select_all_options
+    }
     /// <p>This option determines how null values should be treated when filtering data.</p>
     /// <ul>
     /// <li> <p> <code>ALL_VALUES</code>: Include null values in filtered results.</p> </li>
@@ -154,6 +175,15 @@ impl CustomFilterListConfigurationBuilder {
     ) -> Self {
         self.null_option = input;
         self
+    }
+    /// <p>This option determines how null values should be treated when filtering data.</p>
+    /// <ul>
+    /// <li> <p> <code>ALL_VALUES</code>: Include null values in filtered results.</p> </li>
+    /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li>
+    /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li>
+    /// </ul>
+    pub fn get_null_option(&self) -> &::std::option::Option<crate::types::FilterNullOption> {
+        &self.null_option
     }
     /// Consumes the builder and constructs a [`CustomFilterListConfiguration`](crate::types::CustomFilterListConfiguration).
     pub fn build(self) -> crate::types::CustomFilterListConfiguration {

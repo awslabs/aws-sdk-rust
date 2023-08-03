@@ -72,6 +72,10 @@ impl LabelCountersBuilder {
         self.total_labeled = input;
         self
     }
+    /// <p>The total number of objects labeled.</p>
+    pub fn get_total_labeled(&self) -> &::std::option::Option<i32> {
+        &self.total_labeled
+    }
     /// <p>The total number of objects labeled by a human worker.</p>
     pub fn human_labeled(mut self, input: i32) -> Self {
         self.human_labeled = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl LabelCountersBuilder {
     pub fn set_human_labeled(mut self, input: ::std::option::Option<i32>) -> Self {
         self.human_labeled = input;
         self
+    }
+    /// <p>The total number of objects labeled by a human worker.</p>
+    pub fn get_human_labeled(&self) -> &::std::option::Option<i32> {
+        &self.human_labeled
     }
     /// <p>The total number of objects labeled by automated data labeling.</p>
     pub fn machine_labeled(mut self, input: i32) -> Self {
@@ -92,6 +100,10 @@ impl LabelCountersBuilder {
         self.machine_labeled = input;
         self
     }
+    /// <p>The total number of objects labeled by automated data labeling.</p>
+    pub fn get_machine_labeled(&self) -> &::std::option::Option<i32> {
+        &self.machine_labeled
+    }
     /// <p>The total number of objects that could not be labeled due to an error.</p>
     pub fn failed_non_retryable_error(mut self, input: i32) -> Self {
         self.failed_non_retryable_error = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl LabelCountersBuilder {
         self.failed_non_retryable_error = input;
         self
     }
+    /// <p>The total number of objects that could not be labeled due to an error.</p>
+    pub fn get_failed_non_retryable_error(&self) -> &::std::option::Option<i32> {
+        &self.failed_non_retryable_error
+    }
     /// <p>The total number of objects not yet labeled.</p>
     pub fn unlabeled(mut self, input: i32) -> Self {
         self.unlabeled = ::std::option::Option::Some(input);
@@ -111,6 +127,10 @@ impl LabelCountersBuilder {
     pub fn set_unlabeled(mut self, input: ::std::option::Option<i32>) -> Self {
         self.unlabeled = input;
         self
+    }
+    /// <p>The total number of objects not yet labeled.</p>
+    pub fn get_unlabeled(&self) -> &::std::option::Option<i32> {
+        &self.unlabeled
     }
     /// Consumes the builder and constructs a [`LabelCounters`](crate::types::LabelCounters).
     pub fn build(self) -> crate::types::LabelCounters {

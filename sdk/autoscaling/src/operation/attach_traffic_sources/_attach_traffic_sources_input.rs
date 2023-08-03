@@ -58,6 +58,10 @@ impl AttachTrafficSourcesInputBuilder {
         self.auto_scaling_group_name = input;
         self
     }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_scaling_group_name
+    }
     /// Appends an item to `traffic_sources`.
     ///
     /// To override the contents of this collection use [`set_traffic_sources`](Self::set_traffic_sources).
@@ -76,6 +80,12 @@ impl AttachTrafficSourcesInputBuilder {
     ) -> Self {
         self.traffic_sources = input;
         self
+    }
+    /// <p>The unique identifiers of one or more traffic sources. You can specify up to 10 traffic sources.</p>
+    pub fn get_traffic_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficSourceIdentifier>> {
+        &self.traffic_sources
     }
     /// Consumes the builder and constructs a [`AttachTrafficSourcesInput`](crate::operation::attach_traffic_sources::AttachTrafficSourcesInput).
     pub fn build(

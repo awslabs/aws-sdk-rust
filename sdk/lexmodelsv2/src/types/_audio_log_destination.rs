@@ -43,6 +43,10 @@ impl AudioLogDestinationBuilder {
         self.s3_bucket = input;
         self
     }
+    /// <p>The Amazon S3 bucket where the audio log files are stored. The IAM role specified in the <code>roleArn</code> parameter of the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a> operation must have permission to write to this bucket.</p>
+    pub fn get_s3_bucket(&self) -> &::std::option::Option<crate::types::S3BucketLogDestination> {
+        &self.s3_bucket
+    }
     /// Consumes the builder and constructs a [`AudioLogDestination`](crate::types::AudioLogDestination).
     pub fn build(self) -> crate::types::AudioLogDestination {
         crate::types::AudioLogDestination {

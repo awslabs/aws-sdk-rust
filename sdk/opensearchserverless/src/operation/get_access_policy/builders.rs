@@ -36,6 +36,12 @@ impl GetAccessPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetAccessPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_access_policy::builders::GetAccessPolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl GetAccessPolicyFluentBuilder {
         self.inner = self.inner.set_type(input);
         self
     }
+    /// <p>Tye type of policy. Currently the only supported value is <code>data</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::AccessPolicyType> {
+        self.inner.get_type()
+    }
     /// <p>The name of the access policy.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -138,5 +148,9 @@ impl GetAccessPolicyFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the access policy.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
 }

@@ -53,6 +53,12 @@ impl NetworkInterfacePermissionStateBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of the permission.</p>
+    pub fn get_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkInterfacePermissionStateCode> {
+        &self.state
+    }
     /// <p>A status message, if applicable.</p>
     pub fn status_message(
         mut self,
@@ -68,6 +74,10 @@ impl NetworkInterfacePermissionStateBuilder {
     ) -> Self {
         self.status_message = input;
         self
+    }
+    /// <p>A status message, if applicable.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// Consumes the builder and constructs a [`NetworkInterfacePermissionState`](crate::types::NetworkInterfacePermissionState).
     pub fn build(self) -> crate::types::NetworkInterfacePermissionState {

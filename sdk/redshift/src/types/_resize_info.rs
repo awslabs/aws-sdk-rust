@@ -48,6 +48,10 @@ impl ResizeInfoBuilder {
         self.resize_type = input;
         self
     }
+    /// <p>Returns the value <code>ClassicResize</code>.</p>
+    pub fn get_resize_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resize_type
+    }
     /// <p>A boolean value indicating if the resize operation can be cancelled.</p>
     pub fn allow_cancel_resize(mut self, input: bool) -> Self {
         self.allow_cancel_resize = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ResizeInfoBuilder {
     pub fn set_allow_cancel_resize(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_cancel_resize = input;
         self
+    }
+    /// <p>A boolean value indicating if the resize operation can be cancelled.</p>
+    pub fn get_allow_cancel_resize(&self) -> &::std::option::Option<bool> {
+        &self.allow_cancel_resize
     }
     /// Consumes the builder and constructs a [`ResizeInfo`](crate::types::ResizeInfo).
     pub fn build(self) -> crate::types::ResizeInfo {

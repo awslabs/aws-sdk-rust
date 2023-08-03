@@ -41,6 +41,10 @@ impl AwsEc2LaunchTemplateDataEnclaveOptionsDetailsBuilder {
         self.enabled = input;
         self
     }
+    /// <p> If this parameter is set to <code>true</code>, the instance is enabled for Amazon Web Services Nitro Enclaves. </p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataEnclaveOptionsDetails`](crate::types::AwsEc2LaunchTemplateDataEnclaveOptionsDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataEnclaveOptionsDetails {
         crate::types::AwsEc2LaunchTemplateDataEnclaveOptionsDetails {

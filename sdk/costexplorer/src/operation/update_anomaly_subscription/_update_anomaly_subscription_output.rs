@@ -52,6 +52,10 @@ impl UpdateAnomalySubscriptionOutputBuilder {
         self.subscription_arn = input;
         self
     }
+    /// <p>A cost anomaly subscription ARN. </p>
+    pub fn get_subscription_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscription_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

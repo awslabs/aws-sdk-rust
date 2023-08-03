@@ -49,6 +49,10 @@ impl GetCatalogItemOutputBuilder {
         self.catalog_item = input;
         self
     }
+    /// <p>Information about this catalog item.</p>
+    pub fn get_catalog_item(&self) -> &::std::option::Option<crate::types::CatalogItem> {
+        &self.catalog_item
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

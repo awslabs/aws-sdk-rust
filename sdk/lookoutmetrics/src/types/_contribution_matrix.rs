@@ -56,6 +56,12 @@ impl ContributionMatrixBuilder {
         self.dimension_contribution_list = input;
         self
     }
+    /// <p>A list of contributing dimensions.</p>
+    pub fn get_dimension_contribution_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionContribution>> {
+        &self.dimension_contribution_list
+    }
     /// Consumes the builder and constructs a [`ContributionMatrix`](crate::types::ContributionMatrix).
     pub fn build(self) -> crate::types::ContributionMatrix {
         crate::types::ContributionMatrix {

@@ -86,6 +86,10 @@ impl DetectorSummaryBuilder {
         self.detector_model_name = input;
         self
     }
+    /// <p>The name of the detector model that created this detector (instance).</p>
+    pub fn get_detector_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_model_name
+    }
     /// <p>The value of the key (identifying the device or system) that caused the creation of this detector (instance).</p>
     pub fn key_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_value = ::std::option::Option::Some(input.into());
@@ -95,6 +99,10 @@ impl DetectorSummaryBuilder {
     pub fn set_key_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_value = input;
         self
+    }
+    /// <p>The value of the key (identifying the device or system) that caused the creation of this detector (instance).</p>
+    pub fn get_key_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_value
     }
     /// <p>The version of the detector model that created this detector (instance).</p>
     pub fn detector_model_version(
@@ -112,6 +120,10 @@ impl DetectorSummaryBuilder {
         self.detector_model_version = input;
         self
     }
+    /// <p>The version of the detector model that created this detector (instance).</p>
+    pub fn get_detector_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_model_version
+    }
     /// <p>The current state of the detector (instance).</p>
     pub fn state(mut self, input: crate::types::DetectorStateSummary) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -124,6 +136,10 @@ impl DetectorSummaryBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The current state of the detector (instance).</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::DetectorStateSummary> {
+        &self.state
     }
     /// <p>The time the detector (instance) was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -138,6 +154,10 @@ impl DetectorSummaryBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time the detector (instance) was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The time the detector (instance) was last updated.</p>
     pub fn last_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_update_time = ::std::option::Option::Some(input);
@@ -150,6 +170,10 @@ impl DetectorSummaryBuilder {
     ) -> Self {
         self.last_update_time = input;
         self
+    }
+    /// <p>The time the detector (instance) was last updated.</p>
+    pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_update_time
     }
     /// Consumes the builder and constructs a [`DetectorSummary`](crate::types::DetectorSummary).
     pub fn build(self) -> crate::types::DetectorSummary {

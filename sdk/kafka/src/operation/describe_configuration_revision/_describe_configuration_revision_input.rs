@@ -47,6 +47,10 @@ impl DescribeConfigurationRevisionInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>A string that uniquely identifies a revision of an MSK configuration.</p>
     pub fn revision(mut self, input: i64) -> Self {
         self.revision = ::std::option::Option::Some(input);
@@ -56,6 +60,10 @@ impl DescribeConfigurationRevisionInputBuilder {
     pub fn set_revision(mut self, input: ::std::option::Option<i64>) -> Self {
         self.revision = input;
         self
+    }
+    /// <p>A string that uniquely identifies a revision of an MSK configuration.</p>
+    pub fn get_revision(&self) -> &::std::option::Option<i64> {
+        &self.revision
     }
     /// Consumes the builder and constructs a [`DescribeConfigurationRevisionInput`](crate::operation::describe_configuration_revision::DescribeConfigurationRevisionInput).
     pub fn build(

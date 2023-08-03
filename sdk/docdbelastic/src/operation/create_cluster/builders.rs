@@ -36,6 +36,12 @@ impl CreateClusterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateCluster as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_cluster::builders::CreateClusterInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,17 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.set_cluster_name(input);
         self
     }
+    /// <p>The name of the new Elastic DocumentDB cluster. This parameter is stored as a lowercase string.</p>
+    /// <p> <i>Constraints</i>:</p>
+    /// <ul>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// </ul>
+    /// <p> <i>Example</i>: <code>my-cluster</code> </p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_name()
+    }
     /// <p>The authentication type for the Elastic DocumentDB cluster.</p>
     pub fn auth_type(mut self, input: crate::types::Auth) -> Self {
         self.inner = self.inner.auth_type(input);
@@ -141,6 +158,10 @@ impl CreateClusterFluentBuilder {
     pub fn set_auth_type(mut self, input: ::std::option::Option<crate::types::Auth>) -> Self {
         self.inner = self.inner.set_auth_type(input);
         self
+    }
+    /// <p>The authentication type for the Elastic DocumentDB cluster.</p>
+    pub fn get_auth_type(&self) -> &::std::option::Option<crate::types::Auth> {
+        self.inner.get_auth_type()
     }
     /// <p>The name of the Elastic DocumentDB cluster administrator.</p>
     /// <p> <i>Constraints</i>:</p>
@@ -170,6 +191,16 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.set_admin_user_name(input);
         self
     }
+    /// <p>The name of the Elastic DocumentDB cluster administrator.</p>
+    /// <p> <i>Constraints</i>:</p>
+    /// <ul>
+    /// <li> <p>Must be from 1 to 63 letters or numbers.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Cannot be a reserved word.</p> </li>
+    /// </ul>
+    pub fn get_admin_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_admin_user_name()
+    }
     /// <p>The password for the Elastic DocumentDB cluster administrator and can contain any printable ASCII characters.</p>
     /// <p> <i>Constraints</i>:</p>
     /// <ul>
@@ -196,6 +227,15 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.set_admin_user_password(input);
         self
     }
+    /// <p>The password for the Elastic DocumentDB cluster administrator and can contain any printable ASCII characters.</p>
+    /// <p> <i>Constraints</i>:</p>
+    /// <ul>
+    /// <li> <p>Must contain from 8 to 100 characters.</p> </li>
+    /// <li> <p>Cannot contain a forward slash (/), double quote ("), or the "at" symbol (@).</p> </li>
+    /// </ul>
+    pub fn get_admin_user_password(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_admin_user_password()
+    }
     /// <p>The capacity of each shard in the new Elastic DocumentDB cluster.</p>
     pub fn shard_capacity(mut self, input: i32) -> Self {
         self.inner = self.inner.shard_capacity(input);
@@ -206,6 +246,10 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.set_shard_capacity(input);
         self
     }
+    /// <p>The capacity of each shard in the new Elastic DocumentDB cluster.</p>
+    pub fn get_shard_capacity(&self) -> &::std::option::Option<i32> {
+        self.inner.get_shard_capacity()
+    }
     /// <p>The number of shards to create in the new Elastic DocumentDB cluster.</p>
     pub fn shard_count(mut self, input: i32) -> Self {
         self.inner = self.inner.shard_count(input);
@@ -215,6 +259,10 @@ impl CreateClusterFluentBuilder {
     pub fn set_shard_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_shard_count(input);
         self
+    }
+    /// <p>The number of shards to create in the new Elastic DocumentDB cluster.</p>
+    pub fn get_shard_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_shard_count()
     }
     /// Appends an item to `vpcSecurityGroupIds`.
     ///
@@ -236,6 +284,12 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.set_vpc_security_group_ids(input);
         self
     }
+    /// <p>A list of EC2 VPC security groups to associate with the new Elastic DocumentDB cluster.</p>
+    pub fn get_vpc_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_vpc_security_group_ids()
+    }
     /// Appends an item to `subnetIds`.
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
@@ -253,6 +307,10 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.set_subnet_ids(input);
         self
     }
+    /// <p>The Amazon EC2 subnet IDs for the new Elastic DocumentDB cluster.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_subnet_ids()
+    }
     /// <p>The KMS key identifier to use to encrypt the new Elastic DocumentDB cluster.</p>
     /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same Amazon account that owns this KMS encryption key, you can use the KMS key alias instead of the ARN as the KMS encryption key.</p>
     /// <p>If an encryption key is not specified, Elastic DocumentDB uses the default encryption key that KMS creates for your account. Your account has a different default encryption key for each Amazon Region.</p>
@@ -267,6 +325,12 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }
+    /// <p>The KMS key identifier to use to encrypt the new Elastic DocumentDB cluster.</p>
+    /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same Amazon account that owns this KMS encryption key, you can use the KMS key alias instead of the ARN as the KMS encryption key.</p>
+    /// <p>If an encryption key is not specified, Elastic DocumentDB uses the default encryption key that KMS creates for your account. Your account has a different default encryption key for each Amazon Region.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_id()
+    }
     /// <p>The client token for the Elastic DocumentDB cluster.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -276,6 +340,10 @@ impl CreateClusterFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>The client token for the Elastic DocumentDB cluster.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     /// <p> <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
@@ -301,6 +369,16 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.set_preferred_maintenance_window(input);
         self
     }
+    /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
+    /// <p> <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+    /// <p> <i>Default</i>: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
+    /// <p> <i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
+    /// <p> <i>Constraints</i>: Minimum 30-minute window.</p>
+    pub fn get_preferred_maintenance_window(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_preferred_maintenance_window()
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -323,5 +401,13 @@ impl CreateClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags to be assigned to the new Elastic DocumentDB cluster.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

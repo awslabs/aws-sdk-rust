@@ -36,6 +36,12 @@ impl GetMethodResponseFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetMethodResponse as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_method_response::builders::GetMethodResponseInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl GetMethodResponseFluentBuilder {
         self.inner = self.inner.set_rest_api_id(input);
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rest_api_id()
+    }
     /// <p>The Resource identifier for the MethodResponse resource.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
@@ -135,6 +145,10 @@ impl GetMethodResponseFluentBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_id(input);
         self
+    }
+    /// <p>The Resource identifier for the MethodResponse resource.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
     }
     /// <p>The HTTP verb of the Method resource.</p>
     pub fn http_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -146,6 +160,10 @@ impl GetMethodResponseFluentBuilder {
         self.inner = self.inner.set_http_method(input);
         self
     }
+    /// <p>The HTTP verb of the Method resource.</p>
+    pub fn get_http_method(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_http_method()
+    }
     /// <p>The status code for the MethodResponse resource.</p>
     pub fn status_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.status_code(input.into());
@@ -155,5 +173,9 @@ impl GetMethodResponseFluentBuilder {
     pub fn set_status_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_status_code(input);
         self
+    }
+    /// <p>The status code for the MethodResponse resource.</p>
+    pub fn get_status_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_status_code()
     }
 }

@@ -38,6 +38,10 @@ impl UpdateAppVersionAppComponentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAppVersionAppComponent as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_app_version_app_component::builders::UpdateAppVersionAppComponentInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +132,10 @@ impl UpdateAppVersionAppComponentFluentBuilder {
         self.inner = self.inner.set_app_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_arn()
+    }
     /// <p>The identifier of the Application Component.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
@@ -137,6 +145,10 @@ impl UpdateAppVersionAppComponentFluentBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
+    }
+    /// <p>The identifier of the Application Component.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
     }
     /// <p>The name of the Application Component.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -148,6 +160,10 @@ impl UpdateAppVersionAppComponentFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the Application Component.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The type of Application Component. For more information about the types of Application Component, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/AppComponent.grouping.html">Grouping resources in an AppComponent</a>.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.r#type(input.into());
@@ -157,6 +173,10 @@ impl UpdateAppVersionAppComponentFluentBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_type(input);
         self
+    }
+    /// <p>The type of Application Component. For more information about the types of Application Component, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/AppComponent.grouping.html">Grouping resources in an AppComponent</a>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_type()
     }
     /// Adds a key-value pair to `additionalInfo`.
     ///
@@ -183,5 +203,13 @@ impl UpdateAppVersionAppComponentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_additional_info(input);
         self
+    }
+    /// <p>Currently, there is no supported additional information for Application Components.</p>
+    pub fn get_additional_info(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    > {
+        self.inner.get_additional_info()
     }
 }

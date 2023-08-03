@@ -63,6 +63,14 @@ impl BatchInferenceJobConfigBuilder {
         self.item_exploration_config = input;
         self
     }
+    /// <p>A string to string map specifying the exploration configuration hyperparameters, including <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount of item exploration Amazon Personalize uses when recommending items. See <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>.</p>
+    pub fn get_item_exploration_config(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.item_exploration_config
+    }
     /// Consumes the builder and constructs a [`BatchInferenceJobConfig`](crate::types::BatchInferenceJobConfig).
     pub fn build(self) -> crate::types::BatchInferenceJobConfig {
         crate::types::BatchInferenceJobConfig {

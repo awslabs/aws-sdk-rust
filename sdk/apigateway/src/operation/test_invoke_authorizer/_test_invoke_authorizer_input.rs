@@ -129,6 +129,10 @@ impl TestInvokeAuthorizerInputBuilder {
         self.rest_api_id = input;
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
+    }
     /// <p>Specifies a test invoke authorizer request's Authorizer ID.</p>
     pub fn authorizer_id(
         mut self,
@@ -144,6 +148,10 @@ impl TestInvokeAuthorizerInputBuilder {
     ) -> Self {
         self.authorizer_id = input;
         self
+    }
+    /// <p>Specifies a test invoke authorizer request's Authorizer ID.</p>
+    pub fn get_authorizer_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authorizer_id
     }
     /// Adds a key-value pair to `headers`.
     ///
@@ -169,6 +177,14 @@ impl TestInvokeAuthorizerInputBuilder {
     ) -> Self {
         self.headers = input;
         self
+    }
+    /// <p>A key-value map of headers to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, should be specified.</p>
+    pub fn get_headers(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.headers
     }
     /// Adds a key-value pair to `multi_value_headers`.
     ///
@@ -198,6 +214,14 @@ impl TestInvokeAuthorizerInputBuilder {
         self.multi_value_headers = input;
         self
     }
+    /// <p>The headers as a map from string to list of values to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, may be specified.</p>
+    pub fn get_multi_value_headers(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    > {
+        &self.multi_value_headers
+    }
     /// <p>The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.</p>
     pub fn path_with_query_string(
         mut self,
@@ -214,6 +238,10 @@ impl TestInvokeAuthorizerInputBuilder {
         self.path_with_query_string = input;
         self
     }
+    /// <p>The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.</p>
+    pub fn get_path_with_query_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path_with_query_string
+    }
     /// <p>The simulated request body of an incoming invocation request.</p>
     pub fn body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.body = ::std::option::Option::Some(input.into());
@@ -223,6 +251,10 @@ impl TestInvokeAuthorizerInputBuilder {
     pub fn set_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.body = input;
         self
+    }
+    /// <p>The simulated request body of an incoming invocation request.</p>
+    pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.body
     }
     /// Adds a key-value pair to `stage_variables`.
     ///
@@ -249,6 +281,14 @@ impl TestInvokeAuthorizerInputBuilder {
         self.stage_variables = input;
         self
     }
+    /// <p>A key-value map of stage variables to simulate an invocation on a deployed Stage.</p>
+    pub fn get_stage_variables(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.stage_variables
+    }
     /// Adds a key-value pair to `additional_context`.
     ///
     /// To override the contents of this collection use [`set_additional_context`](Self::set_additional_context).
@@ -273,6 +313,14 @@ impl TestInvokeAuthorizerInputBuilder {
     ) -> Self {
         self.additional_context = input;
         self
+    }
+    /// <p>A key-value map of additional context variables.</p>
+    pub fn get_additional_context(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.additional_context
     }
     /// Consumes the builder and constructs a [`TestInvokeAuthorizerInput`](crate::operation::test_invoke_authorizer::TestInvokeAuthorizerInput).
     pub fn build(

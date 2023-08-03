@@ -38,6 +38,12 @@ impl MigrateWorkspaceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the MigrateWorkspace as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::migrate_workspace::builders::MigrateWorkspaceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,10 @@ impl MigrateWorkspaceFluentBuilder {
         self.inner = self.inner.set_source_workspace_id(input);
         self
     }
+    /// <p>The identifier of the WorkSpace to migrate from.</p>
+    pub fn get_source_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_workspace_id()
+    }
     /// <p>The identifier of the target bundle type to migrate the WorkSpace to.</p>
     pub fn bundle_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bundle_id(input.into());
@@ -143,5 +153,9 @@ impl MigrateWorkspaceFluentBuilder {
     pub fn set_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bundle_id(input);
         self
+    }
+    /// <p>The identifier of the target bundle type to migrate the WorkSpace to.</p>
+    pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bundle_id()
     }
 }

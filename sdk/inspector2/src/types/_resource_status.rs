@@ -64,6 +64,10 @@ impl ResourceStatusBuilder {
         self.ec2 = input;
         self
     }
+    /// <p>The status of Amazon Inspector scanning for Amazon EC2 resources.</p>
+    pub fn get_ec2(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.ec2
+    }
     /// <p>The status of Amazon Inspector scanning for Amazon ECR resources.</p>
     pub fn ecr(mut self, input: crate::types::Status) -> Self {
         self.ecr = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl ResourceStatusBuilder {
     pub fn set_ecr(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.ecr = input;
         self
+    }
+    /// <p>The status of Amazon Inspector scanning for Amazon ECR resources.</p>
+    pub fn get_ecr(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.ecr
     }
     /// <p>The status of Amazon Inspector scanning for AWS Lambda function.</p>
     pub fn lambda(mut self, input: crate::types::Status) -> Self {
@@ -84,6 +92,10 @@ impl ResourceStatusBuilder {
         self.lambda = input;
         self
     }
+    /// <p>The status of Amazon Inspector scanning for AWS Lambda function.</p>
+    pub fn get_lambda(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.lambda
+    }
     /// <p>The status of Amazon Inspector scanning for custom application code for Amazon Web Services Lambda functions. </p>
     pub fn lambda_code(mut self, input: crate::types::Status) -> Self {
         self.lambda_code = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl ResourceStatusBuilder {
     pub fn set_lambda_code(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.lambda_code = input;
         self
+    }
+    /// <p>The status of Amazon Inspector scanning for custom application code for Amazon Web Services Lambda functions. </p>
+    pub fn get_lambda_code(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.lambda_code
     }
     /// Consumes the builder and constructs a [`ResourceStatus`](crate::types::ResourceStatus).
     pub fn build(self) -> crate::types::ResourceStatus {

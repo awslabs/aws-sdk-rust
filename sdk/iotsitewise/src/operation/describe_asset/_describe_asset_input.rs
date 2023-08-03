@@ -47,6 +47,10 @@ impl DescribeAssetInputBuilder {
         self.asset_id = input;
         self
     }
+    /// <p>The ID of the asset.</p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_id
+    }
     /// <p> Whether or not to exclude asset properties from the response. </p>
     pub fn exclude_properties(mut self, input: bool) -> Self {
         self.exclude_properties = ::std::option::Option::Some(input);
@@ -56,6 +60,10 @@ impl DescribeAssetInputBuilder {
     pub fn set_exclude_properties(mut self, input: ::std::option::Option<bool>) -> Self {
         self.exclude_properties = input;
         self
+    }
+    /// <p> Whether or not to exclude asset properties from the response. </p>
+    pub fn get_exclude_properties(&self) -> &::std::option::Option<bool> {
+        &self.exclude_properties
     }
     /// Consumes the builder and constructs a [`DescribeAssetInput`](crate::operation::describe_asset::DescribeAssetInput).
     pub fn build(

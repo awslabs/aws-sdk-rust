@@ -65,6 +65,10 @@ impl InvalidDocumentBuilder {
         self.message = input;
         self
     }
+    /// <p>The SSM document doesn't exist or the document isn't available to the user. This exception can be issued by various API operations. </p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);

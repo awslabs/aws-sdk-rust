@@ -36,6 +36,10 @@ impl DescribeLoggingConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeLoggingConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_logging_configuration::builders::DescribeLoggingConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +132,11 @@ impl DescribeLoggingConfigurationFluentBuilder {
         self.inner = self.inner.set_firewall_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn get_firewall_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_firewall_arn()
+    }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn firewall_name(
@@ -145,5 +154,10 @@ impl DescribeLoggingConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_firewall_name(input);
         self
+    }
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn get_firewall_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_firewall_name()
     }
 }

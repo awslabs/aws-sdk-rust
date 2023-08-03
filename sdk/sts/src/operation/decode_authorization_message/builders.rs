@@ -48,6 +48,10 @@ impl DecodeAuthorizationMessageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DecodeAuthorizationMessage as a reference.
+    pub fn as_input(&self) -> &crate::operation::decode_authorization_message::builders::DecodeAuthorizationMessageInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,5 +147,9 @@ impl DecodeAuthorizationMessageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_encoded_message(input);
         self
+    }
+    /// <p>The encoded message that was returned with the response.</p>
+    pub fn get_encoded_message(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_encoded_message()
     }
 }

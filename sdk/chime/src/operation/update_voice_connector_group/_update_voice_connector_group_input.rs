@@ -65,6 +65,10 @@ impl UpdateVoiceConnectorGroupInputBuilder {
         self.voice_connector_group_id = input;
         self
     }
+    /// <p>The Amazon Chime Voice Connector group ID.</p>
+    pub fn get_voice_connector_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_connector_group_id
+    }
     /// <p>The name of the Amazon Chime Voice Connector group.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl UpdateVoiceConnectorGroupInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the Amazon Chime Voice Connector group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `voice_connector_items`.
     ///
@@ -93,6 +101,12 @@ impl UpdateVoiceConnectorGroupInputBuilder {
     ) -> Self {
         self.voice_connector_items = input;
         self
+    }
+    /// <p>The <code>VoiceConnectorItems</code> to associate with the group.</p>
+    pub fn get_voice_connector_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorItem>> {
+        &self.voice_connector_items
     }
     /// Consumes the builder and constructs a [`UpdateVoiceConnectorGroupInput`](crate::operation::update_voice_connector_group::UpdateVoiceConnectorGroupInput).
     pub fn build(

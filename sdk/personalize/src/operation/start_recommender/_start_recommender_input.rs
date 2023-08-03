@@ -46,6 +46,10 @@ impl StartRecommenderInputBuilder {
         self.recommender_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the recommender to start.</p>
+    pub fn get_recommender_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommender_arn
+    }
     /// Consumes the builder and constructs a [`StartRecommenderInput`](crate::operation::start_recommender::StartRecommenderInput).
     pub fn build(
         self,

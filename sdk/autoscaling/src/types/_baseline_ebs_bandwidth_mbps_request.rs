@@ -48,6 +48,10 @@ impl BaselineEbsBandwidthMbpsRequestBuilder {
         self.min = input;
         self
     }
+    /// <p>The minimum value in Mbps.</p>
+    pub fn get_min(&self) -> &::std::option::Option<i32> {
+        &self.min
+    }
     /// <p>The maximum value in Mbps.</p>
     pub fn max(mut self, input: i32) -> Self {
         self.max = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl BaselineEbsBandwidthMbpsRequestBuilder {
     pub fn set_max(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max = input;
         self
+    }
+    /// <p>The maximum value in Mbps.</p>
+    pub fn get_max(&self) -> &::std::option::Option<i32> {
+        &self.max
     }
     /// Consumes the builder and constructs a [`BaselineEbsBandwidthMbpsRequest`](crate::types::BaselineEbsBandwidthMbpsRequest).
     pub fn build(self) -> crate::types::BaselineEbsBandwidthMbpsRequest {

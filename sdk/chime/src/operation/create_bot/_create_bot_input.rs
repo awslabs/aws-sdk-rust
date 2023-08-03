@@ -62,6 +62,10 @@ impl CreateBotInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The bot display name.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl CreateBotInputBuilder {
         self.display_name = input;
         self
     }
+    /// <p>The bot display name.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// <p>The domain of the Amazon Chime Enterprise account.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl CreateBotInputBuilder {
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
+    }
+    /// <p>The domain of the Amazon Chime Enterprise account.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
     }
     /// Consumes the builder and constructs a [`CreateBotInput`](crate::operation::create_bot::CreateBotInput).
     pub fn build(

@@ -49,6 +49,10 @@ impl TrainingMetricsBuilder {
         self.auc = input;
         self
     }
+    /// <p>The area under the curve. This summarizes true positive rate (TPR) and false positive rate (FPR) across all possible model score thresholds. A model with no predictive power has an AUC of 0.5, whereas a perfect model has a score of 1.0.</p>
+    pub fn get_auc(&self) -> &::std::option::Option<f32> {
+        &self.auc
+    }
     /// Appends an item to `metric_data_points`.
     ///
     /// To override the contents of this collection use [`set_metric_data_points`](Self::set_metric_data_points).
@@ -67,6 +71,12 @@ impl TrainingMetricsBuilder {
     ) -> Self {
         self.metric_data_points = input;
         self
+    }
+    /// <p>The data points details.</p>
+    pub fn get_metric_data_points(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDataPoint>> {
+        &self.metric_data_points
     }
     /// Consumes the builder and constructs a [`TrainingMetrics`](crate::types::TrainingMetrics).
     pub fn build(self) -> crate::types::TrainingMetrics {

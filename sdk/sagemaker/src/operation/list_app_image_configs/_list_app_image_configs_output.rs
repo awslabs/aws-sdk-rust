@@ -59,6 +59,10 @@ impl ListAppImageConfigsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token for getting the next set of AppImageConfigs, if there are any.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `app_image_configs`.
     ///
     /// To override the contents of this collection use [`set_app_image_configs`](Self::set_app_image_configs).
@@ -77,6 +81,12 @@ impl ListAppImageConfigsOutputBuilder {
     ) -> Self {
         self.app_image_configs = input;
         self
+    }
+    /// <p>A list of AppImageConfigs and their properties.</p>
+    pub fn get_app_image_configs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppImageConfigDetails>> {
+        &self.app_image_configs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

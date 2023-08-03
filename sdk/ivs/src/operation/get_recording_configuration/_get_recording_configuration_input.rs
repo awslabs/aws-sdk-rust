@@ -39,6 +39,10 @@ impl GetRecordingConfigurationInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>ARN of the recording configuration to be retrieved.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`GetRecordingConfigurationInput`](crate::operation::get_recording_configuration::GetRecordingConfigurationInput).
     pub fn build(
         self,

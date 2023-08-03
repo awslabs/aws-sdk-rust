@@ -37,6 +37,12 @@ impl DescribeTrainingJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeTrainingJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_training_job::builders::DescribeTrainingJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +138,9 @@ impl DescribeTrainingJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_training_job_name(input);
         self
+    }
+    /// <p>The name of the training job.</p>
+    pub fn get_training_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_training_job_name()
     }
 }

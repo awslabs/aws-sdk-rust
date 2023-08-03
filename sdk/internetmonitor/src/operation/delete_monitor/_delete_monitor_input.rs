@@ -39,6 +39,10 @@ impl DeleteMonitorInputBuilder {
         self.monitor_name = input;
         self
     }
+    /// <p>The name of the monitor to delete.</p>
+    pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitor_name
+    }
     /// Consumes the builder and constructs a [`DeleteMonitorInput`](crate::operation::delete_monitor::DeleteMonitorInput).
     pub fn build(
         self,

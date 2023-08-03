@@ -36,6 +36,12 @@ impl BatchGetFindingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchGetFindings as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_get_findings::builders::BatchGetFindingsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +138,11 @@ impl BatchGetFindingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_finding_identifiers(input);
         self
+    }
+    /// <p>A list of finding identifiers. Each identifier consists of a <code>scanName</code> and a <code>findingId</code>. You retrieve the <code>findingId</code> when you call <code>GetFindings</code>.</p>
+    pub fn get_finding_identifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FindingIdentifier>> {
+        self.inner.get_finding_identifiers()
     }
 }

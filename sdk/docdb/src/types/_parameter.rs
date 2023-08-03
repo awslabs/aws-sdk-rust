@@ -118,6 +118,10 @@ impl ParameterBuilder {
         self.parameter_name = input;
         self
     }
+    /// <p>Specifies the name of the parameter.</p>
+    pub fn get_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_name
+    }
     /// <p>Specifies the value of the parameter.</p>
     pub fn parameter_value(
         mut self,
@@ -134,6 +138,10 @@ impl ParameterBuilder {
         self.parameter_value = input;
         self
     }
+    /// <p>Specifies the value of the parameter.</p>
+    pub fn get_parameter_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_value
+    }
     /// <p>Provides a description of the parameter.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -143,6 +151,10 @@ impl ParameterBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Provides a description of the parameter.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Indicates the source of the parameter value.</p>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -154,6 +166,10 @@ impl ParameterBuilder {
         self.source = input;
         self
     }
+    /// <p>Indicates the source of the parameter value.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
+    }
     /// <p>Specifies the engine-specific parameters type.</p>
     pub fn apply_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.apply_type = ::std::option::Option::Some(input.into());
@@ -164,6 +180,10 @@ impl ParameterBuilder {
         self.apply_type = input;
         self
     }
+    /// <p>Specifies the engine-specific parameters type.</p>
+    pub fn get_apply_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.apply_type
+    }
     /// <p>Specifies the valid data type for the parameter.</p>
     pub fn data_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_type = ::std::option::Option::Some(input.into());
@@ -173,6 +193,10 @@ impl ParameterBuilder {
     pub fn set_data_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_type = input;
         self
+    }
+    /// <p>Specifies the valid data type for the parameter.</p>
+    pub fn get_data_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_type
     }
     /// <p>Specifies the valid range of values for the parameter.</p>
     pub fn allowed_values(
@@ -190,6 +214,10 @@ impl ParameterBuilder {
         self.allowed_values = input;
         self
     }
+    /// <p>Specifies the valid range of values for the parameter.</p>
+    pub fn get_allowed_values(&self) -> &::std::option::Option<::std::string::String> {
+        &self.allowed_values
+    }
     /// <p> Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed. </p>
     pub fn is_modifiable(mut self, input: bool) -> Self {
         self.is_modifiable = ::std::option::Option::Some(input);
@@ -199,6 +227,10 @@ impl ParameterBuilder {
     pub fn set_is_modifiable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_modifiable = input;
         self
+    }
+    /// <p> Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed. </p>
+    pub fn get_is_modifiable(&self) -> &::std::option::Option<bool> {
+        &self.is_modifiable
     }
     /// <p>The earliest engine version to which the parameter can apply.</p>
     pub fn minimum_engine_version(
@@ -216,6 +248,10 @@ impl ParameterBuilder {
         self.minimum_engine_version = input;
         self
     }
+    /// <p>The earliest engine version to which the parameter can apply.</p>
+    pub fn get_minimum_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.minimum_engine_version
+    }
     /// <p>Indicates when to apply parameter updates.</p>
     pub fn apply_method(mut self, input: crate::types::ApplyMethod) -> Self {
         self.apply_method = ::std::option::Option::Some(input);
@@ -228,6 +264,10 @@ impl ParameterBuilder {
     ) -> Self {
         self.apply_method = input;
         self
+    }
+    /// <p>Indicates when to apply parameter updates.</p>
+    pub fn get_apply_method(&self) -> &::std::option::Option<crate::types::ApplyMethod> {
+        &self.apply_method
     }
     /// Consumes the builder and constructs a [`Parameter`](crate::types::Parameter).
     pub fn build(self) -> crate::types::Parameter {

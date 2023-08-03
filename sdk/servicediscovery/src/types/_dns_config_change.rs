@@ -49,6 +49,12 @@ impl DnsConfigChangeBuilder {
         self.dns_records = input;
         self
     }
+    /// <p>An array that contains one <code>DnsRecord</code> object for each Route&nbsp;53 record that you want Cloud Map to create when you register an instance.</p>
+    pub fn get_dns_records(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DnsRecord>> {
+        &self.dns_records
+    }
     /// Consumes the builder and constructs a [`DnsConfigChange`](crate::types::DnsConfigChange).
     pub fn build(self) -> crate::types::DnsConfigChange {
         crate::types::DnsConfigChange {

@@ -134,6 +134,32 @@ impl ScheduleConfigBuilder {
         self.schedule_expression = input;
         self
     }
+    /// <p>A cron expression that describes details about the monitoring schedule.</p>
+    /// <p>Currently the only supported cron expressions are:</p>
+    /// <ul>
+    /// <li> <p>If you want to set the job to start every hour, please use the following:</p> <p> <code>Hourly: cron(0 * ? * * *)</code> </p> </li>
+    /// <li> <p>If you want to start the job daily:</p> <p> <code>cron(0 [00-23] ? * * *)</code> </p> </li>
+    /// </ul>
+    /// <p>For example, the following are valid cron expressions:</p>
+    /// <ul>
+    /// <li> <p>Daily at noon UTC: <code>cron(0 12 ? * * *)</code> </p> </li>
+    /// <li> <p>Daily at midnight UTC: <code>cron(0 0 ? * * *)</code> </p> </li>
+    /// </ul>
+    /// <p>To support running every 6, 12 hours, the following are also supported:</p>
+    /// <p> <code>cron(0 [00-23]/[01-24] ? * * *)</code> </p>
+    /// <p>For example, the following are valid cron expressions:</p>
+    /// <ul>
+    /// <li> <p>Every 12 hours, starting at 5pm UTC: <code>cron(0 17/12 ? * * *)</code> </p> </li>
+    /// <li> <p>Every two hours starting at midnight: <code>cron(0 0/2 ? * * *)</code> </p> </li>
+    /// </ul> <note>
+    /// <ul>
+    /// <li> <p>Even though the cron expression is set to start at 5PM UTC, note that there could be a delay of 0-20 minutes from the actual requested time to run the execution. </p> </li>
+    /// <li> <p>We recommend that if you would like a daily schedule, you do not provide this parameter. Amazon SageMaker will pick a time for running every day.</p> </li>
+    /// </ul>
+    /// </note>
+    pub fn get_schedule_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schedule_expression
+    }
     /// Consumes the builder and constructs a [`ScheduleConfig`](crate::types::ScheduleConfig).
     pub fn build(self) -> crate::types::ScheduleConfig {
         crate::types::ScheduleConfig {

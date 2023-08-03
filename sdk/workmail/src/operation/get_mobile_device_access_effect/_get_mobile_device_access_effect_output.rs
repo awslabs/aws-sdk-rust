@@ -61,6 +61,10 @@ impl GetMobileDeviceAccessEffectOutputBuilder {
         self.effect = input;
         self
     }
+    /// <p>The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>, after evaluating mobile device access rules in the WorkMail organization for the simulated user parameters.</p>
+    pub fn get_effect(&self) -> &::std::option::Option<crate::types::MobileDeviceAccessRuleEffect> {
+        &self.effect
+    }
     /// Appends an item to `matched_rules`.
     ///
     /// To override the contents of this collection use [`set_matched_rules`](Self::set_matched_rules).
@@ -79,6 +83,12 @@ impl GetMobileDeviceAccessEffectOutputBuilder {
     ) -> Self {
         self.matched_rules = input;
         self
+    }
+    /// <p>A list of the rules which matched the simulated user input and produced the effect.</p>
+    pub fn get_matched_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MobileDeviceAccessMatchedRule>> {
+        &self.matched_rules
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

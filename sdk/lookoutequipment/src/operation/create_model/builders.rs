@@ -38,6 +38,10 @@ impl CreateModelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateModel as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_model::builders::CreateModelInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -120,6 +124,10 @@ impl CreateModelFluentBuilder {
         self.inner = self.inner.set_model_name(input);
         self
     }
+    /// <p>The name for the ML model to be created.</p>
+    pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_model_name()
+    }
     /// <p>The name of the dataset for the ML model being created. </p>
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_name(input.into());
@@ -129,6 +137,10 @@ impl CreateModelFluentBuilder {
     pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dataset_name(input);
         self
+    }
+    /// <p>The name of the dataset for the ML model being created. </p>
+    pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dataset_name()
     }
     /// <p>The data schema for the ML model being created. </p>
     pub fn dataset_schema(mut self, input: crate::types::DatasetSchema) -> Self {
@@ -142,6 +154,10 @@ impl CreateModelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_dataset_schema(input);
         self
+    }
+    /// <p>The data schema for the ML model being created. </p>
+    pub fn get_dataset_schema(&self) -> &::std::option::Option<crate::types::DatasetSchema> {
+        self.inner.get_dataset_schema()
     }
     /// <p>The input configuration for the labels being used for the ML model that's being created. </p>
     pub fn labels_input_configuration(
@@ -159,6 +175,12 @@ impl CreateModelFluentBuilder {
         self.inner = self.inner.set_labels_input_configuration(input);
         self
     }
+    /// <p>The input configuration for the labels being used for the ML model that's being created. </p>
+    pub fn get_labels_input_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::LabelsInputConfiguration> {
+        self.inner.get_labels_input_configuration()
+    }
     /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -168,6 +190,10 @@ impl CreateModelFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// <p>Indicates the time reference in the dataset that should be used to begin the subset of training data for the ML model. </p>
     pub fn training_data_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -182,6 +208,12 @@ impl CreateModelFluentBuilder {
         self.inner = self.inner.set_training_data_start_time(input);
         self
     }
+    /// <p>Indicates the time reference in the dataset that should be used to begin the subset of training data for the ML model. </p>
+    pub fn get_training_data_start_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_training_data_start_time()
+    }
     /// <p>Indicates the time reference in the dataset that should be used to end the subset of training data for the ML model. </p>
     pub fn training_data_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.training_data_end_time(input);
@@ -194,6 +226,12 @@ impl CreateModelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_training_data_end_time(input);
         self
+    }
+    /// <p>Indicates the time reference in the dataset that should be used to end the subset of training data for the ML model. </p>
+    pub fn get_training_data_end_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_training_data_end_time()
     }
     /// <p>Indicates the time reference in the dataset that should be used to begin the subset of evaluation data for the ML model. </p>
     pub fn evaluation_data_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -208,6 +246,12 @@ impl CreateModelFluentBuilder {
         self.inner = self.inner.set_evaluation_data_start_time(input);
         self
     }
+    /// <p>Indicates the time reference in the dataset that should be used to begin the subset of evaluation data for the ML model. </p>
+    pub fn get_evaluation_data_start_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_evaluation_data_start_time()
+    }
     /// <p> Indicates the time reference in the dataset that should be used to end the subset of evaluation data for the ML model. </p>
     pub fn evaluation_data_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.evaluation_data_end_time(input);
@@ -221,6 +265,12 @@ impl CreateModelFluentBuilder {
         self.inner = self.inner.set_evaluation_data_end_time(input);
         self
     }
+    /// <p> Indicates the time reference in the dataset that should be used to end the subset of evaluation data for the ML model. </p>
+    pub fn get_evaluation_data_end_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_evaluation_data_end_time()
+    }
     /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the ML model. </p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -230,6 +280,10 @@ impl CreateModelFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the ML model. </p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
     /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
@@ -249,6 +303,13 @@ impl CreateModelFluentBuilder {
         self.inner = self.inner.set_data_pre_processing_configuration(input);
         self
     }
+    /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
+    /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
+    pub fn get_data_pre_processing_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataPreProcessingConfiguration> {
+        self.inner.get_data_pre_processing_configuration()
+    }
     /// <p>Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout for Equipment. </p>
     pub fn server_side_kms_key_id(
         mut self,
@@ -264,6 +325,10 @@ impl CreateModelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_server_side_kms_key_id(input);
         self
+    }
+    /// <p>Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout for Equipment. </p>
+    pub fn get_server_side_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_server_side_kms_key_id()
     }
     /// Appends an item to `Tags`.
     ///
@@ -282,6 +347,10 @@ impl CreateModelFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p> Any tags associated with the ML model being created. </p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>Indicates that the asset associated with this sensor has been shut off. As long as this condition is met, Lookout for Equipment will not use data from this asset for training, evaluation, or inference.</p>
     pub fn off_condition(
         mut self,
@@ -297,5 +366,9 @@ impl CreateModelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_off_condition(input);
         self
+    }
+    /// <p>Indicates that the asset associated with this sensor has been shut off. As long as this condition is met, Lookout for Equipment will not use data from this asset for training, evaluation, or inference.</p>
+    pub fn get_off_condition(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_off_condition()
     }
 }

@@ -36,6 +36,10 @@ impl CreateWorldGenerationJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateWorldGenerationJob as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_world_generation_job::builders::CreateWorldGenerationJobInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl CreateWorldGenerationJobFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// <p>The Amazon Resource Name (arn) of the world template describing the worlds you want to create.</p>
     pub fn template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template(input.into());
@@ -141,6 +149,10 @@ impl CreateWorldGenerationJobFluentBuilder {
     pub fn set_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template(input);
         self
+    }
+    /// <p>The Amazon Resource Name (arn) of the world template describing the worlds you want to create.</p>
+    pub fn get_template(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template()
     }
     /// <p>Information about the world count.</p>
     pub fn world_count(mut self, input: crate::types::WorldCount) -> Self {
@@ -154,6 +166,10 @@ impl CreateWorldGenerationJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_world_count(input);
         self
+    }
+    /// <p>Information about the world count.</p>
+    pub fn get_world_count(&self) -> &::std::option::Option<crate::types::WorldCount> {
+        self.inner.get_world_count()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -178,6 +194,14 @@ impl CreateWorldGenerationJobFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>A map that contains tag keys and tag values that are attached to the world generator job.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// Adds a key-value pair to `worldTags`.
     ///
     /// To override the contents of this collection use [`set_world_tags`](Self::set_world_tags).
@@ -200,5 +224,13 @@ impl CreateWorldGenerationJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_world_tags(input);
         self
+    }
+    /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
+    pub fn get_world_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_world_tags()
     }
 }

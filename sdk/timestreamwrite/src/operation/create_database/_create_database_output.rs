@@ -46,6 +46,10 @@ impl CreateDatabaseOutputBuilder {
         self.database = input;
         self
     }
+    /// <p>The newly created Timestream database.</p>
+    pub fn get_database(&self) -> &::std::option::Option<crate::types::Database> {
+        &self.database
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

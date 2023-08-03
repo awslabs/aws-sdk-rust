@@ -48,6 +48,10 @@ impl DescribeBotVersionInputBuilder {
         self.bot_id = input;
         self
     }
+    /// <p>The identifier of the bot containing the version to return metadata for.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
     /// <p>The version of the bot to return metadata for.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl DescribeBotVersionInputBuilder {
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_version = input;
         self
+    }
+    /// <p>The version of the bot to return metadata for.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_version
     }
     /// Consumes the builder and constructs a [`DescribeBotVersionInput`](crate::operation::describe_bot_version::DescribeBotVersionInput).
     pub fn build(

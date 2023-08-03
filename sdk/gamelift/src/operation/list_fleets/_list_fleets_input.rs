@@ -63,6 +63,10 @@ impl ListFleetsInputBuilder {
         self.build_id = input;
         self
     }
+    /// <p>A unique identifier for the build to request fleets for. Use this parameter to return only fleets using a specified build. Use either the build ID or ARN value.</p>
+    pub fn get_build_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.build_id
+    }
     /// <p>A unique identifier for the Realtime script to request fleets for. Use this parameter to return only fleets using a specified script. Use either the script ID or ARN value.</p>
     pub fn script_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.script_id = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl ListFleetsInputBuilder {
     pub fn set_script_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.script_id = input;
         self
+    }
+    /// <p>A unique identifier for the Realtime script to request fleets for. Use this parameter to return only fleets using a specified script. Use either the script ID or ARN value.</p>
+    pub fn get_script_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.script_id
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -83,6 +91,10 @@ impl ListFleetsInputBuilder {
         self.limit = input;
         self
     }
+    /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
+    }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -92,6 +104,10 @@ impl ListFleetsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListFleetsInput`](crate::operation::list_fleets::ListFleetsInput).
     pub fn build(

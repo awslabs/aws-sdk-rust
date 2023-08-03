@@ -106,6 +106,19 @@ impl GetThirdPartyFirewallAssociationStatusOutputBuilder {
         self.third_party_firewall_status = input;
         self
     }
+    /// <p>The current status for setting a Firewall Manager policy administrators account as an administrator of the third-party firewall tenant.</p>
+    /// <ul>
+    /// <li> <p> <code>ONBOARDING</code> - The Firewall Manager policy administrator is being designated as a tenant administrator.</p> </li>
+    /// <li> <p> <code>ONBOARD_COMPLETE</code> - The Firewall Manager policy administrator is designated as a tenant administrator.</p> </li>
+    /// <li> <p> <code>OFFBOARDING</code> - The Firewall Manager policy administrator is being removed as a tenant administrator.</p> </li>
+    /// <li> <p> <code>OFFBOARD_COMPLETE</code> - The Firewall Manager policy administrator has been removed as a tenant administrator.</p> </li>
+    /// <li> <p> <code>NOT_EXIST</code> - The Firewall Manager policy administrator doesn't exist as a tenant administrator.</p> </li>
+    /// </ul>
+    pub fn get_third_party_firewall_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ThirdPartyFirewallAssociationStatus> {
+        &self.third_party_firewall_status
+    }
     /// <p>The status for subscribing to the third-party firewall vendor in the Amazon Web Services Marketplace.</p>
     /// <ul>
     /// <li> <p> <code>NO_SUBSCRIPTION</code> - The Firewall Manager policy administrator isn't subscribed to the third-party firewall service in the Amazon Web Services Marketplace.</p> </li>
@@ -131,6 +144,17 @@ impl GetThirdPartyFirewallAssociationStatusOutputBuilder {
     ) -> Self {
         self.marketplace_onboarding_status = input;
         self
+    }
+    /// <p>The status for subscribing to the third-party firewall vendor in the Amazon Web Services Marketplace.</p>
+    /// <ul>
+    /// <li> <p> <code>NO_SUBSCRIPTION</code> - The Firewall Manager policy administrator isn't subscribed to the third-party firewall service in the Amazon Web Services Marketplace.</p> </li>
+    /// <li> <p> <code>NOT_COMPLETE</code> - The Firewall Manager policy administrator is in the process of subscribing to the third-party firewall service in the Amazon Web Services Marketplace, but doesn't yet have an active subscription.</p> </li>
+    /// <li> <p> <code>COMPLETE</code> - The Firewall Manager policy administrator has an active subscription to the third-party firewall service in the Amazon Web Services Marketplace.</p> </li>
+    /// </ul>
+    pub fn get_marketplace_onboarding_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::MarketplaceSubscriptionOnboardingStatus> {
+        &self.marketplace_onboarding_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

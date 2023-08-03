@@ -56,6 +56,10 @@ impl MedicalAlternativeBuilder {
         self.transcript = input;
         self
     }
+    /// <p>Contains transcribed text.</p>
+    pub fn get_transcript(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transcript
+    }
     /// Appends an item to `items`.
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
@@ -75,6 +79,10 @@ impl MedicalAlternativeBuilder {
         self.items = input;
         self
     }
+    /// <p>Contains words, phrases, or punctuation marks in your transcription output.</p>
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MedicalItem>> {
+        &self.items
+    }
     /// Appends an item to `entities`.
     ///
     /// To override the contents of this collection use [`set_entities`](Self::set_entities).
@@ -93,6 +101,12 @@ impl MedicalAlternativeBuilder {
     ) -> Self {
         self.entities = input;
         self
+    }
+    /// <p>Contains entities identified as personal health information (PHI) in your transcription output.</p>
+    pub fn get_entities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MedicalEntity>> {
+        &self.entities
     }
     /// Consumes the builder and constructs a [`MedicalAlternative`](crate::types::MedicalAlternative).
     pub fn build(self) -> crate::types::MedicalAlternative {

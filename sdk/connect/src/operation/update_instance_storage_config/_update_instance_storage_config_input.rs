@@ -65,6 +65,10 @@ impl UpdateInstanceStorageConfigInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
     pub fn association_id(
         mut self,
@@ -81,6 +85,10 @@ impl UpdateInstanceStorageConfigInputBuilder {
         self.association_id = input;
         self
     }
+    /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_id
+    }
     /// <p>A valid resource type.</p>
     pub fn resource_type(mut self, input: crate::types::InstanceStorageResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -94,6 +102,12 @@ impl UpdateInstanceStorageConfigInputBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>A valid resource type.</p>
+    pub fn get_resource_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceStorageResourceType> {
+        &self.resource_type
+    }
     /// <p>The storage configuration for the instance.</p>
     pub fn storage_config(mut self, input: crate::types::InstanceStorageConfig) -> Self {
         self.storage_config = ::std::option::Option::Some(input);
@@ -106,6 +120,12 @@ impl UpdateInstanceStorageConfigInputBuilder {
     ) -> Self {
         self.storage_config = input;
         self
+    }
+    /// <p>The storage configuration for the instance.</p>
+    pub fn get_storage_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceStorageConfig> {
+        &self.storage_config
     }
     /// Consumes the builder and constructs a [`UpdateInstanceStorageConfigInput`](crate::operation::update_instance_storage_config::UpdateInstanceStorageConfigInput).
     pub fn build(

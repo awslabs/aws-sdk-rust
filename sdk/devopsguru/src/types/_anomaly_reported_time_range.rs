@@ -51,6 +51,10 @@ impl AnomalyReportedTimeRangeBuilder {
         self.open_time = input;
         self
     }
+    /// <p> The time when an anomaly is opened. </p>
+    pub fn get_open_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.open_time
+    }
     /// <p> The time when an anomaly is closed. </p>
     pub fn close_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.close_time = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl AnomalyReportedTimeRangeBuilder {
     ) -> Self {
         self.close_time = input;
         self
+    }
+    /// <p> The time when an anomaly is closed. </p>
+    pub fn get_close_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.close_time
     }
     /// Consumes the builder and constructs a [`AnomalyReportedTimeRange`](crate::types::AnomalyReportedTimeRange).
     pub fn build(self) -> crate::types::AnomalyReportedTimeRange {

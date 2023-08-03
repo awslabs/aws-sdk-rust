@@ -63,6 +63,10 @@ impl GetMembersOutputBuilder {
         self.members = input;
         self
     }
+    /// <p>The list of details about the Security Hub member accounts.</p>
+    pub fn get_members(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Member>> {
+        &self.members
+    }
     /// Appends an item to `unprocessed_accounts`.
     ///
     /// To override the contents of this collection use [`set_unprocessed_accounts`](Self::set_unprocessed_accounts).
@@ -81,6 +85,12 @@ impl GetMembersOutputBuilder {
     ) -> Self {
         self.unprocessed_accounts = input;
         self
+    }
+    /// <p>The list of Amazon Web Services accounts that could not be processed. For each account, the list includes the account ID and the email address.</p>
+    pub fn get_unprocessed_accounts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Result>> {
+        &self.unprocessed_accounts
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

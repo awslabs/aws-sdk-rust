@@ -56,6 +56,10 @@ impl IamIdentityBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM identity.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The ID of the principal that assumes the IAM identity.</p>
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_id = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl IamIdentityBuilder {
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal_id = input;
         self
+    }
+    /// <p>The ID of the principal that assumes the IAM identity.</p>
+    pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal_id
     }
     /// <p>The person or application which assumes the IAM identity.</p>
     pub fn source_identity(
@@ -81,6 +89,10 @@ impl IamIdentityBuilder {
     ) -> Self {
         self.source_identity = input;
         self
+    }
+    /// <p>The person or application which assumes the IAM identity.</p>
+    pub fn get_source_identity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_identity
     }
     /// Consumes the builder and constructs a [`IamIdentity`](crate::types::IamIdentity).
     pub fn build(self) -> crate::types::IamIdentity {

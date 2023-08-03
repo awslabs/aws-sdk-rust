@@ -57,6 +57,12 @@ impl TableFieldLinkContentConfigurationBuilder {
         self.custom_text_content = input;
         self
     }
+    /// <p>The custom text content (value, font configuration) for the table link content configuration.</p>
+    pub fn get_custom_text_content(
+        &self,
+    ) -> &::std::option::Option<crate::types::TableFieldCustomTextContent> {
+        &self.custom_text_content
+    }
     /// <p>The custom icon content for the table link content configuration.</p>
     pub fn custom_icon_content(mut self, input: crate::types::TableFieldCustomIconContent) -> Self {
         self.custom_icon_content = ::std::option::Option::Some(input);
@@ -69,6 +75,12 @@ impl TableFieldLinkContentConfigurationBuilder {
     ) -> Self {
         self.custom_icon_content = input;
         self
+    }
+    /// <p>The custom icon content for the table link content configuration.</p>
+    pub fn get_custom_icon_content(
+        &self,
+    ) -> &::std::option::Option<crate::types::TableFieldCustomIconContent> {
+        &self.custom_icon_content
     }
     /// Consumes the builder and constructs a [`TableFieldLinkContentConfiguration`](crate::types::TableFieldLinkContentConfiguration).
     pub fn build(self) -> crate::types::TableFieldLinkContentConfiguration {

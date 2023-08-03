@@ -136,6 +136,10 @@ impl ProblemBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the problem.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the problem.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
@@ -145,6 +149,10 @@ impl ProblemBuilder {
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
+    }
+    /// <p>The name of the problem.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
     }
     /// <p>A detailed analysis of the problem using machine learning.</p>
     pub fn insights(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -156,6 +164,10 @@ impl ProblemBuilder {
         self.insights = input;
         self
     }
+    /// <p>A detailed analysis of the problem using machine learning.</p>
+    pub fn get_insights(&self) -> &::std::option::Option<::std::string::String> {
+        &self.insights
+    }
     /// <p>The status of the problem.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -165,6 +177,10 @@ impl ProblemBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the problem.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
     }
     /// <p>The resource affected by the problem.</p>
     pub fn affected_resource(
@@ -182,6 +198,10 @@ impl ProblemBuilder {
         self.affected_resource = input;
         self
     }
+    /// <p>The resource affected by the problem.</p>
+    pub fn get_affected_resource(&self) -> &::std::option::Option<::std::string::String> {
+        &self.affected_resource
+    }
     /// <p>The time when the problem started, in epoch seconds.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -194,6 +214,10 @@ impl ProblemBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>The time when the problem started, in epoch seconds.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>The time when the problem ended, in epoch seconds.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -208,6 +232,10 @@ impl ProblemBuilder {
         self.end_time = input;
         self
     }
+    /// <p>The time when the problem ended, in epoch seconds.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>A measure of the level of impact of the problem.</p>
     pub fn severity_level(mut self, input: crate::types::SeverityLevel) -> Self {
         self.severity_level = ::std::option::Option::Some(input);
@@ -220,6 +248,10 @@ impl ProblemBuilder {
     ) -> Self {
         self.severity_level = input;
         self
+    }
+    /// <p>A measure of the level of impact of the problem.</p>
+    pub fn get_severity_level(&self) -> &::std::option::Option<crate::types::SeverityLevel> {
+        &self.severity_level
     }
     /// <p>The name of the resource group affected by the problem.</p>
     pub fn resource_group_name(
@@ -236,6 +268,10 @@ impl ProblemBuilder {
     ) -> Self {
         self.resource_group_name = input;
         self
+    }
+    /// <p>The name of the resource group affected by the problem.</p>
+    pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_group_name
     }
     /// Adds a key-value pair to `feedback`.
     ///
@@ -262,6 +298,14 @@ impl ProblemBuilder {
         self.feedback = input;
         self
     }
+    /// <p>Feedback provided by the user about the problem.</p>
+    pub fn get_feedback(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<crate::types::FeedbackKey, crate::types::FeedbackValue>,
+    > {
+        &self.feedback
+    }
     /// <p> The number of times that the same problem reoccurred after the first time it was resolved. </p>
     pub fn recurring_count(mut self, input: i64) -> Self {
         self.recurring_count = ::std::option::Option::Some(input);
@@ -271,6 +315,10 @@ impl ProblemBuilder {
     pub fn set_recurring_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.recurring_count = input;
         self
+    }
+    /// <p> The number of times that the same problem reoccurred after the first time it was resolved. </p>
+    pub fn get_recurring_count(&self) -> &::std::option::Option<i64> {
+        &self.recurring_count
     }
     /// <p> The last time that the problem reoccurred after its last resolution. </p>
     pub fn last_recurrence_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -284,6 +332,10 @@ impl ProblemBuilder {
     ) -> Self {
         self.last_recurrence_time = input;
         self
+    }
+    /// <p> The last time that the problem reoccurred after its last resolution. </p>
+    pub fn get_last_recurrence_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_recurrence_time
     }
     /// Consumes the builder and constructs a [`Problem`](crate::types::Problem).
     pub fn build(self) -> crate::types::Problem {

@@ -36,6 +36,10 @@ impl DeleteProvisionedProductPlanFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteProvisionedProductPlan as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_provisioned_product_plan::builders::DeleteProvisionedProductPlanInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +144,14 @@ impl DeleteProvisionedProductPlanFluentBuilder {
         self.inner = self.inner.set_accept_language(input);
         self
     }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_accept_language()
+    }
     /// <p>The plan identifier.</p>
     pub fn plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.plan_id(input.into());
@@ -150,6 +162,10 @@ impl DeleteProvisionedProductPlanFluentBuilder {
         self.inner = self.inner.set_plan_id(input);
         self
     }
+    /// <p>The plan identifier.</p>
+    pub fn get_plan_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_plan_id()
+    }
     /// <p>If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
     pub fn ignore_errors(mut self, input: bool) -> Self {
         self.inner = self.inner.ignore_errors(input);
@@ -159,5 +175,9 @@ impl DeleteProvisionedProductPlanFluentBuilder {
     pub fn set_ignore_errors(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_ignore_errors(input);
         self
+    }
+    /// <p>If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
+    pub fn get_ignore_errors(&self) -> &::std::option::Option<bool> {
+        self.inner.get_ignore_errors()
     }
 }

@@ -48,6 +48,10 @@ impl OpsItemDataValueBuilder {
         self.value = input;
         self
     }
+    /// <p>The value of the OperationalData key.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// <p>The type of key-value pair. Valid types include <code>SearchableString</code> and <code>String</code>.</p>
     pub fn r#type(mut self, input: crate::types::OpsItemDataType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl OpsItemDataValueBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::OpsItemDataType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of key-value pair. Valid types include <code>SearchableString</code> and <code>String</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::OpsItemDataType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`OpsItemDataValue`](crate::types::OpsItemDataValue).
     pub fn build(self) -> crate::types::OpsItemDataValue {

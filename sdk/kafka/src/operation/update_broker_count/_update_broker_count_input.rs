@@ -56,6 +56,10 @@ impl UpdateBrokerCountInputBuilder {
         self.cluster_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_arn
+    }
     /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
     pub fn current_version(
         mut self,
@@ -72,6 +76,10 @@ impl UpdateBrokerCountInputBuilder {
         self.current_version = input;
         self
     }
+    /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
+    pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.current_version
+    }
     /// <p>The number of broker nodes that you want the cluster to have after this operation completes successfully.</p>
     pub fn target_number_of_broker_nodes(mut self, input: i32) -> Self {
         self.target_number_of_broker_nodes = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl UpdateBrokerCountInputBuilder {
     pub fn set_target_number_of_broker_nodes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.target_number_of_broker_nodes = input;
         self
+    }
+    /// <p>The number of broker nodes that you want the cluster to have after this operation completes successfully.</p>
+    pub fn get_target_number_of_broker_nodes(&self) -> &::std::option::Option<i32> {
+        &self.target_number_of_broker_nodes
     }
     /// Consumes the builder and constructs a [`UpdateBrokerCountInput`](crate::operation::update_broker_count::UpdateBrokerCountInput).
     pub fn build(

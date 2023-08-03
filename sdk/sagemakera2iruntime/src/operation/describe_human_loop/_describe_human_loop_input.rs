@@ -46,6 +46,10 @@ impl DescribeHumanLoopInputBuilder {
         self.human_loop_name = input;
         self
     }
+    /// <p>The name of the human loop that you want information about.</p>
+    pub fn get_human_loop_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.human_loop_name
+    }
     /// Consumes the builder and constructs a [`DescribeHumanLoopInput`](crate::operation::describe_human_loop::DescribeHumanLoopInput).
     pub fn build(
         self,

@@ -40,6 +40,10 @@ impl RuntimeHintValueBuilder {
         self.phrase = input;
         self
     }
+    /// <p>The phrase that Amazon Lex should look for in the user's input to the bot.</p>
+    pub fn get_phrase(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phrase
+    }
     /// Consumes the builder and constructs a [`RuntimeHintValue`](crate::types::RuntimeHintValue).
     pub fn build(self) -> crate::types::RuntimeHintValue {
         crate::types::RuntimeHintValue {

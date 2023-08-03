@@ -77,6 +77,10 @@ impl ConflictExceptionBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The type of ConflictException.</p>
     pub fn conflict_exception_type(mut self, input: crate::types::ConflictExceptionType) -> Self {
         self.conflict_exception_type = ::std::option::Option::Some(input);
@@ -89,6 +93,12 @@ impl ConflictExceptionBuilder {
     ) -> Self {
         self.conflict_exception_type = input;
         self
+    }
+    /// <p>The type of ConflictException.</p>
+    pub fn get_conflict_exception_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConflictExceptionType> {
+        &self.conflict_exception_type
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

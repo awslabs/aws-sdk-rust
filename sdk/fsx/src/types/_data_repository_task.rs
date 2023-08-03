@@ -189,6 +189,10 @@ impl DataRepositoryTaskBuilder {
         self.task_id = input;
         self
     }
+    /// <p>The system-generated, unique 17-digit ID of the data repository task.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
+    }
     /// <p>The lifecycle status of the data repository task, as follows:</p>
     /// <ul>
     /// <li> <p> <code>PENDING</code> - The task has not started.</p> </li>
@@ -222,6 +226,22 @@ impl DataRepositoryTaskBuilder {
         self.lifecycle = input;
         self
     }
+    /// <p>The lifecycle status of the data repository task, as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING</code> - The task has not started.</p> </li>
+    /// <li> <p> <code>EXECUTING</code> - The task is in process.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The task was not able to be completed. For example, there may be files the task failed to process. The <code>DataRepositoryTaskFailureDetails</code> property provides more information about task failures.</p> </li>
+    /// <li> <p> <code>SUCCEEDED</code> - The task has completed successfully.</p> </li>
+    /// <li> <p> <code>CANCELED</code> - The task was canceled and it did not complete.</p> </li>
+    /// <li> <p> <code>CANCELING</code> - The task is in process of being canceled.</p> </li>
+    /// </ul> <note>
+    /// <p>You cannot delete an FSx for Lustre file system if there are data repository tasks for the file system in the <code>PENDING</code> or <code>EXECUTING</code> states. Please retry when the data repository task is finished (with a status of <code>CANCELED</code>, <code>SUCCEEDED</code>, or <code>FAILED</code>). You can use the DescribeDataRepositoryTask action to monitor the task status. Contact the FSx team if you need to delete your file system immediately.</p>
+    /// </note>
+    pub fn get_lifecycle(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataRepositoryTaskLifecycle> {
+        &self.lifecycle
+    }
     /// <p>The type of data repository task.</p>
     /// <ul>
     /// <li> <p> <code>EXPORT_TO_REPOSITORY</code> tasks export from your Amazon FSx for Lustre file system to a linked data repository.</p> </li>
@@ -247,6 +267,16 @@ impl DataRepositoryTaskBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of data repository task.</p>
+    /// <ul>
+    /// <li> <p> <code>EXPORT_TO_REPOSITORY</code> tasks export from your Amazon FSx for Lustre file system to a linked data repository.</p> </li>
+    /// <li> <p> <code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from a linked S3 bucket to your Amazon FSx for Lustre file system.</p> </li>
+    /// <li> <p> <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.</p> </li>
+    /// <li> <p> <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks are not supported.</p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::DataRepositoryTaskType> {
+        &self.r#type
+    }
     /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -259,6 +289,10 @@ impl DataRepositoryTaskBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The time the system began processing the task.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -273,6 +307,10 @@ impl DataRepositoryTaskBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The time the system began processing the task.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The time the system completed processing the task, populated after the task is complete.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -286,6 +324,10 @@ impl DataRepositoryTaskBuilder {
         self.end_time = input;
         self
     }
+    /// <p>The time the system completed processing the task, populated after the task is complete.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -295,6 +337,10 @@ impl DataRepositoryTaskBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// Appends an item to `tags`.
     ///
@@ -315,6 +361,10 @@ impl DataRepositoryTaskBuilder {
         self.tags = input;
         self
     }
+    /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The globally unique ID of the file system.</p>
     pub fn file_system_id(
         mut self,
@@ -330,6 +380,10 @@ impl DataRepositoryTaskBuilder {
     ) -> Self {
         self.file_system_id = input;
         self
+    }
+    /// <p>The globally unique ID of the file system.</p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_system_id
     }
     /// Appends an item to `paths`.
     ///
@@ -352,6 +406,11 @@ impl DataRepositoryTaskBuilder {
         self.paths = input;
         self
     }
+    /// <p>An array of paths that specify the data for the data repository task to process. For example, in an EXPORT_TO_REPOSITORY task, the paths specify which data to export to the linked data repository.</p>
+    /// <p>(Default) If <code>Paths</code> is not specified, Amazon FSx uses the file system root directory.</p>
+    pub fn get_paths(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.paths
+    }
     /// <p>Failure message describing why the task failed, it is populated only when <code>Lifecycle</code> is set to <code>FAILED</code>.</p>
     pub fn failure_details(
         mut self,
@@ -368,6 +427,12 @@ impl DataRepositoryTaskBuilder {
         self.failure_details = input;
         self
     }
+    /// <p>Failure message describing why the task failed, it is populated only when <code>Lifecycle</code> is set to <code>FAILED</code>.</p>
+    pub fn get_failure_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataRepositoryTaskFailureDetails> {
+        &self.failure_details
+    }
     /// <p>Provides the status of the number of files that the task has processed successfully and failed to process.</p>
     pub fn status(mut self, input: crate::types::DataRepositoryTaskStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -380,6 +445,10 @@ impl DataRepositoryTaskBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Provides the status of the number of files that the task has processed successfully and failed to process.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DataRepositoryTaskStatus> {
+        &self.status
     }
     /// <p>Provides a report detailing the data repository task results of the files processed that match the criteria specified in the report <code>Scope</code> parameter. FSx delivers the report to the file system's linked data repository in Amazon S3, using the path specified in the report <code>Path</code> parameter. You can specify whether or not a report gets generated for a task using the <code>Enabled</code> parameter.</p>
     pub fn report(mut self, input: crate::types::CompletionReport) -> Self {
@@ -394,6 +463,10 @@ impl DataRepositoryTaskBuilder {
         self.report = input;
         self
     }
+    /// <p>Provides a report detailing the data repository task results of the files processed that match the criteria specified in the report <code>Scope</code> parameter. FSx delivers the report to the file system's linked data repository in Amazon S3, using the path specified in the report <code>Path</code> parameter. You can specify whether or not a report gets generated for a task using the <code>Enabled</code> parameter.</p>
+    pub fn get_report(&self) -> &::std::option::Option<crate::types::CompletionReport> {
+        &self.report
+    }
     /// <p>Specifies the amount of data to release, in GiB, by an Amazon File Cache AUTO_RELEASE_DATA task that automatically releases files from the cache.</p>
     pub fn capacity_to_release(mut self, input: i64) -> Self {
         self.capacity_to_release = ::std::option::Option::Some(input);
@@ -403,6 +476,10 @@ impl DataRepositoryTaskBuilder {
     pub fn set_capacity_to_release(mut self, input: ::std::option::Option<i64>) -> Self {
         self.capacity_to_release = input;
         self
+    }
+    /// <p>Specifies the amount of data to release, in GiB, by an Amazon File Cache AUTO_RELEASE_DATA task that automatically releases files from the cache.</p>
+    pub fn get_capacity_to_release(&self) -> &::std::option::Option<i64> {
+        &self.capacity_to_release
     }
     /// <p>The system-generated, unique ID of the cache.</p>
     pub fn file_cache_id(
@@ -419,6 +496,10 @@ impl DataRepositoryTaskBuilder {
     ) -> Self {
         self.file_cache_id = input;
         self
+    }
+    /// <p>The system-generated, unique ID of the cache.</p>
+    pub fn get_file_cache_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_cache_id
     }
     /// Consumes the builder and constructs a [`DataRepositoryTask`](crate::types::DataRepositoryTask).
     pub fn build(self) -> crate::types::DataRepositoryTask {

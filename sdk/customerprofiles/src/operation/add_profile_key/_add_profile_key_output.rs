@@ -54,6 +54,10 @@ impl AddProfileKeyOutputBuilder {
         self.key_name = input;
         self
     }
+    /// <p>A searchable identifier of a customer profile.</p>
+    pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_name
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -72,6 +76,10 @@ impl AddProfileKeyOutputBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>A list of key values.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -36,6 +36,13 @@ impl PutEventsConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutEventsConfiguration as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_events_configuration::builders::PutEventsConfigurationInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl PutEventsConfigurationFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p>The bot ID.</p>
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_id(input.into());
@@ -135,6 +146,10 @@ impl PutEventsConfigurationFluentBuilder {
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bot_id(input);
         self
+    }
+    /// <p>The bot ID.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_id()
     }
     /// <p>HTTPS endpoint that allows the bot to receive outgoing events.</p>
     pub fn outbound_events_https_endpoint(
@@ -152,6 +167,12 @@ impl PutEventsConfigurationFluentBuilder {
         self.inner = self.inner.set_outbound_events_https_endpoint(input);
         self
     }
+    /// <p>HTTPS endpoint that allows the bot to receive outgoing events.</p>
+    pub fn get_outbound_events_https_endpoint(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_outbound_events_https_endpoint()
+    }
     /// <p>Lambda function ARN that allows the bot to receive outgoing events.</p>
     pub fn lambda_function_arn(
         mut self,
@@ -167,5 +188,9 @@ impl PutEventsConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_lambda_function_arn(input);
         self
+    }
+    /// <p>Lambda function ARN that allows the bot to receive outgoing events.</p>
+    pub fn get_lambda_function_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_lambda_function_arn()
     }
 }

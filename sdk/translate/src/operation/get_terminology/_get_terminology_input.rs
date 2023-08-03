@@ -53,6 +53,10 @@ impl GetTerminologyInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the custom terminology being retrieved.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The data format of the custom terminology being retrieved.</p>
     /// <p>If you don't specify this parameter, Amazon Translate returns a file with the same format as the file that was imported to create the terminology. </p>
     /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource, you must specify the same format as the input file that was imported to create it. Otherwise, Amazon Translate throws an error.</p>
@@ -69,6 +73,14 @@ impl GetTerminologyInputBuilder {
     ) -> Self {
         self.terminology_data_format = input;
         self
+    }
+    /// <p>The data format of the custom terminology being retrieved.</p>
+    /// <p>If you don't specify this parameter, Amazon Translate returns a file with the same format as the file that was imported to create the terminology. </p>
+    /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource, you must specify the same format as the input file that was imported to create it. Otherwise, Amazon Translate throws an error.</p>
+    pub fn get_terminology_data_format(
+        &self,
+    ) -> &::std::option::Option<crate::types::TerminologyDataFormat> {
+        &self.terminology_data_format
     }
     /// Consumes the builder and constructs a [`GetTerminologyInput`](crate::operation::get_terminology::GetTerminologyInput).
     pub fn build(

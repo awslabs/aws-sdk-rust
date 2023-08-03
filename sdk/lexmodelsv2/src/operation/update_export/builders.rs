@@ -37,6 +37,10 @@ impl UpdateExportFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateExport as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_export::builders::UpdateExportInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl UpdateExportFluentBuilder {
         self.inner = self.inner.set_export_id(input);
         self
     }
+    /// <p>The unique identifier Amazon Lex assigned to the export.</p>
+    pub fn get_export_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_export_id()
+    }
     /// <p>The new password to use to encrypt the export zip archive.</p>
     pub fn file_password(
         mut self,
@@ -134,5 +142,9 @@ impl UpdateExportFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_file_password(input);
         self
+    }
+    /// <p>The new password to use to encrypt the export zip archive.</p>
+    pub fn get_file_password(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_file_password()
     }
 }

@@ -66,6 +66,10 @@ impl CreateXmlClassifierRequestBuilder {
         self.classification = input;
         self
     }
+    /// <p>An identifier of the data format that the classifier matches.</p>
+    pub fn get_classification(&self) -> &::std::option::Option<::std::string::String> {
+        &self.classification
+    }
     /// <p>The name of the classifier.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl CreateXmlClassifierRequestBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the classifier.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The XML tag designating the element that contains each record in an XML document being parsed. This can't identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only attributes can be parsed as long as it ends with a closing tag (for example, <code>
     /// <row item_a="A" item_b="B" /></code> is okay, but <code>
@@ -89,6 +97,12 @@ impl CreateXmlClassifierRequestBuilder {
     pub fn set_row_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.row_tag = input;
         self
+    }
+    /// <p>The XML tag designating the element that contains each record in an XML document being parsed. This can't identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only attributes can be parsed as long as it ends with a closing tag (for example, <code>
+    /// <row item_a="A" item_b="B" /></code> is okay, but <code>
+    /// <row item_a="A" item_b="B" /></code> is not).</p>
+    pub fn get_row_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.row_tag
     }
     /// Consumes the builder and constructs a [`CreateXmlClassifierRequest`](crate::types::CreateXmlClassifierRequest).
     pub fn build(self) -> crate::types::CreateXmlClassifierRequest {

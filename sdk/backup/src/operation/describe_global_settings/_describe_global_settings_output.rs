@@ -79,6 +79,14 @@ impl DescribeGlobalSettingsOutputBuilder {
         self.global_settings = input;
         self
     }
+    /// <p>The status of the flag <code>isCrossAccountBackupEnabled</code>.</p>
+    pub fn get_global_settings(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.global_settings
+    }
     /// <p>The date and time that the flag <code>isCrossAccountBackupEnabled</code> was last updated. This update is in Unix format and Coordinated Universal Time (UTC). The value of <code>LastUpdateTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn last_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_update_time = ::std::option::Option::Some(input);
@@ -91,6 +99,10 @@ impl DescribeGlobalSettingsOutputBuilder {
     ) -> Self {
         self.last_update_time = input;
         self
+    }
+    /// <p>The date and time that the flag <code>isCrossAccountBackupEnabled</code> was last updated. This update is in Unix format and Coordinated Universal Time (UTC). The value of <code>LastUpdateTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_update_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

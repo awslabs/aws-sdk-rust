@@ -193,6 +193,10 @@ impl ChannelBuilder {
         self.arn = input;
         self
     }
+    /// The unique arn of the channel.
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Specification of CDI inputs for this channel
     pub fn cdi_input_specification(mut self, input: crate::types::CdiInputSpecification) -> Self {
         self.cdi_input_specification = ::std::option::Option::Some(input);
@@ -206,6 +210,12 @@ impl ChannelBuilder {
         self.cdi_input_specification = input;
         self
     }
+    /// Specification of CDI inputs for this channel
+    pub fn get_cdi_input_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::CdiInputSpecification> {
+        &self.cdi_input_specification
+    }
     /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
     pub fn channel_class(mut self, input: crate::types::ChannelClass) -> Self {
         self.channel_class = ::std::option::Option::Some(input);
@@ -218,6 +228,10 @@ impl ChannelBuilder {
     ) -> Self {
         self.channel_class = input;
         self
+    }
+    /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
+    pub fn get_channel_class(&self) -> &::std::option::Option<crate::types::ChannelClass> {
+        &self.channel_class
     }
     /// Appends an item to `destinations`.
     ///
@@ -238,6 +252,12 @@ impl ChannelBuilder {
         self.destinations = input;
         self
     }
+    /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
+    pub fn get_destinations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputDestination>> {
+        &self.destinations
+    }
     /// Appends an item to `egress_endpoints`.
     ///
     /// To override the contents of this collection use [`set_egress_endpoints`](Self::set_egress_endpoints).
@@ -257,6 +277,12 @@ impl ChannelBuilder {
         self.egress_endpoints = input;
         self
     }
+    /// The endpoints where outgoing connections initiate from
+    pub fn get_egress_endpoints(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelEgressEndpoint>> {
+        &self.egress_endpoints
+    }
     /// Encoder Settings
     pub fn encoder_settings(mut self, input: crate::types::EncoderSettings) -> Self {
         self.encoder_settings = ::std::option::Option::Some(input);
@@ -270,6 +296,10 @@ impl ChannelBuilder {
         self.encoder_settings = input;
         self
     }
+    /// Encoder Settings
+    pub fn get_encoder_settings(&self) -> &::std::option::Option<crate::types::EncoderSettings> {
+        &self.encoder_settings
+    }
     /// The unique id of the channel.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -279,6 +309,10 @@ impl ChannelBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// The unique id of the channel.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Appends an item to `input_attachments`.
     ///
@@ -299,6 +333,12 @@ impl ChannelBuilder {
         self.input_attachments = input;
         self
     }
+    /// List of input attachments for channel.
+    pub fn get_input_attachments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputAttachment>> {
+        &self.input_attachments
+    }
     /// Specification of network and file inputs for this channel
     pub fn input_specification(mut self, input: crate::types::InputSpecification) -> Self {
         self.input_specification = ::std::option::Option::Some(input);
@@ -312,6 +352,12 @@ impl ChannelBuilder {
         self.input_specification = input;
         self
     }
+    /// Specification of network and file inputs for this channel
+    pub fn get_input_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::InputSpecification> {
+        &self.input_specification
+    }
     /// The log level being written to CloudWatch Logs.
     pub fn log_level(mut self, input: crate::types::LogLevel) -> Self {
         self.log_level = ::std::option::Option::Some(input);
@@ -321,6 +367,10 @@ impl ChannelBuilder {
     pub fn set_log_level(mut self, input: ::std::option::Option<crate::types::LogLevel>) -> Self {
         self.log_level = input;
         self
+    }
+    /// The log level being written to CloudWatch Logs.
+    pub fn get_log_level(&self) -> &::std::option::Option<crate::types::LogLevel> {
+        &self.log_level
     }
     /// Maintenance settings for this channel.
     pub fn maintenance(mut self, input: crate::types::MaintenanceStatus) -> Self {
@@ -335,6 +385,10 @@ impl ChannelBuilder {
         self.maintenance = input;
         self
     }
+    /// Maintenance settings for this channel.
+    pub fn get_maintenance(&self) -> &::std::option::Option<crate::types::MaintenanceStatus> {
+        &self.maintenance
+    }
     /// The name of the channel. (user-mutable)
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -344,6 +398,10 @@ impl ChannelBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// The name of the channel. (user-mutable)
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `pipeline_details`.
     ///
@@ -364,6 +422,12 @@ impl ChannelBuilder {
         self.pipeline_details = input;
         self
     }
+    /// Runtime details for the pipelines of a running channel.
+    pub fn get_pipeline_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineDetail>> {
+        &self.pipeline_details
+    }
     /// The number of currently healthy pipelines.
     pub fn pipelines_running_count(mut self, input: i32) -> Self {
         self.pipelines_running_count = ::std::option::Option::Some(input);
@@ -373,6 +437,10 @@ impl ChannelBuilder {
     pub fn set_pipelines_running_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.pipelines_running_count = input;
         self
+    }
+    /// The number of currently healthy pipelines.
+    pub fn get_pipelines_running_count(&self) -> &::std::option::Option<i32> {
+        &self.pipelines_running_count
     }
     /// The Amazon Resource Name (ARN) of the role assumed when running the Channel.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -384,6 +452,10 @@ impl ChannelBuilder {
         self.role_arn = input;
         self
     }
+    /// The Amazon Resource Name (ARN) of the role assumed when running the Channel.
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// Placeholder documentation for ChannelState
     pub fn state(mut self, input: crate::types::ChannelState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -393,6 +465,10 @@ impl ChannelBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ChannelState>) -> Self {
         self.state = input;
         self
+    }
+    /// Placeholder documentation for ChannelState
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ChannelState> {
+        &self.state
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -419,6 +495,14 @@ impl ChannelBuilder {
         self.tags = input;
         self
     }
+    /// A collection of key-value pairs.
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// Settings for VPC output
     pub fn vpc(mut self, input: crate::types::VpcOutputSettingsDescription) -> Self {
         self.vpc = ::std::option::Option::Some(input);
@@ -431,6 +515,10 @@ impl ChannelBuilder {
     ) -> Self {
         self.vpc = input;
         self
+    }
+    /// Settings for VPC output
+    pub fn get_vpc(&self) -> &::std::option::Option<crate::types::VpcOutputSettingsDescription> {
+        &self.vpc
     }
     /// Consumes the builder and constructs a [`Channel`](crate::types::Channel).
     pub fn build(self) -> crate::types::Channel {

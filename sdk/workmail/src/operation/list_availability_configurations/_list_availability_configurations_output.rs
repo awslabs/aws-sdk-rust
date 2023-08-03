@@ -70,6 +70,12 @@ impl ListAvailabilityConfigurationsOutputBuilder {
         self.availability_configurations = input;
         self
     }
+    /// <p>The list of <code>AvailabilityConfiguration</code>'s that exist for the specified WorkMail organization.</p>
+    pub fn get_availability_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailabilityConfiguration>> {
+        &self.availability_configurations
+    }
     /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no further results to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -79,6 +85,10 @@ impl ListAvailabilityConfigurationsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no further results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

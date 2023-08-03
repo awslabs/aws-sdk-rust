@@ -48,6 +48,10 @@ impl TextDetectionResultBuilder {
         self.timestamp = input;
         self
     }
+    /// <p>The time, in milliseconds from the start of the video, that the text was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the text first appears.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<i64> {
+        &self.timestamp
+    }
     /// <p>Details about text detected in a video.</p>
     pub fn text_detection(mut self, input: crate::types::TextDetection) -> Self {
         self.text_detection = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl TextDetectionResultBuilder {
     ) -> Self {
         self.text_detection = input;
         self
+    }
+    /// <p>Details about text detected in a video.</p>
+    pub fn get_text_detection(&self) -> &::std::option::Option<crate::types::TextDetection> {
+        &self.text_detection
     }
     /// Consumes the builder and constructs a [`TextDetectionResult`](crate::types::TextDetectionResult).
     pub fn build(self) -> crate::types::TextDetectionResult {

@@ -40,6 +40,10 @@ impl AmazonOpenSearchParametersBuilder {
         self.domain = input;
         self
     }
+    /// <p>The OpenSearch domain.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
+    }
     /// Consumes the builder and constructs a [`AmazonOpenSearchParameters`](crate::types::AmazonOpenSearchParameters).
     pub fn build(self) -> crate::types::AmazonOpenSearchParameters {
         crate::types::AmazonOpenSearchParameters {

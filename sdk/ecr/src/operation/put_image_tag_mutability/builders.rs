@@ -36,6 +36,13 @@ impl PutImageTagMutabilityFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutImageTagMutability as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_image_tag_mutability::builders::PutImageTagMutabilityInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl PutImageTagMutabilityFluentBuilder {
         self.inner = self.inner.set_registry_id(input);
         self
     }
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to update the image tag mutability settings. If you do not specify a registry, the default registry is assumed.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_registry_id()
+    }
     /// <p>The name of the repository in which to update the image tag mutability settings.</p>
     pub fn repository_name(
         mut self,
@@ -142,6 +153,10 @@ impl PutImageTagMutabilityFluentBuilder {
         self.inner = self.inner.set_repository_name(input);
         self
     }
+    /// <p>The name of the repository in which to update the image tag mutability settings.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository_name()
+    }
     /// <p>The tag mutability setting for the repository. If <code>MUTABLE</code> is specified, image tags can be overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
     pub fn image_tag_mutability(mut self, input: crate::types::ImageTagMutability) -> Self {
         self.inner = self.inner.image_tag_mutability(input);
@@ -154,5 +169,11 @@ impl PutImageTagMutabilityFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_image_tag_mutability(input);
         self
+    }
+    /// <p>The tag mutability setting for the repository. If <code>MUTABLE</code> is specified, image tags can be overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
+    pub fn get_image_tag_mutability(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImageTagMutability> {
+        self.inner.get_image_tag_mutability()
     }
 }

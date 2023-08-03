@@ -54,6 +54,10 @@ impl DmsTransferSettingsBuilder {
         self.service_access_role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
+    pub fn get_service_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_access_role_arn
+    }
     /// <p> The name of the S3 bucket to use. </p>
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_name = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl DmsTransferSettingsBuilder {
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_name = input;
         self
+    }
+    /// <p> The name of the S3 bucket to use. </p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
     }
     /// Consumes the builder and constructs a [`DmsTransferSettings`](crate::types::DmsTransferSettings).
     pub fn build(self) -> crate::types::DmsTransferSettings {

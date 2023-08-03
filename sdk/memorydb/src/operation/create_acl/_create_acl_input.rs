@@ -55,6 +55,10 @@ impl CreateAclInputBuilder {
         self.acl_name = input;
         self
     }
+    /// <p>The name of the Access Control List.</p>
+    pub fn get_acl_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.acl_name
+    }
     /// Appends an item to `user_names`.
     ///
     /// To override the contents of this collection use [`set_user_names`](Self::set_user_names).
@@ -74,6 +78,10 @@ impl CreateAclInputBuilder {
         self.user_names = input;
         self
     }
+    /// <p>The list of users that belong to the Access Control List.</p>
+    pub fn get_user_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.user_names
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -92,6 +100,10 @@ impl CreateAclInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateAclInput`](crate::operation::create_acl::CreateAclInput).
     pub fn build(

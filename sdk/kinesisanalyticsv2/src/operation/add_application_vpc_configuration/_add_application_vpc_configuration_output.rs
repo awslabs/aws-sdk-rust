@@ -72,6 +72,10 @@ impl AddApplicationVpcConfigurationOutputBuilder {
         self.application_arn = input;
         self
     }
+    /// <p>The ARN of the application.</p>
+    pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_arn
+    }
     /// <p>Provides the current application version. Kinesis Data Analytics updates the ApplicationVersionId each time you update the application.</p>
     pub fn application_version_id(mut self, input: i64) -> Self {
         self.application_version_id = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl AddApplicationVpcConfigurationOutputBuilder {
     pub fn set_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.application_version_id = input;
         self
+    }
+    /// <p>Provides the current application version. Kinesis Data Analytics updates the ApplicationVersionId each time you update the application.</p>
+    pub fn get_application_version_id(&self) -> &::std::option::Option<i64> {
+        &self.application_version_id
     }
     /// <p>The parameters of the new VPC configuration.</p>
     pub fn vpc_configuration_description(
@@ -97,6 +105,12 @@ impl AddApplicationVpcConfigurationOutputBuilder {
     ) -> Self {
         self.vpc_configuration_description = input;
         self
+    }
+    /// <p>The parameters of the new VPC configuration.</p>
+    pub fn get_vpc_configuration_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::VpcConfigurationDescription> {
+        &self.vpc_configuration_description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -159,6 +159,10 @@ impl CreateRouteOutputBuilder {
         self.route_id = input;
         self
     }
+    /// <p>The unique identifier of the route.</p>
+    pub fn get_route_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.route_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the route. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i> </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -168,6 +172,10 @@ impl CreateRouteOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the route. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i> </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The Amazon Web Services account ID of the route owner.</p>
     pub fn owner_account_id(
@@ -185,6 +193,10 @@ impl CreateRouteOutputBuilder {
         self.owner_account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID of the route owner.</p>
+    pub fn get_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_account_id
+    }
     /// <p>The Amazon Web Services account ID of the route creator.</p>
     pub fn created_by_account_id(
         mut self,
@@ -201,6 +213,10 @@ impl CreateRouteOutputBuilder {
         self.created_by_account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID of the route creator.</p>
+    pub fn get_created_by_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by_account_id
+    }
     /// <p>The route type of the route.</p>
     pub fn route_type(mut self, input: crate::types::RouteType) -> Self {
         self.route_type = ::std::option::Option::Some(input);
@@ -211,6 +227,10 @@ impl CreateRouteOutputBuilder {
         self.route_type = input;
         self
     }
+    /// <p>The route type of the route.</p>
+    pub fn get_route_type(&self) -> &::std::option::Option<crate::types::RouteType> {
+        &self.route_type
+    }
     /// <p>The ID of service in which the route is created. Traffic that matches this route is forwarded to this service.</p>
     pub fn service_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_id = ::std::option::Option::Some(input.into());
@@ -220,6 +240,10 @@ impl CreateRouteOutputBuilder {
     pub fn set_service_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_id = input;
         self
+    }
+    /// <p>The ID of service in which the route is created. Traffic that matches this route is forwarded to this service.</p>
+    pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_id
     }
     /// <p>The ID of the application in which the route is created.</p>
     pub fn application_id(
@@ -237,6 +261,10 @@ impl CreateRouteOutputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The ID of the application in which the route is created.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>Configuration for the URI path route type. </p>
     pub fn uri_path_route(mut self, input: crate::types::UriPathRouteInput) -> Self {
         self.uri_path_route = ::std::option::Option::Some(input);
@@ -250,6 +278,10 @@ impl CreateRouteOutputBuilder {
         self.uri_path_route = input;
         self
     }
+    /// <p>Configuration for the URI path route type. </p>
+    pub fn get_uri_path_route(&self) -> &::std::option::Option<crate::types::UriPathRouteInput> {
+        &self.uri_path_route
+    }
     /// <p>The current state of the route. Activation state only allows <code>ACTIVE</code> or <code>INACTIVE</code> as user inputs. <code>FAILED</code> is a route state that is system generated.</p>
     pub fn state(mut self, input: crate::types::RouteState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -259,6 +291,10 @@ impl CreateRouteOutputBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::RouteState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The current state of the route. Activation state only allows <code>ACTIVE</code> or <code>INACTIVE</code> as user inputs. <code>FAILED</code> is a route state that is system generated.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::RouteState> {
+        &self.state
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -285,6 +321,14 @@ impl CreateRouteOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags assigned to the created route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>A timestamp that indicates when the route was last updated. </p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -298,6 +342,10 @@ impl CreateRouteOutputBuilder {
         self.last_updated_time = input;
         self
     }
+    /// <p>A timestamp that indicates when the route was last updated. </p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
+    }
     /// <p>A timestamp that indicates when the route is created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
@@ -310,6 +358,10 @@ impl CreateRouteOutputBuilder {
     ) -> Self {
         self.created_time = input;
         self
+    }
+    /// <p>A timestamp that indicates when the route is created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

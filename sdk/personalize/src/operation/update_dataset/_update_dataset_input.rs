@@ -47,6 +47,10 @@ impl UpdateDatasetInputBuilder {
         self.dataset_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the dataset that you want to update.</p>
+    pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the new schema you want use.</p>
     pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_arn = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl UpdateDatasetInputBuilder {
     pub fn set_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the new schema you want use.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_arn
     }
     /// Consumes the builder and constructs a [`UpdateDatasetInput`](crate::operation::update_dataset::UpdateDatasetInput).
     pub fn build(

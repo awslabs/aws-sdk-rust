@@ -51,6 +51,10 @@ impl PolicyBuilder {
         self.policy_summary = input;
         self
     }
+    /// <p>A structure that contains additional details about the policy.</p>
+    pub fn get_policy_summary(&self) -> &::std::option::Option<crate::types::PolicySummary> {
+        &self.policy_summary
+    }
     /// <p>The text content of the policy.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl PolicyBuilder {
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
+    }
+    /// <p>The text content of the policy.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
     }
     /// Consumes the builder and constructs a [`Policy`](crate::types::Policy).
     pub fn build(self) -> crate::types::Policy {

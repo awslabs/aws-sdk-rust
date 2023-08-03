@@ -117,6 +117,12 @@ impl AwsEc2NetworkInterfaceDetailsBuilder {
         self.attachment = input;
         self
     }
+    /// <p>The network interface attachment.</p>
+    pub fn get_attachment(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsEc2NetworkInterfaceAttachment> {
+        &self.attachment
+    }
     /// <p>The ID of the network interface.</p>
     pub fn network_interface_id(
         mut self,
@@ -132,6 +138,10 @@ impl AwsEc2NetworkInterfaceDetailsBuilder {
     ) -> Self {
         self.network_interface_id = input;
         self
+    }
+    /// <p>The ID of the network interface.</p>
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_interface_id
     }
     /// Appends an item to `security_groups`.
     ///
@@ -157,6 +167,13 @@ impl AwsEc2NetworkInterfaceDetailsBuilder {
         self.security_groups = input;
         self
     }
+    /// <p>Security groups for the network interface.</p>
+    pub fn get_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkInterfaceSecurityGroup>>
+    {
+        &self.security_groups
+    }
     /// <p>Indicates whether traffic to or from the instance is validated.</p>
     pub fn source_dest_check(mut self, input: bool) -> Self {
         self.source_dest_check = ::std::option::Option::Some(input);
@@ -166,6 +183,10 @@ impl AwsEc2NetworkInterfaceDetailsBuilder {
     pub fn set_source_dest_check(mut self, input: ::std::option::Option<bool>) -> Self {
         self.source_dest_check = input;
         self
+    }
+    /// <p>Indicates whether traffic to or from the instance is validated.</p>
+    pub fn get_source_dest_check(&self) -> &::std::option::Option<bool> {
+        &self.source_dest_check
     }
     /// Appends an item to `ip_v6_addresses`.
     ///
@@ -191,6 +212,14 @@ impl AwsEc2NetworkInterfaceDetailsBuilder {
         self.ip_v6_addresses = input;
         self
     }
+    /// <p>The IPv6 addresses associated with the network interface.</p>
+    pub fn get_ip_v6_addresses(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::AwsEc2NetworkInterfaceIpV6AddressDetail>,
+    > {
+        &self.ip_v6_addresses
+    }
     /// Appends an item to `private_ip_addresses`.
     ///
     /// To override the contents of this collection use [`set_private_ip_addresses`](Self::set_private_ip_addresses).
@@ -215,6 +244,14 @@ impl AwsEc2NetworkInterfaceDetailsBuilder {
         self.private_ip_addresses = input;
         self
     }
+    /// <p>The private IPv4 addresses associated with the network interface.</p>
+    pub fn get_private_ip_addresses(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::AwsEc2NetworkInterfacePrivateIpAddressDetail>,
+    > {
+        &self.private_ip_addresses
+    }
     /// <p>The public DNS name of the network interface.</p>
     pub fn public_dns_name(
         mut self,
@@ -231,6 +268,10 @@ impl AwsEc2NetworkInterfaceDetailsBuilder {
         self.public_dns_name = input;
         self
     }
+    /// <p>The public DNS name of the network interface.</p>
+    pub fn get_public_dns_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_dns_name
+    }
     /// <p>The address of the Elastic IP address bound to the network interface.</p>
     pub fn public_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_ip = ::std::option::Option::Some(input.into());
@@ -240,6 +281,10 @@ impl AwsEc2NetworkInterfaceDetailsBuilder {
     pub fn set_public_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_ip = input;
         self
+    }
+    /// <p>The address of the Elastic IP address bound to the network interface.</p>
+    pub fn get_public_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_ip
     }
     /// Consumes the builder and constructs a [`AwsEc2NetworkInterfaceDetails`](crate::types::AwsEc2NetworkInterfaceDetails).
     pub fn build(self) -> crate::types::AwsEc2NetworkInterfaceDetails {

@@ -66,6 +66,15 @@ impl AwsCloudFrontDistributionCacheBehaviorBuilder {
         self.viewer_protocol_policy = input;
         self
     }
+    /// <p>The protocol that viewers can use to access the files in an origin. You can specify the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>allow-all</code> - Viewers can use HTTP or HTTPS.</p> </li>
+    /// <li> <p> <code>redirect-to-https</code> - CloudFront responds to HTTP requests with an HTTP status code of 301 (Moved Permanently) and the HTTPS URL. The viewer then uses the new URL to resubmit.</p> </li>
+    /// <li> <p> <code>https-only</code> - CloudFront responds to HTTP request with an HTTP status code of 403 (Forbidden).</p> </li>
+    /// </ul>
+    pub fn get_viewer_protocol_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.viewer_protocol_policy
+    }
     /// Consumes the builder and constructs a [`AwsCloudFrontDistributionCacheBehavior`](crate::types::AwsCloudFrontDistributionCacheBehavior).
     pub fn build(self) -> crate::types::AwsCloudFrontDistributionCacheBehavior {
         crate::types::AwsCloudFrontDistributionCacheBehavior {

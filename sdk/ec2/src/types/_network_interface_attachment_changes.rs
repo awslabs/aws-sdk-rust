@@ -54,6 +54,10 @@ impl NetworkInterfaceAttachmentChangesBuilder {
         self.attachment_id = input;
         self
     }
+    /// <p>The ID of the network interface attachment.</p>
+    pub fn get_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attachment_id
+    }
     /// <p>Indicates whether the network interface is deleted when the instance is terminated.</p>
     pub fn delete_on_termination(mut self, input: bool) -> Self {
         self.delete_on_termination = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl NetworkInterfaceAttachmentChangesBuilder {
     pub fn set_delete_on_termination(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete_on_termination = input;
         self
+    }
+    /// <p>Indicates whether the network interface is deleted when the instance is terminated.</p>
+    pub fn get_delete_on_termination(&self) -> &::std::option::Option<bool> {
+        &self.delete_on_termination
     }
     /// Consumes the builder and constructs a [`NetworkInterfaceAttachmentChanges`](crate::types::NetworkInterfaceAttachmentChanges).
     pub fn build(self) -> crate::types::NetworkInterfaceAttachmentChanges {

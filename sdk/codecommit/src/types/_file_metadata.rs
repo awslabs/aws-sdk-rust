@@ -62,6 +62,10 @@ impl FileMetadataBuilder {
         self.absolute_path = input;
         self
     }
+    /// <p>The full path to the file to be added or updated, including the name of the file.</p>
+    pub fn get_absolute_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.absolute_path
+    }
     /// <p>The blob ID that contains the file information.</p>
     pub fn blob_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.blob_id = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl FileMetadataBuilder {
     pub fn set_blob_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.blob_id = input;
         self
+    }
+    /// <p>The blob ID that contains the file information.</p>
+    pub fn get_blob_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.blob_id
     }
     /// <p>The extrapolated file mode permissions for the file. Valid values include EXECUTABLE and NORMAL.</p>
     pub fn file_mode(mut self, input: crate::types::FileModeTypeEnum) -> Self {
@@ -84,6 +92,10 @@ impl FileMetadataBuilder {
     ) -> Self {
         self.file_mode = input;
         self
+    }
+    /// <p>The extrapolated file mode permissions for the file. Valid values include EXECUTABLE and NORMAL.</p>
+    pub fn get_file_mode(&self) -> &::std::option::Option<crate::types::FileModeTypeEnum> {
+        &self.file_mode
     }
     /// Consumes the builder and constructs a [`FileMetadata`](crate::types::FileMetadata).
     pub fn build(self) -> crate::types::FileMetadata {

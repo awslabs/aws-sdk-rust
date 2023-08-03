@@ -39,6 +39,10 @@ impl GrantAccessFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GrantAccess as a reference.
+    pub fn as_input(&self) -> &crate::operation::grant_access::builders::GrantAccessInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +125,10 @@ impl GrantAccessFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The instance's AWS OpsWorks Stacks ID.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>The length of time (in minutes) that the grant is valid. When the grant expires at the end of this period, the user will no longer be able to use the credentials to log in. If the user is logged in at the time, he or she automatically will be logged out.</p>
     pub fn valid_for_in_minutes(mut self, input: i32) -> Self {
         self.inner = self.inner.valid_for_in_minutes(input);
@@ -130,5 +138,9 @@ impl GrantAccessFluentBuilder {
     pub fn set_valid_for_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_valid_for_in_minutes(input);
         self
+    }
+    /// <p>The length of time (in minutes) that the grant is valid. When the grant expires at the end of this period, the user will no longer be able to use the credentials to log in. If the user is logged in at the time, he or she automatically will be logged out.</p>
+    pub fn get_valid_for_in_minutes(&self) -> &::std::option::Option<i32> {
+        self.inner.get_valid_for_in_minutes()
     }
 }

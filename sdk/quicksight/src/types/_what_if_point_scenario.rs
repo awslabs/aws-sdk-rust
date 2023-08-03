@@ -48,6 +48,10 @@ impl WhatIfPointScenarioBuilder {
         self.date = input;
         self
     }
+    /// <p>The date that you need the forecast results for.</p>
+    pub fn get_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.date
+    }
     /// <p>The target value that you want to meet for the provided date.</p>
     pub fn value(mut self, input: f64) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl WhatIfPointScenarioBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The target value that you want to meet for the provided date.</p>
+    pub fn get_value(&self) -> &::std::option::Option<f64> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`WhatIfPointScenario`](crate::types::WhatIfPointScenario).
     pub fn build(self) -> crate::types::WhatIfPointScenario {

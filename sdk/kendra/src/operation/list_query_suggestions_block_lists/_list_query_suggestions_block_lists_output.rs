@@ -80,6 +80,15 @@ impl ListQuerySuggestionsBlockListsOutputBuilder {
         self.block_list_summary_items = input;
         self
     }
+    /// <p>Summary items for a block list.</p>
+    /// <p>This includes summary items on the block list ID, block list name, when the block list was created, when the block list was last updated, and the count of block words/phrases in the block list.</p>
+    /// <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
+    pub fn get_block_list_summary_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QuerySuggestionsBlockListSummary>>
+    {
+        &self.block_list_summary_items
+    }
     /// <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of block lists.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -89,6 +98,10 @@ impl ListQuerySuggestionsBlockListsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of block lists.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

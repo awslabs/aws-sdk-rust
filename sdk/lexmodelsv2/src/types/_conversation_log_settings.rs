@@ -59,6 +59,12 @@ impl ConversationLogSettingsBuilder {
         self.text_log_settings = input;
         self
     }
+    /// <p>The Amazon CloudWatch Logs settings for logging text and metadata.</p>
+    pub fn get_text_log_settings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TextLogSetting>> {
+        &self.text_log_settings
+    }
     /// Appends an item to `audio_log_settings`.
     ///
     /// To override the contents of this collection use [`set_audio_log_settings`](Self::set_audio_log_settings).
@@ -77,6 +83,12 @@ impl ConversationLogSettingsBuilder {
     ) -> Self {
         self.audio_log_settings = input;
         self
+    }
+    /// <p>The Amazon S3 settings for logging audio to an S3 bucket.</p>
+    pub fn get_audio_log_settings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AudioLogSetting>> {
+        &self.audio_log_settings
     }
     /// Consumes the builder and constructs a [`ConversationLogSettings`](crate::types::ConversationLogSettings).
     pub fn build(self) -> crate::types::ConversationLogSettings {

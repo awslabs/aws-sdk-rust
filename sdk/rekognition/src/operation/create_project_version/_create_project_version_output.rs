@@ -53,6 +53,10 @@ impl CreateProjectVersionOutputBuilder {
         self.project_version_arn = input;
         self
     }
+    /// <p>The ARN of the model version that was created. Use <code>DescribeProjectVersion</code> to get the current status of the training operation.</p>
+    pub fn get_project_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_version_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

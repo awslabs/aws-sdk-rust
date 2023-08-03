@@ -54,6 +54,10 @@ impl VolumeFromBuilder {
         self.source_container = input;
         self
     }
+    /// <p>The name of another container within the same task definition to mount volumes from.</p>
+    pub fn get_source_container(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_container
+    }
     /// <p>If this value is <code>true</code>, the container has read-only access to the volume. If this value is <code>false</code>, then the container can write to the volume. The default value is <code>false</code>.</p>
     pub fn read_only(mut self, input: bool) -> Self {
         self.read_only = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl VolumeFromBuilder {
     pub fn set_read_only(mut self, input: ::std::option::Option<bool>) -> Self {
         self.read_only = input;
         self
+    }
+    /// <p>If this value is <code>true</code>, the container has read-only access to the volume. If this value is <code>false</code>, then the container can write to the volume. The default value is <code>false</code>.</p>
+    pub fn get_read_only(&self) -> &::std::option::Option<bool> {
+        &self.read_only
     }
     /// Consumes the builder and constructs a [`VolumeFrom`](crate::types::VolumeFrom).
     pub fn build(self) -> crate::types::VolumeFrom {

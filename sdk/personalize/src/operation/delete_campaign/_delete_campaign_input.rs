@@ -39,6 +39,10 @@ impl DeleteCampaignInputBuilder {
         self.campaign_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the campaign to delete.</p>
+    pub fn get_campaign_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.campaign_arn
+    }
     /// Consumes the builder and constructs a [`DeleteCampaignInput`](crate::operation::delete_campaign::DeleteCampaignInput).
     pub fn build(
         self,

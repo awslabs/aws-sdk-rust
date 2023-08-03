@@ -39,6 +39,13 @@ impl ResendConfirmationCodeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ResendConfirmationCode as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::resend_confirmation_code::builders::ResendConfirmationCodeInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +136,10 @@ impl ResendConfirmationCodeFluentBuilder {
         self.inner = self.inner.set_client_id(input);
         self
     }
+    /// <p>The ID of the client associated with the user pool.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_id()
+    }
     /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
     pub fn secret_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.secret_hash(input.into());
@@ -138,6 +149,10 @@ impl ResendConfirmationCodeFluentBuilder {
     pub fn set_secret_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_secret_hash(input);
         self
+    }
+    /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
+    pub fn get_secret_hash(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_secret_hash()
     }
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
     pub fn user_context_data(mut self, input: crate::types::UserContextDataType) -> Self {
@@ -152,6 +167,12 @@ impl ResendConfirmationCodeFluentBuilder {
         self.inner = self.inner.set_user_context_data(input);
         self
     }
+    /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
+    pub fn get_user_context_data(
+        &self,
+    ) -> &::std::option::Option<crate::types::UserContextDataType> {
+        self.inner.get_user_context_data()
+    }
     /// <p>The <code>username</code> attribute of the user to whom you want to resend a confirmation code.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.username(input.into());
@@ -161,6 +182,10 @@ impl ResendConfirmationCodeFluentBuilder {
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_username(input);
         self
+    }
+    /// <p>The <code>username</code> attribute of the user to whom you want to resend a confirmation code.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_username()
     }
     /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ResendConfirmationCode</code> calls.</p>
     pub fn analytics_metadata(mut self, input: crate::types::AnalyticsMetadataType) -> Self {
@@ -174,6 +199,12 @@ impl ResendConfirmationCodeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_analytics_metadata(input);
         self
+    }
+    /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ResendConfirmationCode</code> calls.</p>
+    pub fn get_analytics_metadata(
+        &self,
+    ) -> &::std::option::Option<crate::types::AnalyticsMetadataType> {
+        self.inner.get_analytics_metadata()
     }
     /// Adds a key-value pair to `ClientMetadata`.
     ///
@@ -215,5 +246,22 @@ impl ResendConfirmationCodeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_metadata(input);
         self
+    }
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the ResendConfirmationCode API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your ResendConfirmationCode request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html"> Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+    /// <p>When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:</p>
+    /// <ul>
+    /// <li> <p>Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+    /// <li> <p>Validate the ClientMetadata value.</p> </li>
+    /// <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p> </li>
+    /// </ul>
+    /// </note>
+    pub fn get_client_metadata(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_client_metadata()
     }
 }

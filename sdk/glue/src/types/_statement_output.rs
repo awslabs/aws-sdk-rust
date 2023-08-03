@@ -83,6 +83,10 @@ impl StatementOutputBuilder {
         self.data = input;
         self
     }
+    /// <p>The code execution output.</p>
+    pub fn get_data(&self) -> &::std::option::Option<crate::types::StatementOutputData> {
+        &self.data
+    }
     /// <p>The execution count of the output.</p>
     pub fn execution_count(mut self, input: i32) -> Self {
         self.execution_count = ::std::option::Option::Some(input);
@@ -92,6 +96,10 @@ impl StatementOutputBuilder {
     pub fn set_execution_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.execution_count = input;
         self
+    }
+    /// <p>The execution count of the output.</p>
+    pub fn get_execution_count(&self) -> &::std::option::Option<i32> {
+        &self.execution_count
     }
     /// <p>The status of the code execution output.</p>
     pub fn status(mut self, input: crate::types::StatementState) -> Self {
@@ -106,6 +114,10 @@ impl StatementOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the code execution output.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::StatementState> {
+        &self.status
+    }
     /// <p>The name of the error in the output.</p>
     pub fn error_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_name = ::std::option::Option::Some(input.into());
@@ -116,6 +128,10 @@ impl StatementOutputBuilder {
         self.error_name = input;
         self
     }
+    /// <p>The name of the error in the output.</p>
+    pub fn get_error_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_name
+    }
     /// <p>The error value of the output.</p>
     pub fn error_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_value = ::std::option::Option::Some(input.into());
@@ -125,6 +141,10 @@ impl StatementOutputBuilder {
     pub fn set_error_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_value = input;
         self
+    }
+    /// <p>The error value of the output.</p>
+    pub fn get_error_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_value
     }
     /// Appends an item to `traceback`.
     ///
@@ -144,6 +164,10 @@ impl StatementOutputBuilder {
     ) -> Self {
         self.traceback = input;
         self
+    }
+    /// <p>The traceback of the output.</p>
+    pub fn get_traceback(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.traceback
     }
     /// Consumes the builder and constructs a [`StatementOutput`](crate::types::StatementOutput).
     pub fn build(self) -> crate::types::StatementOutput {

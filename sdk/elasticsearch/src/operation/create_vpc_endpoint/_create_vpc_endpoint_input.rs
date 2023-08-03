@@ -57,6 +57,10 @@ impl CreateVpcEndpointInputBuilder {
         self.domain_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the domain to grant access to.</p>
+    pub fn get_domain_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_arn
+    }
     /// <p>Options to specify the subnets and security groups for the endpoint.</p>
     pub fn vpc_options(mut self, input: crate::types::VpcOptions) -> Self {
         self.vpc_options = ::std::option::Option::Some(input);
@@ -70,6 +74,10 @@ impl CreateVpcEndpointInputBuilder {
         self.vpc_options = input;
         self
     }
+    /// <p>Options to specify the subnets and security groups for the endpoint.</p>
+    pub fn get_vpc_options(&self) -> &::std::option::Option<crate::types::VpcOptions> {
+        &self.vpc_options
+    }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -79,6 +87,10 @@ impl CreateVpcEndpointInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateVpcEndpointInput`](crate::operation::create_vpc_endpoint::CreateVpcEndpointInput).
     pub fn build(

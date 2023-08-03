@@ -39,6 +39,10 @@ impl ImportVolumeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ImportVolume as a reference.
+    pub fn as_input(&self) -> &crate::operation::import_volume::builders::ImportVolumeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl ImportVolumeFluentBuilder {
         self.inner = self.inner.set_availability_zone(input);
         self
     }
+    /// <p>The Availability Zone for the resulting EBS volume.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_availability_zone()
+    }
     /// <p>A description of the volume.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -137,6 +145,10 @@ impl ImportVolumeFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>A description of the volume.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -146,6 +158,10 @@ impl ImportVolumeFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
     /// <p>The disk image.</p>
     pub fn image(mut self, input: crate::types::DiskImageDetail) -> Self {
@@ -160,6 +176,10 @@ impl ImportVolumeFluentBuilder {
         self.inner = self.inner.set_image(input);
         self
     }
+    /// <p>The disk image.</p>
+    pub fn get_image(&self) -> &::std::option::Option<crate::types::DiskImageDetail> {
+        self.inner.get_image()
+    }
     /// <p>The volume size.</p>
     pub fn volume(mut self, input: crate::types::VolumeDetail) -> Self {
         self.inner = self.inner.volume(input);
@@ -169,5 +189,9 @@ impl ImportVolumeFluentBuilder {
     pub fn set_volume(mut self, input: ::std::option::Option<crate::types::VolumeDetail>) -> Self {
         self.inner = self.inner.set_volume(input);
         self
+    }
+    /// <p>The volume size.</p>
+    pub fn get_volume(&self) -> &::std::option::Option<crate::types::VolumeDetail> {
+        self.inner.get_volume()
     }
 }

@@ -56,6 +56,10 @@ impl CreateEventTrackerInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name for the event tracker.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) of the dataset group that receives the event data.</p>
     pub fn dataset_group_arn(
         mut self,
@@ -71,6 +75,10 @@ impl CreateEventTrackerInputBuilder {
     ) -> Self {
         self.dataset_group_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the dataset group that receives the event data.</p>
+    pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_group_arn
     }
     /// Appends an item to `tags`.
     ///
@@ -90,6 +98,10 @@ impl CreateEventTrackerInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the event tracker.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateEventTrackerInput`](crate::operation::create_event_tracker::CreateEventTrackerInput).
     pub fn build(

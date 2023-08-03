@@ -120,6 +120,10 @@ impl VulnerablePackageBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the vulnerable package.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The version of the vulnerable package.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -129,6 +133,10 @@ impl VulnerablePackageBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version of the vulnerable package.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// <p>The source layer hash of the vulnerable package.</p>
     pub fn source_layer_hash(
@@ -146,6 +154,10 @@ impl VulnerablePackageBuilder {
         self.source_layer_hash = input;
         self
     }
+    /// <p>The source layer hash of the vulnerable package.</p>
+    pub fn get_source_layer_hash(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_layer_hash
+    }
     /// <p>The epoch of the vulnerable package.</p>
     pub fn epoch(mut self, input: i32) -> Self {
         self.epoch = ::std::option::Option::Some(input);
@@ -155,6 +167,10 @@ impl VulnerablePackageBuilder {
     pub fn set_epoch(mut self, input: ::std::option::Option<i32>) -> Self {
         self.epoch = input;
         self
+    }
+    /// <p>The epoch of the vulnerable package.</p>
+    pub fn get_epoch(&self) -> &::std::option::Option<i32> {
+        &self.epoch
     }
     /// <p>The release of the vulnerable package.</p>
     pub fn release(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -166,6 +182,10 @@ impl VulnerablePackageBuilder {
         self.release = input;
         self
     }
+    /// <p>The release of the vulnerable package.</p>
+    pub fn get_release(&self) -> &::std::option::Option<::std::string::String> {
+        &self.release
+    }
     /// <p>The architecture of the vulnerable package.</p>
     pub fn arch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arch = ::std::option::Option::Some(input.into());
@@ -175,6 +195,10 @@ impl VulnerablePackageBuilder {
     pub fn set_arch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arch = input;
         self
+    }
+    /// <p>The architecture of the vulnerable package.</p>
+    pub fn get_arch(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arch
     }
     /// <p>The package manager of the vulnerable package.</p>
     pub fn package_manager(mut self, input: crate::types::PackageManager) -> Self {
@@ -189,6 +213,10 @@ impl VulnerablePackageBuilder {
         self.package_manager = input;
         self
     }
+    /// <p>The package manager of the vulnerable package.</p>
+    pub fn get_package_manager(&self) -> &::std::option::Option<crate::types::PackageManager> {
+        &self.package_manager
+    }
     /// <p>The file path of the vulnerable package.</p>
     pub fn file_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_path = ::std::option::Option::Some(input.into());
@@ -198,6 +226,10 @@ impl VulnerablePackageBuilder {
     pub fn set_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_path = input;
         self
+    }
+    /// <p>The file path of the vulnerable package.</p>
+    pub fn get_file_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_path
     }
     /// <p>The version of the package that contains the vulnerability fix.</p>
     pub fn fixed_in_version(
@@ -215,6 +247,10 @@ impl VulnerablePackageBuilder {
         self.fixed_in_version = input;
         self
     }
+    /// <p>The version of the package that contains the vulnerability fix.</p>
+    pub fn get_fixed_in_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fixed_in_version
+    }
     /// <p>The code to run in your environment to update packages with a fix available.</p>
     pub fn remediation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.remediation = ::std::option::Option::Some(input.into());
@@ -224,6 +260,10 @@ impl VulnerablePackageBuilder {
     pub fn set_remediation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.remediation = input;
         self
+    }
+    /// <p>The code to run in your environment to update packages with a fix available.</p>
+    pub fn get_remediation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.remediation
     }
     /// <p>The Amazon Resource Number (ARN) of the AWS Lambda function affected by a finding.</p>
     pub fn source_lambda_layer_arn(
@@ -240,6 +280,10 @@ impl VulnerablePackageBuilder {
     ) -> Self {
         self.source_lambda_layer_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Number (ARN) of the AWS Lambda function affected by a finding.</p>
+    pub fn get_source_lambda_layer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_lambda_layer_arn
     }
     /// Consumes the builder and constructs a [`VulnerablePackage`](crate::types::VulnerablePackage).
     pub fn build(self) -> crate::types::VulnerablePackage {

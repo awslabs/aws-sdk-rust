@@ -51,6 +51,10 @@ impl CreateGameServerGroupOutputBuilder {
         self.game_server_group = input;
         self
     }
+    /// <p>The newly created game server group object, including the new ARN value for the Amazon GameLift FleetIQ game server group and the object's status. The Amazon EC2 Auto Scaling group ARN is initially null, since the group has not yet been created. This value is added once the game server group status reaches <code>ACTIVE</code>. </p>
+    pub fn get_game_server_group(&self) -> &::std::option::Option<crate::types::GameServerGroup> {
+        &self.game_server_group
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -87,6 +87,10 @@ impl ListInstanceTypeDetailsInputBuilder {
         self.engine_version = input;
         self
     }
+    /// <p>The version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
+    }
     /// <p>The name of the domain.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
@@ -96,6 +100,10 @@ impl ListInstanceTypeDetailsInputBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
+    }
+    /// <p>The name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -107,6 +115,10 @@ impl ListInstanceTypeDetailsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>If your initial <code>ListInstanceTypeDetails</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListInstanceTypeDetails</code> operations, which returns results in the next page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -117,6 +129,10 @@ impl ListInstanceTypeDetailsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If your initial <code>ListInstanceTypeDetails</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListInstanceTypeDetails</code> operations, which returns results in the next page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>An optional parameter that specifies the Availability Zones for the domain.</p>
     pub fn retrieve_a_zs(mut self, input: bool) -> Self {
         self.retrieve_a_zs = ::std::option::Option::Some(input);
@@ -126,6 +142,10 @@ impl ListInstanceTypeDetailsInputBuilder {
     pub fn set_retrieve_a_zs(mut self, input: ::std::option::Option<bool>) -> Self {
         self.retrieve_a_zs = input;
         self
+    }
+    /// <p>An optional parameter that specifies the Availability Zones for the domain.</p>
+    pub fn get_retrieve_a_zs(&self) -> &::std::option::Option<bool> {
+        &self.retrieve_a_zs
     }
     /// <p>An optional parameter that lists information for a given instance type.</p>
     pub fn instance_type(
@@ -142,6 +162,10 @@ impl ListInstanceTypeDetailsInputBuilder {
     ) -> Self {
         self.instance_type = input;
         self
+    }
+    /// <p>An optional parameter that lists information for a given instance type.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
     }
     /// Consumes the builder and constructs a [`ListInstanceTypeDetailsInput`](crate::operation::list_instance_type_details::ListInstanceTypeDetailsInput).
     pub fn build(

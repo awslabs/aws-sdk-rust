@@ -36,6 +36,12 @@ impl UpdateEndpointFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateEndpoint as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_endpoint::builders::UpdateEndpointInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl UpdateEndpointFluentBuilder {
         self.inner = self.inner.set_endpoint_arn(input);
         self
     }
+    /// <p>The Amazon Resource Number (ARN) of the endpoint being updated.</p>
+    pub fn get_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_endpoint_arn()
+    }
     /// <p>The ARN of the new model to use when updating an existing endpoint.</p>
     pub fn desired_model_arn(
         mut self,
@@ -134,6 +144,10 @@ impl UpdateEndpointFluentBuilder {
         self.inner = self.inner.set_desired_model_arn(input);
         self
     }
+    /// <p>The ARN of the new model to use when updating an existing endpoint.</p>
+    pub fn get_desired_model_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_desired_model_arn()
+    }
     /// <p> The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
     pub fn desired_inference_units(mut self, input: i32) -> Self {
         self.inner = self.inner.desired_inference_units(input);
@@ -143,6 +157,10 @@ impl UpdateEndpointFluentBuilder {
     pub fn set_desired_inference_units(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_desired_inference_units(input);
         self
+    }
+    /// <p> The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
+    pub fn get_desired_inference_units(&self) -> &::std::option::Option<i32> {
+        self.inner.get_desired_inference_units()
     }
     /// <p>Data access role ARN to use in case the new model is encrypted with a customer CMK.</p>
     pub fn desired_data_access_role_arn(
@@ -160,6 +178,12 @@ impl UpdateEndpointFluentBuilder {
         self.inner = self.inner.set_desired_data_access_role_arn(input);
         self
     }
+    /// <p>Data access role ARN to use in case the new model is encrypted with a customer CMK.</p>
+    pub fn get_desired_data_access_role_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_desired_data_access_role_arn()
+    }
     /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
     pub fn flywheel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flywheel_arn(input.into());
@@ -169,5 +193,9 @@ impl UpdateEndpointFluentBuilder {
     pub fn set_flywheel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flywheel_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
+    pub fn get_flywheel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_flywheel_arn()
     }
 }

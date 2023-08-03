@@ -58,6 +58,10 @@ impl CreateReplicationConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateReplicationConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_replication_configuration::builders::CreateReplicationConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -154,6 +158,10 @@ impl CreateReplicationConfigurationFluentBuilder {
         self.inner = self.inner.set_source_file_system_id(input);
         self
     }
+    /// <p>Specifies the Amazon EFS file system that you want to replicate. This file system cannot already be a source or destination file system in another replication configuration.</p>
+    pub fn get_source_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_file_system_id()
+    }
     /// Appends an item to `Destinations`.
     ///
     /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
@@ -170,5 +178,11 @@ impl CreateReplicationConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destinations(input);
         self
+    }
+    /// <p>An array of destination configuration objects. Only one destination configuration object is supported.</p>
+    pub fn get_destinations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DestinationToCreate>> {
+        self.inner.get_destinations()
     }
 }

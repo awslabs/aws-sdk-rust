@@ -36,6 +36,12 @@ impl UpdateSubscriberFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateSubscriber as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_subscriber::builders::UpdateSubscriberInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateSubscriberFluentBuilder {
         self.inner = self.inner.set_subscriber_id(input);
         self
     }
+    /// <p>A value created by Security Lake that uniquely identifies your subscription.</p>
+    pub fn get_subscriber_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_subscriber_id()
+    }
     /// <p>The AWS identity used to access your data.</p>
     pub fn subscriber_identity(mut self, input: crate::types::AwsIdentity) -> Self {
         self.inner = self.inner.subscriber_identity(input);
@@ -144,6 +154,10 @@ impl UpdateSubscriberFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_subscriber_identity(input);
         self
+    }
+    /// <p>The AWS identity used to access your data.</p>
+    pub fn get_subscriber_identity(&self) -> &::std::option::Option<crate::types::AwsIdentity> {
+        self.inner.get_subscriber_identity()
     }
     /// <p>The name of the Security Lake account subscriber.</p>
     pub fn subscriber_name(
@@ -161,6 +175,10 @@ impl UpdateSubscriberFluentBuilder {
         self.inner = self.inner.set_subscriber_name(input);
         self
     }
+    /// <p>The name of the Security Lake account subscriber.</p>
+    pub fn get_subscriber_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_subscriber_name()
+    }
     /// <p>The description of the Security Lake account subscriber.</p>
     pub fn subscriber_description(
         mut self,
@@ -176,6 +194,10 @@ impl UpdateSubscriberFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_subscriber_description(input);
         self
+    }
+    /// <p>The description of the Security Lake account subscriber.</p>
+    pub fn get_subscriber_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_subscriber_description()
     }
     /// Appends an item to `sources`.
     ///
@@ -193,5 +215,11 @@ impl UpdateSubscriberFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sources(input);
         self
+    }
+    /// <p>The supported Amazon Web Services from which logs and events are collected. For the list of supported Amazon Web Services, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security Lake User Guide</a>.</p>
+    pub fn get_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>> {
+        self.inner.get_sources()
     }
 }

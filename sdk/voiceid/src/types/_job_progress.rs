@@ -40,6 +40,10 @@ impl JobProgressBuilder {
         self.percent_complete = input;
         self
     }
+    /// <p>Shows the completed percentage of enrollment or registration requests listed in the input file.</p>
+    pub fn get_percent_complete(&self) -> &::std::option::Option<i32> {
+        &self.percent_complete
+    }
     /// Consumes the builder and constructs a [`JobProgress`](crate::types::JobProgress).
     pub fn build(self) -> crate::types::JobProgress {
         crate::types::JobProgress {

@@ -48,6 +48,10 @@ impl CreatePublicIpv4PoolOutputBuilder {
         self.pool_id = input;
         self
     }
+    /// <p>The ID of the public IPv4 pool.</p>
+    pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pool_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -104,6 +104,10 @@ impl DeviceSummaryBuilder {
         self.device_name = input;
         self
     }
+    /// <p>The unique identifier of the device.</p>
+    pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_name
+    }
     /// <p>Amazon Resource Name (ARN) of the device.</p>
     pub fn device_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_arn = ::std::option::Option::Some(input.into());
@@ -114,6 +118,10 @@ impl DeviceSummaryBuilder {
         self.device_arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the device.</p>
+    pub fn get_device_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_arn
+    }
     /// <p>A description of the device.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -123,6 +131,10 @@ impl DeviceSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the device.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The name of the fleet the device belongs to.</p>
     pub fn device_fleet_name(
@@ -140,6 +152,10 @@ impl DeviceSummaryBuilder {
         self.device_fleet_name = input;
         self
     }
+    /// <p>The name of the fleet the device belongs to.</p>
+    pub fn get_device_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_fleet_name
+    }
     /// <p>The Amazon Web Services Internet of Things (IoT) object thing name associated with the device..</p>
     pub fn iot_thing_name(
         mut self,
@@ -156,6 +172,10 @@ impl DeviceSummaryBuilder {
         self.iot_thing_name = input;
         self
     }
+    /// <p>The Amazon Web Services Internet of Things (IoT) object thing name associated with the device..</p>
+    pub fn get_iot_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iot_thing_name
+    }
     /// <p>The timestamp of the last registration or de-reregistration.</p>
     pub fn registration_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.registration_time = ::std::option::Option::Some(input);
@@ -169,6 +189,10 @@ impl DeviceSummaryBuilder {
         self.registration_time = input;
         self
     }
+    /// <p>The timestamp of the last registration or de-reregistration.</p>
+    pub fn get_registration_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.registration_time
+    }
     /// <p>The last heartbeat received from the device.</p>
     pub fn latest_heartbeat(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.latest_heartbeat = ::std::option::Option::Some(input);
@@ -181,6 +205,10 @@ impl DeviceSummaryBuilder {
     ) -> Self {
         self.latest_heartbeat = input;
         self
+    }
+    /// <p>The last heartbeat received from the device.</p>
+    pub fn get_latest_heartbeat(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.latest_heartbeat
     }
     /// Appends an item to `models`.
     ///
@@ -201,6 +229,12 @@ impl DeviceSummaryBuilder {
         self.models = input;
         self
     }
+    /// <p>Models on the device.</p>
+    pub fn get_models(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EdgeModelSummary>> {
+        &self.models
+    }
     /// <p>Edge Manager agent version.</p>
     pub fn agent_version(
         mut self,
@@ -216,6 +250,10 @@ impl DeviceSummaryBuilder {
     ) -> Self {
         self.agent_version = input;
         self
+    }
+    /// <p>Edge Manager agent version.</p>
+    pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_version
     }
     /// Consumes the builder and constructs a [`DeviceSummary`](crate::types::DeviceSummary).
     pub fn build(self) -> crate::types::DeviceSummary {

@@ -103,6 +103,10 @@ impl DeviceDescriptionBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the device.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Adds a key-value pair to `attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
@@ -128,6 +132,14 @@ impl DeviceDescriptionBuilder {
         self.attributes = input;
         self
     }
+    /// <p>An array of zero or more elements of DeviceAttribute objects providing user specified device attributes.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.attributes
+    }
     /// <p>The unique identifier of the device.</p>
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_id = ::std::option::Option::Some(input.into());
@@ -137,6 +149,10 @@ impl DeviceDescriptionBuilder {
     pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_id = input;
         self
+    }
+    /// <p>The unique identifier of the device.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_id
     }
     /// <p>A Boolean value indicating whether or not the device is enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
@@ -148,6 +164,10 @@ impl DeviceDescriptionBuilder {
         self.enabled = input;
         self
     }
+    /// <p>A Boolean value indicating whether or not the device is enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>A value between 0 and 1 inclusive, representing the fraction of life remaining for the device.</p>
     pub fn remaining_life(mut self, input: f64) -> Self {
         self.remaining_life = ::std::option::Option::Some(input);
@@ -158,6 +178,10 @@ impl DeviceDescriptionBuilder {
         self.remaining_life = input;
         self
     }
+    /// <p>A value between 0 and 1 inclusive, representing the fraction of life remaining for the device.</p>
+    pub fn get_remaining_life(&self) -> &::std::option::Option<f64> {
+        &self.remaining_life
+    }
     /// <p>The type of the device, such as "button".</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -167,6 +191,10 @@ impl DeviceDescriptionBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the device, such as "button".</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -192,6 +220,14 @@ impl DeviceDescriptionBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags currently associated with the AWS IoT 1-Click device.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`DeviceDescription`](crate::types::DeviceDescription).
     pub fn build(self) -> crate::types::DeviceDescription {

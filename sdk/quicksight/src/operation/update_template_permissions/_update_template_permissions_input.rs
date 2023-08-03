@@ -72,6 +72,10 @@ impl UpdateTemplatePermissionsInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account that contains the template.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The ID for the template.</p>
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_id = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl UpdateTemplatePermissionsInputBuilder {
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_id = input;
         self
+    }
+    /// <p>The ID for the template.</p>
+    pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_id
     }
     /// Appends an item to `grant_permissions`.
     ///
@@ -101,6 +109,12 @@ impl UpdateTemplatePermissionsInputBuilder {
         self.grant_permissions = input;
         self
     }
+    /// <p>A list of resource permissions to be granted on the template. </p>
+    pub fn get_grant_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+        &self.grant_permissions
+    }
     /// Appends an item to `revoke_permissions`.
     ///
     /// To override the contents of this collection use [`set_revoke_permissions`](Self::set_revoke_permissions).
@@ -119,6 +133,12 @@ impl UpdateTemplatePermissionsInputBuilder {
     ) -> Self {
         self.revoke_permissions = input;
         self
+    }
+    /// <p>A list of resource permissions to be revoked from the template. </p>
+    pub fn get_revoke_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+        &self.revoke_permissions
     }
     /// Consumes the builder and constructs a [`UpdateTemplatePermissionsInput`](crate::operation::update_template_permissions::UpdateTemplatePermissionsInput).
     pub fn build(

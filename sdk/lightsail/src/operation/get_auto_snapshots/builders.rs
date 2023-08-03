@@ -36,6 +36,12 @@ impl GetAutoSnapshotsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetAutoSnapshots as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_auto_snapshots::builders::GetAutoSnapshotsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl GetAutoSnapshotsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_name(input);
         self
+    }
+    /// <p>The name of the source instance or disk from which to get automatic snapshot information.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_name()
     }
 }

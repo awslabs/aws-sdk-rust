@@ -48,6 +48,10 @@ impl TraitBuilder {
         self.name = input;
         self
     }
+    /// <p> Provides a name or contextual description about the trait. </p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::AttributeName> {
+        &self.name
+    }
     /// <p> The level of confidence that Amazon Comprehend Medical has in the accuracy of this trait.</p>
     pub fn score(mut self, input: f32) -> Self {
         self.score = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl TraitBuilder {
     pub fn set_score(mut self, input: ::std::option::Option<f32>) -> Self {
         self.score = input;
         self
+    }
+    /// <p> The level of confidence that Amazon Comprehend Medical has in the accuracy of this trait.</p>
+    pub fn get_score(&self) -> &::std::option::Option<f32> {
+        &self.score
     }
     /// Consumes the builder and constructs a [`Trait`](crate::types::Trait).
     pub fn build(self) -> crate::types::Trait {

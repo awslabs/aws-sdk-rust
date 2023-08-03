@@ -46,6 +46,10 @@ impl EntityRecognizerOutputDataConfigBuilder {
         self.flywheel_stats_s3_prefix = input;
         self
     }
+    /// <p>The Amazon S3 prefix for the data lake location of the flywheel statistics.</p>
+    pub fn get_flywheel_stats_s3_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flywheel_stats_s3_prefix
+    }
     /// Consumes the builder and constructs a [`EntityRecognizerOutputDataConfig`](crate::types::EntityRecognizerOutputDataConfig).
     pub fn build(self) -> crate::types::EntityRecognizerOutputDataConfig {
         crate::types::EntityRecognizerOutputDataConfig {

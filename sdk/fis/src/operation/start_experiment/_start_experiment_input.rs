@@ -63,6 +63,10 @@ impl StartExperimentInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The ID of the experiment template.</p>
     pub fn experiment_template_id(
         mut self,
@@ -78,6 +82,10 @@ impl StartExperimentInputBuilder {
     ) -> Self {
         self.experiment_template_id = input;
         self
+    }
+    /// <p>The ID of the experiment template.</p>
+    pub fn get_experiment_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.experiment_template_id
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -103,6 +111,14 @@ impl StartExperimentInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags to apply to the experiment.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`StartExperimentInput`](crate::operation::start_experiment::StartExperimentInput).
     pub fn build(

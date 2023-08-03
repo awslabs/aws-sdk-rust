@@ -36,6 +36,12 @@ impl DescribeVodSourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeVodSource as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_vod_source::builders::DescribeVodSourceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl DescribeVodSourceFluentBuilder {
         self.inner = self.inner.set_source_location_name(input);
         self
     }
+    /// <p>The name of the source location associated with this VOD Source.</p>
+    pub fn get_source_location_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_location_name()
+    }
     /// <p>The name of the VOD Source.</p>
     pub fn vod_source_name(
         mut self,
@@ -147,5 +157,9 @@ impl DescribeVodSourceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_vod_source_name(input);
         self
+    }
+    /// <p>The name of the VOD Source.</p>
+    pub fn get_vod_source_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vod_source_name()
     }
 }

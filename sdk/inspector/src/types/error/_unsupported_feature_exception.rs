@@ -76,6 +76,10 @@ impl UnsupportedFeatureExceptionBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
+    #[allow(missing_docs)] // documentation missing in model
     pub fn can_retry(mut self, input: bool) -> Self {
         self.can_retry = ::std::option::Option::Some(input);
         self
@@ -84,6 +88,10 @@ impl UnsupportedFeatureExceptionBuilder {
     pub fn set_can_retry(mut self, input: ::std::option::Option<bool>) -> Self {
         self.can_retry = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_can_retry(&self) -> &::std::option::Option<bool> {
+        &self.can_retry
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

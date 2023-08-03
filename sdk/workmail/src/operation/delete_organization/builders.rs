@@ -36,6 +36,12 @@ impl DeleteOrganizationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteOrganization as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_organization::builders::DeleteOrganizationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DeleteOrganizationFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>The idempotency token associated with the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>The organization ID.</p>
     pub fn organization_id(
         mut self,
@@ -142,6 +152,10 @@ impl DeleteOrganizationFluentBuilder {
         self.inner = self.inner.set_organization_id(input);
         self
     }
+    /// <p>The organization ID.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
+    }
     /// <p>If true, deletes the AWS Directory Service directory associated with the organization.</p>
     pub fn delete_directory(mut self, input: bool) -> Self {
         self.inner = self.inner.delete_directory(input);
@@ -151,5 +165,9 @@ impl DeleteOrganizationFluentBuilder {
     pub fn set_delete_directory(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_delete_directory(input);
         self
+    }
+    /// <p>If true, deletes the AWS Directory Service directory associated with the organization.</p>
+    pub fn get_delete_directory(&self) -> &::std::option::Option<bool> {
+        self.inner.get_delete_directory()
     }
 }

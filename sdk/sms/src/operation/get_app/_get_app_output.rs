@@ -65,6 +65,10 @@ impl GetAppOutputBuilder {
         self.app_summary = input;
         self
     }
+    /// <p>Information about the application.</p>
+    pub fn get_app_summary(&self) -> &::std::option::Option<crate::types::AppSummary> {
+        &self.app_summary
+    }
     /// Appends an item to `server_groups`.
     ///
     /// To override the contents of this collection use [`set_server_groups`](Self::set_server_groups).
@@ -84,6 +88,12 @@ impl GetAppOutputBuilder {
         self.server_groups = input;
         self
     }
+    /// <p>The server groups that belong to the application.</p>
+    pub fn get_server_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerGroup>> {
+        &self.server_groups
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -102,6 +112,10 @@ impl GetAppOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags associated with the application.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

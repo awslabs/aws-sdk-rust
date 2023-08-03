@@ -71,6 +71,10 @@ impl UpdateDashboardInputBuilder {
         self.dashboard_id = input;
         self
     }
+    /// <p>The ID of the dashboard to update.</p>
+    pub fn get_dashboard_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dashboard_id
+    }
     /// <p>A new friendly name for the dashboard.</p>
     pub fn dashboard_name(
         mut self,
@@ -86,6 +90,10 @@ impl UpdateDashboardInputBuilder {
     ) -> Self {
         self.dashboard_name = input;
         self
+    }
+    /// <p>A new friendly name for the dashboard.</p>
+    pub fn get_dashboard_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dashboard_name
     }
     /// <p>A new description for the dashboard.</p>
     pub fn dashboard_description(
@@ -103,6 +111,10 @@ impl UpdateDashboardInputBuilder {
         self.dashboard_description = input;
         self
     }
+    /// <p>A new description for the dashboard.</p>
+    pub fn get_dashboard_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dashboard_description
+    }
     /// <p>The new dashboard definition, as specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn dashboard_definition(
         mut self,
@@ -119,6 +131,10 @@ impl UpdateDashboardInputBuilder {
         self.dashboard_definition = input;
         self
     }
+    /// <p>The new dashboard definition, as specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_dashboard_definition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dashboard_definition
+    }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -128,6 +144,10 @@ impl UpdateDashboardInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateDashboardInput`](crate::operation::update_dashboard::UpdateDashboardInput).
     pub fn build(

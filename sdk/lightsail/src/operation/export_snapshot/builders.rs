@@ -41,6 +41,12 @@ impl ExportSnapshotFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ExportSnapshot as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::export_snapshot::builders::ExportSnapshotInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,5 +134,9 @@ impl ExportSnapshotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source_snapshot_name(input);
         self
+    }
+    /// <p>The name of the instance or disk snapshot to be exported to Amazon EC2.</p>
+    pub fn get_source_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_snapshot_name()
     }
 }

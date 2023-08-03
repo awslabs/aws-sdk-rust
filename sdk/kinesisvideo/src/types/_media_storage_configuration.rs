@@ -48,6 +48,10 @@ impl MediaStorageConfigurationBuilder {
         self.stream_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the stream </p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_arn
+    }
     /// <p>The status of the media storage configuration.</p>
     pub fn status(mut self, input: crate::types::MediaStorageConfigurationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -60,6 +64,12 @@ impl MediaStorageConfigurationBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the media storage configuration.</p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::MediaStorageConfigurationStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`MediaStorageConfiguration`](crate::types::MediaStorageConfiguration).
     pub fn build(self) -> crate::types::MediaStorageConfiguration {

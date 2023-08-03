@@ -36,6 +36,12 @@ impl GetPreparedStatementFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetPreparedStatement as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_prepared_statement::builders::GetPreparedStatementInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl GetPreparedStatementFluentBuilder {
         self.inner = self.inner.set_statement_name(input);
         self
     }
+    /// <p>The name of the prepared statement to retrieve.</p>
+    pub fn get_statement_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_statement_name()
+    }
     /// <p>The workgroup to which the statement to be retrieved belongs.</p>
     pub fn work_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.work_group(input.into());
@@ -141,5 +151,9 @@ impl GetPreparedStatementFluentBuilder {
     pub fn set_work_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_work_group(input);
         self
+    }
+    /// <p>The workgroup to which the statement to be retrieved belongs.</p>
+    pub fn get_work_group(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_work_group()
     }
 }

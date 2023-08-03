@@ -36,6 +36,12 @@ impl CreateSubscriberFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSubscriber as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_subscriber::builders::CreateSubscriberInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl CreateSubscriberFluentBuilder {
         self.inner = self.inner.set_subscriber_identity(input);
         self
     }
+    /// <p>The AWS identity used to access your data.</p>
+    pub fn get_subscriber_identity(&self) -> &::std::option::Option<crate::types::AwsIdentity> {
+        self.inner.get_subscriber_identity()
+    }
     /// <p>The name of your Security Lake subscriber account.</p>
     pub fn subscriber_name(
         mut self,
@@ -145,6 +155,10 @@ impl CreateSubscriberFluentBuilder {
         self.inner = self.inner.set_subscriber_name(input);
         self
     }
+    /// <p>The name of your Security Lake subscriber account.</p>
+    pub fn get_subscriber_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_subscriber_name()
+    }
     /// <p>The description for your subscriber account in Security Lake.</p>
     pub fn subscriber_description(
         mut self,
@@ -160,6 +174,10 @@ impl CreateSubscriberFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_subscriber_description(input);
         self
+    }
+    /// <p>The description for your subscriber account in Security Lake.</p>
+    pub fn get_subscriber_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_subscriber_description()
     }
     /// Appends an item to `sources`.
     ///
@@ -178,6 +196,12 @@ impl CreateSubscriberFluentBuilder {
         self.inner = self.inner.set_sources(input);
         self
     }
+    /// <p>The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
+    pub fn get_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>> {
+        self.inner.get_sources()
+    }
     /// Appends an item to `accessTypes`.
     ///
     /// To override the contents of this collection use [`set_access_types`](Self::set_access_types).
@@ -195,6 +219,12 @@ impl CreateSubscriberFluentBuilder {
         self.inner = self.inner.set_access_types(input);
         self
     }
+    /// <p>The Amazon S3 or Lake Formation access type.</p>
+    pub fn get_access_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessType>> {
+        self.inner.get_access_types()
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -211,5 +241,9 @@ impl CreateSubscriberFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>An array of objects, one for each tag to associate with the subscriber. For each tag, you must specify both a tag key and a tag value. A tag value cannot be null, but it can be an empty string.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

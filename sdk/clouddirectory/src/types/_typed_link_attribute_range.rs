@@ -54,6 +54,10 @@ impl TypedLinkAttributeRangeBuilder {
         self.attribute_name = input;
         self
     }
+    /// <p>The unique name of the typed link attribute.</p>
+    pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_name
+    }
     /// <p>The range of attribute values that are being selected.</p>
     pub fn range(mut self, input: crate::types::TypedAttributeValueRange) -> Self {
         self.range = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl TypedLinkAttributeRangeBuilder {
     ) -> Self {
         self.range = input;
         self
+    }
+    /// <p>The range of attribute values that are being selected.</p>
+    pub fn get_range(&self) -> &::std::option::Option<crate::types::TypedAttributeValueRange> {
+        &self.range
     }
     /// Consumes the builder and constructs a [`TypedLinkAttributeRange`](crate::types::TypedLinkAttributeRange).
     pub fn build(self) -> crate::types::TypedLinkAttributeRange {

@@ -62,6 +62,10 @@ impl PropertyGroupBuilder {
         self.property_group_id = input;
         self
     }
+    /// <p>Describes the key of an application execution property key-value pair.</p>
+    pub fn get_property_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.property_group_id
+    }
     /// Adds a key-value pair to `property_map`.
     ///
     /// To override the contents of this collection use [`set_property_map`](Self::set_property_map).
@@ -86,6 +90,14 @@ impl PropertyGroupBuilder {
     ) -> Self {
         self.property_map = input;
         self
+    }
+    /// <p>Describes the value of an application execution property key-value pair.</p>
+    pub fn get_property_map(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.property_map
     }
     /// Consumes the builder and constructs a [`PropertyGroup`](crate::types::PropertyGroup).
     pub fn build(self) -> crate::types::PropertyGroup {

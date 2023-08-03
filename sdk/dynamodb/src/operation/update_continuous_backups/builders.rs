@@ -39,6 +39,13 @@ impl UpdateContinuousBackupsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateContinuousBackups as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_continuous_backups::builders::UpdateContinuousBackupsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +136,10 @@ impl UpdateContinuousBackupsFluentBuilder {
         self.inner = self.inner.set_table_name(input);
         self
     }
+    /// <p>The name of the table.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_table_name()
+    }
     /// <p>Represents the settings used to enable point in time recovery.</p>
     pub fn point_in_time_recovery_specification(
         mut self,
@@ -144,5 +155,11 @@ impl UpdateContinuousBackupsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_point_in_time_recovery_specification(input);
         self
+    }
+    /// <p>Represents the settings used to enable point in time recovery.</p>
+    pub fn get_point_in_time_recovery_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::PointInTimeRecoverySpecification> {
+        self.inner.get_point_in_time_recovery_specification()
     }
 }

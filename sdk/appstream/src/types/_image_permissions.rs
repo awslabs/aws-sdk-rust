@@ -48,6 +48,10 @@ impl ImagePermissionsBuilder {
         self.allow_fleet = input;
         self
     }
+    /// <p>Indicates whether the image can be used for a fleet.</p>
+    pub fn get_allow_fleet(&self) -> &::std::option::Option<bool> {
+        &self.allow_fleet
+    }
     /// <p>Indicates whether the image can be used for an image builder.</p>
     pub fn allow_image_builder(mut self, input: bool) -> Self {
         self.allow_image_builder = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ImagePermissionsBuilder {
     pub fn set_allow_image_builder(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_image_builder = input;
         self
+    }
+    /// <p>Indicates whether the image can be used for an image builder.</p>
+    pub fn get_allow_image_builder(&self) -> &::std::option::Option<bool> {
+        &self.allow_image_builder
     }
     /// Consumes the builder and constructs a [`ImagePermissions`](crate::types::ImagePermissions).
     pub fn build(self) -> crate::types::ImagePermissions {

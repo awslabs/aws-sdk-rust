@@ -63,6 +63,10 @@ impl ResetDeploymentsInputBuilder {
         self.amzn_client_token = input;
         self
     }
+    /// A client token used to correlate requests and responses.
+    pub fn get_amzn_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.amzn_client_token
+    }
     /// If true, performs a best-effort only core reset.
     pub fn force(mut self, input: bool) -> Self {
         self.force = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl ResetDeploymentsInputBuilder {
         self.force = input;
         self
     }
+    /// If true, performs a best-effort only core reset.
+    pub fn get_force(&self) -> &::std::option::Option<bool> {
+        &self.force
+    }
     /// The ID of the Greengrass group.
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl ResetDeploymentsInputBuilder {
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_id = input;
         self
+    }
+    /// The ID of the Greengrass group.
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
     }
     /// Consumes the builder and constructs a [`ResetDeploymentsInput`](crate::operation::reset_deployments::ResetDeploymentsInput).
     pub fn build(

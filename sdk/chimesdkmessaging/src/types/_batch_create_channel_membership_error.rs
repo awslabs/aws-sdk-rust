@@ -56,6 +56,10 @@ impl BatchCreateChannelMembershipErrorBuilder {
         self.member_arn = input;
         self
     }
+    /// <p>The <code>AppInstanceUserArn</code> of the member that the service couldn't add.</p>
+    pub fn get_member_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_arn
+    }
     /// <p>The error code.</p>
     pub fn error_code(mut self, input: crate::types::ErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl BatchCreateChannelMembershipErrorBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The error code.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
+        &self.error_code
     }
     /// <p>The error message.</p>
     pub fn error_message(
@@ -81,6 +89,10 @@ impl BatchCreateChannelMembershipErrorBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>The error message.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`BatchCreateChannelMembershipError`](crate::types::BatchCreateChannelMembershipError).
     pub fn build(self) -> crate::types::BatchCreateChannelMembershipError {

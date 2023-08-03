@@ -51,6 +51,10 @@ impl BridgeSourceBuilder {
         self.flow_source = input;
         self
     }
+    /// The source of the bridge. A flow source originates in MediaConnect as an existing cloud flow.
+    pub fn get_flow_source(&self) -> &::std::option::Option<crate::types::BridgeFlowSource> {
+        &self.flow_source
+    }
     /// The source of the bridge. A network source originates at your premises.
     pub fn network_source(mut self, input: crate::types::BridgeNetworkSource) -> Self {
         self.network_source = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl BridgeSourceBuilder {
     ) -> Self {
         self.network_source = input;
         self
+    }
+    /// The source of the bridge. A network source originates at your premises.
+    pub fn get_network_source(&self) -> &::std::option::Option<crate::types::BridgeNetworkSource> {
+        &self.network_source
     }
     /// Consumes the builder and constructs a [`BridgeSource`](crate::types::BridgeSource).
     pub fn build(self) -> crate::types::BridgeSource {

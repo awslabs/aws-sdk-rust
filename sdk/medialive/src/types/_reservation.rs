@@ -196,6 +196,10 @@ impl ReservationBuilder {
         self.arn = input;
         self
     }
+    /// Unique reservation ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:reservation:1234567'
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Number of reserved resources
     pub fn count(mut self, input: i32) -> Self {
         self.count = ::std::option::Option::Some(input);
@@ -205,6 +209,10 @@ impl ReservationBuilder {
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
+    }
+    /// Number of reserved resources
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        &self.count
     }
     /// Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
     pub fn currency_code(
@@ -222,6 +230,10 @@ impl ReservationBuilder {
         self.currency_code = input;
         self
     }
+    /// Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
+    pub fn get_currency_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.currency_code
+    }
     /// Lease duration, e.g. '12'
     pub fn duration(mut self, input: i32) -> Self {
         self.duration = ::std::option::Option::Some(input);
@@ -231,6 +243,10 @@ impl ReservationBuilder {
     pub fn set_duration(mut self, input: ::std::option::Option<i32>) -> Self {
         self.duration = input;
         self
+    }
+    /// Lease duration, e.g. '12'
+    pub fn get_duration(&self) -> &::std::option::Option<i32> {
+        &self.duration
     }
     /// Units for duration, e.g. 'MONTHS'
     pub fn duration_units(mut self, input: crate::types::OfferingDurationUnits) -> Self {
@@ -245,6 +261,12 @@ impl ReservationBuilder {
         self.duration_units = input;
         self
     }
+    /// Units for duration, e.g. 'MONTHS'
+    pub fn get_duration_units(
+        &self,
+    ) -> &::std::option::Option<crate::types::OfferingDurationUnits> {
+        &self.duration_units
+    }
     /// Reservation UTC end date and time in ISO-8601 format, e.g. '2019-03-01T00:00:00'
     pub fn end(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.end = ::std::option::Option::Some(input.into());
@@ -254,6 +276,10 @@ impl ReservationBuilder {
     pub fn set_end(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.end = input;
         self
+    }
+    /// Reservation UTC end date and time in ISO-8601 format, e.g. '2019-03-01T00:00:00'
+    pub fn get_end(&self) -> &::std::option::Option<::std::string::String> {
+        &self.end
     }
     /// One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
     pub fn fixed_price(mut self, input: f64) -> Self {
@@ -265,6 +291,10 @@ impl ReservationBuilder {
         self.fixed_price = input;
         self
     }
+    /// One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
+    pub fn get_fixed_price(&self) -> &::std::option::Option<f64> {
+        &self.fixed_price
+    }
     /// User specified reservation name
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -274,6 +304,10 @@ impl ReservationBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// User specified reservation name
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
     pub fn offering_description(
@@ -291,6 +325,10 @@ impl ReservationBuilder {
         self.offering_description = input;
         self
     }
+    /// Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
+    pub fn get_offering_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.offering_description
+    }
     /// Unique offering ID, e.g. '87654321'
     pub fn offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.offering_id = ::std::option::Option::Some(input.into());
@@ -300,6 +338,10 @@ impl ReservationBuilder {
     pub fn set_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.offering_id = input;
         self
+    }
+    /// Unique offering ID, e.g. '87654321'
+    pub fn get_offering_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.offering_id
     }
     /// Offering type, e.g. 'NO_UPFRONT'
     pub fn offering_type(mut self, input: crate::types::OfferingType) -> Self {
@@ -314,6 +356,10 @@ impl ReservationBuilder {
         self.offering_type = input;
         self
     }
+    /// Offering type, e.g. 'NO_UPFRONT'
+    pub fn get_offering_type(&self) -> &::std::option::Option<crate::types::OfferingType> {
+        &self.offering_type
+    }
     /// AWS region, e.g. 'us-west-2'
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -323,6 +369,10 @@ impl ReservationBuilder {
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
+    }
+    /// AWS region, e.g. 'us-west-2'
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// Renewal settings for the reservation
     pub fn renewal_settings(mut self, input: crate::types::RenewalSettings) -> Self {
@@ -336,6 +386,10 @@ impl ReservationBuilder {
     ) -> Self {
         self.renewal_settings = input;
         self
+    }
+    /// Renewal settings for the reservation
+    pub fn get_renewal_settings(&self) -> &::std::option::Option<crate::types::RenewalSettings> {
+        &self.renewal_settings
     }
     /// Unique reservation ID, e.g. '1234567'
     pub fn reservation_id(
@@ -353,6 +407,10 @@ impl ReservationBuilder {
         self.reservation_id = input;
         self
     }
+    /// Unique reservation ID, e.g. '1234567'
+    pub fn get_reservation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reservation_id
+    }
     /// Resource configuration details
     pub fn resource_specification(
         mut self,
@@ -369,6 +427,12 @@ impl ReservationBuilder {
         self.resource_specification = input;
         self
     }
+    /// Resource configuration details
+    pub fn get_resource_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReservationResourceSpecification> {
+        &self.resource_specification
+    }
     /// Reservation UTC start date and time in ISO-8601 format, e.g. '2018-03-01T00:00:00'
     pub fn start(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start = ::std::option::Option::Some(input.into());
@@ -378,6 +442,10 @@ impl ReservationBuilder {
     pub fn set_start(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start = input;
         self
+    }
+    /// Reservation UTC start date and time in ISO-8601 format, e.g. '2018-03-01T00:00:00'
+    pub fn get_start(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start
     }
     /// Current state of reservation, e.g. 'ACTIVE'
     pub fn state(mut self, input: crate::types::ReservationState) -> Self {
@@ -391,6 +459,10 @@ impl ReservationBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// Current state of reservation, e.g. 'ACTIVE'
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ReservationState> {
+        &self.state
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -417,6 +489,14 @@ impl ReservationBuilder {
         self.tags = input;
         self
     }
+    /// A collection of key-value pairs
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// Recurring usage charge for each reserved resource, e.g. '157.0'
     pub fn usage_price(mut self, input: f64) -> Self {
         self.usage_price = ::std::option::Option::Some(input);
@@ -426,6 +506,10 @@ impl ReservationBuilder {
     pub fn set_usage_price(mut self, input: ::std::option::Option<f64>) -> Self {
         self.usage_price = input;
         self
+    }
+    /// Recurring usage charge for each reserved resource, e.g. '157.0'
+    pub fn get_usage_price(&self) -> &::std::option::Option<f64> {
+        &self.usage_price
     }
     /// Consumes the builder and constructs a [`Reservation`](crate::types::Reservation).
     pub fn build(self) -> crate::types::Reservation {

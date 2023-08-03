@@ -50,6 +50,12 @@ impl DeleteGcmChannelOutputBuilder {
         self.gcm_channel_response = input;
         self
     }
+    /// <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
+    pub fn get_gcm_channel_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::GcmChannelResponse> {
+        &self.gcm_channel_response
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

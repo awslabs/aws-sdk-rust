@@ -57,6 +57,13 @@ impl MultiRegionAccessPointsAsyncResponseBuilder {
         self.regions = input;
         self
     }
+    /// <p>A collection of status information for the different Regions that a Multi-Region Access Point supports.</p>
+    pub fn get_regions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MultiRegionAccessPointRegionalResponse>>
+    {
+        &self.regions
+    }
     /// Consumes the builder and constructs a [`MultiRegionAccessPointsAsyncResponse`](crate::types::MultiRegionAccessPointsAsyncResponse).
     pub fn build(self) -> crate::types::MultiRegionAccessPointsAsyncResponse {
         crate::types::MultiRegionAccessPointsAsyncResponse {

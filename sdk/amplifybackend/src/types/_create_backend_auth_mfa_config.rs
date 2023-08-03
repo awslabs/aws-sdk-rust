@@ -48,6 +48,10 @@ impl CreateBackendAuthMfaConfigBuilder {
         self.mfa_mode = input;
         self
     }
+    /// <p>Describes whether MFA should be [ON, OFF, or OPTIONAL] for authentication in your Amplify project.</p>
+    pub fn get_mfa_mode(&self) -> &::std::option::Option<crate::types::MfaMode> {
+        &self.mfa_mode
+    }
     /// <p>Describes the configuration settings and methods for your Amplify app users to use MFA.</p>
     pub fn settings(mut self, input: crate::types::Settings) -> Self {
         self.settings = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl CreateBackendAuthMfaConfigBuilder {
     pub fn set_settings(mut self, input: ::std::option::Option<crate::types::Settings>) -> Self {
         self.settings = input;
         self
+    }
+    /// <p>Describes the configuration settings and methods for your Amplify app users to use MFA.</p>
+    pub fn get_settings(&self) -> &::std::option::Option<crate::types::Settings> {
+        &self.settings
     }
     /// Consumes the builder and constructs a [`CreateBackendAuthMfaConfig`](crate::types::CreateBackendAuthMfaConfig).
     pub fn build(self) -> crate::types::CreateBackendAuthMfaConfig {

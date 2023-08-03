@@ -60,6 +60,12 @@ impl TrainingDataSchemaBuilder {
         self.model_variables = input;
         self
     }
+    /// <p>The training data schema variables.</p>
+    pub fn get_model_variables(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.model_variables
+    }
     /// <p>The label schema.</p>
     pub fn label_schema(mut self, input: crate::types::LabelSchema) -> Self {
         self.label_schema = ::std::option::Option::Some(input);
@@ -72,6 +78,10 @@ impl TrainingDataSchemaBuilder {
     ) -> Self {
         self.label_schema = input;
         self
+    }
+    /// <p>The label schema.</p>
+    pub fn get_label_schema(&self) -> &::std::option::Option<crate::types::LabelSchema> {
+        &self.label_schema
     }
     /// Consumes the builder and constructs a [`TrainingDataSchema`](crate::types::TrainingDataSchema).
     pub fn build(self) -> crate::types::TrainingDataSchema {

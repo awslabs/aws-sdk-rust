@@ -36,6 +36,10 @@ impl CreateModelQualityJobDefinitionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateModelQualityJobDefinition as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_model_quality_job_definition::builders::CreateModelQualityJobDefinitionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl CreateModelQualityJobDefinitionFluentBuilder {
         self.inner = self.inner.set_job_definition_name(input);
         self
     }
+    /// <p>The name of the monitoring job definition.</p>
+    pub fn get_job_definition_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_definition_name()
+    }
     /// <p>Specifies the constraints and baselines for the monitoring job.</p>
     pub fn model_quality_baseline_config(
         mut self,
@@ -121,6 +129,12 @@ impl CreateModelQualityJobDefinitionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_model_quality_baseline_config(input);
         self
+    }
+    /// <p>Specifies the constraints and baselines for the monitoring job.</p>
+    pub fn get_model_quality_baseline_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ModelQualityBaselineConfig> {
+        self.inner.get_model_quality_baseline_config()
     }
     /// <p>The container that runs the monitoring job.</p>
     pub fn model_quality_app_specification(
@@ -138,6 +152,12 @@ impl CreateModelQualityJobDefinitionFluentBuilder {
         self.inner = self.inner.set_model_quality_app_specification(input);
         self
     }
+    /// <p>The container that runs the monitoring job.</p>
+    pub fn get_model_quality_app_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::ModelQualityAppSpecification> {
+        self.inner.get_model_quality_app_specification()
+    }
     /// <p>A list of the inputs that are monitored. Currently endpoints are supported.</p>
     pub fn model_quality_job_input(mut self, input: crate::types::ModelQualityJobInput) -> Self {
         self.inner = self.inner.model_quality_job_input(input);
@@ -150,6 +170,12 @@ impl CreateModelQualityJobDefinitionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_model_quality_job_input(input);
         self
+    }
+    /// <p>A list of the inputs that are monitored. Currently endpoints are supported.</p>
+    pub fn get_model_quality_job_input(
+        &self,
+    ) -> &::std::option::Option<crate::types::ModelQualityJobInput> {
+        self.inner.get_model_quality_job_input()
     }
     /// <p>The output configuration for monitoring jobs.</p>
     pub fn model_quality_job_output_config(
@@ -167,6 +193,12 @@ impl CreateModelQualityJobDefinitionFluentBuilder {
         self.inner = self.inner.set_model_quality_job_output_config(input);
         self
     }
+    /// <p>The output configuration for monitoring jobs.</p>
+    pub fn get_model_quality_job_output_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::MonitoringOutputConfig> {
+        self.inner.get_model_quality_job_output_config()
+    }
     /// <p>Identifies the resources to deploy for a monitoring job.</p>
     pub fn job_resources(mut self, input: crate::types::MonitoringResources) -> Self {
         self.inner = self.inner.job_resources(input);
@@ -179,6 +211,10 @@ impl CreateModelQualityJobDefinitionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_job_resources(input);
         self
+    }
+    /// <p>Identifies the resources to deploy for a monitoring job.</p>
+    pub fn get_job_resources(&self) -> &::std::option::Option<crate::types::MonitoringResources> {
+        self.inner.get_job_resources()
     }
     /// <p>Specifies the network configuration for the monitoring job.</p>
     pub fn network_config(mut self, input: crate::types::MonitoringNetworkConfig) -> Self {
@@ -193,6 +229,12 @@ impl CreateModelQualityJobDefinitionFluentBuilder {
         self.inner = self.inner.set_network_config(input);
         self
     }
+    /// <p>Specifies the network configuration for the monitoring job.</p>
+    pub fn get_network_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::MonitoringNetworkConfig> {
+        self.inner.get_network_config()
+    }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -202,6 +244,10 @@ impl CreateModelQualityJobDefinitionFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
     pub fn stopping_condition(mut self, input: crate::types::MonitoringStoppingCondition) -> Self {
@@ -215,6 +261,12 @@ impl CreateModelQualityJobDefinitionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_stopping_condition(input);
         self
+    }
+    /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
+    pub fn get_stopping_condition(
+        &self,
+    ) -> &::std::option::Option<crate::types::MonitoringStoppingCondition> {
+        self.inner.get_stopping_condition()
     }
     /// Appends an item to `Tags`.
     ///
@@ -232,5 +284,9 @@ impl CreateModelQualityJobDefinitionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

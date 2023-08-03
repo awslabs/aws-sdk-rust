@@ -36,6 +36,12 @@ impl ListParticipantsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListParticipants as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_participants::builders::ListParticipantsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListParticipantsFluentBuilder {
         self.inner = self.inner.set_stage_arn(input);
         self
     }
+    /// <p>Stage ARN.</p>
+    pub fn get_stage_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stage_arn()
+    }
     /// <p>ID of the session within the stage.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.session_id(input.into());
@@ -146,6 +156,10 @@ impl ListParticipantsFluentBuilder {
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_session_id(input);
         self
+    }
+    /// <p>ID of the session within the stage.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_session_id()
     }
     /// <p>Filters the response list to match the specified user ID. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or <code>filterByState</code> can be provided per request. A <code>userId</code> is a customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems.</p>
     pub fn filter_by_user_id(
@@ -163,6 +177,10 @@ impl ListParticipantsFluentBuilder {
         self.inner = self.inner.set_filter_by_user_id(input);
         self
     }
+    /// <p>Filters the response list to match the specified user ID. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or <code>filterByState</code> can be provided per request. A <code>userId</code> is a customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems.</p>
+    pub fn get_filter_by_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_filter_by_user_id()
+    }
     /// <p>Filters the response list to only show participants who published during the stage session. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or <code>filterByState</code> can be provided per request.</p>
     pub fn filter_by_published(mut self, input: bool) -> Self {
         self.inner = self.inner.filter_by_published(input);
@@ -172,6 +190,10 @@ impl ListParticipantsFluentBuilder {
     pub fn set_filter_by_published(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_filter_by_published(input);
         self
+    }
+    /// <p>Filters the response list to only show participants who published during the stage session. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or <code>filterByState</code> can be provided per request.</p>
+    pub fn get_filter_by_published(&self) -> &::std::option::Option<bool> {
+        self.inner.get_filter_by_published()
     }
     /// <p>Filters the response list to only show participants in the specified state. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or <code>filterByState</code> can be provided per request.</p>
     pub fn filter_by_state(mut self, input: crate::types::ParticipantState) -> Self {
@@ -186,6 +208,10 @@ impl ListParticipantsFluentBuilder {
         self.inner = self.inner.set_filter_by_state(input);
         self
     }
+    /// <p>Filters the response list to only show participants in the specified state. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or <code>filterByState</code> can be provided per request.</p>
+    pub fn get_filter_by_state(&self) -> &::std::option::Option<crate::types::ParticipantState> {
+        self.inner.get_filter_by_state()
+    }
     /// <p>The first participant to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -196,6 +222,10 @@ impl ListParticipantsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The first participant to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>Maximum number of results to return. Default: 50.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -205,5 +235,9 @@ impl ListParticipantsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>Maximum number of results to return. Default: 50.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

@@ -51,6 +51,10 @@ impl OverrideButtonConfigurationBuilder {
         self.button_action = input;
         self
     }
+    /// <p>Action triggered by the button.</p>
+    pub fn get_button_action(&self) -> &::std::option::Option<crate::types::ButtonAction> {
+        &self.button_action
+    }
     /// <p>Button destination.</p>
     pub fn link(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.link = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl OverrideButtonConfigurationBuilder {
     pub fn set_link(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.link = input;
         self
+    }
+    /// <p>Button destination.</p>
+    pub fn get_link(&self) -> &::std::option::Option<::std::string::String> {
+        &self.link
     }
     /// Consumes the builder and constructs a [`OverrideButtonConfiguration`](crate::types::OverrideButtonConfiguration).
     pub fn build(self) -> crate::types::OverrideButtonConfiguration {

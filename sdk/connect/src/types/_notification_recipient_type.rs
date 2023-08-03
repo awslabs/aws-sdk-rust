@@ -71,6 +71,14 @@ impl NotificationRecipientTypeBuilder {
         self.user_tags = input;
         self
     }
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }. Amazon Connect users with the specified tags will be notified.</p>
+    pub fn get_user_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.user_tags
+    }
     /// Appends an item to `user_ids`.
     ///
     /// To override the contents of this collection use [`set_user_ids`](Self::set_user_ids).
@@ -89,6 +97,10 @@ impl NotificationRecipientTypeBuilder {
     ) -> Self {
         self.user_ids = input;
         self
+    }
+    /// <p>A list of user IDs.</p>
+    pub fn get_user_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.user_ids
     }
     /// Consumes the builder and constructs a [`NotificationRecipientType`](crate::types::NotificationRecipientType).
     pub fn build(self) -> crate::types::NotificationRecipientType {

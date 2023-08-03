@@ -49,6 +49,10 @@ impl DatabaseLfTagPolicyBuilder {
         self.expression = input;
         self
     }
+    /// <p>A list of LF-tag conditions that apply to database resources.</p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LfTag>> {
+        &self.expression
+    }
     /// Consumes the builder and constructs a [`DatabaseLfTagPolicy`](crate::types::DatabaseLfTagPolicy).
     pub fn build(self) -> crate::types::DatabaseLfTagPolicy {
         crate::types::DatabaseLfTagPolicy {

@@ -69,6 +69,14 @@ impl GetWorkflowRunPropertiesOutputBuilder {
         self.run_properties = input;
         self
     }
+    /// <p>The workflow run properties which were set during the specified run.</p>
+    pub fn get_run_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.run_properties
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

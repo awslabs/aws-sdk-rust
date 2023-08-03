@@ -40,6 +40,10 @@ impl TlsValidationContextSdsTrustBuilder {
         self.secret_name = input;
         self
     }
+    /// <p>A reference to an object that represents the name of the secret for a Transport Layer Security (TLS) Secret Discovery Service validation context trust.</p>
+    pub fn get_secret_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_name
+    }
     /// Consumes the builder and constructs a [`TlsValidationContextSdsTrust`](crate::types::TlsValidationContextSdsTrust).
     pub fn build(self) -> crate::types::TlsValidationContextSdsTrust {
         crate::types::TlsValidationContextSdsTrust {

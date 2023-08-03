@@ -36,6 +36,12 @@ impl DescribeAlarmModelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeAlarmModel as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_alarm_model::builders::DescribeAlarmModelInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl DescribeAlarmModelFluentBuilder {
         self.inner = self.inner.set_alarm_model_name(input);
         self
     }
+    /// <p>The name of the alarm model.</p>
+    pub fn get_alarm_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_alarm_model_name()
+    }
     /// <p>The version of the alarm model.</p>
     pub fn alarm_model_version(
         mut self,
@@ -147,5 +157,9 @@ impl DescribeAlarmModelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_alarm_model_version(input);
         self
+    }
+    /// <p>The version of the alarm model.</p>
+    pub fn get_alarm_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_alarm_model_version()
     }
 }

@@ -61,6 +61,10 @@ impl CreateComponentInputBuilder {
         self.resource_group_name = input;
         self
     }
+    /// <p>The name of the resource group.</p>
+    pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_group_name
+    }
     /// <p>The name of the component.</p>
     pub fn component_name(
         mut self,
@@ -76,6 +80,10 @@ impl CreateComponentInputBuilder {
     ) -> Self {
         self.component_name = input;
         self
+    }
+    /// <p>The name of the component.</p>
+    pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_name
     }
     /// Appends an item to `resource_list`.
     ///
@@ -98,6 +106,12 @@ impl CreateComponentInputBuilder {
     ) -> Self {
         self.resource_list = input;
         self
+    }
+    /// <p>The list of resource ARNs that belong to the component.</p>
+    pub fn get_resource_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_list
     }
     /// Consumes the builder and constructs a [`CreateComponentInput`](crate::operation::create_component::CreateComponentInput).
     pub fn build(

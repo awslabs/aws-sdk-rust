@@ -61,6 +61,10 @@ impl DatabaseLfTagPolicyAndPermissionsBuilder {
         self.expression = input;
         self
     }
+    /// <p>A list of LF-tag conditions that apply to database resources.</p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LfTag>> {
+        &self.expression
+    }
     /// Appends an item to `permissions`.
     ///
     /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
@@ -79,6 +83,12 @@ impl DatabaseLfTagPolicyAndPermissionsBuilder {
     ) -> Self {
         self.permissions = input;
         self
+    }
+    /// <p>The permissions granted to subscribers on database resources.</p>
+    pub fn get_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DatabaseLfTagPolicyPermission>> {
+        &self.permissions
     }
     /// Consumes the builder and constructs a [`DatabaseLfTagPolicyAndPermissions`](crate::types::DatabaseLfTagPolicyAndPermissions).
     pub fn build(self) -> crate::types::DatabaseLfTagPolicyAndPermissions {

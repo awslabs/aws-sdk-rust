@@ -50,6 +50,10 @@ impl AwsIamAccessKeySessionContextAttributesBuilder {
         self.mfa_authenticated = input;
         self
     }
+    /// <p>Indicates whether the session used multi-factor authentication (MFA).</p>
+    pub fn get_mfa_authenticated(&self) -> &::std::option::Option<bool> {
+        &self.mfa_authenticated
+    }
     /// <p>Indicates when the session was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn creation_date(
@@ -67,6 +71,11 @@ impl AwsIamAccessKeySessionContextAttributesBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>Indicates when the session was created.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_date
     }
     /// Consumes the builder and constructs a [`AwsIamAccessKeySessionContextAttributes`](crate::types::AwsIamAccessKeySessionContextAttributes).
     pub fn build(self) -> crate::types::AwsIamAccessKeySessionContextAttributes {

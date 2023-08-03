@@ -102,6 +102,10 @@ impl StartMigrationOutputBuilder {
         self.v1_bot_name = input;
         self
     }
+    /// <p>The name of the Amazon Lex V1 bot that you are migrating to Amazon Lex V2.</p>
+    pub fn get_v1_bot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.v1_bot_name
+    }
     /// <p>The version of the bot to migrate to Amazon Lex V2. </p>
     pub fn v1_bot_version(
         mut self,
@@ -118,6 +122,10 @@ impl StartMigrationOutputBuilder {
         self.v1_bot_version = input;
         self
     }
+    /// <p>The version of the bot to migrate to Amazon Lex V2. </p>
+    pub fn get_v1_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.v1_bot_version
+    }
     /// <p>The locale used for the Amazon Lex V1 bot. </p>
     pub fn v1_bot_locale(mut self, input: crate::types::Locale) -> Self {
         self.v1_bot_locale = ::std::option::Option::Some(input);
@@ -127,6 +135,10 @@ impl StartMigrationOutputBuilder {
     pub fn set_v1_bot_locale(mut self, input: ::std::option::Option<crate::types::Locale>) -> Self {
         self.v1_bot_locale = input;
         self
+    }
+    /// <p>The locale used for the Amazon Lex V1 bot. </p>
+    pub fn get_v1_bot_locale(&self) -> &::std::option::Option<crate::types::Locale> {
+        &self.v1_bot_locale
     }
     /// <p>The unique identifier for the Amazon Lex V2 bot. </p>
     pub fn v2_bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,6 +150,10 @@ impl StartMigrationOutputBuilder {
         self.v2_bot_id = input;
         self
     }
+    /// <p>The unique identifier for the Amazon Lex V2 bot. </p>
+    pub fn get_v2_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.v2_bot_id
+    }
     /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
     pub fn v2_bot_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.v2_bot_role = ::std::option::Option::Some(input.into());
@@ -148,6 +164,10 @@ impl StartMigrationOutputBuilder {
         self.v2_bot_role = input;
         self
     }
+    /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
+    pub fn get_v2_bot_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.v2_bot_role
+    }
     /// <p>The unique identifier that Amazon Lex assigned to the migration.</p>
     pub fn migration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.migration_id = ::std::option::Option::Some(input.into());
@@ -157,6 +177,10 @@ impl StartMigrationOutputBuilder {
     pub fn set_migration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.migration_id = input;
         self
+    }
+    /// <p>The unique identifier that Amazon Lex assigned to the migration.</p>
+    pub fn get_migration_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.migration_id
     }
     /// <p>The strategy used to conduct the migration.</p>
     pub fn migration_strategy(mut self, input: crate::types::MigrationStrategy) -> Self {
@@ -171,6 +195,12 @@ impl StartMigrationOutputBuilder {
         self.migration_strategy = input;
         self
     }
+    /// <p>The strategy used to conduct the migration.</p>
+    pub fn get_migration_strategy(
+        &self,
+    ) -> &::std::option::Option<crate::types::MigrationStrategy> {
+        &self.migration_strategy
+    }
     /// <p>The date and time that the migration started.</p>
     pub fn migration_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.migration_timestamp = ::std::option::Option::Some(input);
@@ -183,6 +213,10 @@ impl StartMigrationOutputBuilder {
     ) -> Self {
         self.migration_timestamp = input;
         self
+    }
+    /// <p>The date and time that the migration started.</p>
+    pub fn get_migration_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.migration_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

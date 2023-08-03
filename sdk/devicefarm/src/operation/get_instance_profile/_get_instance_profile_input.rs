@@ -40,6 +40,10 @@ impl GetInstanceProfileInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of an instance profile.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`GetInstanceProfileInput`](crate::operation::get_instance_profile::GetInstanceProfileInput).
     pub fn build(
         self,

@@ -40,6 +40,10 @@ impl InputContextBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the context.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`InputContext`](crate::types::InputContext).
     pub fn build(self) -> crate::types::InputContext {
         crate::types::InputContext { name: self.name }

@@ -48,6 +48,10 @@ impl CodeLineBuilder {
         self.number = input;
         self
     }
+    /// <p>The code line number.</p>
+    pub fn get_number(&self) -> &::std::option::Option<i32> {
+        &self.number
+    }
     /// <p>The code that contains a vulnerability.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl CodeLineBuilder {
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
+    }
+    /// <p>The code that contains a vulnerability.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
     }
     /// Consumes the builder and constructs a [`CodeLine`](crate::types::CodeLine).
     pub fn build(self) -> crate::types::CodeLine {

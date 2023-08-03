@@ -56,6 +56,10 @@ impl DeleteQueuedMessagesInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of a given wireless device for which downlink messages will be deleted.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>If message ID is <code>"*"</code>, it cleares the entire downlink queue for a given device, specified by the wireless device ID. Otherwise, the downlink message with the specified message ID will be deleted.</p>
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_id = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl DeleteQueuedMessagesInputBuilder {
     pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_id = input;
         self
+    }
+    /// <p>If message ID is <code>"*"</code>, it cleares the entire downlink queue for a given device, specified by the wireless device ID. Otherwise, the downlink message with the specified message ID will be deleted.</p>
+    pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_id
     }
     /// <p>The wireless device type, which can be either Sidewalk or LoRaWAN.</p>
     pub fn wireless_device_type(mut self, input: crate::types::WirelessDeviceType) -> Self {
@@ -78,6 +86,12 @@ impl DeleteQueuedMessagesInputBuilder {
     ) -> Self {
         self.wireless_device_type = input;
         self
+    }
+    /// <p>The wireless device type, which can be either Sidewalk or LoRaWAN.</p>
+    pub fn get_wireless_device_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::WirelessDeviceType> {
+        &self.wireless_device_type
     }
     /// Consumes the builder and constructs a [`DeleteQueuedMessagesInput`](crate::operation::delete_queued_messages::DeleteQueuedMessagesInput).
     pub fn build(

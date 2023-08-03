@@ -70,6 +70,12 @@ impl VpnConnectionDeviceTypeBuilder {
         self.vpn_connection_device_type_id = input;
         self
     }
+    /// <p>Customer gateway device identifier.</p>
+    pub fn get_vpn_connection_device_type_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.vpn_connection_device_type_id
+    }
     /// <p>Customer gateway device vendor.</p>
     pub fn vendor(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vendor = ::std::option::Option::Some(input.into());
@@ -79,6 +85,10 @@ impl VpnConnectionDeviceTypeBuilder {
     pub fn set_vendor(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vendor = input;
         self
+    }
+    /// <p>Customer gateway device vendor.</p>
+    pub fn get_vendor(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vendor
     }
     /// <p>Customer gateway device platform.</p>
     pub fn platform(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -90,6 +100,10 @@ impl VpnConnectionDeviceTypeBuilder {
         self.platform = input;
         self
     }
+    /// <p>Customer gateway device platform.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform
+    }
     /// <p>Customer gateway device software version.</p>
     pub fn software(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.software = ::std::option::Option::Some(input.into());
@@ -99,6 +113,10 @@ impl VpnConnectionDeviceTypeBuilder {
     pub fn set_software(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.software = input;
         self
+    }
+    /// <p>Customer gateway device software version.</p>
+    pub fn get_software(&self) -> &::std::option::Option<::std::string::String> {
+        &self.software
     }
     /// Consumes the builder and constructs a [`VpnConnectionDeviceType`](crate::types::VpnConnectionDeviceType).
     pub fn build(self) -> crate::types::VpnConnectionDeviceType {

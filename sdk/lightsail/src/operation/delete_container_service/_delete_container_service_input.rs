@@ -41,6 +41,10 @@ impl DeleteContainerServiceInputBuilder {
         self.service_name = input;
         self
     }
+    /// <p>The name of the container service to delete.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
+    }
     /// Consumes the builder and constructs a [`DeleteContainerServiceInput`](crate::operation::delete_container_service::DeleteContainerServiceInput).
     pub fn build(
         self,

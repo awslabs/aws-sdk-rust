@@ -37,6 +37,13 @@ impl RemoveFromGlobalClusterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RemoveFromGlobalCluster as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::remove_from_global_cluster::builders::RemoveFromGlobalClusterInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl RemoveFromGlobalClusterFluentBuilder {
         self.inner = self.inner.set_global_cluster_identifier(input);
         self
     }
+    /// <p>The identifier of the Neptune global database from which to detach the specified Neptune DB cluster.</p>
+    pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_global_cluster_identifier()
+    }
     /// <p>The Amazon Resource Name (ARN) identifying the cluster to be detached from the Neptune global database cluster.</p>
     pub fn db_cluster_identifier(
         mut self,
@@ -148,5 +159,9 @@ impl RemoveFromGlobalClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_db_cluster_identifier(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) identifying the cluster to be detached from the Neptune global database cluster.</p>
+    pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_cluster_identifier()
     }
 }

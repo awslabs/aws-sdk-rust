@@ -82,6 +82,12 @@ impl StartCutoverInputBuilder {
         self.source_server_i_ds = input;
         self
     }
+    /// <p>Start Cutover by Source Server IDs.</p>
+    pub fn get_source_server_i_ds(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.source_server_i_ds
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -107,6 +113,14 @@ impl StartCutoverInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Start Cutover by Tags.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>Start Cutover by Account IDs</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -116,6 +130,10 @@ impl StartCutoverInputBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>Start Cutover by Account IDs</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// Consumes the builder and constructs a [`StartCutoverInput`](crate::operation::start_cutover::StartCutoverInput).
     pub fn build(

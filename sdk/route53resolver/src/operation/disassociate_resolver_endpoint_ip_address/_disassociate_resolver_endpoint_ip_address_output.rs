@@ -49,6 +49,10 @@ impl DisassociateResolverEndpointIpAddressOutputBuilder {
         self.resolver_endpoint = input;
         self
     }
+    /// <p>The response to an <code>DisassociateResolverEndpointIpAddress</code> request.</p>
+    pub fn get_resolver_endpoint(&self) -> &::std::option::Option<crate::types::ResolverEndpoint> {
+        &self.resolver_endpoint
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

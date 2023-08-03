@@ -50,6 +50,10 @@ impl DescribeBuildOutputBuilder {
         self.build_value = input;
         self
     }
+    /// <p>Set of properties describing the requested build.</p>
+    pub fn get_build(&self) -> &::std::option::Option<crate::types::Build> {
+        &self.build_value
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

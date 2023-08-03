@@ -47,6 +47,12 @@ impl PutRetentionConfigurationInputBuilder {
         self.retention_period_in_days = input;
         self
     }
+    /// <p>Number of days Config stores your historical information.</p> <note>
+    /// <p>Currently, only applicable to the configuration item history.</p>
+    /// </note>
+    pub fn get_retention_period_in_days(&self) -> &::std::option::Option<i32> {
+        &self.retention_period_in_days
+    }
     /// Consumes the builder and constructs a [`PutRetentionConfigurationInput`](crate::operation::put_retention_configuration::PutRetentionConfigurationInput).
     pub fn build(
         self,

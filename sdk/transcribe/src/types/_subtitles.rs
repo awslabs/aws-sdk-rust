@@ -61,6 +61,12 @@ impl SubtitlesBuilder {
         self.formats = input;
         self
     }
+    /// <p>Specify the output format for your subtitle file; if you select both WebVTT (<code>vtt</code>) and SubRip (<code>srt</code>) formats, two output files are generated.</p>
+    pub fn get_formats(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SubtitleFormat>> {
+        &self.formats
+    }
     /// <p>Specify the starting value that is assigned to the first subtitle segment.</p>
     /// <p>The default start index for Amazon Transcribe is <code>0</code>, which differs from the more widely used standard of <code>1</code>. If you're uncertain which value to use, we recommend choosing <code>1</code>, as this may improve compatibility with other services.</p>
     pub fn output_start_index(mut self, input: i32) -> Self {
@@ -72,6 +78,11 @@ impl SubtitlesBuilder {
     pub fn set_output_start_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.output_start_index = input;
         self
+    }
+    /// <p>Specify the starting value that is assigned to the first subtitle segment.</p>
+    /// <p>The default start index for Amazon Transcribe is <code>0</code>, which differs from the more widely used standard of <code>1</code>. If you're uncertain which value to use, we recommend choosing <code>1</code>, as this may improve compatibility with other services.</p>
+    pub fn get_output_start_index(&self) -> &::std::option::Option<i32> {
+        &self.output_start_index
     }
     /// Consumes the builder and constructs a [`Subtitles`](crate::types::Subtitles).
     pub fn build(self) -> crate::types::Subtitles {

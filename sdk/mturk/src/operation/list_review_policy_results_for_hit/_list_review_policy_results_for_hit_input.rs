@@ -80,6 +80,10 @@ impl ListReviewPolicyResultsForHitInputBuilder {
         self.hit_id = input;
         self
     }
+    /// <p>The unique identifier of the HIT to retrieve review results for.</p>
+    pub fn get_hit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hit_id
+    }
     /// Appends an item to `policy_levels`.
     ///
     /// To override the contents of this collection use [`set_policy_levels`](Self::set_policy_levels).
@@ -99,6 +103,12 @@ impl ListReviewPolicyResultsForHitInputBuilder {
         self.policy_levels = input;
         self
     }
+    /// <p> The Policy Level(s) to retrieve review results for - HIT or Assignment. If omitted, the default behavior is to retrieve all data for both policy levels. For a list of all the described policies, see Review Policies. </p>
+    pub fn get_policy_levels(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReviewPolicyLevel>> {
+        &self.policy_levels
+    }
     /// <p> Specify if the operation should retrieve a list of the actions taken executing the Review Policies and their outcomes. </p>
     pub fn retrieve_actions(mut self, input: bool) -> Self {
         self.retrieve_actions = ::std::option::Option::Some(input);
@@ -108,6 +118,10 @@ impl ListReviewPolicyResultsForHitInputBuilder {
     pub fn set_retrieve_actions(mut self, input: ::std::option::Option<bool>) -> Self {
         self.retrieve_actions = input;
         self
+    }
+    /// <p> Specify if the operation should retrieve a list of the actions taken executing the Review Policies and their outcomes. </p>
+    pub fn get_retrieve_actions(&self) -> &::std::option::Option<bool> {
+        &self.retrieve_actions
     }
     /// <p> Specify if the operation should retrieve a list of the results computed by the Review Policies. </p>
     pub fn retrieve_results(mut self, input: bool) -> Self {
@@ -119,6 +133,10 @@ impl ListReviewPolicyResultsForHitInputBuilder {
         self.retrieve_results = input;
         self
     }
+    /// <p> Specify if the operation should retrieve a list of the results computed by the Review Policies. </p>
+    pub fn get_retrieve_results(&self) -> &::std::option::Option<bool> {
+        &self.retrieve_results
+    }
     /// <p>Pagination token</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -129,6 +147,10 @@ impl ListReviewPolicyResultsForHitInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Pagination token</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>Limit the number of results returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -138,6 +160,10 @@ impl ListReviewPolicyResultsForHitInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>Limit the number of results returned.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListReviewPolicyResultsForHitInput`](crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHitInput).
     pub fn build(

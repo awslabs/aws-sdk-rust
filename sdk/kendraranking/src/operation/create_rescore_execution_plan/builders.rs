@@ -37,6 +37,10 @@ impl CreateRescoreExecutionPlanFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateRescoreExecutionPlan as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_rescore_execution_plan::builders::CreateRescoreExecutionPlanInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl CreateRescoreExecutionPlanFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>A name for the rescore execution plan.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A description for the rescore execution plan.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -136,6 +144,10 @@ impl CreateRescoreExecutionPlanFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description for the rescore execution plan.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>You can set additional capacity units to meet the needs of your rescore execution plan. You are given a single capacity unit by default. If you want to use the default capacity, you don't set additional capacity units. For more information on the default capacity and additional capacity units, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
     pub fn capacity_units(mut self, input: crate::types::CapacityUnitsConfiguration) -> Self {
@@ -149,6 +161,12 @@ impl CreateRescoreExecutionPlanFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_capacity_units(input);
         self
+    }
+    /// <p>You can set additional capacity units to meet the needs of your rescore execution plan. You are given a single capacity unit by default. If you want to use the default capacity, you don't set additional capacity units. For more information on the default capacity and additional capacity units, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
+    pub fn get_capacity_units(
+        &self,
+    ) -> &::std::option::Option<crate::types::CapacityUnitsConfiguration> {
+        self.inner.get_capacity_units()
     }
     /// Appends an item to `Tags`.
     ///
@@ -167,6 +185,10 @@ impl CreateRescoreExecutionPlanFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>A list of key-value pairs that identify or categorize your rescore execution plan. You can also use tags to help control access to the rescore execution plan. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>A token that you provide to identify the request to create a rescore execution plan. Multiple calls to the <code>CreateRescoreExecutionPlanRequest</code> API with the same client token will create only one rescore execution plan.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -176,5 +198,9 @@ impl CreateRescoreExecutionPlanFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A token that you provide to identify the request to create a rescore execution plan. Multiple calls to the <code>CreateRescoreExecutionPlanRequest</code> API with the same client token will create only one rescore execution plan.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

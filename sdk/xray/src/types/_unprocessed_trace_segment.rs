@@ -56,6 +56,10 @@ impl UnprocessedTraceSegmentBuilder {
         self.id = input;
         self
     }
+    /// <p>The segment's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The error that caused processing to fail.</p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl UnprocessedTraceSegmentBuilder {
         self.error_code = input;
         self
     }
+    /// <p>The error that caused processing to fail.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
+    }
     /// <p>The error message.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl UnprocessedTraceSegmentBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The error message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`UnprocessedTraceSegment`](crate::types::UnprocessedTraceSegment).
     pub fn build(self) -> crate::types::UnprocessedTraceSegment {

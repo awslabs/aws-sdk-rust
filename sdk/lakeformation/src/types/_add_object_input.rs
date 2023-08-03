@@ -66,6 +66,10 @@ impl AddObjectInputBuilder {
         self.uri = input;
         self
     }
+    /// <p>The Amazon S3 location of the object.</p>
+    pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uri
+    }
     /// <p>The Amazon S3 ETag of the object. Returned by <code>GetTableObjects</code> for validation and used to identify changes to the underlying data.</p>
     pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.e_tag = ::std::option::Option::Some(input.into());
@@ -76,6 +80,10 @@ impl AddObjectInputBuilder {
         self.e_tag = input;
         self
     }
+    /// <p>The Amazon S3 ETag of the object. Returned by <code>GetTableObjects</code> for validation and used to identify changes to the underlying data.</p>
+    pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.e_tag
+    }
     /// <p>The size of the Amazon S3 object in bytes.</p>
     pub fn size(mut self, input: i64) -> Self {
         self.size = ::std::option::Option::Some(input);
@@ -85,6 +93,10 @@ impl AddObjectInputBuilder {
     pub fn set_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.size = input;
         self
+    }
+    /// <p>The size of the Amazon S3 object in bytes.</p>
+    pub fn get_size(&self) -> &::std::option::Option<i64> {
+        &self.size
     }
     /// Appends an item to `partition_values`.
     ///
@@ -109,6 +121,13 @@ impl AddObjectInputBuilder {
     ) -> Self {
         self.partition_values = input;
         self
+    }
+    /// <p>A list of partition values for the object. A value must be specified for each partition key associated with the table.</p>
+    /// <p>The supported data types are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p>
+    pub fn get_partition_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.partition_values
     }
     /// Consumes the builder and constructs a [`AddObjectInput`](crate::types::AddObjectInput).
     pub fn build(self) -> crate::types::AddObjectInput {

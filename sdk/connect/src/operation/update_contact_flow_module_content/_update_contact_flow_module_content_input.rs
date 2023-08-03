@@ -55,6 +55,10 @@ impl UpdateContactFlowModuleContentInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The identifier of the flow module.</p>
     pub fn contact_flow_module_id(
         mut self,
@@ -71,6 +75,10 @@ impl UpdateContactFlowModuleContentInputBuilder {
         self.contact_flow_module_id = input;
         self
     }
+    /// <p>The identifier of the flow module.</p>
+    pub fn get_contact_flow_module_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_flow_module_id
+    }
     /// <p>The content of the flow module.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
@@ -80,6 +88,10 @@ impl UpdateContactFlowModuleContentInputBuilder {
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
+    }
+    /// <p>The content of the flow module.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
     }
     /// Consumes the builder and constructs a [`UpdateContactFlowModuleContentInput`](crate::operation::update_contact_flow_module_content::UpdateContactFlowModuleContentInput).
     pub fn build(

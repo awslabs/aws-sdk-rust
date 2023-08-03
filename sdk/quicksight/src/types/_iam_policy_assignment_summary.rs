@@ -54,6 +54,10 @@ impl IamPolicyAssignmentSummaryBuilder {
         self.assignment_name = input;
         self
     }
+    /// <p>Assignment name.</p>
+    pub fn get_assignment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assignment_name
+    }
     /// <p>Assignment status.</p>
     pub fn assignment_status(mut self, input: crate::types::AssignmentStatus) -> Self {
         self.assignment_status = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl IamPolicyAssignmentSummaryBuilder {
     ) -> Self {
         self.assignment_status = input;
         self
+    }
+    /// <p>Assignment status.</p>
+    pub fn get_assignment_status(&self) -> &::std::option::Option<crate::types::AssignmentStatus> {
+        &self.assignment_status
     }
     /// Consumes the builder and constructs a [`IamPolicyAssignmentSummary`](crate::types::IamPolicyAssignmentSummary).
     pub fn build(self) -> crate::types::IamPolicyAssignmentSummary {

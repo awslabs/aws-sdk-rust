@@ -36,6 +36,10 @@ impl GetSensitiveDataOccurrencesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetSensitiveDataOccurrences as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_sensitive_data_occurrences::builders::GetSensitiveDataOccurrencesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +129,9 @@ impl GetSensitiveDataOccurrencesFluentBuilder {
     pub fn set_finding_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_finding_id(input);
         self
+    }
+    /// <p>The unique identifier for the finding.</p>
+    pub fn get_finding_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_finding_id()
     }
 }

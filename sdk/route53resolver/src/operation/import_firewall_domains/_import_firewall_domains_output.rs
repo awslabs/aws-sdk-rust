@@ -72,6 +72,10 @@ impl ImportFirewallDomainsOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The Id of the firewall domain list that DNS Firewall just updated.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the domain list. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl ImportFirewallDomainsOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the domain list. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Status of the import request.</p>
     pub fn status(mut self, input: crate::types::FirewallDomainListStatus) -> Self {
@@ -94,6 +102,10 @@ impl ImportFirewallDomainsOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Status of the import request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::FirewallDomainListStatus> {
+        &self.status
     }
     /// <p>Additional information about the status of the list, if available.</p>
     pub fn status_message(
@@ -110,6 +122,10 @@ impl ImportFirewallDomainsOutputBuilder {
     ) -> Self {
         self.status_message = input;
         self
+    }
+    /// <p>Additional information about the status of the list, if available.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

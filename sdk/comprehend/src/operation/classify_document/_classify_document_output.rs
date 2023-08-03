@@ -110,6 +110,12 @@ impl ClassifyDocumentOutputBuilder {
         self.classes = input;
         self
     }
+    /// <p>The classes used by the document being analyzed. These are used for multi-class trained models. Individual classes are mutually exclusive and each document is expected to have only a single class assigned to it. For example, an animal can be a dog or a cat, but not both at the same time. </p>
+    pub fn get_classes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentClass>> {
+        &self.classes
+    }
     /// Appends an item to `labels`.
     ///
     /// To override the contents of this collection use [`set_labels`](Self::set_labels).
@@ -129,6 +135,12 @@ impl ClassifyDocumentOutputBuilder {
         self.labels = input;
         self
     }
+    /// <p>The labels used the document being analyzed. These are used for multi-label trained models. Individual labels represent different categories that are related in some manner and are not mutually exclusive. For example, a movie can be just an action movie, or it can be an action movie, a science fiction movie, and a comedy, all at the same time. </p>
+    pub fn get_labels(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentLabel>> {
+        &self.labels
+    }
     /// <p>Extraction information about the document. This field is present in the response only if your request includes the <code>Byte</code> parameter. </p>
     pub fn document_metadata(mut self, input: crate::types::DocumentMetadata) -> Self {
         self.document_metadata = ::std::option::Option::Some(input);
@@ -141,6 +153,10 @@ impl ClassifyDocumentOutputBuilder {
     ) -> Self {
         self.document_metadata = input;
         self
+    }
+    /// <p>Extraction information about the document. This field is present in the response only if your request includes the <code>Byte</code> parameter. </p>
+    pub fn get_document_metadata(&self) -> &::std::option::Option<crate::types::DocumentMetadata> {
+        &self.document_metadata
     }
     /// Appends an item to `document_type`.
     ///
@@ -161,6 +177,12 @@ impl ClassifyDocumentOutputBuilder {
         self.document_type = input;
         self
     }
+    /// <p>The document type for each page in the input document. This field is present in the response only if your request includes the <code>Byte</code> parameter. </p>
+    pub fn get_document_type(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentTypeListItem>> {
+        &self.document_type
+    }
     /// Appends an item to `errors`.
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
@@ -179,6 +201,12 @@ impl ClassifyDocumentOutputBuilder {
     ) -> Self {
         self.errors = input;
         self
+    }
+    /// <p>Page-level errors that the system detected while processing the input document. The field is empty if the system encountered no errors.</p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ErrorsListItem>> {
+        &self.errors
     }
     /// Appends an item to `warnings`.
     ///
@@ -200,6 +228,13 @@ impl ClassifyDocumentOutputBuilder {
     ) -> Self {
         self.warnings = input;
         self
+    }
+    /// <p>Warnings detected while processing the input document. The response includes a warning if there is a mismatch between the input document type and the model type associated with the endpoint that you specified. The response can also include warnings for individual pages that have a mismatch. </p>
+    /// <p>The field is empty if the system generated no warnings.</p>
+    pub fn get_warnings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WarningsListItem>> {
+        &self.warnings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

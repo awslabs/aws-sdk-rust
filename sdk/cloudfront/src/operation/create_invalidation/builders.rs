@@ -36,6 +36,12 @@ impl CreateInvalidationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateInvalidation as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_invalidation::builders::CreateInvalidationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl CreateInvalidationFluentBuilder {
         self.inner = self.inner.set_distribution_id(input);
         self
     }
+    /// <p>The distribution's id.</p>
+    pub fn get_distribution_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_distribution_id()
+    }
     /// <p>The batch information for the invalidation.</p>
     pub fn invalidation_batch(mut self, input: crate::types::InvalidationBatch) -> Self {
         self.inner = self.inner.invalidation_batch(input);
@@ -144,5 +154,11 @@ impl CreateInvalidationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_invalidation_batch(input);
         self
+    }
+    /// <p>The batch information for the invalidation.</p>
+    pub fn get_invalidation_batch(
+        &self,
+    ) -> &::std::option::Option<crate::types::InvalidationBatch> {
+        self.inner.get_invalidation_batch()
     }
 }

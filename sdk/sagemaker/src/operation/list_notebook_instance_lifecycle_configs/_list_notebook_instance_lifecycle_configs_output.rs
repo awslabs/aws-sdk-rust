@@ -60,6 +60,10 @@ impl ListNotebookInstanceLifecycleConfigsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If the response is truncated, SageMaker returns this token. To get the next set of lifecycle configurations, use it in the next request. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `notebook_instance_lifecycle_configs`.
     ///
     /// To override the contents of this collection use [`set_notebook_instance_lifecycle_configs`](Self::set_notebook_instance_lifecycle_configs).
@@ -83,6 +87,13 @@ impl ListNotebookInstanceLifecycleConfigsOutputBuilder {
     ) -> Self {
         self.notebook_instance_lifecycle_configs = input;
         self
+    }
+    /// <p>An array of <code>NotebookInstanceLifecycleConfiguration</code> objects, each listing a lifecycle configuration.</p>
+    pub fn get_notebook_instance_lifecycle_configs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleConfigSummary>>
+    {
+        &self.notebook_instance_lifecycle_configs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -60,6 +60,10 @@ impl AlexaForBusinessMetadataBuilder {
         self.is_alexa_for_business_enabled = input;
         self
     }
+    /// <p>Starts or stops Alexa for Business.</p>
+    pub fn get_is_alexa_for_business_enabled(&self) -> &::std::option::Option<bool> {
+        &self.is_alexa_for_business_enabled
+    }
     /// <p>The ARN of the room resource.</p>
     pub fn alexa_for_business_room_arn(
         mut self,
@@ -75,6 +79,10 @@ impl AlexaForBusinessMetadataBuilder {
     ) -> Self {
         self.alexa_for_business_room_arn = input;
         self
+    }
+    /// <p>The ARN of the room resource.</p>
+    pub fn get_alexa_for_business_room_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alexa_for_business_room_arn
     }
     /// Consumes the builder and constructs a [`AlexaForBusinessMetadata`](crate::types::AlexaForBusinessMetadata).
     pub fn build(self) -> crate::types::AlexaForBusinessMetadata {

@@ -41,6 +41,10 @@ impl DeleteRealtimeEndpointInputBuilder {
         self.ml_model_id = input;
         self
     }
+    /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
+    pub fn get_ml_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ml_model_id
+    }
     /// Consumes the builder and constructs a [`DeleteRealtimeEndpointInput`](crate::operation::delete_realtime_endpoint::DeleteRealtimeEndpointInput).
     pub fn build(
         self,

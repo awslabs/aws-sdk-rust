@@ -36,6 +36,10 @@ impl AssociateIamInstanceProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateIamInstanceProfile as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_iam_instance_profile::builders::AssociateIamInstanceProfileInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,12 @@ impl AssociateIamInstanceProfileFluentBuilder {
         self.inner = self.inner.set_iam_instance_profile(input);
         self
     }
+    /// <p>The IAM instance profile.</p>
+    pub fn get_iam_instance_profile(
+        &self,
+    ) -> &::std::option::Option<crate::types::IamInstanceProfileSpecification> {
+        self.inner.get_iam_instance_profile()
+    }
     /// <p>The ID of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
@@ -141,5 +151,9 @@ impl AssociateIamInstanceProfileFluentBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
+    }
+    /// <p>The ID of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
     }
 }

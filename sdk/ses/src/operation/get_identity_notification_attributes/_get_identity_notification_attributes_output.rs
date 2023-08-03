@@ -82,6 +82,17 @@ impl GetIdentityNotificationAttributesOutputBuilder {
         self.notification_attributes = input;
         self
     }
+    /// <p>A map of Identity to IdentityNotificationAttributes.</p>
+    pub fn get_notification_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::IdentityNotificationAttributes,
+        >,
+    > {
+        &self.notification_attributes
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

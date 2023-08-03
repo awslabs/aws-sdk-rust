@@ -58,6 +58,12 @@ impl DesiredConfigurationBuilder {
         self.launch_template = input;
         self
     }
+    /// <p>Describes the launch template and the version of the launch template that Amazon EC2 Auto Scaling uses to launch Amazon EC2 instances. For more information about launch templates, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchTemplates.html">Launch templates</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    pub fn get_launch_template(
+        &self,
+    ) -> &::std::option::Option<crate::types::LaunchTemplateSpecification> {
+        &self.launch_template
+    }
     /// <p>Use this structure to launch multiple instance types and On-Demand Instances and Spot Instances within a single Auto Scaling group.</p>
     /// <p>A mixed instances policy contains information that Amazon EC2 Auto Scaling can use to launch instances and help optimize your costs. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn mixed_instances_policy(mut self, input: crate::types::MixedInstancesPolicy) -> Self {
@@ -72,6 +78,13 @@ impl DesiredConfigurationBuilder {
     ) -> Self {
         self.mixed_instances_policy = input;
         self
+    }
+    /// <p>Use this structure to launch multiple instance types and On-Demand Instances and Spot Instances within a single Auto Scaling group.</p>
+    /// <p>A mixed instances policy contains information that Amazon EC2 Auto Scaling can use to launch instances and help optimize your costs. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    pub fn get_mixed_instances_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::MixedInstancesPolicy> {
+        &self.mixed_instances_policy
     }
     /// Consumes the builder and constructs a [`DesiredConfiguration`](crate::types::DesiredConfiguration).
     pub fn build(self) -> crate::types::DesiredConfiguration {

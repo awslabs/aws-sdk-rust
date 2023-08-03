@@ -42,6 +42,12 @@ impl DescribeMatchmakingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeMatchmaking as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_matchmaking::builders::DescribeMatchmakingInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,5 +144,9 @@ impl DescribeMatchmakingFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ticket_ids(input);
         self
+    }
+    /// <p>A unique identifier for a matchmaking ticket. You can include up to 10 ID values. </p>
+    pub fn get_ticket_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_ticket_ids()
     }
 }

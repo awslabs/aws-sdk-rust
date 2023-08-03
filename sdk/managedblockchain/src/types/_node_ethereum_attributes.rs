@@ -54,6 +54,10 @@ impl NodeEthereumAttributesBuilder {
         self.http_endpoint = input;
         self
     }
+    /// <p>The endpoint on which the Ethereum node listens to run Ethereum API methods over HTTP connections from a client. Use this endpoint in client code for smart contracts when using an HTTP connection. Connections to this endpoint are authenticated using <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>.</p>
+    pub fn get_http_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.http_endpoint
+    }
     /// <p>The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC methods over WebSocket connections from a client. Use this endpoint in client code for smart contracts when using a WebSocket connection. Connections to this endpoint are authenticated using <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>.</p>
     pub fn web_socket_endpoint(
         mut self,
@@ -69,6 +73,10 @@ impl NodeEthereumAttributesBuilder {
     ) -> Self {
         self.web_socket_endpoint = input;
         self
+    }
+    /// <p>The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC methods over WebSocket connections from a client. Use this endpoint in client code for smart contracts when using a WebSocket connection. Connections to this endpoint are authenticated using <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>.</p>
+    pub fn get_web_socket_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.web_socket_endpoint
     }
     /// Consumes the builder and constructs a [`NodeEthereumAttributes`](crate::types::NodeEthereumAttributes).
     pub fn build(self) -> crate::types::NodeEthereumAttributes {

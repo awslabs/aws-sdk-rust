@@ -49,6 +49,12 @@ impl DescribeFpgaImageAttributeOutputBuilder {
         self.fpga_image_attribute = input;
         self
     }
+    /// <p>Information about the attribute.</p>
+    pub fn get_fpga_image_attribute(
+        &self,
+    ) -> &::std::option::Option<crate::types::FpgaImageAttribute> {
+        &self.fpga_image_attribute
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

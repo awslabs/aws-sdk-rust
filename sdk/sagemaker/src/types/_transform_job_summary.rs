@@ -94,6 +94,10 @@ impl TransformJobSummaryBuilder {
         self.transform_job_name = input;
         self
     }
+    /// <p>The name of the transform job.</p>
+    pub fn get_transform_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transform_job_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the transform job.</p>
     pub fn transform_job_arn(
         mut self,
@@ -110,6 +114,10 @@ impl TransformJobSummaryBuilder {
         self.transform_job_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the transform job.</p>
+    pub fn get_transform_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transform_job_arn
+    }
     /// <p>A timestamp that shows when the transform Job was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -122,6 +130,10 @@ impl TransformJobSummaryBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>A timestamp that shows when the transform Job was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>Indicates when the transform job ends on compute instances. For successful jobs and stopped jobs, this is the exact time recorded after the results are uploaded. For failed jobs, this is when Amazon SageMaker detected that the job failed.</p>
     pub fn transform_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -136,6 +148,10 @@ impl TransformJobSummaryBuilder {
         self.transform_end_time = input;
         self
     }
+    /// <p>Indicates when the transform job ends on compute instances. For successful jobs and stopped jobs, this is the exact time recorded after the results are uploaded. For failed jobs, this is when Amazon SageMaker detected that the job failed.</p>
+    pub fn get_transform_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.transform_end_time
+    }
     /// <p>Indicates when the transform job was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -149,6 +165,10 @@ impl TransformJobSummaryBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p>Indicates when the transform job was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     /// <p>The status of the transform job.</p>
     pub fn transform_job_status(mut self, input: crate::types::TransformJobStatus) -> Self {
         self.transform_job_status = ::std::option::Option::Some(input);
@@ -161,6 +181,12 @@ impl TransformJobSummaryBuilder {
     ) -> Self {
         self.transform_job_status = input;
         self
+    }
+    /// <p>The status of the transform job.</p>
+    pub fn get_transform_job_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransformJobStatus> {
+        &self.transform_job_status
     }
     /// <p>If the transform job failed, the reason it failed.</p>
     pub fn failure_reason(
@@ -177,6 +203,10 @@ impl TransformJobSummaryBuilder {
     ) -> Self {
         self.failure_reason = input;
         self
+    }
+    /// <p>If the transform job failed, the reason it failed.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     /// Consumes the builder and constructs a [`TransformJobSummary`](crate::types::TransformJobSummary).
     pub fn build(self) -> crate::types::TransformJobSummary {

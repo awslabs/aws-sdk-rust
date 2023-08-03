@@ -48,6 +48,10 @@ impl AttachmentBuilder {
         self.file_name = input;
         self
     }
+    /// <p>The name of the attachment file.</p>
+    pub fn get_file_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_name
+    }
     /// <p>The content of the attachment file.</p>
     pub fn data(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.data = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl AttachmentBuilder {
     pub fn set_data(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.data = input;
         self
+    }
+    /// <p>The content of the attachment file.</p>
+    pub fn get_data(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.data
     }
     /// Consumes the builder and constructs a [`Attachment`](crate::types::Attachment).
     pub fn build(self) -> crate::types::Attachment {

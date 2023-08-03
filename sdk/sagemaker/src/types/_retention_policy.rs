@@ -47,6 +47,11 @@ impl RetentionPolicyBuilder {
         self.home_efs_file_system = input;
         self
     }
+    /// <p>The default is <code>Retain</code>, which specifies to keep the data stored on the EFS volume.</p>
+    /// <p>Specify <code>Delete</code> to delete the data stored on the EFS volume.</p>
+    pub fn get_home_efs_file_system(&self) -> &::std::option::Option<crate::types::RetentionType> {
+        &self.home_efs_file_system
+    }
     /// Consumes the builder and constructs a [`RetentionPolicy`](crate::types::RetentionPolicy).
     pub fn build(self) -> crate::types::RetentionPolicy {
         crate::types::RetentionPolicy {

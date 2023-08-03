@@ -48,6 +48,10 @@ impl PlatformDeviceBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID for the GPUs on the container instance. The available GPU IDs can also be obtained on the container instance in the <code>/var/lib/ecs/gpu/nvidia_gpu_info.json</code> file.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The type of device that's available on the container instance. The only supported value is <code>GPU</code>.</p>
     pub fn r#type(mut self, input: crate::types::PlatformDeviceType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl PlatformDeviceBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of device that's available on the container instance. The only supported value is <code>GPU</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::PlatformDeviceType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`PlatformDevice`](crate::types::PlatformDevice).
     pub fn build(self) -> crate::types::PlatformDevice {

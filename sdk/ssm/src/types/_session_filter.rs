@@ -80,6 +80,10 @@ impl SessionFilterBuilder {
         self.key = input;
         self
     }
+    /// <p>The name of the filter.</p>
+    pub fn get_key(&self) -> &::std::option::Option<crate::types::SessionFilterKey> {
+        &self.key
+    }
     /// <p>The filter value. Valid values for each filter key are as follows:</p>
     /// <ul>
     /// <li> <p>InvokedAfter: Specify a timestamp to limit your results. For example, specify 2018-08-29T00:00:00Z to see sessions that started August 29, 2018, and later.</p> </li>
@@ -121,6 +125,26 @@ impl SessionFilterBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The filter value. Valid values for each filter key are as follows:</p>
+    /// <ul>
+    /// <li> <p>InvokedAfter: Specify a timestamp to limit your results. For example, specify 2018-08-29T00:00:00Z to see sessions that started August 29, 2018, and later.</p> </li>
+    /// <li> <p>InvokedBefore: Specify a timestamp to limit your results. For example, specify 2018-08-29T00:00:00Z to see sessions that started before August 29, 2018.</p> </li>
+    /// <li> <p>Target: Specify a managed node to which session connections have been made.</p> </li>
+    /// <li> <p>Owner: Specify an Amazon Web Services user to see a list of sessions started by that user.</p> </li>
+    /// <li> <p>Status: Specify a valid session status to see a list of all sessions with that status. Status values you can specify include:</p>
+    /// <ul>
+    /// <li> <p>Connected</p> </li>
+    /// <li> <p>Connecting</p> </li>
+    /// <li> <p>Disconnected</p> </li>
+    /// <li> <p>Terminated</p> </li>
+    /// <li> <p>Terminating</p> </li>
+    /// <li> <p>Failed</p> </li>
+    /// </ul> </li>
+    /// <li> <p>SessionId: Specify a session ID to return details about the session.</p> </li>
+    /// </ul>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`SessionFilter`](crate::types::SessionFilter).
     pub fn build(self) -> crate::types::SessionFilter {

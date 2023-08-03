@@ -37,6 +37,12 @@ impl UpdateFleetMetricFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateFleetMetric as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_fleet_metric::builders::UpdateFleetMetricInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl UpdateFleetMetricFluentBuilder {
         self.inner = self.inner.set_metric_name(input);
         self
     }
+    /// <p>The name of the fleet metric to update.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_metric_name()
+    }
     /// <p>The search query string.</p>
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_string(input.into());
@@ -136,6 +146,10 @@ impl UpdateFleetMetricFluentBuilder {
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_string(input);
         self
+    }
+    /// <p>The search query string.</p>
+    pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_query_string()
     }
     /// <p>The type of the aggregation query.</p>
     pub fn aggregation_type(mut self, input: crate::types::AggregationType) -> Self {
@@ -150,6 +164,10 @@ impl UpdateFleetMetricFluentBuilder {
         self.inner = self.inner.set_aggregation_type(input);
         self
     }
+    /// <p>The type of the aggregation query.</p>
+    pub fn get_aggregation_type(&self) -> &::std::option::Option<crate::types::AggregationType> {
+        self.inner.get_aggregation_type()
+    }
     /// <p>The time in seconds between fleet metric emissions. Range [60(1 min), 86400(1 day)] and must be multiple of 60.</p>
     pub fn period(mut self, input: i32) -> Self {
         self.inner = self.inner.period(input);
@@ -159,6 +177,10 @@ impl UpdateFleetMetricFluentBuilder {
     pub fn set_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_period(input);
         self
+    }
+    /// <p>The time in seconds between fleet metric emissions. Range [60(1 min), 86400(1 day)] and must be multiple of 60.</p>
+    pub fn get_period(&self) -> &::std::option::Option<i32> {
+        self.inner.get_period()
     }
     /// <p>The field to aggregate.</p>
     pub fn aggregation_field(
@@ -176,6 +198,10 @@ impl UpdateFleetMetricFluentBuilder {
         self.inner = self.inner.set_aggregation_field(input);
         self
     }
+    /// <p>The field to aggregate.</p>
+    pub fn get_aggregation_field(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aggregation_field()
+    }
     /// <p>The description of the fleet metric.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -185,6 +211,10 @@ impl UpdateFleetMetricFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the fleet metric.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The version of the query.</p>
     pub fn query_version(
@@ -202,6 +232,10 @@ impl UpdateFleetMetricFluentBuilder {
         self.inner = self.inner.set_query_version(input);
         self
     }
+    /// <p>The version of the query.</p>
+    pub fn get_query_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_query_version()
+    }
     /// <p>The name of the index to search.</p>
     pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.index_name(input.into());
@@ -211,6 +245,10 @@ impl UpdateFleetMetricFluentBuilder {
     pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_index_name(input);
         self
+    }
+    /// <p>The name of the index to search.</p>
+    pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_index_name()
     }
     /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
     pub fn unit(mut self, input: crate::types::FleetMetricUnit) -> Self {
@@ -222,6 +260,10 @@ impl UpdateFleetMetricFluentBuilder {
         self.inner = self.inner.set_unit(input);
         self
     }
+    /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
+    pub fn get_unit(&self) -> &::std::option::Option<crate::types::FleetMetricUnit> {
+        self.inner.get_unit()
+    }
     /// <p>The expected version of the fleet metric record in the registry.</p>
     pub fn expected_version(mut self, input: i64) -> Self {
         self.inner = self.inner.expected_version(input);
@@ -231,5 +273,9 @@ impl UpdateFleetMetricFluentBuilder {
     pub fn set_expected_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_expected_version(input);
         self
+    }
+    /// <p>The expected version of the fleet metric record in the registry.</p>
+    pub fn get_expected_version(&self) -> &::std::option::Option<i64> {
+        self.inner.get_expected_version()
     }
 }

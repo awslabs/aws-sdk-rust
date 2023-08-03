@@ -36,6 +36,12 @@ impl GetDeploymentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetDeployment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_deployment::builders::GetDeploymentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl GetDeploymentFluentBuilder {
         self.inner = self.inner.set_deployment_id(input);
         self
     }
+    /// <p>The unique identifier for the deployment.</p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_deployment_id()
+    }
     /// <p>The unique identifier of the application.</p>
     pub fn application_id(
         mut self,
@@ -139,5 +149,9 @@ impl GetDeploymentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
+    }
+    /// <p>The unique identifier of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
     }
 }

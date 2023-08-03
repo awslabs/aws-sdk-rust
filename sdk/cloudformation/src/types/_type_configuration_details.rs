@@ -95,6 +95,10 @@ impl TypeConfigurationDetailsBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the configuration data, in this account and Region.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The alias specified for this configuration, if one was specified when the configuration was set.</p>
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias = ::std::option::Option::Some(input.into());
@@ -104,6 +108,10 @@ impl TypeConfigurationDetailsBuilder {
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alias = input;
         self
+    }
+    /// <p>The alias specified for this configuration, if one was specified when the configuration was set.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias
     }
     /// <p>A JSON string specifying the configuration data for the extension, in this account and Region.</p>
     /// <p>If a configuration hasn't been set for a specified extension, CloudFormation returns <code>{}</code>.</p>
@@ -123,6 +131,11 @@ impl TypeConfigurationDetailsBuilder {
         self.configuration = input;
         self
     }
+    /// <p>A JSON string specifying the configuration data for the extension, in this account and Region.</p>
+    /// <p>If a configuration hasn't been set for a specified extension, CloudFormation returns <code>{}</code>.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration
+    }
     /// <p>When the configuration data was last updated for this extension.</p>
     /// <p>If a configuration hasn't been set for a specified extension, CloudFormation returns <code>null</code>.</p>
     pub fn last_updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -138,6 +151,11 @@ impl TypeConfigurationDetailsBuilder {
         self.last_updated = input;
         self
     }
+    /// <p>When the configuration data was last updated for this extension.</p>
+    /// <p>If a configuration hasn't been set for a specified extension, CloudFormation returns <code>null</code>.</p>
+    pub fn get_last_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated
+    }
     /// <p>The Amazon Resource Name (ARN) for the extension, in this account and Region.</p>
     /// <p>For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the type</a> in this account and Region. For private extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the type</a> in this account and Region.</p>
     pub fn type_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -150,6 +168,11 @@ impl TypeConfigurationDetailsBuilder {
         self.type_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the extension, in this account and Region.</p>
+    /// <p>For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the type</a> in this account and Region. For private extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the type</a> in this account and Region.</p>
+    pub fn get_type_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.type_arn
+    }
     /// <p>The name of the extension.</p>
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_name = ::std::option::Option::Some(input.into());
@@ -160,6 +183,10 @@ impl TypeConfigurationDetailsBuilder {
         self.type_name = input;
         self
     }
+    /// <p>The name of the extension.</p>
+    pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.type_name
+    }
     /// <p>Whether this configuration data is the default configuration for the extension.</p>
     pub fn is_default_configuration(mut self, input: bool) -> Self {
         self.is_default_configuration = ::std::option::Option::Some(input);
@@ -169,6 +196,10 @@ impl TypeConfigurationDetailsBuilder {
     pub fn set_is_default_configuration(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_default_configuration = input;
         self
+    }
+    /// <p>Whether this configuration data is the default configuration for the extension.</p>
+    pub fn get_is_default_configuration(&self) -> &::std::option::Option<bool> {
+        &self.is_default_configuration
     }
     /// Consumes the builder and constructs a [`TypeConfigurationDetails`](crate::types::TypeConfigurationDetails).
     pub fn build(self) -> crate::types::TypeConfigurationDetails {

@@ -47,6 +47,10 @@ impl DisableKinesisStreamingDestinationInputBuilder {
         self.table_name = input;
         self
     }
+    /// <p>The name of the DynamoDB table.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
+    }
     /// <p>The ARN for a Kinesis data stream.</p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_arn = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DisableKinesisStreamingDestinationInputBuilder {
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_arn = input;
         self
+    }
+    /// <p>The ARN for a Kinesis data stream.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_arn
     }
     /// Consumes the builder and constructs a [`DisableKinesisStreamingDestinationInput`](crate::operation::disable_kinesis_streaming_destination::DisableKinesisStreamingDestinationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::disable_kinesis_streaming_destination::DisableKinesisStreamingDestinationInput, ::aws_smithy_http::operation::error::BuildError>{

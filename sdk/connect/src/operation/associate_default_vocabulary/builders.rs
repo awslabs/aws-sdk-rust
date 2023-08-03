@@ -36,6 +36,10 @@ impl AssociateDefaultVocabularyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateDefaultVocabulary as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_default_vocabulary::builders::AssociateDefaultVocabularyInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl AssociateDefaultVocabularyFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
     pub fn language_code(mut self, input: crate::types::VocabularyLanguageCode) -> Self {
         self.inner = self.inner.language_code(input);
@@ -138,6 +146,12 @@ impl AssociateDefaultVocabularyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
+    }
+    /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
+    pub fn get_language_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::VocabularyLanguageCode> {
+        self.inner.get_language_code()
     }
     /// <p>The identifier of the custom vocabulary. If this is empty, the default is set to none.</p>
     pub fn vocabulary_id(
@@ -154,5 +168,9 @@ impl AssociateDefaultVocabularyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_vocabulary_id(input);
         self
+    }
+    /// <p>The identifier of the custom vocabulary. If this is empty, the default is set to none.</p>
+    pub fn get_vocabulary_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vocabulary_id()
     }
 }

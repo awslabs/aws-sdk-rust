@@ -57,6 +57,12 @@ impl InsightConfigurationBuilder {
         self.computations = input;
         self
     }
+    /// <p>The computations configurations of the insight visual</p>
+    pub fn get_computations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Computation>> {
+        &self.computations
+    }
     /// <p>The custom narrative of the insight visual.</p>
     pub fn custom_narrative(mut self, input: crate::types::CustomNarrativeOptions) -> Self {
         self.custom_narrative = ::std::option::Option::Some(input);
@@ -69,6 +75,12 @@ impl InsightConfigurationBuilder {
     ) -> Self {
         self.custom_narrative = input;
         self
+    }
+    /// <p>The custom narrative of the insight visual.</p>
+    pub fn get_custom_narrative(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomNarrativeOptions> {
+        &self.custom_narrative
     }
     /// Consumes the builder and constructs a [`InsightConfiguration`](crate::types::InsightConfiguration).
     pub fn build(self) -> crate::types::InsightConfiguration {

@@ -43,6 +43,10 @@ impl SingleHeaderBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the query header to inspect.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`SingleHeader`](crate::types::SingleHeader).
     pub fn build(self) -> crate::types::SingleHeader {
         crate::types::SingleHeader { name: self.name }

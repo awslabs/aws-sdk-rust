@@ -48,6 +48,10 @@ impl TwitterParametersBuilder {
         self.query = input;
         self
     }
+    /// <p>Twitter query string.</p>
+    pub fn get_query(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query
+    }
     /// <p>Maximum number of rows to query Twitter.</p>
     pub fn max_rows(mut self, input: i32) -> Self {
         self.max_rows = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl TwitterParametersBuilder {
     pub fn set_max_rows(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_rows = input;
         self
+    }
+    /// <p>Maximum number of rows to query Twitter.</p>
+    pub fn get_max_rows(&self) -> &::std::option::Option<i32> {
+        &self.max_rows
     }
     /// Consumes the builder and constructs a [`TwitterParameters`](crate::types::TwitterParameters).
     pub fn build(self) -> crate::types::TwitterParameters {

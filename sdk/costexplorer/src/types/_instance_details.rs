@@ -82,6 +82,12 @@ impl InstanceDetailsBuilder {
         self.ec2_instance_details = input;
         self
     }
+    /// <p>The Amazon EC2 instances that Amazon Web Services recommends that you purchase.</p>
+    pub fn get_ec2_instance_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::Ec2InstanceDetails> {
+        &self.ec2_instance_details
+    }
     /// <p>The Amazon RDS instances that Amazon Web Services recommends that you purchase.</p>
     pub fn rds_instance_details(mut self, input: crate::types::RdsInstanceDetails) -> Self {
         self.rds_instance_details = ::std::option::Option::Some(input);
@@ -94,6 +100,12 @@ impl InstanceDetailsBuilder {
     ) -> Self {
         self.rds_instance_details = input;
         self
+    }
+    /// <p>The Amazon RDS instances that Amazon Web Services recommends that you purchase.</p>
+    pub fn get_rds_instance_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::RdsInstanceDetails> {
+        &self.rds_instance_details
     }
     /// <p>The Amazon Redshift instances that Amazon Web Services recommends that you purchase.</p>
     pub fn redshift_instance_details(
@@ -111,6 +123,12 @@ impl InstanceDetailsBuilder {
         self.redshift_instance_details = input;
         self
     }
+    /// <p>The Amazon Redshift instances that Amazon Web Services recommends that you purchase.</p>
+    pub fn get_redshift_instance_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::RedshiftInstanceDetails> {
+        &self.redshift_instance_details
+    }
     /// <p>The ElastiCache instances that Amazon Web Services recommends that you purchase.</p>
     pub fn elasti_cache_instance_details(
         mut self,
@@ -127,6 +145,12 @@ impl InstanceDetailsBuilder {
         self.elasti_cache_instance_details = input;
         self
     }
+    /// <p>The ElastiCache instances that Amazon Web Services recommends that you purchase.</p>
+    pub fn get_elasti_cache_instance_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::ElastiCacheInstanceDetails> {
+        &self.elasti_cache_instance_details
+    }
     /// <p>The Amazon OpenSearch Service instances that Amazon Web Services recommends that you purchase.</p>
     pub fn es_instance_details(mut self, input: crate::types::EsInstanceDetails) -> Self {
         self.es_instance_details = ::std::option::Option::Some(input);
@@ -139,6 +163,12 @@ impl InstanceDetailsBuilder {
     ) -> Self {
         self.es_instance_details = input;
         self
+    }
+    /// <p>The Amazon OpenSearch Service instances that Amazon Web Services recommends that you purchase.</p>
+    pub fn get_es_instance_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::EsInstanceDetails> {
+        &self.es_instance_details
     }
     /// Consumes the builder and constructs a [`InstanceDetails`](crate::types::InstanceDetails).
     pub fn build(self) -> crate::types::InstanceDetails {

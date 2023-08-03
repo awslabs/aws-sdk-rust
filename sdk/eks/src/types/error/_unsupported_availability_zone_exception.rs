@@ -95,6 +95,10 @@ impl UnsupportedAvailabilityZoneExceptionBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The Amazon EKS cluster associated with the exception.</p>
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
@@ -104,6 +108,10 @@ impl UnsupportedAvailabilityZoneExceptionBuilder {
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_name = input;
         self
+    }
+    /// <p>The Amazon EKS cluster associated with the exception.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_name
     }
     /// <p>The Amazon EKS managed node group associated with the exception.</p>
     pub fn nodegroup_name(
@@ -120,6 +128,10 @@ impl UnsupportedAvailabilityZoneExceptionBuilder {
     ) -> Self {
         self.nodegroup_name = input;
         self
+    }
+    /// <p>The Amazon EKS managed node group associated with the exception.</p>
+    pub fn get_nodegroup_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nodegroup_name
     }
     /// Appends an item to `valid_zones`.
     ///
@@ -139,6 +151,12 @@ impl UnsupportedAvailabilityZoneExceptionBuilder {
     ) -> Self {
         self.valid_zones = input;
         self
+    }
+    /// <p>The supported Availability Zones for your account. Choose subnets in these Availability Zones for your cluster.</p>
+    pub fn get_valid_zones(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.valid_zones
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

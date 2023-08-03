@@ -49,6 +49,10 @@ impl DeletePartnerEventSourceInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the event source to delete.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Web Services account ID of the Amazon Web Services customer that the event source was created for.</p>
     pub fn account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl DeletePartnerEventSourceInputBuilder {
     pub fn set_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account = input;
         self
+    }
+    /// <p>The Amazon Web Services account ID of the Amazon Web Services customer that the event source was created for.</p>
+    pub fn get_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account
     }
     /// Consumes the builder and constructs a [`DeletePartnerEventSourceInput`](crate::operation::delete_partner_event_source::DeletePartnerEventSourceInput).
     pub fn build(

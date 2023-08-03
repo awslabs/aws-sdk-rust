@@ -54,6 +54,10 @@ impl ListWebAcLsOutputBuilder {
         self.next_marker = input;
         self
     }
+    /// <p>If you have more <code>WebACL</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>WebACL</code> objects, submit another <code>ListWebACLs</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
+    pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_marker
+    }
     /// Appends an item to `web_ac_ls`.
     ///
     /// To override the contents of this collection use [`set_web_ac_ls`](Self::set_web_ac_ls).
@@ -72,6 +76,12 @@ impl ListWebAcLsOutputBuilder {
     ) -> Self {
         self.web_ac_ls = input;
         self
+    }
+    /// <p>An array of <code>WebACLSummary</code> objects.</p>
+    pub fn get_web_ac_ls(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WebAclSummary>> {
+        &self.web_ac_ls
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

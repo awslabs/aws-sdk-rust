@@ -64,6 +64,10 @@ impl InferenceDeviceInfoBuilder {
         self.count = input;
         self
     }
+    /// <p>The number of Inference accelerators for the instance type.</p>
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        &self.count
+    }
     /// <p>The name of the Inference accelerator.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl InferenceDeviceInfoBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the Inference accelerator.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The manufacturer of the Inference accelerator.</p>
     pub fn manufacturer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.manufacturer = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl InferenceDeviceInfoBuilder {
     pub fn set_manufacturer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.manufacturer = input;
         self
+    }
+    /// <p>The manufacturer of the Inference accelerator.</p>
+    pub fn get_manufacturer(&self) -> &::std::option::Option<::std::string::String> {
+        &self.manufacturer
     }
     /// <p>Describes the memory available to the inference accelerator.</p>
     pub fn memory_info(mut self, input: crate::types::InferenceDeviceMemoryInfo) -> Self {
@@ -96,6 +108,12 @@ impl InferenceDeviceInfoBuilder {
     ) -> Self {
         self.memory_info = input;
         self
+    }
+    /// <p>Describes the memory available to the inference accelerator.</p>
+    pub fn get_memory_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::InferenceDeviceMemoryInfo> {
+        &self.memory_info
     }
     /// Consumes the builder and constructs a [`InferenceDeviceInfo`](crate::types::InferenceDeviceInfo).
     pub fn build(self) -> crate::types::InferenceDeviceInfo {

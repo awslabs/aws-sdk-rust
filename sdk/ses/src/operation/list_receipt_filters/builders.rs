@@ -38,6 +38,12 @@ impl ListReceiptFiltersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListReceiptFilters as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_receipt_filters::builders::ListReceiptFiltersInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(

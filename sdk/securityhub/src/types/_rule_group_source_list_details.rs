@@ -62,6 +62,10 @@ impl RuleGroupSourceListDetailsBuilder {
         self.generated_rules_type = input;
         self
     }
+    /// <p>Indicates whether to allow or deny access to the domains listed in <code>Targets</code>.</p>
+    pub fn get_generated_rules_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.generated_rules_type
+    }
     /// Appends an item to `target_types`.
     ///
     /// To override the contents of this collection use [`set_target_types`](Self::set_target_types).
@@ -81,6 +85,12 @@ impl RuleGroupSourceListDetailsBuilder {
         self.target_types = input;
         self
     }
+    /// <p>The protocols that you want to inspect. Specify <code>LS_SNI</code> for HTTPS. Specify <code>HTTP_HOST</code> for HTTP. You can specify either or both.</p>
+    pub fn get_target_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.target_types
+    }
     /// Appends an item to `targets`.
     ///
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).
@@ -99,6 +109,10 @@ impl RuleGroupSourceListDetailsBuilder {
     ) -> Self {
         self.targets = input;
         self
+    }
+    /// <p>The domains that you want to inspect for in your traffic flows. You can provide full domain names, or use the '.' prefix as a wildcard. For example, <code>.example.com</code> matches all domains that end with <code>example.com</code>.</p>
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.targets
     }
     /// Consumes the builder and constructs a [`RuleGroupSourceListDetails`](crate::types::RuleGroupSourceListDetails).
     pub fn build(self) -> crate::types::RuleGroupSourceListDetails {

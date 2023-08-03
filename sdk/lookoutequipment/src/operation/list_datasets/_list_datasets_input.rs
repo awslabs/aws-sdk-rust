@@ -55,6 +55,10 @@ impl ListDatasetsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p> Specifies the maximum number of datasets to list. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -64,6 +68,10 @@ impl ListDatasetsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p> Specifies the maximum number of datasets to list. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The beginning of the name of the datasets to be listed. </p>
     pub fn dataset_name_begins_with(
@@ -80,6 +88,10 @@ impl ListDatasetsInputBuilder {
     ) -> Self {
         self.dataset_name_begins_with = input;
         self
+    }
+    /// <p>The beginning of the name of the datasets to be listed. </p>
+    pub fn get_dataset_name_begins_with(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_name_begins_with
     }
     /// Consumes the builder and constructs a [`ListDatasetsInput`](crate::operation::list_datasets::ListDatasetsInput).
     pub fn build(

@@ -50,6 +50,12 @@ impl InputProcessingConfigurationDescriptionBuilder {
         self.input_lambda_processor_description = input;
         self
     }
+    /// <p>Provides configuration information about the associated <code>InputLambdaProcessorDescription</code> </p>
+    pub fn get_input_lambda_processor_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::InputLambdaProcessorDescription> {
+        &self.input_lambda_processor_description
+    }
     /// Consumes the builder and constructs a [`InputProcessingConfigurationDescription`](crate::types::InputProcessingConfigurationDescription).
     pub fn build(self) -> crate::types::InputProcessingConfigurationDescription {
         crate::types::InputProcessingConfigurationDescription {

@@ -140,6 +140,12 @@ impl AudioDescriptionBuilder {
         self.audio_normalization_settings = input;
         self
     }
+    /// Advanced audio normalization settings.
+    pub fn get_audio_normalization_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::AudioNormalizationSettings> {
+        &self.audio_normalization_settings
+    }
     /// The name of the AudioSelector used as the source for this AudioDescription.
     pub fn audio_selector_name(
         mut self,
@@ -156,6 +162,10 @@ impl AudioDescriptionBuilder {
         self.audio_selector_name = input;
         self
     }
+    /// The name of the AudioSelector used as the source for this AudioDescription.
+    pub fn get_audio_selector_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.audio_selector_name
+    }
     /// Applies only if audioTypeControl is useConfigured. The values for audioType are defined in ISO-IEC 13818-1.
     pub fn audio_type(mut self, input: crate::types::AudioType) -> Self {
         self.audio_type = ::std::option::Option::Some(input);
@@ -165,6 +175,10 @@ impl AudioDescriptionBuilder {
     pub fn set_audio_type(mut self, input: ::std::option::Option<crate::types::AudioType>) -> Self {
         self.audio_type = input;
         self
+    }
+    /// Applies only if audioTypeControl is useConfigured. The values for audioType are defined in ISO-IEC 13818-1.
+    pub fn get_audio_type(&self) -> &::std::option::Option<crate::types::AudioType> {
+        &self.audio_type
     }
     /// Determines how audio type is determined. followInput: If the input contains an ISO 639 audioType, then that value is passed through to the output. If the input contains no ISO 639 audioType, the value in Audio Type is included in the output. useConfigured: The value in Audio Type is included in the output. Note that this field and audioType are both ignored if inputType is broadcasterMixedAd.
     pub fn audio_type_control(
@@ -182,6 +196,12 @@ impl AudioDescriptionBuilder {
         self.audio_type_control = input;
         self
     }
+    /// Determines how audio type is determined. followInput: If the input contains an ISO 639 audioType, then that value is passed through to the output. If the input contains no ISO 639 audioType, the value in Audio Type is included in the output. useConfigured: The value in Audio Type is included in the output. Note that this field and audioType are both ignored if inputType is broadcasterMixedAd.
+    pub fn get_audio_type_control(
+        &self,
+    ) -> &::std::option::Option<crate::types::AudioDescriptionAudioTypeControl> {
+        &self.audio_type_control
+    }
     /// Settings to configure one or more solutions that insert audio watermarks in the audio encode
     pub fn audio_watermarking_settings(
         mut self,
@@ -198,6 +218,12 @@ impl AudioDescriptionBuilder {
         self.audio_watermarking_settings = input;
         self
     }
+    /// Settings to configure one or more solutions that insert audio watermarks in the audio encode
+    pub fn get_audio_watermarking_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::AudioWatermarkSettings> {
+        &self.audio_watermarking_settings
+    }
     /// Audio codec settings.
     pub fn codec_settings(mut self, input: crate::types::AudioCodecSettings) -> Self {
         self.codec_settings = ::std::option::Option::Some(input);
@@ -210,6 +236,10 @@ impl AudioDescriptionBuilder {
     ) -> Self {
         self.codec_settings = input;
         self
+    }
+    /// Audio codec settings.
+    pub fn get_codec_settings(&self) -> &::std::option::Option<crate::types::AudioCodecSettings> {
+        &self.codec_settings
     }
     /// RFC 5646 language code representing the language of the audio output track. Only used if languageControlMode is useConfigured, or there is no ISO 639 language code specified in the input.
     pub fn language_code(
@@ -227,6 +257,10 @@ impl AudioDescriptionBuilder {
         self.language_code = input;
         self
     }
+    /// RFC 5646 language code representing the language of the audio output track. Only used if languageControlMode is useConfigured, or there is no ISO 639 language code specified in the input.
+    pub fn get_language_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.language_code
+    }
     /// Choosing followInput will cause the ISO 639 language code of the output to follow the ISO 639 language code of the input. The languageCode will be used when useConfigured is set, or when followInput is selected but there is no ISO 639 language code specified by the input.
     pub fn language_code_control(
         mut self,
@@ -243,6 +277,12 @@ impl AudioDescriptionBuilder {
         self.language_code_control = input;
         self
     }
+    /// Choosing followInput will cause the ISO 639 language code of the output to follow the ISO 639 language code of the input. The languageCode will be used when useConfigured is set, or when followInput is selected but there is no ISO 639 language code specified by the input.
+    pub fn get_language_code_control(
+        &self,
+    ) -> &::std::option::Option<crate::types::AudioDescriptionLanguageCodeControl> {
+        &self.language_code_control
+    }
     /// The name of this AudioDescription. Outputs will use this name to uniquely identify this AudioDescription. Description names should be unique within this Live Event.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -252,6 +292,10 @@ impl AudioDescriptionBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// The name of this AudioDescription. Outputs will use this name to uniquely identify this AudioDescription. Description names should be unique within this Live Event.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Settings that control how input audio channels are remixed into the output audio channels.
     pub fn remix_settings(mut self, input: crate::types::RemixSettings) -> Self {
@@ -266,6 +310,10 @@ impl AudioDescriptionBuilder {
         self.remix_settings = input;
         self
     }
+    /// Settings that control how input audio channels are remixed into the output audio channels.
+    pub fn get_remix_settings(&self) -> &::std::option::Option<crate::types::RemixSettings> {
+        &self.remix_settings
+    }
     /// Used for MS Smooth and Apple HLS outputs. Indicates the name displayed by the player (eg. English, or Director Commentary).
     pub fn stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_name = ::std::option::Option::Some(input.into());
@@ -275,6 +323,10 @@ impl AudioDescriptionBuilder {
     pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_name = input;
         self
+    }
+    /// Used for MS Smooth and Apple HLS outputs. Indicates the name displayed by the player (eg. English, or Director Commentary).
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_name
     }
     /// Consumes the builder and constructs a [`AudioDescription`](crate::types::AudioDescription).
     pub fn build(self) -> crate::types::AudioDescription {

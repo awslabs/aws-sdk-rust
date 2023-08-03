@@ -61,6 +61,10 @@ impl MoveAddressToVpcOutputBuilder {
         self.allocation_id = input;
         self
     }
+    /// <p>The allocation ID for the Elastic IP address.</p>
+    pub fn get_allocation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.allocation_id
+    }
     /// <p>The status of the move of the IP address.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -70,6 +74,10 @@ impl MoveAddressToVpcOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the move of the IP address.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -55,6 +55,10 @@ impl StopAutomationExecutionInputBuilder {
         self.automation_execution_id = input;
         self
     }
+    /// <p>The execution ID of the Automation to stop.</p>
+    pub fn get_automation_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.automation_execution_id
+    }
     /// <p>The stop request type. Valid types include the following: Cancel and Complete. The default type is Cancel.</p>
     pub fn r#type(mut self, input: crate::types::StopType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -64,6 +68,10 @@ impl StopAutomationExecutionInputBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::StopType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The stop request type. Valid types include the following: Cancel and Complete. The default type is Cancel.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::StopType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`StopAutomationExecutionInput`](crate::operation::stop_automation_execution::StopAutomationExecutionInput).
     pub fn build(

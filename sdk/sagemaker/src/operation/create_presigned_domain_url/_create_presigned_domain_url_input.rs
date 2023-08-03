@@ -73,6 +73,10 @@ impl CreatePresignedDomainUrlInputBuilder {
         self.domain_id = input;
         self
     }
+    /// <p>The domain ID.</p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_id
+    }
     /// <p>The name of the UserProfile to sign-in as.</p>
     pub fn user_profile_name(
         mut self,
@@ -89,6 +93,10 @@ impl CreatePresignedDomainUrlInputBuilder {
         self.user_profile_name = input;
         self
     }
+    /// <p>The name of the UserProfile to sign-in as.</p>
+    pub fn get_user_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_profile_name
+    }
     /// <p>The session expiration duration in seconds. This value defaults to 43200.</p>
     pub fn session_expiration_duration_in_seconds(mut self, input: i32) -> Self {
         self.session_expiration_duration_in_seconds = ::std::option::Option::Some(input);
@@ -102,6 +110,10 @@ impl CreatePresignedDomainUrlInputBuilder {
         self.session_expiration_duration_in_seconds = input;
         self
     }
+    /// <p>The session expiration duration in seconds. This value defaults to 43200.</p>
+    pub fn get_session_expiration_duration_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.session_expiration_duration_in_seconds
+    }
     /// <p>The number of seconds until the pre-signed URL expires. This value defaults to 300.</p>
     pub fn expires_in_seconds(mut self, input: i32) -> Self {
         self.expires_in_seconds = ::std::option::Option::Some(input);
@@ -112,6 +124,10 @@ impl CreatePresignedDomainUrlInputBuilder {
         self.expires_in_seconds = input;
         self
     }
+    /// <p>The number of seconds until the pre-signed URL expires. This value defaults to 300.</p>
+    pub fn get_expires_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.expires_in_seconds
+    }
     /// <p>The name of the space.</p>
     pub fn space_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.space_name = ::std::option::Option::Some(input.into());
@@ -121,6 +137,10 @@ impl CreatePresignedDomainUrlInputBuilder {
     pub fn set_space_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.space_name = input;
         self
+    }
+    /// <p>The name of the space.</p>
+    pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.space_name
     }
     /// Consumes the builder and constructs a [`CreatePresignedDomainUrlInput`](crate::operation::create_presigned_domain_url::CreatePresignedDomainUrlInput).
     pub fn build(

@@ -119,6 +119,11 @@ impl OrganizationBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier (ID) of an organization.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organization ID string requires "o-" followed by from 10 to 32 lowercase letters or digits.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Amazon Resource Name (ARN) of an organization.</p>
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -130,6 +135,11 @@ impl OrganizationBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an organization.</p>
+    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>Specifies the functionality that currently is available to the organization. If set to "ALL", then all features are enabled and policies can be applied to accounts in the organization. If set to "CONSOLIDATED_BILLING", then only consolidated billing functionality is available. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling All Features in Your Organization</a> in the <i>Organizations User Guide</i>.</p>
     pub fn feature_set(mut self, input: crate::types::OrganizationFeatureSet) -> Self {
@@ -143,6 +153,10 @@ impl OrganizationBuilder {
     ) -> Self {
         self.feature_set = input;
         self
+    }
+    /// <p>Specifies the functionality that currently is available to the organization. If set to "ALL", then all features are enabled and policies can be applied to accounts in the organization. If set to "CONSOLIDATED_BILLING", then only consolidated billing functionality is available. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling All Features in Your Organization</a> in the <i>Organizations User Guide</i>.</p>
+    pub fn get_feature_set(&self) -> &::std::option::Option<crate::types::OrganizationFeatureSet> {
+        &self.feature_set
     }
     /// <p>The Amazon Resource Name (ARN) of the account that is designated as the management account for the organization.</p>
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
@@ -162,6 +176,11 @@ impl OrganizationBuilder {
         self.master_account_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the account that is designated as the management account for the organization.</p>
+    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
+    pub fn get_master_account_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_account_arn
+    }
     /// <p>The unique identifier (ID) of the management account of an organization.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
     pub fn master_account_id(
@@ -180,6 +199,11 @@ impl OrganizationBuilder {
         self.master_account_id = input;
         self
     }
+    /// <p>The unique identifier (ID) of the management account of an organization.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
+    pub fn get_master_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_account_id
+    }
     /// <p>The email address that is associated with the Amazon Web Services account that is designated as the management account for the organization.</p>
     pub fn master_account_email(
         mut self,
@@ -195,6 +219,10 @@ impl OrganizationBuilder {
     ) -> Self {
         self.master_account_email = input;
         self
+    }
+    /// <p>The email address that is associated with the Amazon Web Services account that is designated as the management account for the organization.</p>
+    pub fn get_master_account_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_account_email
     }
     /// Appends an item to `available_policy_types`.
     ///
@@ -220,6 +248,15 @@ impl OrganizationBuilder {
     ) -> Self {
         self.available_policy_types = input;
         self
+    }
+    /// <important>
+    /// <p>Do not use. This field is deprecated and doesn't provide complete information about the policies in your organization.</p>
+    /// </important>
+    /// <p>To determine the policies that are enabled and available for use in your organization, use the <code>ListRoots</code> operation instead.</p>
+    pub fn get_available_policy_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyTypeSummary>> {
+        &self.available_policy_types
     }
     /// Consumes the builder and constructs a [`Organization`](crate::types::Organization).
     pub fn build(self) -> crate::types::Organization {

@@ -65,6 +65,10 @@ impl CreateAccessPreviewInputBuilder {
         self.analyzer_arn = input;
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the account analyzer</a> used to generate the access preview. You can only create an access preview for analyzers with an <code>Account</code> type and <code>Active</code> status.</p>
+    pub fn get_analyzer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.analyzer_arn
+    }
     /// Adds a key-value pair to `configurations`.
     ///
     /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
@@ -90,6 +94,14 @@ impl CreateAccessPreviewInputBuilder {
         self.configurations = input;
         self
     }
+    /// <p>Access control configuration for your resource that is used to generate the access preview. The access preview includes findings for external access allowed to the resource with the proposed access control configuration. The configuration must contain exactly one element.</p>
+    pub fn get_configurations(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::Configuration>,
+    > {
+        &self.configurations
+    }
     /// <p>A client token.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -99,6 +111,10 @@ impl CreateAccessPreviewInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A client token.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateAccessPreviewInput`](crate::operation::create_access_preview::CreateAccessPreviewInput).
     pub fn build(

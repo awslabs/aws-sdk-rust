@@ -51,6 +51,10 @@ impl EncryptionAtRestOptionsStatusBuilder {
         self.options = input;
         self
     }
+    /// <p>Encryption at rest options for the specified domain.</p>
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::EncryptionAtRestOptions> {
+        &self.options
+    }
     /// <p>The status of the encryption at rest options for the specified domain.</p>
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl EncryptionAtRestOptionsStatusBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the encryption at rest options for the specified domain.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::OptionStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`EncryptionAtRestOptionsStatus`](crate::types::EncryptionAtRestOptionsStatus).
     pub fn build(self) -> crate::types::EncryptionAtRestOptionsStatus {

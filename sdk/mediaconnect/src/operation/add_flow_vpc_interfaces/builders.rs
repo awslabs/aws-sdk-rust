@@ -36,6 +36,13 @@ impl AddFlowVpcInterfacesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AddFlowVpcInterfaces as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::add_flow_vpc_interfaces::builders::AddFlowVpcInterfacesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl AddFlowVpcInterfacesFluentBuilder {
         self.inner = self.inner.set_flow_arn(input);
         self
     }
+    /// The flow that you want to mutate.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_flow_arn()
+    }
     /// Appends an item to `VpcInterfaces`.
     ///
     /// To override the contents of this collection use [`set_vpc_interfaces`](Self::set_vpc_interfaces).
@@ -142,5 +153,11 @@ impl AddFlowVpcInterfacesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_vpc_interfaces(input);
         self
+    }
+    /// A list of VPC interfaces that you want to add.
+    pub fn get_vpc_interfaces(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcInterfaceRequest>> {
+        self.inner.get_vpc_interfaces()
     }
 }

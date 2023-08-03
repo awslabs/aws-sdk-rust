@@ -56,6 +56,10 @@ impl ResourcePropertyBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of this property of the resource.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The date and time that the information about this resource property was last updated.</p>
     pub fn last_reported_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_reported_at = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl ResourcePropertyBuilder {
         self.last_reported_at = input;
         self
     }
+    /// <p>The date and time that the information about this resource property was last updated.</p>
+    pub fn get_last_reported_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_reported_at
+    }
     /// <p>Details about this property. The content of this field is a JSON object that varies based on the resource type.</p>
     pub fn data(mut self, input: ::aws_smithy_types::Document) -> Self {
         self.data = ::std::option::Option::Some(input);
@@ -78,6 +86,10 @@ impl ResourcePropertyBuilder {
     pub fn set_data(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
         self.data = input;
         self
+    }
+    /// <p>Details about this property. The content of this field is a JSON object that varies based on the resource type.</p>
+    pub fn get_data(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
+        &self.data
     }
     /// Consumes the builder and constructs a [`ResourceProperty`](crate::types::ResourceProperty).
     pub fn build(self) -> crate::types::ResourceProperty {

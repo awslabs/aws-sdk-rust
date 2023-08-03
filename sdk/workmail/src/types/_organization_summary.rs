@@ -78,6 +78,10 @@ impl OrganizationSummaryBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The identifier associated with the organization.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>The alias associated with the organization.</p>
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias = ::std::option::Option::Some(input.into());
@@ -87,6 +91,10 @@ impl OrganizationSummaryBuilder {
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alias = input;
         self
+    }
+    /// <p>The alias associated with the organization.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias
     }
     /// <p>The default email domain associated with the organization.</p>
     pub fn default_mail_domain(
@@ -104,6 +112,10 @@ impl OrganizationSummaryBuilder {
         self.default_mail_domain = input;
         self
     }
+    /// <p>The default email domain associated with the organization.</p>
+    pub fn get_default_mail_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_mail_domain
+    }
     /// <p>The error message associated with the organization. It is only present if unexpected behavior has occurred with regards to the organization. It provides insight or solutions regarding unexpected behavior.</p>
     pub fn error_message(
         mut self,
@@ -120,6 +132,10 @@ impl OrganizationSummaryBuilder {
         self.error_message = input;
         self
     }
+    /// <p>The error message associated with the organization. It is only present if unexpected behavior has occurred with regards to the organization. It provides insight or solutions regarding unexpected behavior.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// <p>The state associated with the organization.</p>
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state = ::std::option::Option::Some(input.into());
@@ -129,6 +145,10 @@ impl OrganizationSummaryBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state associated with the organization.</p>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`OrganizationSummary`](crate::types::OrganizationSummary).
     pub fn build(self) -> crate::types::OrganizationSummary {

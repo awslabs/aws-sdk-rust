@@ -104,6 +104,10 @@ impl TableCellStyleBuilder {
         self.visibility = input;
         self
     }
+    /// <p>The visibility of the table cells.</p>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.visibility
+    }
     /// <p>The font configuration of the table cells.</p>
     pub fn font_configuration(mut self, input: crate::types::FontConfiguration) -> Self {
         self.font_configuration = ::std::option::Option::Some(input);
@@ -117,6 +121,12 @@ impl TableCellStyleBuilder {
         self.font_configuration = input;
         self
     }
+    /// <p>The font configuration of the table cells.</p>
+    pub fn get_font_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::FontConfiguration> {
+        &self.font_configuration
+    }
     /// <p>The text wrap (none, wrap) for the table cells.</p>
     pub fn text_wrap(mut self, input: crate::types::TextWrap) -> Self {
         self.text_wrap = ::std::option::Option::Some(input);
@@ -126,6 +136,10 @@ impl TableCellStyleBuilder {
     pub fn set_text_wrap(mut self, input: ::std::option::Option<crate::types::TextWrap>) -> Self {
         self.text_wrap = input;
         self
+    }
+    /// <p>The text wrap (none, wrap) for the table cells.</p>
+    pub fn get_text_wrap(&self) -> &::std::option::Option<crate::types::TextWrap> {
+        &self.text_wrap
     }
     /// <p>The horizontal text alignment (left, center, right, auto) for the table cells.</p>
     pub fn horizontal_text_alignment(
@@ -143,6 +157,12 @@ impl TableCellStyleBuilder {
         self.horizontal_text_alignment = input;
         self
     }
+    /// <p>The horizontal text alignment (left, center, right, auto) for the table cells.</p>
+    pub fn get_horizontal_text_alignment(
+        &self,
+    ) -> &::std::option::Option<crate::types::HorizontalTextAlignment> {
+        &self.horizontal_text_alignment
+    }
     /// <p>The vertical text alignment (top, middle, bottom) for the table cells.</p>
     pub fn vertical_text_alignment(mut self, input: crate::types::VerticalTextAlignment) -> Self {
         self.vertical_text_alignment = ::std::option::Option::Some(input);
@@ -155,6 +175,12 @@ impl TableCellStyleBuilder {
     ) -> Self {
         self.vertical_text_alignment = input;
         self
+    }
+    /// <p>The vertical text alignment (top, middle, bottom) for the table cells.</p>
+    pub fn get_vertical_text_alignment(
+        &self,
+    ) -> &::std::option::Option<crate::types::VerticalTextAlignment> {
+        &self.vertical_text_alignment
     }
     /// <p>The background color for the table cells.</p>
     pub fn background_color(
@@ -172,6 +198,10 @@ impl TableCellStyleBuilder {
         self.background_color = input;
         self
     }
+    /// <p>The background color for the table cells.</p>
+    pub fn get_background_color(&self) -> &::std::option::Option<::std::string::String> {
+        &self.background_color
+    }
     /// <p>The height color for the table cells.</p>
     pub fn height(mut self, input: i32) -> Self {
         self.height = ::std::option::Option::Some(input);
@@ -181,6 +211,10 @@ impl TableCellStyleBuilder {
     pub fn set_height(mut self, input: ::std::option::Option<i32>) -> Self {
         self.height = input;
         self
+    }
+    /// <p>The height color for the table cells.</p>
+    pub fn get_height(&self) -> &::std::option::Option<i32> {
+        &self.height
     }
     /// <p>The borders for the table cells.</p>
     pub fn border(mut self, input: crate::types::GlobalTableBorderOptions) -> Self {
@@ -194,6 +228,10 @@ impl TableCellStyleBuilder {
     ) -> Self {
         self.border = input;
         self
+    }
+    /// <p>The borders for the table cells.</p>
+    pub fn get_border(&self) -> &::std::option::Option<crate::types::GlobalTableBorderOptions> {
+        &self.border
     }
     /// Consumes the builder and constructs a [`TableCellStyle`](crate::types::TableCellStyle).
     pub fn build(self) -> crate::types::TableCellStyle {

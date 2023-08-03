@@ -36,6 +36,13 @@ impl DeleteAssessmentTemplateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteAssessmentTemplate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_assessment_template::builders::DeleteAssessmentTemplateInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +138,9 @@ impl DeleteAssessmentTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_assessment_template_arn(input);
         self
+    }
+    /// <p>The ARN that specifies the assessment template that you want to delete.</p>
+    pub fn get_assessment_template_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assessment_template_arn()
     }
 }

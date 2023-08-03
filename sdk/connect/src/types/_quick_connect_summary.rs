@@ -64,6 +64,10 @@ impl QuickConnectSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier for the quick connect.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Amazon Resource Name (ARN) of the quick connect.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl QuickConnectSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the quick connect.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the quick connect.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl QuickConnectSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the quick connect.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
     pub fn quick_connect_type(mut self, input: crate::types::QuickConnectType) -> Self {
@@ -96,6 +108,10 @@ impl QuickConnectSummaryBuilder {
     ) -> Self {
         self.quick_connect_type = input;
         self
+    }
+    /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
+    pub fn get_quick_connect_type(&self) -> &::std::option::Option<crate::types::QuickConnectType> {
+        &self.quick_connect_type
     }
     /// Consumes the builder and constructs a [`QuickConnectSummary`](crate::types::QuickConnectSummary).
     pub fn build(self) -> crate::types::QuickConnectSummary {

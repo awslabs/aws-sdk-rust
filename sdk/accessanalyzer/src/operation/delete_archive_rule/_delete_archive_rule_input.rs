@@ -63,6 +63,10 @@ impl DeleteArchiveRuleInputBuilder {
         self.analyzer_name = input;
         self
     }
+    /// <p>The name of the analyzer that associated with the archive rule to delete.</p>
+    pub fn get_analyzer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.analyzer_name
+    }
     /// <p>The name of the rule to delete.</p>
     pub fn rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_name = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl DeleteArchiveRuleInputBuilder {
         self.rule_name = input;
         self
     }
+    /// <p>The name of the rule to delete.</p>
+    pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_name
+    }
     /// <p>A client token.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl DeleteArchiveRuleInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A client token.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`DeleteArchiveRuleInput`](crate::operation::delete_archive_rule::DeleteArchiveRuleInput).
     pub fn build(

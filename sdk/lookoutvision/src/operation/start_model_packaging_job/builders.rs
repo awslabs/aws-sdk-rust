@@ -50,6 +50,13 @@ impl StartModelPackagingJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartModelPackagingJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_model_packaging_job::builders::StartModelPackagingJobInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +147,10 @@ impl StartModelPackagingJobFluentBuilder {
         self.inner = self.inner.set_project_name(input);
         self
     }
+    /// <p> The name of the project which contains the version of the model that you want to package. </p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_name()
+    }
     /// <p> The version of the model within the project that you want to package. </p>
     pub fn model_version(
         mut self,
@@ -156,6 +167,10 @@ impl StartModelPackagingJobFluentBuilder {
         self.inner = self.inner.set_model_version(input);
         self
     }
+    /// <p> The version of the model within the project that you want to package. </p>
+    pub fn get_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_model_version()
+    }
     /// <p>A name for the model packaging job. If you don't supply a value, the service creates a job name for you. </p>
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_name(input.into());
@@ -165,6 +180,10 @@ impl StartModelPackagingJobFluentBuilder {
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_name(input);
         self
+    }
+    /// <p>A name for the model packaging job. If you don't supply a value, the service creates a job name for you. </p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_name()
     }
     /// <p>The configuration for the model packaging job. </p>
     pub fn configuration(mut self, input: crate::types::ModelPackagingConfiguration) -> Self {
@@ -179,6 +198,12 @@ impl StartModelPackagingJobFluentBuilder {
         self.inner = self.inner.set_configuration(input);
         self
     }
+    /// <p>The configuration for the model packaging job. </p>
+    pub fn get_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ModelPackagingConfiguration> {
+        self.inner.get_configuration()
+    }
     /// <p>A description for the model packaging job. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -188,6 +213,10 @@ impl StartModelPackagingJobFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description for the model packaging job. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>ClientToken is an idempotency token that ensures a call to <code>StartModelPackagingJob</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>StartModelPackagingJob</code>. In this case, safely retry your call to <code>StartModelPackagingJob</code> by using the same <code>ClientToken</code> parameter value.</p>
     /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple dataset creation requests. You'll need to provide your own value for other use cases. </p>
@@ -202,5 +231,11 @@ impl StartModelPackagingJobFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>ClientToken is an idempotency token that ensures a call to <code>StartModelPackagingJob</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>StartModelPackagingJob</code>. In this case, safely retry your call to <code>StartModelPackagingJob</code> by using the same <code>ClientToken</code> parameter value.</p>
+    /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple dataset creation requests. You'll need to provide your own value for other use cases. </p>
+    /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>StartModelPackagingJob</code>. An idempotency token is active for 8 hours. </p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

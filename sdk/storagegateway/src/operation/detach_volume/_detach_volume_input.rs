@@ -50,6 +50,10 @@ impl DetachVolumeInputBuilder {
         self.volume_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the volume to detach from the gateway.</p>
+    pub fn get_volume_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_arn
+    }
     /// <p>Set to <code>true</code> to forcibly remove the iSCSI connection of the target volume and detach the volume. The default is <code>false</code>. If this value is set to <code>false</code>, you must manually disconnect the iSCSI connection from the target volume.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn force_detach(mut self, input: bool) -> Self {
@@ -61,6 +65,11 @@ impl DetachVolumeInputBuilder {
     pub fn set_force_detach(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force_detach = input;
         self
+    }
+    /// <p>Set to <code>true</code> to forcibly remove the iSCSI connection of the target volume and detach the volume. The default is <code>false</code>. If this value is set to <code>false</code>, you must manually disconnect the iSCSI connection from the target volume.</p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    pub fn get_force_detach(&self) -> &::std::option::Option<bool> {
+        &self.force_detach
     }
     /// Consumes the builder and constructs a [`DetachVolumeInput`](crate::operation::detach_volume::DetachVolumeInput).
     pub fn build(

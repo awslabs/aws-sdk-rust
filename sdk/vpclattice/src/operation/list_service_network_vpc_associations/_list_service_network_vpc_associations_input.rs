@@ -69,6 +69,10 @@ impl ListServiceNetworkVpcAssociationsInputBuilder {
         self.service_network_identifier = input;
         self
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
+    pub fn get_service_network_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_network_identifier
+    }
     /// <p>The ID or Amazon Resource Name (ARN) of the VPC.</p>
     pub fn vpc_identifier(
         mut self,
@@ -85,6 +89,10 @@ impl ListServiceNetworkVpcAssociationsInputBuilder {
         self.vpc_identifier = input;
         self
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of the VPC.</p>
+    pub fn get_vpc_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_identifier
+    }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -95,6 +103,10 @@ impl ListServiceNetworkVpcAssociationsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>A pagination token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -104,6 +116,10 @@ impl ListServiceNetworkVpcAssociationsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A pagination token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListServiceNetworkVpcAssociationsInput`](crate::operation::list_service_network_vpc_associations::ListServiceNetworkVpcAssociationsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_service_network_vpc_associations::ListServiceNetworkVpcAssociationsInput, ::aws_smithy_http::operation::error::BuildError>{

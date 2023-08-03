@@ -39,6 +39,10 @@ impl DisableAvailabilityZonesForLoadBalancerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisableAvailabilityZonesForLoadBalancer as a reference.
+    pub fn as_input(&self) -> &crate::operation::disable_availability_zones_for_load_balancer::builders::DisableAvailabilityZonesForLoadBalancerInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -109,6 +113,10 @@ impl DisableAvailabilityZonesForLoadBalancerFluentBuilder {
         self.inner = self.inner.set_load_balancer_name(input);
         self
     }
+    /// <p>The name of the load balancer.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_load_balancer_name()
+    }
     /// Appends an item to `AvailabilityZones`.
     ///
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
@@ -128,5 +136,11 @@ impl DisableAvailabilityZonesForLoadBalancerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_availability_zones(input);
         self
+    }
+    /// <p>The Availability Zones.</p>
+    pub fn get_availability_zones(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_availability_zones()
     }
 }

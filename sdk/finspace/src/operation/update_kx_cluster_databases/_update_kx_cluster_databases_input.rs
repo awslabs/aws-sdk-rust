@@ -72,6 +72,10 @@ impl UpdateKxClusterDatabasesInputBuilder {
         self.environment_id = input;
         self
     }
+    /// <p>The unique identifier of a kdb environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
+    }
     /// <p>A unique name for the cluster that you want to modify.</p>
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl UpdateKxClusterDatabasesInputBuilder {
         self.cluster_name = input;
         self
     }
+    /// <p>A unique name for the cluster that you want to modify.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_name
+    }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl UpdateKxClusterDatabasesInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Appends an item to `databases`.
     ///
@@ -110,6 +122,12 @@ impl UpdateKxClusterDatabasesInputBuilder {
     ) -> Self {
         self.databases = input;
         self
+    }
+    /// <p> The structure of databases mounted on the cluster.</p>
+    pub fn get_databases(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseConfiguration>> {
+        &self.databases
     }
     /// Consumes the builder and constructs a [`UpdateKxClusterDatabasesInput`](crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesInput).
     pub fn build(

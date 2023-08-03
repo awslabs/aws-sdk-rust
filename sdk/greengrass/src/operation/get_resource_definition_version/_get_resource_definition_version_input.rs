@@ -53,6 +53,10 @@ impl GetResourceDefinitionVersionInputBuilder {
         self.resource_definition_id = input;
         self
     }
+    /// The ID of the resource definition.
+    pub fn get_resource_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_definition_id
+    }
     /// The ID of the resource definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListResourceDefinitionVersions'' requests. If the version is the last one that was associated with a resource definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
     pub fn resource_definition_version_id(
         mut self,
@@ -68,6 +72,12 @@ impl GetResourceDefinitionVersionInputBuilder {
     ) -> Self {
         self.resource_definition_version_id = input;
         self
+    }
+    /// The ID of the resource definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListResourceDefinitionVersions'' requests. If the version is the last one that was associated with a resource definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
+    pub fn get_resource_definition_version_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.resource_definition_version_id
     }
     /// Consumes the builder and constructs a [`GetResourceDefinitionVersionInput`](crate::operation::get_resource_definition_version::GetResourceDefinitionVersionInput).
     pub fn build(

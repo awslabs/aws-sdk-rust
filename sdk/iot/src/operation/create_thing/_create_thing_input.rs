@@ -70,6 +70,11 @@ impl CreateThingInputBuilder {
         self.thing_name = input;
         self
     }
+    /// <p>The name of the thing to create.</p>
+    /// <p>You can't change a thing's name after you create it. To change a thing's name, you must create a new thing, give it the new name, and then delete the old thing.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_name
+    }
     /// <p>The name of the thing type associated with the new thing.</p>
     pub fn thing_type_name(
         mut self,
@@ -86,6 +91,10 @@ impl CreateThingInputBuilder {
         self.thing_type_name = input;
         self
     }
+    /// <p>The name of the thing type associated with the new thing.</p>
+    pub fn get_thing_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_type_name
+    }
     /// <p>The attribute payload, which consists of up to three name/value pairs in a JSON document. For example:</p>
     /// <p> <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
     pub fn attribute_payload(mut self, input: crate::types::AttributePayload) -> Self {
@@ -100,6 +109,11 @@ impl CreateThingInputBuilder {
     ) -> Self {
         self.attribute_payload = input;
         self
+    }
+    /// <p>The attribute payload, which consists of up to three name/value pairs in a JSON document. For example:</p>
+    /// <p> <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
+    pub fn get_attribute_payload(&self) -> &::std::option::Option<crate::types::AttributePayload> {
+        &self.attribute_payload
     }
     /// <p>The name of the billing group the thing will be added to.</p>
     pub fn billing_group_name(
@@ -116,6 +130,10 @@ impl CreateThingInputBuilder {
     ) -> Self {
         self.billing_group_name = input;
         self
+    }
+    /// <p>The name of the billing group the thing will be added to.</p>
+    pub fn get_billing_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.billing_group_name
     }
     /// Consumes the builder and constructs a [`CreateThingInput`](crate::operation::create_thing::CreateThingInput).
     pub fn build(

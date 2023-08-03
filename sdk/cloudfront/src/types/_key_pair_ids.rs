@@ -48,6 +48,10 @@ impl KeyPairIdsBuilder {
         self.quantity = input;
         self
     }
+    /// <p>The number of key pair identifiers in the list.</p>
+    pub fn get_quantity(&self) -> &::std::option::Option<i32> {
+        &self.quantity
+    }
     /// Appends an item to `items`.
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
@@ -66,6 +70,10 @@ impl KeyPairIdsBuilder {
     ) -> Self {
         self.items = input;
         self
+    }
+    /// <p>A list of CloudFront key pair identifiers.</p>
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.items
     }
     /// Consumes the builder and constructs a [`KeyPairIds`](crate::types::KeyPairIds).
     pub fn build(self) -> crate::types::KeyPairIds {

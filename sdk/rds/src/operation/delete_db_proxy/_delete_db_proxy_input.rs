@@ -45,6 +45,10 @@ impl DeleteDbProxyInputBuilder {
         self.db_proxy_name = input;
         self
     }
+    /// <p>The name of the DB proxy to delete.</p>
+    pub fn get_db_proxy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_proxy_name
+    }
     /// Consumes the builder and constructs a [`DeleteDbProxyInput`](crate::operation::delete_db_proxy::DeleteDbProxyInput).
     pub fn build(
         self,

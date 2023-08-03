@@ -73,6 +73,10 @@ impl UpdateAuditSuppressionInputBuilder {
         self.check_name = input;
         self
     }
+    /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
+    pub fn get_check_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.check_name
+    }
     /// <p>Information that identifies the noncompliant resource.</p>
     pub fn resource_identifier(mut self, input: crate::types::ResourceIdentifier) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input);
@@ -85,6 +89,12 @@ impl UpdateAuditSuppressionInputBuilder {
     ) -> Self {
         self.resource_identifier = input;
         self
+    }
+    /// <p>Information that identifies the noncompliant resource.</p>
+    pub fn get_resource_identifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceIdentifier> {
+        &self.resource_identifier
     }
     /// <p> The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to. </p>
     pub fn expiration_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -99,6 +109,10 @@ impl UpdateAuditSuppressionInputBuilder {
         self.expiration_date = input;
         self
     }
+    /// <p> The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to. </p>
+    pub fn get_expiration_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expiration_date
+    }
     /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
     pub fn suppress_indefinitely(mut self, input: bool) -> Self {
         self.suppress_indefinitely = ::std::option::Option::Some(input);
@@ -109,6 +123,10 @@ impl UpdateAuditSuppressionInputBuilder {
         self.suppress_indefinitely = input;
         self
     }
+    /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
+    pub fn get_suppress_indefinitely(&self) -> &::std::option::Option<bool> {
+        &self.suppress_indefinitely
+    }
     /// <p> The description of the audit suppression. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -118,6 +136,10 @@ impl UpdateAuditSuppressionInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p> The description of the audit suppression. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`UpdateAuditSuppressionInput`](crate::operation::update_audit_suppression::UpdateAuditSuppressionInput).
     pub fn build(

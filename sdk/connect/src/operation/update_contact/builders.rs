@@ -39,6 +39,12 @@ impl UpdateContactFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateContact as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_contact::builders::UpdateContactInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +127,10 @@ impl UpdateContactFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with your contact center.</p>
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.contact_id(input.into());
@@ -130,6 +140,10 @@ impl UpdateContactFluentBuilder {
     pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_contact_id(input);
         self
+    }
+    /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with your contact center.</p>
+    pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_contact_id()
     }
     /// <p>The name of the contact.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -141,6 +155,10 @@ impl UpdateContactFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the contact.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The description of the contact.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -150,6 +168,10 @@ impl UpdateContactFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the contact.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Adds a key-value pair to `References`.
     ///
@@ -173,5 +195,13 @@ impl UpdateContactFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_references(input);
         self
+    }
+    /// <p>Well-formed data on contact, shown to agents on Contact Control Panel (CCP).</p>
+    pub fn get_references(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::Reference>,
+    > {
+        self.inner.get_references()
     }
 }

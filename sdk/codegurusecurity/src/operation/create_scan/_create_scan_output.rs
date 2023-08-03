@@ -78,6 +78,10 @@ impl CreateScanOutputBuilder {
         self.scan_name = input;
         self
     }
+    /// <p>The name of the scan.</p>
+    pub fn get_scan_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scan_name
+    }
     /// <p>UUID that identifies the individual scan run.</p>
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.run_id = ::std::option::Option::Some(input.into());
@@ -87,6 +91,10 @@ impl CreateScanOutputBuilder {
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.run_id = input;
         self
+    }
+    /// <p>UUID that identifies the individual scan run.</p>
+    pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.run_id
     }
     /// <p>The identifier for the resource object that contains resources that were scanned.</p>
     pub fn resource_id(mut self, input: crate::types::ResourceId) -> Self {
@@ -101,6 +109,10 @@ impl CreateScanOutputBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The identifier for the resource object that contains resources that were scanned.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<crate::types::ResourceId> {
+        &self.resource_id
+    }
     /// <p>The current state of the scan. Returns either <code>InProgress</code>, <code>Successful</code>, or <code>Failed</code>.</p>
     pub fn scan_state(mut self, input: crate::types::ScanState) -> Self {
         self.scan_state = ::std::option::Option::Some(input);
@@ -110,6 +122,10 @@ impl CreateScanOutputBuilder {
     pub fn set_scan_state(mut self, input: ::std::option::Option<crate::types::ScanState>) -> Self {
         self.scan_state = input;
         self
+    }
+    /// <p>The current state of the scan. Returns either <code>InProgress</code>, <code>Successful</code>, or <code>Failed</code>.</p>
+    pub fn get_scan_state(&self) -> &::std::option::Option<crate::types::ScanState> {
+        &self.scan_state
     }
     /// <p>The ARN for the scan name.</p>
     pub fn scan_name_arn(
@@ -126,6 +142,10 @@ impl CreateScanOutputBuilder {
     ) -> Self {
         self.scan_name_arn = input;
         self
+    }
+    /// <p>The ARN for the scan name.</p>
+    pub fn get_scan_name_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scan_name_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

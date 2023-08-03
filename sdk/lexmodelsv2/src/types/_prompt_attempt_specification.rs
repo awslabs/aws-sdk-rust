@@ -71,6 +71,10 @@ impl PromptAttemptSpecificationBuilder {
         self.allow_interrupt = input;
         self
     }
+    /// <p>Indicates whether the user can interrupt a speech prompt attempt from the bot.</p>
+    pub fn get_allow_interrupt(&self) -> &::std::option::Option<bool> {
+        &self.allow_interrupt
+    }
     /// <p>Indicates the allowed input types of the prompt attempt.</p>
     pub fn allowed_input_types(mut self, input: crate::types::AllowedInputTypes) -> Self {
         self.allowed_input_types = ::std::option::Option::Some(input);
@@ -83,6 +87,12 @@ impl PromptAttemptSpecificationBuilder {
     ) -> Self {
         self.allowed_input_types = input;
         self
+    }
+    /// <p>Indicates the allowed input types of the prompt attempt.</p>
+    pub fn get_allowed_input_types(
+        &self,
+    ) -> &::std::option::Option<crate::types::AllowedInputTypes> {
+        &self.allowed_input_types
     }
     /// <p>Specifies the settings on audio and DTMF input.</p>
     pub fn audio_and_dtmf_input_specification(
@@ -100,6 +110,12 @@ impl PromptAttemptSpecificationBuilder {
         self.audio_and_dtmf_input_specification = input;
         self
     }
+    /// <p>Specifies the settings on audio and DTMF input.</p>
+    pub fn get_audio_and_dtmf_input_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::AudioAndDtmfInputSpecification> {
+        &self.audio_and_dtmf_input_specification
+    }
     /// <p>Specifies the settings on text input.</p>
     pub fn text_input_specification(mut self, input: crate::types::TextInputSpecification) -> Self {
         self.text_input_specification = ::std::option::Option::Some(input);
@@ -112,6 +128,12 @@ impl PromptAttemptSpecificationBuilder {
     ) -> Self {
         self.text_input_specification = input;
         self
+    }
+    /// <p>Specifies the settings on text input.</p>
+    pub fn get_text_input_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::TextInputSpecification> {
+        &self.text_input_specification
     }
     /// Consumes the builder and constructs a [`PromptAttemptSpecification`](crate::types::PromptAttemptSpecification).
     pub fn build(self) -> crate::types::PromptAttemptSpecification {

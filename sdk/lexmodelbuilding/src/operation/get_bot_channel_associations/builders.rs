@@ -37,6 +37,10 @@ impl GetBotChannelAssociationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetBotChannelAssociations as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_bot_channel_associations::builders::GetBotChannelAssociationsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +140,10 @@ impl GetBotChannelAssociationsFluentBuilder {
         self.inner = self.inner.set_bot_name(input);
         self
     }
+    /// <p>The name of the Amazon Lex bot in the association.</p>
+    pub fn get_bot_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_name()
+    }
     /// <p>An alias pointing to the specific version of the Amazon Lex bot to which this association is being made.</p>
     pub fn bot_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_alias(input.into());
@@ -145,6 +153,10 @@ impl GetBotChannelAssociationsFluentBuilder {
     pub fn set_bot_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bot_alias(input);
         self
+    }
+    /// <p>An alias pointing to the specific version of the Amazon Lex bot to which this association is being made.</p>
+    pub fn get_bot_alias(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_alias()
     }
     /// <p>A pagination token for fetching the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -156,6 +168,10 @@ impl GetBotChannelAssociationsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A pagination token for fetching the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of associations to return in the response. The default is 50. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -165,6 +181,10 @@ impl GetBotChannelAssociationsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of associations to return in the response. The default is 50. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz." To return all bot channel associations, use a hyphen ("-") as the <code>nameContains</code> parameter.</p>
     pub fn name_contains(
@@ -181,5 +201,9 @@ impl GetBotChannelAssociationsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_name_contains(input);
         self
+    }
+    /// <p>Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz." To return all bot channel associations, use a hyphen ("-") as the <code>nameContains</code> parameter.</p>
+    pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name_contains()
     }
 }

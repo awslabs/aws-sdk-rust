@@ -70,6 +70,12 @@ impl CmafEncryptionBuilder {
         self.constant_initialization_vector = input;
         self
     }
+    /// An optional 128-bit, 16-byte hex value represented by a 32-character string, used in conjunction with the key for encrypting blocks. If you don't specify a value, then MediaPackage creates the constant initialization vector (IV).
+    pub fn get_constant_initialization_vector(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.constant_initialization_vector
+    }
     /// The encryption method to use.
     pub fn encryption_method(mut self, input: crate::types::CmafEncryptionMethod) -> Self {
         self.encryption_method = ::std::option::Option::Some(input);
@@ -83,6 +89,12 @@ impl CmafEncryptionBuilder {
         self.encryption_method = input;
         self
     }
+    /// The encryption method to use.
+    pub fn get_encryption_method(
+        &self,
+    ) -> &::std::option::Option<crate::types::CmafEncryptionMethod> {
+        &self.encryption_method
+    }
     /// Time (in seconds) between each encryption key rotation.
     pub fn key_rotation_interval_seconds(mut self, input: i32) -> Self {
         self.key_rotation_interval_seconds = ::std::option::Option::Some(input);
@@ -92,6 +104,10 @@ impl CmafEncryptionBuilder {
     pub fn set_key_rotation_interval_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.key_rotation_interval_seconds = input;
         self
+    }
+    /// Time (in seconds) between each encryption key rotation.
+    pub fn get_key_rotation_interval_seconds(&self) -> &::std::option::Option<i32> {
+        &self.key_rotation_interval_seconds
     }
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
     pub fn speke_key_provider(mut self, input: crate::types::SpekeKeyProvider) -> Self {
@@ -105,6 +121,10 @@ impl CmafEncryptionBuilder {
     ) -> Self {
         self.speke_key_provider = input;
         self
+    }
+    /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
+    pub fn get_speke_key_provider(&self) -> &::std::option::Option<crate::types::SpekeKeyProvider> {
+        &self.speke_key_provider
     }
     /// Consumes the builder and constructs a [`CmafEncryption`](crate::types::CmafEncryption).
     pub fn build(self) -> crate::types::CmafEncryption {

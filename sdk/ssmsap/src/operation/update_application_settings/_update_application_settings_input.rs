@@ -77,6 +77,10 @@ impl UpdateApplicationSettingsInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The ID of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// Appends an item to `credentials_to_add_or_update`.
     ///
     /// To override the contents of this collection use [`set_credentials_to_add_or_update`](Self::set_credentials_to_add_or_update).
@@ -99,6 +103,12 @@ impl UpdateApplicationSettingsInputBuilder {
         self.credentials_to_add_or_update = input;
         self
     }
+    /// <p>The credentials to be added or updated.</p>
+    pub fn get_credentials_to_add_or_update(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>> {
+        &self.credentials_to_add_or_update
+    }
     /// Appends an item to `credentials_to_remove`.
     ///
     /// To override the contents of this collection use [`set_credentials_to_remove`](Self::set_credentials_to_remove).
@@ -118,6 +128,12 @@ impl UpdateApplicationSettingsInputBuilder {
         self.credentials_to_remove = input;
         self
     }
+    /// <p>The credentials to be removed.</p>
+    pub fn get_credentials_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>> {
+        &self.credentials_to_remove
+    }
     /// <p>Installation of AWS Backint Agent for SAP HANA.</p>
     pub fn backint(mut self, input: crate::types::BackintConfig) -> Self {
         self.backint = ::std::option::Option::Some(input);
@@ -130,6 +146,10 @@ impl UpdateApplicationSettingsInputBuilder {
     ) -> Self {
         self.backint = input;
         self
+    }
+    /// <p>Installation of AWS Backint Agent for SAP HANA.</p>
+    pub fn get_backint(&self) -> &::std::option::Option<crate::types::BackintConfig> {
+        &self.backint
     }
     /// Consumes the builder and constructs a [`UpdateApplicationSettingsInput`](crate::operation::update_application_settings::UpdateApplicationSettingsInput).
     pub fn build(

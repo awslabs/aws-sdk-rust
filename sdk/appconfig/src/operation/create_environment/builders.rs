@@ -36,6 +36,12 @@ impl CreateEnvironmentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateEnvironment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_environment::builders::CreateEnvironmentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl CreateEnvironmentFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The application ID.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>A name for the environment.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -142,6 +152,10 @@ impl CreateEnvironmentFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>A name for the environment.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A description of the environment.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -151,6 +165,10 @@ impl CreateEnvironmentFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the environment.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `Monitors`.
     ///
@@ -168,6 +186,10 @@ impl CreateEnvironmentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_monitors(input);
         self
+    }
+    /// <p>Amazon CloudWatch alarms to monitor during the deployment process.</p>
+    pub fn get_monitors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Monitor>> {
+        self.inner.get_monitors()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -191,5 +213,13 @@ impl CreateEnvironmentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Metadata to assign to the environment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

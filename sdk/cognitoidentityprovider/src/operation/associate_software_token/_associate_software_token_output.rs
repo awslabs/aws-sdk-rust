@@ -63,6 +63,10 @@ impl AssociateSoftwareTokenOutputBuilder {
         self.secret_code = input;
         self
     }
+    /// <p>A unique generated shared secret code that is used in the TOTP algorithm to generate a one-time code.</p>
+    pub fn get_secret_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_code
+    }
     /// <p>The session that should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
     pub fn session(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl AssociateSoftwareTokenOutputBuilder {
     pub fn set_session(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session = input;
         self
+    }
+    /// <p>The session that should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
+    pub fn get_session(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

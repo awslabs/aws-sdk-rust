@@ -195,6 +195,10 @@ impl ExportTaskBuilder {
         self.export_task_identifier = input;
         self
     }
+    /// <p>A unique identifier for the snapshot or cluster export task. This ID isn't an identifier for the Amazon S3 bucket where the data is exported.</p>
+    pub fn get_export_task_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.export_task_identifier
+    }
     /// <p>The Amazon Resource Name (ARN) of the snapshot or cluster exported to Amazon S3.</p>
     pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_arn = ::std::option::Option::Some(input.into());
@@ -204,6 +208,10 @@ impl ExportTaskBuilder {
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the snapshot or cluster exported to Amazon S3.</p>
+    pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_arn
     }
     /// Appends an item to `export_only`.
     ///
@@ -236,6 +244,18 @@ impl ExportTaskBuilder {
         self.export_only = input;
         self
     }
+    /// <p>The data exported from the snapshot or cluster. Valid values are the following:</p>
+    /// <ul>
+    /// <li> <p> <code>database</code> - Export all the data from a specified database.</p> </li>
+    /// <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the snapshot or cluster. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li>
+    /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot or cluster. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
+    /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
+    /// </ul>
+    pub fn get_export_only(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.export_only
+    }
     /// <p>The time that the snapshot was created.</p>
     pub fn snapshot_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.snapshot_time = ::std::option::Option::Some(input);
@@ -248,6 +268,10 @@ impl ExportTaskBuilder {
     ) -> Self {
         self.snapshot_time = input;
         self
+    }
+    /// <p>The time that the snapshot was created.</p>
+    pub fn get_snapshot_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.snapshot_time
     }
     /// <p>The time that the snapshot or cluster export task started.</p>
     pub fn task_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -262,6 +286,10 @@ impl ExportTaskBuilder {
         self.task_start_time = input;
         self
     }
+    /// <p>The time that the snapshot or cluster export task started.</p>
+    pub fn get_task_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.task_start_time
+    }
     /// <p>The time that the snapshot or cluster export task ended.</p>
     pub fn task_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.task_end_time = ::std::option::Option::Some(input);
@@ -275,6 +303,10 @@ impl ExportTaskBuilder {
         self.task_end_time = input;
         self
     }
+    /// <p>The time that the snapshot or cluster export task ended.</p>
+    pub fn get_task_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.task_end_time
+    }
     /// <p>The Amazon S3 bucket that the snapshot or cluster is exported to.</p>
     pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket = ::std::option::Option::Some(input.into());
@@ -284,6 +316,10 @@ impl ExportTaskBuilder {
     pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket = input;
         self
+    }
+    /// <p>The Amazon S3 bucket that the snapshot or cluster is exported to.</p>
+    pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket
     }
     /// <p>The Amazon S3 bucket prefix that is the file name and path of the exported data.</p>
     pub fn s3_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -295,6 +331,10 @@ impl ExportTaskBuilder {
         self.s3_prefix = input;
         self
     }
+    /// <p>The Amazon S3 bucket prefix that is the file name and path of the exported data.</p>
+    pub fn get_s3_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_prefix
+    }
     /// <p>The name of the IAM role that is used to write to Amazon S3 when exporting a snapshot or cluster.</p>
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role_arn = ::std::option::Option::Some(input.into());
@@ -305,6 +345,10 @@ impl ExportTaskBuilder {
         self.iam_role_arn = input;
         self
     }
+    /// <p>The name of the IAM role that is used to write to Amazon S3 when exporting a snapshot or cluster.</p>
+    pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_role_arn
+    }
     /// <p>The key identifier of the Amazon Web Services KMS key that is used to encrypt the data when it's exported to Amazon S3. The KMS key identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the export must have encryption and decryption permissions to use this KMS key.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -314,6 +358,10 @@ impl ExportTaskBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>The key identifier of the Amazon Web Services KMS key that is used to encrypt the data when it's exported to Amazon S3. The KMS key identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the export must have encryption and decryption permissions to use this KMS key.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// <p>The progress status of the export task. The status can be one of the following:</p>
     /// <ul>
@@ -341,6 +389,18 @@ impl ExportTaskBuilder {
         self.status = input;
         self
     }
+    /// <p>The progress status of the export task. The status can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>CANCELED</code> </p> </li>
+    /// <li> <p> <code>CANCELING</code> </p> </li>
+    /// <li> <p> <code>COMPLETE</code> </p> </li>
+    /// <li> <p> <code>FAILED</code> </p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>STARTING</code> </p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The progress of the snapshot or cluster export task as a percentage.</p>
     pub fn percent_progress(mut self, input: i32) -> Self {
         self.percent_progress = ::std::option::Option::Some(input);
@@ -351,6 +411,10 @@ impl ExportTaskBuilder {
         self.percent_progress = input;
         self
     }
+    /// <p>The progress of the snapshot or cluster export task as a percentage.</p>
+    pub fn get_percent_progress(&self) -> &::std::option::Option<i32> {
+        &self.percent_progress
+    }
     /// <p>The total amount of data exported, in gigabytes.</p>
     pub fn total_extracted_data_in_gb(mut self, input: i32) -> Self {
         self.total_extracted_data_in_gb = ::std::option::Option::Some(input);
@@ -360,6 +424,10 @@ impl ExportTaskBuilder {
     pub fn set_total_extracted_data_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_extracted_data_in_gb = input;
         self
+    }
+    /// <p>The total amount of data exported, in gigabytes.</p>
+    pub fn get_total_extracted_data_in_gb(&self) -> &::std::option::Option<i32> {
+        &self.total_extracted_data_in_gb
     }
     /// <p>The reason the export failed, if it failed.</p>
     pub fn failure_cause(
@@ -377,6 +445,10 @@ impl ExportTaskBuilder {
         self.failure_cause = input;
         self
     }
+    /// <p>The reason the export failed, if it failed.</p>
+    pub fn get_failure_cause(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_cause
+    }
     /// <p>A warning about the snapshot or cluster export task.</p>
     pub fn warning_message(
         mut self,
@@ -393,6 +465,10 @@ impl ExportTaskBuilder {
         self.warning_message = input;
         self
     }
+    /// <p>A warning about the snapshot or cluster export task.</p>
+    pub fn get_warning_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.warning_message
+    }
     /// <p>The type of source for the export.</p>
     pub fn source_type(mut self, input: crate::types::ExportSourceType) -> Self {
         self.source_type = ::std::option::Option::Some(input);
@@ -405,6 +481,10 @@ impl ExportTaskBuilder {
     ) -> Self {
         self.source_type = input;
         self
+    }
+    /// <p>The type of source for the export.</p>
+    pub fn get_source_type(&self) -> &::std::option::Option<crate::types::ExportSourceType> {
+        &self.source_type
     }
     /// Consumes the builder and constructs a [`ExportTask`](crate::types::ExportTask).
     pub fn build(self) -> crate::types::ExportTask {

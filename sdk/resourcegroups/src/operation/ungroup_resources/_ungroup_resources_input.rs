@@ -48,6 +48,10 @@ impl UngroupResourcesInputBuilder {
         self.group = input;
         self
     }
+    /// <p>The name or the ARN of the resource group from which to remove the resources.</p>
+    pub fn get_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group
+    }
     /// Appends an item to `resource_arns`.
     ///
     /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
@@ -69,6 +73,12 @@ impl UngroupResourcesInputBuilder {
     ) -> Self {
         self.resource_arns = input;
         self
+    }
+    /// <p>The ARNs of the resources to be removed from the group.</p>
+    pub fn get_resource_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_arns
     }
     /// Consumes the builder and constructs a [`UngroupResourcesInput`](crate::operation::ungroup_resources::UngroupResourcesInput).
     pub fn build(

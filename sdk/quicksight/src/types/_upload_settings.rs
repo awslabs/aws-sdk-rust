@@ -72,6 +72,10 @@ impl UploadSettingsBuilder {
         self.format = input;
         self
     }
+    /// <p>File format.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::FileFormat> {
+        &self.format
+    }
     /// <p>A row number to start reading data from.</p>
     pub fn start_from_row(mut self, input: i32) -> Self {
         self.start_from_row = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl UploadSettingsBuilder {
         self.start_from_row = input;
         self
     }
+    /// <p>A row number to start reading data from.</p>
+    pub fn get_start_from_row(&self) -> &::std::option::Option<i32> {
+        &self.start_from_row
+    }
     /// <p>Whether the file has a header row, or the files each have a header row.</p>
     pub fn contains_header(mut self, input: bool) -> Self {
         self.contains_header = ::std::option::Option::Some(input);
@@ -91,6 +99,10 @@ impl UploadSettingsBuilder {
     pub fn set_contains_header(mut self, input: ::std::option::Option<bool>) -> Self {
         self.contains_header = input;
         self
+    }
+    /// <p>Whether the file has a header row, or the files each have a header row.</p>
+    pub fn get_contains_header(&self) -> &::std::option::Option<bool> {
+        &self.contains_header
     }
     /// <p>Text qualifier.</p>
     pub fn text_qualifier(mut self, input: crate::types::TextQualifier) -> Self {
@@ -105,6 +117,10 @@ impl UploadSettingsBuilder {
         self.text_qualifier = input;
         self
     }
+    /// <p>Text qualifier.</p>
+    pub fn get_text_qualifier(&self) -> &::std::option::Option<crate::types::TextQualifier> {
+        &self.text_qualifier
+    }
     /// <p>The delimiter between values in the file.</p>
     pub fn delimiter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delimiter = ::std::option::Option::Some(input.into());
@@ -114,6 +130,10 @@ impl UploadSettingsBuilder {
     pub fn set_delimiter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delimiter = input;
         self
+    }
+    /// <p>The delimiter between values in the file.</p>
+    pub fn get_delimiter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delimiter
     }
     /// Consumes the builder and constructs a [`UploadSettings`](crate::types::UploadSettings).
     pub fn build(self) -> crate::types::UploadSettings {

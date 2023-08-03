@@ -54,6 +54,10 @@ impl DataflowEndpointConfigBuilder {
         self.dataflow_endpoint_name = input;
         self
     }
+    /// <p>Name of a dataflow endpoint.</p>
+    pub fn get_dataflow_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataflow_endpoint_name
+    }
     /// <p>Region of a dataflow endpoint.</p>
     pub fn dataflow_endpoint_region(
         mut self,
@@ -69,6 +73,10 @@ impl DataflowEndpointConfigBuilder {
     ) -> Self {
         self.dataflow_endpoint_region = input;
         self
+    }
+    /// <p>Region of a dataflow endpoint.</p>
+    pub fn get_dataflow_endpoint_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataflow_endpoint_region
     }
     /// Consumes the builder and constructs a [`DataflowEndpointConfig`](crate::types::DataflowEndpointConfig).
     pub fn build(self) -> crate::types::DataflowEndpointConfig {

@@ -65,6 +65,10 @@ impl ListRoomMembershipsInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The room ID.</p>
     pub fn room_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.room_id = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl ListRoomMembershipsInputBuilder {
     pub fn set_room_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.room_id = input;
         self
+    }
+    /// <p>The room ID.</p>
+    pub fn get_room_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.room_id
     }
     /// <p>The maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -85,6 +93,10 @@ impl ListRoomMembershipsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return in a single call.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -94,6 +106,10 @@ impl ListRoomMembershipsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListRoomMembershipsInput`](crate::operation::list_room_memberships::ListRoomMembershipsInput).
     pub fn build(

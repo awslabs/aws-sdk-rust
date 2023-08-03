@@ -39,6 +39,10 @@ impl GetCompatibleKafkaVersionsInputBuilder {
         self.cluster_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the cluster check.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_arn
+    }
     /// Consumes the builder and constructs a [`GetCompatibleKafkaVersionsInput`](crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsInput).
     pub fn build(
         self,

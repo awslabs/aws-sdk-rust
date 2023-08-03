@@ -87,6 +87,10 @@ impl OptionStatusBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>A timestamp for when this option was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
+    }
     /// <p>A timestamp for when this option was last updated.</p>
     pub fn update_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_date = ::std::option::Option::Some(input);
@@ -100,6 +104,10 @@ impl OptionStatusBuilder {
         self.update_date = input;
         self
     }
+    /// <p>A timestamp for when this option was last updated.</p>
+    pub fn get_update_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_date
+    }
     /// <p>A unique integer that indicates when this option was last updated.</p>
     pub fn update_version(mut self, input: i32) -> Self {
         self.update_version = ::std::option::Option::Some(input);
@@ -109,6 +117,10 @@ impl OptionStatusBuilder {
     pub fn set_update_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.update_version = input;
         self
+    }
+    /// <p>A unique integer that indicates when this option was last updated.</p>
+    pub fn get_update_version(&self) -> &::std::option::Option<i32> {
+        &self.update_version
     }
     /// <p>The state of processing a change to an option. Possible values:</p>
     /// <ul>
@@ -132,6 +144,16 @@ impl OptionStatusBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of processing a change to an option. Possible values:</p>
+    /// <ul>
+    /// <li><code>RequiresIndexDocuments</code>: the option's latest value will not be deployed until <code>IndexDocuments</code> has been called and indexing is complete.</li>
+    /// <li><code>Processing</code>: the option's latest value is in the process of being activated. </li>
+    /// <li><code>Active</code>: the option's latest value is completely deployed.</li>
+    /// <li><code>FailedToValidate</code>: the option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li>
+    /// </ul>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::OptionState> {
+        &self.state
+    }
     /// <p>Indicates that the option will be deleted once processing is complete.</p>
     pub fn pending_deletion(mut self, input: bool) -> Self {
         self.pending_deletion = ::std::option::Option::Some(input);
@@ -141,6 +163,10 @@ impl OptionStatusBuilder {
     pub fn set_pending_deletion(mut self, input: ::std::option::Option<bool>) -> Self {
         self.pending_deletion = input;
         self
+    }
+    /// <p>Indicates that the option will be deleted once processing is complete.</p>
+    pub fn get_pending_deletion(&self) -> &::std::option::Option<bool> {
+        &self.pending_deletion
     }
     /// Consumes the builder and constructs a [`OptionStatus`](crate::types::OptionStatus).
     pub fn build(self) -> crate::types::OptionStatus {

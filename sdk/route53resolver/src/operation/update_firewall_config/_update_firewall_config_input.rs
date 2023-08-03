@@ -60,6 +60,10 @@ impl UpdateFirewallConfigInputBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The ID of the VPC that the configuration is for.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>Determines how Route 53 Resolver handles queries during failures, for example when all traffic that is sent to DNS Firewall fails to receive a reply. </p>
     /// <ul>
     /// <li> <p>By default, fail open is disabled, which means the failure mode is closed. This approach favors security over availability. DNS Firewall blocks queries that it is unable to evaluate properly. </p> </li>
@@ -82,6 +86,17 @@ impl UpdateFirewallConfigInputBuilder {
     ) -> Self {
         self.firewall_fail_open = input;
         self
+    }
+    /// <p>Determines how Route 53 Resolver handles queries during failures, for example when all traffic that is sent to DNS Firewall fails to receive a reply. </p>
+    /// <ul>
+    /// <li> <p>By default, fail open is disabled, which means the failure mode is closed. This approach favors security over availability. DNS Firewall blocks queries that it is unable to evaluate properly. </p> </li>
+    /// <li> <p>If you enable this option, the failure mode is open. This approach favors availability over security. DNS Firewall allows queries to proceed if it is unable to properly evaluate them. </p> </li>
+    /// </ul>
+    /// <p>This behavior is only enforced for VPCs that have at least one DNS Firewall rule group association. </p>
+    pub fn get_firewall_fail_open(
+        &self,
+    ) -> &::std::option::Option<crate::types::FirewallFailOpenStatus> {
+        &self.firewall_fail_open
     }
     /// Consumes the builder and constructs a [`UpdateFirewallConfigInput`](crate::operation::update_firewall_config::UpdateFirewallConfigInput).
     pub fn build(

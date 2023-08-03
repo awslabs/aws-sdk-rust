@@ -65,6 +65,10 @@ impl CreateSipMediaApplicationInputBuilder {
         self.aws_region = input;
         self
     }
+    /// <p>The AWS Region assigned to the SIP media application.</p>
+    pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_region
+    }
     /// <p>The SIP media application's name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl CreateSipMediaApplicationInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The SIP media application's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `endpoints`.
     ///
@@ -94,6 +102,12 @@ impl CreateSipMediaApplicationInputBuilder {
         self.endpoints = input;
         self
     }
+    /// <p>List of endpoints (Lambda ARNs) specified for the SIP media application.</p>
+    pub fn get_endpoints(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplicationEndpoint>> {
+        &self.endpoints
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -112,6 +126,10 @@ impl CreateSipMediaApplicationInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags assigned to the SIP media application.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSipMediaApplicationInput`](crate::operation::create_sip_media_application::CreateSipMediaApplicationInput).
     pub fn build(

@@ -62,6 +62,10 @@ impl SearchRelatedItemsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `related_items`.
     ///
     /// To override the contents of this collection use [`set_related_items`](Self::set_related_items).
@@ -85,6 +89,14 @@ impl SearchRelatedItemsOutputBuilder {
     ) -> Self {
         self.related_items = input;
         self
+    }
+    /// <p>A list of items related to a case. </p>
+    pub fn get_related_items(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<::std::option::Option<crate::types::SearchRelatedItemsResponseItem>>,
+    > {
+        &self.related_items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

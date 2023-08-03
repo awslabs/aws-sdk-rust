@@ -40,6 +40,10 @@ impl SimpleClusterMarkerBuilder {
         self.color = input;
         self
     }
+    /// <p>The color of the simple cluster marker.</p>
+    pub fn get_color(&self) -> &::std::option::Option<::std::string::String> {
+        &self.color
+    }
     /// Consumes the builder and constructs a [`SimpleClusterMarker`](crate::types::SimpleClusterMarker).
     pub fn build(self) -> crate::types::SimpleClusterMarker {
         crate::types::SimpleClusterMarker { color: self.color }

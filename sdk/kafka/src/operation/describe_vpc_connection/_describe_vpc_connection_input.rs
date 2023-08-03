@@ -41,6 +41,10 @@ impl DescribeVpcConnectionInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies a MSK VPC connection.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`DescribeVpcConnectionInput`](crate::operation::describe_vpc_connection::DescribeVpcConnectionInput).
     pub fn build(
         self,

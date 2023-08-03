@@ -72,6 +72,10 @@ impl StudioMembershipBuilder {
         self.identity_store_id = input;
         self
     }
+    /// <p>The ID of the identity store.</p>
+    pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_store_id
+    }
     /// <p>The persona.</p>
     pub fn persona(mut self, input: crate::types::StudioPersona) -> Self {
         self.persona = ::std::option::Option::Some(input);
@@ -85,6 +89,10 @@ impl StudioMembershipBuilder {
         self.persona = input;
         self
     }
+    /// <p>The persona.</p>
+    pub fn get_persona(&self) -> &::std::option::Option<crate::types::StudioPersona> {
+        &self.persona
+    }
     /// <p>The principal ID.</p>
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_id = ::std::option::Option::Some(input.into());
@@ -95,6 +103,10 @@ impl StudioMembershipBuilder {
         self.principal_id = input;
         self
     }
+    /// <p>The principal ID.</p>
+    pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal_id
+    }
     /// <p>The Active Directory Security Identifier for this user, if available.</p>
     pub fn sid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sid = ::std::option::Option::Some(input.into());
@@ -104,6 +116,10 @@ impl StudioMembershipBuilder {
     pub fn set_sid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sid = input;
         self
+    }
+    /// <p>The Active Directory Security Identifier for this user, if available.</p>
+    pub fn get_sid(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sid
     }
     /// Consumes the builder and constructs a [`StudioMembership`](crate::types::StudioMembership).
     pub fn build(self) -> crate::types::StudioMembership {

@@ -36,6 +36,10 @@ impl BatchDeleteClusterSnapshotsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchDeleteClusterSnapshots as a reference.
+    pub fn as_input(&self) -> &crate::operation::batch_delete_cluster_snapshots::builders::BatchDeleteClusterSnapshotsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +136,11 @@ impl BatchDeleteClusterSnapshotsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_identifiers(input);
         self
+    }
+    /// <p>A list of identifiers for the snapshots that you want to delete.</p>
+    pub fn get_identifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteClusterSnapshotMessage>> {
+        self.inner.get_identifiers()
     }
 }

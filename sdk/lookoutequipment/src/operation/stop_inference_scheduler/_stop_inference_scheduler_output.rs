@@ -80,6 +80,10 @@ impl StopInferenceSchedulerOutputBuilder {
         self.model_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the ML model used by the inference scheduler being stopped. </p>
+    pub fn get_model_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_arn
+    }
     /// <p>The name of the ML model used by the inference scheduler being stopped. </p>
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl StopInferenceSchedulerOutputBuilder {
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_name = input;
         self
+    }
+    /// <p>The name of the ML model used by the inference scheduler being stopped. </p>
+    pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_name
     }
     /// <p>The name of the inference scheduler being stopped. </p>
     pub fn inference_scheduler_name(
@@ -106,6 +114,10 @@ impl StopInferenceSchedulerOutputBuilder {
         self.inference_scheduler_name = input;
         self
     }
+    /// <p>The name of the inference scheduler being stopped. </p>
+    pub fn get_inference_scheduler_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.inference_scheduler_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the inference schedule being stopped. </p>
     pub fn inference_scheduler_arn(
         mut self,
@@ -122,6 +134,10 @@ impl StopInferenceSchedulerOutputBuilder {
         self.inference_scheduler_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the inference schedule being stopped. </p>
+    pub fn get_inference_scheduler_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.inference_scheduler_arn
+    }
     /// <p>Indicates the status of the inference scheduler. </p>
     pub fn status(mut self, input: crate::types::InferenceSchedulerStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -134,6 +150,10 @@ impl StopInferenceSchedulerOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Indicates the status of the inference scheduler. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::InferenceSchedulerStatus> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

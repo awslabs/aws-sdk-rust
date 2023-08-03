@@ -56,6 +56,10 @@ impl WavSettingsBuilder {
         self.bit_depth = input;
         self
     }
+    /// Bits per sample.
+    pub fn get_bit_depth(&self) -> &::std::option::Option<f64> {
+        &self.bit_depth
+    }
     /// The audio coding mode for the WAV audio. The mode determines the number of channels in the audio.
     pub fn coding_mode(mut self, input: crate::types::WavCodingMode) -> Self {
         self.coding_mode = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl WavSettingsBuilder {
         self.coding_mode = input;
         self
     }
+    /// The audio coding mode for the WAV audio. The mode determines the number of channels in the audio.
+    pub fn get_coding_mode(&self) -> &::std::option::Option<crate::types::WavCodingMode> {
+        &self.coding_mode
+    }
     /// Sample rate in Hz.
     pub fn sample_rate(mut self, input: f64) -> Self {
         self.sample_rate = ::std::option::Option::Some(input);
@@ -78,6 +86,10 @@ impl WavSettingsBuilder {
     pub fn set_sample_rate(mut self, input: ::std::option::Option<f64>) -> Self {
         self.sample_rate = input;
         self
+    }
+    /// Sample rate in Hz.
+    pub fn get_sample_rate(&self) -> &::std::option::Option<f64> {
+        &self.sample_rate
     }
     /// Consumes the builder and constructs a [`WavSettings`](crate::types::WavSettings).
     pub fn build(self) -> crate::types::WavSettings {

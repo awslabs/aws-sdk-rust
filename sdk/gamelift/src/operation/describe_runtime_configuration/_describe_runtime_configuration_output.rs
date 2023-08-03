@@ -51,6 +51,12 @@ impl DescribeRuntimeConfigurationOutputBuilder {
         self.runtime_configuration = input;
         self
     }
+    /// <p>Instructions that describe how server processes should be launched and maintained on each instance in the fleet.</p>
+    pub fn get_runtime_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::RuntimeConfiguration> {
+        &self.runtime_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

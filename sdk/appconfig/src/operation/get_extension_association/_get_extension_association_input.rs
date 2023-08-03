@@ -47,6 +47,10 @@ impl GetExtensionAssociationInputBuilder {
         self.extension_association_id = input;
         self
     }
+    /// <p>The extension association ID to get.</p>
+    pub fn get_extension_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.extension_association_id
+    }
     /// Consumes the builder and constructs a [`GetExtensionAssociationInput`](crate::operation::get_extension_association::GetExtensionAssociationInput).
     pub fn build(
         self,

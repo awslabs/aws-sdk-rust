@@ -39,6 +39,10 @@ impl AssociateWebsiteCertificateAuthorityFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateWebsiteCertificateAuthority as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_website_certificate_authority::builders::AssociateWebsiteCertificateAuthorityInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -103,6 +107,10 @@ impl AssociateWebsiteCertificateAuthorityFluentBuilder {
         self.inner = self.inner.set_fleet_arn(input);
         self
     }
+    /// <p>The ARN of the fleet.</p>
+    pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fleet_arn()
+    }
     /// <p>The root certificate of the CA.</p>
     pub fn certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate(input.into());
@@ -113,6 +121,10 @@ impl AssociateWebsiteCertificateAuthorityFluentBuilder {
         self.inner = self.inner.set_certificate(input);
         self
     }
+    /// <p>The root certificate of the CA.</p>
+    pub fn get_certificate(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate()
+    }
     /// <p>The certificate name to display.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
@@ -122,5 +134,9 @@ impl AssociateWebsiteCertificateAuthorityFluentBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_display_name(input);
         self
+    }
+    /// <p>The certificate name to display.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_display_name()
     }
 }

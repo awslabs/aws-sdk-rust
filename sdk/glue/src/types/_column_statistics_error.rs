@@ -51,6 +51,10 @@ impl ColumnStatisticsErrorBuilder {
         self.column_statistics = input;
         self
     }
+    /// <p>The <code>ColumnStatistics</code> of the column.</p>
+    pub fn get_column_statistics(&self) -> &::std::option::Option<crate::types::ColumnStatistics> {
+        &self.column_statistics
+    }
     /// <p>An error message with the reason for the failure of an operation.</p>
     pub fn error(mut self, input: crate::types::ErrorDetail) -> Self {
         self.error = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl ColumnStatisticsErrorBuilder {
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::ErrorDetail>) -> Self {
         self.error = input;
         self
+    }
+    /// <p>An error message with the reason for the failure of an operation.</p>
+    pub fn get_error(&self) -> &::std::option::Option<crate::types::ErrorDetail> {
+        &self.error
     }
     /// Consumes the builder and constructs a [`ColumnStatisticsError`](crate::types::ColumnStatisticsError).
     pub fn build(self) -> crate::types::ColumnStatisticsError {

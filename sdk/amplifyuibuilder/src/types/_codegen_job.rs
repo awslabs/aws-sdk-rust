@@ -147,6 +147,10 @@ impl CodegenJobBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique ID for the code generation job.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The ID of the Amplify app associated with the code generation job.</p>
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
@@ -156,6 +160,10 @@ impl CodegenJobBuilder {
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_id = input;
         self
+    }
+    /// <p>The ID of the Amplify app associated with the code generation job.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
     }
     /// <p>The name of the backend environment associated with the code generation job.</p>
     pub fn environment_name(
@@ -173,6 +181,10 @@ impl CodegenJobBuilder {
         self.environment_name = input;
         self
     }
+    /// <p>The name of the backend environment associated with the code generation job.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
+    }
     /// <p>Describes the configuration information for rendering the UI component associated the code generation job.</p>
     pub fn render_config(mut self, input: crate::types::CodegenJobRenderConfig) -> Self {
         self.render_config = ::std::option::Option::Some(input);
@@ -185,6 +197,12 @@ impl CodegenJobBuilder {
     ) -> Self {
         self.render_config = input;
         self
+    }
+    /// <p>Describes the configuration information for rendering the UI component associated the code generation job.</p>
+    pub fn get_render_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::CodegenJobRenderConfig> {
+        &self.render_config
     }
     /// <p>Describes the data schema for a code generation job.</p>
     pub fn generic_data_schema(mut self, input: crate::types::CodegenJobGenericDataSchema) -> Self {
@@ -199,6 +217,12 @@ impl CodegenJobBuilder {
         self.generic_data_schema = input;
         self
     }
+    /// <p>Describes the data schema for a code generation job.</p>
+    pub fn get_generic_data_schema(
+        &self,
+    ) -> &::std::option::Option<crate::types::CodegenJobGenericDataSchema> {
+        &self.generic_data_schema
+    }
     /// <p>Specifies whether to autogenerate forms in the code generation job.</p>
     pub fn auto_generate_forms(mut self, input: bool) -> Self {
         self.auto_generate_forms = ::std::option::Option::Some(input);
@@ -208,6 +232,10 @@ impl CodegenJobBuilder {
     pub fn set_auto_generate_forms(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_generate_forms = input;
         self
+    }
+    /// <p>Specifies whether to autogenerate forms in the code generation job.</p>
+    pub fn get_auto_generate_forms(&self) -> &::std::option::Option<bool> {
+        &self.auto_generate_forms
     }
     /// <p>Describes the feature flags that you can specify for a code generation job.</p>
     pub fn features(mut self, input: crate::types::CodegenFeatureFlags) -> Self {
@@ -222,6 +250,10 @@ impl CodegenJobBuilder {
         self.features = input;
         self
     }
+    /// <p>Describes the feature flags that you can specify for a code generation job.</p>
+    pub fn get_features(&self) -> &::std::option::Option<crate::types::CodegenFeatureFlags> {
+        &self.features
+    }
     /// <p>The status of the code generation job.</p>
     pub fn status(mut self, input: crate::types::CodegenJobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -234,6 +266,10 @@ impl CodegenJobBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the code generation job.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CodegenJobStatus> {
+        &self.status
     }
     /// <p>The customized status message for the code generation job.</p>
     pub fn status_message(
@@ -251,6 +287,10 @@ impl CodegenJobBuilder {
         self.status_message = input;
         self
     }
+    /// <p>The customized status message for the code generation job.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>The <code>CodegenJobAsset</code> to use for the code generation job.</p>
     pub fn asset(mut self, input: crate::types::CodegenJobAsset) -> Self {
         self.asset = ::std::option::Option::Some(input);
@@ -263,6 +303,10 @@ impl CodegenJobBuilder {
     ) -> Self {
         self.asset = input;
         self
+    }
+    /// <p>The <code>CodegenJobAsset</code> to use for the code generation job.</p>
+    pub fn get_asset(&self) -> &::std::option::Option<crate::types::CodegenJobAsset> {
+        &self.asset
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -289,6 +333,14 @@ impl CodegenJobBuilder {
         self.tags = input;
         self
     }
+    /// <p>One or more key-value pairs to use when tagging the code generation job.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The time that the code generation job was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -302,6 +354,10 @@ impl CodegenJobBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The time that the code generation job was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The time that the code generation job was modified.</p>
     pub fn modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.modified_at = ::std::option::Option::Some(input);
@@ -314,6 +370,10 @@ impl CodegenJobBuilder {
     ) -> Self {
         self.modified_at = input;
         self
+    }
+    /// <p>The time that the code generation job was modified.</p>
+    pub fn get_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.modified_at
     }
     /// Consumes the builder and constructs a [`CodegenJob`](crate::types::CodegenJob).
     pub fn build(self) -> crate::types::CodegenJob {

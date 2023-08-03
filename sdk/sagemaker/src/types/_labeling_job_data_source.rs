@@ -56,6 +56,12 @@ impl LabelingJobDataSourceBuilder {
         self.s3_data_source = input;
         self
     }
+    /// <p>The Amazon S3 location of the input data objects.</p>
+    pub fn get_s3_data_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::LabelingJobS3DataSource> {
+        &self.s3_data_source
+    }
     /// <p>An Amazon SNS data source used for streaming labeling jobs. To learn more, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-streaming-labeling-job.html#sms-streaming-how-it-works-send-data">Send Data to a Streaming Labeling Job</a>. </p>
     pub fn sns_data_source(mut self, input: crate::types::LabelingJobSnsDataSource) -> Self {
         self.sns_data_source = ::std::option::Option::Some(input);
@@ -68,6 +74,12 @@ impl LabelingJobDataSourceBuilder {
     ) -> Self {
         self.sns_data_source = input;
         self
+    }
+    /// <p>An Amazon SNS data source used for streaming labeling jobs. To learn more, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-streaming-labeling-job.html#sms-streaming-how-it-works-send-data">Send Data to a Streaming Labeling Job</a>. </p>
+    pub fn get_sns_data_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::LabelingJobSnsDataSource> {
+        &self.sns_data_source
     }
     /// Consumes the builder and constructs a [`LabelingJobDataSource`](crate::types::LabelingJobDataSource).
     pub fn build(self) -> crate::types::LabelingJobDataSource {

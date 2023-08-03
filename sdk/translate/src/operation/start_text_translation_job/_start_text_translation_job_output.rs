@@ -74,6 +74,10 @@ impl StartTextTranslationJobOutputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The identifier generated for the job. To get the status of a job, use this ID with the <code>DescribeTextTranslationJob</code> operation.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>The status of the job. Possible values include:</p>
     /// <ul>
     /// <li> <p> <code>SUBMITTED</code> - The job has been received and is queued for processing.</p> </li>
@@ -101,6 +105,19 @@ impl StartTextTranslationJobOutputBuilder {
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
         self.job_status = input;
         self
+    }
+    /// <p>The status of the job. Possible values include:</p>
+    /// <ul>
+    /// <li> <p> <code>SUBMITTED</code> - The job has been received and is queued for processing.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> - Amazon Translate is processing the job.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> - The job was successfully completed and the output is available.</p> </li>
+    /// <li> <p> <code>COMPLETED_WITH_ERROR</code> - The job was completed with errors. The errors can be analyzed in the job's output.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The job did not complete. To get details, use the <code>DescribeTextTranslationJob</code> operation.</p> </li>
+    /// <li> <p> <code>STOP_REQUESTED</code> - The user who started the job has requested that it be stopped.</p> </li>
+    /// <li> <p> <code>STOPPED</code> - The job has been stopped.</p> </li>
+    /// </ul>
+    pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
+        &self.job_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

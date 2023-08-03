@@ -62,6 +62,10 @@ impl SuppressedDestinationSummaryBuilder {
         self.email_address = input;
         self
     }
+    /// <p>The email address that's on the suppression list for your account.</p>
+    pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_address
+    }
     /// <p>The reason that the address was added to the suppression list for your account.</p>
     pub fn reason(mut self, input: crate::types::SuppressionListReason) -> Self {
         self.reason = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl SuppressedDestinationSummaryBuilder {
         self.reason = input;
         self
     }
+    /// <p>The reason that the address was added to the suppression list for your account.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<crate::types::SuppressionListReason> {
+        &self.reason
+    }
     /// <p>The date and time when the suppressed destination was last updated, shown in Unix time format.</p>
     pub fn last_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_update_time = ::std::option::Option::Some(input);
@@ -87,6 +95,10 @@ impl SuppressedDestinationSummaryBuilder {
     ) -> Self {
         self.last_update_time = input;
         self
+    }
+    /// <p>The date and time when the suppressed destination was last updated, shown in Unix time format.</p>
+    pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_update_time
     }
     /// Consumes the builder and constructs a [`SuppressedDestinationSummary`](crate::types::SuppressedDestinationSummary).
     pub fn build(self) -> crate::types::SuppressedDestinationSummary {

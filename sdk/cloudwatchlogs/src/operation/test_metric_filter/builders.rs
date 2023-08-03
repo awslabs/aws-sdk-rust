@@ -36,6 +36,12 @@ impl TestMetricFilterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the TestMetricFilter as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::test_metric_filter::builders::TestMetricFilterInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl TestMetricFilterFluentBuilder {
         self.inner = self.inner.set_filter_pattern(input);
         self
     }
+    /// <p>A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.</p>
+    pub fn get_filter_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_filter_pattern()
+    }
     /// Appends an item to `logEventMessages`.
     ///
     /// To override the contents of this collection use [`set_log_event_messages`](Self::set_log_event_messages).
@@ -151,5 +161,11 @@ impl TestMetricFilterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_log_event_messages(input);
         self
+    }
+    /// <p>The log event messages to test.</p>
+    pub fn get_log_event_messages(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_log_event_messages()
     }
 }

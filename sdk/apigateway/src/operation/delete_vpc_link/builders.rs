@@ -36,6 +36,12 @@ impl DeleteVpcLinkFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteVpcLink as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_vpc_link::builders::DeleteVpcLinkInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -117,5 +123,9 @@ impl DeleteVpcLinkFluentBuilder {
     pub fn set_vpc_link_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_link_id(input);
         self
+    }
+    /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
+    pub fn get_vpc_link_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpc_link_id()
     }
 }

@@ -48,6 +48,10 @@ impl BatchEvaluateFeatureInputBuilder {
         self.project = input;
         self
     }
+    /// <p>The name or ARN of the project that contains the feature being evaluated.</p>
+    pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project
+    }
     /// Appends an item to `requests`.
     ///
     /// To override the contents of this collection use [`set_requests`](Self::set_requests).
@@ -66,6 +70,12 @@ impl BatchEvaluateFeatureInputBuilder {
     ) -> Self {
         self.requests = input;
         self
+    }
+    /// <p>An array of structures, where each structure assigns a feature variation to one user session.</p>
+    pub fn get_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationRequest>> {
+        &self.requests
     }
     /// Consumes the builder and constructs a [`BatchEvaluateFeatureInput`](crate::operation::batch_evaluate_feature::BatchEvaluateFeatureInput).
     pub fn build(

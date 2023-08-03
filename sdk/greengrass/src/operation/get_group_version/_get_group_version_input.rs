@@ -47,6 +47,10 @@ impl GetGroupVersionInputBuilder {
         self.group_id = input;
         self
     }
+    /// The ID of the Greengrass group.
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
+    }
     /// The ID of the group version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListGroupVersions'' requests. If the version is the last one that was associated with a group, the value also maps to the ''LatestVersion'' property of the corresponding ''GroupInformation'' object.
     pub fn group_version_id(
         mut self,
@@ -62,6 +66,10 @@ impl GetGroupVersionInputBuilder {
     ) -> Self {
         self.group_version_id = input;
         self
+    }
+    /// The ID of the group version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListGroupVersions'' requests. If the version is the last one that was associated with a group, the value also maps to the ''LatestVersion'' property of the corresponding ''GroupInformation'' object.
+    pub fn get_group_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_version_id
     }
     /// Consumes the builder and constructs a [`GetGroupVersionInput`](crate::operation::get_group_version::GetGroupVersionInput).
     pub fn build(

@@ -62,6 +62,10 @@ impl DeleteStorageVirtualMachineOutputBuilder {
         self.storage_virtual_machine_id = input;
         self
     }
+    /// <p>The ID of the SVM Amazon FSx is deleting.</p>
+    pub fn get_storage_virtual_machine_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_virtual_machine_id
+    }
     /// <p>Describes the lifecycle state of the SVM being deleted.</p>
     pub fn lifecycle(mut self, input: crate::types::StorageVirtualMachineLifecycle) -> Self {
         self.lifecycle = ::std::option::Option::Some(input);
@@ -74,6 +78,12 @@ impl DeleteStorageVirtualMachineOutputBuilder {
     ) -> Self {
         self.lifecycle = input;
         self
+    }
+    /// <p>Describes the lifecycle state of the SVM being deleted.</p>
+    pub fn get_lifecycle(
+        &self,
+    ) -> &::std::option::Option<crate::types::StorageVirtualMachineLifecycle> {
+        &self.lifecycle
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

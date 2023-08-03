@@ -48,6 +48,10 @@ impl InvalidSignalDecoderBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of a signal decoder that isn't valid.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A message about why the signal decoder isn't valid.</p>
     pub fn reason(mut self, input: crate::types::SignalDecoderFailureReason) -> Self {
         self.reason = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl InvalidSignalDecoderBuilder {
     ) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>A message about why the signal decoder isn't valid.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<crate::types::SignalDecoderFailureReason> {
+        &self.reason
     }
     /// Consumes the builder and constructs a [`InvalidSignalDecoder`](crate::types::InvalidSignalDecoder).
     pub fn build(self) -> crate::types::InvalidSignalDecoder {

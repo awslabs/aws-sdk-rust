@@ -40,6 +40,10 @@ impl DestinationBuilder {
         self.s3 = input;
         self
     }
+    /// <p>The <code>S3Destination</code> object.</p>
+    pub fn get_s3(&self) -> &::std::option::Option<crate::types::S3Destination> {
+        &self.s3
+    }
     /// Consumes the builder and constructs a [`Destination`](crate::types::Destination).
     pub fn build(self) -> crate::types::Destination {
         crate::types::Destination { s3: self.s3 }

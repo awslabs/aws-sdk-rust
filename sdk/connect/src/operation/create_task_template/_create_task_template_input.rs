@@ -104,6 +104,10 @@ impl CreateTaskTemplateInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The name of the task template.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -114,6 +118,10 @@ impl CreateTaskTemplateInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the task template.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the task template.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -123,6 +131,10 @@ impl CreateTaskTemplateInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the task template.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The identifier of the flow that runs by default when a task is created by referencing this template.</p>
     pub fn contact_flow_id(
@@ -140,6 +152,10 @@ impl CreateTaskTemplateInputBuilder {
         self.contact_flow_id = input;
         self
     }
+    /// <p>The identifier of the flow that runs by default when a task is created by referencing this template.</p>
+    pub fn get_contact_flow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_flow_id
+    }
     /// <p>Constraints that are applicable to the fields listed.</p>
     pub fn constraints(mut self, input: crate::types::TaskTemplateConstraints) -> Self {
         self.constraints = ::std::option::Option::Some(input);
@@ -152,6 +168,10 @@ impl CreateTaskTemplateInputBuilder {
     ) -> Self {
         self.constraints = input;
         self
+    }
+    /// <p>Constraints that are applicable to the fields listed.</p>
+    pub fn get_constraints(&self) -> &::std::option::Option<crate::types::TaskTemplateConstraints> {
+        &self.constraints
     }
     /// <p>The default values for fields when a task is created by referencing this template.</p>
     pub fn defaults(mut self, input: crate::types::TaskTemplateDefaults) -> Self {
@@ -166,6 +186,10 @@ impl CreateTaskTemplateInputBuilder {
         self.defaults = input;
         self
     }
+    /// <p>The default values for fields when a task is created by referencing this template.</p>
+    pub fn get_defaults(&self) -> &::std::option::Option<crate::types::TaskTemplateDefaults> {
+        &self.defaults
+    }
     /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created. </p>
     pub fn status(mut self, input: crate::types::TaskTemplateStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -178,6 +202,10 @@ impl CreateTaskTemplateInputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TaskTemplateStatus> {
+        &self.status
     }
     /// Appends an item to `fields`.
     ///
@@ -198,6 +226,12 @@ impl CreateTaskTemplateInputBuilder {
         self.fields = input;
         self
     }
+    /// <p>Fields that are part of the template.</p>
+    pub fn get_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateField>> {
+        &self.fields
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -207,6 +241,10 @@ impl CreateTaskTemplateInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateTaskTemplateInput`](crate::operation::create_task_template::CreateTaskTemplateInput).
     pub fn build(

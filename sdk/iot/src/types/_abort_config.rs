@@ -49,6 +49,12 @@ impl AbortConfigBuilder {
         self.criteria_list = input;
         self
     }
+    /// <p>The list of criteria that determine when and how to abort the job.</p>
+    pub fn get_criteria_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AbortCriteria>> {
+        &self.criteria_list
+    }
     /// Consumes the builder and constructs a [`AbortConfig`](crate::types::AbortConfig).
     pub fn build(self) -> crate::types::AbortConfig {
         crate::types::AbortConfig {

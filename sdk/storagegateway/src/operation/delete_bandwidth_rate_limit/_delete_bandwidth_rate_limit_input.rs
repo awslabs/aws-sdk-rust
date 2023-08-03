@@ -55,6 +55,10 @@ impl DeleteBandwidthRateLimitInputBuilder {
         self.gateway_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
+    }
     /// <p>One of the BandwidthType values that indicates the gateway bandwidth rate limit to delete.</p>
     /// <p>Valid Values: <code>UPLOAD</code> | <code>DOWNLOAD</code> | <code>ALL</code> </p>
     pub fn bandwidth_type(
@@ -72,6 +76,11 @@ impl DeleteBandwidthRateLimitInputBuilder {
     ) -> Self {
         self.bandwidth_type = input;
         self
+    }
+    /// <p>One of the BandwidthType values that indicates the gateway bandwidth rate limit to delete.</p>
+    /// <p>Valid Values: <code>UPLOAD</code> | <code>DOWNLOAD</code> | <code>ALL</code> </p>
+    pub fn get_bandwidth_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bandwidth_type
     }
     /// Consumes the builder and constructs a [`DeleteBandwidthRateLimitInput`](crate::operation::delete_bandwidth_rate_limit::DeleteBandwidthRateLimitInput).
     pub fn build(

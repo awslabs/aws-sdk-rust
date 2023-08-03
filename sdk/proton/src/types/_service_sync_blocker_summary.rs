@@ -61,6 +61,11 @@ impl ServiceSyncBlockerSummaryBuilder {
         self.service_name = input;
         self
     }
+    /// <p>The name of the service that you want to get the sync blocker summary for. If given a service instance name and a service name, it will return the blockers only applying to the instance that is blocked.</p>
+    /// <p>If given only a service name, it will return the blockers that apply to all of the instances. In order to get the blockers for a single instance, you will need to make two distinct calls, one to get the sync blocker summary for the service and the other to get the sync blocker for the service instance.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
+    }
     /// <p>The name of the service instance that you want sync your service configuration with.</p>
     pub fn service_instance_name(
         mut self,
@@ -76,6 +81,10 @@ impl ServiceSyncBlockerSummaryBuilder {
     ) -> Self {
         self.service_instance_name = input;
         self
+    }
+    /// <p>The name of the service instance that you want sync your service configuration with.</p>
+    pub fn get_service_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_instance_name
     }
     /// Appends an item to `latest_blockers`.
     ///
@@ -95,6 +104,12 @@ impl ServiceSyncBlockerSummaryBuilder {
     ) -> Self {
         self.latest_blockers = input;
         self
+    }
+    /// <p>The latest active blockers for the synced service.</p>
+    pub fn get_latest_blockers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SyncBlocker>> {
+        &self.latest_blockers
     }
     /// Consumes the builder and constructs a [`ServiceSyncBlockerSummary`](crate::types::ServiceSyncBlockerSummary).
     pub fn build(self) -> crate::types::ServiceSyncBlockerSummary {

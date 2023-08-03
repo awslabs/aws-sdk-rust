@@ -67,6 +67,12 @@ impl RuleResultBuilder {
         self.last_checked_timestamp = input;
         self
     }
+    /// <p>The time the resource was last checked for readiness, in ISO-8601 format, UTC.</p>
+    pub fn get_last_checked_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_checked_timestamp
+    }
     /// Appends an item to `messages`.
     ///
     /// To override the contents of this collection use [`set_messages`](Self::set_messages).
@@ -86,6 +92,10 @@ impl RuleResultBuilder {
         self.messages = input;
         self
     }
+    /// <p>Details about the resource's readiness.</p>
+    pub fn get_messages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Message>> {
+        &self.messages
+    }
     /// <p>The readiness at rule level.</p>
     pub fn readiness(mut self, input: crate::types::Readiness) -> Self {
         self.readiness = ::std::option::Option::Some(input);
@@ -96,6 +106,10 @@ impl RuleResultBuilder {
         self.readiness = input;
         self
     }
+    /// <p>The readiness at rule level.</p>
+    pub fn get_readiness(&self) -> &::std::option::Option<crate::types::Readiness> {
+        &self.readiness
+    }
     /// <p>The identifier of the rule.</p>
     pub fn rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_id = ::std::option::Option::Some(input.into());
@@ -105,6 +119,10 @@ impl RuleResultBuilder {
     pub fn set_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_id = input;
         self
+    }
+    /// <p>The identifier of the rule.</p>
+    pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_id
     }
     /// Consumes the builder and constructs a [`RuleResult`](crate::types::RuleResult).
     pub fn build(self) -> crate::types::RuleResult {

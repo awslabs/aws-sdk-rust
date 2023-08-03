@@ -37,6 +37,13 @@ impl BatchCreateTableRowsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchCreateTableRows as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_create_table_rows::builders::BatchCreateTableRowsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +136,11 @@ impl BatchCreateTableRowsFluentBuilder {
         self.inner = self.inner.set_workbook_id(input);
         self
     }
+    /// <p>The ID of the workbook where the new rows are being added.</p>
+    /// <p> If a workbook with the specified ID could not be found, this API throws ResourceNotFoundException. </p>
+    pub fn get_workbook_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workbook_id()
+    }
     /// <p>The ID of the table where the new rows are being added.</p>
     /// <p> If a table with the specified ID could not be found, this API throws ResourceNotFoundException. </p>
     pub fn table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -140,6 +152,11 @@ impl BatchCreateTableRowsFluentBuilder {
     pub fn set_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_table_id(input);
         self
+    }
+    /// <p>The ID of the table where the new rows are being added.</p>
+    /// <p> If a table with the specified ID could not be found, this API throws ResourceNotFoundException. </p>
+    pub fn get_table_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_table_id()
     }
     /// Appends an item to `rowsToCreate`.
     ///
@@ -160,6 +177,13 @@ impl BatchCreateTableRowsFluentBuilder {
         self.inner = self.inner.set_rows_to_create(input);
         self
     }
+    /// <p> The list of rows to create at the end of the table. Each item in this list needs to have a batch item id to uniquely identify the element in the request and the cells to create for that row. You need to specify at least one item in this list. </p>
+    /// <p> Note that if one of the column ids in any of the rows in the request does not exist in the table, then the request fails and no updates are made to the table. </p>
+    pub fn get_rows_to_create(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateRowData>> {
+        self.inner.get_rows_to_create()
+    }
     /// <p> The request token for performing the batch create operation. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the operation again. </p>
     /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
     pub fn client_request_token(
@@ -177,5 +201,10 @@ impl BatchCreateTableRowsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p> The request token for performing the batch create operation. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the operation again. </p>
+    /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
 }

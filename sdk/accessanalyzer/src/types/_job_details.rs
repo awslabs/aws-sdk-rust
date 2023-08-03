@@ -72,6 +72,10 @@ impl JobDetailsBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>The status of the job request.</p>
     pub fn status(mut self, input: crate::types::JobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl JobDetailsBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the job request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
+        &self.status
     }
     /// <p>A timestamp of when the job was started.</p>
     pub fn started_on(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -95,6 +103,10 @@ impl JobDetailsBuilder {
         self.started_on = input;
         self
     }
+    /// <p>A timestamp of when the job was started.</p>
+    pub fn get_started_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.started_on
+    }
     /// <p>A timestamp of when the job was completed.</p>
     pub fn completed_on(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.completed_on = ::std::option::Option::Some(input);
@@ -108,6 +120,10 @@ impl JobDetailsBuilder {
         self.completed_on = input;
         self
     }
+    /// <p>A timestamp of when the job was completed.</p>
+    pub fn get_completed_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.completed_on
+    }
     /// <p>The job error for the policy generation request.</p>
     pub fn job_error(mut self, input: crate::types::JobError) -> Self {
         self.job_error = ::std::option::Option::Some(input);
@@ -117,6 +133,10 @@ impl JobDetailsBuilder {
     pub fn set_job_error(mut self, input: ::std::option::Option<crate::types::JobError>) -> Self {
         self.job_error = input;
         self
+    }
+    /// <p>The job error for the policy generation request.</p>
+    pub fn get_job_error(&self) -> &::std::option::Option<crate::types::JobError> {
+        &self.job_error
     }
     /// Consumes the builder and constructs a [`JobDetails`](crate::types::JobDetails).
     pub fn build(self) -> crate::types::JobDetails {

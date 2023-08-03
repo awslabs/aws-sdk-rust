@@ -54,6 +54,10 @@ impl CreateLoadBalancerListenersInputBuilder {
         self.load_balancer_name = input;
         self
     }
+    /// <p>The name of the load balancer.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.load_balancer_name
+    }
     /// Appends an item to `listeners`.
     ///
     /// To override the contents of this collection use [`set_listeners`](Self::set_listeners).
@@ -72,6 +76,10 @@ impl CreateLoadBalancerListenersInputBuilder {
     ) -> Self {
         self.listeners = input;
         self
+    }
+    /// <p>The listeners.</p>
+    pub fn get_listeners(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Listener>> {
+        &self.listeners
     }
     /// Consumes the builder and constructs a [`CreateLoadBalancerListenersInput`](crate::operation::create_load_balancer_listeners::CreateLoadBalancerListenersInput).
     pub fn build(

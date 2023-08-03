@@ -38,6 +38,12 @@ impl CreateAppBlockFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateAppBlock as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_app_block::builders::CreateAppBlockInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +134,10 @@ impl CreateAppBlockFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the app block.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The description of the app block.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -138,6 +148,10 @@ impl CreateAppBlockFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The description of the app block.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The display name of the app block. This is not displayed to the user.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
@@ -147,6 +161,10 @@ impl CreateAppBlockFluentBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_display_name(input);
         self
+    }
+    /// <p>The display name of the app block. This is not displayed to the user.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_display_name()
     }
     /// <p>The source S3 location of the app block.</p>
     pub fn source_s3_location(mut self, input: crate::types::S3Location) -> Self {
@@ -161,6 +179,10 @@ impl CreateAppBlockFluentBuilder {
         self.inner = self.inner.set_source_s3_location(input);
         self
     }
+    /// <p>The source S3 location of the app block.</p>
+    pub fn get_source_s3_location(&self) -> &::std::option::Option<crate::types::S3Location> {
+        self.inner.get_source_s3_location()
+    }
     /// <p>The setup script details of the app block. This must be provided for the <code>CUSTOM</code> PackagingType.</p>
     pub fn setup_script_details(mut self, input: crate::types::ScriptDetails) -> Self {
         self.inner = self.inner.setup_script_details(input);
@@ -173,6 +195,10 @@ impl CreateAppBlockFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_setup_script_details(input);
         self
+    }
+    /// <p>The setup script details of the app block. This must be provided for the <code>CUSTOM</code> PackagingType.</p>
+    pub fn get_setup_script_details(&self) -> &::std::option::Option<crate::types::ScriptDetails> {
+        self.inner.get_setup_script_details()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -197,6 +223,14 @@ impl CreateAppBlockFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags assigned to the app block.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>The post setup script details of the app block. This can only be provided for the <code>APPSTREAM2</code> PackagingType.</p>
     pub fn post_setup_script_details(mut self, input: crate::types::ScriptDetails) -> Self {
         self.inner = self.inner.post_setup_script_details(input);
@@ -210,6 +244,12 @@ impl CreateAppBlockFluentBuilder {
         self.inner = self.inner.set_post_setup_script_details(input);
         self
     }
+    /// <p>The post setup script details of the app block. This can only be provided for the <code>APPSTREAM2</code> PackagingType.</p>
+    pub fn get_post_setup_script_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScriptDetails> {
+        self.inner.get_post_setup_script_details()
+    }
     /// <p>The packaging type of the app block.</p>
     pub fn packaging_type(mut self, input: crate::types::PackagingType) -> Self {
         self.inner = self.inner.packaging_type(input);
@@ -222,5 +262,9 @@ impl CreateAppBlockFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_packaging_type(input);
         self
+    }
+    /// <p>The packaging type of the app block.</p>
+    pub fn get_packaging_type(&self) -> &::std::option::Option<crate::types::PackagingType> {
+        self.inner.get_packaging_type()
     }
 }

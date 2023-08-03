@@ -67,6 +67,12 @@ impl ListUserImportJobsOutputBuilder {
         self.user_import_jobs = input;
         self
     }
+    /// <p>The user import jobs.</p>
+    pub fn get_user_import_jobs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserImportJobType>> {
+        &self.user_import_jobs
+    }
     /// <p>An identifier that can be used to return the next set of user import jobs in the list.</p>
     pub fn pagination_token(
         mut self,
@@ -82,6 +88,10 @@ impl ListUserImportJobsOutputBuilder {
     ) -> Self {
         self.pagination_token = input;
         self
+    }
+    /// <p>An identifier that can be used to return the next set of user import jobs in the list.</p>
+    pub fn get_pagination_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pagination_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

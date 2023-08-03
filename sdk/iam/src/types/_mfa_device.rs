@@ -57,6 +57,10 @@ impl MfaDeviceBuilder {
         self.user_name = input;
         self
     }
+    /// <p>The user with whom the MFA device is associated.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
+    }
     /// <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN.</p>
     pub fn serial_number(
         mut self,
@@ -73,6 +77,10 @@ impl MfaDeviceBuilder {
         self.serial_number = input;
         self
     }
+    /// <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN.</p>
+    pub fn get_serial_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.serial_number
+    }
     /// <p>The date when the MFA device was enabled for the user.</p>
     pub fn enable_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.enable_date = ::std::option::Option::Some(input);
@@ -85,6 +93,10 @@ impl MfaDeviceBuilder {
     ) -> Self {
         self.enable_date = input;
         self
+    }
+    /// <p>The date when the MFA device was enabled for the user.</p>
+    pub fn get_enable_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.enable_date
     }
     /// Consumes the builder and constructs a [`MfaDevice`](crate::types::MfaDevice).
     pub fn build(self) -> crate::types::MfaDevice {

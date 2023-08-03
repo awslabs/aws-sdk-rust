@@ -56,6 +56,12 @@ impl ListFieldLevelEncryptionProfilesOutputBuilder {
         self.field_level_encryption_profile_list = input;
         self
     }
+    /// <p>Returns a list of the field-level encryption profiles that have been created in CloudFront for this account.</p>
+    pub fn get_field_level_encryption_profile_list(
+        &self,
+    ) -> &::std::option::Option<crate::types::FieldLevelEncryptionProfileList> {
+        &self.field_level_encryption_profile_list
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

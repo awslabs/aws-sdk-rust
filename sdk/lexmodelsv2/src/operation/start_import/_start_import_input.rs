@@ -74,6 +74,10 @@ impl StartImportInputBuilder {
         self.import_id = input;
         self
     }
+    /// <p>The unique identifier for the import. It is included in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateUploadUrl.html">CreateUploadUrl</a> operation.</p>
+    pub fn get_import_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.import_id
+    }
     /// <p>Parameters for creating the bot, bot locale or custom vocabulary.</p>
     pub fn resource_specification(
         mut self,
@@ -90,6 +94,12 @@ impl StartImportInputBuilder {
         self.resource_specification = input;
         self
     }
+    /// <p>Parameters for creating the bot, bot locale or custom vocabulary.</p>
+    pub fn get_resource_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImportResourceSpecification> {
+        &self.resource_specification
+    }
     /// <p>The strategy to use when there is a name conflict between the imported resource and an existing resource. When the merge strategy is <code>FailOnConflict</code> existing resources are not overwritten and the import fails.</p>
     pub fn merge_strategy(mut self, input: crate::types::MergeStrategy) -> Self {
         self.merge_strategy = ::std::option::Option::Some(input);
@@ -102,6 +112,10 @@ impl StartImportInputBuilder {
     ) -> Self {
         self.merge_strategy = input;
         self
+    }
+    /// <p>The strategy to use when there is a name conflict between the imported resource and an existing resource. When the merge strategy is <code>FailOnConflict</code> existing resources are not overwritten and the import fails.</p>
+    pub fn get_merge_strategy(&self) -> &::std::option::Option<crate::types::MergeStrategy> {
+        &self.merge_strategy
     }
     /// <p>The password used to encrypt the zip archive that contains the resource definition. You should always encrypt the zip archive to protect it during transit between your site and Amazon Lex.</p>
     pub fn file_password(
@@ -118,6 +132,10 @@ impl StartImportInputBuilder {
     ) -> Self {
         self.file_password = input;
         self
+    }
+    /// <p>The password used to encrypt the zip archive that contains the resource definition. You should always encrypt the zip archive to protect it during transit between your site and Amazon Lex.</p>
+    pub fn get_file_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_password
     }
     /// Consumes the builder and constructs a [`StartImportInput`](crate::operation::start_import::StartImportInput).
     pub fn build(

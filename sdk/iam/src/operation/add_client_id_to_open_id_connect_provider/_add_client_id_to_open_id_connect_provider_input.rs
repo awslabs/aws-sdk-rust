@@ -53,6 +53,12 @@ impl AddClientIdToOpenIdConnectProviderInputBuilder {
         self.open_id_connect_provider_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider resource to add the client ID to. You can get a list of OIDC provider ARNs by using the <code>ListOpenIDConnectProviders</code> operation.</p>
+    pub fn get_open_id_connect_provider_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.open_id_connect_provider_arn
+    }
     /// <p>The client ID (also known as audience) to add to the IAM OpenID Connect provider resource.</p>
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
@@ -62,6 +68,10 @@ impl AddClientIdToOpenIdConnectProviderInputBuilder {
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_id = input;
         self
+    }
+    /// <p>The client ID (also known as audience) to add to the IAM OpenID Connect provider resource.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_id
     }
     /// Consumes the builder and constructs a [`AddClientIdToOpenIdConnectProviderInput`](crate::operation::add_client_id_to_open_id_connect_provider::AddClientIdToOpenIdConnectProviderInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::add_client_id_to_open_id_connect_provider::AddClientIdToOpenIdConnectProviderInput, ::aws_smithy_http::operation::error::BuildError>{

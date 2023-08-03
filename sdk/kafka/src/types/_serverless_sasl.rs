@@ -40,6 +40,10 @@ impl ServerlessSaslBuilder {
         self.iam = input;
         self
     }
+    /// <p>Indicates whether IAM access control is enabled.</p>
+    pub fn get_iam(&self) -> &::std::option::Option<crate::types::Iam> {
+        &self.iam
+    }
     /// Consumes the builder and constructs a [`ServerlessSasl`](crate::types::ServerlessSasl).
     pub fn build(self) -> crate::types::ServerlessSasl {
         crate::types::ServerlessSasl { iam: self.iam }

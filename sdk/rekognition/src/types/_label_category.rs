@@ -40,6 +40,10 @@ impl LabelCategoryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of a category that applies to a given label.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`LabelCategory`](crate::types::LabelCategory).
     pub fn build(self) -> crate::types::LabelCategory {
         crate::types::LabelCategory { name: self.name }

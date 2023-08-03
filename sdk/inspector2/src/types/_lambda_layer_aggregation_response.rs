@@ -78,6 +78,10 @@ impl LambdaLayerAggregationResponseBuilder {
         self.function_name = input;
         self
     }
+    /// <p>The names of the AWS Lambda functions associated with the layers.</p>
+    pub fn get_function_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_name
+    }
     /// <p>The Resource ID of the AWS Lambda function layer.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -87,6 +91,10 @@ impl LambdaLayerAggregationResponseBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The Resource ID of the AWS Lambda function layer.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Lambda function layer.</p>
     pub fn layer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -98,6 +106,10 @@ impl LambdaLayerAggregationResponseBuilder {
         self.layer_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Lambda function layer.</p>
+    pub fn get_layer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.layer_arn
+    }
     /// <p>The account ID of the AWS Lambda function layer.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -107,6 +119,10 @@ impl LambdaLayerAggregationResponseBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>The account ID of the AWS Lambda function layer.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>An object that contains the counts of aggregated finding per severity.</p>
     pub fn severity_counts(mut self, input: crate::types::SeverityCounts) -> Self {
@@ -120,6 +136,10 @@ impl LambdaLayerAggregationResponseBuilder {
     ) -> Self {
         self.severity_counts = input;
         self
+    }
+    /// <p>An object that contains the counts of aggregated finding per severity.</p>
+    pub fn get_severity_counts(&self) -> &::std::option::Option<crate::types::SeverityCounts> {
+        &self.severity_counts
     }
     /// Consumes the builder and constructs a [`LambdaLayerAggregationResponse`](crate::types::LambdaLayerAggregationResponse).
     pub fn build(self) -> crate::types::LambdaLayerAggregationResponse {

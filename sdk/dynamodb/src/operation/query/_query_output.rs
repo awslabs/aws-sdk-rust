@@ -125,6 +125,16 @@ impl QueryOutputBuilder {
         self.items = input;
         self
     }
+    /// <p>An array of item attributes that match the query criteria. Each element in this array consists of an attribute name and the value for that attribute.</p>
+    pub fn get_items(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<
+            ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
+        >,
+    > {
+        &self.items
+    }
     /// <p>The number of items in the response.</p>
     /// <p>If you used a <code>QueryFilter</code> in the request, then <code>Count</code> is the number of items returned after the filter was applied, and <code>ScannedCount</code> is the number of matching items before the filter was applied.</p>
     /// <p>If you did not use a filter in the request, then <code>Count</code> and <code>ScannedCount</code> are the same.</p>
@@ -139,6 +149,12 @@ impl QueryOutputBuilder {
         self.count = input;
         self
     }
+    /// <p>The number of items in the response.</p>
+    /// <p>If you used a <code>QueryFilter</code> in the request, then <code>Count</code> is the number of items returned after the filter was applied, and <code>ScannedCount</code> is the number of matching items before the filter was applied.</p>
+    /// <p>If you did not use a filter in the request, then <code>Count</code> and <code>ScannedCount</code> are the same.</p>
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        &self.count
+    }
     /// <p>The number of items evaluated, before any <code>QueryFilter</code> is applied. A high <code>ScannedCount</code> value with few, or no, <code>Count</code> results indicates an inefficient <code>Query</code> operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     /// <p>If you did not use a filter in the request, then <code>ScannedCount</code> is the same as <code>Count</code>.</p>
     pub fn scanned_count(mut self, input: i32) -> Self {
@@ -150,6 +166,11 @@ impl QueryOutputBuilder {
     pub fn set_scanned_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.scanned_count = input;
         self
+    }
+    /// <p>The number of items evaluated, before any <code>QueryFilter</code> is applied. A high <code>ScannedCount</code> value with few, or no, <code>Count</code> results indicates an inefficient <code>Query</code> operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>If you did not use a filter in the request, then <code>ScannedCount</code> is the same as <code>Count</code>.</p>
+    pub fn get_scanned_count(&self) -> &::std::option::Option<i32> {
+        &self.scanned_count
     }
     /// Adds a key-value pair to `last_evaluated_key`.
     ///
@@ -180,6 +201,16 @@ impl QueryOutputBuilder {
         self.last_evaluated_key = input;
         self
     }
+    /// <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
+    /// <p>If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p>
+    /// <p>If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedKey</code> is empty.</p>
+    pub fn get_last_evaluated_key(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
+    > {
+        &self.last_evaluated_key
+    }
     /// <p>The capacity units consumed by the <code>Query</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn consumed_capacity(mut self, input: crate::types::ConsumedCapacity) -> Self {
         self.consumed_capacity = ::std::option::Option::Some(input);
@@ -192,6 +223,10 @@ impl QueryOutputBuilder {
     ) -> Self {
         self.consumed_capacity = input;
         self
+    }
+    /// <p>The capacity units consumed by the <code>Query</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    pub fn get_consumed_capacity(&self) -> &::std::option::Option<crate::types::ConsumedCapacity> {
+        &self.consumed_capacity
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

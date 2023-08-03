@@ -36,6 +36,10 @@ impl DeleteIntegrationResponseFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteIntegrationResponse as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_integration_response::builders::DeleteIntegrationResponseInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl DeleteIntegrationResponseFluentBuilder {
         self.inner = self.inner.set_api_id(input);
         self
     }
+    /// <p>The API identifier.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_api_id()
+    }
     /// <p>The integration ID.</p>
     pub fn integration_id(
         mut self,
@@ -142,6 +150,10 @@ impl DeleteIntegrationResponseFluentBuilder {
         self.inner = self.inner.set_integration_id(input);
         self
     }
+    /// <p>The integration ID.</p>
+    pub fn get_integration_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_integration_id()
+    }
     /// <p>The integration response ID.</p>
     pub fn integration_response_id(
         mut self,
@@ -157,5 +169,9 @@ impl DeleteIntegrationResponseFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_integration_response_id(input);
         self
+    }
+    /// <p>The integration response ID.</p>
+    pub fn get_integration_response_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_integration_response_id()
     }
 }

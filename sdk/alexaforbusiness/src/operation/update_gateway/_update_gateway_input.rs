@@ -63,6 +63,10 @@ impl UpdateGatewayInputBuilder {
         self.gateway_arn = input;
         self
     }
+    /// <p>The ARN of the gateway to update.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
+    }
     /// <p>The updated name of the gateway.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl UpdateGatewayInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The updated name of the gateway.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The updated description of the gateway.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl UpdateGatewayInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The updated description of the gateway.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The updated software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
     pub fn software_version(
@@ -98,6 +110,10 @@ impl UpdateGatewayInputBuilder {
     ) -> Self {
         self.software_version = input;
         self
+    }
+    /// <p>The updated software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
+    pub fn get_software_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.software_version
     }
     /// Consumes the builder and constructs a [`UpdateGatewayInput`](crate::operation::update_gateway::UpdateGatewayInput).
     pub fn build(

@@ -56,6 +56,10 @@ impl FacetBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the <code>Facet</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The object type that is associated with the facet. See <code>CreateFacetRequest$ObjectType</code> for more details.</p>
     pub fn object_type(mut self, input: crate::types::ObjectType) -> Self {
         self.object_type = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl FacetBuilder {
         self.object_type = input;
         self
     }
+    /// <p>The object type that is associated with the facet. See <code>CreateFacetRequest$ObjectType</code> for more details.</p>
+    pub fn get_object_type(&self) -> &::std::option::Option<crate::types::ObjectType> {
+        &self.object_type
+    }
     /// <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
     pub fn facet_style(mut self, input: crate::types::FacetStyle) -> Self {
         self.facet_style = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl FacetBuilder {
     ) -> Self {
         self.facet_style = input;
         self
+    }
+    /// <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
+    pub fn get_facet_style(&self) -> &::std::option::Option<crate::types::FacetStyle> {
+        &self.facet_style
     }
     /// Consumes the builder and constructs a [`Facet`](crate::types::Facet).
     pub fn build(self) -> crate::types::Facet {

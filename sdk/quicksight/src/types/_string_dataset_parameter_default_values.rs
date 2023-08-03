@@ -52,6 +52,12 @@ impl StringDatasetParameterDefaultValuesBuilder {
         self.static_values = input;
         self
     }
+    /// <p>A list of static default values for a given string parameter.</p>
+    pub fn get_static_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.static_values
+    }
     /// Consumes the builder and constructs a [`StringDatasetParameterDefaultValues`](crate::types::StringDatasetParameterDefaultValues).
     pub fn build(self) -> crate::types::StringDatasetParameterDefaultValues {
         crate::types::StringDatasetParameterDefaultValues {

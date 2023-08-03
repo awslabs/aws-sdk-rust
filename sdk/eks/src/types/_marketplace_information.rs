@@ -48,6 +48,10 @@ impl MarketplaceInformationBuilder {
         self.product_id = input;
         self
     }
+    /// <p>The product ID from the Amazon Web Services Marketplace.</p>
+    pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_id
+    }
     /// <p>The product URL from the Amazon Web Services Marketplace.</p>
     pub fn product_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_url = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl MarketplaceInformationBuilder {
     pub fn set_product_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product_url = input;
         self
+    }
+    /// <p>The product URL from the Amazon Web Services Marketplace.</p>
+    pub fn get_product_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_url
     }
     /// Consumes the builder and constructs a [`MarketplaceInformation`](crate::types::MarketplaceInformation).
     pub fn build(self) -> crate::types::MarketplaceInformation {

@@ -39,6 +39,10 @@ impl PutPolicyInputBuilder {
         self.policy = input;
         self
     }
+    /// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+    pub fn get_policy(&self) -> &::std::option::Option<crate::types::Policy> {
+        &self.policy
+    }
     /// Consumes the builder and constructs a [`PutPolicyInput`](crate::operation::put_policy::PutPolicyInput).
     pub fn build(
         self,

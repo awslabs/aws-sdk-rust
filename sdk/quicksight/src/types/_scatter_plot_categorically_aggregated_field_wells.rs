@@ -88,6 +88,13 @@ impl ScatterPlotCategoricallyAggregatedFieldWellsBuilder {
         self.x_axis = input;
         self
     }
+    /// <p>The x-axis field well of a scatter plot.</p>
+    /// <p>The x-axis is aggregated by category.</p>
+    pub fn get_x_axis(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
+        &self.x_axis
+    }
     /// Appends an item to `y_axis`.
     ///
     /// To override the contents of this collection use [`set_y_axis`](Self::set_y_axis).
@@ -109,6 +116,13 @@ impl ScatterPlotCategoricallyAggregatedFieldWellsBuilder {
         self.y_axis = input;
         self
     }
+    /// <p>The y-axis field well of a scatter plot.</p>
+    /// <p>The y-axis is aggregated by category.</p>
+    pub fn get_y_axis(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
+        &self.y_axis
+    }
     /// Appends an item to `category`.
     ///
     /// To override the contents of this collection use [`set_category`](Self::set_category).
@@ -127,6 +141,12 @@ impl ScatterPlotCategoricallyAggregatedFieldWellsBuilder {
     ) -> Self {
         self.category = input;
         self
+    }
+    /// <p>The category field well of a scatter plot.</p>
+    pub fn get_category(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+        &self.category
     }
     /// Appends an item to `size`.
     ///
@@ -147,6 +167,10 @@ impl ScatterPlotCategoricallyAggregatedFieldWellsBuilder {
         self.size = input;
         self
     }
+    /// <p>The size field well of a scatter plot.</p>
+    pub fn get_size(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
+        &self.size
+    }
     /// Appends an item to `label`.
     ///
     /// To override the contents of this collection use [`set_label`](Self::set_label).
@@ -165,6 +189,12 @@ impl ScatterPlotCategoricallyAggregatedFieldWellsBuilder {
     ) -> Self {
         self.label = input;
         self
+    }
+    /// <p>The label field well of a scatter plot.</p>
+    pub fn get_label(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+        &self.label
     }
     /// Consumes the builder and constructs a [`ScatterPlotCategoricallyAggregatedFieldWells`](crate::types::ScatterPlotCategoricallyAggregatedFieldWells).
     pub fn build(self) -> crate::types::ScatterPlotCategoricallyAggregatedFieldWells {

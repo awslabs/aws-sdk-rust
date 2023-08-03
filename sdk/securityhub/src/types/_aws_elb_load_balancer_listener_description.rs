@@ -51,6 +51,10 @@ impl AwsElbLoadBalancerListenerDescriptionBuilder {
         self.listener = input;
         self
     }
+    /// <p>Information about the listener.</p>
+    pub fn get_listener(&self) -> &::std::option::Option<crate::types::AwsElbLoadBalancerListener> {
+        &self.listener
+    }
     /// Appends an item to `policy_names`.
     ///
     /// To override the contents of this collection use [`set_policy_names`](Self::set_policy_names).
@@ -69,6 +73,12 @@ impl AwsElbLoadBalancerListenerDescriptionBuilder {
     ) -> Self {
         self.policy_names = input;
         self
+    }
+    /// <p>The policies enabled for the listener.</p>
+    pub fn get_policy_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.policy_names
     }
     /// Consumes the builder and constructs a [`AwsElbLoadBalancerListenerDescription`](crate::types::AwsElbLoadBalancerListenerDescription).
     pub fn build(self) -> crate::types::AwsElbLoadBalancerListenerDescription {

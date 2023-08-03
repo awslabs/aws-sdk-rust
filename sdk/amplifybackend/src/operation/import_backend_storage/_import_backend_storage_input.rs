@@ -65,6 +65,10 @@ impl ImportBackendStorageInputBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The app ID.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p>The name of the backend environment.</p>
     pub fn backend_environment_name(
         mut self,
@@ -81,6 +85,10 @@ impl ImportBackendStorageInputBuilder {
         self.backend_environment_name = input;
         self
     }
+    /// <p>The name of the backend environment.</p>
+    pub fn get_backend_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backend_environment_name
+    }
     /// <p>The name of the S3 bucket.</p>
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_name = ::std::option::Option::Some(input.into());
@@ -90,6 +98,10 @@ impl ImportBackendStorageInputBuilder {
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_name = input;
         self
+    }
+    /// <p>The name of the S3 bucket.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
     }
     /// <p>The name of the storage service.</p>
     pub fn service_name(mut self, input: crate::types::ServiceName) -> Self {
@@ -103,6 +115,10 @@ impl ImportBackendStorageInputBuilder {
     ) -> Self {
         self.service_name = input;
         self
+    }
+    /// <p>The name of the storage service.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<crate::types::ServiceName> {
+        &self.service_name
     }
     /// Consumes the builder and constructs a [`ImportBackendStorageInput`](crate::operation::import_backend_storage::ImportBackendStorageInput).
     pub fn build(

@@ -74,6 +74,10 @@ impl UpdateStaticPolicyDefinitionBuilder {
         self.description = input;
         self
     }
+    /// <p>Specifies the description to be added to or replaced on the static policy.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>Specifies the Cedar policy language text to be added to or replaced on the static policy.</p> <important>
     /// <p>You can change only the following elements from the original content:</p>
     /// <ul>
@@ -109,6 +113,23 @@ impl UpdateStaticPolicyDefinitionBuilder {
     pub fn set_statement(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.statement = input;
         self
+    }
+    /// <p>Specifies the Cedar policy language text to be added to or replaced on the static policy.</p> <important>
+    /// <p>You can change only the following elements from the original content:</p>
+    /// <ul>
+    /// <li> <p>The <code>action</code> referenced by the policy.</p> </li>
+    /// <li> <p>Any conditional clauses, such as <code>when</code> or <code>unless</code> clauses.</p> </li>
+    /// </ul>
+    /// <p>You <b>can't</b> change the following elements:</p>
+    /// <ul>
+    /// <li> <p>Changing from <code>StaticPolicy</code> to <code>TemplateLinkedPolicy</code>.</p> </li>
+    /// <li> <p>The effect (<code>permit</code> or <code>forbid</code>) of the policy.</p> </li>
+    /// <li> <p>The <code>principal</code> referenced by the policy.</p> </li>
+    /// <li> <p>The <code>resource</code> referenced by the policy.</p> </li>
+    /// </ul>
+    /// </important>
+    pub fn get_statement(&self) -> &::std::option::Option<::std::string::String> {
+        &self.statement
     }
     /// Consumes the builder and constructs a [`UpdateStaticPolicyDefinition`](crate::types::UpdateStaticPolicyDefinition).
     pub fn build(self) -> crate::types::UpdateStaticPolicyDefinition {

@@ -36,6 +36,10 @@ impl PutAlertManagerDefinitionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutAlertManagerDefinition as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_alert_manager_definition::builders::PutAlertManagerDefinitionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl PutAlertManagerDefinitionFluentBuilder {
         self.inner = self.inner.set_workspace_id(input);
         self
     }
+    /// The ID of the workspace in which to update the alert manager definition.
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workspace_id()
+    }
     /// The alert manager definition data.
     pub fn data(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.data(input);
@@ -136,6 +144,10 @@ impl PutAlertManagerDefinitionFluentBuilder {
         self.inner = self.inner.set_data(input);
         self
     }
+    /// The alert manager definition data.
+    pub fn get_data(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        self.inner.get_data()
+    }
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -145,5 +157,9 @@ impl PutAlertManagerDefinitionFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

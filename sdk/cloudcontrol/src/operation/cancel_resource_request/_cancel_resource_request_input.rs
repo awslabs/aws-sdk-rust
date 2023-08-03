@@ -47,6 +47,10 @@ impl CancelResourceRequestInputBuilder {
         self.request_token = input;
         self
     }
+    /// <p>The <code>RequestToken</code> of the <code>ProgressEvent</code> object returned by the resource operation request.</p>
+    pub fn get_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_token
+    }
     /// Consumes the builder and constructs a [`CancelResourceRequestInput`](crate::operation::cancel_resource_request::CancelResourceRequestInput).
     pub fn build(
         self,

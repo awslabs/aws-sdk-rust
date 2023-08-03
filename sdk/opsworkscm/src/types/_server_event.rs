@@ -67,6 +67,10 @@ impl ServerEventBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The time when the event occurred. </p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The name of the server on or for which the event occurred. </p>
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_name = ::std::option::Option::Some(input.into());
@@ -76,6 +80,10 @@ impl ServerEventBuilder {
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_name = input;
         self
+    }
+    /// <p>The name of the server on or for which the event occurred. </p>
+    pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_name
     }
     /// <p>A human-readable informational or status message.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -87,6 +95,10 @@ impl ServerEventBuilder {
         self.message = input;
         self
     }
+    /// <p>A human-readable informational or status message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The Amazon S3 URL of the event's log file.</p>
     pub fn log_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_url = ::std::option::Option::Some(input.into());
@@ -96,6 +108,10 @@ impl ServerEventBuilder {
     pub fn set_log_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_url = input;
         self
+    }
+    /// <p>The Amazon S3 URL of the event's log file.</p>
+    pub fn get_log_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_url
     }
     /// Consumes the builder and constructs a [`ServerEvent`](crate::types::ServerEvent).
     pub fn build(self) -> crate::types::ServerEvent {

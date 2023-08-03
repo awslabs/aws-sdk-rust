@@ -49,6 +49,10 @@ impl GetHostedZoneCountOutputBuilder {
         self.hosted_zone_count = input;
         self
     }
+    /// <p>The total number of public and private hosted zones that are associated with the current Amazon Web Services account.</p>
+    pub fn get_hosted_zone_count(&self) -> &::std::option::Option<i64> {
+        &self.hosted_zone_count
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

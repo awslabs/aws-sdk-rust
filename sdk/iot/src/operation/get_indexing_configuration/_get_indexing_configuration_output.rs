@@ -70,6 +70,12 @@ impl GetIndexingConfigurationOutputBuilder {
         self.thing_indexing_configuration = input;
         self
     }
+    /// <p>Thing indexing configuration.</p>
+    pub fn get_thing_indexing_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ThingIndexingConfiguration> {
+        &self.thing_indexing_configuration
+    }
     /// <p>The index configuration.</p>
     pub fn thing_group_indexing_configuration(
         mut self,
@@ -85,6 +91,12 @@ impl GetIndexingConfigurationOutputBuilder {
     ) -> Self {
         self.thing_group_indexing_configuration = input;
         self
+    }
+    /// <p>The index configuration.</p>
+    pub fn get_thing_group_indexing_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ThingGroupIndexingConfiguration> {
+        &self.thing_group_indexing_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

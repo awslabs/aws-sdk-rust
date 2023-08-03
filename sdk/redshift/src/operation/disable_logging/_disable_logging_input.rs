@@ -50,6 +50,11 @@ impl DisableLoggingInputBuilder {
         self.cluster_identifier = input;
         self
     }
+    /// <p>The identifier of the cluster on which logging is to be stopped.</p>
+    /// <p>Example: <code>examplecluster</code> </p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_identifier
+    }
     /// Consumes the builder and constructs a [`DisableLoggingInput`](crate::operation::disable_logging::DisableLoggingInput).
     pub fn build(
         self,

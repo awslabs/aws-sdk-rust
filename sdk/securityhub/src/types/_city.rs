@@ -40,6 +40,10 @@ impl CityBuilder {
         self.city_name = input;
         self
     }
+    /// <p>The name of the city.</p>
+    pub fn get_city_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.city_name
+    }
     /// Consumes the builder and constructs a [`City`](crate::types::City).
     pub fn build(self) -> crate::types::City {
         crate::types::City {

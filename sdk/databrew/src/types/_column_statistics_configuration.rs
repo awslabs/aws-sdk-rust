@@ -57,6 +57,12 @@ impl ColumnStatisticsConfigurationBuilder {
         self.selectors = input;
         self
     }
+    /// <p>List of column selectors. Selectors can be used to select columns from the dataset. When selectors are undefined, configuration will be applied to all supported columns. </p>
+    pub fn get_selectors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnSelector>> {
+        &self.selectors
+    }
     /// <p>Configuration for evaluations. Statistics can be used to select evaluations and override parameters of evaluations. </p>
     pub fn statistics(mut self, input: crate::types::StatisticsConfiguration) -> Self {
         self.statistics = ::std::option::Option::Some(input);
@@ -69,6 +75,10 @@ impl ColumnStatisticsConfigurationBuilder {
     ) -> Self {
         self.statistics = input;
         self
+    }
+    /// <p>Configuration for evaluations. Statistics can be used to select evaluations and override parameters of evaluations. </p>
+    pub fn get_statistics(&self) -> &::std::option::Option<crate::types::StatisticsConfiguration> {
+        &self.statistics
     }
     /// Consumes the builder and constructs a [`ColumnStatisticsConfiguration`](crate::types::ColumnStatisticsConfiguration).
     pub fn build(self) -> crate::types::ColumnStatisticsConfiguration {

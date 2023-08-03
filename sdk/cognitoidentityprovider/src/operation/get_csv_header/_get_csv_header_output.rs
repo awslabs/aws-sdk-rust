@@ -55,6 +55,10 @@ impl GetCsvHeaderOutputBuilder {
         self.user_pool_id = input;
         self
     }
+    /// <p>The user pool ID for the user pool that the users are to be imported into.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool_id
+    }
     /// Appends an item to `csv_header`.
     ///
     /// To override the contents of this collection use [`set_csv_header`](Self::set_csv_header).
@@ -73,6 +77,10 @@ impl GetCsvHeaderOutputBuilder {
     ) -> Self {
         self.csv_header = input;
         self
+    }
+    /// <p>The header information of the CSV file for the user import job.</p>
+    pub fn get_csv_header(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.csv_header
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

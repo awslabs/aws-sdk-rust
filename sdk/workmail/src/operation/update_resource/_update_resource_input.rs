@@ -69,6 +69,10 @@ impl UpdateResourceInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The identifier associated with the organization for which the resource is updated.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>The identifier of the resource to be updated.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl UpdateResourceInputBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The identifier of the resource to be updated.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>The name of the resource to be updated.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -88,6 +96,10 @@ impl UpdateResourceInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the resource to be updated.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The resource's booking options to be updated.</p>
     pub fn booking_options(mut self, input: crate::types::BookingOptions) -> Self {
@@ -101,6 +113,10 @@ impl UpdateResourceInputBuilder {
     ) -> Self {
         self.booking_options = input;
         self
+    }
+    /// <p>The resource's booking options to be updated.</p>
+    pub fn get_booking_options(&self) -> &::std::option::Option<crate::types::BookingOptions> {
+        &self.booking_options
     }
     /// Consumes the builder and constructs a [`UpdateResourceInput`](crate::operation::update_resource::UpdateResourceInput).
     pub fn build(

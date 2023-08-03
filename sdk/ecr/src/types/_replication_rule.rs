@@ -59,6 +59,12 @@ impl ReplicationRuleBuilder {
         self.destinations = input;
         self
     }
+    /// <p>An array of objects representing the destination for a replication rule.</p>
+    pub fn get_destinations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationDestination>> {
+        &self.destinations
+    }
     /// Appends an item to `repository_filters`.
     ///
     /// To override the contents of this collection use [`set_repository_filters`](Self::set_repository_filters).
@@ -77,6 +83,12 @@ impl ReplicationRuleBuilder {
     ) -> Self {
         self.repository_filters = input;
         self
+    }
+    /// <p>An array of objects representing the filters for a replication rule. Specifying a repository filter for a replication rule provides a method for controlling which repositories in a private registry are replicated.</p>
+    pub fn get_repository_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryFilter>> {
+        &self.repository_filters
     }
     /// Consumes the builder and constructs a [`ReplicationRule`](crate::types::ReplicationRule).
     pub fn build(self) -> crate::types::ReplicationRule {

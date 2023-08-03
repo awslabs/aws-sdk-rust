@@ -36,6 +36,10 @@ impl ListEarthObservationJobsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListEarthObservationJobs as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_earth_observation_jobs::builders::ListEarthObservationJobsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +142,12 @@ impl ListEarthObservationJobsFluentBuilder {
         self.inner = self.inner.set_status_equals(input);
         self
     }
+    /// <p>A filter that retrieves only jobs with a specific status.</p>
+    pub fn get_status_equals(
+        &self,
+    ) -> &::std::option::Option<crate::types::EarthObservationJobStatus> {
+        self.inner.get_status_equals()
+    }
     /// <p>An optional value that specifies whether you want the results sorted in <code>Ascending</code> or <code>Descending</code> order.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.inner = self.inner.sort_order(input);
@@ -147,6 +157,10 @@ impl ListEarthObservationJobsFluentBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
+    }
+    /// <p>An optional value that specifies whether you want the results sorted in <code>Ascending</code> or <code>Descending</code> order.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        self.inner.get_sort_order()
     }
     /// <p>The parameter by which to sort the results.</p>
     pub fn sort_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -158,6 +172,10 @@ impl ListEarthObservationJobsFluentBuilder {
         self.inner = self.inner.set_sort_by(input);
         self
     }
+    /// <p>The parameter by which to sort the results.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sort_by()
+    }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -168,6 +186,10 @@ impl ListEarthObservationJobsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The total number of items to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -177,5 +199,9 @@ impl ListEarthObservationJobsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The total number of items to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

@@ -142,6 +142,10 @@ impl DescribeNodeFromTemplateJobOutputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The job's ID.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>The job's status.</p>
     pub fn status(mut self, input: crate::types::NodeFromTemplateJobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -154,6 +158,10 @@ impl DescribeNodeFromTemplateJobOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The job's status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::NodeFromTemplateJobStatus> {
+        &self.status
     }
     /// <p>The job's status message.</p>
     pub fn status_message(
@@ -171,6 +179,10 @@ impl DescribeNodeFromTemplateJobOutputBuilder {
         self.status_message = input;
         self
     }
+    /// <p>The job's status message.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>When the job was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
@@ -184,6 +196,10 @@ impl DescribeNodeFromTemplateJobOutputBuilder {
         self.created_time = input;
         self
     }
+    /// <p>When the job was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>When the job was updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -196,6 +212,10 @@ impl DescribeNodeFromTemplateJobOutputBuilder {
     ) -> Self {
         self.last_updated_time = input;
         self
+    }
+    /// <p>When the job was updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
     }
     /// <p>The job's output package name.</p>
     pub fn output_package_name(
@@ -213,6 +233,10 @@ impl DescribeNodeFromTemplateJobOutputBuilder {
         self.output_package_name = input;
         self
     }
+    /// <p>The job's output package name.</p>
+    pub fn get_output_package_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_package_name
+    }
     /// <p>The job's output package version.</p>
     pub fn output_package_version(
         mut self,
@@ -229,6 +253,10 @@ impl DescribeNodeFromTemplateJobOutputBuilder {
         self.output_package_version = input;
         self
     }
+    /// <p>The job's output package version.</p>
+    pub fn get_output_package_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_package_version
+    }
     /// <p>The node's name.</p>
     pub fn node_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_name = ::std::option::Option::Some(input.into());
@@ -238,6 +266,10 @@ impl DescribeNodeFromTemplateJobOutputBuilder {
     pub fn set_node_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_name = input;
         self
+    }
+    /// <p>The node's name.</p>
+    pub fn get_node_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_name
     }
     /// <p>The node's description.</p>
     pub fn node_description(
@@ -255,6 +287,10 @@ impl DescribeNodeFromTemplateJobOutputBuilder {
         self.node_description = input;
         self
     }
+    /// <p>The node's description.</p>
+    pub fn get_node_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_description
+    }
     /// <p>The job's template type.</p>
     pub fn template_type(mut self, input: crate::types::TemplateType) -> Self {
         self.template_type = ::std::option::Option::Some(input);
@@ -267,6 +303,10 @@ impl DescribeNodeFromTemplateJobOutputBuilder {
     ) -> Self {
         self.template_type = input;
         self
+    }
+    /// <p>The job's template type.</p>
+    pub fn get_template_type(&self) -> &::std::option::Option<crate::types::TemplateType> {
+        &self.template_type
     }
     /// Adds a key-value pair to `template_parameters`.
     ///
@@ -293,6 +333,14 @@ impl DescribeNodeFromTemplateJobOutputBuilder {
         self.template_parameters = input;
         self
     }
+    /// <p>The job's template parameters.</p>
+    pub fn get_template_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.template_parameters
+    }
     /// Appends an item to `job_tags`.
     ///
     /// To override the contents of this collection use [`set_job_tags`](Self::set_job_tags).
@@ -311,6 +359,12 @@ impl DescribeNodeFromTemplateJobOutputBuilder {
     ) -> Self {
         self.job_tags = input;
         self
+    }
+    /// <p>The job's tags.</p>
+    pub fn get_job_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobResourceTags>> {
+        &self.job_tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

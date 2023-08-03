@@ -126,6 +126,10 @@ impl TestRecommendationBuilder {
         self.recommendation_id = input;
         self
     }
+    /// <p>Identifier for the test recommendation.</p>
+    pub fn get_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommendation_id
+    }
     /// <p>The reference identifier for the test recommendation.</p>
     pub fn reference_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_id = ::std::option::Option::Some(input.into());
@@ -135,6 +139,10 @@ impl TestRecommendationBuilder {
     pub fn set_reference_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reference_id = input;
         self
+    }
+    /// <p>The reference identifier for the test recommendation.</p>
+    pub fn get_reference_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reference_id
     }
     /// <p>The name of the Application Component.</p>
     pub fn app_component_name(
@@ -152,6 +160,10 @@ impl TestRecommendationBuilder {
         self.app_component_name = input;
         self
     }
+    /// <p>The name of the Application Component.</p>
+    pub fn get_app_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_component_name
+    }
     /// <p>The name of the test recommendation.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -161,6 +173,10 @@ impl TestRecommendationBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the test recommendation.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The intent of the test recommendation.</p>
     pub fn intent(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -172,6 +188,10 @@ impl TestRecommendationBuilder {
         self.intent = input;
         self
     }
+    /// <p>The intent of the test recommendation.</p>
+    pub fn get_intent(&self) -> &::std::option::Option<::std::string::String> {
+        &self.intent
+    }
     /// <p>The level of risk for this test recommendation.</p>
     pub fn risk(mut self, input: crate::types::TestRisk) -> Self {
         self.risk = ::std::option::Option::Some(input);
@@ -181,6 +201,10 @@ impl TestRecommendationBuilder {
     pub fn set_risk(mut self, input: ::std::option::Option<crate::types::TestRisk>) -> Self {
         self.risk = input;
         self
+    }
+    /// <p>The level of risk for this test recommendation.</p>
+    pub fn get_risk(&self) -> &::std::option::Option<crate::types::TestRisk> {
+        &self.risk
     }
     /// <p>The type of test recommendation.</p>
     pub fn r#type(mut self, input: crate::types::TestType) -> Self {
@@ -192,6 +216,10 @@ impl TestRecommendationBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of test recommendation.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::TestType> {
+        &self.r#type
+    }
     /// <p>The description for the test recommendation.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -201,6 +229,10 @@ impl TestRecommendationBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description for the test recommendation.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `items`.
     ///
@@ -221,6 +253,12 @@ impl TestRecommendationBuilder {
         self.items = input;
         self
     }
+    /// <p>The test recommendation items.</p>
+    pub fn get_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationItem>> {
+        &self.items
+    }
     /// <p>The prerequisite of the test recommendation.</p>
     pub fn prerequisite(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prerequisite = ::std::option::Option::Some(input.into());
@@ -230,6 +268,10 @@ impl TestRecommendationBuilder {
     pub fn set_prerequisite(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prerequisite = input;
         self
+    }
+    /// <p>The prerequisite of the test recommendation.</p>
+    pub fn get_prerequisite(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prerequisite
     }
     /// Appends an item to `depends_on_alarms`.
     ///
@@ -252,6 +294,12 @@ impl TestRecommendationBuilder {
     ) -> Self {
         self.depends_on_alarms = input;
         self
+    }
+    /// <p> A list of recommended alarms that are used in the test and must be exported before or with the test. </p>
+    pub fn get_depends_on_alarms(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.depends_on_alarms
     }
     /// Consumes the builder and constructs a [`TestRecommendation`](crate::types::TestRecommendation).
     pub fn build(self) -> crate::types::TestRecommendation {

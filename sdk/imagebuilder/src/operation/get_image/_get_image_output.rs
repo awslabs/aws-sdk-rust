@@ -54,6 +54,10 @@ impl GetImageOutputBuilder {
         self.request_id = input;
         self
     }
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
+    }
     /// <p>The image object.</p>
     pub fn image(mut self, input: crate::types::Image) -> Self {
         self.image = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl GetImageOutputBuilder {
     pub fn set_image(mut self, input: ::std::option::Option<crate::types::Image>) -> Self {
         self.image = input;
         self
+    }
+    /// <p>The image object.</p>
+    pub fn get_image(&self) -> &::std::option::Option<crate::types::Image> {
+        &self.image
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

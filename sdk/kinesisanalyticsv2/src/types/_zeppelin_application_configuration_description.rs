@@ -89,6 +89,12 @@ impl ZeppelinApplicationConfigurationDescriptionBuilder {
         self.monitoring_configuration_description = input;
         self
     }
+    /// <p>The monitoring configuration of a Kinesis Data Analytics Studio notebook.</p>
+    pub fn get_monitoring_configuration_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::ZeppelinMonitoringConfigurationDescription> {
+        &self.monitoring_configuration_description
+    }
     /// <p>The Amazon Glue Data Catalog that is associated with the Kinesis Data Analytics Studio notebook.</p>
     pub fn catalog_configuration_description(
         mut self,
@@ -105,6 +111,12 @@ impl ZeppelinApplicationConfigurationDescriptionBuilder {
         self.catalog_configuration_description = input;
         self
     }
+    /// <p>The Amazon Glue Data Catalog that is associated with the Kinesis Data Analytics Studio notebook.</p>
+    pub fn get_catalog_configuration_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::CatalogConfigurationDescription> {
+        &self.catalog_configuration_description
+    }
     /// <p>The parameters required to deploy a Kinesis Data Analytics Studio notebook as an application with durable state.</p>
     pub fn deploy_as_application_configuration_description(
         mut self,
@@ -120,6 +132,12 @@ impl ZeppelinApplicationConfigurationDescriptionBuilder {
     ) -> Self {
         self.deploy_as_application_configuration_description = input;
         self
+    }
+    /// <p>The parameters required to deploy a Kinesis Data Analytics Studio notebook as an application with durable state.</p>
+    pub fn get_deploy_as_application_configuration_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeployAsApplicationConfigurationDescription> {
+        &self.deploy_as_application_configuration_description
     }
     /// Appends an item to `custom_artifacts_configuration_description`.
     ///
@@ -146,6 +164,13 @@ impl ZeppelinApplicationConfigurationDescriptionBuilder {
     ) -> Self {
         self.custom_artifacts_configuration_description = input;
         self
+    }
+    /// <p>Custom artifacts are dependency JARs and user-defined functions (UDF).</p>
+    pub fn get_custom_artifacts_configuration_description(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomArtifactConfigurationDescription>>
+    {
+        &self.custom_artifacts_configuration_description
     }
     /// Consumes the builder and constructs a [`ZeppelinApplicationConfigurationDescription`](crate::types::ZeppelinApplicationConfigurationDescription).
     pub fn build(self) -> crate::types::ZeppelinApplicationConfigurationDescription {

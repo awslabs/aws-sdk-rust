@@ -43,6 +43,10 @@ impl SnapStartBuilder {
         self.apply_on = input;
         self
     }
+    /// <p>Set to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version.</p>
+    pub fn get_apply_on(&self) -> &::std::option::Option<crate::types::SnapStartApplyOn> {
+        &self.apply_on
+    }
     /// Consumes the builder and constructs a [`SnapStart`](crate::types::SnapStart).
     pub fn build(self) -> crate::types::SnapStart {
         crate::types::SnapStart {

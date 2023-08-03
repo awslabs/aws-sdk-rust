@@ -157,6 +157,10 @@ impl GetMaintenanceWindowExecutionTaskInvocationOutputBuilder {
         self.window_execution_id = input;
         self
     }
+    /// <p>The maintenance window execution ID.</p>
+    pub fn get_window_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.window_execution_id
+    }
     /// <p>The task execution ID.</p>
     pub fn task_execution_id(
         mut self,
@@ -172,6 +176,10 @@ impl GetMaintenanceWindowExecutionTaskInvocationOutputBuilder {
     ) -> Self {
         self.task_execution_id = input;
         self
+    }
+    /// <p>The task execution ID.</p>
+    pub fn get_task_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_execution_id
     }
     /// <p>The invocation ID.</p>
     pub fn invocation_id(
@@ -189,6 +197,10 @@ impl GetMaintenanceWindowExecutionTaskInvocationOutputBuilder {
         self.invocation_id = input;
         self
     }
+    /// <p>The invocation ID.</p>
+    pub fn get_invocation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.invocation_id
+    }
     /// <p>The execution ID.</p>
     pub fn execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_id = ::std::option::Option::Some(input.into());
@@ -198,6 +210,10 @@ impl GetMaintenanceWindowExecutionTaskInvocationOutputBuilder {
     pub fn set_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_id = input;
         self
+    }
+    /// <p>The execution ID.</p>
+    pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_id
     }
     /// <p>Retrieves the task type for a maintenance window.</p>
     pub fn task_type(mut self, input: crate::types::MaintenanceWindowTaskType) -> Self {
@@ -212,6 +228,10 @@ impl GetMaintenanceWindowExecutionTaskInvocationOutputBuilder {
         self.task_type = input;
         self
     }
+    /// <p>Retrieves the task type for a maintenance window.</p>
+    pub fn get_task_type(&self) -> &::std::option::Option<crate::types::MaintenanceWindowTaskType> {
+        &self.task_type
+    }
     /// <p>The parameters used at the time that the task ran.</p>
     pub fn parameters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameters = ::std::option::Option::Some(input.into());
@@ -221,6 +241,10 @@ impl GetMaintenanceWindowExecutionTaskInvocationOutputBuilder {
     pub fn set_parameters(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>The parameters used at the time that the task ran.</p>
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameters
     }
     /// <p>The task status for an invocation.</p>
     pub fn status(mut self, input: crate::types::MaintenanceWindowExecutionStatus) -> Self {
@@ -234,6 +258,12 @@ impl GetMaintenanceWindowExecutionTaskInvocationOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The task status for an invocation.</p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::MaintenanceWindowExecutionStatus> {
+        &self.status
     }
     /// <p>The details explaining the status. Details are only available for certain status values.</p>
     pub fn status_details(
@@ -251,6 +281,10 @@ impl GetMaintenanceWindowExecutionTaskInvocationOutputBuilder {
         self.status_details = input;
         self
     }
+    /// <p>The details explaining the status. Details are only available for certain status values.</p>
+    pub fn get_status_details(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_details
+    }
     /// <p>The time that the task started running on the target.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -264,6 +298,10 @@ impl GetMaintenanceWindowExecutionTaskInvocationOutputBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The time that the task started running on the target.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The time that the task finished running on the target.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -276,6 +314,10 @@ impl GetMaintenanceWindowExecutionTaskInvocationOutputBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The time that the task finished running on the target.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// <p>User-provided value to be included in any Amazon CloudWatch Events or Amazon EventBridge events raised while running tasks for these targets in this maintenance window.</p>
     pub fn owner_information(
@@ -293,6 +335,10 @@ impl GetMaintenanceWindowExecutionTaskInvocationOutputBuilder {
         self.owner_information = input;
         self
     }
+    /// <p>User-provided value to be included in any Amazon CloudWatch Events or Amazon EventBridge events raised while running tasks for these targets in this maintenance window.</p>
+    pub fn get_owner_information(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_information
+    }
     /// <p>The maintenance window target ID.</p>
     pub fn window_target_id(
         mut self,
@@ -308,6 +354,10 @@ impl GetMaintenanceWindowExecutionTaskInvocationOutputBuilder {
     ) -> Self {
         self.window_target_id = input;
         self
+    }
+    /// <p>The maintenance window target ID.</p>
+    pub fn get_window_target_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.window_target_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

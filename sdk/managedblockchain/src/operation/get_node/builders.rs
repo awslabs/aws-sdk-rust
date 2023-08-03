@@ -37,6 +37,10 @@ impl GetNodeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetNode as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_node::builders::GetNodeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl GetNodeFluentBuilder {
         self.inner = self.inner.set_network_id(input);
         self
     }
+    /// <p>The unique identifier of the network that the node is on.</p>
+    pub fn get_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_network_id()
+    }
     /// <p>The unique identifier of the member that owns the node.</p>
     /// <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
     pub fn member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -131,6 +139,11 @@ impl GetNodeFluentBuilder {
         self.inner = self.inner.set_member_id(input);
         self
     }
+    /// <p>The unique identifier of the member that owns the node.</p>
+    /// <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
+    pub fn get_member_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_member_id()
+    }
     /// <p>The unique identifier of the node.</p>
     pub fn node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.node_id(input.into());
@@ -140,5 +153,9 @@ impl GetNodeFluentBuilder {
     pub fn set_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_node_id(input);
         self
+    }
+    /// <p>The unique identifier of the node.</p>
+    pub fn get_node_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_node_id()
     }
 }

@@ -36,6 +36,10 @@ impl GetFileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetFile as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_file::builders::GetFileInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl GetFileFluentBuilder {
         self.inner = self.inner.set_repository_name(input);
         self
     }
+    /// <p>The name of the repository that contains the file.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository_name()
+    }
     /// <p>The fully quaified reference that identifies the commit that contains the file. For example, you can specify a full commit ID, a tag, a branch name, or a reference such as refs/heads/master. If none is provided, the head commit is used.</p>
     pub fn commit_specifier(
         mut self,
@@ -140,6 +148,10 @@ impl GetFileFluentBuilder {
         self.inner = self.inner.set_commit_specifier(input);
         self
     }
+    /// <p>The fully quaified reference that identifies the commit that contains the file. For example, you can specify a full commit ID, a tag, a branch name, or a reference such as refs/heads/master. If none is provided, the head commit is used.</p>
+    pub fn get_commit_specifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_commit_specifier()
+    }
     /// <p>The fully qualified path to the file, including the full name and extension of the file. For example, /examples/file.md is the fully qualified path to a file named file.md in a folder named examples.</p>
     pub fn file_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_path(input.into());
@@ -149,5 +161,9 @@ impl GetFileFluentBuilder {
     pub fn set_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_path(input);
         self
+    }
+    /// <p>The fully qualified path to the file, including the full name and extension of the file. For example, /examples/file.md is the fully qualified path to a file named file.md in a folder named examples.</p>
+    pub fn get_file_path(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_file_path()
     }
 }

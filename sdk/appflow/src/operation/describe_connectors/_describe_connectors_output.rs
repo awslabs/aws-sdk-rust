@@ -98,6 +98,17 @@ impl DescribeConnectorsOutputBuilder {
         self.connector_configurations = input;
         self
     }
+    /// <p> The configuration that is applied to the connectors used in the flow. </p>
+    pub fn get_connector_configurations(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::ConnectorType,
+            crate::types::ConnectorConfiguration,
+        >,
+    > {
+        &self.connector_configurations
+    }
     /// Appends an item to `connectors`.
     ///
     /// To override the contents of this collection use [`set_connectors`](Self::set_connectors).
@@ -117,6 +128,12 @@ impl DescribeConnectorsOutputBuilder {
         self.connectors = input;
         self
     }
+    /// <p>Information about the connectors supported in Amazon AppFlow.</p>
+    pub fn get_connectors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectorDetail>> {
+        &self.connectors
+    }
     /// <p> The pagination token for the next page of data. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -126,6 +143,10 @@ impl DescribeConnectorsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p> The pagination token for the next page of data. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -36,6 +36,13 @@ impl ListParticipantEventsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListParticipantEvents as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_participant_events::builders::ListParticipantEventsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +144,10 @@ impl ListParticipantEventsFluentBuilder {
         self.inner = self.inner.set_stage_arn(input);
         self
     }
+    /// <p>Stage ARN.</p>
+    pub fn get_stage_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stage_arn()
+    }
     /// <p>ID of a session within the stage.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.session_id(input.into());
@@ -146,6 +157,10 @@ impl ListParticipantEventsFluentBuilder {
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_session_id(input);
         self
+    }
+    /// <p>ID of a session within the stage.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_session_id()
     }
     /// <p>Unique identifier for this participant. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
     pub fn participant_id(
@@ -163,6 +178,10 @@ impl ListParticipantEventsFluentBuilder {
         self.inner = self.inner.set_participant_id(input);
         self
     }
+    /// <p>Unique identifier for this participant. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
+    pub fn get_participant_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_participant_id()
+    }
     /// <p>The first participant to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -173,6 +192,10 @@ impl ListParticipantEventsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The first participant to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>Maximum number of results to return. Default: 50.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -182,5 +205,9 @@ impl ListParticipantEventsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>Maximum number of results to return. Default: 50.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

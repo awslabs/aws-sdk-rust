@@ -57,6 +57,10 @@ impl NetworkConfigurationBuilder {
         self.subnet_ids = input;
         self
     }
+    /// <p>The array of subnet Ids for customer VPC connectivity.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
+    }
     /// Appends an item to `security_group_ids`.
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
@@ -78,6 +82,12 @@ impl NetworkConfigurationBuilder {
     ) -> Self {
         self.security_group_ids = input;
         self
+    }
+    /// <p>The array of security group Ids for customer VPC connectivity.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
     }
     /// Consumes the builder and constructs a [`NetworkConfiguration`](crate::types::NetworkConfiguration).
     pub fn build(self) -> crate::types::NetworkConfiguration {

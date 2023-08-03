@@ -54,6 +54,10 @@ impl DescribeRecoveryInstancesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token of the next Recovery Instance to retrieve.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `items`.
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
@@ -72,6 +76,12 @@ impl DescribeRecoveryInstancesOutputBuilder {
     ) -> Self {
         self.items = input;
         self
+    }
+    /// <p>An array of Recovery Instances.</p>
+    pub fn get_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecoveryInstance>> {
+        &self.items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

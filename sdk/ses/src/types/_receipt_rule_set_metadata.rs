@@ -70,6 +70,15 @@ impl ReceiptRuleSetMetadataBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the receipt rule set. The name must:</p>
+    /// <ul>
+    /// <li> <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+    /// <li> <p>Start and end with a letter or number.</p> </li>
+    /// <li> <p>Contain less than 64 characters.</p> </li>
+    /// </ul>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The date and time the receipt rule set was created.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_timestamp = ::std::option::Option::Some(input);
@@ -82,6 +91,10 @@ impl ReceiptRuleSetMetadataBuilder {
     ) -> Self {
         self.created_timestamp = input;
         self
+    }
+    /// <p>The date and time the receipt rule set was created.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
     }
     /// Consumes the builder and constructs a [`ReceiptRuleSetMetadata`](crate::types::ReceiptRuleSetMetadata).
     pub fn build(self) -> crate::types::ReceiptRuleSetMetadata {

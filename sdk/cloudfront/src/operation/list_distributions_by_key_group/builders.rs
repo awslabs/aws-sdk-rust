@@ -37,6 +37,10 @@ impl ListDistributionsByKeyGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListDistributionsByKeyGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_distributions_by_key_group::builders::ListDistributionsByKeyGroupInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl ListDistributionsByKeyGroupFluentBuilder {
         self.inner = self.inner.set_marker(input);
         self
     }
+    /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
+    }
     /// <p>The maximum number of distribution IDs that you want in the response.</p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.inner = self.inner.max_items(input);
@@ -137,6 +145,10 @@ impl ListDistributionsByKeyGroupFluentBuilder {
         self.inner = self.inner.set_max_items(input);
         self
     }
+    /// <p>The maximum number of distribution IDs that you want in the response.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_items()
+    }
     /// <p>The ID of the key group whose associated distribution IDs you are listing.</p>
     pub fn key_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key_group_id(input.into());
@@ -146,5 +158,9 @@ impl ListDistributionsByKeyGroupFluentBuilder {
     pub fn set_key_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key_group_id(input);
         self
+    }
+    /// <p>The ID of the key group whose associated distribution IDs you are listing.</p>
+    pub fn get_key_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key_group_id()
     }
 }

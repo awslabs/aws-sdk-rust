@@ -36,6 +36,10 @@ impl UpdateGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_group::builders::UpdateGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl UpdateGroupFluentBuilder {
         self.inner = self.inner.set_identity_store_id(input);
         self
     }
+    /// <p>The globally unique identifier for the identity store.</p>
+    pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_store_id()
+    }
     /// <p>The identifier for a group in the identity store.</p>
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_id(input.into());
@@ -133,6 +141,10 @@ impl UpdateGroupFluentBuilder {
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_id(input);
         self
+    }
+    /// <p>The identifier for a group in the identity store.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_id()
     }
     /// Appends an item to `Operations`.
     ///
@@ -150,5 +162,11 @@ impl UpdateGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_operations(input);
         self
+    }
+    /// <p>A list of <code>AttributeOperation</code> objects to apply to the requested group. These operations might add, replace, or remove an attribute.</p>
+    pub fn get_operations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeOperation>> {
+        self.inner.get_operations()
     }
 }

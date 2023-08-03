@@ -36,6 +36,10 @@ impl GetCrawlerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetCrawler as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_crawler::builders::GetCrawlerInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -117,5 +121,9 @@ impl GetCrawlerFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the crawler to retrieve metadata for.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
 }

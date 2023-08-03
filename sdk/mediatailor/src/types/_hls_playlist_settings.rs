@@ -48,6 +48,10 @@ impl HlsPlaylistSettingsBuilder {
         self.manifest_window_seconds = input;
         self
     }
+    /// <p>The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value: <code>3600</code> seconds.</p>
+    pub fn get_manifest_window_seconds(&self) -> &::std::option::Option<i32> {
+        &self.manifest_window_seconds
+    }
     /// Appends an item to `ad_markup_type`.
     ///
     /// To override the contents of this collection use [`set_ad_markup_type`](Self::set_ad_markup_type).
@@ -66,6 +70,12 @@ impl HlsPlaylistSettingsBuilder {
     ) -> Self {
         self.ad_markup_type = input;
         self
+    }
+    /// <p>Determines the type of SCTE 35 tags to use in ad markup. Specify <code>DATERANGE</code> to use <code>DATERANGE</code> tags (for live or VOD content). Specify <code>SCTE35_ENHANCED</code> to use <code>EXT-X-CUE-OUT</code> and <code>EXT-X-CUE-IN</code> tags (for VOD content only).</p>
+    pub fn get_ad_markup_type(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdMarkupType>> {
+        &self.ad_markup_type
     }
     /// Consumes the builder and constructs a [`HlsPlaylistSettings`](crate::types::HlsPlaylistSettings).
     pub fn build(self) -> crate::types::HlsPlaylistSettings {

@@ -121,6 +121,10 @@ impl GetSavingsPlansUtilizationDetailsInputBuilder {
         self.time_period = input;
         self
     }
+    /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
+    pub fn get_time_period(&self) -> &::std::option::Option<crate::types::DateInterval> {
+        &self.time_period
+    }
     /// <p>Filters Savings Plans utilization coverage data for active Savings Plans dimensions. You can filter data with the following dimensions:</p>
     /// <ul>
     /// <li> <p> <code>LINKED_ACCOUNT</code> </p> </li>
@@ -147,6 +151,18 @@ impl GetSavingsPlansUtilizationDetailsInputBuilder {
         self.filter = input;
         self
     }
+    /// <p>Filters Savings Plans utilization coverage data for active Savings Plans dimensions. You can filter data with the following dimensions:</p>
+    /// <ul>
+    /// <li> <p> <code>LINKED_ACCOUNT</code> </p> </li>
+    /// <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li>
+    /// <li> <p> <code>REGION</code> </p> </li>
+    /// <li> <p> <code>PAYMENT_OPTION</code> </p> </li>
+    /// <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li>
+    /// </ul>
+    /// <p> <code>GetSavingsPlansUtilizationDetails</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::Expression> {
+        &self.filter
+    }
     /// Appends an item to `data_type`.
     ///
     /// To override the contents of this collection use [`set_data_type`](Self::set_data_type).
@@ -166,6 +182,12 @@ impl GetSavingsPlansUtilizationDetailsInputBuilder {
         self.data_type = input;
         self
     }
+    /// <p>The data type.</p>
+    pub fn get_data_type(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlansDataType>> {
+        &self.data_type
+    }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -176,6 +198,10 @@ impl GetSavingsPlansUtilizationDetailsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The number of items to be returned in a response. The default is <code>20</code>, with a minimum value of <code>1</code>.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -185,6 +211,10 @@ impl GetSavingsPlansUtilizationDetailsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The number of items to be returned in a response. The default is <code>20</code>, with a minimum value of <code>1</code>.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The value that you want to sort the data by.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
@@ -220,6 +250,21 @@ impl GetSavingsPlansUtilizationDetailsInputBuilder {
     ) -> Self {
         self.sort_by = input;
         self
+    }
+    /// <p>The value that you want to sort the data by.</p>
+    /// <p>The following values are supported for <code>Key</code>:</p>
+    /// <ul>
+    /// <li> <p> <code>UtilizationPercentage</code> </p> </li>
+    /// <li> <p> <code>TotalCommitment</code> </p> </li>
+    /// <li> <p> <code>UsedCommitment</code> </p> </li>
+    /// <li> <p> <code>UnusedCommitment</code> </p> </li>
+    /// <li> <p> <code>NetSavings</code> </p> </li>
+    /// <li> <p> <code>AmortizedRecurringCommitment</code> </p> </li>
+    /// <li> <p> <code>AmortizedUpfrontCommitment</code> </p> </li>
+    /// </ul>
+    /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SortDefinition> {
+        &self.sort_by
     }
     /// Consumes the builder and constructs a [`GetSavingsPlansUtilizationDetailsInput`](crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsInput, ::aws_smithy_http::operation::error::BuildError>{

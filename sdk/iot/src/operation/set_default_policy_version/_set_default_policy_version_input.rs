@@ -50,6 +50,10 @@ impl SetDefaultPolicyVersionInputBuilder {
         self.policy_name = input;
         self
     }
+    /// <p>The policy name.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_name
+    }
     /// <p>The policy version ID.</p>
     pub fn policy_version_id(
         mut self,
@@ -65,6 +69,10 @@ impl SetDefaultPolicyVersionInputBuilder {
     ) -> Self {
         self.policy_version_id = input;
         self
+    }
+    /// <p>The policy version ID.</p>
+    pub fn get_policy_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_version_id
     }
     /// Consumes the builder and constructs a [`SetDefaultPolicyVersionInput`](crate::operation::set_default_policy_version::SetDefaultPolicyVersionInput).
     pub fn build(

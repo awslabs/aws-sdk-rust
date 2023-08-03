@@ -55,6 +55,10 @@ impl UpdateDetectorVersionMetadataInputBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The detector ID.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// <p>The detector version ID. </p>
     pub fn detector_version_id(
         mut self,
@@ -71,6 +75,10 @@ impl UpdateDetectorVersionMetadataInputBuilder {
         self.detector_version_id = input;
         self
     }
+    /// <p>The detector version ID. </p>
+    pub fn get_detector_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_version_id
+    }
     /// <p>The description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -80,6 +88,10 @@ impl UpdateDetectorVersionMetadataInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`UpdateDetectorVersionMetadataInput`](crate::operation::update_detector_version_metadata::UpdateDetectorVersionMetadataInput).
     pub fn build(

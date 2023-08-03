@@ -47,6 +47,10 @@ impl DeleteLifecyclePolicyInputBuilder {
         self.container_name = input;
         self
     }
+    /// <p>The name of the container that holds the object lifecycle policy.</p>
+    pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_name
+    }
     /// Consumes the builder and constructs a [`DeleteLifecyclePolicyInput`](crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyInput).
     pub fn build(
         self,

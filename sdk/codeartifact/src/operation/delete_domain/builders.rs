@@ -36,6 +36,10 @@ impl DeleteDomainFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteDomain as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_domain::builders::DeleteDomainInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl DeleteDomainFluentBuilder {
         self.inner = self.inner.set_domain(input);
         self
     }
+    /// <p> The name of the domain to delete. </p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain()
+    }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_owner(input.into());
@@ -127,5 +135,9 @@ impl DeleteDomainFluentBuilder {
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_owner(input);
         self
+    }
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_owner()
     }
 }

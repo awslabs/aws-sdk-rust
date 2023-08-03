@@ -42,6 +42,13 @@ impl GetRepositoryEndpointFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetRepositoryEndpoint as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_repository_endpoint::builders::GetRepositoryEndpointInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl GetRepositoryEndpointFluentBuilder {
         self.inner = self.inner.set_domain(input);
         self
     }
+    /// <p> The name of the domain that contains the repository. </p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain()
+    }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository. It does not include dashes or spaces. </p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_owner(input.into());
@@ -141,6 +152,10 @@ impl GetRepositoryEndpointFluentBuilder {
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_owner(input);
         self
+    }
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository. It does not include dashes or spaces. </p>
+    pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_owner()
     }
     /// <p> The name of the repository. </p>
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -152,6 +167,10 @@ impl GetRepositoryEndpointFluentBuilder {
         self.inner = self.inner.set_repository(input);
         self
     }
+    /// <p> The name of the repository. </p>
+    pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository()
+    }
     /// <p> Returns which endpoint of a repository to return. A repository has one endpoint for each package format. </p>
     pub fn format(mut self, input: crate::types::PackageFormat) -> Self {
         self.inner = self.inner.format(input);
@@ -161,5 +180,9 @@ impl GetRepositoryEndpointFluentBuilder {
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::PackageFormat>) -> Self {
         self.inner = self.inner.set_format(input);
         self
+    }
+    /// <p> Returns which endpoint of a repository to return. A repository has one endpoint for each package format. </p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::PackageFormat> {
+        self.inner.get_format()
     }
 }

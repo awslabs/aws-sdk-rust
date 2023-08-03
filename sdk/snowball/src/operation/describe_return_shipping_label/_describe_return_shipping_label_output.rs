@@ -65,6 +65,10 @@ impl DescribeReturnShippingLabelOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status information of the task on a Snow device that is being returned to Amazon Web Services.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ShippingLabelStatus> {
+        &self.status
+    }
     /// <p>The expiration date of the current return shipping label.</p>
     pub fn expiration_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expiration_date = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl DescribeReturnShippingLabelOutputBuilder {
     ) -> Self {
         self.expiration_date = input;
         self
+    }
+    /// <p>The expiration date of the current return shipping label.</p>
+    pub fn get_expiration_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expiration_date
     }
     /// <p>The pre-signed Amazon S3 URI used to download the return shipping label.</p>
     pub fn return_shipping_label_uri(
@@ -93,6 +101,10 @@ impl DescribeReturnShippingLabelOutputBuilder {
     ) -> Self {
         self.return_shipping_label_uri = input;
         self
+    }
+    /// <p>The pre-signed Amazon S3 URI used to download the return shipping label.</p>
+    pub fn get_return_shipping_label_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.return_shipping_label_uri
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

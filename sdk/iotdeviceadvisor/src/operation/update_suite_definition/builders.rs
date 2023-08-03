@@ -37,6 +37,13 @@ impl UpdateSuiteDefinitionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateSuiteDefinition as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_suite_definition::builders::UpdateSuiteDefinitionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl UpdateSuiteDefinitionFluentBuilder {
         self.inner = self.inner.set_suite_definition_id(input);
         self
     }
+    /// <p>Suite definition ID of the test suite to be updated.</p>
+    pub fn get_suite_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_suite_definition_id()
+    }
     /// <p>Updates a Device Advisor test suite with suite definition configuration.</p>
     pub fn suite_definition_configuration(
         mut self,
@@ -148,5 +159,11 @@ impl UpdateSuiteDefinitionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_suite_definition_configuration(input);
         self
+    }
+    /// <p>Updates a Device Advisor test suite with suite definition configuration.</p>
+    pub fn get_suite_definition_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SuiteDefinitionConfiguration> {
+        self.inner.get_suite_definition_configuration()
     }
 }

@@ -48,6 +48,10 @@ impl RenewOfferingInputBuilder {
         self.offering_id = input;
         self
     }
+    /// <p>The ID of a request to renew an offering.</p>
+    pub fn get_offering_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.offering_id
+    }
     /// <p>The quantity requested in an offering renewal.</p>
     pub fn quantity(mut self, input: i32) -> Self {
         self.quantity = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl RenewOfferingInputBuilder {
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.quantity = input;
         self
+    }
+    /// <p>The quantity requested in an offering renewal.</p>
+    pub fn get_quantity(&self) -> &::std::option::Option<i32> {
+        &self.quantity
     }
     /// Consumes the builder and constructs a [`RenewOfferingInput`](crate::operation::renew_offering::RenewOfferingInput).
     pub fn build(

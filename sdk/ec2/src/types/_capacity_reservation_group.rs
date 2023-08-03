@@ -48,6 +48,10 @@ impl CapacityReservationGroupBuilder {
         self.group_arn = input;
         self
     }
+    /// <p>The ARN of the resource group.</p>
+    pub fn get_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_arn
+    }
     /// <p>The ID of the Amazon Web Services account that owns the resource group.</p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl CapacityReservationGroupBuilder {
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_id = input;
         self
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the resource group.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
     }
     /// Consumes the builder and constructs a [`CapacityReservationGroup`](crate::types::CapacityReservationGroup).
     pub fn build(self) -> crate::types::CapacityReservationGroup {

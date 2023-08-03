@@ -52,6 +52,12 @@ impl DescribeLoadBalancerPolicyTypesInputBuilder {
         self.policy_type_names = input;
         self
     }
+    /// <p>The names of the policy types. If no names are specified, describes all policy types defined by Elastic Load Balancing.</p>
+    pub fn get_policy_type_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.policy_type_names
+    }
     /// Consumes the builder and constructs a [`DescribeLoadBalancerPolicyTypesInput`](crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesInput).
     pub fn build(
         self,

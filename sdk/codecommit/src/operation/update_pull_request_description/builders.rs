@@ -36,6 +36,10 @@ impl UpdatePullRequestDescriptionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdatePullRequestDescription as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_pull_request_description::builders::UpdatePullRequestDescriptionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl UpdatePullRequestDescriptionFluentBuilder {
         self.inner = self.inner.set_pull_request_id(input);
         self
     }
+    /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+    pub fn get_pull_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pull_request_id()
+    }
     /// <p>The updated content of the description for the pull request. This content replaces the existing description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -141,5 +149,9 @@ impl UpdatePullRequestDescriptionFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The updated content of the description for the pull request. This content replaces the existing description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
 }

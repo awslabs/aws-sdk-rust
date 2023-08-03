@@ -39,6 +39,10 @@ impl GetVariantStoreInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The store's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`GetVariantStoreInput`](crate::operation::get_variant_store::GetVariantStoreInput).
     pub fn build(
         self,

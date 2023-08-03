@@ -36,6 +36,12 @@ impl ValidatePolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ValidatePolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::validate_policy::builders::ValidatePolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl ValidatePolicyFluentBuilder {
         self.inner = self.inner.set_locale(input);
         self
     }
+    /// <p>The locale to use for localizing the findings.</p>
+    pub fn get_locale(&self) -> &::std::option::Option<crate::types::Locale> {
+        self.inner.get_locale()
+    }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -139,6 +149,10 @@ impl ValidatePolicyFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>A token used for pagination of results returned.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -148,6 +162,10 @@ impl ValidatePolicyFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A token used for pagination of results returned.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The JSON policy document to use as the content for the policy.</p>
     pub fn policy_document(
@@ -165,6 +183,10 @@ impl ValidatePolicyFluentBuilder {
         self.inner = self.inner.set_policy_document(input);
         self
     }
+    /// <p>The JSON policy document to use as the content for the policy.</p>
+    pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_document()
+    }
     /// <p>The type of policy to validate. Identity policies grant permissions to IAM principals. Identity policies include managed and inline policies for IAM roles, users, and groups. They also include service-control policies (SCPs) that are attached to an Amazon Web Services organization, organizational unit (OU), or an account.</p>
     /// <p>Resource policies grant permissions on Amazon Web Services resources. Resource policies include trust policies for IAM roles and bucket policies for Amazon S3 buckets. You can provide a generic input such as identity policy or resource policy or a specific input such as managed policy or Amazon S3 bucket policy. </p>
     pub fn policy_type(mut self, input: crate::types::PolicyType) -> Self {
@@ -179,6 +201,11 @@ impl ValidatePolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_policy_type(input);
         self
+    }
+    /// <p>The type of policy to validate. Identity policies grant permissions to IAM principals. Identity policies include managed and inline policies for IAM roles, users, and groups. They also include service-control policies (SCPs) that are attached to an Amazon Web Services organization, organizational unit (OU), or an account.</p>
+    /// <p>Resource policies grant permissions on Amazon Web Services resources. Resource policies include trust policies for IAM roles and bucket policies for Amazon S3 buckets. You can provide a generic input such as identity policy or resource policy or a specific input such as managed policy or Amazon S3 bucket policy. </p>
+    pub fn get_policy_type(&self) -> &::std::option::Option<crate::types::PolicyType> {
+        self.inner.get_policy_type()
     }
     /// <p>The type of resource to attach to your resource policy. Specify a value for the policy validation resource type only if the policy type is <code>RESOURCE_POLICY</code>. For example, to validate a resource policy to attach to an Amazon S3 bucket, you can choose <code>AWS::S3::Bucket</code> for the policy validation resource type.</p>
     /// <p>For resource types not supported as valid values, IAM Access Analyzer runs policy checks that apply to all resource policies. For example, to validate a resource policy to attach to a KMS key, do not specify a value for the policy validation resource type and IAM Access Analyzer will run policy checks that apply to all resource policies.</p>
@@ -197,5 +224,12 @@ impl ValidatePolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_validate_policy_resource_type(input);
         self
+    }
+    /// <p>The type of resource to attach to your resource policy. Specify a value for the policy validation resource type only if the policy type is <code>RESOURCE_POLICY</code>. For example, to validate a resource policy to attach to an Amazon S3 bucket, you can choose <code>AWS::S3::Bucket</code> for the policy validation resource type.</p>
+    /// <p>For resource types not supported as valid values, IAM Access Analyzer runs policy checks that apply to all resource policies. For example, to validate a resource policy to attach to a KMS key, do not specify a value for the policy validation resource type and IAM Access Analyzer will run policy checks that apply to all resource policies.</p>
+    pub fn get_validate_policy_resource_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ValidatePolicyResourceType> {
+        self.inner.get_validate_policy_resource_type()
     }
 }

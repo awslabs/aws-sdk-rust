@@ -116,6 +116,12 @@ impl TemplateVersionDefinitionBuilder {
         self.data_set_configurations = input;
         self
     }
+    /// <p>An array of dataset configurations. These configurations define the required columns for each dataset used within a template.</p>
+    pub fn get_data_set_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSetConfiguration>> {
+        &self.data_set_configurations
+    }
     /// Appends an item to `sheets`.
     ///
     /// To override the contents of this collection use [`set_sheets`](Self::set_sheets).
@@ -135,6 +141,12 @@ impl TemplateVersionDefinitionBuilder {
         self.sheets = input;
         self
     }
+    /// <p>An array of sheet definitions for a template.</p>
+    pub fn get_sheets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SheetDefinition>> {
+        &self.sheets
+    }
     /// Appends an item to `calculated_fields`.
     ///
     /// To override the contents of this collection use [`set_calculated_fields`](Self::set_calculated_fields).
@@ -153,6 +165,12 @@ impl TemplateVersionDefinitionBuilder {
     ) -> Self {
         self.calculated_fields = input;
         self
+    }
+    /// <p>An array of calculated field definitions for the template.</p>
+    pub fn get_calculated_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CalculatedField>> {
+        &self.calculated_fields
     }
     /// Appends an item to `parameter_declarations`.
     ///
@@ -177,6 +195,14 @@ impl TemplateVersionDefinitionBuilder {
         self.parameter_declarations = input;
         self
     }
+    /// <p>An array of parameter declarations for a template.</p>
+    /// <p> <i>Parameters</i> are named variables that can transfer a value for use by an action or an object.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-in-quicksight.html">Parameters in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>. </p>
+    pub fn get_parameter_declarations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterDeclaration>> {
+        &self.parameter_declarations
+    }
     /// Appends an item to `filter_groups`.
     ///
     /// To override the contents of this collection use [`set_filter_groups`](Self::set_filter_groups).
@@ -198,6 +224,13 @@ impl TemplateVersionDefinitionBuilder {
         self.filter_groups = input;
         self
     }
+    /// <p>Filter definitions for a template.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/filtering-visual-data.html">Filtering Data</a> in the <i>Amazon QuickSight User Guide</i>. </p>
+    pub fn get_filter_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterGroup>> {
+        &self.filter_groups
+    }
     /// Appends an item to `column_configurations`.
     ///
     /// To override the contents of this collection use [`set_column_configurations`](Self::set_column_configurations).
@@ -217,6 +250,12 @@ impl TemplateVersionDefinitionBuilder {
         self.column_configurations = input;
         self
     }
+    /// <p> An array of template-level column configurations. Column configurations are used to set default formatting for a column that's used throughout a template. </p>
+    pub fn get_column_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnConfiguration>> {
+        &self.column_configurations
+    }
     /// <p>The configuration for default analysis settings.</p>
     pub fn analysis_defaults(mut self, input: crate::types::AnalysisDefaults) -> Self {
         self.analysis_defaults = ::std::option::Option::Some(input);
@@ -229,6 +268,10 @@ impl TemplateVersionDefinitionBuilder {
     ) -> Self {
         self.analysis_defaults = input;
         self
+    }
+    /// <p>The configuration for default analysis settings.</p>
+    pub fn get_analysis_defaults(&self) -> &::std::option::Option<crate::types::AnalysisDefaults> {
+        &self.analysis_defaults
     }
     /// Consumes the builder and constructs a [`TemplateVersionDefinition`](crate::types::TemplateVersionDefinition).
     pub fn build(self) -> crate::types::TemplateVersionDefinition {

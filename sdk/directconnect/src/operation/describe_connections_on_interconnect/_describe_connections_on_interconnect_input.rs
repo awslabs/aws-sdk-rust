@@ -45,6 +45,10 @@ impl DescribeConnectionsOnInterconnectInputBuilder {
         self.interconnect_id = input;
         self
     }
+    /// <p>The ID of the interconnect.</p>
+    pub fn get_interconnect_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.interconnect_id
+    }
     /// Consumes the builder and constructs a [`DescribeConnectionsOnInterconnectInput`](crate::operation::describe_connections_on_interconnect::DescribeConnectionsOnInterconnectInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_connections_on_interconnect::DescribeConnectionsOnInterconnectInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

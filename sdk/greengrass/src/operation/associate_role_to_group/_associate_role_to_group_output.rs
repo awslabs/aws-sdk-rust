@@ -54,6 +54,10 @@ impl AssociateRoleToGroupOutputBuilder {
         self.associated_at = input;
         self
     }
+    /// The time, in milliseconds since the epoch, when the role ARN was associated with the group.
+    pub fn get_associated_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.associated_at
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

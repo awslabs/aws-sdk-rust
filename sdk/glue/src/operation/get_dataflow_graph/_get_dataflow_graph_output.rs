@@ -64,6 +64,12 @@ impl GetDataflowGraphOutputBuilder {
         self.dag_nodes = input;
         self
     }
+    /// <p>A list of the nodes in the resulting DAG.</p>
+    pub fn get_dag_nodes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeGenNode>> {
+        &self.dag_nodes
+    }
     /// Appends an item to `dag_edges`.
     ///
     /// To override the contents of this collection use [`set_dag_edges`](Self::set_dag_edges).
@@ -82,6 +88,12 @@ impl GetDataflowGraphOutputBuilder {
     ) -> Self {
         self.dag_edges = input;
         self
+    }
+    /// <p>A list of the edges in the resulting DAG.</p>
+    pub fn get_dag_edges(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeGenEdge>> {
+        &self.dag_edges
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

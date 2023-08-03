@@ -64,6 +64,10 @@ impl CustomConnectorSourcePropertiesBuilder {
         self.entity_name = input;
         self
     }
+    /// <p>The entity specified in the custom connector as a source in the flow.</p>
+    pub fn get_entity_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_name
+    }
     /// Adds a key-value pair to `custom_properties`.
     ///
     /// To override the contents of this collection use [`set_custom_properties`](Self::set_custom_properties).
@@ -89,6 +93,14 @@ impl CustomConnectorSourcePropertiesBuilder {
         self.custom_properties = input;
         self
     }
+    /// <p>Custom properties that are required to use the custom connector as a source.</p>
+    pub fn get_custom_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.custom_properties
+    }
     /// <p>The API of the connector application that Amazon AppFlow uses to transfer your data.</p>
     pub fn data_transfer_api(mut self, input: crate::types::DataTransferApi) -> Self {
         self.data_transfer_api = ::std::option::Option::Some(input);
@@ -101,6 +113,10 @@ impl CustomConnectorSourcePropertiesBuilder {
     ) -> Self {
         self.data_transfer_api = input;
         self
+    }
+    /// <p>The API of the connector application that Amazon AppFlow uses to transfer your data.</p>
+    pub fn get_data_transfer_api(&self) -> &::std::option::Option<crate::types::DataTransferApi> {
+        &self.data_transfer_api
     }
     /// Consumes the builder and constructs a [`CustomConnectorSourceProperties`](crate::types::CustomConnectorSourceProperties).
     pub fn build(self) -> crate::types::CustomConnectorSourceProperties {

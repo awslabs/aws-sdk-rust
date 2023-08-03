@@ -36,6 +36,10 @@ impl PutAppInstanceRetentionSettingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutAppInstanceRetentionSettings as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_app_instance_retention_settings::builders::PutAppInstanceRetentionSettingsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl PutAppInstanceRetentionSettingsFluentBuilder {
         self.inner = self.inner.set_app_instance_arn(input);
         self
     }
+    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    pub fn get_app_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_instance_arn()
+    }
     /// <p>The time in days to retain data. Data type: number.</p>
     pub fn app_instance_retention_settings(
         mut self,
@@ -121,5 +129,11 @@ impl PutAppInstanceRetentionSettingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_app_instance_retention_settings(input);
         self
+    }
+    /// <p>The time in days to retain data. Data type: number.</p>
+    pub fn get_app_instance_retention_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::AppInstanceRetentionSettings> {
+        self.inner.get_app_instance_retention_settings()
     }
 }

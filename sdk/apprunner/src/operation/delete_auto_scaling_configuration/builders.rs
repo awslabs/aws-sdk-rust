@@ -36,6 +36,10 @@ impl DeleteAutoScalingConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteAutoScalingConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_auto_scaling_configuration::builders::DeleteAutoScalingConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -107,5 +111,12 @@ impl DeleteAutoScalingConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_auto_scaling_configuration_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want to delete.</p>
+    /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is deleted.</p>
+    pub fn get_auto_scaling_configuration_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_auto_scaling_configuration_arn()
     }
 }

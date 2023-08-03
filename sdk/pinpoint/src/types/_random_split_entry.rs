@@ -56,6 +56,10 @@ impl RandomSplitEntryBuilder {
         self.next_activity = input;
         self
     }
+    /// <p>The unique identifier for the next activity to perform, after completing the activity for the path.</p>
+    pub fn get_next_activity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_activity
+    }
     /// <p>The percentage of participants to send down the activity path.</p>
     /// <p>To determine which participants are sent down each path, Amazon Pinpoint applies a probability-based algorithm to the percentages that you specify for the paths. Therefore, the actual percentage of participants who are sent down a path may not be equal to the percentage that you specify.</p>
     pub fn percentage(mut self, input: i32) -> Self {
@@ -67,6 +71,11 @@ impl RandomSplitEntryBuilder {
     pub fn set_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.percentage = input;
         self
+    }
+    /// <p>The percentage of participants to send down the activity path.</p>
+    /// <p>To determine which participants are sent down each path, Amazon Pinpoint applies a probability-based algorithm to the percentages that you specify for the paths. Therefore, the actual percentage of participants who are sent down a path may not be equal to the percentage that you specify.</p>
+    pub fn get_percentage(&self) -> &::std::option::Option<i32> {
+        &self.percentage
     }
     /// Consumes the builder and constructs a [`RandomSplitEntry`](crate::types::RandomSplitEntry).
     pub fn build(self) -> crate::types::RandomSplitEntry {

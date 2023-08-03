@@ -88,6 +88,10 @@ impl GetPrefetchScheduleOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the prefetch schedule.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.</p>
     pub fn consumption(mut self, input: crate::types::PrefetchConsumption) -> Self {
         self.consumption = ::std::option::Option::Some(input);
@@ -101,6 +105,10 @@ impl GetPrefetchScheduleOutputBuilder {
         self.consumption = input;
         self
     }
+    /// <p>Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.</p>
+    pub fn get_consumption(&self) -> &::std::option::Option<crate::types::PrefetchConsumption> {
+        &self.consumption
+    }
     /// <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -110,6 +118,10 @@ impl GetPrefetchScheduleOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The name of the playback configuration to create the prefetch schedule for.</p>
     pub fn playback_configuration_name(
@@ -127,6 +139,10 @@ impl GetPrefetchScheduleOutputBuilder {
         self.playback_configuration_name = input;
         self
     }
+    /// <p>The name of the playback configuration to create the prefetch schedule for.</p>
+    pub fn get_playback_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.playback_configuration_name
+    }
     /// <p>A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).</p>
     pub fn retrieval(mut self, input: crate::types::PrefetchRetrieval) -> Self {
         self.retrieval = ::std::option::Option::Some(input);
@@ -140,6 +156,10 @@ impl GetPrefetchScheduleOutputBuilder {
         self.retrieval = input;
         self
     }
+    /// <p>A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).</p>
+    pub fn get_retrieval(&self) -> &::std::option::Option<crate::types::PrefetchRetrieval> {
+        &self.retrieval
+    }
     /// <p>An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same playback configuration.</p>
     pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_id = ::std::option::Option::Some(input.into());
@@ -149,6 +169,10 @@ impl GetPrefetchScheduleOutputBuilder {
     pub fn set_stream_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_id = input;
         self
+    }
+    /// <p>An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same playback configuration.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

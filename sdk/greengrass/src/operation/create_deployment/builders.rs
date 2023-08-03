@@ -36,6 +36,12 @@ impl CreateDeploymentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDeployment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_deployment::builders::CreateDeploymentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl CreateDeploymentFluentBuilder {
         self.inner = self.inner.set_amzn_client_token(input);
         self
     }
+    /// A client token used to correlate requests and responses.
+    pub fn get_amzn_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_amzn_client_token()
+    }
     /// The ID of the deployment if you wish to redeploy a previous deployment.
     pub fn deployment_id(
         mut self,
@@ -148,6 +158,10 @@ impl CreateDeploymentFluentBuilder {
         self.inner = self.inner.set_deployment_id(input);
         self
     }
+    /// The ID of the deployment if you wish to redeploy a previous deployment.
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_deployment_id()
+    }
     /// The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid.
     pub fn deployment_type(mut self, input: crate::types::DeploymentType) -> Self {
         self.inner = self.inner.deployment_type(input);
@@ -161,6 +175,10 @@ impl CreateDeploymentFluentBuilder {
         self.inner = self.inner.set_deployment_type(input);
         self
     }
+    /// The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid.
+    pub fn get_deployment_type(&self) -> &::std::option::Option<crate::types::DeploymentType> {
+        self.inner.get_deployment_type()
+    }
     /// The ID of the Greengrass group.
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_id(input.into());
@@ -170,6 +188,10 @@ impl CreateDeploymentFluentBuilder {
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_id(input);
         self
+    }
+    /// The ID of the Greengrass group.
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_id()
     }
     /// The ID of the group version to be deployed.
     pub fn group_version_id(
@@ -186,5 +208,9 @@ impl CreateDeploymentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_group_version_id(input);
         self
+    }
+    /// The ID of the group version to be deployed.
+    pub fn get_group_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_version_id()
     }
 }

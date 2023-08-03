@@ -64,6 +64,12 @@ impl ResourceDetailsBuilder {
         self.aws_ec2_instance = input;
         self
     }
+    /// <p>An object that contains details about the Amazon EC2 instance involved in the finding.</p>
+    pub fn get_aws_ec2_instance(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsEc2InstanceDetails> {
+        &self.aws_ec2_instance
+    }
     /// <p>An object that contains details about the Amazon ECR container image involved in the finding.</p>
     pub fn aws_ecr_container_image(
         mut self,
@@ -80,6 +86,12 @@ impl ResourceDetailsBuilder {
         self.aws_ecr_container_image = input;
         self
     }
+    /// <p>An object that contains details about the Amazon ECR container image involved in the finding.</p>
+    pub fn get_aws_ecr_container_image(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsEcrContainerImageDetails> {
+        &self.aws_ecr_container_image
+    }
     /// <p>A summary of the information about an AWS Lambda function affected by a finding.</p>
     pub fn aws_lambda_function(mut self, input: crate::types::AwsLambdaFunctionDetails) -> Self {
         self.aws_lambda_function = ::std::option::Option::Some(input);
@@ -92,6 +104,12 @@ impl ResourceDetailsBuilder {
     ) -> Self {
         self.aws_lambda_function = input;
         self
+    }
+    /// <p>A summary of the information about an AWS Lambda function affected by a finding.</p>
+    pub fn get_aws_lambda_function(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsLambdaFunctionDetails> {
+        &self.aws_lambda_function
     }
     /// Consumes the builder and constructs a [`ResourceDetails`](crate::types::ResourceDetails).
     pub fn build(self) -> crate::types::ResourceDetails {

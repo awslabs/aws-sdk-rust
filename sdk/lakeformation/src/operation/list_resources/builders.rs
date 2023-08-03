@@ -36,6 +36,12 @@ impl ListResourcesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListResources as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_resources::builders::ListResourcesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +142,12 @@ impl ListResourcesFluentBuilder {
         self.inner = self.inner.set_filter_condition_list(input);
         self
     }
+    /// <p>Any applicable row-level and/or column-level filtering conditions for the resources.</p>
+    pub fn get_filter_condition_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterCondition>> {
+        self.inner.get_filter_condition_list()
+    }
     /// <p>The maximum number of resource results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -146,6 +158,10 @@ impl ListResourcesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of resource results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>A continuation token, if this is not the first call to retrieve these resources.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -155,5 +171,9 @@ impl ListResourcesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A continuation token, if this is not the first call to retrieve these resources.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

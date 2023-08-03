@@ -61,6 +61,13 @@ impl UpdateThemePermissionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateThemePermissions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_theme_permissions::builders::UpdateThemePermissionsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -157,6 +164,10 @@ impl UpdateThemePermissionsFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The ID of the Amazon Web Services account that contains the theme.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The ID for the theme.</p>
     pub fn theme_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.theme_id(input.into());
@@ -166,6 +177,10 @@ impl UpdateThemePermissionsFluentBuilder {
     pub fn set_theme_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_theme_id(input);
         self
+    }
+    /// <p>The ID for the theme.</p>
+    pub fn get_theme_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_theme_id()
     }
     /// Appends an item to `GrantPermissions`.
     ///
@@ -184,6 +199,12 @@ impl UpdateThemePermissionsFluentBuilder {
         self.inner = self.inner.set_grant_permissions(input);
         self
     }
+    /// <p>A list of resource permissions to be granted for the theme.</p>
+    pub fn get_grant_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+        self.inner.get_grant_permissions()
+    }
     /// Appends an item to `RevokePermissions`.
     ///
     /// To override the contents of this collection use [`set_revoke_permissions`](Self::set_revoke_permissions).
@@ -200,5 +221,11 @@ impl UpdateThemePermissionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_revoke_permissions(input);
         self
+    }
+    /// <p>A list of resource permissions to be revoked from the theme.</p>
+    pub fn get_revoke_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+        self.inner.get_revoke_permissions()
     }
 }

@@ -70,6 +70,10 @@ impl RegionInfoBuilder {
         self.sse_kms_key_id = input;
         self
     }
+    /// <p>The ID of the KMS key used to encrypt the data in this Amazon Web Services Region.</p>
+    pub fn get_sse_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sse_kms_key_id
+    }
     /// <p>The status of the Amazon Web Services Region in the replication set.</p>
     pub fn status(mut self, input: crate::types::RegionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -79,6 +83,10 @@ impl RegionInfoBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RegionStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the Amazon Web Services Region in the replication set.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::RegionStatus> {
+        &self.status
     }
     /// <p>Information displayed about the status of the Amazon Web Services Region.</p>
     pub fn status_message(
@@ -96,6 +104,10 @@ impl RegionInfoBuilder {
         self.status_message = input;
         self
     }
+    /// <p>Information displayed about the status of the Amazon Web Services Region.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>The most recent date and time that Incident Manager updated the Amazon Web Services Region's status.</p>
     pub fn status_update_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.status_update_date_time = ::std::option::Option::Some(input);
@@ -108,6 +120,12 @@ impl RegionInfoBuilder {
     ) -> Self {
         self.status_update_date_time = input;
         self
+    }
+    /// <p>The most recent date and time that Incident Manager updated the Amazon Web Services Region's status.</p>
+    pub fn get_status_update_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.status_update_date_time
     }
     /// Consumes the builder and constructs a [`RegionInfo`](crate::types::RegionInfo).
     pub fn build(self) -> crate::types::RegionInfo {

@@ -64,6 +64,10 @@ impl ConditionalBranchBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the branch. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Contains the expression to evaluate. If the condition is true, the branch's actions are taken.</p>
     pub fn condition(mut self, input: crate::types::Condition) -> Self {
         self.condition = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl ConditionalBranchBuilder {
     pub fn set_condition(mut self, input: ::std::option::Option<crate::types::Condition>) -> Self {
         self.condition = input;
         self
+    }
+    /// <p>Contains the expression to evaluate. If the condition is true, the branch's actions are taken.</p>
+    pub fn get_condition(&self) -> &::std::option::Option<crate::types::Condition> {
+        &self.condition
     }
     /// <p>The next step in the conversation.</p>
     pub fn next_step(mut self, input: crate::types::DialogState) -> Self {
@@ -87,6 +95,10 @@ impl ConditionalBranchBuilder {
         self.next_step = input;
         self
     }
+    /// <p>The next step in the conversation.</p>
+    pub fn get_next_step(&self) -> &::std::option::Option<crate::types::DialogState> {
+        &self.next_step
+    }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
     pub fn response(mut self, input: crate::types::ResponseSpecification) -> Self {
         self.response = ::std::option::Option::Some(input);
@@ -99,6 +111,10 @@ impl ConditionalBranchBuilder {
     ) -> Self {
         self.response = input;
         self
+    }
+    /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+    pub fn get_response(&self) -> &::std::option::Option<crate::types::ResponseSpecification> {
+        &self.response
     }
     /// Consumes the builder and constructs a [`ConditionalBranch`](crate::types::ConditionalBranch).
     pub fn build(self) -> crate::types::ConditionalBranch {

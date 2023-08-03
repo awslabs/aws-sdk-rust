@@ -49,6 +49,10 @@ impl CrawlerNodeDetailsBuilder {
         self.crawls = input;
         self
     }
+    /// <p>A list of crawls represented by the crawl node.</p>
+    pub fn get_crawls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Crawl>> {
+        &self.crawls
+    }
     /// Consumes the builder and constructs a [`CrawlerNodeDetails`](crate::types::CrawlerNodeDetails).
     pub fn build(self) -> crate::types::CrawlerNodeDetails {
         crate::types::CrawlerNodeDetails {

@@ -40,6 +40,10 @@ impl DeleteResourcePolicyInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The ARN of the policy to delete.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Consumes the builder and constructs a [`DeleteResourcePolicyInput`](crate::operation::delete_resource_policy::DeleteResourcePolicyInput).
     pub fn build(
         self,

@@ -36,6 +36,12 @@ impl CreateEnvironmentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateEnvironment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_environment::builders::CreateEnvironmentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl CreateEnvironmentFluentBuilder {
         self.inner = self.inner.set_application_name(input);
         self
     }
+    /// <p>The name of the application that is associated with this environment.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_name()
+    }
     /// <p>A unique name for the environment.</p>
     /// <p>Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and hyphens. It can't start or end with a hyphen. This name must be unique within a region in your account. If the specified name already exists in the region, Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
     /// <p>If you don't specify the <code>CNAMEPrefix</code> parameter, the environment name becomes part of the CNAME, and therefore part of the visible URL for your application.</p>
@@ -152,6 +162,12 @@ impl CreateEnvironmentFluentBuilder {
         self.inner = self.inner.set_environment_name(input);
         self
     }
+    /// <p>A unique name for the environment.</p>
+    /// <p>Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and hyphens. It can't start or end with a hyphen. This name must be unique within a region in your account. If the specified name already exists in the region, Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
+    /// <p>If you don't specify the <code>CNAMEPrefix</code> parameter, the environment name becomes part of the CNAME, and therefore part of the visible URL for your application.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_name()
+    }
     /// <p>The name of the group to which the target environment belongs. Specify a group name only if the environment's name is specified in an environment manifest and not with the environment name parameter. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest (env.yaml)</a> for details.</p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_name(input.into());
@@ -161,6 +177,10 @@ impl CreateEnvironmentFluentBuilder {
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_name(input);
         self
+    }
+    /// <p>The name of the group to which the target environment belongs. Specify a group name only if the environment's name is specified in an environment manifest and not with the environment name parameter. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest (env.yaml)</a> for details.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_name()
     }
     /// <p>Your description for this environment.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -172,6 +192,10 @@ impl CreateEnvironmentFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>Your description for this environment.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>If specified, the environment attempts to use this value as the prefix for the CNAME in your Elastic Beanstalk environment URL. If not specified, the CNAME is generated automatically by appending a random alphanumeric string to the environment name.</p>
     pub fn cname_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cname_prefix(input.into());
@@ -182,6 +206,10 @@ impl CreateEnvironmentFluentBuilder {
         self.inner = self.inner.set_cname_prefix(input);
         self
     }
+    /// <p>If specified, the environment attempts to use this value as the prefix for the CNAME in your Elastic Beanstalk environment URL. If not specified, the CNAME is generated automatically by appending a random alphanumeric string to the environment name.</p>
+    pub fn get_cname_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cname_prefix()
+    }
     /// <p>Specifies the tier to use in creating this environment. The environment tier that you choose determines whether Elastic Beanstalk provisions resources to support a web application that handles HTTP(S) requests or a web application that handles background-processing tasks.</p>
     pub fn tier(mut self, input: crate::types::EnvironmentTier) -> Self {
         self.inner = self.inner.tier(input);
@@ -191,6 +219,10 @@ impl CreateEnvironmentFluentBuilder {
     pub fn set_tier(mut self, input: ::std::option::Option<crate::types::EnvironmentTier>) -> Self {
         self.inner = self.inner.set_tier(input);
         self
+    }
+    /// <p>Specifies the tier to use in creating this environment. The environment tier that you choose determines whether Elastic Beanstalk provisions resources to support a web application that handles HTTP(S) requests or a web application that handles background-processing tasks.</p>
+    pub fn get_tier(&self) -> &::std::option::Option<crate::types::EnvironmentTier> {
+        self.inner.get_tier()
     }
     /// Appends an item to `Tags`.
     ///
@@ -209,6 +241,10 @@ impl CreateEnvironmentFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Specifies the tags applied to resources in the environment.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>The name of the application version to deploy.</p>
     /// <p>Default: If not specified, Elastic Beanstalk attempts to deploy the sample application.</p>
     pub fn version_label(
@@ -226,6 +262,11 @@ impl CreateEnvironmentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_version_label(input);
         self
+    }
+    /// <p>The name of the application version to deploy.</p>
+    /// <p>Default: If not specified, Elastic Beanstalk attempts to deploy the sample application.</p>
+    pub fn get_version_label(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version_label()
     }
     /// <p>The name of the Elastic Beanstalk configuration template to use with the environment.</p> <note>
     /// <p>If you specify <code>TemplateName</code>, then don't specify <code>SolutionStackName</code>.</p>
@@ -247,6 +288,12 @@ impl CreateEnvironmentFluentBuilder {
         self.inner = self.inner.set_template_name(input);
         self
     }
+    /// <p>The name of the Elastic Beanstalk configuration template to use with the environment.</p> <note>
+    /// <p>If you specify <code>TemplateName</code>, then don't specify <code>SolutionStackName</code>.</p>
+    /// </note>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_name()
+    }
     /// <p>The name of an Elastic Beanstalk solution stack (platform version) to use with the environment. If specified, Elastic Beanstalk sets the configuration values to the default values associated with the specified solution stack. For a list of current solution stacks, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html">Elastic Beanstalk Supported Platforms</a> in the <i>AWS Elastic Beanstalk Platforms</i> guide.</p> <note>
     /// <p>If you specify <code>SolutionStackName</code>, don't specify <code>PlatformArn</code> or <code>TemplateName</code>.</p>
     /// </note>
@@ -267,6 +314,12 @@ impl CreateEnvironmentFluentBuilder {
         self.inner = self.inner.set_solution_stack_name(input);
         self
     }
+    /// <p>The name of an Elastic Beanstalk solution stack (platform version) to use with the environment. If specified, Elastic Beanstalk sets the configuration values to the default values associated with the specified solution stack. For a list of current solution stacks, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html">Elastic Beanstalk Supported Platforms</a> in the <i>AWS Elastic Beanstalk Platforms</i> guide.</p> <note>
+    /// <p>If you specify <code>SolutionStackName</code>, don't specify <code>PlatformArn</code> or <code>TemplateName</code>.</p>
+    /// </note>
+    pub fn get_solution_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_solution_stack_name()
+    }
     /// <p>The Amazon Resource Name (ARN) of the custom platform to use with the environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note>
     /// <p>If you specify <code>PlatformArn</code>, don't specify <code>SolutionStackName</code>.</p>
     /// </note>
@@ -280,6 +333,12 @@ impl CreateEnvironmentFluentBuilder {
     pub fn set_platform_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_platform_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the custom platform to use with the environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note>
+    /// <p>If you specify <code>PlatformArn</code>, don't specify <code>SolutionStackName</code>.</p>
+    /// </note>
+    pub fn get_platform_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_platform_arn()
     }
     /// Appends an item to `OptionSettings`.
     ///
@@ -298,6 +357,12 @@ impl CreateEnvironmentFluentBuilder {
         self.inner = self.inner.set_option_settings(input);
         self
     }
+    /// <p>If specified, AWS Elastic Beanstalk sets the specified configuration options to the requested value in the configuration set for the new environment. These override the values obtained from the solution stack or the configuration template.</p>
+    pub fn get_option_settings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>> {
+        self.inner.get_option_settings()
+    }
     /// Appends an item to `OptionsToRemove`.
     ///
     /// To override the contents of this collection use [`set_options_to_remove`](Self::set_options_to_remove).
@@ -315,6 +380,12 @@ impl CreateEnvironmentFluentBuilder {
         self.inner = self.inner.set_options_to_remove(input);
         self
     }
+    /// <p>A list of custom user-defined configuration options to remove from the configuration set for this new environment.</p>
+    pub fn get_options_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>> {
+        self.inner.get_options_to_remove()
+    }
     /// <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's operations role. If specified, Elastic Beanstalk uses the operations role for permissions to downstream services during this call and during subsequent calls acting on this environment. To specify an operations role, you must have the <code>iam:PassRole</code> permission for the role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
     pub fn operations_role(
         mut self,
@@ -330,5 +401,9 @@ impl CreateEnvironmentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_operations_role(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's operations role. If specified, Elastic Beanstalk uses the operations role for permissions to downstream services during this call and during subsequent calls acting on this environment. To specify an operations role, you must have the <code>iam:PassRole</code> permission for the role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+    pub fn get_operations_role(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_operations_role()
     }
 }

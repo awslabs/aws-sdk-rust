@@ -48,6 +48,10 @@ impl SortDefinitionBuilder {
         self.key = input;
         self
     }
+    /// <p>The key that's used to sort the data.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>The order that's used to sort the data.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl SortDefinitionBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p>The order that's used to sort the data.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.sort_order
     }
     /// Consumes the builder and constructs a [`SortDefinition`](crate::types::SortDefinition).
     pub fn build(self) -> crate::types::SortDefinition {

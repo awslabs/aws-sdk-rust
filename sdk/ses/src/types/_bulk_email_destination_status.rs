@@ -127,6 +127,27 @@ impl BulkEmailDestinationStatusBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of a message sent using the <code>SendBulkTemplatedEmail</code> operation.</p>
+    /// <p>Possible values for this parameter include:</p>
+    /// <ul>
+    /// <li> <p> <code>Success</code>: Amazon SES accepted the message, and will attempt to deliver it to the recipients.</p> </li>
+    /// <li> <p> <code>MessageRejected</code>: The message was rejected because it contained a virus.</p> </li>
+    /// <li> <p> <code>MailFromDomainNotVerified</code>: The sender's email address or domain was not verified.</p> </li>
+    /// <li> <p> <code>ConfigurationSetDoesNotExist</code>: The configuration set you specified does not exist.</p> </li>
+    /// <li> <p> <code>TemplateDoesNotExist</code>: The template you specified does not exist.</p> </li>
+    /// <li> <p> <code>AccountSuspended</code>: Your account has been shut down because of issues related to your email sending practices.</p> </li>
+    /// <li> <p> <code>AccountThrottled</code>: The number of emails you can send has been reduced because your account has exceeded its allocated sending limit.</p> </li>
+    /// <li> <p> <code>AccountDailyQuotaExceeded</code>: You have reached or exceeded the maximum number of emails you can send from your account in a 24-hour period.</p> </li>
+    /// <li> <p> <code>InvalidSendingPoolName</code>: The configuration set you specified refers to an IP pool that does not exist.</p> </li>
+    /// <li> <p> <code>AccountSendingPaused</code>: Email sending for the Amazon SES account was disabled using the <code>UpdateAccountSendingEnabled</code> operation.</p> </li>
+    /// <li> <p> <code>ConfigurationSetSendingPaused</code>: Email sending for this configuration set was disabled using the <code>UpdateConfigurationSetSendingEnabled</code> operation.</p> </li>
+    /// <li> <p> <code>InvalidParameterValue</code>: One or more of the parameters you specified when calling this operation was invalid. See the error message for additional information.</p> </li>
+    /// <li> <p> <code>TransientFailure</code>: Amazon SES was unable to process your request because of a temporary issue.</p> </li>
+    /// <li> <p> <code>Failed</code>: Amazon SES was unable to process your request. See the error message for additional information.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::BulkEmailStatus> {
+        &self.status
+    }
     /// <p>A description of an error that prevented a message being sent using the <code>SendBulkTemplatedEmail</code> operation.</p>
     pub fn error(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error = ::std::option::Option::Some(input.into());
@@ -137,6 +158,10 @@ impl BulkEmailDestinationStatusBuilder {
         self.error = input;
         self
     }
+    /// <p>A description of an error that prevented a message being sent using the <code>SendBulkTemplatedEmail</code> operation.</p>
+    pub fn get_error(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error
+    }
     /// <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code> operation.</p>
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_id = ::std::option::Option::Some(input.into());
@@ -146,6 +171,10 @@ impl BulkEmailDestinationStatusBuilder {
     pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_id = input;
         self
+    }
+    /// <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code> operation.</p>
+    pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_id
     }
     /// Consumes the builder and constructs a [`BulkEmailDestinationStatus`](crate::types::BulkEmailDestinationStatus).
     pub fn build(self) -> crate::types::BulkEmailDestinationStatus {

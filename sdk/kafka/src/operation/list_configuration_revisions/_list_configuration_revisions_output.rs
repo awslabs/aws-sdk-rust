@@ -55,6 +55,10 @@ impl ListConfigurationRevisionsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Paginated results marker.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `revisions`.
     ///
     /// To override the contents of this collection use [`set_revisions`](Self::set_revisions).
@@ -73,6 +77,12 @@ impl ListConfigurationRevisionsOutputBuilder {
     ) -> Self {
         self.revisions = input;
         self
+    }
+    /// <p>List of ConfigurationRevision objects.</p>
+    pub fn get_revisions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationRevision>> {
+        &self.revisions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

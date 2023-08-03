@@ -49,6 +49,12 @@ impl UpdateDataLakeInputBuilder {
         self.configurations = input;
         self
     }
+    /// <p>Specify the Region or Regions that will contribute data to the rollup region.</p>
+    pub fn get_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakeConfiguration>> {
+        &self.configurations
+    }
     /// Consumes the builder and constructs a [`UpdateDataLakeInput`](crate::operation::update_data_lake::UpdateDataLakeInput).
     pub fn build(
         self,

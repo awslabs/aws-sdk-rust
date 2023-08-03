@@ -40,6 +40,10 @@ impl DeleteBuildBatchInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the batch build to delete.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`DeleteBuildBatchInput`](crate::operation::delete_build_batch::DeleteBuildBatchInput).
     pub fn build(
         self,

@@ -113,6 +113,10 @@ impl AwsCodeBuildProjectEnvironmentBuilder {
         self.certificate = input;
         self
     }
+    /// <p>The certificate to use with this build project.</p>
+    pub fn get_certificate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate
+    }
     /// Appends an item to `environment_variables`.
     ///
     /// To override the contents of this collection use [`set_environment_variables`](Self::set_environment_variables).
@@ -139,6 +143,14 @@ impl AwsCodeBuildProjectEnvironmentBuilder {
         self.environment_variables = input;
         self
     }
+    /// <p>A set of environment variables to make available to builds for the build project.</p>
+    pub fn get_environment_variables(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails>,
+    > {
+        &self.environment_variables
+    }
     /// <p>Whether to allow the Docker daemon to run inside a Docker container. Set to <code>true</code> if the build project is used to build Docker images.</p>
     pub fn privileged_mode(mut self, input: bool) -> Self {
         self.privileged_mode = ::std::option::Option::Some(input);
@@ -148,6 +160,10 @@ impl AwsCodeBuildProjectEnvironmentBuilder {
     pub fn set_privileged_mode(mut self, input: ::std::option::Option<bool>) -> Self {
         self.privileged_mode = input;
         self
+    }
+    /// <p>Whether to allow the Docker daemon to run inside a Docker container. Set to <code>true</code> if the build project is used to build Docker images.</p>
+    pub fn get_privileged_mode(&self) -> &::std::option::Option<bool> {
+        &self.privileged_mode
     }
     /// <p>The type of credentials CodeBuild uses to pull images in your build.</p>
     /// <p>Valid values:</p>
@@ -177,6 +193,16 @@ impl AwsCodeBuildProjectEnvironmentBuilder {
         self.image_pull_credentials_type = input;
         self
     }
+    /// <p>The type of credentials CodeBuild uses to pull images in your build.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>CODEBUILD</code> specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust the CodeBuild service principal.</p> </li>
+    /// <li> <p> <code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role.</p> </li>
+    /// </ul>
+    /// <p>When you use a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When you use an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.</p>
+    pub fn get_image_pull_credentials_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_pull_credentials_type
+    }
     /// <p>The credentials for access to a private registry.</p>
     pub fn registry_credential(
         mut self,
@@ -195,6 +221,13 @@ impl AwsCodeBuildProjectEnvironmentBuilder {
         self.registry_credential = input;
         self
     }
+    /// <p>The credentials for access to a private registry.</p>
+    pub fn get_registry_credential(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsCodeBuildProjectEnvironmentRegistryCredential>
+    {
+        &self.registry_credential
+    }
     /// <p>The type of build environment to use for related builds.</p>
     /// <p>The environment type <code>ARM_CONTAINER</code> is available only in Regions US East (N. Virginia), US East (Ohio), US West (Oregon), Europe (Ireland), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and Europe (Frankfurt).</p>
     /// <p>The environment type <code>LINUX_CONTAINER</code> with compute type build.general1.2xlarge is available only in Regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p>
@@ -212,6 +245,14 @@ impl AwsCodeBuildProjectEnvironmentBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of build environment to use for related builds.</p>
+    /// <p>The environment type <code>ARM_CONTAINER</code> is available only in Regions US East (N. Virginia), US East (Ohio), US West (Oregon), Europe (Ireland), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and Europe (Frankfurt).</p>
+    /// <p>The environment type <code>LINUX_CONTAINER</code> with compute type build.general1.2xlarge is available only in Regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p>
+    /// <p>The environment type <code>LINUX_GPU_CONTAINER</code> is available only in Regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p>
+    /// <p>Valid values: <code>WINDOWS_CONTAINER</code> | <code>LINUX_CONTAINER</code> | <code>LINUX_GPU_CONTAINER</code> | <code>ARM_CONTAINER</code> </p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`AwsCodeBuildProjectEnvironment`](crate::types::AwsCodeBuildProjectEnvironment).
     pub fn build(self) -> crate::types::AwsCodeBuildProjectEnvironment {

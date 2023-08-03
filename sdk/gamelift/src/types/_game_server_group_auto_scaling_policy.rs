@@ -53,6 +53,10 @@ impl GameServerGroupAutoScalingPolicyBuilder {
         self.estimated_instance_warmup = input;
         self
     }
+    /// <p>Length of time, in seconds, it takes for a new instance to start new game server processes and register with Amazon GameLift FleetIQ. Specifying a warm-up time can be useful, particularly with game servers that take a long time to start up, because it avoids prematurely starting new instances. </p>
+    pub fn get_estimated_instance_warmup(&self) -> &::std::option::Option<i32> {
+        &self.estimated_instance_warmup
+    }
     /// <p>Settings for a target-based scaling policy applied to Auto Scaling group. These settings are used to create a target-based policy that tracks the Amazon GameLift FleetIQ metric <code>"PercentUtilizedGameServers"</code> and specifies a target value for the metric. As player usage changes, the policy triggers to adjust the game server group capacity so that the metric returns to the target value. </p>
     pub fn target_tracking_configuration(
         mut self,
@@ -68,6 +72,12 @@ impl GameServerGroupAutoScalingPolicyBuilder {
     ) -> Self {
         self.target_tracking_configuration = input;
         self
+    }
+    /// <p>Settings for a target-based scaling policy applied to Auto Scaling group. These settings are used to create a target-based policy that tracks the Amazon GameLift FleetIQ metric <code>"PercentUtilizedGameServers"</code> and specifies a target value for the metric. As player usage changes, the policy triggers to adjust the game server group capacity so that the metric returns to the target value. </p>
+    pub fn get_target_tracking_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::TargetTrackingConfiguration> {
+        &self.target_tracking_configuration
     }
     /// Consumes the builder and constructs a [`GameServerGroupAutoScalingPolicy`](crate::types::GameServerGroupAutoScalingPolicy).
     pub fn build(self) -> crate::types::GameServerGroupAutoScalingPolicy {

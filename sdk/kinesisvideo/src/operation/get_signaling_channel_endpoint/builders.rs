@@ -38,6 +38,10 @@ impl GetSignalingChannelEndpointFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetSignalingChannelEndpoint as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_signaling_channel_endpoint::builders::GetSignalingChannelEndpointInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +132,10 @@ impl GetSignalingChannelEndpointFluentBuilder {
         self.inner = self.inner.set_channel_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the signalling channel for which you want to get an endpoint.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_arn()
+    }
     /// <p>A structure containing the endpoint configuration for the <code>SINGLE_MASTER</code> channel type.</p>
     pub fn single_master_channel_endpoint_configuration(
         mut self,
@@ -147,5 +155,12 @@ impl GetSignalingChannelEndpointFluentBuilder {
             .inner
             .set_single_master_channel_endpoint_configuration(input);
         self
+    }
+    /// <p>A structure containing the endpoint configuration for the <code>SINGLE_MASTER</code> channel type.</p>
+    pub fn get_single_master_channel_endpoint_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SingleMasterChannelEndpointConfiguration> {
+        self.inner
+            .get_single_master_channel_endpoint_configuration()
     }
 }

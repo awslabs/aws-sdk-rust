@@ -61,6 +61,10 @@ impl UpdateEndpointInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The unique identifier for the endpoint.</p>
     pub fn endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_id = ::std::option::Option::Some(input.into());
@@ -70,6 +74,10 @@ impl UpdateEndpointInputBuilder {
     pub fn set_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_id = input;
         self
+    }
+    /// <p>The unique identifier for the endpoint.</p>
+    pub fn get_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_id
     }
     /// <p>Specifies the channel type and other settings for an endpoint.</p>
     pub fn endpoint_request(mut self, input: crate::types::EndpointRequest) -> Self {
@@ -83,6 +91,10 @@ impl UpdateEndpointInputBuilder {
     ) -> Self {
         self.endpoint_request = input;
         self
+    }
+    /// <p>Specifies the channel type and other settings for an endpoint.</p>
+    pub fn get_endpoint_request(&self) -> &::std::option::Option<crate::types::EndpointRequest> {
+        &self.endpoint_request
     }
     /// Consumes the builder and constructs a [`UpdateEndpointInput`](crate::operation::update_endpoint::UpdateEndpointInput).
     pub fn build(

@@ -48,6 +48,10 @@ impl MailDomainSummaryBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The domain name.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>Whether the domain is default or not.</p>
     pub fn default_domain(mut self, input: bool) -> Self {
         self.default_domain = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl MailDomainSummaryBuilder {
     pub fn set_default_domain(mut self, input: ::std::option::Option<bool>) -> Self {
         self.default_domain = input;
         self
+    }
+    /// <p>Whether the domain is default or not.</p>
+    pub fn get_default_domain(&self) -> &::std::option::Option<bool> {
+        &self.default_domain
     }
     /// Consumes the builder and constructs a [`MailDomainSummary`](crate::types::MailDomainSummary).
     pub fn build(self) -> crate::types::MailDomainSummary {

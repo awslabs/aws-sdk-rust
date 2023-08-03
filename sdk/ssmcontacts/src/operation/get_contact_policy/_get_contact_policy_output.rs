@@ -55,6 +55,10 @@ impl GetContactPolicyOutputBuilder {
         self.contact_arn = input;
         self
     }
+    /// <p>The ARN of the contact or escalation plan.</p>
+    pub fn get_contact_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_arn
+    }
     /// <p>Details about the resource policy attached to the contact or escalation plan.</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl GetContactPolicyOutputBuilder {
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy = input;
         self
+    }
+    /// <p>Details about the resource policy attached to the contact or escalation plan.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

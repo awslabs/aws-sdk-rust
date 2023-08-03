@@ -63,6 +63,10 @@ impl CreateFieldInputBuilder {
         self.domain_id = input;
         self
     }
+    /// <p>The unique identifier of the Cases domain. </p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_id
+    }
     /// <p>The name of the field.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl CreateFieldInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the field.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Defines the data type, some system constraints, and default display of the field.</p>
     pub fn r#type(mut self, input: crate::types::FieldType) -> Self {
@@ -83,6 +91,10 @@ impl CreateFieldInputBuilder {
         self.r#type = input;
         self
     }
+    /// <p>Defines the data type, some system constraints, and default display of the field.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::FieldType> {
+        &self.r#type
+    }
     /// <p>The description of the field.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -92,6 +104,10 @@ impl CreateFieldInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the field.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`CreateFieldInput`](crate::operation::create_field::CreateFieldInput).
     pub fn build(

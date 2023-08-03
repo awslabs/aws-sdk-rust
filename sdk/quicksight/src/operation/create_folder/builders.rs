@@ -36,6 +36,10 @@ impl CreateFolderFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateFolder as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_folder::builders::CreateFolderInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl CreateFolderFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The ID for the Amazon Web Services account where you want to create the folder.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The ID of the folder.</p>
     pub fn folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.folder_id(input.into());
@@ -134,6 +142,10 @@ impl CreateFolderFluentBuilder {
         self.inner = self.inner.set_folder_id(input);
         self
     }
+    /// <p>The ID of the folder.</p>
+    pub fn get_folder_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_folder_id()
+    }
     /// <p>The name of the folder.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -143,6 +155,10 @@ impl CreateFolderFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the folder.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The type of folder. By default, <code>folderType</code> is <code>SHARED</code>.</p>
     pub fn folder_type(mut self, input: crate::types::FolderType) -> Self {
@@ -156,6 +172,10 @@ impl CreateFolderFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_folder_type(input);
         self
+    }
+    /// <p>The type of folder. By default, <code>folderType</code> is <code>SHARED</code>.</p>
+    pub fn get_folder_type(&self) -> &::std::option::Option<crate::types::FolderType> {
+        self.inner.get_folder_type()
     }
     /// <p>The Amazon Resource Name (ARN) for the parent folder.</p>
     /// <p> <code>ParentFolderArn</code> can be null. An empty <code>parentFolderArn</code> creates a root-level folder.</p>
@@ -174,6 +194,11 @@ impl CreateFolderFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_parent_folder_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the parent folder.</p>
+    /// <p> <code>ParentFolderArn</code> can be null. An empty <code>parentFolderArn</code> creates a root-level folder.</p>
+    pub fn get_parent_folder_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_parent_folder_arn()
     }
     /// Appends an item to `Permissions`.
     ///
@@ -194,6 +219,13 @@ impl CreateFolderFluentBuilder {
         self.inner = self.inner.set_permissions(input);
         self
     }
+    /// <p>A structure that describes the principals and the resource-level permissions of a folder.</p>
+    /// <p>To specify no permissions, omit <code>Permissions</code>.</p>
+    pub fn get_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+        self.inner.get_permissions()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -210,5 +242,9 @@ impl CreateFolderFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Tags for the folder.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

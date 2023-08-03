@@ -54,6 +54,12 @@ impl DescribeStackResourceOutputBuilder {
         self.stack_resource_detail = input;
         self
     }
+    /// <p>A <code>StackResourceDetail</code> structure containing the description of the specified resource in the specified stack.</p>
+    pub fn get_stack_resource_detail(
+        &self,
+    ) -> &::std::option::Option<crate::types::StackResourceDetail> {
+        &self.stack_resource_detail
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

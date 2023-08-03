@@ -50,6 +50,12 @@ impl StartMatchBackfillOutputBuilder {
         self.matchmaking_ticket = input;
         self
     }
+    /// <p>Ticket representing the backfill matchmaking request. This object includes the information in the request, ticket status, and match results as generated during the matchmaking process.</p>
+    pub fn get_matchmaking_ticket(
+        &self,
+    ) -> &::std::option::Option<crate::types::MatchmakingTicket> {
+        &self.matchmaking_ticket
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

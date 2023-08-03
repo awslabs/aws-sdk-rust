@@ -44,6 +44,10 @@ impl TransferDomainToAnotherAwsAccountFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the TransferDomainToAnotherAwsAccount as a reference.
+    pub fn as_input(&self) -> &crate::operation::transfer_domain_to_another_aws_account::builders::TransferDomainToAnotherAwsAccountInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -108,6 +112,10 @@ impl TransferDomainToAnotherAwsAccountFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>The name of the domain that you want to transfer from the current Amazon Web Services account to another account.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p>The account ID of the Amazon Web Services account that you want to transfer the domain to, for example, <code>111122223333</code>.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
@@ -117,5 +125,9 @@ impl TransferDomainToAnotherAwsAccountFluentBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
+    }
+    /// <p>The account ID of the Amazon Web Services account that you want to transfer the domain to, for example, <code>111122223333</code>.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
     }
 }

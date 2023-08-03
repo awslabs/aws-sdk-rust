@@ -61,6 +61,10 @@ impl DescribeReplicationConfigurationsInputBuilder {
         self.file_system_id = input;
         self
     }
+    /// <p>You can retrieve the replication configuration for a specific file system by providing its file system ID.</p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_system_id
+    }
     /// <p> <code>NextToken</code> is present if the response is paginated. You can use <code>NextToken</code> in a subsequent request to fetch the next page of output.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl DescribeReplicationConfigurationsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p> <code>NextToken</code> is present if the response is paginated. You can use <code>NextToken</code> in a subsequent request to fetch the next page of output.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>(Optional) To limit the number of objects returned in a response, you can specify the <code>MaxItems</code> parameter. The default value is 100. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -80,6 +88,10 @@ impl DescribeReplicationConfigurationsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>(Optional) To limit the number of objects returned in a response, you can specify the <code>MaxItems</code> parameter. The default value is 100. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeReplicationConfigurationsInput`](crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -64,6 +64,10 @@ impl S3ActionBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The ARN of the IAM role that grants access.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The Amazon S3 bucket.</p>
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_name = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl S3ActionBuilder {
         self.bucket_name = input;
         self
     }
+    /// <p>The Amazon S3 bucket.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
+    }
     /// <p>The object key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions, resources, and condition keys for Amazon S3</a>.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl S3ActionBuilder {
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
+    }
+    /// <p>The object key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions, resources, and condition keys for Amazon S3</a>.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
     }
     /// <p>The Amazon S3 canned ACL that controls access to the object identified by the object key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3 canned ACLs</a>.</p>
     pub fn canned_acl(mut self, input: crate::types::CannedAccessControlList) -> Self {
@@ -96,6 +108,10 @@ impl S3ActionBuilder {
     ) -> Self {
         self.canned_acl = input;
         self
+    }
+    /// <p>The Amazon S3 canned ACL that controls access to the object identified by the object key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3 canned ACLs</a>.</p>
+    pub fn get_canned_acl(&self) -> &::std::option::Option<crate::types::CannedAccessControlList> {
+        &self.canned_acl
     }
     /// Consumes the builder and constructs a [`S3Action`](crate::types::S3Action).
     pub fn build(self) -> crate::types::S3Action {

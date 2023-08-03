@@ -88,6 +88,10 @@ impl DelegationMetadataBuilder {
         self.id = input;
         self
     }
+    /// <p> The unique identifier for the delegation. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p> The name of the associated assessment. </p>
     pub fn assessment_name(
         mut self,
@@ -103,6 +107,10 @@ impl DelegationMetadataBuilder {
     ) -> Self {
         self.assessment_name = input;
         self
+    }
+    /// <p> The name of the associated assessment. </p>
+    pub fn get_assessment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_name
     }
     /// <p> The unique identifier for the assessment. </p>
     pub fn assessment_id(
@@ -120,6 +128,10 @@ impl DelegationMetadataBuilder {
         self.assessment_id = input;
         self
     }
+    /// <p> The unique identifier for the assessment. </p>
+    pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_id
+    }
     /// <p> The current status of the delegation. </p>
     pub fn status(mut self, input: crate::types::DelegationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -133,6 +145,10 @@ impl DelegationMetadataBuilder {
         self.status = input;
         self
     }
+    /// <p> The current status of the delegation. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DelegationStatus> {
+        &self.status
+    }
     /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -142,6 +158,10 @@ impl DelegationMetadataBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p> Specifies when the delegation was created. </p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -155,6 +175,10 @@ impl DelegationMetadataBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p> Specifies when the delegation was created. </p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p> Specifies the name of the control set that was delegated for review. </p>
     pub fn control_set_name(
@@ -171,6 +195,10 @@ impl DelegationMetadataBuilder {
     ) -> Self {
         self.control_set_name = input;
         self
+    }
+    /// <p> Specifies the name of the control set that was delegated for review. </p>
+    pub fn get_control_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_set_name
     }
     /// Consumes the builder and constructs a [`DelegationMetadata`](crate::types::DelegationMetadata).
     pub fn build(self) -> crate::types::DelegationMetadata {

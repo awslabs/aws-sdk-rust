@@ -64,6 +64,10 @@ impl DatasetImageStatsBuilder {
         self.total = input;
         self
     }
+    /// <p>The total number of images in the dataset.</p>
+    pub fn get_total(&self) -> &::std::option::Option<i32> {
+        &self.total
+    }
     /// <p>The total number of labeled images.</p>
     pub fn labeled(mut self, input: i32) -> Self {
         self.labeled = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl DatasetImageStatsBuilder {
     pub fn set_labeled(mut self, input: ::std::option::Option<i32>) -> Self {
         self.labeled = input;
         self
+    }
+    /// <p>The total number of labeled images.</p>
+    pub fn get_labeled(&self) -> &::std::option::Option<i32> {
+        &self.labeled
     }
     /// <p>The total number of images labeled as normal.</p>
     pub fn normal(mut self, input: i32) -> Self {
@@ -84,6 +92,10 @@ impl DatasetImageStatsBuilder {
         self.normal = input;
         self
     }
+    /// <p>The total number of images labeled as normal.</p>
+    pub fn get_normal(&self) -> &::std::option::Option<i32> {
+        &self.normal
+    }
     /// <p>the total number of images labeled as an anomaly.</p>
     pub fn anomaly(mut self, input: i32) -> Self {
         self.anomaly = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl DatasetImageStatsBuilder {
     pub fn set_anomaly(mut self, input: ::std::option::Option<i32>) -> Self {
         self.anomaly = input;
         self
+    }
+    /// <p>the total number of images labeled as an anomaly.</p>
+    pub fn get_anomaly(&self) -> &::std::option::Option<i32> {
+        &self.anomaly
     }
     /// Consumes the builder and constructs a [`DatasetImageStats`](crate::types::DatasetImageStats).
     pub fn build(self) -> crate::types::DatasetImageStats {

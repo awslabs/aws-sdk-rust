@@ -48,6 +48,10 @@ impl AuditEventResultEntryBuilder {
         self.id = input;
         self
     }
+    /// <p>The original event ID from the source event.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The event ID assigned by CloudTrail.</p>
     pub fn event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl AuditEventResultEntryBuilder {
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_id = input;
         self
+    }
+    /// <p>The event ID assigned by CloudTrail.</p>
+    pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_id
     }
     /// Consumes the builder and constructs a [`AuditEventResultEntry`](crate::types::AuditEventResultEntry).
     pub fn build(self) -> crate::types::AuditEventResultEntry {

@@ -44,6 +44,11 @@ impl PurgeQueueInputBuilder {
         self.queue_url = input;
         self
     }
+    /// <p>The URL of the queue from which the <code>PurgeQueue</code> action deletes messages.</p>
+    /// <p>Queue URLs and names are case-sensitive.</p>
+    pub fn get_queue_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.queue_url
+    }
     /// Consumes the builder and constructs a [`PurgeQueueInput`](crate::operation::purge_queue::PurgeQueueInput).
     pub fn build(
         self,

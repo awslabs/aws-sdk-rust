@@ -50,6 +50,10 @@ impl PollForTaskOutputBuilder {
         self.task_object = input;
         self
     }
+    /// <p>The information needed to complete the task that is being assigned to the task runner. One of the fields returned in this object is <code>taskId</code>, which contains an identifier for the task being assigned. The calling task runner uses <code>taskId</code> in subsequent calls to <code>ReportTaskProgress</code> and <code>SetTaskStatus</code>.</p>
+    pub fn get_task_object(&self) -> &::std::option::Option<crate::types::TaskObject> {
+        &self.task_object
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

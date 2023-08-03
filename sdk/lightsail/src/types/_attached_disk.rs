@@ -48,6 +48,10 @@ impl AttachedDiskBuilder {
         self.path = input;
         self
     }
+    /// <p>The path of the disk (e.g., <code>/dev/xvdf</code>).</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
+    }
     /// <p>The size of the disk in GB.</p>
     pub fn size_in_gb(mut self, input: i32) -> Self {
         self.size_in_gb = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl AttachedDiskBuilder {
     pub fn set_size_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
         self.size_in_gb = input;
         self
+    }
+    /// <p>The size of the disk in GB.</p>
+    pub fn get_size_in_gb(&self) -> &::std::option::Option<i32> {
+        &self.size_in_gb
     }
     /// Consumes the builder and constructs a [`AttachedDisk`](crate::types::AttachedDisk).
     pub fn build(self) -> crate::types::AttachedDisk {

@@ -40,6 +40,10 @@ impl SearchedUserBuilder {
         self.user_id = input;
         self
     }
+    /// <p> A provided ID for the UserID. Unique within the collection. </p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
+    }
     /// Consumes the builder and constructs a [`SearchedUser`](crate::types::SearchedUser).
     pub fn build(self) -> crate::types::SearchedUser {
         crate::types::SearchedUser {

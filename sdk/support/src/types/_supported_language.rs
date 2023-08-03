@@ -56,6 +56,10 @@ impl SupportedLanguageBuilder {
         self.code = input;
         self
     }
+    /// <p> 2 digit ISO 639-1 code. e.g. <code>en</code> </p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
+    }
     /// <p> Full language description e.g. <code>ENGLISH</code> </p>
     pub fn language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl SupportedLanguageBuilder {
         self.language = input;
         self
     }
+    /// <p> Full language description e.g. <code>ENGLISH</code> </p>
+    pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.language
+    }
     /// <p> Language display value e.g. <code>ENGLISH</code> </p>
     pub fn display(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl SupportedLanguageBuilder {
     pub fn set_display(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display = input;
         self
+    }
+    /// <p> Language display value e.g. <code>ENGLISH</code> </p>
+    pub fn get_display(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display
     }
     /// Consumes the builder and constructs a [`SupportedLanguage`](crate::types::SupportedLanguage).
     pub fn build(self) -> crate::types::SupportedLanguage {

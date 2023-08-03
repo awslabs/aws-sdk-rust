@@ -41,6 +41,10 @@ impl StopEarthObservationJobInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Earth Observation job being stopped.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`StopEarthObservationJobInput`](crate::operation::stop_earth_observation_job::StopEarthObservationJobInput).
     pub fn build(
         self,

@@ -48,6 +48,10 @@ impl EffectivePatchBuilder {
         self.patch = input;
         self
     }
+    /// <p>Provides metadata for a patch, including information such as the KB ID, severity, classification and a URL for where more information can be obtained about the patch.</p>
+    pub fn get_patch(&self) -> &::std::option::Option<crate::types::Patch> {
+        &self.patch
+    }
     /// <p>The status of the patch in a patch baseline. This includes information about whether the patch is currently approved, due to be approved by a rule, explicitly approved, or explicitly rejected and the date the patch was or will be approved.</p>
     pub fn patch_status(mut self, input: crate::types::PatchStatus) -> Self {
         self.patch_status = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl EffectivePatchBuilder {
     ) -> Self {
         self.patch_status = input;
         self
+    }
+    /// <p>The status of the patch in a patch baseline. This includes information about whether the patch is currently approved, due to be approved by a rule, explicitly approved, or explicitly rejected and the date the patch was or will be approved.</p>
+    pub fn get_patch_status(&self) -> &::std::option::Option<crate::types::PatchStatus> {
+        &self.patch_status
     }
     /// Consumes the builder and constructs a [`EffectivePatch`](crate::types::EffectivePatch).
     pub fn build(self) -> crate::types::EffectivePatch {

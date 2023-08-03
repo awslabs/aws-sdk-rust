@@ -54,6 +54,10 @@ impl StopDeploymentInputBuilder {
         self.deployment_id = input;
         self
     }
+    /// <p> The unique ID of a deployment. </p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
+    }
     /// <p> Indicates, when a deployment is stopped, whether instances that have been updated should be rolled back to the previous version of the application revision. </p>
     pub fn auto_rollback_enabled(mut self, input: bool) -> Self {
         self.auto_rollback_enabled = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl StopDeploymentInputBuilder {
     pub fn set_auto_rollback_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_rollback_enabled = input;
         self
+    }
+    /// <p> Indicates, when a deployment is stopped, whether instances that have been updated should be rolled back to the previous version of the application revision. </p>
+    pub fn get_auto_rollback_enabled(&self) -> &::std::option::Option<bool> {
+        &self.auto_rollback_enabled
     }
     /// Consumes the builder and constructs a [`StopDeploymentInput`](crate::operation::stop_deployment::StopDeploymentInput).
     pub fn build(

@@ -36,6 +36,12 @@ impl UpdatePricingRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdatePricingRule as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_pricing_rule::builders::UpdatePricingRuleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdatePricingRuleFluentBuilder {
         self.inner = self.inner.set_arn(input);
         self
     }
+    /// <p> The Amazon Resource Name (ARN) of the pricing rule to update. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
+    }
     /// <p> The new name of the pricing rule. The name must be unique to each pricing rule. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -135,6 +145,10 @@ impl UpdatePricingRuleFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p> The new name of the pricing rule. The name must be unique to each pricing rule. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p> The new description for the pricing rule. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -146,6 +160,10 @@ impl UpdatePricingRuleFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p> The new description for the pricing rule. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p> The new pricing rule type. </p>
     pub fn r#type(mut self, input: crate::types::PricingRuleType) -> Self {
         self.inner = self.inner.r#type(input);
@@ -156,6 +174,10 @@ impl UpdatePricingRuleFluentBuilder {
         self.inner = self.inner.set_type(input);
         self
     }
+    /// <p> The new pricing rule type. </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::PricingRuleType> {
+        self.inner.get_type()
+    }
     /// <p> The new modifier to show pricing plan rates as a percentage. </p>
     pub fn modifier_percentage(mut self, input: f64) -> Self {
         self.inner = self.inner.modifier_percentage(input);
@@ -165,6 +187,10 @@ impl UpdatePricingRuleFluentBuilder {
     pub fn set_modifier_percentage(mut self, input: ::std::option::Option<f64>) -> Self {
         self.inner = self.inner.set_modifier_percentage(input);
         self
+    }
+    /// <p> The new modifier to show pricing plan rates as a percentage. </p>
+    pub fn get_modifier_percentage(&self) -> &::std::option::Option<f64> {
+        self.inner.get_modifier_percentage()
     }
     /// <p> The set of tiering configurations for the pricing rule. </p>
     pub fn tiering(mut self, input: crate::types::UpdateTieringInput) -> Self {
@@ -178,5 +204,9 @@ impl UpdatePricingRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tiering(input);
         self
+    }
+    /// <p> The set of tiering configurations for the pricing rule. </p>
+    pub fn get_tiering(&self) -> &::std::option::Option<crate::types::UpdateTieringInput> {
+        self.inner.get_tiering()
     }
 }

@@ -54,6 +54,10 @@ impl SaaSConfigurationBuilder {
         self.organization_name = input;
         self
     }
+    /// <p>The name of the organization of the GitHub Enterprise Cloud (SaaS) account you want to connect to. You can find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b> under your profile picture dropdown.</p>
+    pub fn get_organization_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_name
+    }
     /// <p>The GitHub host URL or API endpoint URL. For example, <i>https://api.github.com</i>.</p>
     pub fn host_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_url = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl SaaSConfigurationBuilder {
     pub fn set_host_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.host_url = input;
         self
+    }
+    /// <p>The GitHub host URL or API endpoint URL. For example, <i>https://api.github.com</i>.</p>
+    pub fn get_host_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_url
     }
     /// Consumes the builder and constructs a [`SaaSConfiguration`](crate::types::SaaSConfiguration).
     pub fn build(self) -> crate::types::SaaSConfiguration {

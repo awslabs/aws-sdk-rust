@@ -48,6 +48,10 @@ impl DestinationConfigBuilder {
         self.on_success = input;
         self
     }
+    /// <p>The destination configuration for successful invocations.</p>
+    pub fn get_on_success(&self) -> &::std::option::Option<crate::types::OnSuccess> {
+        &self.on_success
+    }
     /// <p>The destination configuration for failed invocations.</p>
     pub fn on_failure(mut self, input: crate::types::OnFailure) -> Self {
         self.on_failure = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl DestinationConfigBuilder {
     pub fn set_on_failure(mut self, input: ::std::option::Option<crate::types::OnFailure>) -> Self {
         self.on_failure = input;
         self
+    }
+    /// <p>The destination configuration for failed invocations.</p>
+    pub fn get_on_failure(&self) -> &::std::option::Option<crate::types::OnFailure> {
+        &self.on_failure
     }
     /// Consumes the builder and constructs a [`DestinationConfig`](crate::types::DestinationConfig).
     pub fn build(self) -> crate::types::DestinationConfig {

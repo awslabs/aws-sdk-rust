@@ -56,6 +56,10 @@ impl ResourceTagMappingBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The ARN of the resource.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -75,6 +79,10 @@ impl ResourceTagMappingBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags that have been applied to one or more Amazon Web Services resources.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>Information that shows whether a resource is compliant with the effective tag policy, including details on any noncompliant tag keys.</p>
     pub fn compliance_details(mut self, input: crate::types::ComplianceDetails) -> Self {
         self.compliance_details = ::std::option::Option::Some(input);
@@ -87,6 +95,12 @@ impl ResourceTagMappingBuilder {
     ) -> Self {
         self.compliance_details = input;
         self
+    }
+    /// <p>Information that shows whether a resource is compliant with the effective tag policy, including details on any noncompliant tag keys.</p>
+    pub fn get_compliance_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::ComplianceDetails> {
+        &self.compliance_details
     }
     /// Consumes the builder and constructs a [`ResourceTagMapping`](crate::types::ResourceTagMapping).
     pub fn build(self) -> crate::types::ResourceTagMapping {

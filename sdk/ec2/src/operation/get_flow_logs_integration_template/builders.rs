@@ -44,6 +44,10 @@ impl GetFlowLogsIntegrationTemplateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetFlowLogsIntegrationTemplate as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_flow_logs_integration_template::builders::GetFlowLogsIntegrationTemplateInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -108,6 +112,10 @@ impl GetFlowLogsIntegrationTemplateFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>The ID of the flow log.</p>
     pub fn flow_log_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_log_id(input.into());
@@ -117,6 +125,10 @@ impl GetFlowLogsIntegrationTemplateFluentBuilder {
     pub fn set_flow_log_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_log_id(input);
         self
+    }
+    /// <p>The ID of the flow log.</p>
+    pub fn get_flow_log_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_flow_log_id()
     }
     /// <p>To store the CloudFormation template in Amazon S3, specify the location in Amazon S3.</p>
     pub fn config_delivery_s3_destination_arn(
@@ -134,6 +146,12 @@ impl GetFlowLogsIntegrationTemplateFluentBuilder {
         self.inner = self.inner.set_config_delivery_s3_destination_arn(input);
         self
     }
+    /// <p>To store the CloudFormation template in Amazon S3, specify the location in Amazon S3.</p>
+    pub fn get_config_delivery_s3_destination_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_config_delivery_s3_destination_arn()
+    }
     /// <p>Information about the service integration.</p>
     pub fn integrate_services(mut self, input: crate::types::IntegrateServices) -> Self {
         self.inner = self.inner.integrate_services(input);
@@ -146,5 +164,11 @@ impl GetFlowLogsIntegrationTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_integrate_services(input);
         self
+    }
+    /// <p>Information about the service integration.</p>
+    pub fn get_integrate_services(
+        &self,
+    ) -> &::std::option::Option<crate::types::IntegrateServices> {
+        self.inner.get_integrate_services()
     }
 }

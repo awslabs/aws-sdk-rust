@@ -54,6 +54,10 @@ impl ListProjectsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `projects`.
     ///
     /// To override the contents of this collection use [`set_projects`](Self::set_projects).
@@ -72,6 +76,10 @@ impl ListProjectsOutputBuilder {
     ) -> Self {
         self.projects = input;
         self
+    }
+    /// <p>The list of build project names, with each build project name representing a single build project.</p>
+    pub fn get_projects(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.projects
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

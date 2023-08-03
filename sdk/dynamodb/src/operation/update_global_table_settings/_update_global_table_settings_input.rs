@@ -109,6 +109,10 @@ impl UpdateGlobalTableSettingsInputBuilder {
         self.global_table_name = input;
         self
     }
+    /// <p>The name of the global table</p>
+    pub fn get_global_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_table_name
+    }
     /// <p>The billing mode of the global table. If <code>GlobalTableBillingMode</code> is not specified, the global table defaults to <code>PROVISIONED</code> capacity billing mode.</p>
     /// <ul>
     /// <li> <p> <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p> </li>
@@ -130,6 +134,16 @@ impl UpdateGlobalTableSettingsInputBuilder {
         self.global_table_billing_mode = input;
         self
     }
+    /// <p>The billing mode of the global table. If <code>GlobalTableBillingMode</code> is not specified, the global table defaults to <code>PROVISIONED</code> capacity billing mode.</p>
+    /// <ul>
+    /// <li> <p> <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p> </li>
+    /// <li> <p> <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>. </p> </li>
+    /// </ul>
+    pub fn get_global_table_billing_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::BillingMode> {
+        &self.global_table_billing_mode
+    }
     /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException.</code> </p>
     pub fn global_table_provisioned_write_capacity_units(mut self, input: i64) -> Self {
         self.global_table_provisioned_write_capacity_units = ::std::option::Option::Some(input);
@@ -142,6 +156,10 @@ impl UpdateGlobalTableSettingsInputBuilder {
     ) -> Self {
         self.global_table_provisioned_write_capacity_units = input;
         self
+    }
+    /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException.</code> </p>
+    pub fn get_global_table_provisioned_write_capacity_units(&self) -> &::std::option::Option<i64> {
+        &self.global_table_provisioned_write_capacity_units
     }
     /// <p>Auto scaling settings for managing provisioned write capacity for the global table.</p>
     pub fn global_table_provisioned_write_capacity_auto_scaling_settings_update(
@@ -159,6 +177,12 @@ impl UpdateGlobalTableSettingsInputBuilder {
     ) -> Self {
         self.global_table_provisioned_write_capacity_auto_scaling_settings_update = input;
         self
+    }
+    /// <p>Auto scaling settings for managing provisioned write capacity for the global table.</p>
+    pub fn get_global_table_provisioned_write_capacity_auto_scaling_settings_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoScalingSettingsUpdate> {
+        &self.global_table_provisioned_write_capacity_auto_scaling_settings_update
     }
     /// Appends an item to `global_table_global_secondary_index_settings_update`.
     ///
@@ -186,6 +210,14 @@ impl UpdateGlobalTableSettingsInputBuilder {
         self.global_table_global_secondary_index_settings_update = input;
         self
     }
+    /// <p>Represents the settings of a global secondary index for a global table that will be modified.</p>
+    pub fn get_global_table_global_secondary_index_settings_update(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::GlobalTableGlobalSecondaryIndexSettingsUpdate>,
+    > {
+        &self.global_table_global_secondary_index_settings_update
+    }
     /// Appends an item to `replica_settings_update`.
     ///
     /// To override the contents of this collection use [`set_replica_settings_update`](Self::set_replica_settings_update).
@@ -204,6 +236,12 @@ impl UpdateGlobalTableSettingsInputBuilder {
     ) -> Self {
         self.replica_settings_update = input;
         self
+    }
+    /// <p>Represents the settings for a global table in a Region that will be modified.</p>
+    pub fn get_replica_settings_update(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicaSettingsUpdate>> {
+        &self.replica_settings_update
     }
     /// Consumes the builder and constructs a [`UpdateGlobalTableSettingsInput`](crate::operation::update_global_table_settings::UpdateGlobalTableSettingsInput).
     pub fn build(

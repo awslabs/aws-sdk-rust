@@ -86,6 +86,10 @@ impl GetDeploymentStatusOutputBuilder {
         self.deployment_status = input;
         self
     }
+    /// The status of the deployment: ''InProgress'', ''Building'', ''Success'', or ''Failure''.
+    pub fn get_deployment_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_status
+    }
     /// The type of the deployment.
     pub fn deployment_type(mut self, input: crate::types::DeploymentType) -> Self {
         self.deployment_type = ::std::option::Option::Some(input);
@@ -98,6 +102,10 @@ impl GetDeploymentStatusOutputBuilder {
     ) -> Self {
         self.deployment_type = input;
         self
+    }
+    /// The type of the deployment.
+    pub fn get_deployment_type(&self) -> &::std::option::Option<crate::types::DeploymentType> {
+        &self.deployment_type
     }
     /// Appends an item to `error_details`.
     ///
@@ -118,6 +126,12 @@ impl GetDeploymentStatusOutputBuilder {
         self.error_details = input;
         self
     }
+    /// Error details
+    pub fn get_error_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>> {
+        &self.error_details
+    }
     /// Error message
     pub fn error_message(
         mut self,
@@ -134,6 +148,10 @@ impl GetDeploymentStatusOutputBuilder {
         self.error_message = input;
         self
     }
+    /// Error message
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// The time, in milliseconds since the epoch, when the deployment status was updated.
     pub fn updated_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.updated_at = ::std::option::Option::Some(input.into());
@@ -143,6 +161,10 @@ impl GetDeploymentStatusOutputBuilder {
     pub fn set_updated_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.updated_at = input;
         self
+    }
+    /// The time, in milliseconds since the epoch, when the deployment status was updated.
+    pub fn get_updated_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.updated_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

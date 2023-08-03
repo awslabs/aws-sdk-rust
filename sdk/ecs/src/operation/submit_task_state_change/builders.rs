@@ -39,6 +39,13 @@ impl SubmitTaskStateChangeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SubmitTaskStateChange as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::submit_task_state_change::builders::SubmitTaskStateChangeInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +136,10 @@ impl SubmitTaskStateChangeFluentBuilder {
         self.inner = self.inner.set_cluster(input);
         self
     }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster()
+    }
     /// <p>The task ID or full ARN of the task in the state change request.</p>
     pub fn task(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.task(input.into());
@@ -138,6 +149,10 @@ impl SubmitTaskStateChangeFluentBuilder {
     pub fn set_task(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_task(input);
         self
+    }
+    /// <p>The task ID or full ARN of the task in the state change request.</p>
+    pub fn get_task(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_task()
     }
     /// <p>The status of the state change request.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -149,6 +164,10 @@ impl SubmitTaskStateChangeFluentBuilder {
         self.inner = self.inner.set_status(input);
         self
     }
+    /// <p>The status of the state change request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_status()
+    }
     /// <p>The reason for the state change request.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reason(input.into());
@@ -158,6 +177,10 @@ impl SubmitTaskStateChangeFluentBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reason(input);
         self
+    }
+    /// <p>The reason for the state change request.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reason()
     }
     /// Appends an item to `containers`.
     ///
@@ -176,6 +199,12 @@ impl SubmitTaskStateChangeFluentBuilder {
         self.inner = self.inner.set_containers(input);
         self
     }
+    /// <p>Any containers that's associated with the state change request.</p>
+    pub fn get_containers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerStateChange>> {
+        self.inner.get_containers()
+    }
     /// Appends an item to `attachments`.
     ///
     /// To override the contents of this collection use [`set_attachments`](Self::set_attachments).
@@ -192,6 +221,12 @@ impl SubmitTaskStateChangeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_attachments(input);
         self
+    }
+    /// <p>Any attachments associated with the state change request.</p>
+    pub fn get_attachments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttachmentStateChange>> {
+        self.inner.get_attachments()
     }
     /// Appends an item to `managedAgents`.
     ///
@@ -210,6 +245,12 @@ impl SubmitTaskStateChangeFluentBuilder {
         self.inner = self.inner.set_managed_agents(input);
         self
     }
+    /// <p>The details for the managed agent that's associated with the task.</p>
+    pub fn get_managed_agents(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedAgentStateChange>> {
+        self.inner.get_managed_agents()
+    }
     /// <p>The Unix timestamp for the time when the container image pull started.</p>
     pub fn pull_started_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.pull_started_at(input);
@@ -222,6 +263,10 @@ impl SubmitTaskStateChangeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_pull_started_at(input);
         self
+    }
+    /// <p>The Unix timestamp for the time when the container image pull started.</p>
+    pub fn get_pull_started_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_pull_started_at()
     }
     /// <p>The Unix timestamp for the time when the container image pull completed.</p>
     pub fn pull_stopped_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -236,6 +281,10 @@ impl SubmitTaskStateChangeFluentBuilder {
         self.inner = self.inner.set_pull_stopped_at(input);
         self
     }
+    /// <p>The Unix timestamp for the time when the container image pull completed.</p>
+    pub fn get_pull_stopped_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_pull_stopped_at()
+    }
     /// <p>The Unix timestamp for the time when the task execution stopped.</p>
     pub fn execution_stopped_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.execution_stopped_at(input);
@@ -248,5 +297,9 @@ impl SubmitTaskStateChangeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_execution_stopped_at(input);
         self
+    }
+    /// <p>The Unix timestamp for the time when the task execution stopped.</p>
+    pub fn get_execution_stopped_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_execution_stopped_at()
     }
 }

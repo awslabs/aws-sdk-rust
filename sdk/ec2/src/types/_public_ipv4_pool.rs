@@ -92,6 +92,10 @@ impl PublicIpv4PoolBuilder {
         self.pool_id = input;
         self
     }
+    /// <p>The ID of the address pool.</p>
+    pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pool_id
+    }
     /// <p>A description of the address pool.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -101,6 +105,10 @@ impl PublicIpv4PoolBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the address pool.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `pool_address_ranges`.
     ///
@@ -121,6 +129,12 @@ impl PublicIpv4PoolBuilder {
         self.pool_address_ranges = input;
         self
     }
+    /// <p>The address ranges.</p>
+    pub fn get_pool_address_ranges(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PublicIpv4PoolRange>> {
+        &self.pool_address_ranges
+    }
     /// <p>The total number of addresses.</p>
     pub fn total_address_count(mut self, input: i32) -> Self {
         self.total_address_count = ::std::option::Option::Some(input);
@@ -131,6 +145,10 @@ impl PublicIpv4PoolBuilder {
         self.total_address_count = input;
         self
     }
+    /// <p>The total number of addresses.</p>
+    pub fn get_total_address_count(&self) -> &::std::option::Option<i32> {
+        &self.total_address_count
+    }
     /// <p>The total number of available addresses.</p>
     pub fn total_available_address_count(mut self, input: i32) -> Self {
         self.total_available_address_count = ::std::option::Option::Some(input);
@@ -140,6 +158,10 @@ impl PublicIpv4PoolBuilder {
     pub fn set_total_available_address_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_available_address_count = input;
         self
+    }
+    /// <p>The total number of available addresses.</p>
+    pub fn get_total_available_address_count(&self) -> &::std::option::Option<i32> {
+        &self.total_available_address_count
     }
     /// <p>The name of the location from which the address pool is advertised. A network border group is a unique set of Availability Zones or Local Zones from where Amazon Web Services advertises public IP addresses.</p>
     pub fn network_border_group(
@@ -156,6 +178,10 @@ impl PublicIpv4PoolBuilder {
     ) -> Self {
         self.network_border_group = input;
         self
+    }
+    /// <p>The name of the location from which the address pool is advertised. A network border group is a unique set of Availability Zones or Local Zones from where Amazon Web Services advertises public IP addresses.</p>
+    pub fn get_network_border_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_border_group
     }
     /// Appends an item to `tags`.
     ///
@@ -175,6 +201,10 @@ impl PublicIpv4PoolBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Any tags for the address pool.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`PublicIpv4Pool`](crate::types::PublicIpv4Pool).
     pub fn build(self) -> crate::types::PublicIpv4Pool {

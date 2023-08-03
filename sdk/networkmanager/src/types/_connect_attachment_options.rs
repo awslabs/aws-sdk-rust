@@ -43,6 +43,10 @@ impl ConnectAttachmentOptionsBuilder {
         self.protocol = input;
         self
     }
+    /// <p>The protocol used for the attachment connection.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::TunnelProtocol> {
+        &self.protocol
+    }
     /// Consumes the builder and constructs a [`ConnectAttachmentOptions`](crate::types::ConnectAttachmentOptions).
     pub fn build(self) -> crate::types::ConnectAttachmentOptions {
         crate::types::ConnectAttachmentOptions {

@@ -63,6 +63,10 @@ impl UpdateResourcePositionInputBuilder {
         self.resource_identifier = input;
         self
     }
+    /// <p>The identifier of the resource for which position information is updated. It can be the wireless device ID or the wireless gateway ID, depending on the resource type.</p>
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_identifier
+    }
     /// <p>The type of resource for which position information is updated, which can be a wireless device or a wireless gateway.</p>
     pub fn resource_type(mut self, input: crate::types::PositionResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl UpdateResourcePositionInputBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The type of resource for which position information is updated, which can be a wireless device or a wireless gateway.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::PositionResourceType> {
+        &self.resource_type
+    }
     /// <p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href="https://geojson.org/">GeoJSON</a>.</p>
     pub fn geo_json_payload(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.geo_json_payload = ::std::option::Option::Some(input);
@@ -88,6 +96,10 @@ impl UpdateResourcePositionInputBuilder {
     ) -> Self {
         self.geo_json_payload = input;
         self
+    }
+    /// <p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href="https://geojson.org/">GeoJSON</a>.</p>
+    pub fn get_geo_json_payload(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.geo_json_payload
     }
     /// Consumes the builder and constructs a [`UpdateResourcePositionInput`](crate::operation::update_resource_position::UpdateResourcePositionInput).
     pub fn build(

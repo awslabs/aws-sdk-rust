@@ -43,6 +43,10 @@ impl BillingGroupMetadataBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>The date the billing group was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
+    }
     /// Consumes the builder and constructs a [`BillingGroupMetadata`](crate::types::BillingGroupMetadata).
     pub fn build(self) -> crate::types::BillingGroupMetadata {
         crate::types::BillingGroupMetadata {

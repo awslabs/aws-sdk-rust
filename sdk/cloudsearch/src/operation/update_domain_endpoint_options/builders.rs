@@ -36,6 +36,10 @@ impl UpdateDomainEndpointOptionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDomainEndpointOptions as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_domain_endpoint_options::builders::UpdateDomainEndpointOptionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl UpdateDomainEndpointOptionsFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>A string that represents the name of a domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p>Whether to require that all requests to the domain arrive over HTTPS. We recommend Policy-Min-TLS-1-2-2019-07 for TLSSecurityPolicy. For compatibility with older clients, the default is Policy-Min-TLS-1-0-2019-07. </p>
     pub fn domain_endpoint_options(mut self, input: crate::types::DomainEndpointOptions) -> Self {
         self.inner = self.inner.domain_endpoint_options(input);
@@ -138,5 +146,11 @@ impl UpdateDomainEndpointOptionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_domain_endpoint_options(input);
         self
+    }
+    /// <p>Whether to require that all requests to the domain arrive over HTTPS. We recommend Policy-Min-TLS-1-2-2019-07 for TLSSecurityPolicy. For compatibility with older clients, the default is Policy-Min-TLS-1-0-2019-07. </p>
+    pub fn get_domain_endpoint_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::DomainEndpointOptions> {
+        self.inner.get_domain_endpoint_options()
     }
 }

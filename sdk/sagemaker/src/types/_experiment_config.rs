@@ -75,6 +75,10 @@ impl ExperimentConfigBuilder {
         self.experiment_name = input;
         self
     }
+    /// <p>The name of an existing experiment to associate with the trial component.</p>
+    pub fn get_experiment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.experiment_name
+    }
     /// <p>The name of an existing trial to associate the trial component with. If not specified, a new trial is created.</p>
     pub fn trial_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trial_name = ::std::option::Option::Some(input.into());
@@ -84,6 +88,10 @@ impl ExperimentConfigBuilder {
     pub fn set_trial_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trial_name = input;
         self
+    }
+    /// <p>The name of an existing trial to associate the trial component with. If not specified, a new trial is created.</p>
+    pub fn get_trial_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trial_name
     }
     /// <p>The display name for the trial component. If this key isn't specified, the display name is the trial component name.</p>
     pub fn trial_component_display_name(
@@ -101,6 +109,12 @@ impl ExperimentConfigBuilder {
         self.trial_component_display_name = input;
         self
     }
+    /// <p>The display name for the trial component. If this key isn't specified, the display name is the trial component name.</p>
+    pub fn get_trial_component_display_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.trial_component_display_name
+    }
     /// <p>The name of the experiment run to associate with the trial component.</p>
     pub fn run_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.run_name = ::std::option::Option::Some(input.into());
@@ -110,6 +124,10 @@ impl ExperimentConfigBuilder {
     pub fn set_run_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.run_name = input;
         self
+    }
+    /// <p>The name of the experiment run to associate with the trial component.</p>
+    pub fn get_run_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.run_name
     }
     /// Consumes the builder and constructs a [`ExperimentConfig`](crate::types::ExperimentConfig).
     pub fn build(self) -> crate::types::ExperimentConfig {

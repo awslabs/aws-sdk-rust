@@ -39,6 +39,13 @@ impl SetTerminationProtectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SetTerminationProtection as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::set_termination_protection::builders::SetTerminationProtectionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +143,12 @@ impl SetTerminationProtectionFluentBuilder {
         self.inner = self.inner.set_job_flow_ids(input);
         self
     }
+    /// <p> A list of strings that uniquely identify the clusters to protect. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>DescribeJobFlows</code> . </p>
+    pub fn get_job_flow_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_job_flow_ids()
+    }
     /// <p>A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2 instances in the cluster from shutting down due to API calls, user intervention, or job-flow error.</p>
     pub fn termination_protected(mut self, input: bool) -> Self {
         self.inner = self.inner.termination_protected(input);
@@ -145,5 +158,9 @@ impl SetTerminationProtectionFluentBuilder {
     pub fn set_termination_protected(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_termination_protected(input);
         self
+    }
+    /// <p>A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2 instances in the cluster from shutting down due to API calls, user intervention, or job-flow error.</p>
+    pub fn get_termination_protected(&self) -> &::std::option::Option<bool> {
+        self.inner.get_termination_protected()
     }
 }

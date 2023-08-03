@@ -95,6 +95,10 @@ impl DescribeAgentOutputBuilder {
         self.agent_arn = input;
         self
     }
+    /// <p>The ARN of the agent.</p>
+    pub fn get_agent_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_arn
+    }
     /// <p>The name of the agent.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl DescribeAgentOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the agent.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The status of the agent. If the status is ONLINE, then the agent is configured properly and is available to use. The Running status is the normal running status for an agent. If the status is OFFLINE, the agent's VM is turned off or the agent is in an unhealthy state. When the issue that caused the unhealthy state is resolved, the agent returns to ONLINE status.</p>
     pub fn status(mut self, input: crate::types::AgentStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -114,6 +122,10 @@ impl DescribeAgentOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AgentStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the agent. If the status is ONLINE, then the agent is configured properly and is available to use. The Running status is the normal running status for an agent. If the status is OFFLINE, the agent's VM is turned off or the agent is in an unhealthy state. When the issue that caused the unhealthy state is resolved, the agent returns to ONLINE status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AgentStatus> {
+        &self.status
     }
     /// <p>The time that the agent last connected to DataSync.</p>
     pub fn last_connection_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -128,6 +140,10 @@ impl DescribeAgentOutputBuilder {
         self.last_connection_time = input;
         self
     }
+    /// <p>The time that the agent last connected to DataSync.</p>
+    pub fn get_last_connection_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_connection_time
+    }
     /// <p>The time that the agent was activated (that is, created in your account).</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -140,6 +156,10 @@ impl DescribeAgentOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time that the agent was activated (that is, created in your account).</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not accessible over the public internet. </p>
     pub fn endpoint_type(mut self, input: crate::types::EndpointType) -> Self {
@@ -154,6 +174,10 @@ impl DescribeAgentOutputBuilder {
         self.endpoint_type = input;
         self
     }
+    /// <p>The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not accessible over the public internet. </p>
+    pub fn get_endpoint_type(&self) -> &::std::option::Option<crate::types::EndpointType> {
+        &self.endpoint_type
+    }
     /// <p>The subnet and the security group that DataSync used to access a VPC endpoint.</p>
     pub fn private_link_config(mut self, input: crate::types::PrivateLinkConfig) -> Self {
         self.private_link_config = ::std::option::Option::Some(input);
@@ -166,6 +190,12 @@ impl DescribeAgentOutputBuilder {
     ) -> Self {
         self.private_link_config = input;
         self
+    }
+    /// <p>The subnet and the security group that DataSync used to access a VPC endpoint.</p>
+    pub fn get_private_link_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::PrivateLinkConfig> {
+        &self.private_link_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

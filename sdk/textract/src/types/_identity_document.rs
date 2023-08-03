@@ -60,6 +60,10 @@ impl IdentityDocumentBuilder {
         self.document_index = input;
         self
     }
+    /// <p>Denotes the placement of a document in the IdentityDocument list. The first document is marked 1, the second 2 and so on.</p>
+    pub fn get_document_index(&self) -> &::std::option::Option<i32> {
+        &self.document_index
+    }
     /// Appends an item to `identity_document_fields`.
     ///
     /// To override the contents of this collection use [`set_identity_document_fields`](Self::set_identity_document_fields).
@@ -79,6 +83,12 @@ impl IdentityDocumentBuilder {
         self.identity_document_fields = input;
         self
     }
+    /// <p>The structure used to record information extracted from identity documents. Contains both normalized field and value of the extracted text.</p>
+    pub fn get_identity_document_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IdentityDocumentField>> {
+        &self.identity_document_fields
+    }
     /// Appends an item to `blocks`.
     ///
     /// To override the contents of this collection use [`set_blocks`](Self::set_blocks).
@@ -97,6 +107,10 @@ impl IdentityDocumentBuilder {
     ) -> Self {
         self.blocks = input;
         self
+    }
+    /// <p>Individual word recognition, as returned by document detection.</p>
+    pub fn get_blocks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Block>> {
+        &self.blocks
     }
     /// Consumes the builder and constructs a [`IdentityDocument`](crate::types::IdentityDocument).
     pub fn build(self) -> crate::types::IdentityDocument {

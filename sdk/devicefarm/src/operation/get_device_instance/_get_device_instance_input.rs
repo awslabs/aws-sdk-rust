@@ -40,6 +40,10 @@ impl GetDeviceInstanceInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the instance you're requesting information about.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`GetDeviceInstanceInput`](crate::operation::get_device_instance::GetDeviceInstanceInput).
     pub fn build(
         self,

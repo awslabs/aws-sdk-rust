@@ -76,6 +76,12 @@ impl UpdateMetricAttributionInputBuilder {
         self.add_metrics = input;
         self
     }
+    /// <p>Add new metric attributes to the metric attribution.</p>
+    pub fn get_add_metrics(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricAttribute>> {
+        &self.add_metrics
+    }
     /// Appends an item to `remove_metrics`.
     ///
     /// To override the contents of this collection use [`set_remove_metrics`](Self::set_remove_metrics).
@@ -98,6 +104,12 @@ impl UpdateMetricAttributionInputBuilder {
         self.remove_metrics = input;
         self
     }
+    /// <p>Remove metric attributes from the metric attribution.</p>
+    pub fn get_remove_metrics(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.remove_metrics
+    }
     /// <p>An output config for the metric attribution.</p>
     pub fn metrics_output_config(mut self, input: crate::types::MetricAttributionOutput) -> Self {
         self.metrics_output_config = ::std::option::Option::Some(input);
@@ -110,6 +122,12 @@ impl UpdateMetricAttributionInputBuilder {
     ) -> Self {
         self.metrics_output_config = input;
         self
+    }
+    /// <p>An output config for the metric attribution.</p>
+    pub fn get_metrics_output_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::MetricAttributionOutput> {
+        &self.metrics_output_config
     }
     /// <p>The Amazon Resource Name (ARN) for the metric attribution to update.</p>
     pub fn metric_attribution_arn(
@@ -126,6 +144,10 @@ impl UpdateMetricAttributionInputBuilder {
     ) -> Self {
         self.metric_attribution_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the metric attribution to update.</p>
+    pub fn get_metric_attribution_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_attribution_arn
     }
     /// Consumes the builder and constructs a [`UpdateMetricAttributionInput`](crate::operation::update_metric_attribution::UpdateMetricAttributionInput).
     pub fn build(

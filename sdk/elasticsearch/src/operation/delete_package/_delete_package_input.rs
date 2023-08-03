@@ -40,6 +40,10 @@ impl DeletePackageInputBuilder {
         self.package_id = input;
         self
     }
+    /// <p>Internal ID of the package that you want to delete. Use <code>DescribePackages</code> to find this value.</p>
+    pub fn get_package_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_id
+    }
     /// Consumes the builder and constructs a [`DeletePackageInput`](crate::operation::delete_package::DeletePackageInput).
     pub fn build(
         self,

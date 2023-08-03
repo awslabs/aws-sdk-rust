@@ -83,6 +83,10 @@ impl CreateLanguageModelOutputBuilder {
         self.language_code = input;
         self
     }
+    /// <p>The language code you selected for your custom language model.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::ClmLanguageCode> {
+        &self.language_code
+    }
     /// <p>The Amazon Transcribe standard language model, or base model, you specified when creating your custom language model.</p>
     pub fn base_model_name(mut self, input: crate::types::BaseModelName) -> Self {
         self.base_model_name = ::std::option::Option::Some(input);
@@ -96,6 +100,10 @@ impl CreateLanguageModelOutputBuilder {
         self.base_model_name = input;
         self
     }
+    /// <p>The Amazon Transcribe standard language model, or base model, you specified when creating your custom language model.</p>
+    pub fn get_base_model_name(&self) -> &::std::option::Option<crate::types::BaseModelName> {
+        &self.base_model_name
+    }
     /// <p>The name of your custom language model.</p>
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
@@ -105,6 +113,10 @@ impl CreateLanguageModelOutputBuilder {
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_name = input;
         self
+    }
+    /// <p>The name of your custom language model.</p>
+    pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_name
     }
     /// <p>Lists your data access role ARN (Amazon Resource Name) and the Amazon S3 locations you provided for your training (<code>S3Uri</code>) and tuning (<code>TuningDataS3Uri</code>) data.</p>
     pub fn input_data_config(mut self, input: crate::types::InputDataConfig) -> Self {
@@ -119,6 +131,10 @@ impl CreateLanguageModelOutputBuilder {
         self.input_data_config = input;
         self
     }
+    /// <p>Lists your data access role ARN (Amazon Resource Name) and the Amazon S3 locations you provided for your training (<code>S3Uri</code>) and tuning (<code>TuningDataS3Uri</code>) data.</p>
+    pub fn get_input_data_config(&self) -> &::std::option::Option<crate::types::InputDataConfig> {
+        &self.input_data_config
+    }
     /// <p>The status of your custom language model. When the status displays as <code>COMPLETED</code>, your model is ready to use.</p>
     pub fn model_status(mut self, input: crate::types::ModelStatus) -> Self {
         self.model_status = ::std::option::Option::Some(input);
@@ -131,6 +147,10 @@ impl CreateLanguageModelOutputBuilder {
     ) -> Self {
         self.model_status = input;
         self
+    }
+    /// <p>The status of your custom language model. When the status displays as <code>COMPLETED</code>, your model is ready to use.</p>
+    pub fn get_model_status(&self) -> &::std::option::Option<crate::types::ModelStatus> {
+        &self.model_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

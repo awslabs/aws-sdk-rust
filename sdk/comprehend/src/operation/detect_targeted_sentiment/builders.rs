@@ -38,6 +38,13 @@ impl DetectTargetedSentimentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DetectTargetedSentiment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::detect_targeted_sentiment::builders::DetectTargetedSentimentInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +135,10 @@ impl DetectTargetedSentimentFluentBuilder {
         self.inner = self.inner.set_text(input);
         self
     }
+    /// <p>A UTF-8 text string. The maximum string length is 5 KB.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_text()
+    }
     /// <p>The language of the input documents. Currently, English is the only supported language.</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.inner = self.inner.language_code(input);
@@ -140,5 +151,9 @@ impl DetectTargetedSentimentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
+    }
+    /// <p>The language of the input documents. Currently, English is the only supported language.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
+        self.inner.get_language_code()
     }
 }

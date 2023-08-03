@@ -53,6 +53,10 @@ impl CreateEdgeDeploymentStageInputBuilder {
         self.edge_deployment_plan_name = input;
         self
     }
+    /// <p>The name of the edge deployment plan.</p>
+    pub fn get_edge_deployment_plan_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.edge_deployment_plan_name
+    }
     /// Appends an item to `stages`.
     ///
     /// To override the contents of this collection use [`set_stages`](Self::set_stages).
@@ -71,6 +75,12 @@ impl CreateEdgeDeploymentStageInputBuilder {
     ) -> Self {
         self.stages = input;
         self
+    }
+    /// <p>List of stages to be added to the edge deployment plan.</p>
+    pub fn get_stages(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentStage>> {
+        &self.stages
     }
     /// Consumes the builder and constructs a [`CreateEdgeDeploymentStageInput`](crate::operation::create_edge_deployment_stage::CreateEdgeDeploymentStageInput).
     pub fn build(

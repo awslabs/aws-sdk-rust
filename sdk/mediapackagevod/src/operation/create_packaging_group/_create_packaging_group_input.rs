@@ -76,6 +76,10 @@ impl CreatePackagingGroupInputBuilder {
         self.authorization = input;
         self
     }
+    /// CDN Authorization credentials
+    pub fn get_authorization(&self) -> &::std::option::Option<crate::types::Authorization> {
+        &self.authorization
+    }
     /// Configure egress access logging.
     pub fn egress_access_logs(mut self, input: crate::types::EgressAccessLogs) -> Self {
         self.egress_access_logs = ::std::option::Option::Some(input);
@@ -89,6 +93,10 @@ impl CreatePackagingGroupInputBuilder {
         self.egress_access_logs = input;
         self
     }
+    /// Configure egress access logging.
+    pub fn get_egress_access_logs(&self) -> &::std::option::Option<crate::types::EgressAccessLogs> {
+        &self.egress_access_logs
+    }
     /// The ID of the PackagingGroup.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -98,6 +106,10 @@ impl CreatePackagingGroupInputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// The ID of the PackagingGroup.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -123,6 +135,14 @@ impl CreatePackagingGroupInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// A collection of tags associated with a resource
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreatePackagingGroupInput`](crate::operation::create_packaging_group::CreatePackagingGroupInput).
     pub fn build(

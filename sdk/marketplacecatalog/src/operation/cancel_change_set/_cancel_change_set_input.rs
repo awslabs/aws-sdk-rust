@@ -47,6 +47,10 @@ impl CancelChangeSetInputBuilder {
         self.catalog = input;
         self
     }
+    /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code>.</p>
+    pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog
+    }
     /// <p>Required. The unique identifier of the <code>StartChangeSet</code> request that you want to cancel.</p>
     pub fn change_set_id(
         mut self,
@@ -62,6 +66,10 @@ impl CancelChangeSetInputBuilder {
     ) -> Self {
         self.change_set_id = input;
         self
+    }
+    /// <p>Required. The unique identifier of the <code>StartChangeSet</code> request that you want to cancel.</p>
+    pub fn get_change_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_set_id
     }
     /// Consumes the builder and constructs a [`CancelChangeSetInput`](crate::operation::cancel_change_set::CancelChangeSetInput).
     pub fn build(

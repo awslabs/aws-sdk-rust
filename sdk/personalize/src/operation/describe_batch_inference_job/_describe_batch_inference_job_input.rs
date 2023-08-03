@@ -45,6 +45,10 @@ impl DescribeBatchInferenceJobInputBuilder {
         self.batch_inference_job_arn = input;
         self
     }
+    /// <p>The ARN of the batch inference job to describe.</p>
+    pub fn get_batch_inference_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.batch_inference_job_arn
+    }
     /// Consumes the builder and constructs a [`DescribeBatchInferenceJobInput`](crate::operation::describe_batch_inference_job::DescribeBatchInferenceJobInput).
     pub fn build(
         self,

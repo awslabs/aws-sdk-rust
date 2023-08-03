@@ -36,6 +36,10 @@ impl UpdateApplicationComponentConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateApplicationComponentConfig as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_application_component_config::builders::UpdateApplicationComponentConfigInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl UpdateApplicationComponentConfigFluentBuilder {
         self.inner = self.inner.set_application_component_id(input);
         self
     }
+    /// <p> The ID of the application component. The ID is unique within an AWS account. </p>
+    pub fn get_application_component_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_component_id()
+    }
     /// <p> Indicates whether the application component has been included for server recommendation or not. </p>
     pub fn inclusion_status(mut self, input: crate::types::InclusionStatus) -> Self {
         self.inner = self.inner.inclusion_status(input);
@@ -119,6 +127,10 @@ impl UpdateApplicationComponentConfigFluentBuilder {
         self.inner = self.inner.set_inclusion_status(input);
         self
     }
+    /// <p> Indicates whether the application component has been included for server recommendation or not. </p>
+    pub fn get_inclusion_status(&self) -> &::std::option::Option<crate::types::InclusionStatus> {
+        self.inner.get_inclusion_status()
+    }
     /// <p> The preferred strategy options for the application component. Use values from the <code>GetApplicationComponentStrategies</code> response. </p>
     pub fn strategy_option(mut self, input: crate::types::StrategyOption) -> Self {
         self.inner = self.inner.strategy_option(input);
@@ -131,6 +143,10 @@ impl UpdateApplicationComponentConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_strategy_option(input);
         self
+    }
+    /// <p> The preferred strategy options for the application component. Use values from the <code>GetApplicationComponentStrategies</code> response. </p>
+    pub fn get_strategy_option(&self) -> &::std::option::Option<crate::types::StrategyOption> {
+        self.inner.get_strategy_option()
     }
     /// Appends an item to `sourceCodeList`.
     ///
@@ -149,6 +165,12 @@ impl UpdateApplicationComponentConfigFluentBuilder {
         self.inner = self.inner.set_source_code_list(input);
         self
     }
+    /// <p> The list of source code configurations to update for the application component. </p>
+    pub fn get_source_code_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceCode>> {
+        self.inner.get_source_code_list()
+    }
     /// <p> Database credentials. </p>
     pub fn secrets_manager_key(
         mut self,
@@ -165,6 +187,10 @@ impl UpdateApplicationComponentConfigFluentBuilder {
         self.inner = self.inner.set_secrets_manager_key(input);
         self
     }
+    /// <p> Database credentials. </p>
+    pub fn get_secrets_manager_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_secrets_manager_key()
+    }
     /// <p>Update the configuration request of an application component. If it is set to true, the source code and/or database credentials are updated. If it is set to false, the source code and/or database credentials are updated and an analysis is initiated.</p>
     pub fn configure_only(mut self, input: bool) -> Self {
         self.inner = self.inner.configure_only(input);
@@ -175,6 +201,10 @@ impl UpdateApplicationComponentConfigFluentBuilder {
         self.inner = self.inner.set_configure_only(input);
         self
     }
+    /// <p>Update the configuration request of an application component. If it is set to true, the source code and/or database credentials are updated. If it is set to false, the source code and/or database credentials are updated and an analysis is initiated.</p>
+    pub fn get_configure_only(&self) -> &::std::option::Option<bool> {
+        self.inner.get_configure_only()
+    }
     /// <p>The type of known component.</p>
     pub fn app_type(mut self, input: crate::types::AppType) -> Self {
         self.inner = self.inner.app_type(input);
@@ -184,5 +214,9 @@ impl UpdateApplicationComponentConfigFluentBuilder {
     pub fn set_app_type(mut self, input: ::std::option::Option<crate::types::AppType>) -> Self {
         self.inner = self.inner.set_app_type(input);
         self
+    }
+    /// <p>The type of known component.</p>
+    pub fn get_app_type(&self) -> &::std::option::Option<crate::types::AppType> {
+        self.inner.get_app_type()
     }
 }

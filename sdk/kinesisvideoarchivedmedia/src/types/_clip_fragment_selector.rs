@@ -55,6 +55,12 @@ impl ClipFragmentSelectorBuilder {
         self.fragment_selector_type = input;
         self
     }
+    /// <p>The origin of the timestamps to use (Server or Producer).</p>
+    pub fn get_fragment_selector_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ClipFragmentSelectorType> {
+        &self.fragment_selector_type
+    }
     /// <p>The range of timestamps to return.</p>
     pub fn timestamp_range(mut self, input: crate::types::ClipTimestampRange) -> Self {
         self.timestamp_range = ::std::option::Option::Some(input);
@@ -67,6 +73,10 @@ impl ClipFragmentSelectorBuilder {
     ) -> Self {
         self.timestamp_range = input;
         self
+    }
+    /// <p>The range of timestamps to return.</p>
+    pub fn get_timestamp_range(&self) -> &::std::option::Option<crate::types::ClipTimestampRange> {
+        &self.timestamp_range
     }
     /// Consumes the builder and constructs a [`ClipFragmentSelector`](crate::types::ClipFragmentSelector).
     pub fn build(self) -> crate::types::ClipFragmentSelector {

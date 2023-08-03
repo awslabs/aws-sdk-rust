@@ -36,6 +36,12 @@ impl UpdatePipelineFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdatePipeline as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_pipeline::builders::UpdatePipelineInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -120,5 +126,9 @@ impl UpdatePipelineFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_pipeline(input);
         self
+    }
+    /// <p>The name of the pipeline to be updated.</p>
+    pub fn get_pipeline(&self) -> &::std::option::Option<crate::types::PipelineDeclaration> {
+        self.inner.get_pipeline()
     }
 }

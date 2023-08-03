@@ -36,6 +36,13 @@ impl UpdateIdentityProviderFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateIdentityProvider as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_identity_provider::builders::UpdateIdentityProviderInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl UpdateIdentityProviderFluentBuilder {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
+    /// <p>The user pool ID.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_pool_id()
+    }
     /// <p>The IdP name.</p>
     pub fn provider_name(
         mut self,
@@ -141,6 +152,10 @@ impl UpdateIdentityProviderFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_provider_name(input);
         self
+    }
+    /// <p>The IdP name.</p>
+    pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_provider_name()
     }
     /// Adds a key-value pair to `ProviderDetails`.
     ///
@@ -165,6 +180,14 @@ impl UpdateIdentityProviderFluentBuilder {
         self.inner = self.inner.set_provider_details(input);
         self
     }
+    /// <p>The IdP details to be updated, such as <code>MetadataURL</code> and <code>MetadataFile</code>.</p>
+    pub fn get_provider_details(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_provider_details()
+    }
     /// Adds a key-value pair to `AttributeMapping`.
     ///
     /// To override the contents of this collection use [`set_attribute_mapping`](Self::set_attribute_mapping).
@@ -188,6 +211,14 @@ impl UpdateIdentityProviderFluentBuilder {
         self.inner = self.inner.set_attribute_mapping(input);
         self
     }
+    /// <p>The IdP attribute mapping to be changed.</p>
+    pub fn get_attribute_mapping(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_attribute_mapping()
+    }
     /// Appends an item to `IdpIdentifiers`.
     ///
     /// To override the contents of this collection use [`set_idp_identifiers`](Self::set_idp_identifiers).
@@ -207,5 +238,11 @@ impl UpdateIdentityProviderFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_idp_identifiers(input);
         self
+    }
+    /// <p>A list of IdP identifiers.</p>
+    pub fn get_idp_identifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_idp_identifiers()
     }
 }

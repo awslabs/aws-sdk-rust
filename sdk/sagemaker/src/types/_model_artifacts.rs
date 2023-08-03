@@ -47,6 +47,10 @@ impl ModelArtifactsBuilder {
         self.s3_model_artifacts = input;
         self
     }
+    /// <p>The path of the S3 object that contains the model artifacts. For example, <code>s3://bucket-name/keynameprefix/model.tar.gz</code>.</p>
+    pub fn get_s3_model_artifacts(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_model_artifacts
+    }
     /// Consumes the builder and constructs a [`ModelArtifacts`](crate::types::ModelArtifacts).
     pub fn build(self) -> crate::types::ModelArtifacts {
         crate::types::ModelArtifacts {

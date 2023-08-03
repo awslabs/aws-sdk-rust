@@ -110,6 +110,12 @@ impl LocalGatewayRouteTableVirtualInterfaceGroupAssociationBuilder {
         self.local_gateway_route_table_virtual_interface_group_association_id = input;
         self
     }
+    /// <p>The ID of the association.</p>
+    pub fn get_local_gateway_route_table_virtual_interface_group_association_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.local_gateway_route_table_virtual_interface_group_association_id
+    }
     /// <p>The ID of the virtual interface group.</p>
     pub fn local_gateway_virtual_interface_group_id(
         mut self,
@@ -125,6 +131,12 @@ impl LocalGatewayRouteTableVirtualInterfaceGroupAssociationBuilder {
     ) -> Self {
         self.local_gateway_virtual_interface_group_id = input;
         self
+    }
+    /// <p>The ID of the virtual interface group.</p>
+    pub fn get_local_gateway_virtual_interface_group_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.local_gateway_virtual_interface_group_id
     }
     /// <p>The ID of the local gateway.</p>
     pub fn local_gateway_id(
@@ -142,6 +154,10 @@ impl LocalGatewayRouteTableVirtualInterfaceGroupAssociationBuilder {
         self.local_gateway_id = input;
         self
     }
+    /// <p>The ID of the local gateway.</p>
+    pub fn get_local_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.local_gateway_id
+    }
     /// <p>The ID of the local gateway route table.</p>
     pub fn local_gateway_route_table_id(
         mut self,
@@ -157,6 +173,12 @@ impl LocalGatewayRouteTableVirtualInterfaceGroupAssociationBuilder {
     ) -> Self {
         self.local_gateway_route_table_id = input;
         self
+    }
+    /// <p>The ID of the local gateway route table.</p>
+    pub fn get_local_gateway_route_table_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.local_gateway_route_table_id
     }
     /// <p>The Amazon Resource Name (ARN) of the local gateway route table for the virtual interface group.</p>
     pub fn local_gateway_route_table_arn(
@@ -174,6 +196,12 @@ impl LocalGatewayRouteTableVirtualInterfaceGroupAssociationBuilder {
         self.local_gateway_route_table_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the local gateway route table for the virtual interface group.</p>
+    pub fn get_local_gateway_route_table_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.local_gateway_route_table_arn
+    }
     /// <p>The ID of the Amazon Web Services account that owns the local gateway virtual interface group association.</p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_id = ::std::option::Option::Some(input.into());
@@ -184,6 +212,10 @@ impl LocalGatewayRouteTableVirtualInterfaceGroupAssociationBuilder {
         self.owner_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account that owns the local gateway virtual interface group association.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
+    }
     /// <p>The state of the association.</p>
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state = ::std::option::Option::Some(input.into());
@@ -193,6 +225,10 @@ impl LocalGatewayRouteTableVirtualInterfaceGroupAssociationBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the association.</p>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
     }
     /// Appends an item to `tags`.
     ///
@@ -212,6 +248,10 @@ impl LocalGatewayRouteTableVirtualInterfaceGroupAssociationBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags assigned to the association.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`LocalGatewayRouteTableVirtualInterfaceGroupAssociation`](crate::types::LocalGatewayRouteTableVirtualInterfaceGroupAssociation).
     pub fn build(self) -> crate::types::LocalGatewayRouteTableVirtualInterfaceGroupAssociation {

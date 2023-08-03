@@ -36,6 +36,12 @@ impl UpdateSafetyRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateSafetyRule as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_safety_rule::builders::UpdateSafetyRuleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,12 @@ impl UpdateSafetyRuleFluentBuilder {
         self.inner = self.inner.set_assertion_rule_update(input);
         self
     }
+    /// <p>The assertion rule to update.</p>
+    pub fn get_assertion_rule_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssertionRuleUpdate> {
+        self.inner.get_assertion_rule_update()
+    }
     /// <p>The gating rule to update.</p>
     pub fn gating_rule_update(mut self, input: crate::types::GatingRuleUpdate) -> Self {
         self.inner = self.inner.gating_rule_update(input);
@@ -141,5 +153,9 @@ impl UpdateSafetyRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_gating_rule_update(input);
         self
+    }
+    /// <p>The gating rule to update.</p>
+    pub fn get_gating_rule_update(&self) -> &::std::option::Option<crate::types::GatingRuleUpdate> {
+        self.inner.get_gating_rule_update()
     }
 }

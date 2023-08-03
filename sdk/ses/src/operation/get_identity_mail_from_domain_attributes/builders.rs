@@ -37,6 +37,10 @@ impl GetIdentityMailFromDomainAttributesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetIdentityMailFromDomainAttributes as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_identity_mail_from_domain_attributes::builders::GetIdentityMailFromDomainAttributesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -107,5 +111,9 @@ impl GetIdentityMailFromDomainAttributesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_identities(input);
         self
+    }
+    /// <p>A list of one or more identities.</p>
+    pub fn get_identities(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_identities()
     }
 }

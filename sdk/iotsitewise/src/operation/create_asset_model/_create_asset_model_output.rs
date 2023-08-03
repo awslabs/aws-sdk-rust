@@ -71,6 +71,10 @@ impl CreateAssetModelOutputBuilder {
         self.asset_model_id = input;
         self
     }
+    /// <p>The ID of the asset model. You can use this ID when you call other IoT SiteWise APIs.</p>
+    pub fn get_asset_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_model_id
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
     pub fn asset_model_arn(
@@ -89,6 +93,11 @@ impl CreateAssetModelOutputBuilder {
         self.asset_model_arn = input;
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
+    pub fn get_asset_model_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_model_arn
+    }
     /// <p>The status of the asset model, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
     pub fn asset_model_status(mut self, input: crate::types::AssetModelStatus) -> Self {
         self.asset_model_status = ::std::option::Option::Some(input);
@@ -101,6 +110,10 @@ impl CreateAssetModelOutputBuilder {
     ) -> Self {
         self.asset_model_status = input;
         self
+    }
+    /// <p>The status of the asset model, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
+    pub fn get_asset_model_status(&self) -> &::std::option::Option<crate::types::AssetModelStatus> {
+        &self.asset_model_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

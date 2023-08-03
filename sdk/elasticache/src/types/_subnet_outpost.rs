@@ -46,6 +46,10 @@ impl SubnetOutpostBuilder {
         self.subnet_outpost_arn = input;
         self
     }
+    /// <p>The outpost ARN of the subnet.</p>
+    pub fn get_subnet_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_outpost_arn
+    }
     /// Consumes the builder and constructs a [`SubnetOutpost`](crate::types::SubnetOutpost).
     pub fn build(self) -> crate::types::SubnetOutpost {
         crate::types::SubnetOutpost {

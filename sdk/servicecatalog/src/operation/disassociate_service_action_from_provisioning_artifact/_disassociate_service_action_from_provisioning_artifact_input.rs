@@ -71,6 +71,10 @@ impl DisassociateServiceActionFromProvisioningArtifactInputBuilder {
         self.product_id = input;
         self
     }
+    /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
+    pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_id
+    }
     /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
     pub fn provisioning_artifact_id(
         mut self,
@@ -87,6 +91,10 @@ impl DisassociateServiceActionFromProvisioningArtifactInputBuilder {
         self.provisioning_artifact_id = input;
         self
     }
+    /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
+    pub fn get_provisioning_artifact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provisioning_artifact_id
+    }
     /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
     pub fn service_action_id(
         mut self,
@@ -102,6 +110,10 @@ impl DisassociateServiceActionFromProvisioningArtifactInputBuilder {
     ) -> Self {
         self.service_action_id = input;
         self
+    }
+    /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
+    pub fn get_service_action_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_action_id
     }
     /// <p>The language code.</p>
     /// <ul>
@@ -126,6 +138,14 @@ impl DisassociateServiceActionFromProvisioningArtifactInputBuilder {
     ) -> Self {
         self.accept_language = input;
         self
+    }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accept_language
     }
     /// Consumes the builder and constructs a [`DisassociateServiceActionFromProvisioningArtifactInput`](crate::operation::disassociate_service_action_from_provisioning_artifact::DisassociateServiceActionFromProvisioningArtifactInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_service_action_from_provisioning_artifact::DisassociateServiceActionFromProvisioningArtifactInput, ::aws_smithy_http::operation::error::BuildError>{

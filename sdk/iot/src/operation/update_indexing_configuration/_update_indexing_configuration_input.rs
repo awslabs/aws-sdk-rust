@@ -61,6 +61,12 @@ impl UpdateIndexingConfigurationInputBuilder {
         self.thing_indexing_configuration = input;
         self
     }
+    /// <p>Thing indexing configuration.</p>
+    pub fn get_thing_indexing_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ThingIndexingConfiguration> {
+        &self.thing_indexing_configuration
+    }
     /// <p>Thing group indexing configuration.</p>
     pub fn thing_group_indexing_configuration(
         mut self,
@@ -76,6 +82,12 @@ impl UpdateIndexingConfigurationInputBuilder {
     ) -> Self {
         self.thing_group_indexing_configuration = input;
         self
+    }
+    /// <p>Thing group indexing configuration.</p>
+    pub fn get_thing_group_indexing_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ThingGroupIndexingConfiguration> {
+        &self.thing_group_indexing_configuration
     }
     /// Consumes the builder and constructs a [`UpdateIndexingConfigurationInput`](crate::operation::update_indexing_configuration::UpdateIndexingConfigurationInput).
     pub fn build(

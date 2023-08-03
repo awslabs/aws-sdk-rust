@@ -36,6 +36,12 @@ impl ListInvalidationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListInvalidations as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_invalidations::builders::ListInvalidationsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +149,10 @@ impl ListInvalidationsFluentBuilder {
         self.inner = self.inner.set_distribution_id(input);
         self
     }
+    /// <p>The distribution's ID.</p>
+    pub fn get_distribution_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_distribution_id()
+    }
     /// <p>Use this parameter when paginating results to indicate where to begin in your list of invalidation batches. Because the results are returned in decreasing order from most recent to oldest, the most recent results are on the first page, the second page will contain earlier results, and so on. To get the next page of results, set <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response. This value is the same as the ID of the last invalidation batch on that page.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -153,6 +163,10 @@ impl ListInvalidationsFluentBuilder {
         self.inner = self.inner.set_marker(input);
         self
     }
+    /// <p>Use this parameter when paginating results to indicate where to begin in your list of invalidation batches. Because the results are returned in decreasing order from most recent to oldest, the most recent results are on the first page, the second page will contain earlier results, and so on. To get the next page of results, set <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response. This value is the same as the ID of the last invalidation batch on that page.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
+    }
     /// <p>The maximum number of invalidation batches that you want in the response body.</p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.inner = self.inner.max_items(input);
@@ -162,5 +176,9 @@ impl ListInvalidationsFluentBuilder {
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_items(input);
         self
+    }
+    /// <p>The maximum number of invalidation batches that you want in the response body.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_items()
     }
 }

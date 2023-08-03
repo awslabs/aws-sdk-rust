@@ -36,6 +36,12 @@ impl GetSearchSuggestionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetSearchSuggestions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_search_suggestions::builders::GetSearchSuggestionsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl GetSearchSuggestionsFluentBuilder {
         self.inner = self.inner.set_resource(input);
         self
     }
+    /// <p>The name of the SageMaker resource to search for.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        self.inner.get_resource()
+    }
     /// <p>Limits the property names that are included in the response.</p>
     pub fn suggestion_query(mut self, input: crate::types::SuggestionQuery) -> Self {
         self.inner = self.inner.suggestion_query(input);
@@ -141,5 +151,9 @@ impl GetSearchSuggestionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_suggestion_query(input);
         self
+    }
+    /// <p>Limits the property names that are included in the response.</p>
+    pub fn get_suggestion_query(&self) -> &::std::option::Option<crate::types::SuggestionQuery> {
+        self.inner.get_suggestion_query()
     }
 }

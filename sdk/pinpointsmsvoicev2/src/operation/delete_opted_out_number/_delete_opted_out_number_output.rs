@@ -86,6 +86,10 @@ impl DeleteOptedOutNumberOutputBuilder {
         self.opt_out_list_arn = input;
         self
     }
+    /// <p>The OptOutListArn that the phone number was removed from.</p>
+    pub fn get_opt_out_list_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.opt_out_list_arn
+    }
     /// <p>The OptOutListName that the phone number was removed from.</p>
     pub fn opt_out_list_name(
         mut self,
@@ -101,6 +105,10 @@ impl DeleteOptedOutNumberOutputBuilder {
     ) -> Self {
         self.opt_out_list_name = input;
         self
+    }
+    /// <p>The OptOutListName that the phone number was removed from.</p>
+    pub fn get_opt_out_list_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.opt_out_list_name
     }
     /// <p>The phone number that was removed from the OptOutList.</p>
     pub fn opted_out_number(
@@ -118,6 +126,10 @@ impl DeleteOptedOutNumberOutputBuilder {
         self.opted_out_number = input;
         self
     }
+    /// <p>The phone number that was removed from the OptOutList.</p>
+    pub fn get_opted_out_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.opted_out_number
+    }
     /// <p>The time that the number was removed at, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn opted_out_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.opted_out_timestamp = ::std::option::Option::Some(input);
@@ -131,6 +143,10 @@ impl DeleteOptedOutNumberOutputBuilder {
         self.opted_out_timestamp = input;
         self
     }
+    /// <p>The time that the number was removed at, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+    pub fn get_opted_out_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.opted_out_timestamp
+    }
     /// <p>This is true if it was the end user who requested their phone number be removed. </p>
     pub fn end_user_opted_out(mut self, input: bool) -> Self {
         self.end_user_opted_out = ::std::option::Option::Some(input);
@@ -140,6 +156,10 @@ impl DeleteOptedOutNumberOutputBuilder {
     pub fn set_end_user_opted_out(mut self, input: ::std::option::Option<bool>) -> Self {
         self.end_user_opted_out = input;
         self
+    }
+    /// <p>This is true if it was the end user who requested their phone number be removed. </p>
+    pub fn get_end_user_opted_out(&self) -> &::std::option::Option<bool> {
+        &self.end_user_opted_out
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

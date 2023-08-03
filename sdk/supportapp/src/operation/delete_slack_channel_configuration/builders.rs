@@ -36,6 +36,10 @@ impl DeleteSlackChannelConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteSlackChannelConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_slack_channel_configuration::builders::DeleteSlackChannelConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl DeleteSlackChannelConfigurationFluentBuilder {
         self.inner = self.inner.set_team_id(input);
         self
     }
+    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
+    pub fn get_team_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_team_id()
+    }
     /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
     pub fn channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_id(input.into());
@@ -109,5 +117,9 @@ impl DeleteSlackChannelConfigurationFluentBuilder {
     pub fn set_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_channel_id(input);
         self
+    }
+    /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
+    pub fn get_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_id()
     }
 }

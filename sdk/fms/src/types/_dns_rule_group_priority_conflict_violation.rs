@@ -78,6 +78,10 @@ impl DnsRuleGroupPriorityConflictViolationBuilder {
         self.violation_target = input;
         self
     }
+    /// <p>Information about the VPC ID. </p>
+    pub fn get_violation_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.violation_target
+    }
     /// <p>A description of the violation that specifies the VPC and the rule group that's already associated with it.</p>
     pub fn violation_target_description(
         mut self,
@@ -94,6 +98,12 @@ impl DnsRuleGroupPriorityConflictViolationBuilder {
         self.violation_target_description = input;
         self
     }
+    /// <p>A description of the violation that specifies the VPC and the rule group that's already associated with it.</p>
+    pub fn get_violation_target_description(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.violation_target_description
+    }
     /// <p>The priority setting of the two conflicting rule groups.</p>
     pub fn conflicting_priority(mut self, input: i32) -> Self {
         self.conflicting_priority = ::std::option::Option::Some(input);
@@ -103,6 +113,10 @@ impl DnsRuleGroupPriorityConflictViolationBuilder {
     pub fn set_conflicting_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.conflicting_priority = input;
         self
+    }
+    /// <p>The priority setting of the two conflicting rule groups.</p>
+    pub fn get_conflicting_priority(&self) -> &::std::option::Option<i32> {
+        &self.conflicting_priority
     }
     /// <p>The ID of the Firewall Manager DNS Firewall policy that was already applied to the VPC. This policy contains the rule group that's already associated with the VPC. </p>
     pub fn conflicting_policy_id(
@@ -119,6 +133,10 @@ impl DnsRuleGroupPriorityConflictViolationBuilder {
     ) -> Self {
         self.conflicting_policy_id = input;
         self
+    }
+    /// <p>The ID of the Firewall Manager DNS Firewall policy that was already applied to the VPC. This policy contains the rule group that's already associated with the VPC. </p>
+    pub fn get_conflicting_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.conflicting_policy_id
     }
     /// Appends an item to `unavailable_priorities`.
     ///
@@ -138,6 +156,10 @@ impl DnsRuleGroupPriorityConflictViolationBuilder {
     ) -> Self {
         self.unavailable_priorities = input;
         self
+    }
+    /// <p>The priorities of rule groups that are already associated with the VPC. To retry your operation, choose priority settings that aren't in this list for the rule groups in your new DNS Firewall policy. </p>
+    pub fn get_unavailable_priorities(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.unavailable_priorities
     }
     /// Consumes the builder and constructs a [`DnsRuleGroupPriorityConflictViolation`](crate::types::DnsRuleGroupPriorityConflictViolation).
     pub fn build(self) -> crate::types::DnsRuleGroupPriorityConflictViolation {

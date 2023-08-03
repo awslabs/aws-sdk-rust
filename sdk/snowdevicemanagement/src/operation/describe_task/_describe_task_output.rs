@@ -118,6 +118,10 @@ impl DescribeTaskOutputBuilder {
         self.task_id = input;
         self
     }
+    /// <p>The ID of the task.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
     pub fn task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_arn = ::std::option::Option::Some(input.into());
@@ -127,6 +131,10 @@ impl DescribeTaskOutputBuilder {
     pub fn set_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the task.</p>
+    pub fn get_task_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_arn
     }
     /// Appends an item to `targets`.
     ///
@@ -147,6 +155,10 @@ impl DescribeTaskOutputBuilder {
         self.targets = input;
         self
     }
+    /// <p>The managed devices that the task was sent to.</p>
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.targets
+    }
     /// <p>The current state of the task.</p>
     pub fn state(mut self, input: crate::types::TaskState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -156,6 +168,10 @@ impl DescribeTaskOutputBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::TaskState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The current state of the task.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::TaskState> {
+        &self.state
     }
     /// <p>When the <code>CreateTask</code> operation was called.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -170,6 +186,10 @@ impl DescribeTaskOutputBuilder {
         self.created_at = input;
         self
     }
+    /// <p>When the <code>CreateTask</code> operation was called.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>When the state of the task was last updated.</p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_at = ::std::option::Option::Some(input);
@@ -182,6 +202,10 @@ impl DescribeTaskOutputBuilder {
     ) -> Self {
         self.last_updated_at = input;
         self
+    }
+    /// <p>When the state of the task was last updated.</p>
+    pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_at
     }
     /// <p>When the task was completed.</p>
     pub fn completed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -196,6 +220,10 @@ impl DescribeTaskOutputBuilder {
         self.completed_at = input;
         self
     }
+    /// <p>When the task was completed.</p>
+    pub fn get_completed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.completed_at
+    }
     /// <p>The description provided of the task and managed devices.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -205,6 +233,10 @@ impl DescribeTaskOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description provided of the task and managed devices.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -230,6 +262,14 @@ impl DescribeTaskOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

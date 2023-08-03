@@ -64,6 +64,10 @@ impl GetResourcesOutputBuilder {
         self.pagination_token = input;
         self
     }
+    /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
+    pub fn get_pagination_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pagination_token
+    }
     /// Appends an item to `resource_tag_mapping_list`.
     ///
     /// To override the contents of this collection use [`set_resource_tag_mapping_list`](Self::set_resource_tag_mapping_list).
@@ -82,6 +86,12 @@ impl GetResourcesOutputBuilder {
     ) -> Self {
         self.resource_tag_mapping_list = input;
         self
+    }
+    /// <p>A list of resource ARNs and the tags (keys and values) associated with each.</p>
+    pub fn get_resource_tag_mapping_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTagMapping>> {
+        &self.resource_tag_mapping_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

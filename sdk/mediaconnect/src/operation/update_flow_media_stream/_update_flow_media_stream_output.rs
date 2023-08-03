@@ -56,6 +56,10 @@ impl UpdateFlowMediaStreamOutputBuilder {
         self.flow_arn = input;
         self
     }
+    /// The ARN of the flow that is associated with the media stream that you updated.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_arn
+    }
     /// The media stream that you updated.
     pub fn media_stream(mut self, input: crate::types::MediaStream) -> Self {
         self.media_stream = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl UpdateFlowMediaStreamOutputBuilder {
     ) -> Self {
         self.media_stream = input;
         self
+    }
+    /// The media stream that you updated.
+    pub fn get_media_stream(&self) -> &::std::option::Option<crate::types::MediaStream> {
+        &self.media_stream
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

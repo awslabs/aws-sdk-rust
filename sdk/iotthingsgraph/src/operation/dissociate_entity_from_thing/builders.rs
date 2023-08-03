@@ -37,6 +37,10 @@ impl DissociateEntityFromThingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DissociateEntityFromThing as a reference.
+    pub fn as_input(&self) -> &crate::operation::dissociate_entity_from_thing::builders::DissociateEntityFromThingInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl DissociateEntityFromThingFluentBuilder {
         self.inner = self.inner.set_thing_name(input);
         self
     }
+    /// <p>The name of the thing to disassociate.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_thing_name()
+    }
     /// <p>The entity type from which to disassociate the thing.</p>
     pub fn entity_type(mut self, input: crate::types::EntityType) -> Self {
         self.inner = self.inner.entity_type(input);
@@ -139,5 +147,9 @@ impl DissociateEntityFromThingFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_entity_type(input);
         self
+    }
+    /// <p>The entity type from which to disassociate the thing.</p>
+    pub fn get_entity_type(&self) -> &::std::option::Option<crate::types::EntityType> {
+        self.inner.get_entity_type()
     }
 }

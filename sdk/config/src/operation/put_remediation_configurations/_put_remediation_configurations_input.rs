@@ -55,6 +55,12 @@ impl PutRemediationConfigurationsInputBuilder {
         self.remediation_configurations = input;
         self
     }
+    /// <p>A list of remediation configuration objects.</p>
+    pub fn get_remediation_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RemediationConfiguration>> {
+        &self.remediation_configurations
+    }
     /// Consumes the builder and constructs a [`PutRemediationConfigurationsInput`](crate::operation::put_remediation_configurations::PutRemediationConfigurationsInput).
     pub fn build(
         self,

@@ -106,6 +106,10 @@ impl TrustAnchorDetailBuilder {
         self.trust_anchor_id = input;
         self
     }
+    /// <p>The unique identifier of the trust anchor.</p>
+    pub fn get_trust_anchor_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trust_anchor_id
+    }
     /// <p>The ARN of the trust anchor.</p>
     pub fn trust_anchor_arn(
         mut self,
@@ -122,6 +126,10 @@ impl TrustAnchorDetailBuilder {
         self.trust_anchor_arn = input;
         self
     }
+    /// <p>The ARN of the trust anchor.</p>
+    pub fn get_trust_anchor_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trust_anchor_arn
+    }
     /// <p>The name of the trust anchor.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -131,6 +139,10 @@ impl TrustAnchorDetailBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the trust anchor.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The trust anchor type and its related certificate data.</p>
     pub fn source(mut self, input: crate::types::Source) -> Self {
@@ -142,6 +154,10 @@ impl TrustAnchorDetailBuilder {
         self.source = input;
         self
     }
+    /// <p>The trust anchor type and its related certificate data.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::Source> {
+        &self.source
+    }
     /// <p>Indicates whether the trust anchor is enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -151,6 +167,10 @@ impl TrustAnchorDetailBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>Indicates whether the trust anchor is enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// <p>The ISO-8601 timestamp when the trust anchor was created. </p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -165,6 +185,10 @@ impl TrustAnchorDetailBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The ISO-8601 timestamp when the trust anchor was created. </p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The ISO-8601 timestamp when the trust anchor was last updated. </p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -177,6 +201,10 @@ impl TrustAnchorDetailBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// <p>The ISO-8601 timestamp when the trust anchor was last updated. </p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     /// Appends an item to `notification_settings`.
     ///
@@ -196,6 +224,12 @@ impl TrustAnchorDetailBuilder {
     ) -> Self {
         self.notification_settings = input;
         self
+    }
+    /// <p>A list of notification settings to be associated to the trust anchor.</p>
+    pub fn get_notification_settings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationSettingDetail>> {
+        &self.notification_settings
     }
     /// Consumes the builder and constructs a [`TrustAnchorDetail`](crate::types::TrustAnchorDetail).
     pub fn build(self) -> crate::types::TrustAnchorDetail {

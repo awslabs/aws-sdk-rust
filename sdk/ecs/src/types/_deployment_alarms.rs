@@ -68,6 +68,12 @@ impl DeploymentAlarmsBuilder {
         self.alarm_names = input;
         self
     }
+    /// <p>One or more CloudWatch alarm names. Use a "," to separate the alarms.</p>
+    pub fn get_alarm_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.alarm_names
+    }
     /// <p>Determines whether to use the CloudWatch alarm option in the service deployment process.</p>
     pub fn enable(mut self, input: bool) -> Self {
         self.enable = ::std::option::Option::Some(input);
@@ -78,6 +84,10 @@ impl DeploymentAlarmsBuilder {
         self.enable = input;
         self
     }
+    /// <p>Determines whether to use the CloudWatch alarm option in the service deployment process.</p>
+    pub fn get_enable(&self) -> &::std::option::Option<bool> {
+        &self.enable
+    }
     /// <p>Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is used, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
     pub fn rollback(mut self, input: bool) -> Self {
         self.rollback = ::std::option::Option::Some(input);
@@ -87,6 +97,10 @@ impl DeploymentAlarmsBuilder {
     pub fn set_rollback(mut self, input: ::std::option::Option<bool>) -> Self {
         self.rollback = input;
         self
+    }
+    /// <p>Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is used, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
+    pub fn get_rollback(&self) -> &::std::option::Option<bool> {
+        &self.rollback
     }
     /// Consumes the builder and constructs a [`DeploymentAlarms`](crate::types::DeploymentAlarms).
     pub fn build(self) -> crate::types::DeploymentAlarms {

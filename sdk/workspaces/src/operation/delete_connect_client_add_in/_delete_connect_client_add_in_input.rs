@@ -47,6 +47,10 @@ impl DeleteConnectClientAddInInputBuilder {
         self.add_in_id = input;
         self
     }
+    /// <p>The identifier of the client add-in to delete.</p>
+    pub fn get_add_in_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.add_in_id
+    }
     /// <p>The directory identifier for which the client add-in is configured.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DeleteConnectClientAddInInputBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The directory identifier for which the client add-in is configured.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// Consumes the builder and constructs a [`DeleteConnectClientAddInInput`](crate::operation::delete_connect_client_add_in::DeleteConnectClientAddInInput).
     pub fn build(

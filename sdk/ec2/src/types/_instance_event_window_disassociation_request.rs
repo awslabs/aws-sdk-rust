@@ -65,6 +65,12 @@ impl InstanceEventWindowDisassociationRequestBuilder {
         self.instance_ids = input;
         self
     }
+    /// <p>The IDs of the instances to disassociate from the event window.</p>
+    pub fn get_instance_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.instance_ids
+    }
     /// Appends an item to `instance_tags`.
     ///
     /// To override the contents of this collection use [`set_instance_tags`](Self::set_instance_tags).
@@ -83,6 +89,10 @@ impl InstanceEventWindowDisassociationRequestBuilder {
     ) -> Self {
         self.instance_tags = input;
         self
+    }
+    /// <p>The instance tags to disassociate from the event window. Any instances associated with the tags will be disassociated from the event window.</p>
+    pub fn get_instance_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.instance_tags
     }
     /// Appends an item to `dedicated_host_ids`.
     ///
@@ -105,6 +115,12 @@ impl InstanceEventWindowDisassociationRequestBuilder {
     ) -> Self {
         self.dedicated_host_ids = input;
         self
+    }
+    /// <p>The IDs of the Dedicated Hosts to disassociate from the event window.</p>
+    pub fn get_dedicated_host_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.dedicated_host_ids
     }
     /// Consumes the builder and constructs a [`InstanceEventWindowDisassociationRequest`](crate::types::InstanceEventWindowDisassociationRequest).
     pub fn build(self) -> crate::types::InstanceEventWindowDisassociationRequest {

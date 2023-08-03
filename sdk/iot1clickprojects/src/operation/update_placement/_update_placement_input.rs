@@ -69,6 +69,10 @@ impl UpdatePlacementInputBuilder {
         self.placement_name = input;
         self
     }
+    /// <p>The name of the placement to update.</p>
+    pub fn get_placement_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.placement_name
+    }
     /// <p>The name of the project containing the placement to be updated.</p>
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
@@ -78,6 +82,10 @@ impl UpdatePlacementInputBuilder {
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_name = input;
         self
+    }
+    /// <p>The name of the project containing the placement to be updated.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
     }
     /// Adds a key-value pair to `attributes`.
     ///
@@ -103,6 +111,14 @@ impl UpdatePlacementInputBuilder {
     ) -> Self {
         self.attributes = input;
         self
+    }
+    /// <p>The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.attributes
     }
     /// Consumes the builder and constructs a [`UpdatePlacementInput`](crate::operation::update_placement::UpdatePlacementInput).
     pub fn build(

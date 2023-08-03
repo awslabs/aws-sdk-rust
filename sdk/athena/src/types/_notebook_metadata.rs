@@ -80,6 +80,10 @@ impl NotebookMetadataBuilder {
         self.notebook_id = input;
         self
     }
+    /// <p>The notebook ID.</p>
+    pub fn get_notebook_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notebook_id
+    }
     /// <p>The name of the notebook.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl NotebookMetadataBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the notebook.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The name of the Spark enabled workgroup to which the notebook belongs.</p>
     pub fn work_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.work_group = ::std::option::Option::Some(input.into());
@@ -99,6 +107,10 @@ impl NotebookMetadataBuilder {
     pub fn set_work_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.work_group = input;
         self
+    }
+    /// <p>The name of the Spark enabled workgroup to which the notebook belongs.</p>
+    pub fn get_work_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.work_group
     }
     /// <p>The time when the notebook was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -113,6 +125,10 @@ impl NotebookMetadataBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time when the notebook was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The type of notebook. Currently, the only valid type is <code>IPYNB</code>.</p>
     pub fn r#type(mut self, input: crate::types::NotebookType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -122,6 +138,10 @@ impl NotebookMetadataBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::NotebookType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of notebook. Currently, the only valid type is <code>IPYNB</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::NotebookType> {
+        &self.r#type
     }
     /// <p>The time when the notebook was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -135,6 +155,10 @@ impl NotebookMetadataBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>The time when the notebook was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// Consumes the builder and constructs a [`NotebookMetadata`](crate::types::NotebookMetadata).
     pub fn build(self) -> crate::types::NotebookMetadata {

@@ -41,6 +41,12 @@ impl BatchCreateAttendeeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchCreateAttendee as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_create_attendee::builders::BatchCreateAttendeeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +137,10 @@ impl BatchCreateAttendeeFluentBuilder {
         self.inner = self.inner.set_meeting_id(input);
         self
     }
+    /// <p>The Amazon Chime SDK meeting ID.</p>
+    pub fn get_meeting_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_meeting_id()
+    }
     /// Appends an item to `Attendees`.
     ///
     /// To override the contents of this collection use [`set_attendees`](Self::set_attendees).
@@ -147,5 +157,11 @@ impl BatchCreateAttendeeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_attendees(input);
         self
+    }
+    /// <p>The request containing the attendees to create.</p>
+    pub fn get_attendees(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAttendeeRequestItem>> {
+        self.inner.get_attendees()
     }
 }

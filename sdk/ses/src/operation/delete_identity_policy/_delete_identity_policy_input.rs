@@ -53,6 +53,11 @@ impl DeleteIdentityPolicyInputBuilder {
         self.identity = input;
         self
     }
+    /// <p>The identity that is associated with the policy that you want to delete. You can specify the identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+    /// <p>To successfully call this API, you must own the identity.</p>
+    pub fn get_identity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity
+    }
     /// <p>The name of the policy to be deleted.</p>
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
@@ -62,6 +67,10 @@ impl DeleteIdentityPolicyInputBuilder {
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_name = input;
         self
+    }
+    /// <p>The name of the policy to be deleted.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_name
     }
     /// Consumes the builder and constructs a [`DeleteIdentityPolicyInput`](crate::operation::delete_identity_policy::DeleteIdentityPolicyInput).
     pub fn build(

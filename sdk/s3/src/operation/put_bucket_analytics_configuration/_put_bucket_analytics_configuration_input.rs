@@ -65,6 +65,10 @@ impl PutBucketAnalyticsConfigurationInputBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The name of the bucket to which an analytics configuration is stored.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>The ID that identifies the analytics configuration.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl PutBucketAnalyticsConfigurationInputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The ID that identifies the analytics configuration.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The configuration and any analyses for the analytics filter.</p>
     pub fn analytics_configuration(mut self, input: crate::types::AnalyticsConfiguration) -> Self {
@@ -87,6 +95,12 @@ impl PutBucketAnalyticsConfigurationInputBuilder {
     ) -> Self {
         self.analytics_configuration = input;
         self
+    }
+    /// <p>The configuration and any analyses for the analytics filter.</p>
+    pub fn get_analytics_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AnalyticsConfiguration> {
+        &self.analytics_configuration
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(
@@ -103,6 +117,10 @@ impl PutBucketAnalyticsConfigurationInputBuilder {
     ) -> Self {
         self.expected_bucket_owner = input;
         self
+    }
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+    pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expected_bucket_owner
     }
     /// Consumes the builder and constructs a [`PutBucketAnalyticsConfigurationInput`](crate::operation::put_bucket_analytics_configuration::PutBucketAnalyticsConfigurationInput).
     pub fn build(

@@ -49,6 +49,10 @@ impl DeleteTapeArchiveInputBuilder {
         self.tape_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the virtual tape to delete from the virtual tape shelf (VTS).</p>
+    pub fn get_tape_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tape_arn
+    }
     /// <p>Set to <code>TRUE</code> to delete an archived tape that belongs to a custom pool with tape retention lock. Only archived tapes with tape retention lock set to <code>governance</code> can be deleted. Archived tapes with tape retention lock set to <code>compliance</code> can't be deleted.</p>
     pub fn bypass_governance_retention(mut self, input: bool) -> Self {
         self.bypass_governance_retention = ::std::option::Option::Some(input);
@@ -58,6 +62,10 @@ impl DeleteTapeArchiveInputBuilder {
     pub fn set_bypass_governance_retention(mut self, input: ::std::option::Option<bool>) -> Self {
         self.bypass_governance_retention = input;
         self
+    }
+    /// <p>Set to <code>TRUE</code> to delete an archived tape that belongs to a custom pool with tape retention lock. Only archived tapes with tape retention lock set to <code>governance</code> can be deleted. Archived tapes with tape retention lock set to <code>compliance</code> can't be deleted.</p>
+    pub fn get_bypass_governance_retention(&self) -> &::std::option::Option<bool> {
+        &self.bypass_governance_retention
     }
     /// Consumes the builder and constructs a [`DeleteTapeArchiveInput`](crate::operation::delete_tape_archive::DeleteTapeArchiveInput).
     pub fn build(

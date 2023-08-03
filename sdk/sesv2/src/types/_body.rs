@@ -48,6 +48,10 @@ impl BodyBuilder {
         self.text = input;
         self
     }
+    /// <p>An object that represents the version of the message that is displayed in email clients that don't support HTML, or clients where the recipient has disabled HTML rendering.</p>
+    pub fn get_text(&self) -> &::std::option::Option<crate::types::Content> {
+        &self.text
+    }
     /// <p>An object that represents the version of the message that is displayed in email clients that support HTML. HTML messages can include formatted text, hyperlinks, images, and more. </p>
     pub fn html(mut self, input: crate::types::Content) -> Self {
         self.html = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl BodyBuilder {
     pub fn set_html(mut self, input: ::std::option::Option<crate::types::Content>) -> Self {
         self.html = input;
         self
+    }
+    /// <p>An object that represents the version of the message that is displayed in email clients that support HTML. HTML messages can include formatted text, hyperlinks, images, and more. </p>
+    pub fn get_html(&self) -> &::std::option::Option<crate::types::Content> {
+        &self.html
     }
     /// Consumes the builder and constructs a [`Body`](crate::types::Body).
     pub fn build(self) -> crate::types::Body {

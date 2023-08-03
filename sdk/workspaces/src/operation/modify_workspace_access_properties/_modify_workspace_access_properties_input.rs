@@ -50,6 +50,10 @@ impl ModifyWorkspaceAccessPropertiesInputBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The identifier of the directory.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>The device types and operating systems to enable or disable for access.</p>
     pub fn workspace_access_properties(
         mut self,
@@ -65,6 +69,12 @@ impl ModifyWorkspaceAccessPropertiesInputBuilder {
     ) -> Self {
         self.workspace_access_properties = input;
         self
+    }
+    /// <p>The device types and operating systems to enable or disable for access.</p>
+    pub fn get_workspace_access_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::WorkspaceAccessProperties> {
+        &self.workspace_access_properties
     }
     /// Consumes the builder and constructs a [`ModifyWorkspaceAccessPropertiesInput`](crate::operation::modify_workspace_access_properties::ModifyWorkspaceAccessPropertiesInput).
     pub fn build(

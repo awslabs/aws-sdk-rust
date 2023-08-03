@@ -88,6 +88,10 @@ impl JobErrorBuilder {
         self.code = input;
         self
     }
+    /// <p>The code for the job error.</p>
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::Code> {
+        &self.code
+    }
     /// <p>The details about the job error.</p>
     pub fn details(mut self, input: crate::types::Details) -> Self {
         self.details = ::std::option::Option::Some(input);
@@ -97,6 +101,10 @@ impl JobErrorBuilder {
     pub fn set_details(mut self, input: ::std::option::Option<crate::types::Details>) -> Self {
         self.details = input;
         self
+    }
+    /// <p>The details about the job error.</p>
+    pub fn get_details(&self) -> &::std::option::Option<crate::types::Details> {
+        &self.details
     }
     /// <p>The name of the limit that was reached.</p>
     pub fn limit_name(mut self, input: crate::types::JobErrorLimitName) -> Self {
@@ -111,6 +119,10 @@ impl JobErrorBuilder {
         self.limit_name = input;
         self
     }
+    /// <p>The name of the limit that was reached.</p>
+    pub fn get_limit_name(&self) -> &::std::option::Option<crate::types::JobErrorLimitName> {
+        &self.limit_name
+    }
     /// <p>The value of the exceeded limit.</p>
     pub fn limit_value(mut self, input: f64) -> Self {
         self.limit_value = ::std::option::Option::Some(input);
@@ -120,6 +132,10 @@ impl JobErrorBuilder {
     pub fn set_limit_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.limit_value = input;
         self
+    }
+    /// <p>The value of the exceeded limit.</p>
+    pub fn get_limit_value(&self) -> &::std::option::Option<f64> {
+        &self.limit_value
     }
     /// <p>The message related to the job error.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -131,6 +147,10 @@ impl JobErrorBuilder {
         self.message = input;
         self
     }
+    /// <p>The message related to the job error.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The unique identifier for the resource related to the error.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -140,6 +160,10 @@ impl JobErrorBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The unique identifier for the resource related to the error.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>The type of resource related to the error.</p>
     pub fn resource_type(mut self, input: crate::types::JobErrorResourceTypes) -> Self {
@@ -153,6 +177,10 @@ impl JobErrorBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The type of resource related to the error.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::JobErrorResourceTypes> {
+        &self.resource_type
     }
     /// Consumes the builder and constructs a [`JobError`](crate::types::JobError).
     pub fn build(self) -> crate::types::JobError {

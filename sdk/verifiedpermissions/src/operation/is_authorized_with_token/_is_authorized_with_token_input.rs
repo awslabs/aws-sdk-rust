@@ -99,6 +99,10 @@ impl IsAuthorizedWithTokenInputBuilder {
         self.policy_store_id = input;
         self
     }
+    /// <p>Specifies the ID of the policy store. Policies in this policy store will be used to make an authorization decision for the input.</p>
+    pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_store_id
+    }
     /// <p>Specifies an identity token for the principal to be authorized. This token is provided to you by the identity provider (IdP) associated with the specified identity source. You must specify either an <code>AccessToken</code> or an <code>IdentityToken</code>, but not both.</p>
     pub fn identity_token(
         mut self,
@@ -115,6 +119,10 @@ impl IsAuthorizedWithTokenInputBuilder {
         self.identity_token = input;
         self
     }
+    /// <p>Specifies an identity token for the principal to be authorized. This token is provided to you by the identity provider (IdP) associated with the specified identity source. You must specify either an <code>AccessToken</code> or an <code>IdentityToken</code>, but not both.</p>
+    pub fn get_identity_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_token
+    }
     /// <p>Specifies an access token for the principal to be authorized. This token is provided to you by the identity provider (IdP) associated with the specified identity source. You must specify either an <code>AccessToken</code> or an <code>IdentityToken</code>, but not both.</p>
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_token = ::std::option::Option::Some(input.into());
@@ -124,6 +132,10 @@ impl IsAuthorizedWithTokenInputBuilder {
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_token = input;
         self
+    }
+    /// <p>Specifies an access token for the principal to be authorized. This token is provided to you by the identity provider (IdP) associated with the specified identity source. You must specify either an <code>AccessToken</code> or an <code>IdentityToken</code>, but not both.</p>
+    pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_token
     }
     /// <p>Specifies the requested action to be authorized. Is the specified principal authorized to perform this action on the specified resource.</p>
     pub fn action(mut self, input: crate::types::ActionIdentifier) -> Self {
@@ -138,6 +150,10 @@ impl IsAuthorizedWithTokenInputBuilder {
         self.action = input;
         self
     }
+    /// <p>Specifies the requested action to be authorized. Is the specified principal authorized to perform this action on the specified resource.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::ActionIdentifier> {
+        &self.action
+    }
     /// <p>Specifies the resource for which the authorization decision is made. For example, is the principal allowed to perform the action on the resource?</p>
     pub fn resource(mut self, input: crate::types::EntityIdentifier) -> Self {
         self.resource = ::std::option::Option::Some(input);
@@ -151,6 +167,10 @@ impl IsAuthorizedWithTokenInputBuilder {
         self.resource = input;
         self
     }
+    /// <p>Specifies the resource for which the authorization decision is made. For example, is the principal allowed to perform the action on the resource?</p>
+    pub fn get_resource(&self) -> &::std::option::Option<crate::types::EntityIdentifier> {
+        &self.resource
+    }
     /// <p>Specifies additional context that can be used to make more granular authorization decisions.</p>
     pub fn context(mut self, input: crate::types::ContextDefinition) -> Self {
         self.context = ::std::option::Option::Some(input);
@@ -163,6 +183,10 @@ impl IsAuthorizedWithTokenInputBuilder {
     ) -> Self {
         self.context = input;
         self
+    }
+    /// <p>Specifies additional context that can be used to make more granular authorization decisions.</p>
+    pub fn get_context(&self) -> &::std::option::Option<crate::types::ContextDefinition> {
+        &self.context
     }
     /// <p>Specifies the list of resources and principals and their associated attributes that Verified Permissions can examine when evaluating the policies. </p> <note>
     /// <p>You can include only principal and resource entities in this parameter; you can't include actions. You must specify actions in the schema.</p>
@@ -180,6 +204,12 @@ impl IsAuthorizedWithTokenInputBuilder {
     ) -> Self {
         self.entities = input;
         self
+    }
+    /// <p>Specifies the list of resources and principals and their associated attributes that Verified Permissions can examine when evaluating the policies. </p> <note>
+    /// <p>You can include only principal and resource entities in this parameter; you can't include actions. You must specify actions in the schema.</p>
+    /// </note>
+    pub fn get_entities(&self) -> &::std::option::Option<crate::types::EntitiesDefinition> {
+        &self.entities
     }
     /// Consumes the builder and constructs a [`IsAuthorizedWithTokenInput`](crate::operation::is_authorized_with_token::IsAuthorizedWithTokenInput).
     pub fn build(

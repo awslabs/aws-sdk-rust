@@ -95,6 +95,10 @@ impl ListPipelineExecutionsInputBuilder {
         self.pipeline_name = input;
         self
     }
+    /// <p>The name or Amazon Resource Name (ARN) of the pipeline.</p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_name
+    }
     /// <p>A filter that returns the pipeline executions that were created after a specified time.</p>
     pub fn created_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_after = ::std::option::Option::Some(input);
@@ -107,6 +111,10 @@ impl ListPipelineExecutionsInputBuilder {
     ) -> Self {
         self.created_after = input;
         self
+    }
+    /// <p>A filter that returns the pipeline executions that were created after a specified time.</p>
+    pub fn get_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_after
     }
     /// <p>A filter that returns the pipeline executions that were created before a specified time.</p>
     pub fn created_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -121,6 +129,10 @@ impl ListPipelineExecutionsInputBuilder {
         self.created_before = input;
         self
     }
+    /// <p>A filter that returns the pipeline executions that were created before a specified time.</p>
+    pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_before
+    }
     /// <p>The field by which to sort results. The default is <code>CreatedTime</code>.</p>
     pub fn sort_by(mut self, input: crate::types::SortPipelineExecutionsBy) -> Self {
         self.sort_by = ::std::option::Option::Some(input);
@@ -134,6 +146,10 @@ impl ListPipelineExecutionsInputBuilder {
         self.sort_by = input;
         self
     }
+    /// <p>The field by which to sort results. The default is <code>CreatedTime</code>.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SortPipelineExecutionsBy> {
+        &self.sort_by
+    }
     /// <p>The sort order for results.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -143,6 +159,10 @@ impl ListPipelineExecutionsInputBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p>The sort order for results.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.sort_order
     }
     /// <p>If the result of the previous <code>ListPipelineExecutions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipeline executions, use the token in the next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -154,6 +174,10 @@ impl ListPipelineExecutionsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If the result of the previous <code>ListPipelineExecutions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipeline executions, use the token in the next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of pipeline executions to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -163,6 +187,10 @@ impl ListPipelineExecutionsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of pipeline executions to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListPipelineExecutionsInput`](crate::operation::list_pipeline_executions::ListPipelineExecutionsInput).
     pub fn build(

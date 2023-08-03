@@ -46,6 +46,12 @@ impl CalculateRouteFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CalculateRoute as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::calculate_route::builders::CalculateRouteInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,10 @@ impl CalculateRouteFluentBuilder {
         self.inner = self.inner.set_calculator_name(input);
         self
     }
+    /// <p>The name of the route calculator resource that you want to use to calculate the route. </p>
+    pub fn get_calculator_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_calculator_name()
+    }
     /// Appends an item to `DeparturePosition`.
     ///
     /// To override the contents of this collection use [`set_departure_position`](Self::set_departure_position).
@@ -163,6 +173,16 @@ impl CalculateRouteFluentBuilder {
         self.inner = self.inner.set_departure_position(input);
         self
     }
+    /// <p>The start position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
+    /// <ul>
+    /// <li> <p>For example, <code>[-123.115, 49.285]</code> </p> </li>
+    /// </ul> <note>
+    /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
+    /// </note>
+    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
+    pub fn get_departure_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+        self.inner.get_departure_position()
+    }
     /// Appends an item to `DestinationPosition`.
     ///
     /// To override the contents of this collection use [`set_destination_position`](Self::set_destination_position).
@@ -191,6 +211,16 @@ impl CalculateRouteFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destination_position(input);
         self
+    }
+    /// <p>The finish position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
+    /// <ul>
+    /// <li> <p> For example, <code>[-122.339, 47.615]</code> </p> </li>
+    /// </ul> <note>
+    /// <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. </p>
+    /// </note>
+    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
+    pub fn get_destination_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+        self.inner.get_destination_position()
     }
     /// Appends an item to `WaypointPositions`.
     ///
@@ -225,6 +255,20 @@ impl CalculateRouteFluentBuilder {
         self.inner = self.inner.set_waypoint_positions(input);
         self
     }
+    /// <p>Specifies an ordered list of up to 23 intermediate positions to include along a route between the departure position and destination position. </p>
+    /// <ul>
+    /// <li> <p>For example, from the <code>DeparturePosition</code> <code>[-123.115, 49.285]</code>, the route follows the order that the waypoint positions are given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code> </p> </li>
+    /// </ul> <note>
+    /// <p>If you specify a waypoint position that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. </p>
+    /// <p>Specifying more than 23 waypoints returns a <code>400 ValidationException</code> error.</p>
+    /// <p>If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
+    /// </note>
+    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
+    pub fn get_waypoint_positions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>> {
+        self.inner.get_waypoint_positions()
+    }
     /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility. You can choose <code>Car</code>, <code>Truck</code>, <code>Walking</code>, <code>Bicycle</code> or <code>Motorcycle</code> as options for the <code>TravelMode</code>.</p> <note>
     /// <p> <code>Bicycle</code> and <code>Motorcycle</code> are only valid when using Grab as a data provider, and only within Southeast Asia.</p>
     /// <p> <code>Truck</code> is not available for Grab.</p>
@@ -258,6 +302,20 @@ impl CalculateRouteFluentBuilder {
         self.inner = self.inner.set_travel_mode(input);
         self
     }
+    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility. You can choose <code>Car</code>, <code>Truck</code>, <code>Walking</code>, <code>Bicycle</code> or <code>Motorcycle</code> as options for the <code>TravelMode</code>.</p> <note>
+    /// <p> <code>Bicycle</code> and <code>Motorcycle</code> are only valid when using Grab as a data provider, and only within Southeast Asia.</p>
+    /// <p> <code>Truck</code> is not available for Grab.</p>
+    /// <p>For more details on the using Grab for routing, including areas of coverage, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
+    /// </note>
+    /// <p>The <code>TravelMode</code> you specify also determines how you specify route preferences: </p>
+    /// <ul>
+    /// <li> <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p> </li>
+    /// <li> <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p> </li>
+    /// </ul>
+    /// <p>Default Value: <code>Car</code> </p>
+    pub fn get_travel_mode(&self) -> &::std::option::Option<crate::types::TravelMode> {
+        self.inner.get_travel_mode()
+    }
     /// <p>Specifies the desired time of departure. Uses the given time to calculate the route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p> <note>
     /// <p>Setting a departure time in the past returns a <code>400 ValidationException</code> error.</p>
     /// </note>
@@ -281,6 +339,15 @@ impl CalculateRouteFluentBuilder {
         self.inner = self.inner.set_departure_time(input);
         self
     }
+    /// <p>Specifies the desired time of departure. Uses the given time to calculate the route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p> <note>
+    /// <p>Setting a departure time in the past returns a <code>400 ValidationException</code> error.</p>
+    /// </note>
+    /// <ul>
+    /// <li> <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
+    /// </ul>
+    pub fn get_departure_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_departure_time()
+    }
     /// <p>Sets the time of departure as the current time. Uses the current time to calculate a route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p>
     /// <p>Default Value: <code>false</code> </p>
     /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
@@ -294,6 +361,12 @@ impl CalculateRouteFluentBuilder {
     pub fn set_depart_now(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_depart_now(input);
         self
+    }
+    /// <p>Sets the time of departure as the current time. Uses the current time to calculate a route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p>
+    /// <p>Default Value: <code>false</code> </p>
+    /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
+    pub fn get_depart_now(&self) -> &::std::option::Option<bool> {
+        self.inner.get_depart_now()
     }
     /// <p>Set the unit system to specify the distance.</p>
     /// <p>Default Value: <code>Kilometers</code> </p>
@@ -310,6 +383,11 @@ impl CalculateRouteFluentBuilder {
         self.inner = self.inner.set_distance_unit(input);
         self
     }
+    /// <p>Set the unit system to specify the distance.</p>
+    /// <p>Default Value: <code>Kilometers</code> </p>
+    pub fn get_distance_unit(&self) -> &::std::option::Option<crate::types::DistanceUnit> {
+        self.inner.get_distance_unit()
+    }
     /// <p>Set to include the geometry details in the result for each path between a pair of positions.</p>
     /// <p>Default Value: <code>false</code> </p>
     /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
@@ -323,6 +401,12 @@ impl CalculateRouteFluentBuilder {
     pub fn set_include_leg_geometry(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_leg_geometry(input);
         self
+    }
+    /// <p>Set to include the geometry details in the result for each path between a pair of positions.</p>
+    /// <p>Default Value: <code>false</code> </p>
+    /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
+    pub fn get_include_leg_geometry(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_leg_geometry()
     }
     /// <p>Specifies route preferences when traveling by <code>Car</code>, such as avoiding routes that use ferries or tolls.</p>
     /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Car</code>.</p>
@@ -338,6 +422,13 @@ impl CalculateRouteFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_car_mode_options(input);
         self
+    }
+    /// <p>Specifies route preferences when traveling by <code>Car</code>, such as avoiding routes that use ferries or tolls.</p>
+    /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Car</code>.</p>
+    pub fn get_car_mode_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::CalculateRouteCarModeOptions> {
+        self.inner.get_car_mode_options()
     }
     /// <p>Specifies route preferences when traveling by <code>Truck</code>, such as avoiding routes that use ferries or tolls, and truck specifications to consider when choosing an optimal road.</p>
     /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Truck</code>.</p>
@@ -357,6 +448,13 @@ impl CalculateRouteFluentBuilder {
         self.inner = self.inner.set_truck_mode_options(input);
         self
     }
+    /// <p>Specifies route preferences when traveling by <code>Truck</code>, such as avoiding routes that use ferries or tolls, and truck specifications to consider when choosing an optimal road.</p>
+    /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Truck</code>.</p>
+    pub fn get_truck_mode_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::CalculateRouteTruckModeOptions> {
+        self.inner.get_truck_mode_options()
+    }
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key(input.into());
@@ -366,5 +464,9 @@ impl CalculateRouteFluentBuilder {
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key(input);
         self
+    }
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key()
     }
 }

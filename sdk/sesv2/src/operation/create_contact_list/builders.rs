@@ -36,6 +36,12 @@ impl CreateContactListFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateContactList as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_contact_list::builders::CreateContactListInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl CreateContactListFluentBuilder {
         self.inner = self.inner.set_contact_list_name(input);
         self
     }
+    /// <p>The name of the contact list.</p>
+    pub fn get_contact_list_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_contact_list_name()
+    }
     /// Appends an item to `Topics`.
     ///
     /// To override the contents of this collection use [`set_topics`](Self::set_topics).
@@ -149,6 +159,10 @@ impl CreateContactListFluentBuilder {
         self.inner = self.inner.set_topics(input);
         self
     }
+    /// <p>An interest group, theme, or label within a list. A contact list can have multiple topics.</p>
+    pub fn get_topics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Topic>> {
+        self.inner.get_topics()
+    }
     /// <p>A description of what the contact list is about.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -158,6 +172,10 @@ impl CreateContactListFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of what the contact list is about.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `Tags`.
     ///
@@ -175,5 +193,9 @@ impl CreateContactListFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags associated with a contact list.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

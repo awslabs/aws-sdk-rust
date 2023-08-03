@@ -43,6 +43,10 @@ impl RangeEndsLabelTypeBuilder {
         self.visibility = input;
         self
     }
+    /// <p>The visibility of the range ends label.</p>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.visibility
+    }
     /// Consumes the builder and constructs a [`RangeEndsLabelType`](crate::types::RangeEndsLabelType).
     pub fn build(self) -> crate::types::RangeEndsLabelType {
         crate::types::RangeEndsLabelType {

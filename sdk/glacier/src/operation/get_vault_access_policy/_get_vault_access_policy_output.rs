@@ -52,6 +52,10 @@ impl GetVaultAccessPolicyOutputBuilder {
         self.policy = input;
         self
     }
+    /// <p>Contains the returned vault access policy as a JSON string.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<crate::types::VaultAccessPolicy> {
+        &self.policy
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

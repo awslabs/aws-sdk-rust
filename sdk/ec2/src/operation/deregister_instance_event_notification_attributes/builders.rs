@@ -36,6 +36,10 @@ impl DeregisterInstanceEventNotificationAttributesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeregisterInstanceEventNotificationAttributes as a reference.
+    pub fn as_input(&self) -> &crate::operation::deregister_instance_event_notification_attributes::builders::DeregisterInstanceEventNotificationAttributesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl DeregisterInstanceEventNotificationAttributesFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>Information about the tag keys to deregister.</p>
     pub fn instance_tag_attribute(
         mut self,
@@ -115,5 +123,11 @@ impl DeregisterInstanceEventNotificationAttributesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_instance_tag_attribute(input);
         self
+    }
+    /// <p>Information about the tag keys to deregister.</p>
+    pub fn get_instance_tag_attribute(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeregisterInstanceTagAttributeRequest> {
+        self.inner.get_instance_tag_attribute()
     }
 }

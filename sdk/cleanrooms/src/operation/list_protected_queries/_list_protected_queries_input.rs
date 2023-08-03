@@ -70,6 +70,10 @@ impl ListProtectedQueriesInputBuilder {
         self.membership_identifier = input;
         self
     }
+    /// <p>The identifier for the membership in the collaboration.</p>
+    pub fn get_membership_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.membership_identifier
+    }
     /// <p>A filter on the status of the protected query.</p>
     pub fn status(mut self, input: crate::types::ProtectedQueryStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -83,6 +87,10 @@ impl ListProtectedQueriesInputBuilder {
         self.status = input;
         self
     }
+    /// <p>A filter on the status of the protected query.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ProtectedQueryStatus> {
+        &self.status
+    }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -93,6 +101,10 @@ impl ListProtectedQueriesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum size of the results that is returned per call. Service chooses a default if it has not been set. Service can return a nextToken even if the maximum results has not been met. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl ListProtectedQueriesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum size of the results that is returned per call. Service chooses a default if it has not been set. Service can return a nextToken even if the maximum results has not been met. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListProtectedQueriesInput`](crate::operation::list_protected_queries::ListProtectedQueriesInput).
     pub fn build(

@@ -88,6 +88,10 @@ impl RecoveryPointBuilder {
         self.recovery_point_id = input;
         self
     }
+    /// <p>The unique identifier of the recovery point.</p>
+    pub fn get_recovery_point_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recovery_point_id
+    }
     /// <p>The time the recovery point is created.</p>
     pub fn recovery_point_create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.recovery_point_create_time = ::std::option::Option::Some(input);
@@ -101,6 +105,12 @@ impl RecoveryPointBuilder {
         self.recovery_point_create_time = input;
         self
     }
+    /// <p>The time the recovery point is created.</p>
+    pub fn get_recovery_point_create_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.recovery_point_create_time
+    }
     /// <p>The total size of the data in the recovery point in megabytes.</p>
     pub fn total_size_in_mega_bytes(mut self, input: f64) -> Self {
         self.total_size_in_mega_bytes = ::std::option::Option::Some(input);
@@ -110,6 +120,10 @@ impl RecoveryPointBuilder {
     pub fn set_total_size_in_mega_bytes(mut self, input: ::std::option::Option<f64>) -> Self {
         self.total_size_in_mega_bytes = input;
         self
+    }
+    /// <p>The total size of the data in the recovery point in megabytes.</p>
+    pub fn get_total_size_in_mega_bytes(&self) -> &::std::option::Option<f64> {
+        &self.total_size_in_mega_bytes
     }
     /// <p>The name of the namespace the recovery point is associated with.</p>
     pub fn namespace_name(
@@ -127,6 +141,10 @@ impl RecoveryPointBuilder {
         self.namespace_name = input;
         self
     }
+    /// <p>The name of the namespace the recovery point is associated with.</p>
+    pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace_name
+    }
     /// <p>The name of the workgroup the recovery point is associated with.</p>
     pub fn workgroup_name(
         mut self,
@@ -143,6 +161,10 @@ impl RecoveryPointBuilder {
         self.workgroup_name = input;
         self
     }
+    /// <p>The name of the workgroup the recovery point is associated with.</p>
+    pub fn get_workgroup_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workgroup_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the namespace the recovery point is associated with.</p>
     pub fn namespace_arn(
         mut self,
@@ -158,6 +180,10 @@ impl RecoveryPointBuilder {
     ) -> Self {
         self.namespace_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the namespace the recovery point is associated with.</p>
+    pub fn get_namespace_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace_arn
     }
     /// Consumes the builder and constructs a [`RecoveryPoint`](crate::types::RecoveryPoint).
     pub fn build(self) -> crate::types::RecoveryPoint {

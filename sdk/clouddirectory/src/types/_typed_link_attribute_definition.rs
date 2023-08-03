@@ -90,6 +90,10 @@ impl TypedLinkAttributeDefinitionBuilder {
         self.name = input;
         self
     }
+    /// <p>The unique name of the typed link attribute.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type of the attribute.</p>
     pub fn r#type(mut self, input: crate::types::FacetAttributeType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -102,6 +106,10 @@ impl TypedLinkAttributeDefinitionBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the attribute.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::FacetAttributeType> {
+        &self.r#type
     }
     /// <p>The default value of the attribute (if configured).</p>
     pub fn default_value(mut self, input: crate::types::TypedAttributeValue) -> Self {
@@ -116,6 +124,10 @@ impl TypedLinkAttributeDefinitionBuilder {
         self.default_value = input;
         self
     }
+    /// <p>The default value of the attribute (if configured).</p>
+    pub fn get_default_value(&self) -> &::std::option::Option<crate::types::TypedAttributeValue> {
+        &self.default_value
+    }
     /// <p>Whether the attribute is mutable or not.</p>
     pub fn is_immutable(mut self, input: bool) -> Self {
         self.is_immutable = ::std::option::Option::Some(input);
@@ -125,6 +137,10 @@ impl TypedLinkAttributeDefinitionBuilder {
     pub fn set_is_immutable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_immutable = input;
         self
+    }
+    /// <p>Whether the attribute is mutable or not.</p>
+    pub fn get_is_immutable(&self) -> &::std::option::Option<bool> {
+        &self.is_immutable
     }
     /// Adds a key-value pair to `rules`.
     ///
@@ -151,6 +167,14 @@ impl TypedLinkAttributeDefinitionBuilder {
         self.rules = input;
         self
     }
+    /// <p>Validation rules that are attached to the attribute definition.</p>
+    pub fn get_rules(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::Rule>,
+    > {
+        &self.rules
+    }
     /// <p>The required behavior of the <code>TypedLinkAttributeDefinition</code>.</p>
     pub fn required_behavior(mut self, input: crate::types::RequiredAttributeBehavior) -> Self {
         self.required_behavior = ::std::option::Option::Some(input);
@@ -163,6 +187,12 @@ impl TypedLinkAttributeDefinitionBuilder {
     ) -> Self {
         self.required_behavior = input;
         self
+    }
+    /// <p>The required behavior of the <code>TypedLinkAttributeDefinition</code>.</p>
+    pub fn get_required_behavior(
+        &self,
+    ) -> &::std::option::Option<crate::types::RequiredAttributeBehavior> {
+        &self.required_behavior
     }
     /// Consumes the builder and constructs a [`TypedLinkAttributeDefinition`](crate::types::TypedLinkAttributeDefinition).
     pub fn build(self) -> crate::types::TypedLinkAttributeDefinition {

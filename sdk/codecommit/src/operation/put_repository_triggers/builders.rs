@@ -36,6 +36,13 @@ impl PutRepositoryTriggersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutRepositoryTriggers as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_repository_triggers::builders::PutRepositoryTriggersInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl PutRepositoryTriggersFluentBuilder {
         self.inner = self.inner.set_repository_name(input);
         self
     }
+    /// <p>The name of the repository where you want to create or update the trigger.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository_name()
+    }
     /// Appends an item to `triggers`.
     ///
     /// To override the contents of this collection use [`set_triggers`](Self::set_triggers).
@@ -148,5 +159,11 @@ impl PutRepositoryTriggersFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_triggers(input);
         self
+    }
+    /// <p>The JSON block of configuration information for each trigger.</p>
+    pub fn get_triggers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryTrigger>> {
+        self.inner.get_triggers()
     }
 }

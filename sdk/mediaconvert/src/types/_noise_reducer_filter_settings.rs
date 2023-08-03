@@ -40,6 +40,10 @@ impl NoiseReducerFilterSettingsBuilder {
         self.strength = input;
         self
     }
+    /// Relative strength of noise reducing filter. Higher values produce stronger filtering.
+    pub fn get_strength(&self) -> &::std::option::Option<i32> {
+        &self.strength
+    }
     /// Consumes the builder and constructs a [`NoiseReducerFilterSettings`](crate::types::NoiseReducerFilterSettings).
     pub fn build(self) -> crate::types::NoiseReducerFilterSettings {
         crate::types::NoiseReducerFilterSettings {

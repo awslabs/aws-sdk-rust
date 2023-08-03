@@ -55,6 +55,10 @@ impl ListDirectoriesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to retrieve.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl ListDirectoriesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to retrieve.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The state of the directories in the list. Can be either Enabled, Disabled, or Deleted.</p>
     pub fn state(mut self, input: crate::types::DirectoryState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -74,6 +82,10 @@ impl ListDirectoriesInputBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::DirectoryState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the directories in the list. Can be either Enabled, Disabled, or Deleted.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::DirectoryState> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`ListDirectoriesInput`](crate::operation::list_directories::ListDirectoriesInput).
     pub fn build(

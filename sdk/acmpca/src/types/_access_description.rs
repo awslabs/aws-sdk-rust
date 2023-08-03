@@ -51,6 +51,10 @@ impl AccessDescriptionBuilder {
         self.access_method = input;
         self
     }
+    /// <p>The type and format of <code>AccessDescription</code> information.</p>
+    pub fn get_access_method(&self) -> &::std::option::Option<crate::types::AccessMethod> {
+        &self.access_method
+    }
     /// <p>The location of <code>AccessDescription</code> information.</p>
     pub fn access_location(mut self, input: crate::types::GeneralName) -> Self {
         self.access_location = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl AccessDescriptionBuilder {
     ) -> Self {
         self.access_location = input;
         self
+    }
+    /// <p>The location of <code>AccessDescription</code> information.</p>
+    pub fn get_access_location(&self) -> &::std::option::Option<crate::types::GeneralName> {
+        &self.access_location
     }
     /// Consumes the builder and constructs a [`AccessDescription`](crate::types::AccessDescription).
     pub fn build(self) -> crate::types::AccessDescription {

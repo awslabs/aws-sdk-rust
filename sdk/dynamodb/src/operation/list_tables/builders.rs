@@ -36,6 +36,10 @@ impl ListTablesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListTables as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_tables::builders::ListTablesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +134,10 @@ impl ListTablesFluentBuilder {
         self.inner = self.inner.set_exclusive_start_table_name(input);
         self
     }
+    /// <p>The first table name that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedTableName</code> in a previous operation, so that you can obtain the next page of results.</p>
+    pub fn get_exclusive_start_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_exclusive_start_table_name()
+    }
     /// <p>A maximum number of table names to return. If this parameter is not specified, the limit is 100.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -139,5 +147,9 @@ impl ListTablesFluentBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
+    }
+    /// <p>A maximum number of table names to return. If this parameter is not specified, the limit is 100.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
     }
 }

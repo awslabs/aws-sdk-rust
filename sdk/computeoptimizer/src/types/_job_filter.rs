@@ -67,6 +67,12 @@ impl JobFilterBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the filter.</p>
+    /// <p>Specify <code>ResourceType</code> to return export jobs of a specific resource type (for example, <code>Ec2Instance</code>).</p>
+    /// <p>Specify <code>JobStatus</code> to return export jobs with a specific status (e.g, <code>Complete</code>).</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::JobFilterName> {
+        &self.name
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -95,6 +101,15 @@ impl JobFilterBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>The value of the filter.</p>
+    /// <p>The valid values for this parameter are as follows, depending on what you specify for the <code>name</code> parameter:</p>
+    /// <ul>
+    /// <li> <p>Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specify the <code>name</code> parameter as <code>ResourceType</code>. There is no filter for EBS volumes because volume recommendations cannot be exported at this time.</p> </li>
+    /// <li> <p>Specify <code>Queued</code>, <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code> if you specify the <code>name</code> parameter as <code>JobStatus</code>.</p> </li>
+    /// </ul>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`JobFilter`](crate::types::JobFilter).
     pub fn build(self) -> crate::types::JobFilter {

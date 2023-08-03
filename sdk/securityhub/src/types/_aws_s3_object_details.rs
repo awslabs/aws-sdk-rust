@@ -90,6 +90,11 @@ impl AwsS3ObjectDetailsBuilder {
         self.last_modified = input;
         self
     }
+    /// <p>Indicates when the object was last modified.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_last_modified(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified
+    }
     /// <p>The opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
     pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.e_tag = ::std::option::Option::Some(input.into());
@@ -99,6 +104,10 @@ impl AwsS3ObjectDetailsBuilder {
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.e_tag = input;
         self
+    }
+    /// <p>The opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
+    pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.e_tag
     }
     /// <p>The version of the object.</p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -110,6 +119,10 @@ impl AwsS3ObjectDetailsBuilder {
         self.version_id = input;
         self
     }
+    /// <p>The version of the object.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
+    }
     /// <p>A standard MIME type describing the format of the object data.</p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
@@ -119,6 +132,10 @@ impl AwsS3ObjectDetailsBuilder {
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
+    }
+    /// <p>A standard MIME type describing the format of the object data.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
     }
     /// <p>If the object is stored using server-side encryption, the value of the server-side encryption algorithm used when storing this object in Amazon S3.</p>
     pub fn server_side_encryption(
@@ -136,6 +153,10 @@ impl AwsS3ObjectDetailsBuilder {
         self.server_side_encryption = input;
         self
     }
+    /// <p>If the object is stored using server-side encryption, the value of the server-side encryption algorithm used when storing this object in Amazon S3.</p>
+    pub fn get_server_side_encryption(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_side_encryption
+    }
     /// <p>The identifier of the KMS symmetric customer managed key that was used for the object.</p>
     pub fn ssekms_key_id(
         mut self,
@@ -151,6 +172,10 @@ impl AwsS3ObjectDetailsBuilder {
     ) -> Self {
         self.ssekms_key_id = input;
         self
+    }
+    /// <p>The identifier of the KMS symmetric customer managed key that was used for the object.</p>
+    pub fn get_ssekms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ssekms_key_id
     }
     /// Consumes the builder and constructs a [`AwsS3ObjectDetails`](crate::types::AwsS3ObjectDetails).
     pub fn build(self) -> crate::types::AwsS3ObjectDetails {

@@ -39,6 +39,10 @@ impl DeleteSlotTypeInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the slot type. The name is case sensitive. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeleteSlotTypeInput`](crate::operation::delete_slot_type::DeleteSlotTypeInput).
     pub fn build(
         self,

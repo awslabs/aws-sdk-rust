@@ -126,6 +126,10 @@ impl DescribeEndpointConfigOutputBuilder {
         self.endpoint_config_name = input;
         self
     }
+    /// <p>Name of the SageMaker endpoint configuration.</p>
+    pub fn get_endpoint_config_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_config_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the endpoint configuration.</p>
     pub fn endpoint_config_arn(
         mut self,
@@ -141,6 +145,10 @@ impl DescribeEndpointConfigOutputBuilder {
     ) -> Self {
         self.endpoint_config_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the endpoint configuration.</p>
+    pub fn get_endpoint_config_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_config_arn
     }
     /// Appends an item to `production_variants`.
     ///
@@ -161,6 +169,12 @@ impl DescribeEndpointConfigOutputBuilder {
         self.production_variants = input;
         self
     }
+    /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>
+    pub fn get_production_variants(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductionVariant>> {
+        &self.production_variants
+    }
     /// <p>Configuration to control how SageMaker captures inference data.</p>
     pub fn data_capture_config(mut self, input: crate::types::DataCaptureConfig) -> Self {
         self.data_capture_config = ::std::option::Option::Some(input);
@@ -174,6 +188,12 @@ impl DescribeEndpointConfigOutputBuilder {
         self.data_capture_config = input;
         self
     }
+    /// <p>Configuration to control how SageMaker captures inference data.</p>
+    pub fn get_data_capture_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataCaptureConfig> {
+        &self.data_capture_config
+    }
     /// <p>Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage volume attached to the instance.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -183,6 +203,10 @@ impl DescribeEndpointConfigOutputBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage volume attached to the instance.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// <p>A timestamp that shows when the endpoint configuration was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -197,6 +221,10 @@ impl DescribeEndpointConfigOutputBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>A timestamp that shows when the endpoint configuration was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>Returns the description of an endpoint configuration created using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html"> <code>CreateEndpointConfig</code> </a> API.</p>
     pub fn async_inference_config(mut self, input: crate::types::AsyncInferenceConfig) -> Self {
         self.async_inference_config = ::std::option::Option::Some(input);
@@ -210,6 +238,12 @@ impl DescribeEndpointConfigOutputBuilder {
         self.async_inference_config = input;
         self
     }
+    /// <p>Returns the description of an endpoint configuration created using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html"> <code>CreateEndpointConfig</code> </a> API.</p>
+    pub fn get_async_inference_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AsyncInferenceConfig> {
+        &self.async_inference_config
+    }
     /// <p>The configuration parameters for an explainer.</p>
     pub fn explainer_config(mut self, input: crate::types::ExplainerConfig) -> Self {
         self.explainer_config = ::std::option::Option::Some(input);
@@ -222,6 +256,10 @@ impl DescribeEndpointConfigOutputBuilder {
     ) -> Self {
         self.explainer_config = input;
         self
+    }
+    /// <p>The configuration parameters for an explainer.</p>
+    pub fn get_explainer_config(&self) -> &::std::option::Option<crate::types::ExplainerConfig> {
+        &self.explainer_config
     }
     /// Appends an item to `shadow_production_variants`.
     ///
@@ -241,6 +279,12 @@ impl DescribeEndpointConfigOutputBuilder {
     ) -> Self {
         self.shadow_production_variants = input;
         self
+    }
+    /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.</p>
+    pub fn get_shadow_production_variants(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductionVariant>> {
+        &self.shadow_production_variants
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

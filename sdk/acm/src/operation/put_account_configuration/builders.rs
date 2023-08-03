@@ -38,6 +38,13 @@ impl PutAccountConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutAccountConfiguration as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_account_configuration::builders::PutAccountConfigurationInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +138,12 @@ impl PutAccountConfigurationFluentBuilder {
         self.inner = self.inner.set_expiry_events(input);
         self
     }
+    /// <p>Specifies expiration events associated with an account.</p>
+    pub fn get_expiry_events(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExpiryEventsConfiguration> {
+        self.inner.get_expiry_events()
+    }
     /// <p>Customer-chosen string used to distinguish between calls to <code>PutAccountConfiguration</code>. Idempotency tokens time out after one hour. If you call <code>PutAccountConfiguration</code> multiple times with the same unexpired idempotency token, ACM treats it as the same request and returns the original result. If you change the idempotency token for each call, ACM treats each call as a new request.</p>
     pub fn idempotency_token(
         mut self,
@@ -146,5 +159,9 @@ impl PutAccountConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
+    }
+    /// <p>Customer-chosen string used to distinguish between calls to <code>PutAccountConfiguration</code>. Idempotency tokens time out after one hour. If you call <code>PutAccountConfiguration</code> multiple times with the same unexpired idempotency token, ACM treats it as the same request and returns the original result. If you change the idempotency token for each call, ACM treats each call as a new request.</p>
+    pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_idempotency_token()
     }
 }

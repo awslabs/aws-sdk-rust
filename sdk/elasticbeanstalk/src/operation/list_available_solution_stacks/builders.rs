@@ -36,6 +36,10 @@ impl ListAvailableSolutionStacksFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListAvailableSolutionStacks as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_available_solution_stacks::builders::ListAvailableSolutionStacksInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(

@@ -36,6 +36,10 @@ impl DisableFastSnapshotRestoresFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisableFastSnapshotRestores as a reference.
+    pub fn as_input(&self) -> &crate::operation::disable_fast_snapshot_restores::builders::DisableFastSnapshotRestoresInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +140,12 @@ impl DisableFastSnapshotRestoresFluentBuilder {
         self.inner = self.inner.set_availability_zones(input);
         self
     }
+    /// <p>One or more Availability Zones. For example, <code>us-east-2a</code>.</p>
+    pub fn get_availability_zones(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_availability_zones()
+    }
     /// Appends an item to `SourceSnapshotIds`.
     ///
     /// To override the contents of this collection use [`set_source_snapshot_ids`](Self::set_source_snapshot_ids).
@@ -156,6 +166,12 @@ impl DisableFastSnapshotRestoresFluentBuilder {
         self.inner = self.inner.set_source_snapshot_ids(input);
         self
     }
+    /// <p>The IDs of one or more snapshots. For example, <code>snap-1234567890abcdef0</code>.</p>
+    pub fn get_source_snapshot_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_source_snapshot_ids()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -165,5 +181,9 @@ impl DisableFastSnapshotRestoresFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

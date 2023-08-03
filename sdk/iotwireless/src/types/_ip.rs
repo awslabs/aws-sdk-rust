@@ -40,6 +40,10 @@ impl IpBuilder {
         self.ip_address = input;
         self
     }
+    /// <p>IP address information.</p>
+    pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address
+    }
     /// Consumes the builder and constructs a [`Ip`](crate::types::Ip).
     pub fn build(self) -> crate::types::Ip {
         crate::types::Ip {

@@ -46,6 +46,10 @@ impl GetDatabaseOutputBuilder {
         self.database = input;
         self
     }
+    /// <p>The definition of the specified database in the Data Catalog.</p>
+    pub fn get_database(&self) -> &::std::option::Option<crate::types::Database> {
+        &self.database
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -50,6 +50,10 @@ impl UpdateEntitlementOutputBuilder {
         self.entitlement = input;
         self
     }
+    /// <p>The entitlement.</p>
+    pub fn get_entitlement(&self) -> &::std::option::Option<crate::types::Entitlement> {
+        &self.entitlement
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

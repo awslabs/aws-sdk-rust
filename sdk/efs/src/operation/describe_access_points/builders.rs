@@ -37,6 +37,12 @@ impl DescribeAccessPointsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeAccessPoints as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_access_points::builders::DescribeAccessPointsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +144,10 @@ impl DescribeAccessPointsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>(Optional) When retrieving all access points for a file system, you can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response. The default value is 100. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p> <code>NextToken</code> is present if the response is paginated. You can use <code>NextMarker</code> in the subsequent request to fetch the next page of access point descriptions.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -147,6 +157,10 @@ impl DescribeAccessPointsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p> <code>NextToken</code> is present if the response is paginated. You can use <code>NextMarker</code> in the subsequent request to fetch the next page of access point descriptions.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>(Optional) Specifies an EFS access point to describe in the response; mutually exclusive with <code>FileSystemId</code>.</p>
     pub fn access_point_id(
@@ -164,6 +178,10 @@ impl DescribeAccessPointsFluentBuilder {
         self.inner = self.inner.set_access_point_id(input);
         self
     }
+    /// <p>(Optional) Specifies an EFS access point to describe in the response; mutually exclusive with <code>FileSystemId</code>.</p>
+    pub fn get_access_point_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_access_point_id()
+    }
     /// <p>(Optional) If you provide a <code>FileSystemId</code>, EFS returns all access points for that file system; mutually exclusive with <code>AccessPointId</code>.</p>
     pub fn file_system_id(
         mut self,
@@ -179,5 +197,9 @@ impl DescribeAccessPointsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_file_system_id(input);
         self
+    }
+    /// <p>(Optional) If you provide a <code>FileSystemId</code>, EFS returns all access points for that file system; mutually exclusive with <code>AccessPointId</code>.</p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_file_system_id()
     }
 }

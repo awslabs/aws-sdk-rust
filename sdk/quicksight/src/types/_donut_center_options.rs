@@ -43,6 +43,10 @@ impl DonutCenterOptionsBuilder {
         self.label_visibility = input;
         self
     }
+    /// <p>Determines the visibility of the label in a donut chart. In the Amazon QuickSight console, this option is called <code>'Show total'</code>.</p>
+    pub fn get_label_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.label_visibility
+    }
     /// Consumes the builder and constructs a [`DonutCenterOptions`](crate::types::DonutCenterOptions).
     pub fn build(self) -> crate::types::DonutCenterOptions {
         crate::types::DonutCenterOptions {

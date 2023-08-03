@@ -62,6 +62,10 @@ impl KinesisStreamSourceDescriptionBuilder {
         self.kinesis_stream_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the source Kinesis data stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Kinesis Data Streams ARN Format</a>.</p>
+    pub fn get_kinesis_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kinesis_stream_arn
+    }
     /// <p>The ARN of the role used by the source Kinesis data stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon Web Services Identity and Access Management (IAM) ARN Format</a>.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl KinesisStreamSourceDescriptionBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The ARN of the role used by the source Kinesis data stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon Web Services Identity and Access Management (IAM) ARN Format</a>.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>Kinesis Data Firehose starts retrieving records from the Kinesis data stream starting with this timestamp.</p>
     pub fn delivery_start_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -84,6 +92,12 @@ impl KinesisStreamSourceDescriptionBuilder {
     ) -> Self {
         self.delivery_start_timestamp = input;
         self
+    }
+    /// <p>Kinesis Data Firehose starts retrieving records from the Kinesis data stream starting with this timestamp.</p>
+    pub fn get_delivery_start_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.delivery_start_timestamp
     }
     /// Consumes the builder and constructs a [`KinesisStreamSourceDescription`](crate::types::KinesisStreamSourceDescription).
     pub fn build(self) -> crate::types::KinesisStreamSourceDescription {

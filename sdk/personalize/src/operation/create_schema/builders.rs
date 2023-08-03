@@ -43,6 +43,10 @@ impl CreateSchemaFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSchema as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_schema::builders::CreateSchemaInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +129,10 @@ impl CreateSchemaFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name for the schema.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A schema in Avro JSON format.</p>
     pub fn schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schema(input.into());
@@ -135,6 +143,10 @@ impl CreateSchemaFluentBuilder {
         self.inner = self.inner.set_schema(input);
         self
     }
+    /// <p>A schema in Avro JSON format.</p>
+    pub fn get_schema(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schema()
+    }
     /// <p>The domain for the schema. If you are creating a schema for a dataset in a Domain dataset group, specify the domain you chose when you created the Domain dataset group.</p>
     pub fn domain(mut self, input: crate::types::Domain) -> Self {
         self.inner = self.inner.domain(input);
@@ -144,5 +156,9 @@ impl CreateSchemaFluentBuilder {
     pub fn set_domain(mut self, input: ::std::option::Option<crate::types::Domain>) -> Self {
         self.inner = self.inner.set_domain(input);
         self
+    }
+    /// <p>The domain for the schema. If you are creating a schema for a dataset in a Domain dataset group, specify the domain you chose when you created the Domain dataset group.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<crate::types::Domain> {
+        self.inner.get_domain()
     }
 }

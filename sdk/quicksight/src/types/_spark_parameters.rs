@@ -48,6 +48,10 @@ impl SparkParametersBuilder {
         self.host = input;
         self
     }
+    /// <p>Host.</p>
+    pub fn get_host(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host
+    }
     /// <p>Port.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl SparkParametersBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
+    }
+    /// <p>Port.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// Consumes the builder and constructs a [`SparkParameters`](crate::types::SparkParameters).
     pub fn build(self) -> crate::types::SparkParameters {

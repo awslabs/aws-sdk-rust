@@ -40,6 +40,10 @@ impl DvbTdtSettingsBuilder {
         self.rep_interval = input;
         self
     }
+    /// The number of milliseconds between instances of this table in the output transport stream.
+    pub fn get_rep_interval(&self) -> &::std::option::Option<i32> {
+        &self.rep_interval
+    }
     /// Consumes the builder and constructs a [`DvbTdtSettings`](crate::types::DvbTdtSettings).
     pub fn build(self) -> crate::types::DvbTdtSettings {
         crate::types::DvbTdtSettings {

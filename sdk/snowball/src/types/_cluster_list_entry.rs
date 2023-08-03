@@ -64,6 +64,10 @@ impl ClusterListEntryBuilder {
         self.cluster_id = input;
         self
     }
+    /// <p>The 39-character ID for the cluster that you want to list, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_id
+    }
     /// <p>The current state of this cluster. For information about the state of a specific node, see <code>JobListEntry$JobState</code>.</p>
     pub fn cluster_state(mut self, input: crate::types::ClusterState) -> Self {
         self.cluster_state = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl ClusterListEntryBuilder {
     ) -> Self {
         self.cluster_state = input;
         self
+    }
+    /// <p>The current state of this cluster. For information about the state of a specific node, see <code>JobListEntry$JobState</code>.</p>
+    pub fn get_cluster_state(&self) -> &::std::option::Option<crate::types::ClusterState> {
+        &self.cluster_state
     }
     /// <p>The creation date for this cluster.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -90,6 +98,10 @@ impl ClusterListEntryBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>The creation date for this cluster.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
+    }
     /// <p>Defines an optional description of the cluster, for example <code>Environmental Data Cluster-01</code>.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -99,6 +111,10 @@ impl ClusterListEntryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Defines an optional description of the cluster, for example <code>Environmental Data Cluster-01</code>.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`ClusterListEntry`](crate::types::ClusterListEntry).
     pub fn build(self) -> crate::types::ClusterListEntry {

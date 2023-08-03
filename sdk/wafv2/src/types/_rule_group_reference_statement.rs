@@ -67,6 +67,10 @@ impl RuleGroupReferenceStatementBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the entity.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Appends an item to `excluded_rules`.
     ///
     /// To override the contents of this collection use [`set_excluded_rules`](Self::set_excluded_rules).
@@ -90,6 +94,14 @@ impl RuleGroupReferenceStatementBuilder {
         self.excluded_rules = input;
         self
     }
+    /// <p>Rules in the referenced rule group whose actions are set to <code>Count</code>. </p> <note>
+    /// <p>Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid action setting, including <code>Count</code>.</p>
+    /// </note>
+    pub fn get_excluded_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExcludedRule>> {
+        &self.excluded_rules
+    }
     /// Appends an item to `rule_action_overrides`.
     ///
     /// To override the contents of this collection use [`set_rule_action_overrides`](Self::set_rule_action_overrides).
@@ -110,6 +122,13 @@ impl RuleGroupReferenceStatementBuilder {
     ) -> Self {
         self.rule_action_overrides = input;
         self
+    }
+    /// <p>Action settings to use in the place of the rule actions that are configured inside the rule group. You specify one override for each rule whose action you want to change. </p>
+    /// <p>You can use overrides for testing, for example you can override all of rule actions to <code>Count</code> and then monitor the resulting count metrics to understand how the rule group would handle your web traffic. You can also permanently override some or all actions, to modify how the rule group manages your web traffic.</p>
+    pub fn get_rule_action_overrides(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleActionOverride>> {
+        &self.rule_action_overrides
     }
     /// Consumes the builder and constructs a [`RuleGroupReferenceStatement`](crate::types::RuleGroupReferenceStatement).
     pub fn build(self) -> crate::types::RuleGroupReferenceStatement {

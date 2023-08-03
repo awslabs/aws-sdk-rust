@@ -40,6 +40,10 @@ impl ApiKeyFilterBuilder {
         self.key_status = input;
         self
     }
+    /// <p>Filter on <code>Active</code> or <code>Expired</code> API keys.</p>
+    pub fn get_key_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.key_status
+    }
     /// Consumes the builder and constructs a [`ApiKeyFilter`](crate::types::ApiKeyFilter).
     pub fn build(self) -> crate::types::ApiKeyFilter {
         crate::types::ApiKeyFilter {

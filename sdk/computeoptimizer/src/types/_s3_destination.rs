@@ -60,6 +60,10 @@ impl S3DestinationBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The name of the Amazon S3 bucket used as the destination of an export file.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>The Amazon S3 bucket key of an export file.</p>
     /// <p>The key uniquely identifies the object, or export file, in the S3 bucket.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -72,6 +76,11 @@ impl S3DestinationBuilder {
         self.key = input;
         self
     }
+    /// <p>The Amazon S3 bucket key of an export file.</p>
+    /// <p>The key uniquely identifies the object, or export file, in the S3 bucket.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>The Amazon S3 bucket key of a metadata file.</p>
     /// <p>The key uniquely identifies the object, or metadata file, in the S3 bucket.</p>
     pub fn metadata_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -83,6 +92,11 @@ impl S3DestinationBuilder {
     pub fn set_metadata_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metadata_key = input;
         self
+    }
+    /// <p>The Amazon S3 bucket key of a metadata file.</p>
+    /// <p>The key uniquely identifies the object, or metadata file, in the S3 bucket.</p>
+    pub fn get_metadata_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metadata_key
     }
     /// Consumes the builder and constructs a [`S3Destination`](crate::types::S3Destination).
     pub fn build(self) -> crate::types::S3Destination {

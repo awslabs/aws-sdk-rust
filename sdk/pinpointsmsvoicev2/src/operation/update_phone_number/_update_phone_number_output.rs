@@ -166,6 +166,10 @@ impl UpdatePhoneNumberOutputBuilder {
         self.phone_number_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the updated phone number.</p>
+    pub fn get_phone_number_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number_arn
+    }
     /// <p>The unique identifier of the phone number.</p>
     pub fn phone_number_id(
         mut self,
@@ -182,6 +186,10 @@ impl UpdatePhoneNumberOutputBuilder {
         self.phone_number_id = input;
         self
     }
+    /// <p>The unique identifier of the phone number.</p>
+    pub fn get_phone_number_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number_id
+    }
     /// <p>The phone number that was updated.</p>
     pub fn phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number = ::std::option::Option::Some(input.into());
@@ -192,6 +200,10 @@ impl UpdatePhoneNumberOutputBuilder {
         self.phone_number = input;
         self
     }
+    /// <p>The phone number that was updated.</p>
+    pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number
+    }
     /// <p>The current status of the request.</p>
     pub fn status(mut self, input: crate::types::NumberStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -201,6 +213,10 @@ impl UpdatePhoneNumberOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::NumberStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::NumberStatus> {
+        &self.status
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
     pub fn iso_country_code(
@@ -218,6 +234,10 @@ impl UpdatePhoneNumberOutputBuilder {
         self.iso_country_code = input;
         self
     }
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
+    pub fn get_iso_country_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iso_country_code
+    }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
     pub fn message_type(mut self, input: crate::types::MessageType) -> Self {
         self.message_type = ::std::option::Option::Some(input);
@@ -230,6 +250,10 @@ impl UpdatePhoneNumberOutputBuilder {
     ) -> Self {
         self.message_type = input;
         self
+    }
+    /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
+    pub fn get_message_type(&self) -> &::std::option::Option<crate::types::MessageType> {
+        &self.message_type
     }
     /// Appends an item to `number_capabilities`.
     ///
@@ -250,6 +274,12 @@ impl UpdatePhoneNumberOutputBuilder {
         self.number_capabilities = input;
         self
     }
+    /// <p>Specifies if the number could be used for text messages, voice or both.</p>
+    pub fn get_number_capabilities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>> {
+        &self.number_capabilities
+    }
     /// <p>The type of number that was requested.</p>
     pub fn number_type(mut self, input: crate::types::NumberType) -> Self {
         self.number_type = ::std::option::Option::Some(input);
@@ -262,6 +292,10 @@ impl UpdatePhoneNumberOutputBuilder {
     ) -> Self {
         self.number_type = input;
         self
+    }
+    /// <p>The type of number that was requested.</p>
+    pub fn get_number_type(&self) -> &::std::option::Option<crate::types::NumberType> {
+        &self.number_type
     }
     /// <p>The monthly leasing price of the phone number, in US dollars.</p>
     pub fn monthly_leasing_price(
@@ -279,6 +313,10 @@ impl UpdatePhoneNumberOutputBuilder {
         self.monthly_leasing_price = input;
         self
     }
+    /// <p>The monthly leasing price of the phone number, in US dollars.</p>
+    pub fn get_monthly_leasing_price(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monthly_leasing_price
+    }
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
     pub fn two_way_enabled(mut self, input: bool) -> Self {
         self.two_way_enabled = ::std::option::Option::Some(input);
@@ -288,6 +326,10 @@ impl UpdatePhoneNumberOutputBuilder {
     pub fn set_two_way_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.two_way_enabled = input;
         self
+    }
+    /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
+    pub fn get_two_way_enabled(&self) -> &::std::option::Option<bool> {
+        &self.two_way_enabled
     }
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
     pub fn two_way_channel_arn(
@@ -305,6 +347,10 @@ impl UpdatePhoneNumberOutputBuilder {
         self.two_way_channel_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
+    pub fn get_two_way_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.two_way_channel_arn
+    }
     /// <p>This is true if self managed opt-out are enabled.</p>
     pub fn self_managed_opt_outs_enabled(mut self, input: bool) -> Self {
         self.self_managed_opt_outs_enabled = ::std::option::Option::Some(input);
@@ -314,6 +360,10 @@ impl UpdatePhoneNumberOutputBuilder {
     pub fn set_self_managed_opt_outs_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.self_managed_opt_outs_enabled = input;
         self
+    }
+    /// <p>This is true if self managed opt-out are enabled.</p>
+    pub fn get_self_managed_opt_outs_enabled(&self) -> &::std::option::Option<bool> {
+        &self.self_managed_opt_outs_enabled
     }
     /// <p>The name of the OptOutList associated with the phone number.</p>
     pub fn opt_out_list_name(
@@ -331,6 +381,10 @@ impl UpdatePhoneNumberOutputBuilder {
         self.opt_out_list_name = input;
         self
     }
+    /// <p>The name of the OptOutList associated with the phone number.</p>
+    pub fn get_opt_out_list_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.opt_out_list_name
+    }
     /// <p>When set to true the phone number can't be deleted.</p>
     pub fn deletion_protection_enabled(mut self, input: bool) -> Self {
         self.deletion_protection_enabled = ::std::option::Option::Some(input);
@@ -340,6 +394,10 @@ impl UpdatePhoneNumberOutputBuilder {
     pub fn set_deletion_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.deletion_protection_enabled = input;
         self
+    }
+    /// <p>When set to true the phone number can't be deleted.</p>
+    pub fn get_deletion_protection_enabled(&self) -> &::std::option::Option<bool> {
+        &self.deletion_protection_enabled
     }
     /// <p>The time when the phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -353,6 +411,10 @@ impl UpdatePhoneNumberOutputBuilder {
     ) -> Self {
         self.created_timestamp = input;
         self
+    }
+    /// <p>The time when the phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -61,6 +61,13 @@ impl UpdateCostAllocationTagsStatusOutputBuilder {
         self.errors = input;
         self
     }
+    /// <p>A list of <code>UpdateCostAllocationTagsStatusError</code> objects with error details about each cost allocation tag that can't be updated. If there's no failure, an empty array returns. </p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateCostAllocationTagsStatusError>>
+    {
+        &self.errors
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

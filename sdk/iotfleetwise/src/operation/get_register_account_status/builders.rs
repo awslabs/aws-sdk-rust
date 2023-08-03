@@ -39,6 +39,10 @@ impl GetRegisterAccountStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetRegisterAccountStatus as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_register_account_status::builders::GetRegisterAccountStatusInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(

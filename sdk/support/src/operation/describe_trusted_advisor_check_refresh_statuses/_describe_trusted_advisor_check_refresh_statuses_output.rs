@@ -62,6 +62,13 @@ impl DescribeTrustedAdvisorCheckRefreshStatusesOutputBuilder {
         self.statuses = input;
         self
     }
+    /// <p>The refresh status of the specified Trusted Advisor checks.</p>
+    pub fn get_statuses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TrustedAdvisorCheckRefreshStatus>>
+    {
+        &self.statuses
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

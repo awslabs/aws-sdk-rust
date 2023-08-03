@@ -68,6 +68,10 @@ impl GetDataLakeExceptionSubscriptionOutputBuilder {
         self.subscription_protocol = input;
         self
     }
+    /// <p>The subscription protocol to which exception notifications are posted.</p>
+    pub fn get_subscription_protocol(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscription_protocol
+    }
     /// <p>The Amazon Web Services account where you receive exception notifications.</p>
     pub fn notification_endpoint(
         mut self,
@@ -84,6 +88,10 @@ impl GetDataLakeExceptionSubscriptionOutputBuilder {
         self.notification_endpoint = input;
         self
     }
+    /// <p>The Amazon Web Services account where you receive exception notifications.</p>
+    pub fn get_notification_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notification_endpoint
+    }
     /// <p>The expiration period and time-to-live (TTL).</p>
     pub fn exception_time_to_live(mut self, input: i64) -> Self {
         self.exception_time_to_live = ::std::option::Option::Some(input);
@@ -93,6 +101,10 @@ impl GetDataLakeExceptionSubscriptionOutputBuilder {
     pub fn set_exception_time_to_live(mut self, input: ::std::option::Option<i64>) -> Self {
         self.exception_time_to_live = input;
         self
+    }
+    /// <p>The expiration period and time-to-live (TTL).</p>
+    pub fn get_exception_time_to_live(&self) -> &::std::option::Option<i64> {
+        &self.exception_time_to_live
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

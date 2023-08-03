@@ -74,6 +74,10 @@ impl UpdatePipelineExecutionInputBuilder {
         self.pipeline_execution_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    pub fn get_pipeline_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_execution_arn
+    }
     /// <p>The description of the pipeline execution.</p>
     pub fn pipeline_execution_description(
         mut self,
@@ -89,6 +93,12 @@ impl UpdatePipelineExecutionInputBuilder {
     ) -> Self {
         self.pipeline_execution_description = input;
         self
+    }
+    /// <p>The description of the pipeline execution.</p>
+    pub fn get_pipeline_execution_description(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_execution_description
     }
     /// <p>The display name of the pipeline execution.</p>
     pub fn pipeline_execution_display_name(
@@ -106,6 +116,12 @@ impl UpdatePipelineExecutionInputBuilder {
         self.pipeline_execution_display_name = input;
         self
     }
+    /// <p>The display name of the pipeline execution.</p>
+    pub fn get_pipeline_execution_display_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_execution_display_name
+    }
     /// <p>This configuration, if specified, overrides the parallelism configuration of the parent pipeline for this specific run.</p>
     pub fn parallelism_configuration(
         mut self,
@@ -121,6 +137,12 @@ impl UpdatePipelineExecutionInputBuilder {
     ) -> Self {
         self.parallelism_configuration = input;
         self
+    }
+    /// <p>This configuration, if specified, overrides the parallelism configuration of the parent pipeline for this specific run.</p>
+    pub fn get_parallelism_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ParallelismConfiguration> {
+        &self.parallelism_configuration
     }
     /// Consumes the builder and constructs a [`UpdatePipelineExecutionInput`](crate::operation::update_pipeline_execution::UpdatePipelineExecutionInput).
     pub fn build(

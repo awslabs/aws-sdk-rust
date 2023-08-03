@@ -45,6 +45,10 @@ impl StopSourceNetworkReplicationInputBuilder {
         self.source_network_id = input;
         self
     }
+    /// <p>ID of the Source Network to stop replication.</p>
+    pub fn get_source_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_network_id
+    }
     /// Consumes the builder and constructs a [`StopSourceNetworkReplicationInput`](crate::operation::stop_source_network_replication::StopSourceNetworkReplicationInput).
     pub fn build(
         self,

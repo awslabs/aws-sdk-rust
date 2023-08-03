@@ -36,6 +36,10 @@ impl CreateMemberFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateMember as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_member::builders::CreateMemberInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +125,10 @@ impl CreateMemberFluentBuilder {
         self.inner = self.inner.set_account(input);
         self
     }
+    /// <p>The details of the account to associate with the administrator account.</p>
+    pub fn get_account(&self) -> &::std::option::Option<crate::types::AccountDetail> {
+        self.inner.get_account()
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -145,5 +153,14 @@ impl CreateMemberFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A map of key-value pairs that specifies the tags to associate with the account in Amazon Macie.</p>
+    /// <p>An account can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

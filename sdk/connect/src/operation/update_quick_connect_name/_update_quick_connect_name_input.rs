@@ -65,6 +65,10 @@ impl UpdateQuickConnectNameInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The identifier for the quick connect.</p>
     pub fn quick_connect_id(
         mut self,
@@ -81,6 +85,10 @@ impl UpdateQuickConnectNameInputBuilder {
         self.quick_connect_id = input;
         self
     }
+    /// <p>The identifier for the quick connect.</p>
+    pub fn get_quick_connect_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quick_connect_id
+    }
     /// <p>The name of the quick connect.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl UpdateQuickConnectNameInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the quick connect.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the quick connect.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -100,6 +112,10 @@ impl UpdateQuickConnectNameInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the quick connect.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`UpdateQuickConnectNameInput`](crate::operation::update_quick_connect_name::UpdateQuickConnectNameInput).
     pub fn build(

@@ -37,6 +37,12 @@ impl ChangePasswordFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ChangePassword as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::change_password::builders::ChangePasswordInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +125,10 @@ impl ChangePasswordFluentBuilder {
         self.inner = self.inner.set_old_password(input);
         self
     }
+    /// <p>The IAM user's current password.</p>
+    pub fn get_old_password(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_old_password()
+    }
     /// <p>The new password. The new password must conform to the Amazon Web Services account's password policy, if one exists.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of characters. That string can include almost any printable ASCII character from the space (<code>\u0020</code>) through the end of the ASCII character range (<code>\u00FF</code>). You can also include the tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) characters. Any of these characters are valid in a password. However, many tools, such as the Amazon Web Services Management Console, might restrict the ability to type certain characters because they have special meaning within that tool.</p>
     pub fn new_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -130,5 +140,10 @@ impl ChangePasswordFluentBuilder {
     pub fn set_new_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_new_password(input);
         self
+    }
+    /// <p>The new password. The new password must conform to the Amazon Web Services account's password policy, if one exists.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of characters. That string can include almost any printable ASCII character from the space (<code>\u0020</code>) through the end of the ASCII character range (<code>\u00FF</code>). You can also include the tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) characters. Any of these characters are valid in a password. However, many tools, such as the Amazon Web Services Management Console, might restrict the ability to type certain characters because they have special meaning within that tool.</p>
+    pub fn get_new_password(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_new_password()
     }
 }

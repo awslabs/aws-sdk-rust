@@ -37,6 +37,13 @@ impl ConfigureLogsForChannelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ConfigureLogsForChannel as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::configure_logs_for_channel::builders::ConfigureLogsForChannelInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl ConfigureLogsForChannelFluentBuilder {
         self.inner = self.inner.set_channel_name(input);
         self
     }
+    /// <p>The name of the channel.</p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_name()
+    }
     /// Appends an item to `LogTypes`.
     ///
     /// To override the contents of this collection use [`set_log_types`](Self::set_log_types).
@@ -143,5 +154,9 @@ impl ConfigureLogsForChannelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_log_types(input);
         self
+    }
+    /// <p>The types of logs to collect.</p>
+    pub fn get_log_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogType>> {
+        self.inner.get_log_types()
     }
 }

@@ -37,6 +37,12 @@ impl ListV2LoggingLevelsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListV2LoggingLevels as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_v2_logging_levels::builders::ListV2LoggingLevelsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -141,6 +147,10 @@ impl ListV2LoggingLevelsFluentBuilder {
         self.inner = self.inner.set_target_type(input);
         self
     }
+    /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
+    pub fn get_target_type(&self) -> &::std::option::Option<crate::types::LogTargetType> {
+        self.inner.get_target_type()
+    }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -151,6 +161,10 @@ impl ListV2LoggingLevelsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -160,5 +174,9 @@ impl ListV2LoggingLevelsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return at one time.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

@@ -87,7 +87,7 @@ impl<T: Default> Default for Value<T> {
 ///
 /// While [`FrozenLayer`] is also cloneable, which is a shallow clone via `Arc`, `CloneableLayer`
 /// performs a deep clone that newly allocates all the items stored in it.
-#[derive(Debug)]
+#[derive(Debug, Default)]
 pub struct CloneableLayer(Layer);
 
 impl Deref for CloneableLayer {
@@ -197,6 +197,7 @@ impl CloneableLayer {
 }
 
 /// A named layer comprising a config bag
+#[derive(Default)]
 pub struct Layer {
     name: Cow<'static, str>,
     props: TypeIdMap<TypeErasedBox>,

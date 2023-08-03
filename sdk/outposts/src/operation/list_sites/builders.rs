@@ -37,6 +37,10 @@ impl ListSitesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListSites as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_sites::builders::ListSitesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +129,10 @@ impl ListSitesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum page size.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -134,6 +142,10 @@ impl ListSitesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum page size.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// Appends an item to `OperatingAddressCountryCodeFilter`.
     ///
@@ -156,6 +168,12 @@ impl ListSitesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_operating_address_country_code_filter(input);
         self
+    }
+    /// <p>Filters the results by country code.</p>
+    pub fn get_operating_address_country_code_filter(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_operating_address_country_code_filter()
     }
     /// Appends an item to `OperatingAddressStateOrRegionFilter`.
     ///
@@ -181,6 +199,12 @@ impl ListSitesFluentBuilder {
             .set_operating_address_state_or_region_filter(input);
         self
     }
+    /// <p>Filters the results by state or region.</p>
+    pub fn get_operating_address_state_or_region_filter(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_operating_address_state_or_region_filter()
+    }
     /// Appends an item to `OperatingAddressCityFilter`.
     ///
     /// To override the contents of this collection use [`set_operating_address_city_filter`](Self::set_operating_address_city_filter).
@@ -200,5 +224,11 @@ impl ListSitesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_operating_address_city_filter(input);
         self
+    }
+    /// <p>Filters the results by city.</p>
+    pub fn get_operating_address_city_filter(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_operating_address_city_filter()
     }
 }

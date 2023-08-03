@@ -91,6 +91,10 @@ impl EntitlementBuilder {
         self.data_transfer_subscriber_fee_percent = input;
         self
     }
+    /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+    pub fn get_data_transfer_subscriber_fee_percent(&self) -> &::std::option::Option<i32> {
+        &self.data_transfer_subscriber_fee_percent
+    }
     /// A description of the entitlement.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -100,6 +104,10 @@ impl EntitlementBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// A description of the entitlement.
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// The type of encryption that will be used on the output that is associated with this entitlement.
     pub fn encryption(mut self, input: crate::types::Encryption) -> Self {
@@ -113,6 +121,10 @@ impl EntitlementBuilder {
     ) -> Self {
         self.encryption = input;
         self
+    }
+    /// The type of encryption that will be used on the output that is associated with this entitlement.
+    pub fn get_encryption(&self) -> &::std::option::Option<crate::types::Encryption> {
+        &self.encryption
     }
     /// The ARN of the entitlement.
     pub fn entitlement_arn(
@@ -130,6 +142,10 @@ impl EntitlementBuilder {
         self.entitlement_arn = input;
         self
     }
+    /// The ARN of the entitlement.
+    pub fn get_entitlement_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entitlement_arn
+    }
     /// An indication of whether the entitlement is enabled.
     pub fn entitlement_status(mut self, input: crate::types::EntitlementStatus) -> Self {
         self.entitlement_status = ::std::option::Option::Some(input);
@@ -143,6 +159,12 @@ impl EntitlementBuilder {
         self.entitlement_status = input;
         self
     }
+    /// An indication of whether the entitlement is enabled.
+    pub fn get_entitlement_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::EntitlementStatus> {
+        &self.entitlement_status
+    }
     /// The name of the entitlement.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -152,6 +174,10 @@ impl EntitlementBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// The name of the entitlement.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `subscribers`.
     ///
@@ -171,6 +197,12 @@ impl EntitlementBuilder {
     ) -> Self {
         self.subscribers = input;
         self
+    }
+    /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
+    pub fn get_subscribers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subscribers
     }
     /// Consumes the builder and constructs a [`Entitlement`](crate::types::Entitlement).
     pub fn build(self) -> crate::types::Entitlement {

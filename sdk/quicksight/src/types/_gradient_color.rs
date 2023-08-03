@@ -49,6 +49,10 @@ impl GradientColorBuilder {
         self.stops = input;
         self
     }
+    /// <p>The list of gradient color stops.</p>
+    pub fn get_stops(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GradientStop>> {
+        &self.stops
+    }
     /// Consumes the builder and constructs a [`GradientColor`](crate::types::GradientColor).
     pub fn build(self) -> crate::types::GradientColor {
         crate::types::GradientColor { stops: self.stops }

@@ -134,6 +134,10 @@ impl ApnsVoipChannelResponseBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The unique identifier for the application that the APNs VoIP channel applies to.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The date and time when the APNs VoIP channel was enabled.</p>
     pub fn creation_date(
         mut self,
@@ -149,6 +153,10 @@ impl ApnsVoipChannelResponseBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>The date and time when the APNs VoIP channel was enabled.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_date
     }
     /// <p>The default authentication method that Amazon Pinpoint uses to authenticate with APNs for this channel, key or certificate.</p>
     pub fn default_authentication_method(
@@ -166,6 +174,12 @@ impl ApnsVoipChannelResponseBuilder {
         self.default_authentication_method = input;
         self
     }
+    /// <p>The default authentication method that Amazon Pinpoint uses to authenticate with APNs for this channel, key or certificate.</p>
+    pub fn get_default_authentication_method(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.default_authentication_method
+    }
     /// <p>Specifies whether the APNs VoIP channel is enabled for the application.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -175,6 +189,10 @@ impl ApnsVoipChannelResponseBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>Specifies whether the APNs VoIP channel is enabled for the application.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// <p>(Not used) This property is retained only for backward compatibility.</p>
     pub fn has_credential(mut self, input: bool) -> Self {
@@ -186,6 +204,10 @@ impl ApnsVoipChannelResponseBuilder {
         self.has_credential = input;
         self
     }
+    /// <p>(Not used) This property is retained only for backward compatibility.</p>
+    pub fn get_has_credential(&self) -> &::std::option::Option<bool> {
+        &self.has_credential
+    }
     /// <p>Specifies whether the APNs VoIP channel is configured to communicate with APNs by using APNs tokens. To provide an authentication key for APNs tokens, set the TokenKey property of the channel.</p>
     pub fn has_token_key(mut self, input: bool) -> Self {
         self.has_token_key = ::std::option::Option::Some(input);
@@ -195,6 +217,10 @@ impl ApnsVoipChannelResponseBuilder {
     pub fn set_has_token_key(mut self, input: ::std::option::Option<bool>) -> Self {
         self.has_token_key = input;
         self
+    }
+    /// <p>Specifies whether the APNs VoIP channel is configured to communicate with APNs by using APNs tokens. To provide an authentication key for APNs tokens, set the TokenKey property of the channel.</p>
+    pub fn get_has_token_key(&self) -> &::std::option::Option<bool> {
+        &self.has_token_key
     }
     /// <p>(Deprecated) An identifier for the APNs VoIP channel. This property is retained only for backward compatibility.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -206,6 +232,10 @@ impl ApnsVoipChannelResponseBuilder {
         self.id = input;
         self
     }
+    /// <p>(Deprecated) An identifier for the APNs VoIP channel. This property is retained only for backward compatibility.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>Specifies whether the APNs VoIP channel is archived.</p>
     pub fn is_archived(mut self, input: bool) -> Self {
         self.is_archived = ::std::option::Option::Some(input);
@@ -215,6 +245,10 @@ impl ApnsVoipChannelResponseBuilder {
     pub fn set_is_archived(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_archived = input;
         self
+    }
+    /// <p>Specifies whether the APNs VoIP channel is archived.</p>
+    pub fn get_is_archived(&self) -> &::std::option::Option<bool> {
+        &self.is_archived
     }
     /// <p>The user who last modified the APNs VoIP channel.</p>
     pub fn last_modified_by(
@@ -232,6 +266,10 @@ impl ApnsVoipChannelResponseBuilder {
         self.last_modified_by = input;
         self
     }
+    /// <p>The user who last modified the APNs VoIP channel.</p>
+    pub fn get_last_modified_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_by
+    }
     /// <p>The date and time when the APNs VoIP channel was last modified.</p>
     pub fn last_modified_date(
         mut self,
@@ -248,6 +286,10 @@ impl ApnsVoipChannelResponseBuilder {
         self.last_modified_date = input;
         self
     }
+    /// <p>The date and time when the APNs VoIP channel was last modified.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_date
+    }
     /// <p>The type of messaging or notification platform for the channel. For the APNs VoIP channel, this value is APNS_VOIP.</p>
     pub fn platform(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform = ::std::option::Option::Some(input.into());
@@ -258,6 +300,10 @@ impl ApnsVoipChannelResponseBuilder {
         self.platform = input;
         self
     }
+    /// <p>The type of messaging or notification platform for the channel. For the APNs VoIP channel, this value is APNS_VOIP.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform
+    }
     /// <p>The current version of the APNs VoIP channel.</p>
     pub fn version(mut self, input: i32) -> Self {
         self.version = ::std::option::Option::Some(input);
@@ -267,6 +313,10 @@ impl ApnsVoipChannelResponseBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The current version of the APNs VoIP channel.</p>
+    pub fn get_version(&self) -> &::std::option::Option<i32> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`ApnsVoipChannelResponse`](crate::types::ApnsVoipChannelResponse).
     pub fn build(self) -> crate::types::ApnsVoipChannelResponse {

@@ -52,6 +52,10 @@ impl CreateWebAclMigrationStackOutputBuilder {
         self.s3_object_url = input;
         self
     }
+    /// <p>The URL of the template created in Amazon S3. </p>
+    pub fn get_s3_object_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_object_url
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

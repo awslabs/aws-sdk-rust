@@ -55,6 +55,10 @@ impl UpdateBuildInputBuilder {
         self.build_id = input;
         self
     }
+    /// <p>A unique identifier for the build to update. You can use either the build ID or ARN value. </p>
+    pub fn get_build_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.build_id
+    }
     /// <p>A descriptive label associated with a build. Build names don't need to be unique. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl UpdateBuildInputBuilder {
         self.name = input;
         self
     }
+    /// <p>A descriptive label associated with a build. Build names don't need to be unique. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Version information associated with a build or script. Version strings don't need to be unique.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -74,6 +82,10 @@ impl UpdateBuildInputBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>Version information associated with a build or script. Version strings don't need to be unique.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`UpdateBuildInput`](crate::operation::update_build::UpdateBuildInput).
     pub fn build(

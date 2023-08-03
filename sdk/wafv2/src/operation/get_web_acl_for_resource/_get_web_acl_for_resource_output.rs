@@ -48,6 +48,10 @@ impl GetWebAclForResourceOutputBuilder {
         self.web_acl = input;
         self
     }
+    /// <p>The web ACL that is associated with the resource. If there is no associated resource, WAF returns a null web ACL.</p>
+    pub fn get_web_acl(&self) -> &::std::option::Option<crate::types::WebAcl> {
+        &self.web_acl
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

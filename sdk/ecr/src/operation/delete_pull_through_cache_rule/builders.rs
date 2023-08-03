@@ -36,6 +36,10 @@ impl DeletePullThroughCacheRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeletePullThroughCacheRule as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_pull_through_cache_rule::builders::DeletePullThroughCacheRuleInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl DeletePullThroughCacheRuleFluentBuilder {
         self.inner = self.inner.set_ecr_repository_prefix(input);
         self
     }
+    /// <p>The Amazon ECR repository prefix associated with the pull through cache rule to delete.</p>
+    pub fn get_ecr_repository_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ecr_repository_prefix()
+    }
     /// <p>The Amazon Web Services account ID associated with the registry that contains the pull through cache rule. If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.registry_id(input.into());
@@ -141,5 +149,9 @@ impl DeletePullThroughCacheRuleFluentBuilder {
     pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_registry_id(input);
         self
+    }
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the pull through cache rule. If you do not specify a registry, the default registry is assumed.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_registry_id()
     }
 }

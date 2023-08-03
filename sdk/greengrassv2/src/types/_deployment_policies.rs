@@ -78,6 +78,13 @@ impl DeploymentPoliciesBuilder {
         self.failure_handling_policy = input;
         self
     }
+    /// <p>The failure handling policy for the configuration deployment. This policy defines what to do if the deployment fails.</p>
+    /// <p>Default: <code>ROLLBACK</code> </p>
+    pub fn get_failure_handling_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeploymentFailureHandlingPolicy> {
+        &self.failure_handling_policy
+    }
     /// <p>The component update policy for the configuration deployment. This policy defines when it's safe to deploy the configuration to devices.</p>
     pub fn component_update_policy(
         mut self,
@@ -94,6 +101,12 @@ impl DeploymentPoliciesBuilder {
         self.component_update_policy = input;
         self
     }
+    /// <p>The component update policy for the configuration deployment. This policy defines when it's safe to deploy the configuration to devices.</p>
+    pub fn get_component_update_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeploymentComponentUpdatePolicy> {
+        &self.component_update_policy
+    }
     /// <p>The configuration validation policy for the configuration deployment. This policy defines how long each component has to validate its configure updates.</p>
     pub fn configuration_validation_policy(
         mut self,
@@ -109,6 +122,12 @@ impl DeploymentPoliciesBuilder {
     ) -> Self {
         self.configuration_validation_policy = input;
         self
+    }
+    /// <p>The configuration validation policy for the configuration deployment. This policy defines how long each component has to validate its configure updates.</p>
+    pub fn get_configuration_validation_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeploymentConfigurationValidationPolicy> {
+        &self.configuration_validation_policy
     }
     /// Consumes the builder and constructs a [`DeploymentPolicies`](crate::types::DeploymentPolicies).
     pub fn build(self) -> crate::types::DeploymentPolicies {

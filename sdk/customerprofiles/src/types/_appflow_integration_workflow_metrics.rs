@@ -56,6 +56,10 @@ impl AppflowIntegrationWorkflowMetricsBuilder {
         self.records_processed = input;
         self
     }
+    /// <p>Number of records processed in <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    pub fn get_records_processed(&self) -> &::std::option::Option<i64> {
+        &self.records_processed
+    }
     /// <p>Total steps completed in <code>APPFLOW_INTEGRATION</code> workflow.</p>
     pub fn steps_completed(mut self, input: i64) -> Self {
         self.steps_completed = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl AppflowIntegrationWorkflowMetricsBuilder {
         self.steps_completed = input;
         self
     }
+    /// <p>Total steps completed in <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    pub fn get_steps_completed(&self) -> &::std::option::Option<i64> {
+        &self.steps_completed
+    }
     /// <p>Total steps in <code>APPFLOW_INTEGRATION</code> workflow.</p>
     pub fn total_steps(mut self, input: i64) -> Self {
         self.total_steps = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl AppflowIntegrationWorkflowMetricsBuilder {
     pub fn set_total_steps(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_steps = input;
         self
+    }
+    /// <p>Total steps in <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    pub fn get_total_steps(&self) -> &::std::option::Option<i64> {
+        &self.total_steps
     }
     /// Consumes the builder and constructs a [`AppflowIntegrationWorkflowMetrics`](crate::types::AppflowIntegrationWorkflowMetrics).
     pub fn build(self) -> crate::types::AppflowIntegrationWorkflowMetrics {

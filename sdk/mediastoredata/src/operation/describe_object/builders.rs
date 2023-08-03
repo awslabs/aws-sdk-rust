@@ -36,6 +36,12 @@ impl DescribeObjectFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeObject as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_object::builders::DescribeObjectInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,5 +135,15 @@ impl DescribeObjectFluentBuilder {
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_path(input);
         self
+    }
+    /// <p>The path (including the file name) where the object is stored in the container. Format: <folder name>
+    /// /
+    /// <folder name>
+    /// /
+    /// <file name></file>
+    /// </folder>
+    /// </folder></p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_path()
     }
 }

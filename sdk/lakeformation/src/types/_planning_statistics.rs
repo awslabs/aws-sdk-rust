@@ -64,6 +64,10 @@ impl PlanningStatisticsBuilder {
         self.estimated_data_to_scan_bytes = input;
         self
     }
+    /// <p>An estimate of the data that was scanned in bytes.</p>
+    pub fn get_estimated_data_to_scan_bytes(&self) -> &::std::option::Option<i64> {
+        &self.estimated_data_to_scan_bytes
+    }
     /// <p>The time that it took to process the request.</p>
     pub fn planning_time_millis(mut self, input: i64) -> Self {
         self.planning_time_millis = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl PlanningStatisticsBuilder {
     pub fn set_planning_time_millis(mut self, input: ::std::option::Option<i64>) -> Self {
         self.planning_time_millis = input;
         self
+    }
+    /// <p>The time that it took to process the request.</p>
+    pub fn get_planning_time_millis(&self) -> &::std::option::Option<i64> {
+        &self.planning_time_millis
     }
     /// <p>The time the request was in queue to be processed.</p>
     pub fn queue_time_millis(mut self, input: i64) -> Self {
@@ -84,6 +92,10 @@ impl PlanningStatisticsBuilder {
         self.queue_time_millis = input;
         self
     }
+    /// <p>The time the request was in queue to be processed.</p>
+    pub fn get_queue_time_millis(&self) -> &::std::option::Option<i64> {
+        &self.queue_time_millis
+    }
     /// <p>The number of work units generated.</p>
     pub fn work_units_generated_count(mut self, input: i64) -> Self {
         self.work_units_generated_count = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl PlanningStatisticsBuilder {
     pub fn set_work_units_generated_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.work_units_generated_count = input;
         self
+    }
+    /// <p>The number of work units generated.</p>
+    pub fn get_work_units_generated_count(&self) -> &::std::option::Option<i64> {
+        &self.work_units_generated_count
     }
     /// Consumes the builder and constructs a [`PlanningStatistics`](crate::types::PlanningStatistics).
     pub fn build(self) -> crate::types::PlanningStatistics {

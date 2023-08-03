@@ -48,6 +48,10 @@ impl UniqueProblemBuilder {
         self.message = input;
         self
     }
+    /// <p>A message about the unique problems' result.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Appends an item to `problems`.
     ///
     /// To override the contents of this collection use [`set_problems`](Self::set_problems).
@@ -66,6 +70,10 @@ impl UniqueProblemBuilder {
     ) -> Self {
         self.problems = input;
         self
+    }
+    /// <p>Information about the problems.</p>
+    pub fn get_problems(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Problem>> {
+        &self.problems
     }
     /// Consumes the builder and constructs a [`UniqueProblem`](crate::types::UniqueProblem).
     pub fn build(self) -> crate::types::UniqueProblem {

@@ -37,6 +37,13 @@ impl UpdateQuickConnectNameFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateQuickConnectName as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_quick_connect_name::builders::UpdateQuickConnectNameInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl UpdateQuickConnectNameFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>The identifier for the quick connect.</p>
     pub fn quick_connect_id(
         mut self,
@@ -143,6 +154,10 @@ impl UpdateQuickConnectNameFluentBuilder {
         self.inner = self.inner.set_quick_connect_id(input);
         self
     }
+    /// <p>The identifier for the quick connect.</p>
+    pub fn get_quick_connect_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_quick_connect_id()
+    }
     /// <p>The name of the quick connect.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -153,6 +168,10 @@ impl UpdateQuickConnectNameFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the quick connect.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The description of the quick connect.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -162,5 +181,9 @@ impl UpdateQuickConnectNameFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the quick connect.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
 }

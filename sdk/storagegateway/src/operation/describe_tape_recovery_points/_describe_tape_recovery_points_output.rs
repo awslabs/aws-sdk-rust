@@ -69,6 +69,10 @@ impl DescribeTapeRecoveryPointsOutputBuilder {
         self.gateway_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
+    }
     /// Appends an item to `tape_recovery_point_infos`.
     ///
     /// To override the contents of this collection use [`set_tape_recovery_point_infos`](Self::set_tape_recovery_point_infos).
@@ -88,6 +92,12 @@ impl DescribeTapeRecoveryPointsOutputBuilder {
         self.tape_recovery_point_infos = input;
         self
     }
+    /// <p>An array of TapeRecoveryPointInfos that are available for the specified gateway.</p>
+    pub fn get_tape_recovery_point_infos(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TapeRecoveryPointInfo>> {
+        &self.tape_recovery_point_infos
+    }
     /// <p>An opaque string that indicates the position at which the virtual tape recovery points that were listed for description ended.</p>
     /// <p>Use this marker in your next request to list the next set of virtual tape recovery points in the list. If there are no more recovery points to describe, this field does not appear in the response.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -99,6 +109,11 @@ impl DescribeTapeRecoveryPointsOutputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>An opaque string that indicates the position at which the virtual tape recovery points that were listed for description ended.</p>
+    /// <p>Use this marker in your next request to list the next set of virtual tape recovery points in the list. If there are no more recovery points to describe, this field does not appear in the response.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -63,6 +63,10 @@ impl StartTaskOutputBuilder {
         self.tasks = input;
         self
     }
+    /// <p>A full description of the tasks that were started. Each task that was successfully placed on your container instances is described.</p>
+    pub fn get_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Task>> {
+        &self.tasks
+    }
     /// Appends an item to `failures`.
     ///
     /// To override the contents of this collection use [`set_failures`](Self::set_failures).
@@ -81,6 +85,10 @@ impl StartTaskOutputBuilder {
     ) -> Self {
         self.failures = input;
         self
+    }
+    /// <p>Any failures associated with the call.</p>
+    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Failure>> {
+        &self.failures
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

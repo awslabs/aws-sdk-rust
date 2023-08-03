@@ -134,6 +134,10 @@ impl CreateDataSetOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN for the data set.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The type of asset that is added to a data set.</p>
     pub fn asset_type(mut self, input: crate::types::AssetType) -> Self {
         self.asset_type = ::std::option::Option::Some(input);
@@ -143,6 +147,10 @@ impl CreateDataSetOutputBuilder {
     pub fn set_asset_type(mut self, input: ::std::option::Option<crate::types::AssetType>) -> Self {
         self.asset_type = input;
         self
+    }
+    /// <p>The type of asset that is added to a data set.</p>
+    pub fn get_asset_type(&self) -> &::std::option::Option<crate::types::AssetType> {
+        &self.asset_type
     }
     /// <p>The date and time that the data set was created, in ISO 8601 format.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -157,6 +165,10 @@ impl CreateDataSetOutputBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The date and time that the data set was created, in ISO 8601 format.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The description for the data set.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -166,6 +178,10 @@ impl CreateDataSetOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description for the data set.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The unique identifier for the data set.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -177,6 +193,10 @@ impl CreateDataSetOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier for the data set.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the data set.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -187,6 +207,10 @@ impl CreateDataSetOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the data set.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
     pub fn origin(mut self, input: crate::types::Origin) -> Self {
         self.origin = ::std::option::Option::Some(input);
@@ -196,6 +220,10 @@ impl CreateDataSetOutputBuilder {
     pub fn set_origin(mut self, input: ::std::option::Option<crate::types::Origin>) -> Self {
         self.origin = input;
         self
+    }
+    /// <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
+    pub fn get_origin(&self) -> &::std::option::Option<crate::types::Origin> {
+        &self.origin
     }
     /// <p>If the origin of this data set is ENTITLED, includes the details for the product on AWS Marketplace.</p>
     pub fn origin_details(mut self, input: crate::types::OriginDetails) -> Self {
@@ -210,6 +238,10 @@ impl CreateDataSetOutputBuilder {
         self.origin_details = input;
         self
     }
+    /// <p>If the origin of this data set is ENTITLED, includes the details for the product on AWS Marketplace.</p>
+    pub fn get_origin_details(&self) -> &::std::option::Option<crate::types::OriginDetails> {
+        &self.origin_details
+    }
     /// <p>The data set ID of the owned data set corresponding to the entitled data set being viewed. This parameter is returned when a data set owner is viewing the entitled copy of its owned data set.</p>
     pub fn source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_id = ::std::option::Option::Some(input.into());
@@ -219,6 +251,10 @@ impl CreateDataSetOutputBuilder {
     pub fn set_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_id = input;
         self
+    }
+    /// <p>The data set ID of the owned data set corresponding to the entitled data set being viewed. This parameter is returned when a data set owner is viewing the entitled copy of its owned data set.</p>
+    pub fn get_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_id
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -245,6 +281,14 @@ impl CreateDataSetOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags for the data set.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -257,6 +301,10 @@ impl CreateDataSetOutputBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

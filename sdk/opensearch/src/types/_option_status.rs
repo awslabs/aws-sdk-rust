@@ -75,6 +75,10 @@ impl OptionStatusBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>The timestamp when the entity was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
+    }
     /// <p>The timestamp of the last time the entity was updated.</p>
     pub fn update_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_date = ::std::option::Option::Some(input);
@@ -88,6 +92,10 @@ impl OptionStatusBuilder {
         self.update_date = input;
         self
     }
+    /// <p>The timestamp of the last time the entity was updated.</p>
+    pub fn get_update_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_date
+    }
     /// <p>The latest version of the entity.</p>
     pub fn update_version(mut self, input: i32) -> Self {
         self.update_version = ::std::option::Option::Some(input);
@@ -97,6 +105,10 @@ impl OptionStatusBuilder {
     pub fn set_update_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.update_version = input;
         self
+    }
+    /// <p>The latest version of the entity.</p>
+    pub fn get_update_version(&self) -> &::std::option::Option<i32> {
+        &self.update_version
     }
     /// <p>The state of the entity.</p>
     pub fn state(mut self, input: crate::types::OptionState) -> Self {
@@ -108,6 +120,10 @@ impl OptionStatusBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of the entity.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::OptionState> {
+        &self.state
+    }
     /// <p>Indicates whether the entity is being deleted.</p>
     pub fn pending_deletion(mut self, input: bool) -> Self {
         self.pending_deletion = ::std::option::Option::Some(input);
@@ -117,6 +133,10 @@ impl OptionStatusBuilder {
     pub fn set_pending_deletion(mut self, input: ::std::option::Option<bool>) -> Self {
         self.pending_deletion = input;
         self
+    }
+    /// <p>Indicates whether the entity is being deleted.</p>
+    pub fn get_pending_deletion(&self) -> &::std::option::Option<bool> {
+        &self.pending_deletion
     }
     /// Consumes the builder and constructs a [`OptionStatus`](crate::types::OptionStatus).
     pub fn build(self) -> crate::types::OptionStatus {

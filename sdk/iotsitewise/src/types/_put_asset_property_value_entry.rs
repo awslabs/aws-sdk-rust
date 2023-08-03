@@ -73,6 +73,10 @@ impl PutAssetPropertyValueEntryBuilder {
         self.entry_id = input;
         self
     }
+    /// <p>The user specified ID for the entry. You can use this ID to identify which entries failed.</p>
+    pub fn get_entry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entry_id
+    }
     /// <p>The ID of the asset to update.</p>
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_id = ::std::option::Option::Some(input.into());
@@ -83,6 +87,10 @@ impl PutAssetPropertyValueEntryBuilder {
         self.asset_id = input;
         self
     }
+    /// <p>The ID of the asset to update.</p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_id
+    }
     /// <p>The ID of the asset property for this entry.</p>
     pub fn property_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.property_id = ::std::option::Option::Some(input.into());
@@ -92,6 +100,10 @@ impl PutAssetPropertyValueEntryBuilder {
     pub fn set_property_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.property_id = input;
         self
+    }
+    /// <p>The ID of the asset property for this entry.</p>
+    pub fn get_property_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.property_id
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn property_alias(
@@ -108,6 +120,10 @@ impl PutAssetPropertyValueEntryBuilder {
     ) -> Self {
         self.property_alias = input;
         self
+    }
+    /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_property_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.property_alias
     }
     /// Appends an item to `property_values`.
     ///
@@ -127,6 +143,12 @@ impl PutAssetPropertyValueEntryBuilder {
     ) -> Self {
         self.property_values = input;
         self
+    }
+    /// <p>The list of property values to upload. You can specify up to 10 <code>propertyValues</code> array elements. </p>
+    pub fn get_property_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>> {
+        &self.property_values
     }
     /// Consumes the builder and constructs a [`PutAssetPropertyValueEntry`](crate::types::PutAssetPropertyValueEntry).
     pub fn build(self) -> crate::types::PutAssetPropertyValueEntry {

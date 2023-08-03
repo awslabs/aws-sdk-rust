@@ -64,6 +64,12 @@ impl ListWorkspacesOutputBuilder {
         self.workspaces = input;
         self
     }
+    /// The list of existing workspaces, including those undergoing creation or deletion.
+    pub fn get_workspaces(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkspaceSummary>> {
+        &self.workspaces
+    }
     /// Pagination token to use when requesting the next page in this list.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -73,6 +79,10 @@ impl ListWorkspacesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// Pagination token to use when requesting the next page in this list.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

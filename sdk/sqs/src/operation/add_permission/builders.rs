@@ -46,6 +46,12 @@ impl AddPermissionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AddPermission as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::add_permission::builders::AddPermissionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +136,11 @@ impl AddPermissionFluentBuilder {
         self.inner = self.inner.set_queue_url(input);
         self
     }
+    /// <p>The URL of the Amazon SQS queue to which permissions are added.</p>
+    /// <p>Queue URLs and names are case-sensitive.</p>
+    pub fn get_queue_url(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_queue_url()
+    }
     /// <p>The unique identification of the permission you're setting (for example, <code>AliceSendMessage</code>). Maximum 80 characters. Allowed characters include alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p>
     pub fn label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.label(input.into());
@@ -139,6 +150,10 @@ impl AddPermissionFluentBuilder {
     pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_label(input);
         self
+    }
+    /// <p>The unique identification of the permission you're setting (for example, <code>AliceSendMessage</code>). Maximum 80 characters. Allowed characters include alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p>
+    pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_label()
     }
     /// Appends an item to `AWSAccountIds`.
     ///
@@ -160,6 +175,12 @@ impl AddPermissionFluentBuilder {
         self.inner = self.inner.set_aws_account_ids(input);
         self
     }
+    /// <p>The Amazon Web Services account numbers of the <a href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principals</a> who are to receive permission. For information about locating the Amazon Web Services account identification, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html#sqs-api-request-authentication">Your Amazon Web Services Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+    pub fn get_aws_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_aws_account_ids()
+    }
     /// Appends an item to `Actions`.
     ///
     /// To override the contents of this collection use [`set_actions`](Self::set_actions).
@@ -180,5 +201,11 @@ impl AddPermissionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_actions(input);
         self
+    }
+    /// <p>The action the client wants to allow for the specified principal. Valid values: the name of any action or <code>*</code>.</p>
+    /// <p>For more information about these actions, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-overview-of-managing-access.html">Overview of Managing Access Permissions to Your Amazon Simple Queue Service Resource</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+    /// <p>Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants permissions for the corresponding batch versions of those actions: <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>, and <code>ChangeMessageVisibilityBatch</code>.</p>
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_actions()
     }
 }

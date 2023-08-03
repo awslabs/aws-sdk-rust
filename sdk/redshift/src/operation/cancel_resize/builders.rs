@@ -36,6 +36,10 @@ impl CancelResizeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CancelResize as a reference.
+    pub fn as_input(&self) -> &crate::operation::cancel_resize::builders::CancelResizeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -123,5 +127,9 @@ impl CancelResizeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
+    }
+    /// <p>The unique identifier for the cluster that you want to cancel a resize operation for.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_identifier()
     }
 }

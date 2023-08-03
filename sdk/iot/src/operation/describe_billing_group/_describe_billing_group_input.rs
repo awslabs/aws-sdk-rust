@@ -46,6 +46,10 @@ impl DescribeBillingGroupInputBuilder {
         self.billing_group_name = input;
         self
     }
+    /// <p>The name of the billing group.</p>
+    pub fn get_billing_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.billing_group_name
+    }
     /// Consumes the builder and constructs a [`DescribeBillingGroupInput`](crate::operation::describe_billing_group::DescribeBillingGroupInput).
     pub fn build(
         self,

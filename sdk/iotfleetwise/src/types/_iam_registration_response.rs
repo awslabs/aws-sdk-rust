@@ -56,6 +56,10 @@ impl IamRegistrationResponseBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to register.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The status of registering your IAM resource. The status can be one of <code>REGISTRATION_SUCCESS</code>, <code>REGISTRATION_PENDING</code>, <code>REGISTRATION_FAILURE</code>.</p>
     pub fn registration_status(mut self, input: crate::types::RegistrationStatus) -> Self {
         self.registration_status = ::std::option::Option::Some(input);
@@ -68,6 +72,12 @@ impl IamRegistrationResponseBuilder {
     ) -> Self {
         self.registration_status = input;
         self
+    }
+    /// <p>The status of registering your IAM resource. The status can be one of <code>REGISTRATION_SUCCESS</code>, <code>REGISTRATION_PENDING</code>, <code>REGISTRATION_FAILURE</code>.</p>
+    pub fn get_registration_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::RegistrationStatus> {
+        &self.registration_status
     }
     /// <p>A message associated with a registration error.</p>
     pub fn error_message(
@@ -84,6 +94,10 @@ impl IamRegistrationResponseBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>A message associated with a registration error.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`IamRegistrationResponse`](crate::types::IamRegistrationResponse).
     pub fn build(self) -> crate::types::IamRegistrationResponse {

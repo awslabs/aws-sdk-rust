@@ -155,6 +155,10 @@ impl GrantedLicenseBuilder {
         self.license_arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the license.</p>
+    pub fn get_license_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_arn
+    }
     /// <p>License name.</p>
     pub fn license_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_name = ::std::option::Option::Some(input.into());
@@ -164,6 +168,10 @@ impl GrantedLicenseBuilder {
     pub fn set_license_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.license_name = input;
         self
+    }
+    /// <p>License name.</p>
+    pub fn get_license_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_name
     }
     /// <p>Product name.</p>
     pub fn product_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -175,6 +183,10 @@ impl GrantedLicenseBuilder {
         self.product_name = input;
         self
     }
+    /// <p>Product name.</p>
+    pub fn get_product_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_name
+    }
     /// <p>Product SKU.</p>
     pub fn product_sku(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_sku = ::std::option::Option::Some(input.into());
@@ -184,6 +196,10 @@ impl GrantedLicenseBuilder {
     pub fn set_product_sku(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product_sku = input;
         self
+    }
+    /// <p>Product SKU.</p>
+    pub fn get_product_sku(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_sku
     }
     /// <p>Granted license issuer.</p>
     pub fn issuer(mut self, input: crate::types::IssuerDetails) -> Self {
@@ -195,6 +211,10 @@ impl GrantedLicenseBuilder {
         self.issuer = input;
         self
     }
+    /// <p>Granted license issuer.</p>
+    pub fn get_issuer(&self) -> &::std::option::Option<crate::types::IssuerDetails> {
+        &self.issuer
+    }
     /// <p>Home Region of the granted license.</p>
     pub fn home_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.home_region = ::std::option::Option::Some(input.into());
@@ -205,6 +225,10 @@ impl GrantedLicenseBuilder {
         self.home_region = input;
         self
     }
+    /// <p>Home Region of the granted license.</p>
+    pub fn get_home_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.home_region
+    }
     /// <p>Granted license status.</p>
     pub fn status(mut self, input: crate::types::LicenseStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -214,6 +238,10 @@ impl GrantedLicenseBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::LicenseStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Granted license status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::LicenseStatus> {
+        &self.status
     }
     /// <p>Date and time range during which the granted license is valid, in ISO8601-UTC format.</p>
     pub fn validity(mut self, input: crate::types::DatetimeRange) -> Self {
@@ -228,6 +256,10 @@ impl GrantedLicenseBuilder {
         self.validity = input;
         self
     }
+    /// <p>Date and time range during which the granted license is valid, in ISO8601-UTC format.</p>
+    pub fn get_validity(&self) -> &::std::option::Option<crate::types::DatetimeRange> {
+        &self.validity
+    }
     /// <p>Granted license beneficiary.</p>
     pub fn beneficiary(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.beneficiary = ::std::option::Option::Some(input.into());
@@ -237,6 +269,10 @@ impl GrantedLicenseBuilder {
     pub fn set_beneficiary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.beneficiary = input;
         self
+    }
+    /// <p>Granted license beneficiary.</p>
+    pub fn get_beneficiary(&self) -> &::std::option::Option<::std::string::String> {
+        &self.beneficiary
     }
     /// Appends an item to `entitlements`.
     ///
@@ -257,6 +293,12 @@ impl GrantedLicenseBuilder {
         self.entitlements = input;
         self
     }
+    /// <p>License entitlements.</p>
+    pub fn get_entitlements(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Entitlement>> {
+        &self.entitlements
+    }
     /// <p>Configuration for consumption of the license.</p>
     pub fn consumption_configuration(
         mut self,
@@ -272,6 +314,12 @@ impl GrantedLicenseBuilder {
     ) -> Self {
         self.consumption_configuration = input;
         self
+    }
+    /// <p>Configuration for consumption of the license.</p>
+    pub fn get_consumption_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConsumptionConfiguration> {
+        &self.consumption_configuration
     }
     /// Appends an item to `license_metadata`.
     ///
@@ -292,6 +340,12 @@ impl GrantedLicenseBuilder {
         self.license_metadata = input;
         self
     }
+    /// <p>Granted license metadata.</p>
+    pub fn get_license_metadata(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Metadata>> {
+        &self.license_metadata
+    }
     /// <p>Creation time of the granted license.</p>
     pub fn create_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.create_time = ::std::option::Option::Some(input.into());
@@ -302,6 +356,10 @@ impl GrantedLicenseBuilder {
         self.create_time = input;
         self
     }
+    /// <p>Creation time of the granted license.</p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.create_time
+    }
     /// <p>Version of the granted license.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -311,6 +369,10 @@ impl GrantedLicenseBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>Version of the granted license.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// <p>Granted license received metadata.</p>
     pub fn received_metadata(mut self, input: crate::types::ReceivedMetadata) -> Self {
@@ -324,6 +386,10 @@ impl GrantedLicenseBuilder {
     ) -> Self {
         self.received_metadata = input;
         self
+    }
+    /// <p>Granted license received metadata.</p>
+    pub fn get_received_metadata(&self) -> &::std::option::Option<crate::types::ReceivedMetadata> {
+        &self.received_metadata
     }
     /// Consumes the builder and constructs a [`GrantedLicense`](crate::types::GrantedLicense).
     pub fn build(self) -> crate::types::GrantedLicense {

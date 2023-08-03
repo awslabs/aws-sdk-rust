@@ -38,6 +38,12 @@ impl UpdateDefaultBranchFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDefaultBranch as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_default_branch::builders::UpdateDefaultBranchInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,10 @@ impl UpdateDefaultBranchFluentBuilder {
         self.inner = self.inner.set_repository_name(input);
         self
     }
+    /// <p>The name of the repository to set or change the default branch for.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository_name()
+    }
     /// <p>The name of the branch to set as the default.</p>
     pub fn default_branch_name(
         mut self,
@@ -149,5 +159,9 @@ impl UpdateDefaultBranchFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_default_branch_name(input);
         self
+    }
+    /// <p>The name of the branch to set as the default.</p>
+    pub fn get_default_branch_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_default_branch_name()
     }
 }

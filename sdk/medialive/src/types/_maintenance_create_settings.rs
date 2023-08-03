@@ -51,6 +51,10 @@ impl MaintenanceCreateSettingsBuilder {
         self.maintenance_day = input;
         self
     }
+    /// Choose one day of the week for maintenance. The chosen day is used for all future maintenance windows.
+    pub fn get_maintenance_day(&self) -> &::std::option::Option<crate::types::MaintenanceDay> {
+        &self.maintenance_day
+    }
     /// Choose the hour that maintenance will start. The chosen time is used for all future maintenance windows.
     pub fn maintenance_start_time(
         mut self,
@@ -66,6 +70,10 @@ impl MaintenanceCreateSettingsBuilder {
     ) -> Self {
         self.maintenance_start_time = input;
         self
+    }
+    /// Choose the hour that maintenance will start. The chosen time is used for all future maintenance windows.
+    pub fn get_maintenance_start_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.maintenance_start_time
     }
     /// Consumes the builder and constructs a [`MaintenanceCreateSettings`](crate::types::MaintenanceCreateSettings).
     pub fn build(self) -> crate::types::MaintenanceCreateSettings {

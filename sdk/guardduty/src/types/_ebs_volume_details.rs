@@ -59,6 +59,12 @@ impl EbsVolumeDetailsBuilder {
         self.scanned_volume_details = input;
         self
     }
+    /// <p>List of EBS volumes that were scanned.</p>
+    pub fn get_scanned_volume_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeDetail>> {
+        &self.scanned_volume_details
+    }
     /// Appends an item to `skipped_volume_details`.
     ///
     /// To override the contents of this collection use [`set_skipped_volume_details`](Self::set_skipped_volume_details).
@@ -77,6 +83,12 @@ impl EbsVolumeDetailsBuilder {
     ) -> Self {
         self.skipped_volume_details = input;
         self
+    }
+    /// <p>List of EBS volumes that were skipped from the malware scan.</p>
+    pub fn get_skipped_volume_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeDetail>> {
+        &self.skipped_volume_details
     }
     /// Consumes the builder and constructs a [`EbsVolumeDetails`](crate::types::EbsVolumeDetails).
     pub fn build(self) -> crate::types::EbsVolumeDetails {

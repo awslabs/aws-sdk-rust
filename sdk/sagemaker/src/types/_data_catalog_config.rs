@@ -56,6 +56,10 @@ impl DataCatalogConfigBuilder {
         self.table_name = input;
         self
     }
+    /// <p>The name of the Glue table.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
+    }
     /// <p>The name of the Glue table catalog.</p>
     pub fn catalog(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl DataCatalogConfigBuilder {
         self.catalog = input;
         self
     }
+    /// <p>The name of the Glue table catalog.</p>
+    pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog
+    }
     /// <p>The name of the Glue table database.</p>
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl DataCatalogConfigBuilder {
     pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database = input;
         self
+    }
+    /// <p>The name of the Glue table database.</p>
+    pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database
     }
     /// Consumes the builder and constructs a [`DataCatalogConfig`](crate::types::DataCatalogConfig).
     pub fn build(self) -> crate::types::DataCatalogConfig {

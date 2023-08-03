@@ -46,6 +46,10 @@ impl RegisterOrganizationDelegatedAdminInputBuilder {
         self.member_account_id = input;
         self
     }
+    /// <p>An organization member account ID that you want to designate as a delegated administrator.</p>
+    pub fn get_member_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_account_id
+    }
     /// Consumes the builder and constructs a [`RegisterOrganizationDelegatedAdminInput`](crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

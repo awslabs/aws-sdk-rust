@@ -48,6 +48,10 @@ impl TrafficMirrorPortRangeBuilder {
         self.from_port = input;
         self
     }
+    /// <p>The start of the Traffic Mirror port range. This applies to the TCP and UDP protocols.</p>
+    pub fn get_from_port(&self) -> &::std::option::Option<i32> {
+        &self.from_port
+    }
     /// <p>The end of the Traffic Mirror port range. This applies to the TCP and UDP protocols.</p>
     pub fn to_port(mut self, input: i32) -> Self {
         self.to_port = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl TrafficMirrorPortRangeBuilder {
     pub fn set_to_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.to_port = input;
         self
+    }
+    /// <p>The end of the Traffic Mirror port range. This applies to the TCP and UDP protocols.</p>
+    pub fn get_to_port(&self) -> &::std::option::Option<i32> {
+        &self.to_port
     }
     /// Consumes the builder and constructs a [`TrafficMirrorPortRange`](crate::types::TrafficMirrorPortRange).
     pub fn build(self) -> crate::types::TrafficMirrorPortRange {

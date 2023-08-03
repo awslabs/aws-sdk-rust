@@ -36,6 +36,10 @@ impl UpdateThemeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateTheme as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_theme::builders::UpdateThemeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl UpdateThemeFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The ID of the Amazon Web Services account that contains the theme that you're updating.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The ID for the theme.</p>
     pub fn theme_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.theme_id(input.into());
@@ -134,6 +142,10 @@ impl UpdateThemeFluentBuilder {
         self.inner = self.inner.set_theme_id(input);
         self
     }
+    /// <p>The ID for the theme.</p>
+    pub fn get_theme_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_theme_id()
+    }
     /// <p>The name for the theme.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -143,6 +155,10 @@ impl UpdateThemeFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name for the theme.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The theme ID, defined by Amazon QuickSight, that a custom theme inherits from. All themes initially inherit from a default Amazon QuickSight theme.</p>
     pub fn base_theme_id(
@@ -160,6 +176,10 @@ impl UpdateThemeFluentBuilder {
         self.inner = self.inner.set_base_theme_id(input);
         self
     }
+    /// <p>The theme ID, defined by Amazon QuickSight, that a custom theme inherits from. All themes initially inherit from a default Amazon QuickSight theme.</p>
+    pub fn get_base_theme_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_base_theme_id()
+    }
     /// <p>A description of the theme version that you're updating Every time that you call <code>UpdateTheme</code>, you create a new version of the theme. Each version of the theme maintains a description of the version in <code>VersionDescription</code>.</p>
     pub fn version_description(
         mut self,
@@ -176,6 +196,10 @@ impl UpdateThemeFluentBuilder {
         self.inner = self.inner.set_version_description(input);
         self
     }
+    /// <p>A description of the theme version that you're updating Every time that you call <code>UpdateTheme</code>, you create a new version of the theme. Each version of the theme maintains a description of the version in <code>VersionDescription</code>.</p>
+    pub fn get_version_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version_description()
+    }
     /// <p>The theme configuration, which contains the theme display properties.</p>
     pub fn configuration(mut self, input: crate::types::ThemeConfiguration) -> Self {
         self.inner = self.inner.configuration(input);
@@ -188,5 +212,9 @@ impl UpdateThemeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
+    }
+    /// <p>The theme configuration, which contains the theme display properties.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ThemeConfiguration> {
+        self.inner.get_configuration()
     }
 }

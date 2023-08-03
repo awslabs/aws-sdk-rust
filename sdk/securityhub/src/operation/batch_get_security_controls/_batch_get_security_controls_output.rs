@@ -68,6 +68,12 @@ impl BatchGetSecurityControlsOutputBuilder {
         self.security_controls = input;
         self
     }
+    /// <p> An array that returns the identifier, Amazon Resource Name (ARN), and other details about a security control. The same information is returned whether the request includes <code>SecurityControlId</code> or <code>SecurityControlArn</code>. </p>
+    pub fn get_security_controls(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityControl>> {
+        &self.security_controls
+    }
     /// Appends an item to `unprocessed_ids`.
     ///
     /// To override the contents of this collection use [`set_unprocessed_ids`](Self::set_unprocessed_ids).
@@ -86,6 +92,12 @@ impl BatchGetSecurityControlsOutputBuilder {
     ) -> Self {
         self.unprocessed_ids = input;
         self
+    }
+    /// <p> A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) for which details cannot be returned. </p>
+    pub fn get_unprocessed_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedSecurityControl>> {
+        &self.unprocessed_ids
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

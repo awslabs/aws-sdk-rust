@@ -40,6 +40,10 @@ impl JobTimersBuilder {
         self.elapsed_time_in_active_seconds = input;
         self
     }
+    /// <p>Indicates the elapsed time in seconds the job has been in the Active job state.</p>
+    pub fn get_elapsed_time_in_active_seconds(&self) -> &::std::option::Option<i64> {
+        &self.elapsed_time_in_active_seconds
+    }
     /// Consumes the builder and constructs a [`JobTimers`](crate::types::JobTimers).
     pub fn build(self) -> crate::types::JobTimers {
         crate::types::JobTimers {

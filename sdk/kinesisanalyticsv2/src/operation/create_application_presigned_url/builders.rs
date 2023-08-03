@@ -40,6 +40,10 @@ impl CreateApplicationPresignedUrlFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateApplicationPresignedUrl as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_application_presigned_url::builders::CreateApplicationPresignedUrlInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +140,10 @@ impl CreateApplicationPresignedUrlFluentBuilder {
         self.inner = self.inner.set_application_name(input);
         self
     }
+    /// <p>The name of the application.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_name()
+    }
     /// <p>The type of the extension for which to create and return a URL. Currently, the only valid extension URL type is <code>FLINK_DASHBOARD_URL</code>. </p>
     pub fn url_type(mut self, input: crate::types::UrlType) -> Self {
         self.inner = self.inner.url_type(input);
@@ -145,6 +153,10 @@ impl CreateApplicationPresignedUrlFluentBuilder {
     pub fn set_url_type(mut self, input: ::std::option::Option<crate::types::UrlType>) -> Self {
         self.inner = self.inner.set_url_type(input);
         self
+    }
+    /// <p>The type of the extension for which to create and return a URL. Currently, the only valid extension URL type is <code>FLINK_DASHBOARD_URL</code>. </p>
+    pub fn get_url_type(&self) -> &::std::option::Option<crate::types::UrlType> {
+        self.inner.get_url_type()
     }
     /// <p>The duration in seconds for which the returned URL will be valid.</p>
     pub fn session_expiration_duration_in_seconds(mut self, input: i64) -> Self {
@@ -158,5 +170,9 @@ impl CreateApplicationPresignedUrlFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_session_expiration_duration_in_seconds(input);
         self
+    }
+    /// <p>The duration in seconds for which the returned URL will be valid.</p>
+    pub fn get_session_expiration_duration_in_seconds(&self) -> &::std::option::Option<i64> {
+        self.inner.get_session_expiration_duration_in_seconds()
     }
 }

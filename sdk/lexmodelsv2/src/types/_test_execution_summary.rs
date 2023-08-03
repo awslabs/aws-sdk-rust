@@ -114,6 +114,10 @@ impl TestExecutionSummaryBuilder {
         self.test_execution_id = input;
         self
     }
+    /// <p>The unique identifier of the test execution.</p>
+    pub fn get_test_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_execution_id
+    }
     /// <p>The date and time at which the test execution was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
@@ -126,6 +130,10 @@ impl TestExecutionSummaryBuilder {
     ) -> Self {
         self.creation_date_time = input;
         self
+    }
+    /// <p>The date and time at which the test execution was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
     }
     /// <p>The date and time at which the test execution was last updated.</p>
     pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -140,6 +148,12 @@ impl TestExecutionSummaryBuilder {
         self.last_updated_date_time = input;
         self
     }
+    /// <p>The date and time at which the test execution was last updated.</p>
+    pub fn get_last_updated_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date_time
+    }
     /// <p>The current status of the test execution.</p>
     pub fn test_execution_status(mut self, input: crate::types::TestExecutionStatus) -> Self {
         self.test_execution_status = ::std::option::Option::Some(input);
@@ -153,6 +167,12 @@ impl TestExecutionSummaryBuilder {
         self.test_execution_status = input;
         self
     }
+    /// <p>The current status of the test execution.</p>
+    pub fn get_test_execution_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::TestExecutionStatus> {
+        &self.test_execution_status
+    }
     /// <p>The unique identifier of the test set used in the test execution.</p>
     pub fn test_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_set_id = ::std::option::Option::Some(input.into());
@@ -162,6 +182,10 @@ impl TestExecutionSummaryBuilder {
     pub fn set_test_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.test_set_id = input;
         self
+    }
+    /// <p>The unique identifier of the test set used in the test execution.</p>
+    pub fn get_test_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_set_id
     }
     /// <p>The name of the test set used in the test execution.</p>
     pub fn test_set_name(
@@ -179,6 +203,10 @@ impl TestExecutionSummaryBuilder {
         self.test_set_name = input;
         self
     }
+    /// <p>The name of the test set used in the test execution.</p>
+    pub fn get_test_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_set_name
+    }
     /// <p>Contains information about the bot used for the test execution..</p>
     pub fn target(mut self, input: crate::types::TestExecutionTarget) -> Self {
         self.target = ::std::option::Option::Some(input);
@@ -191,6 +219,10 @@ impl TestExecutionSummaryBuilder {
     ) -> Self {
         self.target = input;
         self
+    }
+    /// <p>Contains information about the bot used for the test execution..</p>
+    pub fn get_target(&self) -> &::std::option::Option<crate::types::TestExecutionTarget> {
+        &self.target
     }
     /// <p>Specifies whether the API mode for the test execution is streaming or non-streaming.</p>
     pub fn api_mode(mut self, input: crate::types::TestExecutionApiMode) -> Self {
@@ -205,6 +237,10 @@ impl TestExecutionSummaryBuilder {
         self.api_mode = input;
         self
     }
+    /// <p>Specifies whether the API mode for the test execution is streaming or non-streaming.</p>
+    pub fn get_api_mode(&self) -> &::std::option::Option<crate::types::TestExecutionApiMode> {
+        &self.api_mode
+    }
     /// <p>Specifies whether the data used for the test execution is written or spoken.</p>
     pub fn test_execution_modality(mut self, input: crate::types::TestExecutionModality) -> Self {
         self.test_execution_modality = ::std::option::Option::Some(input);
@@ -217,6 +253,12 @@ impl TestExecutionSummaryBuilder {
     ) -> Self {
         self.test_execution_modality = input;
         self
+    }
+    /// <p>Specifies whether the data used for the test execution is written or spoken.</p>
+    pub fn get_test_execution_modality(
+        &self,
+    ) -> &::std::option::Option<crate::types::TestExecutionModality> {
+        &self.test_execution_modality
     }
     /// Consumes the builder and constructs a [`TestExecutionSummary`](crate::types::TestExecutionSummary).
     pub fn build(self) -> crate::types::TestExecutionSummary {

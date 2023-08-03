@@ -96,6 +96,10 @@ impl ChannelBuilder {
         self.channel_name = input;
         self
     }
+    /// <p>The name of the channel. </p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_name
+    }
     /// <p>The location of the channel data.</p>
     pub fn data_source(mut self, input: crate::types::DataSource) -> Self {
         self.data_source = ::std::option::Option::Some(input);
@@ -109,6 +113,10 @@ impl ChannelBuilder {
         self.data_source = input;
         self
     }
+    /// <p>The location of the channel data.</p>
+    pub fn get_data_source(&self) -> &::std::option::Option<crate::types::DataSource> {
+        &self.data_source
+    }
     /// <p>The MIME type of the data.</p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
@@ -118,6 +126,10 @@ impl ChannelBuilder {
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
+    }
+    /// <p>The MIME type of the data.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
     }
     /// <p>If training data is compressed, the compression type. The default value is <code>None</code>. <code>CompressionType</code> is used only in Pipe input mode. In File mode, leave this field unset or set it to None.</p>
     pub fn compression_type(mut self, input: crate::types::CompressionType) -> Self {
@@ -131,6 +143,10 @@ impl ChannelBuilder {
     ) -> Self {
         self.compression_type = input;
         self
+    }
+    /// <p>If training data is compressed, the compression type. The default value is <code>None</code>. <code>CompressionType</code> is used only in Pipe input mode. In File mode, leave this field unset or set it to None.</p>
+    pub fn get_compression_type(&self) -> &::std::option::Option<crate::types::CompressionType> {
+        &self.compression_type
     }
     /// <p></p>
     /// <p>Specify RecordIO as the value when input data is in raw format but the training algorithm requires the RecordIO format. In this case, SageMaker wraps each individual S3 object in a RecordIO record. If the input data is already in RecordIO format, you don't need to set this attribute. For more information, see <a href="https://mxnet.apache.org/api/architecture/note_data_loading#data-format">Create a Dataset Using RecordIO</a>. </p>
@@ -149,6 +165,12 @@ impl ChannelBuilder {
         self.record_wrapper_type = input;
         self
     }
+    /// <p></p>
+    /// <p>Specify RecordIO as the value when input data is in raw format but the training algorithm requires the RecordIO format. In this case, SageMaker wraps each individual S3 object in a RecordIO record. If the input data is already in RecordIO format, you don't need to set this attribute. For more information, see <a href="https://mxnet.apache.org/api/architecture/note_data_loading#data-format">Create a Dataset Using RecordIO</a>. </p>
+    /// <p>In File mode, leave this field unset or set it to None.</p>
+    pub fn get_record_wrapper_type(&self) -> &::std::option::Option<crate::types::RecordWrapper> {
+        &self.record_wrapper_type
+    }
     /// <p>(Optional) The input mode to use for the data channel in a training job. If you don't set a value for <code>InputMode</code>, SageMaker uses the value set for <code>TrainingInputMode</code>. Use this parameter to override the <code>TrainingInputMode</code> setting in a <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html">AlgorithmSpecification</a> request when you have a channel that needs a different input mode from the training job's general setting. To download the data from Amazon Simple Storage Service (Amazon S3) to the provisioned ML storage volume, and mount the directory to a Docker volume, use <code>File</code> input mode. To stream data directly from Amazon S3 to the container, choose <code>Pipe</code> input mode.</p>
     /// <p>To use a model for incremental training, choose <code>File</code> input model.</p>
     pub fn input_mode(mut self, input: crate::types::TrainingInputMode) -> Self {
@@ -164,6 +186,11 @@ impl ChannelBuilder {
         self.input_mode = input;
         self
     }
+    /// <p>(Optional) The input mode to use for the data channel in a training job. If you don't set a value for <code>InputMode</code>, SageMaker uses the value set for <code>TrainingInputMode</code>. Use this parameter to override the <code>TrainingInputMode</code> setting in a <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html">AlgorithmSpecification</a> request when you have a channel that needs a different input mode from the training job's general setting. To download the data from Amazon Simple Storage Service (Amazon S3) to the provisioned ML storage volume, and mount the directory to a Docker volume, use <code>File</code> input mode. To stream data directly from Amazon S3 to the container, choose <code>Pipe</code> input mode.</p>
+    /// <p>To use a model for incremental training, choose <code>File</code> input model.</p>
+    pub fn get_input_mode(&self) -> &::std::option::Option<crate::types::TrainingInputMode> {
+        &self.input_mode
+    }
     /// <p>A configuration for a shuffle option for input data in a channel. If you use <code>S3Prefix</code> for <code>S3DataType</code>, this shuffles the results of the S3 key prefix matches. If you use <code>ManifestFile</code>, the order of the S3 object references in the <code>ManifestFile</code> is shuffled. If you use <code>AugmentedManifestFile</code>, the order of the JSON lines in the <code>AugmentedManifestFile</code> is shuffled. The shuffling order is determined using the <code>Seed</code> value.</p>
     /// <p>For Pipe input mode, shuffling is done at the start of every epoch. With large datasets this ensures that the order of the training data is different for each epoch, it helps reduce bias and possible overfitting. In a multi-node training job when ShuffleConfig is combined with <code>S3DataDistributionType</code> of <code>ShardedByS3Key</code>, the data is shuffled across nodes so that the content sent to a particular node on the first epoch might be sent to a different node on the second epoch.</p>
     pub fn shuffle_config(mut self, input: crate::types::ShuffleConfig) -> Self {
@@ -178,6 +205,11 @@ impl ChannelBuilder {
     ) -> Self {
         self.shuffle_config = input;
         self
+    }
+    /// <p>A configuration for a shuffle option for input data in a channel. If you use <code>S3Prefix</code> for <code>S3DataType</code>, this shuffles the results of the S3 key prefix matches. If you use <code>ManifestFile</code>, the order of the S3 object references in the <code>ManifestFile</code> is shuffled. If you use <code>AugmentedManifestFile</code>, the order of the JSON lines in the <code>AugmentedManifestFile</code> is shuffled. The shuffling order is determined using the <code>Seed</code> value.</p>
+    /// <p>For Pipe input mode, shuffling is done at the start of every epoch. With large datasets this ensures that the order of the training data is different for each epoch, it helps reduce bias and possible overfitting. In a multi-node training job when ShuffleConfig is combined with <code>S3DataDistributionType</code> of <code>ShardedByS3Key</code>, the data is shuffled across nodes so that the content sent to a particular node on the first epoch might be sent to a different node on the second epoch.</p>
+    pub fn get_shuffle_config(&self) -> &::std::option::Option<crate::types::ShuffleConfig> {
+        &self.shuffle_config
     }
     /// Consumes the builder and constructs a [`Channel`](crate::types::Channel).
     pub fn build(self) -> crate::types::Channel {

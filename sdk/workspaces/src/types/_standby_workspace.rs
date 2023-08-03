@@ -70,6 +70,10 @@ impl StandbyWorkspaceBuilder {
         self.primary_workspace_id = input;
         self
     }
+    /// <p>The identifier of the standby WorkSpace.</p>
+    pub fn get_primary_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.primary_workspace_id
+    }
     /// <p>The volume encryption key of the standby WorkSpace.</p>
     pub fn volume_encryption_key(
         mut self,
@@ -86,6 +90,10 @@ impl StandbyWorkspaceBuilder {
         self.volume_encryption_key = input;
         self
     }
+    /// <p>The volume encryption key of the standby WorkSpace.</p>
+    pub fn get_volume_encryption_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_encryption_key
+    }
     /// <p>The identifier of the directory for the standby WorkSpace.</p>
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
@@ -95,6 +103,10 @@ impl StandbyWorkspaceBuilder {
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_id = input;
         self
+    }
+    /// <p>The identifier of the directory for the standby WorkSpace.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
     }
     /// Appends an item to `tags`.
     ///
@@ -114,6 +126,10 @@ impl StandbyWorkspaceBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags associated with the standby WorkSpace.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`StandbyWorkspace`](crate::types::StandbyWorkspace).
     pub fn build(self) -> crate::types::StandbyWorkspace {

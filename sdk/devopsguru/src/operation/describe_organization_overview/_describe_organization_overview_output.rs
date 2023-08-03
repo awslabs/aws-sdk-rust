@@ -54,6 +54,10 @@ impl DescribeOrganizationOverviewOutputBuilder {
         self.reactive_insights = input;
         self
     }
+    /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
+    pub fn get_reactive_insights(&self) -> &::std::option::Option<i32> {
+        &self.reactive_insights
+    }
     /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
     pub fn proactive_insights(mut self, input: i32) -> Self {
         self.proactive_insights = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl DescribeOrganizationOverviewOutputBuilder {
     pub fn set_proactive_insights(mut self, input: ::std::option::Option<i32>) -> Self {
         self.proactive_insights = input;
         self
+    }
+    /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
+    pub fn get_proactive_insights(&self) -> &::std::option::Option<i32> {
+        &self.proactive_insights
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

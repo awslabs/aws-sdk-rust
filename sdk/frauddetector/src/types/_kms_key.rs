@@ -46,6 +46,10 @@ impl KmsKeyBuilder {
         self.kms_encryption_key_arn = input;
         self
     }
+    /// <p>The encryption key ARN.</p>
+    pub fn get_kms_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_encryption_key_arn
+    }
     /// Consumes the builder and constructs a [`KmsKey`](crate::types::KmsKey).
     pub fn build(self) -> crate::types::KmsKey {
         crate::types::KmsKey {

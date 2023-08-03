@@ -70,6 +70,10 @@ impl SavingsPlansUtilizationBuilder {
         self.total_commitment = input;
         self
     }
+    /// <p>The total amount of Savings Plans commitment that's been purchased in an account (or set of accounts).</p>
+    pub fn get_total_commitment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.total_commitment
+    }
     /// <p>The amount of your Savings Plans commitment that was consumed from Savings Plans eligible usage in a specific period.</p>
     pub fn used_commitment(
         mut self,
@@ -85,6 +89,10 @@ impl SavingsPlansUtilizationBuilder {
     ) -> Self {
         self.used_commitment = input;
         self
+    }
+    /// <p>The amount of your Savings Plans commitment that was consumed from Savings Plans eligible usage in a specific period.</p>
+    pub fn get_used_commitment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.used_commitment
     }
     /// <p>The amount of your Savings Plans commitment that wasn't consumed from Savings Plans eligible usage in a specific period.</p>
     pub fn unused_commitment(
@@ -102,6 +110,10 @@ impl SavingsPlansUtilizationBuilder {
         self.unused_commitment = input;
         self
     }
+    /// <p>The amount of your Savings Plans commitment that wasn't consumed from Savings Plans eligible usage in a specific period.</p>
+    pub fn get_unused_commitment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.unused_commitment
+    }
     /// <p>The amount of <code>UsedCommitment</code> divided by the <code>TotalCommitment</code> for your Savings Plans.</p>
     pub fn utilization_percentage(
         mut self,
@@ -117,6 +129,10 @@ impl SavingsPlansUtilizationBuilder {
     ) -> Self {
         self.utilization_percentage = input;
         self
+    }
+    /// <p>The amount of <code>UsedCommitment</code> divided by the <code>TotalCommitment</code> for your Savings Plans.</p>
+    pub fn get_utilization_percentage(&self) -> &::std::option::Option<::std::string::String> {
+        &self.utilization_percentage
     }
     /// Consumes the builder and constructs a [`SavingsPlansUtilization`](crate::types::SavingsPlansUtilization).
     pub fn build(self) -> crate::types::SavingsPlansUtilization {

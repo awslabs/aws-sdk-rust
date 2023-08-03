@@ -72,6 +72,10 @@ impl AwsDynamoDbTableRestoreSummaryBuilder {
         self.source_backup_arn = input;
         self
     }
+    /// <p>The ARN of the source backup from which the table was restored.</p>
+    pub fn get_source_backup_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_backup_arn
+    }
     /// <p>The ARN of the source table for the backup.</p>
     pub fn source_table_arn(
         mut self,
@@ -87,6 +91,10 @@ impl AwsDynamoDbTableRestoreSummaryBuilder {
     ) -> Self {
         self.source_table_arn = input;
         self
+    }
+    /// <p>The ARN of the source table for the backup.</p>
+    pub fn get_source_table_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_table_arn
     }
     /// <p>Indicates the point in time that the table was restored to.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -106,6 +114,11 @@ impl AwsDynamoDbTableRestoreSummaryBuilder {
         self.restore_date_time = input;
         self
     }
+    /// <p>Indicates the point in time that the table was restored to.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_restore_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.restore_date_time
+    }
     /// <p>Whether a restore is currently in progress.</p>
     pub fn restore_in_progress(mut self, input: bool) -> Self {
         self.restore_in_progress = ::std::option::Option::Some(input);
@@ -115,6 +128,10 @@ impl AwsDynamoDbTableRestoreSummaryBuilder {
     pub fn set_restore_in_progress(mut self, input: ::std::option::Option<bool>) -> Self {
         self.restore_in_progress = input;
         self
+    }
+    /// <p>Whether a restore is currently in progress.</p>
+    pub fn get_restore_in_progress(&self) -> &::std::option::Option<bool> {
+        &self.restore_in_progress
     }
     /// Consumes the builder and constructs a [`AwsDynamoDbTableRestoreSummary`](crate::types::AwsDynamoDbTableRestoreSummary).
     pub fn build(self) -> crate::types::AwsDynamoDbTableRestoreSummary {

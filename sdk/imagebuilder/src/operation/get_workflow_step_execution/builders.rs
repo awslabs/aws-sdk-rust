@@ -36,6 +36,10 @@ impl GetWorkflowStepExecutionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetWorkflowStepExecution as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_workflow_step_execution::builders::GetWorkflowStepExecutionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +135,9 @@ impl GetWorkflowStepExecutionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_step_execution_id(input);
         self
+    }
+    /// <p>Use the unique identifier for a specific runtime instance of the workflow step to get runtime details for that step.</p>
+    pub fn get_step_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_step_execution_id()
     }
 }

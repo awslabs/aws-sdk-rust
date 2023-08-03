@@ -59,6 +59,10 @@ impl JobScheduleFrequencyBuilder {
         self.daily_schedule = input;
         self
     }
+    /// <p>Specifies a daily recurrence pattern for running the job.</p>
+    pub fn get_daily_schedule(&self) -> &::std::option::Option<crate::types::DailySchedule> {
+        &self.daily_schedule
+    }
     /// <p>Specifies a monthly recurrence pattern for running the job.</p>
     pub fn monthly_schedule(mut self, input: crate::types::MonthlySchedule) -> Self {
         self.monthly_schedule = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl JobScheduleFrequencyBuilder {
         self.monthly_schedule = input;
         self
     }
+    /// <p>Specifies a monthly recurrence pattern for running the job.</p>
+    pub fn get_monthly_schedule(&self) -> &::std::option::Option<crate::types::MonthlySchedule> {
+        &self.monthly_schedule
+    }
     /// <p>Specifies a weekly recurrence pattern for running the job.</p>
     pub fn weekly_schedule(mut self, input: crate::types::WeeklySchedule) -> Self {
         self.weekly_schedule = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl JobScheduleFrequencyBuilder {
     ) -> Self {
         self.weekly_schedule = input;
         self
+    }
+    /// <p>Specifies a weekly recurrence pattern for running the job.</p>
+    pub fn get_weekly_schedule(&self) -> &::std::option::Option<crate::types::WeeklySchedule> {
+        &self.weekly_schedule
     }
     /// Consumes the builder and constructs a [`JobScheduleFrequency`](crate::types::JobScheduleFrequency).
     pub fn build(self) -> crate::types::JobScheduleFrequency {

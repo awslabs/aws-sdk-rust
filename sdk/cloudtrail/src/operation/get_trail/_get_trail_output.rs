@@ -46,6 +46,10 @@ impl GetTrailOutputBuilder {
         self.trail = input;
         self
     }
+    /// <p>The settings for a trail.</p>
+    pub fn get_trail(&self) -> &::std::option::Option<crate::types::Trail> {
+        &self.trail
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

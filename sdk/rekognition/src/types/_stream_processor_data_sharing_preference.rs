@@ -40,6 +40,10 @@ impl StreamProcessorDataSharingPreferenceBuilder {
         self.opt_in = input;
         self
     }
+    /// <p> If this option is set to true, you choose to share data with Rekognition to improve model performance. </p>
+    pub fn get_opt_in(&self) -> &::std::option::Option<bool> {
+        &self.opt_in
+    }
     /// Consumes the builder and constructs a [`StreamProcessorDataSharingPreference`](crate::types::StreamProcessorDataSharingPreference).
     pub fn build(self) -> crate::types::StreamProcessorDataSharingPreference {
         crate::types::StreamProcessorDataSharingPreference {

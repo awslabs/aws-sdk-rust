@@ -45,6 +45,10 @@ impl GetAppInstanceStreamingConfigurationsInputBuilder {
         self.app_instance_arn = input;
         self
     }
+    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    pub fn get_app_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_instance_arn
+    }
     /// Consumes the builder and constructs a [`GetAppInstanceStreamingConfigurationsInput`](crate::operation::get_app_instance_streaming_configurations::GetAppInstanceStreamingConfigurationsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_app_instance_streaming_configurations::GetAppInstanceStreamingConfigurationsInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

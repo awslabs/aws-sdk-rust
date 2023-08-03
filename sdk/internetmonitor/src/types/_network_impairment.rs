@@ -67,6 +67,10 @@ impl NetworkImpairmentBuilder {
         self.networks = input;
         self
     }
+    /// <p>The networks that could be impacted by a network impairment event.</p>
+    pub fn get_networks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Network>> {
+        &self.networks
+    }
     /// Appends an item to `as_path`.
     ///
     /// To override the contents of this collection use [`set_as_path`](Self::set_as_path).
@@ -86,6 +90,10 @@ impl NetworkImpairmentBuilder {
         self.as_path = input;
         self
     }
+    /// <p>The combination of the Autonomous System Number (ASN) of the network and the name of the network.</p>
+    pub fn get_as_path(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Network>> {
+        &self.as_path
+    }
     /// <p>Type of network impairment.</p>
     pub fn network_event_type(mut self, input: crate::types::TriangulationEventType) -> Self {
         self.network_event_type = ::std::option::Option::Some(input);
@@ -98,6 +106,12 @@ impl NetworkImpairmentBuilder {
     ) -> Self {
         self.network_event_type = input;
         self
+    }
+    /// <p>Type of network impairment.</p>
+    pub fn get_network_event_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::TriangulationEventType> {
+        &self.network_event_type
     }
     /// Consumes the builder and constructs a [`NetworkImpairment`](crate::types::NetworkImpairment).
     pub fn build(self) -> crate::types::NetworkImpairment {

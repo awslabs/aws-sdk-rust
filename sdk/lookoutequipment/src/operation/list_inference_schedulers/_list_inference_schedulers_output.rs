@@ -60,6 +60,10 @@ impl ListInferenceSchedulersOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p> An opaque pagination token indicating where to continue the listing of inference schedulers. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `inference_scheduler_summaries`.
     ///
     /// To override the contents of this collection use [`set_inference_scheduler_summaries`](Self::set_inference_scheduler_summaries).
@@ -81,6 +85,12 @@ impl ListInferenceSchedulersOutputBuilder {
     ) -> Self {
         self.inference_scheduler_summaries = input;
         self
+    }
+    /// <p>Provides information about the specified inference scheduler, including data upload frequency, model name and ARN, and status. </p>
+    pub fn get_inference_scheduler_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InferenceSchedulerSummary>> {
+        &self.inference_scheduler_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

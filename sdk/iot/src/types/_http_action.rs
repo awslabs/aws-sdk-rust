@@ -64,6 +64,10 @@ impl HttpActionBuilder {
         self.url = input;
         self
     }
+    /// <p>The endpoint URL. If substitution templates are used in the URL, you must also specify a <code>confirmationUrl</code>. If this is a new destination, a new <code>TopicRuleDestination</code> is created if possible.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
+    }
     /// <p>The URL to which IoT sends a confirmation message. The value of the confirmation URL must be a prefix of the endpoint URL. If you do not specify a confirmation URL IoT uses the endpoint URL as the confirmation URL. If you use substitution templates in the confirmationUrl, you must create and enable topic rule destinations that match each possible value of the substitution template before traffic is allowed to your endpoint URL.</p>
     pub fn confirmation_url(
         mut self,
@@ -79,6 +83,10 @@ impl HttpActionBuilder {
     ) -> Self {
         self.confirmation_url = input;
         self
+    }
+    /// <p>The URL to which IoT sends a confirmation message. The value of the confirmation URL must be a prefix of the endpoint URL. If you do not specify a confirmation URL IoT uses the endpoint URL as the confirmation URL. If you use substitution templates in the confirmationUrl, you must create and enable topic rule destinations that match each possible value of the substitution template before traffic is allowed to your endpoint URL.</p>
+    pub fn get_confirmation_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.confirmation_url
     }
     /// Appends an item to `headers`.
     ///
@@ -99,6 +107,12 @@ impl HttpActionBuilder {
         self.headers = input;
         self
     }
+    /// <p>The HTTP headers to send with the message data.</p>
+    pub fn get_headers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HttpActionHeader>> {
+        &self.headers
+    }
     /// <p>The authentication method to use when sending data to an HTTPS endpoint.</p>
     pub fn auth(mut self, input: crate::types::HttpAuthorization) -> Self {
         self.auth = ::std::option::Option::Some(input);
@@ -111,6 +125,10 @@ impl HttpActionBuilder {
     ) -> Self {
         self.auth = input;
         self
+    }
+    /// <p>The authentication method to use when sending data to an HTTPS endpoint.</p>
+    pub fn get_auth(&self) -> &::std::option::Option<crate::types::HttpAuthorization> {
+        &self.auth
     }
     /// Consumes the builder and constructs a [`HttpAction`](crate::types::HttpAction).
     pub fn build(self) -> crate::types::HttpAction {

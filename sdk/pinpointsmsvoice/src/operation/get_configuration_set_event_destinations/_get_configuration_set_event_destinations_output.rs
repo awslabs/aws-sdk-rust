@@ -57,6 +57,12 @@ impl GetConfigurationSetEventDestinationsOutputBuilder {
         self.event_destinations = input;
         self
     }
+    /// An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination.
+    pub fn get_event_destinations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventDestination>> {
+        &self.event_destinations
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

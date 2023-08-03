@@ -59,6 +59,10 @@ impl DocumentBuilder {
         self.content_reference = input;
         self
     }
+    /// <p>A reference to the content resource.</p>
+    pub fn get_content_reference(&self) -> &::std::option::Option<crate::types::ContentReference> {
+        &self.content_reference
+    }
     /// <p>The title of the document.</p>
     pub fn title(mut self, input: crate::types::DocumentText) -> Self {
         self.title = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl DocumentBuilder {
         self.title = input;
         self
     }
+    /// <p>The title of the document.</p>
+    pub fn get_title(&self) -> &::std::option::Option<crate::types::DocumentText> {
+        &self.title
+    }
     /// <p>The excerpt from the document.</p>
     pub fn excerpt(mut self, input: crate::types::DocumentText) -> Self {
         self.excerpt = ::std::option::Option::Some(input);
@@ -78,6 +86,10 @@ impl DocumentBuilder {
     pub fn set_excerpt(mut self, input: ::std::option::Option<crate::types::DocumentText>) -> Self {
         self.excerpt = input;
         self
+    }
+    /// <p>The excerpt from the document.</p>
+    pub fn get_excerpt(&self) -> &::std::option::Option<crate::types::DocumentText> {
+        &self.excerpt
     }
     /// Consumes the builder and constructs a [`Document`](crate::types::Document).
     pub fn build(self) -> crate::types::Document {

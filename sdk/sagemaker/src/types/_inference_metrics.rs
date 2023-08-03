@@ -48,6 +48,10 @@ impl InferenceMetricsBuilder {
         self.max_invocations = input;
         self
     }
+    /// <p>The expected maximum number of requests per minute for the instance.</p>
+    pub fn get_max_invocations(&self) -> &::std::option::Option<i32> {
+        &self.max_invocations
+    }
     /// <p>The expected model latency at maximum invocations per minute for the instance.</p>
     pub fn model_latency(mut self, input: i32) -> Self {
         self.model_latency = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl InferenceMetricsBuilder {
     pub fn set_model_latency(mut self, input: ::std::option::Option<i32>) -> Self {
         self.model_latency = input;
         self
+    }
+    /// <p>The expected model latency at maximum invocations per minute for the instance.</p>
+    pub fn get_model_latency(&self) -> &::std::option::Option<i32> {
+        &self.model_latency
     }
     /// Consumes the builder and constructs a [`InferenceMetrics`](crate::types::InferenceMetrics).
     pub fn build(self) -> crate::types::InferenceMetrics {

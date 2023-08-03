@@ -36,6 +36,12 @@ impl DescribeLiveSourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeLiveSource as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_live_source::builders::DescribeLiveSourceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl DescribeLiveSourceFluentBuilder {
         self.inner = self.inner.set_live_source_name(input);
         self
     }
+    /// <p>The name of the live source.</p>
+    pub fn get_live_source_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_live_source_name()
+    }
     /// <p>The name of the source location associated with this Live Source.</p>
     pub fn source_location_name(
         mut self,
@@ -147,5 +157,9 @@ impl DescribeLiveSourceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source_location_name(input);
         self
+    }
+    /// <p>The name of the source location associated with this Live Source.</p>
+    pub fn get_source_location_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_location_name()
     }
 }

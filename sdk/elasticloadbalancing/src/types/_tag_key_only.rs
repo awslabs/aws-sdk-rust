@@ -40,6 +40,10 @@ impl TagKeyOnlyBuilder {
         self.key = input;
         self
     }
+    /// <p>The name of the key.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// Consumes the builder and constructs a [`TagKeyOnly`](crate::types::TagKeyOnly).
     pub fn build(self) -> crate::types::TagKeyOnly {
         crate::types::TagKeyOnly { key: self.key }

@@ -72,6 +72,10 @@ impl ServiceNameAndResourceTypeBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The type of the resource. This takes the form of: <code>service-code</code>:<code>resource-code</code>, and is case-insensitive. For example, an Amazon EC2 Subnet would be represented by the string <code>ec2:subnet</code>.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
+    }
     /// <p>The name of the Amazon Web Services service to which resources of this type belong.</p>
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl ServiceNameAndResourceTypeBuilder {
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_name = input;
         self
+    }
+    /// <p>The name of the Amazon Web Services service to which resources of this type belong.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
     }
     /// <p>Specifies the scope of visibility of resources of this type:</p>
     /// <ul>
@@ -102,6 +110,16 @@ impl ServiceNameAndResourceTypeBuilder {
     ) -> Self {
         self.resource_region_scope = input;
         self
+    }
+    /// <p>Specifies the scope of visibility of resources of this type:</p>
+    /// <ul>
+    /// <li> <p> <b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services Region in which the resource exists.</p> </li>
+    /// <li> <p> <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.</p> </li>
+    /// </ul>
+    pub fn get_resource_region_scope(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceRegionScope> {
+        &self.resource_region_scope
     }
     /// Consumes the builder and constructs a [`ServiceNameAndResourceType`](crate::types::ServiceNameAndResourceType).
     pub fn build(self) -> crate::types::ServiceNameAndResourceType {

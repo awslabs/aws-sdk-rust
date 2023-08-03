@@ -48,6 +48,10 @@ impl DetectStackDriftInputBuilder {
         self.stack_name = input;
         self
     }
+    /// <p>The name of the stack for which you want to detect drift.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_name
+    }
     /// Appends an item to `logical_resource_ids`.
     ///
     /// To override the contents of this collection use [`set_logical_resource_ids`](Self::set_logical_resource_ids).
@@ -69,6 +73,12 @@ impl DetectStackDriftInputBuilder {
     ) -> Self {
         self.logical_resource_ids = input;
         self
+    }
+    /// <p>The logical names of any resources you want to use as filters.</p>
+    pub fn get_logical_resource_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.logical_resource_ids
     }
     /// Consumes the builder and constructs a [`DetectStackDriftInput`](crate::operation::detect_stack_drift::DetectStackDriftInput).
     pub fn build(

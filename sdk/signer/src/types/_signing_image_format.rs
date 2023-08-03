@@ -57,6 +57,12 @@ impl SigningImageFormatBuilder {
         self.supported_formats = input;
         self
     }
+    /// <p>The supported formats of a code signing image.</p>
+    pub fn get_supported_formats(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageFormat>> {
+        &self.supported_formats
+    }
     /// <p>The default format of a code signing image.</p>
     pub fn default_format(mut self, input: crate::types::ImageFormat) -> Self {
         self.default_format = ::std::option::Option::Some(input);
@@ -69,6 +75,10 @@ impl SigningImageFormatBuilder {
     ) -> Self {
         self.default_format = input;
         self
+    }
+    /// <p>The default format of a code signing image.</p>
+    pub fn get_default_format(&self) -> &::std::option::Option<crate::types::ImageFormat> {
+        &self.default_format
     }
     /// Consumes the builder and constructs a [`SigningImageFormat`](crate::types::SigningImageFormat).
     pub fn build(self) -> crate::types::SigningImageFormat {

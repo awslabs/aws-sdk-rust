@@ -104,6 +104,10 @@ impl DecryptStepDetailsBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the step, used as an identifier.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type of encryption used. Currently, this value must be <code>PGP</code>.</p>
     pub fn r#type(mut self, input: crate::types::EncryptionType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -113,6 +117,10 @@ impl DecryptStepDetailsBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::EncryptionType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of encryption used. Currently, this value must be <code>PGP</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::EncryptionType> {
+        &self.r#type
     }
     /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
     /// <ul>
@@ -138,6 +146,14 @@ impl DecryptStepDetailsBuilder {
         self.source_file_location = input;
         self
     }
+    /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
+    /// <ul>
+    /// <li> <p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
+    /// <li> <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p> </li>
+    /// </ul>
+    pub fn get_source_file_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_file_location
+    }
     /// <p>A flag that indicates whether to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p>
     /// <p>If the workflow is processing a file that has the same name as an existing file, the behavior is as follows:</p>
     /// <ul>
@@ -160,6 +176,17 @@ impl DecryptStepDetailsBuilder {
     ) -> Self {
         self.overwrite_existing = input;
         self
+    }
+    /// <p>A flag that indicates whether to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p>
+    /// <p>If the workflow is processing a file that has the same name as an existing file, the behavior is as follows:</p>
+    /// <ul>
+    /// <li> <p>If <code>OverwriteExisting</code> is <code>TRUE</code>, the existing file is replaced with the file being processed.</p> </li>
+    /// <li> <p>If <code>OverwriteExisting</code> is <code>FALSE</code>, nothing happens, and the workflow processing stops.</p> </li>
+    /// </ul>
+    pub fn get_overwrite_existing(
+        &self,
+    ) -> &::std::option::Option<crate::types::OverwriteExisting> {
+        &self.overwrite_existing
     }
     /// <p>Specifies the location for the file being decrypted. Use <code>${Transfer:UserName}</code> or <code>${Transfer:UploadDate}</code> in this field to parametrize the destination prefix by username or uploaded date.</p>
     /// <ul>
@@ -185,6 +212,18 @@ impl DecryptStepDetailsBuilder {
     ) -> Self {
         self.destination_file_location = input;
         self
+    }
+    /// <p>Specifies the location for the file being decrypted. Use <code>${Transfer:UserName}</code> or <code>${Transfer:UploadDate}</code> in this field to parametrize the destination prefix by username or uploaded date.</p>
+    /// <ul>
+    /// <li> <p>Set the value of <code>DestinationFileLocation</code> to <code>${Transfer:UserName}</code> to decrypt uploaded files to an Amazon S3 bucket that is prefixed with the name of the Transfer Family user that uploaded the file.</p> </li>
+    /// <li> <p>Set the value of <code>DestinationFileLocation</code> to <code>${Transfer:UploadDate}</code> to decrypt uploaded files to an Amazon S3 bucket that is prefixed with the date of the upload.</p> <note>
+    /// <p>The system resolves <code>UploadDate</code> to a date format of <i>YYYY-MM-DD</i>, based on the date the file is uploaded in UTC.</p>
+    /// </note> </li>
+    /// </ul>
+    pub fn get_destination_file_location(
+        &self,
+    ) -> &::std::option::Option<crate::types::InputFileLocation> {
+        &self.destination_file_location
     }
     /// Consumes the builder and constructs a [`DecryptStepDetails`](crate::types::DecryptStepDetails).
     pub fn build(self) -> crate::types::DecryptStepDetails {

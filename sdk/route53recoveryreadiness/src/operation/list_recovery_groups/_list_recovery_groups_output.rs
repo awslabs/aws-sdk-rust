@@ -56,6 +56,10 @@ impl ListRecoveryGroupsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token that identifies which batch of results you want to see.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `recovery_groups`.
     ///
     /// To override the contents of this collection use [`set_recovery_groups`](Self::set_recovery_groups).
@@ -74,6 +78,12 @@ impl ListRecoveryGroupsOutputBuilder {
     ) -> Self {
         self.recovery_groups = input;
         self
+    }
+    /// <p>A list of recovery groups.</p>
+    pub fn get_recovery_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecoveryGroupOutput>> {
+        &self.recovery_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

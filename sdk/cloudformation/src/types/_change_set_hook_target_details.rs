@@ -55,6 +55,10 @@ impl ChangeSetHookTargetDetailsBuilder {
         self.target_type = input;
         self
     }
+    /// <p>The name of the type.</p>
+    pub fn get_target_type(&self) -> &::std::option::Option<crate::types::HookTargetType> {
+        &self.target_type
+    }
     /// <p>Required if <code>TargetType</code> is <code>RESOURCE</code>.</p>
     pub fn resource_target_details(
         mut self,
@@ -70,6 +74,12 @@ impl ChangeSetHookTargetDetailsBuilder {
     ) -> Self {
         self.resource_target_details = input;
         self
+    }
+    /// <p>Required if <code>TargetType</code> is <code>RESOURCE</code>.</p>
+    pub fn get_resource_target_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::ChangeSetHookResourceTargetDetails> {
+        &self.resource_target_details
     }
     /// Consumes the builder and constructs a [`ChangeSetHookTargetDetails`](crate::types::ChangeSetHookTargetDetails).
     pub fn build(self) -> crate::types::ChangeSetHookTargetDetails {

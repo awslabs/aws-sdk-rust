@@ -53,6 +53,12 @@ impl AccountTakeoverRiskConfigurationTypeBuilder {
         self.notify_configuration = input;
         self
     }
+    /// <p>The notify configuration used to construct email notifications.</p>
+    pub fn get_notify_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::NotifyConfigurationType> {
+        &self.notify_configuration
+    }
     /// <p>Account takeover risk configuration actions.</p>
     pub fn actions(mut self, input: crate::types::AccountTakeoverActionsType) -> Self {
         self.actions = ::std::option::Option::Some(input);
@@ -65,6 +71,10 @@ impl AccountTakeoverRiskConfigurationTypeBuilder {
     ) -> Self {
         self.actions = input;
         self
+    }
+    /// <p>Account takeover risk configuration actions.</p>
+    pub fn get_actions(&self) -> &::std::option::Option<crate::types::AccountTakeoverActionsType> {
+        &self.actions
     }
     /// Consumes the builder and constructs a [`AccountTakeoverRiskConfigurationType`](crate::types::AccountTakeoverRiskConfigurationType).
     pub fn build(self) -> crate::types::AccountTakeoverRiskConfigurationType {

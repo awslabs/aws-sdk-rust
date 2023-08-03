@@ -40,6 +40,10 @@ impl SlackConnectorProfilePropertiesBuilder {
         self.instance_url = input;
         self
     }
+    /// <p> The location of the Slack resource. </p>
+    pub fn get_instance_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_url
+    }
     /// Consumes the builder and constructs a [`SlackConnectorProfileProperties`](crate::types::SlackConnectorProfileProperties).
     pub fn build(self) -> crate::types::SlackConnectorProfileProperties {
         crate::types::SlackConnectorProfileProperties {

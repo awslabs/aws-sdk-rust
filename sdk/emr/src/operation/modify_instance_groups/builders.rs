@@ -36,6 +36,12 @@ impl ModifyInstanceGroupsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyInstanceGroups as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::modify_instance_groups::builders::ModifyInstanceGroupsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl ModifyInstanceGroupsFluentBuilder {
         self.inner = self.inner.set_cluster_id(input);
         self
     }
+    /// <p>The ID of the cluster to which the instance group belongs.</p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_id()
+    }
     /// Appends an item to `InstanceGroups`.
     ///
     /// To override the contents of this collection use [`set_instance_groups`](Self::set_instance_groups).
@@ -142,5 +152,11 @@ impl ModifyInstanceGroupsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_instance_groups(input);
         self
+    }
+    /// <p>Instance groups to change.</p>
+    pub fn get_instance_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupModifyConfig>> {
+        self.inner.get_instance_groups()
     }
 }

@@ -36,6 +36,10 @@ impl DescribeFlowExecutionRecordsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeFlowExecutionRecords as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_flow_execution_records::builders::DescribeFlowExecutionRecordsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl DescribeFlowExecutionRecordsFluentBuilder {
         self.inner = self.inner.set_flow_name(input);
         self
     }
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
+    pub fn get_flow_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_flow_name()
+    }
     /// <p> Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -142,6 +150,10 @@ impl DescribeFlowExecutionRecordsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p> Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p> The pagination token for the next page of data. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -151,5 +163,9 @@ impl DescribeFlowExecutionRecordsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p> The pagination token for the next page of data. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

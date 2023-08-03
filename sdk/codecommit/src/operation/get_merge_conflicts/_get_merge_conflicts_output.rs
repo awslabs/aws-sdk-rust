@@ -91,6 +91,10 @@ impl GetMergeConflictsOutputBuilder {
         self.mergeable = input;
         self
     }
+    /// <p>A Boolean value that indicates whether the code is mergeable by the specified merge option.</p>
+    pub fn get_mergeable(&self) -> &::std::option::Option<bool> {
+        &self.mergeable
+    }
     /// <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
     pub fn destination_commit_id(
         mut self,
@@ -106,6 +110,10 @@ impl GetMergeConflictsOutputBuilder {
     ) -> Self {
         self.destination_commit_id = input;
         self
+    }
+    /// <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
+    pub fn get_destination_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_commit_id
     }
     /// <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
     pub fn source_commit_id(
@@ -123,6 +131,10 @@ impl GetMergeConflictsOutputBuilder {
         self.source_commit_id = input;
         self
     }
+    /// <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
+    pub fn get_source_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_commit_id
+    }
     /// <p>The commit ID of the merge base.</p>
     pub fn base_commit_id(
         mut self,
@@ -138,6 +150,10 @@ impl GetMergeConflictsOutputBuilder {
     ) -> Self {
         self.base_commit_id = input;
         self
+    }
+    /// <p>The commit ID of the merge base.</p>
+    pub fn get_base_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.base_commit_id
     }
     /// Appends an item to `conflict_metadata_list`.
     ///
@@ -158,6 +174,12 @@ impl GetMergeConflictsOutputBuilder {
         self.conflict_metadata_list = input;
         self
     }
+    /// <p>A list of metadata for any conflicting files. If the specified merge strategy is FAST_FORWARD_MERGE, this list is always empty.</p>
+    pub fn get_conflict_metadata_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConflictMetadata>> {
+        &self.conflict_metadata_list
+    }
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -167,6 +189,10 @@ impl GetMergeConflictsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

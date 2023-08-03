@@ -46,6 +46,10 @@ impl DeleteIpamPoolOutputBuilder {
         self.ipam_pool = input;
         self
     }
+    /// <p>Information about the results of the deletion.</p>
+    pub fn get_ipam_pool(&self) -> &::std::option::Option<crate::types::IpamPool> {
+        &self.ipam_pool
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

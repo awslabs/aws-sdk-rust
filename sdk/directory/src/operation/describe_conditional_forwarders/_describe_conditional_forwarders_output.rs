@@ -60,6 +60,12 @@ impl DescribeConditionalForwardersOutputBuilder {
         self.conditional_forwarders = input;
         self
     }
+    /// <p>The list of conditional forwarders that have been created.</p>
+    pub fn get_conditional_forwarders(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConditionalForwarder>> {
+        &self.conditional_forwarders
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

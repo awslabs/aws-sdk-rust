@@ -46,6 +46,10 @@ impl GetRecoveryPointInputBuilder {
         self.recovery_point_id = input;
         self
     }
+    /// <p>The unique identifier of the recovery point to return information for.</p>
+    pub fn get_recovery_point_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recovery_point_id
+    }
     /// Consumes the builder and constructs a [`GetRecoveryPointInput`](crate::operation::get_recovery_point::GetRecoveryPointInput).
     pub fn build(
         self,

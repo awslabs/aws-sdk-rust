@@ -49,6 +49,10 @@ impl ExplicitDenyBuilder {
         self.policies = input;
         self
     }
+    /// <p>The policies that denied the authorization.</p>
+    pub fn get_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Policy>> {
+        &self.policies
+    }
     /// Consumes the builder and constructs a [`ExplicitDeny`](crate::types::ExplicitDeny).
     pub fn build(self) -> crate::types::ExplicitDeny {
         crate::types::ExplicitDeny {

@@ -57,6 +57,10 @@ impl SensitiveDataResultBuilder {
         self.category = input;
         self
     }
+    /// <p>The category of sensitive data that was detected. For example, the category can indicate that the sensitive data involved credentials, financial information, or personal information.</p>
+    pub fn get_category(&self) -> &::std::option::Option<::std::string::String> {
+        &self.category
+    }
     /// Appends an item to `detections`.
     ///
     /// To override the contents of this collection use [`set_detections`](Self::set_detections).
@@ -76,6 +80,12 @@ impl SensitiveDataResultBuilder {
         self.detections = input;
         self
     }
+    /// <p>The list of detected instances of sensitive data.</p>
+    pub fn get_detections(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SensitiveDataDetections>> {
+        &self.detections
+    }
     /// <p>The total number of occurrences of sensitive data.</p>
     pub fn total_count(mut self, input: i64) -> Self {
         self.total_count = ::std::option::Option::Some(input);
@@ -85,6 +95,10 @@ impl SensitiveDataResultBuilder {
     pub fn set_total_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_count = input;
         self
+    }
+    /// <p>The total number of occurrences of sensitive data.</p>
+    pub fn get_total_count(&self) -> &::std::option::Option<i64> {
+        &self.total_count
     }
     /// Consumes the builder and constructs a [`SensitiveDataResult`](crate::types::SensitiveDataResult).
     pub fn build(self) -> crate::types::SensitiveDataResult {

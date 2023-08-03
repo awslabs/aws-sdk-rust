@@ -62,6 +62,10 @@ impl SetDesiredCapacityInputBuilder {
         self.auto_scaling_group_name = input;
         self
     }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_scaling_group_name
+    }
     /// <p>The desired capacity is the initial capacity of the Auto Scaling group after this operation completes and the capacity it attempts to maintain.</p>
     pub fn desired_capacity(mut self, input: i32) -> Self {
         self.desired_capacity = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl SetDesiredCapacityInputBuilder {
         self.desired_capacity = input;
         self
     }
+    /// <p>The desired capacity is the initial capacity of the Auto Scaling group after this operation completes and the capacity it attempts to maintain.</p>
+    pub fn get_desired_capacity(&self) -> &::std::option::Option<i32> {
+        &self.desired_capacity
+    }
     /// <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before initiating a scaling activity to set your Auto Scaling group to its new capacity. By default, Amazon EC2 Auto Scaling does not honor the cooldown period during manual scaling activities.</p>
     pub fn honor_cooldown(mut self, input: bool) -> Self {
         self.honor_cooldown = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl SetDesiredCapacityInputBuilder {
     pub fn set_honor_cooldown(mut self, input: ::std::option::Option<bool>) -> Self {
         self.honor_cooldown = input;
         self
+    }
+    /// <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before initiating a scaling activity to set your Auto Scaling group to its new capacity. By default, Amazon EC2 Auto Scaling does not honor the cooldown period during manual scaling activities.</p>
+    pub fn get_honor_cooldown(&self) -> &::std::option::Option<bool> {
+        &self.honor_cooldown
     }
     /// Consumes the builder and constructs a [`SetDesiredCapacityInput`](crate::operation::set_desired_capacity::SetDesiredCapacityInput).
     pub fn build(

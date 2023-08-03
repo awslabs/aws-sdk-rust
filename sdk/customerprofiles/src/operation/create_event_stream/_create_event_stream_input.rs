@@ -72,6 +72,10 @@ impl CreateEventStreamInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The unique name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The StreamARN of the destination to deliver profile events to. For example, arn:aws:kinesis:region:account-id:stream/stream-name</p>
     pub fn uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.uri = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl CreateEventStreamInputBuilder {
     pub fn set_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.uri = input;
         self
+    }
+    /// <p>The StreamARN of the destination to deliver profile events to. For example, arn:aws:kinesis:region:account-id:stream/stream-name</p>
+    pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uri
     }
     /// <p>The name of the event stream.</p>
     pub fn event_stream_name(
@@ -97,6 +105,10 @@ impl CreateEventStreamInputBuilder {
     ) -> Self {
         self.event_stream_name = input;
         self
+    }
+    /// <p>The name of the event stream.</p>
+    pub fn get_event_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_stream_name
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -122,6 +134,14 @@ impl CreateEventStreamInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateEventStreamInput`](crate::operation::create_event_stream::CreateEventStreamInput).
     pub fn build(

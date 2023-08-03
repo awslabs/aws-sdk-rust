@@ -56,6 +56,10 @@ impl GetDownloadUrlForLayerOutputBuilder {
         self.download_url = input;
         self
     }
+    /// <p>The pre-signed Amazon S3 download URL for the requested layer.</p>
+    pub fn get_download_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.download_url
+    }
     /// <p>The digest of the image layer to download.</p>
     pub fn layer_digest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.layer_digest = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl GetDownloadUrlForLayerOutputBuilder {
     pub fn set_layer_digest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.layer_digest = input;
         self
+    }
+    /// <p>The digest of the image layer to download.</p>
+    pub fn get_layer_digest(&self) -> &::std::option::Option<::std::string::String> {
+        &self.layer_digest
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

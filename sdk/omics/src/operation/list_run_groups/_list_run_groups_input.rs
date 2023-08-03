@@ -55,6 +55,10 @@ impl ListRunGroupsInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The run groups' name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn starting_token(
         mut self,
@@ -71,6 +75,10 @@ impl ListRunGroupsInputBuilder {
         self.starting_token = input;
         self
     }
+    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    pub fn get_starting_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.starting_token
+    }
     /// <p>The maximum number of run groups to return in one page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -80,6 +88,10 @@ impl ListRunGroupsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of run groups to return in one page of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListRunGroupsInput`](crate::operation::list_run_groups::ListRunGroupsInput).
     pub fn build(

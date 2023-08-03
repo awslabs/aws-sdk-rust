@@ -147,6 +147,10 @@ impl DeviceBuilder {
         self.device_id = input;
         self
     }
+    /// <p>The device's ID.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_id
+    }
     /// <p>The device's name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -156,6 +160,10 @@ impl DeviceBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The device's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>When the device was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -170,6 +178,10 @@ impl DeviceBuilder {
         self.created_time = input;
         self
     }
+    /// <p>When the device was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>The device's provisioning status.</p>
     pub fn provisioning_status(mut self, input: crate::types::DeviceStatus) -> Self {
         self.provisioning_status = ::std::option::Option::Some(input);
@@ -182,6 +194,10 @@ impl DeviceBuilder {
     ) -> Self {
         self.provisioning_status = input;
         self
+    }
+    /// <p>The device's provisioning status.</p>
+    pub fn get_provisioning_status(&self) -> &::std::option::Option<crate::types::DeviceStatus> {
+        &self.provisioning_status
     }
     /// <p>When the device was updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -196,6 +212,10 @@ impl DeviceBuilder {
         self.last_updated_time = input;
         self
     }
+    /// <p>When the device was updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
+    }
     /// <p>The device's lease expiration time.</p>
     pub fn lease_expiration_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.lease_expiration_time = ::std::option::Option::Some(input);
@@ -209,6 +229,12 @@ impl DeviceBuilder {
         self.lease_expiration_time = input;
         self
     }
+    /// <p>The device's lease expiration time.</p>
+    pub fn get_lease_expiration_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.lease_expiration_time
+    }
     /// <p>The device's maker.</p>
     pub fn brand(mut self, input: crate::types::DeviceBrand) -> Self {
         self.brand = ::std::option::Option::Some(input);
@@ -218,6 +244,10 @@ impl DeviceBuilder {
     pub fn set_brand(mut self, input: ::std::option::Option<crate::types::DeviceBrand>) -> Self {
         self.brand = input;
         self
+    }
+    /// <p>The device's maker.</p>
+    pub fn get_brand(&self) -> &::std::option::Option<crate::types::DeviceBrand> {
+        &self.brand
     }
     /// <p>A device's current software.</p>
     pub fn current_software(
@@ -235,6 +265,10 @@ impl DeviceBuilder {
         self.current_software = input;
         self
     }
+    /// <p>A device's current software.</p>
+    pub fn get_current_software(&self) -> &::std::option::Option<::std::string::String> {
+        &self.current_software
+    }
     /// <p>A description for the device.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -244,6 +278,10 @@ impl DeviceBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description for the device.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -270,6 +308,14 @@ impl DeviceBuilder {
         self.tags = input;
         self
     }
+    /// <p>The device's tags.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The device's type.</p>
     pub fn r#type(mut self, input: crate::types::DeviceType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -279,6 +325,10 @@ impl DeviceBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DeviceType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The device's type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::DeviceType> {
+        &self.r#type
     }
     /// <p>A device's latest job. Includes the target image version, and the update job status.</p>
     pub fn latest_device_job(mut self, input: crate::types::LatestDeviceJob) -> Self {
@@ -293,6 +343,10 @@ impl DeviceBuilder {
         self.latest_device_job = input;
         self
     }
+    /// <p>A device's latest job. Includes the target image version, and the update job status.</p>
+    pub fn get_latest_device_job(&self) -> &::std::option::Option<crate::types::LatestDeviceJob> {
+        &self.latest_device_job
+    }
     /// <p>A device's aggregated status. Including the device's connection status, provisioning status, and lease status.</p>
     pub fn device_aggregated_status(mut self, input: crate::types::DeviceAggregatedStatus) -> Self {
         self.device_aggregated_status = ::std::option::Option::Some(input);
@@ -305,6 +359,12 @@ impl DeviceBuilder {
     ) -> Self {
         self.device_aggregated_status = input;
         self
+    }
+    /// <p>A device's aggregated status. Including the device's connection status, provisioning status, and lease status.</p>
+    pub fn get_device_aggregated_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeviceAggregatedStatus> {
+        &self.device_aggregated_status
     }
     /// Consumes the builder and constructs a [`Device`](crate::types::Device).
     pub fn build(self) -> crate::types::Device {

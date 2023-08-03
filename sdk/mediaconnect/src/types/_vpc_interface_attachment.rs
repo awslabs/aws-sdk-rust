@@ -46,6 +46,10 @@ impl VpcInterfaceAttachmentBuilder {
         self.vpc_interface_name = input;
         self
     }
+    /// The name of the VPC interface to use for this resource.
+    pub fn get_vpc_interface_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_interface_name
+    }
     /// Consumes the builder and constructs a [`VpcInterfaceAttachment`](crate::types::VpcInterfaceAttachment).
     pub fn build(self) -> crate::types::VpcInterfaceAttachment {
         crate::types::VpcInterfaceAttachment {

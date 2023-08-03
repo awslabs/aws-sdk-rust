@@ -89,6 +89,18 @@ impl UnindexedFaceBuilder {
         self.reasons = input;
         self
     }
+    /// <p>An array of reasons that specify why a face wasn't indexed. </p>
+    /// <ul>
+    /// <li> <p>EXTREME_POSE - The face is at a pose that can't be detected. For example, the head is turned too far away from the camera.</p> </li>
+    /// <li> <p>EXCEEDS_MAX_FACES - The number of faces detected is already higher than that specified by the <code>MaxFaces</code> input parameter for <code>IndexFaces</code>.</p> </li>
+    /// <li> <p>LOW_BRIGHTNESS - The image is too dark.</p> </li>
+    /// <li> <p>LOW_SHARPNESS - The image is too blurry.</p> </li>
+    /// <li> <p>LOW_CONFIDENCE - The face was detected with a low confidence.</p> </li>
+    /// <li> <p>SMALL_BOUNDING_BOX - The bounding box around the face is too small.</p> </li>
+    /// </ul>
+    pub fn get_reasons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Reason>> {
+        &self.reasons
+    }
     /// <p>The structure that contains attributes of a face that <code>IndexFaces</code>detected, but didn't index. </p>
     pub fn face_detail(mut self, input: crate::types::FaceDetail) -> Self {
         self.face_detail = ::std::option::Option::Some(input);
@@ -101,6 +113,10 @@ impl UnindexedFaceBuilder {
     ) -> Self {
         self.face_detail = input;
         self
+    }
+    /// <p>The structure that contains attributes of a face that <code>IndexFaces</code>detected, but didn't index. </p>
+    pub fn get_face_detail(&self) -> &::std::option::Option<crate::types::FaceDetail> {
+        &self.face_detail
     }
     /// Consumes the builder and constructs a [`UnindexedFace`](crate::types::UnindexedFace).
     pub fn build(self) -> crate::types::UnindexedFace {

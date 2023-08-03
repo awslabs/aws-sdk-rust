@@ -100,6 +100,17 @@ impl MetricQueryBuilder {
         self.metric = input;
         self
     }
+    /// <p>The name of a Performance Insights metric to be measured.</p>
+    /// <p>Valid values for <code>Metric</code> are:</p>
+    /// <ul>
+    /// <li> <p> <code>db.load.avg</code> - A scaled representation of the number of active sessions for the database engine.</p> </li>
+    /// <li> <p> <code>db.sampledload.avg</code> - The raw number of active sessions for the database engine.</p> </li>
+    /// <li> <p>The counter metrics listed in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.</p> </li>
+    /// </ul>
+    /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only.</p>
+    pub fn get_metric(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric
+    }
     /// <p>A specification for how to aggregate the data points from a query result. You must specify a valid dimension group. Performance Insights will return all of the dimensions within that group, unless you provide the names of specific dimensions within that group. You can also request that Performance Insights return a limited number of values for a dimension.</p>
     pub fn group_by(mut self, input: crate::types::DimensionGroup) -> Self {
         self.group_by = ::std::option::Option::Some(input);
@@ -112,6 +123,10 @@ impl MetricQueryBuilder {
     ) -> Self {
         self.group_by = input;
         self
+    }
+    /// <p>A specification for how to aggregate the data points from a query result. You must specify a valid dimension group. Performance Insights will return all of the dimensions within that group, unless you provide the names of specific dimensions within that group. You can also request that Performance Insights return a limited number of values for a dimension.</p>
+    pub fn get_group_by(&self) -> &::std::option::Option<crate::types::DimensionGroup> {
+        &self.group_by
     }
     /// Adds a key-value pair to `filter`.
     ///
@@ -145,6 +160,18 @@ impl MetricQueryBuilder {
     ) -> Self {
         self.filter = input;
         self
+    }
+    /// <p>One or more filters to apply in the request. Restrictions:</p>
+    /// <ul>
+    /// <li> <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> parameter.</p> </li>
+    /// <li> <p>A single filter for any other dimension in this dimension group.</p> </li>
+    /// </ul>
+    pub fn get_filter(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.filter
     }
     /// Consumes the builder and constructs a [`MetricQuery`](crate::types::MetricQuery).
     pub fn build(self) -> crate::types::MetricQuery {

@@ -45,6 +45,10 @@ impl DescribeCustomRoutingEndpointGroupInputBuilder {
         self.endpoint_group_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the endpoint group to describe.</p>
+    pub fn get_endpoint_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_group_arn
+    }
     /// Consumes the builder and constructs a [`DescribeCustomRoutingEndpointGroupInput`](crate::operation::describe_custom_routing_endpoint_group::DescribeCustomRoutingEndpointGroupInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_custom_routing_endpoint_group::DescribeCustomRoutingEndpointGroupInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

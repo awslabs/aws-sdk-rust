@@ -53,6 +53,10 @@ impl DisassociateApprovalRuleTemplateFromRepositoryInputBuilder {
         self.approval_rule_template_name = input;
         self
     }
+    /// <p>The name of the approval rule template to disassociate from a specified repository.</p>
+    pub fn get_approval_rule_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.approval_rule_template_name
+    }
     /// <p>The name of the repository you want to disassociate from the template.</p>
     pub fn repository_name(
         mut self,
@@ -68,6 +72,10 @@ impl DisassociateApprovalRuleTemplateFromRepositoryInputBuilder {
     ) -> Self {
         self.repository_name = input;
         self
+    }
+    /// <p>The name of the repository you want to disassociate from the template.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
     }
     /// Consumes the builder and constructs a [`DisassociateApprovalRuleTemplateFromRepositoryInput`](crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryInput, ::aws_smithy_http::operation::error::BuildError>{

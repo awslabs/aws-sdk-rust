@@ -41,6 +41,10 @@ impl DeleteSolFunctionPackageInputBuilder {
         self.vnf_pkg_id = input;
         self
     }
+    /// <p>ID of the function package.</p>
+    pub fn get_vnf_pkg_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vnf_pkg_id
+    }
     /// Consumes the builder and constructs a [`DeleteSolFunctionPackageInput`](crate::operation::delete_sol_function_package::DeleteSolFunctionPackageInput).
     pub fn build(
         self,

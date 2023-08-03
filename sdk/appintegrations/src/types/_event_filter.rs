@@ -40,6 +40,10 @@ impl EventFilterBuilder {
         self.source = input;
         self
     }
+    /// <p>The source of the events.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
+    }
     /// Consumes the builder and constructs a [`EventFilter`](crate::types::EventFilter).
     pub fn build(self) -> crate::types::EventFilter {
         crate::types::EventFilter {

@@ -47,6 +47,10 @@ impl DeleteGroupInputBuilder {
         self.group_name = input;
         self
     }
+    /// <p>The case-sensitive name of the group.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
+    }
     /// <p>The ARN of the group that was generated on creation.</p>
     pub fn group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_arn = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DeleteGroupInputBuilder {
     pub fn set_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_arn = input;
         self
+    }
+    /// <p>The ARN of the group that was generated on creation.</p>
+    pub fn get_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_arn
     }
     /// Consumes the builder and constructs a [`DeleteGroupInput`](crate::operation::delete_group::DeleteGroupInput).
     pub fn build(

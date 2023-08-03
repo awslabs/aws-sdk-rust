@@ -40,6 +40,10 @@ impl AvailabilityZoneMessageBuilder {
         self.message = input;
         self
     }
+    /// <p>The message about the Availability Zone, Local Zone, or Wavelength Zone.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Consumes the builder and constructs a [`AvailabilityZoneMessage`](crate::types::AvailabilityZoneMessage).
     pub fn build(self) -> crate::types::AvailabilityZoneMessage {
         crate::types::AvailabilityZoneMessage {

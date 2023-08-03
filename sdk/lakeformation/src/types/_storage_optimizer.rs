@@ -87,6 +87,12 @@ impl StorageOptimizerBuilder {
         self.storage_optimizer_type = input;
         self
     }
+    /// <p>The specific type of storage optimizer. The supported value is <code>compaction</code>.</p>
+    pub fn get_storage_optimizer_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::OptimizerType> {
+        &self.storage_optimizer_type
+    }
     /// Adds a key-value pair to `config`.
     ///
     /// To override the contents of this collection use [`set_config`](Self::set_config).
@@ -112,6 +118,14 @@ impl StorageOptimizerBuilder {
         self.config = input;
         self
     }
+    /// <p>A map of the storage optimizer configuration. Currently contains only one key-value pair: <code>is_enabled</code> indicates true or false for acceleration.</p>
+    pub fn get_config(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.config
+    }
     /// <p>A message that contains information about any error (if present).</p>
     /// <p>When an acceleration result has an enabled status, the error message is empty.</p>
     /// <p>When an acceleration result has a disabled status, the message describes an error or simply indicates "disabled by the user".</p>
@@ -132,6 +146,12 @@ impl StorageOptimizerBuilder {
         self.error_message = input;
         self
     }
+    /// <p>A message that contains information about any error (if present).</p>
+    /// <p>When an acceleration result has an enabled status, the error message is empty.</p>
+    /// <p>When an acceleration result has a disabled status, the message describes an error or simply indicates "disabled by the user".</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// <p>A message that contains information about any warnings (if present).</p>
     pub fn warnings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.warnings = ::std::option::Option::Some(input.into());
@@ -141,6 +161,10 @@ impl StorageOptimizerBuilder {
     pub fn set_warnings(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.warnings = input;
         self
+    }
+    /// <p>A message that contains information about any warnings (if present).</p>
+    pub fn get_warnings(&self) -> &::std::option::Option<::std::string::String> {
+        &self.warnings
     }
     /// <p>When an acceleration result has an enabled status, contains the details of the last job run.</p>
     pub fn last_run_details(
@@ -157,6 +181,10 @@ impl StorageOptimizerBuilder {
     ) -> Self {
         self.last_run_details = input;
         self
+    }
+    /// <p>When an acceleration result has an enabled status, contains the details of the last job run.</p>
+    pub fn get_last_run_details(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_run_details
     }
     /// Consumes the builder and constructs a [`StorageOptimizer`](crate::types::StorageOptimizer).
     pub fn build(self) -> crate::types::StorageOptimizer {

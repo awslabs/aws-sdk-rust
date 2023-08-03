@@ -39,6 +39,10 @@ impl StartChannelInputBuilder {
         self.channel_name = input;
         self
     }
+    /// <p>The name of the channel.</p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_name
+    }
     /// Consumes the builder and constructs a [`StartChannelInput`](crate::operation::start_channel::StartChannelInput).
     pub fn build(
         self,

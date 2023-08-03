@@ -96,6 +96,10 @@ impl UpdateHypervisorInputBuilder {
         self.hypervisor_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the hypervisor to update.</p>
+    pub fn get_hypervisor_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hypervisor_arn
+    }
     /// <p>The updated host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
     pub fn host(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl UpdateHypervisorInputBuilder {
     pub fn set_host(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.host = input;
         self
+    }
+    /// <p>The updated host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
+    pub fn get_host(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host
     }
     /// <p>The updated username for the hypervisor.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -116,6 +124,10 @@ impl UpdateHypervisorInputBuilder {
         self.username = input;
         self
     }
+    /// <p>The updated username for the hypervisor.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
+    }
     /// <p>The updated password for the hypervisor.</p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
@@ -126,6 +138,10 @@ impl UpdateHypervisorInputBuilder {
         self.password = input;
         self
     }
+    /// <p>The updated password for the hypervisor.</p>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.password
+    }
     /// <p>The updated name for the hypervisor</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -135,6 +151,10 @@ impl UpdateHypervisorInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The updated name for the hypervisor</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of the group of gateways within the requested log.</p>
     pub fn log_group_arn(
@@ -151,6 +171,10 @@ impl UpdateHypervisorInputBuilder {
     ) -> Self {
         self.log_group_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the group of gateways within the requested log.</p>
+    pub fn get_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group_arn
     }
     /// Consumes the builder and constructs a [`UpdateHypervisorInput`](crate::operation::update_hypervisor::UpdateHypervisorInput).
     pub fn build(

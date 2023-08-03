@@ -58,6 +58,10 @@ impl ListAssessmentsInputBuilder {
         self.status = input;
         self
     }
+    /// <p> The current status of the assessment.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AssessmentStatus> {
+        &self.status
+    }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl ListAssessmentsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -77,6 +85,10 @@ impl ListAssessmentsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p> Represents the maximum number of results on a page or for an API request call. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAssessmentsInput`](crate::operation::list_assessments::ListAssessmentsInput).
     pub fn build(

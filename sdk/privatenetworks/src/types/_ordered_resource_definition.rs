@@ -62,6 +62,10 @@ impl OrderedResourceDefinitionBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of network resource in the order.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::NetworkResourceDefinitionType> {
+        &self.r#type
+    }
     /// <p>The number of network resources in the order.</p>
     pub fn count(mut self, input: i32) -> Self {
         self.count = ::std::option::Option::Some(input);
@@ -71,6 +75,10 @@ impl OrderedResourceDefinitionBuilder {
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
+    }
+    /// <p>The number of network resources in the order.</p>
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        &self.count
     }
     /// <p>The duration and renewal status of the commitment period for each radio unit in the order. Does not show details if the resource type is DEVICE_IDENTIFIER.</p>
     pub fn commitment_configuration(
@@ -87,6 +95,12 @@ impl OrderedResourceDefinitionBuilder {
     ) -> Self {
         self.commitment_configuration = input;
         self
+    }
+    /// <p>The duration and renewal status of the commitment period for each radio unit in the order. Does not show details if the resource type is DEVICE_IDENTIFIER.</p>
+    pub fn get_commitment_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CommitmentConfiguration> {
+        &self.commitment_configuration
     }
     /// Consumes the builder and constructs a [`OrderedResourceDefinition`](crate::types::OrderedResourceDefinition).
     pub fn build(self) -> crate::types::OrderedResourceDefinition {

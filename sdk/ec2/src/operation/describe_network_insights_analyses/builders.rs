@@ -36,6 +36,10 @@ impl DescribeNetworkInsightsAnalysesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeNetworkInsightsAnalyses as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_network_insights_analyses::builders::DescribeNetworkInsightsAnalysesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -116,6 +120,12 @@ impl DescribeNetworkInsightsAnalysesFluentBuilder {
         self.inner = self.inner.set_network_insights_analysis_ids(input);
         self
     }
+    /// <p>The ID of the network insights analyses. You must specify either analysis IDs or a path ID.</p>
+    pub fn get_network_insights_analysis_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_network_insights_analysis_ids()
+    }
     /// <p>The ID of the path. You must specify either a path ID or analysis IDs.</p>
     pub fn network_insights_path_id(
         mut self,
@@ -132,6 +142,10 @@ impl DescribeNetworkInsightsAnalysesFluentBuilder {
         self.inner = self.inner.set_network_insights_path_id(input);
         self
     }
+    /// <p>The ID of the path. You must specify either a path ID or analysis IDs.</p>
+    pub fn get_network_insights_path_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_network_insights_path_id()
+    }
     /// <p>The time when the network insights analyses started.</p>
     pub fn analysis_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.analysis_start_time(input);
@@ -145,6 +159,10 @@ impl DescribeNetworkInsightsAnalysesFluentBuilder {
         self.inner = self.inner.set_analysis_start_time(input);
         self
     }
+    /// <p>The time when the network insights analyses started.</p>
+    pub fn get_analysis_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_analysis_start_time()
+    }
     /// <p>The time when the network insights analyses ended.</p>
     pub fn analysis_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.analysis_end_time(input);
@@ -157,6 +175,10 @@ impl DescribeNetworkInsightsAnalysesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_analysis_end_time(input);
         self
+    }
+    /// <p>The time when the network insights analyses ended.</p>
+    pub fn get_analysis_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_analysis_end_time()
     }
     /// Appends an item to `Filters`.
     ///
@@ -183,6 +205,14 @@ impl DescribeNetworkInsightsAnalysesFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>The filters. The following are the possible values:</p>
+    /// <ul>
+    /// <li> <p>path-found - A Boolean value that indicates whether a feasible path is found.</p> </li>
+    /// <li> <p>status - The status of the analysis (running | succeeded | failed).</p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -192,6 +222,10 @@ impl DescribeNetworkInsightsAnalysesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -203,6 +237,10 @@ impl DescribeNetworkInsightsAnalysesFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -212,5 +250,9 @@ impl DescribeNetworkInsightsAnalysesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

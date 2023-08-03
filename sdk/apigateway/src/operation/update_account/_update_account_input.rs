@@ -50,6 +50,12 @@ impl UpdateAccountInputBuilder {
         self.patch_operations = input;
         self
     }
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    pub fn get_patch_operations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
+        &self.patch_operations
+    }
     /// Consumes the builder and constructs a [`UpdateAccountInput`](crate::operation::update_account::UpdateAccountInput).
     pub fn build(
         self,

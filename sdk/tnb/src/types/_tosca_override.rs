@@ -48,6 +48,10 @@ impl ToscaOverrideBuilder {
         self.name = input;
         self
     }
+    /// <p>Name of the TOSCA override.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Default value for the override.</p>
     pub fn default_value(
         mut self,
@@ -63,6 +67,10 @@ impl ToscaOverrideBuilder {
     ) -> Self {
         self.default_value = input;
         self
+    }
+    /// <p>Default value for the override.</p>
+    pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_value
     }
     /// Consumes the builder and constructs a [`ToscaOverride`](crate::types::ToscaOverride).
     pub fn build(self) -> crate::types::ToscaOverride {

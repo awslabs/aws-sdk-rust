@@ -89,6 +89,10 @@ impl DescribeCustomVocabularyMetadataOutputBuilder {
         self.bot_id = input;
         self
     }
+    /// <p>The identifier of the bot that contains the custom vocabulary.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
     /// <p>The version of the bot that contains the custom vocabulary to describe.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
@@ -99,6 +103,10 @@ impl DescribeCustomVocabularyMetadataOutputBuilder {
         self.bot_version = input;
         self
     }
+    /// <p>The version of the bot that contains the custom vocabulary to describe.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_version
+    }
     /// <p>The locale that contains the custom vocabulary to describe.</p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
@@ -108,6 +116,10 @@ impl DescribeCustomVocabularyMetadataOutputBuilder {
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.locale_id = input;
         self
+    }
+    /// <p>The locale that contains the custom vocabulary to describe.</p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale_id
     }
     /// <p>The status of the custom vocabulary. If the status is <code>Ready</code> the custom vocabulary is ready to use.</p>
     pub fn custom_vocabulary_status(mut self, input: crate::types::CustomVocabularyStatus) -> Self {
@@ -122,6 +134,12 @@ impl DescribeCustomVocabularyMetadataOutputBuilder {
         self.custom_vocabulary_status = input;
         self
     }
+    /// <p>The status of the custom vocabulary. If the status is <code>Ready</code> the custom vocabulary is ready to use.</p>
+    pub fn get_custom_vocabulary_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomVocabularyStatus> {
+        &self.custom_vocabulary_status
+    }
     /// <p>The date and time that the custom vocabulary was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
@@ -135,6 +153,10 @@ impl DescribeCustomVocabularyMetadataOutputBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>The date and time that the custom vocabulary was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>The date and time that the custom vocabulary was last updated.</p>
     pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date_time = ::std::option::Option::Some(input);
@@ -147,6 +169,12 @@ impl DescribeCustomVocabularyMetadataOutputBuilder {
     ) -> Self {
         self.last_updated_date_time = input;
         self
+    }
+    /// <p>The date and time that the custom vocabulary was last updated.</p>
+    pub fn get_last_updated_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

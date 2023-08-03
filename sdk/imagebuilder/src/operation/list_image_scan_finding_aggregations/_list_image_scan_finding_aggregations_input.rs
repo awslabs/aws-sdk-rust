@@ -47,6 +47,10 @@ impl ListImageScanFindingAggregationsInputBuilder {
         self.filter = input;
         self
     }
+    /// <p>A filter name and value pair that is used to return a more specific list of results from a list operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::Filter> {
+        &self.filter
+    }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl ListImageScanFindingAggregationsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListImageScanFindingAggregationsInput`](crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsInput, ::aws_smithy_http::operation::error::BuildError>{

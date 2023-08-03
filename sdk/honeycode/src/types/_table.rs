@@ -48,6 +48,10 @@ impl TableBuilder {
         self.table_id = input;
         self
     }
+    /// <p>The id of the table.</p>
+    pub fn get_table_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_id
+    }
     /// <p>The name of the table.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl TableBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
+    }
+    /// <p>The name of the table.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// Consumes the builder and constructs a [`Table`](crate::types::Table).
     pub fn build(self) -> crate::types::Table {

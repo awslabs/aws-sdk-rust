@@ -111,6 +111,10 @@ impl RecordingConfigurationBuilder {
         self.arn = input;
         self
     }
+    /// <p>Recording-configuration ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>Recording-configuration name. The value does not need to be unique.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -120,6 +124,10 @@ impl RecordingConfigurationBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>Recording-configuration name. The value does not need to be unique.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>A complex type that contains information about where recorded video will be stored.</p>
     pub fn destination_configuration(
@@ -137,6 +145,12 @@ impl RecordingConfigurationBuilder {
         self.destination_configuration = input;
         self
     }
+    /// <p>A complex type that contains information about where recorded video will be stored.</p>
+    pub fn get_destination_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DestinationConfiguration> {
+        &self.destination_configuration
+    }
     /// <p>Indicates the current state of the recording configuration. When the state is <code>ACTIVE</code>, the configuration is ready for recording a channel stream.</p>
     pub fn state(mut self, input: crate::types::RecordingConfigurationState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -149,6 +163,10 @@ impl RecordingConfigurationBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>Indicates the current state of the recording configuration. When the state is <code>ACTIVE</code>, the configuration is ready for recording a channel stream.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::RecordingConfigurationState> {
+        &self.state
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -175,6 +193,14 @@ impl RecordingConfigurationBuilder {
         self.tags = input;
         self
     }
+    /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>A complex type that allows you to enable/disable the recording of thumbnails for a live session and modify the interval at which thumbnails are generated for the live session.</p>
     pub fn thumbnail_configuration(mut self, input: crate::types::ThumbnailConfiguration) -> Self {
         self.thumbnail_configuration = ::std::option::Option::Some(input);
@@ -187,6 +213,12 @@ impl RecordingConfigurationBuilder {
     ) -> Self {
         self.thumbnail_configuration = input;
         self
+    }
+    /// <p>A complex type that allows you to enable/disable the recording of thumbnails for a live session and modify the interval at which thumbnails are generated for the live session.</p>
+    pub fn get_thumbnail_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ThumbnailConfiguration> {
+        &self.thumbnail_configuration
     }
     /// <p>If a broadcast disconnects and then reconnects within the specified interval, the multiple streams will be considered a single broadcast and merged together. Default: 0.</p>
     pub fn recording_reconnect_window_seconds(mut self, input: i32) -> Self {
@@ -201,6 +233,10 @@ impl RecordingConfigurationBuilder {
         self.recording_reconnect_window_seconds = input;
         self
     }
+    /// <p>If a broadcast disconnects and then reconnects within the specified interval, the multiple streams will be considered a single broadcast and merged together. Default: 0.</p>
+    pub fn get_recording_reconnect_window_seconds(&self) -> &::std::option::Option<i32> {
+        &self.recording_reconnect_window_seconds
+    }
     /// <p>Object that describes which renditions should be recorded for a stream.</p>
     pub fn rendition_configuration(mut self, input: crate::types::RenditionConfiguration) -> Self {
         self.rendition_configuration = ::std::option::Option::Some(input);
@@ -213,6 +249,12 @@ impl RecordingConfigurationBuilder {
     ) -> Self {
         self.rendition_configuration = input;
         self
+    }
+    /// <p>Object that describes which renditions should be recorded for a stream.</p>
+    pub fn get_rendition_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::RenditionConfiguration> {
+        &self.rendition_configuration
     }
     /// Consumes the builder and constructs a [`RecordingConfiguration`](crate::types::RecordingConfiguration).
     pub fn build(self) -> crate::types::RecordingConfiguration {

@@ -48,6 +48,10 @@ impl SaslBuilder {
         self.scram = input;
         self
     }
+    /// <p>Details for SASL/SCRAM client authentication.</p>
+    pub fn get_scram(&self) -> &::std::option::Option<crate::types::Scram> {
+        &self.scram
+    }
     /// <p>Indicates whether IAM access control is enabled.</p>
     pub fn iam(mut self, input: crate::types::Iam) -> Self {
         self.iam = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl SaslBuilder {
     pub fn set_iam(mut self, input: ::std::option::Option<crate::types::Iam>) -> Self {
         self.iam = input;
         self
+    }
+    /// <p>Indicates whether IAM access control is enabled.</p>
+    pub fn get_iam(&self) -> &::std::option::Option<crate::types::Iam> {
+        &self.iam
     }
     /// Consumes the builder and constructs a [`Sasl`](crate::types::Sasl).
     pub fn build(self) -> crate::types::Sasl {

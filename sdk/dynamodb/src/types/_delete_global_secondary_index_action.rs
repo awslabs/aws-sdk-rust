@@ -40,6 +40,10 @@ impl DeleteGlobalSecondaryIndexActionBuilder {
         self.index_name = input;
         self
     }
+    /// <p>The name of the global secondary index to be deleted.</p>
+    pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_name
+    }
     /// Consumes the builder and constructs a [`DeleteGlobalSecondaryIndexAction`](crate::types::DeleteGlobalSecondaryIndexAction).
     pub fn build(self) -> crate::types::DeleteGlobalSecondaryIndexAction {
         crate::types::DeleteGlobalSecondaryIndexAction {

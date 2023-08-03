@@ -73,6 +73,10 @@ impl DescribeTableDataImportJobOutputBuilder {
         self.job_status = input;
         self
     }
+    /// <p> The current status of the import job. </p>
+    pub fn get_job_status(&self) -> &::std::option::Option<crate::types::TableDataImportJobStatus> {
+        &self.job_status
+    }
     /// <p> A message providing more details about the current status of the import job. </p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl DescribeTableDataImportJobOutputBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p> A message providing more details about the current status of the import job. </p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// <p> The metadata about the job that was submitted for import. </p>
     pub fn job_metadata(mut self, input: crate::types::TableDataImportJobMetadata) -> Self {
@@ -96,6 +104,12 @@ impl DescribeTableDataImportJobOutputBuilder {
         self.job_metadata = input;
         self
     }
+    /// <p> The metadata about the job that was submitted for import. </p>
+    pub fn get_job_metadata(
+        &self,
+    ) -> &::std::option::Option<crate::types::TableDataImportJobMetadata> {
+        &self.job_metadata
+    }
     /// <p> If job status is failed, error code to understand reason for the failure. </p>
     pub fn error_code(mut self, input: crate::types::ErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
@@ -105,6 +119,10 @@ impl DescribeTableDataImportJobOutputBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p> If job status is failed, error code to understand reason for the failure. </p>
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
+        &self.error_code
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

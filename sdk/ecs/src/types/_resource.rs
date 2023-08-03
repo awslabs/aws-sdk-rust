@@ -80,6 +80,10 @@ impl ResourceBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>, <code>PORTS</code>, <code>PORTS_UDP</code>, or a user-defined resource.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type of the resource. Valid values: <code>INTEGER</code>, <code>DOUBLE</code>, <code>LONG</code>, or <code>STRINGSET</code>.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl ResourceBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the resource. Valid values: <code>INTEGER</code>, <code>DOUBLE</code>, <code>LONG</code>, or <code>STRINGSET</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// <p>When the <code>doubleValue</code> type is set, the value of the resource must be a double precision floating-point type.</p>
     pub fn double_value(mut self, input: f64) -> Self {
@@ -100,6 +108,10 @@ impl ResourceBuilder {
         self.double_value = input;
         self
     }
+    /// <p>When the <code>doubleValue</code> type is set, the value of the resource must be a double precision floating-point type.</p>
+    pub fn get_double_value(&self) -> &::std::option::Option<f64> {
+        &self.double_value
+    }
     /// <p>When the <code>longValue</code> type is set, the value of the resource must be an extended precision floating-point type.</p>
     pub fn long_value(mut self, input: i64) -> Self {
         self.long_value = ::std::option::Option::Some(input);
@@ -110,6 +122,10 @@ impl ResourceBuilder {
         self.long_value = input;
         self
     }
+    /// <p>When the <code>longValue</code> type is set, the value of the resource must be an extended precision floating-point type.</p>
+    pub fn get_long_value(&self) -> &::std::option::Option<i64> {
+        &self.long_value
+    }
     /// <p>When the <code>integerValue</code> type is set, the value of the resource must be an integer.</p>
     pub fn integer_value(mut self, input: i32) -> Self {
         self.integer_value = ::std::option::Option::Some(input);
@@ -119,6 +135,10 @@ impl ResourceBuilder {
     pub fn set_integer_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.integer_value = input;
         self
+    }
+    /// <p>When the <code>integerValue</code> type is set, the value of the resource must be an integer.</p>
+    pub fn get_integer_value(&self) -> &::std::option::Option<i32> {
+        &self.integer_value
     }
     /// Appends an item to `string_set_value`.
     ///
@@ -141,6 +161,12 @@ impl ResourceBuilder {
     ) -> Self {
         self.string_set_value = input;
         self
+    }
+    /// <p>When the <code>stringSetValue</code> type is set, the value of the resource must be a string type.</p>
+    pub fn get_string_set_value(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.string_set_value
     }
     /// Consumes the builder and constructs a [`Resource`](crate::types::Resource).
     pub fn build(self) -> crate::types::Resource {

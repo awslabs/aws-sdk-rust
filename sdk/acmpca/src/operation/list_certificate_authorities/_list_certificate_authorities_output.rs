@@ -67,6 +67,12 @@ impl ListCertificateAuthoritiesOutputBuilder {
         self.certificate_authorities = input;
         self
     }
+    /// <p>Summary information about each certificate authority you have created.</p>
+    pub fn get_certificate_authorities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateAuthority>> {
+        &self.certificate_authorities
+    }
     /// <p>When the list is truncated, this value is present and should be used for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -76,6 +82,10 @@ impl ListCertificateAuthoritiesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>When the list is truncated, this value is present and should be used for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -64,6 +64,10 @@ impl DtmfSpecificationBuilder {
         self.max_length = input;
         self
     }
+    /// <p>The maximum number of DTMF digits allowed in an utterance.</p>
+    pub fn get_max_length(&self) -> &::std::option::Option<i32> {
+        &self.max_length
+    }
     /// <p>How long the bot should wait after the last DTMF character input before assuming that the input has concluded.</p>
     pub fn end_timeout_ms(mut self, input: i32) -> Self {
         self.end_timeout_ms = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl DtmfSpecificationBuilder {
     pub fn set_end_timeout_ms(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end_timeout_ms = input;
         self
+    }
+    /// <p>How long the bot should wait after the last DTMF character input before assuming that the input has concluded.</p>
+    pub fn get_end_timeout_ms(&self) -> &::std::option::Option<i32> {
+        &self.end_timeout_ms
     }
     /// <p>The DTMF character that clears the accumulated DTMF digits and immediately ends the input.</p>
     pub fn deletion_character(
@@ -90,6 +98,10 @@ impl DtmfSpecificationBuilder {
         self.deletion_character = input;
         self
     }
+    /// <p>The DTMF character that clears the accumulated DTMF digits and immediately ends the input.</p>
+    pub fn get_deletion_character(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deletion_character
+    }
     /// <p>The DTMF character that immediately ends input. If the user does not press this character, the input ends after the end timeout.</p>
     pub fn end_character(
         mut self,
@@ -105,6 +117,10 @@ impl DtmfSpecificationBuilder {
     ) -> Self {
         self.end_character = input;
         self
+    }
+    /// <p>The DTMF character that immediately ends input. If the user does not press this character, the input ends after the end timeout.</p>
+    pub fn get_end_character(&self) -> &::std::option::Option<::std::string::String> {
+        &self.end_character
     }
     /// Consumes the builder and constructs a [`DtmfSpecification`](crate::types::DtmfSpecification).
     pub fn build(self) -> crate::types::DtmfSpecification {

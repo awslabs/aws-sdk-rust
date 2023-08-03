@@ -54,6 +54,10 @@ impl OutputSourceBuilder {
         self.output_source_id = input;
         self
     }
+    /// <p>The ID of the output source, for example the URL of an S3 bucket.</p>
+    pub fn get_output_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_source_id
+    }
     /// <p>The type of source where the association execution details are stored, for example, Amazon S3.</p>
     pub fn output_source_type(
         mut self,
@@ -69,6 +73,10 @@ impl OutputSourceBuilder {
     ) -> Self {
         self.output_source_type = input;
         self
+    }
+    /// <p>The type of source where the association execution details are stored, for example, Amazon S3.</p>
+    pub fn get_output_source_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_source_type
     }
     /// Consumes the builder and constructs a [`OutputSource`](crate::types::OutputSource).
     pub fn build(self) -> crate::types::OutputSource {

@@ -56,6 +56,10 @@ impl VariantImportItemDetailBuilder {
         self.source = input;
         self
     }
+    /// <p>The source file's location in Amazon S3.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
+    }
     /// <p>The item's job status.</p>
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
         self.job_status = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl VariantImportItemDetailBuilder {
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
         self.job_status = input;
         self
+    }
+    /// <p>The item's job status.</p>
+    pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
+        &self.job_status
     }
     /// <p> A message that provides additional context about a job </p>
     pub fn status_message(
@@ -81,6 +89,10 @@ impl VariantImportItemDetailBuilder {
     ) -> Self {
         self.status_message = input;
         self
+    }
+    /// <p> A message that provides additional context about a job </p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// Consumes the builder and constructs a [`VariantImportItemDetail`](crate::types::VariantImportItemDetail).
     pub fn build(self) -> crate::types::VariantImportItemDetail {

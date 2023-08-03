@@ -63,6 +63,10 @@ impl ResetUserPasswordInputBuilder {
         self.directory_id = input;
         self
     }
+    /// <p>Identifier of the Managed Microsoft AD or Simple AD directory in which the user resides.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
     /// <p>The user name of the user whose password will be reset.</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl ResetUserPasswordInputBuilder {
         self.user_name = input;
         self
     }
+    /// <p>The user name of the user whose password will be reset.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
+    }
     /// <p>The new password that will be reset.</p>
     pub fn new_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.new_password = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl ResetUserPasswordInputBuilder {
     pub fn set_new_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.new_password = input;
         self
+    }
+    /// <p>The new password that will be reset.</p>
+    pub fn get_new_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.new_password
     }
     /// Consumes the builder and constructs a [`ResetUserPasswordInput`](crate::operation::reset_user_password::ResetUserPasswordInput).
     pub fn build(

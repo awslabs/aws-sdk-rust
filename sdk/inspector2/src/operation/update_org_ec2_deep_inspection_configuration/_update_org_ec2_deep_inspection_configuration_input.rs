@@ -51,6 +51,12 @@ impl UpdateOrgEc2DeepInspectionConfigurationInputBuilder {
         self.org_package_paths = input;
         self
     }
+    /// <p>The Amazon Inspector deep inspection custom paths you are adding for your organization.</p>
+    pub fn get_org_package_paths(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.org_package_paths
+    }
     /// Consumes the builder and constructs a [`UpdateOrgEc2DeepInspectionConfigurationInput`](crate::operation::update_org_ec2_deep_inspection_configuration::UpdateOrgEc2DeepInspectionConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_org_ec2_deep_inspection_configuration::UpdateOrgEc2DeepInspectionConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

@@ -98,6 +98,10 @@ impl CustomOriginConfigBuilder {
         self.http_port = input;
         self
     }
+    /// <p>The HTTP port that CloudFront uses to connect to the origin. Specify the HTTP port that the origin listens on.</p>
+    pub fn get_http_port(&self) -> &::std::option::Option<i32> {
+        &self.http_port
+    }
     /// <p>The HTTPS port that CloudFront uses to connect to the origin. Specify the HTTPS port that the origin listens on.</p>
     pub fn https_port(mut self, input: i32) -> Self {
         self.https_port = ::std::option::Option::Some(input);
@@ -107,6 +111,10 @@ impl CustomOriginConfigBuilder {
     pub fn set_https_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.https_port = input;
         self
+    }
+    /// <p>The HTTPS port that CloudFront uses to connect to the origin. Specify the HTTPS port that the origin listens on.</p>
+    pub fn get_https_port(&self) -> &::std::option::Option<i32> {
+        &self.https_port
     }
     /// <p>Specifies the protocol (HTTP or HTTPS) that CloudFront uses to connect to the origin. Valid values are:</p>
     /// <ul>
@@ -131,6 +139,17 @@ impl CustomOriginConfigBuilder {
         self.origin_protocol_policy = input;
         self
     }
+    /// <p>Specifies the protocol (HTTP or HTTPS) that CloudFront uses to connect to the origin. Valid values are:</p>
+    /// <ul>
+    /// <li> <p> <code>http-only</code> – CloudFront always uses HTTP to connect to the origin.</p> </li>
+    /// <li> <p> <code>match-viewer</code> – CloudFront connects to the origin using the same protocol that the viewer used to connect to CloudFront.</p> </li>
+    /// <li> <p> <code>https-only</code> – CloudFront always uses HTTPS to connect to the origin.</p> </li>
+    /// </ul>
+    pub fn get_origin_protocol_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::OriginProtocolPolicy> {
+        &self.origin_protocol_policy
+    }
     /// <p>Specifies the minimum SSL/TLS protocol that CloudFront uses when connecting to your origin over HTTPS. Valid values include <code>SSLv3</code>, <code>TLSv1</code>, <code>TLSv1.1</code>, and <code>TLSv1.2</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginSSLProtocols">Minimum Origin SSL Protocol</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn origin_ssl_protocols(mut self, input: crate::types::OriginSslProtocols) -> Self {
@@ -146,6 +165,13 @@ impl CustomOriginConfigBuilder {
         self.origin_ssl_protocols = input;
         self
     }
+    /// <p>Specifies the minimum SSL/TLS protocol that CloudFront uses when connecting to your origin over HTTPS. Valid values include <code>SSLv3</code>, <code>TLSv1</code>, <code>TLSv1.1</code>, and <code>TLSv1.2</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginSSLProtocols">Minimum Origin SSL Protocol</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn get_origin_ssl_protocols(
+        &self,
+    ) -> &::std::option::Option<crate::types::OriginSslProtocols> {
+        &self.origin_ssl_protocols
+    }
     /// <p>Specifies how long, in seconds, CloudFront waits for a response from the origin. This is also known as the <i>origin response timeout</i>. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't specify otherwise) is 30 seconds.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin Response Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn origin_read_timeout(mut self, input: i32) -> Self {
@@ -158,6 +184,11 @@ impl CustomOriginConfigBuilder {
         self.origin_read_timeout = input;
         self
     }
+    /// <p>Specifies how long, in seconds, CloudFront waits for a response from the origin. This is also known as the <i>origin response timeout</i>. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't specify otherwise) is 30 seconds.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin Response Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn get_origin_read_timeout(&self) -> &::std::option::Option<i32> {
+        &self.origin_read_timeout
+    }
     /// <p>Specifies how long, in seconds, CloudFront persists its connection to the origin. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't specify otherwise) is 5 seconds.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginKeepaliveTimeout">Origin Keep-alive Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn origin_keepalive_timeout(mut self, input: i32) -> Self {
@@ -169,6 +200,11 @@ impl CustomOriginConfigBuilder {
     pub fn set_origin_keepalive_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.origin_keepalive_timeout = input;
         self
+    }
+    /// <p>Specifies how long, in seconds, CloudFront persists its connection to the origin. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't specify otherwise) is 5 seconds.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginKeepaliveTimeout">Origin Keep-alive Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn get_origin_keepalive_timeout(&self) -> &::std::option::Option<i32> {
+        &self.origin_keepalive_timeout
     }
     /// Consumes the builder and constructs a [`CustomOriginConfig`](crate::types::CustomOriginConfig).
     pub fn build(self) -> crate::types::CustomOriginConfig {

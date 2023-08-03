@@ -57,6 +57,10 @@ impl LendingFieldBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of the lending document.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p>The results extracted for a lending document.</p>
     pub fn key_detection(mut self, input: crate::types::LendingDetection) -> Self {
         self.key_detection = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl LendingFieldBuilder {
     ) -> Self {
         self.key_detection = input;
         self
+    }
+    /// <p>The results extracted for a lending document.</p>
+    pub fn get_key_detection(&self) -> &::std::option::Option<crate::types::LendingDetection> {
+        &self.key_detection
     }
     /// Appends an item to `value_detections`.
     ///
@@ -88,6 +96,12 @@ impl LendingFieldBuilder {
     ) -> Self {
         self.value_detections = input;
         self
+    }
+    /// <p>An array of LendingDetection objects.</p>
+    pub fn get_value_detections(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LendingDetection>> {
+        &self.value_detections
     }
     /// Consumes the builder and constructs a [`LendingField`](crate::types::LendingField).
     pub fn build(self) -> crate::types::LendingField {

@@ -45,6 +45,10 @@ impl GetDirectoryInputBuilder {
         self.directory_arn = input;
         self
     }
+    /// <p>The ARN of the directory.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_arn
+    }
     /// Consumes the builder and constructs a [`GetDirectoryInput`](crate::operation::get_directory::GetDirectoryInput).
     pub fn build(
         self,

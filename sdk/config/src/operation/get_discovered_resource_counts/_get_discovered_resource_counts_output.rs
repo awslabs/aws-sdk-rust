@@ -86,6 +86,16 @@ impl GetDiscoveredResourceCountsOutputBuilder {
         self.total_discovered_resources = input;
         self
     }
+    /// <p>The total number of resources that Config is recording in the region for your account. If you specify resource types in the request, Config returns only the total number of resources for those resource types.</p>
+    /// <p class="title"> <b>Example</b> </p>
+    /// <ol>
+    /// <li> <p>Config is recording three resource types in the US East (Ohio) Region for your account: 25 EC2 instances, 20 IAM users, and 15 S3 buckets, for a total of 60 resources.</p> </li>
+    /// <li> <p>You make a call to the <code>GetDiscoveredResourceCounts</code> action and specify the resource type, <code>"AWS::EC2::Instances"</code>, in the request.</p> </li>
+    /// <li> <p>Config returns 25 for <code>totalDiscoveredResources</code>.</p> </li>
+    /// </ol>
+    pub fn get_total_discovered_resources(&self) -> &::std::option::Option<i64> {
+        &self.total_discovered_resources
+    }
     /// Appends an item to `resource_counts`.
     ///
     /// To override the contents of this collection use [`set_resource_counts`](Self::set_resource_counts).
@@ -105,6 +115,12 @@ impl GetDiscoveredResourceCountsOutputBuilder {
         self.resource_counts = input;
         self
     }
+    /// <p>The list of <code>ResourceCount</code> objects. Each object is listed in descending order by the number of resources.</p>
+    pub fn get_resource_counts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceCount>> {
+        &self.resource_counts
+    }
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -114,6 +130,10 @@ impl GetDiscoveredResourceCountsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

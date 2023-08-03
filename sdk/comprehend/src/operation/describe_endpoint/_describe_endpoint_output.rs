@@ -50,6 +50,12 @@ impl DescribeEndpointOutputBuilder {
         self.endpoint_properties = input;
         self
     }
+    /// <p>Describes information associated with the specific endpoint.</p>
+    pub fn get_endpoint_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::EndpointProperties> {
+        &self.endpoint_properties
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

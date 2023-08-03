@@ -58,6 +58,10 @@ impl AcknowledgeThirdPartyJobInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The unique system-generated ID of the job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response to a <code>GetThirdPartyJobDetails</code> request.</p>
     pub fn nonce(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nonce = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl AcknowledgeThirdPartyJobInputBuilder {
         self.nonce = input;
         self
     }
+    /// <p>A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response to a <code>GetThirdPartyJobDetails</code> request.</p>
+    pub fn get_nonce(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nonce
+    }
     /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -77,6 +85,10 @@ impl AcknowledgeThirdPartyJobInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`AcknowledgeThirdPartyJobInput`](crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobInput).
     pub fn build(

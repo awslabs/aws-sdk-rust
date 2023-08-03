@@ -46,6 +46,10 @@ impl LabelingSetGenerationTaskRunPropertiesBuilder {
         self.output_s3_path = input;
         self
     }
+    /// <p>The Amazon Simple Storage Service (Amazon S3) path where you will generate the labeling set.</p>
+    pub fn get_output_s3_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_s3_path
+    }
     /// Consumes the builder and constructs a [`LabelingSetGenerationTaskRunProperties`](crate::types::LabelingSetGenerationTaskRunProperties).
     pub fn build(self) -> crate::types::LabelingSetGenerationTaskRunProperties {
         crate::types::LabelingSetGenerationTaskRunProperties {

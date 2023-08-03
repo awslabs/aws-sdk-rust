@@ -45,6 +45,11 @@ impl ListIdentityPoliciesInputBuilder {
         self.identity = input;
         self
     }
+    /// <p>The identity that is associated with the policy for which the policies will be listed. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+    /// <p>To successfully call this API, you must own the identity.</p>
+    pub fn get_identity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity
+    }
     /// Consumes the builder and constructs a [`ListIdentityPoliciesInput`](crate::operation::list_identity_policies::ListIdentityPoliciesInput).
     pub fn build(
         self,

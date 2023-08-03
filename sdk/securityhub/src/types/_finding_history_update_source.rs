@@ -51,6 +51,10 @@ impl FindingHistoryUpdateSourceBuilder {
         self.r#type = input;
         self
     }
+    /// <p> Describes the type of finding change event, such as a call to <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html"> <code>BatchImportFindings</code> </a> (by an integrated Amazon Web Service or third party partner integration) or <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html"> <code>BatchUpdateFindings</code> </a> (by a Security Hub customer). </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::FindingHistoryUpdateSourceType> {
+        &self.r#type
+    }
     /// <p> The identity of the source that initiated the finding change event. For example, the Amazon Resource Name (ARN) of a partner that calls BatchImportFindings or of a customer that calls BatchUpdateFindings. </p>
     pub fn identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl FindingHistoryUpdateSourceBuilder {
     pub fn set_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity = input;
         self
+    }
+    /// <p> The identity of the source that initiated the finding change event. For example, the Amazon Resource Name (ARN) of a partner that calls BatchImportFindings or of a customer that calls BatchUpdateFindings. </p>
+    pub fn get_identity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity
     }
     /// Consumes the builder and constructs a [`FindingHistoryUpdateSource`](crate::types::FindingHistoryUpdateSource).
     pub fn build(self) -> crate::types::FindingHistoryUpdateSource {

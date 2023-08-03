@@ -60,6 +60,11 @@ impl DescribeEnvironmentResourcesInputBuilder {
         self.environment_id = input;
         self
     }
+    /// <p>The ID of the environment to retrieve AWS resource usage data.</p>
+    /// <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
+    }
     /// <p>The name of the environment to retrieve AWS resource usage data.</p>
     /// <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
     pub fn environment_name(
@@ -77,6 +82,11 @@ impl DescribeEnvironmentResourcesInputBuilder {
     ) -> Self {
         self.environment_name = input;
         self
+    }
+    /// <p>The name of the environment to retrieve AWS resource usage data.</p>
+    /// <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
     }
     /// Consumes the builder and constructs a [`DescribeEnvironmentResourcesInput`](crate::operation::describe_environment_resources::DescribeEnvironmentResourcesInput).
     pub fn build(

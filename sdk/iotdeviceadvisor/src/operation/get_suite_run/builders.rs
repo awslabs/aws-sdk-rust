@@ -37,6 +37,10 @@ impl GetSuiteRunFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetSuiteRun as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_suite_run::builders::GetSuiteRunInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +129,10 @@ impl GetSuiteRunFluentBuilder {
         self.inner = self.inner.set_suite_definition_id(input);
         self
     }
+    /// <p>Suite definition ID for the test suite run.</p>
+    pub fn get_suite_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_suite_definition_id()
+    }
     /// <p>Suite run ID for the test suite run.</p>
     pub fn suite_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.suite_run_id(input.into());
@@ -134,5 +142,9 @@ impl GetSuiteRunFluentBuilder {
     pub fn set_suite_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_suite_run_id(input);
         self
+    }
+    /// <p>Suite run ID for the test suite run.</p>
+    pub fn get_suite_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_suite_run_id()
     }
 }

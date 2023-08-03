@@ -36,6 +36,12 @@ impl DeleteWatchlistFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteWatchlist as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_watchlist::builders::DeleteWatchlistInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DeleteWatchlistFluentBuilder {
         self.inner = self.inner.set_domain_id(input);
         self
     }
+    /// <p>The identifier of the domain that contains the watchlist.</p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_id()
+    }
     /// <p>The identifier of the watchlist to be deleted.</p>
     pub fn watchlist_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.watchlist_id(input.into());
@@ -135,5 +145,9 @@ impl DeleteWatchlistFluentBuilder {
     pub fn set_watchlist_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_watchlist_id(input);
         self
+    }
+    /// <p>The identifier of the watchlist to be deleted.</p>
+    pub fn get_watchlist_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_watchlist_id()
     }
 }

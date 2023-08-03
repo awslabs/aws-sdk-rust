@@ -36,6 +36,12 @@ impl UpdateClusterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateCluster as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_cluster::builders::UpdateClusterInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl UpdateClusterFluentBuilder {
         self.inner = self.inner.set_cluster_id(input);
         self
     }
+    /// <p>The cluster ID of the cluster that you want to update, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_id()
+    }
     /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this cluster. To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -128,6 +138,10 @@ impl UpdateClusterFluentBuilder {
         self.inner = self.inner.set_role_arn(input);
         self
     }
+    /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this cluster. To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
+    }
     /// <p>The updated description of this cluster.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -137,6 +151,10 @@ impl UpdateClusterFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The updated description of this cluster.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The updated arrays of <code>JobResource</code> objects that can include updated <code>S3Resource</code> objects or <code>LambdaResource</code> objects.</p>
     pub fn resources(mut self, input: crate::types::JobResource) -> Self {
@@ -150,6 +168,10 @@ impl UpdateClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resources(input);
         self
+    }
+    /// <p>The updated arrays of <code>JobResource</code> objects that can include updated <code>S3Resource</code> objects or <code>LambdaResource</code> objects.</p>
+    pub fn get_resources(&self) -> &::std::option::Option<crate::types::JobResource> {
+        self.inner.get_resources()
     }
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
     pub fn on_device_service_configuration(
@@ -167,6 +189,12 @@ impl UpdateClusterFluentBuilder {
         self.inner = self.inner.set_on_device_service_configuration(input);
         self
     }
+    /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
+    pub fn get_on_device_service_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::OnDeviceServiceConfiguration> {
+        self.inner.get_on_device_service_configuration()
+    }
     /// <p>The ID of the updated <code>Address</code> object.</p>
     pub fn address_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.address_id(input.into());
@@ -176,6 +204,10 @@ impl UpdateClusterFluentBuilder {
     pub fn set_address_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_address_id(input);
         self
+    }
+    /// <p>The ID of the updated <code>Address</code> object.</p>
+    pub fn get_address_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_address_id()
     }
     /// <p>The updated shipping option value of this cluster's <code>ShippingDetails</code> object.</p>
     pub fn shipping_option(mut self, input: crate::types::ShippingOption) -> Self {
@@ -190,6 +222,10 @@ impl UpdateClusterFluentBuilder {
         self.inner = self.inner.set_shipping_option(input);
         self
     }
+    /// <p>The updated shipping option value of this cluster's <code>ShippingDetails</code> object.</p>
+    pub fn get_shipping_option(&self) -> &::std::option::Option<crate::types::ShippingOption> {
+        self.inner.get_shipping_option()
+    }
     /// <p>The new or updated <code>Notification</code> object.</p>
     pub fn notification(mut self, input: crate::types::Notification) -> Self {
         self.inner = self.inner.notification(input);
@@ -202,6 +238,10 @@ impl UpdateClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_notification(input);
         self
+    }
+    /// <p>The new or updated <code>Notification</code> object.</p>
+    pub fn get_notification(&self) -> &::std::option::Option<crate::types::Notification> {
+        self.inner.get_notification()
     }
     /// <p>The updated ID for the forwarding address for a cluster. This field is not supported in most regions.</p>
     pub fn forwarding_address_id(
@@ -218,5 +258,9 @@ impl UpdateClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_forwarding_address_id(input);
         self
+    }
+    /// <p>The updated ID for the forwarding address for a cluster. This field is not supported in most regions.</p>
+    pub fn get_forwarding_address_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_forwarding_address_id()
     }
 }

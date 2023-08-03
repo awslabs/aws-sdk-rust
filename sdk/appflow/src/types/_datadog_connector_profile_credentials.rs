@@ -54,6 +54,10 @@ impl DatadogConnectorProfileCredentialsBuilder {
         self.api_key = input;
         self
     }
+    /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API. </p>
+    pub fn get_api_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_key
+    }
     /// <p> Application keys, in conjunction with your API key, give you full access to Datadog’s programmatic API. Application keys are associated with the user account that created them. The application key is used to log all requests made to the API. </p>
     pub fn application_key(
         mut self,
@@ -69,6 +73,10 @@ impl DatadogConnectorProfileCredentialsBuilder {
     ) -> Self {
         self.application_key = input;
         self
+    }
+    /// <p> Application keys, in conjunction with your API key, give you full access to Datadog’s programmatic API. Application keys are associated with the user account that created them. The application key is used to log all requests made to the API. </p>
+    pub fn get_application_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_key
     }
     /// Consumes the builder and constructs a [`DatadogConnectorProfileCredentials`](crate::types::DatadogConnectorProfileCredentials).
     pub fn build(self) -> crate::types::DatadogConnectorProfileCredentials {

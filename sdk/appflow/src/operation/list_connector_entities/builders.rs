@@ -36,6 +36,13 @@ impl ListConnectorEntitiesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListConnectorEntities as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_connector_entities::builders::ListConnectorEntitiesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl ListConnectorEntitiesFluentBuilder {
         self.inner = self.inner.set_connector_profile_name(input);
         self
     }
+    /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account, and is used to query the downstream connector. </p>
+    pub fn get_connector_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connector_profile_name()
+    }
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
     pub fn connector_type(mut self, input: crate::types::ConnectorType) -> Self {
         self.inner = self.inner.connector_type(input);
@@ -144,6 +155,10 @@ impl ListConnectorEntitiesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_connector_type(input);
         self
+    }
+    /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
+    pub fn get_connector_type(&self) -> &::std::option::Option<crate::types::ConnectorType> {
+        self.inner.get_connector_type()
     }
     /// <p> This optional parameter is specific to connector implementation. Some connectors support multiple levels or categories of entities. You can find out the list of roots for such providers by sending a request without the <code>entitiesPath</code> parameter. If the connector supports entities at different roots, this initial request returns the list of roots. Otherwise, this request returns all entities supported by the provider. </p>
     pub fn entities_path(
@@ -161,6 +176,10 @@ impl ListConnectorEntitiesFluentBuilder {
         self.inner = self.inner.set_entities_path(input);
         self
     }
+    /// <p> This optional parameter is specific to connector implementation. Some connectors support multiple levels or categories of entities. You can find out the list of roots for such providers by sending a request without the <code>entitiesPath</code> parameter. If the connector supports entities at different roots, this initial request returns the list of roots. Otherwise, this request returns all entities supported by the provider. </p>
+    pub fn get_entities_path(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_entities_path()
+    }
     /// <p>The version of the API that's used by the connector.</p>
     pub fn api_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.api_version(input.into());
@@ -170,6 +189,10 @@ impl ListConnectorEntitiesFluentBuilder {
     pub fn set_api_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_api_version(input);
         self
+    }
+    /// <p>The version of the API that's used by the connector.</p>
+    pub fn get_api_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_api_version()
     }
     /// <p>The maximum number of items that the operation returns in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -181,6 +204,10 @@ impl ListConnectorEntitiesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of items that the operation returns in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>A token that was provided by your prior <code>ListConnectorEntities</code> operation if the response was too big for the page size. You specify this token to get the next page of results in paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -190,5 +217,9 @@ impl ListConnectorEntitiesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A token that was provided by your prior <code>ListConnectorEntities</code> operation if the response was too big for the page size. You specify this token to get the next page of results in paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

@@ -63,6 +63,10 @@ impl SessionBuilder {
         self.session_id = input;
         self
     }
+    /// <p>The ID of the execute command session.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
+    }
     /// <p>A URL to the managed agent on the container that the SSM Session Manager client uses to send commands and receive output from the container.</p>
     pub fn stream_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_url = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl SessionBuilder {
         self.stream_url = input;
         self
     }
+    /// <p>A URL to the managed agent on the container that the SSM Session Manager client uses to send commands and receive output from the container.</p>
+    pub fn get_stream_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_url
+    }
     /// <p>An encrypted token value containing session and caller information. It's used to authenticate the connection to the container.</p>
     pub fn token_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token_value = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl SessionBuilder {
     pub fn set_token_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.token_value = input;
         self
+    }
+    /// <p>An encrypted token value containing session and caller information. It's used to authenticate the connection to the container.</p>
+    pub fn get_token_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token_value
     }
     /// Consumes the builder and constructs a [`Session`](crate::types::Session).
     pub fn build(self) -> crate::types::Session {

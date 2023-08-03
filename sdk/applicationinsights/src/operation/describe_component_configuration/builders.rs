@@ -36,6 +36,10 @@ impl DescribeComponentConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeComponentConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_component_configuration::builders::DescribeComponentConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl DescribeComponentConfigurationFluentBuilder {
         self.inner = self.inner.set_resource_group_name(input);
         self
     }
+    /// <p>The name of the resource group.</p>
+    pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_group_name()
+    }
     /// <p>The name of the component.</p>
     pub fn component_name(
         mut self,
@@ -147,5 +155,9 @@ impl DescribeComponentConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_component_name(input);
         self
+    }
+    /// <p>The name of the component.</p>
+    pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_component_name()
     }
 }

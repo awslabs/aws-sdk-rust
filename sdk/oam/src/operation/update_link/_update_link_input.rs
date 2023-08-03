@@ -49,6 +49,10 @@ impl UpdateLinkInputBuilder {
         self.identifier = input;
         self
     }
+    /// <p>The ARN of the link that you want to update.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
+    }
     /// Appends an item to `resource_types`.
     ///
     /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
@@ -69,6 +73,13 @@ impl UpdateLinkInputBuilder {
     ) -> Self {
         self.resource_types = input;
         self
+    }
+    /// <p>An array of strings that define which types of data that the source account will send to the monitoring account.</p>
+    /// <p>Your input here replaces the current set of data types that are shared.</p>
+    pub fn get_resource_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceType>> {
+        &self.resource_types
     }
     /// Consumes the builder and constructs a [`UpdateLinkInput`](crate::operation::update_link::UpdateLinkInput).
     pub fn build(

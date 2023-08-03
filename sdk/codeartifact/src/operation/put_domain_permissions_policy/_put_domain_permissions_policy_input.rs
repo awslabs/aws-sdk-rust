@@ -63,6 +63,10 @@ impl PutDomainPermissionsPolicyInputBuilder {
         self.domain = input;
         self
     }
+    /// <p> The name of the domain on which to set the resource policy. </p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
+    }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_owner = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl PutDomainPermissionsPolicyInputBuilder {
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_owner = input;
         self
+    }
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_owner
     }
     /// <p> The current revision of the resource policy to be set. This revision is used for optimistic locking, which prevents others from overwriting your changes to the domain's resource policy. </p>
     pub fn policy_revision(
@@ -89,6 +97,10 @@ impl PutDomainPermissionsPolicyInputBuilder {
         self.policy_revision = input;
         self
     }
+    /// <p> The current revision of the resource policy to be set. This revision is used for optimistic locking, which prevents others from overwriting your changes to the domain's resource policy. </p>
+    pub fn get_policy_revision(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_revision
+    }
     /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided domain. </p>
     pub fn policy_document(
         mut self,
@@ -104,6 +116,10 @@ impl PutDomainPermissionsPolicyInputBuilder {
     ) -> Self {
         self.policy_document = input;
         self
+    }
+    /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided domain. </p>
+    pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_document
     }
     /// Consumes the builder and constructs a [`PutDomainPermissionsPolicyInput`](crate::operation::put_domain_permissions_policy::PutDomainPermissionsPolicyInput).
     pub fn build(

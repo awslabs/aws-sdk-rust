@@ -67,6 +67,10 @@ impl DescribeClustersInputBuilder {
         self.clusters = input;
         self
     }
+    /// <p>A list of up to 100 cluster names or full cluster Amazon Resource Name (ARN) entries. If you do not specify a cluster, the default cluster is assumed.</p>
+    pub fn get_clusters(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.clusters
+    }
     /// Appends an item to `include`.
     ///
     /// To override the contents of this collection use [`set_include`](Self::set_include).
@@ -95,6 +99,17 @@ impl DescribeClustersInputBuilder {
     ) -> Self {
         self.include = input;
         self
+    }
+    /// <p>Determines whether to include additional information about the clusters in the response. If this field is omitted, this information isn't included.</p>
+    /// <p>If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the cluster are included, for example the capacity providers.</p>
+    /// <p>If <code>SETTINGS</code> is specified, the settings for the cluster are included.</p>
+    /// <p>If <code>CONFIGURATIONS</code> is specified, the configuration for the cluster is included.</p>
+    /// <p>If <code>STATISTICS</code> is specified, the task and service count is included, separated by launch type.</p>
+    /// <p>If <code>TAGS</code> is specified, the metadata tags associated with the cluster are included.</p>
+    pub fn get_include(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterField>> {
+        &self.include
     }
     /// Consumes the builder and constructs a [`DescribeClustersInput`](crate::operation::describe_clusters::DescribeClustersInput).
     pub fn build(

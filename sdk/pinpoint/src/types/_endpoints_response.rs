@@ -49,6 +49,12 @@ impl EndpointsResponseBuilder {
         self.item = input;
         self
     }
+    /// <p>An array of responses, one for each endpoint that's associated with the user ID.</p>
+    pub fn get_item(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointResponse>> {
+        &self.item
+    }
     /// Consumes the builder and constructs a [`EndpointsResponse`](crate::types::EndpointsResponse).
     pub fn build(self) -> crate::types::EndpointsResponse {
         crate::types::EndpointsResponse { item: self.item }

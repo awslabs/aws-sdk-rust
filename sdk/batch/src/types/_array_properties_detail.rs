@@ -73,6 +73,12 @@ impl ArrayPropertiesDetailBuilder {
         self.status_summary = input;
         self
     }
+    /// <p>A summary of the number of array job children in each available job status. This parameter is returned for parent array jobs.</p>
+    pub fn get_status_summary(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, i32>> {
+        &self.status_summary
+    }
     /// <p>The size of the array job. This parameter is returned for parent array jobs.</p>
     pub fn size(mut self, input: i32) -> Self {
         self.size = ::std::option::Option::Some(input);
@@ -83,6 +89,10 @@ impl ArrayPropertiesDetailBuilder {
         self.size = input;
         self
     }
+    /// <p>The size of the array job. This parameter is returned for parent array jobs.</p>
+    pub fn get_size(&self) -> &::std::option::Option<i32> {
+        &self.size
+    }
     /// <p>The job index within the array that's associated with this job. This parameter is returned for array job children.</p>
     pub fn index(mut self, input: i32) -> Self {
         self.index = ::std::option::Option::Some(input);
@@ -92,6 +102,10 @@ impl ArrayPropertiesDetailBuilder {
     pub fn set_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.index = input;
         self
+    }
+    /// <p>The job index within the array that's associated with this job. This parameter is returned for array job children.</p>
+    pub fn get_index(&self) -> &::std::option::Option<i32> {
+        &self.index
     }
     /// Consumes the builder and constructs a [`ArrayPropertiesDetail`](crate::types::ArrayPropertiesDetail).
     pub fn build(self) -> crate::types::ArrayPropertiesDetail {

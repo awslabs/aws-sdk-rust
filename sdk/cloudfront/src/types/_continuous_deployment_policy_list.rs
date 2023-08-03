@@ -68,6 +68,10 @@ impl ContinuousDeploymentPolicyListBuilder {
         self.next_marker = input;
         self
     }
+    /// <p>Indicates the next page of continuous deployment policies. To get the next page of the list, use this value in the <code>Marker</code> field of your request.</p>
+    pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_marker
+    }
     /// <p>The maximum number of continuous deployment policies that were specified in your request.</p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.max_items = ::std::option::Option::Some(input);
@@ -78,6 +82,10 @@ impl ContinuousDeploymentPolicyListBuilder {
         self.max_items = input;
         self
     }
+    /// <p>The maximum number of continuous deployment policies that were specified in your request.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        &self.max_items
+    }
     /// <p>The total number of continuous deployment policies in your Amazon Web Services account, regardless of the <code>MaxItems</code> value.</p>
     pub fn quantity(mut self, input: i32) -> Self {
         self.quantity = ::std::option::Option::Some(input);
@@ -87,6 +95,10 @@ impl ContinuousDeploymentPolicyListBuilder {
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.quantity = input;
         self
+    }
+    /// <p>The total number of continuous deployment policies in your Amazon Web Services account, regardless of the <code>MaxItems</code> value.</p>
+    pub fn get_quantity(&self) -> &::std::option::Option<i32> {
+        &self.quantity
     }
     /// Appends an item to `items`.
     ///
@@ -108,6 +120,13 @@ impl ContinuousDeploymentPolicyListBuilder {
     ) -> Self {
         self.items = input;
         self
+    }
+    /// <p>A list of continuous deployment policy items.</p>
+    pub fn get_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContinuousDeploymentPolicySummary>>
+    {
+        &self.items
     }
     /// Consumes the builder and constructs a [`ContinuousDeploymentPolicyList`](crate::types::ContinuousDeploymentPolicyList).
     pub fn build(self) -> crate::types::ContinuousDeploymentPolicyList {

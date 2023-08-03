@@ -37,6 +37,10 @@ impl DeleteAccountAuditConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteAccountAuditConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_account_audit_configuration::builders::DeleteAccountAuditConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,5 +104,9 @@ impl DeleteAccountAuditConfigurationFluentBuilder {
     pub fn set_delete_scheduled_audits(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_delete_scheduled_audits(input);
         self
+    }
+    /// <p>If true, all scheduled audits are deleted.</p>
+    pub fn get_delete_scheduled_audits(&self) -> &::std::option::Option<bool> {
+        self.inner.get_delete_scheduled_audits()
     }
 }

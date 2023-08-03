@@ -86,6 +86,10 @@ impl RdsDbInstanceDetailsBuilder {
         self.db_instance_identifier = input;
         self
     }
+    /// <p>The identifier associated to the database instance that was involved in the finding.</p>
+    pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_identifier
+    }
     /// <p>The database engine of the database instance involved in the finding.</p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
@@ -95,6 +99,10 @@ impl RdsDbInstanceDetailsBuilder {
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
+    }
+    /// <p>The database engine of the database instance involved in the finding.</p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine
     }
     /// <p>The version of the database engine that was involved in the finding.</p>
     pub fn engine_version(
@@ -112,6 +120,10 @@ impl RdsDbInstanceDetailsBuilder {
         self.engine_version = input;
         self
     }
+    /// <p>The version of the database engine that was involved in the finding.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
+    }
     /// <p>The identifier of the database cluster that contains the database instance ID involved in the finding.</p>
     pub fn db_cluster_identifier(
         mut self,
@@ -128,6 +140,10 @@ impl RdsDbInstanceDetailsBuilder {
         self.db_cluster_identifier = input;
         self
     }
+    /// <p>The identifier of the database cluster that contains the database instance ID involved in the finding.</p>
+    pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_identifier
+    }
     /// <p>The Amazon Resource Name (ARN) that identifies the database instance involved in the finding.</p>
     pub fn db_instance_arn(
         mut self,
@@ -143,6 +159,10 @@ impl RdsDbInstanceDetailsBuilder {
     ) -> Self {
         self.db_instance_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) that identifies the database instance involved in the finding.</p>
+    pub fn get_db_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_arn
     }
     /// Appends an item to `tags`.
     ///
@@ -162,6 +182,10 @@ impl RdsDbInstanceDetailsBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Instance tag key-value pairs associated with the database instance ID.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`RdsDbInstanceDetails`](crate::types::RdsDbInstanceDetails).
     pub fn build(self) -> crate::types::RdsDbInstanceDetails {

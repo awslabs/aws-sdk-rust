@@ -81,6 +81,10 @@ impl LifecyclePolicyPreviewResultBuilder {
         self.image_tags = input;
         self
     }
+    /// <p>The list of tags associated with this image.</p>
+    pub fn get_image_tags(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.image_tags
+    }
     /// <p>The <code>sha256</code> digest of the image manifest.</p>
     pub fn image_digest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_digest = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl LifecyclePolicyPreviewResultBuilder {
     pub fn set_image_digest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_digest = input;
         self
+    }
+    /// <p>The <code>sha256</code> digest of the image manifest.</p>
+    pub fn get_image_digest(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_digest
     }
     /// <p>The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the repository.</p>
     pub fn image_pushed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -104,6 +112,10 @@ impl LifecyclePolicyPreviewResultBuilder {
         self.image_pushed_at = input;
         self
     }
+    /// <p>The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the repository.</p>
+    pub fn get_image_pushed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.image_pushed_at
+    }
     /// <p>The type of action to be taken.</p>
     pub fn action(mut self, input: crate::types::LifecyclePolicyRuleAction) -> Self {
         self.action = ::std::option::Option::Some(input);
@@ -117,6 +129,10 @@ impl LifecyclePolicyPreviewResultBuilder {
         self.action = input;
         self
     }
+    /// <p>The type of action to be taken.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::LifecyclePolicyRuleAction> {
+        &self.action
+    }
     /// <p>The priority of the applied rule.</p>
     pub fn applied_rule_priority(mut self, input: i32) -> Self {
         self.applied_rule_priority = ::std::option::Option::Some(input);
@@ -126,6 +142,10 @@ impl LifecyclePolicyPreviewResultBuilder {
     pub fn set_applied_rule_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.applied_rule_priority = input;
         self
+    }
+    /// <p>The priority of the applied rule.</p>
+    pub fn get_applied_rule_priority(&self) -> &::std::option::Option<i32> {
+        &self.applied_rule_priority
     }
     /// Consumes the builder and constructs a [`LifecyclePolicyPreviewResult`](crate::types::LifecyclePolicyPreviewResult).
     pub fn build(self) -> crate::types::LifecyclePolicyPreviewResult {

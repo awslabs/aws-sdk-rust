@@ -71,6 +71,10 @@ impl GetWorkflowStepsOutputBuilder {
         self.workflow_id = input;
         self
     }
+    /// <p>Unique identifier for the workflow.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_id
+    }
     /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
     pub fn workflow_type(mut self, input: crate::types::WorkflowType) -> Self {
         self.workflow_type = ::std::option::Option::Some(input);
@@ -83,6 +87,10 @@ impl GetWorkflowStepsOutputBuilder {
     ) -> Self {
         self.workflow_type = input;
         self
+    }
+    /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
+    pub fn get_workflow_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
+        &self.workflow_type
     }
     /// Appends an item to `items`.
     ///
@@ -103,6 +111,12 @@ impl GetWorkflowStepsOutputBuilder {
         self.items = input;
         self
     }
+    /// <p>List containing workflow step details.</p>
+    pub fn get_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepItem>> {
+        &self.items
+    }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -112,6 +126,10 @@ impl GetWorkflowStepsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

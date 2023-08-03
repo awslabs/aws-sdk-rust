@@ -39,6 +39,10 @@ impl GetEulaInputBuilder {
         self.eula_id = input;
         self
     }
+    /// <p>The EULA ID.</p>
+    pub fn get_eula_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.eula_id
+    }
     /// Consumes the builder and constructs a [`GetEulaInput`](crate::operation::get_eula::GetEulaInput).
     pub fn build(
         self,

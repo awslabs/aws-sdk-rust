@@ -141,6 +141,10 @@ impl FreeFormLayoutElementBuilder {
         self.element_id = input;
         self
     }
+    /// <p>A unique identifier for an element within a free-form layout.</p>
+    pub fn get_element_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.element_id
+    }
     /// <p>The type of element.</p>
     pub fn element_type(mut self, input: crate::types::LayoutElementType) -> Self {
         self.element_type = ::std::option::Option::Some(input);
@@ -153,6 +157,10 @@ impl FreeFormLayoutElementBuilder {
     ) -> Self {
         self.element_type = input;
         self
+    }
+    /// <p>The type of element.</p>
+    pub fn get_element_type(&self) -> &::std::option::Option<crate::types::LayoutElementType> {
+        &self.element_type
     }
     /// <p>The x-axis coordinate of the element.</p>
     pub fn x_axis_location(
@@ -170,6 +178,10 @@ impl FreeFormLayoutElementBuilder {
         self.x_axis_location = input;
         self
     }
+    /// <p>The x-axis coordinate of the element.</p>
+    pub fn get_x_axis_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.x_axis_location
+    }
     /// <p>The y-axis coordinate of the element.</p>
     pub fn y_axis_location(
         mut self,
@@ -186,6 +198,10 @@ impl FreeFormLayoutElementBuilder {
         self.y_axis_location = input;
         self
     }
+    /// <p>The y-axis coordinate of the element.</p>
+    pub fn get_y_axis_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.y_axis_location
+    }
     /// <p>The width of an element within a free-form layout.</p>
     pub fn width(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.width = ::std::option::Option::Some(input.into());
@@ -196,6 +212,10 @@ impl FreeFormLayoutElementBuilder {
         self.width = input;
         self
     }
+    /// <p>The width of an element within a free-form layout.</p>
+    pub fn get_width(&self) -> &::std::option::Option<::std::string::String> {
+        &self.width
+    }
     /// <p>The height of an element within a free-form layout.</p>
     pub fn height(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.height = ::std::option::Option::Some(input.into());
@@ -205,6 +225,10 @@ impl FreeFormLayoutElementBuilder {
     pub fn set_height(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.height = input;
         self
+    }
+    /// <p>The height of an element within a free-form layout.</p>
+    pub fn get_height(&self) -> &::std::option::Option<::std::string::String> {
+        &self.height
     }
     /// <p>The visibility of an element within a free-form layout.</p>
     pub fn visibility(mut self, input: crate::types::Visibility) -> Self {
@@ -218,6 +242,10 @@ impl FreeFormLayoutElementBuilder {
     ) -> Self {
         self.visibility = input;
         self
+    }
+    /// <p>The visibility of an element within a free-form layout.</p>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.visibility
     }
     /// Appends an item to `rendering_rules`.
     ///
@@ -238,6 +266,12 @@ impl FreeFormLayoutElementBuilder {
         self.rendering_rules = input;
         self
     }
+    /// <p>The rendering rules that determine when an element should be displayed within a free-form layout.</p>
+    pub fn get_rendering_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SheetElementRenderingRule>> {
+        &self.rendering_rules
+    }
     /// <p>The border style configuration of a free-form layout element.</p>
     pub fn border_style(mut self, input: crate::types::FreeFormLayoutElementBorderStyle) -> Self {
         self.border_style = ::std::option::Option::Some(input);
@@ -250,6 +284,12 @@ impl FreeFormLayoutElementBuilder {
     ) -> Self {
         self.border_style = input;
         self
+    }
+    /// <p>The border style configuration of a free-form layout element.</p>
+    pub fn get_border_style(
+        &self,
+    ) -> &::std::option::Option<crate::types::FreeFormLayoutElementBorderStyle> {
+        &self.border_style
     }
     /// <p>The border style configuration of a free-form layout element. This border style is used when the element is selected.</p>
     pub fn selected_border_style(
@@ -267,6 +307,12 @@ impl FreeFormLayoutElementBuilder {
         self.selected_border_style = input;
         self
     }
+    /// <p>The border style configuration of a free-form layout element. This border style is used when the element is selected.</p>
+    pub fn get_selected_border_style(
+        &self,
+    ) -> &::std::option::Option<crate::types::FreeFormLayoutElementBorderStyle> {
+        &self.selected_border_style
+    }
     /// <p>The background style configuration of a free-form layout element.</p>
     pub fn background_style(
         mut self,
@@ -283,6 +329,12 @@ impl FreeFormLayoutElementBuilder {
         self.background_style = input;
         self
     }
+    /// <p>The background style configuration of a free-form layout element.</p>
+    pub fn get_background_style(
+        &self,
+    ) -> &::std::option::Option<crate::types::FreeFormLayoutElementBackgroundStyle> {
+        &self.background_style
+    }
     /// <p>The loading animation configuration of a free-form layout element.</p>
     pub fn loading_animation(mut self, input: crate::types::LoadingAnimation) -> Self {
         self.loading_animation = ::std::option::Option::Some(input);
@@ -295,6 +347,10 @@ impl FreeFormLayoutElementBuilder {
     ) -> Self {
         self.loading_animation = input;
         self
+    }
+    /// <p>The loading animation configuration of a free-form layout element.</p>
+    pub fn get_loading_animation(&self) -> &::std::option::Option<crate::types::LoadingAnimation> {
+        &self.loading_animation
     }
     /// Consumes the builder and constructs a [`FreeFormLayoutElement`](crate::types::FreeFormLayoutElement).
     pub fn build(self) -> crate::types::FreeFormLayoutElement {

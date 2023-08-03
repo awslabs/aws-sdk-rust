@@ -43,6 +43,10 @@ impl ConditionStepMetadataBuilder {
         self.outcome = input;
         self
     }
+    /// <p>The outcome of the Condition step evaluation.</p>
+    pub fn get_outcome(&self) -> &::std::option::Option<crate::types::ConditionOutcome> {
+        &self.outcome
+    }
     /// Consumes the builder and constructs a [`ConditionStepMetadata`](crate::types::ConditionStepMetadata).
     pub fn build(self) -> crate::types::ConditionStepMetadata {
         crate::types::ConditionStepMetadata {

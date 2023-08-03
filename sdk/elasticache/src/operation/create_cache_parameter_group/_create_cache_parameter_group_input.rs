@@ -72,6 +72,10 @@ impl CreateCacheParameterGroupInputBuilder {
         self.cache_parameter_group_name = input;
         self
     }
+    /// <p>A user-specified name for the cache parameter group.</p>
+    pub fn get_cache_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_parameter_group_name
+    }
     /// <p>The name of the cache parameter group family that the cache parameter group can be used with.</p>
     /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis7</code> </p>
     pub fn cache_parameter_group_family(
@@ -90,6 +94,13 @@ impl CreateCacheParameterGroupInputBuilder {
         self.cache_parameter_group_family = input;
         self
     }
+    /// <p>The name of the cache parameter group family that the cache parameter group can be used with.</p>
+    /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis7</code> </p>
+    pub fn get_cache_parameter_group_family(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.cache_parameter_group_family
+    }
     /// <p>A user-specified description for the cache parameter group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -99,6 +110,10 @@ impl CreateCacheParameterGroupInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A user-specified description for the cache parameter group.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `tags`.
     ///
@@ -118,6 +133,10 @@ impl CreateCacheParameterGroupInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateCacheParameterGroupInput`](crate::operation::create_cache_parameter_group::CreateCacheParameterGroupInput).
     pub fn build(

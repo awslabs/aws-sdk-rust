@@ -53,6 +53,10 @@ impl UpdateExportInputBuilder {
         self.export_id = input;
         self
     }
+    /// <p>The unique identifier Amazon Lex assigned to the export.</p>
+    pub fn get_export_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.export_id
+    }
     /// <p>The new password to use to encrypt the export zip archive.</p>
     pub fn file_password(
         mut self,
@@ -68,6 +72,10 @@ impl UpdateExportInputBuilder {
     ) -> Self {
         self.file_password = input;
         self
+    }
+    /// <p>The new password to use to encrypt the export zip archive.</p>
+    pub fn get_file_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_password
     }
     /// Consumes the builder and constructs a [`UpdateExportInput`](crate::operation::update_export::UpdateExportInput).
     pub fn build(

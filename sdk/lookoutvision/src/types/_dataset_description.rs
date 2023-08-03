@@ -88,6 +88,10 @@ impl DatasetDescriptionBuilder {
         self.project_name = input;
         self
     }
+    /// <p>The name of the project that contains the dataset.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
+    }
     /// <p>The type of the dataset. The value <code>train</code> represents a training dataset or single dataset project. The value <code>test</code> represents a test dataset.</p>
     pub fn dataset_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_type = ::std::option::Option::Some(input.into());
@@ -97,6 +101,10 @@ impl DatasetDescriptionBuilder {
     pub fn set_dataset_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_type = input;
         self
+    }
+    /// <p>The type of the dataset. The value <code>train</code> represents a training dataset or single dataset project. The value <code>test</code> represents a test dataset.</p>
+    pub fn get_dataset_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_type
     }
     /// <p>The Unix timestamp for the time and date that the dataset was created.</p>
     pub fn creation_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -111,6 +119,10 @@ impl DatasetDescriptionBuilder {
         self.creation_timestamp = input;
         self
     }
+    /// <p>The Unix timestamp for the time and date that the dataset was created.</p>
+    pub fn get_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_timestamp
+    }
     /// <p>The Unix timestamp for the date and time that the dataset was last updated.</p>
     pub fn last_updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_timestamp = ::std::option::Option::Some(input);
@@ -124,6 +136,12 @@ impl DatasetDescriptionBuilder {
         self.last_updated_timestamp = input;
         self
     }
+    /// <p>The Unix timestamp for the date and time that the dataset was last updated.</p>
+    pub fn get_last_updated_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_timestamp
+    }
     /// <p>The status of the dataset.</p>
     pub fn status(mut self, input: crate::types::DatasetStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -133,6 +151,10 @@ impl DatasetDescriptionBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DatasetStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the dataset.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DatasetStatus> {
+        &self.status
     }
     /// <p>The status message for the dataset. </p>
     pub fn status_message(
@@ -150,6 +172,10 @@ impl DatasetDescriptionBuilder {
         self.status_message = input;
         self
     }
+    /// <p>The status message for the dataset. </p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>Statistics about the images in a dataset.</p>
     pub fn image_stats(mut self, input: crate::types::DatasetImageStats) -> Self {
         self.image_stats = ::std::option::Option::Some(input);
@@ -162,6 +188,10 @@ impl DatasetDescriptionBuilder {
     ) -> Self {
         self.image_stats = input;
         self
+    }
+    /// <p>Statistics about the images in a dataset.</p>
+    pub fn get_image_stats(&self) -> &::std::option::Option<crate::types::DatasetImageStats> {
+        &self.image_stats
     }
     /// Consumes the builder and constructs a [`DatasetDescription`](crate::types::DatasetDescription).
     pub fn build(self) -> crate::types::DatasetDescription {

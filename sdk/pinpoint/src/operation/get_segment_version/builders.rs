@@ -36,6 +36,12 @@ impl GetSegmentVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetSegmentVersion as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_segment_version::builders::GetSegmentVersionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl GetSegmentVersionFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>The unique identifier for the segment.</p>
     pub fn segment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.segment_id(input.into());
@@ -142,6 +152,10 @@ impl GetSegmentVersionFluentBuilder {
         self.inner = self.inner.set_segment_id(input);
         self
     }
+    /// <p>The unique identifier for the segment.</p>
+    pub fn get_segment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_segment_id()
+    }
     /// <p>The unique version number (Version property) for the campaign version.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version(input.into());
@@ -151,5 +165,9 @@ impl GetSegmentVersionFluentBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version(input);
         self
+    }
+    /// <p>The unique version number (Version property) for the campaign version.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version()
     }
 }

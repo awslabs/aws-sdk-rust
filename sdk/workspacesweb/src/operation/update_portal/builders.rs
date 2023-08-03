@@ -36,6 +36,10 @@ impl UpdatePortalFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdatePortal as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_portal::builders::UpdatePortalInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdatePortalFluentBuilder {
         self.inner = self.inner.set_portal_arn(input);
         self
     }
+    /// <p>The ARN of the web portal.</p>
+    pub fn get_portal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_portal_arn()
+    }
     /// <p>The name of the web portal. This is not visible to users who log into the web portal.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
@@ -127,6 +135,10 @@ impl UpdatePortalFluentBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_display_name(input);
         self
+    }
+    /// <p>The name of the web portal. This is not visible to users who log into the web portal.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_display_name()
     }
     /// <p>The type of authentication integration points used when signing into the web portal. Defaults to <code>Standard</code>.</p>
     /// <p> <code>Standard</code> web portals are authenticated directly through your identity provider. You need to call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group access to your web portal is controlled through your identity provider.</p>
@@ -144,5 +156,13 @@ impl UpdatePortalFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_authentication_type(input);
         self
+    }
+    /// <p>The type of authentication integration points used when signing into the web portal. Defaults to <code>Standard</code>.</p>
+    /// <p> <code>Standard</code> web portals are authenticated directly through your identity provider. You need to call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group access to your web portal is controlled through your identity provider.</p>
+    /// <p> <code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
+    pub fn get_authentication_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthenticationType> {
+        self.inner.get_authentication_type()
     }
 }

@@ -62,6 +62,10 @@ impl VpnStaticRouteBuilder {
         self.destination_cidr_block = input;
         self
     }
+    /// <p>The CIDR block associated with the local subnet of the customer data center.</p>
+    pub fn get_destination_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_cidr_block
+    }
     /// <p>Indicates how the routes were provided.</p>
     pub fn source(mut self, input: crate::types::VpnStaticRouteSource) -> Self {
         self.source = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl VpnStaticRouteBuilder {
         self.source = input;
         self
     }
+    /// <p>Indicates how the routes were provided.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::VpnStaticRouteSource> {
+        &self.source
+    }
     /// <p>The current state of the static route.</p>
     pub fn state(mut self, input: crate::types::VpnState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl VpnStaticRouteBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::VpnState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The current state of the static route.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::VpnState> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`VpnStaticRoute`](crate::types::VpnStaticRoute).
     pub fn build(self) -> crate::types::VpnStaticRoute {

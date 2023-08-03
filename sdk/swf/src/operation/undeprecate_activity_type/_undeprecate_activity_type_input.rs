@@ -49,6 +49,10 @@ impl UndeprecateActivityTypeInputBuilder {
         self.domain = input;
         self
     }
+    /// <p>The name of the domain of the deprecated activity type.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
+    }
     /// <p>The activity type to undeprecate.</p>
     pub fn activity_type(mut self, input: crate::types::ActivityType) -> Self {
         self.activity_type = ::std::option::Option::Some(input);
@@ -61,6 +65,10 @@ impl UndeprecateActivityTypeInputBuilder {
     ) -> Self {
         self.activity_type = input;
         self
+    }
+    /// <p>The activity type to undeprecate.</p>
+    pub fn get_activity_type(&self) -> &::std::option::Option<crate::types::ActivityType> {
+        &self.activity_type
     }
     /// Consumes the builder and constructs a [`UndeprecateActivityTypeInput`](crate::operation::undeprecate_activity_type::UndeprecateActivityTypeInput).
     pub fn build(

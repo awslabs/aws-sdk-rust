@@ -54,6 +54,10 @@ impl MetricDimensionBuilder {
         self.dimension_name = input;
         self
     }
+    /// <p>A unique identifier for the dimension.</p>
+    pub fn get_dimension_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dimension_name
+    }
     /// <p>Defines how the <code>dimensionValues</code> of a dimension are interpreted. For example, for dimension type TOPIC_FILTER, the <code>IN</code> operator, a message will be counted only if its topic matches one of the topic filters. With <code>NOT_IN</code> operator, a message will be counted only if it doesn't match any of the topic filters. The operator is optional: if it's not provided (is <code>null</code>), it will be interpreted as <code>IN</code>.</p>
     pub fn operator(mut self, input: crate::types::DimensionValueOperator) -> Self {
         self.operator = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl MetricDimensionBuilder {
     ) -> Self {
         self.operator = input;
         self
+    }
+    /// <p>Defines how the <code>dimensionValues</code> of a dimension are interpreted. For example, for dimension type TOPIC_FILTER, the <code>IN</code> operator, a message will be counted only if its topic matches one of the topic filters. With <code>NOT_IN</code> operator, a message will be counted only if it doesn't match any of the topic filters. The operator is optional: if it's not provided (is <code>null</code>), it will be interpreted as <code>IN</code>.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::DimensionValueOperator> {
+        &self.operator
     }
     /// Consumes the builder and constructs a [`MetricDimension`](crate::types::MetricDimension).
     pub fn build(self) -> crate::types::MetricDimension {

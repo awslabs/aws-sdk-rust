@@ -67,6 +67,10 @@ impl AtigDataBuilder {
         self.first_seen = input;
         self
     }
+    /// <p>The date and time this vulnerability was first observed.</p>
+    pub fn get_first_seen(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.first_seen
+    }
     /// <p>The date and time this vulnerability was last observed.</p>
     pub fn last_seen(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_seen = ::std::option::Option::Some(input);
@@ -79,6 +83,10 @@ impl AtigDataBuilder {
     ) -> Self {
         self.last_seen = input;
         self
+    }
+    /// <p>The date and time this vulnerability was last observed.</p>
+    pub fn get_last_seen(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_seen
     }
     /// Appends an item to `targets`.
     ///
@@ -99,6 +107,10 @@ impl AtigDataBuilder {
         self.targets = input;
         self
     }
+    /// <p>The commercial sectors this vulnerability targets.</p>
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.targets
+    }
     /// Appends an item to `ttps`.
     ///
     /// To override the contents of this collection use [`set_ttps`](Self::set_ttps).
@@ -117,6 +129,10 @@ impl AtigDataBuilder {
     ) -> Self {
         self.ttps = input;
         self
+    }
+    /// <p>The <a href="https://attack.mitre.org/">MITRE ATT&amp;CK</a> tactics, techniques, and procedures (TTPs) associated with vulnerability.</p>
+    pub fn get_ttps(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ttps
     }
     /// Consumes the builder and constructs a [`AtigData`](crate::types::AtigData).
     pub fn build(self) -> crate::types::AtigData {

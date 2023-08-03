@@ -126,6 +126,10 @@ impl DistributionBuilder {
         self.id = input;
         self
     }
+    /// <p>The distribution's identifier. For example: <code>E1U5RQF7T870K0</code>.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The distribution's Amazon Resource Name (ARN).</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -136,6 +140,10 @@ impl DistributionBuilder {
         self.arn = input;
         self
     }
+    /// <p>The distribution's Amazon Resource Name (ARN).</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The distribution's status. When the status is <code>Deployed</code>, the distribution's information is fully propagated to all CloudFront edge locations.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -145,6 +153,10 @@ impl DistributionBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The distribution's status. When the status is <code>Deployed</code>, the distribution's information is fully propagated to all CloudFront edge locations.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>The date and time when the distribution was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -159,6 +171,10 @@ impl DistributionBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p>The date and time when the distribution was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     /// <p>The number of invalidation batches currently in progress.</p>
     pub fn in_progress_invalidation_batches(mut self, input: i32) -> Self {
         self.in_progress_invalidation_batches = ::std::option::Option::Some(input);
@@ -172,6 +188,10 @@ impl DistributionBuilder {
         self.in_progress_invalidation_batches = input;
         self
     }
+    /// <p>The number of invalidation batches currently in progress.</p>
+    pub fn get_in_progress_invalidation_batches(&self) -> &::std::option::Option<i32> {
+        &self.in_progress_invalidation_batches
+    }
     /// <p>The distribution's CloudFront domain name. For example: <code>d111111abcdef8.cloudfront.net</code>.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
@@ -181,6 +201,10 @@ impl DistributionBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
+    }
+    /// <p>The distribution's CloudFront domain name. For example: <code>d111111abcdef8.cloudfront.net</code>.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// <important>
     /// <p>We recommend using <code>TrustedKeyGroups</code> instead of <code>TrustedSigners</code>.</p>
@@ -201,6 +225,15 @@ impl DistributionBuilder {
         self.active_trusted_signers = input;
         self
     }
+    /// <important>
+    /// <p>We recommend using <code>TrustedKeyGroups</code> instead of <code>TrustedSigners</code>.</p>
+    /// </important>
+    /// <p>This field contains a list of Amazon Web Services account IDs and the active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs or signed cookies.</p>
+    pub fn get_active_trusted_signers(
+        &self,
+    ) -> &::std::option::Option<crate::types::ActiveTrustedSigners> {
+        &self.active_trusted_signers
+    }
     /// <p>This field contains a list of key groups and the public keys in each key group that CloudFront can use to verify the signatures of signed URLs or signed cookies.</p>
     pub fn active_trusted_key_groups(
         mut self,
@@ -217,6 +250,12 @@ impl DistributionBuilder {
         self.active_trusted_key_groups = input;
         self
     }
+    /// <p>This field contains a list of key groups and the public keys in each key group that CloudFront can use to verify the signatures of signed URLs or signed cookies.</p>
+    pub fn get_active_trusted_key_groups(
+        &self,
+    ) -> &::std::option::Option<crate::types::ActiveTrustedKeyGroups> {
+        &self.active_trusted_key_groups
+    }
     /// <p>The distribution's configuration.</p>
     pub fn distribution_config(mut self, input: crate::types::DistributionConfig) -> Self {
         self.distribution_config = ::std::option::Option::Some(input);
@@ -229,6 +268,12 @@ impl DistributionBuilder {
     ) -> Self {
         self.distribution_config = input;
         self
+    }
+    /// <p>The distribution's configuration.</p>
+    pub fn get_distribution_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::DistributionConfig> {
+        &self.distribution_config
     }
     /// Appends an item to `alias_icp_recordals`.
     ///
@@ -250,6 +295,13 @@ impl DistributionBuilder {
     ) -> Self {
         self.alias_icp_recordals = input;
         self
+    }
+    /// <p>Amazon Web Services services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve content publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with distributions.</p>
+    /// <p>For more information about ICP recordals, see <a href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html"> Signup, Accounts, and Credentials</a> in <i>Getting Started with Amazon Web Services services in China</i>.</p>
+    pub fn get_alias_icp_recordals(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AliasIcpRecordal>> {
+        &self.alias_icp_recordals
     }
     /// Consumes the builder and constructs a [`Distribution`](crate::types::Distribution).
     pub fn build(self) -> crate::types::Distribution {

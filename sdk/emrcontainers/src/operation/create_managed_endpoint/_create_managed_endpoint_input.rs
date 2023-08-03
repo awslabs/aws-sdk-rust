@@ -121,6 +121,10 @@ impl CreateManagedEndpointInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the managed endpoint.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The ID of the virtual cluster for which a managed endpoint is created.</p>
     pub fn virtual_cluster_id(
         mut self,
@@ -137,6 +141,10 @@ impl CreateManagedEndpointInputBuilder {
         self.virtual_cluster_id = input;
         self
     }
+    /// <p>The ID of the virtual cluster for which a managed endpoint is created.</p>
+    pub fn get_virtual_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_cluster_id
+    }
     /// <p>The type of the managed endpoint.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -146,6 +154,10 @@ impl CreateManagedEndpointInputBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the managed endpoint.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// <p>The Amazon EMR release version.</p>
     pub fn release_label(
@@ -163,6 +175,10 @@ impl CreateManagedEndpointInputBuilder {
         self.release_label = input;
         self
     }
+    /// <p>The Amazon EMR release version.</p>
+    pub fn get_release_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.release_label
+    }
     /// <p>The ARN of the execution role.</p>
     pub fn execution_role_arn(
         mut self,
@@ -178,6 +194,10 @@ impl CreateManagedEndpointInputBuilder {
     ) -> Self {
         self.execution_role_arn = input;
         self
+    }
+    /// <p>The ARN of the execution role.</p>
+    pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_role_arn
     }
     /// <p>The certificate ARN provided by users for the managed endpoint. This field is under deprecation and will be removed in future releases.</p>
     #[deprecated(
@@ -201,6 +221,13 @@ impl CreateManagedEndpointInputBuilder {
         self.certificate_arn = input;
         self
     }
+    /// <p>The certificate ARN provided by users for the managed endpoint. This field is under deprecation and will be removed in future releases.</p>
+    #[deprecated(
+        note = "Customer provided certificate-arn is deprecated and would be removed in future."
+    )]
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_arn
+    }
     /// <p>The configuration settings that will be used to override existing configurations.</p>
     pub fn configuration_overrides(mut self, input: crate::types::ConfigurationOverrides) -> Self {
         self.configuration_overrides = ::std::option::Option::Some(input);
@@ -214,6 +241,12 @@ impl CreateManagedEndpointInputBuilder {
         self.configuration_overrides = input;
         self
     }
+    /// <p>The configuration settings that will be used to override existing configurations.</p>
+    pub fn get_configuration_overrides(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfigurationOverrides> {
+        &self.configuration_overrides
+    }
     /// <p>The client idempotency token for this create call.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -223,6 +256,10 @@ impl CreateManagedEndpointInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>The client idempotency token for this create call.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -248,6 +285,14 @@ impl CreateManagedEndpointInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags of the managed endpoint. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateManagedEndpointInput`](crate::operation::create_managed_endpoint::CreateManagedEndpointInput).
     pub fn build(

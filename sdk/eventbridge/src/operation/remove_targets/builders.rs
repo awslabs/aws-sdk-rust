@@ -40,6 +40,12 @@ impl RemoveTargetsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RemoveTargets as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::remove_targets::builders::RemoveTargetsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -122,6 +128,10 @@ impl RemoveTargetsFluentBuilder {
         self.inner = self.inner.set_rule(input);
         self
     }
+    /// <p>The name of the rule.</p>
+    pub fn get_rule(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rule()
+    }
     /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
     pub fn event_bus_name(
         mut self,
@@ -137,6 +147,10 @@ impl RemoveTargetsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_event_bus_name(input);
         self
+    }
+    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
+    pub fn get_event_bus_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_bus_name()
     }
     /// Appends an item to `Ids`.
     ///
@@ -155,6 +169,10 @@ impl RemoveTargetsFluentBuilder {
         self.inner = self.inner.set_ids(input);
         self
     }
+    /// <p>The IDs of the targets to remove from the rule.</p>
+    pub fn get_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_ids()
+    }
     /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify <code>Force</code> as <code>True</code> to remove targets. This parameter is ignored for rules that are not managed rules. You can check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code> field of the response.</p>
     pub fn force(mut self, input: bool) -> Self {
         self.inner = self.inner.force(input);
@@ -164,5 +182,9 @@ impl RemoveTargetsFluentBuilder {
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force(input);
         self
+    }
+    /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify <code>Force</code> as <code>True</code> to remove targets. This parameter is ignored for rules that are not managed rules. You can check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code> field of the response.</p>
+    pub fn get_force(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force()
     }
 }

@@ -53,6 +53,11 @@ impl RevokeDbSecurityGroupIngressOutputBuilder {
         self.db_security_group = input;
         self
     }
+    /// <p>Contains the details for an Amazon RDS DB security group.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBSecurityGroups</code> action.</p>
+    pub fn get_db_security_group(&self) -> &::std::option::Option<crate::types::DbSecurityGroup> {
+        &self.db_security_group
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

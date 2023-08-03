@@ -56,6 +56,10 @@ impl IpRangeBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the IP range, for example, "authorized".</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The IP range in Classless Inter-Domain Routing (CIDR) notation.</p>
     pub fn cidrip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidrip = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl IpRangeBuilder {
     pub fn set_cidrip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cidrip = input;
         self
+    }
+    /// <p>The IP range in Classless Inter-Domain Routing (CIDR) notation.</p>
+    pub fn get_cidrip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidrip
     }
     /// Appends an item to `tags`.
     ///
@@ -84,6 +92,10 @@ impl IpRangeBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The list of tags for the IP range.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`IpRange`](crate::types::IpRange).
     pub fn build(self) -> crate::types::IpRange {

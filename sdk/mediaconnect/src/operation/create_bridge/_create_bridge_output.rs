@@ -46,6 +46,10 @@ impl CreateBridgeOutputBuilder {
         self.bridge = input;
         self
     }
+    /// A Bridge is the connection between your datacenter's Instances and the AWS cloud. A bridge can be used to send video from the AWS cloud to your datacenter or from your datacenter to the AWS cloud.
+    pub fn get_bridge(&self) -> &::std::option::Option<crate::types::Bridge> {
+        &self.bridge
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

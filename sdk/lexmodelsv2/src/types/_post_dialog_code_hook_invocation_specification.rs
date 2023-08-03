@@ -113,6 +113,12 @@ impl PostDialogCodeHookInvocationSpecificationBuilder {
         self.success_response = input;
         self
     }
+    /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+    pub fn get_success_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResponseSpecification> {
+        &self.success_response
+    }
     /// <p>Specifics the next step the bot runs after the dialog code hook finishes successfully. </p>
     pub fn success_next_step(mut self, input: crate::types::DialogState) -> Self {
         self.success_next_step = ::std::option::Option::Some(input);
@@ -125,6 +131,10 @@ impl PostDialogCodeHookInvocationSpecificationBuilder {
     ) -> Self {
         self.success_next_step = input;
         self
+    }
+    /// <p>Specifics the next step the bot runs after the dialog code hook finishes successfully. </p>
+    pub fn get_success_next_step(&self) -> &::std::option::Option<crate::types::DialogState> {
+        &self.success_next_step
     }
     /// <p>A list of conditional branches to evaluate after the dialog code hook finishes successfully.</p>
     pub fn success_conditional(mut self, input: crate::types::ConditionalSpecification) -> Self {
@@ -139,6 +149,12 @@ impl PostDialogCodeHookInvocationSpecificationBuilder {
         self.success_conditional = input;
         self
     }
+    /// <p>A list of conditional branches to evaluate after the dialog code hook finishes successfully.</p>
+    pub fn get_success_conditional(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConditionalSpecification> {
+        &self.success_conditional
+    }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
     pub fn failure_response(mut self, input: crate::types::ResponseSpecification) -> Self {
         self.failure_response = ::std::option::Option::Some(input);
@@ -151,6 +167,12 @@ impl PostDialogCodeHookInvocationSpecificationBuilder {
     ) -> Self {
         self.failure_response = input;
         self
+    }
+    /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+    pub fn get_failure_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResponseSpecification> {
+        &self.failure_response
     }
     /// <p>Specifies the next step the bot runs after the dialog code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
     pub fn failure_next_step(mut self, input: crate::types::DialogState) -> Self {
@@ -165,6 +187,10 @@ impl PostDialogCodeHookInvocationSpecificationBuilder {
         self.failure_next_step = input;
         self
     }
+    /// <p>Specifies the next step the bot runs after the dialog code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
+    pub fn get_failure_next_step(&self) -> &::std::option::Option<crate::types::DialogState> {
+        &self.failure_next_step
+    }
     /// <p>A list of conditional branches to evaluate after the dialog code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
     pub fn failure_conditional(mut self, input: crate::types::ConditionalSpecification) -> Self {
         self.failure_conditional = ::std::option::Option::Some(input);
@@ -177,6 +203,12 @@ impl PostDialogCodeHookInvocationSpecificationBuilder {
     ) -> Self {
         self.failure_conditional = input;
         self
+    }
+    /// <p>A list of conditional branches to evaluate after the dialog code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
+    pub fn get_failure_conditional(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConditionalSpecification> {
+        &self.failure_conditional
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
     pub fn timeout_response(mut self, input: crate::types::ResponseSpecification) -> Self {
@@ -191,6 +223,12 @@ impl PostDialogCodeHookInvocationSpecificationBuilder {
         self.timeout_response = input;
         self
     }
+    /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+    pub fn get_timeout_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResponseSpecification> {
+        &self.timeout_response
+    }
     /// <p>Specifies the next step that the bot runs when the code hook times out.</p>
     pub fn timeout_next_step(mut self, input: crate::types::DialogState) -> Self {
         self.timeout_next_step = ::std::option::Option::Some(input);
@@ -204,6 +242,10 @@ impl PostDialogCodeHookInvocationSpecificationBuilder {
         self.timeout_next_step = input;
         self
     }
+    /// <p>Specifies the next step that the bot runs when the code hook times out.</p>
+    pub fn get_timeout_next_step(&self) -> &::std::option::Option<crate::types::DialogState> {
+        &self.timeout_next_step
+    }
     /// <p>A list of conditional branches to evaluate if the code hook times out.</p>
     pub fn timeout_conditional(mut self, input: crate::types::ConditionalSpecification) -> Self {
         self.timeout_conditional = ::std::option::Option::Some(input);
@@ -216,6 +258,12 @@ impl PostDialogCodeHookInvocationSpecificationBuilder {
     ) -> Self {
         self.timeout_conditional = input;
         self
+    }
+    /// <p>A list of conditional branches to evaluate if the code hook times out.</p>
+    pub fn get_timeout_conditional(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConditionalSpecification> {
+        &self.timeout_conditional
     }
     /// Consumes the builder and constructs a [`PostDialogCodeHookInvocationSpecification`](crate::types::PostDialogCodeHookInvocationSpecification).
     pub fn build(self) -> crate::types::PostDialogCodeHookInvocationSpecification {

@@ -245,6 +245,12 @@ impl DashIsoGroupSettingsBuilder {
         self.additional_manifests = input;
         self
     }
+    /// By default, the service creates one .mpd DASH manifest for each DASH ISO output group in your job. This default manifest references every output in the output group. To create additional DASH manifests that reference a subset of the outputs in the output group, specify a list of them here.
+    pub fn get_additional_manifests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DashAdditionalManifest>> {
+        &self.additional_manifests
+    }
     /// Use this setting only when your audio codec is a Dolby one (AC3, EAC3, or Atmos) and your downstream workflow requires that your DASH manifest use the Dolby channel configuration tag, rather than the MPEG one. For example, you might need to use this to make dynamic ad insertion work. Specify which audio channel configuration scheme ID URI MediaConvert writes in your DASH manifest. Keep the default value, MPEG channel configuration, to have MediaConvert write this: urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose Dolby channel configuration to have MediaConvert write this instead: tag:dolby.com,2014:dash:audio_channel_configuration:2011.
     pub fn audio_channel_config_scheme_id_uri(
         mut self,
@@ -261,6 +267,12 @@ impl DashIsoGroupSettingsBuilder {
         self.audio_channel_config_scheme_id_uri = input;
         self
     }
+    /// Use this setting only when your audio codec is a Dolby one (AC3, EAC3, or Atmos) and your downstream workflow requires that your DASH manifest use the Dolby channel configuration tag, rather than the MPEG one. For example, you might need to use this to make dynamic ad insertion work. Specify which audio channel configuration scheme ID URI MediaConvert writes in your DASH manifest. Keep the default value, MPEG channel configuration, to have MediaConvert write this: urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose Dolby channel configuration to have MediaConvert write this instead: tag:dolby.com,2014:dash:audio_channel_configuration:2011.
+    pub fn get_audio_channel_config_scheme_id_uri(
+        &self,
+    ) -> &::std::option::Option<crate::types::DashIsoGroupAudioChannelConfigSchemeIdUri> {
+        &self.audio_channel_config_scheme_id_uri
+    }
     /// A partial URI prefix that will be put in the manifest (.mpd) file at the top level BaseURL element. Can be used if streams are delivered from a different URL than the manifest file.
     pub fn base_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.base_url = ::std::option::Option::Some(input.into());
@@ -270,6 +282,10 @@ impl DashIsoGroupSettingsBuilder {
     pub fn set_base_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.base_url = input;
         self
+    }
+    /// A partial URI prefix that will be put in the manifest (.mpd) file at the top level BaseURL element. Can be used if streams are delivered from a different URL than the manifest file.
+    pub fn get_base_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.base_url
     }
     /// Specify how MediaConvert writes SegmentTimeline in your output DASH manifest. To write a SegmentTimeline in each video Representation: Keep the default value, Basic. To write a common SegmentTimeline in the video AdaptationSet: Choose Compact. Note that MediaConvert will still write a SegmentTimeline in any Representation that does not share a common timeline. To write a video AdaptationSet for each different output framerate, and a common SegmentTimeline in each AdaptationSet: Choose Distinct.
     pub fn dash_manifest_style(mut self, input: crate::types::DashManifestStyle) -> Self {
@@ -284,6 +300,12 @@ impl DashIsoGroupSettingsBuilder {
         self.dash_manifest_style = input;
         self
     }
+    /// Specify how MediaConvert writes SegmentTimeline in your output DASH manifest. To write a SegmentTimeline in each video Representation: Keep the default value, Basic. To write a common SegmentTimeline in the video AdaptationSet: Choose Compact. Note that MediaConvert will still write a SegmentTimeline in any Representation that does not share a common timeline. To write a video AdaptationSet for each different output framerate, and a common SegmentTimeline in each AdaptationSet: Choose Distinct.
+    pub fn get_dash_manifest_style(
+        &self,
+    ) -> &::std::option::Option<crate::types::DashManifestStyle> {
+        &self.dash_manifest_style
+    }
     /// Use Destination to specify the S3 output location and the output filename base. Destination accepts format identifiers. If you do not specify the base filename in the URI, the service will use the filename of the input file. If your job has multiple inputs, the service uses the filename of the first input file.
     pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination = ::std::option::Option::Some(input.into());
@@ -293,6 +315,10 @@ impl DashIsoGroupSettingsBuilder {
     pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination = input;
         self
+    }
+    /// Use Destination to specify the S3 output location and the output filename base. Destination accepts format identifiers. If you do not specify the base filename in the URI, the service will use the filename of the input file. If your job has multiple inputs, the service uses the filename of the first input file.
+    pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination
     }
     /// Settings associated with the destination. Will vary based on the type of destination
     pub fn destination_settings(mut self, input: crate::types::DestinationSettings) -> Self {
@@ -307,6 +333,12 @@ impl DashIsoGroupSettingsBuilder {
         self.destination_settings = input;
         self
     }
+    /// Settings associated with the destination. Will vary based on the type of destination
+    pub fn get_destination_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::DestinationSettings> {
+        &self.destination_settings
+    }
     /// DRM settings.
     pub fn encryption(mut self, input: crate::types::DashIsoEncryptionSettings) -> Self {
         self.encryption = ::std::option::Option::Some(input);
@@ -320,6 +352,12 @@ impl DashIsoGroupSettingsBuilder {
         self.encryption = input;
         self
     }
+    /// DRM settings.
+    pub fn get_encryption(
+        &self,
+    ) -> &::std::option::Option<crate::types::DashIsoEncryptionSettings> {
+        &self.encryption
+    }
     /// Length of fragments to generate (in seconds). Fragment length must be compatible with GOP size and Framerate. Note that fragments will end on the next keyframe after this number of seconds, so actual fragment length may be longer. When Emit Single File is checked, the fragmentation is internal to a single output file and it does not cause the creation of many output files as in other output types.
     pub fn fragment_length(mut self, input: i32) -> Self {
         self.fragment_length = ::std::option::Option::Some(input);
@@ -329,6 +367,10 @@ impl DashIsoGroupSettingsBuilder {
     pub fn set_fragment_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.fragment_length = input;
         self
+    }
+    /// Length of fragments to generate (in seconds). Fragment length must be compatible with GOP size and Framerate. Note that fragments will end on the next keyframe after this number of seconds, so actual fragment length may be longer. When Emit Single File is checked, the fragmentation is internal to a single output file and it does not cause the creation of many output files as in other output types.
+    pub fn get_fragment_length(&self) -> &::std::option::Option<i32> {
+        &self.fragment_length
     }
     /// Supports HbbTV specification as indicated
     pub fn hbbtv_compliance(mut self, input: crate::types::DashIsoHbbtvCompliance) -> Self {
@@ -342,6 +384,12 @@ impl DashIsoGroupSettingsBuilder {
     ) -> Self {
         self.hbbtv_compliance = input;
         self
+    }
+    /// Supports HbbTV specification as indicated
+    pub fn get_hbbtv_compliance(
+        &self,
+    ) -> &::std::option::Option<crate::types::DashIsoHbbtvCompliance> {
+        &self.hbbtv_compliance
     }
     /// Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not generate any images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to generate tiled thumbnails and full-resolution images of single frames. MediaConvert adds an entry in the .mpd manifest for each set of images that you generate. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
     pub fn image_based_trick_play(
@@ -359,6 +407,12 @@ impl DashIsoGroupSettingsBuilder {
         self.image_based_trick_play = input;
         self
     }
+    /// Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not generate any images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to generate tiled thumbnails and full-resolution images of single frames. MediaConvert adds an entry in the .mpd manifest for each set of images that you generate. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+    pub fn get_image_based_trick_play(
+        &self,
+    ) -> &::std::option::Option<crate::types::DashIsoImageBasedTrickPlay> {
+        &self.image_based_trick_play
+    }
     /// Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
     pub fn image_based_trick_play_settings(
         mut self,
@@ -375,6 +429,12 @@ impl DashIsoGroupSettingsBuilder {
         self.image_based_trick_play_settings = input;
         self
     }
+    /// Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+    pub fn get_image_based_trick_play_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::DashIsoImageBasedTrickPlaySettings> {
+        &self.image_based_trick_play_settings
+    }
     /// Minimum time of initially buffered media that is needed to ensure smooth playout.
     pub fn min_buffer_time(mut self, input: i32) -> Self {
         self.min_buffer_time = ::std::option::Option::Some(input);
@@ -385,6 +445,10 @@ impl DashIsoGroupSettingsBuilder {
         self.min_buffer_time = input;
         self
     }
+    /// Minimum time of initially buffered media that is needed to ensure smooth playout.
+    pub fn get_min_buffer_time(&self) -> &::std::option::Option<i32> {
+        &self.min_buffer_time
+    }
     /// Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices play back the end of your video asset. If you know that player devices are hanging on the final segment of your video because the length of your final segment is too short, use this setting to specify a minimum final segment length, in seconds. Choose a value that is greater than or equal to 1 and less than your segment length. When you specify a value for this setting, the encoder will combine any final segment that is shorter than the length that you specify with the previous segment. For example, your segment length is 3 seconds and your final segment is .5 seconds without a minimum final segment length; when you set the minimum final segment length to 1, your final segment is 3.5 seconds.
     pub fn min_final_segment_length(mut self, input: f64) -> Self {
         self.min_final_segment_length = ::std::option::Option::Some(input);
@@ -394,6 +458,10 @@ impl DashIsoGroupSettingsBuilder {
     pub fn set_min_final_segment_length(mut self, input: ::std::option::Option<f64>) -> Self {
         self.min_final_segment_length = input;
         self
+    }
+    /// Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices play back the end of your video asset. If you know that player devices are hanging on the final segment of your video because the length of your final segment is too short, use this setting to specify a minimum final segment length, in seconds. Choose a value that is greater than or equal to 1 and less than your segment length. When you specify a value for this setting, the encoder will combine any final segment that is shorter than the length that you specify with the previous segment. For example, your segment length is 3 seconds and your final segment is .5 seconds without a minimum final segment length; when you set the minimum final segment length to 1, your final segment is 3.5 seconds.
+    pub fn get_min_final_segment_length(&self) -> &::std::option::Option<f64> {
+        &self.min_final_segment_length
     }
     /// Specify how the value for bandwidth is determined for each video Representation in your output MPD manifest. We recommend that you choose a MPD manifest bandwidth type that is compatible with your downstream player configuration. Max: Use the same value that you specify for Max bitrate in the video output, in bits per second. Average: Use the calculated average bitrate of the encoded video output, in bits per second.
     pub fn mpd_manifest_bandwidth_type(
@@ -411,6 +479,12 @@ impl DashIsoGroupSettingsBuilder {
         self.mpd_manifest_bandwidth_type = input;
         self
     }
+    /// Specify how the value for bandwidth is determined for each video Representation in your output MPD manifest. We recommend that you choose a MPD manifest bandwidth type that is compatible with your downstream player configuration. Max: Use the same value that you specify for Max bitrate in the video output, in bits per second. Average: Use the calculated average bitrate of the encoded video output, in bits per second.
+    pub fn get_mpd_manifest_bandwidth_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::DashIsoMpdManifestBandwidthType> {
+        &self.mpd_manifest_bandwidth_type
+    }
     /// Specify whether your DASH profile is on-demand or main. When you choose Main profile, the service signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand, the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output group setting Segment control to Single file.
     pub fn mpd_profile(mut self, input: crate::types::DashIsoMpdProfile) -> Self {
         self.mpd_profile = ::std::option::Option::Some(input);
@@ -423,6 +497,10 @@ impl DashIsoGroupSettingsBuilder {
     ) -> Self {
         self.mpd_profile = input;
         self
+    }
+    /// Specify whether your DASH profile is on-demand or main. When you choose Main profile, the service signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand, the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output group setting Segment control to Single file.
+    pub fn get_mpd_profile(&self) -> &::std::option::Option<crate::types::DashIsoMpdProfile> {
+        &self.mpd_profile
     }
     /// Use this setting only when your output video stream has B-frames, which causes the initial presentation time stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles PTS when writing time stamps in output DASH manifests. Choose Match initial PTS when you want MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based to have MediaConvert ignore the initial PTS in the video stream and instead write the initial time stamp as zero in the manifest. For outputs that don't have B-frames, the time stamps in your DASH manifests start at zero regardless of your choice here.
     pub fn pts_offset_handling_for_b_frames(
@@ -440,6 +518,12 @@ impl DashIsoGroupSettingsBuilder {
         self.pts_offset_handling_for_b_frames = input;
         self
     }
+    /// Use this setting only when your output video stream has B-frames, which causes the initial presentation time stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles PTS when writing time stamps in output DASH manifests. Choose Match initial PTS when you want MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based to have MediaConvert ignore the initial PTS in the video stream and instead write the initial time stamp as zero in the manifest. For outputs that don't have B-frames, the time stamps in your DASH manifests start at zero regardless of your choice here.
+    pub fn get_pts_offset_handling_for_b_frames(
+        &self,
+    ) -> &::std::option::Option<crate::types::DashIsoPtsOffsetHandlingForBFrames> {
+        &self.pts_offset_handling_for_b_frames
+    }
     /// When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the Fragment Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created.
     pub fn segment_control(mut self, input: crate::types::DashIsoSegmentControl) -> Self {
         self.segment_control = ::std::option::Option::Some(input);
@@ -453,6 +537,12 @@ impl DashIsoGroupSettingsBuilder {
         self.segment_control = input;
         self
     }
+    /// When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the Fragment Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created.
+    pub fn get_segment_control(
+        &self,
+    ) -> &::std::option::Option<crate::types::DashIsoSegmentControl> {
+        &self.segment_control
+    }
     /// Specify the length, in whole seconds, of each segment. When you don't specify a value, MediaConvert defaults to 30. Related settings: Use Segment length control to specify whether the encoder enforces this value strictly. Use Segment control to specify whether MediaConvert creates separate segment files or one content file that has metadata to mark the segment boundaries.
     pub fn segment_length(mut self, input: i32) -> Self {
         self.segment_length = ::std::option::Option::Some(input);
@@ -462,6 +552,10 @@ impl DashIsoGroupSettingsBuilder {
     pub fn set_segment_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.segment_length = input;
         self
+    }
+    /// Specify the length, in whole seconds, of each segment. When you don't specify a value, MediaConvert defaults to 30. Related settings: Use Segment length control to specify whether the encoder enforces this value strictly. Use Segment control to specify whether MediaConvert creates separate segment files or one content file that has metadata to mark the segment boundaries.
+    pub fn get_segment_length(&self) -> &::std::option::Option<i32> {
+        &self.segment_length
     }
     /// Specify how you want MediaConvert to determine the segment length. Choose Exact to have the encoder use the exact length that you specify with the setting Segment length. This might result in extra I-frames. Choose Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
     pub fn segment_length_control(
@@ -479,6 +573,12 @@ impl DashIsoGroupSettingsBuilder {
         self.segment_length_control = input;
         self
     }
+    /// Specify how you want MediaConvert to determine the segment length. Choose Exact to have the encoder use the exact length that you specify with the setting Segment length. This might result in extra I-frames. Choose Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
+    pub fn get_segment_length_control(
+        &self,
+    ) -> &::std::option::Option<crate::types::DashIsoSegmentLengthControl> {
+        &self.segment_length_control
+    }
     /// Specify the video sample composition time offset mode in the output fMP4 TRUN box. For wider player compatibility, set Video composition offsets to Unsigned or leave blank. The earliest presentation time may be greater than zero, and sample composition time offsets will increment using unsigned integers. For strict fMP4 video and audio timing, set Video composition offsets to Signed. The earliest presentation time will be equal to zero, and sample composition time offsets will increment using signed integers.
     pub fn video_composition_offsets(
         mut self,
@@ -495,6 +595,12 @@ impl DashIsoGroupSettingsBuilder {
         self.video_composition_offsets = input;
         self
     }
+    /// Specify the video sample composition time offset mode in the output fMP4 TRUN box. For wider player compatibility, set Video composition offsets to Unsigned or leave blank. The earliest presentation time may be greater than zero, and sample composition time offsets will increment using unsigned integers. For strict fMP4 video and audio timing, set Video composition offsets to Signed. The earliest presentation time will be equal to zero, and sample composition time offsets will increment using signed integers.
+    pub fn get_video_composition_offsets(
+        &self,
+    ) -> &::std::option::Option<crate::types::DashIsoVideoCompositionOffsets> {
+        &self.video_composition_offsets
+    }
     /// If you get an HTTP error in the 400 range when you play back your DASH output, enable this setting and run your transcoding job again. When you enable this setting, the service writes precise segment durations in the DASH manifest. The segment duration information appears inside the SegmentTimeline element, inside SegmentTemplate at the Representation level. When you don't enable this setting, the service writes approximate segment durations in your DASH manifest.
     pub fn write_segment_timeline_in_representation(
         mut self,
@@ -510,6 +616,12 @@ impl DashIsoGroupSettingsBuilder {
     ) -> Self {
         self.write_segment_timeline_in_representation = input;
         self
+    }
+    /// If you get an HTTP error in the 400 range when you play back your DASH output, enable this setting and run your transcoding job again. When you enable this setting, the service writes precise segment durations in the DASH manifest. The segment duration information appears inside the SegmentTimeline element, inside SegmentTemplate at the Representation level. When you don't enable this setting, the service writes approximate segment durations in your DASH manifest.
+    pub fn get_write_segment_timeline_in_representation(
+        &self,
+    ) -> &::std::option::Option<crate::types::DashIsoWriteSegmentTimelineInRepresentation> {
+        &self.write_segment_timeline_in_representation
     }
     /// Consumes the builder and constructs a [`DashIsoGroupSettings`](crate::types::DashIsoGroupSettings).
     pub fn build(self) -> crate::types::DashIsoGroupSettings {

@@ -43,6 +43,10 @@ impl TsvOptionsBuilder {
         self.read_options = input;
         self
     }
+    /// <p>The file's read options.</p>
+    pub fn get_read_options(&self) -> &::std::option::Option<crate::types::ReadOptions> {
+        &self.read_options
+    }
     /// Consumes the builder and constructs a [`TsvOptions`](crate::types::TsvOptions).
     pub fn build(self) -> crate::types::TsvOptions {
         crate::types::TsvOptions {

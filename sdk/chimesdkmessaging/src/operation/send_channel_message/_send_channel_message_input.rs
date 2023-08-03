@@ -161,6 +161,10 @@ impl SendChannelMessageInputBuilder {
         self.channel_arn = input;
         self
     }
+    /// <p>The ARN of the channel.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
+    }
     /// <p>The content of the channel message.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
@@ -170,6 +174,10 @@ impl SendChannelMessageInputBuilder {
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
+    }
+    /// <p>The content of the channel message.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
     }
     /// <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
     /// <p> <code>STANDARD</code> messages can be up to 4KB in size and contain metadata. Metadata is arbitrary, and you can use it in a variety of ways, such as containing a link to an attachment.</p>
@@ -188,6 +196,12 @@ impl SendChannelMessageInputBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
+    /// <p> <code>STANDARD</code> messages can be up to 4KB in size and contain metadata. Metadata is arbitrary, and you can use it in a variety of ways, such as containing a link to an attachment.</p>
+    /// <p> <code>CONTROL</code> messages are limited to 30 bytes and do not contain metadata.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ChannelMessageType> {
+        &self.r#type
+    }
     /// <p>Boolean that controls whether the message is persisted on the back end. Required.</p>
     pub fn persistence(mut self, input: crate::types::ChannelMessagePersistenceType) -> Self {
         self.persistence = ::std::option::Option::Some(input);
@@ -201,6 +215,12 @@ impl SendChannelMessageInputBuilder {
         self.persistence = input;
         self
     }
+    /// <p>Boolean that controls whether the message is persisted on the back end. Required.</p>
+    pub fn get_persistence(
+        &self,
+    ) -> &::std::option::Option<crate::types::ChannelMessagePersistenceType> {
+        &self.persistence
+    }
     /// <p>The optional metadata for each message.</p>
     pub fn metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metadata = ::std::option::Option::Some(input.into());
@@ -210,6 +230,10 @@ impl SendChannelMessageInputBuilder {
     pub fn set_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metadata = input;
         self
+    }
+    /// <p>The optional metadata for each message.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metadata
     }
     /// <p>The <code>Idempotency</code> token for each client request.</p>
     pub fn client_request_token(
@@ -227,6 +251,10 @@ impl SendChannelMessageInputBuilder {
         self.client_request_token = input;
         self
     }
+    /// <p>The <code>Idempotency</code> token for each client request.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
+    }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.chime_bearer = ::std::option::Option::Some(input.into());
@@ -236,6 +264,10 @@ impl SendChannelMessageInputBuilder {
     pub fn set_chime_bearer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.chime_bearer = input;
         self
+    }
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
+    pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
+        &self.chime_bearer
     }
     /// <p>The push notification configuration of the message.</p>
     pub fn push_notification(mut self, input: crate::types::PushNotificationConfiguration) -> Self {
@@ -249,6 +281,12 @@ impl SendChannelMessageInputBuilder {
     ) -> Self {
         self.push_notification = input;
         self
+    }
+    /// <p>The push notification configuration of the message.</p>
+    pub fn get_push_notification(
+        &self,
+    ) -> &::std::option::Option<crate::types::PushNotificationConfiguration> {
+        &self.push_notification
     }
     /// Adds a key-value pair to `message_attributes`.
     ///
@@ -275,6 +313,14 @@ impl SendChannelMessageInputBuilder {
         self.message_attributes = input;
         self
     }
+    /// <p>The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>.</p>
+    pub fn get_message_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>,
+    > {
+        &self.message_attributes
+    }
     /// <p>The ID of the SubChannel in the request.</p>
     pub fn sub_channel_id(
         mut self,
@@ -291,6 +337,10 @@ impl SendChannelMessageInputBuilder {
         self.sub_channel_id = input;
         self
     }
+    /// <p>The ID of the SubChannel in the request.</p>
+    pub fn get_sub_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sub_channel_id
+    }
     /// <p>The content type of the channel message.</p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
@@ -300,6 +350,10 @@ impl SendChannelMessageInputBuilder {
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
+    }
+    /// <p>The content type of the channel message.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
     }
     /// Appends an item to `target`.
     ///
@@ -319,6 +373,10 @@ impl SendChannelMessageInputBuilder {
     ) -> Self {
         self.target = input;
         self
+    }
+    /// <p>The target of a message. Must be a member of the channel, such as another user, a bot, or the sender. Only the target and the sender can view targeted messages. Only users who can see targeted messages can take actions on them. However, administrators can delete targeted messages that they can’t see. </p>
+    pub fn get_target(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
+        &self.target
     }
     /// Consumes the builder and constructs a [`SendChannelMessageInput`](crate::operation::send_channel_message::SendChannelMessageInput).
     pub fn build(

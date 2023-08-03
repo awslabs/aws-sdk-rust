@@ -40,6 +40,10 @@ impl GetServiceProfileInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the resource to get.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`GetServiceProfileInput`](crate::operation::get_service_profile::GetServiceProfileInput).
     pub fn build(
         self,

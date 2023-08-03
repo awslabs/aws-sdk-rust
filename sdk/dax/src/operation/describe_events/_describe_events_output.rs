@@ -54,6 +54,10 @@ impl DescribeEventsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `events`.
     ///
     /// To override the contents of this collection use [`set_events`](Self::set_events).
@@ -72,6 +76,10 @@ impl DescribeEventsOutputBuilder {
     ) -> Self {
         self.events = input;
         self
+    }
+    /// <p>An array of events. Each element in the array represents one event.</p>
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Event>> {
+        &self.events
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

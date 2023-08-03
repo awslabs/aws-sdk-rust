@@ -66,6 +66,10 @@ impl DescribeTapeArchivesInputBuilder {
         self.tape_ar_ns = input;
         self
     }
+    /// <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to describe.</p>
+    pub fn get_tape_ar_ns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tape_ar_ns
+    }
     /// <p>An opaque string that indicates the position at which to begin describing virtual tapes.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -76,6 +80,10 @@ impl DescribeTapeArchivesInputBuilder {
         self.marker = input;
         self
     }
+    /// <p>An opaque string that indicates the position at which to begin describing virtual tapes.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>Specifies that the number of virtual tapes described be limited to the specified number.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -85,6 +93,10 @@ impl DescribeTapeArchivesInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>Specifies that the number of virtual tapes described be limited to the specified number.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// Consumes the builder and constructs a [`DescribeTapeArchivesInput`](crate::operation::describe_tape_archives::DescribeTapeArchivesInput).
     pub fn build(

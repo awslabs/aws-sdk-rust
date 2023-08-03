@@ -57,6 +57,12 @@ impl StatelessRulesAndCustomActionsBuilder {
         self.stateless_rules = input;
         self
     }
+    /// <p>Defines the set of stateless rules for use in a stateless rule group. </p>
+    pub fn get_stateless_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StatelessRule>> {
+        &self.stateless_rules
+    }
     /// Appends an item to `custom_actions`.
     ///
     /// To override the contents of this collection use [`set_custom_actions`](Self::set_custom_actions).
@@ -75,6 +81,12 @@ impl StatelessRulesAndCustomActionsBuilder {
     ) -> Self {
         self.custom_actions = input;
         self
+    }
+    /// <p>Defines an array of individual custom action definitions that are available for use by the stateless rules in this <code>StatelessRulesAndCustomActions</code> specification. You name each custom action that you define, and then you can use it by name in your <code>StatelessRule</code> <code>RuleDefinition</code> <code>Actions</code> specification.</p>
+    pub fn get_custom_actions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomAction>> {
+        &self.custom_actions
     }
     /// Consumes the builder and constructs a [`StatelessRulesAndCustomActions`](crate::types::StatelessRulesAndCustomActions).
     pub fn build(self) -> crate::types::StatelessRulesAndCustomActions {

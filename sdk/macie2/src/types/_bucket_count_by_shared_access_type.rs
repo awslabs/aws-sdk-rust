@@ -64,6 +64,10 @@ impl BucketCountBySharedAccessTypeBuilder {
         self.external = input;
         self
     }
+    /// <p>The total number of buckets that are shared with one or more of the following or any combination of the following: an Amazon CloudFront OAI, a CloudFront OAC, or an Amazon Web Services account that isn't in the same Amazon Macie organization.</p>
+    pub fn get_external(&self) -> &::std::option::Option<i64> {
+        &self.external
+    }
     /// <p>The total number of buckets that are shared with one or more Amazon Web Services accounts in the same Amazon Macie organization. These buckets aren't shared with Amazon CloudFront OAIs or OACs.</p>
     pub fn internal(mut self, input: i64) -> Self {
         self.internal = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl BucketCountBySharedAccessTypeBuilder {
     pub fn set_internal(mut self, input: ::std::option::Option<i64>) -> Self {
         self.internal = input;
         self
+    }
+    /// <p>The total number of buckets that are shared with one or more Amazon Web Services accounts in the same Amazon Macie organization. These buckets aren't shared with Amazon CloudFront OAIs or OACs.</p>
+    pub fn get_internal(&self) -> &::std::option::Option<i64> {
+        &self.internal
     }
     /// <p>The total number of buckets that aren't shared with other Amazon Web Services accounts, Amazon CloudFront OAIs, or CloudFront OACs.</p>
     pub fn not_shared(mut self, input: i64) -> Self {
@@ -84,6 +92,10 @@ impl BucketCountBySharedAccessTypeBuilder {
         self.not_shared = input;
         self
     }
+    /// <p>The total number of buckets that aren't shared with other Amazon Web Services accounts, Amazon CloudFront OAIs, or CloudFront OACs.</p>
+    pub fn get_not_shared(&self) -> &::std::option::Option<i64> {
+        &self.not_shared
+    }
     /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate shared access settings for. Macie can't determine whether these buckets are shared with other Amazon Web Services accounts, Amazon CloudFront OAIs, or CloudFront OACs.</p>
     pub fn unknown(mut self, input: i64) -> Self {
         self.unknown = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl BucketCountBySharedAccessTypeBuilder {
     pub fn set_unknown(mut self, input: ::std::option::Option<i64>) -> Self {
         self.unknown = input;
         self
+    }
+    /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate shared access settings for. Macie can't determine whether these buckets are shared with other Amazon Web Services accounts, Amazon CloudFront OAIs, or CloudFront OACs.</p>
+    pub fn get_unknown(&self) -> &::std::option::Option<i64> {
+        &self.unknown
     }
     /// Consumes the builder and constructs a [`BucketCountBySharedAccessType`](crate::types::BucketCountBySharedAccessType).
     pub fn build(self) -> crate::types::BucketCountBySharedAccessType {

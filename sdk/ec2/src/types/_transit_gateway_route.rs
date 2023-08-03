@@ -91,6 +91,10 @@ impl TransitGatewayRouteBuilder {
         self.destination_cidr_block = input;
         self
     }
+    /// <p>The CIDR block used for destination matches.</p>
+    pub fn get_destination_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_cidr_block
+    }
     /// <p>The ID of the prefix list used for destination matches.</p>
     pub fn prefix_list_id(
         mut self,
@@ -106,6 +110,10 @@ impl TransitGatewayRouteBuilder {
     ) -> Self {
         self.prefix_list_id = input;
         self
+    }
+    /// <p>The ID of the prefix list used for destination matches.</p>
+    pub fn get_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix_list_id
     }
     /// <p>The ID of the transit gateway route table announcement. </p>
     pub fn transit_gateway_route_table_announcement_id(
@@ -123,6 +131,12 @@ impl TransitGatewayRouteBuilder {
     ) -> Self {
         self.transit_gateway_route_table_announcement_id = input;
         self
+    }
+    /// <p>The ID of the transit gateway route table announcement. </p>
+    pub fn get_transit_gateway_route_table_announcement_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_route_table_announcement_id
     }
     /// Appends an item to `transit_gateway_attachments`.
     ///
@@ -146,6 +160,12 @@ impl TransitGatewayRouteBuilder {
         self.transit_gateway_attachments = input;
         self
     }
+    /// <p>The attachments.</p>
+    pub fn get_transit_gateway_attachments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRouteAttachment>> {
+        &self.transit_gateway_attachments
+    }
     /// <p>The route type.</p>
     pub fn r#type(mut self, input: crate::types::TransitGatewayRouteType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -159,6 +179,10 @@ impl TransitGatewayRouteBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The route type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::TransitGatewayRouteType> {
+        &self.r#type
+    }
     /// <p>The state of the route.</p>
     pub fn state(mut self, input: crate::types::TransitGatewayRouteState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -171,6 +195,10 @@ impl TransitGatewayRouteBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the route.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::TransitGatewayRouteState> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`TransitGatewayRoute`](crate::types::TransitGatewayRoute).
     pub fn build(self) -> crate::types::TransitGatewayRoute {

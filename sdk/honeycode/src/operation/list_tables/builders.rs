@@ -36,6 +36,10 @@ impl ListTablesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListTables as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_tables::builders::ListTablesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,11 @@ impl ListTablesFluentBuilder {
         self.inner = self.inner.set_workbook_id(input);
         self
     }
+    /// <p>The ID of the workbook whose tables are being retrieved.</p>
+    /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    pub fn get_workbook_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workbook_id()
+    }
     /// <p>The maximum number of tables to return in each page of the results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -135,6 +144,10 @@ impl ListTablesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of tables to return in each page of the results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
     /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
@@ -147,5 +160,10 @@ impl ListTablesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
+    /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

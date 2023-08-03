@@ -82,6 +82,10 @@ impl OpenTunnelOutputBuilder {
         self.tunnel_id = input;
         self
     }
+    /// <p>A unique alpha-numeric tunnel ID.</p>
+    pub fn get_tunnel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tunnel_id
+    }
     /// <p>The Amazon Resource Name for the tunnel.</p>
     pub fn tunnel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tunnel_arn = ::std::option::Option::Some(input.into());
@@ -91,6 +95,10 @@ impl OpenTunnelOutputBuilder {
     pub fn set_tunnel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tunnel_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name for the tunnel.</p>
+    pub fn get_tunnel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tunnel_arn
     }
     /// <p>The access token the source local proxy uses to connect to IoT Secure Tunneling.</p>
     pub fn source_access_token(
@@ -108,6 +116,10 @@ impl OpenTunnelOutputBuilder {
         self.source_access_token = input;
         self
     }
+    /// <p>The access token the source local proxy uses to connect to IoT Secure Tunneling.</p>
+    pub fn get_source_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_access_token
+    }
     /// <p>The access token the destination local proxy uses to connect to IoT Secure Tunneling.</p>
     pub fn destination_access_token(
         mut self,
@@ -123,6 +135,10 @@ impl OpenTunnelOutputBuilder {
     ) -> Self {
         self.destination_access_token = input;
         self
+    }
+    /// <p>The access token the destination local proxy uses to connect to IoT Secure Tunneling.</p>
+    pub fn get_destination_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_access_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

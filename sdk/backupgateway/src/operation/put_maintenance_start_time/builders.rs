@@ -37,6 +37,13 @@ impl PutMaintenanceStartTimeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutMaintenanceStartTime as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_maintenance_start_time::builders::PutMaintenanceStartTimeInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl PutMaintenanceStartTimeFluentBuilder {
         self.inner = self.inner.set_gateway_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the gateway, used to specify its maintenance start time.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gateway_arn()
+    }
     /// <p>The hour of the day to start maintenance on a gateway.</p>
     pub fn hour_of_day(mut self, input: i32) -> Self {
         self.inner = self.inner.hour_of_day(input);
@@ -136,6 +147,10 @@ impl PutMaintenanceStartTimeFluentBuilder {
     pub fn set_hour_of_day(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_hour_of_day(input);
         self
+    }
+    /// <p>The hour of the day to start maintenance on a gateway.</p>
+    pub fn get_hour_of_day(&self) -> &::std::option::Option<i32> {
+        self.inner.get_hour_of_day()
     }
     /// <p>The minute of the hour to start maintenance on a gateway.</p>
     pub fn minute_of_hour(mut self, input: i32) -> Self {
@@ -147,6 +162,10 @@ impl PutMaintenanceStartTimeFluentBuilder {
         self.inner = self.inner.set_minute_of_hour(input);
         self
     }
+    /// <p>The minute of the hour to start maintenance on a gateway.</p>
+    pub fn get_minute_of_hour(&self) -> &::std::option::Option<i32> {
+        self.inner.get_minute_of_hour()
+    }
     /// <p>The day of the week to start maintenance on a gateway.</p>
     pub fn day_of_week(mut self, input: i32) -> Self {
         self.inner = self.inner.day_of_week(input);
@@ -156,6 +175,10 @@ impl PutMaintenanceStartTimeFluentBuilder {
     pub fn set_day_of_week(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_day_of_week(input);
         self
+    }
+    /// <p>The day of the week to start maintenance on a gateway.</p>
+    pub fn get_day_of_week(&self) -> &::std::option::Option<i32> {
+        self.inner.get_day_of_week()
     }
     /// <p>The day of the month start maintenance on a gateway.</p>
     /// <p>Valid values range from <code>Sunday</code> to <code>Saturday</code>.</p>
@@ -168,5 +191,10 @@ impl PutMaintenanceStartTimeFluentBuilder {
     pub fn set_day_of_month(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_day_of_month(input);
         self
+    }
+    /// <p>The day of the month start maintenance on a gateway.</p>
+    /// <p>Valid values range from <code>Sunday</code> to <code>Saturday</code>.</p>
+    pub fn get_day_of_month(&self) -> &::std::option::Option<i32> {
+        self.inner.get_day_of_month()
     }
 }

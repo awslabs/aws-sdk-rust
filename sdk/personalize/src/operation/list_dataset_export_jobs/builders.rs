@@ -36,6 +36,13 @@ impl ListDatasetExportJobsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListDatasetExportJobs as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_dataset_export_jobs::builders::ListDatasetExportJobsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +144,10 @@ impl ListDatasetExportJobsFluentBuilder {
         self.inner = self.inner.set_dataset_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the dataset to list the dataset export jobs for.</p>
+    pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dataset_arn()
+    }
     /// <p>A token returned from the previous call to <code>ListDatasetExportJobs</code> for getting the next set of dataset export jobs (if they exist).</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -147,6 +158,10 @@ impl ListDatasetExportJobsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A token returned from the previous call to <code>ListDatasetExportJobs</code> for getting the next set of dataset export jobs (if they exist).</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of dataset export jobs to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -156,5 +171,9 @@ impl ListDatasetExportJobsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of dataset export jobs to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

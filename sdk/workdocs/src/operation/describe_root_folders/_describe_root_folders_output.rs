@@ -65,6 +65,12 @@ impl DescribeRootFoldersOutputBuilder {
         self.folders = input;
         self
     }
+    /// <p>The user's special folders.</p>
+    pub fn get_folders(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FolderMetadata>> {
+        &self.folders
+    }
     /// <p>The marker for the next set of results.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -74,6 +80,10 @@ impl DescribeRootFoldersOutputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>The marker for the next set of results.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

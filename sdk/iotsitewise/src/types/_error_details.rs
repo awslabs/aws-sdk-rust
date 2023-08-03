@@ -56,6 +56,10 @@ impl ErrorDetailsBuilder {
         self.code = input;
         self
     }
+    /// <p>The error code.</p>
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
+        &self.code
+    }
     /// <p>The error message.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl ErrorDetailsBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The error message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Appends an item to `details`.
     ///
@@ -84,6 +92,12 @@ impl ErrorDetailsBuilder {
     ) -> Self {
         self.details = input;
         self
+    }
+    /// <p> A list of detailed errors. </p>
+    pub fn get_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DetailedError>> {
+        &self.details
     }
     /// Consumes the builder and constructs a [`ErrorDetails`](crate::types::ErrorDetails).
     pub fn build(self) -> crate::types::ErrorDetails {

@@ -182,6 +182,10 @@ impl AutoScalingGroupRecommendationBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID of the Auto Scaling group.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the Auto Scaling group.</p>
     pub fn auto_scaling_group_arn(
         mut self,
@@ -198,6 +202,10 @@ impl AutoScalingGroupRecommendationBuilder {
         self.auto_scaling_group_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_scaling_group_arn
+    }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn auto_scaling_group_name(
         mut self,
@@ -213,6 +221,10 @@ impl AutoScalingGroupRecommendationBuilder {
     ) -> Self {
         self.auto_scaling_group_name = input;
         self
+    }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_scaling_group_name
     }
     /// <p>The finding classification of the Auto Scaling group.</p>
     /// <p>Findings for Auto Scaling groups include:</p>
@@ -234,6 +246,15 @@ impl AutoScalingGroupRecommendationBuilder {
         self.finding = input;
         self
     }
+    /// <p>The finding classification of the Auto Scaling group.</p>
+    /// <p>Findings for Auto Scaling groups include:</p>
+    /// <ul>
+    /// <li> <p> <b> <code>NotOptimized</code> </b>—An Auto Scaling group is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p> </li>
+    /// <li> <p> <b> <code>Optimized</code> </b>—An Auto Scaling group is considered optimized when Compute Optimizer determines that the group is correctly provisioned to run your workload based on the chosen instance type. For optimized resources, Compute Optimizer might recommend a new generation instance type.</p> </li>
+    /// </ul>
+    pub fn get_finding(&self) -> &::std::option::Option<crate::types::Finding> {
+        &self.finding
+    }
     /// Appends an item to `utilization_metrics`.
     ///
     /// To override the contents of this collection use [`set_utilization_metrics`](Self::set_utilization_metrics).
@@ -253,6 +274,12 @@ impl AutoScalingGroupRecommendationBuilder {
         self.utilization_metrics = input;
         self
     }
+    /// <p>An array of objects that describe the utilization metrics of the Auto Scaling group.</p>
+    pub fn get_utilization_metrics(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UtilizationMetric>> {
+        &self.utilization_metrics
+    }
     /// <p>The number of days for which utilization metrics were analyzed for the Auto Scaling group.</p>
     pub fn look_back_period_in_days(mut self, input: f64) -> Self {
         self.look_back_period_in_days = ::std::option::Option::Some(input);
@@ -262,6 +289,10 @@ impl AutoScalingGroupRecommendationBuilder {
     pub fn set_look_back_period_in_days(mut self, input: ::std::option::Option<f64>) -> Self {
         self.look_back_period_in_days = input;
         self
+    }
+    /// <p>The number of days for which utilization metrics were analyzed for the Auto Scaling group.</p>
+    pub fn get_look_back_period_in_days(&self) -> &::std::option::Option<f64> {
+        &self.look_back_period_in_days
     }
     /// <p>An array of objects that describe the current configuration of the Auto Scaling group.</p>
     pub fn current_configuration(
@@ -278,6 +309,12 @@ impl AutoScalingGroupRecommendationBuilder {
     ) -> Self {
         self.current_configuration = input;
         self
+    }
+    /// <p>An array of objects that describe the current configuration of the Auto Scaling group.</p>
+    pub fn get_current_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoScalingGroupConfiguration> {
+        &self.current_configuration
     }
     /// Appends an item to `recommendation_options`.
     ///
@@ -303,6 +340,13 @@ impl AutoScalingGroupRecommendationBuilder {
         self.recommendation_options = input;
         self
     }
+    /// <p>An array of objects that describe the recommendation options for the Auto Scaling group.</p>
+    pub fn get_recommendation_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroupRecommendationOption>>
+    {
+        &self.recommendation_options
+    }
     /// <p>The timestamp of when the Auto Scaling group recommendation was last generated.</p>
     pub fn last_refresh_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_refresh_timestamp = ::std::option::Option::Some(input);
@@ -316,6 +360,12 @@ impl AutoScalingGroupRecommendationBuilder {
         self.last_refresh_timestamp = input;
         self
     }
+    /// <p>The timestamp of when the Auto Scaling group recommendation was last generated.</p>
+    pub fn get_last_refresh_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_refresh_timestamp
+    }
     /// <p>The risk of the current Auto Scaling group not meeting the performance needs of its workloads. The higher the risk, the more likely the current Auto Scaling group configuration has insufficient capacity and cannot meet workload requirements.</p>
     pub fn current_performance_risk(mut self, input: crate::types::CurrentPerformanceRisk) -> Self {
         self.current_performance_risk = ::std::option::Option::Some(input);
@@ -328,6 +378,12 @@ impl AutoScalingGroupRecommendationBuilder {
     ) -> Self {
         self.current_performance_risk = input;
         self
+    }
+    /// <p>The risk of the current Auto Scaling group not meeting the performance needs of its workloads. The higher the risk, the more likely the current Auto Scaling group configuration has insufficient capacity and cannot meet workload requirements.</p>
+    pub fn get_current_performance_risk(
+        &self,
+    ) -> &::std::option::Option<crate::types::CurrentPerformanceRisk> {
+        &self.current_performance_risk
     }
     /// <p>An object that describes the effective recommendation preferences for the Auto Scaling group.</p>
     pub fn effective_recommendation_preferences(
@@ -344,6 +400,12 @@ impl AutoScalingGroupRecommendationBuilder {
     ) -> Self {
         self.effective_recommendation_preferences = input;
         self
+    }
+    /// <p>An object that describes the effective recommendation preferences for the Auto Scaling group.</p>
+    pub fn get_effective_recommendation_preferences(
+        &self,
+    ) -> &::std::option::Option<crate::types::EffectiveRecommendationPreferences> {
+        &self.effective_recommendation_preferences
     }
     /// Appends an item to `inferred_workload_types`.
     ///
@@ -387,6 +449,24 @@ impl AutoScalingGroupRecommendationBuilder {
     ) -> Self {
         self.inferred_workload_types = input;
         self
+    }
+    /// <p>The applications that might be running on the instances in the Auto Scaling group as inferred by Compute Optimizer.</p>
+    /// <p>Compute Optimizer can infer if one of the following applications might be running on the instances:</p>
+    /// <ul>
+    /// <li> <p> <code>AmazonEmr</code> - Infers that Amazon EMR might be running on the instances.</p> </li>
+    /// <li> <p> <code>ApacheCassandra</code> - Infers that Apache Cassandra might be running on the instances.</p> </li>
+    /// <li> <p> <code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the instances.</p> </li>
+    /// <li> <p> <code>Memcached</code> - Infers that Memcached might be running on the instances.</p> </li>
+    /// <li> <p> <code>NGINX</code> - Infers that NGINX might be running on the instances.</p> </li>
+    /// <li> <p> <code>PostgreSql</code> - Infers that PostgreSQL might be running on the instances.</p> </li>
+    /// <li> <p> <code>Redis</code> - Infers that Redis might be running on the instances.</p> </li>
+    /// <li> <p> <code>Kafka</code> - Infers that Kafka might be running on the instance.</p> </li>
+    /// <li> <p> <code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p> </li>
+    /// </ul>
+    pub fn get_inferred_workload_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadType>> {
+        &self.inferred_workload_types
     }
     /// Consumes the builder and constructs a [`AutoScalingGroupRecommendation`](crate::types::AutoScalingGroupRecommendation).
     pub fn build(self) -> crate::types::AutoScalingGroupRecommendation {

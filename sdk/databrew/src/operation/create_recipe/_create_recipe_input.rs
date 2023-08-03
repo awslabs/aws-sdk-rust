@@ -71,6 +71,10 @@ impl CreateRecipeInputBuilder {
         self.description = input;
         self
     }
+    /// <p>A description for the recipe.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>A unique name for the recipe. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl CreateRecipeInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A unique name for the recipe. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `steps`.
     ///
@@ -99,6 +107,10 @@ impl CreateRecipeInputBuilder {
     ) -> Self {
         self.steps = input;
         self
+    }
+    /// <p>An array containing the steps to be performed by the recipe. Each recipe step consists of one recipe action and (optionally) an array of condition expressions.</p>
+    pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecipeStep>> {
+        &self.steps
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -124,6 +136,14 @@ impl CreateRecipeInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Metadata tags to apply to this recipe.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateRecipeInput`](crate::operation::create_recipe::CreateRecipeInput).
     pub fn build(

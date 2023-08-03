@@ -49,6 +49,10 @@ impl UpdateResourceProfileInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p>The new sensitivity score for the bucket. Valid values are: 100, assign the maximum score and apply the <i>Sensitive</i> label to the bucket; and, null (empty), assign a score that Amazon Macie calculates automatically after you submit the request.</p>
     pub fn sensitivity_score_override(mut self, input: i32) -> Self {
         self.sensitivity_score_override = ::std::option::Option::Some(input);
@@ -58,6 +62,10 @@ impl UpdateResourceProfileInputBuilder {
     pub fn set_sensitivity_score_override(mut self, input: ::std::option::Option<i32>) -> Self {
         self.sensitivity_score_override = input;
         self
+    }
+    /// <p>The new sensitivity score for the bucket. Valid values are: 100, assign the maximum score and apply the <i>Sensitive</i> label to the bucket; and, null (empty), assign a score that Amazon Macie calculates automatically after you submit the request.</p>
+    pub fn get_sensitivity_score_override(&self) -> &::std::option::Option<i32> {
+        &self.sensitivity_score_override
     }
     /// Consumes the builder and constructs a [`UpdateResourceProfileInput`](crate::operation::update_resource_profile::UpdateResourceProfileInput).
     pub fn build(

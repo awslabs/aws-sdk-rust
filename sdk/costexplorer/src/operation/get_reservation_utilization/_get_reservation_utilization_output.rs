@@ -75,6 +75,12 @@ impl GetReservationUtilizationOutputBuilder {
         self.utilizations_by_time = input;
         self
     }
+    /// <p>The amount of time that you used your Reserved Instances (RIs).</p>
+    pub fn get_utilizations_by_time(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UtilizationByTime>> {
+        &self.utilizations_by_time
+    }
     /// <p>The total amount of time that you used your Reserved Instances (RIs).</p>
     pub fn total(mut self, input: crate::types::ReservationAggregates) -> Self {
         self.total = ::std::option::Option::Some(input);
@@ -87,6 +93,10 @@ impl GetReservationUtilizationOutputBuilder {
     ) -> Self {
         self.total = input;
         self
+    }
+    /// <p>The total amount of time that you used your Reserved Instances (RIs).</p>
+    pub fn get_total(&self) -> &::std::option::Option<crate::types::ReservationAggregates> {
+        &self.total
     }
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn next_page_token(
@@ -103,6 +113,10 @@ impl GetReservationUtilizationOutputBuilder {
     ) -> Self {
         self.next_page_token = input;
         self
+    }
+    /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_page_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

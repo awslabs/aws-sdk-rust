@@ -79,6 +79,10 @@ impl FastLaunchConfigurationBuilder {
         self.enabled = input;
         self
     }
+    /// <p>A Boolean that represents the current state of faster launching for the Windows AMI. Set to <code>true</code> to start using Windows faster launching, or <code>false</code> to stop using it.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>Configuration settings for managing the number of snapshots that are created from pre-provisioned instances for the Windows AMI when faster launching is enabled.</p>
     pub fn snapshot_configuration(
         mut self,
@@ -95,6 +99,12 @@ impl FastLaunchConfigurationBuilder {
         self.snapshot_configuration = input;
         self
     }
+    /// <p>Configuration settings for managing the number of snapshots that are created from pre-provisioned instances for the Windows AMI when faster launching is enabled.</p>
+    pub fn get_snapshot_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::FastLaunchSnapshotConfiguration> {
+        &self.snapshot_configuration
+    }
     /// <p>The maximum number of parallel instances that are launched for creating resources.</p>
     pub fn max_parallel_launches(mut self, input: i32) -> Self {
         self.max_parallel_launches = ::std::option::Option::Some(input);
@@ -104,6 +114,10 @@ impl FastLaunchConfigurationBuilder {
     pub fn set_max_parallel_launches(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_parallel_launches = input;
         self
+    }
+    /// <p>The maximum number of parallel instances that are launched for creating resources.</p>
+    pub fn get_max_parallel_launches(&self) -> &::std::option::Option<i32> {
+        &self.max_parallel_launches
     }
     /// <p>The launch template that the fast-launch enabled Windows AMI uses when it launches Windows instances to create pre-provisioned snapshots.</p>
     pub fn launch_template(
@@ -121,6 +135,12 @@ impl FastLaunchConfigurationBuilder {
         self.launch_template = input;
         self
     }
+    /// <p>The launch template that the fast-launch enabled Windows AMI uses when it launches Windows instances to create pre-provisioned snapshots.</p>
+    pub fn get_launch_template(
+        &self,
+    ) -> &::std::option::Option<crate::types::FastLaunchLaunchTemplateSpecification> {
+        &self.launch_template
+    }
     /// <p>The owner account ID for the fast-launch enabled Windows AMI.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -130,6 +150,10 @@ impl FastLaunchConfigurationBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>The owner account ID for the fast-launch enabled Windows AMI.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// Consumes the builder and constructs a [`FastLaunchConfiguration`](crate::types::FastLaunchConfiguration).
     pub fn build(self) -> crate::types::FastLaunchConfiguration {

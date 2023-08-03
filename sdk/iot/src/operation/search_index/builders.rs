@@ -37,6 +37,10 @@ impl SearchIndexFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SearchIndex as a reference.
+    pub fn as_input(&self) -> &crate::operation::search_index::builders::SearchIndexInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl SearchIndexFluentBuilder {
         self.inner = self.inner.set_index_name(input);
         self
     }
+    /// <p>The search index name.</p>
+    pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_index_name()
+    }
     /// <p>The search query string. For more information about the search query syntax, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query syntax</a>.</p>
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_string(input.into());
@@ -128,6 +136,10 @@ impl SearchIndexFluentBuilder {
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_string(input);
         self
+    }
+    /// <p>The search query string. For more information about the search query syntax, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query syntax</a>.</p>
+    pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_query_string()
     }
     /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -139,6 +151,10 @@ impl SearchIndexFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -148,6 +164,10 @@ impl SearchIndexFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return at one time.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The query version.</p>
     pub fn query_version(
@@ -164,5 +184,9 @@ impl SearchIndexFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_query_version(input);
         self
+    }
+    /// <p>The query version.</p>
+    pub fn get_query_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_query_version()
     }
 }

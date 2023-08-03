@@ -36,6 +36,10 @@ impl DeleteAssessmentFrameworkFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteAssessmentFramework as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_assessment_framework::builders::DeleteAssessmentFrameworkInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +129,9 @@ impl DeleteAssessmentFrameworkFluentBuilder {
     pub fn set_framework_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_framework_id(input);
         self
+    }
+    /// <p> The identifier for the custom framework. </p>
+    pub fn get_framework_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_framework_id()
     }
 }

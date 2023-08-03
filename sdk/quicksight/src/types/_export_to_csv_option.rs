@@ -43,6 +43,12 @@ impl ExportToCsvOptionBuilder {
         self.availability_status = input;
         self
     }
+    /// <p>Availability status.</p>
+    pub fn get_availability_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::DashboardBehavior> {
+        &self.availability_status
+    }
     /// Consumes the builder and constructs a [`ExportToCsvOption`](crate::types::ExportToCsvOption).
     pub fn build(self) -> crate::types::ExportToCsvOption {
         crate::types::ExportToCsvOption {

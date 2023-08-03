@@ -74,6 +74,10 @@ impl ExportServerEngineAttributeInputBuilder {
         self.export_attribute_name = input;
         self
     }
+    /// <p>The name of the export attribute. Currently, the supported export attribute is <code>Userdata</code>. This exports a user data script that includes parameters and values provided in the <code>InputAttributes</code> list.</p>
+    pub fn get_export_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.export_attribute_name
+    }
     /// <p>The name of the server from which you are exporting the attribute.</p>
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_name = ::std::option::Option::Some(input.into());
@@ -83,6 +87,10 @@ impl ExportServerEngineAttributeInputBuilder {
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_name = input;
         self
+    }
+    /// <p>The name of the server from which you are exporting the attribute.</p>
+    pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_name
     }
     /// Appends an item to `input_attributes`.
     ///
@@ -114,6 +122,18 @@ impl ExportServerEngineAttributeInputBuilder {
     ) -> Self {
         self.input_attributes = input;
         self
+    }
+    /// <p>The list of engine attributes. The list type is <code>EngineAttribute</code>. An <code>EngineAttribute</code> list item is a pair that includes an attribute name and its value. For the <code>Userdata</code> ExportAttributeName, the following are supported engine attribute names.</p>
+    /// <ul>
+    /// <li> <p> <b>RunList</b> In Chef, a list of roles or recipes that are run in the specified order. In Puppet, this parameter is ignored.</p> </li>
+    /// <li> <p> <b>OrganizationName</b> In Chef, an organization name. AWS OpsWorks for Chef Automate always creates the organization <code>default</code>. In Puppet, this parameter is ignored.</p> </li>
+    /// <li> <p> <b>NodeEnvironment</b> In Chef, a node environment (for example, development, staging, or one-box). In Puppet, this parameter is ignored.</p> </li>
+    /// <li> <p> <b>NodeClientVersion</b> In Chef, the version of the Chef engine (three numbers separated by dots, such as 13.8.5). If this attribute is empty, OpsWorks for Chef Automate uses the most current version. In Puppet, this parameter is ignored.</p> </li>
+    /// </ul>
+    pub fn get_input_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>> {
+        &self.input_attributes
     }
     /// Consumes the builder and constructs a [`ExportServerEngineAttributeInput`](crate::operation::export_server_engine_attribute::ExportServerEngineAttributeInput).
     pub fn build(

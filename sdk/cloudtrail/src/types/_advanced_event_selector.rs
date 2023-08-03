@@ -59,6 +59,10 @@ impl AdvancedEventSelectorBuilder {
         self.name = input;
         self
     }
+    /// <p>An optional, descriptive name for an advanced event selector, such as "Log data events for only two S3 buckets".</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `field_selectors`.
     ///
     /// To override the contents of this collection use [`set_field_selectors`](Self::set_field_selectors).
@@ -77,6 +81,12 @@ impl AdvancedEventSelectorBuilder {
     ) -> Self {
         self.field_selectors = input;
         self
+    }
+    /// <p>Contains all selector statements in an advanced event selector.</p>
+    pub fn get_field_selectors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdvancedFieldSelector>> {
+        &self.field_selectors
     }
     /// Consumes the builder and constructs a [`AdvancedEventSelector`](crate::types::AdvancedEventSelector).
     pub fn build(self) -> crate::types::AdvancedEventSelector {

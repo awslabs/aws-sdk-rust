@@ -41,6 +41,10 @@ impl DescribeFhirDatastoreInputBuilder {
         self.datastore_id = input;
         self
     }
+    /// <p>The AWS-generated data store ID.</p>
+    pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.datastore_id
+    }
     /// Consumes the builder and constructs a [`DescribeFhirDatastoreInput`](crate::operation::describe_fhir_datastore::DescribeFhirDatastoreInput).
     pub fn build(
         self,

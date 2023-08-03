@@ -116,6 +116,10 @@ impl DescribeEventsInputBuilder {
         self.source_identifier = input;
         self
     }
+    /// <p> The identifier of an event source.</p>
+    pub fn get_source_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_identifier
+    }
     /// <p>The type of DMS resource that generates events.</p>
     /// <p>Valid values: replication-instance | replication-task</p>
     pub fn source_type(mut self, input: crate::types::SourceType) -> Self {
@@ -131,6 +135,11 @@ impl DescribeEventsInputBuilder {
         self.source_type = input;
         self
     }
+    /// <p>The type of DMS resource that generates events.</p>
+    /// <p>Valid values: replication-instance | replication-task</p>
+    pub fn get_source_type(&self) -> &::std::option::Option<crate::types::SourceType> {
+        &self.source_type
+    }
     /// <p>The start time for the events to be listed.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -143,6 +152,10 @@ impl DescribeEventsInputBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>The start time for the events to be listed.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>The end time for the events to be listed.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -157,6 +170,10 @@ impl DescribeEventsInputBuilder {
         self.end_time = input;
         self
     }
+    /// <p>The end time for the events to be listed.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>The duration of the events to be listed.</p>
     pub fn duration(mut self, input: i32) -> Self {
         self.duration = ::std::option::Option::Some(input);
@@ -166,6 +183,10 @@ impl DescribeEventsInputBuilder {
     pub fn set_duration(mut self, input: ::std::option::Option<i32>) -> Self {
         self.duration = input;
         self
+    }
+    /// <p>The duration of the events to be listed.</p>
+    pub fn get_duration(&self) -> &::std::option::Option<i32> {
+        &self.duration
     }
     /// Appends an item to `event_categories`.
     ///
@@ -189,6 +210,12 @@ impl DescribeEventsInputBuilder {
         self.event_categories = input;
         self
     }
+    /// <p>A list of event categories for the source type that you've chosen.</p>
+    pub fn get_event_categories(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.event_categories
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -208,6 +235,10 @@ impl DescribeEventsInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>Filters applied to events. The only valid filter is <code>replication-instance-id</code>.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
+    }
     /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
@@ -222,6 +253,12 @@ impl DescribeEventsInputBuilder {
         self.max_records = input;
         self
     }
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        &self.max_records
+    }
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -231,6 +268,10 @@ impl DescribeEventsInputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeEventsInput`](crate::operation::describe_events::DescribeEventsInput).
     pub fn build(

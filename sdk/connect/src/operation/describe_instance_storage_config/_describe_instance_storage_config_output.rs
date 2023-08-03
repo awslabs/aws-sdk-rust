@@ -49,6 +49,12 @@ impl DescribeInstanceStorageConfigOutputBuilder {
         self.storage_config = input;
         self
     }
+    /// <p>A valid storage type.</p>
+    pub fn get_storage_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceStorageConfig> {
+        &self.storage_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

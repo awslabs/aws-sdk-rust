@@ -36,6 +36,10 @@ impl DescribeReservedCacheNodesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeReservedCacheNodes as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_reserved_cache_nodes::builders::DescribeReservedCacheNodesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +142,10 @@ impl DescribeReservedCacheNodesFluentBuilder {
         self.inner = self.inner.set_reserved_cache_node_id(input);
         self
     }
+    /// <p>The reserved cache node identifier filter value. Use this parameter to show only the reservation that matches the specified reservation ID.</p>
+    pub fn get_reserved_cache_node_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reserved_cache_node_id()
+    }
     /// <p>The offering identifier filter value. Use this parameter to show only purchased reservations matching the specified offering identifier.</p>
     pub fn reserved_cache_nodes_offering_id(
         mut self,
@@ -153,6 +161,12 @@ impl DescribeReservedCacheNodesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_reserved_cache_nodes_offering_id(input);
         self
+    }
+    /// <p>The offering identifier filter value. Use this parameter to show only purchased reservations matching the specified offering identifier.</p>
+    pub fn get_reserved_cache_nodes_offering_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reserved_cache_nodes_offering_id()
     }
     /// <p>The cache node type filter value. Use this parameter to show only those reservations matching the specified cache node type.</p>
     /// <p>The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts.</p>
@@ -226,6 +240,38 @@ impl DescribeReservedCacheNodesFluentBuilder {
         self.inner = self.inner.set_cache_node_type(input);
         self
     }
+    /// <p>The cache node type filter value. Use this parameter to show only those reservations matching the specified cache node type.</p>
+    /// <p>The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts.</p>
+    /// <ul>
+    /// <li> <p>General purpose:</p>
+    /// <ul>
+    /// <li> <p>Current generation: </p> <p> <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>, <code>cache.m6g.16xlarge</code> </p> <note>
+    /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a> </p>
+    /// </note> <p> <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code> </p> <p> <b>M4 node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>, <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16 onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>, <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b> <code>cache.t3.micro</code>, <code>cache.t3.small</code>, <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b> <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code> </p> </li>
+    /// <li> <p>Previous generation: (not recommended. Existing clusters are still supported but creation of new clusters is not supported for these types.)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p> <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>, <code>cache.m1.large</code>, <code>cache.m1.xlarge</code> </p> <p> <b>M3 node types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>Compute optimized:</p>
+    /// <ul>
+    /// <li> <p>Previous generation: (not recommended. Existing clusters are still supported but creation of new clusters is not supported for these types.)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>Memory optimized:</p>
+    /// <ul>
+    /// <li> <p>Current generation: </p> <p> <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p> <p> <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code> </p> <note>
+    /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a> </p>
+    /// </note> <p> <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code> </p> <p> <b>R4 node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>, <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li>
+    /// <li> <p>Previous generation: (not recommended. Existing clusters are still supported but creation of new clusters is not supported for these types.)</p> <p> <b>M2 node types:</b> <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code> </p> <p> <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> </li>
+    /// </ul> </li>
+    /// </ul>
+    /// <p> <b>Additional node type info</b> </p>
+    /// <ul>
+    /// <li> <p>All current generation instance types are created in Amazon VPC by default.</p> </li>
+    /// <li> <p>Redis append-only files (AOF) are not supported for T1 or T2 instances.</p> </li>
+    /// <li> <p>Redis Multi-AZ with automatic failover is not supported on T1 instances.</p> </li>
+    /// <li> <p>Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p> </li>
+    /// </ul>
+    pub fn get_cache_node_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cache_node_type()
+    }
     /// <p>The duration filter value, specified in years or seconds. Use this parameter to show only reservations for this duration.</p>
     /// <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code> </p>
     pub fn duration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -237,6 +283,11 @@ impl DescribeReservedCacheNodesFluentBuilder {
     pub fn set_duration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_duration(input);
         self
+    }
+    /// <p>The duration filter value, specified in years or seconds. Use this parameter to show only reservations for this duration.</p>
+    /// <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code> </p>
+    pub fn get_duration(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_duration()
     }
     /// <p>The product description filter value. Use this parameter to show only those reservations matching the specified product description.</p>
     pub fn product_description(
@@ -253,6 +304,10 @@ impl DescribeReservedCacheNodesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_product_description(input);
         self
+    }
+    /// <p>The product description filter value. Use this parameter to show only those reservations matching the specified product description.</p>
+    pub fn get_product_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_product_description()
     }
     /// <p>The offering type filter value. Use this parameter to show only the available offerings matching the specified offering type.</p>
     /// <p>Valid values: <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization"|"All Upfront"|"Partial Upfront"| "No Upfront"</code> </p>
@@ -272,6 +327,11 @@ impl DescribeReservedCacheNodesFluentBuilder {
         self.inner = self.inner.set_offering_type(input);
         self
     }
+    /// <p>The offering type filter value. Use this parameter to show only the available offerings matching the specified offering type.</p>
+    /// <p>Valid values: <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization"|"All Upfront"|"Partial Upfront"| "No Upfront"</code> </p>
+    pub fn get_offering_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_offering_type()
+    }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: minimum 20; maximum 100.</p>
@@ -286,6 +346,12 @@ impl DescribeReservedCacheNodesFluentBuilder {
         self.inner = self.inner.set_max_records(input);
         self
     }
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: minimum 20; maximum 100.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
+    }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -295,5 +361,9 @@ impl DescribeReservedCacheNodesFluentBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
+    }
+    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
     }
 }

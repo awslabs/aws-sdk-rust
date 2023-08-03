@@ -46,6 +46,10 @@ impl DeleteTokenOutputBuilder {
         self.is_success = input;
         self
     }
+    /// <p>Indicates whether the request succeeded or failed.</p>
+    pub fn get_is_success(&self) -> &::std::option::Option<bool> {
+        &self.is_success
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

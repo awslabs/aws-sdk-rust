@@ -46,6 +46,10 @@ impl KinesisStreamsInputUpdateBuilder {
         self.resource_arn_update = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the input Kinesis data stream to read.</p>
+    pub fn get_resource_arn_update(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn_update
+    }
     /// Consumes the builder and constructs a [`KinesisStreamsInputUpdate`](crate::types::KinesisStreamsInputUpdate).
     pub fn build(self) -> crate::types::KinesisStreamsInputUpdate {
         crate::types::KinesisStreamsInputUpdate {

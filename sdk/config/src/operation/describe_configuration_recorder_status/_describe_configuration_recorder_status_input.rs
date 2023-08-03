@@ -53,6 +53,12 @@ impl DescribeConfigurationRecorderStatusInputBuilder {
         self.configuration_recorder_names = input;
         self
     }
+    /// <p>The name(s) of the configuration recorder. If the name is not specified, the action returns the current status of all the configuration recorders associated with the account.</p>
+    pub fn get_configuration_recorder_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.configuration_recorder_names
+    }
     /// Consumes the builder and constructs a [`DescribeConfigurationRecorderStatusInput`](crate::operation::describe_configuration_recorder_status::DescribeConfigurationRecorderStatusInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_configuration_recorder_status::DescribeConfigurationRecorderStatusInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

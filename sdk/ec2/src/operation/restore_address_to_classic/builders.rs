@@ -40,6 +40,13 @@ impl RestoreAddressToClassicFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RestoreAddressToClassic as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::restore_address_to_classic::builders::RestoreAddressToClassicInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +137,10 @@ impl RestoreAddressToClassicFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>The Elastic IP address.</p>
     pub fn public_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.public_ip(input.into());
@@ -139,5 +150,9 @@ impl RestoreAddressToClassicFluentBuilder {
     pub fn set_public_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_public_ip(input);
         self
+    }
+    /// <p>The Elastic IP address.</p>
+    pub fn get_public_ip(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_public_ip()
     }
 }

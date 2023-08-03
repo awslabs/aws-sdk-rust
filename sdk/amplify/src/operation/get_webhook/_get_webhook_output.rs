@@ -47,6 +47,10 @@ impl GetWebhookOutputBuilder {
         self.webhook = input;
         self
     }
+    /// <p> Describes the structure of a webhook. </p>
+    pub fn get_webhook(&self) -> &::std::option::Option<crate::types::Webhook> {
+        &self.webhook
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

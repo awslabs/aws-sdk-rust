@@ -48,6 +48,10 @@ impl FieldValueBuilder {
         self.id = input;
         self
     }
+    /// <p>Unique identifier of a field.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>Union of potential field value types.</p>
     pub fn value(mut self, input: crate::types::FieldValueUnion) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl FieldValueBuilder {
     ) -> Self {
         self.value = input;
         self
+    }
+    /// <p>Union of potential field value types.</p>
+    pub fn get_value(&self) -> &::std::option::Option<crate::types::FieldValueUnion> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`FieldValue`](crate::types::FieldValue).
     pub fn build(self) -> crate::types::FieldValue {

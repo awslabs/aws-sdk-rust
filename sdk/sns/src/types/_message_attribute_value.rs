@@ -57,6 +57,10 @@ impl MessageAttributeValueBuilder {
         self.data_type = input;
         self
     }
+    /// <p>Amazon SNS supports the following logical data types: String, String.Array, Number, and Binary. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message Attribute Data Types</a>.</p>
+    pub fn get_data_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_type
+    }
     /// <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a href="https://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.</p>
     pub fn string_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.string_value = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl MessageAttributeValueBuilder {
     pub fn set_string_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.string_value = input;
         self
+    }
+    /// <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a href="https://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.</p>
+    pub fn get_string_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.string_value
     }
     /// <p>Binary type attributes can store any binary data, for example, compressed data, encrypted data, or images.</p>
     pub fn binary_value(mut self, input: ::aws_smithy_types::Blob) -> Self {
@@ -79,6 +87,10 @@ impl MessageAttributeValueBuilder {
     ) -> Self {
         self.binary_value = input;
         self
+    }
+    /// <p>Binary type attributes can store any binary data, for example, compressed data, encrypted data, or images.</p>
+    pub fn get_binary_value(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.binary_value
     }
     /// Consumes the builder and constructs a [`MessageAttributeValue`](crate::types::MessageAttributeValue).
     pub fn build(self) -> crate::types::MessageAttributeValue {

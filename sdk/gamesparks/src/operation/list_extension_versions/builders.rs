@@ -37,6 +37,13 @@ impl ListExtensionVersionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListExtensionVersions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_extension_versions::builders::ListExtensionVersionsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +145,10 @@ impl ListExtensionVersionsFluentBuilder {
         self.inner = self.inner.set_namespace(input);
         self
     }
+    /// <p>The namespace (qualifier) of the extension.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace()
+    }
     /// <p>The name of the extension.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -147,6 +158,10 @@ impl ListExtensionVersionsFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the extension.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The token that indicates the start of the next sequential page of results.</p>
     /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
@@ -160,6 +175,11 @@ impl ListExtensionVersionsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token that indicates the start of the next sequential page of results.</p>
+    /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return.</p>
     /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -171,5 +191,10 @@ impl ListExtensionVersionsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return.</p>
+    /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

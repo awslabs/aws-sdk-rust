@@ -37,6 +37,12 @@ impl UpdateCustomMetricFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateCustomMetric as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_custom_metric::builders::UpdateCustomMetricInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl UpdateCustomMetricFluentBuilder {
         self.inner = self.inner.set_metric_name(input);
         self
     }
+    /// <p> The name of the custom metric. Cannot be updated. </p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_metric_name()
+    }
     /// <p> Field represents a friendly name in the console for the custom metric, it doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated. </p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
@@ -136,5 +146,9 @@ impl UpdateCustomMetricFluentBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_display_name(input);
         self
+    }
+    /// <p> Field represents a friendly name in the console for the custom metric, it doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated. </p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_display_name()
     }
 }

@@ -51,6 +51,12 @@ impl ConditionalFormattingIconDisplayConfigurationBuilder {
         self.icon_display_option = input;
         self
     }
+    /// <p>Determines the icon display configuration.</p>
+    pub fn get_icon_display_option(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConditionalFormattingIconDisplayOption> {
+        &self.icon_display_option
+    }
     /// Consumes the builder and constructs a [`ConditionalFormattingIconDisplayConfiguration`](crate::types::ConditionalFormattingIconDisplayConfiguration).
     pub fn build(self) -> crate::types::ConditionalFormattingIconDisplayConfiguration {
         crate::types::ConditionalFormattingIconDisplayConfiguration {

@@ -40,6 +40,10 @@ impl ThumbnailConfigurationBuilder {
         self.state = input;
         self
     }
+    /// Whether Thumbnail is enabled.
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ThumbnailState> {
+        &self.state
+    }
     /// Consumes the builder and constructs a [`ThumbnailConfiguration`](crate::types::ThumbnailConfiguration).
     pub fn build(self) -> crate::types::ThumbnailConfiguration {
         crate::types::ThumbnailConfiguration { state: self.state }

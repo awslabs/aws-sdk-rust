@@ -56,6 +56,10 @@ impl DescribeEndpointsOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// Appends an item to `endpoints`.
     ///
     /// To override the contents of this collection use [`set_endpoints`](Self::set_endpoints).
@@ -74,6 +78,10 @@ impl DescribeEndpointsOutputBuilder {
     ) -> Self {
         self.endpoints = input;
         self
+    }
+    /// <p>Endpoint description.</p>
+    pub fn get_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Endpoint>> {
+        &self.endpoints
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -55,6 +55,12 @@ impl GetRelationalDatabaseLogStreamsOutputBuilder {
         self.log_streams = input;
         self
     }
+    /// <p>An object describing the result of your get relational database log streams request.</p>
+    pub fn get_log_streams(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.log_streams
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

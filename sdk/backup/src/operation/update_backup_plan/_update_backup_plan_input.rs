@@ -54,6 +54,10 @@ impl UpdateBackupPlanInputBuilder {
         self.backup_plan_id = input;
         self
     }
+    /// <p>Uniquely identifies a backup plan.</p>
+    pub fn get_backup_plan_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_plan_id
+    }
     /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
     pub fn backup_plan(mut self, input: crate::types::BackupPlanInput) -> Self {
         self.backup_plan = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl UpdateBackupPlanInputBuilder {
     ) -> Self {
         self.backup_plan = input;
         self
+    }
+    /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
+    pub fn get_backup_plan(&self) -> &::std::option::Option<crate::types::BackupPlanInput> {
+        &self.backup_plan
     }
     /// Consumes the builder and constructs a [`UpdateBackupPlanInput`](crate::operation::update_backup_plan::UpdateBackupPlanInput).
     pub fn build(

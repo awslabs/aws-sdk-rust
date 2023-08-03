@@ -60,6 +60,12 @@ impl ResolvedTargetsBuilder {
         self.parameter_values = input;
         self
     }
+    /// <p>A list of parameter values sent to targets that resolved during the Automation execution.</p>
+    pub fn get_parameter_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.parameter_values
+    }
     /// <p>A boolean value indicating whether the resolved target list is truncated.</p>
     pub fn truncated(mut self, input: bool) -> Self {
         self.truncated = ::std::option::Option::Some(input);
@@ -69,6 +75,10 @@ impl ResolvedTargetsBuilder {
     pub fn set_truncated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.truncated = input;
         self
+    }
+    /// <p>A boolean value indicating whether the resolved target list is truncated.</p>
+    pub fn get_truncated(&self) -> &::std::option::Option<bool> {
+        &self.truncated
     }
     /// Consumes the builder and constructs a [`ResolvedTargets`](crate::types::ResolvedTargets).
     pub fn build(self) -> crate::types::ResolvedTargets {

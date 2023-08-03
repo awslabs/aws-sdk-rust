@@ -123,6 +123,10 @@ impl AwsRedshiftClusterPendingModifiedValuesBuilder {
         self.automated_snapshot_retention_period = input;
         self
     }
+    /// <p>The pending or in-progress change to the automated snapshot retention period.</p>
+    pub fn get_automated_snapshot_retention_period(&self) -> &::std::option::Option<i32> {
+        &self.automated_snapshot_retention_period
+    }
     /// <p>The pending or in-progress change to the identifier for the cluster.</p>
     pub fn cluster_identifier(
         mut self,
@@ -139,6 +143,10 @@ impl AwsRedshiftClusterPendingModifiedValuesBuilder {
         self.cluster_identifier = input;
         self
     }
+    /// <p>The pending or in-progress change to the identifier for the cluster.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_identifier
+    }
     /// <p>The pending or in-progress change to the cluster type.</p>
     pub fn cluster_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_type = ::std::option::Option::Some(input.into());
@@ -148,6 +156,10 @@ impl AwsRedshiftClusterPendingModifiedValuesBuilder {
     pub fn set_cluster_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_type = input;
         self
+    }
+    /// <p>The pending or in-progress change to the cluster type.</p>
+    pub fn get_cluster_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_type
     }
     /// <p>The pending or in-progress change to the service version.</p>
     pub fn cluster_version(
@@ -165,6 +177,10 @@ impl AwsRedshiftClusterPendingModifiedValuesBuilder {
         self.cluster_version = input;
         self
     }
+    /// <p>The pending or in-progress change to the service version.</p>
+    pub fn get_cluster_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_version
+    }
     /// <p>The encryption type for a cluster.</p>
     pub fn encryption_type(
         mut self,
@@ -181,6 +197,10 @@ impl AwsRedshiftClusterPendingModifiedValuesBuilder {
         self.encryption_type = input;
         self
     }
+    /// <p>The encryption type for a cluster.</p>
+    pub fn get_encryption_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encryption_type
+    }
     /// <p>Indicates whether to create the cluster with enhanced VPC routing enabled.</p>
     pub fn enhanced_vpc_routing(mut self, input: bool) -> Self {
         self.enhanced_vpc_routing = ::std::option::Option::Some(input);
@@ -190,6 +210,10 @@ impl AwsRedshiftClusterPendingModifiedValuesBuilder {
     pub fn set_enhanced_vpc_routing(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enhanced_vpc_routing = input;
         self
+    }
+    /// <p>Indicates whether to create the cluster with enhanced VPC routing enabled.</p>
+    pub fn get_enhanced_vpc_routing(&self) -> &::std::option::Option<bool> {
+        &self.enhanced_vpc_routing
     }
     /// <p>The name of the maintenance track that the cluster changes to during the next maintenance window.</p>
     pub fn maintenance_track_name(
@@ -207,6 +231,10 @@ impl AwsRedshiftClusterPendingModifiedValuesBuilder {
         self.maintenance_track_name = input;
         self
     }
+    /// <p>The name of the maintenance track that the cluster changes to during the next maintenance window.</p>
+    pub fn get_maintenance_track_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.maintenance_track_name
+    }
     /// <p>The pending or in-progress change to the master user password for the cluster.</p>
     pub fn master_user_password(
         mut self,
@@ -223,6 +251,10 @@ impl AwsRedshiftClusterPendingModifiedValuesBuilder {
         self.master_user_password = input;
         self
     }
+    /// <p>The pending or in-progress change to the master user password for the cluster.</p>
+    pub fn get_master_user_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_user_password
+    }
     /// <p>The pending or in-progress change to the cluster's node type.</p>
     pub fn node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_type = ::std::option::Option::Some(input.into());
@@ -232,6 +264,10 @@ impl AwsRedshiftClusterPendingModifiedValuesBuilder {
     pub fn set_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_type = input;
         self
+    }
+    /// <p>The pending or in-progress change to the cluster's node type.</p>
+    pub fn get_node_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_type
     }
     /// <p>The pending or in-progress change to the number of nodes in the cluster.</p>
     pub fn number_of_nodes(mut self, input: i32) -> Self {
@@ -243,6 +279,10 @@ impl AwsRedshiftClusterPendingModifiedValuesBuilder {
         self.number_of_nodes = input;
         self
     }
+    /// <p>The pending or in-progress change to the number of nodes in the cluster.</p>
+    pub fn get_number_of_nodes(&self) -> &::std::option::Option<i32> {
+        &self.number_of_nodes
+    }
     /// <p>The pending or in-progress change to whether the cluster can be connected to from the public network.</p>
     pub fn publicly_accessible(mut self, input: bool) -> Self {
         self.publicly_accessible = ::std::option::Option::Some(input);
@@ -252,6 +292,10 @@ impl AwsRedshiftClusterPendingModifiedValuesBuilder {
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
         self.publicly_accessible = input;
         self
+    }
+    /// <p>The pending or in-progress change to whether the cluster can be connected to from the public network.</p>
+    pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
+        &self.publicly_accessible
     }
     /// Consumes the builder and constructs a [`AwsRedshiftClusterPendingModifiedValues`](crate::types::AwsRedshiftClusterPendingModifiedValues).
     pub fn build(self) -> crate::types::AwsRedshiftClusterPendingModifiedValues {

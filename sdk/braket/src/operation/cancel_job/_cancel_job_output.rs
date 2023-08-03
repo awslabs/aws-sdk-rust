@@ -54,6 +54,10 @@ impl CancelJobOutputBuilder {
         self.job_arn = input;
         self
     }
+    /// <p>The ARN of the Amazon Braket job.</p>
+    pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_arn
+    }
     /// <p>The status of the job cancellation request.</p>
     pub fn cancellation_status(mut self, input: crate::types::CancellationStatus) -> Self {
         self.cancellation_status = ::std::option::Option::Some(input);
@@ -66,6 +70,12 @@ impl CancelJobOutputBuilder {
     ) -> Self {
         self.cancellation_status = input;
         self
+    }
+    /// <p>The status of the job cancellation request.</p>
+    pub fn get_cancellation_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::CancellationStatus> {
+        &self.cancellation_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

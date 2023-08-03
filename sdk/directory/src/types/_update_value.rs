@@ -43,6 +43,10 @@ impl UpdateValueBuilder {
         self.os_update_settings = input;
         self
     }
+    /// <p> The OS update related settings. </p>
+    pub fn get_os_update_settings(&self) -> &::std::option::Option<crate::types::OsUpdateSettings> {
+        &self.os_update_settings
+    }
     /// Consumes the builder and constructs a [`UpdateValue`](crate::types::UpdateValue).
     pub fn build(self) -> crate::types::UpdateValue {
         crate::types::UpdateValue {

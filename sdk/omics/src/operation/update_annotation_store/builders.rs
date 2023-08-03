@@ -36,6 +36,13 @@ impl UpdateAnnotationStoreFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAnnotationStore as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_annotation_store::builders::UpdateAnnotationStoreInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl UpdateAnnotationStoreFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>A name for the store.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A description for the store.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -135,5 +146,9 @@ impl UpdateAnnotationStoreFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description for the store.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
 }

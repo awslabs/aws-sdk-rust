@@ -91,6 +91,10 @@ impl GetTraceSummariesInputBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The start of the time frame for which to retrieve traces.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The end of the time frame for which to retrieve traces.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -103,6 +107,10 @@ impl GetTraceSummariesInputBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The end of the time frame for which to retrieve traces.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// <p>A parameter to indicate whether to query trace summaries by TraceId or Event time.</p>
     pub fn time_range_type(mut self, input: crate::types::TimeRangeType) -> Self {
@@ -117,6 +125,10 @@ impl GetTraceSummariesInputBuilder {
         self.time_range_type = input;
         self
     }
+    /// <p>A parameter to indicate whether to query trace summaries by TraceId or Event time.</p>
+    pub fn get_time_range_type(&self) -> &::std::option::Option<crate::types::TimeRangeType> {
+        &self.time_range_type
+    }
     /// <p>Set to <code>true</code> to get summaries for only a subset of available traces.</p>
     pub fn sampling(mut self, input: bool) -> Self {
         self.sampling = ::std::option::Option::Some(input);
@@ -126,6 +138,10 @@ impl GetTraceSummariesInputBuilder {
     pub fn set_sampling(mut self, input: ::std::option::Option<bool>) -> Self {
         self.sampling = input;
         self
+    }
+    /// <p>Set to <code>true</code> to get summaries for only a subset of available traces.</p>
+    pub fn get_sampling(&self) -> &::std::option::Option<bool> {
+        &self.sampling
     }
     /// <p>A parameter to indicate whether to enable sampling on trace summaries. Input parameters are Name and Value.</p>
     pub fn sampling_strategy(mut self, input: crate::types::SamplingStrategy) -> Self {
@@ -139,6 +155,10 @@ impl GetTraceSummariesInputBuilder {
     ) -> Self {
         self.sampling_strategy = input;
         self
+    }
+    /// <p>A parameter to indicate whether to enable sampling on trace summaries. Input parameters are Name and Value.</p>
+    pub fn get_sampling_strategy(&self) -> &::std::option::Option<crate::types::SamplingStrategy> {
+        &self.sampling_strategy
     }
     /// <p>Specify a filter expression to retrieve trace summaries for services or requests that meet certain requirements.</p>
     pub fn filter_expression(
@@ -156,6 +176,10 @@ impl GetTraceSummariesInputBuilder {
         self.filter_expression = input;
         self
     }
+    /// <p>Specify a filter expression to retrieve trace summaries for services or requests that meet certain requirements.</p>
+    pub fn get_filter_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter_expression
+    }
     /// <p>Specify the pagination token returned by a previous request to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -165,6 +189,10 @@ impl GetTraceSummariesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Specify the pagination token returned by a previous request to retrieve the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`GetTraceSummariesInput`](crate::operation::get_trace_summaries::GetTraceSummariesInput).
     pub fn build(

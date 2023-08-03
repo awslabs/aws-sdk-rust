@@ -172,6 +172,10 @@ impl CreateRecipeJobInputBuilder {
         self.dataset_name = input;
         self
     }
+    /// <p>The name of the dataset that this job processes.</p>
+    pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_name
+    }
     /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
     pub fn encryption_key_arn(
         mut self,
@@ -187,6 +191,10 @@ impl CreateRecipeJobInputBuilder {
     ) -> Self {
         self.encryption_key_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
+    pub fn get_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encryption_key_arn
     }
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
@@ -209,6 +217,14 @@ impl CreateRecipeJobInputBuilder {
         self.encryption_mode = input;
         self
     }
+    /// <p>The encryption mode for the job, which can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
+    /// </ul>
+    pub fn get_encryption_mode(&self) -> &::std::option::Option<crate::types::EncryptionMode> {
+        &self.encryption_mode
+    }
     /// <p>A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -218,6 +234,10 @@ impl CreateRecipeJobInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
     pub fn log_subscription(mut self, input: crate::types::LogSubscription) -> Self {
@@ -232,6 +252,10 @@ impl CreateRecipeJobInputBuilder {
         self.log_subscription = input;
         self
     }
+    /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
+    pub fn get_log_subscription(&self) -> &::std::option::Option<crate::types::LogSubscription> {
+        &self.log_subscription
+    }
     /// <p>The maximum number of nodes that DataBrew can consume when the job processes data.</p>
     pub fn max_capacity(mut self, input: i32) -> Self {
         self.max_capacity = ::std::option::Option::Some(input);
@@ -242,6 +266,10 @@ impl CreateRecipeJobInputBuilder {
         self.max_capacity = input;
         self
     }
+    /// <p>The maximum number of nodes that DataBrew can consume when the job processes data.</p>
+    pub fn get_max_capacity(&self) -> &::std::option::Option<i32> {
+        &self.max_capacity
+    }
     /// <p>The maximum number of times to retry the job after a job run fails.</p>
     pub fn max_retries(mut self, input: i32) -> Self {
         self.max_retries = ::std::option::Option::Some(input);
@@ -251,6 +279,10 @@ impl CreateRecipeJobInputBuilder {
     pub fn set_max_retries(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_retries = input;
         self
+    }
+    /// <p>The maximum number of times to retry the job after a job run fails.</p>
+    pub fn get_max_retries(&self) -> &::std::option::Option<i32> {
+        &self.max_retries
     }
     /// Appends an item to `outputs`.
     ///
@@ -271,6 +303,10 @@ impl CreateRecipeJobInputBuilder {
         self.outputs = input;
         self
     }
+    /// <p>One or more artifacts that represent the output from running the job.</p>
+    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Output>> {
+        &self.outputs
+    }
     /// Appends an item to `data_catalog_outputs`.
     ///
     /// To override the contents of this collection use [`set_data_catalog_outputs`](Self::set_data_catalog_outputs).
@@ -289,6 +325,12 @@ impl CreateRecipeJobInputBuilder {
     ) -> Self {
         self.data_catalog_outputs = input;
         self
+    }
+    /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
+    pub fn get_data_catalog_outputs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataCatalogOutput>> {
+        &self.data_catalog_outputs
     }
     /// Appends an item to `database_outputs`.
     ///
@@ -309,6 +351,12 @@ impl CreateRecipeJobInputBuilder {
         self.database_outputs = input;
         self
     }
+    /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write to. </p>
+    pub fn get_database_outputs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DatabaseOutput>> {
+        &self.database_outputs
+    }
     /// <p>Either the name of an existing project, or a combination of a recipe and a dataset to associate with the recipe.</p>
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
@@ -318,6 +366,10 @@ impl CreateRecipeJobInputBuilder {
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_name = input;
         self
+    }
+    /// <p>Either the name of an existing project, or a combination of a recipe and a dataset to associate with the recipe.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
     }
     /// <p>Represents the name and version of a DataBrew recipe.</p>
     pub fn recipe_reference(mut self, input: crate::types::RecipeReference) -> Self {
@@ -332,6 +384,10 @@ impl CreateRecipeJobInputBuilder {
         self.recipe_reference = input;
         self
     }
+    /// <p>Represents the name and version of a DataBrew recipe.</p>
+    pub fn get_recipe_reference(&self) -> &::std::option::Option<crate::types::RecipeReference> {
+        &self.recipe_reference
+    }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -341,6 +397,10 @@ impl CreateRecipeJobInputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -367,6 +427,14 @@ impl CreateRecipeJobInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Metadata tags to apply to this job.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
     pub fn timeout(mut self, input: i32) -> Self {
         self.timeout = ::std::option::Option::Some(input);
@@ -376,6 +444,10 @@ impl CreateRecipeJobInputBuilder {
     pub fn set_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timeout = input;
         self
+    }
+    /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
+    pub fn get_timeout(&self) -> &::std::option::Option<i32> {
+        &self.timeout
     }
     /// Consumes the builder and constructs a [`CreateRecipeJobInput`](crate::operation::create_recipe_job::CreateRecipeJobInput).
     pub fn build(

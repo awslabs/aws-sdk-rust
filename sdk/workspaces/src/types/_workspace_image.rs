@@ -122,6 +122,10 @@ impl WorkspaceImageBuilder {
         self.image_id = input;
         self
     }
+    /// <p>The identifier of the image.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_id
+    }
     /// <p>The name of the image.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -132,6 +136,10 @@ impl WorkspaceImageBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the image.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the image.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -141,6 +149,10 @@ impl WorkspaceImageBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the image.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The operating system that the image is running. </p>
     pub fn operating_system(mut self, input: crate::types::OperatingSystem) -> Self {
@@ -155,6 +167,10 @@ impl WorkspaceImageBuilder {
         self.operating_system = input;
         self
     }
+    /// <p>The operating system that the image is running. </p>
+    pub fn get_operating_system(&self) -> &::std::option::Option<crate::types::OperatingSystem> {
+        &self.operating_system
+    }
     /// <p>The status of the image.</p>
     pub fn state(mut self, input: crate::types::WorkspaceImageState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -167,6 +183,10 @@ impl WorkspaceImageBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The status of the image.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::WorkspaceImageState> {
+        &self.state
     }
     /// <p>Specifies whether the image is running on dedicated hardware. When Bring Your Own License (BYOL) is enabled, this value is set to <code>DEDICATED</code>. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
     pub fn required_tenancy(mut self, input: crate::types::WorkspaceImageRequiredTenancy) -> Self {
@@ -181,6 +201,12 @@ impl WorkspaceImageBuilder {
         self.required_tenancy = input;
         self
     }
+    /// <p>Specifies whether the image is running on dedicated hardware. When Bring Your Own License (BYOL) is enabled, this value is set to <code>DEDICATED</code>. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
+    pub fn get_required_tenancy(
+        &self,
+    ) -> &::std::option::Option<crate::types::WorkspaceImageRequiredTenancy> {
+        &self.required_tenancy
+    }
     /// <p>The error code that is returned for the image.</p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
@@ -190,6 +216,10 @@ impl WorkspaceImageBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The error code that is returned for the image.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
     }
     /// <p>The text of the error message that is returned for the image.</p>
     pub fn error_message(
@@ -207,6 +237,10 @@ impl WorkspaceImageBuilder {
         self.error_message = input;
         self
     }
+    /// <p>The text of the error message that is returned for the image.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// <p>The date when the image was created. If the image has been shared, the Amazon Web Services account that the image has been shared with sees the original creation date of the image.</p>
     pub fn created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created = ::std::option::Option::Some(input);
@@ -219,6 +253,10 @@ impl WorkspaceImageBuilder {
     ) -> Self {
         self.created = input;
         self
+    }
+    /// <p>The date when the image was created. If the image has been shared, the Amazon Web Services account that the image has been shared with sees the original creation date of the image.</p>
+    pub fn get_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created
     }
     /// <p>The identifier of the Amazon Web Services account that owns the image.</p>
     pub fn owner_account_id(
@@ -236,6 +274,10 @@ impl WorkspaceImageBuilder {
         self.owner_account_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Web Services account that owns the image.</p>
+    pub fn get_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_account_id
+    }
     /// <p>The updates (if any) that are available for the specified image.</p>
     pub fn updates(mut self, input: crate::types::UpdateResult) -> Self {
         self.updates = ::std::option::Option::Some(input);
@@ -245,6 +287,10 @@ impl WorkspaceImageBuilder {
     pub fn set_updates(mut self, input: ::std::option::Option<crate::types::UpdateResult>) -> Self {
         self.updates = input;
         self
+    }
+    /// <p>The updates (if any) that are available for the specified image.</p>
+    pub fn get_updates(&self) -> &::std::option::Option<crate::types::UpdateResult> {
+        &self.updates
     }
     /// Consumes the builder and constructs a [`WorkspaceImage`](crate::types::WorkspaceImage).
     pub fn build(self) -> crate::types::WorkspaceImage {

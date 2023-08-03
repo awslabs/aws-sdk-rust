@@ -148,6 +148,10 @@ impl CreateBotAliasOutputBuilder {
         self.bot_alias_id = input;
         self
     }
+    /// <p>The unique identifier of the bot alias.</p>
+    pub fn get_bot_alias_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_alias_id
+    }
     /// <p>The name specified for the bot alias.</p>
     pub fn bot_alias_name(
         mut self,
@@ -164,6 +168,10 @@ impl CreateBotAliasOutputBuilder {
         self.bot_alias_name = input;
         self
     }
+    /// <p>The name specified for the bot alias.</p>
+    pub fn get_bot_alias_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_alias_name
+    }
     /// <p>The description specified for the bot alias.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -174,6 +182,10 @@ impl CreateBotAliasOutputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description specified for the bot alias.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The version of the bot associated with this alias.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
@@ -183,6 +195,10 @@ impl CreateBotAliasOutputBuilder {
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_version = input;
         self
+    }
+    /// <p>The version of the bot associated with this alias.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_version
     }
     /// Adds a key-value pair to `bot_alias_locale_settings`.
     ///
@@ -212,6 +228,14 @@ impl CreateBotAliasOutputBuilder {
         self.bot_alias_locale_settings = input;
         self
     }
+    /// <p>Configuration information for a specific locale.</p>
+    pub fn get_bot_alias_locale_settings(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::BotAliasLocaleSettings>,
+    > {
+        &self.bot_alias_locale_settings
+    }
     /// <p>The conversation log settings specified for the alias.</p>
     pub fn conversation_log_settings(
         mut self,
@@ -227,6 +251,12 @@ impl CreateBotAliasOutputBuilder {
     ) -> Self {
         self.conversation_log_settings = input;
         self
+    }
+    /// <p>The conversation log settings specified for the alias.</p>
+    pub fn get_conversation_log_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConversationLogSettings> {
+        &self.conversation_log_settings
     }
     /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
     pub fn sentiment_analysis_settings(
@@ -244,6 +274,12 @@ impl CreateBotAliasOutputBuilder {
         self.sentiment_analysis_settings = input;
         self
     }
+    /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
+    pub fn get_sentiment_analysis_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::SentimentAnalysisSettings> {
+        &self.sentiment_analysis_settings
+    }
     /// <p>The current status of the alias. The alias is first put into the <code>Creating</code> state. When the alias is ready to be used, it is put into the <code>Available</code> state. You can use the <code>DescribeBotAlias</code> operation to get the current state of an alias.</p>
     pub fn bot_alias_status(mut self, input: crate::types::BotAliasStatus) -> Self {
         self.bot_alias_status = ::std::option::Option::Some(input);
@@ -257,6 +293,10 @@ impl CreateBotAliasOutputBuilder {
         self.bot_alias_status = input;
         self
     }
+    /// <p>The current status of the alias. The alias is first put into the <code>Creating</code> state. When the alias is ready to be used, it is put into the <code>Available</code> state. You can use the <code>DescribeBotAlias</code> operation to get the current state of an alias.</p>
+    pub fn get_bot_alias_status(&self) -> &::std::option::Option<crate::types::BotAliasStatus> {
+        &self.bot_alias_status
+    }
     /// <p>The unique identifier of the bot that this alias applies to.</p>
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
@@ -266,6 +306,10 @@ impl CreateBotAliasOutputBuilder {
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_id = input;
         self
+    }
+    /// <p>The unique identifier of the bot that this alias applies to.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
     }
     /// <p>A Unix timestamp indicating the date and time that the bot alias was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -279,6 +323,10 @@ impl CreateBotAliasOutputBuilder {
     ) -> Self {
         self.creation_date_time = input;
         self
+    }
+    /// <p>A Unix timestamp indicating the date and time that the bot alias was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -304,6 +352,14 @@ impl CreateBotAliasOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tags associated with the bot alias.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

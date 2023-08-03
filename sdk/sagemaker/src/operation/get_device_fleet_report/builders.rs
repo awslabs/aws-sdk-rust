@@ -36,6 +36,13 @@ impl GetDeviceFleetReportFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetDeviceFleetReport as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_device_fleet_report::builders::GetDeviceFleetReportInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +138,9 @@ impl GetDeviceFleetReportFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_device_fleet_name(input);
         self
+    }
+    /// <p>The name of the fleet.</p>
+    pub fn get_device_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_fleet_name()
     }
 }

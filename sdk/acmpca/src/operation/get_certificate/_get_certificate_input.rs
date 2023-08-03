@@ -59,6 +59,11 @@ impl GetCertificateInputBuilder {
         self.certificate_authority_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form: </p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
+    pub fn get_certificate_authority_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_authority_arn
+    }
     /// <p>The ARN of the issued certificate. The ARN contains the certificate serial number and must be in the following form: </p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code> </p>
     pub fn certificate_arn(
@@ -76,6 +81,11 @@ impl GetCertificateInputBuilder {
     ) -> Self {
         self.certificate_arn = input;
         self
+    }
+    /// <p>The ARN of the issued certificate. The ARN contains the certificate serial number and must be in the following form: </p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code> </p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_arn
     }
     /// Consumes the builder and constructs a [`GetCertificateInput`](crate::operation::get_certificate::GetCertificateInput).
     pub fn build(

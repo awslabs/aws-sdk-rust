@@ -53,6 +53,10 @@ impl PollForThirdPartyJobsInputBuilder {
         self.action_type_id = input;
         self
     }
+    /// <p>Represents information about an action type.</p>
+    pub fn get_action_type_id(&self) -> &::std::option::Option<crate::types::ActionTypeId> {
+        &self.action_type_id
+    }
     /// <p>The maximum number of jobs to return in a poll for jobs call.</p>
     pub fn max_batch_size(mut self, input: i32) -> Self {
         self.max_batch_size = ::std::option::Option::Some(input);
@@ -62,6 +66,10 @@ impl PollForThirdPartyJobsInputBuilder {
     pub fn set_max_batch_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_batch_size = input;
         self
+    }
+    /// <p>The maximum number of jobs to return in a poll for jobs call.</p>
+    pub fn get_max_batch_size(&self) -> &::std::option::Option<i32> {
+        &self.max_batch_size
     }
     /// Consumes the builder and constructs a [`PollForThirdPartyJobsInput`](crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsInput).
     pub fn build(

@@ -59,6 +59,10 @@ impl ApplicationComponentStrategyBuilder {
         self.recommendation = input;
         self
     }
+    /// <p> Strategy recommendation for the application component. </p>
+    pub fn get_recommendation(&self) -> &::std::option::Option<crate::types::RecommendationSet> {
+        &self.recommendation
+    }
     /// <p> The recommendation status of a strategy for an application component. </p>
     pub fn status(mut self, input: crate::types::StrategyRecommendation) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl ApplicationComponentStrategyBuilder {
         self.status = input;
         self
     }
+    /// <p> The recommendation status of a strategy for an application component. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::StrategyRecommendation> {
+        &self.status
+    }
     /// <p> Set to true if the recommendation is set as preferred. </p>
     pub fn is_preferred(mut self, input: bool) -> Self {
         self.is_preferred = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl ApplicationComponentStrategyBuilder {
     pub fn set_is_preferred(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_preferred = input;
         self
+    }
+    /// <p> Set to true if the recommendation is set as preferred. </p>
+    pub fn get_is_preferred(&self) -> &::std::option::Option<bool> {
+        &self.is_preferred
     }
     /// Consumes the builder and constructs a [`ApplicationComponentStrategy`](crate::types::ApplicationComponentStrategy).
     pub fn build(self) -> crate::types::ApplicationComponentStrategy {

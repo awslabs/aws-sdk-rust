@@ -40,6 +40,10 @@ impl DescribeInputInputBuilder {
         self.input_id = input;
         self
     }
+    /// Unique ID of the input
+    pub fn get_input_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_id
+    }
     /// Consumes the builder and constructs a [`DescribeInputInput`](crate::operation::describe_input::DescribeInputInput).
     pub fn build(
         self,

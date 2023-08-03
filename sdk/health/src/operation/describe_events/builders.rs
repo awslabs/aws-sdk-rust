@@ -42,6 +42,12 @@ impl DescribeEventsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeEvents as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_events::builders::DescribeEventsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +141,10 @@ impl DescribeEventsFluentBuilder {
         self.inner = self.inner.set_filter(input);
         self
     }
+    /// <p>Values to narrow the results returned.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::EventFilter> {
+        self.inner.get_filter()
+    }
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -144,6 +154,10 @@ impl DescribeEventsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -155,6 +169,10 @@ impl DescribeEventsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
     pub fn locale(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.locale(input.into());
@@ -164,5 +182,9 @@ impl DescribeEventsFluentBuilder {
     pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_locale(input);
         self
+    }
+    /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
+    pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_locale()
     }
 }

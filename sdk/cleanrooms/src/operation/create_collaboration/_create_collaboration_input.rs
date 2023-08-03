@@ -122,6 +122,12 @@ impl CreateCollaborationInputBuilder {
         self.members = input;
         self
     }
+    /// <p>A list of initial members, not including the creator. This list is immutable.</p>
+    pub fn get_members(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberSpecification>> {
+        &self.members
+    }
     /// <p>The display name for a collaboration.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -132,6 +138,10 @@ impl CreateCollaborationInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The display name for a collaboration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description of the collaboration provided by the collaboration owner.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -141,6 +151,10 @@ impl CreateCollaborationInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the collaboration provided by the collaboration owner.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `creator_member_abilities`.
     ///
@@ -161,6 +175,12 @@ impl CreateCollaborationInputBuilder {
         self.creator_member_abilities = input;
         self
     }
+    /// <p>The abilities granted to the collaboration creator.</p>
+    pub fn get_creator_member_abilities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>> {
+        &self.creator_member_abilities
+    }
     /// <p>The display name of the collaboration creator.</p>
     pub fn creator_display_name(
         mut self,
@@ -177,6 +197,10 @@ impl CreateCollaborationInputBuilder {
         self.creator_display_name = input;
         self
     }
+    /// <p>The display name of the collaboration creator.</p>
+    pub fn get_creator_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creator_display_name
+    }
     /// <p>The settings for client-side encryption with Cryptographic Computing for Clean Rooms.</p>
     pub fn data_encryption_metadata(mut self, input: crate::types::DataEncryptionMetadata) -> Self {
         self.data_encryption_metadata = ::std::option::Option::Some(input);
@@ -190,6 +214,12 @@ impl CreateCollaborationInputBuilder {
         self.data_encryption_metadata = input;
         self
     }
+    /// <p>The settings for client-side encryption with Cryptographic Computing for Clean Rooms.</p>
+    pub fn get_data_encryption_metadata(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataEncryptionMetadata> {
+        &self.data_encryption_metadata
+    }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
     pub fn query_log_status(mut self, input: crate::types::CollaborationQueryLogStatus) -> Self {
         self.query_log_status = ::std::option::Option::Some(input);
@@ -202,6 +232,12 @@ impl CreateCollaborationInputBuilder {
     ) -> Self {
         self.query_log_status = input;
         self
+    }
+    /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
+    pub fn get_query_log_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::CollaborationQueryLogStatus> {
+        &self.query_log_status
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -227,6 +263,14 @@ impl CreateCollaborationInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateCollaborationInput`](crate::operation::create_collaboration::CreateCollaborationInput).
     pub fn build(

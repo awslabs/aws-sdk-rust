@@ -36,6 +36,12 @@ impl RegisterClientFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RegisterClient as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::register_client::builders::RegisterClientInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl RegisterClientFluentBuilder {
         self.inner = self.inner.set_client_name(input);
         self
     }
+    /// <p>The friendly name of the client.</p>
+    pub fn get_client_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_name()
+    }
     /// <p>The type of client. The service supports only <code>public</code> as a client type. Anything other than public will be rejected by the service.</p>
     pub fn client_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_type(input.into());
@@ -127,6 +137,10 @@ impl RegisterClientFluentBuilder {
     pub fn set_client_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_type(input);
         self
+    }
+    /// <p>The type of client. The service supports only <code>public</code> as a client type. Anything other than public will be rejected by the service.</p>
+    pub fn get_client_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_type()
     }
     /// Appends an item to `scopes`.
     ///
@@ -144,5 +158,9 @@ impl RegisterClientFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_scopes(input);
         self
+    }
+    /// <p>The list of scopes that are defined by the client. Upon authorization, this list is used to restrict permissions when granting an access token.</p>
+    pub fn get_scopes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_scopes()
     }
 }

@@ -54,6 +54,10 @@ impl VmServerAddressBuilder {
         self.vm_manager_id = input;
         self
     }
+    /// <p>The ID of the VM manager.</p>
+    pub fn get_vm_manager_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vm_manager_id
+    }
     /// <p>The ID of the VM.</p>
     pub fn vm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vm_id = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl VmServerAddressBuilder {
     pub fn set_vm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vm_id = input;
         self
+    }
+    /// <p>The ID of the VM.</p>
+    pub fn get_vm_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vm_id
     }
     /// Consumes the builder and constructs a [`VmServerAddress`](crate::types::VmServerAddress).
     pub fn build(self) -> crate::types::VmServerAddress {

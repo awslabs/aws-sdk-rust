@@ -51,6 +51,10 @@ impl CancelResourceRequestOutputBuilder {
         self.progress_event = input;
         self
     }
+    /// <p>Represents the current status of a resource operation request. For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html">Managing resource operation requests</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
+    pub fn get_progress_event(&self) -> &::std::option::Option<crate::types::ProgressEvent> {
+        &self.progress_event
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

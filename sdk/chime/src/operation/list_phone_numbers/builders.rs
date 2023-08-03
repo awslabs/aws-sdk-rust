@@ -36,6 +36,12 @@ impl ListPhoneNumbersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListPhoneNumbers as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_phone_numbers::builders::ListPhoneNumbersInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +146,10 @@ impl ListPhoneNumbersFluentBuilder {
         self.inner = self.inner.set_status(input);
         self
     }
+    /// <p>The phone number status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::PhoneNumberStatus> {
+        self.inner.get_status()
+    }
     /// <p>The phone number product type.</p>
     pub fn product_type(mut self, input: crate::types::PhoneNumberProductType) -> Self {
         self.inner = self.inner.product_type(input);
@@ -152,6 +162,10 @@ impl ListPhoneNumbersFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_product_type(input);
         self
+    }
+    /// <p>The phone number product type.</p>
+    pub fn get_product_type(&self) -> &::std::option::Option<crate::types::PhoneNumberProductType> {
+        self.inner.get_product_type()
     }
     /// <p>The filter to use to limit the number of results.</p>
     pub fn filter_name(mut self, input: crate::types::PhoneNumberAssociationName) -> Self {
@@ -166,6 +180,12 @@ impl ListPhoneNumbersFluentBuilder {
         self.inner = self.inner.set_filter_name(input);
         self
     }
+    /// <p>The filter to use to limit the number of results.</p>
+    pub fn get_filter_name(
+        &self,
+    ) -> &::std::option::Option<crate::types::PhoneNumberAssociationName> {
+        self.inner.get_filter_name()
+    }
     /// <p>The value to use for the filter.</p>
     pub fn filter_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.filter_value(input.into());
@@ -175,6 +195,10 @@ impl ListPhoneNumbersFluentBuilder {
     pub fn set_filter_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_filter_value(input);
         self
+    }
+    /// <p>The value to use for the filter.</p>
+    pub fn get_filter_value(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_filter_value()
     }
     /// <p>The maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -186,6 +210,10 @@ impl ListPhoneNumbersFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return in a single call.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -195,5 +223,9 @@ impl ListPhoneNumbersFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

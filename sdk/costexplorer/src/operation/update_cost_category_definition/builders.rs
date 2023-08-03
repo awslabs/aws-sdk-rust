@@ -36,6 +36,10 @@ impl UpdateCostCategoryDefinitionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateCostCategoryDefinition as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_cost_category_definition::builders::UpdateCostCategoryDefinitionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl UpdateCostCategoryDefinitionFluentBuilder {
         self.inner = self.inner.set_cost_category_arn(input);
         self
     }
+    /// <p>The unique identifier for your Cost Category.</p>
+    pub fn get_cost_category_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cost_category_arn()
+    }
     /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month). If the date isn't provided, it's the first day of the current month. Dates can't be before the previous twelve months, or in the future.</p>
     pub fn effective_start(
         mut self,
@@ -148,6 +156,10 @@ impl UpdateCostCategoryDefinitionFluentBuilder {
         self.inner = self.inner.set_effective_start(input);
         self
     }
+    /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month). If the date isn't provided, it's the first day of the current month. Dates can't be before the previous twelve months, or in the future.</p>
+    pub fn get_effective_start(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_effective_start()
+    }
     /// <p>The rule schema version in this particular Cost Category.</p>
     pub fn rule_version(mut self, input: crate::types::CostCategoryRuleVersion) -> Self {
         self.inner = self.inner.rule_version(input);
@@ -160,6 +172,12 @@ impl UpdateCostCategoryDefinitionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_rule_version(input);
         self
+    }
+    /// <p>The rule schema version in this particular Cost Category.</p>
+    pub fn get_rule_version(
+        &self,
+    ) -> &::std::option::Option<crate::types::CostCategoryRuleVersion> {
+        self.inner.get_rule_version()
     }
     /// Appends an item to `Rules`.
     ///
@@ -178,6 +196,12 @@ impl UpdateCostCategoryDefinitionFluentBuilder {
         self.inner = self.inner.set_rules(input);
         self
     }
+    /// <p>The <code>Expression</code> object used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule </a>. </p>
+    pub fn get_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CostCategoryRule>> {
+        self.inner.get_rules()
+    }
     /// <p>The default value for the cost category.</p>
     pub fn default_value(
         mut self,
@@ -193,6 +217,10 @@ impl UpdateCostCategoryDefinitionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_default_value(input);
         self
+    }
+    /// <p>The default value for the cost category.</p>
+    pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_default_value()
     }
     /// Appends an item to `SplitChargeRules`.
     ///
@@ -210,5 +238,11 @@ impl UpdateCostCategoryDefinitionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_split_charge_rules(input);
         self
+    }
+    /// <p> The split charge rules used to allocate your charges between your Cost Category values. </p>
+    pub fn get_split_charge_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRule>> {
+        self.inner.get_split_charge_rules()
     }
 }

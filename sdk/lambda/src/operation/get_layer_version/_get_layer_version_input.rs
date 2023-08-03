@@ -47,6 +47,10 @@ impl GetLayerVersionInputBuilder {
         self.layer_name = input;
         self
     }
+    /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
+    pub fn get_layer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.layer_name
+    }
     /// <p>The version number.</p>
     pub fn version_number(mut self, input: i64) -> Self {
         self.version_number = ::std::option::Option::Some(input);
@@ -56,6 +60,10 @@ impl GetLayerVersionInputBuilder {
     pub fn set_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.version_number = input;
         self
+    }
+    /// <p>The version number.</p>
+    pub fn get_version_number(&self) -> &::std::option::Option<i64> {
+        &self.version_number
     }
     /// Consumes the builder and constructs a [`GetLayerVersionInput`](crate::operation::get_layer_version::GetLayerVersionInput).
     pub fn build(

@@ -78,6 +78,13 @@ impl CreateStandbyWorkspacesOutputBuilder {
         self.failed_standby_requests = input;
         self
     }
+    /// <p>Information about the standby WorkSpace that could not be created. </p>
+    pub fn get_failed_standby_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedCreateStandbyWorkspacesRequest>>
+    {
+        &self.failed_standby_requests
+    }
     /// Appends an item to `pending_standby_requests`.
     ///
     /// To override the contents of this collection use [`set_pending_standby_requests`](Self::set_pending_standby_requests).
@@ -101,6 +108,13 @@ impl CreateStandbyWorkspacesOutputBuilder {
     ) -> Self {
         self.pending_standby_requests = input;
         self
+    }
+    /// <p>Information about the standby WorkSpace that was created.</p>
+    pub fn get_pending_standby_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PendingCreateStandbyWorkspacesRequest>>
+    {
+        &self.pending_standby_requests
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

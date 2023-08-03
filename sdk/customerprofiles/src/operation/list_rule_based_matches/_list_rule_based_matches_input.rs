@@ -56,6 +56,10 @@ impl ListRuleBasedMatchesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The pagination token from the previous <code>ListRuleBasedMatches</code> API call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of <code>MatchIds</code> returned per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl ListRuleBasedMatchesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of <code>MatchIds</code> returned per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The unique name of the domain.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl ListRuleBasedMatchesInputBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
+    }
+    /// <p>The unique name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// Consumes the builder and constructs a [`ListRuleBasedMatchesInput`](crate::operation::list_rule_based_matches::ListRuleBasedMatchesInput).
     pub fn build(

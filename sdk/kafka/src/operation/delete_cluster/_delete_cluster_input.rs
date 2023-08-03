@@ -47,6 +47,10 @@ impl DeleteClusterInputBuilder {
         self.cluster_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_arn
+    }
     /// <p>The current version of the MSK cluster.</p>
     pub fn current_version(
         mut self,
@@ -62,6 +66,10 @@ impl DeleteClusterInputBuilder {
     ) -> Self {
         self.current_version = input;
         self
+    }
+    /// <p>The current version of the MSK cluster.</p>
+    pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.current_version
     }
     /// Consumes the builder and constructs a [`DeleteClusterInput`](crate::operation::delete_cluster::DeleteClusterInput).
     pub fn build(

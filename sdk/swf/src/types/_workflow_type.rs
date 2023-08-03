@@ -60,6 +60,12 @@ impl WorkflowTypeBuilder {
         self.name = input;
         self
     }
+    /// <p> The name of the workflow type.</p> <note>
+    /// <p>The combination of workflow type name and version must be unique with in a domain.</p>
+    /// </note>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p> The version of the workflow type.</p> <note>
     /// <p>The combination of workflow type name and version must be unique with in a domain.</p>
     /// </note>
@@ -73,6 +79,12 @@ impl WorkflowTypeBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p> The version of the workflow type.</p> <note>
+    /// <p>The combination of workflow type name and version must be unique with in a domain.</p>
+    /// </note>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`WorkflowType`](crate::types::WorkflowType).
     pub fn build(self) -> crate::types::WorkflowType {

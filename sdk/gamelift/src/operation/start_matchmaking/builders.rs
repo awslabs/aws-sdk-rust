@@ -42,6 +42,12 @@ impl StartMatchmakingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartMatchmaking as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_matchmaking::builders::StartMatchmakingInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl StartMatchmakingFluentBuilder {
         self.inner = self.inner.set_ticket_id(input);
         self
     }
+    /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.</p>
+    pub fn get_ticket_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ticket_id()
+    }
     /// <p>Name of the matchmaking configuration to use for this request. Matchmaking configurations must exist in the same Region as this request. You can use either the configuration name or ARN value.</p>
     pub fn configuration_name(
         mut self,
@@ -147,6 +157,10 @@ impl StartMatchmakingFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_configuration_name(input);
         self
+    }
+    /// <p>Name of the matchmaking configuration to use for this request. Matchmaking configurations must exist in the same Region as this request. You can use either the configuration name or ARN value.</p>
+    pub fn get_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_name()
     }
     /// Appends an item to `Players`.
     ///
@@ -166,5 +180,10 @@ impl StartMatchmakingFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_players(input);
         self
+    }
+    /// <p>Information on each player to be matched. This information must include a player ID, and may contain player attributes and latency data to be used in the matchmaking process. After a successful match, <code>Player</code> objects contain the name of the team the player is assigned to.</p>
+    /// <p>You can include up to 10 <code>Players</code> in a <code>StartMatchmaking</code> request.</p>
+    pub fn get_players(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Player>> {
+        self.inner.get_players()
     }
 }

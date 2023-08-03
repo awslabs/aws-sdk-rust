@@ -36,6 +36,10 @@ impl GetWirelessDeviceImportTaskFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetWirelessDeviceImportTask as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_wireless_device_import_task::builders::GetWirelessDeviceImportTaskInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +129,9 @@ impl GetWirelessDeviceImportTaskFluentBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
+    }
+    /// <p>The identifier of the import task for which information is requested.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
     }
 }

@@ -71,6 +71,10 @@ impl UpdateContactFlowModuleMetadataInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The identifier of the flow module.</p>
     pub fn contact_flow_module_id(
         mut self,
@@ -87,6 +91,10 @@ impl UpdateContactFlowModuleMetadataInputBuilder {
         self.contact_flow_module_id = input;
         self
     }
+    /// <p>The identifier of the flow module.</p>
+    pub fn get_contact_flow_module_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_flow_module_id
+    }
     /// <p>The name of the flow module.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -97,6 +105,10 @@ impl UpdateContactFlowModuleMetadataInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the flow module.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the flow module.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -106,6 +118,10 @@ impl UpdateContactFlowModuleMetadataInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the flow module.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The state of flow module.</p>
     pub fn state(mut self, input: crate::types::ContactFlowModuleState) -> Self {
@@ -119,6 +135,10 @@ impl UpdateContactFlowModuleMetadataInputBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of flow module.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ContactFlowModuleState> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`UpdateContactFlowModuleMetadataInput`](crate::operation::update_contact_flow_module_metadata::UpdateContactFlowModuleMetadataInput).
     pub fn build(

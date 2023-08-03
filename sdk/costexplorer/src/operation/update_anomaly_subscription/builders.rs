@@ -38,6 +38,10 @@ impl UpdateAnomalySubscriptionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAnomalySubscription as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_anomaly_subscription::builders::UpdateAnomalySubscriptionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +138,10 @@ impl UpdateAnomalySubscriptionFluentBuilder {
         self.inner = self.inner.set_subscription_arn(input);
         self
     }
+    /// <p>A cost anomaly subscription Amazon Resource Name (ARN). </p>
+    pub fn get_subscription_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_subscription_arn()
+    }
     /// <p>(deprecated)</p>
     /// <p>The update to the threshold value for receiving notifications. </p>
     /// <p>This field has been deprecated. To update a threshold, use ThresholdExpression. Continued use of Threshold will be treated as shorthand syntax for a ThresholdExpression.</p>
@@ -152,6 +160,14 @@ impl UpdateAnomalySubscriptionFluentBuilder {
         self.inner = self.inner.set_threshold(input);
         self
     }
+    /// <p>(deprecated)</p>
+    /// <p>The update to the threshold value for receiving notifications. </p>
+    /// <p>This field has been deprecated. To update a threshold, use ThresholdExpression. Continued use of Threshold will be treated as shorthand syntax for a ThresholdExpression.</p>
+    /// <p>You can specify either Threshold or ThresholdExpression, but not both.</p>
+    #[deprecated(note = "Threshold has been deprecated in favor of ThresholdExpression")]
+    pub fn get_threshold(&self) -> &::std::option::Option<f64> {
+        self.inner.get_threshold()
+    }
     /// <p>The update to the frequency value that subscribers receive notifications. </p>
     pub fn frequency(mut self, input: crate::types::AnomalySubscriptionFrequency) -> Self {
         self.inner = self.inner.frequency(input);
@@ -164,6 +180,12 @@ impl UpdateAnomalySubscriptionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_frequency(input);
         self
+    }
+    /// <p>The update to the frequency value that subscribers receive notifications. </p>
+    pub fn get_frequency(
+        &self,
+    ) -> &::std::option::Option<crate::types::AnomalySubscriptionFrequency> {
+        self.inner.get_frequency()
     }
     /// Appends an item to `MonitorArnList`.
     ///
@@ -185,6 +207,12 @@ impl UpdateAnomalySubscriptionFluentBuilder {
         self.inner = self.inner.set_monitor_arn_list(input);
         self
     }
+    /// <p>A list of cost anomaly monitor ARNs. </p>
+    pub fn get_monitor_arn_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_monitor_arn_list()
+    }
     /// Appends an item to `Subscribers`.
     ///
     /// To override the contents of this collection use [`set_subscribers`](Self::set_subscribers).
@@ -202,6 +230,12 @@ impl UpdateAnomalySubscriptionFluentBuilder {
         self.inner = self.inner.set_subscribers(input);
         self
     }
+    /// <p>The update to the subscriber list. </p>
+    pub fn get_subscribers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscriber>> {
+        self.inner.get_subscribers()
+    }
     /// <p>The new name of the subscription. </p>
     pub fn subscription_name(
         mut self,
@@ -217,6 +251,10 @@ impl UpdateAnomalySubscriptionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_subscription_name(input);
         self
+    }
+    /// <p>The new name of the subscription. </p>
+    pub fn get_subscription_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_subscription_name()
     }
     /// <p>The update to the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object used to specify the anomalies that you want to generate alerts for. This supports dimensions and nested expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>, corresponding to an anomaly’s TotalImpact and TotalImpactPercentage, respectively (see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Impact.html">Impact</a> for more details). The supported nested expression types are <code>AND</code> and <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and 10,000,000,000 in string format.</p>
     /// <p>You can specify either Threshold or ThresholdExpression, but not both.</p>
@@ -246,5 +284,17 @@ impl UpdateAnomalySubscriptionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_threshold_expression(input);
         self
+    }
+    /// <p>The update to the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object used to specify the anomalies that you want to generate alerts for. This supports dimensions and nested expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>, corresponding to an anomaly’s TotalImpact and TotalImpactPercentage, respectively (see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Impact.html">Impact</a> for more details). The supported nested expression types are <code>AND</code> and <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and 10,000,000,000 in string format.</p>
+    /// <p>You can specify either Threshold or ThresholdExpression, but not both.</p>
+    /// <p>The following are examples of valid ThresholdExpressions:</p>
+    /// <ul>
+    /// <li> <p>Absolute threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li>
+    /// <li> <p>Percentage threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li>
+    /// <li> <p> <code>AND</code> two thresholds together: <code>{ "And": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li>
+    /// <li> <p> <code>OR</code> two thresholds together: <code>{ "Or": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li>
+    /// </ul>
+    pub fn get_threshold_expression(&self) -> &::std::option::Option<crate::types::Expression> {
+        self.inner.get_threshold_expression()
     }
 }

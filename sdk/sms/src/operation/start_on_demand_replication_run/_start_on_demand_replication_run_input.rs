@@ -53,6 +53,10 @@ impl StartOnDemandReplicationRunInputBuilder {
         self.replication_job_id = input;
         self
     }
+    /// <p>The ID of the replication job.</p>
+    pub fn get_replication_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_job_id
+    }
     /// <p>The description of the replication run.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl StartOnDemandReplicationRunInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the replication run.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`StartOnDemandReplicationRunInput`](crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunInput).
     pub fn build(

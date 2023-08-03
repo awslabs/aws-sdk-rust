@@ -40,6 +40,10 @@ impl ListApplicationsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token used to get the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Consumes the builder and constructs a [`ListApplicationsInput`](crate::operation::list_applications::ListApplicationsInput).
     pub fn build(
         self,

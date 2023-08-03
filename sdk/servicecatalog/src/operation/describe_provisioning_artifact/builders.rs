@@ -36,6 +36,10 @@ impl DescribeProvisioningArtifactFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeProvisioningArtifact as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_provisioning_artifact::builders::DescribeProvisioningArtifactInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +144,14 @@ impl DescribeProvisioningArtifactFluentBuilder {
         self.inner = self.inner.set_accept_language(input);
         self
     }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_accept_language()
+    }
     /// <p>The identifier of the provisioning artifact.</p>
     pub fn provisioning_artifact_id(
         mut self,
@@ -156,6 +168,10 @@ impl DescribeProvisioningArtifactFluentBuilder {
         self.inner = self.inner.set_provisioning_artifact_id(input);
         self
     }
+    /// <p>The identifier of the provisioning artifact.</p>
+    pub fn get_provisioning_artifact_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_provisioning_artifact_id()
+    }
     /// <p>The product identifier.</p>
     pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.product_id(input.into());
@@ -165,6 +181,10 @@ impl DescribeProvisioningArtifactFluentBuilder {
     pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_product_id(input);
         self
+    }
+    /// <p>The product identifier.</p>
+    pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_product_id()
     }
     /// <p>The provisioning artifact name.</p>
     pub fn provisioning_artifact_name(
@@ -182,6 +202,10 @@ impl DescribeProvisioningArtifactFluentBuilder {
         self.inner = self.inner.set_provisioning_artifact_name(input);
         self
     }
+    /// <p>The provisioning artifact name.</p>
+    pub fn get_provisioning_artifact_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_provisioning_artifact_name()
+    }
     /// <p>The product name.</p>
     pub fn product_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.product_name(input.into());
@@ -192,6 +216,10 @@ impl DescribeProvisioningArtifactFluentBuilder {
         self.inner = self.inner.set_product_name(input);
         self
     }
+    /// <p>The product name.</p>
+    pub fn get_product_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_product_name()
+    }
     /// <p>Indicates whether a verbose level of detail is enabled.</p>
     pub fn verbose(mut self, input: bool) -> Self {
         self.inner = self.inner.verbose(input);
@@ -201,6 +229,10 @@ impl DescribeProvisioningArtifactFluentBuilder {
     pub fn set_verbose(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_verbose(input);
         self
+    }
+    /// <p>Indicates whether a verbose level of detail is enabled.</p>
+    pub fn get_verbose(&self) -> &::std::option::Option<bool> {
+        self.inner.get_verbose()
     }
     /// <p>Indicates if the API call response does or does not include additional details about the provisioning parameters. </p>
     pub fn include_provisioning_artifact_parameters(mut self, input: bool) -> Self {
@@ -216,5 +248,9 @@ impl DescribeProvisioningArtifactFluentBuilder {
             .inner
             .set_include_provisioning_artifact_parameters(input);
         self
+    }
+    /// <p>Indicates if the API call response does or does not include additional details about the provisioning parameters. </p>
+    pub fn get_include_provisioning_artifact_parameters(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_provisioning_artifact_parameters()
     }
 }

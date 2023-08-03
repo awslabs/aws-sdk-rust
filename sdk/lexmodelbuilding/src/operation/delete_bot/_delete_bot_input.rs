@@ -39,6 +39,10 @@ impl DeleteBotInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the bot. The name is case sensitive. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeleteBotInput`](crate::operation::delete_bot::DeleteBotInput).
     pub fn build(
         self,

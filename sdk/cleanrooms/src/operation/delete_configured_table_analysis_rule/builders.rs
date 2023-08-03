@@ -36,6 +36,10 @@ impl DeleteConfiguredTableAnalysisRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteConfiguredTableAnalysisRule as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_configured_table_analysis_rule::builders::DeleteConfiguredTableAnalysisRuleInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl DeleteConfiguredTableAnalysisRuleFluentBuilder {
         self.inner = self.inner.set_configured_table_identifier(input);
         self
     }
+    /// <p>The unique identifier for the configured table that the analysis rule applies to. Currently accepts the configured table ID.</p>
+    pub fn get_configured_table_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configured_table_identifier()
+    }
     /// <p>The analysis rule type to be deleted. Configured table analysis rules are uniquely identified by their configured table identifier and analysis rule type.</p>
     pub fn analysis_rule_type(
         mut self,
@@ -121,5 +129,11 @@ impl DeleteConfiguredTableAnalysisRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_analysis_rule_type(input);
         self
+    }
+    /// <p>The analysis rule type to be deleted. Configured table analysis rules are uniquely identified by their configured table identifier and analysis rule type.</p>
+    pub fn get_analysis_rule_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfiguredTableAnalysisRuleType> {
+        self.inner.get_analysis_rule_type()
     }
 }

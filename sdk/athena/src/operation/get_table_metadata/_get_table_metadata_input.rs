@@ -56,6 +56,10 @@ impl GetTableMetadataInputBuilder {
         self.catalog_name = input;
         self
     }
+    /// <p>The name of the data catalog that contains the database and table metadata to return.</p>
+    pub fn get_catalog_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_name
+    }
     /// <p>The name of the database that contains the table metadata to return.</p>
     pub fn database_name(
         mut self,
@@ -72,6 +76,10 @@ impl GetTableMetadataInputBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The name of the database that contains the table metadata to return.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>The name of the table for which metadata is returned.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl GetTableMetadataInputBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
+    }
+    /// <p>The name of the table for which metadata is returned.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// Consumes the builder and constructs a [`GetTableMetadataInput`](crate::operation::get_table_metadata::GetTableMetadataInput).
     pub fn build(

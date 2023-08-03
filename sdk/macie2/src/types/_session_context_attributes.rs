@@ -51,6 +51,10 @@ impl SessionContextAttributesBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>The date and time, in UTC and ISO 8601 format, when the credentials were issued.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
+    }
     /// <p>Specifies whether the credentials were authenticated with a multi-factor authentication (MFA) device.</p>
     pub fn mfa_authenticated(mut self, input: bool) -> Self {
         self.mfa_authenticated = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl SessionContextAttributesBuilder {
     pub fn set_mfa_authenticated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.mfa_authenticated = input;
         self
+    }
+    /// <p>Specifies whether the credentials were authenticated with a multi-factor authentication (MFA) device.</p>
+    pub fn get_mfa_authenticated(&self) -> &::std::option::Option<bool> {
+        &self.mfa_authenticated
     }
     /// Consumes the builder and constructs a [`SessionContextAttributes`](crate::types::SessionContextAttributes).
     pub fn build(self) -> crate::types::SessionContextAttributes {

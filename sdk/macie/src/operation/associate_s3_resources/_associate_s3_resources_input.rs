@@ -56,6 +56,10 @@ impl AssociateS3ResourcesInputBuilder {
         self.member_account_id = input;
         self
     }
+    /// <p>(Discontinued) The ID of the Amazon Macie Classic member account whose resources you want to associate with Macie Classic.</p>
+    pub fn get_member_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_account_id
+    }
     /// Appends an item to `s3_resources`.
     ///
     /// To override the contents of this collection use [`set_s3_resources`](Self::set_s3_resources).
@@ -74,6 +78,12 @@ impl AssociateS3ResourcesInputBuilder {
     ) -> Self {
         self.s3_resources = input;
         self
+    }
+    /// <p>(Discontinued) The S3 resources that you want to associate with Amazon Macie Classic for monitoring and data classification.</p>
+    pub fn get_s3_resources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::S3ResourceClassification>> {
+        &self.s3_resources
     }
     /// Consumes the builder and constructs a [`AssociateS3ResourcesInput`](crate::operation::associate_s3_resources::AssociateS3ResourcesInput).
     pub fn build(

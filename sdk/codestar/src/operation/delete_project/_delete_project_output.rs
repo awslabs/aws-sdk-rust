@@ -54,6 +54,10 @@ impl DeleteProjectOutputBuilder {
         self.stack_id = input;
         self
     }
+    /// <p>The ID of the primary stack in AWS CloudFormation that will be deleted as part of deleting the project and its resources.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the deleted project.</p>
     pub fn project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_arn = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl DeleteProjectOutputBuilder {
     pub fn set_project_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the deleted project.</p>
+    pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

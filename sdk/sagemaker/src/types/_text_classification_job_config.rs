@@ -62,6 +62,12 @@ impl TextClassificationJobConfigBuilder {
         self.completion_criteria = input;
         self
     }
+    /// <p>How long a job is allowed to run, or how many candidates a job is allowed to generate.</p>
+    pub fn get_completion_criteria(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoMlJobCompletionCriteria> {
+        &self.completion_criteria
+    }
     /// <p>The name of the column used to provide the sentences to be classified. It should not be the same as the target column.</p>
     pub fn content_column(
         mut self,
@@ -78,6 +84,10 @@ impl TextClassificationJobConfigBuilder {
         self.content_column = input;
         self
     }
+    /// <p>The name of the column used to provide the sentences to be classified. It should not be the same as the target column.</p>
+    pub fn get_content_column(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_column
+    }
     /// <p>The name of the column used to provide the class labels. It should not be same as the content column.</p>
     pub fn target_label_column(
         mut self,
@@ -93,6 +103,10 @@ impl TextClassificationJobConfigBuilder {
     ) -> Self {
         self.target_label_column = input;
         self
+    }
+    /// <p>The name of the column used to provide the class labels. It should not be same as the content column.</p>
+    pub fn get_target_label_column(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_label_column
     }
     /// Consumes the builder and constructs a [`TextClassificationJobConfig`](crate::types::TextClassificationJobConfig).
     pub fn build(self) -> crate::types::TextClassificationJobConfig {

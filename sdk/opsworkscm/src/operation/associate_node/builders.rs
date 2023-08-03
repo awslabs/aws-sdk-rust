@@ -41,6 +41,12 @@ impl AssociateNodeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateNode as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::associate_node::builders::AssociateNodeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -123,6 +129,10 @@ impl AssociateNodeFluentBuilder {
         self.inner = self.inner.set_server_name(input);
         self
     }
+    /// <p>The name of the server with which to associate the node. </p>
+    pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_server_name()
+    }
     /// <p>The name of the node. </p>
     pub fn node_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.node_name(input.into());
@@ -132,6 +142,10 @@ impl AssociateNodeFluentBuilder {
     pub fn set_node_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_node_name(input);
         self
+    }
+    /// <p>The name of the node. </p>
+    pub fn get_node_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_node_name()
     }
     /// Appends an item to `EngineAttributes`.
     ///
@@ -167,5 +181,20 @@ impl AssociateNodeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_engine_attributes(input);
         self
+    }
+    /// <p>Engine attributes used for associating the node. </p>
+    /// <p class="title"> <b>Attributes accepted in a AssociateNode request for Chef</b> </p>
+    /// <ul>
+    /// <li> <p> <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only one organization named <code>default</code> can exist. </p> </li>
+    /// <li> <p> <code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API. </p> </li>
+    /// </ul>
+    /// <p class="title"> <b>Attributes accepted in a AssociateNode request for Puppet</b> </p>
+    /// <ul>
+    /// <li> <p> <code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the node. </p> </li>
+    /// </ul>
+    pub fn get_engine_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>> {
+        self.inner.get_engine_attributes()
     }
 }

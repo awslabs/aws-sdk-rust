@@ -51,6 +51,12 @@ impl DescribeRemediationConfigurationsInputBuilder {
         self.config_rule_names = input;
         self
     }
+    /// <p>A list of Config rule names of remediation configurations for which you want details. </p>
+    pub fn get_config_rule_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.config_rule_names
+    }
     /// Consumes the builder and constructs a [`DescribeRemediationConfigurationsInput`](crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

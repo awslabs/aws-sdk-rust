@@ -41,6 +41,10 @@ impl DeletePlatformVersionInputBuilder {
         self.platform_arn = input;
         self
     }
+    /// <p>The ARN of the version of the custom platform.</p>
+    pub fn get_platform_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_arn
+    }
     /// Consumes the builder and constructs a [`DeletePlatformVersionInput`](crate::operation::delete_platform_version::DeletePlatformVersionInput).
     pub fn build(
         self,

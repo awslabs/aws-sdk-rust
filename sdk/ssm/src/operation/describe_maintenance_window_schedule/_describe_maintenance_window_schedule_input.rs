@@ -82,6 +82,10 @@ impl DescribeMaintenanceWindowScheduleInputBuilder {
         self.window_id = input;
         self
     }
+    /// <p>The ID of the maintenance window to retrieve information about.</p>
+    pub fn get_window_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.window_id
+    }
     /// Appends an item to `targets`.
     ///
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).
@@ -101,6 +105,10 @@ impl DescribeMaintenanceWindowScheduleInputBuilder {
         self.targets = input;
         self
     }
+    /// <p>The managed node ID or key-value pair to retrieve information about.</p>
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
+        &self.targets
+    }
     /// <p>The type of resource you want to retrieve information about. For example, <code>INSTANCE</code>.</p>
     pub fn resource_type(mut self, input: crate::types::MaintenanceWindowResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -113,6 +121,12 @@ impl DescribeMaintenanceWindowScheduleInputBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The type of resource you want to retrieve information about. For example, <code>INSTANCE</code>.</p>
+    pub fn get_resource_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::MaintenanceWindowResourceType> {
+        &self.resource_type
     }
     /// Appends an item to `filters`.
     ///
@@ -133,6 +147,12 @@ impl DescribeMaintenanceWindowScheduleInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>Filters used to limit the range of results. For example, you can limit maintenance window executions to only those scheduled before or after a certain date and time.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>> {
+        &self.filters
+    }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -143,6 +163,10 @@ impl DescribeMaintenanceWindowScheduleInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -152,6 +176,10 @@ impl DescribeMaintenanceWindowScheduleInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeMaintenanceWindowScheduleInput`](crate::operation::describe_maintenance_window_schedule::DescribeMaintenanceWindowScheduleInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_maintenance_window_schedule::DescribeMaintenanceWindowScheduleInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -46,6 +46,10 @@ impl KinesisFirehoseDestinationDetailsBuilder {
         self.delivery_stream = input;
         self
     }
+    /// <p>The name of the Kinesis Data Firehose delivery stream.</p>
+    pub fn get_delivery_stream(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delivery_stream
+    }
     /// Consumes the builder and constructs a [`KinesisFirehoseDestinationDetails`](crate::types::KinesisFirehoseDestinationDetails).
     pub fn build(self) -> crate::types::KinesisFirehoseDestinationDetails {
         crate::types::KinesisFirehoseDestinationDetails {

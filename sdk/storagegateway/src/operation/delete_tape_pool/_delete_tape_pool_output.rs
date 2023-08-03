@@ -46,6 +46,10 @@ impl DeleteTapePoolOutputBuilder {
         self.pool_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the custom tape pool being deleted.</p>
+    pub fn get_pool_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pool_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -65,6 +65,10 @@ impl CreateWorkerConfigurationInputBuilder {
         self.description = input;
         self
     }
+    /// <p>A summary description of the worker configuration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The name of the worker configuration.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl CreateWorkerConfigurationInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the worker configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Base64 encoded contents of connect-distributed.properties file.</p>
     pub fn properties_file_content(
@@ -90,6 +98,10 @@ impl CreateWorkerConfigurationInputBuilder {
     ) -> Self {
         self.properties_file_content = input;
         self
+    }
+    /// <p>Base64 encoded contents of connect-distributed.properties file.</p>
+    pub fn get_properties_file_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.properties_file_content
     }
     /// Consumes the builder and constructs a [`CreateWorkerConfigurationInput`](crate::operation::create_worker_configuration::CreateWorkerConfigurationInput).
     pub fn build(

@@ -70,6 +70,13 @@ impl BatchCreateRumMetricDefinitionsOutputBuilder {
         self.errors = input;
         self
     }
+    /// <p>An array of error objects, if the operation caused any errors.</p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchCreateRumMetricDefinitionsError>>
+    {
+        &self.errors
+    }
     /// Appends an item to `metric_definitions`.
     ///
     /// To override the contents of this collection use [`set_metric_definitions`](Self::set_metric_definitions).
@@ -88,6 +95,12 @@ impl BatchCreateRumMetricDefinitionsOutputBuilder {
     ) -> Self {
         self.metric_definitions = input;
         self
+    }
+    /// <p>An array of structures that define the extended metrics.</p>
+    pub fn get_metric_definitions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDefinition>> {
+        &self.metric_definitions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

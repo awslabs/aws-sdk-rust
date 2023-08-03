@@ -39,6 +39,10 @@ impl StopSimulationInputBuilder {
         self.simulation = input;
         self
     }
+    /// <p>The name of the simulation.</p>
+    pub fn get_simulation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.simulation
+    }
     /// Consumes the builder and constructs a [`StopSimulationInput`](crate::operation::stop_simulation::StopSimulationInput).
     pub fn build(
         self,

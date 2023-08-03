@@ -50,6 +50,12 @@ impl VpcConnectivityBuilder {
         self.client_authentication = input;
         self
     }
+    /// <p>Includes all client authentication information for VPC connectivity.</p>
+    pub fn get_client_authentication(
+        &self,
+    ) -> &::std::option::Option<crate::types::VpcConnectivityClientAuthentication> {
+        &self.client_authentication
+    }
     /// Consumes the builder and constructs a [`VpcConnectivity`](crate::types::VpcConnectivity).
     pub fn build(self) -> crate::types::VpcConnectivity {
         crate::types::VpcConnectivity {

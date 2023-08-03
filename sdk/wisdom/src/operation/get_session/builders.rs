@@ -36,6 +36,10 @@ impl GetSessionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetSession as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_session::builders::GetSessionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl GetSessionFluentBuilder {
         self.inner = self.inner.set_assistant_id(input);
         self
     }
+    /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn get_assistant_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assistant_id()
+    }
     /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.session_id(input.into());
@@ -127,5 +135,9 @@ impl GetSessionFluentBuilder {
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_session_id(input);
         self
+    }
+    /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_session_id()
     }
 }

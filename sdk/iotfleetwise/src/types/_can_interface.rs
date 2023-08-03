@@ -56,6 +56,10 @@ impl CanInterfaceBuilder {
         self.name = input;
         self
     }
+    /// <p>The unique name of the interface.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The name of the communication protocol for the interface.</p>
     pub fn protocol_name(
         mut self,
@@ -72,6 +76,10 @@ impl CanInterfaceBuilder {
         self.protocol_name = input;
         self
     }
+    /// <p>The name of the communication protocol for the interface.</p>
+    pub fn get_protocol_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.protocol_name
+    }
     /// <p>The version of the communication protocol for the interface.</p>
     pub fn protocol_version(
         mut self,
@@ -87,6 +95,10 @@ impl CanInterfaceBuilder {
     ) -> Self {
         self.protocol_version = input;
         self
+    }
+    /// <p>The version of the communication protocol for the interface.</p>
+    pub fn get_protocol_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.protocol_version
     }
     /// Consumes the builder and constructs a [`CanInterface`](crate::types::CanInterface).
     pub fn build(self) -> crate::types::CanInterface {

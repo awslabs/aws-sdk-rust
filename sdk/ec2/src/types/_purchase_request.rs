@@ -48,6 +48,10 @@ impl PurchaseRequestBuilder {
         self.instance_count = input;
         self
     }
+    /// <p>The number of instances.</p>
+    pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.instance_count
+    }
     /// <p>The purchase token.</p>
     pub fn purchase_token(
         mut self,
@@ -63,6 +67,10 @@ impl PurchaseRequestBuilder {
     ) -> Self {
         self.purchase_token = input;
         self
+    }
+    /// <p>The purchase token.</p>
+    pub fn get_purchase_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.purchase_token
     }
     /// Consumes the builder and constructs a [`PurchaseRequest`](crate::types::PurchaseRequest).
     pub fn build(self) -> crate::types::PurchaseRequest {

@@ -40,6 +40,10 @@ impl StartCrawlerScheduleInputBuilder {
         self.crawler_name = input;
         self
     }
+    /// <p>Name of the crawler to schedule.</p>
+    pub fn get_crawler_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.crawler_name
+    }
     /// Consumes the builder and constructs a [`StartCrawlerScheduleInput`](crate::operation::start_crawler_schedule::StartCrawlerScheduleInput).
     pub fn build(
         self,

@@ -122,6 +122,10 @@ impl EndpointInputBuilder {
         self.endpoint_name = input;
         self
     }
+    /// <p>An endpoint in customer's account which has enabled <code>DataCaptureConfig</code> enabled.</p>
+    pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_name
+    }
     /// <p>Path to the filesystem where the endpoint data is available to the container.</p>
     pub fn local_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_path = ::std::option::Option::Some(input.into());
@@ -131,6 +135,10 @@ impl EndpointInputBuilder {
     pub fn set_local_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.local_path = input;
         self
+    }
+    /// <p>Path to the filesystem where the endpoint data is available to the container.</p>
+    pub fn get_local_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.local_path
     }
     /// <p>Whether the <code>Pipe</code> or <code>File</code> is used as the input mode for transferring data for the monitoring job. <code>Pipe</code> mode is recommended for large datasets. <code>File</code> mode is useful for small files that fit in memory. Defaults to <code>File</code>.</p>
     pub fn s3_input_mode(mut self, input: crate::types::ProcessingS3InputMode) -> Self {
@@ -144,6 +152,10 @@ impl EndpointInputBuilder {
     ) -> Self {
         self.s3_input_mode = input;
         self
+    }
+    /// <p>Whether the <code>Pipe</code> or <code>File</code> is used as the input mode for transferring data for the monitoring job. <code>Pipe</code> mode is recommended for large datasets. <code>File</code> mode is useful for small files that fit in memory. Defaults to <code>File</code>.</p>
+    pub fn get_s3_input_mode(&self) -> &::std::option::Option<crate::types::ProcessingS3InputMode> {
+        &self.s3_input_mode
     }
     /// <p>Whether input data distributed in Amazon S3 is fully replicated or sharded by an S3 key. Defaults to <code>FullyReplicated</code> </p>
     pub fn s3_data_distribution_type(
@@ -161,6 +173,12 @@ impl EndpointInputBuilder {
         self.s3_data_distribution_type = input;
         self
     }
+    /// <p>Whether input data distributed in Amazon S3 is fully replicated or sharded by an S3 key. Defaults to <code>FullyReplicated</code> </p>
+    pub fn get_s3_data_distribution_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProcessingS3DataDistributionType> {
+        &self.s3_data_distribution_type
+    }
     /// <p>The attributes of the input data that are the input features.</p>
     pub fn features_attribute(
         mut self,
@@ -176,6 +194,10 @@ impl EndpointInputBuilder {
     ) -> Self {
         self.features_attribute = input;
         self
+    }
+    /// <p>The attributes of the input data that are the input features.</p>
+    pub fn get_features_attribute(&self) -> &::std::option::Option<::std::string::String> {
+        &self.features_attribute
     }
     /// <p>The attribute of the input data that represents the ground truth label.</p>
     pub fn inference_attribute(
@@ -193,6 +215,10 @@ impl EndpointInputBuilder {
         self.inference_attribute = input;
         self
     }
+    /// <p>The attribute of the input data that represents the ground truth label.</p>
+    pub fn get_inference_attribute(&self) -> &::std::option::Option<::std::string::String> {
+        &self.inference_attribute
+    }
     /// <p>In a classification problem, the attribute that represents the class probability.</p>
     pub fn probability_attribute(
         mut self,
@@ -209,6 +235,10 @@ impl EndpointInputBuilder {
         self.probability_attribute = input;
         self
     }
+    /// <p>In a classification problem, the attribute that represents the class probability.</p>
+    pub fn get_probability_attribute(&self) -> &::std::option::Option<::std::string::String> {
+        &self.probability_attribute
+    }
     /// <p>The threshold for the class probability to be evaluated as a positive result.</p>
     pub fn probability_threshold_attribute(mut self, input: f64) -> Self {
         self.probability_threshold_attribute = ::std::option::Option::Some(input);
@@ -221,6 +251,10 @@ impl EndpointInputBuilder {
     ) -> Self {
         self.probability_threshold_attribute = input;
         self
+    }
+    /// <p>The threshold for the class probability to be evaluated as a positive result.</p>
+    pub fn get_probability_threshold_attribute(&self) -> &::std::option::Option<f64> {
+        &self.probability_threshold_attribute
     }
     /// <p>If specified, monitoring jobs substract this time from the start time. For information about using offsets for scheduling monitoring jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule Model Quality Monitoring Jobs</a>.</p>
     pub fn start_time_offset(
@@ -238,6 +272,10 @@ impl EndpointInputBuilder {
         self.start_time_offset = input;
         self
     }
+    /// <p>If specified, monitoring jobs substract this time from the start time. For information about using offsets for scheduling monitoring jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule Model Quality Monitoring Jobs</a>.</p>
+    pub fn get_start_time_offset(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_time_offset
+    }
     /// <p>If specified, monitoring jobs substract this time from the end time. For information about using offsets for scheduling monitoring jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule Model Quality Monitoring Jobs</a>.</p>
     pub fn end_time_offset(
         mut self,
@@ -253,6 +291,10 @@ impl EndpointInputBuilder {
     ) -> Self {
         self.end_time_offset = input;
         self
+    }
+    /// <p>If specified, monitoring jobs substract this time from the end time. For information about using offsets for scheduling monitoring jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule Model Quality Monitoring Jobs</a>.</p>
+    pub fn get_end_time_offset(&self) -> &::std::option::Option<::std::string::String> {
+        &self.end_time_offset
     }
     /// Consumes the builder and constructs a [`EndpointInput`](crate::types::EndpointInput).
     pub fn build(self) -> crate::types::EndpointInput {

@@ -94,6 +94,10 @@ impl TrainingJobSummaryBuilder {
         self.training_job_name = input;
         self
     }
+    /// <p>The name of the training job that you want a summary for.</p>
+    pub fn get_training_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.training_job_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the training job.</p>
     pub fn training_job_arn(
         mut self,
@@ -110,6 +114,10 @@ impl TrainingJobSummaryBuilder {
         self.training_job_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the training job.</p>
+    pub fn get_training_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.training_job_arn
+    }
     /// <p>A timestamp that shows when the training job was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -122,6 +130,10 @@ impl TrainingJobSummaryBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>A timestamp that shows when the training job was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>A timestamp that shows when the training job ended. This field is set only if the training job has one of the terminal statuses (<code>Completed</code>, <code>Failed</code>, or <code>Stopped</code>). </p>
     pub fn training_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -136,6 +148,10 @@ impl TrainingJobSummaryBuilder {
         self.training_end_time = input;
         self
     }
+    /// <p>A timestamp that shows when the training job ended. This field is set only if the training job has one of the terminal statuses (<code>Completed</code>, <code>Failed</code>, or <code>Stopped</code>). </p>
+    pub fn get_training_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.training_end_time
+    }
     /// <p> Timestamp when the training job was last modified. </p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -148,6 +164,10 @@ impl TrainingJobSummaryBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p> Timestamp when the training job was last modified. </p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// <p>The status of the training job.</p>
     pub fn training_job_status(mut self, input: crate::types::TrainingJobStatus) -> Self {
@@ -162,6 +182,12 @@ impl TrainingJobSummaryBuilder {
         self.training_job_status = input;
         self
     }
+    /// <p>The status of the training job.</p>
+    pub fn get_training_job_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::TrainingJobStatus> {
+        &self.training_job_status
+    }
     /// <p>The status of the warm pool associated with the training job.</p>
     pub fn warm_pool_status(mut self, input: crate::types::WarmPoolStatus) -> Self {
         self.warm_pool_status = ::std::option::Option::Some(input);
@@ -174,6 +200,10 @@ impl TrainingJobSummaryBuilder {
     ) -> Self {
         self.warm_pool_status = input;
         self
+    }
+    /// <p>The status of the warm pool associated with the training job.</p>
+    pub fn get_warm_pool_status(&self) -> &::std::option::Option<crate::types::WarmPoolStatus> {
+        &self.warm_pool_status
     }
     /// Consumes the builder and constructs a [`TrainingJobSummary`](crate::types::TrainingJobSummary).
     pub fn build(self) -> crate::types::TrainingJobSummary {

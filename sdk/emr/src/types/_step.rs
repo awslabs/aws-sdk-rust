@@ -86,6 +86,10 @@ impl StepBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the cluster step.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the cluster step.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -95,6 +99,10 @@ impl StepBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the cluster step.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The Hadoop job configuration of the cluster step.</p>
     pub fn config(mut self, input: crate::types::HadoopStepConfig) -> Self {
@@ -108,6 +116,10 @@ impl StepBuilder {
     ) -> Self {
         self.config = input;
         self
+    }
+    /// <p>The Hadoop job configuration of the cluster step.</p>
+    pub fn get_config(&self) -> &::std::option::Option<crate::types::HadoopStepConfig> {
+        &self.config
     }
     /// <p>The action to take when the cluster step fails. Possible values are <code>TERMINATE_CLUSTER</code>, <code>CANCEL_AND_WAIT</code>, and <code>CONTINUE</code>. <code>TERMINATE_JOB_FLOW</code> is provided for backward compatibility. We recommend using <code>TERMINATE_CLUSTER</code> instead.</p>
     /// <p>If a cluster's <code>StepConcurrencyLevel</code> is greater than <code>1</code>, do not use <code>AddJobFlowSteps</code> to submit a step with this parameter set to <code>CANCEL_AND_WAIT</code> or <code>TERMINATE_CLUSTER</code>. The step is not submitted and the action fails with a message that the <code>ActionOnFailure</code> setting is not valid.</p>
@@ -126,6 +138,12 @@ impl StepBuilder {
         self.action_on_failure = input;
         self
     }
+    /// <p>The action to take when the cluster step fails. Possible values are <code>TERMINATE_CLUSTER</code>, <code>CANCEL_AND_WAIT</code>, and <code>CONTINUE</code>. <code>TERMINATE_JOB_FLOW</code> is provided for backward compatibility. We recommend using <code>TERMINATE_CLUSTER</code> instead.</p>
+    /// <p>If a cluster's <code>StepConcurrencyLevel</code> is greater than <code>1</code>, do not use <code>AddJobFlowSteps</code> to submit a step with this parameter set to <code>CANCEL_AND_WAIT</code> or <code>TERMINATE_CLUSTER</code>. The step is not submitted and the action fails with a message that the <code>ActionOnFailure</code> setting is not valid.</p>
+    /// <p>If you change a cluster's <code>StepConcurrencyLevel</code> to be greater than 1 while a step is running, the <code>ActionOnFailure</code> parameter may not behave as you expect. In this case, for a step that fails with this parameter set to <code>CANCEL_AND_WAIT</code>, pending steps and the running step are not canceled; for a step that fails with this parameter set to <code>TERMINATE_CLUSTER</code>, the cluster does not terminate.</p>
+    pub fn get_action_on_failure(&self) -> &::std::option::Option<crate::types::ActionOnFailure> {
+        &self.action_on_failure
+    }
     /// <p>The current execution status details of the cluster step.</p>
     pub fn status(mut self, input: crate::types::StepStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -135,6 +153,10 @@ impl StepBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StepStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current execution status details of the cluster step.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::StepStatus> {
+        &self.status
     }
     /// <p>The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>. </p>
     /// <p>For example, <code>arn:aws:IAM::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.</p>
@@ -153,6 +175,11 @@ impl StepBuilder {
     ) -> Self {
         self.execution_role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>. </p>
+    /// <p>For example, <code>arn:aws:IAM::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.</p>
+    pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_role_arn
     }
     /// Consumes the builder and constructs a [`Step`](crate::types::Step).
     pub fn build(self) -> crate::types::Step {

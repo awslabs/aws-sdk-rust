@@ -39,6 +39,13 @@ impl StartDocumentAnalysisFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartDocumentAnalysis as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_document_analysis::builders::StartDocumentAnalysisInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl StartDocumentAnalysisFluentBuilder {
         self.inner = self.inner.set_document_location(input);
         self
     }
+    /// <p>The location of the document to be processed.</p>
+    pub fn get_document_location(&self) -> &::std::option::Option<crate::types::DocumentLocation> {
+        self.inner.get_document_location()
+    }
     /// Appends an item to `FeatureTypes`.
     ///
     /// To override the contents of this collection use [`set_feature_types`](Self::set_feature_types).
@@ -149,6 +160,12 @@ impl StartDocumentAnalysisFluentBuilder {
         self.inner = self.inner.set_feature_types(input);
         self
     }
+    /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. To perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
+    pub fn get_feature_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureType>> {
+        self.inner.get_feature_types()
+    }
     /// <p>The idempotent token that you use to identify the start request. If you use the same token with multiple <code>StartDocumentAnalysis</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
     pub fn client_request_token(
         mut self,
@@ -165,6 +182,10 @@ impl StartDocumentAnalysisFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>The idempotent token that you use to identify the start request. If you use the same token with multiple <code>StartDocumentAnalysis</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// <p>An identifier that you specify that's included in the completion notification published to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).</p>
     pub fn job_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_tag(input.into());
@@ -174,6 +195,10 @@ impl StartDocumentAnalysisFluentBuilder {
     pub fn set_job_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_tag(input);
         self
+    }
+    /// <p>An identifier that you specify that's included in the completion notification published to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).</p>
+    pub fn get_job_tag(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_tag()
     }
     /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
     pub fn notification_channel(mut self, input: crate::types::NotificationChannel) -> Self {
@@ -188,6 +213,12 @@ impl StartDocumentAnalysisFluentBuilder {
         self.inner = self.inner.set_notification_channel(input);
         self
     }
+    /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
+    pub fn get_notification_channel(
+        &self,
+    ) -> &::std::option::Option<crate::types::NotificationChannel> {
+        self.inner.get_notification_channel()
+    }
     /// <p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the GetDocumentAnalysis operation.</p>
     pub fn output_config(mut self, input: crate::types::OutputConfig) -> Self {
         self.inner = self.inner.output_config(input);
@@ -201,6 +232,10 @@ impl StartDocumentAnalysisFluentBuilder {
         self.inner = self.inner.set_output_config(input);
         self
     }
+    /// <p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the GetDocumentAnalysis operation.</p>
+    pub fn get_output_config(&self) -> &::std::option::Option<crate::types::OutputConfig> {
+        self.inner.get_output_config()
+    }
     /// <p>The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
@@ -210,6 +245,10 @@ impl StartDocumentAnalysisFluentBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
+    }
+    /// <p>The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_id()
     }
     /// <p></p>
     pub fn queries_config(mut self, input: crate::types::QueriesConfig) -> Self {
@@ -223,5 +262,9 @@ impl StartDocumentAnalysisFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_queries_config(input);
         self
+    }
+    /// <p></p>
+    pub fn get_queries_config(&self) -> &::std::option::Option<crate::types::QueriesConfig> {
+        self.inner.get_queries_config()
     }
 }

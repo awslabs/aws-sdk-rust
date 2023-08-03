@@ -62,6 +62,10 @@ impl ListFirewallRuleGroupsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `firewall_rule_groups`.
     ///
     /// To override the contents of this collection use [`set_firewall_rule_groups`](Self::set_firewall_rule_groups).
@@ -82,6 +86,13 @@ impl ListFirewallRuleGroupsOutputBuilder {
     ) -> Self {
         self.firewall_rule_groups = input;
         self
+    }
+    /// <p>A list of your firewall rule groups.</p>
+    /// <p>This might be a partial list of the rule groups that you have defined. For information, see <code>MaxResults</code>. </p>
+    pub fn get_firewall_rule_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FirewallRuleGroupMetadata>> {
+        &self.firewall_rule_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

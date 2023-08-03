@@ -54,6 +54,10 @@ impl LineItemRequestBuilder {
         self.catalog_item_id = input;
         self
     }
+    /// <p>The ID of the catalog item.</p>
+    pub fn get_catalog_item_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_item_id
+    }
     /// <p>The quantity of a line item request.</p>
     pub fn quantity(mut self, input: i32) -> Self {
         self.quantity = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl LineItemRequestBuilder {
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.quantity = input;
         self
+    }
+    /// <p>The quantity of a line item request.</p>
+    pub fn get_quantity(&self) -> &::std::option::Option<i32> {
+        &self.quantity
     }
     /// Consumes the builder and constructs a [`LineItemRequest`](crate::types::LineItemRequest).
     pub fn build(self) -> crate::types::LineItemRequest {

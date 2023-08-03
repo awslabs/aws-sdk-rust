@@ -56,6 +56,10 @@ impl AnomalyBuilder {
         self.metric = input;
         self
     }
+    /// <p> Details about the metric that the analysis used when it detected the anomaly. The metric includes the name of the frame that was analyzed with the type and thread states used to derive the metric value for that frame. </p>
+    pub fn get_metric(&self) -> &::std::option::Option<crate::types::Metric> {
+        &self.metric
+    }
     /// <p>The reason for which metric was flagged as anomalous.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl AnomalyBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>The reason for which metric was flagged as anomalous.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
     }
     /// Appends an item to `instances`.
     ///
@@ -84,6 +92,12 @@ impl AnomalyBuilder {
     ) -> Self {
         self.instances = input;
         self
+    }
+    /// <p> A list of the instances of the detected anomalies during the requested period. </p>
+    pub fn get_instances(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnomalyInstance>> {
+        &self.instances
     }
     /// Consumes the builder and constructs a [`Anomaly`](crate::types::Anomaly).
     pub fn build(self) -> crate::types::Anomaly {

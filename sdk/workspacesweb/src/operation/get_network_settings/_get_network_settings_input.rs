@@ -46,6 +46,10 @@ impl GetNetworkSettingsInputBuilder {
         self.network_settings_arn = input;
         self
     }
+    /// <p>The ARN of the network settings.</p>
+    pub fn get_network_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_settings_arn
+    }
     /// Consumes the builder and constructs a [`GetNetworkSettingsInput`](crate::operation::get_network_settings::GetNetworkSettingsInput).
     pub fn build(
         self,

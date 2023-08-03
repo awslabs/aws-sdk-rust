@@ -54,6 +54,12 @@ impl DescribeNfsFileSharesInputBuilder {
         self.file_share_arn_list = input;
         self
     }
+    /// <p>An array containing the Amazon Resource Name (ARN) of each file share to be described.</p>
+    pub fn get_file_share_arn_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.file_share_arn_list
+    }
     /// Consumes the builder and constructs a [`DescribeNfsFileSharesInput`](crate::operation::describe_nfs_file_shares::DescribeNfsFileSharesInput).
     pub fn build(
         self,

@@ -48,6 +48,10 @@ impl RateIncreaseCriteriaBuilder {
         self.number_of_notified_things = input;
         self
     }
+    /// <p>The threshold for number of notified things that will initiate the increase in rate of rollout.</p>
+    pub fn get_number_of_notified_things(&self) -> &::std::option::Option<i32> {
+        &self.number_of_notified_things
+    }
     /// <p>The threshold for number of succeeded things that will initiate the increase in rate of rollout.</p>
     pub fn number_of_succeeded_things(mut self, input: i32) -> Self {
         self.number_of_succeeded_things = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl RateIncreaseCriteriaBuilder {
     pub fn set_number_of_succeeded_things(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_succeeded_things = input;
         self
+    }
+    /// <p>The threshold for number of succeeded things that will initiate the increase in rate of rollout.</p>
+    pub fn get_number_of_succeeded_things(&self) -> &::std::option::Option<i32> {
+        &self.number_of_succeeded_things
     }
     /// Consumes the builder and constructs a [`RateIncreaseCriteria`](crate::types::RateIncreaseCriteria).
     pub fn build(self) -> crate::types::RateIncreaseCriteria {

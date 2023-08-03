@@ -82,6 +82,10 @@ impl ListAuditTasksInputBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The beginning of the time period. Audit information is retained for a limited time (90 days). Requesting a start time prior to what is retained results in an "InvalidRequestException".</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The end of the time period.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -94,6 +98,10 @@ impl ListAuditTasksInputBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The end of the time period.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// <p>A filter to limit the output to the specified type of audit: can be one of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED__AUDIT_TASK".</p>
     pub fn task_type(mut self, input: crate::types::AuditTaskType) -> Self {
@@ -108,6 +116,10 @@ impl ListAuditTasksInputBuilder {
         self.task_type = input;
         self
     }
+    /// <p>A filter to limit the output to the specified type of audit: can be one of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED__AUDIT_TASK".</p>
+    pub fn get_task_type(&self) -> &::std::option::Option<crate::types::AuditTaskType> {
+        &self.task_type
+    }
     /// <p>A filter to limit the output to audits with the specified completion status: can be one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
     pub fn task_status(mut self, input: crate::types::AuditTaskStatus) -> Self {
         self.task_status = ::std::option::Option::Some(input);
@@ -121,6 +133,10 @@ impl ListAuditTasksInputBuilder {
         self.task_status = input;
         self
     }
+    /// <p>A filter to limit the output to audits with the specified completion status: can be one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
+    pub fn get_task_status(&self) -> &::std::option::Option<crate::types::AuditTaskStatus> {
+        &self.task_status
+    }
     /// <p>The token for the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -131,6 +147,10 @@ impl ListAuditTasksInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -140,6 +160,10 @@ impl ListAuditTasksInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAuditTasksInput`](crate::operation::list_audit_tasks::ListAuditTasksInput).
     pub fn build(

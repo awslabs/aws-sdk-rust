@@ -57,6 +57,10 @@ impl DeleteRouteResponseInputBuilder {
         self.api_id = input;
         self
     }
+    /// <p>The API identifier.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
+    }
     /// <p>The route ID.</p>
     pub fn route_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_id = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl DeleteRouteResponseInputBuilder {
     pub fn set_route_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.route_id = input;
         self
+    }
+    /// <p>The route ID.</p>
+    pub fn get_route_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.route_id
     }
     /// <p>The route response ID.</p>
     pub fn route_response_id(
@@ -82,6 +90,10 @@ impl DeleteRouteResponseInputBuilder {
     ) -> Self {
         self.route_response_id = input;
         self
+    }
+    /// <p>The route response ID.</p>
+    pub fn get_route_response_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.route_response_id
     }
     /// Consumes the builder and constructs a [`DeleteRouteResponseInput`](crate::operation::delete_route_response::DeleteRouteResponseInput).
     pub fn build(

@@ -39,6 +39,10 @@ impl DescribeStateMachineForExecutionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeStateMachineForExecution as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_state_machine_for_execution::builders::DescribeStateMachineForExecutionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -108,5 +112,9 @@ impl DescribeStateMachineForExecutionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_execution_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the execution you want state machine information for.</p>
+    pub fn get_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_execution_arn()
     }
 }

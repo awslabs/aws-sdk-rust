@@ -37,6 +37,10 @@ impl GetInstanceAccessDetailsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetInstanceAccessDetails as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_instance_access_details::builders::GetInstanceAccessDetailsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl GetInstanceAccessDetailsFluentBuilder {
         self.inner = self.inner.set_instance_name(input);
         self
     }
+    /// <p>The name of the instance to access.</p>
+    pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_name()
+    }
     /// <p>The protocol to use to connect to your instance. Defaults to <code>ssh</code>.</p>
     pub fn protocol(mut self, input: crate::types::InstanceAccessProtocol) -> Self {
         self.inner = self.inner.protocol(input);
@@ -145,5 +153,9 @@ impl GetInstanceAccessDetailsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_protocol(input);
         self
+    }
+    /// <p>The protocol to use to connect to your instance. Defaults to <code>ssh</code>.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::InstanceAccessProtocol> {
+        self.inner.get_protocol()
     }
 }

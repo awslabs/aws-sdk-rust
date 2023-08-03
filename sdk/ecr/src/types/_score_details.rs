@@ -43,6 +43,10 @@ impl ScoreDetailsBuilder {
         self.cvss = input;
         self
     }
+    /// <p>An object that contains details about the CVSS score given to a finding.</p>
+    pub fn get_cvss(&self) -> &::std::option::Option<crate::types::CvssScoreDetails> {
+        &self.cvss
+    }
     /// Consumes the builder and constructs a [`ScoreDetails`](crate::types::ScoreDetails).
     pub fn build(self) -> crate::types::ScoreDetails {
         crate::types::ScoreDetails { cvss: self.cvss }

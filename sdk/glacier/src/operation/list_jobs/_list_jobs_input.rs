@@ -80,6 +80,10 @@ impl ListJobsInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The name of the vault.</p>
     pub fn vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vault_name = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl ListJobsInputBuilder {
     pub fn set_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vault_name = input;
         self
+    }
+    /// <p>The name of the vault.</p>
+    pub fn get_vault_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vault_name
     }
     /// <p>The maximum number of jobs to be returned. The default limit is 50. The number of jobs returned might be fewer than the specified limit, but the number of returned jobs never exceeds the limit.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -100,6 +108,10 @@ impl ListJobsInputBuilder {
         self.limit = input;
         self
     }
+    /// <p>The maximum number of jobs to be returned. The default limit is 50. The number of jobs returned might be fewer than the specified limit, but the number of returned jobs never exceeds the limit.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
+    }
     /// <p>An opaque string used for pagination. This value specifies the job at which the listing of jobs should begin. Get the marker value from a previous List Jobs response. You only need to include the marker if you are continuing the pagination of results started in a previous List Jobs request.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -109,6 +121,10 @@ impl ListJobsInputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>An opaque string used for pagination. This value specifies the job at which the listing of jobs should begin. Get the marker value from a previous List Jobs response. You only need to include the marker if you are continuing the pagination of results started in a previous List Jobs request.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// <p>The type of job status to return. You can specify the following values: <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>.</p>
     pub fn statuscode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -120,6 +136,10 @@ impl ListJobsInputBuilder {
         self.statuscode = input;
         self
     }
+    /// <p>The type of job status to return. You can specify the following values: <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>.</p>
+    pub fn get_statuscode(&self) -> &::std::option::Option<::std::string::String> {
+        &self.statuscode
+    }
     /// <p>The state of the jobs to return. You can specify <code>true</code> or <code>false</code>.</p>
     pub fn completed(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.completed = ::std::option::Option::Some(input.into());
@@ -129,6 +149,10 @@ impl ListJobsInputBuilder {
     pub fn set_completed(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.completed = input;
         self
+    }
+    /// <p>The state of the jobs to return. You can specify <code>true</code> or <code>false</code>.</p>
+    pub fn get_completed(&self) -> &::std::option::Option<::std::string::String> {
+        &self.completed
     }
     /// Consumes the builder and constructs a [`ListJobsInput`](crate::operation::list_jobs::ListJobsInput).
     pub fn build(

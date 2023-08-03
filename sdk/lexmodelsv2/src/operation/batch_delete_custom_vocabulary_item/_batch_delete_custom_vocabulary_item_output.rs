@@ -80,6 +80,10 @@ impl BatchDeleteCustomVocabularyItemOutputBuilder {
         self.bot_id = input;
         self
     }
+    /// <p>The identifier of the bot associated with this custom vocabulary.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
     /// <p>The identifier of the version of the bot associated with this custom vocabulary.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl BatchDeleteCustomVocabularyItemOutputBuilder {
         self.bot_version = input;
         self
     }
+    /// <p>The identifier of the version of the bot associated with this custom vocabulary.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_version
+    }
     /// <p>The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see Supported languages (https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).</p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
@@ -99,6 +107,10 @@ impl BatchDeleteCustomVocabularyItemOutputBuilder {
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.locale_id = input;
         self
+    }
+    /// <p>The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see Supported languages (https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).</p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale_id
     }
     /// Appends an item to `errors`.
     ///
@@ -119,6 +131,12 @@ impl BatchDeleteCustomVocabularyItemOutputBuilder {
         self.errors = input;
         self
     }
+    /// <p>A list of custom vocabulary items that failed to delete during the operation. The reason for the error is contained within each error object.</p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedCustomVocabularyItem>> {
+        &self.errors
+    }
     /// Appends an item to `resources`.
     ///
     /// To override the contents of this collection use [`set_resources`](Self::set_resources).
@@ -137,6 +155,12 @@ impl BatchDeleteCustomVocabularyItemOutputBuilder {
     ) -> Self {
         self.resources = input;
         self
+    }
+    /// <p>A list of custom vocabulary items that were successfully deleted during the operation.</p>
+    pub fn get_resources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomVocabularyItem>> {
+        &self.resources
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

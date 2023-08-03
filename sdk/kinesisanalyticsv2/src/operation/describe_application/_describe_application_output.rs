@@ -51,6 +51,12 @@ impl DescribeApplicationOutputBuilder {
         self.application_detail = input;
         self
     }
+    /// <p>Provides a description of the application, such as the application's Amazon Resource Name (ARN), status, and latest version.</p>
+    pub fn get_application_detail(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationDetail> {
+        &self.application_detail
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -77,6 +77,10 @@ impl GetCredentialsInputBuilder {
         self.workgroup_name = input;
         self
     }
+    /// <p>The name of the workgroup associated with the database.</p>
+    pub fn get_workgroup_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workgroup_name
+    }
     /// <p>The name of the database to get temporary authorization to log on to.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -103,6 +107,18 @@ impl GetCredentialsInputBuilder {
         self.db_name = input;
         self
     }
+    /// <p>The name of the database to get temporary authorization to log on to.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be 1 to 64 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>Must contain only uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Must not contain a colon ( : ) or slash ( / ).</p> </li>
+    /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words </a> in the Amazon Redshift Database Developer Guide</p> </li>
+    /// </ul>
+    pub fn get_db_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_name
+    }
     /// <p>The number of seconds until the returned temporary password expires. The minimum is 900 seconds, and the maximum is 3600 seconds.</p>
     pub fn duration_seconds(mut self, input: i32) -> Self {
         self.duration_seconds = ::std::option::Option::Some(input);
@@ -112,6 +128,10 @@ impl GetCredentialsInputBuilder {
     pub fn set_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.duration_seconds = input;
         self
+    }
+    /// <p>The number of seconds until the returned temporary password expires. The minimum is 900 seconds, and the maximum is 3600 seconds.</p>
+    pub fn get_duration_seconds(&self) -> &::std::option::Option<i32> {
+        &self.duration_seconds
     }
     /// Consumes the builder and constructs a [`GetCredentialsInput`](crate::operation::get_credentials::GetCredentialsInput).
     pub fn build(

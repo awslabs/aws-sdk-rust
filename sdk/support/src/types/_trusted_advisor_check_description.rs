@@ -76,6 +76,10 @@ impl TrustedAdvisorCheckDescriptionBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier for the Trusted Advisor check.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The display name for the Trusted Advisor check.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -85,6 +89,10 @@ impl TrustedAdvisorCheckDescriptionBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The display name for the Trusted Advisor check.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The description of the Trusted Advisor check, which includes the alert criteria and recommended operations (contains HTML markup).</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -96,6 +104,10 @@ impl TrustedAdvisorCheckDescriptionBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the Trusted Advisor check, which includes the alert criteria and recommended operations (contains HTML markup).</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The category of the Trusted Advisor check.</p>
     pub fn category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.category = ::std::option::Option::Some(input.into());
@@ -105,6 +117,10 @@ impl TrustedAdvisorCheckDescriptionBuilder {
     pub fn set_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.category = input;
         self
+    }
+    /// <p>The category of the Trusted Advisor check.</p>
+    pub fn get_category(&self) -> &::std::option::Option<::std::string::String> {
+        &self.category
     }
     /// Appends an item to `metadata`.
     ///
@@ -124,6 +140,12 @@ impl TrustedAdvisorCheckDescriptionBuilder {
     ) -> Self {
         self.metadata = input;
         self
+    }
+    /// <p>The column headings for the data returned by the Trusted Advisor check. The order of the headings corresponds to the order of the data in the <b>Metadata</b> element of the <code>TrustedAdvisorResourceDetail</code> for the check. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data. </p>
+    pub fn get_metadata(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::option::Option<::std::string::String>>> {
+        &self.metadata
     }
     /// Consumes the builder and constructs a [`TrustedAdvisorCheckDescription`](crate::types::TrustedAdvisorCheckDescription).
     pub fn build(self) -> crate::types::TrustedAdvisorCheckDescription {

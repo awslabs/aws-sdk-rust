@@ -50,6 +50,12 @@ impl SchemaBuilder {
         self.composite_partition_key = input;
         self
     }
+    /// <p>A non-empty list of partition keys defining the attributes used to partition the table data. The order of the list determines the partition hierarchy. The name and type of each partition key as well as the partition key order cannot be changed after the table is created. However, the enforcement level of each partition key can be changed. </p>
+    pub fn get_composite_partition_key(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PartitionKey>> {
+        &self.composite_partition_key
+    }
     /// Consumes the builder and constructs a [`Schema`](crate::types::Schema).
     pub fn build(self) -> crate::types::Schema {
         crate::types::Schema {

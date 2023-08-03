@@ -47,6 +47,10 @@ impl DisassociateDelegationSignerFromDomainInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>Name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>An internal identification number assigned to each DS record after it’s created. You can retrieve it as part of DNSSEC information returned by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetDomainDetail.html">GetDomainDetail</a>.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DisassociateDelegationSignerFromDomainInputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>An internal identification number assigned to each DS record after it’s created. You can retrieve it as part of DNSSEC information returned by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetDomainDetail.html">GetDomainDetail</a>.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`DisassociateDelegationSignerFromDomainInput`](crate::operation::disassociate_delegation_signer_from_domain::DisassociateDelegationSignerFromDomainInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_delegation_signer_from_domain::DisassociateDelegationSignerFromDomainInput, ::aws_smithy_http::operation::error::BuildError>{

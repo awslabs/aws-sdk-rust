@@ -49,6 +49,12 @@ impl ExclusionByResourceTypesBuilder {
         self.resource_types = input;
         self
     }
+    /// <p>A comma-separated list of resource types to exclude from recording by the configuration recorder.</p>
+    pub fn get_resource_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceType>> {
+        &self.resource_types
+    }
     /// Consumes the builder and constructs a [`ExclusionByResourceTypes`](crate::types::ExclusionByResourceTypes).
     pub fn build(self) -> crate::types::ExclusionByResourceTypes {
         crate::types::ExclusionByResourceTypes {

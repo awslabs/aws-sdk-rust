@@ -209,6 +209,12 @@ impl RequestSpotLaunchSpecificationBuilder {
         self.security_group_ids = input;
         self
     }
+    /// <p>The IDs of the security groups.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
+    }
     /// Appends an item to `security_groups`.
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
@@ -231,6 +237,12 @@ impl RequestSpotLaunchSpecificationBuilder {
         self.security_groups = input;
         self
     }
+    /// <p>Not supported.</p>
+    pub fn get_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_groups
+    }
     /// <p>Deprecated.</p>
     pub fn addressing_type(
         mut self,
@@ -246,6 +258,10 @@ impl RequestSpotLaunchSpecificationBuilder {
     ) -> Self {
         self.addressing_type = input;
         self
+    }
+    /// <p>Deprecated.</p>
+    pub fn get_addressing_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.addressing_type
     }
     /// Appends an item to `block_device_mappings`.
     ///
@@ -266,6 +282,12 @@ impl RequestSpotLaunchSpecificationBuilder {
         self.block_device_mappings = input;
         self
     }
+    /// <p>The block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank and its encryption status is used for the volume encryption status.</p>
+    pub fn get_block_device_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>> {
+        &self.block_device_mappings
+    }
     /// <p>Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
     /// <p>Default: <code>false</code> </p>
     pub fn ebs_optimized(mut self, input: bool) -> Self {
@@ -277,6 +299,11 @@ impl RequestSpotLaunchSpecificationBuilder {
     pub fn set_ebs_optimized(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ebs_optimized = input;
         self
+    }
+    /// <p>Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
+    /// <p>Default: <code>false</code> </p>
+    pub fn get_ebs_optimized(&self) -> &::std::option::Option<bool> {
+        &self.ebs_optimized
     }
     /// <p>The IAM instance profile.</p>
     pub fn iam_instance_profile(
@@ -294,6 +321,12 @@ impl RequestSpotLaunchSpecificationBuilder {
         self.iam_instance_profile = input;
         self
     }
+    /// <p>The IAM instance profile.</p>
+    pub fn get_iam_instance_profile(
+        &self,
+    ) -> &::std::option::Option<crate::types::IamInstanceProfileSpecification> {
+        &self.iam_instance_profile
+    }
     /// <p>The ID of the AMI.</p>
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
@@ -303,6 +336,10 @@ impl RequestSpotLaunchSpecificationBuilder {
     pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_id = input;
         self
+    }
+    /// <p>The ID of the AMI.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_id
     }
     /// <p>The instance type. Only one instance type can be specified.</p>
     pub fn instance_type(mut self, input: crate::types::InstanceType) -> Self {
@@ -317,6 +354,10 @@ impl RequestSpotLaunchSpecificationBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The instance type. Only one instance type can be specified.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
+        &self.instance_type
+    }
     /// <p>The ID of the kernel.</p>
     pub fn kernel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kernel_id = ::std::option::Option::Some(input.into());
@@ -327,6 +368,10 @@ impl RequestSpotLaunchSpecificationBuilder {
         self.kernel_id = input;
         self
     }
+    /// <p>The ID of the kernel.</p>
+    pub fn get_kernel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kernel_id
+    }
     /// <p>The name of the key pair.</p>
     pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_name = ::std::option::Option::Some(input.into());
@@ -336,6 +381,10 @@ impl RequestSpotLaunchSpecificationBuilder {
     pub fn set_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_name = input;
         self
+    }
+    /// <p>The name of the key pair.</p>
+    pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_name
     }
     /// <p>Indicates whether basic or detailed monitoring is enabled for the instance.</p>
     /// <p>Default: Disabled</p>
@@ -351,6 +400,13 @@ impl RequestSpotLaunchSpecificationBuilder {
     ) -> Self {
         self.monitoring = input;
         self
+    }
+    /// <p>Indicates whether basic or detailed monitoring is enabled for the instance.</p>
+    /// <p>Default: Disabled</p>
+    pub fn get_monitoring(
+        &self,
+    ) -> &::std::option::Option<crate::types::RunInstancesMonitoringEnabled> {
+        &self.monitoring
     }
     /// Appends an item to `network_interfaces`.
     ///
@@ -376,6 +432,13 @@ impl RequestSpotLaunchSpecificationBuilder {
         self.network_interfaces = input;
         self
     }
+    /// <p>The network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p>
+    pub fn get_network_interfaces(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>>
+    {
+        &self.network_interfaces
+    }
     /// <p>The placement information for the instance.</p>
     pub fn placement(mut self, input: crate::types::SpotPlacement) -> Self {
         self.placement = ::std::option::Option::Some(input);
@@ -389,6 +452,10 @@ impl RequestSpotLaunchSpecificationBuilder {
         self.placement = input;
         self
     }
+    /// <p>The placement information for the instance.</p>
+    pub fn get_placement(&self) -> &::std::option::Option<crate::types::SpotPlacement> {
+        &self.placement
+    }
     /// <p>The ID of the RAM disk.</p>
     pub fn ramdisk_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ramdisk_id = ::std::option::Option::Some(input.into());
@@ -398,6 +465,10 @@ impl RequestSpotLaunchSpecificationBuilder {
     pub fn set_ramdisk_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ramdisk_id = input;
         self
+    }
+    /// <p>The ID of the RAM disk.</p>
+    pub fn get_ramdisk_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ramdisk_id
     }
     /// <p>The ID of the subnet in which to launch the instance.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -409,6 +480,10 @@ impl RequestSpotLaunchSpecificationBuilder {
         self.subnet_id = input;
         self
     }
+    /// <p>The ID of the subnet in which to launch the instance.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
+    }
     /// <p>The base64-encoded user data that instances use when starting up. User data is limited to 16 KB.</p>
     pub fn user_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_data = ::std::option::Option::Some(input.into());
@@ -418,6 +493,10 @@ impl RequestSpotLaunchSpecificationBuilder {
     pub fn set_user_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_data = input;
         self
+    }
+    /// <p>The base64-encoded user data that instances use when starting up. User data is limited to 16 KB.</p>
+    pub fn get_user_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_data
     }
     /// Consumes the builder and constructs a [`RequestSpotLaunchSpecification`](crate::types::RequestSpotLaunchSpecification).
     pub fn build(self) -> crate::types::RequestSpotLaunchSpecification {

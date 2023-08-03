@@ -39,6 +39,12 @@ impl ClassifyDocumentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ClassifyDocument as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::classify_document::builders::ClassifyDocumentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl ClassifyDocumentFluentBuilder {
         self.inner = self.inner.set_text(input);
         self
     }
+    /// <p>The document text to be analyzed. If you enter text using this parameter, do not use the <code>Bytes</code> parameter.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_text()
+    }
     /// <p>The Amazon Resource Number (ARN) of the endpoint. For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.</p>
     pub fn endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_arn(input.into());
@@ -138,6 +148,10 @@ impl ClassifyDocumentFluentBuilder {
     pub fn set_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Number (ARN) of the endpoint. For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.</p>
+    pub fn get_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_endpoint_arn()
     }
     /// <p>Use the <code>Bytes</code> parameter to input a text, PDF, Word or image file. You can also use the <code>Bytes</code> parameter to input an Amazon Textract <code>DetectDocumentText</code> or <code>AnalyzeDocument</code> output file.</p>
     /// <p>Provide the input document as a sequence of base64-encoded bytes. If your code uses an Amazon Web Services SDK to classify documents, the SDK may encode the document file bytes for you. </p>
@@ -155,6 +169,13 @@ impl ClassifyDocumentFluentBuilder {
         self.inner = self.inner.set_bytes(input);
         self
     }
+    /// <p>Use the <code>Bytes</code> parameter to input a text, PDF, Word or image file. You can also use the <code>Bytes</code> parameter to input an Amazon Textract <code>DetectDocumentText</code> or <code>AnalyzeDocument</code> output file.</p>
+    /// <p>Provide the input document as a sequence of base64-encoded bytes. If your code uses an Amazon Web Services SDK to classify documents, the SDK may encode the document file bytes for you. </p>
+    /// <p>The maximum length of this field depends on the input document type. For details, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync.html"> Inputs for real-time custom analysis</a> in the Comprehend Developer Guide. </p>
+    /// <p>If you use the <code>Bytes</code> parameter, do not use the <code>Text</code> parameter.</p>
+    pub fn get_bytes(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        self.inner.get_bytes()
+    }
     /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
     pub fn document_reader_config(mut self, input: crate::types::DocumentReaderConfig) -> Self {
         self.inner = self.inner.document_reader_config(input);
@@ -167,5 +188,11 @@ impl ClassifyDocumentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_document_reader_config(input);
         self
+    }
+    /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
+    pub fn get_document_reader_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::DocumentReaderConfig> {
+        self.inner.get_document_reader_config()
     }
 }

@@ -48,6 +48,10 @@ impl RuleGroupSourceStatefulRulesOptionsDetailsBuilder {
         self.keyword = input;
         self
     }
+    /// <p>A keyword to look for.</p>
+    pub fn get_keyword(&self) -> &::std::option::Option<::std::string::String> {
+        &self.keyword
+    }
     /// Appends an item to `settings`.
     ///
     /// To override the contents of this collection use [`set_settings`](Self::set_settings).
@@ -66,6 +70,10 @@ impl RuleGroupSourceStatefulRulesOptionsDetailsBuilder {
     ) -> Self {
         self.settings = input;
         self
+    }
+    /// <p>A list of settings.</p>
+    pub fn get_settings(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.settings
     }
     /// Consumes the builder and constructs a [`RuleGroupSourceStatefulRulesOptionsDetails`](crate::types::RuleGroupSourceStatefulRulesOptionsDetails).
     pub fn build(self) -> crate::types::RuleGroupSourceStatefulRulesOptionsDetails {

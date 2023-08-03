@@ -80,6 +80,10 @@ impl PluginSummaryBuilder {
         self.plugin_id = input;
         self
     }
+    /// <p>The ID of the plugin.</p>
+    pub fn get_plugin_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.plugin_id
+    }
     /// <p>The name of the host.</p>
     pub fn hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hostname = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl PluginSummaryBuilder {
     pub fn set_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hostname = input;
         self
+    }
+    /// <p>The name of the host.</p>
+    pub fn get_hostname(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hostname
     }
     /// <p>The status of the plugin.</p>
     pub fn status(mut self, input: crate::types::PluginHealth) -> Self {
@@ -100,6 +108,10 @@ impl PluginSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the plugin.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::PluginHealth> {
+        &self.status
+    }
     /// <p>The IP address at which the plugin is located.</p>
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_address = ::std::option::Option::Some(input.into());
@@ -110,6 +122,10 @@ impl PluginSummaryBuilder {
         self.ip_address = input;
         self
     }
+    /// <p>The IP address at which the plugin is located.</p>
+    pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address
+    }
     /// <p>The version of the plugin.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -119,6 +135,10 @@ impl PluginSummaryBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version of the plugin.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// <p>The time at which the plugin was registered.</p>
     pub fn registered_time(
@@ -135,6 +155,10 @@ impl PluginSummaryBuilder {
     ) -> Self {
         self.registered_time = input;
         self
+    }
+    /// <p>The time at which the plugin was registered.</p>
+    pub fn get_registered_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registered_time
     }
     /// Consumes the builder and constructs a [`PluginSummary`](crate::types::PluginSummary).
     pub fn build(self) -> crate::types::PluginSummary {

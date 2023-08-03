@@ -73,6 +73,10 @@ impl ListSigningProfilesInputBuilder {
         self.include_canceled = input;
         self
     }
+    /// <p>Designates whether to include profiles with the status of <code>CANCELED</code>.</p>
+    pub fn get_include_canceled(&self) -> &::std::option::Option<bool> {
+        &self.include_canceled
+    }
     /// <p>The maximum number of profiles to be returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl ListSigningProfilesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of profiles to be returned.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -93,6 +101,10 @@ impl ListSigningProfilesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>Filters results to return only signing jobs initiated for a specified signing platform.</p>
     pub fn platform_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_id = ::std::option::Option::Some(input.into());
@@ -102,6 +114,10 @@ impl ListSigningProfilesInputBuilder {
     pub fn set_platform_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform_id = input;
         self
+    }
+    /// <p>Filters results to return only signing jobs initiated for a specified signing platform.</p>
+    pub fn get_platform_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_id
     }
     /// Appends an item to `statuses`.
     ///
@@ -121,6 +137,12 @@ impl ListSigningProfilesInputBuilder {
     ) -> Self {
         self.statuses = input;
         self
+    }
+    /// <p>Filters results to return only signing jobs with statuses in the specified list.</p>
+    pub fn get_statuses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SigningProfileStatus>> {
+        &self.statuses
     }
     /// Consumes the builder and constructs a [`ListSigningProfilesInput`](crate::operation::list_signing_profiles::ListSigningProfilesInput).
     pub fn build(

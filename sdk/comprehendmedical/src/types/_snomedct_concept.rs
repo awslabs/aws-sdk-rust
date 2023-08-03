@@ -56,6 +56,10 @@ impl SnomedctConceptBuilder {
         self.description = input;
         self
     }
+    /// <p> The description of the SNOMED-CT concept. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p> The numeric ID for the SNOMED-CT concept. </p>
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl SnomedctConceptBuilder {
         self.code = input;
         self
     }
+    /// <p> The numeric ID for the SNOMED-CT concept. </p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
+    }
     /// <p> The level of confidence Amazon Comprehend Medical has that the entity should be linked to the identified SNOMED-CT concept. </p>
     pub fn score(mut self, input: f32) -> Self {
         self.score = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl SnomedctConceptBuilder {
     pub fn set_score(mut self, input: ::std::option::Option<f32>) -> Self {
         self.score = input;
         self
+    }
+    /// <p> The level of confidence Amazon Comprehend Medical has that the entity should be linked to the identified SNOMED-CT concept. </p>
+    pub fn get_score(&self) -> &::std::option::Option<f32> {
+        &self.score
     }
     /// Consumes the builder and constructs a [`SnomedctConcept`](crate::types::SnomedctConcept).
     pub fn build(self) -> crate::types::SnomedctConcept {

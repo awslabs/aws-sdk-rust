@@ -48,6 +48,10 @@ impl EntityRecognizerAnnotationsBuilder {
         self.s3_uri = input;
         self
     }
+    /// <p> Specifies the Amazon S3 location where the annotations for an entity recognizer are located. The URI must be in the same Region as the API endpoint that you are calling.</p>
+    pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_uri
+    }
     /// <p> Specifies the Amazon S3 location where the test annotations for an entity recognizer are located. The URI must be in the same Region as the API endpoint that you are calling.</p>
     pub fn test_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_s3_uri = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl EntityRecognizerAnnotationsBuilder {
     pub fn set_test_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.test_s3_uri = input;
         self
+    }
+    /// <p> Specifies the Amazon S3 location where the test annotations for an entity recognizer are located. The URI must be in the same Region as the API endpoint that you are calling.</p>
+    pub fn get_test_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_s3_uri
     }
     /// Consumes the builder and constructs a [`EntityRecognizerAnnotations`](crate::types::EntityRecognizerAnnotations).
     pub fn build(self) -> crate::types::EntityRecognizerAnnotations {

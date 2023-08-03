@@ -72,6 +72,10 @@ impl SetTimerActionBuilder {
         self.timer_name = input;
         self
     }
+    /// <p>The name of the timer.</p>
+    pub fn get_timer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timer_name
+    }
     /// <p>The number of seconds until the timer expires. The minimum value is 60 seconds to ensure accuracy. The maximum value is 31622400 seconds. </p>
     #[deprecated(
         note = "seconds is deprecated. You can use durationExpression for SetTimerAction. The value of seconds can be used as a string expression for durationExpression."
@@ -87,6 +91,13 @@ impl SetTimerActionBuilder {
     pub fn set_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.seconds = input;
         self
+    }
+    /// <p>The number of seconds until the timer expires. The minimum value is 60 seconds to ensure accuracy. The maximum value is 31622400 seconds. </p>
+    #[deprecated(
+        note = "seconds is deprecated. You can use durationExpression for SetTimerAction. The value of seconds can be used as a string expression for durationExpression."
+    )]
+    pub fn get_seconds(&self) -> &::std::option::Option<i32> {
+        &self.seconds
     }
     /// <p>The duration of the timer, in seconds. You can use a string expression that includes numbers, variables (<code>$variable.
     /// <variable-name></variable-name></code>), and input values (<code>$input.
@@ -113,6 +124,15 @@ impl SetTimerActionBuilder {
     ) -> Self {
         self.duration_expression = input;
         self
+    }
+    /// <p>The duration of the timer, in seconds. You can use a string expression that includes numbers, variables (<code>$variable.
+    /// <variable-name></variable-name></code>), and input values (<code>$input.
+    /// <input-name>
+    /// .
+    /// <path-to-datum></path-to-datum>
+    /// </input-name></code>) as the duration. The range of the duration is 1-31622400 seconds. To ensure accuracy, the minimum duration is 60 seconds. The evaluated result of the duration is rounded down to the nearest whole number. </p>
+    pub fn get_duration_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.duration_expression
     }
     /// Consumes the builder and constructs a [`SetTimerAction`](crate::types::SetTimerAction).
     pub fn build(self) -> crate::types::SetTimerAction {

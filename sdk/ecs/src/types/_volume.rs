@@ -90,6 +90,10 @@ impl VolumeBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. This name is referenced in the <code>sourceVolume</code> parameter of container definition <code>mountPoints</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>This parameter is specified when you use bind mount host volumes. The contents of the <code>host</code> parameter determine whether your bind mount host volume persists on the host container instance and where it's stored. If the <code>host</code> parameter is empty, then the Docker daemon assigns a host path for your data volume. However, the data isn't guaranteed to persist after the containers that are associated with it stop running.</p>
     /// <p>Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>. Windows containers can't mount directories on a different drive, and mount point can't be across drives. For example, you can mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.</p>
     pub fn host(mut self, input: crate::types::HostVolumeProperties) -> Self {
@@ -104,6 +108,11 @@ impl VolumeBuilder {
     ) -> Self {
         self.host = input;
         self
+    }
+    /// <p>This parameter is specified when you use bind mount host volumes. The contents of the <code>host</code> parameter determine whether your bind mount host volume persists on the host container instance and where it's stored. If the <code>host</code> parameter is empty, then the Docker daemon assigns a host path for your data volume. However, the data isn't guaranteed to persist after the containers that are associated with it stop running.</p>
+    /// <p>Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>. Windows containers can't mount directories on a different drive, and mount point can't be across drives. For example, you can mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.</p>
+    pub fn get_host(&self) -> &::std::option::Option<crate::types::HostVolumeProperties> {
+        &self.host
     }
     /// <p>This parameter is specified when you use Docker volumes.</p>
     /// <p>Windows containers only support the use of the <code>local</code> driver. To use bind mounts, specify the <code>host</code> parameter instead.</p> <note>
@@ -127,6 +136,15 @@ impl VolumeBuilder {
         self.docker_volume_configuration = input;
         self
     }
+    /// <p>This parameter is specified when you use Docker volumes.</p>
+    /// <p>Windows containers only support the use of the <code>local</code> driver. To use bind mounts, specify the <code>host</code> parameter instead.</p> <note>
+    /// <p>Docker volumes aren't supported by tasks run on Fargate.</p>
+    /// </note>
+    pub fn get_docker_volume_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DockerVolumeConfiguration> {
+        &self.docker_volume_configuration
+    }
     /// <p>This parameter is specified when you use an Amazon Elastic File System file system for task storage.</p>
     pub fn efs_volume_configuration(mut self, input: crate::types::EfsVolumeConfiguration) -> Self {
         self.efs_volume_configuration = ::std::option::Option::Some(input);
@@ -139,6 +157,12 @@ impl VolumeBuilder {
     ) -> Self {
         self.efs_volume_configuration = input;
         self
+    }
+    /// <p>This parameter is specified when you use an Amazon Elastic File System file system for task storage.</p>
+    pub fn get_efs_volume_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::EfsVolumeConfiguration> {
+        &self.efs_volume_configuration
     }
     /// <p>This parameter is specified when you use Amazon FSx for Windows File Server file system for task storage.</p>
     pub fn fsx_windows_file_server_volume_configuration(
@@ -155,6 +179,12 @@ impl VolumeBuilder {
     ) -> Self {
         self.fsx_windows_file_server_volume_configuration = input;
         self
+    }
+    /// <p>This parameter is specified when you use Amazon FSx for Windows File Server file system for task storage.</p>
+    pub fn get_fsx_windows_file_server_volume_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::FSxWindowsFileServerVolumeConfiguration> {
+        &self.fsx_windows_file_server_volume_configuration
     }
     /// Consumes the builder and constructs a [`Volume`](crate::types::Volume).
     pub fn build(self) -> crate::types::Volume {

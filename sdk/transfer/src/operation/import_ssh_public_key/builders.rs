@@ -37,6 +37,12 @@ impl ImportSshPublicKeyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ImportSshPublicKey as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::import_ssh_public_key::builders::ImportSshPublicKeyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl ImportSshPublicKeyFluentBuilder {
         self.inner = self.inner.set_server_id(input);
         self
     }
+    /// <p>A system-assigned unique identifier for a server.</p>
+    pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_server_id()
+    }
     /// <p>The public key portion of an SSH key pair.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
     pub fn ssh_public_key_body(
@@ -145,6 +155,11 @@ impl ImportSshPublicKeyFluentBuilder {
         self.inner = self.inner.set_ssh_public_key_body(input);
         self
     }
+    /// <p>The public key portion of an SSH key pair.</p>
+    /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
+    pub fn get_ssh_public_key_body(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ssh_public_key_body()
+    }
     /// <p>The name of the Transfer Family user that is assigned to one or more servers.</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_name(input.into());
@@ -154,5 +169,9 @@ impl ImportSshPublicKeyFluentBuilder {
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_name(input);
         self
+    }
+    /// <p>The name of the Transfer Family user that is assigned to one or more servers.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_name()
     }
 }

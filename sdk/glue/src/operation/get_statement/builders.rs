@@ -36,6 +36,10 @@ impl GetStatementFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetStatement as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_statement::builders::GetStatementInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl GetStatementFluentBuilder {
         self.inner = self.inner.set_session_id(input);
         self
     }
+    /// <p>The Session ID of the statement.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_session_id()
+    }
     /// <p>The Id of the statement.</p>
     pub fn id(mut self, input: i32) -> Self {
         self.inner = self.inner.id(input);
@@ -127,6 +135,10 @@ impl GetStatementFluentBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_id(input);
         self
+    }
+    /// <p>The Id of the statement.</p>
+    pub fn get_id(&self) -> &::std::option::Option<i32> {
+        self.inner.get_id()
     }
     /// <p>The origin of the request.</p>
     pub fn request_origin(
@@ -143,5 +155,9 @@ impl GetStatementFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_request_origin(input);
         self
+    }
+    /// <p>The origin of the request.</p>
+    pub fn get_request_origin(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_request_origin()
     }
 }

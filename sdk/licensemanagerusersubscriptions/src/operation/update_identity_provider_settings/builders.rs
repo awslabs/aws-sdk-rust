@@ -36,6 +36,10 @@ impl UpdateIdentityProviderSettingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateIdentityProviderSettings as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_identity_provider_settings::builders::UpdateIdentityProviderSettingsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -103,6 +107,10 @@ impl UpdateIdentityProviderSettingsFluentBuilder {
         self.inner = self.inner.set_identity_provider(input);
         self
     }
+    /// <p>Details about an identity provider.</p>
+    pub fn get_identity_provider(&self) -> &::std::option::Option<crate::types::IdentityProvider> {
+        self.inner.get_identity_provider()
+    }
     /// <p>The name of the user-based subscription product.</p>
     pub fn product(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.product(input.into());
@@ -112,6 +120,10 @@ impl UpdateIdentityProviderSettingsFluentBuilder {
     pub fn set_product(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_product(input);
         self
+    }
+    /// <p>The name of the user-based subscription product.</p>
+    pub fn get_product(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_product()
     }
     /// <p>Updates the registered identity provider’s product related configuration settings. You can update any combination of settings in a single operation such as the:</p>
     /// <ul>
@@ -135,5 +147,14 @@ impl UpdateIdentityProviderSettingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_update_settings(input);
         self
+    }
+    /// <p>Updates the registered identity provider’s product related configuration settings. You can update any combination of settings in a single operation such as the:</p>
+    /// <ul>
+    /// <li> <p>Subnets which you want to add to provision VPC endpoints.</p> </li>
+    /// <li> <p>Subnets which you want to remove the VPC endpoints from.</p> </li>
+    /// <li> <p>Security group ID which permits traffic to the VPC endpoints.</p> </li>
+    /// </ul>
+    pub fn get_update_settings(&self) -> &::std::option::Option<crate::types::UpdateSettings> {
+        self.inner.get_update_settings()
     }
 }

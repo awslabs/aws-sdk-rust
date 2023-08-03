@@ -48,6 +48,10 @@ impl AppliedTerminologyBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the custom terminology applied to the input text by Amazon Translate for the translated text response.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `terms`.
     ///
     /// To override the contents of this collection use [`set_terms`](Self::set_terms).
@@ -66,6 +70,10 @@ impl AppliedTerminologyBuilder {
     ) -> Self {
         self.terms = input;
         self
+    }
+    /// <p>The specific terms of the custom terminology applied to the input text by Amazon Translate for the translated text response. A maximum of 250 terms will be returned, and the specific terms applied will be the first 250 terms in the source text. </p>
+    pub fn get_terms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Term>> {
+        &self.terms
     }
     /// Consumes the builder and constructs a [`AppliedTerminology`](crate::types::AppliedTerminology).
     pub fn build(self) -> crate::types::AppliedTerminology {

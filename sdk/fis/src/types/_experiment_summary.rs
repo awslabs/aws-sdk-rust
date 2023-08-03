@@ -80,6 +80,10 @@ impl ExperimentSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the experiment.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The ID of the experiment template.</p>
     pub fn experiment_template_id(
         mut self,
@@ -96,6 +100,10 @@ impl ExperimentSummaryBuilder {
         self.experiment_template_id = input;
         self
     }
+    /// <p>The ID of the experiment template.</p>
+    pub fn get_experiment_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.experiment_template_id
+    }
     /// <p>The state of the experiment.</p>
     pub fn state(mut self, input: crate::types::ExperimentState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -109,6 +117,10 @@ impl ExperimentSummaryBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of the experiment.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ExperimentState> {
+        &self.state
+    }
     /// <p>The time that the experiment was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -121,6 +133,10 @@ impl ExperimentSummaryBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time that the experiment was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -146,6 +162,14 @@ impl ExperimentSummaryBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags for the experiment.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`ExperimentSummary`](crate::types::ExperimentSummary).
     pub fn build(self) -> crate::types::ExperimentSummary {

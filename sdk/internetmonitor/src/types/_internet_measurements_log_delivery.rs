@@ -40,6 +40,10 @@ impl InternetMeasurementsLogDeliveryBuilder {
         self.s3_config = input;
         self
     }
+    /// <p>The configuration information for publishing Internet Monitor internet measurements to Amazon S3. The configuration includes the bucket name and (optionally) prefix for the S3 bucket to store the measurements, and the delivery status. The delivery status is <code>ENABLED</code> or <code>DISABLED</code>, depending on whether you choose to deliver internet measurements to S3 logs.</p>
+    pub fn get_s3_config(&self) -> &::std::option::Option<crate::types::S3Config> {
+        &self.s3_config
+    }
     /// Consumes the builder and constructs a [`InternetMeasurementsLogDelivery`](crate::types::InternetMeasurementsLogDelivery).
     pub fn build(self) -> crate::types::InternetMeasurementsLogDelivery {
         crate::types::InternetMeasurementsLogDelivery {

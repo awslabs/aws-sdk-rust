@@ -138,6 +138,10 @@ impl GetSolNetworkOperationOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>ID of this network operation occurrence.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>Network operation ARN.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -147,6 +151,10 @@ impl GetSolNetworkOperationOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>Network operation ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The state of the network operation.</p>
     pub fn operation_state(mut self, input: crate::types::NsLcmOperationState) -> Self {
@@ -160,6 +168,10 @@ impl GetSolNetworkOperationOutputBuilder {
     ) -> Self {
         self.operation_state = input;
         self
+    }
+    /// <p>The state of the network operation.</p>
+    pub fn get_operation_state(&self) -> &::std::option::Option<crate::types::NsLcmOperationState> {
+        &self.operation_state
     }
     /// <p>ID of the network operation instance.</p>
     pub fn ns_instance_id(
@@ -177,6 +189,10 @@ impl GetSolNetworkOperationOutputBuilder {
         self.ns_instance_id = input;
         self
     }
+    /// <p>ID of the network operation instance.</p>
+    pub fn get_ns_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ns_instance_id
+    }
     /// <p>Type of the operation represented by this occurrence.</p>
     pub fn lcm_operation_type(mut self, input: crate::types::LcmOperationType) -> Self {
         self.lcm_operation_type = ::std::option::Option::Some(input);
@@ -190,6 +206,10 @@ impl GetSolNetworkOperationOutputBuilder {
         self.lcm_operation_type = input;
         self
     }
+    /// <p>Type of the operation represented by this occurrence.</p>
+    pub fn get_lcm_operation_type(&self) -> &::std::option::Option<crate::types::LcmOperationType> {
+        &self.lcm_operation_type
+    }
     /// <p>Error related to this specific network operation occurrence.</p>
     pub fn error(mut self, input: crate::types::ProblemDetails) -> Self {
         self.error = ::std::option::Option::Some(input);
@@ -199,6 +219,10 @@ impl GetSolNetworkOperationOutputBuilder {
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::ProblemDetails>) -> Self {
         self.error = input;
         self
+    }
+    /// <p>Error related to this specific network operation occurrence.</p>
+    pub fn get_error(&self) -> &::std::option::Option<crate::types::ProblemDetails> {
+        &self.error
     }
     /// <p>Metadata of this network operation occurrence.</p>
     pub fn metadata(mut self, input: crate::types::GetSolNetworkOperationMetadata) -> Self {
@@ -212,6 +236,12 @@ impl GetSolNetworkOperationOutputBuilder {
     ) -> Self {
         self.metadata = input;
         self
+    }
+    /// <p>Metadata of this network operation occurrence.</p>
+    pub fn get_metadata(
+        &self,
+    ) -> &::std::option::Option<crate::types::GetSolNetworkOperationMetadata> {
+        &self.metadata
     }
     /// Appends an item to `tasks`.
     ///
@@ -233,6 +263,13 @@ impl GetSolNetworkOperationOutputBuilder {
     ) -> Self {
         self.tasks = input;
         self
+    }
+    /// <p>All tasks associated with this operation occurrence.</p>
+    pub fn get_tasks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GetSolNetworkOperationTaskDetails>>
+    {
+        &self.tasks
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -258,6 +295,14 @@ impl GetSolNetworkOperationOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

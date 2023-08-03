@@ -36,6 +36,12 @@ impl UpdateEnvironmentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateEnvironment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_environment::builders::UpdateEnvironmentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateEnvironmentFluentBuilder {
         self.inner = self.inner.set_environment_id(input);
         self
     }
+    /// <p>The unique identifier of the runtime environment that you want to update.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_id()
+    }
     /// <p>The desired capacity for the runtime environment to update. The minimum possible value is 0 and the maximum is 100.</p>
     pub fn desired_capacity(mut self, input: i32) -> Self {
         self.inner = self.inner.desired_capacity(input);
@@ -141,6 +151,10 @@ impl UpdateEnvironmentFluentBuilder {
     pub fn set_desired_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_desired_capacity(input);
         self
+    }
+    /// <p>The desired capacity for the runtime environment to update. The minimum possible value is 0 and the maximum is 100.</p>
+    pub fn get_desired_capacity(&self) -> &::std::option::Option<i32> {
+        self.inner.get_desired_capacity()
     }
     /// <p>The instance type for the runtime environment to update.</p>
     pub fn instance_type(
@@ -158,6 +172,10 @@ impl UpdateEnvironmentFluentBuilder {
         self.inner = self.inner.set_instance_type(input);
         self
     }
+    /// <p>The instance type for the runtime environment to update.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_type()
+    }
     /// <p>The version of the runtime engine for the runtime environment.</p>
     pub fn engine_version(
         mut self,
@@ -173,6 +191,10 @@ impl UpdateEnvironmentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_engine_version(input);
         self
+    }
+    /// <p>The version of the runtime engine for the runtime environment.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_engine_version()
     }
     /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
     pub fn preferred_maintenance_window(
@@ -190,6 +212,12 @@ impl UpdateEnvironmentFluentBuilder {
         self.inner = self.inner.set_preferred_maintenance_window(input);
         self
     }
+    /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
+    pub fn get_preferred_maintenance_window(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_preferred_maintenance_window()
+    }
     /// <p>Indicates whether to update the runtime environment during the maintenance window. The default is false. Currently, Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter only if <code>applyDuringMaintenanceWindow</code> is true. If any parameter other than <code>engineVersion</code> is provided in <code>UpdateEnvironmentRequest</code>, it will fail if <code>applyDuringMaintenanceWindow</code> is set to true.</p>
     pub fn apply_during_maintenance_window(mut self, input: bool) -> Self {
         self.inner = self.inner.apply_during_maintenance_window(input);
@@ -202,5 +230,9 @@ impl UpdateEnvironmentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_apply_during_maintenance_window(input);
         self
+    }
+    /// <p>Indicates whether to update the runtime environment during the maintenance window. The default is false. Currently, Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter only if <code>applyDuringMaintenanceWindow</code> is true. If any parameter other than <code>engineVersion</code> is provided in <code>UpdateEnvironmentRequest</code>, it will fail if <code>applyDuringMaintenanceWindow</code> is set to true.</p>
+    pub fn get_apply_during_maintenance_window(&self) -> &::std::option::Option<bool> {
+        self.inner.get_apply_during_maintenance_window()
     }
 }

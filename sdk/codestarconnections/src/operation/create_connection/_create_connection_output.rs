@@ -69,6 +69,12 @@ impl CreateConnectionOutputBuilder {
         self.connection_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when the connection is shared between AWS services.</p> <note>
+    /// <p>The ARN is never reused if the connection is deleted.</p>
+    /// </note>
+    pub fn get_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_arn
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -87,6 +93,10 @@ impl CreateConnectionOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Specifies the tags applied to the resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

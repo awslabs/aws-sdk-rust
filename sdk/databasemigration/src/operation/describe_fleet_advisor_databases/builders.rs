@@ -36,6 +36,10 @@ impl DescribeFleetAdvisorDatabasesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeFleetAdvisorDatabases as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_fleet_advisor_databases::builders::DescribeFleetAdvisorDatabasesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -157,6 +161,19 @@ impl DescribeFleetAdvisorDatabasesFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p> If you specify any of the following filters, the output includes information for only those databases that meet the filter criteria: </p>
+    /// <ul>
+    /// <li> <p> <code>database-id</code> – The ID of the database.</p> </li>
+    /// <li> <p> <code>database-name</code> – The name of the database.</p> </li>
+    /// <li> <p> <code>database-engine</code> – The name of the database engine.</p> </li>
+    /// <li> <p> <code>server-ip-address</code> – The IP address of the database server.</p> </li>
+    /// <li> <p> <code>database-ip-address</code> – The IP address of the database.</p> </li>
+    /// <li> <p> <code>collector-name</code> – The name of the associated Fleet Advisor collector.</p> </li>
+    /// </ul>
+    /// <p>An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="45"</code> </p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// <p>Sets the maximum number of records returned in the response.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.inner = self.inner.max_records(input);
@@ -167,6 +184,10 @@ impl DescribeFleetAdvisorDatabasesFluentBuilder {
         self.inner = self.inner.set_max_records(input);
         self
     }
+    /// <p>Sets the maximum number of records returned in the response.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
+    }
     /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -176,5 +197,9 @@ impl DescribeFleetAdvisorDatabasesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

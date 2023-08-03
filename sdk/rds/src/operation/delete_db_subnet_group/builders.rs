@@ -38,6 +38,12 @@ impl DeleteDBSubnetGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteDBSubnetGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_db_subnet_group::builders::DeleteDbSubnetGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -141,5 +147,13 @@ impl DeleteDBSubnetGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_db_subnet_group_name(input);
         self
+    }
+    /// <p>The name of the database subnet group to delete.</p> <note>
+    /// <p>You can't delete the default subnet group.</p>
+    /// </note>
+    /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
+    /// <p>Example: <code>mydbsubnetgroup</code> </p>
+    pub fn get_db_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_subnet_group_name()
     }
 }

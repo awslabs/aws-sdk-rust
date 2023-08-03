@@ -147,6 +147,10 @@ impl GetSolNetworkInstanceOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>Network instance ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>Network instance ARN.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -156,6 +160,10 @@ impl GetSolNetworkInstanceOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>Network instance ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>Network instance name.</p>
     pub fn ns_instance_name(
@@ -173,6 +181,10 @@ impl GetSolNetworkInstanceOutputBuilder {
         self.ns_instance_name = input;
         self
     }
+    /// <p>Network instance name.</p>
+    pub fn get_ns_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ns_instance_name
+    }
     /// <p>Network instance description.</p>
     pub fn ns_instance_description(
         mut self,
@@ -189,6 +201,10 @@ impl GetSolNetworkInstanceOutputBuilder {
         self.ns_instance_description = input;
         self
     }
+    /// <p>Network instance description.</p>
+    pub fn get_ns_instance_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ns_instance_description
+    }
     /// <p>Network service descriptor ID.</p>
     pub fn nsd_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nsd_id = ::std::option::Option::Some(input.into());
@@ -198,6 +214,10 @@ impl GetSolNetworkInstanceOutputBuilder {
     pub fn set_nsd_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.nsd_id = input;
         self
+    }
+    /// <p>Network service descriptor ID.</p>
+    pub fn get_nsd_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nsd_id
     }
     /// <p>Network service descriptor info ID.</p>
     pub fn nsd_info_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -209,6 +229,10 @@ impl GetSolNetworkInstanceOutputBuilder {
         self.nsd_info_id = input;
         self
     }
+    /// <p>Network service descriptor info ID.</p>
+    pub fn get_nsd_info_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nsd_info_id
+    }
     /// <p>Network instance state.</p>
     pub fn ns_state(mut self, input: crate::types::NsState) -> Self {
         self.ns_state = ::std::option::Option::Some(input);
@@ -218,6 +242,10 @@ impl GetSolNetworkInstanceOutputBuilder {
     pub fn set_ns_state(mut self, input: ::std::option::Option<crate::types::NsState>) -> Self {
         self.ns_state = input;
         self
+    }
+    /// <p>Network instance state.</p>
+    pub fn get_ns_state(&self) -> &::std::option::Option<crate::types::NsState> {
+        &self.ns_state
     }
     /// <p>Lifecycle management operation details on the network instance.</p>
     /// <p>Lifecycle management operations are deploy, update, or delete operations.</p>
@@ -234,6 +262,11 @@ impl GetSolNetworkInstanceOutputBuilder {
         self.lcm_op_info = input;
         self
     }
+    /// <p>Lifecycle management operation details on the network instance.</p>
+    /// <p>Lifecycle management operations are deploy, update, or delete operations.</p>
+    pub fn get_lcm_op_info(&self) -> &::std::option::Option<crate::types::LcmOperationInfo> {
+        &self.lcm_op_info
+    }
     /// <p>The metadata of a network instance.</p>
     /// <p>A network instance is a single network created in Amazon Web Services TNB that can be deployed and on which life-cycle operations (like terminate, update, and delete) can be performed.</p>
     pub fn metadata(mut self, input: crate::types::GetSolNetworkInstanceMetadata) -> Self {
@@ -248,6 +281,13 @@ impl GetSolNetworkInstanceOutputBuilder {
     ) -> Self {
         self.metadata = input;
         self
+    }
+    /// <p>The metadata of a network instance.</p>
+    /// <p>A network instance is a single network created in Amazon Web Services TNB that can be deployed and on which life-cycle operations (like terminate, update, and delete) can be performed.</p>
+    pub fn get_metadata(
+        &self,
+    ) -> &::std::option::Option<crate::types::GetSolNetworkInstanceMetadata> {
+        &self.metadata
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -273,6 +313,14 @@ impl GetSolNetworkInstanceOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

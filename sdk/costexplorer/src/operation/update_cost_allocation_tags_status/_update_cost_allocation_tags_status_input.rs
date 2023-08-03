@@ -55,6 +55,12 @@ impl UpdateCostAllocationTagsStatusInputBuilder {
         self.cost_allocation_tags_status = input;
         self
     }
+    /// <p>The list of <code>CostAllocationTagStatusEntry</code> objects that are used to update cost allocation tags status for this request. </p>
+    pub fn get_cost_allocation_tags_status(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CostAllocationTagStatusEntry>> {
+        &self.cost_allocation_tags_status
+    }
     /// Consumes the builder and constructs a [`UpdateCostAllocationTagsStatusInput`](crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusInput).
     pub fn build(
         self,

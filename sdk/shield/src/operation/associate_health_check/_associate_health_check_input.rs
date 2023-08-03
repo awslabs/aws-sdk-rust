@@ -54,6 +54,10 @@ impl AssociateHealthCheckInputBuilder {
         self.protection_id = input;
         self
     }
+    /// <p>The unique identifier (ID) for the <code>Protection</code> object to add the health check association to. </p>
+    pub fn get_protection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.protection_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the health check to associate with the protection.</p>
     pub fn health_check_arn(
         mut self,
@@ -69,6 +73,10 @@ impl AssociateHealthCheckInputBuilder {
     ) -> Self {
         self.health_check_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the health check to associate with the protection.</p>
+    pub fn get_health_check_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.health_check_arn
     }
     /// Consumes the builder and constructs a [`AssociateHealthCheckInput`](crate::operation::associate_health_check::AssociateHealthCheckInput).
     pub fn build(

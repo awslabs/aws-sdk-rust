@@ -37,6 +37,13 @@ impl CreateModelPackageGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateModelPackageGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_model_package_group::builders::CreateModelPackageGroupInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl CreateModelPackageGroupFluentBuilder {
         self.inner = self.inner.set_model_package_group_name(input);
         self
     }
+    /// <p>The name of the model group.</p>
+    pub fn get_model_package_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_model_package_group_name()
+    }
     /// <p>A description for the model group.</p>
     pub fn model_package_group_description(
         mut self,
@@ -148,6 +159,12 @@ impl CreateModelPackageGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_model_package_group_description(input);
         self
+    }
+    /// <p>A description for the model group.</p>
+    pub fn get_model_package_group_description(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_model_package_group_description()
     }
     /// Appends an item to `Tags`.
     ///
@@ -165,5 +182,9 @@ impl CreateModelPackageGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of key value pairs associated with the model group. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

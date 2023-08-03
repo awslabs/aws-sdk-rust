@@ -54,6 +54,10 @@ impl UpdateResolverRuleInputBuilder {
         self.resolver_rule_id = input;
         self
     }
+    /// <p>The ID of the Resolver rule that you want to update.</p>
+    pub fn get_resolver_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resolver_rule_id
+    }
     /// <p>The new settings for the Resolver rule.</p>
     pub fn config(mut self, input: crate::types::ResolverRuleConfig) -> Self {
         self.config = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl UpdateResolverRuleInputBuilder {
     ) -> Self {
         self.config = input;
         self
+    }
+    /// <p>The new settings for the Resolver rule.</p>
+    pub fn get_config(&self) -> &::std::option::Option<crate::types::ResolverRuleConfig> {
+        &self.config
     }
     /// Consumes the builder and constructs a [`UpdateResolverRuleInput`](crate::operation::update_resolver_rule::UpdateResolverRuleInput).
     pub fn build(

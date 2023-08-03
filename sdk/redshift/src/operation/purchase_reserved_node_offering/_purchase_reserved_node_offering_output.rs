@@ -49,6 +49,10 @@ impl PurchaseReservedNodeOfferingOutputBuilder {
         self.reserved_node = input;
         self
     }
+    /// <p>Describes a reserved node. You can call the <code>DescribeReservedNodeOfferings</code> API to obtain the available reserved node offerings. </p>
+    pub fn get_reserved_node(&self) -> &::std::option::Option<crate::types::ReservedNode> {
+        &self.reserved_node
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

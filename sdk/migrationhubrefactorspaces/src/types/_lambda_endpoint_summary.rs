@@ -40,6 +40,10 @@ impl LambdaEndpointSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Lambda endpoint. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`LambdaEndpointSummary`](crate::types::LambdaEndpointSummary).
     pub fn build(self) -> crate::types::LambdaEndpointSummary {
         crate::types::LambdaEndpointSummary { arn: self.arn }

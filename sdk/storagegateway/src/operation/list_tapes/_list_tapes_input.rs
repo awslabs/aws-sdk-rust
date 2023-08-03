@@ -70,6 +70,10 @@ impl ListTapesInputBuilder {
         self.tape_ar_ns = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of each of the tapes you want to list. If you don't specify a tape ARN, the response lists all tapes in both your VTL and VTS.</p>
+    pub fn get_tape_ar_ns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tape_ar_ns
+    }
     /// <p>A string that indicates the position at which to begin the returned list of tapes.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl ListTapesInputBuilder {
         self.marker = input;
         self
     }
+    /// <p>A string that indicates the position at which to begin the returned list of tapes.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>An optional number limit for the tapes in the list returned by this call.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -89,6 +97,10 @@ impl ListTapesInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>An optional number limit for the tapes in the list returned by this call.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// Consumes the builder and constructs a [`ListTapesInput`](crate::operation::list_tapes::ListTapesInput).
     pub fn build(

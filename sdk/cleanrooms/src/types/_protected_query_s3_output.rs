@@ -40,6 +40,10 @@ impl ProtectedQueryS3OutputBuilder {
         self.location = input;
         self
     }
+    /// <p>The S3 location of the result.</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
+    }
     /// Consumes the builder and constructs a [`ProtectedQueryS3Output`](crate::types::ProtectedQueryS3Output).
     pub fn build(self) -> crate::types::ProtectedQueryS3Output {
         crate::types::ProtectedQueryS3Output {

@@ -57,6 +57,12 @@ impl DetectMetricSetConfigOutputBuilder {
         self.detected_metric_set_config = input;
         self
     }
+    /// <p>The inferred dataset configuration for the datasource.</p>
+    pub fn get_detected_metric_set_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::DetectedMetricSetConfig> {
+        &self.detected_metric_set_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

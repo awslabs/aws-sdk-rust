@@ -36,6 +36,12 @@ impl EnableMFADeviceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the EnableMFADevice as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::enable_mfa_device::builders::EnableMfaDeviceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +134,11 @@ impl EnableMFADeviceFluentBuilder {
         self.inner = self.inner.set_user_name(input);
         self
     }
+    /// <p>The name of the IAM user for whom you want to enable the MFA device.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_name()
+    }
     /// <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@:/-</p>
     pub fn serial_number(
@@ -145,6 +156,11 @@ impl EnableMFADeviceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_serial_number(input);
         self
+    }
+    /// <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@:/-</p>
+    pub fn get_serial_number(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_serial_number()
     }
     /// <p>An authentication code emitted by the device. </p>
     /// <p>The format for this parameter is a string of six digits.</p> <important>
@@ -168,6 +184,13 @@ impl EnableMFADeviceFluentBuilder {
         self.inner = self.inner.set_authentication_code1(input);
         self
     }
+    /// <p>An authentication code emitted by the device. </p>
+    /// <p>The format for this parameter is a string of six digits.</p> <important>
+    /// <p>Submit your request immediately after generating the authentication codes. If you generate the codes and then wait too long to submit the request, the MFA device successfully associates with the user but the MFA device becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short period of time. If this happens, you can <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.</p>
+    /// </important>
+    pub fn get_authentication_code1(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_authentication_code1()
+    }
     /// <p>A subsequent authentication code emitted by the device.</p>
     /// <p>The format for this parameter is a string of six digits.</p> <important>
     /// <p>Submit your request immediately after generating the authentication codes. If you generate the codes and then wait too long to submit the request, the MFA device successfully associates with the user but the MFA device becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short period of time. If this happens, you can <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.</p>
@@ -189,5 +212,12 @@ impl EnableMFADeviceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_authentication_code2(input);
         self
+    }
+    /// <p>A subsequent authentication code emitted by the device.</p>
+    /// <p>The format for this parameter is a string of six digits.</p> <important>
+    /// <p>Submit your request immediately after generating the authentication codes. If you generate the codes and then wait too long to submit the request, the MFA device successfully associates with the user but the MFA device becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short period of time. If this happens, you can <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.</p>
+    /// </important>
+    pub fn get_authentication_code2(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_authentication_code2()
     }
 }

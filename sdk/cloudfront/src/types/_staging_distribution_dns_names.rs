@@ -48,6 +48,10 @@ impl StagingDistributionDnsNamesBuilder {
         self.quantity = input;
         self
     }
+    /// <p>The number of CloudFront domain names in your staging distribution.</p>
+    pub fn get_quantity(&self) -> &::std::option::Option<i32> {
+        &self.quantity
+    }
     /// Appends an item to `items`.
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
@@ -66,6 +70,10 @@ impl StagingDistributionDnsNamesBuilder {
     ) -> Self {
         self.items = input;
         self
+    }
+    /// <p>The CloudFront domain name of the staging distribution.</p>
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.items
     }
     /// Consumes the builder and constructs a [`StagingDistributionDnsNames`](crate::types::StagingDistributionDnsNames).
     pub fn build(self) -> crate::types::StagingDistributionDnsNames {

@@ -46,6 +46,10 @@ impl DeleteTextMessageSpendLimitOverrideOutputBuilder {
         self.monthly_limit = input;
         self
     }
+    /// <p>The current monthly limit, in US dollars.</p>
+    pub fn get_monthly_limit(&self) -> &::std::option::Option<i64> {
+        &self.monthly_limit
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

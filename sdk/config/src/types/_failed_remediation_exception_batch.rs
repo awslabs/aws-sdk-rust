@@ -55,6 +55,10 @@ impl FailedRemediationExceptionBatchBuilder {
         self.failure_message = input;
         self
     }
+    /// <p>Returns a failure message. For example, the auto-remediation has failed.</p>
+    pub fn get_failure_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_message
+    }
     /// Appends an item to `failed_items`.
     ///
     /// To override the contents of this collection use [`set_failed_items`](Self::set_failed_items).
@@ -73,6 +77,12 @@ impl FailedRemediationExceptionBatchBuilder {
     ) -> Self {
         self.failed_items = input;
         self
+    }
+    /// <p>Returns remediation exception resource key object of the failed items.</p>
+    pub fn get_failed_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RemediationException>> {
+        &self.failed_items
     }
     /// Consumes the builder and constructs a [`FailedRemediationExceptionBatch`](crate::types::FailedRemediationExceptionBatch).
     pub fn build(self) -> crate::types::FailedRemediationExceptionBatch {

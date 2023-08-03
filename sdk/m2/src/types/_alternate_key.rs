@@ -64,6 +64,10 @@ impl AlternateKeyBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the alternate key.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A positive integer value representing the offset to mark the start of the alternate key part in the record byte array.</p>
     pub fn offset(mut self, input: i32) -> Self {
         self.offset = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl AlternateKeyBuilder {
     pub fn set_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.offset = input;
         self
+    }
+    /// <p>A positive integer value representing the offset to mark the start of the alternate key part in the record byte array.</p>
+    pub fn get_offset(&self) -> &::std::option::Option<i32> {
+        &self.offset
     }
     /// <p>A strictly positive integer value representing the length of the alternate key.</p>
     pub fn length(mut self, input: i32) -> Self {
@@ -84,6 +92,10 @@ impl AlternateKeyBuilder {
         self.length = input;
         self
     }
+    /// <p>A strictly positive integer value representing the length of the alternate key.</p>
+    pub fn get_length(&self) -> &::std::option::Option<i32> {
+        &self.length
+    }
     /// <p>Indicates whether the alternate key values are supposed to be unique for the given data set.</p>
     pub fn allow_duplicates(mut self, input: bool) -> Self {
         self.allow_duplicates = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl AlternateKeyBuilder {
     pub fn set_allow_duplicates(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_duplicates = input;
         self
+    }
+    /// <p>Indicates whether the alternate key values are supposed to be unique for the given data set.</p>
+    pub fn get_allow_duplicates(&self) -> &::std::option::Option<bool> {
+        &self.allow_duplicates
     }
     /// Consumes the builder and constructs a [`AlternateKey`](crate::types::AlternateKey).
     pub fn build(self) -> crate::types::AlternateKey {

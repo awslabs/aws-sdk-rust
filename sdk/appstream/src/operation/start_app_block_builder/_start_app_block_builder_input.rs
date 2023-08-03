@@ -40,6 +40,10 @@ impl StartAppBlockBuilderInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the app block builder.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`StartAppBlockBuilderInput`](crate::operation::start_app_block_builder::StartAppBlockBuilderInput).
     pub fn build(
         self,

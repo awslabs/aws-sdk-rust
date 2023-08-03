@@ -43,6 +43,10 @@ impl UpdateTieringInputBuilder {
         self.free_tier = input;
         self
     }
+    /// <p> The possible Amazon Web Services Free Tier configurations. </p>
+    pub fn get_free_tier(&self) -> &::std::option::Option<crate::types::UpdateFreeTierConfig> {
+        &self.free_tier
+    }
     /// Consumes the builder and constructs a [`UpdateTieringInput`](crate::types::UpdateTieringInput).
     pub fn build(self) -> crate::types::UpdateTieringInput {
         crate::types::UpdateTieringInput {

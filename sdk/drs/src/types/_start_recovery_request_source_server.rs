@@ -54,6 +54,10 @@ impl StartRecoveryRequestSourceServerBuilder {
         self.source_server_id = input;
         self
     }
+    /// <p>The ID of the Source Server you want to recover.</p>
+    pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_server_id
+    }
     /// <p>The ID of a Recovery Snapshot we want to recover from. Omit this field to launch from the latest data by taking an on-demand snapshot.</p>
     pub fn recovery_snapshot_id(
         mut self,
@@ -69,6 +73,10 @@ impl StartRecoveryRequestSourceServerBuilder {
     ) -> Self {
         self.recovery_snapshot_id = input;
         self
+    }
+    /// <p>The ID of a Recovery Snapshot we want to recover from. Omit this field to launch from the latest data by taking an on-demand snapshot.</p>
+    pub fn get_recovery_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recovery_snapshot_id
     }
     /// Consumes the builder and constructs a [`StartRecoveryRequestSourceServer`](crate::types::StartRecoveryRequestSourceServer).
     pub fn build(self) -> crate::types::StartRecoveryRequestSourceServer {

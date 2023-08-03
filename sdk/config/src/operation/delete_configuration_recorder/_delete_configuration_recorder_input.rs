@@ -46,6 +46,10 @@ impl DeleteConfigurationRecorderInputBuilder {
         self.configuration_recorder_name = input;
         self
     }
+    /// <p>The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.</p>
+    pub fn get_configuration_recorder_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_recorder_name
+    }
     /// Consumes the builder and constructs a [`DeleteConfigurationRecorderInput`](crate::operation::delete_configuration_recorder::DeleteConfigurationRecorderInput).
     pub fn build(
         self,

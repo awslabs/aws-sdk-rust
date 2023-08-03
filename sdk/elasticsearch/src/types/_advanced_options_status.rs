@@ -76,6 +76,14 @@ impl AdvancedOptionsStatusBuilder {
         self.options = input;
         self
     }
+    /// <p> Specifies the status of advanced options for the specified Elasticsearch domain.</p>
+    pub fn get_options(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.options
+    }
     /// <p> Specifies the status of <code>OptionStatus</code> for advanced options for the specified Elasticsearch domain.</p>
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -85,6 +93,10 @@ impl AdvancedOptionsStatusBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p> Specifies the status of <code>OptionStatus</code> for advanced options for the specified Elasticsearch domain.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::OptionStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`AdvancedOptionsStatus`](crate::types::AdvancedOptionsStatus).
     pub fn build(self) -> crate::types::AdvancedOptionsStatus {

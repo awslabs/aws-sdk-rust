@@ -40,6 +40,10 @@ impl ReferenceLineCustomLabelConfigurationBuilder {
         self.custom_label = input;
         self
     }
+    /// <p>The string text of the custom label.</p>
+    pub fn get_custom_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_label
+    }
     /// Consumes the builder and constructs a [`ReferenceLineCustomLabelConfiguration`](crate::types::ReferenceLineCustomLabelConfiguration).
     pub fn build(self) -> crate::types::ReferenceLineCustomLabelConfiguration {
         crate::types::ReferenceLineCustomLabelConfiguration {

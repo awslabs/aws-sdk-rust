@@ -36,6 +36,12 @@ impl DeleteModelCardFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteModelCard as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_model_card::builders::DeleteModelCardInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl DeleteModelCardFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_model_card_name(input);
         self
+    }
+    /// <p>The name of the model card to delete.</p>
+    pub fn get_model_card_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_model_card_name()
     }
 }

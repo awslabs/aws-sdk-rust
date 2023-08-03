@@ -36,6 +36,10 @@ impl GetServiceSyncBlockerSummaryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetServiceSyncBlockerSummary as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_service_sync_blocker_summary::builders::GetServiceSyncBlockerSummaryInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl GetServiceSyncBlockerSummaryFluentBuilder {
         self.inner = self.inner.set_service_name(input);
         self
     }
+    /// <p>The name of the service that you want to get the service sync blocker summary for. If given only the service name, all instances are blocked.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_name()
+    }
     /// <p>The name of the service instance that you want to get the service sync blocker summary for. If given bothe the instance name and the service name, only the instance is blocked.</p>
     pub fn service_instance_name(
         mut self,
@@ -141,5 +149,9 @@ impl GetServiceSyncBlockerSummaryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_service_instance_name(input);
         self
+    }
+    /// <p>The name of the service instance that you want to get the service sync blocker summary for. If given bothe the instance name and the service name, only the instance is blocked.</p>
+    pub fn get_service_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_instance_name()
     }
 }

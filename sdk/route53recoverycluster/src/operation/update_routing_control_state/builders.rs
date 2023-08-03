@@ -44,6 +44,10 @@ impl UpdateRoutingControlStateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateRoutingControlState as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_routing_control_state::builders::UpdateRoutingControlStateInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +144,10 @@ impl UpdateRoutingControlStateFluentBuilder {
         self.inner = self.inner.set_routing_control_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the routing control that you want to update the state for.</p>
+    pub fn get_routing_control_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_routing_control_arn()
+    }
     /// <p>The state of the routing control. You can set the value to be On or Off.</p>
     pub fn routing_control_state(mut self, input: crate::types::RoutingControlState) -> Self {
         self.inner = self.inner.routing_control_state(input);
@@ -152,6 +160,12 @@ impl UpdateRoutingControlStateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_routing_control_state(input);
         self
+    }
+    /// <p>The state of the routing control. You can set the value to be On or Off.</p>
+    pub fn get_routing_control_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::RoutingControlState> {
+        self.inner.get_routing_control_state()
     }
     /// Appends an item to `SafetyRulesToOverride`.
     ///
@@ -174,5 +188,12 @@ impl UpdateRoutingControlStateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_safety_rules_to_override(input);
         self
+    }
+    /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating the state of a routing control. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
+    pub fn get_safety_rules_to_override(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_safety_rules_to_override()
     }
 }

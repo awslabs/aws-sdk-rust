@@ -53,6 +53,10 @@ impl GetDataEndpointOutputBuilder {
         self.data_endpoint = input;
         self
     }
+    /// <p>The endpoint value. To read data from the stream or to write data to it, specify this endpoint in your application.</p>
+    pub fn get_data_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_endpoint
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

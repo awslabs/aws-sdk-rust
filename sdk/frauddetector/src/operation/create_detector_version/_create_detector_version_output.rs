@@ -64,6 +64,10 @@ impl CreateDetectorVersionOutputBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The ID for the created version's parent detector.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// <p>The ID for the created detector. </p>
     pub fn detector_version_id(
         mut self,
@@ -80,6 +84,10 @@ impl CreateDetectorVersionOutputBuilder {
         self.detector_version_id = input;
         self
     }
+    /// <p>The ID for the created detector. </p>
+    pub fn get_detector_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_version_id
+    }
     /// <p>The status of the detector version.</p>
     pub fn status(mut self, input: crate::types::DetectorVersionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -92,6 +100,10 @@ impl CreateDetectorVersionOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the detector version.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DetectorVersionStatus> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

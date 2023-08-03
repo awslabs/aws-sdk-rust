@@ -38,6 +38,12 @@ impl DescribeOptOutListsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeOptOutLists as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_opt_out_lists::builders::DescribeOptOutListsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -149,6 +155,12 @@ impl DescribeOptOutListsFluentBuilder {
         self.inner = self.inner.set_opt_out_list_names(input);
         self
     }
+    /// <p>The OptOutLists to show the details of. This is an array of strings that can be either the OptOutListName or OptOutListArn.</p>
+    pub fn get_opt_out_list_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_opt_out_list_names()
+    }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -159,6 +171,10 @@ impl DescribeOptOutListsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return per each request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -168,5 +184,9 @@ impl DescribeOptOutListsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return per each request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

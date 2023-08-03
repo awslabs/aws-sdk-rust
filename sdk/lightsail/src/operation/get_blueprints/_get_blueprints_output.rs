@@ -67,6 +67,12 @@ impl GetBlueprintsOutputBuilder {
         self.blueprints = input;
         self
     }
+    /// <p>An array of key-value pairs that contains information about the available blueprints.</p>
+    pub fn get_blueprints(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Blueprint>> {
+        &self.blueprints
+    }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetBlueprints</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
@@ -86,6 +92,12 @@ impl GetBlueprintsOutputBuilder {
     ) -> Self {
         self.next_page_token = input;
         self
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>To get the next page of results, perform another <code>GetBlueprints</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_page_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

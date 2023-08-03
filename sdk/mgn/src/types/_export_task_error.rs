@@ -54,6 +54,10 @@ impl ExportTaskErrorBuilder {
         self.error_date_time = input;
         self
     }
+    /// <p>Export task error datetime.</p>
+    pub fn get_error_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_date_time
+    }
     /// <p>Export task error data.</p>
     pub fn error_data(mut self, input: crate::types::ExportErrorData) -> Self {
         self.error_data = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl ExportTaskErrorBuilder {
     ) -> Self {
         self.error_data = input;
         self
+    }
+    /// <p>Export task error data.</p>
+    pub fn get_error_data(&self) -> &::std::option::Option<crate::types::ExportErrorData> {
+        &self.error_data
     }
     /// Consumes the builder and constructs a [`ExportTaskError`](crate::types::ExportTaskError).
     pub fn build(self) -> crate::types::ExportTaskError {

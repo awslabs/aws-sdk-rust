@@ -36,6 +36,12 @@ impl AttachStaticIpFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AttachStaticIp as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::attach_static_ip::builders::AttachStaticIpInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl AttachStaticIpFluentBuilder {
         self.inner = self.inner.set_static_ip_name(input);
         self
     }
+    /// <p>The name of the static IP.</p>
+    pub fn get_static_ip_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_static_ip_name()
+    }
     /// <p>The instance name to which you want to attach the static IP address.</p>
     pub fn instance_name(
         mut self,
@@ -147,5 +157,9 @@ impl AttachStaticIpFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_instance_name(input);
         self
+    }
+    /// <p>The instance name to which you want to attach the static IP address.</p>
+    pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_name()
     }
 }

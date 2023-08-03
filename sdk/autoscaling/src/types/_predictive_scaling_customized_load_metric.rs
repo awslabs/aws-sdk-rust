@@ -50,6 +50,12 @@ impl PredictiveScalingCustomizedLoadMetricBuilder {
         self.metric_data_queries = input;
         self
     }
+    /// <p>One or more metric data queries to provide the data points for a load metric. Use multiple metric data queries only if you are performing a math expression on returned data. </p>
+    pub fn get_metric_data_queries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>> {
+        &self.metric_data_queries
+    }
     /// Consumes the builder and constructs a [`PredictiveScalingCustomizedLoadMetric`](crate::types::PredictiveScalingCustomizedLoadMetric).
     pub fn build(self) -> crate::types::PredictiveScalingCustomizedLoadMetric {
         crate::types::PredictiveScalingCustomizedLoadMetric {

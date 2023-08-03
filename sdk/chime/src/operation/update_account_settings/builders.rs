@@ -36,6 +36,13 @@ impl UpdateAccountSettingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAccountSettings as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_account_settings::builders::UpdateAccountSettingsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl UpdateAccountSettingsFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p>The Amazon Chime account settings to update.</p>
     pub fn account_settings(mut self, input: crate::types::AccountSettings) -> Self {
         self.inner = self.inner.account_settings(input);
@@ -138,5 +149,9 @@ impl UpdateAccountSettingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_account_settings(input);
         self
+    }
+    /// <p>The Amazon Chime account settings to update.</p>
+    pub fn get_account_settings(&self) -> &::std::option::Option<crate::types::AccountSettings> {
+        self.inner.get_account_settings()
     }
 }

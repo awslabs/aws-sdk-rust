@@ -40,6 +40,10 @@ impl GetApiAssociationInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The domain name.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// Consumes the builder and constructs a [`GetApiAssociationInput`](crate::operation::get_api_association::GetApiAssociationInput).
     pub fn build(
         self,

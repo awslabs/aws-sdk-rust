@@ -88,6 +88,10 @@ impl MappingBuilder {
         self.to_key = input;
         self
     }
+    /// <p>After the apply mapping, what the name of the column should be. Can be the same as <code>FromPath</code>.</p>
+    pub fn get_to_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.to_key
+    }
     /// Appends an item to `from_path`.
     ///
     /// To override the contents of this collection use [`set_from_path`](Self::set_from_path).
@@ -107,6 +111,10 @@ impl MappingBuilder {
         self.from_path = input;
         self
     }
+    /// <p>The table or column to be modified.</p>
+    pub fn get_from_path(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.from_path
+    }
     /// <p>The type of the data to be modified.</p>
     pub fn from_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.from_type = ::std::option::Option::Some(input.into());
@@ -116,6 +124,10 @@ impl MappingBuilder {
     pub fn set_from_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.from_type = input;
         self
+    }
+    /// <p>The type of the data to be modified.</p>
+    pub fn get_from_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.from_type
     }
     /// <p>The data type that the data is to be modified to.</p>
     pub fn to_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -127,6 +139,10 @@ impl MappingBuilder {
         self.to_type = input;
         self
     }
+    /// <p>The data type that the data is to be modified to.</p>
+    pub fn get_to_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.to_type
+    }
     /// <p>If true, then the column is removed.</p>
     pub fn dropped(mut self, input: bool) -> Self {
         self.dropped = ::std::option::Option::Some(input);
@@ -136,6 +152,10 @@ impl MappingBuilder {
     pub fn set_dropped(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dropped = input;
         self
+    }
+    /// <p>If true, then the column is removed.</p>
+    pub fn get_dropped(&self) -> &::std::option::Option<bool> {
+        &self.dropped
     }
     /// Appends an item to `children`.
     ///
@@ -163,6 +183,14 @@ impl MappingBuilder {
     ) -> Self {
         self.children = input;
         self
+    }
+    /// <p>Only applicable to nested data structures. If you want to change the parent structure, but also one of its children, you can fill out this data strucutre. It is also <code>Mapping</code>, but its <code>FromPath</code> will be the parent's <code>FromPath</code> plus the <code>FromPath</code> from this structure.</p>
+    /// <p>For the children part, suppose you have the structure:</p>
+    /// <p> <code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": [{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }] }</code> </p>
+    /// <p>You can specify a <code>Mapping</code> that looks like:</p>
+    /// <p> <code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": [{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }] }</code> </p>
+    pub fn get_children(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Mapping>> {
+        &self.children
     }
     /// Consumes the builder and constructs a [`Mapping`](crate::types::Mapping).
     pub fn build(self) -> crate::types::Mapping {

@@ -117,6 +117,22 @@ impl UpdateServiceSettingInputBuilder {
         self.setting_id = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the service setting to update. For example, <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>. The setting ID can be one of the following.</p>
+    /// <ul>
+    /// <li> <p> <code>/ssm/managed-instance/default-ec2-instance-management-role</code> </p> </li>
+    /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>
+    /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>
+    /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>
+    /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
+    /// <li> <p> <code>/ssm/opsinsights/opscenter</code> </p> </li>
+    /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
+    /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Permissions to update the <code>/ssm/managed-instance/default-ec2-instance-management-role</code> setting should only be provided to administrators. Implement least privilege access when allowing individuals to configure or modify the Default Host Management Configuration.</p>
+    /// </note>
+    pub fn get_setting_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.setting_id
+    }
     /// <p>The new value to specify for the service setting. The following list specifies the available values for each setting.</p>
     /// <ul>
     /// <li> <p> <code>/ssm/managed-instance/default-ec2-instance-management-role: The name of an IAM role</code> </p> </li>
@@ -152,6 +168,20 @@ impl UpdateServiceSettingInputBuilder {
     ) -> Self {
         self.setting_value = input;
         self
+    }
+    /// <p>The new value to specify for the service setting. The following list specifies the available values for each setting.</p>
+    /// <ul>
+    /// <li> <p> <code>/ssm/managed-instance/default-ec2-instance-management-role: The name of an IAM role</code> </p> </li>
+    /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code> </p> </li>
+    /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code>: The name of an Amazon CloudWatch Logs log group</p> </li>
+    /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code> or <code>Disable</code> </p> </li>
+    /// <li> <p> <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or <code>advanced</code> </p> </li>
+    /// <li> <p> <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or <code>Disabled</code> </p> </li>
+    /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li>
+    /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code> </p> </li>
+    /// </ul>
+    pub fn get_setting_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.setting_value
     }
     /// Consumes the builder and constructs a [`UpdateServiceSettingInput`](crate::operation::update_service_setting::UpdateServiceSettingInput).
     pub fn build(

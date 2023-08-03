@@ -61,6 +61,13 @@ impl BatchDeleteFeaturedResultsSetOutputBuilder {
         self.errors = input;
         self
     }
+    /// <p>The list of errors for the featured results set IDs, explaining why they couldn't be removed from the index.</p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteFeaturedResultsSetError>>
+    {
+        &self.errors
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

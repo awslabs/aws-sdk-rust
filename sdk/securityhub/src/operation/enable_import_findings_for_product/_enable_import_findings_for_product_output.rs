@@ -52,6 +52,10 @@ impl EnableImportFindingsForProductOutputBuilder {
         self.product_subscription_arn = input;
         self
     }
+    /// <p>The ARN of your subscription to the product to enable integrations for.</p>
+    pub fn get_product_subscription_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_subscription_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

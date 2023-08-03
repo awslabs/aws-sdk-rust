@@ -48,6 +48,10 @@ impl AwsIdentityBuilder {
         self.principal = input;
         self
     }
+    /// <p>The AWS identity principal.</p>
+    pub fn get_principal(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal
+    }
     /// <p>The external ID used to estalish trust relationship with the AWS identity.</p>
     pub fn external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.external_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl AwsIdentityBuilder {
     pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.external_id = input;
         self
+    }
+    /// <p>The external ID used to estalish trust relationship with the AWS identity.</p>
+    pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_id
     }
     /// Consumes the builder and constructs a [`AwsIdentity`](crate::types::AwsIdentity).
     pub fn build(self) -> crate::types::AwsIdentity {

@@ -39,6 +39,12 @@ impl CreateWorkloadShareFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateWorkloadShare as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_workload_share::builders::CreateWorkloadShareInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl CreateWorkloadShareFluentBuilder {
         self.inner = self.inner.set_workload_id(input);
         self
     }
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workload_id()
+    }
     /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.</p>
     pub fn shared_with(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.shared_with(input.into());
@@ -138,6 +148,10 @@ impl CreateWorkloadShareFluentBuilder {
     pub fn set_shared_with(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_shared_with(input);
         self
+    }
+    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.</p>
+    pub fn get_shared_with(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_shared_with()
     }
     /// <p>Permission granted on a share request.</p>
     pub fn permission_type(mut self, input: crate::types::PermissionType) -> Self {
@@ -151,6 +165,10 @@ impl CreateWorkloadShareFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_permission_type(input);
         self
+    }
+    /// <p>Permission granted on a share request.</p>
+    pub fn get_permission_type(&self) -> &::std::option::Option<crate::types::PermissionType> {
+        self.inner.get_permission_type()
     }
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
@@ -173,5 +191,12 @@ impl CreateWorkloadShareFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
+    /// </important>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
 }

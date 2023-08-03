@@ -48,6 +48,10 @@ impl FunctionConfigBuilder {
         self.comment = input;
         self
     }
+    /// <p>A comment to describe the function.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment
+    }
     /// <p>The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.</p>
     pub fn runtime(mut self, input: crate::types::FunctionRuntime) -> Self {
         self.runtime = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl FunctionConfigBuilder {
     ) -> Self {
         self.runtime = input;
         self
+    }
+    /// <p>The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.</p>
+    pub fn get_runtime(&self) -> &::std::option::Option<crate::types::FunctionRuntime> {
+        &self.runtime
     }
     /// Consumes the builder and constructs a [`FunctionConfig`](crate::types::FunctionConfig).
     pub fn build(self) -> crate::types::FunctionConfig {

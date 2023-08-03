@@ -37,6 +37,12 @@ impl DescribeMountTargetsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeMountTargets as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_mount_targets::builders::DescribeMountTargetsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl DescribeMountTargetsFluentBuilder {
         self.inner = self.inner.set_max_items(input);
         self
     }
+    /// <p>(Optional) Maximum number of mount targets to return in the response. Currently, this number is automatically set to 10, and other values are ignored. The response is paginated at 100 per page if you have more than 100 mount targets.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_items()
+    }
     /// <p>(Optional) Opaque pagination token returned from a previous <code>DescribeMountTargets</code> operation (String). If present, it specifies to continue the list from where the previous returning call left off.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -136,6 +146,10 @@ impl DescribeMountTargetsFluentBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
+    }
+    /// <p>(Optional) Opaque pagination token returned from a previous <code>DescribeMountTargets</code> operation (String). If present, it specifies to continue the list from where the previous returning call left off.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
     }
     /// <p>(Optional) ID of the file system whose mount targets you want to list (String). It must be included in your request if an <code>AccessPointId</code> or <code>MountTargetId</code> is not included. Accepts either a file system ID or ARN as input.</p>
     pub fn file_system_id(
@@ -153,6 +167,10 @@ impl DescribeMountTargetsFluentBuilder {
         self.inner = self.inner.set_file_system_id(input);
         self
     }
+    /// <p>(Optional) ID of the file system whose mount targets you want to list (String). It must be included in your request if an <code>AccessPointId</code> or <code>MountTargetId</code> is not included. Accepts either a file system ID or ARN as input.</p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_file_system_id()
+    }
     /// <p>(Optional) ID of the mount target that you want to have described (String). It must be included in your request if <code>FileSystemId</code> is not included. Accepts either a mount target ID or ARN as input.</p>
     pub fn mount_target_id(
         mut self,
@@ -169,6 +187,10 @@ impl DescribeMountTargetsFluentBuilder {
         self.inner = self.inner.set_mount_target_id(input);
         self
     }
+    /// <p>(Optional) ID of the mount target that you want to have described (String). It must be included in your request if <code>FileSystemId</code> is not included. Accepts either a mount target ID or ARN as input.</p>
+    pub fn get_mount_target_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_mount_target_id()
+    }
     /// <p>(Optional) The ID of the access point whose mount targets that you want to list. It must be included in your request if a <code>FileSystemId</code> or <code>MountTargetId</code> is not included in your request. Accepts either an access point ID or ARN as input.</p>
     pub fn access_point_id(
         mut self,
@@ -184,5 +206,9 @@ impl DescribeMountTargetsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_access_point_id(input);
         self
+    }
+    /// <p>(Optional) The ID of the access point whose mount targets that you want to list. It must be included in your request if a <code>FileSystemId</code> or <code>MountTargetId</code> is not included in your request. Accepts either an access point ID or ARN as input.</p>
+    pub fn get_access_point_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_access_point_id()
     }
 }

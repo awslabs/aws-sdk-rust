@@ -118,6 +118,10 @@ impl TableBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name that uniquely identifies this table.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the Timestream table.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
@@ -127,6 +131,10 @@ impl TableBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
+    }
+    /// <p>The name of the Timestream table.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// <p>The name of the Timestream database that contains this table.</p>
     pub fn database_name(
@@ -143,6 +151,10 @@ impl TableBuilder {
     ) -> Self {
         self.database_name = input;
         self
+    }
+    /// <p>The name of the Timestream database that contains this table.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
     }
     /// <p>The current state of the table:</p>
     /// <ul>
@@ -165,6 +177,14 @@ impl TableBuilder {
         self.table_status = input;
         self
     }
+    /// <p>The current state of the table:</p>
+    /// <ul>
+    /// <li> <p> <code>DELETING</code> - The table is being deleted.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> - The table is ready for use.</p> </li>
+    /// </ul>
+    pub fn get_table_status(&self) -> &::std::option::Option<crate::types::TableStatus> {
+        &self.table_status
+    }
     /// <p>The retention duration for the memory store and magnetic store.</p>
     pub fn retention_properties(mut self, input: crate::types::RetentionProperties) -> Self {
         self.retention_properties = ::std::option::Option::Some(input);
@@ -177,6 +197,12 @@ impl TableBuilder {
     ) -> Self {
         self.retention_properties = input;
         self
+    }
+    /// <p>The retention duration for the memory store and magnetic store.</p>
+    pub fn get_retention_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::RetentionProperties> {
+        &self.retention_properties
     }
     /// <p>The time when the Timestream table was created. </p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -191,6 +217,10 @@ impl TableBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time when the Timestream table was created. </p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The time when the Timestream table was last updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -203,6 +233,10 @@ impl TableBuilder {
     ) -> Self {
         self.last_updated_time = input;
         self
+    }
+    /// <p>The time when the Timestream table was last updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
     }
     /// <p>Contains properties to set on the table when enabling magnetic store writes.</p>
     pub fn magnetic_store_write_properties(
@@ -220,6 +254,12 @@ impl TableBuilder {
         self.magnetic_store_write_properties = input;
         self
     }
+    /// <p>Contains properties to set on the table when enabling magnetic store writes.</p>
+    pub fn get_magnetic_store_write_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::MagneticStoreWriteProperties> {
+        &self.magnetic_store_write_properties
+    }
     /// <p> The schema of the table. </p>
     pub fn schema(mut self, input: crate::types::Schema) -> Self {
         self.schema = ::std::option::Option::Some(input);
@@ -229,6 +269,10 @@ impl TableBuilder {
     pub fn set_schema(mut self, input: ::std::option::Option<crate::types::Schema>) -> Self {
         self.schema = input;
         self
+    }
+    /// <p> The schema of the table. </p>
+    pub fn get_schema(&self) -> &::std::option::Option<crate::types::Schema> {
+        &self.schema
     }
     /// Consumes the builder and constructs a [`Table`](crate::types::Table).
     pub fn build(self) -> crate::types::Table {

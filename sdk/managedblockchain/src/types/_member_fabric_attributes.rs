@@ -54,6 +54,10 @@ impl MemberFabricAttributesBuilder {
         self.admin_username = input;
         self
     }
+    /// <p>The user name for the initial administrator user for the member.</p>
+    pub fn get_admin_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.admin_username
+    }
     /// <p>The endpoint used to access the member's certificate authority.</p>
     pub fn ca_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ca_endpoint = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl MemberFabricAttributesBuilder {
     pub fn set_ca_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ca_endpoint = input;
         self
+    }
+    /// <p>The endpoint used to access the member's certificate authority.</p>
+    pub fn get_ca_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ca_endpoint
     }
     /// Consumes the builder and constructs a [`MemberFabricAttributes`](crate::types::MemberFabricAttributes).
     pub fn build(self) -> crate::types::MemberFabricAttributes {

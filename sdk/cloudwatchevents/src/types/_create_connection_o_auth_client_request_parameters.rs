@@ -49,6 +49,10 @@ impl CreateConnectionOAuthClientRequestParametersBuilder {
         self.client_id = input;
         self
     }
+    /// <p>The client ID to use for OAuth authorization for the connection.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_id
+    }
     /// <p>The client secret associated with the client ID to use for OAuth authorization for the connection.</p>
     pub fn client_secret(
         mut self,
@@ -64,6 +68,10 @@ impl CreateConnectionOAuthClientRequestParametersBuilder {
     ) -> Self {
         self.client_secret = input;
         self
+    }
+    /// <p>The client secret associated with the client ID to use for OAuth authorization for the connection.</p>
+    pub fn get_client_secret(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_secret
     }
     /// Consumes the builder and constructs a [`CreateConnectionOAuthClientRequestParameters`](crate::types::CreateConnectionOAuthClientRequestParameters).
     pub fn build(self) -> crate::types::CreateConnectionOAuthClientRequestParameters {

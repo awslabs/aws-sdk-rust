@@ -92,6 +92,10 @@ impl GetVpnTunnelReplacementStatusOutputBuilder {
         self.vpn_connection_id = input;
         self
     }
+    /// <p>The ID of the Site-to-Site VPN connection. </p>
+    pub fn get_vpn_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpn_connection_id
+    }
     /// <p>The ID of the transit gateway associated with the VPN connection.</p>
     pub fn transit_gateway_id(
         mut self,
@@ -107,6 +111,10 @@ impl GetVpnTunnelReplacementStatusOutputBuilder {
     ) -> Self {
         self.transit_gateway_id = input;
         self
+    }
+    /// <p>The ID of the transit gateway associated with the VPN connection.</p>
+    pub fn get_transit_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_id
     }
     /// <p>The ID of the customer gateway.</p>
     pub fn customer_gateway_id(
@@ -124,6 +132,10 @@ impl GetVpnTunnelReplacementStatusOutputBuilder {
         self.customer_gateway_id = input;
         self
     }
+    /// <p>The ID of the customer gateway.</p>
+    pub fn get_customer_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.customer_gateway_id
+    }
     /// <p>The ID of the virtual private gateway.</p>
     pub fn vpn_gateway_id(
         mut self,
@@ -139,6 +151,10 @@ impl GetVpnTunnelReplacementStatusOutputBuilder {
     ) -> Self {
         self.vpn_gateway_id = input;
         self
+    }
+    /// <p>The ID of the virtual private gateway.</p>
+    pub fn get_vpn_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpn_gateway_id
     }
     /// <p>The external IP address of the VPN tunnel.</p>
     pub fn vpn_tunnel_outside_ip_address(
@@ -156,6 +172,12 @@ impl GetVpnTunnelReplacementStatusOutputBuilder {
         self.vpn_tunnel_outside_ip_address = input;
         self
     }
+    /// <p>The external IP address of the VPN tunnel.</p>
+    pub fn get_vpn_tunnel_outside_ip_address(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.vpn_tunnel_outside_ip_address
+    }
     /// <p>Get details of pending tunnel endpoint maintenance.</p>
     pub fn maintenance_details(mut self, input: crate::types::MaintenanceDetails) -> Self {
         self.maintenance_details = ::std::option::Option::Some(input);
@@ -168,6 +190,12 @@ impl GetVpnTunnelReplacementStatusOutputBuilder {
     ) -> Self {
         self.maintenance_details = input;
         self
+    }
+    /// <p>Get details of pending tunnel endpoint maintenance.</p>
+    pub fn get_maintenance_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::MaintenanceDetails> {
+        &self.maintenance_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

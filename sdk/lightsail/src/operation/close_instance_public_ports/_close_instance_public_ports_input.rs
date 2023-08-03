@@ -49,6 +49,10 @@ impl CloseInstancePublicPortsInputBuilder {
         self.port_info = input;
         self
     }
+    /// <p>An object to describe the ports to close for the specified instance.</p>
+    pub fn get_port_info(&self) -> &::std::option::Option<crate::types::PortInfo> {
+        &self.port_info
+    }
     /// <p>The name of the instance for which to close ports.</p>
     pub fn instance_name(
         mut self,
@@ -64,6 +68,10 @@ impl CloseInstancePublicPortsInputBuilder {
     ) -> Self {
         self.instance_name = input;
         self
+    }
+    /// <p>The name of the instance for which to close ports.</p>
+    pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_name
     }
     /// Consumes the builder and constructs a [`CloseInstancePublicPortsInput`](crate::operation::close_instance_public_ports::CloseInstancePublicPortsInput).
     pub fn build(

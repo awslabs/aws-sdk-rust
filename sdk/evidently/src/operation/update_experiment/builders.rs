@@ -37,6 +37,12 @@ impl UpdateExperimentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateExperiment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_experiment::builders::UpdateExperimentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl UpdateExperimentFluentBuilder {
         self.inner = self.inner.set_project(input);
         self
     }
+    /// <p>The name or ARN of the project that contains the experiment that you want to update.</p>
+    pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project()
+    }
     /// <p>The name of the experiment to update.</p>
     pub fn experiment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.experiment(input.into());
@@ -137,6 +147,10 @@ impl UpdateExperimentFluentBuilder {
         self.inner = self.inner.set_experiment(input);
         self
     }
+    /// <p>The name of the experiment to update.</p>
+    pub fn get_experiment(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_experiment()
+    }
     /// <p>An optional description of the experiment.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -146,6 +160,10 @@ impl UpdateExperimentFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>An optional description of the experiment.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `treatments`.
     ///
@@ -164,6 +182,12 @@ impl UpdateExperimentFluentBuilder {
         self.inner = self.inner.set_treatments(input);
         self
     }
+    /// <p>An array of structures that define the variations being tested in the experiment.</p>
+    pub fn get_treatments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TreatmentConfig>> {
+        self.inner.get_treatments()
+    }
     /// Appends an item to `metricGoals`.
     ///
     /// To override the contents of this collection use [`set_metric_goals`](Self::set_metric_goals).
@@ -181,6 +205,12 @@ impl UpdateExperimentFluentBuilder {
         self.inner = self.inner.set_metric_goals(input);
         self
     }
+    /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
+    pub fn get_metric_goals(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricGoalConfig>> {
+        self.inner.get_metric_goals()
+    }
     /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
     pub fn randomization_salt(
         mut self,
@@ -197,6 +227,10 @@ impl UpdateExperimentFluentBuilder {
         self.inner = self.inner.set_randomization_salt(input);
         self
     }
+    /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
+    pub fn get_randomization_salt(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_randomization_salt()
+    }
     /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
     /// <p>This is represented in thousandths of a percent. For example, specify 20,000 to allocate 20% of the available audience.</p>
     pub fn sampling_rate(mut self, input: i64) -> Self {
@@ -209,6 +243,11 @@ impl UpdateExperimentFluentBuilder {
         self.inner = self.inner.set_sampling_rate(input);
         self
     }
+    /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
+    /// <p>This is represented in thousandths of a percent. For example, specify 20,000 to allocate 20% of the available audience.</p>
+    pub fn get_sampling_rate(&self) -> &::std::option::Option<i64> {
+        self.inner.get_sampling_rate()
+    }
     /// <p>Adds an audience <i>segment</i> to an experiment. When a segment is used in an experiment, only user sessions that match the segment pattern are used in the experiment. You can't use this parameter if the experiment is currently running.</p>
     pub fn segment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.segment(input.into());
@@ -219,6 +258,10 @@ impl UpdateExperimentFluentBuilder {
         self.inner = self.inner.set_segment(input);
         self
     }
+    /// <p>Adds an audience <i>segment</i> to an experiment. When a segment is used in an experiment, only user sessions that match the segment pattern are used in the experiment. You can't use this parameter if the experiment is currently running.</p>
+    pub fn get_segment(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_segment()
+    }
     /// <p>Removes a segment from being used in an experiment. You can't use this parameter if the experiment is currently running.</p>
     pub fn remove_segment(mut self, input: bool) -> Self {
         self.inner = self.inner.remove_segment(input);
@@ -228,6 +271,10 @@ impl UpdateExperimentFluentBuilder {
     pub fn set_remove_segment(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_remove_segment(input);
         self
+    }
+    /// <p>Removes a segment from being used in an experiment. You can't use this parameter if the experiment is currently running.</p>
+    pub fn get_remove_segment(&self) -> &::std::option::Option<bool> {
+        self.inner.get_remove_segment()
     }
     /// <p>A structure that contains the configuration of which variation o use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
     pub fn online_ab_config(mut self, input: crate::types::OnlineAbConfig) -> Self {
@@ -241,5 +288,9 @@ impl UpdateExperimentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_online_ab_config(input);
         self
+    }
+    /// <p>A structure that contains the configuration of which variation o use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
+    pub fn get_online_ab_config(&self) -> &::std::option::Option<crate::types::OnlineAbConfig> {
+        self.inner.get_online_ab_config()
     }
 }

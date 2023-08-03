@@ -57,6 +57,10 @@ impl EndpointStateBuilder {
         self.status = input;
         self
     }
+    /// <p>Enum that indicates the Status of an <code>AppInstanceUserEndpoint</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::EndpointStatus> {
+        &self.status
+    }
     /// <p>The reason for the <code>EndpointStatus</code>.</p>
     pub fn status_reason(mut self, input: crate::types::EndpointStatusReason) -> Self {
         self.status_reason = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl EndpointStateBuilder {
     ) -> Self {
         self.status_reason = input;
         self
+    }
+    /// <p>The reason for the <code>EndpointStatus</code>.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<crate::types::EndpointStatusReason> {
+        &self.status_reason
     }
     /// Consumes the builder and constructs a [`EndpointState`](crate::types::EndpointState).
     pub fn build(self) -> crate::types::EndpointState {

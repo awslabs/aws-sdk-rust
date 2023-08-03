@@ -63,6 +63,10 @@ impl StorageTypeBuilder {
         self.storage_type_name = input;
         self
     }
+    /// <p>The name of the storage type.</p>
+    pub fn get_storage_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_type_name
+    }
     /// <p>The storage sub-type, such as <code>gp3</code> or <code>io1</code>.</p>
     pub fn storage_sub_type_name(
         mut self,
@@ -78,6 +82,10 @@ impl StorageTypeBuilder {
     ) -> Self {
         self.storage_sub_type_name = input;
         self
+    }
+    /// <p>The storage sub-type, such as <code>gp3</code> or <code>io1</code>.</p>
+    pub fn get_storage_sub_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_sub_type_name
     }
     /// Appends an item to `storage_type_limits`.
     ///
@@ -97,6 +105,12 @@ impl StorageTypeBuilder {
     ) -> Self {
         self.storage_type_limits = input;
         self
+    }
+    /// <p>Limits that are applicable for the given storage type.</p>
+    pub fn get_storage_type_limits(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageTypeLimit>> {
+        &self.storage_type_limits
     }
     /// Consumes the builder and constructs a [`StorageType`](crate::types::StorageType).
     pub fn build(self) -> crate::types::StorageType {

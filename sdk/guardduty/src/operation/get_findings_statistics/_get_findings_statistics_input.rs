@@ -61,6 +61,10 @@ impl GetFindingsStatisticsInputBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The ID of the detector that specifies the GuardDuty service whose findings' statistics you want to retrieve.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// Appends an item to `finding_statistic_types`.
     ///
     /// To override the contents of this collection use [`set_finding_statistic_types`](Self::set_finding_statistic_types).
@@ -80,6 +84,12 @@ impl GetFindingsStatisticsInputBuilder {
         self.finding_statistic_types = input;
         self
     }
+    /// <p>The types of finding statistics to retrieve.</p>
+    pub fn get_finding_statistic_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FindingStatisticType>> {
+        &self.finding_statistic_types
+    }
     /// <p>Represents the criteria that is used for querying findings.</p>
     pub fn finding_criteria(mut self, input: crate::types::FindingCriteria) -> Self {
         self.finding_criteria = ::std::option::Option::Some(input);
@@ -92,6 +102,10 @@ impl GetFindingsStatisticsInputBuilder {
     ) -> Self {
         self.finding_criteria = input;
         self
+    }
+    /// <p>Represents the criteria that is used for querying findings.</p>
+    pub fn get_finding_criteria(&self) -> &::std::option::Option<crate::types::FindingCriteria> {
+        &self.finding_criteria
     }
     /// Consumes the builder and constructs a [`GetFindingsStatisticsInput`](crate::operation::get_findings_statistics::GetFindingsStatisticsInput).
     pub fn build(

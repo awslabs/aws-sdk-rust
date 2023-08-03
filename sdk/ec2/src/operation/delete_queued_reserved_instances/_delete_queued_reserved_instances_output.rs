@@ -78,6 +78,13 @@ impl DeleteQueuedReservedInstancesOutputBuilder {
         self.successful_queued_purchase_deletions = input;
         self
     }
+    /// <p>Information about the queued purchases that were successfully deleted.</p>
+    pub fn get_successful_queued_purchase_deletions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SuccessfulQueuedPurchaseDeletion>>
+    {
+        &self.successful_queued_purchase_deletions
+    }
     /// Appends an item to `failed_queued_purchase_deletions`.
     ///
     /// To override the contents of this collection use [`set_failed_queued_purchase_deletions`](Self::set_failed_queued_purchase_deletions).
@@ -99,6 +106,12 @@ impl DeleteQueuedReservedInstancesOutputBuilder {
     ) -> Self {
         self.failed_queued_purchase_deletions = input;
         self
+    }
+    /// <p>Information about the queued purchases that could not be deleted.</p>
+    pub fn get_failed_queued_purchase_deletions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedQueuedPurchaseDeletion>> {
+        &self.failed_queued_purchase_deletions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

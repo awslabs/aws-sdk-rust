@@ -72,6 +72,11 @@ impl AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetailsBuilder {
         self.assign_public_ip = input;
         self
     }
+    /// <p>Whether the task's elastic network interface receives a public IP address. The default value is <code>DISABLED</code>.</p>
+    /// <p>Valid values: <code>ENABLED</code> | <code>DISABLED</code> </p>
+    pub fn get_assign_public_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assign_public_ip
+    }
     /// Appends an item to `security_groups`.
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
@@ -96,6 +101,13 @@ impl AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetailsBuilder {
         self.security_groups = input;
         self
     }
+    /// <p>The IDs of the security groups associated with the task or service.</p>
+    /// <p>You can provide up to five security groups.</p>
+    pub fn get_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_groups
+    }
     /// Appends an item to `subnets`.
     ///
     /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
@@ -116,6 +128,11 @@ impl AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetailsBuilder {
     ) -> Self {
         self.subnets = input;
         self
+    }
+    /// <p>The IDs of the subnets associated with the task or service.</p>
+    /// <p>You can provide up to 16 subnets.</p>
+    pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnets
     }
     /// Consumes the builder and constructs a [`AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails`](crate::types::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails).
     pub fn build(

@@ -55,6 +55,10 @@ impl GetStreamingSessionStreamInputBuilder {
         self.session_id = input;
         self
     }
+    /// <p>The streaming session ID.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
+    }
     /// <p>The streaming session stream ID.</p>
     pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_id = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl GetStreamingSessionStreamInputBuilder {
         self.stream_id = input;
         self
     }
+    /// <p>The streaming session stream ID.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_id
+    }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
@@ -74,6 +82,10 @@ impl GetStreamingSessionStreamInputBuilder {
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.studio_id = input;
         self
+    }
+    /// <p>The studio ID. </p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_id
     }
     /// Consumes the builder and constructs a [`GetStreamingSessionStreamInput`](crate::operation::get_streaming_session_stream::GetStreamingSessionStreamInput).
     pub fn build(

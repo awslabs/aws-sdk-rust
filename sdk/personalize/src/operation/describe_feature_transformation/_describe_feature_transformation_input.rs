@@ -45,6 +45,10 @@ impl DescribeFeatureTransformationInputBuilder {
         self.feature_transformation_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the feature transformation to describe.</p>
+    pub fn get_feature_transformation_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.feature_transformation_arn
+    }
     /// Consumes the builder and constructs a [`DescribeFeatureTransformationInput`](crate::operation::describe_feature_transformation::DescribeFeatureTransformationInput).
     pub fn build(
         self,

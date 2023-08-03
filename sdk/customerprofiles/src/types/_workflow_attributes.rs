@@ -50,6 +50,12 @@ impl WorkflowAttributesBuilder {
         self.appflow_integration = input;
         self
     }
+    /// <p>Workflow attributes specific to <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    pub fn get_appflow_integration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AppflowIntegrationWorkflowAttributes> {
+        &self.appflow_integration
+    }
     /// Consumes the builder and constructs a [`WorkflowAttributes`](crate::types::WorkflowAttributes).
     pub fn build(self) -> crate::types::WorkflowAttributes {
         crate::types::WorkflowAttributes {

@@ -39,6 +39,10 @@ impl GetSpaceInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the space.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`GetSpaceInput`](crate::operation::get_space::GetSpaceInput).
     pub fn build(
         self,

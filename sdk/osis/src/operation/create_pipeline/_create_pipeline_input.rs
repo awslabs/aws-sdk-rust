@@ -95,6 +95,10 @@ impl CreatePipelineInputBuilder {
         self.pipeline_name = input;
         self
     }
+    /// <p>The name of the OpenSearch Ingestion pipeline to create. Pipeline names are unique across the pipelines owned by an account within an Amazon Web Services Region.</p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_name
+    }
     /// <p>The minimum pipeline capacity, in Ingestion Compute Units (ICUs).</p>
     pub fn min_units(mut self, input: i32) -> Self {
         self.min_units = ::std::option::Option::Some(input);
@@ -105,6 +109,10 @@ impl CreatePipelineInputBuilder {
         self.min_units = input;
         self
     }
+    /// <p>The minimum pipeline capacity, in Ingestion Compute Units (ICUs).</p>
+    pub fn get_min_units(&self) -> &::std::option::Option<i32> {
+        &self.min_units
+    }
     /// <p>The maximum pipeline capacity, in Ingestion Compute Units (ICUs).</p>
     pub fn max_units(mut self, input: i32) -> Self {
         self.max_units = ::std::option::Option::Some(input);
@@ -114,6 +122,10 @@ impl CreatePipelineInputBuilder {
     pub fn set_max_units(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_units = input;
         self
+    }
+    /// <p>The maximum pipeline capacity, in Ingestion Compute Units (ICUs).</p>
+    pub fn get_max_units(&self) -> &::std::option::Option<i32> {
+        &self.max_units
     }
     /// <p>The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with <code>\n</code>.</p>
     pub fn pipeline_configuration_body(
@@ -131,6 +143,10 @@ impl CreatePipelineInputBuilder {
         self.pipeline_configuration_body = input;
         self
     }
+    /// <p>The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with <code>\n</code>.</p>
+    pub fn get_pipeline_configuration_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_configuration_body
+    }
     /// <p>Key-value pairs to configure log publishing.</p>
     pub fn log_publishing_options(mut self, input: crate::types::LogPublishingOptions) -> Self {
         self.log_publishing_options = ::std::option::Option::Some(input);
@@ -144,6 +160,12 @@ impl CreatePipelineInputBuilder {
         self.log_publishing_options = input;
         self
     }
+    /// <p>Key-value pairs to configure log publishing.</p>
+    pub fn get_log_publishing_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::LogPublishingOptions> {
+        &self.log_publishing_options
+    }
     /// <p>Container for the values required to configure VPC access for the pipeline. If you don't specify these values, OpenSearch Ingestion creates the pipeline with a public endpoint.</p>
     pub fn vpc_options(mut self, input: crate::types::VpcOptions) -> Self {
         self.vpc_options = ::std::option::Option::Some(input);
@@ -156,6 +178,10 @@ impl CreatePipelineInputBuilder {
     ) -> Self {
         self.vpc_options = input;
         self
+    }
+    /// <p>Container for the values required to configure VPC access for the pipeline. If you don't specify these values, OpenSearch Ingestion creates the pipeline with a public endpoint.</p>
+    pub fn get_vpc_options(&self) -> &::std::option::Option<crate::types::VpcOptions> {
+        &self.vpc_options
     }
     /// Appends an item to `tags`.
     ///
@@ -175,6 +201,10 @@ impl CreatePipelineInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>List of tags to add to the pipeline upon creation.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreatePipelineInput`](crate::operation::create_pipeline::CreatePipelineInput).
     pub fn build(

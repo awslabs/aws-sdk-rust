@@ -36,6 +36,10 @@ impl DescribeWorkspaceAuthenticationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeWorkspaceAuthentication as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_workspace_authentication::builders::DescribeWorkspaceAuthenticationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -99,5 +103,9 @@ impl DescribeWorkspaceAuthenticationFluentBuilder {
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workspace_id(input);
         self
+    }
+    /// <p>The ID of the workspace to return authentication information about.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workspace_id()
     }
 }

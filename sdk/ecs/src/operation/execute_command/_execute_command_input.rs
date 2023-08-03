@@ -71,6 +71,10 @@ impl ExecuteCommandInputBuilder {
         self.cluster = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) or short name of the cluster the task is running in. If you do not specify a cluster, the default cluster is assumed.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster
+    }
     /// <p>The name of the container to execute the command on. A container name only needs to be specified for tasks containing multiple containers.</p>
     pub fn container(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl ExecuteCommandInputBuilder {
     pub fn set_container(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container = input;
         self
+    }
+    /// <p>The name of the container to execute the command on. A container name only needs to be specified for tasks containing multiple containers.</p>
+    pub fn get_container(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container
     }
     /// <p>The command to run on the container.</p>
     pub fn command(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -91,6 +99,10 @@ impl ExecuteCommandInputBuilder {
         self.command = input;
         self
     }
+    /// <p>The command to run on the container.</p>
+    pub fn get_command(&self) -> &::std::option::Option<::std::string::String> {
+        &self.command
+    }
     /// <p>Use this flag to run your command in interactive mode.</p>
     pub fn interactive(mut self, input: bool) -> Self {
         self.interactive = ::std::option::Option::Some(input);
@@ -101,6 +113,10 @@ impl ExecuteCommandInputBuilder {
         self.interactive = input;
         self
     }
+    /// <p>Use this flag to run your command in interactive mode.</p>
+    pub fn get_interactive(&self) -> &::std::option::Option<bool> {
+        &self.interactive
+    }
     /// <p>The Amazon Resource Name (ARN) or ID of the task the container is part of.</p>
     pub fn task(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task = ::std::option::Option::Some(input.into());
@@ -110,6 +126,10 @@ impl ExecuteCommandInputBuilder {
     pub fn set_task(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) or ID of the task the container is part of.</p>
+    pub fn get_task(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task
     }
     /// Consumes the builder and constructs a [`ExecuteCommandInput`](crate::operation::execute_command::ExecuteCommandInput).
     pub fn build(

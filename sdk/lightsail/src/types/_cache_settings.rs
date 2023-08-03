@@ -135,6 +135,12 @@ impl CacheSettingsBuilder {
         self.default_ttl = input;
         self
     }
+    /// <p>The default amount of time that objects stay in the distribution's cache before the distribution forwards another request to the origin to determine whether the content has been updated.</p> <note>
+    /// <p>The value specified applies only when the origin does not add HTTP headers such as <code>Cache-Control max-age</code>, <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects.</p>
+    /// </note>
+    pub fn get_default_ttl(&self) -> &::std::option::Option<i64> {
+        &self.default_ttl
+    }
     /// <p>The minimum amount of time that objects stay in the distribution's cache before the distribution forwards another request to the origin to determine whether the object has been updated.</p>
     /// <p>A value of <code>0</code> must be specified for <code>minimumTTL</code> if the distribution is configured to forward all headers to the origin.</p>
     pub fn minimum_ttl(mut self, input: i64) -> Self {
@@ -147,6 +153,11 @@ impl CacheSettingsBuilder {
         self.minimum_ttl = input;
         self
     }
+    /// <p>The minimum amount of time that objects stay in the distribution's cache before the distribution forwards another request to the origin to determine whether the object has been updated.</p>
+    /// <p>A value of <code>0</code> must be specified for <code>minimumTTL</code> if the distribution is configured to forward all headers to the origin.</p>
+    pub fn get_minimum_ttl(&self) -> &::std::option::Option<i64> {
+        &self.minimum_ttl
+    }
     /// <p>The maximum amount of time that objects stay in the distribution's cache before the distribution forwards another request to the origin to determine whether the object has been updated.</p>
     /// <p>The value specified applies only when the origin adds HTTP headers such as <code>Cache-Control max-age</code>, <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects.</p>
     pub fn maximum_ttl(mut self, input: i64) -> Self {
@@ -158,6 +169,11 @@ impl CacheSettingsBuilder {
     pub fn set_maximum_ttl(mut self, input: ::std::option::Option<i64>) -> Self {
         self.maximum_ttl = input;
         self
+    }
+    /// <p>The maximum amount of time that objects stay in the distribution's cache before the distribution forwards another request to the origin to determine whether the object has been updated.</p>
+    /// <p>The value specified applies only when the origin adds HTTP headers such as <code>Cache-Control max-age</code>, <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects.</p>
+    pub fn get_maximum_ttl(&self) -> &::std::option::Option<i64> {
+        &self.maximum_ttl
     }
     /// <p>The HTTP methods that are processed and forwarded to the distribution's origin.</p>
     /// <p>You can specify the following options:</p>
@@ -189,6 +205,17 @@ impl CacheSettingsBuilder {
         self.allowed_http_methods = input;
         self
     }
+    /// <p>The HTTP methods that are processed and forwarded to the distribution's origin.</p>
+    /// <p>You can specify the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>GET,HEAD</code> - The distribution forwards the <code>GET</code> and <code>HEAD</code> methods.</p> </li>
+    /// <li> <p> <code>GET,HEAD,OPTIONS</code> - The distribution forwards the <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> methods.</p> </li>
+    /// <li> <p> <code>GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE</code> - The distribution forwards the <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PUT</code>, <code>PATCH</code>, <code>POST</code>, and <code>DELETE</code> methods.</p> </li>
+    /// </ul>
+    /// <p>If you specify the third option, you might need to restrict access to your distribution's origin so users can't perform operations that you don't want them to. For example, you might not want users to have permission to delete objects from your origin.</p>
+    pub fn get_allowed_http_methods(&self) -> &::std::option::Option<::std::string::String> {
+        &self.allowed_http_methods
+    }
     /// <p>The HTTP method responses that are cached by your distribution.</p>
     /// <p>You can specify the following options:</p>
     /// <ul>
@@ -215,6 +242,15 @@ impl CacheSettingsBuilder {
         self.cached_http_methods = input;
         self
     }
+    /// <p>The HTTP method responses that are cached by your distribution.</p>
+    /// <p>You can specify the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>GET,HEAD</code> - The distribution caches responses to the <code>GET</code> and <code>HEAD</code> methods.</p> </li>
+    /// <li> <p> <code>GET,HEAD,OPTIONS</code> - The distribution caches responses to the <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> methods.</p> </li>
+    /// </ul>
+    pub fn get_cached_http_methods(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cached_http_methods
+    }
     /// <p>An object that describes the cookies that are forwarded to the origin. Your content is cached based on the cookies that are forwarded.</p>
     pub fn forwarded_cookies(mut self, input: crate::types::CookieObject) -> Self {
         self.forwarded_cookies = ::std::option::Option::Some(input);
@@ -227,6 +263,10 @@ impl CacheSettingsBuilder {
     ) -> Self {
         self.forwarded_cookies = input;
         self
+    }
+    /// <p>An object that describes the cookies that are forwarded to the origin. Your content is cached based on the cookies that are forwarded.</p>
+    pub fn get_forwarded_cookies(&self) -> &::std::option::Option<crate::types::CookieObject> {
+        &self.forwarded_cookies
     }
     /// <p>An object that describes the headers that are forwarded to the origin. Your content is cached based on the headers that are forwarded.</p>
     pub fn forwarded_headers(mut self, input: crate::types::HeaderObject) -> Self {
@@ -241,6 +281,10 @@ impl CacheSettingsBuilder {
         self.forwarded_headers = input;
         self
     }
+    /// <p>An object that describes the headers that are forwarded to the origin. Your content is cached based on the headers that are forwarded.</p>
+    pub fn get_forwarded_headers(&self) -> &::std::option::Option<crate::types::HeaderObject> {
+        &self.forwarded_headers
+    }
     /// <p>An object that describes the query strings that are forwarded to the origin. Your content is cached based on the query strings that are forwarded.</p>
     pub fn forwarded_query_strings(mut self, input: crate::types::QueryStringObject) -> Self {
         self.forwarded_query_strings = ::std::option::Option::Some(input);
@@ -253,6 +297,12 @@ impl CacheSettingsBuilder {
     ) -> Self {
         self.forwarded_query_strings = input;
         self
+    }
+    /// <p>An object that describes the query strings that are forwarded to the origin. Your content is cached based on the query strings that are forwarded.</p>
+    pub fn get_forwarded_query_strings(
+        &self,
+    ) -> &::std::option::Option<crate::types::QueryStringObject> {
+        &self.forwarded_query_strings
     }
     /// Consumes the builder and constructs a [`CacheSettings`](crate::types::CacheSettings).
     pub fn build(self) -> crate::types::CacheSettings {

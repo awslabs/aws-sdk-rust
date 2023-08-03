@@ -70,6 +70,10 @@ impl BatchGetRecordResultDetailBuilder {
         self.feature_group_name = input;
         self
     }
+    /// <p>The <code>FeatureGroupName</code> containing Records you retrieved in a batch.</p>
+    pub fn get_feature_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.feature_group_name
+    }
     /// <p>The value of the record identifier in string format.</p>
     pub fn record_identifier_value_as_string(
         mut self,
@@ -85,6 +89,12 @@ impl BatchGetRecordResultDetailBuilder {
     ) -> Self {
         self.record_identifier_value_as_string = input;
         self
+    }
+    /// <p>The value of the record identifier in string format.</p>
+    pub fn get_record_identifier_value_as_string(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.record_identifier_value_as_string
     }
     /// Appends an item to `record`.
     ///
@@ -105,6 +115,12 @@ impl BatchGetRecordResultDetailBuilder {
         self.record = input;
         self
     }
+    /// <p>The <code>Record</code> retrieved.</p>
+    pub fn get_record(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureValue>> {
+        &self.record
+    }
     /// <p>The <code>ExpiresAt</code> ISO string of the requested record.</p>
     pub fn expires_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expires_at = ::std::option::Option::Some(input.into());
@@ -114,6 +130,10 @@ impl BatchGetRecordResultDetailBuilder {
     pub fn set_expires_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expires_at = input;
         self
+    }
+    /// <p>The <code>ExpiresAt</code> ISO string of the requested record.</p>
+    pub fn get_expires_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expires_at
     }
     /// Consumes the builder and constructs a [`BatchGetRecordResultDetail`](crate::types::BatchGetRecordResultDetail).
     pub fn build(self) -> crate::types::BatchGetRecordResultDetail {

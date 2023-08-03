@@ -73,6 +73,10 @@ impl DescribeDataRepositoryTasksInputBuilder {
         self.task_ids = input;
         self
     }
+    /// <p>(Optional) IDs of the tasks whose descriptions you want to retrieve (String).</p>
+    pub fn get_task_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.task_ids
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -92,6 +96,12 @@ impl DescribeDataRepositoryTasksInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>(Optional) You can use filters to narrow the <code>DescribeDataRepositoryTasks</code> response to include just tasks for specific file systems, or tasks in a specific lifecycle state.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryTaskFilter>> {
+        &self.filters
+    }
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -102,6 +112,10 @@ impl DescribeDataRepositoryTasksInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -111,6 +125,10 @@ impl DescribeDataRepositoryTasksInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeDataRepositoryTasksInput`](crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasksInput).
     pub fn build(

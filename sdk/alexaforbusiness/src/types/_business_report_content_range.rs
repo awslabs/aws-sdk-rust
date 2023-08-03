@@ -43,6 +43,10 @@ impl BusinessReportContentRangeBuilder {
         self.interval = input;
         self
     }
+    /// <p>The interval of the content range.</p>
+    pub fn get_interval(&self) -> &::std::option::Option<crate::types::BusinessReportInterval> {
+        &self.interval
+    }
     /// Consumes the builder and constructs a [`BusinessReportContentRange`](crate::types::BusinessReportContentRange).
     pub fn build(self) -> crate::types::BusinessReportContentRange {
         crate::types::BusinessReportContentRange {

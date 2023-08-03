@@ -56,6 +56,12 @@ impl DeleteObservabilityConfigurationOutputBuilder {
         self.observability_configuration = input;
         self
     }
+    /// <p>A description of the App Runner observability configuration that this request just deleted.</p>
+    pub fn get_observability_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ObservabilityConfiguration> {
+        &self.observability_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

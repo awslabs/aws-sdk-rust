@@ -48,6 +48,10 @@ impl TimerBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the timer.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The expiration time for the timer.</p>
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl TimerBuilder {
     ) -> Self {
         self.timestamp = input;
         self
+    }
+    /// <p>The expiration time for the timer.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
     }
     /// Consumes the builder and constructs a [`Timer`](crate::types::Timer).
     pub fn build(self) -> crate::types::Timer {

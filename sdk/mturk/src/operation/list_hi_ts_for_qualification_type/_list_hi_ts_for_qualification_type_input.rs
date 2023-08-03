@@ -61,6 +61,10 @@ impl ListHiTsForQualificationTypeInputBuilder {
         self.qualification_type_id = input;
         self
     }
+    /// <p> The ID of the Qualification type to use when querying HITs. </p>
+    pub fn get_qualification_type_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.qualification_type_id
+    }
     /// <p>Pagination Token</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl ListHiTsForQualificationTypeInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Pagination Token</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p> Limit the number of results returned. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -80,6 +88,10 @@ impl ListHiTsForQualificationTypeInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p> Limit the number of results returned. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListHiTsForQualificationTypeInput`](crate::operation::list_hi_ts_for_qualification_type::ListHiTsForQualificationTypeInput).
     pub fn build(

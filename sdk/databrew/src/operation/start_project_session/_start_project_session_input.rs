@@ -49,6 +49,10 @@ impl StartProjectSessionInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the project to act upon.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A value that, if true, enables you to take control of a session, even if a different client is currently accessing the project.</p>
     pub fn assume_control(mut self, input: bool) -> Self {
         self.assume_control = ::std::option::Option::Some(input);
@@ -58,6 +62,10 @@ impl StartProjectSessionInputBuilder {
     pub fn set_assume_control(mut self, input: ::std::option::Option<bool>) -> Self {
         self.assume_control = input;
         self
+    }
+    /// <p>A value that, if true, enables you to take control of a session, even if a different client is currently accessing the project.</p>
+    pub fn get_assume_control(&self) -> &::std::option::Option<bool> {
+        &self.assume_control
     }
     /// Consumes the builder and constructs a [`StartProjectSessionInput`](crate::operation::start_project_session::StartProjectSessionInput).
     pub fn build(

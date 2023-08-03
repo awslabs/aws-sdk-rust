@@ -46,6 +46,10 @@ impl CreateSessionOutputBuilder {
         self.session = input;
         self
     }
+    /// <p>The session.</p>
+    pub fn get_session(&self) -> &::std::option::Option<crate::types::SessionData> {
+        &self.session
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -170,6 +170,10 @@ impl DescribeClusterSnapshotsInputBuilder {
         self.cluster_identifier = input;
         self
     }
+    /// <p>The identifier of the cluster which generated the requested snapshots.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_identifier
+    }
     /// <p>The snapshot identifier of the snapshot about which to return information.</p>
     pub fn snapshot_identifier(
         mut self,
@@ -186,6 +190,10 @@ impl DescribeClusterSnapshotsInputBuilder {
         self.snapshot_identifier = input;
         self
     }
+    /// <p>The snapshot identifier of the snapshot about which to return information.</p>
+    pub fn get_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_identifier
+    }
     /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to describe cluster snapshots.</p>
     pub fn snapshot_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_arn = ::std::option::Option::Some(input.into());
@@ -195,6 +203,10 @@ impl DescribeClusterSnapshotsInputBuilder {
     pub fn set_snapshot_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to describe cluster snapshots.</p>
+    pub fn get_snapshot_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_arn
     }
     /// <p>The type of snapshots for which you are requesting information. By default, snapshots of all types are returned.</p>
     /// <p>Valid Values: <code>automated</code> | <code>manual</code> </p>
@@ -214,6 +226,11 @@ impl DescribeClusterSnapshotsInputBuilder {
         self.snapshot_type = input;
         self
     }
+    /// <p>The type of snapshots for which you are requesting information. By default, snapshots of all types are returned.</p>
+    /// <p>Valid Values: <code>automated</code> | <code>manual</code> </p>
+    pub fn get_snapshot_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_type
+    }
     /// <p>A value that requests only snapshots created at or after the specified time. The time value is specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
     /// <p>Example: <code>2012-07-16T18:00:00Z</code> </p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -228,6 +245,11 @@ impl DescribeClusterSnapshotsInputBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>A value that requests only snapshots created at or after the specified time. The time value is specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
+    /// <p>Example: <code>2012-07-16T18:00:00Z</code> </p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>A time value that requests only snapshots created at or before the specified time. The time value is specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
     /// <p>Example: <code>2012-07-16T18:00:00Z</code> </p>
@@ -244,6 +266,11 @@ impl DescribeClusterSnapshotsInputBuilder {
         self.end_time = input;
         self
     }
+    /// <p>A time value that requests only snapshots created at or before the specified time. The time value is specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
+    /// <p>Example: <code>2012-07-16T18:00:00Z</code> </p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
     /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: minimum 20, maximum 100.</p>
@@ -258,6 +285,12 @@ impl DescribeClusterSnapshotsInputBuilder {
         self.max_records = input;
         self
     }
+    /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
+    /// <p>Default: <code>100</code> </p>
+    /// <p>Constraints: minimum 20, maximum 100.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        &self.max_records
+    }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusterSnapshots</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -267,6 +300,10 @@ impl DescribeClusterSnapshotsInputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusterSnapshots</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// <p>The Amazon Web Services account used to create or copy the snapshot. Use this field to filter the results to snapshots owned by a particular account. To describe snapshots you own, either specify your Amazon Web Services account, or do not specify the parameter.</p>
     pub fn owner_account(
@@ -283,6 +320,10 @@ impl DescribeClusterSnapshotsInputBuilder {
     ) -> Self {
         self.owner_account = input;
         self
+    }
+    /// <p>The Amazon Web Services account used to create or copy the snapshot. Use this field to filter the results to snapshots owned by a particular account. To describe snapshots you own, either specify your Amazon Web Services account, or do not specify the parameter.</p>
+    pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_account
     }
     /// Appends an item to `tag_keys`.
     ///
@@ -303,6 +344,10 @@ impl DescribeClusterSnapshotsInputBuilder {
         self.tag_keys = input;
         self
     }
+    /// <p>A tag key or keys for which you want to return all matching cluster snapshots that are associated with the specified key or keys. For example, suppose that you have snapshots that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the snapshots that have either or both of these tag keys associated with them.</p>
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tag_keys
+    }
     /// Appends an item to `tag_values`.
     ///
     /// To override the contents of this collection use [`set_tag_values`](Self::set_tag_values).
@@ -321,6 +366,10 @@ impl DescribeClusterSnapshotsInputBuilder {
     ) -> Self {
         self.tag_values = input;
         self
+    }
+    /// <p>A tag value or values for which you want to return all matching cluster snapshots that are associated with the specified tag value or values. For example, suppose that you have snapshots that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the snapshots that have either or both of these tag values associated with them.</p>
+    pub fn get_tag_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tag_values
     }
     /// <p>A value that indicates whether to return snapshots only for an existing cluster. You can perform table-level restore only by using a snapshot of an existing cluster, that is, a cluster that has not been deleted. Values for this parameter work as follows: </p>
     /// <ul>
@@ -344,6 +393,16 @@ impl DescribeClusterSnapshotsInputBuilder {
         self.cluster_exists = input;
         self
     }
+    /// <p>A value that indicates whether to return snapshots only for an existing cluster. You can perform table-level restore only by using a snapshot of an existing cluster, that is, a cluster that has not been deleted. Values for this parameter work as follows: </p>
+    /// <ul>
+    /// <li> <p>If <code>ClusterExists</code> is set to <code>true</code>, <code>ClusterIdentifier</code> is required.</p> </li>
+    /// <li> <p>If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> isn't specified, all snapshots associated with deleted clusters (orphaned snapshots) are returned. </p> </li>
+    /// <li> <p>If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is specified for a deleted cluster, snapshots associated with that cluster are returned.</p> </li>
+    /// <li> <p>If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is specified for an existing cluster, no snapshots are returned. </p> </li>
+    /// </ul>
+    pub fn get_cluster_exists(&self) -> &::std::option::Option<bool> {
+        &self.cluster_exists
+    }
     /// Appends an item to `sorting_entities`.
     ///
     /// To override the contents of this collection use [`set_sorting_entities`](Self::set_sorting_entities).
@@ -362,6 +421,12 @@ impl DescribeClusterSnapshotsInputBuilder {
     ) -> Self {
         self.sorting_entities = input;
         self
+    }
+    /// <p></p>
+    pub fn get_sorting_entities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotSortingEntity>> {
+        &self.sorting_entities
     }
     /// Consumes the builder and constructs a [`DescribeClusterSnapshotsInput`](crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsInput).
     pub fn build(

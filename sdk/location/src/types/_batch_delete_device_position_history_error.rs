@@ -48,6 +48,10 @@ impl BatchDeleteDevicePositionHistoryErrorBuilder {
         self.device_id = input;
         self
     }
+    /// <p>The ID of the device for this position.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_id
+    }
     /// <p>Contains the batch request error details associated with the request.</p>
     pub fn error(mut self, input: crate::types::BatchItemError) -> Self {
         self.error = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl BatchDeleteDevicePositionHistoryErrorBuilder {
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::BatchItemError>) -> Self {
         self.error = input;
         self
+    }
+    /// <p>Contains the batch request error details associated with the request.</p>
+    pub fn get_error(&self) -> &::std::option::Option<crate::types::BatchItemError> {
+        &self.error
     }
     /// Consumes the builder and constructs a [`BatchDeleteDevicePositionHistoryError`](crate::types::BatchDeleteDevicePositionHistoryError).
     pub fn build(self) -> crate::types::BatchDeleteDevicePositionHistoryError {

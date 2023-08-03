@@ -72,6 +72,16 @@ impl InputCaptionsBuilder {
         self.merge_policy = input;
         self
     }
+    /// <p>A policy that determines how Elastic Transcoder handles the existence of multiple captions.</p>
+    /// <ul>
+    /// <li> <p> <b>MergeOverride:</b> Elastic Transcoder transcodes both embedded and sidecar captions into outputs. If captions for a language are embedded in the input file and also appear in a sidecar file, Elastic Transcoder uses the sidecar captions and ignores the embedded captions for that language.</p> </li>
+    /// <li> <p> <b>MergeRetain:</b> Elastic Transcoder transcodes both embedded and sidecar captions into outputs. If captions for a language are embedded in the input file and also appear in a sidecar file, Elastic Transcoder uses the embedded captions and ignores the sidecar captions for that language. If <code>CaptionSources</code> is empty, Elastic Transcoder omits all sidecar captions from the output files.</p> </li>
+    /// <li> <p> <b>Override:</b> Elastic Transcoder transcodes only the sidecar captions that you specify in <code>CaptionSources</code>.</p> </li>
+    /// </ul>
+    /// <p> <code>MergePolicy</code> cannot be null.</p>
+    pub fn get_merge_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.merge_policy
+    }
     /// Appends an item to `caption_sources`.
     ///
     /// To override the contents of this collection use [`set_caption_sources`](Self::set_caption_sources).
@@ -90,6 +100,12 @@ impl InputCaptionsBuilder {
     ) -> Self {
         self.caption_sources = input;
         self
+    }
+    /// <p>Source files for the input sidecar captions used during the transcoding process. To omit all sidecar captions, leave <code>CaptionSources</code> blank.</p>
+    pub fn get_caption_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CaptionSource>> {
+        &self.caption_sources
     }
     /// Consumes the builder and constructs a [`InputCaptions`](crate::types::InputCaptions).
     pub fn build(self) -> crate::types::InputCaptions {

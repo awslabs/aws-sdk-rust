@@ -99,6 +99,23 @@ impl DescribeEndpointInputBuilder {
         self.endpoint_type = input;
         self
     }
+    /// <p>The endpoint type. Valid endpoint types include:</p>
+    /// <ul>
+    /// <li> <p> <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p> <code>iot:Data-ATS</code> - Returns an ATS signed data endpoint.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p> <code>iot:CredentialProvider</code> - Returns an IoT credentials provider API endpoint.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p> <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p> </li>
+    /// </ul>
+    /// <p>We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint type to avoid issues related to the widespread distrust of Symantec certificate authorities.</p>
+    pub fn get_endpoint_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_type
+    }
     /// Consumes the builder and constructs a [`DescribeEndpointInput`](crate::operation::describe_endpoint::DescribeEndpointInput).
     pub fn build(
         self,

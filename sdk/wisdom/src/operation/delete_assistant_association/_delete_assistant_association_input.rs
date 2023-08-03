@@ -53,6 +53,10 @@ impl DeleteAssistantAssociationInputBuilder {
         self.assistant_association_id = input;
         self
     }
+    /// <p>The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn get_assistant_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assistant_association_id
+    }
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn assistant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assistant_id = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl DeleteAssistantAssociationInputBuilder {
     pub fn set_assistant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assistant_id = input;
         self
+    }
+    /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn get_assistant_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assistant_id
     }
     /// Consumes the builder and constructs a [`DeleteAssistantAssociationInput`](crate::operation::delete_assistant_association::DeleteAssistantAssociationInput).
     pub fn build(

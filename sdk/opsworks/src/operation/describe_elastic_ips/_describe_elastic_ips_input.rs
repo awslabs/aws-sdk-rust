@@ -56,6 +56,10 @@ impl DescribeElasticIpsInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The instance ID. If you include this parameter, <code>DescribeElasticIps</code> returns a description of the Elastic IP addresses associated with the specified instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>A stack ID. If you include this parameter, <code>DescribeElasticIps</code> returns a description of the Elastic IP addresses that are registered with the specified stack.</p>
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_id = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl DescribeElasticIpsInputBuilder {
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_id = input;
         self
+    }
+    /// <p>A stack ID. If you include this parameter, <code>DescribeElasticIps</code> returns a description of the Elastic IP addresses that are registered with the specified stack.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_id
     }
     /// Appends an item to `ips`.
     ///
@@ -84,6 +92,10 @@ impl DescribeElasticIpsInputBuilder {
     ) -> Self {
         self.ips = input;
         self
+    }
+    /// <p>An array of Elastic IP addresses to be described. If you include this parameter, <code>DescribeElasticIps</code> returns a description of the specified Elastic IP addresses. Otherwise, it returns a description of every Elastic IP address.</p>
+    pub fn get_ips(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ips
     }
     /// Consumes the builder and constructs a [`DescribeElasticIpsInput`](crate::operation::describe_elastic_ips::DescribeElasticIpsInput).
     pub fn build(

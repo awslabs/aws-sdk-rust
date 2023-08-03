@@ -36,6 +36,13 @@ impl UpdatePermissionGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdatePermissionGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_permission_group::builders::UpdatePermissionGroupInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl UpdatePermissionGroupFluentBuilder {
         self.inner = self.inner.set_permission_group_id(input);
         self
     }
+    /// <p>The unique identifier for the permission group to update.</p>
+    pub fn get_permission_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_permission_group_id()
+    }
     /// <p>The name of the permission group.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -142,6 +153,10 @@ impl UpdatePermissionGroupFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the permission group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A brief description for the permission group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -151,6 +166,10 @@ impl UpdatePermissionGroupFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A brief description for the permission group.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `applicationPermissions`.
     ///
@@ -191,6 +210,23 @@ impl UpdatePermissionGroupFluentBuilder {
         self.inner = self.inner.set_application_permissions(input);
         self
     }
+    /// <p>The permissions that are granted to a specific group for accessing the FinSpace application.</p> <important>
+    /// <p>When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows users to grant themselves or others access to any functionality in their FinSpace environment's application. It should only be granted to trusted users.</p>
+    /// </important>
+    /// <ul>
+    /// <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li>
+    /// <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li>
+    /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged permission that allows users to grant themselves or others access to any functionality in the application. It should only be granted to trusted users.</p> </li>
+    /// <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li>
+    /// <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li>
+    /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
+    /// <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li>
+    /// </ul>
+    pub fn get_application_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationPermission>> {
+        self.inner.get_application_permissions()
+    }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -200,5 +236,9 @@ impl UpdatePermissionGroupFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

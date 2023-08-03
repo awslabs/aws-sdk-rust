@@ -48,6 +48,10 @@ impl TableToReloadBuilder {
         self.schema_name = input;
         self
     }
+    /// <p>The schema name of the table to be reloaded.</p>
+    pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_name
+    }
     /// <p>The table name of the table to be reloaded.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl TableToReloadBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
+    }
+    /// <p>The table name of the table to be reloaded.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// Consumes the builder and constructs a [`TableToReload`](crate::types::TableToReload).
     pub fn build(self) -> crate::types::TableToReload {

@@ -36,6 +36,10 @@ impl GetFindingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetFinding as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_finding::builders::GetFindingInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl GetFindingFluentBuilder {
         self.inner = self.inner.set_analyzer_arn(input);
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> that generated the finding.</p>
+    pub fn get_analyzer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_analyzer_arn()
+    }
     /// <p>The ID of the finding to retrieve.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
@@ -127,5 +135,9 @@ impl GetFindingFluentBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
+    }
+    /// <p>The ID of the finding to retrieve.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
     }
 }

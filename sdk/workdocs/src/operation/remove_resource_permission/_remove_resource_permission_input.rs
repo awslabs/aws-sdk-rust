@@ -79,6 +79,10 @@ impl RemoveResourcePermissionInputBuilder {
         self.authentication_token = input;
         self
     }
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication_token
+    }
     /// <p>The ID of the resource.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl RemoveResourcePermissionInputBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The ID of the resource.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>The principal ID of the resource.</p>
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_id = ::std::option::Option::Some(input.into());
@@ -98,6 +106,10 @@ impl RemoveResourcePermissionInputBuilder {
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal_id = input;
         self
+    }
+    /// <p>The principal ID of the resource.</p>
+    pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal_id
     }
     /// <p>The principal type of the resource.</p>
     pub fn principal_type(mut self, input: crate::types::PrincipalType) -> Self {
@@ -111,6 +123,10 @@ impl RemoveResourcePermissionInputBuilder {
     ) -> Self {
         self.principal_type = input;
         self
+    }
+    /// <p>The principal type of the resource.</p>
+    pub fn get_principal_type(&self) -> &::std::option::Option<crate::types::PrincipalType> {
+        &self.principal_type
     }
     /// Consumes the builder and constructs a [`RemoveResourcePermissionInput`](crate::operation::remove_resource_permission::RemoveResourcePermissionInput).
     pub fn build(

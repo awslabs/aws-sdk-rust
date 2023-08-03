@@ -54,6 +54,10 @@ impl DetachLoadBalancerFromSubnetsInputBuilder {
         self.load_balancer_name = input;
         self
     }
+    /// <p>The name of the load balancer.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.load_balancer_name
+    }
     /// Appends an item to `subnets`.
     ///
     /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
@@ -72,6 +76,10 @@ impl DetachLoadBalancerFromSubnetsInputBuilder {
     ) -> Self {
         self.subnets = input;
         self
+    }
+    /// <p>The IDs of the subnets.</p>
+    pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnets
     }
     /// Consumes the builder and constructs a [`DetachLoadBalancerFromSubnetsInput`](crate::operation::detach_load_balancer_from_subnets::DetachLoadBalancerFromSubnetsInput).
     pub fn build(

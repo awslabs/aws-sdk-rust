@@ -51,6 +51,10 @@ impl DeleteResolverEndpointOutputBuilder {
         self.resolver_endpoint = input;
         self
     }
+    /// <p>Information about the <code>DeleteResolverEndpoint</code> request, including the status of the request.</p>
+    pub fn get_resolver_endpoint(&self) -> &::std::option::Option<crate::types::ResolverEndpoint> {
+        &self.resolver_endpoint
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

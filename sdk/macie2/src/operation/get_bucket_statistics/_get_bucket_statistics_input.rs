@@ -41,6 +41,10 @@ impl GetBucketStatisticsInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The unique identifier for the Amazon Web Services account.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// Consumes the builder and constructs a [`GetBucketStatisticsInput`](crate::operation::get_bucket_statistics::GetBucketStatisticsInput).
     pub fn build(
         self,

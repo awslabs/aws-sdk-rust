@@ -46,6 +46,10 @@ impl DynamoDbSettingsBuilder {
         self.service_access_role_arn = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
+    pub fn get_service_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_access_role_arn
+    }
     /// Consumes the builder and constructs a [`DynamoDbSettings`](crate::types::DynamoDbSettings).
     pub fn build(self) -> crate::types::DynamoDbSettings {
         crate::types::DynamoDbSettings {

@@ -71,6 +71,10 @@ impl DescribePackageVersionInputBuilder {
         self.owner_account = input;
         self
     }
+    /// <p>The version's owner account.</p>
+    pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_account
+    }
     /// <p>The version's ID.</p>
     pub fn package_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_id = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl DescribePackageVersionInputBuilder {
     pub fn set_package_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_id = input;
         self
+    }
+    /// <p>The version's ID.</p>
+    pub fn get_package_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_id
     }
     /// <p>The version's version.</p>
     pub fn package_version(
@@ -97,6 +105,10 @@ impl DescribePackageVersionInputBuilder {
         self.package_version = input;
         self
     }
+    /// <p>The version's version.</p>
+    pub fn get_package_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_version
+    }
     /// <p>The version's patch version.</p>
     pub fn patch_version(
         mut self,
@@ -112,6 +124,10 @@ impl DescribePackageVersionInputBuilder {
     ) -> Self {
         self.patch_version = input;
         self
+    }
+    /// <p>The version's patch version.</p>
+    pub fn get_patch_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.patch_version
     }
     /// Consumes the builder and constructs a [`DescribePackageVersionInput`](crate::operation::describe_package_version::DescribePackageVersionInput).
     pub fn build(

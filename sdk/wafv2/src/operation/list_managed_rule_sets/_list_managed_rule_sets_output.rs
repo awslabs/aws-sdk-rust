@@ -59,6 +59,10 @@ impl ListManagedRuleSetsOutputBuilder {
         self.next_marker = input;
         self
     }
+    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_marker
+    }
     /// Appends an item to `managed_rule_sets`.
     ///
     /// To override the contents of this collection use [`set_managed_rule_sets`](Self::set_managed_rule_sets).
@@ -77,6 +81,12 @@ impl ListManagedRuleSetsOutputBuilder {
     ) -> Self {
         self.managed_rule_sets = input;
         self
+    }
+    /// <p>Your managed rule sets. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
+    pub fn get_managed_rule_sets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleSetSummary>> {
+        &self.managed_rule_sets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

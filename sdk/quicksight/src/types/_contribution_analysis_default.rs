@@ -58,6 +58,10 @@ impl ContributionAnalysisDefaultBuilder {
         self.measure_field_id = input;
         self
     }
+    /// <p>The measure field that is used in the contribution analysis.</p>
+    pub fn get_measure_field_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.measure_field_id
+    }
     /// Appends an item to `contributor_dimensions`.
     ///
     /// To override the contents of this collection use [`set_contributor_dimensions`](Self::set_contributor_dimensions).
@@ -76,6 +80,12 @@ impl ContributionAnalysisDefaultBuilder {
     ) -> Self {
         self.contributor_dimensions = input;
         self
+    }
+    /// <p>The dimensions columns that are used in the contribution analysis, usually a list of <code>ColumnIdentifiers</code>.</p>
+    pub fn get_contributor_dimensions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnIdentifier>> {
+        &self.contributor_dimensions
     }
     /// Consumes the builder and constructs a [`ContributionAnalysisDefault`](crate::types::ContributionAnalysisDefault).
     pub fn build(self) -> crate::types::ContributionAnalysisDefault {

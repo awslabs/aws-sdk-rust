@@ -55,6 +55,10 @@ impl DisassociateConnectPeerInputBuilder {
         self.global_network_id = input;
         self
     }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_network_id
+    }
     /// <p>The ID of the Connect peer to disassociate from a device.</p>
     pub fn connect_peer_id(
         mut self,
@@ -70,6 +74,10 @@ impl DisassociateConnectPeerInputBuilder {
     ) -> Self {
         self.connect_peer_id = input;
         self
+    }
+    /// <p>The ID of the Connect peer to disassociate from a device.</p>
+    pub fn get_connect_peer_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connect_peer_id
     }
     /// Consumes the builder and constructs a [`DisassociateConnectPeerInput`](crate::operation::disassociate_connect_peer::DisassociateConnectPeerInput).
     pub fn build(

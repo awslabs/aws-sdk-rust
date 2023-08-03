@@ -81,6 +81,10 @@ impl S3DataAccessAssetBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The Amazon S3 bucket hosting data to be shared in the S3 data access.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// Appends an item to `key_prefixes`.
     ///
     /// To override the contents of this collection use [`set_key_prefixes`](Self::set_key_prefixes).
@@ -99,6 +103,12 @@ impl S3DataAccessAssetBuilder {
     ) -> Self {
         self.key_prefixes = input;
         self
+    }
+    /// <p>The Amazon S3 bucket used for hosting shared data in the Amazon S3 data access.</p>
+    pub fn get_key_prefixes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.key_prefixes
     }
     /// Appends an item to `keys`.
     ///
@@ -119,6 +129,10 @@ impl S3DataAccessAssetBuilder {
         self.keys = input;
         self
     }
+    /// <p>S3 keys made available using this asset.</p>
+    pub fn get_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.keys
+    }
     /// <p>The automatically-generated bucket-style alias for your Amazon S3 Access Point. Customers can access their entitled data using the S3 Access Point alias.</p>
     pub fn s3_access_point_alias(
         mut self,
@@ -135,6 +149,10 @@ impl S3DataAccessAssetBuilder {
         self.s3_access_point_alias = input;
         self
     }
+    /// <p>The automatically-generated bucket-style alias for your Amazon S3 Access Point. Customers can access their entitled data using the S3 Access Point alias.</p>
+    pub fn get_s3_access_point_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_access_point_alias
+    }
     /// <p>The ARN for your Amazon S3 Access Point. Customers can also access their entitled data using the S3 Access Point ARN.</p>
     pub fn s3_access_point_arn(
         mut self,
@@ -150,6 +168,10 @@ impl S3DataAccessAssetBuilder {
     ) -> Self {
         self.s3_access_point_arn = input;
         self
+    }
+    /// <p>The ARN for your Amazon S3 Access Point. Customers can also access their entitled data using the S3 Access Point ARN.</p>
+    pub fn get_s3_access_point_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_access_point_arn
     }
     /// Appends an item to `kms_keys_to_grant`.
     ///
@@ -169,6 +191,12 @@ impl S3DataAccessAssetBuilder {
     ) -> Self {
         self.kms_keys_to_grant = input;
         self
+    }
+    /// <p> List of AWS KMS CMKs (Key Management System Customer Managed Keys) and ARNs used to encrypt S3 objects being shared in this S3 Data Access asset. Providers must include all AWS KMS keys used to encrypt these shared S3 objects.</p>
+    pub fn get_kms_keys_to_grant(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KmsKeyToGrant>> {
+        &self.kms_keys_to_grant
     }
     /// Consumes the builder and constructs a [`S3DataAccessAsset`](crate::types::S3DataAccessAsset).
     pub fn build(self) -> crate::types::S3DataAccessAsset {

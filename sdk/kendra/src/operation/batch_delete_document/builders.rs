@@ -37,6 +37,12 @@ impl BatchDeleteDocumentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchDeleteDocument as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_delete_document::builders::BatchDeleteDocumentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl BatchDeleteDocumentFluentBuilder {
         self.inner = self.inner.set_index_id(input);
         self
     }
+    /// <p>The identifier of the index that contains the documents to delete.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_index_id()
+    }
     /// Appends an item to `DocumentIdList`.
     ///
     /// To override the contents of this collection use [`set_document_id_list`](Self::set_document_id_list).
@@ -147,6 +157,12 @@ impl BatchDeleteDocumentFluentBuilder {
         self.inner = self.inner.set_document_id_list(input);
         self
     }
+    /// <p>One or more identifiers for documents to delete from the index.</p>
+    pub fn get_document_id_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_document_id_list()
+    }
     /// <p>Maps a particular data source sync job to a particular data source.</p>
     pub fn data_source_sync_job_metric_target(
         mut self,
@@ -162,5 +178,11 @@ impl BatchDeleteDocumentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_data_source_sync_job_metric_target(input);
         self
+    }
+    /// <p>Maps a particular data source sync job to a particular data source.</p>
+    pub fn get_data_source_sync_job_metric_target(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataSourceSyncJobMetricTarget> {
+        self.inner.get_data_source_sync_job_metric_target()
     }
 }

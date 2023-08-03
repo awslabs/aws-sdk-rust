@@ -49,6 +49,10 @@ impl UpdateSolFunctionPackageInputBuilder {
         self.vnf_pkg_id = input;
         self
     }
+    /// <p>ID of the function package.</p>
+    pub fn get_vnf_pkg_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vnf_pkg_id
+    }
     /// <p>Operational state of the function package.</p>
     pub fn operational_state(mut self, input: crate::types::OperationalState) -> Self {
         self.operational_state = ::std::option::Option::Some(input);
@@ -61,6 +65,10 @@ impl UpdateSolFunctionPackageInputBuilder {
     ) -> Self {
         self.operational_state = input;
         self
+    }
+    /// <p>Operational state of the function package.</p>
+    pub fn get_operational_state(&self) -> &::std::option::Option<crate::types::OperationalState> {
+        &self.operational_state
     }
     /// Consumes the builder and constructs a [`UpdateSolFunctionPackageInput`](crate::operation::update_sol_function_package::UpdateSolFunctionPackageInput).
     pub fn build(

@@ -139,6 +139,10 @@ impl GetDatasetOutputBuilder {
         self.dataset_id = input;
         self
     }
+    /// <p>The unique identifier for a Dataset.</p>
+    pub fn get_dataset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_id
+    }
     /// <p>The ARN identifier of the Dataset.</p>
     pub fn dataset_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_arn = ::std::option::Option::Some(input.into());
@@ -148,6 +152,10 @@ impl GetDatasetOutputBuilder {
     pub fn set_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_arn = input;
         self
+    }
+    /// <p>The ARN identifier of the Dataset.</p>
+    pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_arn
     }
     /// <p>Display title for a Dataset.</p>
     pub fn dataset_title(
@@ -164,6 +172,10 @@ impl GetDatasetOutputBuilder {
     ) -> Self {
         self.dataset_title = input;
         self
+    }
+    /// <p>Display title for a Dataset.</p>
+    pub fn get_dataset_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_title
     }
     /// <p>The format in which Dataset data is structured.</p>
     /// <ul>
@@ -183,6 +195,14 @@ impl GetDatasetOutputBuilder {
         self.kind = input;
         self
     }
+    /// <p>The format in which Dataset data is structured.</p>
+    /// <ul>
+    /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li>
+    /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li>
+    /// </ul>
+    pub fn get_kind(&self) -> &::std::option::Option<crate::types::DatasetKind> {
+        &self.kind
+    }
     /// <p>A description of the Dataset.</p>
     pub fn dataset_description(
         mut self,
@@ -199,6 +219,10 @@ impl GetDatasetOutputBuilder {
         self.dataset_description = input;
         self
     }
+    /// <p>A description of the Dataset.</p>
+    pub fn get_dataset_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_description
+    }
     /// <p>The timestamp at which the Dataset was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn create_time(mut self, input: i64) -> Self {
         self.create_time = ::std::option::Option::Some(input);
@@ -209,6 +233,10 @@ impl GetDatasetOutputBuilder {
         self.create_time = input;
         self
     }
+    /// <p>The timestamp at which the Dataset was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    pub fn get_create_time(&self) -> &::std::option::Option<i64> {
+        &self.create_time
+    }
     /// <p>The last time that the Dataset was modified. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn last_modified_time(mut self, input: i64) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -218,6 +246,10 @@ impl GetDatasetOutputBuilder {
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>The last time that the Dataset was modified. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<i64> {
+        &self.last_modified_time
     }
     /// <p>Definition for a schema on a tabular Dataset.</p>
     pub fn schema_definition(mut self, input: crate::types::SchemaUnion) -> Self {
@@ -232,6 +264,10 @@ impl GetDatasetOutputBuilder {
         self.schema_definition = input;
         self
     }
+    /// <p>Definition for a schema on a tabular Dataset.</p>
+    pub fn get_schema_definition(&self) -> &::std::option::Option<crate::types::SchemaUnion> {
+        &self.schema_definition
+    }
     /// <p>The unique resource identifier for a Dataset.</p>
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias = ::std::option::Option::Some(input.into());
@@ -241,6 +277,10 @@ impl GetDatasetOutputBuilder {
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alias = input;
         self
+    }
+    /// <p>The unique resource identifier for a Dataset.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias
     }
     /// <p>Status of the Dataset creation.</p>
     /// <ul>
@@ -263,6 +303,16 @@ impl GetDatasetOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DatasetStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Status of the Dataset creation.</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING</code> – Dataset is pending creation.</p> </li>
+    /// <li> <p> <code>FAILED</code> – Dataset creation has failed.</p> </li>
+    /// <li> <p> <code>SUCCESS</code> – Dataset creation has succeeded.</p> </li>
+    /// <li> <p> <code>RUNNING</code> – Dataset creation is running.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DatasetStatus> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

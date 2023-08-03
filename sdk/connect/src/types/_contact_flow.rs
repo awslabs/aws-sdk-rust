@@ -104,6 +104,10 @@ impl ContactFlowBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the flow.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The identifier of the flow.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -113,6 +117,10 @@ impl ContactFlowBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The identifier of the flow.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The name of the flow.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -124,6 +132,10 @@ impl ContactFlowBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the flow.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type of the flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a flow type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub fn r#type(mut self, input: crate::types::ContactFlowType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -133,6 +145,10 @@ impl ContactFlowBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ContactFlowType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a flow type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ContactFlowType> {
+        &self.r#type
     }
     /// <p>The type of flow.</p>
     pub fn state(mut self, input: crate::types::ContactFlowState) -> Self {
@@ -147,6 +163,10 @@ impl ContactFlowBuilder {
         self.state = input;
         self
     }
+    /// <p>The type of flow.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ContactFlowState> {
+        &self.state
+    }
     /// <p>The description of the flow.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -157,6 +177,10 @@ impl ContactFlowBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the flow.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The content of the flow.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
@@ -166,6 +190,10 @@ impl ContactFlowBuilder {
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
+    }
+    /// <p>The content of the flow.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -191,6 +219,14 @@ impl ContactFlowBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`ContactFlow`](crate::types::ContactFlow).
     pub fn build(self) -> crate::types::ContactFlow {

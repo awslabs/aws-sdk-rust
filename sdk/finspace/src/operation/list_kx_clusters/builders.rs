@@ -36,6 +36,12 @@ impl ListKxClustersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListKxClusters as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_kx_clusters::builders::ListKxClustersInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl ListKxClustersFluentBuilder {
         self.inner = self.inner.set_environment_id(input);
         self
     }
+    /// <p>A unique identifier for the kdb environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_id()
+    }
     /// <p>Specifies the type of KDB database that is being created. The following types are available: </p>
     /// <ul>
     /// <li> <p>HDB – A Historical Database. The data is only accessible with read-only permissions from one of the FinSpace managed kdb databases mounted to the cluster.</p> </li>
@@ -155,6 +165,15 @@ impl ListKxClustersFluentBuilder {
         self.inner = self.inner.set_cluster_type(input);
         self
     }
+    /// <p>Specifies the type of KDB database that is being created. The following types are available: </p>
+    /// <ul>
+    /// <li> <p>HDB – A Historical Database. The data is only accessible with read-only permissions from one of the FinSpace managed kdb databases mounted to the cluster.</p> </li>
+    /// <li> <p>RDB – A Realtime Database. This type of database captures all the data from a ticker plant and stores it in memory until the end of day, after which it writes all of its data to a disk and reloads the HDB. This cluster type requires local storage for temporary storage of data during the savedown process. If you specify this field in your request, you must provide the <code>savedownStorageConfiguration</code> parameter.</p> </li>
+    /// <li> <p>GATEWAY – A gateway cluster allows you to access data across processes in kdb systems. It allows you to create your own routing logic using the initialization scripts and custom code. This type of cluster does not require a writable local storage.</p> </li>
+    /// </ul>
+    pub fn get_cluster_type(&self) -> &::std::option::Option<crate::types::KxClusterType> {
+        self.inner.get_cluster_type()
+    }
     /// <p>The maximum number of results to return in this request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -165,6 +184,10 @@ impl ListKxClustersFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return in this request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>A token that indicates where a results page should begin.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -174,5 +197,9 @@ impl ListKxClustersFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A token that indicates where a results page should begin.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

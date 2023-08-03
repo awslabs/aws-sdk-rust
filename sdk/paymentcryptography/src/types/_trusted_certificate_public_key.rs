@@ -70,6 +70,10 @@ impl TrustedCertificatePublicKeyBuilder {
         self.key_attributes = input;
         self
     }
+    /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after a trusted public key is imported.</p>
+    pub fn get_key_attributes(&self) -> &::std::option::Option<crate::types::KeyAttributes> {
+        &self.key_attributes
+    }
     /// <p>Parameter information for trusted public key certificate import.</p>
     pub fn public_key_certificate(
         mut self,
@@ -85,6 +89,10 @@ impl TrustedCertificatePublicKeyBuilder {
     ) -> Self {
         self.public_key_certificate = input;
         self
+    }
+    /// <p>Parameter information for trusted public key certificate import.</p>
+    pub fn get_public_key_certificate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_key_certificate
     }
     /// <p>The <code>KeyARN</code> of the root public key certificate or certificate chain that signs the trusted public key certificate import.</p>
     pub fn certificate_authority_public_key_identifier(
@@ -102,6 +110,12 @@ impl TrustedCertificatePublicKeyBuilder {
     ) -> Self {
         self.certificate_authority_public_key_identifier = input;
         self
+    }
+    /// <p>The <code>KeyARN</code> of the root public key certificate or certificate chain that signs the trusted public key certificate import.</p>
+    pub fn get_certificate_authority_public_key_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_authority_public_key_identifier
     }
     /// Consumes the builder and constructs a [`TrustedCertificatePublicKey`](crate::types::TrustedCertificatePublicKey).
     pub fn build(self) -> crate::types::TrustedCertificatePublicKey {

@@ -54,6 +54,10 @@ impl BlueprintDetailsBuilder {
         self.blueprint_name = input;
         self
     }
+    /// <p>The name of the blueprint.</p>
+    pub fn get_blueprint_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.blueprint_name
+    }
     /// <p>The run ID for this blueprint.</p>
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.run_id = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl BlueprintDetailsBuilder {
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.run_id = input;
         self
+    }
+    /// <p>The run ID for this blueprint.</p>
+    pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.run_id
     }
     /// Consumes the builder and constructs a [`BlueprintDetails`](crate::types::BlueprintDetails).
     pub fn build(self) -> crate::types::BlueprintDetails {

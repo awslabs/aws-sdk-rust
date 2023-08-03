@@ -61,6 +61,10 @@ impl CreateDataLakeExceptionSubscriptionInputBuilder {
         self.subscription_protocol = input;
         self
     }
+    /// <p>The subscription protocol to which exception notifications are posted.</p>
+    pub fn get_subscription_protocol(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscription_protocol
+    }
     /// <p>The Amazon Web Services account where you want to receive exception notifications.</p>
     pub fn notification_endpoint(
         mut self,
@@ -77,6 +81,10 @@ impl CreateDataLakeExceptionSubscriptionInputBuilder {
         self.notification_endpoint = input;
         self
     }
+    /// <p>The Amazon Web Services account where you want to receive exception notifications.</p>
+    pub fn get_notification_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notification_endpoint
+    }
     /// <p>The expiration period and time-to-live (TTL).</p>
     pub fn exception_time_to_live(mut self, input: i64) -> Self {
         self.exception_time_to_live = ::std::option::Option::Some(input);
@@ -86,6 +94,10 @@ impl CreateDataLakeExceptionSubscriptionInputBuilder {
     pub fn set_exception_time_to_live(mut self, input: ::std::option::Option<i64>) -> Self {
         self.exception_time_to_live = input;
         self
+    }
+    /// <p>The expiration period and time-to-live (TTL).</p>
+    pub fn get_exception_time_to_live(&self) -> &::std::option::Option<i64> {
+        &self.exception_time_to_live
     }
     /// Consumes the builder and constructs a [`CreateDataLakeExceptionSubscriptionInput`](crate::operation::create_data_lake_exception_subscription::CreateDataLakeExceptionSubscriptionInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_data_lake_exception_subscription::CreateDataLakeExceptionSubscriptionInput, ::aws_smithy_http::operation::error::BuildError>{

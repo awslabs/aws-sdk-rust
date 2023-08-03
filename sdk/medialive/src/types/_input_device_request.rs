@@ -40,6 +40,10 @@ impl InputDeviceRequestBuilder {
         self.id = input;
         self
     }
+    /// The unique ID for the device.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`InputDeviceRequest`](crate::types::InputDeviceRequest).
     pub fn build(self) -> crate::types::InputDeviceRequest {
         crate::types::InputDeviceRequest { id: self.id }

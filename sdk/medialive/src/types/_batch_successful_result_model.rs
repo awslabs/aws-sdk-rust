@@ -56,6 +56,10 @@ impl BatchSuccessfulResultModelBuilder {
         self.arn = input;
         self
     }
+    /// ARN of the resource
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// ID of the resource
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl BatchSuccessfulResultModelBuilder {
         self.id = input;
         self
     }
+    /// ID of the resource
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Current state of the resource
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl BatchSuccessfulResultModelBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state = input;
         self
+    }
+    /// Current state of the resource
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`BatchSuccessfulResultModel`](crate::types::BatchSuccessfulResultModel).
     pub fn build(self) -> crate::types::BatchSuccessfulResultModel {

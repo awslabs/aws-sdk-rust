@@ -68,6 +68,10 @@ impl BatchDeletePartitionInputBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p>The name of the catalog database in which the table in question resides.</p>
     pub fn database_name(
         mut self,
@@ -84,6 +88,10 @@ impl BatchDeletePartitionInputBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The name of the catalog database in which the table in question resides.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>The name of the table that contains the partitions to be deleted.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
@@ -93,6 +101,10 @@ impl BatchDeletePartitionInputBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
+    }
+    /// <p>The name of the table that contains the partitions to be deleted.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// Appends an item to `partitions_to_delete`.
     ///
@@ -112,6 +124,12 @@ impl BatchDeletePartitionInputBuilder {
     ) -> Self {
         self.partitions_to_delete = input;
         self
+    }
+    /// <p>A list of <code>PartitionInput</code> structures that define the partitions to be deleted.</p>
+    pub fn get_partitions_to_delete(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>> {
+        &self.partitions_to_delete
     }
     /// Consumes the builder and constructs a [`BatchDeletePartitionInput`](crate::operation::batch_delete_partition::BatchDeletePartitionInput).
     pub fn build(

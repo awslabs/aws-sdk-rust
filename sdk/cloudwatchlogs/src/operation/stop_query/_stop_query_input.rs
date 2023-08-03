@@ -39,6 +39,10 @@ impl StopQueryInputBuilder {
         self.query_id = input;
         self
     }
+    /// <p>The ID number of the query to stop. To find this ID number, use <code>DescribeQueries</code>.</p>
+    pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_id
+    }
     /// Consumes the builder and constructs a [`StopQueryInput`](crate::operation::stop_query::StopQueryInput).
     pub fn build(
         self,

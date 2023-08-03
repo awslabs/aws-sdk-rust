@@ -36,6 +36,10 @@ impl UpdateCampaignOutboundCallConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateCampaignOutboundCallConfig as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_campaign_outbound_call_config::builders::UpdateCampaignOutboundCallConfigInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl UpdateCampaignOutboundCallConfigFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// Identifier representing a Campaign
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// The identifier of the contact flow for the outbound call.
     pub fn connect_contact_flow_id(
         mut self,
@@ -115,6 +123,10 @@ impl UpdateCampaignOutboundCallConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_connect_contact_flow_id(input);
         self
+    }
+    /// The identifier of the contact flow for the outbound call.
+    pub fn get_connect_contact_flow_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connect_contact_flow_id()
     }
     /// The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.
     pub fn connect_source_phone_number(
@@ -132,6 +144,10 @@ impl UpdateCampaignOutboundCallConfigFluentBuilder {
         self.inner = self.inner.set_connect_source_phone_number(input);
         self
     }
+    /// The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.
+    pub fn get_connect_source_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connect_source_phone_number()
+    }
     /// Answering Machine Detection config
     pub fn answer_machine_detection_config(
         mut self,
@@ -147,5 +163,11 @@ impl UpdateCampaignOutboundCallConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_answer_machine_detection_config(input);
         self
+    }
+    /// Answering Machine Detection config
+    pub fn get_answer_machine_detection_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AnswerMachineDetectionConfig> {
+        self.inner.get_answer_machine_detection_config()
     }
 }

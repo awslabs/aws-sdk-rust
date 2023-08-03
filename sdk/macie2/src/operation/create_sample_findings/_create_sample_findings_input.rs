@@ -49,6 +49,12 @@ impl CreateSampleFindingsInputBuilder {
         self.finding_types = input;
         self
     }
+    /// <p>An array of finding types, one for each type of sample finding to create. To create a sample of every type of finding that Amazon Macie supports, don't include this array in your request.</p>
+    pub fn get_finding_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FindingType>> {
+        &self.finding_types
+    }
     /// Consumes the builder and constructs a [`CreateSampleFindingsInput`](crate::operation::create_sample_findings::CreateSampleFindingsInput).
     pub fn build(
         self,

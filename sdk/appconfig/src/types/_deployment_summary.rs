@@ -120,6 +120,10 @@ impl DeploymentSummaryBuilder {
         self.deployment_number = input;
         self
     }
+    /// <p>The sequence number of the deployment.</p>
+    pub fn get_deployment_number(&self) -> &::std::option::Option<i32> {
+        &self.deployment_number
+    }
     /// <p>The name of the configuration.</p>
     pub fn configuration_name(
         mut self,
@@ -135,6 +139,10 @@ impl DeploymentSummaryBuilder {
     ) -> Self {
         self.configuration_name = input;
         self
+    }
+    /// <p>The name of the configuration.</p>
+    pub fn get_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_name
     }
     /// <p>The version of the configuration.</p>
     pub fn configuration_version(
@@ -152,6 +160,10 @@ impl DeploymentSummaryBuilder {
         self.configuration_version = input;
         self
     }
+    /// <p>The version of the configuration.</p>
+    pub fn get_configuration_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_version
+    }
     /// <p>Total amount of time the deployment lasted.</p>
     pub fn deployment_duration_in_minutes(mut self, input: i32) -> Self {
         self.deployment_duration_in_minutes = ::std::option::Option::Some(input);
@@ -161,6 +173,10 @@ impl DeploymentSummaryBuilder {
     pub fn set_deployment_duration_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.deployment_duration_in_minutes = input;
         self
+    }
+    /// <p>Total amount of time the deployment lasted.</p>
+    pub fn get_deployment_duration_in_minutes(&self) -> &::std::option::Option<i32> {
+        &self.deployment_duration_in_minutes
     }
     /// <p>The algorithm used to define how percentage grows over time.</p>
     pub fn growth_type(mut self, input: crate::types::GrowthType) -> Self {
@@ -175,6 +191,10 @@ impl DeploymentSummaryBuilder {
         self.growth_type = input;
         self
     }
+    /// <p>The algorithm used to define how percentage grows over time.</p>
+    pub fn get_growth_type(&self) -> &::std::option::Option<crate::types::GrowthType> {
+        &self.growth_type
+    }
     /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
     pub fn growth_factor(mut self, input: f32) -> Self {
         self.growth_factor = ::std::option::Option::Some(input);
@@ -185,6 +205,10 @@ impl DeploymentSummaryBuilder {
         self.growth_factor = input;
         self
     }
+    /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
+    pub fn get_growth_factor(&self) -> &::std::option::Option<f32> {
+        &self.growth_factor
+    }
     /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
     pub fn final_bake_time_in_minutes(mut self, input: i32) -> Self {
         self.final_bake_time_in_minutes = ::std::option::Option::Some(input);
@@ -194,6 +218,10 @@ impl DeploymentSummaryBuilder {
     pub fn set_final_bake_time_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.final_bake_time_in_minutes = input;
         self
+    }
+    /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
+    pub fn get_final_bake_time_in_minutes(&self) -> &::std::option::Option<i32> {
+        &self.final_bake_time_in_minutes
     }
     /// <p>The state of the deployment.</p>
     pub fn state(mut self, input: crate::types::DeploymentState) -> Self {
@@ -208,6 +236,10 @@ impl DeploymentSummaryBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of the deployment.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::DeploymentState> {
+        &self.state
+    }
     /// <p>The percentage of targets for which the deployment is available.</p>
     pub fn percentage_complete(mut self, input: f32) -> Self {
         self.percentage_complete = ::std::option::Option::Some(input);
@@ -217,6 +249,10 @@ impl DeploymentSummaryBuilder {
     pub fn set_percentage_complete(mut self, input: ::std::option::Option<f32>) -> Self {
         self.percentage_complete = input;
         self
+    }
+    /// <p>The percentage of targets for which the deployment is available.</p>
+    pub fn get_percentage_complete(&self) -> &::std::option::Option<f32> {
+        &self.percentage_complete
     }
     /// <p>Time the deployment started.</p>
     pub fn started_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -231,6 +267,10 @@ impl DeploymentSummaryBuilder {
         self.started_at = input;
         self
     }
+    /// <p>Time the deployment started.</p>
+    pub fn get_started_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.started_at
+    }
     /// <p>Time the deployment completed.</p>
     pub fn completed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.completed_at = ::std::option::Option::Some(input);
@@ -243,6 +283,10 @@ impl DeploymentSummaryBuilder {
     ) -> Self {
         self.completed_at = input;
         self
+    }
+    /// <p>Time the deployment completed.</p>
+    pub fn get_completed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.completed_at
     }
     /// Consumes the builder and constructs a [`DeploymentSummary`](crate::types::DeploymentSummary).
     pub fn build(self) -> crate::types::DeploymentSummary {

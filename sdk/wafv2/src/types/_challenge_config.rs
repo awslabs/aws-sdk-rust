@@ -45,6 +45,12 @@ impl ChallengeConfigBuilder {
         self.immunity_time_property = input;
         self
     }
+    /// <p>Determines how long a challenge timestamp in the token remains valid after the client successfully responds to a challenge. </p>
+    pub fn get_immunity_time_property(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImmunityTimeProperty> {
+        &self.immunity_time_property
+    }
     /// Consumes the builder and constructs a [`ChallengeConfig`](crate::types::ChallengeConfig).
     pub fn build(self) -> crate::types::ChallengeConfig {
         crate::types::ChallengeConfig {

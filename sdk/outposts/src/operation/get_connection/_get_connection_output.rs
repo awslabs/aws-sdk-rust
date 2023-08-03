@@ -60,6 +60,10 @@ impl GetConnectionOutputBuilder {
         self.connection_id = input;
         self
     }
+    /// <p> The ID of the connection. </p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_id
+    }
     /// <p> Information about the connection. </p>
     pub fn connection_details(mut self, input: crate::types::ConnectionDetails) -> Self {
         self.connection_details = ::std::option::Option::Some(input);
@@ -72,6 +76,12 @@ impl GetConnectionOutputBuilder {
     ) -> Self {
         self.connection_details = input;
         self
+    }
+    /// <p> Information about the connection. </p>
+    pub fn get_connection_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConnectionDetails> {
+        &self.connection_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

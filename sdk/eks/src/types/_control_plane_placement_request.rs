@@ -40,6 +40,10 @@ impl ControlPlanePlacementRequestBuilder {
         self.group_name = input;
         self
     }
+    /// <p>The name of the placement group for the Kubernetes control plane instances. This setting can't be changed after cluster creation. </p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
+    }
     /// Consumes the builder and constructs a [`ControlPlanePlacementRequest`](crate::types::ControlPlanePlacementRequest).
     pub fn build(self) -> crate::types::ControlPlanePlacementRequest {
         crate::types::ControlPlanePlacementRequest {

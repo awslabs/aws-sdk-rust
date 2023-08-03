@@ -43,6 +43,10 @@ impl RadarChartAreaStyleSettingsBuilder {
         self.visibility = input;
         self
     }
+    /// <p>The visibility settings of a radar chart.</p>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.visibility
+    }
     /// Consumes the builder and constructs a [`RadarChartAreaStyleSettings`](crate::types::RadarChartAreaStyleSettings).
     pub fn build(self) -> crate::types::RadarChartAreaStyleSettings {
         crate::types::RadarChartAreaStyleSettings {

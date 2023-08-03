@@ -56,6 +56,10 @@ impl DatetimeOptionsBuilder {
         self.format = input;
         self
     }
+    /// <p>Required option, that defines the datetime format used for a date parameter in the Amazon S3 path. Should use only supported datetime specifiers and separation characters, all literal a-z or A-Z characters should be escaped with single quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".</p>
+    pub fn get_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.format
+    }
     /// <p>Optional value for a timezone offset of the datetime parameter value in the Amazon S3 path. Shouldn't be used if Format for this parameter includes timezone fields. If no offset specified, UTC is assumed.</p>
     pub fn timezone_offset(
         mut self,
@@ -72,6 +76,10 @@ impl DatetimeOptionsBuilder {
         self.timezone_offset = input;
         self
     }
+    /// <p>Optional value for a timezone offset of the datetime parameter value in the Amazon S3 path. Shouldn't be used if Format for this parameter includes timezone fields. If no offset specified, UTC is assumed.</p>
+    pub fn get_timezone_offset(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timezone_offset
+    }
     /// <p>Optional value for a non-US locale code, needed for correct interpretation of some date formats.</p>
     pub fn locale_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_code = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl DatetimeOptionsBuilder {
     pub fn set_locale_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.locale_code = input;
         self
+    }
+    /// <p>Optional value for a non-US locale code, needed for correct interpretation of some date formats.</p>
+    pub fn get_locale_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale_code
     }
     /// Consumes the builder and constructs a [`DatetimeOptions`](crate::types::DatetimeOptions).
     pub fn build(self) -> crate::types::DatetimeOptions {

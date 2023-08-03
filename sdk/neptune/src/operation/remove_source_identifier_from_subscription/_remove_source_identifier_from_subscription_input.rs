@@ -53,6 +53,10 @@ impl RemoveSourceIdentifierFromSubscriptionInputBuilder {
         self.subscription_name = input;
         self
     }
+    /// <p>The name of the event notification subscription you want to remove a source identifier from.</p>
+    pub fn get_subscription_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscription_name
+    }
     /// <p> The source identifier to be removed from the subscription, such as the <b>DB instance identifier</b> for a DB instance or the name of a security group.</p>
     pub fn source_identifier(
         mut self,
@@ -68,6 +72,10 @@ impl RemoveSourceIdentifierFromSubscriptionInputBuilder {
     ) -> Self {
         self.source_identifier = input;
         self
+    }
+    /// <p> The source identifier to be removed from the subscription, such as the <b>DB instance identifier</b> for a DB instance or the name of a security group.</p>
+    pub fn get_source_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_identifier
     }
     /// Consumes the builder and constructs a [`RemoveSourceIdentifierFromSubscriptionInput`](crate::operation::remove_source_identifier_from_subscription::RemoveSourceIdentifierFromSubscriptionInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::remove_source_identifier_from_subscription::RemoveSourceIdentifierFromSubscriptionInput, ::aws_smithy_http::operation::error::BuildError>{

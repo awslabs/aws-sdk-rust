@@ -118,6 +118,12 @@ impl ListDeploymentsInputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p> <note>
+    /// <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified. </p>
+    /// </note>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>The name of a deployment group for the specified application.</p> <note>
     /// <p>If <code>deploymentGroupName</code> is specified, then <code>applicationName</code> must be specified. If it is not specified, then <code>applicationName</code> must not be specified. </p>
     /// </note>
@@ -138,6 +144,12 @@ impl ListDeploymentsInputBuilder {
         self.deployment_group_name = input;
         self
     }
+    /// <p>The name of a deployment group for the specified application.</p> <note>
+    /// <p>If <code>deploymentGroupName</code> is specified, then <code>applicationName</code> must be specified. If it is not specified, then <code>applicationName</code> must not be specified. </p>
+    /// </note>
+    pub fn get_deployment_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_group_name
+    }
     /// <p>The unique ID of an external resource for returning deployments linked to the external resource.</p>
     pub fn external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.external_id = ::std::option::Option::Some(input.into());
@@ -147,6 +159,10 @@ impl ListDeploymentsInputBuilder {
     pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.external_id = input;
         self
+    }
+    /// <p>The unique ID of an external resource for returning deployments linked to the external resource.</p>
+    pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_id
     }
     /// Appends an item to `include_only_statuses`.
     ///
@@ -183,6 +199,20 @@ impl ListDeploymentsInputBuilder {
         self.include_only_statuses = input;
         self
     }
+    /// <p>A subset of deployments to list by status:</p>
+    /// <ul>
+    /// <li> <p> <code>Created</code>: Include created deployments in the resulting list.</p> </li>
+    /// <li> <p> <code>Queued</code>: Include queued deployments in the resulting list.</p> </li>
+    /// <li> <p> <code>In Progress</code>: Include in-progress deployments in the resulting list.</p> </li>
+    /// <li> <p> <code>Succeeded</code>: Include successful deployments in the resulting list.</p> </li>
+    /// <li> <p> <code>Failed</code>: Include failed deployments in the resulting list.</p> </li>
+    /// <li> <p> <code>Stopped</code>: Include stopped deployments in the resulting list.</p> </li>
+    /// </ul>
+    pub fn get_include_only_statuses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentStatus>> {
+        &self.include_only_statuses
+    }
     /// <p>A time range (start and end) for returning a subset of the list of deployments.</p>
     pub fn create_time_range(mut self, input: crate::types::TimeRange) -> Self {
         self.create_time_range = ::std::option::Option::Some(input);
@@ -196,6 +226,10 @@ impl ListDeploymentsInputBuilder {
         self.create_time_range = input;
         self
     }
+    /// <p>A time range (start and end) for returning a subset of the list of deployments.</p>
+    pub fn get_create_time_range(&self) -> &::std::option::Option<crate::types::TimeRange> {
+        &self.create_time_range
+    }
     /// <p>An identifier returned from the previous list deployments call. It can be used to return the next set of deployments in the list.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -205,6 +239,10 @@ impl ListDeploymentsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>An identifier returned from the previous list deployments call. It can be used to return the next set of deployments in the list.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListDeploymentsInput`](crate::operation::list_deployments::ListDeploymentsInput).
     pub fn build(

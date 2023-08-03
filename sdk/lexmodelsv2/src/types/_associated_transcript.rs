@@ -40,6 +40,10 @@ impl AssociatedTranscriptBuilder {
         self.transcript = input;
         self
     }
+    /// <p>The content of the transcript that meets the search filter criteria. For the JSON format of the transcript, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output transcript format</a>.</p>
+    pub fn get_transcript(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transcript
+    }
     /// Consumes the builder and constructs a [`AssociatedTranscript`](crate::types::AssociatedTranscript).
     pub fn build(self) -> crate::types::AssociatedTranscript {
         crate::types::AssociatedTranscript {

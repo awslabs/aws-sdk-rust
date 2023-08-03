@@ -71,6 +71,14 @@ impl UpdateLabelsPayloadBuilder {
         self.add_or_update_labels = input;
         self
     }
+    /// <p>Kubernetes labels to be added or updated.</p>
+    pub fn get_add_or_update_labels(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.add_or_update_labels
+    }
     /// Appends an item to `remove_labels`.
     ///
     /// To override the contents of this collection use [`set_remove_labels`](Self::set_remove_labels).
@@ -92,6 +100,12 @@ impl UpdateLabelsPayloadBuilder {
     ) -> Self {
         self.remove_labels = input;
         self
+    }
+    /// <p>Kubernetes labels to be removed.</p>
+    pub fn get_remove_labels(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.remove_labels
     }
     /// Consumes the builder and constructs a [`UpdateLabelsPayload`](crate::types::UpdateLabelsPayload).
     pub fn build(self) -> crate::types::UpdateLabelsPayload {

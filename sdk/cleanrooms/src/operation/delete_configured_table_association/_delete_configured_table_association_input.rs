@@ -54,6 +54,12 @@ impl DeleteConfiguredTableAssociationInputBuilder {
         self.configured_table_association_identifier = input;
         self
     }
+    /// <p>The unique ID for the configured table association to be deleted. Currently accepts the configured table ID.</p>
+    pub fn get_configured_table_association_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.configured_table_association_identifier
+    }
     /// <p>A unique identifier for the membership that the configured table association belongs to. Currently accepts the membership ID.</p>
     pub fn membership_identifier(
         mut self,
@@ -69,6 +75,10 @@ impl DeleteConfiguredTableAssociationInputBuilder {
     ) -> Self {
         self.membership_identifier = input;
         self
+    }
+    /// <p>A unique identifier for the membership that the configured table association belongs to. Currently accepts the membership ID.</p>
+    pub fn get_membership_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.membership_identifier
     }
     /// Consumes the builder and constructs a [`DeleteConfiguredTableAssociationInput`](crate::operation::delete_configured_table_association::DeleteConfiguredTableAssociationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_configured_table_association::DeleteConfiguredTableAssociationInput, ::aws_smithy_http::operation::error::BuildError>{

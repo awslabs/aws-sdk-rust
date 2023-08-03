@@ -48,6 +48,10 @@ impl DeleteFargateProfileInputBuilder {
         self.cluster_name = input;
         self
     }
+    /// <p>The name of the Amazon EKS cluster associated with the Fargate profile to delete.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_name
+    }
     /// <p>The name of the Fargate profile to delete.</p>
     pub fn fargate_profile_name(
         mut self,
@@ -63,6 +67,10 @@ impl DeleteFargateProfileInputBuilder {
     ) -> Self {
         self.fargate_profile_name = input;
         self
+    }
+    /// <p>The name of the Fargate profile to delete.</p>
+    pub fn get_fargate_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fargate_profile_name
     }
     /// Consumes the builder and constructs a [`DeleteFargateProfileInput`](crate::operation::delete_fargate_profile::DeleteFargateProfileInput).
     pub fn build(

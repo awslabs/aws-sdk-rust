@@ -37,6 +37,13 @@ impl RemoveAutoScalingPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RemoveAutoScalingPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::remove_auto_scaling_policy::builders::RemoveAutoScalingPolicyInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl RemoveAutoScalingPolicyFluentBuilder {
         self.inner = self.inner.set_cluster_id(input);
         self
     }
+    /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_id()
+    }
     /// <p>Specifies the ID of the instance group to which the scaling policy is applied.</p>
     pub fn instance_group_id(
         mut self,
@@ -142,5 +153,9 @@ impl RemoveAutoScalingPolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_instance_group_id(input);
         self
+    }
+    /// <p>Specifies the ID of the instance group to which the scaling policy is applied.</p>
+    pub fn get_instance_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_group_id()
     }
 }

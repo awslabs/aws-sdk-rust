@@ -40,6 +40,10 @@ impl KinesisFirehoseConfigBuilder {
         self.firehose_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
+    pub fn get_firehose_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.firehose_arn
+    }
     /// Consumes the builder and constructs a [`KinesisFirehoseConfig`](crate::types::KinesisFirehoseConfig).
     pub fn build(self) -> crate::types::KinesisFirehoseConfig {
         crate::types::KinesisFirehoseConfig {

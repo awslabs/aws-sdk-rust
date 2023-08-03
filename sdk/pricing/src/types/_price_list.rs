@@ -71,6 +71,10 @@ impl PriceListBuilder {
         self.price_list_arn = input;
         self
     }
+    /// <p>The unique identifier that maps to where your Price List files are located. <code>PriceListArn</code> can be obtained from the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html"> <code>ListPriceList</code> </a> response. </p>
+    pub fn get_price_list_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.price_list_arn
+    }
     /// <p>This is used to filter the Price List by Amazon Web Services Region. For example, to get the price list only for the <code>US East (N. Virginia)</code> Region, use <code>us-east-1</code>. If nothing is specified, you retrieve price lists for all applicable Regions. The available <code>RegionCode</code> list can be retrieved from <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetAttributeValues.html"> <code>GetAttributeValues</code> </a> API. </p>
     pub fn region_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region_code = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl PriceListBuilder {
     pub fn set_region_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region_code = input;
         self
+    }
+    /// <p>This is used to filter the Price List by Amazon Web Services Region. For example, to get the price list only for the <code>US East (N. Virginia)</code> Region, use <code>us-east-1</code>. If nothing is specified, you retrieve price lists for all applicable Regions. The available <code>RegionCode</code> list can be retrieved from <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetAttributeValues.html"> <code>GetAttributeValues</code> </a> API. </p>
+    pub fn get_region_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region_code
     }
     /// <p>The three alphabetical character ISO-4217 currency code the Price List files are denominated in. </p>
     pub fn currency_code(
@@ -96,6 +104,10 @@ impl PriceListBuilder {
     ) -> Self {
         self.currency_code = input;
         self
+    }
+    /// <p>The three alphabetical character ISO-4217 currency code the Price List files are denominated in. </p>
+    pub fn get_currency_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.currency_code
     }
     /// Appends an item to `file_formats`.
     ///
@@ -115,6 +127,12 @@ impl PriceListBuilder {
     ) -> Self {
         self.file_formats = input;
         self
+    }
+    /// <p>The format you want to retrieve your Price List files. The <code>FileFormat</code> can be obtained from the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html"> <code>ListPriceList</code> </a> response. </p>
+    pub fn get_file_formats(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.file_formats
     }
     /// Consumes the builder and constructs a [`PriceList`](crate::types::PriceList).
     pub fn build(self) -> crate::types::PriceList {

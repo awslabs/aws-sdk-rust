@@ -189,6 +189,44 @@ impl WorldFailureBuilder {
         self.failure_code = input;
         self
     }
+    /// <p>The failure code of the world export job if it failed:</p>
+    /// <dl>
+    /// <dt>
+    /// InternalServiceError
+    /// </dt>
+    /// <dd>
+    /// <p>Internal service error.</p>
+    /// </dd>
+    /// <dt>
+    /// LimitExceeded
+    /// </dt>
+    /// <dd>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
+    /// </dd>
+    /// <dt>
+    /// ResourceNotFound
+    /// </dt>
+    /// <dd>
+    /// <p>The specified resource could not be found. </p>
+    /// </dd>
+    /// <dt>
+    /// RequestThrottled
+    /// </dt>
+    /// <dd>
+    /// <p>The request was throttled.</p>
+    /// </dd>
+    /// <dt>
+    /// InvalidInput
+    /// </dt>
+    /// <dd>
+    /// <p>An input parameter in the request is not valid.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_failure_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::WorldGenerationJobErrorCode> {
+        &self.failure_code
+    }
     /// <p>The sample reason why the world failed. World errors are aggregated. A sample is used as the <code>sampleFailureReason</code>. </p>
     pub fn sample_failure_reason(
         mut self,
@@ -205,6 +243,10 @@ impl WorldFailureBuilder {
         self.sample_failure_reason = input;
         self
     }
+    /// <p>The sample reason why the world failed. World errors are aggregated. A sample is used as the <code>sampleFailureReason</code>. </p>
+    pub fn get_sample_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sample_failure_reason
+    }
     /// <p>The number of failed worlds.</p>
     pub fn failure_count(mut self, input: i32) -> Self {
         self.failure_count = ::std::option::Option::Some(input);
@@ -214,6 +256,10 @@ impl WorldFailureBuilder {
     pub fn set_failure_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.failure_count = input;
         self
+    }
+    /// <p>The number of failed worlds.</p>
+    pub fn get_failure_count(&self) -> &::std::option::Option<i32> {
+        &self.failure_count
     }
     /// Consumes the builder and constructs a [`WorldFailure`](crate::types::WorldFailure).
     pub fn build(self) -> crate::types::WorldFailure {

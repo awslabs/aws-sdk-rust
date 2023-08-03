@@ -63,6 +63,10 @@ impl UpdateSipMediaApplicationInputBuilder {
         self.sip_media_application_id = input;
         self
     }
+    /// <p>The SIP media application ID.</p>
+    pub fn get_sip_media_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sip_media_application_id
+    }
     /// <p>The new name for the specified SIP media application.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl UpdateSipMediaApplicationInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The new name for the specified SIP media application.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `endpoints`.
     ///
@@ -91,6 +99,12 @@ impl UpdateSipMediaApplicationInputBuilder {
     ) -> Self {
         self.endpoints = input;
         self
+    }
+    /// <p>The new set of endpoints for the specified SIP media application.</p>
+    pub fn get_endpoints(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplicationEndpoint>> {
+        &self.endpoints
     }
     /// Consumes the builder and constructs a [`UpdateSipMediaApplicationInput`](crate::operation::update_sip_media_application::UpdateSipMediaApplicationInput).
     pub fn build(

@@ -36,6 +36,13 @@ impl UpdateContainerServiceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateContainerService as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_container_service::builders::UpdateContainerServiceInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl UpdateContainerServiceFluentBuilder {
         self.inner = self.inner.set_service_name(input);
         self
     }
+    /// <p>The name of the container service to update.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_name()
+    }
     /// <p>The power for the container service.</p>
     /// <p>The power specifies the amount of memory, vCPUs, and base monthly cost of each node of the container service. The <code>power</code> and <code>scale</code> of a container service makes up its configured capacity. To determine the monthly price of your container service, multiply the base price of the <code>power</code> with the <code>scale</code> (the number of nodes) of the service.</p>
     /// <p>Use the <code>GetContainerServicePowers</code> action to view the specifications of each power option.</p>
@@ -143,6 +154,12 @@ impl UpdateContainerServiceFluentBuilder {
         self.inner = self.inner.set_power(input);
         self
     }
+    /// <p>The power for the container service.</p>
+    /// <p>The power specifies the amount of memory, vCPUs, and base monthly cost of each node of the container service. The <code>power</code> and <code>scale</code> of a container service makes up its configured capacity. To determine the monthly price of your container service, multiply the base price of the <code>power</code> with the <code>scale</code> (the number of nodes) of the service.</p>
+    /// <p>Use the <code>GetContainerServicePowers</code> action to view the specifications of each power option.</p>
+    pub fn get_power(&self) -> &::std::option::Option<crate::types::ContainerServicePowerName> {
+        self.inner.get_power()
+    }
     /// <p>The scale for the container service.</p>
     /// <p>The scale specifies the allocated compute nodes of the container service. The <code>power</code> and <code>scale</code> of a container service makes up its configured capacity. To determine the monthly price of your container service, multiply the base price of the <code>power</code> with the <code>scale</code> (the number of nodes) of the service.</p>
     pub fn scale(mut self, input: i32) -> Self {
@@ -155,6 +172,11 @@ impl UpdateContainerServiceFluentBuilder {
         self.inner = self.inner.set_scale(input);
         self
     }
+    /// <p>The scale for the container service.</p>
+    /// <p>The scale specifies the allocated compute nodes of the container service. The <code>power</code> and <code>scale</code> of a container service makes up its configured capacity. To determine the monthly price of your container service, multiply the base price of the <code>power</code> with the <code>scale</code> (the number of nodes) of the service.</p>
+    pub fn get_scale(&self) -> &::std::option::Option<i32> {
+        self.inner.get_scale()
+    }
     /// <p>A Boolean value to indicate whether the container service is disabled.</p>
     pub fn is_disabled(mut self, input: bool) -> Self {
         self.inner = self.inner.is_disabled(input);
@@ -164,6 +186,10 @@ impl UpdateContainerServiceFluentBuilder {
     pub fn set_is_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_is_disabled(input);
         self
+    }
+    /// <p>A Boolean value to indicate whether the container service is disabled.</p>
+    pub fn get_is_disabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_is_disabled()
     }
     /// Adds a key-value pair to `publicDomainNames`.
     ///
@@ -201,6 +227,19 @@ impl UpdateContainerServiceFluentBuilder {
         self.inner = self.inner.set_public_domain_names(input);
         self
     }
+    /// <p>The public domain names to use with the container service, such as <code>example.com</code> and <code>www.example.com</code>.</p>
+    /// <p>You can specify up to four public domain names for a container service. The domain names that you specify are used when you create a deployment with a container configured as the public endpoint of your container service.</p>
+    /// <p>If you don't specify public domain names, then you can use the default domain of the container service.</p> <important>
+    /// <p>You must create and validate an SSL/TLS certificate before you can use public domain names with your container service. Use the <code>CreateCertificate</code> action to create a certificate for the public domain names you want to use with your container service.</p>
+    /// </important>
+    /// <p>You can specify public domain names using a string to array map as shown in the example later on this page.</p>
+    pub fn get_public_domain_names(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    > {
+        self.inner.get_public_domain_names()
+    }
     /// <p>An object to describe the configuration for the container service to access private container image repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories.</p>
     /// <p>For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
     pub fn private_registry_access(
@@ -218,5 +257,12 @@ impl UpdateContainerServiceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_private_registry_access(input);
         self
+    }
+    /// <p>An object to describe the configuration for the container service to access private container image repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories.</p>
+    /// <p>For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+    pub fn get_private_registry_access(
+        &self,
+    ) -> &::std::option::Option<crate::types::PrivateRegistryAccessRequest> {
+        self.inner.get_private_registry_access()
     }
 }

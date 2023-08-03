@@ -47,6 +47,10 @@ impl AssociateIpAccessSettingsInputBuilder {
         self.portal_arn = input;
         self
     }
+    /// <p>The ARN of the web portal.</p>
+    pub fn get_portal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portal_arn
+    }
     /// <p>The ARN of the IP access settings.</p>
     pub fn ip_access_settings_arn(
         mut self,
@@ -62,6 +66,10 @@ impl AssociateIpAccessSettingsInputBuilder {
     ) -> Self {
         self.ip_access_settings_arn = input;
         self
+    }
+    /// <p>The ARN of the IP access settings.</p>
+    pub fn get_ip_access_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_access_settings_arn
     }
     /// Consumes the builder and constructs a [`AssociateIpAccessSettingsInput`](crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsInput).
     pub fn build(

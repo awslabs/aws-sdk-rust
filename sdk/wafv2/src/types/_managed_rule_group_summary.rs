@@ -64,6 +64,10 @@ impl ManagedRuleGroupSummaryBuilder {
         self.vendor_name = input;
         self
     }
+    /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule group.</p>
+    pub fn get_vendor_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vendor_name
+    }
     /// <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl ManagedRuleGroupSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Indicates whether the managed rule group is versioned. If it is, you can retrieve the versions list by calling <code>ListAvailableManagedRuleGroupVersions</code>. </p>
     pub fn versioning_supported(mut self, input: bool) -> Self {
@@ -84,6 +92,10 @@ impl ManagedRuleGroupSummaryBuilder {
         self.versioning_supported = input;
         self
     }
+    /// <p>Indicates whether the managed rule group is versioned. If it is, you can retrieve the versions list by calling <code>ListAvailableManagedRuleGroupVersions</code>. </p>
+    pub fn get_versioning_supported(&self) -> &::std::option::Option<bool> {
+        &self.versioning_supported
+    }
     /// <p>The description of the managed rule group, provided by Amazon Web Services Managed Rules or the Amazon Web Services Marketplace seller who manages it.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl ManagedRuleGroupSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the managed rule group, provided by Amazon Web Services Managed Rules or the Amazon Web Services Marketplace seller who manages it.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`ManagedRuleGroupSummary`](crate::types::ManagedRuleGroupSummary).
     pub fn build(self) -> crate::types::ManagedRuleGroupSummary {

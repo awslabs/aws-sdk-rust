@@ -36,6 +36,10 @@ impl AssociateSubnetCidrBlockFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateSubnetCidrBlock as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_subnet_cidr_block::builders::AssociateSubnetCidrBlockInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl AssociateSubnetCidrBlockFluentBuilder {
         self.inner = self.inner.set_ipv6_cidr_block(input);
         self
     }
+    /// <p>The IPv6 CIDR block for your subnet. The subnet must have a /64 prefix length.</p>
+    pub fn get_ipv6_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ipv6_cidr_block()
+    }
     /// <p>The ID of your subnet.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subnet_id(input.into());
@@ -141,5 +149,9 @@ impl AssociateSubnetCidrBlockFluentBuilder {
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subnet_id(input);
         self
+    }
+    /// <p>The ID of your subnet.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_subnet_id()
     }
 }

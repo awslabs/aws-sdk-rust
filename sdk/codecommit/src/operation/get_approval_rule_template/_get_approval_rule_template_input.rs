@@ -47,6 +47,10 @@ impl GetApprovalRuleTemplateInputBuilder {
         self.approval_rule_template_name = input;
         self
     }
+    /// <p>The name of the approval rule template for which you want to get information.</p>
+    pub fn get_approval_rule_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.approval_rule_template_name
+    }
     /// Consumes the builder and constructs a [`GetApprovalRuleTemplateInput`](crate::operation::get_approval_rule_template::GetApprovalRuleTemplateInput).
     pub fn build(
         self,

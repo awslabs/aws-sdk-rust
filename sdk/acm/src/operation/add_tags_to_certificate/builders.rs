@@ -38,6 +38,13 @@ impl AddTagsToCertificateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AddTagsToCertificate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::add_tags_to_certificate::builders::AddTagsToCertificateInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +145,12 @@ impl AddTagsToCertificateFluentBuilder {
         self.inner = self.inner.set_certificate_arn(input);
         self
     }
+    /// <p>String that contains the ARN of the ACM certificate to which the tag is to be applied. This must be of the form:</p>
+    /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate_arn()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -154,5 +167,9 @@ impl AddTagsToCertificateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The key-value pair that defines the tag. The tag value is optional.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

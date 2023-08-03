@@ -43,6 +43,12 @@ impl CrossClusterSearchConnectionPropertiesBuilder {
         self.skip_unavailable = input;
         self
     }
+    /// <p>Status of SkipUnavailable param for outbound connection.</p>
+    pub fn get_skip_unavailable(
+        &self,
+    ) -> &::std::option::Option<crate::types::SkipUnavailableStatus> {
+        &self.skip_unavailable
+    }
     /// Consumes the builder and constructs a [`CrossClusterSearchConnectionProperties`](crate::types::CrossClusterSearchConnectionProperties).
     pub fn build(self) -> crate::types::CrossClusterSearchConnectionProperties {
         crate::types::CrossClusterSearchConnectionProperties {

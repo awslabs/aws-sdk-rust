@@ -42,6 +42,10 @@ impl RateLimitLabelNamespaceBuilder {
         self.namespace = input;
         self
     }
+    /// <p>The namespace to use for aggregation. </p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
+    }
     /// Consumes the builder and constructs a [`RateLimitLabelNamespace`](crate::types::RateLimitLabelNamespace).
     pub fn build(self) -> crate::types::RateLimitLabelNamespace {
         crate::types::RateLimitLabelNamespace {

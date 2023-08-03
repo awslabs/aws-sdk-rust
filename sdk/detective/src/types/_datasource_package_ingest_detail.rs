@@ -75,6 +75,12 @@ impl DatasourcePackageIngestDetailBuilder {
         self.datasource_package_ingest_state = input;
         self
     }
+    /// <p>Details on which data source packages are ingested for a member account.</p>
+    pub fn get_datasource_package_ingest_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::DatasourcePackageIngestState> {
+        &self.datasource_package_ingest_state
+    }
     /// Adds a key-value pair to `last_ingest_state_change`.
     ///
     /// To override the contents of this collection use [`set_last_ingest_state_change`](Self::set_last_ingest_state_change).
@@ -102,6 +108,17 @@ impl DatasourcePackageIngestDetailBuilder {
     ) -> Self {
         self.last_ingest_state_change = input;
         self
+    }
+    /// <p>The date a data source package was enabled for this account</p>
+    pub fn get_last_ingest_state_change(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::DatasourcePackageIngestState,
+            crate::types::TimestampForCollection,
+        >,
+    > {
+        &self.last_ingest_state_change
     }
     /// Consumes the builder and constructs a [`DatasourcePackageIngestDetail`](crate::types::DatasourcePackageIngestDetail).
     pub fn build(self) -> crate::types::DatasourcePackageIngestDetail {

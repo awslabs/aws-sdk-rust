@@ -58,6 +58,12 @@ impl RegisterDbProxyTargetsOutputBuilder {
         self.db_proxy_targets = input;
         self
     }
+    /// <p>One or more <code>DBProxyTarget</code> objects that are created when you register targets with a target group.</p>
+    pub fn get_db_proxy_targets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DbProxyTarget>> {
+        &self.db_proxy_targets
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

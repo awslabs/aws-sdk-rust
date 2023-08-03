@@ -45,6 +45,12 @@ impl AdditionalResultAttributeValueBuilder {
         self.text_with_highlights_value = input;
         self
     }
+    /// <p>The text associated with the attribute and information about the highlight to apply to the text.</p>
+    pub fn get_text_with_highlights_value(
+        &self,
+    ) -> &::std::option::Option<crate::types::TextWithHighlights> {
+        &self.text_with_highlights_value
+    }
     /// Consumes the builder and constructs a [`AdditionalResultAttributeValue`](crate::types::AdditionalResultAttributeValue).
     pub fn build(self) -> crate::types::AdditionalResultAttributeValue {
         crate::types::AdditionalResultAttributeValue {

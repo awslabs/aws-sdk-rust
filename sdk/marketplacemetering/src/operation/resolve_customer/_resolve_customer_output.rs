@@ -69,6 +69,10 @@ impl ResolveCustomerOutputBuilder {
         self.customer_identifier = input;
         self
     }
+    /// <p>The <code>CustomerIdentifier</code> is used to identify an individual customer in your application. Calls to <code>BatchMeterUsage</code> require <code>CustomerIdentifiers</code> for each <code>UsageRecord</code>.</p>
+    pub fn get_customer_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.customer_identifier
+    }
     /// <p>The product code is returned to confirm that the buyer is registering for your product. Subsequent <code>BatchMeterUsage</code> calls should be made using this product code.</p>
     pub fn product_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_code = ::std::option::Option::Some(input.into());
@@ -78,6 +82,10 @@ impl ResolveCustomerOutputBuilder {
     pub fn set_product_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product_code = input;
         self
+    }
+    /// <p>The product code is returned to confirm that the buyer is registering for your product. Subsequent <code>BatchMeterUsage</code> calls should be made using this product code.</p>
+    pub fn get_product_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_code
     }
     /// <p>The <code>CustomerAWSAccountId</code> provides the AWS account ID associated with the <code>CustomerIdentifier</code> for the individual customer.</p>
     pub fn customer_aws_account_id(
@@ -94,6 +102,10 @@ impl ResolveCustomerOutputBuilder {
     ) -> Self {
         self.customer_aws_account_id = input;
         self
+    }
+    /// <p>The <code>CustomerAWSAccountId</code> provides the AWS account ID associated with the <code>CustomerIdentifier</code> for the individual customer.</p>
+    pub fn get_customer_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.customer_aws_account_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -36,6 +36,10 @@ impl RebootReplicationInstanceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RebootReplicationInstance as a reference.
+    pub fn as_input(&self) -> &crate::operation::reboot_replication_instance::builders::RebootReplicationInstanceInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl RebootReplicationInstanceFluentBuilder {
         self.inner = self.inner.set_replication_instance_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+    pub fn get_replication_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_replication_instance_arn()
+    }
     /// <p>If this parameter is <code>true</code>, the reboot is conducted through a Multi-AZ failover. If the instance isn't configured for Multi-AZ, then you can't specify <code>true</code>. ( <code>--force-planned-failover</code> and <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
     pub fn force_failover(mut self, input: bool) -> Self {
         self.inner = self.inner.force_failover(input);
@@ -142,6 +150,10 @@ impl RebootReplicationInstanceFluentBuilder {
         self.inner = self.inner.set_force_failover(input);
         self
     }
+    /// <p>If this parameter is <code>true</code>, the reboot is conducted through a Multi-AZ failover. If the instance isn't configured for Multi-AZ, then you can't specify <code>true</code>. ( <code>--force-planned-failover</code> and <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
+    pub fn get_force_failover(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force_failover()
+    }
     /// <p>If this parameter is <code>true</code>, the reboot is conducted through a planned Multi-AZ failover where resources are released and cleaned up prior to conducting the failover. If the instance isn''t configured for Multi-AZ, then you can't specify <code>true</code>. ( <code>--force-planned-failover</code> and <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
     pub fn force_planned_failover(mut self, input: bool) -> Self {
         self.inner = self.inner.force_planned_failover(input);
@@ -151,5 +163,9 @@ impl RebootReplicationInstanceFluentBuilder {
     pub fn set_force_planned_failover(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force_planned_failover(input);
         self
+    }
+    /// <p>If this parameter is <code>true</code>, the reboot is conducted through a planned Multi-AZ failover where resources are released and cleaned up prior to conducting the failover. If the instance isn''t configured for Multi-AZ, then you can't specify <code>true</code>. ( <code>--force-planned-failover</code> and <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
+    pub fn get_force_planned_failover(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force_planned_failover()
     }
 }

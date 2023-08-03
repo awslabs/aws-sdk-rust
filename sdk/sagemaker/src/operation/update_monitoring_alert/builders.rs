@@ -36,6 +36,13 @@ impl UpdateMonitoringAlertFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateMonitoringAlert as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_monitoring_alert::builders::UpdateMonitoringAlertInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl UpdateMonitoringAlertFluentBuilder {
         self.inner = self.inner.set_monitoring_schedule_name(input);
         self
     }
+    /// <p>The name of a monitoring schedule.</p>
+    pub fn get_monitoring_schedule_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_monitoring_schedule_name()
+    }
     /// <p>The name of a monitoring alert.</p>
     pub fn monitoring_alert_name(
         mut self,
@@ -148,6 +159,10 @@ impl UpdateMonitoringAlertFluentBuilder {
         self.inner = self.inner.set_monitoring_alert_name(input);
         self
     }
+    /// <p>The name of a monitoring alert.</p>
+    pub fn get_monitoring_alert_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_monitoring_alert_name()
+    }
     /// <p>Within <code>EvaluationPeriod</code>, how many execution failures will raise an alert.</p>
     pub fn datapoints_to_alert(mut self, input: i32) -> Self {
         self.inner = self.inner.datapoints_to_alert(input);
@@ -158,6 +173,10 @@ impl UpdateMonitoringAlertFluentBuilder {
         self.inner = self.inner.set_datapoints_to_alert(input);
         self
     }
+    /// <p>Within <code>EvaluationPeriod</code>, how many execution failures will raise an alert.</p>
+    pub fn get_datapoints_to_alert(&self) -> &::std::option::Option<i32> {
+        self.inner.get_datapoints_to_alert()
+    }
     /// <p>The number of most recent monitoring executions to consider when evaluating alert status.</p>
     pub fn evaluation_period(mut self, input: i32) -> Self {
         self.inner = self.inner.evaluation_period(input);
@@ -167,5 +186,9 @@ impl UpdateMonitoringAlertFluentBuilder {
     pub fn set_evaluation_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_evaluation_period(input);
         self
+    }
+    /// <p>The number of most recent monitoring executions to consider when evaluating alert status.</p>
+    pub fn get_evaluation_period(&self) -> &::std::option::Option<i32> {
+        self.inner.get_evaluation_period()
     }
 }

@@ -61,6 +61,10 @@ impl CreateFpgaImageOutputBuilder {
         self.fpga_image_id = input;
         self
     }
+    /// <p>The FPGA image identifier (AFI ID).</p>
+    pub fn get_fpga_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fpga_image_id
+    }
     /// <p>The global FPGA image identifier (AGFI ID).</p>
     pub fn fpga_image_global_id(
         mut self,
@@ -76,6 +80,10 @@ impl CreateFpgaImageOutputBuilder {
     ) -> Self {
         self.fpga_image_global_id = input;
         self
+    }
+    /// <p>The global FPGA image identifier (AGFI ID).</p>
+    pub fn get_fpga_image_global_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fpga_image_global_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

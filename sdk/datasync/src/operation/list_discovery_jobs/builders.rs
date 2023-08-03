@@ -36,6 +36,12 @@ impl ListDiscoveryJobsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListDiscoveryJobs as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_discovery_jobs::builders::ListDiscoveryJobsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +149,10 @@ impl ListDiscoveryJobsFluentBuilder {
         self.inner = self.inner.set_storage_system_arn(input);
         self
     }
+    /// <p>Specifies the Amazon Resource Name (ARN) of an on-premises storage system. Use this parameter if you only want to list the discovery jobs that are associated with a specific storage system.</p>
+    pub fn get_storage_system_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_storage_system_arn()
+    }
     /// <p>Specifies how many results you want in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -153,6 +163,10 @@ impl ListDiscoveryJobsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>Specifies how many results you want in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -162,5 +176,9 @@ impl ListDiscoveryJobsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

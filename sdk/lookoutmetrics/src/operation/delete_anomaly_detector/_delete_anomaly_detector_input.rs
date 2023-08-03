@@ -47,6 +47,10 @@ impl DeleteAnomalyDetectorInputBuilder {
         self.anomaly_detector_arn = input;
         self
     }
+    /// <p>The ARN of the detector to delete.</p>
+    pub fn get_anomaly_detector_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.anomaly_detector_arn
+    }
     /// Consumes the builder and constructs a [`DeleteAnomalyDetectorInput`](crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorInput).
     pub fn build(
         self,

@@ -55,6 +55,10 @@ impl GetPullRequestApprovalStatesOutputBuilder {
         self.approvals = input;
         self
     }
+    /// <p>Information about users who have approved the pull request.</p>
+    pub fn get_approvals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Approval>> {
+        &self.approvals
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

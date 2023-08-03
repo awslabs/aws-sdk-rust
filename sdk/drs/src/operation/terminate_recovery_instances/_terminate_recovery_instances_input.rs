@@ -52,6 +52,12 @@ impl TerminateRecoveryInstancesInputBuilder {
         self.recovery_instance_i_ds = input;
         self
     }
+    /// <p>The IDs of the Recovery Instances that should be terminated.</p>
+    pub fn get_recovery_instance_i_ds(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.recovery_instance_i_ds
+    }
     /// Consumes the builder and constructs a [`TerminateRecoveryInstancesInput`](crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesInput).
     pub fn build(
         self,

@@ -46,6 +46,10 @@ impl LocalIpDetailsBuilder {
         self.ip_address_v4 = input;
         self
     }
+    /// <p>The IPv4 local address of the connection.</p>
+    pub fn get_ip_address_v4(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address_v4
+    }
     /// Consumes the builder and constructs a [`LocalIpDetails`](crate::types::LocalIpDetails).
     pub fn build(self) -> crate::types::LocalIpDetails {
         crate::types::LocalIpDetails {

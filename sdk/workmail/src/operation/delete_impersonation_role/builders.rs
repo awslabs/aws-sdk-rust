@@ -37,6 +37,13 @@ impl DeleteImpersonationRoleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteImpersonationRole as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_impersonation_role::builders::DeleteImpersonationRoleInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl DeleteImpersonationRoleFluentBuilder {
         self.inner = self.inner.set_organization_id(input);
         self
     }
+    /// <p>The WorkMail organization from which to delete the impersonation role.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
+    }
     /// <p>The ID of the impersonation role to delete.</p>
     pub fn impersonation_role_id(
         mut self,
@@ -148,5 +159,9 @@ impl DeleteImpersonationRoleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_impersonation_role_id(input);
         self
+    }
+    /// <p>The ID of the impersonation role to delete.</p>
+    pub fn get_impersonation_role_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_impersonation_role_id()
     }
 }

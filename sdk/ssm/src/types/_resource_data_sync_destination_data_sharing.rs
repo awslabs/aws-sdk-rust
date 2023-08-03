@@ -46,6 +46,12 @@ impl ResourceDataSyncDestinationDataSharingBuilder {
         self.destination_data_sharing_type = input;
         self
     }
+    /// <p>The sharing data type. Only <code>Organization</code> is supported.</p>
+    pub fn get_destination_data_sharing_type(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.destination_data_sharing_type
+    }
     /// Consumes the builder and constructs a [`ResourceDataSyncDestinationDataSharing`](crate::types::ResourceDataSyncDestinationDataSharing).
     pub fn build(self) -> crate::types::ResourceDataSyncDestinationDataSharing {
         crate::types::ResourceDataSyncDestinationDataSharing {

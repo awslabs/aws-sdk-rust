@@ -65,6 +65,12 @@ impl ListDataCellsFilterOutputBuilder {
         self.data_cells_filters = input;
         self
     }
+    /// <p>A list of <code>DataCellFilter</code> structures.</p>
+    pub fn get_data_cells_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataCellsFilter>> {
+        &self.data_cells_filters
+    }
     /// <p>A continuation token, if not all requested data cell filters have been returned.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -74,6 +80,10 @@ impl ListDataCellsFilterOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A continuation token, if not all requested data cell filters have been returned.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

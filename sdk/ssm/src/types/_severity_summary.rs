@@ -80,6 +80,10 @@ impl SeveritySummaryBuilder {
         self.critical_count = input;
         self
     }
+    /// <p>The total number of resources or compliance items that have a severity level of <code>Critical</code>. Critical severity is determined by the organization that published the compliance items.</p>
+    pub fn get_critical_count(&self) -> &::std::option::Option<i32> {
+        &self.critical_count
+    }
     /// <p>The total number of resources or compliance items that have a severity level of high. High severity is determined by the organization that published the compliance items.</p>
     pub fn high_count(mut self, input: i32) -> Self {
         self.high_count = ::std::option::Option::Some(input);
@@ -89,6 +93,10 @@ impl SeveritySummaryBuilder {
     pub fn set_high_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.high_count = input;
         self
+    }
+    /// <p>The total number of resources or compliance items that have a severity level of high. High severity is determined by the organization that published the compliance items.</p>
+    pub fn get_high_count(&self) -> &::std::option::Option<i32> {
+        &self.high_count
     }
     /// <p>The total number of resources or compliance items that have a severity level of medium. Medium severity is determined by the organization that published the compliance items.</p>
     pub fn medium_count(mut self, input: i32) -> Self {
@@ -100,6 +108,10 @@ impl SeveritySummaryBuilder {
         self.medium_count = input;
         self
     }
+    /// <p>The total number of resources or compliance items that have a severity level of medium. Medium severity is determined by the organization that published the compliance items.</p>
+    pub fn get_medium_count(&self) -> &::std::option::Option<i32> {
+        &self.medium_count
+    }
     /// <p>The total number of resources or compliance items that have a severity level of low. Low severity is determined by the organization that published the compliance items.</p>
     pub fn low_count(mut self, input: i32) -> Self {
         self.low_count = ::std::option::Option::Some(input);
@@ -109,6 +121,10 @@ impl SeveritySummaryBuilder {
     pub fn set_low_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.low_count = input;
         self
+    }
+    /// <p>The total number of resources or compliance items that have a severity level of low. Low severity is determined by the organization that published the compliance items.</p>
+    pub fn get_low_count(&self) -> &::std::option::Option<i32> {
+        &self.low_count
     }
     /// <p>The total number of resources or compliance items that have a severity level of informational. Informational severity is determined by the organization that published the compliance items.</p>
     pub fn informational_count(mut self, input: i32) -> Self {
@@ -120,6 +136,10 @@ impl SeveritySummaryBuilder {
         self.informational_count = input;
         self
     }
+    /// <p>The total number of resources or compliance items that have a severity level of informational. Informational severity is determined by the organization that published the compliance items.</p>
+    pub fn get_informational_count(&self) -> &::std::option::Option<i32> {
+        &self.informational_count
+    }
     /// <p>The total number of resources or compliance items that have a severity level of unspecified. Unspecified severity is determined by the organization that published the compliance items.</p>
     pub fn unspecified_count(mut self, input: i32) -> Self {
         self.unspecified_count = ::std::option::Option::Some(input);
@@ -129,6 +149,10 @@ impl SeveritySummaryBuilder {
     pub fn set_unspecified_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.unspecified_count = input;
         self
+    }
+    /// <p>The total number of resources or compliance items that have a severity level of unspecified. Unspecified severity is determined by the organization that published the compliance items.</p>
+    pub fn get_unspecified_count(&self) -> &::std::option::Option<i32> {
+        &self.unspecified_count
     }
     /// Consumes the builder and constructs a [`SeveritySummary`](crate::types::SeveritySummary).
     pub fn build(self) -> crate::types::SeveritySummary {

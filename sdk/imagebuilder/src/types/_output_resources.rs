@@ -57,6 +57,10 @@ impl OutputResourcesBuilder {
         self.amis = input;
         self
     }
+    /// <p>The Amazon EC2 AMIs created by this image.</p>
+    pub fn get_amis(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Ami>> {
+        &self.amis
+    }
     /// Appends an item to `containers`.
     ///
     /// To override the contents of this collection use [`set_containers`](Self::set_containers).
@@ -75,6 +79,12 @@ impl OutputResourcesBuilder {
     ) -> Self {
         self.containers = input;
         self
+    }
+    /// <p>Container images that the pipeline has generated and stored in the output repository.</p>
+    pub fn get_containers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Container>> {
+        &self.containers
     }
     /// Consumes the builder and constructs a [`OutputResources`](crate::types::OutputResources).
     pub fn build(self) -> crate::types::OutputResources {

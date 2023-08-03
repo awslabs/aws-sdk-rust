@@ -47,6 +47,12 @@ impl DeleteDbClusterEndpointInputBuilder {
         self.db_cluster_endpoint_identifier = input;
         self
     }
+    /// <p>The identifier associated with the custom endpoint. This parameter is stored as a lowercase string.</p>
+    pub fn get_db_cluster_endpoint_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_endpoint_identifier
+    }
     /// Consumes the builder and constructs a [`DeleteDbClusterEndpointInput`](crate::operation::delete_db_cluster_endpoint::DeleteDbClusterEndpointInput).
     pub fn build(
         self,

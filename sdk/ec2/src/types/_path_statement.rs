@@ -53,6 +53,12 @@ impl PathStatementBuilder {
         self.packet_header_statement = input;
         self
     }
+    /// <p>The packet header statement.</p>
+    pub fn get_packet_header_statement(
+        &self,
+    ) -> &::std::option::Option<crate::types::PacketHeaderStatement> {
+        &self.packet_header_statement
+    }
     /// <p>The resource statement.</p>
     pub fn resource_statement(mut self, input: crate::types::ResourceStatement) -> Self {
         self.resource_statement = ::std::option::Option::Some(input);
@@ -65,6 +71,12 @@ impl PathStatementBuilder {
     ) -> Self {
         self.resource_statement = input;
         self
+    }
+    /// <p>The resource statement.</p>
+    pub fn get_resource_statement(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceStatement> {
+        &self.resource_statement
     }
     /// Consumes the builder and constructs a [`PathStatement`](crate::types::PathStatement).
     pub fn build(self) -> crate::types::PathStatement {

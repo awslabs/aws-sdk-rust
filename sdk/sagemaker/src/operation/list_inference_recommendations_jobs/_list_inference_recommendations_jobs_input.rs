@@ -134,6 +134,10 @@ impl ListInferenceRecommendationsJobsInputBuilder {
         self.creation_time_after = input;
         self
     }
+    /// <p>A filter that returns only jobs created after the specified time (timestamp).</p>
+    pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_after
+    }
     /// <p>A filter that returns only jobs created before the specified time (timestamp).</p>
     pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time_before = ::std::option::Option::Some(input);
@@ -146,6 +150,10 @@ impl ListInferenceRecommendationsJobsInputBuilder {
     ) -> Self {
         self.creation_time_before = input;
         self
+    }
+    /// <p>A filter that returns only jobs created before the specified time (timestamp).</p>
+    pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_before
     }
     /// <p>A filter that returns only jobs that were last modified after the specified time (timestamp).</p>
     pub fn last_modified_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -160,6 +168,12 @@ impl ListInferenceRecommendationsJobsInputBuilder {
         self.last_modified_time_after = input;
         self
     }
+    /// <p>A filter that returns only jobs that were last modified after the specified time (timestamp).</p>
+    pub fn get_last_modified_time_after(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time_after
+    }
     /// <p>A filter that returns only jobs that were last modified before the specified time (timestamp).</p>
     pub fn last_modified_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time_before = ::std::option::Option::Some(input);
@@ -172,6 +186,12 @@ impl ListInferenceRecommendationsJobsInputBuilder {
     ) -> Self {
         self.last_modified_time_before = input;
         self
+    }
+    /// <p>A filter that returns only jobs that were last modified before the specified time (timestamp).</p>
+    pub fn get_last_modified_time_before(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time_before
     }
     /// <p>A string in the job name. This filter returns only recommendations whose name contains the specified string.</p>
     pub fn name_contains(
@@ -189,6 +209,10 @@ impl ListInferenceRecommendationsJobsInputBuilder {
         self.name_contains = input;
         self
     }
+    /// <p>A string in the job name. This filter returns only recommendations whose name contains the specified string.</p>
+    pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name_contains
+    }
     /// <p>A filter that retrieves only inference recommendations jobs with a specific status.</p>
     pub fn status_equals(mut self, input: crate::types::RecommendationJobStatus) -> Self {
         self.status_equals = ::std::option::Option::Some(input);
@@ -201,6 +225,12 @@ impl ListInferenceRecommendationsJobsInputBuilder {
     ) -> Self {
         self.status_equals = input;
         self
+    }
+    /// <p>A filter that retrieves only inference recommendations jobs with a specific status.</p>
+    pub fn get_status_equals(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecommendationJobStatus> {
+        &self.status_equals
     }
     /// <p>The parameter by which to sort the results.</p>
     pub fn sort_by(mut self, input: crate::types::ListInferenceRecommendationsJobsSortBy) -> Self {
@@ -215,6 +245,12 @@ impl ListInferenceRecommendationsJobsInputBuilder {
         self.sort_by = input;
         self
     }
+    /// <p>The parameter by which to sort the results.</p>
+    pub fn get_sort_by(
+        &self,
+    ) -> &::std::option::Option<crate::types::ListInferenceRecommendationsJobsSortBy> {
+        &self.sort_by
+    }
     /// <p>The sort order for the results.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -224,6 +260,10 @@ impl ListInferenceRecommendationsJobsInputBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p>The sort order for the results.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.sort_order
     }
     /// <p>If the response to a previous <code>ListInferenceRecommendationsJobsRequest</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of recommendations, use the token in the next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -235,6 +275,10 @@ impl ListInferenceRecommendationsJobsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If the response to a previous <code>ListInferenceRecommendationsJobsRequest</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of recommendations, use the token in the next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of recommendations to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -244,6 +288,10 @@ impl ListInferenceRecommendationsJobsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of recommendations to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>A filter that returns only jobs that were created for this model.</p>
     pub fn model_name_equals(
@@ -261,6 +309,10 @@ impl ListInferenceRecommendationsJobsInputBuilder {
         self.model_name_equals = input;
         self
     }
+    /// <p>A filter that returns only jobs that were created for this model.</p>
+    pub fn get_model_name_equals(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_name_equals
+    }
     /// <p>A filter that returns only jobs that were created for this versioned model package.</p>
     pub fn model_package_version_arn_equals(
         mut self,
@@ -276,6 +328,12 @@ impl ListInferenceRecommendationsJobsInputBuilder {
     ) -> Self {
         self.model_package_version_arn_equals = input;
         self
+    }
+    /// <p>A filter that returns only jobs that were created for this versioned model package.</p>
+    pub fn get_model_package_version_arn_equals(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.model_package_version_arn_equals
     }
     /// Consumes the builder and constructs a [`ListInferenceRecommendationsJobsInput`](crate::operation::list_inference_recommendations_jobs::ListInferenceRecommendationsJobsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_inference_recommendations_jobs::ListInferenceRecommendationsJobsInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -46,6 +46,10 @@ impl DeleteReplicationInstanceInputBuilder {
         self.replication_instance_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the replication instance to be deleted.</p>
+    pub fn get_replication_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_instance_arn
+    }
     /// Consumes the builder and constructs a [`DeleteReplicationInstanceInput`](crate::operation::delete_replication_instance::DeleteReplicationInstanceInput).
     pub fn build(
         self,

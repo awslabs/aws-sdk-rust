@@ -101,6 +101,12 @@ impl DescribeLocalGatewayVirtualInterfaceGroupsInputBuilder {
         self.local_gateway_virtual_interface_group_ids = input;
         self
     }
+    /// <p>The IDs of the virtual interface groups.</p>
+    pub fn get_local_gateway_virtual_interface_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.local_gateway_virtual_interface_group_ids
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -132,6 +138,16 @@ impl DescribeLocalGatewayVirtualInterfaceGroupsInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>One or more filters.</p>
+    /// <ul>
+    /// <li> <p> <code>local-gateway-id</code> - The ID of a local gateway.</p> </li>
+    /// <li> <p> <code>local-gateway-virtual-interface-group-id</code> - The ID of the virtual interface group.</p> </li>
+    /// <li> <p> <code>local-gateway-virtual-interface-id</code> - The ID of the virtual interface.</p> </li>
+    /// <li> <p> <code>owner-id</code> - The ID of the Amazon Web Services account that owns the local gateway virtual interface group.</p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
+    }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -141,6 +157,10 @@ impl DescribeLocalGatewayVirtualInterfaceGroupsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -152,6 +172,10 @@ impl DescribeLocalGatewayVirtualInterfaceGroupsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -161,6 +185,10 @@ impl DescribeLocalGatewayVirtualInterfaceGroupsInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`DescribeLocalGatewayVirtualInterfaceGroupsInput`](crate::operation::describe_local_gateway_virtual_interface_groups::DescribeLocalGatewayVirtualInterfaceGroupsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_local_gateway_virtual_interface_groups::DescribeLocalGatewayVirtualInterfaceGroupsInput, ::aws_smithy_http::operation::error::BuildError>{

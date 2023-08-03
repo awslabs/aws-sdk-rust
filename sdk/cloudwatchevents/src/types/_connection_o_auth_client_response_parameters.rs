@@ -40,6 +40,10 @@ impl ConnectionOAuthClientResponseParametersBuilder {
         self.client_id = input;
         self
     }
+    /// <p>The client ID associated with the response to the connection request.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_id
+    }
     /// Consumes the builder and constructs a [`ConnectionOAuthClientResponseParameters`](crate::types::ConnectionOAuthClientResponseParameters).
     pub fn build(self) -> crate::types::ConnectionOAuthClientResponseParameters {
         crate::types::ConnectionOAuthClientResponseParameters {

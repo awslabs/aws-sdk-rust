@@ -64,6 +64,10 @@ impl DescribeTaskSetsInputBuilder {
         self.cluster = input;
         self
     }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task sets exist in.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster
+    }
     /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task sets exist in.</p>
     pub fn service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl DescribeTaskSetsInputBuilder {
     pub fn set_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service = input;
         self
+    }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task sets exist in.</p>
+    pub fn get_service(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service
     }
     /// Appends an item to `task_sets`.
     ///
@@ -93,6 +101,10 @@ impl DescribeTaskSetsInputBuilder {
         self.task_sets = input;
         self
     }
+    /// <p>The ID or full Amazon Resource Name (ARN) of task sets to describe.</p>
+    pub fn get_task_sets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.task_sets
+    }
     /// Appends an item to `include`.
     ///
     /// To override the contents of this collection use [`set_include`](Self::set_include).
@@ -111,6 +123,12 @@ impl DescribeTaskSetsInputBuilder {
     ) -> Self {
         self.include = input;
         self
+    }
+    /// <p>Specifies whether to see the resource tags for the task set. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
+    pub fn get_include(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskSetField>> {
+        &self.include
     }
     /// Consumes the builder and constructs a [`DescribeTaskSetsInput`](crate::operation::describe_task_sets::DescribeTaskSetsInput).
     pub fn build(

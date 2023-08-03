@@ -59,6 +59,10 @@ impl UpdateFlowEntitlementOutputBuilder {
         self.entitlement = input;
         self
     }
+    /// The new configuration of the entitlement that you updated.
+    pub fn get_entitlement(&self) -> &::std::option::Option<crate::types::Entitlement> {
+        &self.entitlement
+    }
     /// The ARN of the flow that this entitlement was granted on.
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl UpdateFlowEntitlementOutputBuilder {
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_arn = input;
         self
+    }
+    /// The ARN of the flow that this entitlement was granted on.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

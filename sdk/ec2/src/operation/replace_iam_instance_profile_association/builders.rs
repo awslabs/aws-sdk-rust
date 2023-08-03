@@ -37,6 +37,10 @@ impl ReplaceIamInstanceProfileAssociationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ReplaceIamInstanceProfileAssociation as a reference.
+    pub fn as_input(&self) -> &crate::operation::replace_iam_instance_profile_association::builders::ReplaceIamInstanceProfileAssociationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -107,6 +111,12 @@ impl ReplaceIamInstanceProfileAssociationFluentBuilder {
         self.inner = self.inner.set_iam_instance_profile(input);
         self
     }
+    /// <p>The IAM instance profile.</p>
+    pub fn get_iam_instance_profile(
+        &self,
+    ) -> &::std::option::Option<crate::types::IamInstanceProfileSpecification> {
+        self.inner.get_iam_instance_profile()
+    }
     /// <p>The ID of the existing IAM instance profile association.</p>
     pub fn association_id(
         mut self,
@@ -122,5 +132,9 @@ impl ReplaceIamInstanceProfileAssociationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_association_id(input);
         self
+    }
+    /// <p>The ID of the existing IAM instance profile association.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_association_id()
     }
 }

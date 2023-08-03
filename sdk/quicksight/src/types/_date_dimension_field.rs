@@ -97,6 +97,10 @@ impl DateDimensionFieldBuilder {
         self.field_id = input;
         self
     }
+    /// <p>The custom field ID.</p>
+    pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_id
+    }
     /// <p>The column that is used in the <code>DateDimensionField</code>.</p>
     pub fn column(mut self, input: crate::types::ColumnIdentifier) -> Self {
         self.column = ::std::option::Option::Some(input);
@@ -109,6 +113,10 @@ impl DateDimensionFieldBuilder {
     ) -> Self {
         self.column = input;
         self
+    }
+    /// <p>The column that is used in the <code>DateDimensionField</code>.</p>
+    pub fn get_column(&self) -> &::std::option::Option<crate::types::ColumnIdentifier> {
+        &self.column
     }
     /// <p>The date granularity of the <code>DateDimensionField</code>. Choose one of the following options:</p>
     /// <ul>
@@ -145,6 +153,21 @@ impl DateDimensionFieldBuilder {
         self.date_granularity = input;
         self
     }
+    /// <p>The date granularity of the <code>DateDimensionField</code>. Choose one of the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>YEAR</code> </p> </li>
+    /// <li> <p> <code>QUARTER</code> </p> </li>
+    /// <li> <p> <code>MONTH</code> </p> </li>
+    /// <li> <p> <code>WEEK</code> </p> </li>
+    /// <li> <p> <code>DAY</code> </p> </li>
+    /// <li> <p> <code>HOUR</code> </p> </li>
+    /// <li> <p> <code>MINUTE</code> </p> </li>
+    /// <li> <p> <code>SECOND</code> </p> </li>
+    /// <li> <p> <code>MILLISECOND</code> </p> </li>
+    /// </ul>
+    pub fn get_date_granularity(&self) -> &::std::option::Option<crate::types::TimeGranularity> {
+        &self.date_granularity
+    }
     /// <p>The custom hierarchy ID.</p>
     pub fn hierarchy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hierarchy_id = ::std::option::Option::Some(input.into());
@@ -154,6 +177,10 @@ impl DateDimensionFieldBuilder {
     pub fn set_hierarchy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hierarchy_id = input;
         self
+    }
+    /// <p>The custom hierarchy ID.</p>
+    pub fn get_hierarchy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hierarchy_id
     }
     /// <p>The format configuration of the field.</p>
     pub fn format_configuration(
@@ -170,6 +197,12 @@ impl DateDimensionFieldBuilder {
     ) -> Self {
         self.format_configuration = input;
         self
+    }
+    /// <p>The format configuration of the field.</p>
+    pub fn get_format_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DateTimeFormatConfiguration> {
+        &self.format_configuration
     }
     /// Consumes the builder and constructs a [`DateDimensionField`](crate::types::DateDimensionField).
     pub fn build(self) -> crate::types::DateDimensionField {

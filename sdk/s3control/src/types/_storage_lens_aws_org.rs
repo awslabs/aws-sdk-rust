@@ -40,6 +40,10 @@ impl StorageLensAwsOrgBuilder {
         self.arn = input;
         self
     }
+    /// <p>A container for the Amazon Resource Name (ARN) of the Amazon Web Services organization. This property is read-only and follows the following format: <code> arn:aws:organizations:<i>us-east-1</i>:<i>example-account-id</i>:organization/<i>o-ex2l495dck</i> </code> </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`StorageLensAwsOrg`](crate::types::StorageLensAwsOrg).
     pub fn build(self) -> crate::types::StorageLensAwsOrg {
         crate::types::StorageLensAwsOrg { arn: self.arn }

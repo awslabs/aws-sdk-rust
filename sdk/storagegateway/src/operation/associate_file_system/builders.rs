@@ -36,6 +36,12 @@ impl AssociateFileSystemFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateFileSystem as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::associate_file_system::builders::AssociateFileSystemInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl AssociateFileSystemFluentBuilder {
         self.inner = self.inner.set_user_name(input);
         self
     }
+    /// <p>The user name of the user credential that has permission to access the root share D$ of the Amazon FSx file system. The user account must belong to the Amazon FSx delegated admin user group.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_name()
+    }
     /// <p>The password of the user credential.</p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.password(input.into());
@@ -135,6 +145,10 @@ impl AssociateFileSystemFluentBuilder {
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_password(input);
         self
+    }
+    /// <p>The password of the user credential.</p>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_password()
     }
     /// <p>A unique string value that you supply that is used by the FSx File Gateway to ensure idempotent file system association creation.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -146,6 +160,10 @@ impl AssociateFileSystemFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>A unique string value that you supply that is used by the FSx File Gateway to ensure idempotent file system association creation.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gateway_arn(input.into());
@@ -156,6 +174,10 @@ impl AssociateFileSystemFluentBuilder {
         self.inner = self.inner.set_gateway_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gateway_arn()
+    }
     /// <p>The Amazon Resource Name (ARN) of the Amazon FSx file system to associate with the FSx File Gateway.</p>
     pub fn location_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.location_arn(input.into());
@@ -165,6 +187,10 @@ impl AssociateFileSystemFluentBuilder {
     pub fn set_location_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_location_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon FSx file system to associate with the FSx File Gateway.</p>
+    pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_location_arn()
     }
     /// Appends an item to `Tags`.
     ///
@@ -183,6 +209,10 @@ impl AssociateFileSystemFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>A list of up to 50 tags that can be assigned to the file system association. Each tag is a key-value pair.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
     pub fn audit_destination_arn(
         mut self,
@@ -199,6 +229,10 @@ impl AssociateFileSystemFluentBuilder {
         self.inner = self.inner.set_audit_destination_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
+    pub fn get_audit_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_audit_destination_arn()
+    }
     /// <p>The refresh cache information for the file share or FSx file systems.</p>
     pub fn cache_attributes(mut self, input: crate::types::CacheAttributes) -> Self {
         self.inner = self.inner.cache_attributes(input);
@@ -211,6 +245,10 @@ impl AssociateFileSystemFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cache_attributes(input);
         self
+    }
+    /// <p>The refresh cache information for the file share or FSx file systems.</p>
+    pub fn get_cache_attributes(&self) -> &::std::option::Option<crate::types::CacheAttributes> {
+        self.inner.get_cache_attributes()
     }
     /// <p>Specifies the network configuration information for the gateway associated with the Amazon FSx file system.</p> <note>
     /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p>
@@ -231,5 +269,13 @@ impl AssociateFileSystemFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_endpoint_network_configuration(input);
         self
+    }
+    /// <p>Specifies the network configuration information for the gateway associated with the Amazon FSx file system.</p> <note>
+    /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p>
+    /// </note>
+    pub fn get_endpoint_network_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::EndpointNetworkConfiguration> {
+        self.inner.get_endpoint_network_configuration()
     }
 }

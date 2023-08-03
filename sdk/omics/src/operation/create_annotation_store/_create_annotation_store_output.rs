@@ -96,6 +96,10 @@ impl CreateAnnotationStoreOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The store's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The store's genome reference. Required for all stores except TSV format with generic annotations.</p>
     pub fn reference(mut self, input: crate::types::ReferenceItem) -> Self {
         self.reference = ::std::option::Option::Some(input);
@@ -108,6 +112,10 @@ impl CreateAnnotationStoreOutputBuilder {
     ) -> Self {
         self.reference = input;
         self
+    }
+    /// <p>The store's genome reference. Required for all stores except TSV format with generic annotations.</p>
+    pub fn get_reference(&self) -> &::std::option::Option<crate::types::ReferenceItem> {
+        &self.reference
     }
     /// <p>The annotation file format of the store.</p>
     pub fn store_format(mut self, input: crate::types::StoreFormat) -> Self {
@@ -122,6 +130,10 @@ impl CreateAnnotationStoreOutputBuilder {
         self.store_format = input;
         self
     }
+    /// <p>The annotation file format of the store.</p>
+    pub fn get_store_format(&self) -> &::std::option::Option<crate::types::StoreFormat> {
+        &self.store_format
+    }
     /// <p>The store's file parsing options.</p>
     pub fn store_options(mut self, input: crate::types::StoreOptions) -> Self {
         self.store_options = ::std::option::Option::Some(input);
@@ -135,6 +147,10 @@ impl CreateAnnotationStoreOutputBuilder {
         self.store_options = input;
         self
     }
+    /// <p>The store's file parsing options.</p>
+    pub fn get_store_options(&self) -> &::std::option::Option<crate::types::StoreOptions> {
+        &self.store_options
+    }
     /// <p>The store's status.</p>
     pub fn status(mut self, input: crate::types::StoreStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -145,6 +161,10 @@ impl CreateAnnotationStoreOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The store's status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::StoreStatus> {
+        &self.status
+    }
     /// <p>The store's name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -154,6 +174,10 @@ impl CreateAnnotationStoreOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The store's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>When the store was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -167,6 +191,10 @@ impl CreateAnnotationStoreOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>When the store was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

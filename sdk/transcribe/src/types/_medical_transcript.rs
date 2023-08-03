@@ -50,6 +50,11 @@ impl MedicalTranscriptBuilder {
         self.transcript_file_uri = input;
         self
     }
+    /// <p>The Amazon S3 location of your transcript. You can use this URI to access or download your transcript.</p>
+    /// <p>Note that this is the Amazon S3 location you specified in your request using the <code>OutputBucketName</code> parameter.</p>
+    pub fn get_transcript_file_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transcript_file_uri
+    }
     /// Consumes the builder and constructs a [`MedicalTranscript`](crate::types::MedicalTranscript).
     pub fn build(self) -> crate::types::MedicalTranscript {
         crate::types::MedicalTranscript {

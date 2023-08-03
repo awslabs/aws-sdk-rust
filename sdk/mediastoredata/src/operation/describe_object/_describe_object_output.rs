@@ -80,6 +80,10 @@ impl DescribeObjectOutputBuilder {
         self.e_tag = input;
         self
     }
+    /// <p>The ETag that represents a unique instance of the object.</p>
+    pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.e_tag
+    }
     /// <p>The content type of the object.</p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl DescribeObjectOutputBuilder {
         self.content_type = input;
         self
     }
+    /// <p>The content type of the object.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
+    }
     /// <p>The length of the object in bytes.</p>
     pub fn content_length(mut self, input: i64) -> Self {
         self.content_length = ::std::option::Option::Some(input);
@@ -99,6 +107,10 @@ impl DescribeObjectOutputBuilder {
     pub fn set_content_length(mut self, input: ::std::option::Option<i64>) -> Self {
         self.content_length = input;
         self
+    }
+    /// <p>The length of the object in bytes.</p>
+    pub fn get_content_length(&self) -> &::std::option::Option<i64> {
+        &self.content_length
     }
     /// <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
     /// <p>Headers with a custom user-defined value are also accepted.</p>
@@ -118,6 +130,11 @@ impl DescribeObjectOutputBuilder {
         self.cache_control = input;
         self
     }
+    /// <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
+    /// <p>Headers with a custom user-defined value are also accepted.</p>
+    pub fn get_cache_control(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_control
+    }
     /// <p>The date and time that the object was last modified.</p>
     pub fn last_modified(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified = ::std::option::Option::Some(input);
@@ -130,6 +147,10 @@ impl DescribeObjectOutputBuilder {
     ) -> Self {
         self.last_modified = input;
         self
+    }
+    /// <p>The date and time that the object was last modified.</p>
+    pub fn get_last_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

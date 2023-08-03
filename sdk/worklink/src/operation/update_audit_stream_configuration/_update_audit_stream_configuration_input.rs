@@ -47,6 +47,10 @@ impl UpdateAuditStreamConfigurationInputBuilder {
         self.fleet_arn = input;
         self
     }
+    /// <p>The ARN of the fleet.</p>
+    pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_arn
+    }
     /// <p>The ARN of the Amazon Kinesis data stream that receives the audit events.</p>
     pub fn audit_stream_arn(
         mut self,
@@ -62,6 +66,10 @@ impl UpdateAuditStreamConfigurationInputBuilder {
     ) -> Self {
         self.audit_stream_arn = input;
         self
+    }
+    /// <p>The ARN of the Amazon Kinesis data stream that receives the audit events.</p>
+    pub fn get_audit_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.audit_stream_arn
     }
     /// Consumes the builder and constructs a [`UpdateAuditStreamConfigurationInput`](crate::operation::update_audit_stream_configuration::UpdateAuditStreamConfigurationInput).
     pub fn build(

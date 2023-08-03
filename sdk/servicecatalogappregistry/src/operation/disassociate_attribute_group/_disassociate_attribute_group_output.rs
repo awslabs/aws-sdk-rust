@@ -60,6 +60,10 @@ impl DisassociateAttributeGroupOutputBuilder {
         self.application_arn = input;
         self
     }
+    /// <p>The Amazon resource name (ARN) that specifies the application.</p>
+    pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_arn
+    }
     /// <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
     pub fn attribute_group_arn(
         mut self,
@@ -75,6 +79,10 @@ impl DisassociateAttributeGroupOutputBuilder {
     ) -> Self {
         self.attribute_group_arn = input;
         self
+    }
+    /// <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
+    pub fn get_attribute_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_group_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

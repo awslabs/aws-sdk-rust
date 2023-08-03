@@ -42,6 +42,10 @@ impl CreateReceiptFilterInputBuilder {
         self.filter = input;
         self
     }
+    /// <p>A data structure that describes the IP address filter to create, which consists of a name, an IP address range, and whether to allow or block mail from it.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::ReceiptFilter> {
+        &self.filter
+    }
     /// Consumes the builder and constructs a [`CreateReceiptFilterInput`](crate::operation::create_receipt_filter::CreateReceiptFilterInput).
     pub fn build(
         self,

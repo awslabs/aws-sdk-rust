@@ -36,6 +36,10 @@ impl StartExportFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartExport as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_export::builders::StartExportInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl StartExportFluentBuilder {
         self.inner = self.inner.set_s3_bucket(input);
         self
     }
+    /// <p>Start export request s3 bucket.</p>
+    pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_s3_bucket()
+    }
     /// <p>Start export request s3key.</p>
     pub fn s3_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.s3_key(input.into());
@@ -127,6 +135,10 @@ impl StartExportFluentBuilder {
     pub fn set_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_s3_key(input);
         self
+    }
+    /// <p>Start export request s3key.</p>
+    pub fn get_s3_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_s3_key()
     }
     /// <p>Start export request s3 bucket owner.</p>
     pub fn s3_bucket_owner(
@@ -143,5 +155,9 @@ impl StartExportFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_s3_bucket_owner(input);
         self
+    }
+    /// <p>Start export request s3 bucket owner.</p>
+    pub fn get_s3_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_s3_bucket_owner()
     }
 }

@@ -46,6 +46,10 @@ impl DeleteApplicationInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// Consumes the builder and constructs a [`DeleteApplicationInput`](crate::operation::delete_application::DeleteApplicationInput).
     pub fn build(
         self,

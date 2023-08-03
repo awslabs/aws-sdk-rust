@@ -42,6 +42,10 @@ impl ListReceiptRuleSetsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token returned from a previous call to <code>ListReceiptRuleSets</code> to indicate the position in the receipt rule set list.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Consumes the builder and constructs a [`ListReceiptRuleSetsInput`](crate::operation::list_receipt_rule_sets::ListReceiptRuleSetsInput).
     pub fn build(
         self,

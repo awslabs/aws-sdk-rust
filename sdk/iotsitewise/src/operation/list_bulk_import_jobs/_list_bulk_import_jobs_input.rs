@@ -56,6 +56,10 @@ impl ListBulkImportJobsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return for each paginated request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl ListBulkImportJobsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return for each paginated request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>You can use a filter to select the bulk import jobs that you want to retrieve.</p>
     pub fn filter(mut self, input: crate::types::ListBulkImportJobsFilter) -> Self {
@@ -78,6 +86,10 @@ impl ListBulkImportJobsInputBuilder {
     ) -> Self {
         self.filter = input;
         self
+    }
+    /// <p>You can use a filter to select the bulk import jobs that you want to retrieve.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::ListBulkImportJobsFilter> {
+        &self.filter
     }
     /// Consumes the builder and constructs a [`ListBulkImportJobsInput`](crate::operation::list_bulk_import_jobs::ListBulkImportJobsInput).
     pub fn build(

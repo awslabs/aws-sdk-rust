@@ -57,6 +57,12 @@ impl ResultRowBuilder {
         self.grouped_bys = input;
         self
     }
+    /// <p>An array of objects that defines the field and field values that were used to group data in a result set that contains multiple results. This value is null if the data in a result set isn’t grouped.</p>
+    pub fn get_grouped_bys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResultRowValue>> {
+        &self.grouped_bys
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -75,6 +81,12 @@ impl ResultRowBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>An array of objects that provides pre-aggregated values for a standard metric that applies to an application, campaign, or journey.</p>
+    pub fn get_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResultRowValue>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`ResultRow`](crate::types::ResultRow).
     pub fn build(self) -> crate::types::ResultRow {

@@ -203,6 +203,10 @@ impl CreateComponentDataBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the component</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The unique ID of the component in its original source system, such as Figma.</p>
     pub fn source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_id = ::std::option::Option::Some(input.into());
@@ -212,6 +216,10 @@ impl CreateComponentDataBuilder {
     pub fn set_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_id = input;
         self
+    }
+    /// <p>The unique ID of the component in its original source system, such as Figma.</p>
+    pub fn get_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_id
     }
     /// <p>The component type. This can be an Amplify custom UI component or another custom component.</p>
     pub fn component_type(
@@ -228,6 +236,10 @@ impl CreateComponentDataBuilder {
     ) -> Self {
         self.component_type = input;
         self
+    }
+    /// <p>The component type. This can be an Amplify custom UI component or another custom component.</p>
+    pub fn get_component_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_type
     }
     /// Adds a key-value pair to `properties`.
     ///
@@ -254,6 +266,14 @@ impl CreateComponentDataBuilder {
         self.properties = input;
         self
     }
+    /// <p>Describes the component's properties.</p>
+    pub fn get_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>,
+    > {
+        &self.properties
+    }
     /// Appends an item to `children`.
     ///
     /// To override the contents of this collection use [`set_children`](Self::set_children).
@@ -273,6 +293,12 @@ impl CreateComponentDataBuilder {
         self.children = input;
         self
     }
+    /// <p>A list of child components that are instances of the main component.</p>
+    pub fn get_children(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentChild>> {
+        &self.children
+    }
     /// Appends an item to `variants`.
     ///
     /// To override the contents of this collection use [`set_variants`](Self::set_variants).
@@ -291,6 +317,12 @@ impl CreateComponentDataBuilder {
     ) -> Self {
         self.variants = input;
         self
+    }
+    /// <p>A list of the unique variants of this component.</p>
+    pub fn get_variants(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentVariant>> {
+        &self.variants
     }
     /// Adds a key-value pair to `overrides`.
     ///
@@ -320,6 +352,17 @@ impl CreateComponentDataBuilder {
         self.overrides = input;
         self
     }
+    /// <p>Describes the component properties that can be overriden to customize an instance of the component.</p>
+    pub fn get_overrides(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+        >,
+    > {
+        &self.overrides
+    }
     /// Adds a key-value pair to `binding_properties`.
     ///
     /// To override the contents of this collection use [`set_binding_properties`](Self::set_binding_properties).
@@ -347,6 +390,17 @@ impl CreateComponentDataBuilder {
     ) -> Self {
         self.binding_properties = input;
         self
+    }
+    /// <p>The data binding information for the component's properties.</p>
+    pub fn get_binding_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::ComponentBindingPropertiesValue,
+        >,
+    > {
+        &self.binding_properties
     }
     /// Adds a key-value pair to `collection_properties`.
     ///
@@ -376,6 +430,17 @@ impl CreateComponentDataBuilder {
         self.collection_properties = input;
         self
     }
+    /// <p>The data binding configuration for customizing a component's properties. Use this for a collection component.</p>
+    pub fn get_collection_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::ComponentDataConfiguration,
+        >,
+    > {
+        &self.collection_properties
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -400,6 +465,14 @@ impl CreateComponentDataBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>One or more key-value pairs to use when tagging the component data.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Adds a key-value pair to `events`.
     ///
@@ -426,6 +499,14 @@ impl CreateComponentDataBuilder {
         self.events = input;
         self
     }
+    /// <p>The event configuration for the component. Use for the workflow feature in Amplify Studio that allows you to bind events and actions to components.</p>
+    pub fn get_events(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::ComponentEvent>,
+    > {
+        &self.events
+    }
     /// <p>The schema version of the component when it was imported.</p>
     pub fn schema_version(
         mut self,
@@ -441,6 +522,10 @@ impl CreateComponentDataBuilder {
     ) -> Self {
         self.schema_version = input;
         self
+    }
+    /// <p>The schema version of the component when it was imported.</p>
+    pub fn get_schema_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_version
     }
     /// Consumes the builder and constructs a [`CreateComponentData`](crate::types::CreateComponentData).
     pub fn build(self) -> crate::types::CreateComponentData {

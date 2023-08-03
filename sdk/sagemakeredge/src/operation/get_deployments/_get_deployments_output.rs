@@ -55,6 +55,12 @@ impl GetDeploymentsOutputBuilder {
         self.deployments = input;
         self
     }
+    /// <p>Returns a list of the configurations of the active deployments on the device.</p>
+    pub fn get_deployments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EdgeDeployment>> {
+        &self.deployments
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -36,6 +36,12 @@ impl DeleteUserAttributesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteUserAttributes as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_user_attributes::builders::DeleteUserAttributesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +144,13 @@ impl DeleteUserAttributesFluentBuilder {
         self.inner = self.inner.set_user_attribute_names(input);
         self
     }
+    /// <p>An array of strings representing the user attribute names you want to delete.</p>
+    /// <p>For custom attributes, you must prependattach the <code>custom:</code> prefix to the front of the attribute name.</p>
+    pub fn get_user_attribute_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_user_attribute_names()
+    }
     /// <p>A valid access token that Amazon Cognito issued to the user whose attributes you want to delete.</p>
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.access_token(input.into());
@@ -147,5 +160,9 @@ impl DeleteUserAttributesFluentBuilder {
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_access_token(input);
         self
+    }
+    /// <p>A valid access token that Amazon Cognito issued to the user whose attributes you want to delete.</p>
+    pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_access_token()
     }
 }

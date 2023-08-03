@@ -77,6 +77,12 @@ impl PostLaunchActionsBuilder {
         self.deployment = input;
         self
     }
+    /// <p>Deployment type in which AWS Systems Manager Documents will be executed.</p>
+    pub fn get_deployment(
+        &self,
+    ) -> &::std::option::Option<crate::types::PostLaunchActionsDeploymentType> {
+        &self.deployment
+    }
     /// <p>AWS Systems Manager Command's logs S3 log bucket.</p>
     pub fn s3_log_bucket(
         mut self,
@@ -92,6 +98,10 @@ impl PostLaunchActionsBuilder {
     ) -> Self {
         self.s3_log_bucket = input;
         self
+    }
+    /// <p>AWS Systems Manager Command's logs S3 log bucket.</p>
+    pub fn get_s3_log_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_log_bucket
     }
     /// <p>AWS Systems Manager Command's logs S3 output key prefix.</p>
     pub fn s3_output_key_prefix(
@@ -109,6 +119,10 @@ impl PostLaunchActionsBuilder {
         self.s3_output_key_prefix = input;
         self
     }
+    /// <p>AWS Systems Manager Command's logs S3 output key prefix.</p>
+    pub fn get_s3_output_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_output_key_prefix
+    }
     /// <p>AWS Systems Manager Command's CloudWatch log group name.</p>
     pub fn cloud_watch_log_group_name(
         mut self,
@@ -124,6 +138,10 @@ impl PostLaunchActionsBuilder {
     ) -> Self {
         self.cloud_watch_log_group_name = input;
         self
+    }
+    /// <p>AWS Systems Manager Command's CloudWatch log group name.</p>
+    pub fn get_cloud_watch_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cloud_watch_log_group_name
     }
     /// Appends an item to `ssm_documents`.
     ///
@@ -143,6 +161,12 @@ impl PostLaunchActionsBuilder {
     ) -> Self {
         self.ssm_documents = input;
         self
+    }
+    /// <p>AWS Systems Manager Documents.</p>
+    pub fn get_ssm_documents(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SsmDocument>> {
+        &self.ssm_documents
     }
     /// Consumes the builder and constructs a [`PostLaunchActions`](crate::types::PostLaunchActions).
     pub fn build(self) -> crate::types::PostLaunchActions {

@@ -128,6 +128,10 @@ impl IpamDiscoveredResourceCidrBuilder {
         self.ipam_resource_discovery_id = input;
         self
     }
+    /// <p>The resource discovery ID.</p>
+    pub fn get_ipam_resource_discovery_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipam_resource_discovery_id
+    }
     /// <p>The resource Region.</p>
     pub fn resource_region(
         mut self,
@@ -144,6 +148,10 @@ impl IpamDiscoveredResourceCidrBuilder {
         self.resource_region = input;
         self
     }
+    /// <p>The resource Region.</p>
+    pub fn get_resource_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_region
+    }
     /// <p>The resource ID.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -153,6 +161,10 @@ impl IpamDiscoveredResourceCidrBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The resource ID.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>The resource owner ID.</p>
     pub fn resource_owner_id(
@@ -170,6 +182,10 @@ impl IpamDiscoveredResourceCidrBuilder {
         self.resource_owner_id = input;
         self
     }
+    /// <p>The resource owner ID.</p>
+    pub fn get_resource_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_owner_id
+    }
     /// <p>The resource CIDR.</p>
     pub fn resource_cidr(
         mut self,
@@ -186,6 +202,10 @@ impl IpamDiscoveredResourceCidrBuilder {
         self.resource_cidr = input;
         self
     }
+    /// <p>The resource CIDR.</p>
+    pub fn get_resource_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_cidr
+    }
     /// <p>The resource type.</p>
     pub fn resource_type(mut self, input: crate::types::IpamResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -198,6 +218,10 @@ impl IpamDiscoveredResourceCidrBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The resource type.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::IpamResourceType> {
+        &self.resource_type
     }
     /// Appends an item to `resource_tags`.
     ///
@@ -217,6 +241,12 @@ impl IpamDiscoveredResourceCidrBuilder {
     ) -> Self {
         self.resource_tags = input;
         self
+    }
+    /// <p>The resource tags.</p>
+    pub fn get_resource_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpamResourceTag>> {
+        &self.resource_tags
     }
     /// <p>The percentage of IP address space in use. To convert the decimal to a percentage, multiply the decimal by 100. Note the following:</p>
     /// <ul>
@@ -238,6 +268,15 @@ impl IpamDiscoveredResourceCidrBuilder {
         self.ip_usage = input;
         self
     }
+    /// <p>The percentage of IP address space in use. To convert the decimal to a percentage, multiply the decimal by 100. Note the following:</p>
+    /// <ul>
+    /// <li> <p>For resources that are VPCs, this is the percentage of IP address space in the VPC that's taken up by subnet CIDRs. </p> </li>
+    /// <li> <p>For resources that are subnets, if the subnet has an IPv4 CIDR provisioned to it, this is the percentage of IPv4 address space in the subnet that's in use. If the subnet has an IPv6 CIDR provisioned to it, the percentage of IPv6 address space in use is not represented. The percentage of IPv6 address space in use cannot currently be calculated. </p> </li>
+    /// <li> <p>For resources that are public IPv4 pools, this is the percentage of IP address space in the pool that's been allocated to Elastic IP addresses (EIPs). </p> </li>
+    /// </ul>
+    pub fn get_ip_usage(&self) -> &::std::option::Option<f64> {
+        &self.ip_usage
+    }
     /// <p>The VPC ID.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -247,6 +286,10 @@ impl IpamDiscoveredResourceCidrBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The VPC ID.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// <p>The last successful resource discovery time.</p>
     pub fn sample_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -260,6 +303,10 @@ impl IpamDiscoveredResourceCidrBuilder {
     ) -> Self {
         self.sample_time = input;
         self
+    }
+    /// <p>The last successful resource discovery time.</p>
+    pub fn get_sample_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.sample_time
     }
     /// Consumes the builder and constructs a [`IpamDiscoveredResourceCidr`](crate::types::IpamDiscoveredResourceCidr).
     pub fn build(self) -> crate::types::IpamDiscoveredResourceCidr {

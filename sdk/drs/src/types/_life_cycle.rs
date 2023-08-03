@@ -78,6 +78,10 @@ impl LifeCycleBuilder {
         self.added_to_service_date_time = input;
         self
     }
+    /// <p>The date and time of when the Source Server was added to the service.</p>
+    pub fn get_added_to_service_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.added_to_service_date_time
+    }
     /// <p>The date and time of the first byte that was replicated from the Source Server.</p>
     pub fn first_byte_date_time(
         mut self,
@@ -93,6 +97,10 @@ impl LifeCycleBuilder {
     ) -> Self {
         self.first_byte_date_time = input;
         self
+    }
+    /// <p>The date and time of the first byte that was replicated from the Source Server.</p>
+    pub fn get_first_byte_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.first_byte_date_time
     }
     /// <p>The amount of time that the Source Server has been replicating for.</p>
     pub fn elapsed_replication_duration(
@@ -110,6 +118,12 @@ impl LifeCycleBuilder {
         self.elapsed_replication_duration = input;
         self
     }
+    /// <p>The amount of time that the Source Server has been replicating for.</p>
+    pub fn get_elapsed_replication_duration(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.elapsed_replication_duration
+    }
     /// <p>The date and time this Source Server was last seen by the service.</p>
     pub fn last_seen_by_service_date_time(
         mut self,
@@ -126,6 +140,12 @@ impl LifeCycleBuilder {
         self.last_seen_by_service_date_time = input;
         self
     }
+    /// <p>The date and time this Source Server was last seen by the service.</p>
+    pub fn get_last_seen_by_service_date_time(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.last_seen_by_service_date_time
+    }
     /// <p>An object containing information regarding the last launch of the Source Server.</p>
     pub fn last_launch(mut self, input: crate::types::LifeCycleLastLaunch) -> Self {
         self.last_launch = ::std::option::Option::Some(input);
@@ -138,6 +158,10 @@ impl LifeCycleBuilder {
     ) -> Self {
         self.last_launch = input;
         self
+    }
+    /// <p>An object containing information regarding the last launch of the Source Server.</p>
+    pub fn get_last_launch(&self) -> &::std::option::Option<crate::types::LifeCycleLastLaunch> {
+        &self.last_launch
     }
     /// Consumes the builder and constructs a [`LifeCycle`](crate::types::LifeCycle).
     pub fn build(self) -> crate::types::LifeCycle {

@@ -47,6 +47,10 @@ impl UpdateTrustInputBuilder {
         self.trust_id = input;
         self
     }
+    /// <p>Identifier of the trust relationship.</p>
+    pub fn get_trust_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trust_id
+    }
     /// <p>Updates selective authentication for the trust.</p>
     pub fn selective_auth(mut self, input: crate::types::SelectiveAuth) -> Self {
         self.selective_auth = ::std::option::Option::Some(input);
@@ -59,6 +63,10 @@ impl UpdateTrustInputBuilder {
     ) -> Self {
         self.selective_auth = input;
         self
+    }
+    /// <p>Updates selective authentication for the trust.</p>
+    pub fn get_selective_auth(&self) -> &::std::option::Option<crate::types::SelectiveAuth> {
+        &self.selective_auth
     }
     /// Consumes the builder and constructs a [`UpdateTrustInput`](crate::operation::update_trust::UpdateTrustInput).
     pub fn build(

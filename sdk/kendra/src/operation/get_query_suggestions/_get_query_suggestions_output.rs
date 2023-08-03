@@ -62,6 +62,10 @@ impl GetQuerySuggestionsOutputBuilder {
         self.query_suggestions_id = input;
         self
     }
+    /// <p>The identifier for a list of query suggestions for an index.</p>
+    pub fn get_query_suggestions_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_suggestions_id
+    }
     /// Appends an item to `suggestions`.
     ///
     /// To override the contents of this collection use [`set_suggestions`](Self::set_suggestions).
@@ -80,6 +84,12 @@ impl GetQuerySuggestionsOutputBuilder {
     ) -> Self {
         self.suggestions = input;
         self
+    }
+    /// <p>A list of query suggestions for an index.</p>
+    pub fn get_suggestions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Suggestion>> {
+        &self.suggestions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -40,6 +40,10 @@ impl ApplicationSnapshotConfigurationDescriptionBuilder {
         self.snapshots_enabled = input;
         self
     }
+    /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
+    pub fn get_snapshots_enabled(&self) -> &::std::option::Option<bool> {
+        &self.snapshots_enabled
+    }
     /// Consumes the builder and constructs a [`ApplicationSnapshotConfigurationDescription`](crate::types::ApplicationSnapshotConfigurationDescription).
     pub fn build(self) -> crate::types::ApplicationSnapshotConfigurationDescription {
         crate::types::ApplicationSnapshotConfigurationDescription {

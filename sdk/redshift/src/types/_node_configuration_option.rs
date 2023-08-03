@@ -64,6 +64,10 @@ impl NodeConfigurationOptionBuilder {
         self.node_type = input;
         self
     }
+    /// <p>The node type, such as, "ds2.8xlarge".</p>
+    pub fn get_node_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_type
+    }
     /// <p>The number of nodes.</p>
     pub fn number_of_nodes(mut self, input: i32) -> Self {
         self.number_of_nodes = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl NodeConfigurationOptionBuilder {
     pub fn set_number_of_nodes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_nodes = input;
         self
+    }
+    /// <p>The number of nodes.</p>
+    pub fn get_number_of_nodes(&self) -> &::std::option::Option<i32> {
+        &self.number_of_nodes
     }
     /// <p>The estimated disk utilizaton percentage.</p>
     pub fn estimated_disk_utilization_percent(mut self, input: f64) -> Self {
@@ -87,6 +95,10 @@ impl NodeConfigurationOptionBuilder {
         self.estimated_disk_utilization_percent = input;
         self
     }
+    /// <p>The estimated disk utilizaton percentage.</p>
+    pub fn get_estimated_disk_utilization_percent(&self) -> &::std::option::Option<f64> {
+        &self.estimated_disk_utilization_percent
+    }
     /// <p>The category of the node configuration recommendation.</p>
     pub fn mode(mut self, input: crate::types::Mode) -> Self {
         self.mode = ::std::option::Option::Some(input);
@@ -96,6 +108,10 @@ impl NodeConfigurationOptionBuilder {
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::Mode>) -> Self {
         self.mode = input;
         self
+    }
+    /// <p>The category of the node configuration recommendation.</p>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::Mode> {
+        &self.mode
     }
     /// Consumes the builder and constructs a [`NodeConfigurationOption`](crate::types::NodeConfigurationOption).
     pub fn build(self) -> crate::types::NodeConfigurationOption {

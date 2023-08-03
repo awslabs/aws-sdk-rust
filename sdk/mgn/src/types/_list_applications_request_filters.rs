@@ -68,6 +68,12 @@ impl ListApplicationsRequestFiltersBuilder {
         self.application_i_ds = input;
         self
     }
+    /// <p>Filter applications list by application ID.</p>
+    pub fn get_application_i_ds(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.application_i_ds
+    }
     /// <p>Filter applications list by archival status.</p>
     pub fn is_archived(mut self, input: bool) -> Self {
         self.is_archived = ::std::option::Option::Some(input);
@@ -77,6 +83,10 @@ impl ListApplicationsRequestFiltersBuilder {
     pub fn set_is_archived(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_archived = input;
         self
+    }
+    /// <p>Filter applications list by archival status.</p>
+    pub fn get_is_archived(&self) -> &::std::option::Option<bool> {
+        &self.is_archived
     }
     /// Appends an item to `wave_i_ds`.
     ///
@@ -96,6 +106,10 @@ impl ListApplicationsRequestFiltersBuilder {
     ) -> Self {
         self.wave_i_ds = input;
         self
+    }
+    /// <p>Filter applications list by wave ID.</p>
+    pub fn get_wave_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.wave_i_ds
     }
     /// Consumes the builder and constructs a [`ListApplicationsRequestFilters`](crate::types::ListApplicationsRequestFilters).
     pub fn build(self) -> crate::types::ListApplicationsRequestFilters {

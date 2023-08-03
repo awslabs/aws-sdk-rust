@@ -73,6 +73,10 @@ impl IdentityUsageBuilder {
         self
     }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    pub fn get_identity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_id
+    }
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub fn identity_pool_id(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -88,6 +92,10 @@ impl IdentityUsageBuilder {
         self.identity_pool_id = input;
         self
     }
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_pool_id
+    }
     /// Date on which the identity was last modified.
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input);
@@ -101,6 +109,10 @@ impl IdentityUsageBuilder {
         self.last_modified_date = input;
         self
     }
+    /// Date on which the identity was last modified.
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_date
+    }
     /// Number of datasets for the identity.
     pub fn dataset_count(mut self, input: i32) -> Self {
         self.dataset_count = ::std::option::Option::Some(input);
@@ -111,6 +123,10 @@ impl IdentityUsageBuilder {
         self.dataset_count = input;
         self
     }
+    /// Number of datasets for the identity.
+    pub fn get_dataset_count(&self) -> &::std::option::Option<i32> {
+        &self.dataset_count
+    }
     /// Total data storage for this identity.
     pub fn data_storage(mut self, input: i64) -> Self {
         self.data_storage = ::std::option::Option::Some(input);
@@ -120,6 +136,10 @@ impl IdentityUsageBuilder {
     pub fn set_data_storage(mut self, input: ::std::option::Option<i64>) -> Self {
         self.data_storage = input;
         self
+    }
+    /// Total data storage for this identity.
+    pub fn get_data_storage(&self) -> &::std::option::Option<i64> {
+        &self.data_storage
     }
     /// Consumes the builder and constructs a [`IdentityUsage`](crate::types::IdentityUsage).
     pub fn build(self) -> crate::types::IdentityUsage {

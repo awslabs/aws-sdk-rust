@@ -40,6 +40,10 @@ impl MemberAccountBuilder {
         self.account_id = input;
         self
     }
+    /// <p>(Discontinued) The Amazon Web Services account ID of the Amazon Macie Classic member account.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// Consumes the builder and constructs a [`MemberAccount`](crate::types::MemberAccount).
     pub fn build(self) -> crate::types::MemberAccount {
         crate::types::MemberAccount {

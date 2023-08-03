@@ -102,6 +102,12 @@ impl OrganizationConformancePackStatusBuilder {
         self.organization_conformance_pack_name = input;
         self
     }
+    /// <p>The name that you assign to organization conformance pack.</p>
+    pub fn get_organization_conformance_pack_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.organization_conformance_pack_name
+    }
     /// <p>Indicates deployment status of an organization conformance pack. When management account calls PutOrganizationConformancePack for the first time, conformance pack status is created in all the member accounts. When management account calls PutOrganizationConformancePack for the second time, conformance pack status is updated in all the member accounts. Additionally, conformance pack status is updated when one or more member accounts join or leave an organization. Conformance pack status is deleted when the management account deletes OrganizationConformancePack in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
     /// <p>Config sets the state of the conformance pack to:</p>
     /// <ul>
@@ -139,6 +145,22 @@ impl OrganizationConformancePackStatusBuilder {
         self.status = input;
         self
     }
+    /// <p>Indicates deployment status of an organization conformance pack. When management account calls PutOrganizationConformancePack for the first time, conformance pack status is created in all the member accounts. When management account calls PutOrganizationConformancePack for the second time, conformance pack status is updated in all the member accounts. Additionally, conformance pack status is updated when one or more member accounts join or leave an organization. Conformance pack status is deleted when the management account deletes OrganizationConformancePack in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
+    /// <p>Config sets the state of the conformance pack to:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATE_SUCCESSFUL</code> when an organization conformance pack has been successfully created in all the member accounts. </p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> when an organization conformance pack creation is in progress.</p> </li>
+    /// <li> <p> <code>CREATE_FAILED</code> when an organization conformance pack creation failed in one or more member accounts within that organization.</p> </li>
+    /// <li> <p> <code>DELETE_FAILED</code> when an organization conformance pack deletion failed in one or more member accounts within that organization.</p> </li>
+    /// <li> <p> <code>DELETE_IN_PROGRESS</code> when an organization conformance pack deletion is in progress.</p> </li>
+    /// <li> <p> <code>DELETE_SUCCESSFUL</code> when an organization conformance pack has been successfully deleted from all the member accounts.</p> </li>
+    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> when an organization conformance pack has been successfully updated in all the member accounts.</p> </li>
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when an organization conformance pack update is in progress.</p> </li>
+    /// <li> <p> <code>UPDATE_FAILED</code> when an organization conformance pack update failed in one or more member accounts within that organization.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::OrganizationResourceStatus> {
+        &self.status
+    }
     /// <p>An error code that is returned when organization conformance pack creation or deletion has failed in a member account. </p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
@@ -148,6 +170,10 @@ impl OrganizationConformancePackStatusBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>An error code that is returned when organization conformance pack creation or deletion has failed in a member account. </p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
     }
     /// <p>An error message indicating that organization conformance pack creation or deletion failed due to an error. </p>
     pub fn error_message(
@@ -165,6 +191,10 @@ impl OrganizationConformancePackStatusBuilder {
         self.error_message = input;
         self
     }
+    /// <p>An error message indicating that organization conformance pack creation or deletion failed due to an error. </p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// <p>The timestamp of the last update.</p>
     pub fn last_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_update_time = ::std::option::Option::Some(input);
@@ -177,6 +207,10 @@ impl OrganizationConformancePackStatusBuilder {
     ) -> Self {
         self.last_update_time = input;
         self
+    }
+    /// <p>The timestamp of the last update.</p>
+    pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_update_time
     }
     /// Consumes the builder and constructs a [`OrganizationConformancePackStatus`](crate::types::OrganizationConformancePackStatus).
     pub fn build(self) -> crate::types::OrganizationConformancePackStatus {

@@ -45,6 +45,12 @@ impl WebvttDestinationSettingsBuilder {
         self.style_control = input;
         self
     }
+    /// Controls whether the color and position of the source captions is passed through to the WebVTT output captions. PASSTHROUGH - Valid only if the source captions are EMBEDDED or TELETEXT. NO_STYLE_DATA - Don't pass through the style. The output captions will not contain any font styling information.
+    pub fn get_style_control(
+        &self,
+    ) -> &::std::option::Option<crate::types::WebvttDestinationStyleControl> {
+        &self.style_control
+    }
     /// Consumes the builder and constructs a [`WebvttDestinationSettings`](crate::types::WebvttDestinationSettings).
     pub fn build(self) -> crate::types::WebvttDestinationSettings {
         crate::types::WebvttDestinationSettings {

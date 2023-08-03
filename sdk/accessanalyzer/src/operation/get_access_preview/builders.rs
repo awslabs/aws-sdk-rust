@@ -36,6 +36,12 @@ impl GetAccessPreviewFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetAccessPreview as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_access_preview::builders::GetAccessPreviewInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl GetAccessPreviewFluentBuilder {
         self.inner = self.inner.set_access_preview_id(input);
         self
     }
+    /// <p>The unique ID for the access preview.</p>
+    pub fn get_access_preview_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_access_preview_id()
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access preview.</p>
     pub fn analyzer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.analyzer_arn(input.into());
@@ -141,5 +151,9 @@ impl GetAccessPreviewFluentBuilder {
     pub fn set_analyzer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_analyzer_arn(input);
         self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access preview.</p>
+    pub fn get_analyzer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_analyzer_arn()
     }
 }

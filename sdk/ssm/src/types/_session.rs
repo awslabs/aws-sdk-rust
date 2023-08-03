@@ -120,6 +120,10 @@ impl SessionBuilder {
         self.session_id = input;
         self
     }
+    /// <p>The ID of the session.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
+    }
     /// <p>The managed node that the Session Manager session connected to.</p>
     pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target = ::std::option::Option::Some(input.into());
@@ -130,6 +134,10 @@ impl SessionBuilder {
         self.target = input;
         self
     }
+    /// <p>The managed node that the Session Manager session connected to.</p>
+    pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target
+    }
     /// <p>The status of the session. For example, "Connected" or "Terminated".</p>
     pub fn status(mut self, input: crate::types::SessionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -139,6 +147,10 @@ impl SessionBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SessionStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the session. For example, "Connected" or "Terminated".</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SessionStatus> {
+        &self.status
     }
     /// <p>The date and time, in ISO-8601 Extended format, when the session began.</p>
     pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -153,6 +165,10 @@ impl SessionBuilder {
         self.start_date = input;
         self
     }
+    /// <p>The date and time, in ISO-8601 Extended format, when the session began.</p>
+    pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_date
+    }
     /// <p>The date and time, in ISO-8601 Extended format, when the session was terminated.</p>
     pub fn end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_date = ::std::option::Option::Some(input);
@@ -165,6 +181,10 @@ impl SessionBuilder {
     ) -> Self {
         self.end_date = input;
         self
+    }
+    /// <p>The date and time, in ISO-8601 Extended format, when the session was terminated.</p>
+    pub fn get_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_date
     }
     /// <p>The name of the Session Manager SSM document used to define the parameters and plugin settings for the session. For example, <code>SSM-SessionManagerRunShell</code>.</p>
     pub fn document_name(
@@ -182,6 +202,10 @@ impl SessionBuilder {
         self.document_name = input;
         self
     }
+    /// <p>The name of the Session Manager SSM document used to define the parameters and plugin settings for the session. For example, <code>SSM-SessionManagerRunShell</code>.</p>
+    pub fn get_document_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_name
+    }
     /// <p>The ID of the Amazon Web Services user that started the session.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner = ::std::option::Option::Some(input.into());
@@ -191,6 +215,10 @@ impl SessionBuilder {
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner = input;
         self
+    }
+    /// <p>The ID of the Amazon Web Services user that started the session.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
     }
     /// <p>The reason for connecting to the instance.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -202,6 +230,10 @@ impl SessionBuilder {
         self.reason = input;
         self
     }
+    /// <p>The reason for connecting to the instance.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
+    }
     /// <p>Reserved for future use.</p>
     pub fn details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.details = ::std::option::Option::Some(input.into());
@@ -211,6 +243,10 @@ impl SessionBuilder {
     pub fn set_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.details = input;
         self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_details(&self) -> &::std::option::Option<::std::string::String> {
+        &self.details
     }
     /// <p>Reserved for future use.</p>
     pub fn output_url(mut self, input: crate::types::SessionManagerOutputUrl) -> Self {
@@ -224,6 +260,10 @@ impl SessionBuilder {
     ) -> Self {
         self.output_url = input;
         self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_output_url(&self) -> &::std::option::Option<crate::types::SessionManagerOutputUrl> {
+        &self.output_url
     }
     /// <p>The maximum duration of a session before it terminates.</p>
     pub fn max_session_duration(
@@ -240,6 +280,10 @@ impl SessionBuilder {
     ) -> Self {
         self.max_session_duration = input;
         self
+    }
+    /// <p>The maximum duration of a session before it terminates.</p>
+    pub fn get_max_session_duration(&self) -> &::std::option::Option<::std::string::String> {
+        &self.max_session_duration
     }
     /// Consumes the builder and constructs a [`Session`](crate::types::Session).
     pub fn build(self) -> crate::types::Session {

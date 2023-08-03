@@ -57,6 +57,12 @@ impl CreateVolumePermissionModificationsBuilder {
         self.add = input;
         self
     }
+    /// <p>Adds the specified Amazon Web Services account ID or group to the list.</p>
+    pub fn get_add(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateVolumePermission>> {
+        &self.add
+    }
     /// Appends an item to `remove`.
     ///
     /// To override the contents of this collection use [`set_remove`](Self::set_remove).
@@ -75,6 +81,12 @@ impl CreateVolumePermissionModificationsBuilder {
     ) -> Self {
         self.remove = input;
         self
+    }
+    /// <p>Removes the specified Amazon Web Services account ID or group from the list.</p>
+    pub fn get_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateVolumePermission>> {
+        &self.remove
     }
     /// Consumes the builder and constructs a [`CreateVolumePermissionModifications`](crate::types::CreateVolumePermissionModifications).
     pub fn build(self) -> crate::types::CreateVolumePermissionModifications {

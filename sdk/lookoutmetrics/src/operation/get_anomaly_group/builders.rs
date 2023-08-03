@@ -36,6 +36,12 @@ impl GetAnomalyGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetAnomalyGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_anomaly_group::builders::GetAnomalyGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl GetAnomalyGroupFluentBuilder {
         self.inner = self.inner.set_anomaly_group_id(input);
         self
     }
+    /// <p>The ID of the anomaly group.</p>
+    pub fn get_anomaly_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_anomaly_group_id()
+    }
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
     pub fn anomaly_detector_arn(
         mut self,
@@ -147,5 +157,9 @@ impl GetAnomalyGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_anomaly_detector_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    pub fn get_anomaly_detector_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_anomaly_detector_arn()
     }
 }

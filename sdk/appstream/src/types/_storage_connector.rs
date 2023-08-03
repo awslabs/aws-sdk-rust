@@ -59,6 +59,10 @@ impl StorageConnectorBuilder {
         self.connector_type = input;
         self
     }
+    /// <p>The type of storage connector.</p>
+    pub fn get_connector_type(&self) -> &::std::option::Option<crate::types::StorageConnectorType> {
+        &self.connector_type
+    }
     /// <p>The ARN of the storage connector.</p>
     pub fn resource_identifier(
         mut self,
@@ -74,6 +78,10 @@ impl StorageConnectorBuilder {
     ) -> Self {
         self.resource_identifier = input;
         self
+    }
+    /// <p>The ARN of the storage connector.</p>
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_identifier
     }
     /// Appends an item to `domains`.
     ///
@@ -93,6 +101,10 @@ impl StorageConnectorBuilder {
     ) -> Self {
         self.domains = input;
         self
+    }
+    /// <p>The names of the domains for the account.</p>
+    pub fn get_domains(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.domains
     }
     /// Consumes the builder and constructs a [`StorageConnector`](crate::types::StorageConnector).
     pub fn build(self) -> crate::types::StorageConnector {

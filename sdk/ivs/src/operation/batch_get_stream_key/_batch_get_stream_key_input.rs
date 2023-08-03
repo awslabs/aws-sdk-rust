@@ -49,6 +49,10 @@ impl BatchGetStreamKeyInputBuilder {
         self.arns = input;
         self
     }
+    /// <p>Array of ARNs, one per stream key.</p>
+    pub fn get_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.arns
+    }
     /// Consumes the builder and constructs a [`BatchGetStreamKeyInput`](crate::operation::batch_get_stream_key::BatchGetStreamKeyInput).
     pub fn build(
         self,

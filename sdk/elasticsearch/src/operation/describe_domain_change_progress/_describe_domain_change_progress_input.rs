@@ -48,6 +48,10 @@ impl DescribeDomainChangeProgressInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The domain you want to get the progress information about.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The specific change ID for which you want to get progress information. This is an optional parameter. If omitted, the service returns information about the most recent configuration change. </p>
     pub fn change_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl DescribeDomainChangeProgressInputBuilder {
     pub fn set_change_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_id = input;
         self
+    }
+    /// <p>The specific change ID for which you want to get progress information. This is an optional parameter. If omitted, the service returns information about the most recent configuration change. </p>
+    pub fn get_change_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_id
     }
     /// Consumes the builder and constructs a [`DescribeDomainChangeProgressInput`](crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressInput).
     pub fn build(

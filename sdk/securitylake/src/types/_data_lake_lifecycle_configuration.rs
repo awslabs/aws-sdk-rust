@@ -55,6 +55,12 @@ impl DataLakeLifecycleConfigurationBuilder {
         self.expiration = input;
         self
     }
+    /// <p>Provides data expiration details of Amazon Security Lake object.</p>
+    pub fn get_expiration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataLakeLifecycleExpiration> {
+        &self.expiration
+    }
     /// Appends an item to `transitions`.
     ///
     /// To override the contents of this collection use [`set_transitions`](Self::set_transitions).
@@ -73,6 +79,12 @@ impl DataLakeLifecycleConfigurationBuilder {
     ) -> Self {
         self.transitions = input;
         self
+    }
+    /// <p>Provides data storage transition details of Amazon Security Lake object.</p>
+    pub fn get_transitions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakeLifecycleTransition>> {
+        &self.transitions
     }
     /// Consumes the builder and constructs a [`DataLakeLifecycleConfiguration`](crate::types::DataLakeLifecycleConfiguration).
     pub fn build(self) -> crate::types::DataLakeLifecycleConfiguration {

@@ -76,6 +76,10 @@ impl ServiceFaultBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
+    #[allow(missing_docs)] // documentation missing in model
     pub fn turk_error_code(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -90,6 +94,10 @@ impl ServiceFaultBuilder {
     ) -> Self {
         self.turk_error_code = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_turk_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.turk_error_code
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

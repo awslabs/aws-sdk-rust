@@ -362,6 +362,10 @@ impl BuildBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique ID for the build.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Amazon Resource Name (ARN) of the build.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -372,6 +376,10 @@ impl BuildBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the build.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The number of the build. For each project, the <code>buildNumber</code> of its first build is <code>1</code>. The <code>buildNumber</code> of each subsequent build is incremented by <code>1</code>. If a build is deleted, the <code>buildNumber</code> of other builds does not change.</p>
     pub fn build_number(mut self, input: i64) -> Self {
         self.build_number = ::std::option::Option::Some(input);
@@ -381,6 +389,10 @@ impl BuildBuilder {
     pub fn set_build_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.build_number = input;
         self
+    }
+    /// <p>The number of the build. For each project, the <code>buildNumber</code> of its first build is <code>1</code>. The <code>buildNumber</code> of each subsequent build is incremented by <code>1</code>. If a build is deleted, the <code>buildNumber</code> of other builds does not change.</p>
+    pub fn get_build_number(&self) -> &::std::option::Option<i64> {
+        &self.build_number
     }
     /// <p>When the build process started, expressed in Unix time format.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -395,6 +407,10 @@ impl BuildBuilder {
         self.start_time = input;
         self
     }
+    /// <p>When the build process started, expressed in Unix time format.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>When the build process ended, expressed in Unix time format.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -407,6 +423,10 @@ impl BuildBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>When the build process ended, expressed in Unix time format.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// <p>The current build phase.</p>
     pub fn current_phase(
@@ -423,6 +443,10 @@ impl BuildBuilder {
     ) -> Self {
         self.current_phase = input;
         self
+    }
+    /// <p>The current build phase.</p>
+    pub fn get_current_phase(&self) -> &::std::option::Option<::std::string::String> {
+        &self.current_phase
     }
     /// <p>The current status of the build. Valid values include:</p>
     /// <ul>
@@ -453,6 +477,18 @@ impl BuildBuilder {
         self.build_status = input;
         self
     }
+    /// <p>The current status of the build. Valid values include:</p>
+    /// <ul>
+    /// <li> <p> <code>FAILED</code>: The build failed.</p> </li>
+    /// <li> <p> <code>FAULT</code>: The build faulted.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code>: The build is still in progress.</p> </li>
+    /// <li> <p> <code>STOPPED</code>: The build stopped.</p> </li>
+    /// <li> <p> <code>SUCCEEDED</code>: The build succeeded.</p> </li>
+    /// <li> <p> <code>TIMED_OUT</code>: The build timed out.</p> </li>
+    /// </ul>
+    pub fn get_build_status(&self) -> &::std::option::Option<crate::types::StatusType> {
+        &self.build_status
+    }
     /// <p>Any version identifier for the version of the source code to be built. If <code>sourceVersion</code> is specified at the project level, then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
     /// <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
     pub fn source_version(
@@ -470,6 +506,11 @@ impl BuildBuilder {
     ) -> Self {
         self.source_version = input;
         self
+    }
+    /// <p>Any version identifier for the version of the source code to be built. If <code>sourceVersion</code> is specified at the project level, then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
+    /// <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
+    pub fn get_source_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_version
     }
     /// <p> An identifier for the version of this build's source code. </p>
     /// <ul>
@@ -497,6 +538,15 @@ impl BuildBuilder {
         self.resolved_source_version = input;
         self
     }
+    /// <p> An identifier for the version of this build's source code. </p>
+    /// <ul>
+    /// <li> <p> For CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID. </p> </li>
+    /// <li> <p> For CodePipeline, the source revision provided by CodePipeline. </p> </li>
+    /// <li> <p> For Amazon S3, this does not apply. </p> </li>
+    /// </ul>
+    pub fn get_resolved_source_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resolved_source_version
+    }
     /// <p>The name of the CodeBuild project.</p>
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
@@ -506,6 +556,10 @@ impl BuildBuilder {
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_name = input;
         self
+    }
+    /// <p>The name of the CodeBuild project.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
     }
     /// Appends an item to `phases`.
     ///
@@ -526,6 +580,10 @@ impl BuildBuilder {
         self.phases = input;
         self
     }
+    /// <p>Information about all previous build phases that are complete and information about any current build phase that is not yet complete.</p>
+    pub fn get_phases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BuildPhase>> {
+        &self.phases
+    }
     /// <p>Information about the source code to be built.</p>
     pub fn source(mut self, input: crate::types::ProjectSource) -> Self {
         self.source = ::std::option::Option::Some(input);
@@ -535,6 +593,10 @@ impl BuildBuilder {
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::ProjectSource>) -> Self {
         self.source = input;
         self
+    }
+    /// <p>Information about the source code to be built.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::ProjectSource> {
+        &self.source
     }
     /// Appends an item to `secondary_sources`.
     ///
@@ -554,6 +616,12 @@ impl BuildBuilder {
     ) -> Self {
         self.secondary_sources = input;
         self
+    }
+    /// <p> An array of <code>ProjectSource</code> objects. </p>
+    pub fn get_secondary_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectSource>> {
+        &self.secondary_sources
     }
     /// Appends an item to `secondary_source_versions`.
     ///
@@ -586,6 +654,18 @@ impl BuildBuilder {
         self.secondary_source_versions = input;
         self
     }
+    /// <p> An array of <code>ProjectSourceVersion</code> objects. Each <code>ProjectSourceVersion</code> must be one of: </p>
+    /// <ul>
+    /// <li> <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li>
+    /// <li> <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
+    /// <li> <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
+    /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li>
+    /// </ul>
+    pub fn get_secondary_source_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectSourceVersion>> {
+        &self.secondary_source_versions
+    }
     /// <p>Information about the output artifacts for the build.</p>
     pub fn artifacts(mut self, input: crate::types::BuildArtifacts) -> Self {
         self.artifacts = ::std::option::Option::Some(input);
@@ -598,6 +678,10 @@ impl BuildBuilder {
     ) -> Self {
         self.artifacts = input;
         self
+    }
+    /// <p>Information about the output artifacts for the build.</p>
+    pub fn get_artifacts(&self) -> &::std::option::Option<crate::types::BuildArtifacts> {
+        &self.artifacts
     }
     /// Appends an item to `secondary_artifacts`.
     ///
@@ -618,6 +702,12 @@ impl BuildBuilder {
         self.secondary_artifacts = input;
         self
     }
+    /// <p> An array of <code>ProjectArtifacts</code> objects. </p>
+    pub fn get_secondary_artifacts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BuildArtifacts>> {
+        &self.secondary_artifacts
+    }
     /// <p>Information about the cache for the build.</p>
     pub fn cache(mut self, input: crate::types::ProjectCache) -> Self {
         self.cache = ::std::option::Option::Some(input);
@@ -627,6 +717,10 @@ impl BuildBuilder {
     pub fn set_cache(mut self, input: ::std::option::Option<crate::types::ProjectCache>) -> Self {
         self.cache = input;
         self
+    }
+    /// <p>Information about the cache for the build.</p>
+    pub fn get_cache(&self) -> &::std::option::Option<crate::types::ProjectCache> {
+        &self.cache
     }
     /// <p>Information about the build environment for this build.</p>
     pub fn environment(mut self, input: crate::types::ProjectEnvironment) -> Self {
@@ -641,6 +735,10 @@ impl BuildBuilder {
         self.environment = input;
         self
     }
+    /// <p>Information about the build environment for this build.</p>
+    pub fn get_environment(&self) -> &::std::option::Option<crate::types::ProjectEnvironment> {
+        &self.environment
+    }
     /// <p>The name of a service role used for this build.</p>
     pub fn service_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_role = ::std::option::Option::Some(input.into());
@@ -650,6 +748,10 @@ impl BuildBuilder {
     pub fn set_service_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_role = input;
         self
+    }
+    /// <p>The name of a service role used for this build.</p>
+    pub fn get_service_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_role
     }
     /// <p>Information about the build's logs in CloudWatch Logs.</p>
     pub fn logs(mut self, input: crate::types::LogsLocation) -> Self {
@@ -661,6 +763,10 @@ impl BuildBuilder {
         self.logs = input;
         self
     }
+    /// <p>Information about the build's logs in CloudWatch Logs.</p>
+    pub fn get_logs(&self) -> &::std::option::Option<crate::types::LogsLocation> {
+        &self.logs
+    }
     /// <p>How long, in minutes, for CodeBuild to wait before timing out this build if it does not get marked as completed.</p>
     pub fn timeout_in_minutes(mut self, input: i32) -> Self {
         self.timeout_in_minutes = ::std::option::Option::Some(input);
@@ -670,6 +776,10 @@ impl BuildBuilder {
     pub fn set_timeout_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timeout_in_minutes = input;
         self
+    }
+    /// <p>How long, in minutes, for CodeBuild to wait before timing out this build if it does not get marked as completed.</p>
+    pub fn get_timeout_in_minutes(&self) -> &::std::option::Option<i32> {
+        &self.timeout_in_minutes
     }
     /// <p> The number of minutes a build is allowed to be queued before it times out. </p>
     pub fn queued_timeout_in_minutes(mut self, input: i32) -> Self {
@@ -681,6 +791,10 @@ impl BuildBuilder {
         self.queued_timeout_in_minutes = input;
         self
     }
+    /// <p> The number of minutes a build is allowed to be queued before it times out. </p>
+    pub fn get_queued_timeout_in_minutes(&self) -> &::std::option::Option<i32> {
+        &self.queued_timeout_in_minutes
+    }
     /// <p>Whether the build is complete. True if complete; otherwise, false.</p>
     pub fn build_complete(mut self, input: bool) -> Self {
         self.build_complete = ::std::option::Option::Some(input);
@@ -690,6 +804,10 @@ impl BuildBuilder {
     pub fn set_build_complete(mut self, input: ::std::option::Option<bool>) -> Self {
         self.build_complete = input;
         self
+    }
+    /// <p>Whether the build is complete. True if complete; otherwise, false.</p>
+    pub fn get_build_complete(&self) -> &::std::option::Option<bool> {
+        &self.build_complete
     }
     /// <p>The entity that started the build. Valid values include:</p>
     /// <ul>
@@ -711,6 +829,15 @@ impl BuildBuilder {
         self.initiator = input;
         self
     }
+    /// <p>The entity that started the build. Valid values include:</p>
+    /// <ul>
+    /// <li> <p>If CodePipeline started the build, the pipeline's name (for example, <code>codepipeline/my-demo-pipeline</code>).</p> </li>
+    /// <li> <p>If an IAM user started the build, the user's name (for example, <code>MyUserName</code>).</p> </li>
+    /// <li> <p>If the Jenkins plugin for CodeBuild started the build, the string <code>CodeBuild-Jenkins-Plugin</code>.</p> </li>
+    /// </ul>
+    pub fn get_initiator(&self) -> &::std::option::Option<::std::string::String> {
+        &self.initiator
+    }
     /// <p>If your CodeBuild project accesses resources in an Amazon VPC, you provide this parameter that identifies the VPC ID and the list of security group IDs and subnet IDs. The security groups and subnets must belong to the same VPC. You must provide at least one security group and one subnet ID.</p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
         self.vpc_config = ::std::option::Option::Some(input);
@@ -720,6 +847,10 @@ impl BuildBuilder {
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
         self.vpc_config = input;
         self
+    }
+    /// <p>If your CodeBuild project accesses resources in an Amazon VPC, you provide this parameter that identifies the VPC ID and the list of security group IDs and subnet IDs. The security groups and subnets must belong to the same VPC. You must provide at least one security group and one subnet ID.</p>
+    pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
+        &self.vpc_config
     }
     /// <p>Describes a network interface.</p>
     pub fn network_interface(mut self, input: crate::types::NetworkInterface) -> Self {
@@ -733,6 +864,10 @@ impl BuildBuilder {
     ) -> Self {
         self.network_interface = input;
         self
+    }
+    /// <p>Describes a network interface.</p>
+    pub fn get_network_interface(&self) -> &::std::option::Option<crate::types::NetworkInterface> {
+        &self.network_interface
     }
     /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note>
     /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
@@ -758,6 +893,14 @@ impl BuildBuilder {
         self.encryption_key = input;
         self
     }
+    /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note>
+    /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
+    /// </note>
+    /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
+    /// <alias-name></alias-name></code>).</p>
+    pub fn get_encryption_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encryption_key
+    }
     /// Appends an item to `exported_environment_variables`.
     ///
     /// To override the contents of this collection use [`set_exported_environment_variables`](Self::set_exported_environment_variables).
@@ -782,6 +925,13 @@ impl BuildBuilder {
         self.exported_environment_variables = input;
         self
     }
+    /// <p>A list of exported environment variables for this build.</p>
+    /// <p>Exported environment variables are used in conjunction with CodePipeline to export environment variables from the current build stage to subsequent stages in the pipeline. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html">Working with variables</a> in the <i>CodePipeline User Guide</i>.</p>
+    pub fn get_exported_environment_variables(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportedEnvironmentVariable>> {
+        &self.exported_environment_variables
+    }
     /// Appends an item to `report_arns`.
     ///
     /// To override the contents of this collection use [`set_report_arns`](Self::set_report_arns).
@@ -800,6 +950,12 @@ impl BuildBuilder {
     ) -> Self {
         self.report_arns = input;
         self
+    }
+    /// <p> An array of the ARNs associated with this build's reports. </p>
+    pub fn get_report_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.report_arns
     }
     /// Appends an item to `file_system_locations`.
     ///
@@ -820,6 +976,12 @@ impl BuildBuilder {
         self.file_system_locations = input;
         self
     }
+    /// <p> An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System. </p>
+    pub fn get_file_system_locations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectFileSystemLocation>> {
+        &self.file_system_locations
+    }
     /// <p>Contains information about the debug session for this build.</p>
     pub fn debug_session(mut self, input: crate::types::DebugSession) -> Self {
         self.debug_session = ::std::option::Option::Some(input);
@@ -832,6 +994,10 @@ impl BuildBuilder {
     ) -> Self {
         self.debug_session = input;
         self
+    }
+    /// <p>Contains information about the debug session for this build.</p>
+    pub fn get_debug_session(&self) -> &::std::option::Option<crate::types::DebugSession> {
+        &self.debug_session
     }
     /// <p>The ARN of the batch build that this build is a member of, if applicable.</p>
     pub fn build_batch_arn(
@@ -848,6 +1014,10 @@ impl BuildBuilder {
     ) -> Self {
         self.build_batch_arn = input;
         self
+    }
+    /// <p>The ARN of the batch build that this build is a member of, if applicable.</p>
+    pub fn get_build_batch_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.build_batch_arn
     }
     /// Consumes the builder and constructs a [`Build`](crate::types::Build).
     pub fn build(self) -> crate::types::Build {

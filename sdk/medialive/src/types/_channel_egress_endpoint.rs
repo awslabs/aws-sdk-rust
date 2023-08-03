@@ -40,6 +40,10 @@ impl ChannelEgressEndpointBuilder {
         self.source_ip = input;
         self
     }
+    /// Public IP of where a channel's output comes from
+    pub fn get_source_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_ip
+    }
     /// Consumes the builder and constructs a [`ChannelEgressEndpoint`](crate::types::ChannelEgressEndpoint).
     pub fn build(self) -> crate::types::ChannelEgressEndpoint {
         crate::types::ChannelEgressEndpoint {

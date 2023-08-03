@@ -63,6 +63,10 @@ impl GetCardinalityInputBuilder {
         self.index_name = input;
         self
     }
+    /// <p>The name of the index to search.</p>
+    pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_name
+    }
     /// <p>The search query string.</p>
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_string = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl GetCardinalityInputBuilder {
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_string = input;
         self
+    }
+    /// <p>The search query string.</p>
+    pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_string
     }
     /// <p>The field to aggregate.</p>
     pub fn aggregation_field(
@@ -89,6 +97,10 @@ impl GetCardinalityInputBuilder {
         self.aggregation_field = input;
         self
     }
+    /// <p>The field to aggregate.</p>
+    pub fn get_aggregation_field(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aggregation_field
+    }
     /// <p>The query version.</p>
     pub fn query_version(
         mut self,
@@ -104,6 +116,10 @@ impl GetCardinalityInputBuilder {
     ) -> Self {
         self.query_version = input;
         self
+    }
+    /// <p>The query version.</p>
+    pub fn get_query_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_version
     }
     /// Consumes the builder and constructs a [`GetCardinalityInput`](crate::operation::get_cardinality::GetCardinalityInput).
     pub fn build(

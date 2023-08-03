@@ -104,6 +104,10 @@ impl QueryStageBuilder {
         self.stage_id = input;
         self
     }
+    /// <p>The identifier for a stage.</p>
+    pub fn get_stage_id(&self) -> &::std::option::Option<i64> {
+        &self.stage_id
+    }
     /// <p>State of the stage after query execution.</p>
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state = ::std::option::Option::Some(input.into());
@@ -113,6 +117,10 @@ impl QueryStageBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>State of the stage after query execution.</p>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
     }
     /// <p>The number of bytes output from the stage after execution.</p>
     pub fn output_bytes(mut self, input: i64) -> Self {
@@ -124,6 +132,10 @@ impl QueryStageBuilder {
         self.output_bytes = input;
         self
     }
+    /// <p>The number of bytes output from the stage after execution.</p>
+    pub fn get_output_bytes(&self) -> &::std::option::Option<i64> {
+        &self.output_bytes
+    }
     /// <p>The number of rows output from the stage after execution.</p>
     pub fn output_rows(mut self, input: i64) -> Self {
         self.output_rows = ::std::option::Option::Some(input);
@@ -133,6 +145,10 @@ impl QueryStageBuilder {
     pub fn set_output_rows(mut self, input: ::std::option::Option<i64>) -> Self {
         self.output_rows = input;
         self
+    }
+    /// <p>The number of rows output from the stage after execution.</p>
+    pub fn get_output_rows(&self) -> &::std::option::Option<i64> {
+        &self.output_rows
     }
     /// <p>The number of bytes input into the stage for execution.</p>
     pub fn input_bytes(mut self, input: i64) -> Self {
@@ -144,6 +160,10 @@ impl QueryStageBuilder {
         self.input_bytes = input;
         self
     }
+    /// <p>The number of bytes input into the stage for execution.</p>
+    pub fn get_input_bytes(&self) -> &::std::option::Option<i64> {
+        &self.input_bytes
+    }
     /// <p>The number of rows input into the stage for execution.</p>
     pub fn input_rows(mut self, input: i64) -> Self {
         self.input_rows = ::std::option::Option::Some(input);
@@ -154,6 +174,10 @@ impl QueryStageBuilder {
         self.input_rows = input;
         self
     }
+    /// <p>The number of rows input into the stage for execution.</p>
+    pub fn get_input_rows(&self) -> &::std::option::Option<i64> {
+        &self.input_rows
+    }
     /// <p>Time taken to execute this stage.</p>
     pub fn execution_time(mut self, input: i64) -> Self {
         self.execution_time = ::std::option::Option::Some(input);
@@ -163,6 +187,10 @@ impl QueryStageBuilder {
     pub fn set_execution_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.execution_time = input;
         self
+    }
+    /// <p>Time taken to execute this stage.</p>
+    pub fn get_execution_time(&self) -> &::std::option::Option<i64> {
+        &self.execution_time
     }
     /// <p>Stage plan information such as name, identifier, sub plans, and source stages.</p>
     pub fn query_stage_plan(mut self, input: crate::types::QueryStagePlanNode) -> Self {
@@ -176,6 +204,10 @@ impl QueryStageBuilder {
     ) -> Self {
         self.query_stage_plan = input;
         self
+    }
+    /// <p>Stage plan information such as name, identifier, sub plans, and source stages.</p>
+    pub fn get_query_stage_plan(&self) -> &::std::option::Option<crate::types::QueryStagePlanNode> {
+        &self.query_stage_plan
     }
     /// Appends an item to `sub_stages`.
     ///
@@ -195,6 +227,12 @@ impl QueryStageBuilder {
     ) -> Self {
         self.sub_stages = input;
         self
+    }
+    /// <p>List of sub query stages that form this stage execution plan.</p>
+    pub fn get_sub_stages(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryStage>> {
+        &self.sub_stages
     }
     /// Consumes the builder and constructs a [`QueryStage`](crate::types::QueryStage).
     pub fn build(self) -> crate::types::QueryStage {

@@ -57,6 +57,10 @@ impl AttachInstancesToLoadBalancerInputBuilder {
         self.load_balancer_name = input;
         self
     }
+    /// <p>The name of the load balancer.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.load_balancer_name
+    }
     /// Appends an item to `instance_names`.
     ///
     /// To override the contents of this collection use [`set_instance_names`](Self::set_instance_names).
@@ -82,6 +86,14 @@ impl AttachInstancesToLoadBalancerInputBuilder {
     ) -> Self {
         self.instance_names = input;
         self
+    }
+    /// <p>An array of strings representing the instance name(s) you want to attach to your load balancer.</p>
+    /// <p>An instance must be <code>running</code> before you can attach it to your load balancer.</p>
+    /// <p>There are no additional limits on the number of instances you can attach to your load balancer, aside from the limit of Lightsail instances you can create in your account (20).</p>
+    pub fn get_instance_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.instance_names
     }
     /// Consumes the builder and constructs a [`AttachInstancesToLoadBalancerInput`](crate::operation::attach_instances_to_load_balancer::AttachInstancesToLoadBalancerInput).
     pub fn build(

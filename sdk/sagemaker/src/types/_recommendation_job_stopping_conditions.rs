@@ -52,6 +52,10 @@ impl RecommendationJobStoppingConditionsBuilder {
         self.max_invocations = input;
         self
     }
+    /// <p>The maximum number of requests per minute expected for the endpoint.</p>
+    pub fn get_max_invocations(&self) -> &::std::option::Option<i32> {
+        &self.max_invocations
+    }
     /// Appends an item to `model_latency_thresholds`.
     ///
     /// To override the contents of this collection use [`set_model_latency_thresholds`](Self::set_model_latency_thresholds).
@@ -70,6 +74,12 @@ impl RecommendationJobStoppingConditionsBuilder {
     ) -> Self {
         self.model_latency_thresholds = input;
         self
+    }
+    /// <p>The interval of time taken by a model to respond as viewed from SageMaker. The interval includes the local communication time taken to send the request and to fetch the response from the container of a model and the time taken to complete the inference in the container.</p>
+    pub fn get_model_latency_thresholds(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelLatencyThreshold>> {
+        &self.model_latency_thresholds
     }
     /// Consumes the builder and constructs a [`RecommendationJobStoppingConditions`](crate::types::RecommendationJobStoppingConditions).
     pub fn build(self) -> crate::types::RecommendationJobStoppingConditions {

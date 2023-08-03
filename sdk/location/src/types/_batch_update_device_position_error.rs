@@ -56,6 +56,10 @@ impl BatchUpdateDevicePositionErrorBuilder {
         self.device_id = input;
         self
     }
+    /// <p>The device associated with the failed location update.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_id
+    }
     /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn sample_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.sample_time = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl BatchUpdateDevicePositionErrorBuilder {
         self.sample_time = input;
         self
     }
+    /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    pub fn get_sample_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.sample_time
+    }
     /// <p>Contains details related to the error code such as the error code and error message.</p>
     pub fn error(mut self, input: crate::types::BatchItemError) -> Self {
         self.error = ::std::option::Option::Some(input);
@@ -78,6 +86,10 @@ impl BatchUpdateDevicePositionErrorBuilder {
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::BatchItemError>) -> Self {
         self.error = input;
         self
+    }
+    /// <p>Contains details related to the error code such as the error code and error message.</p>
+    pub fn get_error(&self) -> &::std::option::Option<crate::types::BatchItemError> {
+        &self.error
     }
     /// Consumes the builder and constructs a [`BatchUpdateDevicePositionError`](crate::types::BatchUpdateDevicePositionError).
     pub fn build(self) -> crate::types::BatchUpdateDevicePositionError {

@@ -48,6 +48,10 @@ impl AssociatedClientDeviceBuilder {
         self.thing_name = input;
         self
     }
+    /// <p>The name of the IoT thing that represents the associated client device.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_name
+    }
     /// <p>The time that the client device was associated, expressed in ISO 8601 format.</p>
     pub fn association_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.association_timestamp = ::std::option::Option::Some(input);
@@ -60,6 +64,12 @@ impl AssociatedClientDeviceBuilder {
     ) -> Self {
         self.association_timestamp = input;
         self
+    }
+    /// <p>The time that the client device was associated, expressed in ISO 8601 format.</p>
+    pub fn get_association_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.association_timestamp
     }
     /// Consumes the builder and constructs a [`AssociatedClientDevice`](crate::types::AssociatedClientDevice).
     pub fn build(self) -> crate::types::AssociatedClientDevice {

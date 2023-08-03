@@ -61,6 +61,12 @@ impl DescribeClientPropertiesOutputBuilder {
         self.client_properties_list = input;
         self
     }
+    /// <p>Information about the specified Amazon WorkSpaces clients.</p>
+    pub fn get_client_properties_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClientPropertiesResult>> {
+        &self.client_properties_list
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

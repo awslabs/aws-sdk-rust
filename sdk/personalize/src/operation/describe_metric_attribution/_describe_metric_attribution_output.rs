@@ -49,6 +49,12 @@ impl DescribeMetricAttributionOutputBuilder {
         self.metric_attribution = input;
         self
     }
+    /// <p>The details of the metric attribution.</p>
+    pub fn get_metric_attribution(
+        &self,
+    ) -> &::std::option::Option<crate::types::MetricAttribution> {
+        &self.metric_attribution
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

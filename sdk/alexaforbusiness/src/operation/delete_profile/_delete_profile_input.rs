@@ -39,6 +39,10 @@ impl DeleteProfileInputBuilder {
         self.profile_arn = input;
         self
     }
+    /// <p>The ARN of the room profile to delete. Required.</p>
+    pub fn get_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_arn
+    }
     /// Consumes the builder and constructs a [`DeleteProfileInput`](crate::operation::delete_profile::DeleteProfileInput).
     pub fn build(
         self,

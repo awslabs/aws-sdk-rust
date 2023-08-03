@@ -93,6 +93,10 @@ impl InsightImpactGraphServiceBuilder {
         self
     }
     /// <p>Identifier for the service. Unique within the service map.</p>
+    pub fn get_reference_id(&self) -> &::std::option::Option<i32> {
+        &self.reference_id
+    }
+    /// <p>Identifier for the service. Unique within the service map.</p>
     /// <ul>
     /// <li> <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, AWS::EC2::Instance for an application running on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used. </p> </li>
     /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li>
@@ -114,6 +118,16 @@ impl InsightImpactGraphServiceBuilder {
         self.r#type = input;
         self
     }
+    /// <p>Identifier for the service. Unique within the service map.</p>
+    /// <ul>
+    /// <li> <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, AWS::EC2::Instance for an application running on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used. </p> </li>
+    /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li>
+    /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li>
+    /// <li> <p>remote - A downstream service of indeterminate type.</p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p>The canonical name of the service.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -123,6 +137,10 @@ impl InsightImpactGraphServiceBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The canonical name of the service.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `names`.
     ///
@@ -143,6 +161,10 @@ impl InsightImpactGraphServiceBuilder {
         self.names = input;
         self
     }
+    /// <p>A list of names for the service, including the canonical name.</p>
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.names
+    }
     /// <p>Identifier of the Amazon Web Services account in which the service runs.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -152,6 +174,10 @@ impl InsightImpactGraphServiceBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>Identifier of the Amazon Web Services account in which the service runs.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// Appends an item to `edges`.
     ///
@@ -171,6 +197,12 @@ impl InsightImpactGraphServiceBuilder {
     ) -> Self {
         self.edges = input;
         self
+    }
+    /// <p>Connections to downstream services.</p>
+    pub fn get_edges(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightImpactGraphEdge>> {
+        &self.edges
     }
     /// Consumes the builder and constructs a [`InsightImpactGraphService`](crate::types::InsightImpactGraphService).
     pub fn build(self) -> crate::types::InsightImpactGraphService {

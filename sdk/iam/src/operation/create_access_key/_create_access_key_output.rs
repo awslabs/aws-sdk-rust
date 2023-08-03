@@ -48,6 +48,10 @@ impl CreateAccessKeyOutputBuilder {
         self.access_key = input;
         self
     }
+    /// <p>A structure with details about the access key.</p>
+    pub fn get_access_key(&self) -> &::std::option::Option<crate::types::AccessKey> {
+        &self.access_key
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

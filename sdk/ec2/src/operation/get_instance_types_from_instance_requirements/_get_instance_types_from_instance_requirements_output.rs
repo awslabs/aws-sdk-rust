@@ -74,6 +74,14 @@ impl GetInstanceTypesFromInstanceRequirementsOutputBuilder {
         self.instance_types = input;
         self
     }
+    /// <p>The instance types with the specified instance attributes.</p>
+    pub fn get_instance_types(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::InstanceTypeInfoFromInstanceRequirements>,
+    > {
+        &self.instance_types
+    }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl GetInstanceTypesFromInstanceRequirementsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

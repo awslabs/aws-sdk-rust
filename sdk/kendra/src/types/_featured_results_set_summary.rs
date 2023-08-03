@@ -78,6 +78,10 @@ impl FeaturedResultsSetSummaryBuilder {
         self.featured_results_set_id = input;
         self
     }
+    /// <p>The identifier of the set of featured results.</p>
+    pub fn get_featured_results_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.featured_results_set_id
+    }
     /// <p>The name for the set of featured results.</p>
     pub fn featured_results_set_name(
         mut self,
@@ -94,6 +98,10 @@ impl FeaturedResultsSetSummaryBuilder {
         self.featured_results_set_name = input;
         self
     }
+    /// <p>The name for the set of featured results.</p>
+    pub fn get_featured_results_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.featured_results_set_name
+    }
     /// <p>The current status of the set of featured results. When the value is <code>ACTIVE</code>, featured results are ready for use. You can still configure your settings before setting the status to <code>ACTIVE</code>. You can set the status to <code>ACTIVE</code> or <code>INACTIVE</code> using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateFeaturedResultsSet.html">UpdateFeaturedResultsSet</a> API. The queries you specify for featured results must be unique per featured results set for each index, whether the status is <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
     pub fn status(mut self, input: crate::types::FeaturedResultsSetStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -107,6 +115,10 @@ impl FeaturedResultsSetSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The current status of the set of featured results. When the value is <code>ACTIVE</code>, featured results are ready for use. You can still configure your settings before setting the status to <code>ACTIVE</code>. You can set the status to <code>ACTIVE</code> or <code>INACTIVE</code> using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateFeaturedResultsSet.html">UpdateFeaturedResultsSet</a> API. The queries you specify for featured results must be unique per featured results set for each index, whether the status is <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::FeaturedResultsSetStatus> {
+        &self.status
+    }
     /// <p>The Unix timestamp when the set of featured results was last updated.</p>
     pub fn last_updated_timestamp(mut self, input: i64) -> Self {
         self.last_updated_timestamp = ::std::option::Option::Some(input);
@@ -117,6 +129,10 @@ impl FeaturedResultsSetSummaryBuilder {
         self.last_updated_timestamp = input;
         self
     }
+    /// <p>The Unix timestamp when the set of featured results was last updated.</p>
+    pub fn get_last_updated_timestamp(&self) -> &::std::option::Option<i64> {
+        &self.last_updated_timestamp
+    }
     /// <p>The Unix timestamp when the set of featured results was created.</p>
     pub fn creation_timestamp(mut self, input: i64) -> Self {
         self.creation_timestamp = ::std::option::Option::Some(input);
@@ -126,6 +142,10 @@ impl FeaturedResultsSetSummaryBuilder {
     pub fn set_creation_timestamp(mut self, input: ::std::option::Option<i64>) -> Self {
         self.creation_timestamp = input;
         self
+    }
+    /// <p>The Unix timestamp when the set of featured results was created.</p>
+    pub fn get_creation_timestamp(&self) -> &::std::option::Option<i64> {
+        &self.creation_timestamp
     }
     /// Consumes the builder and constructs a [`FeaturedResultsSetSummary`](crate::types::FeaturedResultsSetSummary).
     pub fn build(self) -> crate::types::FeaturedResultsSetSummary {

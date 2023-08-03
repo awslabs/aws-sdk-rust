@@ -54,6 +54,12 @@ impl MapConfigurationUpdateBuilder {
         self.political_view = input;
         self
     }
+    /// <p>Specifies the political view for the style. Set to an empty string to not use a political view, or, for styles that support specific political views, you can choose a view, such as <code>IND</code> for the Indian view.</p> <note>
+    /// <p>Not all map resources or styles support political view styles. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#political-views">Political views</a> for more information.</p>
+    /// </note>
+    pub fn get_political_view(&self) -> &::std::option::Option<::std::string::String> {
+        &self.political_view
+    }
     /// Consumes the builder and constructs a [`MapConfigurationUpdate`](crate::types::MapConfigurationUpdate).
     pub fn build(self) -> crate::types::MapConfigurationUpdate {
         crate::types::MapConfigurationUpdate {

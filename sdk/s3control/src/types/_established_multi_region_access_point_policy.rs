@@ -41,6 +41,10 @@ impl EstablishedMultiRegionAccessPointPolicyBuilder {
         self.policy = input;
         self
     }
+    /// <p>The details of the last established policy.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy
+    }
     /// Consumes the builder and constructs a [`EstablishedMultiRegionAccessPointPolicy`](crate::types::EstablishedMultiRegionAccessPointPolicy).
     pub fn build(self) -> crate::types::EstablishedMultiRegionAccessPointPolicy {
         crate::types::EstablishedMultiRegionAccessPointPolicy {

@@ -70,6 +70,10 @@ impl PutBucketIntelligentTieringConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutBucketIntelligentTieringConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_bucket_intelligent_tiering_configuration::builders::PutBucketIntelligentTieringConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -134,6 +138,10 @@ impl PutBucketIntelligentTieringConfigurationFluentBuilder {
         self.inner = self.inner.set_bucket(input);
         self
     }
+    /// <p>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bucket()
+    }
     /// <p>The ID used to identify the S3 Intelligent-Tiering configuration.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
@@ -143,6 +151,10 @@ impl PutBucketIntelligentTieringConfigurationFluentBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
+    }
+    /// <p>The ID used to identify the S3 Intelligent-Tiering configuration.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
     }
     /// <p>Container for S3 Intelligent-Tiering configuration.</p>
     pub fn intelligent_tiering_configuration(
@@ -159,5 +171,11 @@ impl PutBucketIntelligentTieringConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_intelligent_tiering_configuration(input);
         self
+    }
+    /// <p>Container for S3 Intelligent-Tiering configuration.</p>
+    pub fn get_intelligent_tiering_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::IntelligentTieringConfiguration> {
+        self.inner.get_intelligent_tiering_configuration()
     }
 }

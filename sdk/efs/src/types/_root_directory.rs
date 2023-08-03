@@ -52,6 +52,10 @@ impl RootDirectoryBuilder {
         self.path = input;
         self
     }
+    /// <p>Specifies the path on the EFS file system to expose as the root directory to NFS clients using the access point to access the EFS file system. A path can have up to four subdirectories. If the specified path does not exist, you are required to provide the <code>CreationInfo</code>.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
+    }
     /// <p>(Optional) Specifies the POSIX IDs and permissions to apply to the access point's <code>RootDirectory</code>. If the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist, EFS creates the root directory using the <code>CreationInfo</code> settings when a client connects to an access point. When specifying the <code>CreationInfo</code>, you must provide values for all properties. </p> <important>
     /// <p>If you do not provide <code>CreationInfo</code> and the specified <code>RootDirectory</code> &gt; <code>Path</code> does not exist, attempts to mount the file system using the access point will fail.</p>
     /// </important>
@@ -68,6 +72,12 @@ impl RootDirectoryBuilder {
     ) -> Self {
         self.creation_info = input;
         self
+    }
+    /// <p>(Optional) Specifies the POSIX IDs and permissions to apply to the access point's <code>RootDirectory</code>. If the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist, EFS creates the root directory using the <code>CreationInfo</code> settings when a client connects to an access point. When specifying the <code>CreationInfo</code>, you must provide values for all properties. </p> <important>
+    /// <p>If you do not provide <code>CreationInfo</code> and the specified <code>RootDirectory</code> &gt; <code>Path</code> does not exist, attempts to mount the file system using the access point will fail.</p>
+    /// </important>
+    pub fn get_creation_info(&self) -> &::std::option::Option<crate::types::CreationInfo> {
+        &self.creation_info
     }
     /// Consumes the builder and constructs a [`RootDirectory`](crate::types::RootDirectory).
     pub fn build(self) -> crate::types::RootDirectory {

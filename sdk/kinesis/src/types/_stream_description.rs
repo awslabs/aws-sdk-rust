@@ -157,6 +157,10 @@ impl StreamDescriptionBuilder {
         self.stream_name = input;
         self
     }
+    /// <p>The name of the stream being described.</p>
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_name
+    }
     /// <p>The Amazon Resource Name (ARN) for the stream being described.</p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_arn = ::std::option::Option::Some(input.into());
@@ -166,6 +170,10 @@ impl StreamDescriptionBuilder {
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the stream being described.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_arn
     }
     /// <p>The current status of the stream being described. The stream status is one of the following states:</p>
     /// <ul>
@@ -192,6 +200,16 @@ impl StreamDescriptionBuilder {
         self.stream_status = input;
         self
     }
+    /// <p>The current status of the stream being described. The stream status is one of the following states:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATING</code> - The stream is being created. Kinesis Data Streams immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Kinesis Data Streams completes the deletion.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</p> </li>
+    /// </ul>
+    pub fn get_stream_status(&self) -> &::std::option::Option<crate::types::StreamStatus> {
+        &self.stream_status
+    }
     /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
     pub fn stream_mode_details(mut self, input: crate::types::StreamModeDetails) -> Self {
         self.stream_mode_details = ::std::option::Option::Some(input);
@@ -204,6 +222,12 @@ impl StreamDescriptionBuilder {
     ) -> Self {
         self.stream_mode_details = input;
         self
+    }
+    /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
+    pub fn get_stream_mode_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::StreamModeDetails> {
+        &self.stream_mode_details
     }
     /// Appends an item to `shards`.
     ///
@@ -224,6 +248,10 @@ impl StreamDescriptionBuilder {
         self.shards = input;
         self
     }
+    /// <p>The shards that comprise the stream.</p>
+    pub fn get_shards(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Shard>> {
+        &self.shards
+    }
     /// <p>If set to <code>true</code>, more shards in the stream are available to describe.</p>
     pub fn has_more_shards(mut self, input: bool) -> Self {
         self.has_more_shards = ::std::option::Option::Some(input);
@@ -234,6 +262,10 @@ impl StreamDescriptionBuilder {
         self.has_more_shards = input;
         self
     }
+    /// <p>If set to <code>true</code>, more shards in the stream are available to describe.</p>
+    pub fn get_has_more_shards(&self) -> &::std::option::Option<bool> {
+        &self.has_more_shards
+    }
     /// <p>The current retention period, in hours. Minimum value of 24. Maximum value of 168.</p>
     pub fn retention_period_hours(mut self, input: i32) -> Self {
         self.retention_period_hours = ::std::option::Option::Some(input);
@@ -243,6 +275,10 @@ impl StreamDescriptionBuilder {
     pub fn set_retention_period_hours(mut self, input: ::std::option::Option<i32>) -> Self {
         self.retention_period_hours = input;
         self
+    }
+    /// <p>The current retention period, in hours. Minimum value of 24. Maximum value of 168.</p>
+    pub fn get_retention_period_hours(&self) -> &::std::option::Option<i32> {
+        &self.retention_period_hours
     }
     /// <p>The approximate time that the stream was created.</p>
     pub fn stream_creation_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -256,6 +292,12 @@ impl StreamDescriptionBuilder {
     ) -> Self {
         self.stream_creation_timestamp = input;
         self
+    }
+    /// <p>The approximate time that the stream was created.</p>
+    pub fn get_stream_creation_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.stream_creation_timestamp
     }
     /// Appends an item to `enhanced_monitoring`.
     ///
@@ -275,6 +317,12 @@ impl StreamDescriptionBuilder {
     ) -> Self {
         self.enhanced_monitoring = input;
         self
+    }
+    /// <p>Represents the current enhanced monitoring settings of the stream.</p>
+    pub fn get_enhanced_monitoring(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnhancedMetrics>> {
+        &self.enhanced_monitoring
     }
     /// <p>The server-side encryption type used on the stream. This parameter can be one of the following values:</p>
     /// <ul>
@@ -296,6 +344,14 @@ impl StreamDescriptionBuilder {
     ) -> Self {
         self.encryption_type = input;
         self
+    }
+    /// <p>The server-side encryption type used on the stream. This parameter can be one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>NONE</code>: Do not encrypt the records in the stream.</p> </li>
+    /// <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed Amazon Web Services KMS key.</p> </li>
+    /// </ul>
+    pub fn get_encryption_type(&self) -> &::std::option::Option<crate::types::EncryptionType> {
+        &self.encryption_type
     }
     /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption. This value can be a globally unique identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.</p>
     /// <ul>
@@ -320,6 +376,17 @@ impl StreamDescriptionBuilder {
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_id = input;
         self
+    }
+    /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption. This value can be a globally unique identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.</p>
+    /// <ul>
+    /// <li> <p>Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li>
+    /// <li> <p>Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li>
+    /// <li> <p>Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
+    /// <li> <p>Alias name example: <code>alias/MyAliasName</code> </p> </li>
+    /// <li> <p>Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code> </p> </li>
+    /// </ul>
+    pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_id
     }
     /// Consumes the builder and constructs a [`StreamDescription`](crate::types::StreamDescription).
     pub fn build(self) -> crate::types::StreamDescription {

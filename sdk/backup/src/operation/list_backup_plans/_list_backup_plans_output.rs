@@ -59,6 +59,10 @@ impl ListBackupPlansOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `backup_plans_list`.
     ///
     /// To override the contents of this collection use [`set_backup_plans_list`](Self::set_backup_plans_list).
@@ -77,6 +81,12 @@ impl ListBackupPlansOutputBuilder {
     ) -> Self {
         self.backup_plans_list = input;
         self
+    }
+    /// <p>An array of backup plan list items containing metadata about your saved backup plans.</p>
+    pub fn get_backup_plans_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BackupPlansListMember>> {
+        &self.backup_plans_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

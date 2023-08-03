@@ -62,6 +62,12 @@ impl GetApplicationComponentStrategiesOutputBuilder {
         self.application_component_strategies = input;
         self
     }
+    /// <p> A list of application component strategy recommendations. </p>
+    pub fn get_application_component_strategies(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponentStrategy>> {
+        &self.application_component_strategies
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

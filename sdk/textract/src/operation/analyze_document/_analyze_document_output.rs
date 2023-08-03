@@ -77,6 +77,10 @@ impl AnalyzeDocumentOutputBuilder {
         self.document_metadata = input;
         self
     }
+    /// <p>Metadata about the analyzed document. An example is the number of pages.</p>
+    pub fn get_document_metadata(&self) -> &::std::option::Option<crate::types::DocumentMetadata> {
+        &self.document_metadata
+    }
     /// Appends an item to `blocks`.
     ///
     /// To override the contents of this collection use [`set_blocks`](Self::set_blocks).
@@ -96,6 +100,10 @@ impl AnalyzeDocumentOutputBuilder {
         self.blocks = input;
         self
     }
+    /// <p>The items that are detected and analyzed by <code>AnalyzeDocument</code>.</p>
+    pub fn get_blocks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Block>> {
+        &self.blocks
+    }
     /// <p>Shows the results of the human in the loop evaluation.</p>
     pub fn human_loop_activation_output(
         mut self,
@@ -112,6 +120,12 @@ impl AnalyzeDocumentOutputBuilder {
         self.human_loop_activation_output = input;
         self
     }
+    /// <p>Shows the results of the human in the loop evaluation.</p>
+    pub fn get_human_loop_activation_output(
+        &self,
+    ) -> &::std::option::Option<crate::types::HumanLoopActivationOutput> {
+        &self.human_loop_activation_output
+    }
     /// <p>The version of the model used to analyze the document.</p>
     pub fn analyze_document_model_version(
         mut self,
@@ -127,6 +141,12 @@ impl AnalyzeDocumentOutputBuilder {
     ) -> Self {
         self.analyze_document_model_version = input;
         self
+    }
+    /// <p>The version of the model used to analyze the document.</p>
+    pub fn get_analyze_document_model_version(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.analyze_document_model_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

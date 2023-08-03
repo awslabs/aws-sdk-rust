@@ -58,6 +58,10 @@ impl CreateRepositoryOutputBuilder {
         self.repository = input;
         self
     }
+    /// <p>The repository that was created.</p>
+    pub fn get_repository(&self) -> &::std::option::Option<crate::types::Repository> {
+        &self.repository
+    }
     /// <p>The catalog data for a repository. This data is publicly visible in the Amazon ECR Public Gallery.</p>
     pub fn catalog_data(mut self, input: crate::types::RepositoryCatalogData) -> Self {
         self.catalog_data = ::std::option::Option::Some(input);
@@ -70,6 +74,10 @@ impl CreateRepositoryOutputBuilder {
     ) -> Self {
         self.catalog_data = input;
         self
+    }
+    /// <p>The catalog data for a repository. This data is publicly visible in the Amazon ECR Public Gallery.</p>
+    pub fn get_catalog_data(&self) -> &::std::option::Option<crate::types::RepositoryCatalogData> {
+        &self.catalog_data
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

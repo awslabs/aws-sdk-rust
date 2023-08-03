@@ -48,6 +48,10 @@ impl SuccessfulRequestBuilder {
         self.client_token = input;
         self
     }
+    /// Client provided parameter used for idempotency. Its value must be unique for each request.
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// Identifier representing a Dial request
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl SuccessfulRequestBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// Identifier representing a Dial request
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`SuccessfulRequest`](crate::types::SuccessfulRequest).
     pub fn build(self) -> crate::types::SuccessfulRequest {

@@ -64,6 +64,10 @@ impl RepositoryBranchBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The repository provider.</p>
     pub fn provider(mut self, input: crate::types::RepositoryProvider) -> Self {
         self.provider = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl RepositoryBranchBuilder {
         self.provider = input;
         self
     }
+    /// <p>The repository provider.</p>
+    pub fn get_provider(&self) -> &::std::option::Option<crate::types::RepositoryProvider> {
+        &self.provider
+    }
     /// <p>The repository name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -87,6 +95,10 @@ impl RepositoryBranchBuilder {
         self.name = input;
         self
     }
+    /// <p>The repository name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The repository branch.</p>
     pub fn branch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch = ::std::option::Option::Some(input.into());
@@ -96,6 +108,10 @@ impl RepositoryBranchBuilder {
     pub fn set_branch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.branch = input;
         self
+    }
+    /// <p>The repository branch.</p>
+    pub fn get_branch(&self) -> &::std::option::Option<::std::string::String> {
+        &self.branch
     }
     /// Consumes the builder and constructs a [`RepositoryBranch`](crate::types::RepositoryBranch).
     pub fn build(self) -> crate::types::RepositoryBranch {

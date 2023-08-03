@@ -59,6 +59,10 @@ impl InstanceConfigBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>Configures the type resource instances to use while running an Amazon Braket hybrid job.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
+        &self.instance_type
+    }
     /// <p>The size of the storage volume, in GB, that user wants to provision.</p>
     pub fn volume_size_in_gb(mut self, input: i32) -> Self {
         self.volume_size_in_gb = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl InstanceConfigBuilder {
         self.volume_size_in_gb = input;
         self
     }
+    /// <p>The size of the storage volume, in GB, that user wants to provision.</p>
+    pub fn get_volume_size_in_gb(&self) -> &::std::option::Option<i32> {
+        &self.volume_size_in_gb
+    }
     /// <p>Configures the number of resource instances to use while running an Amazon Braket job on Amazon Braket. The default value is 1.</p>
     pub fn instance_count(mut self, input: i32) -> Self {
         self.instance_count = ::std::option::Option::Some(input);
@@ -78,6 +86,10 @@ impl InstanceConfigBuilder {
     pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.instance_count = input;
         self
+    }
+    /// <p>Configures the number of resource instances to use while running an Amazon Braket job on Amazon Braket. The default value is 1.</p>
+    pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.instance_count
     }
     /// Consumes the builder and constructs a [`InstanceConfig`](crate::types::InstanceConfig).
     pub fn build(self) -> crate::types::InstanceConfig {

@@ -70,6 +70,10 @@ impl RestoreFromSnapshotOutputBuilder {
         self.snapshot_name = input;
         self
     }
+    /// <p>The name of the snapshot used to restore the namespace.</p>
+    pub fn get_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_name
+    }
     /// <p>The owner Amazon Web Services; account of the snapshot that was restored.</p>
     pub fn owner_account(
         mut self,
@@ -86,6 +90,10 @@ impl RestoreFromSnapshotOutputBuilder {
         self.owner_account = input;
         self
     }
+    /// <p>The owner Amazon Web Services; account of the snapshot that was restored.</p>
+    pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_account
+    }
     /// <p>A collection of database objects and users.</p>
     pub fn namespace(mut self, input: crate::types::Namespace) -> Self {
         self.namespace = ::std::option::Option::Some(input);
@@ -95,6 +103,10 @@ impl RestoreFromSnapshotOutputBuilder {
     pub fn set_namespace(mut self, input: ::std::option::Option<crate::types::Namespace>) -> Self {
         self.namespace = input;
         self
+    }
+    /// <p>A collection of database objects and users.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<crate::types::Namespace> {
+        &self.namespace
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

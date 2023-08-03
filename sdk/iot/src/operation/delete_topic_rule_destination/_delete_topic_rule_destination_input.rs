@@ -39,6 +39,10 @@ impl DeleteTopicRuleDestinationInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the topic rule destination to delete.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`DeleteTopicRuleDestinationInput`](crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationInput).
     pub fn build(
         self,

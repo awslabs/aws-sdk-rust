@@ -37,6 +37,13 @@ impl DescribeConnectorEntityFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeConnectorEntity as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_connector_entity::builders::DescribeConnectorEntityInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl DescribeConnectorEntityFluentBuilder {
         self.inner = self.inner.set_connector_entity_name(input);
         self
     }
+    /// <p> The entity name for that connector. </p>
+    pub fn get_connector_entity_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connector_entity_name()
+    }
     /// <p> The type of connector application, such as Salesforce, Amplitude, and so on. </p>
     pub fn connector_type(mut self, input: crate::types::ConnectorType) -> Self {
         self.inner = self.inner.connector_type(input);
@@ -145,6 +156,10 @@ impl DescribeConnectorEntityFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_connector_type(input);
         self
+    }
+    /// <p> The type of connector application, such as Salesforce, Amplitude, and so on. </p>
+    pub fn get_connector_type(&self) -> &::std::option::Option<crate::types::ConnectorType> {
+        self.inner.get_connector_type()
     }
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
     pub fn connector_profile_name(
@@ -162,6 +177,10 @@ impl DescribeConnectorEntityFluentBuilder {
         self.inner = self.inner.set_connector_profile_name(input);
         self
     }
+    /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
+    pub fn get_connector_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connector_profile_name()
+    }
     /// <p>The version of the API that's used by the connector.</p>
     pub fn api_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.api_version(input.into());
@@ -171,5 +190,9 @@ impl DescribeConnectorEntityFluentBuilder {
     pub fn set_api_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_api_version(input);
         self
+    }
+    /// <p>The version of the API that's used by the connector.</p>
+    pub fn get_api_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_api_version()
     }
 }

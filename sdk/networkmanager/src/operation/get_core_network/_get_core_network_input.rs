@@ -45,6 +45,10 @@ impl GetCoreNetworkInputBuilder {
         self.core_network_id = input;
         self
     }
+    /// <p>The ID of a core network.</p>
+    pub fn get_core_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_network_id
+    }
     /// Consumes the builder and constructs a [`GetCoreNetworkInput`](crate::operation::get_core_network::GetCoreNetworkInput).
     pub fn build(
         self,

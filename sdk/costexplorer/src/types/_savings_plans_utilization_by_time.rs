@@ -70,6 +70,10 @@ impl SavingsPlansUtilizationByTimeBuilder {
         self.time_period = input;
         self
     }
+    /// <p>The time period of the request. </p>
+    pub fn get_time_period(&self) -> &::std::option::Option<crate::types::DateInterval> {
+        &self.time_period
+    }
     /// <p>A ratio of your effectiveness of using existing Savings Plans to apply to workloads that are Savings Plans eligible.</p>
     pub fn utilization(mut self, input: crate::types::SavingsPlansUtilization) -> Self {
         self.utilization = ::std::option::Option::Some(input);
@@ -83,6 +87,10 @@ impl SavingsPlansUtilizationByTimeBuilder {
         self.utilization = input;
         self
     }
+    /// <p>A ratio of your effectiveness of using existing Savings Plans to apply to workloads that are Savings Plans eligible.</p>
+    pub fn get_utilization(&self) -> &::std::option::Option<crate::types::SavingsPlansUtilization> {
+        &self.utilization
+    }
     /// <p>The amount that's saved by using existing Savings Plans. Savings returns both net savings from Savings Plans and also the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
     pub fn savings(mut self, input: crate::types::SavingsPlansSavings) -> Self {
         self.savings = ::std::option::Option::Some(input);
@@ -95,6 +103,10 @@ impl SavingsPlansUtilizationByTimeBuilder {
     ) -> Self {
         self.savings = input;
         self
+    }
+    /// <p>The amount that's saved by using existing Savings Plans. Savings returns both net savings from Savings Plans and also the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
+    pub fn get_savings(&self) -> &::std::option::Option<crate::types::SavingsPlansSavings> {
+        &self.savings
     }
     /// <p>The total amortized commitment for a Savings Plans. This includes the sum of the upfront and recurring Savings Plans fees.</p>
     pub fn amortized_commitment(
@@ -111,6 +123,12 @@ impl SavingsPlansUtilizationByTimeBuilder {
     ) -> Self {
         self.amortized_commitment = input;
         self
+    }
+    /// <p>The total amortized commitment for a Savings Plans. This includes the sum of the upfront and recurring Savings Plans fees.</p>
+    pub fn get_amortized_commitment(
+        &self,
+    ) -> &::std::option::Option<crate::types::SavingsPlansAmortizedCommitment> {
+        &self.amortized_commitment
     }
     /// Consumes the builder and constructs a [`SavingsPlansUtilizationByTime`](crate::types::SavingsPlansUtilizationByTime).
     pub fn build(self) -> crate::types::SavingsPlansUtilizationByTime {

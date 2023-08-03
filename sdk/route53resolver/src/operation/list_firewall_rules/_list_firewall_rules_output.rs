@@ -57,6 +57,10 @@ impl ListFirewallRulesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `firewall_rules`.
     ///
     /// To override the contents of this collection use [`set_firewall_rules`](Self::set_firewall_rules).
@@ -77,6 +81,13 @@ impl ListFirewallRulesOutputBuilder {
     ) -> Self {
         self.firewall_rules = input;
         self
+    }
+    /// <p>A list of the rules that you have defined. </p>
+    /// <p>This might be a partial list of the firewall rules that you've defined. For information, see <code>MaxResults</code>. </p>
+    pub fn get_firewall_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FirewallRule>> {
+        &self.firewall_rules
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -96,6 +96,10 @@ impl InvalidRequestExceptionBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
+    #[allow(missing_docs)] // documentation missing in model
     pub fn reason(mut self, input: crate::types::InvalidRequestReason) -> Self {
         self.reason = ::std::option::Option::Some(input);
         self
@@ -107,6 +111,10 @@ impl InvalidRequestExceptionBuilder {
     ) -> Self {
         self.reason = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_reason(&self) -> &::std::option::Option<crate::types::InvalidRequestReason> {
+        &self.reason
     }
     /// <p>Provides additional detail about why the request failed:</p>
     /// <ul>
@@ -132,6 +140,16 @@ impl InvalidRequestExceptionBuilder {
     ) -> Self {
         self.detail = input;
         self
+    }
+    /// <p>Provides additional detail about why the request failed:</p>
+    /// <ul>
+    /// <li> <p>Document size is too large - Check the size of your file and resubmit the request.</p> </li>
+    /// <li> <p>Document type is not supported - Check the file type and resubmit the request.</p> </li>
+    /// <li> <p>Too many pages in the document - Check the number of pages in your file and resubmit the request.</p> </li>
+    /// <li> <p>Access denied to Amazon Textract - Verify that your account has permission to use Amazon Textract API operations and resubmit the request.</p> </li>
+    /// </ul>
+    pub fn get_detail(&self) -> &::std::option::Option<crate::types::InvalidRequestDetail> {
+        &self.detail
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

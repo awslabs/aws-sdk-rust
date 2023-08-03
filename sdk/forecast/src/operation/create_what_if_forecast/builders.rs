@@ -36,6 +36,13 @@ impl CreateWhatIfForecastFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateWhatIfForecast as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_what_if_forecast::builders::CreateWhatIfForecastInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl CreateWhatIfForecastFluentBuilder {
         self.inner = self.inner.set_what_if_forecast_name(input);
         self
     }
+    /// <p>The name of the what-if forecast. Names must be unique within each what-if analysis.</p>
+    pub fn get_what_if_forecast_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_what_if_forecast_name()
+    }
     /// <p>The Amazon Resource Name (ARN) of the what-if analysis.</p>
     pub fn what_if_analysis_arn(
         mut self,
@@ -147,6 +158,10 @@ impl CreateWhatIfForecastFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_what_if_analysis_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the what-if analysis.</p>
+    pub fn get_what_if_analysis_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_what_if_analysis_arn()
     }
     /// Appends an item to `TimeSeriesTransformations`.
     ///
@@ -167,6 +182,12 @@ impl CreateWhatIfForecastFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_time_series_transformations(input);
         self
+    }
+    /// <p>The transformations that are applied to the baseline time series. Each transformation contains an action and a set of conditions. An action is applied only when all conditions are met. If no conditions are provided, the action is applied to all items.</p>
+    pub fn get_time_series_transformations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesTransformation>> {
+        self.inner.get_time_series_transformations()
     }
     /// <p>The replacement time series dataset, which contains the rows that you want to change in the related time series dataset. A replacement time series does not need to contain all rows that are in the baseline related time series. Include only the rows (measure-dimension combinations) that you want to include in the what-if forecast.</p>
     /// <p>This dataset is merged with the original time series to create a transformed dataset that is used for the what-if analysis.</p>
@@ -190,6 +211,15 @@ impl CreateWhatIfForecastFluentBuilder {
         self.inner = self.inner.set_time_series_replacements_data_source(input);
         self
     }
+    /// <p>The replacement time series dataset, which contains the rows that you want to change in the related time series dataset. A replacement time series does not need to contain all rows that are in the baseline related time series. Include only the rows (measure-dimension combinations) that you want to include in the what-if forecast.</p>
+    /// <p>This dataset is merged with the original time series to create a transformed dataset that is used for the what-if analysis.</p>
+    /// <p>This dataset should contain the items to modify (such as item_id or workforce_type), any relevant dimensions, the timestamp column, and at least one of the related time series columns. This file should not contain duplicate timestamps for the same time series.</p>
+    /// <p>Timestamps and item_ids not included in this dataset are not included in the what-if analysis. </p>
+    pub fn get_time_series_replacements_data_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::TimeSeriesReplacementsDataSource> {
+        self.inner.get_time_series_replacements_data_source()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -206,5 +236,9 @@ impl CreateWhatIfForecastFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

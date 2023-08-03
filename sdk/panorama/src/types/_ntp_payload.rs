@@ -49,6 +49,12 @@ impl NtpPayloadBuilder {
         self.ntp_servers = input;
         self
     }
+    /// <p>NTP servers to use, in order of preference.</p>
+    pub fn get_ntp_servers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ntp_servers
+    }
     /// Consumes the builder and constructs a [`NtpPayload`](crate::types::NtpPayload).
     pub fn build(self) -> crate::types::NtpPayload {
         crate::types::NtpPayload {

@@ -62,6 +62,10 @@ impl ClusterVersionBuilder {
         self.cluster_version = input;
         self
     }
+    /// <p>The version number used by the cluster.</p>
+    pub fn get_cluster_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_version
+    }
     /// <p>The name of the cluster parameter group family for the cluster.</p>
     pub fn cluster_parameter_group_family(
         mut self,
@@ -78,6 +82,12 @@ impl ClusterVersionBuilder {
         self.cluster_parameter_group_family = input;
         self
     }
+    /// <p>The name of the cluster parameter group family for the cluster.</p>
+    pub fn get_cluster_parameter_group_family(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_parameter_group_family
+    }
     /// <p>The description of the cluster version.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -87,6 +97,10 @@ impl ClusterVersionBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the cluster version.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`ClusterVersion`](crate::types::ClusterVersion).
     pub fn build(self) -> crate::types::ClusterVersion {

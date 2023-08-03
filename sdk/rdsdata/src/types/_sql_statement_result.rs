@@ -53,6 +53,10 @@ impl SqlStatementResultBuilder {
         self.result_frame = input;
         self
     }
+    /// <p>The result set of the SQL statement.</p>
+    pub fn get_result_frame(&self) -> &::std::option::Option<crate::types::ResultFrame> {
+        &self.result_frame
+    }
     /// <p>The number of records updated by a SQL statement.</p>
     pub fn number_of_records_updated(mut self, input: i64) -> Self {
         self.number_of_records_updated = ::std::option::Option::Some(input);
@@ -62,6 +66,10 @@ impl SqlStatementResultBuilder {
     pub fn set_number_of_records_updated(mut self, input: ::std::option::Option<i64>) -> Self {
         self.number_of_records_updated = input;
         self
+    }
+    /// <p>The number of records updated by a SQL statement.</p>
+    pub fn get_number_of_records_updated(&self) -> &::std::option::Option<i64> {
+        &self.number_of_records_updated
     }
     /// Consumes the builder and constructs a [`SqlStatementResult`](crate::types::SqlStatementResult).
     pub fn build(self) -> crate::types::SqlStatementResult {

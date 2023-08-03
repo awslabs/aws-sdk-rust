@@ -73,6 +73,10 @@ impl IceServerBuilder {
         self.uris = input;
         self
     }
+    /// <p>An array of URIs, in the form specified in the <a href="https://tools.ietf.org/html/draft-petithuguenin-behave-turn-uris-03">I-D.petithuguenin-behave-turn-uris</a> spec. These URIs provide the different addresses and/or protocols that can be used to reach the TURN server.</p>
+    pub fn get_uris(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.uris
+    }
     /// <p>A username to login to the ICE server.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl IceServerBuilder {
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
+    }
+    /// <p>A username to login to the ICE server.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
     }
     /// <p>A password to login to the ICE server.</p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -93,6 +101,10 @@ impl IceServerBuilder {
         self.password = input;
         self
     }
+    /// <p>A password to login to the ICE server.</p>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.password
+    }
     /// <p>The period of time, in seconds, during which the username and password are valid.</p>
     pub fn ttl(mut self, input: i32) -> Self {
         self.ttl = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl IceServerBuilder {
     pub fn set_ttl(mut self, input: ::std::option::Option<i32>) -> Self {
         self.ttl = input;
         self
+    }
+    /// <p>The period of time, in seconds, during which the username and password are valid.</p>
+    pub fn get_ttl(&self) -> &::std::option::Option<i32> {
+        &self.ttl
     }
     /// Consumes the builder and constructs a [`IceServer`](crate::types::IceServer).
     pub fn build(self) -> crate::types::IceServer {

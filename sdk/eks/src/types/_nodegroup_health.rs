@@ -49,6 +49,10 @@ impl NodegroupHealthBuilder {
         self.issues = input;
         self
     }
+    /// <p>Any issues that are associated with the node group. </p>
+    pub fn get_issues(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Issue>> {
+        &self.issues
+    }
     /// Consumes the builder and constructs a [`NodegroupHealth`](crate::types::NodegroupHealth).
     pub fn build(self) -> crate::types::NodegroupHealth {
         crate::types::NodegroupHealth {

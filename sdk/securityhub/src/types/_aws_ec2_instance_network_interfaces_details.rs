@@ -46,6 +46,10 @@ impl AwsEc2InstanceNetworkInterfacesDetailsBuilder {
         self.network_interface_id = input;
         self
     }
+    /// <p>The identifier of the network interface. The details are in a corresponding <code>AwsEc2NetworkInterfacesDetails</code> object.</p>
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_interface_id
+    }
     /// Consumes the builder and constructs a [`AwsEc2InstanceNetworkInterfacesDetails`](crate::types::AwsEc2InstanceNetworkInterfacesDetails).
     pub fn build(self) -> crate::types::AwsEc2InstanceNetworkInterfacesDetails {
         crate::types::AwsEc2InstanceNetworkInterfacesDetails {

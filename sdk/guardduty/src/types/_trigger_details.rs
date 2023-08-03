@@ -54,6 +54,10 @@ impl TriggerDetailsBuilder {
         self.guard_duty_finding_id = input;
         self
     }
+    /// <p>The ID of the GuardDuty finding that triggered the malware scan.</p>
+    pub fn get_guard_duty_finding_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.guard_duty_finding_id
+    }
     /// <p>The description of the scan trigger.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl TriggerDetailsBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the scan trigger.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`TriggerDetails`](crate::types::TriggerDetails).
     pub fn build(self) -> crate::types::TriggerDetails {

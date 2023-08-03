@@ -79,6 +79,10 @@ impl GetObjectAttributesInputBuilder {
         self.directory_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_arn
+    }
     /// <p>Reference that identifies the object whose attributes will be retrieved.</p>
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.object_reference = ::std::option::Option::Some(input);
@@ -91,6 +95,10 @@ impl GetObjectAttributesInputBuilder {
     ) -> Self {
         self.object_reference = input;
         self
+    }
+    /// <p>Reference that identifies the object whose attributes will be retrieved.</p>
+    pub fn get_object_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
+        &self.object_reference
     }
     /// <p>The consistency level at which to retrieve the attributes on an object.</p>
     pub fn consistency_level(mut self, input: crate::types::ConsistencyLevel) -> Self {
@@ -105,6 +113,10 @@ impl GetObjectAttributesInputBuilder {
         self.consistency_level = input;
         self
     }
+    /// <p>The consistency level at which to retrieve the attributes on an object.</p>
+    pub fn get_consistency_level(&self) -> &::std::option::Option<crate::types::ConsistencyLevel> {
+        &self.consistency_level
+    }
     /// <p>Identifier for the facet whose attributes will be retrieved. See <code>SchemaFacet</code> for details.</p>
     pub fn schema_facet(mut self, input: crate::types::SchemaFacet) -> Self {
         self.schema_facet = ::std::option::Option::Some(input);
@@ -117,6 +129,10 @@ impl GetObjectAttributesInputBuilder {
     ) -> Self {
         self.schema_facet = input;
         self
+    }
+    /// <p>Identifier for the facet whose attributes will be retrieved. See <code>SchemaFacet</code> for details.</p>
+    pub fn get_schema_facet(&self) -> &::std::option::Option<crate::types::SchemaFacet> {
+        &self.schema_facet
     }
     /// Appends an item to `attribute_names`.
     ///
@@ -139,6 +155,12 @@ impl GetObjectAttributesInputBuilder {
     ) -> Self {
         self.attribute_names = input;
         self
+    }
+    /// <p>List of attribute names whose values will be retrieved.</p>
+    pub fn get_attribute_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.attribute_names
     }
     /// Consumes the builder and constructs a [`GetObjectAttributesInput`](crate::operation::get_object_attributes::GetObjectAttributesInput).
     pub fn build(

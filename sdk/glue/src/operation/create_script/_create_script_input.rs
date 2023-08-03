@@ -64,6 +64,12 @@ impl CreateScriptInputBuilder {
         self.dag_nodes = input;
         self
     }
+    /// <p>A list of the nodes in the DAG.</p>
+    pub fn get_dag_nodes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeGenNode>> {
+        &self.dag_nodes
+    }
     /// Appends an item to `dag_edges`.
     ///
     /// To override the contents of this collection use [`set_dag_edges`](Self::set_dag_edges).
@@ -83,6 +89,12 @@ impl CreateScriptInputBuilder {
         self.dag_edges = input;
         self
     }
+    /// <p>A list of the edges in the DAG.</p>
+    pub fn get_dag_edges(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeGenEdge>> {
+        &self.dag_edges
+    }
     /// <p>The programming language of the resulting code from the DAG.</p>
     pub fn language(mut self, input: crate::types::Language) -> Self {
         self.language = ::std::option::Option::Some(input);
@@ -92,6 +104,10 @@ impl CreateScriptInputBuilder {
     pub fn set_language(mut self, input: ::std::option::Option<crate::types::Language>) -> Self {
         self.language = input;
         self
+    }
+    /// <p>The programming language of the resulting code from the DAG.</p>
+    pub fn get_language(&self) -> &::std::option::Option<crate::types::Language> {
+        &self.language
     }
     /// Consumes the builder and constructs a [`CreateScriptInput`](crate::operation::create_script::CreateScriptInput).
     pub fn build(

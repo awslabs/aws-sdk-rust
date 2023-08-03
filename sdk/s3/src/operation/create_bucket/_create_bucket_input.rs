@@ -122,6 +122,10 @@ impl CreateBucketInputBuilder {
         self.acl = input;
         self
     }
+    /// <p>The canned ACL to apply to the bucket.</p>
+    pub fn get_acl(&self) -> &::std::option::Option<crate::types::BucketCannedAcl> {
+        &self.acl
+    }
     /// <p>The name of the bucket to create.</p>
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
@@ -131,6 +135,10 @@ impl CreateBucketInputBuilder {
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket = input;
         self
+    }
+    /// <p>The name of the bucket to create.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
     }
     /// <p>The configuration information for the bucket.</p>
     pub fn create_bucket_configuration(
@@ -148,6 +156,12 @@ impl CreateBucketInputBuilder {
         self.create_bucket_configuration = input;
         self
     }
+    /// <p>The configuration information for the bucket.</p>
+    pub fn get_create_bucket_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateBucketConfiguration> {
+        &self.create_bucket_configuration
+    }
     /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
     pub fn grant_full_control(
         mut self,
@@ -164,6 +178,10 @@ impl CreateBucketInputBuilder {
         self.grant_full_control = input;
         self
     }
+    /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
+    pub fn get_grant_full_control(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grant_full_control
+    }
     /// <p>Allows grantee to list the objects in the bucket.</p>
     pub fn grant_read(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grant_read = ::std::option::Option::Some(input.into());
@@ -173,6 +191,10 @@ impl CreateBucketInputBuilder {
     pub fn set_grant_read(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grant_read = input;
         self
+    }
+    /// <p>Allows grantee to list the objects in the bucket.</p>
+    pub fn get_grant_read(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grant_read
     }
     /// <p>Allows grantee to read the bucket ACL.</p>
     pub fn grant_read_acp(
@@ -190,6 +212,10 @@ impl CreateBucketInputBuilder {
         self.grant_read_acp = input;
         self
     }
+    /// <p>Allows grantee to read the bucket ACL.</p>
+    pub fn get_grant_read_acp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grant_read_acp
+    }
     /// <p>Allows grantee to create new objects in the bucket.</p>
     /// <p>For the bucket and object owners of existing objects, also allows deletions and overwrites of those objects.</p>
     pub fn grant_write(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -201,6 +227,11 @@ impl CreateBucketInputBuilder {
     pub fn set_grant_write(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grant_write = input;
         self
+    }
+    /// <p>Allows grantee to create new objects in the bucket.</p>
+    /// <p>For the bucket and object owners of existing objects, also allows deletions and overwrites of those objects.</p>
+    pub fn get_grant_write(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grant_write
     }
     /// <p>Allows grantee to write the ACL for the applicable bucket.</p>
     pub fn grant_write_acp(
@@ -218,6 +249,10 @@ impl CreateBucketInputBuilder {
         self.grant_write_acp = input;
         self
     }
+    /// <p>Allows grantee to write the ACL for the applicable bucket.</p>
+    pub fn get_grant_write_acp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grant_write_acp
+    }
     /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p>
     pub fn object_lock_enabled_for_bucket(mut self, input: bool) -> Self {
         self.object_lock_enabled_for_bucket = ::std::option::Option::Some(input);
@@ -230,6 +265,10 @@ impl CreateBucketInputBuilder {
     ) -> Self {
         self.object_lock_enabled_for_bucket = input;
         self
+    }
+    /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p>
+    pub fn get_object_lock_enabled_for_bucket(&self) -> &::std::option::Option<bool> {
+        &self.object_lock_enabled_for_bucket
     }
     /// <p>The container element for object ownership for a bucket's ownership controls.</p>
     /// <p>BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
@@ -249,6 +288,13 @@ impl CreateBucketInputBuilder {
     ) -> Self {
         self.object_ownership = input;
         self
+    }
+    /// <p>The container element for object ownership for a bucket's ownership controls.</p>
+    /// <p>BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
+    /// <p>ObjectWriter - The uploading account will own the object if the object is uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
+    /// <p>BucketOwnerEnforced - Access control lists (ACLs) are disabled and no longer affect permissions. The bucket owner automatically owns and has full control over every object in the bucket. The bucket only accepts PUT requests that don't specify an ACL or bucket owner full control ACLs, such as the <code>bucket-owner-full-control</code> canned ACL or an equivalent form of this ACL expressed in the XML format.</p>
+    pub fn get_object_ownership(&self) -> &::std::option::Option<crate::types::ObjectOwnership> {
+        &self.object_ownership
     }
     /// Consumes the builder and constructs a [`CreateBucketInput`](crate::operation::create_bucket::CreateBucketInput).
     pub fn build(

@@ -87,6 +87,10 @@ impl CreateConfiguredTableAssociationInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the configured table association. This name is used to query the underlying configured table.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description for the configured table association.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -96,6 +100,10 @@ impl CreateConfiguredTableAssociationInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description for the configured table association.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>A unique identifier for one of your memberships for a collaboration. The configured table is associated to the collaboration that this membership belongs to. Currently accepts a membership ID.</p>
     pub fn membership_identifier(
@@ -113,6 +121,10 @@ impl CreateConfiguredTableAssociationInputBuilder {
         self.membership_identifier = input;
         self
     }
+    /// <p>A unique identifier for one of your memberships for a collaboration. The configured table is associated to the collaboration that this membership belongs to. Currently accepts a membership ID.</p>
+    pub fn get_membership_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.membership_identifier
+    }
     /// <p>A unique identifier for the configured table to be associated to. Currently accepts a configured table ID.</p>
     pub fn configured_table_identifier(
         mut self,
@@ -129,6 +141,10 @@ impl CreateConfiguredTableAssociationInputBuilder {
         self.configured_table_identifier = input;
         self
     }
+    /// <p>A unique identifier for the configured table to be associated to. Currently accepts a configured table ID.</p>
+    pub fn get_configured_table_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configured_table_identifier
+    }
     /// <p>The service will assume this role to access catalog metadata and query the table.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -138,6 +154,10 @@ impl CreateConfiguredTableAssociationInputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The service will assume this role to access catalog metadata and query the table.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -163,6 +183,14 @@ impl CreateConfiguredTableAssociationInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateConfiguredTableAssociationInput`](crate::operation::create_configured_table_association::CreateConfiguredTableAssociationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_configured_table_association::CreateConfiguredTableAssociationInput, ::aws_smithy_http::operation::error::BuildError>{

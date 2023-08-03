@@ -39,6 +39,10 @@ impl StopFlowInputBuilder {
         self.flow_arn = input;
         self
     }
+    /// The ARN of the flow that you want to stop.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_arn
+    }
     /// Consumes the builder and constructs a [`StopFlowInput`](crate::operation::stop_flow::StopFlowInput).
     pub fn build(
         self,

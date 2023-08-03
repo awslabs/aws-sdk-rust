@@ -39,6 +39,10 @@ impl DeleteServerInputBuilder {
         self.server_id = input;
         self
     }
+    /// <p>A unique system-assigned identifier for a server instance.</p>
+    pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_id
+    }
     /// Consumes the builder and constructs a [`DeleteServerInput`](crate::operation::delete_server::DeleteServerInput).
     pub fn build(
         self,

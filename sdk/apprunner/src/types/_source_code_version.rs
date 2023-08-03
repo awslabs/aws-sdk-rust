@@ -57,6 +57,11 @@ impl SourceCodeVersionBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of version identifier.</p>
+    /// <p>For a git-based repository, branches represent versions.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::SourceCodeVersionType> {
+        &self.r#type
+    }
     /// <p>A source code version.</p>
     /// <p>For a git-based repository, a branch name maps to a specific version. App Runner uses the most recent commit to the branch.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -68,6 +73,11 @@ impl SourceCodeVersionBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>A source code version.</p>
+    /// <p>For a git-based repository, a branch name maps to a specific version. App Runner uses the most recent commit to the branch.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`SourceCodeVersion`](crate::types::SourceCodeVersion).
     pub fn build(self) -> crate::types::SourceCodeVersion {

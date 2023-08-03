@@ -55,6 +55,10 @@ impl UpdateAccountInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The new name for the specified Amazon Chime account.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl UpdateAccountInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The new name for the specified Amazon Chime account.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The default license applied when you add users to an Amazon Chime account.</p>
     pub fn default_license(mut self, input: crate::types::License) -> Self {
@@ -77,6 +85,10 @@ impl UpdateAccountInputBuilder {
     ) -> Self {
         self.default_license = input;
         self
+    }
+    /// <p>The default license applied when you add users to an Amazon Chime account.</p>
+    pub fn get_default_license(&self) -> &::std::option::Option<crate::types::License> {
+        &self.default_license
     }
     /// Consumes the builder and constructs a [`UpdateAccountInput`](crate::operation::update_account::UpdateAccountInput).
     pub fn build(

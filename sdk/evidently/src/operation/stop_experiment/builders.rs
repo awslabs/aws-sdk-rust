@@ -36,6 +36,12 @@ impl StopExperimentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopExperiment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::stop_experiment::builders::StopExperimentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl StopExperimentFluentBuilder {
         self.inner = self.inner.set_project(input);
         self
     }
+    /// <p>The name or ARN of the project that contains the experiment to stop.</p>
+    pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project()
+    }
     /// <p>The name of the experiment to stop.</p>
     pub fn experiment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.experiment(input.into());
@@ -127,6 +137,10 @@ impl StopExperimentFluentBuilder {
     pub fn set_experiment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_experiment(input);
         self
+    }
+    /// <p>The name of the experiment to stop.</p>
+    pub fn get_experiment(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_experiment()
     }
     /// <p>Specify whether the experiment is to be considered <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
     pub fn desired_state(mut self, input: crate::types::ExperimentStopDesiredState) -> Self {
@@ -141,6 +155,12 @@ impl StopExperimentFluentBuilder {
         self.inner = self.inner.set_desired_state(input);
         self
     }
+    /// <p>Specify whether the experiment is to be considered <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
+    pub fn get_desired_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExperimentStopDesiredState> {
+        self.inner.get_desired_state()
+    }
     /// <p>A string that describes why you are stopping the experiment.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reason(input.into());
@@ -150,5 +170,9 @@ impl StopExperimentFluentBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reason(input);
         self
+    }
+    /// <p>A string that describes why you are stopping the experiment.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reason()
     }
 }

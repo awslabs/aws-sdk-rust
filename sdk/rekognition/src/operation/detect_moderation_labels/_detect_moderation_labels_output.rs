@@ -78,6 +78,12 @@ impl DetectModerationLabelsOutputBuilder {
         self.moderation_labels = input;
         self
     }
+    /// <p>Array of detected Moderation labels and the time, in milliseconds from the start of the video, they were detected.</p>
+    pub fn get_moderation_labels(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ModerationLabel>> {
+        &self.moderation_labels
+    }
     /// <p>Version number of the moderation detection model that was used to detect unsafe content.</p>
     pub fn moderation_model_version(
         mut self,
@@ -94,6 +100,10 @@ impl DetectModerationLabelsOutputBuilder {
         self.moderation_model_version = input;
         self
     }
+    /// <p>Version number of the moderation detection model that was used to detect unsafe content.</p>
+    pub fn get_moderation_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.moderation_model_version
+    }
     /// <p>Shows the results of the human in the loop evaluation.</p>
     pub fn human_loop_activation_output(
         mut self,
@@ -109,6 +119,12 @@ impl DetectModerationLabelsOutputBuilder {
     ) -> Self {
         self.human_loop_activation_output = input;
         self
+    }
+    /// <p>Shows the results of the human in the loop evaluation.</p>
+    pub fn get_human_loop_activation_output(
+        &self,
+    ) -> &::std::option::Option<crate::types::HumanLoopActivationOutput> {
+        &self.human_loop_activation_output
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

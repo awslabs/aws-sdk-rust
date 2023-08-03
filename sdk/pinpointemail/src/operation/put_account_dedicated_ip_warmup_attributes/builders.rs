@@ -36,6 +36,10 @@ impl PutAccountDedicatedIpWarmupAttributesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutAccountDedicatedIpWarmupAttributes as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_account_dedicated_ip_warmup_attributes::builders::PutAccountDedicatedIpWarmupAttributesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -99,5 +103,9 @@ impl PutAccountDedicatedIpWarmupAttributesFluentBuilder {
     pub fn set_auto_warmup_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_auto_warmup_enabled(input);
         self
+    }
+    /// <p>Enables or disables the automatic warm-up feature for dedicated IP addresses that are associated with your Amazon Pinpoint account in the current AWS Region. Set to <code>true</code> to enable the automatic warm-up feature, or set to <code>false</code> to disable it.</p>
+    pub fn get_auto_warmup_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_auto_warmup_enabled()
     }
 }

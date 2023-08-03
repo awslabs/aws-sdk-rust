@@ -49,6 +49,12 @@ impl FrameCaptureCdnSettingsBuilder {
         self.frame_capture_s3_settings = input;
         self
     }
+    /// Frame Capture S3 Settings
+    pub fn get_frame_capture_s3_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::FrameCaptureS3Settings> {
+        &self.frame_capture_s3_settings
+    }
     /// Consumes the builder and constructs a [`FrameCaptureCdnSettings`](crate::types::FrameCaptureCdnSettings).
     pub fn build(self) -> crate::types::FrameCaptureCdnSettings {
         crate::types::FrameCaptureCdnSettings {

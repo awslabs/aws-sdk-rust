@@ -71,6 +71,10 @@ impl CreateHostInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the host to be created. The name must be unique in the calling AWS account.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.</p>
     pub fn provider_type(mut self, input: crate::types::ProviderType) -> Self {
         self.provider_type = ::std::option::Option::Some(input);
@@ -83,6 +87,10 @@ impl CreateHostInputBuilder {
     ) -> Self {
         self.provider_type = input;
         self
+    }
+    /// <p>The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.</p>
+    pub fn get_provider_type(&self) -> &::std::option::Option<crate::types::ProviderType> {
+        &self.provider_type
     }
     /// <p>The endpoint of the infrastructure to be represented by the host after it is created.</p>
     pub fn provider_endpoint(
@@ -100,6 +108,10 @@ impl CreateHostInputBuilder {
         self.provider_endpoint = input;
         self
     }
+    /// <p>The endpoint of the infrastructure to be represented by the host after it is created.</p>
+    pub fn get_provider_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provider_endpoint
+    }
     /// <p>The VPC configuration to be provisioned for the host. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.</p>
     pub fn vpc_configuration(mut self, input: crate::types::VpcConfiguration) -> Self {
         self.vpc_configuration = ::std::option::Option::Some(input);
@@ -112,6 +124,10 @@ impl CreateHostInputBuilder {
     ) -> Self {
         self.vpc_configuration = input;
         self
+    }
+    /// <p>The VPC configuration to be provisioned for the host. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.</p>
+    pub fn get_vpc_configuration(&self) -> &::std::option::Option<crate::types::VpcConfiguration> {
+        &self.vpc_configuration
     }
     /// Appends an item to `tags`.
     ///
@@ -130,6 +146,10 @@ impl CreateHostInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateHostInput`](crate::operation::create_host::CreateHostInput).
     pub fn build(

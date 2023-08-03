@@ -55,6 +55,10 @@ impl SubscribeInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the notification rule for which you want to create the association.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>Information about the Chatbot topics or Chatbot clients associated with a notification rule.</p>
     pub fn target(mut self, input: crate::types::Target) -> Self {
         self.target = ::std::option::Option::Some(input);
@@ -64,6 +68,10 @@ impl SubscribeInputBuilder {
     pub fn set_target(mut self, input: ::std::option::Option<crate::types::Target>) -> Self {
         self.target = input;
         self
+    }
+    /// <p>Information about the Chatbot topics or Chatbot clients associated with a notification rule.</p>
+    pub fn get_target(&self) -> &::std::option::Option<crate::types::Target> {
+        &self.target
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub fn client_request_token(
@@ -80,6 +88,10 @@ impl SubscribeInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Consumes the builder and constructs a [`SubscribeInput`](crate::operation::subscribe::SubscribeInput).
     pub fn build(

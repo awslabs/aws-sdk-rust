@@ -49,6 +49,10 @@ impl DeleteIntentVersionInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the intent.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The version of the intent to delete. You cannot delete the <code>$LATEST</code> version of the intent. To delete the <code>$LATEST</code> version, use the <code>DeleteIntent</code> operation.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl DeleteIntentVersionInputBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version of the intent to delete. You cannot delete the <code>$LATEST</code> version of the intent. To delete the <code>$LATEST</code> version, use the <code>DeleteIntent</code> operation.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`DeleteIntentVersionInput`](crate::operation::delete_intent_version::DeleteIntentVersionInput).
     pub fn build(

@@ -40,6 +40,10 @@ impl AttributeValueBuilder {
         self.value = input;
         self
     }
+    /// <p>The attribute value. The value is case-sensitive.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// Consumes the builder and constructs a [`AttributeValue`](crate::types::AttributeValue).
     pub fn build(self) -> crate::types::AttributeValue {
         crate::types::AttributeValue { value: self.value }

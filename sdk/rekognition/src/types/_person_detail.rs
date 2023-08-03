@@ -56,6 +56,10 @@ impl PersonDetailBuilder {
         self.index = input;
         self
     }
+    /// <p>Identifier for the person detected person within a video. Use to keep track of the person throughout the video. The identifier is not stored by Amazon Rekognition.</p>
+    pub fn get_index(&self) -> &::std::option::Option<i64> {
+        &self.index
+    }
     /// <p>Bounding box around the detected person.</p>
     pub fn bounding_box(mut self, input: crate::types::BoundingBox) -> Self {
         self.bounding_box = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl PersonDetailBuilder {
         self.bounding_box = input;
         self
     }
+    /// <p>Bounding box around the detected person.</p>
+    pub fn get_bounding_box(&self) -> &::std::option::Option<crate::types::BoundingBox> {
+        &self.bounding_box
+    }
     /// <p>Face details for the detected person.</p>
     pub fn face(mut self, input: crate::types::FaceDetail) -> Self {
         self.face = ::std::option::Option::Some(input);
@@ -78,6 +86,10 @@ impl PersonDetailBuilder {
     pub fn set_face(mut self, input: ::std::option::Option<crate::types::FaceDetail>) -> Self {
         self.face = input;
         self
+    }
+    /// <p>Face details for the detected person.</p>
+    pub fn get_face(&self) -> &::std::option::Option<crate::types::FaceDetail> {
+        &self.face
     }
     /// Consumes the builder and constructs a [`PersonDetail`](crate::types::PersonDetail).
     pub fn build(self) -> crate::types::PersonDetail {

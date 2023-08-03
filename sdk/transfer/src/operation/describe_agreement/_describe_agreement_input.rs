@@ -48,6 +48,10 @@ impl DescribeAgreementInputBuilder {
         self.agreement_id = input;
         self
     }
+    /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
+    pub fn get_agreement_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agreement_id
+    }
     /// <p>The server identifier that's associated with the agreement.</p>
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl DescribeAgreementInputBuilder {
     pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_id = input;
         self
+    }
+    /// <p>The server identifier that's associated with the agreement.</p>
+    pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_id
     }
     /// Consumes the builder and constructs a [`DescribeAgreementInput`](crate::operation::describe_agreement::DescribeAgreementInput).
     pub fn build(

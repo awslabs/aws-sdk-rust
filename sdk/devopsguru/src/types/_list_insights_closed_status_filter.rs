@@ -48,6 +48,10 @@ impl ListInsightsClosedStatusFilterBuilder {
         self.r#type = input;
         self
     }
+    /// <p> Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights. </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::InsightType> {
+        &self.r#type
+    }
     /// <p> A time range used to specify when the behavior of the filtered insights ended. </p>
     pub fn end_time_range(mut self, input: crate::types::EndTimeRange) -> Self {
         self.end_time_range = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl ListInsightsClosedStatusFilterBuilder {
     ) -> Self {
         self.end_time_range = input;
         self
+    }
+    /// <p> A time range used to specify when the behavior of the filtered insights ended. </p>
+    pub fn get_end_time_range(&self) -> &::std::option::Option<crate::types::EndTimeRange> {
+        &self.end_time_range
     }
     /// Consumes the builder and constructs a [`ListInsightsClosedStatusFilter`](crate::types::ListInsightsClosedStatusFilter).
     pub fn build(self) -> crate::types::ListInsightsClosedStatusFilter {

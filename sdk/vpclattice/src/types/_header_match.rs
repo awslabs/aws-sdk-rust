@@ -56,6 +56,10 @@ impl HeaderMatchBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the header.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The header match type.</p>
     pub fn r#match(mut self, input: crate::types::HeaderMatchType) -> Self {
         self.r#match = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl HeaderMatchBuilder {
         self.r#match = input;
         self
     }
+    /// <p>The header match type.</p>
+    pub fn get_match(&self) -> &::std::option::Option<crate::types::HeaderMatchType> {
+        &self.r#match
+    }
     /// <p>Indicates whether the match is case sensitive. Defaults to false.</p>
     pub fn case_sensitive(mut self, input: bool) -> Self {
         self.case_sensitive = ::std::option::Option::Some(input);
@@ -78,6 +86,10 @@ impl HeaderMatchBuilder {
     pub fn set_case_sensitive(mut self, input: ::std::option::Option<bool>) -> Self {
         self.case_sensitive = input;
         self
+    }
+    /// <p>Indicates whether the match is case sensitive. Defaults to false.</p>
+    pub fn get_case_sensitive(&self) -> &::std::option::Option<bool> {
+        &self.case_sensitive
     }
     /// Consumes the builder and constructs a [`HeaderMatch`](crate::types::HeaderMatch).
     pub fn build(self) -> crate::types::HeaderMatch {

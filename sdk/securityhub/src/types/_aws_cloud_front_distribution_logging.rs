@@ -64,6 +64,10 @@ impl AwsCloudFrontDistributionLoggingBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The S3 bucket to store the access logs in.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>With this field, you can enable or disable the selected distribution.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl AwsCloudFrontDistributionLoggingBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>With this field, you can enable or disable the selected distribution.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// <p>Specifies whether you want CloudFront to include cookies in access logs.</p>
     pub fn include_cookies(mut self, input: bool) -> Self {
@@ -84,6 +92,10 @@ impl AwsCloudFrontDistributionLoggingBuilder {
         self.include_cookies = input;
         self
     }
+    /// <p>Specifies whether you want CloudFront to include cookies in access logs.</p>
+    pub fn get_include_cookies(&self) -> &::std::option::Option<bool> {
+        &self.include_cookies
+    }
     /// <p>An optional string that you want CloudFront to use as a prefix to the access log filenames for this distribution.</p>
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl AwsCloudFrontDistributionLoggingBuilder {
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix = input;
         self
+    }
+    /// <p>An optional string that you want CloudFront to use as a prefix to the access log filenames for this distribution.</p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
     }
     /// Consumes the builder and constructs a [`AwsCloudFrontDistributionLogging`](crate::types::AwsCloudFrontDistributionLogging).
     pub fn build(self) -> crate::types::AwsCloudFrontDistributionLogging {

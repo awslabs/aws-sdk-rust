@@ -37,6 +37,10 @@ impl ModifyRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyRule as a reference.
+    pub fn as_input(&self) -> &crate::operation::modify_rule::builders::ModifyRuleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl ModifyRuleFluentBuilder {
         self.inner = self.inner.set_rule_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the rule.</p>
+    pub fn get_rule_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rule_arn()
+    }
     /// Appends an item to `Conditions`.
     ///
     /// To override the contents of this collection use [`set_conditions`](Self::set_conditions).
@@ -136,6 +144,12 @@ impl ModifyRuleFluentBuilder {
         self.inner = self.inner.set_conditions(input);
         self
     }
+    /// <p>The conditions.</p>
+    pub fn get_conditions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleCondition>> {
+        self.inner.get_conditions()
+    }
     /// Appends an item to `Actions`.
     ///
     /// To override the contents of this collection use [`set_actions`](Self::set_actions).
@@ -152,5 +166,9 @@ impl ModifyRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_actions(input);
         self
+    }
+    /// <p>The actions.</p>
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Action>> {
+        self.inner.get_actions()
     }
 }

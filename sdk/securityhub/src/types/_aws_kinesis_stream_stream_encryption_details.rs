@@ -54,6 +54,10 @@ impl AwsKinesisStreamStreamEncryptionDetailsBuilder {
         self.encryption_type = input;
         self
     }
+    /// <p>The encryption type to use. </p>
+    pub fn get_encryption_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encryption_type
+    }
     /// <p>The globally unique identifier for the customer-managed KMS key to use for encryption. </p>
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_id = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl AwsKinesisStreamStreamEncryptionDetailsBuilder {
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_id = input;
         self
+    }
+    /// <p>The globally unique identifier for the customer-managed KMS key to use for encryption. </p>
+    pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_id
     }
     /// Consumes the builder and constructs a [`AwsKinesisStreamStreamEncryptionDetails`](crate::types::AwsKinesisStreamStreamEncryptionDetails).
     pub fn build(self) -> crate::types::AwsKinesisStreamStreamEncryptionDetails {

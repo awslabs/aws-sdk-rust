@@ -46,6 +46,10 @@ impl StartMatchingJobInputBuilder {
         self.workflow_name = input;
         self
     }
+    /// <p>The name of the matching job to be retrieved.</p>
+    pub fn get_workflow_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_name
+    }
     /// Consumes the builder and constructs a [`StartMatchingJobInput`](crate::operation::start_matching_job::StartMatchingJobInput).
     pub fn build(
         self,

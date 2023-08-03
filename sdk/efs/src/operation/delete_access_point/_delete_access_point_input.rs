@@ -46,6 +46,10 @@ impl DeleteAccessPointInputBuilder {
         self.access_point_id = input;
         self
     }
+    /// <p>The ID of the access point that you want to delete.</p>
+    pub fn get_access_point_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_point_id
+    }
     /// Consumes the builder and constructs a [`DeleteAccessPointInput`](crate::operation::delete_access_point::DeleteAccessPointInput).
     pub fn build(
         self,

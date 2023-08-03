@@ -39,6 +39,13 @@ impl StartBgpFailoverTestFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartBgpFailoverTest as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_bgp_failover_test::builders::StartBgpFailoverTestInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +142,10 @@ impl StartBgpFailoverTestFluentBuilder {
         self.inner = self.inner.set_virtual_interface_id(input);
         self
     }
+    /// <p>The ID of the virtual interface you want to test.</p>
+    pub fn get_virtual_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_virtual_interface_id()
+    }
     /// Appends an item to `bgpPeers`.
     ///
     /// To override the contents of this collection use [`set_bgp_peers`](Self::set_bgp_peers).
@@ -152,6 +163,10 @@ impl StartBgpFailoverTestFluentBuilder {
         self.inner = self.inner.set_bgp_peers(input);
         self
     }
+    /// <p>The BGP peers to place in the DOWN state.</p>
+    pub fn get_bgp_peers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_bgp_peers()
+    }
     /// <p>The time in minutes that the virtual interface failover test will last.</p>
     /// <p>Maximum value: 4,320 minutes (72 hours).</p>
     /// <p>Default: 180 minutes (3 hours).</p>
@@ -165,5 +180,11 @@ impl StartBgpFailoverTestFluentBuilder {
     pub fn set_test_duration_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_test_duration_in_minutes(input);
         self
+    }
+    /// <p>The time in minutes that the virtual interface failover test will last.</p>
+    /// <p>Maximum value: 4,320 minutes (72 hours).</p>
+    /// <p>Default: 180 minutes (3 hours).</p>
+    pub fn get_test_duration_in_minutes(&self) -> &::std::option::Option<i32> {
+        self.inner.get_test_duration_in_minutes()
     }
 }

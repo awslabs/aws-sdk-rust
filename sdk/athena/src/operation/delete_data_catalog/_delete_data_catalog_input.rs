@@ -40,6 +40,10 @@ impl DeleteDataCatalogInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the data catalog to delete.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeleteDataCatalogInput`](crate::operation::delete_data_catalog::DeleteDataCatalogInput).
     pub fn build(
         self,

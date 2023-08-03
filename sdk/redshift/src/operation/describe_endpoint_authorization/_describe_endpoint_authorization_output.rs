@@ -70,6 +70,12 @@ impl DescribeEndpointAuthorizationOutputBuilder {
         self.endpoint_authorization_list = input;
         self
     }
+    /// <p>The authorizations to an endpoint.</p>
+    pub fn get_endpoint_authorization_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointAuthorization>> {
+        &self.endpoint_authorization_list
+    }
     /// <p>An optional pagination token provided by a previous <code>DescribeEndpointAuthorization</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -79,6 +85,10 @@ impl DescribeEndpointAuthorizationOutputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>An optional pagination token provided by a previous <code>DescribeEndpointAuthorization</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

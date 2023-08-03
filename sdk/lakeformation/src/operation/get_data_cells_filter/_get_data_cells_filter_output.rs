@@ -51,6 +51,10 @@ impl GetDataCellsFilterOutputBuilder {
         self.data_cells_filter = input;
         self
     }
+    /// <p>A structure that describes certain columns on certain rows.</p>
+    pub fn get_data_cells_filter(&self) -> &::std::option::Option<crate::types::DataCellsFilter> {
+        &self.data_cells_filter
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

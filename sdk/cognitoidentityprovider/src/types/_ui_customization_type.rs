@@ -99,6 +99,10 @@ impl UiCustomizationTypeBuilder {
         self.user_pool_id = input;
         self
     }
+    /// <p>The user pool ID for the user pool.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool_id
+    }
     /// <p>The client ID for the client app.</p>
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
@@ -108,6 +112,10 @@ impl UiCustomizationTypeBuilder {
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_id = input;
         self
+    }
+    /// <p>The client ID for the client app.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_id
     }
     /// <p>The logo image for the UI customization.</p>
     pub fn image_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -119,6 +127,10 @@ impl UiCustomizationTypeBuilder {
         self.image_url = input;
         self
     }
+    /// <p>The logo image for the UI customization.</p>
+    pub fn get_image_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_url
+    }
     /// <p>The CSS values in the UI customization.</p>
     pub fn css(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.css = ::std::option::Option::Some(input.into());
@@ -129,6 +141,10 @@ impl UiCustomizationTypeBuilder {
         self.css = input;
         self
     }
+    /// <p>The CSS values in the UI customization.</p>
+    pub fn get_css(&self) -> &::std::option::Option<::std::string::String> {
+        &self.css
+    }
     /// <p>The CSS version number.</p>
     pub fn css_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.css_version = ::std::option::Option::Some(input.into());
@@ -138,6 +154,10 @@ impl UiCustomizationTypeBuilder {
     pub fn set_css_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.css_version = input;
         self
+    }
+    /// <p>The CSS version number.</p>
+    pub fn get_css_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.css_version
     }
     /// <p>The last-modified date for the UI customization.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -152,6 +172,10 @@ impl UiCustomizationTypeBuilder {
         self.last_modified_date = input;
         self
     }
+    /// <p>The last-modified date for the UI customization.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_date
+    }
     /// <p>The creation date for the UI customization.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -164,6 +188,10 @@ impl UiCustomizationTypeBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>The creation date for the UI customization.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
     }
     /// Consumes the builder and constructs a [`UiCustomizationType`](crate::types::UiCustomizationType).
     pub fn build(self) -> crate::types::UiCustomizationType {

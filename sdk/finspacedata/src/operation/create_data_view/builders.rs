@@ -36,6 +36,12 @@ impl CreateDataViewFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDataView as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_data_view::builders::CreateDataViewInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateDataViewFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>The unique Dataset identifier that is used to create a Dataview.</p>
     pub fn dataset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_id(input.into());
@@ -136,6 +146,10 @@ impl CreateDataViewFluentBuilder {
         self.inner = self.inner.set_dataset_id(input);
         self
     }
+    /// <p>The unique Dataset identifier that is used to create a Dataview.</p>
+    pub fn get_dataset_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dataset_id()
+    }
     /// <p>Flag to indicate Dataview should be updated automatically.</p>
     pub fn auto_update(mut self, input: bool) -> Self {
         self.inner = self.inner.auto_update(input);
@@ -145,6 +159,10 @@ impl CreateDataViewFluentBuilder {
     pub fn set_auto_update(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_auto_update(input);
         self
+    }
+    /// <p>Flag to indicate Dataview should be updated automatically.</p>
+    pub fn get_auto_update(&self) -> &::std::option::Option<bool> {
+        self.inner.get_auto_update()
     }
     /// Appends an item to `sortColumns`.
     ///
@@ -162,6 +180,12 @@ impl CreateDataViewFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sort_columns(input);
         self
+    }
+    /// <p>Columns to be used for sorting the data.</p>
+    pub fn get_sort_columns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_sort_columns()
     }
     /// Appends an item to `partitionColumns`.
     ///
@@ -183,6 +207,12 @@ impl CreateDataViewFluentBuilder {
         self.inner = self.inner.set_partition_columns(input);
         self
     }
+    /// <p>Ordered set of column names used to partition data.</p>
+    pub fn get_partition_columns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_partition_columns()
+    }
     /// <p>Beginning time to use for the Dataview. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn as_of_timestamp(mut self, input: i64) -> Self {
         self.inner = self.inner.as_of_timestamp(input);
@@ -192,6 +222,10 @@ impl CreateDataViewFluentBuilder {
     pub fn set_as_of_timestamp(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_as_of_timestamp(input);
         self
+    }
+    /// <p>Beginning time to use for the Dataview. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    pub fn get_as_of_timestamp(&self) -> &::std::option::Option<i64> {
+        self.inner.get_as_of_timestamp()
     }
     /// <p>Options that define the destination type for the Dataview.</p>
     pub fn destination_type_params(
@@ -208,5 +242,11 @@ impl CreateDataViewFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destination_type_params(input);
         self
+    }
+    /// <p>Options that define the destination type for the Dataview.</p>
+    pub fn get_destination_type_params(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataViewDestinationTypeParams> {
+        self.inner.get_destination_type_params()
     }
 }

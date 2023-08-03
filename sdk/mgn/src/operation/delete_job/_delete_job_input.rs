@@ -47,6 +47,10 @@ impl DeleteJobInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>Request to delete Job from service by Job ID.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>Request to delete Job from service by Account ID.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DeleteJobInputBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>Request to delete Job from service by Account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// Consumes the builder and constructs a [`DeleteJobInput`](crate::operation::delete_job::DeleteJobInput).
     pub fn build(

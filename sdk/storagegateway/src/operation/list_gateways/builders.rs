@@ -38,6 +38,10 @@ impl ListGatewaysFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListGateways as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_gateways::builders::ListGatewaysInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +135,10 @@ impl ListGatewaysFluentBuilder {
         self.inner = self.inner.set_marker(input);
         self
     }
+    /// <p>An opaque string that indicates the position at which to begin the returned list of gateways.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
+    }
     /// <p>Specifies that the list of gateways returned be limited to the specified number of items.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -140,5 +148,9 @@ impl ListGatewaysFluentBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
+    }
+    /// <p>Specifies that the list of gateways returned be limited to the specified number of items.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
     }
 }

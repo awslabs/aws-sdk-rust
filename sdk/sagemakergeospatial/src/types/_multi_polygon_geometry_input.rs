@@ -60,6 +60,14 @@ impl MultiPolygonGeometryInputBuilder {
         self.coordinates = input;
         self
     }
+    /// <p>The coordinates of the multipolygon geometry.</p>
+    pub fn get_coordinates(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>>,
+    > {
+        &self.coordinates
+    }
     /// Consumes the builder and constructs a [`MultiPolygonGeometryInput`](crate::types::MultiPolygonGeometryInput).
     pub fn build(self) -> crate::types::MultiPolygonGeometryInput {
         crate::types::MultiPolygonGeometryInput {

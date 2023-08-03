@@ -55,6 +55,10 @@ impl DetachLoadBalancersInputBuilder {
         self.auto_scaling_group_name = input;
         self
     }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_scaling_group_name
+    }
     /// Appends an item to `load_balancer_names`.
     ///
     /// To override the contents of this collection use [`set_load_balancer_names`](Self::set_load_balancer_names).
@@ -76,6 +80,12 @@ impl DetachLoadBalancersInputBuilder {
     ) -> Self {
         self.load_balancer_names = input;
         self
+    }
+    /// <p>The names of the load balancers. You can specify up to 10 load balancers.</p>
+    pub fn get_load_balancer_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.load_balancer_names
     }
     /// Consumes the builder and constructs a [`DetachLoadBalancersInput`](crate::operation::detach_load_balancers::DetachLoadBalancersInput).
     pub fn build(

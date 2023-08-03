@@ -40,6 +40,10 @@ impl NodeToNodeEncryptionOptionsBuilder {
         self.enabled = input;
         self
     }
+    /// <p>True to enable node-to-node encryption.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Consumes the builder and constructs a [`NodeToNodeEncryptionOptions`](crate::types::NodeToNodeEncryptionOptions).
     pub fn build(self) -> crate::types::NodeToNodeEncryptionOptions {
         crate::types::NodeToNodeEncryptionOptions {

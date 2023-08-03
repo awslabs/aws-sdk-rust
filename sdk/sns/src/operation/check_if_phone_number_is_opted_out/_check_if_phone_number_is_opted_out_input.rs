@@ -40,6 +40,10 @@ impl CheckIfPhoneNumberIsOptedOutInputBuilder {
         self.phone_number = input;
         self
     }
+    /// <p>The phone number for which you want to check the opt out status.</p>
+    pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number
+    }
     /// Consumes the builder and constructs a [`CheckIfPhoneNumberIsOptedOutInput`](crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutInput).
     pub fn build(
         self,

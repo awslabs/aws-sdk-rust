@@ -77,6 +77,14 @@ impl ExecuteProvisionedProductPlanInputBuilder {
         self.accept_language = input;
         self
     }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accept_language
+    }
     /// <p>The plan identifier.</p>
     pub fn plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.plan_id = ::std::option::Option::Some(input.into());
@@ -86,6 +94,10 @@ impl ExecuteProvisionedProductPlanInputBuilder {
     pub fn set_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.plan_id = input;
         self
+    }
+    /// <p>The plan identifier.</p>
+    pub fn get_plan_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.plan_id
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub fn idempotency_token(
@@ -102,6 +114,10 @@ impl ExecuteProvisionedProductPlanInputBuilder {
     ) -> Self {
         self.idempotency_token = input;
         self
+    }
+    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
+    pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.idempotency_token
     }
     /// Consumes the builder and constructs a [`ExecuteProvisionedProductPlanInput`](crate::operation::execute_provisioned_product_plan::ExecuteProvisionedProductPlanInput).
     pub fn build(

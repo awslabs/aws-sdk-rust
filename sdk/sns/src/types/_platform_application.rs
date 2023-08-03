@@ -62,6 +62,10 @@ impl PlatformApplicationBuilder {
         self.platform_application_arn = input;
         self
     }
+    /// <p>PlatformApplicationArn for platform application object.</p>
+    pub fn get_platform_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_application_arn
+    }
     /// Adds a key-value pair to `attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
@@ -86,6 +90,14 @@ impl PlatformApplicationBuilder {
     ) -> Self {
         self.attributes = input;
         self
+    }
+    /// <p>Attributes for platform application object.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.attributes
     }
     /// Consumes the builder and constructs a [`PlatformApplication`](crate::types::PlatformApplication).
     pub fn build(self) -> crate::types::PlatformApplication {

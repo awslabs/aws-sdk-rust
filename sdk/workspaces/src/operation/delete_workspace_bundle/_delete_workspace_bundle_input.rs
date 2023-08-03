@@ -41,6 +41,10 @@ impl DeleteWorkspaceBundleInputBuilder {
         self.bundle_id = input;
         self
     }
+    /// <p>The identifier of the bundle.</p>
+    pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bundle_id
+    }
     /// Consumes the builder and constructs a [`DeleteWorkspaceBundleInput`](crate::operation::delete_workspace_bundle::DeleteWorkspaceBundleInput).
     pub fn build(
         self,

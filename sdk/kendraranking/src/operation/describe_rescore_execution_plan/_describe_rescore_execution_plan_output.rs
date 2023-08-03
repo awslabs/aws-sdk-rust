@@ -112,6 +112,10 @@ impl DescribeRescoreExecutionPlanOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the rescore execution plan.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Amazon Resource Name (ARN) of the rescore execution plan.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -121,6 +125,10 @@ impl DescribeRescoreExecutionPlanOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the rescore execution plan.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The name for the rescore execution plan.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -132,6 +140,10 @@ impl DescribeRescoreExecutionPlanOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name for the rescore execution plan.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description for the rescore execution plan.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -141,6 +153,10 @@ impl DescribeRescoreExecutionPlanOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description for the rescore execution plan.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The capacity units set for the rescore execution plan. A capacity of zero indicates that the rescore execution plan is using the default capacity. For more information on the default capacity and additional capacity units, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
     pub fn capacity_units(mut self, input: crate::types::CapacityUnitsConfiguration) -> Self {
@@ -155,6 +171,12 @@ impl DescribeRescoreExecutionPlanOutputBuilder {
         self.capacity_units = input;
         self
     }
+    /// <p>The capacity units set for the rescore execution plan. A capacity of zero indicates that the rescore execution plan is using the default capacity. For more information on the default capacity and additional capacity units, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
+    pub fn get_capacity_units(
+        &self,
+    ) -> &::std::option::Option<crate::types::CapacityUnitsConfiguration> {
+        &self.capacity_units
+    }
     /// <p>The Unix timestamp of when the rescore execution plan was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -167,6 +189,10 @@ impl DescribeRescoreExecutionPlanOutputBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The Unix timestamp of when the rescore execution plan was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>The Unix timestamp of when the rescore execution plan was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -181,6 +207,10 @@ impl DescribeRescoreExecutionPlanOutputBuilder {
         self.updated_at = input;
         self
     }
+    /// <p>The Unix timestamp of when the rescore execution plan was last updated.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
+    }
     /// <p>The current status of the rescore execution plan. When the value is <code>ACTIVE</code>, the rescore execution plan is ready for use. If the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
     pub fn status(mut self, input: crate::types::RescoreExecutionPlanStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -193,6 +223,10 @@ impl DescribeRescoreExecutionPlanOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the rescore execution plan. When the value is <code>ACTIVE</code>, the rescore execution plan is ready for use. If the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::RescoreExecutionPlanStatus> {
+        &self.status
     }
     /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
     pub fn error_message(
@@ -209,6 +243,10 @@ impl DescribeRescoreExecutionPlanOutputBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

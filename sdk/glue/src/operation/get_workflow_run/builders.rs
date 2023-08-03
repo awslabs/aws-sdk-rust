@@ -36,6 +36,12 @@ impl GetWorkflowRunFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetWorkflowRun as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_workflow_run::builders::GetWorkflowRunInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl GetWorkflowRunFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>Name of the workflow being run.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The ID of the workflow run.</p>
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.run_id(input.into());
@@ -136,6 +146,10 @@ impl GetWorkflowRunFluentBuilder {
         self.inner = self.inner.set_run_id(input);
         self
     }
+    /// <p>The ID of the workflow run.</p>
+    pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_run_id()
+    }
     /// <p>Specifies whether to include the workflow graph in response or not.</p>
     pub fn include_graph(mut self, input: bool) -> Self {
         self.inner = self.inner.include_graph(input);
@@ -145,5 +159,9 @@ impl GetWorkflowRunFluentBuilder {
     pub fn set_include_graph(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_graph(input);
         self
+    }
+    /// <p>Specifies whether to include the workflow graph in response or not.</p>
+    pub fn get_include_graph(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_graph()
     }
 }

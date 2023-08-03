@@ -143,6 +143,10 @@ impl JobSettingsBuilder {
         self.ad_avail_offset = input;
         self
     }
+    /// When specified, this offset (in milliseconds) is added to the input Ad Avail PTS time.
+    pub fn get_ad_avail_offset(&self) -> &::std::option::Option<i32> {
+        &self.ad_avail_offset
+    }
     /// Settings for ad avail blanking. Video can be blanked or overlaid with an image, and audio muted during SCTE-35 triggered ad avails.
     pub fn avail_blanking(mut self, input: crate::types::AvailBlanking) -> Self {
         self.avail_blanking = ::std::option::Option::Some(input);
@@ -156,6 +160,10 @@ impl JobSettingsBuilder {
         self.avail_blanking = input;
         self
     }
+    /// Settings for ad avail blanking. Video can be blanked or overlaid with an image, and audio muted during SCTE-35 triggered ad avails.
+    pub fn get_avail_blanking(&self) -> &::std::option::Option<crate::types::AvailBlanking> {
+        &self.avail_blanking
+    }
     /// Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion, you can ignore these settings.
     pub fn esam(mut self, input: crate::types::EsamSettings) -> Self {
         self.esam = ::std::option::Option::Some(input);
@@ -165,6 +173,10 @@ impl JobSettingsBuilder {
     pub fn set_esam(mut self, input: ::std::option::Option<crate::types::EsamSettings>) -> Self {
         self.esam = input;
         self
+    }
+    /// Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion, you can ignore these settings.
+    pub fn get_esam(&self) -> &::std::option::Option<crate::types::EsamSettings> {
+        &self.esam
     }
     /// If your source content has EIA-608 Line 21 Data Services, enable this feature to specify what MediaConvert does with the Extended Data Services (XDS) packets. You can choose to pass through XDS packets, or remove them from the output. For more information about XDS, see EIA-608 Line Data Services, section 9.5.1.5 05h Content Advisory.
     pub fn extended_data_services(mut self, input: crate::types::ExtendedDataServices) -> Self {
@@ -178,6 +190,12 @@ impl JobSettingsBuilder {
     ) -> Self {
         self.extended_data_services = input;
         self
+    }
+    /// If your source content has EIA-608 Line 21 Data Services, enable this feature to specify what MediaConvert does with the Extended Data Services (XDS) packets. You can choose to pass through XDS packets, or remove them from the output. For more information about XDS, see EIA-608 Line Data Services, section 9.5.1.5 05h Content Advisory.
+    pub fn get_extended_data_services(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExtendedDataServices> {
+        &self.extended_data_services
     }
     /// Appends an item to `inputs`.
     ///
@@ -198,6 +216,10 @@ impl JobSettingsBuilder {
         self.inputs = input;
         self
     }
+    /// Use Inputs to define source file used in the transcode job. There can be multiple inputs add in a job. These inputs will be concantenated together to create the output.
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Input>> {
+        &self.inputs
+    }
     /// Use these settings only when you use Kantar watermarking. Specify the values that MediaConvert uses to generate and place Kantar watermarks in your output audio. These settings apply to every output in your job. In addition to specifying these values, you also need to store your Kantar credentials in AWS Secrets Manager. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
     pub fn kantar_watermark(mut self, input: crate::types::KantarWatermarkSettings) -> Self {
         self.kantar_watermark = ::std::option::Option::Some(input);
@@ -210,6 +232,12 @@ impl JobSettingsBuilder {
     ) -> Self {
         self.kantar_watermark = input;
         self
+    }
+    /// Use these settings only when you use Kantar watermarking. Specify the values that MediaConvert uses to generate and place Kantar watermarks in your output audio. These settings apply to every output in your job. In addition to specifying these values, you also need to store your Kantar credentials in AWS Secrets Manager. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
+    pub fn get_kantar_watermark(
+        &self,
+    ) -> &::std::option::Option<crate::types::KantarWatermarkSettings> {
+        &self.kantar_watermark
     }
     /// Overlay motion graphics on top of your video. The motion graphics that you specify here appear on all outputs in all output groups. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/motion-graphic-overlay.html.
     pub fn motion_image_inserter(mut self, input: crate::types::MotionImageInserter) -> Self {
@@ -224,6 +252,12 @@ impl JobSettingsBuilder {
         self.motion_image_inserter = input;
         self
     }
+    /// Overlay motion graphics on top of your video. The motion graphics that you specify here appear on all outputs in all output groups. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/motion-graphic-overlay.html.
+    pub fn get_motion_image_inserter(
+        &self,
+    ) -> &::std::option::Option<crate::types::MotionImageInserter> {
+        &self.motion_image_inserter
+    }
     /// Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these settings. When you enable Nielsen configuration, MediaConvert enables PCM to ID3 tagging for all outputs in the job.
     pub fn nielsen_configuration(mut self, input: crate::types::NielsenConfiguration) -> Self {
         self.nielsen_configuration = ::std::option::Option::Some(input);
@@ -236,6 +270,12 @@ impl JobSettingsBuilder {
     ) -> Self {
         self.nielsen_configuration = input;
         self
+    }
+    /// Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these settings. When you enable Nielsen configuration, MediaConvert enables PCM to ID3 tagging for all outputs in the job.
+    pub fn get_nielsen_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::NielsenConfiguration> {
+        &self.nielsen_configuration
     }
     /// Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that MediaConvert uses to generate and place Nielsen watermarks in your output audio. In addition to specifying these values, you also need to set up your cloud TIC server. These settings apply to every output in your job. The MediaConvert implementation is currently with the following Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
     pub fn nielsen_non_linear_watermark(
@@ -252,6 +292,12 @@ impl JobSettingsBuilder {
     ) -> Self {
         self.nielsen_non_linear_watermark = input;
         self
+    }
+    /// Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that MediaConvert uses to generate and place Nielsen watermarks in your output audio. In addition to specifying these values, you also need to set up your cloud TIC server. These settings apply to every output in your job. The MediaConvert implementation is currently with the following Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
+    pub fn get_nielsen_non_linear_watermark(
+        &self,
+    ) -> &::std::option::Option<crate::types::NielsenNonLinearWatermarkSettings> {
+        &self.nielsen_non_linear_watermark
     }
     /// Appends an item to `output_groups`.
     ///
@@ -272,6 +318,12 @@ impl JobSettingsBuilder {
         self.output_groups = input;
         self
     }
+    /// Contains one group of settings for each set of outputs that share a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as well. Required in is a group of settings that apply to the whole group. This required object depends on the value you set for Type. Type, settings object pairs are as follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
+    pub fn get_output_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputGroup>> {
+        &self.output_groups
+    }
     /// These settings control how the service handles timecodes throughout the job. These settings don't affect input clipping.
     pub fn timecode_config(mut self, input: crate::types::TimecodeConfig) -> Self {
         self.timecode_config = ::std::option::Option::Some(input);
@@ -285,6 +337,10 @@ impl JobSettingsBuilder {
         self.timecode_config = input;
         self
     }
+    /// These settings control how the service handles timecodes throughout the job. These settings don't affect input clipping.
+    pub fn get_timecode_config(&self) -> &::std::option::Option<crate::types::TimecodeConfig> {
+        &self.timecode_config
+    }
     /// Insert user-defined custom ID3 metadata at timecodes that you specify. In each output that you want to include this metadata, you must set ID3 metadata to Passthrough.
     pub fn timed_metadata_insertion(mut self, input: crate::types::TimedMetadataInsertion) -> Self {
         self.timed_metadata_insertion = ::std::option::Option::Some(input);
@@ -297,6 +353,12 @@ impl JobSettingsBuilder {
     ) -> Self {
         self.timed_metadata_insertion = input;
         self
+    }
+    /// Insert user-defined custom ID3 metadata at timecodes that you specify. In each output that you want to include this metadata, you must set ID3 metadata to Passthrough.
+    pub fn get_timed_metadata_insertion(
+        &self,
+    ) -> &::std::option::Option<crate::types::TimedMetadataInsertion> {
+        &self.timed_metadata_insertion
     }
     /// Consumes the builder and constructs a [`JobSettings`](crate::types::JobSettings).
     pub fn build(self) -> crate::types::JobSettings {

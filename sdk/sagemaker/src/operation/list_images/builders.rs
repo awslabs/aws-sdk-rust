@@ -36,6 +36,10 @@ impl ListImagesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListImages as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_images::builders::ListImagesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl ListImagesFluentBuilder {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
+    /// <p>A filter that returns only images created on or after the specified time.</p>
+    pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_creation_time_after()
+    }
     /// <p>A filter that returns only images created on or before the specified time.</p>
     pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_before(input);
@@ -139,6 +147,10 @@ impl ListImagesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
+    }
+    /// <p>A filter that returns only images created on or before the specified time.</p>
+    pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_creation_time_before()
     }
     /// <p>A filter that returns only images modified on or after the specified time.</p>
     pub fn last_modified_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -153,6 +165,12 @@ impl ListImagesFluentBuilder {
         self.inner = self.inner.set_last_modified_time_after(input);
         self
     }
+    /// <p>A filter that returns only images modified on or after the specified time.</p>
+    pub fn get_last_modified_time_after(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_last_modified_time_after()
+    }
     /// <p>A filter that returns only images modified on or before the specified time.</p>
     pub fn last_modified_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.last_modified_time_before(input);
@@ -166,6 +184,12 @@ impl ListImagesFluentBuilder {
         self.inner = self.inner.set_last_modified_time_before(input);
         self
     }
+    /// <p>A filter that returns only images modified on or before the specified time.</p>
+    pub fn get_last_modified_time_before(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_last_modified_time_before()
+    }
     /// <p>The maximum number of images to return in the response. The default value is 10. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -175,6 +199,10 @@ impl ListImagesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of images to return in the response. The default value is 10. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>A filter that returns only images whose name contains the specified string.</p>
     pub fn name_contains(
@@ -192,6 +220,10 @@ impl ListImagesFluentBuilder {
         self.inner = self.inner.set_name_contains(input);
         self
     }
+    /// <p>A filter that returns only images whose name contains the specified string.</p>
+    pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name_contains()
+    }
     /// <p>If the previous call to <code>ListImages</code> didn't return the full set of images, the call returns a token for getting the next set of images.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -202,6 +234,10 @@ impl ListImagesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>If the previous call to <code>ListImages</code> didn't return the full set of images, the call returns a token for getting the next set of images.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The property used to sort results. The default value is <code>CREATION_TIME</code>.</p>
     pub fn sort_by(mut self, input: crate::types::ImageSortBy) -> Self {
         self.inner = self.inner.sort_by(input);
@@ -211,6 +247,10 @@ impl ListImagesFluentBuilder {
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ImageSortBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
+    }
+    /// <p>The property used to sort results. The default value is <code>CREATION_TIME</code>.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ImageSortBy> {
+        self.inner.get_sort_by()
     }
     /// <p>The sort order. The default value is <code>DESCENDING</code>.</p>
     pub fn sort_order(mut self, input: crate::types::ImageSortOrder) -> Self {
@@ -224,5 +264,9 @@ impl ListImagesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
+    }
+    /// <p>The sort order. The default value is <code>DESCENDING</code>.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::ImageSortOrder> {
+        self.inner.get_sort_order()
     }
 }

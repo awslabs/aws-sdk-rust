@@ -82,6 +82,12 @@ impl ImportResourceSpecificationBuilder {
         self.bot_import_specification = input;
         self
     }
+    /// <p>Parameters for importing a bot.</p>
+    pub fn get_bot_import_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::BotImportSpecification> {
+        &self.bot_import_specification
+    }
     /// <p>Parameters for importing a bot locale.</p>
     pub fn bot_locale_import_specification(
         mut self,
@@ -97,6 +103,12 @@ impl ImportResourceSpecificationBuilder {
     ) -> Self {
         self.bot_locale_import_specification = input;
         self
+    }
+    /// <p>Parameters for importing a bot locale.</p>
+    pub fn get_bot_locale_import_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::BotLocaleImportSpecification> {
+        &self.bot_locale_import_specification
     }
     /// <p>Provides the parameters required for importing a custom vocabulary.</p>
     pub fn custom_vocabulary_import_specification(
@@ -114,6 +126,12 @@ impl ImportResourceSpecificationBuilder {
         self.custom_vocabulary_import_specification = input;
         self
     }
+    /// <p>Provides the parameters required for importing a custom vocabulary.</p>
+    pub fn get_custom_vocabulary_import_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomVocabularyImportSpecification> {
+        &self.custom_vocabulary_import_specification
+    }
     /// <p>Specifications for the test set that is imported.</p>
     pub fn test_set_import_resource_specification(
         mut self,
@@ -129,6 +147,12 @@ impl ImportResourceSpecificationBuilder {
     ) -> Self {
         self.test_set_import_resource_specification = input;
         self
+    }
+    /// <p>Specifications for the test set that is imported.</p>
+    pub fn get_test_set_import_resource_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::TestSetImportResourceSpecification> {
+        &self.test_set_import_resource_specification
     }
     /// Consumes the builder and constructs a [`ImportResourceSpecification`](crate::types::ImportResourceSpecification).
     pub fn build(self) -> crate::types::ImportResourceSpecification {

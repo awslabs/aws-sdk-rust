@@ -37,6 +37,10 @@ impl CreateLoadBalancerPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateLoadBalancerPolicy as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_load_balancer_policy::builders::CreateLoadBalancerPolicyInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl CreateLoadBalancerPolicyFluentBuilder {
         self.inner = self.inner.set_load_balancer_name(input);
         self
     }
+    /// <p>The name of the load balancer.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_load_balancer_name()
+    }
     /// <p>The name of the load balancer policy to be created. This name must be unique within the set of policies for this load balancer.</p>
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_name(input.into());
@@ -142,6 +150,10 @@ impl CreateLoadBalancerPolicyFluentBuilder {
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_name(input);
         self
+    }
+    /// <p>The name of the load balancer policy to be created. This name must be unique within the set of policies for this load balancer.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_name()
     }
     /// <p>The name of the base policy type. To get the list of policy types, use <code>DescribeLoadBalancerPolicyTypes</code>.</p>
     pub fn policy_type_name(
@@ -159,6 +171,10 @@ impl CreateLoadBalancerPolicyFluentBuilder {
         self.inner = self.inner.set_policy_type_name(input);
         self
     }
+    /// <p>The name of the base policy type. To get the list of policy types, use <code>DescribeLoadBalancerPolicyTypes</code>.</p>
+    pub fn get_policy_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_type_name()
+    }
     /// Appends an item to `PolicyAttributes`.
     ///
     /// To override the contents of this collection use [`set_policy_attributes`](Self::set_policy_attributes).
@@ -175,5 +191,11 @@ impl CreateLoadBalancerPolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_policy_attributes(input);
         self
+    }
+    /// <p>The policy attributes.</p>
+    pub fn get_policy_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyAttribute>> {
+        self.inner.get_policy_attributes()
     }
 }

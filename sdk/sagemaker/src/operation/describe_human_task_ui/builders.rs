@@ -36,6 +36,12 @@ impl DescribeHumanTaskUiFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeHumanTaskUi as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_human_task_ui::builders::DescribeHumanTaskUiInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl DescribeHumanTaskUiFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_human_task_ui_name(input);
         self
+    }
+    /// <p>The name of the human task user interface (worker task template) you want information about.</p>
+    pub fn get_human_task_ui_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_human_task_ui_name()
     }
 }

@@ -43,6 +43,10 @@ impl StandardsStatusReasonBuilder {
         self.status_reason_code = input;
         self
     }
+    /// <p>The reason code that represents the reason for the current status of a standard subscription.</p>
+    pub fn get_status_reason_code(&self) -> &::std::option::Option<crate::types::StatusReasonCode> {
+        &self.status_reason_code
+    }
     /// Consumes the builder and constructs a [`StandardsStatusReason`](crate::types::StandardsStatusReason).
     pub fn build(self) -> crate::types::StandardsStatusReason {
         crate::types::StandardsStatusReason {

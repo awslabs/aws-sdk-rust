@@ -60,6 +60,10 @@ impl GetGeneratedPolicyOutputBuilder {
         self.job_details = input;
         self
     }
+    /// <p>A <code>GeneratedPolicyDetails</code> object that contains details about the generated policy.</p>
+    pub fn get_job_details(&self) -> &::std::option::Option<crate::types::JobDetails> {
+        &self.job_details
+    }
     /// <p>A <code>GeneratedPolicyResult</code> object that contains the generated policies and associated details.</p>
     pub fn generated_policy_result(mut self, input: crate::types::GeneratedPolicyResult) -> Self {
         self.generated_policy_result = ::std::option::Option::Some(input);
@@ -72,6 +76,12 @@ impl GetGeneratedPolicyOutputBuilder {
     ) -> Self {
         self.generated_policy_result = input;
         self
+    }
+    /// <p>A <code>GeneratedPolicyResult</code> object that contains the generated policies and associated details.</p>
+    pub fn get_generated_policy_result(
+        &self,
+    ) -> &::std::option::Option<crate::types::GeneratedPolicyResult> {
+        &self.generated_policy_result
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

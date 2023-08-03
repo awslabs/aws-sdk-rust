@@ -88,6 +88,10 @@ impl DataQualityRulesetFilterCriteriaBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the ruleset filter criteria.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the ruleset filter criteria.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -97,6 +101,10 @@ impl DataQualityRulesetFilterCriteriaBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the ruleset filter criteria.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Filter on rulesets created before this date.</p>
     pub fn created_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -111,6 +119,10 @@ impl DataQualityRulesetFilterCriteriaBuilder {
         self.created_before = input;
         self
     }
+    /// <p>Filter on rulesets created before this date.</p>
+    pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_before
+    }
     /// <p>Filter on rulesets created after this date.</p>
     pub fn created_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_after = ::std::option::Option::Some(input);
@@ -123,6 +135,10 @@ impl DataQualityRulesetFilterCriteriaBuilder {
     ) -> Self {
         self.created_after = input;
         self
+    }
+    /// <p>Filter on rulesets created after this date.</p>
+    pub fn get_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_after
     }
     /// <p>Filter on rulesets last modified before this date.</p>
     pub fn last_modified_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -137,6 +153,10 @@ impl DataQualityRulesetFilterCriteriaBuilder {
         self.last_modified_before = input;
         self
     }
+    /// <p>Filter on rulesets last modified before this date.</p>
+    pub fn get_last_modified_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_before
+    }
     /// <p>Filter on rulesets last modified after this date.</p>
     pub fn last_modified_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_after = ::std::option::Option::Some(input);
@@ -150,6 +170,10 @@ impl DataQualityRulesetFilterCriteriaBuilder {
         self.last_modified_after = input;
         self
     }
+    /// <p>Filter on rulesets last modified after this date.</p>
+    pub fn get_last_modified_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_after
+    }
     /// <p>The name and database name of the target table.</p>
     pub fn target_table(mut self, input: crate::types::DataQualityTargetTable) -> Self {
         self.target_table = ::std::option::Option::Some(input);
@@ -162,6 +186,10 @@ impl DataQualityRulesetFilterCriteriaBuilder {
     ) -> Self {
         self.target_table = input;
         self
+    }
+    /// <p>The name and database name of the target table.</p>
+    pub fn get_target_table(&self) -> &::std::option::Option<crate::types::DataQualityTargetTable> {
+        &self.target_table
     }
     /// Consumes the builder and constructs a [`DataQualityRulesetFilterCriteria`](crate::types::DataQualityRulesetFilterCriteria).
     pub fn build(self) -> crate::types::DataQualityRulesetFilterCriteria {

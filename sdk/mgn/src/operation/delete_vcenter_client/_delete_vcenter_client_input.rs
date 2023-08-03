@@ -47,6 +47,10 @@ impl DeleteVcenterClientInputBuilder {
         self.vcenter_client_id = input;
         self
     }
+    /// <p>ID of resource to be deleted.</p>
+    pub fn get_vcenter_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vcenter_client_id
+    }
     /// Consumes the builder and constructs a [`DeleteVcenterClientInput`](crate::operation::delete_vcenter_client::DeleteVcenterClientInput).
     pub fn build(
         self,

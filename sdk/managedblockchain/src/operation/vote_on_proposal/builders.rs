@@ -37,6 +37,12 @@ impl VoteOnProposalFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the VoteOnProposal as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::vote_on_proposal::builders::VoteOnProposalInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl VoteOnProposalFluentBuilder {
         self.inner = self.inner.set_network_id(input);
         self
     }
+    /// <p> The unique identifier of the network. </p>
+    pub fn get_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_network_id()
+    }
     /// <p> The unique identifier of the proposal. </p>
     pub fn proposal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.proposal_id(input.into());
@@ -136,6 +146,10 @@ impl VoteOnProposalFluentBuilder {
     pub fn set_proposal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_proposal_id(input);
         self
+    }
+    /// <p> The unique identifier of the proposal. </p>
+    pub fn get_proposal_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_proposal_id()
     }
     /// <p>The unique identifier of the member casting the vote. </p>
     pub fn voter_member_id(
@@ -153,6 +167,10 @@ impl VoteOnProposalFluentBuilder {
         self.inner = self.inner.set_voter_member_id(input);
         self
     }
+    /// <p>The unique identifier of the member casting the vote. </p>
+    pub fn get_voter_member_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_voter_member_id()
+    }
     /// <p> The value of the vote. </p>
     pub fn vote(mut self, input: crate::types::VoteValue) -> Self {
         self.inner = self.inner.vote(input);
@@ -162,5 +180,9 @@ impl VoteOnProposalFluentBuilder {
     pub fn set_vote(mut self, input: ::std::option::Option<crate::types::VoteValue>) -> Self {
         self.inner = self.inner.set_vote(input);
         self
+    }
+    /// <p> The value of the vote. </p>
+    pub fn get_vote(&self) -> &::std::option::Option<crate::types::VoteValue> {
+        self.inner.get_vote()
     }
 }

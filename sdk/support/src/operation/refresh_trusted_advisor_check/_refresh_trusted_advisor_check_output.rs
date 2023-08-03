@@ -50,6 +50,12 @@ impl RefreshTrustedAdvisorCheckOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The current refresh status for a check, including the amount of time until the check is eligible for refresh.</p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::TrustedAdvisorCheckRefreshStatus> {
+        &self.status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

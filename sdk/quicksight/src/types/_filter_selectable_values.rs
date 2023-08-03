@@ -49,6 +49,10 @@ impl FilterSelectableValuesBuilder {
         self.values = input;
         self
     }
+    /// <p>The values that are used in the <code>FilterSelectableValues</code>.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
+    }
     /// Consumes the builder and constructs a [`FilterSelectableValues`](crate::types::FilterSelectableValues).
     pub fn build(self) -> crate::types::FilterSelectableValues {
         crate::types::FilterSelectableValues {

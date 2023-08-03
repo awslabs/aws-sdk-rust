@@ -51,6 +51,12 @@ impl StartSpeakerSearchTaskOutputBuilder {
         self.speaker_search_task = input;
         self
     }
+    /// <p>The details of the speaker search task.</p>
+    pub fn get_speaker_search_task(
+        &self,
+    ) -> &::std::option::Option<crate::types::SpeakerSearchTask> {
+        &self.speaker_search_task
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

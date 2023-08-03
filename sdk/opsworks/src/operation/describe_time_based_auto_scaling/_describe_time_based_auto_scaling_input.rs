@@ -48,6 +48,12 @@ impl DescribeTimeBasedAutoScalingInputBuilder {
         self.instance_ids = input;
         self
     }
+    /// <p>An array of instance IDs.</p>
+    pub fn get_instance_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.instance_ids
+    }
     /// Consumes the builder and constructs a [`DescribeTimeBasedAutoScalingInput`](crate::operation::describe_time_based_auto_scaling::DescribeTimeBasedAutoScalingInput).
     pub fn build(
         self,

@@ -71,6 +71,10 @@ impl DeletePrincipalMappingInputBuilder {
         self.index_id = input;
         self
     }
+    /// <p>The identifier of the index you want to delete a group from.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_id
+    }
     /// <p>The identifier of the data source you want to delete a group from.</p>
     /// <p>A group can be tied to multiple data sources. You can delete a group from accessing documents in a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. You want to delete "Research" and "Engineering" groups from Salesforce, so that these groups cannot access customer-related documents stored in Salesforce. Only "Sales and Marketing" should access documents in the Salesforce data source.</p>
     pub fn data_source_id(
@@ -89,6 +93,11 @@ impl DeletePrincipalMappingInputBuilder {
         self.data_source_id = input;
         self
     }
+    /// <p>The identifier of the data source you want to delete a group from.</p>
+    /// <p>A group can be tied to multiple data sources. You can delete a group from accessing documents in a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. You want to delete "Research" and "Engineering" groups from Salesforce, so that these groups cannot access customer-related documents stored in Salesforce. Only "Sales and Marketing" should access documents in the Salesforce data source.</p>
+    pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_id
+    }
     /// <p>The identifier of the group you want to delete.</p>
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
@@ -98,6 +107,10 @@ impl DeletePrincipalMappingInputBuilder {
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_id = input;
         self
+    }
+    /// <p>The identifier of the group you want to delete.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
     }
     /// <p>The timestamp identifier you specify to ensure Amazon Kendra does not override the latest <code>DELETE</code> action with previous actions. The highest number ID, which is the ordering ID, is the latest action you want to process and apply on top of other actions with lower number IDs. This prevents previous actions with lower number IDs from possibly overriding the latest action.</p>
     /// <p>The ordering ID can be the Unix time of the last update you made to a group members list. You would then provide this list when calling <code>PutPrincipalMapping</code>. This ensures your <code>DELETE</code> action for that updated group with the latest members list doesn't get overwritten by earlier <code>DELETE</code> actions for the same group which are yet to be processed.</p>
@@ -112,6 +125,12 @@ impl DeletePrincipalMappingInputBuilder {
     pub fn set_ordering_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.ordering_id = input;
         self
+    }
+    /// <p>The timestamp identifier you specify to ensure Amazon Kendra does not override the latest <code>DELETE</code> action with previous actions. The highest number ID, which is the ordering ID, is the latest action you want to process and apply on top of other actions with lower number IDs. This prevents previous actions with lower number IDs from possibly overriding the latest action.</p>
+    /// <p>The ordering ID can be the Unix time of the last update you made to a group members list. You would then provide this list when calling <code>PutPrincipalMapping</code>. This ensures your <code>DELETE</code> action for that updated group with the latest members list doesn't get overwritten by earlier <code>DELETE</code> actions for the same group which are yet to be processed.</p>
+    /// <p>The default ordering ID is the current Unix time in milliseconds that the action was received by Amazon Kendra. </p>
+    pub fn get_ordering_id(&self) -> &::std::option::Option<i64> {
+        &self.ordering_id
     }
     /// Consumes the builder and constructs a [`DeletePrincipalMappingInput`](crate::operation::delete_principal_mapping::DeletePrincipalMappingInput).
     pub fn build(

@@ -40,6 +40,10 @@ impl ReplicaConfigurationRequestBuilder {
         self.replica_count = input;
         self
     }
+    /// <p>The number of replicas to scale up or down to</p>
+    pub fn get_replica_count(&self) -> &::std::option::Option<i32> {
+        &self.replica_count
+    }
     /// Consumes the builder and constructs a [`ReplicaConfigurationRequest`](crate::types::ReplicaConfigurationRequest).
     pub fn build(self) -> crate::types::ReplicaConfigurationRequest {
         crate::types::ReplicaConfigurationRequest {

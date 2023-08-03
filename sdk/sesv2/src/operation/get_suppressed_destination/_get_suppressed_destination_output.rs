@@ -54,6 +54,12 @@ impl GetSuppressedDestinationOutputBuilder {
         self.suppressed_destination = input;
         self
     }
+    /// <p>An object containing information about the suppressed email address.</p>
+    pub fn get_suppressed_destination(
+        &self,
+    ) -> &::std::option::Option<crate::types::SuppressedDestination> {
+        &self.suppressed_destination
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

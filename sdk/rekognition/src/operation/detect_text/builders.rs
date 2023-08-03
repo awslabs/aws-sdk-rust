@@ -43,6 +43,10 @@ impl DetectTextFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DetectText as a reference.
+    pub fn as_input(&self) -> &crate::operation::detect_text::builders::DetectTextInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,11 @@ impl DetectTextFluentBuilder {
         self.inner = self.inner.set_image(input);
         self
     }
+    /// <p>The input image as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Rekognition operations, you can't pass image bytes. </p>
+    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
+    pub fn get_image(&self) -> &::std::option::Option<crate::types::Image> {
+        self.inner.get_image()
+    }
     /// <p>Optional parameters that let you set the criteria that the text must meet to be included in your response.</p>
     pub fn filters(mut self, input: crate::types::DetectTextFilters) -> Self {
         self.inner = self.inner.filters(input);
@@ -139,5 +148,9 @@ impl DetectTextFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
+    }
+    /// <p>Optional parameters that let you set the criteria that the text must meet to be included in your response.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::DetectTextFilters> {
+        self.inner.get_filters()
     }
 }

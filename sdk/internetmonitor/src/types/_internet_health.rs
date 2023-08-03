@@ -57,6 +57,13 @@ impl InternetHealthBuilder {
         self.availability = input;
         self
     }
+    /// <p>Availability in Internet Monitor represents the estimated percentage of traffic that is not seeing an availability drop. For example, an availability score of 99% for an end user and service location pair is equivalent to 1% of the traffic experiencing an availability drop for that pair.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">How Internet Monitor calculates performance and availability scores</a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
+    pub fn get_availability(
+        &self,
+    ) -> &::std::option::Option<crate::types::AvailabilityMeasurement> {
+        &self.availability
+    }
     /// <p>Performance in Internet Monitor represents the estimated percentage of traffic that is not seeing a performance drop. For example, a performance score of 99% for an end user and service location pair is equivalent to 1% of the traffic experiencing a performance drop for that pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">How Internet Monitor calculates performance and availability scores</a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
     pub fn performance(mut self, input: crate::types::PerformanceMeasurement) -> Self {
@@ -71,6 +78,11 @@ impl InternetHealthBuilder {
     ) -> Self {
         self.performance = input;
         self
+    }
+    /// <p>Performance in Internet Monitor represents the estimated percentage of traffic that is not seeing a performance drop. For example, a performance score of 99% for an end user and service location pair is equivalent to 1% of the traffic experiencing a performance drop for that pair.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">How Internet Monitor calculates performance and availability scores</a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
+    pub fn get_performance(&self) -> &::std::option::Option<crate::types::PerformanceMeasurement> {
+        &self.performance
     }
     /// Consumes the builder and constructs a [`InternetHealth`](crate::types::InternetHealth).
     pub fn build(self) -> crate::types::InternetHealth {

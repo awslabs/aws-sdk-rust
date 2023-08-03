@@ -48,6 +48,10 @@ impl CreateConnectionApiKeyAuthRequestParametersBuilder {
         self.api_key_name = input;
         self
     }
+    /// <p>The name of the API key to use for authorization.</p>
+    pub fn get_api_key_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_key_name
+    }
     /// <p>The value for the API key to use for authorization.</p>
     pub fn api_key_value(
         mut self,
@@ -63,6 +67,10 @@ impl CreateConnectionApiKeyAuthRequestParametersBuilder {
     ) -> Self {
         self.api_key_value = input;
         self
+    }
+    /// <p>The value for the API key to use for authorization.</p>
+    pub fn get_api_key_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_key_value
     }
     /// Consumes the builder and constructs a [`CreateConnectionApiKeyAuthRequestParameters`](crate::types::CreateConnectionApiKeyAuthRequestParameters).
     pub fn build(self) -> crate::types::CreateConnectionApiKeyAuthRequestParameters {

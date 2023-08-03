@@ -39,6 +39,10 @@ impl DescribePortalInputBuilder {
         self.portal_id = input;
         self
     }
+    /// <p>The ID of the portal.</p>
+    pub fn get_portal_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portal_id
+    }
     /// Consumes the builder and constructs a [`DescribePortalInput`](crate::operation::describe_portal::DescribePortalInput).
     pub fn build(
         self,

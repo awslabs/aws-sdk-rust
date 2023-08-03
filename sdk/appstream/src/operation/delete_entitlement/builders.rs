@@ -36,6 +36,12 @@ impl DeleteEntitlementFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteEntitlement as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_entitlement::builders::DeleteEntitlementInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DeleteEntitlementFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the entitlement.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The name of the stack with which the entitlement is associated.</p>
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_name(input.into());
@@ -135,5 +145,9 @@ impl DeleteEntitlementFluentBuilder {
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_name(input);
         self
+    }
+    /// <p>The name of the stack with which the entitlement is associated.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_name()
     }
 }

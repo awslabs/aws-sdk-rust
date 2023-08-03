@@ -59,6 +59,12 @@ impl PatchStatusBuilder {
         self.deployment_status = input;
         self
     }
+    /// <p>The approval status of a patch.</p>
+    pub fn get_deployment_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::PatchDeploymentStatus> {
+        &self.deployment_status
+    }
     /// <p>The compliance severity level for a patch.</p>
     pub fn compliance_level(mut self, input: crate::types::PatchComplianceLevel) -> Self {
         self.compliance_level = ::std::option::Option::Some(input);
@@ -72,6 +78,12 @@ impl PatchStatusBuilder {
         self.compliance_level = input;
         self
     }
+    /// <p>The compliance severity level for a patch.</p>
+    pub fn get_compliance_level(
+        &self,
+    ) -> &::std::option::Option<crate::types::PatchComplianceLevel> {
+        &self.compliance_level
+    }
     /// <p>The date the patch was approved (or will be approved if the status is <code>PENDING_APPROVAL</code>).</p>
     pub fn approval_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.approval_date = ::std::option::Option::Some(input);
@@ -84,6 +96,10 @@ impl PatchStatusBuilder {
     ) -> Self {
         self.approval_date = input;
         self
+    }
+    /// <p>The date the patch was approved (or will be approved if the status is <code>PENDING_APPROVAL</code>).</p>
+    pub fn get_approval_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.approval_date
     }
     /// Consumes the builder and constructs a [`PatchStatus`](crate::types::PatchStatus).
     pub fn build(self) -> crate::types::PatchStatus {

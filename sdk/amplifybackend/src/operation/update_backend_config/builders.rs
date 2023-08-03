@@ -36,6 +36,12 @@ impl UpdateBackendConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateBackendConfig as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_backend_config::builders::UpdateBackendConfigInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateBackendConfigFluentBuilder {
         self.inner = self.inner.set_app_id(input);
         self
     }
+    /// <p>The app ID.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_id()
+    }
     /// <p>Describes the Amazon Cognito configuration for Admin UI access.</p>
     pub fn login_auth_config(mut self, input: crate::types::LoginAuthConfigReqObj) -> Self {
         self.inner = self.inner.login_auth_config(input);
@@ -138,5 +148,11 @@ impl UpdateBackendConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_login_auth_config(input);
         self
+    }
+    /// <p>Describes the Amazon Cognito configuration for Admin UI access.</p>
+    pub fn get_login_auth_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::LoginAuthConfigReqObj> {
+        self.inner.get_login_auth_config()
     }
 }

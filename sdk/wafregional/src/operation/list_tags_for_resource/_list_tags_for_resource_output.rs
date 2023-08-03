@@ -58,6 +58,10 @@ impl ListTagsForResourceOutputBuilder {
         self
     }
     /// <p></p>
+    pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_marker
+    }
+    /// <p></p>
     pub fn tag_info_for_resource(mut self, input: crate::types::TagInfoForResource) -> Self {
         self.tag_info_for_resource = ::std::option::Option::Some(input);
         self
@@ -69,6 +73,12 @@ impl ListTagsForResourceOutputBuilder {
     ) -> Self {
         self.tag_info_for_resource = input;
         self
+    }
+    /// <p></p>
+    pub fn get_tag_info_for_resource(
+        &self,
+    ) -> &::std::option::Option<crate::types::TagInfoForResource> {
+        &self.tag_info_for_resource
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

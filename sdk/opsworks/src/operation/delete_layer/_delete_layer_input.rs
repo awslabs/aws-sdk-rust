@@ -39,6 +39,10 @@ impl DeleteLayerInputBuilder {
         self.layer_id = input;
         self
     }
+    /// <p>The layer ID.</p>
+    pub fn get_layer_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.layer_id
+    }
     /// Consumes the builder and constructs a [`DeleteLayerInput`](crate::operation::delete_layer::DeleteLayerInput).
     pub fn build(
         self,

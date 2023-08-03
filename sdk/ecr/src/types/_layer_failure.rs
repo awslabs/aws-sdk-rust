@@ -56,6 +56,10 @@ impl LayerFailureBuilder {
         self.layer_digest = input;
         self
     }
+    /// <p>The layer digest associated with the failure.</p>
+    pub fn get_layer_digest(&self) -> &::std::option::Option<::std::string::String> {
+        &self.layer_digest
+    }
     /// <p>The failure code associated with the failure.</p>
     pub fn failure_code(mut self, input: crate::types::LayerFailureCode) -> Self {
         self.failure_code = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl LayerFailureBuilder {
     ) -> Self {
         self.failure_code = input;
         self
+    }
+    /// <p>The failure code associated with the failure.</p>
+    pub fn get_failure_code(&self) -> &::std::option::Option<crate::types::LayerFailureCode> {
+        &self.failure_code
     }
     /// <p>The reason for the failure.</p>
     pub fn failure_reason(
@@ -84,6 +92,10 @@ impl LayerFailureBuilder {
     ) -> Self {
         self.failure_reason = input;
         self
+    }
+    /// <p>The reason for the failure.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     /// Consumes the builder and constructs a [`LayerFailure`](crate::types::LayerFailure).
     pub fn build(self) -> crate::types::LayerFailure {

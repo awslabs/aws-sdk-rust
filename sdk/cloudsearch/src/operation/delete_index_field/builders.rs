@@ -36,6 +36,12 @@ impl DeleteIndexFieldFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteIndexField as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_index_field::builders::DeleteIndexFieldInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DeleteIndexFieldFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p>The name of the index field your want to remove from the domain's indexing options.</p>
     pub fn index_field_name(
         mut self,
@@ -141,5 +151,9 @@ impl DeleteIndexFieldFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_index_field_name(input);
         self
+    }
+    /// <p>The name of the index field your want to remove from the domain's indexing options.</p>
+    pub fn get_index_field_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_index_field_name()
     }
 }

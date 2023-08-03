@@ -71,6 +71,10 @@ impl UpdateStudioInputBuilder {
         self.studio_id = input;
         self
     }
+    /// <p>The ID of the Amazon EMR Studio to update.</p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_id
+    }
     /// <p>A descriptive name for the Amazon EMR Studio.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl UpdateStudioInputBuilder {
         self.name = input;
         self
     }
+    /// <p>A descriptive name for the Amazon EMR Studio.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A detailed description to assign to the Amazon EMR Studio.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -90,6 +98,10 @@ impl UpdateStudioInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A detailed description to assign to the Amazon EMR Studio.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -110,6 +122,10 @@ impl UpdateStudioInputBuilder {
         self.subnet_ids = input;
         self
     }
+    /// <p>A list of subnet IDs to associate with the Amazon EMR Studio. The list can include new subnet IDs, but must also include all of the subnet IDs previously associated with the Studio. The list order does not matter. A Studio can have a maximum of 5 subnets. The subnets must belong to the same VPC as the Studio. </p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
+    }
     /// <p>The Amazon S3 location to back up Workspaces and notebook files for the Amazon EMR Studio.</p>
     pub fn default_s3_location(
         mut self,
@@ -125,6 +141,10 @@ impl UpdateStudioInputBuilder {
     ) -> Self {
         self.default_s3_location = input;
         self
+    }
+    /// <p>The Amazon S3 location to back up Workspaces and notebook files for the Amazon EMR Studio.</p>
+    pub fn get_default_s3_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_s3_location
     }
     /// Consumes the builder and constructs a [`UpdateStudioInput`](crate::operation::update_studio::UpdateStudioInput).
     pub fn build(

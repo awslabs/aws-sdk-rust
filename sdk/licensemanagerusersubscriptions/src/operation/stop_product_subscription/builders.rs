@@ -37,6 +37,13 @@ impl StopProductSubscriptionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopProductSubscription as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::stop_product_subscription::builders::StopProductSubscriptionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl StopProductSubscriptionFluentBuilder {
         self.inner = self.inner.set_username(input);
         self
     }
+    /// <p>The user name from the identity provider for the user.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_username()
+    }
     /// <p>An object that specifies details for the identity provider.</p>
     pub fn identity_provider(mut self, input: crate::types::IdentityProvider) -> Self {
         self.inner = self.inner.identity_provider(input);
@@ -140,6 +151,10 @@ impl StopProductSubscriptionFluentBuilder {
         self.inner = self.inner.set_identity_provider(input);
         self
     }
+    /// <p>An object that specifies details for the identity provider.</p>
+    pub fn get_identity_provider(&self) -> &::std::option::Option<crate::types::IdentityProvider> {
+        self.inner.get_identity_provider()
+    }
     /// <p>The name of the user-based subscription product.</p>
     pub fn product(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.product(input.into());
@@ -150,6 +165,10 @@ impl StopProductSubscriptionFluentBuilder {
         self.inner = self.inner.set_product(input);
         self
     }
+    /// <p>The name of the user-based subscription product.</p>
+    pub fn get_product(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_product()
+    }
     /// <p>The domain name of the user.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain(input.into());
@@ -159,5 +178,9 @@ impl StopProductSubscriptionFluentBuilder {
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain(input);
         self
+    }
+    /// <p>The domain name of the user.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain()
     }
 }

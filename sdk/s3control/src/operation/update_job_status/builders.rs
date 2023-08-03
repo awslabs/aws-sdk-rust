@@ -44,6 +44,12 @@ impl UpdateJobStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateJobStatus as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_job_status::builders::UpdateJobStatusInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,10 @@ impl UpdateJobStatusFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p>The ID of the job whose status you want to update.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_id(input.into());
@@ -143,6 +153,10 @@ impl UpdateJobStatusFluentBuilder {
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_id(input);
         self
+    }
+    /// <p>The ID of the job whose status you want to update.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_id()
     }
     /// <p>The status that you want to move the specified job to.</p>
     pub fn requested_job_status(mut self, input: crate::types::RequestedJobStatus) -> Self {
@@ -156,6 +170,12 @@ impl UpdateJobStatusFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_requested_job_status(input);
         self
+    }
+    /// <p>The status that you want to move the specified job to.</p>
+    pub fn get_requested_job_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::RequestedJobStatus> {
+        self.inner.get_requested_job_status()
     }
     /// <p>A description of the reason why you want to change the specified job's status. This field can be any string up to the maximum length.</p>
     pub fn status_update_reason(
@@ -172,5 +192,9 @@ impl UpdateJobStatusFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_status_update_reason(input);
         self
+    }
+    /// <p>A description of the reason why you want to change the specified job's status. This field can be any string up to the maximum length.</p>
+    pub fn get_status_update_reason(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_status_update_reason()
     }
 }

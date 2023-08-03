@@ -70,6 +70,10 @@ impl DescribeJobFlowsInputBuilder {
         self.created_after = input;
         self
     }
+    /// <p>Return only job flows created after this date and time.</p>
+    pub fn get_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_after
+    }
     /// <p>Return only job flows created before this date and time.</p>
     pub fn created_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_before = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl DescribeJobFlowsInputBuilder {
     ) -> Self {
         self.created_before = input;
         self
+    }
+    /// <p>Return only job flows created before this date and time.</p>
+    pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_before
     }
     /// Appends an item to `job_flow_ids`.
     ///
@@ -102,6 +110,12 @@ impl DescribeJobFlowsInputBuilder {
         self.job_flow_ids = input;
         self
     }
+    /// <p>Return only job flows whose job flow ID is contained in this list.</p>
+    pub fn get_job_flow_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.job_flow_ids
+    }
     /// Appends an item to `job_flow_states`.
     ///
     /// To override the contents of this collection use [`set_job_flow_states`](Self::set_job_flow_states).
@@ -120,6 +134,12 @@ impl DescribeJobFlowsInputBuilder {
     ) -> Self {
         self.job_flow_states = input;
         self
+    }
+    /// <p>Return only job flows whose state is contained in this list.</p>
+    pub fn get_job_flow_states(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobFlowExecutionState>> {
+        &self.job_flow_states
     }
     /// Consumes the builder and constructs a [`DescribeJobFlowsInput`](crate::operation::describe_job_flows::DescribeJobFlowsInput).
     pub fn build(

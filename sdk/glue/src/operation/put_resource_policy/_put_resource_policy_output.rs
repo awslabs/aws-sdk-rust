@@ -47,6 +47,10 @@ impl PutResourcePolicyOutputBuilder {
         self.policy_hash = input;
         self
     }
+    /// <p>A hash of the policy that has just been set. This must be included in a subsequent call that overwrites or updates this policy.</p>
+    pub fn get_policy_hash(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_hash
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

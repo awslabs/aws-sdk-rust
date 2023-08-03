@@ -62,6 +62,10 @@ impl SanitizationWarningBuilder {
         self.attribute_name = input;
         self
     }
+    /// <p>The name of the configuration attribute that has been sanitized.</p>
+    pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_name
+    }
     /// <p>The name of the configuration element that has been sanitized.</p>
     pub fn element_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.element_name = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl SanitizationWarningBuilder {
     pub fn set_element_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.element_name = input;
         self
+    }
+    /// <p>The name of the configuration element that has been sanitized.</p>
+    pub fn get_element_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.element_name
     }
     /// <p>The reason for which the configuration elements or attributes were sanitized.</p>
     pub fn reason(mut self, input: crate::types::SanitizationWarningReason) -> Self {
@@ -84,6 +92,10 @@ impl SanitizationWarningBuilder {
     ) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>The reason for which the configuration elements or attributes were sanitized.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<crate::types::SanitizationWarningReason> {
+        &self.reason
     }
     /// Consumes the builder and constructs a [`SanitizationWarning`](crate::types::SanitizationWarning).
     pub fn build(self) -> crate::types::SanitizationWarning {

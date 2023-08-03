@@ -62,6 +62,10 @@ impl RegisterToWorkMailInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The identifier for the organization under which the user, group, or resource exists.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>The identifier for the user, group, or resource to be updated.</p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl RegisterToWorkMailInputBuilder {
         self.entity_id = input;
         self
     }
+    /// <p>The identifier for the user, group, or resource to be updated.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_id
+    }
     /// <p>The email for the user, group, or resource to be updated.</p>
     pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl RegisterToWorkMailInputBuilder {
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email = input;
         self
+    }
+    /// <p>The email for the user, group, or resource to be updated.</p>
+    pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email
     }
     /// Consumes the builder and constructs a [`RegisterToWorkMailInput`](crate::operation::register_to_work_mail::RegisterToWorkMailInput).
     pub fn build(

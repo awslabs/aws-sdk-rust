@@ -36,6 +36,12 @@ impl PutLoggingOptionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutLoggingOptions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_logging_options::builders::PutLoggingOptionsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,11 @@ impl PutLoggingOptionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cloud_watch_log_delivery(input);
         self
+    }
+    /// <p>Creates or updates the log delivery option to Amazon CloudWatch Logs.</p>
+    pub fn get_cloud_watch_log_delivery(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudWatchLogDeliveryOptions> {
+        self.inner.get_cloud_watch_log_delivery()
     }
 }

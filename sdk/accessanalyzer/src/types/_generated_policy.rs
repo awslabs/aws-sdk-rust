@@ -40,6 +40,10 @@ impl GeneratedPolicyBuilder {
         self.policy = input;
         self
     }
+    /// <p>The text to use as the content for the new policy. The policy is created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy
+    }
     /// Consumes the builder and constructs a [`GeneratedPolicy`](crate::types::GeneratedPolicy).
     pub fn build(self) -> crate::types::GeneratedPolicy {
         crate::types::GeneratedPolicy {

@@ -52,6 +52,10 @@ impl KmsKeyDetailsBuilder {
         self.kms_key_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services KMS key that is associated with a repository association.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// <p>The encryption option for a repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
     pub fn encryption_option(mut self, input: crate::types::EncryptionOption) -> Self {
         self.encryption_option = ::std::option::Option::Some(input);
@@ -64,6 +68,10 @@ impl KmsKeyDetailsBuilder {
     ) -> Self {
         self.encryption_option = input;
         self
+    }
+    /// <p>The encryption option for a repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
+    pub fn get_encryption_option(&self) -> &::std::option::Option<crate::types::EncryptionOption> {
+        &self.encryption_option
     }
     /// Consumes the builder and constructs a [`KmsKeyDetails`](crate::types::KmsKeyDetails).
     pub fn build(self) -> crate::types::KmsKeyDetails {

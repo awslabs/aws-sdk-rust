@@ -59,6 +59,12 @@ impl DecisionTaskTimedOutEventAttributesBuilder {
         self.timeout_type = input;
         self
     }
+    /// <p>The type of timeout that expired before the decision task could be completed.</p>
+    pub fn get_timeout_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::DecisionTaskTimeoutType> {
+        &self.timeout_type
+    }
     /// <p>The ID of the <code>DecisionTaskScheduled</code> event that was recorded when this decision task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn scheduled_event_id(mut self, input: i64) -> Self {
         self.scheduled_event_id = ::std::option::Option::Some(input);
@@ -69,6 +75,10 @@ impl DecisionTaskTimedOutEventAttributesBuilder {
         self.scheduled_event_id = input;
         self
     }
+    /// <p>The ID of the <code>DecisionTaskScheduled</code> event that was recorded when this decision task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    pub fn get_scheduled_event_id(&self) -> &::std::option::Option<i64> {
+        &self.scheduled_event_id
+    }
     /// <p>The ID of the <code>DecisionTaskStarted</code> event recorded when this decision task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn started_event_id(mut self, input: i64) -> Self {
         self.started_event_id = ::std::option::Option::Some(input);
@@ -78,6 +88,10 @@ impl DecisionTaskTimedOutEventAttributesBuilder {
     pub fn set_started_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.started_event_id = input;
         self
+    }
+    /// <p>The ID of the <code>DecisionTaskStarted</code> event recorded when this decision task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    pub fn get_started_event_id(&self) -> &::std::option::Option<i64> {
+        &self.started_event_id
     }
     /// Consumes the builder and constructs a [`DecisionTaskTimedOutEventAttributes`](crate::types::DecisionTaskTimedOutEventAttributes).
     pub fn build(self) -> crate::types::DecisionTaskTimedOutEventAttributes {

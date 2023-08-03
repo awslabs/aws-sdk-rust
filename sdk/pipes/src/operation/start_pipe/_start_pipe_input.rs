@@ -39,6 +39,10 @@ impl StartPipeInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the pipe.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`StartPipeInput`](crate::operation::start_pipe::StartPipeInput).
     pub fn build(
         self,

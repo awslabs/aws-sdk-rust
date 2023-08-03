@@ -48,6 +48,10 @@ impl UserIdentityInfoLiteBuilder {
         self.first_name = input;
         self
     }
+    /// <p>The user's first name.</p>
+    pub fn get_first_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.first_name
+    }
     /// <p>The user's last name.</p>
     pub fn last_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl UserIdentityInfoLiteBuilder {
     pub fn set_last_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_name = input;
         self
+    }
+    /// <p>The user's last name.</p>
+    pub fn get_last_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_name
     }
     /// Consumes the builder and constructs a [`UserIdentityInfoLite`](crate::types::UserIdentityInfoLite).
     pub fn build(self) -> crate::types::UserIdentityInfoLite {

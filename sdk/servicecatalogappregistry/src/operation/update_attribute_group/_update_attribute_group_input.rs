@@ -72,6 +72,10 @@ impl UpdateAttributeGroupInputBuilder {
         self.attribute_group = input;
         self
     }
+    /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
+    pub fn get_attribute_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_group
+    }
     /// <p>Deprecated: The new name of the attribute group. The name must be unique in the region in which you are updating the attribute group. Please do not use this field as we have stopped supporting name updates.</p>
     #[deprecated(note = "Name update for attribute group is deprecated.")]
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +88,11 @@ impl UpdateAttributeGroupInputBuilder {
         self.name = input;
         self
     }
+    /// <p>Deprecated: The new name of the attribute group. The name must be unique in the region in which you are updating the attribute group. Please do not use this field as we have stopped supporting name updates.</p>
+    #[deprecated(note = "Name update for attribute group is deprecated.")]
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the attribute group that the user provides.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -94,6 +103,10 @@ impl UpdateAttributeGroupInputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the attribute group that the user provides.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>
     pub fn attributes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attributes = ::std::option::Option::Some(input.into());
@@ -103,6 +116,10 @@ impl UpdateAttributeGroupInputBuilder {
     pub fn set_attributes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attributes = input;
         self
+    }
+    /// <p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attributes
     }
     /// Consumes the builder and constructs a [`UpdateAttributeGroupInput`](crate::operation::update_attribute_group::UpdateAttributeGroupInput).
     pub fn build(

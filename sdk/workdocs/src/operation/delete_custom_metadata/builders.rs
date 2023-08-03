@@ -36,6 +36,12 @@ impl DeleteCustomMetadataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteCustomMetadata as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_custom_metadata::builders::DeleteCustomMetadataInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl DeleteCustomMetadataFluentBuilder {
         self.inner = self.inner.set_authentication_token(input);
         self
     }
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_authentication_token()
+    }
     /// <p>The ID of the resource, either a document or folder.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
@@ -142,6 +152,10 @@ impl DeleteCustomMetadataFluentBuilder {
         self.inner = self.inner.set_resource_id(input);
         self
     }
+    /// <p>The ID of the resource, either a document or folder.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
+    }
     /// <p>The ID of the version, if the custom metadata is being deleted from a document version.</p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version_id(input.into());
@@ -151,6 +165,10 @@ impl DeleteCustomMetadataFluentBuilder {
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version_id(input);
         self
+    }
+    /// <p>The ID of the version, if the custom metadata is being deleted from a document version.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version_id()
     }
     /// Appends an item to `Keys`.
     ///
@@ -169,6 +187,10 @@ impl DeleteCustomMetadataFluentBuilder {
         self.inner = self.inner.set_keys(input);
         self
     }
+    /// <p>List of properties to remove.</p>
+    pub fn get_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_keys()
+    }
     /// <p>Flag to indicate removal of all custom metadata properties from the specified resource.</p>
     pub fn delete_all(mut self, input: bool) -> Self {
         self.inner = self.inner.delete_all(input);
@@ -178,5 +200,9 @@ impl DeleteCustomMetadataFluentBuilder {
     pub fn set_delete_all(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_delete_all(input);
         self
+    }
+    /// <p>Flag to indicate removal of all custom metadata properties from the specified resource.</p>
+    pub fn get_delete_all(&self) -> &::std::option::Option<bool> {
+        self.inner.get_delete_all()
     }
 }

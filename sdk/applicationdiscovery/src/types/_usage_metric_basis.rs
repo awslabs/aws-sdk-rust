@@ -48,6 +48,10 @@ impl UsageMetricBasisBuilder {
         self.name = input;
         self
     }
+    /// <p> A utilization metric that is used by the recommendations. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p> Specifies the percentage of the specified utilization metric that is used by the recommendations. </p>
     pub fn percentage_adjust(mut self, input: f64) -> Self {
         self.percentage_adjust = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl UsageMetricBasisBuilder {
     pub fn set_percentage_adjust(mut self, input: ::std::option::Option<f64>) -> Self {
         self.percentage_adjust = input;
         self
+    }
+    /// <p> Specifies the percentage of the specified utilization metric that is used by the recommendations. </p>
+    pub fn get_percentage_adjust(&self) -> &::std::option::Option<f64> {
+        &self.percentage_adjust
     }
     /// Consumes the builder and constructs a [`UsageMetricBasis`](crate::types::UsageMetricBasis).
     pub fn build(self) -> crate::types::UsageMetricBasis {

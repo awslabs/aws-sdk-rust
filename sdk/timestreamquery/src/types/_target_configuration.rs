@@ -49,6 +49,12 @@ impl TargetConfigurationBuilder {
         self.timestream_configuration = input;
         self
     }
+    /// <p>Configuration needed to write data into the Timestream database and table.</p>
+    pub fn get_timestream_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::TimestreamConfiguration> {
+        &self.timestream_configuration
+    }
     /// Consumes the builder and constructs a [`TargetConfiguration`](crate::types::TargetConfiguration).
     pub fn build(self) -> crate::types::TargetConfiguration {
         crate::types::TargetConfiguration {

@@ -47,6 +47,10 @@ impl GetWorkflowStepExecutionInputBuilder {
         self.step_execution_id = input;
         self
     }
+    /// <p>Use the unique identifier for a specific runtime instance of the workflow step to get runtime details for that step.</p>
+    pub fn get_step_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.step_execution_id
+    }
     /// Consumes the builder and constructs a [`GetWorkflowStepExecutionInput`](crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionInput).
     pub fn build(
         self,

@@ -56,6 +56,10 @@ impl CostBuilder {
         self.amount = input;
         self
     }
+    /// <p>The cost amount.</p>
+    pub fn get_amount(&self) -> &::std::option::Option<f64> {
+        &self.amount
+    }
     /// <p>The cost currency, for example <code>USD</code>.</p>
     pub fn currency(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.currency = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl CostBuilder {
     pub fn set_currency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.currency = input;
         self
+    }
+    /// <p>The cost currency, for example <code>USD</code>.</p>
+    pub fn get_currency(&self) -> &::std::option::Option<::std::string::String> {
+        &self.currency
     }
     /// <p>The cost frequency.</p>
     pub fn frequency(mut self, input: crate::types::CostFrequency) -> Self {
@@ -78,6 +86,10 @@ impl CostBuilder {
     ) -> Self {
         self.frequency = input;
         self
+    }
+    /// <p>The cost frequency.</p>
+    pub fn get_frequency(&self) -> &::std::option::Option<crate::types::CostFrequency> {
+        &self.frequency
     }
     /// Consumes the builder and constructs a [`Cost`](crate::types::Cost).
     pub fn build(self) -> crate::types::Cost {

@@ -40,6 +40,10 @@ impl SapoDataSourcePropertiesBuilder {
         self.object_path = input;
         self
     }
+    /// <p> The object path specified in the SAPOData flow source. </p>
+    pub fn get_object_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_path
+    }
     /// Consumes the builder and constructs a [`SapoDataSourceProperties`](crate::types::SapoDataSourceProperties).
     pub fn build(self) -> crate::types::SapoDataSourceProperties {
         crate::types::SapoDataSourceProperties {

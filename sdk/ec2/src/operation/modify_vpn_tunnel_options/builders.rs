@@ -37,6 +37,13 @@ impl ModifyVpnTunnelOptionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyVpnTunnelOptions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::modify_vpn_tunnel_options::builders::ModifyVpnTunnelOptionsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl ModifyVpnTunnelOptionsFluentBuilder {
         self.inner = self.inner.set_vpn_connection_id(input);
         self
     }
+    /// <p>The ID of the Amazon Web Services Site-to-Site VPN connection.</p>
+    pub fn get_vpn_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpn_connection_id()
+    }
     /// <p>The external IP address of the VPN tunnel.</p>
     pub fn vpn_tunnel_outside_ip_address(
         mut self,
@@ -148,6 +159,12 @@ impl ModifyVpnTunnelOptionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_vpn_tunnel_outside_ip_address(input);
         self
+    }
+    /// <p>The external IP address of the VPN tunnel.</p>
+    pub fn get_vpn_tunnel_outside_ip_address(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpn_tunnel_outside_ip_address()
     }
     /// <p>The tunnel options to modify.</p>
     pub fn tunnel_options(
@@ -165,6 +182,12 @@ impl ModifyVpnTunnelOptionsFluentBuilder {
         self.inner = self.inner.set_tunnel_options(input);
         self
     }
+    /// <p>The tunnel options to modify.</p>
+    pub fn get_tunnel_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::ModifyVpnTunnelOptionsSpecification> {
+        self.inner.get_tunnel_options()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -174,6 +197,10 @@ impl ModifyVpnTunnelOptionsFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
     /// <p>Choose whether or not to trigger immediate tunnel replacement.</p>
     /// <p>Valid values: <code>True</code> | <code>False</code> </p>
@@ -186,5 +213,10 @@ impl ModifyVpnTunnelOptionsFluentBuilder {
     pub fn set_skip_tunnel_replacement(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_skip_tunnel_replacement(input);
         self
+    }
+    /// <p>Choose whether or not to trigger immediate tunnel replacement.</p>
+    /// <p>Valid values: <code>True</code> | <code>False</code> </p>
+    pub fn get_skip_tunnel_replacement(&self) -> &::std::option::Option<bool> {
+        self.inner.get_skip_tunnel_replacement()
     }
 }

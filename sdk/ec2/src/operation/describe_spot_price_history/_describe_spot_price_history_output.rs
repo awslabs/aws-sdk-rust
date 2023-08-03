@@ -55,6 +55,10 @@ impl DescribeSpotPriceHistoryOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `spot_price_history`.
     ///
     /// To override the contents of this collection use [`set_spot_price_history`](Self::set_spot_price_history).
@@ -73,6 +77,12 @@ impl DescribeSpotPriceHistoryOutputBuilder {
     ) -> Self {
         self.spot_price_history = input;
         self
+    }
+    /// <p>The historical Spot prices.</p>
+    pub fn get_spot_price_history(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SpotPrice>> {
+        &self.spot_price_history
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

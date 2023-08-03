@@ -80,6 +80,10 @@ impl ReferenceStoreDetailBuilder {
         self.arn = input;
         self
     }
+    /// <p>The store's ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The store's ID.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl ReferenceStoreDetailBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The store's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The store's name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -100,6 +108,10 @@ impl ReferenceStoreDetailBuilder {
         self.name = input;
         self
     }
+    /// <p>The store's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The store's description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -110,6 +122,10 @@ impl ReferenceStoreDetailBuilder {
         self.description = input;
         self
     }
+    /// <p>The store's description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The store's server-side encryption (SSE) settings.</p>
     pub fn sse_config(mut self, input: crate::types::SseConfig) -> Self {
         self.sse_config = ::std::option::Option::Some(input);
@@ -119,6 +135,10 @@ impl ReferenceStoreDetailBuilder {
     pub fn set_sse_config(mut self, input: ::std::option::Option<crate::types::SseConfig>) -> Self {
         self.sse_config = input;
         self
+    }
+    /// <p>The store's server-side encryption (SSE) settings.</p>
+    pub fn get_sse_config(&self) -> &::std::option::Option<crate::types::SseConfig> {
+        &self.sse_config
     }
     /// <p>When the store was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -132,6 +152,10 @@ impl ReferenceStoreDetailBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>When the store was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// Consumes the builder and constructs a [`ReferenceStoreDetail`](crate::types::ReferenceStoreDetail).
     pub fn build(self) -> crate::types::ReferenceStoreDetail {

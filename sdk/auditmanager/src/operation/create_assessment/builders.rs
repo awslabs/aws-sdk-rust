@@ -36,6 +36,12 @@ impl CreateAssessmentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateAssessment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_assessment::builders::CreateAssessmentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateAssessmentFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p> The name of the assessment to be created. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p> The optional description of the assessment to be created. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -135,6 +145,10 @@ impl CreateAssessmentFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p> The optional description of the assessment to be created. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p> The assessment report storage destination for the assessment that's being created. </p>
     pub fn assessment_reports_destination(
@@ -152,6 +166,12 @@ impl CreateAssessmentFluentBuilder {
         self.inner = self.inner.set_assessment_reports_destination(input);
         self
     }
+    /// <p> The assessment report storage destination for the assessment that's being created. </p>
+    pub fn get_assessment_reports_destination(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssessmentReportsDestination> {
+        self.inner.get_assessment_reports_destination()
+    }
     /// <p> The wrapper that contains the Amazon Web Services accounts and services that are in scope for the assessment. </p>
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
         self.inner = self.inner.scope(input);
@@ -161,6 +181,10 @@ impl CreateAssessmentFluentBuilder {
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::Scope>) -> Self {
         self.inner = self.inner.set_scope(input);
         self
+    }
+    /// <p> The wrapper that contains the Amazon Web Services accounts and services that are in scope for the assessment. </p>
+    pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
+        self.inner.get_scope()
     }
     /// Appends an item to `roles`.
     ///
@@ -179,6 +203,10 @@ impl CreateAssessmentFluentBuilder {
         self.inner = self.inner.set_roles(input);
         self
     }
+    /// <p> The list of roles for the assessment. </p>
+    pub fn get_roles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Role>> {
+        self.inner.get_roles()
+    }
     /// <p> The identifier for the framework that the assessment will be created from. </p>
     pub fn framework_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.framework_id(input.into());
@@ -188,6 +216,10 @@ impl CreateAssessmentFluentBuilder {
     pub fn set_framework_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_framework_id(input);
         self
+    }
+    /// <p> The identifier for the framework that the assessment will be created from. </p>
+    pub fn get_framework_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_framework_id()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -211,5 +243,13 @@ impl CreateAssessmentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p> The tags that are associated with the assessment. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

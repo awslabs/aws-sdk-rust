@@ -148,6 +148,10 @@ impl As2ConnectorConfigBuilder {
         self.local_profile_id = input;
         self
     }
+    /// <p>A unique identifier for the AS2 local profile.</p>
+    pub fn get_local_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.local_profile_id
+    }
     /// <p>A unique identifier for the partner profile for the connector.</p>
     pub fn partner_profile_id(
         mut self,
@@ -163,6 +167,10 @@ impl As2ConnectorConfigBuilder {
     ) -> Self {
         self.partner_profile_id = input;
         self
+    }
+    /// <p>A unique identifier for the partner profile for the connector.</p>
+    pub fn get_partner_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.partner_profile_id
     }
     /// <p>Used as the <code>Subject</code> HTTP header attribute in AS2 messages that are being sent with the connector.</p>
     pub fn message_subject(
@@ -180,6 +188,10 @@ impl As2ConnectorConfigBuilder {
         self.message_subject = input;
         self
     }
+    /// <p>Used as the <code>Subject</code> HTTP header attribute in AS2 messages that are being sent with the connector.</p>
+    pub fn get_message_subject(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_subject
+    }
     /// <p>Specifies whether the AS2 file is compressed.</p>
     pub fn compression(mut self, input: crate::types::CompressionEnum) -> Self {
         self.compression = ::std::option::Option::Some(input);
@@ -192,6 +204,10 @@ impl As2ConnectorConfigBuilder {
     ) -> Self {
         self.compression = input;
         self
+    }
+    /// <p>Specifies whether the AS2 file is compressed.</p>
+    pub fn get_compression(&self) -> &::std::option::Option<crate::types::CompressionEnum> {
+        &self.compression
     }
     /// <p>The algorithm that is used to encrypt the file.</p> <note>
     /// <p>You can only specify <code>NONE</code> if the URL for your connector uses HTTPS. This ensures that no traffic is sent in clear text.</p>
@@ -210,6 +226,12 @@ impl As2ConnectorConfigBuilder {
         self.encryption_algorithm = input;
         self
     }
+    /// <p>The algorithm that is used to encrypt the file.</p> <note>
+    /// <p>You can only specify <code>NONE</code> if the URL for your connector uses HTTPS. This ensures that no traffic is sent in clear text.</p>
+    /// </note>
+    pub fn get_encryption_algorithm(&self) -> &::std::option::Option<crate::types::EncryptionAlg> {
+        &self.encryption_algorithm
+    }
     /// <p>The algorithm that is used to sign the AS2 messages sent with the connector.</p>
     pub fn signing_algorithm(mut self, input: crate::types::SigningAlg) -> Self {
         self.signing_algorithm = ::std::option::Option::Some(input);
@@ -222,6 +244,10 @@ impl As2ConnectorConfigBuilder {
     ) -> Self {
         self.signing_algorithm = input;
         self
+    }
+    /// <p>The algorithm that is used to sign the AS2 messages sent with the connector.</p>
+    pub fn get_signing_algorithm(&self) -> &::std::option::Option<crate::types::SigningAlg> {
+        &self.signing_algorithm
     }
     /// <p>The signing algorithm for the MDN response.</p> <note>
     /// <p>If set to DEFAULT (or not set at all), the value for <code>SigningAlgorithm</code> is used.</p>
@@ -239,6 +265,12 @@ impl As2ConnectorConfigBuilder {
     ) -> Self {
         self.mdn_signing_algorithm = input;
         self
+    }
+    /// <p>The signing algorithm for the MDN response.</p> <note>
+    /// <p>If set to DEFAULT (or not set at all), the value for <code>SigningAlgorithm</code> is used.</p>
+    /// </note>
+    pub fn get_mdn_signing_algorithm(&self) -> &::std::option::Option<crate::types::MdnSigningAlg> {
+        &self.mdn_signing_algorithm
     }
     /// <p>Used for outbound requests (from an Transfer Family server to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p>
     /// <ul>
@@ -260,6 +292,14 @@ impl As2ConnectorConfigBuilder {
     ) -> Self {
         self.mdn_response = input;
         self
+    }
+    /// <p>Used for outbound requests (from an Transfer Family server to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p> </li>
+    /// <li> <p> <code>NONE</code>: Specifies that no MDN response is required.</p> </li>
+    /// </ul>
+    pub fn get_mdn_response(&self) -> &::std::option::Option<crate::types::MdnResponse> {
+        &self.mdn_response
     }
     /// <p>Provides Basic authentication support to the AS2 Connectors API. To use Basic authentication, you must provide the name or Amazon Resource Name (ARN) of a secret in Secrets Manager.</p>
     /// <p>The default value for this parameter is <code>null</code>, which indicates that Basic authentication is not enabled for the connector.</p>
@@ -298,6 +338,21 @@ impl As2ConnectorConfigBuilder {
     ) -> Self {
         self.basic_auth_secret_id = input;
         self
+    }
+    /// <p>Provides Basic authentication support to the AS2 Connectors API. To use Basic authentication, you must provide the name or Amazon Resource Name (ARN) of a secret in Secrets Manager.</p>
+    /// <p>The default value for this parameter is <code>null</code>, which indicates that Basic authentication is not enabled for the connector.</p>
+    /// <p>If the connector should use Basic authentication, the secret needs to be in the following format:</p>
+    /// <p> <code>{ "Username": "user-name", "Password": "user-password" }</code> </p>
+    /// <p>Replace <code>user-name</code> and <code>user-password</code> with the credentials for the actual user that is being authenticated.</p>
+    /// <p>Note the following:</p>
+    /// <ul>
+    /// <li> <p>You are storing these credentials in Secrets Manager, <i>not passing them directly</i> into this API.</p> </li>
+    /// <li> <p>If you are using the API, SDKs, or CloudFormation to configure your connector, then you must create the secret before you can enable Basic authentication. However, if you are using the Amazon Web Services management console, you can have the system create the secret for you.</p> </li>
+    /// </ul>
+    /// <p>If you have previously enabled Basic authentication for a connector, you can disable it by using the <code>UpdateConnector</code> API call. For example, if you are using the CLI, you can run the following command to remove Basic authentication:</p>
+    /// <p> <code>update-connector --connector-id my-connector-id --as2-config 'BasicAuthSecretId=""'</code> </p>
+    pub fn get_basic_auth_secret_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.basic_auth_secret_id
     }
     /// Consumes the builder and constructs a [`As2ConnectorConfig`](crate::types::As2ConnectorConfig).
     pub fn build(self) -> crate::types::As2ConnectorConfig {

@@ -41,6 +41,10 @@ impl DatasetEntityRecognizerEntityListBuilder {
         self.s3_uri = input;
         self
     }
+    /// <p>Specifies the Amazon S3 location where the entity list is located.</p>
+    pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_uri
+    }
     /// Consumes the builder and constructs a [`DatasetEntityRecognizerEntityList`](crate::types::DatasetEntityRecognizerEntityList).
     pub fn build(self) -> crate::types::DatasetEntityRecognizerEntityList {
         crate::types::DatasetEntityRecognizerEntityList {

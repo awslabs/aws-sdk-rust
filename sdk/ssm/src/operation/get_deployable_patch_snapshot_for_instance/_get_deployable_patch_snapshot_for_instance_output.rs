@@ -70,6 +70,10 @@ impl GetDeployablePatchSnapshotForInstanceOutputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The managed node ID.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The user-defined snapshot ID.</p>
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_id = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl GetDeployablePatchSnapshotForInstanceOutputBuilder {
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_id = input;
         self
+    }
+    /// <p>The user-defined snapshot ID.</p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_id
     }
     /// <p>A pre-signed Amazon Simple Storage Service (Amazon S3) URL that can be used to download the patch snapshot.</p>
     pub fn snapshot_download_url(
@@ -96,6 +104,10 @@ impl GetDeployablePatchSnapshotForInstanceOutputBuilder {
         self.snapshot_download_url = input;
         self
     }
+    /// <p>A pre-signed Amazon Simple Storage Service (Amazon S3) URL that can be used to download the patch snapshot.</p>
+    pub fn get_snapshot_download_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_download_url
+    }
     /// <p>Returns the specific operating system (for example Windows Server 2012 or Amazon Linux 2015.09) on the managed node for the specified patch snapshot.</p>
     pub fn product(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product = ::std::option::Option::Some(input.into());
@@ -105,6 +117,10 @@ impl GetDeployablePatchSnapshotForInstanceOutputBuilder {
     pub fn set_product(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product = input;
         self
+    }
+    /// <p>Returns the specific operating system (for example Windows Server 2012 or Amazon Linux 2015.09) on the managed node for the specified patch snapshot.</p>
+    pub fn get_product(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

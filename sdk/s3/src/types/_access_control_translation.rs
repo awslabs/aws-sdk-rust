@@ -40,6 +40,10 @@ impl AccessControlTranslationBuilder {
         self.owner = input;
         self
     }
+    /// <p>Specifies the replica ownership. For default and valid values, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT bucket replication</a> in the <i>Amazon S3 API Reference</i>.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<crate::types::OwnerOverride> {
+        &self.owner
+    }
     /// Consumes the builder and constructs a [`AccessControlTranslation`](crate::types::AccessControlTranslation).
     pub fn build(self) -> crate::types::AccessControlTranslation {
         crate::types::AccessControlTranslation { owner: self.owner }

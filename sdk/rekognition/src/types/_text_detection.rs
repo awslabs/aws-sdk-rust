@@ -89,6 +89,10 @@ impl TextDetectionBuilder {
         self.detected_text = input;
         self
     }
+    /// <p>The word or line of text recognized by Amazon Rekognition. </p>
+    pub fn get_detected_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detected_text
+    }
     /// <p>The type of text that was detected.</p>
     pub fn r#type(mut self, input: crate::types::TextTypes) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -98,6 +102,10 @@ impl TextDetectionBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::TextTypes>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of text that was detected.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::TextTypes> {
+        &self.r#type
     }
     /// <p>The identifier for the detected text. The identifier is only unique for a single call to <code>DetectText</code>. </p>
     pub fn id(mut self, input: i32) -> Self {
@@ -109,6 +117,10 @@ impl TextDetectionBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier for the detected text. The identifier is only unique for a single call to <code>DetectText</code>. </p>
+    pub fn get_id(&self) -> &::std::option::Option<i32> {
+        &self.id
+    }
     /// <p>The Parent identifier for the detected text identified by the value of <code>ID</code>. If the type of detected text is <code>LINE</code>, the value of <code>ParentId</code> is <code>Null</code>. </p>
     pub fn parent_id(mut self, input: i32) -> Self {
         self.parent_id = ::std::option::Option::Some(input);
@@ -118,6 +130,10 @@ impl TextDetectionBuilder {
     pub fn set_parent_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.parent_id = input;
         self
+    }
+    /// <p>The Parent identifier for the detected text identified by the value of <code>ID</code>. If the type of detected text is <code>LINE</code>, the value of <code>ParentId</code> is <code>Null</code>. </p>
+    pub fn get_parent_id(&self) -> &::std::option::Option<i32> {
+        &self.parent_id
     }
     /// <p>The confidence that Amazon Rekognition has in the accuracy of the detected text and the accuracy of the geometry points around the detected text.</p>
     pub fn confidence(mut self, input: f32) -> Self {
@@ -129,6 +145,10 @@ impl TextDetectionBuilder {
         self.confidence = input;
         self
     }
+    /// <p>The confidence that Amazon Rekognition has in the accuracy of the detected text and the accuracy of the geometry points around the detected text.</p>
+    pub fn get_confidence(&self) -> &::std::option::Option<f32> {
+        &self.confidence
+    }
     /// <p>The location of the detected text on the image. Includes an axis aligned coarse bounding box surrounding the text and a finer grain polygon for more accurate spatial information.</p>
     pub fn geometry(mut self, input: crate::types::Geometry) -> Self {
         self.geometry = ::std::option::Option::Some(input);
@@ -138,6 +158,10 @@ impl TextDetectionBuilder {
     pub fn set_geometry(mut self, input: ::std::option::Option<crate::types::Geometry>) -> Self {
         self.geometry = input;
         self
+    }
+    /// <p>The location of the detected text on the image. Includes an axis aligned coarse bounding box surrounding the text and a finer grain polygon for more accurate spatial information.</p>
+    pub fn get_geometry(&self) -> &::std::option::Option<crate::types::Geometry> {
+        &self.geometry
     }
     /// Consumes the builder and constructs a [`TextDetection`](crate::types::TextDetection).
     pub fn build(self) -> crate::types::TextDetection {

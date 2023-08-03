@@ -60,6 +60,13 @@ impl AdditionalLimitBuilder {
         self.limit_name = input;
         self
     }
+    /// <ul>
+    /// <li> <p> <code>MaximumNumberOfDataNodesSupported</code> - This attribute only applies to master nodes and specifies the maximum number of data nodes of a given instance type a master node can support.</p> </li>
+    /// <li> <p> <code>MaximumNumberOfDataNodesWithoutMasterNode</code> - This attribute only applies to data nodes and specifies the maximum number of data nodes of a given instance type can exist without a master node governing them.</p> </li>
+    /// </ul>
+    pub fn get_limit_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.limit_name
+    }
     /// Appends an item to `limit_values`.
     ///
     /// To override the contents of this collection use [`set_limit_values`](Self::set_limit_values).
@@ -78,6 +85,12 @@ impl AdditionalLimitBuilder {
     ) -> Self {
         self.limit_values = input;
         self
+    }
+    /// <p> The values of the additional instance type limits.</p>
+    pub fn get_limit_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.limit_values
     }
     /// Consumes the builder and constructs a [`AdditionalLimit`](crate::types::AdditionalLimit).
     pub fn build(self) -> crate::types::AdditionalLimit {

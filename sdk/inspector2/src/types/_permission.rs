@@ -48,6 +48,10 @@ impl PermissionBuilder {
         self.service = input;
         self
     }
+    /// <p>The services that the permissions allow an account to perform the given operations for.</p>
+    pub fn get_service(&self) -> &::std::option::Option<crate::types::Service> {
+        &self.service
+    }
     /// <p>The operations that can be performed with the given permissions.</p>
     pub fn operation(mut self, input: crate::types::Operation) -> Self {
         self.operation = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl PermissionBuilder {
     pub fn set_operation(mut self, input: ::std::option::Option<crate::types::Operation>) -> Self {
         self.operation = input;
         self
+    }
+    /// <p>The operations that can be performed with the given permissions.</p>
+    pub fn get_operation(&self) -> &::std::option::Option<crate::types::Operation> {
+        &self.operation
     }
     /// Consumes the builder and constructs a [`Permission`](crate::types::Permission).
     pub fn build(self) -> crate::types::Permission {

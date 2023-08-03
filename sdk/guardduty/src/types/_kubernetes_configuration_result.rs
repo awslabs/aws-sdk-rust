@@ -49,6 +49,12 @@ impl KubernetesConfigurationResultBuilder {
         self.audit_logs = input;
         self
     }
+    /// <p>Describes whether Kubernetes audit logs are enabled as a data source.</p>
+    pub fn get_audit_logs(
+        &self,
+    ) -> &::std::option::Option<crate::types::KubernetesAuditLogsConfigurationResult> {
+        &self.audit_logs
+    }
     /// Consumes the builder and constructs a [`KubernetesConfigurationResult`](crate::types::KubernetesConfigurationResult).
     pub fn build(self) -> crate::types::KubernetesConfigurationResult {
         crate::types::KubernetesConfigurationResult {

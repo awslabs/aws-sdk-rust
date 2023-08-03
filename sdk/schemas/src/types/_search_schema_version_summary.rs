@@ -58,6 +58,10 @@ impl SearchSchemaVersionSummaryBuilder {
         self.created_date = input;
         self
     }
+    /// <p>The date the schema version was created.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_date
+    }
     /// <p>The version number of the schema</p>
     pub fn schema_version(
         mut self,
@@ -74,6 +78,10 @@ impl SearchSchemaVersionSummaryBuilder {
         self.schema_version = input;
         self
     }
+    /// <p>The version number of the schema</p>
+    pub fn get_schema_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_version
+    }
     /// <p>The type of schema.</p>
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -83,6 +91,10 @@ impl SearchSchemaVersionSummaryBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of schema.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`SearchSchemaVersionSummary`](crate::types::SearchSchemaVersionSummary).
     pub fn build(self) -> crate::types::SearchSchemaVersionSummary {

@@ -64,6 +64,10 @@ impl LaunchTemplateBlockDeviceMappingBuilder {
         self.device_name = input;
         self
     }
+    /// <p>The device name.</p>
+    pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_name
+    }
     /// <p>The virtual device name (ephemeralN).</p>
     pub fn virtual_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_name = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl LaunchTemplateBlockDeviceMappingBuilder {
     pub fn set_virtual_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_name = input;
         self
+    }
+    /// <p>The virtual device name (ephemeralN).</p>
+    pub fn get_virtual_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_name
     }
     /// <p>Information about the block device for an EBS volume.</p>
     pub fn ebs(mut self, input: crate::types::LaunchTemplateEbsBlockDevice) -> Self {
@@ -87,6 +95,10 @@ impl LaunchTemplateBlockDeviceMappingBuilder {
         self.ebs = input;
         self
     }
+    /// <p>Information about the block device for an EBS volume.</p>
+    pub fn get_ebs(&self) -> &::std::option::Option<crate::types::LaunchTemplateEbsBlockDevice> {
+        &self.ebs
+    }
     /// <p>To omit the device from the block device mapping, specify an empty string.</p>
     pub fn no_device(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.no_device = ::std::option::Option::Some(input.into());
@@ -96,6 +108,10 @@ impl LaunchTemplateBlockDeviceMappingBuilder {
     pub fn set_no_device(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.no_device = input;
         self
+    }
+    /// <p>To omit the device from the block device mapping, specify an empty string.</p>
+    pub fn get_no_device(&self) -> &::std::option::Option<::std::string::String> {
+        &self.no_device
     }
     /// Consumes the builder and constructs a [`LaunchTemplateBlockDeviceMapping`](crate::types::LaunchTemplateBlockDeviceMapping).
     pub fn build(self) -> crate::types::LaunchTemplateBlockDeviceMapping {

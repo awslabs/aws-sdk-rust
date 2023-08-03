@@ -61,6 +61,10 @@ impl DetachObjectInputBuilder {
         self.directory_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_arn
+    }
     /// <p>The parent reference from which the object with the specified link name is detached.</p>
     pub fn parent_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.parent_reference = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl DetachObjectInputBuilder {
         self.parent_reference = input;
         self
     }
+    /// <p>The parent reference from which the object with the specified link name is detached.</p>
+    pub fn get_parent_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
+        &self.parent_reference
+    }
     /// <p>The link name associated with the object that needs to be detached.</p>
     pub fn link_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.link_name = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl DetachObjectInputBuilder {
     pub fn set_link_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.link_name = input;
         self
+    }
+    /// <p>The link name associated with the object that needs to be detached.</p>
+    pub fn get_link_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.link_name
     }
     /// Consumes the builder and constructs a [`DetachObjectInput`](crate::operation::detach_object::DetachObjectInput).
     pub fn build(

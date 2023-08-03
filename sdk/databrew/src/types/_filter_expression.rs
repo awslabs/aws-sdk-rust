@@ -56,6 +56,10 @@ impl FilterExpressionBuilder {
         self.expression = input;
         self
     }
+    /// <p>The expression which includes condition names followed by substitution variables, possibly grouped and combined with other conditions. For example, "(starts_with :prefix1 or starts_with :prefix2) and (ends_with :suffix1 or ends_with :suffix2)". Substitution variables should start with ':' symbol.</p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expression
+    }
     /// Adds a key-value pair to `values_map`.
     ///
     /// To override the contents of this collection use [`set_values_map`](Self::set_values_map).
@@ -80,6 +84,14 @@ impl FilterExpressionBuilder {
     ) -> Self {
         self.values_map = input;
         self
+    }
+    /// <p>The map of substitution variable names to their values used in this filter expression.</p>
+    pub fn get_values_map(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.values_map
     }
     /// Consumes the builder and constructs a [`FilterExpression`](crate::types::FilterExpression).
     pub fn build(self) -> crate::types::FilterExpression {

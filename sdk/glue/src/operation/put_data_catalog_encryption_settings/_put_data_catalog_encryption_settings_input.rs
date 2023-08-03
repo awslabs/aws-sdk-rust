@@ -51,6 +51,10 @@ impl PutDataCatalogEncryptionSettingsInputBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The ID of the Data Catalog to set the security configuration for. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p>The security configuration to set.</p>
     pub fn data_catalog_encryption_settings(
         mut self,
@@ -66,6 +70,12 @@ impl PutDataCatalogEncryptionSettingsInputBuilder {
     ) -> Self {
         self.data_catalog_encryption_settings = input;
         self
+    }
+    /// <p>The security configuration to set.</p>
+    pub fn get_data_catalog_encryption_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataCatalogEncryptionSettings> {
+        &self.data_catalog_encryption_settings
     }
     /// Consumes the builder and constructs a [`PutDataCatalogEncryptionSettingsInput`](crate::operation::put_data_catalog_encryption_settings::PutDataCatalogEncryptionSettingsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_data_catalog_encryption_settings::PutDataCatalogEncryptionSettingsInput, ::aws_smithy_http::operation::error::BuildError>{

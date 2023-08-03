@@ -62,6 +62,10 @@ impl AccountFreeTrialInfoBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The account identifier of the GuardDuty member account.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>Describes the data source enabled for the GuardDuty member account.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
     pub fn data_sources(mut self, input: crate::types::DataSourcesFreeTrial) -> Self {
@@ -76,6 +80,11 @@ impl AccountFreeTrialInfoBuilder {
     ) -> Self {
         self.data_sources = input;
         self
+    }
+    /// <p>Describes the data source enabled for the GuardDuty member account.</p>
+    #[deprecated(note = "This parameter is deprecated, use Features instead")]
+    pub fn get_data_sources(&self) -> &::std::option::Option<crate::types::DataSourcesFreeTrial> {
+        &self.data_sources
     }
     /// Appends an item to `features`.
     ///
@@ -97,6 +106,13 @@ impl AccountFreeTrialInfoBuilder {
     ) -> Self {
         self.features = input;
         self
+    }
+    /// <p>A list of features enabled for the GuardDuty account.</p>
+    pub fn get_features(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FreeTrialFeatureConfigurationResult>>
+    {
+        &self.features
     }
     /// Consumes the builder and constructs a [`AccountFreeTrialInfo`](crate::types::AccountFreeTrialInfo).
     pub fn build(self) -> crate::types::AccountFreeTrialInfo {

@@ -48,6 +48,10 @@ impl OutputBandBuilder {
         self.band_name = input;
         self
     }
+    /// <p>The name of the band.</p>
+    pub fn get_band_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.band_name
+    }
     /// <p>The datatype of the output band.</p>
     pub fn output_data_type(mut self, input: crate::types::OutputType) -> Self {
         self.output_data_type = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl OutputBandBuilder {
     ) -> Self {
         self.output_data_type = input;
         self
+    }
+    /// <p>The datatype of the output band.</p>
+    pub fn get_output_data_type(&self) -> &::std::option::Option<crate::types::OutputType> {
+        &self.output_data_type
     }
     /// Consumes the builder and constructs a [`OutputBand`](crate::types::OutputBand).
     pub fn build(self) -> crate::types::OutputBand {

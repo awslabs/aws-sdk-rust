@@ -56,6 +56,10 @@ impl UpdateInstructionBuilder {
         self.action = input;
         self
     }
+    /// <p>Specifies whether this update is to add or revoke role permissions.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::UpdateAction> {
+        &self.action
+    }
     /// <p>The role to add or revoke for the user or the group specified in <code>users</code>.</p>
     pub fn role(mut self, input: crate::types::Role) -> Self {
         self.role = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl UpdateInstructionBuilder {
     pub fn set_role(mut self, input: ::std::option::Option<crate::types::Role>) -> Self {
         self.role = input;
         self
+    }
+    /// <p>The role to add or revoke for the user or the group specified in <code>users</code>.</p>
+    pub fn get_role(&self) -> &::std::option::Option<crate::types::Role> {
+        &self.role
     }
     /// Appends an item to `users`.
     ///
@@ -84,6 +92,10 @@ impl UpdateInstructionBuilder {
     ) -> Self {
         self.users = input;
         self
+    }
+    /// <p>A structure that specifies the user or group to add or revoke the role for.</p>
+    pub fn get_users(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::User>> {
+        &self.users
     }
     /// Consumes the builder and constructs a [`UpdateInstruction`](crate::types::UpdateInstruction).
     pub fn build(self) -> crate::types::UpdateInstruction {

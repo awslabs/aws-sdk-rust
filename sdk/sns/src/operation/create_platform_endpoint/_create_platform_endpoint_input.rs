@@ -80,6 +80,10 @@ impl CreatePlatformEndpointInputBuilder {
         self.platform_application_arn = input;
         self
     }
+    /// <p>PlatformApplicationArn returned from CreatePlatformApplication is used to create a an endpoint.</p>
+    pub fn get_platform_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_application_arn
+    }
     /// <p>Unique identifier created by the notification service for an app on a device. The specific name for Token will vary, depending on which notification service is being used. For example, when using APNS as the notification service, you need the device token. Alternatively, when using GCM (Firebase Cloud Messaging) or ADM, the device token equivalent is called the registration ID.</p>
     pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl CreatePlatformEndpointInputBuilder {
     pub fn set_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.token = input;
         self
+    }
+    /// <p>Unique identifier created by the notification service for an app on a device. The specific name for Token will vary, depending on which notification service is being used. For example, when using APNS as the notification service, you need the device token. Alternatively, when using GCM (Firebase Cloud Messaging) or ADM, the device token equivalent is called the registration ID.</p>
+    pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token
     }
     /// <p>Arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The data must be in UTF-8 format and less than 2KB.</p>
     pub fn custom_user_data(
@@ -105,6 +113,10 @@ impl CreatePlatformEndpointInputBuilder {
     ) -> Self {
         self.custom_user_data = input;
         self
+    }
+    /// <p>Arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The data must be in UTF-8 format and less than 2KB.</p>
+    pub fn get_custom_user_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_user_data
     }
     /// Adds a key-value pair to `attributes`.
     ///
@@ -130,6 +142,14 @@ impl CreatePlatformEndpointInputBuilder {
     ) -> Self {
         self.attributes = input;
         self
+    }
+    /// <p>For a list of attributes, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.attributes
     }
     /// Consumes the builder and constructs a [`CreatePlatformEndpointInput`](crate::operation::create_platform_endpoint::CreatePlatformEndpointInput).
     pub fn build(

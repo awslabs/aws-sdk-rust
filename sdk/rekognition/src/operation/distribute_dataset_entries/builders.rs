@@ -39,6 +39,13 @@ impl DistributeDatasetEntriesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DistributeDatasetEntries as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::distribute_dataset_entries::builders::DistributeDatasetEntriesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,5 +142,11 @@ impl DistributeDatasetEntriesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_datasets(input);
         self
+    }
+    /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty. </p>
+    pub fn get_datasets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DistributeDataset>> {
+        self.inner.get_datasets()
     }
 }

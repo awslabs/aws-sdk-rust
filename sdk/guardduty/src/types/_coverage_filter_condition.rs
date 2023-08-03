@@ -57,6 +57,10 @@ impl CoverageFilterConditionBuilder {
         self.equals = input;
         self
     }
+    /// <p>Represents an equal condition that is applied to a single field while retrieving the coverage details.</p>
+    pub fn get_equals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.equals
+    }
     /// Appends an item to `not_equals`.
     ///
     /// To override the contents of this collection use [`set_not_equals`](Self::set_not_equals).
@@ -75,6 +79,10 @@ impl CoverageFilterConditionBuilder {
     ) -> Self {
         self.not_equals = input;
         self
+    }
+    /// <p>Represents a not equal condition that is applied to a single field while retrieving the coverage details.</p>
+    pub fn get_not_equals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.not_equals
     }
     /// Consumes the builder and constructs a [`CoverageFilterCondition`](crate::types::CoverageFilterCondition).
     pub fn build(self) -> crate::types::CoverageFilterCondition {

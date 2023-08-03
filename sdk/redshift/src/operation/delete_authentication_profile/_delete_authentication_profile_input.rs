@@ -45,6 +45,10 @@ impl DeleteAuthenticationProfileInputBuilder {
         self.authentication_profile_name = input;
         self
     }
+    /// <p>The name of the authentication profile to delete.</p>
+    pub fn get_authentication_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication_profile_name
+    }
     /// Consumes the builder and constructs a [`DeleteAuthenticationProfileInput`](crate::operation::delete_authentication_profile::DeleteAuthenticationProfileInput).
     pub fn build(
         self,

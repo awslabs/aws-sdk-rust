@@ -98,6 +98,10 @@ impl EventBuilder {
         self.source_identifier = input;
         self
     }
+    /// <p>The identifier for the source of the event.</p>
+    pub fn get_source_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_identifier
+    }
     /// <p>The source type for this event.</p>
     pub fn source_type(mut self, input: crate::types::SourceType) -> Self {
         self.source_type = ::std::option::Option::Some(input);
@@ -111,6 +115,10 @@ impl EventBuilder {
         self.source_type = input;
         self
     }
+    /// <p>The source type for this event.</p>
+    pub fn get_source_type(&self) -> &::std::option::Option<crate::types::SourceType> {
+        &self.source_type
+    }
     /// <p>The text of this event.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -120,6 +128,10 @@ impl EventBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The text of this event.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Appends an item to `event_categories`.
     ///
@@ -145,6 +157,13 @@ impl EventBuilder {
         self.event_categories = input;
         self
     }
+    /// <p>A list of the event categories.</p>
+    /// <p>Values: Configuration, Management, Monitoring, Security, Pending</p>
+    pub fn get_event_categories(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.event_categories
+    }
     /// <p>The severity of the event.</p>
     /// <p>Values: ERROR, INFO</p>
     pub fn severity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -157,6 +176,11 @@ impl EventBuilder {
         self.severity = input;
         self
     }
+    /// <p>The severity of the event.</p>
+    /// <p>Values: ERROR, INFO</p>
+    pub fn get_severity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.severity
+    }
     /// <p>The date and time of the event.</p>
     pub fn date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.date = ::std::option::Option::Some(input);
@@ -167,6 +191,10 @@ impl EventBuilder {
         self.date = input;
         self
     }
+    /// <p>The date and time of the event.</p>
+    pub fn get_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.date
+    }
     /// <p>The identifier of the event.</p>
     pub fn event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_id = ::std::option::Option::Some(input.into());
@@ -176,6 +204,10 @@ impl EventBuilder {
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_id = input;
         self
+    }
+    /// <p>The identifier of the event.</p>
+    pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_id
     }
     /// Consumes the builder and constructs a [`Event`](crate::types::Event).
     pub fn build(self) -> crate::types::Event {

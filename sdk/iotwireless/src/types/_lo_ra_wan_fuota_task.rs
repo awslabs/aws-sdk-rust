@@ -43,6 +43,10 @@ impl LoRaWanFuotaTaskBuilder {
         self.rf_region = input;
         self
     }
+    /// <p>Supported RfRegions</p>
+    pub fn get_rf_region(&self) -> &::std::option::Option<crate::types::SupportedRfRegion> {
+        &self.rf_region
+    }
     /// Consumes the builder and constructs a [`LoRaWanFuotaTask`](crate::types::LoRaWanFuotaTask).
     pub fn build(self) -> crate::types::LoRaWanFuotaTask {
         crate::types::LoRaWanFuotaTask {

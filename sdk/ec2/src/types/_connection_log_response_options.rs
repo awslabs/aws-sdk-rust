@@ -56,6 +56,10 @@ impl ConnectionLogResponseOptionsBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Indicates whether client connection logging is enabled for the Client VPN endpoint.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>The name of the Amazon CloudWatch Logs log group to which connection logging data is published.</p>
     pub fn cloudwatch_log_group(
         mut self,
@@ -72,6 +76,10 @@ impl ConnectionLogResponseOptionsBuilder {
         self.cloudwatch_log_group = input;
         self
     }
+    /// <p>The name of the Amazon CloudWatch Logs log group to which connection logging data is published.</p>
+    pub fn get_cloudwatch_log_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cloudwatch_log_group
+    }
     /// <p>The name of the Amazon CloudWatch Logs log stream to which connection logging data is published.</p>
     pub fn cloudwatch_log_stream(
         mut self,
@@ -87,6 +95,10 @@ impl ConnectionLogResponseOptionsBuilder {
     ) -> Self {
         self.cloudwatch_log_stream = input;
         self
+    }
+    /// <p>The name of the Amazon CloudWatch Logs log stream to which connection logging data is published.</p>
+    pub fn get_cloudwatch_log_stream(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cloudwatch_log_stream
     }
     /// Consumes the builder and constructs a [`ConnectionLogResponseOptions`](crate::types::ConnectionLogResponseOptions).
     pub fn build(self) -> crate::types::ConnectionLogResponseOptions {

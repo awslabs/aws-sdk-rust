@@ -38,6 +38,10 @@ impl AllocateTransitVirtualInterfaceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AllocateTransitVirtualInterface as a reference.
+    pub fn as_input(&self) -> &crate::operation::allocate_transit_virtual_interface::builders::AllocateTransitVirtualInterfaceInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -108,6 +112,10 @@ impl AllocateTransitVirtualInterfaceFluentBuilder {
         self.inner = self.inner.set_connection_id(input);
         self
     }
+    /// <p>The ID of the connection on which the transit virtual interface is provisioned.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connection_id()
+    }
     /// <p>The ID of the Amazon Web Services account that owns the transit virtual interface.</p>
     pub fn owner_account(
         mut self,
@@ -123,6 +131,10 @@ impl AllocateTransitVirtualInterfaceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_owner_account(input);
         self
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the transit virtual interface.</p>
+    pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_owner_account()
     }
     /// <p>Information about the transit virtual interface.</p>
     pub fn new_transit_virtual_interface_allocation(
@@ -141,5 +153,11 @@ impl AllocateTransitVirtualInterfaceFluentBuilder {
             .inner
             .set_new_transit_virtual_interface_allocation(input);
         self
+    }
+    /// <p>Information about the transit virtual interface.</p>
+    pub fn get_new_transit_virtual_interface_allocation(
+        &self,
+    ) -> &::std::option::Option<crate::types::NewTransitVirtualInterfaceAllocation> {
+        self.inner.get_new_transit_virtual_interface_allocation()
     }
 }

@@ -100,6 +100,10 @@ impl RecommendationSummaryBuilder {
         self.summaries = input;
         self
     }
+    /// <p>An array of objects that describe a recommendation summary.</p>
+    pub fn get_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Summary>> {
+        &self.summaries
+    }
     /// <p>The resource type that the recommendation summary applies to.</p>
     pub fn recommendation_resource_type(
         mut self,
@@ -116,6 +120,12 @@ impl RecommendationSummaryBuilder {
         self.recommendation_resource_type = input;
         self
     }
+    /// <p>The resource type that the recommendation summary applies to.</p>
+    pub fn get_recommendation_resource_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecommendationSourceType> {
+        &self.recommendation_resource_type
+    }
     /// <p>The Amazon Web Services account ID of the recommendation summary.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -125,6 +135,10 @@ impl RecommendationSummaryBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>The Amazon Web Services account ID of the recommendation summary.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>An object that describes the savings opportunity for a given resource type. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
     pub fn savings_opportunity(mut self, input: crate::types::SavingsOpportunity) -> Self {
@@ -138,6 +152,12 @@ impl RecommendationSummaryBuilder {
     ) -> Self {
         self.savings_opportunity = input;
         self
+    }
+    /// <p>An object that describes the savings opportunity for a given resource type. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
+    pub fn get_savings_opportunity(
+        &self,
+    ) -> &::std::option::Option<crate::types::SavingsOpportunity> {
+        &self.savings_opportunity
     }
     /// <p>An object that describes the performance risk ratings for a given resource type.</p>
     pub fn current_performance_risk_ratings(
@@ -154,6 +174,12 @@ impl RecommendationSummaryBuilder {
     ) -> Self {
         self.current_performance_risk_ratings = input;
         self
+    }
+    /// <p>An object that describes the performance risk ratings for a given resource type.</p>
+    pub fn get_current_performance_risk_ratings(
+        &self,
+    ) -> &::std::option::Option<crate::types::CurrentPerformanceRiskRatings> {
+        &self.current_performance_risk_ratings
     }
     /// Appends an item to `inferred_workload_savings`.
     ///
@@ -176,6 +202,12 @@ impl RecommendationSummaryBuilder {
     ) -> Self {
         self.inferred_workload_savings = input;
         self
+    }
+    /// <p> An array of objects that describes the estimated monthly saving amounts for the instances running on the specified <code>inferredWorkloadTypes</code>. The array contains the top three savings opportunites for the instances running inferred workload types. </p>
+    pub fn get_inferred_workload_savings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadSaving>> {
+        &self.inferred_workload_savings
     }
     /// Consumes the builder and constructs a [`RecommendationSummary`](crate::types::RecommendationSummary).
     pub fn build(self) -> crate::types::RecommendationSummary {

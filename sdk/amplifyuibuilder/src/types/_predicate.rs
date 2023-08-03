@@ -89,6 +89,10 @@ impl PredicateBuilder {
         self.or = input;
         self
     }
+    /// <p>A list of predicates to combine logically.</p>
+    pub fn get_or(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Predicate>> {
+        &self.or
+    }
     /// Appends an item to `and`.
     ///
     /// To override the contents of this collection use [`set_and`](Self::set_and).
@@ -108,6 +112,10 @@ impl PredicateBuilder {
         self.and = input;
         self
     }
+    /// <p>A list of predicates to combine logically.</p>
+    pub fn get_and(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Predicate>> {
+        &self.and
+    }
     /// <p>The field to query.</p>
     pub fn field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.field = ::std::option::Option::Some(input.into());
@@ -117,6 +125,10 @@ impl PredicateBuilder {
     pub fn set_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field = input;
         self
+    }
+    /// <p>The field to query.</p>
+    pub fn get_field(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field
     }
     /// <p>The operator to use to perform the evaluation.</p>
     pub fn operator(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -128,6 +140,10 @@ impl PredicateBuilder {
         self.operator = input;
         self
     }
+    /// <p>The operator to use to perform the evaluation.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operator
+    }
     /// <p>The value to use when performing the evaluation.</p>
     pub fn operand(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operand = ::std::option::Option::Some(input.into());
@@ -138,6 +154,10 @@ impl PredicateBuilder {
         self.operand = input;
         self
     }
+    /// <p>The value to use when performing the evaluation.</p>
+    pub fn get_operand(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operand
+    }
     /// <p>The type of value to use when performing the evaluation.</p>
     pub fn operand_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operand_type = ::std::option::Option::Some(input.into());
@@ -147,6 +167,10 @@ impl PredicateBuilder {
     pub fn set_operand_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operand_type = input;
         self
+    }
+    /// <p>The type of value to use when performing the evaluation.</p>
+    pub fn get_operand_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operand_type
     }
     /// Consumes the builder and constructs a [`Predicate`](crate::types::Predicate).
     pub fn build(self) -> crate::types::Predicate {

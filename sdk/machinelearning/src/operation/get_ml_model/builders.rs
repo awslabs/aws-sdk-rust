@@ -37,6 +37,10 @@ impl GetMLModelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetMLModel as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_ml_model::builders::GetMlModelInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl GetMLModelFluentBuilder {
         self.inner = self.inner.set_ml_model_id(input);
         self
     }
+    /// <p>The ID assigned to the <code>MLModel</code> at creation.</p>
+    pub fn get_ml_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ml_model_id()
+    }
     /// <p>Specifies whether the <code>GetMLModel</code> operation should return <code>Recipe</code>.</p>
     /// <p>If true, <code>Recipe</code> is returned.</p>
     /// <p>If false, <code>Recipe</code> is not returned.</p>
@@ -132,5 +140,11 @@ impl GetMLModelFluentBuilder {
     pub fn set_verbose(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_verbose(input);
         self
+    }
+    /// <p>Specifies whether the <code>GetMLModel</code> operation should return <code>Recipe</code>.</p>
+    /// <p>If true, <code>Recipe</code> is returned.</p>
+    /// <p>If false, <code>Recipe</code> is not returned.</p>
+    pub fn get_verbose(&self) -> &::std::option::Option<bool> {
+        self.inner.get_verbose()
     }
 }

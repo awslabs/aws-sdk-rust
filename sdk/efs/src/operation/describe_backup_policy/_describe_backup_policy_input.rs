@@ -46,6 +46,10 @@ impl DescribeBackupPolicyInputBuilder {
         self.file_system_id = input;
         self
     }
+    /// <p>Specifies which EFS file system to retrieve the <code>BackupPolicy</code> for.</p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_system_id
+    }
     /// Consumes the builder and constructs a [`DescribeBackupPolicyInput`](crate::operation::describe_backup_policy::DescribeBackupPolicyInput).
     pub fn build(
         self,

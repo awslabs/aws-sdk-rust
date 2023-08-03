@@ -62,6 +62,10 @@ impl CreateSecurityProfileOutputBuilder {
         self.security_profile_id = input;
         self
     }
+    /// <p>The identifier for the security profle.</p>
+    pub fn get_security_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_profile_id
+    }
     /// <p>The Amazon Resource Name (ARN) for the security profile.</p>
     pub fn security_profile_arn(
         mut self,
@@ -77,6 +81,10 @@ impl CreateSecurityProfileOutputBuilder {
     ) -> Self {
         self.security_profile_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the security profile.</p>
+    pub fn get_security_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_profile_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

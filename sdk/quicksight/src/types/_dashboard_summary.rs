@@ -88,6 +88,10 @@ impl DashboardSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>Dashboard ID.</p>
     pub fn dashboard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dashboard_id = ::std::option::Option::Some(input.into());
@@ -98,6 +102,10 @@ impl DashboardSummaryBuilder {
         self.dashboard_id = input;
         self
     }
+    /// <p>Dashboard ID.</p>
+    pub fn get_dashboard_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dashboard_id
+    }
     /// <p>A display name for the dashboard.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -107,6 +115,10 @@ impl DashboardSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A display name for the dashboard.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The time that this dashboard was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -121,6 +133,10 @@ impl DashboardSummaryBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The time that this dashboard was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>The last time that this dashboard was updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -134,6 +150,10 @@ impl DashboardSummaryBuilder {
         self.last_updated_time = input;
         self
     }
+    /// <p>The last time that this dashboard was updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
+    }
     /// <p>Published version number.</p>
     pub fn published_version_number(mut self, input: i64) -> Self {
         self.published_version_number = ::std::option::Option::Some(input);
@@ -143,6 +163,10 @@ impl DashboardSummaryBuilder {
     pub fn set_published_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.published_version_number = input;
         self
+    }
+    /// <p>Published version number.</p>
+    pub fn get_published_version_number(&self) -> &::std::option::Option<i64> {
+        &self.published_version_number
     }
     /// <p>The last time that this dashboard was published.</p>
     pub fn last_published_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -156,6 +180,10 @@ impl DashboardSummaryBuilder {
     ) -> Self {
         self.last_published_time = input;
         self
+    }
+    /// <p>The last time that this dashboard was published.</p>
+    pub fn get_last_published_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_published_time
     }
     /// Consumes the builder and constructs a [`DashboardSummary`](crate::types::DashboardSummary).
     pub fn build(self) -> crate::types::DashboardSummary {

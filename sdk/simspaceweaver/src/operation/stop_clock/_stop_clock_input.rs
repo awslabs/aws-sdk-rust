@@ -39,6 +39,10 @@ impl StopClockInputBuilder {
         self.simulation = input;
         self
     }
+    /// <p>The name of the simulation.</p>
+    pub fn get_simulation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.simulation
+    }
     /// Consumes the builder and constructs a [`StopClockInput`](crate::operation::stop_clock::StopClockInput).
     pub fn build(
         self,

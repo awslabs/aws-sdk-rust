@@ -77,6 +77,12 @@ impl SendNotificationActionDefinitionBuilder {
         self.delivery_method = input;
         self
     }
+    /// <p>Notification delivery method.</p>
+    pub fn get_delivery_method(
+        &self,
+    ) -> &::std::option::Option<crate::types::NotificationDeliveryType> {
+        &self.delivery_method
+    }
     /// <p>The subject of the email if the delivery method is <code>EMAIL</code>. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
     pub fn subject(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subject = ::std::option::Option::Some(input.into());
@@ -87,6 +93,10 @@ impl SendNotificationActionDefinitionBuilder {
         self.subject = input;
         self
     }
+    /// <p>The subject of the email if the delivery method is <code>EMAIL</code>. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
+    pub fn get_subject(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subject
+    }
     /// <p>Notification content. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
@@ -96,6 +106,10 @@ impl SendNotificationActionDefinitionBuilder {
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
+    }
+    /// <p>Notification content. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
     }
     /// <p>Content type format.</p>
     pub fn content_type(mut self, input: crate::types::NotificationContentType) -> Self {
@@ -110,6 +124,12 @@ impl SendNotificationActionDefinitionBuilder {
         self.content_type = input;
         self
     }
+    /// <p>Content type format.</p>
+    pub fn get_content_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::NotificationContentType> {
+        &self.content_type
+    }
     /// <p>Notification recipient.</p>
     pub fn recipient(mut self, input: crate::types::NotificationRecipientType) -> Self {
         self.recipient = ::std::option::Option::Some(input);
@@ -122,6 +142,10 @@ impl SendNotificationActionDefinitionBuilder {
     ) -> Self {
         self.recipient = input;
         self
+    }
+    /// <p>Notification recipient.</p>
+    pub fn get_recipient(&self) -> &::std::option::Option<crate::types::NotificationRecipientType> {
+        &self.recipient
     }
     /// Consumes the builder and constructs a [`SendNotificationActionDefinition`](crate::types::SendNotificationActionDefinition).
     pub fn build(self) -> crate::types::SendNotificationActionDefinition {

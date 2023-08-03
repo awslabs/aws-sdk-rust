@@ -64,6 +64,10 @@ impl JupyterServerAppSettingsBuilder {
         self.default_resource_spec = input;
         self
     }
+    /// <p>The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the JupyterServer app. If you use the <code>LifecycleConfigArns</code> parameter, then this parameter is also required.</p>
+    pub fn get_default_resource_spec(&self) -> &::std::option::Option<crate::types::ResourceSpec> {
+        &self.default_resource_spec
+    }
     /// Appends an item to `lifecycle_config_arns`.
     ///
     /// To override the contents of this collection use [`set_lifecycle_config_arns`](Self::set_lifecycle_config_arns).
@@ -90,6 +94,14 @@ impl JupyterServerAppSettingsBuilder {
         self.lifecycle_config_arns = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the JupyterServerApp. If you use this parameter, the <code>DefaultResourceSpec</code> parameter is also required.</p> <note>
+    /// <p>To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an empty list.</p>
+    /// </note>
+    pub fn get_lifecycle_config_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.lifecycle_config_arns
+    }
     /// Appends an item to `code_repositories`.
     ///
     /// To override the contents of this collection use [`set_code_repositories`](Self::set_code_repositories).
@@ -108,6 +120,12 @@ impl JupyterServerAppSettingsBuilder {
     ) -> Self {
         self.code_repositories = input;
         self
+    }
+    /// <p>A list of Git repositories that SageMaker automatically displays to users for cloning in the JupyterServer application.</p>
+    pub fn get_code_repositories(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeRepository>> {
+        &self.code_repositories
     }
     /// Consumes the builder and constructs a [`JupyterServerAppSettings`](crate::types::JupyterServerAppSettings).
     pub fn build(self) -> crate::types::JupyterServerAppSettings {

@@ -76,6 +76,10 @@ impl ProvisionedBandwidthBuilder {
         self
     }
     /// <p>Reserved. If you need to sustain traffic greater than the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
+    pub fn get_provision_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.provision_time
+    }
+    /// <p>Reserved. If you need to sustain traffic greater than the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
     pub fn provisioned(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioned = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +88,10 @@ impl ProvisionedBandwidthBuilder {
     pub fn set_provisioned(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provisioned = input;
         self
+    }
+    /// <p>Reserved. If you need to sustain traffic greater than the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
+    pub fn get_provisioned(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provisioned
     }
     /// <p>Reserved. If you need to sustain traffic greater than the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
     pub fn request_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -99,6 +107,10 @@ impl ProvisionedBandwidthBuilder {
         self
     }
     /// <p>Reserved. If you need to sustain traffic greater than the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
+    pub fn get_request_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.request_time
+    }
+    /// <p>Reserved. If you need to sustain traffic greater than the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
     pub fn requested(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.requested = ::std::option::Option::Some(input.into());
         self
@@ -109,6 +121,10 @@ impl ProvisionedBandwidthBuilder {
         self
     }
     /// <p>Reserved. If you need to sustain traffic greater than the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
+    pub fn get_requested(&self) -> &::std::option::Option<::std::string::String> {
+        &self.requested
+    }
+    /// <p>Reserved. If you need to sustain traffic greater than the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
@@ -117,6 +133,10 @@ impl ProvisionedBandwidthBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Reserved. If you need to sustain traffic greater than the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`ProvisionedBandwidth`](crate::types::ProvisionedBandwidth).
     pub fn build(self) -> crate::types::ProvisionedBandwidth {

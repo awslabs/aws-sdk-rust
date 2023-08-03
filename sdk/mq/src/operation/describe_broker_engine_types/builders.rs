@@ -36,6 +36,10 @@ impl DescribeBrokerEngineTypesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeBrokerEngineTypes as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_broker_engine_types::builders::DescribeBrokerEngineTypesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl DescribeBrokerEngineTypesFluentBuilder {
         self.inner = self.inner.set_engine_type(input);
         self
     }
+    /// <p>Filter response by engine type.</p>
+    pub fn get_engine_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_engine_type()
+    }
     /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -136,6 +144,10 @@ impl DescribeBrokerEngineTypesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -145,5 +157,9 @@ impl DescribeBrokerEngineTypesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

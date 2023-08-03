@@ -71,6 +71,14 @@ impl LogPublishingOptionsStatusBuilder {
         self.options = input;
         self
     }
+    /// <p>The log publishing options configured for the Elasticsearch domain.</p>
+    pub fn get_options(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
+    > {
+        &self.options
+    }
     /// <p>The status of the log publishing options for the Elasticsearch domain. See <code>OptionStatus</code> for the status information that's included. </p>
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -80,6 +88,10 @@ impl LogPublishingOptionsStatusBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the log publishing options for the Elasticsearch domain. See <code>OptionStatus</code> for the status information that's included. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::OptionStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`LogPublishingOptionsStatus`](crate::types::LogPublishingOptionsStatus).
     pub fn build(self) -> crate::types::LogPublishingOptionsStatus {

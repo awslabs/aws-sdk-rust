@@ -72,6 +72,10 @@ impl ImportsListItemBuilder {
         self.import_id = input;
         self
     }
+    /// <p> The ID of the import. </p>
+    pub fn get_import_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.import_id
+    }
     /// <p> The status of the import. </p>
     pub fn import_status(mut self, input: crate::types::ImportStatus) -> Self {
         self.import_status = ::std::option::Option::Some(input);
@@ -84,6 +88,10 @@ impl ImportsListItemBuilder {
     ) -> Self {
         self.import_status = input;
         self
+    }
+    /// <p> The status of the import. </p>
+    pub fn get_import_status(&self) -> &::std::option::Option<crate::types::ImportStatus> {
+        &self.import_status
     }
     /// Appends an item to `destinations`.
     ///
@@ -104,6 +112,12 @@ impl ImportsListItemBuilder {
         self.destinations = input;
         self
     }
+    /// <p> The ARN of the destination event data store. </p>
+    pub fn get_destinations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.destinations
+    }
     /// <p> The timestamp of the import's creation. </p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_timestamp = ::std::option::Option::Some(input);
@@ -117,6 +131,10 @@ impl ImportsListItemBuilder {
         self.created_timestamp = input;
         self
     }
+    /// <p> The timestamp of the import's creation. </p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
+    }
     /// <p> The timestamp of the import's last update. </p>
     pub fn updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_timestamp = ::std::option::Option::Some(input);
@@ -129,6 +147,10 @@ impl ImportsListItemBuilder {
     ) -> Self {
         self.updated_timestamp = input;
         self
+    }
+    /// <p> The timestamp of the import's last update. </p>
+    pub fn get_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_timestamp
     }
     /// Consumes the builder and constructs a [`ImportsListItem`](crate::types::ImportsListItem).
     pub fn build(self) -> crate::types::ImportsListItem {

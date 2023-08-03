@@ -96,6 +96,10 @@ impl PutComplianceItemsInputBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>Specify an ID for this resource. For a managed node, this is the node ID.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>Specify the type of resource. <code>ManagedInstance</code> is currently the only supported resource type.</p>
     pub fn resource_type(
         mut self,
@@ -111,6 +115,10 @@ impl PutComplianceItemsInputBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>Specify the type of resource. <code>ManagedInstance</code> is currently the only supported resource type.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
     }
     /// <p>Specify the compliance type. For example, specify Association (for a State Manager association), Patch, or Custom:<code>string</code>.</p>
     pub fn compliance_type(
@@ -128,6 +136,10 @@ impl PutComplianceItemsInputBuilder {
         self.compliance_type = input;
         self
     }
+    /// <p>Specify the compliance type. For example, specify Association (for a State Manager association), Patch, or Custom:<code>string</code>.</p>
+    pub fn get_compliance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.compliance_type
+    }
     /// <p>A summary of the call execution that includes an execution ID, the type of execution (for example, <code>Command</code>), and the date/time of the execution using a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
     pub fn execution_summary(mut self, input: crate::types::ComplianceExecutionSummary) -> Self {
         self.execution_summary = ::std::option::Option::Some(input);
@@ -140,6 +152,12 @@ impl PutComplianceItemsInputBuilder {
     ) -> Self {
         self.execution_summary = input;
         self
+    }
+    /// <p>A summary of the call execution that includes an execution ID, the type of execution (for example, <code>Command</code>), and the date/time of the execution using a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
+    pub fn get_execution_summary(
+        &self,
+    ) -> &::std::option::Option<crate::types::ComplianceExecutionSummary> {
+        &self.execution_summary
     }
     /// Appends an item to `items`.
     ///
@@ -160,6 +178,12 @@ impl PutComplianceItemsInputBuilder {
         self.items = input;
         self
     }
+    /// <p>Information about the compliance as defined by the resource type. For example, for a patch compliance type, <code>Items</code> includes information about the PatchSeverity, Classification, and so on.</p>
+    pub fn get_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComplianceItemEntry>> {
+        &self.items
+    }
     /// <p>MD5 or SHA-256 content hash. The content hash is used to determine if existing information should be overwritten or ignored. If the content hashes match, the request to put compliance information is ignored.</p>
     pub fn item_content_hash(
         mut self,
@@ -175,6 +199,10 @@ impl PutComplianceItemsInputBuilder {
     ) -> Self {
         self.item_content_hash = input;
         self
+    }
+    /// <p>MD5 or SHA-256 content hash. The content hash is used to determine if existing information should be overwritten or ignored. If the content hashes match, the request to put compliance information is ignored.</p>
+    pub fn get_item_content_hash(&self) -> &::std::option::Option<::std::string::String> {
+        &self.item_content_hash
     }
     /// <p>The mode for uploading compliance items. You can specify <code>COMPLETE</code> or <code>PARTIAL</code>. In <code>COMPLETE</code> mode, the system overwrites all existing compliance information for the resource. You must provide a full list of compliance items each time you send the request.</p>
     /// <p>In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific association. The association must be configured with <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests use <code>COMPLETE</code> mode.</p> <note>
@@ -194,6 +222,13 @@ impl PutComplianceItemsInputBuilder {
     ) -> Self {
         self.upload_type = input;
         self
+    }
+    /// <p>The mode for uploading compliance items. You can specify <code>COMPLETE</code> or <code>PARTIAL</code>. In <code>COMPLETE</code> mode, the system overwrites all existing compliance information for the resource. You must provide a full list of compliance items each time you send the request.</p>
+    /// <p>In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific association. The association must be configured with <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests use <code>COMPLETE</code> mode.</p> <note>
+    /// <p>This attribute is only valid for association compliance.</p>
+    /// </note>
+    pub fn get_upload_type(&self) -> &::std::option::Option<crate::types::ComplianceUploadType> {
+        &self.upload_type
     }
     /// Consumes the builder and constructs a [`PutComplianceItemsInput`](crate::operation::put_compliance_items::PutComplianceItemsInput).
     pub fn build(

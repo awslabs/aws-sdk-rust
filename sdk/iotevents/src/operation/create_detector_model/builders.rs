@@ -36,6 +36,12 @@ impl CreateDetectorModelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDetectorModel as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_detector_model::builders::CreateDetectorModelInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl CreateDetectorModelFluentBuilder {
         self.inner = self.inner.set_detector_model_name(input);
         self
     }
+    /// <p>The name of the detector model.</p>
+    pub fn get_detector_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_model_name()
+    }
     /// <p>Information that defines how the detectors operate.</p>
     pub fn detector_model_definition(
         mut self,
@@ -147,6 +157,12 @@ impl CreateDetectorModelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_detector_model_definition(input);
         self
+    }
+    /// <p>Information that defines how the detectors operate.</p>
+    pub fn get_detector_model_definition(
+        &self,
+    ) -> &::std::option::Option<crate::types::DetectorModelDefinition> {
+        self.inner.get_detector_model_definition()
     }
     /// <p>A brief description of the detector model.</p>
     pub fn detector_model_description(
@@ -164,6 +180,10 @@ impl CreateDetectorModelFluentBuilder {
         self.inner = self.inner.set_detector_model_description(input);
         self
     }
+    /// <p>A brief description of the detector model.</p>
+    pub fn get_detector_model_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_model_description()
+    }
     /// <p>The input attribute key used to identify a device or system to create a detector (an instance of the detector model) and then to route each input received to the appropriate detector (instance). This parameter uses a JSON-path expression in the message payload of each input to specify the attribute-value pair that is used to identify the device associated with the input.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key(input.into());
@@ -174,6 +194,10 @@ impl CreateDetectorModelFluentBuilder {
         self.inner = self.inner.set_key(input);
         self
     }
+    /// <p>The input attribute key used to identify a device or system to create a detector (an instance of the detector model) and then to route each input received to the appropriate detector (instance). This parameter uses a JSON-path expression in the message payload of each input to specify the attribute-value pair that is used to identify the device associated with the input.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key()
+    }
     /// <p>The ARN of the role that grants permission to AWS IoT Events to perform its operations.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -183,6 +207,10 @@ impl CreateDetectorModelFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>The ARN of the role that grants permission to AWS IoT Events to perform its operations.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// Appends an item to `tags`.
     ///
@@ -201,6 +229,10 @@ impl CreateDetectorModelFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Metadata that can be used to manage the detector model.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
     pub fn evaluation_method(mut self, input: crate::types::EvaluationMethod) -> Self {
         self.inner = self.inner.evaluation_method(input);
@@ -213,5 +245,9 @@ impl CreateDetectorModelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_evaluation_method(input);
         self
+    }
+    /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
+    pub fn get_evaluation_method(&self) -> &::std::option::Option<crate::types::EvaluationMethod> {
+        self.inner.get_evaluation_method()
     }
 }

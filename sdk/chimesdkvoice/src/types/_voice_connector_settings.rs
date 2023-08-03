@@ -40,6 +40,10 @@ impl VoiceConnectorSettingsBuilder {
         self.cdr_bucket = input;
         self
     }
+    /// <p>The S3 bucket that stores the Voice Connector's call detail records.</p>
+    pub fn get_cdr_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cdr_bucket
+    }
     /// Consumes the builder and constructs a [`VoiceConnectorSettings`](crate::types::VoiceConnectorSettings).
     pub fn build(self) -> crate::types::VoiceConnectorSettings {
         crate::types::VoiceConnectorSettings {

@@ -73,6 +73,12 @@ impl ListCoverageStatisticsOutputBuilder {
         self.counts_by_group = input;
         self
     }
+    /// <p>An array with the number for each group.</p>
+    pub fn get_counts_by_group(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Counts>> {
+        &self.counts_by_group
+    }
     /// <p>The total number for all groups.</p>
     pub fn total_counts(mut self, input: i64) -> Self {
         self.total_counts = ::std::option::Option::Some(input);
@@ -83,6 +89,10 @@ impl ListCoverageStatisticsOutputBuilder {
         self.total_counts = input;
         self
     }
+    /// <p>The total number for all groups.</p>
+    pub fn get_total_counts(&self) -> &::std::option::Option<i64> {
+        &self.total_counts
+    }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -92,6 +102,10 @@ impl ListCoverageStatisticsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

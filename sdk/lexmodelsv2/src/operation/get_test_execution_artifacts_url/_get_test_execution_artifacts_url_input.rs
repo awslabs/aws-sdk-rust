@@ -45,6 +45,10 @@ impl GetTestExecutionArtifactsUrlInputBuilder {
         self.test_execution_id = input;
         self
     }
+    /// <p>The unique identifier of the completed test execution.</p>
+    pub fn get_test_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_execution_id
+    }
     /// Consumes the builder and constructs a [`GetTestExecutionArtifactsUrlInput`](crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlInput).
     pub fn build(
         self,

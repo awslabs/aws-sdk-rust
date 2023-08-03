@@ -41,6 +41,10 @@ impl DeleteWorldTemplateInputBuilder {
         self.template = input;
         self
     }
+    /// <p>The Amazon Resource Name (arn) of the world template you want to delete.</p>
+    pub fn get_template(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template
+    }
     /// Consumes the builder and constructs a [`DeleteWorldTemplateInput`](crate::operation::delete_world_template::DeleteWorldTemplateInput).
     pub fn build(
         self,

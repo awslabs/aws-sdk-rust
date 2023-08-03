@@ -38,6 +38,10 @@ impl UpdatePublicSharingSettingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdatePublicSharingSettings as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_public_sharing_settings::builders::UpdatePublicSharingSettingsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +138,10 @@ impl UpdatePublicSharingSettingsFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The Amazon Web Services account ID associated with your Amazon QuickSight subscription.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account.</p>
     pub fn public_sharing_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.public_sharing_enabled(input);
@@ -143,5 +151,9 @@ impl UpdatePublicSharingSettingsFluentBuilder {
     pub fn set_public_sharing_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_public_sharing_enabled(input);
         self
+    }
+    /// <p>A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account.</p>
+    pub fn get_public_sharing_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_public_sharing_enabled()
     }
 }

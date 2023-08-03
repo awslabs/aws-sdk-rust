@@ -74,6 +74,10 @@ impl ListPoolOriginationIdentitiesOutputBuilder {
         self.pool_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the pool.</p>
+    pub fn get_pool_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pool_arn
+    }
     /// <p>The unique PoolId of the pool.</p>
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pool_id = ::std::option::Option::Some(input.into());
@@ -83,6 +87,10 @@ impl ListPoolOriginationIdentitiesOutputBuilder {
     pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pool_id = input;
         self
+    }
+    /// <p>The unique PoolId of the pool.</p>
+    pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pool_id
     }
     /// Appends an item to `origination_identities`.
     ///
@@ -106,6 +114,12 @@ impl ListPoolOriginationIdentitiesOutputBuilder {
         self.origination_identities = input;
         self
     }
+    /// <p>An array of any OriginationIdentityMetadata objects.</p>
+    pub fn get_origination_identities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OriginationIdentityMetadata>> {
+        &self.origination_identities
+    }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -115,6 +129,10 @@ impl ListPoolOriginationIdentitiesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -333,6 +333,10 @@ impl HumanLoopConfigBuilder {
         self.workteam_arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of a team of workers. To learn more about the types of workforces and work teams you can create and use with Amazon A2I, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-management.html">Create and Manage Workforces</a>.</p>
+    pub fn get_workteam_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workteam_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the human task user interface.</p>
     /// <p>You can use standard HTML and Crowd HTML Elements to create a custom worker task template. You use this template to create a human task UI.</p>
     /// <p>To learn how to create a custom HTML template, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-custom-templates.html">Create Custom Worker Task Template</a>.</p>
@@ -355,6 +359,13 @@ impl HumanLoopConfigBuilder {
         self.human_task_ui_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the human task user interface.</p>
+    /// <p>You can use standard HTML and Crowd HTML Elements to create a custom worker task template. You use this template to create a human task UI.</p>
+    /// <p>To learn how to create a custom HTML template, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-custom-templates.html">Create Custom Worker Task Template</a>.</p>
+    /// <p>To learn how to create a human task UI, which is a worker task template that can be used in a flow definition, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-worker-template-console.html">Create and Delete a Worker Task Templates</a>.</p>
+    pub fn get_human_task_ui_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.human_task_ui_arn
+    }
     /// <p>A title for the human worker task.</p>
     pub fn task_title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_title = ::std::option::Option::Some(input.into());
@@ -364,6 +375,10 @@ impl HumanLoopConfigBuilder {
     pub fn set_task_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_title = input;
         self
+    }
+    /// <p>A title for the human worker task.</p>
+    pub fn get_task_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_title
     }
     /// <p>A description for the human worker task.</p>
     pub fn task_description(
@@ -381,6 +396,10 @@ impl HumanLoopConfigBuilder {
         self.task_description = input;
         self
     }
+    /// <p>A description for the human worker task.</p>
+    pub fn get_task_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_description
+    }
     /// <p>The number of distinct workers who will perform the same task on each object. For example, if <code>TaskCount</code> is set to <code>3</code> for an image classification labeling job, three workers will classify each input image. Increasing <code>TaskCount</code> can improve label accuracy.</p>
     pub fn task_count(mut self, input: i32) -> Self {
         self.task_count = ::std::option::Option::Some(input);
@@ -390,6 +409,10 @@ impl HumanLoopConfigBuilder {
     pub fn set_task_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.task_count = input;
         self
+    }
+    /// <p>The number of distinct workers who will perform the same task on each object. For example, if <code>TaskCount</code> is set to <code>3</code> for an image classification labeling job, three workers will classify each input image. Increasing <code>TaskCount</code> can improve label accuracy.</p>
+    pub fn get_task_count(&self) -> &::std::option::Option<i32> {
+        &self.task_count
     }
     /// <p>The length of time that a task remains available for review by human workers.</p>
     pub fn task_availability_lifetime_in_seconds(mut self, input: i32) -> Self {
@@ -404,6 +427,10 @@ impl HumanLoopConfigBuilder {
         self.task_availability_lifetime_in_seconds = input;
         self
     }
+    /// <p>The length of time that a task remains available for review by human workers.</p>
+    pub fn get_task_availability_lifetime_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.task_availability_lifetime_in_seconds
+    }
     /// <p>The amount of time that a worker has to complete a task. The default value is 3,600 seconds (1 hour).</p>
     pub fn task_time_limit_in_seconds(mut self, input: i32) -> Self {
         self.task_time_limit_in_seconds = ::std::option::Option::Some(input);
@@ -413,6 +440,10 @@ impl HumanLoopConfigBuilder {
     pub fn set_task_time_limit_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.task_time_limit_in_seconds = input;
         self
+    }
+    /// <p>The amount of time that a worker has to complete a task. The default value is 3,600 seconds (1 hour).</p>
+    pub fn get_task_time_limit_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.task_time_limit_in_seconds
     }
     /// Appends an item to `task_keywords`.
     ///
@@ -435,6 +466,12 @@ impl HumanLoopConfigBuilder {
     ) -> Self {
         self.task_keywords = input;
         self
+    }
+    /// <p>Keywords used to describe the task so that workers can discover the task.</p>
+    pub fn get_task_keywords(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.task_keywords
     }
     /// <p>Defines the amount of money paid to an Amazon Mechanical Turk worker for each task performed. </p>
     /// <p>Use one of the following prices for bounding box tasks. Prices are in US dollars and should be based on the complexity of the task; the longer it takes in your initial testing, the more you should offer.</p>
@@ -671,6 +708,122 @@ impl HumanLoopConfigBuilder {
     ) -> Self {
         self.public_workforce_task_price = input;
         self
+    }
+    /// <p>Defines the amount of money paid to an Amazon Mechanical Turk worker for each task performed. </p>
+    /// <p>Use one of the following prices for bounding box tasks. Prices are in US dollars and should be based on the complexity of the task; the longer it takes in your initial testing, the more you should offer.</p>
+    /// <ul>
+    /// <li> <p>0.036</p> </li>
+    /// <li> <p>0.048</p> </li>
+    /// <li> <p>0.060</p> </li>
+    /// <li> <p>0.072</p> </li>
+    /// <li> <p>0.120</p> </li>
+    /// <li> <p>0.240</p> </li>
+    /// <li> <p>0.360</p> </li>
+    /// <li> <p>0.480</p> </li>
+    /// <li> <p>0.600</p> </li>
+    /// <li> <p>0.720</p> </li>
+    /// <li> <p>0.840</p> </li>
+    /// <li> <p>0.960</p> </li>
+    /// <li> <p>1.080</p> </li>
+    /// <li> <p>1.200</p> </li>
+    /// </ul>
+    /// <p>Use one of the following prices for image classification, text classification, and custom tasks. Prices are in US dollars.</p>
+    /// <ul>
+    /// <li> <p>0.012</p> </li>
+    /// <li> <p>0.024</p> </li>
+    /// <li> <p>0.036</p> </li>
+    /// <li> <p>0.048</p> </li>
+    /// <li> <p>0.060</p> </li>
+    /// <li> <p>0.072</p> </li>
+    /// <li> <p>0.120</p> </li>
+    /// <li> <p>0.240</p> </li>
+    /// <li> <p>0.360</p> </li>
+    /// <li> <p>0.480</p> </li>
+    /// <li> <p>0.600</p> </li>
+    /// <li> <p>0.720</p> </li>
+    /// <li> <p>0.840</p> </li>
+    /// <li> <p>0.960</p> </li>
+    /// <li> <p>1.080</p> </li>
+    /// <li> <p>1.200</p> </li>
+    /// </ul>
+    /// <p>Use one of the following prices for semantic segmentation tasks. Prices are in US dollars.</p>
+    /// <ul>
+    /// <li> <p>0.840</p> </li>
+    /// <li> <p>0.960</p> </li>
+    /// <li> <p>1.080</p> </li>
+    /// <li> <p>1.200</p> </li>
+    /// </ul>
+    /// <p>Use one of the following prices for Textract AnalyzeDocument Important Form Key Amazon Augmented AI review tasks. Prices are in US dollars.</p>
+    /// <ul>
+    /// <li> <p>2.400 </p> </li>
+    /// <li> <p>2.280 </p> </li>
+    /// <li> <p>2.160 </p> </li>
+    /// <li> <p>2.040 </p> </li>
+    /// <li> <p>1.920 </p> </li>
+    /// <li> <p>1.800 </p> </li>
+    /// <li> <p>1.680 </p> </li>
+    /// <li> <p>1.560 </p> </li>
+    /// <li> <p>1.440 </p> </li>
+    /// <li> <p>1.320 </p> </li>
+    /// <li> <p>1.200 </p> </li>
+    /// <li> <p>1.080 </p> </li>
+    /// <li> <p>0.960 </p> </li>
+    /// <li> <p>0.840 </p> </li>
+    /// <li> <p>0.720 </p> </li>
+    /// <li> <p>0.600 </p> </li>
+    /// <li> <p>0.480 </p> </li>
+    /// <li> <p>0.360 </p> </li>
+    /// <li> <p>0.240 </p> </li>
+    /// <li> <p>0.120 </p> </li>
+    /// <li> <p>0.072 </p> </li>
+    /// <li> <p>0.060 </p> </li>
+    /// <li> <p>0.048 </p> </li>
+    /// <li> <p>0.036 </p> </li>
+    /// <li> <p>0.024 </p> </li>
+    /// <li> <p>0.012 </p> </li>
+    /// </ul>
+    /// <p>Use one of the following prices for Rekognition DetectModerationLabels Amazon Augmented AI review tasks. Prices are in US dollars.</p>
+    /// <ul>
+    /// <li> <p>1.200 </p> </li>
+    /// <li> <p>1.080 </p> </li>
+    /// <li> <p>0.960 </p> </li>
+    /// <li> <p>0.840 </p> </li>
+    /// <li> <p>0.720 </p> </li>
+    /// <li> <p>0.600 </p> </li>
+    /// <li> <p>0.480 </p> </li>
+    /// <li> <p>0.360 </p> </li>
+    /// <li> <p>0.240 </p> </li>
+    /// <li> <p>0.120 </p> </li>
+    /// <li> <p>0.072 </p> </li>
+    /// <li> <p>0.060 </p> </li>
+    /// <li> <p>0.048 </p> </li>
+    /// <li> <p>0.036 </p> </li>
+    /// <li> <p>0.024 </p> </li>
+    /// <li> <p>0.012 </p> </li>
+    /// </ul>
+    /// <p>Use one of the following prices for Amazon Augmented AI custom human review tasks. Prices are in US dollars.</p>
+    /// <ul>
+    /// <li> <p>1.200 </p> </li>
+    /// <li> <p>1.080 </p> </li>
+    /// <li> <p>0.960 </p> </li>
+    /// <li> <p>0.840 </p> </li>
+    /// <li> <p>0.720 </p> </li>
+    /// <li> <p>0.600 </p> </li>
+    /// <li> <p>0.480 </p> </li>
+    /// <li> <p>0.360 </p> </li>
+    /// <li> <p>0.240 </p> </li>
+    /// <li> <p>0.120 </p> </li>
+    /// <li> <p>0.072 </p> </li>
+    /// <li> <p>0.060 </p> </li>
+    /// <li> <p>0.048 </p> </li>
+    /// <li> <p>0.036 </p> </li>
+    /// <li> <p>0.024 </p> </li>
+    /// <li> <p>0.012 </p> </li>
+    /// </ul>
+    pub fn get_public_workforce_task_price(
+        &self,
+    ) -> &::std::option::Option<crate::types::PublicWorkforceTaskPrice> {
+        &self.public_workforce_task_price
     }
     /// Consumes the builder and constructs a [`HumanLoopConfig`](crate::types::HumanLoopConfig).
     pub fn build(self) -> crate::types::HumanLoopConfig {

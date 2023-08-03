@@ -46,6 +46,10 @@ impl SidewalkUpdateImportInfoBuilder {
         self.device_creation_file = input;
         self
     }
+    /// <p>The CSV file contained in an S3 bucket that's used for appending devices to an existing import task.</p>
+    pub fn get_device_creation_file(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_creation_file
+    }
     /// Consumes the builder and constructs a [`SidewalkUpdateImportInfo`](crate::types::SidewalkUpdateImportInfo).
     pub fn build(self) -> crate::types::SidewalkUpdateImportInfo {
         crate::types::SidewalkUpdateImportInfo {

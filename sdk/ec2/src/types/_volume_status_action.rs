@@ -64,6 +64,10 @@ impl VolumeStatusActionBuilder {
         self.code = input;
         self
     }
+    /// <p>The code identifying the operation, for example, <code>enable-volume-io</code>.</p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
+    }
     /// <p>A description of the operation.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl VolumeStatusActionBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the operation.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The ID of the event associated with this operation.</p>
     pub fn event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl VolumeStatusActionBuilder {
         self.event_id = input;
         self
     }
+    /// <p>The ID of the event associated with this operation.</p>
+    pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_id
+    }
     /// <p>The event type associated with this operation.</p>
     pub fn event_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_type = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl VolumeStatusActionBuilder {
     pub fn set_event_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_type = input;
         self
+    }
+    /// <p>The event type associated with this operation.</p>
+    pub fn get_event_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_type
     }
     /// Consumes the builder and constructs a [`VolumeStatusAction`](crate::types::VolumeStatusAction).
     pub fn build(self) -> crate::types::VolumeStatusAction {

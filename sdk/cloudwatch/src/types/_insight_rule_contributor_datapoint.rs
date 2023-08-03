@@ -52,6 +52,10 @@ impl InsightRuleContributorDatapointBuilder {
         self.timestamp = input;
         self
     }
+    /// <p>The timestamp of the data point.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
+    }
     /// <p>The approximate value that this contributor added during this timestamp.</p>
     pub fn approximate_value(mut self, input: f64) -> Self {
         self.approximate_value = ::std::option::Option::Some(input);
@@ -61,6 +65,10 @@ impl InsightRuleContributorDatapointBuilder {
     pub fn set_approximate_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.approximate_value = input;
         self
+    }
+    /// <p>The approximate value that this contributor added during this timestamp.</p>
+    pub fn get_approximate_value(&self) -> &::std::option::Option<f64> {
+        &self.approximate_value
     }
     /// Consumes the builder and constructs a [`InsightRuleContributorDatapoint`](crate::types::InsightRuleContributorDatapoint).
     pub fn build(self) -> crate::types::InsightRuleContributorDatapoint {

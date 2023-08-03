@@ -49,6 +49,12 @@ impl DescribeSubscribedWorkteamOutputBuilder {
         self.subscribed_workteam = input;
         self
     }
+    /// <p>A <code>Workteam</code> instance that contains information about the work team.</p>
+    pub fn get_subscribed_workteam(
+        &self,
+    ) -> &::std::option::Option<crate::types::SubscribedWorkteam> {
+        &self.subscribed_workteam
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

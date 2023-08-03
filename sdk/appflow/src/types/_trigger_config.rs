@@ -51,6 +51,10 @@ impl TriggerConfigBuilder {
         self.trigger_type = input;
         self
     }
+    /// <p> Specifies the type of flow trigger. This can be <code>OnDemand</code>, <code>Scheduled</code>, or <code>Event</code>. </p>
+    pub fn get_trigger_type(&self) -> &::std::option::Option<crate::types::TriggerType> {
+        &self.trigger_type
+    }
     /// <p> Specifies the configuration details of a schedule-triggered flow as defined by the user. Currently, these settings only apply to the <code>Scheduled</code> trigger type. </p>
     pub fn trigger_properties(mut self, input: crate::types::TriggerProperties) -> Self {
         self.trigger_properties = ::std::option::Option::Some(input);
@@ -63,6 +67,12 @@ impl TriggerConfigBuilder {
     ) -> Self {
         self.trigger_properties = input;
         self
+    }
+    /// <p> Specifies the configuration details of a schedule-triggered flow as defined by the user. Currently, these settings only apply to the <code>Scheduled</code> trigger type. </p>
+    pub fn get_trigger_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::TriggerProperties> {
+        &self.trigger_properties
     }
     /// Consumes the builder and constructs a [`TriggerConfig`](crate::types::TriggerConfig).
     pub fn build(self) -> crate::types::TriggerConfig {

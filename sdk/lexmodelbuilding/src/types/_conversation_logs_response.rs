@@ -58,6 +58,12 @@ impl ConversationLogsResponseBuilder {
         self.log_settings = input;
         self
     }
+    /// <p>The settings for your conversation logs. You can log text, audio, or both.</p>
+    pub fn get_log_settings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LogSettingsResponse>> {
+        &self.log_settings
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to write your logs to CloudWatch Logs or an S3 bucket.</p>
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role_arn = ::std::option::Option::Some(input.into());
@@ -67,6 +73,10 @@ impl ConversationLogsResponseBuilder {
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role used to write your logs to CloudWatch Logs or an S3 bucket.</p>
+    pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_role_arn
     }
     /// Consumes the builder and constructs a [`ConversationLogsResponse`](crate::types::ConversationLogsResponse).
     pub fn build(self) -> crate::types::ConversationLogsResponse {

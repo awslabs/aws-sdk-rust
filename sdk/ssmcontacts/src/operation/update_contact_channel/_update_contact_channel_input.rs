@@ -62,6 +62,10 @@ impl UpdateContactChannelInputBuilder {
         self.contact_channel_id = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the contact channel you want to update.</p>
+    pub fn get_contact_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_channel_id
+    }
     /// <p>The name of the contact channel.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl UpdateContactChannelInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the contact channel.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The details that Incident Manager uses when trying to engage the contact channel.</p>
     pub fn delivery_address(mut self, input: crate::types::ContactChannelAddress) -> Self {
@@ -84,6 +92,12 @@ impl UpdateContactChannelInputBuilder {
     ) -> Self {
         self.delivery_address = input;
         self
+    }
+    /// <p>The details that Incident Manager uses when trying to engage the contact channel.</p>
+    pub fn get_delivery_address(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContactChannelAddress> {
+        &self.delivery_address
     }
     /// Consumes the builder and constructs a [`UpdateContactChannelInput`](crate::operation::update_contact_channel::UpdateContactChannelInput).
     pub fn build(

@@ -48,6 +48,10 @@ impl SignatureValidityPeriodBuilder {
         self.value = input;
         self
     }
+    /// <p>The numerical value of the time unit for signature validity.</p>
+    pub fn get_value(&self) -> &::std::option::Option<i32> {
+        &self.value
+    }
     /// <p>The time unit for signature validity.</p>
     pub fn r#type(mut self, input: crate::types::ValidityType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl SignatureValidityPeriodBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ValidityType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The time unit for signature validity.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ValidityType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`SignatureValidityPeriod`](crate::types::SignatureValidityPeriod).
     pub fn build(self) -> crate::types::SignatureValidityPeriod {

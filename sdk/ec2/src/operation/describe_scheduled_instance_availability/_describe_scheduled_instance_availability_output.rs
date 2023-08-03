@@ -59,6 +59,10 @@ impl DescribeScheduledInstanceAvailabilityOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `scheduled_instance_availability_set`.
     ///
     /// To override the contents of this collection use [`set_scheduled_instance_availability_set`](Self::set_scheduled_instance_availability_set).
@@ -80,6 +84,12 @@ impl DescribeScheduledInstanceAvailabilityOutputBuilder {
     ) -> Self {
         self.scheduled_instance_availability_set = input;
         self
+    }
+    /// <p>Information about the available Scheduled Instances.</p>
+    pub fn get_scheduled_instance_availability_set(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstanceAvailability>> {
+        &self.scheduled_instance_availability_set
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

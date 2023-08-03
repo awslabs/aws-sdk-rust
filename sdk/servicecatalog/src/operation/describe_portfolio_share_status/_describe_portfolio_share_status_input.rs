@@ -45,6 +45,10 @@ impl DescribePortfolioShareStatusInputBuilder {
         self.portfolio_share_token = input;
         self
     }
+    /// <p>The token for the portfolio share operation. This token is returned either by CreatePortfolioShare or by DeletePortfolioShare.</p>
+    pub fn get_portfolio_share_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portfolio_share_token
+    }
     /// Consumes the builder and constructs a [`DescribePortfolioShareStatusInput`](crate::operation::describe_portfolio_share_status::DescribePortfolioShareStatusInput).
     pub fn build(
         self,

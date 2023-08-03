@@ -53,6 +53,10 @@ impl MonitoringInputBuilder {
         self.endpoint_input = input;
         self
     }
+    /// <p>The endpoint for a monitoring job.</p>
+    pub fn get_endpoint_input(&self) -> &::std::option::Option<crate::types::EndpointInput> {
+        &self.endpoint_input
+    }
     /// <p>Input object for the batch transform job.</p>
     pub fn batch_transform_input(mut self, input: crate::types::BatchTransformInput) -> Self {
         self.batch_transform_input = ::std::option::Option::Some(input);
@@ -65,6 +69,12 @@ impl MonitoringInputBuilder {
     ) -> Self {
         self.batch_transform_input = input;
         self
+    }
+    /// <p>Input object for the batch transform job.</p>
+    pub fn get_batch_transform_input(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchTransformInput> {
+        &self.batch_transform_input
     }
     /// Consumes the builder and constructs a [`MonitoringInput`](crate::types::MonitoringInput).
     pub fn build(self) -> crate::types::MonitoringInput {

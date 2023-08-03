@@ -49,6 +49,12 @@ impl GetWorkUnitResultsOutputBuilder {
         self.result_stream = input;
         self
     }
+    /// <p>Rows returned from the <code>GetWorkUnitResults</code> operation as a stream of Apache Arrow v1.0 messages.</p>
+    pub fn get_result_stream(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+        &self.result_stream
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -59,6 +59,12 @@ impl KinesisVideoStreamRecordingSourceRuntimeConfigurationBuilder {
         self.streams = input;
         self
     }
+    /// <p>The stream or streams to be recorded.</p>
+    pub fn get_streams(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecordingStreamConfiguration>> {
+        &self.streams
+    }
     /// <p>Describes the timestamp range and timestamp origin of a range of fragments in the Kinesis video stream.</p>
     pub fn fragment_selector(mut self, input: crate::types::FragmentSelector) -> Self {
         self.fragment_selector = ::std::option::Option::Some(input);
@@ -71,6 +77,10 @@ impl KinesisVideoStreamRecordingSourceRuntimeConfigurationBuilder {
     ) -> Self {
         self.fragment_selector = input;
         self
+    }
+    /// <p>Describes the timestamp range and timestamp origin of a range of fragments in the Kinesis video stream.</p>
+    pub fn get_fragment_selector(&self) -> &::std::option::Option<crate::types::FragmentSelector> {
+        &self.fragment_selector
     }
     /// Consumes the builder and constructs a [`KinesisVideoStreamRecordingSourceRuntimeConfiguration`](crate::types::KinesisVideoStreamRecordingSourceRuntimeConfiguration).
     pub fn build(self) -> crate::types::KinesisVideoStreamRecordingSourceRuntimeConfiguration {

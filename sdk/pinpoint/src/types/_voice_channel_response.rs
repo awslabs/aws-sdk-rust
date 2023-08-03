@@ -118,6 +118,10 @@ impl VoiceChannelResponseBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The unique identifier for the application that the voice channel applies to.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The date and time, in ISO 8601 format, when the voice channel was enabled.</p>
     pub fn creation_date(
         mut self,
@@ -134,6 +138,10 @@ impl VoiceChannelResponseBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>The date and time, in ISO 8601 format, when the voice channel was enabled.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_date
+    }
     /// <p>Specifies whether the voice channel is enabled for the application.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -143,6 +151,10 @@ impl VoiceChannelResponseBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>Specifies whether the voice channel is enabled for the application.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// <p>(Not used) This property is retained only for backward compatibility.</p>
     pub fn has_credential(mut self, input: bool) -> Self {
@@ -154,6 +166,10 @@ impl VoiceChannelResponseBuilder {
         self.has_credential = input;
         self
     }
+    /// <p>(Not used) This property is retained only for backward compatibility.</p>
+    pub fn get_has_credential(&self) -> &::std::option::Option<bool> {
+        &self.has_credential
+    }
     /// <p>(Deprecated) An identifier for the voice channel. This property is retained only for backward compatibility.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -164,6 +180,10 @@ impl VoiceChannelResponseBuilder {
         self.id = input;
         self
     }
+    /// <p>(Deprecated) An identifier for the voice channel. This property is retained only for backward compatibility.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>Specifies whether the voice channel is archived.</p>
     pub fn is_archived(mut self, input: bool) -> Self {
         self.is_archived = ::std::option::Option::Some(input);
@@ -173,6 +193,10 @@ impl VoiceChannelResponseBuilder {
     pub fn set_is_archived(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_archived = input;
         self
+    }
+    /// <p>Specifies whether the voice channel is archived.</p>
+    pub fn get_is_archived(&self) -> &::std::option::Option<bool> {
+        &self.is_archived
     }
     /// <p>The user who last modified the voice channel.</p>
     pub fn last_modified_by(
@@ -190,6 +214,10 @@ impl VoiceChannelResponseBuilder {
         self.last_modified_by = input;
         self
     }
+    /// <p>The user who last modified the voice channel.</p>
+    pub fn get_last_modified_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_by
+    }
     /// <p>The date and time, in ISO 8601 format, when the voice channel was last modified.</p>
     pub fn last_modified_date(
         mut self,
@@ -206,6 +234,10 @@ impl VoiceChannelResponseBuilder {
         self.last_modified_date = input;
         self
     }
+    /// <p>The date and time, in ISO 8601 format, when the voice channel was last modified.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_date
+    }
     /// <p>The type of messaging or notification platform for the channel. For the voice channel, this value is VOICE.</p>
     pub fn platform(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform = ::std::option::Option::Some(input.into());
@@ -216,6 +248,10 @@ impl VoiceChannelResponseBuilder {
         self.platform = input;
         self
     }
+    /// <p>The type of messaging or notification platform for the channel. For the voice channel, this value is VOICE.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform
+    }
     /// <p>The current version of the voice channel.</p>
     pub fn version(mut self, input: i32) -> Self {
         self.version = ::std::option::Option::Some(input);
@@ -225,6 +261,10 @@ impl VoiceChannelResponseBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The current version of the voice channel.</p>
+    pub fn get_version(&self) -> &::std::option::Option<i32> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`VoiceChannelResponse`](crate::types::VoiceChannelResponse).
     pub fn build(self) -> crate::types::VoiceChannelResponse {

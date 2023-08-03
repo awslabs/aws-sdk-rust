@@ -46,6 +46,10 @@ impl DeleteCustomVerificationEmailTemplateInputBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The name of the custom verification email template that you want to delete.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// Consumes the builder and constructs a [`DeleteCustomVerificationEmailTemplateInput`](crate::operation::delete_custom_verification_email_template::DeleteCustomVerificationEmailTemplateInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_custom_verification_email_template::DeleteCustomVerificationEmailTemplateInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

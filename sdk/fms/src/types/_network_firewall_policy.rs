@@ -49,6 +49,12 @@ impl NetworkFirewallPolicyBuilder {
         self.firewall_deployment_model = input;
         self
     }
+    /// <p>Defines the deployment model to use for the firewall policy. To use a distributed model, set <a href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PolicyOption.html">PolicyOption</a> to <code>NULL</code>.</p>
+    pub fn get_firewall_deployment_model(
+        &self,
+    ) -> &::std::option::Option<crate::types::FirewallDeploymentModel> {
+        &self.firewall_deployment_model
+    }
     /// Consumes the builder and constructs a [`NetworkFirewallPolicy`](crate::types::NetworkFirewallPolicy).
     pub fn build(self) -> crate::types::NetworkFirewallPolicy {
         crate::types::NetworkFirewallPolicy {

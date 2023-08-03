@@ -48,6 +48,10 @@ impl TeletextDestinationSettingsBuilder {
         self.page_number = input;
         self
     }
+    /// Set pageNumber to the Teletext page number for the destination captions for this output. This value must be a three-digit hexadecimal string; strings ending in -FF are invalid. If you are passing through the entire set of Teletext data, do not use this field.
+    pub fn get_page_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.page_number
+    }
     /// Appends an item to `page_types`.
     ///
     /// To override the contents of this collection use [`set_page_types`](Self::set_page_types).
@@ -66,6 +70,12 @@ impl TeletextDestinationSettingsBuilder {
     ) -> Self {
         self.page_types = input;
         self
+    }
+    /// Specify the page types for this Teletext page. If you don't specify a value here, the service sets the page type to the default value Subtitle. If you pass through the entire set of Teletext data, don't use this field. When you pass through a set of Teletext pages, your output has the same page types as your input.
+    pub fn get_page_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TeletextPageType>> {
+        &self.page_types
     }
     /// Consumes the builder and constructs a [`TeletextDestinationSettings`](crate::types::TeletextDestinationSettings).
     pub fn build(self) -> crate::types::TeletextDestinationSettings {

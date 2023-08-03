@@ -51,6 +51,10 @@ impl SidewalkUpdateAccountBuilder {
         self.app_server_private_key = input;
         self
     }
+    /// <p>The new Sidewalk application server private key.</p>
+    pub fn get_app_server_private_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_server_private_key
+    }
     /// Consumes the builder and constructs a [`SidewalkUpdateAccount`](crate::types::SidewalkUpdateAccount).
     pub fn build(self) -> crate::types::SidewalkUpdateAccount {
         crate::types::SidewalkUpdateAccount {

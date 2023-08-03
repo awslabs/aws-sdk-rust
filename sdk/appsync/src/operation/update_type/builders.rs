@@ -36,6 +36,10 @@ impl UpdateTypeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateType as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_type::builders::UpdateTypeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdateTypeFluentBuilder {
         self.inner = self.inner.set_api_id(input);
         self
     }
+    /// <p>The API ID.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_api_id()
+    }
     /// <p>The new type name.</p>
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.type_name(input.into());
@@ -128,6 +136,10 @@ impl UpdateTypeFluentBuilder {
         self.inner = self.inner.set_type_name(input);
         self
     }
+    /// <p>The new type name.</p>
+    pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_type_name()
+    }
     /// <p>The new definition.</p>
     pub fn definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.definition(input.into());
@@ -137,6 +149,10 @@ impl UpdateTypeFluentBuilder {
     pub fn set_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_definition(input);
         self
+    }
+    /// <p>The new definition.</p>
+    pub fn get_definition(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_definition()
     }
     /// <p>The new type format: SDL or JSON.</p>
     pub fn format(mut self, input: crate::types::TypeDefinitionFormat) -> Self {
@@ -150,5 +166,9 @@ impl UpdateTypeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_format(input);
         self
+    }
+    /// <p>The new type format: SDL or JSON.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::TypeDefinitionFormat> {
+        self.inner.get_format()
     }
 }

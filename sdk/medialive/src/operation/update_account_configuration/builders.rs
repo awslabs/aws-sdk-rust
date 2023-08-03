@@ -36,6 +36,10 @@ impl UpdateAccountConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAccountConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_account_configuration::builders::UpdateAccountConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,5 +132,11 @@ impl UpdateAccountConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_account_configuration(input);
         self
+    }
+    /// Placeholder documentation for AccountConfiguration
+    pub fn get_account_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AccountConfiguration> {
+        self.inner.get_account_configuration()
     }
 }

@@ -156,6 +156,10 @@ impl UserByPermissionGroupBuilder {
         self.user_id = input;
         self
     }
+    /// <p>The unique identifier for the user.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
+    }
     /// <p>The current status of the user account. </p>
     /// <ul>
     /// <li> <p> <code>CREATING</code> – The user account creation is in progress.</p> </li>
@@ -176,6 +180,15 @@ impl UserByPermissionGroupBuilder {
         self.status = input;
         self
     }
+    /// <p>The current status of the user account. </p>
+    /// <ul>
+    /// <li> <p> <code>CREATING</code> – The user account creation is in progress.</p> </li>
+    /// <li> <p> <code>ENABLED</code> – The user account is created and is currently active.</p> </li>
+    /// <li> <p> <code>DISABLED</code> – The user account is currently inactive.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::UserStatus> {
+        &self.status
+    }
     /// <p>The first name of the user.</p>
     pub fn first_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.first_name = ::std::option::Option::Some(input.into());
@@ -186,6 +199,10 @@ impl UserByPermissionGroupBuilder {
         self.first_name = input;
         self
     }
+    /// <p>The first name of the user.</p>
+    pub fn get_first_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.first_name
+    }
     /// <p>The last name of the user.</p>
     pub fn last_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_name = ::std::option::Option::Some(input.into());
@@ -195,6 +212,10 @@ impl UserByPermissionGroupBuilder {
     pub fn set_last_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_name = input;
         self
+    }
+    /// <p>The last name of the user.</p>
+    pub fn get_last_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_name
     }
     /// <p>The email address of the user. The email address serves as a unique identifier for each user and cannot be changed after it's created.</p>
     pub fn email_address(
@@ -211,6 +232,10 @@ impl UserByPermissionGroupBuilder {
     ) -> Self {
         self.email_address = input;
         self
+    }
+    /// <p>The email address of the user. The email address serves as a unique identifier for each user and cannot be changed after it's created.</p>
+    pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_address
     }
     /// <p> Indicates the type of user.</p>
     /// <ul>
@@ -230,6 +255,14 @@ impl UserByPermissionGroupBuilder {
         self.r#type = input;
         self
     }
+    /// <p> Indicates the type of user.</p>
+    /// <ul>
+    /// <li> <p> <code>SUPER_USER</code> – A user with permission to all the functionality and data in FinSpace.</p> </li>
+    /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::UserType> {
+        &self.r#type
+    }
     /// <p>Indicates whether the user can access FinSpace API operations.</p>
     /// <ul>
     /// <li> <p> <code>ENABLED</code> – The user has permissions to use the API operations.</p> </li>
@@ -248,6 +281,14 @@ impl UserByPermissionGroupBuilder {
         self.api_access = input;
         self
     }
+    /// <p>Indicates whether the user can access FinSpace API operations.</p>
+    /// <ul>
+    /// <li> <p> <code>ENABLED</code> – The user has permissions to use the API operations.</p> </li>
+    /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any API operations.</p> </li>
+    /// </ul>
+    pub fn get_api_access(&self) -> &::std::option::Option<crate::types::ApiAccess> {
+        &self.api_access
+    }
     /// <p>The IAM ARN identifier that is attached to FinSpace API calls.</p>
     pub fn api_access_principal_arn(
         mut self,
@@ -263,6 +304,10 @@ impl UserByPermissionGroupBuilder {
     ) -> Self {
         self.api_access_principal_arn = input;
         self
+    }
+    /// <p>The IAM ARN identifier that is attached to FinSpace API calls.</p>
+    pub fn get_api_access_principal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_access_principal_arn
     }
     /// <p>Indicates the status of the user account within a permission group.</p>
     /// <ul>
@@ -289,6 +334,17 @@ impl UserByPermissionGroupBuilder {
     ) -> Self {
         self.membership_status = input;
         self
+    }
+    /// <p>Indicates the status of the user account within a permission group.</p>
+    /// <ul>
+    /// <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.</p> </li>
+    /// <li> <p> <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.</p> </li>
+    /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li>
+    /// </ul>
+    pub fn get_membership_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::PermissionGroupMembershipStatus> {
+        &self.membership_status
     }
     /// Consumes the builder and constructs a [`UserByPermissionGroup`](crate::types::UserByPermissionGroup).
     pub fn build(self) -> crate::types::UserByPermissionGroup {

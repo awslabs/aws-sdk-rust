@@ -75,6 +75,10 @@ impl IpSetDescriptorBuilder {
         self.r#type = input;
         self
     }
+    /// <p>Specify <code>IPV4</code> or <code>IPV6</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::IpSetDescriptorType> {
+        &self.r#type
+    }
     /// <p>Specify an IPv4 address by using CIDR notation. For example:</p>
     /// <ul>
     /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
@@ -104,6 +108,20 @@ impl IpSetDescriptorBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>Specify an IPv4 address by using CIDR notation. For example:</p>
+    /// <ul>
+    /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
+    /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>
+    /// </ul>
+    /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
+    /// <p>Specify an IPv6 address by using CIDR notation. For example:</p>
+    /// <ul>
+    /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li>
+    /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
+    /// </ul>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`IpSetDescriptor`](crate::types::IpSetDescriptor).
     pub fn build(self) -> crate::types::IpSetDescriptor {

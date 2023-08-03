@@ -55,6 +55,13 @@ impl RecrawlPolicyBuilder {
         self.recrawl_behavior = input;
         self
     }
+    /// <p>Specifies whether to crawl the entire dataset again or to crawl only folders that were added since the last crawler run.</p>
+    /// <p>A value of <code>CRAWL_EVERYTHING</code> specifies crawling the entire dataset again.</p>
+    /// <p>A value of <code>CRAWL_NEW_FOLDERS_ONLY</code> specifies crawling only folders that were added since the last crawler run.</p>
+    /// <p>A value of <code>CRAWL_EVENT_MODE</code> specifies crawling only the changes identified by Amazon S3 events.</p>
+    pub fn get_recrawl_behavior(&self) -> &::std::option::Option<crate::types::RecrawlBehavior> {
+        &self.recrawl_behavior
+    }
     /// Consumes the builder and constructs a [`RecrawlPolicy`](crate::types::RecrawlPolicy).
     pub fn build(self) -> crate::types::RecrawlPolicy {
         crate::types::RecrawlPolicy {

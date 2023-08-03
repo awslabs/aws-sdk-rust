@@ -48,6 +48,10 @@ impl GetWirelessGatewayInputBuilder {
         self.identifier = input;
         self
     }
+    /// <p>The identifier of the wireless gateway to get.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
+    }
     /// <p>The type of identifier used in <code>identifier</code>.</p>
     pub fn identifier_type(mut self, input: crate::types::WirelessGatewayIdType) -> Self {
         self.identifier_type = ::std::option::Option::Some(input);
@@ -60,6 +64,12 @@ impl GetWirelessGatewayInputBuilder {
     ) -> Self {
         self.identifier_type = input;
         self
+    }
+    /// <p>The type of identifier used in <code>identifier</code>.</p>
+    pub fn get_identifier_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::WirelessGatewayIdType> {
+        &self.identifier_type
     }
     /// Consumes the builder and constructs a [`GetWirelessGatewayInput`](crate::operation::get_wireless_gateway::GetWirelessGatewayInput).
     pub fn build(

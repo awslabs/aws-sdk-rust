@@ -36,6 +36,10 @@ impl GetWirelessGatewayCertificateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetWirelessGatewayCertificate as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_wireless_gateway_certificate::builders::GetWirelessGatewayCertificateInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +129,9 @@ impl GetWirelessGatewayCertificateFluentBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
+    }
+    /// <p>The ID of the resource to get.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
     }
 }

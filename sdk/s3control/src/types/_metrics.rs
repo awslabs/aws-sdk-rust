@@ -52,6 +52,10 @@ impl MetricsBuilder {
         self.status = input;
         self
     }
+    /// <p>Specifies whether replication metrics are enabled. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::MetricsStatus> {
+        &self.status
+    }
     /// <p>A container that specifies the time threshold for emitting the <code>s3:Replication:OperationMissedThreshold</code> event. </p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
@@ -68,6 +72,14 @@ impl MetricsBuilder {
     ) -> Self {
         self.event_threshold = input;
         self
+    }
+    /// <p>A container that specifies the time threshold for emitting the <code>s3:Replication:OperationMissedThreshold</code> event. </p> <note>
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// </note>
+    pub fn get_event_threshold(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReplicationTimeValue> {
+        &self.event_threshold
     }
     /// Consumes the builder and constructs a [`Metrics`](crate::types::Metrics).
     pub fn build(self) -> crate::types::Metrics {

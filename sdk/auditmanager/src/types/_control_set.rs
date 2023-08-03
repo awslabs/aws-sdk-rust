@@ -56,6 +56,10 @@ impl ControlSetBuilder {
         self.id = input;
         self
     }
+    /// <p> The identifier of the control set in the assessment. This is the control set name in a plain string format. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p> The name of the control set. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl ControlSetBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p> The name of the control set. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `controls`.
     ///
@@ -84,6 +92,10 @@ impl ControlSetBuilder {
     ) -> Self {
         self.controls = input;
         self
+    }
+    /// <p> The list of controls within the control set. </p>
+    pub fn get_controls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Control>> {
+        &self.controls
     }
     /// Consumes the builder and constructs a [`ControlSet`](crate::types::ControlSet).
     pub fn build(self) -> crate::types::ControlSet {

@@ -39,6 +39,13 @@ impl CreateStorediSCSIVolumeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateStorediSCSIVolume as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_storedi_scsi_volume::builders::CreateStorediScsiVolumeInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +136,10 @@ impl CreateStorediSCSIVolumeFluentBuilder {
         self.inner = self.inner.set_gateway_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gateway_arn()
+    }
     /// <p>The unique identifier for the gateway local disk that is configured as a stored volume. Use <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a> to list disk IDs for a gateway.</p>
     pub fn disk_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.disk_id(input.into());
@@ -139,6 +150,10 @@ impl CreateStorediSCSIVolumeFluentBuilder {
         self.inner = self.inner.set_disk_id(input);
         self
     }
+    /// <p>The unique identifier for the gateway local disk that is configured as a stored volume. Use <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a> to list disk IDs for a gateway.</p>
+    pub fn get_disk_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_disk_id()
+    }
     /// <p>The snapshot ID (e.g., "snap-1122aabb") of the snapshot to restore as the new stored volume. Specify this field if you want to create the iSCSI storage volume from a snapshot; otherwise, do not include this field. To list snapshots for your account use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p>
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_id(input.into());
@@ -148,6 +163,10 @@ impl CreateStorediSCSIVolumeFluentBuilder {
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_id(input);
         self
+    }
+    /// <p>The snapshot ID (e.g., "snap-1122aabb") of the snapshot to restore as the new stored volume. Specify this field if you want to create the iSCSI storage volume from a snapshot; otherwise, do not include this field. To list snapshots for your account use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_id()
     }
     /// <p>Set to <code>true</code> if you want to preserve the data on the local disk. Otherwise, set to <code>false</code> to create an empty volume.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
@@ -161,6 +180,11 @@ impl CreateStorediSCSIVolumeFluentBuilder {
         self.inner = self.inner.set_preserve_existing_data(input);
         self
     }
+    /// <p>Set to <code>true</code> if you want to preserve the data on the local disk. Otherwise, set to <code>false</code> to create an empty volume.</p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    pub fn get_preserve_existing_data(&self) -> &::std::option::Option<bool> {
+        self.inner.get_preserve_existing_data()
+    }
     /// <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>. The target name must be unique across all volumes on a gateway.</p>
     /// <p>If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new target name.</p>
     pub fn target_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -172,6 +196,11 @@ impl CreateStorediSCSIVolumeFluentBuilder {
     pub fn set_target_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_name(input);
         self
+    }
+    /// <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>. The target name must be unique across all volumes on a gateway.</p>
+    /// <p>If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new target name.</p>
+    pub fn get_target_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_name()
     }
     /// <p>The network interface of the gateway on which to expose the iSCSI target. Only IPv4 addresses are accepted. Use <code>DescribeGatewayInformation</code> to get a list of the network interfaces available on a gateway.</p>
     /// <p>Valid Values: A valid IP address.</p>
@@ -191,6 +220,11 @@ impl CreateStorediSCSIVolumeFluentBuilder {
         self.inner = self.inner.set_network_interface_id(input);
         self
     }
+    /// <p>The network interface of the gateway on which to expose the iSCSI target. Only IPv4 addresses are accepted. Use <code>DescribeGatewayInformation</code> to get a list of the network interfaces available on a gateway.</p>
+    /// <p>Valid Values: A valid IP address.</p>
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_network_interface_id()
+    }
     /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn kms_encrypted(mut self, input: bool) -> Self {
@@ -203,6 +237,11 @@ impl CreateStorediSCSIVolumeFluentBuilder {
         self.inner = self.inner.set_kms_encrypted(input);
         self
     }
+    /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    pub fn get_kms_encrypted(&self) -> &::std::option::Option<bool> {
+        self.inner.get_kms_encrypted()
+    }
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
     pub fn kms_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key(input.into());
@@ -212,6 +251,10 @@ impl CreateStorediSCSIVolumeFluentBuilder {
     pub fn set_kms_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
+    pub fn get_kms_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key()
     }
     /// Appends an item to `Tags`.
     ///
@@ -233,5 +276,11 @@ impl CreateStorediSCSIVolumeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of up to 50 tags that can be assigned to a stored volume. Each tag is a key-value pair.</p> <note>
+    /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
+    /// </note>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

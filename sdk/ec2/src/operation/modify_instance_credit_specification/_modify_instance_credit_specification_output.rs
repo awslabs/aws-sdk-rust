@@ -82,6 +82,14 @@ impl ModifyInstanceCreditSpecificationOutputBuilder {
         self.successful_instance_credit_specifications = input;
         self
     }
+    /// <p>Information about the instances whose credit option for CPU usage was successfully modified.</p>
+    pub fn get_successful_instance_credit_specifications(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::SuccessfulInstanceCreditSpecificationItem>,
+    > {
+        &self.successful_instance_credit_specifications
+    }
     /// Appends an item to `unsuccessful_instance_credit_specifications`.
     ///
     /// To override the contents of this collection use [`set_unsuccessful_instance_credit_specifications`](Self::set_unsuccessful_instance_credit_specifications).
@@ -107,6 +115,14 @@ impl ModifyInstanceCreditSpecificationOutputBuilder {
     ) -> Self {
         self.unsuccessful_instance_credit_specifications = input;
         self
+    }
+    /// <p>Information about the instances whose credit option for CPU usage was not modified.</p>
+    pub fn get_unsuccessful_instance_credit_specifications(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::UnsuccessfulInstanceCreditSpecificationItem>,
+    > {
+        &self.unsuccessful_instance_credit_specifications
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

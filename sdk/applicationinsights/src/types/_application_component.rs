@@ -111,6 +111,10 @@ impl ApplicationComponentBuilder {
         self.component_name = input;
         self
     }
+    /// <p>The name of the component.</p>
+    pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_name
+    }
     /// <p> If logging is supported for the resource type, indicates whether the component has configured logs to be monitored. </p>
     pub fn component_remarks(
         mut self,
@@ -126,6 +130,10 @@ impl ApplicationComponentBuilder {
     ) -> Self {
         self.component_remarks = input;
         self
+    }
+    /// <p> If logging is supported for the resource type, indicates whether the component has configured logs to be monitored. </p>
+    pub fn get_component_remarks(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_remarks
     }
     /// <p>The resource type. Supported resource types include EC2 instances, Auto Scaling group, Classic ELB, Application ELB, and SQS Queue.</p>
     pub fn resource_type(
@@ -143,6 +151,10 @@ impl ApplicationComponentBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The resource type. Supported resource types include EC2 instances, Auto Scaling group, Classic ELB, Application ELB, and SQS Queue.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
+    }
     /// <p> The operating system of the component. </p>
     pub fn os_type(mut self, input: crate::types::OsType) -> Self {
         self.os_type = ::std::option::Option::Some(input);
@@ -152,6 +164,10 @@ impl ApplicationComponentBuilder {
     pub fn set_os_type(mut self, input: ::std::option::Option<crate::types::OsType>) -> Self {
         self.os_type = input;
         self
+    }
+    /// <p> The operating system of the component. </p>
+    pub fn get_os_type(&self) -> &::std::option::Option<crate::types::OsType> {
+        &self.os_type
     }
     /// <p>The stack tier of the application component.</p>
     pub fn tier(mut self, input: crate::types::Tier) -> Self {
@@ -163,6 +179,10 @@ impl ApplicationComponentBuilder {
         self.tier = input;
         self
     }
+    /// <p>The stack tier of the application component.</p>
+    pub fn get_tier(&self) -> &::std::option::Option<crate::types::Tier> {
+        &self.tier
+    }
     /// <p>Indicates whether the application component is monitored. </p>
     pub fn monitor(mut self, input: bool) -> Self {
         self.monitor = ::std::option::Option::Some(input);
@@ -172,6 +192,10 @@ impl ApplicationComponentBuilder {
     pub fn set_monitor(mut self, input: ::std::option::Option<bool>) -> Self {
         self.monitor = input;
         self
+    }
+    /// <p>Indicates whether the application component is monitored. </p>
+    pub fn get_monitor(&self) -> &::std::option::Option<bool> {
+        &self.monitor
     }
     /// Adds a key-value pair to `detected_workload`.
     ///
@@ -200,6 +224,17 @@ impl ApplicationComponentBuilder {
     ) -> Self {
         self.detected_workload = input;
         self
+    }
+    /// <p> Workloads detected in the application component. </p>
+    pub fn get_detected_workload(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::Tier,
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+        >,
+    > {
+        &self.detected_workload
     }
     /// Consumes the builder and constructs a [`ApplicationComponent`](crate::types::ApplicationComponent).
     pub fn build(self) -> crate::types::ApplicationComponent {

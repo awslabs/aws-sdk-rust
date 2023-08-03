@@ -153,6 +153,10 @@ impl ServiceBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the service.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description of the service.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -163,6 +167,10 @@ impl ServiceBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the service.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -172,6 +180,10 @@ impl ServiceBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the service.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The name of the service template.</p>
     pub fn template_name(
@@ -189,6 +201,10 @@ impl ServiceBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The name of the service template.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// <p>The time when the service was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -201,6 +217,10 @@ impl ServiceBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The time when the service was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>The time when the service was last modified.</p>
     pub fn last_modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -215,6 +235,10 @@ impl ServiceBuilder {
         self.last_modified_at = input;
         self
     }
+    /// <p>The time when the service was last modified.</p>
+    pub fn get_last_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_at
+    }
     /// <p>The status of the service.</p>
     pub fn status(mut self, input: crate::types::ServiceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -224,6 +248,10 @@ impl ServiceBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ServiceStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the service.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ServiceStatus> {
+        &self.status
     }
     /// <p>A service status message.</p>
     pub fn status_message(
@@ -241,6 +269,10 @@ impl ServiceBuilder {
         self.status_message = input;
         self
     }
+    /// <p>A service status message.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>The formatted specification that defines the service.</p>
     pub fn spec(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.spec = ::std::option::Option::Some(input.into());
@@ -250,6 +282,10 @@ impl ServiceBuilder {
     pub fn set_spec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.spec = input;
         self
+    }
+    /// <p>The formatted specification that defines the service.</p>
+    pub fn get_spec(&self) -> &::std::option::Option<::std::string::String> {
+        &self.spec
     }
     /// <p>The service pipeline detail data.</p>
     pub fn pipeline(mut self, input: crate::types::ServicePipeline) -> Self {
@@ -263,6 +299,10 @@ impl ServiceBuilder {
     ) -> Self {
         self.pipeline = input;
         self
+    }
+    /// <p>The service pipeline detail data.</p>
+    pub fn get_pipeline(&self) -> &::std::option::Option<crate::types::ServicePipeline> {
+        &self.pipeline
     }
     /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>.</p>
     pub fn repository_connection_arn(
@@ -280,6 +320,10 @@ impl ServiceBuilder {
         self.repository_connection_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>.</p>
+    pub fn get_repository_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_connection_arn
+    }
     /// <p>The ID of the source code repository.</p>
     pub fn repository_id(
         mut self,
@@ -296,6 +340,10 @@ impl ServiceBuilder {
         self.repository_id = input;
         self
     }
+    /// <p>The ID of the source code repository.</p>
+    pub fn get_repository_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_id
+    }
     /// <p>The name of the code repository branch that holds the code that's deployed in Proton.</p>
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch_name = ::std::option::Option::Some(input.into());
@@ -305,6 +353,10 @@ impl ServiceBuilder {
     pub fn set_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.branch_name = input;
         self
+    }
+    /// <p>The name of the code repository branch that holds the code that's deployed in Proton.</p>
+    pub fn get_branch_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.branch_name
     }
     /// Consumes the builder and constructs a [`Service`](crate::types::Service).
     pub fn build(self) -> crate::types::Service {

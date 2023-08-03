@@ -72,6 +72,10 @@ impl StoredQueryBuilder {
         self.query_id = input;
         self
     }
+    /// <p>The ID of the query.</p>
+    pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_id
+    }
     /// <p>Amazon Resource Name (ARN) of the query. For example, arn:partition:service:region:account-id:resource-type/resource-name/resource-id.</p>
     pub fn query_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_arn = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl StoredQueryBuilder {
     pub fn set_query_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_arn = input;
         self
+    }
+    /// <p>Amazon Resource Name (ARN) of the query. For example, arn:partition:service:region:account-id:resource-type/resource-name/resource-id.</p>
+    pub fn get_query_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_arn
     }
     /// <p>The name of the query.</p>
     pub fn query_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -92,6 +100,10 @@ impl StoredQueryBuilder {
         self.query_name = input;
         self
     }
+    /// <p>The name of the query.</p>
+    pub fn get_query_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_name
+    }
     /// <p>A unique description for the query.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -102,6 +114,10 @@ impl StoredQueryBuilder {
         self.description = input;
         self
     }
+    /// <p>A unique description for the query.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The expression of the query. For example, <code>SELECT resourceId, resourceType, supplementaryConfiguration.BucketVersioningConfiguration.status WHERE resourceType = 'AWS::S3::Bucket' AND supplementaryConfiguration.BucketVersioningConfiguration.status = 'Off'.</code> </p>
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression = ::std::option::Option::Some(input.into());
@@ -111,6 +127,10 @@ impl StoredQueryBuilder {
     pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expression = input;
         self
+    }
+    /// <p>The expression of the query. For example, <code>SELECT resourceId, resourceType, supplementaryConfiguration.BucketVersioningConfiguration.status WHERE resourceType = 'AWS::S3::Bucket' AND supplementaryConfiguration.BucketVersioningConfiguration.status = 'Off'.</code> </p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expression
     }
     /// Consumes the builder and constructs a [`StoredQuery`](crate::types::StoredQuery).
     pub fn build(self) -> crate::types::StoredQuery {

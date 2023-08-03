@@ -38,6 +38,13 @@ impl DeletePermissionVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeletePermissionVersion as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_permission_version::builders::DeletePermissionVersionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +141,10 @@ impl DeletePermissionVersionFluentBuilder {
         self.inner = self.inner.set_permission_arn(input);
         self
     }
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the permission with the version you want to delete.</p>
+    pub fn get_permission_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_permission_arn()
+    }
     /// <p>Specifies the version number to delete.</p>
     /// <p>You can't delete the default version for a customer managed permission.</p>
     /// <p>You can't delete a version if it's the only version of the permission. You must either first create another version, or delete the permission completely.</p>
@@ -150,6 +161,13 @@ impl DeletePermissionVersionFluentBuilder {
         self.inner = self.inner.set_permission_version(input);
         self
     }
+    /// <p>Specifies the version number to delete.</p>
+    /// <p>You can't delete the default version for a customer managed permission.</p>
+    /// <p>You can't delete a version if it's the only version of the permission. You must either first create another version, or delete the permission completely.</p>
+    /// <p>You can't delete a version if it is attached to any resource shares. If the version is the default, you must first use <code>SetDefaultPermissionVersion</code> to set a different version as the default for the customer managed permission, and then use <code>AssociateResourceSharePermission</code> to update your resource shares to use the new default version.</p>
+    pub fn get_permission_version(&self) -> &::std::option::Option<i32> {
+        self.inner.get_permission_version()
+    }
     /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
@@ -163,5 +181,11 @@ impl DeletePermissionVersionFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
+    /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

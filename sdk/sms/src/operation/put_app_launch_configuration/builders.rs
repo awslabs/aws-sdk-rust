@@ -36,6 +36,10 @@ impl PutAppLaunchConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutAppLaunchConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_app_launch_configuration::builders::PutAppLaunchConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl PutAppLaunchConfigurationFluentBuilder {
         self.inner = self.inner.set_app_id(input);
         self
     }
+    /// <p>The ID of the application.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_id()
+    }
     /// <p>The name of service role in the customer's account that CloudFormation uses to launch the application.</p>
     pub fn role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_name(input.into());
@@ -136,6 +144,10 @@ impl PutAppLaunchConfigurationFluentBuilder {
         self.inner = self.inner.set_role_name(input);
         self
     }
+    /// <p>The name of service role in the customer's account that CloudFormation uses to launch the application.</p>
+    pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_name()
+    }
     /// <p>Indicates whether the application is configured to launch automatically after replication is complete.</p>
     pub fn auto_launch(mut self, input: bool) -> Self {
         self.inner = self.inner.auto_launch(input);
@@ -145,6 +157,10 @@ impl PutAppLaunchConfigurationFluentBuilder {
     pub fn set_auto_launch(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_auto_launch(input);
         self
+    }
+    /// <p>Indicates whether the application is configured to launch automatically after replication is complete.</p>
+    pub fn get_auto_launch(&self) -> &::std::option::Option<bool> {
+        self.inner.get_auto_launch()
     }
     /// Appends an item to `serverGroupLaunchConfigurations`.
     ///
@@ -165,5 +181,11 @@ impl PutAppLaunchConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_server_group_launch_configurations(input);
         self
+    }
+    /// <p>Information about the launch configurations for server groups in the application.</p>
+    pub fn get_server_group_launch_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerGroupLaunchConfiguration>> {
+        self.inner.get_server_group_launch_configurations()
     }
 }

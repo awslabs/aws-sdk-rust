@@ -51,6 +51,12 @@ impl FilledMapFieldWellsBuilder {
         self.filled_map_aggregated_field_wells = input;
         self
     }
+    /// <p>The aggregated field well of the filled map.</p>
+    pub fn get_filled_map_aggregated_field_wells(
+        &self,
+    ) -> &::std::option::Option<crate::types::FilledMapAggregatedFieldWells> {
+        &self.filled_map_aggregated_field_wells
+    }
     /// Consumes the builder and constructs a [`FilledMapFieldWells`](crate::types::FilledMapFieldWells).
     pub fn build(self) -> crate::types::FilledMapFieldWells {
         crate::types::FilledMapFieldWells {

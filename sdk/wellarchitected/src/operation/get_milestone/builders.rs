@@ -36,6 +36,10 @@ impl GetMilestoneFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetMilestone as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_milestone::builders::GetMilestoneInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl GetMilestoneFluentBuilder {
         self.inner = self.inner.set_workload_id(input);
         self
     }
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workload_id()
+    }
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
     pub fn milestone_number(mut self, input: i32) -> Self {
@@ -129,5 +137,10 @@ impl GetMilestoneFluentBuilder {
     pub fn set_milestone_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_milestone_number(input);
         self
+    }
+    /// <p>The milestone number.</p>
+    /// <p>A workload can have a maximum of 100 milestones.</p>
+    pub fn get_milestone_number(&self) -> &::std::option::Option<i32> {
+        self.inner.get_milestone_number()
     }
 }

@@ -36,6 +36,13 @@ impl DeleteEventsByEventTypeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteEventsByEventType as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_events_by_event_type::builders::DeleteEventsByEventTypeInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +138,9 @@ impl DeleteEventsByEventTypeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_event_type_name(input);
         self
+    }
+    /// <p>The name of the event type.</p>
+    pub fn get_event_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_type_name()
     }
 }

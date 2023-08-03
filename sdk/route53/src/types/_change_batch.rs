@@ -48,6 +48,10 @@ impl ChangeBatchBuilder {
         self.comment = input;
         self
     }
+    /// <p> <i>Optional:</i> Any comments you want to include about a change batch request.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment
+    }
     /// Appends an item to `changes`.
     ///
     /// To override the contents of this collection use [`set_changes`](Self::set_changes).
@@ -66,6 +70,10 @@ impl ChangeBatchBuilder {
     ) -> Self {
         self.changes = input;
         self
+    }
+    /// <p>Information about the changes to make to the record sets.</p>
+    pub fn get_changes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Change>> {
+        &self.changes
     }
     /// Consumes the builder and constructs a [`ChangeBatch`](crate::types::ChangeBatch).
     pub fn build(self) -> crate::types::ChangeBatch {

@@ -69,6 +69,10 @@ impl CreateFleetAdvisorCollectorInputBuilder {
         self.collector_name = input;
         self
     }
+    /// <p>The name of your Fleet Advisor collector (for example, <code>sample-collector</code>).</p>
+    pub fn get_collector_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collector_name
+    }
     /// <p>A summary description of your Fleet Advisor collector.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -78,6 +82,10 @@ impl CreateFleetAdvisorCollectorInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A summary description of your Fleet Advisor collector.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
     pub fn service_access_role_arn(
@@ -95,6 +103,10 @@ impl CreateFleetAdvisorCollectorInputBuilder {
         self.service_access_role_arn = input;
         self
     }
+    /// <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
+    pub fn get_service_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_access_role_arn
+    }
     /// <p>The Amazon S3 bucket that the Fleet Advisor collector uses to store inventory metadata.</p>
     pub fn s3_bucket_name(
         mut self,
@@ -110,6 +122,10 @@ impl CreateFleetAdvisorCollectorInputBuilder {
     ) -> Self {
         self.s3_bucket_name = input;
         self
+    }
+    /// <p>The Amazon S3 bucket that the Fleet Advisor collector uses to store inventory metadata.</p>
+    pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_name
     }
     /// Consumes the builder and constructs a [`CreateFleetAdvisorCollectorInput`](crate::operation::create_fleet_advisor_collector::CreateFleetAdvisorCollectorInput).
     pub fn build(

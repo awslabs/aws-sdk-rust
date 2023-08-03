@@ -80,6 +80,10 @@ impl UpdateTableStorageOptimizerInputBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The Catalog ID of the table.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p>Name of the database where the table is present.</p>
     pub fn database_name(
         mut self,
@@ -96,6 +100,10 @@ impl UpdateTableStorageOptimizerInputBuilder {
         self.database_name = input;
         self
     }
+    /// <p>Name of the database where the table is present.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>Name of the table for which to enable the storage optimizer.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
@@ -105,6 +113,10 @@ impl UpdateTableStorageOptimizerInputBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
+    }
+    /// <p>Name of the table for which to enable the storage optimizer.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// Adds a key-value pair to `storage_optimizer_config`.
     ///
@@ -133,6 +145,17 @@ impl UpdateTableStorageOptimizerInputBuilder {
     ) -> Self {
         self.storage_optimizer_config = input;
         self
+    }
+    /// <p>Name of the table for which to enable the storage optimizer.</p>
+    pub fn get_storage_optimizer_config(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::OptimizerType,
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+        >,
+    > {
+        &self.storage_optimizer_config
     }
     /// Consumes the builder and constructs a [`UpdateTableStorageOptimizerInput`](crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizerInput).
     pub fn build(

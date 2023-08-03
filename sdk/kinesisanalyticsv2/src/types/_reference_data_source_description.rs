@@ -68,6 +68,10 @@ impl ReferenceDataSourceDescriptionBuilder {
         self.reference_id = input;
         self
     }
+    /// <p>The ID of the reference data source. This is the ID that Kinesis Data Analytics assigns when you add the reference data source to your application using the <code>CreateApplication</code> or <code>UpdateApplication</code> operation.</p>
+    pub fn get_reference_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reference_id
+    }
     /// <p>The in-application table name created by the specific reference data source configuration.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
@@ -77,6 +81,10 @@ impl ReferenceDataSourceDescriptionBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
+    }
+    /// <p>The in-application table name created by the specific reference data source configuration.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// <p>Provides the Amazon S3 bucket name, the object key name that contains the reference data. </p>
     pub fn s3_reference_data_source_description(
@@ -94,6 +102,12 @@ impl ReferenceDataSourceDescriptionBuilder {
         self.s3_reference_data_source_description = input;
         self
     }
+    /// <p>Provides the Amazon S3 bucket name, the object key name that contains the reference data. </p>
+    pub fn get_s3_reference_data_source_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3ReferenceDataSourceDescription> {
+        &self.s3_reference_data_source_description
+    }
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
     pub fn reference_schema(mut self, input: crate::types::SourceSchema) -> Self {
         self.reference_schema = ::std::option::Option::Some(input);
@@ -106,6 +120,10 @@ impl ReferenceDataSourceDescriptionBuilder {
     ) -> Self {
         self.reference_schema = input;
         self
+    }
+    /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
+    pub fn get_reference_schema(&self) -> &::std::option::Option<crate::types::SourceSchema> {
+        &self.reference_schema
     }
     /// Consumes the builder and constructs a [`ReferenceDataSourceDescription`](crate::types::ReferenceDataSourceDescription).
     pub fn build(self) -> crate::types::ReferenceDataSourceDescription {

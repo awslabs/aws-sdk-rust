@@ -72,6 +72,15 @@ impl RelationalDatabaseDataSourceConfigBuilder {
         self.relational_database_source_type = input;
         self
     }
+    /// <p>Source type for the relational database.</p>
+    /// <ul>
+    /// <li> <p> <b>RDS_HTTP_ENDPOINT</b>: The relational database source type is an Amazon Relational Database Service (Amazon RDS) HTTP endpoint.</p> </li>
+    /// </ul>
+    pub fn get_relational_database_source_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::RelationalDatabaseSourceType> {
+        &self.relational_database_source_type
+    }
     /// <p>Amazon RDS HTTP endpoint settings.</p>
     pub fn rds_http_endpoint_config(mut self, input: crate::types::RdsHttpEndpointConfig) -> Self {
         self.rds_http_endpoint_config = ::std::option::Option::Some(input);
@@ -84,6 +93,12 @@ impl RelationalDatabaseDataSourceConfigBuilder {
     ) -> Self {
         self.rds_http_endpoint_config = input;
         self
+    }
+    /// <p>Amazon RDS HTTP endpoint settings.</p>
+    pub fn get_rds_http_endpoint_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::RdsHttpEndpointConfig> {
+        &self.rds_http_endpoint_config
     }
     /// Consumes the builder and constructs a [`RelationalDatabaseDataSourceConfig`](crate::types::RelationalDatabaseDataSourceConfig).
     pub fn build(self) -> crate::types::RelationalDatabaseDataSourceConfig {

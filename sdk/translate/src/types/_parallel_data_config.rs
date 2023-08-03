@@ -48,6 +48,10 @@ impl ParallelDataConfigBuilder {
         self.s3_uri = input;
         self
     }
+    /// <p>The URI of the Amazon S3 folder that contains the parallel data input file. The folder must be in the same Region as the API endpoint you are calling.</p>
+    pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_uri
+    }
     /// <p>The format of the parallel data input file.</p>
     pub fn format(mut self, input: crate::types::ParallelDataFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl ParallelDataConfigBuilder {
     ) -> Self {
         self.format = input;
         self
+    }
+    /// <p>The format of the parallel data input file.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::ParallelDataFormat> {
+        &self.format
     }
     /// Consumes the builder and constructs a [`ParallelDataConfig`](crate::types::ParallelDataConfig).
     pub fn build(self) -> crate::types::ParallelDataConfig {

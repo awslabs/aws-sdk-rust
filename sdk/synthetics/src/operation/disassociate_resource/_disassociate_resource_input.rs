@@ -55,6 +55,10 @@ impl DisassociateResourceInputBuilder {
         self.group_identifier = input;
         self
     }
+    /// <p>Specifies the group. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
+    pub fn get_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_identifier
+    }
     /// <p>The ARN of the canary that you want to remove from the specified group.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl DisassociateResourceInputBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p>The ARN of the canary that you want to remove from the specified group.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// Consumes the builder and constructs a [`DisassociateResourceInput`](crate::operation::disassociate_resource::DisassociateResourceInput).
     pub fn build(

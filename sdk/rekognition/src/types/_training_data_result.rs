@@ -56,6 +56,10 @@ impl TrainingDataResultBuilder {
         self.input = input;
         self
     }
+    /// <p>The training assets that you supplied for training.</p>
+    pub fn get_input(&self) -> &::std::option::Option<crate::types::TrainingData> {
+        &self.input
+    }
     /// <p>The images (assets) that were actually trained by Amazon Rekognition Custom Labels. </p>
     pub fn output(mut self, input: crate::types::TrainingData) -> Self {
         self.output = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl TrainingDataResultBuilder {
     pub fn set_output(mut self, input: ::std::option::Option<crate::types::TrainingData>) -> Self {
         self.output = input;
         self
+    }
+    /// <p>The images (assets) that were actually trained by Amazon Rekognition Custom Labels. </p>
+    pub fn get_output(&self) -> &::std::option::Option<crate::types::TrainingData> {
+        &self.output
     }
     /// <p>The location of the data validation manifest. The data validation manifest is created for the training dataset during model training.</p>
     pub fn validation(mut self, input: crate::types::ValidationData) -> Self {
@@ -78,6 +86,10 @@ impl TrainingDataResultBuilder {
     ) -> Self {
         self.validation = input;
         self
+    }
+    /// <p>The location of the data validation manifest. The data validation manifest is created for the training dataset during model training.</p>
+    pub fn get_validation(&self) -> &::std::option::Option<crate::types::ValidationData> {
+        &self.validation
     }
     /// Consumes the builder and constructs a [`TrainingDataResult`](crate::types::TrainingDataResult).
     pub fn build(self) -> crate::types::TrainingDataResult {

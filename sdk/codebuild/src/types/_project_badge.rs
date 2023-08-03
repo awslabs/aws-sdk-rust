@@ -48,6 +48,10 @@ impl ProjectBadgeBuilder {
         self.badge_enabled = input;
         self
     }
+    /// <p>Set this to true to generate a publicly accessible URL for your project's build badge.</p>
+    pub fn get_badge_enabled(&self) -> &::std::option::Option<bool> {
+        &self.badge_enabled
+    }
     /// <p>The publicly-accessible URL through which you can access the build badge for your project. </p>
     pub fn badge_request_url(
         mut self,
@@ -63,6 +67,10 @@ impl ProjectBadgeBuilder {
     ) -> Self {
         self.badge_request_url = input;
         self
+    }
+    /// <p>The publicly-accessible URL through which you can access the build badge for your project. </p>
+    pub fn get_badge_request_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.badge_request_url
     }
     /// Consumes the builder and constructs a [`ProjectBadge`](crate::types::ProjectBadge).
     pub fn build(self) -> crate::types::ProjectBadge {

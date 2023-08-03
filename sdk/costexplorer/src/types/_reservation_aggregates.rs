@@ -174,6 +174,10 @@ impl ReservationAggregatesBuilder {
         self.utilization_percentage = input;
         self
     }
+    /// <p>The percentage of reservation time that you used.</p>
+    pub fn get_utilization_percentage(&self) -> &::std::option::Option<::std::string::String> {
+        &self.utilization_percentage
+    }
     /// <p>The percentage of Amazon EC2 reservation time that you used. It's converted to normalized units. Normalized units are available only for Amazon EC2 usage after November 11, 2017.</p>
     pub fn utilization_percentage_in_units(
         mut self,
@@ -189,6 +193,12 @@ impl ReservationAggregatesBuilder {
     ) -> Self {
         self.utilization_percentage_in_units = input;
         self
+    }
+    /// <p>The percentage of Amazon EC2 reservation time that you used. It's converted to normalized units. Normalized units are available only for Amazon EC2 usage after November 11, 2017.</p>
+    pub fn get_utilization_percentage_in_units(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.utilization_percentage_in_units
     }
     /// <p>How many reservation hours that you purchased.</p>
     pub fn purchased_hours(
@@ -206,6 +216,10 @@ impl ReservationAggregatesBuilder {
         self.purchased_hours = input;
         self
     }
+    /// <p>How many reservation hours that you purchased.</p>
+    pub fn get_purchased_hours(&self) -> &::std::option::Option<::std::string::String> {
+        &self.purchased_hours
+    }
     /// <p>The number of Amazon EC2 reservation hours that you purchased. It's converted to normalized units. Normalized units are available only for Amazon EC2 usage after November 11, 2017.</p>
     pub fn purchased_units(
         mut self,
@@ -221,6 +235,10 @@ impl ReservationAggregatesBuilder {
     ) -> Self {
         self.purchased_units = input;
         self
+    }
+    /// <p>The number of Amazon EC2 reservation hours that you purchased. It's converted to normalized units. Normalized units are available only for Amazon EC2 usage after November 11, 2017.</p>
+    pub fn get_purchased_units(&self) -> &::std::option::Option<::std::string::String> {
+        &self.purchased_units
     }
     /// <p>The total number of reservation hours that you used.</p>
     pub fn total_actual_hours(
@@ -238,6 +256,10 @@ impl ReservationAggregatesBuilder {
         self.total_actual_hours = input;
         self
     }
+    /// <p>The total number of reservation hours that you used.</p>
+    pub fn get_total_actual_hours(&self) -> &::std::option::Option<::std::string::String> {
+        &self.total_actual_hours
+    }
     /// <p>The total number of Amazon EC2 reservation hours that you used. It's converted to normalized units. Normalized units are available only for Amazon EC2 usage after November 11, 2017.</p>
     pub fn total_actual_units(
         mut self,
@@ -254,6 +276,10 @@ impl ReservationAggregatesBuilder {
         self.total_actual_units = input;
         self
     }
+    /// <p>The total number of Amazon EC2 reservation hours that you used. It's converted to normalized units. Normalized units are available only for Amazon EC2 usage after November 11, 2017.</p>
+    pub fn get_total_actual_units(&self) -> &::std::option::Option<::std::string::String> {
+        &self.total_actual_units
+    }
     /// <p>The number of reservation hours that you didn't use.</p>
     pub fn unused_hours(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.unused_hours = ::std::option::Option::Some(input.into());
@@ -264,6 +290,10 @@ impl ReservationAggregatesBuilder {
         self.unused_hours = input;
         self
     }
+    /// <p>The number of reservation hours that you didn't use.</p>
+    pub fn get_unused_hours(&self) -> &::std::option::Option<::std::string::String> {
+        &self.unused_hours
+    }
     /// <p>The number of Amazon EC2 reservation hours that you didn't use. It's converted to normalized units. Normalized units are available only for Amazon EC2 usage after November 11, 2017.</p>
     pub fn unused_units(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.unused_units = ::std::option::Option::Some(input.into());
@@ -273,6 +303,10 @@ impl ReservationAggregatesBuilder {
     pub fn set_unused_units(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unused_units = input;
         self
+    }
+    /// <p>The number of Amazon EC2 reservation hours that you didn't use. It's converted to normalized units. Normalized units are available only for Amazon EC2 usage after November 11, 2017.</p>
+    pub fn get_unused_units(&self) -> &::std::option::Option<::std::string::String> {
+        &self.unused_units
     }
     /// <p>How much your reservation costs if charged On-Demand rates.</p>
     pub fn on_demand_cost_of_ri_hours_used(
@@ -290,6 +324,12 @@ impl ReservationAggregatesBuilder {
         self.on_demand_cost_of_ri_hours_used = input;
         self
     }
+    /// <p>How much your reservation costs if charged On-Demand rates.</p>
+    pub fn get_on_demand_cost_of_ri_hours_used(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.on_demand_cost_of_ri_hours_used
+    }
     /// <p>How much you saved due to purchasing and utilizing reservation. Amazon Web Services calculates this by subtracting <code>TotalAmortizedFee</code> from <code>OnDemandCostOfRIHoursUsed</code>.</p>
     pub fn net_ri_savings(
         mut self,
@@ -305,6 +345,10 @@ impl ReservationAggregatesBuilder {
     ) -> Self {
         self.net_ri_savings = input;
         self
+    }
+    /// <p>How much you saved due to purchasing and utilizing reservation. Amazon Web Services calculates this by subtracting <code>TotalAmortizedFee</code> from <code>OnDemandCostOfRIHoursUsed</code>.</p>
+    pub fn get_net_ri_savings(&self) -> &::std::option::Option<::std::string::String> {
+        &self.net_ri_savings
     }
     /// <p>How much you might save if you use your entire reservation.</p>
     pub fn total_potential_ri_savings(
@@ -322,6 +366,10 @@ impl ReservationAggregatesBuilder {
         self.total_potential_ri_savings = input;
         self
     }
+    /// <p>How much you might save if you use your entire reservation.</p>
+    pub fn get_total_potential_ri_savings(&self) -> &::std::option::Option<::std::string::String> {
+        &self.total_potential_ri_savings
+    }
     /// <p>The upfront cost of your reservation. It's amortized over the reservation period.</p>
     pub fn amortized_upfront_fee(
         mut self,
@@ -337,6 +385,10 @@ impl ReservationAggregatesBuilder {
     ) -> Self {
         self.amortized_upfront_fee = input;
         self
+    }
+    /// <p>The upfront cost of your reservation. It's amortized over the reservation period.</p>
+    pub fn get_amortized_upfront_fee(&self) -> &::std::option::Option<::std::string::String> {
+        &self.amortized_upfront_fee
     }
     /// <p>The monthly cost of your reservation. It's amortized over the reservation period.</p>
     pub fn amortized_recurring_fee(
@@ -354,6 +406,10 @@ impl ReservationAggregatesBuilder {
         self.amortized_recurring_fee = input;
         self
     }
+    /// <p>The monthly cost of your reservation. It's amortized over the reservation period.</p>
+    pub fn get_amortized_recurring_fee(&self) -> &::std::option::Option<::std::string::String> {
+        &self.amortized_recurring_fee
+    }
     /// <p>The total cost of your reservation. It's amortized over the reservation period.</p>
     pub fn total_amortized_fee(
         mut self,
@@ -369,6 +425,10 @@ impl ReservationAggregatesBuilder {
     ) -> Self {
         self.total_amortized_fee = input;
         self
+    }
+    /// <p>The total cost of your reservation. It's amortized over the reservation period.</p>
+    pub fn get_total_amortized_fee(&self) -> &::std::option::Option<::std::string::String> {
+        &self.total_amortized_fee
     }
     /// <p>The cost of unused hours for your reservation.</p>
     pub fn ri_cost_for_unused_hours(
@@ -386,6 +446,10 @@ impl ReservationAggregatesBuilder {
         self.ri_cost_for_unused_hours = input;
         self
     }
+    /// <p>The cost of unused hours for your reservation.</p>
+    pub fn get_ri_cost_for_unused_hours(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ri_cost_for_unused_hours
+    }
     /// <p>The realized savings because of purchasing and using a reservation.</p>
     pub fn realized_savings(
         mut self,
@@ -402,6 +466,10 @@ impl ReservationAggregatesBuilder {
         self.realized_savings = input;
         self
     }
+    /// <p>The realized savings because of purchasing and using a reservation.</p>
+    pub fn get_realized_savings(&self) -> &::std::option::Option<::std::string::String> {
+        &self.realized_savings
+    }
     /// <p>The unrealized savings because of purchasing and using a reservation.</p>
     pub fn unrealized_savings(
         mut self,
@@ -417,6 +485,10 @@ impl ReservationAggregatesBuilder {
     ) -> Self {
         self.unrealized_savings = input;
         self
+    }
+    /// <p>The unrealized savings because of purchasing and using a reservation.</p>
+    pub fn get_unrealized_savings(&self) -> &::std::option::Option<::std::string::String> {
+        &self.unrealized_savings
     }
     /// Consumes the builder and constructs a [`ReservationAggregates`](crate::types::ReservationAggregates).
     pub fn build(self) -> crate::types::ReservationAggregates {

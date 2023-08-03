@@ -36,6 +36,10 @@ impl CreateConfiguredTableAnalysisRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateConfiguredTableAnalysisRule as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_configured_table_analysis_rule::builders::CreateConfiguredTableAnalysisRuleInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl CreateConfiguredTableAnalysisRuleFluentBuilder {
         self.inner = self.inner.set_configured_table_identifier(input);
         self
     }
+    /// <p>The identifier for the configured table to create the analysis rule for. Currently accepts the configured table ID. </p>
+    pub fn get_configured_table_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configured_table_identifier()
+    }
     /// <p>The type of analysis rule. Valid values are AGGREGATION and LIST.</p>
     pub fn analysis_rule_type(
         mut self,
@@ -122,6 +130,12 @@ impl CreateConfiguredTableAnalysisRuleFluentBuilder {
         self.inner = self.inner.set_analysis_rule_type(input);
         self
     }
+    /// <p>The type of analysis rule. Valid values are AGGREGATION and LIST.</p>
+    pub fn get_analysis_rule_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfiguredTableAnalysisRuleType> {
+        self.inner.get_analysis_rule_type()
+    }
     /// <p>The entire created configured table analysis rule object.</p>
     pub fn analysis_rule_policy(
         mut self,
@@ -137,5 +151,11 @@ impl CreateConfiguredTableAnalysisRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_analysis_rule_policy(input);
         self
+    }
+    /// <p>The entire created configured table analysis rule object.</p>
+    pub fn get_analysis_rule_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfiguredTableAnalysisRulePolicy> {
+        self.inner.get_analysis_rule_policy()
     }
 }

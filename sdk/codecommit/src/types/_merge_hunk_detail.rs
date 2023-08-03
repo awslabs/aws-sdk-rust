@@ -56,6 +56,10 @@ impl MergeHunkDetailBuilder {
         self.start_line = input;
         self
     }
+    /// <p>The start position of the hunk in the merge result.</p>
+    pub fn get_start_line(&self) -> &::std::option::Option<i32> {
+        &self.start_line
+    }
     /// <p>The end position of the hunk in the merge result.</p>
     pub fn end_line(mut self, input: i32) -> Self {
         self.end_line = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl MergeHunkDetailBuilder {
         self.end_line = input;
         self
     }
+    /// <p>The end position of the hunk in the merge result.</p>
+    pub fn get_end_line(&self) -> &::std::option::Option<i32> {
+        &self.end_line
+    }
     /// <p>The base-64 encoded content of the hunk merged region that might contain a conflict.</p>
     pub fn hunk_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hunk_content = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl MergeHunkDetailBuilder {
     pub fn set_hunk_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hunk_content = input;
         self
+    }
+    /// <p>The base-64 encoded content of the hunk merged region that might contain a conflict.</p>
+    pub fn get_hunk_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hunk_content
     }
     /// Consumes the builder and constructs a [`MergeHunkDetail`](crate::types::MergeHunkDetail).
     pub fn build(self) -> crate::types::MergeHunkDetail {

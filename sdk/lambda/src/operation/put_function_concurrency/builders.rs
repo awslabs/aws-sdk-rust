@@ -38,6 +38,13 @@ impl PutFunctionConcurrencyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutFunctionConcurrency as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_function_concurrency::builders::PutFunctionConcurrencyInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -148,6 +155,17 @@ impl PutFunctionConcurrencyFluentBuilder {
         self.inner = self.inner.set_function_name(input);
         self
     }
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title"> <b>Name formats</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    pub fn get_function_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_function_name()
+    }
     /// <p>The number of simultaneous executions to reserve for the function.</p>
     pub fn reserved_concurrent_executions(mut self, input: i32) -> Self {
         self.inner = self.inner.reserved_concurrent_executions(input);
@@ -157,5 +175,9 @@ impl PutFunctionConcurrencyFluentBuilder {
     pub fn set_reserved_concurrent_executions(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_reserved_concurrent_executions(input);
         self
+    }
+    /// <p>The number of simultaneous executions to reserve for the function.</p>
+    pub fn get_reserved_concurrent_executions(&self) -> &::std::option::Option<i32> {
+        self.inner.get_reserved_concurrent_executions()
     }
 }

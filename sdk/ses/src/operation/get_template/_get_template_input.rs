@@ -45,6 +45,10 @@ impl GetTemplateInputBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The name of the template you want to retrieve.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// Consumes the builder and constructs a [`GetTemplateInput`](crate::operation::get_template::GetTemplateInput).
     pub fn build(
         self,

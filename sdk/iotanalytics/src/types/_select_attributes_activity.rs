@@ -56,6 +56,10 @@ impl SelectAttributesActivityBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the <code>selectAttributes</code> activity.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
@@ -75,6 +79,10 @@ impl SelectAttributesActivityBuilder {
         self.attributes = input;
         self
     }
+    /// <p>A list of the attributes to select from the message.</p>
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.attributes
+    }
     /// <p>The next activity in the pipeline.</p>
     pub fn next(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next = ::std::option::Option::Some(input.into());
@@ -84,6 +92,10 @@ impl SelectAttributesActivityBuilder {
     pub fn set_next(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next = input;
         self
+    }
+    /// <p>The next activity in the pipeline.</p>
+    pub fn get_next(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next
     }
     /// Consumes the builder and constructs a [`SelectAttributesActivity`](crate::types::SelectAttributesActivity).
     pub fn build(self) -> crate::types::SelectAttributesActivity {

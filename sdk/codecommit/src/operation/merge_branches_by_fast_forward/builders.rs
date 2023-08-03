@@ -36,6 +36,10 @@ impl MergeBranchesByFastForwardFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the MergeBranchesByFastForward as a reference.
+    pub fn as_input(&self) -> &crate::operation::merge_branches_by_fast_forward::builders::MergeBranchesByFastForwardInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl MergeBranchesByFastForwardFluentBuilder {
         self.inner = self.inner.set_repository_name(input);
         self
     }
+    /// <p>The name of the repository where you want to merge two branches.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository_name()
+    }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
     pub fn source_commit_specifier(
         mut self,
@@ -149,6 +157,10 @@ impl MergeBranchesByFastForwardFluentBuilder {
         self
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    pub fn get_source_commit_specifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_commit_specifier()
+    }
+    /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
     pub fn destination_commit_specifier(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -163,6 +175,12 @@ impl MergeBranchesByFastForwardFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destination_commit_specifier(input);
         self
+    }
+    /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    pub fn get_destination_commit_specifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_commit_specifier()
     }
     /// <p>The branch where the merge is applied.</p>
     pub fn target_branch(
@@ -179,5 +197,9 @@ impl MergeBranchesByFastForwardFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_target_branch(input);
         self
+    }
+    /// <p>The branch where the merge is applied.</p>
+    pub fn get_target_branch(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_branch()
     }
 }

@@ -38,6 +38,13 @@ impl CreateConnectAttachmentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateConnectAttachment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_connect_attachment::builders::CreateConnectAttachmentInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +141,10 @@ impl CreateConnectAttachmentFluentBuilder {
         self.inner = self.inner.set_core_network_id(input);
         self
     }
+    /// <p>The ID of a core network where you want to create the attachment. </p>
+    pub fn get_core_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_core_network_id()
+    }
     /// <p>The Region where the edge is located.</p>
     pub fn edge_location(
         mut self,
@@ -149,6 +160,10 @@ impl CreateConnectAttachmentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_edge_location(input);
         self
+    }
+    /// <p>The Region where the edge is located.</p>
+    pub fn get_edge_location(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_edge_location()
     }
     /// <p>The ID of the attachment between the two connections.</p>
     pub fn transport_attachment_id(
@@ -166,6 +181,10 @@ impl CreateConnectAttachmentFluentBuilder {
         self.inner = self.inner.set_transport_attachment_id(input);
         self
     }
+    /// <p>The ID of the attachment between the two connections.</p>
+    pub fn get_transport_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_transport_attachment_id()
+    }
     /// <p>Options for creating an attachment.</p>
     pub fn options(mut self, input: crate::types::ConnectAttachmentOptions) -> Self {
         self.inner = self.inner.options(input);
@@ -178,6 +197,10 @@ impl CreateConnectAttachmentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_options(input);
         self
+    }
+    /// <p>Options for creating an attachment.</p>
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::ConnectAttachmentOptions> {
+        self.inner.get_options()
     }
     /// Appends an item to `Tags`.
     ///
@@ -196,6 +219,10 @@ impl CreateConnectAttachmentFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The list of key-value tags associated with the request.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>The client token associated with the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -205,5 +232,9 @@ impl CreateConnectAttachmentFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>The client token associated with the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

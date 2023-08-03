@@ -52,6 +52,11 @@ impl ClientLoginBannerResponseOptionsBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Current state of text banner feature.</p>
+    /// <p>Valid values: <code>true | false</code> </p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>Customizable text that will be displayed in a banner on Amazon Web Services provided clients when a VPN session is established. UTF-8 encoded characters only. Maximum of 1400 characters.</p>
     pub fn banner_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.banner_text = ::std::option::Option::Some(input.into());
@@ -61,6 +66,10 @@ impl ClientLoginBannerResponseOptionsBuilder {
     pub fn set_banner_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.banner_text = input;
         self
+    }
+    /// <p>Customizable text that will be displayed in a banner on Amazon Web Services provided clients when a VPN session is established. UTF-8 encoded characters only. Maximum of 1400 characters.</p>
+    pub fn get_banner_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.banner_text
     }
     /// Consumes the builder and constructs a [`ClientLoginBannerResponseOptions`](crate::types::ClientLoginBannerResponseOptions).
     pub fn build(self) -> crate::types::ClientLoginBannerResponseOptions {

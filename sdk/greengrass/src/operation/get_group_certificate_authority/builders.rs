@@ -36,6 +36,10 @@ impl GetGroupCertificateAuthorityFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetGroupCertificateAuthority as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_group_certificate_authority::builders::GetGroupCertificateAuthorityInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl GetGroupCertificateAuthorityFluentBuilder {
         self.inner = self.inner.set_certificate_authority_id(input);
         self
     }
+    /// The ID of the certificate authority.
+    pub fn get_certificate_authority_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate_authority_id()
+    }
     /// The ID of the Greengrass group.
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_id(input.into());
@@ -141,5 +149,9 @@ impl GetGroupCertificateAuthorityFluentBuilder {
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_id(input);
         self
+    }
+    /// The ID of the Greengrass group.
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_id()
     }
 }

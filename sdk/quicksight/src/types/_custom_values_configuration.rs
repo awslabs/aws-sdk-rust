@@ -50,6 +50,10 @@ impl CustomValuesConfigurationBuilder {
         self.include_null_value = input;
         self
     }
+    /// <p>Includes the null value in custom action parameter values.</p>
+    pub fn get_include_null_value(&self) -> &::std::option::Option<bool> {
+        &self.include_null_value
+    }
     /// <p>The customized parameter values.</p>
     /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
     pub fn custom_values(mut self, input: crate::types::CustomParameterValues) -> Self {
@@ -64,6 +68,11 @@ impl CustomValuesConfigurationBuilder {
     ) -> Self {
         self.custom_values = input;
         self
+    }
+    /// <p>The customized parameter values.</p>
+    /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
+    pub fn get_custom_values(&self) -> &::std::option::Option<crate::types::CustomParameterValues> {
+        &self.custom_values
     }
     /// Consumes the builder and constructs a [`CustomValuesConfiguration`](crate::types::CustomValuesConfiguration).
     pub fn build(self) -> crate::types::CustomValuesConfiguration {

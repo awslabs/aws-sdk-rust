@@ -71,6 +71,10 @@ impl EncryptDataInputBuilder {
         self.key_identifier = input;
         self
     }
+    /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses for plaintext encryption.</p>
+    pub fn get_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_identifier
+    }
     /// <p>The plaintext to be encrypted.</p>
     pub fn plain_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.plain_text = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl EncryptDataInputBuilder {
     pub fn set_plain_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.plain_text = input;
         self
+    }
+    /// <p>The plaintext to be encrypted.</p>
+    pub fn get_plain_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.plain_text
     }
     /// <p>The encryption key type and attributes for plaintext encryption.</p>
     pub fn encryption_attributes(
@@ -96,6 +104,12 @@ impl EncryptDataInputBuilder {
     ) -> Self {
         self.encryption_attributes = input;
         self
+    }
+    /// <p>The encryption key type and attributes for plaintext encryption.</p>
+    pub fn get_encryption_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::EncryptionDecryptionAttributes> {
+        &self.encryption_attributes
     }
     /// Consumes the builder and constructs a [`EncryptDataInput`](crate::operation::encrypt_data::EncryptDataInput).
     pub fn build(

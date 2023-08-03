@@ -37,6 +37,10 @@ impl CreateClusterSubnetGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateClusterSubnetGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_cluster_subnet_group::builders::CreateClusterSubnetGroupInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -147,6 +151,17 @@ impl CreateClusterSubnetGroupFluentBuilder {
         self.inner = self.inner.set_cluster_subnet_group_name(input);
         self
     }
+    /// <p>The name for the subnet group. Amazon Redshift stores the value as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain no more than 255 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>Must not be "Default".</p> </li>
+    /// <li> <p>Must be unique for all subnet groups that are created by your Amazon Web Services account.</p> </li>
+    /// </ul>
+    /// <p>Example: <code>examplesubnetgroup</code> </p>
+    pub fn get_cluster_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_subnet_group_name()
+    }
     /// <p>A description for the subnet group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -156,6 +171,10 @@ impl CreateClusterSubnetGroupFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description for the subnet group.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `SubnetIds`.
     ///
@@ -174,6 +193,10 @@ impl CreateClusterSubnetGroupFluentBuilder {
         self.inner = self.inner.set_subnet_ids(input);
         self
     }
+    /// <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_subnet_ids()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -190,5 +213,9 @@ impl CreateClusterSubnetGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of tag instances.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

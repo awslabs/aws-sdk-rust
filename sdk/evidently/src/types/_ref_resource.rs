@@ -88,6 +88,10 @@ impl RefResourceBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the experiment or launch.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Specifies whether the resource that this structure contains information about is an experiment or a launch.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -97,6 +101,10 @@ impl RefResourceBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>Specifies whether the resource that this structure contains information about is an experiment or a launch.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// <p>The ARN of the experiment or launch.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -108,6 +116,10 @@ impl RefResourceBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the experiment or launch.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The status of the experiment or launch.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -117,6 +129,10 @@ impl RefResourceBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the experiment or launch.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>The day and time that this experiment or launch started.</p>
     pub fn start_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -128,6 +144,10 @@ impl RefResourceBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The day and time that this experiment or launch started.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_time
+    }
     /// <p>The day and time that this experiment or launch ended.</p>
     pub fn end_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.end_time = ::std::option::Option::Some(input.into());
@@ -137,6 +157,10 @@ impl RefResourceBuilder {
     pub fn set_end_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The day and time that this experiment or launch ended.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.end_time
     }
     /// <p>The day and time that this experiment or launch was most recently updated.</p>
     pub fn last_updated_on(
@@ -153,6 +177,10 @@ impl RefResourceBuilder {
     ) -> Self {
         self.last_updated_on = input;
         self
+    }
+    /// <p>The day and time that this experiment or launch was most recently updated.</p>
+    pub fn get_last_updated_on(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_updated_on
     }
     /// Consumes the builder and constructs a [`RefResource`](crate::types::RefResource).
     pub fn build(self) -> crate::types::RefResource {

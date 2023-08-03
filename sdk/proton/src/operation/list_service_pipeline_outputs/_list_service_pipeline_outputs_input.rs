@@ -55,6 +55,10 @@ impl ListServicePipelineOutputsInputBuilder {
         self.service_name = input;
         self
     }
+    /// <p>The name of the service whose pipeline's outputs you want.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
+    }
     /// <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl ListServicePipelineOutputsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The ID of the deployment you want the outputs for.</p>
     pub fn deployment_id(
@@ -80,6 +88,10 @@ impl ListServicePipelineOutputsInputBuilder {
     ) -> Self {
         self.deployment_id = input;
         self
+    }
+    /// <p>The ID of the deployment you want the outputs for.</p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
     }
     /// Consumes the builder and constructs a [`ListServicePipelineOutputsInput`](crate::operation::list_service_pipeline_outputs::ListServicePipelineOutputsInput).
     pub fn build(

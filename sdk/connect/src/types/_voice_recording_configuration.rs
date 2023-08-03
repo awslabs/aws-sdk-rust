@@ -45,6 +45,12 @@ impl VoiceRecordingConfigurationBuilder {
         self.voice_recording_track = input;
         self
     }
+    /// <p>Identifies which track is being recorded.</p>
+    pub fn get_voice_recording_track(
+        &self,
+    ) -> &::std::option::Option<crate::types::VoiceRecordingTrack> {
+        &self.voice_recording_track
+    }
     /// Consumes the builder and constructs a [`VoiceRecordingConfiguration`](crate::types::VoiceRecordingConfiguration).
     pub fn build(self) -> crate::types::VoiceRecordingConfiguration {
         crate::types::VoiceRecordingConfiguration {

@@ -150,6 +150,10 @@ impl ProgressEventBuilder {
         self.type_name = input;
         self
     }
+    /// <p>The name of the resource type used in the operation.</p>
+    pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.type_name
+    }
     /// <p>The primary identifier for the resource.</p> <note>
     /// <p>In some cases, the resource identifier may be available before the resource operation has reached a status of <code>SUCCESS</code>.</p>
     /// </note>
@@ -163,6 +167,12 @@ impl ProgressEventBuilder {
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identifier = input;
         self
+    }
+    /// <p>The primary identifier for the resource.</p> <note>
+    /// <p>In some cases, the resource identifier may be available before the resource operation has reached a status of <code>SUCCESS</code>.</p>
+    /// </note>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
     }
     /// <p>The unique token representing this resource operation request.</p>
     /// <p>Use the <code>RequestToken</code> with <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> to return the current status of a resource operation request.</p>
@@ -182,6 +192,11 @@ impl ProgressEventBuilder {
         self.request_token = input;
         self
     }
+    /// <p>The unique token representing this resource operation request.</p>
+    /// <p>Use the <code>RequestToken</code> with <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> to return the current status of a resource operation request.</p>
+    pub fn get_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_token
+    }
     /// <p>The resource operation type.</p>
     pub fn operation(mut self, input: crate::types::Operation) -> Self {
         self.operation = ::std::option::Option::Some(input);
@@ -191,6 +206,10 @@ impl ProgressEventBuilder {
     pub fn set_operation(mut self, input: ::std::option::Option<crate::types::Operation>) -> Self {
         self.operation = input;
         self
+    }
+    /// <p>The resource operation type.</p>
+    pub fn get_operation(&self) -> &::std::option::Option<crate::types::Operation> {
+        &self.operation
     }
     /// <p>The current status of the resource operation request.</p>
     /// <ul>
@@ -221,6 +240,18 @@ impl ProgressEventBuilder {
         self.operation_status = input;
         self
     }
+    /// <p>The current status of the resource operation request.</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING</code>: The resource operation hasn't yet started.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code>: The resource operation is currently in progress.</p> </li>
+    /// <li> <p> <code>SUCCESS</code>: The resource operation has successfully completed.</p> </li>
+    /// <li> <p> <code>FAILED</code>: The resource operation has failed. Refer to the error code and status message for more information.</p> </li>
+    /// <li> <p> <code>CANCEL_IN_PROGRESS</code>: The resource operation is in the process of being canceled.</p> </li>
+    /// <li> <p> <code>CANCEL_COMPLETE</code>: The resource operation has been canceled.</p> </li>
+    /// </ul>
+    pub fn get_operation_status(&self) -> &::std::option::Option<crate::types::OperationStatus> {
+        &self.operation_status
+    }
     /// <p>When the resource operation request was initiated.</p>
     pub fn event_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.event_time = ::std::option::Option::Some(input);
@@ -233,6 +264,10 @@ impl ProgressEventBuilder {
     ) -> Self {
         self.event_time = input;
         self
+    }
+    /// <p>When the resource operation request was initiated.</p>
+    pub fn get_event_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.event_time
     }
     /// <p>A JSON string containing the resource model, consisting of each resource property and its current value.</p>
     pub fn resource_model(
@@ -250,6 +285,10 @@ impl ProgressEventBuilder {
         self.resource_model = input;
         self
     }
+    /// <p>A JSON string containing the resource model, consisting of each resource property and its current value.</p>
+    pub fn get_resource_model(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_model
+    }
     /// <p>Any message explaining the current status.</p>
     pub fn status_message(
         mut self,
@@ -266,6 +305,10 @@ impl ProgressEventBuilder {
         self.status_message = input;
         self
     }
+    /// <p>Any message explaining the current status.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>For requests with a status of <code>FAILED</code>, the associated error code.</p>
     /// <p>For error code definitions, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-test-contract-errors.html">Handler error codes</a> in the <i>CloudFormation Command Line Interface User Guide for Extension Development</i>.</p>
     pub fn error_code(mut self, input: crate::types::HandlerErrorCode) -> Self {
@@ -281,6 +324,11 @@ impl ProgressEventBuilder {
         self.error_code = input;
         self
     }
+    /// <p>For requests with a status of <code>FAILED</code>, the associated error code.</p>
+    /// <p>For error code definitions, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-test-contract-errors.html">Handler error codes</a> in the <i>CloudFormation Command Line Interface User Guide for Extension Development</i>.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::HandlerErrorCode> {
+        &self.error_code
+    }
     /// <p>When to next request the status of this resource operation request.</p>
     pub fn retry_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.retry_after = ::std::option::Option::Some(input);
@@ -293,6 +341,10 @@ impl ProgressEventBuilder {
     ) -> Self {
         self.retry_after = input;
         self
+    }
+    /// <p>When to next request the status of this resource operation request.</p>
+    pub fn get_retry_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.retry_after
     }
     /// Consumes the builder and constructs a [`ProgressEvent`](crate::types::ProgressEvent).
     pub fn build(self) -> crate::types::ProgressEvent {

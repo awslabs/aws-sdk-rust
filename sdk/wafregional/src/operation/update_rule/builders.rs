@@ -55,6 +55,10 @@ impl UpdateRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateRule as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_rule::builders::UpdateRuleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +141,10 @@ impl UpdateRuleFluentBuilder {
         self.inner = self.inner.set_rule_id(input);
         self
     }
+    /// <p>The <code>RuleId</code> of the <code>Rule</code> that you want to update. <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
+    pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rule_id()
+    }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.change_token(input.into());
@@ -146,6 +154,10 @@ impl UpdateRuleFluentBuilder {
     pub fn set_change_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_change_token(input);
         self
+    }
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    pub fn get_change_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_change_token()
     }
     /// Appends an item to `Updates`.
     ///
@@ -173,5 +185,14 @@ impl UpdateRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_updates(input);
         self
+    }
+    /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <code>Rule</code>. For more information, see the applicable data types:</p>
+    /// <ul>
+    /// <li> <p> <code>RuleUpdate</code>: Contains <code>Action</code> and <code>Predicate</code> </p> </li>
+    /// <li> <p> <code>Predicate</code>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code> </p> </li>
+    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
+    /// </ul>
+    pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleUpdate>> {
+        self.inner.get_updates()
     }
 }

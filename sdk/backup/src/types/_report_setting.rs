@@ -90,6 +90,11 @@ impl ReportSettingBuilder {
         self.report_template = input;
         self
     }
+    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
+    /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+    pub fn get_report_template(&self) -> &::std::option::Option<::std::string::String> {
+        &self.report_template
+    }
     /// Appends an item to `framework_arns`.
     ///
     /// To override the contents of this collection use [`set_framework_arns`](Self::set_framework_arns).
@@ -112,6 +117,12 @@ impl ReportSettingBuilder {
         self.framework_arns = input;
         self
     }
+    /// <p>The Amazon Resource Names (ARNs) of the frameworks a report covers.</p>
+    pub fn get_framework_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.framework_arns
+    }
     /// <p>The number of frameworks a report covers.</p>
     pub fn number_of_frameworks(mut self, input: i32) -> Self {
         self.number_of_frameworks = ::std::option::Option::Some(input);
@@ -121,6 +132,10 @@ impl ReportSettingBuilder {
     pub fn set_number_of_frameworks(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_frameworks = input;
         self
+    }
+    /// <p>The number of frameworks a report covers.</p>
+    pub fn get_number_of_frameworks(&self) -> &::std::option::Option<i32> {
+        &self.number_of_frameworks
     }
     /// Appends an item to `accounts`.
     ///
@@ -140,6 +155,10 @@ impl ReportSettingBuilder {
     ) -> Self {
         self.accounts = input;
         self
+    }
+    /// <p>These are the accounts to be included in the report.</p>
+    pub fn get_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.accounts
     }
     /// Appends an item to `organization_units`.
     ///
@@ -163,6 +182,12 @@ impl ReportSettingBuilder {
         self.organization_units = input;
         self
     }
+    /// <p>These are the Organizational Units to be included in the report.</p>
+    pub fn get_organization_units(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.organization_units
+    }
     /// Appends an item to `regions`.
     ///
     /// To override the contents of this collection use [`set_regions`](Self::set_regions).
@@ -181,6 +206,10 @@ impl ReportSettingBuilder {
     ) -> Self {
         self.regions = input;
         self
+    }
+    /// <p>These are the Regions to be included in the report.</p>
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.regions
     }
     /// Consumes the builder and constructs a [`ReportSetting`](crate::types::ReportSetting).
     pub fn build(self) -> crate::types::ReportSetting {

@@ -58,6 +58,10 @@ impl GetReservedNodeExchangeOfferingsOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p>An optional parameter that specifies the starting point for returning a set of response records. When the results of a <code>GetReservedNodeExchangeOfferings</code> request exceed the value specified in MaxRecords, Amazon Redshift returns a value in the marker field of the response. You can retrieve the next set of response records by providing the returned marker value in the marker parameter and retrying the request. </p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// Appends an item to `reserved_node_offerings`.
     ///
     /// To override the contents of this collection use [`set_reserved_node_offerings`](Self::set_reserved_node_offerings).
@@ -76,6 +80,12 @@ impl GetReservedNodeExchangeOfferingsOutputBuilder {
     ) -> Self {
         self.reserved_node_offerings = input;
         self
+    }
+    /// <p>Returns an array of <code>ReservedNodeOffering</code> objects.</p>
+    pub fn get_reserved_node_offerings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedNodeOffering>> {
+        &self.reserved_node_offerings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

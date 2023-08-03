@@ -115,6 +115,12 @@ impl CreateMediaInsightsPipelineConfigurationInputBuilder {
         self.media_insights_pipeline_configuration_name = input;
         self
     }
+    /// <p>The name of the media insights pipeline configuration.</p>
+    pub fn get_media_insights_pipeline_configuration_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.media_insights_pipeline_configuration_name
+    }
     /// <p>The ARN of the role used by the service to access Amazon Web Services resources, including <code>Transcribe</code> and <code>Transcribe Call Analytics</code>, on the caller’s behalf.</p>
     pub fn resource_access_role_arn(
         mut self,
@@ -131,6 +137,10 @@ impl CreateMediaInsightsPipelineConfigurationInputBuilder {
         self.resource_access_role_arn = input;
         self
     }
+    /// <p>The ARN of the role used by the service to access Amazon Web Services resources, including <code>Transcribe</code> and <code>Transcribe Call Analytics</code>, on the caller’s behalf.</p>
+    pub fn get_resource_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_access_role_arn
+    }
     /// <p>The configuration settings for the real-time alerts in a media insights pipeline configuration.</p>
     pub fn real_time_alert_configuration(
         mut self,
@@ -146,6 +156,12 @@ impl CreateMediaInsightsPipelineConfigurationInputBuilder {
     ) -> Self {
         self.real_time_alert_configuration = input;
         self
+    }
+    /// <p>The configuration settings for the real-time alerts in a media insights pipeline configuration.</p>
+    pub fn get_real_time_alert_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::RealTimeAlertConfiguration> {
+        &self.real_time_alert_configuration
     }
     /// Appends an item to `elements`.
     ///
@@ -171,6 +187,14 @@ impl CreateMediaInsightsPipelineConfigurationInputBuilder {
         self.elements = input;
         self
     }
+    /// <p>The elements in the request, such as a processor for Amazon Transcribe or a sink for a Kinesis Data Stream.</p>
+    pub fn get_elements(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::MediaInsightsPipelineConfigurationElement>,
+    > {
+        &self.elements
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -190,6 +214,10 @@ impl CreateMediaInsightsPipelineConfigurationInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags assigned to the media insights pipeline configuration.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The unique identifier for the media insights pipeline configuration request.</p>
     pub fn client_request_token(
         mut self,
@@ -205,6 +233,10 @@ impl CreateMediaInsightsPipelineConfigurationInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>The unique identifier for the media insights pipeline configuration request.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Consumes the builder and constructs a [`CreateMediaInsightsPipelineConfigurationInput`](crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{

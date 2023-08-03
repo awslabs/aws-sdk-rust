@@ -46,6 +46,10 @@ impl IncrementalPullConfigBuilder {
         self.datetime_type_field_name = input;
         self
     }
+    /// <p> A field that specifies the date time or timestamp field as the criteria to use when importing incremental records from the source. </p>
+    pub fn get_datetime_type_field_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.datetime_type_field_name
+    }
     /// Consumes the builder and constructs a [`IncrementalPullConfig`](crate::types::IncrementalPullConfig).
     pub fn build(self) -> crate::types::IncrementalPullConfig {
         crate::types::IncrementalPullConfig {

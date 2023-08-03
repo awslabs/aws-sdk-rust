@@ -57,6 +57,10 @@ impl ListDomainConfigurationsInputBuilder {
         self.marker = input;
         self
     }
+    /// <p>The marker for the next set of results.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>The result page size.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.page_size = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl ListDomainConfigurationsInputBuilder {
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.page_size = input;
         self
+    }
+    /// <p>The result page size.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        &self.page_size
     }
     /// <p>The type of service delivered by the endpoint.</p>
     pub fn service_type(mut self, input: crate::types::ServiceType) -> Self {
@@ -79,6 +87,10 @@ impl ListDomainConfigurationsInputBuilder {
     ) -> Self {
         self.service_type = input;
         self
+    }
+    /// <p>The type of service delivered by the endpoint.</p>
+    pub fn get_service_type(&self) -> &::std::option::Option<crate::types::ServiceType> {
+        &self.service_type
     }
     /// Consumes the builder and constructs a [`ListDomainConfigurationsInput`](crate::operation::list_domain_configurations::ListDomainConfigurationsInput).
     pub fn build(

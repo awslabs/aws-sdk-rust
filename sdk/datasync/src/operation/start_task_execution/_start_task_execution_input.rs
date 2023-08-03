@@ -77,6 +77,10 @@ impl StartTaskExecutionInputBuilder {
         self.task_arn = input;
         self
     }
+    /// <p>Specifies the Amazon Resource Name (ARN) of the task that you want to start.</p>
+    pub fn get_task_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_arn
+    }
     /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
     /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
     pub fn override_options(mut self, input: crate::types::Options) -> Self {
@@ -91,6 +95,11 @@ impl StartTaskExecutionInputBuilder {
     ) -> Self {
         self.override_options = input;
         self
+    }
+    /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
+    /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
+    pub fn get_override_options(&self) -> &::std::option::Option<crate::types::Options> {
+        &self.override_options
     }
     /// Appends an item to `includes`.
     ///
@@ -111,6 +120,12 @@ impl StartTaskExecutionInputBuilder {
         self.includes = input;
         self
     }
+    /// <p>Specifies a list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
+    pub fn get_includes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
+        &self.includes
+    }
     /// Appends an item to `excludes`.
     ///
     /// To override the contents of this collection use [`set_excludes`](Self::set_excludes).
@@ -129,6 +144,12 @@ impl StartTaskExecutionInputBuilder {
     ) -> Self {
         self.excludes = input;
         self
+    }
+    /// <p>Specifies a list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
+    pub fn get_excludes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
+        &self.excludes
     }
     /// Appends an item to `tags`.
     ///
@@ -150,6 +171,11 @@ impl StartTaskExecutionInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task execution.</p>
+    /// <p> <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`StartTaskExecutionInput`](crate::operation::start_task_execution::StartTaskExecutionInput).
     pub fn build(

@@ -46,6 +46,10 @@ impl CreateControlOutputBuilder {
         self.control = input;
         self
     }
+    /// <p> The new control that the <code>CreateControl</code> API returned. </p>
+    pub fn get_control(&self) -> &::std::option::Option<crate::types::Control> {
+        &self.control
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -49,6 +49,12 @@ impl PutRegistryCatalogDataInputBuilder {
         self.display_name = input;
         self
     }
+    /// <p>The display name for a public registry. The display name is shown as the repository author in the Amazon ECR Public Gallery.</p> <note>
+    /// <p>The registry display name is only publicly visible in the Amazon ECR Public Gallery for verified accounts.</p>
+    /// </note>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// Consumes the builder and constructs a [`PutRegistryCatalogDataInput`](crate::operation::put_registry_catalog_data::PutRegistryCatalogDataInput).
     pub fn build(
         self,

@@ -36,6 +36,12 @@ impl ListFeatureGroupsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListFeatureGroups as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_feature_groups::builders::ListFeatureGroupsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl ListFeatureGroupsFluentBuilder {
         self.inner = self.inner.set_name_contains(input);
         self
     }
+    /// <p>A string that partially matches one or more <code>FeatureGroup</code>s names. Filters <code>FeatureGroup</code>s by name. </p>
+    pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name_contains()
+    }
     /// <p>A <code>FeatureGroup</code> status. Filters by <code>FeatureGroup</code> status. </p>
     pub fn feature_group_status_equals(mut self, input: crate::types::FeatureGroupStatus) -> Self {
         self.inner = self.inner.feature_group_status_equals(input);
@@ -144,6 +154,12 @@ impl ListFeatureGroupsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_feature_group_status_equals(input);
         self
+    }
+    /// <p>A <code>FeatureGroup</code> status. Filters by <code>FeatureGroup</code> status. </p>
+    pub fn get_feature_group_status_equals(
+        &self,
+    ) -> &::std::option::Option<crate::types::FeatureGroupStatus> {
+        self.inner.get_feature_group_status_equals()
     }
     /// <p>An <code>OfflineStore</code> status. Filters by <code>OfflineStore</code> status. </p>
     pub fn offline_store_status_equals(
@@ -161,6 +177,12 @@ impl ListFeatureGroupsFluentBuilder {
         self.inner = self.inner.set_offline_store_status_equals(input);
         self
     }
+    /// <p>An <code>OfflineStore</code> status. Filters by <code>OfflineStore</code> status. </p>
+    pub fn get_offline_store_status_equals(
+        &self,
+    ) -> &::std::option::Option<crate::types::OfflineStoreStatusValue> {
+        self.inner.get_offline_store_status_equals()
+    }
     /// <p>Use this parameter to search for <code>FeatureGroups</code>s created after a specific date and time.</p>
     pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_after(input);
@@ -173,6 +195,10 @@ impl ListFeatureGroupsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
+    }
+    /// <p>Use this parameter to search for <code>FeatureGroups</code>s created after a specific date and time.</p>
+    pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_creation_time_after()
     }
     /// <p>Use this parameter to search for <code>FeatureGroups</code>s created before a specific date and time.</p>
     pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -187,6 +213,10 @@ impl ListFeatureGroupsFluentBuilder {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
+    /// <p>Use this parameter to search for <code>FeatureGroups</code>s created before a specific date and time.</p>
+    pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_creation_time_before()
+    }
     /// <p>The order in which feature groups are listed.</p>
     pub fn sort_order(mut self, input: crate::types::FeatureGroupSortOrder) -> Self {
         self.inner = self.inner.sort_order(input);
@@ -199,6 +229,10 @@ impl ListFeatureGroupsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
+    }
+    /// <p>The order in which feature groups are listed.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::FeatureGroupSortOrder> {
+        self.inner.get_sort_order()
     }
     /// <p>The value on which the feature group list is sorted.</p>
     pub fn sort_by(mut self, input: crate::types::FeatureGroupSortBy) -> Self {
@@ -213,6 +247,10 @@ impl ListFeatureGroupsFluentBuilder {
         self.inner = self.inner.set_sort_by(input);
         self
     }
+    /// <p>The value on which the feature group list is sorted.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::FeatureGroupSortBy> {
+        self.inner.get_sort_by()
+    }
     /// <p>The maximum number of results returned by <code>ListFeatureGroups</code>.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -223,6 +261,10 @@ impl ListFeatureGroupsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results returned by <code>ListFeatureGroups</code>.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>A token to resume pagination of <code>ListFeatureGroups</code> results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -232,5 +274,9 @@ impl ListFeatureGroupsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A token to resume pagination of <code>ListFeatureGroups</code> results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

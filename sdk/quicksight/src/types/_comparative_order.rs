@@ -63,6 +63,10 @@ impl ComparativeOrderBuilder {
         self.use_ordering = input;
         self
     }
+    /// <p>The ordering type for a column. Valid values for this structure are <code>GREATER_IS_BETTER</code>, <code>LESSER_IS_BETTER</code> and <code>SPECIFIED</code>.</p>
+    pub fn get_use_ordering(&self) -> &::std::option::Option<crate::types::ColumnOrderingType> {
+        &self.use_ordering
+    }
     /// Appends an item to `specifed_order`.
     ///
     /// To override the contents of this collection use [`set_specifed_order`](Self::set_specifed_order).
@@ -85,6 +89,12 @@ impl ComparativeOrderBuilder {
         self.specifed_order = input;
         self
     }
+    /// <p>The list of columns to be used in the ordering.</p>
+    pub fn get_specifed_order(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.specifed_order
+    }
     /// <p>The treat of undefined specified values. Valid values for this structure are <code>LEAST</code> and <code>MOST</code>.</p>
     pub fn treat_undefined_specified_values(
         mut self,
@@ -100,6 +110,12 @@ impl ComparativeOrderBuilder {
     ) -> Self {
         self.treat_undefined_specified_values = input;
         self
+    }
+    /// <p>The treat of undefined specified values. Valid values for this structure are <code>LEAST</code> and <code>MOST</code>.</p>
+    pub fn get_treat_undefined_specified_values(
+        &self,
+    ) -> &::std::option::Option<crate::types::UndefinedSpecifiedValueType> {
+        &self.treat_undefined_specified_values
     }
     /// Consumes the builder and constructs a [`ComparativeOrder`](crate::types::ComparativeOrder).
     pub fn build(self) -> crate::types::ComparativeOrder {

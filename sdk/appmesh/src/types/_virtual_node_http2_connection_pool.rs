@@ -40,6 +40,10 @@ impl VirtualNodeHttp2ConnectionPoolBuilder {
         self.max_requests = input;
         self
     }
+    /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
+    pub fn get_max_requests(&self) -> &::std::option::Option<i32> {
+        &self.max_requests
+    }
     /// Consumes the builder and constructs a [`VirtualNodeHttp2ConnectionPool`](crate::types::VirtualNodeHttp2ConnectionPool).
     pub fn build(self) -> crate::types::VirtualNodeHttp2ConnectionPool {
         crate::types::VirtualNodeHttp2ConnectionPool {

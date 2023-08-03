@@ -67,6 +67,12 @@ impl DescribeRetentionConfigurationsOutputBuilder {
         self.retention_configurations = input;
         self
     }
+    /// <p>Returns a retention configuration object.</p>
+    pub fn get_retention_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RetentionConfiguration>> {
+        &self.retention_configurations
+    }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -76,6 +82,10 @@ impl DescribeRetentionConfigurationsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

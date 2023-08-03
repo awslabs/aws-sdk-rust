@@ -86,6 +86,12 @@ impl ImageScanFindingsBuilder {
         self.image_scan_completed_at = input;
         self
     }
+    /// <p>The time of the last completed image scan.</p>
+    pub fn get_image_scan_completed_at(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.image_scan_completed_at
+    }
     /// <p>The time when the vulnerability data was last scanned.</p>
     pub fn vulnerability_source_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.vulnerability_source_updated_at = ::std::option::Option::Some(input);
@@ -98,6 +104,12 @@ impl ImageScanFindingsBuilder {
     ) -> Self {
         self.vulnerability_source_updated_at = input;
         self
+    }
+    /// <p>The time when the vulnerability data was last scanned.</p>
+    pub fn get_vulnerability_source_updated_at(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.vulnerability_source_updated_at
     }
     /// Adds a key-value pair to `finding_severity_counts`.
     ///
@@ -120,6 +132,13 @@ impl ImageScanFindingsBuilder {
         self.finding_severity_counts = input;
         self
     }
+    /// <p>The image vulnerability counts, sorted by severity.</p>
+    pub fn get_finding_severity_counts(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::FindingSeverity, i32>>
+    {
+        &self.finding_severity_counts
+    }
     /// Appends an item to `findings`.
     ///
     /// To override the contents of this collection use [`set_findings`](Self::set_findings).
@@ -139,6 +158,12 @@ impl ImageScanFindingsBuilder {
         self.findings = input;
         self
     }
+    /// <p>The findings from the image scan.</p>
+    pub fn get_findings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageScanFinding>> {
+        &self.findings
+    }
     /// Appends an item to `enhanced_findings`.
     ///
     /// To override the contents of this collection use [`set_enhanced_findings`](Self::set_enhanced_findings).
@@ -157,6 +182,12 @@ impl ImageScanFindingsBuilder {
     ) -> Self {
         self.enhanced_findings = input;
         self
+    }
+    /// <p>Details about the enhanced scan findings from Amazon Inspector.</p>
+    pub fn get_enhanced_findings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnhancedImageScanFinding>> {
+        &self.enhanced_findings
     }
     /// Consumes the builder and constructs a [`ImageScanFindings`](crate::types::ImageScanFindings).
     pub fn build(self) -> crate::types::ImageScanFindings {

@@ -45,6 +45,12 @@ impl CreateMembersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateMembers as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_members::builders::CreateMembersInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl CreateMembersFluentBuilder {
         self.inner = self.inner.set_graph_arn(input);
         self
     }
+    /// <p>The ARN of the behavior graph.</p>
+    pub fn get_graph_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_graph_arn()
+    }
     /// <p>Customized message text to include in the invitation email message to the invited member accounts.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.message(input.into());
@@ -136,6 +146,10 @@ impl CreateMembersFluentBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_message(input);
         self
+    }
+    /// <p>Customized message text to include in the invitation email message to the invited member accounts.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_message()
     }
     /// <p>if set to <code>true</code>, then the invited accounts do not receive email notifications. By default, this is set to <code>false</code>, and the invited accounts receive email notifications.</p>
     /// <p>Organization accounts in the organization behavior graph do not receive email notifications.</p>
@@ -148,6 +162,11 @@ impl CreateMembersFluentBuilder {
     pub fn set_disable_email_notification(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_disable_email_notification(input);
         self
+    }
+    /// <p>if set to <code>true</code>, then the invited accounts do not receive email notifications. By default, this is set to <code>false</code>, and the invited accounts receive email notifications.</p>
+    /// <p>Organization accounts in the organization behavior graph do not receive email notifications.</p>
+    pub fn get_disable_email_notification(&self) -> &::std::option::Option<bool> {
+        self.inner.get_disable_email_notification()
     }
     /// Appends an item to `Accounts`.
     ///
@@ -165,5 +184,9 @@ impl CreateMembersFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_accounts(input);
         self
+    }
+    /// <p>The list of Amazon Web Services accounts to invite or to enable. You can invite or enable up to 50 accounts at a time. For each invited account, the account list contains the account identifier and the Amazon Web Services account root user email address. For organization accounts in the organization behavior graph, the email address is not required.</p>
+    pub fn get_accounts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Account>> {
+        self.inner.get_accounts()
     }
 }

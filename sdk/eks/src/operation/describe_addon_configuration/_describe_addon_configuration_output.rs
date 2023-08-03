@@ -62,6 +62,10 @@ impl DescribeAddonConfigurationOutputBuilder {
         self.addon_name = input;
         self
     }
+    /// <p>The name of the add-on.</p>
+    pub fn get_addon_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.addon_name
+    }
     /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
     pub fn addon_version(
         mut self,
@@ -78,6 +82,10 @@ impl DescribeAddonConfigurationOutputBuilder {
         self.addon_version = input;
         self
     }
+    /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
+    pub fn get_addon_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.addon_version
+    }
     /// <p>A JSON schema that's used to validate the configuration values that you provide when an addon is created or updated.</p>
     pub fn configuration_schema(
         mut self,
@@ -93,6 +101,10 @@ impl DescribeAddonConfigurationOutputBuilder {
     ) -> Self {
         self.configuration_schema = input;
         self
+    }
+    /// <p>A JSON schema that's used to validate the configuration values that you provide when an addon is created or updated.</p>
+    pub fn get_configuration_schema(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_schema
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

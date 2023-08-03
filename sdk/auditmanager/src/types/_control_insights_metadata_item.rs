@@ -65,6 +65,10 @@ impl ControlInsightsMetadataItemBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the control. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The unique identifier for the control. </p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl ControlInsightsMetadataItemBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The unique identifier for the control. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>A breakdown of the compliance check status for the evidence that’s associated with the control. </p>
     pub fn evidence_insights(mut self, input: crate::types::EvidenceInsights) -> Self {
@@ -88,6 +96,10 @@ impl ControlInsightsMetadataItemBuilder {
         self.evidence_insights = input;
         self
     }
+    /// <p>A breakdown of the compliance check status for the evidence that’s associated with the control. </p>
+    pub fn get_evidence_insights(&self) -> &::std::option::Option<crate::types::EvidenceInsights> {
+        &self.evidence_insights
+    }
     /// <p>The time when the control insights were last updated. </p>
     pub fn last_updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated = ::std::option::Option::Some(input);
@@ -100,6 +112,10 @@ impl ControlInsightsMetadataItemBuilder {
     ) -> Self {
         self.last_updated = input;
         self
+    }
+    /// <p>The time when the control insights were last updated. </p>
+    pub fn get_last_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated
     }
     /// Consumes the builder and constructs a [`ControlInsightsMetadataItem`](crate::types::ControlInsightsMetadataItem).
     pub fn build(self) -> crate::types::ControlInsightsMetadataItem {

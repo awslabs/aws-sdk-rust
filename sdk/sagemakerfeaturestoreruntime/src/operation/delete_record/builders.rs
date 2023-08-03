@@ -41,6 +41,10 @@ impl DeleteRecordFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteRecord as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_record::builders::DeleteRecordInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +133,10 @@ impl DeleteRecordFluentBuilder {
         self.inner = self.inner.set_feature_group_name(input);
         self
     }
+    /// <p>The name or Amazon Resource Name (ARN) of the feature group to delete the record from. </p>
+    pub fn get_feature_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_feature_group_name()
+    }
     /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in string format. </p>
     pub fn record_identifier_value_as_string(
         mut self,
@@ -145,6 +153,12 @@ impl DeleteRecordFluentBuilder {
         self.inner = self.inner.set_record_identifier_value_as_string(input);
         self
     }
+    /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in string format. </p>
+    pub fn get_record_identifier_value_as_string(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_record_identifier_value_as_string()
+    }
     /// <p>Timestamp indicating when the deletion event occurred. <code>EventTime</code> can be used to query data at a certain point in time.</p>
     pub fn event_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_time(input.into());
@@ -154,6 +168,10 @@ impl DeleteRecordFluentBuilder {
     pub fn set_event_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_time(input);
         self
+    }
+    /// <p>Timestamp indicating when the deletion event occurred. <code>EventTime</code> can be used to query data at a certain point in time.</p>
+    pub fn get_event_time(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_time()
     }
     /// Appends an item to `TargetStores`.
     ///
@@ -172,6 +190,12 @@ impl DeleteRecordFluentBuilder {
         self.inner = self.inner.set_target_stores(input);
         self
     }
+    /// <p>A list of stores from which you're deleting the record. By default, Feature Store deletes the record from all of the stores that you're using for the <code>FeatureGroup</code>.</p>
+    pub fn get_target_stores(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetStore>> {
+        self.inner.get_target_stores()
+    }
     /// <p>The name of the deletion mode for deleting the record. By default, the deletion mode is set to <code>SoftDelete</code>.</p>
     pub fn deletion_mode(mut self, input: crate::types::DeletionMode) -> Self {
         self.inner = self.inner.deletion_mode(input);
@@ -184,5 +208,9 @@ impl DeleteRecordFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_deletion_mode(input);
         self
+    }
+    /// <p>The name of the deletion mode for deleting the record. By default, the deletion mode is set to <code>SoftDelete</code>.</p>
+    pub fn get_deletion_mode(&self) -> &::std::option::Option<crate::types::DeletionMode> {
+        self.inner.get_deletion_mode()
     }
 }

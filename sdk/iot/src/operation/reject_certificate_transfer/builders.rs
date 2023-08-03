@@ -39,6 +39,10 @@ impl RejectCertificateTransferFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RejectCertificateTransfer as a reference.
+    pub fn as_input(&self) -> &crate::operation::reject_certificate_transfer::builders::RejectCertificateTransferInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +139,10 @@ impl RejectCertificateTransferFluentBuilder {
         self.inner = self.inner.set_certificate_id(input);
         self
     }
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
+    pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate_id()
+    }
     /// <p>The reason the certificate transfer was rejected.</p>
     pub fn reject_reason(
         mut self,
@@ -150,5 +158,9 @@ impl RejectCertificateTransferFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_reject_reason(input);
         self
+    }
+    /// <p>The reason the certificate transfer was rejected.</p>
+    pub fn get_reject_reason(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reject_reason()
     }
 }

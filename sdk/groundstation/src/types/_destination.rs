@@ -67,6 +67,10 @@ impl DestinationBuilder {
         self.config_type = input;
         self
     }
+    /// <p>Type of a <code>Config</code>.</p>
+    pub fn get_config_type(&self) -> &::std::option::Option<crate::types::ConfigCapabilityType> {
+        &self.config_type
+    }
     /// <p>UUID of a <code>Config</code>.</p>
     pub fn config_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_id = ::std::option::Option::Some(input.into());
@@ -76,6 +80,10 @@ impl DestinationBuilder {
     pub fn set_config_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.config_id = input;
         self
+    }
+    /// <p>UUID of a <code>Config</code>.</p>
+    pub fn get_config_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.config_id
     }
     /// <p>Additional details for a <code>Config</code>, if type is dataflow endpoint or antenna demod decode.</p>
     pub fn config_details(mut self, input: crate::types::ConfigDetails) -> Self {
@@ -89,6 +97,10 @@ impl DestinationBuilder {
     ) -> Self {
         self.config_details = input;
         self
+    }
+    /// <p>Additional details for a <code>Config</code>, if type is dataflow endpoint or antenna demod decode.</p>
+    pub fn get_config_details(&self) -> &::std::option::Option<crate::types::ConfigDetails> {
+        &self.config_details
     }
     /// <p>Region of a dataflow destination.</p>
     pub fn dataflow_destination_region(
@@ -105,6 +117,10 @@ impl DestinationBuilder {
     ) -> Self {
         self.dataflow_destination_region = input;
         self
+    }
+    /// <p>Region of a dataflow destination.</p>
+    pub fn get_dataflow_destination_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataflow_destination_region
     }
     /// Consumes the builder and constructs a [`Destination`](crate::types::Destination).
     pub fn build(self) -> crate::types::Destination {

@@ -71,6 +71,10 @@ impl ChangeProgressStatusBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The time at which the configuration change is made on the pipeline.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The overall status of the pipeline configuration change.</p>
     pub fn status(mut self, input: crate::types::ChangeProgressStatuses) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -84,6 +88,10 @@ impl ChangeProgressStatusBuilder {
         self.status = input;
         self
     }
+    /// <p>The overall status of the pipeline configuration change.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ChangeProgressStatuses> {
+        &self.status
+    }
     /// <p>The total number of stages required for the pipeline configuration change.</p>
     pub fn total_number_of_stages(mut self, input: i32) -> Self {
         self.total_number_of_stages = ::std::option::Option::Some(input);
@@ -93,6 +101,10 @@ impl ChangeProgressStatusBuilder {
     pub fn set_total_number_of_stages(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_number_of_stages = input;
         self
+    }
+    /// <p>The total number of stages required for the pipeline configuration change.</p>
+    pub fn get_total_number_of_stages(&self) -> &::std::option::Option<i32> {
+        &self.total_number_of_stages
     }
     /// Appends an item to `change_progress_stages`.
     ///
@@ -112,6 +124,12 @@ impl ChangeProgressStatusBuilder {
     ) -> Self {
         self.change_progress_stages = input;
         self
+    }
+    /// <p>Information about the stages that the pipeline is going through to perform the configuration change.</p>
+    pub fn get_change_progress_stages(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangeProgressStage>> {
+        &self.change_progress_stages
     }
     /// Consumes the builder and constructs a [`ChangeProgressStatus`](crate::types::ChangeProgressStatus).
     pub fn build(self) -> crate::types::ChangeProgressStatus {

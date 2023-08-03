@@ -40,6 +40,10 @@ impl OsBuilder {
         self.full_string = input;
         self
     }
+    /// <p>The long name of the Operating System.</p>
+    pub fn get_full_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.full_string
+    }
     /// Consumes the builder and constructs a [`Os`](crate::types::Os).
     pub fn build(self) -> crate::types::Os {
         crate::types::Os {

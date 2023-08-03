@@ -68,6 +68,10 @@ impl PutObjectOutputBuilder {
         self.content_sha256 = input;
         self
     }
+    /// <p>The SHA256 digest of the object that is persisted.</p>
+    pub fn get_content_sha256(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_sha256
+    }
     /// <p>Unique identifier of the object in the container.</p>
     pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.e_tag = ::std::option::Option::Some(input.into());
@@ -77,6 +81,10 @@ impl PutObjectOutputBuilder {
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.e_tag = input;
         self
+    }
+    /// <p>Unique identifier of the object in the container.</p>
+    pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.e_tag
     }
     /// <p>The storage class where the object was persisted. The class should be “Temporal”.</p>
     pub fn storage_class(mut self, input: crate::types::StorageClass) -> Self {
@@ -90,6 +98,10 @@ impl PutObjectOutputBuilder {
     ) -> Self {
         self.storage_class = input;
         self
+    }
+    /// <p>The storage class where the object was persisted. The class should be “Temporal”.</p>
+    pub fn get_storage_class(&self) -> &::std::option::Option<crate::types::StorageClass> {
+        &self.storage_class
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

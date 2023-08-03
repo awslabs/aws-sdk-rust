@@ -49,6 +49,12 @@ impl StopWorkspacesInputBuilder {
         self.stop_workspace_requests = input;
         self
     }
+    /// <p>The WorkSpaces to stop. You can specify up to 25 WorkSpaces.</p>
+    pub fn get_stop_workspace_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StopRequest>> {
+        &self.stop_workspace_requests
+    }
     /// Consumes the builder and constructs a [`StopWorkspacesInput`](crate::operation::stop_workspaces::StopWorkspacesInput).
     pub fn build(
         self,

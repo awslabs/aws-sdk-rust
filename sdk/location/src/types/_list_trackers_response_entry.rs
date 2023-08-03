@@ -90,6 +90,10 @@ impl ListTrackersResponseEntryBuilder {
         self.tracker_name = input;
         self
     }
+    /// <p>The name of the tracker resource.</p>
+    pub fn get_tracker_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tracker_name
+    }
     /// <p>The description for the tracker resource.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -99,6 +103,10 @@ impl ListTrackersResponseEntryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description for the tracker resource.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
     #[deprecated(
@@ -121,6 +129,14 @@ impl ListTrackersResponseEntryBuilder {
         self.pricing_plan = input;
         self
     }
+    /// <p>Always returns <code>RequestBasedUsage</code>.</p>
+    #[deprecated(
+        note = "Deprecated. Always returns RequestBasedUsage.",
+        since = "2022-02-01"
+    )]
+    pub fn get_pricing_plan(&self) -> &::std::option::Option<crate::types::PricingPlan> {
+        &self.pricing_plan
+    }
     /// <p>No longer used. Always returns an empty string.</p>
     #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
     pub fn pricing_plan_data_source(
@@ -139,6 +155,11 @@ impl ListTrackersResponseEntryBuilder {
         self.pricing_plan_data_source = input;
         self
     }
+    /// <p>No longer used. Always returns an empty string.</p>
+    #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
+    pub fn get_pricing_plan_data_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pricing_plan_data_source
+    }
     /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
@@ -152,6 +173,10 @@ impl ListTrackersResponseEntryBuilder {
         self.create_time = input;
         self
     }
+    /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
+    }
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
@@ -164,6 +189,10 @@ impl ListTrackersResponseEntryBuilder {
     ) -> Self {
         self.update_time = input;
         self
+    }
+    /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_time
     }
     /// Consumes the builder and constructs a [`ListTrackersResponseEntry`](crate::types::ListTrackersResponseEntry).
     pub fn build(self) -> crate::types::ListTrackersResponseEntry {

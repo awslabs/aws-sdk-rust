@@ -48,6 +48,10 @@ impl AutoMlOutputDataConfigBuilder {
         self.kms_key_id = input;
         self
     }
+    /// <p>The Key Management Service (KMS) encryption key ID.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// <p>The Amazon S3 output path. Must be 128 characters or less.</p>
     pub fn s3_output_path(
         mut self,
@@ -63,6 +67,10 @@ impl AutoMlOutputDataConfigBuilder {
     ) -> Self {
         self.s3_output_path = input;
         self
+    }
+    /// <p>The Amazon S3 output path. Must be 128 characters or less.</p>
+    pub fn get_s3_output_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_output_path
     }
     /// Consumes the builder and constructs a [`AutoMlOutputDataConfig`](crate::types::AutoMlOutputDataConfig).
     pub fn build(self) -> crate::types::AutoMlOutputDataConfig {

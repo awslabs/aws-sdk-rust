@@ -76,6 +76,12 @@ impl MultiplexProgramSettingsBuilder {
         self.preferred_channel_pipeline = input;
         self
     }
+    /// Indicates which pipeline is preferred by the multiplex for program ingest.
+    pub fn get_preferred_channel_pipeline(
+        &self,
+    ) -> &::std::option::Option<crate::types::PreferredChannelPipeline> {
+        &self.preferred_channel_pipeline
+    }
     /// Unique program number.
     pub fn program_number(mut self, input: i32) -> Self {
         self.program_number = ::std::option::Option::Some(input);
@@ -85,6 +91,10 @@ impl MultiplexProgramSettingsBuilder {
     pub fn set_program_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.program_number = input;
         self
+    }
+    /// Unique program number.
+    pub fn get_program_number(&self) -> &::std::option::Option<i32> {
+        &self.program_number
     }
     /// Transport stream service descriptor configuration for the Multiplex program.
     pub fn service_descriptor(
@@ -102,6 +112,12 @@ impl MultiplexProgramSettingsBuilder {
         self.service_descriptor = input;
         self
     }
+    /// Transport stream service descriptor configuration for the Multiplex program.
+    pub fn get_service_descriptor(
+        &self,
+    ) -> &::std::option::Option<crate::types::MultiplexProgramServiceDescriptor> {
+        &self.service_descriptor
+    }
     /// Program video settings configuration.
     pub fn video_settings(mut self, input: crate::types::MultiplexVideoSettings) -> Self {
         self.video_settings = ::std::option::Option::Some(input);
@@ -114,6 +130,12 @@ impl MultiplexProgramSettingsBuilder {
     ) -> Self {
         self.video_settings = input;
         self
+    }
+    /// Program video settings configuration.
+    pub fn get_video_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::MultiplexVideoSettings> {
+        &self.video_settings
     }
     /// Consumes the builder and constructs a [`MultiplexProgramSettings`](crate::types::MultiplexProgramSettings).
     pub fn build(self) -> crate::types::MultiplexProgramSettings {

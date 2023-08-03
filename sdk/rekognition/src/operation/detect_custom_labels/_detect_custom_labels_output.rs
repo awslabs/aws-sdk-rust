@@ -56,6 +56,12 @@ impl DetectCustomLabelsOutputBuilder {
         self.custom_labels = input;
         self
     }
+    /// <p>An array of custom labels detected in the input image.</p>
+    pub fn get_custom_labels(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomLabel>> {
+        &self.custom_labels
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

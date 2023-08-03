@@ -51,6 +51,10 @@ impl InstanceNetworkingBuilder {
         self.monthly_transfer = input;
         self
     }
+    /// <p>The amount of data in GB allocated for monthly data transfers.</p>
+    pub fn get_monthly_transfer(&self) -> &::std::option::Option<crate::types::MonthlyTransfer> {
+        &self.monthly_transfer
+    }
     /// Appends an item to `ports`.
     ///
     /// To override the contents of this collection use [`set_ports`](Self::set_ports).
@@ -69,6 +73,12 @@ impl InstanceNetworkingBuilder {
     ) -> Self {
         self.ports = input;
         self
+    }
+    /// <p>An array of key-value pairs containing information about the ports on the instance.</p>
+    pub fn get_ports(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstancePortInfo>> {
+        &self.ports
     }
     /// Consumes the builder and constructs a [`InstanceNetworking`](crate::types::InstanceNetworking).
     pub fn build(self) -> crate::types::InstanceNetworking {

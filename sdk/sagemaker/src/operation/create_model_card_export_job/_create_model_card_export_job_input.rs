@@ -71,6 +71,10 @@ impl CreateModelCardExportJobInputBuilder {
         self.model_card_name = input;
         self
     }
+    /// <p>The name of the model card to export.</p>
+    pub fn get_model_card_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_card_name
+    }
     /// <p>The version of the model card to export. If a version is not provided, then the latest version of the model card is exported.</p>
     pub fn model_card_version(mut self, input: i32) -> Self {
         self.model_card_version = ::std::option::Option::Some(input);
@@ -80,6 +84,10 @@ impl CreateModelCardExportJobInputBuilder {
     pub fn set_model_card_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.model_card_version = input;
         self
+    }
+    /// <p>The version of the model card to export. If a version is not provided, then the latest version of the model card is exported.</p>
+    pub fn get_model_card_version(&self) -> &::std::option::Option<i32> {
+        &self.model_card_version
     }
     /// <p>The name of the model card export job.</p>
     pub fn model_card_export_job_name(
@@ -97,6 +105,10 @@ impl CreateModelCardExportJobInputBuilder {
         self.model_card_export_job_name = input;
         self
     }
+    /// <p>The name of the model card export job.</p>
+    pub fn get_model_card_export_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_card_export_job_name
+    }
     /// <p>The model card output configuration that specifies the Amazon S3 path for exporting.</p>
     pub fn output_config(mut self, input: crate::types::ModelCardExportOutputConfig) -> Self {
         self.output_config = ::std::option::Option::Some(input);
@@ -109,6 +121,12 @@ impl CreateModelCardExportJobInputBuilder {
     ) -> Self {
         self.output_config = input;
         self
+    }
+    /// <p>The model card output configuration that specifies the Amazon S3 path for exporting.</p>
+    pub fn get_output_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ModelCardExportOutputConfig> {
+        &self.output_config
     }
     /// Consumes the builder and constructs a [`CreateModelCardExportJobInput`](crate::operation::create_model_card_export_job::CreateModelCardExportJobInput).
     pub fn build(

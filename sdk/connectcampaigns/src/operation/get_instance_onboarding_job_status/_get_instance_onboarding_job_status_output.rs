@@ -57,6 +57,12 @@ impl GetInstanceOnboardingJobStatusOutputBuilder {
         self.connect_instance_onboarding_job_status = input;
         self
     }
+    /// Instance onboarding job status object
+    pub fn get_connect_instance_onboarding_job_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceOnboardingJobStatus> {
+        &self.connect_instance_onboarding_job_status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

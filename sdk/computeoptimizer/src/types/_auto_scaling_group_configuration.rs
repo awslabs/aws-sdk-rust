@@ -64,6 +64,10 @@ impl AutoScalingGroupConfigurationBuilder {
         self.desired_capacity = input;
         self
     }
+    /// <p>The desired capacity, or number of instances, for the Auto Scaling group.</p>
+    pub fn get_desired_capacity(&self) -> &::std::option::Option<i32> {
+        &self.desired_capacity
+    }
     /// <p>The minimum size, or minimum number of instances, for the Auto Scaling group.</p>
     pub fn min_size(mut self, input: i32) -> Self {
         self.min_size = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl AutoScalingGroupConfigurationBuilder {
         self.min_size = input;
         self
     }
+    /// <p>The minimum size, or minimum number of instances, for the Auto Scaling group.</p>
+    pub fn get_min_size(&self) -> &::std::option::Option<i32> {
+        &self.min_size
+    }
     /// <p>The maximum size, or maximum number of instances, for the Auto Scaling group.</p>
     pub fn max_size(mut self, input: i32) -> Self {
         self.max_size = ::std::option::Option::Some(input);
@@ -83,6 +91,10 @@ impl AutoScalingGroupConfigurationBuilder {
     pub fn set_max_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_size = input;
         self
+    }
+    /// <p>The maximum size, or maximum number of instances, for the Auto Scaling group.</p>
+    pub fn get_max_size(&self) -> &::std::option::Option<i32> {
+        &self.max_size
     }
     /// <p>The instance type for the Auto Scaling group.</p>
     pub fn instance_type(
@@ -99,6 +111,10 @@ impl AutoScalingGroupConfigurationBuilder {
     ) -> Self {
         self.instance_type = input;
         self
+    }
+    /// <p>The instance type for the Auto Scaling group.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
     }
     /// Consumes the builder and constructs a [`AutoScalingGroupConfiguration`](crate::types::AutoScalingGroupConfiguration).
     pub fn build(self) -> crate::types::AutoScalingGroupConfiguration {

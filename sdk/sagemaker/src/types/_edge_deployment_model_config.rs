@@ -48,6 +48,10 @@ impl EdgeDeploymentModelConfigBuilder {
         self.model_handle = input;
         self
     }
+    /// <p>The name the device application uses to reference this model.</p>
+    pub fn get_model_handle(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_handle
+    }
     /// <p>The edge packaging job associated with this deployment.</p>
     pub fn edge_packaging_job_name(
         mut self,
@@ -63,6 +67,10 @@ impl EdgeDeploymentModelConfigBuilder {
     ) -> Self {
         self.edge_packaging_job_name = input;
         self
+    }
+    /// <p>The edge packaging job associated with this deployment.</p>
+    pub fn get_edge_packaging_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.edge_packaging_job_name
     }
     /// Consumes the builder and constructs a [`EdgeDeploymentModelConfig`](crate::types::EdgeDeploymentModelConfig).
     pub fn build(self) -> crate::types::EdgeDeploymentModelConfig {

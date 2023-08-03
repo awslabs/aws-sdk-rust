@@ -77,6 +77,10 @@ impl CommunicationBuilder {
         self.case_id = input;
         self
     }
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
+    pub fn get_case_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.case_id
+    }
     /// <p>The text of the communication between the customer and Amazon Web Services Support.</p>
     pub fn body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.body = ::std::option::Option::Some(input.into());
@@ -86,6 +90,10 @@ impl CommunicationBuilder {
     pub fn set_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.body = input;
         self
+    }
+    /// <p>The text of the communication between the customer and Amazon Web Services Support.</p>
+    pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.body
     }
     /// <p>The identity of the account that submitted, or responded to, the support case. Customer entries include the IAM role as well as the email address (for example, "AdminRole (Role) <janedoe@example.com>
     /// ). Entries from the Amazon Web Services Support team display "Amazon Web Services," and don't show an email address.
@@ -101,6 +109,12 @@ impl CommunicationBuilder {
         self.submitted_by = input;
         self
     }
+    /// <p>The identity of the account that submitted, or responded to, the support case. Customer entries include the IAM role as well as the email address (for example, "AdminRole (Role) <janedoe@example.com>
+    /// ). Entries from the Amazon Web Services Support team display "Amazon Web Services," and don't show an email address.
+    /// </janedoe@example.com></p>
+    pub fn get_submitted_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.submitted_by
+    }
     /// <p>The time the communication was created.</p>
     pub fn time_created(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time_created = ::std::option::Option::Some(input.into());
@@ -110,6 +124,10 @@ impl CommunicationBuilder {
     pub fn set_time_created(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.time_created = input;
         self
+    }
+    /// <p>The time the communication was created.</p>
+    pub fn get_time_created(&self) -> &::std::option::Option<::std::string::String> {
+        &self.time_created
     }
     /// Appends an item to `attachment_set`.
     ///
@@ -129,6 +147,12 @@ impl CommunicationBuilder {
     ) -> Self {
         self.attachment_set = input;
         self
+    }
+    /// <p>Information about the attachments to the case communication.</p>
+    pub fn get_attachment_set(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttachmentDetails>> {
+        &self.attachment_set
     }
     /// Consumes the builder and constructs a [`Communication`](crate::types::Communication).
     pub fn build(self) -> crate::types::Communication {

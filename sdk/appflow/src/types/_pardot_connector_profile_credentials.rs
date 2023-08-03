@@ -72,6 +72,10 @@ impl PardotConnectorProfileCredentialsBuilder {
         self.access_token = input;
         self
     }
+    /// <p>The credentials used to access protected Salesforce Pardot resources.</p>
+    pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_token
+    }
     /// <p>The credentials used to acquire new access tokens.</p>
     pub fn refresh_token(
         mut self,
@@ -88,6 +92,10 @@ impl PardotConnectorProfileCredentialsBuilder {
         self.refresh_token = input;
         self
     }
+    /// <p>The credentials used to acquire new access tokens.</p>
+    pub fn get_refresh_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.refresh_token
+    }
     /// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack. </p>
     pub fn o_auth_request(mut self, input: crate::types::ConnectorOAuthRequest) -> Self {
         self.o_auth_request = ::std::option::Option::Some(input);
@@ -100,6 +108,12 @@ impl PardotConnectorProfileCredentialsBuilder {
     ) -> Self {
         self.o_auth_request = input;
         self
+    }
+    /// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack. </p>
+    pub fn get_o_auth_request(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConnectorOAuthRequest> {
+        &self.o_auth_request
     }
     /// <p>The secret manager ARN, which contains the client ID and client secret of the connected app.</p>
     pub fn client_credentials_arn(
@@ -116,6 +130,10 @@ impl PardotConnectorProfileCredentialsBuilder {
     ) -> Self {
         self.client_credentials_arn = input;
         self
+    }
+    /// <p>The secret manager ARN, which contains the client ID and client secret of the connected app.</p>
+    pub fn get_client_credentials_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_credentials_arn
     }
     /// Consumes the builder and constructs a [`PardotConnectorProfileCredentials`](crate::types::PardotConnectorProfileCredentials).
     pub fn build(self) -> crate::types::PardotConnectorProfileCredentials {

@@ -39,6 +39,10 @@ impl DeleteContextInputBuilder {
         self.context_name = input;
         self
     }
+    /// <p>The name of the context to delete.</p>
+    pub fn get_context_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.context_name
+    }
     /// Consumes the builder and constructs a [`DeleteContextInput`](crate::operation::delete_context::DeleteContextInput).
     pub fn build(
         self,

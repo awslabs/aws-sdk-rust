@@ -38,6 +38,12 @@ impl DeleteComponentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteComponent as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_component::builders::DeleteComponentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,5 +133,9 @@ impl DeleteComponentFluentBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
     }
 }

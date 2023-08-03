@@ -55,6 +55,12 @@ impl DeleteInstanceConnectEndpointOutputBuilder {
         self.instance_connect_endpoint = input;
         self
     }
+    /// <p>Information about the EC2 Instance Connect Endpoint.</p>
+    pub fn get_instance_connect_endpoint(
+        &self,
+    ) -> &::std::option::Option<crate::types::Ec2InstanceConnectEndpoint> {
+        &self.instance_connect_endpoint
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

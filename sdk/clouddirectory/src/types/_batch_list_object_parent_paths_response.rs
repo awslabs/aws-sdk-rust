@@ -64,6 +64,12 @@ impl BatchListObjectParentPathsResponseBuilder {
         self.path_to_object_identifiers_list = input;
         self
     }
+    /// <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated with the directory.</p>
+    pub fn get_path_to_object_identifiers_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PathToObjectIdentifiers>> {
+        &self.path_to_object_identifiers_list
+    }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -73,6 +79,10 @@ impl BatchListObjectParentPathsResponseBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`BatchListObjectParentPathsResponse`](crate::types::BatchListObjectParentPathsResponse).
     pub fn build(self) -> crate::types::BatchListObjectParentPathsResponse {

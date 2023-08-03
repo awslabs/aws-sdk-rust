@@ -106,6 +106,24 @@ impl GetSupportedResourceTypesOutputBuilder {
         self.resource_types = input;
         self
     }
+    /// <p>Contains a string with the supported Amazon Web Services resource types:</p>
+    /// <ul>
+    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
+    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
+    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
+    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+    /// <li> <p> <code>FSX</code> for Amazon FSx</p> </li>
+    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+    /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
+    /// <li> <p> <code>DocDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
+    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
+    /// </ul>
+    pub fn get_resource_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_types
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

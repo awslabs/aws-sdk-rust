@@ -109,6 +109,10 @@ impl CreateBillingGroupInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p> The billing group name. The names must be unique. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -118,6 +122,10 @@ impl CreateBillingGroupInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p> The billing group name. The names must be unique. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p> The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a consolidated billing family. </p>
     pub fn account_grouping(mut self, input: crate::types::AccountGrouping) -> Self {
@@ -132,6 +140,10 @@ impl CreateBillingGroupInputBuilder {
         self.account_grouping = input;
         self
     }
+    /// <p> The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a consolidated billing family. </p>
+    pub fn get_account_grouping(&self) -> &::std::option::Option<crate::types::AccountGrouping> {
+        &self.account_grouping
+    }
     /// <p> The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group. </p>
     pub fn computation_preference(mut self, input: crate::types::ComputationPreference) -> Self {
         self.computation_preference = ::std::option::Option::Some(input);
@@ -144,6 +156,12 @@ impl CreateBillingGroupInputBuilder {
     ) -> Self {
         self.computation_preference = input;
         self
+    }
+    /// <p> The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group. </p>
+    pub fn get_computation_preference(
+        &self,
+    ) -> &::std::option::Option<crate::types::ComputationPreference> {
+        &self.computation_preference
     }
     /// <p> The account ID that serves as the main account in a billing group. </p>
     pub fn primary_account_id(
@@ -161,6 +179,10 @@ impl CreateBillingGroupInputBuilder {
         self.primary_account_id = input;
         self
     }
+    /// <p> The account ID that serves as the main account in a billing group. </p>
+    pub fn get_primary_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.primary_account_id
+    }
     /// <p>The description of the billing group. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -170,6 +192,10 @@ impl CreateBillingGroupInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the billing group. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -195,6 +221,14 @@ impl CreateBillingGroupInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p> A map that contains tag keys and tag values that are attached to a billing group. This feature isn't available during the beta. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateBillingGroupInput`](crate::operation::create_billing_group::CreateBillingGroupInput).
     pub fn build(

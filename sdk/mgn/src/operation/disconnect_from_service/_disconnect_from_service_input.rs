@@ -55,6 +55,10 @@ impl DisconnectFromServiceInputBuilder {
         self.source_server_id = input;
         self
     }
+    /// <p>Request to disconnect Source Server from service by Server ID.</p>
+    pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_server_id
+    }
     /// <p>Request to disconnect Source Server from service by Account ID.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl DisconnectFromServiceInputBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>Request to disconnect Source Server from service by Account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// Consumes the builder and constructs a [`DisconnectFromServiceInput`](crate::operation::disconnect_from_service::DisconnectFromServiceInput).
     pub fn build(

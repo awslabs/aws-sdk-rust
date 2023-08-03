@@ -36,6 +36,13 @@ impl DescribeGlobalNetworksFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeGlobalNetworks as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_global_networks::builders::DescribeGlobalNetworksInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -148,6 +155,12 @@ impl DescribeGlobalNetworksFluentBuilder {
         self.inner = self.inner.set_global_network_ids(input);
         self
     }
+    /// <p>The IDs of one or more global networks. The maximum is 10.</p>
+    pub fn get_global_network_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_global_network_ids()
+    }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -158,6 +171,10 @@ impl DescribeGlobalNetworksFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -167,5 +184,9 @@ impl DescribeGlobalNetworksFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

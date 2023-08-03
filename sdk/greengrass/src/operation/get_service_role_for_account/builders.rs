@@ -36,6 +36,10 @@ impl GetServiceRoleForAccountFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetServiceRoleForAccount as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_service_role_for_account::builders::GetServiceRoleForAccountInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(

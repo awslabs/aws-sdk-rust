@@ -79,6 +79,10 @@ impl UpdateBotLocaleInputBuilder {
         self.bot_id = input;
         self
     }
+    /// <p>The unique identifier of the bot that contains the locale.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
     /// <p>The version of the bot that contains the locale to be updated. The version can only be the <code>DRAFT</code> version.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
@@ -88,6 +92,10 @@ impl UpdateBotLocaleInputBuilder {
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_version = input;
         self
+    }
+    /// <p>The version of the bot that contains the locale to be updated. The version can only be the <code>DRAFT</code> version.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_version
     }
     /// <p>The identifier of the language and locale to update. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -99,6 +107,10 @@ impl UpdateBotLocaleInputBuilder {
         self.locale_id = input;
         self
     }
+    /// <p>The identifier of the language and locale to update. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale_id
+    }
     /// <p>The new description of the locale.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -108,6 +120,10 @@ impl UpdateBotLocaleInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The new description of the locale.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The new confidence threshold where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> intents in the list of possible intents for an utterance.</p>
     pub fn nlu_intent_confidence_threshold(mut self, input: f64) -> Self {
@@ -122,6 +138,10 @@ impl UpdateBotLocaleInputBuilder {
         self.nlu_intent_confidence_threshold = input;
         self
     }
+    /// <p>The new confidence threshold where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> intents in the list of possible intents for an utterance.</p>
+    pub fn get_nlu_intent_confidence_threshold(&self) -> &::std::option::Option<f64> {
+        &self.nlu_intent_confidence_threshold
+    }
     /// <p>The new Amazon Polly voice Amazon Lex should use for voice interaction with the user.</p>
     pub fn voice_settings(mut self, input: crate::types::VoiceSettings) -> Self {
         self.voice_settings = ::std::option::Option::Some(input);
@@ -134,6 +154,10 @@ impl UpdateBotLocaleInputBuilder {
     ) -> Self {
         self.voice_settings = input;
         self
+    }
+    /// <p>The new Amazon Polly voice Amazon Lex should use for voice interaction with the user.</p>
+    pub fn get_voice_settings(&self) -> &::std::option::Option<crate::types::VoiceSettings> {
+        &self.voice_settings
     }
     /// Consumes the builder and constructs a [`UpdateBotLocaleInput`](crate::operation::update_bot_locale::UpdateBotLocaleInput).
     pub fn build(

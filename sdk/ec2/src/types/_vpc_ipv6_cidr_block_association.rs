@@ -78,6 +78,10 @@ impl VpcIpv6CidrBlockAssociationBuilder {
         self.association_id = input;
         self
     }
+    /// <p>The association ID for the IPv6 CIDR block.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_id
+    }
     /// <p>The IPv6 CIDR block.</p>
     pub fn ipv6_cidr_block(
         mut self,
@@ -94,6 +98,10 @@ impl VpcIpv6CidrBlockAssociationBuilder {
         self.ipv6_cidr_block = input;
         self
     }
+    /// <p>The IPv6 CIDR block.</p>
+    pub fn get_ipv6_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv6_cidr_block
+    }
     /// <p>Information about the state of the CIDR block.</p>
     pub fn ipv6_cidr_block_state(mut self, input: crate::types::VpcCidrBlockState) -> Self {
         self.ipv6_cidr_block_state = ::std::option::Option::Some(input);
@@ -106,6 +114,12 @@ impl VpcIpv6CidrBlockAssociationBuilder {
     ) -> Self {
         self.ipv6_cidr_block_state = input;
         self
+    }
+    /// <p>Information about the state of the CIDR block.</p>
+    pub fn get_ipv6_cidr_block_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::VpcCidrBlockState> {
+        &self.ipv6_cidr_block_state
     }
     /// <p>The name of the unique set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises IP addresses, for example, <code>us-east-1-wl1-bos-wlz-1</code>.</p>
     pub fn network_border_group(
@@ -123,6 +137,10 @@ impl VpcIpv6CidrBlockAssociationBuilder {
         self.network_border_group = input;
         self
     }
+    /// <p>The name of the unique set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises IP addresses, for example, <code>us-east-1-wl1-bos-wlz-1</code>.</p>
+    pub fn get_network_border_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_border_group
+    }
     /// <p>The ID of the IPv6 address pool from which the IPv6 CIDR block is allocated.</p>
     pub fn ipv6_pool(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipv6_pool = ::std::option::Option::Some(input.into());
@@ -132,6 +150,10 @@ impl VpcIpv6CidrBlockAssociationBuilder {
     pub fn set_ipv6_pool(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipv6_pool = input;
         self
+    }
+    /// <p>The ID of the IPv6 address pool from which the IPv6 CIDR block is allocated.</p>
+    pub fn get_ipv6_pool(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv6_pool
     }
     /// Consumes the builder and constructs a [`VpcIpv6CidrBlockAssociation`](crate::types::VpcIpv6CidrBlockAssociation).
     pub fn build(self) -> crate::types::VpcIpv6CidrBlockAssociation {

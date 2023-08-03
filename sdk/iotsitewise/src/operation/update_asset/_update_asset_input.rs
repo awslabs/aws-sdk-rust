@@ -63,6 +63,10 @@ impl UpdateAssetInputBuilder {
         self.asset_id = input;
         self
     }
+    /// <p>The ID of the asset to update.</p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_id
+    }
     /// <p>A friendly name for the asset.</p>
     pub fn asset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_name = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl UpdateAssetInputBuilder {
         self.asset_name = input;
         self
     }
+    /// <p>A friendly name for the asset.</p>
+    pub fn get_asset_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_name
+    }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl UpdateAssetInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>A description for the asset.</p>
     pub fn asset_description(
@@ -98,6 +110,10 @@ impl UpdateAssetInputBuilder {
     ) -> Self {
         self.asset_description = input;
         self
+    }
+    /// <p>A description for the asset.</p>
+    pub fn get_asset_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_description
     }
     /// Consumes the builder and constructs a [`UpdateAssetInput`](crate::operation::update_asset::UpdateAssetInput).
     pub fn build(

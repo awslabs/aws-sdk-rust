@@ -65,6 +65,12 @@ impl ListClustersOutputBuilder {
         self.clusters = input;
         self
     }
+    /// <p>A list of Elastic DocumentDB cluster.</p>
+    pub fn get_clusters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterInList>> {
+        &self.clusters
+    }
     /// <p>The response will provide a nextToken if there is more data beyond the maxResults.</p>
     /// <p>If there is no more data in the responce, the nextToken will not be returned.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -76,6 +82,11 @@ impl ListClustersOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The response will provide a nextToken if there is more data beyond the maxResults.</p>
+    /// <p>If there is no more data in the responce, the nextToken will not be returned.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

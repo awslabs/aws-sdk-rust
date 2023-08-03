@@ -63,6 +63,10 @@ impl ListThingRegistrationTaskReportsInputBuilder {
         self.task_id = input;
         self
     }
+    /// <p>The id of the task.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
+    }
     /// <p>The type of task report.</p>
     pub fn report_type(mut self, input: crate::types::ReportType) -> Self {
         self.report_type = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl ListThingRegistrationTaskReportsInputBuilder {
         self.report_type = input;
         self
     }
+    /// <p>The type of task report.</p>
+    pub fn get_report_type(&self) -> &::std::option::Option<crate::types::ReportType> {
+        &self.report_type
+    }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -86,6 +94,10 @@ impl ListThingRegistrationTaskReportsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return per request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -95,6 +107,10 @@ impl ListThingRegistrationTaskReportsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return per request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListThingRegistrationTaskReportsInput`](crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsInput, ::aws_smithy_http::operation::error::BuildError>{

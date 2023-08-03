@@ -40,6 +40,10 @@ impl DeleteRunInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the run to delete.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`DeleteRunInput`](crate::operation::delete_run::DeleteRunInput).
     pub fn build(
         self,

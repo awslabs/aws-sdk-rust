@@ -109,6 +109,10 @@ impl CampaignSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of a campaign.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of a campaign.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -119,6 +123,10 @@ impl CampaignSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of a campaign.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the campaign.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -128,6 +136,10 @@ impl CampaignSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the campaign.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The ARN of the signal catalog associated with the campaign.</p>
     pub fn signal_catalog_arn(
@@ -145,6 +157,10 @@ impl CampaignSummaryBuilder {
         self.signal_catalog_arn = input;
         self
     }
+    /// <p>The ARN of the signal catalog associated with the campaign.</p>
+    pub fn get_signal_catalog_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signal_catalog_arn
+    }
     /// <p>The ARN of a vehicle or fleet to which the campaign is deployed.</p>
     pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_arn = ::std::option::Option::Some(input.into());
@@ -154,6 +170,10 @@ impl CampaignSummaryBuilder {
     pub fn set_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_arn = input;
         self
+    }
+    /// <p>The ARN of a vehicle or fleet to which the campaign is deployed.</p>
+    pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_arn
     }
     /// <p>The state of a campaign. The status can be one of the following:</p>
     /// <ul>
@@ -180,6 +200,16 @@ impl CampaignSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The state of a campaign. The status can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATING</code> - Amazon Web Services IoT FleetWise is processing your request to create the campaign.</p> </li>
+    /// <li> <p> <code>WAITING_FOR_APPROVAL</code> - After a campaign is created, it enters the <code>WAITING_FOR_APPROVAL</code> state. To allow Amazon Web Services IoT FleetWise to deploy the campaign to the target vehicle or fleet, use the API operation to approve the campaign. </p> </li>
+    /// <li> <p> <code>RUNNING</code> - The campaign is active. </p> </li>
+    /// <li> <p> <code>SUSPENDED</code> - The campaign is suspended. To resume the campaign, use the API operation. </p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CampaignStatus> {
+        &self.status
+    }
     /// <p>The time the campaign was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -193,6 +223,10 @@ impl CampaignSummaryBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time the campaign was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The last time the campaign was modified.</p>
     pub fn last_modification_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modification_time = ::std::option::Option::Some(input);
@@ -205,6 +239,12 @@ impl CampaignSummaryBuilder {
     ) -> Self {
         self.last_modification_time = input;
         self
+    }
+    /// <p>The last time the campaign was modified.</p>
+    pub fn get_last_modification_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modification_time
     }
     /// Consumes the builder and constructs a [`CampaignSummary`](crate::types::CampaignSummary).
     pub fn build(self) -> crate::types::CampaignSummary {

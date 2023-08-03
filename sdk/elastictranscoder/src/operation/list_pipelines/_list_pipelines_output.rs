@@ -64,6 +64,10 @@ impl ListPipelinesOutputBuilder {
         self.pipelines = input;
         self
     }
+    /// <p>An array of <code>Pipeline</code> objects.</p>
+    pub fn get_pipelines(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Pipeline>> {
+        &self.pipelines
+    }
     /// <p>A value that you use to access the second and subsequent pages of results, if any. When the pipelines fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
     pub fn next_page_token(
         mut self,
@@ -79,6 +83,10 @@ impl ListPipelinesOutputBuilder {
     ) -> Self {
         self.next_page_token = input;
         self
+    }
+    /// <p>A value that you use to access the second and subsequent pages of results, if any. When the pipelines fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
+    pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_page_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

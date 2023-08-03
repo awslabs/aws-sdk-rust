@@ -36,6 +36,10 @@ impl CreateLabelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateLabel as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_label::builders::CreateLabelInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,11 @@ impl CreateLabelFluentBuilder {
         self.inner = self.inner.set_label_group_name(input);
         self
     }
+    /// <p> The name of a group of labels. </p>
+    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+    pub fn get_label_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_label_group_name()
+    }
     /// <p> The start time of the labeled event. </p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
@@ -138,6 +147,10 @@ impl CreateLabelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
+    }
+    /// <p> The start time of the labeled event. </p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
     }
     /// <p> The end time of the labeled event. </p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -152,6 +165,10 @@ impl CreateLabelFluentBuilder {
         self.inner = self.inner.set_end_time(input);
         self
     }
+    /// <p> The end time of the labeled event. </p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time()
+    }
     /// <p> Indicates whether a labeled event represents an anomaly. </p>
     pub fn rating(mut self, input: crate::types::LabelRating) -> Self {
         self.inner = self.inner.rating(input);
@@ -161,6 +178,10 @@ impl CreateLabelFluentBuilder {
     pub fn set_rating(mut self, input: ::std::option::Option<crate::types::LabelRating>) -> Self {
         self.inner = self.inner.set_rating(input);
         self
+    }
+    /// <p> Indicates whether a labeled event represents an anomaly. </p>
+    pub fn get_rating(&self) -> &::std::option::Option<crate::types::LabelRating> {
+        self.inner.get_rating()
     }
     /// <p> Provides additional information about the label. The fault code must be defined in the FaultCodes attribute of the label group.</p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
@@ -174,6 +195,11 @@ impl CreateLabelFluentBuilder {
         self.inner = self.inner.set_fault_code(input);
         self
     }
+    /// <p> Provides additional information about the label. The fault code must be defined in the FaultCodes attribute of the label group.</p>
+    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+    pub fn get_fault_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fault_code()
+    }
     /// <p> Metadata providing additional information about the label. </p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
     pub fn notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -185,6 +211,11 @@ impl CreateLabelFluentBuilder {
     pub fn set_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_notes(input);
         self
+    }
+    /// <p> Metadata providing additional information about the label. </p>
+    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+    pub fn get_notes(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_notes()
     }
     /// <p> Indicates that a label pertains to a particular piece of equipment. </p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
@@ -198,6 +229,11 @@ impl CreateLabelFluentBuilder {
         self.inner = self.inner.set_equipment(input);
         self
     }
+    /// <p> Indicates that a label pertains to a particular piece of equipment. </p>
+    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+    pub fn get_equipment(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_equipment()
+    }
     /// <p> A unique identifier for the request to create a label. If you do not set the client request token, Lookout for Equipment generates one. </p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -207,5 +243,9 @@ impl CreateLabelFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p> A unique identifier for the request to create a label. If you do not set the client request token, Lookout for Equipment generates one. </p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

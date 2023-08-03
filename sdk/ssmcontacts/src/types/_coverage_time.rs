@@ -48,6 +48,10 @@ impl CoverageTimeBuilder {
         self.start = input;
         self
     }
+    /// <p>Information about when the on-call rotation shift begins.</p>
+    pub fn get_start(&self) -> &::std::option::Option<crate::types::HandOffTime> {
+        &self.start
+    }
     /// <p>Information about when the on-call rotation shift ends.</p>
     pub fn end(mut self, input: crate::types::HandOffTime) -> Self {
         self.end = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl CoverageTimeBuilder {
     pub fn set_end(mut self, input: ::std::option::Option<crate::types::HandOffTime>) -> Self {
         self.end = input;
         self
+    }
+    /// <p>Information about when the on-call rotation shift ends.</p>
+    pub fn get_end(&self) -> &::std::option::Option<crate::types::HandOffTime> {
+        &self.end
     }
     /// Consumes the builder and constructs a [`CoverageTime`](crate::types::CoverageTime).
     pub fn build(self) -> crate::types::CoverageTime {

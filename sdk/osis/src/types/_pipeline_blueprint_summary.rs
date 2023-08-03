@@ -46,6 +46,10 @@ impl PipelineBlueprintSummaryBuilder {
         self.blueprint_name = input;
         self
     }
+    /// <p>The name of the blueprint.</p>
+    pub fn get_blueprint_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.blueprint_name
+    }
     /// Consumes the builder and constructs a [`PipelineBlueprintSummary`](crate::types::PipelineBlueprintSummary).
     pub fn build(self) -> crate::types::PipelineBlueprintSummary {
         crate::types::PipelineBlueprintSummary {

@@ -51,6 +51,10 @@ impl DocumentClassificationConfigBuilder {
         self.mode = input;
         self
     }
+    /// <p>Classification mode indicates whether the documents are <code>MULTI_CLASS</code> or <code>MULTI_LABEL</code>.</p>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::DocumentClassifierMode> {
+        &self.mode
+    }
     /// Appends an item to `labels`.
     ///
     /// To override the contents of this collection use [`set_labels`](Self::set_labels).
@@ -69,6 +73,10 @@ impl DocumentClassificationConfigBuilder {
     ) -> Self {
         self.labels = input;
         self
+    }
+    /// <p>One or more labels to associate with the custom classifier.</p>
+    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.labels
     }
     /// Consumes the builder and constructs a [`DocumentClassificationConfig`](crate::types::DocumentClassificationConfig).
     pub fn build(self) -> crate::types::DocumentClassificationConfig {

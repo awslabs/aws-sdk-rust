@@ -49,6 +49,10 @@ impl DescribeFargateProfileInputBuilder {
         self.cluster_name = input;
         self
     }
+    /// <p>The name of the Amazon EKS cluster associated with the Fargate profile.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_name
+    }
     /// <p>The name of the Fargate profile to describe.</p>
     pub fn fargate_profile_name(
         mut self,
@@ -64,6 +68,10 @@ impl DescribeFargateProfileInputBuilder {
     ) -> Self {
         self.fargate_profile_name = input;
         self
+    }
+    /// <p>The name of the Fargate profile to describe.</p>
+    pub fn get_fargate_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fargate_profile_name
     }
     /// Consumes the builder and constructs a [`DescribeFargateProfileInput`](crate::operation::describe_fargate_profile::DescribeFargateProfileInput).
     pub fn build(

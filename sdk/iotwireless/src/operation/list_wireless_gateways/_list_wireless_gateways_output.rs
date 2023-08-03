@@ -59,6 +59,10 @@ impl ListWirelessGatewaysOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `wireless_gateway_list`.
     ///
     /// To override the contents of this collection use [`set_wireless_gateway_list`](Self::set_wireless_gateway_list).
@@ -77,6 +81,12 @@ impl ListWirelessGatewaysOutputBuilder {
     ) -> Self {
         self.wireless_gateway_list = input;
         self
+    }
+    /// <p>The ID of the wireless gateway.</p>
+    pub fn get_wireless_gateway_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WirelessGatewayStatistics>> {
+        &self.wireless_gateway_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

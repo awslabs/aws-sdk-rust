@@ -48,6 +48,10 @@ impl MetricDefinitionBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the metric.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A regular expression that searches the output of a training job and gets the value of the metric. For more information about using regular expressions to define metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">Defining metrics and environment variables</a>.</p>
     pub fn regex(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.regex = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl MetricDefinitionBuilder {
     pub fn set_regex(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.regex = input;
         self
+    }
+    /// <p>A regular expression that searches the output of a training job and gets the value of the metric. For more information about using regular expressions to define metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">Defining metrics and environment variables</a>.</p>
+    pub fn get_regex(&self) -> &::std::option::Option<::std::string::String> {
+        &self.regex
     }
     /// Consumes the builder and constructs a [`MetricDefinition`](crate::types::MetricDefinition).
     pub fn build(self) -> crate::types::MetricDefinition {

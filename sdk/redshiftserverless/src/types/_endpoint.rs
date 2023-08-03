@@ -56,6 +56,10 @@ impl EndpointBuilder {
         self.address = input;
         self
     }
+    /// <p>The DNS address of the VPC endpoint.</p>
+    pub fn get_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address
+    }
     /// <p>The port that Amazon Redshift Serverless listens on.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl EndpointBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
+    }
+    /// <p>The port that Amazon Redshift Serverless listens on.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// Appends an item to `vpc_endpoints`.
     ///
@@ -84,6 +92,12 @@ impl EndpointBuilder {
     ) -> Self {
         self.vpc_endpoints = input;
         self
+    }
+    /// <p>An array of <code>VpcEndpoint</code> objects.</p>
+    pub fn get_vpc_endpoints(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcEndpoint>> {
+        &self.vpc_endpoints
     }
     /// Consumes the builder and constructs a [`Endpoint`](crate::types::Endpoint).
     pub fn build(self) -> crate::types::Endpoint {

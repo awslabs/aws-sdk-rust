@@ -53,6 +53,10 @@ impl GetApiMappingInputBuilder {
         self.api_mapping_id = input;
         self
     }
+    /// <p>The API mapping identifier.</p>
+    pub fn get_api_mapping_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_mapping_id
+    }
     /// <p>The domain name.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl GetApiMappingInputBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
+    }
+    /// <p>The domain name.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// Consumes the builder and constructs a [`GetApiMappingInput`](crate::operation::get_api_mapping::GetApiMappingInput).
     pub fn build(

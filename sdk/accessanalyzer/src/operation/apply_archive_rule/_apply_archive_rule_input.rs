@@ -57,6 +57,10 @@ impl ApplyArchiveRuleInputBuilder {
         self.analyzer_arn = input;
         self
     }
+    /// <p>The Amazon resource name (ARN) of the analyzer.</p>
+    pub fn get_analyzer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.analyzer_arn
+    }
     /// <p>The name of the rule to apply.</p>
     pub fn rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_name = ::std::option::Option::Some(input.into());
@@ -67,6 +71,10 @@ impl ApplyArchiveRuleInputBuilder {
         self.rule_name = input;
         self
     }
+    /// <p>The name of the rule to apply.</p>
+    pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_name
+    }
     /// <p>A client token.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -76,6 +84,10 @@ impl ApplyArchiveRuleInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A client token.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`ApplyArchiveRuleInput`](crate::operation::apply_archive_rule::ApplyArchiveRuleInput).
     pub fn build(

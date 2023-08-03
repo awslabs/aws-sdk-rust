@@ -59,6 +59,10 @@ impl TestAlarmInputBuilder {
         self.alarm_name = input;
         self
     }
+    /// <p>The name of the alarm to test.</p>
+    pub fn get_alarm_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alarm_name
+    }
     /// <p>The alarm state to test.</p>
     /// <p>An alarm has the following possible states that can be tested:</p>
     /// <ul>
@@ -80,6 +84,16 @@ impl TestAlarmInputBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::AlarmState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The alarm state to test.</p>
+    /// <p>An alarm has the following possible states that can be tested:</p>
+    /// <ul>
+    /// <li> <p> <code>ALARM</code> - The metric is outside of the defined threshold.</p> </li>
+    /// <li> <p> <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state.</p> </li>
+    /// <li> <p> <code>OK</code> - The metric is within the defined threshold.</p> </li>
+    /// </ul>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::AlarmState> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`TestAlarmInput`](crate::operation::test_alarm::TestAlarmInput).
     pub fn build(

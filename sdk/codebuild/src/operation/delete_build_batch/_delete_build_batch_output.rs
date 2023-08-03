@@ -64,6 +64,10 @@ impl DeleteBuildBatchOutputBuilder {
         self.status_code = input;
         self
     }
+    /// <p>The status code.</p>
+    pub fn get_status_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_code
+    }
     /// Appends an item to `builds_deleted`.
     ///
     /// To override the contents of this collection use [`set_builds_deleted`](Self::set_builds_deleted).
@@ -86,6 +90,12 @@ impl DeleteBuildBatchOutputBuilder {
         self.builds_deleted = input;
         self
     }
+    /// <p>An array of strings that contain the identifiers of the builds that were deleted.</p>
+    pub fn get_builds_deleted(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.builds_deleted
+    }
     /// Appends an item to `builds_not_deleted`.
     ///
     /// To override the contents of this collection use [`set_builds_not_deleted`](Self::set_builds_not_deleted).
@@ -104,6 +114,12 @@ impl DeleteBuildBatchOutputBuilder {
     ) -> Self {
         self.builds_not_deleted = input;
         self
+    }
+    /// <p>An array of <code>BuildNotDeleted</code> objects that specify the builds that could not be deleted.</p>
+    pub fn get_builds_not_deleted(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BuildNotDeleted>> {
+        &self.builds_not_deleted
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

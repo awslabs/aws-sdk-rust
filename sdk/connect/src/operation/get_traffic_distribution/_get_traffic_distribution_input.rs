@@ -41,6 +41,10 @@ impl GetTrafficDistributionInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the traffic distribution group.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`GetTrafficDistributionInput`](crate::operation::get_traffic_distribution::GetTrafficDistributionInput).
     pub fn build(
         self,

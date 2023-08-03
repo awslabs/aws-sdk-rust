@@ -64,6 +64,10 @@ impl DirectSchemaChangePolicyBuilder {
         self.enable_update_catalog = input;
         self
     }
+    /// <p>Whether to use the specified update behavior when the crawler finds a changed schema.</p>
+    pub fn get_enable_update_catalog(&self) -> &::std::option::Option<bool> {
+        &self.enable_update_catalog
+    }
     /// <p>The update behavior when the crawler finds a changed schema.</p>
     pub fn update_behavior(mut self, input: crate::types::UpdateCatalogBehavior) -> Self {
         self.update_behavior = ::std::option::Option::Some(input);
@@ -77,6 +81,12 @@ impl DirectSchemaChangePolicyBuilder {
         self.update_behavior = input;
         self
     }
+    /// <p>The update behavior when the crawler finds a changed schema.</p>
+    pub fn get_update_behavior(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateCatalogBehavior> {
+        &self.update_behavior
+    }
     /// <p>Specifies the table in the database that the schema change policy applies to.</p>
     pub fn table(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table = ::std::option::Option::Some(input.into());
@@ -87,6 +97,10 @@ impl DirectSchemaChangePolicyBuilder {
         self.table = input;
         self
     }
+    /// <p>Specifies the table in the database that the schema change policy applies to.</p>
+    pub fn get_table(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table
+    }
     /// <p>Specifies the database that the schema change policy applies to.</p>
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
@@ -96,6 +110,10 @@ impl DirectSchemaChangePolicyBuilder {
     pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database = input;
         self
+    }
+    /// <p>Specifies the database that the schema change policy applies to.</p>
+    pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database
     }
     /// Consumes the builder and constructs a [`DirectSchemaChangePolicy`](crate::types::DirectSchemaChangePolicy).
     pub fn build(self) -> crate::types::DirectSchemaChangePolicy {

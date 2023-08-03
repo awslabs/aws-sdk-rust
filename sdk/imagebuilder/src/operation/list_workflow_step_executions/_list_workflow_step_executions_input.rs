@@ -55,6 +55,10 @@ impl ListWorkflowStepExecutionsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum items to return in a request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl ListWorkflowStepExecutionsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The unique identifier that Image Builder assigned to keep track of runtime details when it ran the workflow.</p>
     pub fn workflow_execution_id(
@@ -80,6 +88,10 @@ impl ListWorkflowStepExecutionsInputBuilder {
     ) -> Self {
         self.workflow_execution_id = input;
         self
+    }
+    /// <p>The unique identifier that Image Builder assigned to keep track of runtime details when it ran the workflow.</p>
+    pub fn get_workflow_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_execution_id
     }
     /// Consumes the builder and constructs a [`ListWorkflowStepExecutionsInput`](crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsInput).
     pub fn build(

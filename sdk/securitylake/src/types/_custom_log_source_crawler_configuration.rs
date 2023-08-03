@@ -56,6 +56,14 @@ impl CustomLogSourceCrawlerConfigurationBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be used by the Glue crawler. The recommended IAM policies are:</p>
+    /// <ul>
+    /// <li> <p>The managed policy <code>AWSGlueServiceRole</code> </p> </li>
+    /// <li> <p>A custom policy granting access to your Amazon S3 Data Lake</p> </li>
+    /// </ul>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// Consumes the builder and constructs a [`CustomLogSourceCrawlerConfiguration`](crate::types::CustomLogSourceCrawlerConfiguration).
     pub fn build(self) -> crate::types::CustomLogSourceCrawlerConfiguration {
         crate::types::CustomLogSourceCrawlerConfiguration {

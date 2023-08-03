@@ -96,6 +96,10 @@ impl ProfileNotificationSummaryBuilder {
         self.current_profile_version = input;
         self
     }
+    /// <p>The current profile version.</p>
+    pub fn get_current_profile_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.current_profile_version
+    }
     /// <p>The latest profile version.</p>
     pub fn latest_profile_version(
         mut self,
@@ -112,6 +116,10 @@ impl ProfileNotificationSummaryBuilder {
         self.latest_profile_version = input;
         self
     }
+    /// <p>The latest profile version.</p>
+    pub fn get_latest_profile_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.latest_profile_version
+    }
     /// <p>Type of notification.</p>
     pub fn r#type(mut self, input: crate::types::ProfileNotificationType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -125,6 +133,10 @@ impl ProfileNotificationSummaryBuilder {
         self.r#type = input;
         self
     }
+    /// <p>Type of notification.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ProfileNotificationType> {
+        &self.r#type
+    }
     /// <p>The profile ARN.</p>
     pub fn profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_arn = ::std::option::Option::Some(input.into());
@@ -134,6 +146,10 @@ impl ProfileNotificationSummaryBuilder {
     pub fn set_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_arn = input;
         self
+    }
+    /// <p>The profile ARN.</p>
+    pub fn get_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_arn
     }
     /// <p>The profile name.</p>
     pub fn profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -145,6 +161,10 @@ impl ProfileNotificationSummaryBuilder {
         self.profile_name = input;
         self
     }
+    /// <p>The profile name.</p>
+    pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_name
+    }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn workload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workload_id = ::std::option::Option::Some(input.into());
@@ -154,6 +174,10 @@ impl ProfileNotificationSummaryBuilder {
     pub fn set_workload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workload_id = input;
         self
+    }
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workload_id
     }
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
@@ -172,6 +196,11 @@ impl ProfileNotificationSummaryBuilder {
     ) -> Self {
         self.workload_name = input;
         self
+    }
+    /// <p>The name of the workload.</p>
+    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
+    pub fn get_workload_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workload_name
     }
     /// Consumes the builder and constructs a [`ProfileNotificationSummary`](crate::types::ProfileNotificationSummary).
     pub fn build(self) -> crate::types::ProfileNotificationSummary {

@@ -36,6 +36,10 @@ impl UpdateNumberOfDomainControllersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateNumberOfDomainControllers as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_number_of_domain_controllers::builders::UpdateNumberOfDomainControllersInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl UpdateNumberOfDomainControllersFluentBuilder {
         self.inner = self.inner.set_directory_id(input);
         self
     }
+    /// <p>Identifier of the directory to which the domain controllers will be added or removed.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_id()
+    }
     /// <p>The number of domain controllers desired in the directory.</p>
     pub fn desired_number(mut self, input: i32) -> Self {
         self.inner = self.inner.desired_number(input);
@@ -109,5 +117,9 @@ impl UpdateNumberOfDomainControllersFluentBuilder {
     pub fn set_desired_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_desired_number(input);
         self
+    }
+    /// <p>The number of domain controllers desired in the directory.</p>
+    pub fn get_desired_number(&self) -> &::std::option::Option<i32> {
+        self.inner.get_desired_number()
     }
 }

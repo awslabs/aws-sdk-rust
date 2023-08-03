@@ -36,6 +36,12 @@ impl CreateSecurityConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSecurityConfig as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_security_config::builders::CreateSecurityConfigInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl CreateSecurityConfigFluentBuilder {
         self.inner = self.inner.set_type(input);
         self
     }
+    /// <p>The type of security configuration.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::SecurityConfigType> {
+        self.inner.get_type()
+    }
     /// <p>The name of the security configuration.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -139,6 +149,10 @@ impl CreateSecurityConfigFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the security configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A description of the security configuration.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -148,6 +162,10 @@ impl CreateSecurityConfigFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the security configuration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>Describes SAML options in in the form of a key-value map. This field is required if you specify <code>saml</code> for the <code>type</code> parameter.</p>
     pub fn saml_options(mut self, input: crate::types::SamlConfigOptions) -> Self {
@@ -162,6 +180,10 @@ impl CreateSecurityConfigFluentBuilder {
         self.inner = self.inner.set_saml_options(input);
         self
     }
+    /// <p>Describes SAML options in in the form of a key-value map. This field is required if you specify <code>saml</code> for the <code>type</code> parameter.</p>
+    pub fn get_saml_options(&self) -> &::std::option::Option<crate::types::SamlConfigOptions> {
+        self.inner.get_saml_options()
+    }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -171,5 +193,9 @@ impl CreateSecurityConfigFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

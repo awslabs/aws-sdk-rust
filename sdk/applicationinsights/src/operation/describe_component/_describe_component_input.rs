@@ -54,6 +54,10 @@ impl DescribeComponentInputBuilder {
         self.resource_group_name = input;
         self
     }
+    /// <p>The name of the resource group.</p>
+    pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_group_name
+    }
     /// <p>The name of the component.</p>
     pub fn component_name(
         mut self,
@@ -69,6 +73,10 @@ impl DescribeComponentInputBuilder {
     ) -> Self {
         self.component_name = input;
         self
+    }
+    /// <p>The name of the component.</p>
+    pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_name
     }
     /// Consumes the builder and constructs a [`DescribeComponentInput`](crate::operation::describe_component::DescribeComponentInput).
     pub fn build(

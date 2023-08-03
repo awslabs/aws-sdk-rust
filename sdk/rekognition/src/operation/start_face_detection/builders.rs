@@ -38,6 +38,12 @@ impl StartFaceDetectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartFaceDetection as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_face_detection::builders::StartFaceDetectionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +134,10 @@ impl StartFaceDetectionFluentBuilder {
         self.inner = self.inner.set_video(input);
         self
     }
+    /// <p>The video in which you want to detect faces. The video must be stored in an Amazon S3 bucket.</p>
+    pub fn get_video(&self) -> &::std::option::Option<crate::types::Video> {
+        self.inner.get_video()
+    }
     /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartFaceDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
     pub fn client_request_token(
         mut self,
@@ -144,6 +154,10 @@ impl StartFaceDetectionFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartFaceDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the face detection operation. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
     pub fn notification_channel(mut self, input: crate::types::NotificationChannel) -> Self {
         self.inner = self.inner.notification_channel(input);
@@ -156,6 +170,12 @@ impl StartFaceDetectionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_notification_channel(input);
         self
+    }
+    /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the face detection operation. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
+    pub fn get_notification_channel(
+        &self,
+    ) -> &::std::option::Option<crate::types::NotificationChannel> {
+        self.inner.get_notification_channel()
     }
     /// <p>The face attributes you want returned.</p>
     /// <p> <code>DEFAULT</code> - The following subset of facial attributes are returned: BoundingBox, Confidence, Pose, Quality and Landmarks. </p>
@@ -174,6 +194,12 @@ impl StartFaceDetectionFluentBuilder {
         self.inner = self.inner.set_face_attributes(input);
         self
     }
+    /// <p>The face attributes you want returned.</p>
+    /// <p> <code>DEFAULT</code> - The following subset of facial attributes are returned: BoundingBox, Confidence, Pose, Quality and Landmarks. </p>
+    /// <p> <code>ALL</code> - All facial attributes are returned.</p>
+    pub fn get_face_attributes(&self) -> &::std::option::Option<crate::types::FaceAttributes> {
+        self.inner.get_face_attributes()
+    }
     /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
     pub fn job_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_tag(input.into());
@@ -183,5 +209,9 @@ impl StartFaceDetectionFluentBuilder {
     pub fn set_job_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_tag(input);
         self
+    }
+    /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+    pub fn get_job_tag(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_tag()
     }
 }

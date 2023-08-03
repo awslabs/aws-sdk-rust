@@ -148,6 +148,10 @@ impl ApplicationDetailBuilder {
         self.application_name = input;
         self
     }
+    /// <p>Name of the application.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>Description of the application.</p>
     pub fn application_description(
         mut self,
@@ -163,6 +167,10 @@ impl ApplicationDetailBuilder {
     ) -> Self {
         self.application_description = input;
         self
+    }
+    /// <p>Description of the application.</p>
+    pub fn get_application_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_description
     }
     /// <p>ARN of the application.</p>
     pub fn application_arn(
@@ -180,6 +188,10 @@ impl ApplicationDetailBuilder {
         self.application_arn = input;
         self
     }
+    /// <p>ARN of the application.</p>
+    pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_arn
+    }
     /// <p>Status of the application.</p>
     pub fn application_status(mut self, input: crate::types::ApplicationStatus) -> Self {
         self.application_status = ::std::option::Option::Some(input);
@@ -192,6 +204,12 @@ impl ApplicationDetailBuilder {
     ) -> Self {
         self.application_status = input;
         self
+    }
+    /// <p>Status of the application.</p>
+    pub fn get_application_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationStatus> {
+        &self.application_status
     }
     /// <p>Time stamp when the application version was created.</p>
     pub fn create_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -206,6 +224,10 @@ impl ApplicationDetailBuilder {
         self.create_timestamp = input;
         self
     }
+    /// <p>Time stamp when the application version was created.</p>
+    pub fn get_create_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_timestamp
+    }
     /// <p>Time stamp when the application was last updated.</p>
     pub fn last_update_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_update_timestamp = ::std::option::Option::Some(input);
@@ -218,6 +240,12 @@ impl ApplicationDetailBuilder {
     ) -> Self {
         self.last_update_timestamp = input;
         self
+    }
+    /// <p>Time stamp when the application was last updated.</p>
+    pub fn get_last_update_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_update_timestamp
     }
     /// Appends an item to `input_descriptions`.
     ///
@@ -238,6 +266,12 @@ impl ApplicationDetailBuilder {
         self.input_descriptions = input;
         self
     }
+    /// <p>Describes the application input configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>. </p>
+    pub fn get_input_descriptions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputDescription>> {
+        &self.input_descriptions
+    }
     /// Appends an item to `output_descriptions`.
     ///
     /// To override the contents of this collection use [`set_output_descriptions`](Self::set_output_descriptions).
@@ -256,6 +290,12 @@ impl ApplicationDetailBuilder {
     ) -> Self {
         self.output_descriptions = input;
         self
+    }
+    /// <p>Describes the application output configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>. </p>
+    pub fn get_output_descriptions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputDescription>> {
+        &self.output_descriptions
     }
     /// Appends an item to `reference_data_source_descriptions`.
     ///
@@ -278,6 +318,12 @@ impl ApplicationDetailBuilder {
     ) -> Self {
         self.reference_data_source_descriptions = input;
         self
+    }
+    /// <p>Describes reference data sources configured for the application. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>. </p>
+    pub fn get_reference_data_source_descriptions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSourceDescription>> {
+        &self.reference_data_source_descriptions
     }
     /// Appends an item to `cloud_watch_logging_option_descriptions`.
     ///
@@ -305,6 +351,13 @@ impl ApplicationDetailBuilder {
         self.cloud_watch_logging_option_descriptions = input;
         self
     }
+    /// <p>Describes the CloudWatch log streams that are configured to receive application messages. For more information about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch Logs</a>. </p>
+    pub fn get_cloud_watch_logging_option_descriptions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionDescription>>
+    {
+        &self.cloud_watch_logging_option_descriptions
+    }
     /// <p>Returns the application code that you provided to perform data analysis on any of the in-application streams in your application.</p>
     pub fn application_code(
         mut self,
@@ -321,6 +374,10 @@ impl ApplicationDetailBuilder {
         self.application_code = input;
         self
     }
+    /// <p>Returns the application code that you provided to perform data analysis on any of the in-application streams in your application.</p>
+    pub fn get_application_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_code
+    }
     /// <p>Provides the current application version.</p>
     pub fn application_version_id(mut self, input: i64) -> Self {
         self.application_version_id = ::std::option::Option::Some(input);
@@ -330,6 +387,10 @@ impl ApplicationDetailBuilder {
     pub fn set_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.application_version_id = input;
         self
+    }
+    /// <p>Provides the current application version.</p>
+    pub fn get_application_version_id(&self) -> &::std::option::Option<i64> {
+        &self.application_version_id
     }
     /// Consumes the builder and constructs a [`ApplicationDetail`](crate::types::ApplicationDetail).
     pub fn build(self) -> crate::types::ApplicationDetail {

@@ -50,6 +50,10 @@ impl CreateCacheClusterOutputBuilder {
         self.cache_cluster = input;
         self
     }
+    /// <p>Contains all of the attributes of a specific cluster.</p>
+    pub fn get_cache_cluster(&self) -> &::std::option::Option<crate::types::CacheCluster> {
+        &self.cache_cluster
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

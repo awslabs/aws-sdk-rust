@@ -36,6 +36,12 @@ impl PutResourcePolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutResourcePolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_resource_policy::builders::PutResourcePolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl PutResourcePolicyFluentBuilder {
         self.inner = self.inner.set_policy_in_json(input);
         self
     }
+    /// <p>Contains the policy document to set, in JSON format.</p>
+    pub fn get_policy_in_json(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_in_json()
+    }
     /// <p>Do not use. For internal use only.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
@@ -141,6 +151,10 @@ impl PutResourcePolicyFluentBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
+    }
+    /// <p>Do not use. For internal use only.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
     }
     /// <p>The hash value returned when the previous policy was set using <code>PutResourcePolicy</code>. Its purpose is to prevent concurrent modifications of a policy. Do not use this parameter if no previous policy has been set.</p>
     pub fn policy_hash_condition(
@@ -158,6 +172,10 @@ impl PutResourcePolicyFluentBuilder {
         self.inner = self.inner.set_policy_hash_condition(input);
         self
     }
+    /// <p>The hash value returned when the previous policy was set using <code>PutResourcePolicy</code>. Its purpose is to prevent concurrent modifications of a policy. Do not use this parameter if no previous policy has been set.</p>
+    pub fn get_policy_hash_condition(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_hash_condition()
+    }
     /// <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code> is used to create a new policy. If a value of <code>NONE</code> or a null value is used, the call does not depend on the existence of a policy.</p>
     pub fn policy_exists_condition(mut self, input: crate::types::ExistCondition) -> Self {
         self.inner = self.inner.policy_exists_condition(input);
@@ -170,6 +188,12 @@ impl PutResourcePolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_policy_exists_condition(input);
         self
+    }
+    /// <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code> is used to create a new policy. If a value of <code>NONE</code> or a null value is used, the call does not depend on the existence of a policy.</p>
+    pub fn get_policy_exists_condition(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExistCondition> {
+        self.inner.get_policy_exists_condition()
     }
     /// <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data Catalog resources:</p>
     /// <ul>
@@ -193,5 +217,14 @@ impl PutResourcePolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_enable_hybrid(input);
         self
+    }
+    /// <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data Catalog resources:</p>
+    /// <ul>
+    /// <li> <p>By directly updating the resource policy with <code>PutResourePolicy</code> </p> </li>
+    /// <li> <p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p> </li>
+    /// </ul>
+    /// <p>Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account access, otherwise the call fails. Default is 'FALSE'.</p>
+    pub fn get_enable_hybrid(&self) -> &::std::option::Option<crate::types::EnableHybridValues> {
+        self.inner.get_enable_hybrid()
     }
 }

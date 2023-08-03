@@ -36,6 +36,10 @@ impl UpdateEnvironmentTemplateVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateEnvironmentTemplateVersion as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_environment_template_version::builders::UpdateEnvironmentTemplateVersionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl UpdateEnvironmentTemplateVersionFluentBuilder {
         self.inner = self.inner.set_template_name(input);
         self
     }
+    /// <p>The name of the environment template.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_name()
+    }
     /// <p>To update a major version of an environment template, include <code>major Version</code>.</p>
     pub fn major_version(
         mut self,
@@ -121,6 +129,10 @@ impl UpdateEnvironmentTemplateVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_major_version(input);
         self
+    }
+    /// <p>To update a major version of an environment template, include <code>major Version</code>.</p>
+    pub fn get_major_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_major_version()
     }
     /// <p>To update a minor version of an environment template, include <code>minorVersion</code>.</p>
     pub fn minor_version(
@@ -138,6 +150,10 @@ impl UpdateEnvironmentTemplateVersionFluentBuilder {
         self.inner = self.inner.set_minor_version(input);
         self
     }
+    /// <p>To update a minor version of an environment template, include <code>minorVersion</code>.</p>
+    pub fn get_minor_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_minor_version()
+    }
     /// <p>A description of environment template version to update.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -147,6 +163,10 @@ impl UpdateEnvironmentTemplateVersionFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of environment template version to update.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The status of the environment template minor version to update.</p>
     pub fn status(mut self, input: crate::types::TemplateVersionStatus) -> Self {
@@ -160,5 +180,9 @@ impl UpdateEnvironmentTemplateVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p>The status of the environment template minor version to update.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TemplateVersionStatus> {
+        self.inner.get_status()
     }
 }

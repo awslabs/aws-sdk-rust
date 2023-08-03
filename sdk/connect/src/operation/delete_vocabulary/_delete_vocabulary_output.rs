@@ -69,6 +69,10 @@ impl DeleteVocabularyOutputBuilder {
         self.vocabulary_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the custom vocabulary.</p>
+    pub fn get_vocabulary_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vocabulary_arn
+    }
     /// <p>The identifier of the custom vocabulary.</p>
     pub fn vocabulary_id(
         mut self,
@@ -85,6 +89,10 @@ impl DeleteVocabularyOutputBuilder {
         self.vocabulary_id = input;
         self
     }
+    /// <p>The identifier of the custom vocabulary.</p>
+    pub fn get_vocabulary_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vocabulary_id
+    }
     /// <p>The current state of the custom vocabulary.</p>
     pub fn state(mut self, input: crate::types::VocabularyState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -97,6 +105,10 @@ impl DeleteVocabularyOutputBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The current state of the custom vocabulary.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::VocabularyState> {
+        &self.state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

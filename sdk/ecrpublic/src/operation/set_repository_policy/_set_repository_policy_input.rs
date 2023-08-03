@@ -65,6 +65,10 @@ impl SetRepositoryPolicyInputBuilder {
         self.registry_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID that's associated with the registry that contains the repository. If you do not specify a registry, the default public registry is assumed.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
+    }
     /// <p>The name of the repository to receive the policy.</p>
     pub fn repository_name(
         mut self,
@@ -81,6 +85,10 @@ impl SetRepositoryPolicyInputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository to receive the policy.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The JSON repository policy text to apply to the repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
     pub fn policy_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_text = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl SetRepositoryPolicyInputBuilder {
         self.policy_text = input;
         self
     }
+    /// <p>The JSON repository policy text to apply to the repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
+    pub fn get_policy_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_text
+    }
     /// <p>If the policy that you want to set on a repository policy would prevent you from setting another policy in the future, you must force the <code>SetRepositoryPolicy</code> operation. This prevents accidental repository lockouts.</p>
     pub fn force(mut self, input: bool) -> Self {
         self.force = ::std::option::Option::Some(input);
@@ -100,6 +112,10 @@ impl SetRepositoryPolicyInputBuilder {
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force = input;
         self
+    }
+    /// <p>If the policy that you want to set on a repository policy would prevent you from setting another policy in the future, you must force the <code>SetRepositoryPolicy</code> operation. This prevents accidental repository lockouts.</p>
+    pub fn get_force(&self) -> &::std::option::Option<bool> {
+        &self.force
     }
     /// Consumes the builder and constructs a [`SetRepositoryPolicyInput`](crate::operation::set_repository_policy::SetRepositoryPolicyInput).
     pub fn build(

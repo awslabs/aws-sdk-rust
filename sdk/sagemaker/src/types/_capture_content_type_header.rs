@@ -60,6 +60,12 @@ impl CaptureContentTypeHeaderBuilder {
         self.csv_content_types = input;
         self
     }
+    /// <p>The list of all content type headers that SageMaker will treat as CSV and capture accordingly.</p>
+    pub fn get_csv_content_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.csv_content_types
+    }
     /// Appends an item to `json_content_types`.
     ///
     /// To override the contents of this collection use [`set_json_content_types`](Self::set_json_content_types).
@@ -81,6 +87,12 @@ impl CaptureContentTypeHeaderBuilder {
     ) -> Self {
         self.json_content_types = input;
         self
+    }
+    /// <p>The list of all content type headers that SageMaker will treat as JSON and capture accordingly.</p>
+    pub fn get_json_content_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.json_content_types
     }
     /// Consumes the builder and constructs a [`CaptureContentTypeHeader`](crate::types::CaptureContentTypeHeader).
     pub fn build(self) -> crate::types::CaptureContentTypeHeader {

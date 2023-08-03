@@ -81,6 +81,10 @@ impl SharedFileSystemConfigurationBuilder {
         self.endpoint = input;
         self
     }
+    /// <p>The endpoint of the shared file system that is accessed by the studio component resource.</p>
+    pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint
+    }
     /// <p>The unique identifier for a file system.</p>
     pub fn file_system_id(
         mut self,
@@ -96,6 +100,10 @@ impl SharedFileSystemConfigurationBuilder {
     ) -> Self {
         self.file_system_id = input;
         self
+    }
+    /// <p>The unique identifier for a file system.</p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_system_id
     }
     /// <p>The mount location for a shared file system on a Linux virtual workstation.</p>
     pub fn linux_mount_point(
@@ -113,6 +121,10 @@ impl SharedFileSystemConfigurationBuilder {
         self.linux_mount_point = input;
         self
     }
+    /// <p>The mount location for a shared file system on a Linux virtual workstation.</p>
+    pub fn get_linux_mount_point(&self) -> &::std::option::Option<::std::string::String> {
+        &self.linux_mount_point
+    }
     /// <p>The name of the file share.</p>
     pub fn share_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.share_name = ::std::option::Option::Some(input.into());
@@ -122,6 +134,10 @@ impl SharedFileSystemConfigurationBuilder {
     pub fn set_share_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.share_name = input;
         self
+    }
+    /// <p>The name of the file share.</p>
+    pub fn get_share_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.share_name
     }
     /// <p>The mount location for a shared file system on a Windows virtual workstation.</p>
     pub fn windows_mount_drive(
@@ -138,6 +154,10 @@ impl SharedFileSystemConfigurationBuilder {
     ) -> Self {
         self.windows_mount_drive = input;
         self
+    }
+    /// <p>The mount location for a shared file system on a Windows virtual workstation.</p>
+    pub fn get_windows_mount_drive(&self) -> &::std::option::Option<::std::string::String> {
+        &self.windows_mount_drive
     }
     /// Consumes the builder and constructs a [`SharedFileSystemConfiguration`](crate::types::SharedFileSystemConfiguration).
     pub fn build(self) -> crate::types::SharedFileSystemConfiguration {

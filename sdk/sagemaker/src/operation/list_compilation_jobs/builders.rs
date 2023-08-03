@@ -37,6 +37,12 @@ impl ListCompilationJobsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListCompilationJobs as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_compilation_jobs::builders::ListCompilationJobsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +144,10 @@ impl ListCompilationJobsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>If the result of the previous <code>ListCompilationJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model compilation jobs, use the token in the next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of model compilation jobs to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -147,6 +157,10 @@ impl ListCompilationJobsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of model compilation jobs to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>A filter that returns the model compilation jobs that were created after a specified time. </p>
     pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -161,6 +175,10 @@ impl ListCompilationJobsFluentBuilder {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
+    /// <p>A filter that returns the model compilation jobs that were created after a specified time. </p>
+    pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_creation_time_after()
+    }
     /// <p>A filter that returns the model compilation jobs that were created before a specified time.</p>
     pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_before(input);
@@ -173,6 +191,10 @@ impl ListCompilationJobsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
+    }
+    /// <p>A filter that returns the model compilation jobs that were created before a specified time.</p>
+    pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_creation_time_before()
     }
     /// <p>A filter that returns the model compilation jobs that were modified after a specified time.</p>
     pub fn last_modified_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -187,6 +209,12 @@ impl ListCompilationJobsFluentBuilder {
         self.inner = self.inner.set_last_modified_time_after(input);
         self
     }
+    /// <p>A filter that returns the model compilation jobs that were modified after a specified time.</p>
+    pub fn get_last_modified_time_after(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_last_modified_time_after()
+    }
     /// <p>A filter that returns the model compilation jobs that were modified before a specified time.</p>
     pub fn last_modified_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.last_modified_time_before(input);
@@ -199,6 +227,12 @@ impl ListCompilationJobsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_last_modified_time_before(input);
         self
+    }
+    /// <p>A filter that returns the model compilation jobs that were modified before a specified time.</p>
+    pub fn get_last_modified_time_before(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_last_modified_time_before()
     }
     /// <p>A filter that returns the model compilation jobs whose name contains a specified string.</p>
     pub fn name_contains(
@@ -216,6 +250,10 @@ impl ListCompilationJobsFluentBuilder {
         self.inner = self.inner.set_name_contains(input);
         self
     }
+    /// <p>A filter that returns the model compilation jobs whose name contains a specified string.</p>
+    pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name_contains()
+    }
     /// <p>A filter that retrieves model compilation jobs with a specific <code>CompilationJobStatus</code> status.</p>
     pub fn status_equals(mut self, input: crate::types::CompilationJobStatus) -> Self {
         self.inner = self.inner.status_equals(input);
@@ -228,6 +266,10 @@ impl ListCompilationJobsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_status_equals(input);
         self
+    }
+    /// <p>A filter that retrieves model compilation jobs with a specific <code>CompilationJobStatus</code> status.</p>
+    pub fn get_status_equals(&self) -> &::std::option::Option<crate::types::CompilationJobStatus> {
+        self.inner.get_status_equals()
     }
     /// <p>The field by which to sort results. The default is <code>CreationTime</code>.</p>
     pub fn sort_by(mut self, input: crate::types::ListCompilationJobsSortBy) -> Self {
@@ -242,6 +284,10 @@ impl ListCompilationJobsFluentBuilder {
         self.inner = self.inner.set_sort_by(input);
         self
     }
+    /// <p>The field by which to sort results. The default is <code>CreationTime</code>.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ListCompilationJobsSortBy> {
+        self.inner.get_sort_by()
+    }
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.inner = self.inner.sort_order(input);
@@ -251,5 +297,9 @@ impl ListCompilationJobsFluentBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
+    }
+    /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        self.inner.get_sort_order()
     }
 }

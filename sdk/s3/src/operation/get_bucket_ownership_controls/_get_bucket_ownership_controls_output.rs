@@ -56,6 +56,12 @@ impl GetBucketOwnershipControlsOutputBuilder {
         self.ownership_controls = input;
         self
     }
+    /// <p>The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or ObjectWriter) currently in effect for this Amazon S3 bucket.</p>
+    pub fn get_ownership_controls(
+        &self,
+    ) -> &::std::option::Option<crate::types::OwnershipControls> {
+        &self.ownership_controls
+    }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
         self._extended_request_id = Some(extended_request_id.into());
         self

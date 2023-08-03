@@ -69,6 +69,10 @@ impl CreateReportPlanOutputBuilder {
         self.report_plan_name = input;
         self
     }
+    /// <p>The unique name of the report plan.</p>
+    pub fn get_report_plan_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.report_plan_name
+    }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     pub fn report_plan_arn(
         mut self,
@@ -85,6 +89,10 @@ impl CreateReportPlanOutputBuilder {
         self.report_plan_arn = input;
         self
     }
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
+    pub fn get_report_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.report_plan_arn
+    }
     /// <p>The date and time a backup vault is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -97,6 +105,10 @@ impl CreateReportPlanOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The date and time a backup vault is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

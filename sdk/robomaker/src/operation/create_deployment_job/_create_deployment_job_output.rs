@@ -275,6 +275,10 @@ impl CreateDeploymentJobOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the deployment job.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The target fleet for the deployment job.</p>
     pub fn fleet(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet = ::std::option::Option::Some(input.into());
@@ -284,6 +288,10 @@ impl CreateDeploymentJobOutputBuilder {
     pub fn set_fleet(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet = input;
         self
+    }
+    /// <p>The target fleet for the deployment job.</p>
+    pub fn get_fleet(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet
     }
     /// <p>The status of the deployment job.</p>
     pub fn status(mut self, input: crate::types::DeploymentStatus) -> Self {
@@ -297,6 +305,10 @@ impl CreateDeploymentJobOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the deployment job.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DeploymentStatus> {
+        &self.status
     }
     /// Appends an item to `deployment_application_configs`.
     ///
@@ -320,6 +332,12 @@ impl CreateDeploymentJobOutputBuilder {
         self.deployment_application_configs = input;
         self
     }
+    /// <p>The deployment application configuration.</p>
+    pub fn get_deployment_application_configs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentApplicationConfig>> {
+        &self.deployment_application_configs
+    }
     /// <p>The failure reason of the deployment job if it failed.</p>
     pub fn failure_reason(
         mut self,
@@ -335,6 +353,10 @@ impl CreateDeploymentJobOutputBuilder {
     ) -> Self {
         self.failure_reason = input;
         self
+    }
+    /// <p>The failure reason of the deployment job if it failed.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     /// <p>The failure code of the simulation job if it failed:</p>
     /// <dl>
@@ -497,6 +519,84 @@ impl CreateDeploymentJobOutputBuilder {
         self.failure_code = input;
         self
     }
+    /// <p>The failure code of the simulation job if it failed:</p>
+    /// <dl>
+    /// <dt>
+    /// BadPermissionError
+    /// </dt>
+    /// <dd>
+    /// <p>AWS Greengrass requires a service-level role permission to access other services. The role must include the <a href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy$jsonEditor"> <code>AWSGreengrassResourceAccessRolePolicy</code> managed policy</a>. </p>
+    /// </dd>
+    /// <dt>
+    /// ExtractingBundleFailure
+    /// </dt>
+    /// <dd>
+    /// <p>The robot application could not be extracted from the bundle.</p>
+    /// </dd>
+    /// <dt>
+    /// FailureThresholdBreached
+    /// </dt>
+    /// <dd>
+    /// <p>The percentage of robots that could not be updated exceeded the percentage set for the deployment.</p>
+    /// </dd>
+    /// <dt>
+    /// GreengrassDeploymentFailed
+    /// </dt>
+    /// <dd>
+    /// <p>The robot application could not be deployed to the robot.</p>
+    /// </dd>
+    /// <dt>
+    /// GreengrassGroupVersionDoesNotExist
+    /// </dt>
+    /// <dd>
+    /// <p>The AWS Greengrass group or version associated with a robot is missing.</p>
+    /// </dd>
+    /// <dt>
+    /// InternalServerError
+    /// </dt>
+    /// <dd>
+    /// <p>An internal error has occurred. Retry your request, but if the problem persists, contact us with details.</p>
+    /// </dd>
+    /// <dt>
+    /// MissingRobotApplicationArchitecture
+    /// </dt>
+    /// <dd>
+    /// <p>The robot application does not have a source that matches the architecture of the robot.</p>
+    /// </dd>
+    /// <dt>
+    /// MissingRobotDeploymentResource
+    /// </dt>
+    /// <dd>
+    /// <p>One or more of the resources specified for the robot application are missing. For example, does the robot application have the correct launch package and launch file?</p>
+    /// </dd>
+    /// <dt>
+    /// PostLaunchFileFailure
+    /// </dt>
+    /// <dd>
+    /// <p>The post-launch script failed.</p>
+    /// </dd>
+    /// <dt>
+    /// PreLaunchFileFailure
+    /// </dt>
+    /// <dd>
+    /// <p>The pre-launch script failed.</p>
+    /// </dd>
+    /// <dt>
+    /// ResourceNotFound
+    /// </dt>
+    /// <dd>
+    /// <p>One or more deployment resources are missing. For example, do robot application source bundles still exist? </p>
+    /// </dd>
+    /// <dt>
+    /// RobotDeploymentNoResponse
+    /// </dt>
+    /// <dd>
+    /// <p>There is no response from the robot. It might not be powered on or connected to the internet.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_failure_code(&self) -> &::std::option::Option<crate::types::DeploymentJobErrorCode> {
+        &self.failure_code
+    }
     /// <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -510,6 +610,10 @@ impl CreateDeploymentJobOutputBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The deployment configuration.</p>
     pub fn deployment_config(mut self, input: crate::types::DeploymentConfig) -> Self {
         self.deployment_config = ::std::option::Option::Some(input);
@@ -522,6 +626,10 @@ impl CreateDeploymentJobOutputBuilder {
     ) -> Self {
         self.deployment_config = input;
         self
+    }
+    /// <p>The deployment configuration.</p>
+    pub fn get_deployment_config(&self) -> &::std::option::Option<crate::types::DeploymentConfig> {
+        &self.deployment_config
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -547,6 +655,14 @@ impl CreateDeploymentJobOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The list of all tags added to the deployment job.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -46,6 +46,10 @@ impl GetComponentPolicyInputBuilder {
         self.component_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the component whose policy you want to retrieve.</p>
+    pub fn get_component_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_arn
+    }
     /// Consumes the builder and constructs a [`GetComponentPolicyInput`](crate::operation::get_component_policy::GetComponentPolicyInput).
     pub fn build(
         self,

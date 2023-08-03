@@ -54,6 +54,10 @@ impl S3ContentBaseLocationUpdateBuilder {
         self.bucket_arn_update = input;
         self
     }
+    /// <p>The updated Amazon Resource Name (ARN) of the S3 bucket.</p>
+    pub fn get_bucket_arn_update(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_arn_update
+    }
     /// <p>The updated S3 bucket path.</p>
     pub fn base_path_update(
         mut self,
@@ -69,6 +73,10 @@ impl S3ContentBaseLocationUpdateBuilder {
     ) -> Self {
         self.base_path_update = input;
         self
+    }
+    /// <p>The updated S3 bucket path.</p>
+    pub fn get_base_path_update(&self) -> &::std::option::Option<::std::string::String> {
+        &self.base_path_update
     }
     /// Consumes the builder and constructs a [`S3ContentBaseLocationUpdate`](crate::types::S3ContentBaseLocationUpdate).
     pub fn build(self) -> crate::types::S3ContentBaseLocationUpdate {

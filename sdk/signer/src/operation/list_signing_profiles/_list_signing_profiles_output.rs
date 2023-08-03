@@ -65,6 +65,12 @@ impl ListSigningProfilesOutputBuilder {
         self.profiles = input;
         self
     }
+    /// <p>A list of profiles that are available in the AWS account. This includes profiles with the status of <code>CANCELED</code> if the <code>includeCanceled</code> parameter is set to <code>true</code>.</p>
+    pub fn get_profiles(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SigningProfile>> {
+        &self.profiles
+    }
     /// <p>Value for specifying the next set of paginated results to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -74,6 +80,10 @@ impl ListSigningProfilesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Value for specifying the next set of paginated results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

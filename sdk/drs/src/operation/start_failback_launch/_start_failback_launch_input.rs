@@ -76,6 +76,12 @@ impl StartFailbackLaunchInputBuilder {
         self.recovery_instance_i_ds = input;
         self
     }
+    /// <p>The IDs of the Recovery Instance whose failback launch we want to request.</p>
+    pub fn get_recovery_instance_i_ds(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.recovery_instance_i_ds
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -100,6 +106,14 @@ impl StartFailbackLaunchInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags to be associated with the failback launch Job.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`StartFailbackLaunchInput`](crate::operation::start_failback_launch::StartFailbackLaunchInput).
     pub fn build(

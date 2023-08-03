@@ -36,6 +36,10 @@ impl DescribeManagedJobTemplateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeManagedJobTemplate as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_managed_job_template::builders::DescribeManagedJobTemplateInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl DescribeManagedJobTemplateFluentBuilder {
         self.inner = self.inner.set_template_name(input);
         self
     }
+    /// <p>The unique name of a managed job template, which is required.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_name()
+    }
     /// <p>An optional parameter to specify version of a managed template. If not specified, the pre-defined default version is returned.</p>
     pub fn template_version(
         mut self,
@@ -147,5 +155,9 @@ impl DescribeManagedJobTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_template_version(input);
         self
+    }
+    /// <p>An optional parameter to specify version of a managed template. If not specified, the pre-defined default version is returned.</p>
+    pub fn get_template_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_version()
     }
 }

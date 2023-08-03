@@ -55,6 +55,10 @@ impl AwsEc2NetworkInterfacePrivateIpAddressDetailBuilder {
         self.private_ip_address = input;
         self
     }
+    /// <p>The IP address.</p>
+    pub fn get_private_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_ip_address
+    }
     /// <p>The private DNS name for the IP address.</p>
     pub fn private_dns_name(
         mut self,
@@ -70,6 +74,10 @@ impl AwsEc2NetworkInterfacePrivateIpAddressDetailBuilder {
     ) -> Self {
         self.private_dns_name = input;
         self
+    }
+    /// <p>The private DNS name for the IP address.</p>
+    pub fn get_private_dns_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_dns_name
     }
     /// Consumes the builder and constructs a [`AwsEc2NetworkInterfacePrivateIpAddressDetail`](crate::types::AwsEc2NetworkInterfacePrivateIpAddressDetail).
     pub fn build(self) -> crate::types::AwsEc2NetworkInterfacePrivateIpAddressDetail {

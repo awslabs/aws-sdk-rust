@@ -72,6 +72,10 @@ impl BonusPaymentBuilder {
         self.worker_id = input;
         self
     }
+    /// <p>The ID of the Worker to whom the bonus was paid.</p>
+    pub fn get_worker_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.worker_id
+    }
     /// <p>A string representing a currency amount.</p>
     pub fn bonus_amount(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bonus_amount = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl BonusPaymentBuilder {
     pub fn set_bonus_amount(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bonus_amount = input;
         self
+    }
+    /// <p>A string representing a currency amount.</p>
+    pub fn get_bonus_amount(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bonus_amount
     }
     /// <p>The ID of the assignment associated with this bonus payment.</p>
     pub fn assignment_id(
@@ -98,6 +106,10 @@ impl BonusPaymentBuilder {
         self.assignment_id = input;
         self
     }
+    /// <p>The ID of the assignment associated with this bonus payment.</p>
+    pub fn get_assignment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assignment_id
+    }
     /// <p>The Reason text given when the bonus was granted, if any.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
@@ -107,6 +119,10 @@ impl BonusPaymentBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>The Reason text given when the bonus was granted, if any.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
     }
     /// <p>The date and time of when the bonus was granted.</p>
     pub fn grant_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -120,6 +136,10 @@ impl BonusPaymentBuilder {
     ) -> Self {
         self.grant_time = input;
         self
+    }
+    /// <p>The date and time of when the bonus was granted.</p>
+    pub fn get_grant_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.grant_time
     }
     /// Consumes the builder and constructs a [`BonusPayment`](crate::types::BonusPayment).
     pub fn build(self) -> crate::types::BonusPayment {

@@ -37,6 +37,13 @@ impl ModifyLocalGatewayRouteFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyLocalGatewayRoute as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::modify_local_gateway_route::builders::ModifyLocalGatewayRouteInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl ModifyLocalGatewayRouteFluentBuilder {
         self.inner = self.inner.set_destination_cidr_block(input);
         self
     }
+    /// <p>The CIDR block used for destination matches. The value that you provide must match the CIDR of an existing route in the table.</p>
+    pub fn get_destination_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_cidr_block()
+    }
     /// <p>The ID of the local gateway route table.</p>
     pub fn local_gateway_route_table_id(
         mut self,
@@ -148,6 +159,12 @@ impl ModifyLocalGatewayRouteFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_local_gateway_route_table_id(input);
         self
+    }
+    /// <p>The ID of the local gateway route table.</p>
+    pub fn get_local_gateway_route_table_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_local_gateway_route_table_id()
     }
     /// <p> The ID of the virtual interface group. </p>
     pub fn local_gateway_virtual_interface_group_id(
@@ -169,6 +186,12 @@ impl ModifyLocalGatewayRouteFluentBuilder {
             .set_local_gateway_virtual_interface_group_id(input);
         self
     }
+    /// <p> The ID of the virtual interface group. </p>
+    pub fn get_local_gateway_virtual_interface_group_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_local_gateway_virtual_interface_group_id()
+    }
     /// <p>The ID of the network interface.</p>
     pub fn network_interface_id(
         mut self,
@@ -185,6 +208,10 @@ impl ModifyLocalGatewayRouteFluentBuilder {
         self.inner = self.inner.set_network_interface_id(input);
         self
     }
+    /// <p>The ID of the network interface.</p>
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_network_interface_id()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -194,6 +221,10 @@ impl ModifyLocalGatewayRouteFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
     /// <p> The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
     pub fn destination_prefix_list_id(
@@ -210,5 +241,9 @@ impl ModifyLocalGatewayRouteFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destination_prefix_list_id(input);
         self
+    }
+    /// <p> The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
+    pub fn get_destination_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_prefix_list_id()
     }
 }

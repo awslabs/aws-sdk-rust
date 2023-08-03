@@ -87,6 +87,12 @@ impl InferSnomedctOutputBuilder {
         self.entities = input;
         self
     }
+    /// <p> The collection of medical concept entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Amazon Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned. </p>
+    pub fn get_entities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SnomedctEntity>> {
+        &self.entities
+    }
     /// <p> If the result of the request is truncated, the pagination token can be used to fetch the next page of entities. </p>
     pub fn pagination_token(
         mut self,
@@ -102,6 +108,10 @@ impl InferSnomedctOutputBuilder {
     ) -> Self {
         self.pagination_token = input;
         self
+    }
+    /// <p> If the result of the request is truncated, the pagination token can be used to fetch the next page of entities. </p>
+    pub fn get_pagination_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pagination_token
     }
     /// <p> The version of the model used to analyze the documents, in the format n.n.n You can use this information to track the model used for a particular batch of documents. </p>
     pub fn model_version(
@@ -119,6 +129,10 @@ impl InferSnomedctOutputBuilder {
         self.model_version = input;
         self
     }
+    /// <p> The version of the model used to analyze the documents, in the format n.n.n You can use this information to track the model used for a particular batch of documents. </p>
+    pub fn get_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_version
+    }
     /// <p> The details of the SNOMED-CT revision, including the edition, language, and version date. </p>
     pub fn snomedct_details(mut self, input: crate::types::SnomedctDetails) -> Self {
         self.snomedct_details = ::std::option::Option::Some(input);
@@ -132,6 +146,10 @@ impl InferSnomedctOutputBuilder {
         self.snomedct_details = input;
         self
     }
+    /// <p> The details of the SNOMED-CT revision, including the edition, language, and version date. </p>
+    pub fn get_snomedct_details(&self) -> &::std::option::Option<crate::types::SnomedctDetails> {
+        &self.snomedct_details
+    }
     /// <p> The number of characters in the input request documentation. </p>
     pub fn characters(mut self, input: crate::types::Characters) -> Self {
         self.characters = ::std::option::Option::Some(input);
@@ -144,6 +162,10 @@ impl InferSnomedctOutputBuilder {
     ) -> Self {
         self.characters = input;
         self
+    }
+    /// <p> The number of characters in the input request documentation. </p>
+    pub fn get_characters(&self) -> &::std::option::Option<crate::types::Characters> {
+        &self.characters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

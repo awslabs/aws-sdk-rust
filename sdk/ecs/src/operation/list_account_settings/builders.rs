@@ -36,6 +36,12 @@ impl ListAccountSettingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListAccountSettings as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_account_settings::builders::ListAccountSettingsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListAccountSettingsFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the account setting you want to list the settings for.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::SettingName> {
+        self.inner.get_name()
+    }
     /// <p>The value of the account settings to filter results with. You must also specify an account setting name to use this parameter.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.value(input.into());
@@ -146,6 +156,10 @@ impl ListAccountSettingsFluentBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_value(input);
         self
+    }
+    /// <p>The value of the account settings to filter results with. You must also specify an account setting name to use this parameter.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_value()
     }
     /// <p>The ARN of the principal, which can be a user, role, or the root user. If this field is omitted, the account settings are listed only for the authenticated user.</p> <note>
     /// <p>Federated users assume the account setting of the root user and can't have explicit account settings set for them.</p>
@@ -167,6 +181,12 @@ impl ListAccountSettingsFluentBuilder {
         self.inner = self.inner.set_principal_arn(input);
         self
     }
+    /// <p>The ARN of the principal, which can be a user, role, or the root user. If this field is omitted, the account settings are listed only for the authenticated user.</p> <note>
+    /// <p>Federated users assume the account setting of the root user and can't have explicit account settings set for them.</p>
+    /// </note>
+    pub fn get_principal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_principal_arn()
+    }
     /// <p>Determines whether to return the effective settings. If <code>true</code>, the account settings for the root user or the default setting for the <code>principalArn</code> are returned. If <code>false</code>, the account settings for the <code>principalArn</code> are returned if they're set. Otherwise, no account settings are returned.</p>
     pub fn effective_settings(mut self, input: bool) -> Self {
         self.inner = self.inner.effective_settings(input);
@@ -176,6 +196,10 @@ impl ListAccountSettingsFluentBuilder {
     pub fn set_effective_settings(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_effective_settings(input);
         self
+    }
+    /// <p>Determines whether to return the effective settings. If <code>true</code>, the account settings for the root user or the default setting for the <code>principalArn</code> are returned. If <code>false</code>, the account settings for the <code>principalArn</code> are returned if they're set. Otherwise, no account settings are returned.</p>
+    pub fn get_effective_settings(&self) -> &::std::option::Option<bool> {
+        self.inner.get_effective_settings()
     }
     /// <p>The <code>nextToken</code> value returned from a <code>ListAccountSettings</code> request indicating that more results are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
@@ -191,6 +215,12 @@ impl ListAccountSettingsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The <code>nextToken</code> value returned from a <code>ListAccountSettings</code> request indicating that more results are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
+    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// </note>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of account setting results returned by <code>ListAccountSettings</code> in paginated output. When this parameter is used, <code>ListAccountSettings</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListAccountSettings</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 10. If this parameter isn't used, then <code>ListAccountSettings</code> returns up to 10 results and a <code>nextToken</code> value if applicable.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -200,5 +230,9 @@ impl ListAccountSettingsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of account setting results returned by <code>ListAccountSettings</code> in paginated output. When this parameter is used, <code>ListAccountSettings</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListAccountSettings</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 10. If this parameter isn't used, then <code>ListAccountSettings</code> returns up to 10 results and a <code>nextToken</code> value if applicable.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

@@ -46,6 +46,10 @@ impl DeleteScheduledAuditInputBuilder {
         self.scheduled_audit_name = input;
         self
     }
+    /// <p>The name of the scheduled audit you want to delete.</p>
+    pub fn get_scheduled_audit_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scheduled_audit_name
+    }
     /// Consumes the builder and constructs a [`DeleteScheduledAuditInput`](crate::operation::delete_scheduled_audit::DeleteScheduledAuditInput).
     pub fn build(
         self,

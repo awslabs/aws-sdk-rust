@@ -45,6 +45,10 @@ impl StopFailbackInputBuilder {
         self.recovery_instance_id = input;
         self
     }
+    /// <p>The ID of the Recovery Instance we want to stop failback for.</p>
+    pub fn get_recovery_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recovery_instance_id
+    }
     /// Consumes the builder and constructs a [`StopFailbackInput`](crate::operation::stop_failback::StopFailbackInput).
     pub fn build(
         self,

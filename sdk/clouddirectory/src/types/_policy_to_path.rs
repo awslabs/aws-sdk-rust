@@ -48,6 +48,10 @@ impl PolicyToPathBuilder {
         self.path = input;
         self
     }
+    /// <p>The path that is referenced from the root.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
+    }
     /// Appends an item to `policies`.
     ///
     /// To override the contents of this collection use [`set_policies`](Self::set_policies).
@@ -66,6 +70,12 @@ impl PolicyToPathBuilder {
     ) -> Self {
         self.policies = input;
         self
+    }
+    /// <p>List of policy objects.</p>
+    pub fn get_policies(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyAttachment>> {
+        &self.policies
     }
     /// Consumes the builder and constructs a [`PolicyToPath`](crate::types::PolicyToPath).
     pub fn build(self) -> crate::types::PolicyToPath {

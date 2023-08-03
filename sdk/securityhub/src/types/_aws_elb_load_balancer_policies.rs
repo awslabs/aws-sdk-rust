@@ -78,6 +78,13 @@ impl AwsElbLoadBalancerPoliciesBuilder {
         self.app_cookie_stickiness_policies = input;
         self
     }
+    /// <p>The stickiness policies that are created using <code>CreateAppCookieStickinessPolicy</code>.</p>
+    pub fn get_app_cookie_stickiness_policies(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsElbAppCookieStickinessPolicy>>
+    {
+        &self.app_cookie_stickiness_policies
+    }
     /// Appends an item to `lb_cookie_stickiness_policies`.
     ///
     /// To override the contents of this collection use [`set_lb_cookie_stickiness_policies`](Self::set_lb_cookie_stickiness_policies).
@@ -100,6 +107,12 @@ impl AwsElbLoadBalancerPoliciesBuilder {
         self.lb_cookie_stickiness_policies = input;
         self
     }
+    /// <p>The stickiness policies that are created using <code>CreateLBCookieStickinessPolicy</code>.</p>
+    pub fn get_lb_cookie_stickiness_policies(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsElbLbCookieStickinessPolicy>> {
+        &self.lb_cookie_stickiness_policies
+    }
     /// Appends an item to `other_policies`.
     ///
     /// To override the contents of this collection use [`set_other_policies`](Self::set_other_policies).
@@ -121,6 +134,12 @@ impl AwsElbLoadBalancerPoliciesBuilder {
     ) -> Self {
         self.other_policies = input;
         self
+    }
+    /// <p>The policies other than the stickiness policies.</p>
+    pub fn get_other_policies(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.other_policies
     }
     /// Consumes the builder and constructs a [`AwsElbLoadBalancerPolicies`](crate::types::AwsElbLoadBalancerPolicies).
     pub fn build(self) -> crate::types::AwsElbLoadBalancerPolicies {

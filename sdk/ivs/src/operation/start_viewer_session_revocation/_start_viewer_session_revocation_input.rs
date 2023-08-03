@@ -55,6 +55,10 @@ impl StartViewerSessionRevocationInputBuilder {
         self.channel_arn = input;
         self
     }
+    /// <p>The ARN of the channel associated with the viewer session to revoke.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
+    }
     /// <p>The ID of the viewer associated with the viewer session to revoke. Do not use this field for personally identifying, confidential, or sensitive information.</p>
     pub fn viewer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.viewer_id = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl StartViewerSessionRevocationInputBuilder {
     pub fn set_viewer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.viewer_id = input;
         self
+    }
+    /// <p>The ID of the viewer associated with the viewer session to revoke. Do not use this field for personally identifying, confidential, or sensitive information.</p>
+    pub fn get_viewer_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.viewer_id
     }
     /// <p>An optional filter on which versions of the viewer session to revoke. All versions less than or equal to the specified version will be revoked. Default: 0.</p>
     pub fn viewer_session_versions_less_than_or_equal_to(mut self, input: i32) -> Self {
@@ -77,6 +85,10 @@ impl StartViewerSessionRevocationInputBuilder {
     ) -> Self {
         self.viewer_session_versions_less_than_or_equal_to = input;
         self
+    }
+    /// <p>An optional filter on which versions of the viewer session to revoke. All versions less than or equal to the specified version will be revoked. Default: 0.</p>
+    pub fn get_viewer_session_versions_less_than_or_equal_to(&self) -> &::std::option::Option<i32> {
+        &self.viewer_session_versions_less_than_or_equal_to
     }
     /// Consumes the builder and constructs a [`StartViewerSessionRevocationInput`](crate::operation::start_viewer_session_revocation::StartViewerSessionRevocationInput).
     pub fn build(

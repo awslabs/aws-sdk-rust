@@ -36,6 +36,10 @@ impl DeleteRouteFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteRoute as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_route::builders::DeleteRouteInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl DeleteRouteFluentBuilder {
         self.inner = self.inner.set_destination_cidr_block(input);
         self
     }
+    /// <p>The IPv4 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
+    pub fn get_destination_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_cidr_block()
+    }
     /// <p>The IPv6 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
     pub fn destination_ipv6_cidr_block(
         mut self,
@@ -139,6 +147,10 @@ impl DeleteRouteFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destination_ipv6_cidr_block(input);
         self
+    }
+    /// <p>The IPv6 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
+    pub fn get_destination_ipv6_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_ipv6_cidr_block()
     }
     /// <p>The ID of the prefix list for the route.</p>
     pub fn destination_prefix_list_id(
@@ -156,6 +168,10 @@ impl DeleteRouteFluentBuilder {
         self.inner = self.inner.set_destination_prefix_list_id(input);
         self
     }
+    /// <p>The ID of the prefix list for the route.</p>
+    pub fn get_destination_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_prefix_list_id()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -165,6 +181,10 @@ impl DeleteRouteFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
     /// <p>The ID of the route table.</p>
     pub fn route_table_id(
@@ -181,5 +201,9 @@ impl DeleteRouteFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_route_table_id(input);
         self
+    }
+    /// <p>The ID of the route table.</p>
+    pub fn get_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_route_table_id()
     }
 }

@@ -36,6 +36,10 @@ impl GetArchitectureRecommendationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetArchitectureRecommendations as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_architecture_recommendations::builders::GetArchitectureRecommendationsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl GetArchitectureRecommendationsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The number of objects that you want to return with this call.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -135,6 +143,10 @@ impl GetArchitectureRecommendationsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token that identifies which batch of results you want to see.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The name of a recovery group.</p>
     pub fn recovery_group_name(
@@ -151,5 +163,9 @@ impl GetArchitectureRecommendationsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_recovery_group_name(input);
         self
+    }
+    /// <p>The name of a recovery group.</p>
+    pub fn get_recovery_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_recovery_group_name()
     }
 }

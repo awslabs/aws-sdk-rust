@@ -40,6 +40,10 @@ impl AgentOrchestrationConfigBuilder {
         self.profiling_enabled = input;
         self
     }
+    /// <p> A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to <code>true</code> to enable profiling. </p>
+    pub fn get_profiling_enabled(&self) -> &::std::option::Option<bool> {
+        &self.profiling_enabled
+    }
     /// Consumes the builder and constructs a [`AgentOrchestrationConfig`](crate::types::AgentOrchestrationConfig).
     pub fn build(self) -> crate::types::AgentOrchestrationConfig {
         crate::types::AgentOrchestrationConfig {

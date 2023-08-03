@@ -86,6 +86,10 @@ impl OrganizationEventDetailsErrorItemBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>Error information returned when a <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html">DescribeEventDetailsForOrganization</a> operation can't find a specified event.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
     /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
@@ -100,6 +104,12 @@ impl OrganizationEventDetailsErrorItemBuilder {
         self.event_arn = input;
         self
     }
+    /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
+    /// <p>For example, an event ARN might look like the following:</p>
+    /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
+    pub fn get_event_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_arn
+    }
     /// <p>The name of the error.</p>
     pub fn error_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_name = ::std::option::Option::Some(input.into());
@@ -109,6 +119,10 @@ impl OrganizationEventDetailsErrorItemBuilder {
     pub fn set_error_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_name = input;
         self
+    }
+    /// <p>The name of the error.</p>
+    pub fn get_error_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_name
     }
     /// <p>A message that describes the error.</p>
     /// <p>If you call the <code>DescribeEventDetailsForOrganization</code> operation and receive one of the following errors, follow the recommendations in the message:</p>
@@ -137,6 +151,16 @@ impl OrganizationEventDetailsErrorItemBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>A message that describes the error.</p>
+    /// <p>If you call the <code>DescribeEventDetailsForOrganization</code> operation and receive one of the following errors, follow the recommendations in the message:</p>
+    /// <ul>
+    /// <li> <p>We couldn't find a public event that matches your request. To find an event that is account specific, you must enter an Amazon Web Services account ID in the request.</p> </li>
+    /// <li> <p>We couldn't find an account specific event for the specified Amazon Web Services account. To find an event that is public, you must enter a null value for the Amazon Web Services account ID in the request.</p> </li>
+    /// <li> <p>Your Amazon Web Services account doesn't include the Amazon Web Services Support plan required to use the Health API. You must have either a Business, Enterprise On-Ramp, or Enterprise Support plan.</p> </li>
+    /// </ul>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`OrganizationEventDetailsErrorItem`](crate::types::OrganizationEventDetailsErrorItem).
     pub fn build(self) -> crate::types::OrganizationEventDetailsErrorItem {

@@ -222,6 +222,10 @@ impl DescribeSecretOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the secret.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the secret.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -231,6 +235,10 @@ impl DescribeSecretOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the secret.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The description of the secret.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -242,6 +250,10 @@ impl DescribeSecretOutputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the secret.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The key ID or alias ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the secret is encrypted with the Amazon Web Services managed key <code>aws/secretsmanager</code>, this field is omitted. Secrets created using the console use an KMS key ID.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -251,6 +263,10 @@ impl DescribeSecretOutputBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>The key ID or alias ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the secret is encrypted with the Amazon Web Services managed key <code>aws/secretsmanager</code>, this field is omitted. Secrets created using the console use an KMS key ID.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// <p>Specifies whether automatic rotation is turned on for this secret.</p>
     /// <p>To turn on rotation, use <code>RotateSecret</code>. To turn off rotation, use <code>CancelRotateSecret</code>.</p>
@@ -263,6 +279,11 @@ impl DescribeSecretOutputBuilder {
     pub fn set_rotation_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.rotation_enabled = input;
         self
+    }
+    /// <p>Specifies whether automatic rotation is turned on for this secret.</p>
+    /// <p>To turn on rotation, use <code>RotateSecret</code>. To turn off rotation, use <code>CancelRotateSecret</code>.</p>
+    pub fn get_rotation_enabled(&self) -> &::std::option::Option<bool> {
+        &self.rotation_enabled
     }
     /// <p>The ARN of the Lambda function that Secrets Manager invokes to rotate the secret. </p>
     pub fn rotation_lambda_arn(
@@ -280,6 +301,10 @@ impl DescribeSecretOutputBuilder {
         self.rotation_lambda_arn = input;
         self
     }
+    /// <p>The ARN of the Lambda function that Secrets Manager invokes to rotate the secret. </p>
+    pub fn get_rotation_lambda_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rotation_lambda_arn
+    }
     /// <p>The rotation schedule and Lambda function for this secret. If the secret previously had rotation turned on, but it is now turned off, this field shows the previous rotation schedule and rotation function. If the secret never had rotation turned on, this field is omitted.</p>
     pub fn rotation_rules(mut self, input: crate::types::RotationRulesType) -> Self {
         self.rotation_rules = ::std::option::Option::Some(input);
@@ -292,6 +317,10 @@ impl DescribeSecretOutputBuilder {
     ) -> Self {
         self.rotation_rules = input;
         self
+    }
+    /// <p>The rotation schedule and Lambda function for this secret. If the secret previously had rotation turned on, but it is now turned off, this field shows the previous rotation schedule and rotation function. If the secret never had rotation turned on, this field is omitted.</p>
+    pub fn get_rotation_rules(&self) -> &::std::option::Option<crate::types::RotationRulesType> {
+        &self.rotation_rules
     }
     /// <p>The last date and time that Secrets Manager rotated the secret. If the secret isn't configured for rotation, Secrets Manager returns null.</p>
     pub fn last_rotated_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -306,6 +335,10 @@ impl DescribeSecretOutputBuilder {
         self.last_rotated_date = input;
         self
     }
+    /// <p>The last date and time that Secrets Manager rotated the secret. If the secret isn't configured for rotation, Secrets Manager returns null.</p>
+    pub fn get_last_rotated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_rotated_date
+    }
     /// <p>The last date and time that this secret was modified in any way.</p>
     pub fn last_changed_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_changed_date = ::std::option::Option::Some(input);
@@ -319,6 +352,10 @@ impl DescribeSecretOutputBuilder {
         self.last_changed_date = input;
         self
     }
+    /// <p>The last date and time that this secret was modified in any way.</p>
+    pub fn get_last_changed_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_changed_date
+    }
     /// <p>The date that the secret was last accessed in the Region. This field is omitted if the secret has never been retrieved in the Region.</p>
     pub fn last_accessed_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_accessed_date = ::std::option::Option::Some(input);
@@ -331,6 +368,10 @@ impl DescribeSecretOutputBuilder {
     ) -> Self {
         self.last_accessed_date = input;
         self
+    }
+    /// <p>The date that the secret was last accessed in the Region. This field is omitted if the secret has never been retrieved in the Region.</p>
+    pub fn get_last_accessed_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_accessed_date
     }
     /// <p>The date the secret is scheduled for deletion. If it is not scheduled for deletion, this field is omitted. When you delete a secret, Secrets Manager requires a recovery window of at least 7 days before deleting the secret. Some time after the deleted date, Secrets Manager deletes the secret, including all of its versions.</p>
     /// <p>If a secret is scheduled for deletion, then its details, including the encrypted secret value, is not accessible. To cancel a scheduled deletion and restore access to the secret, use <code>RestoreSecret</code>.</p>
@@ -347,6 +388,11 @@ impl DescribeSecretOutputBuilder {
         self.deleted_date = input;
         self
     }
+    /// <p>The date the secret is scheduled for deletion. If it is not scheduled for deletion, this field is omitted. When you delete a secret, Secrets Manager requires a recovery window of at least 7 days before deleting the secret. Some time after the deleted date, Secrets Manager deletes the secret, including all of its versions.</p>
+    /// <p>If a secret is scheduled for deletion, then its details, including the encrypted secret value, is not accessible. To cancel a scheduled deletion and restore access to the secret, use <code>RestoreSecret</code>.</p>
+    pub fn get_deleted_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.deleted_date
+    }
     /// <p>The next rotation is scheduled to occur on or before this date. If the secret isn't configured for rotation, Secrets Manager returns null.</p>
     pub fn next_rotation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.next_rotation_date = ::std::option::Option::Some(input);
@@ -359,6 +405,10 @@ impl DescribeSecretOutputBuilder {
     ) -> Self {
         self.next_rotation_date = input;
         self
+    }
+    /// <p>The next rotation is scheduled to occur on or before this date. If the secret isn't configured for rotation, Secrets Manager returns null.</p>
+    pub fn get_next_rotation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.next_rotation_date
     }
     /// Appends an item to `tags`.
     ///
@@ -378,6 +428,10 @@ impl DescribeSecretOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The list of tags attached to the secret. To add tags to a secret, use <code>TagResource</code>. To remove tags, use <code>UntagResource</code>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Adds a key-value pair to `version_ids_to_stages`.
     ///
@@ -421,6 +475,21 @@ impl DescribeSecretOutputBuilder {
         self.version_ids_to_stages = input;
         self
     }
+    /// <p>A list of the versions of the secret that have staging labels attached. Versions that don't have staging labels are considered deprecated and Secrets Manager can delete them.</p>
+    /// <p>Secrets Manager uses staging labels to indicate the status of a secret version during rotation. The three staging labels for rotation are: </p>
+    /// <ul>
+    /// <li> <p> <code>AWSCURRENT</code>, which indicates the current version of the secret.</p> </li>
+    /// <li> <p> <code>AWSPENDING</code>, which indicates the version of the secret that contains new secret information that will become the next current version when rotation finishes.</p> <p>During rotation, Secrets Manager creates an <code>AWSPENDING</code> version ID before creating the new secret version. To check if a secret version exists, call <code>GetSecretValue</code>.</p> </li>
+    /// <li> <p> <code>AWSPREVIOUS</code>, which indicates the previous current version of the secret. You can use this as the <i>last known good</i> version.</p> </li>
+    /// </ul>
+    /// <p>For more information about rotation and staging labels, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">How rotation works</a>.</p>
+    pub fn get_version_ids_to_stages(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    > {
+        &self.version_ids_to_stages
+    }
     /// <p>The ID of the service that created this secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by other Amazon Web Services services</a>.</p>
     pub fn owning_service(
         mut self,
@@ -437,6 +506,10 @@ impl DescribeSecretOutputBuilder {
         self.owning_service = input;
         self
     }
+    /// <p>The ID of the service that created this secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by other Amazon Web Services services</a>.</p>
+    pub fn get_owning_service(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owning_service
+    }
     /// <p>The date the secret was created.</p>
     pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_date = ::std::option::Option::Some(input);
@@ -449,6 +522,10 @@ impl DescribeSecretOutputBuilder {
     ) -> Self {
         self.created_date = input;
         self
+    }
+    /// <p>The date the secret was created.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_date
     }
     /// <p>The Region the secret is in. If a secret is replicated to other Regions, the replicas are listed in <code>ReplicationStatus</code>. </p>
     pub fn primary_region(
@@ -465,6 +542,10 @@ impl DescribeSecretOutputBuilder {
     ) -> Self {
         self.primary_region = input;
         self
+    }
+    /// <p>The Region the secret is in. If a secret is replicated to other Regions, the replicas are listed in <code>ReplicationStatus</code>. </p>
+    pub fn get_primary_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.primary_region
     }
     /// Appends an item to `replication_status`.
     ///
@@ -494,6 +575,17 @@ impl DescribeSecretOutputBuilder {
     ) -> Self {
         self.replication_status = input;
         self
+    }
+    /// <p>A list of the replicas of this secret and their status: </p>
+    /// <ul>
+    /// <li> <p> <code>Failed</code>, which indicates that the replica was not created.</p> </li>
+    /// <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li>
+    /// <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li>
+    /// </ul>
+    pub fn get_replication_status(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>> {
+        &self.replication_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

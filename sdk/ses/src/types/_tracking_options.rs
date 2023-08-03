@@ -47,6 +47,10 @@ impl TrackingOptionsBuilder {
         self.custom_redirect_domain = input;
         self
     }
+    /// <p>The custom subdomain that will be used to redirect email recipients to the Amazon SES event tracking domain.</p>
+    pub fn get_custom_redirect_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_redirect_domain
+    }
     /// Consumes the builder and constructs a [`TrackingOptions`](crate::types::TrackingOptions).
     pub fn build(self) -> crate::types::TrackingOptions {
         crate::types::TrackingOptions {

@@ -93,6 +93,10 @@ impl PostCommentForPullRequestInputBuilder {
         self.pull_request_id = input;
         self
     }
+    /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+    pub fn get_pull_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pull_request_id
+    }
     /// <p>The name of the repository where you want to post a comment on a pull request.</p>
     pub fn repository_name(
         mut self,
@@ -108,6 +112,10 @@ impl PostCommentForPullRequestInputBuilder {
     ) -> Self {
         self.repository_name = input;
         self
+    }
+    /// <p>The name of the repository where you want to post a comment on a pull request.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
     }
     /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was created.</p>
     pub fn before_commit_id(
@@ -125,6 +133,10 @@ impl PostCommentForPullRequestInputBuilder {
         self.before_commit_id = input;
         self
     }
+    /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was created.</p>
+    pub fn get_before_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.before_commit_id
+    }
     /// <p>The full commit ID of the commit in the source branch that is the current tip of the branch for the pull request when you post the comment.</p>
     pub fn after_commit_id(
         mut self,
@@ -141,6 +153,10 @@ impl PostCommentForPullRequestInputBuilder {
         self.after_commit_id = input;
         self
     }
+    /// <p>The full commit ID of the commit in the source branch that is the current tip of the branch for the pull request when you post the comment.</p>
+    pub fn get_after_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.after_commit_id
+    }
     /// <p>The location of the change where you want to post your comment. If no location is provided, the comment is posted as a general comment on the pull request difference between the before commit ID and the after commit ID.</p>
     pub fn location(mut self, input: crate::types::Location) -> Self {
         self.location = ::std::option::Option::Some(input);
@@ -151,6 +167,10 @@ impl PostCommentForPullRequestInputBuilder {
         self.location = input;
         self
     }
+    /// <p>The location of the change where you want to post your comment. If no location is provided, the comment is posted as a general comment on the pull request difference between the before commit ID and the after commit ID.</p>
+    pub fn get_location(&self) -> &::std::option::Option<crate::types::Location> {
+        &self.location
+    }
     /// <p>The content of your comment on the change.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
@@ -160,6 +180,10 @@ impl PostCommentForPullRequestInputBuilder {
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
+    }
+    /// <p>The content of your comment on the change.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
     }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
     pub fn client_request_token(
@@ -176,6 +200,10 @@ impl PostCommentForPullRequestInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Consumes the builder and constructs a [`PostCommentForPullRequestInput`](crate::operation::post_comment_for_pull_request::PostCommentForPullRequestInput).
     pub fn build(

@@ -76,6 +76,12 @@ impl PutTelemetryRecordsInputBuilder {
         self
     }
     /// <p></p>
+    pub fn get_telemetry_records(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TelemetryRecord>> {
+        &self.telemetry_records
+    }
+    /// <p></p>
     pub fn ec2_instance_id(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -92,6 +98,10 @@ impl PutTelemetryRecordsInputBuilder {
         self
     }
     /// <p></p>
+    pub fn get_ec2_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ec2_instance_id
+    }
+    /// <p></p>
     pub fn hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hostname = ::std::option::Option::Some(input.into());
         self
@@ -102,6 +112,10 @@ impl PutTelemetryRecordsInputBuilder {
         self
     }
     /// <p></p>
+    pub fn get_hostname(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hostname
+    }
+    /// <p></p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -110,6 +124,10 @@ impl PutTelemetryRecordsInputBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p></p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// Consumes the builder and constructs a [`PutTelemetryRecordsInput`](crate::operation::put_telemetry_records::PutTelemetryRecordsInput).
     pub fn build(

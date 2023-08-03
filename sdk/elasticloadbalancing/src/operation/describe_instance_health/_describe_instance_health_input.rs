@@ -56,6 +56,10 @@ impl DescribeInstanceHealthInputBuilder {
         self.load_balancer_name = input;
         self
     }
+    /// <p>The name of the load balancer.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.load_balancer_name
+    }
     /// Appends an item to `instances`.
     ///
     /// To override the contents of this collection use [`set_instances`](Self::set_instances).
@@ -74,6 +78,10 @@ impl DescribeInstanceHealthInputBuilder {
     ) -> Self {
         self.instances = input;
         self
+    }
+    /// <p>The IDs of the instances.</p>
+    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Instance>> {
+        &self.instances
     }
     /// Consumes the builder and constructs a [`DescribeInstanceHealthInput`](crate::operation::describe_instance_health::DescribeInstanceHealthInput).
     pub fn build(

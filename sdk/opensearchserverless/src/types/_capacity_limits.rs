@@ -48,6 +48,10 @@ impl CapacityLimitsBuilder {
         self.max_indexing_capacity_in_ocu = input;
         self
     }
+    /// <p>The maximum indexing capacity for collections.</p>
+    pub fn get_max_indexing_capacity_in_ocu(&self) -> &::std::option::Option<i32> {
+        &self.max_indexing_capacity_in_ocu
+    }
     /// <p>The maximum search capacity for collections.</p>
     pub fn max_search_capacity_in_ocu(mut self, input: i32) -> Self {
         self.max_search_capacity_in_ocu = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl CapacityLimitsBuilder {
     pub fn set_max_search_capacity_in_ocu(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_search_capacity_in_ocu = input;
         self
+    }
+    /// <p>The maximum search capacity for collections.</p>
+    pub fn get_max_search_capacity_in_ocu(&self) -> &::std::option::Option<i32> {
+        &self.max_search_capacity_in_ocu
     }
     /// Consumes the builder and constructs a [`CapacityLimits`](crate::types::CapacityLimits).
     pub fn build(self) -> crate::types::CapacityLimits {

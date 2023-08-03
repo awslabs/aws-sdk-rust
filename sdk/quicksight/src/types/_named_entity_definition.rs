@@ -72,6 +72,10 @@ impl NamedEntityDefinitionBuilder {
         self.field_name = input;
         self
     }
+    /// <p>The name of the entity.</p>
+    pub fn get_field_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_name
+    }
     /// <p>The property name to be used for the named entity.</p>
     pub fn property_name(
         mut self,
@@ -88,6 +92,10 @@ impl NamedEntityDefinitionBuilder {
         self.property_name = input;
         self
     }
+    /// <p>The property name to be used for the named entity.</p>
+    pub fn get_property_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.property_name
+    }
     /// <p>The property role. Valid values for this structure are <code>PRIMARY</code> and <code>ID</code>.</p>
     pub fn property_role(mut self, input: crate::types::PropertyRole) -> Self {
         self.property_role = ::std::option::Option::Some(input);
@@ -100,6 +108,10 @@ impl NamedEntityDefinitionBuilder {
     ) -> Self {
         self.property_role = input;
         self
+    }
+    /// <p>The property role. Valid values for this structure are <code>PRIMARY</code> and <code>ID</code>.</p>
+    pub fn get_property_role(&self) -> &::std::option::Option<crate::types::PropertyRole> {
+        &self.property_role
     }
     /// <p>The property usage. Valid values for this structure are <code>INHERIT</code>, <code>DIMENSION</code>, and <code>MEASURE</code>.</p>
     pub fn property_usage(mut self, input: crate::types::PropertyUsage) -> Self {
@@ -114,6 +126,10 @@ impl NamedEntityDefinitionBuilder {
         self.property_usage = input;
         self
     }
+    /// <p>The property usage. Valid values for this structure are <code>INHERIT</code>, <code>DIMENSION</code>, and <code>MEASURE</code>.</p>
+    pub fn get_property_usage(&self) -> &::std::option::Option<crate::types::PropertyUsage> {
+        &self.property_usage
+    }
     /// <p>The definition of a metric.</p>
     pub fn metric(mut self, input: crate::types::NamedEntityDefinitionMetric) -> Self {
         self.metric = ::std::option::Option::Some(input);
@@ -126,6 +142,10 @@ impl NamedEntityDefinitionBuilder {
     ) -> Self {
         self.metric = input;
         self
+    }
+    /// <p>The definition of a metric.</p>
+    pub fn get_metric(&self) -> &::std::option::Option<crate::types::NamedEntityDefinitionMetric> {
+        &self.metric
     }
     /// Consumes the builder and constructs a [`NamedEntityDefinition`](crate::types::NamedEntityDefinition).
     pub fn build(self) -> crate::types::NamedEntityDefinition {

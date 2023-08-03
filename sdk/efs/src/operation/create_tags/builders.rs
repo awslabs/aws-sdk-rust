@@ -41,6 +41,10 @@ impl CreateTagsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateTags as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_tags::builders::CreateTagsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +133,10 @@ impl CreateTagsFluentBuilder {
         self.inner = self.inner.set_file_system_id(input);
         self
     }
+    /// <p>The ID of the file system whose tags you want to modify (String). This operation modifies the tags only, not the file system.</p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_file_system_id()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -145,5 +153,9 @@ impl CreateTagsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair. </p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

@@ -36,6 +36,10 @@ impl PutAccountSuppressionAttributesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutAccountSuppressionAttributes as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_account_suppression_attributes::builders::PutAccountSuppressionAttributesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -114,5 +118,15 @@ impl PutAccountSuppressionAttributesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_suppressed_reasons(input);
         self
+    }
+    /// <p>A list that contains the reasons that email addresses will be automatically added to the suppression list for your account. This list can contain any or all of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>
+    /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>
+    /// </ul>
+    pub fn get_suppressed_reasons(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>> {
+        self.inner.get_suppressed_reasons()
     }
 }

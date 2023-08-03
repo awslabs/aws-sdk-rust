@@ -74,6 +74,10 @@ impl GetAggregateDiscoveredResourceCountsOutputBuilder {
         self.total_discovered_resources = input;
         self
     }
+    /// <p>The total number of resources that are present in an aggregator with the filters that you provide.</p>
+    pub fn get_total_discovered_resources(&self) -> &::std::option::Option<i64> {
+        &self.total_discovered_resources
+    }
     /// <p>The key passed into the request object. If <code>GroupByKey</code> is not provided, the result will be empty.</p>
     pub fn group_by_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_by_key = ::std::option::Option::Some(input.into());
@@ -83,6 +87,10 @@ impl GetAggregateDiscoveredResourceCountsOutputBuilder {
     pub fn set_group_by_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_by_key = input;
         self
+    }
+    /// <p>The key passed into the request object. If <code>GroupByKey</code> is not provided, the result will be empty.</p>
+    pub fn get_group_by_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_by_key
     }
     /// Appends an item to `grouped_resource_counts`.
     ///
@@ -103,6 +111,12 @@ impl GetAggregateDiscoveredResourceCountsOutputBuilder {
         self.grouped_resource_counts = input;
         self
     }
+    /// <p>Returns a list of GroupedResourceCount objects.</p>
+    pub fn get_grouped_resource_counts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupedResourceCount>> {
+        &self.grouped_resource_counts
+    }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -112,6 +126,10 @@ impl GetAggregateDiscoveredResourceCountsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

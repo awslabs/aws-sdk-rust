@@ -36,6 +36,10 @@ impl CancelPipelineReprocessingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CancelPipelineReprocessing as a reference.
+    pub fn as_input(&self) -> &crate::operation::cancel_pipeline_reprocessing::builders::CancelPipelineReprocessingInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl CancelPipelineReprocessingFluentBuilder {
         self.inner = self.inner.set_pipeline_name(input);
         self
     }
+    /// <p>The name of pipeline for which data reprocessing is canceled.</p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pipeline_name()
+    }
     /// <p>The ID of the reprocessing task (returned by <code>StartPipelineReprocessing</code>).</p>
     pub fn reprocessing_id(
         mut self,
@@ -147,5 +155,9 @@ impl CancelPipelineReprocessingFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_reprocessing_id(input);
         self
+    }
+    /// <p>The ID of the reprocessing task (returned by <code>StartPipelineReprocessing</code>).</p>
+    pub fn get_reprocessing_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reprocessing_id()
     }
 }

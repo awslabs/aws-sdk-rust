@@ -49,6 +49,10 @@ impl ModifyClientPropertiesInputBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The resource identifiers, in the form of directory IDs.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>Information about the Amazon WorkSpaces client.</p>
     pub fn client_properties(mut self, input: crate::types::ClientProperties) -> Self {
         self.client_properties = ::std::option::Option::Some(input);
@@ -61,6 +65,10 @@ impl ModifyClientPropertiesInputBuilder {
     ) -> Self {
         self.client_properties = input;
         self
+    }
+    /// <p>Information about the Amazon WorkSpaces client.</p>
+    pub fn get_client_properties(&self) -> &::std::option::Option<crate::types::ClientProperties> {
+        &self.client_properties
     }
     /// Consumes the builder and constructs a [`ModifyClientPropertiesInput`](crate::operation::modify_client_properties::ModifyClientPropertiesInput).
     pub fn build(

@@ -61,6 +61,10 @@ impl BatchUpdateRuleInputBuilder {
         self.service_identifier = input;
         self
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    pub fn get_service_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_identifier
+    }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
     pub fn listener_identifier(
         mut self,
@@ -76,6 +80,10 @@ impl BatchUpdateRuleInputBuilder {
     ) -> Self {
         self.listener_identifier = input;
         self
+    }
+    /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
+    pub fn get_listener_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.listener_identifier
     }
     /// Appends an item to `rules`.
     ///
@@ -95,6 +103,10 @@ impl BatchUpdateRuleInputBuilder {
     ) -> Self {
         self.rules = input;
         self
+    }
+    /// <p>The rules for the specified listener.</p>
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleUpdate>> {
+        &self.rules
     }
     /// Consumes the builder and constructs a [`BatchUpdateRuleInput`](crate::operation::batch_update_rule::BatchUpdateRuleInput).
     pub fn build(

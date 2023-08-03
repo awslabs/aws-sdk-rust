@@ -73,6 +73,10 @@ impl ConfigurationBuilder {
         self.classification = input;
         self
     }
+    /// <p>The classification within a configuration.</p>
+    pub fn get_classification(&self) -> &::std::option::Option<::std::string::String> {
+        &self.classification
+    }
     /// Appends an item to `configurations`.
     ///
     /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
@@ -91,6 +95,12 @@ impl ConfigurationBuilder {
     ) -> Self {
         self.configurations = input;
         self
+    }
+    /// <p>A list of additional configurations to apply within a configuration object.</p>
+    pub fn get_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {
+        &self.configurations
     }
     /// Adds a key-value pair to `properties`.
     ///
@@ -116,6 +126,14 @@ impl ConfigurationBuilder {
     ) -> Self {
         self.properties = input;
         self
+    }
+    /// <p>A set of properties specified within a configuration classification.</p>
+    pub fn get_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.properties
     }
     /// Consumes the builder and constructs a [`Configuration`](crate::types::Configuration).
     pub fn build(self) -> crate::types::Configuration {

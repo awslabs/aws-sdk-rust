@@ -57,6 +57,10 @@ impl DescribeServiceActionInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The self-service action identifier.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The language code.</p>
     /// <ul>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
@@ -80,6 +84,14 @@ impl DescribeServiceActionInputBuilder {
     ) -> Self {
         self.accept_language = input;
         self
+    }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accept_language
     }
     /// Consumes the builder and constructs a [`DescribeServiceActionInput`](crate::operation::describe_service_action::DescribeServiceActionInput).
     pub fn build(

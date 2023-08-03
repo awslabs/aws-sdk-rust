@@ -45,6 +45,10 @@ impl DeleteStateMachineVersionInputBuilder {
         self.state_machine_version_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the state machine version to delete.</p>
+    pub fn get_state_machine_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_machine_version_arn
+    }
     /// Consumes the builder and constructs a [`DeleteStateMachineVersionInput`](crate::operation::delete_state_machine_version::DeleteStateMachineVersionInput).
     pub fn build(
         self,

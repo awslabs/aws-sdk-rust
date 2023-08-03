@@ -68,6 +68,10 @@ impl UserPhoneConfigBuilder {
         self.phone_type = input;
         self
     }
+    /// <p>The phone type.</p>
+    pub fn get_phone_type(&self) -> &::std::option::Option<crate::types::PhoneType> {
+        &self.phone_type
+    }
     /// <p>The Auto accept setting.</p>
     pub fn auto_accept(mut self, input: bool) -> Self {
         self.auto_accept = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl UserPhoneConfigBuilder {
     pub fn set_auto_accept(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_accept = input;
         self
+    }
+    /// <p>The Auto accept setting.</p>
+    pub fn get_auto_accept(&self) -> &::std::option::Option<bool> {
+        &self.auto_accept
     }
     /// <p>The After Call Work (ACW) timeout setting, in seconds.</p> <note>
     /// <p>When returned by a <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is returned in milliseconds. </p>
@@ -91,6 +99,12 @@ impl UserPhoneConfigBuilder {
     pub fn set_after_contact_work_time_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.after_contact_work_time_limit = input;
         self
+    }
+    /// <p>The After Call Work (ACW) timeout setting, in seconds.</p> <note>
+    /// <p>When returned by a <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is returned in milliseconds. </p>
+    /// </note>
+    pub fn get_after_contact_work_time_limit(&self) -> &::std::option::Option<i32> {
+        &self.after_contact_work_time_limit
     }
     /// <p>The phone number for the user's desk phone.</p>
     pub fn desk_phone_number(
@@ -107,6 +121,10 @@ impl UserPhoneConfigBuilder {
     ) -> Self {
         self.desk_phone_number = input;
         self
+    }
+    /// <p>The phone number for the user's desk phone.</p>
+    pub fn get_desk_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.desk_phone_number
     }
     /// Consumes the builder and constructs a [`UserPhoneConfig`](crate::types::UserPhoneConfig).
     pub fn build(self) -> crate::types::UserPhoneConfig {

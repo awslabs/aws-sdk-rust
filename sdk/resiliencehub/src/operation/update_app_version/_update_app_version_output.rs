@@ -75,6 +75,10 @@ impl UpdateAppVersionOutputBuilder {
         self.app_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_arn
+    }
     /// <p>The Resilience Hub application version.</p>
     pub fn app_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_version = ::std::option::Option::Some(input.into());
@@ -84,6 +88,10 @@ impl UpdateAppVersionOutputBuilder {
     pub fn set_app_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_version = input;
         self
+    }
+    /// <p>The Resilience Hub application version.</p>
+    pub fn get_app_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_version
     }
     /// Adds a key-value pair to `additional_info`.
     ///
@@ -116,6 +124,16 @@ impl UpdateAppVersionOutputBuilder {
     ) -> Self {
         self.additional_info = input;
         self
+    }
+    /// <p>Additional configuration parameters for an Resilience Hub application. If you want to implement <code>additionalInfo</code> through the Resilience Hub console rather than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure the application configuration parameters</a>.</p> <note>
+    /// <p>Currently, this parameter supports only failover region and account.</p>
+    /// </note>
+    pub fn get_additional_info(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    > {
+        &self.additional_info
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

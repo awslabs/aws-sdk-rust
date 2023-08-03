@@ -57,6 +57,10 @@ impl DescribeScheduledActionsOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeScheduledActions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// Appends an item to `scheduled_actions`.
     ///
     /// To override the contents of this collection use [`set_scheduled_actions`](Self::set_scheduled_actions).
@@ -75,6 +79,12 @@ impl DescribeScheduledActionsOutputBuilder {
     ) -> Self {
         self.scheduled_actions = input;
         self
+    }
+    /// <p>List of retrieved scheduled actions. </p>
+    pub fn get_scheduled_actions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledAction>> {
+        &self.scheduled_actions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

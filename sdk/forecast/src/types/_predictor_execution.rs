@@ -55,6 +55,10 @@ impl PredictorExecutionBuilder {
         self.algorithm_arn = input;
         self
     }
+    /// <p>The ARN of the algorithm used to test the predictor.</p>
+    pub fn get_algorithm_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.algorithm_arn
+    }
     /// Appends an item to `test_windows`.
     ///
     /// To override the contents of this collection use [`set_test_windows`](Self::set_test_windows).
@@ -73,6 +77,12 @@ impl PredictorExecutionBuilder {
     ) -> Self {
         self.test_windows = input;
         self
+    }
+    /// <p>An array of test windows used to evaluate the algorithm. The <code>NumberOfBacktestWindows</code> from the object determines the number of windows in the array.</p>
+    pub fn get_test_windows(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TestWindowSummary>> {
+        &self.test_windows
     }
     /// Consumes the builder and constructs a [`PredictorExecution`](crate::types::PredictorExecution).
     pub fn build(self) -> crate::types::PredictorExecution {

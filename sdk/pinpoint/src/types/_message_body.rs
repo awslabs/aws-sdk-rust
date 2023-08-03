@@ -48,6 +48,10 @@ impl MessageBodyBuilder {
         self.message = input;
         self
     }
+    /// <p>The message that's returned from the API.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The unique identifier for the request or response.</p>
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl MessageBodyBuilder {
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_id = input;
         self
+    }
+    /// <p>The unique identifier for the request or response.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
     }
     /// Consumes the builder and constructs a [`MessageBody`](crate::types::MessageBody).
     pub fn build(self) -> crate::types::MessageBody {

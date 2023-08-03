@@ -72,6 +72,10 @@ impl RegionalBucketBuilder {
         self.bucket = input;
         self
     }
+    /// <p></p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>The Amazon Resource Name (ARN) for the regional bucket.</p>
     pub fn bucket_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_arn = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl RegionalBucketBuilder {
         self.bucket_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the regional bucket.</p>
+    pub fn get_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_arn
+    }
     /// <p></p>
     pub fn public_access_block_enabled(mut self, input: bool) -> Self {
         self.public_access_block_enabled = ::std::option::Option::Some(input);
@@ -91,6 +99,10 @@ impl RegionalBucketBuilder {
     pub fn set_public_access_block_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.public_access_block_enabled = input;
         self
+    }
+    /// <p></p>
+    pub fn get_public_access_block_enabled(&self) -> &::std::option::Option<bool> {
+        &self.public_access_block_enabled
     }
     /// <p>The creation date of the regional bucket</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -105,6 +117,10 @@ impl RegionalBucketBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>The creation date of the regional bucket</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
+    }
     /// <p>The Outposts ID of the regional bucket.</p>
     pub fn outpost_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_id = ::std::option::Option::Some(input.into());
@@ -114,6 +130,10 @@ impl RegionalBucketBuilder {
     pub fn set_outpost_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_id = input;
         self
+    }
+    /// <p>The Outposts ID of the regional bucket.</p>
+    pub fn get_outpost_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.outpost_id
     }
     /// Consumes the builder and constructs a [`RegionalBucket`](crate::types::RegionalBucket).
     pub fn build(self) -> crate::types::RegionalBucket {

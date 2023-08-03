@@ -36,6 +36,12 @@ impl DescribeJobRunFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeJobRun as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_job_run::builders::DescribeJobRunInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DescribeJobRunFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The ID of the job run request. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The ID of the virtual cluster for which the job run is submitted.</p>
     pub fn virtual_cluster_id(
         mut self,
@@ -141,5 +151,9 @@ impl DescribeJobRunFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_virtual_cluster_id(input);
         self
+    }
+    /// <p>The ID of the virtual cluster for which the job run is submitted.</p>
+    pub fn get_virtual_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_virtual_cluster_id()
     }
 }

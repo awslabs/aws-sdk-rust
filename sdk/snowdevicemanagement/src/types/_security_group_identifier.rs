@@ -48,6 +48,10 @@ impl SecurityGroupIdentifierBuilder {
         self.group_id = input;
         self
     }
+    /// <p>The security group ID.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
+    }
     /// <p>The security group name.</p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl SecurityGroupIdentifierBuilder {
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_name = input;
         self
+    }
+    /// <p>The security group name.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
     }
     /// Consumes the builder and constructs a [`SecurityGroupIdentifier`](crate::types::SecurityGroupIdentifier).
     pub fn build(self) -> crate::types::SecurityGroupIdentifier {

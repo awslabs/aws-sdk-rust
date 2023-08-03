@@ -38,6 +38,12 @@ impl CreateOrganizationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateOrganization as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_organization::builders::CreateOrganizationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +134,10 @@ impl CreateOrganizationFluentBuilder {
         self.inner = self.inner.set_directory_id(input);
         self
     }
+    /// <p>The AWS Directory Service directory ID.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_id()
+    }
     /// <p>The organization alias.</p>
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.alias(input.into());
@@ -138,6 +148,10 @@ impl CreateOrganizationFluentBuilder {
         self.inner = self.inner.set_alias(input);
         self
     }
+    /// <p>The organization alias.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_alias()
+    }
     /// <p>The idempotency token associated with the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -147,6 +161,10 @@ impl CreateOrganizationFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>The idempotency token associated with the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// Appends an item to `Domains`.
     ///
@@ -165,6 +183,10 @@ impl CreateOrganizationFluentBuilder {
         self.inner = self.inner.set_domains(input);
         self
     }
+    /// <p>The email domains to associate with the organization.</p>
+    pub fn get_domains(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Domain>> {
+        self.inner.get_domains()
+    }
     /// <p>The Amazon Resource Name (ARN) of a customer managed key from AWS KMS.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_arn(input.into());
@@ -175,6 +197,10 @@ impl CreateOrganizationFluentBuilder {
         self.inner = self.inner.set_kms_key_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of a customer managed key from AWS KMS.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_arn()
+    }
     /// <p>When <code>true</code>, allows organization interoperability between WorkMail and Microsoft Exchange. If <code>true</code>, you must include a AD Connector directory ID in the request.</p>
     pub fn enable_interoperability(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_interoperability(input);
@@ -184,5 +210,9 @@ impl CreateOrganizationFluentBuilder {
     pub fn set_enable_interoperability(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_interoperability(input);
         self
+    }
+    /// <p>When <code>true</code>, allows organization interoperability between WorkMail and Microsoft Exchange. If <code>true</code>, you must include a AD Connector directory ID in the request.</p>
+    pub fn get_enable_interoperability(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_interoperability()
     }
 }

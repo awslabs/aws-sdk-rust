@@ -54,6 +54,10 @@ impl S3LogsBuilder {
         self.s3_bucket_name = input;
         self
     }
+    /// <p>The S3 bucket in which to store the logs.</p>
+    pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_name
+    }
     /// <p>The Amazon S3 path to the bucket where the logs are stored.</p>
     pub fn s3_key_prefix(
         mut self,
@@ -69,6 +73,10 @@ impl S3LogsBuilder {
     ) -> Self {
         self.s3_key_prefix = input;
         self
+    }
+    /// <p>The Amazon S3 path to the bucket where the logs are stored.</p>
+    pub fn get_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_key_prefix
     }
     /// Consumes the builder and constructs a [`S3Logs`](crate::types::S3Logs).
     pub fn build(self) -> crate::types::S3Logs {

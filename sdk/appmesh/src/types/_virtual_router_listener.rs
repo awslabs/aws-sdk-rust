@@ -43,6 +43,10 @@ impl VirtualRouterListenerBuilder {
         self.port_mapping = input;
         self
     }
+    /// <p>An object that represents a port mapping.</p>
+    pub fn get_port_mapping(&self) -> &::std::option::Option<crate::types::PortMapping> {
+        &self.port_mapping
+    }
     /// Consumes the builder and constructs a [`VirtualRouterListener`](crate::types::VirtualRouterListener).
     pub fn build(self) -> crate::types::VirtualRouterListener {
         crate::types::VirtualRouterListener {

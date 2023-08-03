@@ -47,6 +47,10 @@ impl GetDeviceIdentifierInputBuilder {
         self.device_identifier_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the device identifier.</p>
+    pub fn get_device_identifier_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_identifier_arn
+    }
     /// Consumes the builder and constructs a [`GetDeviceIdentifierInput`](crate::operation::get_device_identifier::GetDeviceIdentifierInput).
     pub fn build(
         self,

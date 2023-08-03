@@ -71,6 +71,10 @@ impl TimeSeriesConfigBuilder {
         self.target_attribute_name = input;
         self
     }
+    /// <p>The name of the column representing the target variable that you want to predict for each item in your dataset. The data type of the target variable must be numerical.</p>
+    pub fn get_target_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_attribute_name
+    }
     /// <p>The name of the column indicating a point in time at which the target value of a given item is recorded.</p>
     pub fn timestamp_attribute_name(
         mut self,
@@ -87,6 +91,10 @@ impl TimeSeriesConfigBuilder {
         self.timestamp_attribute_name = input;
         self
     }
+    /// <p>The name of the column indicating a point in time at which the target value of a given item is recorded.</p>
+    pub fn get_timestamp_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timestamp_attribute_name
+    }
     /// <p>The name of the column that represents the set of item identifiers for which you want to predict the target value.</p>
     pub fn item_identifier_attribute_name(
         mut self,
@@ -102,6 +110,12 @@ impl TimeSeriesConfigBuilder {
     ) -> Self {
         self.item_identifier_attribute_name = input;
         self
+    }
+    /// <p>The name of the column that represents the set of item identifiers for which you want to predict the target value.</p>
+    pub fn get_item_identifier_attribute_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.item_identifier_attribute_name
     }
     /// Appends an item to `grouping_attribute_names`.
     ///
@@ -124,6 +138,12 @@ impl TimeSeriesConfigBuilder {
     ) -> Self {
         self.grouping_attribute_names = input;
         self
+    }
+    /// <p>A set of columns names that can be grouped with the item identifier column to create a composite key for which a target value is predicted.</p>
+    pub fn get_grouping_attribute_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.grouping_attribute_names
     }
     /// Consumes the builder and constructs a [`TimeSeriesConfig`](crate::types::TimeSeriesConfig).
     pub fn build(self) -> crate::types::TimeSeriesConfig {

@@ -53,6 +53,10 @@ impl DescribeApplicationVersionInputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The name of the application for which you want to get the version description.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>The ID of the application version for which you want to get the description.</p>
     pub fn application_version_id(mut self, input: i64) -> Self {
         self.application_version_id = ::std::option::Option::Some(input);
@@ -62,6 +66,10 @@ impl DescribeApplicationVersionInputBuilder {
     pub fn set_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.application_version_id = input;
         self
+    }
+    /// <p>The ID of the application version for which you want to get the description.</p>
+    pub fn get_application_version_id(&self) -> &::std::option::Option<i64> {
+        &self.application_version_id
     }
     /// Consumes the builder and constructs a [`DescribeApplicationVersionInput`](crate::operation::describe_application_version::DescribeApplicationVersionInput).
     pub fn build(

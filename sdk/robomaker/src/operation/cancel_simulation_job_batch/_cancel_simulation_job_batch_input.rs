@@ -41,6 +41,10 @@ impl CancelSimulationJobBatchInputBuilder {
         self.batch = input;
         self
     }
+    /// <p>The id of the batch to cancel.</p>
+    pub fn get_batch(&self) -> &::std::option::Option<::std::string::String> {
+        &self.batch
+    }
     /// Consumes the builder and constructs a [`CancelSimulationJobBatchInput`](crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchInput).
     pub fn build(
         self,

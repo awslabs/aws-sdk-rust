@@ -96,6 +96,10 @@ impl PlacementGroupBuilder {
         self.group_name = input;
         self
     }
+    /// <p>The name of the placement group.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
+    }
     /// <p>The state of the placement group.</p>
     pub fn state(mut self, input: crate::types::PlacementGroupState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -108,6 +112,10 @@ impl PlacementGroupBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the placement group.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::PlacementGroupState> {
+        &self.state
     }
     /// <p>The placement strategy.</p>
     pub fn strategy(mut self, input: crate::types::PlacementStrategy) -> Self {
@@ -122,6 +130,10 @@ impl PlacementGroupBuilder {
         self.strategy = input;
         self
     }
+    /// <p>The placement strategy.</p>
+    pub fn get_strategy(&self) -> &::std::option::Option<crate::types::PlacementStrategy> {
+        &self.strategy
+    }
     /// <p>The number of partitions. Valid only if <b>strategy</b> is set to <code>partition</code>.</p>
     pub fn partition_count(mut self, input: i32) -> Self {
         self.partition_count = ::std::option::Option::Some(input);
@@ -132,6 +144,10 @@ impl PlacementGroupBuilder {
         self.partition_count = input;
         self
     }
+    /// <p>The number of partitions. Valid only if <b>strategy</b> is set to <code>partition</code>.</p>
+    pub fn get_partition_count(&self) -> &::std::option::Option<i32> {
+        &self.partition_count
+    }
     /// <p>The ID of the placement group.</p>
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
@@ -141,6 +157,10 @@ impl PlacementGroupBuilder {
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_id = input;
         self
+    }
+    /// <p>The ID of the placement group.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
     }
     /// Appends an item to `tags`.
     ///
@@ -161,6 +181,10 @@ impl PlacementGroupBuilder {
         self.tags = input;
         self
     }
+    /// <p>Any tags applied to the placement group.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The Amazon Resource Name (ARN) of the placement group.</p>
     pub fn group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_arn = ::std::option::Option::Some(input.into());
@@ -170,6 +194,10 @@ impl PlacementGroupBuilder {
     pub fn set_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the placement group.</p>
+    pub fn get_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_arn
     }
     /// <p>The spread level for the placement group. <i>Only</i> Outpost placement groups can be spread across hosts.</p>
     pub fn spread_level(mut self, input: crate::types::SpreadLevel) -> Self {
@@ -183,6 +211,10 @@ impl PlacementGroupBuilder {
     ) -> Self {
         self.spread_level = input;
         self
+    }
+    /// <p>The spread level for the placement group. <i>Only</i> Outpost placement groups can be spread across hosts.</p>
+    pub fn get_spread_level(&self) -> &::std::option::Option<crate::types::SpreadLevel> {
+        &self.spread_level
     }
     /// Consumes the builder and constructs a [`PlacementGroup`](crate::types::PlacementGroup).
     pub fn build(self) -> crate::types::PlacementGroup {

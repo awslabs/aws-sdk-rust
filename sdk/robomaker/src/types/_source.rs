@@ -64,6 +64,10 @@ impl SourceBuilder {
         self.s3_bucket = input;
         self
     }
+    /// <p>The s3 bucket name.</p>
+    pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket
+    }
     /// <p>The s3 object key.</p>
     pub fn s3_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_key = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl SourceBuilder {
         self.s3_key = input;
         self
     }
+    /// <p>The s3 object key.</p>
+    pub fn get_s3_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_key
+    }
     /// <p>A hash of the object specified by <code>s3Bucket</code> and <code>s3Key</code>.</p>
     pub fn etag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.etag = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl SourceBuilder {
     pub fn set_etag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.etag = input;
         self
+    }
+    /// <p>A hash of the object specified by <code>s3Bucket</code> and <code>s3Key</code>.</p>
+    pub fn get_etag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.etag
     }
     /// <p>The taget processor architecture for the application.</p>
     pub fn architecture(mut self, input: crate::types::Architecture) -> Self {
@@ -96,6 +108,10 @@ impl SourceBuilder {
     ) -> Self {
         self.architecture = input;
         self
+    }
+    /// <p>The taget processor architecture for the application.</p>
+    pub fn get_architecture(&self) -> &::std::option::Option<crate::types::Architecture> {
+        &self.architecture
     }
     /// Consumes the builder and constructs a [`Source`](crate::types::Source).
     pub fn build(self) -> crate::types::Source {

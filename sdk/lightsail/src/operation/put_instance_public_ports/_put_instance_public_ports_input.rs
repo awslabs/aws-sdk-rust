@@ -58,6 +58,12 @@ impl PutInstancePublicPortsInputBuilder {
         self.port_infos = input;
         self
     }
+    /// <p>An array of objects to describe the ports to open for the specified instance.</p>
+    pub fn get_port_infos(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PortInfo>> {
+        &self.port_infos
+    }
     /// <p>The name of the instance for which to open ports.</p>
     pub fn instance_name(
         mut self,
@@ -73,6 +79,10 @@ impl PutInstancePublicPortsInputBuilder {
     ) -> Self {
         self.instance_name = input;
         self
+    }
+    /// <p>The name of the instance for which to open ports.</p>
+    pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_name
     }
     /// Consumes the builder and constructs a [`PutInstancePublicPortsInput`](crate::operation::put_instance_public_ports::PutInstancePublicPortsInput).
     pub fn build(

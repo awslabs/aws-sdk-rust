@@ -54,6 +54,10 @@ impl ListJobsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If the <code>List Jobs</code> request produced more than the maximum number of results, you can pass this value into a subsequent <code>List Jobs</code> request in order to retrieve the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `jobs`.
     ///
     /// To override the contents of this collection use [`set_jobs`](Self::set_jobs).
@@ -72,6 +76,12 @@ impl ListJobsOutputBuilder {
     ) -> Self {
         self.jobs = input;
         self
+    }
+    /// <p>The list of current jobs and jobs that have ended within the last 30 days.</p>
+    pub fn get_jobs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobListDescriptor>> {
+        &self.jobs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

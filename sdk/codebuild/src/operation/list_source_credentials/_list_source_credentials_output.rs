@@ -61,6 +61,12 @@ impl ListSourceCredentialsOutputBuilder {
         self.source_credentials_infos = input;
         self
     }
+    /// <p> A list of <code>SourceCredentialsInfo</code> objects. Each <code>SourceCredentialsInfo</code> object includes the authentication type, token ARN, and type of source provider for one set of credentials. </p>
+    pub fn get_source_credentials_infos(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceCredentialsInfo>> {
+        &self.source_credentials_infos
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

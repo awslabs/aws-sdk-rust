@@ -96,6 +96,10 @@ impl ListVectorEnrichmentJobOutputConfigBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the list of the Vector Enrichment jobs.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The names of the Vector Enrichment jobs in the list.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl ListVectorEnrichmentJobOutputConfigBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The names of the Vector Enrichment jobs in the list.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The type of the list of Vector Enrichment jobs.</p>
     pub fn r#type(mut self, input: crate::types::VectorEnrichmentJobType) -> Self {
@@ -119,6 +127,10 @@ impl ListVectorEnrichmentJobOutputConfigBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of the list of Vector Enrichment jobs.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::VectorEnrichmentJobType> {
+        &self.r#type
+    }
     /// <p>The creation time.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -132,6 +144,10 @@ impl ListVectorEnrichmentJobOutputConfigBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The creation time.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The duration of the session, in seconds.</p>
     pub fn duration_in_seconds(mut self, input: i32) -> Self {
         self.duration_in_seconds = ::std::option::Option::Some(input);
@@ -141,6 +157,10 @@ impl ListVectorEnrichmentJobOutputConfigBuilder {
     pub fn set_duration_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.duration_in_seconds = input;
         self
+    }
+    /// <p>The duration of the session, in seconds.</p>
+    pub fn get_duration_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.duration_in_seconds
     }
     /// <p>The status of the Vector Enrichment jobs list. </p>
     pub fn status(mut self, input: crate::types::VectorEnrichmentJobStatus) -> Self {
@@ -154,6 +174,10 @@ impl ListVectorEnrichmentJobOutputConfigBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the Vector Enrichment jobs list. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::VectorEnrichmentJobStatus> {
+        &self.status
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -179,6 +203,14 @@ impl ListVectorEnrichmentJobOutputConfigBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Each tag consists of a key and a value.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`ListVectorEnrichmentJobOutputConfig`](crate::types::ListVectorEnrichmentJobOutputConfig).
     pub fn build(self) -> crate::types::ListVectorEnrichmentJobOutputConfig {

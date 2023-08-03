@@ -51,6 +51,10 @@ impl EfsFileSystemConfigurationBuilder {
         self.file_system_policy = input;
         self
     }
+    /// <p>The JSON policy definition to apply to the Amazon EFS file system. For more information on the elements that make up a file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">Amazon EFS Resource-based policies</a>.</p>
+    pub fn get_file_system_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_system_policy
+    }
     /// Consumes the builder and constructs a [`EfsFileSystemConfiguration`](crate::types::EfsFileSystemConfiguration).
     pub fn build(self) -> crate::types::EfsFileSystemConfiguration {
         crate::types::EfsFileSystemConfiguration {

@@ -45,6 +45,10 @@ impl GetImageRecipeInputBuilder {
         self.image_recipe_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the image recipe that you want to retrieve.</p>
+    pub fn get_image_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_recipe_arn
+    }
     /// Consumes the builder and constructs a [`GetImageRecipeInput`](crate::operation::get_image_recipe::GetImageRecipeInput).
     pub fn build(
         self,

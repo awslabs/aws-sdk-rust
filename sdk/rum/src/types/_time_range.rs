@@ -48,6 +48,10 @@ impl TimeRangeBuilder {
         self.after = input;
         self
     }
+    /// <p>The beginning of the time range to retrieve performance events from.</p>
+    pub fn get_after(&self) -> &::std::option::Option<i64> {
+        &self.after
+    }
     /// <p>The end of the time range to retrieve performance events from. If you omit this, the time range extends to the time that this operation is performed.</p>
     pub fn before(mut self, input: i64) -> Self {
         self.before = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl TimeRangeBuilder {
     pub fn set_before(mut self, input: ::std::option::Option<i64>) -> Self {
         self.before = input;
         self
+    }
+    /// <p>The end of the time range to retrieve performance events from. If you omit this, the time range extends to the time that this operation is performed.</p>
+    pub fn get_before(&self) -> &::std::option::Option<i64> {
+        &self.before
     }
     /// Consumes the builder and constructs a [`TimeRange`](crate::types::TimeRange).
     pub fn build(self) -> crate::types::TimeRange {

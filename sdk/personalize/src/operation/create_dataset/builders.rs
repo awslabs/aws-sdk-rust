@@ -56,6 +56,12 @@ impl CreateDatasetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDataset as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_dataset::builders::CreateDatasetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +144,10 @@ impl CreateDatasetFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name for the dataset.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The ARN of the schema to associate with the dataset. The schema defines the dataset fields.</p>
     pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schema_arn(input.into());
@@ -147,6 +157,10 @@ impl CreateDatasetFluentBuilder {
     pub fn set_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schema_arn(input);
         self
+    }
+    /// <p>The ARN of the schema to associate with the dataset. The schema defines the dataset fields.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schema_arn()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group to add the dataset to.</p>
     pub fn dataset_group_arn(
@@ -163,6 +177,10 @@ impl CreateDatasetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_dataset_group_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the dataset group to add the dataset to.</p>
+    pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dataset_group_arn()
     }
     /// <p>The type of dataset.</p>
     /// <p>One of the following (case insensitive) values:</p>
@@ -186,6 +204,16 @@ impl CreateDatasetFluentBuilder {
         self.inner = self.inner.set_dataset_type(input);
         self
     }
+    /// <p>The type of dataset.</p>
+    /// <p>One of the following (case insensitive) values:</p>
+    /// <ul>
+    /// <li> <p>Interactions</p> </li>
+    /// <li> <p>Items</p> </li>
+    /// <li> <p>Users</p> </li>
+    /// </ul>
+    pub fn get_dataset_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dataset_type()
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -202,5 +230,9 @@ impl CreateDatasetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the dataset.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

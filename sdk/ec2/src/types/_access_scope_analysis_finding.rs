@@ -72,6 +72,12 @@ impl AccessScopeAnalysisFindingBuilder {
         self.network_insights_access_scope_analysis_id = input;
         self
     }
+    /// <p>The ID of the Network Access Scope analysis.</p>
+    pub fn get_network_insights_access_scope_analysis_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.network_insights_access_scope_analysis_id
+    }
     /// <p>The ID of the Network Access Scope.</p>
     pub fn network_insights_access_scope_id(
         mut self,
@@ -88,6 +94,12 @@ impl AccessScopeAnalysisFindingBuilder {
         self.network_insights_access_scope_id = input;
         self
     }
+    /// <p>The ID of the Network Access Scope.</p>
+    pub fn get_network_insights_access_scope_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.network_insights_access_scope_id
+    }
     /// <p>The ID of the finding.</p>
     pub fn finding_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.finding_id = ::std::option::Option::Some(input.into());
@@ -97,6 +109,10 @@ impl AccessScopeAnalysisFindingBuilder {
     pub fn set_finding_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.finding_id = input;
         self
+    }
+    /// <p>The ID of the finding.</p>
+    pub fn get_finding_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.finding_id
     }
     /// Appends an item to `finding_components`.
     ///
@@ -116,6 +132,12 @@ impl AccessScopeAnalysisFindingBuilder {
     ) -> Self {
         self.finding_components = input;
         self
+    }
+    /// <p>The finding components.</p>
+    pub fn get_finding_components(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PathComponent>> {
+        &self.finding_components
     }
     /// Consumes the builder and constructs a [`AccessScopeAnalysisFinding`](crate::types::AccessScopeAnalysisFinding).
     pub fn build(self) -> crate::types::AccessScopeAnalysisFinding {

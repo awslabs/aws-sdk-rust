@@ -37,6 +37,12 @@ impl UpdateRoleAliasFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateRoleAlias as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_role_alias::builders::UpdateRoleAliasInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl UpdateRoleAliasFluentBuilder {
         self.inner = self.inner.set_role_alias(input);
         self
     }
+    /// <p>The role alias to update.</p>
+    pub fn get_role_alias(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_alias()
+    }
     /// <p>The role ARN.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -136,6 +146,10 @@ impl UpdateRoleAliasFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>The role ARN.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// <p>The number of seconds the credential will be valid.</p>
     /// <p>This value must be less than or equal to the maximum session duration of the IAM role that the role alias references.</p>
@@ -148,5 +162,10 @@ impl UpdateRoleAliasFluentBuilder {
     pub fn set_credential_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_credential_duration_seconds(input);
         self
+    }
+    /// <p>The number of seconds the credential will be valid.</p>
+    /// <p>This value must be less than or equal to the maximum session duration of the IAM role that the role alias references.</p>
+    pub fn get_credential_duration_seconds(&self) -> &::std::option::Option<i32> {
+        self.inner.get_credential_duration_seconds()
     }
 }

@@ -137,6 +137,10 @@ impl SearchPlaceIndexForTextSummaryBuilder {
         self.text = input;
         self
     }
+    /// <p>The search text specified in the request.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
+    }
     /// Appends an item to `bias_position`.
     ///
     /// To override the contents of this collection use [`set_bias_position`](Self::set_bias_position).
@@ -157,6 +161,12 @@ impl SearchPlaceIndexForTextSummaryBuilder {
         self.bias_position = input;
         self
     }
+    /// <p>Contains the coordinates for the optional bias position specified in the request.</p>
+    /// <p>This parameter contains a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
+    /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
+    pub fn get_bias_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+        &self.bias_position
+    }
     /// Appends an item to `filter_b_box`.
     ///
     /// To override the contents of this collection use [`set_filter_b_box`](Self::set_filter_b_box).
@@ -172,6 +182,10 @@ impl SearchPlaceIndexForTextSummaryBuilder {
     pub fn set_filter_b_box(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.filter_b_box = input;
         self
+    }
+    /// <p>Contains the coordinates for the optional bounding box specified in the request.</p>
+    pub fn get_filter_b_box(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+        &self.filter_b_box
     }
     /// Appends an item to `filter_countries`.
     ///
@@ -195,6 +209,12 @@ impl SearchPlaceIndexForTextSummaryBuilder {
         self.filter_countries = input;
         self
     }
+    /// <p>Contains the optional country filter specified in the request.</p>
+    pub fn get_filter_countries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.filter_countries
+    }
     /// <p>Contains the optional result count limit specified in the request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -204,6 +224,10 @@ impl SearchPlaceIndexForTextSummaryBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>Contains the optional result count limit specified in the request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Appends an item to `result_b_box`.
     ///
@@ -224,6 +248,12 @@ impl SearchPlaceIndexForTextSummaryBuilder {
     pub fn set_result_b_box(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.result_b_box = input;
         self
+    }
+    /// <p>The bounding box that fully contains all search results.</p> <note>
+    /// <p>If you specified the optional <code>FilterBBox</code> parameter in the request, <code>ResultBBox</code> is contained within <code>FilterBBox</code>.</p>
+    /// </note>
+    pub fn get_result_b_box(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+        &self.result_b_box
     }
     /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
     /// <ul>
@@ -247,6 +277,16 @@ impl SearchPlaceIndexForTextSummaryBuilder {
         self.data_source = input;
         self
     }
+    /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
+    /// <ul>
+    /// <li> <p>Esri</p> </li>
+    /// <li> <p>Grab</p> </li>
+    /// <li> <p>Here</p> </li>
+    /// </ul>
+    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    pub fn get_data_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source
+    }
     /// <p>The preferred language used to return results. Matches the language in the request. The value is a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
     pub fn language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language = ::std::option::Option::Some(input.into());
@@ -256,6 +296,10 @@ impl SearchPlaceIndexForTextSummaryBuilder {
     pub fn set_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.language = input;
         self
+    }
+    /// <p>The preferred language used to return results. Matches the language in the request. The value is a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
+    pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.language
     }
     /// Appends an item to `filter_categories`.
     ///
@@ -278,6 +322,12 @@ impl SearchPlaceIndexForTextSummaryBuilder {
     ) -> Self {
         self.filter_categories = input;
         self
+    }
+    /// <p>The optional category filter specified in the request.</p>
+    pub fn get_filter_categories(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.filter_categories
     }
     /// Consumes the builder and constructs a [`SearchPlaceIndexForTextSummary`](crate::types::SearchPlaceIndexForTextSummary).
     pub fn build(self) -> crate::types::SearchPlaceIndexForTextSummary {

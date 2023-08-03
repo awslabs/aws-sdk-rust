@@ -74,6 +74,12 @@ impl ServerCertificateBuilder {
         self.server_certificate_metadata = input;
         self
     }
+    /// <p>The meta information of the server certificate, such as its name, path, ID, and ARN.</p>
+    pub fn get_server_certificate_metadata(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServerCertificateMetadata> {
+        &self.server_certificate_metadata
+    }
     /// <p>The contents of the public key certificate.</p>
     pub fn certificate_body(
         mut self,
@@ -90,6 +96,10 @@ impl ServerCertificateBuilder {
         self.certificate_body = input;
         self
     }
+    /// <p>The contents of the public key certificate.</p>
+    pub fn get_certificate_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_body
+    }
     /// <p>The contents of the public key certificate chain.</p>
     pub fn certificate_chain(
         mut self,
@@ -105,6 +115,10 @@ impl ServerCertificateBuilder {
     ) -> Self {
         self.certificate_chain = input;
         self
+    }
+    /// <p>The contents of the public key certificate chain.</p>
+    pub fn get_certificate_chain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_chain
     }
     /// Appends an item to `tags`.
     ///
@@ -124,6 +138,10 @@ impl ServerCertificateBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tags that are attached to the server certificate. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`ServerCertificate`](crate::types::ServerCertificate).
     pub fn build(self) -> crate::types::ServerCertificate {

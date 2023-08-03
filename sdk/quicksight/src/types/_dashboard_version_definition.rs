@@ -117,6 +117,12 @@ impl DashboardVersionDefinitionBuilder {
         self.data_set_identifier_declarations = input;
         self
     }
+    /// <p>An array of dataset identifier declarations. With this mapping,you can use dataset identifiers instead of dataset Amazon Resource Names (ARNs) throughout the dashboard's sub-structures.</p>
+    pub fn get_data_set_identifier_declarations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSetIdentifierDeclaration>> {
+        &self.data_set_identifier_declarations
+    }
     /// Appends an item to `sheets`.
     ///
     /// To override the contents of this collection use [`set_sheets`](Self::set_sheets).
@@ -136,6 +142,12 @@ impl DashboardVersionDefinitionBuilder {
         self.sheets = input;
         self
     }
+    /// <p>An array of sheet definitions for a dashboard.</p>
+    pub fn get_sheets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SheetDefinition>> {
+        &self.sheets
+    }
     /// Appends an item to `calculated_fields`.
     ///
     /// To override the contents of this collection use [`set_calculated_fields`](Self::set_calculated_fields).
@@ -154,6 +166,12 @@ impl DashboardVersionDefinitionBuilder {
     ) -> Self {
         self.calculated_fields = input;
         self
+    }
+    /// <p>An array of calculated field definitions for the dashboard.</p>
+    pub fn get_calculated_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CalculatedField>> {
+        &self.calculated_fields
     }
     /// Appends an item to `parameter_declarations`.
     ///
@@ -176,6 +194,13 @@ impl DashboardVersionDefinitionBuilder {
         self.parameter_declarations = input;
         self
     }
+    /// <p>The parameter declarations for a dashboard. Parameters are named variables that can transfer a value for use by an action or an object.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-in-quicksight.html">Parameters in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    pub fn get_parameter_declarations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterDeclaration>> {
+        &self.parameter_declarations
+    }
     /// Appends an item to `filter_groups`.
     ///
     /// To override the contents of this collection use [`set_filter_groups`](Self::set_filter_groups).
@@ -197,6 +222,13 @@ impl DashboardVersionDefinitionBuilder {
         self.filter_groups = input;
         self
     }
+    /// <p>The filter definitions for a dashboard.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/adding-a-filter.html">Filtering Data in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    pub fn get_filter_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterGroup>> {
+        &self.filter_groups
+    }
     /// Appends an item to `column_configurations`.
     ///
     /// To override the contents of this collection use [`set_column_configurations`](Self::set_column_configurations).
@@ -216,6 +248,12 @@ impl DashboardVersionDefinitionBuilder {
         self.column_configurations = input;
         self
     }
+    /// <p>An array of dashboard-level column configurations. Column configurations are used to set the default formatting for a column that is used throughout a dashboard. </p>
+    pub fn get_column_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnConfiguration>> {
+        &self.column_configurations
+    }
     /// <p>The configuration for default analysis settings.</p>
     pub fn analysis_defaults(mut self, input: crate::types::AnalysisDefaults) -> Self {
         self.analysis_defaults = ::std::option::Option::Some(input);
@@ -228,6 +266,10 @@ impl DashboardVersionDefinitionBuilder {
     ) -> Self {
         self.analysis_defaults = input;
         self
+    }
+    /// <p>The configuration for default analysis settings.</p>
+    pub fn get_analysis_defaults(&self) -> &::std::option::Option<crate::types::AnalysisDefaults> {
+        &self.analysis_defaults
     }
     /// Consumes the builder and constructs a [`DashboardVersionDefinition`](crate::types::DashboardVersionDefinition).
     pub fn build(self) -> crate::types::DashboardVersionDefinition {

@@ -63,6 +63,10 @@ impl DisassociateFraudsterInputBuilder {
         self.domain_id = input;
         self
     }
+    /// <p>The identifier of the domain that contains the fraudster.</p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_id
+    }
     /// <p>The identifier of the watchlist that you want to disassociate from the fraudster.</p>
     pub fn watchlist_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.watchlist_id = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl DisassociateFraudsterInputBuilder {
         self.watchlist_id = input;
         self
     }
+    /// <p>The identifier of the watchlist that you want to disassociate from the fraudster.</p>
+    pub fn get_watchlist_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.watchlist_id
+    }
     /// <p>The identifier of the fraudster to be disassociated from the watchlist.</p>
     pub fn fraudster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fraudster_id = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl DisassociateFraudsterInputBuilder {
     pub fn set_fraudster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fraudster_id = input;
         self
+    }
+    /// <p>The identifier of the fraudster to be disassociated from the watchlist.</p>
+    pub fn get_fraudster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fraudster_id
     }
     /// Consumes the builder and constructs a [`DisassociateFraudsterInput`](crate::operation::disassociate_fraudster::DisassociateFraudsterInput).
     pub fn build(

@@ -48,6 +48,10 @@ impl CwLogBuilder {
         self.cw_log_enabled = input;
         self
     }
+    /// <p>Indicated whether the app monitor stores copies of the data that RUM collects in CloudWatch Logs.</p>
+    pub fn get_cw_log_enabled(&self) -> &::std::option::Option<bool> {
+        &self.cw_log_enabled
+    }
     /// <p>The name of the log group where the copies are stored.</p>
     pub fn cw_log_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cw_log_group = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl CwLogBuilder {
     pub fn set_cw_log_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cw_log_group = input;
         self
+    }
+    /// <p>The name of the log group where the copies are stored.</p>
+    pub fn get_cw_log_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cw_log_group
     }
     /// Consumes the builder and constructs a [`CwLog`](crate::types::CwLog).
     pub fn build(self) -> crate::types::CwLog {

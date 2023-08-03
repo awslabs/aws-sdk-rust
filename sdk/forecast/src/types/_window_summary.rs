@@ -84,6 +84,10 @@ impl WindowSummaryBuilder {
         self.test_window_start = input;
         self
     }
+    /// <p>The timestamp that defines the start of the window.</p>
+    pub fn get_test_window_start(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.test_window_start
+    }
     /// <p>The timestamp that defines the end of the window.</p>
     pub fn test_window_end(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.test_window_end = ::std::option::Option::Some(input);
@@ -97,6 +101,10 @@ impl WindowSummaryBuilder {
         self.test_window_end = input;
         self
     }
+    /// <p>The timestamp that defines the end of the window.</p>
+    pub fn get_test_window_end(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.test_window_end
+    }
     /// <p>The number of data points within the window.</p>
     pub fn item_count(mut self, input: i32) -> Self {
         self.item_count = ::std::option::Option::Some(input);
@@ -106,6 +114,10 @@ impl WindowSummaryBuilder {
     pub fn set_item_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.item_count = input;
         self
+    }
+    /// <p>The number of data points within the window.</p>
+    pub fn get_item_count(&self) -> &::std::option::Option<i32> {
+        &self.item_count
     }
     /// <p>The type of evaluation.</p>
     /// <ul>
@@ -128,6 +140,14 @@ impl WindowSummaryBuilder {
         self.evaluation_type = input;
         self
     }
+    /// <p>The type of evaluation.</p>
+    /// <ul>
+    /// <li> <p> <code>SUMMARY</code> - The average metrics across all windows.</p> </li>
+    /// <li> <p> <code>COMPUTED</code> - The metrics for the specified window.</p> </li>
+    /// </ul>
+    pub fn get_evaluation_type(&self) -> &::std::option::Option<crate::types::EvaluationType> {
+        &self.evaluation_type
+    }
     /// <p>Provides metrics used to evaluate the performance of a predictor.</p>
     pub fn metrics(mut self, input: crate::types::Metrics) -> Self {
         self.metrics = ::std::option::Option::Some(input);
@@ -137,6 +157,10 @@ impl WindowSummaryBuilder {
     pub fn set_metrics(mut self, input: ::std::option::Option<crate::types::Metrics>) -> Self {
         self.metrics = input;
         self
+    }
+    /// <p>Provides metrics used to evaluate the performance of a predictor.</p>
+    pub fn get_metrics(&self) -> &::std::option::Option<crate::types::Metrics> {
+        &self.metrics
     }
     /// Consumes the builder and constructs a [`WindowSummary`](crate::types::WindowSummary).
     pub fn build(self) -> crate::types::WindowSummary {

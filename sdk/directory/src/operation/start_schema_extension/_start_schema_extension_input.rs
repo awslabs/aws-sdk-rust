@@ -64,6 +64,10 @@ impl StartSchemaExtensionInputBuilder {
         self.directory_id = input;
         self
     }
+    /// <p>The identifier of the directory for which the schema extension will be applied to.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
     /// <p>If true, creates a snapshot of the directory before applying the schema extension.</p>
     pub fn create_snapshot_before_schema_extension(mut self, input: bool) -> Self {
         self.create_snapshot_before_schema_extension = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl StartSchemaExtensionInputBuilder {
         self.create_snapshot_before_schema_extension = input;
         self
     }
+    /// <p>If true, creates a snapshot of the directory before applying the schema extension.</p>
+    pub fn get_create_snapshot_before_schema_extension(&self) -> &::std::option::Option<bool> {
+        &self.create_snapshot_before_schema_extension
+    }
     /// <p>The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be formatted in an ldif file with \n. See the example request below for more details. The file size can be no larger than 1MB.</p>
     pub fn ldif_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ldif_content = ::std::option::Option::Some(input.into());
@@ -87,6 +95,10 @@ impl StartSchemaExtensionInputBuilder {
         self.ldif_content = input;
         self
     }
+    /// <p>The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be formatted in an ldif file with \n. See the example request below for more details. The file size can be no larger than 1MB.</p>
+    pub fn get_ldif_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ldif_content
+    }
     /// <p>A description of the schema extension.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -96,6 +108,10 @@ impl StartSchemaExtensionInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the schema extension.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`StartSchemaExtensionInput`](crate::operation::start_schema_extension::StartSchemaExtensionInput).
     pub fn build(

@@ -36,6 +36,12 @@ impl ListStageDevicesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListStageDevices as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_stage_devices::builders::ListStageDevicesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListStageDevicesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The response from the last list when returning a list large enough to neeed tokening.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of requests to select.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -146,6 +156,10 @@ impl ListStageDevicesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of requests to select.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The name of the edge deployment plan.</p>
     pub fn edge_deployment_plan_name(
@@ -163,6 +177,10 @@ impl ListStageDevicesFluentBuilder {
         self.inner = self.inner.set_edge_deployment_plan_name(input);
         self
     }
+    /// <p>The name of the edge deployment plan.</p>
+    pub fn get_edge_deployment_plan_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_edge_deployment_plan_name()
+    }
     /// <p>Toggle for excluding devices deployed in other stages.</p>
     pub fn exclude_devices_deployed_in_other_stage(mut self, input: bool) -> Self {
         self.inner = self.inner.exclude_devices_deployed_in_other_stage(input);
@@ -178,6 +196,10 @@ impl ListStageDevicesFluentBuilder {
             .set_exclude_devices_deployed_in_other_stage(input);
         self
     }
+    /// <p>Toggle for excluding devices deployed in other stages.</p>
+    pub fn get_exclude_devices_deployed_in_other_stage(&self) -> &::std::option::Option<bool> {
+        self.inner.get_exclude_devices_deployed_in_other_stage()
+    }
     /// <p>The name of the stage in the deployment.</p>
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stage_name(input.into());
@@ -187,5 +209,9 @@ impl ListStageDevicesFluentBuilder {
     pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stage_name(input);
         self
+    }
+    /// <p>The name of the stage in the deployment.</p>
+    pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stage_name()
     }
 }

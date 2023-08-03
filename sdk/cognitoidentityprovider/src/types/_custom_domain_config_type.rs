@@ -46,6 +46,10 @@ impl CustomDomainConfigTypeBuilder {
         self.certificate_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of an Certificate Manager SSL certificate. You use this certificate for the subdomain of your custom domain.</p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_arn
+    }
     /// Consumes the builder and constructs a [`CustomDomainConfigType`](crate::types::CustomDomainConfigType).
     pub fn build(self) -> crate::types::CustomDomainConfigType {
         crate::types::CustomDomainConfigType {

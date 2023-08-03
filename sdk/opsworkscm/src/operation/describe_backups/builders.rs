@@ -38,6 +38,12 @@ impl DescribeBackupsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeBackups as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_backups::builders::DescribeBackupsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,6 +145,10 @@ impl DescribeBackupsFluentBuilder {
         self.inner = self.inner.set_backup_id(input);
         self
     }
+    /// <p>Describes a single backup. </p>
+    pub fn get_backup_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_backup_id()
+    }
     /// <p>Returns backups for the server with the specified ServerName. </p>
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.server_name(input.into());
@@ -148,6 +158,10 @@ impl DescribeBackupsFluentBuilder {
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_server_name(input);
         self
+    }
+    /// <p>Returns backups for the server with the specified ServerName. </p>
+    pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_server_name()
     }
     /// <p>This is not currently implemented for <code>DescribeBackups</code> requests.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -160,6 +174,10 @@ impl DescribeBackupsFluentBuilder {
         self
     }
     /// <p>This is not currently implemented for <code>DescribeBackups</code> requests.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
+    /// <p>This is not currently implemented for <code>DescribeBackups</code> requests.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
@@ -168,5 +186,9 @@ impl DescribeBackupsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>This is not currently implemented for <code>DescribeBackups</code> requests.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

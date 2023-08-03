@@ -51,6 +51,10 @@ impl SamlAuthenticationBuilder {
         self.status = input;
         self
     }
+    /// <p>Specifies whether the workspace's SAML configuration is complete.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SamlConfigurationStatus> {
+        &self.status
+    }
     /// <p>A structure containing details about how this workspace works with SAML. </p>
     pub fn configuration(mut self, input: crate::types::SamlConfiguration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl SamlAuthenticationBuilder {
     ) -> Self {
         self.configuration = input;
         self
+    }
+    /// <p>A structure containing details about how this workspace works with SAML. </p>
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::SamlConfiguration> {
+        &self.configuration
     }
     /// Consumes the builder and constructs a [`SamlAuthentication`](crate::types::SamlAuthentication).
     pub fn build(self) -> crate::types::SamlAuthentication {

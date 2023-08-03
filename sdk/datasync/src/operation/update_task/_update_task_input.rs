@@ -90,6 +90,10 @@ impl UpdateTaskInputBuilder {
         self.task_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the resource name of the task to update.</p>
+    pub fn get_task_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_arn
+    }
     /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
     /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
     pub fn options(mut self, input: crate::types::Options) -> Self {
@@ -101,6 +105,11 @@ impl UpdateTaskInputBuilder {
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::Options>) -> Self {
         self.options = input;
         self
+    }
+    /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
+    /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::Options> {
+        &self.options
     }
     /// Appends an item to `excludes`.
     ///
@@ -121,6 +130,12 @@ impl UpdateTaskInputBuilder {
         self.excludes = input;
         self
     }
+    /// <p>Specifies a list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
+    pub fn get_excludes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
+        &self.excludes
+    }
     /// <p>Specifies a schedule used to periodically transfer files from a source to a destination location. You can configure your task to execute hourly, daily, weekly or on specific days of the week. You control when in the day or hour you want the task to execute. The time you specify is UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
     pub fn schedule(mut self, input: crate::types::TaskSchedule) -> Self {
         self.schedule = ::std::option::Option::Some(input);
@@ -134,6 +149,10 @@ impl UpdateTaskInputBuilder {
         self.schedule = input;
         self
     }
+    /// <p>Specifies a schedule used to periodically transfer files from a source to a destination location. You can configure your task to execute hourly, daily, weekly or on specific days of the week. You control when in the day or hour you want the task to execute. The time you specify is UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
+    pub fn get_schedule(&self) -> &::std::option::Option<crate::types::TaskSchedule> {
+        &self.schedule
+    }
     /// <p>The name of the task to update.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -143,6 +162,10 @@ impl UpdateTaskInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the task to update.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of the resource name of the Amazon CloudWatch log group.</p>
     pub fn cloud_watch_log_group_arn(
@@ -159,6 +182,10 @@ impl UpdateTaskInputBuilder {
     ) -> Self {
         self.cloud_watch_log_group_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource name of the Amazon CloudWatch log group.</p>
+    pub fn get_cloud_watch_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cloud_watch_log_group_arn
     }
     /// Appends an item to `includes`.
     ///
@@ -178,6 +205,12 @@ impl UpdateTaskInputBuilder {
     ) -> Self {
         self.includes = input;
         self
+    }
+    /// <p>Specifies a list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
+    pub fn get_includes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
+        &self.includes
     }
     /// Consumes the builder and constructs a [`UpdateTaskInput`](crate::operation::update_task::UpdateTaskInput).
     pub fn build(

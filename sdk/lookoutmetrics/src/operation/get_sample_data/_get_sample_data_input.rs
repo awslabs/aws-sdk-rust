@@ -44,6 +44,12 @@ impl GetSampleDataInputBuilder {
         self.s3_source_config = input;
         self
     }
+    /// <p>A datasource bucket in Amazon S3.</p>
+    pub fn get_s3_source_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::SampleDataS3SourceConfig> {
+        &self.s3_source_config
+    }
     /// Consumes the builder and constructs a [`GetSampleDataInput`](crate::operation::get_sample_data::GetSampleDataInput).
     pub fn build(
         self,

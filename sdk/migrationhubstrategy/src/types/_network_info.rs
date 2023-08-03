@@ -70,6 +70,10 @@ impl NetworkInfoBuilder {
         self.interface_name = input;
         self
     }
+    /// <p> Information about the name of the interface of the server for which the assessment was run. </p>
+    pub fn get_interface_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.interface_name
+    }
     /// <p> Information about the IP address of the server for which the assessment was run. </p>
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_address = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl NetworkInfoBuilder {
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_address = input;
         self
+    }
+    /// <p> Information about the IP address of the server for which the assessment was run. </p>
+    pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address
     }
     /// <p> Information about the MAC address of the server for which the assessment was run. </p>
     pub fn mac_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -90,6 +98,10 @@ impl NetworkInfoBuilder {
         self.mac_address = input;
         self
     }
+    /// <p> Information about the MAC address of the server for which the assessment was run. </p>
+    pub fn get_mac_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mac_address
+    }
     /// <p> Information about the subnet mask of the server for which the assessment was run. </p>
     pub fn net_mask(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.net_mask = ::std::option::Option::Some(input.into());
@@ -99,6 +111,10 @@ impl NetworkInfoBuilder {
     pub fn set_net_mask(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.net_mask = input;
         self
+    }
+    /// <p> Information about the subnet mask of the server for which the assessment was run. </p>
+    pub fn get_net_mask(&self) -> &::std::option::Option<::std::string::String> {
+        &self.net_mask
     }
     /// Consumes the builder and constructs a [`NetworkInfo`](crate::types::NetworkInfo).
     pub fn build(self) -> crate::types::NetworkInfo {

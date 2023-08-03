@@ -134,6 +134,13 @@ impl GetSpotPlacementScoresInputBuilder {
         self.instance_types = input;
         self
     }
+    /// <p>The instance types. We recommend that you specify at least three instance types. If you specify one or two instance types, or specify variations of a single instance type (for example, an <code>m3.xlarge</code> with and without instance storage), the returned placement score will always be low. </p>
+    /// <p>If you specify <code>InstanceTypes</code>, you can't specify <code>InstanceRequirementsWithMetadata</code>.</p>
+    pub fn get_instance_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.instance_types
+    }
     /// <p>The target capacity.</p>
     pub fn target_capacity(mut self, input: i32) -> Self {
         self.target_capacity = ::std::option::Option::Some(input);
@@ -143,6 +150,10 @@ impl GetSpotPlacementScoresInputBuilder {
     pub fn set_target_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.target_capacity = input;
         self
+    }
+    /// <p>The target capacity.</p>
+    pub fn get_target_capacity(&self) -> &::std::option::Option<i32> {
+        &self.target_capacity
     }
     /// <p>The unit for the target capacity.</p>
     /// <p>Default: <code>units</code> (translates to number of instances)</p>
@@ -162,6 +173,13 @@ impl GetSpotPlacementScoresInputBuilder {
         self.target_capacity_unit_type = input;
         self
     }
+    /// <p>The unit for the target capacity.</p>
+    /// <p>Default: <code>units</code> (translates to number of instances)</p>
+    pub fn get_target_capacity_unit_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::TargetCapacityUnitType> {
+        &self.target_capacity_unit_type
+    }
     /// <p>Specify <code>true</code> so that the response returns a list of scored Availability Zones. Otherwise, the response returns a list of scored Regions.</p>
     /// <p>A list of scored Availability Zones is useful if you want to launch all of your Spot capacity into a single Availability Zone.</p>
     pub fn single_availability_zone(mut self, input: bool) -> Self {
@@ -173,6 +191,11 @@ impl GetSpotPlacementScoresInputBuilder {
     pub fn set_single_availability_zone(mut self, input: ::std::option::Option<bool>) -> Self {
         self.single_availability_zone = input;
         self
+    }
+    /// <p>Specify <code>true</code> so that the response returns a list of scored Availability Zones. Otherwise, the response returns a list of scored Regions.</p>
+    /// <p>A list of scored Availability Zones is useful if you want to launch all of your Spot capacity into a single Availability Zone.</p>
+    pub fn get_single_availability_zone(&self) -> &::std::option::Option<bool> {
+        &self.single_availability_zone
     }
     /// Appends an item to `region_names`.
     ///
@@ -193,6 +216,12 @@ impl GetSpotPlacementScoresInputBuilder {
         self.region_names = input;
         self
     }
+    /// <p>The Regions used to narrow down the list of Regions to be scored. Enter the Region code, for example, <code>us-east-1</code>.</p>
+    pub fn get_region_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.region_names
+    }
     /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p>
     /// <p>If you specify <code>InstanceRequirementsWithMetadata</code>, you can't specify <code>InstanceTypes</code>.</p>
     pub fn instance_requirements_with_metadata(
@@ -211,6 +240,13 @@ impl GetSpotPlacementScoresInputBuilder {
         self.instance_requirements_with_metadata = input;
         self
     }
+    /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p>
+    /// <p>If you specify <code>InstanceRequirementsWithMetadata</code>, you can't specify <code>InstanceTypes</code>.</p>
+    pub fn get_instance_requirements_with_metadata(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceRequirementsWithMetadataRequest> {
+        &self.instance_requirements_with_metadata
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -220,6 +256,10 @@ impl GetSpotPlacementScoresInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -231,6 +271,10 @@ impl GetSpotPlacementScoresInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -240,6 +284,10 @@ impl GetSpotPlacementScoresInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`GetSpotPlacementScoresInput`](crate::operation::get_spot_placement_scores::GetSpotPlacementScoresInput).
     pub fn build(

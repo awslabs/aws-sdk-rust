@@ -57,6 +57,10 @@ impl CreateWorkloadShareOutputBuilder {
         self.workload_id = input;
         self
     }
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workload_id
+    }
     /// <p>The ID associated with the share.</p>
     pub fn share_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.share_id = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl CreateWorkloadShareOutputBuilder {
     pub fn set_share_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.share_id = input;
         self
+    }
+    /// <p>The ID associated with the share.</p>
+    pub fn get_share_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.share_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

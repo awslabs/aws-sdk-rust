@@ -36,6 +36,12 @@ impl UpdateModelManifestFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateModelManifest as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_model_manifest::builders::UpdateModelManifestInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateModelManifestFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p> The name of the vehicle model to update. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p> A brief description of the vehicle model. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -135,6 +145,10 @@ impl UpdateModelManifestFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p> A brief description of the vehicle model. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `nodesToAdd`.
     ///
@@ -152,6 +166,12 @@ impl UpdateModelManifestFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_nodes_to_add(input);
         self
+    }
+    /// <p> A list of <code>fullyQualifiedName</code> of nodes, which are a general abstraction of signals, to add to the vehicle model. </p>
+    pub fn get_nodes_to_add(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_nodes_to_add()
     }
     /// Appends an item to `nodesToRemove`.
     ///
@@ -173,6 +193,12 @@ impl UpdateModelManifestFluentBuilder {
         self.inner = self.inner.set_nodes_to_remove(input);
         self
     }
+    /// <p> A list of <code>fullyQualifiedName</code> of nodes, which are a general abstraction of signals, to remove from the vehicle model. </p>
+    pub fn get_nodes_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_nodes_to_remove()
+    }
     /// <p> The state of the vehicle model. If the status is <code>ACTIVE</code>, the vehicle model can't be edited. If the status is <code>DRAFT</code>, you can edit the vehicle model. </p>
     pub fn status(mut self, input: crate::types::ManifestStatus) -> Self {
         self.inner = self.inner.status(input);
@@ -185,5 +211,9 @@ impl UpdateModelManifestFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p> The state of the vehicle model. If the status is <code>ACTIVE</code>, the vehicle model can't be edited. If the status is <code>DRAFT</code>, you can edit the vehicle model. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ManifestStatus> {
+        self.inner.get_status()
     }
 }

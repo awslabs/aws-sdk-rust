@@ -41,6 +41,12 @@ impl RegisterComputeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RegisterCompute as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::register_compute::builders::RegisterComputeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +137,10 @@ impl RegisterComputeFluentBuilder {
         self.inner = self.inner.set_fleet_id(input);
         self
     }
+    /// <p>A unique identifier for the fleet to register the compute to. You can use either the fleet ID or ARN value.</p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fleet_id()
+    }
     /// <p>A descriptive label that is associated with the compute resource registered to your fleet.</p>
     pub fn compute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.compute_name(input.into());
@@ -140,6 +150,10 @@ impl RegisterComputeFluentBuilder {
     pub fn set_compute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_compute_name(input);
         self
+    }
+    /// <p>A descriptive label that is associated with the compute resource registered to your fleet.</p>
+    pub fn get_compute_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_compute_name()
     }
     /// <p>The path to the TLS certificate on your compute resource. The path and certificate are not validated by Amazon GameLift.</p>
     pub fn certificate_path(
@@ -157,6 +171,10 @@ impl RegisterComputeFluentBuilder {
         self.inner = self.inner.set_certificate_path(input);
         self
     }
+    /// <p>The path to the TLS certificate on your compute resource. The path and certificate are not validated by Amazon GameLift.</p>
+    pub fn get_certificate_path(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate_path()
+    }
     /// <p>The DNS name of the compute resource. Amazon GameLift requires the DNS name or IP address to manage your compute resource.</p>
     pub fn dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dns_name(input.into());
@@ -166,6 +184,10 @@ impl RegisterComputeFluentBuilder {
     pub fn set_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dns_name(input);
         self
+    }
+    /// <p>The DNS name of the compute resource. Amazon GameLift requires the DNS name or IP address to manage your compute resource.</p>
+    pub fn get_dns_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dns_name()
     }
     /// <p>The IP address of the compute resource. Amazon GameLift requires the DNS name or IP address to manage your compute resource.</p>
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -177,6 +199,10 @@ impl RegisterComputeFluentBuilder {
         self.inner = self.inner.set_ip_address(input);
         self
     }
+    /// <p>The IP address of the compute resource. Amazon GameLift requires the DNS name or IP address to manage your compute resource.</p>
+    pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ip_address()
+    }
     /// <p>The name of the custom location you added to the fleet you are registering this compute resource to.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.location(input.into());
@@ -186,5 +212,9 @@ impl RegisterComputeFluentBuilder {
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_location(input);
         self
+    }
+    /// <p>The name of the custom location you added to the fleet you are registering this compute resource to.</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_location()
     }
 }

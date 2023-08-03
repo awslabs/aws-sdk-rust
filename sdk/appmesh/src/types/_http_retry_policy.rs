@@ -80,6 +80,10 @@ impl HttpRetryPolicyBuilder {
         self.per_retry_timeout = input;
         self
     }
+    /// <p>The timeout for each retry attempt.</p>
+    pub fn get_per_retry_timeout(&self) -> &::std::option::Option<crate::types::Duration> {
+        &self.per_retry_timeout
+    }
     /// <p>The maximum number of retry attempts.</p>
     pub fn max_retries(mut self, input: i64) -> Self {
         self.max_retries = ::std::option::Option::Some(input);
@@ -89,6 +93,10 @@ impl HttpRetryPolicyBuilder {
     pub fn set_max_retries(mut self, input: ::std::option::Option<i64>) -> Self {
         self.max_retries = input;
         self
+    }
+    /// <p>The maximum number of retry attempts.</p>
+    pub fn get_max_retries(&self) -> &::std::option::Option<i64> {
+        &self.max_retries
     }
     /// Appends an item to `http_retry_events`.
     ///
@@ -124,6 +132,18 @@ impl HttpRetryPolicyBuilder {
         self.http_retry_events = input;
         self
     }
+    /// <p>Specify at least one of the following values.</p>
+    /// <ul>
+    /// <li> <p> <b>server-error</b> – HTTP status codes 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, and 511</p> </li>
+    /// <li> <p> <b>gateway-error</b> – HTTP status codes 502, 503, and 504</p> </li>
+    /// <li> <p> <b>client-error</b> – HTTP status code 409</p> </li>
+    /// <li> <p> <b>stream-error</b> – Retry on refused stream</p> </li>
+    /// </ul>
+    pub fn get_http_retry_events(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.http_retry_events
+    }
     /// Appends an item to `tcp_retry_events`.
     ///
     /// To override the contents of this collection use [`set_tcp_retry_events`](Self::set_tcp_retry_events).
@@ -142,6 +162,12 @@ impl HttpRetryPolicyBuilder {
     ) -> Self {
         self.tcp_retry_events = input;
         self
+    }
+    /// <p>Specify a valid value. The event occurs before any processing of a request has started and is encountered when the upstream is temporarily or permanently unavailable.</p>
+    pub fn get_tcp_retry_events(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TcpRetryPolicyEvent>> {
+        &self.tcp_retry_events
     }
     /// Consumes the builder and constructs a [`HttpRetryPolicy`](crate::types::HttpRetryPolicy).
     pub fn build(self) -> crate::types::HttpRetryPolicy {

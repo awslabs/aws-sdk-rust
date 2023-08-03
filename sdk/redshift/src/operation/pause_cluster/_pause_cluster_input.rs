@@ -46,6 +46,10 @@ impl PauseClusterInputBuilder {
         self.cluster_identifier = input;
         self
     }
+    /// <p>The identifier of the cluster to be paused.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_identifier
+    }
     /// Consumes the builder and constructs a [`PauseClusterInput`](crate::operation::pause_cluster::PauseClusterInput).
     pub fn build(
         self,

@@ -48,6 +48,10 @@ impl ConnectorOAuthRequestBuilder {
         self.auth_code = input;
         self
     }
+    /// <p> The code provided by the connector when it has been authenticated via the connected app. </p>
+    pub fn get_auth_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auth_code
+    }
     /// <p> The URL to which the authentication server redirects the browser after authorization has been granted. </p>
     pub fn redirect_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.redirect_uri = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ConnectorOAuthRequestBuilder {
     pub fn set_redirect_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.redirect_uri = input;
         self
+    }
+    /// <p> The URL to which the authentication server redirects the browser after authorization has been granted. </p>
+    pub fn get_redirect_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.redirect_uri
     }
     /// Consumes the builder and constructs a [`ConnectorOAuthRequest`](crate::types::ConnectorOAuthRequest).
     pub fn build(self) -> crate::types::ConnectorOAuthRequest {

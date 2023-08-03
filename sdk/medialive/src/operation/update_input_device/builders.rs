@@ -36,6 +36,12 @@ impl UpdateInputDeviceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateInputDevice as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_input_device::builders::UpdateInputDeviceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,12 @@ impl UpdateInputDeviceFluentBuilder {
         self.inner = self.inner.set_hd_device_settings(input);
         self
     }
+    /// The settings that you want to apply to the HD input device.
+    pub fn get_hd_device_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::InputDeviceConfigurableSettings> {
+        self.inner.get_hd_device_settings()
+    }
     /// The unique ID of the input device. For example, hd-123456789abcdef.
     pub fn input_device_id(
         mut self,
@@ -148,6 +160,10 @@ impl UpdateInputDeviceFluentBuilder {
         self.inner = self.inner.set_input_device_id(input);
         self
     }
+    /// The unique ID of the input device. For example, hd-123456789abcdef.
+    pub fn get_input_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_input_device_id()
+    }
     /// The name that you assigned to this input device (not the unique ID).
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -157,6 +173,10 @@ impl UpdateInputDeviceFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// The name that you assigned to this input device (not the unique ID).
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// The settings that you want to apply to the UHD input device.
     pub fn uhd_device_settings(
@@ -173,5 +193,11 @@ impl UpdateInputDeviceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_uhd_device_settings(input);
         self
+    }
+    /// The settings that you want to apply to the UHD input device.
+    pub fn get_uhd_device_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::InputDeviceConfigurableSettings> {
+        self.inner.get_uhd_device_settings()
     }
 }

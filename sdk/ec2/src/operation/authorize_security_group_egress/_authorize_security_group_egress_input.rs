@@ -112,6 +112,10 @@ impl AuthorizeSecurityGroupEgressInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The ID of the security group.</p>
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
@@ -121,6 +125,10 @@ impl AuthorizeSecurityGroupEgressInputBuilder {
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_id = input;
         self
+    }
+    /// <p>The ID of the security group.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
     }
     /// Appends an item to `ip_permissions`.
     ///
@@ -141,6 +149,12 @@ impl AuthorizeSecurityGroupEgressInputBuilder {
         self.ip_permissions = input;
         self
     }
+    /// <p>The sets of IP permissions. You can't specify a destination security group and a CIDR IP address range in the same set of permissions.</p>
+    pub fn get_ip_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpPermission>> {
+        &self.ip_permissions
+    }
     /// Appends an item to `tag_specifications`.
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
@@ -160,6 +174,12 @@ impl AuthorizeSecurityGroupEgressInputBuilder {
         self.tag_specifications = input;
         self
     }
+    /// <p>The tags applied to the security group rule.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
+    }
     /// <p>Not supported. Use a set of IP permissions to specify the CIDR.</p>
     pub fn cidr_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidr_ip = ::std::option::Option::Some(input.into());
@@ -169,6 +189,10 @@ impl AuthorizeSecurityGroupEgressInputBuilder {
     pub fn set_cidr_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cidr_ip = input;
         self
+    }
+    /// <p>Not supported. Use a set of IP permissions to specify the CIDR.</p>
+    pub fn get_cidr_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr_ip
     }
     /// <p>Not supported. Use a set of IP permissions to specify the port.</p>
     pub fn from_port(mut self, input: i32) -> Self {
@@ -180,6 +204,10 @@ impl AuthorizeSecurityGroupEgressInputBuilder {
         self.from_port = input;
         self
     }
+    /// <p>Not supported. Use a set of IP permissions to specify the port.</p>
+    pub fn get_from_port(&self) -> &::std::option::Option<i32> {
+        &self.from_port
+    }
     /// <p>Not supported. Use a set of IP permissions to specify the protocol name or number.</p>
     pub fn ip_protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_protocol = ::std::option::Option::Some(input.into());
@@ -190,6 +218,10 @@ impl AuthorizeSecurityGroupEgressInputBuilder {
         self.ip_protocol = input;
         self
     }
+    /// <p>Not supported. Use a set of IP permissions to specify the protocol name or number.</p>
+    pub fn get_ip_protocol(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_protocol
+    }
     /// <p>Not supported. Use a set of IP permissions to specify the port.</p>
     pub fn to_port(mut self, input: i32) -> Self {
         self.to_port = ::std::option::Option::Some(input);
@@ -199,6 +231,10 @@ impl AuthorizeSecurityGroupEgressInputBuilder {
     pub fn set_to_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.to_port = input;
         self
+    }
+    /// <p>Not supported. Use a set of IP permissions to specify the port.</p>
+    pub fn get_to_port(&self) -> &::std::option::Option<i32> {
+        &self.to_port
     }
     /// <p>Not supported. Use a set of IP permissions to specify a destination security group.</p>
     pub fn source_security_group_name(
@@ -217,6 +253,10 @@ impl AuthorizeSecurityGroupEgressInputBuilder {
         self
     }
     /// <p>Not supported. Use a set of IP permissions to specify a destination security group.</p>
+    pub fn get_source_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_security_group_name
+    }
+    /// <p>Not supported. Use a set of IP permissions to specify a destination security group.</p>
     pub fn source_security_group_owner_id(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -231,6 +271,12 @@ impl AuthorizeSecurityGroupEgressInputBuilder {
     ) -> Self {
         self.source_security_group_owner_id = input;
         self
+    }
+    /// <p>Not supported. Use a set of IP permissions to specify a destination security group.</p>
+    pub fn get_source_security_group_owner_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.source_security_group_owner_id
     }
     /// Consumes the builder and constructs a [`AuthorizeSecurityGroupEgressInput`](crate::operation::authorize_security_group_egress::AuthorizeSecurityGroupEgressInput).
     pub fn build(

@@ -71,6 +71,10 @@ impl UpdateModelVersionOutputBuilder {
         self.model_id = input;
         self
     }
+    /// <p>The model ID.</p>
+    pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_id
+    }
     /// <p>The model type.</p>
     pub fn model_type(mut self, input: crate::types::ModelTypeEnum) -> Self {
         self.model_type = ::std::option::Option::Some(input);
@@ -83,6 +87,10 @@ impl UpdateModelVersionOutputBuilder {
     ) -> Self {
         self.model_type = input;
         self
+    }
+    /// <p>The model type.</p>
+    pub fn get_model_type(&self) -> &::std::option::Option<crate::types::ModelTypeEnum> {
+        &self.model_type
     }
     /// <p>The model version number of the model version updated.</p>
     pub fn model_version_number(
@@ -100,6 +108,10 @@ impl UpdateModelVersionOutputBuilder {
         self.model_version_number = input;
         self
     }
+    /// <p>The model version number of the model version updated.</p>
+    pub fn get_model_version_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_version_number
+    }
     /// <p>The status of the updated model version.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -109,6 +121,10 @@ impl UpdateModelVersionOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the updated model version.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

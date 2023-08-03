@@ -74,6 +74,10 @@ impl AwsApiGatewayCanarySettingsBuilder {
         self.percent_traffic = input;
         self
     }
+    /// <p>The percentage of traffic that is diverted to a canary deployment.</p>
+    pub fn get_percent_traffic(&self) -> &::std::option::Option<f64> {
+        &self.percent_traffic
+    }
     /// <p>The deployment identifier for the canary deployment.</p>
     pub fn deployment_id(
         mut self,
@@ -89,6 +93,10 @@ impl AwsApiGatewayCanarySettingsBuilder {
     ) -> Self {
         self.deployment_id = input;
         self
+    }
+    /// <p>The deployment identifier for the canary deployment.</p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
     }
     /// Adds a key-value pair to `stage_variable_overrides`.
     ///
@@ -117,6 +125,15 @@ impl AwsApiGatewayCanarySettingsBuilder {
         self.stage_variable_overrides = input;
         self
     }
+    /// <p>Stage variables that are overridden in the canary release deployment. The variables include new stage variables that are introduced in the canary.</p>
+    /// <p>Each variable is represented as a string-to-string map between the stage variable name and the variable value.</p>
+    pub fn get_stage_variable_overrides(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.stage_variable_overrides
+    }
     /// <p>Indicates whether the canary deployment uses the stage cache.</p>
     pub fn use_stage_cache(mut self, input: bool) -> Self {
         self.use_stage_cache = ::std::option::Option::Some(input);
@@ -126,6 +143,10 @@ impl AwsApiGatewayCanarySettingsBuilder {
     pub fn set_use_stage_cache(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_stage_cache = input;
         self
+    }
+    /// <p>Indicates whether the canary deployment uses the stage cache.</p>
+    pub fn get_use_stage_cache(&self) -> &::std::option::Option<bool> {
+        &self.use_stage_cache
     }
     /// Consumes the builder and constructs a [`AwsApiGatewayCanarySettings`](crate::types::AwsApiGatewayCanarySettings).
     pub fn build(self) -> crate::types::AwsApiGatewayCanarySettings {

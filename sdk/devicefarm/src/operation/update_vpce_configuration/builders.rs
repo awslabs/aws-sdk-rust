@@ -37,6 +37,13 @@ impl UpdateVPCEConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateVPCEConfiguration as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_vpce_configuration::builders::UpdateVpceConfigurationInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl UpdateVPCEConfigurationFluentBuilder {
         self.inner = self.inner.set_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to update.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
+    }
     /// <p>The friendly name you give to your VPC endpoint configuration to manage your configurations more easily.</p>
     pub fn vpce_configuration_name(
         mut self,
@@ -142,6 +153,10 @@ impl UpdateVPCEConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_vpce_configuration_name(input);
         self
+    }
+    /// <p>The friendly name you give to your VPC endpoint configuration to manage your configurations more easily.</p>
+    pub fn get_vpce_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpce_configuration_name()
     }
     /// <p>The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.</p>
     pub fn vpce_service_name(
@@ -159,6 +174,10 @@ impl UpdateVPCEConfigurationFluentBuilder {
         self.inner = self.inner.set_vpce_service_name(input);
         self
     }
+    /// <p>The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.</p>
+    pub fn get_vpce_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpce_service_name()
+    }
     /// <p>The DNS (domain) name used to connect to your private service in your VPC. The DNS name must not already be in use on the internet.</p>
     pub fn service_dns_name(
         mut self,
@@ -175,6 +194,10 @@ impl UpdateVPCEConfigurationFluentBuilder {
         self.inner = self.inner.set_service_dns_name(input);
         self
     }
+    /// <p>The DNS (domain) name used to connect to your private service in your VPC. The DNS name must not already be in use on the internet.</p>
+    pub fn get_service_dns_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_dns_name()
+    }
     /// <p>An optional description that provides details about your VPC endpoint configuration.</p>
     pub fn vpce_configuration_description(
         mut self,
@@ -190,5 +213,11 @@ impl UpdateVPCEConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_vpce_configuration_description(input);
         self
+    }
+    /// <p>An optional description that provides details about your VPC endpoint configuration.</p>
+    pub fn get_vpce_configuration_description(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpce_configuration_description()
     }
 }

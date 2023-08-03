@@ -36,6 +36,12 @@ impl ListUserImportJobsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListUserImportJobs as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_user_import_jobs::builders::ListUserImportJobsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl ListUserImportJobsFluentBuilder {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
+    /// <p>The user pool ID for the user pool that the users are being imported into.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_pool_id()
+    }
     /// <p>The maximum number of import jobs you want the request to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -135,6 +145,10 @@ impl ListUserImportJobsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of import jobs you want the request to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>An identifier that was returned from the previous call to <code>ListUserImportJobs</code>, which can be used to return the next set of import jobs in the list.</p>
     pub fn pagination_token(
@@ -151,5 +165,9 @@ impl ListUserImportJobsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_pagination_token(input);
         self
+    }
+    /// <p>An identifier that was returned from the previous call to <code>ListUserImportJobs</code>, which can be used to return the next set of import jobs in the list.</p>
+    pub fn get_pagination_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pagination_token()
     }
 }

@@ -48,6 +48,10 @@ impl PrincipalIdFormatBuilder {
         self.arn = input;
         self
     }
+    /// <p>PrincipalIdFormatARN description</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Appends an item to `statuses`.
     ///
     /// To override the contents of this collection use [`set_statuses`](Self::set_statuses).
@@ -66,6 +70,10 @@ impl PrincipalIdFormatBuilder {
     ) -> Self {
         self.statuses = input;
         self
+    }
+    /// <p>PrincipalIdFormatStatuses description</p>
+    pub fn get_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdFormat>> {
+        &self.statuses
     }
     /// Consumes the builder and constructs a [`PrincipalIdFormat`](crate::types::PrincipalIdFormat).
     pub fn build(self) -> crate::types::PrincipalIdFormat {

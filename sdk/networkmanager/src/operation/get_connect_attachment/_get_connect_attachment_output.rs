@@ -50,6 +50,12 @@ impl GetConnectAttachmentOutputBuilder {
         self.connect_attachment = input;
         self
     }
+    /// <p>Details about the Connect attachment.</p>
+    pub fn get_connect_attachment(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConnectAttachment> {
+        &self.connect_attachment
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

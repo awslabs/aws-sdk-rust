@@ -53,6 +53,10 @@ impl GetFileUploadUrlOutputBuilder {
         self.file_upload_url = input;
         self
     }
+    /// <p> A temporary URL for the file that the Worker uploaded for the answer. </p>
+    pub fn get_file_upload_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_upload_url
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

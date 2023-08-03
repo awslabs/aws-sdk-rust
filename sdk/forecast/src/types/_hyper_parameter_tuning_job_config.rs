@@ -45,6 +45,10 @@ impl HyperParameterTuningJobConfigBuilder {
         self.parameter_ranges = input;
         self
     }
+    /// <p>Specifies the ranges of valid values for the hyperparameters.</p>
+    pub fn get_parameter_ranges(&self) -> &::std::option::Option<crate::types::ParameterRanges> {
+        &self.parameter_ranges
+    }
     /// Consumes the builder and constructs a [`HyperParameterTuningJobConfig`](crate::types::HyperParameterTuningJobConfig).
     pub fn build(self) -> crate::types::HyperParameterTuningJobConfig {
         crate::types::HyperParameterTuningJobConfig {

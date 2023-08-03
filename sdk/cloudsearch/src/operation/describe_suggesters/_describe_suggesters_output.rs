@@ -57,6 +57,12 @@ impl DescribeSuggestersOutputBuilder {
         self.suggesters = input;
         self
     }
+    /// <p>The suggesters configured for the domain specified in the request.</p>
+    pub fn get_suggesters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SuggesterStatus>> {
+        &self.suggesters
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

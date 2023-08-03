@@ -37,6 +37,13 @@ impl ListTagsForResourcesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListTagsForResources as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_tags_for_resources::builders::ListTagsForResourcesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +145,14 @@ impl ListTagsForResourcesFluentBuilder {
         self.inner = self.inner.set_resource_type(input);
         self
     }
+    /// <p>The type of the resources.</p>
+    /// <ul>
+    /// <li> <p>The resource type for health checks is <code>healthcheck</code>.</p> </li>
+    /// <li> <p>The resource type for hosted zones is <code>hostedzone</code>.</p> </li>
+    /// </ul>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::TagResourceType> {
+        self.inner.get_resource_type()
+    }
     /// Appends an item to `ResourceIds`.
     ///
     /// To override the contents of this collection use [`set_resource_ids`](Self::set_resource_ids).
@@ -154,5 +169,11 @@ impl ListTagsForResourcesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_ids(input);
         self
+    }
+    /// <p>A complex type that contains the ResourceId element for each resource for which you want to get a list of tags.</p>
+    pub fn get_resource_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_resource_ids()
     }
 }

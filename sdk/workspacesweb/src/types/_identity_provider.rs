@@ -171,6 +171,10 @@ impl IdentityProviderBuilder {
         self.identity_provider_arn = input;
         self
     }
+    /// <p>The ARN of the identity provider.</p>
+    pub fn get_identity_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_provider_arn
+    }
     /// <p>The identity provider name.</p>
     pub fn identity_provider_name(
         mut self,
@@ -187,6 +191,10 @@ impl IdentityProviderBuilder {
         self.identity_provider_name = input;
         self
     }
+    /// <p>The identity provider name.</p>
+    pub fn get_identity_provider_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_provider_name
+    }
     /// <p>The identity provider type.</p>
     pub fn identity_provider_type(mut self, input: crate::types::IdentityProviderType) -> Self {
         self.identity_provider_type = ::std::option::Option::Some(input);
@@ -199,6 +207,12 @@ impl IdentityProviderBuilder {
     ) -> Self {
         self.identity_provider_type = input;
         self
+    }
+    /// <p>The identity provider type.</p>
+    pub fn get_identity_provider_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::IdentityProviderType> {
+        &self.identity_provider_type
     }
     /// Adds a key-value pair to `identity_provider_details`.
     ///
@@ -304,6 +318,54 @@ impl IdentityProviderBuilder {
     ) -> Self {
         self.identity_provider_details = input;
         self
+    }
+    /// <p>The identity provider details. The following list describes the provider detail keys for each identity provider type. </p>
+    /// <ul>
+    /// <li> <p>For Google and Login with Amazon:</p>
+    /// <ul>
+    /// <li> <p> <code>client_id</code> </p> </li>
+    /// <li> <p> <code>client_secret</code> </p> </li>
+    /// <li> <p> <code>authorize_scopes</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>For Facebook:</p>
+    /// <ul>
+    /// <li> <p> <code>client_id</code> </p> </li>
+    /// <li> <p> <code>client_secret</code> </p> </li>
+    /// <li> <p> <code>authorize_scopes</code> </p> </li>
+    /// <li> <p> <code>api_version</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>For Sign in with Apple:</p>
+    /// <ul>
+    /// <li> <p> <code>client_id</code> </p> </li>
+    /// <li> <p> <code>team_id</code> </p> </li>
+    /// <li> <p> <code>key_id</code> </p> </li>
+    /// <li> <p> <code>private_key</code> </p> </li>
+    /// <li> <p> <code>authorize_scopes</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>For OIDC providers:</p>
+    /// <ul>
+    /// <li> <p> <code>client_id</code> </p> </li>
+    /// <li> <p> <code>client_secret</code> </p> </li>
+    /// <li> <p> <code>attributes_request_method</code> </p> </li>
+    /// <li> <p> <code>oidc_issuer</code> </p> </li>
+    /// <li> <p> <code>authorize_scopes</code> </p> </li>
+    /// <li> <p> <code>authorize_url</code> <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
+    /// <li> <p> <code>token_url</code> <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
+    /// <li> <p> <code>attributes_url</code> <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
+    /// <li> <p> <code>jwks_uri</code> <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>For SAML providers:</p>
+    /// <ul>
+    /// <li> <p> <code>MetadataFile</code> OR <code>MetadataURL</code> </p> </li>
+    /// <li> <p> <code>IDPSignout</code> <i>optional</i> </p> </li>
+    /// </ul> </li>
+    /// </ul>
+    pub fn get_identity_provider_details(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.identity_provider_details
     }
     /// Consumes the builder and constructs a [`IdentityProvider`](crate::types::IdentityProvider).
     pub fn build(self) -> crate::types::IdentityProvider {

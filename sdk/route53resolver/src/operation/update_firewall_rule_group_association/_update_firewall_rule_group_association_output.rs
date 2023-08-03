@@ -56,6 +56,12 @@ impl UpdateFirewallRuleGroupAssociationOutputBuilder {
         self.firewall_rule_group_association = input;
         self
     }
+    /// <p>The association that you just updated. </p>
+    pub fn get_firewall_rule_group_association(
+        &self,
+    ) -> &::std::option::Option<crate::types::FirewallRuleGroupAssociation> {
+        &self.firewall_rule_group_association
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

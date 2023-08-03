@@ -46,6 +46,10 @@ impl DescribeBackupJobInputBuilder {
         self.backup_job_id = input;
         self
     }
+    /// <p>Uniquely identifies a request to Backup to back up a resource.</p>
+    pub fn get_backup_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_job_id
+    }
     /// Consumes the builder and constructs a [`DescribeBackupJobInput`](crate::operation::describe_backup_job::DescribeBackupJobInput).
     pub fn build(
         self,

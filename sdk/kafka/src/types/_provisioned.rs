@@ -130,6 +130,12 @@ impl ProvisionedBuilder {
         self.broker_node_group_info = input;
         self
     }
+    /// <p>Information about the brokers.</p>
+    pub fn get_broker_node_group_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::BrokerNodeGroupInfo> {
+        &self.broker_node_group_info
+    }
     /// <p>Information about the Apache Kafka version deployed on the brokers.</p>
     pub fn current_broker_software_info(mut self, input: crate::types::BrokerSoftwareInfo) -> Self {
         self.current_broker_software_info = ::std::option::Option::Some(input);
@@ -142,6 +148,12 @@ impl ProvisionedBuilder {
     ) -> Self {
         self.current_broker_software_info = input;
         self
+    }
+    /// <p>Information about the Apache Kafka version deployed on the brokers.</p>
+    pub fn get_current_broker_software_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::BrokerSoftwareInfo> {
+        &self.current_broker_software_info
     }
     /// <p>Includes all client authentication information.</p>
     pub fn client_authentication(mut self, input: crate::types::ClientAuthentication) -> Self {
@@ -156,6 +168,12 @@ impl ProvisionedBuilder {
         self.client_authentication = input;
         self
     }
+    /// <p>Includes all client authentication information.</p>
+    pub fn get_client_authentication(
+        &self,
+    ) -> &::std::option::Option<crate::types::ClientAuthentication> {
+        &self.client_authentication
+    }
     /// <p>Includes all encryption-related information.</p>
     pub fn encryption_info(mut self, input: crate::types::EncryptionInfo) -> Self {
         self.encryption_info = ::std::option::Option::Some(input);
@@ -168,6 +186,10 @@ impl ProvisionedBuilder {
     ) -> Self {
         self.encryption_info = input;
         self
+    }
+    /// <p>Includes all encryption-related information.</p>
+    pub fn get_encryption_info(&self) -> &::std::option::Option<crate::types::EncryptionInfo> {
+        &self.encryption_info
     }
     /// <p>Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.</p>
     pub fn enhanced_monitoring(mut self, input: crate::types::EnhancedMonitoring) -> Self {
@@ -182,6 +204,12 @@ impl ProvisionedBuilder {
         self.enhanced_monitoring = input;
         self
     }
+    /// <p>Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.</p>
+    pub fn get_enhanced_monitoring(
+        &self,
+    ) -> &::std::option::Option<crate::types::EnhancedMonitoring> {
+        &self.enhanced_monitoring
+    }
     /// <p>The settings for open monitoring.</p>
     pub fn open_monitoring(mut self, input: crate::types::OpenMonitoringInfo) -> Self {
         self.open_monitoring = ::std::option::Option::Some(input);
@@ -194,6 +222,10 @@ impl ProvisionedBuilder {
     ) -> Self {
         self.open_monitoring = input;
         self
+    }
+    /// <p>The settings for open monitoring.</p>
+    pub fn get_open_monitoring(&self) -> &::std::option::Option<crate::types::OpenMonitoringInfo> {
+        &self.open_monitoring
     }
     /// <p>Log delivery information for the cluster.</p>
     pub fn logging_info(mut self, input: crate::types::LoggingInfo) -> Self {
@@ -208,6 +240,10 @@ impl ProvisionedBuilder {
         self.logging_info = input;
         self
     }
+    /// <p>Log delivery information for the cluster.</p>
+    pub fn get_logging_info(&self) -> &::std::option::Option<crate::types::LoggingInfo> {
+        &self.logging_info
+    }
     /// <p>The number of broker nodes in the cluster.</p>
     pub fn number_of_broker_nodes(mut self, input: i32) -> Self {
         self.number_of_broker_nodes = ::std::option::Option::Some(input);
@@ -217,6 +253,10 @@ impl ProvisionedBuilder {
     pub fn set_number_of_broker_nodes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_broker_nodes = input;
         self
+    }
+    /// <p>The number of broker nodes in the cluster.</p>
+    pub fn get_number_of_broker_nodes(&self) -> &::std::option::Option<i32> {
+        &self.number_of_broker_nodes
     }
     /// <p>The connection string to use to connect to the Apache ZooKeeper cluster.</p>
     pub fn zookeeper_connect_string(
@@ -234,6 +274,10 @@ impl ProvisionedBuilder {
         self.zookeeper_connect_string = input;
         self
     }
+    /// <p>The connection string to use to connect to the Apache ZooKeeper cluster.</p>
+    pub fn get_zookeeper_connect_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.zookeeper_connect_string
+    }
     /// <p>The connection string to use to connect to the Apache ZooKeeper cluster on a TLS port.</p>
     pub fn zookeeper_connect_string_tls(
         mut self,
@@ -250,6 +294,12 @@ impl ProvisionedBuilder {
         self.zookeeper_connect_string_tls = input;
         self
     }
+    /// <p>The connection string to use to connect to the Apache ZooKeeper cluster on a TLS port.</p>
+    pub fn get_zookeeper_connect_string_tls(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.zookeeper_connect_string_tls
+    }
     /// <p>This controls storage mode for supported storage tiers.</p>
     pub fn storage_mode(mut self, input: crate::types::StorageMode) -> Self {
         self.storage_mode = ::std::option::Option::Some(input);
@@ -262,6 +312,10 @@ impl ProvisionedBuilder {
     ) -> Self {
         self.storage_mode = input;
         self
+    }
+    /// <p>This controls storage mode for supported storage tiers.</p>
+    pub fn get_storage_mode(&self) -> &::std::option::Option<crate::types::StorageMode> {
+        &self.storage_mode
     }
     /// Consumes the builder and constructs a [`Provisioned`](crate::types::Provisioned).
     pub fn build(self) -> crate::types::Provisioned {

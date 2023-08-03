@@ -68,6 +68,12 @@ impl ListClassificationJobsInputBuilder {
         self.filter_criteria = input;
         self
     }
+    /// <p>The criteria to use to filter the results.</p>
+    pub fn get_filter_criteria(
+        &self,
+    ) -> &::std::option::Option<crate::types::ListJobsFilterCriteria> {
+        &self.filter_criteria
+    }
     /// <p>The maximum number of items to include in each page of the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -78,6 +84,10 @@ impl ListClassificationJobsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of items to include in each page of the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -87,6 +97,10 @@ impl ListClassificationJobsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The criteria to use to sort the results.</p>
     pub fn sort_criteria(mut self, input: crate::types::ListJobsSortCriteria) -> Self {
@@ -100,6 +114,10 @@ impl ListClassificationJobsInputBuilder {
     ) -> Self {
         self.sort_criteria = input;
         self
+    }
+    /// <p>The criteria to use to sort the results.</p>
+    pub fn get_sort_criteria(&self) -> &::std::option::Option<crate::types::ListJobsSortCriteria> {
+        &self.sort_criteria
     }
     /// Consumes the builder and constructs a [`ListClassificationJobsInput`](crate::operation::list_classification_jobs::ListClassificationJobsInput).
     pub fn build(

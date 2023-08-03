@@ -70,6 +70,10 @@ impl GetTokenOutputBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The app ID.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p>The one-time challenge code for authenticating into the Amplify Admin UI.</p>
     pub fn challenge_code(
         mut self,
@@ -86,6 +90,10 @@ impl GetTokenOutputBuilder {
         self.challenge_code = input;
         self
     }
+    /// <p>The one-time challenge code for authenticating into the Amplify Admin UI.</p>
+    pub fn get_challenge_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.challenge_code
+    }
     /// <p>A unique ID provided when creating a new challenge token.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
@@ -96,6 +104,10 @@ impl GetTokenOutputBuilder {
         self.session_id = input;
         self
     }
+    /// <p>A unique ID provided when creating a new challenge token.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
+    }
     /// <p>The expiry time for the one-time generated token code.</p>
     pub fn ttl(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ttl = ::std::option::Option::Some(input.into());
@@ -105,6 +117,10 @@ impl GetTokenOutputBuilder {
     pub fn set_ttl(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ttl = input;
         self
+    }
+    /// <p>The expiry time for the one-time generated token code.</p>
+    pub fn get_ttl(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ttl
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

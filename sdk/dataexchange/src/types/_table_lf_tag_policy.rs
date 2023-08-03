@@ -49,6 +49,10 @@ impl TableLfTagPolicyBuilder {
         self.expression = input;
         self
     }
+    /// <p>A list of LF-tag conditions that apply to table resources.</p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LfTag>> {
+        &self.expression
+    }
     /// Consumes the builder and constructs a [`TableLfTagPolicy`](crate::types::TableLfTagPolicy).
     pub fn build(self) -> crate::types::TableLfTagPolicy {
         crate::types::TableLfTagPolicy {

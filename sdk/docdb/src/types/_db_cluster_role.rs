@@ -58,6 +58,10 @@ impl DbClusterRoleBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAMrole that is associated with the DB cluster.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>Describes the state of association between the IAMrole and the cluster. The <code>Status</code> property returns one of the following values:</p>
     /// <ul>
     /// <li> <p> <code>ACTIVE</code> - The IAMrole ARN is associated with the cluster and can be used to access other Amazon Web Services services on your behalf.</p> </li>
@@ -77,6 +81,15 @@ impl DbClusterRoleBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Describes the state of association between the IAMrole and the cluster. The <code>Status</code> property returns one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> - The IAMrole ARN is associated with the cluster and can be used to access other Amazon Web Services services on your behalf.</p> </li>
+    /// <li> <p> <code>PENDING</code> - The IAMrole ARN is being associated with the cluster.</p> </li>
+    /// <li> <p> <code>INVALID</code> - The IAMrole ARN is associated with the cluster, but the cluster cannot assume the IAMrole to access other Amazon Web Services services on your behalf.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`DbClusterRole`](crate::types::DbClusterRole).
     pub fn build(self) -> crate::types::DbClusterRole {

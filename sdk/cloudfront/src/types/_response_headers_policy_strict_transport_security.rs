@@ -66,6 +66,10 @@ impl ResponseHeadersPolicyStrictTransportSecurityBuilder {
         self.r#override = input;
         self
     }
+    /// <p>A Boolean that determines whether CloudFront overrides the <code>Strict-Transport-Security</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
+    pub fn get_override(&self) -> &::std::option::Option<bool> {
+        &self.r#override
+    }
     /// <p>A Boolean that determines whether CloudFront includes the <code>includeSubDomains</code> directive in the <code>Strict-Transport-Security</code> HTTP response header.</p>
     pub fn include_subdomains(mut self, input: bool) -> Self {
         self.include_subdomains = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl ResponseHeadersPolicyStrictTransportSecurityBuilder {
     pub fn set_include_subdomains(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_subdomains = input;
         self
+    }
+    /// <p>A Boolean that determines whether CloudFront includes the <code>includeSubDomains</code> directive in the <code>Strict-Transport-Security</code> HTTP response header.</p>
+    pub fn get_include_subdomains(&self) -> &::std::option::Option<bool> {
+        &self.include_subdomains
     }
     /// <p>A Boolean that determines whether CloudFront includes the <code>preload</code> directive in the <code>Strict-Transport-Security</code> HTTP response header.</p>
     pub fn preload(mut self, input: bool) -> Self {
@@ -86,6 +94,10 @@ impl ResponseHeadersPolicyStrictTransportSecurityBuilder {
         self.preload = input;
         self
     }
+    /// <p>A Boolean that determines whether CloudFront includes the <code>preload</code> directive in the <code>Strict-Transport-Security</code> HTTP response header.</p>
+    pub fn get_preload(&self) -> &::std::option::Option<bool> {
+        &self.preload
+    }
     /// <p>A number that CloudFront uses as the value for the <code>max-age</code> directive in the <code>Strict-Transport-Security</code> HTTP response header.</p>
     pub fn access_control_max_age_sec(mut self, input: i32) -> Self {
         self.access_control_max_age_sec = ::std::option::Option::Some(input);
@@ -95,6 +107,10 @@ impl ResponseHeadersPolicyStrictTransportSecurityBuilder {
     pub fn set_access_control_max_age_sec(mut self, input: ::std::option::Option<i32>) -> Self {
         self.access_control_max_age_sec = input;
         self
+    }
+    /// <p>A number that CloudFront uses as the value for the <code>max-age</code> directive in the <code>Strict-Transport-Security</code> HTTP response header.</p>
+    pub fn get_access_control_max_age_sec(&self) -> &::std::option::Option<i32> {
+        &self.access_control_max_age_sec
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyStrictTransportSecurity`](crate::types::ResponseHeadersPolicyStrictTransportSecurity).
     pub fn build(self) -> crate::types::ResponseHeadersPolicyStrictTransportSecurity {

@@ -56,6 +56,10 @@ impl DeleteImageVersionInputBuilder {
         self.image_name = input;
         self
     }
+    /// <p>The name of the image to delete.</p>
+    pub fn get_image_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_name
+    }
     /// <p>The version to delete.</p>
     pub fn version(mut self, input: i32) -> Self {
         self.version = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl DeleteImageVersionInputBuilder {
         self.version = input;
         self
     }
+    /// <p>The version to delete.</p>
+    pub fn get_version(&self) -> &::std::option::Option<i32> {
+        &self.version
+    }
     /// <p>The alias of the image to delete.</p>
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl DeleteImageVersionInputBuilder {
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alias = input;
         self
+    }
+    /// <p>The alias of the image to delete.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias
     }
     /// Consumes the builder and constructs a [`DeleteImageVersionInput`](crate::operation::delete_image_version::DeleteImageVersionInput).
     pub fn build(

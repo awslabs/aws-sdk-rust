@@ -62,6 +62,10 @@ impl AnomalyGroupTimeSeriesFeedbackBuilder {
         self.anomaly_group_id = input;
         self
     }
+    /// <p>The ID of the anomaly group.</p>
+    pub fn get_anomaly_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.anomaly_group_id
+    }
     /// <p>The ID of the metric.</p>
     pub fn time_series_id(
         mut self,
@@ -78,6 +82,10 @@ impl AnomalyGroupTimeSeriesFeedbackBuilder {
         self.time_series_id = input;
         self
     }
+    /// <p>The ID of the metric.</p>
+    pub fn get_time_series_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.time_series_id
+    }
     /// <p>Feedback on whether the metric is a legitimate anomaly.</p>
     pub fn is_anomaly(mut self, input: bool) -> Self {
         self.is_anomaly = ::std::option::Option::Some(input);
@@ -87,6 +95,10 @@ impl AnomalyGroupTimeSeriesFeedbackBuilder {
     pub fn set_is_anomaly(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_anomaly = input;
         self
+    }
+    /// <p>Feedback on whether the metric is a legitimate anomaly.</p>
+    pub fn get_is_anomaly(&self) -> &::std::option::Option<bool> {
+        &self.is_anomaly
     }
     /// Consumes the builder and constructs a [`AnomalyGroupTimeSeriesFeedback`](crate::types::AnomalyGroupTimeSeriesFeedback).
     pub fn build(self) -> crate::types::AnomalyGroupTimeSeriesFeedback {

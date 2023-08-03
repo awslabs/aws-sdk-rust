@@ -67,6 +67,10 @@ impl DelimitedTextImportOptionsBuilder {
         self.delimiter = input;
         self
     }
+    /// <p>The delimiter to use for separating columns in a single row of the input.</p>
+    pub fn get_delimiter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delimiter
+    }
     /// <p>Indicates whether the input file has a header row at the top containing the column names.</p>
     pub fn has_header_row(mut self, input: bool) -> Self {
         self.has_header_row = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl DelimitedTextImportOptionsBuilder {
         self.has_header_row = input;
         self
     }
+    /// <p>Indicates whether the input file has a header row at the top containing the column names.</p>
+    pub fn get_has_header_row(&self) -> &::std::option::Option<bool> {
+        &self.has_header_row
+    }
     /// <p>A parameter to indicate whether empty rows should be ignored or be included in the import.</p>
     pub fn ignore_empty_rows(mut self, input: bool) -> Self {
         self.ignore_empty_rows = ::std::option::Option::Some(input);
@@ -86,6 +94,10 @@ impl DelimitedTextImportOptionsBuilder {
     pub fn set_ignore_empty_rows(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ignore_empty_rows = input;
         self
+    }
+    /// <p>A parameter to indicate whether empty rows should be ignored or be included in the import.</p>
+    pub fn get_ignore_empty_rows(&self) -> &::std::option::Option<bool> {
+        &self.ignore_empty_rows
     }
     /// <p>The encoding of the data in the input file.</p>
     pub fn data_character_encoding(
@@ -102,6 +114,12 @@ impl DelimitedTextImportOptionsBuilder {
     ) -> Self {
         self.data_character_encoding = input;
         self
+    }
+    /// <p>The encoding of the data in the input file.</p>
+    pub fn get_data_character_encoding(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImportDataCharacterEncoding> {
+        &self.data_character_encoding
     }
     /// Consumes the builder and constructs a [`DelimitedTextImportOptions`](crate::types::DelimitedTextImportOptions).
     pub fn build(self) -> crate::types::DelimitedTextImportOptions {

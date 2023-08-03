@@ -49,6 +49,12 @@ impl SourceServerActionsRequestFiltersBuilder {
         self.action_i_ds = input;
         self
     }
+    /// <p>Action IDs to filter source server post migration custom actions by.</p>
+    pub fn get_action_i_ds(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.action_i_ds
+    }
     /// Consumes the builder and constructs a [`SourceServerActionsRequestFilters`](crate::types::SourceServerActionsRequestFilters).
     pub fn build(self) -> crate::types::SourceServerActionsRequestFilters {
         crate::types::SourceServerActionsRequestFilters {

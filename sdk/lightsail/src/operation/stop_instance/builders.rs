@@ -39,6 +39,10 @@ impl StopInstanceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopInstance as a reference.
+    pub fn as_input(&self) -> &crate::operation::stop_instance::builders::StopInstanceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl StopInstanceFluentBuilder {
         self.inner = self.inner.set_instance_name(input);
         self
     }
+    /// <p>The name of the instance (a virtual private server) to stop.</p>
+    pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_name()
+    }
     /// <p>When set to <code>True</code>, forces a Lightsail instance that is stuck in a <code>stopping</code> state to stop.</p> <important>
     /// <p>Only use the <code>force</code> parameter if your instance is stuck in the <code>stopping</code> state. In any other state, your instance should stop normally without adding this parameter to your API request.</p>
     /// </important>
@@ -140,5 +148,11 @@ impl StopInstanceFluentBuilder {
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force(input);
         self
+    }
+    /// <p>When set to <code>True</code>, forces a Lightsail instance that is stuck in a <code>stopping</code> state to stop.</p> <important>
+    /// <p>Only use the <code>force</code> parameter if your instance is stuck in the <code>stopping</code> state. In any other state, your instance should stop normally without adding this parameter to your API request.</p>
+    /// </important>
+    pub fn get_force(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force()
     }
 }

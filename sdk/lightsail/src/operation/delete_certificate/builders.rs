@@ -37,6 +37,12 @@ impl DeleteCertificateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteCertificate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_certificate::builders::DeleteCertificateInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,5 +140,10 @@ impl DeleteCertificateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_certificate_name(input);
         self
+    }
+    /// <p>The name of the certificate to delete.</p>
+    /// <p>Use the <code>GetCertificates</code> action to get a list of certificate names that you can specify.</p>
+    pub fn get_certificate_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate_name()
     }
 }

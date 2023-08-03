@@ -48,6 +48,10 @@ impl HdfsNameNodeBuilder {
         self.hostname = input;
         self
     }
+    /// <p>The hostname of the NameNode in the HDFS cluster. This value is the IP address or Domain Name Service (DNS) name of the NameNode. An agent that's installed on-premises uses this hostname to communicate with the NameNode in the network.</p>
+    pub fn get_hostname(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hostname
+    }
     /// <p>The port that the NameNode uses to listen to client requests.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl HdfsNameNodeBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
+    }
+    /// <p>The port that the NameNode uses to listen to client requests.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// Consumes the builder and constructs a [`HdfsNameNode`](crate::types::HdfsNameNode).
     pub fn build(self) -> crate::types::HdfsNameNode {

@@ -39,6 +39,10 @@ impl GetMonitorInputBuilder {
         self.monitor_name = input;
         self
     }
+    /// <p>The name of the monitor.</p>
+    pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitor_name
+    }
     /// Consumes the builder and constructs a [`GetMonitorInput`](crate::operation::get_monitor::GetMonitorInput).
     pub fn build(
         self,

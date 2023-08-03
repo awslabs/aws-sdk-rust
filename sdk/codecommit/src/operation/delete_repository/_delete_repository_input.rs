@@ -47,6 +47,10 @@ impl DeleteRepositoryInputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository to delete.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// Consumes the builder and constructs a [`DeleteRepositoryInput`](crate::operation::delete_repository::DeleteRepositoryInput).
     pub fn build(
         self,

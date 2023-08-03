@@ -60,6 +60,11 @@ impl CreateGrantOutputBuilder {
         self.grant_token = input;
         self
     }
+    /// <p>The grant token.</p>
+    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn get_grant_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grant_token
+    }
     /// <p>The unique identifier for the grant.</p>
     /// <p>You can use the <code>GrantId</code> in a <code>ListGrants</code>, <code>RetireGrant</code>, or <code>RevokeGrant</code> operation.</p>
     pub fn grant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -71,6 +76,11 @@ impl CreateGrantOutputBuilder {
     pub fn set_grant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grant_id = input;
         self
+    }
+    /// <p>The unique identifier for the grant.</p>
+    /// <p>You can use the <code>GrantId</code> in a <code>ListGrants</code>, <code>RetireGrant</code>, or <code>RevokeGrant</code> operation.</p>
+    pub fn get_grant_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grant_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

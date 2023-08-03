@@ -48,6 +48,10 @@ impl ReportTaskProgressOutputBuilder {
         self.canceled = input;
         self
     }
+    /// <p>If true, the calling task runner should cancel processing of the task. The task runner does not need to call <code>SetTaskStatus</code> for canceled tasks.</p>
+    pub fn get_canceled(&self) -> &::std::option::Option<bool> {
+        &self.canceled
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

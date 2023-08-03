@@ -46,6 +46,10 @@ impl GetActionOutputBuilder {
         self.action = input;
         self
     }
+    /// <p>Information about the action.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::Action> {
+        &self.action
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

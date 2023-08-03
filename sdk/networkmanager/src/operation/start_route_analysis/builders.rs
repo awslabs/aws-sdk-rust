@@ -36,6 +36,12 @@ impl StartRouteAnalysisFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartRouteAnalysis as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_route_analysis::builders::StartRouteAnalysisInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl StartRouteAnalysisFluentBuilder {
         self.inner = self.inner.set_global_network_id(input);
         self
     }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_global_network_id()
+    }
     /// <p>The source from which traffic originates.</p>
     pub fn source(
         mut self,
@@ -147,6 +157,12 @@ impl StartRouteAnalysisFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source(input);
         self
+    }
+    /// <p>The source from which traffic originates.</p>
+    pub fn get_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::RouteAnalysisEndpointOptionsSpecification> {
+        self.inner.get_source()
     }
     /// <p>The destination.</p>
     pub fn destination(
@@ -164,6 +180,12 @@ impl StartRouteAnalysisFluentBuilder {
         self.inner = self.inner.set_destination(input);
         self
     }
+    /// <p>The destination.</p>
+    pub fn get_destination(
+        &self,
+    ) -> &::std::option::Option<crate::types::RouteAnalysisEndpointOptionsSpecification> {
+        self.inner.get_destination()
+    }
     /// <p>Indicates whether to analyze the return path. The default is <code>false</code>.</p>
     pub fn include_return_path(mut self, input: bool) -> Self {
         self.inner = self.inner.include_return_path(input);
@@ -174,6 +196,10 @@ impl StartRouteAnalysisFluentBuilder {
         self.inner = self.inner.set_include_return_path(input);
         self
     }
+    /// <p>Indicates whether to analyze the return path. The default is <code>false</code>.</p>
+    pub fn get_include_return_path(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_return_path()
+    }
     /// <p>Indicates whether to include the location of middlebox appliances in the route analysis. The default is <code>false</code>.</p>
     pub fn use_middleboxes(mut self, input: bool) -> Self {
         self.inner = self.inner.use_middleboxes(input);
@@ -183,5 +209,9 @@ impl StartRouteAnalysisFluentBuilder {
     pub fn set_use_middleboxes(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_use_middleboxes(input);
         self
+    }
+    /// <p>Indicates whether to include the location of middlebox appliances in the route analysis. The default is <code>false</code>.</p>
+    pub fn get_use_middleboxes(&self) -> &::std::option::Option<bool> {
+        self.inner.get_use_middleboxes()
     }
 }

@@ -57,6 +57,10 @@ impl DeleteKeyPairInputBuilder {
         self.key_pair_name = input;
         self
     }
+    /// <p>The name of the key pair to delete.</p>
+    pub fn get_key_pair_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_pair_name
+    }
     /// <p>The RSA fingerprint of the Lightsail default key pair to delete.</p> <note>
     /// <p>The <code>expectedFingerprint</code> parameter is required only when specifying to delete a Lightsail default key pair.</p>
     /// </note>
@@ -76,6 +80,12 @@ impl DeleteKeyPairInputBuilder {
     ) -> Self {
         self.expected_fingerprint = input;
         self
+    }
+    /// <p>The RSA fingerprint of the Lightsail default key pair to delete.</p> <note>
+    /// <p>The <code>expectedFingerprint</code> parameter is required only when specifying to delete a Lightsail default key pair.</p>
+    /// </note>
+    pub fn get_expected_fingerprint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expected_fingerprint
     }
     /// Consumes the builder and constructs a [`DeleteKeyPairInput`](crate::operation::delete_key_pair::DeleteKeyPairInput).
     pub fn build(

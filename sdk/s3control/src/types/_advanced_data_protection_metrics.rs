@@ -41,6 +41,10 @@ impl AdvancedDataProtectionMetricsBuilder {
         self.is_enabled = input;
         self
     }
+    /// <p>A container that indicates whether advanced data-protection metrics are enabled.</p>
+    pub fn get_is_enabled(&self) -> &::std::option::Option<bool> {
+        &self.is_enabled
+    }
     /// Consumes the builder and constructs a [`AdvancedDataProtectionMetrics`](crate::types::AdvancedDataProtectionMetrics).
     pub fn build(self) -> crate::types::AdvancedDataProtectionMetrics {
         crate::types::AdvancedDataProtectionMetrics {

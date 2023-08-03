@@ -49,6 +49,12 @@ impl UpdateMatchmakingConfigurationOutputBuilder {
         self.configuration = input;
         self
     }
+    /// <p>The updated matchmaking configuration.</p>
+    pub fn get_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::MatchmakingConfiguration> {
+        &self.configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -43,6 +43,10 @@ impl PointInTimeRecoverySpecificationBuilder {
         self.point_in_time_recovery_enabled = input;
         self
     }
+    /// <p>Indicates whether point in time recovery is enabled (true) or disabled (false) on the table.</p>
+    pub fn get_point_in_time_recovery_enabled(&self) -> &::std::option::Option<bool> {
+        &self.point_in_time_recovery_enabled
+    }
     /// Consumes the builder and constructs a [`PointInTimeRecoverySpecification`](crate::types::PointInTimeRecoverySpecification).
     pub fn build(self) -> crate::types::PointInTimeRecoverySpecification {
         crate::types::PointInTimeRecoverySpecification {

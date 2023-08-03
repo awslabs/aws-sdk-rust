@@ -49,6 +49,10 @@ impl GetIdentityDkimAttributesInputBuilder {
         self.identities = input;
         self
     }
+    /// <p>A list of one or more verified identities - email addresses, domains, or both.</p>
+    pub fn get_identities(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.identities
+    }
     /// Consumes the builder and constructs a [`GetIdentityDkimAttributesInput`](crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesInput).
     pub fn build(
         self,

@@ -41,6 +41,10 @@ impl EnableDomainAutoRenewInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The name of the domain that you want to enable automatic renewal for.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// Consumes the builder and constructs a [`EnableDomainAutoRenewInput`](crate::operation::enable_domain_auto_renew::EnableDomainAutoRenewInput).
     pub fn build(
         self,

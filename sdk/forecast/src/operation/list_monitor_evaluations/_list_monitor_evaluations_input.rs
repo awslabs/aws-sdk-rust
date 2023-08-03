@@ -81,6 +81,10 @@ impl ListMonitorEvaluationsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of monitoring results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -91,6 +95,10 @@ impl ListMonitorEvaluationsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of monitoring results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The Amazon Resource Name (ARN) of the monitor resource to get results from.</p>
     pub fn monitor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitor_arn = ::std::option::Option::Some(input.into());
@@ -100,6 +108,10 @@ impl ListMonitorEvaluationsInputBuilder {
     pub fn set_monitor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monitor_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the monitor resource to get results from.</p>
+    pub fn get_monitor_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitor_arn
     }
     /// Appends an item to `filters`.
     ///
@@ -135,6 +147,18 @@ impl ListMonitorEvaluationsInputBuilder {
     ) -> Self {
         self.filters = input;
         self
+    }
+    /// <p>An array of filters. For each filter, provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the resources that match the statement from the list. The match statement consists of a key and a value.</p>
+    /// <p> <b>Filter properties</b> </p>
+    /// <ul>
+    /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>.</p> </li>
+    /// <li> <p> <code>Key</code> - The name of the parameter to filter on. The only valid value is <code>EvaluationState</code>.</p> </li>
+    /// <li> <p> <code>Value</code> - The value to match. Valid values are only <code>SUCCESS</code> or <code>FAILURE</code>.</p> </li>
+    /// </ul>
+    /// <p>For example, to list only successful monitor evaluations, you would specify:</p>
+    /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "EvaluationState", "Value": "SUCCESS" } ]</code> </p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
     }
     /// Consumes the builder and constructs a [`ListMonitorEvaluationsInput`](crate::operation::list_monitor_evaluations::ListMonitorEvaluationsInput).
     pub fn build(

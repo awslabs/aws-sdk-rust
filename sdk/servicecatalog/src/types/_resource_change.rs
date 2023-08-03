@@ -88,6 +88,10 @@ impl ResourceChangeBuilder {
         self.action = input;
         self
     }
+    /// <p>The change action.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::ChangeAction> {
+        &self.action
+    }
     /// <p>The ID of the resource, as defined in the CloudFormation template.</p>
     pub fn logical_resource_id(
         mut self,
@@ -103,6 +107,10 @@ impl ResourceChangeBuilder {
     ) -> Self {
         self.logical_resource_id = input;
         self
+    }
+    /// <p>The ID of the resource, as defined in the CloudFormation template.</p>
+    pub fn get_logical_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.logical_resource_id
     }
     /// <p>The ID of the resource, if it was already created.</p>
     pub fn physical_resource_id(
@@ -120,6 +128,10 @@ impl ResourceChangeBuilder {
         self.physical_resource_id = input;
         self
     }
+    /// <p>The ID of the resource, if it was already created.</p>
+    pub fn get_physical_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.physical_resource_id
+    }
     /// <p>The type of resource.</p>
     pub fn resource_type(
         mut self,
@@ -136,6 +148,10 @@ impl ResourceChangeBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The type of resource.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
+    }
     /// <p>If the change type is <code>Modify</code>, indicates whether the existing resource is deleted and replaced with a new one.</p>
     pub fn replacement(mut self, input: crate::types::Replacement) -> Self {
         self.replacement = ::std::option::Option::Some(input);
@@ -148,6 +164,10 @@ impl ResourceChangeBuilder {
     ) -> Self {
         self.replacement = input;
         self
+    }
+    /// <p>If the change type is <code>Modify</code>, indicates whether the existing resource is deleted and replaced with a new one.</p>
+    pub fn get_replacement(&self) -> &::std::option::Option<crate::types::Replacement> {
+        &self.replacement
     }
     /// Appends an item to `scope`.
     ///
@@ -168,6 +188,12 @@ impl ResourceChangeBuilder {
         self.scope = input;
         self
     }
+    /// <p>The change scope.</p>
+    pub fn get_scope(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceAttribute>> {
+        &self.scope
+    }
     /// Appends an item to `details`.
     ///
     /// To override the contents of this collection use [`set_details`](Self::set_details).
@@ -186,6 +212,12 @@ impl ResourceChangeBuilder {
     ) -> Self {
         self.details = input;
         self
+    }
+    /// <p>Information about the resource changes.</p>
+    pub fn get_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceChangeDetail>> {
+        &self.details
     }
     /// Consumes the builder and constructs a [`ResourceChange`](crate::types::ResourceChange).
     pub fn build(self) -> crate::types::ResourceChange {

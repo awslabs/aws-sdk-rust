@@ -65,6 +65,10 @@ impl GetAssessmentOutputBuilder {
         self.id = input;
         self
     }
+    /// <p> The ID for the specific assessment task. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p> Detailed information about the assessment. </p>
     pub fn data_collection_details(mut self, input: crate::types::DataCollectionDetails) -> Self {
         self.data_collection_details = ::std::option::Option::Some(input);
@@ -77,6 +81,12 @@ impl GetAssessmentOutputBuilder {
     ) -> Self {
         self.data_collection_details = input;
         self
+    }
+    /// <p> Detailed information about the assessment. </p>
+    pub fn get_data_collection_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataCollectionDetails> {
+        &self.data_collection_details
     }
     /// Appends an item to `assessment_targets`.
     ///
@@ -96,6 +106,12 @@ impl GetAssessmentOutputBuilder {
     ) -> Self {
         self.assessment_targets = input;
         self
+    }
+    /// <p>List of criteria for assessment.</p>
+    pub fn get_assessment_targets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentTarget>> {
+        &self.assessment_targets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

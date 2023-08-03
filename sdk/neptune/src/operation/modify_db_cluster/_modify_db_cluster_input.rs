@@ -294,6 +294,14 @@ impl ModifyDbClusterInputBuilder {
         self.db_cluster_identifier = input;
         self
     }
+    /// <p>The DB cluster identifier for the cluster being modified. This parameter is not case-sensitive.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
+    /// </ul>
+    pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_identifier
+    }
     /// <p>The new DB cluster identifier for the DB cluster when renaming a DB cluster. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -324,6 +332,17 @@ impl ModifyDbClusterInputBuilder {
         self.new_db_cluster_identifier = input;
         self
     }
+    /// <p>The new DB cluster identifier for the DB cluster when renaming a DB cluster. This value is stored as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li>
+    /// <li> <p>The first character must be a letter</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// </ul>
+    /// <p>Example: <code>my-cluster2</code> </p>
+    pub fn get_new_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.new_db_cluster_identifier
+    }
     /// <p>A value that specifies whether the modifications in this request and any pending modifications are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB cluster. If this parameter is set to <code>false</code>, changes to the DB cluster are applied during the next maintenance window.</p>
     /// <p>The <code>ApplyImmediately</code> parameter only affects <code>NewDBClusterIdentifier</code> values. If you set the <code>ApplyImmediately</code> parameter value to false, then changes to <code>NewDBClusterIdentifier</code> values are applied during the next maintenance window. All other changes are applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.</p>
     /// <p>Default: <code>false</code> </p>
@@ -337,6 +356,12 @@ impl ModifyDbClusterInputBuilder {
     pub fn set_apply_immediately(mut self, input: ::std::option::Option<bool>) -> Self {
         self.apply_immediately = input;
         self
+    }
+    /// <p>A value that specifies whether the modifications in this request and any pending modifications are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB cluster. If this parameter is set to <code>false</code>, changes to the DB cluster are applied during the next maintenance window.</p>
+    /// <p>The <code>ApplyImmediately</code> parameter only affects <code>NewDBClusterIdentifier</code> values. If you set the <code>ApplyImmediately</code> parameter value to false, then changes to <code>NewDBClusterIdentifier</code> values are applied during the next maintenance window. All other changes are applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.</p>
+    /// <p>Default: <code>false</code> </p>
+    pub fn get_apply_immediately(&self) -> &::std::option::Option<bool> {
+        &self.apply_immediately
     }
     /// <p>The number of days for which automated backups are retained. You must specify a minimum value of 1.</p>
     /// <p>Default: 1</p>
@@ -358,6 +383,15 @@ impl ModifyDbClusterInputBuilder {
         self.backup_retention_period = input;
         self
     }
+    /// <p>The number of days for which automated backups are retained. You must specify a minimum value of 1.</p>
+    /// <p>Default: 1</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be a value from 1 to 35</p> </li>
+    /// </ul>
+    pub fn get_backup_retention_period(&self) -> &::std::option::Option<i32> {
+        &self.backup_retention_period
+    }
     /// <p>The name of the DB cluster parameter group to use for the DB cluster.</p>
     pub fn db_cluster_parameter_group_name(
         mut self,
@@ -373,6 +407,12 @@ impl ModifyDbClusterInputBuilder {
     ) -> Self {
         self.db_cluster_parameter_group_name = input;
         self
+    }
+    /// <p>The name of the DB cluster parameter group to use for the DB cluster.</p>
+    pub fn get_db_cluster_parameter_group_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_parameter_group_name
     }
     /// Appends an item to `vpc_security_group_ids`.
     ///
@@ -396,6 +436,12 @@ impl ModifyDbClusterInputBuilder {
         self.vpc_security_group_ids = input;
         self
     }
+    /// <p>A list of VPC security groups that the DB cluster will belong to.</p>
+    pub fn get_vpc_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.vpc_security_group_ids
+    }
     /// <p>The port number on which the DB cluster accepts connections.</p>
     /// <p>Constraints: Value must be <code>1150-65535</code> </p>
     /// <p>Default: The same port as the original DB cluster.</p>
@@ -409,6 +455,12 @@ impl ModifyDbClusterInputBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
+    }
+    /// <p>The port number on which the DB cluster accepts connections.</p>
+    /// <p>Constraints: Value must be <code>1150-65535</code> </p>
+    /// <p>Default: The same port as the original DB cluster.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// <p>Not supported by Neptune.</p>
     pub fn master_user_password(
@@ -426,6 +478,10 @@ impl ModifyDbClusterInputBuilder {
         self.master_user_password = input;
         self
     }
+    /// <p>Not supported by Neptune.</p>
+    pub fn get_master_user_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_user_password
+    }
     /// <p> <i>Not supported by Neptune.</i> </p>
     pub fn option_group_name(
         mut self,
@@ -441,6 +497,10 @@ impl ModifyDbClusterInputBuilder {
     ) -> Self {
         self.option_group_name = input;
         self
+    }
+    /// <p> <i>Not supported by Neptune.</i> </p>
+    pub fn get_option_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.option_group_name
     }
     /// <p>The daily time range during which automated backups are created if automated backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.</p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region.</p>
@@ -474,6 +534,18 @@ impl ModifyDbClusterInputBuilder {
         self.preferred_backup_window = input;
         self
     }
+    /// <p>The daily time range during which automated backups are created if automated backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.</p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>
+    /// <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>
+    /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
+    /// <li> <p>Must be at least 30 minutes.</p> </li>
+    /// </ul>
+    pub fn get_preferred_backup_window(&self) -> &::std::option::Option<::std::string::String> {
+        &self.preferred_backup_window
+    }
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region, occurring on a random day of the week.</p>
@@ -498,6 +570,16 @@ impl ModifyDbClusterInputBuilder {
         self.preferred_maintenance_window = input;
         self
     }
+    /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
+    /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region, occurring on a random day of the week.</p>
+    /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
+    /// <p>Constraints: Minimum 30-minute window.</p>
+    pub fn get_preferred_maintenance_window(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.preferred_maintenance_window
+    }
     /// <p>True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and otherwise false.</p>
     /// <p>Default: <code>false</code> </p>
     pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
@@ -512,6 +594,11 @@ impl ModifyDbClusterInputBuilder {
     ) -> Self {
         self.enable_iam_database_authentication = input;
         self
+    }
+    /// <p>True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and otherwise false.</p>
+    /// <p>Default: <code>false</code> </p>
+    pub fn get_enable_iam_database_authentication(&self) -> &::std::option::Option<bool> {
+        &self.enable_iam_database_authentication
     }
     /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB cluster.</p>
     pub fn cloudwatch_logs_export_configuration(
@@ -528,6 +615,12 @@ impl ModifyDbClusterInputBuilder {
     ) -> Self {
         self.cloudwatch_logs_export_configuration = input;
         self
+    }
+    /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB cluster.</p>
+    pub fn get_cloudwatch_logs_export_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudwatchLogsExportConfiguration> {
+        &self.cloudwatch_logs_export_configuration
     }
     /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter results in an outage. The change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is set to true.</p>
     /// <p>For a list of valid engine versions, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine Releases for Amazon Neptune</a>, or call <a href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
@@ -547,6 +640,11 @@ impl ModifyDbClusterInputBuilder {
         self.engine_version = input;
         self
     }
+    /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter results in an outage. The change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is set to true.</p>
+    /// <p>For a list of valid engine versions, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine Releases for Amazon Neptune</a>, or call <a href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
+    }
     /// <p>A value that indicates whether upgrades between different major versions are allowed.</p>
     /// <p>Constraints: You must set the allow-major-version-upgrade flag when providing an <code>EngineVersion</code> parameter that uses a different major version than the DB cluster's current version.</p>
     pub fn allow_major_version_upgrade(mut self, input: bool) -> Self {
@@ -558,6 +656,11 @@ impl ModifyDbClusterInputBuilder {
     pub fn set_allow_major_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_major_version_upgrade = input;
         self
+    }
+    /// <p>A value that indicates whether upgrades between different major versions are allowed.</p>
+    /// <p>Constraints: You must set the allow-major-version-upgrade flag when providing an <code>EngineVersion</code> parameter that uses a different major version than the DB cluster's current version.</p>
+    pub fn get_allow_major_version_upgrade(&self) -> &::std::option::Option<bool> {
+        &self.allow_major_version_upgrade
     }
     /// <p>The name of the DB parameter group to apply to all instances of the DB cluster. </p> <note>
     /// <p>When you apply a parameter group using <code>DBInstanceParameterGroupName</code>, parameter changes aren't applied during the next maintenance window but instead are applied immediately.</p>
@@ -591,6 +694,20 @@ impl ModifyDbClusterInputBuilder {
         self.db_instance_parameter_group_name = input;
         self
     }
+    /// <p>The name of the DB parameter group to apply to all instances of the DB cluster. </p> <note>
+    /// <p>When you apply a parameter group using <code>DBInstanceParameterGroupName</code>, parameter changes aren't applied during the next maintenance window but instead are applied immediately.</p>
+    /// </note>
+    /// <p>Default: The existing name setting</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>The DB parameter group must be in the same DB parameter group family as the target DB cluster version.</p> </li>
+    /// <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is only valid in combination with the <code>AllowMajorVersionUpgrade</code> parameter.</p> </li>
+    /// </ul>
+    pub fn get_db_instance_parameter_group_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_parameter_group_name
+    }
     /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled.</p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
         self.deletion_protection = ::std::option::Option::Some(input);
@@ -601,6 +718,10 @@ impl ModifyDbClusterInputBuilder {
         self.deletion_protection = input;
         self
     }
+    /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled.</p>
+    pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
+        &self.deletion_protection
+    }
     /// <p> <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i> </p>
     pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
         self.copy_tags_to_snapshot = ::std::option::Option::Some(input);
@@ -610,6 +731,10 @@ impl ModifyDbClusterInputBuilder {
     pub fn set_copy_tags_to_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
         self.copy_tags_to_snapshot = input;
         self
+    }
+    /// <p> <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i> </p>
+    pub fn get_copy_tags_to_snapshot(&self) -> &::std::option::Option<bool> {
+        &self.copy_tags_to_snapshot
     }
     /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
@@ -628,6 +753,13 @@ impl ModifyDbClusterInputBuilder {
     ) -> Self {
         self.serverless_v2_scaling_configuration = input;
         self
+    }
+    /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+    pub fn get_serverless_v2_scaling_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServerlessV2ScalingConfiguration> {
+        &self.serverless_v2_scaling_configuration
     }
     /// Consumes the builder and constructs a [`ModifyDbClusterInput`](crate::operation::modify_db_cluster::ModifyDbClusterInput).
     pub fn build(

@@ -36,6 +36,10 @@ impl DeletePublishingDestinationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeletePublishingDestination as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_publishing_destination::builders::DeletePublishingDestinationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl DeletePublishingDestinationFluentBuilder {
         self.inner = self.inner.set_detector_id(input);
         self
     }
+    /// <p>The unique ID of the detector associated with the publishing destination to delete.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_id()
+    }
     /// <p>The ID of the publishing destination to delete.</p>
     pub fn destination_id(
         mut self,
@@ -141,5 +149,9 @@ impl DeletePublishingDestinationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destination_id(input);
         self
+    }
+    /// <p>The ID of the publishing destination to delete.</p>
+    pub fn get_destination_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_id()
     }
 }

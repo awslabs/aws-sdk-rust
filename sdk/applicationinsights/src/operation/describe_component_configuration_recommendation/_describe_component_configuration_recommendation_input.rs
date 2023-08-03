@@ -61,6 +61,10 @@ impl DescribeComponentConfigurationRecommendationInputBuilder {
         self.resource_group_name = input;
         self
     }
+    /// <p>The name of the resource group.</p>
+    pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_group_name
+    }
     /// <p>The name of the component.</p>
     pub fn component_name(
         mut self,
@@ -77,6 +81,10 @@ impl DescribeComponentConfigurationRecommendationInputBuilder {
         self.component_name = input;
         self
     }
+    /// <p>The name of the component.</p>
+    pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_name
+    }
     /// <p>The tier of the application component.</p>
     pub fn tier(mut self, input: crate::types::Tier) -> Self {
         self.tier = ::std::option::Option::Some(input);
@@ -86,6 +94,10 @@ impl DescribeComponentConfigurationRecommendationInputBuilder {
     pub fn set_tier(mut self, input: ::std::option::Option<crate::types::Tier>) -> Self {
         self.tier = input;
         self
+    }
+    /// <p>The tier of the application component.</p>
+    pub fn get_tier(&self) -> &::std::option::Option<crate::types::Tier> {
+        &self.tier
     }
     /// Consumes the builder and constructs a [`DescribeComponentConfigurationRecommendationInput`](crate::operation::describe_component_configuration_recommendation::DescribeComponentConfigurationRecommendationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_component_configuration_recommendation::DescribeComponentConfigurationRecommendationInput, ::aws_smithy_http::operation::error::BuildError>{

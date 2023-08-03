@@ -52,6 +52,12 @@ impl ExternalWorkflowExecutionSignaledEventAttributesBuilder {
         self.workflow_execution = input;
         self
     }
+    /// <p>The external workflow execution that the signal was delivered to.</p>
+    pub fn get_workflow_execution(
+        &self,
+    ) -> &::std::option::Option<crate::types::WorkflowExecution> {
+        &self.workflow_execution
+    }
     /// <p>The ID of the <code>SignalExternalWorkflowExecutionInitiated</code> event corresponding to the <code>SignalExternalWorkflowExecution</code> decision to request this signal. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn initiated_event_id(mut self, input: i64) -> Self {
         self.initiated_event_id = ::std::option::Option::Some(input);
@@ -61,6 +67,10 @@ impl ExternalWorkflowExecutionSignaledEventAttributesBuilder {
     pub fn set_initiated_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.initiated_event_id = input;
         self
+    }
+    /// <p>The ID of the <code>SignalExternalWorkflowExecutionInitiated</code> event corresponding to the <code>SignalExternalWorkflowExecution</code> decision to request this signal. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    pub fn get_initiated_event_id(&self) -> &::std::option::Option<i64> {
+        &self.initiated_event_id
     }
     /// Consumes the builder and constructs a [`ExternalWorkflowExecutionSignaledEventAttributes`](crate::types::ExternalWorkflowExecutionSignaledEventAttributes).
     pub fn build(self) -> crate::types::ExternalWorkflowExecutionSignaledEventAttributes {

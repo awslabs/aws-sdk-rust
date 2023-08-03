@@ -36,6 +36,10 @@ impl ListClustersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListClusters as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_clusters::builders::ListClustersInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl ListClustersFluentBuilder {
         self.inner = self.inner.set_created_after(input);
         self
     }
+    /// <p>The creation date and time beginning value filter for listing clusters.</p>
+    pub fn get_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_created_after()
+    }
     /// <p>The creation date and time end value filter for listing clusters.</p>
     pub fn created_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.created_before(input);
@@ -144,6 +152,10 @@ impl ListClustersFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_created_before(input);
         self
+    }
+    /// <p>The creation date and time end value filter for listing clusters.</p>
+    pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_created_before()
     }
     /// Appends an item to `ClusterStates`.
     ///
@@ -162,6 +174,12 @@ impl ListClustersFluentBuilder {
         self.inner = self.inner.set_cluster_states(input);
         self
     }
+    /// <p>The cluster state filters to apply when listing clusters. Clusters that change state while this action runs may be not be returned as expected in the list of clusters.</p>
+    pub fn get_cluster_states(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterState>> {
+        self.inner.get_cluster_states()
+    }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -171,5 +189,9 @@ impl ListClustersFluentBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
+    }
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
     }
 }

@@ -81,6 +81,10 @@ impl EntityDisplayDataBuilder {
         self.user_name = input;
         self
     }
+    /// <p>The name of the user.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
+    }
     /// <p>The name of the group.</p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl EntityDisplayDataBuilder {
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_name = input;
         self
+    }
+    /// <p>The name of the group.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
     }
     /// <p>The user name of the user.</p>
     pub fn identified_user_name(
@@ -107,6 +115,10 @@ impl EntityDisplayDataBuilder {
         self.identified_user_name = input;
         self
     }
+    /// <p>The user name of the user.</p>
+    pub fn get_identified_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identified_user_name
+    }
     /// <p>The first name of the user.</p>
     pub fn first_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.first_name = ::std::option::Option::Some(input.into());
@@ -117,6 +129,10 @@ impl EntityDisplayDataBuilder {
         self.first_name = input;
         self
     }
+    /// <p>The first name of the user.</p>
+    pub fn get_first_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.first_name
+    }
     /// <p>The last name of the user.</p>
     pub fn last_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_name = ::std::option::Option::Some(input.into());
@@ -126,6 +142,10 @@ impl EntityDisplayDataBuilder {
     pub fn set_last_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_name = input;
         self
+    }
+    /// <p>The last name of the user.</p>
+    pub fn get_last_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_name
     }
     /// Consumes the builder and constructs a [`EntityDisplayData`](crate::types::EntityDisplayData).
     pub fn build(self) -> crate::types::EntityDisplayData {

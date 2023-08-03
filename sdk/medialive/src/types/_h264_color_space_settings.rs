@@ -66,6 +66,12 @@ impl H264ColorSpaceSettingsBuilder {
         self.color_space_passthrough_settings = input;
         self
     }
+    /// Passthrough applies no color space conversion to the output
+    pub fn get_color_space_passthrough_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::ColorSpacePassthroughSettings> {
+        &self.color_space_passthrough_settings
+    }
     /// Rec601 Settings
     pub fn rec601_settings(mut self, input: crate::types::Rec601Settings) -> Self {
         self.rec601_settings = ::std::option::Option::Some(input);
@@ -79,6 +85,10 @@ impl H264ColorSpaceSettingsBuilder {
         self.rec601_settings = input;
         self
     }
+    /// Rec601 Settings
+    pub fn get_rec601_settings(&self) -> &::std::option::Option<crate::types::Rec601Settings> {
+        &self.rec601_settings
+    }
     /// Rec709 Settings
     pub fn rec709_settings(mut self, input: crate::types::Rec709Settings) -> Self {
         self.rec709_settings = ::std::option::Option::Some(input);
@@ -91,6 +101,10 @@ impl H264ColorSpaceSettingsBuilder {
     ) -> Self {
         self.rec709_settings = input;
         self
+    }
+    /// Rec709 Settings
+    pub fn get_rec709_settings(&self) -> &::std::option::Option<crate::types::Rec709Settings> {
+        &self.rec709_settings
     }
     /// Consumes the builder and constructs a [`H264ColorSpaceSettings`](crate::types::H264ColorSpaceSettings).
     pub fn build(self) -> crate::types::H264ColorSpaceSettings {

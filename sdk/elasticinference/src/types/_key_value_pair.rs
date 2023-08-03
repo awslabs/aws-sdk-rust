@@ -48,6 +48,10 @@ impl KeyValuePairBuilder {
         self.key = input;
         self
     }
+    /// <p> The throughput value of the Elastic Inference Accelerator type. It can assume the following values: TFLOPS16bit: the throughput expressed in 16bit TeraFLOPS. TFLOPS32bit: the throughput expressed in 32bit TeraFLOPS. </p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p> The throughput value of the Elastic Inference Accelerator type. </p>
     pub fn value(mut self, input: i32) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl KeyValuePairBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.value = input;
         self
+    }
+    /// <p> The throughput value of the Elastic Inference Accelerator type. </p>
+    pub fn get_value(&self) -> &::std::option::Option<i32> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`KeyValuePair`](crate::types::KeyValuePair).
     pub fn build(self) -> crate::types::KeyValuePair {

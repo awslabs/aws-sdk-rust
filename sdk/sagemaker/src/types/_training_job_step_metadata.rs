@@ -40,6 +40,10 @@ impl TrainingJobStepMetadataBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the training job that was run by this step execution.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`TrainingJobStepMetadata`](crate::types::TrainingJobStepMetadata).
     pub fn build(self) -> crate::types::TrainingJobStepMetadata {
         crate::types::TrainingJobStepMetadata { arn: self.arn }

@@ -36,6 +36,12 @@ impl ImportNotebookFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ImportNotebook as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::import_notebook::builders::ImportNotebookInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl ImportNotebookFluentBuilder {
         self.inner = self.inner.set_work_group(input);
         self
     }
+    /// <p>The name of the Spark enabled workgroup to import the notebook to.</p>
+    pub fn get_work_group(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_work_group()
+    }
     /// <p>The name of the notebook to import.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -127,6 +137,10 @@ impl ImportNotebookFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the notebook to import.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The notebook content to be imported.</p>
     pub fn payload(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,6 +152,10 @@ impl ImportNotebookFluentBuilder {
         self.inner = self.inner.set_payload(input);
         self
     }
+    /// <p>The notebook content to be imported.</p>
+    pub fn get_payload(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_payload()
+    }
     /// <p>The notebook content type. Currently, the only valid type is <code>IPYNB</code>.</p>
     pub fn r#type(mut self, input: crate::types::NotebookType) -> Self {
         self.inner = self.inner.r#type(input);
@@ -147,6 +165,10 @@ impl ImportNotebookFluentBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::NotebookType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
+    }
+    /// <p>The notebook content type. Currently, the only valid type is <code>IPYNB</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::NotebookType> {
+        self.inner.get_type()
     }
     /// <p>A unique case-sensitive string used to ensure the request to import the notebook is idempotent (executes only once).</p> <important>
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
@@ -167,5 +189,11 @@ impl ImportNotebookFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>A unique case-sensitive string used to ensure the request to import the notebook is idempotent (executes only once).</p> <important>
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+    /// </important>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
 }

@@ -71,6 +71,10 @@ impl CreateEndpointAccessInputBuilder {
         self.endpoint_name = input;
         self
     }
+    /// <p>The name of the VPC endpoint. An endpoint name must contain 1-30 characters. Valid characters are A-Z, a-z, 0-9, and hyphen(-). The first character must be a letter. The name can't contain two consecutive hyphens or end with a hyphen.</p>
+    pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_name
+    }
     /// Appends an item to `subnet_ids`.
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
@@ -90,6 +94,10 @@ impl CreateEndpointAccessInputBuilder {
         self.subnet_ids = input;
         self
     }
+    /// <p>The unique identifers of subnets from which Amazon Redshift Serverless chooses one to deploy a VPC endpoint.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
+    }
     /// <p>The name of the workgroup to associate with the VPC endpoint.</p>
     pub fn workgroup_name(
         mut self,
@@ -105,6 +113,10 @@ impl CreateEndpointAccessInputBuilder {
     ) -> Self {
         self.workgroup_name = input;
         self
+    }
+    /// <p>The name of the workgroup to associate with the VPC endpoint.</p>
+    pub fn get_workgroup_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workgroup_name
     }
     /// Appends an item to `vpc_security_group_ids`.
     ///
@@ -127,6 +139,12 @@ impl CreateEndpointAccessInputBuilder {
     ) -> Self {
         self.vpc_security_group_ids = input;
         self
+    }
+    /// <p>The unique identifiers of the security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
+    pub fn get_vpc_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.vpc_security_group_ids
     }
     /// Consumes the builder and constructs a [`CreateEndpointAccessInput`](crate::operation::create_endpoint_access::CreateEndpointAccessInput).
     pub fn build(

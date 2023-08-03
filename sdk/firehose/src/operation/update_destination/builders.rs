@@ -41,6 +41,12 @@ impl UpdateDestinationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDestination as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_destination::builders::UpdateDestinationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl UpdateDestinationFluentBuilder {
         self.inner = self.inner.set_delivery_stream_name(input);
         self
     }
+    /// <p>The name of the delivery stream.</p>
+    pub fn get_delivery_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_delivery_stream_name()
+    }
     /// <p>Obtain this value from the <code>VersionId</code> result of <code>DeliveryStreamDescription</code>. This value is required, and helps the service perform conditional operations. For example, if there is an interleaving update and this value is null, then the update destination fails. After the update is successful, the <code>VersionId</code> value is updated. The service then performs a merge of the old configuration with the new configuration.</p>
     pub fn current_delivery_stream_version_id(
         mut self,
@@ -152,6 +162,12 @@ impl UpdateDestinationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_current_delivery_stream_version_id(input);
         self
+    }
+    /// <p>Obtain this value from the <code>VersionId</code> result of <code>DeliveryStreamDescription</code>. This value is required, and helps the service perform conditional operations. For example, if there is an interleaving update and this value is null, then the update destination fails. After the update is successful, the <code>VersionId</code> value is updated. The service then performs a merge of the old configuration with the new configuration.</p>
+    pub fn get_current_delivery_stream_version_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_current_delivery_stream_version_id()
     }
     /// <p>The ID of the destination.</p>
     pub fn destination_id(
@@ -169,6 +185,10 @@ impl UpdateDestinationFluentBuilder {
         self.inner = self.inner.set_destination_id(input);
         self
     }
+    /// <p>The ID of the destination.</p>
+    pub fn get_destination_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_id()
+    }
     /// <p>[Deprecated] Describes an update for a destination in Amazon S3.</p>
     #[deprecated]
     pub fn s3_destination_update(mut self, input: crate::types::S3DestinationUpdate) -> Self {
@@ -183,6 +203,13 @@ impl UpdateDestinationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_s3_destination_update(input);
         self
+    }
+    /// <p>[Deprecated] Describes an update for a destination in Amazon S3.</p>
+    #[deprecated]
+    pub fn get_s3_destination_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3DestinationUpdate> {
+        self.inner.get_s3_destination_update()
     }
     /// <p>Describes an update for a destination in Amazon S3.</p>
     pub fn extended_s3_destination_update(
@@ -200,6 +227,12 @@ impl UpdateDestinationFluentBuilder {
         self.inner = self.inner.set_extended_s3_destination_update(input);
         self
     }
+    /// <p>Describes an update for a destination in Amazon S3.</p>
+    pub fn get_extended_s3_destination_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExtendedS3DestinationUpdate> {
+        self.inner.get_extended_s3_destination_update()
+    }
     /// <p>Describes an update for a destination in Amazon Redshift.</p>
     pub fn redshift_destination_update(
         mut self,
@@ -216,6 +249,12 @@ impl UpdateDestinationFluentBuilder {
         self.inner = self.inner.set_redshift_destination_update(input);
         self
     }
+    /// <p>Describes an update for a destination in Amazon Redshift.</p>
+    pub fn get_redshift_destination_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::RedshiftDestinationUpdate> {
+        self.inner.get_redshift_destination_update()
+    }
     /// <p>Describes an update for a destination in Amazon ES.</p>
     pub fn elasticsearch_destination_update(
         mut self,
@@ -231,6 +270,12 @@ impl UpdateDestinationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_elasticsearch_destination_update(input);
         self
+    }
+    /// <p>Describes an update for a destination in Amazon ES.</p>
+    pub fn get_elasticsearch_destination_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::ElasticsearchDestinationUpdate> {
+        self.inner.get_elasticsearch_destination_update()
     }
     /// <p>Describes an update for a destination in Amazon OpenSearch Service.</p>
     pub fn amazonopensearchservice_destination_update(
@@ -250,6 +295,12 @@ impl UpdateDestinationFluentBuilder {
             .set_amazonopensearchservice_destination_update(input);
         self
     }
+    /// <p>Describes an update for a destination in Amazon OpenSearch Service.</p>
+    pub fn get_amazonopensearchservice_destination_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::AmazonopensearchserviceDestinationUpdate> {
+        self.inner.get_amazonopensearchservice_destination_update()
+    }
     /// <p>Describes an update for a destination in Splunk.</p>
     pub fn splunk_destination_update(
         mut self,
@@ -266,6 +317,12 @@ impl UpdateDestinationFluentBuilder {
         self.inner = self.inner.set_splunk_destination_update(input);
         self
     }
+    /// <p>Describes an update for a destination in Splunk.</p>
+    pub fn get_splunk_destination_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::SplunkDestinationUpdate> {
+        self.inner.get_splunk_destination_update()
+    }
     /// <p>Describes an update to the specified HTTP endpoint destination.</p>
     pub fn http_endpoint_destination_update(
         mut self,
@@ -281,6 +338,12 @@ impl UpdateDestinationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_http_endpoint_destination_update(input);
         self
+    }
+    /// <p>Describes an update to the specified HTTP endpoint destination.</p>
+    pub fn get_http_endpoint_destination_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::HttpEndpointDestinationUpdate> {
+        self.inner.get_http_endpoint_destination_update()
     }
     /// <p>Describes an update for a destination in the Serverless offering for Amazon OpenSearch Service.</p>
     pub fn amazon_open_search_serverless_destination_update(
@@ -301,5 +364,12 @@ impl UpdateDestinationFluentBuilder {
             .inner
             .set_amazon_open_search_serverless_destination_update(input);
         self
+    }
+    /// <p>Describes an update for a destination in the Serverless offering for Amazon OpenSearch Service.</p>
+    pub fn get_amazon_open_search_serverless_destination_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationUpdate> {
+        self.inner
+            .get_amazon_open_search_serverless_destination_update()
     }
 }

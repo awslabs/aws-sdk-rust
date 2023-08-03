@@ -47,6 +47,10 @@ impl AssociateFleetInputBuilder {
         self.fleet_name = input;
         self
     }
+    /// <p>The name of the fleet. </p>
+    pub fn get_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_name
+    }
     /// <p>The name of the stack.</p>
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl AssociateFleetInputBuilder {
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_name = input;
         self
+    }
+    /// <p>The name of the stack.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_name
     }
     /// Consumes the builder and constructs a [`AssociateFleetInput`](crate::operation::associate_fleet::AssociateFleetInput).
     pub fn build(

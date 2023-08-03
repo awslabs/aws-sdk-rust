@@ -36,6 +36,12 @@ impl UpdateContactChannelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateContactChannel as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_contact_channel::builders::UpdateContactChannelInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateContactChannelFluentBuilder {
         self.inner = self.inner.set_contact_channel_id(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the contact channel you want to update.</p>
+    pub fn get_contact_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_contact_channel_id()
+    }
     /// <p>The name of the contact channel.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -141,6 +151,10 @@ impl UpdateContactChannelFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the contact channel.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The details that Incident Manager uses when trying to engage the contact channel.</p>
     pub fn delivery_address(mut self, input: crate::types::ContactChannelAddress) -> Self {
@@ -154,5 +168,11 @@ impl UpdateContactChannelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_delivery_address(input);
         self
+    }
+    /// <p>The details that Incident Manager uses when trying to engage the contact channel.</p>
+    pub fn get_delivery_address(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContactChannelAddress> {
+        self.inner.get_delivery_address()
     }
 }

@@ -53,6 +53,10 @@ impl PutBucketNotificationConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutBucketNotificationConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_bucket_notification_configuration::builders::PutBucketNotificationConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -117,6 +121,10 @@ impl PutBucketNotificationConfigurationFluentBuilder {
         self.inner = self.inner.set_bucket(input);
         self
     }
+    /// <p>The name of the bucket.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bucket()
+    }
     /// <p>A container for specifying the notification configuration of the bucket. If this element is empty, notifications are turned off for the bucket.</p>
     pub fn notification_configuration(
         mut self,
@@ -132,6 +140,12 @@ impl PutBucketNotificationConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_notification_configuration(input);
         self
+    }
+    /// <p>A container for specifying the notification configuration of the bucket. If this element is empty, notifications are turned off for the bucket.</p>
+    pub fn get_notification_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::NotificationConfiguration> {
+        self.inner.get_notification_configuration()
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(
@@ -149,6 +163,10 @@ impl PutBucketNotificationConfigurationFluentBuilder {
         self.inner = self.inner.set_expected_bucket_owner(input);
         self
     }
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+    pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_expected_bucket_owner()
+    }
     /// <p>Skips validation of Amazon SQS, Amazon SNS, and Lambda destinations. True or false value.</p>
     pub fn skip_destination_validation(mut self, input: bool) -> Self {
         self.inner = self.inner.skip_destination_validation(input);
@@ -158,5 +176,9 @@ impl PutBucketNotificationConfigurationFluentBuilder {
     pub fn set_skip_destination_validation(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_skip_destination_validation(input);
         self
+    }
+    /// <p>Skips validation of Amazon SQS, Amazon SNS, and Lambda destinations. True or false value.</p>
+    pub fn get_skip_destination_validation(&self) -> &::std::option::Option<bool> {
+        self.inner.get_skip_destination_validation()
     }
 }

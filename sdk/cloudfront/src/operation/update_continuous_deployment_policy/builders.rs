@@ -42,6 +42,10 @@ impl UpdateContinuousDeploymentPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateContinuousDeploymentPolicy as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_continuous_deployment_policy::builders::UpdateContinuousDeploymentPolicyInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -112,6 +116,12 @@ impl UpdateContinuousDeploymentPolicyFluentBuilder {
         self.inner = self.inner.set_continuous_deployment_policy_config(input);
         self
     }
+    /// <p>The continuous deployment policy configuration.</p>
+    pub fn get_continuous_deployment_policy_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContinuousDeploymentPolicyConfig> {
+        self.inner.get_continuous_deployment_policy_config()
+    }
     /// <p>The identifier of the continuous deployment policy that you are updating.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
@@ -122,6 +132,10 @@ impl UpdateContinuousDeploymentPolicyFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The identifier of the continuous deployment policy that you are updating.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The current version (<code>ETag</code> value) of the continuous deployment policy that you are updating.</p>
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.if_match(input.into());
@@ -131,5 +145,9 @@ impl UpdateContinuousDeploymentPolicyFluentBuilder {
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_if_match(input);
         self
+    }
+    /// <p>The current version (<code>ETag</code> value) of the continuous deployment policy that you are updating.</p>
+    pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_if_match()
     }
 }

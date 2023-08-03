@@ -65,6 +65,13 @@ impl CreateCompilationJobOutputBuilder {
         self.compilation_job_arn = input;
         self
     }
+    /// <p>If the action is successful, the service sends back an HTTP 200 response. Amazon SageMaker returns the following data in JSON format:</p>
+    /// <ul>
+    /// <li> <p> <code>CompilationJobArn</code>: The Amazon Resource Name (ARN) of the compiled job.</p> </li>
+    /// </ul>
+    pub fn get_compilation_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.compilation_job_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

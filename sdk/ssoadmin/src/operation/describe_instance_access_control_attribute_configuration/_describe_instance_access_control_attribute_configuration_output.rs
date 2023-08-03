@@ -82,6 +82,13 @@ impl DescribeInstanceAccessControlAttributeConfigurationOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the attribute configuration process.</p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceAccessControlAttributeConfigurationStatus>
+    {
+        &self.status
+    }
     /// <p>Provides more details about the current status of the specified attribute.</p>
     pub fn status_reason(
         mut self,
@@ -98,6 +105,10 @@ impl DescribeInstanceAccessControlAttributeConfigurationOutputBuilder {
         self.status_reason = input;
         self
     }
+    /// <p>Provides more details about the current status of the specified attribute.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
+    }
     /// <p>Gets the list of IAM Identity Center identity store attributes that have been added to your ABAC configuration.</p>
     pub fn instance_access_control_attribute_configuration(
         mut self,
@@ -113,6 +124,12 @@ impl DescribeInstanceAccessControlAttributeConfigurationOutputBuilder {
     ) -> Self {
         self.instance_access_control_attribute_configuration = input;
         self
+    }
+    /// <p>Gets the list of IAM Identity Center identity store attributes that have been added to your ABAC configuration.</p>
+    pub fn get_instance_access_control_attribute_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceAccessControlAttributeConfiguration> {
+        &self.instance_access_control_attribute_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

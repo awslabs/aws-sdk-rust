@@ -36,6 +36,12 @@ impl DeleteSchemaVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteSchemaVersion as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_schema_version::builders::DeleteSchemaVersionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl DeleteSchemaVersionFluentBuilder {
         self.inner = self.inner.set_registry_name(input);
         self
     }
+    /// <p>The name of the registry.</p>
+    pub fn get_registry_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_registry_name()
+    }
     /// <p>The name of the schema.</p>
     pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schema_name(input.into());
@@ -141,6 +151,10 @@ impl DeleteSchemaVersionFluentBuilder {
     pub fn set_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schema_name(input);
         self
+    }
+    /// <p>The name of the schema.</p>
+    pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schema_name()
     }
     /// The version number of the schema
     pub fn schema_version(
@@ -157,5 +171,9 @@ impl DeleteSchemaVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_schema_version(input);
         self
+    }
+    /// The version number of the schema
+    pub fn get_schema_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schema_version()
     }
 }

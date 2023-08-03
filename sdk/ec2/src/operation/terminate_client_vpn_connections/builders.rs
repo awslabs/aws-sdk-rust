@@ -36,6 +36,10 @@ impl TerminateClientVpnConnectionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the TerminateClientVpnConnections as a reference.
+    pub fn as_input(&self) -> &crate::operation::terminate_client_vpn_connections::builders::TerminateClientVpnConnectionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl TerminateClientVpnConnectionsFluentBuilder {
         self.inner = self.inner.set_client_vpn_endpoint_id(input);
         self
     }
+    /// <p>The ID of the Client VPN endpoint to which the client is connected.</p>
+    pub fn get_client_vpn_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_vpn_endpoint_id()
+    }
     /// <p>The ID of the client connection to be terminated.</p>
     pub fn connection_id(
         mut self,
@@ -148,6 +156,10 @@ impl TerminateClientVpnConnectionsFluentBuilder {
         self.inner = self.inner.set_connection_id(input);
         self
     }
+    /// <p>The ID of the client connection to be terminated.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connection_id()
+    }
     /// <p>The name of the user who initiated the connection. Use this option to terminate all active connections for the specified user. This option can only be used if the user has established up to five connections.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.username(input.into());
@@ -158,6 +170,10 @@ impl TerminateClientVpnConnectionsFluentBuilder {
         self.inner = self.inner.set_username(input);
         self
     }
+    /// <p>The name of the user who initiated the connection. Use this option to terminate all active connections for the specified user. This option can only be used if the user has established up to five connections.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_username()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -167,5 +183,9 @@ impl TerminateClientVpnConnectionsFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

@@ -54,6 +54,10 @@ impl MappedDataSetParameterBuilder {
         self.data_set_identifier = input;
         self
     }
+    /// <p>A unique name that identifies a dataset within the analysis or dashboard.</p>
+    pub fn get_data_set_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_set_identifier
+    }
     /// <p>The name of the dataset parameter.</p>
     pub fn data_set_parameter_name(
         mut self,
@@ -69,6 +73,10 @@ impl MappedDataSetParameterBuilder {
     ) -> Self {
         self.data_set_parameter_name = input;
         self
+    }
+    /// <p>The name of the dataset parameter.</p>
+    pub fn get_data_set_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_set_parameter_name
     }
     /// Consumes the builder and constructs a [`MappedDataSetParameter`](crate::types::MappedDataSetParameter).
     pub fn build(self) -> crate::types::MappedDataSetParameter {

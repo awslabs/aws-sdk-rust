@@ -36,6 +36,10 @@ impl UpdateDataLakeExceptionSubscriptionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDataLakeExceptionSubscription as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_data_lake_exception_subscription::builders::UpdateDataLakeExceptionSubscriptionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl UpdateDataLakeExceptionSubscriptionFluentBuilder {
         self.inner = self.inner.set_subscription_protocol(input);
         self
     }
+    /// <p>The subscription protocol to which exception messages are posted.</p>
+    pub fn get_subscription_protocol(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_subscription_protocol()
+    }
     /// <p>The account that is subscribed to receive exception notifications.</p>
     pub fn notification_endpoint(
         mut self,
@@ -122,6 +130,10 @@ impl UpdateDataLakeExceptionSubscriptionFluentBuilder {
         self.inner = self.inner.set_notification_endpoint(input);
         self
     }
+    /// <p>The account that is subscribed to receive exception notifications.</p>
+    pub fn get_notification_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_notification_endpoint()
+    }
     /// <p>The time-to-live (TTL) for the exception message to remain.</p>
     pub fn exception_time_to_live(mut self, input: i64) -> Self {
         self.inner = self.inner.exception_time_to_live(input);
@@ -131,5 +143,9 @@ impl UpdateDataLakeExceptionSubscriptionFluentBuilder {
     pub fn set_exception_time_to_live(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_exception_time_to_live(input);
         self
+    }
+    /// <p>The time-to-live (TTL) for the exception message to remain.</p>
+    pub fn get_exception_time_to_live(&self) -> &::std::option::Option<i64> {
+        self.inner.get_exception_time_to_live()
     }
 }

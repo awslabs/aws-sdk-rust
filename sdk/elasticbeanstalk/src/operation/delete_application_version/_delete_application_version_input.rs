@@ -64,6 +64,10 @@ impl DeleteApplicationVersionInputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The name of the application to which the version belongs.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>The label of the version to delete.</p>
     pub fn version_label(
         mut self,
@@ -80,6 +84,10 @@ impl DeleteApplicationVersionInputBuilder {
         self.version_label = input;
         self
     }
+    /// <p>The label of the version to delete.</p>
+    pub fn get_version_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_label
+    }
     /// <p>Set to <code>true</code> to delete the source bundle from your storage bucket. Otherwise, the application version is deleted only from Elastic Beanstalk and the source bundle remains in Amazon S3.</p>
     pub fn delete_source_bundle(mut self, input: bool) -> Self {
         self.delete_source_bundle = ::std::option::Option::Some(input);
@@ -89,6 +97,10 @@ impl DeleteApplicationVersionInputBuilder {
     pub fn set_delete_source_bundle(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete_source_bundle = input;
         self
+    }
+    /// <p>Set to <code>true</code> to delete the source bundle from your storage bucket. Otherwise, the application version is deleted only from Elastic Beanstalk and the source bundle remains in Amazon S3.</p>
+    pub fn get_delete_source_bundle(&self) -> &::std::option::Option<bool> {
+        &self.delete_source_bundle
     }
     /// Consumes the builder and constructs a [`DeleteApplicationVersionInput`](crate::operation::delete_application_version::DeleteApplicationVersionInput).
     pub fn build(

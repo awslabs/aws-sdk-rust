@@ -40,6 +40,10 @@ impl PutRegistryPolicyInputBuilder {
         self.policy_text = input;
         self
     }
+    /// <p>The JSON policy text to apply to your registry. The policy text follows the same format as IAM policy text. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry-permissions.html">Registry permissions</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
+    pub fn get_policy_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_text
+    }
     /// Consumes the builder and constructs a [`PutRegistryPolicyInput`](crate::operation::put_registry_policy::PutRegistryPolicyInput).
     pub fn build(
         self,

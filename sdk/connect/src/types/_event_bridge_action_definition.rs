@@ -40,6 +40,10 @@ impl EventBridgeActionDefinitionBuilder {
         self.name = input;
         self
     }
+    /// <p>The name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`EventBridgeActionDefinition`](crate::types::EventBridgeActionDefinition).
     pub fn build(self) -> crate::types::EventBridgeActionDefinition {
         crate::types::EventBridgeActionDefinition { name: self.name }

@@ -46,6 +46,10 @@ impl DescribeControlPanelInputBuilder {
         self.control_panel_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
+    pub fn get_control_panel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_panel_arn
+    }
     /// Consumes the builder and constructs a [`DescribeControlPanelInput`](crate::operation::describe_control_panel::DescribeControlPanelInput).
     pub fn build(
         self,

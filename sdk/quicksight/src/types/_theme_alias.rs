@@ -56,6 +56,10 @@ impl ThemeAliasBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the theme alias.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The display name of the theme alias.</p>
     pub fn alias_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias_name = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl ThemeAliasBuilder {
         self.alias_name = input;
         self
     }
+    /// <p>The display name of the theme alias.</p>
+    pub fn get_alias_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias_name
+    }
     /// <p>The version number of the theme alias.</p>
     pub fn theme_version_number(mut self, input: i64) -> Self {
         self.theme_version_number = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl ThemeAliasBuilder {
     pub fn set_theme_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.theme_version_number = input;
         self
+    }
+    /// <p>The version number of the theme alias.</p>
+    pub fn get_theme_version_number(&self) -> &::std::option::Option<i64> {
+        &self.theme_version_number
     }
     /// Consumes the builder and constructs a [`ThemeAlias`](crate::types::ThemeAlias).
     pub fn build(self) -> crate::types::ThemeAlias {

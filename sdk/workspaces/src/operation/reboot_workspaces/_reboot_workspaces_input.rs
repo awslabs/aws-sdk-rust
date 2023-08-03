@@ -53,6 +53,12 @@ impl RebootWorkspacesInputBuilder {
         self.reboot_workspace_requests = input;
         self
     }
+    /// <p>The WorkSpaces to reboot. You can specify up to 25 WorkSpaces.</p>
+    pub fn get_reboot_workspace_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RebootRequest>> {
+        &self.reboot_workspace_requests
+    }
     /// Consumes the builder and constructs a [`RebootWorkspacesInput`](crate::operation::reboot_workspaces::RebootWorkspacesInput).
     pub fn build(
         self,

@@ -75,6 +75,12 @@ impl InternetGatewayBuilder {
         self.attachments = input;
         self
     }
+    /// <p>Any VPCs attached to the internet gateway.</p>
+    pub fn get_attachments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InternetGatewayAttachment>> {
+        &self.attachments
+    }
     /// <p>The ID of the internet gateway.</p>
     pub fn internet_gateway_id(
         mut self,
@@ -91,6 +97,10 @@ impl InternetGatewayBuilder {
         self.internet_gateway_id = input;
         self
     }
+    /// <p>The ID of the internet gateway.</p>
+    pub fn get_internet_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.internet_gateway_id
+    }
     /// <p>The ID of the Amazon Web Services account that owns the internet gateway.</p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_id = ::std::option::Option::Some(input.into());
@@ -100,6 +110,10 @@ impl InternetGatewayBuilder {
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_id = input;
         self
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the internet gateway.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
     }
     /// Appends an item to `tags`.
     ///
@@ -119,6 +133,10 @@ impl InternetGatewayBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Any tags assigned to the internet gateway.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`InternetGateway`](crate::types::InternetGateway).
     pub fn build(self) -> crate::types::InternetGateway {

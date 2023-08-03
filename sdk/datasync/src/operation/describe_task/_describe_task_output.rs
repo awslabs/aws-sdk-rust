@@ -179,6 +179,10 @@ impl DescribeTaskOutputBuilder {
         self.task_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the task that was described.</p>
+    pub fn get_task_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_arn
+    }
     /// <p>The status of the task that was described.</p>
     /// <p>For detailed information about task execution statuses, see Understanding Task Statuses in the <i>DataSync User Guide</i>.</p>
     pub fn status(mut self, input: crate::types::TaskStatus) -> Self {
@@ -191,6 +195,11 @@ impl DescribeTaskOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the task that was described.</p>
+    /// <p>For detailed information about task execution statuses, see Understanding Task Statuses in the <i>DataSync User Guide</i>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TaskStatus> {
+        &self.status
+    }
     /// <p>The name of the task that was described.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -200,6 +209,10 @@ impl DescribeTaskOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the task that was described.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of the task execution that is transferring files.</p>
     pub fn current_task_execution_arn(
@@ -217,6 +230,10 @@ impl DescribeTaskOutputBuilder {
         self.current_task_execution_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the task execution that is transferring files.</p>
+    pub fn get_current_task_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.current_task_execution_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the source file system's location.</p>
     pub fn source_location_arn(
         mut self,
@@ -233,6 +250,10 @@ impl DescribeTaskOutputBuilder {
         self.source_location_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the source file system's location.</p>
+    pub fn get_source_location_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_location_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services storage resource's location.</p>
     pub fn destination_location_arn(
         mut self,
@@ -248,6 +269,10 @@ impl DescribeTaskOutputBuilder {
     ) -> Self {
         self.destination_location_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services storage resource's location.</p>
+    pub fn get_destination_location_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_location_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to monitor and log events in the task.</p>
     /// <p>For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon CloudWatch User Guide</i>.</p>
@@ -266,6 +291,11 @@ impl DescribeTaskOutputBuilder {
     ) -> Self {
         self.cloud_watch_log_group_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to monitor and log events in the task.</p>
+    /// <p>For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon CloudWatch User Guide</i>.</p>
+    pub fn get_cloud_watch_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cloud_watch_log_group_arn
     }
     /// Appends an item to `source_network_interface_arns`.
     ///
@@ -289,6 +319,12 @@ impl DescribeTaskOutputBuilder {
         self.source_network_interface_arns = input;
         self
     }
+    /// <p>The Amazon Resource Names (ARNs) of the network interfaces created for your source location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
+    pub fn get_source_network_interface_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.source_network_interface_arns
+    }
     /// Appends an item to `destination_network_interface_arns`.
     ///
     /// To override the contents of this collection use [`set_destination_network_interface_arns`](Self::set_destination_network_interface_arns).
@@ -311,6 +347,12 @@ impl DescribeTaskOutputBuilder {
         self.destination_network_interface_arns = input;
         self
     }
+    /// <p>The Amazon Resource Names (ARNs) of the network interfaces created for your destination location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
+    pub fn get_destination_network_interface_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.destination_network_interface_arns
+    }
     /// <p>The configuration options that control the behavior of the <code>StartTaskExecution</code> operation. Some options include preserving file or object metadata and verifying data integrity.</p>
     /// <p>You can override these options for each task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
     pub fn options(mut self, input: crate::types::Options) -> Self {
@@ -322,6 +364,11 @@ impl DescribeTaskOutputBuilder {
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::Options>) -> Self {
         self.options = input;
         self
+    }
+    /// <p>The configuration options that control the behavior of the <code>StartTaskExecution</code> operation. Some options include preserving file or object metadata and verifying data integrity.</p>
+    /// <p>You can override these options for each task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::Options> {
+        &self.options
     }
     /// Appends an item to `excludes`.
     ///
@@ -342,6 +389,12 @@ impl DescribeTaskOutputBuilder {
         self.excludes = input;
         self
     }
+    /// <p>A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
+    pub fn get_excludes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
+        &self.excludes
+    }
     /// <p>The schedule used to periodically transfer files from a source to a destination location.</p>
     pub fn schedule(mut self, input: crate::types::TaskSchedule) -> Self {
         self.schedule = ::std::option::Option::Some(input);
@@ -355,6 +408,10 @@ impl DescribeTaskOutputBuilder {
         self.schedule = input;
         self
     }
+    /// <p>The schedule used to periodically transfer files from a source to a destination location.</p>
+    pub fn get_schedule(&self) -> &::std::option::Option<crate::types::TaskSchedule> {
+        &self.schedule
+    }
     /// <p>Errors that DataSync encountered during execution of the task. You can use this error code to help troubleshoot issues.</p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
@@ -365,6 +422,10 @@ impl DescribeTaskOutputBuilder {
         self.error_code = input;
         self
     }
+    /// <p>Errors that DataSync encountered during execution of the task. You can use this error code to help troubleshoot issues.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
+    }
     /// <p>Detailed description of an error that was encountered during the task execution. You can use this information to help troubleshoot issues. </p>
     pub fn error_detail(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_detail = ::std::option::Option::Some(input.into());
@@ -374,6 +435,10 @@ impl DescribeTaskOutputBuilder {
     pub fn set_error_detail(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_detail = input;
         self
+    }
+    /// <p>Detailed description of an error that was encountered during the task execution. You can use this information to help troubleshoot issues. </p>
+    pub fn get_error_detail(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_detail
     }
     /// <p>The time that the task was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -387,6 +452,10 @@ impl DescribeTaskOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time that the task was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// Appends an item to `includes`.
     ///
@@ -406,6 +475,12 @@ impl DescribeTaskOutputBuilder {
     ) -> Self {
         self.includes = input;
         self
+    }
+    /// <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
+    pub fn get_includes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
+        &self.includes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

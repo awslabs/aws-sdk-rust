@@ -48,6 +48,10 @@ impl FieldLabelTypeBuilder {
         self.field_id = input;
         self
     }
+    /// <p>Indicates the field that is targeted by the field label.</p>
+    pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_id
+    }
     /// <p>The visibility of the field label.</p>
     pub fn visibility(mut self, input: crate::types::Visibility) -> Self {
         self.visibility = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl FieldLabelTypeBuilder {
     ) -> Self {
         self.visibility = input;
         self
+    }
+    /// <p>The visibility of the field label.</p>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.visibility
     }
     /// Consumes the builder and constructs a [`FieldLabelType`](crate::types::FieldLabelType).
     pub fn build(self) -> crate::types::FieldLabelType {

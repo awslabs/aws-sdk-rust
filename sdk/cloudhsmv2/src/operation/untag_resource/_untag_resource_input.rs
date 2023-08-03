@@ -47,6 +47,10 @@ impl UntagResourceInputBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The cluster identifier (ID) for the cluster whose tags you are removing. To find the cluster ID, use <code>DescribeClusters</code>.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// Appends an item to `tag_key_list`.
     ///
     /// To override the contents of this collection use [`set_tag_key_list`](Self::set_tag_key_list).
@@ -65,6 +69,12 @@ impl UntagResourceInputBuilder {
     ) -> Self {
         self.tag_key_list = input;
         self
+    }
+    /// <p>A list of one or more tag keys for the tags that you are removing. Specify only the tag keys, not the tag values.</p>
+    pub fn get_tag_key_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tag_key_list
     }
     /// Consumes the builder and constructs a [`UntagResourceInput`](crate::operation::untag_resource::UntagResourceInput).
     pub fn build(

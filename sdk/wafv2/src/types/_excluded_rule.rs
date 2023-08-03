@@ -42,6 +42,10 @@ impl ExcludedRuleBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the rule whose action you want to override to <code>Count</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`ExcludedRule`](crate::types::ExcludedRule).
     pub fn build(self) -> crate::types::ExcludedRule {
         crate::types::ExcludedRule { name: self.name }

@@ -128,6 +128,10 @@ impl CustomLineItemListElementBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Names (ARNs) for custom line items.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The custom line item's name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -137,6 +141,10 @@ impl CustomLineItemListElementBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The custom line item's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>A <code>ListCustomLineItemChargeDetails</code> that describes the charge details of a custom line item.</p>
     pub fn charge_details(mut self, input: crate::types::ListCustomLineItemChargeDetails) -> Self {
@@ -151,6 +159,12 @@ impl CustomLineItemListElementBuilder {
         self.charge_details = input;
         self
     }
+    /// <p>A <code>ListCustomLineItemChargeDetails</code> that describes the charge details of a custom line item.</p>
+    pub fn get_charge_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::ListCustomLineItemChargeDetails> {
+        &self.charge_details
+    }
     /// <p>The custom line item's charge value currency. Only one of the valid values can be used.</p>
     pub fn currency_code(mut self, input: crate::types::CurrencyCode) -> Self {
         self.currency_code = ::std::option::Option::Some(input);
@@ -164,6 +178,10 @@ impl CustomLineItemListElementBuilder {
         self.currency_code = input;
         self
     }
+    /// <p>The custom line item's charge value currency. Only one of the valid values can be used.</p>
+    pub fn get_currency_code(&self) -> &::std::option::Option<crate::types::CurrencyCode> {
+        &self.currency_code
+    }
     /// <p>The custom line item's description. This is shown on the Bills page in association with the charge value.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -174,6 +192,10 @@ impl CustomLineItemListElementBuilder {
         self.description = input;
         self
     }
+    /// <p>The custom line item's description. This is shown on the Bills page in association with the charge value.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The product code that's associated with the custom line item.</p>
     pub fn product_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_code = ::std::option::Option::Some(input.into());
@@ -183,6 +205,10 @@ impl CustomLineItemListElementBuilder {
     pub fn set_product_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product_code = input;
         self
+    }
+    /// <p>The product code that's associated with the custom line item.</p>
+    pub fn get_product_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_code
     }
     /// <p>The Amazon Resource Name (ARN) that references the billing group where the custom line item applies to.</p>
     pub fn billing_group_arn(
@@ -200,6 +226,10 @@ impl CustomLineItemListElementBuilder {
         self.billing_group_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that references the billing group where the custom line item applies to.</p>
+    pub fn get_billing_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.billing_group_arn
+    }
     /// <p>The time created.</p>
     pub fn creation_time(mut self, input: i64) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -209,6 +239,10 @@ impl CustomLineItemListElementBuilder {
     pub fn set_creation_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<i64> {
+        &self.creation_time
     }
     /// <p>The most recent time when the custom line item was modified.</p>
     pub fn last_modified_time(mut self, input: i64) -> Self {
@@ -220,6 +254,10 @@ impl CustomLineItemListElementBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p>The most recent time when the custom line item was modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<i64> {
+        &self.last_modified_time
+    }
     /// <p>The number of resources that are associated to the custom line item.</p>
     pub fn association_size(mut self, input: i64) -> Self {
         self.association_size = ::std::option::Option::Some(input);
@@ -229,6 +267,10 @@ impl CustomLineItemListElementBuilder {
     pub fn set_association_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.association_size = input;
         self
+    }
+    /// <p>The number of resources that are associated to the custom line item.</p>
+    pub fn get_association_size(&self) -> &::std::option::Option<i64> {
+        &self.association_size
     }
     /// Consumes the builder and constructs a [`CustomLineItemListElement`](crate::types::CustomLineItemListElement).
     pub fn build(self) -> crate::types::CustomLineItemListElement {

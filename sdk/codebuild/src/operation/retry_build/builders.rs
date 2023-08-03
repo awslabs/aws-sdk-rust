@@ -36,6 +36,10 @@ impl RetryBuildFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RetryBuild as a reference.
+    pub fn as_input(&self) -> &crate::operation::retry_build::builders::RetryBuildInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl RetryBuildFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>Specifies the identifier of the build to restart.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the <code>RetryBuild</code> request. The token is included in the <code>RetryBuild</code> request and is valid for five minutes. If you repeat the <code>RetryBuild</code> request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error.</p>
     pub fn idempotency_token(
         mut self,
@@ -133,5 +141,9 @@ impl RetryBuildFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
+    }
+    /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the <code>RetryBuild</code> request. The token is included in the <code>RetryBuild</code> request and is valid for five minutes. If you repeat the <code>RetryBuild</code> request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error.</p>
+    pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_idempotency_token()
     }
 }

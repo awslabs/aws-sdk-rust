@@ -69,6 +69,10 @@ impl DescribeCacheParametersOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// Appends an item to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
@@ -87,6 +91,12 @@ impl DescribeCacheParametersOutputBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>A list of <code>Parameter</code> instances.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+        &self.parameters
     }
     /// Appends an item to `cache_node_type_specific_parameters`.
     ///
@@ -109,6 +119,12 @@ impl DescribeCacheParametersOutputBuilder {
     ) -> Self {
         self.cache_node_type_specific_parameters = input;
         self
+    }
+    /// <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
+    pub fn get_cache_node_type_specific_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheNodeTypeSpecificParameter>> {
+        &self.cache_node_type_specific_parameters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

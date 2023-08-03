@@ -75,6 +75,10 @@ impl DescribeCodeBindingOutputBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>The time and date that the code binding was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
+    }
     /// <p>The date and time that code bindings were modified.</p>
     pub fn last_modified(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified = ::std::option::Option::Some(input);
@@ -87,6 +91,10 @@ impl DescribeCodeBindingOutputBuilder {
     ) -> Self {
         self.last_modified = input;
         self
+    }
+    /// <p>The date and time that code bindings were modified.</p>
+    pub fn get_last_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified
     }
     /// <p>The version number of the schema.</p>
     pub fn schema_version(
@@ -104,6 +112,10 @@ impl DescribeCodeBindingOutputBuilder {
         self.schema_version = input;
         self
     }
+    /// <p>The version number of the schema.</p>
+    pub fn get_schema_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_version
+    }
     /// <p>The current status of code binding generation.</p>
     pub fn status(mut self, input: crate::types::CodeGenerationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -116,6 +128,10 @@ impl DescribeCodeBindingOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of code binding generation.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CodeGenerationStatus> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

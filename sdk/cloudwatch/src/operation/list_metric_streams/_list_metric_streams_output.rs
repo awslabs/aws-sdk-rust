@@ -55,6 +55,10 @@ impl ListMetricStreamsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token that marks the start of the next batch of returned results. You can use this token in a subsequent operation to get the next batch of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `entries`.
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
@@ -73,6 +77,12 @@ impl ListMetricStreamsOutputBuilder {
     ) -> Self {
         self.entries = input;
         self
+    }
+    /// <p>The array of metric stream information.</p>
+    pub fn get_entries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricStreamEntry>> {
+        &self.entries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

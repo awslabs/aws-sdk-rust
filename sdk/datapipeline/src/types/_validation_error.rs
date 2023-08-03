@@ -48,6 +48,10 @@ impl ValidationErrorBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the object that contains the validation error.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Appends an item to `errors`.
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
@@ -66,6 +70,10 @@ impl ValidationErrorBuilder {
     ) -> Self {
         self.errors = input;
         self
+    }
+    /// <p>A description of the validation error.</p>
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.errors
     }
     /// Consumes the builder and constructs a [`ValidationError`](crate::types::ValidationError).
     pub fn build(self) -> crate::types::ValidationError {

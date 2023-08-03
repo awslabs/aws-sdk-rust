@@ -48,6 +48,10 @@ impl UrlEndpointSummaryBuilder {
         self.url = input;
         self
     }
+    /// <p> The URL to route traffic to. The URL must be an <a href="https://datatracker.ietf.org/doc/html/rfc3986">rfc3986-formatted URL</a>. If the host is a domain name, the name must be resolvable over the public internet. If the scheme is <code>https</code>, the top level domain of the host must be listed in the <a href="https://www.iana.org/domains/root/db">IANA root zone database</a>. </p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
+    }
     /// <p>The health check URL of the URL endpoint type. If the URL is a public endpoint, the <code>HealthUrl</code> must also be a public endpoint. If the URL is a private endpoint inside a virtual private cloud (VPC), the health URL must also be a private endpoint, and the host must be the same as the URL.</p>
     pub fn health_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_url = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl UrlEndpointSummaryBuilder {
     pub fn set_health_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.health_url = input;
         self
+    }
+    /// <p>The health check URL of the URL endpoint type. If the URL is a public endpoint, the <code>HealthUrl</code> must also be a public endpoint. If the URL is a private endpoint inside a virtual private cloud (VPC), the health URL must also be a private endpoint, and the host must be the same as the URL.</p>
+    pub fn get_health_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.health_url
     }
     /// Consumes the builder and constructs a [`UrlEndpointSummary`](crate::types::UrlEndpointSummary).
     pub fn build(self) -> crate::types::UrlEndpointSummary {

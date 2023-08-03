@@ -40,6 +40,10 @@ impl CreateVpcPeeringConnectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateVpcPeeringConnection as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_vpc_peering_connection::builders::CreateVpcPeeringConnectionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +134,10 @@ impl CreateVpcPeeringConnectionFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>The Amazon Web Services account ID of the owner of the accepter VPC.</p>
     /// <p>Default: Your Amazon Web Services account ID</p>
     pub fn peer_owner_id(
@@ -148,6 +156,11 @@ impl CreateVpcPeeringConnectionFluentBuilder {
         self.inner = self.inner.set_peer_owner_id(input);
         self
     }
+    /// <p>The Amazon Web Services account ID of the owner of the accepter VPC.</p>
+    /// <p>Default: Your Amazon Web Services account ID</p>
+    pub fn get_peer_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_peer_owner_id()
+    }
     /// <p>The ID of the VPC with which you are creating the VPC peering connection. You must specify this parameter in the request.</p>
     pub fn peer_vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.peer_vpc_id(input.into());
@@ -158,6 +171,10 @@ impl CreateVpcPeeringConnectionFluentBuilder {
         self.inner = self.inner.set_peer_vpc_id(input);
         self
     }
+    /// <p>The ID of the VPC with which you are creating the VPC peering connection. You must specify this parameter in the request.</p>
+    pub fn get_peer_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_peer_vpc_id()
+    }
     /// <p>The ID of the requester VPC. You must specify this parameter in the request.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_id(input.into());
@@ -167,6 +184,10 @@ impl CreateVpcPeeringConnectionFluentBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_id(input);
         self
+    }
+    /// <p>The ID of the requester VPC. You must specify this parameter in the request.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpc_id()
     }
     /// <p>The Region code for the accepter VPC, if the accepter VPC is located in a Region other than the Region in which you make the request.</p>
     /// <p>Default: The Region in which you make the request.</p>
@@ -179,6 +200,11 @@ impl CreateVpcPeeringConnectionFluentBuilder {
     pub fn set_peer_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_peer_region(input);
         self
+    }
+    /// <p>The Region code for the accepter VPC, if the accepter VPC is located in a Region other than the Region in which you make the request.</p>
+    /// <p>Default: The Region in which you make the request.</p>
+    pub fn get_peer_region(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_peer_region()
     }
     /// Appends an item to `TagSpecifications`.
     ///
@@ -196,5 +222,11 @@ impl CreateVpcPeeringConnectionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
+    }
+    /// <p>The tags to assign to the peering connection.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        self.inner.get_tag_specifications()
     }
 }

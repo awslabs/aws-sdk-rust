@@ -63,6 +63,10 @@ impl DescribeWorkspaceImagePermissionsOutputBuilder {
         self.image_id = input;
         self
     }
+    /// <p>The identifier of the image.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_id
+    }
     /// Appends an item to `image_permissions`.
     ///
     /// To override the contents of this collection use [`set_image_permissions`](Self::set_image_permissions).
@@ -82,6 +86,12 @@ impl DescribeWorkspaceImagePermissionsOutputBuilder {
         self.image_permissions = input;
         self
     }
+    /// <p>The identifiers of the Amazon Web Services accounts that the image has been shared with.</p>
+    pub fn get_image_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImagePermission>> {
+        &self.image_permissions
+    }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -91,6 +101,10 @@ impl DescribeWorkspaceImagePermissionsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

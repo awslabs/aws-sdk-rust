@@ -45,6 +45,12 @@ impl DomainInformationContainerBuilder {
         self.aws_domain_information = input;
         self
     }
+    /// <p>Information about an Amazon OpenSearch Service domain.</p>
+    pub fn get_aws_domain_information(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsDomainInformation> {
+        &self.aws_domain_information
+    }
     /// Consumes the builder and constructs a [`DomainInformationContainer`](crate::types::DomainInformationContainer).
     pub fn build(self) -> crate::types::DomainInformationContainer {
         crate::types::DomainInformationContainer {

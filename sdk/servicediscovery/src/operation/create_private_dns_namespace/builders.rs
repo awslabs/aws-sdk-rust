@@ -36,6 +36,10 @@ impl CreatePrivateDnsNamespaceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreatePrivateDnsNamespace as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_private_dns_namespace::builders::CreatePrivateDnsNamespaceInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl CreatePrivateDnsNamespaceFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name that you want to assign to this namespace. When you create a private DNS namespace, Cloud Map automatically creates an Amazon Route&nbsp;53 private hosted zone that has the same name as the namespace.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A unique string that identifies the request and that allows failed <code>CreatePrivateDnsNamespace</code> requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/timestamp).</p>
     pub fn creator_request_id(
         mut self,
@@ -142,6 +150,10 @@ impl CreatePrivateDnsNamespaceFluentBuilder {
         self.inner = self.inner.set_creator_request_id(input);
         self
     }
+    /// <p>A unique string that identifies the request and that allows failed <code>CreatePrivateDnsNamespace</code> requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/timestamp).</p>
+    pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_creator_request_id()
+    }
     /// <p>A description for the namespace.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -152,6 +164,10 @@ impl CreatePrivateDnsNamespaceFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>A description for the namespace.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The ID of the Amazon VPC that you want to associate the namespace with.</p>
     pub fn vpc(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc(input.into());
@@ -161,6 +177,10 @@ impl CreatePrivateDnsNamespaceFluentBuilder {
     pub fn set_vpc(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc(input);
         self
+    }
+    /// <p>The ID of the Amazon VPC that you want to associate the namespace with.</p>
+    pub fn get_vpc(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpc()
     }
     /// Appends an item to `Tags`.
     ///
@@ -179,6 +199,10 @@ impl CreatePrivateDnsNamespaceFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>Properties for the private DNS namespace.</p>
     pub fn properties(mut self, input: crate::types::PrivateDnsNamespaceProperties) -> Self {
         self.inner = self.inner.properties(input);
@@ -191,5 +215,11 @@ impl CreatePrivateDnsNamespaceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_properties(input);
         self
+    }
+    /// <p>Properties for the private DNS namespace.</p>
+    pub fn get_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::PrivateDnsNamespaceProperties> {
+        self.inner.get_properties()
     }
 }

@@ -51,6 +51,10 @@ impl UpdateAppBlockBuilderOutputBuilder {
         self.app_block_builder = input;
         self
     }
+    /// <p>Describes an app block builder.</p>
+    pub fn get_app_block_builder(&self) -> &::std::option::Option<crate::types::AppBlockBuilder> {
+        &self.app_block_builder
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -72,6 +72,10 @@ impl DatasetParameterBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the parameter that is used in the dataset's Amazon S3 path.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type of the dataset parameter, can be one of a 'String', 'Number' or 'Datetime'.</p>
     pub fn r#type(mut self, input: crate::types::ParameterType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl DatasetParameterBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ParameterType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the dataset parameter, can be one of a 'String', 'Number' or 'Datetime'.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ParameterType> {
+        &self.r#type
     }
     /// <p>Additional parameter options such as a format and a timezone. Required for datetime parameters.</p>
     pub fn datetime_options(mut self, input: crate::types::DatetimeOptions) -> Self {
@@ -95,6 +103,10 @@ impl DatasetParameterBuilder {
         self.datetime_options = input;
         self
     }
+    /// <p>Additional parameter options such as a format and a timezone. Required for datetime parameters.</p>
+    pub fn get_datetime_options(&self) -> &::std::option::Option<crate::types::DatetimeOptions> {
+        &self.datetime_options
+    }
     /// <p>Optional boolean value that defines whether the captured value of this parameter should be used to create a new column in a dataset.</p>
     pub fn create_column(mut self, input: bool) -> Self {
         self.create_column = ::std::option::Option::Some(input);
@@ -104,6 +116,10 @@ impl DatasetParameterBuilder {
     pub fn set_create_column(mut self, input: ::std::option::Option<bool>) -> Self {
         self.create_column = input;
         self
+    }
+    /// <p>Optional boolean value that defines whether the captured value of this parameter should be used to create a new column in a dataset.</p>
+    pub fn get_create_column(&self) -> &::std::option::Option<bool> {
+        &self.create_column
     }
     /// <p>The optional filter expression structure to apply additional matching criteria to the parameter.</p>
     pub fn filter(mut self, input: crate::types::FilterExpression) -> Self {
@@ -117,6 +133,10 @@ impl DatasetParameterBuilder {
     ) -> Self {
         self.filter = input;
         self
+    }
+    /// <p>The optional filter expression structure to apply additional matching criteria to the parameter.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::FilterExpression> {
+        &self.filter
     }
     /// Consumes the builder and constructs a [`DatasetParameter`](crate::types::DatasetParameter).
     pub fn build(self) -> crate::types::DatasetParameter {

@@ -51,6 +51,10 @@ impl FilterOperationBuilder {
         self.condition_expression = input;
         self
     }
+    /// <p>An expression that must evaluate to a Boolean value. Rows for which the expression evaluates to true are kept in the dataset.</p>
+    pub fn get_condition_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.condition_expression
+    }
     /// Consumes the builder and constructs a [`FilterOperation`](crate::types::FilterOperation).
     pub fn build(self) -> crate::types::FilterOperation {
         crate::types::FilterOperation {

@@ -36,6 +36,12 @@ impl CheckInLicenseFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CheckInLicense as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::check_in_license::builders::CheckInLicenseInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl CheckInLicenseFluentBuilder {
         self.inner = self.inner.set_license_consumption_token(input);
         self
     }
+    /// <p>License consumption token.</p>
+    pub fn get_license_consumption_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_license_consumption_token()
+    }
     /// <p>License beneficiary.</p>
     pub fn beneficiary(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.beneficiary(input.into());
@@ -141,5 +151,9 @@ impl CheckInLicenseFluentBuilder {
     pub fn set_beneficiary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_beneficiary(input);
         self
+    }
+    /// <p>License beneficiary.</p>
+    pub fn get_beneficiary(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_beneficiary()
     }
 }

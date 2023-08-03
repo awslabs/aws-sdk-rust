@@ -48,6 +48,10 @@ impl UserDataValidationParametersBuilder {
         self.source = input;
         self
     }
+    /// <p>The location of the validation script.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::Source> {
+        &self.source
+    }
     /// <p>The type of validation script.</p>
     pub fn script_type(mut self, input: crate::types::ScriptType) -> Self {
         self.script_type = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl UserDataValidationParametersBuilder {
     ) -> Self {
         self.script_type = input;
         self
+    }
+    /// <p>The type of validation script.</p>
+    pub fn get_script_type(&self) -> &::std::option::Option<crate::types::ScriptType> {
+        &self.script_type
     }
     /// Consumes the builder and constructs a [`UserDataValidationParameters`](crate::types::UserDataValidationParameters).
     pub fn build(self) -> crate::types::UserDataValidationParameters {

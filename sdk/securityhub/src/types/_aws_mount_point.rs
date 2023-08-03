@@ -54,6 +54,10 @@ impl AwsMountPointBuilder {
         self.source_volume = input;
         self
     }
+    /// <p>The name of the volume to mount. Must be a volume name referenced in the <code>name</code> parameter of task definition <code>volume</code>. </p>
+    pub fn get_source_volume(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_volume
+    }
     /// <p>The path on the container to mount the host volume at. </p>
     pub fn container_path(
         mut self,
@@ -69,6 +73,10 @@ impl AwsMountPointBuilder {
     ) -> Self {
         self.container_path = input;
         self
+    }
+    /// <p>The path on the container to mount the host volume at. </p>
+    pub fn get_container_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_path
     }
     /// Consumes the builder and constructs a [`AwsMountPoint`](crate::types::AwsMountPoint).
     pub fn build(self) -> crate::types::AwsMountPoint {

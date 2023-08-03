@@ -104,6 +104,10 @@ impl PipeTargetBatchJobParametersBuilder {
         self.job_definition = input;
         self
     }
+    /// <p>The job definition used by this job. This value can be one of <code>name</code>, <code>name:revision</code>, or the Amazon Resource Name (ARN) for the job definition. If name is specified without a revision then the latest active revision is used.</p>
+    pub fn get_job_definition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_definition
+    }
     /// <p>The name of the job. It can be up to 128 letters long. The first character must be alphanumeric, can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
@@ -113,6 +117,10 @@ impl PipeTargetBatchJobParametersBuilder {
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_name = input;
         self
+    }
+    /// <p>The name of the job. It can be up to 128 letters long. The first character must be alphanumeric, can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
     }
     /// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an Batch job.</p>
     pub fn array_properties(mut self, input: crate::types::BatchArrayProperties) -> Self {
@@ -127,6 +135,12 @@ impl PipeTargetBatchJobParametersBuilder {
         self.array_properties = input;
         self
     }
+    /// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an Batch job.</p>
+    pub fn get_array_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchArrayProperties> {
+        &self.array_properties
+    }
     /// <p>The retry strategy to use for failed jobs. When a retry strategy is specified here, it overrides the retry strategy defined in the job definition.</p>
     pub fn retry_strategy(mut self, input: crate::types::BatchRetryStrategy) -> Self {
         self.retry_strategy = ::std::option::Option::Some(input);
@@ -140,6 +154,10 @@ impl PipeTargetBatchJobParametersBuilder {
         self.retry_strategy = input;
         self
     }
+    /// <p>The retry strategy to use for failed jobs. When a retry strategy is specified here, it overrides the retry strategy defined in the job definition.</p>
+    pub fn get_retry_strategy(&self) -> &::std::option::Option<crate::types::BatchRetryStrategy> {
+        &self.retry_strategy
+    }
     /// <p>The overrides that are sent to a container.</p>
     pub fn container_overrides(mut self, input: crate::types::BatchContainerOverrides) -> Self {
         self.container_overrides = ::std::option::Option::Some(input);
@@ -152,6 +170,12 @@ impl PipeTargetBatchJobParametersBuilder {
     ) -> Self {
         self.container_overrides = input;
         self
+    }
+    /// <p>The overrides that are sent to a container.</p>
+    pub fn get_container_overrides(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchContainerOverrides> {
+        &self.container_overrides
     }
     /// Appends an item to `depends_on`.
     ///
@@ -171,6 +195,12 @@ impl PipeTargetBatchJobParametersBuilder {
     ) -> Self {
         self.depends_on = input;
         self
+    }
+    /// <p>A list of dependencies for the job. A job can depend upon a maximum of 20 jobs. You can specify a <code>SEQUENTIAL</code> type dependency without specifying a job ID for array jobs so that each child array job completes sequentially, starting at index 0. You can also specify an <code>N_TO_N</code> type dependency with a job ID for array jobs. In that case, each index child of this job must wait for the corresponding index child of each dependency to complete before it can begin.</p>
+    pub fn get_depends_on(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchJobDependency>> {
+        &self.depends_on
     }
     /// Adds a key-value pair to `parameters`.
     ///
@@ -196,6 +226,14 @@ impl PipeTargetBatchJobParametersBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>Additional parameters passed to the job that replace parameter substitution placeholders that are set in the job definition. Parameters are specified as a key and value pair mapping. Parameters included here override any corresponding parameter defaults from the job definition.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.parameters
     }
     /// Consumes the builder and constructs a [`PipeTargetBatchJobParameters`](crate::types::PipeTargetBatchJobParameters).
     pub fn build(self) -> crate::types::PipeTargetBatchJobParameters {

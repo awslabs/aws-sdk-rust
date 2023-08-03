@@ -37,6 +37,12 @@ impl RegisterElasticIpFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RegisterElasticIp as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::register_elastic_ip::builders::RegisterElasticIpInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl RegisterElasticIpFluentBuilder {
         self.inner = self.inner.set_elastic_ip(input);
         self
     }
+    /// <p>The Elastic IP address.</p>
+    pub fn get_elastic_ip(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_elastic_ip()
+    }
     /// <p>The stack ID.</p>
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_id(input.into());
@@ -136,5 +146,9 @@ impl RegisterElasticIpFluentBuilder {
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_id(input);
         self
+    }
+    /// <p>The stack ID.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_id()
     }
 }

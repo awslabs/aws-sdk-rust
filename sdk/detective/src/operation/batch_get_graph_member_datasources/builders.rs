@@ -36,6 +36,10 @@ impl BatchGetGraphMemberDatasourcesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchGetGraphMemberDatasources as a reference.
+    pub fn as_input(&self) -> &crate::operation::batch_get_graph_member_datasources::builders::BatchGetGraphMemberDatasourcesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl BatchGetGraphMemberDatasourcesFluentBuilder {
         self.inner = self.inner.set_graph_arn(input);
         self
     }
+    /// <p>The ARN of the behavior graph.</p>
+    pub fn get_graph_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_graph_arn()
+    }
     /// Appends an item to `AccountIds`.
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
@@ -116,5 +124,11 @@ impl BatchGetGraphMemberDatasourcesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
+    }
+    /// <p>The list of Amazon Web Services accounts to get data source package information on.</p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_account_ids()
     }
 }

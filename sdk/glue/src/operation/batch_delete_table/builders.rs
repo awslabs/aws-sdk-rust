@@ -39,6 +39,12 @@ impl BatchDeleteTableFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchDeleteTable as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_delete_table::builders::BatchDeleteTableInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl BatchDeleteTableFluentBuilder {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
+    /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog_id()
+    }
     /// <p>The name of the catalog database in which the tables to delete reside. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn database_name(
         mut self,
@@ -144,6 +154,10 @@ impl BatchDeleteTableFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
+    }
+    /// <p>The name of the catalog database in which the tables to delete reside. For Hive compatibility, this name is entirely lowercase.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_database_name()
     }
     /// Appends an item to `TablesToDelete`.
     ///
@@ -165,6 +179,12 @@ impl BatchDeleteTableFluentBuilder {
         self.inner = self.inner.set_tables_to_delete(input);
         self
     }
+    /// <p>A list of the table to delete.</p>
+    pub fn get_tables_to_delete(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_tables_to_delete()
+    }
     /// <p>The transaction ID at which to delete the table contents.</p>
     pub fn transaction_id(
         mut self,
@@ -180,5 +200,9 @@ impl BatchDeleteTableFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_transaction_id(input);
         self
+    }
+    /// <p>The transaction ID at which to delete the table contents.</p>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_transaction_id()
     }
 }

@@ -39,6 +39,10 @@ impl DescribeWorldInputBuilder {
         self.world = input;
         self
     }
+    /// <p>The Amazon Resource Name (arn) of the world you want to describe.</p>
+    pub fn get_world(&self) -> &::std::option::Option<::std::string::String> {
+        &self.world
+    }
     /// Consumes the builder and constructs a [`DescribeWorldInput`](crate::operation::describe_world::DescribeWorldInput).
     pub fn build(
         self,

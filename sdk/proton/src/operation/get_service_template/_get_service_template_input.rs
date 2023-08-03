@@ -40,6 +40,10 @@ impl GetServiceTemplateInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the service template that you want to get detailed data for.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`GetServiceTemplateInput`](crate::operation::get_service_template::GetServiceTemplateInput).
     pub fn build(
         self,

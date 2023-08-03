@@ -112,6 +112,10 @@ impl AttributeBuilder {
         self.r#type = input;
         self
     }
+    /// <p> The type of attribute. </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::EntitySubType> {
+        &self.r#type
+    }
     /// <p> The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized as an attribute. </p>
     pub fn score(mut self, input: f32) -> Self {
         self.score = ::std::option::Option::Some(input);
@@ -122,6 +126,10 @@ impl AttributeBuilder {
         self.score = input;
         self
     }
+    /// <p> The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized as an attribute. </p>
+    pub fn get_score(&self) -> &::std::option::Option<f32> {
+        &self.score
+    }
     /// <p> The level of confidence that Amazon Comprehend Medical has that this attribute is correctly related to this entity. </p>
     pub fn relationship_score(mut self, input: f32) -> Self {
         self.relationship_score = ::std::option::Option::Some(input);
@@ -131,6 +139,10 @@ impl AttributeBuilder {
     pub fn set_relationship_score(mut self, input: ::std::option::Option<f32>) -> Self {
         self.relationship_score = input;
         self
+    }
+    /// <p> The level of confidence that Amazon Comprehend Medical has that this attribute is correctly related to this entity. </p>
+    pub fn get_relationship_score(&self) -> &::std::option::Option<f32> {
+        &self.relationship_score
     }
     /// <p>The type of relationship between the entity and attribute. Type for the relationship is <code>OVERLAP</code>, indicating that the entity occurred at the same time as the <code>Date_Expression</code>. </p>
     pub fn relationship_type(mut self, input: crate::types::RelationshipType) -> Self {
@@ -145,6 +157,10 @@ impl AttributeBuilder {
         self.relationship_type = input;
         self
     }
+    /// <p>The type of relationship between the entity and attribute. Type for the relationship is <code>OVERLAP</code>, indicating that the entity occurred at the same time as the <code>Date_Expression</code>. </p>
+    pub fn get_relationship_type(&self) -> &::std::option::Option<crate::types::RelationshipType> {
+        &self.relationship_type
+    }
     /// <p> The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>
     pub fn id(mut self, input: i32) -> Self {
         self.id = ::std::option::Option::Some(input);
@@ -154,6 +170,10 @@ impl AttributeBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.id = input;
         self
+    }
+    /// <p> The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>
+    pub fn get_id(&self) -> &::std::option::Option<i32> {
+        &self.id
     }
     /// <p> The 0-based character offset in the input text that shows where the attribute begins. The offset returns the UTF-8 code point in the string. </p>
     pub fn begin_offset(mut self, input: i32) -> Self {
@@ -165,6 +185,10 @@ impl AttributeBuilder {
         self.begin_offset = input;
         self
     }
+    /// <p> The 0-based character offset in the input text that shows where the attribute begins. The offset returns the UTF-8 code point in the string. </p>
+    pub fn get_begin_offset(&self) -> &::std::option::Option<i32> {
+        &self.begin_offset
+    }
     /// <p> The 0-based character offset in the input text that shows where the attribute ends. The offset returns the UTF-8 code point in the string.</p>
     pub fn end_offset(mut self, input: i32) -> Self {
         self.end_offset = ::std::option::Option::Some(input);
@@ -174,6 +198,10 @@ impl AttributeBuilder {
     pub fn set_end_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end_offset = input;
         self
+    }
+    /// <p> The 0-based character offset in the input text that shows where the attribute ends. The offset returns the UTF-8 code point in the string.</p>
+    pub fn get_end_offset(&self) -> &::std::option::Option<i32> {
+        &self.end_offset
     }
     /// <p> The segment of input text extracted as this attribute.</p>
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -185,6 +213,10 @@ impl AttributeBuilder {
         self.text = input;
         self
     }
+    /// <p> The segment of input text extracted as this attribute.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
+    }
     /// <p> The category of attribute. </p>
     pub fn category(mut self, input: crate::types::EntityType) -> Self {
         self.category = ::std::option::Option::Some(input);
@@ -194,6 +226,10 @@ impl AttributeBuilder {
     pub fn set_category(mut self, input: ::std::option::Option<crate::types::EntityType>) -> Self {
         self.category = input;
         self
+    }
+    /// <p> The category of attribute. </p>
+    pub fn get_category(&self) -> &::std::option::Option<crate::types::EntityType> {
+        &self.category
     }
     /// Appends an item to `traits`.
     ///
@@ -213,6 +249,10 @@ impl AttributeBuilder {
     ) -> Self {
         self.traits = input;
         self
+    }
+    /// <p> Contextual information for this attribute. </p>
+    pub fn get_traits(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Trait>> {
+        &self.traits
     }
     /// Consumes the builder and constructs a [`Attribute`](crate::types::Attribute).
     pub fn build(self) -> crate::types::Attribute {

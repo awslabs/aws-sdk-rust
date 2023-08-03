@@ -60,6 +60,12 @@ impl DescribeAnalysisSchemesOutputBuilder {
         self.analysis_schemes = input;
         self
     }
+    /// <p>The analysis scheme descriptions.</p>
+    pub fn get_analysis_schemes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisSchemeStatus>> {
+        &self.analysis_schemes
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

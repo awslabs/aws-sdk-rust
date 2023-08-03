@@ -45,6 +45,12 @@ impl TargetDestinationBuilder {
         self.timestream_destination = input;
         self
     }
+    /// <p>Query result destination details for Timestream data source.</p>
+    pub fn get_timestream_destination(
+        &self,
+    ) -> &::std::option::Option<crate::types::TimestreamDestination> {
+        &self.timestream_destination
+    }
     /// Consumes the builder and constructs a [`TargetDestination`](crate::types::TargetDestination).
     pub fn build(self) -> crate::types::TargetDestination {
         crate::types::TargetDestination {

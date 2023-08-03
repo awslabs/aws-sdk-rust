@@ -54,6 +54,10 @@ impl UpdatePolicyStoreInputBuilder {
         self.policy_store_id = input;
         self
     }
+    /// <p>Specifies the ID of the policy store that you want to update</p>
+    pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_store_id
+    }
     /// <p>A structure that defines the validation settings that want to enable for the policy store.</p>
     pub fn validation_settings(mut self, input: crate::types::ValidationSettings) -> Self {
         self.validation_settings = ::std::option::Option::Some(input);
@@ -66,6 +70,12 @@ impl UpdatePolicyStoreInputBuilder {
     ) -> Self {
         self.validation_settings = input;
         self
+    }
+    /// <p>A structure that defines the validation settings that want to enable for the policy store.</p>
+    pub fn get_validation_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::ValidationSettings> {
+        &self.validation_settings
     }
     /// Consumes the builder and constructs a [`UpdatePolicyStoreInput`](crate::operation::update_policy_store::UpdatePolicyStoreInput).
     pub fn build(

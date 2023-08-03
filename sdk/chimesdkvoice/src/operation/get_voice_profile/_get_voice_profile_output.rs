@@ -50,6 +50,10 @@ impl GetVoiceProfileOutputBuilder {
         self.voice_profile = input;
         self
     }
+    /// <p>The voice profile details.</p>
+    pub fn get_voice_profile(&self) -> &::std::option::Option<crate::types::VoiceProfile> {
+        &self.voice_profile
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

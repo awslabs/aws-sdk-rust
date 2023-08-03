@@ -42,6 +42,13 @@ impl BatchGetResourceConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchGetResourceConfig as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_get_resource_config::builders::BatchGetResourceConfigInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,5 +145,11 @@ impl BatchGetResourceConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_keys(input);
         self
+    }
+    /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID.</p>
+    pub fn get_resource_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>> {
+        self.inner.get_resource_keys()
     }
 }

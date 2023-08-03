@@ -38,6 +38,12 @@ impl UpdateThingShadowFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateThingShadow as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_thing_shadow::builders::UpdateThingShadowInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +134,10 @@ impl UpdateThingShadowFluentBuilder {
         self.inner = self.inner.set_thing_name(input);
         self
     }
+    /// <p>The name of the thing.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_thing_name()
+    }
     /// <p>The name of the shadow.</p>
     pub fn shadow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.shadow_name(input.into());
@@ -138,6 +148,10 @@ impl UpdateThingShadowFluentBuilder {
         self.inner = self.inner.set_shadow_name(input);
         self
     }
+    /// <p>The name of the shadow.</p>
+    pub fn get_shadow_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_shadow_name()
+    }
     /// <p>The state information, in JSON format.</p>
     pub fn payload(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.payload(input);
@@ -147,5 +161,9 @@ impl UpdateThingShadowFluentBuilder {
     pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_payload(input);
         self
+    }
+    /// <p>The state information, in JSON format.</p>
+    pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        self.inner.get_payload()
     }
 }

@@ -49,6 +49,10 @@ impl SnapshotFileGroupBuilder {
         self.files = input;
         self
     }
+    /// <p>A list of <code>SnapshotFile</code> objects that contain the information on the snapshot files that need to be generated. This structure can hold 1 configuration at a time.</p>
+    pub fn get_files(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotFile>> {
+        &self.files
+    }
     /// Consumes the builder and constructs a [`SnapshotFileGroup`](crate::types::SnapshotFileGroup).
     pub fn build(self) -> crate::types::SnapshotFileGroup {
         crate::types::SnapshotFileGroup { files: self.files }

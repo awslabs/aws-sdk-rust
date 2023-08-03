@@ -48,6 +48,10 @@ impl BeaconingBuilder {
         self.data_rate = input;
         self
     }
+    /// <p>The data rate for gateways that are sending the beacons.</p>
+    pub fn get_data_rate(&self) -> &::std::option::Option<i32> {
+        &self.data_rate
+    }
     /// Appends an item to `frequencies`.
     ///
     /// To override the contents of this collection use [`set_frequencies`](Self::set_frequencies).
@@ -63,6 +67,10 @@ impl BeaconingBuilder {
     pub fn set_frequencies(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.frequencies = input;
         self
+    }
+    /// <p>The frequency list for the gateways to send the beacons.</p>
+    pub fn get_frequencies(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.frequencies
     }
     /// Consumes the builder and constructs a [`Beaconing`](crate::types::Beaconing).
     pub fn build(self) -> crate::types::Beaconing {

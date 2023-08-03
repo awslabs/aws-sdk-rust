@@ -36,6 +36,10 @@ impl UpdateIngestionDestinationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateIngestionDestination as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_ingestion_destination::builders::UpdateIngestionDestinationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl UpdateIngestionDestinationFluentBuilder {
         self.inner = self.inner.set_app_bundle_identifier(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
+    pub fn get_app_bundle_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_bundle_identifier()
+    }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</p>
     pub fn ingestion_identifier(
         mut self,
@@ -147,6 +155,10 @@ impl UpdateIngestionDestinationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ingestion_identifier(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</p>
+    pub fn get_ingestion_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ingestion_identifier()
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion destination to use for the request.</p>
     pub fn ingestion_destination_identifier(
@@ -164,6 +176,12 @@ impl UpdateIngestionDestinationFluentBuilder {
         self.inner = self.inner.set_ingestion_destination_identifier(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion destination to use for the request.</p>
+    pub fn get_ingestion_destination_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ingestion_destination_identifier()
+    }
     /// <p>Contains information about the destination of ingested data.</p>
     pub fn destination_configuration(
         mut self,
@@ -179,5 +197,11 @@ impl UpdateIngestionDestinationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destination_configuration(input);
         self
+    }
+    /// <p>Contains information about the destination of ingested data.</p>
+    pub fn get_destination_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DestinationConfiguration> {
+        self.inner.get_destination_configuration()
     }
 }

@@ -36,6 +36,12 @@ impl CreateResourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateResource as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_resource::builders::CreateResourceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl CreateResourceFluentBuilder {
         self.inner = self.inner.set_rest_api_id(input);
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rest_api_id()
+    }
     /// <p>The parent resource's identifier.</p>
     pub fn parent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parent_id(input.into());
@@ -128,6 +138,10 @@ impl CreateResourceFluentBuilder {
         self.inner = self.inner.set_parent_id(input);
         self
     }
+    /// <p>The parent resource's identifier.</p>
+    pub fn get_parent_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_parent_id()
+    }
     /// <p>The last path segment for this resource.</p>
     pub fn path_part(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.path_part(input.into());
@@ -137,5 +151,9 @@ impl CreateResourceFluentBuilder {
     pub fn set_path_part(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_path_part(input);
         self
+    }
+    /// <p>The last path segment for this resource.</p>
+    pub fn get_path_part(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_path_part()
     }
 }

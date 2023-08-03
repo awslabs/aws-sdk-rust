@@ -96,6 +96,10 @@ impl VideoDescriptionBuilder {
         self.codec_settings = input;
         self
     }
+    /// Video codec settings.
+    pub fn get_codec_settings(&self) -> &::std::option::Option<crate::types::VideoCodecSettings> {
+        &self.codec_settings
+    }
     /// Output video height, in pixels. Must be an even number. For most codecs, you can leave this field and width blank in order to use the height and width (resolution) from the source. Note, however, that leaving blank is not recommended. For the Frame Capture codec, height and width are required.
     pub fn height(mut self, input: i32) -> Self {
         self.height = ::std::option::Option::Some(input);
@@ -106,6 +110,10 @@ impl VideoDescriptionBuilder {
         self.height = input;
         self
     }
+    /// Output video height, in pixels. Must be an even number. For most codecs, you can leave this field and width blank in order to use the height and width (resolution) from the source. Note, however, that leaving blank is not recommended. For the Frame Capture codec, height and width are required.
+    pub fn get_height(&self) -> &::std::option::Option<i32> {
+        &self.height
+    }
     /// The name of this VideoDescription. Outputs will use this name to uniquely identify this Description. Description names should be unique within this Live Event.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -115,6 +123,10 @@ impl VideoDescriptionBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// The name of this VideoDescription. Outputs will use this name to uniquely identify this Description. Description names should be unique within this Live Event.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Indicates how MediaLive will respond to the AFD values that might be in the input video. If you do not know what AFD signaling is, or if your downstream system has not given you guidance, choose PASSTHROUGH. RESPOND: MediaLive clips the input video using a formula that uses the AFD values (configured in afdSignaling ), the input display aspect ratio, and the output display aspect ratio. MediaLive also includes the AFD values in the output, unless the codec for this encode is FRAME_CAPTURE. PASSTHROUGH: MediaLive ignores the AFD values and does not clip the video. But MediaLive does include the values in the output. NONE: MediaLive does not clip the input video and does not include the AFD values in the output
     pub fn respond_to_afd(mut self, input: crate::types::VideoDescriptionRespondToAfd) -> Self {
@@ -128,6 +140,12 @@ impl VideoDescriptionBuilder {
     ) -> Self {
         self.respond_to_afd = input;
         self
+    }
+    /// Indicates how MediaLive will respond to the AFD values that might be in the input video. If you do not know what AFD signaling is, or if your downstream system has not given you guidance, choose PASSTHROUGH. RESPOND: MediaLive clips the input video using a formula that uses the AFD values (configured in afdSignaling ), the input display aspect ratio, and the output display aspect ratio. MediaLive also includes the AFD values in the output, unless the codec for this encode is FRAME_CAPTURE. PASSTHROUGH: MediaLive ignores the AFD values and does not clip the video. But MediaLive does include the values in the output. NONE: MediaLive does not clip the input video and does not include the AFD values in the output
+    pub fn get_respond_to_afd(
+        &self,
+    ) -> &::std::option::Option<crate::types::VideoDescriptionRespondToAfd> {
+        &self.respond_to_afd
     }
     /// STRETCH_TO_OUTPUT configures the output position to stretch the video to the specified output resolution (height and width). This option will override any position value. DEFAULT may insert black boxes (pillar boxes or letter boxes) around the video to provide the specified output resolution.
     pub fn scaling_behavior(
@@ -145,6 +163,12 @@ impl VideoDescriptionBuilder {
         self.scaling_behavior = input;
         self
     }
+    /// STRETCH_TO_OUTPUT configures the output position to stretch the video to the specified output resolution (height and width). This option will override any position value. DEFAULT may insert black boxes (pillar boxes or letter boxes) around the video to provide the specified output resolution.
+    pub fn get_scaling_behavior(
+        &self,
+    ) -> &::std::option::Option<crate::types::VideoDescriptionScalingBehavior> {
+        &self.scaling_behavior
+    }
     /// Changes the strength of the anti-alias filter used for scaling. 0 is the softest setting, 100 is the sharpest. A setting of 50 is recommended for most content.
     pub fn sharpness(mut self, input: i32) -> Self {
         self.sharpness = ::std::option::Option::Some(input);
@@ -155,6 +179,10 @@ impl VideoDescriptionBuilder {
         self.sharpness = input;
         self
     }
+    /// Changes the strength of the anti-alias filter used for scaling. 0 is the softest setting, 100 is the sharpest. A setting of 50 is recommended for most content.
+    pub fn get_sharpness(&self) -> &::std::option::Option<i32> {
+        &self.sharpness
+    }
     /// Output video width, in pixels. Must be an even number. For most codecs, you can leave this field and height blank in order to use the height and width (resolution) from the source. Note, however, that leaving blank is not recommended. For the Frame Capture codec, height and width are required.
     pub fn width(mut self, input: i32) -> Self {
         self.width = ::std::option::Option::Some(input);
@@ -164,6 +192,10 @@ impl VideoDescriptionBuilder {
     pub fn set_width(mut self, input: ::std::option::Option<i32>) -> Self {
         self.width = input;
         self
+    }
+    /// Output video width, in pixels. Must be an even number. For most codecs, you can leave this field and height blank in order to use the height and width (resolution) from the source. Note, however, that leaving blank is not recommended. For the Frame Capture codec, height and width are required.
+    pub fn get_width(&self) -> &::std::option::Option<i32> {
+        &self.width
     }
     /// Consumes the builder and constructs a [`VideoDescription`](crate::types::VideoDescription).
     pub fn build(self) -> crate::types::VideoDescription {

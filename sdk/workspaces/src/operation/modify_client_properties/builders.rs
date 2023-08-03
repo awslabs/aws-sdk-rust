@@ -36,6 +36,13 @@ impl ModifyClientPropertiesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyClientProperties as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::modify_client_properties::builders::ModifyClientPropertiesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl ModifyClientPropertiesFluentBuilder {
         self.inner = self.inner.set_resource_id(input);
         self
     }
+    /// <p>The resource identifiers, in the form of directory IDs.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
+    }
     /// <p>Information about the Amazon WorkSpaces client.</p>
     pub fn client_properties(mut self, input: crate::types::ClientProperties) -> Self {
         self.inner = self.inner.client_properties(input);
@@ -138,5 +149,9 @@ impl ModifyClientPropertiesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_properties(input);
         self
+    }
+    /// <p>Information about the Amazon WorkSpaces client.</p>
+    pub fn get_client_properties(&self) -> &::std::option::Option<crate::types::ClientProperties> {
+        self.inner.get_client_properties()
     }
 }

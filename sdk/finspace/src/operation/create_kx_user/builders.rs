@@ -36,6 +36,12 @@ impl CreateKxUserFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateKxUser as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_kx_user::builders::CreateKxUserInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl CreateKxUserFluentBuilder {
         self.inner = self.inner.set_environment_id(input);
         self
     }
+    /// <p>A unique identifier for the kdb environment where you want to create a user.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_id()
+    }
     /// <p>A unique identifier for the user.</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_name(input.into());
@@ -134,6 +144,10 @@ impl CreateKxUserFluentBuilder {
         self.inner = self.inner.set_user_name(input);
         self
     }
+    /// <p>A unique identifier for the user.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_name()
+    }
     /// <p>The IAM role ARN that will be associated with the user.</p>
     pub fn iam_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.iam_role(input.into());
@@ -143,6 +157,10 @@ impl CreateKxUserFluentBuilder {
     pub fn set_iam_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_iam_role(input);
         self
+    }
+    /// <p>The IAM role ARN that will be associated with the user.</p>
+    pub fn get_iam_role(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_iam_role()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -167,6 +185,14 @@ impl CreateKxUserFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>A list of key-value pairs to label the user. You can add up to 50 tags to a user.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -176,5 +202,9 @@ impl CreateKxUserFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

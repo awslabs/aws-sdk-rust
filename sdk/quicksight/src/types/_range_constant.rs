@@ -48,6 +48,10 @@ impl RangeConstantBuilder {
         self.minimum = input;
         self
     }
+    /// <p>The minimum value for a range constant.</p>
+    pub fn get_minimum(&self) -> &::std::option::Option<::std::string::String> {
+        &self.minimum
+    }
     /// <p>The maximum value for a range constant.</p>
     pub fn maximum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.maximum = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl RangeConstantBuilder {
     pub fn set_maximum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.maximum = input;
         self
+    }
+    /// <p>The maximum value for a range constant.</p>
+    pub fn get_maximum(&self) -> &::std::option::Option<::std::string::String> {
+        &self.maximum
     }
     /// Consumes the builder and constructs a [`RangeConstant`](crate::types::RangeConstant).
     pub fn build(self) -> crate::types::RangeConstant {

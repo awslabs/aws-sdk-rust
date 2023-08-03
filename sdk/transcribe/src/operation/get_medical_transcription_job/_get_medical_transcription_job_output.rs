@@ -55,6 +55,12 @@ impl GetMedicalTranscriptionJobOutputBuilder {
         self.medical_transcription_job = input;
         self
     }
+    /// <p>Provides detailed information about the specified medical transcription job, including job status and, if applicable, failure reason.</p>
+    pub fn get_medical_transcription_job(
+        &self,
+    ) -> &::std::option::Option<crate::types::MedicalTranscriptionJob> {
+        &self.medical_transcription_job
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

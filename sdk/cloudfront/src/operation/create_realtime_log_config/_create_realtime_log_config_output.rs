@@ -51,6 +51,12 @@ impl CreateRealtimeLogConfigOutputBuilder {
         self.realtime_log_config = input;
         self
     }
+    /// <p>A real-time log configuration.</p>
+    pub fn get_realtime_log_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::RealtimeLogConfig> {
+        &self.realtime_log_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

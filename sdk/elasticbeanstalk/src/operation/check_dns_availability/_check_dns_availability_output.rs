@@ -72,6 +72,14 @@ impl CheckDnsAvailabilityOutputBuilder {
         self.available = input;
         self
     }
+    /// <p>Indicates if the specified CNAME is available:</p>
+    /// <ul>
+    /// <li> <p> <code>true</code> : The CNAME is available.</p> </li>
+    /// <li> <p> <code>false</code> : The CNAME is not available.</p> </li>
+    /// </ul>
+    pub fn get_available(&self) -> &::std::option::Option<bool> {
+        &self.available
+    }
     /// <p>The fully qualified CNAME to reserve when <code>CreateEnvironment</code> is called with the provided prefix.</p>
     pub fn fully_qualified_cname(
         mut self,
@@ -87,6 +95,10 @@ impl CheckDnsAvailabilityOutputBuilder {
     ) -> Self {
         self.fully_qualified_cname = input;
         self
+    }
+    /// <p>The fully qualified CNAME to reserve when <code>CreateEnvironment</code> is called with the provided prefix.</p>
+    pub fn get_fully_qualified_cname(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fully_qualified_cname
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

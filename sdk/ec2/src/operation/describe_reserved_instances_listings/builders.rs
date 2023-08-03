@@ -40,6 +40,10 @@ impl DescribeReservedInstancesListingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeReservedInstancesListings as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_reserved_instances_listings::builders::DescribeReservedInstancesListingsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -123,6 +127,16 @@ impl DescribeReservedInstancesListingsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>One or more filters.</p>
+    /// <ul>
+    /// <li> <p> <code>reserved-instances-id</code> - The ID of the Reserved Instances.</p> </li>
+    /// <li> <p> <code>reserved-instances-listing-id</code> - The ID of the Reserved Instances listing.</p> </li>
+    /// <li> <p> <code>status</code> - The status of the Reserved Instance listing (<code>pending</code> | <code>active</code> | <code>cancelled</code> | <code>closed</code>).</p> </li>
+    /// <li> <p> <code>status-message</code> - The reason for the status.</p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// <p>One or more Reserved Instance IDs.</p>
     pub fn reserved_instances_id(
         mut self,
@@ -139,6 +153,10 @@ impl DescribeReservedInstancesListingsFluentBuilder {
         self.inner = self.inner.set_reserved_instances_id(input);
         self
     }
+    /// <p>One or more Reserved Instance IDs.</p>
+    pub fn get_reserved_instances_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reserved_instances_id()
+    }
     /// <p>One or more Reserved Instance listing IDs.</p>
     pub fn reserved_instances_listing_id(
         mut self,
@@ -154,5 +172,11 @@ impl DescribeReservedInstancesListingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_reserved_instances_listing_id(input);
         self
+    }
+    /// <p>One or more Reserved Instance listing IDs.</p>
+    pub fn get_reserved_instances_listing_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reserved_instances_listing_id()
     }
 }

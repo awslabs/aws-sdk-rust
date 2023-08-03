@@ -39,6 +39,10 @@ impl GetDomainNameInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The domain name.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// Consumes the builder and constructs a [`GetDomainNameInput`](crate::operation::get_domain_name::GetDomainNameInput).
     pub fn build(
         self,

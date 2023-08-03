@@ -44,6 +44,11 @@ impl CapacityUnitsConfigurationBuilder {
         self.rescore_capacity_units = input;
         self
     }
+    /// <p>The amount of extra capacity for your rescore execution plan.</p>
+    /// <p>A single extra capacity unit for a rescore execution plan provides 0.01 rescore requests per second. You can add up to 1000 extra capacity units.</p>
+    pub fn get_rescore_capacity_units(&self) -> &::std::option::Option<i32> {
+        &self.rescore_capacity_units
+    }
     /// Consumes the builder and constructs a [`CapacityUnitsConfiguration`](crate::types::CapacityUnitsConfiguration).
     pub fn build(self) -> crate::types::CapacityUnitsConfiguration {
         crate::types::CapacityUnitsConfiguration {

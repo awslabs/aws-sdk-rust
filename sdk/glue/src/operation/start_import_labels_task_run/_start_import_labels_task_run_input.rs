@@ -55,6 +55,10 @@ impl StartImportLabelsTaskRunInputBuilder {
         self.transform_id = input;
         self
     }
+    /// <p>The unique identifier of the machine learning transform.</p>
+    pub fn get_transform_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transform_id
+    }
     /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you import the labels.</p>
     pub fn input_s3_path(
         mut self,
@@ -71,6 +75,10 @@ impl StartImportLabelsTaskRunInputBuilder {
         self.input_s3_path = input;
         self
     }
+    /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you import the labels.</p>
+    pub fn get_input_s3_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_s3_path
+    }
     /// <p>Indicates whether to overwrite your existing labels.</p>
     pub fn replace_all_labels(mut self, input: bool) -> Self {
         self.replace_all_labels = ::std::option::Option::Some(input);
@@ -80,6 +88,10 @@ impl StartImportLabelsTaskRunInputBuilder {
     pub fn set_replace_all_labels(mut self, input: ::std::option::Option<bool>) -> Self {
         self.replace_all_labels = input;
         self
+    }
+    /// <p>Indicates whether to overwrite your existing labels.</p>
+    pub fn get_replace_all_labels(&self) -> &::std::option::Option<bool> {
+        &self.replace_all_labels
     }
     /// Consumes the builder and constructs a [`StartImportLabelsTaskRunInput`](crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunInput).
     pub fn build(

@@ -37,6 +37,12 @@ impl PutContainerPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutContainerPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_container_policy::builders::PutContainerPolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl PutContainerPolicyFluentBuilder {
         self.inner = self.inner.set_container_name(input);
         self
     }
+    /// <p>The name of the container.</p>
+    pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_container_name()
+    }
     /// <p>The contents of the policy, which includes the following: </p>
     /// <ul>
     /// <li> <p>One <code>Version</code> tag</p> </li>
@@ -150,5 +160,13 @@ impl PutContainerPolicyFluentBuilder {
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy(input);
         self
+    }
+    /// <p>The contents of the policy, which includes the following: </p>
+    /// <ul>
+    /// <li> <p>One <code>Version</code> tag</p> </li>
+    /// <li> <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p> </li>
+    /// </ul>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy()
     }
 }

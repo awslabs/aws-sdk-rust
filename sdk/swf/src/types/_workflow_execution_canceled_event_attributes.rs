@@ -48,6 +48,10 @@ impl WorkflowExecutionCanceledEventAttributesBuilder {
         self.details = input;
         self
     }
+    /// <p>The details of the cancellation.</p>
+    pub fn get_details(&self) -> &::std::option::Option<::std::string::String> {
+        &self.details
+    }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>CancelWorkflowExecution</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn decision_task_completed_event_id(mut self, input: i64) -> Self {
         self.decision_task_completed_event_id = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl WorkflowExecutionCanceledEventAttributesBuilder {
     ) -> Self {
         self.decision_task_completed_event_id = input;
         self
+    }
+    /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>CancelWorkflowExecution</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    pub fn get_decision_task_completed_event_id(&self) -> &::std::option::Option<i64> {
+        &self.decision_task_completed_event_id
     }
     /// Consumes the builder and constructs a [`WorkflowExecutionCanceledEventAttributes`](crate::types::WorkflowExecutionCanceledEventAttributes).
     pub fn build(self) -> crate::types::WorkflowExecutionCanceledEventAttributes {

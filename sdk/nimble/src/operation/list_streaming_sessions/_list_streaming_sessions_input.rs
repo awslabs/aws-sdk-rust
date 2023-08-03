@@ -73,6 +73,10 @@ impl ListStreamingSessionsInputBuilder {
         self.created_by = input;
         self
     }
+    /// <p>Filters the request to streaming sessions created by the given user.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by
+    }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl ListStreamingSessionsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>Filters the request to streaming session owned by the given user</p>
     pub fn owned_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -93,6 +101,10 @@ impl ListStreamingSessionsInputBuilder {
         self.owned_by = input;
         self
     }
+    /// <p>Filters the request to streaming session owned by the given user</p>
+    pub fn get_owned_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owned_by
+    }
     /// <p>Filters the request to only the provided session IDs.</p>
     pub fn session_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_ids = ::std::option::Option::Some(input.into());
@@ -103,6 +115,10 @@ impl ListStreamingSessionsInputBuilder {
         self.session_ids = input;
         self
     }
+    /// <p>Filters the request to only the provided session IDs.</p>
+    pub fn get_session_ids(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_ids
+    }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
@@ -112,6 +128,10 @@ impl ListStreamingSessionsInputBuilder {
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.studio_id = input;
         self
+    }
+    /// <p>The studio ID. </p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_id
     }
     /// Consumes the builder and constructs a [`ListStreamingSessionsInput`](crate::operation::list_streaming_sessions::ListStreamingSessionsInput).
     pub fn build(

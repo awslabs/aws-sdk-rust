@@ -118,6 +118,10 @@ impl CustomRoutingAcceleratorBuilder {
         self.accelerator_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator.</p>
+    pub fn get_accelerator_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accelerator_arn
+    }
     /// <p>The name of the accelerator. The name must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -127,6 +131,10 @@ impl CustomRoutingAcceleratorBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the accelerator. The name must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The IP address type that an accelerator supports. For a custom routing accelerator, the value must be IPV4.</p>
     pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
@@ -141,6 +149,10 @@ impl CustomRoutingAcceleratorBuilder {
         self.ip_address_type = input;
         self
     }
+    /// <p>The IP address type that an accelerator supports. For a custom routing accelerator, the value must be IPV4.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        &self.ip_address_type
+    }
     /// <p>Indicates whether the accelerator is enabled. The value is true or false. The default value is true. </p>
     /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, accelerator can be deleted.</p>
     pub fn enabled(mut self, input: bool) -> Self {
@@ -152,6 +164,11 @@ impl CustomRoutingAcceleratorBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>Indicates whether the accelerator is enabled. The value is true or false. The default value is true. </p>
+    /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, accelerator can be deleted.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// Appends an item to `ip_sets`.
     ///
@@ -172,6 +189,10 @@ impl CustomRoutingAcceleratorBuilder {
         self.ip_sets = input;
         self
     }
+    /// <p>The static IP addresses that Global Accelerator associates with the accelerator.</p>
+    pub fn get_ip_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpSet>> {
+        &self.ip_sets
+    }
     /// <p>The Domain Name System (DNS) name that Global Accelerator creates that points to an accelerator's static IPv4 addresses. </p>
     /// <p>The naming convention for the DNS name is the following: A lowercase letter a, followed by a 16-bit random hex string, followed by .awsglobalaccelerator.com. For example: a1234567890abcdef.awsglobalaccelerator.com.</p>
     /// <p>If you have a dual-stack accelerator, you also have a second DNS name, <code>DualStackDnsName</code>, that points to both the A record and the AAAA record for all four static addresses for the accelerator: two IPv4 addresses and two IPv6 addresses.</p>
@@ -188,6 +209,13 @@ impl CustomRoutingAcceleratorBuilder {
         self.dns_name = input;
         self
     }
+    /// <p>The Domain Name System (DNS) name that Global Accelerator creates that points to an accelerator's static IPv4 addresses. </p>
+    /// <p>The naming convention for the DNS name is the following: A lowercase letter a, followed by a 16-bit random hex string, followed by .awsglobalaccelerator.com. For example: a1234567890abcdef.awsglobalaccelerator.com.</p>
+    /// <p>If you have a dual-stack accelerator, you also have a second DNS name, <code>DualStackDnsName</code>, that points to both the A record and the AAAA record for all four static addresses for the accelerator: two IPv4 addresses and two IPv6 addresses.</p>
+    /// <p>For more information about the default DNS name, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/dns-addressing-custom-domains.dns-addressing.html"> Support for DNS addressing in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
+    pub fn get_dns_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dns_name
+    }
     /// <p>Describes the deployment status of the accelerator.</p>
     pub fn status(mut self, input: crate::types::CustomRoutingAcceleratorStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -200,6 +228,12 @@ impl CustomRoutingAcceleratorBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Describes the deployment status of the accelerator.</p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomRoutingAcceleratorStatus> {
+        &self.status
     }
     /// <p>The date and time that the accelerator was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -214,6 +248,10 @@ impl CustomRoutingAcceleratorBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The date and time that the accelerator was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>The date and time that the accelerator was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -226,6 +264,10 @@ impl CustomRoutingAcceleratorBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>The date and time that the accelerator was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// Consumes the builder and constructs a [`CustomRoutingAccelerator`](crate::types::CustomRoutingAccelerator).
     pub fn build(self) -> crate::types::CustomRoutingAccelerator {

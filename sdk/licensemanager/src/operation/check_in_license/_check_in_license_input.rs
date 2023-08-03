@@ -53,6 +53,10 @@ impl CheckInLicenseInputBuilder {
         self.license_consumption_token = input;
         self
     }
+    /// <p>License consumption token.</p>
+    pub fn get_license_consumption_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_consumption_token
+    }
     /// <p>License beneficiary.</p>
     pub fn beneficiary(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.beneficiary = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl CheckInLicenseInputBuilder {
     pub fn set_beneficiary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.beneficiary = input;
         self
+    }
+    /// <p>License beneficiary.</p>
+    pub fn get_beneficiary(&self) -> &::std::option::Option<::std::string::String> {
+        &self.beneficiary
     }
     /// Consumes the builder and constructs a [`CheckInLicenseInput`](crate::operation::check_in_license::CheckInLicenseInput).
     pub fn build(

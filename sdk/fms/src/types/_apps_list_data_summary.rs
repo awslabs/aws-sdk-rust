@@ -64,6 +64,10 @@ impl AppsListDataSummaryBuilder {
         self.list_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the applications list.</p>
+    pub fn get_list_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.list_arn
+    }
     /// <p>The ID of the applications list.</p>
     pub fn list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.list_id = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl AppsListDataSummaryBuilder {
         self.list_id = input;
         self
     }
+    /// <p>The ID of the applications list.</p>
+    pub fn get_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.list_id
+    }
     /// <p>The name of the applications list.</p>
     pub fn list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.list_name = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl AppsListDataSummaryBuilder {
     pub fn set_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.list_name = input;
         self
+    }
+    /// <p>The name of the applications list.</p>
+    pub fn get_list_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.list_name
     }
     /// Appends an item to `apps_list`.
     ///
@@ -102,6 +114,10 @@ impl AppsListDataSummaryBuilder {
     ) -> Self {
         self.apps_list = input;
         self
+    }
+    /// <p>An array of <code>App</code> objects in the Firewall Manager applications list.</p>
+    pub fn get_apps_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::App>> {
+        &self.apps_list
     }
     /// Consumes the builder and constructs a [`AppsListDataSummary`](crate::types::AppsListDataSummary).
     pub fn build(self) -> crate::types::AppsListDataSummary {

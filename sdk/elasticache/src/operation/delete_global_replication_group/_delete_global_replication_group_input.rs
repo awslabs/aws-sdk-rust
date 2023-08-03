@@ -53,6 +53,10 @@ impl DeleteGlobalReplicationGroupInputBuilder {
         self.global_replication_group_id = input;
         self
     }
+    /// <p>The name of the Global datastore</p>
+    pub fn get_global_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_replication_group_id
+    }
     /// <p>The primary replication group is retained as a standalone replication group. </p>
     pub fn retain_primary_replication_group(mut self, input: bool) -> Self {
         self.retain_primary_replication_group = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl DeleteGlobalReplicationGroupInputBuilder {
     ) -> Self {
         self.retain_primary_replication_group = input;
         self
+    }
+    /// <p>The primary replication group is retained as a standalone replication group. </p>
+    pub fn get_retain_primary_replication_group(&self) -> &::std::option::Option<bool> {
+        &self.retain_primary_replication_group
     }
     /// Consumes the builder and constructs a [`DeleteGlobalReplicationGroupInput`](crate::operation::delete_global_replication_group::DeleteGlobalReplicationGroupInput).
     pub fn build(

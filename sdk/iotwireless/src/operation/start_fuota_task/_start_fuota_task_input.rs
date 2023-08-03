@@ -47,6 +47,10 @@ impl StartFuotaTaskInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of a FUOTA task.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The LoRaWAN information used to start a FUOTA task.</p>
     pub fn lo_ra_wan(mut self, input: crate::types::LoRaWanStartFuotaTask) -> Self {
         self.lo_ra_wan = ::std::option::Option::Some(input);
@@ -59,6 +63,10 @@ impl StartFuotaTaskInputBuilder {
     ) -> Self {
         self.lo_ra_wan = input;
         self
+    }
+    /// <p>The LoRaWAN information used to start a FUOTA task.</p>
+    pub fn get_lo_ra_wan(&self) -> &::std::option::Option<crate::types::LoRaWanStartFuotaTask> {
+        &self.lo_ra_wan
     }
     /// Consumes the builder and constructs a [`StartFuotaTaskInput`](crate::operation::start_fuota_task::StartFuotaTaskInput).
     pub fn build(

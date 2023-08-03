@@ -40,6 +40,10 @@ impl RelatedOpsItemBuilder {
         self.ops_item_id = input;
         self
     }
+    /// <p>The ID of an OpsItem related to the current OpsItem.</p>
+    pub fn get_ops_item_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ops_item_id
+    }
     /// Consumes the builder and constructs a [`RelatedOpsItem`](crate::types::RelatedOpsItem).
     pub fn build(self) -> crate::types::RelatedOpsItem {
         crate::types::RelatedOpsItem {

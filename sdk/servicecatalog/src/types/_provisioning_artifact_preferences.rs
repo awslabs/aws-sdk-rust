@@ -67,6 +67,13 @@ impl ProvisioningArtifactPreferencesBuilder {
         self.stack_set_accounts = input;
         self
     }
+    /// <p>One or more Amazon Web Services accounts where stack instances are deployed from the stack set. These accounts can be scoped in <code>ProvisioningPreferences$StackSetAccounts</code> and <code>UpdateProvisioningPreferences$StackSetAccounts</code>.</p>
+    /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+    pub fn get_stack_set_accounts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.stack_set_accounts
+    }
     /// Appends an item to `stack_set_regions`.
     ///
     /// To override the contents of this collection use [`set_stack_set_regions`](Self::set_stack_set_regions).
@@ -90,6 +97,13 @@ impl ProvisioningArtifactPreferencesBuilder {
     ) -> Self {
         self.stack_set_regions = input;
         self
+    }
+    /// <p>One or more Amazon Web Services Regions where stack instances are deployed from the stack set. These Regions can be scoped in <code>ProvisioningPreferences$StackSetRegions</code> and <code>UpdateProvisioningPreferences$StackSetRegions</code>.</p>
+    /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+    pub fn get_stack_set_regions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.stack_set_regions
     }
     /// Consumes the builder and constructs a [`ProvisioningArtifactPreferences`](crate::types::ProvisioningArtifactPreferences).
     pub fn build(self) -> crate::types::ProvisioningArtifactPreferences {

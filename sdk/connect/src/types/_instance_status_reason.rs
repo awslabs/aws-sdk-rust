@@ -40,6 +40,10 @@ impl InstanceStatusReasonBuilder {
         self.message = input;
         self
     }
+    /// <p>The message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Consumes the builder and constructs a [`InstanceStatusReason`](crate::types::InstanceStatusReason).
     pub fn build(self) -> crate::types::InstanceStatusReason {
         crate::types::InstanceStatusReason {

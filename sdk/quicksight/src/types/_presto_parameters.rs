@@ -56,6 +56,10 @@ impl PrestoParametersBuilder {
         self.host = input;
         self
     }
+    /// <p>Host.</p>
+    pub fn get_host(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host
+    }
     /// <p>Port.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl PrestoParametersBuilder {
         self.port = input;
         self
     }
+    /// <p>Port.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
+    }
     /// <p>Catalog.</p>
     pub fn catalog(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl PrestoParametersBuilder {
     pub fn set_catalog(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.catalog = input;
         self
+    }
+    /// <p>Catalog.</p>
+    pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog
     }
     /// Consumes the builder and constructs a [`PrestoParameters`](crate::types::PrestoParameters).
     pub fn build(self) -> crate::types::PrestoParameters {

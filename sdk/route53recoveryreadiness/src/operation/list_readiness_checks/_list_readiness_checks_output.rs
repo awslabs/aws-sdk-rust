@@ -58,6 +58,10 @@ impl ListReadinessChecksOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token that identifies which batch of results you want to see.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `readiness_checks`.
     ///
     /// To override the contents of this collection use [`set_readiness_checks`](Self::set_readiness_checks).
@@ -76,6 +80,12 @@ impl ListReadinessChecksOutputBuilder {
     ) -> Self {
         self.readiness_checks = input;
         self
+    }
+    /// <p>A list of readiness checks associated with the account.</p>
+    pub fn get_readiness_checks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReadinessCheckOutput>> {
+        &self.readiness_checks
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

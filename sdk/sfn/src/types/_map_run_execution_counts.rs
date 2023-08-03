@@ -96,6 +96,10 @@ impl MapRunExecutionCountsBuilder {
         self.pending = input;
         self
     }
+    /// <p>The total number of child workflow executions that were started by a Map Run, but haven't started executing yet. </p>
+    pub fn get_pending(&self) -> &::std::option::Option<i64> {
+        &self.pending
+    }
     /// <p>The total number of child workflow executions that were started by a Map Run and are currently in-progress.</p>
     pub fn running(mut self, input: i64) -> Self {
         self.running = ::std::option::Option::Some(input);
@@ -105,6 +109,10 @@ impl MapRunExecutionCountsBuilder {
     pub fn set_running(mut self, input: ::std::option::Option<i64>) -> Self {
         self.running = input;
         self
+    }
+    /// <p>The total number of child workflow executions that were started by a Map Run and are currently in-progress.</p>
+    pub fn get_running(&self) -> &::std::option::Option<i64> {
+        &self.running
     }
     /// <p>The total number of child workflow executions that were started by a Map Run and have completed successfully.</p>
     pub fn succeeded(mut self, input: i64) -> Self {
@@ -116,6 +124,10 @@ impl MapRunExecutionCountsBuilder {
         self.succeeded = input;
         self
     }
+    /// <p>The total number of child workflow executions that were started by a Map Run and have completed successfully.</p>
+    pub fn get_succeeded(&self) -> &::std::option::Option<i64> {
+        &self.succeeded
+    }
     /// <p>The total number of child workflow executions that were started by a Map Run, but have failed.</p>
     pub fn failed(mut self, input: i64) -> Self {
         self.failed = ::std::option::Option::Some(input);
@@ -125,6 +137,10 @@ impl MapRunExecutionCountsBuilder {
     pub fn set_failed(mut self, input: ::std::option::Option<i64>) -> Self {
         self.failed = input;
         self
+    }
+    /// <p>The total number of child workflow executions that were started by a Map Run, but have failed.</p>
+    pub fn get_failed(&self) -> &::std::option::Option<i64> {
+        &self.failed
     }
     /// <p>The total number of child workflow executions that were started by a Map Run and have timed out.</p>
     pub fn timed_out(mut self, input: i64) -> Self {
@@ -136,6 +152,10 @@ impl MapRunExecutionCountsBuilder {
         self.timed_out = input;
         self
     }
+    /// <p>The total number of child workflow executions that were started by a Map Run and have timed out.</p>
+    pub fn get_timed_out(&self) -> &::std::option::Option<i64> {
+        &self.timed_out
+    }
     /// <p>The total number of child workflow executions that were started by a Map Run and were running, but were either stopped by the user or by Step Functions because the Map Run failed. </p>
     pub fn aborted(mut self, input: i64) -> Self {
         self.aborted = ::std::option::Option::Some(input);
@@ -145,6 +165,10 @@ impl MapRunExecutionCountsBuilder {
     pub fn set_aborted(mut self, input: ::std::option::Option<i64>) -> Self {
         self.aborted = input;
         self
+    }
+    /// <p>The total number of child workflow executions that were started by a Map Run and were running, but were either stopped by the user or by Step Functions because the Map Run failed. </p>
+    pub fn get_aborted(&self) -> &::std::option::Option<i64> {
+        &self.aborted
     }
     /// <p>The total number of child workflow executions that were started by a Map Run.</p>
     pub fn total(mut self, input: i64) -> Self {
@@ -156,6 +180,10 @@ impl MapRunExecutionCountsBuilder {
         self.total = input;
         self
     }
+    /// <p>The total number of child workflow executions that were started by a Map Run.</p>
+    pub fn get_total(&self) -> &::std::option::Option<i64> {
+        &self.total
+    }
     /// <p>Returns the count of child workflow executions whose results were written by <code>ResultWriter</code>. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-resultwriter.html">ResultWriter</a> in the <i>Step Functions Developer Guide</i>.</p>
     pub fn results_written(mut self, input: i64) -> Self {
         self.results_written = ::std::option::Option::Some(input);
@@ -165,6 +193,10 @@ impl MapRunExecutionCountsBuilder {
     pub fn set_results_written(mut self, input: ::std::option::Option<i64>) -> Self {
         self.results_written = input;
         self
+    }
+    /// <p>Returns the count of child workflow executions whose results were written by <code>ResultWriter</code>. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-resultwriter.html">ResultWriter</a> in the <i>Step Functions Developer Guide</i>.</p>
+    pub fn get_results_written(&self) -> &::std::option::Option<i64> {
+        &self.results_written
     }
     /// Consumes the builder and constructs a [`MapRunExecutionCounts`](crate::types::MapRunExecutionCounts).
     pub fn build(self) -> crate::types::MapRunExecutionCounts {

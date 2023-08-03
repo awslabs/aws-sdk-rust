@@ -60,6 +60,10 @@ impl ListDataIngestionJobsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p> An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `data_ingestion_job_summaries`.
     ///
     /// To override the contents of this collection use [`set_data_ingestion_job_summaries`](Self::set_data_ingestion_job_summaries).
@@ -81,6 +85,12 @@ impl ListDataIngestionJobsOutputBuilder {
     ) -> Self {
         self.data_ingestion_job_summaries = input;
         self
+    }
+    /// <p>Specifies information about the specific data ingestion job, including dataset name and status. </p>
+    pub fn get_data_ingestion_job_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataIngestionJobSummary>> {
+        &self.data_ingestion_job_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -50,6 +50,10 @@ impl DescribeVocabularyOutputBuilder {
         self.vocabulary = input;
         self
     }
+    /// <p>A list of specific words that you want Contact Lens for Amazon Connect to recognize in your audio input. They are generally domain-specific words and phrases, words that Contact Lens is not recognizing, or proper nouns.</p>
+    pub fn get_vocabulary(&self) -> &::std::option::Option<crate::types::Vocabulary> {
+        &self.vocabulary
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

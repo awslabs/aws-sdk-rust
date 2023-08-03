@@ -84,6 +84,10 @@ impl UpdateSnapshotScheduleInputBuilder {
         self.volume_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</p>
+    pub fn get_volume_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_arn
+    }
     /// <p>The hour of the day at which the snapshot schedule begins represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone of the gateway.</p>
     pub fn start_at(mut self, input: i32) -> Self {
         self.start_at = ::std::option::Option::Some(input);
@@ -93,6 +97,10 @@ impl UpdateSnapshotScheduleInputBuilder {
     pub fn set_start_at(mut self, input: ::std::option::Option<i32>) -> Self {
         self.start_at = input;
         self
+    }
+    /// <p>The hour of the day at which the snapshot schedule begins represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone of the gateway.</p>
+    pub fn get_start_at(&self) -> &::std::option::Option<i32> {
+        &self.start_at
     }
     /// <p>Frequency of snapshots. Specify the number of hours between snapshots.</p>
     pub fn recurrence_in_hours(mut self, input: i32) -> Self {
@@ -104,6 +112,10 @@ impl UpdateSnapshotScheduleInputBuilder {
         self.recurrence_in_hours = input;
         self
     }
+    /// <p>Frequency of snapshots. Specify the number of hours between snapshots.</p>
+    pub fn get_recurrence_in_hours(&self) -> &::std::option::Option<i32> {
+        &self.recurrence_in_hours
+    }
     /// <p>Optional description of the snapshot that overwrites the existing description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -113,6 +125,10 @@ impl UpdateSnapshotScheduleInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Optional description of the snapshot that overwrites the existing description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `tags`.
     ///
@@ -136,6 +152,12 @@ impl UpdateSnapshotScheduleInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of up to 50 tags that can be assigned to a snapshot. Each tag is a key-value pair.</p> <note>
+    /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
+    /// </note>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`UpdateSnapshotScheduleInput`](crate::operation::update_snapshot_schedule::UpdateSnapshotScheduleInput).
     pub fn build(

@@ -43,6 +43,10 @@ impl AudioArtifactsConfigurationBuilder {
         self.mux_type = input;
         self
     }
+    /// <p>The MUX type of the audio artifact configuration object.</p>
+    pub fn get_mux_type(&self) -> &::std::option::Option<crate::types::AudioMuxType> {
+        &self.mux_type
+    }
     /// Consumes the builder and constructs a [`AudioArtifactsConfiguration`](crate::types::AudioArtifactsConfiguration).
     pub fn build(self) -> crate::types::AudioArtifactsConfiguration {
         crate::types::AudioArtifactsConfiguration {

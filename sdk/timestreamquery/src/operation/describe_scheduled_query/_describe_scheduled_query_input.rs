@@ -47,6 +47,10 @@ impl DescribeScheduledQueryInputBuilder {
         self.scheduled_query_arn = input;
         self
     }
+    /// <p>The ARN of the scheduled query.</p>
+    pub fn get_scheduled_query_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scheduled_query_arn
+    }
     /// Consumes the builder and constructs a [`DescribeScheduledQueryInput`](crate::operation::describe_scheduled_query::DescribeScheduledQueryInput).
     pub fn build(
         self,

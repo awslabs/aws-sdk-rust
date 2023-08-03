@@ -64,6 +64,10 @@ impl MultiMeasureAttributeMappingBuilder {
         self.source_column = input;
         self
     }
+    /// <p>Source column from where the attribute value is to be read.</p>
+    pub fn get_source_column(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_column
+    }
     /// <p>Custom name to be used for attribute name in derived table. If not provided, source column name would be used.</p>
     pub fn target_multi_measure_attribute_name(
         mut self,
@@ -80,6 +84,12 @@ impl MultiMeasureAttributeMappingBuilder {
         self.target_multi_measure_attribute_name = input;
         self
     }
+    /// <p>Custom name to be used for attribute name in derived table. If not provided, source column name would be used.</p>
+    pub fn get_target_multi_measure_attribute_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.target_multi_measure_attribute_name
+    }
     /// <p>Type of the attribute to be read from the source column.</p>
     pub fn measure_value_type(mut self, input: crate::types::ScalarMeasureValueType) -> Self {
         self.measure_value_type = ::std::option::Option::Some(input);
@@ -92,6 +102,12 @@ impl MultiMeasureAttributeMappingBuilder {
     ) -> Self {
         self.measure_value_type = input;
         self
+    }
+    /// <p>Type of the attribute to be read from the source column.</p>
+    pub fn get_measure_value_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScalarMeasureValueType> {
+        &self.measure_value_type
     }
     /// Consumes the builder and constructs a [`MultiMeasureAttributeMapping`](crate::types::MultiMeasureAttributeMapping).
     pub fn build(self) -> crate::types::MultiMeasureAttributeMapping {

@@ -36,6 +36,10 @@ impl GetBlueprintFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetBlueprint as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_blueprint::builders::GetBlueprintInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl GetBlueprintFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the blueprint.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>Specifies whether or not to include the blueprint in the response.</p>
     pub fn include_blueprint(mut self, input: bool) -> Self {
         self.inner = self.inner.include_blueprint(input);
@@ -128,6 +136,10 @@ impl GetBlueprintFluentBuilder {
         self.inner = self.inner.set_include_blueprint(input);
         self
     }
+    /// <p>Specifies whether or not to include the blueprint in the response.</p>
+    pub fn get_include_blueprint(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_blueprint()
+    }
     /// <p>Specifies whether or not to include the parameter specification.</p>
     pub fn include_parameter_spec(mut self, input: bool) -> Self {
         self.inner = self.inner.include_parameter_spec(input);
@@ -137,5 +149,9 @@ impl GetBlueprintFluentBuilder {
     pub fn set_include_parameter_spec(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_parameter_spec(input);
         self
+    }
+    /// <p>Specifies whether or not to include the parameter specification.</p>
+    pub fn get_include_parameter_spec(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_parameter_spec()
     }
 }

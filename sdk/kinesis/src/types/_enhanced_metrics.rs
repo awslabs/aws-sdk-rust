@@ -98,6 +98,24 @@ impl EnhancedMetricsBuilder {
         self.shard_level_metrics = input;
         self
     }
+    /// <p>List of shard-level metrics.</p>
+    /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>" enhances every metric.</p>
+    /// <ul>
+    /// <li> <p> <code>IncomingBytes</code> </p> </li>
+    /// <li> <p> <code>IncomingRecords</code> </p> </li>
+    /// <li> <p> <code>OutgoingBytes</code> </p> </li>
+    /// <li> <p> <code>OutgoingRecords</code> </p> </li>
+    /// <li> <p> <code>WriteProvisionedThroughputExceeded</code> </p> </li>
+    /// <li> <p> <code>ReadProvisionedThroughputExceeded</code> </p> </li>
+    /// <li> <p> <code>IteratorAgeMilliseconds</code> </p> </li>
+    /// <li> <p> <code>ALL</code> </p> </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
+    pub fn get_shard_level_metrics(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricsName>> {
+        &self.shard_level_metrics
+    }
     /// Consumes the builder and constructs a [`EnhancedMetrics`](crate::types::EnhancedMetrics).
     pub fn build(self) -> crate::types::EnhancedMetrics {
         crate::types::EnhancedMetrics {

@@ -36,6 +36,10 @@ impl StopDataCollectionByAgentIdsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopDataCollectionByAgentIds as a reference.
+    pub fn as_input(&self) -> &crate::operation::stop_data_collection_by_agent_ids::builders::StopDataCollectionByAgentIdsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +136,9 @@ impl StopDataCollectionByAgentIdsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_agent_ids(input);
         self
+    }
+    /// <p>The IDs of the agents from which to stop collecting data.</p>
+    pub fn get_agent_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_agent_ids()
     }
 }

@@ -43,6 +43,10 @@ impl SuggestionValueBuilder {
         self.text = input;
         self
     }
+    /// <p>The <code>SuggestionTextWithHighlights</code> structure that contains the query suggestion text and highlights.</p>
+    pub fn get_text(&self) -> &::std::option::Option<crate::types::SuggestionTextWithHighlights> {
+        &self.text
+    }
     /// Consumes the builder and constructs a [`SuggestionValue`](crate::types::SuggestionValue).
     pub fn build(self) -> crate::types::SuggestionValue {
         crate::types::SuggestionValue { text: self.text }

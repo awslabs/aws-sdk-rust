@@ -40,6 +40,10 @@ impl HttpEndpointRetryOptionsBuilder {
         self.duration_in_seconds = input;
         self
     }
+    /// <p>The total amount of time that Kinesis Data Firehose spends on retries. This duration starts after the initial attempt to send data to the custom destination via HTTPS endpoint fails. It doesn't include the periods during which Kinesis Data Firehose waits for acknowledgment from the specified destination after each attempt. </p>
+    pub fn get_duration_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.duration_in_seconds
+    }
     /// Consumes the builder and constructs a [`HttpEndpointRetryOptions`](crate::types::HttpEndpointRetryOptions).
     pub fn build(self) -> crate::types::HttpEndpointRetryOptions {
         crate::types::HttpEndpointRetryOptions {

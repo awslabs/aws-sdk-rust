@@ -59,6 +59,14 @@ impl GreenFleetProvisioningOptionBuilder {
         self.action = input;
         self
     }
+    /// <p>The method used to add instances to a replacement environment.</p>
+    /// <ul>
+    /// <li> <p> <code>DISCOVER_EXISTING</code>: Use instances that already exist or will be created manually.</p> </li>
+    /// <li> <p> <code>COPY_AUTO_SCALING_GROUP</code>: Use settings from a specified Auto Scaling group to define and create instances in a new Auto Scaling group.</p> </li>
+    /// </ul>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::GreenFleetProvisioningAction> {
+        &self.action
+    }
     /// Consumes the builder and constructs a [`GreenFleetProvisioningOption`](crate::types::GreenFleetProvisioningOption).
     pub fn build(self) -> crate::types::GreenFleetProvisioningOption {
         crate::types::GreenFleetProvisioningOption {

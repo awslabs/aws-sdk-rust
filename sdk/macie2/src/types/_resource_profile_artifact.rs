@@ -66,6 +66,10 @@ impl ResourceProfileArtifactBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the object.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The status of the analysis. Possible values are:</p>
     /// <ul>
     /// <li><p>COMPLETE - Amazon Macie successfully completed its analysis of the object.</p></li>
@@ -92,6 +96,17 @@ impl ResourceProfileArtifactBuilder {
         self.classification_result_status = input;
         self
     }
+    /// <p>The status of the analysis. Possible values are:</p>
+    /// <ul>
+    /// <li><p>COMPLETE - Amazon Macie successfully completed its analysis of the object.</p></li>
+    /// <li><p>PARTIAL - Macie analyzed only a subset of data in the object. For example, the object is an archive file that contains files in an unsupported format.</p></li>
+    /// <li><p>SKIPPED - Macie wasn't able to analyze the object. For example, the object is a malformed file.</p></li>
+    /// </ul>
+    pub fn get_classification_result_status(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.classification_result_status
+    }
     /// <p>Specifies whether Amazon Macie found sensitive data in the object.</p>
     pub fn sensitive(mut self, input: bool) -> Self {
         self.sensitive = ::std::option::Option::Some(input);
@@ -101,6 +116,10 @@ impl ResourceProfileArtifactBuilder {
     pub fn set_sensitive(mut self, input: ::std::option::Option<bool>) -> Self {
         self.sensitive = input;
         self
+    }
+    /// <p>Specifies whether Amazon Macie found sensitive data in the object.</p>
+    pub fn get_sensitive(&self) -> &::std::option::Option<bool> {
+        &self.sensitive
     }
     /// Consumes the builder and constructs a [`ResourceProfileArtifact`](crate::types::ResourceProfileArtifact).
     pub fn build(self) -> crate::types::ResourceProfileArtifact {

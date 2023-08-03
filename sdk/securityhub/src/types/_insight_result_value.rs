@@ -54,6 +54,10 @@ impl InsightResultValueBuilder {
         self.group_by_attribute_value = input;
         self
     }
+    /// <p>The value of the attribute that the findings are grouped by for the insight whose results are returned by the <code>GetInsightResults</code> operation.</p>
+    pub fn get_group_by_attribute_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_by_attribute_value
+    }
     /// <p>The number of findings returned for each <code>GroupByAttributeValue</code>.</p>
     pub fn count(mut self, input: i32) -> Self {
         self.count = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl InsightResultValueBuilder {
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
+    }
+    /// <p>The number of findings returned for each <code>GroupByAttributeValue</code>.</p>
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        &self.count
     }
     /// Consumes the builder and constructs a [`InsightResultValue`](crate::types::InsightResultValue).
     pub fn build(self) -> crate::types::InsightResultValue {

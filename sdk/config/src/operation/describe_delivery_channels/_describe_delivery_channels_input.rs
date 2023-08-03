@@ -55,6 +55,12 @@ impl DescribeDeliveryChannelsInputBuilder {
         self.delivery_channel_names = input;
         self
     }
+    /// <p>A list of delivery channel names.</p>
+    pub fn get_delivery_channel_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.delivery_channel_names
+    }
     /// Consumes the builder and constructs a [`DescribeDeliveryChannelsInput`](crate::operation::describe_delivery_channels::DescribeDeliveryChannelsInput).
     pub fn build(
         self,

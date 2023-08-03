@@ -54,6 +54,10 @@ impl UpdateRecommenderInputBuilder {
         self.recommender_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the recommender to modify.</p>
+    pub fn get_recommender_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommender_arn
+    }
     /// <p>The configuration details of the recommender.</p>
     pub fn recommender_config(mut self, input: crate::types::RecommenderConfig) -> Self {
         self.recommender_config = ::std::option::Option::Some(input);
@@ -66,6 +70,12 @@ impl UpdateRecommenderInputBuilder {
     ) -> Self {
         self.recommender_config = input;
         self
+    }
+    /// <p>The configuration details of the recommender.</p>
+    pub fn get_recommender_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecommenderConfig> {
+        &self.recommender_config
     }
     /// Consumes the builder and constructs a [`UpdateRecommenderInput`](crate::operation::update_recommender::UpdateRecommenderInput).
     pub fn build(

@@ -77,6 +77,10 @@ impl GetAccountOutputBuilder {
         self.cloudwatch_role_arn = input;
         self
     }
+    /// <p>The ARN of an Amazon CloudWatch role for the current Account. </p>
+    pub fn get_cloudwatch_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cloudwatch_role_arn
+    }
     /// <p>Specifies the API request limits configured for the current Account.</p>
     pub fn throttle_settings(mut self, input: crate::types::ThrottleSettings) -> Self {
         self.throttle_settings = ::std::option::Option::Some(input);
@@ -89,6 +93,10 @@ impl GetAccountOutputBuilder {
     ) -> Self {
         self.throttle_settings = input;
         self
+    }
+    /// <p>Specifies the API request limits configured for the current Account.</p>
+    pub fn get_throttle_settings(&self) -> &::std::option::Option<crate::types::ThrottleSettings> {
+        &self.throttle_settings
     }
     /// Appends an item to `features`.
     ///
@@ -109,6 +117,10 @@ impl GetAccountOutputBuilder {
         self.features = input;
         self
     }
+    /// <p>A list of features supported for the account. When usage plans are enabled, the features list will include an entry of <code>"UsagePlans"</code>.</p>
+    pub fn get_features(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.features
+    }
     /// <p>The version of the API keys used for the account.</p>
     pub fn api_key_version(
         mut self,
@@ -124,6 +136,10 @@ impl GetAccountOutputBuilder {
     ) -> Self {
         self.api_key_version = input;
         self
+    }
+    /// <p>The version of the API keys used for the account.</p>
+    pub fn get_api_key_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_key_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

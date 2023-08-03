@@ -62,6 +62,10 @@ impl ReceiptBuilder {
         self.delivered_timestamp = input;
         self
     }
+    /// <p>The time when the message was delivered to the recipient.</p>
+    pub fn get_delivered_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delivered_timestamp
+    }
     /// <p>The time when the message was read by the recipient.</p>
     pub fn read_timestamp(
         mut self,
@@ -78,6 +82,10 @@ impl ReceiptBuilder {
         self.read_timestamp = input;
         self
     }
+    /// <p>The time when the message was read by the recipient.</p>
+    pub fn get_read_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.read_timestamp
+    }
     /// <p>The identifier of the recipient of the message. </p>
     pub fn recipient_participant_id(
         mut self,
@@ -93,6 +101,10 @@ impl ReceiptBuilder {
     ) -> Self {
         self.recipient_participant_id = input;
         self
+    }
+    /// <p>The identifier of the recipient of the message. </p>
+    pub fn get_recipient_participant_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recipient_participant_id
     }
     /// Consumes the builder and constructs a [`Receipt`](crate::types::Receipt).
     pub fn build(self) -> crate::types::Receipt {

@@ -36,6 +36,12 @@ impl CreateFrameworkFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateFramework as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_framework::builders::CreateFrameworkInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl CreateFrameworkFluentBuilder {
         self.inner = self.inner.set_framework_name(input);
         self
     }
+    /// <p>The unique name of the framework. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
+    pub fn get_framework_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_framework_name()
+    }
     /// <p>An optional description of the framework with a maximum of 1,024 characters.</p>
     pub fn framework_description(
         mut self,
@@ -147,6 +157,10 @@ impl CreateFrameworkFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_framework_description(input);
         self
+    }
+    /// <p>An optional description of the framework with a maximum of 1,024 characters.</p>
+    pub fn get_framework_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_framework_description()
     }
     /// Appends an item to `FrameworkControls`.
     ///
@@ -165,6 +179,12 @@ impl CreateFrameworkFluentBuilder {
         self.inner = self.inner.set_framework_controls(input);
         self
     }
+    /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
+    pub fn get_framework_controls(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FrameworkControl>> {
+        self.inner.get_framework_controls()
+    }
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>CreateFrameworkInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
     pub fn idempotency_token(
         mut self,
@@ -180,6 +200,10 @@ impl CreateFrameworkFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
+    }
+    /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>CreateFrameworkInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
+    pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_idempotency_token()
     }
     /// Adds a key-value pair to `FrameworkTags`.
     ///
@@ -203,5 +227,13 @@ impl CreateFrameworkFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_framework_tags(input);
         self
+    }
+    /// <p>Metadata that you can assign to help organize the frameworks that you create. Each tag is a key-value pair.</p>
+    pub fn get_framework_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_framework_tags()
     }
 }

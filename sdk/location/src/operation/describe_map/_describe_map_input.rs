@@ -39,6 +39,10 @@ impl DescribeMapInputBuilder {
         self.map_name = input;
         self
     }
+    /// <p>The name of the map resource.</p>
+    pub fn get_map_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.map_name
+    }
     /// Consumes the builder and constructs a [`DescribeMapInput`](crate::operation::describe_map::DescribeMapInput).
     pub fn build(
         self,

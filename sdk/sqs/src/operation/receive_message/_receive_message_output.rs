@@ -56,6 +56,10 @@ impl ReceiveMessageOutputBuilder {
         self.messages = input;
         self
     }
+    /// <p>A list of messages.</p>
+    pub fn get_messages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Message>> {
+        &self.messages
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

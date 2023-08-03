@@ -128,6 +128,14 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetailsBuilder {
         self.capabilities = input;
         self
     }
+    /// <p>The Linux capabilities for the container that are added to or dropped from the default configuration provided by Docker.</p>
+    pub fn get_capabilities(
+        &self,
+    ) -> &::std::option::Option<
+        crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails,
+    > {
+        &self.capabilities
+    }
     /// Appends an item to `devices`.
     ///
     /// To override the contents of this collection use [`set_devices`](Self::set_devices).
@@ -154,6 +162,16 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetailsBuilder {
         self.devices = input;
         self
     }
+    /// <p>The host devices to expose to the container.</p>
+    pub fn get_devices(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<
+            crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails,
+        >,
+    > {
+        &self.devices
+    }
     /// <p>Whether to run an <code>init</code> process inside the container that forwards signals and reaps processes. </p>
     pub fn init_process_enabled(mut self, input: bool) -> Self {
         self.init_process_enabled = ::std::option::Option::Some(input);
@@ -163,6 +181,10 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetailsBuilder {
     pub fn set_init_process_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.init_process_enabled = input;
         self
+    }
+    /// <p>Whether to run an <code>init</code> process inside the container that forwards signals and reaps processes. </p>
+    pub fn get_init_process_enabled(&self) -> &::std::option::Option<bool> {
+        &self.init_process_enabled
     }
     /// <p>The total amount of swap memory (in MiB) that a container can use.</p>
     pub fn max_swap(mut self, input: i32) -> Self {
@@ -174,6 +196,10 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetailsBuilder {
         self.max_swap = input;
         self
     }
+    /// <p>The total amount of swap memory (in MiB) that a container can use.</p>
+    pub fn get_max_swap(&self) -> &::std::option::Option<i32> {
+        &self.max_swap
+    }
     /// <p>The value for the size (in MiB) of the <b>/dev/shm</b> volume.</p>
     pub fn shared_memory_size(mut self, input: i32) -> Self {
         self.shared_memory_size = ::std::option::Option::Some(input);
@@ -184,6 +210,10 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetailsBuilder {
         self.shared_memory_size = input;
         self
     }
+    /// <p>The value for the size (in MiB) of the <b>/dev/shm</b> volume.</p>
+    pub fn get_shared_memory_size(&self) -> &::std::option::Option<i32> {
+        &self.shared_memory_size
+    }
     /// <p>Configures the container's memory swappiness behavior. Determines how aggressively pages are swapped. The higher the value, the more aggressive the swappiness. The default is 60.</p>
     pub fn swappiness(mut self, input: i32) -> Self {
         self.swappiness = ::std::option::Option::Some(input);
@@ -193,6 +223,10 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetailsBuilder {
     pub fn set_swappiness(mut self, input: ::std::option::Option<i32>) -> Self {
         self.swappiness = input;
         self
+    }
+    /// <p>Configures the container's memory swappiness behavior. Determines how aggressively pages are swapped. The higher the value, the more aggressive the swappiness. The default is 60.</p>
+    pub fn get_swappiness(&self) -> &::std::option::Option<i32> {
+        &self.swappiness
     }
     /// Appends an item to `tmpfs`.
     ///
@@ -219,6 +253,16 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetailsBuilder {
     ) -> Self {
         self.tmpfs = input;
         self
+    }
+    /// <p>The container path, mount options, and size (in MiB) of the tmpfs mount.</p>
+    pub fn get_tmpfs(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<
+            crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails,
+        >,
+    > {
+        &self.tmpfs
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails).
     pub fn build(

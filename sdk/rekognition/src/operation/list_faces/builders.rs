@@ -37,6 +37,10 @@ impl ListFacesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListFaces as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_faces::builders::ListFacesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +135,10 @@ impl ListFacesFluentBuilder {
         self.inner = self.inner.set_collection_id(input);
         self
     }
+    /// <p>ID of the collection from which to list the faces.</p>
+    pub fn get_collection_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_collection_id()
+    }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of faces.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -140,6 +148,10 @@ impl ListFacesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of faces.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>Maximum number of faces to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -151,6 +163,10 @@ impl ListFacesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>Maximum number of faces to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>An array of user IDs to match when listing faces in a collection.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
@@ -160,6 +176,10 @@ impl ListFacesFluentBuilder {
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
         self
+    }
+    /// <p>An array of user IDs to match when listing faces in a collection.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_id()
     }
     /// Appends an item to `FaceIds`.
     ///
@@ -177,5 +197,9 @@ impl ListFacesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_face_ids(input);
         self
+    }
+    /// <p>An array of face IDs to match when listing faces in a collection.</p>
+    pub fn get_face_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_face_ids()
     }
 }

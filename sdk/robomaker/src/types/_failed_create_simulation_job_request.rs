@@ -67,6 +67,10 @@ impl FailedCreateSimulationJobRequestBuilder {
         self.request = input;
         self
     }
+    /// <p>The simulation job request.</p>
+    pub fn get_request(&self) -> &::std::option::Option<crate::types::SimulationJobRequest> {
+        &self.request
+    }
     /// <p>The failure reason of the simulation job request.</p>
     pub fn failure_reason(
         mut self,
@@ -83,6 +87,10 @@ impl FailedCreateSimulationJobRequestBuilder {
         self.failure_reason = input;
         self
     }
+    /// <p>The failure reason of the simulation job request.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
     /// <p>The failure code.</p>
     pub fn failure_code(mut self, input: crate::types::SimulationJobErrorCode) -> Self {
         self.failure_code = ::std::option::Option::Some(input);
@@ -96,6 +104,10 @@ impl FailedCreateSimulationJobRequestBuilder {
         self.failure_code = input;
         self
     }
+    /// <p>The failure code.</p>
+    pub fn get_failure_code(&self) -> &::std::option::Option<crate::types::SimulationJobErrorCode> {
+        &self.failure_code
+    }
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch failed.</p>
     pub fn failed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.failed_at = ::std::option::Option::Some(input);
@@ -108,6 +120,10 @@ impl FailedCreateSimulationJobRequestBuilder {
     ) -> Self {
         self.failed_at = input;
         self
+    }
+    /// <p>The time, in milliseconds since the epoch, when the simulation job batch failed.</p>
+    pub fn get_failed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.failed_at
     }
     /// Consumes the builder and constructs a [`FailedCreateSimulationJobRequest`](crate::types::FailedCreateSimulationJobRequest).
     pub fn build(self) -> crate::types::FailedCreateSimulationJobRequest {

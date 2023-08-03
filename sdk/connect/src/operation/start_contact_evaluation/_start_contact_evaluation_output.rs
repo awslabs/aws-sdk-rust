@@ -62,6 +62,10 @@ impl StartContactEvaluationOutputBuilder {
         self.evaluation_id = input;
         self
     }
+    /// <p>A unique identifier for the contact evaluation.</p>
+    pub fn get_evaluation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_id
+    }
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
     pub fn evaluation_arn(
         mut self,
@@ -77,6 +81,10 @@ impl StartContactEvaluationOutputBuilder {
     ) -> Self {
         self.evaluation_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
+    pub fn get_evaluation_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

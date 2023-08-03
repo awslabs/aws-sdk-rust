@@ -36,6 +36,12 @@ impl UpdateProductFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateProduct as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_product::builders::UpdateProductInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,14 @@ impl UpdateProductFluentBuilder {
         self.inner = self.inner.set_accept_language(input);
         self
     }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_accept_language()
+    }
     /// <p>The product identifier.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
@@ -141,6 +155,10 @@ impl UpdateProductFluentBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
+    }
+    /// <p>The product identifier.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
     }
     /// <p>The updated product name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -152,6 +170,10 @@ impl UpdateProductFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The updated product name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The updated owner of the product.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.owner(input.into());
@@ -161,6 +183,10 @@ impl UpdateProductFluentBuilder {
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_owner(input);
         self
+    }
+    /// <p>The updated owner of the product.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_owner()
     }
     /// <p>The updated description of the product.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -172,6 +198,10 @@ impl UpdateProductFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The updated description of the product.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The updated distributor of the product.</p>
     pub fn distributor(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.distributor(input.into());
@@ -181,6 +211,10 @@ impl UpdateProductFluentBuilder {
     pub fn set_distributor(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_distributor(input);
         self
+    }
+    /// <p>The updated distributor of the product.</p>
+    pub fn get_distributor(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_distributor()
     }
     /// <p>The updated support description for the product.</p>
     pub fn support_description(
@@ -198,6 +232,10 @@ impl UpdateProductFluentBuilder {
         self.inner = self.inner.set_support_description(input);
         self
     }
+    /// <p>The updated support description for the product.</p>
+    pub fn get_support_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_support_description()
+    }
     /// <p>The updated support email for the product.</p>
     pub fn support_email(
         mut self,
@@ -214,6 +252,10 @@ impl UpdateProductFluentBuilder {
         self.inner = self.inner.set_support_email(input);
         self
     }
+    /// <p>The updated support email for the product.</p>
+    pub fn get_support_email(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_support_email()
+    }
     /// <p>The updated support URL for the product.</p>
     pub fn support_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.support_url(input.into());
@@ -223,6 +265,10 @@ impl UpdateProductFluentBuilder {
     pub fn set_support_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_support_url(input);
         self
+    }
+    /// <p>The updated support URL for the product.</p>
+    pub fn get_support_url(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_support_url()
     }
     /// Appends an item to `AddTags`.
     ///
@@ -241,6 +287,10 @@ impl UpdateProductFluentBuilder {
         self.inner = self.inner.set_add_tags(input);
         self
     }
+    /// <p>The tags to add to the product.</p>
+    pub fn get_add_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_add_tags()
+    }
     /// Appends an item to `RemoveTags`.
     ///
     /// To override the contents of this collection use [`set_remove_tags`](Self::set_remove_tags).
@@ -257,6 +307,12 @@ impl UpdateProductFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_remove_tags(input);
         self
+    }
+    /// <p>The tags to remove from the product.</p>
+    pub fn get_remove_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_remove_tags()
     }
     /// <p>Specifies connection details for the updated product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
     /// <ul>
@@ -278,5 +334,13 @@ impl UpdateProductFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source_connection(input);
         self
+    }
+    /// <p>Specifies connection details for the updated product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
+    /// <ul>
+    /// <li> <p> <code>Type</code> </p> </li>
+    /// <li> <p> <code>ConnectionParamters</code> </p> </li>
+    /// </ul>
+    pub fn get_source_connection(&self) -> &::std::option::Option<crate::types::SourceConnection> {
+        self.inner.get_source_connection()
     }
 }

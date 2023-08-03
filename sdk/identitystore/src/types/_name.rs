@@ -90,6 +90,10 @@ impl NameBuilder {
         self.formatted = input;
         self
     }
+    /// <p>A string containing a formatted version of the name for display.</p>
+    pub fn get_formatted(&self) -> &::std::option::Option<::std::string::String> {
+        &self.formatted
+    }
     /// <p>The family name of the user.</p>
     pub fn family_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.family_name = ::std::option::Option::Some(input.into());
@@ -99,6 +103,10 @@ impl NameBuilder {
     pub fn set_family_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.family_name = input;
         self
+    }
+    /// <p>The family name of the user.</p>
+    pub fn get_family_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.family_name
     }
     /// <p>The given name of the user.</p>
     pub fn given_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -110,6 +118,10 @@ impl NameBuilder {
         self.given_name = input;
         self
     }
+    /// <p>The given name of the user.</p>
+    pub fn get_given_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.given_name
+    }
     /// <p>The middle name of the user.</p>
     pub fn middle_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.middle_name = ::std::option::Option::Some(input.into());
@@ -119,6 +131,10 @@ impl NameBuilder {
     pub fn set_middle_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.middle_name = input;
         self
+    }
+    /// <p>The middle name of the user.</p>
+    pub fn get_middle_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.middle_name
     }
     /// <p>The honorific prefix of the user. For example, "Dr."</p>
     pub fn honorific_prefix(
@@ -136,6 +152,10 @@ impl NameBuilder {
         self.honorific_prefix = input;
         self
     }
+    /// <p>The honorific prefix of the user. For example, "Dr."</p>
+    pub fn get_honorific_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.honorific_prefix
+    }
     /// <p>The honorific suffix of the user. For example, "M.D."</p>
     pub fn honorific_suffix(
         mut self,
@@ -151,6 +171,10 @@ impl NameBuilder {
     ) -> Self {
         self.honorific_suffix = input;
         self
+    }
+    /// <p>The honorific suffix of the user. For example, "M.D."</p>
+    pub fn get_honorific_suffix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.honorific_suffix
     }
     /// Consumes the builder and constructs a [`Name`](crate::types::Name).
     pub fn build(self) -> crate::types::Name {

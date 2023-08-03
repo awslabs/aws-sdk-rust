@@ -79,6 +79,10 @@ impl ClusterSecurityGroupBuilder {
         self.cluster_security_group_name = input;
         self
     }
+    /// <p>The name of the cluster security group to which the operation was applied.</p>
+    pub fn get_cluster_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_security_group_name
+    }
     /// <p>A description of the security group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -88,6 +92,10 @@ impl ClusterSecurityGroupBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the security group.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `ec2_security_groups`.
     ///
@@ -108,6 +116,12 @@ impl ClusterSecurityGroupBuilder {
         self.ec2_security_groups = input;
         self
     }
+    /// <p>A list of EC2 security groups that are permitted to access clusters associated with this cluster security group.</p>
+    pub fn get_ec2_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Ec2SecurityGroup>> {
+        &self.ec2_security_groups
+    }
     /// Appends an item to `ip_ranges`.
     ///
     /// To override the contents of this collection use [`set_ip_ranges`](Self::set_ip_ranges).
@@ -127,6 +141,10 @@ impl ClusterSecurityGroupBuilder {
         self.ip_ranges = input;
         self
     }
+    /// <p>A list of IP ranges (CIDR blocks) that are permitted to access clusters associated with this cluster security group.</p>
+    pub fn get_ip_ranges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpRange>> {
+        &self.ip_ranges
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -145,6 +163,10 @@ impl ClusterSecurityGroupBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The list of tags for the cluster security group.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`ClusterSecurityGroup`](crate::types::ClusterSecurityGroup).
     pub fn build(self) -> crate::types::ClusterSecurityGroup {

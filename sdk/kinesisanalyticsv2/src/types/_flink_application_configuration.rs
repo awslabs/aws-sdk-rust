@@ -71,6 +71,12 @@ impl FlinkApplicationConfigurationBuilder {
         self.checkpoint_configuration = input;
         self
     }
+    /// <p>Describes an application's checkpointing configuration. Checkpointing is the process of persisting application state for fault tolerance. For more information, see <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/concepts/programming-model.html#checkpoints-for-fault-tolerance"> Checkpoints for Fault Tolerance</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink Documentation</a>. </p>
+    pub fn get_checkpoint_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CheckpointConfiguration> {
+        &self.checkpoint_configuration
+    }
     /// <p>Describes configuration parameters for Amazon CloudWatch logging for an application.</p>
     pub fn monitoring_configuration(
         mut self,
@@ -87,6 +93,12 @@ impl FlinkApplicationConfigurationBuilder {
         self.monitoring_configuration = input;
         self
     }
+    /// <p>Describes configuration parameters for Amazon CloudWatch logging for an application.</p>
+    pub fn get_monitoring_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::MonitoringConfiguration> {
+        &self.monitoring_configuration
+    }
     /// <p>Describes parameters for how an application executes multiple tasks simultaneously.</p>
     pub fn parallelism_configuration(
         mut self,
@@ -102,6 +114,12 @@ impl FlinkApplicationConfigurationBuilder {
     ) -> Self {
         self.parallelism_configuration = input;
         self
+    }
+    /// <p>Describes parameters for how an application executes multiple tasks simultaneously.</p>
+    pub fn get_parallelism_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ParallelismConfiguration> {
+        &self.parallelism_configuration
     }
     /// Consumes the builder and constructs a [`FlinkApplicationConfiguration`](crate::types::FlinkApplicationConfiguration).
     pub fn build(self) -> crate::types::FlinkApplicationConfiguration {

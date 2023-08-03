@@ -37,6 +37,13 @@ impl AssociateCustomDomainFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateCustomDomain as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::associate_custom_domain::builders::AssociateCustomDomainInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl AssociateCustomDomainFluentBuilder {
         self.inner = self.inner.set_service_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to associate a custom domain name with.</p>
+    pub fn get_service_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_arn()
+    }
     /// <p>A custom domain endpoint to associate. Specify a root domain (for example, <code>example.com</code>), a subdomain (for example, <code>login.example.com</code> or <code>admin.login.example.com</code>), or a wildcard (for example, <code>*.example.com</code>).</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
@@ -136,6 +147,10 @@ impl AssociateCustomDomainFluentBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_name(input);
         self
+    }
+    /// <p>A custom domain endpoint to associate. Specify a root domain (for example, <code>example.com</code>), a subdomain (for example, <code>login.example.com</code> or <code>admin.login.example.com</code>), or a wildcard (for example, <code>*.example.com</code>).</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
     }
     /// <p>Set to <code>true</code> to associate the subdomain <code>www.<i>DomainName</i> </code> with the App Runner service in addition to the base domain.</p>
     /// <p>Default: <code>true</code> </p>
@@ -148,5 +163,10 @@ impl AssociateCustomDomainFluentBuilder {
     pub fn set_enable_www_subdomain(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_www_subdomain(input);
         self
+    }
+    /// <p>Set to <code>true</code> to associate the subdomain <code>www.<i>DomainName</i> </code> with the App Runner service in addition to the base domain.</p>
+    /// <p>Default: <code>true</code> </p>
+    pub fn get_enable_www_subdomain(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_www_subdomain()
     }
 }

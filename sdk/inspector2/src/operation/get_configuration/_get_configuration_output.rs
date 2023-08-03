@@ -50,6 +50,12 @@ impl GetConfigurationOutputBuilder {
         self.ecr_configuration = input;
         self
     }
+    /// <p>Specifies how the ECR automated re-scan duration is currently configured for your environment.</p>
+    pub fn get_ecr_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::EcrConfigurationState> {
+        &self.ecr_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

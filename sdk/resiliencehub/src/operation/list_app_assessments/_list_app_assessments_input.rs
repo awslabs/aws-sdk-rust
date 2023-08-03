@@ -97,6 +97,10 @@ impl ListAppAssessmentsInputBuilder {
         self.app_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_arn
+    }
     /// <p>The name for the assessment.</p>
     pub fn assessment_name(
         mut self,
@@ -112,6 +116,10 @@ impl ListAppAssessmentsInputBuilder {
     ) -> Self {
         self.assessment_name = input;
         self
+    }
+    /// <p>The name for the assessment.</p>
+    pub fn get_assessment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_name
     }
     /// Appends an item to `assessment_status`.
     ///
@@ -132,6 +140,12 @@ impl ListAppAssessmentsInputBuilder {
         self.assessment_status = input;
         self
     }
+    /// <p>The current status of the assessment for the resiliency policy.</p>
+    pub fn get_assessment_status(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentStatus>> {
+        &self.assessment_status
+    }
     /// <p>The current status of compliance for the resiliency policy.</p>
     pub fn compliance_status(mut self, input: crate::types::ComplianceStatus) -> Self {
         self.compliance_status = ::std::option::Option::Some(input);
@@ -144,6 +158,10 @@ impl ListAppAssessmentsInputBuilder {
     ) -> Self {
         self.compliance_status = input;
         self
+    }
+    /// <p>The current status of compliance for the resiliency policy.</p>
+    pub fn get_compliance_status(&self) -> &::std::option::Option<crate::types::ComplianceStatus> {
+        &self.compliance_status
     }
     /// <p>Specifies the entity that invoked a specific assessment, either a <code>User</code> or the <code>System</code>.</p>
     pub fn invoker(mut self, input: crate::types::AssessmentInvoker) -> Self {
@@ -158,6 +176,10 @@ impl ListAppAssessmentsInputBuilder {
         self.invoker = input;
         self
     }
+    /// <p>Specifies the entity that invoked a specific assessment, either a <code>User</code> or the <code>System</code>.</p>
+    pub fn get_invoker(&self) -> &::std::option::Option<crate::types::AssessmentInvoker> {
+        &self.invoker
+    }
     /// <p>The default is to sort by ascending <b>startTime</b>. To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.</p>
     pub fn reverse_order(mut self, input: bool) -> Self {
         self.reverse_order = ::std::option::Option::Some(input);
@@ -167,6 +189,10 @@ impl ListAppAssessmentsInputBuilder {
     pub fn set_reverse_order(mut self, input: ::std::option::Option<bool>) -> Self {
         self.reverse_order = input;
         self
+    }
+    /// <p>The default is to sort by ascending <b>startTime</b>. To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.</p>
+    pub fn get_reverse_order(&self) -> &::std::option::Option<bool> {
+        &self.reverse_order
     }
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -178,6 +204,10 @@ impl ListAppAssessmentsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Null, or the token from a previous call to get the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -187,6 +217,10 @@ impl ListAppAssessmentsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAppAssessmentsInput`](crate::operation::list_app_assessments::ListAppAssessmentsInput).
     pub fn build(

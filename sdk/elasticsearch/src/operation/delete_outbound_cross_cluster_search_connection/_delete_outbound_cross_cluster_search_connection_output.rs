@@ -57,6 +57,12 @@ impl DeleteOutboundCrossClusterSearchConnectionOutputBuilder {
         self.cross_cluster_search_connection = input;
         self
     }
+    /// <p>Specifies the <code><code>OutboundCrossClusterSearchConnection</code></code> of deleted outbound connection. </p>
+    pub fn get_cross_cluster_search_connection(
+        &self,
+    ) -> &::std::option::Option<crate::types::OutboundCrossClusterSearchConnection> {
+        &self.cross_cluster_search_connection
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

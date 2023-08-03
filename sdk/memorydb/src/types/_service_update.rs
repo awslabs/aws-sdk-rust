@@ -96,6 +96,10 @@ impl ServiceUpdateBuilder {
         self.cluster_name = input;
         self
     }
+    /// <p>The name of the cluster to which the service update applies</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_name
+    }
     /// <p>The unique ID of the service update</p>
     pub fn service_update_name(
         mut self,
@@ -112,6 +116,10 @@ impl ServiceUpdateBuilder {
         self.service_update_name = input;
         self
     }
+    /// <p>The unique ID of the service update</p>
+    pub fn get_service_update_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_update_name
+    }
     /// <p>The date when the service update is initially available</p>
     pub fn release_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.release_date = ::std::option::Option::Some(input);
@@ -125,6 +133,10 @@ impl ServiceUpdateBuilder {
         self.release_date = input;
         self
     }
+    /// <p>The date when the service update is initially available</p>
+    pub fn get_release_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.release_date
+    }
     /// <p>Provides details of the service update</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -134,6 +146,10 @@ impl ServiceUpdateBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Provides details of the service update</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The status of the service update</p>
     pub fn status(mut self, input: crate::types::ServiceUpdateStatus) -> Self {
@@ -148,6 +164,10 @@ impl ServiceUpdateBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the service update</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ServiceUpdateStatus> {
+        &self.status
+    }
     /// <p>Reflects the nature of the service update</p>
     pub fn r#type(mut self, input: crate::types::ServiceUpdateType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -160,6 +180,10 @@ impl ServiceUpdateBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>Reflects the nature of the service update</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ServiceUpdateType> {
+        &self.r#type
     }
     /// <p>A list of nodes updated by the service update</p>
     pub fn nodes_updated(
@@ -177,6 +201,10 @@ impl ServiceUpdateBuilder {
         self.nodes_updated = input;
         self
     }
+    /// <p>A list of nodes updated by the service update</p>
+    pub fn get_nodes_updated(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nodes_updated
+    }
     /// <p>The date at which the service update will be automatically applied</p>
     pub fn auto_update_start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.auto_update_start_date = ::std::option::Option::Some(input);
@@ -189,6 +217,12 @@ impl ServiceUpdateBuilder {
     ) -> Self {
         self.auto_update_start_date = input;
         self
+    }
+    /// <p>The date at which the service update will be automatically applied</p>
+    pub fn get_auto_update_start_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.auto_update_start_date
     }
     /// Consumes the builder and constructs a [`ServiceUpdate`](crate::types::ServiceUpdate).
     pub fn build(self) -> crate::types::ServiceUpdate {

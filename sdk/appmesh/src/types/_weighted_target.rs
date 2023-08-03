@@ -56,6 +56,10 @@ impl WeightedTargetBuilder {
         self.virtual_node = input;
         self
     }
+    /// <p>The virtual node to associate with the weighted target.</p>
+    pub fn get_virtual_node(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_node
+    }
     /// <p>The relative weight of the weighted target.</p>
     pub fn weight(mut self, input: i32) -> Self {
         self.weight = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl WeightedTargetBuilder {
         self.weight = input;
         self
     }
+    /// <p>The relative weight of the weighted target.</p>
+    pub fn get_weight(&self) -> &::std::option::Option<i32> {
+        &self.weight
+    }
     /// <p>The targeted port of the weighted object.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl WeightedTargetBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
+    }
+    /// <p>The targeted port of the weighted object.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// Consumes the builder and constructs a [`WeightedTarget`](crate::types::WeightedTarget).
     pub fn build(self) -> crate::types::WeightedTarget {

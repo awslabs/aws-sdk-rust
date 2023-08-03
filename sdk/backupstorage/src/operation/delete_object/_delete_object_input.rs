@@ -53,6 +53,10 @@ impl DeleteObjectInputBuilder {
         self.backup_job_id = input;
         self
     }
+    /// Backup job Id for the in-progress backup.
+    pub fn get_backup_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_job_id
+    }
     /// The name of the Object.
     pub fn object_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_name = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl DeleteObjectInputBuilder {
     pub fn set_object_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_name = input;
         self
+    }
+    /// The name of the Object.
+    pub fn get_object_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_name
     }
     /// Consumes the builder and constructs a [`DeleteObjectInput`](crate::operation::delete_object::DeleteObjectInput).
     pub fn build(

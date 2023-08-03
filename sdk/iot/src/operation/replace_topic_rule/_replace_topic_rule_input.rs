@@ -49,6 +49,10 @@ impl ReplaceTopicRuleInputBuilder {
         self.rule_name = input;
         self
     }
+    /// <p>The name of the rule.</p>
+    pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_name
+    }
     /// <p>The rule payload.</p>
     pub fn topic_rule_payload(mut self, input: crate::types::TopicRulePayload) -> Self {
         self.topic_rule_payload = ::std::option::Option::Some(input);
@@ -61,6 +65,10 @@ impl ReplaceTopicRuleInputBuilder {
     ) -> Self {
         self.topic_rule_payload = input;
         self
+    }
+    /// <p>The rule payload.</p>
+    pub fn get_topic_rule_payload(&self) -> &::std::option::Option<crate::types::TopicRulePayload> {
+        &self.topic_rule_payload
     }
     /// Consumes the builder and constructs a [`ReplaceTopicRuleInput`](crate::operation::replace_topic_rule::ReplaceTopicRuleInput).
     pub fn build(

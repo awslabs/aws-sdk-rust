@@ -80,6 +80,10 @@ impl DescribeImagesInputBuilder {
         self.names = input;
         self
     }
+    /// <p>The names of the public or private images to describe.</p>
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.names
+    }
     /// Appends an item to `arns`.
     ///
     /// To override the contents of this collection use [`set_arns`](Self::set_arns).
@@ -99,6 +103,10 @@ impl DescribeImagesInputBuilder {
         self.arns = input;
         self
     }
+    /// <p>The ARNs of the public, private, and shared images to describe.</p>
+    pub fn get_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.arns
+    }
     /// <p>The type of image (public, private, or shared) to describe. </p>
     pub fn r#type(mut self, input: crate::types::VisibilityType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -108,6 +116,10 @@ impl DescribeImagesInputBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::VisibilityType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of image (public, private, or shared) to describe. </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::VisibilityType> {
+        &self.r#type
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -119,6 +131,10 @@ impl DescribeImagesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum size of each page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -128,6 +144,10 @@ impl DescribeImagesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum size of each page of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeImagesInput`](crate::operation::describe_images::DescribeImagesInput).
     pub fn build(

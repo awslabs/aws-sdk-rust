@@ -49,6 +49,12 @@ impl PutLoggingOptionsInputBuilder {
         self.cloud_watch_log_delivery = input;
         self
     }
+    /// <p>Creates or updates the log delivery option to Amazon CloudWatch Logs.</p>
+    pub fn get_cloud_watch_log_delivery(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudWatchLogDeliveryOptions> {
+        &self.cloud_watch_log_delivery
+    }
     /// Consumes the builder and constructs a [`PutLoggingOptionsInput`](crate::operation::put_logging_options::PutLoggingOptionsInput).
     pub fn build(
         self,

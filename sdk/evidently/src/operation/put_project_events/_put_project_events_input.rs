@@ -48,6 +48,10 @@ impl PutProjectEventsInputBuilder {
         self.project = input;
         self
     }
+    /// <p>The name or ARN of the project to write the events to.</p>
+    pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project
+    }
     /// Appends an item to `events`.
     ///
     /// To override the contents of this collection use [`set_events`](Self::set_events).
@@ -66,6 +70,10 @@ impl PutProjectEventsInputBuilder {
     ) -> Self {
         self.events = input;
         self
+    }
+    /// <p>An array of event structures that contain the performance data that is being sent to Evidently.</p>
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Event>> {
+        &self.events
     }
     /// Consumes the builder and constructs a [`PutProjectEventsInput`](crate::operation::put_project_events::PutProjectEventsInput).
     pub fn build(

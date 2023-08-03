@@ -93,6 +93,10 @@ impl AssessmentRunInProgressExceptionBuilder {
         self.message = input;
         self
     }
+    /// <p>Details of the exception error.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Appends an item to `assessment_run_arns`.
     ///
     /// To override the contents of this collection use [`set_assessment_run_arns`](Self::set_assessment_run_arns).
@@ -115,6 +119,12 @@ impl AssessmentRunInProgressExceptionBuilder {
         self.assessment_run_arns = input;
         self
     }
+    /// <p>The ARNs of the assessment runs that are currently in progress.</p>
+    pub fn get_assessment_run_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.assessment_run_arns
+    }
     /// <p>Boolean value that indicates whether the ARN list of the assessment runs is truncated.</p>
     pub fn assessment_run_arns_truncated(mut self, input: bool) -> Self {
         self.assessment_run_arns_truncated = ::std::option::Option::Some(input);
@@ -125,6 +135,10 @@ impl AssessmentRunInProgressExceptionBuilder {
         self.assessment_run_arns_truncated = input;
         self
     }
+    /// <p>Boolean value that indicates whether the ARN list of the assessment runs is truncated.</p>
+    pub fn get_assessment_run_arns_truncated(&self) -> &::std::option::Option<bool> {
+        &self.assessment_run_arns_truncated
+    }
     /// <p>You can immediately retry your request.</p>
     pub fn can_retry(mut self, input: bool) -> Self {
         self.can_retry = ::std::option::Option::Some(input);
@@ -134,6 +148,10 @@ impl AssessmentRunInProgressExceptionBuilder {
     pub fn set_can_retry(mut self, input: ::std::option::Option<bool>) -> Self {
         self.can_retry = input;
         self
+    }
+    /// <p>You can immediately retry your request.</p>
+    pub fn get_can_retry(&self) -> &::std::option::Option<bool> {
+        &self.can_retry
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

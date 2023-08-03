@@ -120,6 +120,10 @@ impl UserBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the user account.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Amazon Resource Name (ARN) of the user account.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -130,6 +134,10 @@ impl UserBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the user account.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The user name assigned to the user account.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
@@ -139,6 +147,10 @@ impl UserBuilder {
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
+    }
+    /// <p>The user name assigned to the user account.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
     }
     /// <p>Information about the user identity.</p>
     pub fn identity_info(mut self, input: crate::types::UserIdentityInfo) -> Self {
@@ -153,6 +165,10 @@ impl UserBuilder {
         self.identity_info = input;
         self
     }
+    /// <p>Information about the user identity.</p>
+    pub fn get_identity_info(&self) -> &::std::option::Option<crate::types::UserIdentityInfo> {
+        &self.identity_info
+    }
     /// <p>Information about the phone configuration for the user.</p>
     pub fn phone_config(mut self, input: crate::types::UserPhoneConfig) -> Self {
         self.phone_config = ::std::option::Option::Some(input);
@@ -165,6 +181,10 @@ impl UserBuilder {
     ) -> Self {
         self.phone_config = input;
         self
+    }
+    /// <p>Information about the phone configuration for the user.</p>
+    pub fn get_phone_config(&self) -> &::std::option::Option<crate::types::UserPhoneConfig> {
+        &self.phone_config
     }
     /// <p>The identifier of the user account in the directory used for identity management.</p>
     pub fn directory_user_id(
@@ -181,6 +201,10 @@ impl UserBuilder {
     ) -> Self {
         self.directory_user_id = input;
         self
+    }
+    /// <p>The identifier of the user account in the directory used for identity management.</p>
+    pub fn get_directory_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_user_id
     }
     /// Appends an item to `security_profile_ids`.
     ///
@@ -204,6 +228,12 @@ impl UserBuilder {
         self.security_profile_ids = input;
         self
     }
+    /// <p>The identifiers of the security profiles for the user.</p>
+    pub fn get_security_profile_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_profile_ids
+    }
     /// <p>The identifier of the routing profile for the user.</p>
     pub fn routing_profile_id(
         mut self,
@@ -220,6 +250,10 @@ impl UserBuilder {
         self.routing_profile_id = input;
         self
     }
+    /// <p>The identifier of the routing profile for the user.</p>
+    pub fn get_routing_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.routing_profile_id
+    }
     /// <p>The identifier of the hierarchy group for the user.</p>
     pub fn hierarchy_group_id(
         mut self,
@@ -235,6 +269,10 @@ impl UserBuilder {
     ) -> Self {
         self.hierarchy_group_id = input;
         self
+    }
+    /// <p>The identifier of the hierarchy group for the user.</p>
+    pub fn get_hierarchy_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hierarchy_group_id
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -260,6 +298,14 @@ impl UserBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`User`](crate::types::User).
     pub fn build(self) -> crate::types::User {

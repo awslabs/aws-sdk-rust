@@ -70,6 +70,12 @@ impl TrafficConfigBuilder {
         self.single_weight_config = input;
         self
     }
+    /// <p>Contains the percentage of traffic to send to the staging distribution.</p>
+    pub fn get_single_weight_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContinuousDeploymentSingleWeightConfig> {
+        &self.single_weight_config
+    }
     /// <p>Determines which HTTP requests are sent to the staging distribution.</p>
     pub fn single_header_config(
         mut self,
@@ -86,6 +92,12 @@ impl TrafficConfigBuilder {
         self.single_header_config = input;
         self
     }
+    /// <p>Determines which HTTP requests are sent to the staging distribution.</p>
+    pub fn get_single_header_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContinuousDeploymentSingleHeaderConfig> {
+        &self.single_header_config
+    }
     /// <p>The type of traffic configuration.</p>
     pub fn r#type(mut self, input: crate::types::ContinuousDeploymentPolicyType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -98,6 +110,10 @@ impl TrafficConfigBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of traffic configuration.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ContinuousDeploymentPolicyType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`TrafficConfig`](crate::types::TrafficConfig).
     pub fn build(self) -> crate::types::TrafficConfig {

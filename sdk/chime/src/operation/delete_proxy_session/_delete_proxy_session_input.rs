@@ -54,6 +54,10 @@ impl DeleteProxySessionInputBuilder {
         self.voice_connector_id = input;
         self
     }
+    /// <p>The Amazon Chime voice connector ID.</p>
+    pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_connector_id
+    }
     /// <p>The proxy session ID.</p>
     pub fn proxy_session_id(
         mut self,
@@ -69,6 +73,10 @@ impl DeleteProxySessionInputBuilder {
     ) -> Self {
         self.proxy_session_id = input;
         self
+    }
+    /// <p>The proxy session ID.</p>
+    pub fn get_proxy_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.proxy_session_id
     }
     /// Consumes the builder and constructs a [`DeleteProxySessionInput`](crate::operation::delete_proxy_session::DeleteProxySessionInput).
     pub fn build(

@@ -55,6 +55,10 @@ impl PutExternalEvaluationInputBuilder {
         self.config_rule_name = input;
         self
     }
+    /// <p>The name of the Config rule.</p>
+    pub fn get_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.config_rule_name
+    }
     /// <p>An <code>ExternalEvaluation</code> object that provides details about compliance.</p>
     pub fn external_evaluation(mut self, input: crate::types::ExternalEvaluation) -> Self {
         self.external_evaluation = ::std::option::Option::Some(input);
@@ -67,6 +71,12 @@ impl PutExternalEvaluationInputBuilder {
     ) -> Self {
         self.external_evaluation = input;
         self
+    }
+    /// <p>An <code>ExternalEvaluation</code> object that provides details about compliance.</p>
+    pub fn get_external_evaluation(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExternalEvaluation> {
+        &self.external_evaluation
     }
     /// Consumes the builder and constructs a [`PutExternalEvaluationInput`](crate::operation::put_external_evaluation::PutExternalEvaluationInput).
     pub fn build(

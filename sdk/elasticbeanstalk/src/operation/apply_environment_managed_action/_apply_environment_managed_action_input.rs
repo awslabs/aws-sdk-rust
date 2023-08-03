@@ -62,6 +62,10 @@ impl ApplyEnvironmentManagedActionInputBuilder {
         self.environment_name = input;
         self
     }
+    /// <p>The name of the target environment.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
+    }
     /// <p>The environment ID of the target environment.</p>
     pub fn environment_id(
         mut self,
@@ -78,6 +82,10 @@ impl ApplyEnvironmentManagedActionInputBuilder {
         self.environment_id = input;
         self
     }
+    /// <p>The environment ID of the target environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
+    }
     /// <p>The action ID of the scheduled managed action to execute.</p>
     pub fn action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_id = ::std::option::Option::Some(input.into());
@@ -87,6 +95,10 @@ impl ApplyEnvironmentManagedActionInputBuilder {
     pub fn set_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action_id = input;
         self
+    }
+    /// <p>The action ID of the scheduled managed action to execute.</p>
+    pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_id
     }
     /// Consumes the builder and constructs a [`ApplyEnvironmentManagedActionInput`](crate::operation::apply_environment_managed_action::ApplyEnvironmentManagedActionInput).
     pub fn build(

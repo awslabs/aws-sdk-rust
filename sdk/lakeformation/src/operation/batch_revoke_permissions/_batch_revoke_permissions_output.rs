@@ -59,6 +59,12 @@ impl BatchRevokePermissionsOutputBuilder {
         self.failures = input;
         self
     }
+    /// <p>A list of failures to revoke permissions to the resources.</p>
+    pub fn get_failures(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPermissionsFailureEntry>> {
+        &self.failures
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

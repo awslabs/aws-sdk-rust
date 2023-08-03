@@ -80,6 +80,10 @@ impl DashboardVersionSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The time that this dashboard version was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
@@ -93,6 +97,10 @@ impl DashboardVersionSummaryBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The time that this dashboard version was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>Version number.</p>
     pub fn version_number(mut self, input: i64) -> Self {
         self.version_number = ::std::option::Option::Some(input);
@@ -102,6 +110,10 @@ impl DashboardVersionSummaryBuilder {
     pub fn set_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.version_number = input;
         self
+    }
+    /// <p>Version number.</p>
+    pub fn get_version_number(&self) -> &::std::option::Option<i64> {
+        &self.version_number
     }
     /// <p>The HTTP status of the request.</p>
     pub fn status(mut self, input: crate::types::ResourceStatus) -> Self {
@@ -115,6 +127,10 @@ impl DashboardVersionSummaryBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ResourceStatus> {
+        &self.status
     }
     /// <p>Source entity ARN.</p>
     pub fn source_entity_arn(
@@ -132,6 +148,10 @@ impl DashboardVersionSummaryBuilder {
         self.source_entity_arn = input;
         self
     }
+    /// <p>Source entity ARN.</p>
+    pub fn get_source_entity_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_entity_arn
+    }
     /// <p>Description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -141,6 +161,10 @@ impl DashboardVersionSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`DashboardVersionSummary`](crate::types::DashboardVersionSummary).
     pub fn build(self) -> crate::types::DashboardVersionSummary {

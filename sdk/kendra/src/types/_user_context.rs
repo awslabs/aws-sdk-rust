@@ -72,6 +72,10 @@ impl UserContextBuilder {
         self.token = input;
         self
     }
+    /// <p>The user context token for filtering search results for a user. It must be a JWT or a JSON token.</p>
+    pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token
+    }
     /// <p>The identifier of the user you want to filter search results based on their access to documents.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl UserContextBuilder {
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
+    }
+    /// <p>The identifier of the user you want to filter search results based on their access to documents.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     /// Appends an item to `groups`.
     ///
@@ -101,6 +109,10 @@ impl UserContextBuilder {
         self.groups = input;
         self
     }
+    /// <p>The list of groups you want to filter search results based on the groups' access to documents.</p>
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.groups
+    }
     /// Appends an item to `data_source_groups`.
     ///
     /// To override the contents of this collection use [`set_data_source_groups`](Self::set_data_source_groups).
@@ -119,6 +131,12 @@ impl UserContextBuilder {
     ) -> Self {
         self.data_source_groups = input;
         self
+    }
+    /// <p>The list of data source groups you want to filter search results based on groups' access to documents in that data source.</p>
+    pub fn get_data_source_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceGroup>> {
+        &self.data_source_groups
     }
     /// Consumes the builder and constructs a [`UserContext`](crate::types::UserContext).
     pub fn build(self) -> crate::types::UserContext {

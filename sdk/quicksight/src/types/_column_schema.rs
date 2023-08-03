@@ -56,6 +56,10 @@ impl ColumnSchemaBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the column schema.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The data type of the column schema.</p>
     pub fn data_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_type = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl ColumnSchemaBuilder {
     pub fn set_data_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_type = input;
         self
+    }
+    /// <p>The data type of the column schema.</p>
+    pub fn get_data_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_type
     }
     /// <p>The geographic role of the column schema.</p>
     pub fn geographic_role(
@@ -81,6 +89,10 @@ impl ColumnSchemaBuilder {
     ) -> Self {
         self.geographic_role = input;
         self
+    }
+    /// <p>The geographic role of the column schema.</p>
+    pub fn get_geographic_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.geographic_role
     }
     /// Consumes the builder and constructs a [`ColumnSchema`](crate::types::ColumnSchema).
     pub fn build(self) -> crate::types::ColumnSchema {

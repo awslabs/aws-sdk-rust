@@ -49,6 +49,10 @@ impl MessagesBuilder {
         self.errors = input;
         self
     }
+    /// A list of errors that might have been generated from processes on this flow.
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.errors
+    }
     /// Consumes the builder and constructs a [`Messages`](crate::types::Messages).
     pub fn build(self) -> crate::types::Messages {
         crate::types::Messages {

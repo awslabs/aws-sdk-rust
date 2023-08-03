@@ -37,6 +37,13 @@ impl UnlabelParameterVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UnlabelParameterVersion as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::unlabel_parameter_version::builders::UnlabelParameterVersionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl UnlabelParameterVersionFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the parameter from which you want to delete one or more labels.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The specific version of the parameter which you want to delete one or more labels from. If it isn't present, the call will fail.</p>
     pub fn parameter_version(mut self, input: i64) -> Self {
         self.inner = self.inner.parameter_version(input);
@@ -136,6 +147,10 @@ impl UnlabelParameterVersionFluentBuilder {
     pub fn set_parameter_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_parameter_version(input);
         self
+    }
+    /// <p>The specific version of the parameter which you want to delete one or more labels from. If it isn't present, the call will fail.</p>
+    pub fn get_parameter_version(&self) -> &::std::option::Option<i64> {
+        self.inner.get_parameter_version()
     }
     /// Appends an item to `Labels`.
     ///
@@ -153,5 +168,9 @@ impl UnlabelParameterVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_labels(input);
         self
+    }
+    /// <p>One or more labels to delete from the specified parameter version.</p>
+    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_labels()
     }
 }

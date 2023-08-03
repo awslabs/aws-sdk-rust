@@ -36,6 +36,13 @@ impl DeleteConnectorProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteConnectorProfile as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_connector_profile::builders::DeleteConnectorProfileInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl DeleteConnectorProfileFluentBuilder {
         self.inner = self.inner.set_connector_profile_name(input);
         self
     }
+    /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your account. </p>
+    pub fn get_connector_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connector_profile_name()
+    }
     /// <p> Indicates whether Amazon AppFlow should delete the profile, even if it is currently in use in one or more flows. </p>
     pub fn force_delete(mut self, input: bool) -> Self {
         self.inner = self.inner.force_delete(input);
@@ -141,5 +152,9 @@ impl DeleteConnectorProfileFluentBuilder {
     pub fn set_force_delete(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force_delete(input);
         self
+    }
+    /// <p> Indicates whether Amazon AppFlow should delete the profile, even if it is currently in use in one or more flows. </p>
+    pub fn get_force_delete(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force_delete()
     }
 }

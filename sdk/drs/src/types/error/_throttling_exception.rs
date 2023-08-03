@@ -91,6 +91,10 @@ impl ThrottlingExceptionBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>Service code.</p>
     pub fn service_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_code = ::std::option::Option::Some(input.into());
@@ -101,6 +105,10 @@ impl ThrottlingExceptionBuilder {
         self.service_code = input;
         self
     }
+    /// <p>Service code.</p>
+    pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_code
+    }
     /// <p>Quota code.</p>
     pub fn quota_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quota_code = ::std::option::Option::Some(input.into());
@@ -110,6 +118,10 @@ impl ThrottlingExceptionBuilder {
     pub fn set_quota_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.quota_code = input;
         self
+    }
+    /// <p>Quota code.</p>
+    pub fn get_quota_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quota_code
     }
     /// <p>The number of seconds after which the request should be safe to retry.</p>
     pub fn retry_after_seconds(
@@ -126,6 +138,10 @@ impl ThrottlingExceptionBuilder {
     ) -> Self {
         self.retry_after_seconds = input;
         self
+    }
+    /// <p>The number of seconds after which the request should be safe to retry.</p>
+    pub fn get_retry_after_seconds(&self) -> &::std::option::Option<::std::string::String> {
+        &self.retry_after_seconds
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

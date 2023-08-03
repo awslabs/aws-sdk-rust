@@ -50,6 +50,10 @@ impl PutConfigRuleInputBuilder {
         self.config_rule = input;
         self
     }
+    /// <p>The rule that you want to add to your account.</p>
+    pub fn get_config_rule(&self) -> &::std::option::Option<crate::types::ConfigRule> {
+        &self.config_rule
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -68,6 +72,10 @@ impl PutConfigRuleInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>An array of tag object.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`PutConfigRuleInput`](crate::operation::put_config_rule::PutConfigRuleInput).
     pub fn build(

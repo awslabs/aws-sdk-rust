@@ -46,6 +46,10 @@ impl GetCodeSigningConfigInputBuilder {
         self.code_signing_config_arn = input;
         self
     }
+    /// <p>The The Amazon Resource Name (ARN) of the code signing configuration. </p>
+    pub fn get_code_signing_config_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code_signing_config_arn
+    }
     /// Consumes the builder and constructs a [`GetCodeSigningConfigInput`](crate::operation::get_code_signing_config::GetCodeSigningConfigInput).
     pub fn build(
         self,

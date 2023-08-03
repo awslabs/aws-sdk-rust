@@ -37,6 +37,13 @@ impl DescribeChangeSetHooksFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeChangeSetHooks as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_change_set_hooks::builders::DescribeChangeSetHooksInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl DescribeChangeSetHooksFluentBuilder {
         self.inner = self.inner.set_change_set_name(input);
         self
     }
+    /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to describe.</p>
+    pub fn get_change_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_change_set_name()
+    }
     /// <p>If you specified the name of a change set, specify the stack name or stack ID (ARN) of the change set you want to describe.</p>
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_name(input.into());
@@ -143,6 +154,10 @@ impl DescribeChangeSetHooksFluentBuilder {
         self.inner = self.inner.set_stack_name(input);
         self
     }
+    /// <p>If you specified the name of a change set, specify the stack name or stack ID (ARN) of the change set you want to describe.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_name()
+    }
     /// <p>A string, provided by the <code>DescribeChangeSetHooks</code> response output, that identifies the next page of information that you want to retrieve.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -152,6 +167,10 @@ impl DescribeChangeSetHooksFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A string, provided by the <code>DescribeChangeSetHooks</code> response output, that identifies the next page of information that you want to retrieve.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>If specified, lists only the hooks related to the specified <code>LogicalResourceId</code>.</p>
     pub fn logical_resource_id(
@@ -168,5 +187,9 @@ impl DescribeChangeSetHooksFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_logical_resource_id(input);
         self
+    }
+    /// <p>If specified, lists only the hooks related to the specified <code>LogicalResourceId</code>.</p>
+    pub fn get_logical_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_logical_resource_id()
     }
 }

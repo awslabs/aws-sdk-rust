@@ -110,6 +110,10 @@ impl TopBottomMoversComputationBuilder {
         self.computation_id = input;
         self
     }
+    /// <p>The ID for a computation.</p>
+    pub fn get_computation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.computation_id
+    }
     /// <p>The name of a computation.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -120,6 +124,10 @@ impl TopBottomMoversComputationBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of a computation.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The time field that is used in a computation.</p>
     pub fn time(mut self, input: crate::types::DimensionField) -> Self {
         self.time = ::std::option::Option::Some(input);
@@ -129,6 +137,10 @@ impl TopBottomMoversComputationBuilder {
     pub fn set_time(mut self, input: ::std::option::Option<crate::types::DimensionField>) -> Self {
         self.time = input;
         self
+    }
+    /// <p>The time field that is used in a computation.</p>
+    pub fn get_time(&self) -> &::std::option::Option<crate::types::DimensionField> {
+        &self.time
     }
     /// <p>The category field that is used in a computation.</p>
     pub fn category(mut self, input: crate::types::DimensionField) -> Self {
@@ -143,6 +155,10 @@ impl TopBottomMoversComputationBuilder {
         self.category = input;
         self
     }
+    /// <p>The category field that is used in a computation.</p>
+    pub fn get_category(&self) -> &::std::option::Option<crate::types::DimensionField> {
+        &self.category
+    }
     /// <p>The value field that is used in a computation.</p>
     pub fn value(mut self, input: crate::types::MeasureField) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -153,6 +169,10 @@ impl TopBottomMoversComputationBuilder {
         self.value = input;
         self
     }
+    /// <p>The value field that is used in a computation.</p>
+    pub fn get_value(&self) -> &::std::option::Option<crate::types::MeasureField> {
+        &self.value
+    }
     /// <p>The mover size setup of the top and bottom movers computation.</p>
     pub fn mover_size(mut self, input: i32) -> Self {
         self.mover_size = ::std::option::Option::Some(input);
@@ -162,6 +182,10 @@ impl TopBottomMoversComputationBuilder {
     pub fn set_mover_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.mover_size = input;
         self
+    }
+    /// <p>The mover size setup of the top and bottom movers computation.</p>
+    pub fn get_mover_size(&self) -> &::std::option::Option<i32> {
+        &self.mover_size
     }
     /// <p>The sort order setup of the top and bottom movers computation.</p>
     pub fn sort_order(mut self, input: crate::types::TopBottomSortOrder) -> Self {
@@ -175,6 +199,10 @@ impl TopBottomMoversComputationBuilder {
     ) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p>The sort order setup of the top and bottom movers computation.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::TopBottomSortOrder> {
+        &self.sort_order
     }
     /// <p>The computation type. Choose from the following options:</p>
     /// <ul>
@@ -196,6 +224,14 @@ impl TopBottomMoversComputationBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The computation type. Choose from the following options:</p>
+    /// <ul>
+    /// <li> <p>TOP: Top movers computation.</p> </li>
+    /// <li> <p>BOTTOM: Bottom movers computation.</p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::TopBottomComputationType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`TopBottomMoversComputation`](crate::types::TopBottomMoversComputation).
     pub fn build(self) -> crate::types::TopBottomMoversComputation {

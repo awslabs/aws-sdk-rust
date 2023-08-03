@@ -36,6 +36,10 @@ impl PutFindingsPublicationConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutFindingsPublicationConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_findings_publication_configuration::builders::PutFindingsPublicationConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl PutFindingsPublicationConfigurationFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>The configuration settings that determine which findings to publish to Security Hub.</p>
     pub fn security_hub_configuration(
         mut self,
@@ -115,5 +123,11 @@ impl PutFindingsPublicationConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_security_hub_configuration(input);
         self
+    }
+    /// <p>The configuration settings that determine which findings to publish to Security Hub.</p>
+    pub fn get_security_hub_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SecurityHubConfiguration> {
+        self.inner.get_security_hub_configuration()
     }
 }

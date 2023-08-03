@@ -53,6 +53,12 @@ impl SelfManageResourcesBuilder {
         self.target_destination = input;
         self
     }
+    /// <p> Self-managed resources target destination. </p>
+    pub fn get_target_destination(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SelfManageTargetDestination>> {
+        &self.target_destination
+    }
     /// Consumes the builder and constructs a [`SelfManageResources`](crate::types::SelfManageResources).
     pub fn build(self) -> crate::types::SelfManageResources {
         crate::types::SelfManageResources {

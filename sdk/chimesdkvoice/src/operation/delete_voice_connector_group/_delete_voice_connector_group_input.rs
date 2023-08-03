@@ -45,6 +45,10 @@ impl DeleteVoiceConnectorGroupInputBuilder {
         self.voice_connector_group_id = input;
         self
     }
+    /// <p>The Voice Connector Group ID.</p>
+    pub fn get_voice_connector_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_connector_group_id
+    }
     /// Consumes the builder and constructs a [`DeleteVoiceConnectorGroupInput`](crate::operation::delete_voice_connector_group::DeleteVoiceConnectorGroupInput).
     pub fn build(
         self,

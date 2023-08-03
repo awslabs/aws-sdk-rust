@@ -54,6 +54,10 @@ impl ListReadSetsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A pagination token that's included if more results are available.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `read_sets`.
     ///
     /// To override the contents of this collection use [`set_read_sets`](Self::set_read_sets).
@@ -72,6 +76,12 @@ impl ListReadSetsOutputBuilder {
     ) -> Self {
         self.read_sets = input;
         self
+    }
+    /// <p>A list of read sets.</p>
+    pub fn get_read_sets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReadSetListItem>> {
+        &self.read_sets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

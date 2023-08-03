@@ -50,6 +50,10 @@ impl DescribeMultiplexProgramInputBuilder {
         self.multiplex_id = input;
         self
     }
+    /// The ID of the multiplex that the program belongs to.
+    pub fn get_multiplex_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.multiplex_id
+    }
     /// The name of the program.
     pub fn program_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.program_name = ::std::option::Option::Some(input.into());
@@ -59,6 +63,10 @@ impl DescribeMultiplexProgramInputBuilder {
     pub fn set_program_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.program_name = input;
         self
+    }
+    /// The name of the program.
+    pub fn get_program_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.program_name
     }
     /// Consumes the builder and constructs a [`DescribeMultiplexProgramInput`](crate::operation::describe_multiplex_program::DescribeMultiplexProgramInput).
     pub fn build(

@@ -36,6 +36,13 @@ impl ListProfilePermissionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListProfilePermissions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_profile_permissions::builders::ListProfilePermissionsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl ListProfilePermissionsFluentBuilder {
         self.inner = self.inner.set_profile_name(input);
         self
     }
+    /// <p>Name of the signing profile containing the cross-account permissions.</p>
+    pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_profile_name()
+    }
     /// <p>String for specifying the next set of paginated results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -135,5 +146,9 @@ impl ListProfilePermissionsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>String for specifying the next set of paginated results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

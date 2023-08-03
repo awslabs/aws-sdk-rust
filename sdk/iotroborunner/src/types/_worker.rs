@@ -128,6 +128,10 @@ impl WorkerBuilder {
         self.arn = input;
         self
     }
+    /// Full ARN of the worker.
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Filters access by the workers identifier
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -138,6 +142,10 @@ impl WorkerBuilder {
         self.id = input;
         self
     }
+    /// Filters access by the workers identifier
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Full ARN of the worker fleet.
     pub fn fleet(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet = ::std::option::Option::Some(input.into());
@@ -147,6 +155,10 @@ impl WorkerBuilder {
     pub fn set_fleet(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet = input;
         self
+    }
+    /// Full ARN of the worker fleet.
+    pub fn get_fleet(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet
     }
     /// Timestamp at which the resource was created.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -161,6 +173,10 @@ impl WorkerBuilder {
         self.created_at = input;
         self
     }
+    /// Timestamp at which the resource was created.
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// Timestamp at which the resource was last updated.
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -174,6 +190,10 @@ impl WorkerBuilder {
         self.updated_at = input;
         self
     }
+    /// Timestamp at which the resource was last updated.
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
+    }
     /// Human friendly name of the resource.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -184,6 +204,10 @@ impl WorkerBuilder {
         self.name = input;
         self
     }
+    /// Human friendly name of the resource.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Site ARN.
     pub fn site(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.site = ::std::option::Option::Some(input.into());
@@ -193,6 +217,10 @@ impl WorkerBuilder {
     pub fn set_site(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.site = input;
         self
+    }
+    /// Site ARN.
+    pub fn get_site(&self) -> &::std::option::Option<::std::string::String> {
+        &self.site
     }
     /// JSON blob containing unstructured worker properties that are transient and may change during regular operation.
     pub fn additional_transient_properties(
@@ -210,6 +238,12 @@ impl WorkerBuilder {
         self.additional_transient_properties = input;
         self
     }
+    /// JSON blob containing unstructured worker properties that are transient and may change during regular operation.
+    pub fn get_additional_transient_properties(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.additional_transient_properties
+    }
     /// JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
     pub fn additional_fixed_properties(
         mut self,
@@ -226,6 +260,10 @@ impl WorkerBuilder {
         self.additional_fixed_properties = input;
         self
     }
+    /// JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
+    pub fn get_additional_fixed_properties(&self) -> &::std::option::Option<::std::string::String> {
+        &self.additional_fixed_properties
+    }
     /// Properties of the worker that are provided by the vendor FMS.
     pub fn vendor_properties(mut self, input: crate::types::VendorProperties) -> Self {
         self.vendor_properties = ::std::option::Option::Some(input);
@@ -238,6 +276,10 @@ impl WorkerBuilder {
     ) -> Self {
         self.vendor_properties = input;
         self
+    }
+    /// Properties of the worker that are provided by the vendor FMS.
+    pub fn get_vendor_properties(&self) -> &::std::option::Option<crate::types::VendorProperties> {
+        &self.vendor_properties
     }
     /// Supported coordinates for worker position.
     pub fn position(mut self, input: crate::types::PositionCoordinates) -> Self {
@@ -252,6 +294,10 @@ impl WorkerBuilder {
         self.position = input;
         self
     }
+    /// Supported coordinates for worker position.
+    pub fn get_position(&self) -> &::std::option::Option<crate::types::PositionCoordinates> {
+        &self.position
+    }
     /// Worker orientation measured in units clockwise from north.
     pub fn orientation(mut self, input: crate::types::Orientation) -> Self {
         self.orientation = ::std::option::Option::Some(input);
@@ -264,6 +310,10 @@ impl WorkerBuilder {
     ) -> Self {
         self.orientation = input;
         self
+    }
+    /// Worker orientation measured in units clockwise from north.
+    pub fn get_orientation(&self) -> &::std::option::Option<crate::types::Orientation> {
+        &self.orientation
     }
     /// Consumes the builder and constructs a [`Worker`](crate::types::Worker).
     pub fn build(self) -> crate::types::Worker {

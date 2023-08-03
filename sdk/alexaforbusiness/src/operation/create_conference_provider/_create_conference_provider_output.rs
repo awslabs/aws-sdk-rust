@@ -54,6 +54,10 @@ impl CreateConferenceProviderOutputBuilder {
         self.conference_provider_arn = input;
         self
     }
+    /// <p>The ARN of the newly-created conference provider.</p>
+    pub fn get_conference_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.conference_provider_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

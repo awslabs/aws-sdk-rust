@@ -56,6 +56,10 @@ impl EnvironmentVariableBuilder {
         self.key = input;
         self
     }
+    /// <p>(Required) The environment variable's name, which can consist of up to 64 characters and must be specified. The name can contain upper- and lowercase letters, numbers, and underscores (_), but it must start with a letter or underscore.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>(Optional) The environment variable's value, which can be left empty. If you specify a value, it can contain up to 256 characters, which must all be printable.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl EnvironmentVariableBuilder {
         self.value = input;
         self
     }
+    /// <p>(Optional) The environment variable's value, which can be left empty. If you specify a value, it can contain up to 256 characters, which must all be printable.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// <p>(Optional) Whether the variable's value will be returned by the <code>DescribeApps</code> action. To conceal an environment variable's value, set <code>Secure</code> to <code>true</code>. <code>DescribeApps</code> then returns <code>*****FILTERED*****</code> instead of the actual value. The default value for <code>Secure</code> is <code>false</code>. </p>
     pub fn secure(mut self, input: bool) -> Self {
         self.secure = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl EnvironmentVariableBuilder {
     pub fn set_secure(mut self, input: ::std::option::Option<bool>) -> Self {
         self.secure = input;
         self
+    }
+    /// <p>(Optional) Whether the variable's value will be returned by the <code>DescribeApps</code> action. To conceal an environment variable's value, set <code>Secure</code> to <code>true</code>. <code>DescribeApps</code> then returns <code>*****FILTERED*****</code> instead of the actual value. The default value for <code>Secure</code> is <code>false</code>. </p>
+    pub fn get_secure(&self) -> &::std::option::Option<bool> {
+        &self.secure
     }
     /// Consumes the builder and constructs a [`EnvironmentVariable`](crate::types::EnvironmentVariable).
     pub fn build(self) -> crate::types::EnvironmentVariable {

@@ -40,6 +40,10 @@ impl PutAccountDedicatedIpWarmupAttributesInputBuilder {
         self.auto_warmup_enabled = input;
         self
     }
+    /// <p>Enables or disables the automatic warm-up feature for dedicated IP addresses that are associated with your Amazon SES account in the current Amazon Web Services Region. Set to <code>true</code> to enable the automatic warm-up feature, or set to <code>false</code> to disable it.</p>
+    pub fn get_auto_warmup_enabled(&self) -> &::std::option::Option<bool> {
+        &self.auto_warmup_enabled
+    }
     /// Consumes the builder and constructs a [`PutAccountDedicatedIpWarmupAttributesInput`](crate::operation::put_account_dedicated_ip_warmup_attributes::PutAccountDedicatedIpWarmupAttributesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_account_dedicated_ip_warmup_attributes::PutAccountDedicatedIpWarmupAttributesInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

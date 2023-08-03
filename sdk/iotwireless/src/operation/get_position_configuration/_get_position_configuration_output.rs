@@ -60,6 +60,10 @@ impl GetPositionConfigurationOutputBuilder {
         self.solvers = input;
         self
     }
+    /// <p>The wrapper for the solver configuration details object.</p>
+    pub fn get_solvers(&self) -> &::std::option::Option<crate::types::PositionSolverDetails> {
+        &self.solvers
+    }
     /// <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
     pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination = ::std::option::Option::Some(input.into());
@@ -69,6 +73,10 @@ impl GetPositionConfigurationOutputBuilder {
     pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination = input;
         self
+    }
+    /// <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

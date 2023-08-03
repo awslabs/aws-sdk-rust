@@ -41,6 +41,12 @@ impl GetSampledRequestsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetSampledRequests as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_sampled_requests::builders::GetSampledRequestsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +137,10 @@ impl GetSampledRequestsFluentBuilder {
         self.inner = self.inner.set_web_acl_id(input);
         self
     }
+    /// <p>The <code>WebACLId</code> of the <code>WebACL</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p>
+    pub fn get_web_acl_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_web_acl_id()
+    }
     /// <p> <code>RuleId</code> is one of three values:</p>
     /// <ul>
     /// <li> <p>The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p> </li>
@@ -149,6 +159,14 @@ impl GetSampledRequestsFluentBuilder {
         self.inner = self.inner.set_rule_id(input);
         self
     }
+    /// <p> <code>RuleId</code> is one of three values:</p>
+    /// <ul>
+    /// <li> <p>The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p> </li>
+    /// <li> <p> <code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that didn't match any of the rules in the specified <code>WebACL</code>.</p> </li>
+    /// </ul>
+    pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rule_id()
+    }
     /// <p>The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code> to return a sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
     pub fn time_window(mut self, input: crate::types::TimeWindow) -> Self {
         self.inner = self.inner.time_window(input);
@@ -162,6 +180,10 @@ impl GetSampledRequestsFluentBuilder {
         self.inner = self.inner.set_time_window(input);
         self
     }
+    /// <p>The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code> to return a sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
+    pub fn get_time_window(&self) -> &::std::option::Option<crate::types::TimeWindow> {
+        self.inner.get_time_window()
+    }
     /// <p>The number of requests that you want AWS WAF to return from among the first 5,000 requests that your AWS resource received during the time range. If your resource received fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about all of them. </p>
     pub fn max_items(mut self, input: i64) -> Self {
         self.inner = self.inner.max_items(input);
@@ -171,5 +193,9 @@ impl GetSampledRequestsFluentBuilder {
     pub fn set_max_items(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_max_items(input);
         self
+    }
+    /// <p>The number of requests that you want AWS WAF to return from among the first 5,000 requests that your AWS resource received during the time range. If your resource received fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about all of them. </p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i64> {
+        self.inner.get_max_items()
     }
 }

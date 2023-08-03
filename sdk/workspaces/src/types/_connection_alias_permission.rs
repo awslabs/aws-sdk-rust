@@ -54,6 +54,10 @@ impl ConnectionAliasPermissionBuilder {
         self.shared_account_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Web Services account that the connection alias is shared with.</p>
+    pub fn get_shared_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shared_account_id
+    }
     /// <p>Indicates whether the specified Amazon Web Services account is allowed to associate the connection alias with a directory.</p>
     pub fn allow_association(mut self, input: bool) -> Self {
         self.allow_association = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl ConnectionAliasPermissionBuilder {
     pub fn set_allow_association(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_association = input;
         self
+    }
+    /// <p>Indicates whether the specified Amazon Web Services account is allowed to associate the connection alias with a directory.</p>
+    pub fn get_allow_association(&self) -> &::std::option::Option<bool> {
+        &self.allow_association
     }
     /// Consumes the builder and constructs a [`ConnectionAliasPermission`](crate::types::ConnectionAliasPermission).
     pub fn build(self) -> crate::types::ConnectionAliasPermission {

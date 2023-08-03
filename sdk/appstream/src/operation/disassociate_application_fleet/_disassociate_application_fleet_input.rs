@@ -47,6 +47,10 @@ impl DisassociateApplicationFleetInputBuilder {
         self.fleet_name = input;
         self
     }
+    /// <p>The name of the fleet.</p>
+    pub fn get_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_name
+    }
     /// <p>The ARN of the application.</p>
     pub fn application_arn(
         mut self,
@@ -62,6 +66,10 @@ impl DisassociateApplicationFleetInputBuilder {
     ) -> Self {
         self.application_arn = input;
         self
+    }
+    /// <p>The ARN of the application.</p>
+    pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_arn
     }
     /// Consumes the builder and constructs a [`DisassociateApplicationFleetInput`](crate::operation::disassociate_application_fleet::DisassociateApplicationFleetInput).
     pub fn build(

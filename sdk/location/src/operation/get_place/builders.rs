@@ -43,6 +43,10 @@ impl GetPlaceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetPlace as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_place::builders::GetPlaceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +129,10 @@ impl GetPlaceFluentBuilder {
         self.inner = self.inner.set_index_name(input);
         self
     }
+    /// <p>The name of the place index resource that you want to use for the search.</p>
+    pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_index_name()
+    }
     /// <p>The identifier of the place to find.</p>
     pub fn place_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.place_id(input.into());
@@ -134,6 +142,10 @@ impl GetPlaceFluentBuilder {
     pub fn set_place_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_place_id(input);
         self
+    }
+    /// <p>The identifier of the place to find.</p>
+    pub fn get_place_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_place_id()
     }
     /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
     /// <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
@@ -153,6 +165,14 @@ impl GetPlaceFluentBuilder {
         self.inner = self.inner.set_language(input);
         self
     }
+    /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
+    /// <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
+    /// <p>For an example, we'll use the Greek language. You search for a location around Athens, Greece, with the <code>language</code> parameter set to <code>en</code>. The <code>city</code> in the results will most likely be returned as <code>Athens</code>.</p>
+    /// <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the <code>city</code> in the results will more likely be returned as <code>Αθήνα</code>.</p>
+    /// <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
+    pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_language()
+    }
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key(input.into());
@@ -162,5 +182,9 @@ impl GetPlaceFluentBuilder {
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key(input);
         self
+    }
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key()
     }
 }

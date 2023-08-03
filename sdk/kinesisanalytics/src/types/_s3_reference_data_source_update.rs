@@ -62,6 +62,10 @@ impl S3ReferenceDataSourceUpdateBuilder {
         self.bucket_arn_update = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the S3 bucket.</p>
+    pub fn get_bucket_arn_update(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_arn_update
+    }
     /// <p>Object key name.</p>
     pub fn file_key_update(
         mut self,
@@ -78,6 +82,10 @@ impl S3ReferenceDataSourceUpdateBuilder {
         self.file_key_update = input;
         self
     }
+    /// <p>Object key name.</p>
+    pub fn get_file_key_update(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_key_update
+    }
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object and populate the in-application.</p>
     pub fn reference_role_arn_update(
         mut self,
@@ -93,6 +101,10 @@ impl S3ReferenceDataSourceUpdateBuilder {
     ) -> Self {
         self.reference_role_arn_update = input;
         self
+    }
+    /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object and populate the in-application.</p>
+    pub fn get_reference_role_arn_update(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reference_role_arn_update
     }
     /// Consumes the builder and constructs a [`S3ReferenceDataSourceUpdate`](crate::types::S3ReferenceDataSourceUpdate).
     pub fn build(self) -> crate::types::S3ReferenceDataSourceUpdate {

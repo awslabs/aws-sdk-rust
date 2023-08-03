@@ -50,6 +50,10 @@ impl FileGroupSettingsBuilder {
         self.destination = input;
         self
     }
+    /// Use Destination to specify the S3 output location and the output filename base. Destination accepts format identifiers. If you do not specify the base filename in the URI, the service will use the filename of the input file. If your job has multiple inputs, the service uses the filename of the first input file.
+    pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination
+    }
     /// Settings associated with the destination. Will vary based on the type of destination
     pub fn destination_settings(mut self, input: crate::types::DestinationSettings) -> Self {
         self.destination_settings = ::std::option::Option::Some(input);
@@ -62,6 +66,12 @@ impl FileGroupSettingsBuilder {
     ) -> Self {
         self.destination_settings = input;
         self
+    }
+    /// Settings associated with the destination. Will vary based on the type of destination
+    pub fn get_destination_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::DestinationSettings> {
+        &self.destination_settings
     }
     /// Consumes the builder and constructs a [`FileGroupSettings`](crate::types::FileGroupSettings).
     pub fn build(self) -> crate::types::FileGroupSettings {

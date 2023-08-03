@@ -39,6 +39,12 @@ impl DisassociateLensesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateLenses as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::disassociate_lenses::builders::DisassociateLensesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl DisassociateLensesFluentBuilder {
         self.inner = self.inner.set_workload_id(input);
         self
     }
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workload_id()
+    }
     /// Appends an item to `LensAliases`.
     ///
     /// To override the contents of this collection use [`set_lens_aliases`](Self::set_lens_aliases).
@@ -147,5 +157,12 @@ impl DisassociateLensesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_lens_aliases(input);
         self
+    }
+    /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p>
+    /// <p>Identify a lens using its <code>LensSummary$LensAlias</code>.</p>
+    pub fn get_lens_aliases(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_lens_aliases()
     }
 }

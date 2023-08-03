@@ -36,6 +36,13 @@ impl ListTransactionEventsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListTransactionEvents as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_transaction_events::builders::ListTransactionEventsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +150,10 @@ impl ListTransactionEventsFluentBuilder {
         self.inner = self.inner.set_transaction_hash(input);
         self
     }
+    /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
+    pub fn get_transaction_hash(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_transaction_hash()
+    }
     /// <p>The blockchain network where the transaction events occurred.</p>
     pub fn network(mut self, input: crate::types::QueryNetwork) -> Self {
         self.inner = self.inner.network(input);
@@ -153,6 +164,10 @@ impl ListTransactionEventsFluentBuilder {
         self.inner = self.inner.set_network(input);
         self
     }
+    /// <p>The blockchain network where the transaction events occurred.</p>
+    pub fn get_network(&self) -> &::std::option::Option<crate::types::QueryNetwork> {
+        self.inner.get_network()
+    }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -162,6 +177,10 @@ impl ListTransactionEventsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The maximum number of transaction events to list.</p> <note>
     /// <p>Even if additional results can be retrieved, the request can return less results than <code>maxResults</code> or an empty array of results.</p>
@@ -178,5 +197,12 @@ impl ListTransactionEventsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of transaction events to list.</p> <note>
+    /// <p>Even if additional results can be retrieved, the request can return less results than <code>maxResults</code> or an empty array of results.</p>
+    /// <p>To retrieve the next set of results, make another request with the returned <code>nextToken</code> value. The value of <code>nextToken</code> is <code>null</code> when there are no more results to return</p>
+    /// </note>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

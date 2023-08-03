@@ -36,6 +36,10 @@ impl EnableDomainTransferLockFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the EnableDomainTransferLock as a reference.
+    pub fn as_input(&self) -> &crate::operation::enable_domain_transfer_lock::builders::EnableDomainTransferLockInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +129,9 @@ impl EnableDomainTransferLockFluentBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_name(input);
         self
+    }
+    /// <p>The name of the domain that you want to set the transfer lock for.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
     }
 }

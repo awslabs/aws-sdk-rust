@@ -61,6 +61,10 @@ impl UpdateListenerInputBuilder {
         self.service_identifier = input;
         self
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    pub fn get_service_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_identifier
+    }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
     pub fn listener_identifier(
         mut self,
@@ -77,6 +81,10 @@ impl UpdateListenerInputBuilder {
         self.listener_identifier = input;
         self
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
+    pub fn get_listener_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.listener_identifier
+    }
     /// <p>The action for the default rule.</p>
     pub fn default_action(mut self, input: crate::types::RuleAction) -> Self {
         self.default_action = ::std::option::Option::Some(input);
@@ -89,6 +97,10 @@ impl UpdateListenerInputBuilder {
     ) -> Self {
         self.default_action = input;
         self
+    }
+    /// <p>The action for the default rule.</p>
+    pub fn get_default_action(&self) -> &::std::option::Option<crate::types::RuleAction> {
+        &self.default_action
     }
     /// Consumes the builder and constructs a [`UpdateListenerInput`](crate::operation::update_listener::UpdateListenerInput).
     pub fn build(

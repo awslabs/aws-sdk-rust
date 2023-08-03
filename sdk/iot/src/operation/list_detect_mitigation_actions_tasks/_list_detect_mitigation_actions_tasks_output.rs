@@ -69,6 +69,13 @@ impl ListDetectMitigationActionsTasksOutputBuilder {
         self.tasks = input;
         self
     }
+    /// <p> The collection of ML Detect mitigation tasks that matched the filter criteria. </p>
+    pub fn get_tasks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DetectMitigationActionsTaskSummary>>
+    {
+        &self.tasks
+    }
     /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -78,6 +85,10 @@ impl ListDetectMitigationActionsTasksOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

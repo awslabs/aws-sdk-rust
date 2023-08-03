@@ -71,6 +71,10 @@ impl ListBillingGroupCostReportsInputBuilder {
         self.billing_period = input;
         self
     }
+    /// <p>The preferred billing period for your report. </p>
+    pub fn get_billing_period(&self) -> &::std::option::Option<::std::string::String> {
+        &self.billing_period
+    }
     /// <p>The maximum number of reports to retrieve. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl ListBillingGroupCostReportsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of reports to retrieve. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The pagination token that's used on subsequent calls to get reports. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -90,6 +98,10 @@ impl ListBillingGroupCostReportsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination token that's used on subsequent calls to get reports. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>A <code>ListBillingGroupCostReportsFilter</code> to specify billing groups to retrieve reports from. </p>
     pub fn filters(mut self, input: crate::types::ListBillingGroupCostReportsFilter) -> Self {
@@ -103,6 +115,12 @@ impl ListBillingGroupCostReportsInputBuilder {
     ) -> Self {
         self.filters = input;
         self
+    }
+    /// <p>A <code>ListBillingGroupCostReportsFilter</code> to specify billing groups to retrieve reports from. </p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<crate::types::ListBillingGroupCostReportsFilter> {
+        &self.filters
     }
     /// Consumes the builder and constructs a [`ListBillingGroupCostReportsInput`](crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsInput).
     pub fn build(

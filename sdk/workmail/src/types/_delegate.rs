@@ -48,6 +48,10 @@ impl DelegateBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier for the user or group associated as the resource's delegate.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The type of the delegate: user or group.</p>
     pub fn r#type(mut self, input: crate::types::MemberType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl DelegateBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::MemberType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the delegate: user or group.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::MemberType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`Delegate`](crate::types::Delegate).
     pub fn build(self) -> crate::types::Delegate {

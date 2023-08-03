@@ -37,6 +37,10 @@ impl SetResourceAccessForBucketFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SetResourceAccessForBucket as a reference.
+    pub fn as_input(&self) -> &crate::operation::set_resource_access_for_bucket::builders::SetResourceAccessForBucketInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl SetResourceAccessForBucketFluentBuilder {
         self.inner = self.inner.set_resource_name(input);
         self
     }
+    /// <p>The name of the Lightsail instance for which to set bucket access. The instance must be in a running or stopped state.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_name()
+    }
     /// <p>The name of the bucket for which to set access to another Lightsail resource.</p>
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bucket_name(input.into());
@@ -142,6 +150,10 @@ impl SetResourceAccessForBucketFluentBuilder {
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bucket_name(input);
         self
+    }
+    /// <p>The name of the bucket for which to set access to another Lightsail resource.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bucket_name()
     }
     /// <p>The access setting.</p>
     /// <p>The following access settings are available:</p>
@@ -165,5 +177,14 @@ impl SetResourceAccessForBucketFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_access(input);
         self
+    }
+    /// <p>The access setting.</p>
+    /// <p>The following access settings are available:</p>
+    /// <ul>
+    /// <li> <p> <code>allow</code> - Allows access to the bucket and its objects.</p> </li>
+    /// <li> <p> <code>deny</code> - Denies access to the bucket and its objects. Use this setting to remove access for a resource previously set to <code>allow</code>.</p> </li>
+    /// </ul>
+    pub fn get_access(&self) -> &::std::option::Option<crate::types::ResourceBucketAccess> {
+        self.inner.get_access()
     }
 }

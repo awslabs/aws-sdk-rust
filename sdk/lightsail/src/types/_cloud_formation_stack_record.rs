@@ -101,6 +101,10 @@ impl CloudFormationStackRecordBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the CloudFormation stack record. It starts with <code>CloudFormationStackRecord</code> followed by a GUID.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) of the CloudFormation stack record.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -110,6 +114,10 @@ impl CloudFormationStackRecordBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the CloudFormation stack record.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The date when the CloudFormation stack record was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -124,6 +132,10 @@ impl CloudFormationStackRecordBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The date when the CloudFormation stack record was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>A list of objects describing the Availability Zone and Amazon Web Services Region of the CloudFormation stack record.</p>
     pub fn location(mut self, input: crate::types::ResourceLocation) -> Self {
         self.location = ::std::option::Option::Some(input);
@@ -136,6 +148,10 @@ impl CloudFormationStackRecordBuilder {
     ) -> Self {
         self.location = input;
         self
+    }
+    /// <p>A list of objects describing the Availability Zone and Amazon Web Services Region of the CloudFormation stack record.</p>
+    pub fn get_location(&self) -> &::std::option::Option<crate::types::ResourceLocation> {
+        &self.location
     }
     /// <p>The Lightsail resource type (e.g., <code>CloudFormationStackRecord</code>).</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
@@ -150,6 +166,10 @@ impl CloudFormationStackRecordBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The Lightsail resource type (e.g., <code>CloudFormationStackRecord</code>).</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
+    }
     /// <p>The current state of the CloudFormation stack record.</p>
     pub fn state(mut self, input: crate::types::RecordState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -159,6 +179,10 @@ impl CloudFormationStackRecordBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::RecordState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The current state of the CloudFormation stack record.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::RecordState> {
+        &self.state
     }
     /// Appends an item to `source_info`.
     ///
@@ -181,6 +205,13 @@ impl CloudFormationStackRecordBuilder {
         self.source_info = input;
         self
     }
+    /// <p>A list of objects describing the source of the CloudFormation stack record.</p>
+    pub fn get_source_info(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudFormationStackRecordSourceInfo>>
+    {
+        &self.source_info
+    }
     /// <p>A list of objects describing the destination service, which is AWS CloudFormation, and the Amazon Resource Name (ARN) of the AWS CloudFormation stack.</p>
     pub fn destination_info(mut self, input: crate::types::DestinationInfo) -> Self {
         self.destination_info = ::std::option::Option::Some(input);
@@ -193,6 +224,10 @@ impl CloudFormationStackRecordBuilder {
     ) -> Self {
         self.destination_info = input;
         self
+    }
+    /// <p>A list of objects describing the destination service, which is AWS CloudFormation, and the Amazon Resource Name (ARN) of the AWS CloudFormation stack.</p>
+    pub fn get_destination_info(&self) -> &::std::option::Option<crate::types::DestinationInfo> {
+        &self.destination_info
     }
     /// Consumes the builder and constructs a [`CloudFormationStackRecord`](crate::types::CloudFormationStackRecord).
     pub fn build(self) -> crate::types::CloudFormationStackRecord {

@@ -46,6 +46,10 @@ impl DeleteNetworkProfileInputBuilder {
         self.network_profile_arn = input;
         self
     }
+    /// <p>The ARN of the network profile associated with a device.</p>
+    pub fn get_network_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_profile_arn
+    }
     /// Consumes the builder and constructs a [`DeleteNetworkProfileInput`](crate::operation::delete_network_profile::DeleteNetworkProfileInput).
     pub fn build(
         self,

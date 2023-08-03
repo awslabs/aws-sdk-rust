@@ -80,6 +80,10 @@ impl EndpointLocationBuilder {
         self.city = input;
         self
     }
+    /// <p>The name of the city where the endpoint is located.</p>
+    pub fn get_city(&self) -> &::std::option::Option<::std::string::String> {
+        &self.city
+    }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the endpoint is located. For example, US for the United States.</p>
     pub fn country(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.country = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl EndpointLocationBuilder {
     pub fn set_country(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.country = input;
         self
+    }
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the endpoint is located. For example, US for the United States.</p>
+    pub fn get_country(&self) -> &::std::option::Option<::std::string::String> {
+        &self.country
     }
     /// <p>The latitude coordinate of the endpoint location, rounded to one decimal place.</p>
     pub fn latitude(mut self, input: f64) -> Self {
@@ -100,6 +108,10 @@ impl EndpointLocationBuilder {
         self.latitude = input;
         self
     }
+    /// <p>The latitude coordinate of the endpoint location, rounded to one decimal place.</p>
+    pub fn get_latitude(&self) -> &::std::option::Option<f64> {
+        &self.latitude
+    }
     /// <p>The longitude coordinate of the endpoint location, rounded to one decimal place.</p>
     pub fn longitude(mut self, input: f64) -> Self {
         self.longitude = ::std::option::Option::Some(input);
@@ -109,6 +121,10 @@ impl EndpointLocationBuilder {
     pub fn set_longitude(mut self, input: ::std::option::Option<f64>) -> Self {
         self.longitude = input;
         self
+    }
+    /// <p>The longitude coordinate of the endpoint location, rounded to one decimal place.</p>
+    pub fn get_longitude(&self) -> &::std::option::Option<f64> {
+        &self.longitude
     }
     /// <p>The postal or ZIP code for the area where the endpoint is located.</p>
     pub fn postal_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -120,6 +136,10 @@ impl EndpointLocationBuilder {
         self.postal_code = input;
         self
     }
+    /// <p>The postal or ZIP code for the area where the endpoint is located.</p>
+    pub fn get_postal_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.postal_code
+    }
     /// <p>The name of the region where the endpoint is located. For locations in the United States, this value is the name of a state.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -129,6 +149,10 @@ impl EndpointLocationBuilder {
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
+    }
+    /// <p>The name of the region where the endpoint is located. For locations in the United States, this value is the name of a state.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// Consumes the builder and constructs a [`EndpointLocation`](crate::types::EndpointLocation).
     pub fn build(self) -> crate::types::EndpointLocation {

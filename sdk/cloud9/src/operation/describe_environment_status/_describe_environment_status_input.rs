@@ -45,6 +45,10 @@ impl DescribeEnvironmentStatusInputBuilder {
         self.environment_id = input;
         self
     }
+    /// <p>The ID of the environment to get status information about.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
+    }
     /// Consumes the builder and constructs a [`DescribeEnvironmentStatusInput`](crate::operation::describe_environment_status::DescribeEnvironmentStatusInput).
     pub fn build(
         self,

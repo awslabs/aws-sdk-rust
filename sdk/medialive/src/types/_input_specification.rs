@@ -56,6 +56,10 @@ impl InputSpecificationBuilder {
         self.codec = input;
         self
     }
+    /// Input codec
+    pub fn get_codec(&self) -> &::std::option::Option<crate::types::InputCodec> {
+        &self.codec
+    }
     /// Maximum input bitrate, categorized coarsely
     pub fn maximum_bitrate(mut self, input: crate::types::InputMaximumBitrate) -> Self {
         self.maximum_bitrate = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl InputSpecificationBuilder {
         self.maximum_bitrate = input;
         self
     }
+    /// Maximum input bitrate, categorized coarsely
+    pub fn get_maximum_bitrate(&self) -> &::std::option::Option<crate::types::InputMaximumBitrate> {
+        &self.maximum_bitrate
+    }
     /// Input resolution, categorized coarsely
     pub fn resolution(mut self, input: crate::types::InputResolution) -> Self {
         self.resolution = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl InputSpecificationBuilder {
     ) -> Self {
         self.resolution = input;
         self
+    }
+    /// Input resolution, categorized coarsely
+    pub fn get_resolution(&self) -> &::std::option::Option<crate::types::InputResolution> {
+        &self.resolution
     }
     /// Consumes the builder and constructs a [`InputSpecification`](crate::types::InputSpecification).
     pub fn build(self) -> crate::types::InputSpecification {

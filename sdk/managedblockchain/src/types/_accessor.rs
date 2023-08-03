@@ -102,6 +102,10 @@ impl AccessorBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier of the accessor.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The type of the accessor.</p> <note>
     /// <p>Currently, accessor type is restricted to <code>BILLING_TOKEN</code>.</p>
     /// </note>
@@ -115,6 +119,12 @@ impl AccessorBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::AccessorType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the accessor.</p> <note>
+    /// <p>Currently, accessor type is restricted to <code>BILLING_TOKEN</code>.</p>
+    /// </note>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::AccessorType> {
+        &self.r#type
     }
     /// <p>The billing token is a property of the accessor. Use this token to make Ethereum API calls to your Ethereum node. The billing token is used to track your accessor object for billing Ethereum API requests made to your Ethereum nodes.</p>
     pub fn billing_token(
@@ -132,6 +142,10 @@ impl AccessorBuilder {
         self.billing_token = input;
         self
     }
+    /// <p>The billing token is a property of the accessor. Use this token to make Ethereum API calls to your Ethereum node. The billing token is used to track your accessor object for billing Ethereum API requests made to your Ethereum nodes.</p>
+    pub fn get_billing_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.billing_token
+    }
     /// <p>The current status of the accessor.</p>
     pub fn status(mut self, input: crate::types::AccessorStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -144,6 +158,10 @@ impl AccessorBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the accessor.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AccessorStatus> {
+        &self.status
     }
     /// <p>The creation date and time of the accessor.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -158,6 +176,10 @@ impl AccessorBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>The creation date and time of the accessor.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
+    }
     /// <p>The Amazon Resource Name (ARN) of the accessor. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -167,6 +189,10 @@ impl AccessorBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the accessor. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -194,6 +220,15 @@ impl AccessorBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags assigned to the Accessor.</p>
+    /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`Accessor`](crate::types::Accessor).
     pub fn build(self) -> crate::types::Accessor {

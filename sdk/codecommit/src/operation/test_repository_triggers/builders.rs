@@ -36,6 +36,13 @@ impl TestRepositoryTriggersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the TestRepositoryTriggers as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::test_repository_triggers::builders::TestRepositoryTriggersInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl TestRepositoryTriggersFluentBuilder {
         self.inner = self.inner.set_repository_name(input);
         self
     }
+    /// <p>The name of the repository in which to test the triggers.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository_name()
+    }
     /// Appends an item to `triggers`.
     ///
     /// To override the contents of this collection use [`set_triggers`](Self::set_triggers).
@@ -148,5 +159,11 @@ impl TestRepositoryTriggersFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_triggers(input);
         self
+    }
+    /// <p>The list of triggers to test.</p>
+    pub fn get_triggers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryTrigger>> {
+        self.inner.get_triggers()
     }
 }

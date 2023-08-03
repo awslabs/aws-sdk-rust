@@ -37,6 +37,10 @@ impl UpdateGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_group::builders::UpdateGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl UpdateGroupFluentBuilder {
         self.inner = self.inner.set_group_name(input);
         self
     }
+    /// <p>The name of the group.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_name()
+    }
     /// <p>The user pool ID for the user pool.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
@@ -128,6 +136,10 @@ impl UpdateGroupFluentBuilder {
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_pool_id(input);
         self
+    }
+    /// <p>The user pool ID for the user pool.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_pool_id()
     }
     /// <p>A string containing the new description of the group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -139,6 +151,10 @@ impl UpdateGroupFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>A string containing the new description of the group.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The new role Amazon Resource Name (ARN) for the group. This is used for setting the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims in the token.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -149,6 +165,10 @@ impl UpdateGroupFluentBuilder {
         self.inner = self.inner.set_role_arn(input);
         self
     }
+    /// <p>The new role Amazon Resource Name (ARN) for the group. This is used for setting the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims in the token.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
+    }
     /// <p>The new precedence value for the group. For more information about this parameter, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html">CreateGroup</a>.</p>
     pub fn precedence(mut self, input: i32) -> Self {
         self.inner = self.inner.precedence(input);
@@ -158,5 +178,9 @@ impl UpdateGroupFluentBuilder {
     pub fn set_precedence(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_precedence(input);
         self
+    }
+    /// <p>The new precedence value for the group. For more information about this parameter, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html">CreateGroup</a>.</p>
+    pub fn get_precedence(&self) -> &::std::option::Option<i32> {
+        self.inner.get_precedence()
     }
 }

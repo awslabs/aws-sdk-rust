@@ -47,6 +47,10 @@ impl AssociateBudgetWithResourceInputBuilder {
         self.budget_name = input;
         self
     }
+    /// <p>The name of the budget you want to associate.</p>
+    pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.budget_name
+    }
     /// <p> The resource identifier. Either a portfolio-id or a product-id.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl AssociateBudgetWithResourceInputBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p> The resource identifier. Either a portfolio-id or a product-id.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// Consumes the builder and constructs a [`AssociateBudgetWithResourceInput`](crate::operation::associate_budget_with_resource::AssociateBudgetWithResourceInput).
     pub fn build(

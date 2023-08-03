@@ -106,6 +106,10 @@ impl ApprovalRuleBuilder {
         self.approval_rule_id = input;
         self
     }
+    /// <p>The system-generated ID of the approval rule.</p>
+    pub fn get_approval_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.approval_rule_id
+    }
     /// <p>The name of the approval rule.</p>
     pub fn approval_rule_name(
         mut self,
@@ -121,6 +125,10 @@ impl ApprovalRuleBuilder {
     ) -> Self {
         self.approval_rule_name = input;
         self
+    }
+    /// <p>The name of the approval rule.</p>
+    pub fn get_approval_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.approval_rule_name
     }
     /// <p>The content of the approval rule.</p>
     pub fn approval_rule_content(
@@ -138,6 +146,10 @@ impl ApprovalRuleBuilder {
         self.approval_rule_content = input;
         self
     }
+    /// <p>The content of the approval rule.</p>
+    pub fn get_approval_rule_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.approval_rule_content
+    }
     /// <p>The SHA-256 hash signature for the content of the approval rule.</p>
     pub fn rule_content_sha256(
         mut self,
@@ -154,6 +166,10 @@ impl ApprovalRuleBuilder {
         self.rule_content_sha256 = input;
         self
     }
+    /// <p>The SHA-256 hash signature for the content of the approval rule.</p>
+    pub fn get_rule_content_sha256(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_content_sha256
+    }
     /// <p>The date the approval rule was most recently changed, in timestamp format.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input);
@@ -167,6 +183,10 @@ impl ApprovalRuleBuilder {
         self.last_modified_date = input;
         self
     }
+    /// <p>The date the approval rule was most recently changed, in timestamp format.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_date
+    }
     /// <p>The date the approval rule was created, in timestamp format.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -179,6 +199,10 @@ impl ApprovalRuleBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>The date the approval rule was created, in timestamp format.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
     }
     /// <p>The Amazon Resource Name (ARN) of the user who made the most recent changes to the approval rule.</p>
     pub fn last_modified_user(
@@ -196,6 +220,10 @@ impl ApprovalRuleBuilder {
         self.last_modified_user = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the user who made the most recent changes to the approval rule.</p>
+    pub fn get_last_modified_user(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_user
+    }
     /// <p>The approval rule template used to create the rule.</p>
     pub fn origin_approval_rule_template(
         mut self,
@@ -211,6 +239,12 @@ impl ApprovalRuleBuilder {
     ) -> Self {
         self.origin_approval_rule_template = input;
         self
+    }
+    /// <p>The approval rule template used to create the rule.</p>
+    pub fn get_origin_approval_rule_template(
+        &self,
+    ) -> &::std::option::Option<crate::types::OriginApprovalRuleTemplate> {
+        &self.origin_approval_rule_template
     }
     /// Consumes the builder and constructs a [`ApprovalRule`](crate::types::ApprovalRule).
     pub fn build(self) -> crate::types::ApprovalRule {

@@ -38,6 +38,12 @@ impl ListPermissionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListPermissions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_permissions::builders::ListPermissionsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,6 +145,10 @@ impl ListPermissionsFluentBuilder {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog_id()
+    }
     /// <p>Specifies a principal to filter the permissions returned.</p>
     pub fn principal(mut self, input: crate::types::DataLakePrincipal) -> Self {
         self.inner = self.inner.principal(input);
@@ -151,6 +161,10 @@ impl ListPermissionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_principal(input);
         self
+    }
+    /// <p>Specifies a principal to filter the permissions returned.</p>
+    pub fn get_principal(&self) -> &::std::option::Option<crate::types::DataLakePrincipal> {
+        self.inner.get_principal()
     }
     /// <p>Specifies a resource type to filter the permissions returned.</p>
     pub fn resource_type(mut self, input: crate::types::DataLakeResourceType) -> Self {
@@ -165,6 +179,10 @@ impl ListPermissionsFluentBuilder {
         self.inner = self.inner.set_resource_type(input);
         self
     }
+    /// <p>Specifies a resource type to filter the permissions returned.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::DataLakeResourceType> {
+        self.inner.get_resource_type()
+    }
     /// <p>A resource where you will get a list of the principal permissions.</p>
     /// <p>This operation does not support getting privileges on a table with columns. Instead, call this operation on the table, and the operation returns the table and the table w columns.</p>
     pub fn resource(mut self, input: crate::types::Resource) -> Self {
@@ -177,6 +195,11 @@ impl ListPermissionsFluentBuilder {
         self.inner = self.inner.set_resource(input);
         self
     }
+    /// <p>A resource where you will get a list of the principal permissions.</p>
+    /// <p>This operation does not support getting privileges on a table with columns. Instead, call this operation on the table, and the operation returns the table and the table w columns.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<crate::types::Resource> {
+        self.inner.get_resource()
+    }
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -187,6 +210,10 @@ impl ListPermissionsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -196,6 +223,10 @@ impl ListPermissionsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>Indicates that related permissions should be included in the results.</p>
     pub fn include_related(
@@ -212,5 +243,9 @@ impl ListPermissionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_include_related(input);
         self
+    }
+    /// <p>Indicates that related permissions should be included in the results.</p>
+    pub fn get_include_related(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_include_related()
     }
 }

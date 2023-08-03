@@ -122,6 +122,10 @@ impl SimulationApplicationConfigBuilder {
         self.application = input;
         self
     }
+    /// <p>The application information for the simulation application.</p>
+    pub fn get_application(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application
+    }
     /// <p>The version of the simulation application.</p>
     pub fn application_version(
         mut self,
@@ -138,6 +142,10 @@ impl SimulationApplicationConfigBuilder {
         self.application_version = input;
         self
     }
+    /// <p>The version of the simulation application.</p>
+    pub fn get_application_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_version
+    }
     /// <p>The launch configuration for the simulation application.</p>
     pub fn launch_config(mut self, input: crate::types::LaunchConfig) -> Self {
         self.launch_config = ::std::option::Option::Some(input);
@@ -150,6 +158,10 @@ impl SimulationApplicationConfigBuilder {
     ) -> Self {
         self.launch_config = input;
         self
+    }
+    /// <p>The launch configuration for the simulation application.</p>
+    pub fn get_launch_config(&self) -> &::std::option::Option<crate::types::LaunchConfig> {
+        &self.launch_config
     }
     /// Appends an item to `upload_configurations`.
     ///
@@ -170,6 +182,12 @@ impl SimulationApplicationConfigBuilder {
         self.upload_configurations = input;
         self
     }
+    /// <p>Information about upload configurations for the simulation application.</p>
+    pub fn get_upload_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UploadConfiguration>> {
+        &self.upload_configurations
+    }
     /// Appends an item to `world_configs`.
     ///
     /// To override the contents of this collection use [`set_world_configs`](Self::set_world_configs).
@@ -188,6 +206,12 @@ impl SimulationApplicationConfigBuilder {
     ) -> Self {
         self.world_configs = input;
         self
+    }
+    /// <p>A list of world configurations.</p>
+    pub fn get_world_configs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorldConfig>> {
+        &self.world_configs
     }
     /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
     /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important>
@@ -214,6 +238,16 @@ impl SimulationApplicationConfigBuilder {
         self.use_default_upload_configurations = input;
         self
     }
+    /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
+    /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important>
+    /// <p>This API is no longer supported and will throw an error if used.</p>
+    /// </important>
+    #[deprecated(
+        note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
+    )]
+    pub fn get_use_default_upload_configurations(&self) -> &::std::option::Option<bool> {
+        &self.use_default_upload_configurations
+    }
     /// Appends an item to `tools`.
     ///
     /// To override the contents of this collection use [`set_tools`](Self::set_tools).
@@ -232,6 +266,10 @@ impl SimulationApplicationConfigBuilder {
     ) -> Self {
         self.tools = input;
         self
+    }
+    /// <p>Information about tools configured for the simulation application.</p>
+    pub fn get_tools(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tool>> {
+        &self.tools
     }
     /// <p>A Boolean indicating whether to use default simulation application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
@@ -252,6 +290,15 @@ impl SimulationApplicationConfigBuilder {
     pub fn set_use_default_tools(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_default_tools = input;
         self
+    }
+    /// <p>A Boolean indicating whether to use default simulation application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important>
+    /// <p>This API is no longer supported and will throw an error if used.</p>
+    /// </important>
+    #[deprecated(
+        note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
+    )]
+    pub fn get_use_default_tools(&self) -> &::std::option::Option<bool> {
+        &self.use_default_tools
     }
     /// Consumes the builder and constructs a [`SimulationApplicationConfig`](crate::types::SimulationApplicationConfig).
     pub fn build(self) -> crate::types::SimulationApplicationConfig {

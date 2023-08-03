@@ -64,6 +64,10 @@ impl StatisticSetBuilder {
         self.sample_count = input;
         self
     }
+    /// <p> <b>Internal only</b>. The number of samples used for the statistic set.</p>
+    pub fn get_sample_count(&self) -> &::std::option::Option<i32> {
+        &self.sample_count
+    }
     /// <p> <b>Internal only</b>. The sum of values for the sample set.</p>
     pub fn sum(mut self, input: f64) -> Self {
         self.sum = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl StatisticSetBuilder {
     pub fn set_sum(mut self, input: ::std::option::Option<f64>) -> Self {
         self.sum = input;
         self
+    }
+    /// <p> <b>Internal only</b>. The sum of values for the sample set.</p>
+    pub fn get_sum(&self) -> &::std::option::Option<f64> {
+        &self.sum
     }
     /// <p> <b>Internal only</b>. The minimum value of the sample set.</p>
     pub fn minimum(mut self, input: f64) -> Self {
@@ -84,6 +92,10 @@ impl StatisticSetBuilder {
         self.minimum = input;
         self
     }
+    /// <p> <b>Internal only</b>. The minimum value of the sample set.</p>
+    pub fn get_minimum(&self) -> &::std::option::Option<f64> {
+        &self.minimum
+    }
     /// <p> <b>Internal only</b>. The maximum value of the sample set.</p>
     pub fn maximum(mut self, input: f64) -> Self {
         self.maximum = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl StatisticSetBuilder {
     pub fn set_maximum(mut self, input: ::std::option::Option<f64>) -> Self {
         self.maximum = input;
         self
+    }
+    /// <p> <b>Internal only</b>. The maximum value of the sample set.</p>
+    pub fn get_maximum(&self) -> &::std::option::Option<f64> {
+        &self.maximum
     }
     /// Consumes the builder and constructs a [`StatisticSet`](crate::types::StatisticSet).
     pub fn build(self) -> crate::types::StatisticSet {

@@ -67,6 +67,12 @@ impl ConflictResolutionBuilder {
         self.replace_contents = input;
         self
     }
+    /// <p>Files to have content replaced as part of the merge conflict resolution.</p>
+    pub fn get_replace_contents(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplaceContentEntry>> {
+        &self.replace_contents
+    }
     /// Appends an item to `delete_files`.
     ///
     /// To override the contents of this collection use [`set_delete_files`](Self::set_delete_files).
@@ -86,6 +92,12 @@ impl ConflictResolutionBuilder {
         self.delete_files = input;
         self
     }
+    /// <p>Files to be deleted as part of the merge conflict resolution.</p>
+    pub fn get_delete_files(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteFileEntry>> {
+        &self.delete_files
+    }
     /// Appends an item to `set_file_modes`.
     ///
     /// To override the contents of this collection use [`set_set_file_modes`](Self::set_set_file_modes).
@@ -104,6 +116,12 @@ impl ConflictResolutionBuilder {
     ) -> Self {
         self.set_file_modes = input;
         self
+    }
+    /// <p>File modes that are set as part of the merge conflict resolution.</p>
+    pub fn get_set_file_modes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SetFileModeEntry>> {
+        &self.set_file_modes
     }
     /// Consumes the builder and constructs a [`ConflictResolution`](crate::types::ConflictResolution).
     pub fn build(self) -> crate::types::ConflictResolution {

@@ -51,6 +51,11 @@ impl TagUserInputBuilder {
         self.user_name = input;
         self
     }
+    /// <p>The name of the IAM user to which you want to add tags.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -69,6 +74,10 @@ impl TagUserInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The list of tags that you want to attach to the IAM user. Each tag consists of a key name and an associated value.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`TagUserInput`](crate::operation::tag_user::TagUserInput).
     pub fn build(

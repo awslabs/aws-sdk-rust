@@ -62,6 +62,12 @@ impl DatasetContentDeliveryDestinationBuilder {
         self.iot_events_destination_configuration = input;
         self
     }
+    /// <p>Configuration information for delivery of dataset contents to IoT Events.</p>
+    pub fn get_iot_events_destination_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::IotEventsDestinationConfiguration> {
+        &self.iot_events_destination_configuration
+    }
     /// <p>Configuration information for delivery of dataset contents to Amazon S3.</p>
     pub fn s3_destination_configuration(
         mut self,
@@ -77,6 +83,12 @@ impl DatasetContentDeliveryDestinationBuilder {
     ) -> Self {
         self.s3_destination_configuration = input;
         self
+    }
+    /// <p>Configuration information for delivery of dataset contents to Amazon S3.</p>
+    pub fn get_s3_destination_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3DestinationConfiguration> {
+        &self.s3_destination_configuration
     }
     /// Consumes the builder and constructs a [`DatasetContentDeliveryDestination`](crate::types::DatasetContentDeliveryDestination).
     pub fn build(self) -> crate::types::DatasetContentDeliveryDestination {

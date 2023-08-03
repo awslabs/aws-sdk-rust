@@ -88,6 +88,10 @@ impl TimeBasedForecastPropertiesBuilder {
         self.periods_forward = input;
         self
     }
+    /// <p>The periods forward setup of a forecast computation.</p>
+    pub fn get_periods_forward(&self) -> &::std::option::Option<i32> {
+        &self.periods_forward
+    }
     /// <p>The periods backward setup of a forecast computation.</p>
     pub fn periods_backward(mut self, input: i32) -> Self {
         self.periods_backward = ::std::option::Option::Some(input);
@@ -97,6 +101,10 @@ impl TimeBasedForecastPropertiesBuilder {
     pub fn set_periods_backward(mut self, input: ::std::option::Option<i32>) -> Self {
         self.periods_backward = input;
         self
+    }
+    /// <p>The periods backward setup of a forecast computation.</p>
+    pub fn get_periods_backward(&self) -> &::std::option::Option<i32> {
+        &self.periods_backward
     }
     /// <p>The upper boundary setup of a forecast computation.</p>
     pub fn upper_boundary(mut self, input: f64) -> Self {
@@ -108,6 +116,10 @@ impl TimeBasedForecastPropertiesBuilder {
         self.upper_boundary = input;
         self
     }
+    /// <p>The upper boundary setup of a forecast computation.</p>
+    pub fn get_upper_boundary(&self) -> &::std::option::Option<f64> {
+        &self.upper_boundary
+    }
     /// <p>The lower boundary setup of a forecast computation.</p>
     pub fn lower_boundary(mut self, input: f64) -> Self {
         self.lower_boundary = ::std::option::Option::Some(input);
@@ -118,6 +130,10 @@ impl TimeBasedForecastPropertiesBuilder {
         self.lower_boundary = input;
         self
     }
+    /// <p>The lower boundary setup of a forecast computation.</p>
+    pub fn get_lower_boundary(&self) -> &::std::option::Option<f64> {
+        &self.lower_boundary
+    }
     /// <p>The prediction interval setup of a forecast computation.</p>
     pub fn prediction_interval(mut self, input: i32) -> Self {
         self.prediction_interval = ::std::option::Option::Some(input);
@@ -127,6 +143,10 @@ impl TimeBasedForecastPropertiesBuilder {
     pub fn set_prediction_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.prediction_interval = input;
         self
+    }
+    /// <p>The prediction interval setup of a forecast computation.</p>
+    pub fn get_prediction_interval(&self) -> &::std::option::Option<i32> {
+        &self.prediction_interval
     }
     /// <p>The seasonality setup of a forecast computation. Choose one of the following options:</p>
     /// <ul>
@@ -145,6 +165,14 @@ impl TimeBasedForecastPropertiesBuilder {
     pub fn set_seasonality(mut self, input: ::std::option::Option<i32>) -> Self {
         self.seasonality = input;
         self
+    }
+    /// <p>The seasonality setup of a forecast computation. Choose one of the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>NULL</code>: The input is set to <code>NULL</code>.</p> </li>
+    /// <li> <p> <code>NON_NULL</code>: The input is set to a custom value.</p> </li>
+    /// </ul>
+    pub fn get_seasonality(&self) -> &::std::option::Option<i32> {
+        &self.seasonality
     }
     /// Consumes the builder and constructs a [`TimeBasedForecastProperties`](crate::types::TimeBasedForecastProperties).
     pub fn build(self) -> crate::types::TimeBasedForecastProperties {

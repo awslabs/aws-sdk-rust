@@ -88,6 +88,10 @@ impl TestResultBuilder {
         self.function_summary = input;
         self
     }
+    /// <p>Contains configuration information and metadata about the CloudFront function that was tested.</p>
+    pub fn get_function_summary(&self) -> &::std::option::Option<crate::types::FunctionSummary> {
+        &self.function_summary
+    }
     /// <p>The amount of time that the function took to run as a percentage of the maximum allowed time. For example, a compute utilization of 35 means that the function completed in 35% of the maximum allowed time.</p>
     pub fn compute_utilization(
         mut self,
@@ -103,6 +107,10 @@ impl TestResultBuilder {
     ) -> Self {
         self.compute_utilization = input;
         self
+    }
+    /// <p>The amount of time that the function took to run as a percentage of the maximum allowed time. For example, a compute utilization of 35 means that the function completed in 35% of the maximum allowed time.</p>
+    pub fn get_compute_utilization(&self) -> &::std::option::Option<::std::string::String> {
+        &self.compute_utilization
     }
     /// Appends an item to `function_execution_logs`.
     ///
@@ -126,6 +134,12 @@ impl TestResultBuilder {
         self.function_execution_logs = input;
         self
     }
+    /// <p>Contains the log lines that the function wrote (if any) when running the test.</p>
+    pub fn get_function_execution_logs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.function_execution_logs
+    }
     /// <p>If the result of testing the function was an error, this field contains the error message.</p>
     pub fn function_error_message(
         mut self,
@@ -142,6 +156,10 @@ impl TestResultBuilder {
         self.function_error_message = input;
         self
     }
+    /// <p>If the result of testing the function was an error, this field contains the error message.</p>
+    pub fn get_function_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_error_message
+    }
     /// <p>The event object returned by the function. For more information about the structure of the event object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/functions-event-structure.html">Event object structure</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn function_output(
         mut self,
@@ -157,6 +175,10 @@ impl TestResultBuilder {
     ) -> Self {
         self.function_output = input;
         self
+    }
+    /// <p>The event object returned by the function. For more information about the structure of the event object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/functions-event-structure.html">Event object structure</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn get_function_output(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_output
     }
     /// Consumes the builder and constructs a [`TestResult`](crate::types::TestResult).
     pub fn build(self) -> crate::types::TestResult {

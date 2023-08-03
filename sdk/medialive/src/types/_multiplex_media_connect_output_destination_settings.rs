@@ -47,6 +47,10 @@ impl MultiplexMediaConnectOutputDestinationSettingsBuilder {
         self.entitlement_arn = input;
         self
     }
+    /// The MediaConnect entitlement ARN available as a Flow source.
+    pub fn get_entitlement_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entitlement_arn
+    }
     /// Consumes the builder and constructs a [`MultiplexMediaConnectOutputDestinationSettings`](crate::types::MultiplexMediaConnectOutputDestinationSettings).
     pub fn build(self) -> crate::types::MultiplexMediaConnectOutputDestinationSettings {
         crate::types::MultiplexMediaConnectOutputDestinationSettings {

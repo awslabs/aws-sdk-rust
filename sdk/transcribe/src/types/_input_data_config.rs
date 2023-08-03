@@ -67,6 +67,11 @@ impl InputDataConfigBuilder {
         self.s3_uri = input;
         self
     }
+    /// <p>The Amazon S3 location (URI) of the text files you want to use to train your custom language model.</p>
+    /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-training-data/</code> </p>
+    pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_uri
+    }
     /// <p>The Amazon S3 location (URI) of the text files you want to use to tune your custom language model.</p>
     /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-tuning-data/</code> </p>
     pub fn tuning_data_s3_uri(
@@ -84,6 +89,11 @@ impl InputDataConfigBuilder {
     ) -> Self {
         self.tuning_data_s3_uri = input;
         self
+    }
+    /// <p>The Amazon S3 location (URI) of the text files you want to use to tune your custom language model.</p>
+    /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-tuning-data/</code> </p>
+    pub fn get_tuning_data_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tuning_data_s3_uri
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
     /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>.</p>
@@ -104,6 +114,12 @@ impl InputDataConfigBuilder {
     ) -> Self {
         self.data_access_role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
+    /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
+    pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_access_role_arn
     }
     /// Consumes the builder and constructs a [`InputDataConfig`](crate::types::InputDataConfig).
     pub fn build(self) -> crate::types::InputDataConfig {

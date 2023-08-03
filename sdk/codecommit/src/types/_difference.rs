@@ -59,6 +59,10 @@ impl DifferenceBuilder {
         self.before_blob = input;
         self
     }
+    /// <p>Information about a <code>beforeBlob</code> data type object, including the ID, the file mode permission code, and the path.</p>
+    pub fn get_before_blob(&self) -> &::std::option::Option<crate::types::BlobMetadata> {
+        &self.before_blob
+    }
     /// <p>Information about an <code>afterBlob</code> data type object, including the ID, the file mode permission code, and the path.</p>
     pub fn after_blob(mut self, input: crate::types::BlobMetadata) -> Self {
         self.after_blob = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl DifferenceBuilder {
         self.after_blob = input;
         self
     }
+    /// <p>Information about an <code>afterBlob</code> data type object, including the ID, the file mode permission code, and the path.</p>
+    pub fn get_after_blob(&self) -> &::std::option::Option<crate::types::BlobMetadata> {
+        &self.after_blob
+    }
     /// <p>Whether the change type of the difference is an addition (A), deletion (D), or modification (M).</p>
     pub fn change_type(mut self, input: crate::types::ChangeTypeEnum) -> Self {
         self.change_type = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl DifferenceBuilder {
     ) -> Self {
         self.change_type = input;
         self
+    }
+    /// <p>Whether the change type of the difference is an addition (A), deletion (D), or modification (M).</p>
+    pub fn get_change_type(&self) -> &::std::option::Option<crate::types::ChangeTypeEnum> {
+        &self.change_type
     }
     /// Consumes the builder and constructs a [`Difference`](crate::types::Difference).
     pub fn build(self) -> crate::types::Difference {

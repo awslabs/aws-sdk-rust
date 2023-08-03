@@ -118,6 +118,10 @@ impl ResourceDataSyncItemBuilder {
         self.sync_name = input;
         self
     }
+    /// <p>The name of the resource data sync.</p>
+    pub fn get_sync_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sync_name
+    }
     /// <p>The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>, then the resource data sync synchronizes data to an S3 bucket. If the <code>SyncType</code> is <code>SyncFromSource</code> then the resource data sync synchronizes data from Organizations or from multiple Amazon Web Services Regions.</p>
     pub fn sync_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sync_type = ::std::option::Option::Some(input.into());
@@ -127,6 +131,10 @@ impl ResourceDataSyncItemBuilder {
     pub fn set_sync_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sync_type = input;
         self
+    }
+    /// <p>The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>, then the resource data sync synchronizes data to an S3 bucket. If the <code>SyncType</code> is <code>SyncFromSource</code> then the resource data sync synchronizes data from Organizations or from multiple Amazon Web Services Regions.</p>
+    pub fn get_sync_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sync_type
     }
     /// <p>Information about the source where the data was synchronized. </p>
     pub fn sync_source(mut self, input: crate::types::ResourceDataSyncSourceWithState) -> Self {
@@ -141,6 +149,12 @@ impl ResourceDataSyncItemBuilder {
         self.sync_source = input;
         self
     }
+    /// <p>Information about the source where the data was synchronized. </p>
+    pub fn get_sync_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceDataSyncSourceWithState> {
+        &self.sync_source
+    }
     /// <p>Configuration information for the target S3 bucket.</p>
     pub fn s3_destination(mut self, input: crate::types::ResourceDataSyncS3Destination) -> Self {
         self.s3_destination = ::std::option::Option::Some(input);
@@ -153,6 +167,12 @@ impl ResourceDataSyncItemBuilder {
     ) -> Self {
         self.s3_destination = input;
         self
+    }
+    /// <p>Configuration information for the target S3 bucket.</p>
+    pub fn get_s3_destination(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceDataSyncS3Destination> {
+        &self.s3_destination
     }
     /// <p>The last time the configuration attempted to sync (UTC).</p>
     pub fn last_sync_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -167,6 +187,10 @@ impl ResourceDataSyncItemBuilder {
         self.last_sync_time = input;
         self
     }
+    /// <p>The last time the configuration attempted to sync (UTC).</p>
+    pub fn get_last_sync_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_sync_time
+    }
     /// <p>The last time the sync operations returned a status of <code>SUCCESSFUL</code> (UTC).</p>
     pub fn last_successful_sync_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_successful_sync_time = ::std::option::Option::Some(input);
@@ -179,6 +203,12 @@ impl ResourceDataSyncItemBuilder {
     ) -> Self {
         self.last_successful_sync_time = input;
         self
+    }
+    /// <p>The last time the sync operations returned a status of <code>SUCCESSFUL</code> (UTC).</p>
+    pub fn get_last_successful_sync_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_successful_sync_time
     }
     /// <p>The date and time the resource data sync was changed. </p>
     pub fn sync_last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -193,6 +223,12 @@ impl ResourceDataSyncItemBuilder {
         self.sync_last_modified_time = input;
         self
     }
+    /// <p>The date and time the resource data sync was changed. </p>
+    pub fn get_sync_last_modified_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.sync_last_modified_time
+    }
     /// <p>The status reported by the last sync.</p>
     pub fn last_status(mut self, input: crate::types::LastResourceDataSyncStatus) -> Self {
         self.last_status = ::std::option::Option::Some(input);
@@ -206,6 +242,12 @@ impl ResourceDataSyncItemBuilder {
         self.last_status = input;
         self
     }
+    /// <p>The status reported by the last sync.</p>
+    pub fn get_last_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::LastResourceDataSyncStatus> {
+        &self.last_status
+    }
     /// <p>The date and time the configuration was created (UTC).</p>
     pub fn sync_created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.sync_created_time = ::std::option::Option::Some(input);
@@ -218,6 +260,10 @@ impl ResourceDataSyncItemBuilder {
     ) -> Self {
         self.sync_created_time = input;
         self
+    }
+    /// <p>The date and time the configuration was created (UTC).</p>
+    pub fn get_sync_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.sync_created_time
     }
     /// <p>The status message details reported by the last sync.</p>
     pub fn last_sync_status_message(
@@ -234,6 +280,10 @@ impl ResourceDataSyncItemBuilder {
     ) -> Self {
         self.last_sync_status_message = input;
         self
+    }
+    /// <p>The status message details reported by the last sync.</p>
+    pub fn get_last_sync_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_sync_status_message
     }
     /// Consumes the builder and constructs a [`ResourceDataSyncItem`](crate::types::ResourceDataSyncItem).
     pub fn build(self) -> crate::types::ResourceDataSyncItem {

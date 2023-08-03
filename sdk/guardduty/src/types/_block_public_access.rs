@@ -64,6 +64,10 @@ impl BlockPublicAccessBuilder {
         self.ignore_public_acls = input;
         self
     }
+    /// <p>Indicates if S3 Block Public Access is set to <code>IgnorePublicAcls</code>.</p>
+    pub fn get_ignore_public_acls(&self) -> &::std::option::Option<bool> {
+        &self.ignore_public_acls
+    }
     /// <p>Indicates if S3 Block Public Access is set to <code>RestrictPublicBuckets</code>.</p>
     pub fn restrict_public_buckets(mut self, input: bool) -> Self {
         self.restrict_public_buckets = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl BlockPublicAccessBuilder {
     pub fn set_restrict_public_buckets(mut self, input: ::std::option::Option<bool>) -> Self {
         self.restrict_public_buckets = input;
         self
+    }
+    /// <p>Indicates if S3 Block Public Access is set to <code>RestrictPublicBuckets</code>.</p>
+    pub fn get_restrict_public_buckets(&self) -> &::std::option::Option<bool> {
+        &self.restrict_public_buckets
     }
     /// <p>Indicates if S3 Block Public Access is set to <code>BlockPublicAcls</code>.</p>
     pub fn block_public_acls(mut self, input: bool) -> Self {
@@ -84,6 +92,10 @@ impl BlockPublicAccessBuilder {
         self.block_public_acls = input;
         self
     }
+    /// <p>Indicates if S3 Block Public Access is set to <code>BlockPublicAcls</code>.</p>
+    pub fn get_block_public_acls(&self) -> &::std::option::Option<bool> {
+        &self.block_public_acls
+    }
     /// <p>Indicates if S3 Block Public Access is set to <code>BlockPublicPolicy</code>.</p>
     pub fn block_public_policy(mut self, input: bool) -> Self {
         self.block_public_policy = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl BlockPublicAccessBuilder {
     pub fn set_block_public_policy(mut self, input: ::std::option::Option<bool>) -> Self {
         self.block_public_policy = input;
         self
+    }
+    /// <p>Indicates if S3 Block Public Access is set to <code>BlockPublicPolicy</code>.</p>
+    pub fn get_block_public_policy(&self) -> &::std::option::Option<bool> {
+        &self.block_public_policy
     }
     /// Consumes the builder and constructs a [`BlockPublicAccess`](crate::types::BlockPublicAccess).
     pub fn build(self) -> crate::types::BlockPublicAccess {

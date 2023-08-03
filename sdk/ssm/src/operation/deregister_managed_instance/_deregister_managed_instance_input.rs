@@ -39,6 +39,10 @@ impl DeregisterManagedInstanceInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The ID assigned to the managed node when you registered it using the activation process. </p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// Consumes the builder and constructs a [`DeregisterManagedInstanceInput`](crate::operation::deregister_managed_instance::DeregisterManagedInstanceInput).
     pub fn build(
         self,

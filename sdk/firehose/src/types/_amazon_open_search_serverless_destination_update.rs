@@ -109,6 +109,10 @@ impl AmazonOpenSearchServerlessDestinationUpdateBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Serverless offering for Amazon OpenSearch Service Configuration API and for indexing documents.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The endpoint to use when communicating with the collection in the Serverless offering for Amazon OpenSearch Service.</p>
     pub fn collection_endpoint(
         mut self,
@@ -125,6 +129,10 @@ impl AmazonOpenSearchServerlessDestinationUpdateBuilder {
         self.collection_endpoint = input;
         self
     }
+    /// <p>The endpoint to use when communicating with the collection in the Serverless offering for Amazon OpenSearch Service.</p>
+    pub fn get_collection_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collection_endpoint
+    }
     /// <p>The Serverless offering for Amazon OpenSearch Service index name.</p>
     pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_name = ::std::option::Option::Some(input.into());
@@ -134,6 +142,10 @@ impl AmazonOpenSearchServerlessDestinationUpdateBuilder {
     pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.index_name = input;
         self
+    }
+    /// <p>The Serverless offering for Amazon OpenSearch Service index name.</p>
+    pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_name
     }
     /// <p>The buffering options. If no value is specified, AmazonopensearchBufferingHints object default values are used.</p>
     pub fn buffering_hints(
@@ -151,6 +163,12 @@ impl AmazonOpenSearchServerlessDestinationUpdateBuilder {
         self.buffering_hints = input;
         self
     }
+    /// <p>The buffering options. If no value is specified, AmazonopensearchBufferingHints object default values are used.</p>
+    pub fn get_buffering_hints(
+        &self,
+    ) -> &::std::option::Option<crate::types::AmazonOpenSearchServerlessBufferingHints> {
+        &self.buffering_hints
+    }
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to the Serverless offering for Amazon OpenSearch Service. The default value is 300 (5 minutes).</p>
     pub fn retry_options(
         mut self,
@@ -167,6 +185,12 @@ impl AmazonOpenSearchServerlessDestinationUpdateBuilder {
         self.retry_options = input;
         self
     }
+    /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to the Serverless offering for Amazon OpenSearch Service. The default value is 300 (5 minutes).</p>
+    pub fn get_retry_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::AmazonOpenSearchServerlessRetryOptions> {
+        &self.retry_options
+    }
     /// <p>Describes an update for a destination in Amazon S3.</p>
     pub fn s3_update(mut self, input: crate::types::S3DestinationUpdate) -> Self {
         self.s3_update = ::std::option::Option::Some(input);
@@ -179,6 +203,10 @@ impl AmazonOpenSearchServerlessDestinationUpdateBuilder {
     ) -> Self {
         self.s3_update = input;
         self
+    }
+    /// <p>Describes an update for a destination in Amazon S3.</p>
+    pub fn get_s3_update(&self) -> &::std::option::Option<crate::types::S3DestinationUpdate> {
+        &self.s3_update
     }
     /// <p>Describes a data processing configuration.</p>
     pub fn processing_configuration(
@@ -196,6 +224,12 @@ impl AmazonOpenSearchServerlessDestinationUpdateBuilder {
         self.processing_configuration = input;
         self
     }
+    /// <p>Describes a data processing configuration.</p>
+    pub fn get_processing_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProcessingConfiguration> {
+        &self.processing_configuration
+    }
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
     pub fn cloud_watch_logging_options(
         mut self,
@@ -211,6 +245,12 @@ impl AmazonOpenSearchServerlessDestinationUpdateBuilder {
     ) -> Self {
         self.cloud_watch_logging_options = input;
         self
+    }
+    /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
+    pub fn get_cloud_watch_logging_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudWatchLoggingOptions> {
+        &self.cloud_watch_logging_options
     }
     /// Consumes the builder and constructs a [`AmazonOpenSearchServerlessDestinationUpdate`](crate::types::AmazonOpenSearchServerlessDestinationUpdate).
     pub fn build(self) -> crate::types::AmazonOpenSearchServerlessDestinationUpdate {

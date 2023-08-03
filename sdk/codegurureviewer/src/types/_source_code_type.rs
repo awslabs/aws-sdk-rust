@@ -77,6 +77,12 @@ impl SourceCodeTypeBuilder {
         self.commit_diff = input;
         self
     }
+    /// <p>A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies a commit diff created by a pull request on an associated repository.</p>
+    pub fn get_commit_diff(
+        &self,
+    ) -> &::std::option::Option<crate::types::CommitDiffSourceCodeType> {
+        &self.commit_diff
+    }
     /// <p>A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the tip of a branch in an associated repository.</p>
     pub fn repository_head(mut self, input: crate::types::RepositoryHeadSourceCodeType) -> Self {
         self.repository_head = ::std::option::Option::Some(input);
@@ -89,6 +95,12 @@ impl SourceCodeTypeBuilder {
     ) -> Self {
         self.repository_head = input;
         self
+    }
+    /// <p>A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the tip of a branch in an associated repository.</p>
+    pub fn get_repository_head(
+        &self,
+    ) -> &::std::option::Option<crate::types::RepositoryHeadSourceCodeType> {
+        &self.repository_head
     }
     /// <p>A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies a source branch name and a destination branch name in an associated repository.</p>
     pub fn branch_diff(mut self, input: crate::types::BranchDiffSourceCodeType) -> Self {
@@ -103,6 +115,12 @@ impl SourceCodeTypeBuilder {
         self.branch_diff = input;
         self
     }
+    /// <p>A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies a source branch name and a destination branch name in an associated repository.</p>
+    pub fn get_branch_diff(
+        &self,
+    ) -> &::std::option::Option<crate::types::BranchDiffSourceCodeType> {
+        &self.branch_diff
+    }
     /// <p>Information about an associated repository in an S3 bucket that includes its name and an <code>S3RepositoryDetails</code> object. The <code>S3RepositoryDetails</code> object includes the name of an S3 bucket, an S3 key for a source code .zip file, and an S3 key for a build artifacts .zip file. <code>S3BucketRepository</code> is required in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> for <code>S3BucketRepository</code> based code reviews.</p>
     pub fn s3_bucket_repository(mut self, input: crate::types::S3BucketRepository) -> Self {
         self.s3_bucket_repository = ::std::option::Option::Some(input);
@@ -116,6 +134,12 @@ impl SourceCodeTypeBuilder {
         self.s3_bucket_repository = input;
         self
     }
+    /// <p>Information about an associated repository in an S3 bucket that includes its name and an <code>S3RepositoryDetails</code> object. The <code>S3RepositoryDetails</code> object includes the name of an S3 bucket, an S3 key for a source code .zip file, and an S3 key for a build artifacts .zip file. <code>S3BucketRepository</code> is required in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> for <code>S3BucketRepository</code> based code reviews.</p>
+    pub fn get_s3_bucket_repository(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3BucketRepository> {
+        &self.s3_bucket_repository
+    }
     /// <p>Metadata that is associated with a code review. This applies to any type of code review supported by CodeGuru Reviewer. The <code>RequestMetadaa</code> field captures any event metadata. For example, it might capture metadata associated with an event trigger, such as a push or a pull request.</p>
     pub fn request_metadata(mut self, input: crate::types::RequestMetadata) -> Self {
         self.request_metadata = ::std::option::Option::Some(input);
@@ -128,6 +152,10 @@ impl SourceCodeTypeBuilder {
     ) -> Self {
         self.request_metadata = input;
         self
+    }
+    /// <p>Metadata that is associated with a code review. This applies to any type of code review supported by CodeGuru Reviewer. The <code>RequestMetadaa</code> field captures any event metadata. For example, it might capture metadata associated with an event trigger, such as a push or a pull request.</p>
+    pub fn get_request_metadata(&self) -> &::std::option::Option<crate::types::RequestMetadata> {
+        &self.request_metadata
     }
     /// Consumes the builder and constructs a [`SourceCodeType`](crate::types::SourceCodeType).
     pub fn build(self) -> crate::types::SourceCodeType {

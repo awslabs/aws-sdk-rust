@@ -54,6 +54,10 @@ impl CreateDatasetExportJobOutputBuilder {
         self.dataset_export_job_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the dataset export job.</p>
+    pub fn get_dataset_export_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_export_job_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -59,6 +59,10 @@ impl AggregatedValueBuilder {
         self.timestamp = input;
         self
     }
+    /// <p>The date the aggregating computations occurred, in Unix epoch time.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
+    }
     /// <p>The quality of the aggregated data.</p>
     pub fn quality(mut self, input: crate::types::Quality) -> Self {
         self.quality = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl AggregatedValueBuilder {
         self.quality = input;
         self
     }
+    /// <p>The quality of the aggregated data.</p>
+    pub fn get_quality(&self) -> &::std::option::Option<crate::types::Quality> {
+        &self.quality
+    }
     /// <p>The value of the aggregates.</p>
     pub fn value(mut self, input: crate::types::Aggregates) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -78,6 +86,10 @@ impl AggregatedValueBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::Aggregates>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of the aggregates.</p>
+    pub fn get_value(&self) -> &::std::option::Option<crate::types::Aggregates> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`AggregatedValue`](crate::types::AggregatedValue).
     pub fn build(self) -> crate::types::AggregatedValue {

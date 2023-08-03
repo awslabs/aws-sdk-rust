@@ -60,6 +60,10 @@ impl AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetailsBuilder {
         self.authorizer_result_ttl_in_seconds = input;
         self
     }
+    /// <p> The number of seconds a response should be cached for. The default is 5 minutes (300 seconds). </p>
+    pub fn get_authorizer_result_ttl_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.authorizer_result_ttl_in_seconds
+    }
     /// <p> The Amazon Resource Name (ARN) of the Lambda function to be called for authorization. This can be a standard Lambda ARN, a version ARN (.../v3), or an alias ARN. </p>
     pub fn authorizer_uri(
         mut self,
@@ -76,6 +80,10 @@ impl AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetailsBuilder {
         self.authorizer_uri = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) of the Lambda function to be called for authorization. This can be a standard Lambda ARN, a version ARN (.../v3), or an alias ARN. </p>
+    pub fn get_authorizer_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authorizer_uri
+    }
     /// <p> A regular expression for validation of tokens before the Lambda function is called. </p>
     pub fn identity_validation_expression(
         mut self,
@@ -91,6 +99,12 @@ impl AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetailsBuilder {
     ) -> Self {
         self.identity_validation_expression = input;
         self
+    }
+    /// <p> A regular expression for validation of tokens before the Lambda function is called. </p>
+    pub fn get_identity_validation_expression(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.identity_validation_expression
     }
     /// Consumes the builder and constructs a [`AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails`](crate::types::AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails).
     pub fn build(self) -> crate::types::AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails {

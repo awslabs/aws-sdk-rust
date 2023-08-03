@@ -115,6 +115,20 @@ impl MessageResultBuilder {
         self.delivery_status = input;
         self
     }
+    /// <p>The delivery status of the message. Possible values are:</p>
+    /// <ul>
+    /// <li><p>DUPLICATE - The endpoint address is a duplicate of another endpoint address. Amazon Pinpoint won't attempt to send the message again.</p></li>
+    /// <li><p>OPT_OUT - The user who's associated with the endpoint address has opted out of receiving messages from you. Amazon Pinpoint won't attempt to send the message again.</p></li>
+    /// <li><p>PERMANENT_FAILURE - An error occurred when delivering the message to the endpoint address. Amazon Pinpoint won't attempt to send the message again.</p></li>
+    /// <li><p>SUCCESSFUL - The message was successfully delivered to the endpoint address.</p></li>
+    /// <li><p>TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint won't attempt to send the message again.</p></li>
+    /// <li><p>THROTTLED - Amazon Pinpoint throttled the operation to send the message to the endpoint address.</p></li>
+    /// <li><p>TIMEOUT - The message couldn't be sent within the timeout period.</p></li>
+    /// <li><p>UNKNOWN_FAILURE - An unknown error occurred.</p></li>
+    /// </ul>
+    pub fn get_delivery_status(&self) -> &::std::option::Option<crate::types::DeliveryStatus> {
+        &self.delivery_status
+    }
     /// <p>The unique identifier for the message that was sent.</p>
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_id = ::std::option::Option::Some(input.into());
@@ -125,6 +139,10 @@ impl MessageResultBuilder {
         self.message_id = input;
         self
     }
+    /// <p>The unique identifier for the message that was sent.</p>
+    pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_id
+    }
     /// <p>The downstream service status code for delivering the message.</p>
     pub fn status_code(mut self, input: i32) -> Self {
         self.status_code = ::std::option::Option::Some(input);
@@ -134,6 +152,10 @@ impl MessageResultBuilder {
     pub fn set_status_code(mut self, input: ::std::option::Option<i32>) -> Self {
         self.status_code = input;
         self
+    }
+    /// <p>The downstream service status code for delivering the message.</p>
+    pub fn get_status_code(&self) -> &::std::option::Option<i32> {
+        &self.status_code
     }
     /// <p>The status message for delivering the message.</p>
     pub fn status_message(
@@ -151,6 +173,10 @@ impl MessageResultBuilder {
         self.status_message = input;
         self
     }
+    /// <p>The status message for delivering the message.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>For push notifications that are sent through the GCM channel, specifies whether the endpoint's device registration token was updated as part of delivering the message.</p>
     pub fn updated_token(
         mut self,
@@ -166,6 +192,10 @@ impl MessageResultBuilder {
     ) -> Self {
         self.updated_token = input;
         self
+    }
+    /// <p>For push notifications that are sent through the GCM channel, specifies whether the endpoint's device registration token was updated as part of delivering the message.</p>
+    pub fn get_updated_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.updated_token
     }
     /// Consumes the builder and constructs a [`MessageResult`](crate::types::MessageResult).
     pub fn build(self) -> crate::types::MessageResult {

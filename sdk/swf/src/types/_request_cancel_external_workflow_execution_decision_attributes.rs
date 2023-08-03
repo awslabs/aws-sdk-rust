@@ -66,6 +66,10 @@ impl RequestCancelExternalWorkflowExecutionDecisionAttributesBuilder {
         self.workflow_id = input;
         self
     }
+    /// <p> The <code>workflowId</code> of the external workflow execution to cancel.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_id
+    }
     /// <p>The <code>runId</code> of the external workflow execution to cancel.</p>
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.run_id = ::std::option::Option::Some(input.into());
@@ -76,6 +80,10 @@ impl RequestCancelExternalWorkflowExecutionDecisionAttributesBuilder {
         self.run_id = input;
         self
     }
+    /// <p>The <code>runId</code> of the external workflow execution to cancel.</p>
+    pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.run_id
+    }
     /// <p>The data attached to the event that can be used by the decider in subsequent workflow tasks.</p>
     pub fn control(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control = ::std::option::Option::Some(input.into());
@@ -85,6 +93,10 @@ impl RequestCancelExternalWorkflowExecutionDecisionAttributesBuilder {
     pub fn set_control(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.control = input;
         self
+    }
+    /// <p>The data attached to the event that can be used by the decider in subsequent workflow tasks.</p>
+    pub fn get_control(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control
     }
     /// Consumes the builder and constructs a [`RequestCancelExternalWorkflowExecutionDecisionAttributes`](crate::types::RequestCancelExternalWorkflowExecutionDecisionAttributes).
     pub fn build(self) -> crate::types::RequestCancelExternalWorkflowExecutionDecisionAttributes {

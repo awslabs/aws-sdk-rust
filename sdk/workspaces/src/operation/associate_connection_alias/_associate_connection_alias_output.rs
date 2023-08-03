@@ -54,6 +54,10 @@ impl AssociateConnectionAliasOutputBuilder {
         self.connection_identifier = input;
         self
     }
+    /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when you're configuring your DNS routing policies. </p>
+    pub fn get_connection_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_identifier
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

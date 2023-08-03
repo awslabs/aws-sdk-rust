@@ -39,6 +39,10 @@ impl GetMigrationInputBuilder {
         self.migration_id = input;
         self
     }
+    /// <p>The unique identifier of the migration to view. The <code>migrationID</code> is returned by the operation.</p>
+    pub fn get_migration_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.migration_id
+    }
     /// Consumes the builder and constructs a [`GetMigrationInput`](crate::operation::get_migration::GetMigrationInput).
     pub fn build(
         self,

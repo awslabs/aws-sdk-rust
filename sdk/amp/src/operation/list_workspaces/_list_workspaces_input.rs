@@ -56,6 +56,10 @@ impl ListWorkspacesInputBuilder {
         self.next_token = input;
         self
     }
+    /// Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListWorkspaces request.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Optional filter for workspace alias. Only the workspaces with aliases that begin with this value will be returned.
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl ListWorkspacesInputBuilder {
         self.alias = input;
         self
     }
+    /// Optional filter for workspace alias. Only the workspaces with aliases that begin with this value will be returned.
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias
+    }
     /// Maximum results to return in response (default=100, maximum=1000).
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl ListWorkspacesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// Maximum results to return in response (default=100, maximum=1000).
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListWorkspacesInput`](crate::operation::list_workspaces::ListWorkspacesInput).
     pub fn build(

@@ -45,6 +45,13 @@ impl ListAggregatedUtterancesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListAggregatedUtterances as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_aggregated_utterances::builders::ListAggregatedUtterancesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -144,6 +151,10 @@ impl ListAggregatedUtterancesFluentBuilder {
         self.inner = self.inner.set_bot_id(input);
         self
     }
+    /// <p>The unique identifier of the bot associated with this request.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_id()
+    }
     /// <p>The identifier of the bot alias associated with this request. If you specify the bot alias, you can't specify the bot version.</p>
     pub fn bot_alias_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_alias_id(input.into());
@@ -153,6 +164,10 @@ impl ListAggregatedUtterancesFluentBuilder {
     pub fn set_bot_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bot_alias_id(input);
         self
+    }
+    /// <p>The identifier of the bot alias associated with this request. If you specify the bot alias, you can't specify the bot version.</p>
+    pub fn get_bot_alias_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_alias_id()
     }
     /// <p>The identifier of the bot version associated with this request. If you specify the bot version, you can't specify the bot alias.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -164,6 +179,10 @@ impl ListAggregatedUtterancesFluentBuilder {
         self.inner = self.inner.set_bot_version(input);
         self
     }
+    /// <p>The identifier of the bot version associated with this request. If you specify the bot version, you can't specify the bot alias.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_version()
+    }
     /// <p>The identifier of the language and locale where the utterances were collected. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.locale_id(input.into());
@@ -173,6 +192,10 @@ impl ListAggregatedUtterancesFluentBuilder {
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_locale_id(input);
         self
+    }
+    /// <p>The identifier of the language and locale where the utterances were collected. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_locale_id()
     }
     /// <p>The time window for aggregating the utterance information. You can specify a time between one hour and two weeks.</p>
     pub fn aggregation_duration(
@@ -190,6 +213,12 @@ impl ListAggregatedUtterancesFluentBuilder {
         self.inner = self.inner.set_aggregation_duration(input);
         self
     }
+    /// <p>The time window for aggregating the utterance information. You can specify a time between one hour and two weeks.</p>
+    pub fn get_aggregation_duration(
+        &self,
+    ) -> &::std::option::Option<crate::types::UtteranceAggregationDuration> {
+        self.inner.get_aggregation_duration()
+    }
     /// <p>Specifies sorting parameters for the list of utterances. You can sort by the hit count, the missed count, or the number of distinct sessions the utterance appeared in.</p>
     pub fn sort_by(mut self, input: crate::types::AggregatedUtterancesSortBy) -> Self {
         self.inner = self.inner.sort_by(input);
@@ -202,6 +231,10 @@ impl ListAggregatedUtterancesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
+    }
+    /// <p>Specifies sorting parameters for the list of utterances. You can sort by the hit count, the missed count, or the number of distinct sessions the utterance appeared in.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::AggregatedUtterancesSortBy> {
+        self.inner.get_sort_by()
     }
     /// Appends an item to `filters`.
     ///
@@ -220,6 +253,12 @@ impl ListAggregatedUtterancesFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>Provides the specification of a filter used to limit the utterances in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregatedUtterancesFilter>> {
+        self.inner.get_filters()
+    }
     /// <p>The maximum number of utterances to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned. If you don't specify the <code>maxResults</code> parameter, 1,000 results are returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -230,6 +269,10 @@ impl ListAggregatedUtterancesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of utterances to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned. If you don't specify the <code>maxResults</code> parameter, 1,000 results are returned.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>If the response from the <code>ListAggregatedUtterances</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -239,5 +282,9 @@ impl ListAggregatedUtterancesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>If the response from the <code>ListAggregatedUtterances</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

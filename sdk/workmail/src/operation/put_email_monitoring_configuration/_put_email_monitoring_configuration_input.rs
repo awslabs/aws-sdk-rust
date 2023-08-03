@@ -61,6 +61,10 @@ impl PutEmailMonitoringConfigurationInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The ID of the organization for which the email monitoring configuration is set.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM Role associated with the email monitoring configuration.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -70,6 +74,10 @@ impl PutEmailMonitoringConfigurationInputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM Role associated with the email monitoring configuration.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch Log group associated with the email monitoring configuration.</p>
     pub fn log_group_arn(
@@ -86,6 +94,10 @@ impl PutEmailMonitoringConfigurationInputBuilder {
     ) -> Self {
         self.log_group_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the CloudWatch Log group associated with the email monitoring configuration.</p>
+    pub fn get_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group_arn
     }
     /// Consumes the builder and constructs a [`PutEmailMonitoringConfigurationInput`](crate::operation::put_email_monitoring_configuration::PutEmailMonitoringConfigurationInput).
     pub fn build(

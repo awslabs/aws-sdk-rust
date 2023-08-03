@@ -89,6 +89,12 @@ impl UsageStatisticsBuilder {
         self.sum_by_account = input;
         self
     }
+    /// <p>The usage statistic sum organized by account ID.</p>
+    pub fn get_sum_by_account(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageAccountResult>> {
+        &self.sum_by_account
+    }
     /// Appends an item to `sum_by_data_source`.
     ///
     /// To override the contents of this collection use [`set_sum_by_data_source`](Self::set_sum_by_data_source).
@@ -107,6 +113,12 @@ impl UsageStatisticsBuilder {
     ) -> Self {
         self.sum_by_data_source = input;
         self
+    }
+    /// <p>The usage statistic sum organized by on data source.</p>
+    pub fn get_sum_by_data_source(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageDataSourceResult>> {
+        &self.sum_by_data_source
     }
     /// Appends an item to `sum_by_resource`.
     ///
@@ -127,6 +139,12 @@ impl UsageStatisticsBuilder {
         self.sum_by_resource = input;
         self
     }
+    /// <p>The usage statistic sum organized by resource.</p>
+    pub fn get_sum_by_resource(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageResourceResult>> {
+        &self.sum_by_resource
+    }
     /// Appends an item to `top_resources`.
     ///
     /// To override the contents of this collection use [`set_top_resources`](Self::set_top_resources).
@@ -146,6 +164,12 @@ impl UsageStatisticsBuilder {
         self.top_resources = input;
         self
     }
+    /// <p>Lists the top 50 resources that have generated the most GuardDuty usage, in order from most to least expensive.</p>
+    pub fn get_top_resources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageResourceResult>> {
+        &self.top_resources
+    }
     /// Appends an item to `sum_by_feature`.
     ///
     /// To override the contents of this collection use [`set_sum_by_feature`](Self::set_sum_by_feature).
@@ -164,6 +188,12 @@ impl UsageStatisticsBuilder {
     ) -> Self {
         self.sum_by_feature = input;
         self
+    }
+    /// <p>The usage statistic sum organized by feature.</p>
+    pub fn get_sum_by_feature(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageFeatureResult>> {
+        &self.sum_by_feature
     }
     /// Consumes the builder and constructs a [`UsageStatistics`](crate::types::UsageStatistics).
     pub fn build(self) -> crate::types::UsageStatistics {

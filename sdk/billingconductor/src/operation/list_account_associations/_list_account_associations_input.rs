@@ -69,6 +69,10 @@ impl ListAccountAssociationsInputBuilder {
         self.billing_period = input;
         self
     }
+    /// <p> The preferred billing period to get account associations. </p>
+    pub fn get_billing_period(&self) -> &::std::option::Option<::std::string::String> {
+        &self.billing_period
+    }
     /// <p>The filter on the account ID of the linked account, or any of the following:</p>
     /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
     /// <p> <code>UNMONITORED</code>: linked accounts that aren't associated to billing groups.</p>
@@ -88,6 +92,15 @@ impl ListAccountAssociationsInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>The filter on the account ID of the linked account, or any of the following:</p>
+    /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
+    /// <p> <code>UNMONITORED</code>: linked accounts that aren't associated to billing groups.</p>
+    /// <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided billing group Arn. </p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<crate::types::ListAccountAssociationsFilter> {
+        &self.filters
+    }
     /// <p> The pagination token that's used on subsequent calls to retrieve accounts. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -97,6 +110,10 @@ impl ListAccountAssociationsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p> The pagination token that's used on subsequent calls to retrieve accounts. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListAccountAssociationsInput`](crate::operation::list_account_associations::ListAccountAssociationsInput).
     pub fn build(

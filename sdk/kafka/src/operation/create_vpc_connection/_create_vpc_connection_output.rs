@@ -118,6 +118,10 @@ impl CreateVpcConnectionOutputBuilder {
         self.vpc_connection_arn = input;
         self
     }
+    /// <p>The VPC connection ARN.</p>
+    pub fn get_vpc_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_connection_arn
+    }
     /// <p>The State of Vpc Connection.</p>
     pub fn state(mut self, input: crate::types::VpcConnectionState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -130,6 +134,10 @@ impl CreateVpcConnectionOutputBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The State of Vpc Connection.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::VpcConnectionState> {
+        &self.state
     }
     /// <p>The authentication type of VPC connection.</p>
     pub fn authentication(
@@ -147,6 +155,10 @@ impl CreateVpcConnectionOutputBuilder {
         self.authentication = input;
         self
     }
+    /// <p>The authentication type of VPC connection.</p>
+    pub fn get_authentication(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication
+    }
     /// <p>The VPC ID of the VPC connection.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -156,6 +168,10 @@ impl CreateVpcConnectionOutputBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The VPC ID of the VPC connection.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Appends an item to `client_subnets`.
     ///
@@ -179,6 +195,12 @@ impl CreateVpcConnectionOutputBuilder {
         self.client_subnets = input;
         self
     }
+    /// <p>The list of client subnets.</p>
+    pub fn get_client_subnets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.client_subnets
+    }
     /// Appends an item to `security_groups`.
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
@@ -201,6 +223,12 @@ impl CreateVpcConnectionOutputBuilder {
         self.security_groups = input;
         self
     }
+    /// <p>The list of security groups.</p>
+    pub fn get_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_groups
+    }
     /// <p>The creation time of VPC connection.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -213,6 +241,10 @@ impl CreateVpcConnectionOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The creation time of VPC connection.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -238,6 +270,14 @@ impl CreateVpcConnectionOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A map of tags for the VPC connection.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

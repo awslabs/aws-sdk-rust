@@ -36,6 +36,10 @@ impl StopGameSessionPlacementFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopGameSessionPlacement as a reference.
+    pub fn as_input(&self) -> &crate::operation::stop_game_session_placement::builders::StopGameSessionPlacementInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +129,9 @@ impl StopGameSessionPlacementFluentBuilder {
     pub fn set_placement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_placement_id(input);
         self
+    }
+    /// <p>A unique identifier for a game session placement to stop.</p>
+    pub fn get_placement_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_placement_id()
     }
 }

@@ -36,6 +36,12 @@ impl DescribeTaskSetsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeTaskSets as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_task_sets::builders::DescribeTaskSetsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DescribeTaskSetsFluentBuilder {
         self.inner = self.inner.set_cluster(input);
         self
     }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task sets exist in.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster()
+    }
     /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task sets exist in.</p>
     pub fn service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service(input.into());
@@ -135,6 +145,10 @@ impl DescribeTaskSetsFluentBuilder {
     pub fn set_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service(input);
         self
+    }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task sets exist in.</p>
+    pub fn get_service(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service()
     }
     /// Appends an item to `taskSets`.
     ///
@@ -153,6 +167,10 @@ impl DescribeTaskSetsFluentBuilder {
         self.inner = self.inner.set_task_sets(input);
         self
     }
+    /// <p>The ID or full Amazon Resource Name (ARN) of task sets to describe.</p>
+    pub fn get_task_sets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_task_sets()
+    }
     /// Appends an item to `include`.
     ///
     /// To override the contents of this collection use [`set_include`](Self::set_include).
@@ -169,5 +187,11 @@ impl DescribeTaskSetsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_include(input);
         self
+    }
+    /// <p>Specifies whether to see the resource tags for the task set. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
+    pub fn get_include(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskSetField>> {
+        self.inner.get_include()
     }
 }

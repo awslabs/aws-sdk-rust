@@ -57,6 +57,12 @@ impl GetLogGroupFieldsOutputBuilder {
         self.log_group_fields = input;
         self
     }
+    /// <p>The array of fields found in the query. Each object in the array contains the name of the field, along with the percentage of time it appeared in the log events that were queried.</p>
+    pub fn get_log_group_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LogGroupField>> {
+        &self.log_group_fields
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

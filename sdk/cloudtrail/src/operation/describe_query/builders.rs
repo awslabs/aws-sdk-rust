@@ -37,6 +37,12 @@ impl DescribeQueryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeQuery as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_query::builders::DescribeQueryInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,11 @@ impl DescribeQueryFluentBuilder {
         self.inner = self.inner.set_event_data_store(input);
         self
     }
+    /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query was run.</p>
+    #[deprecated(note = "EventDataStore is no longer required by DescribeQueryRequest")]
+    pub fn get_event_data_store(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_data_store()
+    }
     /// <p>The query ID.</p>
     pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_id(input.into());
@@ -137,6 +148,10 @@ impl DescribeQueryFluentBuilder {
         self.inner = self.inner.set_query_id(input);
         self
     }
+    /// <p>The query ID.</p>
+    pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_query_id()
+    }
     /// <p> The alias that identifies a query template. </p>
     pub fn query_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_alias(input.into());
@@ -146,5 +161,9 @@ impl DescribeQueryFluentBuilder {
     pub fn set_query_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_alias(input);
         self
+    }
+    /// <p> The alias that identifies a query template. </p>
+    pub fn get_query_alias(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_query_alias()
     }
 }

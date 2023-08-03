@@ -52,6 +52,12 @@ impl UpdateTrafficPolicyInstanceOutputBuilder {
         self.traffic_policy_instance = input;
         self
     }
+    /// <p>A complex type that contains settings for the updated traffic policy instance.</p>
+    pub fn get_traffic_policy_instance(
+        &self,
+    ) -> &::std::option::Option<crate::types::TrafficPolicyInstance> {
+        &self.traffic_policy_instance
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

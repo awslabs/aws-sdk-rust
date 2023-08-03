@@ -45,6 +45,10 @@ impl DeleteModelCardInputBuilder {
         self.model_card_name = input;
         self
     }
+    /// <p>The name of the model card to delete.</p>
+    pub fn get_model_card_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_card_name
+    }
     /// Consumes the builder and constructs a [`DeleteModelCardInput`](crate::operation::delete_model_card::DeleteModelCardInput).
     pub fn build(
         self,

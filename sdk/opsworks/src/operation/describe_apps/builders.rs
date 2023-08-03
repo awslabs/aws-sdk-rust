@@ -39,6 +39,10 @@ impl DescribeAppsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeApps as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_apps::builders::DescribeAppsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +125,10 @@ impl DescribeAppsFluentBuilder {
         self.inner = self.inner.set_stack_id(input);
         self
     }
+    /// <p>The app stack ID. If you use this parameter, <code>DescribeApps</code> returns a description of the apps in the specified stack.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_id()
+    }
     /// Appends an item to `AppIds`.
     ///
     /// To override the contents of this collection use [`set_app_ids`](Self::set_app_ids).
@@ -137,5 +145,9 @@ impl DescribeAppsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_app_ids(input);
         self
+    }
+    /// <p>An array of app IDs for the apps to be described. If you use this parameter, <code>DescribeApps</code> returns a description of the specified apps. Otherwise, it returns a description of every app.</p>
+    pub fn get_app_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_app_ids()
     }
 }

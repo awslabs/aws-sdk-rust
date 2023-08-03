@@ -36,6 +36,12 @@ impl CreateCollaborationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateCollaboration as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_collaboration::builders::CreateCollaborationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,12 @@ impl CreateCollaborationFluentBuilder {
         self.inner = self.inner.set_members(input);
         self
     }
+    /// <p>A list of initial members, not including the creator. This list is immutable.</p>
+    pub fn get_members(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberSpecification>> {
+        self.inner.get_members()
+    }
     /// <p>The display name for a collaboration.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -143,6 +155,10 @@ impl CreateCollaborationFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The display name for a collaboration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A description of the collaboration provided by the collaboration owner.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -152,6 +168,10 @@ impl CreateCollaborationFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the collaboration provided by the collaboration owner.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `creatorMemberAbilities`.
     ///
@@ -170,6 +190,12 @@ impl CreateCollaborationFluentBuilder {
         self.inner = self.inner.set_creator_member_abilities(input);
         self
     }
+    /// <p>The abilities granted to the collaboration creator.</p>
+    pub fn get_creator_member_abilities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>> {
+        self.inner.get_creator_member_abilities()
+    }
     /// <p>The display name of the collaboration creator.</p>
     pub fn creator_display_name(
         mut self,
@@ -186,6 +212,10 @@ impl CreateCollaborationFluentBuilder {
         self.inner = self.inner.set_creator_display_name(input);
         self
     }
+    /// <p>The display name of the collaboration creator.</p>
+    pub fn get_creator_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_creator_display_name()
+    }
     /// <p>The settings for client-side encryption with Cryptographic Computing for Clean Rooms.</p>
     pub fn data_encryption_metadata(mut self, input: crate::types::DataEncryptionMetadata) -> Self {
         self.inner = self.inner.data_encryption_metadata(input);
@@ -199,6 +229,12 @@ impl CreateCollaborationFluentBuilder {
         self.inner = self.inner.set_data_encryption_metadata(input);
         self
     }
+    /// <p>The settings for client-side encryption with Cryptographic Computing for Clean Rooms.</p>
+    pub fn get_data_encryption_metadata(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataEncryptionMetadata> {
+        self.inner.get_data_encryption_metadata()
+    }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
     pub fn query_log_status(mut self, input: crate::types::CollaborationQueryLogStatus) -> Self {
         self.inner = self.inner.query_log_status(input);
@@ -211,6 +247,12 @@ impl CreateCollaborationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_query_log_status(input);
         self
+    }
+    /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
+    pub fn get_query_log_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::CollaborationQueryLogStatus> {
+        self.inner.get_query_log_status()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -234,5 +276,13 @@ impl CreateCollaborationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

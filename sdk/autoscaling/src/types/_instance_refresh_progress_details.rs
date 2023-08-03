@@ -60,6 +60,12 @@ impl InstanceRefreshProgressDetailsBuilder {
         self.live_pool_progress = input;
         self
     }
+    /// <p>Reports progress on replacing instances that are in the Auto Scaling group.</p>
+    pub fn get_live_pool_progress(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceRefreshLivePoolProgress> {
+        &self.live_pool_progress
+    }
     /// <p>Reports progress on replacing instances that are in the warm pool.</p>
     pub fn warm_pool_progress(
         mut self,
@@ -75,6 +81,12 @@ impl InstanceRefreshProgressDetailsBuilder {
     ) -> Self {
         self.warm_pool_progress = input;
         self
+    }
+    /// <p>Reports progress on replacing instances that are in the warm pool.</p>
+    pub fn get_warm_pool_progress(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceRefreshWarmPoolProgress> {
+        &self.warm_pool_progress
     }
     /// Consumes the builder and constructs a [`InstanceRefreshProgressDetails`](crate::types::InstanceRefreshProgressDetails).
     pub fn build(self) -> crate::types::InstanceRefreshProgressDetails {

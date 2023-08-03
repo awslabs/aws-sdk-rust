@@ -36,6 +36,10 @@ impl CreateAppFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateApp as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_app::builders::CreateAppInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -123,5 +127,11 @@ impl CreateAppFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_create_application_request(input);
         self
+    }
+    /// <p>Specifies the display name of an application and the tags to associate with the application.</p>
+    pub fn get_create_application_request(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateApplicationRequest> {
+        self.inner.get_create_application_request()
     }
 }

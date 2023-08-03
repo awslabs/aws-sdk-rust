@@ -80,6 +80,18 @@ impl BatchGetDeploymentTargetsOutputBuilder {
         self.deployment_targets = input;
         self
     }
+    /// <p> A list of target objects for a deployment. Each target object contains details about the target, such as its status and lifecycle events. The type of the target objects depends on the deployment' compute platform. </p>
+    /// <ul>
+    /// <li> <p> <b>EC2/On-premises</b>: Each target object is an Amazon EC2 or on-premises instance. </p> </li>
+    /// <li> <p> <b>Lambda</b>: The target object is a specific version of an Lambda function. </p> </li>
+    /// <li> <p> <b>Amazon ECS</b>: The target object is an Amazon ECS service. </p> </li>
+    /// <li> <p> <b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment. </p> </li>
+    /// </ul>
+    pub fn get_deployment_targets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentTarget>> {
+        &self.deployment_targets
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -87,6 +87,13 @@ impl GetQueryResultsOutputBuilder {
         self.results = input;
         self
     }
+    /// <p>The log events that matched the query criteria during the most recent time it ran.</p>
+    /// <p>The <code>results</code> value is an array of arrays. Each log event is one object in the top-level array. Each of these log event objects is an array of <code>field</code>/<code>value</code> pairs.</p>
+    pub fn get_results(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::ResultField>>> {
+        &self.results
+    }
     /// <p>Includes the number of log events scanned by the query, the number of log events that matched the query criteria, and the total number of bytes in the scanned log events. These values reflect the full raw results of the query.</p>
     pub fn statistics(mut self, input: crate::types::QueryStatistics) -> Self {
         self.statistics = ::std::option::Option::Some(input);
@@ -100,6 +107,10 @@ impl GetQueryResultsOutputBuilder {
         self.statistics = input;
         self
     }
+    /// <p>Includes the number of log events scanned by the query, the number of log events that matched the query criteria, and the total number of bytes in the scanned log events. These values reflect the full raw results of the query.</p>
+    pub fn get_statistics(&self) -> &::std::option::Option<crate::types::QueryStatistics> {
+        &self.statistics
+    }
     /// <p>The status of the most recent running of the query. Possible values are <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>, <code>Running</code>, <code>Scheduled</code>, <code>Timeout</code>, and <code>Unknown</code>.</p>
     /// <p>Queries time out after 60 minutes of runtime. To avoid having your queries time out, reduce the time range being searched or partition your query into a number of queries.</p>
     pub fn status(mut self, input: crate::types::QueryStatus) -> Self {
@@ -111,6 +122,11 @@ impl GetQueryResultsOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::QueryStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the most recent running of the query. Possible values are <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>, <code>Running</code>, <code>Scheduled</code>, <code>Timeout</code>, and <code>Unknown</code>.</p>
+    /// <p>Queries time out after 60 minutes of runtime. To avoid having your queries time out, reduce the time range being searched or partition your query into a number of queries.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::QueryStatus> {
+        &self.status
     }
     /// <p>If you associated an KMS key with the CloudWatch Logs Insights query results in this account, this field displays the ARN of the key that's used to encrypt the query results when <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a> stores them.</p>
     pub fn encryption_key(
@@ -127,6 +143,10 @@ impl GetQueryResultsOutputBuilder {
     ) -> Self {
         self.encryption_key = input;
         self
+    }
+    /// <p>If you associated an KMS key with the CloudWatch Logs Insights query results in this account, this field displays the ARN of the key that's used to encrypt the query results when <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a> stores them.</p>
+    pub fn get_encryption_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encryption_key
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

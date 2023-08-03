@@ -51,6 +51,12 @@ impl LifeCycleLastLaunchBuilder {
         self.initiated = input;
         self
     }
+    /// <p>An object containing information regarding the initiation of the last launch of a Source Server.</p>
+    pub fn get_initiated(
+        &self,
+    ) -> &::std::option::Option<crate::types::LifeCycleLastLaunchInitiated> {
+        &self.initiated
+    }
     /// <p>Status of Source Server's last launch.</p>
     pub fn status(mut self, input: crate::types::LaunchStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -60,6 +66,10 @@ impl LifeCycleLastLaunchBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::LaunchStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Status of Source Server's last launch.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::LaunchStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`LifeCycleLastLaunch`](crate::types::LifeCycleLastLaunch).
     pub fn build(self) -> crate::types::LifeCycleLastLaunch {

@@ -55,6 +55,10 @@ impl DeleteApplicationInputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The name of the application to delete.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>When set to true, running environments will be terminated before deleting the application.</p>
     pub fn terminate_env_by_force(mut self, input: bool) -> Self {
         self.terminate_env_by_force = ::std::option::Option::Some(input);
@@ -64,6 +68,10 @@ impl DeleteApplicationInputBuilder {
     pub fn set_terminate_env_by_force(mut self, input: ::std::option::Option<bool>) -> Self {
         self.terminate_env_by_force = input;
         self
+    }
+    /// <p>When set to true, running environments will be terminated before deleting the application.</p>
+    pub fn get_terminate_env_by_force(&self) -> &::std::option::Option<bool> {
+        &self.terminate_env_by_force
     }
     /// Consumes the builder and constructs a [`DeleteApplicationInput`](crate::operation::delete_application::DeleteApplicationInput).
     pub fn build(

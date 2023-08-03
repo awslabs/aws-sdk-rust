@@ -48,6 +48,10 @@ impl ThrottleSettingsBuilder {
         self.burst_limit = input;
         self
     }
+    /// <p>The API target request burst rate limit. This allows more requests through for a period of time than the target rate limit.</p>
+    pub fn get_burst_limit(&self) -> &::std::option::Option<i32> {
+        &self.burst_limit
+    }
     /// <p>The API target request rate limit.</p>
     pub fn rate_limit(mut self, input: f64) -> Self {
         self.rate_limit = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ThrottleSettingsBuilder {
     pub fn set_rate_limit(mut self, input: ::std::option::Option<f64>) -> Self {
         self.rate_limit = input;
         self
+    }
+    /// <p>The API target request rate limit.</p>
+    pub fn get_rate_limit(&self) -> &::std::option::Option<f64> {
+        &self.rate_limit
     }
     /// Consumes the builder and constructs a [`ThrottleSettings`](crate::types::ThrottleSettings).
     pub fn build(self) -> crate::types::ThrottleSettings {

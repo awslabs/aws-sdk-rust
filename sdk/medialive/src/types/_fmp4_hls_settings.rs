@@ -67,6 +67,10 @@ impl Fmp4HlsSettingsBuilder {
         self.audio_rendition_sets = input;
         self
     }
+    /// List all the audio groups that are used with the video output stream. Input all the audio GROUP-IDs that are associated to the video, separate by ','.
+    pub fn get_audio_rendition_sets(&self) -> &::std::option::Option<::std::string::String> {
+        &self.audio_rendition_sets
+    }
     /// If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
     pub fn nielsen_id3_behavior(mut self, input: crate::types::Fmp4NielsenId3Behavior) -> Self {
         self.nielsen_id3_behavior = ::std::option::Option::Some(input);
@@ -79,6 +83,12 @@ impl Fmp4HlsSettingsBuilder {
     ) -> Self {
         self.nielsen_id3_behavior = input;
         self
+    }
+    /// If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
+    pub fn get_nielsen_id3_behavior(
+        &self,
+    ) -> &::std::option::Option<crate::types::Fmp4NielsenId3Behavior> {
+        &self.nielsen_id3_behavior
     }
     /// When set to passthrough, timed metadata is passed through from input to output.
     pub fn timed_metadata_behavior(
@@ -95,6 +105,12 @@ impl Fmp4HlsSettingsBuilder {
     ) -> Self {
         self.timed_metadata_behavior = input;
         self
+    }
+    /// When set to passthrough, timed metadata is passed through from input to output.
+    pub fn get_timed_metadata_behavior(
+        &self,
+    ) -> &::std::option::Option<crate::types::Fmp4TimedMetadataBehavior> {
+        &self.timed_metadata_behavior
     }
     /// Consumes the builder and constructs a [`Fmp4HlsSettings`](crate::types::Fmp4HlsSettings).
     pub fn build(self) -> crate::types::Fmp4HlsSettings {

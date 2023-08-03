@@ -122,6 +122,10 @@ impl EndpointAccessBuilder {
         self.endpoint_name = input;
         self
     }
+    /// <p>The name of the VPC endpoint.</p>
+    pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_name
+    }
     /// <p>The status of the VPC endpoint.</p>
     pub fn endpoint_status(
         mut self,
@@ -137,6 +141,10 @@ impl EndpointAccessBuilder {
     ) -> Self {
         self.endpoint_status = input;
         self
+    }
+    /// <p>The status of the VPC endpoint.</p>
+    pub fn get_endpoint_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_status
     }
     /// <p>The name of the workgroup associated with the endpoint.</p>
     pub fn workgroup_name(
@@ -154,6 +162,10 @@ impl EndpointAccessBuilder {
         self.workgroup_name = input;
         self
     }
+    /// <p>The name of the workgroup associated with the endpoint.</p>
+    pub fn get_workgroup_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workgroup_name
+    }
     /// <p>The time that the endpoint was created.</p>
     pub fn endpoint_create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.endpoint_create_time = ::std::option::Option::Some(input);
@@ -167,6 +179,10 @@ impl EndpointAccessBuilder {
         self.endpoint_create_time = input;
         self
     }
+    /// <p>The time that the endpoint was created.</p>
+    pub fn get_endpoint_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.endpoint_create_time
+    }
     /// <p>The port number on which Amazon Redshift Serverless accepts incoming connections.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -177,6 +193,10 @@ impl EndpointAccessBuilder {
         self.port = input;
         self
     }
+    /// <p>The port number on which Amazon Redshift Serverless accepts incoming connections.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
+    }
     /// <p>The DNS address of the endpoint.</p>
     pub fn address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address = ::std::option::Option::Some(input.into());
@@ -186,6 +206,10 @@ impl EndpointAccessBuilder {
     pub fn set_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.address = input;
         self
+    }
+    /// <p>The DNS address of the endpoint.</p>
+    pub fn get_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -206,6 +230,10 @@ impl EndpointAccessBuilder {
         self.subnet_ids = input;
         self
     }
+    /// <p>The unique identifier of subnets where Amazon Redshift Serverless choose to deploy the VPC endpoint.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
+    }
     /// Appends an item to `vpc_security_groups`.
     ///
     /// To override the contents of this collection use [`set_vpc_security_groups`](Self::set_vpc_security_groups).
@@ -225,6 +253,12 @@ impl EndpointAccessBuilder {
         self.vpc_security_groups = input;
         self
     }
+    /// <p>The security groups associated with the endpoint.</p>
+    pub fn get_vpc_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>> {
+        &self.vpc_security_groups
+    }
     /// <p>The connection endpoint for connecting to Amazon Redshift Serverless.</p>
     pub fn vpc_endpoint(mut self, input: crate::types::VpcEndpoint) -> Self {
         self.vpc_endpoint = ::std::option::Option::Some(input);
@@ -238,6 +272,10 @@ impl EndpointAccessBuilder {
         self.vpc_endpoint = input;
         self
     }
+    /// <p>The connection endpoint for connecting to Amazon Redshift Serverless.</p>
+    pub fn get_vpc_endpoint(&self) -> &::std::option::Option<crate::types::VpcEndpoint> {
+        &self.vpc_endpoint
+    }
     /// <p>The Amazon Resource Name (ARN) of the VPC endpoint.</p>
     pub fn endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_arn = ::std::option::Option::Some(input.into());
@@ -247,6 +285,10 @@ impl EndpointAccessBuilder {
     pub fn set_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the VPC endpoint.</p>
+    pub fn get_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_arn
     }
     /// Consumes the builder and constructs a [`EndpointAccess`](crate::types::EndpointAccess).
     pub fn build(self) -> crate::types::EndpointAccess {

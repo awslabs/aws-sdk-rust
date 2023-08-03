@@ -80,6 +80,10 @@ impl RouteDataBuilder {
         self.mesh_name = input;
         self
     }
+    /// <p>The name of the service mesh that the route resides in.</p>
+    pub fn get_mesh_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mesh_name
+    }
     /// <p>The virtual router that the route is associated with.</p>
     pub fn virtual_router_name(
         mut self,
@@ -96,6 +100,10 @@ impl RouteDataBuilder {
         self.virtual_router_name = input;
         self
     }
+    /// <p>The virtual router that the route is associated with.</p>
+    pub fn get_virtual_router_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_router_name
+    }
     /// <p>The name of the route.</p>
     pub fn route_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_name = ::std::option::Option::Some(input.into());
@@ -106,6 +114,10 @@ impl RouteDataBuilder {
         self.route_name = input;
         self
     }
+    /// <p>The name of the route.</p>
+    pub fn get_route_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.route_name
+    }
     /// <p>The specifications of the route.</p>
     pub fn spec(mut self, input: crate::types::RouteSpec) -> Self {
         self.spec = ::std::option::Option::Some(input);
@@ -115,6 +127,10 @@ impl RouteDataBuilder {
     pub fn set_spec(mut self, input: ::std::option::Option<crate::types::RouteSpec>) -> Self {
         self.spec = input;
         self
+    }
+    /// <p>The specifications of the route.</p>
+    pub fn get_spec(&self) -> &::std::option::Option<crate::types::RouteSpec> {
+        &self.spec
     }
     /// <p>The associated metadata for the route.</p>
     pub fn metadata(mut self, input: crate::types::ResourceMetadata) -> Self {
@@ -129,6 +145,10 @@ impl RouteDataBuilder {
         self.metadata = input;
         self
     }
+    /// <p>The associated metadata for the route.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::ResourceMetadata> {
+        &self.metadata
+    }
     /// <p>The status of the route.</p>
     pub fn status(mut self, input: crate::types::RouteStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -138,6 +158,10 @@ impl RouteDataBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RouteStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the route.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::RouteStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`RouteData`](crate::types::RouteData).
     pub fn build(self) -> crate::types::RouteData {

@@ -36,6 +36,10 @@ impl ListServiceSpecificCredentialsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListServiceSpecificCredentials as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_service_specific_credentials::builders::ListServiceSpecificCredentialsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -102,6 +106,11 @@ impl ListServiceSpecificCredentialsFluentBuilder {
         self.inner = self.inner.set_user_name(input);
         self
     }
+    /// <p>The name of the user whose service-specific credentials you want information about. If this value is not specified, then the operation assumes the user whose credentials are used to call the operation.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_name()
+    }
     /// <p>Filters the returned results to only those for the specified Amazon Web Services service. If not specified, then Amazon Web Services returns service-specific credentials for all services.</p>
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_name(input.into());
@@ -111,5 +120,9 @@ impl ListServiceSpecificCredentialsFluentBuilder {
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_name(input);
         self
+    }
+    /// <p>Filters the returned results to only those for the specified Amazon Web Services service. If not specified, then Amazon Web Services returns service-specific credentials for all services.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_name()
     }
 }

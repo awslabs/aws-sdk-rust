@@ -51,6 +51,10 @@ impl NumericEqualityDrillDownFilterBuilder {
         self.column = input;
         self
     }
+    /// <p>The column that the filter is applied to.</p>
+    pub fn get_column(&self) -> &::std::option::Option<crate::types::ColumnIdentifier> {
+        &self.column
+    }
     /// <p>The value of the double input numeric drill down filter.</p>
     pub fn value(mut self, input: f64) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl NumericEqualityDrillDownFilterBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of the double input numeric drill down filter.</p>
+    pub fn get_value(&self) -> &::std::option::Option<f64> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`NumericEqualityDrillDownFilter`](crate::types::NumericEqualityDrillDownFilter).
     pub fn build(self) -> crate::types::NumericEqualityDrillDownFilter {

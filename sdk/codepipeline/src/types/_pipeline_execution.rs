@@ -105,6 +105,10 @@ impl PipelineExecutionBuilder {
         self.pipeline_name = input;
         self
     }
+    /// <p>The name of the pipeline with the specified pipeline execution.</p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_name
+    }
     /// <p>The version number of the pipeline with the specified pipeline execution.</p>
     pub fn pipeline_version(mut self, input: i32) -> Self {
         self.pipeline_version = ::std::option::Option::Some(input);
@@ -114,6 +118,10 @@ impl PipelineExecutionBuilder {
     pub fn set_pipeline_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.pipeline_version = input;
         self
+    }
+    /// <p>The version number of the pipeline with the specified pipeline execution.</p>
+    pub fn get_pipeline_version(&self) -> &::std::option::Option<i32> {
+        &self.pipeline_version
     }
     /// <p>The ID of the pipeline execution.</p>
     pub fn pipeline_execution_id(
@@ -130,6 +138,10 @@ impl PipelineExecutionBuilder {
     ) -> Self {
         self.pipeline_execution_id = input;
         self
+    }
+    /// <p>The ID of the pipeline execution.</p>
+    pub fn get_pipeline_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_execution_id
     }
     /// <p>The status of the pipeline execution.</p>
     /// <ul>
@@ -162,6 +174,19 @@ impl PipelineExecutionBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the pipeline execution.</p>
+    /// <ul>
+    /// <li> <p>Cancelled: The pipeline’s definition was updated before the pipeline execution could be completed.</p> </li>
+    /// <li> <p>InProgress: The pipeline execution is currently running.</p> </li>
+    /// <li> <p>Stopped: The pipeline execution was manually stopped. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li>
+    /// <li> <p>Stopping: The pipeline execution received a request to be manually stopped. Depending on the selected stop mode, the execution is either completing or abandoning in-progress actions. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li>
+    /// <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li>
+    /// <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded Executions</a>.</p> </li>
+    /// <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::PipelineExecutionStatus> {
+        &self.status
+    }
     /// <p>A summary that contains a description of the pipeline execution status.</p>
     pub fn status_summary(
         mut self,
@@ -177,6 +202,10 @@ impl PipelineExecutionBuilder {
     ) -> Self {
         self.status_summary = input;
         self
+    }
+    /// <p>A summary that contains a description of the pipeline execution status.</p>
+    pub fn get_status_summary(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_summary
     }
     /// Appends an item to `artifact_revisions`.
     ///
@@ -196,6 +225,12 @@ impl PipelineExecutionBuilder {
     ) -> Self {
         self.artifact_revisions = input;
         self
+    }
+    /// <p>A list of <code>ArtifactRevision</code> objects included in a pipeline execution.</p>
+    pub fn get_artifact_revisions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ArtifactRevision>> {
+        &self.artifact_revisions
     }
     /// Consumes the builder and constructs a [`PipelineExecution`](crate::types::PipelineExecution).
     pub fn build(self) -> crate::types::PipelineExecution {

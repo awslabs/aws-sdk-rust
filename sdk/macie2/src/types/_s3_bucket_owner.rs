@@ -48,6 +48,10 @@ impl S3BucketOwnerBuilder {
         self.display_name = input;
         self
     }
+    /// <p>The display name of the account that owns the bucket.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// <p>The canonical user ID for the account that owns the bucket.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl S3BucketOwnerBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The canonical user ID for the account that owns the bucket.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`S3BucketOwner`](crate::types::S3BucketOwner).
     pub fn build(self) -> crate::types::S3BucketOwner {

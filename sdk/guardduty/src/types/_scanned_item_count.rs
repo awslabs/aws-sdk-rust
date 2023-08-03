@@ -56,6 +56,10 @@ impl ScannedItemCountBuilder {
         self.total_gb = input;
         self
     }
+    /// <p>Total GB of files scanned for malware.</p>
+    pub fn get_total_gb(&self) -> &::std::option::Option<i32> {
+        &self.total_gb
+    }
     /// <p>Number of files scanned.</p>
     pub fn files(mut self, input: i32) -> Self {
         self.files = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl ScannedItemCountBuilder {
         self.files = input;
         self
     }
+    /// <p>Number of files scanned.</p>
+    pub fn get_files(&self) -> &::std::option::Option<i32> {
+        &self.files
+    }
     /// <p>Total number of scanned volumes.</p>
     pub fn volumes(mut self, input: i32) -> Self {
         self.volumes = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl ScannedItemCountBuilder {
     pub fn set_volumes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.volumes = input;
         self
+    }
+    /// <p>Total number of scanned volumes.</p>
+    pub fn get_volumes(&self) -> &::std::option::Option<i32> {
+        &self.volumes
     }
     /// Consumes the builder and constructs a [`ScannedItemCount`](crate::types::ScannedItemCount).
     pub fn build(self) -> crate::types::ScannedItemCount {

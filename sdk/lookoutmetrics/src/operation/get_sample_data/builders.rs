@@ -36,6 +36,12 @@ impl GetSampleDataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetSampleData as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_sample_data::builders::GetSampleDataInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -120,5 +126,11 @@ impl GetSampleDataFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_s3_source_config(input);
         self
+    }
+    /// <p>A datasource bucket in Amazon S3.</p>
+    pub fn get_s3_source_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::SampleDataS3SourceConfig> {
+        self.inner.get_s3_source_config()
     }
 }

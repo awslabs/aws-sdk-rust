@@ -73,6 +73,10 @@ impl ListWorkloadSharesInputBuilder {
         self.workload_id = input;
         self
     }
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workload_id
+    }
     /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
     pub fn shared_with_prefix(
         mut self,
@@ -89,6 +93,10 @@ impl ListWorkloadSharesInputBuilder {
         self.shared_with_prefix = input;
         self
     }
+    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
+    pub fn get_shared_with_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shared_with_prefix
+    }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -98,6 +106,10 @@ impl ListWorkloadSharesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to use to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of results to return for this request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -109,6 +121,10 @@ impl ListWorkloadSharesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return for this request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The status of the share request.</p>
     pub fn status(mut self, input: crate::types::ShareStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -118,6 +134,10 @@ impl ListWorkloadSharesInputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ShareStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the share request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ShareStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`ListWorkloadSharesInput`](crate::operation::list_workload_shares::ListWorkloadSharesInput).
     pub fn build(

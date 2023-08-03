@@ -46,6 +46,10 @@ impl CoverageCostBuilder {
         self.on_demand_cost = input;
         self
     }
+    /// <p>How much an On-Demand Instance costs.</p>
+    pub fn get_on_demand_cost(&self) -> &::std::option::Option<::std::string::String> {
+        &self.on_demand_cost
+    }
     /// Consumes the builder and constructs a [`CoverageCost`](crate::types::CoverageCost).
     pub fn build(self) -> crate::types::CoverageCost {
         crate::types::CoverageCost {

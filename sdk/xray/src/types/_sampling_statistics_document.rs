@@ -80,6 +80,10 @@ impl SamplingStatisticsDocumentBuilder {
         self.rule_name = input;
         self
     }
+    /// <p>The name of the sampling rule.</p>
+    pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_name
+    }
     /// <p>A unique identifier for the service in hexadecimal.</p>
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl SamplingStatisticsDocumentBuilder {
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_id = input;
         self
+    }
+    /// <p>A unique identifier for the service in hexadecimal.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_id
     }
     /// <p>The current time.</p>
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -103,6 +111,10 @@ impl SamplingStatisticsDocumentBuilder {
         self.timestamp = input;
         self
     }
+    /// <p>The current time.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
+    }
     /// <p>The number of requests that matched the rule.</p>
     pub fn request_count(mut self, input: i32) -> Self {
         self.request_count = ::std::option::Option::Some(input);
@@ -112,6 +124,10 @@ impl SamplingStatisticsDocumentBuilder {
     pub fn set_request_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.request_count = input;
         self
+    }
+    /// <p>The number of requests that matched the rule.</p>
+    pub fn get_request_count(&self) -> &::std::option::Option<i32> {
+        &self.request_count
     }
     /// <p>The number of requests recorded.</p>
     pub fn sampled_count(mut self, input: i32) -> Self {
@@ -123,6 +139,10 @@ impl SamplingStatisticsDocumentBuilder {
         self.sampled_count = input;
         self
     }
+    /// <p>The number of requests recorded.</p>
+    pub fn get_sampled_count(&self) -> &::std::option::Option<i32> {
+        &self.sampled_count
+    }
     /// <p>The number of requests recorded with borrowed reservoir quota.</p>
     pub fn borrow_count(mut self, input: i32) -> Self {
         self.borrow_count = ::std::option::Option::Some(input);
@@ -132,6 +152,10 @@ impl SamplingStatisticsDocumentBuilder {
     pub fn set_borrow_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.borrow_count = input;
         self
+    }
+    /// <p>The number of requests recorded with borrowed reservoir quota.</p>
+    pub fn get_borrow_count(&self) -> &::std::option::Option<i32> {
+        &self.borrow_count
     }
     /// Consumes the builder and constructs a [`SamplingStatisticsDocument`](crate::types::SamplingStatisticsDocument).
     pub fn build(self) -> crate::types::SamplingStatisticsDocument {

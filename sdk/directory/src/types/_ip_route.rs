@@ -48,6 +48,10 @@ impl IpRouteBuilder {
         self.cidr_ip = input;
         self
     }
+    /// <p>IP address block using CIDR format, for example 10.0.0.0/24. This is often the address block of the DNS server used for your self-managed domain. For a single IP address use a CIDR address block with /32. For example 10.0.0.0/32.</p>
+    pub fn get_cidr_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr_ip
+    }
     /// <p>Description of the address block.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl IpRouteBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Description of the address block.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`IpRoute`](crate::types::IpRoute).
     pub fn build(self) -> crate::types::IpRoute {

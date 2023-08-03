@@ -36,6 +36,10 @@ impl RemoveLFTagsFromResourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RemoveLFTagsFromResource as a reference.
+    pub fn as_input(&self) -> &crate::operation::remove_lf_tags_from_resource::builders::RemoveLfTagsFromResourceInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl RemoveLFTagsFromResourceFluentBuilder {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog_id()
+    }
     /// <p>The database, table, or column resource where you want to remove an LF-tag.</p>
     pub fn resource(mut self, input: crate::types::Resource) -> Self {
         self.inner = self.inner.resource(input);
@@ -135,6 +143,10 @@ impl RemoveLFTagsFromResourceFluentBuilder {
     pub fn set_resource(mut self, input: ::std::option::Option<crate::types::Resource>) -> Self {
         self.inner = self.inner.set_resource(input);
         self
+    }
+    /// <p>The database, table, or column resource where you want to remove an LF-tag.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<crate::types::Resource> {
+        self.inner.get_resource()
     }
     /// Appends an item to `LFTags`.
     ///
@@ -152,5 +164,9 @@ impl RemoveLFTagsFromResourceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_lf_tags(input);
         self
+    }
+    /// <p>The LF-tags to be removed from the resource.</p>
+    pub fn get_lf_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>> {
+        self.inner.get_lf_tags()
     }
 }

@@ -102,6 +102,10 @@ impl DescribeDashboardSnapshotJobResultOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the snapshot job. The job ARN is generated when you start a new job with a <code>StartDashboardSnapshotJob</code> API call.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>Indicates the status of a job after it has reached a terminal state. A finished snapshot job will retuen a <code>COMPLETED</code> or <code>FAILED</code> status.</p>
     pub fn job_status(mut self, input: crate::types::SnapshotJobStatus) -> Self {
         self.job_status = ::std::option::Option::Some(input);
@@ -114,6 +118,10 @@ impl DescribeDashboardSnapshotJobResultOutputBuilder {
     ) -> Self {
         self.job_status = input;
         self
+    }
+    /// <p>Indicates the status of a job after it has reached a terminal state. A finished snapshot job will retuen a <code>COMPLETED</code> or <code>FAILED</code> status.</p>
+    pub fn get_job_status(&self) -> &::std::option::Option<crate::types::SnapshotJobStatus> {
+        &self.job_status
     }
     /// <p>The time that a snapshot job was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -128,6 +136,10 @@ impl DescribeDashboardSnapshotJobResultOutputBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The time that a snapshot job was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>The time that a snapshot job status was last updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -140,6 +152,10 @@ impl DescribeDashboardSnapshotJobResultOutputBuilder {
     ) -> Self {
         self.last_updated_time = input;
         self
+    }
+    /// <p>The time that a snapshot job status was last updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
     }
     /// <p>The result of the snapshot job. Jobs that have successfully completed will return the S3Uri where they are located. Jobs that have failedwill return information on the error that caused the job to fail.</p>
     pub fn result(mut self, input: crate::types::SnapshotJobResult) -> Self {
@@ -154,6 +170,10 @@ impl DescribeDashboardSnapshotJobResultOutputBuilder {
         self.result = input;
         self
     }
+    /// <p>The result of the snapshot job. Jobs that have successfully completed will return the S3Uri where they are located. Jobs that have failedwill return information on the error that caused the job to fail.</p>
+    pub fn get_result(&self) -> &::std::option::Option<crate::types::SnapshotJobResult> {
+        &self.result
+    }
     /// <p>Displays information for the error that caused a job to fail.</p>
     pub fn error_info(mut self, input: crate::types::SnapshotJobErrorInfo) -> Self {
         self.error_info = ::std::option::Option::Some(input);
@@ -167,6 +187,10 @@ impl DescribeDashboardSnapshotJobResultOutputBuilder {
         self.error_info = input;
         self
     }
+    /// <p>Displays information for the error that caused a job to fail.</p>
+    pub fn get_error_info(&self) -> &::std::option::Option<crate::types::SnapshotJobErrorInfo> {
+        &self.error_info
+    }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_id = ::std::option::Option::Some(input.into());
@@ -177,6 +201,10 @@ impl DescribeDashboardSnapshotJobResultOutputBuilder {
         self.request_id = input;
         self
     }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
+    }
     /// <p>The HTTP status of the request</p>
     pub fn status(mut self, input: i32) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -186,6 +214,10 @@ impl DescribeDashboardSnapshotJobResultOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The HTTP status of the request</p>
+    pub fn get_status(&self) -> &::std::option::Option<i32> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

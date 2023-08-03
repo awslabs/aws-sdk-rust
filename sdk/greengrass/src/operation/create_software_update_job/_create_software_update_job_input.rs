@@ -104,6 +104,10 @@ impl CreateSoftwareUpdateJobInputBuilder {
         self.amzn_client_token = input;
         self
     }
+    /// A client token used to correlate requests and responses.
+    pub fn get_amzn_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.amzn_client_token
+    }
     /// The IAM Role that Greengrass will use to create pre-signed URLs pointing towards the update artifact.
     pub fn s3_url_signer_role(
         mut self,
@@ -120,6 +124,10 @@ impl CreateSoftwareUpdateJobInputBuilder {
         self.s3_url_signer_role = input;
         self
     }
+    /// The IAM Role that Greengrass will use to create pre-signed URLs pointing towards the update artifact.
+    pub fn get_s3_url_signer_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_url_signer_role
+    }
     /// The piece of software on the Greengrass core that will be updated.
     pub fn software_to_update(mut self, input: crate::types::SoftwareToUpdate) -> Self {
         self.software_to_update = ::std::option::Option::Some(input);
@@ -133,6 +141,10 @@ impl CreateSoftwareUpdateJobInputBuilder {
         self.software_to_update = input;
         self
     }
+    /// The piece of software on the Greengrass core that will be updated.
+    pub fn get_software_to_update(&self) -> &::std::option::Option<crate::types::SoftwareToUpdate> {
+        &self.software_to_update
+    }
     /// The minimum level of log statements that should be logged by the OTA Agent during an update.
     pub fn update_agent_log_level(mut self, input: crate::types::UpdateAgentLogLevel) -> Self {
         self.update_agent_log_level = ::std::option::Option::Some(input);
@@ -145,6 +157,12 @@ impl CreateSoftwareUpdateJobInputBuilder {
     ) -> Self {
         self.update_agent_log_level = input;
         self
+    }
+    /// The minimum level of log statements that should be logged by the OTA Agent during an update.
+    pub fn get_update_agent_log_level(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateAgentLogLevel> {
+        &self.update_agent_log_level
     }
     /// Appends an item to `update_targets`.
     ///
@@ -168,6 +186,12 @@ impl CreateSoftwareUpdateJobInputBuilder {
         self.update_targets = input;
         self
     }
+    /// The ARNs of the targets (IoT things or IoT thing groups) that this update will be applied to.
+    pub fn get_update_targets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.update_targets
+    }
     /// The architecture of the cores which are the targets of an update.
     pub fn update_targets_architecture(
         mut self,
@@ -184,6 +208,12 @@ impl CreateSoftwareUpdateJobInputBuilder {
         self.update_targets_architecture = input;
         self
     }
+    /// The architecture of the cores which are the targets of an update.
+    pub fn get_update_targets_architecture(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateTargetsArchitecture> {
+        &self.update_targets_architecture
+    }
     /// The operating system of the cores which are the targets of an update.
     pub fn update_targets_operating_system(
         mut self,
@@ -199,6 +229,12 @@ impl CreateSoftwareUpdateJobInputBuilder {
     ) -> Self {
         self.update_targets_operating_system = input;
         self
+    }
+    /// The operating system of the cores which are the targets of an update.
+    pub fn get_update_targets_operating_system(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateTargetsOperatingSystem> {
+        &self.update_targets_operating_system
     }
     /// Consumes the builder and constructs a [`CreateSoftwareUpdateJobInput`](crate::operation::create_software_update_job::CreateSoftwareUpdateJobInput).
     pub fn build(

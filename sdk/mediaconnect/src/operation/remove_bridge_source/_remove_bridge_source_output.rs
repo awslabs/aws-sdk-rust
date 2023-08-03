@@ -56,6 +56,10 @@ impl RemoveBridgeSourceOutputBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
+    pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bridge_arn
+    }
+    #[allow(missing_docs)] // documentation missing in model
     pub fn source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_name = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +68,10 @@ impl RemoveBridgeSourceOutputBuilder {
     pub fn set_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_name = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_source_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

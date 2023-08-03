@@ -54,6 +54,10 @@ impl DeleteLiveSourceInputBuilder {
         self.live_source_name = input;
         self
     }
+    /// <p>The name of the live source.</p>
+    pub fn get_live_source_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.live_source_name
+    }
     /// <p>The name of the source location associated with this Live Source.</p>
     pub fn source_location_name(
         mut self,
@@ -69,6 +73,10 @@ impl DeleteLiveSourceInputBuilder {
     ) -> Self {
         self.source_location_name = input;
         self
+    }
+    /// <p>The name of the source location associated with this Live Source.</p>
+    pub fn get_source_location_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_location_name
     }
     /// Consumes the builder and constructs a [`DeleteLiveSourceInput`](crate::operation::delete_live_source::DeleteLiveSourceInput).
     pub fn build(

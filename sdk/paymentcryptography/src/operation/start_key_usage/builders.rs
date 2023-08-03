@@ -41,6 +41,12 @@ impl StartKeyUsageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartKeyUsage as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_key_usage::builders::StartKeyUsageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,5 +134,9 @@ impl StartKeyUsageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_key_identifier(input);
         self
+    }
+    /// <p>The <code>KeyArn</code> of the key.</p>
+    pub fn get_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key_identifier()
     }
 }

@@ -49,6 +49,10 @@ impl GetReferenceImportJobInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The job's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The job's reference store ID.</p>
     pub fn reference_store_id(
         mut self,
@@ -64,6 +68,10 @@ impl GetReferenceImportJobInputBuilder {
     ) -> Self {
         self.reference_store_id = input;
         self
+    }
+    /// <p>The job's reference store ID.</p>
+    pub fn get_reference_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reference_store_id
     }
     /// Consumes the builder and constructs a [`GetReferenceImportJobInput`](crate::operation::get_reference_import_job::GetReferenceImportJobInput).
     pub fn build(

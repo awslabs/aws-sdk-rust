@@ -39,6 +39,10 @@ impl GetLendingAnalysisSummaryInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p> A unique identifier for the lending or text-detection job. The <code>JobId</code> is returned from StartLendingAnalysis. A <code>JobId</code> value is only valid for 7 days.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// Consumes the builder and constructs a [`GetLendingAnalysisSummaryInput`](crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryInput).
     pub fn build(
         self,

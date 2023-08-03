@@ -49,6 +49,10 @@ impl UploadMultipartPartOutputBuilder {
         self.checksum = input;
         self
     }
+    /// <p>The SHA256 tree hash that Amazon S3 Glacier computed for the uploaded part.</p>
+    pub fn get_checksum(&self) -> &::std::option::Option<::std::string::String> {
+        &self.checksum
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

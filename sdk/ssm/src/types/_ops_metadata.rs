@@ -72,6 +72,10 @@ impl OpsMetadataBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The ID of the Application Manager application.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object or blob.</p>
     pub fn ops_metadata_arn(
         mut self,
@@ -88,6 +92,10 @@ impl OpsMetadataBuilder {
         self.ops_metadata_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object or blob.</p>
+    pub fn get_ops_metadata_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ops_metadata_arn
+    }
     /// <p>The date the OpsMetadata object was last updated.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input);
@@ -100,6 +108,10 @@ impl OpsMetadataBuilder {
     ) -> Self {
         self.last_modified_date = input;
         self
+    }
+    /// <p>The date the OpsMetadata object was last updated.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_date
     }
     /// <p>The user name who last updated the OpsMetadata object.</p>
     pub fn last_modified_user(
@@ -117,6 +129,10 @@ impl OpsMetadataBuilder {
         self.last_modified_user = input;
         self
     }
+    /// <p>The user name who last updated the OpsMetadata object.</p>
+    pub fn get_last_modified_user(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_user
+    }
     /// <p>The date the OpsMetadata objects was created.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -129,6 +145,10 @@ impl OpsMetadataBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>The date the OpsMetadata objects was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
     }
     /// Consumes the builder and constructs a [`OpsMetadata`](crate::types::OpsMetadata).
     pub fn build(self) -> crate::types::OpsMetadata {

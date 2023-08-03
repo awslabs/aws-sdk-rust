@@ -41,6 +41,12 @@ impl CreateFargateProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateFargateProfile as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_fargate_profile::builders::CreateFargateProfileInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl CreateFargateProfileFluentBuilder {
         self.inner = self.inner.set_fargate_profile_name(input);
         self
     }
+    /// <p>The name of the Fargate profile.</p>
+    pub fn get_fargate_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fargate_profile_name()
+    }
     /// <p>The name of the Amazon EKS cluster to apply the Fargate profile to.</p>
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_name(input.into());
@@ -146,6 +156,10 @@ impl CreateFargateProfileFluentBuilder {
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_name(input);
         self
+    }
+    /// <p>The name of the Amazon EKS cluster to apply the Fargate profile to.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_name()
     }
     /// <p>The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in the Fargate profile. The pod execution role allows Fargate infrastructure to register with your cluster as a node, and it provides read access to Amazon ECR image repositories. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub fn pod_execution_role_arn(
@@ -162,6 +176,10 @@ impl CreateFargateProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_pod_execution_role_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in the Fargate profile. The pod execution role allows Fargate infrastructure to register with your cluster as a node, and it provides read access to Amazon ECR image repositories. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in the <i>Amazon EKS User Guide</i>.</p>
+    pub fn get_pod_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pod_execution_role_arn()
     }
     /// Appends an item to `subnets`.
     ///
@@ -180,6 +198,10 @@ impl CreateFargateProfileFluentBuilder {
         self.inner = self.inner.set_subnets(input);
         self
     }
+    /// <p>The IDs of subnets to launch your pods into. At this time, pods running on Fargate are not assigned public IP addresses, so only private subnets (with no direct route to an Internet Gateway) are accepted for this parameter.</p>
+    pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_subnets()
+    }
     /// Appends an item to `selectors`.
     ///
     /// To override the contents of this collection use [`set_selectors`](Self::set_selectors).
@@ -197,6 +219,12 @@ impl CreateFargateProfileFluentBuilder {
         self.inner = self.inner.set_selectors(input);
         self
     }
+    /// <p>The selectors to match for pods to use this Fargate profile. Each selector must have an associated namespace. Optionally, you can also specify labels for a namespace. You may specify up to five selectors in a Fargate profile.</p>
+    pub fn get_selectors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FargateProfileSelector>> {
+        self.inner.get_selectors()
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(
         mut self,
@@ -212,6 +240,10 @@ impl CreateFargateProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -235,5 +267,13 @@ impl CreateFargateProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The metadata to apply to the Fargate profile to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Fargate profile tags do not propagate to any other resources associated with the Fargate profile, such as the pods that are scheduled with it.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

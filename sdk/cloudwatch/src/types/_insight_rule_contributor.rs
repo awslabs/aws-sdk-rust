@@ -71,6 +71,10 @@ impl InsightRuleContributorBuilder {
         self.keys = input;
         self
     }
+    /// <p>One of the log entry field keywords that is used to define contributors for this rule.</p>
+    pub fn get_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.keys
+    }
     /// <p>An approximation of the aggregate value that comes from this contributor.</p>
     pub fn approximate_aggregate_value(mut self, input: f64) -> Self {
         self.approximate_aggregate_value = ::std::option::Option::Some(input);
@@ -80,6 +84,10 @@ impl InsightRuleContributorBuilder {
     pub fn set_approximate_aggregate_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.approximate_aggregate_value = input;
         self
+    }
+    /// <p>An approximation of the aggregate value that comes from this contributor.</p>
+    pub fn get_approximate_aggregate_value(&self) -> &::std::option::Option<f64> {
+        &self.approximate_aggregate_value
     }
     /// Appends an item to `datapoints`.
     ///
@@ -101,6 +109,13 @@ impl InsightRuleContributorBuilder {
     ) -> Self {
         self.datapoints = input;
         self
+    }
+    /// <p>An array of the data points where this contributor is present. Only the data points when this contributor appeared are included in the array.</p>
+    pub fn get_datapoints(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightRuleContributorDatapoint>>
+    {
+        &self.datapoints
     }
     /// Consumes the builder and constructs a [`InsightRuleContributor`](crate::types::InsightRuleContributor).
     pub fn build(self) -> crate::types::InsightRuleContributor {

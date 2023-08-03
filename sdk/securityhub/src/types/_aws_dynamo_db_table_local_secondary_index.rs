@@ -65,6 +65,10 @@ impl AwsDynamoDbTableLocalSecondaryIndexBuilder {
         self.index_arn = input;
         self
     }
+    /// <p>The ARN of the index.</p>
+    pub fn get_index_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_arn
+    }
     /// <p>The name of the index.</p>
     pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_name = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl AwsDynamoDbTableLocalSecondaryIndexBuilder {
     pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.index_name = input;
         self
+    }
+    /// <p>The name of the index.</p>
+    pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_name
     }
     /// Appends an item to `key_schema`.
     ///
@@ -94,6 +102,12 @@ impl AwsDynamoDbTableLocalSecondaryIndexBuilder {
         self.key_schema = input;
         self
     }
+    /// <p>The complete key schema for the index.</p>
+    pub fn get_key_schema(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableKeySchema>> {
+        &self.key_schema
+    }
     /// <p>Attributes that are copied from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.</p>
     pub fn projection(mut self, input: crate::types::AwsDynamoDbTableProjection) -> Self {
         self.projection = ::std::option::Option::Some(input);
@@ -106,6 +120,12 @@ impl AwsDynamoDbTableLocalSecondaryIndexBuilder {
     ) -> Self {
         self.projection = input;
         self
+    }
+    /// <p>Attributes that are copied from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.</p>
+    pub fn get_projection(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsDynamoDbTableProjection> {
+        &self.projection
     }
     /// Consumes the builder and constructs a [`AwsDynamoDbTableLocalSecondaryIndex`](crate::types::AwsDynamoDbTableLocalSecondaryIndex).
     pub fn build(self) -> crate::types::AwsDynamoDbTableLocalSecondaryIndex {

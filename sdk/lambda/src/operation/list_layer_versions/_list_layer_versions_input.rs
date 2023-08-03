@@ -79,6 +79,11 @@ impl ListLayerVersionsInputBuilder {
         self.compatible_runtime = input;
         self
     }
+    /// <p>A runtime identifier. For example, <code>go1.x</code>.</p>
+    /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
+    pub fn get_compatible_runtime(&self) -> &::std::option::Option<crate::types::Runtime> {
+        &self.compatible_runtime
+    }
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
     pub fn layer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.layer_name = ::std::option::Option::Some(input.into());
@@ -88,6 +93,10 @@ impl ListLayerVersionsInputBuilder {
     pub fn set_layer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.layer_name = input;
         self
+    }
+    /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
+    pub fn get_layer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.layer_name
     }
     /// <p>A pagination token returned by a previous call.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -99,6 +108,10 @@ impl ListLayerVersionsInputBuilder {
         self.marker = input;
         self
     }
+    /// <p>A pagination token returned by a previous call.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>The maximum number of versions to return.</p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.max_items = ::std::option::Option::Some(input);
@@ -108,6 +121,10 @@ impl ListLayerVersionsInputBuilder {
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_items = input;
         self
+    }
+    /// <p>The maximum number of versions to return.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        &self.max_items
     }
     /// <p>The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
     pub fn compatible_architecture(mut self, input: crate::types::Architecture) -> Self {
@@ -121,6 +138,12 @@ impl ListLayerVersionsInputBuilder {
     ) -> Self {
         self.compatible_architecture = input;
         self
+    }
+    /// <p>The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
+    pub fn get_compatible_architecture(
+        &self,
+    ) -> &::std::option::Option<crate::types::Architecture> {
+        &self.compatible_architecture
     }
     /// Consumes the builder and constructs a [`ListLayerVersionsInput`](crate::operation::list_layer_versions::ListLayerVersionsInput).
     pub fn build(

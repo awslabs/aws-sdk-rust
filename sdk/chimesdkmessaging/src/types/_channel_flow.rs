@@ -87,6 +87,10 @@ impl ChannelFlowBuilder {
         self.channel_flow_arn = input;
         self
     }
+    /// <p>The ARN of the channel flow.</p>
+    pub fn get_channel_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_flow_arn
+    }
     /// Appends an item to `processors`.
     ///
     /// To override the contents of this collection use [`set_processors`](Self::set_processors).
@@ -106,6 +110,12 @@ impl ChannelFlowBuilder {
         self.processors = input;
         self
     }
+    /// <p>Information about the processor Lambda functions.</p>
+    pub fn get_processors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Processor>> {
+        &self.processors
+    }
     /// <p>The name of the channel flow.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -115,6 +125,10 @@ impl ChannelFlowBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the channel flow.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The time at which the channel flow was created.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -129,6 +143,10 @@ impl ChannelFlowBuilder {
         self.created_timestamp = input;
         self
     }
+    /// <p>The time at which the channel flow was created.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
+    }
     /// <p>The time at which a channel flow was updated.</p>
     pub fn last_updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_timestamp = ::std::option::Option::Some(input);
@@ -141,6 +159,12 @@ impl ChannelFlowBuilder {
     ) -> Self {
         self.last_updated_timestamp = input;
         self
+    }
+    /// <p>The time at which a channel flow was updated.</p>
+    pub fn get_last_updated_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_timestamp
     }
     /// Consumes the builder and constructs a [`ChannelFlow`](crate::types::ChannelFlow).
     pub fn build(self) -> crate::types::ChannelFlow {

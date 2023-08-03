@@ -46,6 +46,10 @@ impl CloudWatchLogsLogGroupBuilder {
         self.log_group_arn = input;
         self
     }
+    /// <p>The ARN of the the CloudWatch log group to which you want your logs emitted to. The ARN must end with <code>:*</code> </p>
+    pub fn get_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group_arn
+    }
     /// Consumes the builder and constructs a [`CloudWatchLogsLogGroup`](crate::types::CloudWatchLogsLogGroup).
     pub fn build(self) -> crate::types::CloudWatchLogsLogGroup {
         crate::types::CloudWatchLogsLogGroup {

@@ -53,6 +53,12 @@ impl AwsWafv2CustomRequestHandlingDetailsBuilder {
         self.insert_headers = input;
         self
     }
+    /// <p> The HTTP headers to insert into the request. </p>
+    pub fn get_insert_headers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsWafv2CustomHttpHeader>> {
+        &self.insert_headers
+    }
     /// Consumes the builder and constructs a [`AwsWafv2CustomRequestHandlingDetails`](crate::types::AwsWafv2CustomRequestHandlingDetails).
     pub fn build(self) -> crate::types::AwsWafv2CustomRequestHandlingDetails {
         crate::types::AwsWafv2CustomRequestHandlingDetails {

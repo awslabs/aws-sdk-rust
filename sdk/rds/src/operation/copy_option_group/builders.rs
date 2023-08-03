@@ -36,6 +36,12 @@ impl CopyOptionGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CopyOptionGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::copy_option_group::builders::CopyOptionGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +146,16 @@ impl CopyOptionGroupFluentBuilder {
         self.inner = self.inner.set_source_option_group_identifier(input);
         self
     }
+    /// <p>The identifier for the source option group.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must specify a valid option group.</p> </li>
+    /// </ul>
+    pub fn get_source_option_group_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_option_group_identifier()
+    }
     /// <p>The identifier for the copied option group.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -172,6 +188,20 @@ impl CopyOptionGroupFluentBuilder {
         self.inner = self.inner.set_target_option_group_identifier(input);
         self
     }
+    /// <p>The identifier for the copied option group.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't be null, empty, or blank</p> </li>
+    /// <li> <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// </ul>
+    /// <p>Example: <code>my-option-group</code> </p>
+    pub fn get_target_option_group_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_option_group_identifier()
+    }
     /// <p>The description for the copied option group.</p>
     pub fn target_option_group_description(
         mut self,
@@ -187,6 +217,12 @@ impl CopyOptionGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_target_option_group_description(input);
         self
+    }
+    /// <p>The description for the copied option group.</p>
+    pub fn get_target_option_group_description(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_option_group_description()
     }
     /// Appends an item to `Tags`.
     ///
@@ -204,5 +240,9 @@ impl CopyOptionGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

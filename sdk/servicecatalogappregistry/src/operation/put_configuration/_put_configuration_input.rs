@@ -43,6 +43,12 @@ impl PutConfigurationInputBuilder {
         self.configuration = input;
         self
     }
+    /// <p> Associates a <code>TagKey</code> configuration to an account. </p>
+    pub fn get_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AppRegistryConfiguration> {
+        &self.configuration
+    }
     /// Consumes the builder and constructs a [`PutConfigurationInput`](crate::operation::put_configuration::PutConfigurationInput).
     pub fn build(
         self,

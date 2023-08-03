@@ -70,6 +70,10 @@ impl LastDeploymentInfoBuilder {
         self.deployment_id = input;
         self
     }
+    /// <p> The unique ID of a deployment. </p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
+    }
     /// <p>The status of the most recent deployment.</p>
     pub fn status(mut self, input: crate::types::DeploymentStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl LastDeploymentInfoBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the most recent deployment.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DeploymentStatus> {
+        &self.status
     }
     /// <p>A timestamp that indicates when the most recent deployment to the deployment group was complete.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -96,6 +104,10 @@ impl LastDeploymentInfoBuilder {
         self.end_time = input;
         self
     }
+    /// <p>A timestamp that indicates when the most recent deployment to the deployment group was complete.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>A timestamp that indicates when the most recent deployment to the deployment group started.</p>
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
@@ -108,6 +120,10 @@ impl LastDeploymentInfoBuilder {
     ) -> Self {
         self.create_time = input;
         self
+    }
+    /// <p>A timestamp that indicates when the most recent deployment to the deployment group started.</p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
     }
     /// Consumes the builder and constructs a [`LastDeploymentInfo`](crate::types::LastDeploymentInfo).
     pub fn build(self) -> crate::types::LastDeploymentInfo {

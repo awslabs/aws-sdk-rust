@@ -36,6 +36,10 @@ impl PutBandwidthRateLimitScheduleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutBandwidthRateLimitSchedule as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_bandwidth_rate_limit_schedule::builders::PutBandwidthRateLimitScheduleInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl PutBandwidthRateLimitScheduleFluentBuilder {
         self.inner = self.inner.set_gateway_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html"> <code>ListGateways</code> </a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gateway_arn()
+    }
     /// Appends an item to `BandwidthRateLimitIntervals`.
     ///
     /// To override the contents of this collection use [`set_bandwidth_rate_limit_intervals`](Self::set_bandwidth_rate_limit_intervals).
@@ -145,5 +153,11 @@ impl PutBandwidthRateLimitScheduleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_bandwidth_rate_limit_intervals(input);
         self
+    }
+    /// <p>An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty.</p>
+    pub fn get_bandwidth_rate_limit_intervals(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BandwidthRateLimitInterval>> {
+        self.inner.get_bandwidth_rate_limit_intervals()
     }
 }

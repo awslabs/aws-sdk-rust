@@ -51,6 +51,10 @@ impl TableClassSummaryBuilder {
         self.table_class = input;
         self
     }
+    /// <p>The table class of the specified table. Valid values are <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+    pub fn get_table_class(&self) -> &::std::option::Option<crate::types::TableClass> {
+        &self.table_class
+    }
     /// <p>The date and time at which the table class was last updated.</p>
     pub fn last_update_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_update_date_time = ::std::option::Option::Some(input);
@@ -63,6 +67,12 @@ impl TableClassSummaryBuilder {
     ) -> Self {
         self.last_update_date_time = input;
         self
+    }
+    /// <p>The date and time at which the table class was last updated.</p>
+    pub fn get_last_update_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_update_date_time
     }
     /// Consumes the builder and constructs a [`TableClassSummary`](crate::types::TableClassSummary).
     pub fn build(self) -> crate::types::TableClassSummary {

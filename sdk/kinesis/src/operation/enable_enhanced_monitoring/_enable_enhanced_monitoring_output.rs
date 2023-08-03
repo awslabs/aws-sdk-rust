@@ -81,6 +81,10 @@ impl EnableEnhancedMonitoringOutputBuilder {
         self.stream_name = input;
         self
     }
+    /// <p>The name of the Kinesis data stream.</p>
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_name
+    }
     /// Appends an item to `current_shard_level_metrics`.
     ///
     /// To override the contents of this collection use [`set_current_shard_level_metrics`](Self::set_current_shard_level_metrics).
@@ -99,6 +103,12 @@ impl EnableEnhancedMonitoringOutputBuilder {
     ) -> Self {
         self.current_shard_level_metrics = input;
         self
+    }
+    /// <p>Represents the current state of the metrics that are in the enhanced state before the operation.</p>
+    pub fn get_current_shard_level_metrics(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricsName>> {
+        &self.current_shard_level_metrics
     }
     /// Appends an item to `desired_shard_level_metrics`.
     ///
@@ -119,6 +129,12 @@ impl EnableEnhancedMonitoringOutputBuilder {
         self.desired_shard_level_metrics = input;
         self
     }
+    /// <p>Represents the list of all the metrics that would be in the enhanced state after the operation.</p>
+    pub fn get_desired_shard_level_metrics(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricsName>> {
+        &self.desired_shard_level_metrics
+    }
     /// <p>The ARN of the stream.</p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_arn = ::std::option::Option::Some(input.into());
@@ -128,6 +144,10 @@ impl EnableEnhancedMonitoringOutputBuilder {
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_arn = input;
         self
+    }
+    /// <p>The ARN of the stream.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

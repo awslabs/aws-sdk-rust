@@ -54,6 +54,10 @@ impl ImageBuilder {
         self.bytes = input;
         self
     }
+    /// <p>Blob of image bytes up to 5 MBs. Note that the maximum image size you can pass to <code>DetectCustomLabels</code> is 4MB. </p>
+    pub fn get_bytes(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.bytes
+    }
     /// <p>Identifies an S3 object as the image source.</p>
     pub fn s3_object(mut self, input: crate::types::S3Object) -> Self {
         self.s3_object = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl ImageBuilder {
     pub fn set_s3_object(mut self, input: ::std::option::Option<crate::types::S3Object>) -> Self {
         self.s3_object = input;
         self
+    }
+    /// <p>Identifies an S3 object as the image source.</p>
+    pub fn get_s3_object(&self) -> &::std::option::Option<crate::types::S3Object> {
+        &self.s3_object
     }
     /// Consumes the builder and constructs a [`Image`](crate::types::Image).
     pub fn build(self) -> crate::types::Image {

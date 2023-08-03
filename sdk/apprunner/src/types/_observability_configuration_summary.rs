@@ -63,6 +63,12 @@ impl ObservabilityConfigurationSummaryBuilder {
         self.observability_configuration_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of this observability configuration.</p>
+    pub fn get_observability_configuration_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.observability_configuration_arn
+    }
     /// <p>The customer-provided observability configuration name. It can be used in multiple revisions of a configuration.</p>
     pub fn observability_configuration_name(
         mut self,
@@ -79,6 +85,12 @@ impl ObservabilityConfigurationSummaryBuilder {
         self.observability_configuration_name = input;
         self
     }
+    /// <p>The customer-provided observability configuration name. It can be used in multiple revisions of a configuration.</p>
+    pub fn get_observability_configuration_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.observability_configuration_name
+    }
     /// <p>The revision of this observability configuration. It's unique among all the active configurations (<code>"Status": "ACTIVE"</code>) that share the same <code>ObservabilityConfigurationName</code>.</p>
     pub fn observability_configuration_revision(mut self, input: i32) -> Self {
         self.observability_configuration_revision = ::std::option::Option::Some(input);
@@ -91,6 +103,10 @@ impl ObservabilityConfigurationSummaryBuilder {
     ) -> Self {
         self.observability_configuration_revision = input;
         self
+    }
+    /// <p>The revision of this observability configuration. It's unique among all the active configurations (<code>"Status": "ACTIVE"</code>) that share the same <code>ObservabilityConfigurationName</code>.</p>
+    pub fn get_observability_configuration_revision(&self) -> &::std::option::Option<i32> {
+        &self.observability_configuration_revision
     }
     /// Consumes the builder and constructs a [`ObservabilityConfigurationSummary`](crate::types::ObservabilityConfigurationSummary).
     pub fn build(self) -> crate::types::ObservabilityConfigurationSummary {

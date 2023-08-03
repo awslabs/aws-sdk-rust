@@ -53,6 +53,10 @@ impl CreateAddressBookOutputBuilder {
         self.address_book_arn = input;
         self
     }
+    /// <p>The ARN of the newly created address book.</p>
+    pub fn get_address_book_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address_book_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

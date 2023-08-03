@@ -52,6 +52,12 @@ impl Scte35DescriptorSettingsBuilder {
         self.segmentation_descriptor_scte35_descriptor_settings = input;
         self
     }
+    /// SCTE-35 Segmentation Descriptor.
+    pub fn get_segmentation_descriptor_scte35_descriptor_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::Scte35SegmentationDescriptor> {
+        &self.segmentation_descriptor_scte35_descriptor_settings
+    }
     /// Consumes the builder and constructs a [`Scte35DescriptorSettings`](crate::types::Scte35DescriptorSettings).
     pub fn build(self) -> crate::types::Scte35DescriptorSettings {
         crate::types::Scte35DescriptorSettings {

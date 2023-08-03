@@ -49,6 +49,12 @@ impl CreateOriginRequestPolicyInputBuilder {
         self.origin_request_policy_config = input;
         self
     }
+    /// <p>An origin request policy configuration.</p>
+    pub fn get_origin_request_policy_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::OriginRequestPolicyConfig> {
+        &self.origin_request_policy_config
+    }
     /// Consumes the builder and constructs a [`CreateOriginRequestPolicyInput`](crate::operation::create_origin_request_policy::CreateOriginRequestPolicyInput).
     pub fn build(
         self,

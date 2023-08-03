@@ -36,6 +36,10 @@ impl GetComplianceSummaryByResourceTypeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetComplianceSummaryByResourceType as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_compliance_summary_by_resource_type::builders::GetComplianceSummaryByResourceTypeInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -111,5 +115,12 @@ impl GetComplianceSummaryByResourceTypeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_types(input);
         self
+    }
+    /// <p>Specify one or more resource types to get the number of resources that are compliant and the number that are noncompliant for each resource type.</p>
+    /// <p>For this request, you can specify an Amazon Web Services resource type such as <code>AWS::EC2::Instance</code>. You can specify that the resource type is an Amazon Web Services account by specifying <code>AWS::::Account</code>.</p>
+    pub fn get_resource_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_resource_types()
     }
 }

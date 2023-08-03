@@ -39,6 +39,12 @@ impl PutRetentionPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutRetentionPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_retention_policy::builders::PutRetentionPolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +141,10 @@ impl PutRetentionPolicyFluentBuilder {
         self.inner = self.inner.set_log_group_name(input);
         self
     }
+    /// <p>The name of the log group.</p>
+    pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_log_group_name()
+    }
     /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1096, 1827, 2192, 2557, 2922, 3288, and 3653.</p>
     /// <p>To set a log group so that its log events do not expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
     pub fn retention_in_days(mut self, input: i32) -> Self {
@@ -146,5 +156,10 @@ impl PutRetentionPolicyFluentBuilder {
     pub fn set_retention_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_retention_in_days(input);
         self
+    }
+    /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1096, 1827, 2192, 2557, 2922, 3288, and 3653.</p>
+    /// <p>To set a log group so that its log events do not expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
+    pub fn get_retention_in_days(&self) -> &::std::option::Option<i32> {
+        self.inner.get_retention_in_days()
     }
 }

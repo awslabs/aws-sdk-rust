@@ -36,6 +36,10 @@ impl CreatePackagingConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreatePackagingConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_packaging_configuration::builders::CreatePackagingConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +133,10 @@ impl CreatePackagingConfigurationFluentBuilder {
         self.inner = self.inner.set_cmaf_package(input);
         self
     }
+    /// A CMAF packaging configuration.
+    pub fn get_cmaf_package(&self) -> &::std::option::Option<crate::types::CmafPackage> {
+        self.inner.get_cmaf_package()
+    }
     /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
     pub fn dash_package(mut self, input: crate::types::DashPackage) -> Self {
         self.inner = self.inner.dash_package(input);
@@ -141,6 +149,10 @@ impl CreatePackagingConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_dash_package(input);
         self
+    }
+    /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
+    pub fn get_dash_package(&self) -> &::std::option::Option<crate::types::DashPackage> {
+        self.inner.get_dash_package()
     }
     /// An HTTP Live Streaming (HLS) packaging configuration.
     pub fn hls_package(mut self, input: crate::types::HlsPackage) -> Self {
@@ -155,6 +167,10 @@ impl CreatePackagingConfigurationFluentBuilder {
         self.inner = self.inner.set_hls_package(input);
         self
     }
+    /// An HTTP Live Streaming (HLS) packaging configuration.
+    pub fn get_hls_package(&self) -> &::std::option::Option<crate::types::HlsPackage> {
+        self.inner.get_hls_package()
+    }
     /// The ID of the PackagingConfiguration.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
@@ -164,6 +180,10 @@ impl CreatePackagingConfigurationFluentBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
+    }
+    /// The ID of the PackagingConfiguration.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
     }
     /// A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
     pub fn mss_package(mut self, input: crate::types::MssPackage) -> Self {
@@ -177,6 +197,10 @@ impl CreatePackagingConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_mss_package(input);
         self
+    }
+    /// A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
+    pub fn get_mss_package(&self) -> &::std::option::Option<crate::types::MssPackage> {
+        self.inner.get_mss_package()
     }
     /// The ID of a PackagingGroup.
     pub fn packaging_group_id(
@@ -193,6 +217,10 @@ impl CreatePackagingConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_packaging_group_id(input);
         self
+    }
+    /// The ID of a PackagingGroup.
+    pub fn get_packaging_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_packaging_group_id()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -216,5 +244,13 @@ impl CreatePackagingConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// A collection of tags associated with a resource
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

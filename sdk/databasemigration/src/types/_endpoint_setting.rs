@@ -104,6 +104,10 @@ impl EndpointSettingBuilder {
         self.name = input;
         self
     }
+    /// <p>The name that you want to give the endpoint settings.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type of endpoint. Valid values are <code>source</code> and <code>target</code>.</p>
     pub fn r#type(mut self, input: crate::types::EndpointSettingTypeValue) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -116,6 +120,10 @@ impl EndpointSettingBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of endpoint. Valid values are <code>source</code> and <code>target</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::EndpointSettingTypeValue> {
+        &self.r#type
     }
     /// Appends an item to `enum_values`.
     ///
@@ -136,6 +144,12 @@ impl EndpointSettingBuilder {
         self.enum_values = input;
         self
     }
+    /// <p>Enumerated values to use for this endpoint.</p>
+    pub fn get_enum_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.enum_values
+    }
     /// <p>A value that marks this endpoint setting as sensitive.</p>
     pub fn sensitive(mut self, input: bool) -> Self {
         self.sensitive = ::std::option::Option::Some(input);
@@ -146,6 +160,10 @@ impl EndpointSettingBuilder {
         self.sensitive = input;
         self
     }
+    /// <p>A value that marks this endpoint setting as sensitive.</p>
+    pub fn get_sensitive(&self) -> &::std::option::Option<bool> {
+        &self.sensitive
+    }
     /// <p>The unit of measure for this endpoint setting.</p>
     pub fn units(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.units = ::std::option::Option::Some(input.into());
@@ -155,6 +173,10 @@ impl EndpointSettingBuilder {
     pub fn set_units(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.units = input;
         self
+    }
+    /// <p>The unit of measure for this endpoint setting.</p>
+    pub fn get_units(&self) -> &::std::option::Option<::std::string::String> {
+        &self.units
     }
     /// <p>The relevance or validity of an endpoint setting for an engine name and its endpoint type.</p>
     pub fn applicability(
@@ -172,6 +194,10 @@ impl EndpointSettingBuilder {
         self.applicability = input;
         self
     }
+    /// <p>The relevance or validity of an endpoint setting for an engine name and its endpoint type.</p>
+    pub fn get_applicability(&self) -> &::std::option::Option<::std::string::String> {
+        &self.applicability
+    }
     /// <p>The minimum value of an endpoint setting that is of type <code>int</code>.</p>
     pub fn int_value_min(mut self, input: i32) -> Self {
         self.int_value_min = ::std::option::Option::Some(input);
@@ -182,6 +208,10 @@ impl EndpointSettingBuilder {
         self.int_value_min = input;
         self
     }
+    /// <p>The minimum value of an endpoint setting that is of type <code>int</code>.</p>
+    pub fn get_int_value_min(&self) -> &::std::option::Option<i32> {
+        &self.int_value_min
+    }
     /// <p>The maximum value of an endpoint setting that is of type <code>int</code>.</p>
     pub fn int_value_max(mut self, input: i32) -> Self {
         self.int_value_max = ::std::option::Option::Some(input);
@@ -191,6 +221,10 @@ impl EndpointSettingBuilder {
     pub fn set_int_value_max(mut self, input: ::std::option::Option<i32>) -> Self {
         self.int_value_max = input;
         self
+    }
+    /// <p>The maximum value of an endpoint setting that is of type <code>int</code>.</p>
+    pub fn get_int_value_max(&self) -> &::std::option::Option<i32> {
+        &self.int_value_max
     }
     /// <p>The default value of the endpoint setting if no value is specified using <code>CreateEndpoint</code> or <code>ModifyEndpoint</code>.</p>
     pub fn default_value(
@@ -207,6 +241,10 @@ impl EndpointSettingBuilder {
     ) -> Self {
         self.default_value = input;
         self
+    }
+    /// <p>The default value of the endpoint setting if no value is specified using <code>CreateEndpoint</code> or <code>ModifyEndpoint</code>.</p>
+    pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_value
     }
     /// Consumes the builder and constructs a [`EndpointSetting`](crate::types::EndpointSetting).
     pub fn build(self) -> crate::types::EndpointSetting {

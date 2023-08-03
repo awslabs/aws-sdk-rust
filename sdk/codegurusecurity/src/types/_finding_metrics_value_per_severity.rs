@@ -72,6 +72,10 @@ impl FindingMetricsValuePerSeverityBuilder {
         self.info = input;
         self
     }
+    /// <p>The finding is related to quality or readability improvements and not considered actionable.</p>
+    pub fn get_info(&self) -> &::std::option::Option<f64> {
+        &self.info
+    }
     /// <p>The severity of the finding is low and does require action on its own.</p>
     pub fn low(mut self, input: f64) -> Self {
         self.low = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl FindingMetricsValuePerSeverityBuilder {
     pub fn set_low(mut self, input: ::std::option::Option<f64>) -> Self {
         self.low = input;
         self
+    }
+    /// <p>The severity of the finding is low and does require action on its own.</p>
+    pub fn get_low(&self) -> &::std::option::Option<f64> {
+        &self.low
     }
     /// <p>The severity of the finding is medium and should be addressed as a mid-term priority.</p>
     pub fn medium(mut self, input: f64) -> Self {
@@ -92,6 +100,10 @@ impl FindingMetricsValuePerSeverityBuilder {
         self.medium = input;
         self
     }
+    /// <p>The severity of the finding is medium and should be addressed as a mid-term priority.</p>
+    pub fn get_medium(&self) -> &::std::option::Option<f64> {
+        &self.medium
+    }
     /// <p>The severity of the finding is high and should be addressed as a near-term priority.</p>
     pub fn high(mut self, input: f64) -> Self {
         self.high = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl FindingMetricsValuePerSeverityBuilder {
         self.high = input;
         self
     }
+    /// <p>The severity of the finding is high and should be addressed as a near-term priority.</p>
+    pub fn get_high(&self) -> &::std::option::Option<f64> {
+        &self.high
+    }
     /// <p>The severity of the finding is critical and should be addressed immediately.</p>
     pub fn critical(mut self, input: f64) -> Self {
         self.critical = ::std::option::Option::Some(input);
@@ -111,6 +127,10 @@ impl FindingMetricsValuePerSeverityBuilder {
     pub fn set_critical(mut self, input: ::std::option::Option<f64>) -> Self {
         self.critical = input;
         self
+    }
+    /// <p>The severity of the finding is critical and should be addressed immediately.</p>
+    pub fn get_critical(&self) -> &::std::option::Option<f64> {
+        &self.critical
     }
     /// Consumes the builder and constructs a [`FindingMetricsValuePerSeverity`](crate::types::FindingMetricsValuePerSeverity).
     pub fn build(self) -> crate::types::FindingMetricsValuePerSeverity {

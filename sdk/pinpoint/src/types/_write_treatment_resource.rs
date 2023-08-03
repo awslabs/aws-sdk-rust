@@ -102,6 +102,12 @@ impl WriteTreatmentResourceBuilder {
         self.custom_delivery_configuration = input;
         self
     }
+    /// <p>The delivery configuration settings for sending the treatment through a custom channel. This object is required if the MessageConfiguration object for the treatment specifies a CustomMessage object.</p>
+    pub fn get_custom_delivery_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomDeliveryConfiguration> {
+        &self.custom_delivery_configuration
+    }
     /// <p>The message configuration settings for the treatment.</p>
     pub fn message_configuration(mut self, input: crate::types::MessageConfiguration) -> Self {
         self.message_configuration = ::std::option::Option::Some(input);
@@ -115,6 +121,12 @@ impl WriteTreatmentResourceBuilder {
         self.message_configuration = input;
         self
     }
+    /// <p>The message configuration settings for the treatment.</p>
+    pub fn get_message_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::MessageConfiguration> {
+        &self.message_configuration
+    }
     /// <p>The schedule settings for the treatment.</p>
     pub fn schedule(mut self, input: crate::types::Schedule) -> Self {
         self.schedule = ::std::option::Option::Some(input);
@@ -125,6 +137,10 @@ impl WriteTreatmentResourceBuilder {
         self.schedule = input;
         self
     }
+    /// <p>The schedule settings for the treatment.</p>
+    pub fn get_schedule(&self) -> &::std::option::Option<crate::types::Schedule> {
+        &self.schedule
+    }
     /// <p>The allocated percentage of users (segment members) to send the treatment to.</p>
     pub fn size_percent(mut self, input: i32) -> Self {
         self.size_percent = ::std::option::Option::Some(input);
@@ -134,6 +150,10 @@ impl WriteTreatmentResourceBuilder {
     pub fn set_size_percent(mut self, input: ::std::option::Option<i32>) -> Self {
         self.size_percent = input;
         self
+    }
+    /// <p>The allocated percentage of users (segment members) to send the treatment to.</p>
+    pub fn get_size_percent(&self) -> &::std::option::Option<i32> {
+        &self.size_percent
     }
     /// <p>The message template to use for the treatment.</p>
     pub fn template_configuration(mut self, input: crate::types::TemplateConfiguration) -> Self {
@@ -147,6 +167,12 @@ impl WriteTreatmentResourceBuilder {
     ) -> Self {
         self.template_configuration = input;
         self
+    }
+    /// <p>The message template to use for the treatment.</p>
+    pub fn get_template_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::TemplateConfiguration> {
+        &self.template_configuration
     }
     /// <p>A custom description of the treatment.</p>
     pub fn treatment_description(
@@ -164,6 +190,10 @@ impl WriteTreatmentResourceBuilder {
         self.treatment_description = input;
         self
     }
+    /// <p>A custom description of the treatment.</p>
+    pub fn get_treatment_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.treatment_description
+    }
     /// <p>A custom name for the treatment.</p>
     pub fn treatment_name(
         mut self,
@@ -179,6 +209,10 @@ impl WriteTreatmentResourceBuilder {
     ) -> Self {
         self.treatment_name = input;
         self
+    }
+    /// <p>A custom name for the treatment.</p>
+    pub fn get_treatment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.treatment_name
     }
     /// Consumes the builder and constructs a [`WriteTreatmentResource`](crate::types::WriteTreatmentResource).
     pub fn build(self) -> crate::types::WriteTreatmentResource {

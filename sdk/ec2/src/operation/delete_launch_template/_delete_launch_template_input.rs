@@ -60,6 +60,10 @@ impl DeleteLaunchTemplateInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The ID of the launch template.</p>
     /// <p>You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
     pub fn launch_template_id(
@@ -78,6 +82,11 @@ impl DeleteLaunchTemplateInputBuilder {
         self.launch_template_id = input;
         self
     }
+    /// <p>The ID of the launch template.</p>
+    /// <p>You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
+    pub fn get_launch_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_template_id
+    }
     /// <p>The name of the launch template.</p>
     /// <p>You must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
     pub fn launch_template_name(
@@ -95,6 +104,11 @@ impl DeleteLaunchTemplateInputBuilder {
     ) -> Self {
         self.launch_template_name = input;
         self
+    }
+    /// <p>The name of the launch template.</p>
+    /// <p>You must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
+    pub fn get_launch_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_template_name
     }
     /// Consumes the builder and constructs a [`DeleteLaunchTemplateInput`](crate::operation::delete_launch_template::DeleteLaunchTemplateInput).
     pub fn build(

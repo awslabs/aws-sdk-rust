@@ -56,6 +56,10 @@ impl ComputeBuilder {
         self.simulation_unit_limit = input;
         self
     }
+    /// <p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are only billed for the SU utilization you consume up to the maximum value provided. The default is 15. </p>
+    pub fn get_simulation_unit_limit(&self) -> &::std::option::Option<i32> {
+        &self.simulation_unit_limit
+    }
     /// <p>Compute type information for the simulation job.</p>
     pub fn compute_type(mut self, input: crate::types::ComputeType) -> Self {
         self.compute_type = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl ComputeBuilder {
         self.compute_type = input;
         self
     }
+    /// <p>Compute type information for the simulation job.</p>
+    pub fn get_compute_type(&self) -> &::std::option::Option<crate::types::ComputeType> {
+        &self.compute_type
+    }
     /// <p>Compute GPU unit limit for the simulation job. It is the same as the number of GPUs allocated to the SimulationJob.</p>
     pub fn gpu_unit_limit(mut self, input: i32) -> Self {
         self.gpu_unit_limit = ::std::option::Option::Some(input);
@@ -78,6 +86,10 @@ impl ComputeBuilder {
     pub fn set_gpu_unit_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.gpu_unit_limit = input;
         self
+    }
+    /// <p>Compute GPU unit limit for the simulation job. It is the same as the number of GPUs allocated to the SimulationJob.</p>
+    pub fn get_gpu_unit_limit(&self) -> &::std::option::Option<i32> {
+        &self.gpu_unit_limit
     }
     /// Consumes the builder and constructs a [`Compute`](crate::types::Compute).
     pub fn build(self) -> crate::types::Compute {

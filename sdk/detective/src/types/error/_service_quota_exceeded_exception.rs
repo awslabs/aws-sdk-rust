@@ -80,6 +80,10 @@ impl ServiceQuotaExceededExceptionBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Appends an item to `resources`.
     ///
     /// To override the contents of this collection use [`set_resources`](Self::set_resources).
@@ -98,6 +102,10 @@ impl ServiceQuotaExceededExceptionBuilder {
     ) -> Self {
         self.resources = input;
         self
+    }
+    /// <p>The type of resource that has exceeded the service quota.</p>
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resources
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

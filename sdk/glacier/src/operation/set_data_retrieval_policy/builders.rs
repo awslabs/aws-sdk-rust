@@ -38,6 +38,13 @@ impl SetDataRetrievalPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SetDataRetrievalPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::set_data_retrieval_policy::builders::SetDataRetrievalPolicyInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +135,10 @@ impl SetDataRetrievalPolicyFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p>The data retrieval policy in JSON format.</p>
     pub fn policy(mut self, input: crate::types::DataRetrievalPolicy) -> Self {
         self.inner = self.inner.policy(input);
@@ -140,5 +151,9 @@ impl SetDataRetrievalPolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_policy(input);
         self
+    }
+    /// <p>The data retrieval policy in JSON format.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<crate::types::DataRetrievalPolicy> {
+        self.inner.get_policy()
     }
 }

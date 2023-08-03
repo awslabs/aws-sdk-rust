@@ -97,6 +97,10 @@ impl DescribeLocationAzureBlobOutputBuilder {
         self.location_arn = input;
         self
     }
+    /// <p>The ARN of your Azure Blob Storage transfer location.</p>
+    pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_arn
+    }
     /// <p>The URL of the Azure Blob Storage container involved in your transfer.</p>
     pub fn location_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_uri = ::std::option::Option::Some(input.into());
@@ -106,6 +110,10 @@ impl DescribeLocationAzureBlobOutputBuilder {
     pub fn set_location_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location_uri = input;
         self
+    }
+    /// <p>The URL of the Azure Blob Storage container involved in your transfer.</p>
+    pub fn get_location_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_uri
     }
     /// <p>The authentication method DataSync uses to access your Azure Blob Storage. DataSync can access blob storage using a shared access signature (SAS).</p>
     pub fn authentication_type(mut self, input: crate::types::AzureBlobAuthenticationType) -> Self {
@@ -120,6 +128,12 @@ impl DescribeLocationAzureBlobOutputBuilder {
         self.authentication_type = input;
         self
     }
+    /// <p>The authentication method DataSync uses to access your Azure Blob Storage. DataSync can access blob storage using a shared access signature (SAS).</p>
+    pub fn get_authentication_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::AzureBlobAuthenticationType> {
+        &self.authentication_type
+    }
     /// <p>The type of blob that you want your objects or files to be when transferring them into Azure Blob Storage. Currently, DataSync only supports moving data into Azure Blob Storage as block blobs. For more information on blob types, see the <a href="https://learn.microsoft.com/en-us/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs">Azure Blob Storage documentation</a>.</p>
     pub fn blob_type(mut self, input: crate::types::AzureBlobType) -> Self {
         self.blob_type = ::std::option::Option::Some(input);
@@ -133,6 +147,10 @@ impl DescribeLocationAzureBlobOutputBuilder {
         self.blob_type = input;
         self
     }
+    /// <p>The type of blob that you want your objects or files to be when transferring them into Azure Blob Storage. Currently, DataSync only supports moving data into Azure Blob Storage as block blobs. For more information on blob types, see the <a href="https://learn.microsoft.com/en-us/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs">Azure Blob Storage documentation</a>.</p>
+    pub fn get_blob_type(&self) -> &::std::option::Option<crate::types::AzureBlobType> {
+        &self.blob_type
+    }
     /// <p>The access tier that you want your objects or files transferred into. This only applies when using the location as a transfer destination. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-access-tiers">Access tiers</a>.</p>
     pub fn access_tier(mut self, input: crate::types::AzureAccessTier) -> Self {
         self.access_tier = ::std::option::Option::Some(input);
@@ -145,6 +163,10 @@ impl DescribeLocationAzureBlobOutputBuilder {
     ) -> Self {
         self.access_tier = input;
         self
+    }
+    /// <p>The access tier that you want your objects or files transferred into. This only applies when using the location as a transfer destination. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-access-tiers">Access tiers</a>.</p>
+    pub fn get_access_tier(&self) -> &::std::option::Option<crate::types::AzureAccessTier> {
+        &self.access_tier
     }
     /// Appends an item to `agent_arns`.
     ///
@@ -165,6 +187,10 @@ impl DescribeLocationAzureBlobOutputBuilder {
         self.agent_arns = input;
         self
     }
+    /// <p>The ARNs of the DataSync agents that can connect with your Azure Blob Storage container.</p>
+    pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.agent_arns
+    }
     /// <p>The time that your Azure Blob Storage transfer location was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -177,6 +203,10 @@ impl DescribeLocationAzureBlobOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time that your Azure Blob Storage transfer location was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

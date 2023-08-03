@@ -56,6 +56,10 @@ impl VertexBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the lineage entity resource.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The type of the lineage entity resource. For example: <code>DataSet</code>, <code>Model</code>, <code>Endpoint</code>, etc...</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl VertexBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the lineage entity resource. For example: <code>DataSet</code>, <code>Model</code>, <code>Endpoint</code>, etc...</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// <p>The type of resource of the lineage entity.</p>
     pub fn lineage_type(mut self, input: crate::types::LineageType) -> Self {
@@ -78,6 +86,10 @@ impl VertexBuilder {
     ) -> Self {
         self.lineage_type = input;
         self
+    }
+    /// <p>The type of resource of the lineage entity.</p>
+    pub fn get_lineage_type(&self) -> &::std::option::Option<crate::types::LineageType> {
+        &self.lineage_type
     }
     /// Consumes the builder and constructs a [`Vertex`](crate::types::Vertex).
     pub fn build(self) -> crate::types::Vertex {

@@ -47,6 +47,10 @@ impl GetPhoneNumberOrderInputBuilder {
         self.phone_number_order_id = input;
         self
     }
+    /// <p>The ID for the phone number order.</p>
+    pub fn get_phone_number_order_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number_order_id
+    }
     /// Consumes the builder and constructs a [`GetPhoneNumberOrderInput`](crate::operation::get_phone_number_order::GetPhoneNumberOrderInput).
     pub fn build(
         self,

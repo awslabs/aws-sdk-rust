@@ -54,6 +54,10 @@ impl DominantLanguageBuilder {
         self.language_code = input;
         self
     }
+    /// <p>The RFC 5646 language code for the dominant language. For more information about RFC 5646, see <a href="https://tools.ietf.org/html/rfc5646">Tags for Identifying Languages</a> on the <i>IETF Tools</i> web site.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.language_code
+    }
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
     pub fn score(mut self, input: f32) -> Self {
         self.score = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl DominantLanguageBuilder {
     pub fn set_score(mut self, input: ::std::option::Option<f32>) -> Self {
         self.score = input;
         self
+    }
+    /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
+    pub fn get_score(&self) -> &::std::option::Option<f32> {
+        &self.score
     }
     /// Consumes the builder and constructs a [`DominantLanguage`](crate::types::DominantLanguage).
     pub fn build(self) -> crate::types::DominantLanguage {

@@ -54,6 +54,10 @@ impl PipelineExperimentConfigBuilder {
         self.experiment_name = input;
         self
     }
+    /// <p>The name of the experiment.</p>
+    pub fn get_experiment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.experiment_name
+    }
     /// <p>The name of the trial.</p>
     pub fn trial_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trial_name = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl PipelineExperimentConfigBuilder {
     pub fn set_trial_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trial_name = input;
         self
+    }
+    /// <p>The name of the trial.</p>
+    pub fn get_trial_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trial_name
     }
     /// Consumes the builder and constructs a [`PipelineExperimentConfig`](crate::types::PipelineExperimentConfig).
     pub fn build(self) -> crate::types::PipelineExperimentConfig {

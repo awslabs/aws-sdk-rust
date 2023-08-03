@@ -56,6 +56,10 @@ impl ListApplicationVersionsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to request the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `versions`.
     ///
     /// To override the contents of this collection use [`set_versions`](Self::set_versions).
@@ -74,6 +78,12 @@ impl ListApplicationVersionsOutputBuilder {
     ) -> Self {
         self.versions = input;
         self
+    }
+    /// <p>An array of version summaries for the application.</p>
+    pub fn get_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VersionSummary>> {
+        &self.versions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

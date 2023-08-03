@@ -108,6 +108,10 @@ impl FilterBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the filter.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The ARN of the filter.</p>
     pub fn filter_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_arn = ::std::option::Option::Some(input.into());
@@ -117,6 +121,10 @@ impl FilterBuilder {
     pub fn set_filter_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.filter_arn = input;
         self
+    }
+    /// <p>The ARN of the filter.</p>
+    pub fn get_filter_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter_arn
     }
     /// <p>The time at which the filter was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -131,6 +139,10 @@ impl FilterBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>The time at which the filter was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>The time at which the filter was last updated.</p>
     pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date_time = ::std::option::Option::Some(input);
@@ -143,6 +155,12 @@ impl FilterBuilder {
     ) -> Self {
         self.last_updated_date_time = input;
         self
+    }
+    /// <p>The time at which the filter was last updated.</p>
+    pub fn get_last_updated_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date_time
     }
     /// <p>The ARN of the dataset group to which the filter belongs.</p>
     pub fn dataset_group_arn(
@@ -160,6 +178,10 @@ impl FilterBuilder {
         self.dataset_group_arn = input;
         self
     }
+    /// <p>The ARN of the dataset group to which the filter belongs.</p>
+    pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_group_arn
+    }
     /// <p>If the filter failed, the reason for its failure.</p>
     pub fn failure_reason(
         mut self,
@@ -175,6 +197,10 @@ impl FilterBuilder {
     ) -> Self {
         self.failure_reason = input;
         self
+    }
+    /// <p>If the filter failed, the reason for its failure.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     /// <p>Specifies the type of item interactions to filter out of recommendation results. The filter expression must follow specific format rules. For information about filter expression structure and syntax, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter expressions</a>.</p>
     pub fn filter_expression(
@@ -192,6 +218,10 @@ impl FilterBuilder {
         self.filter_expression = input;
         self
     }
+    /// <p>Specifies the type of item interactions to filter out of recommendation results. The filter expression must follow specific format rules. For information about filter expression structure and syntax, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter expressions</a>.</p>
+    pub fn get_filter_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter_expression
+    }
     /// <p>The status of the filter.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -201,6 +231,10 @@ impl FilterBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the filter.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     pub fn build(self) -> crate::types::Filter {

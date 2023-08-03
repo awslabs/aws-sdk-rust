@@ -36,6 +36,12 @@ impl CreatePartitionIndexFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreatePartitionIndex as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_partition_index::builders::CreatePartitionIndexInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreatePartitionIndexFluentBuilder {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
+    /// <p>The catalog ID where the table resides.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog_id()
+    }
     /// <p>Specifies the name of a database in which you want to create a partition index.</p>
     pub fn database_name(
         mut self,
@@ -142,6 +152,10 @@ impl CreatePartitionIndexFluentBuilder {
         self.inner = self.inner.set_database_name(input);
         self
     }
+    /// <p>Specifies the name of a database in which you want to create a partition index.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_database_name()
+    }
     /// <p>Specifies the name of a table in which you want to create a partition index.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.table_name(input.into());
@@ -151,6 +165,10 @@ impl CreatePartitionIndexFluentBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_table_name(input);
         self
+    }
+    /// <p>Specifies the name of a table in which you want to create a partition index.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_table_name()
     }
     /// <p>Specifies a <code>PartitionIndex</code> structure to create a partition index in an existing table.</p>
     pub fn partition_index(mut self, input: crate::types::PartitionIndex) -> Self {
@@ -164,5 +182,9 @@ impl CreatePartitionIndexFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_partition_index(input);
         self
+    }
+    /// <p>Specifies a <code>PartitionIndex</code> structure to create a partition index in an existing table.</p>
+    pub fn get_partition_index(&self) -> &::std::option::Option<crate::types::PartitionIndex> {
+        self.inner.get_partition_index()
     }
 }

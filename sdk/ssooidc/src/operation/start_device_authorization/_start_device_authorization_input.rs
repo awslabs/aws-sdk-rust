@@ -57,6 +57,10 @@ impl StartDeviceAuthorizationInputBuilder {
         self.client_id = input;
         self
     }
+    /// <p>The unique identifier string for the client that is registered with IAM Identity Center. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_id
+    }
     /// <p>A secret string that is generated for the client. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
     pub fn client_secret(
         mut self,
@@ -73,6 +77,10 @@ impl StartDeviceAuthorizationInputBuilder {
         self.client_secret = input;
         self
     }
+    /// <p>A secret string that is generated for the client. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
+    pub fn get_client_secret(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_secret
+    }
     /// <p>The URL for the AWS access portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the AWS access portal</a> in the <i>IAM Identity Center User Guide</i>.</p>
     pub fn start_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_url = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl StartDeviceAuthorizationInputBuilder {
     pub fn set_start_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_url = input;
         self
+    }
+    /// <p>The URL for the AWS access portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the AWS access portal</a> in the <i>IAM Identity Center User Guide</i>.</p>
+    pub fn get_start_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_url
     }
     /// Consumes the builder and constructs a [`StartDeviceAuthorizationInput`](crate::operation::start_device_authorization::StartDeviceAuthorizationInput).
     pub fn build(

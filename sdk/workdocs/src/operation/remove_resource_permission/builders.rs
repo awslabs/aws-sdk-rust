@@ -36,6 +36,13 @@ impl RemoveResourcePermissionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RemoveResourcePermission as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::remove_resource_permission::builders::RemoveResourcePermissionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl RemoveResourcePermissionFluentBuilder {
         self.inner = self.inner.set_authentication_token(input);
         self
     }
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_authentication_token()
+    }
     /// <p>The ID of the resource.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
@@ -142,6 +153,10 @@ impl RemoveResourcePermissionFluentBuilder {
         self.inner = self.inner.set_resource_id(input);
         self
     }
+    /// <p>The ID of the resource.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
+    }
     /// <p>The principal ID of the resource.</p>
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.principal_id(input.into());
@@ -151,6 +166,10 @@ impl RemoveResourcePermissionFluentBuilder {
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_principal_id(input);
         self
+    }
+    /// <p>The principal ID of the resource.</p>
+    pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_principal_id()
     }
     /// <p>The principal type of the resource.</p>
     pub fn principal_type(mut self, input: crate::types::PrincipalType) -> Self {
@@ -164,5 +183,9 @@ impl RemoveResourcePermissionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_principal_type(input);
         self
+    }
+    /// <p>The principal type of the resource.</p>
+    pub fn get_principal_type(&self) -> &::std::option::Option<crate::types::PrincipalType> {
+        self.inner.get_principal_type()
     }
 }

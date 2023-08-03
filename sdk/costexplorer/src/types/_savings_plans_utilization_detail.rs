@@ -89,6 +89,10 @@ impl SavingsPlansUtilizationDetailBuilder {
         self.savings_plan_arn = input;
         self
     }
+    /// <p>The unique Amazon Resource Name (ARN) for a particular Savings Plan.</p>
+    pub fn get_savings_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.savings_plan_arn
+    }
     /// Adds a key-value pair to `attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
@@ -114,6 +118,14 @@ impl SavingsPlansUtilizationDetailBuilder {
         self.attributes = input;
         self
     }
+    /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.attributes
+    }
     /// <p>A ratio of your effectiveness of using existing Savings Plans to apply to workloads that are Savings Plans eligible.</p>
     pub fn utilization(mut self, input: crate::types::SavingsPlansUtilization) -> Self {
         self.utilization = ::std::option::Option::Some(input);
@@ -127,6 +139,10 @@ impl SavingsPlansUtilizationDetailBuilder {
         self.utilization = input;
         self
     }
+    /// <p>A ratio of your effectiveness of using existing Savings Plans to apply to workloads that are Savings Plans eligible.</p>
+    pub fn get_utilization(&self) -> &::std::option::Option<crate::types::SavingsPlansUtilization> {
+        &self.utilization
+    }
     /// <p>The amount saved by using existing Savings Plans. Savings returns both net savings from savings plans and also the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
     pub fn savings(mut self, input: crate::types::SavingsPlansSavings) -> Self {
         self.savings = ::std::option::Option::Some(input);
@@ -139,6 +155,10 @@ impl SavingsPlansUtilizationDetailBuilder {
     ) -> Self {
         self.savings = input;
         self
+    }
+    /// <p>The amount saved by using existing Savings Plans. Savings returns both net savings from savings plans and also the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
+    pub fn get_savings(&self) -> &::std::option::Option<crate::types::SavingsPlansSavings> {
+        &self.savings
     }
     /// <p>The total amortized commitment for a Savings Plans. Includes the sum of the upfront and recurring Savings Plans fees.</p>
     pub fn amortized_commitment(
@@ -155,6 +175,12 @@ impl SavingsPlansUtilizationDetailBuilder {
     ) -> Self {
         self.amortized_commitment = input;
         self
+    }
+    /// <p>The total amortized commitment for a Savings Plans. Includes the sum of the upfront and recurring Savings Plans fees.</p>
+    pub fn get_amortized_commitment(
+        &self,
+    ) -> &::std::option::Option<crate::types::SavingsPlansAmortizedCommitment> {
+        &self.amortized_commitment
     }
     /// Consumes the builder and constructs a [`SavingsPlansUtilizationDetail`](crate::types::SavingsPlansUtilizationDetail).
     pub fn build(self) -> crate::types::SavingsPlansUtilizationDetail {

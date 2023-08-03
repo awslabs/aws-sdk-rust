@@ -38,6 +38,10 @@ impl UpdateAliasFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAlias as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_alias::builders::UpdateAliasInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -120,6 +124,10 @@ impl UpdateAliasFluentBuilder {
         self.inner = self.inner.set_alias_id(input);
         self
     }
+    /// <p>A unique identifier for the alias that you want to update. You can use either the alias ID or ARN value.</p>
+    pub fn get_alias_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_alias_id()
+    }
     /// <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -130,6 +138,10 @@ impl UpdateAliasFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A human-readable description of the alias.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -139,6 +151,10 @@ impl UpdateAliasFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A human-readable description of the alias.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The routing configuration, including routing type and fleet target, for the alias.</p>
     pub fn routing_strategy(mut self, input: crate::types::RoutingStrategy) -> Self {
@@ -152,5 +168,9 @@ impl UpdateAliasFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_routing_strategy(input);
         self
+    }
+    /// <p>The routing configuration, including routing type and fleet target, for the alias.</p>
+    pub fn get_routing_strategy(&self) -> &::std::option::Option<crate::types::RoutingStrategy> {
+        self.inner.get_routing_strategy()
     }
 }

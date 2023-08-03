@@ -58,6 +58,10 @@ impl ListOutgoingCertificatesInputBuilder {
         self.page_size = input;
         self
     }
+    /// <p>The result page size.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        &self.page_size
+    }
     /// <p>The marker for the next set of results.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl ListOutgoingCertificatesInputBuilder {
         self.marker = input;
         self
     }
+    /// <p>The marker for the next set of results.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
     pub fn ascending_order(mut self, input: bool) -> Self {
         self.ascending_order = ::std::option::Option::Some(input);
@@ -77,6 +85,10 @@ impl ListOutgoingCertificatesInputBuilder {
     pub fn set_ascending_order(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ascending_order = input;
         self
+    }
+    /// <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
+    pub fn get_ascending_order(&self) -> &::std::option::Option<bool> {
+        &self.ascending_order
     }
     /// Consumes the builder and constructs a [`ListOutgoingCertificatesInput`](crate::operation::list_outgoing_certificates::ListOutgoingCertificatesInput).
     pub fn build(

@@ -51,6 +51,10 @@ impl AggregateConformancePackComplianceCountBuilder {
         self.compliant_conformance_pack_count = input;
         self
     }
+    /// <p>Number of compliant conformance packs.</p>
+    pub fn get_compliant_conformance_pack_count(&self) -> &::std::option::Option<i32> {
+        &self.compliant_conformance_pack_count
+    }
     /// <p>Number of noncompliant conformance packs.</p>
     pub fn non_compliant_conformance_pack_count(mut self, input: i32) -> Self {
         self.non_compliant_conformance_pack_count = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl AggregateConformancePackComplianceCountBuilder {
     ) -> Self {
         self.non_compliant_conformance_pack_count = input;
         self
+    }
+    /// <p>Number of noncompliant conformance packs.</p>
+    pub fn get_non_compliant_conformance_pack_count(&self) -> &::std::option::Option<i32> {
+        &self.non_compliant_conformance_pack_count
     }
     /// Consumes the builder and constructs a [`AggregateConformancePackComplianceCount`](crate::types::AggregateConformancePackComplianceCount).
     pub fn build(self) -> crate::types::AggregateConformancePackComplianceCount {

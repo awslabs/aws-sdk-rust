@@ -43,6 +43,10 @@ impl AsyncInferenceClientConfigBuilder {
         self.max_concurrent_invocations_per_instance = input;
         self
     }
+    /// <p>The maximum number of concurrent requests sent by the SageMaker client to the model container. If no value is provided, SageMaker chooses an optimal value.</p>
+    pub fn get_max_concurrent_invocations_per_instance(&self) -> &::std::option::Option<i32> {
+        &self.max_concurrent_invocations_per_instance
+    }
     /// Consumes the builder and constructs a [`AsyncInferenceClientConfig`](crate::types::AsyncInferenceClientConfig).
     pub fn build(self) -> crate::types::AsyncInferenceClientConfig {
         crate::types::AsyncInferenceClientConfig {

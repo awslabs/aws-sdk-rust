@@ -48,6 +48,10 @@ impl InvokeScreenAutomationOutputBuilder {
         self.workbook_cursor = input;
         self
     }
+    /// <p>The updated workbook cursor after performing the automation action.</p>
+    pub fn get_workbook_cursor(&self) -> &::std::option::Option<i64> {
+        &self.workbook_cursor
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

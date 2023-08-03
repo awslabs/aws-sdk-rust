@@ -46,6 +46,10 @@ impl PinpointDestinationBuilder {
         self.application_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Pinpoint project to send email events to.</p>
+    pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_arn
+    }
     /// Consumes the builder and constructs a [`PinpointDestination`](crate::types::PinpointDestination).
     pub fn build(self) -> crate::types::PinpointDestination {
         crate::types::PinpointDestination {

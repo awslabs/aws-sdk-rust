@@ -70,6 +70,10 @@ impl FileSystemAssociationSummaryBuilder {
         self.file_system_association_id = input;
         self
     }
+    /// <p>The ID of the file system association.</p>
+    pub fn get_file_system_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_system_association_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the file system association.</p>
     pub fn file_system_association_arn(
         mut self,
@@ -85,6 +89,10 @@ impl FileSystemAssociationSummaryBuilder {
     ) -> Self {
         self.file_system_association_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the file system association.</p>
+    pub fn get_file_system_association_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_system_association_arn
     }
     /// <p>The status of the file share. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code> </p>
     pub fn file_system_association_status(
@@ -102,6 +110,12 @@ impl FileSystemAssociationSummaryBuilder {
         self.file_system_association_status = input;
         self
     }
+    /// <p>The status of the file share. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code> </p>
+    pub fn get_file_system_association_status(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.file_system_association_status
+    }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
@@ -111,6 +125,10 @@ impl FileSystemAssociationSummaryBuilder {
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
     }
     /// Consumes the builder and constructs a [`FileSystemAssociationSummary`](crate::types::FileSystemAssociationSummary).
     pub fn build(self) -> crate::types::FileSystemAssociationSummary {

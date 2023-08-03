@@ -51,6 +51,10 @@ impl FormDataTypeConfigBuilder {
         self.data_source_type = input;
         self
     }
+    /// <p>The data source type, either an Amplify DataStore model or a custom data type.</p>
+    pub fn get_data_source_type(&self) -> &::std::option::Option<crate::types::FormDataSourceType> {
+        &self.data_source_type
+    }
     /// <p>The unique name of the data type you are using as the data source for the form.</p>
     pub fn data_type_name(
         mut self,
@@ -66,6 +70,10 @@ impl FormDataTypeConfigBuilder {
     ) -> Self {
         self.data_type_name = input;
         self
+    }
+    /// <p>The unique name of the data type you are using as the data source for the form.</p>
+    pub fn get_data_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_type_name
     }
     /// Consumes the builder and constructs a [`FormDataTypeConfig`](crate::types::FormDataTypeConfig).
     pub fn build(self) -> crate::types::FormDataTypeConfig {

@@ -63,6 +63,10 @@ impl AddApplicationInputInputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The name of your existing application to which you want to add the streaming source.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>The current version of your application. You must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>.You can use the <code>DescribeApplication</code> operation to find the current application version.</p>
     pub fn current_application_version_id(mut self, input: i64) -> Self {
         self.current_application_version_id = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl AddApplicationInputInputBuilder {
         self.current_application_version_id = input;
         self
     }
+    /// <p>The current version of your application. You must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>.You can use the <code>DescribeApplication</code> operation to find the current application version.</p>
+    pub fn get_current_application_version_id(&self) -> &::std::option::Option<i64> {
+        &self.current_application_version_id
+    }
     /// <p>The <code>Input</code> to add.</p>
     pub fn input(mut self, input: crate::types::Input) -> Self {
         self.input = ::std::option::Option::Some(input);
@@ -82,6 +90,10 @@ impl AddApplicationInputInputBuilder {
     pub fn set_input(mut self, input: ::std::option::Option<crate::types::Input>) -> Self {
         self.input = input;
         self
+    }
+    /// <p>The <code>Input</code> to add.</p>
+    pub fn get_input(&self) -> &::std::option::Option<crate::types::Input> {
+        &self.input
     }
     /// Consumes the builder and constructs a [`AddApplicationInputInput`](crate::operation::add_application_input::AddApplicationInputInput).
     pub fn build(

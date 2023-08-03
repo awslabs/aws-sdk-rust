@@ -48,6 +48,10 @@ impl CachePolicySummaryBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of cache policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services account).</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::CachePolicyType> {
+        &self.r#type
+    }
     /// <p>The cache policy.</p>
     pub fn cache_policy(mut self, input: crate::types::CachePolicy) -> Self {
         self.cache_policy = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl CachePolicySummaryBuilder {
     ) -> Self {
         self.cache_policy = input;
         self
+    }
+    /// <p>The cache policy.</p>
+    pub fn get_cache_policy(&self) -> &::std::option::Option<crate::types::CachePolicy> {
+        &self.cache_policy
     }
     /// Consumes the builder and constructs a [`CachePolicySummary`](crate::types::CachePolicySummary).
     pub fn build(self) -> crate::types::CachePolicySummary {

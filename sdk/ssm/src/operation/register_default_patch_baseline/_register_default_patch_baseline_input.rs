@@ -39,6 +39,10 @@ impl RegisterDefaultPatchBaselineInputBuilder {
         self.baseline_id = input;
         self
     }
+    /// <p>The ID of the patch baseline that should be the default patch baseline.</p>
+    pub fn get_baseline_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.baseline_id
+    }
     /// Consumes the builder and constructs a [`RegisterDefaultPatchBaselineInput`](crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineInput).
     pub fn build(
         self,

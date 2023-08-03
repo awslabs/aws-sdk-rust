@@ -36,6 +36,12 @@ impl GetSinkPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetSinkPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_sink_policy::builders::GetSinkPolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -123,5 +129,9 @@ impl GetSinkPolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sink_identifier(input);
         self
+    }
+    /// <p>The ARN of the sink to retrieve the policy of.</p>
+    pub fn get_sink_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sink_identifier()
     }
 }

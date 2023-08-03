@@ -48,6 +48,10 @@ impl DomainEndpointOptionsBuilder {
         self.enforce_https = input;
         self
     }
+    /// <p>Whether the domain is HTTPS only enabled.</p>
+    pub fn get_enforce_https(&self) -> &::std::option::Option<bool> {
+        &self.enforce_https
+    }
     /// <p>The minimum required TLS version</p>
     pub fn tls_security_policy(mut self, input: crate::types::TlsSecurityPolicy) -> Self {
         self.tls_security_policy = ::std::option::Option::Some(input);
@@ -60,6 +64,12 @@ impl DomainEndpointOptionsBuilder {
     ) -> Self {
         self.tls_security_policy = input;
         self
+    }
+    /// <p>The minimum required TLS version</p>
+    pub fn get_tls_security_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::TlsSecurityPolicy> {
+        &self.tls_security_policy
     }
     /// Consumes the builder and constructs a [`DomainEndpointOptions`](crate::types::DomainEndpointOptions).
     pub fn build(self) -> crate::types::DomainEndpointOptions {

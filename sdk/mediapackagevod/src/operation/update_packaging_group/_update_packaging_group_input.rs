@@ -52,6 +52,10 @@ impl UpdatePackagingGroupInputBuilder {
         self.authorization = input;
         self
     }
+    /// CDN Authorization credentials
+    pub fn get_authorization(&self) -> &::std::option::Option<crate::types::Authorization> {
+        &self.authorization
+    }
     /// The ID of a MediaPackage VOD PackagingGroup resource.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -61,6 +65,10 @@ impl UpdatePackagingGroupInputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// The ID of a MediaPackage VOD PackagingGroup resource.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`UpdatePackagingGroupInput`](crate::operation::update_packaging_group::UpdatePackagingGroupInput).
     pub fn build(

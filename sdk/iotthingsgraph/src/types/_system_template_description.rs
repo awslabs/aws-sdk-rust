@@ -59,6 +59,10 @@ impl SystemTemplateDescriptionBuilder {
         self.summary = input;
         self
     }
+    /// <p>An object that contains summary information about a system.</p>
+    pub fn get_summary(&self) -> &::std::option::Option<crate::types::SystemTemplateSummary> {
+        &self.summary
+    }
     /// <p>The definition document of a system.</p>
     pub fn definition(mut self, input: crate::types::DefinitionDocument) -> Self {
         self.definition = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl SystemTemplateDescriptionBuilder {
         self.definition = input;
         self
     }
+    /// <p>The definition document of a system.</p>
+    pub fn get_definition(&self) -> &::std::option::Option<crate::types::DefinitionDocument> {
+        &self.definition
+    }
     /// <p>The namespace version against which the system was validated. Use this value in your system instance.</p>
     pub fn validated_namespace_version(mut self, input: i64) -> Self {
         self.validated_namespace_version = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl SystemTemplateDescriptionBuilder {
     pub fn set_validated_namespace_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.validated_namespace_version = input;
         self
+    }
+    /// <p>The namespace version against which the system was validated. Use this value in your system instance.</p>
+    pub fn get_validated_namespace_version(&self) -> &::std::option::Option<i64> {
+        &self.validated_namespace_version
     }
     /// Consumes the builder and constructs a [`SystemTemplateDescription`](crate::types::SystemTemplateDescription).
     pub fn build(self) -> crate::types::SystemTemplateDescription {

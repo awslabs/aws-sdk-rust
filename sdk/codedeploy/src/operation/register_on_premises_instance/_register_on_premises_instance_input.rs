@@ -62,6 +62,10 @@ impl RegisterOnPremisesInstanceInputBuilder {
         self.instance_name = input;
         self
     }
+    /// <p>The name of the on-premises instance to register.</p>
+    pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_name
+    }
     /// <p>The ARN of the IAM session to associate with the on-premises instance.</p>
     pub fn iam_session_arn(
         mut self,
@@ -78,6 +82,10 @@ impl RegisterOnPremisesInstanceInputBuilder {
         self.iam_session_arn = input;
         self
     }
+    /// <p>The ARN of the IAM session to associate with the on-premises instance.</p>
+    pub fn get_iam_session_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_session_arn
+    }
     /// <p>The ARN of the IAM user to associate with the on-premises instance.</p>
     pub fn iam_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_user_arn = ::std::option::Option::Some(input.into());
@@ -87,6 +95,10 @@ impl RegisterOnPremisesInstanceInputBuilder {
     pub fn set_iam_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_user_arn = input;
         self
+    }
+    /// <p>The ARN of the IAM user to associate with the on-premises instance.</p>
+    pub fn get_iam_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_user_arn
     }
     /// Consumes the builder and constructs a [`RegisterOnPremisesInstanceInput`](crate::operation::register_on_premises_instance::RegisterOnPremisesInstanceInput).
     pub fn build(

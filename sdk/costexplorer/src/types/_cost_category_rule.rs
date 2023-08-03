@@ -69,6 +69,10 @@ impl CostCategoryRuleBuilder {
         self.value = input;
         self
     }
+    /// <p>The default value for the cost category.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// <p>An <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object used to categorize costs. This supports dimensions, tags, and nested expressions. Currently the only dimensions supported are <code>LINKED_ACCOUNT</code>, <code>SERVICE_CODE</code>, <code>RECORD_TYPE</code>, <code>LINKED_ACCOUNT_NAME</code>, <code>REGION</code>, and <code>USAGE_TYPE</code>.</p>
     /// <p> <code>RECORD_TYPE</code> is a dimension used for Cost Explorer APIs, and is also supported for Cost Category expressions. This dimension uses different terms, depending on whether you're using the console or API/JSON editor. For a detailed comparison, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-cost-categories.html#cost-categories-terms">Term Comparisons</a> in the <i>Billing and Cost Management User Guide</i>.</p>
     pub fn rule(mut self, input: crate::types::Expression) -> Self {
@@ -80,6 +84,11 @@ impl CostCategoryRuleBuilder {
     pub fn set_rule(mut self, input: ::std::option::Option<crate::types::Expression>) -> Self {
         self.rule = input;
         self
+    }
+    /// <p>An <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object used to categorize costs. This supports dimensions, tags, and nested expressions. Currently the only dimensions supported are <code>LINKED_ACCOUNT</code>, <code>SERVICE_CODE</code>, <code>RECORD_TYPE</code>, <code>LINKED_ACCOUNT_NAME</code>, <code>REGION</code>, and <code>USAGE_TYPE</code>.</p>
+    /// <p> <code>RECORD_TYPE</code> is a dimension used for Cost Explorer APIs, and is also supported for Cost Category expressions. This dimension uses different terms, depending on whether you're using the console or API/JSON editor. For a detailed comparison, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-cost-categories.html#cost-categories-terms">Term Comparisons</a> in the <i>Billing and Cost Management User Guide</i>.</p>
+    pub fn get_rule(&self) -> &::std::option::Option<crate::types::Expression> {
+        &self.rule
     }
     /// <p>The value the line item is categorized as if the line item contains the matched dimension.</p>
     pub fn inherited_value(
@@ -97,6 +106,12 @@ impl CostCategoryRuleBuilder {
         self.inherited_value = input;
         self
     }
+    /// <p>The value the line item is categorized as if the line item contains the matched dimension.</p>
+    pub fn get_inherited_value(
+        &self,
+    ) -> &::std::option::Option<crate::types::CostCategoryInheritedValueDimension> {
+        &self.inherited_value
+    }
     /// <p>You can define the <code>CostCategoryRule</code> rule type as either <code>REGULAR</code> or <code>INHERITED_VALUE</code>. The <code>INHERITED_VALUE</code> rule type adds the flexibility to define a rule that dynamically inherits the cost category value. This value is from the dimension value that's defined by <code>CostCategoryInheritedValueDimension</code>. For example, suppose that you want to costs to be dynamically grouped based on the value of a specific tag key. First, choose an inherited value rule type, and then choose the tag dimension and specify the tag key to use.</p>
     pub fn r#type(mut self, input: crate::types::CostCategoryRuleType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -109,6 +124,10 @@ impl CostCategoryRuleBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>You can define the <code>CostCategoryRule</code> rule type as either <code>REGULAR</code> or <code>INHERITED_VALUE</code>. The <code>INHERITED_VALUE</code> rule type adds the flexibility to define a rule that dynamically inherits the cost category value. This value is from the dimension value that's defined by <code>CostCategoryInheritedValueDimension</code>. For example, suppose that you want to costs to be dynamically grouped based on the value of a specific tag key. First, choose an inherited value rule type, and then choose the tag dimension and specify the tag key to use.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::CostCategoryRuleType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`CostCategoryRule`](crate::types::CostCategoryRule).
     pub fn build(self) -> crate::types::CostCategoryRule {

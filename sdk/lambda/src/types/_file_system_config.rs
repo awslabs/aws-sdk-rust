@@ -48,6 +48,10 @@ impl FileSystemConfigBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon EFS access point that provides access to the file system.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The path where the function can access the file system, starting with <code>/mnt/</code>.</p>
     pub fn local_mount_path(
         mut self,
@@ -63,6 +67,10 @@ impl FileSystemConfigBuilder {
     ) -> Self {
         self.local_mount_path = input;
         self
+    }
+    /// <p>The path where the function can access the file system, starting with <code>/mnt/</code>.</p>
+    pub fn get_local_mount_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.local_mount_path
     }
     /// Consumes the builder and constructs a [`FileSystemConfig`](crate::types::FileSystemConfig).
     pub fn build(self) -> crate::types::FileSystemConfig {

@@ -56,6 +56,10 @@ impl CreateTrafficPolicyVersionInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the traffic policy for which you want to create a new version.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The definition of this version of the traffic policy, in JSON format. You specified the JSON in the <code>CreateTrafficPolicyVersion</code> request. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateTrafficPolicy.html">CreateTrafficPolicy</a>.</p>
     pub fn document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl CreateTrafficPolicyVersionInputBuilder {
         self.document = input;
         self
     }
+    /// <p>The definition of this version of the traffic policy, in JSON format. You specified the JSON in the <code>CreateTrafficPolicyVersion</code> request. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateTrafficPolicy.html">CreateTrafficPolicy</a>.</p>
+    pub fn get_document(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document
+    }
     /// <p>The comment that you specified in the <code>CreateTrafficPolicyVersion</code> request, if any.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl CreateTrafficPolicyVersionInputBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment = input;
         self
+    }
+    /// <p>The comment that you specified in the <code>CreateTrafficPolicyVersion</code> request, if any.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment
     }
     /// Consumes the builder and constructs a [`CreateTrafficPolicyVersionInput`](crate::operation::create_traffic_policy_version::CreateTrafficPolicyVersionInput).
     pub fn build(

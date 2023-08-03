@@ -36,6 +36,12 @@ impl CreateProjectFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateProject as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_project::builders::CreateProjectInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl CreateProjectFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p> Name of the project. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p> Default region where project resources should be created. </p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.region(input.into());
@@ -127,6 +137,10 @@ impl CreateProjectFluentBuilder {
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_region(input);
         self
+    }
+    /// <p> Default region where project resources should be created. </p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_region()
     }
     /// <p> ZIP or YAML file which contains configuration settings to be used when creating the project. This may be the contents of the file downloaded from the URL provided in an export project operation. </p>
     pub fn contents(mut self, input: ::aws_smithy_types::Blob) -> Self {
@@ -138,6 +152,10 @@ impl CreateProjectFluentBuilder {
         self.inner = self.inner.set_contents(input);
         self
     }
+    /// <p> ZIP or YAML file which contains configuration settings to be used when creating the project. This may be the contents of the file downloaded from the URL provided in an export project operation. </p>
+    pub fn get_contents(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        self.inner.get_contents()
+    }
     /// <p> Unique identifier for an exported snapshot of project configuration. This snapshot identifier is included in the share URL when a project is exported. </p>
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_id(input.into());
@@ -147,5 +165,9 @@ impl CreateProjectFluentBuilder {
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_id(input);
         self
+    }
+    /// <p> Unique identifier for an exported snapshot of project configuration. This snapshot identifier is included in the share URL when a project is exported. </p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_id()
     }
 }

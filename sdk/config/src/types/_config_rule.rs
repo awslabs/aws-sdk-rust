@@ -164,6 +164,10 @@ impl ConfigRuleBuilder {
         self.config_rule_name = input;
         self
     }
+    /// <p>The name that you assign to the Config rule. The name is required if you are adding a new rule.</p>
+    pub fn get_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.config_rule_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the Config rule.</p>
     pub fn config_rule_arn(
         mut self,
@@ -179,6 +183,10 @@ impl ConfigRuleBuilder {
     ) -> Self {
         self.config_rule_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Config rule.</p>
+    pub fn get_config_rule_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.config_rule_arn
     }
     /// <p>The ID of the Config rule.</p>
     pub fn config_rule_id(
@@ -196,6 +204,10 @@ impl ConfigRuleBuilder {
         self.config_rule_id = input;
         self
     }
+    /// <p>The ID of the Config rule.</p>
+    pub fn get_config_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.config_rule_id
+    }
     /// <p>The description that you provide for the Config rule.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -205,6 +217,10 @@ impl ConfigRuleBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description that you provide for the Config rule.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Defines which resources can trigger an evaluation for the rule. The scope can include one or more resource types, a combination of one resource type and one resource ID, or a combination of a tag key and value. Specify a scope to constrain the resources that can trigger an evaluation for the rule. If you do not specify a scope, evaluations are triggered when any resource in the recording group changes.</p> <note>
     /// <p>The scope can be empty. </p>
@@ -220,6 +236,12 @@ impl ConfigRuleBuilder {
         self.scope = input;
         self
     }
+    /// <p>Defines which resources can trigger an evaluation for the rule. The scope can include one or more resource types, a combination of one resource type and one resource ID, or a combination of a tag key and value. Specify a scope to constrain the resources that can trigger an evaluation for the rule. If you do not specify a scope, evaluations are triggered when any resource in the recording group changes.</p> <note>
+    /// <p>The scope can be empty. </p>
+    /// </note>
+    pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
+        &self.scope
+    }
     /// <p>Provides the rule owner (<code>Amazon Web Services</code> for managed rules, <code>CUSTOM_POLICY</code> for Custom Policy rules, and <code>CUSTOM_LAMBDA</code> for Custom Lambda rules), the rule identifier, and the notifications that cause the function to evaluate your Amazon Web Services resources.</p>
     pub fn source(mut self, input: crate::types::Source) -> Self {
         self.source = ::std::option::Option::Some(input);
@@ -229,6 +251,10 @@ impl ConfigRuleBuilder {
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::Source>) -> Self {
         self.source = input;
         self
+    }
+    /// <p>Provides the rule owner (<code>Amazon Web Services</code> for managed rules, <code>CUSTOM_POLICY</code> for Custom Policy rules, and <code>CUSTOM_LAMBDA</code> for Custom Lambda rules), the rule identifier, and the notifications that cause the function to evaluate your Amazon Web Services resources.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::Source> {
+        &self.source
     }
     /// <p>A string, in JSON format, that is passed to the Config rule Lambda function.</p>
     pub fn input_parameters(
@@ -245,6 +271,10 @@ impl ConfigRuleBuilder {
     ) -> Self {
         self.input_parameters = input;
         self
+    }
+    /// <p>A string, in JSON format, that is passed to the Config rule Lambda function.</p>
+    pub fn get_input_parameters(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_parameters
     }
     /// <p>The maximum frequency with which Config runs evaluations for a rule. You can specify a value for <code>MaximumExecutionFrequency</code> when:</p>
     /// <ul>
@@ -274,6 +304,18 @@ impl ConfigRuleBuilder {
         self.maximum_execution_frequency = input;
         self
     }
+    /// <p>The maximum frequency with which Config runs evaluations for a rule. You can specify a value for <code>MaximumExecutionFrequency</code> when:</p>
+    /// <ul>
+    /// <li> <p>This is for an Config managed rule that is triggered at a periodic frequency.</p> </li>
+    /// <li> <p>Your custom rule is triggered when Config delivers the configuration snapshot. For more information, see <code>ConfigSnapshotDeliveryProperties</code>.</p> </li>
+    /// </ul> <note>
+    /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code> parameter.</p>
+    /// </note>
+    pub fn get_maximum_execution_frequency(
+        &self,
+    ) -> &::std::option::Option<crate::types::MaximumExecutionFrequency> {
+        &self.maximum_execution_frequency
+    }
     /// <p>Indicates whether the Config rule is active or is currently being deleted by Config. It can also indicate the evaluation status for the Config rule.</p>
     /// <p>Config sets the state of the rule to <code>EVALUATING</code> temporarily after you use the <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the Config rule.</p>
     /// <p>Config sets the state of the rule to <code>DELETING_RESULTS</code> temporarily after you use the <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the Config rule.</p>
@@ -293,6 +335,13 @@ impl ConfigRuleBuilder {
         self.config_rule_state = input;
         self
     }
+    /// <p>Indicates whether the Config rule is active or is currently being deleted by Config. It can also indicate the evaluation status for the Config rule.</p>
+    /// <p>Config sets the state of the rule to <code>EVALUATING</code> temporarily after you use the <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the Config rule.</p>
+    /// <p>Config sets the state of the rule to <code>DELETING_RESULTS</code> temporarily after you use the <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the Config rule.</p>
+    /// <p>Config temporarily sets the state of a rule to <code>DELETING</code> after you use the <code>DeleteConfigRule</code> request to delete the rule. After Config deletes the rule, the rule and all of its evaluations are erased and are no longer available.</p>
+    pub fn get_config_rule_state(&self) -> &::std::option::Option<crate::types::ConfigRuleState> {
+        &self.config_rule_state
+    }
     /// <p>Service principal name of the service that created the rule.</p> <note>
     /// <p>The field is populated only if the service-linked rule is created by a service. The field is empty if you create your own rule.</p>
     /// </note>
@@ -306,6 +355,12 @@ impl ConfigRuleBuilder {
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by = input;
         self
+    }
+    /// <p>Service principal name of the service that created the rule.</p> <note>
+    /// <p>The field is populated only if the service-linked rule is created by a service. The field is empty if you create your own rule.</p>
+    /// </note>
+    pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by
     }
     /// Appends an item to `evaluation_modes`.
     ///
@@ -325,6 +380,12 @@ impl ConfigRuleBuilder {
     ) -> Self {
         self.evaluation_modes = input;
         self
+    }
+    /// <p>The modes the Config rule can be evaluated in. The valid values are distinct objects. By default, the value is Detective evaluation mode only.</p>
+    pub fn get_evaluation_modes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationModeConfiguration>> {
+        &self.evaluation_modes
     }
     /// Consumes the builder and constructs a [`ConfigRule`](crate::types::ConfigRule).
     pub fn build(self) -> crate::types::ConfigRule {

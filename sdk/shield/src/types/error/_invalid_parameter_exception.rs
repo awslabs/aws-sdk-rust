@@ -84,6 +84,10 @@ impl InvalidParameterExceptionBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>Additional information about the exception.</p>
     pub fn reason(mut self, input: crate::types::ValidationExceptionReason) -> Self {
         self.reason = ::std::option::Option::Some(input);
@@ -96,6 +100,10 @@ impl InvalidParameterExceptionBuilder {
     ) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>Additional information about the exception.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<crate::types::ValidationExceptionReason> {
+        &self.reason
     }
     /// Appends an item to `fields`.
     ///
@@ -115,6 +123,12 @@ impl InvalidParameterExceptionBuilder {
     ) -> Self {
         self.fields = input;
         self
+    }
+    /// <p>Fields that caused the exception.</p>
+    pub fn get_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>> {
+        &self.fields
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

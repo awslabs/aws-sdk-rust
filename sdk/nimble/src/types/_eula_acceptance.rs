@@ -75,6 +75,10 @@ impl EulaAcceptanceBuilder {
         self.accepted_at = input;
         self
     }
+    /// <p>The ISO timestamp in seconds for when the EULA was accepted.</p>
+    pub fn get_accepted_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.accepted_at
+    }
     /// <p>The ID of the person who accepted the EULA.</p>
     pub fn accepted_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accepted_by = ::std::option::Option::Some(input.into());
@@ -85,6 +89,10 @@ impl EulaAcceptanceBuilder {
         self.accepted_by = input;
         self
     }
+    /// <p>The ID of the person who accepted the EULA.</p>
+    pub fn get_accepted_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accepted_by
+    }
     /// <p>The ID of the acceptee.</p>
     pub fn acceptee_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.acceptee_id = ::std::option::Option::Some(input.into());
@@ -94,6 +102,10 @@ impl EulaAcceptanceBuilder {
     pub fn set_acceptee_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.acceptee_id = input;
         self
+    }
+    /// <p>The ID of the acceptee.</p>
+    pub fn get_acceptee_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.acceptee_id
     }
     /// <p>The EULA acceptance ID.</p>
     pub fn eula_acceptance_id(
@@ -111,6 +123,10 @@ impl EulaAcceptanceBuilder {
         self.eula_acceptance_id = input;
         self
     }
+    /// <p>The EULA acceptance ID.</p>
+    pub fn get_eula_acceptance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.eula_acceptance_id
+    }
     /// <p>The EULA ID.</p>
     pub fn eula_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.eula_id = ::std::option::Option::Some(input.into());
@@ -120,6 +136,10 @@ impl EulaAcceptanceBuilder {
     pub fn set_eula_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.eula_id = input;
         self
+    }
+    /// <p>The EULA ID.</p>
+    pub fn get_eula_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.eula_id
     }
     /// Consumes the builder and constructs a [`EulaAcceptance`](crate::types::EulaAcceptance).
     pub fn build(self) -> crate::types::EulaAcceptance {

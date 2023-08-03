@@ -77,6 +77,10 @@ impl ModifyVerifiedAccessEndpointPolicyInputBuilder {
         self.verified_access_endpoint_id = input;
         self
     }
+    /// <p>The ID of the Verified Access endpoint.</p>
+    pub fn get_verified_access_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.verified_access_endpoint_id
+    }
     /// <p>The status of the Verified Access policy.</p>
     pub fn policy_enabled(mut self, input: bool) -> Self {
         self.policy_enabled = ::std::option::Option::Some(input);
@@ -86,6 +90,10 @@ impl ModifyVerifiedAccessEndpointPolicyInputBuilder {
     pub fn set_policy_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.policy_enabled = input;
         self
+    }
+    /// <p>The status of the Verified Access policy.</p>
+    pub fn get_policy_enabled(&self) -> &::std::option::Option<bool> {
+        &self.policy_enabled
     }
     /// <p>The Verified Access policy document.</p>
     pub fn policy_document(
@@ -103,6 +111,10 @@ impl ModifyVerifiedAccessEndpointPolicyInputBuilder {
         self.policy_document = input;
         self
     }
+    /// <p>The Verified Access policy document.</p>
+    pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_document
+    }
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -113,6 +125,10 @@ impl ModifyVerifiedAccessEndpointPolicyInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -122,6 +138,10 @@ impl ModifyVerifiedAccessEndpointPolicyInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`ModifyVerifiedAccessEndpointPolicyInput`](crate::operation::modify_verified_access_endpoint_policy::ModifyVerifiedAccessEndpointPolicyInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::modify_verified_access_endpoint_policy::ModifyVerifiedAccessEndpointPolicyInput, ::aws_smithy_http::operation::error::BuildError>{

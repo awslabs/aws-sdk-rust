@@ -60,6 +60,12 @@ impl ListDataQualityRuleRecommendationRunsInputBuilder {
         self.filter = input;
         self
     }
+    /// <p>The filter criteria.</p>
+    pub fn get_filter(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataQualityRuleRecommendationRunFilter> {
+        &self.filter
+    }
     /// <p>A paginated token to offset the results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -70,6 +76,10 @@ impl ListDataQualityRuleRecommendationRunsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A paginated token to offset the results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -79,6 +89,10 @@ impl ListDataQualityRuleRecommendationRunsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListDataQualityRuleRecommendationRunsInput`](crate::operation::list_data_quality_rule_recommendation_runs::ListDataQualityRuleRecommendationRunsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_data_quality_rule_recommendation_runs::ListDataQualityRuleRecommendationRunsInput, ::aws_smithy_http::operation::error::BuildError>{

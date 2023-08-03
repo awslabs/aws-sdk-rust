@@ -36,6 +36,12 @@ impl DeleteProgramFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteProgram as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_program::builders::DeleteProgramInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl DeleteProgramFluentBuilder {
         self.inner = self.inner.set_channel_name(input);
         self
     }
+    /// <p>The name of the channel.</p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_name()
+    }
     /// <p>The name of the program.</p>
     pub fn program_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.program_name(input.into());
@@ -127,5 +137,9 @@ impl DeleteProgramFluentBuilder {
     pub fn set_program_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_program_name(input);
         self
+    }
+    /// <p>The name of the program.</p>
+    pub fn get_program_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_program_name()
     }
 }

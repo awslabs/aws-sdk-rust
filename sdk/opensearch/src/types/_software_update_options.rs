@@ -40,6 +40,10 @@ impl SoftwareUpdateOptionsBuilder {
         self.auto_software_update_enabled = input;
         self
     }
+    /// <p>Whether automatic service software updates are enabled for the domain.</p>
+    pub fn get_auto_software_update_enabled(&self) -> &::std::option::Option<bool> {
+        &self.auto_software_update_enabled
+    }
     /// Consumes the builder and constructs a [`SoftwareUpdateOptions`](crate::types::SoftwareUpdateOptions).
     pub fn build(self) -> crate::types::SoftwareUpdateOptions {
         crate::types::SoftwareUpdateOptions {

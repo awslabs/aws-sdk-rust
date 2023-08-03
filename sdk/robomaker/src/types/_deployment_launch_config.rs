@@ -80,6 +80,10 @@ impl DeploymentLaunchConfigBuilder {
         self.package_name = input;
         self
     }
+    /// <p>The package name.</p>
+    pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_name
+    }
     /// <p>The deployment pre-launch file. This file will be executed prior to the launch file.</p>
     pub fn pre_launch_file(
         mut self,
@@ -96,6 +100,10 @@ impl DeploymentLaunchConfigBuilder {
         self.pre_launch_file = input;
         self
     }
+    /// <p>The deployment pre-launch file. This file will be executed prior to the launch file.</p>
+    pub fn get_pre_launch_file(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pre_launch_file
+    }
     /// <p>The launch file name.</p>
     pub fn launch_file(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_file = ::std::option::Option::Some(input.into());
@@ -105,6 +113,10 @@ impl DeploymentLaunchConfigBuilder {
     pub fn set_launch_file(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launch_file = input;
         self
+    }
+    /// <p>The launch file name.</p>
+    pub fn get_launch_file(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_file
     }
     /// <p>The deployment post-launch file. This file will be executed after the launch file.</p>
     pub fn post_launch_file(
@@ -121,6 +133,10 @@ impl DeploymentLaunchConfigBuilder {
     ) -> Self {
         self.post_launch_file = input;
         self
+    }
+    /// <p>The deployment post-launch file. This file will be executed after the launch file.</p>
+    pub fn get_post_launch_file(&self) -> &::std::option::Option<::std::string::String> {
+        &self.post_launch_file
     }
     /// Adds a key-value pair to `environment_variables`.
     ///
@@ -146,6 +162,14 @@ impl DeploymentLaunchConfigBuilder {
     ) -> Self {
         self.environment_variables = input;
         self
+    }
+    /// <p>An array of key/value pairs specifying environment variables for the robot application</p>
+    pub fn get_environment_variables(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.environment_variables
     }
     /// Consumes the builder and constructs a [`DeploymentLaunchConfig`](crate::types::DeploymentLaunchConfig).
     pub fn build(self) -> crate::types::DeploymentLaunchConfig {

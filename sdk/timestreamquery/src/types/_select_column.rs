@@ -72,6 +72,10 @@ impl SelectColumnBuilder {
         self.name = input;
         self
     }
+    /// <p>Name of the column.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Contains the data type of a column in a query result set. The data type can be scalar or complex. The supported scalar data types are integers, Boolean, string, double, timestamp, date, time, and intervals. The supported complex data types are arrays, rows, and timeseries.</p>
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl SelectColumnBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>Contains the data type of a column in a query result set. The data type can be scalar or complex. The supported scalar data types are integers, Boolean, string, double, timestamp, date, time, and intervals. The supported complex data types are arrays, rows, and timeseries.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
+        &self.r#type
     }
     /// <p> Database that has this column.</p>
     pub fn database_name(
@@ -98,6 +106,10 @@ impl SelectColumnBuilder {
         self.database_name = input;
         self
     }
+    /// <p> Database that has this column.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>Table within the database that has this column. </p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
@@ -108,6 +120,10 @@ impl SelectColumnBuilder {
         self.table_name = input;
         self
     }
+    /// <p>Table within the database that has this column. </p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
+    }
     /// <p>True, if the column name was aliased by the query. False otherwise.</p>
     pub fn aliased(mut self, input: bool) -> Self {
         self.aliased = ::std::option::Option::Some(input);
@@ -117,6 +133,10 @@ impl SelectColumnBuilder {
     pub fn set_aliased(mut self, input: ::std::option::Option<bool>) -> Self {
         self.aliased = input;
         self
+    }
+    /// <p>True, if the column name was aliased by the query. False otherwise.</p>
+    pub fn get_aliased(&self) -> &::std::option::Option<bool> {
+        &self.aliased
     }
     /// Consumes the builder and constructs a [`SelectColumn`](crate::types::SelectColumn).
     pub fn build(self) -> crate::types::SelectColumn {

@@ -52,6 +52,11 @@ impl RotateEncryptionKeyInputBuilder {
         self.cluster_identifier = input;
         self
     }
+    /// <p>The unique identifier of the cluster that you want to rotate the encryption keys for.</p>
+    /// <p>Constraints: Must be the name of valid cluster that has encryption enabled.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_identifier
+    }
     /// Consumes the builder and constructs a [`RotateEncryptionKeyInput`](crate::operation::rotate_encryption_key::RotateEncryptionKeyInput).
     pub fn build(
         self,

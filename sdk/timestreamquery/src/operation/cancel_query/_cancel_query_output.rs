@@ -52,6 +52,10 @@ impl CancelQueryOutputBuilder {
         self.cancellation_message = input;
         self
     }
+    /// <p> A <code>CancellationMessage</code> is returned when a <code>CancelQuery</code> request for the query specified by <code>QueryId</code> has already been issued. </p>
+    pub fn get_cancellation_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cancellation_message
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

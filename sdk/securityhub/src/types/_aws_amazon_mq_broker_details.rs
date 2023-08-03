@@ -196,6 +196,10 @@ impl AwsAmazonMqBrokerDetailsBuilder {
         self.authentication_strategy = input;
         self
     }
+    /// <p> The authentication strategy used to secure the broker. The default is <code>SIMPLE</code>. </p>
+    pub fn get_authentication_strategy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication_strategy
+    }
     /// <p> Whether automatically upgrade new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot. </p>
     pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
         self.auto_minor_version_upgrade = ::std::option::Option::Some(input);
@@ -205,6 +209,10 @@ impl AwsAmazonMqBrokerDetailsBuilder {
     pub fn set_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_minor_version_upgrade = input;
         self
+    }
+    /// <p> Whether automatically upgrade new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot. </p>
+    pub fn get_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
+        &self.auto_minor_version_upgrade
     }
     /// <p> The Amazon Resource Name (ARN) of the broker. </p>
     pub fn broker_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -216,6 +224,10 @@ impl AwsAmazonMqBrokerDetailsBuilder {
         self.broker_arn = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) of the broker. </p>
+    pub fn get_broker_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.broker_arn
+    }
     /// <p>The broker's name. </p>
     pub fn broker_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.broker_name = ::std::option::Option::Some(input.into());
@@ -225,6 +237,10 @@ impl AwsAmazonMqBrokerDetailsBuilder {
     pub fn set_broker_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.broker_name = input;
         self
+    }
+    /// <p>The broker's name. </p>
+    pub fn get_broker_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.broker_name
     }
     /// <p> The broker's deployment mode. </p>
     pub fn deployment_mode(
@@ -242,6 +258,10 @@ impl AwsAmazonMqBrokerDetailsBuilder {
         self.deployment_mode = input;
         self
     }
+    /// <p> The broker's deployment mode. </p>
+    pub fn get_deployment_mode(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_mode
+    }
     /// <p> Encryption options for the broker. Doesn’t apply to RabbitMQ brokers. </p>
     pub fn encryption_options(
         mut self,
@@ -258,6 +278,12 @@ impl AwsAmazonMqBrokerDetailsBuilder {
         self.encryption_options = input;
         self
     }
+    /// <p> Encryption options for the broker. Doesn’t apply to RabbitMQ brokers. </p>
+    pub fn get_encryption_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsAmazonMqBrokerEncryptionOptionsDetails> {
+        &self.encryption_options
+    }
     /// <p> The type of broker engine. </p>
     pub fn engine_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_type = ::std::option::Option::Some(input.into());
@@ -267,6 +293,10 @@ impl AwsAmazonMqBrokerDetailsBuilder {
     pub fn set_engine_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_type = input;
         self
+    }
+    /// <p> The type of broker engine. </p>
+    pub fn get_engine_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_type
     }
     /// <p> The version of the broker engine. </p>
     pub fn engine_version(
@@ -284,6 +314,10 @@ impl AwsAmazonMqBrokerDetailsBuilder {
         self.engine_version = input;
         self
     }
+    /// <p> The version of the broker engine. </p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
+    }
     /// <p> The broker's instance type. </p>
     pub fn host_instance_type(
         mut self,
@@ -300,6 +334,10 @@ impl AwsAmazonMqBrokerDetailsBuilder {
         self.host_instance_type = input;
         self
     }
+    /// <p> The broker's instance type. </p>
+    pub fn get_host_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_instance_type
+    }
     /// <p> The unique ID that Amazon MQ generates for the broker. </p>
     pub fn broker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.broker_id = ::std::option::Option::Some(input.into());
@@ -309,6 +347,10 @@ impl AwsAmazonMqBrokerDetailsBuilder {
     pub fn set_broker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.broker_id = input;
         self
+    }
+    /// <p> The unique ID that Amazon MQ generates for the broker. </p>
+    pub fn get_broker_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.broker_id
     }
     /// <p> The metadata of the Lightweight Directory Access Protocol (LDAP) server used to authenticate and authorize connections to the broker. This is an optional failover server. </p>
     pub fn ldap_server_metadata(
@@ -326,6 +368,12 @@ impl AwsAmazonMqBrokerDetailsBuilder {
         self.ldap_server_metadata = input;
         self
     }
+    /// <p> The metadata of the Lightweight Directory Access Protocol (LDAP) server used to authenticate and authorize connections to the broker. This is an optional failover server. </p>
+    pub fn get_ldap_server_metadata(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsAmazonMqBrokerLdapServerMetadataDetails> {
+        &self.ldap_server_metadata
+    }
     /// <p> Turns on Amazon CloudWatch logging for brokers. </p>
     pub fn logs(mut self, input: crate::types::AwsAmazonMqBrokerLogsDetails) -> Self {
         self.logs = ::std::option::Option::Some(input);
@@ -338,6 +386,10 @@ impl AwsAmazonMqBrokerDetailsBuilder {
     ) -> Self {
         self.logs = input;
         self
+    }
+    /// <p> Turns on Amazon CloudWatch logging for brokers. </p>
+    pub fn get_logs(&self) -> &::std::option::Option<crate::types::AwsAmazonMqBrokerLogsDetails> {
+        &self.logs
     }
     /// <p> The scheduled time period (UTC) during which Amazon MQ begins to apply pending updates or patches to the broker. </p>
     pub fn maintenance_window_start_time(
@@ -357,6 +409,13 @@ impl AwsAmazonMqBrokerDetailsBuilder {
         self.maintenance_window_start_time = input;
         self
     }
+    /// <p> The scheduled time period (UTC) during which Amazon MQ begins to apply pending updates or patches to the broker. </p>
+    pub fn get_maintenance_window_start_time(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails>
+    {
+        &self.maintenance_window_start_time
+    }
     /// <p> Permits connections from applications outside of the VPC that hosts the broker's subnets. </p>
     pub fn publicly_accessible(mut self, input: bool) -> Self {
         self.publicly_accessible = ::std::option::Option::Some(input);
@@ -366,6 +425,10 @@ impl AwsAmazonMqBrokerDetailsBuilder {
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
         self.publicly_accessible = input;
         self
+    }
+    /// <p> Permits connections from applications outside of the VPC that hosts the broker's subnets. </p>
+    pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
+        &self.publicly_accessible
     }
     /// Appends an item to `security_groups`.
     ///
@@ -389,6 +452,12 @@ impl AwsAmazonMqBrokerDetailsBuilder {
         self.security_groups = input;
         self
     }
+    /// <p> The list of rules (one minimum, 125 maximum) that authorize connections to brokers. </p>
+    pub fn get_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_groups
+    }
     /// <p> The broker's storage type. </p>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_type = ::std::option::Option::Some(input.into());
@@ -398,6 +467,10 @@ impl AwsAmazonMqBrokerDetailsBuilder {
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_type = input;
         self
+    }
+    /// <p> The broker's storage type. </p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_type
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -418,6 +491,10 @@ impl AwsAmazonMqBrokerDetailsBuilder {
         self.subnet_ids = input;
         self
     }
+    /// <p> The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones. </p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
+    }
     /// Appends an item to `users`.
     ///
     /// To override the contents of this collection use [`set_users`](Self::set_users).
@@ -436,6 +513,12 @@ impl AwsAmazonMqBrokerDetailsBuilder {
     ) -> Self {
         self.users = input;
         self
+    }
+    /// <p> The list of all broker usernames for the specified broker. Doesn't apply to RabbitMQ brokers. </p>
+    pub fn get_users(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsAmazonMqBrokerUsersDetails>> {
+        &self.users
     }
     /// Consumes the builder and constructs a [`AwsAmazonMqBrokerDetails`](crate::types::AwsAmazonMqBrokerDetails).
     pub fn build(self) -> crate::types::AwsAmazonMqBrokerDetails {

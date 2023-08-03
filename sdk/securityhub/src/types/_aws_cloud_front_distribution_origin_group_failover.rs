@@ -56,6 +56,13 @@ impl AwsCloudFrontDistributionOriginGroupFailoverBuilder {
         self.status_codes = input;
         self
     }
+    /// <p>Information about the status codes that cause an origin group to fail over.</p>
+    pub fn get_status_codes(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes>
+    {
+        &self.status_codes
+    }
     /// Consumes the builder and constructs a [`AwsCloudFrontDistributionOriginGroupFailover`](crate::types::AwsCloudFrontDistributionOriginGroupFailover).
     pub fn build(self) -> crate::types::AwsCloudFrontDistributionOriginGroupFailover {
         crate::types::AwsCloudFrontDistributionOriginGroupFailover {

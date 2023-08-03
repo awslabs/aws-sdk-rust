@@ -36,6 +36,10 @@ impl GetVpnConnectionDeviceSampleConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetVpnConnectionDeviceSampleConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_vpn_connection_device_sample_configuration::builders::GetVpnConnectionDeviceSampleConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl GetVpnConnectionDeviceSampleConfigurationFluentBuilder {
         self.inner = self.inner.set_vpn_connection_id(input);
         self
     }
+    /// <p>The <code>VpnConnectionId</code> specifies the Site-to-Site VPN connection used for the sample configuration.</p>
+    pub fn get_vpn_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpn_connection_id()
+    }
     /// <p>Device identifier provided by the <code>GetVpnConnectionDeviceTypes</code> API.</p>
     pub fn vpn_connection_device_type_id(
         mut self,
@@ -121,6 +129,12 @@ impl GetVpnConnectionDeviceSampleConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_vpn_connection_device_type_id(input);
         self
+    }
+    /// <p>Device identifier provided by the <code>GetVpnConnectionDeviceTypes</code> API.</p>
+    pub fn get_vpn_connection_device_type_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpn_connection_device_type_id()
     }
     /// <p>The IKE version to be used in the sample configuration file for your customer gateway device. You can specify one of the following versions: <code>ikev1</code> or <code>ikev2</code>.</p>
     pub fn internet_key_exchange_version(
@@ -138,6 +152,12 @@ impl GetVpnConnectionDeviceSampleConfigurationFluentBuilder {
         self.inner = self.inner.set_internet_key_exchange_version(input);
         self
     }
+    /// <p>The IKE version to be used in the sample configuration file for your customer gateway device. You can specify one of the following versions: <code>ikev1</code> or <code>ikev2</code>.</p>
+    pub fn get_internet_key_exchange_version(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_internet_key_exchange_version()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -147,5 +167,9 @@ impl GetVpnConnectionDeviceSampleConfigurationFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

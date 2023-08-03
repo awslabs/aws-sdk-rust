@@ -96,6 +96,10 @@ impl CreateGlobalClusterInputBuilder {
         self.global_cluster_identifier = input;
         self
     }
+    /// <p>The cluster identifier of the new global cluster.</p>
+    pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_cluster_identifier
+    }
     /// <p>The Amazon Resource Name (ARN) to use as the primary cluster of the global cluster. This parameter is optional.</p>
     pub fn source_db_cluster_identifier(
         mut self,
@@ -112,6 +116,12 @@ impl CreateGlobalClusterInputBuilder {
         self.source_db_cluster_identifier = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) to use as the primary cluster of the global cluster. This parameter is optional.</p>
+    pub fn get_source_db_cluster_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.source_db_cluster_identifier
+    }
     /// <p>The name of the database engine to be used for this cluster.</p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
@@ -121,6 +131,10 @@ impl CreateGlobalClusterInputBuilder {
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
+    }
+    /// <p>The name of the database engine to be used for this cluster.</p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine
     }
     /// <p>The engine version of the global cluster.</p>
     pub fn engine_version(
@@ -138,6 +152,10 @@ impl CreateGlobalClusterInputBuilder {
         self.engine_version = input;
         self
     }
+    /// <p>The engine version of the global cluster.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
+    }
     /// <p>The deletion protection setting for the new global cluster. The global cluster can't be deleted when deletion protection is enabled. </p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
         self.deletion_protection = ::std::option::Option::Some(input);
@@ -147,6 +165,10 @@ impl CreateGlobalClusterInputBuilder {
     pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.deletion_protection = input;
         self
+    }
+    /// <p>The deletion protection setting for the new global cluster. The global cluster can't be deleted when deletion protection is enabled. </p>
+    pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
+        &self.deletion_protection
     }
     /// <p>The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon DocumentDB will not create a database in the global cluster you are creating.</p>
     pub fn database_name(
@@ -164,6 +186,10 @@ impl CreateGlobalClusterInputBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon DocumentDB will not create a database in the global cluster you are creating.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>The storage encryption setting for the new global cluster. </p>
     pub fn storage_encrypted(mut self, input: bool) -> Self {
         self.storage_encrypted = ::std::option::Option::Some(input);
@@ -173,6 +199,10 @@ impl CreateGlobalClusterInputBuilder {
     pub fn set_storage_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.storage_encrypted = input;
         self
+    }
+    /// <p>The storage encryption setting for the new global cluster. </p>
+    pub fn get_storage_encrypted(&self) -> &::std::option::Option<bool> {
+        &self.storage_encrypted
     }
     /// Consumes the builder and constructs a [`CreateGlobalClusterInput`](crate::operation::create_global_cluster::CreateGlobalClusterInput).
     pub fn build(

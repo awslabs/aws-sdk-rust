@@ -39,6 +39,10 @@ impl DescribeInferenceRecommendationsJobInputBuilder {
         self.job_name = input;
         self
     }
+    /// <p>The name of the job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
+    }
     /// Consumes the builder and constructs a [`DescribeInferenceRecommendationsJobInput`](crate::operation::describe_inference_recommendations_job::DescribeInferenceRecommendationsJobInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_inference_recommendations_job::DescribeInferenceRecommendationsJobInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

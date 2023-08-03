@@ -56,6 +56,10 @@ impl PackageObjectBuilder {
         self.name = input;
         self
     }
+    /// <p>The object's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The object's package version.</p>
     pub fn package_version(
         mut self,
@@ -72,6 +76,10 @@ impl PackageObjectBuilder {
         self.package_version = input;
         self
     }
+    /// <p>The object's package version.</p>
+    pub fn get_package_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_version
+    }
     /// <p>The object's patch version.</p>
     pub fn patch_version(
         mut self,
@@ -87,6 +95,10 @@ impl PackageObjectBuilder {
     ) -> Self {
         self.patch_version = input;
         self
+    }
+    /// <p>The object's patch version.</p>
+    pub fn get_patch_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.patch_version
     }
     /// Consumes the builder and constructs a [`PackageObject`](crate::types::PackageObject).
     pub fn build(self) -> crate::types::PackageObject {

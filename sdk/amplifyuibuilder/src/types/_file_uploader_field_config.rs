@@ -85,6 +85,10 @@ impl FileUploaderFieldConfigBuilder {
         self.access_level = input;
         self
     }
+    /// <p>The access level to assign to the uploaded files in the Amazon S3 bucket where they are stored. The valid values for this property are <code>private</code>, <code>protected</code>, or <code>public</code>. For detailed information about the permissions associated with each access level, see <a href="https://docs.amplify.aws/lib/storage/configureaccess/q/platform/js/">File access levels</a> in the <i>Amplify documentation</i>.</p>
+    pub fn get_access_level(&self) -> &::std::option::Option<crate::types::StorageAccessLevel> {
+        &self.access_level
+    }
     /// Appends an item to `accepted_file_types`.
     ///
     /// To override the contents of this collection use [`set_accepted_file_types`](Self::set_accepted_file_types).
@@ -107,6 +111,12 @@ impl FileUploaderFieldConfigBuilder {
         self.accepted_file_types = input;
         self
     }
+    /// <p>The file types that are allowed to be uploaded by the file uploader. Provide this information in an array of strings specifying the valid file extensions.</p>
+    pub fn get_accepted_file_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.accepted_file_types
+    }
     /// <p>Specifies whether to display or hide the image preview after selecting a file for upload. The default value is <code>true</code> to display the image preview.</p>
     pub fn show_thumbnails(mut self, input: bool) -> Self {
         self.show_thumbnails = ::std::option::Option::Some(input);
@@ -116,6 +126,10 @@ impl FileUploaderFieldConfigBuilder {
     pub fn set_show_thumbnails(mut self, input: ::std::option::Option<bool>) -> Self {
         self.show_thumbnails = input;
         self
+    }
+    /// <p>Specifies whether to display or hide the image preview after selecting a file for upload. The default value is <code>true</code> to display the image preview.</p>
+    pub fn get_show_thumbnails(&self) -> &::std::option::Option<bool> {
+        &self.show_thumbnails
     }
     /// <p>Allows the file upload operation to be paused and resumed. The default value is <code>false</code>.</p>
     /// <p>When <code>isResumable</code> is set to <code>true</code>, the file uploader uses a multipart upload to break the files into chunks before upload. The progress of the upload isn't continuous, because the file uploader uploads a chunk at a time.</p>
@@ -129,6 +143,11 @@ impl FileUploaderFieldConfigBuilder {
         self.is_resumable = input;
         self
     }
+    /// <p>Allows the file upload operation to be paused and resumed. The default value is <code>false</code>.</p>
+    /// <p>When <code>isResumable</code> is set to <code>true</code>, the file uploader uses a multipart upload to break the files into chunks before upload. The progress of the upload isn't continuous, because the file uploader uploads a chunk at a time.</p>
+    pub fn get_is_resumable(&self) -> &::std::option::Option<bool> {
+        &self.is_resumable
+    }
     /// <p>Specifies the maximum number of files that can be selected to upload. The default value is an unlimited number of files.</p>
     pub fn max_file_count(mut self, input: i32) -> Self {
         self.max_file_count = ::std::option::Option::Some(input);
@@ -139,6 +158,10 @@ impl FileUploaderFieldConfigBuilder {
         self.max_file_count = input;
         self
     }
+    /// <p>Specifies the maximum number of files that can be selected to upload. The default value is an unlimited number of files.</p>
+    pub fn get_max_file_count(&self) -> &::std::option::Option<i32> {
+        &self.max_file_count
+    }
     /// <p>The maximum file size in bytes that the file uploader will accept. The default value is an unlimited file size.</p>
     pub fn max_size(mut self, input: i32) -> Self {
         self.max_size = ::std::option::Option::Some(input);
@@ -148,6 +171,10 @@ impl FileUploaderFieldConfigBuilder {
     pub fn set_max_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_size = input;
         self
+    }
+    /// <p>The maximum file size in bytes that the file uploader will accept. The default value is an unlimited file size.</p>
+    pub fn get_max_size(&self) -> &::std::option::Option<i32> {
+        &self.max_size
     }
     /// Consumes the builder and constructs a [`FileUploaderFieldConfig`](crate::types::FileUploaderFieldConfig).
     pub fn build(self) -> crate::types::FileUploaderFieldConfig {

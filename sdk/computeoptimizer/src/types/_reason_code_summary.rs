@@ -51,6 +51,10 @@ impl ReasonCodeSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the finding reason code.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::FindingReasonCode> {
+        &self.name
+    }
     /// <p>The value of the finding reason code summary.</p>
     pub fn value(mut self, input: f64) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl ReasonCodeSummaryBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of the finding reason code summary.</p>
+    pub fn get_value(&self) -> &::std::option::Option<f64> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`ReasonCodeSummary`](crate::types::ReasonCodeSummary).
     pub fn build(self) -> crate::types::ReasonCodeSummary {

@@ -49,6 +49,10 @@ impl VerifiedAccessLogKinesisDataFirehoseDestinationOptionsBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Indicates whether logging is enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>The ID of the delivery stream.</p>
     pub fn delivery_stream(
         mut self,
@@ -64,6 +68,10 @@ impl VerifiedAccessLogKinesisDataFirehoseDestinationOptionsBuilder {
     ) -> Self {
         self.delivery_stream = input;
         self
+    }
+    /// <p>The ID of the delivery stream.</p>
+    pub fn get_delivery_stream(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delivery_stream
     }
     /// Consumes the builder and constructs a [`VerifiedAccessLogKinesisDataFirehoseDestinationOptions`](crate::types::VerifiedAccessLogKinesisDataFirehoseDestinationOptions).
     pub fn build(self) -> crate::types::VerifiedAccessLogKinesisDataFirehoseDestinationOptions {

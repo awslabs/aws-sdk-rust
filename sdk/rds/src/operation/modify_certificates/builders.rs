@@ -44,6 +44,12 @@ impl ModifyCertificatesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyCertificates as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::modify_certificates::builders::ModifyCertificatesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -142,6 +148,11 @@ impl ModifyCertificatesFluentBuilder {
         self.inner = self.inner.set_certificate_identifier(input);
         self
     }
+    /// <p>The new default certificate identifier to override the current one with.</p>
+    /// <p>To determine the valid values, use the <code>describe-certificates</code> CLI command or the <code>DescribeCertificates</code> API operation.</p>
+    pub fn get_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate_identifier()
+    }
     /// <p>A value that indicates whether to remove the override for the default certificate. If the override is removed, the default certificate is the system default.</p>
     pub fn remove_customer_override(mut self, input: bool) -> Self {
         self.inner = self.inner.remove_customer_override(input);
@@ -151,5 +162,9 @@ impl ModifyCertificatesFluentBuilder {
     pub fn set_remove_customer_override(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_remove_customer_override(input);
         self
+    }
+    /// <p>A value that indicates whether to remove the override for the default certificate. If the override is removed, the default certificate is the system default.</p>
+    pub fn get_remove_customer_override(&self) -> &::std::option::Option<bool> {
+        self.inner.get_remove_customer_override()
     }
 }

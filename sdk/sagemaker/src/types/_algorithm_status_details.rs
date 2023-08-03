@@ -65,6 +65,12 @@ impl AlgorithmStatusDetailsBuilder {
         self.validation_statuses = input;
         self
     }
+    /// <p>The status of algorithm validation.</p>
+    pub fn get_validation_statuses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AlgorithmStatusItem>> {
+        &self.validation_statuses
+    }
     /// Appends an item to `image_scan_statuses`.
     ///
     /// To override the contents of this collection use [`set_image_scan_statuses`](Self::set_image_scan_statuses).
@@ -83,6 +89,12 @@ impl AlgorithmStatusDetailsBuilder {
     ) -> Self {
         self.image_scan_statuses = input;
         self
+    }
+    /// <p>The status of the scan of the algorithm's Docker image container.</p>
+    pub fn get_image_scan_statuses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AlgorithmStatusItem>> {
+        &self.image_scan_statuses
     }
     /// Consumes the builder and constructs a [`AlgorithmStatusDetails`](crate::types::AlgorithmStatusDetails).
     pub fn build(self) -> crate::types::AlgorithmStatusDetails {

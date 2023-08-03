@@ -54,6 +54,10 @@ impl DescribeEmailMonitoringConfigurationOutputBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM Role associated with the email monitoring configuration.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch Log group associated with the email monitoring configuration.</p>
     pub fn log_group_arn(
         mut self,
@@ -69,6 +73,10 @@ impl DescribeEmailMonitoringConfigurationOutputBuilder {
     ) -> Self {
         self.log_group_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the CloudWatch Log group associated with the email monitoring configuration.</p>
+    pub fn get_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

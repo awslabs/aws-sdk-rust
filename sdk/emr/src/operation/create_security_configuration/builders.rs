@@ -36,6 +36,10 @@ impl CreateSecurityConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSecurityConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_security_configuration::builders::CreateSecurityConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl CreateSecurityConfigurationFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the security configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The security configuration details in JSON format. For JSON parameters and examples, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management Guide</i>.</p>
     pub fn security_configuration(
         mut self,
@@ -141,5 +149,9 @@ impl CreateSecurityConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_security_configuration(input);
         self
+    }
+    /// <p>The security configuration details in JSON format. For JSON parameters and examples, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management Guide</i>.</p>
+    pub fn get_security_configuration(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_security_configuration()
     }
 }

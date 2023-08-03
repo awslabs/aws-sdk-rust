@@ -36,6 +36,12 @@ impl DeleteFHIRDatastoreFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteFHIRDatastore as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_fhir_datastore::builders::DeleteFhirDatastoreInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +131,9 @@ impl DeleteFHIRDatastoreFluentBuilder {
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_datastore_id(input);
         self
+    }
+    /// <p> The AWS-generated ID for the data store to be deleted.</p>
+    pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_datastore_id()
     }
 }

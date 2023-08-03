@@ -77,6 +77,10 @@ impl ListChannelMembershipsForAppInstanceUserInputBuilder {
         self.app_instance_user_arn = input;
         self
     }
+    /// <p>The ARN of the <code>AppInstanceUser</code>s</p>
+    pub fn get_app_instance_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_instance_user_arn
+    }
     /// <p>The maximum number of users that you want returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -86,6 +90,10 @@ impl ListChannelMembershipsForAppInstanceUserInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of users that you want returned.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The token returned from previous API requests until the number of channel memberships is reached.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -97,6 +105,10 @@ impl ListChannelMembershipsForAppInstanceUserInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token returned from previous API requests until the number of channel memberships is reached.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.chime_bearer = ::std::option::Option::Some(input.into());
@@ -106,6 +118,10 @@ impl ListChannelMembershipsForAppInstanceUserInputBuilder {
     pub fn set_chime_bearer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.chime_bearer = input;
         self
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
+        &self.chime_bearer
     }
     /// Consumes the builder and constructs a [`ListChannelMembershipsForAppInstanceUserInput`](crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserInput, ::aws_smithy_http::operation::error::BuildError>{

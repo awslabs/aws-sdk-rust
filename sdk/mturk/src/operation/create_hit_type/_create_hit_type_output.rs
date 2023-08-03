@@ -46,6 +46,10 @@ impl CreateHitTypeOutputBuilder {
         self.hit_type_id = input;
         self
     }
+    /// <p> The ID of the newly registered HIT type.</p>
+    pub fn get_hit_type_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hit_type_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

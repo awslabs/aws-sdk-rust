@@ -46,6 +46,10 @@ impl DeleteEgressOnlyInternetGatewayOutputBuilder {
         self.return_code = input;
         self
     }
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub fn get_return_code(&self) -> &::std::option::Option<bool> {
+        &self.return_code
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

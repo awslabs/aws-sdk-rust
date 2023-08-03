@@ -88,6 +88,10 @@ impl SubscriptionFilterBuilder {
         self.filter_name = input;
         self
     }
+    /// <p>The name of the subscription filter.</p>
+    pub fn get_filter_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter_name
+    }
     /// <p>The name of the log group.</p>
     pub fn log_group_name(
         mut self,
@@ -103,6 +107,10 @@ impl SubscriptionFilterBuilder {
     ) -> Self {
         self.log_group_name = input;
         self
+    }
+    /// <p>The name of the log group.</p>
+    pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group_name
     }
     /// <p>A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.</p>
     pub fn filter_pattern(
@@ -120,6 +128,10 @@ impl SubscriptionFilterBuilder {
         self.filter_pattern = input;
         self
     }
+    /// <p>A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.</p>
+    pub fn get_filter_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter_pattern
+    }
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
     pub fn destination_arn(
         mut self,
@@ -136,6 +148,10 @@ impl SubscriptionFilterBuilder {
         self.destination_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the destination.</p>
+    pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_arn
+    }
     /// <p></p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -145,6 +161,10 @@ impl SubscriptionFilterBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p></p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The method used to distribute log data to the destination, which can be either random or grouped by log stream.</p>
     pub fn distribution(mut self, input: crate::types::Distribution) -> Self {
@@ -159,6 +179,10 @@ impl SubscriptionFilterBuilder {
         self.distribution = input;
         self
     }
+    /// <p>The method used to distribute log data to the destination, which can be either random or grouped by log stream.</p>
+    pub fn get_distribution(&self) -> &::std::option::Option<crate::types::Distribution> {
+        &self.distribution
+    }
     /// <p>The creation time of the subscription filter, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub fn creation_time(mut self, input: i64) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -168,6 +192,10 @@ impl SubscriptionFilterBuilder {
     pub fn set_creation_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The creation time of the subscription filter, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<i64> {
+        &self.creation_time
     }
     /// Consumes the builder and constructs a [`SubscriptionFilter`](crate::types::SubscriptionFilter).
     pub fn build(self) -> crate::types::SubscriptionFilter {

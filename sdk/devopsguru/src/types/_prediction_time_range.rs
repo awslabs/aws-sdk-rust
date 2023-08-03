@@ -51,6 +51,10 @@ impl PredictionTimeRangeBuilder {
         self.start_time = input;
         self
     }
+    /// <p> The time range during which a metric limit is expected to be exceeded. This applies to proactive insights only. </p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p> The time when the behavior in a proactive insight is expected to end. </p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl PredictionTimeRangeBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p> The time when the behavior in a proactive insight is expected to end. </p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// Consumes the builder and constructs a [`PredictionTimeRange`](crate::types::PredictionTimeRange).
     pub fn build(self) -> crate::types::PredictionTimeRange {

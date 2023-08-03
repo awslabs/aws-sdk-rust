@@ -51,6 +51,10 @@ impl NodeFrameworkAttributesBuilder {
         self.fabric = input;
         self
     }
+    /// <p>Attributes of Hyperledger Fabric for a peer node on a Managed Blockchain network that uses Hyperledger Fabric.</p>
+    pub fn get_fabric(&self) -> &::std::option::Option<crate::types::NodeFabricAttributes> {
+        &self.fabric
+    }
     /// <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum. </p>
     pub fn ethereum(mut self, input: crate::types::NodeEthereumAttributes) -> Self {
         self.ethereum = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl NodeFrameworkAttributesBuilder {
     ) -> Self {
         self.ethereum = input;
         self
+    }
+    /// <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum. </p>
+    pub fn get_ethereum(&self) -> &::std::option::Option<crate::types::NodeEthereumAttributes> {
+        &self.ethereum
     }
     /// Consumes the builder and constructs a [`NodeFrameworkAttributes`](crate::types::NodeFrameworkAttributes).
     pub fn build(self) -> crate::types::NodeFrameworkAttributes {

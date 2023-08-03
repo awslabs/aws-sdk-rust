@@ -99,6 +99,10 @@ impl RxNormAttributeBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of attribute. The types of attributes recognized by InferRxNorm are <code>BRAND_NAME</code> and <code>GENERIC_NAME</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::RxNormAttributeType> {
+        &self.r#type
+    }
     /// <p>The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized as an attribute.</p>
     pub fn score(mut self, input: f32) -> Self {
         self.score = ::std::option::Option::Some(input);
@@ -108,6 +112,10 @@ impl RxNormAttributeBuilder {
     pub fn set_score(mut self, input: ::std::option::Option<f32>) -> Self {
         self.score = input;
         self
+    }
+    /// <p>The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized as an attribute.</p>
+    pub fn get_score(&self) -> &::std::option::Option<f32> {
+        &self.score
     }
     /// <p>The level of confidence that Amazon Comprehend Medical has that the attribute is accurately linked to an entity.</p>
     pub fn relationship_score(mut self, input: f32) -> Self {
@@ -119,6 +127,10 @@ impl RxNormAttributeBuilder {
         self.relationship_score = input;
         self
     }
+    /// <p>The level of confidence that Amazon Comprehend Medical has that the attribute is accurately linked to an entity.</p>
+    pub fn get_relationship_score(&self) -> &::std::option::Option<f32> {
+        &self.relationship_score
+    }
     /// <p>The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
     pub fn id(mut self, input: i32) -> Self {
         self.id = ::std::option::Option::Some(input);
@@ -128,6 +140,10 @@ impl RxNormAttributeBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
+    pub fn get_id(&self) -> &::std::option::Option<i32> {
+        &self.id
     }
     /// <p>The 0-based character offset in the input text that shows where the attribute begins. The offset returns the UTF-8 code point in the string.</p>
     pub fn begin_offset(mut self, input: i32) -> Self {
@@ -139,6 +155,10 @@ impl RxNormAttributeBuilder {
         self.begin_offset = input;
         self
     }
+    /// <p>The 0-based character offset in the input text that shows where the attribute begins. The offset returns the UTF-8 code point in the string.</p>
+    pub fn get_begin_offset(&self) -> &::std::option::Option<i32> {
+        &self.begin_offset
+    }
     /// <p>The 0-based character offset in the input text that shows where the attribute ends. The offset returns the UTF-8 code point in the string.</p>
     pub fn end_offset(mut self, input: i32) -> Self {
         self.end_offset = ::std::option::Option::Some(input);
@@ -149,6 +169,10 @@ impl RxNormAttributeBuilder {
         self.end_offset = input;
         self
     }
+    /// <p>The 0-based character offset in the input text that shows where the attribute ends. The offset returns the UTF-8 code point in the string.</p>
+    pub fn get_end_offset(&self) -> &::std::option::Option<i32> {
+        &self.end_offset
+    }
     /// <p>The segment of input text which corresponds to the detected attribute.</p>
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
@@ -158,6 +182,10 @@ impl RxNormAttributeBuilder {
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.text = input;
         self
+    }
+    /// <p>The segment of input text which corresponds to the detected attribute.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
     }
     /// Appends an item to `traits`.
     ///
@@ -177,6 +205,10 @@ impl RxNormAttributeBuilder {
     ) -> Self {
         self.traits = input;
         self
+    }
+    /// <p>Contextual information for the attribute. InferRxNorm recognizes the trait <code>NEGATION</code> for attributes, i.e. that the patient is not taking a specific dose or form of a medication.</p>
+    pub fn get_traits(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RxNormTrait>> {
+        &self.traits
     }
     /// Consumes the builder and constructs a [`RxNormAttribute`](crate::types::RxNormAttribute).
     pub fn build(self) -> crate::types::RxNormAttribute {

@@ -117,6 +117,10 @@ impl CreateExperimentTemplateTargetInputBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The resource type. The resource type must be supported for the specified action.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
+    }
     /// Appends an item to `resource_arns`.
     ///
     /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
@@ -138,6 +142,12 @@ impl CreateExperimentTemplateTargetInputBuilder {
     ) -> Self {
         self.resource_arns = input;
         self
+    }
+    /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
+    pub fn get_resource_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_arns
     }
     /// Adds a key-value pair to `resource_tags`.
     ///
@@ -164,6 +174,14 @@ impl CreateExperimentTemplateTargetInputBuilder {
         self.resource_tags = input;
         self
     }
+    /// <p>The tags for the target resources.</p>
+    pub fn get_resource_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.resource_tags
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -184,6 +202,13 @@ impl CreateExperimentTemplateTargetInputBuilder {
     ) -> Self {
         self.filters = input;
         self
+    }
+    /// <p>The filters to apply to identify target resources using specific attributes.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExperimentTemplateTargetInputFilter>>
+    {
+        &self.filters
     }
     /// <p>Scopes the identified resources to a specific count of the resources at random, or a percentage of the resources. All identified resources are included in the target.</p>
     /// <ul>
@@ -211,6 +236,15 @@ impl CreateExperimentTemplateTargetInputBuilder {
         self.selection_mode = input;
         self
     }
+    /// <p>Scopes the identified resources to a specific count of the resources at random, or a percentage of the resources. All identified resources are included in the target.</p>
+    /// <ul>
+    /// <li> <p>ALL - Run the action on all identified targets. This is the default.</p> </li>
+    /// <li> <p>COUNT(n) - Run the action on the specified number of targets, chosen from the identified targets at random. For example, COUNT(1) selects one of the targets.</p> </li>
+    /// <li> <p>PERCENT(n) - Run the action on the specified percentage of targets, chosen from the identified targets at random. For example, PERCENT(25) selects 25% of the targets.</p> </li>
+    /// </ul>
+    pub fn get_selection_mode(&self) -> &::std::option::Option<::std::string::String> {
+        &self.selection_mode
+    }
     /// Adds a key-value pair to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
@@ -235,6 +269,14 @@ impl CreateExperimentTemplateTargetInputBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>The resource type parameters.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.parameters
     }
     /// Consumes the builder and constructs a [`CreateExperimentTemplateTargetInput`](crate::types::CreateExperimentTemplateTargetInput).
     pub fn build(self) -> crate::types::CreateExperimentTemplateTargetInput {

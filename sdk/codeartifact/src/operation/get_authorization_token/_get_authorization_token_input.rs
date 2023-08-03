@@ -57,6 +57,10 @@ impl GetAuthorizationTokenInputBuilder {
         self.domain = input;
         self
     }
+    /// <p> The name of the domain that is in scope for the generated authorization token. </p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
+    }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_owner = ::std::option::Option::Some(input.into());
@@ -67,6 +71,10 @@ impl GetAuthorizationTokenInputBuilder {
         self.domain_owner = input;
         self
     }
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_owner
+    }
     /// <p>The time, in seconds, that the generated authorization token is valid. Valid values are <code>0</code> and any number between <code>900</code> (15 minutes) and <code>43200</code> (12 hours). A value of <code>0</code> will set the expiration of the authorization token to the same expiration of the user's role's temporary credentials.</p>
     pub fn duration_seconds(mut self, input: i64) -> Self {
         self.duration_seconds = ::std::option::Option::Some(input);
@@ -76,6 +84,10 @@ impl GetAuthorizationTokenInputBuilder {
     pub fn set_duration_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.duration_seconds = input;
         self
+    }
+    /// <p>The time, in seconds, that the generated authorization token is valid. Valid values are <code>0</code> and any number between <code>900</code> (15 minutes) and <code>43200</code> (12 hours). A value of <code>0</code> will set the expiration of the authorization token to the same expiration of the user's role's temporary credentials.</p>
+    pub fn get_duration_seconds(&self) -> &::std::option::Option<i64> {
+        &self.duration_seconds
     }
     /// Consumes the builder and constructs a [`GetAuthorizationTokenInput`](crate::operation::get_authorization_token::GetAuthorizationTokenInput).
     pub fn build(

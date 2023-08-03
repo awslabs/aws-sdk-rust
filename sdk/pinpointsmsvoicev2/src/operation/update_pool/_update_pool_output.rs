@@ -126,6 +126,10 @@ impl UpdatePoolOutputBuilder {
         self.pool_arn = input;
         self
     }
+    /// <p>The ARN of the pool.</p>
+    pub fn get_pool_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pool_arn
+    }
     /// <p>The unique identifier of the pool.</p>
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pool_id = ::std::option::Option::Some(input.into());
@@ -136,6 +140,10 @@ impl UpdatePoolOutputBuilder {
         self.pool_id = input;
         self
     }
+    /// <p>The unique identifier of the pool.</p>
+    pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pool_id
+    }
     /// <p>The current status of the pool update request.</p>
     pub fn status(mut self, input: crate::types::PoolStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -145,6 +153,10 @@ impl UpdatePoolOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::PoolStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the pool update request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::PoolStatus> {
+        &self.status
     }
     /// <p>The type of message for the pool to use.</p>
     pub fn message_type(mut self, input: crate::types::MessageType) -> Self {
@@ -159,6 +171,10 @@ impl UpdatePoolOutputBuilder {
         self.message_type = input;
         self
     }
+    /// <p>The type of message for the pool to use.</p>
+    pub fn get_message_type(&self) -> &::std::option::Option<crate::types::MessageType> {
+        &self.message_type
+    }
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
     pub fn two_way_enabled(mut self, input: bool) -> Self {
         self.two_way_enabled = ::std::option::Option::Some(input);
@@ -168,6 +184,10 @@ impl UpdatePoolOutputBuilder {
     pub fn set_two_way_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.two_way_enabled = input;
         self
+    }
+    /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
+    pub fn get_two_way_enabled(&self) -> &::std::option::Option<bool> {
+        &self.two_way_enabled
     }
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
     pub fn two_way_channel_arn(
@@ -185,6 +205,10 @@ impl UpdatePoolOutputBuilder {
         self.two_way_channel_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
+    pub fn get_two_way_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.two_way_channel_arn
+    }
     /// <p>When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
     pub fn self_managed_opt_outs_enabled(mut self, input: bool) -> Self {
         self.self_managed_opt_outs_enabled = ::std::option::Option::Some(input);
@@ -194,6 +218,10 @@ impl UpdatePoolOutputBuilder {
     pub fn set_self_managed_opt_outs_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.self_managed_opt_outs_enabled = input;
         self
+    }
+    /// <p>When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
+    pub fn get_self_managed_opt_outs_enabled(&self) -> &::std::option::Option<bool> {
+        &self.self_managed_opt_outs_enabled
     }
     /// <p>The name of the OptOutList associated with the pool.</p>
     pub fn opt_out_list_name(
@@ -211,6 +239,10 @@ impl UpdatePoolOutputBuilder {
         self.opt_out_list_name = input;
         self
     }
+    /// <p>The name of the OptOutList associated with the pool.</p>
+    pub fn get_opt_out_list_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.opt_out_list_name
+    }
     /// <p>Indicates whether shared routes are enabled for the pool.</p>
     pub fn shared_routes_enabled(mut self, input: bool) -> Self {
         self.shared_routes_enabled = ::std::option::Option::Some(input);
@@ -221,6 +253,10 @@ impl UpdatePoolOutputBuilder {
         self.shared_routes_enabled = input;
         self
     }
+    /// <p>Indicates whether shared routes are enabled for the pool.</p>
+    pub fn get_shared_routes_enabled(&self) -> &::std::option::Option<bool> {
+        &self.shared_routes_enabled
+    }
     /// <p>When set to true the pool can't be deleted.</p>
     pub fn deletion_protection_enabled(mut self, input: bool) -> Self {
         self.deletion_protection_enabled = ::std::option::Option::Some(input);
@@ -230,6 +266,10 @@ impl UpdatePoolOutputBuilder {
     pub fn set_deletion_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.deletion_protection_enabled = input;
         self
+    }
+    /// <p>When set to true the pool can't be deleted.</p>
+    pub fn get_deletion_protection_enabled(&self) -> &::std::option::Option<bool> {
+        &self.deletion_protection_enabled
     }
     /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -243,6 +283,10 @@ impl UpdatePoolOutputBuilder {
     ) -> Self {
         self.created_timestamp = input;
         self
+    }
+    /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -36,6 +36,12 @@ impl AssociateTrustStoreFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateTrustStore as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::associate_trust_store::builders::AssociateTrustStoreInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl AssociateTrustStoreFluentBuilder {
         self.inner = self.inner.set_portal_arn(input);
         self
     }
+    /// <p>The ARN of the web portal.</p>
+    pub fn get_portal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_portal_arn()
+    }
     /// <p>The ARN of the trust store.</p>
     pub fn trust_store_arn(
         mut self,
@@ -141,5 +151,9 @@ impl AssociateTrustStoreFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_trust_store_arn(input);
         self
+    }
+    /// <p>The ARN of the trust store.</p>
+    pub fn get_trust_store_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_trust_store_arn()
     }
 }

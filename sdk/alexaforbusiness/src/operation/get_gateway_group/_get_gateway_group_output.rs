@@ -50,6 +50,10 @@ impl GetGatewayGroupOutputBuilder {
         self.gateway_group = input;
         self
     }
+    /// <p>The details of the gateway group.</p>
+    pub fn get_gateway_group(&self) -> &::std::option::Option<crate::types::GatewayGroup> {
+        &self.gateway_group
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

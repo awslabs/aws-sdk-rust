@@ -36,6 +36,12 @@ impl ListOriginEndpointsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListOriginEndpoints as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_origin_endpoints::builders::ListOriginEndpointsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListOriginEndpointsFluentBuilder {
         self.inner = self.inner.set_channel_id(input);
         self
     }
+    /// When specified, the request will return only OriginEndpoints associated with the given Channel ID.
+    pub fn get_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_id()
+    }
     /// The upper bound on the number of records to return.
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -147,6 +157,10 @@ impl ListOriginEndpointsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// The upper bound on the number of records to return.
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// A token used to resume pagination from the end of a previous request.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -156,5 +170,9 @@ impl ListOriginEndpointsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// A token used to resume pagination from the end of a previous request.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

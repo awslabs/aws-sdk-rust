@@ -59,6 +59,13 @@ impl BatchUpdateStandardsControlAssociationsInputBuilder {
         self.standards_control_association_updates = input;
         self
     }
+    /// <p> Updates the enablement status of a security control in a specified standard. </p>
+    pub fn get_standards_control_association_updates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationUpdate>>
+    {
+        &self.standards_control_association_updates
+    }
     /// Consumes the builder and constructs a [`BatchUpdateStandardsControlAssociationsInput`](crate::operation::batch_update_standards_control_associations::BatchUpdateStandardsControlAssociationsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::batch_update_standards_control_associations::BatchUpdateStandardsControlAssociationsInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

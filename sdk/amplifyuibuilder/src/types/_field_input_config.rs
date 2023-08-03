@@ -162,6 +162,10 @@ impl FieldInputConfigBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The input type for the field. </p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p>Specifies a field that requires input.</p>
     pub fn required(mut self, input: bool) -> Self {
         self.required = ::std::option::Option::Some(input);
@@ -171,6 +175,10 @@ impl FieldInputConfigBuilder {
     pub fn set_required(mut self, input: ::std::option::Option<bool>) -> Self {
         self.required = input;
         self
+    }
+    /// <p>Specifies a field that requires input.</p>
+    pub fn get_required(&self) -> &::std::option::Option<bool> {
+        &self.required
     }
     /// <p>Specifies a read only field.</p>
     pub fn read_only(mut self, input: bool) -> Self {
@@ -182,6 +190,10 @@ impl FieldInputConfigBuilder {
         self.read_only = input;
         self
     }
+    /// <p>Specifies a read only field.</p>
+    pub fn get_read_only(&self) -> &::std::option::Option<bool> {
+        &self.read_only
+    }
     /// <p>The text to display as a placeholder for the field.</p>
     pub fn placeholder(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.placeholder = ::std::option::Option::Some(input.into());
@@ -191,6 +203,10 @@ impl FieldInputConfigBuilder {
     pub fn set_placeholder(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.placeholder = input;
         self
+    }
+    /// <p>The text to display as a placeholder for the field.</p>
+    pub fn get_placeholder(&self) -> &::std::option::Option<::std::string::String> {
+        &self.placeholder
     }
     /// <p>The default value for the field.</p>
     pub fn default_value(
@@ -208,6 +224,10 @@ impl FieldInputConfigBuilder {
         self.default_value = input;
         self
     }
+    /// <p>The default value for the field.</p>
+    pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_value
+    }
     /// <p>The text to display to describe the field.</p>
     pub fn descriptive_text(
         mut self,
@@ -224,6 +244,10 @@ impl FieldInputConfigBuilder {
         self.descriptive_text = input;
         self
     }
+    /// <p>The text to display to describe the field.</p>
+    pub fn get_descriptive_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.descriptive_text
+    }
     /// <p>Specifies whether a field has a default value.</p>
     pub fn default_checked(mut self, input: bool) -> Self {
         self.default_checked = ::std::option::Option::Some(input);
@@ -233,6 +257,10 @@ impl FieldInputConfigBuilder {
     pub fn set_default_checked(mut self, input: ::std::option::Option<bool>) -> Self {
         self.default_checked = input;
         self
+    }
+    /// <p>Specifies whether a field has a default value.</p>
+    pub fn get_default_checked(&self) -> &::std::option::Option<bool> {
+        &self.default_checked
     }
     /// <p>The default country code for a phone number.</p>
     pub fn default_country_code(
@@ -250,6 +278,10 @@ impl FieldInputConfigBuilder {
         self.default_country_code = input;
         self
     }
+    /// <p>The default country code for a phone number.</p>
+    pub fn get_default_country_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_country_code
+    }
     /// <p>The information to use to customize the input fields with data at runtime.</p>
     pub fn value_mappings(mut self, input: crate::types::ValueMappings) -> Self {
         self.value_mappings = ::std::option::Option::Some(input);
@@ -263,6 +295,10 @@ impl FieldInputConfigBuilder {
         self.value_mappings = input;
         self
     }
+    /// <p>The information to use to customize the input fields with data at runtime.</p>
+    pub fn get_value_mappings(&self) -> &::std::option::Option<crate::types::ValueMappings> {
+        &self.value_mappings
+    }
     /// <p>The name of the field.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -272,6 +308,10 @@ impl FieldInputConfigBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the field.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The minimum value to display for the field.</p>
     pub fn min_value(mut self, input: f32) -> Self {
@@ -283,6 +323,10 @@ impl FieldInputConfigBuilder {
         self.min_value = input;
         self
     }
+    /// <p>The minimum value to display for the field.</p>
+    pub fn get_min_value(&self) -> &::std::option::Option<f32> {
+        &self.min_value
+    }
     /// <p>The maximum value to display for the field.</p>
     pub fn max_value(mut self, input: f32) -> Self {
         self.max_value = ::std::option::Option::Some(input);
@@ -292,6 +336,10 @@ impl FieldInputConfigBuilder {
     pub fn set_max_value(mut self, input: ::std::option::Option<f32>) -> Self {
         self.max_value = input;
         self
+    }
+    /// <p>The maximum value to display for the field.</p>
+    pub fn get_max_value(&self) -> &::std::option::Option<f32> {
+        &self.max_value
     }
     /// <p>The stepping increment for a numeric value in a field.</p>
     pub fn step(mut self, input: f32) -> Self {
@@ -303,6 +351,10 @@ impl FieldInputConfigBuilder {
         self.step = input;
         self
     }
+    /// <p>The stepping increment for a numeric value in a field.</p>
+    pub fn get_step(&self) -> &::std::option::Option<f32> {
+        &self.step
+    }
     /// <p>The value for the field.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -313,6 +365,10 @@ impl FieldInputConfigBuilder {
         self.value = input;
         self
     }
+    /// <p>The value for the field.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// <p>Specifies whether to render the field as an array. This property is ignored if the <code>dataSourceType</code> for the form is a Data Store.</p>
     pub fn is_array(mut self, input: bool) -> Self {
         self.is_array = ::std::option::Option::Some(input);
@@ -322,6 +378,10 @@ impl FieldInputConfigBuilder {
     pub fn set_is_array(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_array = input;
         self
+    }
+    /// <p>Specifies whether to render the field as an array. This property is ignored if the <code>dataSourceType</code> for the form is a Data Store.</p>
+    pub fn get_is_array(&self) -> &::std::option::Option<bool> {
+        &self.is_array
     }
     /// <p>The configuration for the file uploader field.</p>
     pub fn file_uploader_config(mut self, input: crate::types::FileUploaderFieldConfig) -> Self {
@@ -335,6 +395,12 @@ impl FieldInputConfigBuilder {
     ) -> Self {
         self.file_uploader_config = input;
         self
+    }
+    /// <p>The configuration for the file uploader field.</p>
+    pub fn get_file_uploader_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::FileUploaderFieldConfig> {
+        &self.file_uploader_config
     }
     /// Consumes the builder and constructs a [`FieldInputConfig`](crate::types::FieldInputConfig).
     pub fn build(self) -> crate::types::FieldInputConfig {

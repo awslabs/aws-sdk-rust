@@ -106,6 +106,12 @@ impl Xavc4kProfileSettingsBuilder {
         self.bitrate_class = input;
         self
     }
+    /// Specify the XAVC 4k (Long GOP) Bitrate Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
+    pub fn get_bitrate_class(
+        &self,
+    ) -> &::std::option::Option<crate::types::Xavc4kProfileBitrateClass> {
+        &self.bitrate_class
+    }
     /// Specify the codec profile for this output. Choose High, 8-bit, 4:2:0 (HIGH) or High, 10-bit, 4:2:2 (HIGH_422). These profiles are specified in ITU-T H.264.
     pub fn codec_profile(mut self, input: crate::types::Xavc4kProfileCodecProfile) -> Self {
         self.codec_profile = ::std::option::Option::Some(input);
@@ -118,6 +124,12 @@ impl Xavc4kProfileSettingsBuilder {
     ) -> Self {
         self.codec_profile = input;
         self
+    }
+    /// Specify the codec profile for this output. Choose High, 8-bit, 4:2:0 (HIGH) or High, 10-bit, 4:2:2 (HIGH_422). These profiles are specified in ITU-T H.264.
+    pub fn get_codec_profile(
+        &self,
+    ) -> &::std::option::Option<crate::types::Xavc4kProfileCodecProfile> {
+        &self.codec_profile
     }
     /// The best way to set up adaptive quantization is to keep the default value, Auto, for the setting Adaptive quantization. When you do so, MediaConvert automatically applies the best types of quantization for your video content. Include this setting in your JSON job specification only when you choose to change the default value for Adaptive quantization. Enable this setting to have the encoder reduce I-frame pop. I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying some macroblocks many times from frame to frame, and then refreshes them at the I-frame. When you enable this setting, the encoder updates these macroblocks slightly more often to smooth out the flicker. This setting is disabled by default. Related setting: In addition to enabling this setting, you must also set Adaptive quantization to a value other than Off or Auto. Use Adaptive quantization to adjust the degree of smoothing that Flicker adaptive quantization provides.
     pub fn flicker_adaptive_quantization(
@@ -135,6 +147,12 @@ impl Xavc4kProfileSettingsBuilder {
         self.flicker_adaptive_quantization = input;
         self
     }
+    /// The best way to set up adaptive quantization is to keep the default value, Auto, for the setting Adaptive quantization. When you do so, MediaConvert automatically applies the best types of quantization for your video content. Include this setting in your JSON job specification only when you choose to change the default value for Adaptive quantization. Enable this setting to have the encoder reduce I-frame pop. I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying some macroblocks many times from frame to frame, and then refreshes them at the I-frame. When you enable this setting, the encoder updates these macroblocks slightly more often to smooth out the flicker. This setting is disabled by default. Related setting: In addition to enabling this setting, you must also set Adaptive quantization to a value other than Off or Auto. Use Adaptive quantization to adjust the degree of smoothing that Flicker adaptive quantization provides.
+    pub fn get_flicker_adaptive_quantization(
+        &self,
+    ) -> &::std::option::Option<crate::types::XavcFlickerAdaptiveQuantization> {
+        &self.flicker_adaptive_quantization
+    }
     /// Specify whether the encoder uses B-frames as reference frames for other pictures in the same GOP. Choose Allow to allow the encoder to use B-frames as reference frames. Choose Don't allow to prevent the encoder from using B-frames as reference frames.
     pub fn gop_b_reference(mut self, input: crate::types::XavcGopBReference) -> Self {
         self.gop_b_reference = ::std::option::Option::Some(input);
@@ -148,6 +166,10 @@ impl Xavc4kProfileSettingsBuilder {
         self.gop_b_reference = input;
         self
     }
+    /// Specify whether the encoder uses B-frames as reference frames for other pictures in the same GOP. Choose Allow to allow the encoder to use B-frames as reference frames. Choose Don't allow to prevent the encoder from using B-frames as reference frames.
+    pub fn get_gop_b_reference(&self) -> &::std::option::Option<crate::types::XavcGopBReference> {
+        &self.gop_b_reference
+    }
     /// Frequency of closed GOPs. In streaming applications, it is recommended that this be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly as possible. Setting this value to 0 will break output segmenting.
     pub fn gop_closed_cadence(mut self, input: i32) -> Self {
         self.gop_closed_cadence = ::std::option::Option::Some(input);
@@ -158,6 +180,10 @@ impl Xavc4kProfileSettingsBuilder {
         self.gop_closed_cadence = input;
         self
     }
+    /// Frequency of closed GOPs. In streaming applications, it is recommended that this be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly as possible. Setting this value to 0 will break output segmenting.
+    pub fn get_gop_closed_cadence(&self) -> &::std::option::Option<i32> {
+        &self.gop_closed_cadence
+    }
     /// Specify the size of the buffer that MediaConvert uses in the HRD buffer model for this output. Specify this value in bits; for example, enter five megabits as 5000000. When you don't set this value, or you set it to zero, MediaConvert calculates the default by doubling the bitrate of this output point.
     pub fn hrd_buffer_size(mut self, input: i32) -> Self {
         self.hrd_buffer_size = ::std::option::Option::Some(input);
@@ -167,6 +193,10 @@ impl Xavc4kProfileSettingsBuilder {
     pub fn set_hrd_buffer_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.hrd_buffer_size = input;
         self
+    }
+    /// Specify the size of the buffer that MediaConvert uses in the HRD buffer model for this output. Specify this value in bits; for example, enter five megabits as 5000000. When you don't set this value, or you set it to zero, MediaConvert calculates the default by doubling the bitrate of this output point.
+    pub fn get_hrd_buffer_size(&self) -> &::std::option::Option<i32> {
+        &self.hrd_buffer_size
     }
     /// Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
     pub fn quality_tuning_level(
@@ -184,6 +214,12 @@ impl Xavc4kProfileSettingsBuilder {
         self.quality_tuning_level = input;
         self
     }
+    /// Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
+    pub fn get_quality_tuning_level(
+        &self,
+    ) -> &::std::option::Option<crate::types::Xavc4kProfileQualityTuningLevel> {
+        &self.quality_tuning_level
+    }
     /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures.
     pub fn slices(mut self, input: i32) -> Self {
         self.slices = ::std::option::Option::Some(input);
@@ -193,6 +229,10 @@ impl Xavc4kProfileSettingsBuilder {
     pub fn set_slices(mut self, input: ::std::option::Option<i32>) -> Self {
         self.slices = input;
         self
+    }
+    /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures.
+    pub fn get_slices(&self) -> &::std::option::Option<i32> {
+        &self.slices
     }
     /// Consumes the builder and constructs a [`Xavc4kProfileSettings`](crate::types::Xavc4kProfileSettings).
     pub fn build(self) -> crate::types::Xavc4kProfileSettings {

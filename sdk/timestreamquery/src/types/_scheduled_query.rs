@@ -107,6 +107,10 @@ impl ScheduledQueryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the scheduled query.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -116,6 +120,10 @@ impl ScheduledQueryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the scheduled query.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The creation time of the scheduled query.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -130,6 +138,10 @@ impl ScheduledQueryBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The creation time of the scheduled query.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>State of scheduled query. </p>
     pub fn state(mut self, input: crate::types::ScheduledQueryState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -142,6 +154,10 @@ impl ScheduledQueryBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>State of scheduled query. </p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ScheduledQueryState> {
+        &self.state
     }
     /// <p>The last time the scheduled query was run.</p>
     pub fn previous_invocation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -156,6 +172,12 @@ impl ScheduledQueryBuilder {
         self.previous_invocation_time = input;
         self
     }
+    /// <p>The last time the scheduled query was run.</p>
+    pub fn get_previous_invocation_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.previous_invocation_time
+    }
     /// <p>The next time the scheduled query is to be run.</p>
     pub fn next_invocation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.next_invocation_time = ::std::option::Option::Some(input);
@@ -168,6 +190,10 @@ impl ScheduledQueryBuilder {
     ) -> Self {
         self.next_invocation_time = input;
         self
+    }
+    /// <p>The next time the scheduled query is to be run.</p>
+    pub fn get_next_invocation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.next_invocation_time
     }
     /// <p>Configuration for scheduled query error reporting.</p>
     pub fn error_report_configuration(
@@ -185,6 +211,12 @@ impl ScheduledQueryBuilder {
         self.error_report_configuration = input;
         self
     }
+    /// <p>Configuration for scheduled query error reporting.</p>
+    pub fn get_error_report_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ErrorReportConfiguration> {
+        &self.error_report_configuration
+    }
     /// <p>Target data source where final scheduled query result will be written.</p>
     pub fn target_destination(mut self, input: crate::types::TargetDestination) -> Self {
         self.target_destination = ::std::option::Option::Some(input);
@@ -198,6 +230,12 @@ impl ScheduledQueryBuilder {
         self.target_destination = input;
         self
     }
+    /// <p>Target data source where final scheduled query result will be written.</p>
+    pub fn get_target_destination(
+        &self,
+    ) -> &::std::option::Option<crate::types::TargetDestination> {
+        &self.target_destination
+    }
     /// <p>Status of the last scheduled query run.</p>
     pub fn last_run_status(mut self, input: crate::types::ScheduledQueryRunStatus) -> Self {
         self.last_run_status = ::std::option::Option::Some(input);
@@ -210,6 +248,12 @@ impl ScheduledQueryBuilder {
     ) -> Self {
         self.last_run_status = input;
         self
+    }
+    /// <p>Status of the last scheduled query run.</p>
+    pub fn get_last_run_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScheduledQueryRunStatus> {
+        &self.last_run_status
     }
     /// Consumes the builder and constructs a [`ScheduledQuery`](crate::types::ScheduledQuery).
     pub fn build(self) -> crate::types::ScheduledQuery {

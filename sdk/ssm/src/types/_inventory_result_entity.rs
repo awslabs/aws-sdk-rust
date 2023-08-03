@@ -56,6 +56,10 @@ impl InventoryResultEntityBuilder {
         self.id = input;
         self
     }
+    /// <p>ID of the inventory result entity. For example, for managed node inventory the result will be the managed node ID. For EC2 instance inventory, the result will be the instance ID. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Adds a key-value pair to `data`.
     ///
     /// To override the contents of this collection use [`set_data`](Self::set_data).
@@ -80,6 +84,14 @@ impl InventoryResultEntityBuilder {
     ) -> Self {
         self.data = input;
         self
+    }
+    /// <p>The data section in the inventory result entity JSON.</p>
+    pub fn get_data(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::InventoryResultItem>,
+    > {
+        &self.data
     }
     /// Consumes the builder and constructs a [`InventoryResultEntity`](crate::types::InventoryResultEntity).
     pub fn build(self) -> crate::types::InventoryResultEntity {

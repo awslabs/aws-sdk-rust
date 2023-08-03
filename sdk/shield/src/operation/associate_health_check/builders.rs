@@ -37,6 +37,12 @@ impl AssociateHealthCheckFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateHealthCheck as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::associate_health_check::builders::AssociateHealthCheckInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl AssociateHealthCheckFluentBuilder {
         self.inner = self.inner.set_protection_id(input);
         self
     }
+    /// <p>The unique identifier (ID) for the <code>Protection</code> object to add the health check association to. </p>
+    pub fn get_protection_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_protection_id()
+    }
     /// <p>The Amazon Resource Name (ARN) of the health check to associate with the protection.</p>
     pub fn health_check_arn(
         mut self,
@@ -148,5 +158,9 @@ impl AssociateHealthCheckFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_health_check_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the health check to associate with the protection.</p>
+    pub fn get_health_check_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_health_check_arn()
     }
 }

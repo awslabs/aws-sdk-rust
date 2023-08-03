@@ -70,6 +70,10 @@ impl AwsBackupRecoveryPointCreatedByDetailsBuilder {
         self.backup_plan_arn = input;
         self
     }
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan. </p>
+    pub fn get_backup_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_plan_arn
+    }
     /// <p>Uniquely identifies a backup plan. </p>
     pub fn backup_plan_id(
         mut self,
@@ -85,6 +89,10 @@ impl AwsBackupRecoveryPointCreatedByDetailsBuilder {
     ) -> Self {
         self.backup_plan_id = input;
         self
+    }
+    /// <p>Uniquely identifies a backup plan. </p>
+    pub fn get_backup_plan_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_plan_id
     }
     /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot be edited. </p>
     pub fn backup_plan_version(
@@ -102,6 +110,10 @@ impl AwsBackupRecoveryPointCreatedByDetailsBuilder {
         self.backup_plan_version = input;
         self
     }
+    /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot be edited. </p>
+    pub fn get_backup_plan_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_plan_version
+    }
     /// <p>Uniquely identifies a rule used to schedule the backup of a selection of resources. </p>
     pub fn backup_rule_id(
         mut self,
@@ -117,6 +129,10 @@ impl AwsBackupRecoveryPointCreatedByDetailsBuilder {
     ) -> Self {
         self.backup_rule_id = input;
         self
+    }
+    /// <p>Uniquely identifies a rule used to schedule the backup of a selection of resources. </p>
+    pub fn get_backup_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_rule_id
     }
     /// Consumes the builder and constructs a [`AwsBackupRecoveryPointCreatedByDetails`](crate::types::AwsBackupRecoveryPointCreatedByDetails).
     pub fn build(self) -> crate::types::AwsBackupRecoveryPointCreatedByDetails {

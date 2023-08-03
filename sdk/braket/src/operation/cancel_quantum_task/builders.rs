@@ -36,6 +36,12 @@ impl CancelQuantumTaskFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CancelQuantumTask as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::cancel_quantum_task::builders::CancelQuantumTaskInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl CancelQuantumTaskFluentBuilder {
         self.inner = self.inner.set_quantum_task_arn(input);
         self
     }
+    /// <p>The ARN of the task to cancel.</p>
+    pub fn get_quantum_task_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_quantum_task_arn()
+    }
     /// <p>The client token associated with the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -141,5 +151,9 @@ impl CancelQuantumTaskFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>The client token associated with the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

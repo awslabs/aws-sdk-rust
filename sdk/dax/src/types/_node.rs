@@ -80,6 +80,10 @@ impl NodeBuilder {
         self.node_id = input;
         self
     }
+    /// <p>A system-generated identifier for the node.</p>
+    pub fn get_node_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_id
+    }
     /// <p>The endpoint for the node, consisting of a DNS name and a port number. Client applications can connect directly to a node endpoint, if desired (as an alternative to allowing DAX client software to intelligently route requests and responses to nodes in the DAX cluster.</p>
     pub fn endpoint(mut self, input: crate::types::Endpoint) -> Self {
         self.endpoint = ::std::option::Option::Some(input);
@@ -89,6 +93,10 @@ impl NodeBuilder {
     pub fn set_endpoint(mut self, input: ::std::option::Option<crate::types::Endpoint>) -> Self {
         self.endpoint = input;
         self
+    }
+    /// <p>The endpoint for the node, consisting of a DNS name and a port number. Client applications can connect directly to a node endpoint, if desired (as an alternative to allowing DAX client software to intelligently route requests and responses to nodes in the DAX cluster.</p>
+    pub fn get_endpoint(&self) -> &::std::option::Option<crate::types::Endpoint> {
+        &self.endpoint
     }
     /// <p>The date and time (in UNIX epoch format) when the node was launched.</p>
     pub fn node_create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -102,6 +110,10 @@ impl NodeBuilder {
     ) -> Self {
         self.node_create_time = input;
         self
+    }
+    /// <p>The date and time (in UNIX epoch format) when the node was launched.</p>
+    pub fn get_node_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.node_create_time
     }
     /// <p>The Availability Zone (AZ) in which the node has been deployed.</p>
     pub fn availability_zone(
@@ -119,6 +131,10 @@ impl NodeBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>The Availability Zone (AZ) in which the node has been deployed.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>The current status of the node. For example: <code>available</code>.</p>
     pub fn node_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_status = ::std::option::Option::Some(input.into());
@@ -128,6 +144,10 @@ impl NodeBuilder {
     pub fn set_node_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_status = input;
         self
+    }
+    /// <p>The current status of the node. For example: <code>available</code>.</p>
+    pub fn get_node_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_status
     }
     /// <p>The status of the parameter group associated with this node. For example, <code>in-sync</code>.</p>
     pub fn parameter_group_status(
@@ -144,6 +164,10 @@ impl NodeBuilder {
     ) -> Self {
         self.parameter_group_status = input;
         self
+    }
+    /// <p>The status of the parameter group associated with this node. For example, <code>in-sync</code>.</p>
+    pub fn get_parameter_group_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_group_status
     }
     /// Consumes the builder and constructs a [`Node`](crate::types::Node).
     pub fn build(self) -> crate::types::Node {

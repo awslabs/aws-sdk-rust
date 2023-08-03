@@ -56,6 +56,10 @@ impl DeleteStepDetailsBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the step, used as an identifier.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
     /// <ul>
     /// <li> <p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
@@ -79,6 +83,14 @@ impl DeleteStepDetailsBuilder {
     ) -> Self {
         self.source_file_location = input;
         self
+    }
+    /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
+    /// <ul>
+    /// <li> <p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
+    /// <li> <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p> </li>
+    /// </ul>
+    pub fn get_source_file_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_file_location
     }
     /// Consumes the builder and constructs a [`DeleteStepDetails`](crate::types::DeleteStepDetails).
     pub fn build(self) -> crate::types::DeleteStepDetails {

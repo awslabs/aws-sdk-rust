@@ -73,6 +73,10 @@ impl PutMetricFilterInputBuilder {
         self.log_group_name = input;
         self
     }
+    /// <p>The name of the log group.</p>
+    pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group_name
+    }
     /// <p>A name for the metric filter.</p>
     pub fn filter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_name = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl PutMetricFilterInputBuilder {
     pub fn set_filter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.filter_name = input;
         self
+    }
+    /// <p>A name for the metric filter.</p>
+    pub fn get_filter_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter_name
     }
     /// <p>A filter pattern for extracting metric data out of ingested log events.</p>
     pub fn filter_pattern(
@@ -98,6 +106,10 @@ impl PutMetricFilterInputBuilder {
     ) -> Self {
         self.filter_pattern = input;
         self
+    }
+    /// <p>A filter pattern for extracting metric data out of ingested log events.</p>
+    pub fn get_filter_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter_pattern
     }
     /// Appends an item to `metric_transformations`.
     ///
@@ -117,6 +129,12 @@ impl PutMetricFilterInputBuilder {
     ) -> Self {
         self.metric_transformations = input;
         self
+    }
+    /// <p>A collection of information that defines how metric data gets emitted.</p>
+    pub fn get_metric_transformations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricTransformation>> {
+        &self.metric_transformations
     }
     /// Consumes the builder and constructs a [`PutMetricFilterInput`](crate::operation::put_metric_filter::PutMetricFilterInput).
     pub fn build(

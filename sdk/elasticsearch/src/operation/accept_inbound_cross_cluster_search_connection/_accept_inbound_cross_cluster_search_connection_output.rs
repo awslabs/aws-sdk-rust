@@ -57,6 +57,12 @@ impl AcceptInboundCrossClusterSearchConnectionOutputBuilder {
         self.cross_cluster_search_connection = input;
         self
     }
+    /// <p>Specifies the <code><code>InboundCrossClusterSearchConnection</code></code> of accepted inbound connection. </p>
+    pub fn get_cross_cluster_search_connection(
+        &self,
+    ) -> &::std::option::Option<crate::types::InboundCrossClusterSearchConnection> {
+        &self.cross_cluster_search_connection
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

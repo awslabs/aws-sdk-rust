@@ -49,6 +49,12 @@ impl AcceptReservedNodeExchangeOutputBuilder {
         self.exchanged_reserved_node = input;
         self
     }
+    /// <p></p>
+    pub fn get_exchanged_reserved_node(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReservedNode> {
+        &self.exchanged_reserved_node
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

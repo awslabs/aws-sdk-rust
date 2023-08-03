@@ -51,6 +51,10 @@ impl AccountAttributeBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the account attribute.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::AccountAttributeName> {
+        &self.name
+    }
     /// <p>The value associated with the account attribute name.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl AccountAttributeBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value associated with the account attribute name.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`AccountAttribute`](crate::types::AccountAttribute).
     pub fn build(self) -> crate::types::AccountAttribute {

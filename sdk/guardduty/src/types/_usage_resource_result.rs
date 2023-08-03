@@ -48,6 +48,10 @@ impl UsageResourceResultBuilder {
         self.resource = input;
         self
     }
+    /// <p>The Amazon Web Services resource that generated usage.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource
+    }
     /// <p>Represents the sum total of usage for the specified resource type.</p>
     pub fn total(mut self, input: crate::types::Total) -> Self {
         self.total = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl UsageResourceResultBuilder {
     pub fn set_total(mut self, input: ::std::option::Option<crate::types::Total>) -> Self {
         self.total = input;
         self
+    }
+    /// <p>Represents the sum total of usage for the specified resource type.</p>
+    pub fn get_total(&self) -> &::std::option::Option<crate::types::Total> {
+        &self.total
     }
     /// Consumes the builder and constructs a [`UsageResourceResult`](crate::types::UsageResourceResult).
     pub fn build(self) -> crate::types::UsageResourceResult {

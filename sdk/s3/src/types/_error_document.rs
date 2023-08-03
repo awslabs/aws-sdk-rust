@@ -48,6 +48,12 @@ impl ErrorDocumentBuilder {
         self.key = input;
         self
     }
+    /// <p>The object key name to use when a 4XX class error occurs.</p> <important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
+    /// </important>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// Consumes the builder and constructs a [`ErrorDocument`](crate::types::ErrorDocument).
     pub fn build(self) -> crate::types::ErrorDocument {
         crate::types::ErrorDocument { key: self.key }

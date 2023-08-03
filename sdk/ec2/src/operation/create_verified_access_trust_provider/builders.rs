@@ -36,6 +36,10 @@ impl CreateVerifiedAccessTrustProviderFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateVerifiedAccessTrustProvider as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_verified_access_trust_provider::builders::CreateVerifiedAccessTrustProviderInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -103,6 +107,12 @@ impl CreateVerifiedAccessTrustProviderFluentBuilder {
         self.inner = self.inner.set_trust_provider_type(input);
         self
     }
+    /// <p>The type of trust provider.</p>
+    pub fn get_trust_provider_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::TrustProviderType> {
+        self.inner.get_trust_provider_type()
+    }
     /// <p>The type of user-based trust provider. This parameter is required when the provider type is <code>user</code>.</p>
     pub fn user_trust_provider_type(mut self, input: crate::types::UserTrustProviderType) -> Self {
         self.inner = self.inner.user_trust_provider_type(input);
@@ -115,6 +125,12 @@ impl CreateVerifiedAccessTrustProviderFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_user_trust_provider_type(input);
         self
+    }
+    /// <p>The type of user-based trust provider. This parameter is required when the provider type is <code>user</code>.</p>
+    pub fn get_user_trust_provider_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::UserTrustProviderType> {
+        self.inner.get_user_trust_provider_type()
     }
     /// <p>The type of device-based trust provider. This parameter is required when the provider type is <code>device</code>.</p>
     pub fn device_trust_provider_type(
@@ -132,6 +148,12 @@ impl CreateVerifiedAccessTrustProviderFluentBuilder {
         self.inner = self.inner.set_device_trust_provider_type(input);
         self
     }
+    /// <p>The type of device-based trust provider. This parameter is required when the provider type is <code>device</code>.</p>
+    pub fn get_device_trust_provider_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeviceTrustProviderType> {
+        self.inner.get_device_trust_provider_type()
+    }
     /// <p>The options for a OpenID Connect-compatible user-identity trust provider. This parameter is required when the provider type is <code>user</code>.</p>
     pub fn oidc_options(
         mut self,
@@ -147,6 +169,12 @@ impl CreateVerifiedAccessTrustProviderFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_oidc_options(input);
         self
+    }
+    /// <p>The options for a OpenID Connect-compatible user-identity trust provider. This parameter is required when the provider type is <code>user</code>.</p>
+    pub fn get_oidc_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateVerifiedAccessTrustProviderOidcOptions> {
+        self.inner.get_oidc_options()
     }
     /// <p>The options for a device-based trust provider. This parameter is required when the provider type is <code>device</code>.</p>
     pub fn device_options(
@@ -164,6 +192,12 @@ impl CreateVerifiedAccessTrustProviderFluentBuilder {
         self.inner = self.inner.set_device_options(input);
         self
     }
+    /// <p>The options for a device-based trust provider. This parameter is required when the provider type is <code>device</code>.</p>
+    pub fn get_device_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateVerifiedAccessTrustProviderDeviceOptions> {
+        self.inner.get_device_options()
+    }
     /// <p>The identifier to be used when working with policy rules.</p>
     pub fn policy_reference_name(
         mut self,
@@ -180,6 +214,10 @@ impl CreateVerifiedAccessTrustProviderFluentBuilder {
         self.inner = self.inner.set_policy_reference_name(input);
         self
     }
+    /// <p>The identifier to be used when working with policy rules.</p>
+    pub fn get_policy_reference_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_reference_name()
+    }
     /// <p>A description for the Verified Access trust provider.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -189,6 +227,10 @@ impl CreateVerifiedAccessTrustProviderFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description for the Verified Access trust provider.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `TagSpecifications`.
     ///
@@ -207,6 +249,12 @@ impl CreateVerifiedAccessTrustProviderFluentBuilder {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
+    /// <p>The tags to assign to the Verified Access trust provider.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        self.inner.get_tag_specifications()
+    }
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -217,6 +265,10 @@ impl CreateVerifiedAccessTrustProviderFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -226,5 +278,9 @@ impl CreateVerifiedAccessTrustProviderFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

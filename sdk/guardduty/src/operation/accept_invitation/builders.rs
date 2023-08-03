@@ -37,6 +37,12 @@ impl AcceptInvitationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AcceptInvitation as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::accept_invitation::builders::AcceptInvitationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl AcceptInvitationFluentBuilder {
         self.inner = self.inner.set_detector_id(input);
         self
     }
+    /// <p>The unique ID of the detector of the GuardDuty member account.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_id()
+    }
     /// <p>The account ID of the GuardDuty administrator account whose invitation you're accepting.</p>
     pub fn master_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.master_id(input.into());
@@ -136,6 +146,10 @@ impl AcceptInvitationFluentBuilder {
     pub fn set_master_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_master_id(input);
         self
+    }
+    /// <p>The account ID of the GuardDuty administrator account whose invitation you're accepting.</p>
+    pub fn get_master_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_master_id()
     }
     /// <p>The value that is used to validate the administrator account to the member account.</p>
     pub fn invitation_id(
@@ -152,5 +166,9 @@ impl AcceptInvitationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_invitation_id(input);
         self
+    }
+    /// <p>The value that is used to validate the administrator account to the member account.</p>
+    pub fn get_invitation_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_invitation_id()
     }
 }

@@ -36,6 +36,13 @@ impl StartGeneratedCodeJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartGeneratedCodeJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_generated_code_job::builders::StartGeneratedCodeJobInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl StartGeneratedCodeJobFluentBuilder {
         self.inner = self.inner.set_game_name(input);
         self
     }
+    /// <p>The name of the game.</p>
+    pub fn get_game_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_game_name()
+    }
     /// <p>The identifier of the snapshot for which to generate code.</p>
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_id(input.into());
@@ -136,6 +147,10 @@ impl StartGeneratedCodeJobFluentBuilder {
         self.inner = self.inner.set_snapshot_id(input);
         self
     }
+    /// <p>The identifier of the snapshot for which to generate code.</p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_id()
+    }
     /// <p>Properties of the generator to use for the job.</p>
     pub fn generator(mut self, input: crate::types::Generator) -> Self {
         self.inner = self.inner.generator(input);
@@ -145,5 +160,9 @@ impl StartGeneratedCodeJobFluentBuilder {
     pub fn set_generator(mut self, input: ::std::option::Option<crate::types::Generator>) -> Self {
         self.inner = self.inner.set_generator(input);
         self
+    }
+    /// <p>Properties of the generator to use for the job.</p>
+    pub fn get_generator(&self) -> &::std::option::Option<crate::types::Generator> {
+        self.inner.get_generator()
     }
 }

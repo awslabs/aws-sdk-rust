@@ -69,6 +69,10 @@ impl CreateOrderInputBuilder {
         self.outpost_identifier = input;
         self
     }
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
+    pub fn get_outpost_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.outpost_identifier
+    }
     /// Appends an item to `line_items`.
     ///
     /// To override the contents of this collection use [`set_line_items`](Self::set_line_items).
@@ -88,6 +92,12 @@ impl CreateOrderInputBuilder {
         self.line_items = input;
         self
     }
+    /// <p>The line items that make up the order.</p>
+    pub fn get_line_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LineItemRequest>> {
+        &self.line_items
+    }
     /// <p>The payment option.</p>
     pub fn payment_option(mut self, input: crate::types::PaymentOption) -> Self {
         self.payment_option = ::std::option::Option::Some(input);
@@ -101,6 +111,10 @@ impl CreateOrderInputBuilder {
         self.payment_option = input;
         self
     }
+    /// <p>The payment option.</p>
+    pub fn get_payment_option(&self) -> &::std::option::Option<crate::types::PaymentOption> {
+        &self.payment_option
+    }
     /// <p>The payment terms.</p>
     pub fn payment_term(mut self, input: crate::types::PaymentTerm) -> Self {
         self.payment_term = ::std::option::Option::Some(input);
@@ -113,6 +127,10 @@ impl CreateOrderInputBuilder {
     ) -> Self {
         self.payment_term = input;
         self
+    }
+    /// <p>The payment terms.</p>
+    pub fn get_payment_term(&self) -> &::std::option::Option<crate::types::PaymentTerm> {
+        &self.payment_term
     }
     /// Consumes the builder and constructs a [`CreateOrderInput`](crate::operation::create_order::CreateOrderInput).
     pub fn build(

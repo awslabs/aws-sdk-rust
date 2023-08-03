@@ -56,6 +56,12 @@ impl ExitStandbyInputBuilder {
         self.instance_ids = input;
         self
     }
+    /// <p>The IDs of the instances. You can specify up to 20 instances.</p>
+    pub fn get_instance_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.instance_ids
+    }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn auto_scaling_group_name(
         mut self,
@@ -71,6 +77,10 @@ impl ExitStandbyInputBuilder {
     ) -> Self {
         self.auto_scaling_group_name = input;
         self
+    }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_scaling_group_name
     }
     /// Consumes the builder and constructs a [`ExitStandbyInput`](crate::operation::exit_standby::ExitStandbyInput).
     pub fn build(

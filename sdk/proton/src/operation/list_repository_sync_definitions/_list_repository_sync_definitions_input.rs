@@ -69,6 +69,10 @@ impl ListRepositorySyncDefinitionsInputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The repository name.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The repository provider.</p>
     pub fn repository_provider(mut self, input: crate::types::RepositoryProvider) -> Self {
         self.repository_provider = ::std::option::Option::Some(input);
@@ -82,6 +86,12 @@ impl ListRepositorySyncDefinitionsInputBuilder {
         self.repository_provider = input;
         self
     }
+    /// <p>The repository provider.</p>
+    pub fn get_repository_provider(
+        &self,
+    ) -> &::std::option::Option<crate::types::RepositoryProvider> {
+        &self.repository_provider
+    }
     /// <p>The sync type. The only supported value is <code>TEMPLATE_SYNC</code>.</p>
     pub fn sync_type(mut self, input: crate::types::SyncType) -> Self {
         self.sync_type = ::std::option::Option::Some(input);
@@ -92,6 +102,10 @@ impl ListRepositorySyncDefinitionsInputBuilder {
         self.sync_type = input;
         self
     }
+    /// <p>The sync type. The only supported value is <code>TEMPLATE_SYNC</code>.</p>
+    pub fn get_sync_type(&self) -> &::std::option::Option<crate::types::SyncType> {
+        &self.sync_type
+    }
     /// <p>A token that indicates the location of the next repository sync definition in the array of repository sync definitions, after the list of repository sync definitions previously requested.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -101,6 +115,10 @@ impl ListRepositorySyncDefinitionsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token that indicates the location of the next repository sync definition in the array of repository sync definitions, after the list of repository sync definitions previously requested.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListRepositorySyncDefinitionsInput`](crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsInput).
     pub fn build(

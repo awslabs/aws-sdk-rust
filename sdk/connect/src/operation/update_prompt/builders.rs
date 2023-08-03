@@ -36,6 +36,10 @@ impl UpdatePromptFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdatePrompt as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_prompt::builders::UpdatePromptInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdatePromptFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>A unique identifier for the prompt.</p>
     pub fn prompt_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.prompt_id(input.into());
@@ -127,6 +135,10 @@ impl UpdatePromptFluentBuilder {
     pub fn set_prompt_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_prompt_id(input);
         self
+    }
+    /// <p>A unique identifier for the prompt.</p>
+    pub fn get_prompt_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_prompt_id()
     }
     /// <p>The name of the prompt.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,6 +150,10 @@ impl UpdatePromptFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the prompt.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A description of the prompt.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -148,6 +164,10 @@ impl UpdatePromptFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>A description of the prompt.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The URI for the S3 bucket where the prompt is stored.</p>
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.s3_uri(input.into());
@@ -157,5 +177,9 @@ impl UpdatePromptFluentBuilder {
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_s3_uri(input);
         self
+    }
+    /// <p>The URI for the S3 bucket where the prompt is stored.</p>
+    pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_s3_uri()
     }
 }

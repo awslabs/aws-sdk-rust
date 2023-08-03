@@ -64,6 +64,10 @@ impl AgentStatusSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier for an agent status.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Amazon Resource Name (ARN) for the agent status.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl AgentStatusSummaryBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the agent status.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The name of the agent status.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl AgentStatusSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the agent status.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type of the agent status.</p>
     pub fn r#type(mut self, input: crate::types::AgentStatusType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl AgentStatusSummaryBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::AgentStatusType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the agent status.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::AgentStatusType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`AgentStatusSummary`](crate::types::AgentStatusSummary).
     pub fn build(self) -> crate::types::AgentStatusSummary {

@@ -53,6 +53,12 @@ impl MsSmoothOutputSettingsBuilder {
         self.h265_packaging_type = input;
         self
     }
+    /// Only applicable when this output is referencing an H.265 video description. Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
+    pub fn get_h265_packaging_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::MsSmoothH265PackagingType> {
+        &self.h265_packaging_type
+    }
     /// String concatenated to the end of the destination filename. Required for multiple outputs of the same type.
     pub fn name_modifier(
         mut self,
@@ -68,6 +74,10 @@ impl MsSmoothOutputSettingsBuilder {
     ) -> Self {
         self.name_modifier = input;
         self
+    }
+    /// String concatenated to the end of the destination filename. Required for multiple outputs of the same type.
+    pub fn get_name_modifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name_modifier
     }
     /// Consumes the builder and constructs a [`MsSmoothOutputSettings`](crate::types::MsSmoothOutputSettings).
     pub fn build(self) -> crate::types::MsSmoothOutputSettings {

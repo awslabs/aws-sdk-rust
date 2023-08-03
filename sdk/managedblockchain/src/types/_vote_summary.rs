@@ -57,6 +57,10 @@ impl VoteSummaryBuilder {
         self.vote = input;
         self
     }
+    /// <p> The vote value, either <code>YES</code> or <code>NO</code>. </p>
+    pub fn get_vote(&self) -> &::std::option::Option<crate::types::VoteValue> {
+        &self.vote
+    }
     /// <p> The name of the member that cast the vote. </p>
     pub fn member_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_name = ::std::option::Option::Some(input.into());
@@ -67,6 +71,10 @@ impl VoteSummaryBuilder {
         self.member_name = input;
         self
     }
+    /// <p> The name of the member that cast the vote. </p>
+    pub fn get_member_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_name
+    }
     /// <p> The unique identifier of the member that cast the vote. </p>
     pub fn member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_id = ::std::option::Option::Some(input.into());
@@ -76,6 +84,10 @@ impl VoteSummaryBuilder {
     pub fn set_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.member_id = input;
         self
+    }
+    /// <p> The unique identifier of the member that cast the vote. </p>
+    pub fn get_member_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_id
     }
     /// Consumes the builder and constructs a [`VoteSummary`](crate::types::VoteSummary).
     pub fn build(self) -> crate::types::VoteSummary {

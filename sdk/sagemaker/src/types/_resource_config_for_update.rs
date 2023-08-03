@@ -40,6 +40,10 @@ impl ResourceConfigForUpdateBuilder {
         self.keep_alive_period_in_seconds = input;
         self
     }
+    /// <p>The <code>KeepAlivePeriodInSeconds</code> value specified in the <code>ResourceConfig</code> to update.</p>
+    pub fn get_keep_alive_period_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.keep_alive_period_in_seconds
+    }
     /// Consumes the builder and constructs a [`ResourceConfigForUpdate`](crate::types::ResourceConfigForUpdate).
     pub fn build(self) -> crate::types::ResourceConfigForUpdate {
         crate::types::ResourceConfigForUpdate {

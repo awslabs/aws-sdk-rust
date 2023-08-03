@@ -54,6 +54,10 @@ impl GetPolicyTemplateInputBuilder {
         self.policy_store_id = input;
         self
     }
+    /// <p>Specifies the ID of the policy store that contains the policy template that you want information about.</p>
+    pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_store_id
+    }
     /// <p>Specifies the ID of the policy template that you want information about.</p>
     pub fn policy_template_id(
         mut self,
@@ -69,6 +73,10 @@ impl GetPolicyTemplateInputBuilder {
     ) -> Self {
         self.policy_template_id = input;
         self
+    }
+    /// <p>Specifies the ID of the policy template that you want information about.</p>
+    pub fn get_policy_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_template_id
     }
     /// Consumes the builder and constructs a [`GetPolicyTemplateInput`](crate::operation::get_policy_template::GetPolicyTemplateInput).
     pub fn build(

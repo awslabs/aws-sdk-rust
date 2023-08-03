@@ -65,6 +65,12 @@ impl ListDatasetGroupsOutputBuilder {
         self.dataset_groups = input;
         self
     }
+    /// <p>The list of your dataset groups.</p>
+    pub fn get_dataset_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetGroupSummary>> {
+        &self.dataset_groups
+    }
     /// <p>A token for getting the next set of dataset groups (if they exist).</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -74,6 +80,10 @@ impl ListDatasetGroupsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token for getting the next set of dataset groups (if they exist).</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

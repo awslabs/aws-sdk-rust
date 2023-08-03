@@ -50,6 +50,10 @@ impl GetResolverConfigOutputBuilder {
         self.resolver_config = input;
         self
     }
+    /// <p>Information about the behavior configuration of Route&nbsp;53 Resolver behavior for the VPC you specified in the <code>GetResolverConfig</code> request.</p>
+    pub fn get_resolver_config(&self) -> &::std::option::Option<crate::types::ResolverConfig> {
+        &self.resolver_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

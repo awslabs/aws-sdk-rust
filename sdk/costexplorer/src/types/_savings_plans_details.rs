@@ -56,6 +56,10 @@ impl SavingsPlansDetailsBuilder {
         self.region = input;
         self
     }
+    /// <p>A collection of Amazon Web Services resources in a geographic area. Each Amazon Web Services Region is isolated and independent of the other Regions.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
+    }
     /// <p>A group of instance types that Savings Plans applies to.</p>
     pub fn instance_family(
         mut self,
@@ -72,6 +76,10 @@ impl SavingsPlansDetailsBuilder {
         self.instance_family = input;
         self
     }
+    /// <p>A group of instance types that Savings Plans applies to.</p>
+    pub fn get_instance_family(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_family
+    }
     /// <p>The unique ID that's used to distinguish Savings Plans from one another.</p>
     pub fn offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.offering_id = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl SavingsPlansDetailsBuilder {
     pub fn set_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.offering_id = input;
         self
+    }
+    /// <p>The unique ID that's used to distinguish Savings Plans from one another.</p>
+    pub fn get_offering_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.offering_id
     }
     /// Consumes the builder and constructs a [`SavingsPlansDetails`](crate::types::SavingsPlansDetails).
     pub fn build(self) -> crate::types::SavingsPlansDetails {

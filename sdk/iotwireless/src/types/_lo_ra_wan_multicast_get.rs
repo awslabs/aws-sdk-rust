@@ -67,6 +67,10 @@ impl LoRaWanMulticastGetBuilder {
         self.rf_region = input;
         self
     }
+    /// <p>Supported RfRegions</p>
+    pub fn get_rf_region(&self) -> &::std::option::Option<crate::types::SupportedRfRegion> {
+        &self.rf_region
+    }
     /// <p>DlClass for LoRaWAM, valid values are ClassB and ClassC.</p>
     pub fn dl_class(mut self, input: crate::types::DlClass) -> Self {
         self.dl_class = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl LoRaWanMulticastGetBuilder {
     pub fn set_dl_class(mut self, input: ::std::option::Option<crate::types::DlClass>) -> Self {
         self.dl_class = input;
         self
+    }
+    /// <p>DlClass for LoRaWAM, valid values are ClassB and ClassC.</p>
+    pub fn get_dl_class(&self) -> &::std::option::Option<crate::types::DlClass> {
+        &self.dl_class
     }
     /// <p>Number of devices that are requested to be associated with the multicast group.</p>
     pub fn number_of_devices_requested(mut self, input: i32) -> Self {
@@ -87,6 +95,10 @@ impl LoRaWanMulticastGetBuilder {
         self.number_of_devices_requested = input;
         self
     }
+    /// <p>Number of devices that are requested to be associated with the multicast group.</p>
+    pub fn get_number_of_devices_requested(&self) -> &::std::option::Option<i32> {
+        &self.number_of_devices_requested
+    }
     /// <p>Number of devices that are associated to the multicast group.</p>
     pub fn number_of_devices_in_group(mut self, input: i32) -> Self {
         self.number_of_devices_in_group = ::std::option::Option::Some(input);
@@ -96,6 +108,10 @@ impl LoRaWanMulticastGetBuilder {
     pub fn set_number_of_devices_in_group(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_devices_in_group = input;
         self
+    }
+    /// <p>Number of devices that are associated to the multicast group.</p>
+    pub fn get_number_of_devices_in_group(&self) -> &::std::option::Option<i32> {
+        &self.number_of_devices_in_group
     }
     /// Consumes the builder and constructs a [`LoRaWanMulticastGet`](crate::types::LoRaWanMulticastGet).
     pub fn build(self) -> crate::types::LoRaWanMulticastGet {

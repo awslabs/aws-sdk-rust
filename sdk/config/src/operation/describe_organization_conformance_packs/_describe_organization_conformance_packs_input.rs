@@ -71,6 +71,12 @@ impl DescribeOrganizationConformancePacksInputBuilder {
         self.organization_conformance_pack_names = input;
         self
     }
+    /// <p>The name that you assign to an organization conformance pack.</p>
+    pub fn get_organization_conformance_pack_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.organization_conformance_pack_names
+    }
     /// <p>The maximum number of organization config packs returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -81,6 +87,10 @@ impl DescribeOrganizationConformancePacksInputBuilder {
         self.limit = input;
         self
     }
+    /// <p>The maximum number of organization config packs returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
+    }
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -90,6 +100,10 @@ impl DescribeOrganizationConformancePacksInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeOrganizationConformancePacksInput`](crate::operation::describe_organization_conformance_packs::DescribeOrganizationConformancePacksInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_organization_conformance_packs::DescribeOrganizationConformancePacksInput, ::aws_smithy_http::operation::error::BuildError>{

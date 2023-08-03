@@ -56,6 +56,10 @@ impl GetMetricStatisticsOutputBuilder {
         self.label = input;
         self
     }
+    /// <p>A label for the specified metric.</p>
+    pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label
+    }
     /// Appends an item to `datapoints`.
     ///
     /// To override the contents of this collection use [`set_datapoints`](Self::set_datapoints).
@@ -74,6 +78,12 @@ impl GetMetricStatisticsOutputBuilder {
     ) -> Self {
         self.datapoints = input;
         self
+    }
+    /// <p>The data points for the specified metric.</p>
+    pub fn get_datapoints(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Datapoint>> {
+        &self.datapoints
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

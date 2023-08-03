@@ -36,6 +36,10 @@ impl UpdateAssessmentFrameworkFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAssessmentFramework as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_assessment_framework::builders::UpdateAssessmentFrameworkInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl UpdateAssessmentFrameworkFluentBuilder {
         self.inner = self.inner.set_framework_id(input);
         self
     }
+    /// <p> The unique identifier for the framework. </p>
+    pub fn get_framework_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_framework_id()
+    }
     /// <p> The name of the framework to be updated. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -136,6 +144,10 @@ impl UpdateAssessmentFrameworkFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p> The name of the framework to be updated. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p> The description of the updated framework. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -145,6 +157,10 @@ impl UpdateAssessmentFrameworkFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p> The description of the updated framework. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
     pub fn compliance_type(
@@ -161,6 +177,10 @@ impl UpdateAssessmentFrameworkFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_compliance_type(input);
         self
+    }
+    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
+    pub fn get_compliance_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_compliance_type()
     }
     /// Appends an item to `controlSets`.
     ///
@@ -183,5 +203,12 @@ impl UpdateAssessmentFrameworkFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_control_sets(input);
         self
+    }
+    /// <p> The control sets that are associated with the framework. </p>
+    pub fn get_control_sets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateAssessmentFrameworkControlSet>>
+    {
+        self.inner.get_control_sets()
     }
 }

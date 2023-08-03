@@ -48,6 +48,10 @@ impl ChecksumBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of the checksum.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ChecksumType> {
+        &self.r#type
+    }
     /// <p>The checksum of the model.</p>
     pub fn sum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sum = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ChecksumBuilder {
     pub fn set_sum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sum = input;
         self
+    }
+    /// <p>The checksum of the model.</p>
+    pub fn get_sum(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sum
     }
     /// Consumes the builder and constructs a [`Checksum`](crate::types::Checksum).
     pub fn build(self) -> crate::types::Checksum {

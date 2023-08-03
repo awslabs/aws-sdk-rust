@@ -55,6 +55,10 @@ impl UnarchiveApplicationInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>Application ID.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>Account ID.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl UnarchiveApplicationInputBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>Account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// Consumes the builder and constructs a [`UnarchiveApplicationInput`](crate::operation::unarchive_application::UnarchiveApplicationInput).
     pub fn build(

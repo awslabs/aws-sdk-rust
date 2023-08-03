@@ -68,6 +68,15 @@ impl LimitBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the limit. The possible values are:</p>
+    /// <ul>
+    /// <li> <p>classic-listeners</p> </li>
+    /// <li> <p>classic-load-balancers</p> </li>
+    /// <li> <p>classic-registered-instances</p> </li>
+    /// </ul>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The maximum value of the limit.</p>
     pub fn max(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max = ::std::option::Option::Some(input.into());
@@ -77,6 +86,10 @@ impl LimitBuilder {
     pub fn set_max(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max = input;
         self
+    }
+    /// <p>The maximum value of the limit.</p>
+    pub fn get_max(&self) -> &::std::option::Option<::std::string::String> {
+        &self.max
     }
     /// Consumes the builder and constructs a [`Limit`](crate::types::Limit).
     pub fn build(self) -> crate::types::Limit {

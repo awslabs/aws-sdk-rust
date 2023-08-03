@@ -48,6 +48,10 @@ impl IndexFieldStatusBuilder {
         self.options = input;
         self
     }
+    /// <p>Configuration information for a field in the index, including its name, type, and options. The supported options depend on the <code><code>IndexFieldType</code></code>.</p>
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::IndexField> {
+        &self.options
+    }
     /// <p>The status of domain configuration option.</p>
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl IndexFieldStatusBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of domain configuration option.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::OptionStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`IndexFieldStatus`](crate::types::IndexFieldStatus).
     pub fn build(self) -> crate::types::IndexFieldStatus {

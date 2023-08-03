@@ -36,6 +36,10 @@ impl DescribeTableDataImportJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeTableDataImportJob as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_table_data_import_job::builders::DescribeTableDataImportJobInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +132,11 @@ impl DescribeTableDataImportJobFluentBuilder {
         self.inner = self.inner.set_workbook_id(input);
         self
     }
+    /// <p>The ID of the workbook into which data was imported.</p>
+    /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    pub fn get_workbook_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workbook_id()
+    }
     /// <p>The ID of the table into which data was imported.</p>
     /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
     pub fn table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -140,6 +149,11 @@ impl DescribeTableDataImportJobFluentBuilder {
         self.inner = self.inner.set_table_id(input);
         self
     }
+    /// <p>The ID of the table into which data was imported.</p>
+    /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    pub fn get_table_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_table_id()
+    }
     /// <p>The ID of the job that was returned by the StartTableDataImportJob request.</p>
     /// <p> If a job with the specified id could not be found, this API throws ResourceNotFoundException. </p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -151,5 +165,10 @@ impl DescribeTableDataImportJobFluentBuilder {
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_id(input);
         self
+    }
+    /// <p>The ID of the job that was returned by the StartTableDataImportJob request.</p>
+    /// <p> If a job with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_id()
     }
 }

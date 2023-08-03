@@ -47,6 +47,10 @@ impl DescribeQuerySuggestionsBlockListInputBuilder {
         self.index_id = input;
         self
     }
+    /// <p>The identifier of the index for the block list.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_id
+    }
     /// <p>The identifier of the block list you want to get information on.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DescribeQuerySuggestionsBlockListInputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The identifier of the block list you want to get information on.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`DescribeQuerySuggestionsBlockListInput`](crate::operation::describe_query_suggestions_block_list::DescribeQuerySuggestionsBlockListInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_query_suggestions_block_list::DescribeQuerySuggestionsBlockListInput, ::aws_smithy_http::operation::error::BuildError>{

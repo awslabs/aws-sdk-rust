@@ -61,6 +61,12 @@ impl SitePlanBuilder {
         self.resource_definitions = input;
         self
     }
+    /// <p>The resource definitions of the plan.</p>
+    pub fn get_resource_definitions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkResourceDefinition>> {
+        &self.resource_definitions
+    }
     /// Appends an item to `options`.
     ///
     /// To override the contents of this collection use [`set_options`](Self::set_options).
@@ -79,6 +85,12 @@ impl SitePlanBuilder {
     ) -> Self {
         self.options = input;
         self
+    }
+    /// <p>The options of the plan.</p>
+    pub fn get_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NameValuePair>> {
+        &self.options
     }
     /// Consumes the builder and constructs a [`SitePlan`](crate::types::SitePlan).
     pub fn build(self) -> crate::types::SitePlan {

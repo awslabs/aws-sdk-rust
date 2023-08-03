@@ -43,6 +43,10 @@ impl BucketLoggingStatusBuilder {
         self.logging_enabled = input;
         self
     }
+    /// <p>Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys for a bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html">PUT Bucket logging</a> in the <i>Amazon S3 API Reference</i>.</p>
+    pub fn get_logging_enabled(&self) -> &::std::option::Option<crate::types::LoggingEnabled> {
+        &self.logging_enabled
+    }
     /// Consumes the builder and constructs a [`BucketLoggingStatus`](crate::types::BucketLoggingStatus).
     pub fn build(self) -> crate::types::BucketLoggingStatus {
         crate::types::BucketLoggingStatus {

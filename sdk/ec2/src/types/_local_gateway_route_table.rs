@@ -110,6 +110,12 @@ impl LocalGatewayRouteTableBuilder {
         self.local_gateway_route_table_id = input;
         self
     }
+    /// <p>The ID of the local gateway route table.</p>
+    pub fn get_local_gateway_route_table_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.local_gateway_route_table_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the local gateway route table.</p>
     pub fn local_gateway_route_table_arn(
         mut self,
@@ -125,6 +131,12 @@ impl LocalGatewayRouteTableBuilder {
     ) -> Self {
         self.local_gateway_route_table_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the local gateway route table.</p>
+    pub fn get_local_gateway_route_table_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.local_gateway_route_table_arn
     }
     /// <p>The ID of the local gateway.</p>
     pub fn local_gateway_id(
@@ -142,6 +154,10 @@ impl LocalGatewayRouteTableBuilder {
         self.local_gateway_id = input;
         self
     }
+    /// <p>The ID of the local gateway.</p>
+    pub fn get_local_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.local_gateway_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_arn = ::std::option::Option::Some(input.into());
@@ -151,6 +167,10 @@ impl LocalGatewayRouteTableBuilder {
     pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
+    pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.outpost_arn
     }
     /// <p>The ID of the Amazon Web Services account that owns the local gateway route table.</p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -162,6 +182,10 @@ impl LocalGatewayRouteTableBuilder {
         self.owner_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account that owns the local gateway route table.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
+    }
     /// <p>The state of the local gateway route table.</p>
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state = ::std::option::Option::Some(input.into());
@@ -171,6 +195,10 @@ impl LocalGatewayRouteTableBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the local gateway route table.</p>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
     }
     /// Appends an item to `tags`.
     ///
@@ -191,6 +219,10 @@ impl LocalGatewayRouteTableBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags assigned to the local gateway route table.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The mode of the local gateway route table.</p>
     pub fn mode(mut self, input: crate::types::LocalGatewayRouteTableMode) -> Self {
         self.mode = ::std::option::Option::Some(input);
@@ -204,6 +236,10 @@ impl LocalGatewayRouteTableBuilder {
         self.mode = input;
         self
     }
+    /// <p>The mode of the local gateway route table.</p>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::LocalGatewayRouteTableMode> {
+        &self.mode
+    }
     /// <p>Information about the state change.</p>
     pub fn state_reason(mut self, input: crate::types::StateReason) -> Self {
         self.state_reason = ::std::option::Option::Some(input);
@@ -216,6 +252,10 @@ impl LocalGatewayRouteTableBuilder {
     ) -> Self {
         self.state_reason = input;
         self
+    }
+    /// <p>Information about the state change.</p>
+    pub fn get_state_reason(&self) -> &::std::option::Option<crate::types::StateReason> {
+        &self.state_reason
     }
     /// Consumes the builder and constructs a [`LocalGatewayRouteTable`](crate::types::LocalGatewayRouteTable).
     pub fn build(self) -> crate::types::LocalGatewayRouteTable {

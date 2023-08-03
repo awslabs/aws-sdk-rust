@@ -128,6 +128,10 @@ impl StepBuilder {
         self.step_name = input;
         self
     }
+    /// <p> The name of the execution step. </p>
+    pub fn get_step_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.step_name
+    }
     /// <p> The start date and time of the execution step. </p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -141,6 +145,10 @@ impl StepBuilder {
         self.start_time = input;
         self
     }
+    /// <p> The start date and time of the execution step. </p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p> The status of the execution step. </p>
     pub fn status(mut self, input: crate::types::JobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -150,6 +158,10 @@ impl StepBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p> The status of the execution step. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
+        &self.status
     }
     /// <p> The end date and time of the execution step. </p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -164,6 +176,10 @@ impl StepBuilder {
         self.end_time = input;
         self
     }
+    /// <p> The end date and time of the execution step. </p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p> The URL to the logs for the execution step. </p>
     pub fn log_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_url = ::std::option::Option::Some(input.into());
@@ -173,6 +189,10 @@ impl StepBuilder {
     pub fn set_log_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_url = input;
         self
+    }
+    /// <p> The URL to the logs for the execution step. </p>
+    pub fn get_log_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_url
     }
     /// <p> The URL to the artifact for the execution step. </p>
     pub fn artifacts_url(
@@ -190,6 +210,10 @@ impl StepBuilder {
         self.artifacts_url = input;
         self
     }
+    /// <p> The URL to the artifact for the execution step. </p>
+    pub fn get_artifacts_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.artifacts_url
+    }
     /// <p> The URL to the test artifact for the execution step. </p>
     pub fn test_artifacts_url(
         mut self,
@@ -206,6 +230,10 @@ impl StepBuilder {
         self.test_artifacts_url = input;
         self
     }
+    /// <p> The URL to the test artifact for the execution step. </p>
+    pub fn get_test_artifacts_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_artifacts_url
+    }
     /// <p> The URL to the test configuration for the execution step. </p>
     pub fn test_config_url(
         mut self,
@@ -221,6 +249,10 @@ impl StepBuilder {
     ) -> Self {
         self.test_config_url = input;
         self
+    }
+    /// <p> The URL to the test configuration for the execution step. </p>
+    pub fn get_test_config_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_config_url
     }
     /// Adds a key-value pair to `screenshots`.
     ///
@@ -247,6 +279,14 @@ impl StepBuilder {
         self.screenshots = input;
         self
     }
+    /// <p> The list of screenshot URLs for the execution step, if relevant. </p>
+    pub fn get_screenshots(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.screenshots
+    }
     /// <p> The reason for the current step status. </p>
     pub fn status_reason(
         mut self,
@@ -263,6 +303,10 @@ impl StepBuilder {
         self.status_reason = input;
         self
     }
+    /// <p> The reason for the current step status. </p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
+    }
     /// <p> The context for the current step. Includes a build image if the step is build. </p>
     pub fn context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.context = ::std::option::Option::Some(input.into());
@@ -272,6 +316,10 @@ impl StepBuilder {
     pub fn set_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.context = input;
         self
+    }
+    /// <p> The context for the current step. Includes a build image if the step is build. </p>
+    pub fn get_context(&self) -> &::std::option::Option<::std::string::String> {
+        &self.context
     }
     /// Consumes the builder and constructs a [`Step`](crate::types::Step).
     pub fn build(self) -> crate::types::Step {

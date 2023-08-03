@@ -67,6 +67,10 @@ impl ValidatePipelineDefinitionInputBuilder {
         self.pipeline_id = input;
         self
     }
+    /// <p>The ID of the pipeline.</p>
+    pub fn get_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_id
+    }
     /// Appends an item to `pipeline_objects`.
     ///
     /// To override the contents of this collection use [`set_pipeline_objects`](Self::set_pipeline_objects).
@@ -85,6 +89,12 @@ impl ValidatePipelineDefinitionInputBuilder {
     ) -> Self {
         self.pipeline_objects = input;
         self
+    }
+    /// <p>The objects that define the pipeline changes to validate against the pipeline.</p>
+    pub fn get_pipeline_objects(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>> {
+        &self.pipeline_objects
     }
     /// Appends an item to `parameter_objects`.
     ///
@@ -105,6 +115,12 @@ impl ValidatePipelineDefinitionInputBuilder {
         self.parameter_objects = input;
         self
     }
+    /// <p>The parameter objects used with the pipeline.</p>
+    pub fn get_parameter_objects(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterObject>> {
+        &self.parameter_objects
+    }
     /// Appends an item to `parameter_values`.
     ///
     /// To override the contents of this collection use [`set_parameter_values`](Self::set_parameter_values).
@@ -123,6 +139,12 @@ impl ValidatePipelineDefinitionInputBuilder {
     ) -> Self {
         self.parameter_values = input;
         self
+    }
+    /// <p>The parameter values used with the pipeline.</p>
+    pub fn get_parameter_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>> {
+        &self.parameter_values
     }
     /// Consumes the builder and constructs a [`ValidatePipelineDefinitionInput`](crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionInput).
     pub fn build(

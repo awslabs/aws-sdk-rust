@@ -36,6 +36,13 @@ impl GetDataSetImportTaskFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetDataSetImportTask as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_data_set_import_task::builders::GetDataSetImportTaskInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl GetDataSetImportTaskFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The application identifier.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>The task identifier returned by the <code>CreateDataSetImportTask</code> operation. </p>
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.task_id(input.into());
@@ -141,5 +152,9 @@ impl GetDataSetImportTaskFluentBuilder {
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_task_id(input);
         self
+    }
+    /// <p>The task identifier returned by the <code>CreateDataSetImportTask</code> operation. </p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_task_id()
     }
 }

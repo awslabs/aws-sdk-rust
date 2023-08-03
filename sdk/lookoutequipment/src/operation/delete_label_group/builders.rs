@@ -36,6 +36,12 @@ impl DeleteLabelGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteLabelGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_label_group::builders::DeleteLabelGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl DeleteLabelGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_label_group_name(input);
         self
+    }
+    /// <p> The name of the label group that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+    pub fn get_label_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_label_group_name()
     }
 }

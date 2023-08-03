@@ -55,6 +55,10 @@ impl DisassociateFileSystemInputBuilder {
         self.file_system_association_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the file system association to be deleted.</p>
+    pub fn get_file_system_association_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_system_association_arn
+    }
     /// <p>If this value is set to true, the operation disassociates an Amazon FSx file system immediately. It ends all data uploads to the file system, and the file system association enters the <code>FORCE_DELETING</code> status. If this value is set to false, the Amazon FSx file system does not disassociate until all data is uploaded.</p>
     pub fn force_delete(mut self, input: bool) -> Self {
         self.force_delete = ::std::option::Option::Some(input);
@@ -64,6 +68,10 @@ impl DisassociateFileSystemInputBuilder {
     pub fn set_force_delete(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force_delete = input;
         self
+    }
+    /// <p>If this value is set to true, the operation disassociates an Amazon FSx file system immediately. It ends all data uploads to the file system, and the file system association enters the <code>FORCE_DELETING</code> status. If this value is set to false, the Amazon FSx file system does not disassociate until all data is uploaded.</p>
+    pub fn get_force_delete(&self) -> &::std::option::Option<bool> {
+        &self.force_delete
     }
     /// Consumes the builder and constructs a [`DisassociateFileSystemInput`](crate::operation::disassociate_file_system::DisassociateFileSystemInput).
     pub fn build(

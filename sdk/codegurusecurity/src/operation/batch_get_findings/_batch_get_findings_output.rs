@@ -66,6 +66,10 @@ impl BatchGetFindingsOutputBuilder {
         self.findings = input;
         self
     }
+    /// <p> A list of all requested findings.</p>
+    pub fn get_findings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Finding>> {
+        &self.findings
+    }
     /// Appends an item to `failed_findings`.
     ///
     /// To override the contents of this collection use [`set_failed_findings`](Self::set_failed_findings).
@@ -84,6 +88,12 @@ impl BatchGetFindingsOutputBuilder {
     ) -> Self {
         self.failed_findings = input;
         self
+    }
+    /// <p>A list of errors for individual findings which were not fetched. Each BatchGetFindingsError contains the <code>scanName</code>, <code>findingId</code>, <code>errorCode</code> and error <code>message</code>.</p>
+    pub fn get_failed_findings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetFindingsError>> {
+        &self.failed_findings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

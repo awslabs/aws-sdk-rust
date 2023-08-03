@@ -36,6 +36,10 @@ impl DescribeBudgetActionHistoriesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeBudgetActionHistories as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_budget_action_histories::builders::DescribeBudgetActionHistoriesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl DescribeBudgetActionHistoriesFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The account ID of the user. It's a 12-digit number.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.budget_name(input.into());
@@ -142,6 +150,10 @@ impl DescribeBudgetActionHistoriesFluentBuilder {
         self.inner = self.inner.set_budget_name(input);
         self
     }
+    /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_budget_name()
+    }
     /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
     pub fn action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.action_id(input.into());
@@ -151,6 +163,10 @@ impl DescribeBudgetActionHistoriesFluentBuilder {
     pub fn set_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_action_id(input);
         self
+    }
+    /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
+    pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_action_id()
     }
     /// <p>The period of time that's covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. </p>
     pub fn time_period(mut self, input: crate::types::TimePeriod) -> Self {
@@ -165,6 +181,10 @@ impl DescribeBudgetActionHistoriesFluentBuilder {
         self.inner = self.inner.set_time_period(input);
         self
     }
+    /// <p>The period of time that's covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. </p>
+    pub fn get_time_period(&self) -> &::std::option::Option<crate::types::TimePeriod> {
+        self.inner.get_time_period()
+    }
     /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -175,6 +195,10 @@ impl DescribeBudgetActionHistoriesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p> A generic string.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -184,5 +208,9 @@ impl DescribeBudgetActionHistoriesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p> A generic string.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

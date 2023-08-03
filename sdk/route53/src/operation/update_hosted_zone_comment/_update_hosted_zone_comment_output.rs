@@ -52,6 +52,10 @@ impl UpdateHostedZoneCommentOutputBuilder {
         self.hosted_zone = input;
         self
     }
+    /// <p>A complex type that contains the response to the <code>UpdateHostedZoneComment</code> request.</p>
+    pub fn get_hosted_zone(&self) -> &::std::option::Option<crate::types::HostedZone> {
+        &self.hosted_zone
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

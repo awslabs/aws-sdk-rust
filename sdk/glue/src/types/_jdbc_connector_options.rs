@@ -118,6 +118,12 @@ impl JdbcConnectorOptionsBuilder {
         self.filter_predicate = input;
         self
     }
+    /// <p>Extra condition clause to filter data from source. For example:</p>
+    /// <p> <code>BillingCity='Mountain View'</code> </p>
+    /// <p>When using a query instead of a table name, you should validate that the query works with the specified <code>filterPredicate</code>.</p>
+    pub fn get_filter_predicate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter_predicate
+    }
     /// <p>The name of an integer column that is used for partitioning. This option works only when it's included with <code>lowerBound</code>, <code>upperBound</code>, and <code>numPartitions</code>. This option works the same way as in the Spark SQL JDBC reader.</p>
     pub fn partition_column(
         mut self,
@@ -134,6 +140,10 @@ impl JdbcConnectorOptionsBuilder {
         self.partition_column = input;
         self
     }
+    /// <p>The name of an integer column that is used for partitioning. This option works only when it's included with <code>lowerBound</code>, <code>upperBound</code>, and <code>numPartitions</code>. This option works the same way as in the Spark SQL JDBC reader.</p>
+    pub fn get_partition_column(&self) -> &::std::option::Option<::std::string::String> {
+        &self.partition_column
+    }
     /// <p>The minimum value of <code>partitionColumn</code> that is used to decide partition stride.</p>
     pub fn lower_bound(mut self, input: i64) -> Self {
         self.lower_bound = ::std::option::Option::Some(input);
@@ -143,6 +153,10 @@ impl JdbcConnectorOptionsBuilder {
     pub fn set_lower_bound(mut self, input: ::std::option::Option<i64>) -> Self {
         self.lower_bound = input;
         self
+    }
+    /// <p>The minimum value of <code>partitionColumn</code> that is used to decide partition stride.</p>
+    pub fn get_lower_bound(&self) -> &::std::option::Option<i64> {
+        &self.lower_bound
     }
     /// <p>The maximum value of <code>partitionColumn</code> that is used to decide partition stride.</p>
     pub fn upper_bound(mut self, input: i64) -> Self {
@@ -154,6 +168,10 @@ impl JdbcConnectorOptionsBuilder {
         self.upper_bound = input;
         self
     }
+    /// <p>The maximum value of <code>partitionColumn</code> that is used to decide partition stride.</p>
+    pub fn get_upper_bound(&self) -> &::std::option::Option<i64> {
+        &self.upper_bound
+    }
     /// <p>The number of partitions. This value, along with <code>lowerBound</code> (inclusive) and <code>upperBound</code> (exclusive), form partition strides for generated <code>WHERE</code> clause expressions that are used to split the <code>partitionColumn</code>.</p>
     pub fn num_partitions(mut self, input: i64) -> Self {
         self.num_partitions = ::std::option::Option::Some(input);
@@ -163,6 +181,10 @@ impl JdbcConnectorOptionsBuilder {
     pub fn set_num_partitions(mut self, input: ::std::option::Option<i64>) -> Self {
         self.num_partitions = input;
         self
+    }
+    /// <p>The number of partitions. This value, along with <code>lowerBound</code> (inclusive) and <code>upperBound</code> (exclusive), form partition strides for generated <code>WHERE</code> clause expressions that are used to split the <code>partitionColumn</code>.</p>
+    pub fn get_num_partitions(&self) -> &::std::option::Option<i64> {
+        &self.num_partitions
     }
     /// Appends an item to `job_bookmark_keys`.
     ///
@@ -186,6 +208,12 @@ impl JdbcConnectorOptionsBuilder {
         self.job_bookmark_keys = input;
         self
     }
+    /// <p>The name of the job bookmark keys on which to sort.</p>
+    pub fn get_job_bookmark_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.job_bookmark_keys
+    }
     /// <p>Specifies an ascending or descending sort order.</p>
     pub fn job_bookmark_keys_sort_order(
         mut self,
@@ -201,6 +229,12 @@ impl JdbcConnectorOptionsBuilder {
     ) -> Self {
         self.job_bookmark_keys_sort_order = input;
         self
+    }
+    /// <p>Specifies an ascending or descending sort order.</p>
+    pub fn get_job_bookmark_keys_sort_order(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.job_bookmark_keys_sort_order
     }
     /// Adds a key-value pair to `data_type_mapping`.
     ///
@@ -226,6 +260,14 @@ impl JdbcConnectorOptionsBuilder {
     ) -> Self {
         self.data_type_mapping = input;
         self
+    }
+    /// <p>Custom data type mapping that builds a mapping from a JDBC data type to an Glue data type. For example, the option <code>"dataTypeMapping":{"FLOAT":"STRING"}</code> maps data fields of JDBC type <code>FLOAT</code> into the Java <code>String</code> type by calling the <code>ResultSet.getString()</code> method of the driver, and uses it to build the Glue record. The <code>ResultSet</code> object is implemented by each driver, so the behavior is specific to the driver you use. Refer to the documentation for your JDBC driver to understand how the driver performs the conversions.</p>
+    pub fn get_data_type_mapping(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<crate::types::JdbcDataType, crate::types::GlueRecordType>,
+    > {
+        &self.data_type_mapping
     }
     /// Consumes the builder and constructs a [`JdbcConnectorOptions`](crate::types::JdbcConnectorOptions).
     pub fn build(self) -> crate::types::JdbcConnectorOptions {

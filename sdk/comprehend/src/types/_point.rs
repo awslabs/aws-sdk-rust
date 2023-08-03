@@ -49,6 +49,10 @@ impl PointBuilder {
         self.x = input;
         self
     }
+    /// <p>The value of the X coordinate for a point on a polygon</p>
+    pub fn get_x(&self) -> &::std::option::Option<f32> {
+        &self.x
+    }
     /// <p>The value of the Y coordinate for a point on a polygon</p>
     pub fn y(mut self, input: f32) -> Self {
         self.y = ::std::option::Option::Some(input);
@@ -58,6 +62,10 @@ impl PointBuilder {
     pub fn set_y(mut self, input: ::std::option::Option<f32>) -> Self {
         self.y = input;
         self
+    }
+    /// <p>The value of the Y coordinate for a point on a polygon</p>
+    pub fn get_y(&self) -> &::std::option::Option<f32> {
+        &self.y
     }
     /// Consumes the builder and constructs a [`Point`](crate::types::Point).
     pub fn build(self) -> crate::types::Point {

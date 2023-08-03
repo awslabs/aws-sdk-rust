@@ -51,6 +51,12 @@ impl CreateMembersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateMembers as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_members::builders::CreateMembersInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,5 +145,11 @@ impl CreateMembersFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_account_details(input);
         self
+    }
+    /// <p>The list of accounts to associate with the Security Hub administrator account. For each account, the list includes the account ID and optionally the email address.</p>
+    pub fn get_account_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountDetails>> {
+        self.inner.get_account_details()
     }
 }

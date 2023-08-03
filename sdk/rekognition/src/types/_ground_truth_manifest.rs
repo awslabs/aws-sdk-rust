@@ -48,6 +48,12 @@ impl GroundTruthManifestBuilder {
         self.s3_object = input;
         self
     }
+    /// <p>Provides the S3 bucket name and object name.</p>
+    /// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p>
+    /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide. </p>
+    pub fn get_s3_object(&self) -> &::std::option::Option<crate::types::S3Object> {
+        &self.s3_object
+    }
     /// Consumes the builder and constructs a [`GroundTruthManifest`](crate::types::GroundTruthManifest).
     pub fn build(self) -> crate::types::GroundTruthManifest {
         crate::types::GroundTruthManifest {

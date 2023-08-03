@@ -46,6 +46,12 @@ impl PhoneNumberValidateInputBuilder {
         self.number_validate_request = input;
         self
     }
+    /// <p>Specifies a phone number to validate and retrieve information about.</p>
+    pub fn get_number_validate_request(
+        &self,
+    ) -> &::std::option::Option<crate::types::NumberValidateRequest> {
+        &self.number_validate_request
+    }
     /// Consumes the builder and constructs a [`PhoneNumberValidateInput`](crate::operation::phone_number_validate::PhoneNumberValidateInput).
     pub fn build(
         self,

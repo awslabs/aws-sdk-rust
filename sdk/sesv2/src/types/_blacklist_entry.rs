@@ -56,6 +56,10 @@ impl BlacklistEntryBuilder {
         self.rbl_name = input;
         self
     }
+    /// <p>The name of the blacklist that the IP address appears on.</p>
+    pub fn get_rbl_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rbl_name
+    }
     /// <p>The time when the blacklisting event occurred.</p>
     pub fn listing_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.listing_time = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl BlacklistEntryBuilder {
         self.listing_time = input;
         self
     }
+    /// <p>The time when the blacklisting event occurred.</p>
+    pub fn get_listing_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.listing_time
+    }
     /// <p>Additional information about the blacklisting event, as provided by the blacklist maintainer.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -78,6 +86,10 @@ impl BlacklistEntryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Additional information about the blacklisting event, as provided by the blacklist maintainer.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`BlacklistEntry`](crate::types::BlacklistEntry).
     pub fn build(self) -> crate::types::BlacklistEntry {

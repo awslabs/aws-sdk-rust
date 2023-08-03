@@ -52,6 +52,12 @@ impl CreateEndpointFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateEndpoint as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_endpoint::builders::CreateEndpointInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +146,10 @@ impl CreateEndpointFluentBuilder {
         self.inner = self.inner.set_endpoint_name(input);
         self
     }
+    /// <p>The name of the endpoint.The name must be unique within an Amazon Web Services Region in your Amazon Web Services account. The name is case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and must be matched in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html">InvokeEndpoint</a>.</p>
+    pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_endpoint_name()
+    }
     /// <p>The name of an endpoint configuration. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>. </p>
     pub fn endpoint_config_name(
         mut self,
@@ -156,6 +166,10 @@ impl CreateEndpointFluentBuilder {
         self.inner = self.inner.set_endpoint_config_name(input);
         self
     }
+    /// <p>The name of an endpoint configuration. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>. </p>
+    pub fn get_endpoint_config_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_endpoint_config_name()
+    }
     /// <p>The deployment configuration for an endpoint, which contains the desired deployment strategy and rollback configurations.</p>
     pub fn deployment_config(mut self, input: crate::types::DeploymentConfig) -> Self {
         self.inner = self.inner.deployment_config(input);
@@ -168,6 +182,10 @@ impl CreateEndpointFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_deployment_config(input);
         self
+    }
+    /// <p>The deployment configuration for an endpoint, which contains the desired deployment strategy and rollback configurations.</p>
+    pub fn get_deployment_config(&self) -> &::std::option::Option<crate::types::DeploymentConfig> {
+        self.inner.get_deployment_config()
     }
     /// Appends an item to `Tags`.
     ///
@@ -185,5 +203,9 @@ impl CreateEndpointFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

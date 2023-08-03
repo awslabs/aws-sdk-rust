@@ -59,6 +59,12 @@ impl DescribeLanguageModelOutputBuilder {
         self.language_model = input;
         self
     }
+    /// <p>Provides information about the specified custom language model.</p>
+    /// <p>This parameter also shows if the base language model you used to create your custom language model has been updated. If Amazon Transcribe has updated the base model, you can create a new custom language model using the updated base model.</p>
+    /// <p>If you tried to create a new custom language model and the request wasn't successful, you can use this <code>DescribeLanguageModel</code> to help identify the reason for this failure.</p>
+    pub fn get_language_model(&self) -> &::std::option::Option<crate::types::LanguageModel> {
+        &self.language_model
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

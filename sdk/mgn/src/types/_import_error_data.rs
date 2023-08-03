@@ -94,6 +94,10 @@ impl ImportErrorDataBuilder {
         self.source_server_id = input;
         self
     }
+    /// <p>Import error data source server ID.</p>
+    pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_server_id
+    }
     /// <p>Import error data application ID.</p>
     pub fn application_id(
         mut self,
@@ -110,6 +114,10 @@ impl ImportErrorDataBuilder {
         self.application_id = input;
         self
     }
+    /// <p>Import error data application ID.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>Import error data wave id.</p>
     pub fn wave_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.wave_id = ::std::option::Option::Some(input.into());
@@ -119,6 +127,10 @@ impl ImportErrorDataBuilder {
     pub fn set_wave_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.wave_id = input;
         self
+    }
+    /// <p>Import error data wave id.</p>
+    pub fn get_wave_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.wave_id
     }
     /// <p>Import error data ec2 LaunchTemplate ID.</p>
     pub fn ec2_launch_template_id(
@@ -136,6 +148,10 @@ impl ImportErrorDataBuilder {
         self.ec2_launch_template_id = input;
         self
     }
+    /// <p>Import error data ec2 LaunchTemplate ID.</p>
+    pub fn get_ec2_launch_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ec2_launch_template_id
+    }
     /// <p>Import error data row number.</p>
     pub fn row_number(mut self, input: i64) -> Self {
         self.row_number = ::std::option::Option::Some(input);
@@ -145,6 +161,10 @@ impl ImportErrorDataBuilder {
     pub fn set_row_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.row_number = input;
         self
+    }
+    /// <p>Import error data row number.</p>
+    pub fn get_row_number(&self) -> &::std::option::Option<i64> {
+        &self.row_number
     }
     /// <p>Import error data raw error.</p>
     pub fn raw_error(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -156,6 +176,10 @@ impl ImportErrorDataBuilder {
         self.raw_error = input;
         self
     }
+    /// <p>Import error data raw error.</p>
+    pub fn get_raw_error(&self) -> &::std::option::Option<::std::string::String> {
+        &self.raw_error
+    }
     /// <p>Import error data source account ID.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -165,6 +189,10 @@ impl ImportErrorDataBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>Import error data source account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// Consumes the builder and constructs a [`ImportErrorData`](crate::types::ImportErrorData).
     pub fn build(self) -> crate::types::ImportErrorData {

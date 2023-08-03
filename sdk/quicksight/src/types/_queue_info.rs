@@ -54,6 +54,10 @@ impl QueueInfoBuilder {
         self.waiting_on_ingestion = input;
         self
     }
+    /// <p>The ID of the queued ingestion.</p>
+    pub fn get_waiting_on_ingestion(&self) -> &::std::option::Option<::std::string::String> {
+        &self.waiting_on_ingestion
+    }
     /// <p>The ID of the ongoing ingestion. The queued ingestion is waiting for the ongoing ingestion to complete.</p>
     pub fn queued_ingestion(
         mut self,
@@ -69,6 +73,10 @@ impl QueueInfoBuilder {
     ) -> Self {
         self.queued_ingestion = input;
         self
+    }
+    /// <p>The ID of the ongoing ingestion. The queued ingestion is waiting for the ongoing ingestion to complete.</p>
+    pub fn get_queued_ingestion(&self) -> &::std::option::Option<::std::string::String> {
+        &self.queued_ingestion
     }
     /// Consumes the builder and constructs a [`QueueInfo`](crate::types::QueueInfo).
     pub fn build(self) -> crate::types::QueueInfo {

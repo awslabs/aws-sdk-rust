@@ -64,6 +64,10 @@ impl ListBonusPaymentsInputBuilder {
         self.hit_id = input;
         self
     }
+    /// <p>The ID of the HIT associated with the bonus payments to retrieve. If not specified, all bonus payments for all assignments for the given HIT are returned. Either the HITId parameter or the AssignmentId parameter must be specified</p>
+    pub fn get_hit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hit_id
+    }
     /// <p>The ID of the assignment associated with the bonus payments to retrieve. If specified, only bonus payments for the given assignment are returned. Either the HITId parameter or the AssignmentId parameter must be specified</p>
     pub fn assignment_id(
         mut self,
@@ -80,6 +84,10 @@ impl ListBonusPaymentsInputBuilder {
         self.assignment_id = input;
         self
     }
+    /// <p>The ID of the assignment associated with the bonus payments to retrieve. If specified, only bonus payments for the given assignment are returned. Either the HITId parameter or the AssignmentId parameter must be specified</p>
+    pub fn get_assignment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assignment_id
+    }
     /// <p>Pagination token</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -90,6 +98,10 @@ impl ListBonusPaymentsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Pagination token</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     #[allow(missing_docs)] // documentation missing in model
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -99,6 +111,10 @@ impl ListBonusPaymentsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListBonusPaymentsInput`](crate::operation::list_bonus_payments::ListBonusPaymentsInput).
     pub fn build(

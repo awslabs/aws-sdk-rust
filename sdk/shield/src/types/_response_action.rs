@@ -54,6 +54,11 @@ impl ResponseActionBuilder {
         self.block = input;
         self
     }
+    /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Block</code> action. </p>
+    /// <p>You must specify exactly one action, either <code>Block</code> or <code>Count</code>.</p>
+    pub fn get_block(&self) -> &::std::option::Option<crate::types::BlockAction> {
+        &self.block
+    }
     /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Count</code> action. </p>
     /// <p>You must specify exactly one action, either <code>Block</code> or <code>Count</code>.</p>
     pub fn count(mut self, input: crate::types::CountAction) -> Self {
@@ -65,6 +70,11 @@ impl ResponseActionBuilder {
     pub fn set_count(mut self, input: ::std::option::Option<crate::types::CountAction>) -> Self {
         self.count = input;
         self
+    }
+    /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Count</code> action. </p>
+    /// <p>You must specify exactly one action, either <code>Block</code> or <code>Count</code>.</p>
+    pub fn get_count(&self) -> &::std::option::Option<crate::types::CountAction> {
+        &self.count
     }
     /// Consumes the builder and constructs a [`ResponseAction`](crate::types::ResponseAction).
     pub fn build(self) -> crate::types::ResponseAction {

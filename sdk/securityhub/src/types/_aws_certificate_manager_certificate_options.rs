@@ -52,6 +52,13 @@ impl AwsCertificateManagerCertificateOptionsBuilder {
         self.certificate_transparency_logging_preference = input;
         self
     }
+    /// <p>Whether to add the certificate to a transparency log.</p>
+    /// <p>Valid values: <code>DISABLED</code> | <code>ENABLED</code> </p>
+    pub fn get_certificate_transparency_logging_preference(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_transparency_logging_preference
+    }
     /// Consumes the builder and constructs a [`AwsCertificateManagerCertificateOptions`](crate::types::AwsCertificateManagerCertificateOptions).
     pub fn build(self) -> crate::types::AwsCertificateManagerCertificateOptions {
         crate::types::AwsCertificateManagerCertificateOptions {

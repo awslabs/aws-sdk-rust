@@ -36,6 +36,12 @@ impl PurchaseOfferingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PurchaseOffering as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::purchase_offering::builders::PurchaseOfferingInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl PurchaseOfferingFluentBuilder {
         self.inner = self.inner.set_offering_id(input);
         self
     }
+    /// <p>The ID of the offering.</p>
+    pub fn get_offering_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_offering_id()
+    }
     /// <p>The number of device slots to purchase in an offering request.</p>
     pub fn quantity(mut self, input: i32) -> Self {
         self.inner = self.inner.quantity(input);
@@ -135,6 +145,10 @@ impl PurchaseOfferingFluentBuilder {
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_quantity(input);
         self
+    }
+    /// <p>The number of device slots to purchase in an offering request.</p>
+    pub fn get_quantity(&self) -> &::std::option::Option<i32> {
+        self.inner.get_quantity()
     }
     /// <p>The ID of the offering promotion to be applied to the purchase.</p>
     pub fn offering_promotion_id(
@@ -151,5 +165,9 @@ impl PurchaseOfferingFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_offering_promotion_id(input);
         self
+    }
+    /// <p>The ID of the offering promotion to be applied to the purchase.</p>
+    pub fn get_offering_promotion_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_offering_promotion_id()
     }
 }

@@ -75,6 +75,12 @@ impl DhcpOptionsBuilder {
         self.dhcp_configurations = input;
         self
     }
+    /// <p>The DHCP options in the set.</p>
+    pub fn get_dhcp_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DhcpConfiguration>> {
+        &self.dhcp_configurations
+    }
     /// <p>The ID of the set of DHCP options.</p>
     pub fn dhcp_options_id(
         mut self,
@@ -91,6 +97,10 @@ impl DhcpOptionsBuilder {
         self.dhcp_options_id = input;
         self
     }
+    /// <p>The ID of the set of DHCP options.</p>
+    pub fn get_dhcp_options_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dhcp_options_id
+    }
     /// <p>The ID of the Amazon Web Services account that owns the DHCP options set.</p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_id = ::std::option::Option::Some(input.into());
@@ -100,6 +110,10 @@ impl DhcpOptionsBuilder {
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_id = input;
         self
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the DHCP options set.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
     }
     /// Appends an item to `tags`.
     ///
@@ -119,6 +133,10 @@ impl DhcpOptionsBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Any tags assigned to the DHCP options set.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`DhcpOptions`](crate::types::DhcpOptions).
     pub fn build(self) -> crate::types::DhcpOptions {

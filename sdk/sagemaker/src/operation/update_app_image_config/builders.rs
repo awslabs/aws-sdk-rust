@@ -36,6 +36,13 @@ impl UpdateAppImageConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAppImageConfig as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_app_image_config::builders::UpdateAppImageConfigInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl UpdateAppImageConfigFluentBuilder {
         self.inner = self.inner.set_app_image_config_name(input);
         self
     }
+    /// <p>The name of the AppImageConfig to update.</p>
+    pub fn get_app_image_config_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_image_config_name()
+    }
     /// <p>The new KernelGateway app to run on the image.</p>
     pub fn kernel_gateway_image_config(
         mut self,
@@ -147,5 +158,11 @@ impl UpdateAppImageConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_kernel_gateway_image_config(input);
         self
+    }
+    /// <p>The new KernelGateway app to run on the image.</p>
+    pub fn get_kernel_gateway_image_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::KernelGatewayImageConfig> {
+        self.inner.get_kernel_gateway_image_config()
     }
 }

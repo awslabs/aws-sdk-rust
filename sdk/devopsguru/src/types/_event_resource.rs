@@ -56,6 +56,10 @@ impl EventResourceBuilder {
         self.r#type = input;
         self
     }
+    /// <p> The type of resource that emitted an event. </p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p> The name of the resource that emitted an event. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl EventResourceBuilder {
         self.name = input;
         self
     }
+    /// <p> The name of the resource that emitted an event. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p> The Amazon Resource Name (ARN) of the resource that emitted an event. </p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl EventResourceBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p> The Amazon Resource Name (ARN) of the resource that emitted an event. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`EventResource`](crate::types::EventResource).
     pub fn build(self) -> crate::types::EventResource {

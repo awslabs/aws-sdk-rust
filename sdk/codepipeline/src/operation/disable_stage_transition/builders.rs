@@ -36,6 +36,13 @@ impl DisableStageTransitionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisableStageTransition as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::disable_stage_transition::builders::DisableStageTransitionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl DisableStageTransitionFluentBuilder {
         self.inner = self.inner.set_pipeline_name(input);
         self
     }
+    /// <p>The name of the pipeline in which you want to disable the flow of artifacts from one stage to another.</p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pipeline_name()
+    }
     /// <p>The name of the stage where you want to disable the inbound or outbound transition of artifacts.</p>
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stage_name(input.into());
@@ -141,6 +152,10 @@ impl DisableStageTransitionFluentBuilder {
     pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stage_name(input);
         self
+    }
+    /// <p>The name of the stage where you want to disable the inbound or outbound transition of artifacts.</p>
+    pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stage_name()
     }
     /// <p>Specifies whether artifacts are prevented from transitioning into the stage and being processed by the actions in that stage (inbound), or prevented from transitioning from the stage after they have been processed by the actions in that stage (outbound).</p>
     pub fn transition_type(mut self, input: crate::types::StageTransitionType) -> Self {
@@ -155,6 +170,10 @@ impl DisableStageTransitionFluentBuilder {
         self.inner = self.inner.set_transition_type(input);
         self
     }
+    /// <p>Specifies whether artifacts are prevented from transitioning into the stage and being processed by the actions in that stage (inbound), or prevented from transitioning from the stage after they have been processed by the actions in that stage (outbound).</p>
+    pub fn get_transition_type(&self) -> &::std::option::Option<crate::types::StageTransitionType> {
+        self.inner.get_transition_type()
+    }
     /// <p>The reason given to the user that a stage is disabled, such as waiting for manual approval or manual tests. This message is displayed in the pipeline console UI.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reason(input.into());
@@ -164,5 +183,9 @@ impl DisableStageTransitionFluentBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reason(input);
         self
+    }
+    /// <p>The reason given to the user that a stage is disabled, such as waiting for manual approval or manual tests. This message is displayed in the pipeline console UI.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reason()
     }
 }

@@ -48,6 +48,10 @@ impl UpdateContainerAgentInputBuilder {
         self.cluster = input;
         self
     }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that your container instance is running on. If you do not specify a cluster, the default cluster is assumed.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster
+    }
     /// <p>The container instance ID or full ARN entries for the container instance where you would like to update the Amazon ECS container agent.</p>
     pub fn container_instance(
         mut self,
@@ -63,6 +67,10 @@ impl UpdateContainerAgentInputBuilder {
     ) -> Self {
         self.container_instance = input;
         self
+    }
+    /// <p>The container instance ID or full ARN entries for the container instance where you would like to update the Amazon ECS container agent.</p>
+    pub fn get_container_instance(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_instance
     }
     /// Consumes the builder and constructs a [`UpdateContainerAgentInput`](crate::operation::update_container_agent::UpdateContainerAgentInput).
     pub fn build(

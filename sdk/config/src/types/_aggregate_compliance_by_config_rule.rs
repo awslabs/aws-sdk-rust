@@ -71,6 +71,10 @@ impl AggregateComplianceByConfigRuleBuilder {
         self.config_rule_name = input;
         self
     }
+    /// <p>The name of the Config rule.</p>
+    pub fn get_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.config_rule_name
+    }
     /// <p>Indicates whether an Amazon Web Services resource or Config rule is compliant and provides the number of contributors that affect the compliance.</p>
     pub fn compliance(mut self, input: crate::types::Compliance) -> Self {
         self.compliance = ::std::option::Option::Some(input);
@@ -84,6 +88,10 @@ impl AggregateComplianceByConfigRuleBuilder {
         self.compliance = input;
         self
     }
+    /// <p>Indicates whether an Amazon Web Services resource or Config rule is compliant and provides the number of contributors that affect the compliance.</p>
+    pub fn get_compliance(&self) -> &::std::option::Option<crate::types::Compliance> {
+        &self.compliance
+    }
     /// <p>The 12-digit account ID of the source account.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -94,6 +102,10 @@ impl AggregateComplianceByConfigRuleBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The 12-digit account ID of the source account.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The source region from where the data is aggregated.</p>
     pub fn aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_region = ::std::option::Option::Some(input.into());
@@ -103,6 +115,10 @@ impl AggregateComplianceByConfigRuleBuilder {
     pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_region = input;
         self
+    }
+    /// <p>The source region from where the data is aggregated.</p>
+    pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_region
     }
     /// Consumes the builder and constructs a [`AggregateComplianceByConfigRule`](crate::types::AggregateComplianceByConfigRule).
     pub fn build(self) -> crate::types::AggregateComplianceByConfigRule {

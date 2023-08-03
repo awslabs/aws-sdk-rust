@@ -47,6 +47,10 @@ impl DeleteModelPackageGroupInputBuilder {
         self.model_package_group_name = input;
         self
     }
+    /// <p>The name of the model group to delete.</p>
+    pub fn get_model_package_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_package_group_name
+    }
     /// Consumes the builder and constructs a [`DeleteModelPackageGroupInput`](crate::operation::delete_model_package_group::DeleteModelPackageGroupInput).
     pub fn build(
         self,

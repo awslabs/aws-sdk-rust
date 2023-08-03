@@ -128,6 +128,10 @@ impl InstanceBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier for the instance in Amazon EMR.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The unique identifier of the instance in Amazon EC2.</p>
     pub fn ec2_instance_id(
         mut self,
@@ -143,6 +147,10 @@ impl InstanceBuilder {
     ) -> Self {
         self.ec2_instance_id = input;
         self
+    }
+    /// <p>The unique identifier of the instance in Amazon EC2.</p>
+    pub fn get_ec2_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ec2_instance_id
     }
     /// <p>The public DNS name of the instance.</p>
     pub fn public_dns_name(
@@ -160,6 +168,10 @@ impl InstanceBuilder {
         self.public_dns_name = input;
         self
     }
+    /// <p>The public DNS name of the instance.</p>
+    pub fn get_public_dns_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_dns_name
+    }
     /// <p>The public IP address of the instance.</p>
     pub fn public_ip_address(
         mut self,
@@ -175,6 +187,10 @@ impl InstanceBuilder {
     ) -> Self {
         self.public_ip_address = input;
         self
+    }
+    /// <p>The public IP address of the instance.</p>
+    pub fn get_public_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_ip_address
     }
     /// <p>The private DNS name of the instance.</p>
     pub fn private_dns_name(
@@ -192,6 +208,10 @@ impl InstanceBuilder {
         self.private_dns_name = input;
         self
     }
+    /// <p>The private DNS name of the instance.</p>
+    pub fn get_private_dns_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_dns_name
+    }
     /// <p>The private IP address of the instance.</p>
     pub fn private_ip_address(
         mut self,
@@ -208,6 +228,10 @@ impl InstanceBuilder {
         self.private_ip_address = input;
         self
     }
+    /// <p>The private IP address of the instance.</p>
+    pub fn get_private_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_ip_address
+    }
     /// <p>The current status of the instance.</p>
     pub fn status(mut self, input: crate::types::InstanceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -220,6 +244,10 @@ impl InstanceBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the instance.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::InstanceStatus> {
+        &self.status
     }
     /// <p>The identifier of the instance group to which this instance belongs.</p>
     pub fn instance_group_id(
@@ -237,6 +265,10 @@ impl InstanceBuilder {
         self.instance_group_id = input;
         self
     }
+    /// <p>The identifier of the instance group to which this instance belongs.</p>
+    pub fn get_instance_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_group_id
+    }
     /// <p>The unique identifier of the instance fleet to which an Amazon EC2 instance belongs.</p>
     pub fn instance_fleet_id(
         mut self,
@@ -253,6 +285,10 @@ impl InstanceBuilder {
         self.instance_fleet_id = input;
         self
     }
+    /// <p>The unique identifier of the instance fleet to which an Amazon EC2 instance belongs.</p>
+    pub fn get_instance_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_fleet_id
+    }
     /// <p>The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>. </p>
     pub fn market(mut self, input: crate::types::MarketType) -> Self {
         self.market = ::std::option::Option::Some(input);
@@ -262,6 +298,10 @@ impl InstanceBuilder {
     pub fn set_market(mut self, input: ::std::option::Option<crate::types::MarketType>) -> Self {
         self.market = input;
         self
+    }
+    /// <p>The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>. </p>
+    pub fn get_market(&self) -> &::std::option::Option<crate::types::MarketType> {
+        &self.market
     }
     /// <p>The Amazon EC2 instance type, for example <code>m3.xlarge</code>.</p>
     pub fn instance_type(
@@ -278,6 +318,10 @@ impl InstanceBuilder {
     ) -> Self {
         self.instance_type = input;
         self
+    }
+    /// <p>The Amazon EC2 instance type, for example <code>m3.xlarge</code>.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
     }
     /// Appends an item to `ebs_volumes`.
     ///
@@ -297,6 +341,12 @@ impl InstanceBuilder {
     ) -> Self {
         self.ebs_volumes = input;
         self
+    }
+    /// <p>The list of Amazon EBS volumes that are attached to this instance.</p>
+    pub fn get_ebs_volumes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EbsVolume>> {
+        &self.ebs_volumes
     }
     /// Consumes the builder and constructs a [`Instance`](crate::types::Instance).
     pub fn build(self) -> crate::types::Instance {

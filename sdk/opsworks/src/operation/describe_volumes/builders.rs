@@ -39,6 +39,12 @@ impl DescribeVolumesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeVolumes as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_volumes::builders::DescribeVolumesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl DescribeVolumesFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The instance ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the volumes associated with the specified instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>A stack ID. The action describes the stack's registered Amazon EBS volumes.</p>
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_id(input.into());
@@ -138,6 +148,10 @@ impl DescribeVolumesFluentBuilder {
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_id(input);
         self
+    }
+    /// <p>A stack ID. The action describes the stack's registered Amazon EBS volumes.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_id()
     }
     /// <p>The RAID array ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the volumes associated with the specified RAID array.</p>
     pub fn raid_array_id(
@@ -155,6 +169,10 @@ impl DescribeVolumesFluentBuilder {
         self.inner = self.inner.set_raid_array_id(input);
         self
     }
+    /// <p>The RAID array ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the volumes associated with the specified RAID array.</p>
+    pub fn get_raid_array_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_raid_array_id()
+    }
     /// Appends an item to `VolumeIds`.
     ///
     /// To override the contents of this collection use [`set_volume_ids`](Self::set_volume_ids).
@@ -171,5 +189,9 @@ impl DescribeVolumesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_volume_ids(input);
         self
+    }
+    /// <p>Am array of volume IDs. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the specified volumes. Otherwise, it returns a description of every volume.</p>
+    pub fn get_volume_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_volume_ids()
     }
 }

@@ -54,6 +54,10 @@ impl CustomAmiBuilder {
         self.virtualization_type = input;
         self
     }
+    /// <p>The type of virtualization used to create the custom AMI.</p>
+    pub fn get_virtualization_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtualization_type
+    }
     /// <p>THe ID of the image used to create the custom AMI.</p>
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl CustomAmiBuilder {
     pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_id = input;
         self
+    }
+    /// <p>THe ID of the image used to create the custom AMI.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_id
     }
     /// Consumes the builder and constructs a [`CustomAmi`](crate::types::CustomAmi).
     pub fn build(self) -> crate::types::CustomAmi {

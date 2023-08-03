@@ -47,6 +47,10 @@ impl DescribeContainerOutputBuilder {
         self.container = input;
         self
     }
+    /// <p>The name of the queried container.</p>
+    pub fn get_container(&self) -> &::std::option::Option<crate::types::Container> {
+        &self.container
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

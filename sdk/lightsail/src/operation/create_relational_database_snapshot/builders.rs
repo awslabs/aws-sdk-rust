@@ -37,6 +37,10 @@ impl CreateRelationalDatabaseSnapshotFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateRelationalDatabaseSnapshot as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_relational_database_snapshot::builders::CreateRelationalDatabaseSnapshotInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -107,6 +111,10 @@ impl CreateRelationalDatabaseSnapshotFluentBuilder {
         self.inner = self.inner.set_relational_database_name(input);
         self
     }
+    /// <p>The name of the database on which to base your new snapshot.</p>
+    pub fn get_relational_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_relational_database_name()
+    }
     /// <p>The name for your new database snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -133,6 +141,17 @@ impl CreateRelationalDatabaseSnapshotFluentBuilder {
         self.inner = self.inner.set_relational_database_snapshot_name(input);
         self
     }
+    /// <p>The name for your new database snapshot.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
+    /// <li> <p>The first and last character must be a letter or number.</p> </li>
+    /// </ul>
+    pub fn get_relational_database_snapshot_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_relational_database_snapshot_name()
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -151,5 +170,10 @@ impl CreateRelationalDatabaseSnapshotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tag keys and optional values to add to the resource during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

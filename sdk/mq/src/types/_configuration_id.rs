@@ -48,6 +48,10 @@ impl ConfigurationIdBuilder {
         self.id = input;
         self
     }
+    /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The revision number of the configuration.</p>
     pub fn revision(mut self, input: i32) -> Self {
         self.revision = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ConfigurationIdBuilder {
     pub fn set_revision(mut self, input: ::std::option::Option<i32>) -> Self {
         self.revision = input;
         self
+    }
+    /// <p>The revision number of the configuration.</p>
+    pub fn get_revision(&self) -> &::std::option::Option<i32> {
+        &self.revision
     }
     /// Consumes the builder and constructs a [`ConfigurationId`](crate::types::ConfigurationId).
     pub fn build(self) -> crate::types::ConfigurationId {

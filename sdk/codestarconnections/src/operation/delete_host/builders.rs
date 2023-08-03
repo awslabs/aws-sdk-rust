@@ -38,6 +38,10 @@ impl DeleteHostFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteHost as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_host::builders::DeleteHostInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,5 +123,9 @@ impl DeleteHostFluentBuilder {
     pub fn set_host_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_host_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the host to be deleted.</p>
+    pub fn get_host_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_host_arn()
     }
 }

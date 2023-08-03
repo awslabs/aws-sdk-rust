@@ -36,6 +36,12 @@ impl ListFindingsMetricsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListFindingsMetrics as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_findings_metrics::builders::ListFindingsMetricsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListFindingsMetricsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return in the response. Use this parameter when paginating results. If additional results exist beyond the number you specify, the <code>nextToken</code> element is returned in the response. Use <code>nextToken</code> in a subsequent request to retrieve additional results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -146,6 +156,10 @@ impl ListFindingsMetricsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return in the response. Use this parameter when paginating results. If additional results exist beyond the number you specify, the <code>nextToken</code> element is returned in the response. Use <code>nextToken</code> in a subsequent request to retrieve additional results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The start date of the interval which you want to retrieve metrics from.</p>
     pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -160,6 +174,10 @@ impl ListFindingsMetricsFluentBuilder {
         self.inner = self.inner.set_start_date(input);
         self
     }
+    /// <p>The start date of the interval which you want to retrieve metrics from.</p>
+    pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_date()
+    }
     /// <p>The end date of the interval which you want to retrieve metrics from.</p>
     pub fn end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_date(input);
@@ -172,5 +190,9 @@ impl ListFindingsMetricsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_end_date(input);
         self
+    }
+    /// <p>The end date of the interval which you want to retrieve metrics from.</p>
+    pub fn get_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_date()
     }
 }

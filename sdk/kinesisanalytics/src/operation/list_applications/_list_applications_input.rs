@@ -49,6 +49,10 @@ impl ListApplicationsInputBuilder {
         self.limit = input;
         self
     }
+    /// <p>Maximum number of applications to list.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
+    }
     /// <p>Name of the application to start the list with. When using pagination to retrieve the list, you don't need to specify this parameter in the first request. However, in subsequent requests, you add the last application name from the previous response to get the next page of applications.</p>
     pub fn exclusive_start_application_name(
         mut self,
@@ -64,6 +68,12 @@ impl ListApplicationsInputBuilder {
     ) -> Self {
         self.exclusive_start_application_name = input;
         self
+    }
+    /// <p>Name of the application to start the list with. When using pagination to retrieve the list, you don't need to specify this parameter in the first request. However, in subsequent requests, you add the last application name from the previous response to get the next page of applications.</p>
+    pub fn get_exclusive_start_application_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.exclusive_start_application_name
     }
     /// Consumes the builder and constructs a [`ListApplicationsInput`](crate::operation::list_applications::ListApplicationsInput).
     pub fn build(

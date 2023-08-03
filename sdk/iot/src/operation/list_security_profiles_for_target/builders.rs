@@ -37,6 +37,10 @@ impl ListSecurityProfilesForTargetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListSecurityProfilesForTarget as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_security_profiles_for_target::builders::ListSecurityProfilesForTargetInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl ListSecurityProfilesForTargetFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -143,6 +151,10 @@ impl ListSecurityProfilesForTargetFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return at one time.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>If true, return child groups too.</p>
     pub fn recursive(mut self, input: bool) -> Self {
         self.inner = self.inner.recursive(input);
@@ -152,6 +164,10 @@ impl ListSecurityProfilesForTargetFluentBuilder {
     pub fn set_recursive(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_recursive(input);
         self
+    }
+    /// <p>If true, return child groups too.</p>
+    pub fn get_recursive(&self) -> &::std::option::Option<bool> {
+        self.inner.get_recursive()
     }
     /// <p>The ARN of the target (thing group) whose attached security profiles you want to get.</p>
     pub fn security_profile_target_arn(
@@ -168,5 +184,9 @@ impl ListSecurityProfilesForTargetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_security_profile_target_arn(input);
         self
+    }
+    /// <p>The ARN of the target (thing group) whose attached security profiles you want to get.</p>
+    pub fn get_security_profile_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_security_profile_target_arn()
     }
 }

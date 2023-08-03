@@ -50,6 +50,10 @@ impl GetDataLakeSettingsOutputBuilder {
         self.data_lake_settings = input;
         self
     }
+    /// <p>A structure representing a list of Lake Formation principals designated as data lake administrators.</p>
+    pub fn get_data_lake_settings(&self) -> &::std::option::Option<crate::types::DataLakeSettings> {
+        &self.data_lake_settings
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

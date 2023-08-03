@@ -46,6 +46,10 @@ impl GetCalculationExecutionCodeOutputBuilder {
         self.code_block = input;
         self
     }
+    /// <p>The unencrypted code that was executed for the calculation.</p>
+    pub fn get_code_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code_block
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

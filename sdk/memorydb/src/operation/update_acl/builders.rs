@@ -36,6 +36,10 @@ impl UpdateACLFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateACL as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_acl::builders::UpdateAclInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdateACLFluentBuilder {
         self.inner = self.inner.set_acl_name(input);
         self
     }
+    /// <p>The name of the Access Control List</p>
+    pub fn get_acl_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_acl_name()
+    }
     /// Appends an item to `UserNamesToAdd`.
     ///
     /// To override the contents of this collection use [`set_user_names_to_add`](Self::set_user_names_to_add).
@@ -138,6 +146,12 @@ impl UpdateACLFluentBuilder {
         self.inner = self.inner.set_user_names_to_add(input);
         self
     }
+    /// <p>The list of users to add to the Access Control List</p>
+    pub fn get_user_names_to_add(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_user_names_to_add()
+    }
     /// Appends an item to `UserNamesToRemove`.
     ///
     /// To override the contents of this collection use [`set_user_names_to_remove`](Self::set_user_names_to_remove).
@@ -157,5 +171,11 @@ impl UpdateACLFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_user_names_to_remove(input);
         self
+    }
+    /// <p>The list of users to remove from the Access Control List</p>
+    pub fn get_user_names_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_user_names_to_remove()
     }
 }

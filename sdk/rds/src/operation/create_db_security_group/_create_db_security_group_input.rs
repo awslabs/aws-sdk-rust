@@ -96,6 +96,18 @@ impl CreateDbSecurityGroupInputBuilder {
         self.db_security_group_name = input;
         self
     }
+    /// <p>The name for the DB security group. This value is stored as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li> <p>Must not be "Default"</p> </li>
+    /// </ul>
+    /// <p>Example: <code>mysecuritygroup</code> </p>
+    pub fn get_db_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_security_group_name
+    }
     /// <p>The description for the DB security group.</p>
     pub fn db_security_group_description(
         mut self,
@@ -111,6 +123,12 @@ impl CreateDbSecurityGroupInputBuilder {
     ) -> Self {
         self.db_security_group_description = input;
         self
+    }
+    /// <p>The description for the DB security group.</p>
+    pub fn get_db_security_group_description(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.db_security_group_description
     }
     /// Appends an item to `tags`.
     ///
@@ -130,6 +148,10 @@ impl CreateDbSecurityGroupInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Tags to assign to the DB security group.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDbSecurityGroupInput`](crate::operation::create_db_security_group::CreateDbSecurityGroupInput).
     pub fn build(

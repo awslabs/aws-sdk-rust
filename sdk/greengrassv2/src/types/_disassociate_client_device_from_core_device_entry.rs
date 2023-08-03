@@ -40,6 +40,10 @@ impl DisassociateClientDeviceFromCoreDeviceEntryBuilder {
         self.thing_name = input;
         self
     }
+    /// <p>The name of the IoT thing that represents the client device to disassociate.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_name
+    }
     /// Consumes the builder and constructs a [`DisassociateClientDeviceFromCoreDeviceEntry`](crate::types::DisassociateClientDeviceFromCoreDeviceEntry).
     pub fn build(self) -> crate::types::DisassociateClientDeviceFromCoreDeviceEntry {
         crate::types::DisassociateClientDeviceFromCoreDeviceEntry {

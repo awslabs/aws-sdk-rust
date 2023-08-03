@@ -41,6 +41,10 @@ impl DescribeApiDestinationInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the API destination to retrieve.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DescribeApiDestinationInput`](crate::operation::describe_api_destination::DescribeApiDestinationInput).
     pub fn build(
         self,

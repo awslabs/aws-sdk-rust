@@ -48,6 +48,13 @@ impl CreateStateMachineAliasFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateStateMachineAlias as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_state_machine_alias::builders::CreateStateMachineAliasInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +145,10 @@ impl CreateStateMachineAliasFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>A description for the state machine alias.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The name of the state machine alias.</p>
     /// <p>To avoid conflict with version ARNs, don't use an integer in the name of the alias.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -149,6 +160,11 @@ impl CreateStateMachineAliasFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the state machine alias.</p>
+    /// <p>To avoid conflict with version ARNs, don't use an integer in the name of the alias.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// Appends an item to `routingConfiguration`.
     ///
@@ -169,5 +185,11 @@ impl CreateStateMachineAliasFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_routing_configuration(input);
         self
+    }
+    /// <p>The routing configuration of a state machine alias. The routing configuration shifts execution traffic between two state machine versions. <code>routingConfiguration</code> contains an array of <code>RoutingConfig</code> objects that specify up to two state machine versions. Step Functions then randomly choses which version to run an execution with based on the weight assigned to each <code>RoutingConfig</code>.</p>
+    pub fn get_routing_configuration(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingConfigurationListItem>> {
+        self.inner.get_routing_configuration()
     }
 }

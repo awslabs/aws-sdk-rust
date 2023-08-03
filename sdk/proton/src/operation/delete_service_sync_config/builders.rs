@@ -37,6 +37,13 @@ impl DeleteServiceSyncConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteServiceSyncConfig as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_service_sync_config::builders::DeleteServiceSyncConfigInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,5 +133,9 @@ impl DeleteServiceSyncConfigFluentBuilder {
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_name(input);
         self
+    }
+    /// <p>The name of the service that you want to delete the service sync configuration for.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_name()
     }
 }

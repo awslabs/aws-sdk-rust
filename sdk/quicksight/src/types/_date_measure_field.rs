@@ -69,6 +69,10 @@ impl DateMeasureFieldBuilder {
         self.field_id = input;
         self
     }
+    /// <p>The custom field ID.</p>
+    pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_id
+    }
     /// <p>The column that is used in the <code>DateMeasureField</code>.</p>
     pub fn column(mut self, input: crate::types::ColumnIdentifier) -> Self {
         self.column = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl DateMeasureFieldBuilder {
         self.column = input;
         self
     }
+    /// <p>The column that is used in the <code>DateMeasureField</code>.</p>
+    pub fn get_column(&self) -> &::std::option::Option<crate::types::ColumnIdentifier> {
+        &self.column
+    }
     /// <p>The aggregation function of the measure field.</p>
     pub fn aggregation_function(mut self, input: crate::types::DateAggregationFunction) -> Self {
         self.aggregation_function = ::std::option::Option::Some(input);
@@ -94,6 +102,12 @@ impl DateMeasureFieldBuilder {
     ) -> Self {
         self.aggregation_function = input;
         self
+    }
+    /// <p>The aggregation function of the measure field.</p>
+    pub fn get_aggregation_function(
+        &self,
+    ) -> &::std::option::Option<crate::types::DateAggregationFunction> {
+        &self.aggregation_function
     }
     /// <p>The format configuration of the field.</p>
     pub fn format_configuration(
@@ -110,6 +124,12 @@ impl DateMeasureFieldBuilder {
     ) -> Self {
         self.format_configuration = input;
         self
+    }
+    /// <p>The format configuration of the field.</p>
+    pub fn get_format_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DateTimeFormatConfiguration> {
+        &self.format_configuration
     }
     /// Consumes the builder and constructs a [`DateMeasureField`](crate::types::DateMeasureField).
     pub fn build(self) -> crate::types::DateMeasureField {

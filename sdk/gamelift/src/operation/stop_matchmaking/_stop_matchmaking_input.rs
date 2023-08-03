@@ -39,6 +39,10 @@ impl StopMatchmakingInputBuilder {
         self.ticket_id = input;
         self
     }
+    /// <p>A unique identifier for a matchmaking ticket.</p>
+    pub fn get_ticket_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ticket_id
+    }
     /// Consumes the builder and constructs a [`StopMatchmakingInput`](crate::operation::stop_matchmaking::StopMatchmakingInput).
     pub fn build(
         self,

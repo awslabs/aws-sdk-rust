@@ -47,6 +47,10 @@ impl DisableIpamOrganizationAdminAccountInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The Organizations member account ID that you want to disable as IPAM account.</p>
     pub fn delegated_admin_account_id(
         mut self,
@@ -62,6 +66,10 @@ impl DisableIpamOrganizationAdminAccountInputBuilder {
     ) -> Self {
         self.delegated_admin_account_id = input;
         self
+    }
+    /// <p>The Organizations member account ID that you want to disable as IPAM account.</p>
+    pub fn get_delegated_admin_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delegated_admin_account_id
     }
     /// Consumes the builder and constructs a [`DisableIpamOrganizationAdminAccountInput`](crate::operation::disable_ipam_organization_admin_account::DisableIpamOrganizationAdminAccountInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::disable_ipam_organization_admin_account::DisableIpamOrganizationAdminAccountInput, ::aws_smithy_http::operation::error::BuildError>{

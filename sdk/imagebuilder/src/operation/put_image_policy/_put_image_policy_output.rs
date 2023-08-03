@@ -54,6 +54,10 @@ impl PutImagePolicyOutputBuilder {
         self.request_id = input;
         self
     }
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the image that this policy was applied to.</p>
     pub fn image_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_arn = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl PutImagePolicyOutputBuilder {
     pub fn set_image_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the image that this policy was applied to.</p>
+    pub fn get_image_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

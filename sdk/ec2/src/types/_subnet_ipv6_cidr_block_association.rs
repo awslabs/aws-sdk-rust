@@ -64,6 +64,10 @@ impl SubnetIpv6CidrBlockAssociationBuilder {
         self.association_id = input;
         self
     }
+    /// <p>The ID of the association.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_id
+    }
     /// <p>The IPv6 CIDR block.</p>
     pub fn ipv6_cidr_block(
         mut self,
@@ -80,6 +84,10 @@ impl SubnetIpv6CidrBlockAssociationBuilder {
         self.ipv6_cidr_block = input;
         self
     }
+    /// <p>The IPv6 CIDR block.</p>
+    pub fn get_ipv6_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv6_cidr_block
+    }
     /// <p>The state of the CIDR block.</p>
     pub fn ipv6_cidr_block_state(mut self, input: crate::types::SubnetCidrBlockState) -> Self {
         self.ipv6_cidr_block_state = ::std::option::Option::Some(input);
@@ -92,6 +100,12 @@ impl SubnetIpv6CidrBlockAssociationBuilder {
     ) -> Self {
         self.ipv6_cidr_block_state = input;
         self
+    }
+    /// <p>The state of the CIDR block.</p>
+    pub fn get_ipv6_cidr_block_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::SubnetCidrBlockState> {
+        &self.ipv6_cidr_block_state
     }
     /// Consumes the builder and constructs a [`SubnetIpv6CidrBlockAssociation`](crate::types::SubnetIpv6CidrBlockAssociation).
     pub fn build(self) -> crate::types::SubnetIpv6CidrBlockAssociation {

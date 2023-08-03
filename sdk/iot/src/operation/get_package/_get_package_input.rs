@@ -39,6 +39,10 @@ impl GetPackageInputBuilder {
         self.package_name = input;
         self
     }
+    /// <p>The name of the target package.</p>
+    pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_name
+    }
     /// Consumes the builder and constructs a [`GetPackageInput`](crate::operation::get_package::GetPackageInput).
     pub fn build(
         self,

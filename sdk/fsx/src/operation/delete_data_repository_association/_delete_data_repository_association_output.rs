@@ -68,6 +68,10 @@ impl DeleteDataRepositoryAssociationOutputBuilder {
         self.association_id = input;
         self
     }
+    /// <p>The ID of the data repository association being deleted.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_id
+    }
     /// <p>Describes the lifecycle state of the data repository association being deleted.</p>
     pub fn lifecycle(mut self, input: crate::types::DataRepositoryLifecycle) -> Self {
         self.lifecycle = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl DeleteDataRepositoryAssociationOutputBuilder {
         self.lifecycle = input;
         self
     }
+    /// <p>Describes the lifecycle state of the data repository association being deleted.</p>
+    pub fn get_lifecycle(&self) -> &::std::option::Option<crate::types::DataRepositoryLifecycle> {
+        &self.lifecycle
+    }
     /// <p>Indicates whether data in the file system that corresponds to the data repository association is being deleted. Default is <code>false</code>.</p>
     pub fn delete_data_in_file_system(mut self, input: bool) -> Self {
         self.delete_data_in_file_system = ::std::option::Option::Some(input);
@@ -90,6 +98,10 @@ impl DeleteDataRepositoryAssociationOutputBuilder {
     pub fn set_delete_data_in_file_system(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete_data_in_file_system = input;
         self
+    }
+    /// <p>Indicates whether data in the file system that corresponds to the data repository association is being deleted. Default is <code>false</code>.</p>
+    pub fn get_delete_data_in_file_system(&self) -> &::std::option::Option<bool> {
+        &self.delete_data_in_file_system
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

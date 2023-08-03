@@ -54,6 +54,10 @@ impl TimestreamDestinationBuilder {
         self.database_name = input;
         self
     }
+    /// <p>Timestream database name. </p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>Timestream table name. </p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl TimestreamDestinationBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
+    }
+    /// <p>Timestream table name. </p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// Consumes the builder and constructs a [`TimestreamDestination`](crate::types::TimestreamDestination).
     pub fn build(self) -> crate::types::TimestreamDestination {

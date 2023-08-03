@@ -49,6 +49,12 @@ impl InventoryDestinationBuilder {
         self.s3_bucket_destination = input;
         self
     }
+    /// <p>Contains the bucket name, file format, bucket owner (optional), and prefix (optional) where inventory results are published.</p>
+    pub fn get_s3_bucket_destination(
+        &self,
+    ) -> &::std::option::Option<crate::types::InventoryS3BucketDestination> {
+        &self.s3_bucket_destination
+    }
     /// Consumes the builder and constructs a [`InventoryDestination`](crate::types::InventoryDestination).
     pub fn build(self) -> crate::types::InventoryDestination {
         crate::types::InventoryDestination {

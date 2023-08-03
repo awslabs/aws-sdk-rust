@@ -66,6 +66,12 @@ impl RemixSettingsBuilder {
         self.channel_mappings = input;
         self
     }
+    /// Mapping of input channels to output channels, with appropriate gain adjustments.
+    pub fn get_channel_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AudioChannelMapping>> {
+        &self.channel_mappings
+    }
     /// Number of input channels to be used.
     pub fn channels_in(mut self, input: i32) -> Self {
         self.channels_in = ::std::option::Option::Some(input);
@@ -76,6 +82,10 @@ impl RemixSettingsBuilder {
         self.channels_in = input;
         self
     }
+    /// Number of input channels to be used.
+    pub fn get_channels_in(&self) -> &::std::option::Option<i32> {
+        &self.channels_in
+    }
     /// Number of output channels to be produced. Valid values: 1, 2, 4, 6, 8
     pub fn channels_out(mut self, input: i32) -> Self {
         self.channels_out = ::std::option::Option::Some(input);
@@ -85,6 +95,10 @@ impl RemixSettingsBuilder {
     pub fn set_channels_out(mut self, input: ::std::option::Option<i32>) -> Self {
         self.channels_out = input;
         self
+    }
+    /// Number of output channels to be produced. Valid values: 1, 2, 4, 6, 8
+    pub fn get_channels_out(&self) -> &::std::option::Option<i32> {
+        &self.channels_out
     }
     /// Consumes the builder and constructs a [`RemixSettings`](crate::types::RemixSettings).
     pub fn build(self) -> crate::types::RemixSettings {

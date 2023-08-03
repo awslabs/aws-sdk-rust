@@ -51,6 +51,10 @@ impl WirelessMetadataBuilder {
         self.lo_ra_wan = input;
         self
     }
+    /// <p>LoRaWAN device info.</p>
+    pub fn get_lo_ra_wan(&self) -> &::std::option::Option<crate::types::LoRaWanSendDataToDevice> {
+        &self.lo_ra_wan
+    }
     /// <p>The Sidewalk account credentials.</p>
     pub fn sidewalk(mut self, input: crate::types::SidewalkSendDataToDevice) -> Self {
         self.sidewalk = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl WirelessMetadataBuilder {
     ) -> Self {
         self.sidewalk = input;
         self
+    }
+    /// <p>The Sidewalk account credentials.</p>
+    pub fn get_sidewalk(&self) -> &::std::option::Option<crate::types::SidewalkSendDataToDevice> {
+        &self.sidewalk
     }
     /// Consumes the builder and constructs a [`WirelessMetadata`](crate::types::WirelessMetadata).
     pub fn build(self) -> crate::types::WirelessMetadata {

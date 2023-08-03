@@ -60,6 +60,12 @@ impl RecommendationJobVpcConfigBuilder {
         self.security_group_ids = input;
         self
     }
+    /// <p>The VPC security group IDs. IDs have the form of <code>sg-xxxxxxxx</code>. Specify the security groups for the VPC that is specified in the <code>Subnets</code> field.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
+    }
     /// Appends an item to `subnets`.
     ///
     /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
@@ -78,6 +84,10 @@ impl RecommendationJobVpcConfigBuilder {
     ) -> Self {
         self.subnets = input;
         self
+    }
+    /// <p>The ID of the subnets in the VPC to which you want to connect your model.</p>
+    pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnets
     }
     /// Consumes the builder and constructs a [`RecommendationJobVpcConfig`](crate::types::RecommendationJobVpcConfig).
     pub fn build(self) -> crate::types::RecommendationJobVpcConfig {

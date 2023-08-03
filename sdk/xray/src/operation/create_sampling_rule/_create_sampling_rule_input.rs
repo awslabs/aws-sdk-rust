@@ -69,6 +69,10 @@ impl CreateSamplingRuleInputBuilder {
         self.sampling_rule = input;
         self
     }
+    /// <p>The rule definition.</p>
+    pub fn get_sampling_rule(&self) -> &::std::option::Option<crate::types::SamplingRule> {
+        &self.sampling_rule
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -105,6 +109,19 @@ impl CreateSamplingRuleInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray sampling rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>The following restrictions apply to tags:</p>
+    /// <ul>
+    /// <li> <p>Maximum number of user-applied tags per resource: 50</p> </li>
+    /// <li> <p>Maximum tag key length: 128 Unicode characters</p> </li>
+    /// <li> <p>Maximum tag value length: 256 Unicode characters</p> </li>
+    /// <li> <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @</p> </li>
+    /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+    /// <li> <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.</p> </li>
+    /// </ul>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSamplingRuleInput`](crate::operation::create_sampling_rule::CreateSamplingRuleInput).
     pub fn build(

@@ -54,6 +54,10 @@ impl DeleteSqlInjectionMatchSetInputBuilder {
         self.sql_injection_match_set_id = input;
         self
     }
+    /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to delete. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
+    pub fn get_sql_injection_match_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sql_injection_match_set_id
+    }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_token = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl DeleteSqlInjectionMatchSetInputBuilder {
     pub fn set_change_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_token = input;
         self
+    }
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    pub fn get_change_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_token
     }
     /// Consumes the builder and constructs a [`DeleteSqlInjectionMatchSetInput`](crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetInput).
     pub fn build(

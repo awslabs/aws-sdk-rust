@@ -36,6 +36,12 @@ impl StartRecoveryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartRecovery as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_recovery::builders::StartRecoveryInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,13 @@ impl StartRecoveryFluentBuilder {
         self.inner = self.inner.set_source_servers(input);
         self
     }
+    /// <p>The Source Servers that we want to start a Recovery Job for.</p>
+    pub fn get_source_servers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StartRecoveryRequestSourceServer>>
+    {
+        self.inner.get_source_servers()
+    }
     /// <p>Whether this Source Server Recovery operation is a drill or not.</p>
     pub fn is_drill(mut self, input: bool) -> Self {
         self.inner = self.inner.is_drill(input);
@@ -136,6 +149,10 @@ impl StartRecoveryFluentBuilder {
     pub fn set_is_drill(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_is_drill(input);
         self
+    }
+    /// <p>Whether this Source Server Recovery operation is a drill or not.</p>
+    pub fn get_is_drill(&self) -> &::std::option::Option<bool> {
+        self.inner.get_is_drill()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -159,5 +176,13 @@ impl StartRecoveryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags to be associated with the Recovery Job.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

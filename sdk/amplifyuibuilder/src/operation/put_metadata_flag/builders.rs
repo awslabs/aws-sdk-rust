@@ -36,6 +36,12 @@ impl PutMetadataFlagFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutMetadataFlag as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_metadata_flag::builders::PutMetadataFlagInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl PutMetadataFlagFluentBuilder {
         self.inner = self.inner.set_app_id(input);
         self
     }
+    /// <p>The unique ID for the Amplify app.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_id()
+    }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
     pub fn environment_name(
         mut self,
@@ -142,6 +152,10 @@ impl PutMetadataFlagFluentBuilder {
         self.inner = self.inner.set_environment_name(input);
         self
     }
+    /// <p>The name of the backend environment that is part of the Amplify app.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_name()
+    }
     /// <p>The name of the feature associated with the metadata.</p>
     pub fn feature_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.feature_name(input.into());
@@ -151,6 +165,10 @@ impl PutMetadataFlagFluentBuilder {
     pub fn set_feature_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_feature_name(input);
         self
+    }
+    /// <p>The name of the feature associated with the metadata.</p>
+    pub fn get_feature_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_feature_name()
     }
     /// <p>The metadata information to store.</p>
     pub fn body(mut self, input: crate::types::PutMetadataFlagBody) -> Self {
@@ -164,5 +182,9 @@ impl PutMetadataFlagFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_body(input);
         self
+    }
+    /// <p>The metadata information to store.</p>
+    pub fn get_body(&self) -> &::std::option::Option<crate::types::PutMetadataFlagBody> {
+        self.inner.get_body()
     }
 }

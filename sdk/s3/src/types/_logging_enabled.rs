@@ -64,6 +64,10 @@ impl LoggingEnabledBuilder {
         self.target_bucket = input;
         self
     }
+    /// <p>Specifies the bucket where you want Amazon S3 to store server access logs. You can have your logs delivered to any bucket that you own, including the same bucket that is being logged. You can also configure multiple buckets to deliver their logs to the same target bucket. In this case, you should choose a different <code>TargetPrefix</code> for each source bucket so that the delivered log files can be distinguished by key.</p>
+    pub fn get_target_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_bucket
+    }
     /// Appends an item to `target_grants`.
     ///
     /// To override the contents of this collection use [`set_target_grants`](Self::set_target_grants).
@@ -85,6 +89,13 @@ impl LoggingEnabledBuilder {
         self.target_grants = input;
         self
     }
+    /// <p>Container for granting information.</p>
+    /// <p>Buckets that use the bucket owner enforced setting for Object Ownership don't support target grants. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html#grant-log-delivery-permissions-general">Permissions for server access log delivery</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_target_grants(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetGrant>> {
+        &self.target_grants
+    }
     /// <p>A prefix for all log object keys. If you store log files from multiple Amazon S3 buckets in a single bucket, you can use a prefix to distinguish which log files came from which bucket.</p>
     pub fn target_prefix(
         mut self,
@@ -100,6 +111,10 @@ impl LoggingEnabledBuilder {
     ) -> Self {
         self.target_prefix = input;
         self
+    }
+    /// <p>A prefix for all log object keys. If you store log files from multiple Amazon S3 buckets in a single bucket, you can use a prefix to distinguish which log files came from which bucket.</p>
+    pub fn get_target_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_prefix
     }
     /// Consumes the builder and constructs a [`LoggingEnabled`](crate::types::LoggingEnabled).
     pub fn build(self) -> crate::types::LoggingEnabled {

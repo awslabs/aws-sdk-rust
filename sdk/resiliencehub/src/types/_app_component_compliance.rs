@@ -97,6 +97,10 @@ impl AppComponentComplianceBuilder {
         self.cost = input;
         self
     }
+    /// <p>The cost for the application.</p>
+    pub fn get_cost(&self) -> &::std::option::Option<crate::types::Cost> {
+        &self.cost
+    }
     /// <p>The name of the Application Component.</p>
     pub fn app_component_name(
         mut self,
@@ -112,6 +116,10 @@ impl AppComponentComplianceBuilder {
     ) -> Self {
         self.app_component_name = input;
         self
+    }
+    /// <p>The name of the Application Component.</p>
+    pub fn get_app_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_component_name
     }
     /// Adds a key-value pair to `compliance`.
     ///
@@ -141,6 +149,17 @@ impl AppComponentComplianceBuilder {
         self.compliance = input;
         self
     }
+    /// <p>The compliance of the Application Component against the resiliency policy.</p>
+    pub fn get_compliance(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::DisruptionType,
+            crate::types::DisruptionCompliance,
+        >,
+    > {
+        &self.compliance
+    }
     /// <p>The compliance message.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -150,6 +169,10 @@ impl AppComponentComplianceBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The compliance message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// <p>The status of the action.</p>
     pub fn status(mut self, input: crate::types::ComplianceStatus) -> Self {
@@ -164,6 +187,10 @@ impl AppComponentComplianceBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the action.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ComplianceStatus> {
+        &self.status
+    }
     /// <p>The current resiliency score for the application.</p>
     pub fn resiliency_score(mut self, input: crate::types::ResiliencyScore) -> Self {
         self.resiliency_score = ::std::option::Option::Some(input);
@@ -176,6 +203,10 @@ impl AppComponentComplianceBuilder {
     ) -> Self {
         self.resiliency_score = input;
         self
+    }
+    /// <p>The current resiliency score for the application.</p>
+    pub fn get_resiliency_score(&self) -> &::std::option::Option<crate::types::ResiliencyScore> {
+        &self.resiliency_score
     }
     /// Consumes the builder and constructs a [`AppComponentCompliance`](crate::types::AppComponentCompliance).
     pub fn build(self) -> crate::types::AppComponentCompliance {

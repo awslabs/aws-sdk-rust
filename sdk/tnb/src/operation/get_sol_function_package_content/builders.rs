@@ -37,6 +37,10 @@ impl GetSolFunctionPackageContentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetSolFunctionPackageContent as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_sol_function_package_content::builders::GetSolFunctionPackageContentInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl GetSolFunctionPackageContentFluentBuilder {
         self.inner = self.inner.set_vnf_pkg_id(input);
         self
     }
+    /// <p>ID of the function package.</p>
+    pub fn get_vnf_pkg_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vnf_pkg_id()
+    }
     /// <p>The format of the package that you want to download from the function packages.</p>
     pub fn accept(mut self, input: crate::types::PackageContentType) -> Self {
         self.inner = self.inner.accept(input);
@@ -139,5 +147,9 @@ impl GetSolFunctionPackageContentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_accept(input);
         self
+    }
+    /// <p>The format of the package that you want to download from the function packages.</p>
+    pub fn get_accept(&self) -> &::std::option::Option<crate::types::PackageContentType> {
+        self.inner.get_accept()
     }
 }

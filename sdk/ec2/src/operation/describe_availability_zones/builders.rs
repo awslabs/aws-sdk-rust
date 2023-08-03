@@ -37,6 +37,10 @@ impl DescribeAvailabilityZonesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeAvailabilityZones as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_availability_zones::builders::DescribeAvailabilityZonesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -158,6 +162,22 @@ impl DescribeAvailabilityZonesFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>The filters.</p>
+    /// <ul>
+    /// <li> <p> <code>group-name</code> - For Availability Zones, use the Region name. For Local Zones, use the name of the group associated with the Local Zone (for example, <code>us-west-2-lax-1</code>) For Wavelength Zones, use the name of the group associated with the Wavelength Zone (for example, <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li>
+    /// <li> <p> <code>message</code> - The Zone message.</p> </li>
+    /// <li> <p> <code>opt-in-status</code> - The opt-in status (<code>opted-in</code> | <code>not-opted-in</code> | <code>opt-in-not-required</code>).</p> </li>
+    /// <li> <p> <code>parent-zoneID</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone control plane operations, such as API calls.</p> </li>
+    /// <li> <p> <code>parent-zoneName</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone control plane operations, such as API calls.</p> </li>
+    /// <li> <p> <code>region-name</code> - The name of the Region for the Zone (for example, <code>us-east-1</code>).</p> </li>
+    /// <li> <p> <code>state</code> - The state of the Availability Zone, the Local Zone, or the Wavelength Zone (<code>available</code>).</p> </li>
+    /// <li> <p> <code>zone-id</code> - The ID of the Availability Zone (for example, <code>use1-az1</code>), the Local Zone (for example, <code>usw2-lax1-az1</code>), or the Wavelength Zone (for example, <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li>
+    /// <li> <p> <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>), the Local Zone (for example, <code>us-west-2-lax-1a</code>), or the Wavelength Zone (for example, <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li>
+    /// <li> <p> <code>zone-type</code> - The type of zone (<code>availability-zone</code> | <code>local-zone</code> | <code>wavelength-zone</code>).</p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// Appends an item to `ZoneNames`.
     ///
     /// To override the contents of this collection use [`set_zone_names`](Self::set_zone_names).
@@ -174,6 +194,10 @@ impl DescribeAvailabilityZonesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_zone_names(input);
         self
+    }
+    /// <p>The names of the Availability Zones, Local Zones, and Wavelength Zones.</p>
+    pub fn get_zone_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_zone_names()
     }
     /// Appends an item to `ZoneIds`.
     ///
@@ -192,6 +216,10 @@ impl DescribeAvailabilityZonesFluentBuilder {
         self.inner = self.inner.set_zone_ids(input);
         self
     }
+    /// <p>The IDs of the Availability Zones, Local Zones, and Wavelength Zones.</p>
+    pub fn get_zone_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_zone_ids()
+    }
     /// <p>Include all Availability Zones, Local Zones, and Wavelength Zones regardless of your opt-in status.</p>
     /// <p>If you do not use this parameter, the results include only the zones for the Regions where you have chosen the option to opt in.</p>
     pub fn all_availability_zones(mut self, input: bool) -> Self {
@@ -204,6 +232,11 @@ impl DescribeAvailabilityZonesFluentBuilder {
         self.inner = self.inner.set_all_availability_zones(input);
         self
     }
+    /// <p>Include all Availability Zones, Local Zones, and Wavelength Zones regardless of your opt-in status.</p>
+    /// <p>If you do not use this parameter, the results include only the zones for the Regions where you have chosen the option to opt in.</p>
+    pub fn get_all_availability_zones(&self) -> &::std::option::Option<bool> {
+        self.inner.get_all_availability_zones()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -213,5 +246,9 @@ impl DescribeAvailabilityZonesFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

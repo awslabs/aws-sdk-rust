@@ -51,6 +51,10 @@ impl SimulationSoftwareSuiteBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the simulation software suite.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::SimulationSoftwareSuiteType> {
+        &self.name
+    }
     /// <p>The version of the simulation software suite.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl SimulationSoftwareSuiteBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version of the simulation software suite.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`SimulationSoftwareSuite`](crate::types::SimulationSoftwareSuite).
     pub fn build(self) -> crate::types::SimulationSoftwareSuite {

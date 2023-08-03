@@ -93,6 +93,10 @@ impl GetPositionOutputBuilder {
         self.position = input;
         self
     }
+    /// <p>The position information of the resource.</p>
+    pub fn get_position(&self) -> &::std::option::Option<::std::vec::Vec<f32>> {
+        &self.position
+    }
     /// <p>The accuracy of the estimated position in meters. An empty value indicates that no position data is available. A value of ‘0.0’ value indicates that position data is available. This data corresponds to the position information that you specified instead of the position computed by solver.</p>
     pub fn accuracy(mut self, input: crate::types::Accuracy) -> Self {
         self.accuracy = ::std::option::Option::Some(input);
@@ -102,6 +106,10 @@ impl GetPositionOutputBuilder {
     pub fn set_accuracy(mut self, input: ::std::option::Option<crate::types::Accuracy>) -> Self {
         self.accuracy = input;
         self
+    }
+    /// <p>The accuracy of the estimated position in meters. An empty value indicates that no position data is available. A value of ‘0.0’ value indicates that position data is available. This data corresponds to the position information that you specified instead of the position computed by solver.</p>
+    pub fn get_accuracy(&self) -> &::std::option::Option<crate::types::Accuracy> {
+        &self.accuracy
     }
     /// <p>The type of solver used to identify the position of the resource.</p>
     pub fn solver_type(mut self, input: crate::types::PositionSolverType) -> Self {
@@ -116,6 +124,10 @@ impl GetPositionOutputBuilder {
         self.solver_type = input;
         self
     }
+    /// <p>The type of solver used to identify the position of the resource.</p>
+    pub fn get_solver_type(&self) -> &::std::option::Option<crate::types::PositionSolverType> {
+        &self.solver_type
+    }
     /// <p>The vendor of the positioning solver.</p>
     pub fn solver_provider(mut self, input: crate::types::PositionSolverProvider) -> Self {
         self.solver_provider = ::std::option::Option::Some(input);
@@ -128,6 +140,12 @@ impl GetPositionOutputBuilder {
     ) -> Self {
         self.solver_provider = input;
         self
+    }
+    /// <p>The vendor of the positioning solver.</p>
+    pub fn get_solver_provider(
+        &self,
+    ) -> &::std::option::Option<crate::types::PositionSolverProvider> {
+        &self.solver_provider
     }
     /// <p>The version of the positioning solver.</p>
     pub fn solver_version(
@@ -145,6 +163,10 @@ impl GetPositionOutputBuilder {
         self.solver_version = input;
         self
     }
+    /// <p>The version of the positioning solver.</p>
+    pub fn get_solver_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.solver_version
+    }
     /// <p>The timestamp at which the device's position was determined.</p>
     pub fn timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timestamp = ::std::option::Option::Some(input.into());
@@ -154,6 +176,10 @@ impl GetPositionOutputBuilder {
     pub fn set_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timestamp = input;
         self
+    }
+    /// <p>The timestamp at which the device's position was determined.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -55,6 +55,10 @@ impl GetDeploymentGroupInputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>The name of a deployment group for the specified application.</p>
     pub fn deployment_group_name(
         mut self,
@@ -70,6 +74,10 @@ impl GetDeploymentGroupInputBuilder {
     ) -> Self {
         self.deployment_group_name = input;
         self
+    }
+    /// <p>The name of a deployment group for the specified application.</p>
+    pub fn get_deployment_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_group_name
     }
     /// Consumes the builder and constructs a [`GetDeploymentGroupInput`](crate::operation::get_deployment_group::GetDeploymentGroupInput).
     pub fn build(

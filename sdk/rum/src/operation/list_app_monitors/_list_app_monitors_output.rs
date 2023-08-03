@@ -59,6 +59,10 @@ impl ListAppMonitorsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `app_monitor_summaries`.
     ///
     /// To override the contents of this collection use [`set_app_monitor_summaries`](Self::set_app_monitor_summaries).
@@ -77,6 +81,12 @@ impl ListAppMonitorsOutputBuilder {
     ) -> Self {
         self.app_monitor_summaries = input;
         self
+    }
+    /// <p>An array of structures that contain information about the returned app monitors.</p>
+    pub fn get_app_monitor_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppMonitorSummary>> {
+        &self.app_monitor_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

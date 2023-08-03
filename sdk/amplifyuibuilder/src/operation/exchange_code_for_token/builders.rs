@@ -36,6 +36,13 @@ impl ExchangeCodeForTokenFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ExchangeCodeForToken as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::exchange_code_for_token::builders::ExchangeCodeForTokenInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +136,10 @@ impl ExchangeCodeForTokenFluentBuilder {
         self.inner = self.inner.set_provider(input);
         self
     }
+    /// <p>The third-party provider for the token. The only valid value is <code>figma</code>.</p>
+    pub fn get_provider(&self) -> &::std::option::Option<crate::types::TokenProviders> {
+        self.inner.get_provider()
+    }
     /// <p>Describes the configuration of the request.</p>
     pub fn request(mut self, input: crate::types::ExchangeCodeForTokenRequestBody) -> Self {
         self.inner = self.inner.request(input);
@@ -141,5 +152,11 @@ impl ExchangeCodeForTokenFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_request(input);
         self
+    }
+    /// <p>Describes the configuration of the request.</p>
+    pub fn get_request(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExchangeCodeForTokenRequestBody> {
+        self.inner.get_request()
     }
 }

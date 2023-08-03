@@ -42,6 +42,10 @@ impl AccessControlTranslationBuilder {
         self.owner = input;
         self
     }
+    /// <p>Specifies the replica ownership.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<crate::types::OwnerOverride> {
+        &self.owner
+    }
     /// Consumes the builder and constructs a [`AccessControlTranslation`](crate::types::AccessControlTranslation).
     pub fn build(self) -> crate::types::AccessControlTranslation {
         crate::types::AccessControlTranslation { owner: self.owner }

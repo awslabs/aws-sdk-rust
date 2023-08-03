@@ -73,6 +73,10 @@ impl AwsBackupBackupPlanBackupPlanDetailsBuilder {
         self.backup_plan_name = input;
         self
     }
+    /// <p>The display name of a backup plan. </p>
+    pub fn get_backup_plan_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_plan_name
+    }
     /// Appends an item to `advanced_backup_settings`.
     ///
     /// To override the contents of this collection use [`set_advanced_backup_settings`](Self::set_advanced_backup_settings).
@@ -97,6 +101,14 @@ impl AwsBackupBackupPlanBackupPlanDetailsBuilder {
         self.advanced_backup_settings = input;
         self
     }
+    /// <p>A list of backup options for each resource type. </p>
+    pub fn get_advanced_backup_settings(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::AwsBackupBackupPlanAdvancedBackupSettingsDetails>,
+    > {
+        &self.advanced_backup_settings
+    }
     /// Appends an item to `backup_plan_rule`.
     ///
     /// To override the contents of this collection use [`set_backup_plan_rule`](Self::set_backup_plan_rule).
@@ -115,6 +127,12 @@ impl AwsBackupBackupPlanBackupPlanDetailsBuilder {
     ) -> Self {
         self.backup_plan_rule = input;
         self
+    }
+    /// <p>An array of <code>BackupRule</code> objects, each of which specifies a scheduled task that is used to back up a selection of resources. </p>
+    pub fn get_backup_plan_rule(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsBackupBackupPlanRuleDetails>> {
+        &self.backup_plan_rule
     }
     /// Consumes the builder and constructs a [`AwsBackupBackupPlanBackupPlanDetails`](crate::types::AwsBackupBackupPlanBackupPlanDetails).
     pub fn build(self) -> crate::types::AwsBackupBackupPlanBackupPlanDetails {

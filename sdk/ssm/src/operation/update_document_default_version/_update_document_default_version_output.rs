@@ -51,6 +51,12 @@ impl UpdateDocumentDefaultVersionOutputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of a custom document that you want to set as the default version.</p>
+    pub fn get_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::DocumentDefaultVersionDescription> {
+        &self.description
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

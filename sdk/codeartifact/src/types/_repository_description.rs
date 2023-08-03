@@ -109,6 +109,10 @@ impl RepositoryDescriptionBuilder {
         self.name = input;
         self
     }
+    /// <p> The name of the repository. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p> The 12-digit account number of the Amazon Web Services account that manages the repository. </p>
     pub fn administrator_account(
         mut self,
@@ -125,6 +129,10 @@ impl RepositoryDescriptionBuilder {
         self.administrator_account = input;
         self
     }
+    /// <p> The 12-digit account number of the Amazon Web Services account that manages the repository. </p>
+    pub fn get_administrator_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.administrator_account
+    }
     /// <p> The name of the domain that contains the repository. </p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
@@ -134,6 +142,10 @@ impl RepositoryDescriptionBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
+    }
+    /// <p> The name of the domain that contains the repository. </p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository. It does not include dashes or spaces. </p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -145,6 +157,10 @@ impl RepositoryDescriptionBuilder {
         self.domain_owner = input;
         self
     }
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository. It does not include dashes or spaces. </p>
+    pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_owner
+    }
     /// <p> The Amazon Resource Name (ARN) of the repository. </p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -155,6 +171,10 @@ impl RepositoryDescriptionBuilder {
         self.arn = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) of the repository. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p> A text description of the repository. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -164,6 +184,10 @@ impl RepositoryDescriptionBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p> A text description of the repository. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `upstreams`.
     ///
@@ -183,6 +207,12 @@ impl RepositoryDescriptionBuilder {
     ) -> Self {
         self.upstreams = input;
         self
+    }
+    /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
+    pub fn get_upstreams(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpstreamRepositoryInfo>> {
+        &self.upstreams
     }
     /// Appends an item to `external_connections`.
     ///
@@ -208,6 +238,13 @@ impl RepositoryDescriptionBuilder {
         self.external_connections = input;
         self
     }
+    /// <p> An array of external connections associated with the repository. </p>
+    pub fn get_external_connections(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryExternalConnectionInfo>>
+    {
+        &self.external_connections
+    }
     /// <p>A timestamp that represents the date and time the repository was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
@@ -220,6 +257,10 @@ impl RepositoryDescriptionBuilder {
     ) -> Self {
         self.created_time = input;
         self
+    }
+    /// <p>A timestamp that represents the date and time the repository was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
     }
     /// Consumes the builder and constructs a [`RepositoryDescription`](crate::types::RepositoryDescription).
     pub fn build(self) -> crate::types::RepositoryDescription {

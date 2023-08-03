@@ -48,6 +48,10 @@ impl AudioSelectorBuilder {
         self.name = input;
         self
     }
+    /// The name of this AudioSelector. AudioDescriptions will use this name to uniquely identify this Selector. Selector names should be unique per input.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// The audio selector settings.
     pub fn selector_settings(mut self, input: crate::types::AudioSelectorSettings) -> Self {
         self.selector_settings = ::std::option::Option::Some(input);
@@ -60,6 +64,12 @@ impl AudioSelectorBuilder {
     ) -> Self {
         self.selector_settings = input;
         self
+    }
+    /// The audio selector settings.
+    pub fn get_selector_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::AudioSelectorSettings> {
+        &self.selector_settings
     }
     /// Consumes the builder and constructs a [`AudioSelector`](crate::types::AudioSelector).
     pub fn build(self) -> crate::types::AudioSelector {

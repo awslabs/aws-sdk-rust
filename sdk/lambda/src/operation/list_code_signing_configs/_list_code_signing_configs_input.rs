@@ -49,6 +49,10 @@ impl ListCodeSigningConfigsInputBuilder {
         self.marker = input;
         self
     }
+    /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>Maximum number of items to return.</p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.max_items = ::std::option::Option::Some(input);
@@ -58,6 +62,10 @@ impl ListCodeSigningConfigsInputBuilder {
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_items = input;
         self
+    }
+    /// <p>Maximum number of items to return.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        &self.max_items
     }
     /// Consumes the builder and constructs a [`ListCodeSigningConfigsInput`](crate::operation::list_code_signing_configs::ListCodeSigningConfigsInput).
     pub fn build(

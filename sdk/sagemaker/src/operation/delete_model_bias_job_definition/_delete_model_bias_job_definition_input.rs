@@ -45,6 +45,10 @@ impl DeleteModelBiasJobDefinitionInputBuilder {
         self.job_definition_name = input;
         self
     }
+    /// <p>The name of the model bias job definition to delete.</p>
+    pub fn get_job_definition_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_definition_name
+    }
     /// Consumes the builder and constructs a [`DeleteModelBiasJobDefinitionInput`](crate::operation::delete_model_bias_job_definition::DeleteModelBiasJobDefinitionInput).
     pub fn build(
         self,

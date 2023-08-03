@@ -39,6 +39,10 @@ impl UpdateStreamFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateStream as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_stream::builders::UpdateStreamInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -123,6 +127,11 @@ impl UpdateStreamFluentBuilder {
         self.inner = self.inner.set_stream_name(input);
         self
     }
+    /// <p>The name of the stream whose metadata you want to update.</p>
+    /// <p>The stream name is an identifier for the stream, and must be unique for each account and region.</p>
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_name()
+    }
     /// <p>The ARN of the stream whose metadata you want to update.</p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stream_arn(input.into());
@@ -132,6 +141,10 @@ impl UpdateStreamFluentBuilder {
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stream_arn(input);
         self
+    }
+    /// <p>The ARN of the stream whose metadata you want to update.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_arn()
     }
     /// <p>The version of the stream whose metadata you want to update.</p>
     pub fn current_version(
@@ -149,6 +162,10 @@ impl UpdateStreamFluentBuilder {
         self.inner = self.inner.set_current_version(input);
         self
     }
+    /// <p>The version of the stream whose metadata you want to update.</p>
+    pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_current_version()
+    }
     /// <p>The name of the device that is writing to the stream. </p> <note>
     /// <p> In the current implementation, Kinesis Video Streams does not use this name. </p>
     /// </note>
@@ -163,6 +180,12 @@ impl UpdateStreamFluentBuilder {
         self.inner = self.inner.set_device_name(input);
         self
     }
+    /// <p>The name of the device that is writing to the stream. </p> <note>
+    /// <p> In the current implementation, Kinesis Video Streams does not use this name. </p>
+    /// </note>
+    pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_name()
+    }
     /// <p>The stream's media type. Use <code>MediaType</code> to specify the type of content that the stream contains to the consumers of the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>.</p>
     /// <p>To play video on the console, you must specify the correct video type. For example, if the video in the stream is H.264, specify <code>video/h264</code> as the <code>MediaType</code>.</p>
     pub fn media_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -174,5 +197,10 @@ impl UpdateStreamFluentBuilder {
     pub fn set_media_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_media_type(input);
         self
+    }
+    /// <p>The stream's media type. Use <code>MediaType</code> to specify the type of content that the stream contains to the consumers of the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>.</p>
+    /// <p>To play video on the console, you must specify the correct video type. For example, if the video in the stream is H.264, specify <code>video/h264</code> as the <code>MediaType</code>.</p>
+    pub fn get_media_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_media_type()
     }
 }

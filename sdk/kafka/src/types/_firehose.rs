@@ -54,6 +54,10 @@ impl FirehoseBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
+    pub fn get_delivery_stream(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delivery_stream
+    }
+    #[allow(missing_docs)] // documentation missing in model
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
@@ -62,6 +66,10 @@ impl FirehoseBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// Consumes the builder and constructs a [`Firehose`](crate::types::Firehose).
     pub fn build(self) -> crate::types::Firehose {

@@ -78,6 +78,10 @@ impl CreateConfigurationSetOutputBuilder {
         self.configuration_set_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the newly created configuration set.</p>
+    pub fn get_configuration_set_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set_arn
+    }
     /// <p>The name of the new configuration set.</p>
     pub fn configuration_set_name(
         mut self,
@@ -93,6 +97,10 @@ impl CreateConfigurationSetOutputBuilder {
     ) -> Self {
         self.configuration_set_name = input;
         self
+    }
+    /// <p>The name of the new configuration set.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set_name
     }
     /// Appends an item to `tags`.
     ///
@@ -113,6 +121,10 @@ impl CreateConfigurationSetOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>An array of key and value pair tags that's associated with the configuration set.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The time when the configuration set was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_timestamp = ::std::option::Option::Some(input);
@@ -125,6 +137,10 @@ impl CreateConfigurationSetOutputBuilder {
     ) -> Self {
         self.created_timestamp = input;
         self
+    }
+    /// <p>The time when the configuration set was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

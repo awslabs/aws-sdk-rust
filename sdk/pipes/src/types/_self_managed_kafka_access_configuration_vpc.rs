@@ -57,6 +57,10 @@ impl SelfManagedKafkaAccessConfigurationVpcBuilder {
         self.subnets = input;
         self
     }
+    /// <p>Specifies the subnets associated with the stream. These subnets must all be in the same VPC. You can specify as many as 16 subnets.</p>
+    pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnets
+    }
     /// Appends an item to `security_group`.
     ///
     /// To override the contents of this collection use [`set_security_group`](Self::set_security_group).
@@ -78,6 +82,12 @@ impl SelfManagedKafkaAccessConfigurationVpcBuilder {
     ) -> Self {
         self.security_group = input;
         self
+    }
+    /// <p>Specifies the security groups associated with the stream. These security groups must all be in the same VPC. You can specify as many as five security groups. If you do not specify a security group, the default security group for the VPC is used.</p>
+    pub fn get_security_group(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group
     }
     /// Consumes the builder and constructs a [`SelfManagedKafkaAccessConfigurationVpc`](crate::types::SelfManagedKafkaAccessConfigurationVpc).
     pub fn build(self) -> crate::types::SelfManagedKafkaAccessConfigurationVpc {

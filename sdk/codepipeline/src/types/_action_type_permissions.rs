@@ -52,6 +52,12 @@ impl ActionTypePermissionsBuilder {
         self.allowed_accounts = input;
         self
     }
+    /// <p>A list of Amazon Web Services account IDs with access to use the action type in their pipelines.</p>
+    pub fn get_allowed_accounts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.allowed_accounts
+    }
     /// Consumes the builder and constructs a [`ActionTypePermissions`](crate::types::ActionTypePermissions).
     pub fn build(self) -> crate::types::ActionTypePermissions {
         crate::types::ActionTypePermissions {

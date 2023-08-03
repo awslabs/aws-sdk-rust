@@ -52,6 +52,11 @@ impl ImportDataSourceBuilder {
         self.s3_url = input;
         self
     }
+    /// <p>An Amazon S3 URL in the format s3://<i>
+    /// <bucket_name></bucket_name></i>/<i><object>.<p></p></object></i></p>
+    pub fn get_s3_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_url
+    }
     /// <p>The data format of the import job's data source.</p>
     pub fn data_format(mut self, input: crate::types::DataFormat) -> Self {
         self.data_format = ::std::option::Option::Some(input);
@@ -64,6 +69,10 @@ impl ImportDataSourceBuilder {
     ) -> Self {
         self.data_format = input;
         self
+    }
+    /// <p>The data format of the import job's data source.</p>
+    pub fn get_data_format(&self) -> &::std::option::Option<crate::types::DataFormat> {
+        &self.data_format
     }
     /// Consumes the builder and constructs a [`ImportDataSource`](crate::types::ImportDataSource).
     pub fn build(self) -> crate::types::ImportDataSource {

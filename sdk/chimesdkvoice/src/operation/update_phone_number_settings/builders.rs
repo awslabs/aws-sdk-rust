@@ -36,6 +36,10 @@ impl UpdatePhoneNumberSettingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdatePhoneNumberSettings as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_phone_number_settings::builders::UpdatePhoneNumberSettingsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +129,9 @@ impl UpdatePhoneNumberSettingsFluentBuilder {
     pub fn set_calling_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_calling_name(input);
         self
+    }
+    /// <p>The default outbound calling name for the account.</p>
+    pub fn get_calling_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_calling_name()
     }
 }

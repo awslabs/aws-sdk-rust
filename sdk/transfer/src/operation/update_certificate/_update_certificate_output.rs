@@ -53,6 +53,10 @@ impl UpdateCertificateOutputBuilder {
         self.certificate_id = input;
         self
     }
+    /// <p>Returns the identifier of the certificate object that you are updating.</p>
+    pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

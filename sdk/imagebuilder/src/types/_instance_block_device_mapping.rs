@@ -64,6 +64,10 @@ impl InstanceBlockDeviceMappingBuilder {
         self.device_name = input;
         self
     }
+    /// <p>The device to which these mappings apply.</p>
+    pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_name
+    }
     /// <p>Use to manage Amazon EBS-specific configuration for this mapping.</p>
     pub fn ebs(mut self, input: crate::types::EbsInstanceBlockDeviceSpecification) -> Self {
         self.ebs = ::std::option::Option::Some(input);
@@ -77,6 +81,12 @@ impl InstanceBlockDeviceMappingBuilder {
         self.ebs = input;
         self
     }
+    /// <p>Use to manage Amazon EBS-specific configuration for this mapping.</p>
+    pub fn get_ebs(
+        &self,
+    ) -> &::std::option::Option<crate::types::EbsInstanceBlockDeviceSpecification> {
+        &self.ebs
+    }
     /// <p>Use to manage instance ephemeral devices.</p>
     pub fn virtual_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_name = ::std::option::Option::Some(input.into());
@@ -87,6 +97,10 @@ impl InstanceBlockDeviceMappingBuilder {
         self.virtual_name = input;
         self
     }
+    /// <p>Use to manage instance ephemeral devices.</p>
+    pub fn get_virtual_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_name
+    }
     /// <p>Use to remove a mapping from the base image.</p>
     pub fn no_device(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.no_device = ::std::option::Option::Some(input.into());
@@ -96,6 +110,10 @@ impl InstanceBlockDeviceMappingBuilder {
     pub fn set_no_device(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.no_device = input;
         self
+    }
+    /// <p>Use to remove a mapping from the base image.</p>
+    pub fn get_no_device(&self) -> &::std::option::Option<::std::string::String> {
+        &self.no_device
     }
     /// Consumes the builder and constructs a [`InstanceBlockDeviceMapping`](crate::types::InstanceBlockDeviceMapping).
     pub fn build(self) -> crate::types::InstanceBlockDeviceMapping {

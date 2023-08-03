@@ -73,6 +73,10 @@ impl DescribeCommunicationsInputBuilder {
         self.case_id = input;
         self
     }
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
+    pub fn get_case_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.case_id
+    }
     /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
     pub fn before_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.before_time = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl DescribeCommunicationsInputBuilder {
     pub fn set_before_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.before_time = input;
         self
+    }
+    /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
+    pub fn get_before_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.before_time
     }
     /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
     pub fn after_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -93,6 +101,10 @@ impl DescribeCommunicationsInputBuilder {
         self.after_time = input;
         self
     }
+    /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
+    pub fn get_after_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.after_time
+    }
     /// <p>A resumption point for pagination.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -103,6 +115,10 @@ impl DescribeCommunicationsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A resumption point for pagination.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return before paginating.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -112,6 +128,10 @@ impl DescribeCommunicationsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return before paginating.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeCommunicationsInput`](crate::operation::describe_communications::DescribeCommunicationsInput).
     pub fn build(

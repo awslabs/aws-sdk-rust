@@ -47,6 +47,10 @@ impl DeleteMountTargetInputBuilder {
         self.mount_target_id = input;
         self
     }
+    /// <p>The ID of the mount target to delete (String).</p>
+    pub fn get_mount_target_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mount_target_id
+    }
     /// Consumes the builder and constructs a [`DeleteMountTargetInput`](crate::operation::delete_mount_target::DeleteMountTargetInput).
     pub fn build(
         self,

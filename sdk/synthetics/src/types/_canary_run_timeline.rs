@@ -51,6 +51,10 @@ impl CanaryRunTimelineBuilder {
         self.started = input;
         self
     }
+    /// <p>The start time of the run.</p>
+    pub fn get_started(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.started
+    }
     /// <p>The end time of the run.</p>
     pub fn completed(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.completed = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl CanaryRunTimelineBuilder {
     ) -> Self {
         self.completed = input;
         self
+    }
+    /// <p>The end time of the run.</p>
+    pub fn get_completed(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.completed
     }
     /// Consumes the builder and constructs a [`CanaryRunTimeline`](crate::types::CanaryRunTimeline).
     pub fn build(self) -> crate::types::CanaryRunTimeline {

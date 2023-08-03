@@ -36,6 +36,10 @@ impl UpdateRouteFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateRoute as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_route::builders::UpdateRouteInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl UpdateRouteFluentBuilder {
         self.inner = self.inner.set_environment_identifier(input);
         self
     }
+    /// <p> The ID of the environment in which the route is being updated. </p>
+    pub fn get_environment_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_identifier()
+    }
     /// <p> The ID of the application within which the route is being updated. </p>
     pub fn application_identifier(
         mut self,
@@ -139,6 +147,10 @@ impl UpdateRouteFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_application_identifier(input);
         self
+    }
+    /// <p> The ID of the application within which the route is being updated. </p>
+    pub fn get_application_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_identifier()
     }
     /// <p> The unique identifier of the route to update. </p>
     pub fn route_identifier(
@@ -156,6 +168,10 @@ impl UpdateRouteFluentBuilder {
         self.inner = self.inner.set_route_identifier(input);
         self
     }
+    /// <p> The unique identifier of the route to update. </p>
+    pub fn get_route_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_route_identifier()
+    }
     /// <p> If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is updated. </p>
     pub fn activation_state(mut self, input: crate::types::RouteActivationState) -> Self {
         self.inner = self.inner.activation_state(input);
@@ -168,5 +184,11 @@ impl UpdateRouteFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_activation_state(input);
         self
+    }
+    /// <p> If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is updated. </p>
+    pub fn get_activation_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::RouteActivationState> {
+        self.inner.get_activation_state()
     }
 }

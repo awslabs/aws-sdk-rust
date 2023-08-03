@@ -56,6 +56,10 @@ impl ElasticChannelConfigurationBuilder {
         self.maximum_sub_channels = input;
         self
     }
+    /// <p>The maximum number of SubChannels that you want to allow in the elastic channel.</p>
+    pub fn get_maximum_sub_channels(&self) -> &::std::option::Option<i32> {
+        &self.maximum_sub_channels
+    }
     /// <p>The maximum number of members allowed in a SubChannel.</p>
     pub fn target_memberships_per_sub_channel(mut self, input: i32) -> Self {
         self.target_memberships_per_sub_channel = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl ElasticChannelConfigurationBuilder {
         self.target_memberships_per_sub_channel = input;
         self
     }
+    /// <p>The maximum number of members allowed in a SubChannel.</p>
+    pub fn get_target_memberships_per_sub_channel(&self) -> &::std::option::Option<i32> {
+        &self.target_memberships_per_sub_channel
+    }
     /// <p>The minimum allowed percentage of TargetMembershipsPerSubChannel users. Ceil of the calculated value is used in balancing members among SubChannels of the elastic channel.</p>
     pub fn minimum_membership_percentage(mut self, input: i32) -> Self {
         self.minimum_membership_percentage = ::std::option::Option::Some(input);
@@ -78,6 +86,10 @@ impl ElasticChannelConfigurationBuilder {
     pub fn set_minimum_membership_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.minimum_membership_percentage = input;
         self
+    }
+    /// <p>The minimum allowed percentage of TargetMembershipsPerSubChannel users. Ceil of the calculated value is used in balancing members among SubChannels of the elastic channel.</p>
+    pub fn get_minimum_membership_percentage(&self) -> &::std::option::Option<i32> {
+        &self.minimum_membership_percentage
     }
     /// Consumes the builder and constructs a [`ElasticChannelConfiguration`](crate::types::ElasticChannelConfiguration).
     pub fn build(self) -> crate::types::ElasticChannelConfiguration {

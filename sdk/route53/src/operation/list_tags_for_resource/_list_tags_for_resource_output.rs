@@ -51,6 +51,10 @@ impl ListTagsForResourceOutputBuilder {
         self.resource_tag_set = input;
         self
     }
+    /// <p>A <code>ResourceTagSet</code> containing tags associated with the specified resource.</p>
+    pub fn get_resource_tag_set(&self) -> &::std::option::Option<crate::types::ResourceTagSet> {
+        &self.resource_tag_set
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

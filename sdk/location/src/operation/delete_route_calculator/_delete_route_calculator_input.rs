@@ -47,6 +47,10 @@ impl DeleteRouteCalculatorInputBuilder {
         self.calculator_name = input;
         self
     }
+    /// <p>The name of the route calculator resource to be deleted.</p>
+    pub fn get_calculator_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.calculator_name
+    }
     /// Consumes the builder and constructs a [`DeleteRouteCalculatorInput`](crate::operation::delete_route_calculator::DeleteRouteCalculatorInput).
     pub fn build(
         self,

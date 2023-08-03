@@ -46,6 +46,10 @@ impl GetStatementOutputBuilder {
         self.statement = input;
         self
     }
+    /// <p>Returns the statement.</p>
+    pub fn get_statement(&self) -> &::std::option::Option<crate::types::Statement> {
+        &self.statement
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

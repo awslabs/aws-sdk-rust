@@ -80,6 +80,10 @@ impl MetricAttributionSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the metric attribution.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
     pub fn metric_attribution_arn(
         mut self,
@@ -96,6 +100,10 @@ impl MetricAttributionSummaryBuilder {
         self.metric_attribution_arn = input;
         self
     }
+    /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
+    pub fn get_metric_attribution_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_attribution_arn
+    }
     /// <p>The metric attribution's status.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -105,6 +113,10 @@ impl MetricAttributionSummaryBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The metric attribution's status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>The metric attribution's creation date time.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -119,6 +131,10 @@ impl MetricAttributionSummaryBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>The metric attribution's creation date time.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>The metric attribution's last updated date time.</p>
     pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date_time = ::std::option::Option::Some(input);
@@ -131,6 +147,12 @@ impl MetricAttributionSummaryBuilder {
     ) -> Self {
         self.last_updated_date_time = input;
         self
+    }
+    /// <p>The metric attribution's last updated date time.</p>
+    pub fn get_last_updated_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date_time
     }
     /// <p>The metric attribution's failure reason.</p>
     pub fn failure_reason(
@@ -147,6 +169,10 @@ impl MetricAttributionSummaryBuilder {
     ) -> Self {
         self.failure_reason = input;
         self
+    }
+    /// <p>The metric attribution's failure reason.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     /// Consumes the builder and constructs a [`MetricAttributionSummary`](crate::types::MetricAttributionSummary).
     pub fn build(self) -> crate::types::MetricAttributionSummary {

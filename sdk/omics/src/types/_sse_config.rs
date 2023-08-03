@@ -48,6 +48,10 @@ impl SseConfigBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The encryption type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::EncryptionType> {
+        &self.r#type
+    }
     /// <p>An encryption key ARN.</p>
     pub fn key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_arn = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl SseConfigBuilder {
     pub fn set_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_arn = input;
         self
+    }
+    /// <p>An encryption key ARN.</p>
+    pub fn get_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_arn
     }
     /// Consumes the builder and constructs a [`SseConfig`](crate::types::SseConfig).
     pub fn build(self) -> crate::types::SseConfig {

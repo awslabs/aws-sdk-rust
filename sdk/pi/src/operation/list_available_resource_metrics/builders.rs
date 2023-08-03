@@ -36,6 +36,10 @@ impl ListAvailableResourceMetricsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListAvailableResourceMetrics as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_available_resource_metrics::builders::ListAvailableResourceMetricsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +139,10 @@ impl ListAvailableResourceMetricsFluentBuilder {
         self.inner = self.inner.set_service_type(input);
         self
     }
+    /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
+    pub fn get_service_type(&self) -> &::std::option::Option<crate::types::ServiceType> {
+        self.inner.get_service_type()
+    }
     /// <p>An immutable identifier for a data source that is unique within an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use an Amazon RDS DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VWZ</code>. </p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identifier(input.into());
@@ -144,6 +152,10 @@ impl ListAvailableResourceMetricsFluentBuilder {
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identifier(input);
         self
+    }
+    /// <p>An immutable identifier for a data source that is unique within an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use an Amazon RDS DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VWZ</code>. </p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identifier()
     }
     /// Appends an item to `MetricTypes`.
     ///
@@ -174,6 +186,18 @@ impl ListAvailableResourceMetricsFluentBuilder {
         self.inner = self.inner.set_metric_types(input);
         self
     }
+    /// <p>The types of metrics to return in the response. Valid values in the array include the following:</p>
+    /// <ul>
+    /// <li> <p> <code>os</code> (OS counter metrics) - All engines</p> </li>
+    /// <li> <p> <code>db</code> (DB load metrics) - All engines except for Amazon DocumentDB</p> </li>
+    /// <li> <p> <code>db.sql.stats</code> (per-SQL metrics) - All engines except for Amazon DocumentDB</p> </li>
+    /// <li> <p> <code>db.sql_tokenized.stats</code> (per-SQL digest metrics) - All engines except for Amazon DocumentDB</p> </li>
+    /// </ul>
+    pub fn get_metric_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_metric_types()
+    }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -184,6 +208,10 @@ impl ListAvailableResourceMetricsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of items to return. If the <code>MaxRecords</code> value is less than the number of existing items, the response includes a pagination token. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -193,5 +221,9 @@ impl ListAvailableResourceMetricsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of items to return. If the <code>MaxRecords</code> value is less than the number of existing items, the response includes a pagination token. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

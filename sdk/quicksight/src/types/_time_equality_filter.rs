@@ -76,6 +76,10 @@ impl TimeEqualityFilterBuilder {
         self.filter_id = input;
         self
     }
+    /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
+    pub fn get_filter_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter_id
+    }
     /// <p>The column that the filter is applied to.</p>
     pub fn column(mut self, input: crate::types::ColumnIdentifier) -> Self {
         self.column = ::std::option::Option::Some(input);
@@ -89,6 +93,10 @@ impl TimeEqualityFilterBuilder {
         self.column = input;
         self
     }
+    /// <p>The column that the filter is applied to.</p>
+    pub fn get_column(&self) -> &::std::option::Option<crate::types::ColumnIdentifier> {
+        &self.column
+    }
     /// <p>The value of a <code>TimeEquality</code> filter.</p>
     /// <p>This field is mutually exclusive to <code>ParameterName</code>.</p>
     pub fn value(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -100,6 +108,11 @@ impl TimeEqualityFilterBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of a <code>TimeEquality</code> filter.</p>
+    /// <p>This field is mutually exclusive to <code>ParameterName</code>.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.value
     }
     /// <p>The parameter whose value should be used for the filter value.</p>
     /// <p>This field is mutually exclusive to <code>Value</code>.</p>
@@ -119,6 +132,11 @@ impl TimeEqualityFilterBuilder {
         self.parameter_name = input;
         self
     }
+    /// <p>The parameter whose value should be used for the filter value.</p>
+    /// <p>This field is mutually exclusive to <code>Value</code>.</p>
+    pub fn get_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_name
+    }
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
     pub fn time_granularity(mut self, input: crate::types::TimeGranularity) -> Self {
         self.time_granularity = ::std::option::Option::Some(input);
@@ -131,6 +149,10 @@ impl TimeEqualityFilterBuilder {
     ) -> Self {
         self.time_granularity = input;
         self
+    }
+    /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
+    pub fn get_time_granularity(&self) -> &::std::option::Option<crate::types::TimeGranularity> {
+        &self.time_granularity
     }
     /// Consumes the builder and constructs a [`TimeEqualityFilter`](crate::types::TimeEqualityFilter).
     pub fn build(self) -> crate::types::TimeEqualityFilter {

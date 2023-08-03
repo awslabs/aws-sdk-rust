@@ -40,6 +40,10 @@ impl AcLsUpdateStatusBuilder {
         self.acl_to_apply = input;
         self
     }
+    /// <p>A list of ACLs pending to be applied.</p>
+    pub fn get_acl_to_apply(&self) -> &::std::option::Option<::std::string::String> {
+        &self.acl_to_apply
+    }
     /// Consumes the builder and constructs a [`AcLsUpdateStatus`](crate::types::AcLsUpdateStatus).
     pub fn build(self) -> crate::types::AcLsUpdateStatus {
         crate::types::AcLsUpdateStatus {

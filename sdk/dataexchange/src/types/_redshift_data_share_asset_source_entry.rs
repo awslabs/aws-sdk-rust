@@ -46,6 +46,10 @@ impl RedshiftDataShareAssetSourceEntryBuilder {
         self.data_share_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
+    pub fn get_data_share_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_share_arn
+    }
     /// Consumes the builder and constructs a [`RedshiftDataShareAssetSourceEntry`](crate::types::RedshiftDataShareAssetSourceEntry).
     pub fn build(self) -> crate::types::RedshiftDataShareAssetSourceEntry {
         crate::types::RedshiftDataShareAssetSourceEntry {

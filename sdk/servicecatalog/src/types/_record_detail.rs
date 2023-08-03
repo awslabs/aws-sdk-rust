@@ -168,6 +168,10 @@ impl RecordDetailBuilder {
         self.record_id = input;
         self
     }
+    /// <p>The identifier of the record.</p>
+    pub fn get_record_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.record_id
+    }
     /// <p>The user-friendly name of the provisioned product.</p>
     pub fn provisioned_product_name(
         mut self,
@@ -183,6 +187,10 @@ impl RecordDetailBuilder {
     ) -> Self {
         self.provisioned_product_name = input;
         self
+    }
+    /// <p>The user-friendly name of the provisioned product.</p>
+    pub fn get_provisioned_product_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provisioned_product_name
     }
     /// <p>The status of the provisioned product.</p>
     /// <ul>
@@ -208,6 +216,17 @@ impl RecordDetailBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the provisioned product.</p>
+    /// <ul>
+    /// <li> <p> <code>CREATED</code> - The request was created but the operation has not started.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> - The requested operation is in progress.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the requested operation failed and some remediation is occurring. For example, a rollback.</p> </li>
+    /// <li> <p> <code>SUCCEEDED</code> - The requested operation has successfully completed.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The requested operation has unsuccessfully completed. Investigate using the error messages returned.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::RecordStatus> {
+        &self.status
+    }
     /// <p>The UTC time stamp of the creation time.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
@@ -221,6 +240,10 @@ impl RecordDetailBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The UTC time stamp of the creation time.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>The time when the record was last updated.</p>
     pub fn updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_time = ::std::option::Option::Some(input);
@@ -233,6 +256,10 @@ impl RecordDetailBuilder {
     ) -> Self {
         self.updated_time = input;
         self
+    }
+    /// <p>The time when the record was last updated.</p>
+    pub fn get_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_time
     }
     /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
     pub fn provisioned_product_type(
@@ -249,6 +276,10 @@ impl RecordDetailBuilder {
     ) -> Self {
         self.provisioned_product_type = input;
         self
+    }
+    /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
+    pub fn get_provisioned_product_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provisioned_product_type
     }
     /// <p>The record type.</p>
     /// <ul>
@@ -270,6 +301,15 @@ impl RecordDetailBuilder {
         self.record_type = input;
         self
     }
+    /// <p>The record type.</p>
+    /// <ul>
+    /// <li> <p> <code>PROVISION_PRODUCT</code> </p> </li>
+    /// <li> <p> <code>UPDATE_PROVISIONED_PRODUCT</code> </p> </li>
+    /// <li> <p> <code>TERMINATE_PROVISIONED_PRODUCT</code> </p> </li>
+    /// </ul>
+    pub fn get_record_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.record_type
+    }
     /// <p>The identifier of the provisioned product.</p>
     pub fn provisioned_product_id(
         mut self,
@@ -286,6 +326,10 @@ impl RecordDetailBuilder {
         self.provisioned_product_id = input;
         self
     }
+    /// <p>The identifier of the provisioned product.</p>
+    pub fn get_provisioned_product_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provisioned_product_id
+    }
     /// <p>The product identifier.</p>
     pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_id = ::std::option::Option::Some(input.into());
@@ -295,6 +339,10 @@ impl RecordDetailBuilder {
     pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product_id = input;
         self
+    }
+    /// <p>The product identifier.</p>
+    pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_id
     }
     /// <p>The identifier of the provisioning artifact.</p>
     pub fn provisioning_artifact_id(
@@ -312,6 +360,10 @@ impl RecordDetailBuilder {
         self.provisioning_artifact_id = input;
         self
     }
+    /// <p>The identifier of the provisioning artifact.</p>
+    pub fn get_provisioning_artifact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provisioning_artifact_id
+    }
     /// <p>The path identifier.</p>
     pub fn path_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path_id = ::std::option::Option::Some(input.into());
@@ -321,6 +373,10 @@ impl RecordDetailBuilder {
     pub fn set_path_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path_id = input;
         self
+    }
+    /// <p>The path identifier.</p>
+    pub fn get_path_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path_id
     }
     /// Appends an item to `record_errors`.
     ///
@@ -341,6 +397,12 @@ impl RecordDetailBuilder {
         self.record_errors = input;
         self
     }
+    /// <p>The errors that occurred.</p>
+    pub fn get_record_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecordError>> {
+        &self.record_errors
+    }
     /// Appends an item to `record_tags`.
     ///
     /// To override the contents of this collection use [`set_record_tags`](Self::set_record_tags).
@@ -360,6 +422,12 @@ impl RecordDetailBuilder {
         self.record_tags = input;
         self
     }
+    /// <p>One or more tags.</p>
+    pub fn get_record_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecordTag>> {
+        &self.record_tags
+    }
     /// <p>The ARN of the launch role associated with the provisioned product.</p>
     pub fn launch_role_arn(
         mut self,
@@ -375,6 +443,10 @@ impl RecordDetailBuilder {
     ) -> Self {
         self.launch_role_arn = input;
         self
+    }
+    /// <p>The ARN of the launch role associated with the provisioned product.</p>
+    pub fn get_launch_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_role_arn
     }
     /// Consumes the builder and constructs a [`RecordDetail`](crate::types::RecordDetail).
     pub fn build(self) -> crate::types::RecordDetail {

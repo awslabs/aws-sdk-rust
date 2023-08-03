@@ -38,6 +38,12 @@ impl CreateFpgaImageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateFpgaImage as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_fpga_image::builders::CreateFpgaImageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +134,10 @@ impl CreateFpgaImageFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>The location of the encrypted design checkpoint in Amazon S3. The input must be a tarball.</p>
     pub fn input_storage_location(mut self, input: crate::types::StorageLocation) -> Self {
         self.inner = self.inner.input_storage_location(input);
@@ -140,6 +150,12 @@ impl CreateFpgaImageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_input_storage_location(input);
         self
+    }
+    /// <p>The location of the encrypted design checkpoint in Amazon S3. The input must be a tarball.</p>
+    pub fn get_input_storage_location(
+        &self,
+    ) -> &::std::option::Option<crate::types::StorageLocation> {
+        self.inner.get_input_storage_location()
     }
     /// <p>The location in Amazon S3 for the output logs.</p>
     pub fn logs_storage_location(mut self, input: crate::types::StorageLocation) -> Self {
@@ -154,6 +170,12 @@ impl CreateFpgaImageFluentBuilder {
         self.inner = self.inner.set_logs_storage_location(input);
         self
     }
+    /// <p>The location in Amazon S3 for the output logs.</p>
+    pub fn get_logs_storage_location(
+        &self,
+    ) -> &::std::option::Option<crate::types::StorageLocation> {
+        self.inner.get_logs_storage_location()
+    }
     /// <p>A description for the AFI.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -163,6 +185,10 @@ impl CreateFpgaImageFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description for the AFI.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>A name for the AFI.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -174,6 +200,10 @@ impl CreateFpgaImageFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>A name for the AFI.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -183,6 +213,10 @@ impl CreateFpgaImageFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// Appends an item to `TagSpecifications`.
     ///
@@ -200,5 +234,11 @@ impl CreateFpgaImageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
+    }
+    /// <p>The tags to apply to the FPGA image during creation.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        self.inner.get_tag_specifications()
     }
 }

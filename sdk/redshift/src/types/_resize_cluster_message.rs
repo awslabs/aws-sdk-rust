@@ -94,6 +94,10 @@ impl ResizeClusterMessageBuilder {
         self.cluster_identifier = input;
         self
     }
+    /// <p>The unique identifier for the cluster to resize.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_identifier
+    }
     /// <p>The new cluster type for the specified cluster.</p>
     pub fn cluster_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_type = ::std::option::Option::Some(input.into());
@@ -103,6 +107,10 @@ impl ResizeClusterMessageBuilder {
     pub fn set_cluster_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_type = input;
         self
+    }
+    /// <p>The new cluster type for the specified cluster.</p>
+    pub fn get_cluster_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_type
     }
     /// <p>The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.</p>
     pub fn node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -114,6 +122,10 @@ impl ResizeClusterMessageBuilder {
         self.node_type = input;
         self
     }
+    /// <p>The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.</p>
+    pub fn get_node_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_type
+    }
     /// <p>The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.</p>
     pub fn number_of_nodes(mut self, input: i32) -> Self {
         self.number_of_nodes = ::std::option::Option::Some(input);
@@ -124,6 +136,10 @@ impl ResizeClusterMessageBuilder {
         self.number_of_nodes = input;
         self
     }
+    /// <p>The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.</p>
+    pub fn get_number_of_nodes(&self) -> &::std::option::Option<i32> {
+        &self.number_of_nodes
+    }
     /// <p>A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to <code>false</code>, the resize type is elastic. </p>
     pub fn classic(mut self, input: bool) -> Self {
         self.classic = ::std::option::Option::Some(input);
@@ -133,6 +149,10 @@ impl ResizeClusterMessageBuilder {
     pub fn set_classic(mut self, input: ::std::option::Option<bool>) -> Self {
         self.classic = input;
         self
+    }
+    /// <p>A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to <code>false</code>, the resize type is elastic. </p>
+    pub fn get_classic(&self) -> &::std::option::Option<bool> {
+        &self.classic
     }
     /// <p>The identifier of the reserved node.</p>
     pub fn reserved_node_id(
@@ -150,6 +170,10 @@ impl ResizeClusterMessageBuilder {
         self.reserved_node_id = input;
         self
     }
+    /// <p>The identifier of the reserved node.</p>
+    pub fn get_reserved_node_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reserved_node_id
+    }
     /// <p>The identifier of the target reserved node offering.</p>
     pub fn target_reserved_node_offering_id(
         mut self,
@@ -165,6 +189,12 @@ impl ResizeClusterMessageBuilder {
     ) -> Self {
         self.target_reserved_node_offering_id = input;
         self
+    }
+    /// <p>The identifier of the target reserved node offering.</p>
+    pub fn get_target_reserved_node_offering_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.target_reserved_node_offering_id
     }
     /// Consumes the builder and constructs a [`ResizeClusterMessage`](crate::types::ResizeClusterMessage).
     pub fn build(self) -> crate::types::ResizeClusterMessage {

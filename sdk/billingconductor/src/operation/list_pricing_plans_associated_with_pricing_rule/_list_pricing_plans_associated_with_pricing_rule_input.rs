@@ -69,6 +69,10 @@ impl ListPricingPlansAssociatedWithPricingRuleInputBuilder {
         self.billing_period = input;
         self
     }
+    /// <p> The pricing plan billing period for which associations will be listed. </p>
+    pub fn get_billing_period(&self) -> &::std::option::Option<::std::string::String> {
+        &self.billing_period
+    }
     /// <p> The pricing rule Amazon Resource Name (ARN) for which associations will be listed. </p>
     pub fn pricing_rule_arn(
         mut self,
@@ -85,6 +89,10 @@ impl ListPricingPlansAssociatedWithPricingRuleInputBuilder {
         self.pricing_rule_arn = input;
         self
     }
+    /// <p> The pricing rule Amazon Resource Name (ARN) for which associations will be listed. </p>
+    pub fn get_pricing_rule_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pricing_rule_arn
+    }
     /// <p> The optional maximum number of pricing rule associations to retrieve. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -95,6 +103,10 @@ impl ListPricingPlansAssociatedWithPricingRuleInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p> The optional maximum number of pricing rule associations to retrieve. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p> The optional pagination token returned by a previous call. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -104,6 +116,10 @@ impl ListPricingPlansAssociatedWithPricingRuleInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p> The optional pagination token returned by a previous call. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListPricingPlansAssociatedWithPricingRuleInput`](crate::operation::list_pricing_plans_associated_with_pricing_rule::ListPricingPlansAssociatedWithPricingRuleInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_pricing_plans_associated_with_pricing_rule::ListPricingPlansAssociatedWithPricingRuleInput, ::aws_smithy_http::operation::error::BuildError>{

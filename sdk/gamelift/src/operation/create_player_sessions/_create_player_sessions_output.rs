@@ -56,6 +56,12 @@ impl CreatePlayerSessionsOutputBuilder {
         self.player_sessions = input;
         self
     }
+    /// <p>A collection of player session objects created for the added players.</p>
+    pub fn get_player_sessions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PlayerSession>> {
+        &self.player_sessions
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

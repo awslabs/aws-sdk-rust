@@ -97,6 +97,10 @@ impl PolicyComplianceStatusBuilder {
         self.policy_owner = input;
         self
     }
+    /// <p>The Amazon Web Services account that created the Firewall Manager policy.</p>
+    pub fn get_policy_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_owner
+    }
     /// <p>The ID of the Firewall Manager policy.</p>
     pub fn policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_id = ::std::option::Option::Some(input.into());
@@ -107,6 +111,10 @@ impl PolicyComplianceStatusBuilder {
         self.policy_id = input;
         self
     }
+    /// <p>The ID of the Firewall Manager policy.</p>
+    pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_id
+    }
     /// <p>The name of the Firewall Manager policy.</p>
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
@@ -116,6 +124,10 @@ impl PolicyComplianceStatusBuilder {
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_name = input;
         self
+    }
+    /// <p>The name of the Firewall Manager policy.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_name
     }
     /// <p>The member account ID.</p>
     pub fn member_account(
@@ -132,6 +144,10 @@ impl PolicyComplianceStatusBuilder {
     ) -> Self {
         self.member_account = input;
         self
+    }
+    /// <p>The member account ID.</p>
+    pub fn get_member_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_account
     }
     /// Appends an item to `evaluation_results`.
     ///
@@ -152,6 +168,12 @@ impl PolicyComplianceStatusBuilder {
         self.evaluation_results = input;
         self
     }
+    /// <p>An array of <code>EvaluationResult</code> objects.</p>
+    pub fn get_evaluation_results(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>> {
+        &self.evaluation_results
+    }
     /// <p>Timestamp of the last update to the <code>EvaluationResult</code> objects.</p>
     pub fn last_updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated = ::std::option::Option::Some(input);
@@ -164,6 +186,10 @@ impl PolicyComplianceStatusBuilder {
     ) -> Self {
         self.last_updated = input;
         self
+    }
+    /// <p>Timestamp of the last update to the <code>EvaluationResult</code> objects.</p>
+    pub fn get_last_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated
     }
     /// Adds a key-value pair to `issue_info_map`.
     ///
@@ -189,6 +215,14 @@ impl PolicyComplianceStatusBuilder {
     ) -> Self {
         self.issue_info_map = input;
         self
+    }
+    /// <p>Details about problems with dependent services, such as WAF or Config, and the error message received that indicates the problem with the service.</p>
+    pub fn get_issue_info_map(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<crate::types::DependentServiceName, ::std::string::String>,
+    > {
+        &self.issue_info_map
     }
     /// Consumes the builder and constructs a [`PolicyComplianceStatus`](crate::types::PolicyComplianceStatus).
     pub fn build(self) -> crate::types::PolicyComplianceStatus {

@@ -36,6 +36,10 @@ impl ListFraudsterRegistrationJobsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListFraudsterRegistrationJobs as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_fraudster_registration_jobs::builders::ListFraudsterRegistrationJobsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl ListFraudsterRegistrationJobsFluentBuilder {
         self.inner = self.inner.set_domain_id(input);
         self
     }
+    /// <p>The identifier of the domain that contains the fraudster registration Jobs.</p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_id()
+    }
     /// <p>Provides the status of your fraudster registration job.</p>
     pub fn job_status(mut self, input: crate::types::FraudsterRegistrationJobStatus) -> Self {
         self.inner = self.inner.job_status(input);
@@ -145,6 +153,12 @@ impl ListFraudsterRegistrationJobsFluentBuilder {
         self.inner = self.inner.set_job_status(input);
         self
     }
+    /// <p>Provides the status of your fraudster registration job.</p>
+    pub fn get_job_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::FraudsterRegistrationJobStatus> {
+        self.inner.get_job_status()
+    }
     /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain more pages of results. The default is 100; the maximum allowed page size is also 100. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -155,6 +169,10 @@ impl ListFraudsterRegistrationJobsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain more pages of results. The default is 100; the maximum allowed page size is also 100. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -164,5 +182,9 @@ impl ListFraudsterRegistrationJobsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

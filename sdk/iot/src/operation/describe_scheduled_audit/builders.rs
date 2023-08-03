@@ -37,6 +37,13 @@ impl DescribeScheduledAuditFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeScheduledAudit as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_scheduled_audit::builders::DescribeScheduledAuditInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +139,9 @@ impl DescribeScheduledAuditFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_scheduled_audit_name(input);
         self
+    }
+    /// <p>The name of the scheduled audit whose information you want to get.</p>
+    pub fn get_scheduled_audit_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_scheduled_audit_name()
     }
 }

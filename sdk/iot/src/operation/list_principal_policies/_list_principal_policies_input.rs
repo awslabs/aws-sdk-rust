@@ -66,6 +66,10 @@ impl ListPrincipalPoliciesInputBuilder {
         self.principal = input;
         self
     }
+    /// <p>The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
+    pub fn get_principal(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal
+    }
     /// <p>The marker for the next set of results.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl ListPrincipalPoliciesInputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>The marker for the next set of results.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// <p>The result page size.</p>
     pub fn page_size(mut self, input: i32) -> Self {
@@ -86,6 +94,10 @@ impl ListPrincipalPoliciesInputBuilder {
         self.page_size = input;
         self
     }
+    /// <p>The result page size.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        &self.page_size
+    }
     /// <p>Specifies the order for results. If true, results are returned in ascending creation order.</p>
     pub fn ascending_order(mut self, input: bool) -> Self {
         self.ascending_order = ::std::option::Option::Some(input);
@@ -95,6 +107,10 @@ impl ListPrincipalPoliciesInputBuilder {
     pub fn set_ascending_order(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ascending_order = input;
         self
+    }
+    /// <p>Specifies the order for results. If true, results are returned in ascending creation order.</p>
+    pub fn get_ascending_order(&self) -> &::std::option::Option<bool> {
+        &self.ascending_order
     }
     /// Consumes the builder and constructs a [`ListPrincipalPoliciesInput`](crate::operation::list_principal_policies::ListPrincipalPoliciesInput).
     pub fn build(

@@ -80,6 +80,10 @@ impl CampaignSmsMessageBuilder {
         self.body = input;
         self
     }
+    /// <p>The body of the SMS message.</p>
+    pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.body
+    }
     /// <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing messages).</p>
     pub fn message_type(mut self, input: crate::types::MessageType) -> Self {
         self.message_type = ::std::option::Option::Some(input);
@@ -92,6 +96,10 @@ impl CampaignSmsMessageBuilder {
     ) -> Self {
         self.message_type = input;
         self
+    }
+    /// <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing messages).</p>
+    pub fn get_message_type(&self) -> &::std::option::Option<crate::types::MessageType> {
+        &self.message_type
     }
     /// <p>The long code to send the SMS message from. This value should be one of the dedicated long codes that's assigned to your AWS account. Although it isn't required, we recommend that you specify the long code using an E.164 format to ensure prompt and accurate delivery of the message. For example, +12065550100.</p>
     pub fn origination_number(
@@ -109,6 +117,10 @@ impl CampaignSmsMessageBuilder {
         self.origination_number = input;
         self
     }
+    /// <p>The long code to send the SMS message from. This value should be one of the dedicated long codes that's assigned to your AWS account. Although it isn't required, we recommend that you specify the long code using an E.164 format to ensure prompt and accurate delivery of the message. For example, +12065550100.</p>
+    pub fn get_origination_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.origination_number
+    }
     /// <p>The sender ID to display on recipients' devices when they receive the SMS message.</p>
     pub fn sender_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sender_id = ::std::option::Option::Some(input.into());
@@ -118,6 +130,10 @@ impl CampaignSmsMessageBuilder {
     pub fn set_sender_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sender_id = input;
         self
+    }
+    /// <p>The sender ID to display on recipients' devices when they receive the SMS message.</p>
+    pub fn get_sender_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sender_id
     }
     /// <p>The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your country.</p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -129,6 +145,10 @@ impl CampaignSmsMessageBuilder {
         self.entity_id = input;
         self
     }
+    /// <p>The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your country.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_id
+    }
     /// <p>The template ID received from the regulatory body for sending SMS in your country.</p>
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_id = ::std::option::Option::Some(input.into());
@@ -138,6 +158,10 @@ impl CampaignSmsMessageBuilder {
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_id = input;
         self
+    }
+    /// <p>The template ID received from the regulatory body for sending SMS in your country.</p>
+    pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_id
     }
     /// Consumes the builder and constructs a [`CampaignSmsMessage`](crate::types::CampaignSmsMessage).
     pub fn build(self) -> crate::types::CampaignSmsMessage {

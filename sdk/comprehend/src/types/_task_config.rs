@@ -66,6 +66,10 @@ impl TaskConfigBuilder {
         self.language_code = input;
         self
     }
+    /// <p>Language code for the language that the model supports.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
+        &self.language_code
+    }
     /// <p>Configuration required for a classification model.</p>
     pub fn document_classification_config(
         mut self,
@@ -82,6 +86,12 @@ impl TaskConfigBuilder {
         self.document_classification_config = input;
         self
     }
+    /// <p>Configuration required for a classification model.</p>
+    pub fn get_document_classification_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::DocumentClassificationConfig> {
+        &self.document_classification_config
+    }
     /// <p>Configuration required for an entity recognition model.</p>
     pub fn entity_recognition_config(
         mut self,
@@ -97,6 +107,12 @@ impl TaskConfigBuilder {
     ) -> Self {
         self.entity_recognition_config = input;
         self
+    }
+    /// <p>Configuration required for an entity recognition model.</p>
+    pub fn get_entity_recognition_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::EntityRecognitionConfig> {
+        &self.entity_recognition_config
     }
     /// Consumes the builder and constructs a [`TaskConfig`](crate::types::TaskConfig).
     pub fn build(self) -> crate::types::TaskConfig {

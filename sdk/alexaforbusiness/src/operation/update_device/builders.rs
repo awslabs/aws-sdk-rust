@@ -37,6 +37,10 @@ impl UpdateDeviceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDevice as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_device::builders::UpdateDeviceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl UpdateDeviceFluentBuilder {
         self.inner = self.inner.set_device_arn(input);
         self
     }
+    /// <p>The ARN of the device to update. Required.</p>
+    pub fn get_device_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_arn()
+    }
     /// <p>The updated device name. Required.</p>
     pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_name(input.into());
@@ -128,5 +136,9 @@ impl UpdateDeviceFluentBuilder {
     pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_name(input);
         self
+    }
+    /// <p>The updated device name. Required.</p>
+    pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_name()
     }
 }

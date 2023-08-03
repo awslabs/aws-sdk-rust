@@ -48,6 +48,10 @@ impl SystemResourceLimitsBuilder {
         self.memory = input;
         self
     }
+    /// <p>The maximum amount of RAM, expressed in kilobytes, that a component's processes can use on the core device.</p>
+    pub fn get_memory(&self) -> &::std::option::Option<i64> {
+        &self.memory
+    }
     /// <p>The maximum amount of CPU time that a component's processes can use on the core device. A core device's total CPU time is equivalent to the device's number of CPU cores. For example, on a core device with 4 CPU cores, you can set this value to <code>2</code> to limit the component's processes to 50 percent usage of each CPU core. On a device with 1 CPU core, you can set this value to <code>0.25</code> to limit the component's processes to 25 percent usage of the CPU. If you set this value to a number greater than the number of CPU cores, the IoT Greengrass Core software doesn't limit the component's CPU usage.</p>
     pub fn cpus(mut self, input: f64) -> Self {
         self.cpus = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl SystemResourceLimitsBuilder {
     pub fn set_cpus(mut self, input: ::std::option::Option<f64>) -> Self {
         self.cpus = input;
         self
+    }
+    /// <p>The maximum amount of CPU time that a component's processes can use on the core device. A core device's total CPU time is equivalent to the device's number of CPU cores. For example, on a core device with 4 CPU cores, you can set this value to <code>2</code> to limit the component's processes to 50 percent usage of each CPU core. On a device with 1 CPU core, you can set this value to <code>0.25</code> to limit the component's processes to 25 percent usage of the CPU. If you set this value to a number greater than the number of CPU cores, the IoT Greengrass Core software doesn't limit the component's CPU usage.</p>
+    pub fn get_cpus(&self) -> &::std::option::Option<f64> {
+        &self.cpus
     }
     /// Consumes the builder and constructs a [`SystemResourceLimits`](crate::types::SystemResourceLimits).
     pub fn build(self) -> crate::types::SystemResourceLimits {

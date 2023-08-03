@@ -56,6 +56,12 @@ impl AcceptEnvironmentAccountConnectionOutputBuilder {
         self.environment_account_connection = input;
         self
     }
+    /// <p>The environment account connection data that's returned by Proton.</p>
+    pub fn get_environment_account_connection(
+        &self,
+    ) -> &::std::option::Option<crate::types::EnvironmentAccountConnection> {
+        &self.environment_account_connection
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

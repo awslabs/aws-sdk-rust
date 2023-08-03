@@ -56,6 +56,10 @@ impl ReactionValueFormatsBuilder {
         self.emoji = input;
         self
     }
+    /// <p>The Emoji Version 1.0 graphic of the reaction. These graphics are interpreted slightly differently on different operating systems.</p>
+    pub fn get_emoji(&self) -> &::std::option::Option<::std::string::String> {
+        &self.emoji
+    }
     /// <p>The emoji short code for the reaction. Short codes are interpreted slightly differently on different operating systems. </p>
     pub fn short_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.short_code = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl ReactionValueFormatsBuilder {
         self.short_code = input;
         self
     }
+    /// <p>The emoji short code for the reaction. Short codes are interpreted slightly differently on different operating systems. </p>
+    pub fn get_short_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.short_code
+    }
     /// <p>The Unicode codepoint for the reaction.</p>
     pub fn unicode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.unicode = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl ReactionValueFormatsBuilder {
     pub fn set_unicode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unicode = input;
         self
+    }
+    /// <p>The Unicode codepoint for the reaction.</p>
+    pub fn get_unicode(&self) -> &::std::option::Option<::std::string::String> {
+        &self.unicode
     }
     /// Consumes the builder and constructs a [`ReactionValueFormats`](crate::types::ReactionValueFormats).
     pub fn build(self) -> crate::types::ReactionValueFormats {

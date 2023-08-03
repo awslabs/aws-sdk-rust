@@ -40,6 +40,10 @@ impl TelemetryConfigurationUpdateBuilder {
         self.telemetry = input;
         self
     }
+    /// Configure telemetry to be on or off.
+    pub fn get_telemetry(&self) -> &::std::option::Option<crate::types::Telemetry> {
+        &self.telemetry
+    }
     /// Consumes the builder and constructs a [`TelemetryConfigurationUpdate`](crate::types::TelemetryConfigurationUpdate).
     pub fn build(self) -> crate::types::TelemetryConfigurationUpdate {
         crate::types::TelemetryConfigurationUpdate {

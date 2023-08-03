@@ -68,6 +68,10 @@ impl VirtualGatewayClientPolicyTlsBuilder {
         self.enforce = input;
         self
     }
+    /// <p>Whether the policy is enforced. The default is <code>True</code>, if a value isn't specified.</p>
+    pub fn get_enforce(&self) -> &::std::option::Option<bool> {
+        &self.enforce
+    }
     /// Appends an item to `ports`.
     ///
     /// To override the contents of this collection use [`set_ports`](Self::set_ports).
@@ -84,6 +88,10 @@ impl VirtualGatewayClientPolicyTlsBuilder {
         self.ports = input;
         self
     }
+    /// <p>One or more ports that the policy is enforced for.</p>
+    pub fn get_ports(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.ports
+    }
     /// <p>A reference to an object that represents a virtual gateway's client's Transport Layer Security (TLS) certificate.</p>
     pub fn certificate(mut self, input: crate::types::VirtualGatewayClientTlsCertificate) -> Self {
         self.certificate = ::std::option::Option::Some(input);
@@ -97,6 +105,12 @@ impl VirtualGatewayClientPolicyTlsBuilder {
         self.certificate = input;
         self
     }
+    /// <p>A reference to an object that represents a virtual gateway's client's Transport Layer Security (TLS) certificate.</p>
+    pub fn get_certificate(
+        &self,
+    ) -> &::std::option::Option<crate::types::VirtualGatewayClientTlsCertificate> {
+        &self.certificate
+    }
     /// <p>A reference to an object that represents a Transport Layer Security (TLS) validation context.</p>
     pub fn validation(mut self, input: crate::types::VirtualGatewayTlsValidationContext) -> Self {
         self.validation = ::std::option::Option::Some(input);
@@ -109,6 +123,12 @@ impl VirtualGatewayClientPolicyTlsBuilder {
     ) -> Self {
         self.validation = input;
         self
+    }
+    /// <p>A reference to an object that represents a Transport Layer Security (TLS) validation context.</p>
+    pub fn get_validation(
+        &self,
+    ) -> &::std::option::Option<crate::types::VirtualGatewayTlsValidationContext> {
+        &self.validation
     }
     /// Consumes the builder and constructs a [`VirtualGatewayClientPolicyTls`](crate::types::VirtualGatewayClientPolicyTls).
     pub fn build(self) -> crate::types::VirtualGatewayClientPolicyTls {

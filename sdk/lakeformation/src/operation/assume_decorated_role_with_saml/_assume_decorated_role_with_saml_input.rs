@@ -69,6 +69,10 @@ impl AssumeDecoratedRoleWithSamlInputBuilder {
         self.saml_assertion = input;
         self
     }
+    /// <p>A SAML assertion consisting of an assertion statement for the user who needs temporary credentials. This must match the SAML assertion that was issued to IAM. This must be Base64 encoded.</p>
+    pub fn get_saml_assertion(&self) -> &::std::option::Option<::std::string::String> {
+        &self.saml_assertion
+    }
     /// <p>The role that represents an IAM principal whose scope down policy allows it to call credential vending APIs such as <code>GetTemporaryTableCredentials</code>. The caller must also have iam:PassRole permission on this role. </p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -78,6 +82,10 @@ impl AssumeDecoratedRoleWithSamlInputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The role that represents an IAM principal whose scope down policy allows it to call credential vending APIs such as <code>GetTemporaryTableCredentials</code>. The caller must also have iam:PassRole permission on this role. </p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the SAML provider in IAM that describes the IdP.</p>
     pub fn principal_arn(
@@ -95,6 +103,10 @@ impl AssumeDecoratedRoleWithSamlInputBuilder {
         self.principal_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the SAML provider in IAM that describes the IdP.</p>
+    pub fn get_principal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal_arn
+    }
     /// <p>The time period, between 900 and 43,200 seconds, for the timeout of the temporary credentials.</p>
     pub fn duration_seconds(mut self, input: i32) -> Self {
         self.duration_seconds = ::std::option::Option::Some(input);
@@ -104,6 +116,10 @@ impl AssumeDecoratedRoleWithSamlInputBuilder {
     pub fn set_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.duration_seconds = input;
         self
+    }
+    /// <p>The time period, between 900 and 43,200 seconds, for the timeout of the temporary credentials.</p>
+    pub fn get_duration_seconds(&self) -> &::std::option::Option<i32> {
+        &self.duration_seconds
     }
     /// Consumes the builder and constructs a [`AssumeDecoratedRoleWithSamlInput`](crate::operation::assume_decorated_role_with_saml::AssumeDecoratedRoleWithSamlInput).
     pub fn build(

@@ -54,6 +54,10 @@ impl ConfigParameterBuilder {
         self.parameter_key = input;
         self
     }
+    /// <p>The key of the parameter. The options are <code>auto_mv</code>, <code>datestyle</code>, <code>enable_case_sensitivity_identifier</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, <code>search_path</code>, and query monitoring metrics that let you define performance boundaries. For more information about query monitoring rules and available metrics, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless">Query monitoring metrics for Amazon Redshift Serverless</a>.</p>
+    pub fn get_parameter_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_key
+    }
     /// <p>The value of the parameter to set.</p>
     pub fn parameter_value(
         mut self,
@@ -69,6 +73,10 @@ impl ConfigParameterBuilder {
     ) -> Self {
         self.parameter_value = input;
         self
+    }
+    /// <p>The value of the parameter to set.</p>
+    pub fn get_parameter_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_value
     }
     /// Consumes the builder and constructs a [`ConfigParameter`](crate::types::ConfigParameter).
     pub fn build(self) -> crate::types::ConfigParameter {

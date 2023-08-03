@@ -57,6 +57,10 @@ impl UpdateRelationalDatabaseParametersInputBuilder {
         self.relational_database_name = input;
         self
     }
+    /// <p>The name of your database for which to update parameters.</p>
+    pub fn get_relational_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.relational_database_name
+    }
     /// Appends an item to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
@@ -75,6 +79,12 @@ impl UpdateRelationalDatabaseParametersInputBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>The database parameters to update.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseParameter>> {
+        &self.parameters
     }
     /// Consumes the builder and constructs a [`UpdateRelationalDatabaseParametersInput`](crate::operation::update_relational_database_parameters::UpdateRelationalDatabaseParametersInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_relational_database_parameters::UpdateRelationalDatabaseParametersInput, ::aws_smithy_http::operation::error::BuildError>{

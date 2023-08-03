@@ -91,6 +91,12 @@ impl ValidateTemplateOutputBuilder {
         self.parameters = input;
         self
     }
+    /// <p>A list of <code>TemplateParameter</code> structures.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateParameter>> {
+        &self.parameters
+    }
     /// <p>The description found within the template.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -100,6 +106,10 @@ impl ValidateTemplateOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description found within the template.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `capabilities`.
     ///
@@ -122,6 +132,13 @@ impl ValidateTemplateOutputBuilder {
         self.capabilities = input;
         self
     }
+    /// <p>The capabilities found within the template. If your template contains IAM resources, you must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for this parameter when you use the <code>CreateStack</code> or <code>UpdateStack</code> actions with your template; otherwise, those actions return an InsufficientCapabilities error.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates</a>.</p>
+    pub fn get_capabilities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Capability>> {
+        &self.capabilities
+    }
     /// <p>The list of resources that generated the values in the <code>Capabilities</code> response element.</p>
     pub fn capabilities_reason(
         mut self,
@@ -137,6 +154,10 @@ impl ValidateTemplateOutputBuilder {
     ) -> Self {
         self.capabilities_reason = input;
         self
+    }
+    /// <p>The list of resources that generated the values in the <code>Capabilities</code> response element.</p>
+    pub fn get_capabilities_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.capabilities_reason
     }
     /// Appends an item to `declared_transforms`.
     ///
@@ -159,6 +180,12 @@ impl ValidateTemplateOutputBuilder {
     ) -> Self {
         self.declared_transforms = input;
         self
+    }
+    /// <p>A list of the transforms that are declared in the template.</p>
+    pub fn get_declared_transforms(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.declared_transforms
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

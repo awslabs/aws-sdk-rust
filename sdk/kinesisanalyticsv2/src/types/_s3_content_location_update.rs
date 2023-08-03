@@ -62,6 +62,10 @@ impl S3ContentLocationUpdateBuilder {
         self.bucket_arn_update = input;
         self
     }
+    /// <p>The new Amazon Resource Name (ARN) for the S3 bucket containing the application code.</p>
+    pub fn get_bucket_arn_update(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_arn_update
+    }
     /// <p>The new file key for the object containing the application code.</p>
     pub fn file_key_update(
         mut self,
@@ -78,6 +82,10 @@ impl S3ContentLocationUpdateBuilder {
         self.file_key_update = input;
         self
     }
+    /// <p>The new file key for the object containing the application code.</p>
+    pub fn get_file_key_update(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_key_update
+    }
     /// <p>The new version of the object containing the application code.</p>
     pub fn object_version_update(
         mut self,
@@ -93,6 +101,10 @@ impl S3ContentLocationUpdateBuilder {
     ) -> Self {
         self.object_version_update = input;
         self
+    }
+    /// <p>The new version of the object containing the application code.</p>
+    pub fn get_object_version_update(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_version_update
     }
     /// Consumes the builder and constructs a [`S3ContentLocationUpdate`](crate::types::S3ContentLocationUpdate).
     pub fn build(self) -> crate::types::S3ContentLocationUpdate {

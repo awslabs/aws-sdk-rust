@@ -60,6 +60,10 @@ impl ListQueueQuickConnectsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `quick_connect_summary_list`.
     ///
     /// To override the contents of this collection use [`set_quick_connect_summary_list`](Self::set_quick_connect_summary_list).
@@ -78,6 +82,12 @@ impl ListQueueQuickConnectsOutputBuilder {
     ) -> Self {
         self.quick_connect_summary_list = input;
         self
+    }
+    /// <p>Information about the quick connects.</p>
+    pub fn get_quick_connect_summary_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QuickConnectSummary>> {
+        &self.quick_connect_summary_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -50,6 +50,10 @@ impl DeleteAssetModelOutputBuilder {
         self.asset_model_status = input;
         self
     }
+    /// <p>The status of the asset model, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message.</p>
+    pub fn get_asset_model_status(&self) -> &::std::option::Option<crate::types::AssetModelStatus> {
+        &self.asset_model_status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

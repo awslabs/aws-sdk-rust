@@ -43,6 +43,10 @@ impl IssueDetectedBuilder {
         self.character_offsets = input;
         self
     }
+    /// <p>Provides the timestamps that identify when in an audio segment the specified issue occurs.</p>
+    pub fn get_character_offsets(&self) -> &::std::option::Option<crate::types::CharacterOffsets> {
+        &self.character_offsets
+    }
     /// Consumes the builder and constructs a [`IssueDetected`](crate::types::IssueDetected).
     pub fn build(self) -> crate::types::IssueDetected {
         crate::types::IssueDetected {

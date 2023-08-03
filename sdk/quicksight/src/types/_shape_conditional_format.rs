@@ -45,6 +45,12 @@ impl ShapeConditionalFormatBuilder {
         self.background_color = input;
         self
     }
+    /// <p>The conditional formatting for the shape background color of a filled map visual.</p>
+    pub fn get_background_color(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConditionalFormattingColor> {
+        &self.background_color
+    }
     /// Consumes the builder and constructs a [`ShapeConditionalFormat`](crate::types::ShapeConditionalFormat).
     pub fn build(self) -> crate::types::ShapeConditionalFormat {
         crate::types::ShapeConditionalFormat {

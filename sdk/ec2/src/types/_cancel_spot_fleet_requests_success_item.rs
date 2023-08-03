@@ -63,6 +63,12 @@ impl CancelSpotFleetRequestsSuccessItemBuilder {
         self.current_spot_fleet_request_state = input;
         self
     }
+    /// <p>The current state of the Spot Fleet request.</p>
+    pub fn get_current_spot_fleet_request_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchState> {
+        &self.current_spot_fleet_request_state
+    }
     /// <p>The previous state of the Spot Fleet request.</p>
     pub fn previous_spot_fleet_request_state(mut self, input: crate::types::BatchState) -> Self {
         self.previous_spot_fleet_request_state = ::std::option::Option::Some(input);
@@ -75,6 +81,12 @@ impl CancelSpotFleetRequestsSuccessItemBuilder {
     ) -> Self {
         self.previous_spot_fleet_request_state = input;
         self
+    }
+    /// <p>The previous state of the Spot Fleet request.</p>
+    pub fn get_previous_spot_fleet_request_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchState> {
+        &self.previous_spot_fleet_request_state
     }
     /// <p>The ID of the Spot Fleet request.</p>
     pub fn spot_fleet_request_id(
@@ -91,6 +103,10 @@ impl CancelSpotFleetRequestsSuccessItemBuilder {
     ) -> Self {
         self.spot_fleet_request_id = input;
         self
+    }
+    /// <p>The ID of the Spot Fleet request.</p>
+    pub fn get_spot_fleet_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.spot_fleet_request_id
     }
     /// Consumes the builder and constructs a [`CancelSpotFleetRequestsSuccessItem`](crate::types::CancelSpotFleetRequestsSuccessItem).
     pub fn build(self) -> crate::types::CancelSpotFleetRequestsSuccessItem {

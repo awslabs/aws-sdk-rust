@@ -61,6 +61,12 @@ impl ExperienceConfigurationBuilder {
         self.content_source_configuration = input;
         self
     }
+    /// <p>The identifiers of your data sources and FAQs. Or, you can specify that you want to use documents indexed via the <code>BatchPutDocument</code> API. This is the content you want to use for your Amazon Kendra experience.</p>
+    pub fn get_content_source_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContentSourceConfiguration> {
+        &self.content_source_configuration
+    }
     /// <p>The IAM Identity Center field name that contains the identifiers of your users, such as their emails.</p>
     pub fn user_identity_configuration(
         mut self,
@@ -76,6 +82,12 @@ impl ExperienceConfigurationBuilder {
     ) -> Self {
         self.user_identity_configuration = input;
         self
+    }
+    /// <p>The IAM Identity Center field name that contains the identifiers of your users, such as their emails.</p>
+    pub fn get_user_identity_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::UserIdentityConfiguration> {
+        &self.user_identity_configuration
     }
     /// Consumes the builder and constructs a [`ExperienceConfiguration`](crate::types::ExperienceConfiguration).
     pub fn build(self) -> crate::types::ExperienceConfiguration {

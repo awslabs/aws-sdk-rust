@@ -56,6 +56,10 @@ impl ExecutionParameterBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the execution parameter.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The execution parameter type.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl ExecutionParameterBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The execution parameter type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// Appends an item to `default_values`.
     ///
@@ -87,6 +95,12 @@ impl ExecutionParameterBuilder {
     ) -> Self {
         self.default_values = input;
         self
+    }
+    /// <p>The default values for the execution parameter.</p>
+    pub fn get_default_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.default_values
     }
     /// Consumes the builder and constructs a [`ExecutionParameter`](crate::types::ExecutionParameter).
     pub fn build(self) -> crate::types::ExecutionParameter {

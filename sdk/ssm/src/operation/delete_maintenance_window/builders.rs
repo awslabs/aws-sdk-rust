@@ -37,6 +37,13 @@ impl DeleteMaintenanceWindowFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteMaintenanceWindow as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_maintenance_window::builders::DeleteMaintenanceWindowInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,5 +133,9 @@ impl DeleteMaintenanceWindowFluentBuilder {
     pub fn set_window_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_window_id(input);
         self
+    }
+    /// <p>The ID of the maintenance window to delete.</p>
+    pub fn get_window_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_window_id()
     }
 }

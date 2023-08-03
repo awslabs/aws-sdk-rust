@@ -36,6 +36,12 @@ impl DisassociateFacesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateFaces as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::disassociate_faces::builders::DisassociateFacesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl DisassociateFacesFluentBuilder {
         self.inner = self.inner.set_collection_id(input);
         self
     }
+    /// <p>The ID of an existing collection containing the UserID.</p>
+    pub fn get_collection_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_collection_id()
+    }
     /// <p>ID for the existing UserID.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
@@ -141,6 +151,10 @@ impl DisassociateFacesFluentBuilder {
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
         self
+    }
+    /// <p>ID for the existing UserID.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_id()
     }
     /// <p>Idempotent token used to identify the request to <code>DisassociateFaces</code>. If you use the same token with multiple <code>DisassociateFaces</code> requests, the same response is returned. Use ClientRequestToken to prevent the same request from being processed more than once.</p>
     pub fn client_request_token(
@@ -158,6 +172,10 @@ impl DisassociateFacesFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>Idempotent token used to identify the request to <code>DisassociateFaces</code>. If you use the same token with multiple <code>DisassociateFaces</code> requests, the same response is returned. Use ClientRequestToken to prevent the same request from being processed more than once.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// Appends an item to `FaceIds`.
     ///
     /// To override the contents of this collection use [`set_face_ids`](Self::set_face_ids).
@@ -174,5 +192,9 @@ impl DisassociateFacesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_face_ids(input);
         self
+    }
+    /// <p>An array of face IDs to disassociate from the UserID. </p>
+    pub fn get_face_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_face_ids()
     }
 }

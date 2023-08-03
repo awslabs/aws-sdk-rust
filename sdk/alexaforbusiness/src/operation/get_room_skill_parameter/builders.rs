@@ -37,6 +37,13 @@ impl GetRoomSkillParameterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetRoomSkillParameter as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_room_skill_parameter::builders::GetRoomSkillParameterInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl GetRoomSkillParameterFluentBuilder {
         self.inner = self.inner.set_room_arn(input);
         self
     }
+    /// <p>The ARN of the room from which to get the room skill parameter details. </p>
+    pub fn get_room_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_room_arn()
+    }
     /// <p>The ARN of the skill from which to get the room skill parameter details. Required.</p>
     pub fn skill_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.skill_id(input.into());
@@ -136,6 +147,10 @@ impl GetRoomSkillParameterFluentBuilder {
     pub fn set_skill_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_skill_id(input);
         self
+    }
+    /// <p>The ARN of the skill from which to get the room skill parameter details. Required.</p>
+    pub fn get_skill_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_skill_id()
     }
     /// <p>The room skill parameter key for which to get details. Required.</p>
     pub fn parameter_key(
@@ -152,5 +167,9 @@ impl GetRoomSkillParameterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_parameter_key(input);
         self
+    }
+    /// <p>The room skill parameter key for which to get details. Required.</p>
+    pub fn get_parameter_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_parameter_key()
     }
 }

@@ -112,6 +112,10 @@ impl ResourceSpecificResultBuilder {
         self.eval_resource_name = input;
         self
     }
+    /// <p>The name of the simulated resource, in Amazon Resource Name (ARN) format.</p>
+    pub fn get_eval_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.eval_resource_name
+    }
     /// <p>The result of the simulation of the simulated API operation on the resource specified in <code>EvalResourceName</code>.</p>
     pub fn eval_resource_decision(
         mut self,
@@ -127,6 +131,12 @@ impl ResourceSpecificResultBuilder {
     ) -> Self {
         self.eval_resource_decision = input;
         self
+    }
+    /// <p>The result of the simulation of the simulated API operation on the resource specified in <code>EvalResourceName</code>.</p>
+    pub fn get_eval_resource_decision(
+        &self,
+    ) -> &::std::option::Option<crate::types::PolicyEvaluationDecisionType> {
+        &self.eval_resource_decision
     }
     /// Appends an item to `matched_statements`.
     ///
@@ -146,6 +156,12 @@ impl ResourceSpecificResultBuilder {
     ) -> Self {
         self.matched_statements = input;
         self
+    }
+    /// <p>A list of the statements in the input policies that determine the result for this part of the simulation. Remember that even if multiple statements allow the operation on the resource, if <i>any</i> statement denies that operation, then the explicit deny overrides any allow. In addition, the deny statement is the only entry included in the result.</p>
+    pub fn get_matched_statements(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Statement>> {
+        &self.matched_statements
     }
     /// Appends an item to `missing_context_values`.
     ///
@@ -168,6 +184,12 @@ impl ResourceSpecificResultBuilder {
     ) -> Self {
         self.missing_context_values = input;
         self
+    }
+    /// <p>A list of context keys that are required by the included input policies but that were not provided by one of the input parameters. This list is used when a list of ARNs is included in the <code>ResourceArns</code> parameter instead of "*". If you do not specify individual resources, by setting <code>ResourceArns</code> to "*" or by not including the <code>ResourceArns</code> parameter, then any missing context values are instead included under the <code>EvaluationResults</code> section. To discover the context keys used by a set of policies, you can call <code>GetContextKeysForCustomPolicy</code> or <code>GetContextKeysForPrincipalPolicy</code>.</p>
+    pub fn get_missing_context_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.missing_context_values
     }
     /// Adds a key-value pair to `eval_decision_details`.
     ///
@@ -197,6 +219,17 @@ impl ResourceSpecificResultBuilder {
         self.eval_decision_details = input;
         self
     }
+    /// <p>Additional details about the results of the evaluation decision on a single resource. This parameter is returned only for cross-account simulations. This parameter explains how each policy type contributes to the resource-specific evaluation decision.</p>
+    pub fn get_eval_decision_details(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::PolicyEvaluationDecisionType,
+        >,
+    > {
+        &self.eval_decision_details
+    }
     /// <p>Contains information about the effect that a permissions boundary has on a policy simulation when that boundary is applied to an IAM entity.</p>
     pub fn permissions_boundary_decision_detail(
         mut self,
@@ -212,6 +245,12 @@ impl ResourceSpecificResultBuilder {
     ) -> Self {
         self.permissions_boundary_decision_detail = input;
         self
+    }
+    /// <p>Contains information about the effect that a permissions boundary has on a policy simulation when that boundary is applied to an IAM entity.</p>
+    pub fn get_permissions_boundary_decision_detail(
+        &self,
+    ) -> &::std::option::Option<crate::types::PermissionsBoundaryDecisionDetail> {
+        &self.permissions_boundary_decision_detail
     }
     /// Consumes the builder and constructs a [`ResourceSpecificResult`](crate::types::ResourceSpecificResult).
     pub fn build(self) -> crate::types::ResourceSpecificResult {

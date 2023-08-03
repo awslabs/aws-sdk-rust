@@ -48,6 +48,10 @@ impl BlockBuilder {
         self.block_index = input;
         self
     }
+    /// <p>The block index.</p>
+    pub fn get_block_index(&self) -> &::std::option::Option<i32> {
+        &self.block_index
+    }
     /// <p>The block token for the block index.</p>
     pub fn block_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.block_token = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl BlockBuilder {
     pub fn set_block_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.block_token = input;
         self
+    }
+    /// <p>The block token for the block index.</p>
+    pub fn get_block_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.block_token
     }
     /// Consumes the builder and constructs a [`Block`](crate::types::Block).
     pub fn build(self) -> crate::types::Block {

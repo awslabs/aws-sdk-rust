@@ -57,6 +57,10 @@ impl VpcOptionsBuilder {
         self.subnet_ids = input;
         self
     }
+    /// <p>A list of subnet IDs associated with the VPC endpoints for the domain. If your domain uses multiple Availability Zones, you need to provide two subnet IDs, one per zone. Otherwise, provide only one.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
+    }
     /// Appends an item to `security_group_ids`.
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
@@ -78,6 +82,12 @@ impl VpcOptionsBuilder {
     ) -> Self {
         self.security_group_ids = input;
         self
+    }
+    /// <p>The list of security group IDs associated with the VPC endpoints for the domain. If you do not provide a security group ID, OpenSearch Service uses the default security group for the VPC.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
     }
     /// Consumes the builder and constructs a [`VpcOptions`](crate::types::VpcOptions).
     pub fn build(self) -> crate::types::VpcOptions {

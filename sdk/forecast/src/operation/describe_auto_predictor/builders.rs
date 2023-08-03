@@ -36,6 +36,13 @@ impl DescribeAutoPredictorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeAutoPredictor as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_auto_predictor::builders::DescribeAutoPredictorInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +138,9 @@ impl DescribeAutoPredictorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_predictor_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the predictor.</p>
+    pub fn get_predictor_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_predictor_arn()
     }
 }

@@ -53,6 +53,10 @@ impl AttachLoadBalancerTlsCertificateInputBuilder {
         self.load_balancer_name = input;
         self
     }
+    /// <p>The name of the load balancer to which you want to associate the SSL/TLS certificate.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.load_balancer_name
+    }
     /// <p>The name of your SSL/TLS certificate.</p>
     pub fn certificate_name(
         mut self,
@@ -68,6 +72,10 @@ impl AttachLoadBalancerTlsCertificateInputBuilder {
     ) -> Self {
         self.certificate_name = input;
         self
+    }
+    /// <p>The name of your SSL/TLS certificate.</p>
+    pub fn get_certificate_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_name
     }
     /// Consumes the builder and constructs a [`AttachLoadBalancerTlsCertificateInput`](crate::operation::attach_load_balancer_tls_certificate::AttachLoadBalancerTlsCertificateInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::attach_load_balancer_tls_certificate::AttachLoadBalancerTlsCertificateInput, ::aws_smithy_http::operation::error::BuildError>{

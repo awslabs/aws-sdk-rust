@@ -36,6 +36,12 @@ impl GetStreamingImageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetStreamingImage as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_streaming_image::builders::GetStreamingImageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl GetStreamingImageFluentBuilder {
         self.inner = self.inner.set_streaming_image_id(input);
         self
     }
+    /// <p>The streaming image ID.</p>
+    pub fn get_streaming_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_streaming_image_id()
+    }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.studio_id(input.into());
@@ -141,5 +151,9 @@ impl GetStreamingImageFluentBuilder {
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_studio_id(input);
         self
+    }
+    /// <p>The studio ID. </p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_studio_id()
     }
 }

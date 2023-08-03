@@ -36,6 +36,13 @@ impl ListPagesByEngagementFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListPagesByEngagement as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_pages_by_engagement::builders::ListPagesByEngagementInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +150,10 @@ impl ListPagesByEngagementFluentBuilder {
         self.inner = self.inner.set_engagement_id(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
+    pub fn get_engagement_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_engagement_id()
+    }
     /// <p>The pagination token to continue to the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -153,6 +164,10 @@ impl ListPagesByEngagementFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The pagination token to continue to the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of engagements to contact channels to list per page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -162,5 +177,9 @@ impl ListPagesByEngagementFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of engagements to contact channels to list per page of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

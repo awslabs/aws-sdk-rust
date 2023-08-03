@@ -124,6 +124,10 @@ impl MultiplexBuilder {
         self.arn = input;
         self
     }
+    /// The unique arn of the multiplex.
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Appends an item to `availability_zones`.
     ///
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
@@ -146,6 +150,12 @@ impl MultiplexBuilder {
         self.availability_zones = input;
         self
     }
+    /// A list of availability zones for the multiplex.
+    pub fn get_availability_zones(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.availability_zones
+    }
     /// Appends an item to `destinations`.
     ///
     /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
@@ -165,6 +175,12 @@ impl MultiplexBuilder {
         self.destinations = input;
         self
     }
+    /// A list of the multiplex output destinations.
+    pub fn get_destinations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MultiplexOutputDestination>> {
+        &self.destinations
+    }
     /// The unique id of the multiplex.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -174,6 +190,10 @@ impl MultiplexBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// The unique id of the multiplex.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Configuration for a multiplex event.
     pub fn multiplex_settings(mut self, input: crate::types::MultiplexSettings) -> Self {
@@ -188,6 +208,12 @@ impl MultiplexBuilder {
         self.multiplex_settings = input;
         self
     }
+    /// Configuration for a multiplex event.
+    pub fn get_multiplex_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::MultiplexSettings> {
+        &self.multiplex_settings
+    }
     /// The name of the multiplex.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -197,6 +223,10 @@ impl MultiplexBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// The name of the multiplex.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// The number of currently healthy pipelines.
     pub fn pipelines_running_count(mut self, input: i32) -> Self {
@@ -208,6 +238,10 @@ impl MultiplexBuilder {
         self.pipelines_running_count = input;
         self
     }
+    /// The number of currently healthy pipelines.
+    pub fn get_pipelines_running_count(&self) -> &::std::option::Option<i32> {
+        &self.pipelines_running_count
+    }
     /// The number of programs in the multiplex.
     pub fn program_count(mut self, input: i32) -> Self {
         self.program_count = ::std::option::Option::Some(input);
@@ -218,6 +252,10 @@ impl MultiplexBuilder {
         self.program_count = input;
         self
     }
+    /// The number of programs in the multiplex.
+    pub fn get_program_count(&self) -> &::std::option::Option<i32> {
+        &self.program_count
+    }
     /// The current state of the multiplex.
     pub fn state(mut self, input: crate::types::MultiplexState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -227,6 +265,10 @@ impl MultiplexBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::MultiplexState>) -> Self {
         self.state = input;
         self
+    }
+    /// The current state of the multiplex.
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::MultiplexState> {
+        &self.state
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -252,6 +294,14 @@ impl MultiplexBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// A collection of key-value pairs.
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`Multiplex`](crate::types::Multiplex).
     pub fn build(self) -> crate::types::Multiplex {

@@ -72,6 +72,10 @@ impl EbsOptionsBuilder {
         self.ebs_enabled = input;
         self
     }
+    /// <p>Specifies whether EBS-based storage is enabled.</p>
+    pub fn get_ebs_enabled(&self) -> &::std::option::Option<bool> {
+        &self.ebs_enabled
+    }
     /// <p> Specifies the volume type for EBS-based storage.</p>
     pub fn volume_type(mut self, input: crate::types::VolumeType) -> Self {
         self.volume_type = ::std::option::Option::Some(input);
@@ -85,6 +89,10 @@ impl EbsOptionsBuilder {
         self.volume_type = input;
         self
     }
+    /// <p> Specifies the volume type for EBS-based storage.</p>
+    pub fn get_volume_type(&self) -> &::std::option::Option<crate::types::VolumeType> {
+        &self.volume_type
+    }
     /// <p> Integer to specify the size of an EBS volume.</p>
     pub fn volume_size(mut self, input: i32) -> Self {
         self.volume_size = ::std::option::Option::Some(input);
@@ -94,6 +102,10 @@ impl EbsOptionsBuilder {
     pub fn set_volume_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.volume_size = input;
         self
+    }
+    /// <p> Integer to specify the size of an EBS volume.</p>
+    pub fn get_volume_size(&self) -> &::std::option::Option<i32> {
+        &self.volume_size
     }
     /// <p>Specifies the IOPS for Provisioned IOPS And GP3 EBS volume (SSD).</p>
     pub fn iops(mut self, input: i32) -> Self {
@@ -105,6 +117,10 @@ impl EbsOptionsBuilder {
         self.iops = input;
         self
     }
+    /// <p>Specifies the IOPS for Provisioned IOPS And GP3 EBS volume (SSD).</p>
+    pub fn get_iops(&self) -> &::std::option::Option<i32> {
+        &self.iops
+    }
     /// <p>Specifies the Throughput for GP3 EBS volume (SSD).</p>
     pub fn throughput(mut self, input: i32) -> Self {
         self.throughput = ::std::option::Option::Some(input);
@@ -114,6 +130,10 @@ impl EbsOptionsBuilder {
     pub fn set_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
         self.throughput = input;
         self
+    }
+    /// <p>Specifies the Throughput for GP3 EBS volume (SSD).</p>
+    pub fn get_throughput(&self) -> &::std::option::Option<i32> {
+        &self.throughput
     }
     /// Consumes the builder and constructs a [`EbsOptions`](crate::types::EbsOptions).
     pub fn build(self) -> crate::types::EbsOptions {

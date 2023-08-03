@@ -56,6 +56,10 @@ impl FailedCustomVocabularyItemBuilder {
         self.item_id = input;
         self
     }
+    /// <p>The unique item identifer for the failed custom vocabulary item from the custom vocabulary list.</p>
+    pub fn get_item_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.item_id
+    }
     /// <p>The error message for the failed custom vocabulary item from the custom vocabulary list.</p>
     pub fn error_message(
         mut self,
@@ -72,6 +76,10 @@ impl FailedCustomVocabularyItemBuilder {
         self.error_message = input;
         self
     }
+    /// <p>The error message for the failed custom vocabulary item from the custom vocabulary list.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// <p>The unique error code for the failed custom vocabulary item from the custom vocabulary list.</p>
     pub fn error_code(mut self, input: crate::types::ErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl FailedCustomVocabularyItemBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The unique error code for the failed custom vocabulary item from the custom vocabulary list.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
+        &self.error_code
     }
     /// Consumes the builder and constructs a [`FailedCustomVocabularyItem`](crate::types::FailedCustomVocabularyItem).
     pub fn build(self) -> crate::types::FailedCustomVocabularyItem {

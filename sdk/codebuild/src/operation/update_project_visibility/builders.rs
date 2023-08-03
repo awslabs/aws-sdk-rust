@@ -48,6 +48,13 @@ impl UpdateProjectVisibilityFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateProjectVisibility as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_project_visibility::builders::UpdateProjectVisibilityInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +145,10 @@ impl UpdateProjectVisibilityFluentBuilder {
         self.inner = self.inner.set_project_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the build project.</p>
+    pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_arn()
+    }
     /// <p>Specifies the visibility of the project's builds. Possible values are:</p>
     /// <dl>
     /// <dt>
@@ -179,6 +190,26 @@ impl UpdateProjectVisibilityFluentBuilder {
         self.inner = self.inner.set_project_visibility(input);
         self
     }
+    /// <p>Specifies the visibility of the project's builds. Possible values are:</p>
+    /// <dl>
+    /// <dt>
+    /// PUBLIC_READ
+    /// </dt>
+    /// <dd>
+    /// <p>The project builds are visible to the public.</p>
+    /// </dd>
+    /// <dt>
+    /// PRIVATE
+    /// </dt>
+    /// <dd>
+    /// <p>The project builds are not visible to the public.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_project_visibility(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProjectVisibilityType> {
+        self.inner.get_project_visibility()
+    }
     /// <p>The ARN of the IAM role that enables CodeBuild to access the CloudWatch Logs and Amazon S3 artifacts for the project's builds.</p>
     pub fn resource_access_role(
         mut self,
@@ -194,5 +225,9 @@ impl UpdateProjectVisibilityFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_access_role(input);
         self
+    }
+    /// <p>The ARN of the IAM role that enables CodeBuild to access the CloudWatch Logs and Amazon S3 artifacts for the project's builds.</p>
+    pub fn get_resource_access_role(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_access_role()
     }
 }

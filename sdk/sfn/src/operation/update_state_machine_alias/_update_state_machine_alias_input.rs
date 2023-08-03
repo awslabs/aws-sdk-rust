@@ -76,6 +76,10 @@ impl UpdateStateMachineAliasInputBuilder {
         self.state_machine_alias_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the state machine alias.</p>
+    pub fn get_state_machine_alias_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_machine_alias_arn
+    }
     /// <p>A description of the state machine alias.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -85,6 +89,10 @@ impl UpdateStateMachineAliasInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the state machine alias.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `routing_configuration`.
     ///
@@ -109,6 +117,13 @@ impl UpdateStateMachineAliasInputBuilder {
     ) -> Self {
         self.routing_configuration = input;
         self
+    }
+    /// <p>The routing configuration of the state machine alias.</p>
+    /// <p>An array of <code>RoutingConfig</code> objects that specifies up to two state machine versions that the alias starts executions for.</p>
+    pub fn get_routing_configuration(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingConfigurationListItem>> {
+        &self.routing_configuration
     }
     /// Consumes the builder and constructs a [`UpdateStateMachineAliasInput`](crate::operation::update_state_machine_alias::UpdateStateMachineAliasInput).
     pub fn build(

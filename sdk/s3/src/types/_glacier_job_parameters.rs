@@ -40,6 +40,10 @@ impl GlacierJobParametersBuilder {
         self.tier = input;
         self
     }
+    /// <p>Retrieval tier at which the restore will be processed.</p>
+    pub fn get_tier(&self) -> &::std::option::Option<crate::types::Tier> {
+        &self.tier
+    }
     /// Consumes the builder and constructs a [`GlacierJobParameters`](crate::types::GlacierJobParameters).
     pub fn build(self) -> crate::types::GlacierJobParameters {
         crate::types::GlacierJobParameters { tier: self.tier }

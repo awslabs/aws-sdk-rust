@@ -48,6 +48,10 @@ impl LastErrorBuilder {
         self.message = input;
         self
     }
+    /// <p>The error message for the VPC endpoint error.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The error code for the VPC endpoint error.</p>
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl LastErrorBuilder {
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code = input;
         self
+    }
+    /// <p>The error code for the VPC endpoint error.</p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
     }
     /// Consumes the builder and constructs a [`LastError`](crate::types::LastError).
     pub fn build(self) -> crate::types::LastError {

@@ -56,6 +56,12 @@ impl AliasBuilder {
         self.alias_name = input;
         self
     }
+    /// <p>A friendly name that you can use to refer to a key. The value must begin with <code>alias/</code>.</p> <important>
+    /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
+    /// </important>
+    pub fn get_alias_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias_name
+    }
     /// <p>The <code>KeyARN</code> of the key associated with the alias.</p>
     pub fn key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_arn = ::std::option::Option::Some(input.into());
@@ -65,6 +71,10 @@ impl AliasBuilder {
     pub fn set_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_arn = input;
         self
+    }
+    /// <p>The <code>KeyARN</code> of the key associated with the alias.</p>
+    pub fn get_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_arn
     }
     /// Consumes the builder and constructs a [`Alias`](crate::types::Alias).
     pub fn build(self) -> crate::types::Alias {

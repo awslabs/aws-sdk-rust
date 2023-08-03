@@ -36,6 +36,10 @@ impl StartPipelineReprocessingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartPipelineReprocessing as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_pipeline_reprocessing::builders::StartPipelineReprocessingInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl StartPipelineReprocessingFluentBuilder {
         self.inner = self.inner.set_pipeline_name(input);
         self
     }
+    /// <p>The name of the pipeline on which to start reprocessing.</p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pipeline_name()
+    }
     /// <p>The start time (inclusive) of raw message data that is reprocessed.</p>
     /// <p>If you specify a value for the <code>startTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -146,6 +154,11 @@ impl StartPipelineReprocessingFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
+    }
+    /// <p>The start time (inclusive) of raw message data that is reprocessed.</p>
+    /// <p>If you specify a value for the <code>startTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
     }
     /// <p>The end time (exclusive) of raw message data that is reprocessed.</p>
     /// <p>If you specify a value for the <code>endTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
@@ -162,6 +175,11 @@ impl StartPipelineReprocessingFluentBuilder {
         self.inner = self.inner.set_end_time(input);
         self
     }
+    /// <p>The end time (exclusive) of raw message data that is reprocessed.</p>
+    /// <p>If you specify a value for the <code>endTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time()
+    }
     /// <p>Specifies one or more sets of channel messages that you want to reprocess.</p>
     /// <p>If you use the <code>channelMessages</code> object, you must not specify a value for <code>startTime</code> and <code>endTime</code>.</p>
     pub fn channel_messages(mut self, input: crate::types::ChannelMessages) -> Self {
@@ -176,5 +194,10 @@ impl StartPipelineReprocessingFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_channel_messages(input);
         self
+    }
+    /// <p>Specifies one or more sets of channel messages that you want to reprocess.</p>
+    /// <p>If you use the <code>channelMessages</code> object, you must not specify a value for <code>startTime</code> and <code>endTime</code>.</p>
+    pub fn get_channel_messages(&self) -> &::std::option::Option<crate::types::ChannelMessages> {
+        self.inner.get_channel_messages()
     }
 }

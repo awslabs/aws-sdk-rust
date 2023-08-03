@@ -66,6 +66,10 @@ impl ListDevicesForWirelessDeviceImportTaskOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to use to get the next set of results, or <code>null</code> if there are no additional results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The name of the Sidewalk destination that describes the IoT rule to route messages received from devices in an import task that are onboarded to AWS IoT Wireless.</p>
     pub fn destination_name(
         mut self,
@@ -81,6 +85,10 @@ impl ListDevicesForWirelessDeviceImportTaskOutputBuilder {
     ) -> Self {
         self.destination_name = input;
         self
+    }
+    /// <p>The name of the Sidewalk destination that describes the IoT rule to route messages received from devices in an import task that are onboarded to AWS IoT Wireless.</p>
+    pub fn get_destination_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_name
     }
     /// Appends an item to `imported_wireless_device_list`.
     ///
@@ -103,6 +111,12 @@ impl ListDevicesForWirelessDeviceImportTaskOutputBuilder {
     ) -> Self {
         self.imported_wireless_device_list = input;
         self
+    }
+    /// <p>List of wireless devices in an import task and their onboarding status.</p>
+    pub fn get_imported_wireless_device_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportedWirelessDevice>> {
+        &self.imported_wireless_device_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

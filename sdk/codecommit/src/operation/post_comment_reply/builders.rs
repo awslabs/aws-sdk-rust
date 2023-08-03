@@ -36,6 +36,12 @@ impl PostCommentReplyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PostCommentReply as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::post_comment_reply::builders::PostCommentReplyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl PostCommentReplyFluentBuilder {
         self.inner = self.inner.set_in_reply_to(input);
         self
     }
+    /// <p>The system-generated ID of the comment to which you want to reply. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
+    pub fn get_in_reply_to(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_in_reply_to()
+    }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
     pub fn client_request_token(
         mut self,
@@ -142,6 +152,10 @@ impl PostCommentReplyFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// <p>The contents of your reply to a comment.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.content(input.into());
@@ -151,5 +165,9 @@ impl PostCommentReplyFluentBuilder {
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_content(input);
         self
+    }
+    /// <p>The contents of your reply to a comment.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_content()
     }
 }

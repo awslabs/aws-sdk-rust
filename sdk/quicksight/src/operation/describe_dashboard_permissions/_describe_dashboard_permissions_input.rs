@@ -53,6 +53,10 @@ impl DescribeDashboardPermissionsInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing permissions for.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The ID for the dashboard, also added to the IAM policy.</p>
     pub fn dashboard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dashboard_id = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl DescribeDashboardPermissionsInputBuilder {
     pub fn set_dashboard_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dashboard_id = input;
         self
+    }
+    /// <p>The ID for the dashboard, also added to the IAM policy.</p>
+    pub fn get_dashboard_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dashboard_id
     }
     /// Consumes the builder and constructs a [`DescribeDashboardPermissionsInput`](crate::operation::describe_dashboard_permissions::DescribeDashboardPermissionsInput).
     pub fn build(

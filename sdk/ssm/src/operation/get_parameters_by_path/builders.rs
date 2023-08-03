@@ -37,6 +37,12 @@ impl GetParametersByPathFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetParametersByPath as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_parameters_by_path::builders::GetParametersByPathInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +144,10 @@ impl GetParametersByPathFluentBuilder {
         self.inner = self.inner.set_path(input);
         self
     }
+    /// <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/). The hierarchy is the parameter name except the last part of the parameter. For the API call to succeed, the last part of the parameter name can't be in the path. A parameter name hierarchy can have a maximum of 15 levels. Here is an example of a hierarchy: <code>/Finance/Prod/IAD/WinServ2016/license33 </code> </p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_path()
+    }
     /// <p>Retrieve all parameters within a hierarchy.</p> <important>
     /// <p>If a user has access to a path, then the user can access all levels of that path. For example, if a user has permission to access path <code>/a</code>, then the user can also access <code>/a/b</code>. Even if a user has explicitly been denied access in IAM for parameter <code>/a/b</code>, they can still call the GetParametersByPath API operation recursively for <code>/a</code> and view <code>/a/b</code>.</p>
     /// </important>
@@ -151,6 +161,12 @@ impl GetParametersByPathFluentBuilder {
     pub fn set_recursive(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_recursive(input);
         self
+    }
+    /// <p>Retrieve all parameters within a hierarchy.</p> <important>
+    /// <p>If a user has access to a path, then the user can access all levels of that path. For example, if a user has permission to access path <code>/a</code>, then the user can also access <code>/a/b</code>. Even if a user has explicitly been denied access in IAM for parameter <code>/a/b</code>, they can still call the GetParametersByPath API operation recursively for <code>/a</code> and view <code>/a/b</code>.</p>
+    /// </important>
+    pub fn get_recursive(&self) -> &::std::option::Option<bool> {
+        self.inner.get_recursive()
     }
     /// Appends an item to `ParameterFilters`.
     ///
@@ -175,6 +191,15 @@ impl GetParametersByPathFluentBuilder {
         self.inner = self.inner.set_parameter_filters(input);
         self
     }
+    /// <p>Filters to limit the request results.</p> <note>
+    /// <p>The following <code>Key</code> values are supported for <code>GetParametersByPath</code>: <code>Type</code>, <code>KeyId</code>, and <code>Label</code>.</p>
+    /// <p>The following <code>Key</code> values aren't supported for <code>GetParametersByPath</code>: <code>tag</code>, <code>DataType</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p>
+    /// </note>
+    pub fn get_parameter_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterStringFilter>> {
+        self.inner.get_parameter_filters()
+    }
     /// <p>Retrieve all parameters in a hierarchy with their value decrypted.</p>
     pub fn with_decryption(mut self, input: bool) -> Self {
         self.inner = self.inner.with_decryption(input);
@@ -184,6 +209,10 @@ impl GetParametersByPathFluentBuilder {
     pub fn set_with_decryption(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_with_decryption(input);
         self
+    }
+    /// <p>Retrieve all parameters in a hierarchy with their value decrypted.</p>
+    pub fn get_with_decryption(&self) -> &::std::option::Option<bool> {
+        self.inner.get_with_decryption()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -195,6 +224,10 @@ impl GetParametersByPathFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -204,5 +237,9 @@ impl GetParametersByPathFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

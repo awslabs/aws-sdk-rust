@@ -67,6 +67,10 @@ impl TagScopeTermBuilder {
         self.comparator = input;
         self
     }
+    /// <p>The operator to use in the condition. Valid values are EQ (equals) or NE (not equals).</p>
+    pub fn get_comparator(&self) -> &::std::option::Option<crate::types::JobComparator> {
+        &self.comparator
+    }
     /// <p>The object property to use in the condition. The only valid value is TAG.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
@@ -76,6 +80,10 @@ impl TagScopeTermBuilder {
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
+    }
+    /// <p>The object property to use in the condition. The only valid value is TAG.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
     }
     /// Appends an item to `tag_values`.
     ///
@@ -96,6 +104,12 @@ impl TagScopeTermBuilder {
         self.tag_values = input;
         self
     }
+    /// <p>The tag keys or tag key and value pairs to use in the condition. To specify only tag keys in a condition, specify the keys in this array and set the value for each associated tag value to an empty string.</p>
+    pub fn get_tag_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagValuePair>> {
+        &self.tag_values
+    }
     /// <p>The type of object to apply the condition to.</p>
     pub fn target(mut self, input: crate::types::TagTarget) -> Self {
         self.target = ::std::option::Option::Some(input);
@@ -105,6 +119,10 @@ impl TagScopeTermBuilder {
     pub fn set_target(mut self, input: ::std::option::Option<crate::types::TagTarget>) -> Self {
         self.target = input;
         self
+    }
+    /// <p>The type of object to apply the condition to.</p>
+    pub fn get_target(&self) -> &::std::option::Option<crate::types::TagTarget> {
+        &self.target
     }
     /// Consumes the builder and constructs a [`TagScopeTerm`](crate::types::TagScopeTerm).
     pub fn build(self) -> crate::types::TagScopeTerm {

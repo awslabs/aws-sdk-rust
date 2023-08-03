@@ -51,6 +51,12 @@ impl FilterOperationTargetVisualsConfigurationBuilder {
         self.same_sheet_target_visual_configuration = input;
         self
     }
+    /// <p>The configuration of the same-sheet target visuals that you want to be filtered.</p>
+    pub fn get_same_sheet_target_visual_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SameSheetTargetVisualConfiguration> {
+        &self.same_sheet_target_visual_configuration
+    }
     /// Consumes the builder and constructs a [`FilterOperationTargetVisualsConfiguration`](crate::types::FilterOperationTargetVisualsConfiguration).
     pub fn build(self) -> crate::types::FilterOperationTargetVisualsConfiguration {
         crate::types::FilterOperationTargetVisualsConfiguration {

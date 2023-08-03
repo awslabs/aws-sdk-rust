@@ -47,6 +47,13 @@ impl RestoreTableFromBackupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RestoreTableFromBackup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::restore_table_from_backup::builders::RestoreTableFromBackupInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +150,10 @@ impl RestoreTableFromBackupFluentBuilder {
         self.inner = self.inner.set_target_table_name(input);
         self
     }
+    /// <p>The name of the new table to which the backup must be restored.</p>
+    pub fn get_target_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_table_name()
+    }
     /// <p>The Amazon Resource Name (ARN) associated with the backup.</p>
     pub fn backup_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backup_arn(input.into());
@@ -152,6 +163,10 @@ impl RestoreTableFromBackupFluentBuilder {
     pub fn set_backup_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backup_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) associated with the backup.</p>
+    pub fn get_backup_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_backup_arn()
     }
     /// <p>The billing mode of the restored table.</p>
     pub fn billing_mode_override(mut self, input: crate::types::BillingMode) -> Self {
@@ -165,6 +180,10 @@ impl RestoreTableFromBackupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_billing_mode_override(input);
         self
+    }
+    /// <p>The billing mode of the restored table.</p>
+    pub fn get_billing_mode_override(&self) -> &::std::option::Option<crate::types::BillingMode> {
+        self.inner.get_billing_mode_override()
     }
     /// Appends an item to `GlobalSecondaryIndexOverride`.
     ///
@@ -186,6 +205,12 @@ impl RestoreTableFromBackupFluentBuilder {
         self.inner = self.inner.set_global_secondary_index_override(input);
         self
     }
+    /// <p>List of global secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
+    pub fn get_global_secondary_index_override(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndex>> {
+        self.inner.get_global_secondary_index_override()
+    }
     /// Appends an item to `LocalSecondaryIndexOverride`.
     ///
     /// To override the contents of this collection use [`set_local_secondary_index_override`](Self::set_local_secondary_index_override).
@@ -206,6 +231,12 @@ impl RestoreTableFromBackupFluentBuilder {
         self.inner = self.inner.set_local_secondary_index_override(input);
         self
     }
+    /// <p>List of local secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
+    pub fn get_local_secondary_index_override(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LocalSecondaryIndex>> {
+        self.inner.get_local_secondary_index_override()
+    }
     /// <p>Provisioned throughput settings for the restored table.</p>
     pub fn provisioned_throughput_override(
         mut self,
@@ -222,6 +253,12 @@ impl RestoreTableFromBackupFluentBuilder {
         self.inner = self.inner.set_provisioned_throughput_override(input);
         self
     }
+    /// <p>Provisioned throughput settings for the restored table.</p>
+    pub fn get_provisioned_throughput_override(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProvisionedThroughput> {
+        self.inner.get_provisioned_throughput_override()
+    }
     /// <p>The new server-side encryption settings for the restored table.</p>
     pub fn sse_specification_override(mut self, input: crate::types::SseSpecification) -> Self {
         self.inner = self.inner.sse_specification_override(input);
@@ -234,5 +271,11 @@ impl RestoreTableFromBackupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sse_specification_override(input);
         self
+    }
+    /// <p>The new server-side encryption settings for the restored table.</p>
+    pub fn get_sse_specification_override(
+        &self,
+    ) -> &::std::option::Option<crate::types::SseSpecification> {
+        self.inner.get_sse_specification_override()
     }
 }

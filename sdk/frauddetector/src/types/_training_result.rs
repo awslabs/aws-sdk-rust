@@ -64,6 +64,12 @@ impl TrainingResultBuilder {
         self.data_validation_metrics = input;
         self
     }
+    /// <p>The validation metrics.</p>
+    pub fn get_data_validation_metrics(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataValidationMetrics> {
+        &self.data_validation_metrics
+    }
     /// <p>The training metric details.</p>
     pub fn training_metrics(mut self, input: crate::types::TrainingMetrics) -> Self {
         self.training_metrics = ::std::option::Option::Some(input);
@@ -76,6 +82,10 @@ impl TrainingResultBuilder {
     ) -> Self {
         self.training_metrics = input;
         self
+    }
+    /// <p>The training metric details.</p>
+    pub fn get_training_metrics(&self) -> &::std::option::Option<crate::types::TrainingMetrics> {
+        &self.training_metrics
     }
     /// <p>The variable importance metrics.</p>
     pub fn variable_importance_metrics(
@@ -92,6 +102,12 @@ impl TrainingResultBuilder {
     ) -> Self {
         self.variable_importance_metrics = input;
         self
+    }
+    /// <p>The variable importance metrics.</p>
+    pub fn get_variable_importance_metrics(
+        &self,
+    ) -> &::std::option::Option<crate::types::VariableImportanceMetrics> {
+        &self.variable_importance_metrics
     }
     /// Consumes the builder and constructs a [`TrainingResult`](crate::types::TrainingResult).
     pub fn build(self) -> crate::types::TrainingResult {

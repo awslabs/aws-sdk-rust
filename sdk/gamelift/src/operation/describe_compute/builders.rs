@@ -36,6 +36,12 @@ impl DescribeComputeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeCompute as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_compute::builders::DescribeComputeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DescribeComputeFluentBuilder {
         self.inner = self.inner.set_fleet_id(input);
         self
     }
+    /// <p>A unique identifier for the fleet the compute is registered to.</p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fleet_id()
+    }
     /// <p>A descriptive label that is associated with the compute resource registered to your fleet.</p>
     pub fn compute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.compute_name(input.into());
@@ -135,5 +145,9 @@ impl DescribeComputeFluentBuilder {
     pub fn set_compute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_compute_name(input);
         self
+    }
+    /// <p>A descriptive label that is associated with the compute resource registered to your fleet.</p>
+    pub fn get_compute_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_compute_name()
     }
 }

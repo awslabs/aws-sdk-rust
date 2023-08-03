@@ -41,6 +41,10 @@ impl DescribeIdentityInputBuilder {
         self.identity_id = input;
         self
     }
+    /// <p>A unique identifier in the format REGION:GUID.</p>
+    pub fn get_identity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_id
+    }
     /// Consumes the builder and constructs a [`DescribeIdentityInput`](crate::operation::describe_identity::DescribeIdentityInput).
     pub fn build(
         self,

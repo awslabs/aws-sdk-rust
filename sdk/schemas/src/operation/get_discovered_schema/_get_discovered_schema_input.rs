@@ -58,6 +58,10 @@ impl GetDiscoveredSchemaInputBuilder {
         self.events = input;
         self
     }
+    /// <p>An array of strings where each string is a JSON event. These are the events that were used to generate the schema. The array includes a single type of event and has a maximum size of 10 events.</p>
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.events
+    }
     /// <p>The type of event.</p>
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -67,6 +71,10 @@ impl GetDiscoveredSchemaInputBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of event.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`GetDiscoveredSchemaInput`](crate::operation::get_discovered_schema::GetDiscoveredSchemaInput).
     pub fn build(

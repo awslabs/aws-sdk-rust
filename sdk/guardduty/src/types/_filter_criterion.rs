@@ -51,6 +51,10 @@ impl FilterCriterionBuilder {
         self.criterion_key = input;
         self
     }
+    /// <p>An enum value representing possible scan properties to match with given scan entries.</p>
+    pub fn get_criterion_key(&self) -> &::std::option::Option<crate::types::CriterionKey> {
+        &self.criterion_key
+    }
     /// <p>Contains information about the condition.</p>
     pub fn filter_condition(mut self, input: crate::types::FilterCondition) -> Self {
         self.filter_condition = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl FilterCriterionBuilder {
     ) -> Self {
         self.filter_condition = input;
         self
+    }
+    /// <p>Contains information about the condition.</p>
+    pub fn get_filter_condition(&self) -> &::std::option::Option<crate::types::FilterCondition> {
+        &self.filter_condition
     }
     /// Consumes the builder and constructs a [`FilterCriterion`](crate::types::FilterCriterion).
     pub fn build(self) -> crate::types::FilterCriterion {

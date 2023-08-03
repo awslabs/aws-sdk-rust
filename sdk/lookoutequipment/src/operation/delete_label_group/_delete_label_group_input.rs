@@ -46,6 +46,10 @@ impl DeleteLabelGroupInputBuilder {
         self.label_group_name = input;
         self
     }
+    /// <p> The name of the label group that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+    pub fn get_label_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label_group_name
+    }
     /// Consumes the builder and constructs a [`DeleteLabelGroupInput`](crate::operation::delete_label_group::DeleteLabelGroupInput).
     pub fn build(
         self,

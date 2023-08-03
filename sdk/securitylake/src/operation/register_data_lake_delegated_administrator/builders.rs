@@ -36,6 +36,10 @@ impl RegisterDataLakeDelegatedAdministratorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RegisterDataLakeDelegatedAdministrator as a reference.
+    pub fn as_input(&self) -> &crate::operation::register_data_lake_delegated_administrator::builders::RegisterDataLakeDelegatedAdministratorInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -99,5 +103,9 @@ impl RegisterDataLakeDelegatedAdministratorFluentBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
+    }
+    /// <p>The Amazon Web Services account ID of the Security Lake delegated administrator.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
     }
 }

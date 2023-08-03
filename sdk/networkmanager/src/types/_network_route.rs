@@ -79,6 +79,10 @@ impl NetworkRouteBuilder {
         self.destination_cidr_block = input;
         self
     }
+    /// <p>A unique identifier for the route, such as a CIDR block.</p>
+    pub fn get_destination_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_cidr_block
+    }
     /// Appends an item to `destinations`.
     ///
     /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
@@ -98,6 +102,12 @@ impl NetworkRouteBuilder {
         self.destinations = input;
         self
     }
+    /// <p>The destinations.</p>
+    pub fn get_destinations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkRouteDestination>> {
+        &self.destinations
+    }
     /// <p>The ID of the prefix list.</p>
     pub fn prefix_list_id(
         mut self,
@@ -114,6 +124,10 @@ impl NetworkRouteBuilder {
         self.prefix_list_id = input;
         self
     }
+    /// <p>The ID of the prefix list.</p>
+    pub fn get_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix_list_id
+    }
     /// <p>The route state. The possible values are <code>active</code> and <code>blackhole</code>.</p>
     pub fn state(mut self, input: crate::types::RouteState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -124,6 +138,10 @@ impl NetworkRouteBuilder {
         self.state = input;
         self
     }
+    /// <p>The route state. The possible values are <code>active</code> and <code>blackhole</code>.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::RouteState> {
+        &self.state
+    }
     /// <p>The route type. The possible values are <code>propagated</code> and <code>static</code>.</p>
     pub fn r#type(mut self, input: crate::types::RouteType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -133,6 +151,10 @@ impl NetworkRouteBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RouteType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The route type. The possible values are <code>propagated</code> and <code>static</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::RouteType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`NetworkRoute`](crate::types::NetworkRoute).
     pub fn build(self) -> crate::types::NetworkRoute {

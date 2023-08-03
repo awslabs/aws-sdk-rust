@@ -37,6 +37,10 @@ impl CreateAppFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateApp as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_app::builders::CreateAppInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl CreateAppFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name for the application.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The optional description for an app.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -129,6 +137,10 @@ impl CreateAppFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The optional description for an app.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_arn(input.into());
@@ -138,6 +150,10 @@ impl CreateAppFluentBuilder {
     pub fn set_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_arn()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -162,6 +178,14 @@ impl CreateAppFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -171,6 +195,10 @@ impl CreateAppFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
     pub fn assessment_schedule(mut self, input: crate::types::AppAssessmentScheduleType) -> Self {
@@ -184,5 +212,11 @@ impl CreateAppFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_assessment_schedule(input);
         self
+    }
+    /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
+    pub fn get_assessment_schedule(
+        &self,
+    ) -> &::std::option::Option<crate::types::AppAssessmentScheduleType> {
+        self.inner.get_assessment_schedule()
     }
 }

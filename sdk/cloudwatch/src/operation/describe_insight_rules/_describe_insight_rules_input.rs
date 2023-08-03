@@ -48,6 +48,10 @@ impl DescribeInsightRulesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Include this value, if it was returned by the previous operation, to get the next set of rules.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return in one operation. If you omit this parameter, the default of 500 is used.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl DescribeInsightRulesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return in one operation. If you omit this parameter, the default of 500 is used.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeInsightRulesInput`](crate::operation::describe_insight_rules::DescribeInsightRulesInput).
     pub fn build(

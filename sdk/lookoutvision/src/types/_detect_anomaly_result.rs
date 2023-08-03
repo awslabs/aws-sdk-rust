@@ -80,6 +80,10 @@ impl DetectAnomalyResultBuilder {
         self.source = input;
         self
     }
+    /// <p>The source of the image that was analyzed. <code>direct</code> means that the images was supplied from the local computer. No other values are supported.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::ImageSource> {
+        &self.source
+    }
     /// <p>True if Amazon Lookout for Vision classifies the image as containing an anomaly, otherwise false.</p>
     pub fn is_anomalous(mut self, input: bool) -> Self {
         self.is_anomalous = ::std::option::Option::Some(input);
@@ -90,6 +94,10 @@ impl DetectAnomalyResultBuilder {
         self.is_anomalous = input;
         self
     }
+    /// <p>True if Amazon Lookout for Vision classifies the image as containing an anomaly, otherwise false.</p>
+    pub fn get_is_anomalous(&self) -> &::std::option::Option<bool> {
+        &self.is_anomalous
+    }
     /// <p>The confidence that Lookout for Vision has in the accuracy of the classification in <code>IsAnomalous</code>.</p>
     pub fn confidence(mut self, input: f32) -> Self {
         self.confidence = ::std::option::Option::Some(input);
@@ -99,6 +107,10 @@ impl DetectAnomalyResultBuilder {
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.confidence = input;
         self
+    }
+    /// <p>The confidence that Lookout for Vision has in the accuracy of the classification in <code>IsAnomalous</code>.</p>
+    pub fn get_confidence(&self) -> &::std::option::Option<f32> {
+        &self.confidence
     }
     /// Appends an item to `anomalies`.
     ///
@@ -125,6 +137,13 @@ impl DetectAnomalyResultBuilder {
         self.anomalies = input;
         self
     }
+    /// <p>If the model is an image segmentation model, <code>Anomalies</code> contains a list of anomaly types found in the image. There is one entry for each type of anomaly found (even if multiple instances of an anomaly type exist on the image). The first element in the list is always an anomaly type representing the image background ('background') and shouldn't be considered an anomaly. Amazon Lookout for Vision automatically add the background anomaly type to the response, and you don't need to declare a background anomaly type in your dataset.</p>
+    /// <p>If the list has one entry ('background'), no anomalies were found on the image.</p>
+    /// <p></p>
+    /// <p>An image classification model doesn't return an <code>Anomalies</code> list. </p>
+    pub fn get_anomalies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Anomaly>> {
+        &self.anomalies
+    }
     /// <p>If the model is an image segmentation model, <code>AnomalyMask</code> contains pixel masks that covers all anomaly types found on the image. Each anomaly type has a different mask color. To map a color to an anomaly type, see the <code>color</code> field of the <code>PixelAnomaly</code> object.</p>
     /// <p>An image classification model doesn't return an <code>Anomalies</code> list. </p>
     pub fn anomaly_mask(mut self, input: ::aws_smithy_types::Blob) -> Self {
@@ -139,6 +158,11 @@ impl DetectAnomalyResultBuilder {
     ) -> Self {
         self.anomaly_mask = input;
         self
+    }
+    /// <p>If the model is an image segmentation model, <code>AnomalyMask</code> contains pixel masks that covers all anomaly types found on the image. Each anomaly type has a different mask color. To map a color to an anomaly type, see the <code>color</code> field of the <code>PixelAnomaly</code> object.</p>
+    /// <p>An image classification model doesn't return an <code>Anomalies</code> list. </p>
+    pub fn get_anomaly_mask(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.anomaly_mask
     }
     /// Consumes the builder and constructs a [`DetectAnomalyResult`](crate::types::DetectAnomalyResult).
     pub fn build(self) -> crate::types::DetectAnomalyResult {

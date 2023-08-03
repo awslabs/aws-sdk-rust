@@ -36,6 +36,10 @@ impl UpdateResourceEventConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateResourceEventConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_resource_event_configuration::builders::UpdateResourceEventConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl UpdateResourceEventConfigurationFluentBuilder {
         self.inner = self.inner.set_identifier(input);
         self
     }
+    /// <p>Resource identifier to opt in for event messaging.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identifier()
+    }
     /// <p>Identifier type of the particular resource identifier for event configuration.</p>
     pub fn identifier_type(mut self, input: crate::types::IdentifierType) -> Self {
         self.inner = self.inner.identifier_type(input);
@@ -113,6 +121,10 @@ impl UpdateResourceEventConfigurationFluentBuilder {
         self.inner = self.inner.set_identifier_type(input);
         self
     }
+    /// <p>Identifier type of the particular resource identifier for event configuration.</p>
+    pub fn get_identifier_type(&self) -> &::std::option::Option<crate::types::IdentifierType> {
+        self.inner.get_identifier_type()
+    }
     /// <p>Partner type of the resource if the identifier type is <code>PartnerAccountId</code> </p>
     pub fn partner_type(mut self, input: crate::types::EventNotificationPartnerType) -> Self {
         self.inner = self.inner.partner_type(input);
@@ -125,6 +137,12 @@ impl UpdateResourceEventConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_partner_type(input);
         self
+    }
+    /// <p>Partner type of the resource if the identifier type is <code>PartnerAccountId</code> </p>
+    pub fn get_partner_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::EventNotificationPartnerType> {
+        self.inner.get_partner_type()
     }
     /// <p>Event configuration for the device registration state event.</p>
     pub fn device_registration_state(
@@ -142,6 +160,12 @@ impl UpdateResourceEventConfigurationFluentBuilder {
         self.inner = self.inner.set_device_registration_state(input);
         self
     }
+    /// <p>Event configuration for the device registration state event.</p>
+    pub fn get_device_registration_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeviceRegistrationStateEventConfiguration> {
+        self.inner.get_device_registration_state()
+    }
     /// <p>Event configuration for the proximity event.</p>
     pub fn proximity(mut self, input: crate::types::ProximityEventConfiguration) -> Self {
         self.inner = self.inner.proximity(input);
@@ -155,6 +179,12 @@ impl UpdateResourceEventConfigurationFluentBuilder {
         self.inner = self.inner.set_proximity(input);
         self
     }
+    /// <p>Event configuration for the proximity event.</p>
+    pub fn get_proximity(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProximityEventConfiguration> {
+        self.inner.get_proximity()
+    }
     /// <p>Event configuration for the join event.</p>
     pub fn join(mut self, input: crate::types::JoinEventConfiguration) -> Self {
         self.inner = self.inner.join(input);
@@ -167,6 +197,10 @@ impl UpdateResourceEventConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_join(input);
         self
+    }
+    /// <p>Event configuration for the join event.</p>
+    pub fn get_join(&self) -> &::std::option::Option<crate::types::JoinEventConfiguration> {
+        self.inner.get_join()
     }
     /// <p>Event configuration for the connection status event.</p>
     pub fn connection_status(
@@ -184,6 +218,12 @@ impl UpdateResourceEventConfigurationFluentBuilder {
         self.inner = self.inner.set_connection_status(input);
         self
     }
+    /// <p>Event configuration for the connection status event.</p>
+    pub fn get_connection_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConnectionStatusEventConfiguration> {
+        self.inner.get_connection_status()
+    }
     /// <p>Event configuration for the message delivery status event.</p>
     pub fn message_delivery_status(
         mut self,
@@ -199,5 +239,11 @@ impl UpdateResourceEventConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_message_delivery_status(input);
         self
+    }
+    /// <p>Event configuration for the message delivery status event.</p>
+    pub fn get_message_delivery_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::MessageDeliveryStatusEventConfiguration> {
+        self.inner.get_message_delivery_status()
     }
 }

@@ -37,6 +37,13 @@ impl AssociateMemberToGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateMemberToGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::associate_member_to_group::builders::AssociateMemberToGroupInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl AssociateMemberToGroupFluentBuilder {
         self.inner = self.inner.set_organization_id(input);
         self
     }
+    /// <p>The organization under which the group exists.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
+    }
     /// <p>The group to which the member (user or group) is associated.</p>
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_id(input.into());
@@ -143,6 +154,10 @@ impl AssociateMemberToGroupFluentBuilder {
         self.inner = self.inner.set_group_id(input);
         self
     }
+    /// <p>The group to which the member (user or group) is associated.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_id()
+    }
     /// <p>The member (user or group) to associate to the group.</p>
     pub fn member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.member_id(input.into());
@@ -152,5 +167,9 @@ impl AssociateMemberToGroupFluentBuilder {
     pub fn set_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_member_id(input);
         self
+    }
+    /// <p>The member (user or group) to associate to the group.</p>
+    pub fn get_member_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_member_id()
     }
 }

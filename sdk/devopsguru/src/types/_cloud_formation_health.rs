@@ -56,6 +56,10 @@ impl CloudFormationHealthBuilder {
         self.stack_name = input;
         self
     }
+    /// <p> The name of the CloudFormation stack. </p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_name
+    }
     /// <p> Information about the health of the Amazon Web Services resources in your account that are specified by an Amazon Web Services CloudFormation stack, including the number of open proactive, open reactive insights, and the Mean Time to Recover (MTTR) of closed insights. </p>
     pub fn insight(mut self, input: crate::types::InsightHealth) -> Self {
         self.insight = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl CloudFormationHealthBuilder {
         self.insight = input;
         self
     }
+    /// <p> Information about the health of the Amazon Web Services resources in your account that are specified by an Amazon Web Services CloudFormation stack, including the number of open proactive, open reactive insights, and the Mean Time to Recover (MTTR) of closed insights. </p>
+    pub fn get_insight(&self) -> &::std::option::Option<crate::types::InsightHealth> {
+        &self.insight
+    }
     /// <p> Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services CloudFormation stack. </p>
     pub fn analyzed_resource_count(mut self, input: i64) -> Self {
         self.analyzed_resource_count = ::std::option::Option::Some(input);
@@ -78,6 +86,10 @@ impl CloudFormationHealthBuilder {
     pub fn set_analyzed_resource_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.analyzed_resource_count = input;
         self
+    }
+    /// <p> Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services CloudFormation stack. </p>
+    pub fn get_analyzed_resource_count(&self) -> &::std::option::Option<i64> {
+        &self.analyzed_resource_count
     }
     /// Consumes the builder and constructs a [`CloudFormationHealth`](crate::types::CloudFormationHealth).
     pub fn build(self) -> crate::types::CloudFormationHealth {

@@ -71,6 +71,10 @@ impl CreateApiMappingOutputBuilder {
         self.api_id = input;
         self
     }
+    /// <p>The API identifier.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
+    }
     /// <p>The API mapping identifier.</p>
     pub fn api_mapping_id(
         mut self,
@@ -86,6 +90,10 @@ impl CreateApiMappingOutputBuilder {
     ) -> Self {
         self.api_mapping_id = input;
         self
+    }
+    /// <p>The API mapping identifier.</p>
+    pub fn get_api_mapping_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_mapping_id
     }
     /// <p>The API mapping key.</p>
     pub fn api_mapping_key(
@@ -103,6 +111,10 @@ impl CreateApiMappingOutputBuilder {
         self.api_mapping_key = input;
         self
     }
+    /// <p>The API mapping key.</p>
+    pub fn get_api_mapping_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_mapping_key
+    }
     /// <p>The API stage.</p>
     pub fn stage(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage = ::std::option::Option::Some(input.into());
@@ -112,6 +124,10 @@ impl CreateApiMappingOutputBuilder {
     pub fn set_stage(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stage = input;
         self
+    }
+    /// <p>The API stage.</p>
+    pub fn get_stage(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stage
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -40,6 +40,12 @@ impl StartSyncExecutionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartSyncExecution as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_sync_execution::builders::StartSyncExecutionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +142,10 @@ impl StartSyncExecutionFluentBuilder {
         self.inner = self.inner.set_state_machine_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
+    pub fn get_state_machine_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_state_machine_arn()
+    }
     /// <p>The name of the execution.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -145,6 +155,10 @@ impl StartSyncExecutionFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the execution.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The string that contains the JSON input data for the execution, for example:</p>
     /// <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
@@ -164,6 +178,14 @@ impl StartSyncExecutionFluentBuilder {
         self.inner = self.inner.set_input(input);
         self
     }
+    /// <p>The string that contains the JSON input data for the execution, for example:</p>
+    /// <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
+    /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p>
+    /// </note>
+    /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    pub fn get_input(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_input()
+    }
     /// <p>Passes the X-Ray trace header. The trace header can also be passed in the request payload.</p>
     pub fn trace_header(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.trace_header(input.into());
@@ -173,5 +195,9 @@ impl StartSyncExecutionFluentBuilder {
     pub fn set_trace_header(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_trace_header(input);
         self
+    }
+    /// <p>Passes the X-Ray trace header. The trace header can also be passed in the request payload.</p>
+    pub fn get_trace_header(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_trace_header()
     }
 }

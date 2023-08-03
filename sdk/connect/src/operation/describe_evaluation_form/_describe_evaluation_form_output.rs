@@ -51,6 +51,10 @@ impl DescribeEvaluationFormOutputBuilder {
         self.evaluation_form = input;
         self
     }
+    /// <p>Information about the evaluation form.</p>
+    pub fn get_evaluation_form(&self) -> &::std::option::Option<crate::types::EvaluationForm> {
+        &self.evaluation_form
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -37,6 +37,10 @@ impl CreateNetworkInsightsPathFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateNetworkInsightsPath as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_network_insights_path::builders::CreateNetworkInsightsPathInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl CreateNetworkInsightsPathFluentBuilder {
         self.inner = self.inner.set_source_ip(input);
         self
     }
+    /// <p>The IP address of the source.</p>
+    pub fn get_source_ip(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_ip()
+    }
     /// <p>The IP address of the destination.</p>
     pub fn destination_ip(
         mut self,
@@ -143,6 +151,10 @@ impl CreateNetworkInsightsPathFluentBuilder {
         self.inner = self.inner.set_destination_ip(input);
         self
     }
+    /// <p>The IP address of the destination.</p>
+    pub fn get_destination_ip(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_ip()
+    }
     /// <p>The ID or ARN of the source. If the resource is in another account, you must specify an ARN.</p>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source(input.into());
@@ -152,6 +164,10 @@ impl CreateNetworkInsightsPathFluentBuilder {
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source(input);
         self
+    }
+    /// <p>The ID or ARN of the source. If the resource is in another account, you must specify an ARN.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source()
     }
     /// <p>The ID or ARN of the destination. If the resource is in another account, you must specify an ARN.</p>
     pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -163,6 +179,10 @@ impl CreateNetworkInsightsPathFluentBuilder {
         self.inner = self.inner.set_destination(input);
         self
     }
+    /// <p>The ID or ARN of the destination. If the resource is in another account, you must specify an ARN.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination()
+    }
     /// <p>The protocol.</p>
     pub fn protocol(mut self, input: crate::types::Protocol) -> Self {
         self.inner = self.inner.protocol(input);
@@ -173,6 +193,10 @@ impl CreateNetworkInsightsPathFluentBuilder {
         self.inner = self.inner.set_protocol(input);
         self
     }
+    /// <p>The protocol.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::Protocol> {
+        self.inner.get_protocol()
+    }
     /// <p>The destination port.</p>
     pub fn destination_port(mut self, input: i32) -> Self {
         self.inner = self.inner.destination_port(input);
@@ -182,6 +206,10 @@ impl CreateNetworkInsightsPathFluentBuilder {
     pub fn set_destination_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_destination_port(input);
         self
+    }
+    /// <p>The destination port.</p>
+    pub fn get_destination_port(&self) -> &::std::option::Option<i32> {
+        self.inner.get_destination_port()
     }
     /// Appends an item to `TagSpecifications`.
     ///
@@ -200,6 +228,12 @@ impl CreateNetworkInsightsPathFluentBuilder {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
+    /// <p>The tags to add to the path.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        self.inner.get_tag_specifications()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -210,6 +244,10 @@ impl CreateNetworkInsightsPathFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -219,6 +257,10 @@ impl CreateNetworkInsightsPathFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// <p>Scopes the analysis to network paths that match specific filters at the source. If you specify this parameter, you can't specify the parameters for the source IP address or the destination port.</p>
     pub fn filter_at_source(mut self, input: crate::types::PathRequestFilter) -> Self {
@@ -233,6 +275,10 @@ impl CreateNetworkInsightsPathFluentBuilder {
         self.inner = self.inner.set_filter_at_source(input);
         self
     }
+    /// <p>Scopes the analysis to network paths that match specific filters at the source. If you specify this parameter, you can't specify the parameters for the source IP address or the destination port.</p>
+    pub fn get_filter_at_source(&self) -> &::std::option::Option<crate::types::PathRequestFilter> {
+        self.inner.get_filter_at_source()
+    }
     /// <p>Scopes the analysis to network paths that match specific filters at the destination. If you specify this parameter, you can't specify the parameter for the destination IP address.</p>
     pub fn filter_at_destination(mut self, input: crate::types::PathRequestFilter) -> Self {
         self.inner = self.inner.filter_at_destination(input);
@@ -245,5 +291,11 @@ impl CreateNetworkInsightsPathFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_filter_at_destination(input);
         self
+    }
+    /// <p>Scopes the analysis to network paths that match specific filters at the destination. If you specify this parameter, you can't specify the parameter for the destination IP address.</p>
+    pub fn get_filter_at_destination(
+        &self,
+    ) -> &::std::option::Option<crate::types::PathRequestFilter> {
+        self.inner.get_filter_at_destination()
     }
 }

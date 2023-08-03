@@ -148,6 +148,10 @@ impl GetDocumentOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the SSM document.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The date the SSM document was created.</p>
     pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_date = ::std::option::Option::Some(input);
@@ -161,6 +165,10 @@ impl GetDocumentOutputBuilder {
         self.created_date = input;
         self
     }
+    /// <p>The date the SSM document was created.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_date
+    }
     /// <p>The friendly name of the SSM document. This value can differ for each version of the document. If you want to update this value, see <code>UpdateDocument</code>.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -171,6 +179,10 @@ impl GetDocumentOutputBuilder {
         self.display_name = input;
         self
     }
+    /// <p>The friendly name of the SSM document. This value can differ for each version of the document. If you want to update this value, see <code>UpdateDocument</code>.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// <p>The version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
     pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_name = ::std::option::Option::Some(input.into());
@@ -180,6 +192,10 @@ impl GetDocumentOutputBuilder {
     pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_name = input;
         self
+    }
+    /// <p>The version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
+    pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_name
     }
     /// <p>The document version.</p>
     pub fn document_version(
@@ -197,6 +213,10 @@ impl GetDocumentOutputBuilder {
         self.document_version = input;
         self
     }
+    /// <p>The document version.</p>
+    pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_version
+    }
     /// <p>The status of the SSM document, such as <code>Creating</code>, <code>Active</code>, <code>Updating</code>, <code>Failed</code>, and <code>Deleting</code>.</p>
     pub fn status(mut self, input: crate::types::DocumentStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -209,6 +229,10 @@ impl GetDocumentOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the SSM document, such as <code>Creating</code>, <code>Active</code>, <code>Updating</code>, <code>Failed</code>, and <code>Deleting</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DocumentStatus> {
+        &self.status
     }
     /// <p>A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code> message, "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
     pub fn status_information(
@@ -226,6 +250,10 @@ impl GetDocumentOutputBuilder {
         self.status_information = input;
         self
     }
+    /// <p>A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code> message, "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
+    pub fn get_status_information(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_information
+    }
     /// <p>The contents of the SSM document.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
@@ -235,6 +263,10 @@ impl GetDocumentOutputBuilder {
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
+    }
+    /// <p>The contents of the SSM document.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
     }
     /// <p>The document type.</p>
     pub fn document_type(mut self, input: crate::types::DocumentType) -> Self {
@@ -249,6 +281,10 @@ impl GetDocumentOutputBuilder {
         self.document_type = input;
         self
     }
+    /// <p>The document type.</p>
+    pub fn get_document_type(&self) -> &::std::option::Option<crate::types::DocumentType> {
+        &self.document_type
+    }
     /// <p>The document format, either JSON or YAML.</p>
     pub fn document_format(mut self, input: crate::types::DocumentFormat) -> Self {
         self.document_format = ::std::option::Option::Some(input);
@@ -261,6 +297,10 @@ impl GetDocumentOutputBuilder {
     ) -> Self {
         self.document_format = input;
         self
+    }
+    /// <p>The document format, either JSON or YAML.</p>
+    pub fn get_document_format(&self) -> &::std::option::Option<crate::types::DocumentFormat> {
+        &self.document_format
     }
     /// Appends an item to `requires`.
     ///
@@ -281,6 +321,12 @@ impl GetDocumentOutputBuilder {
         self.requires = input;
         self
     }
+    /// <p>A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document.</p>
+    pub fn get_requires(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentRequires>> {
+        &self.requires
+    }
     /// Appends an item to `attachments_content`.
     ///
     /// To override the contents of this collection use [`set_attachments_content`](Self::set_attachments_content).
@@ -300,6 +346,12 @@ impl GetDocumentOutputBuilder {
         self.attachments_content = input;
         self
     }
+    /// <p>A description of the document attachments, including names, locations, sizes, and so on.</p>
+    pub fn get_attachments_content(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttachmentContent>> {
+        &self.attachments_content
+    }
     /// <p>The current review status of a new custom Systems Manager document (SSM document) created by a member of your organization, or of the latest version of an existing SSM document.</p>
     /// <p>Only one version of an SSM document can be in the APPROVED state at a time. When a new version is approved, the status of the previous version changes to REJECTED.</p>
     /// <p>Only one version of an SSM document can be in review, or PENDING, at a time.</p>
@@ -316,6 +368,12 @@ impl GetDocumentOutputBuilder {
     ) -> Self {
         self.review_status = input;
         self
+    }
+    /// <p>The current review status of a new custom Systems Manager document (SSM document) created by a member of your organization, or of the latest version of an existing SSM document.</p>
+    /// <p>Only one version of an SSM document can be in the APPROVED state at a time. When a new version is approved, the status of the previous version changes to REJECTED.</p>
+    /// <p>Only one version of an SSM document can be in review, or PENDING, at a time.</p>
+    pub fn get_review_status(&self) -> &::std::option::Option<crate::types::ReviewStatus> {
+        &self.review_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

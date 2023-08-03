@@ -54,6 +54,10 @@ impl HashKeyRangeBuilder {
         self.starting_hash_key = input;
         self
     }
+    /// <p>The starting hash key of the hash key range.</p>
+    pub fn get_starting_hash_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.starting_hash_key
+    }
     /// <p>The ending hash key of the hash key range.</p>
     pub fn ending_hash_key(
         mut self,
@@ -69,6 +73,10 @@ impl HashKeyRangeBuilder {
     ) -> Self {
         self.ending_hash_key = input;
         self
+    }
+    /// <p>The ending hash key of the hash key range.</p>
+    pub fn get_ending_hash_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ending_hash_key
     }
     /// Consumes the builder and constructs a [`HashKeyRange`](crate::types::HashKeyRange).
     pub fn build(self) -> crate::types::HashKeyRange {

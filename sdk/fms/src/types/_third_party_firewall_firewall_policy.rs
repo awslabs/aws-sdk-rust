@@ -54,6 +54,10 @@ impl ThirdPartyFirewallFirewallPolicyBuilder {
         self.firewall_policy_id = input;
         self
     }
+    /// <p>The ID of the specified firewall policy.</p>
+    pub fn get_firewall_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.firewall_policy_id
+    }
     /// <p>The name of the specified firewall policy.</p>
     pub fn firewall_policy_name(
         mut self,
@@ -69,6 +73,10 @@ impl ThirdPartyFirewallFirewallPolicyBuilder {
     ) -> Self {
         self.firewall_policy_name = input;
         self
+    }
+    /// <p>The name of the specified firewall policy.</p>
+    pub fn get_firewall_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.firewall_policy_name
     }
     /// Consumes the builder and constructs a [`ThirdPartyFirewallFirewallPolicy`](crate::types::ThirdPartyFirewallFirewallPolicy).
     pub fn build(self) -> crate::types::ThirdPartyFirewallFirewallPolicy {

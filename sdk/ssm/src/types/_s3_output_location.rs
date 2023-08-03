@@ -62,6 +62,10 @@ impl S3OutputLocationBuilder {
         self.output_s3_region = input;
         self
     }
+    /// <p>The Amazon Web Services Region of the S3 bucket.</p>
+    pub fn get_output_s3_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_s3_region
+    }
     /// <p>The name of the S3 bucket.</p>
     pub fn output_s3_bucket_name(
         mut self,
@@ -78,6 +82,10 @@ impl S3OutputLocationBuilder {
         self.output_s3_bucket_name = input;
         self
     }
+    /// <p>The name of the S3 bucket.</p>
+    pub fn get_output_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_s3_bucket_name
+    }
     /// <p>The S3 bucket subfolder.</p>
     pub fn output_s3_key_prefix(
         mut self,
@@ -93,6 +101,10 @@ impl S3OutputLocationBuilder {
     ) -> Self {
         self.output_s3_key_prefix = input;
         self
+    }
+    /// <p>The S3 bucket subfolder.</p>
+    pub fn get_output_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_s3_key_prefix
     }
     /// Consumes the builder and constructs a [`S3OutputLocation`](crate::types::S3OutputLocation).
     pub fn build(self) -> crate::types::S3OutputLocation {

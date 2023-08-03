@@ -47,6 +47,10 @@ impl StartNotebookInstanceInputBuilder {
         self.notebook_instance_name = input;
         self
     }
+    /// <p>The name of the notebook instance to start.</p>
+    pub fn get_notebook_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notebook_instance_name
+    }
     /// Consumes the builder and constructs a [`StartNotebookInstanceInput`](crate::operation::start_notebook_instance::StartNotebookInstanceInput).
     pub fn build(
         self,

@@ -72,6 +72,10 @@ impl SignOutputBuilder {
         self.key_id = input;
         self
     }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric KMS key that was used to sign the message.</p>
+    pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_id
+    }
     /// <p>The cryptographic signature that was generated for the message. </p>
     /// <ul>
     /// <li> <p>When used with the supported RSA signing algorithms, the encoding of this value is defined by <a href="https://tools.ietf.org/html/rfc8017">PKCS #1 in RFC 8017</a>.</p> </li>
@@ -92,6 +96,15 @@ impl SignOutputBuilder {
         self.signature = input;
         self
     }
+    /// <p>The cryptographic signature that was generated for the message. </p>
+    /// <ul>
+    /// <li> <p>When used with the supported RSA signing algorithms, the encoding of this value is defined by <a href="https://tools.ietf.org/html/rfc8017">PKCS #1 in RFC 8017</a>.</p> </li>
+    /// <li> <p>When used with the <code>ECDSA_SHA_256</code>, <code>ECDSA_SHA_384</code>, or <code>ECDSA_SHA_512</code> signing algorithms, this value is a DER-encoded object as defined by ANSI X9.62–2005 and <a href="https://tools.ietf.org/html/rfc3279#section-2.2.3">RFC 3279 Section 2.2.3</a>. This is the most commonly used signature format and is appropriate for most uses. </p> </li>
+    /// </ul>
+    /// <p>When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    pub fn get_signature(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.signature
+    }
     /// <p>The signing algorithm that was used to sign the message.</p>
     pub fn signing_algorithm(mut self, input: crate::types::SigningAlgorithmSpec) -> Self {
         self.signing_algorithm = ::std::option::Option::Some(input);
@@ -104,6 +117,12 @@ impl SignOutputBuilder {
     ) -> Self {
         self.signing_algorithm = input;
         self
+    }
+    /// <p>The signing algorithm that was used to sign the message.</p>
+    pub fn get_signing_algorithm(
+        &self,
+    ) -> &::std::option::Option<crate::types::SigningAlgorithmSpec> {
+        &self.signing_algorithm
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

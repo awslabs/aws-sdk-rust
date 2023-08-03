@@ -66,6 +66,12 @@ impl DescribeLdapsSettingsOutputBuilder {
         self.ldaps_settings_info = input;
         self
     }
+    /// <p>Information about LDAP security for the specified directory, including status of enablement, state last updated date time, and the reason for the state.</p>
+    pub fn get_ldaps_settings_info(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LdapsSettingInfo>> {
+        &self.ldaps_settings_info
+    }
     /// <p>The next token used to retrieve the LDAPS settings if the number of setting types exceeds page limit and there is another page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -75,6 +81,10 @@ impl DescribeLdapsSettingsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The next token used to retrieve the LDAPS settings if the number of setting types exceeds page limit and there is another page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

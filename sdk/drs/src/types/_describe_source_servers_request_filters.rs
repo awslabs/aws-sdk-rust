@@ -68,6 +68,12 @@ impl DescribeSourceServersRequestFiltersBuilder {
         self.source_server_i_ds = input;
         self
     }
+    /// <p>An array of Source Servers IDs that should be returned. An empty array means all Source Servers.</p>
+    pub fn get_source_server_i_ds(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.source_server_i_ds
+    }
     /// <p>An ID that describes the hardware of the Source Server. This is either an EC2 instance id, a VMware uuid or a mac address.</p>
     pub fn hardware_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hardware_id = ::std::option::Option::Some(input.into());
@@ -77,6 +83,10 @@ impl DescribeSourceServersRequestFiltersBuilder {
     pub fn set_hardware_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hardware_id = input;
         self
+    }
+    /// <p>An ID that describes the hardware of the Source Server. This is either an EC2 instance id, a VMware uuid or a mac address.</p>
+    pub fn get_hardware_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hardware_id
     }
     /// Appends an item to `staging_account_i_ds`.
     ///
@@ -99,6 +109,12 @@ impl DescribeSourceServersRequestFiltersBuilder {
     ) -> Self {
         self.staging_account_i_ds = input;
         self
+    }
+    /// <p>An array of staging account IDs that extended source servers belong to. An empty array means all source servers will be shown.</p>
+    pub fn get_staging_account_i_ds(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.staging_account_i_ds
     }
     /// Consumes the builder and constructs a [`DescribeSourceServersRequestFilters`](crate::types::DescribeSourceServersRequestFilters).
     pub fn build(self) -> crate::types::DescribeSourceServersRequestFilters {

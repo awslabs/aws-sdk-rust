@@ -196,6 +196,10 @@ impl CallAnalyticsJobBuilder {
         self.call_analytics_job_name = input;
         self
     }
+    /// <p>The name of the Call Analytics job. Job names are case sensitive and must be unique within an Amazon Web Services account.</p>
+    pub fn get_call_analytics_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.call_analytics_job_name
+    }
     /// <p>Provides the status of the specified Call Analytics job.</p>
     /// <p>If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in <code>TranscriptFileUri</code> (or <code>RedactedTranscriptFileUri</code>, if you requested transcript redaction). If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription job failed.</p>
     pub fn call_analytics_job_status(
@@ -214,6 +218,13 @@ impl CallAnalyticsJobBuilder {
         self.call_analytics_job_status = input;
         self
     }
+    /// <p>Provides the status of the specified Call Analytics job.</p>
+    /// <p>If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in <code>TranscriptFileUri</code> (or <code>RedactedTranscriptFileUri</code>, if you requested transcript redaction). If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription job failed.</p>
+    pub fn get_call_analytics_job_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::CallAnalyticsJobStatus> {
+        &self.call_analytics_job_status
+    }
     /// <p>The language code used to create your Call Analytics job. For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
     /// <p>If you don't know the language spoken in your media file, you can omit this field and let Amazon Transcribe automatically identify the language of your media. To improve the accuracy of language identification, you can include several language codes and Amazon Transcribe chooses the closest match for your transcription.</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
@@ -229,6 +240,11 @@ impl CallAnalyticsJobBuilder {
         self.language_code = input;
         self
     }
+    /// <p>The language code used to create your Call Analytics job. For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
+    /// <p>If you don't know the language spoken in your media file, you can omit this field and let Amazon Transcribe automatically identify the language of your media. To improve the accuracy of language identification, you can include several language codes and Amazon Transcribe chooses the closest match for your transcription.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
+        &self.language_code
+    }
     /// <p>The sample rate, in hertz, of the audio track in your input media file.</p>
     pub fn media_sample_rate_hertz(mut self, input: i32) -> Self {
         self.media_sample_rate_hertz = ::std::option::Option::Some(input);
@@ -238,6 +254,10 @@ impl CallAnalyticsJobBuilder {
     pub fn set_media_sample_rate_hertz(mut self, input: ::std::option::Option<i32>) -> Self {
         self.media_sample_rate_hertz = input;
         self
+    }
+    /// <p>The sample rate, in hertz, of the audio track in your input media file.</p>
+    pub fn get_media_sample_rate_hertz(&self) -> &::std::option::Option<i32> {
+        &self.media_sample_rate_hertz
     }
     /// <p>The format of the input media file.</p>
     pub fn media_format(mut self, input: crate::types::MediaFormat) -> Self {
@@ -252,6 +272,10 @@ impl CallAnalyticsJobBuilder {
         self.media_format = input;
         self
     }
+    /// <p>The format of the input media file.</p>
+    pub fn get_media_format(&self) -> &::std::option::Option<crate::types::MediaFormat> {
+        &self.media_format
+    }
     /// <p>Provides the Amazon S3 location of the media file you used in your Call Analytics request.</p>
     pub fn media(mut self, input: crate::types::Media) -> Self {
         self.media = ::std::option::Option::Some(input);
@@ -261,6 +285,10 @@ impl CallAnalyticsJobBuilder {
     pub fn set_media(mut self, input: ::std::option::Option<crate::types::Media>) -> Self {
         self.media = input;
         self
+    }
+    /// <p>Provides the Amazon S3 location of the media file you used in your Call Analytics request.</p>
+    pub fn get_media(&self) -> &::std::option::Option<crate::types::Media> {
+        &self.media
     }
     /// <p>Provides you with the Amazon S3 URI you can use to access your transcript.</p>
     pub fn transcript(mut self, input: crate::types::Transcript) -> Self {
@@ -274,6 +302,10 @@ impl CallAnalyticsJobBuilder {
     ) -> Self {
         self.transcript = input;
         self
+    }
+    /// <p>Provides you with the Amazon S3 URI you can use to access your transcript.</p>
+    pub fn get_transcript(&self) -> &::std::option::Option<crate::types::Transcript> {
+        &self.transcript
     }
     /// <p>The date and time the specified Call Analytics job began processing.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.789000-07:00</code> represents a transcription job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
@@ -290,6 +322,11 @@ impl CallAnalyticsJobBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The date and time the specified Call Analytics job began processing.</p>
+    /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.789000-07:00</code> represents a transcription job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The date and time the specified Call Analytics job request was made.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents a transcription job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -305,6 +342,11 @@ impl CallAnalyticsJobBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The date and time the specified Call Analytics job request was made.</p>
+    /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents a transcription job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The date and time the specified Call Analytics job finished processing.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:33:13.922000-07:00</code> represents a transcription job that started processing at 12:33 PM UTC-7 on May 4, 2022.</p>
     pub fn completion_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -319,6 +361,11 @@ impl CallAnalyticsJobBuilder {
     ) -> Self {
         self.completion_time = input;
         self
+    }
+    /// <p>The date and time the specified Call Analytics job finished processing.</p>
+    /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:33:13.922000-07:00</code> represents a transcription job that started processing at 12:33 PM UTC-7 on May 4, 2022.</p>
+    pub fn get_completion_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.completion_time
     }
     /// <p>If <code>CallAnalyticsJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the Call Analytics job request failed.</p>
     /// <p>The <code>FailureReason</code> field contains one of the following values:</p>
@@ -354,6 +401,19 @@ impl CallAnalyticsJobBuilder {
         self.failure_reason = input;
         self
     }
+    /// <p>If <code>CallAnalyticsJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the Call Analytics job request failed.</p>
+    /// <p>The <code>FailureReason</code> field contains one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>Unsupported media format</code>.</p> <p>The media format specified in <code>MediaFormat</code> isn't valid. Refer to <b>MediaFormat</b> for a list of supported formats.</p> </li>
+    /// <li> <p> <code>The media format provided does not match the detected media format</code>.</p> <p>The media format specified in <code>MediaFormat</code> doesn't match the format of the input file. Check the media format of your media file and correct the specified value.</p> </li>
+    /// <li> <p> <code>Invalid sample rate for audio file</code>.</p> <p>The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between 8,000 and 48,000 hertz.</p> </li>
+    /// <li> <p> <code>The sample rate provided does not match the detected sample rate</code>.</p> <p>The sample rate specified in <code>MediaSampleRateHertz</code> doesn't match the sample rate detected in your input media file. Check the sample rate of your media file and correct the specified value.</p> </li>
+    /// <li> <p> <code>Invalid file size: file size too large</code>.</p> <p>The size of your media file is larger than what Amazon Transcribe can process. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.</p> </li>
+    /// <li> <p> <code>Invalid number of channels: number of channels too large</code>.</p> <p>Your audio contains more channels than Amazon Transcribe is able to process. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.</p> </li>
+    /// </ul>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
     /// <p>The Amazon Resource Name (ARN) you included in your request.</p>
     pub fn data_access_role_arn(
         mut self,
@@ -370,6 +430,10 @@ impl CallAnalyticsJobBuilder {
         self.data_access_role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) you included in your request.</p>
+    pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_access_role_arn
+    }
     /// <p>The confidence score associated with the language identified in your media file.</p>
     /// <p>Confidence scores are values between 0 and 1; a larger value indicates a higher probability that the identified language correctly matches the language spoken in your media.</p>
     pub fn identified_language_score(mut self, input: f32) -> Self {
@@ -381,6 +445,11 @@ impl CallAnalyticsJobBuilder {
     pub fn set_identified_language_score(mut self, input: ::std::option::Option<f32>) -> Self {
         self.identified_language_score = input;
         self
+    }
+    /// <p>The confidence score associated with the language identified in your media file.</p>
+    /// <p>Confidence scores are values between 0 and 1; a larger value indicates a higher probability that the identified language correctly matches the language spoken in your media.</p>
+    pub fn get_identified_language_score(&self) -> &::std::option::Option<f32> {
+        &self.identified_language_score
     }
     /// <p>Provides information on any additional settings that were included in your request. Additional settings include content redaction and language identification settings.</p>
     pub fn settings(mut self, input: crate::types::CallAnalyticsJobSettings) -> Self {
@@ -394,6 +463,10 @@ impl CallAnalyticsJobBuilder {
     ) -> Self {
         self.settings = input;
         self
+    }
+    /// <p>Provides information on any additional settings that were included in your request. Additional settings include content redaction and language identification settings.</p>
+    pub fn get_settings(&self) -> &::std::option::Option<crate::types::CallAnalyticsJobSettings> {
+        &self.settings
     }
     /// Appends an item to `channel_definitions`.
     ///
@@ -413,6 +486,12 @@ impl CallAnalyticsJobBuilder {
     ) -> Self {
         self.channel_definitions = input;
         self
+    }
+    /// <p>Indicates which speaker is on which channel.</p>
+    pub fn get_channel_definitions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>> {
+        &self.channel_definitions
     }
     /// Consumes the builder and constructs a [`CallAnalyticsJob`](crate::types::CallAnalyticsJob).
     pub fn build(self) -> crate::types::CallAnalyticsJob {

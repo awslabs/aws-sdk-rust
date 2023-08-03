@@ -45,6 +45,10 @@ impl DescribeAccountSubscriptionInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID associated with your Amazon QuickSight account.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// Consumes the builder and constructs a [`DescribeAccountSubscriptionInput`](crate::operation::describe_account_subscription::DescribeAccountSubscriptionInput).
     pub fn build(
         self,

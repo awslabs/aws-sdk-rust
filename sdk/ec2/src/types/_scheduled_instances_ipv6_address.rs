@@ -40,6 +40,10 @@ impl ScheduledInstancesIpv6AddressBuilder {
         self.ipv6_address = input;
         self
     }
+    /// <p>The IPv6 address.</p>
+    pub fn get_ipv6_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv6_address
+    }
     /// Consumes the builder and constructs a [`ScheduledInstancesIpv6Address`](crate::types::ScheduledInstancesIpv6Address).
     pub fn build(self) -> crate::types::ScheduledInstancesIpv6Address {
         crate::types::ScheduledInstancesIpv6Address {

@@ -88,6 +88,10 @@ impl CustomerAgentInfoBuilder {
         self.active_agents = input;
         self
     }
+    /// <p>Number of active discovery agents.</p>
+    pub fn get_active_agents(&self) -> &::std::option::Option<i32> {
+        &self.active_agents
+    }
     /// <p>Number of healthy discovery agents</p>
     pub fn healthy_agents(mut self, input: i32) -> Self {
         self.healthy_agents = ::std::option::Option::Some(input);
@@ -97,6 +101,10 @@ impl CustomerAgentInfoBuilder {
     pub fn set_healthy_agents(mut self, input: ::std::option::Option<i32>) -> Self {
         self.healthy_agents = input;
         self
+    }
+    /// <p>Number of healthy discovery agents</p>
+    pub fn get_healthy_agents(&self) -> &::std::option::Option<i32> {
+        &self.healthy_agents
     }
     /// <p>Number of blacklisted discovery agents.</p>
     pub fn black_listed_agents(mut self, input: i32) -> Self {
@@ -108,6 +116,10 @@ impl CustomerAgentInfoBuilder {
         self.black_listed_agents = input;
         self
     }
+    /// <p>Number of blacklisted discovery agents.</p>
+    pub fn get_black_listed_agents(&self) -> &::std::option::Option<i32> {
+        &self.black_listed_agents
+    }
     /// <p>Number of discovery agents with status SHUTDOWN.</p>
     pub fn shutdown_agents(mut self, input: i32) -> Self {
         self.shutdown_agents = ::std::option::Option::Some(input);
@@ -117,6 +129,10 @@ impl CustomerAgentInfoBuilder {
     pub fn set_shutdown_agents(mut self, input: ::std::option::Option<i32>) -> Self {
         self.shutdown_agents = input;
         self
+    }
+    /// <p>Number of discovery agents with status SHUTDOWN.</p>
+    pub fn get_shutdown_agents(&self) -> &::std::option::Option<i32> {
+        &self.shutdown_agents
     }
     /// <p>Number of unhealthy discovery agents.</p>
     pub fn unhealthy_agents(mut self, input: i32) -> Self {
@@ -128,6 +144,10 @@ impl CustomerAgentInfoBuilder {
         self.unhealthy_agents = input;
         self
     }
+    /// <p>Number of unhealthy discovery agents.</p>
+    pub fn get_unhealthy_agents(&self) -> &::std::option::Option<i32> {
+        &self.unhealthy_agents
+    }
     /// <p>Total number of discovery agents.</p>
     pub fn total_agents(mut self, input: i32) -> Self {
         self.total_agents = ::std::option::Option::Some(input);
@@ -138,6 +158,10 @@ impl CustomerAgentInfoBuilder {
         self.total_agents = input;
         self
     }
+    /// <p>Total number of discovery agents.</p>
+    pub fn get_total_agents(&self) -> &::std::option::Option<i32> {
+        &self.total_agents
+    }
     /// <p>Number of unknown discovery agents.</p>
     pub fn unknown_agents(mut self, input: i32) -> Self {
         self.unknown_agents = ::std::option::Option::Some(input);
@@ -147,6 +171,10 @@ impl CustomerAgentInfoBuilder {
     pub fn set_unknown_agents(mut self, input: ::std::option::Option<i32>) -> Self {
         self.unknown_agents = input;
         self
+    }
+    /// <p>Number of unknown discovery agents.</p>
+    pub fn get_unknown_agents(&self) -> &::std::option::Option<i32> {
+        &self.unknown_agents
     }
     /// Consumes the builder and constructs a [`CustomerAgentInfo`](crate::types::CustomerAgentInfo).
     pub fn build(self) -> crate::types::CustomerAgentInfo {

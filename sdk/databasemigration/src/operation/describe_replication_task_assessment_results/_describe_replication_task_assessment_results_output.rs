@@ -67,6 +67,10 @@ impl DescribeReplicationTaskAssessmentResultsOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>- The Amazon S3 bucket where the task assessment report is located. </p>
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_name = ::std::option::Option::Some(input.into());
@@ -76,6 +80,10 @@ impl DescribeReplicationTaskAssessmentResultsOutputBuilder {
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_name = input;
         self
+    }
+    /// <p>- The Amazon S3 bucket where the task assessment report is located. </p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
     }
     /// Appends an item to `replication_task_assessment_results`.
     ///
@@ -100,6 +108,13 @@ impl DescribeReplicationTaskAssessmentResultsOutputBuilder {
     ) -> Self {
         self.replication_task_assessment_results = input;
         self
+    }
+    /// <p> The task assessment report. </p>
+    pub fn get_replication_task_assessment_results(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationTaskAssessmentResult>>
+    {
+        &self.replication_task_assessment_results
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

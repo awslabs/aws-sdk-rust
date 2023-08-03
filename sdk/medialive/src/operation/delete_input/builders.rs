@@ -36,6 +36,10 @@ impl DeleteInputFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteInput as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_input::builders::DeleteInputInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -117,5 +121,9 @@ impl DeleteInputFluentBuilder {
     pub fn set_input_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_input_id(input);
         self
+    }
+    /// Unique ID of the input
+    pub fn get_input_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_input_id()
     }
 }

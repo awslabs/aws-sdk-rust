@@ -40,6 +40,10 @@ impl CreateDBClusterParameterGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDBClusterParameterGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_db_cluster_parameter_group::builders::CreateDbClusterParameterGroupInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -148,6 +152,18 @@ impl CreateDBClusterParameterGroupFluentBuilder {
         self.inner = self.inner.set_db_cluster_parameter_group_name(input);
         self
     }
+    /// <p>The name of the DB cluster parameter group.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the name of an existing DBClusterParameterGroup.</p> </li>
+    /// </ul> <note>
+    /// <p>This value is stored as a lowercase string.</p>
+    /// </note>
+    pub fn get_db_cluster_parameter_group_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_cluster_parameter_group_name()
+    }
     /// <p>The DB cluster parameter group family name. A DB cluster parameter group can be associated with one and only one DB cluster parameter group family, and can be applied only to a DB cluster running a database engine and engine version compatible with that DB cluster parameter group family.</p>
     pub fn db_parameter_group_family(
         mut self,
@@ -164,6 +180,10 @@ impl CreateDBClusterParameterGroupFluentBuilder {
         self.inner = self.inner.set_db_parameter_group_family(input);
         self
     }
+    /// <p>The DB cluster parameter group family name. A DB cluster parameter group can be associated with one and only one DB cluster parameter group family, and can be applied only to a DB cluster running a database engine and engine version compatible with that DB cluster parameter group family.</p>
+    pub fn get_db_parameter_group_family(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_parameter_group_family()
+    }
     /// <p>The description for the DB cluster parameter group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -173,6 +193,10 @@ impl CreateDBClusterParameterGroupFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description for the DB cluster parameter group.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `Tags`.
     ///
@@ -190,5 +214,9 @@ impl CreateDBClusterParameterGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags to be assigned to the new DB cluster parameter group.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

@@ -36,6 +36,10 @@ impl PutEventsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutEvents as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_events::builders::PutEventsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,5 +128,11 @@ impl PutEventsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_entries(input);
         self
+    }
+    /// <p>The entry that defines an event in your system. You can specify several parameters for the entry such as the source and type of the event, resources associated with the event, and so on.</p>
+    pub fn get_entries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PutEventsRequestEntry>> {
+        self.inner.get_entries()
     }
 }

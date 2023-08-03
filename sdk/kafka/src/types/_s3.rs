@@ -56,6 +56,10 @@ impl S3Builder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
+    #[allow(missing_docs)] // documentation missing in model
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
@@ -66,6 +70,10 @@ impl S3Builder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
+    #[allow(missing_docs)] // documentation missing in model
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix = ::std::option::Option::Some(input.into());
         self
@@ -74,6 +82,10 @@ impl S3Builder {
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
     }
     /// Consumes the builder and constructs a [`S3`](crate::types::S3).
     pub fn build(self) -> crate::types::S3 {

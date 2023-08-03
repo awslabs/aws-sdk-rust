@@ -72,6 +72,10 @@ impl AdvancedSecurityOptionsInputBuilder {
         self.enabled = input;
         self
     }
+    /// <p>True if advanced security is enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>True if the internal user database is enabled.</p>
     pub fn internal_user_database_enabled(mut self, input: bool) -> Self {
         self.internal_user_database_enabled = ::std::option::Option::Some(input);
@@ -84,6 +88,10 @@ impl AdvancedSecurityOptionsInputBuilder {
     ) -> Self {
         self.internal_user_database_enabled = input;
         self
+    }
+    /// <p>True if the internal user database is enabled.</p>
+    pub fn get_internal_user_database_enabled(&self) -> &::std::option::Option<bool> {
+        &self.internal_user_database_enabled
     }
     /// <p>Credentials for the master user: username and password, ARN, or both.</p>
     pub fn master_user_options(mut self, input: crate::types::MasterUserOptions) -> Self {
@@ -98,6 +106,12 @@ impl AdvancedSecurityOptionsInputBuilder {
         self.master_user_options = input;
         self
     }
+    /// <p>Credentials for the master user: username and password, ARN, or both.</p>
+    pub fn get_master_user_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::MasterUserOptions> {
+        &self.master_user_options
+    }
     /// <p>Specifies the SAML application configuration for the domain.</p>
     pub fn saml_options(mut self, input: crate::types::SamlOptionsInput) -> Self {
         self.saml_options = ::std::option::Option::Some(input);
@@ -111,6 +125,10 @@ impl AdvancedSecurityOptionsInputBuilder {
         self.saml_options = input;
         self
     }
+    /// <p>Specifies the SAML application configuration for the domain.</p>
+    pub fn get_saml_options(&self) -> &::std::option::Option<crate::types::SamlOptionsInput> {
+        &self.saml_options
+    }
     /// <p>True if Anonymous auth is enabled. Anonymous auth can be enabled only when AdvancedSecurity is enabled on existing domains.</p>
     pub fn anonymous_auth_enabled(mut self, input: bool) -> Self {
         self.anonymous_auth_enabled = ::std::option::Option::Some(input);
@@ -120,6 +138,10 @@ impl AdvancedSecurityOptionsInputBuilder {
     pub fn set_anonymous_auth_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.anonymous_auth_enabled = input;
         self
+    }
+    /// <p>True if Anonymous auth is enabled. Anonymous auth can be enabled only when AdvancedSecurity is enabled on existing domains.</p>
+    pub fn get_anonymous_auth_enabled(&self) -> &::std::option::Option<bool> {
+        &self.anonymous_auth_enabled
     }
     /// Consumes the builder and constructs a [`AdvancedSecurityOptionsInput`](crate::types::AdvancedSecurityOptionsInput).
     pub fn build(self) -> crate::types::AdvancedSecurityOptionsInput {

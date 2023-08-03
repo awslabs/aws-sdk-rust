@@ -39,6 +39,10 @@ impl ListStudiosInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Consumes the builder and constructs a [`ListStudiosInput`](crate::operation::list_studios::ListStudiosInput).
     pub fn build(
         self,

@@ -49,6 +49,10 @@ impl DescribeFleetLocationCapacityOutputBuilder {
         self.fleet_capacity = input;
         self
     }
+    /// <p>Resource capacity information for the requested fleet location. Capacity objects are returned only for fleets and locations that currently exist.</p>
+    pub fn get_fleet_capacity(&self) -> &::std::option::Option<crate::types::FleetCapacity> {
+        &self.fleet_capacity
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

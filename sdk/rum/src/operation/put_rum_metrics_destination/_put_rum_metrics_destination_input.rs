@@ -73,6 +73,10 @@ impl PutRumMetricsDestinationInputBuilder {
         self.app_monitor_name = input;
         self
     }
+    /// <p>The name of the CloudWatch RUM app monitor that will send the metrics.</p>
+    pub fn get_app_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_monitor_name
+    }
     /// <p>Defines the destination to send the metrics to. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that is to be the destination and an IAM role that has permission to write to the experiment.</p>
     pub fn destination(mut self, input: crate::types::MetricDestination) -> Self {
         self.destination = ::std::option::Option::Some(input);
@@ -85,6 +89,10 @@ impl PutRumMetricsDestinationInputBuilder {
     ) -> Self {
         self.destination = input;
         self
+    }
+    /// <p>Defines the destination to send the metrics to. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that is to be the destination and an IAM role that has permission to write to the experiment.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::MetricDestination> {
+        &self.destination
     }
     /// <p>Use this parameter only if <code>Destination</code> is <code>Evidently</code>. This parameter specifies the ARN of the Evidently experiment that will receive the extended metrics.</p>
     pub fn destination_arn(
@@ -102,6 +110,10 @@ impl PutRumMetricsDestinationInputBuilder {
         self.destination_arn = input;
         self
     }
+    /// <p>Use this parameter only if <code>Destination</code> is <code>Evidently</code>. This parameter specifies the ARN of the Evidently experiment that will receive the extended metrics.</p>
+    pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_arn
+    }
     /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
     /// <p>This parameter specifies the ARN of an IAM role that RUM will assume to write to the Evidently experiment that you are sending metrics to. This role must have permission to write to that experiment.</p>
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -113,6 +125,11 @@ impl PutRumMetricsDestinationInputBuilder {
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_role_arn = input;
         self
+    }
+    /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
+    /// <p>This parameter specifies the ARN of an IAM role that RUM will assume to write to the Evidently experiment that you are sending metrics to. This role must have permission to write to that experiment.</p>
+    pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_role_arn
     }
     /// Consumes the builder and constructs a [`PutRumMetricsDestinationInput`](crate::operation::put_rum_metrics_destination::PutRumMetricsDestinationInput).
     pub fn build(

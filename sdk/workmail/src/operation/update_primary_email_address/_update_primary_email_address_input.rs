@@ -61,6 +61,10 @@ impl UpdatePrimaryEmailAddressInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The organization that contains the user, group, or resource to update.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>The user, group, or resource to update.</p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl UpdatePrimaryEmailAddressInputBuilder {
         self.entity_id = input;
         self
     }
+    /// <p>The user, group, or resource to update.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_id
+    }
     /// <p>The value of the email to be updated as primary.</p>
     pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email = ::std::option::Option::Some(input.into());
@@ -80,6 +88,10 @@ impl UpdatePrimaryEmailAddressInputBuilder {
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email = input;
         self
+    }
+    /// <p>The value of the email to be updated as primary.</p>
+    pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email
     }
     /// Consumes the builder and constructs a [`UpdatePrimaryEmailAddressInput`](crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressInput).
     pub fn build(

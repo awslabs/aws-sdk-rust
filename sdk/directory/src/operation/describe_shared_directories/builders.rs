@@ -36,6 +36,10 @@ impl DescribeSharedDirectoriesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeSharedDirectories as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_shared_directories::builders::DescribeSharedDirectoriesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -141,6 +145,10 @@ impl DescribeSharedDirectoriesFluentBuilder {
         self.inner = self.inner.set_owner_directory_id(input);
         self
     }
+    /// <p>Returns the identifier of the directory in the directory owner account. </p>
+    pub fn get_owner_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_owner_directory_id()
+    }
     /// Appends an item to `SharedDirectoryIds`.
     ///
     /// To override the contents of this collection use [`set_shared_directory_ids`](Self::set_shared_directory_ids).
@@ -161,6 +169,12 @@ impl DescribeSharedDirectoriesFluentBuilder {
         self.inner = self.inner.set_shared_directory_ids(input);
         self
     }
+    /// <p>A list of identifiers of all shared directories in your account. </p>
+    pub fn get_shared_directory_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_shared_directory_ids()
+    }
     /// <p>The <code>DescribeSharedDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeSharedDirectories</code>. Pass null if this is the first call. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -171,6 +185,10 @@ impl DescribeSharedDirectoriesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The <code>DescribeSharedDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeSharedDirectories</code>. Pass null if this is the first call. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The number of shared directories to return in the response object.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -180,5 +198,9 @@ impl DescribeSharedDirectoriesFluentBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
+    }
+    /// <p>The number of shared directories to return in the response object.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
     }
 }

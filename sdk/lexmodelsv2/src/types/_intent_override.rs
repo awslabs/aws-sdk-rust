@@ -56,6 +56,10 @@ impl IntentOverrideBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the intent. Only required when you're switching intents.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Adds a key-value pair to `slots`.
     ///
     /// To override the contents of this collection use [`set_slots`](Self::set_slots).
@@ -80,6 +84,14 @@ impl IntentOverrideBuilder {
     ) -> Self {
         self.slots = input;
         self
+    }
+    /// <p>A map of all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren't overridden.</p>
+    pub fn get_slots(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::SlotValueOverride>,
+    > {
+        &self.slots
     }
     /// Consumes the builder and constructs a [`IntentOverride`](crate::types::IntentOverride).
     pub fn build(self) -> crate::types::IntentOverride {

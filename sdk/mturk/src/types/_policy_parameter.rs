@@ -56,6 +56,10 @@ impl PolicyParameterBuilder {
         self.key = input;
         self
     }
+    /// <p> Name of the parameter from the list of Review Polices. </p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -75,6 +79,10 @@ impl PolicyParameterBuilder {
         self.values = input;
         self
     }
+    /// <p> The list of values of the Parameter</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
+    }
     /// Appends an item to `map_entries`.
     ///
     /// To override the contents of this collection use [`set_map_entries`](Self::set_map_entries).
@@ -93,6 +101,12 @@ impl PolicyParameterBuilder {
     ) -> Self {
         self.map_entries = input;
         self
+    }
+    /// <p> List of ParameterMapEntry objects. </p>
+    pub fn get_map_entries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterMapEntry>> {
+        &self.map_entries
     }
     /// Consumes the builder and constructs a [`PolicyParameter`](crate::types::PolicyParameter).
     pub fn build(self) -> crate::types::PolicyParameter {

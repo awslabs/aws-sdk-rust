@@ -39,6 +39,10 @@ impl CreateInferenceExperimentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateInferenceExperiment as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_inference_experiment::builders::CreateInferenceExperimentInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +133,10 @@ impl CreateInferenceExperimentFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name for the inference experiment.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p> The type of the inference experiment that you want to run. The following types of experiments are possible: </p>
     /// <ul>
     /// <li> <p> <code>ShadowMode</code>: You can use this type to validate a shadow variant. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests.html">Shadow tests</a>. </p> </li>
@@ -148,6 +156,13 @@ impl CreateInferenceExperimentFluentBuilder {
         self.inner = self.inner.set_type(input);
         self
     }
+    /// <p> The type of the inference experiment that you want to run. The following types of experiments are possible: </p>
+    /// <ul>
+    /// <li> <p> <code>ShadowMode</code>: You can use this type to validate a shadow variant. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests.html">Shadow tests</a>. </p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::InferenceExperimentType> {
+        self.inner.get_type()
+    }
     /// <p> The duration for which you want the inference experiment to run. If you don't specify this field, the experiment automatically starts immediately upon creation and concludes after 7 days. </p>
     pub fn schedule(mut self, input: crate::types::InferenceExperimentSchedule) -> Self {
         self.inner = self.inner.schedule(input);
@@ -161,6 +176,12 @@ impl CreateInferenceExperimentFluentBuilder {
         self.inner = self.inner.set_schedule(input);
         self
     }
+    /// <p> The duration for which you want the inference experiment to run. If you don't specify this field, the experiment automatically starts immediately upon creation and concludes after 7 days. </p>
+    pub fn get_schedule(
+        &self,
+    ) -> &::std::option::Option<crate::types::InferenceExperimentSchedule> {
+        self.inner.get_schedule()
+    }
     /// <p>A description for the inference experiment.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -171,6 +192,10 @@ impl CreateInferenceExperimentFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>A description for the inference experiment.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p> The ARN of the IAM role that Amazon SageMaker can assume to access model artifacts and container images, and manage Amazon SageMaker Inference endpoints for model deployment. </p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -180,6 +205,10 @@ impl CreateInferenceExperimentFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p> The ARN of the IAM role that Amazon SageMaker can assume to access model artifacts and container images, and manage Amazon SageMaker Inference endpoints for model deployment. </p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// <p> The name of the Amazon SageMaker endpoint on which you want to run the inference experiment. </p>
     pub fn endpoint_name(
@@ -197,6 +226,10 @@ impl CreateInferenceExperimentFluentBuilder {
         self.inner = self.inner.set_endpoint_name(input);
         self
     }
+    /// <p> The name of the Amazon SageMaker endpoint on which you want to run the inference experiment. </p>
+    pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_endpoint_name()
+    }
     /// Appends an item to `ModelVariants`.
     ///
     /// To override the contents of this collection use [`set_model_variants`](Self::set_model_variants).
@@ -213,6 +246,12 @@ impl CreateInferenceExperimentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_model_variants(input);
         self
+    }
+    /// <p> An array of <code>ModelVariantConfig</code> objects. There is one for each variant in the inference experiment. Each <code>ModelVariantConfig</code> object in the array describes the infrastructure configuration for the corresponding variant. </p>
+    pub fn get_model_variants(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelVariantConfig>> {
+        self.inner.get_model_variants()
     }
     /// <p> The Amazon S3 location and configuration for storing inference request and response data. </p>
     /// <p> This is an optional parameter that you can use for data capture. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture data</a>. </p>
@@ -232,6 +271,13 @@ impl CreateInferenceExperimentFluentBuilder {
         self.inner = self.inner.set_data_storage_config(input);
         self
     }
+    /// <p> The Amazon S3 location and configuration for storing inference request and response data. </p>
+    /// <p> This is an optional parameter that you can use for data capture. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture data</a>. </p>
+    pub fn get_data_storage_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::InferenceExperimentDataStorageConfig> {
+        self.inner.get_data_storage_config()
+    }
     /// <p> The configuration of <code>ShadowMode</code> inference experiment type. Use this field to specify a production variant which takes all the inference requests, and a shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant also specify the percentage of requests that Amazon SageMaker replicates. </p>
     pub fn shadow_mode_config(mut self, input: crate::types::ShadowModeConfig) -> Self {
         self.inner = self.inner.shadow_mode_config(input);
@@ -244,6 +290,10 @@ impl CreateInferenceExperimentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_shadow_mode_config(input);
         self
+    }
+    /// <p> The configuration of <code>ShadowMode</code> inference experiment type. Use this field to specify a production variant which takes all the inference requests, and a shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant also specify the percentage of requests that Amazon SageMaker replicates. </p>
+    pub fn get_shadow_mode_config(&self) -> &::std::option::Option<crate::types::ShadowModeConfig> {
+        self.inner.get_shadow_mode_config()
     }
     /// <p> The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint. The <code>KmsKey</code> can be any of the following formats: </p>
     /// <ul>
@@ -271,6 +321,18 @@ impl CreateInferenceExperimentFluentBuilder {
         self.inner = self.inner.set_kms_key(input);
         self
     }
+    /// <p> The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint. The <code>KmsKey</code> can be any of the following formats: </p>
+    /// <ul>
+    /// <li> <p>KMS key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS key</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>KMS key Alias</p> <p> <code>"alias/ExampleAlias"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS key Alias</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
+    /// </ul>
+    /// <p> If you use a KMS key ID or an alias of your KMS key, the Amazon SageMaker execution role must include permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account. Amazon SageMaker uses server-side encryption with KMS managed keys for <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> </p>
+    /// <p> The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateEndpoint</code> and <code>UpdateEndpoint</code> requests. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>. </p>
+    pub fn get_kms_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -287,5 +349,9 @@ impl CreateInferenceExperimentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p> Array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/tagging.html">Tagging your Amazon Web Services Resources</a>. </p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

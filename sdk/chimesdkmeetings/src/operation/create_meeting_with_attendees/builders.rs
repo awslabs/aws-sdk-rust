@@ -36,6 +36,10 @@ impl CreateMeetingWithAttendeesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateMeetingWithAttendees as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_meeting_with_attendees::builders::CreateMeetingWithAttendeesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl CreateMeetingWithAttendeesFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// <p>The Region in which to create the meeting.</p>
     /// <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p>
     /// <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
@@ -145,6 +153,12 @@ impl CreateMeetingWithAttendeesFluentBuilder {
     pub fn set_media_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_media_region(input);
         self
+    }
+    /// <p>The Region in which to create the meeting.</p>
+    /// <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p>
+    /// <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
+    pub fn get_media_region(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_media_region()
     }
     /// <p>Reserved.</p>
     pub fn meeting_host_id(
@@ -161,6 +175,10 @@ impl CreateMeetingWithAttendeesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_meeting_host_id(input);
         self
+    }
+    /// <p>Reserved.</p>
+    pub fn get_meeting_host_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_meeting_host_id()
     }
     /// <p>The external meeting ID.</p>
     /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p>
@@ -182,6 +200,12 @@ impl CreateMeetingWithAttendeesFluentBuilder {
         self.inner = self.inner.set_external_meeting_id(input);
         self
     }
+    /// <p>The external meeting ID.</p>
+    /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p>
+    /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case insensitive.</p>
+    pub fn get_external_meeting_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_external_meeting_id()
+    }
     /// <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
     pub fn meeting_features(mut self, input: crate::types::MeetingFeaturesConfiguration) -> Self {
         self.inner = self.inner.meeting_features(input);
@@ -194,6 +218,12 @@ impl CreateMeetingWithAttendeesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_meeting_features(input);
         self
+    }
+    /// <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
+    pub fn get_meeting_features(
+        &self,
+    ) -> &::std::option::Option<crate::types::MeetingFeaturesConfiguration> {
+        self.inner.get_meeting_features()
     }
     /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
     pub fn notifications_configuration(
@@ -210,6 +240,12 @@ impl CreateMeetingWithAttendeesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_notifications_configuration(input);
         self
+    }
+    /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
+    pub fn get_notifications_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::NotificationsConfiguration> {
+        self.inner.get_notifications_configuration()
     }
     /// Appends an item to `Attendees`.
     ///
@@ -228,6 +264,12 @@ impl CreateMeetingWithAttendeesFluentBuilder {
         self.inner = self.inner.set_attendees(input);
         self
     }
+    /// <p>The attendee information, including attendees' IDs and join tokens.</p>
+    pub fn get_attendees(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAttendeeRequestItem>> {
+        self.inner.get_attendees()
+    }
     /// <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
     pub fn primary_meeting_id(
         mut self,
@@ -243,6 +285,10 @@ impl CreateMeetingWithAttendeesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_primary_meeting_id(input);
         self
+    }
+    /// <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
+    pub fn get_primary_meeting_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_primary_meeting_id()
     }
     /// Appends an item to `TenantIds`.
     ///
@@ -261,6 +307,10 @@ impl CreateMeetingWithAttendeesFluentBuilder {
         self.inner = self.inner.set_tenant_ids(input);
         self
     }
+    /// <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
+    pub fn get_tenant_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_tenant_ids()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -277,5 +327,9 @@ impl CreateMeetingWithAttendeesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags in the request.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

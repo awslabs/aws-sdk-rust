@@ -46,6 +46,10 @@ impl StartAuditMitigationActionsTaskOutputBuilder {
         self.task_id = input;
         self
     }
+    /// <p>The unique identifier for the audit mitigation task. This matches the <code>taskId</code> that you specified in the request.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

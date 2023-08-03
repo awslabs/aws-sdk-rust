@@ -325,6 +325,12 @@ impl ResourceViolationBuilder {
         self.aws_vpc_security_group_violation = input;
         self
     }
+    /// <p>Violation detail for security groups.</p>
+    pub fn get_aws_vpc_security_group_violation(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsVpcSecurityGroupViolation> {
+        &self.aws_vpc_security_group_violation
+    }
     /// <p>Violation detail for a network interface.</p>
     pub fn aws_ec2_network_interface_violation(
         mut self,
@@ -340,6 +346,12 @@ impl ResourceViolationBuilder {
     ) -> Self {
         self.aws_ec2_network_interface_violation = input;
         self
+    }
+    /// <p>Violation detail for a network interface.</p>
+    pub fn get_aws_ec2_network_interface_violation(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsEc2NetworkInterfaceViolation> {
+        &self.aws_ec2_network_interface_violation
     }
     /// <p>Violation detail for an EC2 instance.</p>
     pub fn aws_ec2_instance_violation(
@@ -357,6 +369,12 @@ impl ResourceViolationBuilder {
         self.aws_ec2_instance_violation = input;
         self
     }
+    /// <p>Violation detail for an EC2 instance.</p>
+    pub fn get_aws_ec2_instance_violation(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsEc2InstanceViolation> {
+        &self.aws_ec2_instance_violation
+    }
     /// <p>Violation detail for an Network Firewall policy that indicates that a subnet has no Firewall Manager managed firewall in its VPC. </p>
     pub fn network_firewall_missing_firewall_violation(
         mut self,
@@ -372,6 +390,12 @@ impl ResourceViolationBuilder {
     ) -> Self {
         self.network_firewall_missing_firewall_violation = input;
         self
+    }
+    /// <p>Violation detail for an Network Firewall policy that indicates that a subnet has no Firewall Manager managed firewall in its VPC. </p>
+    pub fn get_network_firewall_missing_firewall_violation(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkFirewallMissingFirewallViolation> {
+        &self.network_firewall_missing_firewall_violation
     }
     /// <p>Violation detail for an Network Firewall policy that indicates that an Availability Zone is missing the expected Firewall Manager managed subnet.</p>
     pub fn network_firewall_missing_subnet_violation(
@@ -389,6 +413,12 @@ impl ResourceViolationBuilder {
         self.network_firewall_missing_subnet_violation = input;
         self
     }
+    /// <p>Violation detail for an Network Firewall policy that indicates that an Availability Zone is missing the expected Firewall Manager managed subnet.</p>
+    pub fn get_network_firewall_missing_subnet_violation(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkFirewallMissingSubnetViolation> {
+        &self.network_firewall_missing_subnet_violation
+    }
     /// <p>Violation detail for an Network Firewall policy that indicates that a subnet is not associated with the expected Firewall Manager managed route table. </p>
     pub fn network_firewall_missing_expected_rt_violation(
         mut self,
@@ -405,6 +435,12 @@ impl ResourceViolationBuilder {
         self.network_firewall_missing_expected_rt_violation = input;
         self
     }
+    /// <p>Violation detail for an Network Firewall policy that indicates that a subnet is not associated with the expected Firewall Manager managed route table. </p>
+    pub fn get_network_firewall_missing_expected_rt_violation(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkFirewallMissingExpectedRtViolation> {
+        &self.network_firewall_missing_expected_rt_violation
+    }
     /// <p>Violation detail for an Network Firewall policy that indicates that a firewall policy in an individual account has been modified in a way that makes it noncompliant. For example, the individual account owner might have deleted a rule group, changed the priority of a stateless rule group, or changed a policy default action.</p>
     pub fn network_firewall_policy_modified_violation(
         mut self,
@@ -420,6 +456,12 @@ impl ResourceViolationBuilder {
     ) -> Self {
         self.network_firewall_policy_modified_violation = input;
         self
+    }
+    /// <p>Violation detail for an Network Firewall policy that indicates that a firewall policy in an individual account has been modified in a way that makes it noncompliant. For example, the individual account owner might have deleted a rule group, changed the priority of a stateless rule group, or changed a policy default action.</p>
+    pub fn get_network_firewall_policy_modified_violation(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkFirewallPolicyModifiedViolation> {
+        &self.network_firewall_policy_modified_violation
     }
     /// <p>Violation detail for the subnet for which internet traffic hasn't been inspected.</p>
     pub fn network_firewall_internet_traffic_not_inspected_violation(
@@ -440,6 +482,13 @@ impl ResourceViolationBuilder {
         self.network_firewall_internet_traffic_not_inspected_violation = input;
         self
     }
+    /// <p>Violation detail for the subnet for which internet traffic hasn't been inspected.</p>
+    pub fn get_network_firewall_internet_traffic_not_inspected_violation(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkFirewallInternetTrafficNotInspectedViolation>
+    {
+        &self.network_firewall_internet_traffic_not_inspected_violation
+    }
     /// <p>The route configuration is invalid.</p>
     pub fn network_firewall_invalid_route_configuration_violation(
         mut self,
@@ -459,6 +508,13 @@ impl ResourceViolationBuilder {
         self.network_firewall_invalid_route_configuration_violation = input;
         self
     }
+    /// <p>The route configuration is invalid.</p>
+    pub fn get_network_firewall_invalid_route_configuration_violation(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkFirewallInvalidRouteConfigurationViolation>
+    {
+        &self.network_firewall_invalid_route_configuration_violation
+    }
     /// <p>Violation detail for an internet gateway route with an inactive state in the customer subnet route table or Network Firewall subnet route table.</p>
     pub fn network_firewall_black_hole_route_detected_violation(
         mut self,
@@ -475,6 +531,12 @@ impl ResourceViolationBuilder {
     ) -> Self {
         self.network_firewall_black_hole_route_detected_violation = input;
         self
+    }
+    /// <p>Violation detail for an internet gateway route with an inactive state in the customer subnet route table or Network Firewall subnet route table.</p>
+    pub fn get_network_firewall_black_hole_route_detected_violation(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkFirewallBlackHoleRouteDetectedViolation> {
+        &self.network_firewall_black_hole_route_detected_violation
     }
     /// <p>There's an unexpected firewall route.</p>
     pub fn network_firewall_unexpected_firewall_routes_violation(
@@ -495,6 +557,13 @@ impl ResourceViolationBuilder {
         self.network_firewall_unexpected_firewall_routes_violation = input;
         self
     }
+    /// <p>There's an unexpected firewall route.</p>
+    pub fn get_network_firewall_unexpected_firewall_routes_violation(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkFirewallUnexpectedFirewallRoutesViolation>
+    {
+        &self.network_firewall_unexpected_firewall_routes_violation
+    }
     /// <p>There's an unexpected gateway route.</p>
     pub fn network_firewall_unexpected_gateway_routes_violation(
         mut self,
@@ -511,6 +580,12 @@ impl ResourceViolationBuilder {
     ) -> Self {
         self.network_firewall_unexpected_gateway_routes_violation = input;
         self
+    }
+    /// <p>There's an unexpected gateway route.</p>
+    pub fn get_network_firewall_unexpected_gateway_routes_violation(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkFirewallUnexpectedGatewayRoutesViolation> {
+        &self.network_firewall_unexpected_gateway_routes_violation
     }
     /// <p>Expected routes are missing from Network Firewall.</p>
     pub fn network_firewall_missing_expected_routes_violation(
@@ -529,6 +604,12 @@ impl ResourceViolationBuilder {
         self.network_firewall_missing_expected_routes_violation = input;
         self
     }
+    /// <p>Expected routes are missing from Network Firewall.</p>
+    pub fn get_network_firewall_missing_expected_routes_violation(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkFirewallMissingExpectedRoutesViolation> {
+        &self.network_firewall_missing_expected_routes_violation
+    }
     /// <p>Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried to associate with a VPC has the same priority as a rule group that's already associated. </p>
     pub fn dns_rule_group_priority_conflict_violation(
         mut self,
@@ -544,6 +625,12 @@ impl ResourceViolationBuilder {
     ) -> Self {
         self.dns_rule_group_priority_conflict_violation = input;
         self
+    }
+    /// <p>Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried to associate with a VPC has the same priority as a rule group that's already associated. </p>
+    pub fn get_dns_rule_group_priority_conflict_violation(
+        &self,
+    ) -> &::std::option::Option<crate::types::DnsRuleGroupPriorityConflictViolation> {
+        &self.dns_rule_group_priority_conflict_violation
     }
     /// <p>Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried to associate with a VPC is already associated with the VPC and can't be associated again. </p>
     pub fn dns_duplicate_rule_group_violation(
@@ -561,6 +648,12 @@ impl ResourceViolationBuilder {
         self.dns_duplicate_rule_group_violation = input;
         self
     }
+    /// <p>Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried to associate with a VPC is already associated with the VPC and can't be associated again. </p>
+    pub fn get_dns_duplicate_rule_group_violation(
+        &self,
+    ) -> &::std::option::Option<crate::types::DnsDuplicateRuleGroupViolation> {
+        &self.dns_duplicate_rule_group_violation
+    }
     /// <p>Violation detail for a DNS Firewall policy that indicates that the VPC reached the limit for associated DNS Firewall rule groups. Firewall Manager tried to associate another rule group with the VPC and failed. </p>
     pub fn dns_rule_group_limit_exceeded_violation(
         mut self,
@@ -576,6 +669,12 @@ impl ResourceViolationBuilder {
     ) -> Self {
         self.dns_rule_group_limit_exceeded_violation = input;
         self
+    }
+    /// <p>Violation detail for a DNS Firewall policy that indicates that the VPC reached the limit for associated DNS Firewall rule groups. Firewall Manager tried to associate another rule group with the VPC and failed. </p>
+    pub fn get_dns_rule_group_limit_exceeded_violation(
+        &self,
+    ) -> &::std::option::Option<crate::types::DnsRuleGroupLimitExceededViolation> {
+        &self.dns_rule_group_limit_exceeded_violation
     }
     /// <p>A list of possible remediation action lists. Each individual possible remediation action is a list of individual remediation actions.</p>
     pub fn possible_remediation_actions(
@@ -593,6 +692,12 @@ impl ResourceViolationBuilder {
         self.possible_remediation_actions = input;
         self
     }
+    /// <p>A list of possible remediation action lists. Each individual possible remediation action is a list of individual remediation actions.</p>
+    pub fn get_possible_remediation_actions(
+        &self,
+    ) -> &::std::option::Option<crate::types::PossibleRemediationActions> {
+        &self.possible_remediation_actions
+    }
     /// <p>Contains details about the firewall subnet that violates the policy scope.</p>
     pub fn firewall_subnet_is_out_of_scope_violation(
         mut self,
@@ -608,6 +713,12 @@ impl ResourceViolationBuilder {
     ) -> Self {
         self.firewall_subnet_is_out_of_scope_violation = input;
         self
+    }
+    /// <p>Contains details about the firewall subnet that violates the policy scope.</p>
+    pub fn get_firewall_subnet_is_out_of_scope_violation(
+        &self,
+    ) -> &::std::option::Option<crate::types::FirewallSubnetIsOutOfScopeViolation> {
+        &self.firewall_subnet_is_out_of_scope_violation
     }
     /// <p>Contains details about the route endpoint that violates the policy scope.</p>
     pub fn route_has_out_of_scope_endpoint_violation(
@@ -625,6 +736,12 @@ impl ResourceViolationBuilder {
         self.route_has_out_of_scope_endpoint_violation = input;
         self
     }
+    /// <p>Contains details about the route endpoint that violates the policy scope.</p>
+    pub fn get_route_has_out_of_scope_endpoint_violation(
+        &self,
+    ) -> &::std::option::Option<crate::types::RouteHasOutOfScopeEndpointViolation> {
+        &self.route_has_out_of_scope_endpoint_violation
+    }
     /// <p>The violation details for a third-party firewall that's been deleted.</p>
     pub fn third_party_firewall_missing_firewall_violation(
         mut self,
@@ -641,6 +758,12 @@ impl ResourceViolationBuilder {
         self.third_party_firewall_missing_firewall_violation = input;
         self
     }
+    /// <p>The violation details for a third-party firewall that's been deleted.</p>
+    pub fn get_third_party_firewall_missing_firewall_violation(
+        &self,
+    ) -> &::std::option::Option<crate::types::ThirdPartyFirewallMissingFirewallViolation> {
+        &self.third_party_firewall_missing_firewall_violation
+    }
     /// <p>The violation details for a third-party firewall's subnet that's been deleted.</p>
     pub fn third_party_firewall_missing_subnet_violation(
         mut self,
@@ -656,6 +779,12 @@ impl ResourceViolationBuilder {
     ) -> Self {
         self.third_party_firewall_missing_subnet_violation = input;
         self
+    }
+    /// <p>The violation details for a third-party firewall's subnet that's been deleted.</p>
+    pub fn get_third_party_firewall_missing_subnet_violation(
+        &self,
+    ) -> &::std::option::Option<crate::types::ThirdPartyFirewallMissingSubnetViolation> {
+        &self.third_party_firewall_missing_subnet_violation
     }
     /// <p>The violation details for a third-party firewall that has the Firewall Manager managed route table that was associated with the third-party firewall has been deleted.</p>
     pub fn third_party_firewall_missing_expected_route_table_violation(
@@ -676,6 +805,13 @@ impl ResourceViolationBuilder {
         self.third_party_firewall_missing_expected_route_table_violation = input;
         self
     }
+    /// <p>The violation details for a third-party firewall that has the Firewall Manager managed route table that was associated with the third-party firewall has been deleted.</p>
+    pub fn get_third_party_firewall_missing_expected_route_table_violation(
+        &self,
+    ) -> &::std::option::Option<crate::types::ThirdPartyFirewallMissingExpectedRouteTableViolation>
+    {
+        &self.third_party_firewall_missing_expected_route_table_violation
+    }
     /// <p>The violation details for a third-party firewall's VPC endpoint subnet that was deleted.</p>
     pub fn firewall_subnet_missing_vpc_endpoint_violation(
         mut self,
@@ -691,6 +827,12 @@ impl ResourceViolationBuilder {
     ) -> Self {
         self.firewall_subnet_missing_vpc_endpoint_violation = input;
         self
+    }
+    /// <p>The violation details for a third-party firewall's VPC endpoint subnet that was deleted.</p>
+    pub fn get_firewall_subnet_missing_vpc_endpoint_violation(
+        &self,
+    ) -> &::std::option::Option<crate::types::FirewallSubnetMissingVpcEndpointViolation> {
+        &self.firewall_subnet_missing_vpc_endpoint_violation
     }
     /// Consumes the builder and constructs a [`ResourceViolation`](crate::types::ResourceViolation).
     pub fn build(self) -> crate::types::ResourceViolation {

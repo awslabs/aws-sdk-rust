@@ -40,6 +40,10 @@ impl ApplicationSnapshotConfigurationUpdateBuilder {
         self.snapshots_enabled_update = input;
         self
     }
+    /// <p>Describes updates to whether snapshots are enabled for an application.</p>
+    pub fn get_snapshots_enabled_update(&self) -> &::std::option::Option<bool> {
+        &self.snapshots_enabled_update
+    }
     /// Consumes the builder and constructs a [`ApplicationSnapshotConfigurationUpdate`](crate::types::ApplicationSnapshotConfigurationUpdate).
     pub fn build(self) -> crate::types::ApplicationSnapshotConfigurationUpdate {
         crate::types::ApplicationSnapshotConfigurationUpdate {

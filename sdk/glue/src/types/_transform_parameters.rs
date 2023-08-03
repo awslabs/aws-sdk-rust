@@ -57,6 +57,11 @@ impl TransformParametersBuilder {
         self.transform_type = input;
         self
     }
+    /// <p>The type of machine learning transform.</p>
+    /// <p>For information about the types of machine learning transforms, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job-machine-learning-transform.html">Creating Machine Learning Transforms</a>.</p>
+    pub fn get_transform_type(&self) -> &::std::option::Option<crate::types::TransformType> {
+        &self.transform_type
+    }
     /// <p>The parameters for the find matches algorithm.</p>
     pub fn find_matches_parameters(mut self, input: crate::types::FindMatchesParameters) -> Self {
         self.find_matches_parameters = ::std::option::Option::Some(input);
@@ -69,6 +74,12 @@ impl TransformParametersBuilder {
     ) -> Self {
         self.find_matches_parameters = input;
         self
+    }
+    /// <p>The parameters for the find matches algorithm.</p>
+    pub fn get_find_matches_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::FindMatchesParameters> {
+        &self.find_matches_parameters
     }
     /// Consumes the builder and constructs a [`TransformParameters`](crate::types::TransformParameters).
     pub fn build(self) -> crate::types::TransformParameters {

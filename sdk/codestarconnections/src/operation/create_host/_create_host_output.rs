@@ -54,6 +54,10 @@ impl CreateHostOutputBuilder {
         self.host_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the host to be created.</p>
+    pub fn get_host_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_arn
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -71,6 +75,10 @@ impl CreateHostOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -102,6 +102,10 @@ impl HoursOfOperationBuilder {
         self.hours_of_operation_id = input;
         self
     }
+    /// <p>The identifier for the hours of operation.</p>
+    pub fn get_hours_of_operation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hours_of_operation_id
+    }
     /// <p>The Amazon Resource Name (ARN) for the hours of operation.</p>
     pub fn hours_of_operation_arn(
         mut self,
@@ -118,6 +122,10 @@ impl HoursOfOperationBuilder {
         self.hours_of_operation_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the hours of operation.</p>
+    pub fn get_hours_of_operation_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hours_of_operation_arn
+    }
     /// <p>The name for the hours of operation.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -127,6 +135,10 @@ impl HoursOfOperationBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name for the hours of operation.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The description for the hours of operation.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,6 +150,10 @@ impl HoursOfOperationBuilder {
         self.description = input;
         self
     }
+    /// <p>The description for the hours of operation.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The time zone for the hours of operation.</p>
     pub fn time_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time_zone = ::std::option::Option::Some(input.into());
@@ -147,6 +163,10 @@ impl HoursOfOperationBuilder {
     pub fn set_time_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.time_zone = input;
         self
+    }
+    /// <p>The time zone for the hours of operation.</p>
+    pub fn get_time_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.time_zone
     }
     /// Appends an item to `config`.
     ///
@@ -166,6 +186,12 @@ impl HoursOfOperationBuilder {
     ) -> Self {
         self.config = input;
         self
+    }
+    /// <p>Configuration information for the hours of operation.</p>
+    pub fn get_config(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationConfig>> {
+        &self.config
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -191,6 +217,14 @@ impl HoursOfOperationBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`HoursOfOperation`](crate::types::HoursOfOperation).
     pub fn build(self) -> crate::types::HoursOfOperation {

@@ -81,6 +81,10 @@ impl AddResourcePermissionsInputBuilder {
         self.authentication_token = input;
         self
     }
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication_token
+    }
     /// <p>The ID of the resource.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl AddResourcePermissionsInputBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The ID of the resource.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// Appends an item to `principals`.
     ///
@@ -110,6 +118,12 @@ impl AddResourcePermissionsInputBuilder {
         self.principals = input;
         self
     }
+    /// <p>The users, groups, or organization being granted permission.</p>
+    pub fn get_principals(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SharePrincipal>> {
+        &self.principals
+    }
     /// <p>The notification options.</p>
     pub fn notification_options(mut self, input: crate::types::NotificationOptions) -> Self {
         self.notification_options = ::std::option::Option::Some(input);
@@ -122,6 +136,12 @@ impl AddResourcePermissionsInputBuilder {
     ) -> Self {
         self.notification_options = input;
         self
+    }
+    /// <p>The notification options.</p>
+    pub fn get_notification_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::NotificationOptions> {
+        &self.notification_options
     }
     /// Consumes the builder and constructs a [`AddResourcePermissionsInput`](crate::operation::add_resource_permissions::AddResourcePermissionsInput).
     pub fn build(

@@ -39,6 +39,13 @@ impl UpdateDistributionBundleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDistributionBundle as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_distribution_bundle::builders::UpdateDistributionBundleInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +144,11 @@ impl UpdateDistributionBundleFluentBuilder {
         self.inner = self.inner.set_distribution_name(input);
         self
     }
+    /// <p>The name of the distribution for which to update the bundle.</p>
+    /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
+    pub fn get_distribution_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_distribution_name()
+    }
     /// <p>The bundle ID of the new bundle to apply to your distribution.</p>
     /// <p>Use the <code>GetDistributionBundles</code> action to get a list of distribution bundle IDs that you can specify.</p>
     pub fn bundle_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -148,5 +160,10 @@ impl UpdateDistributionBundleFluentBuilder {
     pub fn set_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bundle_id(input);
         self
+    }
+    /// <p>The bundle ID of the new bundle to apply to your distribution.</p>
+    /// <p>Use the <code>GetDistributionBundles</code> action to get a list of distribution bundle IDs that you can specify.</p>
+    pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bundle_id()
     }
 }

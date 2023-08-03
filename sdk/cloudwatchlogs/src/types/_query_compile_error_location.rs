@@ -49,6 +49,10 @@ impl QueryCompileErrorLocationBuilder {
         self
     }
     /// <p>Reserved.</p>
+    pub fn get_start_char_offset(&self) -> &::std::option::Option<i32> {
+        &self.start_char_offset
+    }
+    /// <p>Reserved.</p>
     pub fn end_char_offset(mut self, input: i32) -> Self {
         self.end_char_offset = ::std::option::Option::Some(input);
         self
@@ -57,6 +61,10 @@ impl QueryCompileErrorLocationBuilder {
     pub fn set_end_char_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end_char_offset = input;
         self
+    }
+    /// <p>Reserved.</p>
+    pub fn get_end_char_offset(&self) -> &::std::option::Option<i32> {
+        &self.end_char_offset
     }
     /// Consumes the builder and constructs a [`QueryCompileErrorLocation`](crate::types::QueryCompileErrorLocation).
     pub fn build(self) -> crate::types::QueryCompileErrorLocation {

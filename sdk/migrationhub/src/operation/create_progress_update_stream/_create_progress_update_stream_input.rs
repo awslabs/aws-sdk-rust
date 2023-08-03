@@ -53,6 +53,10 @@ impl CreateProgressUpdateStreamInputBuilder {
         self.progress_update_stream_name = input;
         self
     }
+    /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
+    pub fn get_progress_update_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.progress_update_stream_name
+    }
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -62,6 +66,10 @@ impl CreateProgressUpdateStreamInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`CreateProgressUpdateStreamInput`](crate::operation::create_progress_update_stream::CreateProgressUpdateStreamInput).
     pub fn build(

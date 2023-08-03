@@ -38,6 +38,10 @@ impl GetResourceEvaluationSummaryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetResourceEvaluationSummary as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_resource_evaluation_summary::builders::GetResourceEvaluationSummaryInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,5 +137,9 @@ impl GetResourceEvaluationSummaryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_evaluation_id(input);
         self
+    }
+    /// <p>The unique <code>ResourceEvaluationId</code> of Amazon Web Services resource execution for which you want to retrieve the evaluation summary.</p>
+    pub fn get_resource_evaluation_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_evaluation_id()
     }
 }

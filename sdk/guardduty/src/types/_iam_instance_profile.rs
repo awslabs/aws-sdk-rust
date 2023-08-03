@@ -48,6 +48,10 @@ impl IamInstanceProfileBuilder {
         self.arn = input;
         self
     }
+    /// <p>The profile ARN of the EC2 instance.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The profile ID of the EC2 instance.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl IamInstanceProfileBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The profile ID of the EC2 instance.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`IamInstanceProfile`](crate::types::IamInstanceProfile).
     pub fn build(self) -> crate::types::IamInstanceProfile {

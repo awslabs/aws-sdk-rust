@@ -54,6 +54,10 @@ impl AttributeOperationBuilder {
         self.attribute_path = input;
         self
     }
+    /// <p>A string representation of the path to a given attribute or sub-attribute. Supports JMESPath.</p>
+    pub fn get_attribute_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_path
+    }
     /// <p>The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the AWS CLI.</p>
     pub fn attribute_value(mut self, input: ::aws_smithy_types::Document) -> Self {
         self.attribute_value = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl AttributeOperationBuilder {
     ) -> Self {
         self.attribute_value = input;
         self
+    }
+    /// <p>The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the AWS CLI.</p>
+    pub fn get_attribute_value(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
+        &self.attribute_value
     }
     /// Consumes the builder and constructs a [`AttributeOperation`](crate::types::AttributeOperation).
     pub fn build(self) -> crate::types::AttributeOperation {

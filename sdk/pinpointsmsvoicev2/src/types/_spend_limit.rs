@@ -64,6 +64,10 @@ impl SpendLimitBuilder {
         self.name = input;
         self
     }
+    /// <p>The name for the SpendLimit.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::SpendLimitName> {
+        &self.name
+    }
     /// <p>The maximum amount of money, in US dollars, that you want to be able to spend sending messages each month. This value has to be less than or equal to the amount in <code>MaxLimit</code>. To use this custom limit, <code>Overridden</code> must be set to true.</p>
     pub fn enforced_limit(mut self, input: i64) -> Self {
         self.enforced_limit = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl SpendLimitBuilder {
     pub fn set_enforced_limit(mut self, input: ::std::option::Option<i64>) -> Self {
         self.enforced_limit = input;
         self
+    }
+    /// <p>The maximum amount of money, in US dollars, that you want to be able to spend sending messages each month. This value has to be less than or equal to the amount in <code>MaxLimit</code>. To use this custom limit, <code>Overridden</code> must be set to true.</p>
+    pub fn get_enforced_limit(&self) -> &::std::option::Option<i64> {
+        &self.enforced_limit
     }
     /// <p> The maximum amount of money that you are able to spend to send messages each month, in US dollars.</p>
     pub fn max_limit(mut self, input: i64) -> Self {
@@ -84,6 +92,10 @@ impl SpendLimitBuilder {
         self.max_limit = input;
         self
     }
+    /// <p> The maximum amount of money that you are able to spend to send messages each month, in US dollars.</p>
+    pub fn get_max_limit(&self) -> &::std::option::Option<i64> {
+        &self.max_limit
+    }
     /// <p>When set to <code>True</code>, the value that has been specified in the <code>EnforcedLimit</code> is used to determine the maximum amount in US dollars that can be spent to send messages each month, in US dollars.</p>
     pub fn overridden(mut self, input: bool) -> Self {
         self.overridden = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl SpendLimitBuilder {
     pub fn set_overridden(mut self, input: ::std::option::Option<bool>) -> Self {
         self.overridden = input;
         self
+    }
+    /// <p>When set to <code>True</code>, the value that has been specified in the <code>EnforcedLimit</code> is used to determine the maximum amount in US dollars that can be spent to send messages each month, in US dollars.</p>
+    pub fn get_overridden(&self) -> &::std::option::Option<bool> {
+        &self.overridden
     }
     /// Consumes the builder and constructs a [`SpendLimit`](crate::types::SpendLimit).
     pub fn build(self) -> crate::types::SpendLimit {

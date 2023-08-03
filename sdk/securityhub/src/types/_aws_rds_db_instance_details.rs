@@ -590,6 +590,12 @@ impl AwsRdsDbInstanceDetailsBuilder {
         self.associated_roles = input;
         self
     }
+    /// <p>The IAM roles associated with the DB instance.</p>
+    pub fn get_associated_roles(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbInstanceAssociatedRole>> {
+        &self.associated_roles
+    }
     /// <p>The identifier of the CA certificate for this DB instance.</p>
     pub fn ca_certificate_identifier(
         mut self,
@@ -605,6 +611,10 @@ impl AwsRdsDbInstanceDetailsBuilder {
     ) -> Self {
         self.ca_certificate_identifier = input;
         self
+    }
+    /// <p>The identifier of the CA certificate for this DB instance.</p>
+    pub fn get_ca_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ca_certificate_identifier
     }
     /// <p>If the DB instance is a member of a DB cluster, contains the name of the DB cluster that the DB instance is a member of.</p>
     pub fn db_cluster_identifier(
@@ -622,6 +632,10 @@ impl AwsRdsDbInstanceDetailsBuilder {
         self.db_cluster_identifier = input;
         self
     }
+    /// <p>If the DB instance is a member of a DB cluster, contains the name of the DB cluster that the DB instance is a member of.</p>
+    pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_identifier
+    }
     /// <p>Contains a user-supplied database identifier. This identifier is the unique key that identifies a DB instance.</p>
     pub fn db_instance_identifier(
         mut self,
@@ -637,6 +651,10 @@ impl AwsRdsDbInstanceDetailsBuilder {
     ) -> Self {
         self.db_instance_identifier = input;
         self
+    }
+    /// <p>Contains a user-supplied database identifier. This identifier is the unique key that identifies a DB instance.</p>
+    pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_identifier
     }
     /// <p>Contains the name of the compute and memory capacity class of the DB instance.</p>
     pub fn db_instance_class(
@@ -654,6 +672,10 @@ impl AwsRdsDbInstanceDetailsBuilder {
         self.db_instance_class = input;
         self
     }
+    /// <p>Contains the name of the compute and memory capacity class of the DB instance.</p>
+    pub fn get_db_instance_class(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_class
+    }
     /// <p>Specifies the port that the DB instance listens on. If the DB instance is part of a DB cluster, this can be a different port than the DB cluster port.</p>
     pub fn db_instance_port(mut self, input: i32) -> Self {
         self.db_instance_port = ::std::option::Option::Some(input);
@@ -663,6 +685,10 @@ impl AwsRdsDbInstanceDetailsBuilder {
     pub fn set_db_instance_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.db_instance_port = input;
         self
+    }
+    /// <p>Specifies the port that the DB instance listens on. If the DB instance is part of a DB cluster, this can be a different port than the DB cluster port.</p>
+    pub fn get_db_instance_port(&self) -> &::std::option::Option<i32> {
+        &self.db_instance_port
     }
     /// <p>The Amazon Web Services Region-unique, immutable identifier for the DB instance. This identifier is found in CloudTrail log entries whenever the KMS key for the DB instance is accessed. </p>
     pub fn dbi_resource_id(
@@ -679,6 +705,10 @@ impl AwsRdsDbInstanceDetailsBuilder {
     ) -> Self {
         self.dbi_resource_id = input;
         self
+    }
+    /// <p>The Amazon Web Services Region-unique, immutable identifier for the DB instance. This identifier is found in CloudTrail log entries whenever the KMS key for the DB instance is accessed. </p>
+    pub fn get_dbi_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dbi_resource_id
     }
     /// <p>The meaning of this parameter differs according to the database engine you use.</p>
     /// <p> <b>MySQL, MariaDB, SQL Server, PostgreSQL</b> </p>
@@ -698,6 +728,14 @@ impl AwsRdsDbInstanceDetailsBuilder {
         self.db_name = input;
         self
     }
+    /// <p>The meaning of this parameter differs according to the database engine you use.</p>
+    /// <p> <b>MySQL, MariaDB, SQL Server, PostgreSQL</b> </p>
+    /// <p>Contains the name of the initial database of this instance that was provided at create time, if one was specified when the DB instance was created. This same name is returned for the life of the DB instance.</p>
+    /// <p> <b>Oracle</b> </p>
+    /// <p>Contains the Oracle System ID (SID) of the created DB instance. Not shown when the returned parameters do not apply to an Oracle DB instance. </p>
+    pub fn get_db_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_name
+    }
     /// <p>Indicates whether the DB instance has deletion protection enabled.</p>
     /// <p>When deletion protection is enabled, the database cannot be deleted.</p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
@@ -709,6 +747,11 @@ impl AwsRdsDbInstanceDetailsBuilder {
     pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.deletion_protection = input;
         self
+    }
+    /// <p>Indicates whether the DB instance has deletion protection enabled.</p>
+    /// <p>When deletion protection is enabled, the database cannot be deleted.</p>
+    pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
+        &self.deletion_protection
     }
     /// <p>Specifies the connection endpoint.</p>
     pub fn endpoint(mut self, input: crate::types::AwsRdsDbInstanceEndpoint) -> Self {
@@ -723,6 +766,10 @@ impl AwsRdsDbInstanceDetailsBuilder {
         self.endpoint = input;
         self
     }
+    /// <p>Specifies the connection endpoint.</p>
+    pub fn get_endpoint(&self) -> &::std::option::Option<crate::types::AwsRdsDbInstanceEndpoint> {
+        &self.endpoint
+    }
     /// <p>Provides the name of the database engine to use for this DB instance.</p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
@@ -732,6 +779,10 @@ impl AwsRdsDbInstanceDetailsBuilder {
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
+    }
+    /// <p>Provides the name of the database engine to use for this DB instance.</p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine
     }
     /// <p>Indicates the database engine version.</p>
     pub fn engine_version(
@@ -748,6 +799,10 @@ impl AwsRdsDbInstanceDetailsBuilder {
     ) -> Self {
         self.engine_version = input;
         self
+    }
+    /// <p>Indicates the database engine version.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
     }
     /// <p>True if mapping of IAM accounts to database accounts is enabled, and otherwise false.</p>
     /// <p>IAM database authentication can be enabled for the following database engines.</p>
@@ -774,6 +829,16 @@ impl AwsRdsDbInstanceDetailsBuilder {
         self.iam_database_authentication_enabled = input;
         self
     }
+    /// <p>True if mapping of IAM accounts to database accounts is enabled, and otherwise false.</p>
+    /// <p>IAM database authentication can be enabled for the following database engines.</p>
+    /// <ul>
+    /// <li> <p>For MySQL 5.6, minor version 5.6.34 or higher</p> </li>
+    /// <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p> </li>
+    /// <li> <p>Aurora 5.6 or higher</p> </li>
+    /// </ul>
+    pub fn get_iam_database_authentication_enabled(&self) -> &::std::option::Option<bool> {
+        &self.iam_database_authentication_enabled
+    }
     /// <p>Indicates when the DB instance was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn instance_create_time(
@@ -792,6 +857,11 @@ impl AwsRdsDbInstanceDetailsBuilder {
         self.instance_create_time = input;
         self
     }
+    /// <p>Indicates when the DB instance was created.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_instance_create_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_create_time
+    }
     /// <p>If <code>StorageEncrypted</code> is true, the KMS key identifier for the encrypted DB instance.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -801,6 +871,10 @@ impl AwsRdsDbInstanceDetailsBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>If <code>StorageEncrypted</code> is true, the KMS key identifier for the encrypted DB instance.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// <p>Specifies the accessibility options for the DB instance.</p>
     /// <p>A value of true specifies an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP address.</p>
@@ -816,6 +890,12 @@ impl AwsRdsDbInstanceDetailsBuilder {
         self.publicly_accessible = input;
         self
     }
+    /// <p>Specifies the accessibility options for the DB instance.</p>
+    /// <p>A value of true specifies an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP address.</p>
+    /// <p>A value of false specifies an internal instance with a DNS name that resolves to a private IP address. </p>
+    pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
+        &self.publicly_accessible
+    }
     /// <p>Specifies whether the DB instance is encrypted.</p>
     pub fn storage_encrypted(mut self, input: bool) -> Self {
         self.storage_encrypted = ::std::option::Option::Some(input);
@@ -825,6 +905,10 @@ impl AwsRdsDbInstanceDetailsBuilder {
     pub fn set_storage_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.storage_encrypted = input;
         self
+    }
+    /// <p>Specifies whether the DB instance is encrypted.</p>
+    pub fn get_storage_encrypted(&self) -> &::std::option::Option<bool> {
+        &self.storage_encrypted
     }
     /// <p>The ARN from the key store with which the instance is associated for TDE encryption.</p>
     pub fn tde_credential_arn(
@@ -841,6 +925,10 @@ impl AwsRdsDbInstanceDetailsBuilder {
     ) -> Self {
         self.tde_credential_arn = input;
         self
+    }
+    /// <p>The ARN from the key store with which the instance is associated for TDE encryption.</p>
+    pub fn get_tde_credential_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tde_credential_arn
     }
     /// Appends an item to `vpc_security_groups`.
     ///
@@ -866,6 +954,13 @@ impl AwsRdsDbInstanceDetailsBuilder {
         self.vpc_security_groups = input;
         self
     }
+    /// <p>A list of VPC security groups that the DB instance belongs to.</p>
+    pub fn get_vpc_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbInstanceVpcSecurityGroup>>
+    {
+        &self.vpc_security_groups
+    }
     /// <p>Whether the DB instance is a multiple Availability Zone deployment.</p>
     pub fn multi_az(mut self, input: bool) -> Self {
         self.multi_az = ::std::option::Option::Some(input);
@@ -875,6 +970,10 @@ impl AwsRdsDbInstanceDetailsBuilder {
     pub fn set_multi_az(mut self, input: ::std::option::Option<bool>) -> Self {
         self.multi_az = input;
         self
+    }
+    /// <p>Whether the DB instance is a multiple Availability Zone deployment.</p>
+    pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
+        &self.multi_az
     }
     /// <p>The ARN of the CloudWatch Logs log stream that receives the enhanced monitoring metrics data for the DB instance.</p>
     pub fn enhanced_monitoring_resource_arn(
@@ -892,6 +991,12 @@ impl AwsRdsDbInstanceDetailsBuilder {
         self.enhanced_monitoring_resource_arn = input;
         self
     }
+    /// <p>The ARN of the CloudWatch Logs log stream that receives the enhanced monitoring metrics data for the DB instance.</p>
+    pub fn get_enhanced_monitoring_resource_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.enhanced_monitoring_resource_arn
+    }
     /// <p>The current status of the DB instance.</p>
     pub fn db_instance_status(
         mut self,
@@ -907,6 +1012,10 @@ impl AwsRdsDbInstanceDetailsBuilder {
     ) -> Self {
         self.db_instance_status = input;
         self
+    }
+    /// <p>The current status of the DB instance.</p>
+    pub fn get_db_instance_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_status
     }
     /// <p>The master user name of the DB instance.</p>
     pub fn master_username(
@@ -924,6 +1033,10 @@ impl AwsRdsDbInstanceDetailsBuilder {
         self.master_username = input;
         self
     }
+    /// <p>The master user name of the DB instance.</p>
+    pub fn get_master_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_username
+    }
     /// <p>The amount of storage (in gigabytes) to initially allocate for the DB instance.</p>
     pub fn allocated_storage(mut self, input: i32) -> Self {
         self.allocated_storage = ::std::option::Option::Some(input);
@@ -933,6 +1046,10 @@ impl AwsRdsDbInstanceDetailsBuilder {
     pub fn set_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.allocated_storage = input;
         self
+    }
+    /// <p>The amount of storage (in gigabytes) to initially allocate for the DB instance.</p>
+    pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {
+        &self.allocated_storage
     }
     /// <p>The range of time each day when automated backups are created, if automated backups are enabled.</p>
     /// <p>Uses the format <code>HH:MM-HH:MM</code>. For example, <code>04:52-05:22</code>.</p>
@@ -952,6 +1069,11 @@ impl AwsRdsDbInstanceDetailsBuilder {
         self.preferred_backup_window = input;
         self
     }
+    /// <p>The range of time each day when automated backups are created, if automated backups are enabled.</p>
+    /// <p>Uses the format <code>HH:MM-HH:MM</code>. For example, <code>04:52-05:22</code>.</p>
+    pub fn get_preferred_backup_window(&self) -> &::std::option::Option<::std::string::String> {
+        &self.preferred_backup_window
+    }
     /// <p>The number of days for which to retain automated backups.</p>
     pub fn backup_retention_period(mut self, input: i32) -> Self {
         self.backup_retention_period = ::std::option::Option::Some(input);
@@ -961,6 +1083,10 @@ impl AwsRdsDbInstanceDetailsBuilder {
     pub fn set_backup_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.backup_retention_period = input;
         self
+    }
+    /// <p>The number of days for which to retain automated backups.</p>
+    pub fn get_backup_retention_period(&self) -> &::std::option::Option<i32> {
+        &self.backup_retention_period
     }
     /// Appends an item to `db_security_groups`.
     ///
@@ -984,6 +1110,12 @@ impl AwsRdsDbInstanceDetailsBuilder {
         self.db_security_groups = input;
         self
     }
+    /// <p>A list of the DB security groups to assign to the DB instance.</p>
+    pub fn get_db_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.db_security_groups
+    }
     /// Appends an item to `db_parameter_groups`.
     ///
     /// To override the contents of this collection use [`set_db_parameter_groups`](Self::set_db_parameter_groups).
@@ -1003,6 +1135,12 @@ impl AwsRdsDbInstanceDetailsBuilder {
         self.db_parameter_groups = input;
         self
     }
+    /// <p>A list of the DB parameter groups to assign to the DB instance.</p>
+    pub fn get_db_parameter_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbParameterGroup>> {
+        &self.db_parameter_groups
+    }
     /// <p>The Availability Zone where the DB instance will be created.</p>
     pub fn availability_zone(
         mut self,
@@ -1019,6 +1157,10 @@ impl AwsRdsDbInstanceDetailsBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>The Availability Zone where the DB instance will be created.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>Information about the subnet group that is associated with the DB instance.</p>
     pub fn db_subnet_group(mut self, input: crate::types::AwsRdsDbSubnetGroup) -> Self {
         self.db_subnet_group = ::std::option::Option::Some(input);
@@ -1031,6 +1173,10 @@ impl AwsRdsDbInstanceDetailsBuilder {
     ) -> Self {
         self.db_subnet_group = input;
         self
+    }
+    /// <p>Information about the subnet group that is associated with the DB instance.</p>
+    pub fn get_db_subnet_group(&self) -> &::std::option::Option<crate::types::AwsRdsDbSubnetGroup> {
+        &self.db_subnet_group
     }
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     /// <p>Uses the format <code>
@@ -1066,6 +1212,21 @@ impl AwsRdsDbInstanceDetailsBuilder {
         self.preferred_maintenance_window = input;
         self
     }
+    /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
+    /// <p>Uses the format <code>
+    /// <day>
+    /// :HH:MM-
+    /// <day>
+    /// :HH:MM
+    /// </day>
+    /// </day></code>.</p>
+    /// <p>For the day values, use <code>mon</code>|<code>tue</code>|<code>wed</code>|<code>thu</code>|<code>fri</code>|<code>sat</code>|<code>sun</code>.</p>
+    /// <p>For example, <code>sun:09:32-sun:10:02</code>.</p>
+    pub fn get_preferred_maintenance_window(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.preferred_maintenance_window
+    }
     /// <p>Changes to the DB instance that are currently pending.</p>
     pub fn pending_modified_values(
         mut self,
@@ -1081,6 +1242,12 @@ impl AwsRdsDbInstanceDetailsBuilder {
     ) -> Self {
         self.pending_modified_values = input;
         self
+    }
+    /// <p>Changes to the DB instance that are currently pending.</p>
+    pub fn get_pending_modified_values(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsRdsDbPendingModifiedValues> {
+        &self.pending_modified_values
     }
     /// <p>Specifies the latest time to which a database can be restored with point-in-time restore.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -1100,6 +1267,11 @@ impl AwsRdsDbInstanceDetailsBuilder {
         self.latest_restorable_time = input;
         self
     }
+    /// <p>Specifies the latest time to which a database can be restored with point-in-time restore.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_latest_restorable_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.latest_restorable_time
+    }
     /// <p>Indicates whether minor version patches are applied automatically.</p>
     pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
         self.auto_minor_version_upgrade = ::std::option::Option::Some(input);
@@ -1109,6 +1281,10 @@ impl AwsRdsDbInstanceDetailsBuilder {
     pub fn set_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_minor_version_upgrade = input;
         self
+    }
+    /// <p>Indicates whether minor version patches are applied automatically.</p>
+    pub fn get_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
+        &self.auto_minor_version_upgrade
     }
     /// <p>If this DB instance is a read replica, contains the identifier of the source DB instance.</p>
     pub fn read_replica_source_db_instance_identifier(
@@ -1125,6 +1301,12 @@ impl AwsRdsDbInstanceDetailsBuilder {
     ) -> Self {
         self.read_replica_source_db_instance_identifier = input;
         self
+    }
+    /// <p>If this DB instance is a read replica, contains the identifier of the source DB instance.</p>
+    pub fn get_read_replica_source_db_instance_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.read_replica_source_db_instance_identifier
     }
     /// Appends an item to `read_replica_db_instance_identifiers`.
     ///
@@ -1150,6 +1332,12 @@ impl AwsRdsDbInstanceDetailsBuilder {
         self.read_replica_db_instance_identifiers = input;
         self
     }
+    /// <p>List of identifiers of the read replicas associated with this DB instance.</p>
+    pub fn get_read_replica_db_instance_identifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.read_replica_db_instance_identifiers
+    }
     /// Appends an item to `read_replica_db_cluster_identifiers`.
     ///
     /// To override the contents of this collection use [`set_read_replica_db_cluster_identifiers`](Self::set_read_replica_db_cluster_identifiers).
@@ -1172,6 +1360,12 @@ impl AwsRdsDbInstanceDetailsBuilder {
         self.read_replica_db_cluster_identifiers = input;
         self
     }
+    /// <p>List of identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a read replica.</p>
+    pub fn get_read_replica_db_cluster_identifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.read_replica_db_cluster_identifiers
+    }
     /// <p>License model information for this DB instance.</p>
     pub fn license_model(
         mut self,
@@ -1188,6 +1382,10 @@ impl AwsRdsDbInstanceDetailsBuilder {
         self.license_model = input;
         self
     }
+    /// <p>License model information for this DB instance.</p>
+    pub fn get_license_model(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_model
+    }
     /// <p>Specifies the provisioned IOPS (I/O operations per second) for this DB instance.</p>
     pub fn iops(mut self, input: i32) -> Self {
         self.iops = ::std::option::Option::Some(input);
@@ -1197,6 +1395,10 @@ impl AwsRdsDbInstanceDetailsBuilder {
     pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
         self.iops = input;
         self
+    }
+    /// <p>Specifies the provisioned IOPS (I/O operations per second) for this DB instance.</p>
+    pub fn get_iops(&self) -> &::std::option::Option<i32> {
+        &self.iops
     }
     /// Appends an item to `option_group_memberships`.
     ///
@@ -1220,6 +1422,12 @@ impl AwsRdsDbInstanceDetailsBuilder {
         self.option_group_memberships = input;
         self
     }
+    /// <p>The list of option group memberships for this DB instance.</p>
+    pub fn get_option_group_memberships(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbOptionGroupMembership>> {
+        &self.option_group_memberships
+    }
     /// <p>The name of the character set that this DB instance is associated with.</p>
     pub fn character_set_name(
         mut self,
@@ -1236,6 +1444,10 @@ impl AwsRdsDbInstanceDetailsBuilder {
         self.character_set_name = input;
         self
     }
+    /// <p>The name of the character set that this DB instance is associated with.</p>
+    pub fn get_character_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.character_set_name
+    }
     /// <p>For a DB instance with multi-Availability Zone support, the name of the secondary Availability Zone.</p>
     pub fn secondary_availability_zone(
         mut self,
@@ -1251,6 +1463,10 @@ impl AwsRdsDbInstanceDetailsBuilder {
     ) -> Self {
         self.secondary_availability_zone = input;
         self
+    }
+    /// <p>For a DB instance with multi-Availability Zone support, the name of the secondary Availability Zone.</p>
+    pub fn get_secondary_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secondary_availability_zone
     }
     /// Appends an item to `status_infos`.
     ///
@@ -1271,6 +1487,12 @@ impl AwsRdsDbInstanceDetailsBuilder {
         self.status_infos = input;
         self
     }
+    /// <p>The status of a read replica. If the instance isn't a read replica, this is empty.</p>
+    pub fn get_status_infos(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbStatusInfo>> {
+        &self.status_infos
+    }
     /// <p>The storage type for the DB instance.</p>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_type = ::std::option::Option::Some(input.into());
@@ -1280,6 +1502,10 @@ impl AwsRdsDbInstanceDetailsBuilder {
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_type = input;
         self
+    }
+    /// <p>The storage type for the DB instance.</p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_type
     }
     /// Appends an item to `domain_memberships`.
     ///
@@ -1300,6 +1526,12 @@ impl AwsRdsDbInstanceDetailsBuilder {
         self.domain_memberships = input;
         self
     }
+    /// <p>The Active Directory domain membership records associated with the DB instance.</p>
+    pub fn get_domain_memberships(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbDomainMembership>> {
+        &self.domain_memberships
+    }
     /// <p>Whether to copy resource tags to snapshots of the DB instance.</p>
     pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
         self.copy_tags_to_snapshot = ::std::option::Option::Some(input);
@@ -1310,6 +1542,10 @@ impl AwsRdsDbInstanceDetailsBuilder {
         self.copy_tags_to_snapshot = input;
         self
     }
+    /// <p>Whether to copy resource tags to snapshots of the DB instance.</p>
+    pub fn get_copy_tags_to_snapshot(&self) -> &::std::option::Option<bool> {
+        &self.copy_tags_to_snapshot
+    }
     /// <p>The interval, in seconds, between points when enhanced monitoring metrics are collected for the DB instance.</p>
     pub fn monitoring_interval(mut self, input: i32) -> Self {
         self.monitoring_interval = ::std::option::Option::Some(input);
@@ -1319,6 +1555,10 @@ impl AwsRdsDbInstanceDetailsBuilder {
     pub fn set_monitoring_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.monitoring_interval = input;
         self
+    }
+    /// <p>The interval, in seconds, between points when enhanced monitoring metrics are collected for the DB instance.</p>
+    pub fn get_monitoring_interval(&self) -> &::std::option::Option<i32> {
+        &self.monitoring_interval
     }
     /// <p>The ARN for the IAM role that permits Amazon RDS to send enhanced monitoring metrics to CloudWatch Logs.</p>
     pub fn monitoring_role_arn(
@@ -1336,6 +1576,10 @@ impl AwsRdsDbInstanceDetailsBuilder {
         self.monitoring_role_arn = input;
         self
     }
+    /// <p>The ARN for the IAM role that permits Amazon RDS to send enhanced monitoring metrics to CloudWatch Logs.</p>
+    pub fn get_monitoring_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitoring_role_arn
+    }
     /// <p>The order in which to promote an Aurora replica to the primary instance after a failure of the existing primary instance.</p>
     pub fn promotion_tier(mut self, input: i32) -> Self {
         self.promotion_tier = ::std::option::Option::Some(input);
@@ -1345,6 +1589,10 @@ impl AwsRdsDbInstanceDetailsBuilder {
     pub fn set_promotion_tier(mut self, input: ::std::option::Option<i32>) -> Self {
         self.promotion_tier = input;
         self
+    }
+    /// <p>The order in which to promote an Aurora replica to the primary instance after a failure of the existing primary instance.</p>
+    pub fn get_promotion_tier(&self) -> &::std::option::Option<i32> {
+        &self.promotion_tier
     }
     /// <p>The time zone of the DB instance.</p>
     pub fn timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -1356,6 +1604,10 @@ impl AwsRdsDbInstanceDetailsBuilder {
         self.timezone = input;
         self
     }
+    /// <p>The time zone of the DB instance.</p>
+    pub fn get_timezone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timezone
+    }
     /// <p>Indicates whether Performance Insights is enabled for the DB instance.</p>
     pub fn performance_insights_enabled(mut self, input: bool) -> Self {
         self.performance_insights_enabled = ::std::option::Option::Some(input);
@@ -1365,6 +1617,10 @@ impl AwsRdsDbInstanceDetailsBuilder {
     pub fn set_performance_insights_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.performance_insights_enabled = input;
         self
+    }
+    /// <p>Indicates whether Performance Insights is enabled for the DB instance.</p>
+    pub fn get_performance_insights_enabled(&self) -> &::std::option::Option<bool> {
+        &self.performance_insights_enabled
     }
     /// <p>The identifier of the KMS key used to encrypt the Performance Insights data.</p>
     pub fn performance_insights_kms_key_id(
@@ -1382,6 +1638,12 @@ impl AwsRdsDbInstanceDetailsBuilder {
         self.performance_insights_kms_key_id = input;
         self
     }
+    /// <p>The identifier of the KMS key used to encrypt the Performance Insights data.</p>
+    pub fn get_performance_insights_kms_key_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.performance_insights_kms_key_id
+    }
     /// <p>The number of days to retain Performance Insights data.</p>
     pub fn performance_insights_retention_period(mut self, input: i32) -> Self {
         self.performance_insights_retention_period = ::std::option::Option::Some(input);
@@ -1394,6 +1656,10 @@ impl AwsRdsDbInstanceDetailsBuilder {
     ) -> Self {
         self.performance_insights_retention_period = input;
         self
+    }
+    /// <p>The number of days to retain Performance Insights data.</p>
+    pub fn get_performance_insights_retention_period(&self) -> &::std::option::Option<i32> {
+        &self.performance_insights_retention_period
     }
     /// Appends an item to `enabled_cloud_watch_logs_exports`.
     ///
@@ -1417,6 +1683,12 @@ impl AwsRdsDbInstanceDetailsBuilder {
         self.enabled_cloud_watch_logs_exports = input;
         self
     }
+    /// <p>A list of log types that this DB instance is configured to export to CloudWatch Logs.</p>
+    pub fn get_enabled_cloud_watch_logs_exports(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.enabled_cloud_watch_logs_exports
+    }
     /// Appends an item to `processor_features`.
     ///
     /// To override the contents of this collection use [`set_processor_features`](Self::set_processor_features).
@@ -1436,6 +1708,12 @@ impl AwsRdsDbInstanceDetailsBuilder {
         self.processor_features = input;
         self
     }
+    /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
+    pub fn get_processor_features(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbProcessorFeature>> {
+        &self.processor_features
+    }
     /// <p>Specifies the connection endpoint.</p>
     pub fn listener_endpoint(mut self, input: crate::types::AwsRdsDbInstanceEndpoint) -> Self {
         self.listener_endpoint = ::std::option::Option::Some(input);
@@ -1449,6 +1727,12 @@ impl AwsRdsDbInstanceDetailsBuilder {
         self.listener_endpoint = input;
         self
     }
+    /// <p>Specifies the connection endpoint.</p>
+    pub fn get_listener_endpoint(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsRdsDbInstanceEndpoint> {
+        &self.listener_endpoint
+    }
     /// <p>The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.</p>
     pub fn max_allocated_storage(mut self, input: i32) -> Self {
         self.max_allocated_storage = ::std::option::Option::Some(input);
@@ -1458,6 +1742,10 @@ impl AwsRdsDbInstanceDetailsBuilder {
     pub fn set_max_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_allocated_storage = input;
         self
+    }
+    /// <p>The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.</p>
+    pub fn get_max_allocated_storage(&self) -> &::std::option::Option<i32> {
+        &self.max_allocated_storage
     }
     /// Consumes the builder and constructs a [`AwsRdsDbInstanceDetails`](crate::types::AwsRdsDbInstanceDetails).
     pub fn build(self) -> crate::types::AwsRdsDbInstanceDetails {

@@ -48,6 +48,10 @@ impl DatasetEntryBuilder {
         self.entry_name = input;
         self
     }
+    /// <p>The name of the dataset item.</p>
+    pub fn get_entry_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entry_name
+    }
     /// <p>The presigned URI of the dataset item.</p>
     pub fn data_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_uri = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl DatasetEntryBuilder {
     pub fn set_data_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_uri = input;
         self
+    }
+    /// <p>The presigned URI of the dataset item.</p>
+    pub fn get_data_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_uri
     }
     /// Consumes the builder and constructs a [`DatasetEntry`](crate::types::DatasetEntry).
     pub fn build(self) -> crate::types::DatasetEntry {

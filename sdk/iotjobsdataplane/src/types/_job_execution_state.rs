@@ -67,6 +67,10 @@ impl JobExecutionStateBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED", "REJECTED", or "REMOVED".</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::JobExecutionStatus> {
+        &self.status
+    }
     /// Adds a key-value pair to `status_details`.
     ///
     /// To override the contents of this collection use [`set_status_details`](Self::set_status_details).
@@ -92,6 +96,14 @@ impl JobExecutionStateBuilder {
         self.status_details = input;
         self
     }
+    /// <p>A collection of name/value pairs that describe the status of the job execution.</p>
+    pub fn get_status_details(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.status_details
+    }
     /// <p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>
     pub fn version_number(mut self, input: i64) -> Self {
         self.version_number = ::std::option::Option::Some(input);
@@ -101,6 +113,10 @@ impl JobExecutionStateBuilder {
     pub fn set_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.version_number = input;
         self
+    }
+    /// <p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>
+    pub fn get_version_number(&self) -> &::std::option::Option<i64> {
+        &self.version_number
     }
     /// Consumes the builder and constructs a [`JobExecutionState`](crate::types::JobExecutionState).
     pub fn build(self) -> crate::types::JobExecutionState {

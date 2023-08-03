@@ -37,6 +37,10 @@ impl ExportTransitGatewayRoutesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ExportTransitGatewayRoutes as a reference.
+    pub fn as_input(&self) -> &crate::operation::export_transit_gateway_routes::builders::ExportTransitGatewayRoutesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,12 @@ impl ExportTransitGatewayRoutesFluentBuilder {
         self.inner = self.inner.set_transit_gateway_route_table_id(input);
         self
     }
+    /// <p>The ID of the route table.</p>
+    pub fn get_transit_gateway_route_table_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_transit_gateway_route_table_id()
+    }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -172,6 +182,21 @@ impl ExportTransitGatewayRoutesFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>One or more filters. The possible values are:</p>
+    /// <ul>
+    /// <li> <p> <code>attachment.transit-gateway-attachment-id</code> - The id of the transit gateway attachment.</p> </li>
+    /// <li> <p> <code>attachment.resource-id</code> - The resource id of the transit gateway attachment.</p> </li>
+    /// <li> <p> <code>route-search.exact-match</code> - The exact match of the specified filter.</p> </li>
+    /// <li> <p> <code>route-search.longest-prefix-match</code> - The longest prefix that matches the route.</p> </li>
+    /// <li> <p> <code>route-search.subnet-of-match</code> - The routes with a subnet that match the specified CIDR filter.</p> </li>
+    /// <li> <p> <code>route-search.supernet-of-match</code> - The routes with a CIDR that encompass the CIDR filter. For example, if you have 10.0.1.0/29 and 10.0.1.0/31 routes in your route table and you specify supernet-of-match as 10.0.1.0/30, then the result returns 10.0.1.0/29.</p> </li>
+    /// <li> <p> <code>state</code> - The state of the route (<code>active</code> | <code>blackhole</code>).</p> </li>
+    /// <li> <p> <code>transit-gateway-route-destination-cidr-block</code> - The CIDR range.</p> </li>
+    /// <li> <p> <code>type</code> - The type of route (<code>propagated</code> | <code>static</code>).</p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// <p>The name of the S3 bucket.</p>
     pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.s3_bucket(input.into());
@@ -182,6 +207,10 @@ impl ExportTransitGatewayRoutesFluentBuilder {
         self.inner = self.inner.set_s3_bucket(input);
         self
     }
+    /// <p>The name of the S3 bucket.</p>
+    pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_s3_bucket()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -191,5 +220,9 @@ impl ExportTransitGatewayRoutesFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

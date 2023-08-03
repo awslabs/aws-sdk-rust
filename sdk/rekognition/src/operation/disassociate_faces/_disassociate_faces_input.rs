@@ -70,6 +70,10 @@ impl DisassociateFacesInputBuilder {
         self.collection_id = input;
         self
     }
+    /// <p>The ID of an existing collection containing the UserID.</p>
+    pub fn get_collection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collection_id
+    }
     /// <p>ID for the existing UserID.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl DisassociateFacesInputBuilder {
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
+    }
+    /// <p>ID for the existing UserID.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     /// <p>Idempotent token used to identify the request to <code>DisassociateFaces</code>. If you use the same token with multiple <code>DisassociateFaces</code> requests, the same response is returned. Use ClientRequestToken to prevent the same request from being processed more than once.</p>
     pub fn client_request_token(
@@ -95,6 +103,10 @@ impl DisassociateFacesInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>Idempotent token used to identify the request to <code>DisassociateFaces</code>. If you use the same token with multiple <code>DisassociateFaces</code> requests, the same response is returned. Use ClientRequestToken to prevent the same request from being processed more than once.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Appends an item to `face_ids`.
     ///
@@ -114,6 +126,10 @@ impl DisassociateFacesInputBuilder {
     ) -> Self {
         self.face_ids = input;
         self
+    }
+    /// <p>An array of face IDs to disassociate from the UserID. </p>
+    pub fn get_face_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.face_ids
     }
     /// Consumes the builder and constructs a [`DisassociateFacesInput`](crate::operation::disassociate_faces::DisassociateFacesInput).
     pub fn build(

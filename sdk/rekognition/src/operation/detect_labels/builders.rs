@@ -72,6 +72,10 @@ impl DetectLabelsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DetectLabels as a reference.
+    pub fn as_input(&self) -> &crate::operation::detect_labels::builders::DetectLabelsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -156,6 +160,11 @@ impl DetectLabelsFluentBuilder {
         self.inner = self.inner.set_image(input);
         self
     }
+    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes is not supported. Images stored in an S3 Bucket do not need to be base64-encoded.</p>
+    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
+    pub fn get_image(&self) -> &::std::option::Option<crate::types::Image> {
+        self.inner.get_image()
+    }
     /// <p>Maximum number of labels you want the service to return in the response. The service returns the specified number of highest confidence labels. </p>
     pub fn max_labels(mut self, input: i32) -> Self {
         self.inner = self.inner.max_labels(input);
@@ -165,6 +174,10 @@ impl DetectLabelsFluentBuilder {
     pub fn set_max_labels(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_labels(input);
         self
+    }
+    /// <p>Maximum number of labels you want the service to return in the response. The service returns the specified number of highest confidence labels. </p>
+    pub fn get_max_labels(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_labels()
     }
     /// <p>Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't return any labels with confidence lower than this specified value.</p>
     /// <p>If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values greater than or equal to 55 percent.</p>
@@ -177,6 +190,11 @@ impl DetectLabelsFluentBuilder {
     pub fn set_min_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.inner = self.inner.set_min_confidence(input);
         self
+    }
+    /// <p>Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't return any labels with confidence lower than this specified value.</p>
+    /// <p>If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values greater than or equal to 55 percent.</p>
+    pub fn get_min_confidence(&self) -> &::std::option::Option<f32> {
+        self.inner.get_min_confidence()
     }
     /// Appends an item to `Features`.
     ///
@@ -195,6 +213,12 @@ impl DetectLabelsFluentBuilder {
         self.inner = self.inner.set_features(input);
         self
     }
+    /// <p>A list of the types of analysis to perform. Specifying GENERAL_LABELS uses the label detection feature, while specifying IMAGE_PROPERTIES returns information regarding image color and quality. If no option is specified GENERAL_LABELS is used by default.</p>
+    pub fn get_features(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DetectLabelsFeatureName>> {
+        self.inner.get_features()
+    }
     /// <p>A list of the filters to be applied to returned detected labels and image properties. Specified filters can be inclusive, exclusive, or a combination of both. Filters can be used for individual labels or label categories. The exact label names or label categories must be supplied. For a full list of labels and label categories, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/labels.html">Detecting labels</a>.</p>
     pub fn settings(mut self, input: crate::types::DetectLabelsSettings) -> Self {
         self.inner = self.inner.settings(input);
@@ -207,5 +231,9 @@ impl DetectLabelsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_settings(input);
         self
+    }
+    /// <p>A list of the filters to be applied to returned detected labels and image properties. Specified filters can be inclusive, exclusive, or a combination of both. Filters can be used for individual labels or label categories. The exact label names or label categories must be supplied. For a full list of labels and label categories, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/labels.html">Detecting labels</a>.</p>
+    pub fn get_settings(&self) -> &::std::option::Option<crate::types::DetectLabelsSettings> {
+        self.inner.get_settings()
     }
 }

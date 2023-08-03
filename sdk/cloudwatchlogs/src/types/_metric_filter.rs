@@ -76,6 +76,10 @@ impl MetricFilterBuilder {
         self.filter_name = input;
         self
     }
+    /// <p>The name of the metric filter.</p>
+    pub fn get_filter_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter_name
+    }
     /// <p>A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.</p>
     pub fn filter_pattern(
         mut self,
@@ -91,6 +95,10 @@ impl MetricFilterBuilder {
     ) -> Self {
         self.filter_pattern = input;
         self
+    }
+    /// <p>A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.</p>
+    pub fn get_filter_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter_pattern
     }
     /// Appends an item to `metric_transformations`.
     ///
@@ -111,6 +119,12 @@ impl MetricFilterBuilder {
         self.metric_transformations = input;
         self
     }
+    /// <p>The metric transformations.</p>
+    pub fn get_metric_transformations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricTransformation>> {
+        &self.metric_transformations
+    }
     /// <p>The creation time of the metric filter, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub fn creation_time(mut self, input: i64) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -120,6 +134,10 @@ impl MetricFilterBuilder {
     pub fn set_creation_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The creation time of the metric filter, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<i64> {
+        &self.creation_time
     }
     /// <p>The name of the log group.</p>
     pub fn log_group_name(
@@ -136,6 +154,10 @@ impl MetricFilterBuilder {
     ) -> Self {
         self.log_group_name = input;
         self
+    }
+    /// <p>The name of the log group.</p>
+    pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group_name
     }
     /// Consumes the builder and constructs a [`MetricFilter`](crate::types::MetricFilter).
     pub fn build(self) -> crate::types::MetricFilter {

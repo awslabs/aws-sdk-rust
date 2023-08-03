@@ -67,6 +67,10 @@ impl UpdateDeviceStatusInputBuilder {
         self.access_token = input;
         self
     }
+    /// <p>A valid access token that Amazon Cognito issued to the user whose device status you want to update.</p>
+    pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_token
+    }
     /// <p>The device key.</p>
     pub fn device_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_key = ::std::option::Option::Some(input.into());
@@ -76,6 +80,10 @@ impl UpdateDeviceStatusInputBuilder {
     pub fn set_device_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_key = input;
         self
+    }
+    /// <p>The device key.</p>
+    pub fn get_device_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_key
     }
     /// <p>The status of whether a device is remembered.</p>
     pub fn device_remembered_status(
@@ -92,6 +100,12 @@ impl UpdateDeviceStatusInputBuilder {
     ) -> Self {
         self.device_remembered_status = input;
         self
+    }
+    /// <p>The status of whether a device is remembered.</p>
+    pub fn get_device_remembered_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeviceRememberedStatusType> {
+        &self.device_remembered_status
     }
     /// Consumes the builder and constructs a [`UpdateDeviceStatusInput`](crate::operation::update_device_status::UpdateDeviceStatusInput).
     pub fn build(

@@ -100,6 +100,12 @@ impl CustomFilterConfigurationBuilder {
         self.match_operator = input;
         self
     }
+    /// <p>The match operator that is used to determine if a filter should be applied.</p>
+    pub fn get_match_operator(
+        &self,
+    ) -> &::std::option::Option<crate::types::CategoryFilterMatchOperator> {
+        &self.match_operator
+    }
     /// <p>The category value for the filter.</p>
     /// <p>This field is mutually exclusive to <code>ParameterName</code>.</p>
     pub fn category_value(
@@ -117,6 +123,11 @@ impl CustomFilterConfigurationBuilder {
     ) -> Self {
         self.category_value = input;
         self
+    }
+    /// <p>The category value for the filter.</p>
+    /// <p>This field is mutually exclusive to <code>ParameterName</code>.</p>
+    pub fn get_category_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.category_value
     }
     /// <p>Select all of the values. Null is not the assigned value of select all.</p>
     /// <ul>
@@ -140,6 +151,15 @@ impl CustomFilterConfigurationBuilder {
         self.select_all_options = input;
         self
     }
+    /// <p>Select all of the values. Null is not the assigned value of select all.</p>
+    /// <ul>
+    /// <li> <p> <code>FILTER_ALL_VALUES</code> </p> </li>
+    /// </ul>
+    pub fn get_select_all_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::CategoryFilterSelectAllOptions> {
+        &self.select_all_options
+    }
     /// <p>The parameter whose value should be used for the filter value.</p>
     /// <p>This field is mutually exclusive to <code>CategoryValue</code>.</p>
     pub fn parameter_name(
@@ -157,6 +177,11 @@ impl CustomFilterConfigurationBuilder {
     ) -> Self {
         self.parameter_name = input;
         self
+    }
+    /// <p>The parameter whose value should be used for the filter value.</p>
+    /// <p>This field is mutually exclusive to <code>CategoryValue</code>.</p>
+    pub fn get_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_name
     }
     /// <p>This option determines how null values should be treated when filtering data.</p>
     /// <ul>
@@ -180,6 +205,15 @@ impl CustomFilterConfigurationBuilder {
     ) -> Self {
         self.null_option = input;
         self
+    }
+    /// <p>This option determines how null values should be treated when filtering data.</p>
+    /// <ul>
+    /// <li> <p> <code>ALL_VALUES</code>: Include null values in filtered results.</p> </li>
+    /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li>
+    /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li>
+    /// </ul>
+    pub fn get_null_option(&self) -> &::std::option::Option<crate::types::FilterNullOption> {
+        &self.null_option
     }
     /// Consumes the builder and constructs a [`CustomFilterConfiguration`](crate::types::CustomFilterConfiguration).
     pub fn build(self) -> crate::types::CustomFilterConfiguration {

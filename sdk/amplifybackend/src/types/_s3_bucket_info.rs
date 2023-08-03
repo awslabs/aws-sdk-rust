@@ -54,6 +54,10 @@ impl S3BucketInfoBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>The creation date of the S3 bucket.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_date
+    }
     /// <p>The name of the S3 bucket.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl S3BucketInfoBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the S3 bucket.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`S3BucketInfo`](crate::types::S3BucketInfo).
     pub fn build(self) -> crate::types::S3BucketInfo {

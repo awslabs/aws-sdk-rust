@@ -120,6 +120,10 @@ impl StreamingSessionBackupBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The ISO timestamp in for when the resource was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -132,6 +136,10 @@ impl StreamingSessionBackupBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The ISO timestamp in for when the resource was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>The ID of the launch profile which allowed the backups for the streaming session.</p>
     pub fn launch_profile_id(
@@ -149,6 +157,10 @@ impl StreamingSessionBackupBuilder {
         self.launch_profile_id = input;
         self
     }
+    /// <p>The ID of the launch profile which allowed the backups for the streaming session.</p>
+    pub fn get_launch_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_profile_id
+    }
     /// <p>The user ID of the user that owns the streaming session.</p>
     pub fn owned_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owned_by = ::std::option::Option::Some(input.into());
@@ -159,6 +171,10 @@ impl StreamingSessionBackupBuilder {
         self.owned_by = input;
         self
     }
+    /// <p>The user ID of the user that owns the streaming session.</p>
+    pub fn get_owned_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owned_by
+    }
     /// <p>The streaming session ID for the <code>StreamingSessionBackup</code>.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
@@ -168,6 +184,10 @@ impl StreamingSessionBackupBuilder {
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_id = input;
         self
+    }
+    /// <p>The streaming session ID for the <code>StreamingSessionBackup</code>.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
     }
     /// <p>The streaming session state.</p>
     pub fn state(mut self, input: crate::types::StreamingSessionState) -> Self {
@@ -182,6 +202,10 @@ impl StreamingSessionBackupBuilder {
         self.state = input;
         self
     }
+    /// <p>The streaming session state.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::StreamingSessionState> {
+        &self.state
+    }
     /// <p>The status code.</p>
     pub fn status_code(mut self, input: crate::types::StreamingSessionStatusCode) -> Self {
         self.status_code = ::std::option::Option::Some(input);
@@ -194,6 +218,12 @@ impl StreamingSessionBackupBuilder {
     ) -> Self {
         self.status_code = input;
         self
+    }
+    /// <p>The status code.</p>
+    pub fn get_status_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::StreamingSessionStatusCode> {
+        &self.status_code
     }
     /// <p>The status message for the streaming session backup.</p>
     pub fn status_message(
@@ -211,6 +241,10 @@ impl StreamingSessionBackupBuilder {
         self.status_message = input;
         self
     }
+    /// <p>The status message for the streaming session backup.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>The ID of the backup.</p>
     pub fn backup_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_id = ::std::option::Option::Some(input.into());
@@ -220,6 +254,10 @@ impl StreamingSessionBackupBuilder {
     pub fn set_backup_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_id = input;
         self
+    }
+    /// <p>The ID of the backup.</p>
+    pub fn get_backup_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_id
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -245,6 +283,14 @@ impl StreamingSessionBackupBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`StreamingSessionBackup`](crate::types::StreamingSessionBackup).
     pub fn build(self) -> crate::types::StreamingSessionBackup {

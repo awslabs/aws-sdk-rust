@@ -53,6 +53,10 @@ impl EncryptionInfoBuilder {
         self.encryption_at_rest = input;
         self
     }
+    /// <p>The data-volume encryption details.</p>
+    pub fn get_encryption_at_rest(&self) -> &::std::option::Option<crate::types::EncryptionAtRest> {
+        &self.encryption_at_rest
+    }
     /// <p>The details for encryption in transit.</p>
     pub fn encryption_in_transit(mut self, input: crate::types::EncryptionInTransit) -> Self {
         self.encryption_in_transit = ::std::option::Option::Some(input);
@@ -65,6 +69,12 @@ impl EncryptionInfoBuilder {
     ) -> Self {
         self.encryption_in_transit = input;
         self
+    }
+    /// <p>The details for encryption in transit.</p>
+    pub fn get_encryption_in_transit(
+        &self,
+    ) -> &::std::option::Option<crate::types::EncryptionInTransit> {
+        &self.encryption_in_transit
     }
     /// Consumes the builder and constructs a [`EncryptionInfo`](crate::types::EncryptionInfo).
     pub fn build(self) -> crate::types::EncryptionInfo {

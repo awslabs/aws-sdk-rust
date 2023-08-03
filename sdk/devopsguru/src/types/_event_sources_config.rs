@@ -50,6 +50,12 @@ impl EventSourcesConfigBuilder {
         self.amazon_code_guru_profiler = input;
         self
     }
+    /// <p>Information about whether DevOps Guru is configured to consume recommendations which are generated from AWS CodeGuru Profiler.</p>
+    pub fn get_amazon_code_guru_profiler(
+        &self,
+    ) -> &::std::option::Option<crate::types::AmazonCodeGuruProfilerIntegration> {
+        &self.amazon_code_guru_profiler
+    }
     /// Consumes the builder and constructs a [`EventSourcesConfig`](crate::types::EventSourcesConfig).
     pub fn build(self) -> crate::types::EventSourcesConfig {
         crate::types::EventSourcesConfig {

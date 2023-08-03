@@ -90,6 +90,10 @@ impl InventoryDeletionStatusItemBuilder {
         self.deletion_id = input;
         self
     }
+    /// <p>The deletion ID returned by the <code>DeleteInventory</code> operation.</p>
+    pub fn get_deletion_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deletion_id
+    }
     /// <p>The name of the inventory data type.</p>
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_name = ::std::option::Option::Some(input.into());
@@ -99,6 +103,10 @@ impl InventoryDeletionStatusItemBuilder {
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.type_name = input;
         self
+    }
+    /// <p>The name of the inventory data type.</p>
+    pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.type_name
     }
     /// <p>The UTC timestamp when the delete operation started.</p>
     pub fn deletion_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -113,6 +121,10 @@ impl InventoryDeletionStatusItemBuilder {
         self.deletion_start_time = input;
         self
     }
+    /// <p>The UTC timestamp when the delete operation started.</p>
+    pub fn get_deletion_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.deletion_start_time
+    }
     /// <p>The status of the operation. Possible values are InProgress and Complete.</p>
     pub fn last_status(mut self, input: crate::types::InventoryDeletionStatus) -> Self {
         self.last_status = ::std::option::Option::Some(input);
@@ -125,6 +137,10 @@ impl InventoryDeletionStatusItemBuilder {
     ) -> Self {
         self.last_status = input;
         self
+    }
+    /// <p>The status of the operation. Possible values are InProgress and Complete.</p>
+    pub fn get_last_status(&self) -> &::std::option::Option<crate::types::InventoryDeletionStatus> {
+        &self.last_status
     }
     /// <p>Information about the status.</p>
     pub fn last_status_message(
@@ -142,6 +158,10 @@ impl InventoryDeletionStatusItemBuilder {
         self.last_status_message = input;
         self
     }
+    /// <p>Information about the status.</p>
+    pub fn get_last_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_status_message
+    }
     /// <p>Information about the delete operation. For more information about this summary, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding the delete inventory summary</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn deletion_summary(mut self, input: crate::types::InventoryDeletionSummary) -> Self {
         self.deletion_summary = ::std::option::Option::Some(input);
@@ -155,6 +175,12 @@ impl InventoryDeletionStatusItemBuilder {
         self.deletion_summary = input;
         self
     }
+    /// <p>Information about the delete operation. For more information about this summary, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding the delete inventory summary</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    pub fn get_deletion_summary(
+        &self,
+    ) -> &::std::option::Option<crate::types::InventoryDeletionSummary> {
+        &self.deletion_summary
+    }
     /// <p>The UTC timestamp of when the last status report.</p>
     pub fn last_status_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_status_update_time = ::std::option::Option::Some(input);
@@ -167,6 +193,12 @@ impl InventoryDeletionStatusItemBuilder {
     ) -> Self {
         self.last_status_update_time = input;
         self
+    }
+    /// <p>The UTC timestamp of when the last status report.</p>
+    pub fn get_last_status_update_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_status_update_time
     }
     /// Consumes the builder and constructs a [`InventoryDeletionStatusItem`](crate::types::InventoryDeletionStatusItem).
     pub fn build(self) -> crate::types::InventoryDeletionStatusItem {

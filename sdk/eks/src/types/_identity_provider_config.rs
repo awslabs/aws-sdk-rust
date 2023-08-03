@@ -48,6 +48,10 @@ impl IdentityProviderConfigBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of the identity provider configuration. The only type available is <code>oidc</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p>The name of the identity provider configuration.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl IdentityProviderConfigBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the identity provider configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`IdentityProviderConfig`](crate::types::IdentityProviderConfig).
     pub fn build(self) -> crate::types::IdentityProviderConfig {

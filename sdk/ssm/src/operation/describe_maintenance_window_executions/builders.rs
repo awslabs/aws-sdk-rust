@@ -36,6 +36,10 @@ impl DescribeMaintenanceWindowExecutionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeMaintenanceWindowExecutions as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_maintenance_window_executions::builders::DescribeMaintenanceWindowExecutionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl DescribeMaintenanceWindowExecutionsFluentBuilder {
         self.inner = self.inner.set_window_id(input);
         self
     }
+    /// <p>The ID of the maintenance window whose executions should be retrieved.</p>
+    pub fn get_window_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_window_id()
+    }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -131,6 +139,16 @@ impl DescribeMaintenanceWindowExecutionsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>Each entry in the array is a structure containing:</p>
+    /// <ul>
+    /// <li> <p>Key. A string between 1 and 128 characters. Supported keys include <code>ExecutedBefore</code> and <code>ExecutedAfter</code>.</p> </li>
+    /// <li> <p>Values. An array of strings, each between 1 and 256 characters. Supported values are date/time strings in a valid ISO 8601 date/time format, such as <code>2021-11-04T05:00:00Z</code>.</p> </li>
+    /// </ul>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>> {
+        self.inner.get_filters()
+    }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -141,6 +159,10 @@ impl DescribeMaintenanceWindowExecutionsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -150,5 +172,9 @@ impl DescribeMaintenanceWindowExecutionsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

@@ -43,6 +43,10 @@ impl MinimumLabelTypeBuilder {
         self.visibility = input;
         self
     }
+    /// <p>The visibility of the minimum label.</p>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.visibility
+    }
     /// Consumes the builder and constructs a [`MinimumLabelType`](crate::types::MinimumLabelType).
     pub fn build(self) -> crate::types::MinimumLabelType {
         crate::types::MinimumLabelType {

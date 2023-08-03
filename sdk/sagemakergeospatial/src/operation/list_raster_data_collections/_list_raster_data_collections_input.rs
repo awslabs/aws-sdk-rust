@@ -53,6 +53,10 @@ impl ListRasterDataCollectionsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The total number of items to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -62,6 +66,10 @@ impl ListRasterDataCollectionsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The total number of items to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListRasterDataCollectionsInput`](crate::operation::list_raster_data_collections::ListRasterDataCollectionsInput).
     pub fn build(

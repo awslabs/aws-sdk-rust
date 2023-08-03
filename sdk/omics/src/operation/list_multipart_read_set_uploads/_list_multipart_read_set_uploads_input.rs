@@ -61,6 +61,10 @@ impl ListMultipartReadSetUploadsInputBuilder {
         self.sequence_store_id = input;
         self
     }
+    /// <p> The Sequence Store ID used for the multipart uploads. </p>
+    pub fn get_sequence_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sequence_store_id
+    }
     /// <p> The maximum number of multipart uploads returned in a page. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -71,6 +75,10 @@ impl ListMultipartReadSetUploadsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p> The maximum number of multipart uploads returned in a page. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p> Next token returned in the response of a previous ListMultipartReadSetUploads call. Used to get the next page of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -80,6 +88,10 @@ impl ListMultipartReadSetUploadsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p> Next token returned in the response of a previous ListMultipartReadSetUploads call. Used to get the next page of results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListMultipartReadSetUploadsInput`](crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsInput).
     pub fn build(

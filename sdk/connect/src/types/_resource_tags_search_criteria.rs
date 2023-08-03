@@ -43,6 +43,12 @@ impl ResourceTagsSearchCriteriaBuilder {
         self.tag_search_condition = input;
         self
     }
+    /// <p>The search criteria to be used to return tags.</p>
+    pub fn get_tag_search_condition(
+        &self,
+    ) -> &::std::option::Option<crate::types::TagSearchCondition> {
+        &self.tag_search_condition
+    }
     /// Consumes the builder and constructs a [`ResourceTagsSearchCriteria`](crate::types::ResourceTagsSearchCriteria).
     pub fn build(self) -> crate::types::ResourceTagsSearchCriteria {
         crate::types::ResourceTagsSearchCriteria {

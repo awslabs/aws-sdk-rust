@@ -67,6 +67,10 @@ impl GetExclusionsPreviewOutputBuilder {
         self.preview_status = input;
         self
     }
+    /// <p>Specifies the status of the request to generate an exclusions preview.</p>
+    pub fn get_preview_status(&self) -> &::std::option::Option<crate::types::PreviewStatus> {
+        &self.preview_status
+    }
     /// Appends an item to `exclusion_previews`.
     ///
     /// To override the contents of this collection use [`set_exclusion_previews`](Self::set_exclusion_previews).
@@ -86,6 +90,12 @@ impl GetExclusionsPreviewOutputBuilder {
         self.exclusion_previews = input;
         self
     }
+    /// <p>Information about the exclusions included in the preview.</p>
+    pub fn get_exclusion_previews(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExclusionPreview>> {
+        &self.exclusion_previews
+    }
     /// <p>When a response is generated, if there is more data to be listed, this parameters is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -95,6 +105,10 @@ impl GetExclusionsPreviewOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>When a response is generated, if there is more data to be listed, this parameters is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

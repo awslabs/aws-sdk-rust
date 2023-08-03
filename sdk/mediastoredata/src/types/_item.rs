@@ -80,6 +80,10 @@ impl ItemBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the item.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The item type (folder or object).</p>
     pub fn r#type(mut self, input: crate::types::ItemType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -90,6 +94,10 @@ impl ItemBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The item type (folder or object).</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ItemType> {
+        &self.r#type
+    }
     /// <p>The ETag that represents a unique instance of the item.</p>
     pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.e_tag = ::std::option::Option::Some(input.into());
@@ -99,6 +107,10 @@ impl ItemBuilder {
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.e_tag = input;
         self
+    }
+    /// <p>The ETag that represents a unique instance of the item.</p>
+    pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.e_tag
     }
     /// <p>The date and time that the item was last modified.</p>
     pub fn last_modified(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -113,6 +125,10 @@ impl ItemBuilder {
         self.last_modified = input;
         self
     }
+    /// <p>The date and time that the item was last modified.</p>
+    pub fn get_last_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified
+    }
     /// <p>The content type of the item.</p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
@@ -123,6 +139,10 @@ impl ItemBuilder {
         self.content_type = input;
         self
     }
+    /// <p>The content type of the item.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
+    }
     /// <p>The length of the item in bytes.</p>
     pub fn content_length(mut self, input: i64) -> Self {
         self.content_length = ::std::option::Option::Some(input);
@@ -132,6 +152,10 @@ impl ItemBuilder {
     pub fn set_content_length(mut self, input: ::std::option::Option<i64>) -> Self {
         self.content_length = input;
         self
+    }
+    /// <p>The length of the item in bytes.</p>
+    pub fn get_content_length(&self) -> &::std::option::Option<i64> {
+        &self.content_length
     }
     /// Consumes the builder and constructs a [`Item`](crate::types::Item).
     pub fn build(self) -> crate::types::Item {

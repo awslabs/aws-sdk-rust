@@ -134,6 +134,10 @@ impl AssignmentBuilder {
         self.assignment_id = input;
         self
     }
+    /// <p> A unique identifier for the assignment.</p>
+    pub fn get_assignment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assignment_id
+    }
     /// <p> The ID of the Worker who accepted the HIT.</p>
     pub fn worker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.worker_id = ::std::option::Option::Some(input.into());
@@ -144,6 +148,10 @@ impl AssignmentBuilder {
         self.worker_id = input;
         self
     }
+    /// <p> The ID of the Worker who accepted the HIT.</p>
+    pub fn get_worker_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.worker_id
+    }
     /// <p> The ID of the HIT.</p>
     pub fn hit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hit_id = ::std::option::Option::Some(input.into());
@@ -153,6 +161,10 @@ impl AssignmentBuilder {
     pub fn set_hit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hit_id = input;
         self
+    }
+    /// <p> The ID of the HIT.</p>
+    pub fn get_hit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hit_id
     }
     /// <p> The status of the assignment.</p>
     pub fn assignment_status(mut self, input: crate::types::AssignmentStatus) -> Self {
@@ -167,6 +179,10 @@ impl AssignmentBuilder {
         self.assignment_status = input;
         self
     }
+    /// <p> The status of the assignment.</p>
+    pub fn get_assignment_status(&self) -> &::std::option::Option<crate::types::AssignmentStatus> {
+        &self.assignment_status
+    }
     /// <p> If results have been submitted, AutoApprovalTime is the date and time the results of the assignment results are considered Approved automatically if they have not already been explicitly approved or rejected by the Requester. This value is derived from the auto-approval delay specified by the Requester in the HIT. This value is omitted from the assignment if the Worker has not yet submitted results.</p>
     pub fn auto_approval_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.auto_approval_time = ::std::option::Option::Some(input);
@@ -179,6 +195,10 @@ impl AssignmentBuilder {
     ) -> Self {
         self.auto_approval_time = input;
         self
+    }
+    /// <p> If results have been submitted, AutoApprovalTime is the date and time the results of the assignment results are considered Approved automatically if they have not already been explicitly approved or rejected by the Requester. This value is derived from the auto-approval delay specified by the Requester in the HIT. This value is omitted from the assignment if the Worker has not yet submitted results.</p>
+    pub fn get_auto_approval_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.auto_approval_time
     }
     /// <p> The date and time the Worker accepted the assignment.</p>
     pub fn accept_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -193,6 +213,10 @@ impl AssignmentBuilder {
         self.accept_time = input;
         self
     }
+    /// <p> The date and time the Worker accepted the assignment.</p>
+    pub fn get_accept_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.accept_time
+    }
     /// <p> If the Worker has submitted results, SubmitTime is the date and time the assignment was submitted. This value is omitted from the assignment if the Worker has not yet submitted results.</p>
     pub fn submit_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.submit_time = ::std::option::Option::Some(input);
@@ -205,6 +229,10 @@ impl AssignmentBuilder {
     ) -> Self {
         self.submit_time = input;
         self
+    }
+    /// <p> If the Worker has submitted results, SubmitTime is the date and time the assignment was submitted. This value is omitted from the assignment if the Worker has not yet submitted results.</p>
+    pub fn get_submit_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.submit_time
     }
     /// <p> If the Worker has submitted results and the Requester has approved the results, ApprovalTime is the date and time the Requester approved the results. This value is omitted from the assignment if the Requester has not yet approved the results.</p>
     pub fn approval_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -219,6 +247,10 @@ impl AssignmentBuilder {
         self.approval_time = input;
         self
     }
+    /// <p> If the Worker has submitted results and the Requester has approved the results, ApprovalTime is the date and time the Requester approved the results. This value is omitted from the assignment if the Requester has not yet approved the results.</p>
+    pub fn get_approval_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.approval_time
+    }
     /// <p> If the Worker has submitted results and the Requester has rejected the results, RejectionTime is the date and time the Requester rejected the results.</p>
     pub fn rejection_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.rejection_time = ::std::option::Option::Some(input);
@@ -231,6 +263,10 @@ impl AssignmentBuilder {
     ) -> Self {
         self.rejection_time = input;
         self
+    }
+    /// <p> If the Worker has submitted results and the Requester has rejected the results, RejectionTime is the date and time the Requester rejected the results.</p>
+    pub fn get_rejection_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.rejection_time
     }
     /// <p> The date and time of the deadline for the assignment. This value is derived from the deadline specification for the HIT and the date and time the Worker accepted the HIT.</p>
     pub fn deadline(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -245,6 +281,10 @@ impl AssignmentBuilder {
         self.deadline = input;
         self
     }
+    /// <p> The date and time of the deadline for the assignment. This value is derived from the deadline specification for the HIT and the date and time the Worker accepted the HIT.</p>
+    pub fn get_deadline(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.deadline
+    }
     /// <p> The Worker's answers submitted for the HIT contained in a QuestionFormAnswers document, if the Worker provides an answer. If the Worker does not provide any answers, Answer may contain a QuestionFormAnswers document, or Answer may be empty.</p>
     pub fn answer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.answer = ::std::option::Option::Some(input.into());
@@ -254,6 +294,10 @@ impl AssignmentBuilder {
     pub fn set_answer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.answer = input;
         self
+    }
+    /// <p> The Worker's answers submitted for the HIT contained in a QuestionFormAnswers document, if the Worker provides an answer. If the Worker does not provide any answers, Answer may contain a QuestionFormAnswers document, or Answer may be empty.</p>
+    pub fn get_answer(&self) -> &::std::option::Option<::std::string::String> {
+        &self.answer
     }
     /// <p> The feedback string included with the call to the ApproveAssignment operation or the RejectAssignment operation, if the Requester approved or rejected the assignment and specified feedback.</p>
     pub fn requester_feedback(
@@ -270,6 +314,10 @@ impl AssignmentBuilder {
     ) -> Self {
         self.requester_feedback = input;
         self
+    }
+    /// <p> The feedback string included with the call to the ApproveAssignment operation or the RejectAssignment operation, if the Requester approved or rejected the assignment and specified feedback.</p>
+    pub fn get_requester_feedback(&self) -> &::std::option::Option<::std::string::String> {
+        &self.requester_feedback
     }
     /// Consumes the builder and constructs a [`Assignment`](crate::types::Assignment).
     pub fn build(self) -> crate::types::Assignment {

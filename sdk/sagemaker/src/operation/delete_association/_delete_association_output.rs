@@ -55,6 +55,10 @@ impl DeleteAssociationOutputBuilder {
         self.source_arn = input;
         self
     }
+    /// <p>The ARN of the source.</p>
+    pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
     pub fn destination_arn(
         mut self,
@@ -70,6 +74,10 @@ impl DeleteAssociationOutputBuilder {
     ) -> Self {
         self.destination_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the destination.</p>
+    pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

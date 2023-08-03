@@ -53,6 +53,12 @@ impl GetSuiteRunReportOutputBuilder {
         self.qualification_report_download_url = input;
         self
     }
+    /// <p>Download URL of the qualification report.</p>
+    pub fn get_qualification_report_download_url(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.qualification_report_download_url
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

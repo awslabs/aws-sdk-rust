@@ -48,6 +48,12 @@ impl DeploySystemInstanceInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the system instance. This value is returned by the <code>CreateSystemInstance</code> action.</p>
+    /// <p>The ID should be in the following format.</p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code> </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`DeploySystemInstanceInput`](crate::operation::deploy_system_instance::DeploySystemInstanceInput).
     pub fn build(
         self,

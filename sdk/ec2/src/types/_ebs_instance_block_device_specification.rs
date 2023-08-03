@@ -48,6 +48,10 @@ impl EbsInstanceBlockDeviceSpecificationBuilder {
         self.delete_on_termination = input;
         self
     }
+    /// <p>Indicates whether the volume is deleted on instance termination.</p>
+    pub fn get_delete_on_termination(&self) -> &::std::option::Option<bool> {
+        &self.delete_on_termination
+    }
     /// <p>The ID of the EBS volume.</p>
     pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl EbsInstanceBlockDeviceSpecificationBuilder {
     pub fn set_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_id = input;
         self
+    }
+    /// <p>The ID of the EBS volume.</p>
+    pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_id
     }
     /// Consumes the builder and constructs a [`EbsInstanceBlockDeviceSpecification`](crate::types::EbsInstanceBlockDeviceSpecification).
     pub fn build(self) -> crate::types::EbsInstanceBlockDeviceSpecification {

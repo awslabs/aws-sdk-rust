@@ -43,6 +43,10 @@ impl ManagedScalingPolicyBuilder {
         self.compute_limits = input;
         self
     }
+    /// <p>The Amazon EC2 unit limits for a managed scaling policy. The managed scaling activity of a cluster is not allowed to go above or below these limits. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration.</p>
+    pub fn get_compute_limits(&self) -> &::std::option::Option<crate::types::ComputeLimits> {
+        &self.compute_limits
+    }
     /// Consumes the builder and constructs a [`ManagedScalingPolicy`](crate::types::ManagedScalingPolicy).
     pub fn build(self) -> crate::types::ManagedScalingPolicy {
         crate::types::ManagedScalingPolicy {

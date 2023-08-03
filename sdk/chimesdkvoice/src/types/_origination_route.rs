@@ -74,6 +74,10 @@ impl OriginationRouteBuilder {
         self.host = input;
         self
     }
+    /// <p>The FQDN or IP address to contact for origination traffic.</p>
+    pub fn get_host(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host
+    }
     /// <p>The designated origination route port. Defaults to 5060.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -83,6 +87,10 @@ impl OriginationRouteBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
+    }
+    /// <p>The designated origination route port. Defaults to 5060.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// <p>The protocol to use for the origination route. Encryption-enabled Amazon Chime SDK Voice Connectors use TCP protocol by default.</p>
     pub fn protocol(mut self, input: crate::types::OriginationRouteProtocol) -> Self {
@@ -97,6 +105,10 @@ impl OriginationRouteBuilder {
         self.protocol = input;
         self
     }
+    /// <p>The protocol to use for the origination route. Encryption-enabled Amazon Chime SDK Voice Connectors use TCP protocol by default.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::OriginationRouteProtocol> {
+        &self.protocol
+    }
     /// <p>The priority associated with the host, with 1 being the highest priority. Higher priority hosts are attempted first.</p>
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
@@ -107,6 +119,10 @@ impl OriginationRouteBuilder {
         self.priority = input;
         self
     }
+    /// <p>The priority associated with the host, with 1 being the highest priority. Higher priority hosts are attempted first.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
+    }
     /// <p>The weight assigned to an origination route. When hosts have equal priority, calls are distributed between them based on their relative weights.</p>
     pub fn weight(mut self, input: i32) -> Self {
         self.weight = ::std::option::Option::Some(input);
@@ -116,6 +132,10 @@ impl OriginationRouteBuilder {
     pub fn set_weight(mut self, input: ::std::option::Option<i32>) -> Self {
         self.weight = input;
         self
+    }
+    /// <p>The weight assigned to an origination route. When hosts have equal priority, calls are distributed between them based on their relative weights.</p>
+    pub fn get_weight(&self) -> &::std::option::Option<i32> {
+        &self.weight
     }
     /// Consumes the builder and constructs a [`OriginationRoute`](crate::types::OriginationRoute).
     pub fn build(self) -> crate::types::OriginationRoute {

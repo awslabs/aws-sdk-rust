@@ -49,6 +49,10 @@ impl GetBackupPlanFromTemplateOutputBuilder {
         self.backup_plan_document = input;
         self
     }
+    /// <p>Returns the body of a backup plan based on the target template, including the name, rules, and backup vault of the plan.</p>
+    pub fn get_backup_plan_document(&self) -> &::std::option::Option<crate::types::BackupPlan> {
+        &self.backup_plan_document
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

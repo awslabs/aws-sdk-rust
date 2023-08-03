@@ -96,6 +96,10 @@ impl EndpointDemographicBuilder {
         self.app_version = input;
         self
     }
+    /// <p>The version of the app that's associated with the endpoint.</p>
+    pub fn get_app_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_version
+    }
     /// <p>The locale of the endpoint, in the following format: the ISO 639-1 alpha-2 code, followed by an underscore (_), followed by an ISO 3166-1 alpha-2 value.</p>
     pub fn locale(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl EndpointDemographicBuilder {
     pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.locale = input;
         self
+    }
+    /// <p>The locale of the endpoint, in the following format: the ISO 639-1 alpha-2 code, followed by an underscore (_), followed by an ISO 3166-1 alpha-2 value.</p>
+    pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale
     }
     /// <p>The manufacturer of the endpoint device, such as apple or samsung.</p>
     pub fn make(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -116,6 +124,10 @@ impl EndpointDemographicBuilder {
         self.make = input;
         self
     }
+    /// <p>The manufacturer of the endpoint device, such as apple or samsung.</p>
+    pub fn get_make(&self) -> &::std::option::Option<::std::string::String> {
+        &self.make
+    }
     /// <p>The model name or number of the endpoint device, such as iPhone or SM-G900F.</p>
     pub fn model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model = ::std::option::Option::Some(input.into());
@@ -125,6 +137,10 @@ impl EndpointDemographicBuilder {
     pub fn set_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model = input;
         self
+    }
+    /// <p>The model name or number of the endpoint device, such as iPhone or SM-G900F.</p>
+    pub fn get_model(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model
     }
     /// <p>The model version of the endpoint device.</p>
     pub fn model_version(
@@ -142,6 +158,10 @@ impl EndpointDemographicBuilder {
         self.model_version = input;
         self
     }
+    /// <p>The model version of the endpoint device.</p>
+    pub fn get_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_version
+    }
     /// <p>The platform of the endpoint device, such as ios.</p>
     pub fn platform(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform = ::std::option::Option::Some(input.into());
@@ -151,6 +171,10 @@ impl EndpointDemographicBuilder {
     pub fn set_platform(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform = input;
         self
+    }
+    /// <p>The platform of the endpoint device, such as ios.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform
     }
     /// <p>The platform version of the endpoint device.</p>
     pub fn platform_version(
@@ -168,6 +192,10 @@ impl EndpointDemographicBuilder {
         self.platform_version = input;
         self
     }
+    /// <p>The platform version of the endpoint device.</p>
+    pub fn get_platform_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_version
+    }
     /// <p>The time zone of the endpoint, specified as a tz database name value, such as America/Los_Angeles.</p>
     pub fn timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timezone = ::std::option::Option::Some(input.into());
@@ -177,6 +205,10 @@ impl EndpointDemographicBuilder {
     pub fn set_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timezone = input;
         self
+    }
+    /// <p>The time zone of the endpoint, specified as a tz database name value, such as America/Los_Angeles.</p>
+    pub fn get_timezone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timezone
     }
     /// Consumes the builder and constructs a [`EndpointDemographic`](crate::types::EndpointDemographic).
     pub fn build(self) -> crate::types::EndpointDemographic {

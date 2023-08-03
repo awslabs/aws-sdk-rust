@@ -56,6 +56,10 @@ impl AddNotificationChannelsInputBuilder {
         self.profiling_group_name = input;
         self
     }
+    /// <p>The name of the profiling group that we are setting up notifications for.</p>
+    pub fn get_profiling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profiling_group_name
+    }
     /// Appends an item to `channels`.
     ///
     /// To override the contents of this collection use [`set_channels`](Self::set_channels).
@@ -74,6 +78,10 @@ impl AddNotificationChannelsInputBuilder {
     ) -> Self {
         self.channels = input;
         self
+    }
+    /// <p>One or 2 channels to report to when anomalies are detected.</p>
+    pub fn get_channels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Channel>> {
+        &self.channels
     }
     /// Consumes the builder and constructs a [`AddNotificationChannelsInput`](crate::operation::add_notification_channels::AddNotificationChannelsInput).
     pub fn build(

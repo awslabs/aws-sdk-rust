@@ -67,6 +67,10 @@ impl AttendeeCapabilitiesBuilder {
         self.audio = input;
         self
     }
+    /// <p>The audio capability assigned to an attendee.</p>
+    pub fn get_audio(&self) -> &::std::option::Option<crate::types::MediaCapabilities> {
+        &self.audio
+    }
     /// <p>The video capability assigned to an attendee.</p>
     pub fn video(mut self, input: crate::types::MediaCapabilities) -> Self {
         self.video = ::std::option::Option::Some(input);
@@ -80,6 +84,10 @@ impl AttendeeCapabilitiesBuilder {
         self.video = input;
         self
     }
+    /// <p>The video capability assigned to an attendee.</p>
+    pub fn get_video(&self) -> &::std::option::Option<crate::types::MediaCapabilities> {
+        &self.video
+    }
     /// <p>The content capability assigned to an attendee.</p>
     pub fn content(mut self, input: crate::types::MediaCapabilities) -> Self {
         self.content = ::std::option::Option::Some(input);
@@ -92,6 +100,10 @@ impl AttendeeCapabilitiesBuilder {
     ) -> Self {
         self.content = input;
         self
+    }
+    /// <p>The content capability assigned to an attendee.</p>
+    pub fn get_content(&self) -> &::std::option::Option<crate::types::MediaCapabilities> {
+        &self.content
     }
     /// Consumes the builder and constructs a [`AttendeeCapabilities`](crate::types::AttendeeCapabilities).
     pub fn build(self) -> crate::types::AttendeeCapabilities {

@@ -45,6 +45,10 @@ impl DeleteHumanLoopInputBuilder {
         self.human_loop_name = input;
         self
     }
+    /// <p>The name of the human loop that you want to delete.</p>
+    pub fn get_human_loop_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.human_loop_name
+    }
     /// Consumes the builder and constructs a [`DeleteHumanLoopInput`](crate::operation::delete_human_loop::DeleteHumanLoopInput).
     pub fn build(
         self,

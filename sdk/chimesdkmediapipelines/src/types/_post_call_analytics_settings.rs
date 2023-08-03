@@ -75,6 +75,10 @@ impl PostCallAnalyticsSettingsBuilder {
         self.output_location = input;
         self
     }
+    /// <p>The URL of the Amazon S3 bucket that contains the post-call data.</p>
+    pub fn get_output_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_location
+    }
     /// <p>The ARN of the role used by Amazon Web Services Transcribe to upload your post call analysis. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-post-call.html">Post-call analytics with real-time transcriptions</a> in the <i>Amazon Transcribe Developer Guide</i>.</p>
     pub fn data_access_role_arn(
         mut self,
@@ -91,6 +95,10 @@ impl PostCallAnalyticsSettingsBuilder {
         self.data_access_role_arn = input;
         self
     }
+    /// <p>The ARN of the role used by Amazon Web Services Transcribe to upload your post call analysis. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-post-call.html">Post-call analytics with real-time transcriptions</a> in the <i>Amazon Transcribe Developer Guide</i>.</p>
+    pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_access_role_arn
+    }
     /// <p>The content redaction output settings for a post-call analysis task.</p>
     pub fn content_redaction_output(mut self, input: crate::types::ContentRedactionOutput) -> Self {
         self.content_redaction_output = ::std::option::Option::Some(input);
@@ -103,6 +111,12 @@ impl PostCallAnalyticsSettingsBuilder {
     ) -> Self {
         self.content_redaction_output = input;
         self
+    }
+    /// <p>The content redaction output settings for a post-call analysis task.</p>
+    pub fn get_content_redaction_output(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContentRedactionOutput> {
+        &self.content_redaction_output
     }
     /// <p>The ID of the KMS (Key Management Service) key used to encrypt the output.</p>
     pub fn output_encryption_kms_key_id(
@@ -119,6 +133,12 @@ impl PostCallAnalyticsSettingsBuilder {
     ) -> Self {
         self.output_encryption_kms_key_id = input;
         self
+    }
+    /// <p>The ID of the KMS (Key Management Service) key used to encrypt the output.</p>
+    pub fn get_output_encryption_kms_key_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.output_encryption_kms_key_id
     }
     /// Consumes the builder and constructs a [`PostCallAnalyticsSettings`](crate::types::PostCallAnalyticsSettings).
     pub fn build(self) -> crate::types::PostCallAnalyticsSettings {

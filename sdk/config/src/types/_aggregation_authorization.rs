@@ -70,6 +70,12 @@ impl AggregationAuthorizationBuilder {
         self.aggregation_authorization_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the aggregation object.</p>
+    pub fn get_aggregation_authorization_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.aggregation_authorization_arn
+    }
     /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
     pub fn authorized_account_id(
         mut self,
@@ -85,6 +91,10 @@ impl AggregationAuthorizationBuilder {
     ) -> Self {
         self.authorized_account_id = input;
         self
+    }
+    /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
+    pub fn get_authorized_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authorized_account_id
     }
     /// <p>The region authorized to collect aggregated data.</p>
     pub fn authorized_aws_region(
@@ -102,6 +112,10 @@ impl AggregationAuthorizationBuilder {
         self.authorized_aws_region = input;
         self
     }
+    /// <p>The region authorized to collect aggregated data.</p>
+    pub fn get_authorized_aws_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authorized_aws_region
+    }
     /// <p>The time stamp when the aggregation authorization was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -114,6 +128,10 @@ impl AggregationAuthorizationBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time stamp when the aggregation authorization was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// Consumes the builder and constructs a [`AggregationAuthorization`](crate::types::AggregationAuthorization).
     pub fn build(self) -> crate::types::AggregationAuthorization {

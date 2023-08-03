@@ -36,6 +36,12 @@ impl StartProjectSessionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartProjectSession as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_project_session::builders::StartProjectSessionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl StartProjectSessionFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the project to act upon.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A value that, if true, enables you to take control of a session, even if a different client is currently accessing the project.</p>
     pub fn assume_control(mut self, input: bool) -> Self {
         self.inner = self.inner.assume_control(input);
@@ -135,5 +145,9 @@ impl StartProjectSessionFluentBuilder {
     pub fn set_assume_control(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_assume_control(input);
         self
+    }
+    /// <p>A value that, if true, enables you to take control of a session, even if a different client is currently accessing the project.</p>
+    pub fn get_assume_control(&self) -> &::std::option::Option<bool> {
+        self.inner.get_assume_control()
     }
 }

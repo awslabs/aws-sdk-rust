@@ -80,6 +80,13 @@ impl DescribeAutoScalingGroupsInputBuilder {
         self.auto_scaling_group_names = input;
         self
     }
+    /// <p>The names of the Auto Scaling groups. By default, you can only specify up to 50 names. You can optionally increase this limit using the <code>MaxRecords</code> property.</p>
+    /// <p>If you omit this property, all Auto Scaling groups are described.</p>
+    pub fn get_auto_scaling_group_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.auto_scaling_group_names
+    }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -90,6 +97,10 @@ impl DescribeAutoScalingGroupsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.max_records = ::std::option::Option::Some(input);
@@ -99,6 +110,10 @@ impl DescribeAutoScalingGroupsInputBuilder {
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_records = input;
         self
+    }
+    /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        &self.max_records
     }
     /// Appends an item to `filters`.
     ///
@@ -118,6 +133,10 @@ impl DescribeAutoScalingGroupsInputBuilder {
     ) -> Self {
         self.filters = input;
         self
+    }
+    /// <p>One or more filters to limit the results based on specific tags. </p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
     }
     /// Consumes the builder and constructs a [`DescribeAutoScalingGroupsInput`](crate::operation::describe_auto_scaling_groups::DescribeAutoScalingGroupsInput).
     pub fn build(

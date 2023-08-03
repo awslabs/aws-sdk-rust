@@ -45,6 +45,10 @@ impl DeleteLogGroupInputBuilder {
         self.log_group_name = input;
         self
     }
+    /// <p>The name of the log group.</p>
+    pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group_name
+    }
     /// Consumes the builder and constructs a [`DeleteLogGroupInput`](crate::operation::delete_log_group::DeleteLogGroupInput).
     pub fn build(
         self,

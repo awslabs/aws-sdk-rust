@@ -98,6 +98,10 @@ impl CreateModelCardInputBuilder {
         self.model_card_name = input;
         self
     }
+    /// <p>The unique name of the model card.</p>
+    pub fn get_model_card_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_card_name
+    }
     /// <p>An optional Key Management Service key to encrypt, decrypt, and re-encrypt model card content for regulated workloads with highly sensitive data.</p>
     pub fn security_config(mut self, input: crate::types::ModelCardSecurityConfig) -> Self {
         self.security_config = ::std::option::Option::Some(input);
@@ -111,6 +115,12 @@ impl CreateModelCardInputBuilder {
         self.security_config = input;
         self
     }
+    /// <p>An optional Key Management Service key to encrypt, decrypt, and re-encrypt model card content for regulated workloads with highly sensitive data.</p>
+    pub fn get_security_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ModelCardSecurityConfig> {
+        &self.security_config
+    }
     /// <p>The content of the model card. Content must be in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model card JSON schema</a> and provided as a string.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
@@ -120,6 +130,10 @@ impl CreateModelCardInputBuilder {
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
+    }
+    /// <p>The content of the model card. Content must be in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model card JSON schema</a> and provided as a string.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
     }
     /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
     /// <ul>
@@ -146,6 +160,16 @@ impl CreateModelCardInputBuilder {
         self.model_card_status = input;
         self
     }
+    /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
+    /// <ul>
+    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>
+    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>
+    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
+    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
+    /// </ul>
+    pub fn get_model_card_status(&self) -> &::std::option::Option<crate::types::ModelCardStatus> {
+        &self.model_card_status
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -164,6 +188,10 @@ impl CreateModelCardInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Key-value pairs used to manage metadata for model cards.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateModelCardInput`](crate::operation::create_model_card::CreateModelCardInput).
     pub fn build(

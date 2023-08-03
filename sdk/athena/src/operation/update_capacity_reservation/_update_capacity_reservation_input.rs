@@ -47,6 +47,10 @@ impl UpdateCapacityReservationInputBuilder {
         self.target_dpus = input;
         self
     }
+    /// <p>The new number of requested data processing units.</p>
+    pub fn get_target_dpus(&self) -> &::std::option::Option<i32> {
+        &self.target_dpus
+    }
     /// <p>The name of the capacity reservation.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl UpdateCapacityReservationInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the capacity reservation.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`UpdateCapacityReservationInput`](crate::operation::update_capacity_reservation::UpdateCapacityReservationInput).
     pub fn build(

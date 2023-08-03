@@ -41,6 +41,10 @@ impl GetCustomEntityTypeInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the custom pattern that you want to retrieve.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`GetCustomEntityTypeInput`](crate::operation::get_custom_entity_type::GetCustomEntityTypeInput).
     pub fn build(
         self,

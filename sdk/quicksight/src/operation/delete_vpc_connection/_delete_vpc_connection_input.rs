@@ -55,6 +55,10 @@ impl DeleteVpcConnectionInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID of the account where you want to delete a VPC connection.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The ID of the VPC connection that you're creating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.</p>
     pub fn vpc_connection_id(
         mut self,
@@ -70,6 +74,10 @@ impl DeleteVpcConnectionInputBuilder {
     ) -> Self {
         self.vpc_connection_id = input;
         self
+    }
+    /// <p>The ID of the VPC connection that you're creating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.</p>
+    pub fn get_vpc_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_connection_id
     }
     /// Consumes the builder and constructs a [`DeleteVpcConnectionInput`](crate::operation::delete_vpc_connection::DeleteVpcConnectionInput).
     pub fn build(

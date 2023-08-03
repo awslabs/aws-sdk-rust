@@ -51,6 +51,10 @@ impl SlotStartTimeRangeRequestBuilder {
         self.earliest_time = input;
         self
     }
+    /// <p>The earliest date and time, in UTC, for the Scheduled Instance to start.</p>
+    pub fn get_earliest_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.earliest_time
+    }
     /// <p>The latest date and time, in UTC, for the Scheduled Instance to start.</p>
     pub fn latest_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.latest_time = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl SlotStartTimeRangeRequestBuilder {
     ) -> Self {
         self.latest_time = input;
         self
+    }
+    /// <p>The latest date and time, in UTC, for the Scheduled Instance to start.</p>
+    pub fn get_latest_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.latest_time
     }
     /// Consumes the builder and constructs a [`SlotStartTimeRangeRequest`](crate::types::SlotStartTimeRangeRequest).
     pub fn build(self) -> crate::types::SlotStartTimeRangeRequest {

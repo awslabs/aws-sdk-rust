@@ -51,6 +51,10 @@ impl TrendmicroConnectorProfileCredentialsBuilder {
         self.api_secret_key = input;
         self
     }
+    /// <p> The Secret Access Key portion of the credentials. </p>
+    pub fn get_api_secret_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_secret_key
+    }
     /// Consumes the builder and constructs a [`TrendmicroConnectorProfileCredentials`](crate::types::TrendmicroConnectorProfileCredentials).
     pub fn build(self) -> crate::types::TrendmicroConnectorProfileCredentials {
         crate::types::TrendmicroConnectorProfileCredentials {

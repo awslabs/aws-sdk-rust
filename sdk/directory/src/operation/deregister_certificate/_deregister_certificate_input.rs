@@ -48,6 +48,10 @@ impl DeregisterCertificateInputBuilder {
         self.directory_id = input;
         self
     }
+    /// <p>The identifier of the directory.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
     /// <p>The identifier of the certificate.</p>
     pub fn certificate_id(
         mut self,
@@ -63,6 +67,10 @@ impl DeregisterCertificateInputBuilder {
     ) -> Self {
         self.certificate_id = input;
         self
+    }
+    /// <p>The identifier of the certificate.</p>
+    pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_id
     }
     /// Consumes the builder and constructs a [`DeregisterCertificateInput`](crate::operation::deregister_certificate::DeregisterCertificateInput).
     pub fn build(

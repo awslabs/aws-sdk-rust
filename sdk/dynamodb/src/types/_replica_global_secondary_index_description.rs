@@ -52,6 +52,10 @@ impl ReplicaGlobalSecondaryIndexDescriptionBuilder {
         self.index_name = input;
         self
     }
+    /// <p>The name of the global secondary index.</p>
+    pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_name
+    }
     /// <p>If not described, uses the source table GSI's read capacity settings.</p>
     pub fn provisioned_throughput_override(
         mut self,
@@ -67,6 +71,12 @@ impl ReplicaGlobalSecondaryIndexDescriptionBuilder {
     ) -> Self {
         self.provisioned_throughput_override = input;
         self
+    }
+    /// <p>If not described, uses the source table GSI's read capacity settings.</p>
+    pub fn get_provisioned_throughput_override(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProvisionedThroughputOverride> {
+        &self.provisioned_throughput_override
     }
     /// Consumes the builder and constructs a [`ReplicaGlobalSecondaryIndexDescription`](crate::types::ReplicaGlobalSecondaryIndexDescription).
     pub fn build(self) -> crate::types::ReplicaGlobalSecondaryIndexDescription {

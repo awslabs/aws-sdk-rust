@@ -48,6 +48,10 @@ impl PrefixListAssociationBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The ID of the resource.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>The owner of the resource.</p>
     pub fn resource_owner(
         mut self,
@@ -63,6 +67,10 @@ impl PrefixListAssociationBuilder {
     ) -> Self {
         self.resource_owner = input;
         self
+    }
+    /// <p>The owner of the resource.</p>
+    pub fn get_resource_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_owner
     }
     /// Consumes the builder and constructs a [`PrefixListAssociation`](crate::types::PrefixListAssociation).
     pub fn build(self) -> crate::types::PrefixListAssociation {

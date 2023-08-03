@@ -67,6 +67,10 @@ impl MssPackageBuilder {
         self.encryption = input;
         self
     }
+    /// A Microsoft Smooth Streaming (MSS) encryption configuration.
+    pub fn get_encryption(&self) -> &::std::option::Option<crate::types::MssEncryption> {
+        &self.encryption
+    }
     /// The time window (in seconds) contained in each manifest.
     pub fn manifest_window_seconds(mut self, input: i32) -> Self {
         self.manifest_window_seconds = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl MssPackageBuilder {
         self.manifest_window_seconds = input;
         self
     }
+    /// The time window (in seconds) contained in each manifest.
+    pub fn get_manifest_window_seconds(&self) -> &::std::option::Option<i32> {
+        &self.manifest_window_seconds
+    }
     /// The duration (in seconds) of each segment.
     pub fn segment_duration_seconds(mut self, input: i32) -> Self {
         self.segment_duration_seconds = ::std::option::Option::Some(input);
@@ -86,6 +94,10 @@ impl MssPackageBuilder {
     pub fn set_segment_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.segment_duration_seconds = input;
         self
+    }
+    /// The duration (in seconds) of each segment.
+    pub fn get_segment_duration_seconds(&self) -> &::std::option::Option<i32> {
+        &self.segment_duration_seconds
     }
     /// A StreamSelection configuration.
     pub fn stream_selection(mut self, input: crate::types::StreamSelection) -> Self {
@@ -99,6 +111,10 @@ impl MssPackageBuilder {
     ) -> Self {
         self.stream_selection = input;
         self
+    }
+    /// A StreamSelection configuration.
+    pub fn get_stream_selection(&self) -> &::std::option::Option<crate::types::StreamSelection> {
+        &self.stream_selection
     }
     /// Consumes the builder and constructs a [`MssPackage`](crate::types::MssPackage).
     pub fn build(self) -> crate::types::MssPackage {

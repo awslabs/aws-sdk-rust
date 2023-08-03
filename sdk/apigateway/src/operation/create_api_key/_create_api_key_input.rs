@@ -104,6 +104,10 @@ impl CreateApiKeyInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the ApiKey.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the ApiKey.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -113,6 +117,10 @@ impl CreateApiKeyInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the ApiKey.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Specifies whether the ApiKey can be used by callers.</p>
     pub fn enabled(mut self, input: bool) -> Self {
@@ -124,6 +132,10 @@ impl CreateApiKeyInputBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Specifies whether the ApiKey can be used by callers.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>Specifies whether (<code>true</code>) or not (<code>false</code>) the key identifier is distinct from the created API key value. This parameter is deprecated and should not be used.</p>
     pub fn generate_distinct_id(mut self, input: bool) -> Self {
         self.generate_distinct_id = ::std::option::Option::Some(input);
@@ -134,6 +146,10 @@ impl CreateApiKeyInputBuilder {
         self.generate_distinct_id = input;
         self
     }
+    /// <p>Specifies whether (<code>true</code>) or not (<code>false</code>) the key identifier is distinct from the created API key value. This parameter is deprecated and should not be used.</p>
+    pub fn get_generate_distinct_id(&self) -> &::std::option::Option<bool> {
+        &self.generate_distinct_id
+    }
     /// <p>Specifies a value of the API key.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -143,6 +159,10 @@ impl CreateApiKeyInputBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>Specifies a value of the API key.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Appends an item to `stage_keys`.
     ///
@@ -163,6 +183,12 @@ impl CreateApiKeyInputBuilder {
         self.stage_keys = input;
         self
     }
+    /// <p>DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API key.</p>
+    pub fn get_stage_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StageKey>> {
+        &self.stage_keys
+    }
     /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
     pub fn customer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_id = ::std::option::Option::Some(input.into());
@@ -172,6 +198,10 @@ impl CreateApiKeyInputBuilder {
     pub fn set_customer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_id = input;
         self
+    }
+    /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
+    pub fn get_customer_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.customer_id
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -197,6 +227,14 @@ impl CreateApiKeyInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateApiKeyInput`](crate::operation::create_api_key::CreateApiKeyInput).
     pub fn build(

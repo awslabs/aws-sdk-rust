@@ -43,6 +43,10 @@ impl AccessPreviewStatusReasonBuilder {
         self.code = input;
         self
     }
+    /// <p>The reason code for the current status of the access preview.</p>
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::AccessPreviewStatusReasonCode> {
+        &self.code
+    }
     /// Consumes the builder and constructs a [`AccessPreviewStatusReason`](crate::types::AccessPreviewStatusReason).
     pub fn build(self) -> crate::types::AccessPreviewStatusReason {
         crate::types::AccessPreviewStatusReason { code: self.code }

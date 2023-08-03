@@ -40,6 +40,10 @@ impl DeleteStoredQueryInputBuilder {
         self.query_name = input;
         self
     }
+    /// <p>The name of the query that you want to delete.</p>
+    pub fn get_query_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_name
+    }
     /// Consumes the builder and constructs a [`DeleteStoredQueryInput`](crate::operation::delete_stored_query::DeleteStoredQueryInput).
     pub fn build(
         self,

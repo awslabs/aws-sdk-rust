@@ -55,6 +55,10 @@ impl InviteUsersOutputBuilder {
         self.invites = input;
         self
     }
+    /// <p>The email invitation details.</p>
+    pub fn get_invites(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Invite>> {
+        &self.invites
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

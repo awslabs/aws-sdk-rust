@@ -74,6 +74,10 @@ impl GetAccessPointForObjectLambdaOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the Object Lambda Access Point.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Configuration to block all public access. This setting is turned on and can not be edited. </p>
     pub fn public_access_block_configuration(
         mut self,
@@ -90,6 +94,12 @@ impl GetAccessPointForObjectLambdaOutputBuilder {
         self.public_access_block_configuration = input;
         self
     }
+    /// <p>Configuration to block all public access. This setting is turned on and can not be edited. </p>
+    pub fn get_public_access_block_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::PublicAccessBlockConfiguration> {
+        &self.public_access_block_configuration
+    }
     /// <p>The date and time when the specified Object Lambda Access Point was created.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -103,6 +113,10 @@ impl GetAccessPointForObjectLambdaOutputBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>The date and time when the specified Object Lambda Access Point was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
+    }
     /// <p>The alias of the Object Lambda Access Point.</p>
     pub fn alias(mut self, input: crate::types::ObjectLambdaAccessPointAlias) -> Self {
         self.alias = ::std::option::Option::Some(input);
@@ -115,6 +129,10 @@ impl GetAccessPointForObjectLambdaOutputBuilder {
     ) -> Self {
         self.alias = input;
         self
+    }
+    /// <p>The alias of the Object Lambda Access Point.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<crate::types::ObjectLambdaAccessPointAlias> {
+        &self.alias
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -39,6 +39,13 @@ impl DeleteCacheSubnetGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteCacheSubnetGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_cache_subnet_group::builders::DeleteCacheSubnetGroupInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,5 +143,10 @@ impl DeleteCacheSubnetGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cache_subnet_group_name(input);
         self
+    }
+    /// <p>The name of the cache subnet group to delete.</p>
+    /// <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>
+    pub fn get_cache_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cache_subnet_group_name()
     }
 }

@@ -49,6 +49,12 @@ impl GetSagemakerServicecatalogPortfolioStatusOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>Whether Service Catalog is enabled or disabled in SageMaker.</p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::SagemakerServicecatalogStatus> {
+        &self.status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -48,6 +48,10 @@ impl PrefixLevelStorageMetricsBuilder {
         self.is_enabled = input;
         self
     }
+    /// <p>A container for whether prefix-level storage metrics are enabled.</p>
+    pub fn get_is_enabled(&self) -> &::std::option::Option<bool> {
+        &self.is_enabled
+    }
     /// <p></p>
     pub fn selection_criteria(mut self, input: crate::types::SelectionCriteria) -> Self {
         self.selection_criteria = ::std::option::Option::Some(input);
@@ -60,6 +64,12 @@ impl PrefixLevelStorageMetricsBuilder {
     ) -> Self {
         self.selection_criteria = input;
         self
+    }
+    /// <p></p>
+    pub fn get_selection_criteria(
+        &self,
+    ) -> &::std::option::Option<crate::types::SelectionCriteria> {
+        &self.selection_criteria
     }
     /// Consumes the builder and constructs a [`PrefixLevelStorageMetrics`](crate::types::PrefixLevelStorageMetrics).
     pub fn build(self) -> crate::types::PrefixLevelStorageMetrics {

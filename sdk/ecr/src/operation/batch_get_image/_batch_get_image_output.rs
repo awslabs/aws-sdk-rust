@@ -63,6 +63,10 @@ impl BatchGetImageOutputBuilder {
         self.images = input;
         self
     }
+    /// <p>A list of image objects corresponding to the image references in the request.</p>
+    pub fn get_images(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Image>> {
+        &self.images
+    }
     /// Appends an item to `failures`.
     ///
     /// To override the contents of this collection use [`set_failures`](Self::set_failures).
@@ -81,6 +85,12 @@ impl BatchGetImageOutputBuilder {
     ) -> Self {
         self.failures = input;
         self
+    }
+    /// <p>Any failures associated with the call.</p>
+    pub fn get_failures(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageFailure>> {
+        &self.failures
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

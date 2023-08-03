@@ -56,6 +56,10 @@ impl ReservationValueBuilder {
         self.hourly_price = input;
         self
     }
+    /// <p>The hourly rate of the reservation.</p>
+    pub fn get_hourly_price(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hourly_price
+    }
     /// <p>The balance of the total value (the sum of remainingUpfrontValue + hourlyPrice * number of hours remaining).</p>
     pub fn remaining_total_value(
         mut self,
@@ -72,6 +76,10 @@ impl ReservationValueBuilder {
         self.remaining_total_value = input;
         self
     }
+    /// <p>The balance of the total value (the sum of remainingUpfrontValue + hourlyPrice * number of hours remaining).</p>
+    pub fn get_remaining_total_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.remaining_total_value
+    }
     /// <p>The remaining upfront cost of the reservation.</p>
     pub fn remaining_upfront_value(
         mut self,
@@ -87,6 +95,10 @@ impl ReservationValueBuilder {
     ) -> Self {
         self.remaining_upfront_value = input;
         self
+    }
+    /// <p>The remaining upfront cost of the reservation.</p>
+    pub fn get_remaining_upfront_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.remaining_upfront_value
     }
     /// Consumes the builder and constructs a [`ReservationValue`](crate::types::ReservationValue).
     pub fn build(self) -> crate::types::ReservationValue {

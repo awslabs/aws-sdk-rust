@@ -106,6 +106,10 @@ impl SigningPlatformBuilder {
         self.platform_id = input;
         self
     }
+    /// <p>The ID of a code signing platform.</p>
+    pub fn get_platform_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_id
+    }
     /// <p>The display name of a code signing platform.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -115,6 +119,10 @@ impl SigningPlatformBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
+    }
+    /// <p>The display name of a code signing platform.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// <p>Any partner entities linked to a code signing platform.</p>
     pub fn partner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -126,6 +134,10 @@ impl SigningPlatformBuilder {
         self.partner = input;
         self
     }
+    /// <p>Any partner entities linked to a code signing platform.</p>
+    pub fn get_partner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.partner
+    }
     /// <p>The types of targets that can be signed by a code signing platform.</p>
     pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target = ::std::option::Option::Some(input.into());
@@ -136,6 +148,10 @@ impl SigningPlatformBuilder {
         self.target = input;
         self
     }
+    /// <p>The types of targets that can be signed by a code signing platform.</p>
+    pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target
+    }
     /// <p>The category of a code signing platform.</p>
     pub fn category(mut self, input: crate::types::Category) -> Self {
         self.category = ::std::option::Option::Some(input);
@@ -145,6 +161,10 @@ impl SigningPlatformBuilder {
     pub fn set_category(mut self, input: ::std::option::Option<crate::types::Category>) -> Self {
         self.category = input;
         self
+    }
+    /// <p>The category of a code signing platform.</p>
+    pub fn get_category(&self) -> &::std::option::Option<crate::types::Category> {
+        &self.category
     }
     /// <p>The configuration of a code signing platform. This includes the designated hash algorithm and encryption algorithm of a signing platform.</p>
     pub fn signing_configuration(mut self, input: crate::types::SigningConfiguration) -> Self {
@@ -159,6 +179,12 @@ impl SigningPlatformBuilder {
         self.signing_configuration = input;
         self
     }
+    /// <p>The configuration of a code signing platform. This includes the designated hash algorithm and encryption algorithm of a signing platform.</p>
+    pub fn get_signing_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SigningConfiguration> {
+        &self.signing_configuration
+    }
     /// <p>The image format of a code signing platform or profile.</p>
     pub fn signing_image_format(mut self, input: crate::types::SigningImageFormat) -> Self {
         self.signing_image_format = ::std::option::Option::Some(input);
@@ -172,6 +198,12 @@ impl SigningPlatformBuilder {
         self.signing_image_format = input;
         self
     }
+    /// <p>The image format of a code signing platform or profile.</p>
+    pub fn get_signing_image_format(
+        &self,
+    ) -> &::std::option::Option<crate::types::SigningImageFormat> {
+        &self.signing_image_format
+    }
     /// <p>The maximum size (in MB) of code that can be signed by a code signing platform.</p>
     pub fn max_size_in_mb(mut self, input: i32) -> Self {
         self.max_size_in_mb = ::std::option::Option::Some(input);
@@ -182,6 +214,10 @@ impl SigningPlatformBuilder {
         self.max_size_in_mb = input;
         self
     }
+    /// <p>The maximum size (in MB) of code that can be signed by a code signing platform.</p>
+    pub fn get_max_size_in_mb(&self) -> &::std::option::Option<i32> {
+        &self.max_size_in_mb
+    }
     /// <p>Indicates whether revocation is supported for the platform.</p>
     pub fn revocation_supported(mut self, input: bool) -> Self {
         self.revocation_supported = ::std::option::Option::Some(input);
@@ -191,6 +227,10 @@ impl SigningPlatformBuilder {
     pub fn set_revocation_supported(mut self, input: ::std::option::Option<bool>) -> Self {
         self.revocation_supported = input;
         self
+    }
+    /// <p>Indicates whether revocation is supported for the platform.</p>
+    pub fn get_revocation_supported(&self) -> &::std::option::Option<bool> {
+        &self.revocation_supported
     }
     /// Consumes the builder and constructs a [`SigningPlatform`](crate::types::SigningPlatform).
     pub fn build(self) -> crate::types::SigningPlatform {

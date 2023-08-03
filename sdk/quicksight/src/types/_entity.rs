@@ -40,6 +40,10 @@ impl EntityBuilder {
         self.path = input;
         self
     }
+    /// <p>The hierarchical path of the entity within the analysis, template, or dashboard definition tree.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
+    }
     /// Consumes the builder and constructs a [`Entity`](crate::types::Entity).
     pub fn build(self) -> crate::types::Entity {
         crate::types::Entity { path: self.path }

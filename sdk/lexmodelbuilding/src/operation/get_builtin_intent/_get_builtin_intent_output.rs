@@ -63,6 +63,10 @@ impl GetBuiltinIntentOutputBuilder {
         self.signature = input;
         self
     }
+    /// <p>The unique identifier for a built-in intent.</p>
+    pub fn get_signature(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signature
+    }
     /// Appends an item to `supported_locales`.
     ///
     /// To override the contents of this collection use [`set_supported_locales`](Self::set_supported_locales).
@@ -82,6 +86,12 @@ impl GetBuiltinIntentOutputBuilder {
         self.supported_locales = input;
         self
     }
+    /// <p>A list of locales that the intent supports.</p>
+    pub fn get_supported_locales(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Locale>> {
+        &self.supported_locales
+    }
     /// Appends an item to `slots`.
     ///
     /// To override the contents of this collection use [`set_slots`](Self::set_slots).
@@ -100,6 +110,12 @@ impl GetBuiltinIntentOutputBuilder {
     ) -> Self {
         self.slots = input;
         self
+    }
+    /// <p>An array of <code>BuiltinIntentSlot</code> objects, one entry for each slot type in the intent.</p>
+    pub fn get_slots(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BuiltinIntentSlot>> {
+        &self.slots
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

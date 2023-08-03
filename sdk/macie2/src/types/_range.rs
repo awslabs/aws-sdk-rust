@@ -56,6 +56,10 @@ impl RangeBuilder {
         self.end = input;
         self
     }
+    /// <p>The number of lines from the beginning of the file to the end of the sensitive data.</p>
+    pub fn get_end(&self) -> &::std::option::Option<i64> {
+        &self.end
+    }
     /// <p>The number of lines from the beginning of the file to the beginning of the sensitive data.</p>
     pub fn start(mut self, input: i64) -> Self {
         self.start = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl RangeBuilder {
         self.start = input;
         self
     }
+    /// <p>The number of lines from the beginning of the file to the beginning of the sensitive data.</p>
+    pub fn get_start(&self) -> &::std::option::Option<i64> {
+        &self.start
+    }
     /// <p>The number of characters, with spaces and starting from 1, from the beginning of the first line that contains the sensitive data (start) to the beginning of the sensitive data.</p>
     pub fn start_column(mut self, input: i64) -> Self {
         self.start_column = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl RangeBuilder {
     pub fn set_start_column(mut self, input: ::std::option::Option<i64>) -> Self {
         self.start_column = input;
         self
+    }
+    /// <p>The number of characters, with spaces and starting from 1, from the beginning of the first line that contains the sensitive data (start) to the beginning of the sensitive data.</p>
+    pub fn get_start_column(&self) -> &::std::option::Option<i64> {
+        &self.start_column
     }
     /// Consumes the builder and constructs a [`Range`](crate::types::Range).
     pub fn build(self) -> crate::types::Range {

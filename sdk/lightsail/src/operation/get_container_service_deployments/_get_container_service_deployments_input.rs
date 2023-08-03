@@ -39,6 +39,10 @@ impl GetContainerServiceDeploymentsInputBuilder {
         self.service_name = input;
         self
     }
+    /// <p>The name of the container service for which to return deployments.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
+    }
     /// Consumes the builder and constructs a [`GetContainerServiceDeploymentsInput`](crate::operation::get_container_service_deployments::GetContainerServiceDeploymentsInput).
     pub fn build(
         self,

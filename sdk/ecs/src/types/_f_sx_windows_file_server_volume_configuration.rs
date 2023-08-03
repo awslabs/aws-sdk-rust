@@ -67,6 +67,10 @@ impl FSxWindowsFileServerVolumeConfigurationBuilder {
         self.file_system_id = input;
         self
     }
+    /// <p>The Amazon FSx for Windows File Server file system ID to use.</p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_system_id
+    }
     /// <p>The directory within the Amazon FSx for Windows File Server file system to mount as the root directory inside the host.</p>
     pub fn root_directory(
         mut self,
@@ -83,6 +87,10 @@ impl FSxWindowsFileServerVolumeConfigurationBuilder {
         self.root_directory = input;
         self
     }
+    /// <p>The directory within the Amazon FSx for Windows File Server file system to mount as the root directory inside the host.</p>
+    pub fn get_root_directory(&self) -> &::std::option::Option<::std::string::String> {
+        &self.root_directory
+    }
     /// <p>The authorization configuration details for the Amazon FSx for Windows File Server file system.</p>
     pub fn authorization_config(
         mut self,
@@ -98,6 +106,12 @@ impl FSxWindowsFileServerVolumeConfigurationBuilder {
     ) -> Self {
         self.authorization_config = input;
         self
+    }
+    /// <p>The authorization configuration details for the Amazon FSx for Windows File Server file system.</p>
+    pub fn get_authorization_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::FSxWindowsFileServerAuthorizationConfig> {
+        &self.authorization_config
     }
     /// Consumes the builder and constructs a [`FSxWindowsFileServerVolumeConfiguration`](crate::types::FSxWindowsFileServerVolumeConfiguration).
     pub fn build(self) -> crate::types::FSxWindowsFileServerVolumeConfiguration {

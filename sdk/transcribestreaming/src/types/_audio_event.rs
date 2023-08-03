@@ -44,6 +44,10 @@ impl AudioEventBuilder {
         self.audio_chunk = input;
         self
     }
+    /// <p>An audio blob that contains the next part of the audio that you want to transcribe. The maximum audio chunk size is 32 KB.</p>
+    pub fn get_audio_chunk(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.audio_chunk
+    }
     /// Consumes the builder and constructs a [`AudioEvent`](crate::types::AudioEvent).
     pub fn build(self) -> crate::types::AudioEvent {
         crate::types::AudioEvent {

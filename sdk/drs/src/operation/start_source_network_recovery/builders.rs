@@ -36,6 +36,10 @@ impl StartSourceNetworkRecoveryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartSourceNetworkRecovery as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_source_network_recovery::builders::StartSourceNetworkRecoveryInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +142,14 @@ impl StartSourceNetworkRecoveryFluentBuilder {
         self.inner = self.inner.set_source_networks(input);
         self
     }
+    /// <p>The Source Networks that we want to start a Recovery Job for.</p>
+    pub fn get_source_networks(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::StartSourceNetworkRecoveryRequestNetworkEntry>,
+    > {
+        self.inner.get_source_networks()
+    }
     /// <p>Don't update existing CloudFormation Stack, recover the network using a new stack.</p>
     pub fn deploy_as_new(mut self, input: bool) -> Self {
         self.inner = self.inner.deploy_as_new(input);
@@ -147,6 +159,10 @@ impl StartSourceNetworkRecoveryFluentBuilder {
     pub fn set_deploy_as_new(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_deploy_as_new(input);
         self
+    }
+    /// <p>Don't update existing CloudFormation Stack, recover the network using a new stack.</p>
+    pub fn get_deploy_as_new(&self) -> &::std::option::Option<bool> {
+        self.inner.get_deploy_as_new()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -170,5 +186,13 @@ impl StartSourceNetworkRecoveryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags to be associated with the Source Network recovery Job.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

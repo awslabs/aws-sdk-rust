@@ -95,6 +95,10 @@ impl SendEventInputBuilder {
         self.event_id = input;
         self
     }
+    /// <p>The event ID to upload.</p>
+    pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_id
+    }
     /// <p>The event type name of the event.</p>
     pub fn event_type_name(
         mut self,
@@ -111,6 +115,10 @@ impl SendEventInputBuilder {
         self.event_type_name = input;
         self
     }
+    /// <p>The event type name of the event.</p>
+    pub fn get_event_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_type_name
+    }
     /// <p>The timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
     pub fn event_timestamp(
         mut self,
@@ -126,6 +134,10 @@ impl SendEventInputBuilder {
     ) -> Self {
         self.event_timestamp = input;
         self
+    }
+    /// <p>The timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
+    pub fn get_event_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_timestamp
     }
     /// Adds a key-value pair to `event_variables`.
     ///
@@ -152,6 +164,14 @@ impl SendEventInputBuilder {
         self.event_variables = input;
         self
     }
+    /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p>
+    pub fn get_event_variables(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.event_variables
+    }
     /// <p>The label to associate with the event. Required if specifying <code>labelTimestamp</code>.</p>
     pub fn assigned_label(
         mut self,
@@ -168,6 +188,10 @@ impl SendEventInputBuilder {
         self.assigned_label = input;
         self
     }
+    /// <p>The label to associate with the event. Required if specifying <code>labelTimestamp</code>.</p>
+    pub fn get_assigned_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assigned_label
+    }
     /// <p>The timestamp associated with the label. Required if specifying <code>assignedLabel</code>.</p>
     pub fn label_timestamp(
         mut self,
@@ -183,6 +207,10 @@ impl SendEventInputBuilder {
     ) -> Self {
         self.label_timestamp = input;
         self
+    }
+    /// <p>The timestamp associated with the label. Required if specifying <code>assignedLabel</code>.</p>
+    pub fn get_label_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label_timestamp
     }
     /// Appends an item to `entities`.
     ///
@@ -202,6 +230,10 @@ impl SendEventInputBuilder {
     ) -> Self {
         self.entities = input;
         self
+    }
+    /// <p>An array of entities.</p>
+    pub fn get_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Entity>> {
+        &self.entities
     }
     /// Consumes the builder and constructs a [`SendEventInput`](crate::operation::send_event::SendEventInput).
     pub fn build(

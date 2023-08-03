@@ -40,6 +40,10 @@ impl DetectEntitiesV2InputBuilder {
         self.text = input;
         self
     }
+    /// <p>A UTF-8 string containing the clinical content being examined for entities.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
+    }
     /// Consumes the builder and constructs a [`DetectEntitiesV2Input`](crate::operation::detect_entities_v2::DetectEntitiesV2Input).
     pub fn build(
         self,

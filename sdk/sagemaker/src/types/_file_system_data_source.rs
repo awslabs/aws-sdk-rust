@@ -72,6 +72,10 @@ impl FileSystemDataSourceBuilder {
         self.file_system_id = input;
         self
     }
+    /// <p>The file system id.</p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_system_id
+    }
     /// <p>The access mode of the mount of the directory associated with the channel. A directory can be mounted either in <code>ro</code> (read-only) or <code>rw</code> (read-write) mode.</p>
     pub fn file_system_access_mode(mut self, input: crate::types::FileSystemAccessMode) -> Self {
         self.file_system_access_mode = ::std::option::Option::Some(input);
@@ -85,6 +89,12 @@ impl FileSystemDataSourceBuilder {
         self.file_system_access_mode = input;
         self
     }
+    /// <p>The access mode of the mount of the directory associated with the channel. A directory can be mounted either in <code>ro</code> (read-only) or <code>rw</code> (read-write) mode.</p>
+    pub fn get_file_system_access_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::FileSystemAccessMode> {
+        &self.file_system_access_mode
+    }
     /// <p>The file system type. </p>
     pub fn file_system_type(mut self, input: crate::types::FileSystemType) -> Self {
         self.file_system_type = ::std::option::Option::Some(input);
@@ -97,6 +107,10 @@ impl FileSystemDataSourceBuilder {
     ) -> Self {
         self.file_system_type = input;
         self
+    }
+    /// <p>The file system type. </p>
+    pub fn get_file_system_type(&self) -> &::std::option::Option<crate::types::FileSystemType> {
+        &self.file_system_type
     }
     /// <p>The full path to the directory to associate with the channel.</p>
     pub fn directory_path(
@@ -113,6 +127,10 @@ impl FileSystemDataSourceBuilder {
     ) -> Self {
         self.directory_path = input;
         self
+    }
+    /// <p>The full path to the directory to associate with the channel.</p>
+    pub fn get_directory_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_path
     }
     /// Consumes the builder and constructs a [`FileSystemDataSource`](crate::types::FileSystemDataSource).
     pub fn build(self) -> crate::types::FileSystemDataSource {

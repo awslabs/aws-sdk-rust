@@ -43,6 +43,10 @@ impl IdentityProviderConfigResponseBuilder {
         self.oidc = input;
         self
     }
+    /// <p>An object representing an OpenID Connect (OIDC) identity provider configuration.</p>
+    pub fn get_oidc(&self) -> &::std::option::Option<crate::types::OidcIdentityProviderConfig> {
+        &self.oidc
+    }
     /// Consumes the builder and constructs a [`IdentityProviderConfigResponse`](crate::types::IdentityProviderConfigResponse).
     pub fn build(self) -> crate::types::IdentityProviderConfigResponse {
         crate::types::IdentityProviderConfigResponse { oidc: self.oidc }

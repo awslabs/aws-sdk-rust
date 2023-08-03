@@ -36,6 +36,10 @@ impl DisassociateApprovalRuleTemplateFromRepositoryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateApprovalRuleTemplateFromRepository as a reference.
+    pub fn as_input(&self) -> &crate::operation::disassociate_approval_rule_template_from_repository::builders::DisassociateApprovalRuleTemplateFromRepositoryInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl DisassociateApprovalRuleTemplateFromRepositoryFluentBuilder {
         self.inner = self.inner.set_approval_rule_template_name(input);
         self
     }
+    /// <p>The name of the approval rule template to disassociate from a specified repository.</p>
+    pub fn get_approval_rule_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_approval_rule_template_name()
+    }
     /// <p>The name of the repository you want to disassociate from the template.</p>
     pub fn repository_name(
         mut self,
@@ -121,5 +129,9 @@ impl DisassociateApprovalRuleTemplateFromRepositoryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
+    }
+    /// <p>The name of the repository you want to disassociate from the template.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository_name()
     }
 }

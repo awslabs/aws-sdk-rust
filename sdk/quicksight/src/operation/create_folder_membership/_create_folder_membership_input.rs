@@ -71,6 +71,10 @@ impl CreateFolderMembershipInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The ID of the folder.</p>
     pub fn folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.folder_id = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl CreateFolderMembershipInputBuilder {
         self.folder_id = input;
         self
     }
+    /// <p>The ID of the folder.</p>
+    pub fn get_folder_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.folder_id
+    }
     /// <p>The ID of the asset (the dashboard, analysis, or dataset).</p>
     pub fn member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_id = ::std::option::Option::Some(input.into());
@@ -90,6 +98,10 @@ impl CreateFolderMembershipInputBuilder {
     pub fn set_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.member_id = input;
         self
+    }
+    /// <p>The ID of the asset (the dashboard, analysis, or dataset).</p>
+    pub fn get_member_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_id
     }
     /// <p>The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>.</p>
     pub fn member_type(mut self, input: crate::types::MemberType) -> Self {
@@ -103,6 +115,10 @@ impl CreateFolderMembershipInputBuilder {
     ) -> Self {
         self.member_type = input;
         self
+    }
+    /// <p>The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>.</p>
+    pub fn get_member_type(&self) -> &::std::option::Option<crate::types::MemberType> {
+        &self.member_type
     }
     /// Consumes the builder and constructs a [`CreateFolderMembershipInput`](crate::operation::create_folder_membership::CreateFolderMembershipInput).
     pub fn build(

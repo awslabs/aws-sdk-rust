@@ -47,6 +47,10 @@ impl DeleteMembersInputBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The unique ID of the detector of the GuardDuty account whose members you want to delete.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// Appends an item to `account_ids`.
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
@@ -65,6 +69,12 @@ impl DeleteMembersInputBuilder {
     ) -> Self {
         self.account_ids = input;
         self
+    }
+    /// <p>A list of account IDs of the GuardDuty member accounts that you want to delete.</p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.account_ids
     }
     /// Consumes the builder and constructs a [`DeleteMembersInput`](crate::operation::delete_members::DeleteMembersInput).
     pub fn build(

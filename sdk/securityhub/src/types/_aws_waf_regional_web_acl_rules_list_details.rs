@@ -86,6 +86,12 @@ impl AwsWafRegionalWebAclRulesListDetailsBuilder {
         self.action = input;
         self
     }
+    /// <p>The action that WAF takes when a web request matches all conditions in the rule, such as allow, block, or count the request. </p>
+    pub fn get_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsWafRegionalWebAclRulesListActionDetails> {
+        &self.action
+    }
     /// <p>Overrides the rule evaluation result in the rule group. </p>
     pub fn override_action(
         mut self,
@@ -104,6 +110,13 @@ impl AwsWafRegionalWebAclRulesListDetailsBuilder {
         self.override_action = input;
         self
     }
+    /// <p>Overrides the rule evaluation result in the rule group. </p>
+    pub fn get_override_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsWafRegionalWebAclRulesListOverrideActionDetails>
+    {
+        &self.override_action
+    }
     /// <p>The order in which WAF evaluates the rules in a web ACL. </p>
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
@@ -113,6 +126,10 @@ impl AwsWafRegionalWebAclRulesListDetailsBuilder {
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
+    }
+    /// <p>The order in which WAF evaluates the rules in a web ACL. </p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
     }
     /// <p>The ID of an WAF Regional rule to associate with a web ACL. </p>
     pub fn rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -124,6 +141,10 @@ impl AwsWafRegionalWebAclRulesListDetailsBuilder {
         self.rule_id = input;
         self
     }
+    /// <p>The ID of an WAF Regional rule to associate with a web ACL. </p>
+    pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_id
+    }
     /// <p>For actions that are associated with a rule, the action that WAF takes when a web request matches all conditions in a rule. </p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -133,6 +154,10 @@ impl AwsWafRegionalWebAclRulesListDetailsBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>For actions that are associated with a rule, the action that WAF takes when a web request matches all conditions in a rule. </p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`AwsWafRegionalWebAclRulesListDetails`](crate::types::AwsWafRegionalWebAclRulesListDetails).
     pub fn build(self) -> crate::types::AwsWafRegionalWebAclRulesListDetails {

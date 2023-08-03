@@ -56,6 +56,10 @@ impl RemoveFromGlobalClusterInputBuilder {
         self.global_cluster_identifier = input;
         self
     }
+    /// <p>The cluster identifier to detach from the Amazon DocumentDB global cluster. </p>
+    pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_cluster_identifier
+    }
     /// <p>The Amazon Resource Name (ARN) identifying the cluster that was detached from the Amazon DocumentDB global cluster. </p>
     pub fn db_cluster_identifier(
         mut self,
@@ -71,6 +75,10 @@ impl RemoveFromGlobalClusterInputBuilder {
     ) -> Self {
         self.db_cluster_identifier = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) identifying the cluster that was detached from the Amazon DocumentDB global cluster. </p>
+    pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_identifier
     }
     /// Consumes the builder and constructs a [`RemoveFromGlobalClusterInput`](crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterInput).
     pub fn build(

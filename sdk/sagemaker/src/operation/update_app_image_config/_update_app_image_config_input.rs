@@ -57,6 +57,10 @@ impl UpdateAppImageConfigInputBuilder {
         self.app_image_config_name = input;
         self
     }
+    /// <p>The name of the AppImageConfig to update.</p>
+    pub fn get_app_image_config_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_image_config_name
+    }
     /// <p>The new KernelGateway app to run on the image.</p>
     pub fn kernel_gateway_image_config(
         mut self,
@@ -72,6 +76,12 @@ impl UpdateAppImageConfigInputBuilder {
     ) -> Self {
         self.kernel_gateway_image_config = input;
         self
+    }
+    /// <p>The new KernelGateway app to run on the image.</p>
+    pub fn get_kernel_gateway_image_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::KernelGatewayImageConfig> {
+        &self.kernel_gateway_image_config
     }
     /// Consumes the builder and constructs a [`UpdateAppImageConfigInput`](crate::operation::update_app_image_config::UpdateAppImageConfigInput).
     pub fn build(

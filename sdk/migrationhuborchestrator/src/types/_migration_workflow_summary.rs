@@ -112,6 +112,10 @@ impl MigrationWorkflowSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the migration workflow.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the migration workflow.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -122,6 +126,10 @@ impl MigrationWorkflowSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the migration workflow.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The ID of the template.</p>
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_id = ::std::option::Option::Some(input.into());
@@ -131,6 +139,10 @@ impl MigrationWorkflowSummaryBuilder {
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_id = input;
         self
+    }
+    /// <p>The ID of the template.</p>
+    pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_id
     }
     /// <p>The name of the application configured in Application Discovery Service.</p>
     pub fn ads_application_configuration_name(
@@ -148,6 +160,12 @@ impl MigrationWorkflowSummaryBuilder {
         self.ads_application_configuration_name = input;
         self
     }
+    /// <p>The name of the application configured in Application Discovery Service.</p>
+    pub fn get_ads_application_configuration_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.ads_application_configuration_name
+    }
     /// <p>The status of the migration workflow.</p>
     pub fn status(mut self, input: crate::types::MigrationWorkflowStatusEnum) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -160,6 +178,10 @@ impl MigrationWorkflowSummaryBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the migration workflow.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::MigrationWorkflowStatusEnum> {
+        &self.status
     }
     /// <p>The time at which the migration workflow was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -174,6 +196,10 @@ impl MigrationWorkflowSummaryBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time at which the migration workflow was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The time at which the migration workflow ended.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -186,6 +212,10 @@ impl MigrationWorkflowSummaryBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The time at which the migration workflow ended.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// <p>The status message of the migration workflow.</p>
     pub fn status_message(
@@ -203,6 +233,10 @@ impl MigrationWorkflowSummaryBuilder {
         self.status_message = input;
         self
     }
+    /// <p>The status message of the migration workflow.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>The steps completed in the migration workflow.</p>
     pub fn completed_steps(mut self, input: i32) -> Self {
         self.completed_steps = ::std::option::Option::Some(input);
@@ -213,6 +247,10 @@ impl MigrationWorkflowSummaryBuilder {
         self.completed_steps = input;
         self
     }
+    /// <p>The steps completed in the migration workflow.</p>
+    pub fn get_completed_steps(&self) -> &::std::option::Option<i32> {
+        &self.completed_steps
+    }
     /// <p>All the steps in a migration workflow.</p>
     pub fn total_steps(mut self, input: i32) -> Self {
         self.total_steps = ::std::option::Option::Some(input);
@@ -222,6 +260,10 @@ impl MigrationWorkflowSummaryBuilder {
     pub fn set_total_steps(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_steps = input;
         self
+    }
+    /// <p>All the steps in a migration workflow.</p>
+    pub fn get_total_steps(&self) -> &::std::option::Option<i32> {
+        &self.total_steps
     }
     /// Consumes the builder and constructs a [`MigrationWorkflowSummary`](crate::types::MigrationWorkflowSummary).
     pub fn build(self) -> crate::types::MigrationWorkflowSummary {

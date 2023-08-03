@@ -47,6 +47,10 @@ impl GetInstanceSnapshotInputBuilder {
         self.instance_snapshot_name = input;
         self
     }
+    /// <p>The name of the snapshot for which you are requesting information.</p>
+    pub fn get_instance_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_snapshot_name
+    }
     /// Consumes the builder and constructs a [`GetInstanceSnapshotInput`](crate::operation::get_instance_snapshot::GetInstanceSnapshotInput).
     pub fn build(
         self,

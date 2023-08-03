@@ -74,6 +74,10 @@ impl GameServerInstanceBuilder {
         self.game_server_group_name = input;
         self
     }
+    /// <p>A developer-defined identifier for the game server group that includes the game server instance. The name is unique for each Region in each Amazon Web Services account.</p>
+    pub fn get_game_server_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.game_server_group_name
+    }
     /// <p>A generated unique identifier for the game server group that includes the game server instance. </p>
     pub fn game_server_group_arn(
         mut self,
@@ -90,6 +94,10 @@ impl GameServerInstanceBuilder {
         self.game_server_group_arn = input;
         self
     }
+    /// <p>A generated unique identifier for the game server group that includes the game server instance. </p>
+    pub fn get_game_server_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.game_server_group_arn
+    }
     /// <p>The unique identifier for the instance where the game server is running. This ID is available in the instance metadata. EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -99,6 +107,10 @@ impl GameServerInstanceBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
+    }
+    /// <p>The unique identifier for the instance where the game server is running. This ID is available in the instance metadata. EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// <p>Current status of the game server instance</p>
     pub fn instance_status(mut self, input: crate::types::GameServerInstanceStatus) -> Self {
@@ -112,6 +124,12 @@ impl GameServerInstanceBuilder {
     ) -> Self {
         self.instance_status = input;
         self
+    }
+    /// <p>Current status of the game server instance</p>
+    pub fn get_instance_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::GameServerInstanceStatus> {
+        &self.instance_status
     }
     /// Consumes the builder and constructs a [`GameServerInstance`](crate::types::GameServerInstance).
     pub fn build(self) -> crate::types::GameServerInstance {

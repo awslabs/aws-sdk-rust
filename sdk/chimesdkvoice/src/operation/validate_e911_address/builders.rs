@@ -36,6 +36,12 @@ impl ValidateE911AddressFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ValidateE911Address as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::validate_e911_address::builders::ValidateE911AddressInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl ValidateE911AddressFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The AWS account ID.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The address street number, such as <code>200</code> or <code>2121</code>.</p>
     pub fn street_number(
         mut self,
@@ -148,6 +158,10 @@ impl ValidateE911AddressFluentBuilder {
         self.inner = self.inner.set_street_number(input);
         self
     }
+    /// <p>The address street number, such as <code>200</code> or <code>2121</code>.</p>
+    pub fn get_street_number(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_street_number()
+    }
     /// <p>The address street information, such as <code>8th Avenue</code>.</p>
     pub fn street_info(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.street_info(input.into());
@@ -157,6 +171,10 @@ impl ValidateE911AddressFluentBuilder {
     pub fn set_street_info(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_street_info(input);
         self
+    }
+    /// <p>The address street information, such as <code>8th Avenue</code>.</p>
+    pub fn get_street_info(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_street_info()
     }
     /// <p>The address city, such as <code>Portland</code>.</p>
     pub fn city(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -168,6 +186,10 @@ impl ValidateE911AddressFluentBuilder {
         self.inner = self.inner.set_city(input);
         self
     }
+    /// <p>The address city, such as <code>Portland</code>.</p>
+    pub fn get_city(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_city()
+    }
     /// <p>The address state, such as <code>ME</code>.</p>
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.state(input.into());
@@ -177,6 +199,10 @@ impl ValidateE911AddressFluentBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_state(input);
         self
+    }
+    /// <p>The address state, such as <code>ME</code>.</p>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_state()
     }
     /// <p>The country in the address being validated.</p>
     pub fn country(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -188,6 +214,10 @@ impl ValidateE911AddressFluentBuilder {
         self.inner = self.inner.set_country(input);
         self
     }
+    /// <p>The country in the address being validated.</p>
+    pub fn get_country(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_country()
+    }
     /// <p>The dress postal code, such <code>04352</code>.</p>
     pub fn postal_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.postal_code(input.into());
@@ -197,5 +227,9 @@ impl ValidateE911AddressFluentBuilder {
     pub fn set_postal_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_postal_code(input);
         self
+    }
+    /// <p>The dress postal code, such <code>04352</code>.</p>
+    pub fn get_postal_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_postal_code()
     }
 }

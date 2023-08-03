@@ -50,6 +50,12 @@ impl BatchGetResourceConfigInputBuilder {
         self.resource_keys = input;
         self
     }
+    /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID.</p>
+    pub fn get_resource_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>> {
+        &self.resource_keys
+    }
     /// Consumes the builder and constructs a [`BatchGetResourceConfigInput`](crate::operation::batch_get_resource_config::BatchGetResourceConfigInput).
     pub fn build(
         self,

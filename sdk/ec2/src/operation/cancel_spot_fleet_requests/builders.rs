@@ -39,6 +39,13 @@ impl CancelSpotFleetRequestsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CancelSpotFleetRequests as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::cancel_spot_fleet_requests::builders::CancelSpotFleetRequestsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +136,10 @@ impl CancelSpotFleetRequestsFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// Appends an item to `SpotFleetRequestIds`.
     ///
     /// To override the contents of this collection use [`set_spot_fleet_request_ids`](Self::set_spot_fleet_request_ids).
@@ -149,6 +160,12 @@ impl CancelSpotFleetRequestsFluentBuilder {
         self.inner = self.inner.set_spot_fleet_request_ids(input);
         self
     }
+    /// <p>The IDs of the Spot Fleet requests.</p>
+    pub fn get_spot_fleet_request_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_spot_fleet_request_ids()
+    }
     /// <p>Indicates whether to terminate the associated instances when the Spot Fleet request is canceled. The default is to terminate the instances.</p>
     /// <p>To let the instances continue to run after the Spot Fleet request is canceled, specify <code>no-terminate-instances</code>.</p>
     pub fn terminate_instances(mut self, input: bool) -> Self {
@@ -160,5 +177,10 @@ impl CancelSpotFleetRequestsFluentBuilder {
     pub fn set_terminate_instances(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_terminate_instances(input);
         self
+    }
+    /// <p>Indicates whether to terminate the associated instances when the Spot Fleet request is canceled. The default is to terminate the instances.</p>
+    /// <p>To let the instances continue to run after the Spot Fleet request is canceled, specify <code>no-terminate-instances</code>.</p>
+    pub fn get_terminate_instances(&self) -> &::std::option::Option<bool> {
+        self.inner.get_terminate_instances()
     }
 }

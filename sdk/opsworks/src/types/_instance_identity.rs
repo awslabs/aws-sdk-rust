@@ -48,6 +48,10 @@ impl InstanceIdentityBuilder {
         self.document = input;
         self
     }
+    /// <p>A JSON document that contains the metadata.</p>
+    pub fn get_document(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document
+    }
     /// <p>A signature that can be used to verify the document's accuracy and authenticity.</p>
     pub fn signature(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signature = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl InstanceIdentityBuilder {
     pub fn set_signature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signature = input;
         self
+    }
+    /// <p>A signature that can be used to verify the document's accuracy and authenticity.</p>
+    pub fn get_signature(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signature
     }
     /// Consumes the builder and constructs a [`InstanceIdentity`](crate::types::InstanceIdentity).
     pub fn build(self) -> crate::types::InstanceIdentity {

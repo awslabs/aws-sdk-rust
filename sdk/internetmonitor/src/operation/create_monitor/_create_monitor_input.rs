@@ -115,6 +115,10 @@ impl CreateMonitorInputBuilder {
         self.monitor_name = input;
         self
     }
+    /// <p>The name of the monitor. </p>
+    pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitor_name
+    }
     /// Appends an item to `resources`.
     ///
     /// To override the contents of this collection use [`set_resources`](Self::set_resources).
@@ -140,6 +144,13 @@ impl CreateMonitorInputBuilder {
         self.resources = input;
         self
     }
+    /// <p>The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs).</p>
+    /// <p>You can add a combination of Amazon Virtual Private Clouds (VPCs) and Amazon CloudFront distributions, or you can add Amazon WorkSpaces directories. You can't add all three types of resources.</p> <note>
+    /// <p>If you add only VPC resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p>
+    /// </note>
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resources
+    }
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters that you specify to make an idempotent API request. Don't reuse the same client token for other API requests.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -149,6 +160,10 @@ impl CreateMonitorInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A unique, case-sensitive string of up to 64 ASCII characters that you specify to make an idempotent API request. Don't reuse the same client token for other API requests.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -175,6 +190,14 @@ impl CreateMonitorInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags for a monitor. You can add a maximum of 50 tags in Internet Monitor.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the network or ASN, such as an internet service provider (ISP), that clients access the resources through. This limit helps control billing costs.</p>
     /// <p>To learn more, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMCityNetworksMaximum.html">Choosing a city-network maximum value </a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
     pub fn max_city_networks_to_monitor(mut self, input: i32) -> Self {
@@ -186,6 +209,11 @@ impl CreateMonitorInputBuilder {
     pub fn set_max_city_networks_to_monitor(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_city_networks_to_monitor = input;
         self
+    }
+    /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the network or ASN, such as an internet service provider (ISP), that clients access the resources through. This limit helps control billing costs.</p>
+    /// <p>To learn more, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMCityNetworksMaximum.html">Choosing a city-network maximum value </a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
+    pub fn get_max_city_networks_to_monitor(&self) -> &::std::option::Option<i32> {
+        &self.max_city_networks_to_monitor
     }
     /// <p>Publish internet measurements for Internet Monitor to an Amazon S3 bucket in addition to CloudWatch Logs.</p>
     pub fn internet_measurements_log_delivery(
@@ -203,6 +231,12 @@ impl CreateMonitorInputBuilder {
         self.internet_measurements_log_delivery = input;
         self
     }
+    /// <p>Publish internet measurements for Internet Monitor to an Amazon S3 bucket in addition to CloudWatch Logs.</p>
+    pub fn get_internet_measurements_log_delivery(
+        &self,
+    ) -> &::std::option::Option<crate::types::InternetMeasurementsLogDelivery> {
+        &self.internet_measurements_log_delivery
+    }
     /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.</p>
     pub fn traffic_percentage_to_monitor(mut self, input: i32) -> Self {
         self.traffic_percentage_to_monitor = ::std::option::Option::Some(input);
@@ -212,6 +246,10 @@ impl CreateMonitorInputBuilder {
     pub fn set_traffic_percentage_to_monitor(mut self, input: ::std::option::Option<i32>) -> Self {
         self.traffic_percentage_to_monitor = input;
         self
+    }
+    /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.</p>
+    pub fn get_traffic_percentage_to_monitor(&self) -> &::std::option::Option<i32> {
+        &self.traffic_percentage_to_monitor
     }
     /// <p>Defines the health event threshold percentages, for performance score and availability score. Internet Monitor creates a health event when there's an internet issue that affects your application end users where a health score percentage is at or below a set threshold. If you don't set a health event threshold, the default calue is 95%.</p>
     pub fn health_events_config(mut self, input: crate::types::HealthEventsConfig) -> Self {
@@ -225,6 +263,12 @@ impl CreateMonitorInputBuilder {
     ) -> Self {
         self.health_events_config = input;
         self
+    }
+    /// <p>Defines the health event threshold percentages, for performance score and availability score. Internet Monitor creates a health event when there's an internet issue that affects your application end users where a health score percentage is at or below a set threshold. If you don't set a health event threshold, the default calue is 95%.</p>
+    pub fn get_health_events_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::HealthEventsConfig> {
+        &self.health_events_config
     }
     /// Consumes the builder and constructs a [`CreateMonitorInput`](crate::operation::create_monitor::CreateMonitorInput).
     pub fn build(

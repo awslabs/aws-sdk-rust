@@ -71,6 +71,12 @@ impl AwsJobAbortCriteriaBuilder {
         self.failure_type = input;
         self
     }
+    /// <p>The type of job execution failures that can initiate a job abort.</p>
+    pub fn get_failure_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsJobAbortCriteriaFailureType> {
+        &self.failure_type
+    }
     /// <p>The type of job action to take to initiate the job abort.</p>
     pub fn action(mut self, input: crate::types::AwsJobAbortCriteriaAbortAction) -> Self {
         self.action = ::std::option::Option::Some(input);
@@ -84,6 +90,12 @@ impl AwsJobAbortCriteriaBuilder {
         self.action = input;
         self
     }
+    /// <p>The type of job action to take to initiate the job abort.</p>
+    pub fn get_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsJobAbortCriteriaAbortAction> {
+        &self.action
+    }
     /// <p>The minimum percentage of job execution failures that must occur to initiate the job abort.</p>
     /// <p>Amazon Web Services IoT Core supports up to two digits after the decimal (for example, 10.9 and 10.99, but not 10.999).</p>
     pub fn threshold_percentage(mut self, input: f64) -> Self {
@@ -96,6 +108,11 @@ impl AwsJobAbortCriteriaBuilder {
         self.threshold_percentage = input;
         self
     }
+    /// <p>The minimum percentage of job execution failures that must occur to initiate the job abort.</p>
+    /// <p>Amazon Web Services IoT Core supports up to two digits after the decimal (for example, 10.9 and 10.99, but not 10.999).</p>
+    pub fn get_threshold_percentage(&self) -> &::std::option::Option<f64> {
+        &self.threshold_percentage
+    }
     /// <p>The minimum number of things which must receive job execution notifications before the job can be aborted.</p>
     pub fn min_number_of_executed_things(mut self, input: i32) -> Self {
         self.min_number_of_executed_things = ::std::option::Option::Some(input);
@@ -105,6 +122,10 @@ impl AwsJobAbortCriteriaBuilder {
     pub fn set_min_number_of_executed_things(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_number_of_executed_things = input;
         self
+    }
+    /// <p>The minimum number of things which must receive job execution notifications before the job can be aborted.</p>
+    pub fn get_min_number_of_executed_things(&self) -> &::std::option::Option<i32> {
+        &self.min_number_of_executed_things
     }
     /// Consumes the builder and constructs a [`AwsJobAbortCriteria`](crate::types::AwsJobAbortCriteria).
     pub fn build(self) -> crate::types::AwsJobAbortCriteria {

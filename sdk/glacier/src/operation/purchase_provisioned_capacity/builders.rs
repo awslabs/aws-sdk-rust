@@ -36,6 +36,10 @@ impl PurchaseProvisionedCapacityFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PurchaseProvisionedCapacity as a reference.
+    pub fn as_input(&self) -> &crate::operation::purchase_provisioned_capacity::builders::PurchaseProvisionedCapacityInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +129,9 @@ impl PurchaseProvisionedCapacityFluentBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
+    }
+    /// <p>The AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '-' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, don't include any hyphens ('-') in the ID. </p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
     }
 }

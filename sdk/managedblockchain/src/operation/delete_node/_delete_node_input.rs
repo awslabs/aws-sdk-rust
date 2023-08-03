@@ -81,6 +81,16 @@ impl DeleteNodeInputBuilder {
         self.network_id = input;
         self
     }
+    /// <p>The unique identifier of the network that the node is on.</p>
+    /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
+    /// <ul>
+    /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
+    /// <li> <p> <code>n-ethereum-goerli</code> </p> </li>
+    /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>
+    /// </ul>
+    pub fn get_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_id
+    }
     /// <p>The unique identifier of the member that owns this node.</p>
     /// <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
     pub fn member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -93,6 +103,11 @@ impl DeleteNodeInputBuilder {
         self.member_id = input;
         self
     }
+    /// <p>The unique identifier of the member that owns this node.</p>
+    /// <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
+    pub fn get_member_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_id
+    }
     /// <p>The unique identifier of the node.</p>
     pub fn node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_id = ::std::option::Option::Some(input.into());
@@ -102,6 +117,10 @@ impl DeleteNodeInputBuilder {
     pub fn set_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_id = input;
         self
+    }
+    /// <p>The unique identifier of the node.</p>
+    pub fn get_node_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_id
     }
     /// Consumes the builder and constructs a [`DeleteNodeInput`](crate::operation::delete_node::DeleteNodeInput).
     pub fn build(

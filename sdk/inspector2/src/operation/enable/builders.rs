@@ -36,6 +36,10 @@ impl EnableFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the Enable as a reference.
+    pub fn as_input(&self) -> &crate::operation::enable::builders::EnableInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +129,12 @@ impl EnableFluentBuilder {
         self.inner = self.inner.set_account_ids(input);
         self
     }
+    /// <p>A list of account IDs you want to enable Amazon Inspector scans for.</p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_account_ids()
+    }
     /// Appends an item to `resourceTypes`.
     ///
     /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
@@ -142,6 +152,12 @@ impl EnableFluentBuilder {
         self.inner = self.inner.set_resource_types(input);
         self
     }
+    /// <p>The resource scan types you want to enable.</p>
+    pub fn get_resource_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceScanType>> {
+        self.inner.get_resource_types()
+    }
     /// <p>The idempotency token for the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -151,5 +167,9 @@ impl EnableFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>The idempotency token for the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

@@ -80,6 +80,10 @@ impl RotationBuilder {
         self.rotation_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the rotation.</p>
+    pub fn get_rotation_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rotation_arn
+    }
     /// <p>The name of the rotation.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl RotationBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the rotation.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `contact_ids`.
     ///
@@ -109,6 +117,12 @@ impl RotationBuilder {
         self.contact_ids = input;
         self
     }
+    /// <p>The Amazon Resource Names (ARNs) of the contacts assigned to the rotation team.</p>
+    pub fn get_contact_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.contact_ids
+    }
     /// <p>The date and time the rotation becomes active.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -122,6 +136,10 @@ impl RotationBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The date and time the rotation becomes active.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The time zone the rotation’s activity is based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". </p>
     pub fn time_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time_zone_id = ::std::option::Option::Some(input.into());
@@ -131,6 +149,10 @@ impl RotationBuilder {
     pub fn set_time_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.time_zone_id = input;
         self
+    }
+    /// <p>The time zone the rotation’s activity is based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". </p>
+    pub fn get_time_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.time_zone_id
     }
     /// <p>Information about when an on-call rotation is in effect and how long the rotation period lasts.</p>
     pub fn recurrence(mut self, input: crate::types::RecurrenceSettings) -> Self {
@@ -144,6 +166,10 @@ impl RotationBuilder {
     ) -> Self {
         self.recurrence = input;
         self
+    }
+    /// <p>Information about when an on-call rotation is in effect and how long the rotation period lasts.</p>
+    pub fn get_recurrence(&self) -> &::std::option::Option<crate::types::RecurrenceSettings> {
+        &self.recurrence
     }
     /// Consumes the builder and constructs a [`Rotation`](crate::types::Rotation).
     pub fn build(self) -> crate::types::Rotation {

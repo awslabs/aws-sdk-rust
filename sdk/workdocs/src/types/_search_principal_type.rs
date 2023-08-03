@@ -48,6 +48,10 @@ impl SearchPrincipalTypeBuilder {
         self.id = input;
         self
     }
+    /// <p>UserIds or GroupIds.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Appends an item to `roles`.
     ///
     /// To override the contents of this collection use [`set_roles`](Self::set_roles).
@@ -66,6 +70,12 @@ impl SearchPrincipalTypeBuilder {
     ) -> Self {
         self.roles = input;
         self
+    }
+    /// <p>The Role of a User or Group.</p>
+    pub fn get_roles(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PrincipalRoleType>> {
+        &self.roles
     }
     /// Consumes the builder and constructs a [`SearchPrincipalType`](crate::types::SearchPrincipalType).
     pub fn build(self) -> crate::types::SearchPrincipalType {

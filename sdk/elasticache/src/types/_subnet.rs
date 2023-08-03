@@ -73,6 +73,10 @@ impl SubnetBuilder {
         self.subnet_identifier = input;
         self
     }
+    /// <p>The unique identifier for the subnet.</p>
+    pub fn get_subnet_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_identifier
+    }
     /// <p>The Availability Zone associated with the subnet.</p>
     pub fn subnet_availability_zone(mut self, input: crate::types::AvailabilityZone) -> Self {
         self.subnet_availability_zone = ::std::option::Option::Some(input);
@@ -86,6 +90,12 @@ impl SubnetBuilder {
         self.subnet_availability_zone = input;
         self
     }
+    /// <p>The Availability Zone associated with the subnet.</p>
+    pub fn get_subnet_availability_zone(
+        &self,
+    ) -> &::std::option::Option<crate::types::AvailabilityZone> {
+        &self.subnet_availability_zone
+    }
     /// <p>The outpost ARN of the subnet.</p>
     pub fn subnet_outpost(mut self, input: crate::types::SubnetOutpost) -> Self {
         self.subnet_outpost = ::std::option::Option::Some(input);
@@ -98,6 +108,10 @@ impl SubnetBuilder {
     ) -> Self {
         self.subnet_outpost = input;
         self
+    }
+    /// <p>The outpost ARN of the subnet.</p>
+    pub fn get_subnet_outpost(&self) -> &::std::option::Option<crate::types::SubnetOutpost> {
+        &self.subnet_outpost
     }
     /// Appends an item to `supported_network_types`.
     ///
@@ -117,6 +131,12 @@ impl SubnetBuilder {
     ) -> Self {
         self.supported_network_types = input;
         self
+    }
+    /// <p>Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    pub fn get_supported_network_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkType>> {
+        &self.supported_network_types
     }
     /// Consumes the builder and constructs a [`Subnet`](crate::types::Subnet).
     pub fn build(self) -> crate::types::Subnet {

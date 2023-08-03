@@ -56,6 +56,12 @@ impl DescribeContinuousBackupsOutputBuilder {
         self.continuous_backups_description = input;
         self
     }
+    /// <p>Represents the continuous backups and point in time recovery settings on the table.</p>
+    pub fn get_continuous_backups_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContinuousBackupsDescription> {
+        &self.continuous_backups_description
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

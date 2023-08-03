@@ -54,6 +54,10 @@ impl ErrorDetailBuilder {
         self.detailed_error_code = input;
         self
     }
+    /// A detailed error code.
+    pub fn get_detailed_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detailed_error_code
+    }
     /// A detailed error message.
     pub fn detailed_error_message(
         mut self,
@@ -69,6 +73,10 @@ impl ErrorDetailBuilder {
     ) -> Self {
         self.detailed_error_message = input;
         self
+    }
+    /// A detailed error message.
+    pub fn get_detailed_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detailed_error_message
     }
     /// Consumes the builder and constructs a [`ErrorDetail`](crate::types::ErrorDetail).
     pub fn build(self) -> crate::types::ErrorDetail {

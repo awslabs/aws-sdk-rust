@@ -36,6 +36,10 @@ impl UpdateDataSourcePermissionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDataSourcePermissions as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_data_source_permissions::builders::UpdateDataSourcePermissionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl UpdateDataSourcePermissionsFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. </p>
     pub fn data_source_id(
         mut self,
@@ -147,6 +155,10 @@ impl UpdateDataSourcePermissionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_data_source_id(input);
         self
+    }
+    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. </p>
+    pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_data_source_id()
     }
     /// Appends an item to `GrantPermissions`.
     ///
@@ -165,6 +177,12 @@ impl UpdateDataSourcePermissionsFluentBuilder {
         self.inner = self.inner.set_grant_permissions(input);
         self
     }
+    /// <p>A list of resource permissions that you want to grant on the data source.</p>
+    pub fn get_grant_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+        self.inner.get_grant_permissions()
+    }
     /// Appends an item to `RevokePermissions`.
     ///
     /// To override the contents of this collection use [`set_revoke_permissions`](Self::set_revoke_permissions).
@@ -181,5 +199,11 @@ impl UpdateDataSourcePermissionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_revoke_permissions(input);
         self
+    }
+    /// <p>A list of resource permissions that you want to revoke on the data source.</p>
+    pub fn get_revoke_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+        self.inner.get_revoke_permissions()
     }
 }

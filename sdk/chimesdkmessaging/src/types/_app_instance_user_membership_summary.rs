@@ -59,6 +59,10 @@ impl AppInstanceUserMembershipSummaryBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of <code>ChannelMembership</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ChannelMembershipType> {
+        &self.r#type
+    }
     /// <p>The time at which an <code>AppInstanceUser</code> last marked a channel as read.</p>
     pub fn read_marker_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.read_marker_timestamp = ::std::option::Option::Some(input);
@@ -71,6 +75,12 @@ impl AppInstanceUserMembershipSummaryBuilder {
     ) -> Self {
         self.read_marker_timestamp = input;
         self
+    }
+    /// <p>The time at which an <code>AppInstanceUser</code> last marked a channel as read.</p>
+    pub fn get_read_marker_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.read_marker_timestamp
     }
     /// <p>The ID of the SubChannel that the <code>AppInstanceUser</code> is a member of.</p>
     pub fn sub_channel_id(
@@ -87,6 +97,10 @@ impl AppInstanceUserMembershipSummaryBuilder {
     ) -> Self {
         self.sub_channel_id = input;
         self
+    }
+    /// <p>The ID of the SubChannel that the <code>AppInstanceUser</code> is a member of.</p>
+    pub fn get_sub_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sub_channel_id
     }
     /// Consumes the builder and constructs a [`AppInstanceUserMembershipSummary`](crate::types::AppInstanceUserMembershipSummary).
     pub fn build(self) -> crate::types::AppInstanceUserMembershipSummary {

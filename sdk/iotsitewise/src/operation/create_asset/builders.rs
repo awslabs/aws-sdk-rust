@@ -36,6 +36,10 @@ impl CreateAssetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateAsset as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_asset::builders::CreateAssetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl CreateAssetFluentBuilder {
         self.inner = self.inner.set_asset_name(input);
         self
     }
+    /// <p>A friendly name for the asset.</p>
+    pub fn get_asset_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_asset_name()
+    }
     /// <p>The ID of the asset model from which to create the asset.</p>
     pub fn asset_model_id(
         mut self,
@@ -134,6 +142,10 @@ impl CreateAssetFluentBuilder {
         self.inner = self.inner.set_asset_model_id(input);
         self
     }
+    /// <p>The ID of the asset model from which to create the asset.</p>
+    pub fn get_asset_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_asset_model_id()
+    }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -143,6 +155,10 @@ impl CreateAssetFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -167,6 +183,14 @@ impl CreateAssetFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>A list of key-value pairs that contain metadata for the asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>A description for the asset.</p>
     pub fn asset_description(
         mut self,
@@ -182,5 +206,9 @@ impl CreateAssetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_asset_description(input);
         self
+    }
+    /// <p>A description for the asset.</p>
+    pub fn get_asset_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_asset_description()
     }
 }

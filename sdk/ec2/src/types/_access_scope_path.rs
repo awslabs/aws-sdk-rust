@@ -60,6 +60,10 @@ impl AccessScopePathBuilder {
         self.source = input;
         self
     }
+    /// <p>The source.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::PathStatement> {
+        &self.source
+    }
     /// <p>The destination.</p>
     pub fn destination(mut self, input: crate::types::PathStatement) -> Self {
         self.destination = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl AccessScopePathBuilder {
     ) -> Self {
         self.destination = input;
         self
+    }
+    /// <p>The destination.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::PathStatement> {
+        &self.destination
     }
     /// Appends an item to `through_resources`.
     ///
@@ -91,6 +99,12 @@ impl AccessScopePathBuilder {
     ) -> Self {
         self.through_resources = input;
         self
+    }
+    /// <p>The through resources.</p>
+    pub fn get_through_resources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ThroughResourcesStatement>> {
+        &self.through_resources
     }
     /// Consumes the builder and constructs a [`AccessScopePath`](crate::types::AccessScopePath).
     pub fn build(self) -> crate::types::AccessScopePath {

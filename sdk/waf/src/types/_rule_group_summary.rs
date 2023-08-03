@@ -62,6 +62,11 @@ impl RuleGroupSummaryBuilder {
         self.rule_group_id = input;
         self
     }
+    /// <p>A unique identifier for a <code>RuleGroup</code>. You use <code>RuleGroupId</code> to get more information about a <code>RuleGroup</code> (see <code>GetRuleGroup</code>), update a <code>RuleGroup</code> (see <code>UpdateRuleGroup</code>), insert a <code>RuleGroup</code> into a <code>WebACL</code> or delete one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>RuleGroup</code> from AWS WAF (see <code>DeleteRuleGroup</code>).</p>
+    /// <p> <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
+    pub fn get_rule_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_group_id
+    }
     /// <p>A friendly name or description of the <code>RuleGroup</code>. You can't change the name of a <code>RuleGroup</code> after you create it.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -71,6 +76,10 @@ impl RuleGroupSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A friendly name or description of the <code>RuleGroup</code>. You can't change the name of a <code>RuleGroup</code> after you create it.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`RuleGroupSummary`](crate::types::RuleGroupSummary).
     pub fn build(self) -> crate::types::RuleGroupSummary {

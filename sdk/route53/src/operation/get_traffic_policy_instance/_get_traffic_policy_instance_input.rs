@@ -42,6 +42,10 @@ impl GetTrafficPolicyInstanceInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the traffic policy instance that you want to get information about.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`GetTrafficPolicyInstanceInput`](crate::operation::get_traffic_policy_instance::GetTrafficPolicyInstanceInput).
     pub fn build(
         self,

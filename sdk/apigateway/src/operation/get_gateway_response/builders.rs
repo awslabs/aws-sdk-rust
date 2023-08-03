@@ -36,6 +36,12 @@ impl GetGatewayResponseFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetGatewayResponse as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_gateway_response::builders::GetGatewayResponseInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl GetGatewayResponseFluentBuilder {
         self.inner = self.inner.set_rest_api_id(input);
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rest_api_id()
+    }
     /// <p>The response type of the associated GatewayResponse.</p>
     pub fn response_type(mut self, input: crate::types::GatewayResponseType) -> Self {
         self.inner = self.inner.response_type(input);
@@ -138,5 +148,9 @@ impl GetGatewayResponseFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_response_type(input);
         self
+    }
+    /// <p>The response type of the associated GatewayResponse.</p>
+    pub fn get_response_type(&self) -> &::std::option::Option<crate::types::GatewayResponseType> {
+        self.inner.get_response_type()
     }
 }

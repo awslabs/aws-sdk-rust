@@ -61,6 +61,11 @@ impl PublishOutputBuilder {
         self.message_id = input;
         self
     }
+    /// <p>Unique identifier assigned to the published message.</p>
+    /// <p>Length Constraint: Maximum 100 characters</p>
+    pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_id
+    }
     /// <p>This response element applies only to FIFO (first-in-first-out) topics. </p>
     /// <p>The sequence number is a large, non-consecutive number that Amazon SNS assigns to each message. The length of <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code> continues to increase for each <code>MessageGroupId</code>.</p>
     pub fn sequence_number(
@@ -78,6 +83,11 @@ impl PublishOutputBuilder {
     ) -> Self {
         self.sequence_number = input;
         self
+    }
+    /// <p>This response element applies only to FIFO (first-in-first-out) topics. </p>
+    /// <p>The sequence number is a large, non-consecutive number that Amazon SNS assigns to each message. The length of <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code> continues to increase for each <code>MessageGroupId</code>.</p>
+    pub fn get_sequence_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sequence_number
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

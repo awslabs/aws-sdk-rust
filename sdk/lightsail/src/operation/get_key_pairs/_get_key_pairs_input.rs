@@ -51,6 +51,11 @@ impl GetKeyPairsInputBuilder {
         self.page_token = input;
         self
     }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetKeyPairs</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.page_token
+    }
     /// <p>A Boolean value that indicates whether to include the default key pair in the response of your request.</p>
     pub fn include_default_key_pair(mut self, input: bool) -> Self {
         self.include_default_key_pair = ::std::option::Option::Some(input);
@@ -60,6 +65,10 @@ impl GetKeyPairsInputBuilder {
     pub fn set_include_default_key_pair(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_default_key_pair = input;
         self
+    }
+    /// <p>A Boolean value that indicates whether to include the default key pair in the response of your request.</p>
+    pub fn get_include_default_key_pair(&self) -> &::std::option::Option<bool> {
+        &self.include_default_key_pair
     }
     /// Consumes the builder and constructs a [`GetKeyPairsInput`](crate::operation::get_key_pairs::GetKeyPairsInput).
     pub fn build(

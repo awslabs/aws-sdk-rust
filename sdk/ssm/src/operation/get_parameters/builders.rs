@@ -38,6 +38,12 @@ impl GetParametersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetParameters as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_parameters::builders::GetParametersInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,11 @@ impl GetParametersFluentBuilder {
         self.inner = self.inner.set_names(input);
         self
     }
+    /// <p>Names of the parameters for which you want to query information.</p>
+    /// <p>To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter version, use <code>"Name": "name:version"</code>.</p>
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_names()
+    }
     /// <p>Return decrypted secure string value. Return decrypted values for secure string parameters. This flag is ignored for <code>String</code> and <code>StringList</code> parameter types.</p>
     pub fn with_decryption(mut self, input: bool) -> Self {
         self.inner = self.inner.with_decryption(input);
@@ -138,5 +149,9 @@ impl GetParametersFluentBuilder {
     pub fn set_with_decryption(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_with_decryption(input);
         self
+    }
+    /// <p>Return decrypted secure string value. Return decrypted values for secure string parameters. This flag is ignored for <code>String</code> and <code>StringList</code> parameter types.</p>
+    pub fn get_with_decryption(&self) -> &::std::option::Option<bool> {
+        self.inner.get_with_decryption()
     }
 }

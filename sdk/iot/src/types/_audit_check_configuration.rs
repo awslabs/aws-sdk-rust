@@ -40,6 +40,10 @@ impl AuditCheckConfigurationBuilder {
         self.enabled = input;
         self
     }
+    /// <p>True if this audit check is enabled for this account.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Consumes the builder and constructs a [`AuditCheckConfiguration`](crate::types::AuditCheckConfiguration).
     pub fn build(self) -> crate::types::AuditCheckConfiguration {
         crate::types::AuditCheckConfiguration {

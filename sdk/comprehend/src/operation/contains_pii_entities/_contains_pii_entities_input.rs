@@ -49,6 +49,10 @@ impl ContainsPiiEntitiesInputBuilder {
         self.text = input;
         self
     }
+    /// <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
+    }
     /// <p>The language of the input documents. Currently, English is the only valid language.</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
@@ -61,6 +65,10 @@ impl ContainsPiiEntitiesInputBuilder {
     ) -> Self {
         self.language_code = input;
         self
+    }
+    /// <p>The language of the input documents. Currently, English is the only valid language.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
+        &self.language_code
     }
     /// Consumes the builder and constructs a [`ContainsPiiEntitiesInput`](crate::operation::contains_pii_entities::ContainsPiiEntitiesInput).
     pub fn build(

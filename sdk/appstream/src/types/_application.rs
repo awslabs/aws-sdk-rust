@@ -160,6 +160,10 @@ impl ApplicationBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the application.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The application name to display.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -169,6 +173,10 @@ impl ApplicationBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
+    }
+    /// <p>The application name to display.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// <p>The URL for the application icon. This URL might be time-limited.</p>
     pub fn icon_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -180,6 +188,10 @@ impl ApplicationBuilder {
         self.icon_url = input;
         self
     }
+    /// <p>The URL for the application icon. This URL might be time-limited.</p>
+    pub fn get_icon_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.icon_url
+    }
     /// <p>The path to the application executable in the instance.</p>
     pub fn launch_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_path = ::std::option::Option::Some(input.into());
@@ -189,6 +201,10 @@ impl ApplicationBuilder {
     pub fn set_launch_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launch_path = input;
         self
+    }
+    /// <p>The path to the application executable in the instance.</p>
+    pub fn get_launch_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_path
     }
     /// <p>The arguments that are passed to the application at launch.</p>
     pub fn launch_parameters(
@@ -206,6 +222,10 @@ impl ApplicationBuilder {
         self.launch_parameters = input;
         self
     }
+    /// <p>The arguments that are passed to the application at launch.</p>
+    pub fn get_launch_parameters(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_parameters
+    }
     /// <p>If there is a problem, the application can be disabled after image creation.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -215,6 +235,10 @@ impl ApplicationBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>If there is a problem, the application can be disabled after image creation.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// Adds a key-value pair to `metadata`.
     ///
@@ -241,6 +265,14 @@ impl ApplicationBuilder {
         self.metadata = input;
         self
     }
+    /// <p>Additional attributes that describe the application.</p>
+    pub fn get_metadata(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.metadata
+    }
     /// <p>The working directory for the application.</p>
     pub fn working_directory(
         mut self,
@@ -257,6 +289,10 @@ impl ApplicationBuilder {
         self.working_directory = input;
         self
     }
+    /// <p>The working directory for the application.</p>
+    pub fn get_working_directory(&self) -> &::std::option::Option<::std::string::String> {
+        &self.working_directory
+    }
     /// <p>The description of the application.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -267,6 +303,10 @@ impl ApplicationBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the application.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The ARN of the application.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -276,6 +316,10 @@ impl ApplicationBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The ARN of the application.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The app block ARN of the application.</p>
     pub fn app_block_arn(
@@ -293,6 +337,10 @@ impl ApplicationBuilder {
         self.app_block_arn = input;
         self
     }
+    /// <p>The app block ARN of the application.</p>
+    pub fn get_app_block_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_block_arn
+    }
     /// <p>The S3 location of the application icon.</p>
     pub fn icon_s3_location(mut self, input: crate::types::S3Location) -> Self {
         self.icon_s3_location = ::std::option::Option::Some(input);
@@ -305,6 +353,10 @@ impl ApplicationBuilder {
     ) -> Self {
         self.icon_s3_location = input;
         self
+    }
+    /// <p>The S3 location of the application icon.</p>
+    pub fn get_icon_s3_location(&self) -> &::std::option::Option<crate::types::S3Location> {
+        &self.icon_s3_location
     }
     /// Appends an item to `platforms`.
     ///
@@ -324,6 +376,12 @@ impl ApplicationBuilder {
     ) -> Self {
         self.platforms = input;
         self
+    }
+    /// <p>The platforms on which the application can run.</p>
+    pub fn get_platforms(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformType>> {
+        &self.platforms
     }
     /// Appends an item to `instance_families`.
     ///
@@ -347,6 +405,12 @@ impl ApplicationBuilder {
         self.instance_families = input;
         self
     }
+    /// <p>The instance families for the application.</p>
+    pub fn get_instance_families(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.instance_families
+    }
     /// <p>The time at which the application was created within the app block.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
@@ -359,6 +423,10 @@ impl ApplicationBuilder {
     ) -> Self {
         self.created_time = input;
         self
+    }
+    /// <p>The time at which the application was created within the app block.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
     }
     /// Consumes the builder and constructs a [`Application`](crate::types::Application).
     pub fn build(self) -> crate::types::Application {

@@ -170,6 +170,10 @@ impl DescribeEdgePackagingJobOutputBuilder {
         self.edge_packaging_job_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the edge packaging job.</p>
+    pub fn get_edge_packaging_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.edge_packaging_job_arn
+    }
     /// <p>The name of the edge packaging job.</p>
     pub fn edge_packaging_job_name(
         mut self,
@@ -185,6 +189,10 @@ impl DescribeEdgePackagingJobOutputBuilder {
     ) -> Self {
         self.edge_packaging_job_name = input;
         self
+    }
+    /// <p>The name of the edge packaging job.</p>
+    pub fn get_edge_packaging_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.edge_packaging_job_name
     }
     /// <p>The name of the SageMaker Neo compilation job that is used to locate model artifacts that are being packaged.</p>
     pub fn compilation_job_name(
@@ -202,6 +210,10 @@ impl DescribeEdgePackagingJobOutputBuilder {
         self.compilation_job_name = input;
         self
     }
+    /// <p>The name of the SageMaker Neo compilation job that is used to locate model artifacts that are being packaged.</p>
+    pub fn get_compilation_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.compilation_job_name
+    }
     /// <p>The name of the model.</p>
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
@@ -211,6 +223,10 @@ impl DescribeEdgePackagingJobOutputBuilder {
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_name = input;
         self
+    }
+    /// <p>The name of the model.</p>
+    pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_name
     }
     /// <p>The version of the model.</p>
     pub fn model_version(
@@ -228,6 +244,10 @@ impl DescribeEdgePackagingJobOutputBuilder {
         self.model_version = input;
         self
     }
+    /// <p>The version of the model.</p>
+    pub fn get_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_version
+    }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to download and upload the model, and to contact Neo.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -237,6 +257,10 @@ impl DescribeEdgePackagingJobOutputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to download and upload the model, and to contact Neo.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The output configuration for the edge packaging job.</p>
     pub fn output_config(mut self, input: crate::types::EdgeOutputConfig) -> Self {
@@ -251,6 +275,10 @@ impl DescribeEdgePackagingJobOutputBuilder {
         self.output_config = input;
         self
     }
+    /// <p>The output configuration for the edge packaging job.</p>
+    pub fn get_output_config(&self) -> &::std::option::Option<crate::types::EdgeOutputConfig> {
+        &self.output_config
+    }
     /// <p>The Amazon Web Services KMS key to use when encrypting the EBS volume the job run on.</p>
     pub fn resource_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_key = ::std::option::Option::Some(input.into());
@@ -260,6 +288,10 @@ impl DescribeEdgePackagingJobOutputBuilder {
     pub fn set_resource_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_key = input;
         self
+    }
+    /// <p>The Amazon Web Services KMS key to use when encrypting the EBS volume the job run on.</p>
+    pub fn get_resource_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_key
     }
     /// <p>The current status of the packaging job.</p>
     pub fn edge_packaging_job_status(
@@ -277,6 +309,12 @@ impl DescribeEdgePackagingJobOutputBuilder {
         self.edge_packaging_job_status = input;
         self
     }
+    /// <p>The current status of the packaging job.</p>
+    pub fn get_edge_packaging_job_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::EdgePackagingJobStatus> {
+        &self.edge_packaging_job_status
+    }
     /// <p>Returns a message describing the job status and error messages.</p>
     pub fn edge_packaging_job_status_message(
         mut self,
@@ -293,6 +331,12 @@ impl DescribeEdgePackagingJobOutputBuilder {
         self.edge_packaging_job_status_message = input;
         self
     }
+    /// <p>Returns a message describing the job status and error messages.</p>
+    pub fn get_edge_packaging_job_status_message(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.edge_packaging_job_status_message
+    }
     /// <p>The timestamp of when the packaging job was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -306,6 +350,10 @@ impl DescribeEdgePackagingJobOutputBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The timestamp of when the packaging job was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The timestamp of when the job was last updated.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -318,6 +366,10 @@ impl DescribeEdgePackagingJobOutputBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>The timestamp of when the job was last updated.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// <p>The Amazon Simple Storage (S3) URI where model artifacts ares stored.</p>
     pub fn model_artifact(
@@ -335,6 +387,10 @@ impl DescribeEdgePackagingJobOutputBuilder {
         self.model_artifact = input;
         self
     }
+    /// <p>The Amazon Simple Storage (S3) URI where model artifacts ares stored.</p>
+    pub fn get_model_artifact(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_artifact
+    }
     /// <p>The signature document of files in the model artifact.</p>
     pub fn model_signature(
         mut self,
@@ -351,6 +407,10 @@ impl DescribeEdgePackagingJobOutputBuilder {
         self.model_signature = input;
         self
     }
+    /// <p>The signature document of files in the model artifact.</p>
+    pub fn get_model_signature(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_signature
+    }
     /// <p>The output of a SageMaker Edge Manager deployable resource.</p>
     pub fn preset_deployment_output(
         mut self,
@@ -366,6 +426,12 @@ impl DescribeEdgePackagingJobOutputBuilder {
     ) -> Self {
         self.preset_deployment_output = input;
         self
+    }
+    /// <p>The output of a SageMaker Edge Manager deployable resource.</p>
+    pub fn get_preset_deployment_output(
+        &self,
+    ) -> &::std::option::Option<crate::types::EdgePresetDeploymentOutput> {
+        &self.preset_deployment_output
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -96,6 +96,10 @@ impl PipelineDeclarationBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the pipeline.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) for CodePipeline to use to either perform actions with no <code>actionRoleArn</code>, or to use to assume roles for actions with an <code>actionRoleArn</code>.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl PipelineDeclarationBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for CodePipeline to use to either perform actions with no <code>actionRoleArn</code>, or to use to assume roles for actions with an <code>actionRoleArn</code>.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>Represents information about the S3 bucket where artifacts are stored for the pipeline.</p> <note>
     /// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p>
@@ -122,6 +130,12 @@ impl PipelineDeclarationBuilder {
     ) -> Self {
         self.artifact_store = input;
         self
+    }
+    /// <p>Represents information about the S3 bucket where artifacts are stored for the pipeline.</p> <note>
+    /// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p>
+    /// </note>
+    pub fn get_artifact_store(&self) -> &::std::option::Option<crate::types::ArtifactStore> {
+        &self.artifact_store
     }
     /// Adds a key-value pair to `artifact_stores`.
     ///
@@ -152,6 +166,16 @@ impl PipelineDeclarationBuilder {
         self.artifact_stores = input;
         self
     }
+    /// <p>A mapping of <code>artifactStore</code> objects and their corresponding Amazon Web Services Regions. There must be an artifact store for the pipeline Region and for each cross-region action in the pipeline.</p> <note>
+    /// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p>
+    /// </note>
+    pub fn get_artifact_stores(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::ArtifactStore>,
+    > {
+        &self.artifact_stores
+    }
     /// Appends an item to `stages`.
     ///
     /// To override the contents of this collection use [`set_stages`](Self::set_stages).
@@ -171,6 +195,12 @@ impl PipelineDeclarationBuilder {
         self.stages = input;
         self
     }
+    /// <p>The stage in which to perform the action.</p>
+    pub fn get_stages(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StageDeclaration>> {
+        &self.stages
+    }
     /// <p>The version number of the pipeline. A new pipeline always has a version number of 1. This number is incremented when a pipeline is updated.</p>
     pub fn version(mut self, input: i32) -> Self {
         self.version = ::std::option::Option::Some(input);
@@ -180,6 +210,10 @@ impl PipelineDeclarationBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version number of the pipeline. A new pipeline always has a version number of 1. This number is incremented when a pipeline is updated.</p>
+    pub fn get_version(&self) -> &::std::option::Option<i32> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`PipelineDeclaration`](crate::types::PipelineDeclaration).
     pub fn build(self) -> crate::types::PipelineDeclaration {

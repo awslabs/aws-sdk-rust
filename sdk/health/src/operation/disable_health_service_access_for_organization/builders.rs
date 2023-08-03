@@ -39,6 +39,10 @@ impl DisableHealthServiceAccessForOrganizationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisableHealthServiceAccessForOrganization as a reference.
+    pub fn as_input(&self) -> &crate::operation::disable_health_service_access_for_organization::builders::DisableHealthServiceAccessForOrganizationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<

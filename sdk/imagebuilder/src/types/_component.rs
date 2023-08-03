@@ -185,6 +185,10 @@ impl ComponentBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the component.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the component.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -194,6 +198,10 @@ impl ComponentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the component.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The version of the component.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -205,6 +213,10 @@ impl ComponentBuilder {
         self.version = input;
         self
     }
+    /// <p>The version of the component.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
+    }
     /// <p>The description of the component.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -214,6 +226,10 @@ impl ComponentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the component.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The change description of the component.</p>
     pub fn change_description(
@@ -231,6 +247,10 @@ impl ComponentBuilder {
         self.change_description = input;
         self
     }
+    /// <p>The change description of the component.</p>
+    pub fn get_change_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_description
+    }
     /// <p>The component type specifies whether Image Builder uses the component to build the image or only to test it.</p>
     pub fn r#type(mut self, input: crate::types::ComponentType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -241,6 +261,10 @@ impl ComponentBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The component type specifies whether Image Builder uses the component to build the image or only to test it.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ComponentType> {
+        &self.r#type
+    }
     /// <p>The operating system platform of the component.</p>
     pub fn platform(mut self, input: crate::types::Platform) -> Self {
         self.platform = ::std::option::Option::Some(input);
@@ -250,6 +274,10 @@ impl ComponentBuilder {
     pub fn set_platform(mut self, input: ::std::option::Option<crate::types::Platform>) -> Self {
         self.platform = input;
         self
+    }
+    /// <p>The operating system platform of the component.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<crate::types::Platform> {
+        &self.platform
     }
     /// Appends an item to `supported_os_versions`.
     ///
@@ -273,6 +301,12 @@ impl ComponentBuilder {
         self.supported_os_versions = input;
         self
     }
+    /// <p>The operating system (OS) version supported by the component. If the OS information is available, Image Builder performs a prefix match against the base image OS version during image recipe creation.</p>
+    pub fn get_supported_os_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.supported_os_versions
+    }
     /// <p>Describes the current status of the component. This is used for components that are no longer active.</p>
     pub fn state(mut self, input: crate::types::ComponentState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -282,6 +316,10 @@ impl ComponentBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ComponentState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>Describes the current status of the component. This is used for components that are no longer active.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ComponentState> {
+        &self.state
     }
     /// Appends an item to `parameters`.
     ///
@@ -302,6 +340,12 @@ impl ComponentBuilder {
         self.parameters = input;
         self
     }
+    /// <p>Contains parameter details for each of the parameters that the component document defined for the component.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentParameterDetail>> {
+        &self.parameters
+    }
     /// <p>The owner of the component.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner = ::std::option::Option::Some(input.into());
@@ -311,6 +355,10 @@ impl ComponentBuilder {
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner = input;
         self
+    }
+    /// <p>The owner of the component.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
     }
     /// <p>Component data contains the YAML document content for the component.</p>
     pub fn data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -322,6 +370,10 @@ impl ComponentBuilder {
         self.data = input;
         self
     }
+    /// <p>Component data contains the YAML document content for the component.</p>
+    pub fn get_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data
+    }
     /// <p>The KMS key identifier used to encrypt the component.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -331,6 +383,10 @@ impl ComponentBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>The KMS key identifier used to encrypt the component.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// <p>The encryption status of the component.</p>
     pub fn encrypted(mut self, input: bool) -> Self {
@@ -342,6 +398,10 @@ impl ComponentBuilder {
         self.encrypted = input;
         self
     }
+    /// <p>The encryption status of the component.</p>
+    pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
+        &self.encrypted
+    }
     /// <p>The date that Image Builder created the component.</p>
     pub fn date_created(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.date_created = ::std::option::Option::Some(input.into());
@@ -351,6 +411,10 @@ impl ComponentBuilder {
     pub fn set_date_created(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.date_created = input;
         self
+    }
+    /// <p>The date that Image Builder created the component.</p>
+    pub fn get_date_created(&self) -> &::std::option::Option<::std::string::String> {
+        &self.date_created
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -377,6 +441,14 @@ impl ComponentBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags that apply to the component.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>Contains the name of the publisher if this is a third-party component. Otherwise, this property is empty.</p>
     pub fn publisher(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.publisher = ::std::option::Option::Some(input.into());
@@ -387,6 +459,10 @@ impl ComponentBuilder {
         self.publisher = input;
         self
     }
+    /// <p>Contains the name of the publisher if this is a third-party component. Otherwise, this property is empty.</p>
+    pub fn get_publisher(&self) -> &::std::option::Option<::std::string::String> {
+        &self.publisher
+    }
     /// <p>Indicates whether component source is hidden from view in the console, and from component detail results for API, CLI, or SDK operations.</p>
     pub fn obfuscate(mut self, input: bool) -> Self {
         self.obfuscate = ::std::option::Option::Some(input);
@@ -396,6 +472,10 @@ impl ComponentBuilder {
     pub fn set_obfuscate(mut self, input: ::std::option::Option<bool>) -> Self {
         self.obfuscate = input;
         self
+    }
+    /// <p>Indicates whether component source is hidden from view in the console, and from component detail results for API, CLI, or SDK operations.</p>
+    pub fn get_obfuscate(&self) -> &::std::option::Option<bool> {
+        &self.obfuscate
     }
     /// Consumes the builder and constructs a [`Component`](crate::types::Component).
     pub fn build(self) -> crate::types::Component {

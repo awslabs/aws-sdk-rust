@@ -47,6 +47,10 @@ impl AssociateDeviceWithNetworkProfileInputBuilder {
         self.device_arn = input;
         self
     }
+    /// <p>The device ARN.</p>
+    pub fn get_device_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_arn
+    }
     /// <p>The ARN of the network profile to associate with a device.</p>
     pub fn network_profile_arn(
         mut self,
@@ -62,6 +66,10 @@ impl AssociateDeviceWithNetworkProfileInputBuilder {
     ) -> Self {
         self.network_profile_arn = input;
         self
+    }
+    /// <p>The ARN of the network profile to associate with a device.</p>
+    pub fn get_network_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_profile_arn
     }
     /// Consumes the builder and constructs a [`AssociateDeviceWithNetworkProfileInput`](crate::operation::associate_device_with_network_profile::AssociateDeviceWithNetworkProfileInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::associate_device_with_network_profile::AssociateDeviceWithNetworkProfileInput, ::aws_smithy_http::operation::error::BuildError>{

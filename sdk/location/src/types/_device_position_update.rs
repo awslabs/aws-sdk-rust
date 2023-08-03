@@ -91,6 +91,10 @@ impl DevicePositionUpdateBuilder {
         self.device_id = input;
         self
     }
+    /// <p>The device associated to the position update.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_id
+    }
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     pub fn sample_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.sample_time = ::std::option::Option::Some(input);
@@ -103,6 +107,10 @@ impl DevicePositionUpdateBuilder {
     ) -> Self {
         self.sample_time = input;
         self
+    }
+    /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+    pub fn get_sample_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.sample_time
     }
     /// Appends an item to `position`.
     ///
@@ -120,6 +128,10 @@ impl DevicePositionUpdateBuilder {
         self.position = input;
         self
     }
+    /// <p>The latest device position defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">WGS 84</a> format: <code>[X or longitude, Y or latitude]</code>.</p>
+    pub fn get_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+        &self.position
+    }
     /// <p>The accuracy of the device position.</p>
     pub fn accuracy(mut self, input: crate::types::PositionalAccuracy) -> Self {
         self.accuracy = ::std::option::Option::Some(input);
@@ -132,6 +144,10 @@ impl DevicePositionUpdateBuilder {
     ) -> Self {
         self.accuracy = input;
         self
+    }
+    /// <p>The accuracy of the device position.</p>
+    pub fn get_accuracy(&self) -> &::std::option::Option<crate::types::PositionalAccuracy> {
+        &self.accuracy
     }
     /// Adds a key-value pair to `position_properties`.
     ///
@@ -159,6 +175,15 @@ impl DevicePositionUpdateBuilder {
     ) -> Self {
         self.position_properties = input;
         self
+    }
+    /// <p>Associates one of more properties with the position update. A property is a key-value pair stored with the position update and added to any geofence event the update may trigger.</p>
+    /// <p>Format: <code>"key" : "value"</code> </p>
+    pub fn get_position_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.position_properties
     }
     /// Consumes the builder and constructs a [`DevicePositionUpdate`](crate::types::DevicePositionUpdate).
     pub fn build(self) -> crate::types::DevicePositionUpdate {

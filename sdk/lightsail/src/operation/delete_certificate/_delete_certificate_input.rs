@@ -50,6 +50,11 @@ impl DeleteCertificateInputBuilder {
         self.certificate_name = input;
         self
     }
+    /// <p>The name of the certificate to delete.</p>
+    /// <p>Use the <code>GetCertificates</code> action to get a list of certificate names that you can specify.</p>
+    pub fn get_certificate_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_name
+    }
     /// Consumes the builder and constructs a [`DeleteCertificateInput`](crate::operation::delete_certificate::DeleteCertificateInput).
     pub fn build(
         self,

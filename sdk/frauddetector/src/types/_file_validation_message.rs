@@ -56,6 +56,10 @@ impl FileValidationMessageBuilder {
         self.title = input;
         self
     }
+    /// <p>The message title.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
+    }
     /// <p>The message content.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl FileValidationMessageBuilder {
         self.content = input;
         self
     }
+    /// <p>The message content.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
+    }
     /// <p>The message type.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl FileValidationMessageBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The message type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`FileValidationMessage`](crate::types::FileValidationMessage).
     pub fn build(self) -> crate::types::FileValidationMessage {

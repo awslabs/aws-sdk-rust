@@ -71,6 +71,10 @@ impl UploadLayerPartOutputBuilder {
         self.registry_id = input;
         self
     }
+    /// <p>The registry ID that's associated with the request.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
+    }
     /// <p>The repository name that's associated with the request.</p>
     pub fn repository_name(
         mut self,
@@ -87,6 +91,10 @@ impl UploadLayerPartOutputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The repository name that's associated with the request.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The upload ID that's associated with the request.</p>
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upload_id = ::std::option::Option::Some(input.into());
@@ -97,6 +105,10 @@ impl UploadLayerPartOutputBuilder {
         self.upload_id = input;
         self
     }
+    /// <p>The upload ID that's associated with the request.</p>
+    pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.upload_id
+    }
     /// <p>The integer value of the last byte that's received in the request.</p>
     pub fn last_byte_received(mut self, input: i64) -> Self {
         self.last_byte_received = ::std::option::Option::Some(input);
@@ -106,6 +118,10 @@ impl UploadLayerPartOutputBuilder {
     pub fn set_last_byte_received(mut self, input: ::std::option::Option<i64>) -> Self {
         self.last_byte_received = input;
         self
+    }
+    /// <p>The integer value of the last byte that's received in the request.</p>
+    pub fn get_last_byte_received(&self) -> &::std::option::Option<i64> {
+        &self.last_byte_received
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

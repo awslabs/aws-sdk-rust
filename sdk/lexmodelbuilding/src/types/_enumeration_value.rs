@@ -54,6 +54,10 @@ impl EnumerationValueBuilder {
         self.value = input;
         self
     }
+    /// <p>The value of the slot type.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// Appends an item to `synonyms`.
     ///
     /// To override the contents of this collection use [`set_synonyms`](Self::set_synonyms).
@@ -72,6 +76,10 @@ impl EnumerationValueBuilder {
     ) -> Self {
         self.synonyms = input;
         self
+    }
+    /// <p>Additional values related to the slot type value.</p>
+    pub fn get_synonyms(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.synonyms
     }
     /// Consumes the builder and constructs a [`EnumerationValue`](crate::types::EnumerationValue).
     pub fn build(self) -> crate::types::EnumerationValue {

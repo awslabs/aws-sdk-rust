@@ -36,6 +36,10 @@ impl UpdateFileSystemAssociationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateFileSystemAssociation as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_file_system_association::builders::UpdateFileSystemAssociationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl UpdateFileSystemAssociationFluentBuilder {
         self.inner = self.inner.set_file_system_association_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the file system association that you want to update.</p>
+    pub fn get_file_system_association_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_file_system_association_arn()
+    }
     /// <p>The user name of the user credential that has permission to access the root share D$ of the Amazon FSx file system. The user account must belong to the Amazon FSx delegated admin user group.</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_name(input.into());
@@ -142,6 +150,10 @@ impl UpdateFileSystemAssociationFluentBuilder {
         self.inner = self.inner.set_user_name(input);
         self
     }
+    /// <p>The user name of the user credential that has permission to access the root share D$ of the Amazon FSx file system. The user account must belong to the Amazon FSx delegated admin user group.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_name()
+    }
     /// <p>The password of the user credential.</p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.password(input.into());
@@ -151,6 +163,10 @@ impl UpdateFileSystemAssociationFluentBuilder {
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_password(input);
         self
+    }
+    /// <p>The password of the user credential.</p>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_password()
     }
     /// <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
     pub fn audit_destination_arn(
@@ -168,6 +184,10 @@ impl UpdateFileSystemAssociationFluentBuilder {
         self.inner = self.inner.set_audit_destination_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
+    pub fn get_audit_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_audit_destination_arn()
+    }
     /// <p>The refresh cache information for the file share or FSx file systems.</p>
     pub fn cache_attributes(mut self, input: crate::types::CacheAttributes) -> Self {
         self.inner = self.inner.cache_attributes(input);
@@ -180,5 +200,9 @@ impl UpdateFileSystemAssociationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cache_attributes(input);
         self
+    }
+    /// <p>The refresh cache information for the file share or FSx file systems.</p>
+    pub fn get_cache_attributes(&self) -> &::std::option::Option<crate::types::CacheAttributes> {
+        self.inner.get_cache_attributes()
     }
 }

@@ -37,6 +37,12 @@ impl CreateProjectFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateProject as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_project::builders::CreateProjectInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +125,10 @@ impl CreateProjectFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name for the project.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>An optional description of the project.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -128,6 +138,10 @@ impl CreateProjectFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>An optional description of the project.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>A structure that contains information about where Evidently is to store evaluation events for longer term storage, if you choose to do so. If you choose not to store these events, Evidently deletes them after using them to produce metrics and other experiment results that you can view.</p>
     pub fn data_delivery(mut self, input: crate::types::ProjectDataDeliveryConfig) -> Self {
@@ -141,6 +155,12 @@ impl CreateProjectFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_data_delivery(input);
         self
+    }
+    /// <p>A structure that contains information about where Evidently is to store evaluation events for longer term storage, if you choose to do so. If you choose not to store these events, Evidently deletes them after using them to produce metrics and other experiment results that you can view.</p>
+    pub fn get_data_delivery(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProjectDataDeliveryConfig> {
+        self.inner.get_data_delivery()
     }
     /// <p>Use this parameter if the project will use <i>client-side evaluation powered by AppConfig</i>. Client-side evaluation allows your application to assign variations to user sessions locally instead of by calling the <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a> operation. This mitigates the latency and availability risks that come with an API call. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-client-side-evaluation.html"> Client-side evaluation - powered by AppConfig.</a> </p>
     /// <p>This parameter is a structure that contains information about the AppConfig application and environment that will be used as for client-side evaluation.</p>
@@ -161,6 +181,14 @@ impl CreateProjectFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_app_config_resource(input);
         self
+    }
+    /// <p>Use this parameter if the project will use <i>client-side evaluation powered by AppConfig</i>. Client-side evaluation allows your application to assign variations to user sessions locally instead of by calling the <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a> operation. This mitigates the latency and availability risks that come with an API call. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-client-side-evaluation.html"> Client-side evaluation - powered by AppConfig.</a> </p>
+    /// <p>This parameter is a structure that contains information about the AppConfig application and environment that will be used as for client-side evaluation.</p>
+    /// <p>To create a project that uses client-side evaluation, you must have the <code>evidently:ExportProjectAsConfiguration</code> permission.</p>
+    pub fn get_app_config_resource(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProjectAppConfigResourceConfig> {
+        self.inner.get_app_config_resource()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -192,5 +220,17 @@ impl CreateProjectFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Assigns one or more tags (key-value pairs) to the project.</p>
+    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
+    /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
+    /// <p>You can associate as many as 50 tags with a project.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

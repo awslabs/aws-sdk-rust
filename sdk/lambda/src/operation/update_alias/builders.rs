@@ -36,6 +36,10 @@ impl UpdateAliasFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAlias as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_alias::builders::UpdateAliasInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +142,17 @@ impl UpdateAliasFluentBuilder {
         self.inner = self.inner.set_function_name(input);
         self
     }
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title"> <b>Name formats</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    pub fn get_function_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_function_name()
+    }
     /// <p>The name of the alias.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -147,6 +162,10 @@ impl UpdateAliasFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the alias.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The function version that the alias invokes.</p>
     pub fn function_version(
@@ -164,6 +183,10 @@ impl UpdateAliasFluentBuilder {
         self.inner = self.inner.set_function_version(input);
         self
     }
+    /// <p>The function version that the alias invokes.</p>
+    pub fn get_function_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_function_version()
+    }
     /// <p>A description of the alias.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -173,6 +196,10 @@ impl UpdateAliasFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the alias.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#configuring-alias-routing">routing configuration</a> of the alias.</p>
     pub fn routing_config(mut self, input: crate::types::AliasRoutingConfiguration) -> Self {
@@ -187,6 +214,12 @@ impl UpdateAliasFluentBuilder {
         self.inner = self.inner.set_routing_config(input);
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#configuring-alias-routing">routing configuration</a> of the alias.</p>
+    pub fn get_routing_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AliasRoutingConfiguration> {
+        self.inner.get_routing_config()
+    }
     /// <p>Only update the alias if the revision ID matches the ID that's specified. Use this option to avoid modifying an alias that has changed since you last read it.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.revision_id(input.into());
@@ -196,5 +229,9 @@ impl UpdateAliasFluentBuilder {
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_revision_id(input);
         self
+    }
+    /// <p>Only update the alias if the revision ID matches the ID that's specified. Use this option to avoid modifying an alias that has changed since you last read it.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_revision_id()
     }
 }

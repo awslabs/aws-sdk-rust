@@ -37,6 +37,10 @@ impl GenerateMobileSdkReleaseUrlFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GenerateMobileSdkReleaseUrl as a reference.
+    pub fn as_input(&self) -> &crate::operation::generate_mobile_sdk_release_url::builders::GenerateMobileSdkReleaseUrlInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl GenerateMobileSdkReleaseUrlFluentBuilder {
         self.inner = self.inner.set_platform(input);
         self
     }
+    /// <p>The device platform.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<crate::types::Platform> {
+        self.inner.get_platform()
+    }
     /// <p>The release version. For the latest available version, specify <code>LATEST</code>.</p>
     pub fn release_version(
         mut self,
@@ -142,5 +150,9 @@ impl GenerateMobileSdkReleaseUrlFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_release_version(input);
         self
+    }
+    /// <p>The release version. For the latest available version, specify <code>LATEST</code>.</p>
+    pub fn get_release_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_release_version()
     }
 }

@@ -47,6 +47,10 @@ impl DisassociateVpcCidrBlockInputBuilder {
         self.association_id = input;
         self
     }
+    /// <p>The association ID for the CIDR block.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_id
+    }
     /// Consumes the builder and constructs a [`DisassociateVpcCidrBlockInput`](crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlockInput).
     pub fn build(
         self,

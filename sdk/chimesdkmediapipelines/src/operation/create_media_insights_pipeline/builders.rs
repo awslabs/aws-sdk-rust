@@ -36,6 +36,10 @@ impl CreateMediaInsightsPipelineFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateMediaInsightsPipeline as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_media_insights_pipeline::builders::CreateMediaInsightsPipelineInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +140,12 @@ impl CreateMediaInsightsPipelineFluentBuilder {
             .set_media_insights_pipeline_configuration_arn(input);
         self
     }
+    /// <p>The ARN of the pipeline's configuration.</p>
+    pub fn get_media_insights_pipeline_configuration_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_media_insights_pipeline_configuration_arn()
+    }
     /// <p>The runtime configuration for the Kinesis video stream source of the media insights pipeline.</p>
     pub fn kinesis_video_stream_source_runtime_configuration(
         mut self,
@@ -155,6 +165,13 @@ impl CreateMediaInsightsPipelineFluentBuilder {
             .inner
             .set_kinesis_video_stream_source_runtime_configuration(input);
         self
+    }
+    /// <p>The runtime configuration for the Kinesis video stream source of the media insights pipeline.</p>
+    pub fn get_kinesis_video_stream_source_runtime_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::KinesisVideoStreamSourceRuntimeConfiguration> {
+        self.inner
+            .get_kinesis_video_stream_source_runtime_configuration()
     }
     /// Adds a key-value pair to `MediaInsightsRuntimeMetadata`.
     ///
@@ -181,6 +198,14 @@ impl CreateMediaInsightsPipelineFluentBuilder {
         self.inner = self.inner.set_media_insights_runtime_metadata(input);
         self
     }
+    /// <p>The runtime metadata for the media insights pipeline. Consists of a key-value map of strings.</p>
+    pub fn get_media_insights_runtime_metadata(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_media_insights_runtime_metadata()
+    }
     /// <p>The runtime configuration for the Kinesis video recording stream source.</p>
     pub fn kinesis_video_stream_recording_source_runtime_configuration(
         mut self,
@@ -203,6 +228,14 @@ impl CreateMediaInsightsPipelineFluentBuilder {
             .set_kinesis_video_stream_recording_source_runtime_configuration(input);
         self
     }
+    /// <p>The runtime configuration for the Kinesis video recording stream source.</p>
+    pub fn get_kinesis_video_stream_recording_source_runtime_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::KinesisVideoStreamRecordingSourceRuntimeConfiguration>
+    {
+        self.inner
+            .get_kinesis_video_stream_recording_source_runtime_configuration()
+    }
     /// <p>The runtime configuration for the S3 recording sink. If specified, the settings in this structure override any settings in <code>S3RecordingSinkConfiguration</code>.</p>
     pub fn s3_recording_sink_runtime_configuration(
         mut self,
@@ -221,6 +254,12 @@ impl CreateMediaInsightsPipelineFluentBuilder {
             .set_s3_recording_sink_runtime_configuration(input);
         self
     }
+    /// <p>The runtime configuration for the S3 recording sink. If specified, the settings in this structure override any settings in <code>S3RecordingSinkConfiguration</code>.</p>
+    pub fn get_s3_recording_sink_runtime_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3RecordingSinkRuntimeConfiguration> {
+        self.inner.get_s3_recording_sink_runtime_configuration()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -238,6 +277,10 @@ impl CreateMediaInsightsPipelineFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags assigned to the media insights pipeline.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>The unique identifier for the media insights pipeline request.</p>
     pub fn client_request_token(
         mut self,
@@ -253,5 +296,9 @@ impl CreateMediaInsightsPipelineFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>The unique identifier for the media insights pipeline request.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
 }

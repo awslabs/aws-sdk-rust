@@ -47,6 +47,10 @@ impl BackTestAnomalyDetectorInputBuilder {
         self.anomaly_detector_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    pub fn get_anomaly_detector_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.anomaly_detector_arn
+    }
     /// Consumes the builder and constructs a [`BackTestAnomalyDetectorInput`](crate::operation::back_test_anomaly_detector::BackTestAnomalyDetectorInput).
     pub fn build(
         self,

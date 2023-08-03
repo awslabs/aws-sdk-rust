@@ -36,6 +36,10 @@ impl ListPresetsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListPresets as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_presets::builders::ListPresetsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl ListPresetsFluentBuilder {
         self.inner = self.inner.set_ascending(input);
         self
     }
+    /// <p>To list presets in chronological order by the date and time that they were created, enter <code>true</code>. To list presets in reverse chronological order, enter <code>false</code>.</p>
+    pub fn get_ascending(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ascending()
+    }
     /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
     pub fn page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.page_token(input.into());
@@ -136,5 +144,9 @@ impl ListPresetsFluentBuilder {
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_page_token(input);
         self
+    }
+    /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
+    pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_page_token()
     }
 }

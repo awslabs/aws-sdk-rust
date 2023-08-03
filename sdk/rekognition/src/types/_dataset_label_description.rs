@@ -48,6 +48,10 @@ impl DatasetLabelDescriptionBuilder {
         self.label_name = input;
         self
     }
+    /// <p> The name of the label. </p>
+    pub fn get_label_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label_name
+    }
     /// <p> Statistics about the label. </p>
     pub fn label_stats(mut self, input: crate::types::DatasetLabelStats) -> Self {
         self.label_stats = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl DatasetLabelDescriptionBuilder {
     ) -> Self {
         self.label_stats = input;
         self
+    }
+    /// <p> Statistics about the label. </p>
+    pub fn get_label_stats(&self) -> &::std::option::Option<crate::types::DatasetLabelStats> {
+        &self.label_stats
     }
     /// Consumes the builder and constructs a [`DatasetLabelDescription`](crate::types::DatasetLabelDescription).
     pub fn build(self) -> crate::types::DatasetLabelDescription {

@@ -64,6 +64,10 @@ impl ImportAssetFromSignedUrlRequestDetailsBuilder {
         self.asset_name = input;
         self
     }
+    /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name.</p>
+    pub fn get_asset_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_name
+    }
     /// <p>The unique identifier for the data set associated with this import job.</p>
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl ImportAssetFromSignedUrlRequestDetailsBuilder {
     pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_set_id = input;
         self
+    }
+    /// <p>The unique identifier for the data set associated with this import job.</p>
+    pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_set_id
     }
     /// <p>The Base64-encoded Md5 hash for the asset, used to ensure the integrity of the file at that location.</p>
     pub fn md5_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl ImportAssetFromSignedUrlRequestDetailsBuilder {
         self.md5_hash = input;
         self
     }
+    /// <p>The Base64-encoded Md5 hash for the asset, used to ensure the integrity of the file at that location.</p>
+    pub fn get_md5_hash(&self) -> &::std::option::Option<::std::string::String> {
+        &self.md5_hash
+    }
     /// <p>The unique identifier for the revision associated with this import request.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl ImportAssetFromSignedUrlRequestDetailsBuilder {
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision_id = input;
         self
+    }
+    /// <p>The unique identifier for the revision associated with this import request.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_id
     }
     /// Consumes the builder and constructs a [`ImportAssetFromSignedUrlRequestDetails`](crate::types::ImportAssetFromSignedUrlRequestDetails).
     pub fn build(self) -> crate::types::ImportAssetFromSignedUrlRequestDetails {

@@ -38,6 +38,13 @@ impl CreateHoursOfOperationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateHoursOfOperation as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_hours_of_operation::builders::CreateHoursOfOperationInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +135,10 @@ impl CreateHoursOfOperationFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>The name of the hours of operation.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -137,6 +148,10 @@ impl CreateHoursOfOperationFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the hours of operation.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The description of the hours of operation.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -148,6 +163,10 @@ impl CreateHoursOfOperationFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The description of the hours of operation.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The time zone of the hours of operation.</p>
     pub fn time_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.time_zone(input.into());
@@ -157,6 +176,10 @@ impl CreateHoursOfOperationFluentBuilder {
     pub fn set_time_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_time_zone(input);
         self
+    }
+    /// <p>The time zone of the hours of operation.</p>
+    pub fn get_time_zone(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_time_zone()
     }
     /// Appends an item to `Config`.
     ///
@@ -174,6 +197,12 @@ impl CreateHoursOfOperationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_config(input);
         self
+    }
+    /// <p>Configuration information for the hours of operation: day, start time, and end time.</p>
+    pub fn get_config(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationConfig>> {
+        self.inner.get_config()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -197,5 +226,13 @@ impl CreateHoursOfOperationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

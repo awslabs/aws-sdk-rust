@@ -95,6 +95,10 @@ impl CreateUserInputBuilder {
         self.user_id = input;
         self
     }
+    /// <p>The ID of the user.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
+    }
     /// <p>The username of the user.</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl CreateUserInputBuilder {
         self.user_name = input;
         self
     }
+    /// <p>The username of the user.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
+    }
     /// <p>The current supported value is Redis. </p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
@@ -114,6 +122,10 @@ impl CreateUserInputBuilder {
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
+    }
+    /// <p>The current supported value is Redis. </p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine
     }
     /// Appends an item to `passwords`.
     ///
@@ -134,6 +146,10 @@ impl CreateUserInputBuilder {
         self.passwords = input;
         self
     }
+    /// <p>Passwords used for this user. You can create up to two passwords for each user.</p>
+    pub fn get_passwords(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.passwords
+    }
     /// <p>Access permissions string used for this user.</p>
     pub fn access_string(
         mut self,
@@ -150,6 +166,10 @@ impl CreateUserInputBuilder {
         self.access_string = input;
         self
     }
+    /// <p>Access permissions string used for this user.</p>
+    pub fn get_access_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_string
+    }
     /// <p>Indicates a password is not required for this user.</p>
     pub fn no_password_required(mut self, input: bool) -> Self {
         self.no_password_required = ::std::option::Option::Some(input);
@@ -159,6 +179,10 @@ impl CreateUserInputBuilder {
     pub fn set_no_password_required(mut self, input: ::std::option::Option<bool>) -> Self {
         self.no_password_required = input;
         self
+    }
+    /// <p>Indicates a password is not required for this user.</p>
+    pub fn get_no_password_required(&self) -> &::std::option::Option<bool> {
+        &self.no_password_required
     }
     /// Appends an item to `tags`.
     ///
@@ -179,6 +203,10 @@ impl CreateUserInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>Specifies how to authenticate the user.</p>
     pub fn authentication_mode(mut self, input: crate::types::AuthenticationMode) -> Self {
         self.authentication_mode = ::std::option::Option::Some(input);
@@ -191,6 +219,12 @@ impl CreateUserInputBuilder {
     ) -> Self {
         self.authentication_mode = input;
         self
+    }
+    /// <p>Specifies how to authenticate the user.</p>
+    pub fn get_authentication_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthenticationMode> {
+        &self.authentication_mode
     }
     /// Consumes the builder and constructs a [`CreateUserInput`](crate::operation::create_user::CreateUserInput).
     pub fn build(

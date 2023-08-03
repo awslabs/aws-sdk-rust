@@ -100,6 +100,10 @@ impl CreateClientVpnRouteInputBuilder {
         self.client_vpn_endpoint_id = input;
         self
     }
+    /// <p>The ID of the Client VPN endpoint to which to add the route.</p>
+    pub fn get_client_vpn_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_vpn_endpoint_id
+    }
     /// <p>The IPv4 address range, in CIDR notation, of the route destination. For example:</p>
     /// <ul>
     /// <li> <p>To add a route for Internet access, enter <code>0.0.0.0/0</code> </p> </li>
@@ -128,6 +132,16 @@ impl CreateClientVpnRouteInputBuilder {
         self.destination_cidr_block = input;
         self
     }
+    /// <p>The IPv4 address range, in CIDR notation, of the route destination. For example:</p>
+    /// <ul>
+    /// <li> <p>To add a route for Internet access, enter <code>0.0.0.0/0</code> </p> </li>
+    /// <li> <p>To add a route for a peered VPC, enter the peered VPC's IPv4 CIDR range</p> </li>
+    /// <li> <p>To add a route for an on-premises network, enter the Amazon Web Services Site-to-Site VPN connection's IPv4 CIDR range</p> </li>
+    /// <li> <p>To add a route for the local network, enter the client CIDR range</p> </li>
+    /// </ul>
+    pub fn get_destination_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_cidr_block
+    }
     /// <p>The ID of the subnet through which you want to route traffic. The specified subnet must be an existing target network of the Client VPN endpoint.</p>
     /// <p>Alternatively, if you're adding a route for the local network, specify <code>local</code>.</p>
     pub fn target_vpc_subnet_id(
@@ -146,6 +160,11 @@ impl CreateClientVpnRouteInputBuilder {
         self.target_vpc_subnet_id = input;
         self
     }
+    /// <p>The ID of the subnet through which you want to route traffic. The specified subnet must be an existing target network of the Client VPN endpoint.</p>
+    /// <p>Alternatively, if you're adding a route for the local network, specify <code>local</code>.</p>
+    pub fn get_target_vpc_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_vpc_subnet_id
+    }
     /// <p>A brief description of the route.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -155,6 +174,10 @@ impl CreateClientVpnRouteInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A brief description of the route.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -166,6 +189,10 @@ impl CreateClientVpnRouteInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -175,6 +202,10 @@ impl CreateClientVpnRouteInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`CreateClientVpnRouteInput`](crate::operation::create_client_vpn_route::CreateClientVpnRouteInput).
     pub fn build(

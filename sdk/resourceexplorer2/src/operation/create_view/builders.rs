@@ -37,6 +37,10 @@ impl CreateViewFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateView as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_view::builders::CreateViewInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl CreateViewFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>This value helps ensure idempotency. Resource Explorer uses this value to prevent the accidental creation of duplicate versions. We recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type value</a> to ensure the uniqueness of your views.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>The name of the new view. This name appears in the list of views in Resource Explorer.</p>
     /// <p>The name must be no more than 64 characters long, and can include letters, digits, and the dash (-) character. The name must be unique within its Amazon Web Services Region.</p>
     pub fn view_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -130,6 +138,11 @@ impl CreateViewFluentBuilder {
     pub fn set_view_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_view_name(input);
         self
+    }
+    /// <p>The name of the new view. This name appears in the list of views in Resource Explorer.</p>
+    /// <p>The name must be no more than 64 characters long, and can include letters, digits, and the dash (-) character. The name must be unique within its Amazon Web Services Region.</p>
+    pub fn get_view_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_view_name()
     }
     /// Appends an item to `IncludedProperties`.
     ///
@@ -150,6 +163,13 @@ impl CreateViewFluentBuilder {
         self.inner = self.inner.set_included_properties(input);
         self
     }
+    /// <p>Specifies optional fields that you want included in search results from this view. It is a list of objects that each describe a field to include.</p>
+    /// <p>The default is an empty list, with no optional fields included in the results.</p>
+    pub fn get_included_properties(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IncludedProperty>> {
+        self.inner.get_included_properties()
+    }
     /// <p>An array of strings that specify which resources are included in the results of queries made using this view. When you use this view in a <code>Search</code> operation, the filter string is combined with the search's <code>QueryString</code> parameter using a logical <code>AND</code> operator.</p>
     /// <p>For information about the supported syntax, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html">Search query reference for Resource Explorer</a> in the <i>Amazon Web Services Resource Explorer User Guide</i>.</p> <important>
     /// <p>This query string in the context of this operation supports only <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-filters">filter prefixes</a> with optional <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-operators">operators</a>. It doesn't support free-form text. For example, the string <code>region:us* service:ec2 -tag:stage=prod</code> includes all Amazon EC2 resources in any Amazon Web Services Region that begins with the letters <code>us</code> and is <i>not</i> tagged with a key <code>Stage</code> that has the value <code>prod</code>.</p>
@@ -165,6 +185,13 @@ impl CreateViewFluentBuilder {
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::SearchFilter>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
+    }
+    /// <p>An array of strings that specify which resources are included in the results of queries made using this view. When you use this view in a <code>Search</code> operation, the filter string is combined with the search's <code>QueryString</code> parameter using a logical <code>AND</code> operator.</p>
+    /// <p>For information about the supported syntax, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html">Search query reference for Resource Explorer</a> in the <i>Amazon Web Services Resource Explorer User Guide</i>.</p> <important>
+    /// <p>This query string in the context of this operation supports only <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-filters">filter prefixes</a> with optional <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-operators">operators</a>. It doesn't support free-form text. For example, the string <code>region:us* service:ec2 -tag:stage=prod</code> includes all Amazon EC2 resources in any Amazon Web Services Region that begins with the letters <code>us</code> and is <i>not</i> tagged with a key <code>Stage</code> that has the value <code>prod</code>.</p>
+    /// </important>
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::SearchFilter> {
+        self.inner.get_filters()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -188,5 +215,13 @@ impl CreateViewFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Tag key and value pairs that are attached to the view.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

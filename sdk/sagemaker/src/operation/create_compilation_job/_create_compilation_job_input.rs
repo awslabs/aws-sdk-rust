@@ -118,6 +118,10 @@ impl CreateCompilationJobInputBuilder {
         self.compilation_job_name = input;
         self
     }
+    /// <p>A name for the model compilation job. The name must be unique within the Amazon Web Services Region and within your Amazon Web Services account. </p>
+    pub fn get_compilation_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.compilation_job_name
+    }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf. </p>
     /// <p>During model compilation, Amazon SageMaker needs your permission to:</p>
     /// <ul>
@@ -144,6 +148,18 @@ impl CreateCompilationJobInputBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf. </p>
+    /// <p>During model compilation, Amazon SageMaker needs your permission to:</p>
+    /// <ul>
+    /// <li> <p>Read input data from an S3 bucket</p> </li>
+    /// <li> <p>Write model artifacts to an S3 bucket</p> </li>
+    /// <li> <p>Write logs to Amazon CloudWatch Logs</p> </li>
+    /// <li> <p>Publish metrics to Amazon CloudWatch</p> </li>
+    /// </ul>
+    /// <p>You grant permissions for all of these tasks to an IAM role. To pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles.</a> </p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of a versioned model package. Provide either a <code>ModelPackageVersionArn</code> or an <code>InputConfig</code> object in the request syntax. The presence of both objects in the <code>CreateCompilationJob</code> request will return an exception.</p>
     pub fn model_package_version_arn(
         mut self,
@@ -160,6 +176,10 @@ impl CreateCompilationJobInputBuilder {
         self.model_package_version_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of a versioned model package. Provide either a <code>ModelPackageVersionArn</code> or an <code>InputConfig</code> object in the request syntax. The presence of both objects in the <code>CreateCompilationJob</code> request will return an exception.</p>
+    pub fn get_model_package_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_package_version_arn
+    }
     /// <p>Provides information about the location of input model artifacts, the name and shape of the expected data inputs, and the framework in which the model was trained.</p>
     pub fn input_config(mut self, input: crate::types::InputConfig) -> Self {
         self.input_config = ::std::option::Option::Some(input);
@@ -172,6 +192,10 @@ impl CreateCompilationJobInputBuilder {
     ) -> Self {
         self.input_config = input;
         self
+    }
+    /// <p>Provides information about the location of input model artifacts, the name and shape of the expected data inputs, and the framework in which the model was trained.</p>
+    pub fn get_input_config(&self) -> &::std::option::Option<crate::types::InputConfig> {
+        &self.input_config
     }
     /// <p>Provides information about the output location for the compiled model and the target device the model runs on.</p>
     pub fn output_config(mut self, input: crate::types::OutputConfig) -> Self {
@@ -186,6 +210,10 @@ impl CreateCompilationJobInputBuilder {
         self.output_config = input;
         self
     }
+    /// <p>Provides information about the output location for the compiled model and the target device the model runs on.</p>
+    pub fn get_output_config(&self) -> &::std::option::Option<crate::types::OutputConfig> {
+        &self.output_config
+    }
     /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object that specifies the VPC that you want your compilation job to connect to. Control access to your models by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
     pub fn vpc_config(mut self, input: crate::types::NeoVpcConfig) -> Self {
         self.vpc_config = ::std::option::Option::Some(input);
@@ -199,6 +227,10 @@ impl CreateCompilationJobInputBuilder {
         self.vpc_config = input;
         self
     }
+    /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object that specifies the VPC that you want your compilation job to connect to. Control access to your models by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+    pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::NeoVpcConfig> {
+        &self.vpc_config
+    }
     /// <p>Specifies a limit to how long a model compilation job can run. When the job reaches the time limit, Amazon SageMaker ends the compilation job. Use this API to cap model training costs.</p>
     pub fn stopping_condition(mut self, input: crate::types::StoppingCondition) -> Self {
         self.stopping_condition = ::std::option::Option::Some(input);
@@ -211,6 +243,12 @@ impl CreateCompilationJobInputBuilder {
     ) -> Self {
         self.stopping_condition = input;
         self
+    }
+    /// <p>Specifies a limit to how long a model compilation job can run. When the job reaches the time limit, Amazon SageMaker ends the compilation job. Use this API to cap model training costs.</p>
+    pub fn get_stopping_condition(
+        &self,
+    ) -> &::std::option::Option<crate::types::StoppingCondition> {
+        &self.stopping_condition
     }
     /// Appends an item to `tags`.
     ///
@@ -230,6 +268,10 @@ impl CreateCompilationJobInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateCompilationJobInput`](crate::operation::create_compilation_job::CreateCompilationJobInput).
     pub fn build(

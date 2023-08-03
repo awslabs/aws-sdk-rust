@@ -59,6 +59,12 @@ impl AgentStatusReferenceBuilder {
         self.status_start_timestamp = input;
         self
     }
+    /// <p>The start timestamp of the agent's status.</p>
+    pub fn get_status_start_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.status_start_timestamp
+    }
     /// <p>The Amazon Resource Name (ARN) of the agent's status.</p>
     pub fn status_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_arn = ::std::option::Option::Some(input.into());
@@ -69,6 +75,10 @@ impl AgentStatusReferenceBuilder {
         self.status_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the agent's status.</p>
+    pub fn get_status_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_arn
+    }
     /// <p>The name of the agent status.</p>
     pub fn status_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_name = ::std::option::Option::Some(input.into());
@@ -78,6 +88,10 @@ impl AgentStatusReferenceBuilder {
     pub fn set_status_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_name = input;
         self
+    }
+    /// <p>The name of the agent status.</p>
+    pub fn get_status_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_name
     }
     /// Consumes the builder and constructs a [`AgentStatusReference`](crate::types::AgentStatusReference).
     pub fn build(self) -> crate::types::AgentStatusReference {

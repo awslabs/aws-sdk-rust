@@ -57,6 +57,10 @@ impl ListNetworkProfilesInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the project for which you want to list network profiles.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The type of network profile to return information about. Valid values are listed here.</p>
     pub fn r#type(mut self, input: crate::types::NetworkProfileType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -70,6 +74,10 @@ impl ListNetworkProfilesInputBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of network profile to return information about. Valid values are listed here.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::NetworkProfileType> {
+        &self.r#type
+    }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -79,6 +87,10 @@ impl ListNetworkProfilesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListNetworkProfilesInput`](crate::operation::list_network_profiles::ListNetworkProfilesInput).
     pub fn build(

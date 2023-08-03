@@ -74,6 +74,16 @@ impl DataSourceConfigurationBuilder {
         self.intended_use = input;
         self
     }
+    /// <p>Specifies how the results of an operation will be stored by the caller. </p>
+    /// <p>Valid values include:</p>
+    /// <ul>
+    /// <li> <p> <code>SingleUse</code> specifies that the results won't be stored. </p> </li>
+    /// <li> <p> <code>Storage</code> specifies that the result can be cached or stored in a database.</p> </li>
+    /// </ul>
+    /// <p>Default value: <code>SingleUse</code> </p>
+    pub fn get_intended_use(&self) -> &::std::option::Option<crate::types::IntendedUse> {
+        &self.intended_use
+    }
     /// Consumes the builder and constructs a [`DataSourceConfiguration`](crate::types::DataSourceConfiguration).
     pub fn build(self) -> crate::types::DataSourceConfiguration {
         crate::types::DataSourceConfiguration {

@@ -57,6 +57,10 @@ impl PageBuilder {
         self.values = input;
         self
     }
+    /// <p>A structure that contains values in multiple encoding formats.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ValueHolder>> {
+        &self.values
+    }
     /// <p>The token of the next page.</p>
     pub fn next_page_token(
         mut self,
@@ -72,6 +76,10 @@ impl PageBuilder {
     ) -> Self {
         self.next_page_token = input;
         self
+    }
+    /// <p>The token of the next page.</p>
+    pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_page_token
     }
     /// Consumes the builder and constructs a [`Page`](crate::types::Page).
     pub fn build(self) -> crate::types::Page {

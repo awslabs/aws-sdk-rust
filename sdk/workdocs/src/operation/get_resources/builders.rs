@@ -36,6 +36,10 @@ impl GetResourcesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetResources as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_resources::builders::GetResourcesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl GetResourcesFluentBuilder {
         self.inner = self.inner.set_authentication_token(input);
         self
     }
+    /// <p>The Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_authentication_token()
+    }
     /// <p>The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
@@ -133,6 +141,10 @@ impl GetResourcesFluentBuilder {
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
         self
+    }
+    /// <p>The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_id()
     }
     /// <p>The collection type.</p>
     pub fn collection_type(mut self, input: crate::types::ResourceCollectionType) -> Self {
@@ -147,6 +159,12 @@ impl GetResourcesFluentBuilder {
         self.inner = self.inner.set_collection_type(input);
         self
     }
+    /// <p>The collection type.</p>
+    pub fn get_collection_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceCollectionType> {
+        self.inner.get_collection_type()
+    }
     /// <p>The maximum number of resources to return.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -157,6 +175,10 @@ impl GetResourcesFluentBuilder {
         self.inner = self.inner.set_limit(input);
         self
     }
+    /// <p>The maximum number of resources to return.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
+    }
     /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -166,5 +188,9 @@ impl GetResourcesFluentBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
+    }
+    /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
     }
 }

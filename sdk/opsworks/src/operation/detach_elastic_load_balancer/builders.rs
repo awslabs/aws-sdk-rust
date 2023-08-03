@@ -37,6 +37,10 @@ impl DetachElasticLoadBalancerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DetachElasticLoadBalancer as a reference.
+    pub fn as_input(&self) -> &crate::operation::detach_elastic_load_balancer::builders::DetachElasticLoadBalancerInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl DetachElasticLoadBalancerFluentBuilder {
         self.inner = self.inner.set_elastic_load_balancer_name(input);
         self
     }
+    /// <p>The Elastic Load Balancing instance's name.</p>
+    pub fn get_elastic_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_elastic_load_balancer_name()
+    }
     /// <p>The ID of the layer that the Elastic Load Balancing instance is attached to.</p>
     pub fn layer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.layer_id(input.into());
@@ -142,5 +150,9 @@ impl DetachElasticLoadBalancerFluentBuilder {
     pub fn set_layer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_layer_id(input);
         self
+    }
+    /// <p>The ID of the layer that the Elastic Load Balancing instance is attached to.</p>
+    pub fn get_layer_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_layer_id()
     }
 }

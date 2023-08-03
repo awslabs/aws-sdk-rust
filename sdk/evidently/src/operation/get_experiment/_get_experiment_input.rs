@@ -47,6 +47,10 @@ impl GetExperimentInputBuilder {
         self.project = input;
         self
     }
+    /// <p>The name or ARN of the project that contains the experiment.</p>
+    pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project
+    }
     /// <p>The name of the experiment that you want to see the details of.</p>
     pub fn experiment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.experiment = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl GetExperimentInputBuilder {
     pub fn set_experiment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.experiment = input;
         self
+    }
+    /// <p>The name of the experiment that you want to see the details of.</p>
+    pub fn get_experiment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.experiment
     }
     /// Consumes the builder and constructs a [`GetExperimentInput`](crate::operation::get_experiment::GetExperimentInput).
     pub fn build(

@@ -55,6 +55,10 @@ impl UpdateUserOutputBuilder {
         self.server_id = input;
         self
     }
+    /// <p>A system-assigned unique identifier for a Transfer Family server instance that the account is assigned to.</p>
+    pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_id
+    }
     /// <p>The unique identifier for a user that is assigned to a server instance that was specified in the request.</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl UpdateUserOutputBuilder {
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_name = input;
         self
+    }
+    /// <p>The unique identifier for a user that is assigned to a server instance that was specified in the request.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

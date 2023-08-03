@@ -75,6 +75,10 @@ impl KmsExceptionBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The error code returned by KMS.</p>
     pub fn kms_error(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_error = ::std::option::Option::Some(input.into());
@@ -84,6 +88,10 @@ impl KmsExceptionBuilder {
     pub fn set_kms_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_error = input;
         self
+    }
+    /// <p>The error code returned by KMS.</p>
+    pub fn get_kms_error(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_error
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

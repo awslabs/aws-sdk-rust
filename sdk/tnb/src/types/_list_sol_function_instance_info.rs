@@ -106,6 +106,10 @@ impl ListSolFunctionInstanceInfoBuilder {
         self.id = input;
         self
     }
+    /// <p>Network function instance ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>Network function instance ARN.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -115,6 +119,10 @@ impl ListSolFunctionInstanceInfoBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>Network function instance ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>Network instance ID.</p>
     pub fn ns_instance_id(
@@ -132,6 +140,10 @@ impl ListSolFunctionInstanceInfoBuilder {
         self.ns_instance_id = input;
         self
     }
+    /// <p>Network instance ID.</p>
+    pub fn get_ns_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ns_instance_id
+    }
     /// <p>Function package ID.</p>
     pub fn vnf_pkg_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vnf_pkg_id = ::std::option::Option::Some(input.into());
@@ -142,6 +154,10 @@ impl ListSolFunctionInstanceInfoBuilder {
         self.vnf_pkg_id = input;
         self
     }
+    /// <p>Function package ID.</p>
+    pub fn get_vnf_pkg_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vnf_pkg_id
+    }
     /// <p>Function package name.</p>
     pub fn vnf_pkg_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vnf_pkg_name = ::std::option::Option::Some(input.into());
@@ -151,6 +167,10 @@ impl ListSolFunctionInstanceInfoBuilder {
     pub fn set_vnf_pkg_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vnf_pkg_name = input;
         self
+    }
+    /// <p>Function package name.</p>
+    pub fn get_vnf_pkg_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vnf_pkg_name
     }
     /// <p>Network function instance instantiation state.</p>
     pub fn instantiation_state(mut self, input: crate::types::VnfInstantiationState) -> Self {
@@ -164,6 +184,12 @@ impl ListSolFunctionInstanceInfoBuilder {
     ) -> Self {
         self.instantiation_state = input;
         self
+    }
+    /// <p>Network function instance instantiation state.</p>
+    pub fn get_instantiation_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::VnfInstantiationState> {
+        &self.instantiation_state
     }
     /// <p>Information about a network function.</p>
     /// <p>A network instance is a single network created in Amazon Web Services TNB that can be deployed and on which life-cycle operations (like terminate, update, and delete) can be performed.</p>
@@ -180,6 +206,13 @@ impl ListSolFunctionInstanceInfoBuilder {
         self.instantiated_vnf_info = input;
         self
     }
+    /// <p>Information about a network function.</p>
+    /// <p>A network instance is a single network created in Amazon Web Services TNB that can be deployed and on which life-cycle operations (like terminate, update, and delete) can be performed.</p>
+    pub fn get_instantiated_vnf_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::GetSolInstantiatedVnfInfo> {
+        &self.instantiated_vnf_info
+    }
     /// <p>Network function instance metadata.</p>
     pub fn metadata(mut self, input: crate::types::ListSolFunctionInstanceMetadata) -> Self {
         self.metadata = ::std::option::Option::Some(input);
@@ -192,6 +225,12 @@ impl ListSolFunctionInstanceInfoBuilder {
     ) -> Self {
         self.metadata = input;
         self
+    }
+    /// <p>Network function instance metadata.</p>
+    pub fn get_metadata(
+        &self,
+    ) -> &::std::option::Option<crate::types::ListSolFunctionInstanceMetadata> {
+        &self.metadata
     }
     /// Consumes the builder and constructs a [`ListSolFunctionInstanceInfo`](crate::types::ListSolFunctionInstanceInfo).
     pub fn build(self) -> crate::types::ListSolFunctionInstanceInfo {

@@ -55,6 +55,10 @@ impl UpdateDatabaseInputBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The ID of the Data Catalog in which the metadata database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p>The name of the database to update in the catalog. For Hive compatibility, this is folded to lowercase.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl UpdateDatabaseInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the database to update in the catalog. For Hive compatibility, this is folded to lowercase.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>A <code>DatabaseInput</code> object specifying the new definition of the metadata database in the catalog.</p>
     pub fn database_input(mut self, input: crate::types::DatabaseInput) -> Self {
@@ -77,6 +85,10 @@ impl UpdateDatabaseInputBuilder {
     ) -> Self {
         self.database_input = input;
         self
+    }
+    /// <p>A <code>DatabaseInput</code> object specifying the new definition of the metadata database in the catalog.</p>
+    pub fn get_database_input(&self) -> &::std::option::Option<crate::types::DatabaseInput> {
+        &self.database_input
     }
     /// Consumes the builder and constructs a [`UpdateDatabaseInput`](crate::operation::update_database::UpdateDatabaseInput).
     pub fn build(

@@ -97,6 +97,11 @@ impl UpdateDistributionInputBuilder {
         self.distribution_name = input;
         self
     }
+    /// <p>The name of the distribution to update.</p>
+    /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
+    pub fn get_distribution_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.distribution_name
+    }
     /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance, bucket, or load balancer.</p>
     /// <p>The distribution pulls, caches, and serves content from the origin.</p>
     pub fn origin(mut self, input: crate::types::InputOrigin) -> Self {
@@ -108,6 +113,11 @@ impl UpdateDistributionInputBuilder {
     pub fn set_origin(mut self, input: ::std::option::Option<crate::types::InputOrigin>) -> Self {
         self.origin = input;
         self
+    }
+    /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance, bucket, or load balancer.</p>
+    /// <p>The distribution pulls, caches, and serves content from the origin.</p>
+    pub fn get_origin(&self) -> &::std::option::Option<crate::types::InputOrigin> {
+        &self.origin
     }
     /// <p>An object that describes the default cache behavior for the distribution.</p>
     pub fn default_cache_behavior(mut self, input: crate::types::CacheBehavior) -> Self {
@@ -121,6 +131,12 @@ impl UpdateDistributionInputBuilder {
     ) -> Self {
         self.default_cache_behavior = input;
         self
+    }
+    /// <p>An object that describes the default cache behavior for the distribution.</p>
+    pub fn get_default_cache_behavior(
+        &self,
+    ) -> &::std::option::Option<crate::types::CacheBehavior> {
+        &self.default_cache_behavior
     }
     /// <p>An object that describes the cache behavior settings for the distribution.</p> <note>
     /// <p>The <code>cacheBehaviorSettings</code> specified in your <code>UpdateDistributionRequest</code> will replace your distribution's existing settings.</p>
@@ -138,6 +154,14 @@ impl UpdateDistributionInputBuilder {
     ) -> Self {
         self.cache_behavior_settings = input;
         self
+    }
+    /// <p>An object that describes the cache behavior settings for the distribution.</p> <note>
+    /// <p>The <code>cacheBehaviorSettings</code> specified in your <code>UpdateDistributionRequest</code> will replace your distribution's existing settings.</p>
+    /// </note>
+    pub fn get_cache_behavior_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::CacheSettings> {
+        &self.cache_behavior_settings
     }
     /// Appends an item to `cache_behaviors`.
     ///
@@ -158,6 +182,12 @@ impl UpdateDistributionInputBuilder {
         self.cache_behaviors = input;
         self
     }
+    /// <p>An array of objects that describe the per-path cache behavior for the distribution.</p>
+    pub fn get_cache_behaviors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheBehaviorPerPath>> {
+        &self.cache_behaviors
+    }
     /// <p>Indicates whether to enable the distribution.</p>
     pub fn is_enabled(mut self, input: bool) -> Self {
         self.is_enabled = ::std::option::Option::Some(input);
@@ -167,6 +197,10 @@ impl UpdateDistributionInputBuilder {
     pub fn set_is_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_enabled = input;
         self
+    }
+    /// <p>Indicates whether to enable the distribution.</p>
+    pub fn get_is_enabled(&self) -> &::std::option::Option<bool> {
+        &self.is_enabled
     }
     /// Consumes the builder and constructs a [`UpdateDistributionInput`](crate::operation::update_distribution::UpdateDistributionInput).
     pub fn build(

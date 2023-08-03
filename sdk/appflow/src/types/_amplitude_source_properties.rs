@@ -40,6 +40,10 @@ impl AmplitudeSourcePropertiesBuilder {
         self.object = input;
         self
     }
+    /// <p> The object specified in the Amplitude flow source. </p>
+    pub fn get_object(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object
+    }
     /// Consumes the builder and constructs a [`AmplitudeSourceProperties`](crate::types::AmplitudeSourceProperties).
     pub fn build(self) -> crate::types::AmplitudeSourceProperties {
         crate::types::AmplitudeSourceProperties {

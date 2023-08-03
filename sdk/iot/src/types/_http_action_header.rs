@@ -48,6 +48,10 @@ impl HttpActionHeaderBuilder {
         self.key = input;
         self
     }
+    /// <p>The HTTP header key.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>The HTTP header value. Substitution templates are supported.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl HttpActionHeaderBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The HTTP header value. Substitution templates are supported.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`HttpActionHeader`](crate::types::HttpActionHeader).
     pub fn build(self) -> crate::types::HttpActionHeader {

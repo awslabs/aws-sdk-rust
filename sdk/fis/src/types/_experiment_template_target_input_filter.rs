@@ -49,6 +49,10 @@ impl ExperimentTemplateTargetInputFilterBuilder {
         self.path = input;
         self
     }
+    /// <p>The attribute path for the filter.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -67,6 +71,10 @@ impl ExperimentTemplateTargetInputFilterBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>The attribute values for the filter.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`ExperimentTemplateTargetInputFilter`](crate::types::ExperimentTemplateTargetInputFilter).
     pub fn build(self) -> crate::types::ExperimentTemplateTargetInputFilter {

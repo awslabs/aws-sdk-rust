@@ -36,6 +36,12 @@ impl RefreshSchemasFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RefreshSchemas as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::refresh_schemas::builders::RefreshSchemasInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl RefreshSchemasFluentBuilder {
         self.inner = self.inner.set_endpoint_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
+    pub fn get_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_endpoint_arn()
+    }
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
     pub fn replication_instance_arn(
         mut self,
@@ -133,5 +143,9 @@ impl RefreshSchemasFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_replication_instance_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+    pub fn get_replication_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_replication_instance_arn()
     }
 }

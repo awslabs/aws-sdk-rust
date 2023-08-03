@@ -37,6 +37,10 @@ impl StartAuditMitigationActionsTaskFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartAuditMitigationActionsTask as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_audit_mitigation_actions_task::builders::StartAuditMitigationActionsTaskInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -101,6 +105,10 @@ impl StartAuditMitigationActionsTaskFluentBuilder {
         self.inner = self.inner.set_task_id(input);
         self
     }
+    /// <p>A unique identifier for the task. You can use this identifier to check the status of the task or to cancel it.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_task_id()
+    }
     /// <p>Specifies the audit findings to which the mitigation actions are applied. You can apply them to a type of audit check, to all findings from an audit, or to a specific set of findings.</p>
     pub fn target(mut self, input: crate::types::AuditMitigationActionsTaskTarget) -> Self {
         self.inner = self.inner.target(input);
@@ -113,6 +121,12 @@ impl StartAuditMitigationActionsTaskFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_target(input);
         self
+    }
+    /// <p>Specifies the audit findings to which the mitigation actions are applied. You can apply them to a type of audit check, to all findings from an audit, or to a specific set of findings.</p>
+    pub fn get_target(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuditMitigationActionsTaskTarget> {
+        self.inner.get_target()
     }
     /// Adds a key-value pair to `auditCheckToActionsMapping`.
     ///
@@ -140,6 +154,14 @@ impl StartAuditMitigationActionsTaskFluentBuilder {
         self.inner = self.inner.set_audit_check_to_actions_mapping(input);
         self
     }
+    /// <p>For an audit check, specifies which mitigation actions to apply. Those actions must be defined in your Amazon Web Services accounts.</p>
+    pub fn get_audit_check_to_actions_mapping(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    > {
+        self.inner.get_audit_check_to_actions_mapping()
+    }
     /// <p>Each audit mitigation task must have a unique client request token. If you try to start a new task with the same token as a task that already exists, an exception occurs. If you omit this value, a unique client request token is generated automatically.</p>
     pub fn client_request_token(
         mut self,
@@ -155,5 +177,9 @@ impl StartAuditMitigationActionsTaskFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>Each audit mitigation task must have a unique client request token. If you try to start a new task with the same token as a task that already exists, an exception occurs. If you omit this value, a unique client request token is generated automatically.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
 }

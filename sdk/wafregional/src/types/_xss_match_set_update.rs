@@ -52,6 +52,10 @@ impl XssMatchSetUpdateBuilder {
         self.action = input;
         self
     }
+    /// <p>Specify <code>INSERT</code> to add an <code>XssMatchSetUpdate</code> to an <code>XssMatchSet</code>. Use <code>DELETE</code> to remove an <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::ChangeAction> {
+        &self.action
+    }
     /// <p>Specifies the part of a web request that you want AWS WAF to inspect for cross-site scripting attacks and, if you want AWS WAF to inspect a header, the name of the header.</p>
     pub fn xss_match_tuple(mut self, input: crate::types::XssMatchTuple) -> Self {
         self.xss_match_tuple = ::std::option::Option::Some(input);
@@ -64,6 +68,10 @@ impl XssMatchSetUpdateBuilder {
     ) -> Self {
         self.xss_match_tuple = input;
         self
+    }
+    /// <p>Specifies the part of a web request that you want AWS WAF to inspect for cross-site scripting attacks and, if you want AWS WAF to inspect a header, the name of the header.</p>
+    pub fn get_xss_match_tuple(&self) -> &::std::option::Option<crate::types::XssMatchTuple> {
+        &self.xss_match_tuple
     }
     /// Consumes the builder and constructs a [`XssMatchSetUpdate`](crate::types::XssMatchSetUpdate).
     pub fn build(self) -> crate::types::XssMatchSetUpdate {

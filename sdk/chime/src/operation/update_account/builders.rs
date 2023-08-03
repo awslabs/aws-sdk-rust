@@ -36,6 +36,12 @@ impl UpdateAccountFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAccount as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_account::builders::UpdateAccountInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl UpdateAccountFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p>The new name for the specified Amazon Chime account.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -127,6 +137,10 @@ impl UpdateAccountFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The new name for the specified Amazon Chime account.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The default license applied when you add users to an Amazon Chime account.</p>
     pub fn default_license(mut self, input: crate::types::License) -> Self {
@@ -140,5 +154,9 @@ impl UpdateAccountFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_default_license(input);
         self
+    }
+    /// <p>The default license applied when you add users to an Amazon Chime account.</p>
+    pub fn get_default_license(&self) -> &::std::option::Option<crate::types::License> {
+        self.inner.get_default_license()
     }
 }

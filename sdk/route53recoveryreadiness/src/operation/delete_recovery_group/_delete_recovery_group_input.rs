@@ -47,6 +47,10 @@ impl DeleteRecoveryGroupInputBuilder {
         self.recovery_group_name = input;
         self
     }
+    /// <p>The name of a recovery group.</p>
+    pub fn get_recovery_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recovery_group_name
+    }
     /// Consumes the builder and constructs a [`DeleteRecoveryGroupInput`](crate::operation::delete_recovery_group::DeleteRecoveryGroupInput).
     pub fn build(
         self,

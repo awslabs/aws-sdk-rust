@@ -54,6 +54,10 @@ impl PreparedStatementSummaryBuilder {
         self.statement_name = input;
         self
     }
+    /// <p>The name of the prepared statement.</p>
+    pub fn get_statement_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.statement_name
+    }
     /// <p>The last modified time of the prepared statement.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl PreparedStatementSummaryBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>The last modified time of the prepared statement.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// Consumes the builder and constructs a [`PreparedStatementSummary`](crate::types::PreparedStatementSummary).
     pub fn build(self) -> crate::types::PreparedStatementSummary {

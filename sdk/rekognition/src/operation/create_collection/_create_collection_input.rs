@@ -62,6 +62,10 @@ impl CreateCollectionInputBuilder {
         self.collection_id = input;
         self
     }
+    /// <p>ID for the collection that you are creating.</p>
+    pub fn get_collection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collection_id
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -86,6 +90,14 @@ impl CreateCollectionInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p> A set of tags (key-value pairs) that you want to attach to the collection. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateCollectionInput`](crate::operation::create_collection::CreateCollectionInput).
     pub fn build(

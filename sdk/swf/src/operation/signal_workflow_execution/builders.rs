@@ -49,6 +49,13 @@ impl SignalWorkflowExecutionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SignalWorkflowExecution as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::signal_workflow_execution::builders::SignalWorkflowExecutionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,6 +146,10 @@ impl SignalWorkflowExecutionFluentBuilder {
         self.inner = self.inner.set_domain(input);
         self
     }
+    /// <p>The name of the domain containing the workflow execution to signal.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain()
+    }
     /// <p>The workflowId of the workflow execution to signal.</p>
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workflow_id(input.into());
@@ -148,6 +159,10 @@ impl SignalWorkflowExecutionFluentBuilder {
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workflow_id(input);
         self
+    }
+    /// <p>The workflowId of the workflow execution to signal.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workflow_id()
     }
     /// <p>The runId of the workflow execution to signal.</p>
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -159,6 +174,10 @@ impl SignalWorkflowExecutionFluentBuilder {
         self.inner = self.inner.set_run_id(input);
         self
     }
+    /// <p>The runId of the workflow execution to signal.</p>
+    pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_run_id()
+    }
     /// <p>The name of the signal. This name must be meaningful to the target workflow.</p>
     pub fn signal_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.signal_name(input.into());
@@ -169,6 +188,10 @@ impl SignalWorkflowExecutionFluentBuilder {
         self.inner = self.inner.set_signal_name(input);
         self
     }
+    /// <p>The name of the signal. This name must be meaningful to the target workflow.</p>
+    pub fn get_signal_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_signal_name()
+    }
     /// <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the target workflow execution's history.</p>
     pub fn input(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.input(input.into());
@@ -178,5 +201,9 @@ impl SignalWorkflowExecutionFluentBuilder {
     pub fn set_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_input(input);
         self
+    }
+    /// <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the target workflow execution's history.</p>
+    pub fn get_input(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_input()
     }
 }

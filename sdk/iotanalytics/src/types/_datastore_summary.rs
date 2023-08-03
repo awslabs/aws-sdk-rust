@@ -112,6 +112,10 @@ impl DatastoreSummaryBuilder {
         self.datastore_name = input;
         self
     }
+    /// <p>The name of the data store.</p>
+    pub fn get_datastore_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.datastore_name
+    }
     /// <p>Where data in a data store is stored.</p>
     pub fn datastore_storage(mut self, input: crate::types::DatastoreStorageSummary) -> Self {
         self.datastore_storage = ::std::option::Option::Some(input);
@@ -124,6 +128,12 @@ impl DatastoreSummaryBuilder {
     ) -> Self {
         self.datastore_storage = input;
         self
+    }
+    /// <p>Where data in a data store is stored.</p>
+    pub fn get_datastore_storage(
+        &self,
+    ) -> &::std::option::Option<crate::types::DatastoreStorageSummary> {
+        &self.datastore_storage
     }
     /// <p>The status of the data store.</p>
     pub fn status(mut self, input: crate::types::DatastoreStatus) -> Self {
@@ -138,6 +148,10 @@ impl DatastoreSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the data store.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DatastoreStatus> {
+        &self.status
+    }
     /// <p>When the data store was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -151,6 +165,10 @@ impl DatastoreSummaryBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>When the data store was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The last time the data store was updated.</p>
     pub fn last_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_update_time = ::std::option::Option::Some(input);
@@ -163,6 +181,10 @@ impl DatastoreSummaryBuilder {
     ) -> Self {
         self.last_update_time = input;
         self
+    }
+    /// <p>The last time the data store was updated.</p>
+    pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_update_time
     }
     /// <p>The last time when a new message arrived in the data store.</p>
     /// <p>IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
@@ -181,6 +203,14 @@ impl DatastoreSummaryBuilder {
         self.last_message_arrival_time = input;
         self
     }
+    /// <p>The last time when a new message arrived in the data store.</p>
+    /// <p>IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
+    /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
+    pub fn get_last_message_arrival_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_message_arrival_time
+    }
     /// <p>The file format of the data in the data store.</p>
     pub fn file_format_type(mut self, input: crate::types::FileFormatType) -> Self {
         self.file_format_type = ::std::option::Option::Some(input);
@@ -194,6 +224,10 @@ impl DatastoreSummaryBuilder {
         self.file_format_type = input;
         self
     }
+    /// <p>The file format of the data in the data store.</p>
+    pub fn get_file_format_type(&self) -> &::std::option::Option<crate::types::FileFormatType> {
+        &self.file_format_type
+    }
     /// <p> Contains information about the partition dimensions in a data store. </p>
     pub fn datastore_partitions(mut self, input: crate::types::DatastorePartitions) -> Self {
         self.datastore_partitions = ::std::option::Option::Some(input);
@@ -206,6 +240,12 @@ impl DatastoreSummaryBuilder {
     ) -> Self {
         self.datastore_partitions = input;
         self
+    }
+    /// <p> Contains information about the partition dimensions in a data store. </p>
+    pub fn get_datastore_partitions(
+        &self,
+    ) -> &::std::option::Option<crate::types::DatastorePartitions> {
+        &self.datastore_partitions
     }
     /// Consumes the builder and constructs a [`DatastoreSummary`](crate::types::DatastoreSummary).
     pub fn build(self) -> crate::types::DatastoreSummary {

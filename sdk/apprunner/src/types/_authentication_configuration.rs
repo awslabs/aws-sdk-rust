@@ -54,6 +54,10 @@ impl AuthenticationConfigurationBuilder {
         self.connection_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the App Runner connection that enables the App Runner service to connect to a source repository. It's required for GitHub code repositories.</p>
+    pub fn get_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants the App Runner service access to a source repository. It's required for ECR image repositories (but not for ECR Public repositories).</p>
     pub fn access_role_arn(
         mut self,
@@ -69,6 +73,10 @@ impl AuthenticationConfigurationBuilder {
     ) -> Self {
         self.access_role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants the App Runner service access to a source repository. It's required for ECR image repositories (but not for ECR Public repositories).</p>
+    pub fn get_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_role_arn
     }
     /// Consumes the builder and constructs a [`AuthenticationConfiguration`](crate::types::AuthenticationConfiguration).
     pub fn build(self) -> crate::types::AuthenticationConfiguration {

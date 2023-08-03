@@ -59,6 +59,10 @@ impl FilterBuilder {
         self.behavior = input;
         self
     }
+    /// <p>How to handle logs that satisfy the filter's conditions and requirement. </p>
+    pub fn get_behavior(&self) -> &::std::option::Option<crate::types::FilterBehavior> {
+        &self.behavior
+    }
     /// <p>Logic to apply to the filtering conditions. You can specify that, in order to satisfy the filter, a log must match all conditions or must match at least one condition.</p>
     pub fn requirement(mut self, input: crate::types::FilterRequirement) -> Self {
         self.requirement = ::std::option::Option::Some(input);
@@ -71,6 +75,10 @@ impl FilterBuilder {
     ) -> Self {
         self.requirement = input;
         self
+    }
+    /// <p>Logic to apply to the filtering conditions. You can specify that, in order to satisfy the filter, a log must match all conditions or must match at least one condition.</p>
+    pub fn get_requirement(&self) -> &::std::option::Option<crate::types::FilterRequirement> {
+        &self.requirement
     }
     /// Appends an item to `conditions`.
     ///
@@ -90,6 +98,12 @@ impl FilterBuilder {
     ) -> Self {
         self.conditions = input;
         self
+    }
+    /// <p>Match conditions for the filter.</p>
+    pub fn get_conditions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Condition>> {
+        &self.conditions
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     pub fn build(self) -> crate::types::Filter {

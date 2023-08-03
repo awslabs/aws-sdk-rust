@@ -47,6 +47,10 @@ impl GetSoftwareUpdatesOutputBuilder {
         self.updates_uri = input;
         self
     }
+    /// <p>The Amazon S3 presigned URL for the update file associated with the specified <code>JobId</code> value. The software update will be available for 2 days after this request is made. To access an update after the 2 days have passed, you'll have to make another call to <code>GetSoftwareUpdates</code>.</p>
+    pub fn get_updates_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.updates_uri
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

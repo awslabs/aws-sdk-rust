@@ -54,6 +54,10 @@ impl AwsDynamoDbTableAttributeDefinitionBuilder {
         self.attribute_name = input;
         self
     }
+    /// <p>The name of the attribute.</p>
+    pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_name
+    }
     /// <p>The type of the attribute.</p>
     pub fn attribute_type(
         mut self,
@@ -69,6 +73,10 @@ impl AwsDynamoDbTableAttributeDefinitionBuilder {
     ) -> Self {
         self.attribute_type = input;
         self
+    }
+    /// <p>The type of the attribute.</p>
+    pub fn get_attribute_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_type
     }
     /// Consumes the builder and constructs a [`AwsDynamoDbTableAttributeDefinition`](crate::types::AwsDynamoDbTableAttributeDefinition).
     pub fn build(self) -> crate::types::AwsDynamoDbTableAttributeDefinition {

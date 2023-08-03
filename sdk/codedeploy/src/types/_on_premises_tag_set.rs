@@ -56,6 +56,12 @@ impl OnPremisesTagSetBuilder {
         self.on_premises_tag_set_list = input;
         self
     }
+    /// <p>A list that contains other lists of on-premises instance tag groups. For an instance to be included in the deployment group, it must be identified by all of the tag groups in the list.</p>
+    pub fn get_on_premises_tag_set_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::TagFilter>>> {
+        &self.on_premises_tag_set_list
+    }
     /// Consumes the builder and constructs a [`OnPremisesTagSet`](crate::types::OnPremisesTagSet).
     pub fn build(self) -> crate::types::OnPremisesTagSet {
         crate::types::OnPremisesTagSet {

@@ -77,6 +77,12 @@ impl BatchListIndexBuilder {
         self.ranges_on_indexed_values = input;
         self
     }
+    /// <p>Specifies the ranges of indexed values that you want to query.</p>
+    pub fn get_ranges_on_indexed_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeRange>> {
+        &self.ranges_on_indexed_values
+    }
     /// <p>The reference to the index to list.</p>
     pub fn index_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.index_reference = ::std::option::Option::Some(input);
@@ -90,6 +96,10 @@ impl BatchListIndexBuilder {
         self.index_reference = input;
         self
     }
+    /// <p>The reference to the index to list.</p>
+    pub fn get_index_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
+        &self.index_reference
+    }
     /// <p>The maximum number of results to retrieve.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -100,6 +110,10 @@ impl BatchListIndexBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to retrieve.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -109,6 +123,10 @@ impl BatchListIndexBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`BatchListIndex`](crate::types::BatchListIndex).
     pub fn build(self) -> crate::types::BatchListIndex {

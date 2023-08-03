@@ -49,6 +49,10 @@ impl GetComponentVersionArtifactInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version. Specify the ARN of a public or a Lambda component version.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the artifact.</p>
     /// <p>You can use the <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetComponent.html">GetComponent</a> operation to download the component recipe, which includes the URI of the artifact. The artifact name is the section of the URI after the scheme. For example, in the artifact URI <code>greengrass:SomeArtifact.zip</code>, the artifact name is <code>SomeArtifact.zip</code>.</p>
     pub fn artifact_name(
@@ -66,6 +70,11 @@ impl GetComponentVersionArtifactInputBuilder {
     ) -> Self {
         self.artifact_name = input;
         self
+    }
+    /// <p>The name of the artifact.</p>
+    /// <p>You can use the <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetComponent.html">GetComponent</a> operation to download the component recipe, which includes the URI of the artifact. The artifact name is the section of the URI after the scheme. For example, in the artifact URI <code>greengrass:SomeArtifact.zip</code>, the artifact name is <code>SomeArtifact.zip</code>.</p>
+    pub fn get_artifact_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.artifact_name
     }
     /// Consumes the builder and constructs a [`GetComponentVersionArtifactInput`](crate::operation::get_component_version_artifact::GetComponentVersionArtifactInput).
     pub fn build(

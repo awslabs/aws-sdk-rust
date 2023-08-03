@@ -50,6 +50,12 @@ impl MetricMathAnomalyDetectorBuilder {
         self.metric_data_queries = input;
         self
     }
+    /// <p>An array of metric data query structures that enables you to create an anomaly detector based on the result of a metric math expression. Each item in <code>MetricDataQueries</code> gets a metric or performs a math expression. One item in <code>MetricDataQueries</code> is the expression that provides the time series that the anomaly detector uses as input. Designate the expression by setting <code>ReturnData</code> to <code>true</code> for this object in the array. For all other expressions and metrics, set <code>ReturnData</code> to <code>false</code>. The designated expression must return a single time series.</p>
+    pub fn get_metric_data_queries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>> {
+        &self.metric_data_queries
+    }
     /// Consumes the builder and constructs a [`MetricMathAnomalyDetector`](crate::types::MetricMathAnomalyDetector).
     pub fn build(self) -> crate::types::MetricMathAnomalyDetector {
         crate::types::MetricMathAnomalyDetector {

@@ -78,6 +78,12 @@ impl ComboChartSortConfigurationBuilder {
         self.category_sort = input;
         self
     }
+    /// <p>The sort configuration of the category field well in a combo chart.</p>
+    pub fn get_category_sort(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>> {
+        &self.category_sort
+    }
     /// <p>The item limit configuration for the category field well of a combo chart.</p>
     pub fn category_items_limit(mut self, input: crate::types::ItemsLimitConfiguration) -> Self {
         self.category_items_limit = ::std::option::Option::Some(input);
@@ -90,6 +96,12 @@ impl ComboChartSortConfigurationBuilder {
     ) -> Self {
         self.category_items_limit = input;
         self
+    }
+    /// <p>The item limit configuration for the category field well of a combo chart.</p>
+    pub fn get_category_items_limit(
+        &self,
+    ) -> &::std::option::Option<crate::types::ItemsLimitConfiguration> {
+        &self.category_items_limit
     }
     /// Appends an item to `color_sort`.
     ///
@@ -110,6 +122,12 @@ impl ComboChartSortConfigurationBuilder {
         self.color_sort = input;
         self
     }
+    /// <p>The sort configuration of the color field well in a combo chart.</p>
+    pub fn get_color_sort(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>> {
+        &self.color_sort
+    }
     /// <p>The item limit configuration of the color field well in a combo chart.</p>
     pub fn color_items_limit(mut self, input: crate::types::ItemsLimitConfiguration) -> Self {
         self.color_items_limit = ::std::option::Option::Some(input);
@@ -122,6 +140,12 @@ impl ComboChartSortConfigurationBuilder {
     ) -> Self {
         self.color_items_limit = input;
         self
+    }
+    /// <p>The item limit configuration of the color field well in a combo chart.</p>
+    pub fn get_color_items_limit(
+        &self,
+    ) -> &::std::option::Option<crate::types::ItemsLimitConfiguration> {
+        &self.color_items_limit
     }
     /// Consumes the builder and constructs a [`ComboChartSortConfiguration`](crate::types::ComboChartSortConfiguration).
     pub fn build(self) -> crate::types::ComboChartSortConfiguration {

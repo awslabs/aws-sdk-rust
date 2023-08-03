@@ -48,6 +48,10 @@ impl S3DestinationBuilder {
         self.bucket_name = input;
         self
     }
+    /// <p>The name of an Amazon S3 bucket. For more information about buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-buckets-s3.html">Creating, configuring, and working with Amazon S3 buckets</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
+    }
     /// <p>A string prefix for an Amazon S3 object key. It's usually a folder name. For more information about folders in Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-folders.html">Organizing objects in the Amazon S3 console using folders</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     pub fn object_key_prefix(
         mut self,
@@ -63,6 +67,10 @@ impl S3DestinationBuilder {
     ) -> Self {
         self.object_key_prefix = input;
         self
+    }
+    /// <p>A string prefix for an Amazon S3 object key. It's usually a folder name. For more information about folders in Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-folders.html">Organizing objects in the Amazon S3 console using folders</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+    pub fn get_object_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_key_prefix
     }
     /// Consumes the builder and constructs a [`S3Destination`](crate::types::S3Destination).
     pub fn build(self) -> crate::types::S3Destination {

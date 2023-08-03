@@ -48,6 +48,10 @@ impl GrpcTimeoutBuilder {
         self.per_request = input;
         self
     }
+    /// <p>An object that represents a per request timeout. The default value is 15 seconds. If you set a higher timeout, then make sure that the higher value is set for each App Mesh resource in a conversation. For example, if a virtual node backend uses a virtual router provider to route to another virtual node, then the timeout should be greater than 15 seconds for the source and destination virtual node and the route.</p>
+    pub fn get_per_request(&self) -> &::std::option::Option<crate::types::Duration> {
+        &self.per_request
+    }
     /// <p>An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be idle. The default value is none.</p>
     pub fn idle(mut self, input: crate::types::Duration) -> Self {
         self.idle = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl GrpcTimeoutBuilder {
     pub fn set_idle(mut self, input: ::std::option::Option<crate::types::Duration>) -> Self {
         self.idle = input;
         self
+    }
+    /// <p>An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be idle. The default value is none.</p>
+    pub fn get_idle(&self) -> &::std::option::Option<crate::types::Duration> {
+        &self.idle
     }
     /// Consumes the builder and constructs a [`GrpcTimeout`](crate::types::GrpcTimeout).
     pub fn build(self) -> crate::types::GrpcTimeout {

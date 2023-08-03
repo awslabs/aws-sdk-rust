@@ -51,6 +51,10 @@ impl StartMeetingTranscriptionInputBuilder {
         self.meeting_id = input;
         self
     }
+    /// <p>The unique ID of the meeting being transcribed.</p>
+    pub fn get_meeting_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.meeting_id
+    }
     /// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
     pub fn transcription_configuration(
         mut self,
@@ -66,6 +70,12 @@ impl StartMeetingTranscriptionInputBuilder {
     ) -> Self {
         self.transcription_configuration = input;
         self
+    }
+    /// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
+    pub fn get_transcription_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::TranscriptionConfiguration> {
+        &self.transcription_configuration
     }
     /// Consumes the builder and constructs a [`StartMeetingTranscriptionInput`](crate::operation::start_meeting_transcription::StartMeetingTranscriptionInput).
     pub fn build(

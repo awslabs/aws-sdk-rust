@@ -58,6 +58,10 @@ impl CreateDedicatedIpPoolInputBuilder {
         self.pool_name = input;
         self
     }
+    /// <p>The name of the dedicated IP pool.</p>
+    pub fn get_pool_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pool_name
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -77,6 +81,10 @@ impl CreateDedicatedIpPoolInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>An object that defines the tags (keys and values) that you want to associate with the pool.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The type of scaling mode.</p>
     pub fn scaling_mode(mut self, input: crate::types::ScalingMode) -> Self {
         self.scaling_mode = ::std::option::Option::Some(input);
@@ -89,6 +97,10 @@ impl CreateDedicatedIpPoolInputBuilder {
     ) -> Self {
         self.scaling_mode = input;
         self
+    }
+    /// <p>The type of scaling mode.</p>
+    pub fn get_scaling_mode(&self) -> &::std::option::Option<crate::types::ScalingMode> {
+        &self.scaling_mode
     }
     /// Consumes the builder and constructs a [`CreateDedicatedIpPoolInput`](crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPoolInput).
     pub fn build(

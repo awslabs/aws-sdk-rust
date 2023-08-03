@@ -55,6 +55,10 @@ impl UpdateContainerInstancesStateInputBuilder {
         self.cluster = input;
         self
     }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instance to update. If you do not specify a cluster, the default cluster is assumed.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster
+    }
     /// Appends an item to `container_instances`.
     ///
     /// To override the contents of this collection use [`set_container_instances`](Self::set_container_instances).
@@ -77,6 +81,12 @@ impl UpdateContainerInstancesStateInputBuilder {
         self.container_instances = input;
         self
     }
+    /// <p>A list of up to 10 container instance IDs or full ARN entries.</p>
+    pub fn get_container_instances(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.container_instances
+    }
     /// <p>The container instance state to update the container instance with. The only valid values for this action are <code>ACTIVE</code> and <code>DRAINING</code>. A container instance can only be updated to <code>DRAINING</code> status once it has reached an <code>ACTIVE</code> state. If a container instance is in <code>REGISTERING</code>, <code>DEREGISTERING</code>, or <code>REGISTRATION_FAILED</code> state you can describe the container instance but can't update the container instance state.</p>
     pub fn status(mut self, input: crate::types::ContainerInstanceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -89,6 +99,10 @@ impl UpdateContainerInstancesStateInputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The container instance state to update the container instance with. The only valid values for this action are <code>ACTIVE</code> and <code>DRAINING</code>. A container instance can only be updated to <code>DRAINING</code> status once it has reached an <code>ACTIVE</code> state. If a container instance is in <code>REGISTERING</code>, <code>DEREGISTERING</code>, or <code>REGISTRATION_FAILED</code> state you can describe the container instance but can't update the container instance state.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ContainerInstanceStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`UpdateContainerInstancesStateInput`](crate::operation::update_container_instances_state::UpdateContainerInstancesStateInput).
     pub fn build(

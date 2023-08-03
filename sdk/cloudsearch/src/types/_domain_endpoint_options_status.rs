@@ -51,6 +51,10 @@ impl DomainEndpointOptionsStatusBuilder {
         self.options = input;
         self
     }
+    /// <p>The domain endpoint options configured for the domain.</p>
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::DomainEndpointOptions> {
+        &self.options
+    }
     /// <p>The status of the configured domain endpoint options.</p>
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl DomainEndpointOptionsStatusBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the configured domain endpoint options.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::OptionStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`DomainEndpointOptionsStatus`](crate::types::DomainEndpointOptionsStatus).
     pub fn build(self) -> crate::types::DomainEndpointOptionsStatus {

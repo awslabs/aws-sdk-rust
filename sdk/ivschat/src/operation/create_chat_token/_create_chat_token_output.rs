@@ -63,6 +63,10 @@ impl CreateChatTokenOutputBuilder {
         self.token = input;
         self
     }
+    /// <p>The issued client token, encrypted.</p>
+    pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token
+    }
     /// <p>Time after which the token is no longer valid and cannot be used to connect to a room. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     pub fn token_expiration_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.token_expiration_time = ::std::option::Option::Some(input);
@@ -76,6 +80,12 @@ impl CreateChatTokenOutputBuilder {
         self.token_expiration_time = input;
         self
     }
+    /// <p>Time after which the token is no longer valid and cannot be used to connect to a room. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
+    pub fn get_token_expiration_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.token_expiration_time
+    }
     /// <p>Time after which an end user's session is no longer valid. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     pub fn session_expiration_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.session_expiration_time = ::std::option::Option::Some(input);
@@ -88,6 +98,12 @@ impl CreateChatTokenOutputBuilder {
     ) -> Self {
         self.session_expiration_time = input;
         self
+    }
+    /// <p>Time after which an end user's session is no longer valid. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
+    pub fn get_session_expiration_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.session_expiration_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

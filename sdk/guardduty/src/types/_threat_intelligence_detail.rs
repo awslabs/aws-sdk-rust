@@ -54,6 +54,10 @@ impl ThreatIntelligenceDetailBuilder {
         self.threat_list_name = input;
         self
     }
+    /// <p>The name of the threat intelligence list that triggered the finding.</p>
+    pub fn get_threat_list_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.threat_list_name
+    }
     /// Appends an item to `threat_names`.
     ///
     /// To override the contents of this collection use [`set_threat_names`](Self::set_threat_names).
@@ -72,6 +76,12 @@ impl ThreatIntelligenceDetailBuilder {
     ) -> Self {
         self.threat_names = input;
         self
+    }
+    /// <p>A list of names of the threats in the threat intelligence list that triggered the finding.</p>
+    pub fn get_threat_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.threat_names
     }
     /// Consumes the builder and constructs a [`ThreatIntelligenceDetail`](crate::types::ThreatIntelligenceDetail).
     pub fn build(self) -> crate::types::ThreatIntelligenceDetail {

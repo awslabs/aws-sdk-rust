@@ -46,6 +46,10 @@ impl StopConfigurationRecorderInputBuilder {
         self.configuration_recorder_name = input;
         self
     }
+    /// <p>The name of the recorder object that records each configuration change made to the resources.</p>
+    pub fn get_configuration_recorder_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_recorder_name
+    }
     /// Consumes the builder and constructs a [`StopConfigurationRecorderInput`](crate::operation::stop_configuration_recorder::StopConfigurationRecorderInput).
     pub fn build(
         self,

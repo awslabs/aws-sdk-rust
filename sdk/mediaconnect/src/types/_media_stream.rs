@@ -99,6 +99,10 @@ impl MediaStreamBuilder {
         self.attributes = input;
         self
     }
+    /// Attributes that are related to the media stream.
+    pub fn get_attributes(&self) -> &::std::option::Option<crate::types::MediaStreamAttributes> {
+        &self.attributes
+    }
     /// The sample rate for the stream. This value is measured in Hz.
     pub fn clock_rate(mut self, input: i32) -> Self {
         self.clock_rate = ::std::option::Option::Some(input);
@@ -108,6 +112,10 @@ impl MediaStreamBuilder {
     pub fn set_clock_rate(mut self, input: ::std::option::Option<i32>) -> Self {
         self.clock_rate = input;
         self
+    }
+    /// The sample rate for the stream. This value is measured in Hz.
+    pub fn get_clock_rate(&self) -> &::std::option::Option<i32> {
+        &self.clock_rate
     }
     /// A description that can help you quickly identify what your media stream is used for.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -119,6 +127,10 @@ impl MediaStreamBuilder {
         self.description = input;
         self
     }
+    /// A description that can help you quickly identify what your media stream is used for.
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// The format type number (sometimes referred to as RTP payload type) of the media stream. MediaConnect assigns this value to the media stream. For ST 2110 JPEG XS outputs, you need to provide this value to the receiver.
     pub fn fmt(mut self, input: i32) -> Self {
         self.fmt = ::std::option::Option::Some(input);
@@ -129,6 +141,10 @@ impl MediaStreamBuilder {
         self.fmt = input;
         self
     }
+    /// The format type number (sometimes referred to as RTP payload type) of the media stream. MediaConnect assigns this value to the media stream. For ST 2110 JPEG XS outputs, you need to provide this value to the receiver.
+    pub fn get_fmt(&self) -> &::std::option::Option<i32> {
+        &self.fmt
+    }
     /// A unique identifier for the media stream.
     pub fn media_stream_id(mut self, input: i32) -> Self {
         self.media_stream_id = ::std::option::Option::Some(input);
@@ -138,6 +154,10 @@ impl MediaStreamBuilder {
     pub fn set_media_stream_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.media_stream_id = input;
         self
+    }
+    /// A unique identifier for the media stream.
+    pub fn get_media_stream_id(&self) -> &::std::option::Option<i32> {
+        &self.media_stream_id
     }
     /// A name that helps you distinguish one media stream from another.
     pub fn media_stream_name(
@@ -155,6 +175,10 @@ impl MediaStreamBuilder {
         self.media_stream_name = input;
         self
     }
+    /// A name that helps you distinguish one media stream from another.
+    pub fn get_media_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.media_stream_name
+    }
     /// The type of media stream.
     pub fn media_stream_type(mut self, input: crate::types::MediaStreamType) -> Self {
         self.media_stream_type = ::std::option::Option::Some(input);
@@ -168,6 +192,10 @@ impl MediaStreamBuilder {
         self.media_stream_type = input;
         self
     }
+    /// The type of media stream.
+    pub fn get_media_stream_type(&self) -> &::std::option::Option<crate::types::MediaStreamType> {
+        &self.media_stream_type
+    }
     /// The resolution of the video.
     pub fn video_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.video_format = ::std::option::Option::Some(input.into());
@@ -177,6 +205,10 @@ impl MediaStreamBuilder {
     pub fn set_video_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.video_format = input;
         self
+    }
+    /// The resolution of the video.
+    pub fn get_video_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.video_format
     }
     /// Consumes the builder and constructs a [`MediaStream`](crate::types::MediaStream).
     pub fn build(self) -> crate::types::MediaStream {

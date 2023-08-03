@@ -40,6 +40,10 @@ impl DeleteScheduleInputBuilder {
         self.channel_id = input;
         self
     }
+    /// Id of the channel whose schedule is being deleted.
+    pub fn get_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_id
+    }
     /// Consumes the builder and constructs a [`DeleteScheduleInput`](crate::operation::delete_schedule::DeleteScheduleInput).
     pub fn build(
         self,

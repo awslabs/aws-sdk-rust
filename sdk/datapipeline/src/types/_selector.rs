@@ -48,6 +48,10 @@ impl SelectorBuilder {
         self.field_name = input;
         self
     }
+    /// <p>The name of the field that the operator will be applied to. The field name is the "key" portion of the field definition in the pipeline definition syntax that is used by the AWS Data Pipeline API. If the field is not set on the object, the condition fails.</p>
+    pub fn get_field_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_name
+    }
     /// <p>Contains a logical operation for comparing the value of a field with a specified value.</p>
     pub fn operator(mut self, input: crate::types::Operator) -> Self {
         self.operator = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl SelectorBuilder {
     pub fn set_operator(mut self, input: ::std::option::Option<crate::types::Operator>) -> Self {
         self.operator = input;
         self
+    }
+    /// <p>Contains a logical operation for comparing the value of a field with a specified value.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::Operator> {
+        &self.operator
     }
     /// Consumes the builder and constructs a [`Selector`](crate::types::Selector).
     pub fn build(self) -> crate::types::Selector {

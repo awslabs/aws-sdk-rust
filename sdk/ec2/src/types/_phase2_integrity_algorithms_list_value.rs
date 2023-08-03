@@ -40,6 +40,10 @@ impl Phase2IntegrityAlgorithmsListValueBuilder {
         self.value = input;
         self
     }
+    /// <p>The integrity algorithm.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// Consumes the builder and constructs a [`Phase2IntegrityAlgorithmsListValue`](crate::types::Phase2IntegrityAlgorithmsListValue).
     pub fn build(self) -> crate::types::Phase2IntegrityAlgorithmsListValue {
         crate::types::Phase2IntegrityAlgorithmsListValue { value: self.value }

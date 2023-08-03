@@ -86,6 +86,10 @@ impl InstanceProfileBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the instance profile.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is <code>false</code> for private devices.</p>
     pub fn package_cleanup(mut self, input: bool) -> Self {
         self.package_cleanup = ::std::option::Option::Some(input);
@@ -95,6 +99,10 @@ impl InstanceProfileBuilder {
     pub fn set_package_cleanup(mut self, input: ::std::option::Option<bool>) -> Self {
         self.package_cleanup = input;
         self
+    }
+    /// <p>When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is <code>false</code> for private devices.</p>
+    pub fn get_package_cleanup(&self) -> &::std::option::Option<bool> {
+        &self.package_cleanup
     }
     /// Appends an item to `exclude_app_packages_from_cleanup`.
     ///
@@ -120,6 +128,13 @@ impl InstanceProfileBuilder {
         self.exclude_app_packages_from_cleanup = input;
         self
     }
+    /// <p>An array of strings containing the list of app packages that should not be cleaned up from the device after a test run completes.</p>
+    /// <p>The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.</p>
+    pub fn get_exclude_app_packages_from_cleanup(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.exclude_app_packages_from_cleanup
+    }
     /// <p>When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is <code>true</code>.</p>
     pub fn reboot_after_use(mut self, input: bool) -> Self {
         self.reboot_after_use = ::std::option::Option::Some(input);
@@ -129,6 +144,10 @@ impl InstanceProfileBuilder {
     pub fn set_reboot_after_use(mut self, input: ::std::option::Option<bool>) -> Self {
         self.reboot_after_use = input;
         self
+    }
+    /// <p>When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is <code>true</code>.</p>
+    pub fn get_reboot_after_use(&self) -> &::std::option::Option<bool> {
+        &self.reboot_after_use
     }
     /// <p>The name of the instance profile.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -140,6 +159,10 @@ impl InstanceProfileBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the instance profile.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the instance profile.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -149,6 +172,10 @@ impl InstanceProfileBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the instance profile.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`InstanceProfile`](crate::types::InstanceProfile).
     pub fn build(self) -> crate::types::InstanceProfile {

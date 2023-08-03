@@ -78,6 +78,10 @@ impl EntityPropertyReferenceBuilder {
         self.component_name = input;
         self
     }
+    /// <p>The name of the component.</p>
+    pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_name
+    }
     /// Adds a key-value pair to `external_id_property`.
     ///
     /// To override the contents of this collection use [`set_external_id_property`](Self::set_external_id_property).
@@ -103,6 +107,14 @@ impl EntityPropertyReferenceBuilder {
         self.external_id_property = input;
         self
     }
+    /// <p>A mapping of external IDs to property names. External IDs uniquely identify properties from external data stores.</p>
+    pub fn get_external_id_property(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.external_id_property
+    }
     /// <p>The ID of the entity.</p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
@@ -112,6 +124,10 @@ impl EntityPropertyReferenceBuilder {
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entity_id = input;
         self
+    }
+    /// <p>The ID of the entity.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_id
     }
     /// <p>The name of the property.</p>
     pub fn property_name(
@@ -128,6 +144,10 @@ impl EntityPropertyReferenceBuilder {
     ) -> Self {
         self.property_name = input;
         self
+    }
+    /// <p>The name of the property.</p>
+    pub fn get_property_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.property_name
     }
     /// Consumes the builder and constructs a [`EntityPropertyReference`](crate::types::EntityPropertyReference).
     pub fn build(self) -> crate::types::EntityPropertyReference {

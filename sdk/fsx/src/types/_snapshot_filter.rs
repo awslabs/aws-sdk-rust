@@ -51,6 +51,10 @@ impl SnapshotFilterBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the filter to use. You can filter by the <code>file-system-id</code> or by <code>volume-id</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::SnapshotFilterName> {
+        &self.name
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -69,6 +73,10 @@ impl SnapshotFilterBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>The <code>file-system-id</code> or <code>volume-id</code> that you are filtering for.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`SnapshotFilter`](crate::types::SnapshotFilter).
     pub fn build(self) -> crate::types::SnapshotFilter {

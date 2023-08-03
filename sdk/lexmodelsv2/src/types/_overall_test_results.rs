@@ -49,6 +49,12 @@ impl OverallTestResultsBuilder {
         self.items = input;
         self
     }
+    /// <p>A list of the overall test results.</p>
+    pub fn get_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OverallTestResultItem>> {
+        &self.items
+    }
     /// Consumes the builder and constructs a [`OverallTestResults`](crate::types::OverallTestResults).
     pub fn build(self) -> crate::types::OverallTestResults {
         crate::types::OverallTestResults { items: self.items }

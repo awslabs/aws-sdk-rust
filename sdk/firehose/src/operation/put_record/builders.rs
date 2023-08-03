@@ -44,6 +44,10 @@ impl PutRecordFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutRecord as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_record::builders::PutRecordInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl PutRecordFluentBuilder {
         self.inner = self.inner.set_delivery_stream_name(input);
         self
     }
+    /// <p>The name of the delivery stream.</p>
+    pub fn get_delivery_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_delivery_stream_name()
+    }
     /// <p>The record.</p>
     pub fn record(mut self, input: crate::types::Record) -> Self {
         self.inner = self.inner.record(input);
@@ -141,5 +149,9 @@ impl PutRecordFluentBuilder {
     pub fn set_record(mut self, input: ::std::option::Option<crate::types::Record>) -> Self {
         self.inner = self.inner.set_record(input);
         self
+    }
+    /// <p>The record.</p>
+    pub fn get_record(&self) -> &::std::option::Option<crate::types::Record> {
+        self.inner.get_record()
     }
 }

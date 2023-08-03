@@ -49,6 +49,10 @@ impl DeletionTaskFailureReasonTypeBuilder {
         self.reason = input;
         self
     }
+    /// <p>A short description of the reason that the service-linked role deletion failed.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
+    }
     /// Appends an item to `role_usage_list`.
     ///
     /// To override the contents of this collection use [`set_role_usage_list`](Self::set_role_usage_list).
@@ -67,6 +71,12 @@ impl DeletionTaskFailureReasonTypeBuilder {
     ) -> Self {
         self.role_usage_list = input;
         self
+    }
+    /// <p>A list of objects that contains details about the service-linked role deletion failure, if that information is returned by the service. If the service-linked role has active sessions or if any resources that were used by the role have not been deleted from the linked service, the role can't be deleted. This parameter includes a list of the resources that are associated with the role and the Region in which the resources are being used.</p>
+    pub fn get_role_usage_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RoleUsageType>> {
+        &self.role_usage_list
     }
     /// Consumes the builder and constructs a [`DeletionTaskFailureReasonType`](crate::types::DeletionTaskFailureReasonType).
     pub fn build(self) -> crate::types::DeletionTaskFailureReasonType {

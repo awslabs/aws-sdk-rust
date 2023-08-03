@@ -49,6 +49,10 @@ impl StartExperimentOutputBuilder {
         self.started_time = input;
         self
     }
+    /// <p>A timestamp that indicates when the experiment started.</p>
+    pub fn get_started_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.started_time
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -45,6 +45,10 @@ impl DescribeApplicationInstanceDetailsInputBuilder {
         self.application_instance_id = input;
         self
     }
+    /// <p>The application instance's ID.</p>
+    pub fn get_application_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_instance_id
+    }
     /// Consumes the builder and constructs a [`DescribeApplicationInstanceDetailsInput`](crate::operation::describe_application_instance_details::DescribeApplicationInstanceDetailsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_application_instance_details::DescribeApplicationInstanceDetailsInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

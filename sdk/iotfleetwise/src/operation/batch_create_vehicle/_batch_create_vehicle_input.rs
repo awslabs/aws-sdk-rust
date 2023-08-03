@@ -50,6 +50,12 @@ impl BatchCreateVehicleInputBuilder {
         self.vehicles = input;
         self
     }
+    /// <p> A list of information about each vehicle to create. For more information, see the API data type.</p>
+    pub fn get_vehicles(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateVehicleRequestItem>> {
+        &self.vehicles
+    }
     /// Consumes the builder and constructs a [`BatchCreateVehicleInput`](crate::operation::batch_create_vehicle::BatchCreateVehicleInput).
     pub fn build(
         self,

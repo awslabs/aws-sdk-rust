@@ -62,6 +62,10 @@ impl ApplicationStateBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The configurationId from the Application Discovery Service that uniquely identifies an application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The current status of an application.</p>
     pub fn application_status(mut self, input: crate::types::ApplicationStatus) -> Self {
         self.application_status = ::std::option::Option::Some(input);
@@ -75,6 +79,12 @@ impl ApplicationStateBuilder {
         self.application_status = input;
         self
     }
+    /// <p>The current status of an application.</p>
+    pub fn get_application_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationStatus> {
+        &self.application_status
+    }
     /// <p>The timestamp when the application status was last updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -87,6 +97,10 @@ impl ApplicationStateBuilder {
     ) -> Self {
         self.last_updated_time = input;
         self
+    }
+    /// <p>The timestamp when the application status was last updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
     }
     /// Consumes the builder and constructs a [`ApplicationState`](crate::types::ApplicationState).
     pub fn build(self) -> crate::types::ApplicationState {

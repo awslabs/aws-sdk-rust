@@ -54,6 +54,10 @@ impl ListRotationsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `rotations`.
     ///
     /// To override the contents of this collection use [`set_rotations`](Self::set_rotations).
@@ -72,6 +76,10 @@ impl ListRotationsOutputBuilder {
     ) -> Self {
         self.rotations = input;
         self
+    }
+    /// <p>Information about rotations that meet the filter criteria.</p>
+    pub fn get_rotations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Rotation>> {
+        &self.rotations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

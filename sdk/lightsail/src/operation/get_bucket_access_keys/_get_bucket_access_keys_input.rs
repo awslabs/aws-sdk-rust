@@ -41,6 +41,10 @@ impl GetBucketAccessKeysInputBuilder {
         self.bucket_name = input;
         self
     }
+    /// <p>The name of the bucket for which to return access keys.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
+    }
     /// Consumes the builder and constructs a [`GetBucketAccessKeysInput`](crate::operation::get_bucket_access_keys::GetBucketAccessKeysInput).
     pub fn build(
         self,

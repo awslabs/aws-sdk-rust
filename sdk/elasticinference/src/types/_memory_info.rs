@@ -40,6 +40,10 @@ impl MemoryInfoBuilder {
         self.size_in_mi_b = input;
         self
     }
+    /// <p> The size in mebibytes of the Elastic Inference Accelerator type. </p>
+    pub fn get_size_in_mi_b(&self) -> &::std::option::Option<i32> {
+        &self.size_in_mi_b
+    }
     /// Consumes the builder and constructs a [`MemoryInfo`](crate::types::MemoryInfo).
     pub fn build(self) -> crate::types::MemoryInfo {
         crate::types::MemoryInfo {

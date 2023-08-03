@@ -55,6 +55,10 @@ impl LookupEventsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the LookupEvents as a reference.
+    pub fn as_input(&self) -> &crate::operation::lookup_events::builders::LookupEventsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -155,6 +159,12 @@ impl LookupEventsFluentBuilder {
         self.inner = self.inner.set_lookup_attributes(input);
         self
     }
+    /// <p>Contains a list of lookup attributes. Currently the list can contain only one item.</p>
+    pub fn get_lookup_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LookupAttribute>> {
+        self.inner.get_lookup_attributes()
+    }
     /// <p>Specifies that only events that occur after or at the specified time are returned. If the specified start time is after the specified end time, an error is returned.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
@@ -167,6 +177,10 @@ impl LookupEventsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
+    }
+    /// <p>Specifies that only events that occur after or at the specified time are returned. If the specified start time is after the specified end time, an error is returned.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
     }
     /// <p>Specifies that only events that occur before or at the specified time are returned. If the specified end time is before the specified start time, an error is returned.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -181,6 +195,10 @@ impl LookupEventsFluentBuilder {
         self.inner = self.inner.set_end_time(input);
         self
     }
+    /// <p>Specifies that only events that occur before or at the specified time are returned. If the specified end time is before the specified start time, an error is returned.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time()
+    }
     /// <p>Specifies the event category. If you do not specify an event category, events of the category are not returned in the response. For example, if you do not specify <code>insight</code> as the value of <code>EventCategory</code>, no Insights events are returned.</p>
     pub fn event_category(mut self, input: crate::types::EventCategory) -> Self {
         self.inner = self.inner.event_category(input);
@@ -194,6 +212,10 @@ impl LookupEventsFluentBuilder {
         self.inner = self.inner.set_event_category(input);
         self
     }
+    /// <p>Specifies the event category. If you do not specify an event category, events of the category are not returned in the response. For example, if you do not specify <code>insight</code> as the value of <code>EventCategory</code>, no Insights events are returned.</p>
+    pub fn get_event_category(&self) -> &::std::option::Option<crate::types::EventCategory> {
+        self.inner.get_event_category()
+    }
     /// <p>The number of events to return. Possible values are 1 through 50. The default is 50.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -204,6 +226,10 @@ impl LookupEventsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The number of events to return. Possible values are 1 through 50. The default is 50.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -213,5 +239,9 @@ impl LookupEventsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

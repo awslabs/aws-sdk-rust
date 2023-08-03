@@ -67,6 +67,10 @@ impl GetMembersOutputBuilder {
         self.members = input;
         self
     }
+    /// <p>A list of members.</p>
+    pub fn get_members(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Member>> {
+        &self.members
+    }
     /// Appends an item to `unprocessed_accounts`.
     ///
     /// To override the contents of this collection use [`set_unprocessed_accounts`](Self::set_unprocessed_accounts).
@@ -85,6 +89,12 @@ impl GetMembersOutputBuilder {
     ) -> Self {
         self.unprocessed_accounts = input;
         self
+    }
+    /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
+    pub fn get_unprocessed_accounts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>> {
+        &self.unprocessed_accounts
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

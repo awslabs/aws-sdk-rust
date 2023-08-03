@@ -37,6 +37,10 @@ impl AcceptVpcPeeringConnectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AcceptVpcPeeringConnection as a reference.
+    pub fn as_input(&self) -> &crate::operation::accept_vpc_peering_connection::builders::AcceptVpcPeeringConnectionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl AcceptVpcPeeringConnectionFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>The ID of the VPC peering connection. You must specify this parameter in the request.</p>
     pub fn vpc_peering_connection_id(
         mut self,
@@ -142,5 +150,9 @@ impl AcceptVpcPeeringConnectionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_vpc_peering_connection_id(input);
         self
+    }
+    /// <p>The ID of the VPC peering connection. You must specify this parameter in the request.</p>
+    pub fn get_vpc_peering_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpc_peering_connection_id()
     }
 }

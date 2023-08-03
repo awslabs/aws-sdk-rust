@@ -48,6 +48,10 @@ impl PointOfInterestBuilder {
         self.begin_offset_millis = input;
         self
     }
+    /// <p>The beginning offset in milliseconds where the category rule was detected.</p>
+    pub fn get_begin_offset_millis(&self) -> &::std::option::Option<i32> {
+        &self.begin_offset_millis
+    }
     /// <p>The ending offset in milliseconds where the category rule was detected.</p>
     pub fn end_offset_millis(mut self, input: i32) -> Self {
         self.end_offset_millis = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl PointOfInterestBuilder {
     pub fn set_end_offset_millis(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end_offset_millis = input;
         self
+    }
+    /// <p>The ending offset in milliseconds where the category rule was detected.</p>
+    pub fn get_end_offset_millis(&self) -> &::std::option::Option<i32> {
+        &self.end_offset_millis
     }
     /// Consumes the builder and constructs a [`PointOfInterest`](crate::types::PointOfInterest).
     pub fn build(self) -> crate::types::PointOfInterest {

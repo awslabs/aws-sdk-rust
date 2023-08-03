@@ -57,6 +57,10 @@ impl GetIntrospectionSchemaInputBuilder {
         self.api_id = input;
         self
     }
+    /// <p>The API ID.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
+    }
     /// <p>The schema format: SDL or JSON.</p>
     pub fn format(mut self, input: crate::types::OutputType) -> Self {
         self.format = ::std::option::Option::Some(input);
@@ -67,6 +71,10 @@ impl GetIntrospectionSchemaInputBuilder {
         self.format = input;
         self
     }
+    /// <p>The schema format: SDL or JSON.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::OutputType> {
+        &self.format
+    }
     /// <p>A flag that specifies whether the schema introspection should contain directives.</p>
     pub fn include_directives(mut self, input: bool) -> Self {
         self.include_directives = ::std::option::Option::Some(input);
@@ -76,6 +84,10 @@ impl GetIntrospectionSchemaInputBuilder {
     pub fn set_include_directives(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_directives = input;
         self
+    }
+    /// <p>A flag that specifies whether the schema introspection should contain directives.</p>
+    pub fn get_include_directives(&self) -> &::std::option::Option<bool> {
+        &self.include_directives
     }
     /// Consumes the builder and constructs a [`GetIntrospectionSchemaInput`](crate::operation::get_introspection_schema::GetIntrospectionSchemaInput).
     pub fn build(

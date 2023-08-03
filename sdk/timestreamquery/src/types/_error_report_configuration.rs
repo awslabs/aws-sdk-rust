@@ -43,6 +43,10 @@ impl ErrorReportConfigurationBuilder {
         self.s3_configuration = input;
         self
     }
+    /// <p>The S3 configuration for the error reports.</p>
+    pub fn get_s3_configuration(&self) -> &::std::option::Option<crate::types::S3Configuration> {
+        &self.s3_configuration
+    }
     /// Consumes the builder and constructs a [`ErrorReportConfiguration`](crate::types::ErrorReportConfiguration).
     pub fn build(self) -> crate::types::ErrorReportConfiguration {
         crate::types::ErrorReportConfiguration {

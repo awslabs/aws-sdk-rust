@@ -155,6 +155,21 @@ impl AnalyticsIntentFilterBuilder {
         self.name = input;
         self
     }
+    /// <p>The category by which to filter the intents. The descriptions for each option are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>BotAlias</code> – The name of the bot alias.</p> </li>
+    /// <li> <p> <code>BotVersion</code> – The version of the bot.</p> </li>
+    /// <li> <p> <code>LocaleId</code> – The locale of the bot.</p> </li>
+    /// <li> <p> <code>Modality</code> – The modality of the session with the bot (audio, DTMF, or text).</p> </li>
+    /// <li> <p> <code>Channel</code> – The channel that the bot is integrated with.</p> </li>
+    /// <li> <p> <code>SessionId</code> – The identifier of the session with the bot.</p> </li>
+    /// <li> <p> <code>OriginatingRequestId</code> – The identifier of the first request in a session.</p> </li>
+    /// <li> <p> <code>IntentName</code> – The name of the intent.</p> </li>
+    /// <li> <p> <code>IntentEndState</code> – The final state of the intent.</p> </li>
+    /// </ul>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::AnalyticsIntentFilterName> {
+        &self.name
+    }
     /// <p>The operation by which to filter the category. The following operations are possible:</p>
     /// <ul>
     /// <li> <p> <code>CO</code> – Contains</p> </li>
@@ -204,6 +219,28 @@ impl AnalyticsIntentFilterBuilder {
         self.operator = input;
         self
     }
+    /// <p>The operation by which to filter the category. The following operations are possible:</p>
+    /// <ul>
+    /// <li> <p> <code>CO</code> – Contains</p> </li>
+    /// <li> <p> <code>EQ</code> – Equals</p> </li>
+    /// <li> <p> <code>GT</code> – Greater than</p> </li>
+    /// <li> <p> <code>LT</code> – Less than</p> </li>
+    /// </ul>
+    /// <p>The operators that each filter supports are listed below:</p>
+    /// <ul>
+    /// <li> <p> <code>BotAlias</code> – <code>EQ</code>.</p> </li>
+    /// <li> <p> <code>BotVersion</code> – <code>EQ</code>.</p> </li>
+    /// <li> <p> <code>LocaleId</code> – <code>EQ</code>.</p> </li>
+    /// <li> <p> <code>Modality</code> – <code>EQ</code>.</p> </li>
+    /// <li> <p> <code>Channel</code> – <code>EQ</code>.</p> </li>
+    /// <li> <p> <code>SessionId</code> – <code>EQ</code>.</p> </li>
+    /// <li> <p> <code>OriginatingRequestId</code> – <code>EQ</code>.</p> </li>
+    /// <li> <p> <code>IntentName</code> – <code>EQ</code>, <code>CO</code>.</p> </li>
+    /// <li> <p> <code>IntentEndState</code> – <code>EQ</code>, <code>CO</code>.</p> </li>
+    /// </ul>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::AnalyticsFilterOperator> {
+        &self.operator
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -222,6 +259,10 @@ impl AnalyticsIntentFilterBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>An array containing the values of the category by which to apply the operator to filter the results. You can provide multiple values if the operator is <code>EQ</code> or <code>CO</code>. If you provide multiple values, you filter for results that equal/contain any of the values. For example, if the <code>name</code>, <code>operator</code>, and <code>values</code> fields are <code>Modality</code>, <code>EQ</code>, and <code>[Speech, Text]</code>, the operation filters for results where the modality was either <code>Speech</code> or <code>Text</code>.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`AnalyticsIntentFilter`](crate::types::AnalyticsIntentFilter).
     pub fn build(self) -> crate::types::AnalyticsIntentFilter {

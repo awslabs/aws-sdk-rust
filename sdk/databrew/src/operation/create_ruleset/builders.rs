@@ -36,6 +36,12 @@ impl CreateRulesetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateRuleset as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_ruleset::builders::CreateRulesetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl CreateRulesetFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the ruleset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The description of the ruleset.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -128,6 +138,10 @@ impl CreateRulesetFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The description of the ruleset.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.</p>
     pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_arn(input.into());
@@ -137,6 +151,10 @@ impl CreateRulesetFluentBuilder {
     pub fn set_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.</p>
+    pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_arn()
     }
     /// Appends an item to `Rules`.
     ///
@@ -154,6 +172,10 @@ impl CreateRulesetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_rules(input);
         self
+    }
+    /// <p>A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.</p>
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Rule>> {
+        self.inner.get_rules()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -177,5 +199,13 @@ impl CreateRulesetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Metadata tags to apply to the ruleset.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

@@ -48,6 +48,10 @@ impl TgwOnDeviceServiceConfigurationBuilder {
         self.storage_limit = input;
         self
     }
+    /// <p>The maximum number of virtual tapes to store on one Snow Family device. Due to physical resource limitations, this value must be set to 80 for Snowball Edge.</p>
+    pub fn get_storage_limit(&self) -> &::std::option::Option<i32> {
+        &self.storage_limit
+    }
     /// <p>The scale unit of the virtual tapes on the device.</p>
     pub fn storage_unit(mut self, input: crate::types::StorageUnit) -> Self {
         self.storage_unit = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl TgwOnDeviceServiceConfigurationBuilder {
     ) -> Self {
         self.storage_unit = input;
         self
+    }
+    /// <p>The scale unit of the virtual tapes on the device.</p>
+    pub fn get_storage_unit(&self) -> &::std::option::Option<crate::types::StorageUnit> {
+        &self.storage_unit
     }
     /// Consumes the builder and constructs a [`TgwOnDeviceServiceConfiguration`](crate::types::TgwOnDeviceServiceConfiguration).
     pub fn build(self) -> crate::types::TgwOnDeviceServiceConfiguration {

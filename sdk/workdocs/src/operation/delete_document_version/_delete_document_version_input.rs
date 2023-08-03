@@ -79,6 +79,10 @@ impl DeleteDocumentVersionInputBuilder {
         self.authentication_token = input;
         self
     }
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication_token
+    }
     /// <p>The ID of the document associated with the version being deleted.</p>
     pub fn document_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_id = ::std::option::Option::Some(input.into());
@@ -88,6 +92,10 @@ impl DeleteDocumentVersionInputBuilder {
     pub fn set_document_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_id = input;
         self
+    }
+    /// <p>The ID of the document associated with the version being deleted.</p>
+    pub fn get_document_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_id
     }
     /// <p>The ID of the version being deleted.</p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -99,6 +107,10 @@ impl DeleteDocumentVersionInputBuilder {
         self.version_id = input;
         self
     }
+    /// <p>The ID of the version being deleted.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
+    }
     /// <p>Deletes all versions of a document prior to the current version.</p>
     pub fn delete_prior_versions(mut self, input: bool) -> Self {
         self.delete_prior_versions = ::std::option::Option::Some(input);
@@ -108,6 +120,10 @@ impl DeleteDocumentVersionInputBuilder {
     pub fn set_delete_prior_versions(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete_prior_versions = input;
         self
+    }
+    /// <p>Deletes all versions of a document prior to the current version.</p>
+    pub fn get_delete_prior_versions(&self) -> &::std::option::Option<bool> {
+        &self.delete_prior_versions
     }
     /// Consumes the builder and constructs a [`DeleteDocumentVersionInput`](crate::operation::delete_document_version::DeleteDocumentVersionInput).
     pub fn build(

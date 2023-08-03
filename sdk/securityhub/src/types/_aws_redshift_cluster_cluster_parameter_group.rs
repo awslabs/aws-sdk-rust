@@ -76,6 +76,14 @@ impl AwsRedshiftClusterClusterParameterGroupBuilder {
         self.cluster_parameter_status_list = input;
         self
     }
+    /// <p>The list of parameter statuses.</p>
+    pub fn get_cluster_parameter_status_list(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::AwsRedshiftClusterClusterParameterStatus>,
+    > {
+        &self.cluster_parameter_status_list
+    }
     /// <p>The status of updates to the parameters.</p>
     pub fn parameter_apply_status(
         mut self,
@@ -92,6 +100,10 @@ impl AwsRedshiftClusterClusterParameterGroupBuilder {
         self.parameter_apply_status = input;
         self
     }
+    /// <p>The status of updates to the parameters.</p>
+    pub fn get_parameter_apply_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_apply_status
+    }
     /// <p>The name of the parameter group.</p>
     pub fn parameter_group_name(
         mut self,
@@ -107,6 +119,10 @@ impl AwsRedshiftClusterClusterParameterGroupBuilder {
     ) -> Self {
         self.parameter_group_name = input;
         self
+    }
+    /// <p>The name of the parameter group.</p>
+    pub fn get_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_group_name
     }
     /// Consumes the builder and constructs a [`AwsRedshiftClusterClusterParameterGroup`](crate::types::AwsRedshiftClusterClusterParameterGroup).
     pub fn build(self) -> crate::types::AwsRedshiftClusterClusterParameterGroup {

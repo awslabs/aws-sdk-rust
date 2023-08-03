@@ -48,6 +48,10 @@ impl ImageScanningConfigurationBuilder {
         self.image_scanning_enabled = input;
         self
     }
+    /// <p>A setting that indicates whether Image Builder keeps a snapshot of the vulnerability scans that Amazon Inspector runs against the build instance when you create a new image.</p>
+    pub fn get_image_scanning_enabled(&self) -> &::std::option::Option<bool> {
+        &self.image_scanning_enabled
+    }
     /// <p>Contains Amazon ECR settings for vulnerability scans.</p>
     pub fn ecr_configuration(mut self, input: crate::types::EcrConfiguration) -> Self {
         self.ecr_configuration = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl ImageScanningConfigurationBuilder {
     ) -> Self {
         self.ecr_configuration = input;
         self
+    }
+    /// <p>Contains Amazon ECR settings for vulnerability scans.</p>
+    pub fn get_ecr_configuration(&self) -> &::std::option::Option<crate::types::EcrConfiguration> {
+        &self.ecr_configuration
     }
     /// Consumes the builder and constructs a [`ImageScanningConfiguration`](crate::types::ImageScanningConfiguration).
     pub fn build(self) -> crate::types::ImageScanningConfiguration {

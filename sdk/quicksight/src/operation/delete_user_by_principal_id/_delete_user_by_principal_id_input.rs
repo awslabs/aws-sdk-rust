@@ -58,6 +58,10 @@ impl DeleteUserByPrincipalIdInputBuilder {
         self.principal_id = input;
         self
     }
+    /// <p>The principal ID of the user.</p>
+    pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal_id
+    }
     /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub fn aws_account_id(
         mut self,
@@ -74,6 +78,10 @@ impl DeleteUserByPrincipalIdInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl DeleteUserByPrincipalIdInputBuilder {
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
         self
+    }
+    /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
     }
     /// Consumes the builder and constructs a [`DeleteUserByPrincipalIdInput`](crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdInput).
     pub fn build(

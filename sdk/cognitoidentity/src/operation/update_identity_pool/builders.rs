@@ -37,6 +37,12 @@ impl UpdateIdentityPoolFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateIdentityPool as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_identity_pool::builders::UpdateIdentityPoolInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl UpdateIdentityPoolFluentBuilder {
         self.inner = self.inner.set_identity_pool_id(input);
         self
     }
+    /// <p>An identity pool ID in the format REGION:GUID.</p>
+    pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_pool_id()
+    }
     /// <p>A string that you provide.</p>
     pub fn identity_pool_name(
         mut self,
@@ -149,6 +159,10 @@ impl UpdateIdentityPoolFluentBuilder {
         self.inner = self.inner.set_identity_pool_name(input);
         self
     }
+    /// <p>A string that you provide.</p>
+    pub fn get_identity_pool_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_pool_name()
+    }
     /// <p>TRUE if the identity pool supports unauthenticated logins.</p>
     pub fn allow_unauthenticated_identities(mut self, input: bool) -> Self {
         self.inner = self.inner.allow_unauthenticated_identities(input);
@@ -162,6 +176,10 @@ impl UpdateIdentityPoolFluentBuilder {
         self.inner = self.inner.set_allow_unauthenticated_identities(input);
         self
     }
+    /// <p>TRUE if the identity pool supports unauthenticated logins.</p>
+    pub fn get_allow_unauthenticated_identities(&self) -> &::std::option::Option<bool> {
+        self.inner.get_allow_unauthenticated_identities()
+    }
     /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
     pub fn allow_classic_flow(mut self, input: bool) -> Self {
         self.inner = self.inner.allow_classic_flow(input);
@@ -171,6 +189,10 @@ impl UpdateIdentityPoolFluentBuilder {
     pub fn set_allow_classic_flow(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_allow_classic_flow(input);
         self
+    }
+    /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
+    pub fn get_allow_classic_flow(&self) -> &::std::option::Option<bool> {
+        self.inner.get_allow_classic_flow()
     }
     /// Adds a key-value pair to `SupportedLoginProviders`.
     ///
@@ -195,6 +217,14 @@ impl UpdateIdentityPoolFluentBuilder {
         self.inner = self.inner.set_supported_login_providers(input);
         self
     }
+    /// <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
+    pub fn get_supported_login_providers(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_supported_login_providers()
+    }
     /// <p>The "domain" by which Cognito will refer to your users.</p>
     pub fn developer_provider_name(
         mut self,
@@ -210,6 +240,10 @@ impl UpdateIdentityPoolFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_developer_provider_name(input);
         self
+    }
+    /// <p>The "domain" by which Cognito will refer to your users.</p>
+    pub fn get_developer_provider_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_developer_provider_name()
     }
     /// Appends an item to `OpenIdConnectProviderARNs`.
     ///
@@ -231,6 +265,12 @@ impl UpdateIdentityPoolFluentBuilder {
         self.inner = self.inner.set_open_id_connect_provider_ar_ns(input);
         self
     }
+    /// <p>The ARNs of the OpenID Connect providers.</p>
+    pub fn get_open_id_connect_provider_ar_ns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_open_id_connect_provider_ar_ns()
+    }
     /// Appends an item to `CognitoIdentityProviders`.
     ///
     /// To override the contents of this collection use [`set_cognito_identity_providers`](Self::set_cognito_identity_providers).
@@ -251,6 +291,12 @@ impl UpdateIdentityPoolFluentBuilder {
         self.inner = self.inner.set_cognito_identity_providers(input);
         self
     }
+    /// <p>A list representing an Amazon Cognito user pool and its client ID.</p>
+    pub fn get_cognito_identity_providers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CognitoIdentityProvider>> {
+        self.inner.get_cognito_identity_providers()
+    }
     /// Appends an item to `SamlProviderARNs`.
     ///
     /// To override the contents of this collection use [`set_saml_provider_ar_ns`](Self::set_saml_provider_ar_ns).
@@ -270,6 +316,12 @@ impl UpdateIdentityPoolFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_saml_provider_ar_ns(input);
         self
+    }
+    /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
+    pub fn get_saml_provider_ar_ns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_saml_provider_ar_ns()
     }
     /// Adds a key-value pair to `IdentityPoolTags`.
     ///
@@ -293,5 +345,13 @@ impl UpdateIdentityPoolFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_identity_pool_tags(input);
         self
+    }
+    /// <p>The tags that are assigned to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
+    pub fn get_identity_pool_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_identity_pool_tags()
     }
 }

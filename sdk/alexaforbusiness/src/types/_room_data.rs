@@ -80,6 +80,10 @@ impl RoomDataBuilder {
         self.room_arn = input;
         self
     }
+    /// <p>The ARN of a room.</p>
+    pub fn get_room_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.room_arn
+    }
     /// <p>The name of a room.</p>
     pub fn room_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.room_name = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl RoomDataBuilder {
         self.room_name = input;
         self
     }
+    /// <p>The name of a room.</p>
+    pub fn get_room_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.room_name
+    }
     /// <p>The description of a room.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -99,6 +107,10 @@ impl RoomDataBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of a room.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The provider calendar ARN of a room.</p>
     pub fn provider_calendar_id(
@@ -116,6 +128,10 @@ impl RoomDataBuilder {
         self.provider_calendar_id = input;
         self
     }
+    /// <p>The provider calendar ARN of a room.</p>
+    pub fn get_provider_calendar_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provider_calendar_id
+    }
     /// <p>The profile ARN of a room.</p>
     pub fn profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_arn = ::std::option::Option::Some(input.into());
@@ -126,6 +142,10 @@ impl RoomDataBuilder {
         self.profile_arn = input;
         self
     }
+    /// <p>The profile ARN of a room.</p>
+    pub fn get_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_arn
+    }
     /// <p>The profile name of a room.</p>
     pub fn profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_name = ::std::option::Option::Some(input.into());
@@ -135,6 +155,10 @@ impl RoomDataBuilder {
     pub fn set_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_name = input;
         self
+    }
+    /// <p>The profile name of a room.</p>
+    pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_name
     }
     /// Consumes the builder and constructs a [`RoomData`](crate::types::RoomData).
     pub fn build(self) -> crate::types::RoomData {

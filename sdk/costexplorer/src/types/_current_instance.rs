@@ -126,6 +126,10 @@ impl CurrentInstanceBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>Resource ID of the current instance.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>The name that you given an instance. This field shows as blank if you haven't given the instance a name.</p>
     pub fn instance_name(
         mut self,
@@ -141,6 +145,10 @@ impl CurrentInstanceBuilder {
     ) -> Self {
         self.instance_name = input;
         self
+    }
+    /// <p>The name that you given an instance. This field shows as blank if you haven't given the instance a name.</p>
+    pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_name
     }
     /// Appends an item to `tags`.
     ///
@@ -161,6 +169,10 @@ impl CurrentInstanceBuilder {
         self.tags = input;
         self
     }
+    /// <p>Cost allocation resource tags that are applied to the instance.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagValues>> {
+        &self.tags
+    }
     /// <p>Details about the resource and utilization.</p>
     pub fn resource_details(mut self, input: crate::types::ResourceDetails) -> Self {
         self.resource_details = ::std::option::Option::Some(input);
@@ -174,6 +186,10 @@ impl CurrentInstanceBuilder {
         self.resource_details = input;
         self
     }
+    /// <p>Details about the resource and utilization.</p>
+    pub fn get_resource_details(&self) -> &::std::option::Option<crate::types::ResourceDetails> {
+        &self.resource_details
+    }
     /// <p>Utilization information of the current instance during the lookback period.</p>
     pub fn resource_utilization(mut self, input: crate::types::ResourceUtilization) -> Self {
         self.resource_utilization = ::std::option::Option::Some(input);
@@ -186,6 +202,12 @@ impl CurrentInstanceBuilder {
     ) -> Self {
         self.resource_utilization = input;
         self
+    }
+    /// <p>Utilization information of the current instance during the lookback period.</p>
+    pub fn get_resource_utilization(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceUtilization> {
+        &self.resource_utilization
     }
     /// <p>The number of hours during the lookback period that's covered by reservations.</p>
     pub fn reservation_covered_hours_in_lookback_period(
@@ -204,6 +226,12 @@ impl CurrentInstanceBuilder {
         self.reservation_covered_hours_in_lookback_period = input;
         self
     }
+    /// <p>The number of hours during the lookback period that's covered by reservations.</p>
+    pub fn get_reservation_covered_hours_in_lookback_period(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.reservation_covered_hours_in_lookback_period
+    }
     /// <p>The number of hours during the lookback period that's covered by Savings Plans.</p>
     pub fn savings_plans_covered_hours_in_lookback_period(
         mut self,
@@ -221,6 +249,12 @@ impl CurrentInstanceBuilder {
         self.savings_plans_covered_hours_in_lookback_period = input;
         self
     }
+    /// <p>The number of hours during the lookback period that's covered by Savings Plans.</p>
+    pub fn get_savings_plans_covered_hours_in_lookback_period(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.savings_plans_covered_hours_in_lookback_period
+    }
     /// <p>The number of hours during the lookback period that's billed at On-Demand rates.</p>
     pub fn on_demand_hours_in_lookback_period(
         mut self,
@@ -236,6 +270,12 @@ impl CurrentInstanceBuilder {
     ) -> Self {
         self.on_demand_hours_in_lookback_period = input;
         self
+    }
+    /// <p>The number of hours during the lookback period that's billed at On-Demand rates.</p>
+    pub fn get_on_demand_hours_in_lookback_period(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.on_demand_hours_in_lookback_period
     }
     /// <p>The total number of hours that the instance ran during the lookback period.</p>
     pub fn total_running_hours_in_lookback_period(
@@ -253,6 +293,12 @@ impl CurrentInstanceBuilder {
         self.total_running_hours_in_lookback_period = input;
         self
     }
+    /// <p>The total number of hours that the instance ran during the lookback period.</p>
+    pub fn get_total_running_hours_in_lookback_period(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.total_running_hours_in_lookback_period
+    }
     /// <p>The current On-Demand cost of operating this instance on a monthly basis.</p>
     pub fn monthly_cost(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monthly_cost = ::std::option::Option::Some(input.into());
@@ -262,6 +308,10 @@ impl CurrentInstanceBuilder {
     pub fn set_monthly_cost(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monthly_cost = input;
         self
+    }
+    /// <p>The current On-Demand cost of operating this instance on a monthly basis.</p>
+    pub fn get_monthly_cost(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monthly_cost
     }
     /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
     pub fn currency_code(
@@ -278,6 +328,10 @@ impl CurrentInstanceBuilder {
     ) -> Self {
         self.currency_code = input;
         self
+    }
+    /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
+    pub fn get_currency_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.currency_code
     }
     /// Consumes the builder and constructs a [`CurrentInstance`](crate::types::CurrentInstance).
     pub fn build(self) -> crate::types::CurrentInstance {

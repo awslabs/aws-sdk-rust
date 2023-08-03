@@ -38,6 +38,10 @@ impl CreateMeshFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateMesh as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_mesh::builders::CreateMeshInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -120,6 +124,10 @@ impl CreateMeshFluentBuilder {
         self.inner = self.inner.set_mesh_name(input);
         self
     }
+    /// <p>The name to use for the service mesh.</p>
+    pub fn get_mesh_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_mesh_name()
+    }
     /// <p>The service mesh specification to apply.</p>
     pub fn spec(mut self, input: crate::types::MeshSpec) -> Self {
         self.inner = self.inner.spec(input);
@@ -129,6 +137,10 @@ impl CreateMeshFluentBuilder {
     pub fn set_spec(mut self, input: ::std::option::Option<crate::types::MeshSpec>) -> Self {
         self.inner = self.inner.set_spec(input);
         self
+    }
+    /// <p>The service mesh specification to apply.</p>
+    pub fn get_spec(&self) -> &::std::option::Option<crate::types::MeshSpec> {
+        self.inner.get_spec()
     }
     /// Appends an item to `tags`.
     ///
@@ -147,6 +159,10 @@ impl CreateMeshFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Optional metadata that you can apply to the service mesh to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagRef>> {
+        self.inner.get_tags()
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -156,5 +172,9 @@ impl CreateMeshFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

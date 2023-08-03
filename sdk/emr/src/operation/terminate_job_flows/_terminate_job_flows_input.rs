@@ -50,6 +50,12 @@ impl TerminateJobFlowsInputBuilder {
         self.job_flow_ids = input;
         self
     }
+    /// <p>A list of job flows to be shut down.</p>
+    pub fn get_job_flow_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.job_flow_ids
+    }
     /// Consumes the builder and constructs a [`TerminateJobFlowsInput`](crate::operation::terminate_job_flows::TerminateJobFlowsInput).
     pub fn build(
         self,

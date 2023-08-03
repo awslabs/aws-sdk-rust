@@ -36,6 +36,12 @@ impl ImportWorkspaceImageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ImportWorkspaceImage as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::import_workspace_image::builders::ImportWorkspaceImageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl ImportWorkspaceImageFluentBuilder {
         self.inner = self.inner.set_ec2_image_id(input);
         self
     }
+    /// <p>The identifier of the EC2 image.</p>
+    pub fn get_ec2_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ec2_image_id()
+    }
     /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP, WorkSpaces Streaming Protocol (WSP), or bring your own protocol (BYOP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. To use BYOP, specify a value that ends in <code>_BYOP</code>.</p>
     /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>, <code>BYOL_REGULAR_WSP</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on the protocol.</p> <note>
     /// <p>The <code>BYOL_REGULAR_BYOP</code> and <code>BYOL_GRAPHICS_G4DN_BYOP</code> values are only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use these values. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
@@ -148,6 +158,15 @@ impl ImportWorkspaceImageFluentBuilder {
         self.inner = self.inner.set_ingestion_process(input);
         self
     }
+    /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP, WorkSpaces Streaming Protocol (WSP), or bring your own protocol (BYOP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. To use BYOP, specify a value that ends in <code>_BYOP</code>.</p>
+    /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>, <code>BYOL_REGULAR_WSP</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on the protocol.</p> <note>
+    /// <p>The <code>BYOL_REGULAR_BYOP</code> and <code>BYOL_GRAPHICS_G4DN_BYOP</code> values are only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use these values. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
+    /// </note>
+    pub fn get_ingestion_process(
+        &self,
+    ) -> &::std::option::Option<crate::types::WorkspaceImageIngestionProcess> {
+        self.inner.get_ingestion_process()
+    }
     /// <p>The name of the WorkSpace image.</p>
     pub fn image_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.image_name(input.into());
@@ -157,6 +176,10 @@ impl ImportWorkspaceImageFluentBuilder {
     pub fn set_image_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_image_name(input);
         self
+    }
+    /// <p>The name of the WorkSpace image.</p>
+    pub fn get_image_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_image_name()
     }
     /// <p>The description of the WorkSpace image.</p>
     pub fn image_description(
@@ -174,6 +197,10 @@ impl ImportWorkspaceImageFluentBuilder {
         self.inner = self.inner.set_image_description(input);
         self
     }
+    /// <p>The description of the WorkSpace image.</p>
+    pub fn get_image_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_image_description()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -190,6 +217,10 @@ impl ImportWorkspaceImageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
     /// Appends an item to `Applications`.
     ///
@@ -217,5 +248,16 @@ impl ImportWorkspaceImageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_applications(input);
         self
+    }
+    /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 and 11 BYOL images. For more information about subscribing to Office for BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p> <note>
+    /// <ul>
+    /// <li> <p>Although this parameter is an array, only one item is allowed at this time.</p> </li>
+    /// <li> <p>Windows 11 only supports <code>Microsoft_Office_2019</code>.</p> </li>
+    /// </ul>
+    /// </note>
+    pub fn get_applications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Application>> {
+        self.inner.get_applications()
     }
 }

@@ -54,6 +54,10 @@ impl ReleaseSummaryBuilder {
         self.release_version = input;
         self
     }
+    /// <p>The release version. </p>
+    pub fn get_release_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.release_version
+    }
     /// <p>The timestamp of the release. </p>
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl ReleaseSummaryBuilder {
     ) -> Self {
         self.timestamp = input;
         self
+    }
+    /// <p>The timestamp of the release. </p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
     }
     /// Consumes the builder and constructs a [`ReleaseSummary`](crate::types::ReleaseSummary).
     pub fn build(self) -> crate::types::ReleaseSummary {

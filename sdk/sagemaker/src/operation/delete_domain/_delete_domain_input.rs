@@ -47,6 +47,10 @@ impl DeleteDomainInputBuilder {
         self.domain_id = input;
         self
     }
+    /// <p>The domain ID.</p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_id
+    }
     /// <p>The retention policy for this domain, which specifies whether resources will be retained after the Domain is deleted. By default, all resources are retained (not automatically deleted). </p>
     pub fn retention_policy(mut self, input: crate::types::RetentionPolicy) -> Self {
         self.retention_policy = ::std::option::Option::Some(input);
@@ -59,6 +63,10 @@ impl DeleteDomainInputBuilder {
     ) -> Self {
         self.retention_policy = input;
         self
+    }
+    /// <p>The retention policy for this domain, which specifies whether resources will be retained after the Domain is deleted. By default, all resources are retained (not automatically deleted). </p>
+    pub fn get_retention_policy(&self) -> &::std::option::Option<crate::types::RetentionPolicy> {
+        &self.retention_policy
     }
     /// Consumes the builder and constructs a [`DeleteDomainInput`](crate::operation::delete_domain::DeleteDomainInput).
     pub fn build(

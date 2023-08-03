@@ -63,6 +63,10 @@ impl GetReadinessCheckResourceStatusInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The number of objects that you want to return with this call.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl GetReadinessCheckResourceStatusInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token that identifies which batch of results you want to see.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>Name of a readiness check.</p>
     pub fn readiness_check_name(
@@ -89,6 +97,10 @@ impl GetReadinessCheckResourceStatusInputBuilder {
         self.readiness_check_name = input;
         self
     }
+    /// <p>Name of a readiness check.</p>
+    pub fn get_readiness_check_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.readiness_check_name
+    }
     /// <p>The resource identifier, which is the Amazon Resource Name (ARN) or the identifier generated for the resource by Application Recovery Controller (for example, for a DNS target resource).</p>
     pub fn resource_identifier(
         mut self,
@@ -104,6 +116,10 @@ impl GetReadinessCheckResourceStatusInputBuilder {
     ) -> Self {
         self.resource_identifier = input;
         self
+    }
+    /// <p>The resource identifier, which is the Amazon Resource Name (ARN) or the identifier generated for the resource by Application Recovery Controller (for example, for a DNS target resource).</p>
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_identifier
     }
     /// Consumes the builder and constructs a [`GetReadinessCheckResourceStatusInput`](crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusInput).
     pub fn build(

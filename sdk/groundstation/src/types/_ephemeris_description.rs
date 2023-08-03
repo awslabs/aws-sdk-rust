@@ -51,6 +51,10 @@ impl EphemerisDescriptionBuilder {
         self.source_s3_object = input;
         self
     }
+    /// <p>Source S3 object used for the ephemeris.</p>
+    pub fn get_source_s3_object(&self) -> &::std::option::Option<crate::types::S3Object> {
+        &self.source_s3_object
+    }
     /// <p>Supplied ephemeris data.</p>
     pub fn ephemeris_data(
         mut self,
@@ -66,6 +70,10 @@ impl EphemerisDescriptionBuilder {
     ) -> Self {
         self.ephemeris_data = input;
         self
+    }
+    /// <p>Supplied ephemeris data.</p>
+    pub fn get_ephemeris_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ephemeris_data
     }
     /// Consumes the builder and constructs a [`EphemerisDescription`](crate::types::EphemerisDescription).
     pub fn build(self) -> crate::types::EphemerisDescription {

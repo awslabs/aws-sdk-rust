@@ -36,6 +36,10 @@ impl DeleteSchemaFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteSchema as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_schema::builders::DeleteSchemaInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -117,5 +121,9 @@ impl DeleteSchemaFluentBuilder {
     pub fn set_schema_id(mut self, input: ::std::option::Option<crate::types::SchemaId>) -> Self {
         self.inner = self.inner.set_schema_id(input);
         self
+    }
+    /// <p>This is a wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
+    pub fn get_schema_id(&self) -> &::std::option::Option<crate::types::SchemaId> {
+        self.inner.get_schema_id()
     }
 }

@@ -40,6 +40,10 @@ impl AssociatedFaceBuilder {
         self.face_id = input;
         self
     }
+    /// <p>Unique identifier assigned to the face.</p>
+    pub fn get_face_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.face_id
+    }
     /// Consumes the builder and constructs a [`AssociatedFace`](crate::types::AssociatedFace).
     pub fn build(self) -> crate::types::AssociatedFace {
         crate::types::AssociatedFace {

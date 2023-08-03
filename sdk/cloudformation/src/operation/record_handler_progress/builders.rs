@@ -37,6 +37,13 @@ impl RecordHandlerProgressFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RecordHandlerProgress as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::record_handler_progress::builders::RecordHandlerProgressInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +135,10 @@ impl RecordHandlerProgressFluentBuilder {
         self
     }
     /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
+    pub fn get_bearer_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bearer_token()
+    }
+    /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
     pub fn operation_status(mut self, input: crate::types::OperationStatus) -> Self {
         self.inner = self.inner.operation_status(input);
         self
@@ -141,6 +152,10 @@ impl RecordHandlerProgressFluentBuilder {
         self
     }
     /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
+    pub fn get_operation_status(&self) -> &::std::option::Option<crate::types::OperationStatus> {
+        self.inner.get_operation_status()
+    }
+    /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
     pub fn current_operation_status(mut self, input: crate::types::OperationStatus) -> Self {
         self.inner = self.inner.current_operation_status(input);
         self
@@ -152,6 +167,12 @@ impl RecordHandlerProgressFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_current_operation_status(input);
         self
+    }
+    /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
+    pub fn get_current_operation_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::OperationStatus> {
+        self.inner.get_current_operation_status()
     }
     /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
     pub fn status_message(
@@ -170,6 +191,10 @@ impl RecordHandlerProgressFluentBuilder {
         self
     }
     /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_status_message()
+    }
+    /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
     pub fn error_code(mut self, input: crate::types::HandlerErrorCode) -> Self {
         self.inner = self.inner.error_code(input);
         self
@@ -181,6 +206,10 @@ impl RecordHandlerProgressFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_error_code(input);
         self
+    }
+    /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::HandlerErrorCode> {
+        self.inner.get_error_code()
     }
     /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
     pub fn resource_model(
@@ -199,6 +228,10 @@ impl RecordHandlerProgressFluentBuilder {
         self
     }
     /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
+    pub fn get_resource_model(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_model()
+    }
+    /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
     pub fn client_request_token(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -213,5 +246,9 @@ impl RecordHandlerProgressFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
 }

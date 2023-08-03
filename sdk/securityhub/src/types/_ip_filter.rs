@@ -40,6 +40,10 @@ impl IpFilterBuilder {
         self.cidr = input;
         self
     }
+    /// <p>A finding's CIDR value.</p>
+    pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr
+    }
     /// Consumes the builder and constructs a [`IpFilter`](crate::types::IpFilter).
     pub fn build(self) -> crate::types::IpFilter {
         crate::types::IpFilter { cidr: self.cidr }

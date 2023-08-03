@@ -39,6 +39,10 @@ impl ListSecurityConfigurationsInputBuilder {
         self.marker = input;
         self
     }
+    /// <p>The pagination token that indicates the set of results to retrieve.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// Consumes the builder and constructs a [`ListSecurityConfigurationsInput`](crate::operation::list_security_configurations::ListSecurityConfigurationsInput).
     pub fn build(
         self,

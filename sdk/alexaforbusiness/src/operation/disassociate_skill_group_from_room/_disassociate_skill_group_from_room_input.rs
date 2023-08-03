@@ -53,6 +53,10 @@ impl DisassociateSkillGroupFromRoomInputBuilder {
         self.skill_group_arn = input;
         self
     }
+    /// <p>The ARN of the skill group to disassociate from a room. Required.</p>
+    pub fn get_skill_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.skill_group_arn
+    }
     /// <p>The ARN of the room from which the skill group is to be disassociated. Required.</p>
     pub fn room_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.room_arn = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl DisassociateSkillGroupFromRoomInputBuilder {
     pub fn set_room_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.room_arn = input;
         self
+    }
+    /// <p>The ARN of the room from which the skill group is to be disassociated. Required.</p>
+    pub fn get_room_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.room_arn
     }
     /// Consumes the builder and constructs a [`DisassociateSkillGroupFromRoomInput`](crate::operation::disassociate_skill_group_from_room::DisassociateSkillGroupFromRoomInput).
     pub fn build(

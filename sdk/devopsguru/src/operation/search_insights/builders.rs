@@ -37,6 +37,12 @@ impl SearchInsightsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SearchInsights as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::search_insights::builders::SearchInsightsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl SearchInsightsFluentBuilder {
         self.inner = self.inner.set_start_time_range(input);
         self
     }
+    /// <p> The start of the time range passed in. Returned insights occurred after this time. </p>
+    pub fn get_start_time_range(&self) -> &::std::option::Option<crate::types::StartTimeRange> {
+        self.inner.get_start_time_range()
+    }
     /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
     pub fn filters(mut self, input: crate::types::SearchInsightsFilters) -> Self {
         self.inner = self.inner.filters(input);
@@ -146,6 +156,10 @@ impl SearchInsightsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::SearchInsightsFilters> {
+        self.inner.get_filters()
+    }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -155,6 +169,10 @@ impl SearchInsightsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -166,6 +184,10 @@ impl SearchInsightsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
     pub fn r#type(mut self, input: crate::types::InsightType) -> Self {
         self.inner = self.inner.r#type(input);
@@ -175,5 +197,9 @@ impl SearchInsightsFluentBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::InsightType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
+    }
+    /// <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::InsightType> {
+        self.inner.get_type()
     }
 }

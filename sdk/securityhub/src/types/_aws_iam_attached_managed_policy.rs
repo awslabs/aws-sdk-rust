@@ -48,6 +48,10 @@ impl AwsIamAttachedManagedPolicyBuilder {
         self.policy_name = input;
         self
     }
+    /// <p>The name of the policy.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_name
+    }
     /// <p>The ARN of the policy.</p>
     pub fn policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_arn = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl AwsIamAttachedManagedPolicyBuilder {
     pub fn set_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_arn = input;
         self
+    }
+    /// <p>The ARN of the policy.</p>
+    pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_arn
     }
     /// Consumes the builder and constructs a [`AwsIamAttachedManagedPolicy`](crate::types::AwsIamAttachedManagedPolicy).
     pub fn build(self) -> crate::types::AwsIamAttachedManagedPolicy {

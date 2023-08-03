@@ -36,6 +36,12 @@ impl ListRecordHistoryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListRecordHistory as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_record_history::builders::ListRecordHistoryInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +146,14 @@ impl ListRecordHistoryFluentBuilder {
         self.inner = self.inner.set_accept_language(input);
         self
     }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_accept_language()
+    }
     /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
     pub fn access_level_filter(mut self, input: crate::types::AccessLevelFilter) -> Self {
         self.inner = self.inner.access_level_filter(input);
@@ -152,6 +166,12 @@ impl ListRecordHistoryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_access_level_filter(input);
         self
+    }
+    /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
+    pub fn get_access_level_filter(
+        &self,
+    ) -> &::std::option::Option<crate::types::AccessLevelFilter> {
+        self.inner.get_access_level_filter()
     }
     /// <p>The search filter to scope the results.</p>
     pub fn search_filter(mut self, input: crate::types::ListRecordHistorySearchFilter) -> Self {
@@ -166,6 +186,12 @@ impl ListRecordHistoryFluentBuilder {
         self.inner = self.inner.set_search_filter(input);
         self
     }
+    /// <p>The search filter to scope the results.</p>
+    pub fn get_search_filter(
+        &self,
+    ) -> &::std::option::Option<crate::types::ListRecordHistorySearchFilter> {
+        self.inner.get_search_filter()
+    }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.inner = self.inner.page_size(input);
@@ -176,6 +202,10 @@ impl ListRecordHistoryFluentBuilder {
         self.inner = self.inner.set_page_size(input);
         self
     }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        self.inner.get_page_size()
+    }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.page_token(input.into());
@@ -185,5 +215,9 @@ impl ListRecordHistoryFluentBuilder {
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_page_token(input);
         self
+    }
+    /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_page_token()
     }
 }

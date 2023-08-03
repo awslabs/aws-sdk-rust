@@ -58,6 +58,12 @@ impl FaultRootCauseBuilder {
         self.services = input;
         self
     }
+    /// <p>A list of corresponding services. A service identifies a segment and it contains a name, account ID, type, and inferred flag.</p>
+    pub fn get_services(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FaultRootCauseService>> {
+        &self.services
+    }
     /// <p>A flag that denotes that the root cause impacts the trace client.</p>
     pub fn client_impacting(mut self, input: bool) -> Self {
         self.client_impacting = ::std::option::Option::Some(input);
@@ -67,6 +73,10 @@ impl FaultRootCauseBuilder {
     pub fn set_client_impacting(mut self, input: ::std::option::Option<bool>) -> Self {
         self.client_impacting = input;
         self
+    }
+    /// <p>A flag that denotes that the root cause impacts the trace client.</p>
+    pub fn get_client_impacting(&self) -> &::std::option::Option<bool> {
+        &self.client_impacting
     }
     /// Consumes the builder and constructs a [`FaultRootCause`](crate::types::FaultRootCause).
     pub fn build(self) -> crate::types::FaultRootCause {

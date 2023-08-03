@@ -47,6 +47,10 @@ impl CreateTagsInputBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -65,6 +69,10 @@ impl CreateTagsInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateTagsInput`](crate::operation::create_tags::CreateTagsInput).
     pub fn build(

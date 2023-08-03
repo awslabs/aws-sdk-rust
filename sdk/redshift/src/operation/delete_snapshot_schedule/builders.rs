@@ -36,6 +36,13 @@ impl DeleteSnapshotScheduleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteSnapshotSchedule as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_snapshot_schedule::builders::DeleteSnapshotScheduleInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +138,9 @@ impl DeleteSnapshotScheduleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_schedule_identifier(input);
         self
+    }
+    /// <p>A unique identifier of the snapshot schedule to delete.</p>
+    pub fn get_schedule_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schedule_identifier()
     }
 }

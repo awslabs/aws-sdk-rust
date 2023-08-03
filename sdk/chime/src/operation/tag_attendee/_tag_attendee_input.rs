@@ -55,6 +55,10 @@ impl TagAttendeeInputBuilder {
         self.meeting_id = input;
         self
     }
+    /// <p>The Amazon Chime SDK meeting ID.</p>
+    pub fn get_meeting_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.meeting_id
+    }
     /// <p>The Amazon Chime SDK attendee ID.</p>
     pub fn attendee_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attendee_id = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl TagAttendeeInputBuilder {
     pub fn set_attendee_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attendee_id = input;
         self
+    }
+    /// <p>The Amazon Chime SDK attendee ID.</p>
+    pub fn get_attendee_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attendee_id
     }
     /// Appends an item to `tags`.
     ///
@@ -83,6 +91,10 @@ impl TagAttendeeInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tag key-value pairs.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`TagAttendeeInput`](crate::operation::tag_attendee::TagAttendeeInput).
     pub fn build(

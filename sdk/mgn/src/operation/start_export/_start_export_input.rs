@@ -56,6 +56,10 @@ impl StartExportInputBuilder {
         self.s3_bucket = input;
         self
     }
+    /// <p>Start export request s3 bucket.</p>
+    pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket
+    }
     /// <p>Start export request s3key.</p>
     pub fn s3_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_key = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl StartExportInputBuilder {
     pub fn set_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_key = input;
         self
+    }
+    /// <p>Start export request s3key.</p>
+    pub fn get_s3_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_key
     }
     /// <p>Start export request s3 bucket owner.</p>
     pub fn s3_bucket_owner(
@@ -81,6 +89,10 @@ impl StartExportInputBuilder {
     ) -> Self {
         self.s3_bucket_owner = input;
         self
+    }
+    /// <p>Start export request s3 bucket owner.</p>
+    pub fn get_s3_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_owner
     }
     /// Consumes the builder and constructs a [`StartExportInput`](crate::operation::start_export::StartExportInput).
     pub fn build(

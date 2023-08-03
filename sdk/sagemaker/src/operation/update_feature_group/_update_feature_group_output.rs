@@ -53,6 +53,10 @@ impl UpdateFeatureGroupOutputBuilder {
         self.feature_group_arn = input;
         self
     }
+    /// <p>The Amazon Resource Number (ARN) of the feature group that you're updating.</p>
+    pub fn get_feature_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.feature_group_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

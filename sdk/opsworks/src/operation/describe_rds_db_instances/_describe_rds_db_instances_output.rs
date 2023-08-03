@@ -59,6 +59,12 @@ impl DescribeRdsDbInstancesOutputBuilder {
         self.rds_db_instances = input;
         self
     }
+    /// <p>An a array of <code>RdsDbInstance</code> objects that describe the instances.</p>
+    pub fn get_rds_db_instances(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RdsDbInstance>> {
+        &self.rds_db_instances
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

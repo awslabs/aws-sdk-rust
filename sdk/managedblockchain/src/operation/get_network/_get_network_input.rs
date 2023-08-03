@@ -39,6 +39,10 @@ impl GetNetworkInputBuilder {
         self.network_id = input;
         self
     }
+    /// <p>The unique identifier of the network to get information about.</p>
+    pub fn get_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_id
+    }
     /// Consumes the builder and constructs a [`GetNetworkInput`](crate::operation::get_network::GetNetworkInput).
     pub fn build(
         self,

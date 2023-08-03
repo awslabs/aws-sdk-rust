@@ -56,6 +56,10 @@ impl ResultDataBuilder {
         self.result_id = input;
         self
     }
+    /// <p>The identifier of the result data.</p>
+    pub fn get_result_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.result_id
+    }
     /// <p>The document.</p>
     pub fn document(mut self, input: crate::types::Document) -> Self {
         self.document = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl ResultDataBuilder {
         self.document = input;
         self
     }
+    /// <p>The document.</p>
+    pub fn get_document(&self) -> &::std::option::Option<crate::types::Document> {
+        &self.document
+    }
     /// <p>The relevance score of the results.</p>
     pub fn relevance_score(mut self, input: f64) -> Self {
         self.relevance_score = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl ResultDataBuilder {
     pub fn set_relevance_score(mut self, input: ::std::option::Option<f64>) -> Self {
         self.relevance_score = input;
         self
+    }
+    /// <p>The relevance score of the results.</p>
+    pub fn get_relevance_score(&self) -> &::std::option::Option<f64> {
+        &self.relevance_score
     }
     /// Consumes the builder and constructs a [`ResultData`](crate::types::ResultData).
     pub fn build(self) -> crate::types::ResultData {

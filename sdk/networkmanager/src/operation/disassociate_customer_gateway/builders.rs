@@ -36,6 +36,10 @@ impl DisassociateCustomerGatewayFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateCustomerGateway as a reference.
+    pub fn as_input(&self) -> &crate::operation::disassociate_customer_gateway::builders::DisassociateCustomerGatewayInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl DisassociateCustomerGatewayFluentBuilder {
         self.inner = self.inner.set_global_network_id(input);
         self
     }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_global_network_id()
+    }
     /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
     pub fn customer_gateway_arn(
         mut self,
@@ -147,5 +155,9 @@ impl DisassociateCustomerGatewayFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_customer_gateway_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
+    pub fn get_customer_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_customer_gateway_arn()
     }
 }

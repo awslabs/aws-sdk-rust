@@ -84,6 +84,10 @@ impl UpdatePackageInputBuilder {
         self.package_name = input;
         self
     }
+    /// <p>The name of the target package.</p>
+    pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_name
+    }
     /// <p>The package description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -93,6 +97,10 @@ impl UpdatePackageInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The package description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The name of the default package version.</p>
     /// <p> <b>Note:</b> You cannot name a <code>defaultVersion</code> and set <code>unsetDefaultVersion</code> equal to <code>true</code> at the same time.</p>
@@ -112,6 +120,11 @@ impl UpdatePackageInputBuilder {
         self.default_version_name = input;
         self
     }
+    /// <p>The name of the default package version.</p>
+    /// <p> <b>Note:</b> You cannot name a <code>defaultVersion</code> and set <code>unsetDefaultVersion</code> equal to <code>true</code> at the same time.</p>
+    pub fn get_default_version_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_version_name
+    }
     /// <p>Indicates whether you want to remove the named default package version from the software package. Set as <code>true</code> to remove the default package version. </p>
     /// <p> <b>Note:</b> You cannot name a <code>defaultVersion</code> and set <code>unsetDefaultVersion</code> equal to <code>true</code> at the same time.</p>
     pub fn unset_default_version(mut self, input: bool) -> Self {
@@ -124,6 +137,11 @@ impl UpdatePackageInputBuilder {
         self.unset_default_version = input;
         self
     }
+    /// <p>Indicates whether you want to remove the named default package version from the software package. Set as <code>true</code> to remove the default package version. </p>
+    /// <p> <b>Note:</b> You cannot name a <code>defaultVersion</code> and set <code>unsetDefaultVersion</code> equal to <code>true</code> at the same time.</p>
+    pub fn get_unset_default_version(&self) -> &::std::option::Option<bool> {
+        &self.unset_default_version
+    }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -133,6 +151,10 @@ impl UpdatePackageInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdatePackageInput`](crate::operation::update_package::UpdatePackageInput).
     pub fn build(

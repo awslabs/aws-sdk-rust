@@ -94,6 +94,10 @@ impl ActionInvocationBuilder {
         self.extension_identifier = input;
         self
     }
+    /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
+    pub fn get_extension_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.extension_identifier
+    }
     /// <p>The name of the action.</p>
     pub fn action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_name = ::std::option::Option::Some(input.into());
@@ -103,6 +107,10 @@ impl ActionInvocationBuilder {
     pub fn set_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action_name = input;
         self
+    }
+    /// <p>The name of the action.</p>
+    pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_name
     }
     /// <p>The extension URI associated to the action point in the extension definition. The URI can be an Amazon Resource Name (ARN) for one of the following: an Lambda function, an Amazon Simple Queue Service queue, an Amazon Simple Notification Service topic, or the Amazon EventBridge default event bus.</p>
     pub fn uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -114,6 +122,10 @@ impl ActionInvocationBuilder {
         self.uri = input;
         self
     }
+    /// <p>The extension URI associated to the action point in the extension definition. The URI can be an Amazon Resource Name (ARN) for one of the following: an Lambda function, an Amazon Simple Queue Service queue, an Amazon Simple Notification Service topic, or the Amazon EventBridge default event bus.</p>
+    pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uri
+    }
     /// <p>An Amazon Resource Name (ARN) for an Identity and Access Management assume role.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -123,6 +135,10 @@ impl ActionInvocationBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>An Amazon Resource Name (ARN) for an Identity and Access Management assume role.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The error message when an extension invocation fails.</p>
     pub fn error_message(
@@ -140,6 +156,10 @@ impl ActionInvocationBuilder {
         self.error_message = input;
         self
     }
+    /// <p>The error message when an extension invocation fails.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// <p>The error code when an extension invocation fails.</p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
@@ -149,6 +169,10 @@ impl ActionInvocationBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The error code when an extension invocation fails.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
     }
     /// <p>A system-generated ID for this invocation.</p>
     pub fn invocation_id(
@@ -165,6 +189,10 @@ impl ActionInvocationBuilder {
     ) -> Self {
         self.invocation_id = input;
         self
+    }
+    /// <p>A system-generated ID for this invocation.</p>
+    pub fn get_invocation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.invocation_id
     }
     /// Consumes the builder and constructs a [`ActionInvocation`](crate::types::ActionInvocation).
     pub fn build(self) -> crate::types::ActionInvocation {

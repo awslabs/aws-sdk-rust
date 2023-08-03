@@ -36,6 +36,12 @@ impl BatchGetRecordFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchGetRecord as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_get_record::builders::BatchGetRecordInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,12 @@ impl BatchGetRecordFluentBuilder {
         self.inner = self.inner.set_identifiers(input);
         self
     }
+    /// <p>A list containing the name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code>, the list of names of <code>Feature</code>s to be retrieved, and the corresponding <code>RecordIdentifier</code> values as strings.</p>
+    pub fn get_identifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetRecordIdentifier>> {
+        self.inner.get_identifiers()
+    }
     /// <p>Parameter to request <code>ExpiresAt</code> in response. If <code>Enabled</code>, <code>BatchGetRecord</code> will return the value of <code>ExpiresAt</code>, if it is not null. If <code>Disabled</code> and null, <code>BatchGetRecord</code> will return null.</p>
     pub fn expiration_time_response(mut self, input: crate::types::ExpirationTimeResponse) -> Self {
         self.inner = self.inner.expiration_time_response(input);
@@ -145,5 +157,11 @@ impl BatchGetRecordFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_expiration_time_response(input);
         self
+    }
+    /// <p>Parameter to request <code>ExpiresAt</code> in response. If <code>Enabled</code>, <code>BatchGetRecord</code> will return the value of <code>ExpiresAt</code>, if it is not null. If <code>Disabled</code> and null, <code>BatchGetRecord</code> will return null.</p>
+    pub fn get_expiration_time_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExpirationTimeResponse> {
+        self.inner.get_expiration_time_response()
     }
 }

@@ -99,6 +99,10 @@ impl CreateIntegrationAssociationInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The type of information to be ingested.</p>
     pub fn integration_type(mut self, input: crate::types::IntegrationType) -> Self {
         self.integration_type = ::std::option::Option::Some(input);
@@ -111,6 +115,10 @@ impl CreateIntegrationAssociationInputBuilder {
     ) -> Self {
         self.integration_type = input;
         self
+    }
+    /// <p>The type of information to be ingested.</p>
+    pub fn get_integration_type(&self) -> &::std::option::Option<crate::types::IntegrationType> {
+        &self.integration_type
     }
     /// <p>The Amazon Resource Name (ARN) of the integration.</p> <note>
     /// <p>When integrating with Amazon Pinpoint, the Amazon Connect and Amazon Pinpoint instances must be in the same account.</p>
@@ -132,6 +140,12 @@ impl CreateIntegrationAssociationInputBuilder {
         self.integration_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the integration.</p> <note>
+    /// <p>When integrating with Amazon Pinpoint, the Amazon Connect and Amazon Pinpoint instances must be in the same account.</p>
+    /// </note>
+    pub fn get_integration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.integration_arn
+    }
     /// <p>The URL for the external application. This field is only required for the EVENT integration type.</p>
     pub fn source_application_url(
         mut self,
@@ -147,6 +161,10 @@ impl CreateIntegrationAssociationInputBuilder {
     ) -> Self {
         self.source_application_url = input;
         self
+    }
+    /// <p>The URL for the external application. This field is only required for the EVENT integration type.</p>
+    pub fn get_source_application_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_application_url
     }
     /// <p>The name of the external application. This field is only required for the EVENT integration type.</p>
     pub fn source_application_name(
@@ -164,6 +182,10 @@ impl CreateIntegrationAssociationInputBuilder {
         self.source_application_name = input;
         self
     }
+    /// <p>The name of the external application. This field is only required for the EVENT integration type.</p>
+    pub fn get_source_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_application_name
+    }
     /// <p>The type of the data source. This field is only required for the EVENT integration type.</p>
     pub fn source_type(mut self, input: crate::types::SourceType) -> Self {
         self.source_type = ::std::option::Option::Some(input);
@@ -176,6 +198,10 @@ impl CreateIntegrationAssociationInputBuilder {
     ) -> Self {
         self.source_type = input;
         self
+    }
+    /// <p>The type of the data source. This field is only required for the EVENT integration type.</p>
+    pub fn get_source_type(&self) -> &::std::option::Option<crate::types::SourceType> {
+        &self.source_type
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -201,6 +227,14 @@ impl CreateIntegrationAssociationInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateIntegrationAssociationInput`](crate::operation::create_integration_association::CreateIntegrationAssociationInput).
     pub fn build(

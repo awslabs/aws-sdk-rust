@@ -80,6 +80,10 @@ impl LexiconAttributesBuilder {
         self.alphabet = input;
         self
     }
+    /// <p>Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code> and <code>x-sampa</code>.</p>
+    pub fn get_alphabet(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alphabet
+    }
     /// <p>Language code that the lexicon applies to. A lexicon with a language code such as "en" would be applied to all English languages (en-GB, en-US, en-AUS, en-WLS, and so on.</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
@@ -92,6 +96,10 @@ impl LexiconAttributesBuilder {
     ) -> Self {
         self.language_code = input;
         self
+    }
+    /// <p>Language code that the lexicon applies to. A lexicon with a language code such as "en" would be applied to all English languages (en-GB, en-US, en-AUS, en-WLS, and so on.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
+        &self.language_code
     }
     /// <p>Date lexicon was last modified (a timestamp value).</p>
     pub fn last_modified(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -106,6 +114,10 @@ impl LexiconAttributesBuilder {
         self.last_modified = input;
         self
     }
+    /// <p>Date lexicon was last modified (a timestamp value).</p>
+    pub fn get_last_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified
+    }
     /// <p>Amazon Resource Name (ARN) of the lexicon.</p>
     pub fn lexicon_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lexicon_arn = ::std::option::Option::Some(input.into());
@@ -115,6 +127,10 @@ impl LexiconAttributesBuilder {
     pub fn set_lexicon_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lexicon_arn = input;
         self
+    }
+    /// <p>Amazon Resource Name (ARN) of the lexicon.</p>
+    pub fn get_lexicon_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lexicon_arn
     }
     /// <p>Number of lexemes in the lexicon.</p>
     pub fn lexemes_count(mut self, input: i32) -> Self {
@@ -126,6 +142,10 @@ impl LexiconAttributesBuilder {
         self.lexemes_count = input;
         self
     }
+    /// <p>Number of lexemes in the lexicon.</p>
+    pub fn get_lexemes_count(&self) -> &::std::option::Option<i32> {
+        &self.lexemes_count
+    }
     /// <p>Total size of the lexicon, in characters.</p>
     pub fn size(mut self, input: i32) -> Self {
         self.size = ::std::option::Option::Some(input);
@@ -135,6 +155,10 @@ impl LexiconAttributesBuilder {
     pub fn set_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.size = input;
         self
+    }
+    /// <p>Total size of the lexicon, in characters.</p>
+    pub fn get_size(&self) -> &::std::option::Option<i32> {
+        &self.size
     }
     /// Consumes the builder and constructs a [`LexiconAttributes`](crate::types::LexiconAttributes).
     pub fn build(self) -> crate::types::LexiconAttributes {

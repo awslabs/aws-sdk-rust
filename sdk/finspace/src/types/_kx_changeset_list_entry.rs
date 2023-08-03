@@ -84,6 +84,10 @@ impl KxChangesetListEntryBuilder {
         self.changeset_id = input;
         self
     }
+    /// <p>A unique identifier for the changeset.</p>
+    pub fn get_changeset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.changeset_id
+    }
     /// <p>The timestamp at which the changeset was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_timestamp = ::std::option::Option::Some(input);
@@ -96,6 +100,10 @@ impl KxChangesetListEntryBuilder {
     ) -> Self {
         self.created_timestamp = input;
         self
+    }
+    /// <p>The timestamp at which the changeset was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
     }
     /// <p>Beginning time from which the changeset is active. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn active_from_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -110,6 +118,12 @@ impl KxChangesetListEntryBuilder {
         self.active_from_timestamp = input;
         self
     }
+    /// <p>Beginning time from which the changeset is active. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    pub fn get_active_from_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.active_from_timestamp
+    }
     /// <p>The timestamp at which the changeset was modified. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn last_modified_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_timestamp = ::std::option::Option::Some(input);
@@ -122,6 +136,12 @@ impl KxChangesetListEntryBuilder {
     ) -> Self {
         self.last_modified_timestamp = input;
         self
+    }
+    /// <p>The timestamp at which the changeset was modified. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    pub fn get_last_modified_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_timestamp
     }
     /// <p> Status of the changeset.</p>
     /// <ul>
@@ -147,6 +167,16 @@ impl KxChangesetListEntryBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p> Status of the changeset.</p>
+    /// <ul>
+    /// <li> <p>Pending – Changeset creation is pending.</p> </li>
+    /// <li> <p>Processing – Changeset creation is running.</p> </li>
+    /// <li> <p>Failed – Changeset creation has failed.</p> </li>
+    /// <li> <p>Complete – Changeset creation has succeeded.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ChangesetStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`KxChangesetListEntry`](crate::types::KxChangesetListEntry).
     pub fn build(self) -> crate::types::KxChangesetListEntry {

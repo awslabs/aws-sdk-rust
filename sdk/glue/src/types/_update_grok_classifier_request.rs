@@ -64,6 +64,10 @@ impl UpdateGrokClassifierRequestBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the <code>GrokClassifier</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>
     pub fn classification(
         mut self,
@@ -80,6 +84,10 @@ impl UpdateGrokClassifierRequestBuilder {
         self.classification = input;
         self
     }
+    /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>
+    pub fn get_classification(&self) -> &::std::option::Option<::std::string::String> {
+        &self.classification
+    }
     /// <p>The grok pattern used by this classifier.</p>
     pub fn grok_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grok_pattern = ::std::option::Option::Some(input.into());
@@ -89,6 +97,10 @@ impl UpdateGrokClassifierRequestBuilder {
     pub fn set_grok_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grok_pattern = input;
         self
+    }
+    /// <p>The grok pattern used by this classifier.</p>
+    pub fn get_grok_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grok_pattern
     }
     /// <p>Optional custom grok patterns used by this classifier.</p>
     pub fn custom_patterns(
@@ -105,6 +117,10 @@ impl UpdateGrokClassifierRequestBuilder {
     ) -> Self {
         self.custom_patterns = input;
         self
+    }
+    /// <p>Optional custom grok patterns used by this classifier.</p>
+    pub fn get_custom_patterns(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_patterns
     }
     /// Consumes the builder and constructs a [`UpdateGrokClassifierRequest`](crate::types::UpdateGrokClassifierRequest).
     pub fn build(self) -> crate::types::UpdateGrokClassifierRequest {

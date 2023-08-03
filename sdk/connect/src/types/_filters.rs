@@ -65,6 +65,10 @@ impl FiltersBuilder {
         self.queues = input;
         self
     }
+    /// <p>The queues to use to filter the metrics. You should specify at least one queue, and can specify up to 100 queues per request. The <code>GetCurrentMetricsData</code> API in particular requires a queue when you include a <code>Filter</code> in your request. </p>
+    pub fn get_queues(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.queues
+    }
     /// Appends an item to `channels`.
     ///
     /// To override the contents of this collection use [`set_channels`](Self::set_channels).
@@ -83,6 +87,10 @@ impl FiltersBuilder {
     ) -> Self {
         self.channels = input;
         self
+    }
+    /// <p>The channel to use to filter the metrics.</p>
+    pub fn get_channels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Channel>> {
+        &self.channels
     }
     /// Appends an item to `routing_profiles`.
     ///
@@ -105,6 +113,12 @@ impl FiltersBuilder {
     ) -> Self {
         self.routing_profiles = input;
         self
+    }
+    /// <p>A list of up to 100 routing profile IDs or ARNs.</p>
+    pub fn get_routing_profiles(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.routing_profiles
     }
     /// Consumes the builder and constructs a [`Filters`](crate::types::Filters).
     pub fn build(self) -> crate::types::Filters {

@@ -40,6 +40,10 @@ impl InstanceIpv6PrefixBuilder {
         self.ipv6_prefix = input;
         self
     }
+    /// <p>One or more IPv6 prefixes assigned to the network interface.</p>
+    pub fn get_ipv6_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv6_prefix
+    }
     /// Consumes the builder and constructs a [`InstanceIpv6Prefix`](crate::types::InstanceIpv6Prefix).
     pub fn build(self) -> crate::types::InstanceIpv6Prefix {
         crate::types::InstanceIpv6Prefix {

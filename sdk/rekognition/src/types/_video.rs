@@ -40,6 +40,10 @@ impl VideoBuilder {
         self.s3_object = input;
         self
     }
+    /// <p>The Amazon S3 bucket name and file name for the video.</p>
+    pub fn get_s3_object(&self) -> &::std::option::Option<crate::types::S3Object> {
+        &self.s3_object
+    }
     /// Consumes the builder and constructs a [`Video`](crate::types::Video).
     pub fn build(self) -> crate::types::Video {
         crate::types::Video {

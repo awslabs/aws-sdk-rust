@@ -37,6 +37,12 @@ impl DeleteInsightRulesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteInsightRules as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_insight_rules::builders::DeleteInsightRulesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,5 +139,9 @@ impl DeleteInsightRulesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_rule_names(input);
         self
+    }
+    /// <p>An array of the rule names to delete. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
+    pub fn get_rule_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_rule_names()
     }
 }

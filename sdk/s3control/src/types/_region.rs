@@ -48,6 +48,10 @@ impl RegionBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The name of the associated bucket for the Region.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket that's associated with this Multi-Region Access Point.</p>
     pub fn bucket_account_id(
         mut self,
@@ -63,6 +67,10 @@ impl RegionBuilder {
     ) -> Self {
         self.bucket_account_id = input;
         self
+    }
+    /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket that's associated with this Multi-Region Access Point.</p>
+    pub fn get_bucket_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_account_id
     }
     /// Consumes the builder and constructs a [`Region`](crate::types::Region).
     pub fn build(self) -> crate::types::Region {

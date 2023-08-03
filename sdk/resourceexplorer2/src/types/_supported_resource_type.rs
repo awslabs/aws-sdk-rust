@@ -48,6 +48,10 @@ impl SupportedResourceTypeBuilder {
         self.service = input;
         self
     }
+    /// <p>The Amazon Web Service that is associated with the resource type. This is the primary service that lets you create and interact with resources of this type.</p>
+    pub fn get_service(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service
+    }
     /// <p>The unique identifier of the resource type.</p>
     pub fn resource_type(
         mut self,
@@ -63,6 +67,10 @@ impl SupportedResourceTypeBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The unique identifier of the resource type.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
     }
     /// Consumes the builder and constructs a [`SupportedResourceType`](crate::types::SupportedResourceType).
     pub fn build(self) -> crate::types::SupportedResourceType {

@@ -50,6 +50,10 @@ impl GetDevicePoolOutputBuilder {
         self.device_pool = input;
         self
     }
+    /// <p>An object that contains information about the requested device pool.</p>
+    pub fn get_device_pool(&self) -> &::std::option::Option<crate::types::DevicePool> {
+        &self.device_pool
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

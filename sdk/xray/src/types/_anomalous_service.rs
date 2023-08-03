@@ -40,6 +40,10 @@ impl AnomalousServiceBuilder {
         self.service_id = input;
         self
     }
+    /// <p></p>
+    pub fn get_service_id(&self) -> &::std::option::Option<crate::types::ServiceId> {
+        &self.service_id
+    }
     /// Consumes the builder and constructs a [`AnomalousService`](crate::types::AnomalousService).
     pub fn build(self) -> crate::types::AnomalousService {
         crate::types::AnomalousService {

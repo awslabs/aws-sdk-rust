@@ -39,6 +39,12 @@ impl SetAlarmStateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SetAlarmState as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::set_alarm_state::builders::SetAlarmStateInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +127,10 @@ impl SetAlarmStateFluentBuilder {
         self.inner = self.inner.set_alarm_name(input);
         self
     }
+    /// <p>The name of the alarm.</p>
+    pub fn get_alarm_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_alarm_name()
+    }
     /// <p>The value of the state.</p>
     pub fn state_value(mut self, input: crate::types::StateValue) -> Self {
         self.inner = self.inner.state_value(input);
@@ -134,6 +144,10 @@ impl SetAlarmStateFluentBuilder {
         self.inner = self.inner.set_state_value(input);
         self
     }
+    /// <p>The value of the state.</p>
+    pub fn get_state_value(&self) -> &::std::option::Option<crate::types::StateValue> {
+        self.inner.get_state_value()
+    }
     /// <p>The reason that this alarm is set to this specific state, in text format.</p>
     pub fn state_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.state_reason(input.into());
@@ -143,6 +157,10 @@ impl SetAlarmStateFluentBuilder {
     pub fn set_state_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_state_reason(input);
         self
+    }
+    /// <p>The reason that this alarm is set to this specific state, in text format.</p>
+    pub fn get_state_reason(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_state_reason()
     }
     /// <p>The reason that this alarm is set to this specific state, in JSON format.</p>
     /// <p>For SNS or EC2 alarm actions, this is just informational. But for EC2 Auto Scaling or application Auto Scaling alarm actions, the Auto Scaling policy uses the information in this field to take the correct action.</p>
@@ -161,5 +179,10 @@ impl SetAlarmStateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_state_reason_data(input);
         self
+    }
+    /// <p>The reason that this alarm is set to this specific state, in JSON format.</p>
+    /// <p>For SNS or EC2 alarm actions, this is just informational. But for EC2 Auto Scaling or application Auto Scaling alarm actions, the Auto Scaling policy uses the information in this field to take the correct action.</p>
+    pub fn get_state_reason_data(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_state_reason_data()
     }
 }

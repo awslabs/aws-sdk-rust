@@ -71,6 +71,12 @@ impl GetRelationalDatabaseLogEventsOutputBuilder {
         self.resource_log_events = input;
         self
     }
+    /// <p>An object describing the result of your get relational database log events request.</p>
+    pub fn get_resource_log_events(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LogEvent>> {
+        &self.resource_log_events
+    }
     /// <p>A token used for advancing to the previous page of results from your get relational database log events request.</p>
     pub fn next_backward_token(
         mut self,
@@ -87,6 +93,10 @@ impl GetRelationalDatabaseLogEventsOutputBuilder {
         self.next_backward_token = input;
         self
     }
+    /// <p>A token used for advancing to the previous page of results from your get relational database log events request.</p>
+    pub fn get_next_backward_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_backward_token
+    }
     /// <p>A token used for advancing to the next page of results from your get relational database log events request.</p>
     pub fn next_forward_token(
         mut self,
@@ -102,6 +112,10 @@ impl GetRelationalDatabaseLogEventsOutputBuilder {
     ) -> Self {
         self.next_forward_token = input;
         self
+    }
+    /// <p>A token used for advancing to the next page of results from your get relational database log events request.</p>
+    pub fn get_next_forward_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_forward_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

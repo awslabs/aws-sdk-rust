@@ -59,6 +59,10 @@ impl CancelStepsInputBuilder {
         self.cluster_id = input;
         self
     }
+    /// <p>The <code>ClusterID</code> for the specified steps that will be canceled. Use <code>RunJobFlow</code> and <code>ListClusters</code> to get ClusterIDs. </p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_id
+    }
     /// Appends an item to `step_ids`.
     ///
     /// To override the contents of this collection use [`set_step_ids`](Self::set_step_ids).
@@ -78,6 +82,10 @@ impl CancelStepsInputBuilder {
         self.step_ids = input;
         self
     }
+    /// <p>The list of <code>StepIDs</code> to cancel. Use <code>ListSteps</code> to get steps and their states for the specified cluster.</p>
+    pub fn get_step_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.step_ids
+    }
     /// <p>The option to choose to cancel <code>RUNNING</code> steps. By default, the value is <code>SEND_INTERRUPT</code>.</p>
     pub fn step_cancellation_option(mut self, input: crate::types::StepCancellationOption) -> Self {
         self.step_cancellation_option = ::std::option::Option::Some(input);
@@ -90,6 +98,12 @@ impl CancelStepsInputBuilder {
     ) -> Self {
         self.step_cancellation_option = input;
         self
+    }
+    /// <p>The option to choose to cancel <code>RUNNING</code> steps. By default, the value is <code>SEND_INTERRUPT</code>.</p>
+    pub fn get_step_cancellation_option(
+        &self,
+    ) -> &::std::option::Option<crate::types::StepCancellationOption> {
+        &self.step_cancellation_option
     }
     /// Consumes the builder and constructs a [`CancelStepsInput`](crate::operation::cancel_steps::CancelStepsInput).
     pub fn build(

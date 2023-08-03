@@ -54,6 +54,10 @@ impl DeleteSnapshotOutputBuilder {
         self.snapshot_id = input;
         self
     }
+    /// <p>The ID of the deleted snapshot.</p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_id
+    }
     /// <p>The lifecycle status of the snapshot. If the <code>DeleteSnapshot</code> operation is successful, this status is <code>DELETING</code>.</p>
     pub fn lifecycle(mut self, input: crate::types::SnapshotLifecycle) -> Self {
         self.lifecycle = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl DeleteSnapshotOutputBuilder {
     ) -> Self {
         self.lifecycle = input;
         self
+    }
+    /// <p>The lifecycle status of the snapshot. If the <code>DeleteSnapshot</code> operation is successful, this status is <code>DELETING</code>.</p>
+    pub fn get_lifecycle(&self) -> &::std::option::Option<crate::types::SnapshotLifecycle> {
+        &self.lifecycle
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

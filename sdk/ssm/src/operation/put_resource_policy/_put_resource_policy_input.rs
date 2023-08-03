@@ -64,6 +64,10 @@ impl PutResourcePolicyInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the resource to which you want to attach a policy.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p>A policy you want to associate with a resource.</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl PutResourcePolicyInputBuilder {
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy = input;
         self
+    }
+    /// <p>A policy you want to associate with a resource.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy
     }
     /// <p>The policy ID.</p>
     pub fn policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl PutResourcePolicyInputBuilder {
         self.policy_id = input;
         self
     }
+    /// <p>The policy ID.</p>
+    pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_id
+    }
     /// <p>ID of the current policy version. The hash helps to prevent a situation where multiple users attempt to overwrite a policy. You must provide this hash when updating or deleting a policy.</p>
     pub fn policy_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_hash = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl PutResourcePolicyInputBuilder {
     pub fn set_policy_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_hash = input;
         self
+    }
+    /// <p>ID of the current policy version. The hash helps to prevent a situation where multiple users attempt to overwrite a policy. You must provide this hash when updating or deleting a policy.</p>
+    pub fn get_policy_hash(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_hash
     }
     /// Consumes the builder and constructs a [`PutResourcePolicyInput`](crate::operation::put_resource_policy::PutResourcePolicyInput).
     pub fn build(

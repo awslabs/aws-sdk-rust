@@ -99,6 +99,12 @@ impl RouteTableBuilder {
         self.associations = input;
         self
     }
+    /// <p>The associations between the route table and one or more subnets or a gateway.</p>
+    pub fn get_associations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteTableAssociation>> {
+        &self.associations
+    }
     /// Appends an item to `propagating_vgws`.
     ///
     /// To override the contents of this collection use [`set_propagating_vgws`](Self::set_propagating_vgws).
@@ -118,6 +124,12 @@ impl RouteTableBuilder {
         self.propagating_vgws = input;
         self
     }
+    /// <p>Any virtual private gateway (VGW) propagating routes.</p>
+    pub fn get_propagating_vgws(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PropagatingVgw>> {
+        &self.propagating_vgws
+    }
     /// <p>The ID of the route table.</p>
     pub fn route_table_id(
         mut self,
@@ -133,6 +145,10 @@ impl RouteTableBuilder {
     ) -> Self {
         self.route_table_id = input;
         self
+    }
+    /// <p>The ID of the route table.</p>
+    pub fn get_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.route_table_id
     }
     /// Appends an item to `routes`.
     ///
@@ -153,6 +169,10 @@ impl RouteTableBuilder {
         self.routes = input;
         self
     }
+    /// <p>The routes in the route table.</p>
+    pub fn get_routes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Route>> {
+        &self.routes
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -172,6 +192,10 @@ impl RouteTableBuilder {
         self.tags = input;
         self
     }
+    /// <p>Any tags assigned to the route table.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The ID of the VPC.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -182,6 +206,10 @@ impl RouteTableBuilder {
         self.vpc_id = input;
         self
     }
+    /// <p>The ID of the VPC.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
+    }
     /// <p>The ID of the Amazon Web Services account that owns the route table.</p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_id = ::std::option::Option::Some(input.into());
@@ -191,6 +219,10 @@ impl RouteTableBuilder {
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_id = input;
         self
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the route table.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
     }
     /// Consumes the builder and constructs a [`RouteTable`](crate::types::RouteTable).
     pub fn build(self) -> crate::types::RouteTable {

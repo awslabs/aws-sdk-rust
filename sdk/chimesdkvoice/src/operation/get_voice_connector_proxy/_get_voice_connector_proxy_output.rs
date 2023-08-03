@@ -48,6 +48,10 @@ impl GetVoiceConnectorProxyOutputBuilder {
         self.proxy = input;
         self
     }
+    /// <p>The proxy configuration details.</p>
+    pub fn get_proxy(&self) -> &::std::option::Option<crate::types::Proxy> {
+        &self.proxy
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

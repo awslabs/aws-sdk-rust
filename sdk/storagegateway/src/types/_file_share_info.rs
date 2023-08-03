@@ -77,6 +77,10 @@ impl FileShareInfoBuilder {
         self.file_share_type = input;
         self
     }
+    /// <p>The type of the file share.</p>
+    pub fn get_file_share_type(&self) -> &::std::option::Option<crate::types::FileShareType> {
+        &self.file_share_type
+    }
     /// <p>The Amazon Resource Name (ARN) of the file share.</p>
     pub fn file_share_arn(
         mut self,
@@ -93,6 +97,10 @@ impl FileShareInfoBuilder {
         self.file_share_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the file share.</p>
+    pub fn get_file_share_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_share_arn
+    }
     /// <p>The ID of the file share.</p>
     pub fn file_share_id(
         mut self,
@@ -108,6 +116,10 @@ impl FileShareInfoBuilder {
     ) -> Self {
         self.file_share_id = input;
         self
+    }
+    /// <p>The ID of the file share.</p>
+    pub fn get_file_share_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_share_id
     }
     /// <p>The status of the file share.</p>
     /// <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code> </p>
@@ -127,6 +139,11 @@ impl FileShareInfoBuilder {
         self.file_share_status = input;
         self
     }
+    /// <p>The status of the file share.</p>
+    /// <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code> </p>
+    pub fn get_file_share_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_share_status
+    }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
@@ -136,6 +153,10 @@ impl FileShareInfoBuilder {
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
     }
     /// Consumes the builder and constructs a [`FileShareInfo`](crate::types::FileShareInfo).
     pub fn build(self) -> crate::types::FileShareInfo {

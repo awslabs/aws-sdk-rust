@@ -56,6 +56,10 @@ impl LoggingOptionsBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The ARN of the role that grants permission to IoT Analytics to perform logging.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The logging level. Currently, only ERROR is supported.</p>
     pub fn level(mut self, input: crate::types::LoggingLevel) -> Self {
         self.level = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl LoggingOptionsBuilder {
         self.level = input;
         self
     }
+    /// <p>The logging level. Currently, only ERROR is supported.</p>
+    pub fn get_level(&self) -> &::std::option::Option<crate::types::LoggingLevel> {
+        &self.level
+    }
     /// <p>If true, logging is enabled for IoT Analytics.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl LoggingOptionsBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>If true, logging is enabled for IoT Analytics.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// Consumes the builder and constructs a [`LoggingOptions`](crate::types::LoggingOptions).
     pub fn build(self) -> crate::types::LoggingOptions {

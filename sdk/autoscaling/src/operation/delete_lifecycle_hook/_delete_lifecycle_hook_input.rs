@@ -55,6 +55,10 @@ impl DeleteLifecycleHookInputBuilder {
         self.lifecycle_hook_name = input;
         self
     }
+    /// <p>The name of the lifecycle hook.</p>
+    pub fn get_lifecycle_hook_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lifecycle_hook_name
+    }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn auto_scaling_group_name(
         mut self,
@@ -70,6 +74,10 @@ impl DeleteLifecycleHookInputBuilder {
     ) -> Self {
         self.auto_scaling_group_name = input;
         self
+    }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_scaling_group_name
     }
     /// Consumes the builder and constructs a [`DeleteLifecycleHookInput`](crate::operation::delete_lifecycle_hook::DeleteLifecycleHookInput).
     pub fn build(

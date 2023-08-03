@@ -62,6 +62,10 @@ impl OptionSpecificationBuilder {
         self.resource_name = input;
         self
     }
+    /// <p>A unique resource name for a time-based scaling configuration option.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_name
+    }
     /// <p>A unique namespace identifying the option's associated AWS resource.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl OptionSpecificationBuilder {
         self.namespace = input;
         self
     }
+    /// <p>A unique namespace identifying the option's associated AWS resource.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
+    }
     /// <p>The name of the configuration option.</p>
     pub fn option_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.option_name = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl OptionSpecificationBuilder {
     pub fn set_option_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.option_name = input;
         self
+    }
+    /// <p>The name of the configuration option.</p>
+    pub fn get_option_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.option_name
     }
     /// Consumes the builder and constructs a [`OptionSpecification`](crate::types::OptionSpecification).
     pub fn build(self) -> crate::types::OptionSpecification {

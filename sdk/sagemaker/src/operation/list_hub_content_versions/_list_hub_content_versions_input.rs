@@ -121,6 +121,10 @@ impl ListHubContentVersionsInputBuilder {
         self.hub_name = input;
         self
     }
+    /// <p>The name of the hub to list the content versions of.</p>
+    pub fn get_hub_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hub_name
+    }
     /// <p>The type of hub content to list versions of.</p>
     pub fn hub_content_type(mut self, input: crate::types::HubContentType) -> Self {
         self.hub_content_type = ::std::option::Option::Some(input);
@@ -133,6 +137,10 @@ impl ListHubContentVersionsInputBuilder {
     ) -> Self {
         self.hub_content_type = input;
         self
+    }
+    /// <p>The type of hub content to list versions of.</p>
+    pub fn get_hub_content_type(&self) -> &::std::option::Option<crate::types::HubContentType> {
+        &self.hub_content_type
     }
     /// <p>The name of the hub content.</p>
     pub fn hub_content_name(
@@ -150,6 +158,10 @@ impl ListHubContentVersionsInputBuilder {
         self.hub_content_name = input;
         self
     }
+    /// <p>The name of the hub content.</p>
+    pub fn get_hub_content_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hub_content_name
+    }
     /// <p>The lower bound of the hub content versions to list.</p>
     pub fn min_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.min_version = ::std::option::Option::Some(input.into());
@@ -159,6 +171,10 @@ impl ListHubContentVersionsInputBuilder {
     pub fn set_min_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.min_version = input;
         self
+    }
+    /// <p>The lower bound of the hub content versions to list.</p>
+    pub fn get_min_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.min_version
     }
     /// <p>The upper bound of the hub content schema version.</p>
     pub fn max_schema_version(
@@ -176,6 +192,10 @@ impl ListHubContentVersionsInputBuilder {
         self.max_schema_version = input;
         self
     }
+    /// <p>The upper bound of the hub content schema version.</p>
+    pub fn get_max_schema_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.max_schema_version
+    }
     /// <p>Only list hub content versions that were created before the time specified.</p>
     pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time_before = ::std::option::Option::Some(input);
@@ -188,6 +208,10 @@ impl ListHubContentVersionsInputBuilder {
     ) -> Self {
         self.creation_time_before = input;
         self
+    }
+    /// <p>Only list hub content versions that were created before the time specified.</p>
+    pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_before
     }
     /// <p>Only list hub content versions that were created after the time specified.</p>
     pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -202,6 +226,10 @@ impl ListHubContentVersionsInputBuilder {
         self.creation_time_after = input;
         self
     }
+    /// <p>Only list hub content versions that were created after the time specified.</p>
+    pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_after
+    }
     /// <p>Sort hub content versions by either name or creation time.</p>
     pub fn sort_by(mut self, input: crate::types::HubContentSortBy) -> Self {
         self.sort_by = ::std::option::Option::Some(input);
@@ -215,6 +243,10 @@ impl ListHubContentVersionsInputBuilder {
         self.sort_by = input;
         self
     }
+    /// <p>Sort hub content versions by either name or creation time.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::HubContentSortBy> {
+        &self.sort_by
+    }
     /// <p>Sort hub content versions by ascending or descending order.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -224,6 +256,10 @@ impl ListHubContentVersionsInputBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p>Sort hub content versions by ascending or descending order.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.sort_order
     }
     /// <p>The maximum number of hub content versions to list.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -235,6 +271,10 @@ impl ListHubContentVersionsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of hub content versions to list.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>If the response to a previous <code>ListHubContentVersions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of hub content versions, use the token in the next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -244,6 +284,10 @@ impl ListHubContentVersionsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the response to a previous <code>ListHubContentVersions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of hub content versions, use the token in the next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListHubContentVersionsInput`](crate::operation::list_hub_content_versions::ListHubContentVersionsInput).
     pub fn build(

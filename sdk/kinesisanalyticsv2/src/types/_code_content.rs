@@ -56,6 +56,10 @@ impl CodeContentBuilder {
         self.text_content = input;
         self
     }
+    /// <p>The text-format code for a Flink-based Kinesis Data Analytics application.</p>
+    pub fn get_text_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text_content
+    }
     /// <p>The zip-format code for a Flink-based Kinesis Data Analytics application.</p>
     pub fn zip_file_content(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.zip_file_content = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl CodeContentBuilder {
         self.zip_file_content = input;
         self
     }
+    /// <p>The zip-format code for a Flink-based Kinesis Data Analytics application.</p>
+    pub fn get_zip_file_content(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.zip_file_content
+    }
     /// <p>Information about the Amazon S3 bucket that contains the application code.</p>
     pub fn s3_content_location(mut self, input: crate::types::S3ContentLocation) -> Self {
         self.s3_content_location = ::std::option::Option::Some(input);
@@ -81,6 +89,12 @@ impl CodeContentBuilder {
     ) -> Self {
         self.s3_content_location = input;
         self
+    }
+    /// <p>Information about the Amazon S3 bucket that contains the application code.</p>
+    pub fn get_s3_content_location(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3ContentLocation> {
+        &self.s3_content_location
     }
     /// Consumes the builder and constructs a [`CodeContent`](crate::types::CodeContent).
     pub fn build(self) -> crate::types::CodeContent {

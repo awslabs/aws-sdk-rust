@@ -36,6 +36,10 @@ impl DescribeStorageSystemResourcesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeStorageSystemResources as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_storage_system_resources::builders::DescribeStorageSystemResourcesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -112,6 +116,10 @@ impl DescribeStorageSystemResourcesFluentBuilder {
         self.inner = self.inner.set_discovery_job_arn(input);
         self
     }
+    /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that's collecting data from your on-premises storage system.</p>
+    pub fn get_discovery_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_discovery_job_arn()
+    }
     /// <p>Specifies what kind of storage system resources that you want information about.</p>
     pub fn resource_type(mut self, input: crate::types::DiscoveryResourceType) -> Self {
         self.inner = self.inner.resource_type(input);
@@ -124,6 +132,10 @@ impl DescribeStorageSystemResourcesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
+    }
+    /// <p>Specifies what kind of storage system resources that you want information about.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::DiscoveryResourceType> {
+        self.inner.get_resource_type()
     }
     /// Appends an item to `ResourceIds`.
     ///
@@ -141,6 +153,12 @@ impl DescribeStorageSystemResourcesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_ids(input);
         self
+    }
+    /// <p>Specifies the universally unique identifiers (UUIDs) of the storage system resources that you want information about. You can't use this parameter in combination with the <code>Filter</code> parameter.</p>
+    pub fn get_resource_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_resource_ids()
     }
     /// Adds a key-value pair to `Filter`.
     ///
@@ -168,6 +186,17 @@ impl DescribeStorageSystemResourcesFluentBuilder {
         self.inner = self.inner.set_filter(input);
         self
     }
+    /// <p>Filters the storage system resources that you want returned. For example, this might be volumes associated with a specific storage virtual machine (SVM).</p>
+    pub fn get_filter(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::DiscoveryResourceFilter,
+            ::std::vec::Vec<::std::string::String>,
+        >,
+    > {
+        self.inner.get_filter()
+    }
     /// <p>Specifies the maximum number of storage system resources that you want to list in a response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -178,6 +207,10 @@ impl DescribeStorageSystemResourcesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>Specifies the maximum number of storage system resources that you want to list in a response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -187,5 +220,9 @@ impl DescribeStorageSystemResourcesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

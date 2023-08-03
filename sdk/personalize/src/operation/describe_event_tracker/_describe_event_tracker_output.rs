@@ -50,6 +50,10 @@ impl DescribeEventTrackerOutputBuilder {
         self.event_tracker = input;
         self
     }
+    /// <p>An object that describes the event tracker.</p>
+    pub fn get_event_tracker(&self) -> &::std::option::Option<crate::types::EventTracker> {
+        &self.event_tracker
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

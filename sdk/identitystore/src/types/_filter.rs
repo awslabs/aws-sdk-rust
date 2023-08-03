@@ -60,6 +60,10 @@ impl FilterBuilder {
         self.attribute_path = input;
         self
     }
+    /// <p>The attribute path that is used to specify which attribute name to search. Length limit is 255 characters. For example, <code>UserName</code> is a valid attribute path for the <code>ListUsers</code> API, and <code>DisplayName</code> is a valid attribute path for the <code>ListGroups</code> API.</p>
+    pub fn get_attribute_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_path
+    }
     /// <p>Represents the data for an attribute. Each attribute value is described as a name-value pair. </p>
     pub fn attribute_value(
         mut self,
@@ -75,6 +79,10 @@ impl FilterBuilder {
     ) -> Self {
         self.attribute_value = input;
         self
+    }
+    /// <p>Represents the data for an attribute. Each attribute value is described as a name-value pair. </p>
+    pub fn get_attribute_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_value
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     pub fn build(self) -> crate::types::Filter {

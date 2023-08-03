@@ -41,6 +41,10 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadD
         self.days_after_initiation = input;
         self
     }
+    /// <p>The number of days after which Amazon S3 cancels an incomplete multipart upload.</p>
+    pub fn get_days_after_initiation(&self) -> &::std::option::Option<i32> {
+        &self.days_after_initiation
+    }
     /// Consumes the builder and constructs a [`AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails`](crate::types::AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails).
     pub fn build(self) -> crate::types::AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails{
         crate::types::AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails {

@@ -74,6 +74,10 @@ impl CreateRobotInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name for the robot.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The target architecture of the robot.</p>
     pub fn architecture(mut self, input: crate::types::Architecture) -> Self {
         self.architecture = ::std::option::Option::Some(input);
@@ -86,6 +90,10 @@ impl CreateRobotInputBuilder {
     ) -> Self {
         self.architecture = input;
         self
+    }
+    /// <p>The target architecture of the robot.</p>
+    pub fn get_architecture(&self) -> &::std::option::Option<crate::types::Architecture> {
+        &self.architecture
     }
     /// <p>The Greengrass group id.</p>
     pub fn greengrass_group_id(
@@ -102,6 +110,10 @@ impl CreateRobotInputBuilder {
     ) -> Self {
         self.greengrass_group_id = input;
         self
+    }
+    /// <p>The Greengrass group id.</p>
+    pub fn get_greengrass_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.greengrass_group_id
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -127,6 +139,14 @@ impl CreateRobotInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A map that contains tag keys and tag values that are attached to the robot.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateRobotInput`](crate::operation::create_robot::CreateRobotInput).
     pub fn build(

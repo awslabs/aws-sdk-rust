@@ -66,6 +66,12 @@ impl GetBatchPredictionJobsOutputBuilder {
         self.batch_predictions = input;
         self
     }
+    /// <p>An array containing the details of each batch prediction job.</p>
+    pub fn get_batch_predictions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPrediction>> {
+        &self.batch_predictions
+    }
     /// <p>The next token for the subsequent request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -75,6 +81,10 @@ impl GetBatchPredictionJobsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The next token for the subsequent request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

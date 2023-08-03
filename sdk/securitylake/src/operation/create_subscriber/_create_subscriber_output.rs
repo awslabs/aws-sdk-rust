@@ -50,6 +50,10 @@ impl CreateSubscriberOutputBuilder {
         self.subscriber = input;
         self
     }
+    /// <p>Retrieve information about the subscriber created using the <code>CreateSubscriber</code> API.</p>
+    pub fn get_subscriber(&self) -> &::std::option::Option<crate::types::SubscriberResource> {
+        &self.subscriber
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -53,6 +53,10 @@ impl DisassociateTrialComponentInputBuilder {
         self.trial_component_name = input;
         self
     }
+    /// <p>The name of the component to disassociate from the trial.</p>
+    pub fn get_trial_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trial_component_name
+    }
     /// <p>The name of the trial to disassociate from.</p>
     pub fn trial_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trial_name = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl DisassociateTrialComponentInputBuilder {
     pub fn set_trial_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trial_name = input;
         self
+    }
+    /// <p>The name of the trial to disassociate from.</p>
+    pub fn get_trial_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trial_name
     }
     /// Consumes the builder and constructs a [`DisassociateTrialComponentInput`](crate::operation::disassociate_trial_component::DisassociateTrialComponentInput).
     pub fn build(

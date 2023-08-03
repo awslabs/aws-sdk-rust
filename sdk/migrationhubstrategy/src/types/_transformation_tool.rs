@@ -59,6 +59,10 @@ impl TransformationToolBuilder {
         self.name = input;
         self
     }
+    /// <p> Name of the tool. </p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::TransformationToolName> {
+        &self.name
+    }
     /// <p> Description of the tool. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl TransformationToolBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p> Description of the tool. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p> URL for installing the tool. </p>
     pub fn tranformation_tool_installation_link(
@@ -84,6 +92,12 @@ impl TransformationToolBuilder {
     ) -> Self {
         self.tranformation_tool_installation_link = input;
         self
+    }
+    /// <p> URL for installing the tool. </p>
+    pub fn get_tranformation_tool_installation_link(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.tranformation_tool_installation_link
     }
     /// Consumes the builder and constructs a [`TransformationTool`](crate::types::TransformationTool).
     pub fn build(self) -> crate::types::TransformationTool {

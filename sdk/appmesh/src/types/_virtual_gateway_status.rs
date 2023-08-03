@@ -43,6 +43,10 @@ impl VirtualGatewayStatusBuilder {
         self.status = input;
         self
     }
+    /// <p>The current status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::VirtualGatewayStatusCode> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`VirtualGatewayStatus`](crate::types::VirtualGatewayStatus).
     pub fn build(self) -> crate::types::VirtualGatewayStatus {
         crate::types::VirtualGatewayStatus {

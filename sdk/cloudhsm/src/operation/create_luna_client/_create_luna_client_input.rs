@@ -49,6 +49,10 @@ impl CreateLunaClientInputBuilder {
         self.label = input;
         self
     }
+    /// <p>The label for the client.</p>
+    pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label
+    }
     /// <p>The contents of a Base64-Encoded X.509 v3 certificate to be installed on the HSMs used by this client.</p>
     pub fn certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl CreateLunaClientInputBuilder {
     pub fn set_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate = input;
         self
+    }
+    /// <p>The contents of a Base64-Encoded X.509 v3 certificate to be installed on the HSMs used by this client.</p>
+    pub fn get_certificate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate
     }
     /// Consumes the builder and constructs a [`CreateLunaClientInput`](crate::operation::create_luna_client::CreateLunaClientInput).
     pub fn build(

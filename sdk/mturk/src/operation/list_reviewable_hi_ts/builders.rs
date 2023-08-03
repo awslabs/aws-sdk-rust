@@ -36,6 +36,12 @@ impl ListReviewableHITsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListReviewableHITs as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_reviewable_hi_ts::builders::ListReviewableHiTsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListReviewableHITsFluentBuilder {
         self.inner = self.inner.set_hit_type_id(input);
         self
     }
+    /// <p> The ID of the HIT type of the HITs to consider for the query. If not specified, all HITs for the Reviewer are considered </p>
+    pub fn get_hit_type_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hit_type_id()
+    }
     /// <p> Can be either <code>Reviewable</code> or <code>Reviewing</code>. Reviewable is the default value. </p>
     pub fn status(mut self, input: crate::types::ReviewableHitStatus) -> Self {
         self.inner = self.inner.status(input);
@@ -150,6 +160,10 @@ impl ListReviewableHITsFluentBuilder {
         self.inner = self.inner.set_status(input);
         self
     }
+    /// <p> Can be either <code>Reviewable</code> or <code>Reviewing</code>. Reviewable is the default value. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ReviewableHitStatus> {
+        self.inner.get_status()
+    }
     /// <p>Pagination Token</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -160,6 +174,10 @@ impl ListReviewableHITsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>Pagination Token</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p> Limit the number of results returned. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -169,5 +187,9 @@ impl ListReviewableHITsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p> Limit the number of results returned. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

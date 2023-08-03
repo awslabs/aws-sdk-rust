@@ -67,6 +67,12 @@ impl DescribeContinuousExportsOutputBuilder {
         self.descriptions = input;
         self
     }
+    /// <p>A list of continuous export descriptions.</p>
+    pub fn get_descriptions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContinuousExportDescription>> {
+        &self.descriptions
+    }
     /// <p>The token from the previous call to <code>DescribeExportTasks</code>.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -76,6 +82,10 @@ impl DescribeContinuousExportsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token from the previous call to <code>DescribeExportTasks</code>.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -40,6 +40,12 @@ impl ListProxySessionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListProxySessions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_proxy_sessions::builders::ListProxySessionsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -147,6 +153,10 @@ impl ListProxySessionsFluentBuilder {
         self.inner = self.inner.set_voice_connector_id(input);
         self
     }
+    /// <p>The Amazon Chime voice connector ID.</p>
+    pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_voice_connector_id()
+    }
     /// <p>The proxy session status.</p>
     pub fn status(mut self, input: crate::types::ProxySessionStatus) -> Self {
         self.inner = self.inner.status(input);
@@ -160,6 +170,10 @@ impl ListProxySessionsFluentBuilder {
         self.inner = self.inner.set_status(input);
         self
     }
+    /// <p>The proxy session status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ProxySessionStatus> {
+        self.inner.get_status()
+    }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -170,6 +184,10 @@ impl ListProxySessionsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -179,5 +197,9 @@ impl ListProxySessionsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return in a single call.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

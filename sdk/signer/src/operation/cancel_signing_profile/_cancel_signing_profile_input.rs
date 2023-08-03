@@ -40,6 +40,10 @@ impl CancelSigningProfileInputBuilder {
         self.profile_name = input;
         self
     }
+    /// <p>The name of the signing profile to be canceled.</p>
+    pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_name
+    }
     /// Consumes the builder and constructs a [`CancelSigningProfileInput`](crate::operation::cancel_signing_profile::CancelSigningProfileInput).
     pub fn build(
         self,

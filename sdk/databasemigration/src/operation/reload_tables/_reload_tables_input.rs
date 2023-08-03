@@ -66,6 +66,10 @@ impl ReloadTablesInputBuilder {
         self.replication_task_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the replication task. </p>
+    pub fn get_replication_task_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_task_arn
+    }
     /// Appends an item to `tables_to_reload`.
     ///
     /// To override the contents of this collection use [`set_tables_to_reload`](Self::set_tables_to_reload).
@@ -85,6 +89,12 @@ impl ReloadTablesInputBuilder {
         self.tables_to_reload = input;
         self
     }
+    /// <p>The name and schema of the table to be reloaded. </p>
+    pub fn get_tables_to_reload(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TableToReload>> {
+        &self.tables_to_reload
+    }
     /// <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation is enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when validation is enabled for the task. </p>
     /// <p>Valid values: data-reload, validate-only</p>
     /// <p>Default value is data-reload.</p>
@@ -101,6 +111,12 @@ impl ReloadTablesInputBuilder {
     ) -> Self {
         self.reload_option = input;
         self
+    }
+    /// <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation is enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when validation is enabled for the task. </p>
+    /// <p>Valid values: data-reload, validate-only</p>
+    /// <p>Default value is data-reload.</p>
+    pub fn get_reload_option(&self) -> &::std::option::Option<crate::types::ReloadOptionValue> {
+        &self.reload_option
     }
     /// Consumes the builder and constructs a [`ReloadTablesInput`](crate::operation::reload_tables::ReloadTablesInput).
     pub fn build(

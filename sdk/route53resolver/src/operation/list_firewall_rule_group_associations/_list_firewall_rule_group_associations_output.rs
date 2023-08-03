@@ -60,6 +60,10 @@ impl ListFirewallRuleGroupAssociationsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `firewall_rule_group_associations`.
     ///
     /// To override the contents of this collection use [`set_firewall_rule_group_associations`](Self::set_firewall_rule_group_associations).
@@ -83,6 +87,13 @@ impl ListFirewallRuleGroupAssociationsOutputBuilder {
     ) -> Self {
         self.firewall_rule_group_associations = input;
         self
+    }
+    /// <p>A list of your firewall rule group associations.</p>
+    /// <p>This might be a partial list of the associations that you have defined. For information, see <code>MaxResults</code>. </p>
+    pub fn get_firewall_rule_group_associations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FirewallRuleGroupAssociation>> {
+        &self.firewall_rule_group_associations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

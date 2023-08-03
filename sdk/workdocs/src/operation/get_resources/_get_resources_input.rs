@@ -86,6 +86,10 @@ impl GetResourcesInputBuilder {
         self.authentication_token = input;
         self
     }
+    /// <p>The Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication_token
+    }
     /// <p>The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
@@ -95,6 +99,10 @@ impl GetResourcesInputBuilder {
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
+    }
+    /// <p>The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     /// <p>The collection type.</p>
     pub fn collection_type(mut self, input: crate::types::ResourceCollectionType) -> Self {
@@ -109,6 +117,12 @@ impl GetResourcesInputBuilder {
         self.collection_type = input;
         self
     }
+    /// <p>The collection type.</p>
+    pub fn get_collection_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceCollectionType> {
+        &self.collection_type
+    }
     /// <p>The maximum number of resources to return.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -119,6 +133,10 @@ impl GetResourcesInputBuilder {
         self.limit = input;
         self
     }
+    /// <p>The maximum number of resources to return.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
+    }
     /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -128,6 +146,10 @@ impl GetResourcesInputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// Consumes the builder and constructs a [`GetResourcesInput`](crate::operation::get_resources::GetResourcesInput).
     pub fn build(

@@ -62,6 +62,12 @@ impl RetrieveEnvironmentInfoOutputBuilder {
         self.environment_info = input;
         self
     }
+    /// <p> The <code>EnvironmentInfoDescription</code> of the environment. </p>
+    pub fn get_environment_info(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentInfoDescription>> {
+        &self.environment_info
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

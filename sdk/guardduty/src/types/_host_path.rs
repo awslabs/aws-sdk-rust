@@ -40,6 +40,10 @@ impl HostPathBuilder {
         self.path = input;
         self
     }
+    /// <p>Path of the file or directory on the host that the volume maps to.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
+    }
     /// Consumes the builder and constructs a [`HostPath`](crate::types::HostPath).
     pub fn build(self) -> crate::types::HostPath {
         crate::types::HostPath { path: self.path }

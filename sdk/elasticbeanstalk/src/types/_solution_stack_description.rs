@@ -54,6 +54,10 @@ impl SolutionStackDescriptionBuilder {
         self.solution_stack_name = input;
         self
     }
+    /// <p>The name of the solution stack.</p>
+    pub fn get_solution_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.solution_stack_name
+    }
     /// Appends an item to `permitted_file_types`.
     ///
     /// To override the contents of this collection use [`set_permitted_file_types`](Self::set_permitted_file_types).
@@ -75,6 +79,12 @@ impl SolutionStackDescriptionBuilder {
     ) -> Self {
         self.permitted_file_types = input;
         self
+    }
+    /// <p>The permitted file types allowed for a solution stack.</p>
+    pub fn get_permitted_file_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.permitted_file_types
     }
     /// Consumes the builder and constructs a [`SolutionStackDescription`](crate::types::SolutionStackDescription).
     pub fn build(self) -> crate::types::SolutionStackDescription {

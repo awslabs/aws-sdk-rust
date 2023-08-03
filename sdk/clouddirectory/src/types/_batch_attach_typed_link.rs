@@ -70,6 +70,12 @@ impl BatchAttachTypedLinkBuilder {
         self.source_object_reference = input;
         self
     }
+    /// <p>Identifies the source object that the typed link will attach to.</p>
+    pub fn get_source_object_reference(
+        &self,
+    ) -> &::std::option::Option<crate::types::ObjectReference> {
+        &self.source_object_reference
+    }
     /// <p>Identifies the target object that the typed link will attach to.</p>
     pub fn target_object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.target_object_reference = ::std::option::Option::Some(input);
@@ -83,6 +89,12 @@ impl BatchAttachTypedLinkBuilder {
         self.target_object_reference = input;
         self
     }
+    /// <p>Identifies the target object that the typed link will attach to.</p>
+    pub fn get_target_object_reference(
+        &self,
+    ) -> &::std::option::Option<crate::types::ObjectReference> {
+        &self.target_object_reference
+    }
     /// <p>Identifies the typed link facet that is associated with the typed link.</p>
     pub fn typed_link_facet(mut self, input: crate::types::TypedLinkSchemaAndFacetName) -> Self {
         self.typed_link_facet = ::std::option::Option::Some(input);
@@ -95,6 +107,12 @@ impl BatchAttachTypedLinkBuilder {
     ) -> Self {
         self.typed_link_facet = input;
         self
+    }
+    /// <p>Identifies the typed link facet that is associated with the typed link.</p>
+    pub fn get_typed_link_facet(
+        &self,
+    ) -> &::std::option::Option<crate::types::TypedLinkSchemaAndFacetName> {
+        &self.typed_link_facet
     }
     /// Appends an item to `attributes`.
     ///
@@ -114,6 +132,12 @@ impl BatchAttachTypedLinkBuilder {
     ) -> Self {
         self.attributes = input;
         self
+    }
+    /// <p>A set of attributes that are associated with the typed link.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeNameAndValue>> {
+        &self.attributes
     }
     /// Consumes the builder and constructs a [`BatchAttachTypedLink`](crate::types::BatchAttachTypedLink).
     pub fn build(self) -> crate::types::BatchAttachTypedLink {

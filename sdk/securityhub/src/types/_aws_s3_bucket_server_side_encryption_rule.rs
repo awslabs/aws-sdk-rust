@@ -50,6 +50,12 @@ impl AwsS3BucketServerSideEncryptionRuleBuilder {
         self.apply_server_side_encryption_by_default = input;
         self
     }
+    /// <p>Specifies the default server-side encryption to apply to new objects in the bucket. If a <code>PUT</code> object request doesn't specify any server-side encryption, this default encryption is applied.</p>
+    pub fn get_apply_server_side_encryption_by_default(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsS3BucketServerSideEncryptionByDefault> {
+        &self.apply_server_side_encryption_by_default
+    }
     /// Consumes the builder and constructs a [`AwsS3BucketServerSideEncryptionRule`](crate::types::AwsS3BucketServerSideEncryptionRule).
     pub fn build(self) -> crate::types::AwsS3BucketServerSideEncryptionRule {
         crate::types::AwsS3BucketServerSideEncryptionRule {

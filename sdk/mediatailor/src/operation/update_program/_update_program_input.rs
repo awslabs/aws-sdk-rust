@@ -76,6 +76,10 @@ impl UpdateProgramInputBuilder {
         self.ad_breaks = input;
         self
     }
+    /// <p>The ad break configuration settings.</p>
+    pub fn get_ad_breaks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdBreak>> {
+        &self.ad_breaks
+    }
     /// <p>The name of the channel for this Program.</p>
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
@@ -86,6 +90,10 @@ impl UpdateProgramInputBuilder {
         self.channel_name = input;
         self
     }
+    /// <p>The name of the channel for this Program.</p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_name
+    }
     /// <p>The name of the Program.</p>
     pub fn program_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.program_name = ::std::option::Option::Some(input.into());
@@ -95,6 +103,10 @@ impl UpdateProgramInputBuilder {
     pub fn set_program_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.program_name = input;
         self
+    }
+    /// <p>The name of the Program.</p>
+    pub fn get_program_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.program_name
     }
     /// <p>The schedule configuration settings.</p>
     pub fn schedule_configuration(
@@ -111,6 +123,12 @@ impl UpdateProgramInputBuilder {
     ) -> Self {
         self.schedule_configuration = input;
         self
+    }
+    /// <p>The schedule configuration settings.</p>
+    pub fn get_schedule_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateProgramScheduleConfiguration> {
+        &self.schedule_configuration
     }
     /// Consumes the builder and constructs a [`UpdateProgramInput`](crate::operation::update_program::UpdateProgramInput).
     pub fn build(

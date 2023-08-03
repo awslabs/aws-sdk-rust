@@ -135,6 +135,10 @@ impl VolumeRecommendationBuilder {
         self.volume_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the current volume.</p>
+    pub fn get_volume_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_arn
+    }
     /// <p>The Amazon Web Services account ID of the volume.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -144,6 +148,10 @@ impl VolumeRecommendationBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>The Amazon Web Services account ID of the volume.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>An array of objects that describe the current configuration of the volume.</p>
     pub fn current_configuration(mut self, input: crate::types::VolumeConfiguration) -> Self {
@@ -157,6 +165,12 @@ impl VolumeRecommendationBuilder {
     ) -> Self {
         self.current_configuration = input;
         self
+    }
+    /// <p>An array of objects that describe the current configuration of the volume.</p>
+    pub fn get_current_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::VolumeConfiguration> {
+        &self.current_configuration
     }
     /// <p>The finding classification of the volume.</p>
     /// <p>Findings for volumes include:</p>
@@ -178,6 +192,15 @@ impl VolumeRecommendationBuilder {
         self.finding = input;
         self
     }
+    /// <p>The finding classification of the volume.</p>
+    /// <p>Findings for volumes include:</p>
+    /// <ul>
+    /// <li> <p> <b> <code>NotOptimized</code> </b>—A volume is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p> </li>
+    /// <li> <p> <b> <code>Optimized</code> </b>—An volume is considered optimized when Compute Optimizer determines that the volume is correctly provisioned to run your workload based on the chosen volume type. For optimized resources, Compute Optimizer might recommend a new generation volume type.</p> </li>
+    /// </ul>
+    pub fn get_finding(&self) -> &::std::option::Option<crate::types::EbsFinding> {
+        &self.finding
+    }
     /// Appends an item to `utilization_metrics`.
     ///
     /// To override the contents of this collection use [`set_utilization_metrics`](Self::set_utilization_metrics).
@@ -197,6 +220,12 @@ impl VolumeRecommendationBuilder {
         self.utilization_metrics = input;
         self
     }
+    /// <p>An array of objects that describe the utilization metrics of the volume.</p>
+    pub fn get_utilization_metrics(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EbsUtilizationMetric>> {
+        &self.utilization_metrics
+    }
     /// <p>The number of days for which utilization metrics were analyzed for the volume.</p>
     pub fn look_back_period_in_days(mut self, input: f64) -> Self {
         self.look_back_period_in_days = ::std::option::Option::Some(input);
@@ -206,6 +235,10 @@ impl VolumeRecommendationBuilder {
     pub fn set_look_back_period_in_days(mut self, input: ::std::option::Option<f64>) -> Self {
         self.look_back_period_in_days = input;
         self
+    }
+    /// <p>The number of days for which utilization metrics were analyzed for the volume.</p>
+    pub fn get_look_back_period_in_days(&self) -> &::std::option::Option<f64> {
+        &self.look_back_period_in_days
     }
     /// Appends an item to `volume_recommendation_options`.
     ///
@@ -229,6 +262,12 @@ impl VolumeRecommendationBuilder {
         self.volume_recommendation_options = input;
         self
     }
+    /// <p>An array of objects that describe the recommendation options for the volume.</p>
+    pub fn get_volume_recommendation_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeRecommendationOption>> {
+        &self.volume_recommendation_options
+    }
     /// <p>The timestamp of when the volume recommendation was last generated.</p>
     pub fn last_refresh_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_refresh_timestamp = ::std::option::Option::Some(input);
@@ -242,6 +281,12 @@ impl VolumeRecommendationBuilder {
         self.last_refresh_timestamp = input;
         self
     }
+    /// <p>The timestamp of when the volume recommendation was last generated.</p>
+    pub fn get_last_refresh_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_refresh_timestamp
+    }
     /// <p>The risk of the current EBS volume not meeting the performance needs of its workloads. The higher the risk, the more likely the current EBS volume doesn't have sufficient capacity.</p>
     pub fn current_performance_risk(mut self, input: crate::types::CurrentPerformanceRisk) -> Self {
         self.current_performance_risk = ::std::option::Option::Some(input);
@@ -254,6 +299,12 @@ impl VolumeRecommendationBuilder {
     ) -> Self {
         self.current_performance_risk = input;
         self
+    }
+    /// <p>The risk of the current EBS volume not meeting the performance needs of its workloads. The higher the risk, the more likely the current EBS volume doesn't have sufficient capacity.</p>
+    pub fn get_current_performance_risk(
+        &self,
+    ) -> &::std::option::Option<crate::types::CurrentPerformanceRisk> {
+        &self.current_performance_risk
     }
     /// Appends an item to `tags`.
     ///
@@ -273,6 +324,10 @@ impl VolumeRecommendationBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p> A list of tags assigned to your Amazon EBS volume recommendations. </p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`VolumeRecommendation`](crate::types::VolumeRecommendation).
     pub fn build(self) -> crate::types::VolumeRecommendation {

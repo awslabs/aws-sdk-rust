@@ -72,6 +72,10 @@ impl CredentialsBuilder {
         self.access_token = input;
         self
     }
+    /// <p>An access token generated for a federated user to access Amazon Connect.</p>
+    pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_token
+    }
     /// <p>A token generated with an expiration time for the session a user is logged in to Amazon Connect.</p>
     pub fn access_token_expiration(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.access_token_expiration = ::std::option::Option::Some(input);
@@ -84,6 +88,12 @@ impl CredentialsBuilder {
     ) -> Self {
         self.access_token_expiration = input;
         self
+    }
+    /// <p>A token generated with an expiration time for the session a user is logged in to Amazon Connect.</p>
+    pub fn get_access_token_expiration(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.access_token_expiration
     }
     /// <p>Renews a token generated for a user to access the Amazon Connect instance.</p>
     pub fn refresh_token(
@@ -101,6 +111,10 @@ impl CredentialsBuilder {
         self.refresh_token = input;
         self
     }
+    /// <p>Renews a token generated for a user to access the Amazon Connect instance.</p>
+    pub fn get_refresh_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.refresh_token
+    }
     /// <p>Renews the expiration timer for a generated token.</p>
     pub fn refresh_token_expiration(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.refresh_token_expiration = ::std::option::Option::Some(input);
@@ -113,6 +127,12 @@ impl CredentialsBuilder {
     ) -> Self {
         self.refresh_token_expiration = input;
         self
+    }
+    /// <p>Renews the expiration timer for a generated token.</p>
+    pub fn get_refresh_token_expiration(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.refresh_token_expiration
     }
     /// Consumes the builder and constructs a [`Credentials`](crate::types::Credentials).
     pub fn build(self) -> crate::types::Credentials {

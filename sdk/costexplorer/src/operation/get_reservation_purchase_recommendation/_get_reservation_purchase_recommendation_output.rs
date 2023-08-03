@@ -75,6 +75,12 @@ impl GetReservationPurchaseRecommendationOutputBuilder {
         self.metadata = input;
         self
     }
+    /// <p>Information about this specific recommendation call, such as the time stamp for when Cost Explorer generated this recommendation.</p>
+    pub fn get_metadata(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReservationPurchaseRecommendationMetadata> {
+        &self.metadata
+    }
     /// Appends an item to `recommendations`.
     ///
     /// To override the contents of this collection use [`set_recommendations`](Self::set_recommendations).
@@ -99,6 +105,13 @@ impl GetReservationPurchaseRecommendationOutputBuilder {
         self.recommendations = input;
         self
     }
+    /// <p>Recommendations for reservations to purchase.</p>
+    pub fn get_recommendations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservationPurchaseRecommendation>>
+    {
+        &self.recommendations
+    }
     /// <p>The pagination token for the next set of retrievable results.</p>
     pub fn next_page_token(
         mut self,
@@ -114,6 +127,10 @@ impl GetReservationPurchaseRecommendationOutputBuilder {
     ) -> Self {
         self.next_page_token = input;
         self
+    }
+    /// <p>The pagination token for the next set of retrievable results.</p>
+    pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_page_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

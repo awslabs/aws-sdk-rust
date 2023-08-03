@@ -48,6 +48,10 @@ impl RecordBuilder {
         self.json_path = input;
         self
     }
+    /// <p>The path, as a JSONPath expression, to the field in the record that contains the data. If the field name is longer than 20 characters, it is truncated. If the path is longer than 250 characters, it is truncated.</p>
+    pub fn get_json_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.json_path
+    }
     /// <p>The record index, starting from 0, for the record that contains the data.</p>
     pub fn record_index(mut self, input: i64) -> Self {
         self.record_index = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl RecordBuilder {
     pub fn set_record_index(mut self, input: ::std::option::Option<i64>) -> Self {
         self.record_index = input;
         self
+    }
+    /// <p>The record index, starting from 0, for the record that contains the data.</p>
+    pub fn get_record_index(&self) -> &::std::option::Option<i64> {
+        &self.record_index
     }
     /// Consumes the builder and constructs a [`Record`](crate::types::Record).
     pub fn build(self) -> crate::types::Record {

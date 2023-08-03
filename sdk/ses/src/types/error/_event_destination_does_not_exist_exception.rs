@@ -94,6 +94,10 @@ impl EventDestinationDoesNotExistExceptionBuilder {
         self.configuration_set_name = input;
         self
     }
+    /// <p>Indicates that the configuration set does not exist.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set_name
+    }
     /// <p>Indicates that the event destination does not exist.</p>
     pub fn event_destination_name(
         mut self,
@@ -110,6 +114,10 @@ impl EventDestinationDoesNotExistExceptionBuilder {
         self.event_destination_name = input;
         self
     }
+    /// <p>Indicates that the event destination does not exist.</p>
+    pub fn get_event_destination_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_destination_name
+    }
     #[allow(missing_docs)] // documentation missing in model
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -119,6 +127,10 @@ impl EventDestinationDoesNotExistExceptionBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

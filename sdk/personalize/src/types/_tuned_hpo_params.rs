@@ -63,6 +63,14 @@ impl TunedHpoParamsBuilder {
         self.algorithm_hyper_parameters = input;
         self
     }
+    /// <p>A list of the hyperparameter values of the best performing model.</p>
+    pub fn get_algorithm_hyper_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.algorithm_hyper_parameters
+    }
     /// Consumes the builder and constructs a [`TunedHpoParams`](crate::types::TunedHpoParams).
     pub fn build(self) -> crate::types::TunedHpoParams {
         crate::types::TunedHpoParams {

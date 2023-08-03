@@ -76,6 +76,12 @@ impl SegmentGroupBuilder {
         self.dimensions = input;
         self
     }
+    /// <p>An array that defines the dimensions for the segment.</p>
+    pub fn get_dimensions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SegmentDimensions>> {
+        &self.dimensions
+    }
     /// Appends an item to `source_segments`.
     ///
     /// To override the contents of this collection use [`set_source_segments`](Self::set_source_segments).
@@ -97,6 +103,13 @@ impl SegmentGroupBuilder {
         self.source_segments = input;
         self
     }
+    /// <p>The base segment to build the segment on. A base segment, also referred to as a <i>source segment</i>, defines the initial population of endpoints for a segment. When you add dimensions to a segment, Amazon Pinpoint filters the base segment by using the dimensions that you specify.</p>
+    /// <p>You can specify more than one dimensional segment or only one imported segment. If you specify an imported segment, the Amazon Pinpoint console displays a segment size estimate that indicates the size of the imported segment without any filters applied to it.</p>
+    pub fn get_source_segments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SegmentReference>> {
+        &self.source_segments
+    }
     /// <p>Specifies how to handle multiple base segments for the segment. For example, if you specify three base segments for the segment, whether the resulting segment is based on all, any, or none of the base segments.</p>
     pub fn source_type(mut self, input: crate::types::SourceType) -> Self {
         self.source_type = ::std::option::Option::Some(input);
@@ -110,6 +123,10 @@ impl SegmentGroupBuilder {
         self.source_type = input;
         self
     }
+    /// <p>Specifies how to handle multiple base segments for the segment. For example, if you specify three base segments for the segment, whether the resulting segment is based on all, any, or none of the base segments.</p>
+    pub fn get_source_type(&self) -> &::std::option::Option<crate::types::SourceType> {
+        &self.source_type
+    }
     /// <p>Specifies how to handle multiple dimensions for the segment. For example, if you specify three dimensions for the segment, whether the resulting segment includes endpoints that match all, any, or none of the dimensions.</p>
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -119,6 +136,10 @@ impl SegmentGroupBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>Specifies how to handle multiple dimensions for the segment. For example, if you specify three dimensions for the segment, whether the resulting segment includes endpoints that match all, any, or none of the dimensions.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`SegmentGroup`](crate::types::SegmentGroup).
     pub fn build(self) -> crate::types::SegmentGroup {

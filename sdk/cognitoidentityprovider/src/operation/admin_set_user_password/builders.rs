@@ -38,6 +38,13 @@ impl AdminSetUserPasswordFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AdminSetUserPassword as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::admin_set_user_password::builders::AdminSetUserPasswordInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +135,10 @@ impl AdminSetUserPasswordFluentBuilder {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
+    /// <p>The user pool ID for the user pool where you want to set the user's password.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_pool_id()
+    }
     /// <p>The user name of the user whose password you want to set.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.username(input.into());
@@ -137,6 +148,10 @@ impl AdminSetUserPasswordFluentBuilder {
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_username(input);
         self
+    }
+    /// <p>The user name of the user whose password you want to set.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_username()
     }
     /// <p>The password for the user.</p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -148,6 +163,10 @@ impl AdminSetUserPasswordFluentBuilder {
         self.inner = self.inner.set_password(input);
         self
     }
+    /// <p>The password for the user.</p>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_password()
+    }
     /// <p> <code>True</code> if the password is permanent, <code>False</code> if it is temporary.</p>
     pub fn permanent(mut self, input: bool) -> Self {
         self.inner = self.inner.permanent(input);
@@ -157,5 +176,9 @@ impl AdminSetUserPasswordFluentBuilder {
     pub fn set_permanent(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_permanent(input);
         self
+    }
+    /// <p> <code>True</code> if the password is permanent, <code>False</code> if it is temporary.</p>
+    pub fn get_permanent(&self) -> &::std::option::Option<bool> {
+        self.inner.get_permanent()
     }
 }

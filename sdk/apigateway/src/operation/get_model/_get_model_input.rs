@@ -56,6 +56,10 @@ impl GetModelInputBuilder {
         self.rest_api_id = input;
         self
     }
+    /// <p>The RestApi identifier under which the Model exists.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
+    }
     /// <p>The name of the model as an identifier.</p>
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl GetModelInputBuilder {
         self.model_name = input;
         self
     }
+    /// <p>The name of the model as an identifier.</p>
+    pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_name
+    }
     /// <p>A query parameter of a Boolean value to resolve (<code>true</code>) all external model references and returns a flattened model schema or not (<code>false</code>) The default is <code>false</code>.</p>
     pub fn flatten(mut self, input: bool) -> Self {
         self.flatten = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl GetModelInputBuilder {
     pub fn set_flatten(mut self, input: ::std::option::Option<bool>) -> Self {
         self.flatten = input;
         self
+    }
+    /// <p>A query parameter of a Boolean value to resolve (<code>true</code>) all external model references and returns a flattened model schema or not (<code>false</code>) The default is <code>false</code>.</p>
+    pub fn get_flatten(&self) -> &::std::option::Option<bool> {
+        &self.flatten
     }
     /// Consumes the builder and constructs a [`GetModelInput`](crate::operation::get_model::GetModelInput).
     pub fn build(

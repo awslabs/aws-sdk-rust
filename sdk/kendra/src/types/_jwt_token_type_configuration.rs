@@ -91,6 +91,10 @@ impl JwtTokenTypeConfigurationBuilder {
         self.key_location = input;
         self
     }
+    /// <p>The location of the key.</p>
+    pub fn get_key_location(&self) -> &::std::option::Option<crate::types::KeyLocation> {
+        &self.key_location
+    }
     /// <p>The signing key URL.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
@@ -100,6 +104,10 @@ impl JwtTokenTypeConfigurationBuilder {
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
+    }
+    /// <p>The signing key URL.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     /// <p>The Amazon Resource Name (arn) of the secret.</p>
     pub fn secret_manager_arn(
@@ -117,6 +125,10 @@ impl JwtTokenTypeConfigurationBuilder {
         self.secret_manager_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (arn) of the secret.</p>
+    pub fn get_secret_manager_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_manager_arn
+    }
     /// <p>The user name attribute field.</p>
     pub fn user_name_attribute_field(
         mut self,
@@ -132,6 +144,10 @@ impl JwtTokenTypeConfigurationBuilder {
     ) -> Self {
         self.user_name_attribute_field = input;
         self
+    }
+    /// <p>The user name attribute field.</p>
+    pub fn get_user_name_attribute_field(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name_attribute_field
     }
     /// <p>The group attribute field.</p>
     pub fn group_attribute_field(
@@ -149,6 +165,10 @@ impl JwtTokenTypeConfigurationBuilder {
         self.group_attribute_field = input;
         self
     }
+    /// <p>The group attribute field.</p>
+    pub fn get_group_attribute_field(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_attribute_field
+    }
     /// <p>The issuer of the token.</p>
     pub fn issuer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.issuer = ::std::option::Option::Some(input.into());
@@ -159,6 +179,10 @@ impl JwtTokenTypeConfigurationBuilder {
         self.issuer = input;
         self
     }
+    /// <p>The issuer of the token.</p>
+    pub fn get_issuer(&self) -> &::std::option::Option<::std::string::String> {
+        &self.issuer
+    }
     /// <p>The regular expression that identifies the claim.</p>
     pub fn claim_regex(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.claim_regex = ::std::option::Option::Some(input.into());
@@ -168,6 +192,10 @@ impl JwtTokenTypeConfigurationBuilder {
     pub fn set_claim_regex(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.claim_regex = input;
         self
+    }
+    /// <p>The regular expression that identifies the claim.</p>
+    pub fn get_claim_regex(&self) -> &::std::option::Option<::std::string::String> {
+        &self.claim_regex
     }
     /// Consumes the builder and constructs a [`JwtTokenTypeConfiguration`](crate::types::JwtTokenTypeConfiguration).
     pub fn build(self) -> crate::types::JwtTokenTypeConfiguration {

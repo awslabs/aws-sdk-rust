@@ -53,6 +53,10 @@ impl DisassociateAssessmentReportEvidenceFolderInputBuilder {
         self.assessment_id = input;
         self
     }
+    /// <p> The unique identifier for the assessment. </p>
+    pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_id
+    }
     /// <p> The unique identifier for the folder that the evidence is stored in. </p>
     pub fn evidence_folder_id(
         mut self,
@@ -68,6 +72,10 @@ impl DisassociateAssessmentReportEvidenceFolderInputBuilder {
     ) -> Self {
         self.evidence_folder_id = input;
         self
+    }
+    /// <p> The unique identifier for the folder that the evidence is stored in. </p>
+    pub fn get_evidence_folder_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evidence_folder_id
     }
     /// Consumes the builder and constructs a [`DisassociateAssessmentReportEvidenceFolderInput`](crate::operation::disassociate_assessment_report_evidence_folder::DisassociateAssessmentReportEvidenceFolderInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_assessment_report_evidence_folder::DisassociateAssessmentReportEvidenceFolderInput, ::aws_smithy_http::operation::error::BuildError>{

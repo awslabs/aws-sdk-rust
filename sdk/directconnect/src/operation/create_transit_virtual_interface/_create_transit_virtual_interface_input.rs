@@ -57,6 +57,10 @@ impl CreateTransitVirtualInterfaceInputBuilder {
         self.connection_id = input;
         self
     }
+    /// <p>The ID of the connection.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_id
+    }
     /// <p>Information about the transit virtual interface.</p>
     pub fn new_transit_virtual_interface(
         mut self,
@@ -72,6 +76,12 @@ impl CreateTransitVirtualInterfaceInputBuilder {
     ) -> Self {
         self.new_transit_virtual_interface = input;
         self
+    }
+    /// <p>Information about the transit virtual interface.</p>
+    pub fn get_new_transit_virtual_interface(
+        &self,
+    ) -> &::std::option::Option<crate::types::NewTransitVirtualInterface> {
+        &self.new_transit_virtual_interface
     }
     /// Consumes the builder and constructs a [`CreateTransitVirtualInterfaceInput`](crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceInput).
     pub fn build(

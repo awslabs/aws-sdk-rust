@@ -56,6 +56,12 @@ impl GetFindingsInputBuilder {
         self.finding_ids = input;
         self
     }
+    /// <p>An array of strings that lists the unique identifiers for the findings to retrieve. You can specify as many as 50 unique identifiers in this array.</p>
+    pub fn get_finding_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.finding_ids
+    }
     /// <p>The criteria for sorting the results of the request.</p>
     pub fn sort_criteria(mut self, input: crate::types::SortCriteria) -> Self {
         self.sort_criteria = ::std::option::Option::Some(input);
@@ -68,6 +74,10 @@ impl GetFindingsInputBuilder {
     ) -> Self {
         self.sort_criteria = input;
         self
+    }
+    /// <p>The criteria for sorting the results of the request.</p>
+    pub fn get_sort_criteria(&self) -> &::std::option::Option<crate::types::SortCriteria> {
+        &self.sort_criteria
     }
     /// Consumes the builder and constructs a [`GetFindingsInput`](crate::operation::get_findings::GetFindingsInput).
     pub fn build(

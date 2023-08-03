@@ -47,6 +47,10 @@ impl GetEventInputBuilder {
         self.event_id = input;
         self
     }
+    /// <p>The ID of the event to retrieve.</p>
+    pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_id
+    }
     /// <p>The event type of the event to retrieve.</p>
     pub fn event_type_name(
         mut self,
@@ -62,6 +66,10 @@ impl GetEventInputBuilder {
     ) -> Self {
         self.event_type_name = input;
         self
+    }
+    /// <p>The event type of the event to retrieve.</p>
+    pub fn get_event_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_type_name
     }
     /// Consumes the builder and constructs a [`GetEventInput`](crate::operation::get_event::GetEventInput).
     pub fn build(

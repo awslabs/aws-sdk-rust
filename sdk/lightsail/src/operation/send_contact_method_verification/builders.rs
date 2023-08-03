@@ -40,6 +40,10 @@ impl SendContactMethodVerificationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SendContactMethodVerification as a reference.
+    pub fn as_input(&self) -> &crate::operation::send_contact_method_verification::builders::SendContactMethodVerificationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +136,11 @@ impl SendContactMethodVerificationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_protocol(input);
         self
+    }
+    /// <p>The protocol to verify, such as <code>Email</code> or <code>SMS</code> (text messaging).</p>
+    pub fn get_protocol(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContactMethodVerificationProtocol> {
+        self.inner.get_protocol()
     }
 }

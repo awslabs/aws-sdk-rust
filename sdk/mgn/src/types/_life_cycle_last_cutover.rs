@@ -59,6 +59,12 @@ impl LifeCycleLastCutoverBuilder {
         self.initiated = input;
         self
     }
+    /// <p>Lifecycle last Cutover initiated.</p>
+    pub fn get_initiated(
+        &self,
+    ) -> &::std::option::Option<crate::types::LifeCycleLastCutoverInitiated> {
+        &self.initiated
+    }
     /// <p>Lifecycle last Cutover reverted.</p>
     pub fn reverted(mut self, input: crate::types::LifeCycleLastCutoverReverted) -> Self {
         self.reverted = ::std::option::Option::Some(input);
@@ -72,6 +78,12 @@ impl LifeCycleLastCutoverBuilder {
         self.reverted = input;
         self
     }
+    /// <p>Lifecycle last Cutover reverted.</p>
+    pub fn get_reverted(
+        &self,
+    ) -> &::std::option::Option<crate::types::LifeCycleLastCutoverReverted> {
+        &self.reverted
+    }
     /// <p>Lifecycle Cutover finalized date and time.</p>
     pub fn finalized(mut self, input: crate::types::LifeCycleLastCutoverFinalized) -> Self {
         self.finalized = ::std::option::Option::Some(input);
@@ -84,6 +96,12 @@ impl LifeCycleLastCutoverBuilder {
     ) -> Self {
         self.finalized = input;
         self
+    }
+    /// <p>Lifecycle Cutover finalized date and time.</p>
+    pub fn get_finalized(
+        &self,
+    ) -> &::std::option::Option<crate::types::LifeCycleLastCutoverFinalized> {
+        &self.finalized
     }
     /// Consumes the builder and constructs a [`LifeCycleLastCutover`](crate::types::LifeCycleLastCutover).
     pub fn build(self) -> crate::types::LifeCycleLastCutover {

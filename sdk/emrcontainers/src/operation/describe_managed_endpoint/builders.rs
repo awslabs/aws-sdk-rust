@@ -37,6 +37,13 @@ impl DescribeManagedEndpointFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeManagedEndpoint as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_managed_endpoint::builders::DescribeManagedEndpointInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl DescribeManagedEndpointFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>This output displays ID of the managed endpoint.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The ID of the endpoint's virtual cluster.</p>
     pub fn virtual_cluster_id(
         mut self,
@@ -142,5 +153,9 @@ impl DescribeManagedEndpointFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_virtual_cluster_id(input);
         self
+    }
+    /// <p>The ID of the endpoint's virtual cluster.</p>
+    pub fn get_virtual_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_virtual_cluster_id()
     }
 }

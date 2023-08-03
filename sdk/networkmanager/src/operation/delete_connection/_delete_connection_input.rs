@@ -54,6 +54,10 @@ impl DeleteConnectionInputBuilder {
         self.global_network_id = input;
         self
     }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_network_id
+    }
     /// <p>The ID of the connection.</p>
     pub fn connection_id(
         mut self,
@@ -69,6 +73,10 @@ impl DeleteConnectionInputBuilder {
     ) -> Self {
         self.connection_id = input;
         self
+    }
+    /// <p>The ID of the connection.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_id
     }
     /// Consumes the builder and constructs a [`DeleteConnectionInput`](crate::operation::delete_connection::DeleteConnectionInput).
     pub fn build(

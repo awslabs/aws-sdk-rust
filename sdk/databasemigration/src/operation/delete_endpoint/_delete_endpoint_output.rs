@@ -47,6 +47,10 @@ impl DeleteEndpointOutputBuilder {
         self.endpoint = input;
         self
     }
+    /// <p>The endpoint that was deleted.</p>
+    pub fn get_endpoint(&self) -> &::std::option::Option<crate::types::Endpoint> {
+        &self.endpoint
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

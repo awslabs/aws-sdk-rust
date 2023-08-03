@@ -48,6 +48,10 @@ impl ArcConfigurationBuilder {
         self.arc_angle = input;
         self
     }
+    /// <p>The option that determines the arc angle of a <code>GaugeChartVisual</code>.</p>
+    pub fn get_arc_angle(&self) -> &::std::option::Option<f64> {
+        &self.arc_angle
+    }
     /// <p>The options that determine the arc thickness of a <code>GaugeChartVisual</code>.</p>
     pub fn arc_thickness(mut self, input: crate::types::ArcThicknessOptions) -> Self {
         self.arc_thickness = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl ArcConfigurationBuilder {
     ) -> Self {
         self.arc_thickness = input;
         self
+    }
+    /// <p>The options that determine the arc thickness of a <code>GaugeChartVisual</code>.</p>
+    pub fn get_arc_thickness(&self) -> &::std::option::Option<crate::types::ArcThicknessOptions> {
+        &self.arc_thickness
     }
     /// Consumes the builder and constructs a [`ArcConfiguration`](crate::types::ArcConfiguration).
     pub fn build(self) -> crate::types::ArcConfiguration {

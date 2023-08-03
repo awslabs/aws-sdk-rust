@@ -39,6 +39,10 @@ impl DeleteVehicleInputBuilder {
         self.vehicle_name = input;
         self
     }
+    /// <p>The ID of the vehicle to delete. </p>
+    pub fn get_vehicle_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vehicle_name
+    }
     /// Consumes the builder and constructs a [`DeleteVehicleInput`](crate::operation::delete_vehicle::DeleteVehicleInput).
     pub fn build(
         self,

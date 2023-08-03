@@ -54,6 +54,10 @@ impl GetAppliedSchemaVersionOutputBuilder {
         self.applied_schema_arn = input;
         self
     }
+    /// <p>Current applied schema ARN, including the minor version in use if one was provided.</p>
+    pub fn get_applied_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.applied_schema_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

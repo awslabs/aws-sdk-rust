@@ -119,6 +119,22 @@ impl FeaturizationConfigBuilder {
         self.forecast_frequency = input;
         self
     }
+    /// <p>The frequency of predictions in a forecast.</p>
+    /// <p>Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min (Minute). For example, "1D" indicates every day and "15min" indicates every 15 minutes. You cannot specify a value that would overlap with the next larger frequency. That means, for example, you cannot specify a frequency of 60 minutes, because that is equivalent to 1 hour. The valid values for each frequency are the following:</p>
+    /// <ul>
+    /// <li> <p>Minute - 1-59</p> </li>
+    /// <li> <p>Hour - 1-23</p> </li>
+    /// <li> <p>Day - 1-6</p> </li>
+    /// <li> <p>Week - 1-4</p> </li>
+    /// <li> <p>Month - 1-11</p> </li>
+    /// <li> <p>Year - 1</p> </li>
+    /// </ul>
+    /// <p>Thus, if you want every other week forecasts, specify "2W". Or, if you want quarterly forecasts, you specify "3M".</p>
+    /// <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.</p>
+    /// <p>When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the TARGET_TIME_SERIES dataset frequency.</p>
+    pub fn get_forecast_frequency(&self) -> &::std::option::Option<::std::string::String> {
+        &self.forecast_frequency
+    }
     /// Appends an item to `forecast_dimensions`.
     ///
     /// To override the contents of this collection use [`set_forecast_dimensions`](Self::set_forecast_dimensions).
@@ -145,6 +161,14 @@ impl FeaturizationConfigBuilder {
         self.forecast_dimensions = input;
         self
     }
+    /// <p>An array of dimension (field) names that specify how to group the generated forecast.</p>
+    /// <p>For example, suppose that you are generating a forecast for item sales across all of your stores, and your dataset contains a <code>store_id</code> field. If you want the sales forecast for each item by store, you would specify <code>store_id</code> as the dimension.</p>
+    /// <p>All forecast dimensions specified in the <code>TARGET_TIME_SERIES</code> dataset don't need to be specified in the <code>CreatePredictor</code> request. All forecast dimensions specified in the <code>RELATED_TIME_SERIES</code> dataset must be specified in the <code>CreatePredictor</code> request.</p>
+    pub fn get_forecast_dimensions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.forecast_dimensions
+    }
     /// Appends an item to `featurizations`.
     ///
     /// To override the contents of this collection use [`set_featurizations`](Self::set_featurizations).
@@ -163,6 +187,12 @@ impl FeaturizationConfigBuilder {
     ) -> Self {
         self.featurizations = input;
         self
+    }
+    /// <p>An array of featurization (transformation) information for the fields of a dataset.</p>
+    pub fn get_featurizations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Featurization>> {
+        &self.featurizations
     }
     /// Consumes the builder and constructs a [`FeaturizationConfig`](crate::types::FeaturizationConfig).
     pub fn build(self) -> crate::types::FeaturizationConfig {

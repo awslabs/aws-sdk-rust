@@ -50,6 +50,10 @@ impl ExpirationSettingsBuilder {
         self.expiration_days = input;
         self
     }
+    /// <p>The period in days after which an <code>AppInstanceUser</code> will be automatically deleted.</p>
+    pub fn get_expiration_days(&self) -> &::std::option::Option<i32> {
+        &self.expiration_days
+    }
     /// <p>Specifies the conditions under which an <code>AppInstanceUser</code> will expire.</p>
     pub fn expiration_criterion(mut self, input: crate::types::ExpirationCriterion) -> Self {
         self.expiration_criterion = ::std::option::Option::Some(input);
@@ -62,6 +66,12 @@ impl ExpirationSettingsBuilder {
     ) -> Self {
         self.expiration_criterion = input;
         self
+    }
+    /// <p>Specifies the conditions under which an <code>AppInstanceUser</code> will expire.</p>
+    pub fn get_expiration_criterion(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExpirationCriterion> {
+        &self.expiration_criterion
     }
     /// Consumes the builder and constructs a [`ExpirationSettings`](crate::types::ExpirationSettings).
     pub fn build(self) -> crate::types::ExpirationSettings {

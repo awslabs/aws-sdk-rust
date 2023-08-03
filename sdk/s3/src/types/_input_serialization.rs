@@ -64,6 +64,10 @@ impl InputSerializationBuilder {
         self.csv = input;
         self
     }
+    /// <p>Describes the serialization of a CSV-encoded object.</p>
+    pub fn get_csv(&self) -> &::std::option::Option<crate::types::CsvInput> {
+        &self.csv
+    }
     /// <p>Specifies object's compression format. Valid values: NONE, GZIP, BZIP2. Default Value: NONE.</p>
     pub fn compression_type(mut self, input: crate::types::CompressionType) -> Self {
         self.compression_type = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl InputSerializationBuilder {
         self.compression_type = input;
         self
     }
+    /// <p>Specifies object's compression format. Valid values: NONE, GZIP, BZIP2. Default Value: NONE.</p>
+    pub fn get_compression_type(&self) -> &::std::option::Option<crate::types::CompressionType> {
+        &self.compression_type
+    }
     /// <p>Specifies JSON as object's input serialization format.</p>
     pub fn json(mut self, input: crate::types::JsonInput) -> Self {
         self.json = ::std::option::Option::Some(input);
@@ -87,6 +95,10 @@ impl InputSerializationBuilder {
         self.json = input;
         self
     }
+    /// <p>Specifies JSON as object's input serialization format.</p>
+    pub fn get_json(&self) -> &::std::option::Option<crate::types::JsonInput> {
+        &self.json
+    }
     /// <p>Specifies Parquet as object's input serialization format.</p>
     pub fn parquet(mut self, input: crate::types::ParquetInput) -> Self {
         self.parquet = ::std::option::Option::Some(input);
@@ -96,6 +108,10 @@ impl InputSerializationBuilder {
     pub fn set_parquet(mut self, input: ::std::option::Option<crate::types::ParquetInput>) -> Self {
         self.parquet = input;
         self
+    }
+    /// <p>Specifies Parquet as object's input serialization format.</p>
+    pub fn get_parquet(&self) -> &::std::option::Option<crate::types::ParquetInput> {
+        &self.parquet
     }
     /// Consumes the builder and constructs a [`InputSerialization`](crate::types::InputSerialization).
     pub fn build(self) -> crate::types::InputSerialization {

@@ -58,6 +58,10 @@ impl InstanceStatusBuilder {
         self.state = input;
         self
     }
+    /// <p>The current state of the instance.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::InstanceState> {
+        &self.state
+    }
     /// <p>The details of the status change reason for the instance.</p>
     pub fn state_change_reason(mut self, input: crate::types::InstanceStateChangeReason) -> Self {
         self.state_change_reason = ::std::option::Option::Some(input);
@@ -71,6 +75,12 @@ impl InstanceStatusBuilder {
         self.state_change_reason = input;
         self
     }
+    /// <p>The details of the status change reason for the instance.</p>
+    pub fn get_state_change_reason(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceStateChangeReason> {
+        &self.state_change_reason
+    }
     /// <p>The timeline of the instance status over time.</p>
     pub fn timeline(mut self, input: crate::types::InstanceTimeline) -> Self {
         self.timeline = ::std::option::Option::Some(input);
@@ -83,6 +93,10 @@ impl InstanceStatusBuilder {
     ) -> Self {
         self.timeline = input;
         self
+    }
+    /// <p>The timeline of the instance status over time.</p>
+    pub fn get_timeline(&self) -> &::std::option::Option<crate::types::InstanceTimeline> {
+        &self.timeline
     }
     /// Consumes the builder and constructs a [`InstanceStatus`](crate::types::InstanceStatus).
     pub fn build(self) -> crate::types::InstanceStatus {

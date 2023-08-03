@@ -47,6 +47,10 @@ impl DescribeCompilationJobInputBuilder {
         self.compilation_job_name = input;
         self
     }
+    /// <p>The name of the model compilation job that you want information about.</p>
+    pub fn get_compilation_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.compilation_job_name
+    }
     /// Consumes the builder and constructs a [`DescribeCompilationJobInput`](crate::operation::describe_compilation_job::DescribeCompilationJobInput).
     pub fn build(
         self,

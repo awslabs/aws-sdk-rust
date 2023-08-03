@@ -49,6 +49,12 @@ impl Scte35DescriptorBuilder {
         self.scte35_descriptor_settings = input;
         self
     }
+    /// SCTE-35 Descriptor Settings.
+    pub fn get_scte35_descriptor_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::Scte35DescriptorSettings> {
+        &self.scte35_descriptor_settings
+    }
     /// Consumes the builder and constructs a [`Scte35Descriptor`](crate::types::Scte35Descriptor).
     pub fn build(self) -> crate::types::Scte35Descriptor {
         crate::types::Scte35Descriptor {

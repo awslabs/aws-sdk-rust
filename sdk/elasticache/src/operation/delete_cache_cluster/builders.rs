@@ -46,6 +46,12 @@ impl DeleteCacheClusterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteCacheCluster as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_cache_cluster::builders::DeleteCacheClusterInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -142,6 +148,10 @@ impl DeleteCacheClusterFluentBuilder {
         self.inner = self.inner.set_cache_cluster_id(input);
         self
     }
+    /// <p>The cluster identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
+    pub fn get_cache_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cache_cluster_id()
+    }
     /// <p>The user-supplied name of a final cluster snapshot. This is the unique name that identifies the snapshot. ElastiCache creates the snapshot, and then deletes the cluster immediately afterward.</p>
     pub fn final_snapshot_identifier(
         mut self,
@@ -157,5 +167,9 @@ impl DeleteCacheClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_final_snapshot_identifier(input);
         self
+    }
+    /// <p>The user-supplied name of a final cluster snapshot. This is the unique name that identifies the snapshot. ElastiCache creates the snapshot, and then deletes the cluster immediately afterward.</p>
+    pub fn get_final_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_final_snapshot_identifier()
     }
 }

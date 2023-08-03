@@ -59,6 +59,12 @@ impl RecommendationSetBuilder {
         self.transformation_tool = input;
         self
     }
+    /// <p> The target destination for the recommendation set. </p>
+    pub fn get_transformation_tool(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransformationTool> {
+        &self.transformation_tool
+    }
     /// <p> The recommended target destination. </p>
     pub fn target_destination(mut self, input: crate::types::TargetDestination) -> Self {
         self.target_destination = ::std::option::Option::Some(input);
@@ -72,6 +78,12 @@ impl RecommendationSetBuilder {
         self.target_destination = input;
         self
     }
+    /// <p> The recommended target destination. </p>
+    pub fn get_target_destination(
+        &self,
+    ) -> &::std::option::Option<crate::types::TargetDestination> {
+        &self.target_destination
+    }
     /// <p> The recommended strategy. </p>
     pub fn strategy(mut self, input: crate::types::Strategy) -> Self {
         self.strategy = ::std::option::Option::Some(input);
@@ -81,6 +93,10 @@ impl RecommendationSetBuilder {
     pub fn set_strategy(mut self, input: ::std::option::Option<crate::types::Strategy>) -> Self {
         self.strategy = input;
         self
+    }
+    /// <p> The recommended strategy. </p>
+    pub fn get_strategy(&self) -> &::std::option::Option<crate::types::Strategy> {
+        &self.strategy
     }
     /// Consumes the builder and constructs a [`RecommendationSet`](crate::types::RecommendationSet).
     pub fn build(self) -> crate::types::RecommendationSet {

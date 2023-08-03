@@ -74,6 +74,10 @@ impl AdminAccountSummaryBuilder {
         self.admin_account = input;
         self
     }
+    /// <p>The Amazon Web Services account ID of the Firewall Manager administrator's account.</p>
+    pub fn get_admin_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.admin_account
+    }
     /// <p>A boolean value that indicates if the administrator is the default administrator. If true, then this is the default administrator account. The default administrator can manage third-party firewalls and has full administrative scope. There is only one default administrator account per organization. For information about Firewall Manager default administrator accounts, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-administrators.html">Managing Firewall Manager administrators</a> in the <i>Firewall Manager Developer Guide</i>.</p>
     pub fn default_admin(mut self, input: bool) -> Self {
         self.default_admin = ::std::option::Option::Some(input);
@@ -83,6 +87,10 @@ impl AdminAccountSummaryBuilder {
     pub fn set_default_admin(mut self, input: ::std::option::Option<bool>) -> Self {
         self.default_admin = input;
         self
+    }
+    /// <p>A boolean value that indicates if the administrator is the default administrator. If true, then this is the default administrator account. The default administrator can manage third-party firewalls and has full administrative scope. There is only one default administrator account per organization. For information about Firewall Manager default administrator accounts, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-administrators.html">Managing Firewall Manager administrators</a> in the <i>Firewall Manager Developer Guide</i>.</p>
+    pub fn get_default_admin(&self) -> &::std::option::Option<bool> {
+        &self.default_admin
     }
     /// <p>The current status of the request to onboard a member account as an Firewall Manager administator.</p>
     /// <ul>
@@ -108,6 +116,16 @@ impl AdminAccountSummaryBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the request to onboard a member account as an Firewall Manager administator.</p>
+    /// <ul>
+    /// <li> <p> <code>ONBOARDING</code> - The account is onboarding to Firewall Manager as an administrator.</p> </li>
+    /// <li> <p> <code>ONBOARDING_COMPLETE</code> - Firewall Manager The account is onboarded to Firewall Manager as an administrator, and can perform actions on the resources defined in their <code>AdminScope</code>.</p> </li>
+    /// <li> <p> <code>OFFBOARDING</code> - The account is being removed as an Firewall Manager administrator.</p> </li>
+    /// <li> <p> <code>OFFBOARDING_COMPLETE</code> - The account has been removed as an Firewall Manager administrator.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::OrganizationStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`AdminAccountSummary`](crate::types::AdminAccountSummary).
     pub fn build(self) -> crate::types::AdminAccountSummary {

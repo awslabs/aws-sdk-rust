@@ -46,6 +46,10 @@ impl RebootClusterInputBuilder {
         self.cluster_identifier = input;
         self
     }
+    /// <p>The cluster identifier.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_identifier
+    }
     /// Consumes the builder and constructs a [`RebootClusterInput`](crate::operation::reboot_cluster::RebootClusterInput).
     pub fn build(
         self,

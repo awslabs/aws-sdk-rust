@@ -49,6 +49,10 @@ impl BatchDescribeModelPackageErrorBuilder {
         self
     }
     /// <p></p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
+    }
+    /// <p></p>
     pub fn error_response(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -63,6 +67,10 @@ impl BatchDescribeModelPackageErrorBuilder {
     ) -> Self {
         self.error_response = input;
         self
+    }
+    /// <p></p>
+    pub fn get_error_response(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_response
     }
     /// Consumes the builder and constructs a [`BatchDescribeModelPackageError`](crate::types::BatchDescribeModelPackageError).
     pub fn build(self) -> crate::types::BatchDescribeModelPackageError {

@@ -91,6 +91,14 @@ impl ListSharedProjectsInputBuilder {
         self.sort_by = input;
         self
     }
+    /// <p> The criterion to be used to list build projects shared with the current Amazon Web Services account or user. Valid values include: </p>
+    /// <ul>
+    /// <li> <p> <code>ARN</code>: List based on the ARN. </p> </li>
+    /// <li> <p> <code>MODIFIED_TIME</code>: List based on when information about the shared project was last changed. </p> </li>
+    /// </ul>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SharedResourceSortByType> {
+        &self.sort_by
+    }
     /// <p>The order in which to list shared build projects. Valid values include:</p>
     /// <ul>
     /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
@@ -112,6 +120,14 @@ impl ListSharedProjectsInputBuilder {
         self.sort_order = input;
         self
     }
+    /// <p>The order in which to list shared build projects. Valid values include:</p>
+    /// <ul>
+    /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
+    /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
+    /// </ul>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrderType> {
+        &self.sort_order
+    }
     /// <p> The maximum number of paginated shared build projects returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Project</code> objects. The default value is 100. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -122,6 +138,10 @@ impl ListSharedProjectsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p> The maximum number of paginated shared build projects returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Project</code> objects. The default value is 100. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -131,6 +151,10 @@ impl ListSharedProjectsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListSharedProjectsInput`](crate::operation::list_shared_projects::ListSharedProjectsInput).
     pub fn build(

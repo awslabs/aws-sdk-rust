@@ -90,6 +90,10 @@ impl CreateAgentInputBuilder {
         self.activation_key = input;
         self
     }
+    /// <p>Specifies your DataSync agent's activation key. If you don't have an activation key, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/activate-agent.html">Activate your agent</a>.</p>
+    pub fn get_activation_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.activation_key
+    }
     /// <p>Specifies a name for your agent. You can see this name in the DataSync console.</p>
     pub fn agent_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_name = ::std::option::Option::Some(input.into());
@@ -99,6 +103,10 @@ impl CreateAgentInputBuilder {
     pub fn set_agent_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_name = input;
         self
+    }
+    /// <p>Specifies a name for your agent. You can see this name in the DataSync console.</p>
+    pub fn get_agent_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_name
     }
     /// Appends an item to `tags`.
     ///
@@ -118,6 +126,10 @@ impl CreateAgentInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least one tag for your agent.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>> {
+        &self.tags
     }
     /// <p>Specifies the ID of the VPC endpoint that you want your agent to connect to. For example, a VPC endpoint ID looks like <code>vpce-01234d5aff67890e1</code>.</p> <important>
     /// <p>The VPC endpoint you use must include the DataSync service name (for example, <code>com.amazonaws.us-east-2.datasync</code>).</p>
@@ -139,6 +151,12 @@ impl CreateAgentInputBuilder {
         self.vpc_endpoint_id = input;
         self
     }
+    /// <p>Specifies the ID of the VPC endpoint that you want your agent to connect to. For example, a VPC endpoint ID looks like <code>vpce-01234d5aff67890e1</code>.</p> <important>
+    /// <p>The VPC endpoint you use must include the DataSync service name (for example, <code>com.amazonaws.us-east-2.datasync</code>).</p>
+    /// </important>
+    pub fn get_vpc_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_endpoint_id
+    }
     /// Appends an item to `subnet_arns`.
     ///
     /// To override the contents of this collection use [`set_subnet_arns`](Self::set_subnet_arns).
@@ -157,6 +175,12 @@ impl CreateAgentInputBuilder {
     ) -> Self {
         self.subnet_arns = input;
         self
+    }
+    /// <p>Specifies the ARN of the subnet where you want to run your DataSync task when using a VPC endpoint. This is the subnet where DataSync creates and manages the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network interfaces</a> for your transfer. You can only specify one ARN.</p>
+    pub fn get_subnet_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_arns
     }
     /// Appends an item to `security_group_arns`.
     ///
@@ -179,6 +203,12 @@ impl CreateAgentInputBuilder {
     ) -> Self {
         self.security_group_arns = input;
         self
+    }
+    /// <p>Specifies the Amazon Resource Name (ARN) of the security group that protects your task's <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network interfaces</a> when <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc">using a virtual private cloud (VPC) endpoint</a>. You can only specify one ARN.</p>
+    pub fn get_security_group_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_arns
     }
     /// Consumes the builder and constructs a [`CreateAgentInput`](crate::operation::create_agent::CreateAgentInput).
     pub fn build(

@@ -48,6 +48,10 @@ impl RunCommandTargetBuilder {
         self.key = input;
         self
     }
+    /// <p>Can be either <code>tag:</code> <i>tag-key</i> or <code>InstanceIds</code>.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -66,6 +70,10 @@ impl RunCommandTargetBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>If <code>Key</code> is <code>tag:</code> <i>tag-key</i>, <code>Values</code> is a list of tag values. If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list of Amazon EC2 instance IDs.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`RunCommandTarget`](crate::types::RunCommandTarget).
     pub fn build(self) -> crate::types::RunCommandTarget {

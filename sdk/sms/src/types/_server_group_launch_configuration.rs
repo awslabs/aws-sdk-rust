@@ -66,6 +66,10 @@ impl ServerGroupLaunchConfigurationBuilder {
         self.server_group_id = input;
         self
     }
+    /// <p>The ID of the server group with which the launch configuration is associated.</p>
+    pub fn get_server_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_group_id
+    }
     /// <p>The launch order of servers in the server group.</p>
     pub fn launch_order(mut self, input: i32) -> Self {
         self.launch_order = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl ServerGroupLaunchConfigurationBuilder {
     pub fn set_launch_order(mut self, input: ::std::option::Option<i32>) -> Self {
         self.launch_order = input;
         self
+    }
+    /// <p>The launch order of servers in the server group.</p>
+    pub fn get_launch_order(&self) -> &::std::option::Option<i32> {
+        &self.launch_order
     }
     /// Appends an item to `server_launch_configurations`.
     ///
@@ -97,6 +105,12 @@ impl ServerGroupLaunchConfigurationBuilder {
     ) -> Self {
         self.server_launch_configurations = input;
         self
+    }
+    /// <p>The launch configuration for servers in the server group.</p>
+    pub fn get_server_launch_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerLaunchConfiguration>> {
+        &self.server_launch_configurations
     }
     /// Consumes the builder and constructs a [`ServerGroupLaunchConfiguration`](crate::types::ServerGroupLaunchConfiguration).
     pub fn build(self) -> crate::types::ServerGroupLaunchConfiguration {

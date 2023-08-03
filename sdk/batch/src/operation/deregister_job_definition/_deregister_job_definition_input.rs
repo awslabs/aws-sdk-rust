@@ -47,6 +47,10 @@ impl DeregisterJobDefinitionInputBuilder {
         self.job_definition = input;
         self
     }
+    /// <p>The name and revision (<code>name:revision</code>) or full Amazon Resource Name (ARN) of the job definition to deregister.</p>
+    pub fn get_job_definition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_definition
+    }
     /// Consumes the builder and constructs a [`DeregisterJobDefinitionInput`](crate::operation::deregister_job_definition::DeregisterJobDefinitionInput).
     pub fn build(
         self,

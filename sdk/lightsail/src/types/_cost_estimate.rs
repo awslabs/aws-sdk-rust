@@ -49,6 +49,10 @@ impl CostEstimateBuilder {
         self.usage_type = input;
         self
     }
+    /// <p>The types of usage that are included in the estimate, such as costs, usage, or data transfer.</p>
+    pub fn get_usage_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.usage_type
+    }
     /// Appends an item to `results_by_time`.
     ///
     /// To override the contents of this collection use [`set_results_by_time`](Self::set_results_by_time).
@@ -67,6 +71,12 @@ impl CostEstimateBuilder {
     ) -> Self {
         self.results_by_time = input;
         self
+    }
+    /// <p>The cost estimate result that's associated with a time period.</p>
+    pub fn get_results_by_time(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EstimateByTime>> {
+        &self.results_by_time
     }
     /// Consumes the builder and constructs a [`CostEstimate`](crate::types::CostEstimate).
     pub fn build(self) -> crate::types::CostEstimate {

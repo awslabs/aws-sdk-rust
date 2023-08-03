@@ -59,6 +59,10 @@ impl ContributorInsightsSummaryBuilder {
         self.table_name = input;
         self
     }
+    /// <p>Name of the table associated with the summary.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
+    }
     /// <p>Name of the index associated with the summary, if any.</p>
     pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_name = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl ContributorInsightsSummaryBuilder {
     pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.index_name = input;
         self
+    }
+    /// <p>Name of the index associated with the summary, if any.</p>
+    pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_name
     }
     /// <p>Describes the current status for contributor insights for the given table and index, if applicable.</p>
     pub fn contributor_insights_status(
@@ -84,6 +92,12 @@ impl ContributorInsightsSummaryBuilder {
     ) -> Self {
         self.contributor_insights_status = input;
         self
+    }
+    /// <p>Describes the current status for contributor insights for the given table and index, if applicable.</p>
+    pub fn get_contributor_insights_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContributorInsightsStatus> {
+        &self.contributor_insights_status
     }
     /// Consumes the builder and constructs a [`ContributorInsightsSummary`](crate::types::ContributorInsightsSummary).
     pub fn build(self) -> crate::types::ContributorInsightsSummary {

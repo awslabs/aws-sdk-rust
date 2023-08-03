@@ -46,6 +46,10 @@ impl DescribeLoadBalancerAttributesInputBuilder {
         self.load_balancer_name = input;
         self
     }
+    /// <p>The name of the load balancer.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.load_balancer_name
+    }
     /// Consumes the builder and constructs a [`DescribeLoadBalancerAttributesInput`](crate::operation::describe_load_balancer_attributes::DescribeLoadBalancerAttributesInput).
     pub fn build(
         self,

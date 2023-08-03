@@ -41,6 +41,10 @@ impl DeleteVpcConnectionInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK VPC connection.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`DeleteVpcConnectionInput`](crate::operation::delete_vpc_connection::DeleteVpcConnectionInput).
     pub fn build(
         self,

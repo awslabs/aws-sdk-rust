@@ -52,6 +52,10 @@ impl RequestSpotFleetInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The configuration for the Spot Fleet request.</p>
     pub fn spot_fleet_request_config(
         mut self,
@@ -67,6 +71,12 @@ impl RequestSpotFleetInputBuilder {
     ) -> Self {
         self.spot_fleet_request_config = input;
         self
+    }
+    /// <p>The configuration for the Spot Fleet request.</p>
+    pub fn get_spot_fleet_request_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::SpotFleetRequestConfigData> {
+        &self.spot_fleet_request_config
     }
     /// Consumes the builder and constructs a [`RequestSpotFleetInput`](crate::operation::request_spot_fleet::RequestSpotFleetInput).
     pub fn build(

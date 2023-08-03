@@ -107,6 +107,10 @@ impl CreateContactInputBuilder {
         self.display_name = input;
         self
     }
+    /// <p>The name of the contact to display on the console.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// <p>The first name of the contact that is used to call the contact on the device.</p>
     pub fn first_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.first_name = ::std::option::Option::Some(input.into());
@@ -116,6 +120,10 @@ impl CreateContactInputBuilder {
     pub fn set_first_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.first_name = input;
         self
+    }
+    /// <p>The first name of the contact that is used to call the contact on the device.</p>
+    pub fn get_first_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.first_name
     }
     /// <p>The last name of the contact that is used to call the contact on the device.</p>
     pub fn last_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -127,6 +135,10 @@ impl CreateContactInputBuilder {
         self.last_name = input;
         self
     }
+    /// <p>The last name of the contact that is used to call the contact on the device.</p>
+    pub fn get_last_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_name
+    }
     /// <p>The phone number of the contact in E.164 format. The phone number type defaults to WORK. You can specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
     pub fn phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number = ::std::option::Option::Some(input.into());
@@ -136,6 +148,10 @@ impl CreateContactInputBuilder {
     pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.phone_number = input;
         self
+    }
+    /// <p>The phone number of the contact in E.164 format. The phone number type defaults to WORK. You can specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
+    pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number
     }
     /// Appends an item to `phone_numbers`.
     ///
@@ -156,6 +172,12 @@ impl CreateContactInputBuilder {
         self.phone_numbers = input;
         self
     }
+    /// <p>The list of phone numbers for the contact.</p>
+    pub fn get_phone_numbers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>> {
+        &self.phone_numbers
+    }
     /// Appends an item to `sip_addresses`.
     ///
     /// To override the contents of this collection use [`set_sip_addresses`](Self::set_sip_addresses).
@@ -175,6 +197,12 @@ impl CreateContactInputBuilder {
         self.sip_addresses = input;
         self
     }
+    /// <p>The list of SIP addresses for the contact.</p>
+    pub fn get_sip_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SipAddress>> {
+        &self.sip_addresses
+    }
     /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
     pub fn client_request_token(
         mut self,
@@ -190,6 +218,10 @@ impl CreateContactInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Appends an item to `tags`.
     ///
@@ -209,6 +241,10 @@ impl CreateContactInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateContactInput`](crate::operation::create_contact::CreateContactInput).
     pub fn build(

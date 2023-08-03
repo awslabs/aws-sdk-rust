@@ -39,6 +39,10 @@ impl DeleteAliasInputBuilder {
         self.alias_name = input;
         self
     }
+    /// <p>The alias to be deleted. The alias name must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>.</p>
+    pub fn get_alias_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias_name
+    }
     /// Consumes the builder and constructs a [`DeleteAliasInput`](crate::operation::delete_alias::DeleteAliasInput).
     pub fn build(
         self,

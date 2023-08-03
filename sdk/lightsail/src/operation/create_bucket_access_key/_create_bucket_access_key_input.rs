@@ -41,6 +41,10 @@ impl CreateBucketAccessKeyInputBuilder {
         self.bucket_name = input;
         self
     }
+    /// <p>The name of the bucket that the new access key will belong to, and grant access to.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
+    }
     /// Consumes the builder and constructs a [`CreateBucketAccessKeyInput`](crate::operation::create_bucket_access_key::CreateBucketAccessKeyInput).
     pub fn build(
         self,

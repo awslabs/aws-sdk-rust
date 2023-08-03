@@ -64,6 +64,10 @@ impl UserAccessTaskItemBuilder {
         self.app = input;
         self
     }
+    /// <p>The name of the application.</p>
+    pub fn get_app(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app
+    }
     /// <p>The ID of the application tenant.</p>
     pub fn tenant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tenant_id = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl UserAccessTaskItemBuilder {
     pub fn set_tenant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tenant_id = input;
         self
+    }
+    /// <p>The ID of the application tenant.</p>
+    pub fn get_tenant_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tenant_id
     }
     /// <p>The unique ID of the task.</p>
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl UserAccessTaskItemBuilder {
         self.task_id = input;
         self
     }
+    /// <p>The unique ID of the task.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
+    }
     /// <p>Error from the task, if any.</p>
     pub fn error(mut self, input: crate::types::TaskError) -> Self {
         self.error = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl UserAccessTaskItemBuilder {
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::TaskError>) -> Self {
         self.error = input;
         self
+    }
+    /// <p>Error from the task, if any.</p>
+    pub fn get_error(&self) -> &::std::option::Option<crate::types::TaskError> {
+        &self.error
     }
     /// Consumes the builder and constructs a [`UserAccessTaskItem`](crate::types::UserAccessTaskItem).
     pub fn build(self) -> crate::types::UserAccessTaskItem {

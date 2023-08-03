@@ -50,6 +50,12 @@ impl ProtectionGroupPatternTypeLimitsBuilder {
         self.arbitrary_pattern_limits = input;
         self
     }
+    /// <p>Limits settings on protection groups with arbitrary pattern type. </p>
+    pub fn get_arbitrary_pattern_limits(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProtectionGroupArbitraryPatternLimits> {
+        &self.arbitrary_pattern_limits
+    }
     /// Consumes the builder and constructs a [`ProtectionGroupPatternTypeLimits`](crate::types::ProtectionGroupPatternTypeLimits).
     pub fn build(self) -> crate::types::ProtectionGroupPatternTypeLimits {
         crate::types::ProtectionGroupPatternTypeLimits {

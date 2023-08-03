@@ -54,6 +54,10 @@ impl DefaultServerSideEncryptionBuilder {
         self.encryption_type = input;
         self
     }
+    /// <p>The type of encryption used for objects within the S3 bucket.</p>
+    pub fn get_encryption_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encryption_type
+    }
     /// <p>The Amazon Resource Name (ARN) of the KMS encryption key. Only available if the bucket <code>EncryptionType</code> is <code>aws:kms</code>.</p>
     pub fn kms_master_key_arn(
         mut self,
@@ -69,6 +73,10 @@ impl DefaultServerSideEncryptionBuilder {
     ) -> Self {
         self.kms_master_key_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the KMS encryption key. Only available if the bucket <code>EncryptionType</code> is <code>aws:kms</code>.</p>
+    pub fn get_kms_master_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_master_key_arn
     }
     /// Consumes the builder and constructs a [`DefaultServerSideEncryption`](crate::types::DefaultServerSideEncryption).
     pub fn build(self) -> crate::types::DefaultServerSideEncryption {

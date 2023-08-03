@@ -99,6 +99,10 @@ impl DataReplicationInfoBuilder {
         self.lag_duration = input;
         self
     }
+    /// <p>Request to query data replication lag duration.</p>
+    pub fn get_lag_duration(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lag_duration
+    }
     /// <p>Request to query the time when data replication will be complete.</p>
     pub fn eta_date_time(
         mut self,
@@ -114,6 +118,10 @@ impl DataReplicationInfoBuilder {
     ) -> Self {
         self.eta_date_time = input;
         self
+    }
+    /// <p>Request to query the time when data replication will be complete.</p>
+    pub fn get_eta_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.eta_date_time
     }
     /// Appends an item to `replicated_disks`.
     ///
@@ -139,6 +147,13 @@ impl DataReplicationInfoBuilder {
         self.replicated_disks = input;
         self
     }
+    /// <p>Request to query disks replicated.</p>
+    pub fn get_replicated_disks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataReplicationInfoReplicatedDisk>>
+    {
+        &self.replicated_disks
+    }
     /// <p>Request to query the data replication state.</p>
     pub fn data_replication_state(mut self, input: crate::types::DataReplicationState) -> Self {
         self.data_replication_state = ::std::option::Option::Some(input);
@@ -151,6 +166,12 @@ impl DataReplicationInfoBuilder {
     ) -> Self {
         self.data_replication_state = input;
         self
+    }
+    /// <p>Request to query the data replication state.</p>
+    pub fn get_data_replication_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataReplicationState> {
+        &self.data_replication_state
     }
     /// <p>Request to query whether data replication has been initiated.</p>
     pub fn data_replication_initiation(
@@ -168,6 +189,12 @@ impl DataReplicationInfoBuilder {
         self.data_replication_initiation = input;
         self
     }
+    /// <p>Request to query whether data replication has been initiated.</p>
+    pub fn get_data_replication_initiation(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataReplicationInitiation> {
+        &self.data_replication_initiation
+    }
     /// <p>Error in obtaining data replication info.</p>
     pub fn data_replication_error(mut self, input: crate::types::DataReplicationError) -> Self {
         self.data_replication_error = ::std::option::Option::Some(input);
@@ -180,6 +207,12 @@ impl DataReplicationInfoBuilder {
     ) -> Self {
         self.data_replication_error = input;
         self
+    }
+    /// <p>Error in obtaining data replication info.</p>
+    pub fn get_data_replication_error(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataReplicationError> {
+        &self.data_replication_error
     }
     /// <p>Request to query data replication last snapshot time.</p>
     pub fn last_snapshot_date_time(
@@ -196,6 +229,10 @@ impl DataReplicationInfoBuilder {
     ) -> Self {
         self.last_snapshot_date_time = input;
         self
+    }
+    /// <p>Request to query data replication last snapshot time.</p>
+    pub fn get_last_snapshot_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_snapshot_date_time
     }
     /// Consumes the builder and constructs a [`DataReplicationInfo`](crate::types::DataReplicationInfo).
     pub fn build(self) -> crate::types::DataReplicationInfo {

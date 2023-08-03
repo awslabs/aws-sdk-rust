@@ -36,6 +36,12 @@ impl ListShareInvitationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListShareInvitations as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_share_invitations::builders::ListShareInvitationsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +149,10 @@ impl ListShareInvitationsFluentBuilder {
         self.inner = self.inner.set_workload_name_prefix(input);
         self
     }
+    /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
+    pub fn get_workload_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workload_name_prefix()
+    }
     /// <p>An optional string added to the beginning of each lens name returned in the results.</p>
     pub fn lens_name_prefix(
         mut self,
@@ -159,6 +169,10 @@ impl ListShareInvitationsFluentBuilder {
         self.inner = self.inner.set_lens_name_prefix(input);
         self
     }
+    /// <p>An optional string added to the beginning of each lens name returned in the results.</p>
+    pub fn get_lens_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_lens_name_prefix()
+    }
     /// <p>The type of share invitations to be returned.</p>
     pub fn share_resource_type(mut self, input: crate::types::ShareResourceType) -> Self {
         self.inner = self.inner.share_resource_type(input);
@@ -172,6 +186,12 @@ impl ListShareInvitationsFluentBuilder {
         self.inner = self.inner.set_share_resource_type(input);
         self
     }
+    /// <p>The type of share invitations to be returned.</p>
+    pub fn get_share_resource_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ShareResourceType> {
+        self.inner.get_share_resource_type()
+    }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -182,6 +202,10 @@ impl ListShareInvitationsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token to use to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return for this request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -191,6 +215,10 @@ impl ListShareInvitationsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return for this request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>Profile name prefix.</p>
     pub fn profile_name_prefix(
@@ -207,5 +235,9 @@ impl ListShareInvitationsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_profile_name_prefix(input);
         self
+    }
+    /// <p>Profile name prefix.</p>
+    pub fn get_profile_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_profile_name_prefix()
     }
 }

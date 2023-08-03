@@ -48,6 +48,10 @@ impl AnomalyBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of an anomaly type found in an image. <code>Name</code> maps to an anomaly type in the training dataset, apart from the anomaly type <code>background</code>. The service automatically inserts the <code>background</code> anomaly type into the response from <code>DetectAnomalies</code>. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Information about the pixel mask that covers an anomaly type.</p>
     pub fn pixel_anomaly(mut self, input: crate::types::PixelAnomaly) -> Self {
         self.pixel_anomaly = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl AnomalyBuilder {
     ) -> Self {
         self.pixel_anomaly = input;
         self
+    }
+    /// <p>Information about the pixel mask that covers an anomaly type.</p>
+    pub fn get_pixel_anomaly(&self) -> &::std::option::Option<crate::types::PixelAnomaly> {
+        &self.pixel_anomaly
     }
     /// Consumes the builder and constructs a [`Anomaly`](crate::types::Anomaly).
     pub fn build(self) -> crate::types::Anomaly {

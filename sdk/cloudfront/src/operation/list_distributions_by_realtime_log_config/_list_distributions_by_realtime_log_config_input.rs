@@ -63,6 +63,10 @@ impl ListDistributionsByRealtimeLogConfigInputBuilder {
         self.marker = input;
         self
     }
+    /// <p>Use this field when paginating results to indicate where to begin in your list of distributions. The response includes distributions in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>The maximum number of distributions that you want in the response.</p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.max_items = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl ListDistributionsByRealtimeLogConfigInputBuilder {
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_items = input;
         self
+    }
+    /// <p>The maximum number of distributions that you want in the response.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        &self.max_items
     }
     /// <p>The name of the real-time log configuration whose associated distributions you want to list.</p>
     pub fn realtime_log_config_name(
@@ -89,6 +97,10 @@ impl ListDistributionsByRealtimeLogConfigInputBuilder {
         self.realtime_log_config_name = input;
         self
     }
+    /// <p>The name of the real-time log configuration whose associated distributions you want to list.</p>
+    pub fn get_realtime_log_config_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.realtime_log_config_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the real-time log configuration whose associated distributions you want to list.</p>
     pub fn realtime_log_config_arn(
         mut self,
@@ -104,6 +116,10 @@ impl ListDistributionsByRealtimeLogConfigInputBuilder {
     ) -> Self {
         self.realtime_log_config_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the real-time log configuration whose associated distributions you want to list.</p>
+    pub fn get_realtime_log_config_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.realtime_log_config_arn
     }
     /// Consumes the builder and constructs a [`ListDistributionsByRealtimeLogConfigInput`](crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigInput, ::aws_smithy_http::operation::error::BuildError>{

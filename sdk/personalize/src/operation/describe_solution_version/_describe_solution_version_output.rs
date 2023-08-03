@@ -51,6 +51,10 @@ impl DescribeSolutionVersionOutputBuilder {
         self.solution_version = input;
         self
     }
+    /// <p>The solution version.</p>
+    pub fn get_solution_version(&self) -> &::std::option::Option<crate::types::SolutionVersion> {
+        &self.solution_version
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -36,6 +36,10 @@ impl OverridePullRequestApprovalRulesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the OverridePullRequestApprovalRules as a reference.
+    pub fn as_input(&self) -> &crate::operation::override_pull_request_approval_rules::builders::OverridePullRequestApprovalRulesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl OverridePullRequestApprovalRulesFluentBuilder {
         self.inner = self.inner.set_pull_request_id(input);
         self
     }
+    /// <p>The system-generated ID of the pull request for which you want to override all approval rule requirements. To get this information, use <code>GetPullRequest</code>.</p>
+    pub fn get_pull_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pull_request_id()
+    }
     /// <p>The system-generated ID of the most recent revision of the pull request. You cannot override approval rules for anything but the most recent revision of a pull request. To get the revision ID, use GetPullRequest.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.revision_id(input.into());
@@ -115,6 +123,10 @@ impl OverridePullRequestApprovalRulesFluentBuilder {
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_revision_id(input);
         self
+    }
+    /// <p>The system-generated ID of the most recent revision of the pull request. You cannot override approval rules for anything but the most recent revision of a pull request. To get the revision ID, use GetPullRequest.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_revision_id()
     }
     /// <p>Whether you want to set aside approval rule requirements for the pull request (OVERRIDE) or revoke a previous override and apply approval rule requirements (REVOKE). REVOKE status is not stored.</p>
     pub fn override_status(mut self, input: crate::types::OverrideStatus) -> Self {
@@ -128,5 +140,9 @@ impl OverridePullRequestApprovalRulesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_override_status(input);
         self
+    }
+    /// <p>Whether you want to set aside approval rule requirements for the pull request (OVERRIDE) or revoke a previous override and apply approval rule requirements (REVOKE). REVOKE status is not stored.</p>
+    pub fn get_override_status(&self) -> &::std::option::Option<crate::types::OverrideStatus> {
+        self.inner.get_override_status()
     }
 }

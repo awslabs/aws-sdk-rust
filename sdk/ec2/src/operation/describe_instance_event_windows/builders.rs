@@ -38,6 +38,10 @@ impl DescribeInstanceEventWindowsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeInstanceEventWindows as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_instance_event_windows::builders::DescribeInstanceEventWindowsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +138,10 @@ impl DescribeInstanceEventWindowsFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// Appends an item to `InstanceEventWindowIds`.
     ///
     /// To override the contents of this collection use [`set_instance_event_window_ids`](Self::set_instance_event_window_ids).
@@ -153,6 +161,12 @@ impl DescribeInstanceEventWindowsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_instance_event_window_ids(input);
         self
+    }
+    /// <p>The IDs of the event windows.</p>
+    pub fn get_instance_event_window_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_instance_event_window_ids()
     }
     /// Appends an item to `Filters`.
     ///
@@ -195,6 +209,22 @@ impl DescribeInstanceEventWindowsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>One or more filters.</p>
+    /// <ul>
+    /// <li> <p> <code>dedicated-host-id</code> - The event windows associated with the specified Dedicated Host ID.</p> </li>
+    /// <li> <p> <code>event-window-name</code> - The event windows associated with the specified names. </p> </li>
+    /// <li> <p> <code>instance-id</code> - The event windows associated with the specified instance ID.</p> </li>
+    /// <li> <p> <code>instance-tag</code> - The event windows associated with the specified tag and value.</p> </li>
+    /// <li> <p> <code>instance-tag-key</code> - The event windows associated with the specified tag key, regardless of the value.</p> </li>
+    /// <li> <p> <code>instance-tag-value</code> - The event windows associated with the specified tag value, regardless of the key.</p> </li>
+    /// <li> <p> <code>tag:
+    /// <key></key></code> - The key/value combination of a tag assigned to the event window. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>CMX</code>, specify <code>tag:Owner</code> for the filter name and <code>CMX</code> for the filter value. </p> </li>
+    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the event window. Use this filter to find all event windows that have a tag with a specific key, regardless of the tag value. </p> </li>
+    /// <li> <p> <code>tag-value</code> - The value of a tag assigned to the event window. Use this filter to find all event windows that have a tag with a specific value, regardless of the tag key. </p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. This value can be between 20 and 500. You cannot specify this parameter and the event window IDs parameter in the same call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -205,6 +235,10 @@ impl DescribeInstanceEventWindowsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. This value can be between 20 and 500. You cannot specify this parameter and the event window IDs parameter in the same call.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token to request the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -214,5 +248,9 @@ impl DescribeInstanceEventWindowsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token to request the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

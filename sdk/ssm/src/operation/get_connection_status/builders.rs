@@ -36,6 +36,12 @@ impl GetConnectionStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetConnectionStatus as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_connection_status::builders::GetConnectionStatusInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +131,9 @@ impl GetConnectionStatusFluentBuilder {
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target(input);
         self
+    }
+    /// <p>The managed node ID.</p>
+    pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target()
     }
 }

@@ -43,6 +43,10 @@ impl MonitoringOutputBuilder {
         self.s3_output = input;
         self
     }
+    /// <p>The Amazon S3 storage location where the results of a monitoring job are saved.</p>
+    pub fn get_s3_output(&self) -> &::std::option::Option<crate::types::MonitoringS3Output> {
+        &self.s3_output
+    }
     /// Consumes the builder and constructs a [`MonitoringOutput`](crate::types::MonitoringOutput).
     pub fn build(self) -> crate::types::MonitoringOutput {
         crate::types::MonitoringOutput {

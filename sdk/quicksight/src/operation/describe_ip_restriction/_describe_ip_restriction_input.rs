@@ -47,6 +47,10 @@ impl DescribeIpRestrictionInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// Consumes the builder and constructs a [`DescribeIpRestrictionInput`](crate::operation::describe_ip_restriction::DescribeIpRestrictionInput).
     pub fn build(
         self,

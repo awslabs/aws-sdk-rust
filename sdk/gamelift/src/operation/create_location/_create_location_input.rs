@@ -53,6 +53,10 @@ impl CreateLocationInputBuilder {
         self.location_name = input;
         self
     }
+    /// <p>A descriptive name for the custom location.</p>
+    pub fn get_location_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_name
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -71,6 +75,10 @@ impl CreateLocationInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of labels to assign to the new matchmaking configuration resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Rareference</i>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateLocationInput`](crate::operation::create_location::CreateLocationInput).
     pub fn build(

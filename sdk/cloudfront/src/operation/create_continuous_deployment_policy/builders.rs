@@ -38,6 +38,10 @@ impl CreateContinuousDeploymentPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateContinuousDeploymentPolicy as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_continuous_deployment_policy::builders::CreateContinuousDeploymentPolicyInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -107,5 +111,11 @@ impl CreateContinuousDeploymentPolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_continuous_deployment_policy_config(input);
         self
+    }
+    /// <p>Contains the configuration for a continuous deployment policy.</p>
+    pub fn get_continuous_deployment_policy_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContinuousDeploymentPolicyConfig> {
+        self.inner.get_continuous_deployment_policy_config()
     }
 }

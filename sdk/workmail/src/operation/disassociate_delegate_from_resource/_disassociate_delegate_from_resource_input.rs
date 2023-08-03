@@ -61,6 +61,10 @@ impl DisassociateDelegateFromResourceInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The identifier for the organization under which the resource exists.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>The identifier of the resource from which delegates' set members are removed. </p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl DisassociateDelegateFromResourceInputBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The identifier of the resource from which delegates' set members are removed. </p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>The identifier for the member (user, group) to be removed from the resource's delegates.</p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
@@ -80,6 +88,10 @@ impl DisassociateDelegateFromResourceInputBuilder {
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entity_id = input;
         self
+    }
+    /// <p>The identifier for the member (user, group) to be removed from the resource's delegates.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_id
     }
     /// Consumes the builder and constructs a [`DisassociateDelegateFromResourceInput`](crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceInput, ::aws_smithy_http::operation::error::BuildError>{

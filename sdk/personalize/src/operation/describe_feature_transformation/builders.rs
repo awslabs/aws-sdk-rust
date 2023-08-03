@@ -36,6 +36,10 @@ impl DescribeFeatureTransformationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeFeatureTransformation as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_feature_transformation::builders::DescribeFeatureTransformationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +135,9 @@ impl DescribeFeatureTransformationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_feature_transformation_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the feature transformation to describe.</p>
+    pub fn get_feature_transformation_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_feature_transformation_arn()
     }
 }

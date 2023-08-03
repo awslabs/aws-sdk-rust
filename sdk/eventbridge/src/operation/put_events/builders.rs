@@ -38,6 +38,10 @@ impl PutEventsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutEvents as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_events::builders::PutEventsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,12 @@ impl PutEventsFluentBuilder {
         self.inner = self.inner.set_entries(input);
         self
     }
+    /// <p>The entry that defines an event in your system. You can specify several parameters for the entry such as the source and type of the event, resources associated with the event, and so on.</p>
+    pub fn get_entries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PutEventsRequestEntry>> {
+        self.inner.get_entries()
+    }
     /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p> <important>
     /// <p>When using Java, you must include <code>auth-crt</code> on the class path.</p>
     /// </important>
@@ -140,5 +150,11 @@ impl PutEventsFluentBuilder {
     pub fn set_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint_id(input);
         self
+    }
+    /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p> <important>
+    /// <p>When using Java, you must include <code>auth-crt</code> on the class path.</p>
+    /// </important>
+    pub fn get_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_endpoint_id()
     }
 }

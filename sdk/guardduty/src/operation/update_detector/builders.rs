@@ -37,6 +37,12 @@ impl UpdateDetectorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDetector as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_detector::builders::UpdateDetectorInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +125,10 @@ impl UpdateDetectorFluentBuilder {
         self.inner = self.inner.set_detector_id(input);
         self
     }
+    /// <p>The unique ID of the detector to update.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_id()
+    }
     /// <p>Specifies whether the detector is enabled or not enabled.</p>
     pub fn enable(mut self, input: bool) -> Self {
         self.inner = self.inner.enable(input);
@@ -128,6 +138,10 @@ impl UpdateDetectorFluentBuilder {
     pub fn set_enable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable(input);
         self
+    }
+    /// <p>Specifies whether the detector is enabled or not enabled.</p>
+    pub fn get_enable(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable()
     }
     /// <p>An enum value that specifies how frequently findings are exported, such as to CloudWatch Events.</p>
     pub fn finding_publishing_frequency(
@@ -144,6 +158,12 @@ impl UpdateDetectorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_finding_publishing_frequency(input);
         self
+    }
+    /// <p>An enum value that specifies how frequently findings are exported, such as to CloudWatch Events.</p>
+    pub fn get_finding_publishing_frequency(
+        &self,
+    ) -> &::std::option::Option<crate::types::FindingPublishingFrequency> {
+        self.inner.get_finding_publishing_frequency()
     }
     /// <p>Describes which data sources will be updated.</p>
     /// <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
@@ -162,6 +182,14 @@ impl UpdateDetectorFluentBuilder {
         self.inner = self.inner.set_data_sources(input);
         self
     }
+    /// <p>Describes which data sources will be updated.</p>
+    /// <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
+    #[deprecated(note = "This parameter is deprecated, use Features instead")]
+    pub fn get_data_sources(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataSourceConfigurations> {
+        self.inner.get_data_sources()
+    }
     /// Appends an item to `Features`.
     ///
     /// To override the contents of this collection use [`set_features`](Self::set_features).
@@ -178,5 +206,11 @@ impl UpdateDetectorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_features(input);
         self
+    }
+    /// <p>Provides the features that will be updated for the detector.</p>
+    pub fn get_features(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DetectorFeatureConfiguration>> {
+        self.inner.get_features()
     }
 }

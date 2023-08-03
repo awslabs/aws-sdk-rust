@@ -78,6 +78,10 @@ impl ChimeSdkMeetingLiveConnectorConfigurationBuilder {
         self.arn = input;
         self
     }
+    /// <p>The configuration object's Chime SDK meeting ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The configuration object's multiplex type.</p>
     pub fn mux_type(mut self, input: crate::types::LiveConnectorMuxType) -> Self {
         self.mux_type = ::std::option::Option::Some(input);
@@ -90,6 +94,10 @@ impl ChimeSdkMeetingLiveConnectorConfigurationBuilder {
     ) -> Self {
         self.mux_type = input;
         self
+    }
+    /// <p>The configuration object's multiplex type.</p>
+    pub fn get_mux_type(&self) -> &::std::option::Option<crate::types::LiveConnectorMuxType> {
+        &self.mux_type
     }
     /// <p>The media pipeline's composited video.</p>
     pub fn composited_video(
@@ -107,6 +115,12 @@ impl ChimeSdkMeetingLiveConnectorConfigurationBuilder {
         self.composited_video = input;
         self
     }
+    /// <p>The media pipeline's composited video.</p>
+    pub fn get_composited_video(
+        &self,
+    ) -> &::std::option::Option<crate::types::CompositedVideoArtifactsConfiguration> {
+        &self.composited_video
+    }
     /// <p>The source configuration settings of the media pipeline's configuration object.</p>
     pub fn source_configuration(mut self, input: crate::types::SourceConfiguration) -> Self {
         self.source_configuration = ::std::option::Option::Some(input);
@@ -119,6 +133,12 @@ impl ChimeSdkMeetingLiveConnectorConfigurationBuilder {
     ) -> Self {
         self.source_configuration = input;
         self
+    }
+    /// <p>The source configuration settings of the media pipeline's configuration object.</p>
+    pub fn get_source_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SourceConfiguration> {
+        &self.source_configuration
     }
     /// Consumes the builder and constructs a [`ChimeSdkMeetingLiveConnectorConfiguration`](crate::types::ChimeSdkMeetingLiveConnectorConfiguration).
     pub fn build(self) -> crate::types::ChimeSdkMeetingLiveConnectorConfiguration {

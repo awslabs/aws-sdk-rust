@@ -81,6 +81,10 @@ impl CreatePermissionSetInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the <code>PermissionSet</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the <code>PermissionSet</code>.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -91,6 +95,10 @@ impl CreatePermissionSetInputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the <code>PermissionSet</code>.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     pub fn instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_arn = ::std::option::Option::Some(input.into());
@@ -100,6 +108,10 @@ impl CreatePermissionSetInputBuilder {
     pub fn set_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_arn = input;
         self
+    }
+    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+    pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_arn
     }
     /// <p>The length of time that the application user sessions are valid in the ISO-8601 standard.</p>
     pub fn session_duration(
@@ -117,6 +129,10 @@ impl CreatePermissionSetInputBuilder {
         self.session_duration = input;
         self
     }
+    /// <p>The length of time that the application user sessions are valid in the ISO-8601 standard.</p>
+    pub fn get_session_duration(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_duration
+    }
     /// <p>Used to redirect users within the application during the federation authentication process.</p>
     pub fn relay_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relay_state = ::std::option::Option::Some(input.into());
@@ -126,6 +142,10 @@ impl CreatePermissionSetInputBuilder {
     pub fn set_relay_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.relay_state = input;
         self
+    }
+    /// <p>Used to redirect users within the application during the federation authentication process.</p>
+    pub fn get_relay_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.relay_state
     }
     /// Appends an item to `tags`.
     ///
@@ -145,6 +165,10 @@ impl CreatePermissionSetInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags to attach to the new <code>PermissionSet</code>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreatePermissionSetInput`](crate::operation::create_permission_set::CreatePermissionSetInput).
     pub fn build(

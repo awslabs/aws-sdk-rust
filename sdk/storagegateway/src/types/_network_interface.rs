@@ -60,6 +60,10 @@ impl NetworkInterfaceBuilder {
         self.ipv4_address = input;
         self
     }
+    /// <p>The Internet Protocol version 4 (IPv4) address of the interface.</p>
+    pub fn get_ipv4_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv4_address
+    }
     /// <p>The Media Access Control (MAC) address of the interface.</p> <note>
     /// <p>This is currently unsupported and will not be returned in output.</p>
     /// </note>
@@ -74,6 +78,12 @@ impl NetworkInterfaceBuilder {
         self.mac_address = input;
         self
     }
+    /// <p>The Media Access Control (MAC) address of the interface.</p> <note>
+    /// <p>This is currently unsupported and will not be returned in output.</p>
+    /// </note>
+    pub fn get_mac_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mac_address
+    }
     /// <p>The Internet Protocol version 6 (IPv6) address of the interface. <i>Currently not supported</i>.</p>
     pub fn ipv6_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipv6_address = ::std::option::Option::Some(input.into());
@@ -83,6 +93,10 @@ impl NetworkInterfaceBuilder {
     pub fn set_ipv6_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipv6_address = input;
         self
+    }
+    /// <p>The Internet Protocol version 6 (IPv6) address of the interface. <i>Currently not supported</i>.</p>
+    pub fn get_ipv6_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv6_address
     }
     /// Consumes the builder and constructs a [`NetworkInterface`](crate::types::NetworkInterface).
     pub fn build(self) -> crate::types::NetworkInterface {

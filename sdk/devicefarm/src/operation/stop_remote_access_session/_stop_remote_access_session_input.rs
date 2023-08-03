@@ -42,6 +42,10 @@ impl StopRemoteAccessSessionInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the remote access session to stop.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`StopRemoteAccessSessionInput`](crate::operation::stop_remote_access_session::StopRemoteAccessSessionInput).
     pub fn build(
         self,

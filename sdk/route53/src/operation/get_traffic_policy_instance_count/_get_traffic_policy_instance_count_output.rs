@@ -47,6 +47,10 @@ impl GetTrafficPolicyInstanceCountOutputBuilder {
         self.traffic_policy_instance_count = input;
         self
     }
+    /// <p>The number of traffic policy instances that are associated with the current Amazon Web Services account.</p>
+    pub fn get_traffic_policy_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.traffic_policy_instance_count
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -40,6 +40,10 @@ impl FixedResponseActionBuilder {
         self.status_code = input;
         self
     }
+    /// <p>The HTTP response code.</p>
+    pub fn get_status_code(&self) -> &::std::option::Option<i32> {
+        &self.status_code
+    }
     /// Consumes the builder and constructs a [`FixedResponseAction`](crate::types::FixedResponseAction).
     pub fn build(self) -> crate::types::FixedResponseAction {
         crate::types::FixedResponseAction {

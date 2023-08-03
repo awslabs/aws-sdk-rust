@@ -51,6 +51,10 @@ impl TargetOnDeviceServiceBuilder {
         self.service_name = input;
         self
     }
+    /// <p>Specifies the name of the service on the Snow Family device that your transferred data will be exported from or imported into.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<crate::types::DeviceServiceName> {
+        &self.service_name
+    }
     /// <p>Specifies whether the data is being imported or exported. You can import or export the data, or use it locally on the device.</p>
     pub fn transfer_option(mut self, input: crate::types::TransferOption) -> Self {
         self.transfer_option = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl TargetOnDeviceServiceBuilder {
     ) -> Self {
         self.transfer_option = input;
         self
+    }
+    /// <p>Specifies whether the data is being imported or exported. You can import or export the data, or use it locally on the device.</p>
+    pub fn get_transfer_option(&self) -> &::std::option::Option<crate::types::TransferOption> {
+        &self.transfer_option
     }
     /// Consumes the builder and constructs a [`TargetOnDeviceService`](crate::types::TargetOnDeviceService).
     pub fn build(self) -> crate::types::TargetOnDeviceService {

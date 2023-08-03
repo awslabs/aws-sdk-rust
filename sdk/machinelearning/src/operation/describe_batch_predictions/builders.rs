@@ -36,6 +36,13 @@ impl DescribeBatchPredictionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeBatchPredictions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_batch_predictions::builders::DescribeBatchPredictionsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -156,6 +163,21 @@ impl DescribeBatchPredictionsFluentBuilder {
         self.inner = self.inner.set_filter_variable(input);
         self
     }
+    /// <p>Use one of the following variables to filter a list of <code>BatchPrediction</code>:</p>
+    /// <ul>
+    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to the <code>BatchPrediction</code> creation date.</p> </li>
+    /// <li> <p> <code>Status</code> - Sets the search criteria to the <code>BatchPrediction</code> status.</p> </li>
+    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of the <code>BatchPrediction</code> <b> </b> <code>Name</code>.</p> </li>
+    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>BatchPrediction</code> creation.</p> </li>
+    /// <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> used in the <code>BatchPrediction</code>.</p> </li>
+    /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in the <code>BatchPrediction</code>.</p> </li>
+    /// <li> <p> <code>DataURI</code> - Sets the search criteria to the data file(s) used in the <code>BatchPrediction</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li>
+    /// </ul>
+    pub fn get_filter_variable(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchPredictionFilterVariable> {
+        self.inner.get_filter_variable()
+    }
     /// <p>The equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
     pub fn eq(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.eq(input.into());
@@ -165,6 +187,10 @@ impl DescribeBatchPredictionsFluentBuilder {
     pub fn set_eq(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_eq(input);
         self
+    }
+    /// <p>The equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
+    pub fn get_eq(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_eq()
     }
     /// <p>The greater than operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
     pub fn gt(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -176,6 +202,10 @@ impl DescribeBatchPredictionsFluentBuilder {
         self.inner = self.inner.set_gt(input);
         self
     }
+    /// <p>The greater than operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
+    pub fn get_gt(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gt()
+    }
     /// <p>The less than operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
     pub fn lt(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.lt(input.into());
@@ -185,6 +215,10 @@ impl DescribeBatchPredictionsFluentBuilder {
     pub fn set_lt(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_lt(input);
         self
+    }
+    /// <p>The less than operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
+    pub fn get_lt(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_lt()
     }
     /// <p>The greater than or equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
     pub fn ge(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -196,6 +230,10 @@ impl DescribeBatchPredictionsFluentBuilder {
         self.inner = self.inner.set_ge(input);
         self
     }
+    /// <p>The greater than or equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
+    pub fn get_ge(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ge()
+    }
     /// <p>The less than or equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
     pub fn le(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.le(input.into());
@@ -206,6 +244,10 @@ impl DescribeBatchPredictionsFluentBuilder {
         self.inner = self.inner.set_le(input);
         self
     }
+    /// <p>The less than or equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
+    pub fn get_le(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_le()
+    }
     /// <p>The not equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
     pub fn ne(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ne(input.into());
@@ -215,6 +257,10 @@ impl DescribeBatchPredictionsFluentBuilder {
     pub fn set_ne(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ne(input);
         self
+    }
+    /// <p>The not equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
+    pub fn get_ne(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ne()
     }
     /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
     /// <p>For example, a <code>Batch Prediction</code> operation could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>BatchPrediction</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
@@ -238,6 +284,16 @@ impl DescribeBatchPredictionsFluentBuilder {
         self.inner = self.inner.set_prefix(input);
         self
     }
+    /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
+    /// <p>For example, a <code>Batch Prediction</code> operation could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>BatchPrediction</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
+    /// <ul>
+    /// <li> <p>2014-09</p> </li>
+    /// <li> <p>2014-09-09</p> </li>
+    /// <li> <p>2014-09-09-Holiday</p> </li>
+    /// </ul>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_prefix()
+    }
     /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>s.</p>
     /// <ul>
     /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
@@ -258,6 +314,15 @@ impl DescribeBatchPredictionsFluentBuilder {
         self.inner = self.inner.set_sort_order(input);
         self
     }
+    /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>s.</p>
+    /// <ul>
+    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
+    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
+    /// </ul>
+    /// <p>Results are sorted by <code>FilterVariable</code>.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        self.inner.get_sort_order()
+    }
     /// <p>An ID of the page in the paginated results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -268,6 +333,10 @@ impl DescribeBatchPredictionsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>An ID of the page in the paginated results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The number of pages of information to include in the result. The range of acceptable values is <code>1</code> through <code>100</code>. The default value is <code>100</code>.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -277,5 +346,9 @@ impl DescribeBatchPredictionsFluentBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
+    }
+    /// <p>The number of pages of information to include in the result. The range of acceptable values is <code>1</code> through <code>100</code>. The default value is <code>100</code>.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
     }
 }

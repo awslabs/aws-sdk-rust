@@ -74,6 +74,12 @@ impl DescribeVpcEndpointServicesOutputBuilder {
         self.service_names = input;
         self
     }
+    /// <p>The supported services.</p>
+    pub fn get_service_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.service_names
+    }
     /// Appends an item to `service_details`.
     ///
     /// To override the contents of this collection use [`set_service_details`](Self::set_service_details).
@@ -93,6 +99,12 @@ impl DescribeVpcEndpointServicesOutputBuilder {
         self.service_details = input;
         self
     }
+    /// <p>Information about the service.</p>
+    pub fn get_service_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceDetail>> {
+        &self.service_details
+    }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -102,6 +114,10 @@ impl DescribeVpcEndpointServicesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

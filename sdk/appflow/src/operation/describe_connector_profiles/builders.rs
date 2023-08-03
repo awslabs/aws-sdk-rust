@@ -37,6 +37,10 @@ impl DescribeConnectorProfilesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeConnectorProfiles as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_connector_profiles::builders::DescribeConnectorProfilesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -146,6 +150,12 @@ impl DescribeConnectorProfilesFluentBuilder {
         self.inner = self.inner.set_connector_profile_names(input);
         self
     }
+    /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
+    pub fn get_connector_profile_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_connector_profile_names()
+    }
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
     pub fn connector_type(mut self, input: crate::types::ConnectorType) -> Self {
         self.inner = self.inner.connector_type(input);
@@ -158,6 +168,10 @@ impl DescribeConnectorProfilesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_connector_type(input);
         self
+    }
+    /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
+    pub fn get_connector_type(&self) -> &::std::option::Option<crate::types::ConnectorType> {
+        self.inner.get_connector_type()
     }
     /// <p>The name of the connector. The name is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
     pub fn connector_label(
@@ -175,6 +189,10 @@ impl DescribeConnectorProfilesFluentBuilder {
         self.inner = self.inner.set_connector_label(input);
         self
     }
+    /// <p>The name of the connector. The name is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
+    pub fn get_connector_label(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connector_label()
+    }
     /// <p> Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -185,6 +203,10 @@ impl DescribeConnectorProfilesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p> Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p> The pagination token for the next page of data. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -194,5 +216,9 @@ impl DescribeConnectorProfilesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p> The pagination token for the next page of data. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

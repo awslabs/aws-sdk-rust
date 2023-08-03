@@ -49,6 +49,10 @@ impl ListKeyGroupsOutputBuilder {
         self.key_group_list = input;
         self
     }
+    /// <p>A list of key groups.</p>
+    pub fn get_key_group_list(&self) -> &::std::option::Option<crate::types::KeyGroupList> {
+        &self.key_group_list
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

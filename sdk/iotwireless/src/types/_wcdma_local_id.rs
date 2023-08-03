@@ -48,6 +48,10 @@ impl WcdmaLocalIdBuilder {
         self.uarfcndl = input;
         self
     }
+    /// <p>WCDMA UTRA Absolute RF Channel Number downlink.</p>
+    pub fn get_uarfcndl(&self) -> &::std::option::Option<i32> {
+        &self.uarfcndl
+    }
     /// <p>Primary Scrambling Code.</p>
     pub fn psc(mut self, input: i32) -> Self {
         self.psc = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl WcdmaLocalIdBuilder {
     pub fn set_psc(mut self, input: ::std::option::Option<i32>) -> Self {
         self.psc = input;
         self
+    }
+    /// <p>Primary Scrambling Code.</p>
+    pub fn get_psc(&self) -> &::std::option::Option<i32> {
+        &self.psc
     }
     /// Consumes the builder and constructs a [`WcdmaLocalId`](crate::types::WcdmaLocalId).
     pub fn build(self) -> crate::types::WcdmaLocalId {

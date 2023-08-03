@@ -58,6 +58,10 @@ impl CreatePolicyVersionInputBuilder {
         self.policy_name = input;
         self
     }
+    /// <p>The policy name.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_name
+    }
     /// <p>The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespace.</p>
     pub fn policy_document(
         mut self,
@@ -74,6 +78,10 @@ impl CreatePolicyVersionInputBuilder {
         self.policy_document = input;
         self
     }
+    /// <p>The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespace.</p>
+    pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_document
+    }
     /// <p>Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version (that is, the version that is in effect for the certificates to which the policy is attached).</p>
     pub fn set_as_default(mut self, input: bool) -> Self {
         self.set_as_default = ::std::option::Option::Some(input);
@@ -83,6 +91,10 @@ impl CreatePolicyVersionInputBuilder {
     pub fn set_set_as_default(mut self, input: ::std::option::Option<bool>) -> Self {
         self.set_as_default = input;
         self
+    }
+    /// <p>Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version (that is, the version that is in effect for the certificates to which the policy is attached).</p>
+    pub fn get_set_as_default(&self) -> &::std::option::Option<bool> {
+        &self.set_as_default
     }
     /// Consumes the builder and constructs a [`CreatePolicyVersionInput`](crate::operation::create_policy_version::CreatePolicyVersionInput).
     pub fn build(

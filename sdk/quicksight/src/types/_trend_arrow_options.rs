@@ -43,6 +43,10 @@ impl TrendArrowOptionsBuilder {
         self.visibility = input;
         self
     }
+    /// <p>The visibility of the trend arrows.</p>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.visibility
+    }
     /// Consumes the builder and constructs a [`TrendArrowOptions`](crate::types::TrendArrowOptions).
     pub fn build(self) -> crate::types::TrendArrowOptions {
         crate::types::TrendArrowOptions {

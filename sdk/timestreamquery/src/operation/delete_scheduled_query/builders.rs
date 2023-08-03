@@ -36,6 +36,12 @@ impl DeleteScheduledQueryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteScheduledQuery as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_scheduled_query::builders::DeleteScheduledQueryInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl DeleteScheduledQueryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_scheduled_query_arn(input);
         self
+    }
+    /// <p>The ARN of the scheduled query. </p>
+    pub fn get_scheduled_query_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_scheduled_query_arn()
     }
 }

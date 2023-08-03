@@ -69,6 +69,10 @@ impl WriteRecordsInputBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The name of the Timestream database.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>The name of the Timestream table.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
@@ -78,6 +82,10 @@ impl WriteRecordsInputBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
+    }
+    /// <p>The name of the Timestream table.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// <p>A record that contains the common measure, dimension, time, and version attributes shared across all the records in the request. The measure and dimension attributes specified will be merged with the measure and dimension attributes in the records object when the data is written into Timestream. Dimensions may not overlap, or a <code>ValidationException</code> will be thrown. In other words, a record must contain dimensions with unique names. </p>
     pub fn common_attributes(mut self, input: crate::types::Record) -> Self {
@@ -91,6 +99,10 @@ impl WriteRecordsInputBuilder {
     ) -> Self {
         self.common_attributes = input;
         self
+    }
+    /// <p>A record that contains the common measure, dimension, time, and version attributes shared across all the records in the request. The measure and dimension attributes specified will be merged with the measure and dimension attributes in the records object when the data is written into Timestream. Dimensions may not overlap, or a <code>ValidationException</code> will be thrown. In other words, a record must contain dimensions with unique names. </p>
+    pub fn get_common_attributes(&self) -> &::std::option::Option<crate::types::Record> {
+        &self.common_attributes
     }
     /// Appends an item to `records`.
     ///
@@ -110,6 +122,10 @@ impl WriteRecordsInputBuilder {
     ) -> Self {
         self.records = input;
         self
+    }
+    /// <p>An array of records that contain the unique measure, dimension, time, and version attributes for each time-series data point. </p>
+    pub fn get_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Record>> {
+        &self.records
     }
     /// Consumes the builder and constructs a [`WriteRecordsInput`](crate::operation::write_records::WriteRecordsInput).
     pub fn build(

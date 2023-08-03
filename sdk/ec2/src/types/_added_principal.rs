@@ -67,6 +67,10 @@ impl AddedPrincipalBuilder {
         self.principal_type = input;
         self
     }
+    /// <p>The type of principal.</p>
+    pub fn get_principal_type(&self) -> &::std::option::Option<crate::types::PrincipalType> {
+        &self.principal_type
+    }
     /// <p>The Amazon Resource Name (ARN) of the principal.</p>
     pub fn principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal = ::std::option::Option::Some(input.into());
@@ -76,6 +80,10 @@ impl AddedPrincipalBuilder {
     pub fn set_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the principal.</p>
+    pub fn get_principal(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal
     }
     /// <p>The ID of the service permission.</p>
     pub fn service_permission_id(
@@ -93,6 +101,10 @@ impl AddedPrincipalBuilder {
         self.service_permission_id = input;
         self
     }
+    /// <p>The ID of the service permission.</p>
+    pub fn get_service_permission_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_permission_id
+    }
     /// <p>The ID of the service.</p>
     pub fn service_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_id = ::std::option::Option::Some(input.into());
@@ -102,6 +114,10 @@ impl AddedPrincipalBuilder {
     pub fn set_service_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_id = input;
         self
+    }
+    /// <p>The ID of the service.</p>
+    pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_id
     }
     /// Consumes the builder and constructs a [`AddedPrincipal`](crate::types::AddedPrincipal).
     pub fn build(self) -> crate::types::AddedPrincipal {

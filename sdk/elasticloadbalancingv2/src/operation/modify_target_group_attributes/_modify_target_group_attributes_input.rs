@@ -54,6 +54,10 @@ impl ModifyTargetGroupAttributesInputBuilder {
         self.target_group_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the target group.</p>
+    pub fn get_target_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_group_arn
+    }
     /// Appends an item to `attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
@@ -72,6 +76,12 @@ impl ModifyTargetGroupAttributesInputBuilder {
     ) -> Self {
         self.attributes = input;
         self
+    }
+    /// <p>The attributes.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetGroupAttribute>> {
+        &self.attributes
     }
     /// Consumes the builder and constructs a [`ModifyTargetGroupAttributesInput`](crate::operation::modify_target_group_attributes::ModifyTargetGroupAttributesInput).
     pub fn build(

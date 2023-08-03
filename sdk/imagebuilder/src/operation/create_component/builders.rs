@@ -40,6 +40,12 @@ impl CreateComponentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateComponent as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_component::builders::CreateComponentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +136,10 @@ impl CreateComponentFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the component.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
     /// <p>The semantic version has four nodes: <major>
     /// .
@@ -176,6 +186,25 @@ impl CreateComponentFluentBuilder {
         self.inner = self.inner.set_semantic_version(input);
         self
     }
+    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version has four nodes: <major>
+    /// .
+    /// <minor>
+    /// .
+    /// <patch>
+    /// /
+    /// <build>
+    /// . You can assign values for the first three, and can filter on all of them.
+    /// </build>
+    /// </patch>
+    /// </minor>
+    /// </major></p>
+    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+    /// </note>
+    pub fn get_semantic_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_semantic_version()
+    }
     /// <p>Describes the contents of the component.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -185,6 +214,10 @@ impl CreateComponentFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>Describes the contents of the component.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.</p>
     pub fn change_description(
@@ -202,6 +235,10 @@ impl CreateComponentFluentBuilder {
         self.inner = self.inner.set_change_description(input);
         self
     }
+    /// <p>The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.</p>
+    pub fn get_change_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_change_description()
+    }
     /// <p>The operating system platform of the component.</p>
     pub fn platform(mut self, input: crate::types::Platform) -> Self {
         self.inner = self.inner.platform(input);
@@ -211,6 +248,10 @@ impl CreateComponentFluentBuilder {
     pub fn set_platform(mut self, input: ::std::option::Option<crate::types::Platform>) -> Self {
         self.inner = self.inner.set_platform(input);
         self
+    }
+    /// <p>The operating system platform of the component.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<crate::types::Platform> {
+        self.inner.get_platform()
     }
     /// Appends an item to `supportedOsVersions`.
     ///
@@ -232,6 +273,12 @@ impl CreateComponentFluentBuilder {
         self.inner = self.inner.set_supported_os_versions(input);
         self
     }
+    /// <p>The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
+    pub fn get_supported_os_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_supported_os_versions()
+    }
     /// <p>Component <code>data</code> contains inline YAML document content for the component. Alternatively, you can specify the <code>uri</code> of a YAML document file stored in Amazon S3. However, you cannot specify both properties.</p>
     pub fn data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data(input.into());
@@ -241,6 +288,10 @@ impl CreateComponentFluentBuilder {
     pub fn set_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data(input);
         self
+    }
+    /// <p>Component <code>data</code> contains inline YAML document content for the component. Alternatively, you can specify the <code>uri</code> of a YAML document file stored in Amazon S3. However, you cannot specify both properties.</p>
+    pub fn get_data(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_data()
     }
     /// <p>The <code>uri</code> of a YAML component document file. This must be an S3 URL (<code>s3://bucket/key</code>), and the requester must have permission to access the S3 bucket it points to. If you use Amazon S3, you can specify component content up to your service quota.</p>
     /// <p>Alternatively, you can specify the YAML document inline, using the component <code>data</code> property. You cannot specify both properties.</p>
@@ -254,6 +305,11 @@ impl CreateComponentFluentBuilder {
         self.inner = self.inner.set_uri(input);
         self
     }
+    /// <p>The <code>uri</code> of a YAML component document file. This must be an S3 URL (<code>s3://bucket/key</code>), and the requester must have permission to access the S3 bucket it points to. If you use Amazon S3, you can specify component content up to your service quota.</p>
+    /// <p>Alternatively, you can specify the YAML document inline, using the component <code>data</code> property. You cannot specify both properties.</p>
+    pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_uri()
+    }
     /// <p>The ID of the KMS key that is used to encrypt this component.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
@@ -263,6 +319,10 @@ impl CreateComponentFluentBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
+    }
+    /// <p>The ID of the KMS key that is used to encrypt this component.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_id()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -287,6 +347,14 @@ impl CreateComponentFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags that apply to the component.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>The idempotency token of the component.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -296,5 +364,9 @@ impl CreateComponentFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>The idempotency token of the component.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

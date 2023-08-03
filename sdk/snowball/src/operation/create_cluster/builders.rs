@@ -36,6 +36,12 @@ impl CreateClusterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateCluster as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_cluster::builders::CreateClusterInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -120,6 +126,11 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.set_job_type(input);
         self
     }
+    /// <p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p>
+    /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+    pub fn get_job_type(&self) -> &::std::option::Option<crate::types::JobType> {
+        self.inner.get_job_type()
+    }
     /// <p>The resources associated with the cluster job. These resources include Amazon S3 buckets and optional Lambda functions written in the Python language. </p>
     pub fn resources(mut self, input: crate::types::JobResource) -> Self {
         self.inner = self.inner.resources(input);
@@ -132,6 +143,10 @@ impl CreateClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resources(input);
         self
+    }
+    /// <p>The resources associated with the cluster job. These resources include Amazon S3 buckets and optional Lambda functions written in the Python language. </p>
+    pub fn get_resources(&self) -> &::std::option::Option<crate::types::JobResource> {
+        self.inner.get_resources()
     }
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
     pub fn on_device_service_configuration(
@@ -149,6 +164,12 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.set_on_device_service_configuration(input);
         self
     }
+    /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
+    pub fn get_on_device_service_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::OnDeviceServiceConfiguration> {
+        self.inner.get_on_device_service_configuration()
+    }
     /// <p>An optional description of this specific cluster, for example <code>Environmental Data Cluster-01</code>.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -158,6 +179,10 @@ impl CreateClusterFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>An optional description of this specific cluster, for example <code>Environmental Data Cluster-01</code>.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The ID for the address that you want the cluster shipped to.</p>
     pub fn address_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -169,6 +194,10 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.set_address_id(input);
         self
     }
+    /// <p>The ID for the address that you want the cluster shipped to.</p>
+    pub fn get_address_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_address_id()
+    }
     /// <p>The <code>KmsKeyARN</code> value that you want to associate with this cluster. <code>KmsKeyARN</code> values are created by using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS). </p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_arn(input.into());
@@ -179,6 +208,10 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.set_kms_key_arn(input);
         self
     }
+    /// <p>The <code>KmsKeyARN</code> value that you want to associate with this cluster. <code>KmsKeyARN</code> values are created by using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS). </p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_arn()
+    }
     /// <p>The <code>RoleARN</code> that you want to associate with this cluster. <code>RoleArn</code> values are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -188,6 +221,10 @@ impl CreateClusterFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>The <code>RoleARN</code> that you want to associate with this cluster. <code>RoleArn</code> values are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// <p>The type of Snow Family devices to use for this cluster. </p> <note>
     /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
@@ -207,6 +244,13 @@ impl CreateClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_snowball_type(input);
         self
+    }
+    /// <p>The type of Snow Family devices to use for this cluster. </p> <note>
+    /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
+    /// </note>
+    /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+    pub fn get_snowball_type(&self) -> &::std::option::Option<crate::types::SnowballType> {
+        self.inner.get_snowball_type()
     }
     /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each Snowball Edge device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows: </p>
     /// <ul>
@@ -245,6 +289,22 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.set_shipping_option(input);
         self
     }
+    /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each Snowball Edge device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows: </p>
+    /// <ul>
+    /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li>
+    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
+    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
+    /// <li> <p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a day.</p> </li>
+    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
+    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
+    /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
+    /// </ul>
+    pub fn get_shipping_option(&self) -> &::std::option::Option<crate::types::ShippingOption> {
+        self.inner.get_shipping_option()
+    }
     /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for this cluster.</p>
     pub fn notification(mut self, input: crate::types::Notification) -> Self {
         self.inner = self.inner.notification(input);
@@ -257,6 +317,10 @@ impl CreateClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_notification(input);
         self
+    }
+    /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for this cluster.</p>
+    pub fn get_notification(&self) -> &::std::option::Option<crate::types::Notification> {
+        self.inner.get_notification()
     }
     /// <p>The forwarding address ID for a cluster. This field is not supported in most regions.</p>
     pub fn forwarding_address_id(
@@ -274,6 +338,10 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.set_forwarding_address_id(input);
         self
     }
+    /// <p>The forwarding address ID for a cluster. This field is not supported in most regions.</p>
+    pub fn get_forwarding_address_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_forwarding_address_id()
+    }
     /// <p>The tax documents required in your Amazon Web Services Region.</p>
     pub fn tax_documents(mut self, input: crate::types::TaxDocuments) -> Self {
         self.inner = self.inner.tax_documents(input);
@@ -286,6 +354,10 @@ impl CreateClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tax_documents(input);
         self
+    }
+    /// <p>The tax documents required in your Amazon Web Services Region.</p>
+    pub fn get_tax_documents(&self) -> &::std::option::Option<crate::types::TaxDocuments> {
+        self.inner.get_tax_documents()
     }
     /// <p>Allows you to securely operate and manage Snow devices in a cluster remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.</p>
     pub fn remote_management(mut self, input: crate::types::RemoteManagement) -> Self {
@@ -300,6 +372,10 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.set_remote_management(input);
         self
     }
+    /// <p>Allows you to securely operate and manage Snow devices in a cluster remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.</p>
+    pub fn get_remote_management(&self) -> &::std::option::Option<crate::types::RemoteManagement> {
+        self.inner.get_remote_management()
+    }
     /// <p>If provided, each job will be automatically created and associated with the new cluster. If not provided, will be treated as 0.</p>
     pub fn initial_cluster_size(mut self, input: i32) -> Self {
         self.inner = self.inner.initial_cluster_size(input);
@@ -310,6 +386,10 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.set_initial_cluster_size(input);
         self
     }
+    /// <p>If provided, each job will be automatically created and associated with the new cluster. If not provided, will be treated as 0.</p>
+    pub fn get_initial_cluster_size(&self) -> &::std::option::Option<i32> {
+        self.inner.get_initial_cluster_size()
+    }
     /// <p>Force to create cluster when user attempts to overprovision or underprovision a cluster. A cluster is overprovisioned or underprovisioned if the initial size of the cluster is more (overprovisioned) or less (underprovisioned) than what needed to meet capacity requirement specified with <code>OnDeviceServiceConfiguration</code>.</p>
     pub fn force_create_jobs(mut self, input: bool) -> Self {
         self.inner = self.inner.force_create_jobs(input);
@@ -319,6 +399,10 @@ impl CreateClusterFluentBuilder {
     pub fn set_force_create_jobs(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force_create_jobs(input);
         self
+    }
+    /// <p>Force to create cluster when user attempts to overprovision or underprovision a cluster. A cluster is overprovisioned or underprovisioned if the initial size of the cluster is more (overprovisioned) or less (underprovisioned) than what needed to meet capacity requirement specified with <code>OnDeviceServiceConfiguration</code>.</p>
+    pub fn get_force_create_jobs(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force_create_jobs()
     }
     /// Appends an item to `LongTermPricingIds`.
     ///
@@ -340,6 +424,12 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.set_long_term_pricing_ids(input);
         self
     }
+    /// <p>Lists long-term pricing id that will be used to associate with jobs automatically created for the new cluster.</p>
+    pub fn get_long_term_pricing_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_long_term_pricing_ids()
+    }
     /// <p>If your job is being created in one of the US regions, you have the option of specifying what size Snow device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.</p>
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     pub fn snowball_capacity_preference(mut self, input: crate::types::SnowballCapacity) -> Self {
@@ -354,5 +444,12 @@ impl CreateClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_snowball_capacity_preference(input);
         self
+    }
+    /// <p>If your job is being created in one of the US regions, you have the option of specifying what size Snow device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.</p>
+    /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+    pub fn get_snowball_capacity_preference(
+        &self,
+    ) -> &::std::option::Option<crate::types::SnowballCapacity> {
+        self.inner.get_snowball_capacity_preference()
     }
 }

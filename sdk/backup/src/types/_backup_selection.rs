@@ -111,6 +111,10 @@ impl BackupSelectionBuilder {
         self.selection_name = input;
         self
     }
+    /// <p>The display name of a resource selection document. Must contain 1 to 50 alphanumeric or '-_.' characters.</p>
+    pub fn get_selection_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.selection_name
+    }
     /// <p>The ARN of the IAM role that Backup uses to authenticate when backing up the target resource; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role_arn = ::std::option::Option::Some(input.into());
@@ -120,6 +124,10 @@ impl BackupSelectionBuilder {
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_role_arn = input;
         self
+    }
+    /// <p>The ARN of the IAM role that Backup uses to authenticate when backing up the target resource; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+    pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_role_arn
     }
     /// Appends an item to `resources`.
     ///
@@ -141,6 +149,11 @@ impl BackupSelectionBuilder {
     ) -> Self {
         self.resources = input;
         self
+    }
+    /// <p>A list of Amazon Resource Names (ARNs) to assign to a backup plan. The maximum number of ARNs is 500 without wildcards, or 30 ARNs with wildcards.</p>
+    /// <p>If you need to assign many resources to a backup plan, consider a different resource selection strategy, such as assigning all resources of a resource type or refining your resource selection using tags.</p>
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resources
     }
     /// Appends an item to `list_of_tags`.
     ///
@@ -171,6 +184,17 @@ impl BackupSelectionBuilder {
         self.list_of_tags = input;
         self
     }
+    /// <p>A list of conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": { "ConditionKey": "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition operators are case sensitive.</p>
+    /// <p> <code>ListOfTags</code> differs from <code>Conditions</code> as follows:</p>
+    /// <ul>
+    /// <li> <p>When you specify more than one condition, you assign all resources that match AT LEAST ONE condition (using OR logic).</p> </li>
+    /// <li> <p> <code>ListOfTags</code> only supports <code>StringEquals</code>. <code>Conditions</code> supports <code>StringEquals</code>, <code>StringLike</code>, <code>StringNotEquals</code>, and <code>StringNotLike</code>. </p> </li>
+    /// </ul>
+    pub fn get_list_of_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Condition>> {
+        &self.list_of_tags
+    }
     /// Appends an item to `not_resources`.
     ///
     /// To override the contents of this collection use [`set_not_resources`](Self::set_not_resources).
@@ -195,6 +219,13 @@ impl BackupSelectionBuilder {
         self.not_resources = input;
         self
     }
+    /// <p>A list of Amazon Resource Names (ARNs) to exclude from a backup plan. The maximum number of ARNs is 500 without wildcards, or 30 ARNs with wildcards.</p>
+    /// <p>If you need to exclude many resources from a backup plan, consider a different resource selection strategy, such as assigning only one or a few resource types or refining your resource selection using tags.</p>
+    pub fn get_not_resources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.not_resources
+    }
     /// <p>A list of conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": { "ConditionKey": "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition operators are case sensitive.</p>
     /// <p> <code>Conditions</code> differs from <code>ListOfTags</code> as follows:</p>
     /// <ul>
@@ -217,6 +248,15 @@ impl BackupSelectionBuilder {
     ) -> Self {
         self.conditions = input;
         self
+    }
+    /// <p>A list of conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": { "ConditionKey": "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition operators are case sensitive.</p>
+    /// <p> <code>Conditions</code> differs from <code>ListOfTags</code> as follows:</p>
+    /// <ul>
+    /// <li> <p>When you specify more than one condition, you only assign the resources that match ALL conditions (using AND logic).</p> </li>
+    /// <li> <p> <code>Conditions</code> supports <code>StringEquals</code>, <code>StringLike</code>, <code>StringNotEquals</code>, and <code>StringNotLike</code>. <code>ListOfTags</code> only supports <code>StringEquals</code>.</p> </li>
+    /// </ul>
+    pub fn get_conditions(&self) -> &::std::option::Option<crate::types::Conditions> {
+        &self.conditions
     }
     /// Consumes the builder and constructs a [`BackupSelection`](crate::types::BackupSelection).
     pub fn build(self) -> crate::types::BackupSelection {

@@ -56,6 +56,10 @@ impl RestoreTableToPointInTimeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RestoreTableToPointInTime as a reference.
+    pub fn as_input(&self) -> &crate::operation::restore_table_to_point_in_time::builders::RestoreTableToPointInTimeInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -152,6 +156,10 @@ impl RestoreTableToPointInTimeFluentBuilder {
         self.inner = self.inner.set_source_table_arn(input);
         self
     }
+    /// <p>The DynamoDB table that will be restored. This value is an Amazon Resource Name (ARN).</p>
+    pub fn get_source_table_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_table_arn()
+    }
     /// <p>Name of the source table that is being restored.</p>
     pub fn source_table_name(
         mut self,
@@ -167,6 +175,10 @@ impl RestoreTableToPointInTimeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source_table_name(input);
         self
+    }
+    /// <p>Name of the source table that is being restored.</p>
+    pub fn get_source_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_table_name()
     }
     /// <p>The name of the new table to which it must be restored to.</p>
     pub fn target_table_name(
@@ -184,6 +196,10 @@ impl RestoreTableToPointInTimeFluentBuilder {
         self.inner = self.inner.set_target_table_name(input);
         self
     }
+    /// <p>The name of the new table to which it must be restored to.</p>
+    pub fn get_target_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_table_name()
+    }
     /// <p>Restore the table to the latest possible time. <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time. </p>
     pub fn use_latest_restorable_time(mut self, input: bool) -> Self {
         self.inner = self.inner.use_latest_restorable_time(input);
@@ -193,6 +209,10 @@ impl RestoreTableToPointInTimeFluentBuilder {
     pub fn set_use_latest_restorable_time(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_use_latest_restorable_time(input);
         self
+    }
+    /// <p>Restore the table to the latest possible time. <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time. </p>
+    pub fn get_use_latest_restorable_time(&self) -> &::std::option::Option<bool> {
+        self.inner.get_use_latest_restorable_time()
     }
     /// <p>Time in the past to restore the table to.</p>
     pub fn restore_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -207,6 +227,10 @@ impl RestoreTableToPointInTimeFluentBuilder {
         self.inner = self.inner.set_restore_date_time(input);
         self
     }
+    /// <p>Time in the past to restore the table to.</p>
+    pub fn get_restore_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_restore_date_time()
+    }
     /// <p>The billing mode of the restored table.</p>
     pub fn billing_mode_override(mut self, input: crate::types::BillingMode) -> Self {
         self.inner = self.inner.billing_mode_override(input);
@@ -219,6 +243,10 @@ impl RestoreTableToPointInTimeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_billing_mode_override(input);
         self
+    }
+    /// <p>The billing mode of the restored table.</p>
+    pub fn get_billing_mode_override(&self) -> &::std::option::Option<crate::types::BillingMode> {
+        self.inner.get_billing_mode_override()
     }
     /// Appends an item to `GlobalSecondaryIndexOverride`.
     ///
@@ -240,6 +268,12 @@ impl RestoreTableToPointInTimeFluentBuilder {
         self.inner = self.inner.set_global_secondary_index_override(input);
         self
     }
+    /// <p>List of global secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
+    pub fn get_global_secondary_index_override(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndex>> {
+        self.inner.get_global_secondary_index_override()
+    }
     /// Appends an item to `LocalSecondaryIndexOverride`.
     ///
     /// To override the contents of this collection use [`set_local_secondary_index_override`](Self::set_local_secondary_index_override).
@@ -260,6 +294,12 @@ impl RestoreTableToPointInTimeFluentBuilder {
         self.inner = self.inner.set_local_secondary_index_override(input);
         self
     }
+    /// <p>List of local secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
+    pub fn get_local_secondary_index_override(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LocalSecondaryIndex>> {
+        self.inner.get_local_secondary_index_override()
+    }
     /// <p>Provisioned throughput settings for the restored table.</p>
     pub fn provisioned_throughput_override(
         mut self,
@@ -276,6 +316,12 @@ impl RestoreTableToPointInTimeFluentBuilder {
         self.inner = self.inner.set_provisioned_throughput_override(input);
         self
     }
+    /// <p>Provisioned throughput settings for the restored table.</p>
+    pub fn get_provisioned_throughput_override(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProvisionedThroughput> {
+        self.inner.get_provisioned_throughput_override()
+    }
     /// <p>The new server-side encryption settings for the restored table.</p>
     pub fn sse_specification_override(mut self, input: crate::types::SseSpecification) -> Self {
         self.inner = self.inner.sse_specification_override(input);
@@ -288,5 +334,11 @@ impl RestoreTableToPointInTimeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sse_specification_override(input);
         self
+    }
+    /// <p>The new server-side encryption settings for the restored table.</p>
+    pub fn get_sse_specification_override(
+        &self,
+    ) -> &::std::option::Option<crate::types::SseSpecification> {
+        self.inner.get_sse_specification_override()
     }
 }

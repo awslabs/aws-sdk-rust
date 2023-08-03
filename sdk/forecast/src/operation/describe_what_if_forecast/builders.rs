@@ -44,6 +44,13 @@ impl DescribeWhatIfForecastFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeWhatIfForecast as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_what_if_forecast::builders::DescribeWhatIfForecastInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,5 +146,9 @@ impl DescribeWhatIfForecastFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_what_if_forecast_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the what-if forecast that you are interested in.</p>
+    pub fn get_what_if_forecast_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_what_if_forecast_arn()
     }
 }

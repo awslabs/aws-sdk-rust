@@ -49,6 +49,10 @@ impl StartSourceNetworkReplicationOutputBuilder {
         self.source_network = input;
         self
     }
+    /// <p>Source Network which was requested for replication.</p>
+    pub fn get_source_network(&self) -> &::std::option::Option<crate::types::SourceNetwork> {
+        &self.source_network
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

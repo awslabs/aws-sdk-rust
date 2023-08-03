@@ -40,6 +40,10 @@ impl GetBuiltinIntentInputBuilder {
         self.signature = input;
         self
     }
+    /// <p>The unique identifier for a built-in intent. To find the signature for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
+    pub fn get_signature(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signature
+    }
     /// Consumes the builder and constructs a [`GetBuiltinIntentInput`](crate::operation::get_builtin_intent::GetBuiltinIntentInput).
     pub fn build(
         self,

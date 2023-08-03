@@ -67,6 +67,10 @@ impl AssociateOpsItemRelatedItemInputBuilder {
         self.ops_item_id = input;
         self
     }
+    /// <p>The ID of the OpsItem to which you want to associate a resource as a related item.</p>
+    pub fn get_ops_item_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ops_item_id
+    }
     /// <p>The type of association that you want to create between an OpsItem and a resource. OpsCenter supports <code>IsParentOf</code> and <code>RelatesTo</code> association types.</p>
     pub fn association_type(
         mut self,
@@ -82,6 +86,10 @@ impl AssociateOpsItemRelatedItemInputBuilder {
     ) -> Self {
         self.association_type = input;
         self
+    }
+    /// <p>The type of association that you want to create between an OpsItem and a resource. OpsCenter supports <code>IsParentOf</code> and <code>RelatesTo</code> association types.</p>
+    pub fn get_association_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_type
     }
     /// <p>The type of resource that you want to associate with an OpsItem. OpsCenter supports the following types:</p>
     /// <p> <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident. </p>
@@ -103,6 +111,12 @@ impl AssociateOpsItemRelatedItemInputBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The type of resource that you want to associate with an OpsItem. OpsCenter supports the following types:</p>
+    /// <p> <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident. </p>
+    /// <p> <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
+    }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource that you want to associate with the OpsItem.</p>
     pub fn resource_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_uri = ::std::option::Option::Some(input.into());
@@ -112,6 +126,10 @@ impl AssociateOpsItemRelatedItemInputBuilder {
     pub fn set_resource_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_uri = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource that you want to associate with the OpsItem.</p>
+    pub fn get_resource_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_uri
     }
     /// Consumes the builder and constructs a [`AssociateOpsItemRelatedItemInput`](crate::operation::associate_ops_item_related_item::AssociateOpsItemRelatedItemInput).
     pub fn build(

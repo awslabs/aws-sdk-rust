@@ -112,6 +112,10 @@ impl CreateResponsePlanInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The short format name of the response plan. Can't include spaces.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -122,6 +126,10 @@ impl CreateResponsePlanInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The short format name of the response plan. Can't include spaces.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The long format of the response plan name. This field can contain spaces.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -131,6 +139,10 @@ impl CreateResponsePlanInputBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
+    }
+    /// <p>The long format of the response plan name. This field can contain spaces.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// <p>Details used to create an incident when using this response plan.</p>
     pub fn incident_template(mut self, input: crate::types::IncidentTemplate) -> Self {
@@ -145,6 +157,10 @@ impl CreateResponsePlanInputBuilder {
         self.incident_template = input;
         self
     }
+    /// <p>Details used to create an incident when using this response plan.</p>
+    pub fn get_incident_template(&self) -> &::std::option::Option<crate::types::IncidentTemplate> {
+        &self.incident_template
+    }
     /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
     pub fn chat_channel(mut self, input: crate::types::ChatChannel) -> Self {
         self.chat_channel = ::std::option::Option::Some(input);
@@ -157,6 +173,10 @@ impl CreateResponsePlanInputBuilder {
     ) -> Self {
         self.chat_channel = input;
         self
+    }
+    /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
+    pub fn get_chat_channel(&self) -> &::std::option::Option<crate::types::ChatChannel> {
+        &self.chat_channel
     }
     /// Appends an item to `engagements`.
     ///
@@ -177,6 +197,12 @@ impl CreateResponsePlanInputBuilder {
         self.engagements = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
+    pub fn get_engagements(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.engagements
+    }
     /// Appends an item to `actions`.
     ///
     /// To override the contents of this collection use [`set_actions`](Self::set_actions).
@@ -195,6 +221,10 @@ impl CreateResponsePlanInputBuilder {
     ) -> Self {
         self.actions = input;
         self
+    }
+    /// <p>The actions that the response plan starts at the beginning of an incident.</p>
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Action>> {
+        &self.actions
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -221,6 +251,14 @@ impl CreateResponsePlanInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>A list of tags that you are adding to the response plan.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// Appends an item to `integrations`.
     ///
     /// To override the contents of this collection use [`set_integrations`](Self::set_integrations).
@@ -239,6 +277,12 @@ impl CreateResponsePlanInputBuilder {
     ) -> Self {
         self.integrations = input;
         self
+    }
+    /// <p>Information about third-party services integrated into the response plan.</p>
+    pub fn get_integrations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Integration>> {
+        &self.integrations
     }
     /// Consumes the builder and constructs a [`CreateResponsePlanInput`](crate::operation::create_response_plan::CreateResponsePlanInput).
     pub fn build(

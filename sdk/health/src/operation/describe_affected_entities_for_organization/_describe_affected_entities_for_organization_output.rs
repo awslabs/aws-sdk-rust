@@ -75,6 +75,12 @@ impl DescribeAffectedEntitiesForOrganizationOutputBuilder {
         self.entities = input;
         self
     }
+    /// <p>A JSON set of elements including the <code>awsAccountId</code> and its <code>entityArn</code>, <code>entityValue</code> and its <code>entityArn</code>, <code>lastUpdatedTime</code>, and <code>statusCode</code>.</p>
+    pub fn get_entities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AffectedEntity>> {
+        &self.entities
+    }
     /// Appends an item to `failed_set`.
     ///
     /// To override the contents of this collection use [`set_failed_set`](Self::set_failed_set).
@@ -99,6 +105,13 @@ impl DescribeAffectedEntitiesForOrganizationOutputBuilder {
         self.failed_set = input;
         self
     }
+    /// <p>A JSON set of elements of the failed response, including the <code>awsAccountId</code>, <code>errorMessage</code>, <code>errorName</code>, and <code>eventArn</code>.</p>
+    pub fn get_failed_set(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OrganizationAffectedEntitiesErrorItem>>
+    {
+        &self.failed_set
+    }
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -108,6 +121,10 @@ impl DescribeAffectedEntitiesForOrganizationOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

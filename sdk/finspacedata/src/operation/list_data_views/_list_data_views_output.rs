@@ -54,6 +54,10 @@ impl ListDataViewsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token that indicates where a results page should begin.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `data_views`.
     ///
     /// To override the contents of this collection use [`set_data_views`](Self::set_data_views).
@@ -72,6 +76,12 @@ impl ListDataViewsOutputBuilder {
     ) -> Self {
         self.data_views = input;
         self
+    }
+    /// <p>A list of Dataviews.</p>
+    pub fn get_data_views(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataViewSummary>> {
+        &self.data_views
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -36,6 +36,10 @@ impl CreateRecommendationTemplateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateRecommendationTemplate as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_recommendation_template::builders::CreateRecommendationTemplateInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +140,12 @@ impl CreateRecommendationTemplateFluentBuilder {
         self.inner = self.inner.set_recommendation_ids(input);
         self
     }
+    /// <p>Identifiers for the recommendations used to create a recommendation template.</p>
+    pub fn get_recommendation_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_recommendation_ids()
+    }
     /// <p>The format for the recommendation template.</p>
     /// <dl>
     /// <dt>
@@ -176,6 +186,24 @@ impl CreateRecommendationTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_format(input);
         self
+    }
+    /// <p>The format for the recommendation template.</p>
+    /// <dl>
+    /// <dt>
+    /// CfnJson
+    /// </dt>
+    /// <dd>
+    /// <p>The template is CloudFormation JSON.</p>
+    /// </dd>
+    /// <dt>
+    /// CfnYaml
+    /// </dt>
+    /// <dd>
+    /// <p>The template is CloudFormation YAML.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::TemplateFormat> {
+        self.inner.get_format()
     }
     /// Appends an item to `recommendationTypes`.
     ///
@@ -234,6 +262,32 @@ impl CreateRecommendationTemplateFluentBuilder {
         self.inner = self.inner.set_recommendation_types(input);
         self
     }
+    /// <p>An array of strings that specify the recommendation template type or types.</p>
+    /// <dl>
+    /// <dt>
+    /// Alarm
+    /// </dt>
+    /// <dd>
+    /// <p>The template is an <code>AlarmRecommendation</code> template.</p>
+    /// </dd>
+    /// <dt>
+    /// Sop
+    /// </dt>
+    /// <dd>
+    /// <p>The template is a <code>SopRecommendation</code> template.</p>
+    /// </dd>
+    /// <dt>
+    /// Test
+    /// </dt>
+    /// <dd>
+    /// <p>The template is a <code>TestRecommendation</code> template.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_recommendation_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RenderRecommendationType>> {
+        self.inner.get_recommendation_types()
+    }
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn assessment_arn(
         mut self,
@@ -250,6 +304,10 @@ impl CreateRecommendationTemplateFluentBuilder {
         self.inner = self.inner.set_assessment_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    pub fn get_assessment_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assessment_arn()
+    }
     /// <p>The name for the recommendation template.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -260,6 +318,10 @@ impl CreateRecommendationTemplateFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name for the recommendation template.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -269,6 +331,10 @@ impl CreateRecommendationTemplateFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -293,6 +359,14 @@ impl CreateRecommendationTemplateFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>The name of the Amazon S3 bucket that will contain the recommendation template.</p>
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bucket_name(input.into());
@@ -302,5 +376,9 @@ impl CreateRecommendationTemplateFluentBuilder {
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bucket_name(input);
         self
+    }
+    /// <p>The name of the Amazon S3 bucket that will contain the recommendation template.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bucket_name()
     }
 }

@@ -45,6 +45,10 @@ impl StopPipelineInputBuilder {
         self.pipeline_name = input;
         self
     }
+    /// <p>The name of the pipeline to stop.</p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_name
+    }
     /// Consumes the builder and constructs a [`StopPipelineInput`](crate::operation::stop_pipeline::StopPipelineInput).
     pub fn build(
         self,

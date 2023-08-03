@@ -36,6 +36,10 @@ impl StartOrganizationServiceAccessUpdateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartOrganizationServiceAccessUpdate as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_organization_service_access_update::builders::StartOrganizationServiceAccessUpdateInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -99,5 +103,9 @@ impl StartOrganizationServiceAccessUpdateFluentBuilder {
     pub fn set_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_action(input);
         self
+    }
+    /// <p>The action to take for the update request. This can be either <code>ENABLE</code> or <code>DISABLE</code>.</p>
+    pub fn get_action(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_action()
     }
 }

@@ -108,6 +108,10 @@ impl AutomationRulesMetadataBuilder {
         self.rule_arn = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) for the rule. </p>
+    pub fn get_rule_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_arn
+    }
     /// <p> Whether the rule is active after it is created. If this parameter is equal to <code>ENABLED</code>, Security Hub starts applying the rule to findings and finding updates after the rule is created. To change the value of this parameter after creating a rule, use <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateAutomationRules.html"> <code>BatchUpdateAutomationRules</code> </a>. </p>
     pub fn rule_status(mut self, input: crate::types::RuleStatus) -> Self {
         self.rule_status = ::std::option::Option::Some(input);
@@ -121,6 +125,10 @@ impl AutomationRulesMetadataBuilder {
         self.rule_status = input;
         self
     }
+    /// <p> Whether the rule is active after it is created. If this parameter is equal to <code>ENABLED</code>, Security Hub starts applying the rule to findings and finding updates after the rule is created. To change the value of this parameter after creating a rule, use <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateAutomationRules.html"> <code>BatchUpdateAutomationRules</code> </a>. </p>
+    pub fn get_rule_status(&self) -> &::std::option::Option<crate::types::RuleStatus> {
+        &self.rule_status
+    }
     /// <p>An integer ranging from 1 to 1000 that represents the order in which the rule action is applied to findings. Security Hub applies rules with lower values for this parameter first. </p>
     pub fn rule_order(mut self, input: i32) -> Self {
         self.rule_order = ::std::option::Option::Some(input);
@@ -130,6 +138,10 @@ impl AutomationRulesMetadataBuilder {
     pub fn set_rule_order(mut self, input: ::std::option::Option<i32>) -> Self {
         self.rule_order = input;
         self
+    }
+    /// <p>An integer ranging from 1 to 1000 that represents the order in which the rule action is applied to findings. Security Hub applies rules with lower values for this parameter first. </p>
+    pub fn get_rule_order(&self) -> &::std::option::Option<i32> {
+        &self.rule_order
     }
     /// <p> The name of the rule. </p>
     pub fn rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -141,6 +153,10 @@ impl AutomationRulesMetadataBuilder {
         self.rule_name = input;
         self
     }
+    /// <p> The name of the rule. </p>
+    pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_name
+    }
     /// <p> A description of the rule. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -151,6 +167,10 @@ impl AutomationRulesMetadataBuilder {
         self.description = input;
         self
     }
+    /// <p> A description of the rule. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>Specifies whether a rule is the last to be applied with respect to a finding that matches the rule criteria. This is useful when a finding matches the criteria for multiple rules, and each rule has different actions. If a rule is terminal, Security Hub applies the rule action to a finding that matches the rule criteria and doesn't evaluate other rules for the finding. By default, a rule isn't terminal. </p>
     pub fn is_terminal(mut self, input: bool) -> Self {
         self.is_terminal = ::std::option::Option::Some(input);
@@ -160,6 +180,10 @@ impl AutomationRulesMetadataBuilder {
     pub fn set_is_terminal(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_terminal = input;
         self
+    }
+    /// <p>Specifies whether a rule is the last to be applied with respect to a finding that matches the rule criteria. This is useful when a finding matches the criteria for multiple rules, and each rule has different actions. If a rule is terminal, Security Hub applies the rule action to a finding that matches the rule criteria and doesn't evaluate other rules for the finding. By default, a rule isn't terminal. </p>
+    pub fn get_is_terminal(&self) -> &::std::option::Option<bool> {
+        &self.is_terminal
     }
     /// <p> A timestamp that indicates when the rule was created. </p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -176,6 +200,11 @@ impl AutomationRulesMetadataBuilder {
         self.created_at = input;
         self
     }
+    /// <p> A timestamp that indicates when the rule was created. </p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p> A timestamp that indicates when the rule was most recently updated. </p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -191,6 +220,11 @@ impl AutomationRulesMetadataBuilder {
         self.updated_at = input;
         self
     }
+    /// <p> A timestamp that indicates when the rule was most recently updated. </p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
+    }
     /// <p> The principal that created a rule. </p>
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
@@ -200,6 +234,10 @@ impl AutomationRulesMetadataBuilder {
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by = input;
         self
+    }
+    /// <p> The principal that created a rule. </p>
+    pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by
     }
     /// Consumes the builder and constructs a [`AutomationRulesMetadata`](crate::types::AutomationRulesMetadata).
     pub fn build(self) -> crate::types::AutomationRulesMetadata {

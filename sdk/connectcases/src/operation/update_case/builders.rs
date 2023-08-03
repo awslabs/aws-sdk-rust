@@ -37,6 +37,10 @@ impl UpdateCaseFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateCase as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_case::builders::UpdateCaseInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl UpdateCaseFluentBuilder {
         self.inner = self.inner.set_domain_id(input);
         self
     }
+    /// <p>The unique identifier of the Cases domain. </p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_id()
+    }
     /// <p>A unique identifier of the case.</p>
     pub fn case_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.case_id(input.into());
@@ -128,6 +136,10 @@ impl UpdateCaseFluentBuilder {
     pub fn set_case_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_case_id(input);
         self
+    }
+    /// <p>A unique identifier of the case.</p>
+    pub fn get_case_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_case_id()
     }
     /// Appends an item to `fields`.
     ///
@@ -145,5 +157,9 @@ impl UpdateCaseFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_fields(input);
         self
+    }
+    /// <p>An array of objects with <code>fieldId</code> (matching ListFields/DescribeField) and value union data, structured identical to <code>CreateCase</code>.</p>
+    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldValue>> {
+        self.inner.get_fields()
     }
 }

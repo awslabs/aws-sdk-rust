@@ -47,6 +47,10 @@ impl CreateIpSetInputBuilder {
         self.name = input;
         self
     }
+    /// <p>A friendly name or description of the <code>IPSet</code>. You can't change <code>Name</code> after you create the <code>IPSet</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_token = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl CreateIpSetInputBuilder {
     pub fn set_change_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_token = input;
         self
+    }
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    pub fn get_change_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_token
     }
     /// Consumes the builder and constructs a [`CreateIpSetInput`](crate::operation::create_ip_set::CreateIpSetInput).
     pub fn build(

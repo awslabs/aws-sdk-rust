@@ -36,6 +36,12 @@ impl DescribeVpcConnectorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeVpcConnector as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_vpc_connector::builders::DescribeVpcConnectorInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,5 +139,10 @@ impl DescribeVpcConnectorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_vpc_connector_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want a description for.</p>
+    /// <p>The ARN must be a full VPC connector ARN.</p>
+    pub fn get_vpc_connector_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpc_connector_arn()
     }
 }

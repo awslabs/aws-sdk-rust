@@ -56,6 +56,10 @@ impl UpdateSiteAddressInputBuilder {
         self.site_id = input;
         self
     }
+    /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
+    pub fn get_site_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.site_id
+    }
     /// <p> The type of the address. </p>
     pub fn address_type(mut self, input: crate::types::AddressType) -> Self {
         self.address_type = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl UpdateSiteAddressInputBuilder {
         self.address_type = input;
         self
     }
+    /// <p> The type of the address. </p>
+    pub fn get_address_type(&self) -> &::std::option::Option<crate::types::AddressType> {
+        &self.address_type
+    }
     /// <p> The address for the site. </p>
     pub fn address(mut self, input: crate::types::Address) -> Self {
         self.address = ::std::option::Option::Some(input);
@@ -78,6 +86,10 @@ impl UpdateSiteAddressInputBuilder {
     pub fn set_address(mut self, input: ::std::option::Option<crate::types::Address>) -> Self {
         self.address = input;
         self
+    }
+    /// <p> The address for the site. </p>
+    pub fn get_address(&self) -> &::std::option::Option<crate::types::Address> {
+        &self.address
     }
     /// Consumes the builder and constructs a [`UpdateSiteAddressInput`](crate::operation::update_site_address::UpdateSiteAddressInput).
     pub fn build(

@@ -51,6 +51,10 @@ impl EventConditionBuilder {
         self.dimensions = input;
         self
     }
+    /// <p>The dimensions for the event filter to use for the activity.</p>
+    pub fn get_dimensions(&self) -> &::std::option::Option<crate::types::EventDimensions> {
+        &self.dimensions
+    }
     /// <p>The message identifier (message_id) for the message to use when determining whether message events meet the condition.</p>
     pub fn message_activity(
         mut self,
@@ -66,6 +70,10 @@ impl EventConditionBuilder {
     ) -> Self {
         self.message_activity = input;
         self
+    }
+    /// <p>The message identifier (message_id) for the message to use when determining whether message events meet the condition.</p>
+    pub fn get_message_activity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_activity
     }
     /// Consumes the builder and constructs a [`EventCondition`](crate::types::EventCondition).
     pub fn build(self) -> crate::types::EventCondition {

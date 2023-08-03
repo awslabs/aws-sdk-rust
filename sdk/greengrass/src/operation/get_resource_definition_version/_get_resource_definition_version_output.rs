@@ -78,6 +78,10 @@ impl GetResourceDefinitionVersionOutputBuilder {
         self.arn = input;
         self
     }
+    /// Arn of the resource definition version.
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// The time, in milliseconds since the epoch, when the resource definition version was created.
     pub fn creation_timestamp(
         mut self,
@@ -94,6 +98,10 @@ impl GetResourceDefinitionVersionOutputBuilder {
         self.creation_timestamp = input;
         self
     }
+    /// The time, in milliseconds since the epoch, when the resource definition version was created.
+    pub fn get_creation_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_timestamp
+    }
     /// Information about the definition.
     pub fn definition(mut self, input: crate::types::ResourceDefinitionVersion) -> Self {
         self.definition = ::std::option::Option::Some(input);
@@ -107,6 +115,12 @@ impl GetResourceDefinitionVersionOutputBuilder {
         self.definition = input;
         self
     }
+    /// Information about the definition.
+    pub fn get_definition(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceDefinitionVersion> {
+        &self.definition
+    }
     /// The ID of the resource definition version.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -117,6 +131,10 @@ impl GetResourceDefinitionVersionOutputBuilder {
         self.id = input;
         self
     }
+    /// The ID of the resource definition version.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// The version of the resource definition version.
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -126,6 +144,10 @@ impl GetResourceDefinitionVersionOutputBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// The version of the resource definition version.
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -38,6 +38,12 @@ impl DescribeBudgetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeBudget as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_budget::builders::DescribeBudgetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -120,6 +126,10 @@ impl DescribeBudgetFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The <code>accountId</code> that is associated with the budget that you want a description of.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p>The name of the budget that you want a description of.</p>
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.budget_name(input.into());
@@ -129,5 +139,9 @@ impl DescribeBudgetFluentBuilder {
     pub fn set_budget_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_budget_name(input);
         self
+    }
+    /// <p>The name of the budget that you want a description of.</p>
+    pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_budget_name()
     }
 }

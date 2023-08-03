@@ -55,6 +55,10 @@ impl DeleteSecurityProfileInputBuilder {
         self.security_profile_name = input;
         self
     }
+    /// <p>The name of the security profile to be deleted.</p>
+    pub fn get_security_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_profile_name
+    }
     /// <p>The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.</p>
     pub fn expected_version(mut self, input: i64) -> Self {
         self.expected_version = ::std::option::Option::Some(input);
@@ -64,6 +68,10 @@ impl DeleteSecurityProfileInputBuilder {
     pub fn set_expected_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.expected_version = input;
         self
+    }
+    /// <p>The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.</p>
+    pub fn get_expected_version(&self) -> &::std::option::Option<i64> {
+        &self.expected_version
     }
     /// Consumes the builder and constructs a [`DeleteSecurityProfileInput`](crate::operation::delete_security_profile::DeleteSecurityProfileInput).
     pub fn build(

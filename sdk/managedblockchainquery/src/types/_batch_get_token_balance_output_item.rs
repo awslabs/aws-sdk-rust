@@ -79,6 +79,10 @@ impl BatchGetTokenBalanceOutputItemBuilder {
         self.owner_identifier = input;
         self
     }
+    /// <p>The container for the identifier of the owner.</p>
+    pub fn get_owner_identifier(&self) -> &::std::option::Option<crate::types::OwnerIdentifier> {
+        &self.owner_identifier
+    }
     /// <p>The container for the identifier for the token including the unique token ID and its blockchain network.</p> <note>
     /// <p>Only the native tokens BTC,ETH, and the ERC-20, ERC-721, and ERC 1155 token standards are supported.</p>
     /// </note>
@@ -96,6 +100,12 @@ impl BatchGetTokenBalanceOutputItemBuilder {
         self.token_identifier = input;
         self
     }
+    /// <p>The container for the identifier for the token including the unique token ID and its blockchain network.</p> <note>
+    /// <p>Only the native tokens BTC,ETH, and the ERC-20, ERC-721, and ERC 1155 token standards are supported.</p>
+    /// </note>
+    pub fn get_token_identifier(&self) -> &::std::option::Option<crate::types::TokenIdentifier> {
+        &self.token_identifier
+    }
     /// <p>The container for the token balance.</p>
     pub fn balance(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.balance = ::std::option::Option::Some(input.into());
@@ -105,6 +115,10 @@ impl BatchGetTokenBalanceOutputItemBuilder {
     pub fn set_balance(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.balance = input;
         self
+    }
+    /// <p>The container for the token balance.</p>
+    pub fn get_balance(&self) -> &::std::option::Option<::std::string::String> {
+        &self.balance
     }
     /// <p>The container for time.</p>
     pub fn at_blockchain_instant(mut self, input: crate::types::BlockchainInstant) -> Self {
@@ -120,6 +134,12 @@ impl BatchGetTokenBalanceOutputItemBuilder {
         self
     }
     /// <p>The container for time.</p>
+    pub fn get_at_blockchain_instant(
+        &self,
+    ) -> &::std::option::Option<crate::types::BlockchainInstant> {
+        &self.at_blockchain_instant
+    }
+    /// <p>The container for time.</p>
     pub fn last_updated_time(mut self, input: crate::types::BlockchainInstant) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
         self
@@ -131,6 +151,10 @@ impl BatchGetTokenBalanceOutputItemBuilder {
     ) -> Self {
         self.last_updated_time = input;
         self
+    }
+    /// <p>The container for time.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<crate::types::BlockchainInstant> {
+        &self.last_updated_time
     }
     /// Consumes the builder and constructs a [`BatchGetTokenBalanceOutputItem`](crate::types::BatchGetTokenBalanceOutputItem).
     pub fn build(self) -> crate::types::BatchGetTokenBalanceOutputItem {

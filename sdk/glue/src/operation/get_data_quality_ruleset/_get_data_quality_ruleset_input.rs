@@ -41,6 +41,10 @@ impl GetDataQualityRulesetInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the ruleset.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`GetDataQualityRulesetInput`](crate::operation::get_data_quality_ruleset::GetDataQualityRulesetInput).
     pub fn build(
         self,

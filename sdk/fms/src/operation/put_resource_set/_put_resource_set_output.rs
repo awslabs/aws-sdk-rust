@@ -57,6 +57,10 @@ impl PutResourceSetOutputBuilder {
         self.resource_set = input;
         self
     }
+    /// <p>Details about the resource set.</p>
+    pub fn get_resource_set(&self) -> &::std::option::Option<crate::types::ResourceSet> {
+        &self.resource_set
+    }
     /// <p>The Amazon Resource Name (ARN) of the resource set.</p>
     pub fn resource_set_arn(
         mut self,
@@ -72,6 +76,10 @@ impl PutResourceSetOutputBuilder {
     ) -> Self {
         self.resource_set_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource set.</p>
+    pub fn get_resource_set_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_set_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

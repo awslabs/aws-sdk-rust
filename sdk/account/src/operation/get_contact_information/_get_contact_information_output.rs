@@ -51,6 +51,12 @@ impl GetContactInformationOutputBuilder {
         self.contact_information = input;
         self
     }
+    /// <p>Contains the details of the primary contact information associated with an Amazon Web Services account.</p>
+    pub fn get_contact_information(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContactInformation> {
+        &self.contact_information
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

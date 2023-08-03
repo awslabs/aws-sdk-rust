@@ -47,6 +47,10 @@ impl DescribeAppInstanceUserInputBuilder {
         self.app_instance_user_arn = input;
         self
     }
+    /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    pub fn get_app_instance_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_instance_user_arn
+    }
     /// Consumes the builder and constructs a [`DescribeAppInstanceUserInput`](crate::operation::describe_app_instance_user::DescribeAppInstanceUserInput).
     pub fn build(
         self,

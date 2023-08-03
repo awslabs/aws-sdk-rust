@@ -50,6 +50,10 @@ impl GetRepositoryInputBuilder {
         self.provider = input;
         self
     }
+    /// <p>The repository provider.</p>
+    pub fn get_provider(&self) -> &::std::option::Option<crate::types::RepositoryProvider> {
+        &self.provider
+    }
     /// <p>The repository name, for example <code>myrepos/myrepo</code>.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -59,6 +63,10 @@ impl GetRepositoryInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The repository name, for example <code>myrepos/myrepo</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`GetRepositoryInput`](crate::operation::get_repository::GetRepositoryInput).
     pub fn build(

@@ -51,6 +51,10 @@ impl SlotResolutionTestResultItemBuilder {
         self.slot_name = input;
         self
     }
+    /// <p>The name of the slot.</p>
+    pub fn get_slot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.slot_name
+    }
     /// <p>A result for slot resolution in the results of a test execution.</p>
     pub fn result_counts(
         mut self,
@@ -66,6 +70,12 @@ impl SlotResolutionTestResultItemBuilder {
     ) -> Self {
         self.result_counts = input;
         self
+    }
+    /// <p>A result for slot resolution in the results of a test execution.</p>
+    pub fn get_result_counts(
+        &self,
+    ) -> &::std::option::Option<crate::types::SlotResolutionTestResultItemCounts> {
+        &self.result_counts
     }
     /// Consumes the builder and constructs a [`SlotResolutionTestResultItem`](crate::types::SlotResolutionTestResultItem).
     pub fn build(self) -> crate::types::SlotResolutionTestResultItem {

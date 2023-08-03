@@ -37,6 +37,10 @@ impl GetBucketsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetBuckets as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_buckets::builders::GetBucketsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +125,11 @@ impl GetBucketsFluentBuilder {
         self.inner = self.inner.set_bucket_name(input);
         self
     }
+    /// <p>The name of the bucket for which to return information.</p>
+    /// <p>When omitted, the response includes all of your buckets in the Amazon Web Services Region where the request is made.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bucket_name()
+    }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetBuckets</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     pub fn page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -133,6 +142,11 @@ impl GetBucketsFluentBuilder {
         self.inner = self.inner.set_page_token(input);
         self
     }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetBuckets</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_page_token()
+    }
     /// <p>A Boolean value that indicates whether to include Lightsail instances that were given access to the bucket using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p>
     pub fn include_connected_resources(mut self, input: bool) -> Self {
         self.inner = self.inner.include_connected_resources(input);
@@ -142,5 +156,9 @@ impl GetBucketsFluentBuilder {
     pub fn set_include_connected_resources(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_connected_resources(input);
         self
+    }
+    /// <p>A Boolean value that indicates whether to include Lightsail instances that were given access to the bucket using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p>
+    pub fn get_include_connected_resources(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_connected_resources()
     }
 }

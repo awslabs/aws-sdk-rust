@@ -107,6 +107,13 @@ impl CreateKeyPairOutputBuilder {
         self.key_fingerprint = input;
         self
     }
+    /// <ul>
+    /// <li> <p>For RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded private key.</p> </li>
+    /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with OpenSSH 6.8.</p> </li>
+    /// </ul>
+    pub fn get_key_fingerprint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_fingerprint
+    }
     /// <p>An unencrypted PEM encoded RSA or ED25519 private key.</p>
     pub fn key_material(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_material = ::std::option::Option::Some(input.into());
@@ -116,6 +123,10 @@ impl CreateKeyPairOutputBuilder {
     pub fn set_key_material(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_material = input;
         self
+    }
+    /// <p>An unencrypted PEM encoded RSA or ED25519 private key.</p>
+    pub fn get_key_material(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_material
     }
     /// <p>The name of the key pair.</p>
     pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -127,6 +138,10 @@ impl CreateKeyPairOutputBuilder {
         self.key_name = input;
         self
     }
+    /// <p>The name of the key pair.</p>
+    pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_name
+    }
     /// <p>The ID of the key pair.</p>
     pub fn key_pair_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_pair_id = ::std::option::Option::Some(input.into());
@@ -136,6 +151,10 @@ impl CreateKeyPairOutputBuilder {
     pub fn set_key_pair_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_pair_id = input;
         self
+    }
+    /// <p>The ID of the key pair.</p>
+    pub fn get_key_pair_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_pair_id
     }
     /// Appends an item to `tags`.
     ///
@@ -155,6 +174,10 @@ impl CreateKeyPairOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Any tags applied to the key pair.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

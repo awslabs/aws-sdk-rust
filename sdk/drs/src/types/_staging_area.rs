@@ -67,6 +67,10 @@ impl StagingAreaBuilder {
         self.status = input;
         self
     }
+    /// <p>Status of Source server extension. Possible values: (a) NOT_EXTENDED - This is a source server that is replicating in the current account. (b) EXTENDED - Source server is extended from a staging source server. In this case, the value of stagingSourceServerArn is pointing to the Arn of the source server in the staging account. (c) EXTENSION_ERROR - Some issue occurred when accessing staging source server. In this case, errorMessage field will contain an error message that explains what happened.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ExtensionStatus> {
+        &self.status
+    }
     /// <p>Account ID of the account to which source server belongs. If this source server is extended - shows Account ID of staging source server.</p>
     pub fn staging_account_id(
         mut self,
@@ -82,6 +86,10 @@ impl StagingAreaBuilder {
     ) -> Self {
         self.staging_account_id = input;
         self
+    }
+    /// <p>Account ID of the account to which source server belongs. If this source server is extended - shows Account ID of staging source server.</p>
+    pub fn get_staging_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.staging_account_id
     }
     /// <p>Arn of the staging source server if this source server is extended</p>
     pub fn staging_source_server_arn(
@@ -99,6 +107,10 @@ impl StagingAreaBuilder {
         self.staging_source_server_arn = input;
         self
     }
+    /// <p>Arn of the staging source server if this source server is extended</p>
+    pub fn get_staging_source_server_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.staging_source_server_arn
+    }
     /// <p>Shows an error message that occurred when DRS tried to access the staging source server. In this case StagingArea$status will have value EXTENSION_ERROR</p>
     pub fn error_message(
         mut self,
@@ -114,6 +126,10 @@ impl StagingAreaBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>Shows an error message that occurred when DRS tried to access the staging source server. In this case StagingArea$status will have value EXTENSION_ERROR</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`StagingArea`](crate::types::StagingArea).
     pub fn build(self) -> crate::types::StagingArea {

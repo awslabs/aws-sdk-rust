@@ -48,6 +48,10 @@ impl ListChangeSetsInputBuilder {
         self.stack_name = input;
         self
     }
+    /// <p>The name or the Amazon Resource Name (ARN) of the stack for which you want to list change sets.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_name
+    }
     /// <p>A string (provided by the <code>ListChangeSets</code> response output) that identifies the next page of change sets that you want to retrieve.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ListChangeSetsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A string (provided by the <code>ListChangeSets</code> response output) that identifies the next page of change sets that you want to retrieve.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListChangeSetsInput`](crate::operation::list_change_sets::ListChangeSetsInput).
     pub fn build(

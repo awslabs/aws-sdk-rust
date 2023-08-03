@@ -278,6 +278,10 @@ impl TranscriptionJobBuilder {
         self.transcription_job_name = input;
         self
     }
+    /// <p>The name of the transcription job. Job names are case sensitive and must be unique within an Amazon Web Services account.</p>
+    pub fn get_transcription_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transcription_job_name
+    }
     /// <p>Provides the status of the specified transcription job.</p>
     /// <p>If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in <code>TranscriptFileUri</code> (or <code>RedactedTranscriptFileUri</code>, if you requested transcript redaction). If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription job failed.</p>
     pub fn transcription_job_status(mut self, input: crate::types::TranscriptionJobStatus) -> Self {
@@ -293,6 +297,13 @@ impl TranscriptionJobBuilder {
         self.transcription_job_status = input;
         self
     }
+    /// <p>Provides the status of the specified transcription job.</p>
+    /// <p>If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in <code>TranscriptFileUri</code> (or <code>RedactedTranscriptFileUri</code>, if you requested transcript redaction). If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription job failed.</p>
+    pub fn get_transcription_job_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::TranscriptionJobStatus> {
+        &self.transcription_job_status
+    }
     /// <p>The language code used to create your transcription job. This parameter is used with single-language identification. For multi-language identification requests, refer to the plural version of this parameter, <code>LanguageCodes</code>.</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
@@ -306,6 +317,10 @@ impl TranscriptionJobBuilder {
         self.language_code = input;
         self
     }
+    /// <p>The language code used to create your transcription job. This parameter is used with single-language identification. For multi-language identification requests, refer to the plural version of this parameter, <code>LanguageCodes</code>.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
+        &self.language_code
+    }
     /// <p>The sample rate, in hertz, of the audio track in your input media file.</p>
     pub fn media_sample_rate_hertz(mut self, input: i32) -> Self {
         self.media_sample_rate_hertz = ::std::option::Option::Some(input);
@@ -315,6 +330,10 @@ impl TranscriptionJobBuilder {
     pub fn set_media_sample_rate_hertz(mut self, input: ::std::option::Option<i32>) -> Self {
         self.media_sample_rate_hertz = input;
         self
+    }
+    /// <p>The sample rate, in hertz, of the audio track in your input media file.</p>
+    pub fn get_media_sample_rate_hertz(&self) -> &::std::option::Option<i32> {
+        &self.media_sample_rate_hertz
     }
     /// <p>The format of the input media file.</p>
     pub fn media_format(mut self, input: crate::types::MediaFormat) -> Self {
@@ -329,6 +348,10 @@ impl TranscriptionJobBuilder {
         self.media_format = input;
         self
     }
+    /// <p>The format of the input media file.</p>
+    pub fn get_media_format(&self) -> &::std::option::Option<crate::types::MediaFormat> {
+        &self.media_format
+    }
     /// <p>Provides the Amazon S3 location of the media file you used in your request.</p>
     pub fn media(mut self, input: crate::types::Media) -> Self {
         self.media = ::std::option::Option::Some(input);
@@ -338,6 +361,10 @@ impl TranscriptionJobBuilder {
     pub fn set_media(mut self, input: ::std::option::Option<crate::types::Media>) -> Self {
         self.media = input;
         self
+    }
+    /// <p>Provides the Amazon S3 location of the media file you used in your request.</p>
+    pub fn get_media(&self) -> &::std::option::Option<crate::types::Media> {
+        &self.media
     }
     /// <p>Provides you with the Amazon S3 URI you can use to access your transcript.</p>
     pub fn transcript(mut self, input: crate::types::Transcript) -> Self {
@@ -351,6 +378,10 @@ impl TranscriptionJobBuilder {
     ) -> Self {
         self.transcript = input;
         self
+    }
+    /// <p>Provides you with the Amazon S3 URI you can use to access your transcript.</p>
+    pub fn get_transcript(&self) -> &::std::option::Option<crate::types::Transcript> {
+        &self.transcript
     }
     /// <p>The date and time the specified transcription job began processing.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.789000-07:00</code> represents a transcription job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
@@ -367,6 +398,11 @@ impl TranscriptionJobBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The date and time the specified transcription job began processing.</p>
+    /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.789000-07:00</code> represents a transcription job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The date and time the specified transcription job request was made.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents a transcription job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -382,6 +418,11 @@ impl TranscriptionJobBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The date and time the specified transcription job request was made.</p>
+    /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents a transcription job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The date and time the specified transcription job finished processing.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:33:13.922000-07:00</code> represents a transcription job that started processing at 12:33 PM UTC-7 on May 4, 2022.</p>
     pub fn completion_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -396,6 +437,11 @@ impl TranscriptionJobBuilder {
     ) -> Self {
         self.completion_time = input;
         self
+    }
+    /// <p>The date and time the specified transcription job finished processing.</p>
+    /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:33:13.922000-07:00</code> represents a transcription job that started processing at 12:33 PM UTC-7 on May 4, 2022.</p>
+    pub fn get_completion_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.completion_time
     }
     /// <p>If <code>TranscriptionJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the transcription job request failed.</p>
     /// <p>The <code>FailureReason</code> field contains one of the following values:</p>
@@ -431,6 +477,19 @@ impl TranscriptionJobBuilder {
         self.failure_reason = input;
         self
     }
+    /// <p>If <code>TranscriptionJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the transcription job request failed.</p>
+    /// <p>The <code>FailureReason</code> field contains one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>Unsupported media format</code>.</p> <p>The media format specified in <code>MediaFormat</code> isn't valid. Refer to <b>MediaFormat</b> for a list of supported formats.</p> </li>
+    /// <li> <p> <code>The media format provided does not match the detected media format</code>.</p> <p>The media format specified in <code>MediaFormat</code> doesn't match the format of the input file. Check the media format of your media file and correct the specified value.</p> </li>
+    /// <li> <p> <code>Invalid sample rate for audio file</code>.</p> <p>The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between 8,000 and 48,000 hertz.</p> </li>
+    /// <li> <p> <code>The sample rate provided does not match the detected sample rate</code>.</p> <p>The sample rate specified in <code>MediaSampleRateHertz</code> doesn't match the sample rate detected in your input media file. Check the sample rate of your media file and correct the specified value.</p> </li>
+    /// <li> <p> <code>Invalid file size: file size too large</code>.</p> <p>The size of your media file is larger than what Amazon Transcribe can process. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.</p> </li>
+    /// <li> <p> <code>Invalid number of channels: number of channels too large</code>.</p> <p>Your audio contains more channels than Amazon Transcribe is able to process. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.</p> </li>
+    /// </ul>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
     /// <p>Provides information on any additional settings that were included in your request. Additional settings include channel identification, alternative transcriptions, speaker partitioning, custom vocabularies, and custom vocabulary filters.</p>
     pub fn settings(mut self, input: crate::types::Settings) -> Self {
         self.settings = ::std::option::Option::Some(input);
@@ -440,6 +499,10 @@ impl TranscriptionJobBuilder {
     pub fn set_settings(mut self, input: ::std::option::Option<crate::types::Settings>) -> Self {
         self.settings = input;
         self
+    }
+    /// <p>Provides information on any additional settings that were included in your request. Additional settings include channel identification, alternative transcriptions, speaker partitioning, custom vocabularies, and custom vocabulary filters.</p>
+    pub fn get_settings(&self) -> &::std::option::Option<crate::types::Settings> {
+        &self.settings
     }
     /// <p>Provides information on the custom language model you included in your request.</p>
     pub fn model_settings(mut self, input: crate::types::ModelSettings) -> Self {
@@ -454,6 +517,10 @@ impl TranscriptionJobBuilder {
         self.model_settings = input;
         self
     }
+    /// <p>Provides information on the custom language model you included in your request.</p>
+    pub fn get_model_settings(&self) -> &::std::option::Option<crate::types::ModelSettings> {
+        &self.model_settings
+    }
     /// <p>Provides information about how your transcription job was processed. This parameter shows if your request was queued and what data access role was used.</p>
     pub fn job_execution_settings(mut self, input: crate::types::JobExecutionSettings) -> Self {
         self.job_execution_settings = ::std::option::Option::Some(input);
@@ -466,6 +533,12 @@ impl TranscriptionJobBuilder {
     ) -> Self {
         self.job_execution_settings = input;
         self
+    }
+    /// <p>Provides information about how your transcription job was processed. This parameter shows if your request was queued and what data access role was used.</p>
+    pub fn get_job_execution_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::JobExecutionSettings> {
+        &self.job_execution_settings
     }
     /// <p>Indicates whether redaction was enabled in your transcript.</p>
     pub fn content_redaction(mut self, input: crate::types::ContentRedaction) -> Self {
@@ -480,6 +553,10 @@ impl TranscriptionJobBuilder {
         self.content_redaction = input;
         self
     }
+    /// <p>Indicates whether redaction was enabled in your transcript.</p>
+    pub fn get_content_redaction(&self) -> &::std::option::Option<crate::types::ContentRedaction> {
+        &self.content_redaction
+    }
     /// <p>Indicates whether automatic language identification was enabled (<code>TRUE</code>) for the specified transcription job.</p>
     pub fn identify_language(mut self, input: bool) -> Self {
         self.identify_language = ::std::option::Option::Some(input);
@@ -490,6 +567,10 @@ impl TranscriptionJobBuilder {
         self.identify_language = input;
         self
     }
+    /// <p>Indicates whether automatic language identification was enabled (<code>TRUE</code>) for the specified transcription job.</p>
+    pub fn get_identify_language(&self) -> &::std::option::Option<bool> {
+        &self.identify_language
+    }
     /// <p>Indicates whether automatic multi-language identification was enabled (<code>TRUE</code>) for the specified transcription job.</p>
     pub fn identify_multiple_languages(mut self, input: bool) -> Self {
         self.identify_multiple_languages = ::std::option::Option::Some(input);
@@ -499,6 +580,10 @@ impl TranscriptionJobBuilder {
     pub fn set_identify_multiple_languages(mut self, input: ::std::option::Option<bool>) -> Self {
         self.identify_multiple_languages = input;
         self
+    }
+    /// <p>Indicates whether automatic multi-language identification was enabled (<code>TRUE</code>) for the specified transcription job.</p>
+    pub fn get_identify_multiple_languages(&self) -> &::std::option::Option<bool> {
+        &self.identify_multiple_languages
     }
     /// Appends an item to `language_options`.
     ///
@@ -519,6 +604,12 @@ impl TranscriptionJobBuilder {
         self.language_options = input;
         self
     }
+    /// <p>Provides the language codes you specified in your request.</p>
+    pub fn get_language_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LanguageCode>> {
+        &self.language_options
+    }
     /// <p>The confidence score associated with the language identified in your media file.</p>
     /// <p>Confidence scores are values between 0 and 1; a larger value indicates a higher probability that the identified language correctly matches the language spoken in your media.</p>
     pub fn identified_language_score(mut self, input: f32) -> Self {
@@ -530,6 +621,11 @@ impl TranscriptionJobBuilder {
     pub fn set_identified_language_score(mut self, input: ::std::option::Option<f32>) -> Self {
         self.identified_language_score = input;
         self
+    }
+    /// <p>The confidence score associated with the language identified in your media file.</p>
+    /// <p>Confidence scores are values between 0 and 1; a larger value indicates a higher probability that the identified language correctly matches the language spoken in your media.</p>
+    pub fn get_identified_language_score(&self) -> &::std::option::Option<f32> {
+        &self.identified_language_score
     }
     /// Appends an item to `language_codes`.
     ///
@@ -550,6 +646,12 @@ impl TranscriptionJobBuilder {
         self.language_codes = input;
         self
     }
+    /// <p>The language codes used to create your transcription job. This parameter is used with multi-language identification. For single-language identification requests, refer to the singular version of this parameter, <code>LanguageCode</code>.</p>
+    pub fn get_language_codes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LanguageCodeItem>> {
+        &self.language_codes
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -569,6 +671,10 @@ impl TranscriptionJobBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags, each in the form of a key:value pair, assigned to the specified transcription job.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>Indicates whether subtitles were generated with your transcription.</p>
     pub fn subtitles(mut self, input: crate::types::SubtitlesOutput) -> Self {
         self.subtitles = ::std::option::Option::Some(input);
@@ -581,6 +687,10 @@ impl TranscriptionJobBuilder {
     ) -> Self {
         self.subtitles = input;
         self
+    }
+    /// <p>Indicates whether subtitles were generated with your transcription.</p>
+    pub fn get_subtitles(&self) -> &::std::option::Option<crate::types::SubtitlesOutput> {
+        &self.subtitles
     }
     /// Adds a key-value pair to `language_id_settings`.
     ///
@@ -610,6 +720,14 @@ impl TranscriptionJobBuilder {
         self.language_id_settings = input;
         self
     }
+    /// <p>Provides the name and language of all custom language models, custom vocabularies, and custom vocabulary filters that you included in your request.</p>
+    pub fn get_language_id_settings(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<crate::types::LanguageCode, crate::types::LanguageIdSettings>,
+    > {
+        &self.language_id_settings
+    }
     /// Appends an item to `toxicity_detection`.
     ///
     /// To override the contents of this collection use [`set_toxicity_detection`](Self::set_toxicity_detection).
@@ -628,6 +746,12 @@ impl TranscriptionJobBuilder {
     ) -> Self {
         self.toxicity_detection = input;
         self
+    }
+    /// <p>Provides information about the toxicity detection settings applied to your transcription.</p>
+    pub fn get_toxicity_detection(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ToxicityDetectionSettings>> {
+        &self.toxicity_detection
     }
     /// Consumes the builder and constructs a [`TranscriptionJob`](crate::types::TranscriptionJob).
     pub fn build(self) -> crate::types::TranscriptionJob {

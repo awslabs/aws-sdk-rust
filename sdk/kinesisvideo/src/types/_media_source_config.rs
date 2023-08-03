@@ -64,6 +64,10 @@ impl MediaSourceConfigBuilder {
         self.media_uri_secret_arn = input;
         self
     }
+    /// <p>The Amazon Web Services Secrets Manager ARN for the username and password of the camera, or a local media file location.</p>
+    pub fn get_media_uri_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.media_uri_secret_arn
+    }
     /// <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value can be used to stream local media files.</p> <note>
     /// <p>Preview only supports the <code>RTSP_URI</code> media source URI format .</p>
     /// </note>
@@ -80,6 +84,12 @@ impl MediaSourceConfigBuilder {
     ) -> Self {
         self.media_uri_type = input;
         self
+    }
+    /// <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value can be used to stream local media files.</p> <note>
+    /// <p>Preview only supports the <code>RTSP_URI</code> media source URI format .</p>
+    /// </note>
+    pub fn get_media_uri_type(&self) -> &::std::option::Option<crate::types::MediaUriType> {
+        &self.media_uri_type
     }
     /// Consumes the builder and constructs a [`MediaSourceConfig`](crate::types::MediaSourceConfig).
     pub fn build(self) -> crate::types::MediaSourceConfig {

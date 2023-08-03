@@ -50,6 +50,10 @@ impl JobExecutionSummaryForThingBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The unique identifier you assigned to this job when it was created.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>Contains a subset of information about a job execution.</p>
     pub fn job_execution_summary(mut self, input: crate::types::JobExecutionSummary) -> Self {
         self.job_execution_summary = ::std::option::Option::Some(input);
@@ -62,6 +66,12 @@ impl JobExecutionSummaryForThingBuilder {
     ) -> Self {
         self.job_execution_summary = input;
         self
+    }
+    /// <p>Contains a subset of information about a job execution.</p>
+    pub fn get_job_execution_summary(
+        &self,
+    ) -> &::std::option::Option<crate::types::JobExecutionSummary> {
+        &self.job_execution_summary
     }
     /// Consumes the builder and constructs a [`JobExecutionSummaryForThing`](crate::types::JobExecutionSummaryForThing).
     pub fn build(self) -> crate::types::JobExecutionSummaryForThing {

@@ -96,6 +96,10 @@ impl DescribeProjectOutputBuilder {
         self.project_id = input;
         self
     }
+    /// <p>The ID of the project.</p>
+    pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_id
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code> </p>
     pub fn project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -108,6 +112,11 @@ impl DescribeProjectOutputBuilder {
         self.project_arn = input;
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code> </p>
+    pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_arn
+    }
     /// <p>The name of the project.</p>
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
@@ -118,6 +127,10 @@ impl DescribeProjectOutputBuilder {
         self.project_name = input;
         self
     }
+    /// <p>The name of the project.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
+    }
     /// <p>The ID of the portal that the project is in.</p>
     pub fn portal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portal_id = ::std::option::Option::Some(input.into());
@@ -127,6 +140,10 @@ impl DescribeProjectOutputBuilder {
     pub fn set_portal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.portal_id = input;
         self
+    }
+    /// <p>The ID of the portal that the project is in.</p>
+    pub fn get_portal_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portal_id
     }
     /// <p>The project's description.</p>
     pub fn project_description(
@@ -144,6 +161,10 @@ impl DescribeProjectOutputBuilder {
         self.project_description = input;
         self
     }
+    /// <p>The project's description.</p>
+    pub fn get_project_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_description
+    }
     /// <p>The date the project was created, in Unix epoch time.</p>
     pub fn project_creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.project_creation_date = ::std::option::Option::Some(input);
@@ -157,6 +178,12 @@ impl DescribeProjectOutputBuilder {
         self.project_creation_date = input;
         self
     }
+    /// <p>The date the project was created, in Unix epoch time.</p>
+    pub fn get_project_creation_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.project_creation_date
+    }
     /// <p>The date the project was last updated, in Unix epoch time.</p>
     pub fn project_last_update_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.project_last_update_date = ::std::option::Option::Some(input);
@@ -169,6 +196,12 @@ impl DescribeProjectOutputBuilder {
     ) -> Self {
         self.project_last_update_date = input;
         self
+    }
+    /// <p>The date the project was last updated, in Unix epoch time.</p>
+    pub fn get_project_last_update_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.project_last_update_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

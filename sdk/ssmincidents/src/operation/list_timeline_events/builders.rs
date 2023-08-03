@@ -36,6 +36,12 @@ impl ListTimelineEventsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListTimelineEvents as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_timeline_events::builders::ListTimelineEventsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +149,10 @@ impl ListTimelineEventsFluentBuilder {
         self.inner = self.inner.set_incident_record_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
+    pub fn get_incident_record_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_incident_record_arn()
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -180,6 +190,20 @@ impl ListTimelineEventsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>Filters the timeline events based on the provided conditional values. You can filter timeline events with the following keys:</p>
+    /// <ul>
+    /// <li> <p> <code>eventTime</code> </p> </li>
+    /// <li> <p> <code>eventType</code> </p> </li>
+    /// </ul>
+    /// <p>Note the following when deciding how to use Filters:</p>
+    /// <ul>
+    /// <li> <p>If you don't specify a Filter, the response includes all timeline events.</p> </li>
+    /// <li> <p>If you specify more than one filter in a single request, the response returns timeline events that match all filters.</p> </li>
+    /// <li> <p>If you specify a filter with more than one value, the response returns timeline events that match any of the values provided.</p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// <p>Sort timeline events by the specified key value pair.</p>
     pub fn sort_by(mut self, input: crate::types::TimelineEventSort) -> Self {
         self.inner = self.inner.sort_by(input);
@@ -193,6 +217,10 @@ impl ListTimelineEventsFluentBuilder {
         self.inner = self.inner.set_sort_by(input);
         self
     }
+    /// <p>Sort timeline events by the specified key value pair.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::TimelineEventSort> {
+        self.inner.get_sort_by()
+    }
     /// <p>Sorts the order of timeline events by the value specified in the <code>sortBy</code> field.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.inner = self.inner.sort_order(input);
@@ -202,6 +230,10 @@ impl ListTimelineEventsFluentBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
+    }
+    /// <p>Sorts the order of timeline events by the value specified in the <code>sortBy</code> field.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        self.inner.get_sort_order()
     }
     /// <p>The maximum number of results per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -213,6 +245,10 @@ impl ListTimelineEventsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The pagination token to continue to the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -222,5 +258,9 @@ impl ListTimelineEventsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The pagination token to continue to the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

@@ -36,6 +36,13 @@ impl ListDeploymentConfigsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListDeploymentConfigs as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_deployment_configs::builders::ListDeploymentConfigsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,5 +143,9 @@ impl ListDeploymentConfigsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>An identifier returned from the previous <code>ListDeploymentConfigs</code> call. It can be used to return the next set of deployment configurations in the list. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

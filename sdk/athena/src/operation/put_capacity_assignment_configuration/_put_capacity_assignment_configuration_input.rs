@@ -57,6 +57,10 @@ impl PutCapacityAssignmentConfigurationInputBuilder {
         self.capacity_reservation_name = input;
         self
     }
+    /// <p>The name of the capacity reservation to put a capacity assignment configuration for.</p>
+    pub fn get_capacity_reservation_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.capacity_reservation_name
+    }
     /// Appends an item to `capacity_assignments`.
     ///
     /// To override the contents of this collection use [`set_capacity_assignments`](Self::set_capacity_assignments).
@@ -75,6 +79,12 @@ impl PutCapacityAssignmentConfigurationInputBuilder {
     ) -> Self {
         self.capacity_assignments = input;
         self
+    }
+    /// <p>The list of assignments for the capacity assignment configuration.</p>
+    pub fn get_capacity_assignments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityAssignment>> {
+        &self.capacity_assignments
     }
     /// Consumes the builder and constructs a [`PutCapacityAssignmentConfigurationInput`](crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{

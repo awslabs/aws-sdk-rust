@@ -65,6 +65,10 @@ impl CreatePublishingDestinationInputBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The ID of the GuardDuty detector associated with the publishing destination.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// <p>The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.</p>
     pub fn destination_type(mut self, input: crate::types::DestinationType) -> Self {
         self.destination_type = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl CreatePublishingDestinationInputBuilder {
     ) -> Self {
         self.destination_type = input;
         self
+    }
+    /// <p>The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.</p>
+    pub fn get_destination_type(&self) -> &::std::option::Option<crate::types::DestinationType> {
+        &self.destination_type
     }
     /// <p>The properties of the publishing destination, including the ARNs for the destination and the KMS key used for encryption.</p>
     pub fn destination_properties(mut self, input: crate::types::DestinationProperties) -> Self {
@@ -91,6 +99,12 @@ impl CreatePublishingDestinationInputBuilder {
         self.destination_properties = input;
         self
     }
+    /// <p>The properties of the publishing destination, including the ARNs for the destination and the KMS key used for encryption.</p>
+    pub fn get_destination_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::DestinationProperties> {
+        &self.destination_properties
+    }
     /// <p>The idempotency token for the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -100,6 +114,10 @@ impl CreatePublishingDestinationInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>The idempotency token for the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`CreatePublishingDestinationInput`](crate::operation::create_publishing_destination::CreatePublishingDestinationInput).
     pub fn build(

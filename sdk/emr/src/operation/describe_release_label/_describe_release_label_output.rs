@@ -79,6 +79,10 @@ impl DescribeReleaseLabelOutputBuilder {
         self.release_label = input;
         self
     }
+    /// <p>The target release label described in the response.</p>
+    pub fn get_release_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.release_label
+    }
     /// Appends an item to `applications`.
     ///
     /// To override the contents of this collection use [`set_applications`](Self::set_applications).
@@ -98,6 +102,12 @@ impl DescribeReleaseLabelOutputBuilder {
         self.applications = input;
         self
     }
+    /// <p>The list of applications available for the target release label. <code>Name</code> is the name of the application. <code>Version</code> is the concise version of the application.</p>
+    pub fn get_applications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SimplifiedApplication>> {
+        &self.applications
+    }
     /// <p>The pagination token. Reserved for future use. Currently set to null.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -107,6 +117,10 @@ impl DescribeReleaseLabelOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination token. Reserved for future use. Currently set to null.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `available_os_releases`.
     ///
@@ -126,6 +140,12 @@ impl DescribeReleaseLabelOutputBuilder {
     ) -> Self {
         self.available_os_releases = input;
         self
+    }
+    /// <p>The list of available Amazon Linux release versions for an Amazon EMR release. Contains a Label field that is formatted as shown in <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-al2.html"> <i>Amazon Linux 2 Release Notes</i> </a>. For example, <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html">2.0.20220218.1</a>.</p>
+    pub fn get_available_os_releases(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OsRelease>> {
+        &self.available_os_releases
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

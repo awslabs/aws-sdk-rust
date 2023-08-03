@@ -76,6 +76,10 @@ impl DebugHookConfigBuilder {
         self.local_path = input;
         self
     }
+    /// <p>Path to local storage location for metrics and tensors. Defaults to <code>/opt/ml/output/tensors/</code>.</p>
+    pub fn get_local_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.local_path
+    }
     /// <p>Path to Amazon S3 storage location for metrics and tensors.</p>
     pub fn s3_output_path(
         mut self,
@@ -91,6 +95,10 @@ impl DebugHookConfigBuilder {
     ) -> Self {
         self.s3_output_path = input;
         self
+    }
+    /// <p>Path to Amazon S3 storage location for metrics and tensors.</p>
+    pub fn get_s3_output_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_output_path
     }
     /// Adds a key-value pair to `hook_parameters`.
     ///
@@ -117,6 +125,14 @@ impl DebugHookConfigBuilder {
         self.hook_parameters = input;
         self
     }
+    /// <p>Configuration information for the Amazon SageMaker Debugger hook parameters.</p>
+    pub fn get_hook_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.hook_parameters
+    }
     /// Appends an item to `collection_configurations`.
     ///
     /// To override the contents of this collection use [`set_collection_configurations`](Self::set_collection_configurations).
@@ -138,6 +154,12 @@ impl DebugHookConfigBuilder {
     ) -> Self {
         self.collection_configurations = input;
         self
+    }
+    /// <p>Configuration information for Amazon SageMaker Debugger tensor collections. To learn more about how to configure the <code>CollectionConfiguration</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>. </p>
+    pub fn get_collection_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CollectionConfiguration>> {
+        &self.collection_configurations
     }
     /// Consumes the builder and constructs a [`DebugHookConfig`](crate::types::DebugHookConfig).
     pub fn build(self) -> crate::types::DebugHookConfig {

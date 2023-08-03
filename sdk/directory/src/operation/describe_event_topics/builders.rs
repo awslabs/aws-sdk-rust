@@ -37,6 +37,12 @@ impl DescribeEventTopicsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeEventTopics as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_event_topics::builders::DescribeEventTopicsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl DescribeEventTopicsFluentBuilder {
         self.inner = self.inner.set_directory_id(input);
         self
     }
+    /// <p>The Directory ID for which to get the list of associated Amazon SNS topics. If this member is null, associations for all Directory IDs are returned.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_id()
+    }
     /// Appends an item to `TopicNames`.
     ///
     /// To override the contents of this collection use [`set_topic_names`](Self::set_topic_names).
@@ -145,5 +155,12 @@ impl DescribeEventTopicsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_topic_names(input);
         self
+    }
+    /// <p>A list of Amazon SNS topic names for which to obtain the information. If this member is null, all associations for the specified Directory ID are returned.</p>
+    /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
+    pub fn get_topic_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_topic_names()
     }
 }

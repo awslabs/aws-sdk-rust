@@ -40,6 +40,10 @@ impl HierarchyLevelUpdateBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the user hierarchy level. Must not be more than 50 characters.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`HierarchyLevelUpdate`](crate::types::HierarchyLevelUpdate).
     pub fn build(self) -> crate::types::HierarchyLevelUpdate {
         crate::types::HierarchyLevelUpdate { name: self.name }

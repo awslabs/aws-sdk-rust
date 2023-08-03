@@ -73,6 +73,10 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupInputBuilder {
         self.global_replication_group_id = input;
         self
     }
+    /// <p>The name of the Global datastore</p>
+    pub fn get_global_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_replication_group_id
+    }
     /// <p>The number of node groups you wish to add</p>
     pub fn node_group_count(mut self, input: i32) -> Self {
         self.node_group_count = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupInputBuilder {
     pub fn set_node_group_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.node_group_count = input;
         self
+    }
+    /// <p>The number of node groups you wish to add</p>
+    pub fn get_node_group_count(&self) -> &::std::option::Option<i32> {
+        &self.node_group_count
     }
     /// Appends an item to `regional_configurations`.
     ///
@@ -102,6 +110,12 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupInputBuilder {
         self.regional_configurations = input;
         self
     }
+    /// <p>Describes the replication group IDs, the Amazon regions where they are stored and the shard configuration for each that comprise the Global datastore</p>
+    pub fn get_regional_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RegionalConfiguration>> {
+        &self.regional_configurations
+    }
     /// <p>Indicates that the process begins immediately. At present, the only permitted value for this parameter is true.</p>
     pub fn apply_immediately(mut self, input: bool) -> Self {
         self.apply_immediately = ::std::option::Option::Some(input);
@@ -111,6 +125,10 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupInputBuilder {
     pub fn set_apply_immediately(mut self, input: ::std::option::Option<bool>) -> Self {
         self.apply_immediately = input;
         self
+    }
+    /// <p>Indicates that the process begins immediately. At present, the only permitted value for this parameter is true.</p>
+    pub fn get_apply_immediately(&self) -> &::std::option::Option<bool> {
+        &self.apply_immediately
     }
     /// Consumes the builder and constructs a [`IncreaseNodeGroupsInGlobalReplicationGroupInput`](crate::operation::increase_node_groups_in_global_replication_group::IncreaseNodeGroupsInGlobalReplicationGroupInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::increase_node_groups_in_global_replication_group::IncreaseNodeGroupsInGlobalReplicationGroupInput, ::aws_smithy_http::operation::error::BuildError>{

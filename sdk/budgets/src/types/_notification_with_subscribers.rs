@@ -51,6 +51,10 @@ impl NotificationWithSubscribersBuilder {
         self.notification = input;
         self
     }
+    /// <p>The notification that's associated with a budget.</p>
+    pub fn get_notification(&self) -> &::std::option::Option<crate::types::Notification> {
+        &self.notification
+    }
     /// Appends an item to `subscribers`.
     ///
     /// To override the contents of this collection use [`set_subscribers`](Self::set_subscribers).
@@ -69,6 +73,12 @@ impl NotificationWithSubscribersBuilder {
     ) -> Self {
         self.subscribers = input;
         self
+    }
+    /// <p>A list of subscribers who are subscribed to this notification.</p>
+    pub fn get_subscribers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscriber>> {
+        &self.subscribers
     }
     /// Consumes the builder and constructs a [`NotificationWithSubscribers`](crate::types::NotificationWithSubscribers).
     pub fn build(self) -> crate::types::NotificationWithSubscribers {

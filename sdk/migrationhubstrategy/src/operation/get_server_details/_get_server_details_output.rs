@@ -67,6 +67,10 @@ impl GetServerDetailsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p> Detailed information about the server. </p>
     pub fn server_detail(mut self, input: crate::types::ServerDetail) -> Self {
         self.server_detail = ::std::option::Option::Some(input);
@@ -79,6 +83,10 @@ impl GetServerDetailsOutputBuilder {
     ) -> Self {
         self.server_detail = input;
         self
+    }
+    /// <p> Detailed information about the server. </p>
+    pub fn get_server_detail(&self) -> &::std::option::Option<crate::types::ServerDetail> {
+        &self.server_detail
     }
     /// Appends an item to `associated_applications`.
     ///
@@ -98,6 +106,12 @@ impl GetServerDetailsOutputBuilder {
     ) -> Self {
         self.associated_applications = input;
         self
+    }
+    /// <p> The associated application group the server belongs to, as defined in AWS Application Discovery Service. </p>
+    pub fn get_associated_applications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociatedApplication>> {
+        &self.associated_applications
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

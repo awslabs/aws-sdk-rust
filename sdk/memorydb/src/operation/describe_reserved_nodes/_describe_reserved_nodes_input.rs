@@ -95,6 +95,10 @@ impl DescribeReservedNodesInputBuilder {
         self.reservation_id = input;
         self
     }
+    /// <p>The reserved node identifier filter value. Use this parameter to show only the reservation that matches the specified reservation ID.</p>
+    pub fn get_reservation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reservation_id
+    }
     /// <p>The offering identifier filter value. Use this parameter to show only purchased reservations matching the specified offering identifier.</p>
     pub fn reserved_nodes_offering_id(
         mut self,
@@ -111,6 +115,10 @@ impl DescribeReservedNodesInputBuilder {
         self.reserved_nodes_offering_id = input;
         self
     }
+    /// <p>The offering identifier filter value. Use this parameter to show only purchased reservations matching the specified offering identifier.</p>
+    pub fn get_reserved_nodes_offering_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reserved_nodes_offering_id
+    }
     /// <p>The node type filter value. Use this parameter to show only those reservations matching the specified node type. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/nodes.reserved.html#reserved-nodes-supported">Supported node types</a>.</p>
     pub fn node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_type = ::std::option::Option::Some(input.into());
@@ -121,6 +129,10 @@ impl DescribeReservedNodesInputBuilder {
         self.node_type = input;
         self
     }
+    /// <p>The node type filter value. Use this parameter to show only those reservations matching the specified node type. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/nodes.reserved.html#reserved-nodes-supported">Supported node types</a>.</p>
+    pub fn get_node_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_type
+    }
     /// <p>The duration filter value, specified in years or seconds. Use this parameter to show only reservations for this duration.</p>
     pub fn duration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.duration = ::std::option::Option::Some(input.into());
@@ -130,6 +142,10 @@ impl DescribeReservedNodesInputBuilder {
     pub fn set_duration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.duration = input;
         self
+    }
+    /// <p>The duration filter value, specified in years or seconds. Use this parameter to show only reservations for this duration.</p>
+    pub fn get_duration(&self) -> &::std::option::Option<::std::string::String> {
+        &self.duration
     }
     /// <p>The offering type filter value. Use this parameter to show only the available offerings matching the specified offering type. Valid values: "All Upfront"|"Partial Upfront"| "No Upfront"</p>
     pub fn offering_type(
@@ -147,6 +163,10 @@ impl DescribeReservedNodesInputBuilder {
         self.offering_type = input;
         self
     }
+    /// <p>The offering type filter value. Use this parameter to show only the available offerings matching the specified offering type. Valid values: "All Upfront"|"Partial Upfront"| "No Upfront"</p>
+    pub fn get_offering_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.offering_type
+    }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a marker is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -157,6 +177,10 @@ impl DescribeReservedNodesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a marker is included in the response so that the remaining results can be retrieved.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -166,6 +190,10 @@ impl DescribeReservedNodesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeReservedNodesInput`](crate::operation::describe_reserved_nodes::DescribeReservedNodesInput).
     pub fn build(

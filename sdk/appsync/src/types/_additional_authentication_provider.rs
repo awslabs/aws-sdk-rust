@@ -72,6 +72,12 @@ impl AdditionalAuthenticationProviderBuilder {
         self.authentication_type = input;
         self
     }
+    /// <p>The authentication type: API key, Identity and Access Management (IAM), OpenID Connect (OIDC), Amazon Cognito user pools, or Lambda.</p>
+    pub fn get_authentication_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthenticationType> {
+        &self.authentication_type
+    }
     /// <p>The OIDC configuration.</p>
     pub fn open_id_connect_config(mut self, input: crate::types::OpenIdConnectConfig) -> Self {
         self.open_id_connect_config = ::std::option::Option::Some(input);
@@ -84,6 +90,12 @@ impl AdditionalAuthenticationProviderBuilder {
     ) -> Self {
         self.open_id_connect_config = input;
         self
+    }
+    /// <p>The OIDC configuration.</p>
+    pub fn get_open_id_connect_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::OpenIdConnectConfig> {
+        &self.open_id_connect_config
     }
     /// <p>The Amazon Cognito user pool configuration.</p>
     pub fn user_pool_config(mut self, input: crate::types::CognitoUserPoolConfig) -> Self {
@@ -98,6 +110,12 @@ impl AdditionalAuthenticationProviderBuilder {
         self.user_pool_config = input;
         self
     }
+    /// <p>The Amazon Cognito user pool configuration.</p>
+    pub fn get_user_pool_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::CognitoUserPoolConfig> {
+        &self.user_pool_config
+    }
     /// <p>Configuration for Lambda function authorization.</p>
     pub fn lambda_authorizer_config(mut self, input: crate::types::LambdaAuthorizerConfig) -> Self {
         self.lambda_authorizer_config = ::std::option::Option::Some(input);
@@ -110,6 +128,12 @@ impl AdditionalAuthenticationProviderBuilder {
     ) -> Self {
         self.lambda_authorizer_config = input;
         self
+    }
+    /// <p>Configuration for Lambda function authorization.</p>
+    pub fn get_lambda_authorizer_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::LambdaAuthorizerConfig> {
+        &self.lambda_authorizer_config
     }
     /// Consumes the builder and constructs a [`AdditionalAuthenticationProvider`](crate::types::AdditionalAuthenticationProvider).
     pub fn build(self) -> crate::types::AdditionalAuthenticationProvider {

@@ -50,6 +50,10 @@ impl CreateUserPoolOutputBuilder {
         self.user_pool = input;
         self
     }
+    /// <p>A container for the user pool details.</p>
+    pub fn get_user_pool(&self) -> &::std::option::Option<crate::types::UserPoolType> {
+        &self.user_pool
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

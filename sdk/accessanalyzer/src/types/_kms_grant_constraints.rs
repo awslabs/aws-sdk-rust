@@ -79,6 +79,14 @@ impl KmsGrantConstraintsBuilder {
         self.encryption_context_equals = input;
         self
     }
+    /// <p>A list of key-value pairs that must match the encryption context in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the operation only when the encryption context in the request is the same as the encryption context specified in this constraint.</p>
+    pub fn get_encryption_context_equals(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.encryption_context_equals
+    }
     /// Adds a key-value pair to `encryption_context_subset`.
     ///
     /// To override the contents of this collection use [`set_encryption_context_subset`](Self::set_encryption_context_subset).
@@ -103,6 +111,14 @@ impl KmsGrantConstraintsBuilder {
     ) -> Self {
         self.encryption_context_subset = input;
         self
+    }
+    /// <p>A list of key-value pairs that must be included in the encryption context of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the cryptographic operation only when the encryption context in the request includes the key-value pairs specified in this constraint, although it can include additional key-value pairs.</p>
+    pub fn get_encryption_context_subset(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.encryption_context_subset
     }
     /// Consumes the builder and constructs a [`KmsGrantConstraints`](crate::types::KmsGrantConstraints).
     pub fn build(self) -> crate::types::KmsGrantConstraints {

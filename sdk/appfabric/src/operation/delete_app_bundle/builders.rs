@@ -36,6 +36,12 @@ impl DeleteAppBundleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteAppBundle as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_app_bundle::builders::DeleteAppBundleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl DeleteAppBundleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_app_bundle_identifier(input);
         self
+    }
+    /// <p>The ID or Amazon Resource Name (ARN) of the app bundle that needs to be deleted.</p>
+    pub fn get_app_bundle_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_bundle_identifier()
     }
 }

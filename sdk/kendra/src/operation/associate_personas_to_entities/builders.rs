@@ -36,6 +36,10 @@ impl AssociatePersonasToEntitiesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociatePersonasToEntities as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_personas_to_entities::builders::AssociatePersonasToEntitiesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl AssociatePersonasToEntitiesFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The identifier of your Amazon Kendra experience.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.index_id(input.into());
@@ -135,6 +143,10 @@ impl AssociatePersonasToEntitiesFluentBuilder {
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_index_id(input);
         self
+    }
+    /// <p>The identifier of the index for your Amazon Kendra experience.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_index_id()
     }
     /// Appends an item to `Personas`.
     ///
@@ -152,5 +164,11 @@ impl AssociatePersonasToEntitiesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_personas(input);
         self
+    }
+    /// <p>The personas that define the specific permissions of users or groups in your IAM Identity Center identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
+    pub fn get_personas(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityPersonaConfiguration>> {
+        self.inner.get_personas()
     }
 }

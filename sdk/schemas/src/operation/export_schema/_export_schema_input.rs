@@ -69,6 +69,10 @@ impl ExportSchemaInputBuilder {
         self.registry_name = input;
         self
     }
+    /// <p>The name of the registry.</p>
+    pub fn get_registry_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_name
+    }
     /// <p>The name of the schema.</p>
     pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_name = ::std::option::Option::Some(input.into());
@@ -78,6 +82,10 @@ impl ExportSchemaInputBuilder {
     pub fn set_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_name = input;
         self
+    }
+    /// <p>The name of the schema.</p>
+    pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_name
     }
     /// <p>Specifying this limits the results to only this schema version.</p>
     pub fn schema_version(
@@ -95,6 +103,10 @@ impl ExportSchemaInputBuilder {
         self.schema_version = input;
         self
     }
+    /// <p>Specifying this limits the results to only this schema version.</p>
+    pub fn get_schema_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_version
+    }
     #[allow(missing_docs)] // documentation missing in model
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -104,6 +116,10 @@ impl ExportSchemaInputBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`ExportSchemaInput`](crate::operation::export_schema::ExportSchemaInput).
     pub fn build(

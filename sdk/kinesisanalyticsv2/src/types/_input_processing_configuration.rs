@@ -45,6 +45,12 @@ impl InputProcessingConfigurationBuilder {
         self.input_lambda_processor = input;
         self
     }
+    /// <p>The <code>InputLambdaProcessor</code> that is used to preprocess the records in the stream before being processed by your application code.</p>
+    pub fn get_input_lambda_processor(
+        &self,
+    ) -> &::std::option::Option<crate::types::InputLambdaProcessor> {
+        &self.input_lambda_processor
+    }
     /// Consumes the builder and constructs a [`InputProcessingConfiguration`](crate::types::InputProcessingConfiguration).
     pub fn build(self) -> crate::types::InputProcessingConfiguration {
         crate::types::InputProcessingConfiguration {

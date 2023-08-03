@@ -46,6 +46,10 @@ impl JsonMappingParametersBuilder {
         self.record_row_path = input;
         self
     }
+    /// <p>The path to the top-level parent that contains the records.</p>
+    pub fn get_record_row_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.record_row_path
+    }
     /// Consumes the builder and constructs a [`JsonMappingParameters`](crate::types::JsonMappingParameters).
     pub fn build(self) -> crate::types::JsonMappingParameters {
         crate::types::JsonMappingParameters {

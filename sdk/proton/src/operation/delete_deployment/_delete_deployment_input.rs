@@ -40,6 +40,10 @@ impl DeleteDeploymentInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the deployment to delete.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`DeleteDeploymentInput`](crate::operation::delete_deployment::DeleteDeploymentInput).
     pub fn build(
         self,

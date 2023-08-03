@@ -64,6 +64,10 @@ impl ResourceBuilder {
         self.component_id = input;
         self
     }
+    /// <p>The component identifier of the resource, generated when DNS target resource is used.</p>
+    pub fn get_component_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_id
+    }
     /// <p>The DNS target resource.</p>
     pub fn dns_target_resource(mut self, input: crate::types::DnsTargetResource) -> Self {
         self.dns_target_resource = ::std::option::Option::Some(input);
@@ -76,6 +80,12 @@ impl ResourceBuilder {
     ) -> Self {
         self.dns_target_resource = input;
         self
+    }
+    /// <p>The DNS target resource.</p>
+    pub fn get_dns_target_resource(
+        &self,
+    ) -> &::std::option::Option<crate::types::DnsTargetResource> {
+        &self.dns_target_resource
     }
     /// Appends an item to `readiness_scopes`.
     ///
@@ -99,6 +109,12 @@ impl ResourceBuilder {
         self.readiness_scopes = input;
         self
     }
+    /// <p>A list of recovery group Amazon Resource Names (ARNs) and cell ARNs that this resource is contained within.</p>
+    pub fn get_readiness_scopes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.readiness_scopes
+    }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -108,6 +124,10 @@ impl ResourceBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// Consumes the builder and constructs a [`Resource`](crate::types::Resource).
     pub fn build(self) -> crate::types::Resource {

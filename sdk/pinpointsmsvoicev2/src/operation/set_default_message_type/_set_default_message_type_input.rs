@@ -55,6 +55,10 @@ impl SetDefaultMessageTypeInputBuilder {
         self.configuration_set_name = input;
         self
     }
+    /// <p>The configuration set to update with a new default message type. This field can be the ConsigurationSetName or ConfigurationSetArn.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set_name
+    }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
     pub fn message_type(mut self, input: crate::types::MessageType) -> Self {
         self.message_type = ::std::option::Option::Some(input);
@@ -67,6 +71,10 @@ impl SetDefaultMessageTypeInputBuilder {
     ) -> Self {
         self.message_type = input;
         self
+    }
+    /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
+    pub fn get_message_type(&self) -> &::std::option::Option<crate::types::MessageType> {
+        &self.message_type
     }
     /// Consumes the builder and constructs a [`SetDefaultMessageTypeInput`](crate::operation::set_default_message_type::SetDefaultMessageTypeInput).
     pub fn build(

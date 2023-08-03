@@ -64,6 +64,10 @@ impl AttachmentBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier for the attachment.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl AttachmentBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p> The status of the attachment. Valid values are <code>PRECREATED</code>, <code>CREATED</code>, <code>ATTACHING</code>, <code>ATTACHED</code>, <code>DETACHING</code>, <code>DETACHED</code>, <code>DELETED</code>, and <code>FAILED</code>.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl AttachmentBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p> The status of the attachment. Valid values are <code>PRECREATED</code>, <code>CREATED</code>, <code>ATTACHING</code>, <code>ATTACHED</code>, <code>DETACHING</code>, <code>DETACHED</code>, <code>DELETED</code>, and <code>FAILED</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Appends an item to `details`.
     ///
@@ -102,6 +114,12 @@ impl AttachmentBuilder {
     ) -> Self {
         self.details = input;
         self
+    }
+    /// <p>Details of the attachment. For elastic network interfaces, this includes the network interface ID, the MAC address, the subnet ID, and the private IPv4 address.</p>
+    pub fn get_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>> {
+        &self.details
     }
     /// Consumes the builder and constructs a [`Attachment`](crate::types::Attachment).
     pub fn build(self) -> crate::types::Attachment {

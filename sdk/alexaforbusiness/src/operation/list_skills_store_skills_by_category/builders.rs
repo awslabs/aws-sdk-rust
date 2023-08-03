@@ -37,6 +37,10 @@ impl ListSkillsStoreSkillsByCategoryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListSkillsStoreSkillsByCategory as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_skills_store_skills_by_category::builders::ListSkillsStoreSkillsByCategoryInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -107,6 +111,10 @@ impl ListSkillsStoreSkillsByCategoryFluentBuilder {
         self.inner = self.inner.set_category_id(input);
         self
     }
+    /// <p>The category ID for which the skills are being retrieved from the skill store.</p>
+    pub fn get_category_id(&self) -> &::std::option::Option<i64> {
+        self.inner.get_category_id()
+    }
     /// <p>The tokens used for pagination.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -117,6 +125,10 @@ impl ListSkillsStoreSkillsByCategoryFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The tokens used for pagination.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of skills returned per paginated calls.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -126,5 +138,9 @@ impl ListSkillsStoreSkillsByCategoryFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of skills returned per paginated calls.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

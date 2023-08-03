@@ -53,6 +53,10 @@ impl SignalApplicationInstanceNodeInstancesInputBuilder {
         self.application_instance_id = input;
         self
     }
+    /// <p>An application instance ID.</p>
+    pub fn get_application_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_instance_id
+    }
     /// Appends an item to `node_signals`.
     ///
     /// To override the contents of this collection use [`set_node_signals`](Self::set_node_signals).
@@ -71,6 +75,12 @@ impl SignalApplicationInstanceNodeInstancesInputBuilder {
     ) -> Self {
         self.node_signals = input;
         self
+    }
+    /// <p>A list of signals.</p>
+    pub fn get_node_signals(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeSignal>> {
+        &self.node_signals
     }
     /// Consumes the builder and constructs a [`SignalApplicationInstanceNodeInstancesInput`](crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -47,6 +47,10 @@ impl DeleteDefaultSenderIdInputBuilder {
         self.configuration_set_name = input;
         self
     }
+    /// <p>The name of the configuration set or the configuration set Amazon Resource Name (ARN) to delete the default sender ID from. The ConfigurationSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set_name
+    }
     /// Consumes the builder and constructs a [`DeleteDefaultSenderIdInput`](crate::operation::delete_default_sender_id::DeleteDefaultSenderIdInput).
     pub fn build(
         self,

@@ -37,6 +37,10 @@ impl DeleteRecommendationPreferencesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteRecommendationPreferences as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_recommendation_preferences::builders::DeleteRecommendationPreferencesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -110,6 +114,13 @@ impl DeleteRecommendationPreferencesFluentBuilder {
         self.inner = self.inner.set_resource_type(input);
         self
     }
+    /// <p>The target resource type of the recommendation preference to delete.</p>
+    /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note>
+    /// <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p>
+    /// </note>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        self.inner.get_resource_type()
+    }
     /// <p>An object that describes the scope of the recommendation preference to delete.</p>
     /// <p>You can delete recommendation preferences that are created at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
@@ -121,6 +132,11 @@ impl DeleteRecommendationPreferencesFluentBuilder {
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::Scope>) -> Self {
         self.inner = self.inner.set_scope(input);
         self
+    }
+    /// <p>An object that describes the scope of the recommendation preference to delete.</p>
+    /// <p>You can delete recommendation preferences that are created at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
+        self.inner.get_scope()
     }
     /// Appends an item to `recommendationPreferenceNames`.
     ///
@@ -141,5 +157,11 @@ impl DeleteRecommendationPreferencesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_recommendation_preference_names(input);
         self
+    }
+    /// <p>The name of the recommendation preference to delete.</p>
+    pub fn get_recommendation_preference_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationPreferenceName>> {
+        self.inner.get_recommendation_preference_names()
     }
 }

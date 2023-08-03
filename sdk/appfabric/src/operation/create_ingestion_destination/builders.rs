@@ -36,6 +36,10 @@ impl CreateIngestionDestinationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateIngestionDestination as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_ingestion_destination::builders::CreateIngestionDestinationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl CreateIngestionDestinationFluentBuilder {
         self.inner = self.inner.set_app_bundle_identifier(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
+    pub fn get_app_bundle_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_bundle_identifier()
+    }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</p>
     pub fn ingestion_identifier(
         mut self,
@@ -147,6 +155,10 @@ impl CreateIngestionDestinationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ingestion_identifier(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</p>
+    pub fn get_ingestion_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ingestion_identifier()
     }
     /// <p>Contains information about how ingested data is processed.</p>
     pub fn processing_configuration(
@@ -164,6 +176,12 @@ impl CreateIngestionDestinationFluentBuilder {
         self.inner = self.inner.set_processing_configuration(input);
         self
     }
+    /// <p>Contains information about how ingested data is processed.</p>
+    pub fn get_processing_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProcessingConfiguration> {
+        self.inner.get_processing_configuration()
+    }
     /// <p>Contains information about the destination of ingested data.</p>
     pub fn destination_configuration(
         mut self,
@@ -180,6 +198,12 @@ impl CreateIngestionDestinationFluentBuilder {
         self.inner = self.inner.set_destination_configuration(input);
         self
     }
+    /// <p>Contains information about the destination of ingested data.</p>
+    pub fn get_destination_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DestinationConfiguration> {
+        self.inner.get_destination_configuration()
+    }
     /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value</a>.</p>
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
@@ -193,6 +217,12 @@ impl CreateIngestionDestinationFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value</a>.</p>
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
+    /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// Appends an item to `tags`.
     ///
@@ -210,5 +240,9 @@ impl CreateIngestionDestinationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A map of the key-value pairs of the tag or tags to assign to the resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

@@ -85,6 +85,13 @@ impl BatchDescribeTypeConfigurationsOutputBuilder {
         self.errors = input;
         self
     }
+    /// <p>A list of information concerning any errors generated during the setting of the specified configurations.</p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchDescribeTypeConfigurationsError>>
+    {
+        &self.errors
+    }
     /// Appends an item to `unprocessed_type_configurations`.
     ///
     /// To override the contents of this collection use [`set_unprocessed_type_configurations`](Self::set_unprocessed_type_configurations).
@@ -107,6 +114,12 @@ impl BatchDescribeTypeConfigurationsOutputBuilder {
         self.unprocessed_type_configurations = input;
         self
     }
+    /// <p>A list of any of the specified extension configurations that CloudFormation could not process for any reason.</p>
+    pub fn get_unprocessed_type_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TypeConfigurationIdentifier>> {
+        &self.unprocessed_type_configurations
+    }
     /// Appends an item to `type_configurations`.
     ///
     /// To override the contents of this collection use [`set_type_configurations`](Self::set_type_configurations).
@@ -125,6 +138,12 @@ impl BatchDescribeTypeConfigurationsOutputBuilder {
     ) -> Self {
         self.type_configurations = input;
         self
+    }
+    /// <p>A list of any of the specified extension configurations from the CloudFormation registry.</p>
+    pub fn get_type_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TypeConfigurationDetails>> {
+        &self.type_configurations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

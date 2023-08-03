@@ -36,6 +36,12 @@ impl DeleteWorkGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteWorkGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_work_group::builders::DeleteWorkGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DeleteWorkGroupFluentBuilder {
         self.inner = self.inner.set_work_group(input);
         self
     }
+    /// <p>The unique name of the workgroup to delete.</p>
+    pub fn get_work_group(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_work_group()
+    }
     /// <p>The option to delete the workgroup and its contents even if the workgroup contains any named queries, query executions, or notebooks.</p>
     pub fn recursive_delete_option(mut self, input: bool) -> Self {
         self.inner = self.inner.recursive_delete_option(input);
@@ -135,5 +145,9 @@ impl DeleteWorkGroupFluentBuilder {
     pub fn set_recursive_delete_option(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_recursive_delete_option(input);
         self
+    }
+    /// <p>The option to delete the workgroup and its contents even if the workgroup contains any named queries, query executions, or notebooks.</p>
+    pub fn get_recursive_delete_option(&self) -> &::std::option::Option<bool> {
+        self.inner.get_recursive_delete_option()
     }
 }

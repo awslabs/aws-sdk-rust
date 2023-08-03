@@ -36,6 +36,12 @@ impl CreateProjectFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateProject as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_project::builders::CreateProjectInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl CreateProjectFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the build project.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A description that makes the build project easy to identify.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -128,6 +138,10 @@ impl CreateProjectFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>A description that makes the build project easy to identify.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>Information about the build input source code for the build project.</p>
     pub fn source(mut self, input: crate::types::ProjectSource) -> Self {
         self.inner = self.inner.source(input);
@@ -137,6 +151,10 @@ impl CreateProjectFluentBuilder {
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::ProjectSource>) -> Self {
         self.inner = self.inner.set_source(input);
         self
+    }
+    /// <p>Information about the build input source code for the build project.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::ProjectSource> {
+        self.inner.get_source()
     }
     /// Appends an item to `secondarySources`.
     ///
@@ -154,6 +172,12 @@ impl CreateProjectFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_secondary_sources(input);
         self
+    }
+    /// <p>An array of <code>ProjectSource</code> objects. </p>
+    pub fn get_secondary_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectSource>> {
+        self.inner.get_secondary_sources()
     }
     /// <p>A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of: </p>
     /// <ul>
@@ -187,6 +211,18 @@ impl CreateProjectFluentBuilder {
         self.inner = self.inner.set_source_version(input);
         self
     }
+    /// <p>A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of: </p>
+    /// <ul>
+    /// <li> <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li>
+    /// <li> <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
+    /// <li> <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
+    /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li>
+    /// </ul>
+    /// <p>If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level). </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
+    pub fn get_source_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_version()
+    }
     /// Appends an item to `secondarySourceVersions`.
     ///
     /// To override the contents of this collection use [`set_secondary_source_versions`](Self::set_secondary_source_versions).
@@ -204,6 +240,12 @@ impl CreateProjectFluentBuilder {
         self.inner = self.inner.set_secondary_source_versions(input);
         self
     }
+    /// <p>An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at the build level, then they take precedence over these <code>secondarySourceVersions</code> (at the project level). </p>
+    pub fn get_secondary_source_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectSourceVersion>> {
+        self.inner.get_secondary_source_versions()
+    }
     /// <p>Information about the build output artifacts for the build project.</p>
     pub fn artifacts(mut self, input: crate::types::ProjectArtifacts) -> Self {
         self.inner = self.inner.artifacts(input);
@@ -216,6 +258,10 @@ impl CreateProjectFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_artifacts(input);
         self
+    }
+    /// <p>Information about the build output artifacts for the build project.</p>
+    pub fn get_artifacts(&self) -> &::std::option::Option<crate::types::ProjectArtifacts> {
+        self.inner.get_artifacts()
     }
     /// Appends an item to `secondaryArtifacts`.
     ///
@@ -234,6 +280,12 @@ impl CreateProjectFluentBuilder {
         self.inner = self.inner.set_secondary_artifacts(input);
         self
     }
+    /// <p>An array of <code>ProjectArtifacts</code> objects. </p>
+    pub fn get_secondary_artifacts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectArtifacts>> {
+        self.inner.get_secondary_artifacts()
+    }
     /// <p>Stores recently used information so that it can be quickly accessed at a later time.</p>
     pub fn cache(mut self, input: crate::types::ProjectCache) -> Self {
         self.inner = self.inner.cache(input);
@@ -243,6 +295,10 @@ impl CreateProjectFluentBuilder {
     pub fn set_cache(mut self, input: ::std::option::Option<crate::types::ProjectCache>) -> Self {
         self.inner = self.inner.set_cache(input);
         self
+    }
+    /// <p>Stores recently used information so that it can be quickly accessed at a later time.</p>
+    pub fn get_cache(&self) -> &::std::option::Option<crate::types::ProjectCache> {
+        self.inner.get_cache()
     }
     /// <p>Information about the build environment for the build project.</p>
     pub fn environment(mut self, input: crate::types::ProjectEnvironment) -> Self {
@@ -257,6 +313,10 @@ impl CreateProjectFluentBuilder {
         self.inner = self.inner.set_environment(input);
         self
     }
+    /// <p>Information about the build environment for the build project.</p>
+    pub fn get_environment(&self) -> &::std::option::Option<crate::types::ProjectEnvironment> {
+        self.inner.get_environment()
+    }
     /// <p>The ARN of the IAM role that enables CodeBuild to interact with dependent Amazon Web Services services on behalf of the Amazon Web Services account.</p>
     pub fn service_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_role(input.into());
@@ -266,6 +326,10 @@ impl CreateProjectFluentBuilder {
     pub fn set_service_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_role(input);
         self
+    }
+    /// <p>The ARN of the IAM role that enables CodeBuild to interact with dependent Amazon Web Services services on behalf of the Amazon Web Services account.</p>
+    pub fn get_service_role(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_role()
     }
     /// <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before it times out any build that has not been marked as completed. The default is 60 minutes.</p>
     pub fn timeout_in_minutes(mut self, input: i32) -> Self {
@@ -277,6 +341,10 @@ impl CreateProjectFluentBuilder {
         self.inner = self.inner.set_timeout_in_minutes(input);
         self
     }
+    /// <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before it times out any build that has not been marked as completed. The default is 60 minutes.</p>
+    pub fn get_timeout_in_minutes(&self) -> &::std::option::Option<i32> {
+        self.inner.get_timeout_in_minutes()
+    }
     /// <p>The number of minutes a build is allowed to be queued before it times out. </p>
     pub fn queued_timeout_in_minutes(mut self, input: i32) -> Self {
         self.inner = self.inner.queued_timeout_in_minutes(input);
@@ -286,6 +354,10 @@ impl CreateProjectFluentBuilder {
     pub fn set_queued_timeout_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_queued_timeout_in_minutes(input);
         self
+    }
+    /// <p>The number of minutes a build is allowed to be queued before it times out. </p>
+    pub fn get_queued_timeout_in_minutes(&self) -> &::std::option::Option<i32> {
+        self.inner.get_queued_timeout_in_minutes()
     }
     /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note>
     /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
@@ -311,6 +383,14 @@ impl CreateProjectFluentBuilder {
         self.inner = self.inner.set_encryption_key(input);
         self
     }
+    /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note>
+    /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
+    /// </note>
+    /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
+    /// <alias-name></alias-name></code>). </p>
+    pub fn get_encryption_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_encryption_key()
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -330,6 +410,11 @@ impl CreateProjectFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>A list of tag key and value pairs associated with this build project.</p>
+    /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
         self.inner = self.inner.vpc_config(input);
@@ -340,6 +425,10 @@ impl CreateProjectFluentBuilder {
         self.inner = self.inner.set_vpc_config(input);
         self
     }
+    /// <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
+    pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
+        self.inner.get_vpc_config()
+    }
     /// <p>Set this to true to generate a publicly accessible URL for your project's build badge.</p>
     pub fn badge_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.badge_enabled(input);
@@ -349,6 +438,10 @@ impl CreateProjectFluentBuilder {
     pub fn set_badge_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_badge_enabled(input);
         self
+    }
+    /// <p>Set this to true to generate a publicly accessible URL for your project's build badge.</p>
+    pub fn get_badge_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_badge_enabled()
     }
     /// <p>Information about logs for the build project. These can be logs in CloudWatch Logs, logs uploaded to a specified S3 bucket, or both. </p>
     pub fn logs_config(mut self, input: crate::types::LogsConfig) -> Self {
@@ -362,6 +455,10 @@ impl CreateProjectFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_logs_config(input);
         self
+    }
+    /// <p>Information about logs for the build project. These can be logs in CloudWatch Logs, logs uploaded to a specified S3 bucket, or both. </p>
+    pub fn get_logs_config(&self) -> &::std::option::Option<crate::types::LogsConfig> {
+        self.inner.get_logs_config()
     }
     /// Appends an item to `fileSystemLocations`.
     ///
@@ -380,6 +477,12 @@ impl CreateProjectFluentBuilder {
         self.inner = self.inner.set_file_system_locations(input);
         self
     }
+    /// <p> An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System. </p>
+    pub fn get_file_system_locations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectFileSystemLocation>> {
+        self.inner.get_file_system_locations()
+    }
     /// <p>A <code>ProjectBuildBatchConfig</code> object that defines the batch build options for the project.</p>
     pub fn build_batch_config(mut self, input: crate::types::ProjectBuildBatchConfig) -> Self {
         self.inner = self.inner.build_batch_config(input);
@@ -393,6 +496,12 @@ impl CreateProjectFluentBuilder {
         self.inner = self.inner.set_build_batch_config(input);
         self
     }
+    /// <p>A <code>ProjectBuildBatchConfig</code> object that defines the batch build options for the project.</p>
+    pub fn get_build_batch_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProjectBuildBatchConfig> {
+        self.inner.get_build_batch_config()
+    }
     /// <p>The maximum number of concurrent builds that are allowed for this project.</p>
     /// <p>New builds are only started if the current number of builds is less than or equal to this limit. If the current build count meets this limit, new builds are throttled and are not run.</p>
     pub fn concurrent_build_limit(mut self, input: i32) -> Self {
@@ -404,5 +513,10 @@ impl CreateProjectFluentBuilder {
     pub fn set_concurrent_build_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_concurrent_build_limit(input);
         self
+    }
+    /// <p>The maximum number of concurrent builds that are allowed for this project.</p>
+    /// <p>New builds are only started if the current number of builds is less than or equal to this limit. If the current build count meets this limit, new builds are throttled and are not run.</p>
+    pub fn get_concurrent_build_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_concurrent_build_limit()
     }
 }

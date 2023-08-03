@@ -39,6 +39,12 @@ impl RegisterAgentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RegisterAgent as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::register_agent::builders::RegisterAgentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl RegisterAgentFluentBuilder {
         self.inner = self.inner.set_discovery_data(input);
         self
     }
+    /// <p>Data for associating an agent with the capabilities it is managing.</p>
+    pub fn get_discovery_data(&self) -> &::std::option::Option<crate::types::DiscoveryData> {
+        self.inner.get_discovery_data()
+    }
     /// <p>Detailed information about the agent being registered.</p>
     pub fn agent_details(mut self, input: crate::types::AgentDetails) -> Self {
         self.inner = self.inner.agent_details(input);
@@ -136,5 +146,9 @@ impl RegisterAgentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_agent_details(input);
         self
+    }
+    /// <p>Detailed information about the agent being registered.</p>
+    pub fn get_agent_details(&self) -> &::std::option::Option<crate::types::AgentDetails> {
+        self.inner.get_agent_details()
     }
 }

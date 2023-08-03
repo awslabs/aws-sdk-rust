@@ -679,6 +679,10 @@ impl CreateDbInstanceReadReplicaInputBuilder {
         self.db_instance_identifier = input;
         self
     }
+    /// <p>The DB instance identifier of the read replica. This identifier is the unique key that identifies a DB instance. This parameter is stored as a lowercase string.</p>
+    pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_identifier
+    }
     /// <p>The identifier of the DB instance that will act as the source for the read replica. Each DB instance can have up to 15 read replicas, with the exception of Oracle and SQL Server, which can have up to five.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -715,6 +719,22 @@ impl CreateDbInstanceReadReplicaInputBuilder {
         self.source_db_instance_identifier = input;
         self
     }
+    /// <p>The identifier of the DB instance that will act as the source for the read replica. Each DB instance can have up to 15 read replicas, with the exception of Oracle and SQL Server, which can have up to five.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be the identifier of an existing MySQL, MariaDB, Oracle, PostgreSQL, or SQL Server DB instance.</p> </li>
+    /// <li> <p>Can't be specified if the <code>SourceDBClusterIdentifier</code> parameter is also specified.</p> </li>
+    /// <li> <p>For the limitations of Oracle read replicas, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.limitations.html#oracle-read-replicas.limitations.versions-and-licenses">Version and licensing considerations for RDS for Oracle replicas</a> in the <i>Amazon RDS User Guide</i>.</p> </li>
+    /// <li> <p>For the limitations of SQL Server read replicas, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/SQLServer.ReadReplicas.html#SQLServer.ReadReplicas.Limitations">Read replica limitations with SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> </li>
+    /// <li> <p>The specified DB instance must have automatic backups enabled, that is, its backup retention period must be greater than 0.</p> </li>
+    /// <li> <p>If the source DB instance is in the same Amazon Web Services Region as the read replica, specify a valid DB instance identifier.</p> </li>
+    /// <li> <p>If the source DB instance is in a different Amazon Web Services Region from the read replica, specify a valid DB instance ARN. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. This doesn't apply to SQL Server or RDS Custom, which don't support cross-Region replicas.</p> </li>
+    /// </ul>
+    pub fn get_source_db_instance_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.source_db_instance_identifier
+    }
     /// <p>The compute and memory capacity of the read replica, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Default: Inherits from the source DB instance.</p>
     pub fn db_instance_class(
@@ -732,6 +752,11 @@ impl CreateDbInstanceReadReplicaInputBuilder {
     ) -> Self {
         self.db_instance_class = input;
         self
+    }
+    /// <p>The compute and memory capacity of the read replica, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>Default: Inherits from the source DB instance.</p>
+    pub fn get_db_instance_class(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_class
     }
     /// <p>The Availability Zone (AZ) where the read replica will be created.</p>
     /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>
@@ -753,6 +778,12 @@ impl CreateDbInstanceReadReplicaInputBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>The Availability Zone (AZ) where the read replica will be created.</p>
+    /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>
+    /// <p>Example: <code>us-east-1d</code> </p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>The port number that the DB instance uses for connections.</p>
     /// <p>Default: Inherits from the source DB instance</p>
     /// <p>Valid Values: <code>1150-65535</code> </p>
@@ -766,6 +797,12 @@ impl CreateDbInstanceReadReplicaInputBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
+    }
+    /// <p>The port number that the DB instance uses for connections.</p>
+    /// <p>Default: Inherits from the source DB instance</p>
+    /// <p>Valid Values: <code>1150-65535</code> </p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// <p>A value that indicates whether the read replica is in a Multi-AZ deployment.</p>
     /// <p>You can create a read replica as a Multi-AZ DB instance. RDS creates a standby of your replica in another Availability Zone for failover support for the replica. Creating your read replica as a Multi-AZ DB instance is independent of whether the source is a Multi-AZ DB instance or a Multi-AZ DB cluster.</p>
@@ -781,6 +818,12 @@ impl CreateDbInstanceReadReplicaInputBuilder {
         self.multi_az = input;
         self
     }
+    /// <p>A value that indicates whether the read replica is in a Multi-AZ deployment.</p>
+    /// <p>You can create a read replica as a Multi-AZ DB instance. RDS creates a standby of your replica in another Availability Zone for failover support for the replica. Creating your read replica as a Multi-AZ DB instance is independent of whether the source is a Multi-AZ DB instance or a Multi-AZ DB cluster.</p>
+    /// <p>This setting doesn't apply to RDS Custom.</p>
+    pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
+        &self.multi_az
+    }
     /// <p>A value that indicates whether minor engine upgrades are applied automatically to the read replica during the maintenance window.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Default: Inherits from the source DB instance</p>
@@ -795,6 +838,12 @@ impl CreateDbInstanceReadReplicaInputBuilder {
         self.auto_minor_version_upgrade = input;
         self
     }
+    /// <p>A value that indicates whether minor engine upgrades are applied automatically to the read replica during the maintenance window.</p>
+    /// <p>This setting doesn't apply to RDS Custom.</p>
+    /// <p>Default: Inherits from the source DB instance</p>
+    pub fn get_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
+        &self.auto_minor_version_upgrade
+    }
     /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance.</p>
     pub fn iops(mut self, input: i32) -> Self {
         self.iops = ::std::option::Option::Some(input);
@@ -804,6 +853,10 @@ impl CreateDbInstanceReadReplicaInputBuilder {
     pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
         self.iops = input;
         self
+    }
+    /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance.</p>
+    pub fn get_iops(&self) -> &::std::option::Option<i32> {
+        &self.iops
     }
     /// <p>The option group the DB instance is associated with. If omitted, the option group associated with the source instance or cluster is used.</p> <note>
     /// <p>For SQL Server, you must use the option group associated with the source.</p>
@@ -826,6 +879,13 @@ impl CreateDbInstanceReadReplicaInputBuilder {
     ) -> Self {
         self.option_group_name = input;
         self
+    }
+    /// <p>The option group the DB instance is associated with. If omitted, the option group associated with the source instance or cluster is used.</p> <note>
+    /// <p>For SQL Server, you must use the option group associated with the source.</p>
+    /// </note>
+    /// <p>This setting doesn't apply to RDS Custom.</p>
+    pub fn get_option_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.option_group_name
     }
     /// <p>The name of the DB parameter group to associate with this DB instance.</p>
     /// <p>If you do not specify a value for <code>DBParameterGroupName</code>, then Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a same Region read replica, or the default <code>DBParameterGroup</code> for the specified DB engine for a cross-Region read replica.</p>
@@ -859,6 +919,18 @@ impl CreateDbInstanceReadReplicaInputBuilder {
         self.db_parameter_group_name = input;
         self
     }
+    /// <p>The name of the DB parameter group to associate with this DB instance.</p>
+    /// <p>If you do not specify a value for <code>DBParameterGroupName</code>, then Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a same Region read replica, or the default <code>DBParameterGroup</code> for the specified DB engine for a cross-Region read replica.</p>
+    /// <p>Specifying a parameter group for this operation is only supported for MySQL and Oracle DB instances. It isn't supported for RDS Custom.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// </ul>
+    pub fn get_db_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_parameter_group_name
+    }
     /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
     /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address from within the DB cluster's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB cluster's VPC. Access to the DB cluster is ultimately controlled by the security group it uses. That public access isn't permitted if the security group assigned to the DB cluster doesn't permit it.</p>
     /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>
@@ -874,6 +946,13 @@ impl CreateDbInstanceReadReplicaInputBuilder {
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
         self.publicly_accessible = input;
         self
+    }
+    /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
+    /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address from within the DB cluster's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB cluster's VPC. Access to the DB cluster is ultimately controlled by the security group it uses. That public access isn't permitted if the security group assigned to the DB cluster doesn't permit it.</p>
+    /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>
+    /// <p>For more information, see <code>CreateDBInstance</code>.</p>
+    pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
+        &self.publicly_accessible
     }
     /// Appends an item to `tags`.
     ///
@@ -893,6 +972,10 @@ impl CreateDbInstanceReadReplicaInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// <p>Specifies a DB subnet group for the DB instance. The new DB instance is created in the VPC associated with the DB subnet group. If no DB subnet group is specified, then the new DB instance isn't created in a VPC.</p>
     /// <p>Constraints:</p>
@@ -932,6 +1015,21 @@ impl CreateDbInstanceReadReplicaInputBuilder {
         self.db_subnet_group_name = input;
         self
     }
+    /// <p>Specifies a DB subnet group for the DB instance. The new DB instance is created in the VPC associated with the DB subnet group. If no DB subnet group is specified, then the new DB instance isn't created in a VPC.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>If supplied, must match the name of an existing DBSubnetGroup.</p> </li>
+    /// <li> <p>The specified DB subnet group must be in the same Amazon Web Services Region in which the operation is running.</p> </li>
+    /// <li> <p>All read replicas in one Amazon Web Services Region that are created from the same source DB instance must either:&gt;</p>
+    /// <ul>
+    /// <li> <p>Specify DB subnet groups from the same VPC. All these read replicas are created in the same VPC.</p> </li>
+    /// <li> <p>Not specify a DB subnet group. All these read replicas are created outside of any VPC.</p> </li>
+    /// </ul> </li>
+    /// </ul>
+    /// <p>Example: <code>mydbsubnetgroup</code> </p>
+    pub fn get_db_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_subnet_group_name
+    }
     /// Appends an item to `vpc_security_group_ids`.
     ///
     /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
@@ -958,6 +1056,14 @@ impl CreateDbInstanceReadReplicaInputBuilder {
         self.vpc_security_group_ids = input;
         self
     }
+    /// <p>A list of Amazon EC2 VPC security groups to associate with the read replica.</p>
+    /// <p>This setting doesn't apply to RDS Custom.</p>
+    /// <p>Default: The default EC2 VPC security group for the DB subnet group's VPC.</p>
+    pub fn get_vpc_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.vpc_security_group_ids
+    }
     /// <p>Specifies the storage type to be associated with the read replica.</p>
     /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
     /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
@@ -974,6 +1080,13 @@ impl CreateDbInstanceReadReplicaInputBuilder {
         self.storage_type = input;
         self
     }
+    /// <p>Specifies the storage type to be associated with the read replica.</p>
+    /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
+    /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
+    /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_type
+    }
     /// <p>A value that indicates whether to copy all tags from the read replica to snapshots of the read replica. By default, tags are not copied.</p>
     pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
         self.copy_tags_to_snapshot = ::std::option::Option::Some(input);
@@ -983,6 +1096,10 @@ impl CreateDbInstanceReadReplicaInputBuilder {
     pub fn set_copy_tags_to_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
         self.copy_tags_to_snapshot = input;
         self
+    }
+    /// <p>A value that indicates whether to copy all tags from the read replica to snapshots of the read replica. By default, tags are not copied.</p>
+    pub fn get_copy_tags_to_snapshot(&self) -> &::std::option::Option<bool> {
+        &self.copy_tags_to_snapshot
     }
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the read replica. To disable collecting Enhanced Monitoring metrics, specify 0. The default is 0.</p>
     /// <p>If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code> to a value other than 0.</p>
@@ -999,6 +1116,13 @@ impl CreateDbInstanceReadReplicaInputBuilder {
     pub fn set_monitoring_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.monitoring_interval = input;
         self
+    }
+    /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the read replica. To disable collecting Enhanced Monitoring metrics, specify 0. The default is 0.</p>
+    /// <p>If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code> to a value other than 0.</p>
+    /// <p>This setting doesn't apply to RDS Custom.</p>
+    /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
+    pub fn get_monitoring_interval(&self) -> &::std::option::Option<i32> {
+        &self.monitoring_interval
     }
     /// <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, go to <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
@@ -1020,6 +1144,12 @@ impl CreateDbInstanceReadReplicaInputBuilder {
         self.monitoring_role_arn = input;
         self
     }
+    /// <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, go to <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
+    /// <p>This setting doesn't apply to RDS Custom.</p>
+    pub fn get_monitoring_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitoring_role_arn
+    }
     /// <p>The Amazon Web Services KMS key identifier for an encrypted read replica.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     /// <p>If you create an encrypted read replica in the same Amazon Web Services Region as the source DB instance or Multi-AZ DB cluster, don't specify a value for this parameter. A read replica in the same Amazon Web Services Region is always encrypted with the same KMS key as the source DB instance or cluster.</p>
@@ -1039,6 +1169,15 @@ impl CreateDbInstanceReadReplicaInputBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>The Amazon Web Services KMS key identifier for an encrypted read replica.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+    /// <p>If you create an encrypted read replica in the same Amazon Web Services Region as the source DB instance or Multi-AZ DB cluster, don't specify a value for this parameter. A read replica in the same Amazon Web Services Region is always encrypted with the same KMS key as the source DB instance or cluster.</p>
+    /// <p>If you create an encrypted read replica in a different Amazon Web Services Region, then you must specify a KMS key identifier for the destination Amazon Web Services Region. KMS keys are specific to the Amazon Web Services Region that they are created in, and you can't use KMS keys from one Amazon Web Services Region in another Amazon Web Services Region.</p>
+    /// <p>You can't create an encrypted read replica from an unencrypted DB instance or Multi-AZ DB cluster.</p>
+    /// <p>This setting doesn't apply to RDS Custom, which uses the same KMS key as the primary replica.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// <p>When you are creating a read replica from one Amazon Web Services GovCloud (US) Region to another or from one China Amazon Web Services Region to another, the URL that contains a Signature Version 4 signed request for the <code>CreateDBInstanceReadReplica</code> API operation in the source Amazon Web Services Region that contains the source DB instance.</p>
     /// <p>This setting applies only to Amazon Web Services GovCloud (US) Regions and China Amazon Web Services Regions. It's ignored in other Amazon Web Services Regions.</p>
@@ -1084,6 +1223,24 @@ impl CreateDbInstanceReadReplicaInputBuilder {
         self.pre_signed_url = input;
         self
     }
+    /// <p>When you are creating a read replica from one Amazon Web Services GovCloud (US) Region to another or from one China Amazon Web Services Region to another, the URL that contains a Signature Version 4 signed request for the <code>CreateDBInstanceReadReplica</code> API operation in the source Amazon Web Services Region that contains the source DB instance.</p>
+    /// <p>This setting applies only to Amazon Web Services GovCloud (US) Regions and China Amazon Web Services Regions. It's ignored in other Amazon Web Services Regions.</p>
+    /// <p>This setting applies only when replicating from a source DB <i>instance</i>. Source DB clusters aren't supported in Amazon Web Services GovCloud (US) Regions and China Amazon Web Services Regions.</p>
+    /// <p>You must specify this parameter when you create an encrypted read replica from another Amazon Web Services Region by using the Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are creating an encrypted read replica in the same Amazon Web Services Region.</p>
+    /// <p>The presigned URL must be a valid request for the <code>CreateDBInstanceReadReplica</code> API operation that can run in the source Amazon Web Services Region that contains the encrypted source DB instance. The presigned URL request must contain the following parameter values:</p>
+    /// <ul>
+    /// <li> <p> <code>DestinationRegion</code> - The Amazon Web Services Region that the encrypted read replica is created in. This Amazon Web Services Region is the same one where the <code>CreateDBInstanceReadReplica</code> operation is called that contains this presigned URL.</p> <p>For example, if you create an encrypted DB instance in the us-west-1 Amazon Web Services Region, from a source DB instance in the us-east-2 Amazon Web Services Region, then you call the <code>CreateDBInstanceReadReplica</code> operation in the us-east-1 Amazon Web Services Region and provide a presigned URL that contains a call to the <code>CreateDBInstanceReadReplica</code> operation in the us-west-2 Amazon Web Services Region. For this example, the <code>DestinationRegion</code> in the presigned URL must be set to the us-east-1 Amazon Web Services Region.</p> </li>
+    /// <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the read replica in the destination Amazon Web Services Region. This is the same identifier for both the <code>CreateDBInstanceReadReplica</code> operation that is called in the destination Amazon Web Services Region, and the operation contained in the presigned URL.</p> </li>
+    /// <li> <p> <code>SourceDBInstanceIdentifier</code> - The DB instance identifier for the encrypted DB instance to be replicated. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are creating an encrypted read replica from a DB instance in the us-west-2 Amazon Web Services Region, then your <code>SourceDBInstanceIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-20161115</code>.</p> </li>
+    /// </ul>
+    /// <p>To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>.</p> <note>
+    /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in the source Amazon Web Services Region.</p>
+    /// <p> <code>SourceRegion</code> isn't supported for SQL Server, because Amazon RDS for SQL Server doesn't support cross-Region read replicas.</p>
+    /// </note>
+    /// <p>This setting doesn't apply to RDS Custom.</p>
+    pub fn get_pre_signed_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pre_signed_url
+    }
     /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
     /// <p>For more information about IAM database authentication, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
@@ -1101,6 +1258,12 @@ impl CreateDbInstanceReadReplicaInputBuilder {
         self.enable_iam_database_authentication = input;
         self
     }
+    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
+    /// <p>For more information about IAM database authentication, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>This setting doesn't apply to RDS Custom.</p>
+    pub fn get_enable_iam_database_authentication(&self) -> &::std::option::Option<bool> {
+        &self.enable_iam_database_authentication
+    }
     /// <p>A value that indicates whether to enable Performance Insights for the read replica.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
@@ -1114,6 +1277,12 @@ impl CreateDbInstanceReadReplicaInputBuilder {
     pub fn set_enable_performance_insights(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_performance_insights = input;
         self
+    }
+    /// <p>A value that indicates whether to enable Performance Insights for the read replica.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>This setting doesn't apply to RDS Custom.</p>
+    pub fn get_enable_performance_insights(&self) -> &::std::option::Option<bool> {
+        &self.enable_performance_insights
     }
     /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
@@ -1136,6 +1305,15 @@ impl CreateDbInstanceReadReplicaInputBuilder {
     ) -> Self {
         self.performance_insights_kms_key_id = input;
         self
+    }
+    /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+    /// <p>If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+    /// <p>This setting doesn't apply to RDS Custom.</p>
+    pub fn get_performance_insights_kms_key_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.performance_insights_kms_key_id
     }
     /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
     /// <ul>
@@ -1178,6 +1356,24 @@ impl CreateDbInstanceReadReplicaInputBuilder {
         self.performance_insights_retention_period = input;
         self
     }
+    /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
+    /// <ul>
+    /// <li> <p>7</p> </li>
+    /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+    /// <li> <p>731</p> </li>
+    /// </ul>
+    /// <p>For example, the following values are valid:</p>
+    /// <ul>
+    /// <li> <p>93 (3 months * 31)</p> </li>
+    /// <li> <p>341 (11 months * 31)</p> </li>
+    /// <li> <p>589 (19 months * 31)</p> </li>
+    /// <li> <p>731</p> </li>
+    /// </ul>
+    /// <p>If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.</p>
+    /// <p>This setting doesn't apply to RDS Custom.</p>
+    pub fn get_performance_insights_retention_period(&self) -> &::std::option::Option<i32> {
+        &self.performance_insights_retention_period
+    }
     /// Appends an item to `enable_cloudwatch_logs_exports`.
     ///
     /// To override the contents of this collection use [`set_enable_cloudwatch_logs_exports`](Self::set_enable_cloudwatch_logs_exports).
@@ -1202,6 +1398,13 @@ impl CreateDbInstanceReadReplicaInputBuilder {
         self.enable_cloudwatch_logs_exports = input;
         self
     }
+    /// <p>The list of logs that the new DB instance is to export to CloudWatch Logs. The values in the list depend on the DB engine being used. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>This setting doesn't apply to RDS Custom.</p>
+    pub fn get_enable_cloudwatch_logs_exports(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.enable_cloudwatch_logs_exports
+    }
     /// Appends an item to `processor_features`.
     ///
     /// To override the contents of this collection use [`set_processor_features`](Self::set_processor_features).
@@ -1223,6 +1426,13 @@ impl CreateDbInstanceReadReplicaInputBuilder {
         self.processor_features = input;
         self
     }
+    /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
+    /// <p>This setting doesn't apply to RDS Custom.</p>
+    pub fn get_processor_features(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProcessorFeature>> {
+        &self.processor_features
+    }
     /// <p>A value that indicates whether the DB instance class of the DB instance uses its default processor features.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn use_default_processor_features(mut self, input: bool) -> Self {
@@ -1238,6 +1448,11 @@ impl CreateDbInstanceReadReplicaInputBuilder {
         self.use_default_processor_features = input;
         self
     }
+    /// <p>A value that indicates whether the DB instance class of the DB instance uses its default processor features.</p>
+    /// <p>This setting doesn't apply to RDS Custom.</p>
+    pub fn get_use_default_processor_features(&self) -> &::std::option::Option<bool> {
+        &self.use_default_processor_features
+    }
     /// <p>A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB Instance</a>.</p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
         self.deletion_protection = ::std::option::Option::Some(input);
@@ -1247,6 +1462,10 @@ impl CreateDbInstanceReadReplicaInputBuilder {
     pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.deletion_protection = input;
         self
+    }
+    /// <p>A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB Instance</a>.</p>
+    pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
+        &self.deletion_protection
     }
     /// <p>The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
@@ -1261,6 +1480,12 @@ impl CreateDbInstanceReadReplicaInputBuilder {
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
+    }
+    /// <p>The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>This setting doesn't apply to RDS Custom.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
     }
     /// <p>The name of the IAM role to be used when making API calls to the Directory Service.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
@@ -1279,6 +1504,11 @@ impl CreateDbInstanceReadReplicaInputBuilder {
     ) -> Self {
         self.domain_iam_role_name = input;
         self
+    }
+    /// <p>The name of the IAM role to be used when making API calls to the Directory Service.</p>
+    /// <p>This setting doesn't apply to RDS Custom.</p>
+    pub fn get_domain_iam_role_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_iam_role_name
     }
     /// <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
     /// <p>Constraints:</p>
@@ -1299,6 +1529,15 @@ impl CreateDbInstanceReadReplicaInputBuilder {
     pub fn set_domain_fqdn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_fqdn = input;
         self
+    }
+    /// <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't be longer than 64 characters.</p> </li>
+    /// </ul>
+    /// <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> </p>
+    pub fn get_domain_fqdn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_fqdn
     }
     /// <p>The Active Directory organizational unit for your DB instance to join.</p>
     /// <p>Constraints:</p>
@@ -1322,6 +1561,16 @@ impl CreateDbInstanceReadReplicaInputBuilder {
         self.domain_ou = input;
         self
     }
+    /// <p>The Active Directory organizational unit for your DB instance to join.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be in the distinguished name format.</p> </li>
+    /// <li> <p>Can't be longer than 64 characters.</p> </li>
+    /// </ul>
+    /// <p>Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code> </p>
+    pub fn get_domain_ou(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_ou
+    }
     /// <p>The ARN for the Secrets Manager secret with the credentials for the user joining the domain.</p>
     /// <p>Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code> </p>
     pub fn domain_auth_secret_arn(
@@ -1339,6 +1588,11 @@ impl CreateDbInstanceReadReplicaInputBuilder {
     ) -> Self {
         self.domain_auth_secret_arn = input;
         self
+    }
+    /// <p>The ARN for the Secrets Manager secret with the credentials for the user joining the domain.</p>
+    /// <p>Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code> </p>
+    pub fn get_domain_auth_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_auth_secret_arn
     }
     /// Appends an item to `domain_dns_ips`.
     ///
@@ -1372,6 +1626,17 @@ impl CreateDbInstanceReadReplicaInputBuilder {
         self.domain_dns_ips = input;
         self
     }
+    /// <p>The IPv4 DNS IP addresses of your primary and secondary Active Directory domain controllers.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the primary domain controller for both entries in the list.</p> </li>
+    /// </ul>
+    /// <p>Example: <code>123.124.125.126,234.235.236.237</code> </p>
+    pub fn get_domain_dns_ips(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.domain_dns_ips
+    }
     /// <p>The open mode of the replica database: mounted or read-only.</p> <note>
     /// <p>This parameter is only supported for Oracle DB instances.</p>
     /// </note>
@@ -1395,6 +1660,15 @@ impl CreateDbInstanceReadReplicaInputBuilder {
         self.replica_mode = input;
         self
     }
+    /// <p>The open mode of the replica database: mounted or read-only.</p> <note>
+    /// <p>This parameter is only supported for Oracle DB instances.</p>
+    /// </note>
+    /// <p>Mounted DB replicas are included in Oracle Database Enterprise Edition. The main use case for mounted replicas is cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information to the mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a read-only workload.</p>
+    /// <p>You can create a combination of mounted and read-only DB replicas for the same primary DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>For RDS Custom, you must specify this parameter and set it to <code>mounted</code>. The value won't be set by default. After replica creation, you can manage the open mode manually.</p>
+    pub fn get_replica_mode(&self) -> &::std::option::Option<crate::types::ReplicaMode> {
+        &self.replica_mode
+    }
     /// <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
     /// <p>For more information about this setting, including limitations that apply to it, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling"> Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn max_allocated_storage(mut self, input: i32) -> Self {
@@ -1406,6 +1680,11 @@ impl CreateDbInstanceReadReplicaInputBuilder {
     pub fn set_max_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_allocated_storage = input;
         self
+    }
+    /// <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
+    /// <p>For more information about this setting, including limitations that apply to it, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling"> Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User Guide</i>.</p>
+    pub fn get_max_allocated_storage(&self) -> &::std::option::Option<i32> {
+        &self.max_allocated_storage
     }
     /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:</p>
     /// <ul>
@@ -1437,6 +1716,17 @@ impl CreateDbInstanceReadReplicaInputBuilder {
         self.custom_iam_instance_profile = input;
         self
     }
+    /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:</p>
+    /// <ul>
+    /// <li> <p>The profile must exist in your account.</p> </li>
+    /// <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p> </li>
+    /// <li> <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p> </li>
+    /// </ul>
+    /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>This setting is required for RDS Custom.</p>
+    pub fn get_custom_iam_instance_profile(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_iam_instance_profile
+    }
     /// <p>The network type of the DB instance.</p>
     /// <p>Valid values:</p>
     /// <ul>
@@ -1461,6 +1751,17 @@ impl CreateDbInstanceReadReplicaInputBuilder {
         self.network_type = input;
         self
     }
+    /// <p>The network type of the DB instance.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>IPV4</code> </p> </li>
+    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// </ul>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for read replica. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+    pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_type
+    }
     /// <p>Specifies the storage throughput value for the read replica.</p>
     /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
     pub fn storage_throughput(mut self, input: i32) -> Self {
@@ -1472,6 +1773,11 @@ impl CreateDbInstanceReadReplicaInputBuilder {
     pub fn set_storage_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
         self.storage_throughput = input;
         self
+    }
+    /// <p>Specifies the storage throughput value for the read replica.</p>
+    /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+    pub fn get_storage_throughput(&self) -> &::std::option::Option<i32> {
+        &self.storage_throughput
     }
     /// <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts read replica.</p>
     /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the read replica from outside of its virtual private cloud (VPC) on your local network.</p>
@@ -1489,6 +1795,13 @@ impl CreateDbInstanceReadReplicaInputBuilder {
         self.enable_customer_owned_ip = input;
         self
     }
+    /// <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts read replica.</p>
+    /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the read replica from outside of its virtual private cloud (VPC) on your local network.</p>
+    /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+    pub fn get_enable_customer_owned_ip(&self) -> &::std::option::Option<bool> {
+        &self.enable_customer_owned_ip
+    }
     /// <p>The amount of storage (in gibibytes) to allocate initially for the read replica. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>
     /// <p>Be sure to allocate enough storage for your read replica so that the create operation can succeed. You can also allocate additional storage for future growth.</p>
     /// </note>
@@ -1502,6 +1815,12 @@ impl CreateDbInstanceReadReplicaInputBuilder {
     pub fn set_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.allocated_storage = input;
         self
+    }
+    /// <p>The amount of storage (in gibibytes) to allocate initially for the read replica. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>
+    /// <p>Be sure to allocate enough storage for your read replica so that the create operation can succeed. You can also allocate additional storage for future growth.</p>
+    /// </note>
+    pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {
+        &self.allocated_storage
     }
     /// <p>The identifier of the Multi-AZ DB cluster that will act as the source for the read replica. Each DB cluster can have up to 15 read replicas.</p>
     /// <p>Constraints:</p>
@@ -1532,6 +1851,19 @@ impl CreateDbInstanceReadReplicaInputBuilder {
     ) -> Self {
         self.source_db_cluster_identifier = input;
         self
+    }
+    /// <p>The identifier of the Multi-AZ DB cluster that will act as the source for the read replica. Each DB cluster can have up to 15 read replicas.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be the identifier of an existing Multi-AZ DB cluster.</p> </li>
+    /// <li> <p>Can't be specified if the <code>SourceDBInstanceIdentifier</code> parameter is also specified.</p> </li>
+    /// <li> <p>The specified DB cluster must have automatic backups enabled, that is, its backup retention period must be greater than 0.</p> </li>
+    /// <li> <p>The source DB cluster must be in the same Amazon Web Services Region as the read replica. Cross-Region replication isn't supported.</p> </li>
+    /// </ul>
+    pub fn get_source_db_cluster_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.source_db_cluster_identifier
     }
     /// Consumes the builder and constructs a [`CreateDbInstanceReadReplicaInput`](crate::operation::create_db_instance_read_replica::CreateDbInstanceReadReplicaInput).
     pub fn build(

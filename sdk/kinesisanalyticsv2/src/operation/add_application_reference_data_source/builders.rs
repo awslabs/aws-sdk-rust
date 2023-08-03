@@ -37,6 +37,10 @@ impl AddApplicationReferenceDataSourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AddApplicationReferenceDataSource as a reference.
+    pub fn as_input(&self) -> &crate::operation::add_application_reference_data_source::builders::AddApplicationReferenceDataSourceInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -107,6 +111,10 @@ impl AddApplicationReferenceDataSourceFluentBuilder {
         self.inner = self.inner.set_application_name(input);
         self
     }
+    /// <p>The name of an existing application.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_name()
+    }
     /// <p>The version of the application for which you are adding the reference data source. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
     pub fn current_application_version_id(mut self, input: i64) -> Self {
         self.inner = self.inner.current_application_version_id(input);
@@ -116,6 +124,10 @@ impl AddApplicationReferenceDataSourceFluentBuilder {
     pub fn set_current_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_current_application_version_id(input);
         self
+    }
+    /// <p>The version of the application for which you are adding the reference data source. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
+    pub fn get_current_application_version_id(&self) -> &::std::option::Option<i64> {
+        self.inner.get_current_application_version_id()
     }
     /// <p>The reference data source can be an object in your Amazon S3 bucket. Kinesis Data Analytics reads the object and copies the data into the in-application table that is created. You provide an S3 bucket, object key name, and the resulting in-application table that is created. </p>
     pub fn reference_data_source(mut self, input: crate::types::ReferenceDataSource) -> Self {
@@ -129,5 +141,11 @@ impl AddApplicationReferenceDataSourceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_reference_data_source(input);
         self
+    }
+    /// <p>The reference data source can be an object in your Amazon S3 bucket. Kinesis Data Analytics reads the object and copies the data into the in-application table that is created. You provide an S3 bucket, object key name, and the resulting in-application table that is created. </p>
+    pub fn get_reference_data_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReferenceDataSource> {
+        self.inner.get_reference_data_source()
     }
 }

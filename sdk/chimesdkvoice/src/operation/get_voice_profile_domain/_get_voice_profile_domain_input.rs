@@ -47,6 +47,10 @@ impl GetVoiceProfileDomainInputBuilder {
         self.voice_profile_domain_id = input;
         self
     }
+    /// <p>The voice profile domain ID.</p>
+    pub fn get_voice_profile_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_profile_domain_id
+    }
     /// Consumes the builder and constructs a [`GetVoiceProfileDomainInput`](crate::operation::get_voice_profile_domain::GetVoiceProfileDomainInput).
     pub fn build(
         self,

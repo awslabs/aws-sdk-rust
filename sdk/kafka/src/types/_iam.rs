@@ -40,6 +40,10 @@ impl IamBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Indicates whether IAM access control is enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Consumes the builder and constructs a [`Iam`](crate::types::Iam).
     pub fn build(self) -> crate::types::Iam {
         crate::types::Iam {

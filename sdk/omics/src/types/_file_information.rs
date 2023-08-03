@@ -56,6 +56,10 @@ impl FileInformationBuilder {
         self.total_parts = input;
         self
     }
+    /// <p>The file's total parts.</p>
+    pub fn get_total_parts(&self) -> &::std::option::Option<i32> {
+        &self.total_parts
+    }
     /// <p>The file's part size.</p>
     pub fn part_size(mut self, input: i64) -> Self {
         self.part_size = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl FileInformationBuilder {
         self.part_size = input;
         self
     }
+    /// <p>The file's part size.</p>
+    pub fn get_part_size(&self) -> &::std::option::Option<i64> {
+        &self.part_size
+    }
     /// <p>The file's content length.</p>
     pub fn content_length(mut self, input: i64) -> Self {
         self.content_length = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl FileInformationBuilder {
     pub fn set_content_length(mut self, input: ::std::option::Option<i64>) -> Self {
         self.content_length = input;
         self
+    }
+    /// <p>The file's content length.</p>
+    pub fn get_content_length(&self) -> &::std::option::Option<i64> {
+        &self.content_length
     }
     /// Consumes the builder and constructs a [`FileInformation`](crate::types::FileInformation).
     pub fn build(self) -> crate::types::FileInformation {

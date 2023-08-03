@@ -51,6 +51,10 @@ impl UpdatePricingPlanInputBuilder {
         self.pricing_mode = input;
         self
     }
+    /// <p>The pricing mode.</p>
+    pub fn get_pricing_mode(&self) -> &::std::option::Option<crate::types::PricingMode> {
+        &self.pricing_mode
+    }
     /// Appends an item to `bundle_names`.
     ///
     /// To override the contents of this collection use [`set_bundle_names`](Self::set_bundle_names).
@@ -69,6 +73,12 @@ impl UpdatePricingPlanInputBuilder {
     ) -> Self {
         self.bundle_names = input;
         self
+    }
+    /// <p>The bundle names.</p>
+    pub fn get_bundle_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.bundle_names
     }
     /// Consumes the builder and constructs a [`UpdatePricingPlanInput`](crate::operation::update_pricing_plan::UpdatePricingPlanInput).
     pub fn build(

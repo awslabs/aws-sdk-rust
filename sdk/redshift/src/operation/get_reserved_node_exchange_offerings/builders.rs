@@ -36,6 +36,10 @@ impl GetReservedNodeExchangeOfferingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetReservedNodeExchangeOfferings as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_reserved_node_exchange_offerings::builders::GetReservedNodeExchangeOfferingsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -112,6 +116,10 @@ impl GetReservedNodeExchangeOfferingsFluentBuilder {
         self.inner = self.inner.set_reserved_node_id(input);
         self
     }
+    /// <p>A string representing the node identifier for the DC1 Reserved Node to be exchanged.</p>
+    pub fn get_reserved_node_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reserved_node_id()
+    }
     /// <p>An integer setting the maximum number of ReservedNodeOfferings to retrieve.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.inner = self.inner.max_records(input);
@@ -122,6 +130,10 @@ impl GetReservedNodeExchangeOfferingsFluentBuilder {
         self.inner = self.inner.set_max_records(input);
         self
     }
+    /// <p>An integer setting the maximum number of ReservedNodeOfferings to retrieve.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
+    }
     /// <p>A value that indicates the starting point for the next set of ReservedNodeOfferings.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -131,5 +143,9 @@ impl GetReservedNodeExchangeOfferingsFluentBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
+    }
+    /// <p>A value that indicates the starting point for the next set of ReservedNodeOfferings.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
     }
 }

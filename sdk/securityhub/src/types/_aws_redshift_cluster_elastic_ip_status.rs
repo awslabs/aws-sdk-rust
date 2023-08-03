@@ -48,6 +48,10 @@ impl AwsRedshiftClusterElasticIpStatusBuilder {
         self.elastic_ip = input;
         self
     }
+    /// <p>The elastic IP address for the cluster.</p>
+    pub fn get_elastic_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.elastic_ip
+    }
     /// <p>The status of the elastic IP address.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl AwsRedshiftClusterElasticIpStatusBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the elastic IP address.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`AwsRedshiftClusterElasticIpStatus`](crate::types::AwsRedshiftClusterElasticIpStatus).
     pub fn build(self) -> crate::types::AwsRedshiftClusterElasticIpStatus {

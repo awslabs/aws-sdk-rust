@@ -65,6 +65,10 @@ impl TimeAlignmentBoundaryBuilder {
         self.month = input;
         self
     }
+    /// <p>The month to use for time alignment during aggregation. The month must be in uppercase.</p>
+    pub fn get_month(&self) -> &::std::option::Option<crate::types::Month> {
+        &self.month
+    }
     /// <p>The day of the month to use for time alignment during aggregation.</p>
     pub fn day_of_month(mut self, input: i32) -> Self {
         self.day_of_month = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl TimeAlignmentBoundaryBuilder {
     pub fn set_day_of_month(mut self, input: ::std::option::Option<i32>) -> Self {
         self.day_of_month = input;
         self
+    }
+    /// <p>The day of the month to use for time alignment during aggregation.</p>
+    pub fn get_day_of_month(&self) -> &::std::option::Option<i32> {
+        &self.day_of_month
     }
     /// <p>The day of week to use for time alignment during aggregation. The day must be in uppercase.</p>
     pub fn day_of_week(mut self, input: crate::types::DayOfWeek) -> Self {
@@ -88,6 +96,10 @@ impl TimeAlignmentBoundaryBuilder {
         self.day_of_week = input;
         self
     }
+    /// <p>The day of week to use for time alignment during aggregation. The day must be in uppercase.</p>
+    pub fn get_day_of_week(&self) -> &::std::option::Option<crate::types::DayOfWeek> {
+        &self.day_of_week
+    }
     /// <p>The hour of day to use for time alignment during aggregation.</p>
     pub fn hour(mut self, input: i32) -> Self {
         self.hour = ::std::option::Option::Some(input);
@@ -97,6 +109,10 @@ impl TimeAlignmentBoundaryBuilder {
     pub fn set_hour(mut self, input: ::std::option::Option<i32>) -> Self {
         self.hour = input;
         self
+    }
+    /// <p>The hour of day to use for time alignment during aggregation.</p>
+    pub fn get_hour(&self) -> &::std::option::Option<i32> {
+        &self.hour
     }
     /// Consumes the builder and constructs a [`TimeAlignmentBoundary`](crate::types::TimeAlignmentBoundary).
     pub fn build(self) -> crate::types::TimeAlignmentBoundary {

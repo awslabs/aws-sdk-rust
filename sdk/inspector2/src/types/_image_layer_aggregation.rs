@@ -81,6 +81,12 @@ impl ImageLayerAggregationBuilder {
         self.repositories = input;
         self
     }
+    /// <p>The repository associated with the container image hosting the layers.</p>
+    pub fn get_repositories(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.repositories
+    }
     /// Appends an item to `resource_ids`.
     ///
     /// To override the contents of this collection use [`set_resource_ids`](Self::set_resource_ids).
@@ -99,6 +105,12 @@ impl ImageLayerAggregationBuilder {
     ) -> Self {
         self.resource_ids = input;
         self
+    }
+    /// <p>The ID of the container image layer.</p>
+    pub fn get_resource_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.resource_ids
     }
     /// Appends an item to `layer_hashes`.
     ///
@@ -119,6 +131,12 @@ impl ImageLayerAggregationBuilder {
         self.layer_hashes = input;
         self
     }
+    /// <p>The hashes associated with the layers.</p>
+    pub fn get_layer_hashes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.layer_hashes
+    }
     /// <p>The order to sort results by.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -128,6 +146,10 @@ impl ImageLayerAggregationBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p>The order to sort results by.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.sort_order
     }
     /// <p>The value to sort results by.</p>
     pub fn sort_by(mut self, input: crate::types::ImageLayerSortBy) -> Self {
@@ -141,6 +163,10 @@ impl ImageLayerAggregationBuilder {
     ) -> Self {
         self.sort_by = input;
         self
+    }
+    /// <p>The value to sort results by.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ImageLayerSortBy> {
+        &self.sort_by
     }
     /// Consumes the builder and constructs a [`ImageLayerAggregation`](crate::types::ImageLayerAggregation).
     pub fn build(self) -> crate::types::ImageLayerAggregation {

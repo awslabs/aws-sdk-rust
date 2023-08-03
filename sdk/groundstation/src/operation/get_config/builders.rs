@@ -37,6 +37,10 @@ impl GetConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetConfig as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_config::builders::GetConfigInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl GetConfigFluentBuilder {
         self.inner = self.inner.set_config_id(input);
         self
     }
+    /// <p>UUID of a <code>Config</code>.</p>
+    pub fn get_config_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_config_id()
+    }
     /// <p>Type of a <code>Config</code>.</p>
     pub fn config_type(mut self, input: crate::types::ConfigCapabilityType) -> Self {
         self.inner = self.inner.config_type(input);
@@ -131,5 +139,9 @@ impl GetConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_config_type(input);
         self
+    }
+    /// <p>Type of a <code>Config</code>.</p>
+    pub fn get_config_type(&self) -> &::std::option::Option<crate::types::ConfigCapabilityType> {
+        self.inner.get_config_type()
     }
 }

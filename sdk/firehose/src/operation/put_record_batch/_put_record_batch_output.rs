@@ -66,6 +66,10 @@ impl PutRecordBatchOutputBuilder {
         self.failed_put_count = input;
         self
     }
+    /// <p>The number of records that might have failed processing. This number might be greater than 0 even if the <code>PutRecordBatch</code> call succeeds. Check <code>FailedPutCount</code> to determine whether there are records that you need to resend.</p>
+    pub fn get_failed_put_count(&self) -> &::std::option::Option<i32> {
+        &self.failed_put_count
+    }
     /// <p>Indicates whether server-side encryption (SSE) was enabled during this operation.</p>
     pub fn encrypted(mut self, input: bool) -> Self {
         self.encrypted = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl PutRecordBatchOutputBuilder {
     pub fn set_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.encrypted = input;
         self
+    }
+    /// <p>Indicates whether server-side encryption (SSE) was enabled during this operation.</p>
+    pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
+        &self.encrypted
     }
     /// Appends an item to `request_responses`.
     ///
@@ -94,6 +102,12 @@ impl PutRecordBatchOutputBuilder {
     ) -> Self {
         self.request_responses = input;
         self
+    }
+    /// <p>The results array. For each record, the index of the response element is the same as the index used in the request array.</p>
+    pub fn get_request_responses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PutRecordBatchResponseEntry>> {
+        &self.request_responses
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -87,6 +87,10 @@ impl IdentityProviderDetailsBuilder {
         self.url = input;
         self
     }
+    /// <p>Provides the location of the service endpoint used to authenticate users.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
+    }
     /// <p>This parameter is only applicable if your <code>IdentityProviderType</code> is <code>API_GATEWAY</code>. Provides the type of <code>InvocationRole</code> used to authenticate the user account.</p>
     pub fn invocation_role(
         mut self,
@@ -103,6 +107,10 @@ impl IdentityProviderDetailsBuilder {
         self.invocation_role = input;
         self
     }
+    /// <p>This parameter is only applicable if your <code>IdentityProviderType</code> is <code>API_GATEWAY</code>. Provides the type of <code>InvocationRole</code> used to authenticate the user account.</p>
+    pub fn get_invocation_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.invocation_role
+    }
     /// <p>The identifier of the Directory Service directory that you want to stop sharing.</p>
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
@@ -113,6 +121,10 @@ impl IdentityProviderDetailsBuilder {
         self.directory_id = input;
         self
     }
+    /// <p>The identifier of the Directory Service directory that you want to stop sharing.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
     /// <p>The ARN for a Lambda function to use for the Identity provider.</p>
     pub fn function(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function = ::std::option::Option::Some(input.into());
@@ -122,6 +134,10 @@ impl IdentityProviderDetailsBuilder {
     pub fn set_function(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function = input;
         self
+    }
+    /// <p>The ARN for a Lambda function to use for the Identity provider.</p>
+    pub fn get_function(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function
     }
     /// <p>For SFTP-enabled servers, and for custom identity providers <i>only</i>, you can specify whether to authenticate using a password, SSH key pair, or both.</p>
     /// <ul>
@@ -150,6 +166,18 @@ impl IdentityProviderDetailsBuilder {
     ) -> Self {
         self.sftp_authentication_methods = input;
         self
+    }
+    /// <p>For SFTP-enabled servers, and for custom identity providers <i>only</i>, you can specify whether to authenticate using a password, SSH key pair, or both.</p>
+    /// <ul>
+    /// <li> <p> <code>PASSWORD</code> - users must provide their password to connect.</p> </li>
+    /// <li> <p> <code>PUBLIC_KEY</code> - users must provide their private key to connect.</p> </li>
+    /// <li> <p> <code>PUBLIC_KEY_OR_PASSWORD</code> - users can authenticate with either their password or their key. This is the default value.</p> </li>
+    /// <li> <p> <code>PUBLIC_KEY_AND_PASSWORD</code> - users must provide both their private key and their password to connect. The server checks the key first, and then if the key is valid, the system prompts for a password. If the private key provided does not match the public key that is stored, authentication fails.</p> </li>
+    /// </ul>
+    pub fn get_sftp_authentication_methods(
+        &self,
+    ) -> &::std::option::Option<crate::types::SftpAuthenticationMethods> {
+        &self.sftp_authentication_methods
     }
     /// Consumes the builder and constructs a [`IdentityProviderDetails`](crate::types::IdentityProviderDetails).
     pub fn build(self) -> crate::types::IdentityProviderDetails {

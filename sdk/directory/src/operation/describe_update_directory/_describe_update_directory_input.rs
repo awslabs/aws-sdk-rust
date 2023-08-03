@@ -65,6 +65,10 @@ impl DescribeUpdateDirectoryInputBuilder {
         self.directory_id = input;
         self
     }
+    /// <p> The unique identifier of the directory. </p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
     /// <p> The type of updates you want to describe for the directory. </p>
     pub fn update_type(mut self, input: crate::types::UpdateType) -> Self {
         self.update_type = ::std::option::Option::Some(input);
@@ -78,6 +82,10 @@ impl DescribeUpdateDirectoryInputBuilder {
         self.update_type = input;
         self
     }
+    /// <p> The type of updates you want to describe for the directory. </p>
+    pub fn get_update_type(&self) -> &::std::option::Option<crate::types::UpdateType> {
+        &self.update_type
+    }
     /// <p> The name of the Region. </p>
     pub fn region_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region_name = ::std::option::Option::Some(input.into());
@@ -88,6 +96,10 @@ impl DescribeUpdateDirectoryInputBuilder {
         self.region_name = input;
         self
     }
+    /// <p> The name of the Region. </p>
+    pub fn get_region_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region_name
+    }
     /// <p> The <code>DescribeUpdateDirectoryResult</code>. NextToken value from a previous call to <code>DescribeUpdateDirectory</code>. Pass null if this is the first call. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -97,6 +109,10 @@ impl DescribeUpdateDirectoryInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p> The <code>DescribeUpdateDirectoryResult</code>. NextToken value from a previous call to <code>DescribeUpdateDirectory</code>. Pass null if this is the first call. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeUpdateDirectoryInput`](crate::operation::describe_update_directory::DescribeUpdateDirectoryInput).
     pub fn build(

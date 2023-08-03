@@ -39,6 +39,10 @@ impl PutAppInstanceUserExpirationSettingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutAppInstanceUserExpirationSettings as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_app_instance_user_expiration_settings::builders::PutAppInstanceUserExpirationSettingsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -109,6 +113,10 @@ impl PutAppInstanceUserExpirationSettingsFluentBuilder {
         self.inner = self.inner.set_app_instance_user_arn(input);
         self
     }
+    /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    pub fn get_app_instance_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_instance_user_arn()
+    }
     /// <p>Settings that control the interval after which an <code>AppInstanceUser</code> is automatically deleted.</p>
     pub fn expiration_settings(mut self, input: crate::types::ExpirationSettings) -> Self {
         self.inner = self.inner.expiration_settings(input);
@@ -121,5 +129,11 @@ impl PutAppInstanceUserExpirationSettingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_expiration_settings(input);
         self
+    }
+    /// <p>Settings that control the interval after which an <code>AppInstanceUser</code> is automatically deleted.</p>
+    pub fn get_expiration_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExpirationSettings> {
+        self.inner.get_expiration_settings()
     }
 }

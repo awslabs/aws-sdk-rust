@@ -57,6 +57,12 @@ impl NodeInterfaceBuilder {
         self.inputs = input;
         self
     }
+    /// <p>The node interface's inputs.</p>
+    pub fn get_inputs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeInputPort>> {
+        &self.inputs
+    }
     /// Appends an item to `outputs`.
     ///
     /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
@@ -75,6 +81,12 @@ impl NodeInterfaceBuilder {
     ) -> Self {
         self.outputs = input;
         self
+    }
+    /// <p>The node interface's outputs.</p>
+    pub fn get_outputs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeOutputPort>> {
+        &self.outputs
     }
     /// Consumes the builder and constructs a [`NodeInterface`](crate::types::NodeInterface).
     pub fn build(self) -> crate::types::NodeInterface {

@@ -60,6 +60,12 @@ impl DescribeElasticLoadBalancersOutputBuilder {
         self.elastic_load_balancers = input;
         self
     }
+    /// <p>A list of <code>ElasticLoadBalancer</code> objects that describe the specified Elastic Load Balancing instances.</p>
+    pub fn get_elastic_load_balancers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ElasticLoadBalancer>> {
+        &self.elastic_load_balancers
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

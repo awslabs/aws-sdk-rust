@@ -134,6 +134,10 @@ impl UpdateWaveOutputBuilder {
         self.wave_id = input;
         self
     }
+    /// <p>Wave ID.</p>
+    pub fn get_wave_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.wave_id
+    }
     /// <p>Wave ARN.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -143,6 +147,10 @@ impl UpdateWaveOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>Wave ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>Wave name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -154,6 +162,10 @@ impl UpdateWaveOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>Wave name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Wave description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -164,6 +176,10 @@ impl UpdateWaveOutputBuilder {
         self.description = input;
         self
     }
+    /// <p>Wave description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>Wave archival status.</p>
     pub fn is_archived(mut self, input: bool) -> Self {
         self.is_archived = ::std::option::Option::Some(input);
@@ -173,6 +189,10 @@ impl UpdateWaveOutputBuilder {
     pub fn set_is_archived(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_archived = input;
         self
+    }
+    /// <p>Wave archival status.</p>
+    pub fn get_is_archived(&self) -> &::std::option::Option<bool> {
+        &self.is_archived
     }
     /// <p>Wave aggregated status.</p>
     pub fn wave_aggregated_status(mut self, input: crate::types::WaveAggregatedStatus) -> Self {
@@ -186,6 +206,12 @@ impl UpdateWaveOutputBuilder {
     ) -> Self {
         self.wave_aggregated_status = input;
         self
+    }
+    /// <p>Wave aggregated status.</p>
+    pub fn get_wave_aggregated_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::WaveAggregatedStatus> {
+        &self.wave_aggregated_status
     }
     /// <p>Wave creation dateTime.</p>
     pub fn creation_date_time(
@@ -203,6 +229,10 @@ impl UpdateWaveOutputBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>Wave creation dateTime.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_date_time
+    }
     /// <p>Wave last modified dateTime.</p>
     pub fn last_modified_date_time(
         mut self,
@@ -218,6 +248,10 @@ impl UpdateWaveOutputBuilder {
     ) -> Self {
         self.last_modified_date_time = input;
         self
+    }
+    /// <p>Wave last modified dateTime.</p>
+    pub fn get_last_modified_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_date_time
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -243,6 +277,14 @@ impl UpdateWaveOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Wave tags.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

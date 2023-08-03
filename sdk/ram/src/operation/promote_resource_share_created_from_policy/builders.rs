@@ -39,6 +39,10 @@ impl PromoteResourceShareCreatedFromPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PromoteResourceShareCreatedFromPolicy as a reference.
+    pub fn as_input(&self) -> &crate::operation::promote_resource_share_created_from_policy::builders::PromoteResourceShareCreatedFromPolicyInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -108,5 +112,9 @@ impl PromoteResourceShareCreatedFromPolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_share_arn(input);
         self
+    }
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share to promote.</p>
+    pub fn get_resource_share_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_share_arn()
     }
 }

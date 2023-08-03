@@ -46,6 +46,10 @@ impl GetAwsDefaultServiceQuotaOutputBuilder {
         self.quota = input;
         self
     }
+    /// <p>Information about the quota.</p>
+    pub fn get_quota(&self) -> &::std::option::Option<crate::types::ServiceQuota> {
+        &self.quota
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

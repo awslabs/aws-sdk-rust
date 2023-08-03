@@ -59,6 +59,12 @@ impl AwsCodeBuildProjectEnvironmentRegistryCredentialBuilder {
         self.credential = input;
         self
     }
+    /// <p>The ARN or name of credentials created using Secrets Manager.</p> <note>
+    /// <p>The credential can use the name of the credentials only if they exist in your current Amazon Web Services Region. </p>
+    /// </note>
+    pub fn get_credential(&self) -> &::std::option::Option<::std::string::String> {
+        &self.credential
+    }
     /// <p>The service that created the credentials to access a private Docker registry.</p>
     /// <p>The valid value,<code> SECRETS_MANAGER</code>, is for Secrets Manager.</p>
     pub fn credential_provider(
@@ -76,6 +82,11 @@ impl AwsCodeBuildProjectEnvironmentRegistryCredentialBuilder {
     ) -> Self {
         self.credential_provider = input;
         self
+    }
+    /// <p>The service that created the credentials to access a private Docker registry.</p>
+    /// <p>The valid value,<code> SECRETS_MANAGER</code>, is for Secrets Manager.</p>
+    pub fn get_credential_provider(&self) -> &::std::option::Option<::std::string::String> {
+        &self.credential_provider
     }
     /// Consumes the builder and constructs a [`AwsCodeBuildProjectEnvironmentRegistryCredential`](crate::types::AwsCodeBuildProjectEnvironmentRegistryCredential).
     pub fn build(self) -> crate::types::AwsCodeBuildProjectEnvironmentRegistryCredential {

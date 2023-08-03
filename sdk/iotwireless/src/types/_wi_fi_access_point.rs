@@ -48,6 +48,10 @@ impl WiFiAccessPointBuilder {
         self.mac_address = input;
         self
     }
+    /// <p>Wi-Fi MAC Address.</p>
+    pub fn get_mac_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mac_address
+    }
     /// <p>Received signal strength (dBm) of the WLAN measurement data.</p>
     pub fn rss(mut self, input: i32) -> Self {
         self.rss = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl WiFiAccessPointBuilder {
     pub fn set_rss(mut self, input: ::std::option::Option<i32>) -> Self {
         self.rss = input;
         self
+    }
+    /// <p>Received signal strength (dBm) of the WLAN measurement data.</p>
+    pub fn get_rss(&self) -> &::std::option::Option<i32> {
+        &self.rss
     }
     /// Consumes the builder and constructs a [`WiFiAccessPoint`](crate::types::WiFiAccessPoint).
     pub fn build(self) -> crate::types::WiFiAccessPoint {

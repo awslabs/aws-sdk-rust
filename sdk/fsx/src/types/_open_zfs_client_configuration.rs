@@ -56,6 +56,10 @@ impl OpenZfsClientConfigurationBuilder {
         self.clients = input;
         self
     }
+    /// <p>A value that specifies who can mount the file system. You can provide a wildcard character (<code>*</code>), an IP address (<code>0.0.0.0</code>), or a CIDR address (<code>192.0.2.0/24</code>). By default, Amazon FSx uses the wildcard character when specifying the client. </p>
+    pub fn get_clients(&self) -> &::std::option::Option<::std::string::String> {
+        &self.clients
+    }
     /// Appends an item to `options`.
     ///
     /// To override the contents of this collection use [`set_options`](Self::set_options).
@@ -82,6 +86,14 @@ impl OpenZfsClientConfigurationBuilder {
     ) -> Self {
         self.options = input;
         self
+    }
+    /// <p>The options to use when mounting the file system. For a list of options that you can use with Network File System (NFS), see the <a href="https://linux.die.net/man/5/exports">exports(5) - Linux man page</a>. When choosing your options, consider the following:</p>
+    /// <ul>
+    /// <li> <p> <code>crossmnt</code> is used by default. If you don't specify <code>crossmnt</code> when changing the client configuration, you won't be able to see or access snapshots in your file system's snapshot directory.</p> </li>
+    /// <li> <p> <code>sync</code> is used by default. If you instead specify <code>async</code>, the system acknowledges writes before writing to disk. If the system crashes before the writes are finished, you lose the unwritten data. </p> </li>
+    /// </ul>
+    pub fn get_options(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.options
     }
     /// Consumes the builder and constructs a [`OpenZfsClientConfiguration`](crate::types::OpenZfsClientConfiguration).
     pub fn build(self) -> crate::types::OpenZfsClientConfiguration {

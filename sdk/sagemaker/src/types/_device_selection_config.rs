@@ -67,6 +67,10 @@ impl DeviceSelectionConfigBuilder {
         self.device_subset_type = input;
         self
     }
+    /// <p>Type of device subsets to deploy to the current stage.</p>
+    pub fn get_device_subset_type(&self) -> &::std::option::Option<crate::types::DeviceSubsetType> {
+        &self.device_subset_type
+    }
     /// <p>Percentage of devices in the fleet to deploy to the current stage.</p>
     pub fn percentage(mut self, input: i32) -> Self {
         self.percentage = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl DeviceSelectionConfigBuilder {
     pub fn set_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.percentage = input;
         self
+    }
+    /// <p>Percentage of devices in the fleet to deploy to the current stage.</p>
+    pub fn get_percentage(&self) -> &::std::option::Option<i32> {
+        &self.percentage
     }
     /// Appends an item to `device_names`.
     ///
@@ -96,6 +104,12 @@ impl DeviceSelectionConfigBuilder {
         self.device_names = input;
         self
     }
+    /// <p>List of devices chosen to deploy.</p>
+    pub fn get_device_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.device_names
+    }
     /// <p>A filter to select devices with names containing this name.</p>
     pub fn device_name_contains(
         mut self,
@@ -111,6 +125,10 @@ impl DeviceSelectionConfigBuilder {
     ) -> Self {
         self.device_name_contains = input;
         self
+    }
+    /// <p>A filter to select devices with names containing this name.</p>
+    pub fn get_device_name_contains(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_name_contains
     }
     /// Consumes the builder and constructs a [`DeviceSelectionConfig`](crate::types::DeviceSelectionConfig).
     pub fn build(self) -> crate::types::DeviceSelectionConfig {

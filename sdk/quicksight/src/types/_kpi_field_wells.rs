@@ -65,6 +65,12 @@ impl KpiFieldWellsBuilder {
         self.values = input;
         self
     }
+    /// <p>The value field wells of a KPI visual.</p>
+    pub fn get_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
+        &self.values
+    }
     /// Appends an item to `target_values`.
     ///
     /// To override the contents of this collection use [`set_target_values`](Self::set_target_values).
@@ -84,6 +90,12 @@ impl KpiFieldWellsBuilder {
         self.target_values = input;
         self
     }
+    /// <p>The target value field wells of a KPI visual.</p>
+    pub fn get_target_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
+        &self.target_values
+    }
     /// Appends an item to `trend_groups`.
     ///
     /// To override the contents of this collection use [`set_trend_groups`](Self::set_trend_groups).
@@ -102,6 +114,12 @@ impl KpiFieldWellsBuilder {
     ) -> Self {
         self.trend_groups = input;
         self
+    }
+    /// <p>The trend group field wells of a KPI visual.</p>
+    pub fn get_trend_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+        &self.trend_groups
     }
     /// Consumes the builder and constructs a [`KpiFieldWells`](crate::types::KpiFieldWells).
     pub fn build(self) -> crate::types::KpiFieldWells {

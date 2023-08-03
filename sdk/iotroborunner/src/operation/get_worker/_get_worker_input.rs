@@ -39,6 +39,10 @@ impl GetWorkerInputBuilder {
         self.id = input;
         self
     }
+    /// Full ARN of the worker.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`GetWorkerInput`](crate::operation::get_worker::GetWorkerInput).
     pub fn build(
         self,

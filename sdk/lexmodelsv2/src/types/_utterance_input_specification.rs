@@ -50,6 +50,10 @@ impl UtteranceInputSpecificationBuilder {
         self.text_input = input;
         self
     }
+    /// <p>A text input transcription of the utterance. It is only applicable for test-sets containing text data.</p>
+    pub fn get_text_input(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text_input
+    }
     /// <p>Contains information about the audio input for an utterance.</p>
     pub fn audio_input(mut self, input: crate::types::UtteranceAudioInputSpecification) -> Self {
         self.audio_input = ::std::option::Option::Some(input);
@@ -62,6 +66,12 @@ impl UtteranceInputSpecificationBuilder {
     ) -> Self {
         self.audio_input = input;
         self
+    }
+    /// <p>Contains information about the audio input for an utterance.</p>
+    pub fn get_audio_input(
+        &self,
+    ) -> &::std::option::Option<crate::types::UtteranceAudioInputSpecification> {
+        &self.audio_input
     }
     /// Consumes the builder and constructs a [`UtteranceInputSpecification`](crate::types::UtteranceInputSpecification).
     pub fn build(self) -> crate::types::UtteranceInputSpecification {

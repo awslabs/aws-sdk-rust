@@ -48,6 +48,10 @@ impl TimestampRangeBuilder {
         self.begin_offset_millis = input;
         self
     }
+    /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the category match.</p>
+    pub fn get_begin_offset_millis(&self) -> &::std::option::Option<i64> {
+        &self.begin_offset_millis
+    }
     /// <p>The time, in milliseconds, from the beginning of the audio stream to the end of the category match.</p>
     pub fn end_offset_millis(mut self, input: i64) -> Self {
         self.end_offset_millis = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl TimestampRangeBuilder {
     pub fn set_end_offset_millis(mut self, input: ::std::option::Option<i64>) -> Self {
         self.end_offset_millis = input;
         self
+    }
+    /// <p>The time, in milliseconds, from the beginning of the audio stream to the end of the category match.</p>
+    pub fn get_end_offset_millis(&self) -> &::std::option::Option<i64> {
+        &self.end_offset_millis
     }
     /// Consumes the builder and constructs a [`TimestampRange`](crate::types::TimestampRange).
     pub fn build(self) -> crate::types::TimestampRange {

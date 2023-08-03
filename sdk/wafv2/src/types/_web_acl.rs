@@ -220,6 +220,10 @@ impl WebAclBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A unique identifier for the <code>WebACL</code>. This ID is returned in the responses to create and list commands. You use this ID to do things like get, update, and delete a <code>WebACL</code>.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -230,6 +234,10 @@ impl WebAclBuilder {
         self.id = input;
         self
     }
+    /// <p>A unique identifier for the <code>WebACL</code>. This ID is returned in the responses to create and list commands. You use this ID to do things like get, update, and delete a <code>WebACL</code>.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with the resource.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -239,6 +247,10 @@ impl WebAclBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with the resource.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The action to perform if none of the <code>Rules</code> contained in the <code>WebACL</code> match. </p>
     pub fn default_action(mut self, input: crate::types::DefaultAction) -> Self {
@@ -253,6 +265,10 @@ impl WebAclBuilder {
         self.default_action = input;
         self
     }
+    /// <p>The action to perform if none of the <code>Rules</code> contained in the <code>WebACL</code> match. </p>
+    pub fn get_default_action(&self) -> &::std::option::Option<crate::types::DefaultAction> {
+        &self.default_action
+    }
     /// <p>A description of the web ACL that helps with identification. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -262,6 +278,10 @@ impl WebAclBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the web ACL that helps with identification. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `rules`.
     ///
@@ -282,6 +302,10 @@ impl WebAclBuilder {
         self.rules = input;
         self
     }
+    /// <p>The <code>Rule</code> statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Rule>> {
+        &self.rules
+    }
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
     pub fn visibility_config(mut self, input: crate::types::VisibilityConfig) -> Self {
         self.visibility_config = ::std::option::Option::Some(input);
@@ -295,6 +319,10 @@ impl WebAclBuilder {
         self.visibility_config = input;
         self
     }
+    /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
+    pub fn get_visibility_config(&self) -> &::std::option::Option<crate::types::VisibilityConfig> {
+        &self.visibility_config
+    }
     /// <p>The web ACL capacity units (WCUs) currently being used by this web ACL. </p>
     /// <p>WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF web ACL capacity units (WCU)</a> in the <i>WAF Developer Guide</i>. </p>
     pub fn capacity(mut self, input: i64) -> Self {
@@ -306,6 +334,11 @@ impl WebAclBuilder {
     pub fn set_capacity(mut self, input: ::std::option::Option<i64>) -> Self {
         self.capacity = input;
         self
+    }
+    /// <p>The web ACL capacity units (WCUs) currently being used by this web ACL. </p>
+    /// <p>WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF web ACL capacity units (WCU)</a> in the <i>WAF Developer Guide</i>. </p>
+    pub fn get_capacity(&self) -> &::std::option::Option<i64> {
+        &self.capacity
     }
     /// Appends an item to `pre_process_firewall_manager_rule_groups`.
     ///
@@ -333,6 +366,13 @@ impl WebAclBuilder {
         self.pre_process_firewall_manager_rule_groups = input;
         self
     }
+    /// <p>The first set of rules for WAF to process in the web ACL. This is defined in an Firewall Manager WAF policy and contains only rule group references. You can't alter these. Any rules and rule groups that you define for the web ACL are prioritized after these. </p>
+    /// <p>In the Firewall Manager WAF policy, the Firewall Manager administrator can define a set of rule groups to run first in the web ACL and a set of rule groups to run last. Within each set, the administrator prioritizes the rule groups, to determine their relative processing order.</p>
+    pub fn get_pre_process_firewall_manager_rule_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FirewallManagerRuleGroup>> {
+        &self.pre_process_firewall_manager_rule_groups
+    }
     /// Appends an item to `post_process_firewall_manager_rule_groups`.
     ///
     /// To override the contents of this collection use [`set_post_process_firewall_manager_rule_groups`](Self::set_post_process_firewall_manager_rule_groups).
@@ -359,6 +399,13 @@ impl WebAclBuilder {
         self.post_process_firewall_manager_rule_groups = input;
         self
     }
+    /// <p>The last set of rules for WAF to process in the web ACL. This is defined in an Firewall Manager WAF policy and contains only rule group references. You can't alter these. Any rules and rule groups that you define for the web ACL are prioritized before these. </p>
+    /// <p>In the Firewall Manager WAF policy, the Firewall Manager administrator can define a set of rule groups to run first in the web ACL and a set of rule groups to run last. Within each set, the administrator prioritizes the rule groups, to determine their relative processing order.</p>
+    pub fn get_post_process_firewall_manager_rule_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FirewallManagerRuleGroup>> {
+        &self.post_process_firewall_manager_rule_groups
+    }
     /// <p>Indicates whether this web ACL is managed by Firewall Manager. If true, then only Firewall Manager can delete the web ACL or any Firewall Manager rule groups in the web ACL. </p>
     pub fn managed_by_firewall_manager(mut self, input: bool) -> Self {
         self.managed_by_firewall_manager = ::std::option::Option::Some(input);
@@ -368,6 +415,10 @@ impl WebAclBuilder {
     pub fn set_managed_by_firewall_manager(mut self, input: ::std::option::Option<bool>) -> Self {
         self.managed_by_firewall_manager = input;
         self
+    }
+    /// <p>Indicates whether this web ACL is managed by Firewall Manager. If true, then only Firewall Manager can delete the web ACL or any Firewall Manager rule groups in the web ACL. </p>
+    pub fn get_managed_by_firewall_manager(&self) -> &::std::option::Option<bool> {
+        &self.managed_by_firewall_manager
     }
     /// <p>The label namespace prefix for this web ACL. All labels added by rules in this web ACL have this prefix. </p>
     /// <ul>
@@ -405,6 +456,20 @@ impl WebAclBuilder {
         self.label_namespace = input;
         self
     }
+    /// <p>The label namespace prefix for this web ACL. All labels added by rules in this web ACL have this prefix. </p>
+    /// <ul>
+    /// <li> <p>The syntax for the label namespace prefix for a web ACL is the following: </p> <p> <code>awswaf:
+    /// <account id>
+    /// :webacl:
+    /// <web acl name>
+    /// :
+    /// </web>
+    /// </account></code> </p> </li>
+    /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li>
+    /// </ul>
+    pub fn get_label_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label_namespace
+    }
     /// Adds a key-value pair to `custom_response_bodies`.
     ///
     /// To override the contents of this collection use [`set_custom_response_bodies`](Self::set_custom_response_bodies).
@@ -434,6 +499,16 @@ impl WebAclBuilder {
         self.custom_response_bodies = input;
         self
     }
+    /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the web ACL, and then use them in the rules and default actions that you define in the web ACL. </p>
+    /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
+    /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
+    pub fn get_custom_response_bodies(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::CustomResponseBody>,
+    > {
+        &self.custom_response_bodies
+    }
     /// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules that don't have their own <code>CaptchaConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>CaptchaConfig</code>. </p>
     pub fn captcha_config(mut self, input: crate::types::CaptchaConfig) -> Self {
         self.captcha_config = ::std::option::Option::Some(input);
@@ -447,6 +522,10 @@ impl WebAclBuilder {
         self.captcha_config = input;
         self
     }
+    /// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules that don't have their own <code>CaptchaConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>CaptchaConfig</code>. </p>
+    pub fn get_captcha_config(&self) -> &::std::option::Option<crate::types::CaptchaConfig> {
+        &self.captcha_config
+    }
     /// <p>Specifies how WAF should handle challenge evaluations for rules that don't have their own <code>ChallengeConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>ChallengeConfig</code>. </p>
     pub fn challenge_config(mut self, input: crate::types::ChallengeConfig) -> Self {
         self.challenge_config = ::std::option::Option::Some(input);
@@ -459,6 +538,10 @@ impl WebAclBuilder {
     ) -> Self {
         self.challenge_config = input;
         self
+    }
+    /// <p>Specifies how WAF should handle challenge evaluations for rules that don't have their own <code>ChallengeConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>ChallengeConfig</code>. </p>
+    pub fn get_challenge_config(&self) -> &::std::option::Option<crate::types::ChallengeConfig> {
+        &self.challenge_config
     }
     /// Appends an item to `token_domains`.
     ///
@@ -482,6 +565,12 @@ impl WebAclBuilder {
         self.token_domains = input;
         self
     }
+    /// <p>Specifies the domains that WAF should accept in a web request token. This enables the use of tokens across multiple protected websites. When WAF provides a token, it uses the domain of the Amazon Web Services resource that the web ACL is protecting. If you don't specify a list of token domains, WAF accepts tokens only for the domain of the protected resource. With a token domain list, WAF accepts the resource's host domain plus all domains in the token domain list, including their prefixed subdomains.</p>
+    pub fn get_token_domains(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.token_domains
+    }
     /// <p>Specifies custom configurations for the associations between the web ACL and protected resources. </p>
     /// <p>Use this to customize the maximum size of the request body that your protected CloudFront distributions forward to WAF for inspection. The default is 16 KB (16,384 kilobytes). </p> <note>
     /// <p>You are charged additional fees when your protected resources forward body sizes that are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
@@ -500,6 +589,15 @@ impl WebAclBuilder {
     ) -> Self {
         self.association_config = input;
         self
+    }
+    /// <p>Specifies custom configurations for the associations between the web ACL and protected resources. </p>
+    /// <p>Use this to customize the maximum size of the request body that your protected CloudFront distributions forward to WAF for inspection. The default is 16 KB (16,384 kilobytes). </p> <note>
+    /// <p>You are charged additional fees when your protected resources forward body sizes that are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
+    /// </note>
+    pub fn get_association_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssociationConfig> {
+        &self.association_config
     }
     /// Consumes the builder and constructs a [`WebAcl`](crate::types::WebAcl).
     pub fn build(self) -> crate::types::WebAcl {

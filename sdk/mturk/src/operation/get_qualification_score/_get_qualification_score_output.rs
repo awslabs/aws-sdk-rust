@@ -51,6 +51,10 @@ impl GetQualificationScoreOutputBuilder {
         self.qualification = input;
         self
     }
+    /// <p> The Qualification data structure of the Qualification assigned to a user, including the Qualification type and the value (score). </p>
+    pub fn get_qualification(&self) -> &::std::option::Option<crate::types::Qualification> {
+        &self.qualification
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

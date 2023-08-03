@@ -50,6 +50,10 @@ impl ListDistributionsByWebAclIdOutputBuilder {
         self.distribution_list = input;
         self
     }
+    /// <p>The <code>DistributionList</code> type.</p>
+    pub fn get_distribution_list(&self) -> &::std::option::Option<crate::types::DistributionList> {
+        &self.distribution_list
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

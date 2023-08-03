@@ -58,6 +58,10 @@ impl AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetailsBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the environment variable.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type of environment variable.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetailsBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of environment variable.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p>The value of the environment variable.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -77,6 +85,10 @@ impl AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetailsBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of the environment variable.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails`](crate::types::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails).
     pub fn build(self) -> crate::types::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails {

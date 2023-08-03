@@ -39,6 +39,10 @@ impl DescribeWorkspaceAuthenticationInputBuilder {
         self.workspace_id = input;
         self
     }
+    /// <p>The ID of the workspace to return authentication information about.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
+    }
     /// Consumes the builder and constructs a [`DescribeWorkspaceAuthenticationInput`](crate::operation::describe_workspace_authentication::DescribeWorkspaceAuthenticationInput).
     pub fn build(
         self,

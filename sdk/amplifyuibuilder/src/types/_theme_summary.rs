@@ -64,6 +64,10 @@ impl ThemeSummaryBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The unique ID for the app associated with the theme summary.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
     pub fn environment_name(
         mut self,
@@ -80,6 +84,10 @@ impl ThemeSummaryBuilder {
         self.environment_name = input;
         self
     }
+    /// <p>The name of the backend environment that is part of the Amplify app.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
+    }
     /// <p>The ID of the theme.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -90,6 +98,10 @@ impl ThemeSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the theme.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the theme.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -99,6 +111,10 @@ impl ThemeSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the theme.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`ThemeSummary`](crate::types::ThemeSummary).
     pub fn build(self) -> crate::types::ThemeSummary {

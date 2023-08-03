@@ -50,6 +50,10 @@ impl LambdaResourceBuilder {
         self.lambda_arn = input;
         self
     }
+    /// <p>An Amazon Resource Name (ARN) that represents an Lambda function to be triggered by PUT object actions on the associated local Amazon S3 resource.</p>
+    pub fn get_lambda_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lambda_arn
+    }
     /// Appends an item to `event_triggers`.
     ///
     /// To override the contents of this collection use [`set_event_triggers`](Self::set_event_triggers).
@@ -68,6 +72,12 @@ impl LambdaResourceBuilder {
     ) -> Self {
         self.event_triggers = input;
         self
+    }
+    /// <p>The array of ARNs for <code>S3Resource</code> objects to trigger the <code>LambdaResource</code> objects associated with this job.</p>
+    pub fn get_event_triggers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventTriggerDefinition>> {
+        &self.event_triggers
     }
     /// Consumes the builder and constructs a [`LambdaResource`](crate::types::LambdaResource).
     pub fn build(self) -> crate::types::LambdaResource {

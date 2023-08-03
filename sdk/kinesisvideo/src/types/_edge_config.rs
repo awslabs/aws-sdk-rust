@@ -70,6 +70,10 @@ impl EdgeConfigBuilder {
         self.hub_device_arn = input;
         self
     }
+    /// <p>The "<b>Internet of Things (IoT) Thing</b>" Arn of the stream.</p>
+    pub fn get_hub_device_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hub_device_arn
+    }
     /// <p>The recorder configuration consists of the local <code>MediaSourceConfig</code> details, that are used as credentials to access the local media files streamed on the camera. </p>
     pub fn recorder_config(mut self, input: crate::types::RecorderConfig) -> Self {
         self.recorder_config = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl EdgeConfigBuilder {
     ) -> Self {
         self.recorder_config = input;
         self
+    }
+    /// <p>The recorder configuration consists of the local <code>MediaSourceConfig</code> details, that are used as credentials to access the local media files streamed on the camera. </p>
+    pub fn get_recorder_config(&self) -> &::std::option::Option<crate::types::RecorderConfig> {
+        &self.recorder_config
     }
     /// <p>The uploader configuration contains the <code>ScheduleExpression</code> details that are used to schedule upload jobs for the recorded media files from the Edge Agent to a Kinesis Video Stream.</p>
     pub fn uploader_config(mut self, input: crate::types::UploaderConfig) -> Self {
@@ -96,6 +104,10 @@ impl EdgeConfigBuilder {
         self.uploader_config = input;
         self
     }
+    /// <p>The uploader configuration contains the <code>ScheduleExpression</code> details that are used to schedule upload jobs for the recorded media files from the Edge Agent to a Kinesis Video Stream.</p>
+    pub fn get_uploader_config(&self) -> &::std::option::Option<crate::types::UploaderConfig> {
+        &self.uploader_config
+    }
     /// <p>The deletion configuration is made up of the retention time (<code>EdgeRetentionInHours</code>) and local size configuration (<code>LocalSizeConfig</code>) details that are used to make the deletion.</p>
     pub fn deletion_config(mut self, input: crate::types::DeletionConfig) -> Self {
         self.deletion_config = ::std::option::Option::Some(input);
@@ -108,6 +120,10 @@ impl EdgeConfigBuilder {
     ) -> Self {
         self.deletion_config = input;
         self
+    }
+    /// <p>The deletion configuration is made up of the retention time (<code>EdgeRetentionInHours</code>) and local size configuration (<code>LocalSizeConfig</code>) details that are used to make the deletion.</p>
+    pub fn get_deletion_config(&self) -> &::std::option::Option<crate::types::DeletionConfig> {
+        &self.deletion_config
     }
     /// Consumes the builder and constructs a [`EdgeConfig`](crate::types::EdgeConfig).
     pub fn build(self) -> crate::types::EdgeConfig {

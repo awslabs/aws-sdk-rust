@@ -40,6 +40,10 @@ impl AwsEc2LaunchTemplateDataMonitoringDetailsBuilder {
         self.enabled = input;
         self
     }
+    /// <p> Enables detailed monitoring when <code>true</code> is specified. Otherwise, basic monitoring is enabled. For more information about detailed monitoring, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch-new.html">Enable or turn off detailed monitoring for your instances</a> in the <i>Amazon EC2 User Guide</i>. </p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataMonitoringDetails`](crate::types::AwsEc2LaunchTemplateDataMonitoringDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataMonitoringDetails {
         crate::types::AwsEc2LaunchTemplateDataMonitoringDetails {

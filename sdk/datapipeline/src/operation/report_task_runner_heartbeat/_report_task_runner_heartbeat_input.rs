@@ -62,6 +62,10 @@ impl ReportTaskRunnerHeartbeatInputBuilder {
         self.taskrunner_id = input;
         self
     }
+    /// <p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application. If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>
+    pub fn get_taskrunner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.taskrunner_id
+    }
     /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
     pub fn worker_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.worker_group = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl ReportTaskRunnerHeartbeatInputBuilder {
         self.worker_group = input;
         self
     }
+    /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
+    pub fn get_worker_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.worker_group
+    }
     /// <p>The public DNS name of the task runner.</p>
     pub fn hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hostname = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl ReportTaskRunnerHeartbeatInputBuilder {
     pub fn set_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hostname = input;
         self
+    }
+    /// <p>The public DNS name of the task runner.</p>
+    pub fn get_hostname(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hostname
     }
     /// Consumes the builder and constructs a [`ReportTaskRunnerHeartbeatInput`](crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatInput).
     pub fn build(

@@ -36,6 +36,10 @@ impl RefreshTokenFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RefreshToken as a reference.
+    pub fn as_input(&self) -> &crate::operation::refresh_token::builders::RefreshTokenInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +125,10 @@ impl RefreshTokenFluentBuilder {
         self.inner = self.inner.set_provider(input);
         self
     }
+    /// <p>The third-party provider for the token. The only valid value is <code>figma</code>.</p>
+    pub fn get_provider(&self) -> &::std::option::Option<crate::types::TokenProviders> {
+        self.inner.get_provider()
+    }
     /// <p>Information about the refresh token request.</p>
     pub fn refresh_token_body(mut self, input: crate::types::RefreshTokenRequestBody) -> Self {
         self.inner = self.inner.refresh_token_body(input);
@@ -133,5 +141,11 @@ impl RefreshTokenFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_refresh_token_body(input);
         self
+    }
+    /// <p>Information about the refresh token request.</p>
+    pub fn get_refresh_token_body(
+        &self,
+    ) -> &::std::option::Option<crate::types::RefreshTokenRequestBody> {
+        self.inner.get_refresh_token_body()
     }
 }

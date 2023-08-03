@@ -64,6 +64,10 @@ impl ListStorageLensConfigurationEntryBuilder {
         self.id = input;
         self
     }
+    /// <p>A container for the S3 Storage Lens configuration ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The ARN of the S3 Storage Lens configuration. This property is read-only.</p>
     pub fn storage_lens_arn(
         mut self,
@@ -80,6 +84,10 @@ impl ListStorageLensConfigurationEntryBuilder {
         self.storage_lens_arn = input;
         self
     }
+    /// <p>The ARN of the S3 Storage Lens configuration. This property is read-only.</p>
+    pub fn get_storage_lens_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_lens_arn
+    }
     /// <p>A container for the S3 Storage Lens home Region. Your metrics data is stored and retained in your designated S3 Storage Lens home Region.</p>
     pub fn home_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.home_region = ::std::option::Option::Some(input.into());
@@ -90,6 +98,10 @@ impl ListStorageLensConfigurationEntryBuilder {
         self.home_region = input;
         self
     }
+    /// <p>A container for the S3 Storage Lens home Region. Your metrics data is stored and retained in your designated S3 Storage Lens home Region.</p>
+    pub fn get_home_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.home_region
+    }
     /// <p>A container for whether the S3 Storage Lens configuration is enabled. This property is required.</p>
     pub fn is_enabled(mut self, input: bool) -> Self {
         self.is_enabled = ::std::option::Option::Some(input);
@@ -99,6 +111,10 @@ impl ListStorageLensConfigurationEntryBuilder {
     pub fn set_is_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_enabled = input;
         self
+    }
+    /// <p>A container for whether the S3 Storage Lens configuration is enabled. This property is required.</p>
+    pub fn get_is_enabled(&self) -> &::std::option::Option<bool> {
+        &self.is_enabled
     }
     /// Consumes the builder and constructs a [`ListStorageLensConfigurationEntry`](crate::types::ListStorageLensConfigurationEntry).
     pub fn build(self) -> crate::types::ListStorageLensConfigurationEntry {

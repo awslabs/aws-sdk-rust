@@ -64,6 +64,10 @@ impl DocumentClassifierFilterBuilder {
         self.status = input;
         self
     }
+    /// <p>Filters the list of classifiers based on status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ModelStatus> {
+        &self.status
+    }
     /// <p>The name that you assigned to the document classifier</p>
     pub fn document_classifier_name(
         mut self,
@@ -80,6 +84,10 @@ impl DocumentClassifierFilterBuilder {
         self.document_classifier_name = input;
         self
     }
+    /// <p>The name that you assigned to the document classifier</p>
+    pub fn get_document_classifier_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_classifier_name
+    }
     /// <p>Filters the list of classifiers based on the time that the classifier was submitted for processing. Returns only classifiers submitted before the specified time. Classifiers are returned in ascending order, oldest to newest.</p>
     pub fn submit_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.submit_time_before = ::std::option::Option::Some(input);
@@ -93,6 +101,10 @@ impl DocumentClassifierFilterBuilder {
         self.submit_time_before = input;
         self
     }
+    /// <p>Filters the list of classifiers based on the time that the classifier was submitted for processing. Returns only classifiers submitted before the specified time. Classifiers are returned in ascending order, oldest to newest.</p>
+    pub fn get_submit_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.submit_time_before
+    }
     /// <p>Filters the list of classifiers based on the time that the classifier was submitted for processing. Returns only classifiers submitted after the specified time. Classifiers are returned in descending order, newest to oldest.</p>
     pub fn submit_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.submit_time_after = ::std::option::Option::Some(input);
@@ -105,6 +117,10 @@ impl DocumentClassifierFilterBuilder {
     ) -> Self {
         self.submit_time_after = input;
         self
+    }
+    /// <p>Filters the list of classifiers based on the time that the classifier was submitted for processing. Returns only classifiers submitted after the specified time. Classifiers are returned in descending order, newest to oldest.</p>
+    pub fn get_submit_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.submit_time_after
     }
     /// Consumes the builder and constructs a [`DocumentClassifierFilter`](crate::types::DocumentClassifierFilter).
     pub fn build(self) -> crate::types::DocumentClassifierFilter {

@@ -48,6 +48,10 @@ impl CodeHookBuilder {
         self.uri = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
+    pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uri
+    }
     /// <p>The version of the request-response that you want Amazon Lex to use to invoke your Lambda function. For more information, see <code>using-lambda</code>.</p>
     pub fn message_version(
         mut self,
@@ -63,6 +67,10 @@ impl CodeHookBuilder {
     ) -> Self {
         self.message_version = input;
         self
+    }
+    /// <p>The version of the request-response that you want Amazon Lex to use to invoke your Lambda function. For more information, see <code>using-lambda</code>.</p>
+    pub fn get_message_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_version
     }
     /// Consumes the builder and constructs a [`CodeHook`](crate::types::CodeHook).
     pub fn build(self) -> crate::types::CodeHook {

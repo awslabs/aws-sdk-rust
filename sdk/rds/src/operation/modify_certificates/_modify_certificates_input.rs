@@ -58,6 +58,11 @@ impl ModifyCertificatesInputBuilder {
         self.certificate_identifier = input;
         self
     }
+    /// <p>The new default certificate identifier to override the current one with.</p>
+    /// <p>To determine the valid values, use the <code>describe-certificates</code> CLI command or the <code>DescribeCertificates</code> API operation.</p>
+    pub fn get_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_identifier
+    }
     /// <p>A value that indicates whether to remove the override for the default certificate. If the override is removed, the default certificate is the system default.</p>
     pub fn remove_customer_override(mut self, input: bool) -> Self {
         self.remove_customer_override = ::std::option::Option::Some(input);
@@ -67,6 +72,10 @@ impl ModifyCertificatesInputBuilder {
     pub fn set_remove_customer_override(mut self, input: ::std::option::Option<bool>) -> Self {
         self.remove_customer_override = input;
         self
+    }
+    /// <p>A value that indicates whether to remove the override for the default certificate. If the override is removed, the default certificate is the system default.</p>
+    pub fn get_remove_customer_override(&self) -> &::std::option::Option<bool> {
+        &self.remove_customer_override
     }
     /// Consumes the builder and constructs a [`ModifyCertificatesInput`](crate::operation::modify_certificates::ModifyCertificatesInput).
     pub fn build(

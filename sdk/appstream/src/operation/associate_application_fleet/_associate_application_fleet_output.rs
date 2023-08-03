@@ -56,6 +56,12 @@ impl AssociateApplicationFleetOutputBuilder {
         self.application_fleet_association = input;
         self
     }
+    /// <p>If fleet name is specified, this returns the list of applications that are associated to it. If application ARN is specified, this returns the list of fleets to which it is associated.</p>
+    pub fn get_application_fleet_association(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationFleetAssociation> {
+        &self.application_fleet_association
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

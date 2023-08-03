@@ -62,6 +62,14 @@ impl DeregistrationPolicyBuilder {
         self.delete_resources = input;
         self
     }
+    /// <p>Specifies which Audit Manager data will be deleted when you deregister Audit Manager.</p>
+    /// <ul>
+    /// <li> <p>If you set the value to <code>ALL</code>, all of your data is deleted within seven days of deregistration.</p> </li>
+    /// <li> <p>If you set the value to <code>DEFAULT</code>, none of your data is deleted at the time of deregistration. However, keep in mind that the Audit Manager data retention policy still applies. As a result, any evidence data will be deleted two years after its creation date. Your other Audit Manager resources will continue to exist indefinitely.</p> </li>
+    /// </ul>
+    pub fn get_delete_resources(&self) -> &::std::option::Option<crate::types::DeleteResources> {
+        &self.delete_resources
+    }
     /// Consumes the builder and constructs a [`DeregistrationPolicy`](crate::types::DeregistrationPolicy).
     pub fn build(self) -> crate::types::DeregistrationPolicy {
         crate::types::DeregistrationPolicy {

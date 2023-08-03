@@ -97,6 +97,10 @@ impl UpdateMaintenanceWindowTargetOutputBuilder {
         self.window_id = input;
         self
     }
+    /// <p>The maintenance window ID specified in the update request.</p>
+    pub fn get_window_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.window_id
+    }
     /// <p>The target ID specified in the update request.</p>
     pub fn window_target_id(
         mut self,
@@ -112,6 +116,10 @@ impl UpdateMaintenanceWindowTargetOutputBuilder {
     ) -> Self {
         self.window_target_id = input;
         self
+    }
+    /// <p>The target ID specified in the update request.</p>
+    pub fn get_window_target_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.window_target_id
     }
     /// Appends an item to `targets`.
     ///
@@ -132,6 +140,10 @@ impl UpdateMaintenanceWindowTargetOutputBuilder {
         self.targets = input;
         self
     }
+    /// <p>The updated targets.</p>
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
+        &self.targets
+    }
     /// <p>The updated owner.</p>
     pub fn owner_information(
         mut self,
@@ -148,6 +160,10 @@ impl UpdateMaintenanceWindowTargetOutputBuilder {
         self.owner_information = input;
         self
     }
+    /// <p>The updated owner.</p>
+    pub fn get_owner_information(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_information
+    }
     /// <p>The updated name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -158,6 +174,10 @@ impl UpdateMaintenanceWindowTargetOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The updated name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The updated description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -167,6 +187,10 @@ impl UpdateMaintenanceWindowTargetOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The updated description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

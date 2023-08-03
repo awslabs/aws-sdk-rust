@@ -82,6 +82,10 @@ impl LimitExceededExceptionBuilder {
         self
     }
     /// <p> The Exception Error Message. </p>
+    pub fn get_retry_after_seconds(&self) -> &::std::option::Option<::std::string::String> {
+        &self.retry_after_seconds
+    }
+    /// <p> The Exception Error Message. </p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +94,10 @@ impl LimitExceededExceptionBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p> The Exception Error Message. </p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

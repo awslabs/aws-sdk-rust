@@ -45,6 +45,10 @@ impl GetConnectionInputBuilder {
         self.connection_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of a connection.</p>
+    pub fn get_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_arn
+    }
     /// Consumes the builder and constructs a [`GetConnectionInput`](crate::operation::get_connection::GetConnectionInput).
     pub fn build(
         self,

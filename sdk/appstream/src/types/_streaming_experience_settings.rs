@@ -43,6 +43,12 @@ impl StreamingExperienceSettingsBuilder {
         self.preferred_protocol = input;
         self
     }
+    /// <p>The preferred protocol that you want to use while streaming your application.</p>
+    pub fn get_preferred_protocol(
+        &self,
+    ) -> &::std::option::Option<crate::types::PreferredProtocol> {
+        &self.preferred_protocol
+    }
     /// Consumes the builder and constructs a [`StreamingExperienceSettings`](crate::types::StreamingExperienceSettings).
     pub fn build(self) -> crate::types::StreamingExperienceSettings {
         crate::types::StreamingExperienceSettings {

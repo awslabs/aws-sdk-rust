@@ -72,6 +72,10 @@ impl UpdateComponentTypeOutputBuilder {
         self.workspace_id = input;
         self
     }
+    /// <p>The ID of the workspace that contains the component type.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
+    }
     /// <p>The ARN of the component type.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl UpdateComponentTypeOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The ARN of the component type.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The ID of the component type.</p>
     pub fn component_type_id(
@@ -98,6 +106,10 @@ impl UpdateComponentTypeOutputBuilder {
         self.component_type_id = input;
         self
     }
+    /// <p>The ID of the component type.</p>
+    pub fn get_component_type_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_type_id
+    }
     /// <p>The current state of the component type.</p>
     pub fn state(mut self, input: crate::types::State) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -107,6 +119,10 @@ impl UpdateComponentTypeOutputBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::State>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The current state of the component type.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::State> {
+        &self.state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

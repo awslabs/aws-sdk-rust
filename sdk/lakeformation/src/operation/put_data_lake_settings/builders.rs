@@ -37,6 +37,12 @@ impl PutDataLakeSettingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutDataLakeSettings as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_data_lake_settings::builders::PutDataLakeSettingsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl PutDataLakeSettingsFluentBuilder {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog_id()
+    }
     /// <p>A structure representing a list of Lake Formation principals designated as data lake administrators.</p>
     pub fn data_lake_settings(mut self, input: crate::types::DataLakeSettings) -> Self {
         self.inner = self.inner.data_lake_settings(input);
@@ -139,5 +149,9 @@ impl PutDataLakeSettingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_data_lake_settings(input);
         self
+    }
+    /// <p>A structure representing a list of Lake Formation principals designated as data lake administrators.</p>
+    pub fn get_data_lake_settings(&self) -> &::std::option::Option<crate::types::DataLakeSettings> {
+        self.inner.get_data_lake_settings()
     }
 }

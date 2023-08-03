@@ -48,6 +48,10 @@ impl LocaleBuilder {
         self.country = input;
         self
     }
+    /// <p> The country of the locale. Must be a valid ISO 3166 country code. For example, the code US refers to the United States of America. </p>
+    pub fn get_country(&self) -> &::std::option::Option<::std::string::String> {
+        &self.country
+    }
     /// <p>The state or subdivision of the locale. A valid ISO 3166-2 subdivision code. For example, the code WA refers to the state of Washington.</p>
     pub fn subdivision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subdivision = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl LocaleBuilder {
     pub fn set_subdivision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subdivision = input;
         self
+    }
+    /// <p>The state or subdivision of the locale. A valid ISO 3166-2 subdivision code. For example, the code WA refers to the state of Washington.</p>
+    pub fn get_subdivision(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subdivision
     }
     /// Consumes the builder and constructs a [`Locale`](crate::types::Locale).
     pub fn build(self) -> crate::types::Locale {

@@ -52,6 +52,12 @@ impl ParameterConstraintsBuilder {
         self.allowed_values = input;
         self
     }
+    /// <p>A list of values that are permitted for a parameter.</p>
+    pub fn get_allowed_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.allowed_values
+    }
     /// Consumes the builder and constructs a [`ParameterConstraints`](crate::types::ParameterConstraints).
     pub fn build(self) -> crate::types::ParameterConstraints {
         crate::types::ParameterConstraints {

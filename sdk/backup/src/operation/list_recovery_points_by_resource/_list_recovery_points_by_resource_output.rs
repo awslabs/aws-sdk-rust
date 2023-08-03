@@ -62,6 +62,10 @@ impl ListRecoveryPointsByResourceOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `recovery_points`.
     ///
     /// To override the contents of this collection use [`set_recovery_points`](Self::set_recovery_points).
@@ -84,6 +88,14 @@ impl ListRecoveryPointsByResourceOutputBuilder {
     ) -> Self {
         self.recovery_points = input;
         self
+    }
+    /// <p>An array of objects that contain detailed information about recovery points of the specified resource type.</p> <note>
+    /// <p>Only Amazon EFS and Amazon EC2 recovery points return BackupVaultName.</p>
+    /// </note>
+    pub fn get_recovery_points(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecoveryPointByResource>> {
+        &self.recovery_points
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

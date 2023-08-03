@@ -155,6 +155,10 @@ impl CustomLineItemVersionListElementBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the custom line item.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p> A representation of the charge details of a custom line item. </p>
     pub fn charge_details(mut self, input: crate::types::ListCustomLineItemChargeDetails) -> Self {
         self.charge_details = ::std::option::Option::Some(input);
@@ -167,6 +171,12 @@ impl CustomLineItemVersionListElementBuilder {
     ) -> Self {
         self.charge_details = input;
         self
+    }
+    /// <p> A representation of the charge details of a custom line item. </p>
+    pub fn get_charge_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::ListCustomLineItemChargeDetails> {
+        &self.charge_details
     }
     /// <p>The charge value currency of the custom line item.</p>
     pub fn currency_code(mut self, input: crate::types::CurrencyCode) -> Self {
@@ -181,6 +191,10 @@ impl CustomLineItemVersionListElementBuilder {
         self.currency_code = input;
         self
     }
+    /// <p>The charge value currency of the custom line item.</p>
+    pub fn get_currency_code(&self) -> &::std::option::Option<crate::types::CurrencyCode> {
+        &self.currency_code
+    }
     /// <p>The description of the custom line item.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -191,6 +205,10 @@ impl CustomLineItemVersionListElementBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the custom line item.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The product code that’s associated with the custom line item.</p>
     pub fn product_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_code = ::std::option::Option::Some(input.into());
@@ -200,6 +218,10 @@ impl CustomLineItemVersionListElementBuilder {
     pub fn set_product_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product_code = input;
         self
+    }
+    /// <p>The product code that’s associated with the custom line item.</p>
+    pub fn get_product_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_code
     }
     /// <p>The Amazon Resource Name (ARN) of the billing group that the custom line item applies to.</p>
     pub fn billing_group_arn(
@@ -217,6 +239,10 @@ impl CustomLineItemVersionListElementBuilder {
         self.billing_group_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the billing group that the custom line item applies to.</p>
+    pub fn get_billing_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.billing_group_arn
+    }
     /// <p>The time when the custom line item version was created.</p>
     pub fn creation_time(mut self, input: i64) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -226,6 +252,10 @@ impl CustomLineItemVersionListElementBuilder {
     pub fn set_creation_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time when the custom line item version was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<i64> {
+        &self.creation_time
     }
     /// <p>The most recent time that the custom line item version was modified.</p>
     pub fn last_modified_time(mut self, input: i64) -> Self {
@@ -237,6 +267,10 @@ impl CustomLineItemVersionListElementBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p>The most recent time that the custom line item version was modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<i64> {
+        &self.last_modified_time
+    }
     /// <p>The number of resources that are associated with the custom line item.</p>
     pub fn association_size(mut self, input: i64) -> Self {
         self.association_size = ::std::option::Option::Some(input);
@@ -246,6 +280,10 @@ impl CustomLineItemVersionListElementBuilder {
     pub fn set_association_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.association_size = input;
         self
+    }
+    /// <p>The number of resources that are associated with the custom line item.</p>
+    pub fn get_association_size(&self) -> &::std::option::Option<i64> {
+        &self.association_size
     }
     /// <p>The start billing period of the custom line item version.</p>
     pub fn start_billing_period(
@@ -263,6 +301,10 @@ impl CustomLineItemVersionListElementBuilder {
         self.start_billing_period = input;
         self
     }
+    /// <p>The start billing period of the custom line item version.</p>
+    pub fn get_start_billing_period(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_billing_period
+    }
     /// <p>The end billing period of the custom line item version.</p>
     pub fn end_billing_period(
         mut self,
@@ -279,6 +321,10 @@ impl CustomLineItemVersionListElementBuilder {
         self.end_billing_period = input;
         self
     }
+    /// <p>The end billing period of the custom line item version.</p>
+    pub fn get_end_billing_period(&self) -> &::std::option::Option<::std::string::String> {
+        &self.end_billing_period
+    }
     /// <p> A list of custom line item Amazon Resource Names (ARNs) to retrieve information. </p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -289,6 +335,10 @@ impl CustomLineItemVersionListElementBuilder {
         self.arn = input;
         self
     }
+    /// <p> A list of custom line item Amazon Resource Names (ARNs) to retrieve information. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p> The inclusive start time. </p>
     pub fn start_time(mut self, input: i64) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -298,6 +348,10 @@ impl CustomLineItemVersionListElementBuilder {
     pub fn set_start_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p> The inclusive start time. </p>
+    pub fn get_start_time(&self) -> &::std::option::Option<i64> {
+        &self.start_time
     }
     /// Consumes the builder and constructs a [`CustomLineItemVersionListElement`](crate::types::CustomLineItemVersionListElement).
     pub fn build(self) -> crate::types::CustomLineItemVersionListElement {

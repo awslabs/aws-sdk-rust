@@ -55,6 +55,10 @@ impl DescribeGroupMembershipInputBuilder {
         self.identity_store_id = input;
         self
     }
+    /// <p>The globally unique identifier for the identity store.</p>
+    pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_store_id
+    }
     /// <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
     pub fn membership_id(
         mut self,
@@ -70,6 +74,10 @@ impl DescribeGroupMembershipInputBuilder {
     ) -> Self {
         self.membership_id = input;
         self
+    }
+    /// <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
+    pub fn get_membership_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.membership_id
     }
     /// Consumes the builder and constructs a [`DescribeGroupMembershipInput`](crate::operation::describe_group_membership::DescribeGroupMembershipInput).
     pub fn build(

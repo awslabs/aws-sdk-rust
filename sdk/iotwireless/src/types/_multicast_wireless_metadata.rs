@@ -43,6 +43,10 @@ impl MulticastWirelessMetadataBuilder {
         self.lo_ra_wan = input;
         self
     }
+    /// <p>The metadata information of the LoRaWAN multicast group.</p>
+    pub fn get_lo_ra_wan(&self) -> &::std::option::Option<crate::types::LoRaWanMulticastMetadata> {
+        &self.lo_ra_wan
+    }
     /// Consumes the builder and constructs a [`MulticastWirelessMetadata`](crate::types::MulticastWirelessMetadata).
     pub fn build(self) -> crate::types::MulticastWirelessMetadata {
         crate::types::MulticastWirelessMetadata {

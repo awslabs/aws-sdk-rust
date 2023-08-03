@@ -48,6 +48,10 @@ impl EbsVolumeBuilder {
         self.device = input;
         self
     }
+    /// <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
+    pub fn get_device(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device
+    }
     /// <p>The volume identifier of the EBS volume.</p>
     pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl EbsVolumeBuilder {
     pub fn set_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_id = input;
         self
+    }
+    /// <p>The volume identifier of the EBS volume.</p>
+    pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_id
     }
     /// Consumes the builder and constructs a [`EbsVolume`](crate::types::EbsVolume).
     pub fn build(self) -> crate::types::EbsVolume {

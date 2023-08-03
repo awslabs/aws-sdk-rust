@@ -52,6 +52,10 @@ impl DescribeDevicePolicyConfigurationOutputBuilder {
         self.device_ca_certificate = input;
         self
     }
+    /// <p>The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.</p>
+    pub fn get_device_ca_certificate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_ca_certificate
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

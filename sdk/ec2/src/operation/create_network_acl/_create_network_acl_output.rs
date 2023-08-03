@@ -50,6 +50,10 @@ impl CreateNetworkAclOutputBuilder {
         self.network_acl = input;
         self
     }
+    /// <p>Information about the network ACL.</p>
+    pub fn get_network_acl(&self) -> &::std::option::Option<crate::types::NetworkAcl> {
+        &self.network_acl
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

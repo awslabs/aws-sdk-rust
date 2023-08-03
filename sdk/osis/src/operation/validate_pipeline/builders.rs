@@ -36,6 +36,12 @@ impl ValidatePipelineFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ValidatePipeline as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::validate_pipeline::builders::ValidatePipelineInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl ValidatePipelineFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_pipeline_configuration_body(input);
         self
+    }
+    /// <p>The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with <code>\n</code>.</p>
+    pub fn get_pipeline_configuration_body(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pipeline_configuration_body()
     }
 }

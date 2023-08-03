@@ -56,6 +56,10 @@ impl ArtifactBuilder {
         self.name = input;
         self
     }
+    /// <p>The artifact's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The artifact's revision ID. Depending on the type of object, this could be a commit ID (GitHub) or a revision ID (Amazon S3).</p>
     pub fn revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl ArtifactBuilder {
     pub fn set_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision = input;
         self
+    }
+    /// <p>The artifact's revision ID. Depending on the type of object, this could be a commit ID (GitHub) or a revision ID (Amazon S3).</p>
+    pub fn get_revision(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision
     }
     /// <p>The location of an artifact.</p>
     pub fn location(mut self, input: crate::types::ArtifactLocation) -> Self {
@@ -78,6 +86,10 @@ impl ArtifactBuilder {
     ) -> Self {
         self.location = input;
         self
+    }
+    /// <p>The location of an artifact.</p>
+    pub fn get_location(&self) -> &::std::option::Option<crate::types::ArtifactLocation> {
+        &self.location
     }
     /// Consumes the builder and constructs a [`Artifact`](crate::types::Artifact).
     pub fn build(self) -> crate::types::Artifact {

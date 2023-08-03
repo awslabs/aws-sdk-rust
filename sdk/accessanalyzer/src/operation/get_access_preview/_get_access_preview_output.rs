@@ -50,6 +50,10 @@ impl GetAccessPreviewOutputBuilder {
         self.access_preview = input;
         self
     }
+    /// <p>An object that contains information about the access preview.</p>
+    pub fn get_access_preview(&self) -> &::std::option::Option<crate::types::AccessPreview> {
+        &self.access_preview
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

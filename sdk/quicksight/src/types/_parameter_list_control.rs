@@ -102,6 +102,10 @@ impl ParameterListControlBuilder {
         self.parameter_control_id = input;
         self
     }
+    /// <p>The ID of the <code>ParameterListControl</code>.</p>
+    pub fn get_parameter_control_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_control_id
+    }
     /// <p>The title of the <code>ParameterListControl</code>.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
@@ -111,6 +115,10 @@ impl ParameterListControlBuilder {
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
+    }
+    /// <p>The title of the <code>ParameterListControl</code>.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
     }
     /// <p>The source parameter name of the <code>ParameterListControl</code>.</p>
     pub fn source_parameter_name(
@@ -128,6 +136,10 @@ impl ParameterListControlBuilder {
         self.source_parameter_name = input;
         self
     }
+    /// <p>The source parameter name of the <code>ParameterListControl</code>.</p>
+    pub fn get_source_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_parameter_name
+    }
     /// <p>The display options of a control.</p>
     pub fn display_options(mut self, input: crate::types::ListControlDisplayOptions) -> Self {
         self.display_options = ::std::option::Option::Some(input);
@@ -140,6 +152,12 @@ impl ParameterListControlBuilder {
     ) -> Self {
         self.display_options = input;
         self
+    }
+    /// <p>The display options of a control.</p>
+    pub fn get_display_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::ListControlDisplayOptions> {
+        &self.display_options
     }
     /// <p>The type of <code>ParameterListControl</code>.</p>
     pub fn r#type(mut self, input: crate::types::SheetControlListType) -> Self {
@@ -154,6 +172,10 @@ impl ParameterListControlBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of <code>ParameterListControl</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::SheetControlListType> {
+        &self.r#type
+    }
     /// <p>A list of selectable values that are used in a control.</p>
     pub fn selectable_values(mut self, input: crate::types::ParameterSelectableValues) -> Self {
         self.selectable_values = ::std::option::Option::Some(input);
@@ -166,6 +188,12 @@ impl ParameterListControlBuilder {
     ) -> Self {
         self.selectable_values = input;
         self
+    }
+    /// <p>A list of selectable values that are used in a control.</p>
+    pub fn get_selectable_values(
+        &self,
+    ) -> &::std::option::Option<crate::types::ParameterSelectableValues> {
+        &self.selectable_values
     }
     /// <p>The values that are displayed in a control can be configured to only show values that are valid based on what's selected in other controls.</p>
     pub fn cascading_control_configuration(
@@ -182,6 +210,12 @@ impl ParameterListControlBuilder {
     ) -> Self {
         self.cascading_control_configuration = input;
         self
+    }
+    /// <p>The values that are displayed in a control can be configured to only show values that are valid based on what's selected in other controls.</p>
+    pub fn get_cascading_control_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CascadingControlConfiguration> {
+        &self.cascading_control_configuration
     }
     /// Consumes the builder and constructs a [`ParameterListControl`](crate::types::ParameterListControl).
     pub fn build(self) -> crate::types::ParameterListControl {

@@ -74,6 +74,10 @@ impl RepositoryExternalConnectionInfoBuilder {
         self.external_connection_name = input;
         self
     }
+    /// <p> The name of the external connection associated with a repository. </p>
+    pub fn get_external_connection_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_connection_name
+    }
     /// <p> The package format associated with a repository's external connection. The valid package formats are: </p>
     /// <ul>
     /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
@@ -99,6 +103,16 @@ impl RepositoryExternalConnectionInfoBuilder {
         self.package_format = input;
         self
     }
+    /// <p> The package format associated with a repository's external connection. The valid package formats are: </p>
+    /// <ul>
+    /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
+    /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
+    /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
+    /// <li> <p> <code>nuget</code>: A NuGet package. </p> </li>
+    /// </ul>
+    pub fn get_package_format(&self) -> &::std::option::Option<crate::types::PackageFormat> {
+        &self.package_format
+    }
     /// <p> The status of the external connection of a repository. There is one valid value, <code>Available</code>. </p>
     pub fn status(mut self, input: crate::types::ExternalConnectionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -111,6 +125,10 @@ impl RepositoryExternalConnectionInfoBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p> The status of the external connection of a repository. There is one valid value, <code>Available</code>. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ExternalConnectionStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`RepositoryExternalConnectionInfo`](crate::types::RepositoryExternalConnectionInfo).
     pub fn build(self) -> crate::types::RepositoryExternalConnectionInfo {

@@ -47,6 +47,10 @@ impl ActivateAnomalyDetectorInputBuilder {
         self.anomaly_detector_arn = input;
         self
     }
+    /// <p>The ARN of the anomaly detector.</p>
+    pub fn get_anomaly_detector_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.anomaly_detector_arn
+    }
     /// Consumes the builder and constructs a [`ActivateAnomalyDetectorInput`](crate::operation::activate_anomaly_detector::ActivateAnomalyDetectorInput).
     pub fn build(
         self,

@@ -40,6 +40,10 @@ impl LaunchConfigurationBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the launch configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`LaunchConfiguration`](crate::types::LaunchConfiguration).
     pub fn build(self) -> crate::types::LaunchConfiguration {
         crate::types::LaunchConfiguration { name: self.name }

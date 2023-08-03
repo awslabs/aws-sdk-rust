@@ -86,6 +86,10 @@ impl GetDeviceOutputBuilder {
         self.device_arn = input;
         self
     }
+    /// <p>The ARN of the device.</p>
+    pub fn get_device_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_arn
+    }
     /// <p>The name of the device.</p>
     pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_name = ::std::option::Option::Some(input.into());
@@ -95,6 +99,10 @@ impl GetDeviceOutputBuilder {
     pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_name = input;
         self
+    }
+    /// <p>The name of the device.</p>
+    pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_name
     }
     /// <p>The name of the partner company for the device.</p>
     pub fn provider_name(
@@ -112,6 +120,10 @@ impl GetDeviceOutputBuilder {
         self.provider_name = input;
         self
     }
+    /// <p>The name of the partner company for the device.</p>
+    pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provider_name
+    }
     /// <p>The type of the device.</p>
     pub fn device_type(mut self, input: crate::types::DeviceType) -> Self {
         self.device_type = ::std::option::Option::Some(input);
@@ -125,6 +137,10 @@ impl GetDeviceOutputBuilder {
         self.device_type = input;
         self
     }
+    /// <p>The type of the device.</p>
+    pub fn get_device_type(&self) -> &::std::option::Option<crate::types::DeviceType> {
+        &self.device_type
+    }
     /// <p>The status of the device.</p>
     pub fn device_status(mut self, input: crate::types::DeviceStatus) -> Self {
         self.device_status = ::std::option::Option::Some(input);
@@ -137,6 +153,10 @@ impl GetDeviceOutputBuilder {
     ) -> Self {
         self.device_status = input;
         self
+    }
+    /// <p>The status of the device.</p>
+    pub fn get_device_status(&self) -> &::std::option::Option<crate::types::DeviceStatus> {
+        &self.device_status
     }
     /// <p>Details about the capabilities of the device.</p>
     pub fn device_capabilities(
@@ -153,6 +173,10 @@ impl GetDeviceOutputBuilder {
     ) -> Self {
         self.device_capabilities = input;
         self
+    }
+    /// <p>Details about the capabilities of the device.</p>
+    pub fn get_device_capabilities(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_capabilities
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

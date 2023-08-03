@@ -36,6 +36,10 @@ impl GetTransitGatewayConnectPeerAssociationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetTransitGatewayConnectPeerAssociations as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_transit_gateway_connect_peer_associations::builders::GetTransitGatewayConnectPeerAssociationsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -112,6 +116,10 @@ impl GetTransitGatewayConnectPeerAssociationsFluentBuilder {
         self.inner = self.inner.set_global_network_id(input);
         self
     }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_global_network_id()
+    }
     /// Appends an item to `TransitGatewayConnectPeerArns`.
     ///
     /// To override the contents of this collection use [`set_transit_gateway_connect_peer_arns`](Self::set_transit_gateway_connect_peer_arns).
@@ -132,6 +140,12 @@ impl GetTransitGatewayConnectPeerAssociationsFluentBuilder {
         self.inner = self.inner.set_transit_gateway_connect_peer_arns(input);
         self
     }
+    /// <p>One or more transit gateway Connect peer Amazon Resource Names (ARNs).</p>
+    pub fn get_transit_gateway_connect_peer_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_transit_gateway_connect_peer_arns()
+    }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -142,6 +156,10 @@ impl GetTransitGatewayConnectPeerAssociationsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -151,5 +169,9 @@ impl GetTransitGatewayConnectPeerAssociationsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

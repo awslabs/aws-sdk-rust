@@ -56,6 +56,10 @@ impl ListStudioComponentsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `studio_components`.
     ///
     /// To override the contents of this collection use [`set_studio_components`](Self::set_studio_components).
@@ -74,6 +78,12 @@ impl ListStudioComponentsOutputBuilder {
     ) -> Self {
         self.studio_components = input;
         self
+    }
+    /// <p>A collection of studio components.</p>
+    pub fn get_studio_components(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StudioComponent>> {
+        &self.studio_components
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

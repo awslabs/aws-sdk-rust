@@ -36,6 +36,10 @@ impl DescribeConfigurationOptionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeConfigurationOptions as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_configuration_options::builders::DescribeConfigurationOptionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl DescribeConfigurationOptionsFluentBuilder {
         self.inner = self.inner.set_application_name(input);
         self
     }
+    /// <p>The name of the application associated with the configuration template or environment. Only needed if you want to describe the configuration options associated with either the configuration template or environment.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_name()
+    }
     /// <p>The name of the configuration template whose configuration options you want to describe.</p>
     pub fn template_name(
         mut self,
@@ -147,6 +155,10 @@ impl DescribeConfigurationOptionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
+    }
+    /// <p>The name of the configuration template whose configuration options you want to describe.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_name()
     }
     /// <p>The name of the environment whose configuration options you want to describe.</p>
     pub fn environment_name(
@@ -164,6 +176,10 @@ impl DescribeConfigurationOptionsFluentBuilder {
         self.inner = self.inner.set_environment_name(input);
         self
     }
+    /// <p>The name of the environment whose configuration options you want to describe.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_name()
+    }
     /// <p>The name of the solution stack whose configuration options you want to describe.</p>
     pub fn solution_stack_name(
         mut self,
@@ -180,6 +196,10 @@ impl DescribeConfigurationOptionsFluentBuilder {
         self.inner = self.inner.set_solution_stack_name(input);
         self
     }
+    /// <p>The name of the solution stack whose configuration options you want to describe.</p>
+    pub fn get_solution_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_solution_stack_name()
+    }
     /// <p>The ARN of the custom platform.</p>
     pub fn platform_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.platform_arn(input.into());
@@ -189,6 +209,10 @@ impl DescribeConfigurationOptionsFluentBuilder {
     pub fn set_platform_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_platform_arn(input);
         self
+    }
+    /// <p>The ARN of the custom platform.</p>
+    pub fn get_platform_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_platform_arn()
     }
     /// Appends an item to `Options`.
     ///
@@ -206,5 +230,11 @@ impl DescribeConfigurationOptionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_options(input);
         self
+    }
+    /// <p>If specified, restricts the descriptions to only the specified options.</p>
+    pub fn get_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>> {
+        self.inner.get_options()
     }
 }

@@ -64,6 +64,10 @@ impl SectionBasedLayoutPaperCanvasSizeOptionsBuilder {
         self.paper_size = input;
         self
     }
+    /// <p>The paper size that is used to define canvas dimensions.</p>
+    pub fn get_paper_size(&self) -> &::std::option::Option<crate::types::PaperSize> {
+        &self.paper_size
+    }
     /// <p>The paper orientation that is used to define canvas dimensions. Choose one of the following options:</p>
     /// <ul>
     /// <li> <p>PORTRAIT</p> </li>
@@ -85,6 +89,14 @@ impl SectionBasedLayoutPaperCanvasSizeOptionsBuilder {
         self.paper_orientation = input;
         self
     }
+    /// <p>The paper orientation that is used to define canvas dimensions. Choose one of the following options:</p>
+    /// <ul>
+    /// <li> <p>PORTRAIT</p> </li>
+    /// <li> <p>LANDSCAPE</p> </li>
+    /// </ul>
+    pub fn get_paper_orientation(&self) -> &::std::option::Option<crate::types::PaperOrientation> {
+        &self.paper_orientation
+    }
     /// <p>Defines the spacing between the canvas content and the top, bottom, left, and right edges.</p>
     pub fn paper_margin(mut self, input: crate::types::Spacing) -> Self {
         self.paper_margin = ::std::option::Option::Some(input);
@@ -94,6 +106,10 @@ impl SectionBasedLayoutPaperCanvasSizeOptionsBuilder {
     pub fn set_paper_margin(mut self, input: ::std::option::Option<crate::types::Spacing>) -> Self {
         self.paper_margin = input;
         self
+    }
+    /// <p>Defines the spacing between the canvas content and the top, bottom, left, and right edges.</p>
+    pub fn get_paper_margin(&self) -> &::std::option::Option<crate::types::Spacing> {
+        &self.paper_margin
     }
     /// Consumes the builder and constructs a [`SectionBasedLayoutPaperCanvasSizeOptions`](crate::types::SectionBasedLayoutPaperCanvasSizeOptions).
     pub fn build(self) -> crate::types::SectionBasedLayoutPaperCanvasSizeOptions {

@@ -48,6 +48,10 @@ impl RoleInfoBuilder {
         self.role_name = input;
         self
     }
+    /// <p>The friendly name of the role that is assigned to the user.</p>
+    pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_name
+    }
     /// <p>The identifier of the AWS account assigned to the user.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl RoleInfoBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>The identifier of the AWS account assigned to the user.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// Consumes the builder and constructs a [`RoleInfo`](crate::types::RoleInfo).
     pub fn build(self) -> crate::types::RoleInfo {

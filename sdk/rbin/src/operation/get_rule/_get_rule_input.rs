@@ -39,6 +39,10 @@ impl GetRuleInputBuilder {
         self.identifier = input;
         self
     }
+    /// <p>The unique ID of the retention rule.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
+    }
     /// Consumes the builder and constructs a [`GetRuleInput`](crate::operation::get_rule::GetRuleInput).
     pub fn build(
         self,

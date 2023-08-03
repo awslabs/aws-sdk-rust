@@ -40,6 +40,10 @@ impl AwsCertificateManagerCertificateKeyUsageBuilder {
         self.name = input;
         self
     }
+    /// <p>The key usage extension name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`AwsCertificateManagerCertificateKeyUsage`](crate::types::AwsCertificateManagerCertificateKeyUsage).
     pub fn build(self) -> crate::types::AwsCertificateManagerCertificateKeyUsage {
         crate::types::AwsCertificateManagerCertificateKeyUsage { name: self.name }

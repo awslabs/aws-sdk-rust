@@ -39,6 +39,10 @@ impl DescribeCopyJobInputBuilder {
         self.copy_job_id = input;
         self
     }
+    /// <p>Uniquely identifies a copy job.</p>
+    pub fn get_copy_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.copy_job_id
+    }
     /// Consumes the builder and constructs a [`DescribeCopyJobInput`](crate::operation::describe_copy_job::DescribeCopyJobInput).
     pub fn build(
         self,

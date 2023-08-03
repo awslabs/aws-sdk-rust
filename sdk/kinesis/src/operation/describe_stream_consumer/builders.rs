@@ -37,6 +37,13 @@ impl DescribeStreamConsumerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeStreamConsumer as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_stream_consumer::builders::DescribeStreamConsumerInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl DescribeStreamConsumerFluentBuilder {
         self.inner = self.inner.set_stream_arn(input);
         self
     }
+    /// <p>The ARN of the Kinesis data stream that the consumer is registered with. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_arn()
+    }
     /// <p>The name that you gave to the consumer.</p>
     pub fn consumer_name(
         mut self,
@@ -143,6 +154,10 @@ impl DescribeStreamConsumerFluentBuilder {
         self.inner = self.inner.set_consumer_name(input);
         self
     }
+    /// <p>The name that you gave to the consumer.</p>
+    pub fn get_consumer_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_consumer_name()
+    }
     /// <p>The ARN returned by Kinesis Data Streams when you registered the consumer.</p>
     pub fn consumer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.consumer_arn(input.into());
@@ -152,5 +167,9 @@ impl DescribeStreamConsumerFluentBuilder {
     pub fn set_consumer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_consumer_arn(input);
         self
+    }
+    /// <p>The ARN returned by Kinesis Data Streams when you registered the consumer.</p>
+    pub fn get_consumer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_consumer_arn()
     }
 }

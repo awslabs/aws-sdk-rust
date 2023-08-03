@@ -61,6 +61,12 @@ impl CloudRemovalConfigInputBuilder {
         self.algorithm_name = input;
         self
     }
+    /// <p>The name of the algorithm used for cloud removal.</p>
+    pub fn get_algorithm_name(
+        &self,
+    ) -> &::std::option::Option<crate::types::AlgorithmNameCloudRemoval> {
+        &self.algorithm_name
+    }
     /// <p>The interpolation value you provide for cloud removal.</p>
     pub fn interpolation_value(
         mut self,
@@ -76,6 +82,10 @@ impl CloudRemovalConfigInputBuilder {
     ) -> Self {
         self.interpolation_value = input;
         self
+    }
+    /// <p>The interpolation value you provide for cloud removal.</p>
+    pub fn get_interpolation_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.interpolation_value
     }
     /// Appends an item to `target_bands`.
     ///
@@ -95,6 +105,12 @@ impl CloudRemovalConfigInputBuilder {
     ) -> Self {
         self.target_bands = input;
         self
+    }
+    /// <p>TargetBands to be returned in the output of CloudRemoval operation.</p>
+    pub fn get_target_bands(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.target_bands
     }
     /// Consumes the builder and constructs a [`CloudRemovalConfigInput`](crate::types::CloudRemovalConfigInput).
     pub fn build(self) -> crate::types::CloudRemovalConfigInput {

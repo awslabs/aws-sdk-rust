@@ -58,6 +58,10 @@ impl CapacityAssignmentConfigurationBuilder {
         self.capacity_reservation_name = input;
         self
     }
+    /// <p>The name of the reservation that the capacity assignment configuration is for.</p>
+    pub fn get_capacity_reservation_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.capacity_reservation_name
+    }
     /// Appends an item to `capacity_assignments`.
     ///
     /// To override the contents of this collection use [`set_capacity_assignments`](Self::set_capacity_assignments).
@@ -76,6 +80,12 @@ impl CapacityAssignmentConfigurationBuilder {
     ) -> Self {
         self.capacity_assignments = input;
         self
+    }
+    /// <p>The list of assignments that make up the capacity assignment configuration.</p>
+    pub fn get_capacity_assignments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityAssignment>> {
+        &self.capacity_assignments
     }
     /// Consumes the builder and constructs a [`CapacityAssignmentConfiguration`](crate::types::CapacityAssignmentConfiguration).
     pub fn build(self) -> crate::types::CapacityAssignmentConfiguration {

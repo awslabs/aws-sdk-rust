@@ -72,6 +72,10 @@ impl AddApplicationReferenceDataSourceOutputBuilder {
         self.application_arn = input;
         self
     }
+    /// <p>The application Amazon Resource Name (ARN).</p>
+    pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_arn
+    }
     /// <p>The updated application version ID. Kinesis Data Analytics increments this ID when the application is updated.</p>
     pub fn application_version_id(mut self, input: i64) -> Self {
         self.application_version_id = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl AddApplicationReferenceDataSourceOutputBuilder {
     pub fn set_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.application_version_id = input;
         self
+    }
+    /// <p>The updated application version ID. Kinesis Data Analytics increments this ID when the application is updated.</p>
+    pub fn get_application_version_id(&self) -> &::std::option::Option<i64> {
+        &self.application_version_id
     }
     /// Appends an item to `reference_data_source_descriptions`.
     ///
@@ -103,6 +111,12 @@ impl AddApplicationReferenceDataSourceOutputBuilder {
     ) -> Self {
         self.reference_data_source_descriptions = input;
         self
+    }
+    /// <p>Describes reference data sources configured for the application. </p>
+    pub fn get_reference_data_source_descriptions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSourceDescription>> {
+        &self.reference_data_source_descriptions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

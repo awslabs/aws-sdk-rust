@@ -66,6 +66,12 @@ impl DescribeClusterTracksOutputBuilder {
         self.maintenance_tracks = input;
         self
     }
+    /// <p>A list of maintenance tracks output by the <code>DescribeClusterTracks</code> operation. </p>
+    pub fn get_maintenance_tracks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceTrack>> {
+        &self.maintenance_tracks
+    }
     /// <p>The starting point to return a set of response tracklist records. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -75,6 +81,10 @@ impl DescribeClusterTracksOutputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>The starting point to return a set of response tracklist records. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

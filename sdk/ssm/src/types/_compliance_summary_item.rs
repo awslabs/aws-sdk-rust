@@ -64,6 +64,10 @@ impl ComplianceSummaryItemBuilder {
         self.compliance_type = input;
         self
     }
+    /// <p>The type of compliance item. For example, the compliance type can be Association, Patch, or Custom:string.</p>
+    pub fn get_compliance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.compliance_type
+    }
     /// <p>A list of COMPLIANT items for the specified compliance type.</p>
     pub fn compliant_summary(mut self, input: crate::types::CompliantSummary) -> Self {
         self.compliant_summary = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl ComplianceSummaryItemBuilder {
         self.compliant_summary = input;
         self
     }
+    /// <p>A list of COMPLIANT items for the specified compliance type.</p>
+    pub fn get_compliant_summary(&self) -> &::std::option::Option<crate::types::CompliantSummary> {
+        &self.compliant_summary
+    }
     /// <p>A list of NON_COMPLIANT items for the specified compliance type.</p>
     pub fn non_compliant_summary(mut self, input: crate::types::NonCompliantSummary) -> Self {
         self.non_compliant_summary = ::std::option::Option::Some(input);
@@ -89,6 +97,12 @@ impl ComplianceSummaryItemBuilder {
     ) -> Self {
         self.non_compliant_summary = input;
         self
+    }
+    /// <p>A list of NON_COMPLIANT items for the specified compliance type.</p>
+    pub fn get_non_compliant_summary(
+        &self,
+    ) -> &::std::option::Option<crate::types::NonCompliantSummary> {
+        &self.non_compliant_summary
     }
     /// Consumes the builder and constructs a [`ComplianceSummaryItem`](crate::types::ComplianceSummaryItem).
     pub fn build(self) -> crate::types::ComplianceSummaryItem {

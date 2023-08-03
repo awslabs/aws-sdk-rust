@@ -102,6 +102,10 @@ impl OneDriveConfigurationBuilder {
         self.tenant_domain = input;
         self
     }
+    /// <p>The Azure Active Directory domain of the organization. </p>
+    pub fn get_tenant_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tenant_domain
+    }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the user name and password to connect to OneDrive. The user name should be the application ID for the OneDrive application, and the password is the application key for the OneDrive application.</p>
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_arn = ::std::option::Option::Some(input.into());
@@ -111,6 +115,10 @@ impl OneDriveConfigurationBuilder {
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the user name and password to connect to OneDrive. The user name should be the application ID for the OneDrive application, and the password is the application key for the OneDrive application.</p>
+    pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_arn
     }
     /// <p>A list of user accounts whose documents should be indexed.</p>
     pub fn one_drive_users(mut self, input: crate::types::OneDriveUsers) -> Self {
@@ -124,6 +132,10 @@ impl OneDriveConfigurationBuilder {
     ) -> Self {
         self.one_drive_users = input;
         self
+    }
+    /// <p>A list of user accounts whose documents should be indexed.</p>
+    pub fn get_one_drive_users(&self) -> &::std::option::Option<crate::types::OneDriveUsers> {
+        &self.one_drive_users
     }
     /// Appends an item to `inclusion_patterns`.
     ///
@@ -149,6 +161,13 @@ impl OneDriveConfigurationBuilder {
         self.inclusion_patterns = input;
         self
     }
+    /// <p>A list of regular expression patterns to include certain documents in your OneDrive. Documents that match the patterns are included in the index. Documents that don't match the patterns are excluded from the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the document isn't included in the index.</p>
+    /// <p>The pattern is applied to the file name.</p>
+    pub fn get_inclusion_patterns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inclusion_patterns
+    }
     /// Appends an item to `exclusion_patterns`.
     ///
     /// To override the contents of this collection use [`set_exclusion_patterns`](Self::set_exclusion_patterns).
@@ -173,6 +192,13 @@ impl OneDriveConfigurationBuilder {
         self.exclusion_patterns = input;
         self
     }
+    /// <p>A list of regular expression patterns to exclude certain documents in your OneDrive. Documents that match the patterns are excluded from the index. Documents that don't match the patterns are included in the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the document isn't included in the index.</p>
+    /// <p>The pattern is applied to the file name.</p>
+    pub fn get_exclusion_patterns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.exclusion_patterns
+    }
     /// Appends an item to `field_mappings`.
     ///
     /// To override the contents of this collection use [`set_field_mappings`](Self::set_field_mappings).
@@ -192,6 +218,12 @@ impl OneDriveConfigurationBuilder {
         self.field_mappings = input;
         self
     }
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map OneDrive data source attributes or field names to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to OneDrive fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The OneDrive data source field names must exist in your OneDrive custom metadata.</p>
+    pub fn get_field_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>> {
+        &self.field_mappings
+    }
     /// <p> <code>TRUE</code> to disable local groups information.</p>
     pub fn disable_local_groups(mut self, input: bool) -> Self {
         self.disable_local_groups = ::std::option::Option::Some(input);
@@ -201,6 +233,10 @@ impl OneDriveConfigurationBuilder {
     pub fn set_disable_local_groups(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disable_local_groups = input;
         self
+    }
+    /// <p> <code>TRUE</code> to disable local groups information.</p>
+    pub fn get_disable_local_groups(&self) -> &::std::option::Option<bool> {
+        &self.disable_local_groups
     }
     /// Consumes the builder and constructs a [`OneDriveConfiguration`](crate::types::OneDriveConfiguration).
     pub fn build(self) -> crate::types::OneDriveConfiguration {

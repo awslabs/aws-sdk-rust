@@ -36,6 +36,12 @@ impl DescribeExportTasksFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeExportTasks as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_export_tasks::builders::DescribeExportTasksInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +142,12 @@ impl DescribeExportTasksFluentBuilder {
         self.inner = self.inner.set_export_task_ids(input);
         self
     }
+    /// <p>The export task IDs.</p>
+    pub fn get_export_task_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_export_task_ids()
+    }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -152,5 +164,9 @@ impl DescribeExportTasksFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
+    }
+    /// <p>the filters for the export tasks.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
     }
 }

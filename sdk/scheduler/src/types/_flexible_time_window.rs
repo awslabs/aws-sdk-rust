@@ -51,6 +51,10 @@ impl FlexibleTimeWindowBuilder {
         self.mode = input;
         self
     }
+    /// <p>Determines whether the schedule is invoked within a flexible time window.</p>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::FlexibleTimeWindowMode> {
+        &self.mode
+    }
     /// <p>The maximum time window during which a schedule can be invoked.</p>
     pub fn maximum_window_in_minutes(mut self, input: i32) -> Self {
         self.maximum_window_in_minutes = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl FlexibleTimeWindowBuilder {
     pub fn set_maximum_window_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_window_in_minutes = input;
         self
+    }
+    /// <p>The maximum time window during which a schedule can be invoked.</p>
+    pub fn get_maximum_window_in_minutes(&self) -> &::std::option::Option<i32> {
+        &self.maximum_window_in_minutes
     }
     /// Consumes the builder and constructs a [`FlexibleTimeWindow`](crate::types::FlexibleTimeWindow).
     pub fn build(self) -> crate::types::FlexibleTimeWindow {

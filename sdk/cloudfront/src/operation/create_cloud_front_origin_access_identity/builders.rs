@@ -36,6 +36,10 @@ impl CreateCloudFrontOriginAccessIdentityFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateCloudFrontOriginAccessIdentity as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_cloud_front_origin_access_identity::builders::CreateCloudFrontOriginAccessIdentityInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -107,5 +111,11 @@ impl CreateCloudFrontOriginAccessIdentityFluentBuilder {
             .inner
             .set_cloud_front_origin_access_identity_config(input);
         self
+    }
+    /// <p>The current configuration information for the identity.</p>
+    pub fn get_cloud_front_origin_access_identity_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig> {
+        self.inner.get_cloud_front_origin_access_identity_config()
     }
 }

@@ -157,6 +157,14 @@ impl UpdateProductInputBuilder {
         self.accept_language = input;
         self
     }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accept_language
+    }
     /// <p>The product identifier.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -166,6 +174,10 @@ impl UpdateProductInputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The product identifier.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The updated product name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -177,6 +189,10 @@ impl UpdateProductInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The updated product name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The updated owner of the product.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner = ::std::option::Option::Some(input.into());
@@ -186,6 +202,10 @@ impl UpdateProductInputBuilder {
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner = input;
         self
+    }
+    /// <p>The updated owner of the product.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
     }
     /// <p>The updated description of the product.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -197,6 +217,10 @@ impl UpdateProductInputBuilder {
         self.description = input;
         self
     }
+    /// <p>The updated description of the product.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The updated distributor of the product.</p>
     pub fn distributor(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.distributor = ::std::option::Option::Some(input.into());
@@ -206,6 +230,10 @@ impl UpdateProductInputBuilder {
     pub fn set_distributor(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.distributor = input;
         self
+    }
+    /// <p>The updated distributor of the product.</p>
+    pub fn get_distributor(&self) -> &::std::option::Option<::std::string::String> {
+        &self.distributor
     }
     /// <p>The updated support description for the product.</p>
     pub fn support_description(
@@ -223,6 +251,10 @@ impl UpdateProductInputBuilder {
         self.support_description = input;
         self
     }
+    /// <p>The updated support description for the product.</p>
+    pub fn get_support_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.support_description
+    }
     /// <p>The updated support email for the product.</p>
     pub fn support_email(
         mut self,
@@ -239,6 +271,10 @@ impl UpdateProductInputBuilder {
         self.support_email = input;
         self
     }
+    /// <p>The updated support email for the product.</p>
+    pub fn get_support_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.support_email
+    }
     /// <p>The updated support URL for the product.</p>
     pub fn support_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.support_url = ::std::option::Option::Some(input.into());
@@ -248,6 +284,10 @@ impl UpdateProductInputBuilder {
     pub fn set_support_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.support_url = input;
         self
+    }
+    /// <p>The updated support URL for the product.</p>
+    pub fn get_support_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.support_url
     }
     /// Appends an item to `add_tags`.
     ///
@@ -268,6 +308,10 @@ impl UpdateProductInputBuilder {
         self.add_tags = input;
         self
     }
+    /// <p>The tags to add to the product.</p>
+    pub fn get_add_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.add_tags
+    }
     /// Appends an item to `remove_tags`.
     ///
     /// To override the contents of this collection use [`set_remove_tags`](Self::set_remove_tags).
@@ -286,6 +330,12 @@ impl UpdateProductInputBuilder {
     ) -> Self {
         self.remove_tags = input;
         self
+    }
+    /// <p>The tags to remove from the product.</p>
+    pub fn get_remove_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.remove_tags
     }
     /// <p>Specifies connection details for the updated product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
     /// <ul>
@@ -307,6 +357,14 @@ impl UpdateProductInputBuilder {
     ) -> Self {
         self.source_connection = input;
         self
+    }
+    /// <p>Specifies connection details for the updated product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
+    /// <ul>
+    /// <li> <p> <code>Type</code> </p> </li>
+    /// <li> <p> <code>ConnectionParamters</code> </p> </li>
+    /// </ul>
+    pub fn get_source_connection(&self) -> &::std::option::Option<crate::types::SourceConnection> {
+        &self.source_connection
     }
     /// Consumes the builder and constructs a [`UpdateProductInput`](crate::operation::update_product::UpdateProductInput).
     pub fn build(

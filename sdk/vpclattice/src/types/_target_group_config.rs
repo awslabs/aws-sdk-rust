@@ -82,6 +82,10 @@ impl TargetGroupConfigBuilder {
         self.port = input;
         self
     }
+    /// <p>The port on which the targets are listening. For HTTP, the default is <code>80</code>. For HTTPS, the default is <code>443</code> </p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
+    }
     /// <p>The protocol to use for routing traffic to the targets. Default is the protocol of a target group.</p>
     pub fn protocol(mut self, input: crate::types::TargetGroupProtocol) -> Self {
         self.protocol = ::std::option::Option::Some(input);
@@ -94,6 +98,10 @@ impl TargetGroupConfigBuilder {
     ) -> Self {
         self.protocol = input;
         self
+    }
+    /// <p>The protocol to use for routing traffic to the targets. Default is the protocol of a target group.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::TargetGroupProtocol> {
+        &self.protocol
     }
     /// <p>The protocol version. Default value is <code>HTTP1</code>.</p>
     pub fn protocol_version(mut self, input: crate::types::TargetGroupProtocolVersion) -> Self {
@@ -108,6 +116,12 @@ impl TargetGroupConfigBuilder {
         self.protocol_version = input;
         self
     }
+    /// <p>The protocol version. Default value is <code>HTTP1</code>.</p>
+    pub fn get_protocol_version(
+        &self,
+    ) -> &::std::option::Option<crate::types::TargetGroupProtocolVersion> {
+        &self.protocol_version
+    }
     /// <p>The type of IP address used for the target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
     pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
         self.ip_address_type = ::std::option::Option::Some(input);
@@ -120,6 +134,10 @@ impl TargetGroupConfigBuilder {
     ) -> Self {
         self.ip_address_type = input;
         self
+    }
+    /// <p>The type of IP address used for the target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        &self.ip_address_type
     }
     /// <p>The ID of the VPC.</p>
     pub fn vpc_identifier(
@@ -137,6 +155,10 @@ impl TargetGroupConfigBuilder {
         self.vpc_identifier = input;
         self
     }
+    /// <p>The ID of the VPC.</p>
+    pub fn get_vpc_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_identifier
+    }
     /// <p>The health check configuration.</p>
     pub fn health_check(mut self, input: crate::types::HealthCheckConfig) -> Self {
         self.health_check = ::std::option::Option::Some(input);
@@ -149,6 +171,10 @@ impl TargetGroupConfigBuilder {
     ) -> Self {
         self.health_check = input;
         self
+    }
+    /// <p>The health check configuration.</p>
+    pub fn get_health_check(&self) -> &::std::option::Option<crate::types::HealthCheckConfig> {
+        &self.health_check
     }
     /// Consumes the builder and constructs a [`TargetGroupConfig`](crate::types::TargetGroupConfig).
     pub fn build(self) -> crate::types::TargetGroupConfig {

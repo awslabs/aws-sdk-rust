@@ -43,6 +43,12 @@ impl SendChannelMessageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SendChannelMessage as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::send_channel_message::builders::SendChannelMessageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl SendChannelMessageFluentBuilder {
         self.inner = self.inner.set_channel_arn(input);
         self
     }
+    /// <p>The ARN of the channel.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_arn()
+    }
     /// <p>The content of the message.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.content(input.into());
@@ -142,6 +152,10 @@ impl SendChannelMessageFluentBuilder {
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_content(input);
         self
+    }
+    /// <p>The content of the message.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_content()
     }
     /// <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
     pub fn r#type(mut self, input: crate::types::ChannelMessageType) -> Self {
@@ -156,6 +170,10 @@ impl SendChannelMessageFluentBuilder {
         self.inner = self.inner.set_type(input);
         self
     }
+    /// <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ChannelMessageType> {
+        self.inner.get_type()
+    }
     /// <p>Boolean that controls whether the message is persisted on the back end. Required.</p>
     pub fn persistence(mut self, input: crate::types::ChannelMessagePersistenceType) -> Self {
         self.inner = self.inner.persistence(input);
@@ -169,6 +187,12 @@ impl SendChannelMessageFluentBuilder {
         self.inner = self.inner.set_persistence(input);
         self
     }
+    /// <p>Boolean that controls whether the message is persisted on the back end. Required.</p>
+    pub fn get_persistence(
+        &self,
+    ) -> &::std::option::Option<crate::types::ChannelMessagePersistenceType> {
+        self.inner.get_persistence()
+    }
     /// <p>The optional metadata for each message.</p>
     pub fn metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metadata(input.into());
@@ -178,6 +202,10 @@ impl SendChannelMessageFluentBuilder {
     pub fn set_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_metadata(input);
         self
+    }
+    /// <p>The optional metadata for each message.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_metadata()
     }
     /// <p>The <code>Idempotency</code> token for each client request.</p>
     pub fn client_request_token(
@@ -195,6 +223,10 @@ impl SendChannelMessageFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>The <code>Idempotency</code> token for each client request.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.chime_bearer(input.into());
@@ -204,5 +236,9 @@ impl SendChannelMessageFluentBuilder {
     pub fn set_chime_bearer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_chime_bearer(input);
         self
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_chime_bearer()
     }
 }

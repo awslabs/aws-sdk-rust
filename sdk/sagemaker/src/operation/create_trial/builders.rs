@@ -39,6 +39,10 @@ impl CreateTrialFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateTrial as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_trial::builders::CreateTrialInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +125,10 @@ impl CreateTrialFluentBuilder {
         self.inner = self.inner.set_trial_name(input);
         self
     }
+    /// <p>The name of the trial. The name must be unique in your Amazon Web Services account and is not case-sensitive.</p>
+    pub fn get_trial_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_trial_name()
+    }
     /// <p>The name of the trial as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
@@ -130,6 +138,10 @@ impl CreateTrialFluentBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_display_name(input);
         self
+    }
+    /// <p>The name of the trial as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_display_name()
     }
     /// <p>The name of the experiment to associate the trial with.</p>
     pub fn experiment_name(
@@ -147,6 +159,10 @@ impl CreateTrialFluentBuilder {
         self.inner = self.inner.set_experiment_name(input);
         self
     }
+    /// <p>The name of the experiment to associate the trial with.</p>
+    pub fn get_experiment_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_experiment_name()
+    }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     pub fn metadata_properties(mut self, input: crate::types::MetadataProperties) -> Self {
         self.inner = self.inner.metadata_properties(input);
@@ -159,6 +175,12 @@ impl CreateTrialFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_metadata_properties(input);
         self
+    }
+    /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
+    pub fn get_metadata_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::MetadataProperties> {
+        self.inner.get_metadata_properties()
     }
     /// Appends an item to `Tags`.
     ///
@@ -176,5 +198,9 @@ impl CreateTrialFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of tags to associate with the trial. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

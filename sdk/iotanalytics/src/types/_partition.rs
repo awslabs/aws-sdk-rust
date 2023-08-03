@@ -46,6 +46,10 @@ impl PartitionBuilder {
         self.attribute_name = input;
         self
     }
+    /// <p> The name of the attribute that defines a partition dimension. </p>
+    pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_name
+    }
     /// Consumes the builder and constructs a [`Partition`](crate::types::Partition).
     pub fn build(self) -> crate::types::Partition {
         crate::types::Partition {

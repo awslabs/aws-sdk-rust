@@ -48,6 +48,10 @@ impl SuggestedFixBuilder {
         self.description = input;
         self
     }
+    /// <p>The fix's description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The fix's code.</p>
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl SuggestedFixBuilder {
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code = input;
         self
+    }
+    /// <p>The fix's code.</p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
     }
     /// Consumes the builder and constructs a [`SuggestedFix`](crate::types::SuggestedFix).
     pub fn build(self) -> crate::types::SuggestedFix {

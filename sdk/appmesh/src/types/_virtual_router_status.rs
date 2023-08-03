@@ -43,6 +43,10 @@ impl VirtualRouterStatusBuilder {
         self.status = input;
         self
     }
+    /// <p>The current status of the virtual router.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::VirtualRouterStatusCode> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`VirtualRouterStatus`](crate::types::VirtualRouterStatus).
     pub fn build(self) -> crate::types::VirtualRouterStatus {
         crate::types::VirtualRouterStatus {

@@ -249,6 +249,10 @@ impl AssociateHostedConnectionOutputBuilder {
         self.owner_account = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
+    pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_account
+    }
     /// <p>The ID of the connection.</p>
     pub fn connection_id(
         mut self,
@@ -265,6 +269,10 @@ impl AssociateHostedConnectionOutputBuilder {
         self.connection_id = input;
         self
     }
+    /// <p>The ID of the connection.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_id
+    }
     /// <p>The name of the connection.</p>
     pub fn connection_name(
         mut self,
@@ -280,6 +288,10 @@ impl AssociateHostedConnectionOutputBuilder {
     ) -> Self {
         self.connection_name = input;
         self
+    }
+    /// <p>The name of the connection.</p>
+    pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_name
     }
     /// <p>The state of the connection. The following are the possible values:</p>
     /// <ul>
@@ -316,6 +328,21 @@ impl AssociateHostedConnectionOutputBuilder {
         self.connection_state = input;
         self
     }
+    /// <p>The state of the connection. The following are the possible values:</p>
+    /// <ul>
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
+    /// </ul>
+    pub fn get_connection_state(&self) -> &::std::option::Option<crate::types::ConnectionState> {
+        &self.connection_state
+    }
     /// <p>The Amazon Web Services Region where the connection is located.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -325,6 +352,10 @@ impl AssociateHostedConnectionOutputBuilder {
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
+    }
+    /// <p>The Amazon Web Services Region where the connection is located.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// <p>The location of the connection.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -336,6 +367,10 @@ impl AssociateHostedConnectionOutputBuilder {
         self.location = input;
         self
     }
+    /// <p>The location of the connection.</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
+    }
     /// <p>The bandwidth of the connection.</p>
     pub fn bandwidth(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bandwidth = ::std::option::Option::Some(input.into());
@@ -345,6 +380,10 @@ impl AssociateHostedConnectionOutputBuilder {
     pub fn set_bandwidth(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bandwidth = input;
         self
+    }
+    /// <p>The bandwidth of the connection.</p>
+    pub fn get_bandwidth(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bandwidth
     }
     /// <p>The ID of the VLAN.</p>
     pub fn vlan(mut self, input: i32) -> Self {
@@ -356,6 +395,10 @@ impl AssociateHostedConnectionOutputBuilder {
         self.vlan = input;
         self
     }
+    /// <p>The ID of the VLAN.</p>
+    pub fn get_vlan(&self) -> &::std::option::Option<i32> {
+        &self.vlan
+    }
     /// <p>The name of the Direct Connect service provider associated with the connection.</p>
     pub fn partner_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.partner_name = ::std::option::Option::Some(input.into());
@@ -365,6 +408,10 @@ impl AssociateHostedConnectionOutputBuilder {
     pub fn set_partner_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.partner_name = input;
         self
+    }
+    /// <p>The name of the Direct Connect service provider associated with the connection.</p>
+    pub fn get_partner_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.partner_name
     }
     /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
     pub fn loa_issue_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -379,6 +426,10 @@ impl AssociateHostedConnectionOutputBuilder {
         self.loa_issue_time = input;
         self
     }
+    /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
+    pub fn get_loa_issue_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.loa_issue_time
+    }
     /// <p>The ID of the LAG.</p>
     pub fn lag_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lag_id = ::std::option::Option::Some(input.into());
@@ -388,6 +439,10 @@ impl AssociateHostedConnectionOutputBuilder {
     pub fn set_lag_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lag_id = input;
         self
+    }
+    /// <p>The ID of the LAG.</p>
+    pub fn get_lag_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lag_id
     }
     /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
     pub fn aws_device(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -399,6 +454,10 @@ impl AssociateHostedConnectionOutputBuilder {
         self.aws_device = input;
         self
     }
+    /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+    pub fn get_aws_device(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_device
+    }
     /// <p>Indicates whether jumbo frames are supported.</p>
     pub fn jumbo_frame_capable(mut self, input: bool) -> Self {
         self.jumbo_frame_capable = ::std::option::Option::Some(input);
@@ -408,6 +467,10 @@ impl AssociateHostedConnectionOutputBuilder {
     pub fn set_jumbo_frame_capable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.jumbo_frame_capable = input;
         self
+    }
+    /// <p>Indicates whether jumbo frames are supported.</p>
+    pub fn get_jumbo_frame_capable(&self) -> &::std::option::Option<bool> {
+        &self.jumbo_frame_capable
     }
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub fn aws_device_v2(
@@ -425,6 +488,10 @@ impl AssociateHostedConnectionOutputBuilder {
         self.aws_device_v2 = input;
         self
     }
+    /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
+    pub fn get_aws_device_v2(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_device_v2
+    }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub fn aws_logical_device_id(
         mut self,
@@ -441,6 +508,10 @@ impl AssociateHostedConnectionOutputBuilder {
         self.aws_logical_device_id = input;
         self
     }
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
+    pub fn get_aws_logical_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_logical_device_id
+    }
     /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
     pub fn has_logical_redundancy(mut self, input: crate::types::HasLogicalRedundancy) -> Self {
         self.has_logical_redundancy = ::std::option::Option::Some(input);
@@ -453,6 +524,12 @@ impl AssociateHostedConnectionOutputBuilder {
     ) -> Self {
         self.has_logical_redundancy = input;
         self
+    }
+    /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
+    pub fn get_has_logical_redundancy(
+        &self,
+    ) -> &::std::option::Option<crate::types::HasLogicalRedundancy> {
+        &self.has_logical_redundancy
     }
     /// Appends an item to `tags`.
     ///
@@ -473,6 +550,10 @@ impl AssociateHostedConnectionOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags associated with the connection.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The name of the service provider associated with the connection.</p>
     pub fn provider_name(
         mut self,
@@ -489,6 +570,10 @@ impl AssociateHostedConnectionOutputBuilder {
         self.provider_name = input;
         self
     }
+    /// <p>The name of the service provider associated with the connection.</p>
+    pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provider_name
+    }
     /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
     pub fn mac_sec_capable(mut self, input: bool) -> Self {
         self.mac_sec_capable = ::std::option::Option::Some(input);
@@ -498,6 +583,10 @@ impl AssociateHostedConnectionOutputBuilder {
     pub fn set_mac_sec_capable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.mac_sec_capable = input;
         self
+    }
+    /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
+    pub fn get_mac_sec_capable(&self) -> &::std::option::Option<bool> {
+        &self.mac_sec_capable
     }
     /// <p>The MAC Security (MACsec) port link status of the connection.</p>
     /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
@@ -517,6 +606,11 @@ impl AssociateHostedConnectionOutputBuilder {
         self.port_encryption_status = input;
         self
     }
+    /// <p>The MAC Security (MACsec) port link status of the connection.</p>
+    /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
+    pub fn get_port_encryption_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.port_encryption_status
+    }
     /// <p>The MAC Security (MACsec) connection encryption mode.</p>
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
     pub fn encryption_mode(
@@ -534,6 +628,11 @@ impl AssociateHostedConnectionOutputBuilder {
     ) -> Self {
         self.encryption_mode = input;
         self
+    }
+    /// <p>The MAC Security (MACsec) connection encryption mode.</p>
+    /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
+    pub fn get_encryption_mode(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encryption_mode
     }
     /// Appends an item to `mac_sec_keys`.
     ///
@@ -553,6 +652,12 @@ impl AssociateHostedConnectionOutputBuilder {
     ) -> Self {
         self.mac_sec_keys = input;
         self
+    }
+    /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
+    pub fn get_mac_sec_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>> {
+        &self.mac_sec_keys
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -37,6 +37,13 @@ impl ListDomainConfigurationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListDomainConfigurations as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_domain_configurations::builders::ListDomainConfigurationsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +143,10 @@ impl ListDomainConfigurationsFluentBuilder {
         self.inner = self.inner.set_marker(input);
         self
     }
+    /// <p>The marker for the next set of results.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
+    }
     /// <p>The result page size.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.inner = self.inner.page_size(input);
@@ -145,6 +156,10 @@ impl ListDomainConfigurationsFluentBuilder {
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_page_size(input);
         self
+    }
+    /// <p>The result page size.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        self.inner.get_page_size()
     }
     /// <p>The type of service delivered by the endpoint.</p>
     pub fn service_type(mut self, input: crate::types::ServiceType) -> Self {
@@ -158,5 +173,9 @@ impl ListDomainConfigurationsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_service_type(input);
         self
+    }
+    /// <p>The type of service delivered by the endpoint.</p>
+    pub fn get_service_type(&self) -> &::std::option::Option<crate::types::ServiceType> {
+        self.inner.get_service_type()
     }
 }

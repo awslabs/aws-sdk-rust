@@ -36,6 +36,13 @@ impl CreateWirelessGatewayFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateWirelessGateway as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_wireless_gateway::builders::CreateWirelessGatewayInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl CreateWirelessGatewayFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the new resource.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The description of the new resource.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -135,6 +146,10 @@ impl CreateWirelessGatewayFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the new resource.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The gateway configuration information to use to create the wireless gateway.</p>
     pub fn lo_ra_wan(mut self, input: crate::types::LoRaWanGateway) -> Self {
@@ -148,6 +163,10 @@ impl CreateWirelessGatewayFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_lo_ra_wan(input);
         self
+    }
+    /// <p>The gateway configuration information to use to create the wireless gateway.</p>
+    pub fn get_lo_ra_wan(&self) -> &::std::option::Option<crate::types::LoRaWanGateway> {
+        self.inner.get_lo_ra_wan()
     }
     /// Appends an item to `Tags`.
     ///
@@ -166,6 +185,10 @@ impl CreateWirelessGatewayFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags to attach to the new wireless gateway. Tags are metadata that you can use to manage a resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
     pub fn client_request_token(
         mut self,
@@ -181,5 +204,9 @@ impl CreateWirelessGatewayFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
 }

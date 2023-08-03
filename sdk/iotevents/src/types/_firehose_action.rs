@@ -62,6 +62,10 @@ impl FirehoseActionBuilder {
         self.delivery_stream_name = input;
         self
     }
+    /// <p>The name of the Kinesis Data Firehose delivery stream where the data is written.</p>
+    pub fn get_delivery_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delivery_stream_name
+    }
     /// <p>A character separator that is used to separate records written to the Kinesis Data Firehose delivery stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline), ',' (comma).</p>
     pub fn separator(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.separator = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl FirehoseActionBuilder {
         self.separator = input;
         self
     }
+    /// <p>A character separator that is used to separate records written to the Kinesis Data Firehose delivery stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline), ',' (comma).</p>
+    pub fn get_separator(&self) -> &::std::option::Option<::std::string::String> {
+        &self.separator
+    }
     /// <p>You can configure the action payload when you send a message to an Amazon Kinesis Data Firehose delivery stream.</p>
     pub fn payload(mut self, input: crate::types::Payload) -> Self {
         self.payload = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl FirehoseActionBuilder {
     pub fn set_payload(mut self, input: ::std::option::Option<crate::types::Payload>) -> Self {
         self.payload = input;
         self
+    }
+    /// <p>You can configure the action payload when you send a message to an Amazon Kinesis Data Firehose delivery stream.</p>
+    pub fn get_payload(&self) -> &::std::option::Option<crate::types::Payload> {
+        &self.payload
     }
     /// Consumes the builder and constructs a [`FirehoseAction`](crate::types::FirehoseAction).
     pub fn build(self) -> crate::types::FirehoseAction {

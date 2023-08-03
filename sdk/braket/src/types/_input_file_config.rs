@@ -56,6 +56,10 @@ impl InputFileConfigBuilder {
         self.channel_name = input;
         self
     }
+    /// <p>A named input source that an Amazon Braket job can consume.</p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_name
+    }
     /// <p>The MIME type of the data.</p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl InputFileConfigBuilder {
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
+    }
+    /// <p>The MIME type of the data.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
     }
     /// <p>The location of the channel data.</p>
     pub fn data_source(mut self, input: crate::types::DataSource) -> Self {
@@ -78,6 +86,10 @@ impl InputFileConfigBuilder {
     ) -> Self {
         self.data_source = input;
         self
+    }
+    /// <p>The location of the channel data.</p>
+    pub fn get_data_source(&self) -> &::std::option::Option<crate::types::DataSource> {
+        &self.data_source
     }
     /// Consumes the builder and constructs a [`InputFileConfig`](crate::types::InputFileConfig).
     pub fn build(self) -> crate::types::InputFileConfig {

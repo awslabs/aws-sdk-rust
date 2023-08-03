@@ -72,6 +72,10 @@ impl CanaryRunBuilder {
         self.id = input;
         self
     }
+    /// <p>A unique ID that identifies this canary run.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the canary.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl CanaryRunBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the canary.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The status of this run.</p>
     pub fn status(mut self, input: crate::types::CanaryRunStatus) -> Self {
@@ -95,6 +103,10 @@ impl CanaryRunBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of this run.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CanaryRunStatus> {
+        &self.status
+    }
     /// <p>A structure that contains the start and end times of this run.</p>
     pub fn timeline(mut self, input: crate::types::CanaryRunTimeline) -> Self {
         self.timeline = ::std::option::Option::Some(input);
@@ -107,6 +119,10 @@ impl CanaryRunBuilder {
     ) -> Self {
         self.timeline = input;
         self
+    }
+    /// <p>A structure that contains the start and end times of this run.</p>
+    pub fn get_timeline(&self) -> &::std::option::Option<crate::types::CanaryRunTimeline> {
+        &self.timeline
     }
     /// <p>The location where the canary stored artifacts from the run. Artifacts include the log file, screenshots, and HAR files.</p>
     pub fn artifact_s3_location(
@@ -123,6 +139,10 @@ impl CanaryRunBuilder {
     ) -> Self {
         self.artifact_s3_location = input;
         self
+    }
+    /// <p>The location where the canary stored artifacts from the run. Artifacts include the log file, screenshots, and HAR files.</p>
+    pub fn get_artifact_s3_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.artifact_s3_location
     }
     /// Consumes the builder and constructs a [`CanaryRun`](crate::types::CanaryRun).
     pub fn build(self) -> crate::types::CanaryRun {

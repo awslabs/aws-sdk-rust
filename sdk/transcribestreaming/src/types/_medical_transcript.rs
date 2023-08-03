@@ -50,6 +50,12 @@ impl MedicalTranscriptBuilder {
         self.results = input;
         self
     }
+    /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
+    pub fn get_results(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MedicalResult>> {
+        &self.results
+    }
     /// Consumes the builder and constructs a [`MedicalTranscript`](crate::types::MedicalTranscript).
     pub fn build(self) -> crate::types::MedicalTranscript {
         crate::types::MedicalTranscript {

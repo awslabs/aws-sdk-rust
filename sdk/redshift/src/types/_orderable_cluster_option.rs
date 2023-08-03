@@ -71,6 +71,10 @@ impl OrderableClusterOptionBuilder {
         self.cluster_version = input;
         self
     }
+    /// <p>The version of the orderable cluster.</p>
+    pub fn get_cluster_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_version
+    }
     /// <p>The cluster type, for example <code>multi-node</code>. </p>
     pub fn cluster_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_type = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl OrderableClusterOptionBuilder {
         self.cluster_type = input;
         self
     }
+    /// <p>The cluster type, for example <code>multi-node</code>. </p>
+    pub fn get_cluster_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_type
+    }
     /// <p>The node type for the orderable cluster.</p>
     pub fn node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_type = ::std::option::Option::Some(input.into());
@@ -90,6 +98,10 @@ impl OrderableClusterOptionBuilder {
     pub fn set_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_type = input;
         self
+    }
+    /// <p>The node type for the orderable cluster.</p>
+    pub fn get_node_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_type
     }
     /// Appends an item to `availability_zones`.
     ///
@@ -109,6 +121,12 @@ impl OrderableClusterOptionBuilder {
     ) -> Self {
         self.availability_zones = input;
         self
+    }
+    /// <p>A list of availability zones for the orderable cluster.</p>
+    pub fn get_availability_zones(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>> {
+        &self.availability_zones
     }
     /// Consumes the builder and constructs a [`OrderableClusterOption`](crate::types::OrderableClusterOption).
     pub fn build(self) -> crate::types::OrderableClusterOption {

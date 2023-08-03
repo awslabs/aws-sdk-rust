@@ -63,6 +63,10 @@ impl ProvisionPublicIpv4PoolCidrInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The ID of the IPAM pool you would like to use to allocate this CIDR.</p>
     pub fn ipam_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_pool_id = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl ProvisionPublicIpv4PoolCidrInputBuilder {
     pub fn set_ipam_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipam_pool_id = input;
         self
+    }
+    /// <p>The ID of the IPAM pool you would like to use to allocate this CIDR.</p>
+    pub fn get_ipam_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipam_pool_id
     }
     /// <p>The ID of the public IPv4 pool you would like to use for this CIDR.</p>
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -83,6 +91,10 @@ impl ProvisionPublicIpv4PoolCidrInputBuilder {
         self.pool_id = input;
         self
     }
+    /// <p>The ID of the public IPv4 pool you would like to use for this CIDR.</p>
+    pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pool_id
+    }
     /// <p>The netmask length of the CIDR you would like to allocate to the public IPv4 pool.</p>
     pub fn netmask_length(mut self, input: i32) -> Self {
         self.netmask_length = ::std::option::Option::Some(input);
@@ -92,6 +104,10 @@ impl ProvisionPublicIpv4PoolCidrInputBuilder {
     pub fn set_netmask_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.netmask_length = input;
         self
+    }
+    /// <p>The netmask length of the CIDR you would like to allocate to the public IPv4 pool.</p>
+    pub fn get_netmask_length(&self) -> &::std::option::Option<i32> {
+        &self.netmask_length
     }
     /// Consumes the builder and constructs a [`ProvisionPublicIpv4PoolCidrInput`](crate::operation::provision_public_ipv4_pool_cidr::ProvisionPublicIpv4PoolCidrInput).
     pub fn build(

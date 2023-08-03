@@ -61,6 +61,10 @@ impl ColumnSortBuilder {
         self.sort_by = input;
         self
     }
+    /// <p>A column of a data set.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ColumnIdentifier> {
+        &self.sort_by
+    }
     /// <p>The sort direction.</p>
     pub fn direction(mut self, input: crate::types::SortDirection) -> Self {
         self.direction = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl ColumnSortBuilder {
         self.direction = input;
         self
     }
+    /// <p>The sort direction.</p>
+    pub fn get_direction(&self) -> &::std::option::Option<crate::types::SortDirection> {
+        &self.direction
+    }
     /// <p>The aggregation function that is defined in the column sort.</p>
     pub fn aggregation_function(mut self, input: crate::types::AggregationFunction) -> Self {
         self.aggregation_function = ::std::option::Option::Some(input);
@@ -86,6 +94,12 @@ impl ColumnSortBuilder {
     ) -> Self {
         self.aggregation_function = input;
         self
+    }
+    /// <p>The aggregation function that is defined in the column sort.</p>
+    pub fn get_aggregation_function(
+        &self,
+    ) -> &::std::option::Option<crate::types::AggregationFunction> {
+        &self.aggregation_function
     }
     /// Consumes the builder and constructs a [`ColumnSort`](crate::types::ColumnSort).
     pub fn build(self) -> crate::types::ColumnSort {

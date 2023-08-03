@@ -72,6 +72,13 @@ impl ListEdgeAgentConfigurationsOutputBuilder {
         self.edge_configs = input;
         self
     }
+    /// <p>A description of a single stream's edge configuration.</p>
+    pub fn get_edge_configs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListEdgeAgentConfigurationsEdgeConfig>>
+    {
+        &self.edge_configs
+    }
     /// <p>If the response is truncated, the call returns this element with a given token. To get the next batch of edge configurations, use this token in your next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -81,6 +88,10 @@ impl ListEdgeAgentConfigurationsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the response is truncated, the call returns this element with a given token. To get the next batch of edge configurations, use this token in your next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -86,6 +86,10 @@ impl StartNetworkInsightsAnalysisInputBuilder {
         self.network_insights_path_id = input;
         self
     }
+    /// <p>The ID of the path.</p>
+    pub fn get_network_insights_path_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_insights_path_id
+    }
     /// Appends an item to `additional_accounts`.
     ///
     /// To override the contents of this collection use [`set_additional_accounts`](Self::set_additional_accounts).
@@ -107,6 +111,12 @@ impl StartNetworkInsightsAnalysisInputBuilder {
     ) -> Self {
         self.additional_accounts = input;
         self
+    }
+    /// <p>The member accounts that contain resources that the path can traverse.</p>
+    pub fn get_additional_accounts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.additional_accounts
     }
     /// Appends an item to `filter_in_arns`.
     ///
@@ -130,6 +140,12 @@ impl StartNetworkInsightsAnalysisInputBuilder {
         self.filter_in_arns = input;
         self
     }
+    /// <p>The Amazon Resource Names (ARN) of the resources that the path must traverse.</p>
+    pub fn get_filter_in_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.filter_in_arns
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -139,6 +155,10 @@ impl StartNetworkInsightsAnalysisInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Appends an item to `tag_specifications`.
     ///
@@ -159,6 +179,12 @@ impl StartNetworkInsightsAnalysisInputBuilder {
         self.tag_specifications = input;
         self
     }
+    /// <p>The tags to apply.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -168,6 +194,10 @@ impl StartNetworkInsightsAnalysisInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`StartNetworkInsightsAnalysisInput`](crate::operation::start_network_insights_analysis::StartNetworkInsightsAnalysisInput).
     pub fn build(

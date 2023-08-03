@@ -37,6 +37,13 @@ impl UpdateGameConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateGameConfiguration as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_game_configuration::builders::UpdateGameConfigurationInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl UpdateGameConfigurationFluentBuilder {
         self.inner = self.inner.set_game_name(input);
         self
     }
+    /// <p>The name of the game.</p>
+    pub fn get_game_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_game_name()
+    }
     /// Appends an item to `Modifications`.
     ///
     /// To override the contents of this collection use [`set_modifications`](Self::set_modifications).
@@ -143,5 +154,11 @@ impl UpdateGameConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_modifications(input);
         self
+    }
+    /// <p>The list of modifications to make.</p>
+    pub fn get_modifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SectionModification>> {
+        self.inner.get_modifications()
     }
 }

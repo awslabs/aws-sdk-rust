@@ -36,6 +36,10 @@ impl DeletePortalFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeletePortal as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_portal::builders::DeletePortalInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl DeletePortalFluentBuilder {
         self.inner = self.inner.set_portal_id(input);
         self
     }
+    /// <p>The ID of the portal to delete.</p>
+    pub fn get_portal_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_portal_id()
+    }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -127,5 +135,9 @@ impl DeletePortalFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

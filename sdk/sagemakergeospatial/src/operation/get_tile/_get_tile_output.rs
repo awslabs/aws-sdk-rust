@@ -46,6 +46,12 @@ impl GetTileOutputBuilder {
         self.binary_file = input;
         self
     }
+    /// <p>The output binary file.</p>
+    pub fn get_binary_file(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+        &self.binary_file
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -41,6 +41,12 @@ impl DiscoverInputSchemaFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DiscoverInputSchema as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::discover_input_schema::builders::DiscoverInputSchemaInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +137,10 @@ impl DiscoverInputSchemaFluentBuilder {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the streaming source.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
+    }
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -140,6 +150,10 @@ impl DiscoverInputSchemaFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// <p>Point at which you want Amazon Kinesis Analytics to start reading records from the specified streaming source discovery purposes.</p>
     pub fn input_starting_position_configuration(
@@ -157,6 +171,12 @@ impl DiscoverInputSchemaFluentBuilder {
         self.inner = self.inner.set_input_starting_position_configuration(input);
         self
     }
+    /// <p>Point at which you want Amazon Kinesis Analytics to start reading records from the specified streaming source discovery purposes.</p>
+    pub fn get_input_starting_position_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::InputStartingPositionConfiguration> {
+        self.inner.get_input_starting_position_configuration()
+    }
     /// <p>Specify this parameter to discover a schema from data in an Amazon S3 object.</p>
     pub fn s3_configuration(mut self, input: crate::types::S3Configuration) -> Self {
         self.inner = self.inner.s3_configuration(input);
@@ -169,6 +189,10 @@ impl DiscoverInputSchemaFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_s3_configuration(input);
         self
+    }
+    /// <p>Specify this parameter to discover a schema from data in an Amazon S3 object.</p>
+    pub fn get_s3_configuration(&self) -> &::std::option::Option<crate::types::S3Configuration> {
+        self.inner.get_s3_configuration()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a> to use to preprocess the records before discovering the schema of the records.</p>
     pub fn input_processing_configuration(
@@ -185,5 +209,11 @@ impl DiscoverInputSchemaFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_input_processing_configuration(input);
         self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a> to use to preprocess the records before discovering the schema of the records.</p>
+    pub fn get_input_processing_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::InputProcessingConfiguration> {
+        self.inner.get_input_processing_configuration()
     }
 }

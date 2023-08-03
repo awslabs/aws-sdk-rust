@@ -118,6 +118,10 @@ impl PeeringBuilder {
         self.core_network_id = input;
         self
     }
+    /// <p>The ID of the core network for the peering request.</p>
+    pub fn get_core_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_network_id
+    }
     /// <p>The ARN of a core network.</p>
     pub fn core_network_arn(
         mut self,
@@ -134,6 +138,10 @@ impl PeeringBuilder {
         self.core_network_arn = input;
         self
     }
+    /// <p>The ARN of a core network.</p>
+    pub fn get_core_network_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_network_arn
+    }
     /// <p>The ID of the peering attachment. </p>
     pub fn peering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.peering_id = ::std::option::Option::Some(input.into());
@@ -143,6 +151,10 @@ impl PeeringBuilder {
     pub fn set_peering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.peering_id = input;
         self
+    }
+    /// <p>The ID of the peering attachment. </p>
+    pub fn get_peering_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.peering_id
     }
     /// <p>The ID of the account owner.</p>
     pub fn owner_account_id(
@@ -160,6 +172,10 @@ impl PeeringBuilder {
         self.owner_account_id = input;
         self
     }
+    /// <p>The ID of the account owner.</p>
+    pub fn get_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_account_id
+    }
     /// <p>The type of peering. This will be <code>TRANSIT_GATEWAY</code>.</p>
     pub fn peering_type(mut self, input: crate::types::PeeringType) -> Self {
         self.peering_type = ::std::option::Option::Some(input);
@@ -173,6 +189,10 @@ impl PeeringBuilder {
         self.peering_type = input;
         self
     }
+    /// <p>The type of peering. This will be <code>TRANSIT_GATEWAY</code>.</p>
+    pub fn get_peering_type(&self) -> &::std::option::Option<crate::types::PeeringType> {
+        &self.peering_type
+    }
     /// <p>The current state of the peering connection. </p>
     pub fn state(mut self, input: crate::types::PeeringState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -182,6 +202,10 @@ impl PeeringBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::PeeringState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The current state of the peering connection. </p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::PeeringState> {
+        &self.state
     }
     /// <p>The edge location for the peer.</p>
     pub fn edge_location(
@@ -199,6 +223,10 @@ impl PeeringBuilder {
         self.edge_location = input;
         self
     }
+    /// <p>The edge location for the peer.</p>
+    pub fn get_edge_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.edge_location
+    }
     /// <p>The resource ARN of the peer.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -208,6 +236,10 @@ impl PeeringBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p>The resource ARN of the peer.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// Appends an item to `tags`.
     ///
@@ -228,6 +260,10 @@ impl PeeringBuilder {
         self.tags = input;
         self
     }
+    /// <p>The list of key-value tags associated with the peering.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The timestamp when the attachment peer was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -240,6 +276,10 @@ impl PeeringBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The timestamp when the attachment peer was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// Consumes the builder and constructs a [`Peering`](crate::types::Peering).
     pub fn build(self) -> crate::types::Peering {

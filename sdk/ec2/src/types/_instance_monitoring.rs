@@ -48,6 +48,10 @@ impl InstanceMonitoringBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The ID of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The monitoring for the instance.</p>
     pub fn monitoring(mut self, input: crate::types::Monitoring) -> Self {
         self.monitoring = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl InstanceMonitoringBuilder {
     ) -> Self {
         self.monitoring = input;
         self
+    }
+    /// <p>The monitoring for the instance.</p>
+    pub fn get_monitoring(&self) -> &::std::option::Option<crate::types::Monitoring> {
+        &self.monitoring
     }
     /// Consumes the builder and constructs a [`InstanceMonitoring`](crate::types::InstanceMonitoring).
     pub fn build(self) -> crate::types::InstanceMonitoring {

@@ -48,6 +48,10 @@ impl ExecuteCommandSessionConfigurationBuilder {
         self.command = input;
         self
     }
+    /// <p>The command used at the beginning of the SSH session to a Dev Environment.</p>
+    pub fn get_command(&self) -> &::std::option::Option<::std::string::String> {
+        &self.command
+    }
     /// Appends an item to `arguments`.
     ///
     /// To override the contents of this collection use [`set_arguments`](Self::set_arguments).
@@ -66,6 +70,10 @@ impl ExecuteCommandSessionConfigurationBuilder {
     ) -> Self {
         self.arguments = input;
         self
+    }
+    /// <p>An array of arguments containing arguments and members.</p>
+    pub fn get_arguments(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.arguments
     }
     /// Consumes the builder and constructs a [`ExecuteCommandSessionConfiguration`](crate::types::ExecuteCommandSessionConfiguration).
     pub fn build(self) -> crate::types::ExecuteCommandSessionConfiguration {

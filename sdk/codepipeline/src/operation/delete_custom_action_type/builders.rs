@@ -39,6 +39,13 @@ impl DeleteCustomActionTypeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteCustomActionType as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_custom_action_type::builders::DeleteCustomActionTypeInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl DeleteCustomActionTypeFluentBuilder {
         self.inner = self.inner.set_category(input);
         self
     }
+    /// <p>The category of the custom action that you want to delete, such as source or deploy.</p>
+    pub fn get_category(&self) -> &::std::option::Option<crate::types::ActionCategory> {
+        self.inner.get_category()
+    }
     /// <p>The provider of the service used in the custom action, such as CodeDeploy.</p>
     pub fn provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.provider(input.into());
@@ -142,6 +153,10 @@ impl DeleteCustomActionTypeFluentBuilder {
         self.inner = self.inner.set_provider(input);
         self
     }
+    /// <p>The provider of the service used in the custom action, such as CodeDeploy.</p>
+    pub fn get_provider(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_provider()
+    }
     /// <p>The version of the custom action to delete.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version(input.into());
@@ -151,5 +166,9 @@ impl DeleteCustomActionTypeFluentBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version(input);
         self
+    }
+    /// <p>The version of the custom action to delete.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version()
     }
 }

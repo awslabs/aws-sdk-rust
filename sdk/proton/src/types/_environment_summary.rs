@@ -224,6 +224,10 @@ impl EnvironmentSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the environment.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the environment.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -233,6 +237,10 @@ impl EnvironmentSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the environment.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The time when the environment was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -247,6 +255,10 @@ impl EnvironmentSummaryBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The time when the environment was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The time when a deployment of the environment was last attempted.</p>
     pub fn last_deployment_attempted_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_deployment_attempted_at = ::std::option::Option::Some(input);
@@ -259,6 +271,12 @@ impl EnvironmentSummaryBuilder {
     ) -> Self {
         self.last_deployment_attempted_at = input;
         self
+    }
+    /// <p>The time when a deployment of the environment was last attempted.</p>
+    pub fn get_last_deployment_attempted_at(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_deployment_attempted_at
     }
     /// <p>The time when the environment was last deployed successfully.</p>
     pub fn last_deployment_succeeded_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -273,6 +291,12 @@ impl EnvironmentSummaryBuilder {
         self.last_deployment_succeeded_at = input;
         self
     }
+    /// <p>The time when the environment was last deployed successfully.</p>
+    pub fn get_last_deployment_succeeded_at(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_deployment_succeeded_at
+    }
     /// <p>The Amazon Resource Name (ARN) of the environment.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -282,6 +306,10 @@ impl EnvironmentSummaryBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the environment.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The name of the environment template.</p>
     pub fn template_name(
@@ -299,6 +327,10 @@ impl EnvironmentSummaryBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The name of the environment template.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// <p>The major version of the environment template.</p>
     pub fn template_major_version(
         mut self,
@@ -314,6 +346,10 @@ impl EnvironmentSummaryBuilder {
     ) -> Self {
         self.template_major_version = input;
         self
+    }
+    /// <p>The major version of the environment template.</p>
+    pub fn get_template_major_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_major_version
     }
     /// <p>The minor version of the environment template.</p>
     pub fn template_minor_version(
@@ -331,6 +367,10 @@ impl EnvironmentSummaryBuilder {
         self.template_minor_version = input;
         self
     }
+    /// <p>The minor version of the environment template.</p>
+    pub fn get_template_minor_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_minor_version
+    }
     /// <p>The environment deployment status.</p>
     pub fn deployment_status(mut self, input: crate::types::DeploymentStatus) -> Self {
         self.deployment_status = ::std::option::Option::Some(input);
@@ -343,6 +383,10 @@ impl EnvironmentSummaryBuilder {
     ) -> Self {
         self.deployment_status = input;
         self
+    }
+    /// <p>The environment deployment status.</p>
+    pub fn get_deployment_status(&self) -> &::std::option::Option<crate::types::DeploymentStatus> {
+        &self.deployment_status
     }
     /// <p>An environment deployment status message.</p>
     pub fn deployment_status_message(
@@ -360,6 +404,10 @@ impl EnvironmentSummaryBuilder {
         self.deployment_status_message = input;
         self
     }
+    /// <p>An environment deployment status message.</p>
+    pub fn get_deployment_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_status_message
+    }
     /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf.</p>
     pub fn proton_service_role_arn(
         mut self,
@@ -375,6 +423,10 @@ impl EnvironmentSummaryBuilder {
     ) -> Self {
         self.proton_service_role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf.</p>
+    pub fn get_proton_service_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.proton_service_role_arn
     }
     /// <p>The ID of the environment account connection that the environment is associated with.</p>
     pub fn environment_account_connection_id(
@@ -392,6 +444,12 @@ impl EnvironmentSummaryBuilder {
         self.environment_account_connection_id = input;
         self
     }
+    /// <p>The ID of the environment account connection that the environment is associated with.</p>
+    pub fn get_environment_account_connection_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.environment_account_connection_id
+    }
     /// <p>The ID of the environment account that the environment infrastructure resources are provisioned in.</p>
     pub fn environment_account_id(
         mut self,
@@ -408,6 +466,10 @@ impl EnvironmentSummaryBuilder {
         self.environment_account_id = input;
         self
     }
+    /// <p>The ID of the environment account that the environment infrastructure resources are provisioned in.</p>
+    pub fn get_environment_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_account_id
+    }
     /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
     pub fn provisioning(mut self, input: crate::types::Provisioning) -> Self {
         self.provisioning = ::std::option::Option::Some(input);
@@ -420,6 +482,10 @@ impl EnvironmentSummaryBuilder {
     ) -> Self {
         self.provisioning = input;
         self
+    }
+    /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
+    pub fn get_provisioning(&self) -> &::std::option::Option<crate::types::Provisioning> {
+        &self.provisioning
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
     /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
@@ -441,6 +507,12 @@ impl EnvironmentSummaryBuilder {
         self.component_role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
+    /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
+    pub fn get_component_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_role_arn
+    }
     /// <p>The ID of the last attempted deployment of this environment.</p>
     pub fn last_attempted_deployment_id(
         mut self,
@@ -457,6 +529,12 @@ impl EnvironmentSummaryBuilder {
         self.last_attempted_deployment_id = input;
         self
     }
+    /// <p>The ID of the last attempted deployment of this environment.</p>
+    pub fn get_last_attempted_deployment_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.last_attempted_deployment_id
+    }
     /// <p>The ID of the last successful deployment of this environment.</p>
     pub fn last_succeeded_deployment_id(
         mut self,
@@ -472,6 +550,12 @@ impl EnvironmentSummaryBuilder {
     ) -> Self {
         self.last_succeeded_deployment_id = input;
         self
+    }
+    /// <p>The ID of the last successful deployment of this environment.</p>
+    pub fn get_last_succeeded_deployment_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.last_succeeded_deployment_id
     }
     /// Consumes the builder and constructs a [`EnvironmentSummary`](crate::types::EnvironmentSummary).
     pub fn build(self) -> crate::types::EnvironmentSummary {

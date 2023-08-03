@@ -48,6 +48,10 @@ impl ListMemberAccountsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>(Discontinued) Use this parameter when paginating results. Set the value of this parameter to null on your first call to the <code>ListMemberAccounts</code> action. Subsequent calls to the action fill <code>nextToken</code> in the request with the value of <code>nextToken</code> from the previous response to continue listing data.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>(Discontinued) Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ListMemberAccountsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>(Discontinued) Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListMemberAccountsInput`](crate::operation::list_member_accounts::ListMemberAccountsInput).
     pub fn build(

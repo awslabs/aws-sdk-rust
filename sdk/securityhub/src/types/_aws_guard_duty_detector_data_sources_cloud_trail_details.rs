@@ -41,6 +41,10 @@ impl AwsGuardDutyDetectorDataSourcesCloudTrailDetailsBuilder {
         self.status = input;
         self
     }
+    /// <p> Specifies whether CloudTrail is activated as a data source for the detector. </p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`AwsGuardDutyDetectorDataSourcesCloudTrailDetails`](crate::types::AwsGuardDutyDetectorDataSourcesCloudTrailDetails).
     pub fn build(self) -> crate::types::AwsGuardDutyDetectorDataSourcesCloudTrailDetails {
         crate::types::AwsGuardDutyDetectorDataSourcesCloudTrailDetails {

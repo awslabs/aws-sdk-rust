@@ -54,6 +54,10 @@ impl GetRouteAnalysisInputBuilder {
         self.global_network_id = input;
         self
     }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_network_id
+    }
     /// <p>The ID of the route analysis.</p>
     pub fn route_analysis_id(
         mut self,
@@ -69,6 +73,10 @@ impl GetRouteAnalysisInputBuilder {
     ) -> Self {
         self.route_analysis_id = input;
         self
+    }
+    /// <p>The ID of the route analysis.</p>
+    pub fn get_route_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.route_analysis_id
     }
     /// Consumes the builder and constructs a [`GetRouteAnalysisInput`](crate::operation::get_route_analysis::GetRouteAnalysisInput).
     pub fn build(

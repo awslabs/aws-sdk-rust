@@ -46,6 +46,10 @@ impl GetStaticIpOutputBuilder {
         self.static_ip = input;
         self
     }
+    /// <p>An array of key-value pairs containing information about the requested static IP.</p>
+    pub fn get_static_ip(&self) -> &::std::option::Option<crate::types::StaticIp> {
+        &self.static_ip
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

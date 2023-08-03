@@ -62,6 +62,10 @@ impl PartitionKeyBuilder {
         self.r#type = input;
         self
     }
+    /// <p> The type of the partition key. Options are DIMENSION (dimension key) and MEASURE (measure key). </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::PartitionKeyType> {
+        &self.r#type
+    }
     /// <p> The name of the attribute used for a dimension key. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl PartitionKeyBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p> The name of the attribute used for a dimension key. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p> The level of enforcement for the specification of a dimension key in ingested records. Options are REQUIRED (dimension key must be specified) and OPTIONAL (dimension key does not have to be specified). </p>
     pub fn enforcement_in_record(
@@ -87,6 +95,12 @@ impl PartitionKeyBuilder {
     ) -> Self {
         self.enforcement_in_record = input;
         self
+    }
+    /// <p> The level of enforcement for the specification of a dimension key in ingested records. Options are REQUIRED (dimension key must be specified) and OPTIONAL (dimension key does not have to be specified). </p>
+    pub fn get_enforcement_in_record(
+        &self,
+    ) -> &::std::option::Option<crate::types::PartitionKeyEnforcementLevel> {
+        &self.enforcement_in_record
     }
     /// Consumes the builder and constructs a [`PartitionKey`](crate::types::PartitionKey).
     pub fn build(self) -> crate::types::PartitionKey {

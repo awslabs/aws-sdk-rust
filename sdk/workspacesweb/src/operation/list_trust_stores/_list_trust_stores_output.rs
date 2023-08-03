@@ -65,6 +65,12 @@ impl ListTrustStoresOutputBuilder {
         self.trust_stores = input;
         self
     }
+    /// <p>The trust stores.</p>
+    pub fn get_trust_stores(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TrustStoreSummary>> {
+        &self.trust_stores
+    }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -74,6 +80,10 @@ impl ListTrustStoresOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

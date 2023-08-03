@@ -39,6 +39,10 @@ impl DeleteStackInputBuilder {
         self.stack_id = input;
         self
     }
+    /// <p>The stack ID.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_id
+    }
     /// Consumes the builder and constructs a [`DeleteStackInput`](crate::operation::delete_stack::DeleteStackInput).
     pub fn build(
         self,

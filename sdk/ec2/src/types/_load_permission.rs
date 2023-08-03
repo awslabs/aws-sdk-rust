@@ -48,6 +48,10 @@ impl LoadPermissionBuilder {
         self.user_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
+    }
     /// <p>The name of the group.</p>
     pub fn group(mut self, input: crate::types::PermissionGroup) -> Self {
         self.group = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl LoadPermissionBuilder {
     ) -> Self {
         self.group = input;
         self
+    }
+    /// <p>The name of the group.</p>
+    pub fn get_group(&self) -> &::std::option::Option<crate::types::PermissionGroup> {
+        &self.group
     }
     /// Consumes the builder and constructs a [`LoadPermission`](crate::types::LoadPermission).
     pub fn build(self) -> crate::types::LoadPermission {

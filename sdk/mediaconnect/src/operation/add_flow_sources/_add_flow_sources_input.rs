@@ -48,6 +48,10 @@ impl AddFlowSourcesInputBuilder {
         self.flow_arn = input;
         self
     }
+    /// The flow that you want to mutate.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_arn
+    }
     /// Appends an item to `sources`.
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
@@ -66,6 +70,12 @@ impl AddFlowSourcesInputBuilder {
     ) -> Self {
         self.sources = input;
         self
+    }
+    /// A list of sources that you want to add.
+    pub fn get_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SetSourceRequest>> {
+        &self.sources
     }
     /// Consumes the builder and constructs a [`AddFlowSourcesInput`](crate::operation::add_flow_sources::AddFlowSourcesInput).
     pub fn build(

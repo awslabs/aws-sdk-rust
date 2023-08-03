@@ -45,6 +45,10 @@ impl RejectDataShareInputBuilder {
         self.data_share_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the datashare to reject.</p>
+    pub fn get_data_share_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_share_arn
+    }
     /// Consumes the builder and constructs a [`RejectDataShareInput`](crate::operation::reject_data_share::RejectDataShareInput).
     pub fn build(
         self,

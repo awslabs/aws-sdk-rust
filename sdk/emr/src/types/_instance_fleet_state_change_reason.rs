@@ -53,6 +53,12 @@ impl InstanceFleetStateChangeReasonBuilder {
         self.code = input;
         self
     }
+    /// <p>A code corresponding to the reason the state change occurred.</p>
+    pub fn get_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceFleetStateChangeReasonCode> {
+        &self.code
+    }
     /// <p>An explanatory message.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -62,6 +68,10 @@ impl InstanceFleetStateChangeReasonBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>An explanatory message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`InstanceFleetStateChangeReason`](crate::types::InstanceFleetStateChangeReason).
     pub fn build(self) -> crate::types::InstanceFleetStateChangeReason {

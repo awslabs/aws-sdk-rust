@@ -103,6 +103,16 @@ impl DocumentReaderConfigBuilder {
         self.document_read_action = input;
         self
     }
+    /// <p>This field defines the Amazon Textract API operation that Amazon Comprehend uses to extract text from PDF files and image files. Enter one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>TEXTRACT_DETECT_DOCUMENT_TEXT</code> - The Amazon Comprehend service uses the <code>DetectDocumentText</code> API operation. </p> </li>
+    /// <li> <p> <code>TEXTRACT_ANALYZE_DOCUMENT</code> - The Amazon Comprehend service uses the <code>AnalyzeDocument</code> API operation. </p> </li>
+    /// </ul>
+    pub fn get_document_read_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::DocumentReadAction> {
+        &self.document_read_action
+    }
     /// <p>Determines the text extraction actions for PDF files. Enter one of the following values:</p>
     /// <ul>
     /// <li> <p> <code>SERVICE_DEFAULT</code> - use the Amazon Comprehend service defaults for PDF files.</p> </li>
@@ -123,6 +133,14 @@ impl DocumentReaderConfigBuilder {
     ) -> Self {
         self.document_read_mode = input;
         self
+    }
+    /// <p>Determines the text extraction actions for PDF files. Enter one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>SERVICE_DEFAULT</code> - use the Amazon Comprehend service defaults for PDF files.</p> </li>
+    /// <li> <p> <code>FORCE_DOCUMENT_READ_ACTION</code> - Amazon Comprehend uses the Textract API specified by DocumentReadAction for all PDF files, including digital PDF files. </p> </li>
+    /// </ul>
+    pub fn get_document_read_mode(&self) -> &::std::option::Option<crate::types::DocumentReadMode> {
+        &self.document_read_mode
     }
     /// Appends an item to `feature_types`.
     ///
@@ -150,6 +168,16 @@ impl DocumentReaderConfigBuilder {
     ) -> Self {
         self.feature_types = input;
         self
+    }
+    /// <p>Specifies the type of Amazon Textract features to apply. If you chose <code>TEXTRACT_ANALYZE_DOCUMENT</code> as the read action, you must specify one or both of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>TABLES</code> - Returns information about any tables that are detected in the input document. </p> </li>
+    /// <li> <p> <code>FORMS</code> - Returns information and the data from any forms that are detected in the input document. </p> </li>
+    /// </ul>
+    pub fn get_feature_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentReadFeatureTypes>> {
+        &self.feature_types
     }
     /// Consumes the builder and constructs a [`DocumentReaderConfig`](crate::types::DocumentReaderConfig).
     pub fn build(self) -> crate::types::DocumentReaderConfig {

@@ -58,6 +58,10 @@ impl ListReferenceStoresOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A pagination token that's included if more results are available.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `reference_stores`.
     ///
     /// To override the contents of this collection use [`set_reference_stores`](Self::set_reference_stores).
@@ -76,6 +80,12 @@ impl ListReferenceStoresOutputBuilder {
     ) -> Self {
         self.reference_stores = input;
         self
+    }
+    /// <p>A list of reference stores.</p>
+    pub fn get_reference_stores(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReferenceStoreDetail>> {
+        &self.reference_stores
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

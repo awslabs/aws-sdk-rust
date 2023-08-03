@@ -48,6 +48,10 @@ impl UpdateSmbLocalGroupsInputBuilder {
         self.gateway_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
+    }
     /// <p>A list of Active Directory users and groups that you want to grant special permissions for SMB file shares on the gateway.</p>
     pub fn smb_local_groups(mut self, input: crate::types::SmbLocalGroups) -> Self {
         self.smb_local_groups = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl UpdateSmbLocalGroupsInputBuilder {
     ) -> Self {
         self.smb_local_groups = input;
         self
+    }
+    /// <p>A list of Active Directory users and groups that you want to grant special permissions for SMB file shares on the gateway.</p>
+    pub fn get_smb_local_groups(&self) -> &::std::option::Option<crate::types::SmbLocalGroups> {
+        &self.smb_local_groups
     }
     /// Consumes the builder and constructs a [`UpdateSmbLocalGroupsInput`](crate::operation::update_smb_local_groups::UpdateSmbLocalGroupsInput).
     pub fn build(

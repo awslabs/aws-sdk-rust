@@ -97,6 +97,18 @@ impl DescribeOutboundCrossClusterSearchConnectionsInputBuilder {
         self.filters = input;
         self
     }
+    /// <p> A list of filters used to match properties for outbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are: </p>
+    /// <ul>
+    /// <li>cross-cluster-search-connection-id</li>
+    /// <li>destination-domain-info.domain-name</li>
+    /// <li>destination-domain-info.owner-id</li>
+    /// <li>destination-domain-info.region</li>
+    /// <li>source-domain-info.domain-name</li>
+    /// </ul>
+    /// <p></p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
+    }
     /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -107,6 +119,10 @@ impl DescribeOutboundCrossClusterSearchConnectionsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p> NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -116,6 +132,10 @@ impl DescribeOutboundCrossClusterSearchConnectionsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p> NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeOutboundCrossClusterSearchConnectionsInput`](crate::operation::describe_outbound_cross_cluster_search_connections::DescribeOutboundCrossClusterSearchConnectionsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_outbound_cross_cluster_search_connections::DescribeOutboundCrossClusterSearchConnectionsInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -36,6 +36,13 @@ impl GetApplicationRevisionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetApplicationRevision as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_application_revision::builders::GetApplicationRevisionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl GetApplicationRevisionFluentBuilder {
         self.inner = self.inner.set_application_name(input);
         self
     }
+    /// <p>The name of the application that corresponds to the revision.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_name()
+    }
     /// <p>Information about the application revision to get, including type and location.</p>
     pub fn revision(mut self, input: crate::types::RevisionLocation) -> Self {
         self.inner = self.inner.revision(input);
@@ -144,5 +155,9 @@ impl GetApplicationRevisionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_revision(input);
         self
+    }
+    /// <p>Information about the application revision to get, including type and location.</p>
+    pub fn get_revision(&self) -> &::std::option::Option<crate::types::RevisionLocation> {
+        self.inner.get_revision()
     }
 }

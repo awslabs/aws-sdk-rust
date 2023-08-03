@@ -46,6 +46,10 @@ impl UpdateMeshOutputBuilder {
         self.mesh = input;
         self
     }
+    /// <p>An object that represents a service mesh returned by a describe operation.</p>
+    pub fn get_mesh(&self) -> &::std::option::Option<crate::types::MeshData> {
+        &self.mesh
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

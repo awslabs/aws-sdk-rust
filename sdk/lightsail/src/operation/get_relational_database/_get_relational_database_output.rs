@@ -51,6 +51,12 @@ impl GetRelationalDatabaseOutputBuilder {
         self.relational_database = input;
         self
     }
+    /// <p>An object describing the specified database.</p>
+    pub fn get_relational_database(
+        &self,
+    ) -> &::std::option::Option<crate::types::RelationalDatabase> {
+        &self.relational_database
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

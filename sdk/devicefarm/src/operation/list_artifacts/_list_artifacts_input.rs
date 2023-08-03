@@ -68,6 +68,10 @@ impl ListArtifactsInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The run, job, suite, or test ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The artifacts' type.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
@@ -93,6 +97,16 @@ impl ListArtifactsInputBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The artifacts' type.</p>
+    /// <p>Allowed values include:</p>
+    /// <ul>
+    /// <li> <p>FILE</p> </li>
+    /// <li> <p>LOG</p> </li>
+    /// <li> <p>SCREENSHOT</p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ArtifactCategory> {
+        &self.r#type
+    }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -102,6 +116,10 @@ impl ListArtifactsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListArtifactsInput`](crate::operation::list_artifacts::ListArtifactsInput).
     pub fn build(

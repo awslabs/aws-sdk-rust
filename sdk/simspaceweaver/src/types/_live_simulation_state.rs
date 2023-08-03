@@ -61,6 +61,10 @@ impl LiveSimulationStateBuilder {
         self.domains = input;
         self
     }
+    /// <p>A list of domains for the simulation. For more information about domains, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p>
+    pub fn get_domains(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Domain>> {
+        &self.domains
+    }
     /// Appends an item to `clocks`.
     ///
     /// To override the contents of this collection use [`set_clocks`](Self::set_clocks).
@@ -83,6 +87,14 @@ impl LiveSimulationStateBuilder {
     ) -> Self {
         self.clocks = input;
         self
+    }
+    /// <p>A list of simulation clocks.</p> <note>
+    /// <p>At this time, a simulation has only one clock.</p>
+    /// </note>
+    pub fn get_clocks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SimulationClock>> {
+        &self.clocks
     }
     /// Consumes the builder and constructs a [`LiveSimulationState`](crate::types::LiveSimulationState).
     pub fn build(self) -> crate::types::LiveSimulationState {

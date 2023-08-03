@@ -83,6 +83,10 @@ impl ListAttributesInputBuilder {
         self.cluster = input;
         self
     }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to list attributes. If you do not specify a cluster, the default cluster is assumed.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster
+    }
     /// <p>The type of the target to list attributes with.</p>
     pub fn target_type(mut self, input: crate::types::TargetType) -> Self {
         self.target_type = ::std::option::Option::Some(input);
@@ -95,6 +99,10 @@ impl ListAttributesInputBuilder {
     ) -> Self {
         self.target_type = input;
         self
+    }
+    /// <p>The type of the target to list attributes with.</p>
+    pub fn get_target_type(&self) -> &::std::option::Option<crate::types::TargetType> {
+        &self.target_type
     }
     /// <p>The name of the attribute to filter the results with. </p>
     pub fn attribute_name(
@@ -112,6 +120,10 @@ impl ListAttributesInputBuilder {
         self.attribute_name = input;
         self
     }
+    /// <p>The name of the attribute to filter the results with. </p>
+    pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_name
+    }
     /// <p>The value of the attribute to filter results with. You must also specify an attribute name to use this parameter.</p>
     pub fn attribute_value(
         mut self,
@@ -128,6 +140,10 @@ impl ListAttributesInputBuilder {
         self.attribute_value = input;
         self
     }
+    /// <p>The value of the attribute to filter results with. You must also specify an attribute name to use this parameter.</p>
+    pub fn get_attribute_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_value
+    }
     /// <p>The <code>nextToken</code> value returned from a <code>ListAttributes</code> request indicating that more results are available to fulfill the request and further calls are needed. If <code>maxResults</code> was provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
@@ -142,6 +158,12 @@ impl ListAttributesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The <code>nextToken</code> value returned from a <code>ListAttributes</code> request indicating that more results are available to fulfill the request and further calls are needed. If <code>maxResults</code> was provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
+    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// </note>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of cluster results that <code>ListAttributes</code> returned in paginated output. When this parameter is used, <code>ListAttributes</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListAttributes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListAttributes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -151,6 +173,10 @@ impl ListAttributesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of cluster results that <code>ListAttributes</code> returned in paginated output. When this parameter is used, <code>ListAttributes</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListAttributes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListAttributes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAttributesInput`](crate::operation::list_attributes::ListAttributesInput).
     pub fn build(

@@ -72,6 +72,10 @@ impl MeetingBuilder {
         self.meeting_id = input;
         self
     }
+    /// <p>The Amazon Chime SDK meeting ID.</p>
+    pub fn get_meeting_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.meeting_id
+    }
     /// <p>The external meeting ID.</p>
     pub fn external_meeting_id(
         mut self,
@@ -88,6 +92,10 @@ impl MeetingBuilder {
         self.external_meeting_id = input;
         self
     }
+    /// <p>The external meeting ID.</p>
+    pub fn get_external_meeting_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_meeting_id
+    }
     /// <p>The media placement for the meeting.</p>
     pub fn media_placement(mut self, input: crate::types::MediaPlacement) -> Self {
         self.media_placement = ::std::option::Option::Some(input);
@@ -101,6 +109,10 @@ impl MeetingBuilder {
         self.media_placement = input;
         self
     }
+    /// <p>The media placement for the meeting.</p>
+    pub fn get_media_placement(&self) -> &::std::option::Option<crate::types::MediaPlacement> {
+        &self.media_placement
+    }
     /// <p>The Region in which you create the meeting. Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.</p>
     pub fn media_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.media_region = ::std::option::Option::Some(input.into());
@@ -110,6 +122,10 @@ impl MeetingBuilder {
     pub fn set_media_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.media_region = input;
         self
+    }
+    /// <p>The Region in which you create the meeting. Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.</p>
+    pub fn get_media_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.media_region
     }
     /// Consumes the builder and constructs a [`Meeting`](crate::types::Meeting).
     pub fn build(self) -> crate::types::Meeting {

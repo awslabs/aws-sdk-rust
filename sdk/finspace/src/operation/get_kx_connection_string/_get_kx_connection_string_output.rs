@@ -63,6 +63,10 @@ impl GetKxConnectionStringOutputBuilder {
         self.signed_connection_string = input;
         self
     }
+    /// <p>The signed connection string that you can use to connect to clusters.</p>
+    pub fn get_signed_connection_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signed_connection_string
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

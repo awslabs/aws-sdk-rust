@@ -52,6 +52,12 @@ impl DeleteReplicationConfigOutputBuilder {
         self.replication_config = input;
         self
     }
+    /// <p>Configuration parameters returned for the DMS Serverless replication after it is deleted.</p>
+    pub fn get_replication_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReplicationConfig> {
+        &self.replication_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

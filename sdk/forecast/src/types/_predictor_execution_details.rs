@@ -53,6 +53,12 @@ impl PredictorExecutionDetailsBuilder {
         self.predictor_executions = input;
         self
     }
+    /// <p>An array of the backtests performed to evaluate the accuracy of the predictor against a particular algorithm. The <code>NumberOfBacktestWindows</code> from the object determines the number of windows in the array.</p>
+    pub fn get_predictor_executions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PredictorExecution>> {
+        &self.predictor_executions
+    }
     /// Consumes the builder and constructs a [`PredictorExecutionDetails`](crate::types::PredictorExecutionDetails).
     pub fn build(self) -> crate::types::PredictorExecutionDetails {
         crate::types::PredictorExecutionDetails {

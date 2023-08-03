@@ -40,6 +40,10 @@ impl StatsEventBuilder {
         self.details = input;
         self
     }
+    /// <p>The Stats event details.</p>
+    pub fn get_details(&self) -> &::std::option::Option<crate::types::Stats> {
+        &self.details
+    }
     /// Consumes the builder and constructs a [`StatsEvent`](crate::types::StatsEvent).
     pub fn build(self) -> crate::types::StatsEvent {
         crate::types::StatsEvent {

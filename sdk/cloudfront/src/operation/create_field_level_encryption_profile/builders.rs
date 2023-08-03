@@ -36,6 +36,10 @@ impl CreateFieldLevelEncryptionProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateFieldLevelEncryptionProfile as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_field_level_encryption_profile::builders::CreateFieldLevelEncryptionProfileInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -105,5 +109,11 @@ impl CreateFieldLevelEncryptionProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_field_level_encryption_profile_config(input);
         self
+    }
+    /// <p>The request to create a field-level encryption profile.</p>
+    pub fn get_field_level_encryption_profile_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::FieldLevelEncryptionProfileConfig> {
+        self.inner.get_field_level_encryption_profile_config()
     }
 }

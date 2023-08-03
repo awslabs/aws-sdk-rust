@@ -49,6 +49,10 @@ impl RowBuilder {
         self.data = input;
         self
     }
+    /// <p>The data that populates a row in a query result table.</p>
+    pub fn get_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Datum>> {
+        &self.data
+    }
     /// Consumes the builder and constructs a [`Row`](crate::types::Row).
     pub fn build(self) -> crate::types::Row {
         crate::types::Row { data: self.data }

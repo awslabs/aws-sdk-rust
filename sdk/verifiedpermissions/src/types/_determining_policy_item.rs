@@ -46,6 +46,11 @@ impl DeterminingPolicyItemBuilder {
         self.policy_id = input;
         self
     }
+    /// <p>The Id of a policy that determined to an authorization decision.</p>
+    /// <p>Example: <code>"policyId":"SPEXAMPLEabcdefg111111"</code> </p>
+    pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_id
+    }
     /// Consumes the builder and constructs a [`DeterminingPolicyItem`](crate::types::DeterminingPolicyItem).
     pub fn build(self) -> crate::types::DeterminingPolicyItem {
         crate::types::DeterminingPolicyItem {

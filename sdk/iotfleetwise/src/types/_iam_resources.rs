@@ -41,6 +41,10 @@ impl IamResourcesBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream. For example, <code>arn:aws:iam::123456789012:role/SERVICE-ROLE-ARN</code>. </p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// Consumes the builder and constructs a [`IamResources`](crate::types::IamResources).
     pub fn build(self) -> crate::types::IamResources {
         crate::types::IamResources {

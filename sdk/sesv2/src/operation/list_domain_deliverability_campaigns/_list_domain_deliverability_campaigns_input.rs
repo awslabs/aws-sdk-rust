@@ -75,6 +75,10 @@ impl ListDomainDeliverabilityCampaignsInputBuilder {
         self.start_date = input;
         self
     }
+    /// <p>The first day that you want to obtain deliverability data for.</p>
+    pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_date
+    }
     /// <p>The last day that you want to obtain deliverability data for. This value has to be less than or equal to 30 days after the value of the <code>StartDate</code> parameter.</p>
     pub fn end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_date = ::std::option::Option::Some(input);
@@ -87,6 +91,10 @@ impl ListDomainDeliverabilityCampaignsInputBuilder {
     ) -> Self {
         self.end_date = input;
         self
+    }
+    /// <p>The last day that you want to obtain deliverability data for. This value has to be less than or equal to 30 days after the value of the <code>StartDate</code> parameter.</p>
+    pub fn get_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_date
     }
     /// <p>The domain to obtain deliverability data for.</p>
     pub fn subscribed_domain(
@@ -104,6 +112,10 @@ impl ListDomainDeliverabilityCampaignsInputBuilder {
         self.subscribed_domain = input;
         self
     }
+    /// <p>The domain to obtain deliverability data for.</p>
+    pub fn get_subscribed_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscribed_domain
+    }
     /// <p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of a campaign in the list of campaigns.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -114,6 +126,10 @@ impl ListDomainDeliverabilityCampaignsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of a campaign in the list of campaigns.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to include in response to a single call to the <code>ListDomainDeliverabilityCampaigns</code> operation. If the number of results is larger than the number that you specify in this parameter, the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.page_size = ::std::option::Option::Some(input);
@@ -123,6 +139,10 @@ impl ListDomainDeliverabilityCampaignsInputBuilder {
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.page_size = input;
         self
+    }
+    /// <p>The maximum number of results to include in response to a single call to the <code>ListDomainDeliverabilityCampaigns</code> operation. If the number of results is larger than the number that you specify in this parameter, the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        &self.page_size
     }
     /// Consumes the builder and constructs a [`ListDomainDeliverabilityCampaignsInput`](crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsInput, ::aws_smithy_http::operation::error::BuildError>{

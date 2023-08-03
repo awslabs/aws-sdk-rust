@@ -56,6 +56,10 @@ impl FeaturedDocumentWithMetadataBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the featured document with its metadata. You can use the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Query.html">Query</a> API to search for specific documents with their document IDs included in the result items, or you can use the console.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The main title of the featured document.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl FeaturedDocumentWithMetadataBuilder {
         self.title = input;
         self
     }
+    /// <p>The main title of the featured document.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
+    }
     /// <p>The source URI location of the featured document.</p>
     pub fn uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.uri = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl FeaturedDocumentWithMetadataBuilder {
     pub fn set_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.uri = input;
         self
+    }
+    /// <p>The source URI location of the featured document.</p>
+    pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uri
     }
     /// Consumes the builder and constructs a [`FeaturedDocumentWithMetadata`](crate::types::FeaturedDocumentWithMetadata).
     pub fn build(self) -> crate::types::FeaturedDocumentWithMetadata {

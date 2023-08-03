@@ -51,6 +51,10 @@ impl GetBackupPlanFromJsonOutputBuilder {
         self.backup_plan = input;
         self
     }
+    /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
+    pub fn get_backup_plan(&self) -> &::std::option::Option<crate::types::BackupPlan> {
+        &self.backup_plan
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

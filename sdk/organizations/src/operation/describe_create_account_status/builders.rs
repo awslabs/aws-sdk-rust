@@ -37,6 +37,10 @@ impl DescribeCreateAccountStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeCreateAccountStatus as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_create_account_status::builders::DescribeCreateAccountStatusInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,5 +138,10 @@ impl DescribeCreateAccountStatusFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_create_account_request_id(input);
         self
+    }
+    /// <p>Specifies the <code>Id</code> value that uniquely identifies the <code>CreateAccount</code> request. You can get the value from the <code>CreateAccountStatus.Id</code> response in an earlier <code>CreateAccount</code> request, or from the <code>ListCreateAccountStatus</code> operation.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string requires "car-" followed by from 8 to 32 lowercase letters or digits.</p>
+    pub fn get_create_account_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_create_account_request_id()
     }
 }

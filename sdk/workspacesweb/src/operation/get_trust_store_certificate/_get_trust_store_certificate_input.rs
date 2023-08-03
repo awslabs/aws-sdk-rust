@@ -55,6 +55,10 @@ impl GetTrustStoreCertificateInputBuilder {
         self.trust_store_arn = input;
         self
     }
+    /// <p>The ARN of the trust store certificate.</p>
+    pub fn get_trust_store_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trust_store_arn
+    }
     /// <p>The thumbprint of the trust store certificate.</p>
     pub fn thumbprint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thumbprint = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl GetTrustStoreCertificateInputBuilder {
     pub fn set_thumbprint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thumbprint = input;
         self
+    }
+    /// <p>The thumbprint of the trust store certificate.</p>
+    pub fn get_thumbprint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thumbprint
     }
     /// Consumes the builder and constructs a [`GetTrustStoreCertificateInput`](crate::operation::get_trust_store_certificate::GetTrustStoreCertificateInput).
     pub fn build(

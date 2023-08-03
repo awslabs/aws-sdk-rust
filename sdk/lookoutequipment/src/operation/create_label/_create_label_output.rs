@@ -46,6 +46,10 @@ impl CreateLabelOutputBuilder {
         self.label_id = input;
         self
     }
+    /// <p> The ID of the label that you have created. </p>
+    pub fn get_label_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

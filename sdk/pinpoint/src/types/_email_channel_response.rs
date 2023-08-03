@@ -158,6 +158,10 @@ impl EmailChannelResponseBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The unique identifier for the application that the email channel applies to.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon SES configuration set</a> that's applied to messages that are sent through the channel.</p>
     pub fn configuration_set(
         mut self,
@@ -173,6 +177,10 @@ impl EmailChannelResponseBuilder {
     ) -> Self {
         self.configuration_set = input;
         self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon SES configuration set</a> that's applied to messages that are sent through the channel.</p>
+    pub fn get_configuration_set(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set
     }
     /// <p>The date and time, in ISO 8601 format, when the email channel was enabled.</p>
     pub fn creation_date(
@@ -190,6 +198,10 @@ impl EmailChannelResponseBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>The date and time, in ISO 8601 format, when the email channel was enabled.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_date
+    }
     /// <p>Specifies whether the email channel is enabled for the application.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -199,6 +211,10 @@ impl EmailChannelResponseBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>Specifies whether the email channel is enabled for the application.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// <p>The verified email address that email is sent from when you send email through the channel.</p>
     pub fn from_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -210,6 +226,10 @@ impl EmailChannelResponseBuilder {
         self.from_address = input;
         self
     }
+    /// <p>The verified email address that email is sent from when you send email through the channel.</p>
+    pub fn get_from_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.from_address
+    }
     /// <p>(Not used) This property is retained only for backward compatibility.</p>
     pub fn has_credential(mut self, input: bool) -> Self {
         self.has_credential = ::std::option::Option::Some(input);
@@ -219,6 +239,10 @@ impl EmailChannelResponseBuilder {
     pub fn set_has_credential(mut self, input: ::std::option::Option<bool>) -> Self {
         self.has_credential = input;
         self
+    }
+    /// <p>(Not used) This property is retained only for backward compatibility.</p>
+    pub fn get_has_credential(&self) -> &::std::option::Option<bool> {
+        &self.has_credential
     }
     /// <p>(Deprecated) An identifier for the email channel. This property is retained only for backward compatibility.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -230,6 +254,10 @@ impl EmailChannelResponseBuilder {
         self.id = input;
         self
     }
+    /// <p>(Deprecated) An identifier for the email channel. This property is retained only for backward compatibility.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple Email Service (Amazon SES), that's used when you send email through the channel.</p>
     pub fn identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity = ::std::option::Option::Some(input.into());
@@ -240,6 +268,10 @@ impl EmailChannelResponseBuilder {
         self.identity = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple Email Service (Amazon SES), that's used when you send email through the channel.</p>
+    pub fn get_identity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity
+    }
     /// <p>Specifies whether the email channel is archived.</p>
     pub fn is_archived(mut self, input: bool) -> Self {
         self.is_archived = ::std::option::Option::Some(input);
@@ -249,6 +281,10 @@ impl EmailChannelResponseBuilder {
     pub fn set_is_archived(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_archived = input;
         self
+    }
+    /// <p>Specifies whether the email channel is archived.</p>
+    pub fn get_is_archived(&self) -> &::std::option::Option<bool> {
+        &self.is_archived
     }
     /// <p>The user who last modified the email channel.</p>
     pub fn last_modified_by(
@@ -266,6 +302,10 @@ impl EmailChannelResponseBuilder {
         self.last_modified_by = input;
         self
     }
+    /// <p>The user who last modified the email channel.</p>
+    pub fn get_last_modified_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_by
+    }
     /// <p>The date and time, in ISO 8601 format, when the email channel was last modified.</p>
     pub fn last_modified_date(
         mut self,
@@ -282,6 +322,10 @@ impl EmailChannelResponseBuilder {
         self.last_modified_date = input;
         self
     }
+    /// <p>The date and time, in ISO 8601 format, when the email channel was last modified.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_date
+    }
     /// <p>The maximum number of emails that can be sent through the channel each second.</p>
     pub fn messages_per_second(mut self, input: i32) -> Self {
         self.messages_per_second = ::std::option::Option::Some(input);
@@ -291,6 +335,10 @@ impl EmailChannelResponseBuilder {
     pub fn set_messages_per_second(mut self, input: ::std::option::Option<i32>) -> Self {
         self.messages_per_second = input;
         self
+    }
+    /// <p>The maximum number of emails that can be sent through the channel each second.</p>
+    pub fn get_messages_per_second(&self) -> &::std::option::Option<i32> {
+        &self.messages_per_second
     }
     /// <p>The type of messaging or notification platform for the channel. For the email channel, this value is EMAIL.</p>
     pub fn platform(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -302,6 +350,10 @@ impl EmailChannelResponseBuilder {
         self.platform = input;
         self
     }
+    /// <p>The type of messaging or notification platform for the channel. For the email channel, this value is EMAIL.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform
+    }
     /// <p>The ARN of the AWS Identity and Access Management (IAM) role that Amazon Pinpoint uses to submit email-related event data for the channel.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -312,6 +364,10 @@ impl EmailChannelResponseBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The ARN of the AWS Identity and Access Management (IAM) role that Amazon Pinpoint uses to submit email-related event data for the channel.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The current version of the email channel.</p>
     pub fn version(mut self, input: i32) -> Self {
         self.version = ::std::option::Option::Some(input);
@@ -321,6 +377,10 @@ impl EmailChannelResponseBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The current version of the email channel.</p>
+    pub fn get_version(&self) -> &::std::option::Option<i32> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`EmailChannelResponse`](crate::types::EmailChannelResponse).
     pub fn build(self) -> crate::types::EmailChannelResponse {

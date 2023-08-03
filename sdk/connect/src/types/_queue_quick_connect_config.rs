@@ -48,6 +48,10 @@ impl QueueQuickConnectConfigBuilder {
         self.queue_id = input;
         self
     }
+    /// <p>The identifier for the queue.</p>
+    pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.queue_id
+    }
     /// <p>The identifier of the flow.</p>
     pub fn contact_flow_id(
         mut self,
@@ -63,6 +67,10 @@ impl QueueQuickConnectConfigBuilder {
     ) -> Self {
         self.contact_flow_id = input;
         self
+    }
+    /// <p>The identifier of the flow.</p>
+    pub fn get_contact_flow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_flow_id
     }
     /// Consumes the builder and constructs a [`QueueQuickConnectConfig`](crate::types::QueueQuickConnectConfig).
     pub fn build(self) -> crate::types::QueueQuickConnectConfig {

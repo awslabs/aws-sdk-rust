@@ -111,6 +111,17 @@ impl ConversionPropertiesBuilder {
         self.volume_to_conversion_map = input;
         self
     }
+    /// <p>A mapping between the volumes being converted and the converted snapshot ids</p>
+    pub fn get_volume_to_conversion_map(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+        >,
+    > {
+        &self.volume_to_conversion_map
+    }
     /// <p>The root volume name of a conversion job</p>
     pub fn root_volume_name(
         mut self,
@@ -127,6 +138,10 @@ impl ConversionPropertiesBuilder {
         self.root_volume_name = input;
         self
     }
+    /// <p>The root volume name of a conversion job</p>
+    pub fn get_root_volume_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.root_volume_name
+    }
     /// <p>Whether the volume being converted uses UEFI or not</p>
     pub fn force_uefi(mut self, input: bool) -> Self {
         self.force_uefi = ::std::option::Option::Some(input);
@@ -136,6 +151,10 @@ impl ConversionPropertiesBuilder {
     pub fn set_force_uefi(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force_uefi = input;
         self
+    }
+    /// <p>Whether the volume being converted uses UEFI or not</p>
+    pub fn get_force_uefi(&self) -> &::std::option::Option<bool> {
+        &self.force_uefi
     }
     /// <p>The timestamp of when the snapshot being converted was taken</p>
     pub fn data_timestamp(
@@ -152,6 +171,10 @@ impl ConversionPropertiesBuilder {
     ) -> Self {
         self.data_timestamp = input;
         self
+    }
+    /// <p>The timestamp of when the snapshot being converted was taken</p>
+    pub fn get_data_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_timestamp
     }
     /// Adds a key-value pair to `volume_to_volume_size`.
     ///
@@ -175,6 +198,12 @@ impl ConversionPropertiesBuilder {
     ) -> Self {
         self.volume_to_volume_size = input;
         self
+    }
+    /// <p>A mapping between the volumes and their sizes</p>
+    pub fn get_volume_to_volume_size(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, i64>> {
+        &self.volume_to_volume_size
     }
     /// Consumes the builder and constructs a [`ConversionProperties`](crate::types::ConversionProperties).
     pub fn build(self) -> crate::types::ConversionProperties {

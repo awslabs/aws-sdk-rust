@@ -36,6 +36,10 @@ impl CreateUserHierarchyGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateUserHierarchyGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_user_hierarchy_group::builders::CreateUserHierarchyGroupInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl CreateUserHierarchyGroupFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the user hierarchy group. Must not be more than 100 characters.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The identifier for the parent hierarchy group. The user hierarchy is created at level one if the parent group ID is null.</p>
     pub fn parent_group_id(
         mut self,
@@ -142,6 +150,10 @@ impl CreateUserHierarchyGroupFluentBuilder {
         self.inner = self.inner.set_parent_group_id(input);
         self
     }
+    /// <p>The identifier for the parent hierarchy group. The user hierarchy is created at level one if the parent group ID is null.</p>
+    pub fn get_parent_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_parent_group_id()
+    }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
@@ -151,6 +163,10 @@ impl CreateUserHierarchyGroupFluentBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -174,5 +190,13 @@ impl CreateUserHierarchyGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

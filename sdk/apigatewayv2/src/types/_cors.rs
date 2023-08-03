@@ -80,6 +80,10 @@ impl CorsBuilder {
         self.allow_credentials = input;
         self
     }
+    /// <p>Specifies whether credentials are included in the CORS request. Supported only for HTTP APIs.</p>
+    pub fn get_allow_credentials(&self) -> &::std::option::Option<bool> {
+        &self.allow_credentials
+    }
     /// Appends an item to `allow_headers`.
     ///
     /// To override the contents of this collection use [`set_allow_headers`](Self::set_allow_headers).
@@ -101,6 +105,12 @@ impl CorsBuilder {
     ) -> Self {
         self.allow_headers = input;
         self
+    }
+    /// <p>Represents a collection of allowed headers. Supported only for HTTP APIs.</p>
+    pub fn get_allow_headers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.allow_headers
     }
     /// Appends an item to `allow_methods`.
     ///
@@ -124,6 +134,12 @@ impl CorsBuilder {
         self.allow_methods = input;
         self
     }
+    /// <p>Represents a collection of allowed HTTP methods. Supported only for HTTP APIs.</p>
+    pub fn get_allow_methods(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.allow_methods
+    }
     /// Appends an item to `allow_origins`.
     ///
     /// To override the contents of this collection use [`set_allow_origins`](Self::set_allow_origins).
@@ -145,6 +161,12 @@ impl CorsBuilder {
     ) -> Self {
         self.allow_origins = input;
         self
+    }
+    /// <p>Represents a collection of allowed origins. Supported only for HTTP APIs.</p>
+    pub fn get_allow_origins(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.allow_origins
     }
     /// Appends an item to `expose_headers`.
     ///
@@ -168,6 +190,12 @@ impl CorsBuilder {
         self.expose_headers = input;
         self
     }
+    /// <p>Represents a collection of exposed headers. Supported only for HTTP APIs.</p>
+    pub fn get_expose_headers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.expose_headers
+    }
     /// <p>The number of seconds that the browser should cache preflight request results. Supported only for HTTP APIs.</p>
     pub fn max_age(mut self, input: i32) -> Self {
         self.max_age = ::std::option::Option::Some(input);
@@ -177,6 +205,10 @@ impl CorsBuilder {
     pub fn set_max_age(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_age = input;
         self
+    }
+    /// <p>The number of seconds that the browser should cache preflight request results. Supported only for HTTP APIs.</p>
+    pub fn get_max_age(&self) -> &::std::option::Option<i32> {
+        &self.max_age
     }
     /// Consumes the builder and constructs a [`Cors`](crate::types::Cors).
     pub fn build(self) -> crate::types::Cors {

@@ -59,6 +59,10 @@ impl MssPackageBuilder {
         self.encryption = input;
         self
     }
+    /// A Microsoft Smooth Streaming (MSS) encryption configuration.
+    pub fn get_encryption(&self) -> &::std::option::Option<crate::types::MssEncryption> {
+        &self.encryption
+    }
     /// Appends an item to `mss_manifests`.
     ///
     /// To override the contents of this collection use [`set_mss_manifests`](Self::set_mss_manifests).
@@ -78,6 +82,12 @@ impl MssPackageBuilder {
         self.mss_manifests = input;
         self
     }
+    /// A list of MSS manifest configurations.
+    pub fn get_mss_manifests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MssManifest>> {
+        &self.mss_manifests
+    }
     /// The duration (in seconds) of each segment.
     pub fn segment_duration_seconds(mut self, input: i32) -> Self {
         self.segment_duration_seconds = ::std::option::Option::Some(input);
@@ -87,6 +97,10 @@ impl MssPackageBuilder {
     pub fn set_segment_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.segment_duration_seconds = input;
         self
+    }
+    /// The duration (in seconds) of each segment.
+    pub fn get_segment_duration_seconds(&self) -> &::std::option::Option<i32> {
+        &self.segment_duration_seconds
     }
     /// Consumes the builder and constructs a [`MssPackage`](crate::types::MssPackage).
     pub fn build(self) -> crate::types::MssPackage {

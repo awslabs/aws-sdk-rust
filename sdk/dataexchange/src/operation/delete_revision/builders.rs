@@ -36,6 +36,12 @@ impl DeleteRevisionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteRevision as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_revision::builders::DeleteRevisionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl DeleteRevisionFluentBuilder {
         self.inner = self.inner.set_data_set_id(input);
         self
     }
+    /// <p>The unique identifier for a data set.</p>
+    pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_data_set_id()
+    }
     /// <p>The unique identifier for a revision.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.revision_id(input.into());
@@ -127,5 +137,9 @@ impl DeleteRevisionFluentBuilder {
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_revision_id(input);
         self
+    }
+    /// <p>The unique identifier for a revision.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_revision_id()
     }
 }

@@ -39,6 +39,10 @@ impl CreateTrafficMirrorTargetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateTrafficMirrorTarget as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_traffic_mirror_target::builders::CreateTrafficMirrorTargetInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +139,10 @@ impl CreateTrafficMirrorTargetFluentBuilder {
         self.inner = self.inner.set_network_interface_id(input);
         self
     }
+    /// <p>The network interface ID that is associated with the target.</p>
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_network_interface_id()
+    }
     /// <p>The Amazon Resource Name (ARN) of the Network Load Balancer that is associated with the target.</p>
     pub fn network_load_balancer_arn(
         mut self,
@@ -151,6 +159,10 @@ impl CreateTrafficMirrorTargetFluentBuilder {
         self.inner = self.inner.set_network_load_balancer_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Network Load Balancer that is associated with the target.</p>
+    pub fn get_network_load_balancer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_network_load_balancer_arn()
+    }
     /// <p>The description of the Traffic Mirror target.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -160,6 +172,10 @@ impl CreateTrafficMirrorTargetFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the Traffic Mirror target.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `TagSpecifications`.
     ///
@@ -178,6 +194,12 @@ impl CreateTrafficMirrorTargetFluentBuilder {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
+    /// <p>The tags to assign to the Traffic Mirror target.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        self.inner.get_tag_specifications()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -188,6 +210,10 @@ impl CreateTrafficMirrorTargetFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -197,6 +223,10 @@ impl CreateTrafficMirrorTargetFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// <p>The ID of the Gateway Load Balancer endpoint.</p>
     pub fn gateway_load_balancer_endpoint_id(
@@ -213,5 +243,11 @@ impl CreateTrafficMirrorTargetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_gateway_load_balancer_endpoint_id(input);
         self
+    }
+    /// <p>The ID of the Gateway Load Balancer endpoint.</p>
+    pub fn get_gateway_load_balancer_endpoint_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gateway_load_balancer_endpoint_id()
     }
 }

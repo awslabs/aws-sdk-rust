@@ -36,6 +36,12 @@ impl DetectPiiEntitiesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DetectPiiEntities as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::detect_pii_entities::builders::DetectPiiEntitiesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DetectPiiEntitiesFluentBuilder {
         self.inner = self.inner.set_text(input);
         self
     }
+    /// <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_text()
+    }
     /// <p>The language of the input documents. Currently, English is the only valid language.</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.inner = self.inner.language_code(input);
@@ -138,5 +148,9 @@ impl DetectPiiEntitiesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
+    }
+    /// <p>The language of the input documents. Currently, English is the only valid language.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
+        self.inner.get_language_code()
     }
 }

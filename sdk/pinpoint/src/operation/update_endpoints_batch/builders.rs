@@ -36,6 +36,12 @@ impl UpdateEndpointsBatchFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateEndpointsBatch as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_endpoints_batch::builders::UpdateEndpointsBatchInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateEndpointsBatchFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>Specifies a batch of endpoints to create or update and the settings and attributes to set or change for each endpoint.</p>
     pub fn endpoint_batch_request(mut self, input: crate::types::EndpointBatchRequest) -> Self {
         self.inner = self.inner.endpoint_batch_request(input);
@@ -144,5 +154,11 @@ impl UpdateEndpointsBatchFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_endpoint_batch_request(input);
         self
+    }
+    /// <p>Specifies a batch of endpoints to create or update and the settings and attributes to set or change for each endpoint.</p>
+    pub fn get_endpoint_batch_request(
+        &self,
+    ) -> &::std::option::Option<crate::types::EndpointBatchRequest> {
+        self.inner.get_endpoint_batch_request()
     }
 }

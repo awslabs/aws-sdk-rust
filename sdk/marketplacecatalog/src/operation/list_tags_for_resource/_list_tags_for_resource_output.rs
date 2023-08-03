@@ -55,6 +55,10 @@ impl ListTagsForResourceOutputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>Required. The ARN associated with the resource you want to list tags on.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -73,6 +77,10 @@ impl ListTagsForResourceOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Required. A list of objects specifying each key name and value. Number of objects allowed: 1-50.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

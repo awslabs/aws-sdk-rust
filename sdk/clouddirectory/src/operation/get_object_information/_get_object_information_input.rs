@@ -62,6 +62,10 @@ impl GetObjectInformationInputBuilder {
         self.directory_arn = input;
         self
     }
+    /// <p>The ARN of the directory being retrieved.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_arn
+    }
     /// <p>A reference to the object.</p>
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.object_reference = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl GetObjectInformationInputBuilder {
         self.object_reference = input;
         self
     }
+    /// <p>A reference to the object.</p>
+    pub fn get_object_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
+        &self.object_reference
+    }
     /// <p>The consistency level at which to retrieve the object information.</p>
     pub fn consistency_level(mut self, input: crate::types::ConsistencyLevel) -> Self {
         self.consistency_level = ::std::option::Option::Some(input);
@@ -87,6 +95,10 @@ impl GetObjectInformationInputBuilder {
     ) -> Self {
         self.consistency_level = input;
         self
+    }
+    /// <p>The consistency level at which to retrieve the object information.</p>
+    pub fn get_consistency_level(&self) -> &::std::option::Option<crate::types::ConsistencyLevel> {
+        &self.consistency_level
     }
     /// Consumes the builder and constructs a [`GetObjectInformationInput`](crate::operation::get_object_information::GetObjectInformationInput).
     pub fn build(

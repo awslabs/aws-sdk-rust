@@ -82,6 +82,12 @@ impl FlinkApplicationConfigurationDescriptionBuilder {
         self.checkpoint_configuration_description = input;
         self
     }
+    /// <p>Describes an application's checkpointing configuration. Checkpointing is the process of persisting application state for fault tolerance.</p>
+    pub fn get_checkpoint_configuration_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::CheckpointConfigurationDescription> {
+        &self.checkpoint_configuration_description
+    }
     /// <p>Describes configuration parameters for Amazon CloudWatch logging for an application.</p>
     pub fn monitoring_configuration_description(
         mut self,
@@ -97,6 +103,12 @@ impl FlinkApplicationConfigurationDescriptionBuilder {
     ) -> Self {
         self.monitoring_configuration_description = input;
         self
+    }
+    /// <p>Describes configuration parameters for Amazon CloudWatch logging for an application.</p>
+    pub fn get_monitoring_configuration_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::MonitoringConfigurationDescription> {
+        &self.monitoring_configuration_description
     }
     /// <p>Describes parameters for how an application executes multiple tasks simultaneously.</p>
     pub fn parallelism_configuration_description(
@@ -114,6 +126,12 @@ impl FlinkApplicationConfigurationDescriptionBuilder {
         self.parallelism_configuration_description = input;
         self
     }
+    /// <p>Describes parameters for how an application executes multiple tasks simultaneously.</p>
+    pub fn get_parallelism_configuration_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::ParallelismConfigurationDescription> {
+        &self.parallelism_configuration_description
+    }
     /// <p>The job plan for an application. For more information about the job plan, see <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/internals/job_scheduling.html">Jobs and Scheduling</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink Documentation</a>. To retrieve the job plan for the application, use the <code>DescribeApplicationRequest$IncludeAdditionalDetails</code> parameter of the <code>DescribeApplication</code> operation.</p>
     pub fn job_plan_description(
         mut self,
@@ -129,6 +147,10 @@ impl FlinkApplicationConfigurationDescriptionBuilder {
     ) -> Self {
         self.job_plan_description = input;
         self
+    }
+    /// <p>The job plan for an application. For more information about the job plan, see <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/internals/job_scheduling.html">Jobs and Scheduling</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink Documentation</a>. To retrieve the job plan for the application, use the <code>DescribeApplicationRequest$IncludeAdditionalDetails</code> parameter of the <code>DescribeApplication</code> operation.</p>
+    pub fn get_job_plan_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_plan_description
     }
     /// Consumes the builder and constructs a [`FlinkApplicationConfigurationDescription`](crate::types::FlinkApplicationConfigurationDescription).
     pub fn build(self) -> crate::types::FlinkApplicationConfigurationDescription {

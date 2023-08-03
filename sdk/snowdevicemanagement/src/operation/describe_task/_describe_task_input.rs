@@ -39,6 +39,10 @@ impl DescribeTaskInputBuilder {
         self.task_id = input;
         self
     }
+    /// <p>The ID of the task to be described.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
+    }
     /// Consumes the builder and constructs a [`DescribeTaskInput`](crate::operation::describe_task::DescribeTaskInput).
     pub fn build(
         self,

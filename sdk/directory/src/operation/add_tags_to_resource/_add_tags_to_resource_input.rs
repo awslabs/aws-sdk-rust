@@ -48,6 +48,10 @@ impl AddTagsToResourceInputBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>Identifier (ID) for the directory to which to add the tag.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -66,6 +70,10 @@ impl AddTagsToResourceInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags to be assigned to the directory.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`AddTagsToResourceInput`](crate::operation::add_tags_to_resource::AddTagsToResourceInput).
     pub fn build(

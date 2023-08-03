@@ -38,6 +38,13 @@ impl DisposePackageVersionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisposePackageVersions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::dispose_package_versions::builders::DisposePackageVersionsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +135,10 @@ impl DisposePackageVersionsFluentBuilder {
         self.inner = self.inner.set_domain(input);
         self
     }
+    /// <p> The name of the domain that contains the repository you want to dispose. </p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain()
+    }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_owner(input.into());
@@ -137,6 +148,10 @@ impl DisposePackageVersionsFluentBuilder {
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_owner(input);
         self
+    }
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_owner()
     }
     /// <p> The name of the repository that contains the package versions you want to dispose. </p>
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -148,6 +163,10 @@ impl DisposePackageVersionsFluentBuilder {
         self.inner = self.inner.set_repository(input);
         self
     }
+    /// <p> The name of the repository that contains the package versions you want to dispose. </p>
+    pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository()
+    }
     /// <p> A format that specifies the type of package versions you want to dispose. </p>
     pub fn format(mut self, input: crate::types::PackageFormat) -> Self {
         self.inner = self.inner.format(input);
@@ -157,6 +176,10 @@ impl DisposePackageVersionsFluentBuilder {
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::PackageFormat>) -> Self {
         self.inner = self.inner.set_format(input);
         self
+    }
+    /// <p> A format that specifies the type of package versions you want to dispose. </p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::PackageFormat> {
+        self.inner.get_format()
     }
     /// <p>The namespace of the package versions to be disposed. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -180,6 +203,16 @@ impl DisposePackageVersionsFluentBuilder {
         self.inner = self.inner.set_namespace(input);
         self
     }
+    /// <p>The namespace of the package versions to be disposed. The package version component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
+    /// </ul>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace()
+    }
     /// <p> The name of the package with the versions you want to dispose. </p>
     pub fn package(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.package(input.into());
@@ -189,6 +222,10 @@ impl DisposePackageVersionsFluentBuilder {
     pub fn set_package(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_package(input);
         self
+    }
+    /// <p> The name of the package with the versions you want to dispose. </p>
+    pub fn get_package(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_package()
     }
     /// Appends an item to `versions`.
     ///
@@ -206,6 +243,10 @@ impl DisposePackageVersionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_versions(input);
         self
+    }
+    /// <p> The versions of the package you want to dispose. </p>
+    pub fn get_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_versions()
     }
     /// Adds a key-value pair to `versionRevisions`.
     ///
@@ -230,6 +271,14 @@ impl DisposePackageVersionsFluentBuilder {
         self.inner = self.inner.set_version_revisions(input);
         self
     }
+    /// <p> The revisions of the package versions you want to dispose. </p>
+    pub fn get_version_revisions(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_version_revisions()
+    }
     /// <p> The expected status of the package version to dispose. </p>
     pub fn expected_status(mut self, input: crate::types::PackageVersionStatus) -> Self {
         self.inner = self.inner.expected_status(input);
@@ -242,5 +291,11 @@ impl DisposePackageVersionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_expected_status(input);
         self
+    }
+    /// <p> The expected status of the package version to dispose. </p>
+    pub fn get_expected_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::PackageVersionStatus> {
+        self.inner.get_expected_status()
     }
 }

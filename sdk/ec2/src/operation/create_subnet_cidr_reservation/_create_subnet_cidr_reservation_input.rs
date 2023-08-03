@@ -92,6 +92,10 @@ impl CreateSubnetCidrReservationInputBuilder {
         self.subnet_id = input;
         self
     }
+    /// <p>The ID of the subnet.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
+    }
     /// <p>The IPv4 or IPV6 CIDR range to reserve.</p>
     pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidr = ::std::option::Option::Some(input.into());
@@ -101,6 +105,10 @@ impl CreateSubnetCidrReservationInputBuilder {
     pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cidr = input;
         self
+    }
+    /// <p>The IPv4 or IPV6 CIDR range to reserve.</p>
+    pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr
     }
     /// <p>The type of reservation.</p>
     /// <p>The following are valid values:</p>
@@ -125,6 +133,17 @@ impl CreateSubnetCidrReservationInputBuilder {
         self.reservation_type = input;
         self
     }
+    /// <p>The type of reservation.</p>
+    /// <p>The following are valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>prefix</code>: The Amazon EC2 Prefix Delegation feature assigns the IP addresses to network interfaces that are associated with an instance. For information about Prefix Delegation, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation.html">Prefix Delegation for Amazon EC2 network interfaces</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> </li>
+    /// <li> <p> <code>explicit</code>: You manually assign the IP addresses to resources that reside in your subnet. </p> </li>
+    /// </ul>
+    pub fn get_reservation_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::SubnetCidrReservationType> {
+        &self.reservation_type
+    }
     /// <p>The description to assign to the subnet CIDR reservation.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -135,6 +154,10 @@ impl CreateSubnetCidrReservationInputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description to assign to the subnet CIDR reservation.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -144,6 +167,10 @@ impl CreateSubnetCidrReservationInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Appends an item to `tag_specifications`.
     ///
@@ -163,6 +190,12 @@ impl CreateSubnetCidrReservationInputBuilder {
     ) -> Self {
         self.tag_specifications = input;
         self
+    }
+    /// <p>The tags to assign to the subnet CIDR reservation.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
     }
     /// Consumes the builder and constructs a [`CreateSubnetCidrReservationInput`](crate::operation::create_subnet_cidr_reservation::CreateSubnetCidrReservationInput).
     pub fn build(

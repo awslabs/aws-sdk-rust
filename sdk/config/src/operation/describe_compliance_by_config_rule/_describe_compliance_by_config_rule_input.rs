@@ -69,6 +69,12 @@ impl DescribeComplianceByConfigRuleInputBuilder {
         self.config_rule_names = input;
         self
     }
+    /// <p>Specify one or more Config rule names to filter the results by rule.</p>
+    pub fn get_config_rule_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.config_rule_names
+    }
     /// Appends an item to `compliance_types`.
     ///
     /// To override the contents of this collection use [`set_compliance_types`](Self::set_compliance_types).
@@ -88,6 +94,12 @@ impl DescribeComplianceByConfigRuleInputBuilder {
         self.compliance_types = input;
         self
     }
+    /// <p>Filters the results by compliance.</p>
+    pub fn get_compliance_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComplianceType>> {
+        &self.compliance_types
+    }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -97,6 +109,10 @@ impl DescribeComplianceByConfigRuleInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeComplianceByConfigRuleInput`](crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleInput).
     pub fn build(

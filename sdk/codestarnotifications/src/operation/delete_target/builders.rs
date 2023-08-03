@@ -36,6 +36,10 @@ impl DeleteTargetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteTarget as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_target::builders::DeleteTargetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl DeleteTargetFluentBuilder {
         self.inner = self.inner.set_target_address(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client to delete.</p>
+    pub fn get_target_address(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_address()
+    }
     /// <p>A Boolean value that can be used to delete all associations with this Chatbot topic. The default value is FALSE. If set to TRUE, all associations between that target and every notification rule in your Amazon Web Services account are deleted.</p>
     pub fn force_unsubscribe_all(mut self, input: bool) -> Self {
         self.inner = self.inner.force_unsubscribe_all(input);
@@ -133,5 +141,9 @@ impl DeleteTargetFluentBuilder {
     pub fn set_force_unsubscribe_all(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force_unsubscribe_all(input);
         self
+    }
+    /// <p>A Boolean value that can be used to delete all associations with this Chatbot topic. The default value is FALSE. If set to TRUE, all associations between that target and every notification rule in your Amazon Web Services account are deleted.</p>
+    pub fn get_force_unsubscribe_all(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force_unsubscribe_all()
     }
 }

@@ -56,6 +56,10 @@ impl AddLfTagsToResourceInputBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p>The database, table, or column resource to which to attach an LF-tag.</p>
     pub fn resource(mut self, input: crate::types::Resource) -> Self {
         self.resource = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl AddLfTagsToResourceInputBuilder {
     pub fn set_resource(mut self, input: ::std::option::Option<crate::types::Resource>) -> Self {
         self.resource = input;
         self
+    }
+    /// <p>The database, table, or column resource to which to attach an LF-tag.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<crate::types::Resource> {
+        &self.resource
     }
     /// Appends an item to `lf_tags`.
     ///
@@ -84,6 +92,10 @@ impl AddLfTagsToResourceInputBuilder {
     ) -> Self {
         self.lf_tags = input;
         self
+    }
+    /// <p>The LF-tags to attach to the resource.</p>
+    pub fn get_lf_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>> {
+        &self.lf_tags
     }
     /// Consumes the builder and constructs a [`AddLfTagsToResourceInput`](crate::operation::add_lf_tags_to_resource::AddLfTagsToResourceInput).
     pub fn build(

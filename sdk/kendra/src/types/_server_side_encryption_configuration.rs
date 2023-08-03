@@ -45,6 +45,10 @@ impl ServerSideEncryptionConfigurationBuilder {
         self.kms_key_id = input;
         self
     }
+    /// <p>The identifier of the KMS key. Amazon Kendra doesn't support asymmetric keys.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// Consumes the builder and constructs a [`ServerSideEncryptionConfiguration`](crate::types::ServerSideEncryptionConfiguration).
     pub fn build(self) -> crate::types::ServerSideEncryptionConfiguration {
         crate::types::ServerSideEncryptionConfiguration {

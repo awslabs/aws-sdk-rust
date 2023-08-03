@@ -61,6 +61,12 @@ impl ServerCertificateConfigurationBuilder {
         self.server_certificates = input;
         self
     }
+    /// <p>The list of a server certificate configuration's Certificate Manager SSL/TLS certificates.</p>
+    pub fn get_server_certificates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerCertificate>> {
+        &self.server_certificates
+    }
     /// Appends an item to `scopes`.
     ///
     /// To override the contents of this collection use [`set_scopes`](Self::set_scopes).
@@ -79,6 +85,12 @@ impl ServerCertificateConfigurationBuilder {
     ) -> Self {
         self.scopes = input;
         self
+    }
+    /// <p>A list of a server certificate configuration's scopes.</p>
+    pub fn get_scopes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerCertificateScope>> {
+        &self.scopes
     }
     /// Consumes the builder and constructs a [`ServerCertificateConfiguration`](crate::types::ServerCertificateConfiguration).
     pub fn build(self) -> crate::types::ServerCertificateConfiguration {

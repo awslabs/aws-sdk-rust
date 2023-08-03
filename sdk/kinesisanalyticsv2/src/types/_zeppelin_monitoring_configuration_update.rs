@@ -43,6 +43,10 @@ impl ZeppelinMonitoringConfigurationUpdateBuilder {
         self.log_level_update = input;
         self
     }
+    /// <p>Updates to the logging level for Apache Zeppelin within a Kinesis Data Analytics Studio notebook.</p>
+    pub fn get_log_level_update(&self) -> &::std::option::Option<crate::types::LogLevel> {
+        &self.log_level_update
+    }
     /// Consumes the builder and constructs a [`ZeppelinMonitoringConfigurationUpdate`](crate::types::ZeppelinMonitoringConfigurationUpdate).
     pub fn build(self) -> crate::types::ZeppelinMonitoringConfigurationUpdate {
         crate::types::ZeppelinMonitoringConfigurationUpdate {

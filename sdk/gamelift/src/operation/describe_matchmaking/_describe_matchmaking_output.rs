@@ -57,6 +57,12 @@ impl DescribeMatchmakingOutputBuilder {
         self.ticket_list = input;
         self
     }
+    /// <p>A collection of existing matchmaking ticket objects matching the request.</p>
+    pub fn get_ticket_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MatchmakingTicket>> {
+        &self.ticket_list
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

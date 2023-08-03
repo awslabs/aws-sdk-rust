@@ -36,6 +36,10 @@ impl AssociateUserAccessLoggingSettingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateUserAccessLoggingSettings as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_user_access_logging_settings::builders::AssociateUserAccessLoggingSettingsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl AssociateUserAccessLoggingSettingsFluentBuilder {
         self.inner = self.inner.set_portal_arn(input);
         self
     }
+    /// <p>The ARN of the web portal.</p>
+    pub fn get_portal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_portal_arn()
+    }
     /// <p>The ARN of the user access logging settings.</p>
     pub fn user_access_logging_settings_arn(
         mut self,
@@ -115,5 +123,11 @@ impl AssociateUserAccessLoggingSettingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_user_access_logging_settings_arn(input);
         self
+    }
+    /// <p>The ARN of the user access logging settings.</p>
+    pub fn get_user_access_logging_settings_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_access_logging_settings_arn()
     }
 }

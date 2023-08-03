@@ -40,6 +40,10 @@ impl DeauthorizeConnectionInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the connection to remove authorization from.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeauthorizeConnectionInput`](crate::operation::deauthorize_connection::DeauthorizeConnectionInput).
     pub fn build(
         self,

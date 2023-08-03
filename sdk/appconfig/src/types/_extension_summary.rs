@@ -72,6 +72,10 @@ impl ExtensionSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The system-generated ID of the extension.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The extension name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl ExtensionSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The extension name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The extension version number.</p>
     pub fn version_number(mut self, input: i32) -> Self {
@@ -92,6 +100,10 @@ impl ExtensionSummaryBuilder {
         self.version_number = input;
         self
     }
+    /// <p>The extension version number.</p>
+    pub fn get_version_number(&self) -> &::std::option::Option<i32> {
+        &self.version_number
+    }
     /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -102,6 +114,10 @@ impl ExtensionSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>Information about the extension.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -111,6 +127,10 @@ impl ExtensionSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Information about the extension.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`ExtensionSummary`](crate::types::ExtensionSummary).
     pub fn build(self) -> crate::types::ExtensionSummary {

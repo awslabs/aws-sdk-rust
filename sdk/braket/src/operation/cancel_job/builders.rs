@@ -36,6 +36,10 @@ impl CancelJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CancelJob as a reference.
+    pub fn as_input(&self) -> &crate::operation::cancel_job::builders::CancelJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -117,5 +121,9 @@ impl CancelJobFluentBuilder {
     pub fn set_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_arn(input);
         self
+    }
+    /// <p>The ARN of the Amazon Braket job to cancel.</p>
+    pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_arn()
     }
 }

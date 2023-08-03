@@ -56,6 +56,10 @@ impl StopContactStreamingInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The identifier of the contact. This is the identifier of the contact that is associated with the first interaction with the contact center.</p>
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_id = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl StopContactStreamingInputBuilder {
         self.contact_id = input;
         self
     }
+    /// <p>The identifier of the contact. This is the identifier of the contact that is associated with the first interaction with the contact center.</p>
+    pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_id
+    }
     /// <p>The identifier of the streaming configuration enabled. </p>
     pub fn streaming_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.streaming_id = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl StopContactStreamingInputBuilder {
     pub fn set_streaming_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.streaming_id = input;
         self
+    }
+    /// <p>The identifier of the streaming configuration enabled. </p>
+    pub fn get_streaming_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.streaming_id
     }
     /// Consumes the builder and constructs a [`StopContactStreamingInput`](crate::operation::stop_contact_streaming::StopContactStreamingInput).
     pub fn build(

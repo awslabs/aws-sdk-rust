@@ -66,6 +66,10 @@ impl ListRuleGroupsNamespacesInputBuilder {
         self.workspace_id = input;
         self
     }
+    /// The ID of the workspace.
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
+    }
     /// Optional filter for rule groups namespace name. Only the rule groups namespace that begin with this value will be returned.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl ListRuleGroupsNamespacesInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// Optional filter for rule groups namespace name. Only the rule groups namespace that begin with this value will be returned.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListRuleGroupsNamespaces request.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -86,6 +94,10 @@ impl ListRuleGroupsNamespacesInputBuilder {
         self.next_token = input;
         self
     }
+    /// Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListRuleGroupsNamespaces request.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Maximum results to return in response (default=100, maximum=1000).
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -95,6 +107,10 @@ impl ListRuleGroupsNamespacesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// Maximum results to return in response (default=100, maximum=1000).
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListRuleGroupsNamespacesInput`](crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesInput).
     pub fn build(

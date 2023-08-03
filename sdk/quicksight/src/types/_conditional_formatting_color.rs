@@ -53,6 +53,12 @@ impl ConditionalFormattingColorBuilder {
         self.solid = input;
         self
     }
+    /// <p>Formatting configuration for solid color.</p>
+    pub fn get_solid(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConditionalFormattingSolidColor> {
+        &self.solid
+    }
     /// <p>Formatting configuration for gradient color.</p>
     pub fn gradient(mut self, input: crate::types::ConditionalFormattingGradientColor) -> Self {
         self.gradient = ::std::option::Option::Some(input);
@@ -65,6 +71,12 @@ impl ConditionalFormattingColorBuilder {
     ) -> Self {
         self.gradient = input;
         self
+    }
+    /// <p>Formatting configuration for gradient color.</p>
+    pub fn get_gradient(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConditionalFormattingGradientColor> {
+        &self.gradient
     }
     /// Consumes the builder and constructs a [`ConditionalFormattingColor`](crate::types::ConditionalFormattingColor).
     pub fn build(self) -> crate::types::ConditionalFormattingColor {

@@ -50,6 +50,10 @@ impl CreatePlacementGroupOutputBuilder {
         self.placement_group = input;
         self
     }
+    /// <p>Information about the placement group.</p>
+    pub fn get_placement_group(&self) -> &::std::option::Option<crate::types::PlacementGroup> {
+        &self.placement_group
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

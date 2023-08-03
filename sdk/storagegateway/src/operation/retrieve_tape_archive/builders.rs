@@ -37,6 +37,12 @@ impl RetrieveTapeArchiveFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RetrieveTapeArchive as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::retrieve_tape_archive::builders::RetrieveTapeArchiveInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl RetrieveTapeArchiveFluentBuilder {
         self.inner = self.inner.set_tape_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the virtual tape you want to retrieve from the virtual tape shelf (VTS).</p>
+    pub fn get_tape_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_tape_arn()
+    }
     /// <p>The Amazon Resource Name (ARN) of the gateway you want to retrieve the virtual tape to. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     /// <p>You retrieve archived virtual tapes to only one gateway and the gateway must be a tape gateway.</p>
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,5 +148,10 @@ impl RetrieveTapeArchiveFluentBuilder {
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_gateway_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the gateway you want to retrieve the virtual tape to. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// <p>You retrieve archived virtual tapes to only one gateway and the gateway must be a tape gateway.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gateway_arn()
     }
 }

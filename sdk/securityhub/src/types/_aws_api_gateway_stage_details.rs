@@ -201,6 +201,10 @@ impl AwsApiGatewayStageDetailsBuilder {
         self.deployment_id = input;
         self
     }
+    /// <p>The identifier of the deployment that the stage points to.</p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
+    }
     /// <p>The identifier of the client certificate for the stage.</p>
     pub fn client_certificate_id(
         mut self,
@@ -217,6 +221,10 @@ impl AwsApiGatewayStageDetailsBuilder {
         self.client_certificate_id = input;
         self
     }
+    /// <p>The identifier of the client certificate for the stage.</p>
+    pub fn get_client_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_certificate_id
+    }
     /// <p>The name of the stage.</p>
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_name = ::std::option::Option::Some(input.into());
@@ -226,6 +234,10 @@ impl AwsApiGatewayStageDetailsBuilder {
     pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stage_name = input;
         self
+    }
+    /// <p>The name of the stage.</p>
+    pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stage_name
     }
     /// <p>A description of the stage.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -237,6 +249,10 @@ impl AwsApiGatewayStageDetailsBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the stage.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>Indicates whether a cache cluster is enabled for the stage.</p>
     pub fn cache_cluster_enabled(mut self, input: bool) -> Self {
         self.cache_cluster_enabled = ::std::option::Option::Some(input);
@@ -246,6 +262,10 @@ impl AwsApiGatewayStageDetailsBuilder {
     pub fn set_cache_cluster_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.cache_cluster_enabled = input;
         self
+    }
+    /// <p>Indicates whether a cache cluster is enabled for the stage.</p>
+    pub fn get_cache_cluster_enabled(&self) -> &::std::option::Option<bool> {
+        &self.cache_cluster_enabled
     }
     /// <p>If a cache cluster is enabled, the size of the cache cluster.</p>
     pub fn cache_cluster_size(
@@ -263,6 +283,10 @@ impl AwsApiGatewayStageDetailsBuilder {
         self.cache_cluster_size = input;
         self
     }
+    /// <p>If a cache cluster is enabled, the size of the cache cluster.</p>
+    pub fn get_cache_cluster_size(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_cluster_size
+    }
     /// <p>If a cache cluster is enabled, the status of the cache cluster.</p>
     pub fn cache_cluster_status(
         mut self,
@@ -278,6 +302,10 @@ impl AwsApiGatewayStageDetailsBuilder {
     ) -> Self {
         self.cache_cluster_status = input;
         self
+    }
+    /// <p>If a cache cluster is enabled, the status of the cache cluster.</p>
+    pub fn get_cache_cluster_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_cluster_status
     }
     /// Appends an item to `method_settings`.
     ///
@@ -297,6 +325,12 @@ impl AwsApiGatewayStageDetailsBuilder {
     ) -> Self {
         self.method_settings = input;
         self
+    }
+    /// <p>Defines the method settings for the stage.</p>
+    pub fn get_method_settings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsApiGatewayMethodSettings>> {
+        &self.method_settings
     }
     /// Adds a key-value pair to `variables`.
     ///
@@ -337,6 +371,21 @@ impl AwsApiGatewayStageDetailsBuilder {
         self.variables = input;
         self
     }
+    /// <p>A map that defines the stage variables for the stage.</p>
+    /// <p>Variable names can have alphanumeric and underscore characters.</p>
+    /// <p>Variable values can contain the following characters:</p>
+    /// <ul>
+    /// <li> <p>Uppercase and lowercase letters</p> </li>
+    /// <li> <p>Numbers</p> </li>
+    /// <li> <p>Special characters -._~:/?#&amp;=,</p> </li>
+    /// </ul>
+    pub fn get_variables(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.variables
+    }
     /// <p>The version of the API documentation that is associated with the stage.</p>
     pub fn documentation_version(
         mut self,
@@ -352,6 +401,10 @@ impl AwsApiGatewayStageDetailsBuilder {
     ) -> Self {
         self.documentation_version = input;
         self
+    }
+    /// <p>The version of the API documentation that is associated with the stage.</p>
+    pub fn get_documentation_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.documentation_version
     }
     /// <p>Settings for logging access for the stage.</p>
     pub fn access_log_settings(
@@ -369,6 +422,12 @@ impl AwsApiGatewayStageDetailsBuilder {
         self.access_log_settings = input;
         self
     }
+    /// <p>Settings for logging access for the stage.</p>
+    pub fn get_access_log_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsApiGatewayAccessLogSettings> {
+        &self.access_log_settings
+    }
     /// <p>Information about settings for canary deployment in the stage.</p>
     pub fn canary_settings(mut self, input: crate::types::AwsApiGatewayCanarySettings) -> Self {
         self.canary_settings = ::std::option::Option::Some(input);
@@ -382,6 +441,12 @@ impl AwsApiGatewayStageDetailsBuilder {
         self.canary_settings = input;
         self
     }
+    /// <p>Information about settings for canary deployment in the stage.</p>
+    pub fn get_canary_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsApiGatewayCanarySettings> {
+        &self.canary_settings
+    }
     /// <p>Indicates whether active tracing with X-Ray is enabled for the stage.</p>
     pub fn tracing_enabled(mut self, input: bool) -> Self {
         self.tracing_enabled = ::std::option::Option::Some(input);
@@ -391,6 +456,10 @@ impl AwsApiGatewayStageDetailsBuilder {
     pub fn set_tracing_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.tracing_enabled = input;
         self
+    }
+    /// <p>Indicates whether active tracing with X-Ray is enabled for the stage.</p>
+    pub fn get_tracing_enabled(&self) -> &::std::option::Option<bool> {
+        &self.tracing_enabled
     }
     /// <p>Indicates when the stage was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -403,6 +472,11 @@ impl AwsApiGatewayStageDetailsBuilder {
     pub fn set_created_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_date = input;
         self
+    }
+    /// <p>Indicates when the stage was created.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_date
     }
     /// <p>Indicates when the stage was most recently updated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -422,6 +496,11 @@ impl AwsApiGatewayStageDetailsBuilder {
         self.last_updated_date = input;
         self
     }
+    /// <p>Indicates when the stage was most recently updated.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_last_updated_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_updated_date
+    }
     /// <p>The ARN of the web ACL associated with the stage.</p>
     pub fn web_acl_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.web_acl_arn = ::std::option::Option::Some(input.into());
@@ -431,6 +510,10 @@ impl AwsApiGatewayStageDetailsBuilder {
     pub fn set_web_acl_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.web_acl_arn = input;
         self
+    }
+    /// <p>The ARN of the web ACL associated with the stage.</p>
+    pub fn get_web_acl_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.web_acl_arn
     }
     /// Consumes the builder and constructs a [`AwsApiGatewayStageDetails`](crate::types::AwsApiGatewayStageDetails).
     pub fn build(self) -> crate::types::AwsApiGatewayStageDetails {

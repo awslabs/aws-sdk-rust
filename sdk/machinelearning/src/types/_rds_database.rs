@@ -54,6 +54,10 @@ impl RdsDatabaseBuilder {
         self.instance_identifier = input;
         self
     }
+    /// <p>The ID of an RDS DB instance.</p>
+    pub fn get_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_identifier
+    }
     /// <p>The name of a database hosted on an RDS DB instance.</p>
     pub fn database_name(
         mut self,
@@ -69,6 +73,10 @@ impl RdsDatabaseBuilder {
     ) -> Self {
         self.database_name = input;
         self
+    }
+    /// <p>The name of a database hosted on an RDS DB instance.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
     }
     /// Consumes the builder and constructs a [`RdsDatabase`](crate::types::RdsDatabase).
     pub fn build(self) -> crate::types::RdsDatabase {

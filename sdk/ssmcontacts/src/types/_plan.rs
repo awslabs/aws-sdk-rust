@@ -57,6 +57,10 @@ impl PlanBuilder {
         self.stages = input;
         self
     }
+    /// <p>A list of stages that the escalation plan or engagement plan uses to engage contacts and contact methods.</p>
+    pub fn get_stages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Stage>> {
+        &self.stages
+    }
     /// Appends an item to `rotation_ids`.
     ///
     /// To override the contents of this collection use [`set_rotation_ids`](Self::set_rotation_ids).
@@ -75,6 +79,12 @@ impl PlanBuilder {
     ) -> Self {
         self.rotation_ids = input;
         self
+    }
+    /// <p>The Amazon Resource Names (ARNs) of the on-call rotations associated with the plan. </p>
+    pub fn get_rotation_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.rotation_ids
     }
     /// Consumes the builder and constructs a [`Plan`](crate::types::Plan).
     pub fn build(self) -> crate::types::Plan {

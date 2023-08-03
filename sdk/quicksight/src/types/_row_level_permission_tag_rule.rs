@@ -72,6 +72,10 @@ impl RowLevelPermissionTagRuleBuilder {
         self.tag_key = input;
         self
     }
+    /// <p>The unique key for a tag.</p>
+    pub fn get_tag_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tag_key
+    }
     /// <p>The column name that a tag key is assigned to.</p>
     pub fn column_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.column_name = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl RowLevelPermissionTagRuleBuilder {
     pub fn set_column_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.column_name = input;
         self
+    }
+    /// <p>The column name that a tag key is assigned to.</p>
+    pub fn get_column_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.column_name
     }
     /// <p>A string that you want to use to delimit the values when you pass the values at run time. For example, you can delimit the values with a comma.</p>
     pub fn tag_multi_value_delimiter(
@@ -98,6 +106,10 @@ impl RowLevelPermissionTagRuleBuilder {
         self.tag_multi_value_delimiter = input;
         self
     }
+    /// <p>A string that you want to use to delimit the values when you pass the values at run time. For example, you can delimit the values with a comma.</p>
+    pub fn get_tag_multi_value_delimiter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tag_multi_value_delimiter
+    }
     /// <p>A string that you want to use to filter by all the values in a column in the dataset and don’t want to list the values one by one. For example, you can use an asterisk as your match all value.</p>
     pub fn match_all_value(
         mut self,
@@ -113,6 +125,10 @@ impl RowLevelPermissionTagRuleBuilder {
     ) -> Self {
         self.match_all_value = input;
         self
+    }
+    /// <p>A string that you want to use to filter by all the values in a column in the dataset and don’t want to list the values one by one. For example, you can use an asterisk as your match all value.</p>
+    pub fn get_match_all_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.match_all_value
     }
     /// Consumes the builder and constructs a [`RowLevelPermissionTagRule`](crate::types::RowLevelPermissionTagRule).
     pub fn build(self) -> crate::types::RowLevelPermissionTagRule {

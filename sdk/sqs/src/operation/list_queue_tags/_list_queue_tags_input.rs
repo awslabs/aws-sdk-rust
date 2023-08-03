@@ -39,6 +39,10 @@ impl ListQueueTagsInputBuilder {
         self.queue_url = input;
         self
     }
+    /// <p>The URL of the queue.</p>
+    pub fn get_queue_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.queue_url
+    }
     /// Consumes the builder and constructs a [`ListQueueTagsInput`](crate::operation::list_queue_tags::ListQueueTagsInput).
     pub fn build(
         self,

@@ -48,6 +48,10 @@ impl OrderByBuilder {
         self.order = input;
         self
     }
+    /// <p>The set order that filters results.</p>
+    pub fn get_order(&self) -> &::std::option::Option<crate::types::Order> {
+        &self.order
+    }
     /// <p>The property name.</p>
     pub fn property_name(
         mut self,
@@ -63,6 +67,10 @@ impl OrderByBuilder {
     ) -> Self {
         self.property_name = input;
         self
+    }
+    /// <p>The property name.</p>
+    pub fn get_property_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.property_name
     }
     /// Consumes the builder and constructs a [`OrderBy`](crate::types::OrderBy).
     pub fn build(self) -> crate::types::OrderBy {

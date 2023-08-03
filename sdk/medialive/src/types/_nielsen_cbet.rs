@@ -64,6 +64,10 @@ impl NielsenCbetBuilder {
         self.cbet_check_digit_string = input;
         self
     }
+    /// Enter the CBET check digits to use in the watermark.
+    pub fn get_cbet_check_digit_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cbet_check_digit_string
+    }
     /// Determines the method of CBET insertion mode when prior encoding is detected on the same layer.
     pub fn cbet_stepaside(mut self, input: crate::types::NielsenWatermarksCbetStepaside) -> Self {
         self.cbet_stepaside = ::std::option::Option::Some(input);
@@ -77,6 +81,12 @@ impl NielsenCbetBuilder {
         self.cbet_stepaside = input;
         self
     }
+    /// Determines the method of CBET insertion mode when prior encoding is detected on the same layer.
+    pub fn get_cbet_stepaside(
+        &self,
+    ) -> &::std::option::Option<crate::types::NielsenWatermarksCbetStepaside> {
+        &self.cbet_stepaside
+    }
     /// Enter the CBET Source ID (CSID) to use in the watermark
     pub fn csid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.csid = ::std::option::Option::Some(input.into());
@@ -86,6 +96,10 @@ impl NielsenCbetBuilder {
     pub fn set_csid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.csid = input;
         self
+    }
+    /// Enter the CBET Source ID (CSID) to use in the watermark
+    pub fn get_csid(&self) -> &::std::option::Option<::std::string::String> {
+        &self.csid
     }
     /// Consumes the builder and constructs a [`NielsenCbet`](crate::types::NielsenCbet).
     pub fn build(self) -> crate::types::NielsenCbet {

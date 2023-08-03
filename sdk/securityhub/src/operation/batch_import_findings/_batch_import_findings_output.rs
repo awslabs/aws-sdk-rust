@@ -65,6 +65,10 @@ impl BatchImportFindingsOutputBuilder {
         self.failed_count = input;
         self
     }
+    /// <p>The number of findings that failed to import.</p>
+    pub fn get_failed_count(&self) -> &::std::option::Option<i32> {
+        &self.failed_count
+    }
     /// <p>The number of findings that were successfully imported.</p>
     pub fn success_count(mut self, input: i32) -> Self {
         self.success_count = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl BatchImportFindingsOutputBuilder {
     pub fn set_success_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.success_count = input;
         self
+    }
+    /// <p>The number of findings that were successfully imported.</p>
+    pub fn get_success_count(&self) -> &::std::option::Option<i32> {
+        &self.success_count
     }
     /// Appends an item to `failed_findings`.
     ///
@@ -93,6 +101,12 @@ impl BatchImportFindingsOutputBuilder {
     ) -> Self {
         self.failed_findings = input;
         self
+    }
+    /// <p>The list of findings that failed to import.</p>
+    pub fn get_failed_findings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportFindingsError>> {
+        &self.failed_findings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

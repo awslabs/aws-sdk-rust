@@ -62,6 +62,12 @@ impl DescribeAcceleratorOfferingsOutputBuilder {
         self.accelerator_type_offerings = input;
         self
     }
+    /// <p> The list of accelerator type offerings for a specific location. </p>
+    pub fn get_accelerator_type_offerings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AcceleratorTypeOffering>> {
+        &self.accelerator_type_offerings
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

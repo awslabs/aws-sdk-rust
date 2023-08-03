@@ -138,6 +138,10 @@ impl DescribeTestSetGenerationOutputBuilder {
         self.test_set_generation_id = input;
         self
     }
+    /// <p>The unique identifier of the test set generation.</p>
+    pub fn get_test_set_generation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_set_generation_id
+    }
     /// <p>The status for the test set generation.</p>
     pub fn test_set_generation_status(
         mut self,
@@ -153,6 +157,12 @@ impl DescribeTestSetGenerationOutputBuilder {
     ) -> Self {
         self.test_set_generation_status = input;
         self
+    }
+    /// <p>The status for the test set generation.</p>
+    pub fn get_test_set_generation_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::TestSetGenerationStatus> {
+        &self.test_set_generation_status
     }
     /// Appends an item to `failure_reasons`.
     ///
@@ -176,6 +186,12 @@ impl DescribeTestSetGenerationOutputBuilder {
         self.failure_reasons = input;
         self
     }
+    /// <p>The reasons the test set generation failed.</p>
+    pub fn get_failure_reasons(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.failure_reasons
+    }
     /// <p>The unique identifier for the test set created for the generated test set.</p>
     pub fn test_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_set_id = ::std::option::Option::Some(input.into());
@@ -185,6 +201,10 @@ impl DescribeTestSetGenerationOutputBuilder {
     pub fn set_test_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.test_set_id = input;
         self
+    }
+    /// <p>The unique identifier for the test set created for the generated test set.</p>
+    pub fn get_test_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_set_id
     }
     /// <p>The test set name for the generated test set.</p>
     pub fn test_set_name(
@@ -202,6 +222,10 @@ impl DescribeTestSetGenerationOutputBuilder {
         self.test_set_name = input;
         self
     }
+    /// <p>The test set name for the generated test set.</p>
+    pub fn get_test_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_set_name
+    }
     /// <p>The test set description for the test set generation.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -211,6 +235,10 @@ impl DescribeTestSetGenerationOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The test set description for the test set generation.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The Amazon S3 storage location for the test set generation.</p>
     pub fn storage_location(mut self, input: crate::types::TestSetStorageLocation) -> Self {
@@ -224,6 +252,12 @@ impl DescribeTestSetGenerationOutputBuilder {
     ) -> Self {
         self.storage_location = input;
         self
+    }
+    /// <p>The Amazon S3 storage location for the test set generation.</p>
+    pub fn get_storage_location(
+        &self,
+    ) -> &::std::option::Option<crate::types::TestSetStorageLocation> {
+        &self.storage_location
     }
     /// <p>The data source of the test set used for the test set generation.</p>
     pub fn generation_data_source(
@@ -241,6 +275,12 @@ impl DescribeTestSetGenerationOutputBuilder {
         self.generation_data_source = input;
         self
     }
+    /// <p>The data source of the test set used for the test set generation.</p>
+    pub fn get_generation_data_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::TestSetGenerationDataSource> {
+        &self.generation_data_source
+    }
     /// <p> The roleARN of the test set used for the test set generation.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -250,6 +290,10 @@ impl DescribeTestSetGenerationOutputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p> The roleARN of the test set used for the test set generation.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The creation date and time for the test set generation.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -264,6 +308,10 @@ impl DescribeTestSetGenerationOutputBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>The creation date and time for the test set generation.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>The date and time of the last update for the test set generation.</p>
     pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date_time = ::std::option::Option::Some(input);
@@ -276,6 +324,12 @@ impl DescribeTestSetGenerationOutputBuilder {
     ) -> Self {
         self.last_updated_date_time = input;
         self
+    }
+    /// <p>The date and time of the last update for the test set generation.</p>
+    pub fn get_last_updated_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

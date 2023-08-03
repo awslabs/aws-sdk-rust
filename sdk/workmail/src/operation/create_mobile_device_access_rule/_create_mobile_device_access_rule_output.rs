@@ -52,6 +52,12 @@ impl CreateMobileDeviceAccessRuleOutputBuilder {
         self.mobile_device_access_rule_id = input;
         self
     }
+    /// <p>The identifier for the newly created mobile device access rule.</p>
+    pub fn get_mobile_device_access_rule_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.mobile_device_access_rule_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

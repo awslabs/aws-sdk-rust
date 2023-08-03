@@ -46,6 +46,10 @@ impl DescribeAddonOutputBuilder {
         self.addon = input;
         self
     }
+    /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in the <i>Amazon EKS User Guide</i>.</p>
+    pub fn get_addon(&self) -> &::std::option::Option<crate::types::Addon> {
+        &self.addon
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

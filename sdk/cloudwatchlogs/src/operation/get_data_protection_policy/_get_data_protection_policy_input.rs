@@ -47,6 +47,10 @@ impl GetDataProtectionPolicyInputBuilder {
         self.log_group_identifier = input;
         self
     }
+    /// <p>The name or ARN of the log group that contains the data protection policy that you want to see.</p>
+    pub fn get_log_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group_identifier
+    }
     /// Consumes the builder and constructs a [`GetDataProtectionPolicyInput`](crate::operation::get_data_protection_policy::GetDataProtectionPolicyInput).
     pub fn build(
         self,

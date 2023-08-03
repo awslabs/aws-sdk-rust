@@ -94,6 +94,10 @@ impl CreateExtensionAssociationOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The system-generated ID for the association.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The ARN of the extension defined in the association.</p>
     pub fn extension_arn(
         mut self,
@@ -110,6 +114,10 @@ impl CreateExtensionAssociationOutputBuilder {
         self.extension_arn = input;
         self
     }
+    /// <p>The ARN of the extension defined in the association.</p>
+    pub fn get_extension_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.extension_arn
+    }
     /// <p>The ARNs of applications, configuration profiles, or environments defined in the association.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -120,6 +128,10 @@ impl CreateExtensionAssociationOutputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The ARNs of applications, configuration profiles, or environments defined in the association.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -129,6 +141,10 @@ impl CreateExtensionAssociationOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Adds a key-value pair to `parameters`.
     ///
@@ -155,6 +171,14 @@ impl CreateExtensionAssociationOutputBuilder {
         self.parameters = input;
         self
     }
+    /// <p>The parameter names and values defined in the association.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.parameters
+    }
     /// <p>The version number for the extension defined in the association.</p>
     pub fn extension_version_number(mut self, input: i32) -> Self {
         self.extension_version_number = ::std::option::Option::Some(input);
@@ -164,6 +188,10 @@ impl CreateExtensionAssociationOutputBuilder {
     pub fn set_extension_version_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.extension_version_number = input;
         self
+    }
+    /// <p>The version number for the extension defined in the association.</p>
+    pub fn get_extension_version_number(&self) -> &::std::option::Option<i32> {
+        &self.extension_version_number
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

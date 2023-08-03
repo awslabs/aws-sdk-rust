@@ -104,6 +104,10 @@ impl FleetSummaryBuilder {
         self.fleet_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_arn
+    }
     /// <p>The time when the fleet was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
@@ -116,6 +120,10 @@ impl FleetSummaryBuilder {
     ) -> Self {
         self.created_time = input;
         self
+    }
+    /// <p>The time when the fleet was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
     }
     /// <p>The time when the fleet was last updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -130,6 +138,10 @@ impl FleetSummaryBuilder {
         self.last_updated_time = input;
         self
     }
+    /// <p>The time when the fleet was last updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
+    }
     /// <p>The name of the fleet.</p>
     pub fn fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_name = ::std::option::Option::Some(input.into());
@@ -139,6 +151,10 @@ impl FleetSummaryBuilder {
     pub fn set_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet_name = input;
         self
+    }
+    /// <p>The name of the fleet.</p>
+    pub fn get_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_name
     }
     /// <p>The name of the fleet to display.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -150,6 +166,10 @@ impl FleetSummaryBuilder {
         self.display_name = input;
         self
     }
+    /// <p>The name of the fleet to display.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// <p>The identifier used by users to sign into the Amazon WorkLink app.</p>
     pub fn company_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.company_code = ::std::option::Option::Some(input.into());
@@ -159,6 +179,10 @@ impl FleetSummaryBuilder {
     pub fn set_company_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.company_code = input;
         self
+    }
+    /// <p>The identifier used by users to sign into the Amazon WorkLink app.</p>
+    pub fn get_company_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.company_code
     }
     /// <p>The status of the fleet.</p>
     pub fn fleet_status(mut self, input: crate::types::FleetStatus) -> Self {
@@ -172,6 +196,10 @@ impl FleetSummaryBuilder {
     ) -> Self {
         self.fleet_status = input;
         self
+    }
+    /// <p>The status of the fleet.</p>
+    pub fn get_fleet_status(&self) -> &::std::option::Option<crate::types::FleetStatus> {
+        &self.fleet_status
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -197,6 +225,14 @@ impl FleetSummaryBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags attached to the resource. A tag is a key-value pair.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`FleetSummary`](crate::types::FleetSummary).
     pub fn build(self) -> crate::types::FleetSummary {

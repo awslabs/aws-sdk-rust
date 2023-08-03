@@ -38,6 +38,10 @@ impl DeleteConfigurationTemplateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteConfigurationTemplate as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_configuration_template::builders::DeleteConfigurationTemplateInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +138,10 @@ impl DeleteConfigurationTemplateFluentBuilder {
         self.inner = self.inner.set_application_name(input);
         self
     }
+    /// <p>The name of the application to delete the configuration template from.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_name()
+    }
     /// <p>The name of the configuration template to delete.</p>
     pub fn template_name(
         mut self,
@@ -149,5 +157,9 @@ impl DeleteConfigurationTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
+    }
+    /// <p>The name of the configuration template to delete.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_name()
     }
 }

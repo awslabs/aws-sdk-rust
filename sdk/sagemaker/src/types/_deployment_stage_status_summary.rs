@@ -66,6 +66,10 @@ impl DeploymentStageStatusSummaryBuilder {
         self.stage_name = input;
         self
     }
+    /// <p>The name of the stage.</p>
+    pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stage_name
+    }
     /// <p>Configuration of the devices in the stage.</p>
     pub fn device_selection_config(mut self, input: crate::types::DeviceSelectionConfig) -> Self {
         self.device_selection_config = ::std::option::Option::Some(input);
@@ -78,6 +82,12 @@ impl DeploymentStageStatusSummaryBuilder {
     ) -> Self {
         self.device_selection_config = input;
         self
+    }
+    /// <p>Configuration of the devices in the stage.</p>
+    pub fn get_device_selection_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeviceSelectionConfig> {
+        &self.device_selection_config
     }
     /// <p>Configuration of the deployment details.</p>
     pub fn deployment_config(mut self, input: crate::types::EdgeDeploymentConfig) -> Self {
@@ -92,6 +102,12 @@ impl DeploymentStageStatusSummaryBuilder {
         self.deployment_config = input;
         self
     }
+    /// <p>Configuration of the deployment details.</p>
+    pub fn get_deployment_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::EdgeDeploymentConfig> {
+        &self.deployment_config
+    }
     /// <p>General status of the current state.</p>
     pub fn deployment_status(mut self, input: crate::types::EdgeDeploymentStatus) -> Self {
         self.deployment_status = ::std::option::Option::Some(input);
@@ -104,6 +120,12 @@ impl DeploymentStageStatusSummaryBuilder {
     ) -> Self {
         self.deployment_status = input;
         self
+    }
+    /// <p>General status of the current state.</p>
+    pub fn get_deployment_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::EdgeDeploymentStatus> {
+        &self.deployment_status
     }
     /// Consumes the builder and constructs a [`DeploymentStageStatusSummary`](crate::types::DeploymentStageStatusSummary).
     pub fn build(self) -> crate::types::DeploymentStageStatusSummary {

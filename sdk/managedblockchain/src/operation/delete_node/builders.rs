@@ -37,6 +37,10 @@ impl DeleteNodeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteNode as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_node::builders::DeleteNodeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +135,16 @@ impl DeleteNodeFluentBuilder {
         self.inner = self.inner.set_network_id(input);
         self
     }
+    /// <p>The unique identifier of the network that the node is on.</p>
+    /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
+    /// <ul>
+    /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
+    /// <li> <p> <code>n-ethereum-goerli</code> </p> </li>
+    /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>
+    /// </ul>
+    pub fn get_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_network_id()
+    }
     /// <p>The unique identifier of the member that owns this node.</p>
     /// <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
     pub fn member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -143,6 +157,11 @@ impl DeleteNodeFluentBuilder {
         self.inner = self.inner.set_member_id(input);
         self
     }
+    /// <p>The unique identifier of the member that owns this node.</p>
+    /// <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
+    pub fn get_member_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_member_id()
+    }
     /// <p>The unique identifier of the node.</p>
     pub fn node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.node_id(input.into());
@@ -152,5 +171,9 @@ impl DeleteNodeFluentBuilder {
     pub fn set_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_node_id(input);
         self
+    }
+    /// <p>The unique identifier of the node.</p>
+    pub fn get_node_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_node_id()
     }
 }

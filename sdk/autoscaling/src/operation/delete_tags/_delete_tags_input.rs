@@ -48,6 +48,10 @@ impl DeleteTagsInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>One or more tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`DeleteTagsInput`](crate::operation::delete_tags::DeleteTagsInput).
     pub fn build(
         self,

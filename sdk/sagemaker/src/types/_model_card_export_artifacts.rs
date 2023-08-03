@@ -46,6 +46,10 @@ impl ModelCardExportArtifactsBuilder {
         self.s3_export_artifacts = input;
         self
     }
+    /// <p>The Amazon S3 URI of the exported model artifacts.</p>
+    pub fn get_s3_export_artifacts(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_export_artifacts
+    }
     /// Consumes the builder and constructs a [`ModelCardExportArtifacts`](crate::types::ModelCardExportArtifacts).
     pub fn build(self) -> crate::types::ModelCardExportArtifacts {
         crate::types::ModelCardExportArtifacts {

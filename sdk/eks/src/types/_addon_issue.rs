@@ -56,6 +56,10 @@ impl AddonIssueBuilder {
         self.code = input;
         self
     }
+    /// <p>A code that describes the type of issue.</p>
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::AddonIssueCode> {
+        &self.code
+    }
     /// <p>A message that provides details about the issue and what might cause it.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl AddonIssueBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>A message that provides details about the issue and what might cause it.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Appends an item to `resource_ids`.
     ///
@@ -84,6 +92,12 @@ impl AddonIssueBuilder {
     ) -> Self {
         self.resource_ids = input;
         self
+    }
+    /// <p>The resource IDs of the issue.</p>
+    pub fn get_resource_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_ids
     }
     /// Consumes the builder and constructs a [`AddonIssue`](crate::types::AddonIssue).
     pub fn build(self) -> crate::types::AddonIssue {

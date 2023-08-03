@@ -72,6 +72,13 @@ impl LensReviewReportBuilder {
         self.lens_alias = input;
         self
     }
+    /// <p>The alias of the lens.</p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    pub fn get_lens_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lens_alias
+    }
     /// <p>The ARN for the lens.</p>
     pub fn lens_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lens_arn = ::std::option::Option::Some(input.into());
@@ -81,6 +88,10 @@ impl LensReviewReportBuilder {
     pub fn set_lens_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lens_arn = input;
         self
+    }
+    /// <p>The ARN for the lens.</p>
+    pub fn get_lens_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lens_arn
     }
     /// <p>The Base64-encoded string representation of a lens review report.</p>
     /// <p>This data can be used to create a PDF file.</p>
@@ -101,6 +112,12 @@ impl LensReviewReportBuilder {
     ) -> Self {
         self.base64_string = input;
         self
+    }
+    /// <p>The Base64-encoded string representation of a lens review report.</p>
+    /// <p>This data can be used to create a PDF file.</p>
+    /// <p>Only returned by <code>GetConsolidatedReport</code> when <code>PDF</code> format is requested.</p>
+    pub fn get_base64_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.base64_string
     }
     /// Consumes the builder and constructs a [`LensReviewReport`](crate::types::LensReviewReport).
     pub fn build(self) -> crate::types::LensReviewReport {

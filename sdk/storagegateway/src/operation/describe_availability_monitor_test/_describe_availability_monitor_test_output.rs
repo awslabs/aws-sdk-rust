@@ -62,6 +62,10 @@ impl DescribeAvailabilityMonitorTestOutputBuilder {
         self.gateway_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
+    }
     /// <p>The status of the high availability monitoring test. If a test hasn't been performed, the value of this field is null.</p>
     pub fn status(mut self, input: crate::types::AvailabilityMonitorTestStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -75,6 +79,12 @@ impl DescribeAvailabilityMonitorTestOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the high availability monitoring test. If a test hasn't been performed, the value of this field is null.</p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::AvailabilityMonitorTestStatus> {
+        &self.status
+    }
     /// <p>The time the high availability monitoring test was started. If a test hasn't been performed, the value of this field is null.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -87,6 +97,10 @@ impl DescribeAvailabilityMonitorTestOutputBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>The time the high availability monitoring test was started. If a test hasn't been performed, the value of this field is null.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

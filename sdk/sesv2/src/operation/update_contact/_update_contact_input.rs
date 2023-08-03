@@ -78,6 +78,10 @@ impl UpdateContactInputBuilder {
         self.contact_list_name = input;
         self
     }
+    /// <p>The name of the contact list.</p>
+    pub fn get_contact_list_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_list_name
+    }
     /// <p>The contact's email address.</p>
     pub fn email_address(
         mut self,
@@ -93,6 +97,10 @@ impl UpdateContactInputBuilder {
     ) -> Self {
         self.email_address = input;
         self
+    }
+    /// <p>The contact's email address.</p>
+    pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_address
     }
     /// Appends an item to `topic_preferences`.
     ///
@@ -113,6 +121,12 @@ impl UpdateContactInputBuilder {
         self.topic_preferences = input;
         self
     }
+    /// <p>The contact's preference for being opted-in to or opted-out of a topic.</p>
+    pub fn get_topic_preferences(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicPreference>> {
+        &self.topic_preferences
+    }
     /// <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
     pub fn unsubscribe_all(mut self, input: bool) -> Self {
         self.unsubscribe_all = ::std::option::Option::Some(input);
@@ -122,6 +136,10 @@ impl UpdateContactInputBuilder {
     pub fn set_unsubscribe_all(mut self, input: ::std::option::Option<bool>) -> Self {
         self.unsubscribe_all = input;
         self
+    }
+    /// <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
+    pub fn get_unsubscribe_all(&self) -> &::std::option::Option<bool> {
+        &self.unsubscribe_all
     }
     /// <p>The attribute data attached to a contact.</p>
     pub fn attributes_data(
@@ -138,6 +156,10 @@ impl UpdateContactInputBuilder {
     ) -> Self {
         self.attributes_data = input;
         self
+    }
+    /// <p>The attribute data attached to a contact.</p>
+    pub fn get_attributes_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attributes_data
     }
     /// Consumes the builder and constructs a [`UpdateContactInput`](crate::operation::update_contact::UpdateContactInput).
     pub fn build(

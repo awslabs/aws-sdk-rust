@@ -142,6 +142,10 @@ impl CodeReviewSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the code review.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
     pub fn code_review_arn(
         mut self,
@@ -157,6 +161,10 @@ impl CodeReviewSummaryBuilder {
     ) -> Self {
         self.code_review_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
+    pub fn get_code_review_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code_review_arn
     }
     /// <p>The name of the repository.</p>
     pub fn repository_name(
@@ -174,6 +182,10 @@ impl CodeReviewSummaryBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner = ::std::option::Option::Some(input.into());
@@ -183,6 +195,10 @@ impl CodeReviewSummaryBuilder {
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner = input;
         self
+    }
+    /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
     }
     /// <p>The provider type of the repository association.</p>
     pub fn provider_type(mut self, input: crate::types::ProviderType) -> Self {
@@ -196,6 +212,10 @@ impl CodeReviewSummaryBuilder {
     ) -> Self {
         self.provider_type = input;
         self
+    }
+    /// <p>The provider type of the repository association.</p>
+    pub fn get_provider_type(&self) -> &::std::option::Option<crate::types::ProviderType> {
+        &self.provider_type
     }
     /// <p>The state of the code review.</p>
     /// <p>The valid code review states are:</p>
@@ -221,6 +241,17 @@ impl CodeReviewSummaryBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of the code review.</p>
+    /// <p>The valid code review states are:</p>
+    /// <ul>
+    /// <li> <p> <code>Completed</code>: The code review is complete.</p> </li>
+    /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed.</p> </li>
+    /// <li> <p> <code>Failed</code>: The code review failed.</p> </li>
+    /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li>
+    /// </ul>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::JobState> {
+        &self.state
+    }
     /// <p>The time, in milliseconds since the epoch, when the code review was created.</p>
     pub fn created_time_stamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time_stamp = ::std::option::Option::Some(input);
@@ -233,6 +264,10 @@ impl CodeReviewSummaryBuilder {
     ) -> Self {
         self.created_time_stamp = input;
         self
+    }
+    /// <p>The time, in milliseconds since the epoch, when the code review was created.</p>
+    pub fn get_created_time_stamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time_stamp
     }
     /// <p>The time, in milliseconds since the epoch, when the code review was last updated.</p>
     pub fn last_updated_time_stamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -247,6 +282,12 @@ impl CodeReviewSummaryBuilder {
         self.last_updated_time_stamp = input;
         self
     }
+    /// <p>The time, in milliseconds since the epoch, when the code review was last updated.</p>
+    pub fn get_last_updated_time_stamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time_stamp
+    }
     /// <p>The type of the code review.</p>
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -256,6 +297,10 @@ impl CodeReviewSummaryBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the code review.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
+        &self.r#type
     }
     /// <p>The pull request ID for the code review.</p>
     pub fn pull_request_id(
@@ -273,6 +318,10 @@ impl CodeReviewSummaryBuilder {
         self.pull_request_id = input;
         self
     }
+    /// <p>The pull request ID for the code review.</p>
+    pub fn get_pull_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pull_request_id
+    }
     /// <p>The statistics from the code review.</p>
     pub fn metrics_summary(mut self, input: crate::types::MetricsSummary) -> Self {
         self.metrics_summary = ::std::option::Option::Some(input);
@@ -286,6 +335,10 @@ impl CodeReviewSummaryBuilder {
         self.metrics_summary = input;
         self
     }
+    /// <p>The statistics from the code review.</p>
+    pub fn get_metrics_summary(&self) -> &::std::option::Option<crate::types::MetricsSummary> {
+        &self.metrics_summary
+    }
     /// <p>Specifies the source code that is analyzed in a code review.</p>
     pub fn source_code_type(mut self, input: crate::types::SourceCodeType) -> Self {
         self.source_code_type = ::std::option::Option::Some(input);
@@ -298,6 +351,10 @@ impl CodeReviewSummaryBuilder {
     ) -> Self {
         self.source_code_type = input;
         self
+    }
+    /// <p>Specifies the source code that is analyzed in a code review.</p>
+    pub fn get_source_code_type(&self) -> &::std::option::Option<crate::types::SourceCodeType> {
+        &self.source_code_type
     }
     /// Consumes the builder and constructs a [`CodeReviewSummary`](crate::types::CodeReviewSummary).
     pub fn build(self) -> crate::types::CodeReviewSummary {

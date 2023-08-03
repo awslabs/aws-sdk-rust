@@ -67,6 +67,10 @@ impl TimeRangeDrillDownFilterBuilder {
         self.column = input;
         self
     }
+    /// <p>The column that the filter is applied to.</p>
+    pub fn get_column(&self) -> &::std::option::Option<crate::types::ColumnIdentifier> {
+        &self.column
+    }
     /// <p>The minimum value for the filter value range.</p>
     pub fn range_minimum(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.range_minimum = ::std::option::Option::Some(input);
@@ -79,6 +83,10 @@ impl TimeRangeDrillDownFilterBuilder {
     ) -> Self {
         self.range_minimum = input;
         self
+    }
+    /// <p>The minimum value for the filter value range.</p>
+    pub fn get_range_minimum(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.range_minimum
     }
     /// <p>The maximum value for the filter value range.</p>
     pub fn range_maximum(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -93,6 +101,10 @@ impl TimeRangeDrillDownFilterBuilder {
         self.range_maximum = input;
         self
     }
+    /// <p>The maximum value for the filter value range.</p>
+    pub fn get_range_maximum(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.range_maximum
+    }
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
     pub fn time_granularity(mut self, input: crate::types::TimeGranularity) -> Self {
         self.time_granularity = ::std::option::Option::Some(input);
@@ -105,6 +117,10 @@ impl TimeRangeDrillDownFilterBuilder {
     ) -> Self {
         self.time_granularity = input;
         self
+    }
+    /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
+    pub fn get_time_granularity(&self) -> &::std::option::Option<crate::types::TimeGranularity> {
+        &self.time_granularity
     }
     /// Consumes the builder and constructs a [`TimeRangeDrillDownFilter`](crate::types::TimeRangeDrillDownFilter).
     pub fn build(self) -> crate::types::TimeRangeDrillDownFilter {

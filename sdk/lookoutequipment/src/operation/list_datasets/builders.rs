@@ -36,6 +36,10 @@ impl ListDatasetsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListDatasets as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_datasets::builders::ListDatasetsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +133,10 @@ impl ListDatasetsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p> Specifies the maximum number of datasets to list. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -138,6 +146,10 @@ impl ListDatasetsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p> Specifies the maximum number of datasets to list. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The beginning of the name of the datasets to be listed. </p>
     pub fn dataset_name_begins_with(
@@ -154,5 +166,9 @@ impl ListDatasetsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_dataset_name_begins_with(input);
         self
+    }
+    /// <p>The beginning of the name of the datasets to be listed. </p>
+    pub fn get_dataset_name_begins_with(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dataset_name_begins_with()
     }
 }

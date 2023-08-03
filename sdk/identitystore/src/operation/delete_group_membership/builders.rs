@@ -36,6 +36,13 @@ impl DeleteGroupMembershipFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteGroupMembership as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_group_membership::builders::DeleteGroupMembershipInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl DeleteGroupMembershipFluentBuilder {
         self.inner = self.inner.set_identity_store_id(input);
         self
     }
+    /// <p>The globally unique identifier for the identity store.</p>
+    pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_store_id()
+    }
     /// <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
     pub fn membership_id(
         mut self,
@@ -147,5 +158,9 @@ impl DeleteGroupMembershipFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_membership_id(input);
         self
+    }
+    /// <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
+    pub fn get_membership_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_membership_id()
     }
 }

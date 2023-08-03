@@ -238,6 +238,10 @@ impl JobBuilder {
         self.arn = input;
         self
     }
+    /// <p>The job's ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The job's name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -247,6 +251,10 @@ impl JobBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The job's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The job's type.</p>
     /// <p>Allowed values include the following:</p>
@@ -300,6 +308,31 @@ impl JobBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The job's type.</p>
+    /// <p>Allowed values include the following:</p>
+    /// <ul>
+    /// <li> <p>BUILTIN_FUZZ</p> </li>
+    /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG</p> </li>
+    /// <li> <p>APPIUM_PYTHON</p> </li>
+    /// <li> <p>APPIUM_NODE</p> </li>
+    /// <li> <p>APPIUM_RUBY</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY</p> </li>
+    /// <li> <p>CALABASH</p> </li>
+    /// <li> <p>INSTRUMENTATION</p> </li>
+    /// <li> <p>UIAUTOMATION</p> </li>
+    /// <li> <p>UIAUTOMATOR</p> </li>
+    /// <li> <p>XCTEST</p> </li>
+    /// <li> <p>XCTEST_UI</p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::TestType> {
+        &self.r#type
+    }
     /// <p>When the job was created.</p>
     pub fn created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created = ::std::option::Option::Some(input);
@@ -312,6 +345,10 @@ impl JobBuilder {
     ) -> Self {
         self.created = input;
         self
+    }
+    /// <p>When the job was created.</p>
+    pub fn get_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created
     }
     /// <p>The job's status.</p>
     /// <p>Allowed values include:</p>
@@ -350,6 +387,22 @@ impl JobBuilder {
         self.status = input;
         self
     }
+    /// <p>The job's status.</p>
+    /// <p>Allowed values include:</p>
+    /// <ul>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PENDING_CONCURRENCY</p> </li>
+    /// <li> <p>PENDING_DEVICE</p> </li>
+    /// <li> <p>PROCESSING</p> </li>
+    /// <li> <p>SCHEDULING</p> </li>
+    /// <li> <p>PREPARING</p> </li>
+    /// <li> <p>RUNNING</p> </li>
+    /// <li> <p>COMPLETED</p> </li>
+    /// <li> <p>STOPPING</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ExecutionStatus> {
+        &self.status
+    }
     /// <p>The job's result.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
@@ -383,6 +436,20 @@ impl JobBuilder {
         self.result = input;
         self
     }
+    /// <p>The job's result.</p>
+    /// <p>Allowed values include:</p>
+    /// <ul>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PASSED</p> </li>
+    /// <li> <p>WARNED</p> </li>
+    /// <li> <p>FAILED</p> </li>
+    /// <li> <p>SKIPPED</p> </li>
+    /// <li> <p>ERRORED</p> </li>
+    /// <li> <p>STOPPED</p> </li>
+    /// </ul>
+    pub fn get_result(&self) -> &::std::option::Option<crate::types::ExecutionResult> {
+        &self.result
+    }
     /// <p>The job's start time.</p>
     pub fn started(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.started = ::std::option::Option::Some(input);
@@ -395,6 +462,10 @@ impl JobBuilder {
     ) -> Self {
         self.started = input;
         self
+    }
+    /// <p>The job's start time.</p>
+    pub fn get_started(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.started
     }
     /// <p>The job's stop time.</p>
     pub fn stopped(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -409,6 +480,10 @@ impl JobBuilder {
         self.stopped = input;
         self
     }
+    /// <p>The job's stop time.</p>
+    pub fn get_stopped(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.stopped
+    }
     /// <p>The job's result counters.</p>
     pub fn counters(mut self, input: crate::types::Counters) -> Self {
         self.counters = ::std::option::Option::Some(input);
@@ -418,6 +493,10 @@ impl JobBuilder {
     pub fn set_counters(mut self, input: ::std::option::Option<crate::types::Counters>) -> Self {
         self.counters = input;
         self
+    }
+    /// <p>The job's result counters.</p>
+    pub fn get_counters(&self) -> &::std::option::Option<crate::types::Counters> {
+        &self.counters
     }
     /// <p>A message about the job's result.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -429,6 +508,10 @@ impl JobBuilder {
         self.message = input;
         self
     }
+    /// <p>A message about the job's result.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The device (phone or tablet).</p>
     pub fn device(mut self, input: crate::types::Device) -> Self {
         self.device = ::std::option::Option::Some(input);
@@ -439,6 +522,10 @@ impl JobBuilder {
         self.device = input;
         self
     }
+    /// <p>The device (phone or tablet).</p>
+    pub fn get_device(&self) -> &::std::option::Option<crate::types::Device> {
+        &self.device
+    }
     /// <p>The ARN of the instance.</p>
     pub fn instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_arn = ::std::option::Option::Some(input.into());
@@ -448,6 +535,10 @@ impl JobBuilder {
     pub fn set_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_arn = input;
         self
+    }
+    /// <p>The ARN of the instance.</p>
+    pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_arn
     }
     /// <p>Represents the total (metered or unmetered) minutes used by the job.</p>
     pub fn device_minutes(mut self, input: crate::types::DeviceMinutes) -> Self {
@@ -461,6 +552,10 @@ impl JobBuilder {
     ) -> Self {
         self.device_minutes = input;
         self
+    }
+    /// <p>Represents the total (metered or unmetered) minutes used by the job.</p>
+    pub fn get_device_minutes(&self) -> &::std::option::Option<crate::types::DeviceMinutes> {
+        &self.device_minutes
     }
     /// <p>The endpoint for streaming device video.</p>
     pub fn video_endpoint(
@@ -478,6 +573,10 @@ impl JobBuilder {
         self.video_endpoint = input;
         self
     }
+    /// <p>The endpoint for streaming device video.</p>
+    pub fn get_video_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.video_endpoint
+    }
     /// <p>This value is set to true if video capture is enabled. Otherwise, it is set to false.</p>
     pub fn video_capture(mut self, input: bool) -> Self {
         self.video_capture = ::std::option::Option::Some(input);
@@ -487,6 +586,10 @@ impl JobBuilder {
     pub fn set_video_capture(mut self, input: ::std::option::Option<bool>) -> Self {
         self.video_capture = input;
         self
+    }
+    /// <p>This value is set to true if video capture is enabled. Otherwise, it is set to false.</p>
+    pub fn get_video_capture(&self) -> &::std::option::Option<bool> {
+        &self.video_capture
     }
     /// Consumes the builder and constructs a [`Job`](crate::types::Job).
     pub fn build(self) -> crate::types::Job {

@@ -53,6 +53,10 @@ impl EnableAddOnInputBuilder {
         self.resource_name = input;
         self
     }
+    /// <p>The name of the source resource for which to enable or modify the add-on.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_name
+    }
     /// <p>An array of strings representing the add-on to enable or modify.</p>
     pub fn add_on_request(mut self, input: crate::types::AddOnRequest) -> Self {
         self.add_on_request = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl EnableAddOnInputBuilder {
     ) -> Self {
         self.add_on_request = input;
         self
+    }
+    /// <p>An array of strings representing the add-on to enable or modify.</p>
+    pub fn get_add_on_request(&self) -> &::std::option::Option<crate::types::AddOnRequest> {
+        &self.add_on_request
     }
     /// Consumes the builder and constructs a [`EnableAddOnInput`](crate::operation::enable_add_on::EnableAddOnInput).
     pub fn build(

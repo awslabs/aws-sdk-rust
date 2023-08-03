@@ -41,6 +41,10 @@ impl GetManagedScalingPolicyInputBuilder {
         self.cluster_id = input;
         self
     }
+    /// <p>Specifies the ID of the cluster for which the managed scaling policy will be fetched. </p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_id
+    }
     /// Consumes the builder and constructs a [`GetManagedScalingPolicyInput`](crate::operation::get_managed_scaling_policy::GetManagedScalingPolicyInput).
     pub fn build(
         self,

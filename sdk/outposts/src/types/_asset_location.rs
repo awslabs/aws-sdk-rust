@@ -40,6 +40,10 @@ impl AssetLocationBuilder {
         self.rack_elevation = input;
         self
     }
+    /// <p> The position of an asset in a rack measured in rack units. </p>
+    pub fn get_rack_elevation(&self) -> &::std::option::Option<f32> {
+        &self.rack_elevation
+    }
     /// Consumes the builder and constructs a [`AssetLocation`](crate::types::AssetLocation).
     pub fn build(self) -> crate::types::AssetLocation {
         crate::types::AssetLocation {

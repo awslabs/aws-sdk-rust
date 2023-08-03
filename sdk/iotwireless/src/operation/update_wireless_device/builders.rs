@@ -36,6 +36,12 @@ impl UpdateWirelessDeviceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateWirelessDevice as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_wireless_device::builders::UpdateWirelessDeviceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateWirelessDeviceFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The ID of the resource to update.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The name of the new destination for the device.</p>
     pub fn destination_name(
         mut self,
@@ -142,6 +152,10 @@ impl UpdateWirelessDeviceFluentBuilder {
         self.inner = self.inner.set_destination_name(input);
         self
     }
+    /// <p>The name of the new destination for the device.</p>
+    pub fn get_destination_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_name()
+    }
     /// <p>The new name of the resource.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -152,6 +166,10 @@ impl UpdateWirelessDeviceFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The new name of the resource.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A new description of the resource.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -161,6 +179,10 @@ impl UpdateWirelessDeviceFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A new description of the resource.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The updated wireless device's configuration.</p>
     pub fn lo_ra_wan(mut self, input: crate::types::LoRaWanUpdateDevice) -> Self {
@@ -175,6 +197,10 @@ impl UpdateWirelessDeviceFluentBuilder {
         self.inner = self.inner.set_lo_ra_wan(input);
         self
     }
+    /// <p>The updated wireless device's configuration.</p>
+    pub fn get_lo_ra_wan(&self) -> &::std::option::Option<crate::types::LoRaWanUpdateDevice> {
+        self.inner.get_lo_ra_wan()
+    }
     /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
     pub fn positioning(mut self, input: crate::types::PositioningConfigStatus) -> Self {
         self.inner = self.inner.positioning(input);
@@ -187,5 +213,9 @@ impl UpdateWirelessDeviceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_positioning(input);
         self
+    }
+    /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+    pub fn get_positioning(&self) -> &::std::option::Option<crate::types::PositioningConfigStatus> {
+        self.inner.get_positioning()
     }
 }

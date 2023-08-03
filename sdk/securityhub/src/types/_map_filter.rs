@@ -86,6 +86,10 @@ impl MapFilterBuilder {
         self.key = input;
         self
     }
+    /// <p>The key of the map filter. For example, for <code>ResourceTags</code>, <code>Key</code> identifies the name of the tag. For <code>UserDefinedFields</code>, <code>Key</code> is the name of the field.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>The value for the key in the map filter. Filter values are case sensitive. For example, one of the values for a tag called <code>Department</code> might be <code>Security</code>. If you provide <code>security</code> as the filter value, then there's no match.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -95,6 +99,10 @@ impl MapFilterBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value for the key in the map filter. Filter values are case sensitive. For example, one of the values for a tag called <code>Department</code> might be <code>Security</code>. If you provide <code>security</code> as the filter value, then there's no match.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// <p>The condition to apply to the key value when filtering Security Hub findings with a map filter.</p>
     /// <p>To search for values that have the filter value, use one of the following comparison operators:</p>
@@ -138,6 +146,25 @@ impl MapFilterBuilder {
     ) -> Self {
         self.comparison = input;
         self
+    }
+    /// <p>The condition to apply to the key value when filtering Security Hub findings with a map filter.</p>
+    /// <p>To search for values that have the filter value, use one of the following comparison operators:</p>
+    /// <ul>
+    /// <li> <p>To search for values that include the filter value, use <code>CONTAINS</code>. For example, for the <code>ResourceTags</code> field, the filter <code>Department CONTAINS Security</code> matches findings that include the value <code>Security</code> for the <code>Department</code> tag. In the same example, a finding with a value of <code>Security team</code> for the <code>Department</code> tag is a match.</p> </li>
+    /// <li> <p>To search for values that exactly match the filter value, use <code>EQUALS</code>. For example, for the <code>ResourceTags</code> field, the filter <code>Department EQUALS Security</code> matches findings that have the value <code>Security</code> for the <code>Department</code> tag.</p> </li>
+    /// </ul>
+    /// <p> <code>CONTAINS</code> and <code>EQUALS</code> filters on the same field are joined by <code>OR</code>. A finding matches if it matches any one of those filters. For example, the filters <code>Department CONTAINS Security OR Department CONTAINS Finance</code> match a finding that includes either <code>Security</code>, <code>Finance</code>, or both values.</p>
+    /// <p>To search for values that don't have the filter value, use one of the following comparison operators:</p>
+    /// <ul>
+    /// <li> <p>To search for values that exclude the filter value, use <code>NOT_CONTAINS</code>. For example, for the <code>ResourceTags</code> field, the filter <code>Department NOT_CONTAINS Finance</code> matches findings that exclude the value <code>Finance</code> for the <code>Department</code> tag.</p> </li>
+    /// <li> <p>To search for values other than the filter value, use <code>NOT_EQUALS</code>. For example, for the <code>ResourceTags</code> field, the filter <code>Department NOT_EQUALS Finance</code> matches findings that don’t have the value <code>Finance</code> for the <code>Department</code> tag.</p> </li>
+    /// </ul>
+    /// <p> <code>NOT_CONTAINS</code> and <code>NOT_EQUALS</code> filters on the same field are joined by <code>AND</code>. A finding matches only if it matches all of those filters. For example, the filters <code>Department NOT_CONTAINS Security AND Department NOT_CONTAINS Finance</code> match a finding that excludes both the <code>Security</code> and <code>Finance</code> values.</p>
+    /// <p> <code>CONTAINS</code> filters can only be used with other <code>CONTAINS</code> filters. <code>NOT_CONTAINS</code> filters can only be used with other <code>NOT_CONTAINS</code> filters.</p>
+    /// <p>You can’t have both a <code>CONTAINS</code> filter and a <code>NOT_CONTAINS</code> filter on the same field. Similarly, you can’t have both an <code>EQUALS</code> filter and a <code>NOT_EQUALS</code> filter on the same field. Combining filters in this way returns an error. </p>
+    /// <p> <code>CONTAINS</code> and <code>NOT_CONTAINS</code> operators can be used only with automation rules. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules.html">Automation rules</a> in the <i>Security Hub User Guide</i>.</p>
+    pub fn get_comparison(&self) -> &::std::option::Option<crate::types::MapFilterComparison> {
+        &self.comparison
     }
     /// Consumes the builder and constructs a [`MapFilter`](crate::types::MapFilter).
     pub fn build(self) -> crate::types::MapFilter {

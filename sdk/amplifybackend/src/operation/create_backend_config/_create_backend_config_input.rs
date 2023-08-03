@@ -50,6 +50,10 @@ impl CreateBackendConfigInputBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The app ID.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p>The app ID for the backend manager.</p>
     pub fn backend_manager_app_id(
         mut self,
@@ -65,6 +69,10 @@ impl CreateBackendConfigInputBuilder {
     ) -> Self {
         self.backend_manager_app_id = input;
         self
+    }
+    /// <p>The app ID for the backend manager.</p>
+    pub fn get_backend_manager_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backend_manager_app_id
     }
     /// Consumes the builder and constructs a [`CreateBackendConfigInput`](crate::operation::create_backend_config::CreateBackendConfigInput).
     pub fn build(

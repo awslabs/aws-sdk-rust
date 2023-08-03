@@ -127,6 +127,10 @@ impl ActivityBuilder {
         self.custom = input;
         self
     }
+    /// <p>The settings for a custom message activity. This type of activity calls an AWS Lambda function or web hook that sends messages to participants.</p>
+    pub fn get_custom(&self) -> &::std::option::Option<crate::types::CustomMessageActivity> {
+        &self.custom
+    }
     /// <p>The settings for a yes/no split activity. This type of activity sends participants down one of two paths in a journey, based on conditions that you specify.</p>
     pub fn conditional_split(mut self, input: crate::types::ConditionalSplitActivity) -> Self {
         self.conditional_split = ::std::option::Option::Some(input);
@@ -140,6 +144,12 @@ impl ActivityBuilder {
         self.conditional_split = input;
         self
     }
+    /// <p>The settings for a yes/no split activity. This type of activity sends participants down one of two paths in a journey, based on conditions that you specify.</p>
+    pub fn get_conditional_split(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConditionalSplitActivity> {
+        &self.conditional_split
+    }
     /// <p>The custom description of the activity.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -149,6 +159,10 @@ impl ActivityBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The custom description of the activity.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The settings for an email activity. This type of activity sends an email message to participants.</p>
     pub fn email(mut self, input: crate::types::EmailMessageActivity) -> Self {
@@ -163,6 +177,10 @@ impl ActivityBuilder {
         self.email = input;
         self
     }
+    /// <p>The settings for an email activity. This type of activity sends an email message to participants.</p>
+    pub fn get_email(&self) -> &::std::option::Option<crate::types::EmailMessageActivity> {
+        &self.email
+    }
     /// <p>The settings for a holdout activity. This type of activity stops a journey for a specified percentage of participants.</p>
     pub fn holdout(mut self, input: crate::types::HoldoutActivity) -> Self {
         self.holdout = ::std::option::Option::Some(input);
@@ -175,6 +193,10 @@ impl ActivityBuilder {
     ) -> Self {
         self.holdout = input;
         self
+    }
+    /// <p>The settings for a holdout activity. This type of activity stops a journey for a specified percentage of participants.</p>
+    pub fn get_holdout(&self) -> &::std::option::Option<crate::types::HoldoutActivity> {
+        &self.holdout
     }
     /// <p>The settings for a multivariate split activity. This type of activity sends participants down one of as many as five paths (including a default <i>Else</i> path) in a journey, based on conditions that you specify.</p>
     pub fn multi_condition(mut self, input: crate::types::MultiConditionalSplitActivity) -> Self {
@@ -189,6 +211,12 @@ impl ActivityBuilder {
         self.multi_condition = input;
         self
     }
+    /// <p>The settings for a multivariate split activity. This type of activity sends participants down one of as many as five paths (including a default <i>Else</i> path) in a journey, based on conditions that you specify.</p>
+    pub fn get_multi_condition(
+        &self,
+    ) -> &::std::option::Option<crate::types::MultiConditionalSplitActivity> {
+        &self.multi_condition
+    }
     /// <p>The settings for a push notification activity. This type of activity sends a push notification to participants.</p>
     pub fn push(mut self, input: crate::types::PushMessageActivity) -> Self {
         self.push = ::std::option::Option::Some(input);
@@ -201,6 +229,10 @@ impl ActivityBuilder {
     ) -> Self {
         self.push = input;
         self
+    }
+    /// <p>The settings for a push notification activity. This type of activity sends a push notification to participants.</p>
+    pub fn get_push(&self) -> &::std::option::Option<crate::types::PushMessageActivity> {
+        &self.push
     }
     /// <p>The settings for a random split activity. This type of activity randomly sends specified percentages of participants down one of as many as five paths in a journey, based on conditions that you specify.</p>
     pub fn random_split(mut self, input: crate::types::RandomSplitActivity) -> Self {
@@ -215,6 +247,10 @@ impl ActivityBuilder {
         self.random_split = input;
         self
     }
+    /// <p>The settings for a random split activity. This type of activity randomly sends specified percentages of participants down one of as many as five paths in a journey, based on conditions that you specify.</p>
+    pub fn get_random_split(&self) -> &::std::option::Option<crate::types::RandomSplitActivity> {
+        &self.random_split
+    }
     /// <p>The settings for an SMS activity. This type of activity sends a text message to participants.</p>
     pub fn sms(mut self, input: crate::types::SmsMessageActivity) -> Self {
         self.sms = ::std::option::Option::Some(input);
@@ -228,6 +264,10 @@ impl ActivityBuilder {
         self.sms = input;
         self
     }
+    /// <p>The settings for an SMS activity. This type of activity sends a text message to participants.</p>
+    pub fn get_sms(&self) -> &::std::option::Option<crate::types::SmsMessageActivity> {
+        &self.sms
+    }
     /// <p>The settings for a wait activity. This type of activity waits for a certain amount of time or until a specific date and time before moving participants to the next activity in a journey.</p>
     pub fn wait(mut self, input: crate::types::WaitActivity) -> Self {
         self.wait = ::std::option::Option::Some(input);
@@ -237,6 +277,10 @@ impl ActivityBuilder {
     pub fn set_wait(mut self, input: ::std::option::Option<crate::types::WaitActivity>) -> Self {
         self.wait = input;
         self
+    }
+    /// <p>The settings for a wait activity. This type of activity waits for a certain amount of time or until a specific date and time before moving participants to the next activity in a journey.</p>
+    pub fn get_wait(&self) -> &::std::option::Option<crate::types::WaitActivity> {
+        &self.wait
     }
     /// <p>The settings for a connect activity. This type of activity initiates a contact center call to participants.</p>
     pub fn contact_center(mut self, input: crate::types::ContactCenterActivity) -> Self {
@@ -250,6 +294,12 @@ impl ActivityBuilder {
     ) -> Self {
         self.contact_center = input;
         self
+    }
+    /// <p>The settings for a connect activity. This type of activity initiates a contact center call to participants.</p>
+    pub fn get_contact_center(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContactCenterActivity> {
+        &self.contact_center
     }
     /// Consumes the builder and constructs a [`Activity`](crate::types::Activity).
     pub fn build(self) -> crate::types::Activity {

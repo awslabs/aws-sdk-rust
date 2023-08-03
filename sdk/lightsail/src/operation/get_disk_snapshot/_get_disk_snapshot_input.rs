@@ -45,6 +45,10 @@ impl GetDiskSnapshotInputBuilder {
         self.disk_snapshot_name = input;
         self
     }
+    /// <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
+    pub fn get_disk_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.disk_snapshot_name
+    }
     /// Consumes the builder and constructs a [`GetDiskSnapshotInput`](crate::operation::get_disk_snapshot::GetDiskSnapshotInput).
     pub fn build(
         self,

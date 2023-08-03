@@ -43,6 +43,10 @@ impl QueryObjectsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the QueryObjects as a reference.
+    pub fn as_input(&self) -> &crate::operation::query_objects::builders::QueryObjectsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +140,10 @@ impl QueryObjectsFluentBuilder {
         self.inner = self.inner.set_pipeline_id(input);
         self
     }
+    /// <p>The ID of the pipeline.</p>
+    pub fn get_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pipeline_id()
+    }
     /// <p>The query that defines the objects to be returned. The <code>Query</code> object can contain a maximum of ten selectors. The conditions in the query are limited to top-level String fields in the object. These filters can be applied to components, instances, and attempts.</p>
     pub fn query(mut self, input: crate::types::Query) -> Self {
         self.inner = self.inner.query(input);
@@ -145,6 +153,10 @@ impl QueryObjectsFluentBuilder {
     pub fn set_query(mut self, input: ::std::option::Option<crate::types::Query>) -> Self {
         self.inner = self.inner.set_query(input);
         self
+    }
+    /// <p>The query that defines the objects to be returned. The <code>Query</code> object can contain a maximum of ten selectors. The conditions in the query are limited to top-level String fields in the object. These filters can be applied to components, instances, and attempts.</p>
+    pub fn get_query(&self) -> &::std::option::Option<crate::types::Query> {
+        self.inner.get_query()
     }
     /// <p>Indicates whether the query applies to components or instances. The possible values are: <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.</p>
     pub fn sphere(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -156,6 +168,10 @@ impl QueryObjectsFluentBuilder {
         self.inner = self.inner.set_sphere(input);
         self
     }
+    /// <p>Indicates whether the query applies to components or instances. The possible values are: <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.</p>
+    pub fn get_sphere(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sphere()
+    }
     /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>QueryObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -166,6 +182,10 @@ impl QueryObjectsFluentBuilder {
         self.inner = self.inner.set_marker(input);
         self
     }
+    /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>QueryObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
+    }
     /// <p>The maximum number of object names that <code>QueryObjects</code> will return in a single call. The default value is 100. </p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -175,5 +195,9 @@ impl QueryObjectsFluentBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
+    }
+    /// <p>The maximum number of object names that <code>QueryObjects</code> will return in a single call. The default value is 100. </p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
     }
 }

@@ -36,6 +36,10 @@ impl DescribeReservedNodeExchangeStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeReservedNodeExchangeStatus as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_reserved_node_exchange_status::builders::DescribeReservedNodeExchangeStatusInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -112,6 +116,10 @@ impl DescribeReservedNodeExchangeStatusFluentBuilder {
         self.inner = self.inner.set_reserved_node_id(input);
         self
     }
+    /// <p>The identifier of the source reserved node in a reserved-node exchange request.</p>
+    pub fn get_reserved_node_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reserved_node_id()
+    }
     /// <p>The identifier of the reserved-node exchange request.</p>
     pub fn reserved_node_exchange_request_id(
         mut self,
@@ -128,6 +136,12 @@ impl DescribeReservedNodeExchangeStatusFluentBuilder {
         self.inner = self.inner.set_reserved_node_exchange_request_id(input);
         self
     }
+    /// <p>The identifier of the reserved-node exchange request.</p>
+    pub fn get_reserved_node_exchange_request_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reserved_node_exchange_request_id()
+    }
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>Marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.inner = self.inner.max_records(input);
@@ -138,6 +152,10 @@ impl DescribeReservedNodeExchangeStatusFluentBuilder {
         self.inner = self.inner.set_max_records(input);
         self
     }
+    /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>Marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
+    }
     /// <p>An optional pagination token provided by a previous <code>DescribeReservedNodeExchangeStatus</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -147,5 +165,9 @@ impl DescribeReservedNodeExchangeStatusFluentBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
+    }
+    /// <p>An optional pagination token provided by a previous <code>DescribeReservedNodeExchangeStatus</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
     }
 }

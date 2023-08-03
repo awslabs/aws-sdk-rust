@@ -67,6 +67,12 @@ impl GetRemainingFreeTrialDaysOutputBuilder {
         self.accounts = input;
         self
     }
+    /// <p>The member accounts which were included in a request and were processed successfully.</p>
+    pub fn get_accounts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountFreeTrialInfo>> {
+        &self.accounts
+    }
     /// Appends an item to `unprocessed_accounts`.
     ///
     /// To override the contents of this collection use [`set_unprocessed_accounts`](Self::set_unprocessed_accounts).
@@ -85,6 +91,12 @@ impl GetRemainingFreeTrialDaysOutputBuilder {
     ) -> Self {
         self.unprocessed_accounts = input;
         self
+    }
+    /// <p>The member account that was included in a request but for which the request could not be processed.</p>
+    pub fn get_unprocessed_accounts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>> {
+        &self.unprocessed_accounts
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -97,6 +97,10 @@ impl CreateStreamingSessionInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The EC2 Instance type used for the streaming session.</p>
     pub fn ec2_instance_type(mut self, input: crate::types::StreamingInstanceType) -> Self {
         self.ec2_instance_type = ::std::option::Option::Some(input);
@@ -109,6 +113,12 @@ impl CreateStreamingSessionInputBuilder {
     ) -> Self {
         self.ec2_instance_type = input;
         self
+    }
+    /// <p>The EC2 Instance type used for the streaming session.</p>
+    pub fn get_ec2_instance_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::StreamingInstanceType> {
+        &self.ec2_instance_type
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     pub fn launch_profile_id(
@@ -126,6 +136,10 @@ impl CreateStreamingSessionInputBuilder {
         self.launch_profile_id = input;
         self
     }
+    /// <p>The ID of the launch profile used to control access from the streaming session.</p>
+    pub fn get_launch_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_profile_id
+    }
     /// <p>The user ID of the user that owns the streaming session. The user that owns the session will be logging into the session and interacting with the virtual workstation.</p>
     pub fn owned_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owned_by = ::std::option::Option::Some(input.into());
@@ -135,6 +149,10 @@ impl CreateStreamingSessionInputBuilder {
     pub fn set_owned_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owned_by = input;
         self
+    }
+    /// <p>The user ID of the user that owns the streaming session. The user that owns the session will be logging into the session and interacting with the virtual workstation.</p>
+    pub fn get_owned_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owned_by
     }
     /// <p>The ID of the streaming image.</p>
     pub fn streaming_image_id(
@@ -152,6 +170,10 @@ impl CreateStreamingSessionInputBuilder {
         self.streaming_image_id = input;
         self
     }
+    /// <p>The ID of the streaming image.</p>
+    pub fn get_streaming_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.streaming_image_id
+    }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
@@ -161,6 +183,10 @@ impl CreateStreamingSessionInputBuilder {
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.studio_id = input;
         self
+    }
+    /// <p>The studio ID. </p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_id
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -186,6 +212,14 @@ impl CreateStreamingSessionInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateStreamingSessionInput`](crate::operation::create_streaming_session::CreateStreamingSessionInput).
     pub fn build(

@@ -55,6 +55,10 @@ impl GetJobRunInputBuilder {
         self.job_name = input;
         self
     }
+    /// <p>Name of the job definition being run.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
+    }
     /// <p>The ID of the job run.</p>
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.run_id = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl GetJobRunInputBuilder {
         self.run_id = input;
         self
     }
+    /// <p>The ID of the job run.</p>
+    pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.run_id
+    }
     /// <p>True if a list of predecessor runs should be returned.</p>
     pub fn predecessors_included(mut self, input: bool) -> Self {
         self.predecessors_included = ::std::option::Option::Some(input);
@@ -74,6 +82,10 @@ impl GetJobRunInputBuilder {
     pub fn set_predecessors_included(mut self, input: ::std::option::Option<bool>) -> Self {
         self.predecessors_included = input;
         self
+    }
+    /// <p>True if a list of predecessor runs should be returned.</p>
+    pub fn get_predecessors_included(&self) -> &::std::option::Option<bool> {
+        &self.predecessors_included
     }
     /// Consumes the builder and constructs a [`GetJobRunInput`](crate::operation::get_job_run::GetJobRunInput).
     pub fn build(

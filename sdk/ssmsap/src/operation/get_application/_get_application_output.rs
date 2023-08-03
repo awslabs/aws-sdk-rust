@@ -65,6 +65,10 @@ impl GetApplicationOutputBuilder {
         self.application = input;
         self
     }
+    /// <p>Returns all of the metadata of an application registered with AWS Systems Manager for SAP.</p>
+    pub fn get_application(&self) -> &::std::option::Option<crate::types::Application> {
+        &self.application
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -89,6 +93,14 @@ impl GetApplicationOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags of a registered application.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

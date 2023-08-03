@@ -36,6 +36,12 @@ impl DescribeEngagementFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeEngagement as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_engagement::builders::DescribeEngagementInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl DescribeEngagementFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_engagement_id(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the engagement you want the details of.</p>
+    pub fn get_engagement_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_engagement_id()
     }
 }

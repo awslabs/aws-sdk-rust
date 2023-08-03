@@ -46,6 +46,10 @@ impl DescribeJobOutputBuilder {
         self.job = input;
         self
     }
+    /// <p>Contains the configuration parameters and status for the job specified in the <code>Describe Job</code> request.</p>
+    pub fn get_job(&self) -> &::std::option::Option<crate::types::JobDescriptor> {
+        &self.job
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

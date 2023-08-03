@@ -67,6 +67,14 @@ impl UrlsBuilder {
         self.seed_url_configuration = input;
         self
     }
+    /// <p>Configuration of the seed or starting point URLs of the websites you want to crawl.</p>
+    /// <p>You can choose to crawl only the website host names, or the website host names with subdomains, or the website host names with subdomains and other domains that the web pages link to.</p>
+    /// <p>You can list up to 100 seed URLs.</p>
+    pub fn get_seed_url_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SeedUrlConfiguration> {
+        &self.seed_url_configuration
+    }
     /// <p>Configuration of the sitemap URLs of the websites you want to crawl.</p>
     /// <p>Only URLs belonging to the same website host names are crawled. You can list up to three sitemap URLs.</p>
     pub fn site_maps_configuration(mut self, input: crate::types::SiteMapsConfiguration) -> Self {
@@ -81,6 +89,13 @@ impl UrlsBuilder {
     ) -> Self {
         self.site_maps_configuration = input;
         self
+    }
+    /// <p>Configuration of the sitemap URLs of the websites you want to crawl.</p>
+    /// <p>Only URLs belonging to the same website host names are crawled. You can list up to three sitemap URLs.</p>
+    pub fn get_site_maps_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SiteMapsConfiguration> {
+        &self.site_maps_configuration
     }
     /// Consumes the builder and constructs a [`Urls`](crate::types::Urls).
     pub fn build(self) -> crate::types::Urls {

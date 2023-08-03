@@ -48,6 +48,10 @@ impl ResultRowBuilder {
         self.row_id = input;
         self
     }
+    /// <p>The ID for a particular row.</p>
+    pub fn get_row_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.row_id
+    }
     /// Appends an item to `data_items`.
     ///
     /// To override the contents of this collection use [`set_data_items`](Self::set_data_items).
@@ -66,6 +70,12 @@ impl ResultRowBuilder {
     ) -> Self {
         self.data_items = input;
         self
+    }
+    /// <p>List of all the data cells in a row.</p>
+    pub fn get_data_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataItem>> {
+        &self.data_items
     }
     /// Consumes the builder and constructs a [`ResultRow`](crate::types::ResultRow).
     pub fn build(self) -> crate::types::ResultRow {

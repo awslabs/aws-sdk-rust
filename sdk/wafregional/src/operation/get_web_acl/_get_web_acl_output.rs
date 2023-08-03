@@ -70,6 +70,16 @@ impl GetWebAclOutputBuilder {
         self.web_acl = input;
         self
     }
+    /// <p>Information about the <code>WebACL</code> that you specified in the <code>GetWebACL</code> request. For more information, see the following topics:</p>
+    /// <ul>
+    /// <li> <p> <code>WebACL</code>: Contains <code>DefaultAction</code>, <code>MetricName</code>, <code>Name</code>, an array of <code>Rule</code> objects, and <code>WebACLId</code> </p> </li>
+    /// <li> <p> <code>DefaultAction</code> (Data type is <code>WafAction</code>): Contains <code>Type</code> </p> </li>
+    /// <li> <p> <code>Rules</code>: Contains an array of <code>ActivatedRule</code> objects, which contain <code>Action</code>, <code>Priority</code>, and <code>RuleId</code> </p> </li>
+    /// <li> <p> <code>Action</code>: Contains <code>Type</code> </p> </li>
+    /// </ul>
+    pub fn get_web_acl(&self) -> &::std::option::Option<crate::types::WebAcl> {
+        &self.web_acl
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

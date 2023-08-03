@@ -67,6 +67,10 @@ impl HistogramBinOptionsBuilder {
         self.selected_bin_type = input;
         self
     }
+    /// <p>The options that determine the selected bin type.</p>
+    pub fn get_selected_bin_type(&self) -> &::std::option::Option<crate::types::HistogramBinType> {
+        &self.selected_bin_type
+    }
     /// <p>The options that determine the bin count of a histogram.</p>
     pub fn bin_count(mut self, input: crate::types::BinCountOptions) -> Self {
         self.bin_count = ::std::option::Option::Some(input);
@@ -79,6 +83,10 @@ impl HistogramBinOptionsBuilder {
     ) -> Self {
         self.bin_count = input;
         self
+    }
+    /// <p>The options that determine the bin count of a histogram.</p>
+    pub fn get_bin_count(&self) -> &::std::option::Option<crate::types::BinCountOptions> {
+        &self.bin_count
     }
     /// <p>The options that determine the bin width of a histogram.</p>
     pub fn bin_width(mut self, input: crate::types::BinWidthOptions) -> Self {
@@ -93,6 +101,10 @@ impl HistogramBinOptionsBuilder {
         self.bin_width = input;
         self
     }
+    /// <p>The options that determine the bin width of a histogram.</p>
+    pub fn get_bin_width(&self) -> &::std::option::Option<crate::types::BinWidthOptions> {
+        &self.bin_width
+    }
     /// <p>The options that determine the bin start value.</p>
     pub fn start_value(mut self, input: f64) -> Self {
         self.start_value = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl HistogramBinOptionsBuilder {
     pub fn set_start_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.start_value = input;
         self
+    }
+    /// <p>The options that determine the bin start value.</p>
+    pub fn get_start_value(&self) -> &::std::option::Option<f64> {
+        &self.start_value
     }
     /// Consumes the builder and constructs a [`HistogramBinOptions`](crate::types::HistogramBinOptions).
     pub fn build(self) -> crate::types::HistogramBinOptions {

@@ -37,6 +37,13 @@ impl DescribeEventCategoriesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeEventCategories as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_event_categories::builders::DescribeEventCategoriesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +136,11 @@ impl DescribeEventCategoriesFluentBuilder {
         self.inner = self.inner.set_source_type(input);
         self
     }
+    /// <p>The type of source that is generating the events.</p>
+    /// <p>Valid values: db-instance | db-parameter-group | db-security-group | db-snapshot</p>
+    pub fn get_source_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_type()
+    }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -145,5 +157,9 @@ impl DescribeEventCategoriesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
+    }
+    /// <p>This parameter is not currently supported.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
     }
 }

@@ -55,6 +55,12 @@ impl ConditionalFormattingIconBuilder {
         self.icon_set = input;
         self
     }
+    /// <p>Formatting configuration for icon set.</p>
+    pub fn get_icon_set(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConditionalFormattingIconSet> {
+        &self.icon_set
+    }
     /// <p>Determines the custom condition for an icon set.</p>
     pub fn custom_condition(
         mut self,
@@ -70,6 +76,12 @@ impl ConditionalFormattingIconBuilder {
     ) -> Self {
         self.custom_condition = input;
         self
+    }
+    /// <p>Determines the custom condition for an icon set.</p>
+    pub fn get_custom_condition(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConditionalFormattingCustomIconCondition> {
+        &self.custom_condition
     }
     /// Consumes the builder and constructs a [`ConditionalFormattingIcon`](crate::types::ConditionalFormattingIcon).
     pub fn build(self) -> crate::types::ConditionalFormattingIcon {

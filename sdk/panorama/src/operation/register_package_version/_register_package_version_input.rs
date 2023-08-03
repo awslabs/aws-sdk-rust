@@ -79,6 +79,10 @@ impl RegisterPackageVersionInputBuilder {
         self.owner_account = input;
         self
     }
+    /// <p>An owner account.</p>
+    pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_account
+    }
     /// <p>A package ID.</p>
     pub fn package_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_id = ::std::option::Option::Some(input.into());
@@ -88,6 +92,10 @@ impl RegisterPackageVersionInputBuilder {
     pub fn set_package_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_id = input;
         self
+    }
+    /// <p>A package ID.</p>
+    pub fn get_package_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_id
     }
     /// <p>A package version.</p>
     pub fn package_version(
@@ -105,6 +113,10 @@ impl RegisterPackageVersionInputBuilder {
         self.package_version = input;
         self
     }
+    /// <p>A package version.</p>
+    pub fn get_package_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_version
+    }
     /// <p>A patch version.</p>
     pub fn patch_version(
         mut self,
@@ -121,6 +133,10 @@ impl RegisterPackageVersionInputBuilder {
         self.patch_version = input;
         self
     }
+    /// <p>A patch version.</p>
+    pub fn get_patch_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.patch_version
+    }
     /// <p>Whether to mark the new version as the latest version.</p>
     pub fn mark_latest(mut self, input: bool) -> Self {
         self.mark_latest = ::std::option::Option::Some(input);
@@ -130,6 +146,10 @@ impl RegisterPackageVersionInputBuilder {
     pub fn set_mark_latest(mut self, input: ::std::option::Option<bool>) -> Self {
         self.mark_latest = input;
         self
+    }
+    /// <p>Whether to mark the new version as the latest version.</p>
+    pub fn get_mark_latest(&self) -> &::std::option::Option<bool> {
+        &self.mark_latest
     }
     /// Consumes the builder and constructs a [`RegisterPackageVersionInput`](crate::operation::register_package_version::RegisterPackageVersionInput).
     pub fn build(

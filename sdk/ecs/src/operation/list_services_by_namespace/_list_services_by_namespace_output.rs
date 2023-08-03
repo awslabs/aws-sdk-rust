@@ -65,6 +65,12 @@ impl ListServicesByNamespaceOutputBuilder {
         self.service_arns = input;
         self
     }
+    /// <p>The list of full ARN entries for each service that's associated with the specified namespace.</p>
+    pub fn get_service_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.service_arns
+    }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListServicesByNamespace</code> request. When the results of a <code>ListServicesByNamespace</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. When there are no more results to return, this value is <code>null</code>.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -74,6 +80,10 @@ impl ListServicesByNamespaceOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListServicesByNamespace</code> request. When the results of a <code>ListServicesByNamespace</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. When there are no more results to return, this value is <code>null</code>.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

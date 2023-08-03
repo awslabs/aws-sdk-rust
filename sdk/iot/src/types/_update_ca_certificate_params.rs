@@ -43,6 +43,10 @@ impl UpdateCaCertificateParamsBuilder {
         self.action = input;
         self
     }
+    /// <p>The action that you want to apply to the CA certificate. The only supported value is <code>DEACTIVATE</code>.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::CaCertificateUpdateAction> {
+        &self.action
+    }
     /// Consumes the builder and constructs a [`UpdateCaCertificateParams`](crate::types::UpdateCaCertificateParams).
     pub fn build(self) -> crate::types::UpdateCaCertificateParams {
         crate::types::UpdateCaCertificateParams {

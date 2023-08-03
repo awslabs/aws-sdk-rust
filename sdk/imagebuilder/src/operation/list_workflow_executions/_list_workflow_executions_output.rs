@@ -84,6 +84,10 @@ impl ListWorkflowExecutionsOutputBuilder {
         self.request_id = input;
         self
     }
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
+    }
     /// Appends an item to `workflow_executions`.
     ///
     /// To override the contents of this collection use [`set_workflow_executions`](Self::set_workflow_executions).
@@ -103,6 +107,12 @@ impl ListWorkflowExecutionsOutputBuilder {
         self.workflow_executions = input;
         self
     }
+    /// <p>Contains an array of runtime details that represents each time a workflow ran for the requested image build version.</p>
+    pub fn get_workflow_executions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowExecutionMetadata>> {
+        &self.workflow_executions
+    }
     /// <p>The resource ARN of the image build version for which you requested a list of workflow runtime details.</p>
     pub fn image_build_version_arn(
         mut self,
@@ -119,6 +129,10 @@ impl ListWorkflowExecutionsOutputBuilder {
         self.image_build_version_arn = input;
         self
     }
+    /// <p>The resource ARN of the image build version for which you requested a list of workflow runtime details.</p>
+    pub fn get_image_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_build_version_arn
+    }
     /// <p>The output message from the list action, if applicable.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -129,6 +143,10 @@ impl ListWorkflowExecutionsOutputBuilder {
         self.message = input;
         self
     }
+    /// <p>The output message from the list action, if applicable.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -138,6 +156,10 @@ impl ListWorkflowExecutionsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -38,6 +38,12 @@ impl CreateApplicationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateApplication as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_application::builders::CreateApplicationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +134,10 @@ impl CreateApplicationFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the application. This name is visible to users when display name is not specified.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The display name of the application. This name is visible to users in the application catalog.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
@@ -138,6 +148,10 @@ impl CreateApplicationFluentBuilder {
         self.inner = self.inner.set_display_name(input);
         self
     }
+    /// <p>The display name of the application. This name is visible to users in the application catalog.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_display_name()
+    }
     /// <p>The description of the application.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -147,6 +161,10 @@ impl CreateApplicationFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the application.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The location in S3 of the application icon.</p>
     pub fn icon_s3_location(mut self, input: crate::types::S3Location) -> Self {
@@ -161,6 +179,10 @@ impl CreateApplicationFluentBuilder {
         self.inner = self.inner.set_icon_s3_location(input);
         self
     }
+    /// <p>The location in S3 of the application icon.</p>
+    pub fn get_icon_s3_location(&self) -> &::std::option::Option<crate::types::S3Location> {
+        self.inner.get_icon_s3_location()
+    }
     /// <p>The launch path of the application.</p>
     pub fn launch_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.launch_path(input.into());
@@ -170,6 +192,10 @@ impl CreateApplicationFluentBuilder {
     pub fn set_launch_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_launch_path(input);
         self
+    }
+    /// <p>The launch path of the application.</p>
+    pub fn get_launch_path(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_launch_path()
     }
     /// <p>The working directory of the application.</p>
     pub fn working_directory(
@@ -187,6 +213,10 @@ impl CreateApplicationFluentBuilder {
         self.inner = self.inner.set_working_directory(input);
         self
     }
+    /// <p>The working directory of the application.</p>
+    pub fn get_working_directory(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_working_directory()
+    }
     /// <p>The launch parameters of the application.</p>
     pub fn launch_parameters(
         mut self,
@@ -202,6 +232,10 @@ impl CreateApplicationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_launch_parameters(input);
         self
+    }
+    /// <p>The launch parameters of the application.</p>
+    pub fn get_launch_parameters(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_launch_parameters()
     }
     /// Appends an item to `Platforms`.
     ///
@@ -219,6 +253,12 @@ impl CreateApplicationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_platforms(input);
         self
+    }
+    /// <p>The platforms the application supports. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.</p>
+    pub fn get_platforms(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformType>> {
+        self.inner.get_platforms()
     }
     /// Appends an item to `InstanceFamilies`.
     ///
@@ -240,6 +280,12 @@ impl CreateApplicationFluentBuilder {
         self.inner = self.inner.set_instance_families(input);
         self
     }
+    /// <p>The instance families the application supports. Valid values are GENERAL_PURPOSE and GRAPHICS_G4.</p>
+    pub fn get_instance_families(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_instance_families()
+    }
     /// <p>The app block ARN to which the application should be associated</p>
     pub fn app_block_arn(
         mut self,
@@ -255,6 +301,10 @@ impl CreateApplicationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_app_block_arn(input);
         self
+    }
+    /// <p>The app block ARN to which the application should be associated</p>
+    pub fn get_app_block_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_block_arn()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -278,5 +328,13 @@ impl CreateApplicationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags assigned to the application.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

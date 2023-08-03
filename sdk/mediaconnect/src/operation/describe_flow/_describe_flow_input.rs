@@ -39,6 +39,10 @@ impl DescribeFlowInputBuilder {
         self.flow_arn = input;
         self
     }
+    /// The ARN of the flow that you want to describe.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_arn
+    }
     /// Consumes the builder and constructs a [`DescribeFlowInput`](crate::operation::describe_flow::DescribeFlowInput).
     pub fn build(
         self,

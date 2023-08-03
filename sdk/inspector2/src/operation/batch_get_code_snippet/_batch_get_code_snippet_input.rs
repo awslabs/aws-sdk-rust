@@ -50,6 +50,12 @@ impl BatchGetCodeSnippetInputBuilder {
         self.finding_arns = input;
         self
     }
+    /// <p>An array of finding ARNs for the findings you want to retrieve code snippets from.</p>
+    pub fn get_finding_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.finding_arns
+    }
     /// Consumes the builder and constructs a [`BatchGetCodeSnippetInput`](crate::operation::batch_get_code_snippet::BatchGetCodeSnippetInput).
     pub fn build(
         self,

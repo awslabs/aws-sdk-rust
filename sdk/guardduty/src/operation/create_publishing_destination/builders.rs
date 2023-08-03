@@ -36,6 +36,10 @@ impl CreatePublishingDestinationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreatePublishingDestination as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_publishing_destination::builders::CreatePublishingDestinationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl CreatePublishingDestinationFluentBuilder {
         self.inner = self.inner.set_detector_id(input);
         self
     }
+    /// <p>The ID of the GuardDuty detector associated with the publishing destination.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_id()
+    }
     /// <p>The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.</p>
     pub fn destination_type(mut self, input: crate::types::DestinationType) -> Self {
         self.inner = self.inner.destination_type(input);
@@ -138,6 +146,10 @@ impl CreatePublishingDestinationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destination_type(input);
         self
+    }
+    /// <p>The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.</p>
+    pub fn get_destination_type(&self) -> &::std::option::Option<crate::types::DestinationType> {
+        self.inner.get_destination_type()
     }
     /// <p>The properties of the publishing destination, including the ARNs for the destination and the KMS key used for encryption.</p>
     pub fn destination_properties(mut self, input: crate::types::DestinationProperties) -> Self {
@@ -152,6 +164,12 @@ impl CreatePublishingDestinationFluentBuilder {
         self.inner = self.inner.set_destination_properties(input);
         self
     }
+    /// <p>The properties of the publishing destination, including the ARNs for the destination and the KMS key used for encryption.</p>
+    pub fn get_destination_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::DestinationProperties> {
+        self.inner.get_destination_properties()
+    }
     /// <p>The idempotency token for the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -161,5 +179,9 @@ impl CreatePublishingDestinationFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>The idempotency token for the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

@@ -36,6 +36,12 @@ impl UpdateRegistryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateRegistry as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_registry::builders::UpdateRegistryInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +127,10 @@ impl UpdateRegistryFluentBuilder {
         self.inner = self.inner.set_registry_id(input);
         self
     }
+    /// <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<crate::types::RegistryId> {
+        self.inner.get_registry_id()
+    }
     /// <p>A description of the registry. If description is not provided, this field will not be updated.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -130,5 +140,9 @@ impl UpdateRegistryFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the registry. If description is not provided, this field will not be updated.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
 }

@@ -47,6 +47,10 @@ impl AssociateWirelessDeviceWithThingInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the resource to update.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The ARN of the thing to associate with the wireless device.</p>
     pub fn thing_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_arn = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl AssociateWirelessDeviceWithThingInputBuilder {
     pub fn set_thing_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_arn = input;
         self
+    }
+    /// <p>The ARN of the thing to associate with the wireless device.</p>
+    pub fn get_thing_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_arn
     }
     /// Consumes the builder and constructs a [`AssociateWirelessDeviceWithThingInput`](crate::operation::associate_wireless_device_with_thing::AssociateWirelessDeviceWithThingInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::associate_wireless_device_with_thing::AssociateWirelessDeviceWithThingInput, ::aws_smithy_http::operation::error::BuildError>{

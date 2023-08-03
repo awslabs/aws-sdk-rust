@@ -43,6 +43,10 @@ impl ServiceMetadataBuilder {
         self.user_details = input;
         self
     }
+    /// <p>The Server ID (<code>ServerId</code>), Session ID (<code>SessionId</code>) and user (<code>UserName</code>) make up the <code>UserDetails</code>.</p>
+    pub fn get_user_details(&self) -> &::std::option::Option<crate::types::UserDetails> {
+        &self.user_details
+    }
     /// Consumes the builder and constructs a [`ServiceMetadata`](crate::types::ServiceMetadata).
     pub fn build(self) -> crate::types::ServiceMetadata {
         crate::types::ServiceMetadata {

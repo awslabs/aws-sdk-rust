@@ -56,6 +56,10 @@ impl MessageTemplateTypeBuilder {
         self.sms_message = input;
         self
     }
+    /// <p>The message template for SMS messages.</p>
+    pub fn get_sms_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sms_message
+    }
     /// <p>The message template for email messages. EmailMessage is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
     pub fn email_message(
         mut self,
@@ -72,6 +76,10 @@ impl MessageTemplateTypeBuilder {
         self.email_message = input;
         self
     }
+    /// <p>The message template for email messages. EmailMessage is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
+    pub fn get_email_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_message
+    }
     /// <p>The subject line for email messages. EmailSubject is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
     pub fn email_subject(
         mut self,
@@ -87,6 +95,10 @@ impl MessageTemplateTypeBuilder {
     ) -> Self {
         self.email_subject = input;
         self
+    }
+    /// <p>The subject line for email messages. EmailSubject is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
+    pub fn get_email_subject(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_subject
     }
     /// Consumes the builder and constructs a [`MessageTemplateType`](crate::types::MessageTemplateType).
     pub fn build(self) -> crate::types::MessageTemplateType {

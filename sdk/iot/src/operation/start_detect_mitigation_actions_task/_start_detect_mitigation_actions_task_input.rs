@@ -93,6 +93,10 @@ impl StartDetectMitigationActionsTaskInputBuilder {
         self.task_id = input;
         self
     }
+    /// <p> The unique identifier of the task. </p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
+    }
     /// <p> Specifies the ML Detect findings to which the mitigation actions are applied. </p>
     pub fn target(mut self, input: crate::types::DetectMitigationActionsTaskTarget) -> Self {
         self.target = ::std::option::Option::Some(input);
@@ -105,6 +109,12 @@ impl StartDetectMitigationActionsTaskInputBuilder {
     ) -> Self {
         self.target = input;
         self
+    }
+    /// <p> Specifies the ML Detect findings to which the mitigation actions are applied. </p>
+    pub fn get_target(
+        &self,
+    ) -> &::std::option::Option<crate::types::DetectMitigationActionsTaskTarget> {
+        &self.target
     }
     /// Appends an item to `actions`.
     ///
@@ -125,6 +135,10 @@ impl StartDetectMitigationActionsTaskInputBuilder {
         self.actions = input;
         self
     }
+    /// <p> The actions to be performed when a device has unexpected behavior. </p>
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.actions
+    }
     /// <p> Specifies the time period of which violation events occurred between. </p>
     pub fn violation_event_occurrence_range(
         mut self,
@@ -141,6 +155,12 @@ impl StartDetectMitigationActionsTaskInputBuilder {
         self.violation_event_occurrence_range = input;
         self
     }
+    /// <p> Specifies the time period of which violation events occurred between. </p>
+    pub fn get_violation_event_occurrence_range(
+        &self,
+    ) -> &::std::option::Option<crate::types::ViolationEventOccurrenceRange> {
+        &self.violation_event_occurrence_range
+    }
     /// <p> Specifies to list only active violations. </p>
     pub fn include_only_active_violations(mut self, input: bool) -> Self {
         self.include_only_active_violations = ::std::option::Option::Some(input);
@@ -154,6 +174,10 @@ impl StartDetectMitigationActionsTaskInputBuilder {
         self.include_only_active_violations = input;
         self
     }
+    /// <p> Specifies to list only active violations. </p>
+    pub fn get_include_only_active_violations(&self) -> &::std::option::Option<bool> {
+        &self.include_only_active_violations
+    }
     /// <p> Specifies to include suppressed alerts. </p>
     pub fn include_suppressed_alerts(mut self, input: bool) -> Self {
         self.include_suppressed_alerts = ::std::option::Option::Some(input);
@@ -163,6 +187,10 @@ impl StartDetectMitigationActionsTaskInputBuilder {
     pub fn set_include_suppressed_alerts(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_suppressed_alerts = input;
         self
+    }
+    /// <p> Specifies to include suppressed alerts. </p>
+    pub fn get_include_suppressed_alerts(&self) -> &::std::option::Option<bool> {
+        &self.include_suppressed_alerts
     }
     /// <p> Each mitigation action task must have a unique client request token. If you try to create a new task with the same token as a task that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
     pub fn client_request_token(
@@ -179,6 +207,10 @@ impl StartDetectMitigationActionsTaskInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p> Each mitigation action task must have a unique client request token. If you try to create a new task with the same token as a task that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Consumes the builder and constructs a [`StartDetectMitigationActionsTaskInput`](crate::operation::start_detect_mitigation_actions_task::StartDetectMitigationActionsTaskInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::start_detect_mitigation_actions_task::StartDetectMitigationActionsTaskInput, ::aws_smithy_http::operation::error::BuildError>{

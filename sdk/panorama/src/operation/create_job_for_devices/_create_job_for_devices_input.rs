@@ -66,6 +66,10 @@ impl CreateJobForDevicesInputBuilder {
         self.device_ids = input;
         self
     }
+    /// <p>ID of target device.</p>
+    pub fn get_device_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.device_ids
+    }
     /// <p>Configuration settings for a software update job.</p>
     pub fn device_job_config(mut self, input: crate::types::DeviceJobConfig) -> Self {
         self.device_job_config = ::std::option::Option::Some(input);
@@ -79,6 +83,10 @@ impl CreateJobForDevicesInputBuilder {
         self.device_job_config = input;
         self
     }
+    /// <p>Configuration settings for a software update job.</p>
+    pub fn get_device_job_config(&self) -> &::std::option::Option<crate::types::DeviceJobConfig> {
+        &self.device_job_config
+    }
     /// <p>The type of job to run.</p>
     pub fn job_type(mut self, input: crate::types::JobType) -> Self {
         self.job_type = ::std::option::Option::Some(input);
@@ -88,6 +96,10 @@ impl CreateJobForDevicesInputBuilder {
     pub fn set_job_type(mut self, input: ::std::option::Option<crate::types::JobType>) -> Self {
         self.job_type = input;
         self
+    }
+    /// <p>The type of job to run.</p>
+    pub fn get_job_type(&self) -> &::std::option::Option<crate::types::JobType> {
+        &self.job_type
     }
     /// Consumes the builder and constructs a [`CreateJobForDevicesInput`](crate::operation::create_job_for_devices::CreateJobForDevicesInput).
     pub fn build(

@@ -81,6 +81,10 @@ impl DetectEntitiesOutputBuilder {
         self.entities = input;
         self
     }
+    /// <p>The collection of medical entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Amazon Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned.</p>
+    pub fn get_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Entity>> {
+        &self.entities
+    }
     /// Appends an item to `unmapped_attributes`.
     ///
     /// To override the contents of this collection use [`set_unmapped_attributes`](Self::set_unmapped_attributes).
@@ -100,6 +104,12 @@ impl DetectEntitiesOutputBuilder {
         self.unmapped_attributes = input;
         self
     }
+    /// <p>Attributes extracted from the input text that we were unable to relate to an entity.</p>
+    pub fn get_unmapped_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnmappedAttribute>> {
+        &self.unmapped_attributes
+    }
     /// <p>If the result of the previous request to <code>DetectEntities</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of entities.</p>
     pub fn pagination_token(
         mut self,
@@ -116,6 +126,10 @@ impl DetectEntitiesOutputBuilder {
         self.pagination_token = input;
         self
     }
+    /// <p>If the result of the previous request to <code>DetectEntities</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of entities.</p>
+    pub fn get_pagination_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pagination_token
+    }
     /// <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
     pub fn model_version(
         mut self,
@@ -131,6 +145,10 @@ impl DetectEntitiesOutputBuilder {
     ) -> Self {
         self.model_version = input;
         self
+    }
+    /// <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
+    pub fn get_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -90,6 +90,14 @@ impl AwsEcsTaskDefinitionVolumesDetailsBuilder {
         self.docker_volume_configuration = input;
         self
     }
+    /// <p>Information about a Docker volume.</p>
+    pub fn get_docker_volume_configuration(
+        &self,
+    ) -> &::std::option::Option<
+        crate::types::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails,
+    > {
+        &self.docker_volume_configuration
+    }
     /// <p>Information about the Amazon Elastic File System file system that is used for task storage.</p>
     pub fn efs_volume_configuration(
         mut self,
@@ -108,6 +116,14 @@ impl AwsEcsTaskDefinitionVolumesDetailsBuilder {
         self.efs_volume_configuration = input;
         self
     }
+    /// <p>Information about the Amazon Elastic File System file system that is used for task storage.</p>
+    pub fn get_efs_volume_configuration(
+        &self,
+    ) -> &::std::option::Option<
+        crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails,
+    > {
+        &self.efs_volume_configuration
+    }
     /// <p>Information about a bind mount host volume.</p>
     pub fn host(mut self, input: crate::types::AwsEcsTaskDefinitionVolumesHostDetails) -> Self {
         self.host = ::std::option::Option::Some(input);
@@ -121,6 +137,12 @@ impl AwsEcsTaskDefinitionVolumesDetailsBuilder {
         self.host = input;
         self
     }
+    /// <p>Information about a bind mount host volume.</p>
+    pub fn get_host(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsEcsTaskDefinitionVolumesHostDetails> {
+        &self.host
+    }
     /// <p>The name of the data volume.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -130,6 +152,10 @@ impl AwsEcsTaskDefinitionVolumesDetailsBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the data volume.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionVolumesDetails`](crate::types::AwsEcsTaskDefinitionVolumesDetails).
     pub fn build(self) -> crate::types::AwsEcsTaskDefinitionVolumesDetails {

@@ -37,6 +37,13 @@ impl SendWorkflowStepStateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SendWorkflowStepState as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::send_workflow_step_state::builders::SendWorkflowStepStateInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl SendWorkflowStepStateFluentBuilder {
         self.inner = self.inner.set_workflow_id(input);
         self
     }
+    /// <p>A unique identifier for the workflow.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workflow_id()
+    }
     /// <p>A unique identifier for the execution of a workflow.</p>
     pub fn execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.execution_id(input.into());
@@ -137,6 +148,10 @@ impl SendWorkflowStepStateFluentBuilder {
         self.inner = self.inner.set_execution_id(input);
         self
     }
+    /// <p>A unique identifier for the execution of a workflow.</p>
+    pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_execution_id()
+    }
     /// <p>Used to distinguish between multiple callbacks for multiple Lambda steps within the same execution.</p>
     pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.token(input.into());
@@ -146,6 +161,10 @@ impl SendWorkflowStepStateFluentBuilder {
     pub fn set_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_token(input);
         self
+    }
+    /// <p>Used to distinguish between multiple callbacks for multiple Lambda steps within the same execution.</p>
+    pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_token()
     }
     /// <p>Indicates whether the specified step succeeded or failed.</p>
     pub fn status(mut self, input: crate::types::CustomStepStatus) -> Self {
@@ -159,5 +178,9 @@ impl SendWorkflowStepStateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p>Indicates whether the specified step succeeded or failed.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CustomStepStatus> {
+        self.inner.get_status()
     }
 }

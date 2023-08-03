@@ -38,6 +38,13 @@ impl DeleteDynamicThingGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteDynamicThingGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_dynamic_thing_group::builders::DeleteDynamicThingGroupInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +141,10 @@ impl DeleteDynamicThingGroupFluentBuilder {
         self.inner = self.inner.set_thing_group_name(input);
         self
     }
+    /// <p>The name of the dynamic thing group to delete.</p>
+    pub fn get_thing_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_thing_group_name()
+    }
     /// <p>The expected version of the dynamic thing group to delete.</p>
     pub fn expected_version(mut self, input: i64) -> Self {
         self.inner = self.inner.expected_version(input);
@@ -143,5 +154,9 @@ impl DeleteDynamicThingGroupFluentBuilder {
     pub fn set_expected_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_expected_version(input);
         self
+    }
+    /// <p>The expected version of the dynamic thing group to delete.</p>
+    pub fn get_expected_version(&self) -> &::std::option::Option<i64> {
+        self.inner.get_expected_version()
     }
 }

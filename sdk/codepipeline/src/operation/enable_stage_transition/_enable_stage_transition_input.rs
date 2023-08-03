@@ -64,6 +64,10 @@ impl EnableStageTransitionInputBuilder {
         self.pipeline_name = input;
         self
     }
+    /// <p>The name of the pipeline in which you want to enable the flow of artifacts from one stage to another.</p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_name
+    }
     /// <p>The name of the stage where you want to enable the transition of artifacts, either into the stage (inbound) or from that stage to the next stage (outbound).</p>
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_name = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl EnableStageTransitionInputBuilder {
     pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stage_name = input;
         self
+    }
+    /// <p>The name of the stage where you want to enable the transition of artifacts, either into the stage (inbound) or from that stage to the next stage (outbound).</p>
+    pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stage_name
     }
     /// <p>Specifies whether artifacts are allowed to enter the stage and be processed by the actions in that stage (inbound) or whether already processed artifacts are allowed to transition to the next stage (outbound).</p>
     pub fn transition_type(mut self, input: crate::types::StageTransitionType) -> Self {
@@ -86,6 +94,10 @@ impl EnableStageTransitionInputBuilder {
     ) -> Self {
         self.transition_type = input;
         self
+    }
+    /// <p>Specifies whether artifacts are allowed to enter the stage and be processed by the actions in that stage (inbound) or whether already processed artifacts are allowed to transition to the next stage (outbound).</p>
+    pub fn get_transition_type(&self) -> &::std::option::Option<crate::types::StageTransitionType> {
+        &self.transition_type
     }
     /// Consumes the builder and constructs a [`EnableStageTransitionInput`](crate::operation::enable_stage_transition::EnableStageTransitionInput).
     pub fn build(

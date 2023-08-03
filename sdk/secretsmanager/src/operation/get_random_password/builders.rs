@@ -38,6 +38,12 @@ impl GetRandomPasswordFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetRandomPassword as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_random_password::builders::GetRandomPasswordInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +134,10 @@ impl GetRandomPasswordFluentBuilder {
         self.inner = self.inner.set_password_length(input);
         self
     }
+    /// <p>The length of the password. If you don't include this parameter, the default length is 32 characters.</p>
+    pub fn get_password_length(&self) -> &::std::option::Option<i64> {
+        self.inner.get_password_length()
+    }
     /// <p>A string of the characters that you don't want in the password.</p>
     pub fn exclude_characters(
         mut self,
@@ -144,6 +154,10 @@ impl GetRandomPasswordFluentBuilder {
         self.inner = self.inner.set_exclude_characters(input);
         self
     }
+    /// <p>A string of the characters that you don't want in the password.</p>
+    pub fn get_exclude_characters(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_exclude_characters()
+    }
     /// <p>Specifies whether to exclude numbers from the password. If you don't include this switch, the password can contain numbers.</p>
     pub fn exclude_numbers(mut self, input: bool) -> Self {
         self.inner = self.inner.exclude_numbers(input);
@@ -153,6 +167,10 @@ impl GetRandomPasswordFluentBuilder {
     pub fn set_exclude_numbers(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_exclude_numbers(input);
         self
+    }
+    /// <p>Specifies whether to exclude numbers from the password. If you don't include this switch, the password can contain numbers.</p>
+    pub fn get_exclude_numbers(&self) -> &::std::option::Option<bool> {
+        self.inner.get_exclude_numbers()
     }
     /// <p>Specifies whether to exclude the following punctuation characters from the password: <code>! " # $ % &amp; ' ( ) * + , - . / : ; &lt; = &gt; ? @ [ \ ] ^ _ ` { | } ~</code>. If you don't include this switch, the password can contain punctuation.</p>
     pub fn exclude_punctuation(mut self, input: bool) -> Self {
@@ -164,6 +182,10 @@ impl GetRandomPasswordFluentBuilder {
         self.inner = self.inner.set_exclude_punctuation(input);
         self
     }
+    /// <p>Specifies whether to exclude the following punctuation characters from the password: <code>! " # $ % &amp; ' ( ) * + , - . / : ; &lt; = &gt; ? @ [ \ ] ^ _ ` { | } ~</code>. If you don't include this switch, the password can contain punctuation.</p>
+    pub fn get_exclude_punctuation(&self) -> &::std::option::Option<bool> {
+        self.inner.get_exclude_punctuation()
+    }
     /// <p>Specifies whether to exclude uppercase letters from the password. If you don't include this switch, the password can contain uppercase letters.</p>
     pub fn exclude_uppercase(mut self, input: bool) -> Self {
         self.inner = self.inner.exclude_uppercase(input);
@@ -173,6 +195,10 @@ impl GetRandomPasswordFluentBuilder {
     pub fn set_exclude_uppercase(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_exclude_uppercase(input);
         self
+    }
+    /// <p>Specifies whether to exclude uppercase letters from the password. If you don't include this switch, the password can contain uppercase letters.</p>
+    pub fn get_exclude_uppercase(&self) -> &::std::option::Option<bool> {
+        self.inner.get_exclude_uppercase()
     }
     /// <p>Specifies whether to exclude lowercase letters from the password. If you don't include this switch, the password can contain lowercase letters.</p>
     pub fn exclude_lowercase(mut self, input: bool) -> Self {
@@ -184,6 +210,10 @@ impl GetRandomPasswordFluentBuilder {
         self.inner = self.inner.set_exclude_lowercase(input);
         self
     }
+    /// <p>Specifies whether to exclude lowercase letters from the password. If you don't include this switch, the password can contain lowercase letters.</p>
+    pub fn get_exclude_lowercase(&self) -> &::std::option::Option<bool> {
+        self.inner.get_exclude_lowercase()
+    }
     /// <p>Specifies whether to include the space character. If you include this switch, the password can contain space characters.</p>
     pub fn include_space(mut self, input: bool) -> Self {
         self.inner = self.inner.include_space(input);
@@ -194,6 +224,10 @@ impl GetRandomPasswordFluentBuilder {
         self.inner = self.inner.set_include_space(input);
         self
     }
+    /// <p>Specifies whether to include the space character. If you include this switch, the password can contain space characters.</p>
+    pub fn get_include_space(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_space()
+    }
     /// <p>Specifies whether to include at least one upper and lowercase letter, one number, and one punctuation. If you don't include this switch, the password contains at least one of every character type.</p>
     pub fn require_each_included_type(mut self, input: bool) -> Self {
         self.inner = self.inner.require_each_included_type(input);
@@ -203,5 +237,9 @@ impl GetRandomPasswordFluentBuilder {
     pub fn set_require_each_included_type(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_require_each_included_type(input);
         self
+    }
+    /// <p>Specifies whether to include at least one upper and lowercase letter, one number, and one punctuation. If you don't include this switch, the password contains at least one of every character type.</p>
+    pub fn get_require_each_included_type(&self) -> &::std::option::Option<bool> {
+        self.inner.get_require_each_included_type()
     }
 }

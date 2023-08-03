@@ -39,6 +39,10 @@ impl GetApplicationInputBuilder {
         self.application = input;
         self
     }
+    /// <p> The name, ID, or ARN of the application. </p>
+    pub fn get_application(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application
+    }
     /// Consumes the builder and constructs a [`GetApplicationInput`](crate::operation::get_application::GetApplicationInput).
     pub fn build(
         self,

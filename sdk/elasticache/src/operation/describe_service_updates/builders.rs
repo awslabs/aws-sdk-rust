@@ -36,6 +36,13 @@ impl DescribeServiceUpdatesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeServiceUpdates as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_service_updates::builders::DescribeServiceUpdatesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -144,6 +151,10 @@ impl DescribeServiceUpdatesFluentBuilder {
         self.inner = self.inner.set_service_update_name(input);
         self
     }
+    /// <p>The unique ID of the service update</p>
+    pub fn get_service_update_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_update_name()
+    }
     /// Appends an item to `ServiceUpdateStatus`.
     ///
     /// To override the contents of this collection use [`set_service_update_status`](Self::set_service_update_status).
@@ -161,6 +172,12 @@ impl DescribeServiceUpdatesFluentBuilder {
         self.inner = self.inner.set_service_update_status(input);
         self
     }
+    /// <p>The status of the service update</p>
+    pub fn get_service_update_status(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdateStatus>> {
+        self.inner.get_service_update_status()
+    }
     /// <p>The maximum number of records to include in the response</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.inner = self.inner.max_records(input);
@@ -171,6 +188,10 @@ impl DescribeServiceUpdatesFluentBuilder {
         self.inner = self.inner.set_max_records(input);
         self
     }
+    /// <p>The maximum number of records to include in the response</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
+    }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -180,5 +201,9 @@ impl DescribeServiceUpdatesFluentBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
+    }
+    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
     }
 }

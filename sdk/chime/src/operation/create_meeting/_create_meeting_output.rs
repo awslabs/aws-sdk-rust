@@ -46,6 +46,10 @@ impl CreateMeetingOutputBuilder {
         self.meeting = input;
         self
     }
+    /// <p> The meeting information, including the meeting ID and <code>MediaPlacement</code> . </p>
+    pub fn get_meeting(&self) -> &::std::option::Option<crate::types::Meeting> {
+        &self.meeting
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

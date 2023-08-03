@@ -64,6 +64,10 @@ impl CreateTopicRuleInputBuilder {
         self.rule_name = input;
         self
     }
+    /// <p>The name of the rule.</p>
+    pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_name
+    }
     /// <p>The rule payload.</p>
     pub fn topic_rule_payload(mut self, input: crate::types::TopicRulePayload) -> Self {
         self.topic_rule_payload = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl CreateTopicRuleInputBuilder {
     ) -> Self {
         self.topic_rule_payload = input;
         self
+    }
+    /// <p>The rule payload.</p>
+    pub fn get_topic_rule_payload(&self) -> &::std::option::Option<crate::types::TopicRulePayload> {
+        &self.topic_rule_payload
     }
     /// <p>Metadata which can be used to manage the topic rule.</p> <note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
@@ -94,6 +102,14 @@ impl CreateTopicRuleInputBuilder {
     pub fn set_tags(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Metadata which can be used to manage the topic rule.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: --tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
+    /// </note>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateTopicRuleInput`](crate::operation::create_topic_rule::CreateTopicRuleInput).
     pub fn build(

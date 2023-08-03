@@ -51,6 +51,10 @@ impl AssetModelStatusBuilder {
         self.state = input;
         self
     }
+    /// <p>The current state of the asset model.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::AssetModelState> {
+        &self.state
+    }
     /// <p>Contains associated error information, if any.</p>
     pub fn error(mut self, input: crate::types::ErrorDetails) -> Self {
         self.error = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl AssetModelStatusBuilder {
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::ErrorDetails>) -> Self {
         self.error = input;
         self
+    }
+    /// <p>Contains associated error information, if any.</p>
+    pub fn get_error(&self) -> &::std::option::Option<crate::types::ErrorDetails> {
+        &self.error
     }
     /// Consumes the builder and constructs a [`AssetModelStatus`](crate::types::AssetModelStatus).
     pub fn build(self) -> crate::types::AssetModelStatus {

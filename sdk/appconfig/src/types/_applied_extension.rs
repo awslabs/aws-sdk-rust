@@ -72,6 +72,10 @@ impl AppliedExtensionBuilder {
         self.extension_id = input;
         self
     }
+    /// <p>The system-generated ID of the extension.</p>
+    pub fn get_extension_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.extension_id
+    }
     /// <p>The system-generated ID for the association.</p>
     pub fn extension_association_id(
         mut self,
@@ -88,6 +92,10 @@ impl AppliedExtensionBuilder {
         self.extension_association_id = input;
         self
     }
+    /// <p>The system-generated ID for the association.</p>
+    pub fn get_extension_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.extension_association_id
+    }
     /// <p>The extension version number.</p>
     pub fn version_number(mut self, input: i32) -> Self {
         self.version_number = ::std::option::Option::Some(input);
@@ -97,6 +105,10 @@ impl AppliedExtensionBuilder {
     pub fn set_version_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.version_number = input;
         self
+    }
+    /// <p>The extension version number.</p>
+    pub fn get_version_number(&self) -> &::std::option::Option<i32> {
+        &self.version_number
     }
     /// Adds a key-value pair to `parameters`.
     ///
@@ -122,6 +134,14 @@ impl AppliedExtensionBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>One or more parameters for the actions called by the extension.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.parameters
     }
     /// Consumes the builder and constructs a [`AppliedExtension`](crate::types::AppliedExtension).
     pub fn build(self) -> crate::types::AppliedExtension {

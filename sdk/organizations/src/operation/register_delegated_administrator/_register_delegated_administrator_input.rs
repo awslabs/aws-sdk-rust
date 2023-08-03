@@ -47,6 +47,10 @@ impl RegisterDelegatedAdministratorInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The account ID number of the member account in the organization to register as a delegated administrator.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The service principal of the Amazon Web Services service for which you want to make the member account a delegated administrator.</p>
     pub fn service_principal(
         mut self,
@@ -62,6 +66,10 @@ impl RegisterDelegatedAdministratorInputBuilder {
     ) -> Self {
         self.service_principal = input;
         self
+    }
+    /// <p>The service principal of the Amazon Web Services service for which you want to make the member account a delegated administrator.</p>
+    pub fn get_service_principal(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_principal
     }
     /// Consumes the builder and constructs a [`RegisterDelegatedAdministratorInput`](crate::operation::register_delegated_administrator::RegisterDelegatedAdministratorInput).
     pub fn build(

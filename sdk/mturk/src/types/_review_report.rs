@@ -59,6 +59,12 @@ impl ReviewReportBuilder {
         self.review_results = input;
         self
     }
+    /// <p> A list of ReviewResults objects for each action specified in the Review Policy. </p>
+    pub fn get_review_results(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReviewResultDetail>> {
+        &self.review_results
+    }
     /// Appends an item to `review_actions`.
     ///
     /// To override the contents of this collection use [`set_review_actions`](Self::set_review_actions).
@@ -77,6 +83,12 @@ impl ReviewReportBuilder {
     ) -> Self {
         self.review_actions = input;
         self
+    }
+    /// <p> A list of ReviewAction objects for each action specified in the Review Policy. </p>
+    pub fn get_review_actions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReviewActionDetail>> {
+        &self.review_actions
     }
     /// Consumes the builder and constructs a [`ReviewReport`](crate::types::ReviewReport).
     pub fn build(self) -> crate::types::ReviewReport {

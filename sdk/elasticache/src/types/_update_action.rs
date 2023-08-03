@@ -197,6 +197,10 @@ impl UpdateActionBuilder {
         self.replication_group_id = input;
         self
     }
+    /// <p>The ID of the replication group</p>
+    pub fn get_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_group_id
+    }
     /// <p>The ID of the cache cluster</p>
     pub fn cache_cluster_id(
         mut self,
@@ -212,6 +216,10 @@ impl UpdateActionBuilder {
     ) -> Self {
         self.cache_cluster_id = input;
         self
+    }
+    /// <p>The ID of the cache cluster</p>
+    pub fn get_cache_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_cluster_id
     }
     /// <p>The unique ID of the service update</p>
     pub fn service_update_name(
@@ -229,6 +237,10 @@ impl UpdateActionBuilder {
         self.service_update_name = input;
         self
     }
+    /// <p>The unique ID of the service update</p>
+    pub fn get_service_update_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_update_name
+    }
     /// <p>The date the update is first available</p>
     pub fn service_update_release_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.service_update_release_date = ::std::option::Option::Some(input);
@@ -241,6 +253,12 @@ impl UpdateActionBuilder {
     ) -> Self {
         self.service_update_release_date = input;
         self
+    }
+    /// <p>The date the update is first available</p>
+    pub fn get_service_update_release_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.service_update_release_date
     }
     /// <p>The severity of the service update</p>
     pub fn service_update_severity(mut self, input: crate::types::ServiceUpdateSeverity) -> Self {
@@ -255,6 +273,12 @@ impl UpdateActionBuilder {
         self.service_update_severity = input;
         self
     }
+    /// <p>The severity of the service update</p>
+    pub fn get_service_update_severity(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServiceUpdateSeverity> {
+        &self.service_update_severity
+    }
     /// <p>The status of the service update</p>
     pub fn service_update_status(mut self, input: crate::types::ServiceUpdateStatus) -> Self {
         self.service_update_status = ::std::option::Option::Some(input);
@@ -267,6 +291,12 @@ impl UpdateActionBuilder {
     ) -> Self {
         self.service_update_status = input;
         self
+    }
+    /// <p>The status of the service update</p>
+    pub fn get_service_update_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServiceUpdateStatus> {
+        &self.service_update_status
     }
     /// <p>The recommended date to apply the service update to ensure compliance. For information on compliance, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/elasticache-compliance.html#elasticache-compliance-self-service">Self-Service Security Updates for Compliance</a>.</p>
     pub fn service_update_recommended_apply_by_date(
@@ -284,6 +314,12 @@ impl UpdateActionBuilder {
         self.service_update_recommended_apply_by_date = input;
         self
     }
+    /// <p>The recommended date to apply the service update to ensure compliance. For information on compliance, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/elasticache-compliance.html#elasticache-compliance-self-service">Self-Service Security Updates for Compliance</a>.</p>
+    pub fn get_service_update_recommended_apply_by_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.service_update_recommended_apply_by_date
+    }
     /// <p>Reflects the nature of the service update </p>
     pub fn service_update_type(mut self, input: crate::types::ServiceUpdateType) -> Self {
         self.service_update_type = ::std::option::Option::Some(input);
@@ -296,6 +332,12 @@ impl UpdateActionBuilder {
     ) -> Self {
         self.service_update_type = input;
         self
+    }
+    /// <p>Reflects the nature of the service update </p>
+    pub fn get_service_update_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServiceUpdateType> {
+        &self.service_update_type
     }
     /// <p>The date that the service update is available to a replication group</p>
     pub fn update_action_available_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -310,6 +352,12 @@ impl UpdateActionBuilder {
         self.update_action_available_date = input;
         self
     }
+    /// <p>The date that the service update is available to a replication group</p>
+    pub fn get_update_action_available_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_action_available_date
+    }
     /// <p>The status of the update action</p>
     pub fn update_action_status(mut self, input: crate::types::UpdateActionStatus) -> Self {
         self.update_action_status = ::std::option::Option::Some(input);
@@ -322,6 +370,12 @@ impl UpdateActionBuilder {
     ) -> Self {
         self.update_action_status = input;
         self
+    }
+    /// <p>The status of the update action</p>
+    pub fn get_update_action_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateActionStatus> {
+        &self.update_action_status
     }
     /// <p>The progress of the service update on the replication group</p>
     pub fn nodes_updated(
@@ -339,6 +393,10 @@ impl UpdateActionBuilder {
         self.nodes_updated = input;
         self
     }
+    /// <p>The progress of the service update on the replication group</p>
+    pub fn get_nodes_updated(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nodes_updated
+    }
     /// <p>The date when the UpdateActionStatus was last modified</p>
     pub fn update_action_status_modified_date(
         mut self,
@@ -355,6 +413,12 @@ impl UpdateActionBuilder {
         self.update_action_status_modified_date = input;
         self
     }
+    /// <p>The date when the UpdateActionStatus was last modified</p>
+    pub fn get_update_action_status_modified_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_action_status_modified_date
+    }
     /// <p>If yes, all nodes in the replication group have been updated by the recommended apply-by date. If no, at least one node in the replication group have not been updated by the recommended apply-by date. If N/A, the replication group was created after the recommended apply-by date.</p>
     pub fn sla_met(mut self, input: crate::types::SlaMet) -> Self {
         self.sla_met = ::std::option::Option::Some(input);
@@ -364,6 +428,10 @@ impl UpdateActionBuilder {
     pub fn set_sla_met(mut self, input: ::std::option::Option<crate::types::SlaMet>) -> Self {
         self.sla_met = input;
         self
+    }
+    /// <p>If yes, all nodes in the replication group have been updated by the recommended apply-by date. If no, at least one node in the replication group have not been updated by the recommended apply-by date. If N/A, the replication group was created after the recommended apply-by date.</p>
+    pub fn get_sla_met(&self) -> &::std::option::Option<crate::types::SlaMet> {
+        &self.sla_met
     }
     /// Appends an item to `node_group_update_status`.
     ///
@@ -384,6 +452,12 @@ impl UpdateActionBuilder {
         self.node_group_update_status = input;
         self
     }
+    /// <p>The status of the service update on the node group</p>
+    pub fn get_node_group_update_status(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeGroupUpdateStatus>> {
+        &self.node_group_update_status
+    }
     /// Appends an item to `cache_node_update_status`.
     ///
     /// To override the contents of this collection use [`set_cache_node_update_status`](Self::set_cache_node_update_status).
@@ -403,6 +477,12 @@ impl UpdateActionBuilder {
         self.cache_node_update_status = input;
         self
     }
+    /// <p>The status of the service update on the cache node</p>
+    pub fn get_cache_node_update_status(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheNodeUpdateStatus>> {
+        &self.cache_node_update_status
+    }
     /// <p>The estimated length of time for the update to complete</p>
     pub fn estimated_update_time(
         mut self,
@@ -419,6 +499,10 @@ impl UpdateActionBuilder {
         self.estimated_update_time = input;
         self
     }
+    /// <p>The estimated length of time for the update to complete</p>
+    pub fn get_estimated_update_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.estimated_update_time
+    }
     /// <p>The Elasticache engine to which the update applies. Either Redis or Memcached</p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
@@ -428,6 +512,10 @@ impl UpdateActionBuilder {
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
+    }
+    /// <p>The Elasticache engine to which the update applies. Either Redis or Memcached</p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine
     }
     /// Consumes the builder and constructs a [`UpdateAction`](crate::types::UpdateAction).
     pub fn build(self) -> crate::types::UpdateAction {

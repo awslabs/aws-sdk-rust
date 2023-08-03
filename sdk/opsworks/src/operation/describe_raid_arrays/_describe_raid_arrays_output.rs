@@ -57,6 +57,12 @@ impl DescribeRaidArraysOutputBuilder {
         self.raid_arrays = input;
         self
     }
+    /// <p>A <code>RaidArrays</code> object that describes the specified RAID arrays.</p>
+    pub fn get_raid_arrays(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RaidArray>> {
+        &self.raid_arrays
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

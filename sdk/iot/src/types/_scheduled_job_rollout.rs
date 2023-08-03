@@ -40,6 +40,10 @@ impl ScheduledJobRolloutBuilder {
         self.start_time = input;
         self
     }
+    /// <p>Displays the start times of the next seven maintenance window occurrences.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_time
+    }
     /// Consumes the builder and constructs a [`ScheduledJobRollout`](crate::types::ScheduledJobRollout).
     pub fn build(self) -> crate::types::ScheduledJobRollout {
         crate::types::ScheduledJobRollout {

@@ -58,6 +58,10 @@ impl OnPremiseConfigurationBuilder {
         self.host_url = input;
         self
     }
+    /// <p>The GitHub host URL or API endpoint URL. For example, <i>https://on-prem-host-url/api/v3/</i> </p>
+    pub fn get_host_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_url
+    }
     /// <p>The name of the organization of the GitHub Enterprise Server (in-premise) account you want to connect to. You can find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b> under your profile picture dropdown.</p>
     pub fn organization_name(
         mut self,
@@ -74,6 +78,10 @@ impl OnPremiseConfigurationBuilder {
         self.organization_name = input;
         self
     }
+    /// <p>The name of the organization of the GitHub Enterprise Server (in-premise) account you want to connect to. You can find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b> under your profile picture dropdown.</p>
+    pub fn get_organization_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_name
+    }
     /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to GitHub if you require a secure SSL connection.</p>
     /// <p>You can simply generate a self-signed X509 certificate on any computer using OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create and sign an X509 certificate</a>.</p>
     pub fn ssl_certificate_s3_path(mut self, input: crate::types::S3Path) -> Self {
@@ -88,6 +96,11 @@ impl OnPremiseConfigurationBuilder {
     ) -> Self {
         self.ssl_certificate_s3_path = input;
         self
+    }
+    /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to GitHub if you require a secure SSL connection.</p>
+    /// <p>You can simply generate a self-signed X509 certificate on any computer using OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create and sign an X509 certificate</a>.</p>
+    pub fn get_ssl_certificate_s3_path(&self) -> &::std::option::Option<crate::types::S3Path> {
+        &self.ssl_certificate_s3_path
     }
     /// Consumes the builder and constructs a [`OnPremiseConfiguration`](crate::types::OnPremiseConfiguration).
     pub fn build(self) -> crate::types::OnPremiseConfiguration {

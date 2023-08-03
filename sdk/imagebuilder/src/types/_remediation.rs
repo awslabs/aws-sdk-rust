@@ -45,6 +45,12 @@ impl RemediationBuilder {
         self.recommendation = input;
         self
     }
+    /// <p>An object that contains information about the recommended course of action to remediate the finding.</p>
+    pub fn get_recommendation(
+        &self,
+    ) -> &::std::option::Option<crate::types::RemediationRecommendation> {
+        &self.recommendation
+    }
     /// Consumes the builder and constructs a [`Remediation`](crate::types::Remediation).
     pub fn build(self) -> crate::types::Remediation {
         crate::types::Remediation {

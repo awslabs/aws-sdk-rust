@@ -46,6 +46,10 @@ impl DeleteDiskSnapshotInputBuilder {
         self.disk_snapshot_name = input;
         self
     }
+    /// <p>The name of the disk snapshot you want to delete (e.g., <code>my-disk-snapshot</code>).</p>
+    pub fn get_disk_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.disk_snapshot_name
+    }
     /// Consumes the builder and constructs a [`DeleteDiskSnapshotInput`](crate::operation::delete_disk_snapshot::DeleteDiskSnapshotInput).
     pub fn build(
         self,

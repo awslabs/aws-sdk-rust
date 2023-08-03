@@ -72,6 +72,10 @@ impl QueryStatisticsForDescribeQueryBuilder {
         self.events_matched = input;
         self
     }
+    /// <p>The number of events that matched a query.</p>
+    pub fn get_events_matched(&self) -> &::std::option::Option<i64> {
+        &self.events_matched
+    }
     /// <p>The number of events that the query scanned in the event data store.</p>
     pub fn events_scanned(mut self, input: i64) -> Self {
         self.events_scanned = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl QueryStatisticsForDescribeQueryBuilder {
     pub fn set_events_scanned(mut self, input: ::std::option::Option<i64>) -> Self {
         self.events_scanned = input;
         self
+    }
+    /// <p>The number of events that the query scanned in the event data store.</p>
+    pub fn get_events_scanned(&self) -> &::std::option::Option<i64> {
+        &self.events_scanned
     }
     /// <p>The total bytes that the query scanned in the event data store. This value matches the number of bytes for which your account is billed for the query, unless the query is still running.</p>
     pub fn bytes_scanned(mut self, input: i64) -> Self {
@@ -92,6 +100,10 @@ impl QueryStatisticsForDescribeQueryBuilder {
         self.bytes_scanned = input;
         self
     }
+    /// <p>The total bytes that the query scanned in the event data store. This value matches the number of bytes for which your account is billed for the query, unless the query is still running.</p>
+    pub fn get_bytes_scanned(&self) -> &::std::option::Option<i64> {
+        &self.bytes_scanned
+    }
     /// <p>The query's run time, in milliseconds.</p>
     pub fn execution_time_in_millis(mut self, input: i32) -> Self {
         self.execution_time_in_millis = ::std::option::Option::Some(input);
@@ -101,6 +113,10 @@ impl QueryStatisticsForDescribeQueryBuilder {
     pub fn set_execution_time_in_millis(mut self, input: ::std::option::Option<i32>) -> Self {
         self.execution_time_in_millis = input;
         self
+    }
+    /// <p>The query's run time, in milliseconds.</p>
+    pub fn get_execution_time_in_millis(&self) -> &::std::option::Option<i32> {
+        &self.execution_time_in_millis
     }
     /// <p>The creation time of the query.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -114,6 +130,10 @@ impl QueryStatisticsForDescribeQueryBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The creation time of the query.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// Consumes the builder and constructs a [`QueryStatisticsForDescribeQuery`](crate::types::QueryStatisticsForDescribeQuery).
     pub fn build(self) -> crate::types::QueryStatisticsForDescribeQuery {

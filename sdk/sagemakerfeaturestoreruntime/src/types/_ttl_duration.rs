@@ -48,6 +48,10 @@ impl TtlDurationBuilder {
         self.unit = input;
         self
     }
+    /// <p> <code>TtlDuration</code> time unit.</p>
+    pub fn get_unit(&self) -> &::std::option::Option<crate::types::TtlDurationUnit> {
+        &self.unit
+    }
     /// <p> <code>TtlDuration</code> time value.</p>
     pub fn value(mut self, input: i32) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl TtlDurationBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.value = input;
         self
+    }
+    /// <p> <code>TtlDuration</code> time value.</p>
+    pub fn get_value(&self) -> &::std::option::Option<i32> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`TtlDuration`](crate::types::TtlDuration).
     pub fn build(self) -> crate::types::TtlDuration {

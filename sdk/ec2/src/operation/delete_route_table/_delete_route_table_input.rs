@@ -48,6 +48,10 @@ impl DeleteRouteTableInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The ID of the route table.</p>
     pub fn route_table_id(
         mut self,
@@ -63,6 +67,10 @@ impl DeleteRouteTableInputBuilder {
     ) -> Self {
         self.route_table_id = input;
         self
+    }
+    /// <p>The ID of the route table.</p>
+    pub fn get_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.route_table_id
     }
     /// Consumes the builder and constructs a [`DeleteRouteTableInput`](crate::operation::delete_route_table::DeleteRouteTableInput).
     pub fn build(

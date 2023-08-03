@@ -48,6 +48,10 @@ impl LexBotConfigBuilder {
         self.lex_bot = input;
         self
     }
+    /// <p>Configuration information of an Amazon Lex bot.</p>
+    pub fn get_lex_bot(&self) -> &::std::option::Option<crate::types::LexBot> {
+        &self.lex_bot
+    }
     /// <p>Configuration information of an Amazon Lex V2 bot.</p>
     pub fn lex_v2_bot(mut self, input: crate::types::LexV2Bot) -> Self {
         self.lex_v2_bot = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl LexBotConfigBuilder {
     pub fn set_lex_v2_bot(mut self, input: ::std::option::Option<crate::types::LexV2Bot>) -> Self {
         self.lex_v2_bot = input;
         self
+    }
+    /// <p>Configuration information of an Amazon Lex V2 bot.</p>
+    pub fn get_lex_v2_bot(&self) -> &::std::option::Option<crate::types::LexV2Bot> {
+        &self.lex_v2_bot
     }
     /// Consumes the builder and constructs a [`LexBotConfig`](crate::types::LexBotConfig).
     pub fn build(self) -> crate::types::LexBotConfig {

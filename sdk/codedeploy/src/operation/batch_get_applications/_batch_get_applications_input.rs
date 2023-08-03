@@ -53,6 +53,12 @@ impl BatchGetApplicationsInputBuilder {
         self.application_names = input;
         self
     }
+    /// <p>A list of application names separated by spaces. The maximum number of application names you can specify is 100.</p>
+    pub fn get_application_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.application_names
+    }
     /// Consumes the builder and constructs a [`BatchGetApplicationsInput`](crate::operation::batch_get_applications::BatchGetApplicationsInput).
     pub fn build(
         self,

@@ -49,6 +49,10 @@ impl AwsElasticsearchDomainEncryptionAtRestOptionsBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Whether encryption at rest is enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>The KMS key ID. Takes the form <code>1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a</code>.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl AwsElasticsearchDomainEncryptionAtRestOptionsBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>The KMS key ID. Takes the form <code>1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a</code>.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// Consumes the builder and constructs a [`AwsElasticsearchDomainEncryptionAtRestOptions`](crate::types::AwsElasticsearchDomainEncryptionAtRestOptions).
     pub fn build(self) -> crate::types::AwsElasticsearchDomainEncryptionAtRestOptions {

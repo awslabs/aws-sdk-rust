@@ -64,6 +64,10 @@ impl AutoMlContainerDefinitionBuilder {
         self.image = input;
         self
     }
+    /// <p>The Amazon Elastic Container Registry (Amazon ECR) path of the container. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContainerDefinition.html"> ContainerDefinition</a>.</p>
+    pub fn get_image(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image
+    }
     /// <p>The location of the model artifacts. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContainerDefinition.html"> ContainerDefinition</a>.</p>
     pub fn model_data_url(
         mut self,
@@ -79,6 +83,10 @@ impl AutoMlContainerDefinitionBuilder {
     ) -> Self {
         self.model_data_url = input;
         self
+    }
+    /// <p>The location of the model artifacts. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContainerDefinition.html"> ContainerDefinition</a>.</p>
+    pub fn get_model_data_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_data_url
     }
     /// Adds a key-value pair to `environment`.
     ///
@@ -104,6 +112,14 @@ impl AutoMlContainerDefinitionBuilder {
     ) -> Self {
         self.environment = input;
         self
+    }
+    /// <p>The environment variables to set in the container. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContainerDefinition.html"> ContainerDefinition</a>.</p>
+    pub fn get_environment(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.environment
     }
     /// Consumes the builder and constructs a [`AutoMlContainerDefinition`](crate::types::AutoMlContainerDefinition).
     pub fn build(self) -> crate::types::AutoMlContainerDefinition {

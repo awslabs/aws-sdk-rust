@@ -37,6 +37,12 @@ impl GetBuiltinIntentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetBuiltinIntent as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_builtin_intent::builders::GetBuiltinIntentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,5 +132,9 @@ impl GetBuiltinIntentFluentBuilder {
     pub fn set_signature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_signature(input);
         self
+    }
+    /// <p>The unique identifier for a built-in intent. To find the signature for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
+    pub fn get_signature(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_signature()
     }
 }

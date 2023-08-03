@@ -72,6 +72,10 @@ impl CreateDeploymentOutputBuilder {
         self.job_id = input;
         self
     }
+    /// <p> The job ID for this deployment. will supply to start deployment api. </p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// Adds a key-value pair to `file_upload_urls`.
     ///
     /// To override the contents of this collection use [`set_file_upload_urls`](Self::set_file_upload_urls).
@@ -97,6 +101,14 @@ impl CreateDeploymentOutputBuilder {
         self.file_upload_urls = input;
         self
     }
+    /// <p> When the <code>fileMap</code> argument is provided in the request, <code>fileUploadUrls</code> will contain a map of file names to upload URLs. </p>
+    pub fn get_file_upload_urls(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.file_upload_urls
+    }
     /// <p> When the <code>fileMap</code> argument is not provided in the request, this <code>zipUploadUrl</code> is returned. </p>
     pub fn zip_upload_url(
         mut self,
@@ -112,6 +124,10 @@ impl CreateDeploymentOutputBuilder {
     ) -> Self {
         self.zip_upload_url = input;
         self
+    }
+    /// <p> When the <code>fileMap</code> argument is not provided in the request, this <code>zipUploadUrl</code> is returned. </p>
+    pub fn get_zip_upload_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.zip_upload_url
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

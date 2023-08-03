@@ -40,6 +40,12 @@ impl AssociateRepositoryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateRepository as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::associate_repository::builders::AssociateRepositoryInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl AssociateRepositoryFluentBuilder {
         self.inner = self.inner.set_repository(input);
         self
     }
+    /// <p>The repository to associate.</p>
+    pub fn get_repository(&self) -> &::std::option::Option<crate::types::Repository> {
+        self.inner.get_repository()
+    }
     /// <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate repository associations if there are failures and retries.</p>
     pub fn client_request_token(
         mut self,
@@ -148,6 +158,10 @@ impl AssociateRepositoryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate repository associations if there are failures and retries.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -180,6 +194,18 @@ impl AssociateRepositoryFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p>
+    /// <ul>
+    /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
+    /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
+    /// </ul>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>A <code>KMSKeyDetails</code> object that contains:</p>
     /// <ul>
     /// <li> <p>The encryption option for this repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li>
@@ -200,5 +226,13 @@ impl AssociateRepositoryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_kms_key_details(input);
         self
+    }
+    /// <p>A <code>KMSKeyDetails</code> object that contains:</p>
+    /// <ul>
+    /// <li> <p>The encryption option for this repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li>
+    /// <li> <p>The ID of the Amazon Web Services KMS key that is associated with this repository association.</p> </li>
+    /// </ul>
+    pub fn get_kms_key_details(&self) -> &::std::option::Option<crate::types::KmsKeyDetails> {
+        self.inner.get_kms_key_details()
     }
 }

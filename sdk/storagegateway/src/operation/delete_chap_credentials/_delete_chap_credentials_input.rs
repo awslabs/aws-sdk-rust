@@ -54,6 +54,10 @@ impl DeleteChapCredentialsInputBuilder {
         self.target_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <code>DescribeStorediSCSIVolumes</code> operation to return to retrieve the TargetARN for specified VolumeARN.</p>
+    pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_arn
+    }
     /// <p>The iSCSI initiator that connects to the target.</p>
     pub fn initiator_name(
         mut self,
@@ -69,6 +73,10 @@ impl DeleteChapCredentialsInputBuilder {
     ) -> Self {
         self.initiator_name = input;
         self
+    }
+    /// <p>The iSCSI initiator that connects to the target.</p>
+    pub fn get_initiator_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.initiator_name
     }
     /// Consumes the builder and constructs a [`DeleteChapCredentialsInput`](crate::operation::delete_chap_credentials::DeleteChapCredentialsInput).
     pub fn build(

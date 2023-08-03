@@ -119,6 +119,10 @@ impl SubmitTaskStateChangeInputBuilder {
         self.cluster = input;
         self
     }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster
+    }
     /// <p>The task ID or full ARN of the task in the state change request.</p>
     pub fn task(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task = ::std::option::Option::Some(input.into());
@@ -128,6 +132,10 @@ impl SubmitTaskStateChangeInputBuilder {
     pub fn set_task(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task = input;
         self
+    }
+    /// <p>The task ID or full ARN of the task in the state change request.</p>
+    pub fn get_task(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task
     }
     /// <p>The status of the state change request.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -139,6 +147,10 @@ impl SubmitTaskStateChangeInputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the state change request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The reason for the state change request.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
@@ -148,6 +160,10 @@ impl SubmitTaskStateChangeInputBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>The reason for the state change request.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
     }
     /// Appends an item to `containers`.
     ///
@@ -168,6 +184,12 @@ impl SubmitTaskStateChangeInputBuilder {
         self.containers = input;
         self
     }
+    /// <p>Any containers that's associated with the state change request.</p>
+    pub fn get_containers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerStateChange>> {
+        &self.containers
+    }
     /// Appends an item to `attachments`.
     ///
     /// To override the contents of this collection use [`set_attachments`](Self::set_attachments).
@@ -186,6 +208,12 @@ impl SubmitTaskStateChangeInputBuilder {
     ) -> Self {
         self.attachments = input;
         self
+    }
+    /// <p>Any attachments associated with the state change request.</p>
+    pub fn get_attachments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttachmentStateChange>> {
+        &self.attachments
     }
     /// Appends an item to `managed_agents`.
     ///
@@ -206,6 +234,12 @@ impl SubmitTaskStateChangeInputBuilder {
         self.managed_agents = input;
         self
     }
+    /// <p>The details for the managed agent that's associated with the task.</p>
+    pub fn get_managed_agents(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedAgentStateChange>> {
+        &self.managed_agents
+    }
     /// <p>The Unix timestamp for the time when the container image pull started.</p>
     pub fn pull_started_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.pull_started_at = ::std::option::Option::Some(input);
@@ -218,6 +252,10 @@ impl SubmitTaskStateChangeInputBuilder {
     ) -> Self {
         self.pull_started_at = input;
         self
+    }
+    /// <p>The Unix timestamp for the time when the container image pull started.</p>
+    pub fn get_pull_started_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.pull_started_at
     }
     /// <p>The Unix timestamp for the time when the container image pull completed.</p>
     pub fn pull_stopped_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -232,6 +270,10 @@ impl SubmitTaskStateChangeInputBuilder {
         self.pull_stopped_at = input;
         self
     }
+    /// <p>The Unix timestamp for the time when the container image pull completed.</p>
+    pub fn get_pull_stopped_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.pull_stopped_at
+    }
     /// <p>The Unix timestamp for the time when the task execution stopped.</p>
     pub fn execution_stopped_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.execution_stopped_at = ::std::option::Option::Some(input);
@@ -244,6 +286,10 @@ impl SubmitTaskStateChangeInputBuilder {
     ) -> Self {
         self.execution_stopped_at = input;
         self
+    }
+    /// <p>The Unix timestamp for the time when the task execution stopped.</p>
+    pub fn get_execution_stopped_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.execution_stopped_at
     }
     /// Consumes the builder and constructs a [`SubmitTaskStateChangeInput`](crate::operation::submit_task_state_change::SubmitTaskStateChangeInput).
     pub fn build(

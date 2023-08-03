@@ -43,6 +43,10 @@ impl AudioChannelTaggingSettingsBuilder {
         self.channel_tag = input;
         self
     }
+    /// You can add a tag for this mono-channel audio track to mimic its placement in a multi-channel layout. For example, if this track is the left surround channel, choose Left surround (LS).
+    pub fn get_channel_tag(&self) -> &::std::option::Option<crate::types::AudioChannelTag> {
+        &self.channel_tag
+    }
     /// Consumes the builder and constructs a [`AudioChannelTaggingSettings`](crate::types::AudioChannelTaggingSettings).
     pub fn build(self) -> crate::types::AudioChannelTaggingSettings {
         crate::types::AudioChannelTaggingSettings {

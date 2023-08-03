@@ -36,6 +36,10 @@ impl BatchDeleteAutomationRulesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchDeleteAutomationRules as a reference.
+    pub fn as_input(&self) -> &crate::operation::batch_delete_automation_rules::builders::BatchDeleteAutomationRulesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,5 +139,11 @@ impl BatchDeleteAutomationRulesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_automation_rules_arns(input);
         self
+    }
+    /// <p> A list of Amazon Resource Names (ARNs) for the rules that are to be deleted. </p>
+    pub fn get_automation_rules_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_automation_rules_arns()
     }
 }

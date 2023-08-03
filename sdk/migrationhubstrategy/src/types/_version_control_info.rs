@@ -52,6 +52,12 @@ impl VersionControlInfoBuilder {
         self.version_control_type = input;
         self
     }
+    /// <p>The type of version control.</p>
+    pub fn get_version_control_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::VersionControlType> {
+        &self.version_control_type
+    }
     /// <p>The time when the version control system was last configured.</p>
     pub fn version_control_configuration_time_stamp(
         mut self,
@@ -67,6 +73,12 @@ impl VersionControlInfoBuilder {
     ) -> Self {
         self.version_control_configuration_time_stamp = input;
         self
+    }
+    /// <p>The time when the version control system was last configured.</p>
+    pub fn get_version_control_configuration_time_stamp(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.version_control_configuration_time_stamp
     }
     /// Consumes the builder and constructs a [`VersionControlInfo`](crate::types::VersionControlInfo).
     pub fn build(self) -> crate::types::VersionControlInfo {

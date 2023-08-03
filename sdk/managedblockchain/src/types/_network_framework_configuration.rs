@@ -43,6 +43,10 @@ impl NetworkFrameworkConfigurationBuilder {
         self.fabric = input;
         self
     }
+    /// <p> Hyperledger Fabric configuration properties for a Managed Blockchain network that uses Hyperledger Fabric. </p>
+    pub fn get_fabric(&self) -> &::std::option::Option<crate::types::NetworkFabricConfiguration> {
+        &self.fabric
+    }
     /// Consumes the builder and constructs a [`NetworkFrameworkConfiguration`](crate::types::NetworkFrameworkConfiguration).
     pub fn build(self) -> crate::types::NetworkFrameworkConfiguration {
         crate::types::NetworkFrameworkConfiguration {

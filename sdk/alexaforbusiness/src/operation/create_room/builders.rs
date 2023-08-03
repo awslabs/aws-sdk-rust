@@ -37,6 +37,10 @@ impl CreateRoomFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateRoom as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_room::builders::CreateRoomInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl CreateRoomFluentBuilder {
         self.inner = self.inner.set_room_name(input);
         self
     }
+    /// <p>The name for the room.</p>
+    pub fn get_room_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_room_name()
+    }
     /// <p>The description for the room.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -129,6 +137,10 @@ impl CreateRoomFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The description for the room.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The profile ARN for the room. This is required.</p>
     pub fn profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.profile_arn(input.into());
@@ -138,6 +150,10 @@ impl CreateRoomFluentBuilder {
     pub fn set_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_profile_arn(input);
         self
+    }
+    /// <p>The profile ARN for the room. This is required.</p>
+    pub fn get_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_profile_arn()
     }
     /// <p>The calendar ARN for the room.</p>
     pub fn provider_calendar_id(
@@ -155,6 +171,10 @@ impl CreateRoomFluentBuilder {
         self.inner = self.inner.set_provider_calendar_id(input);
         self
     }
+    /// <p>The calendar ARN for the room.</p>
+    pub fn get_provider_calendar_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_provider_calendar_id()
+    }
     /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
     pub fn client_request_token(
         mut self,
@@ -170,6 +190,10 @@ impl CreateRoomFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
     /// Appends an item to `Tags`.
     ///
@@ -187,5 +211,9 @@ impl CreateRoomFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags for the room.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

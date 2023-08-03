@@ -78,6 +78,16 @@ impl EncryptionSpecificationBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The encryption option specified for the table. You can choose one of the following KMS keys (KMS keys):</p>
+    /// <ul>
+    /// <li> <p> <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p> </li>
+    /// <li> <p> <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input. </p> </li>
+    /// </ul>
+    /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::EncryptionType> {
+        &self.r#type
+    }
     /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key, for example <code>kms_key_identifier:ARN</code>.</p>
     pub fn kms_key_identifier(
         mut self,
@@ -93,6 +103,10 @@ impl EncryptionSpecificationBuilder {
     ) -> Self {
         self.kms_key_identifier = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key, for example <code>kms_key_identifier:ARN</code>.</p>
+    pub fn get_kms_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_identifier
     }
     /// Consumes the builder and constructs a [`EncryptionSpecification`](crate::types::EncryptionSpecification).
     pub fn build(self) -> crate::types::EncryptionSpecification {

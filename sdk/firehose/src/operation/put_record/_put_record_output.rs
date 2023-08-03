@@ -54,6 +54,10 @@ impl PutRecordOutputBuilder {
         self.record_id = input;
         self
     }
+    /// <p>The ID of the record.</p>
+    pub fn get_record_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.record_id
+    }
     /// <p>Indicates whether server-side encryption (SSE) was enabled during this operation.</p>
     pub fn encrypted(mut self, input: bool) -> Self {
         self.encrypted = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl PutRecordOutputBuilder {
     pub fn set_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.encrypted = input;
         self
+    }
+    /// <p>Indicates whether server-side encryption (SSE) was enabled during this operation.</p>
+    pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
+        &self.encrypted
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

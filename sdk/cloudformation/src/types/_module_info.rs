@@ -69,6 +69,12 @@ impl ModuleInfoBuilder {
         self.type_hierarchy = input;
         self
     }
+    /// <p>A concatenated list of the module type or types containing the resource. Module types are listed starting with the inner-most nested module, and separated by <code>/</code>.</p>
+    /// <p>In the following example, the resource was created from a module of type <code>AWS::First::Example::MODULE</code>, that's nested inside a parent module of type <code>AWS::Second::Example::MODULE</code>.</p>
+    /// <p> <code>AWS::First::Example::MODULE/AWS::Second::Example::MODULE</code> </p>
+    pub fn get_type_hierarchy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.type_hierarchy
+    }
     /// <p>A concatenated list of the logical IDs of the module or modules containing the resource. Modules are listed starting with the inner-most nested module, and separated by <code>/</code>.</p>
     /// <p>In the following example, the resource was created from a module, <code>moduleA</code>, that's nested inside a parent module, <code>moduleB</code>.</p>
     /// <p> <code>moduleA/moduleB</code> </p>
@@ -90,6 +96,13 @@ impl ModuleInfoBuilder {
     ) -> Self {
         self.logical_id_hierarchy = input;
         self
+    }
+    /// <p>A concatenated list of the logical IDs of the module or modules containing the resource. Modules are listed starting with the inner-most nested module, and separated by <code>/</code>.</p>
+    /// <p>In the following example, the resource was created from a module, <code>moduleA</code>, that's nested inside a parent module, <code>moduleB</code>.</p>
+    /// <p> <code>moduleA/moduleB</code> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/modules.html#module-ref-resources">Referencing resources in a module</a> in the <i>CloudFormation User Guide</i>.</p>
+    pub fn get_logical_id_hierarchy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.logical_id_hierarchy
     }
     /// Consumes the builder and constructs a [`ModuleInfo`](crate::types::ModuleInfo).
     pub fn build(self) -> crate::types::ModuleInfo {

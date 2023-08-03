@@ -37,7 +37,9 @@ impl ActivateKeySigningKeyInput {
                 (::std::result::Result::Err(e), ::std::option::Option::None)
             }
         };
-        crate::route53_resource_id_preprocessor::trim_resource_id(&mut self.hosted_zone_id);
+        crate::route53_resource_id_preprocessor_middleware::trim_resource_id(
+            &mut self.hosted_zone_id,
+        );
         let mut request = {
             fn uri_base(
                 _input: &crate::operation::activate_key_signing_key::ActivateKeySigningKeyInput,

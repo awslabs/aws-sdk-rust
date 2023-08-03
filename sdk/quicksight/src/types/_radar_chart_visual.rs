@@ -83,6 +83,10 @@ impl RadarChartVisualBuilder {
         self.visual_id = input;
         self
     }
+    /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
+    pub fn get_visual_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.visual_id
+    }
     /// <p>The title that is displayed on the visual.</p>
     pub fn title(mut self, input: crate::types::VisualTitleLabelOptions) -> Self {
         self.title = ::std::option::Option::Some(input);
@@ -95,6 +99,10 @@ impl RadarChartVisualBuilder {
     ) -> Self {
         self.title = input;
         self
+    }
+    /// <p>The title that is displayed on the visual.</p>
+    pub fn get_title(&self) -> &::std::option::Option<crate::types::VisualTitleLabelOptions> {
+        &self.title
     }
     /// <p>The subtitle that is displayed on the visual.</p>
     pub fn subtitle(mut self, input: crate::types::VisualSubtitleLabelOptions) -> Self {
@@ -109,6 +117,10 @@ impl RadarChartVisualBuilder {
         self.subtitle = input;
         self
     }
+    /// <p>The subtitle that is displayed on the visual.</p>
+    pub fn get_subtitle(&self) -> &::std::option::Option<crate::types::VisualSubtitleLabelOptions> {
+        &self.subtitle
+    }
     /// <p>The configuration settings of the visual.</p>
     pub fn chart_configuration(mut self, input: crate::types::RadarChartConfiguration) -> Self {
         self.chart_configuration = ::std::option::Option::Some(input);
@@ -121,6 +133,12 @@ impl RadarChartVisualBuilder {
     ) -> Self {
         self.chart_configuration = input;
         self
+    }
+    /// <p>The configuration settings of the visual.</p>
+    pub fn get_chart_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::RadarChartConfiguration> {
+        &self.chart_configuration
     }
     /// Appends an item to `actions`.
     ///
@@ -141,6 +159,12 @@ impl RadarChartVisualBuilder {
         self.actions = input;
         self
     }
+    /// <p>The list of custom actions that are configured for a visual.</p>
+    pub fn get_actions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>> {
+        &self.actions
+    }
     /// Appends an item to `column_hierarchies`.
     ///
     /// To override the contents of this collection use [`set_column_hierarchies`](Self::set_column_hierarchies).
@@ -159,6 +183,12 @@ impl RadarChartVisualBuilder {
     ) -> Self {
         self.column_hierarchies = input;
         self
+    }
+    /// <p>The column hierarchy that is used during drill-downs and drill-ups.</p>
+    pub fn get_column_hierarchies(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnHierarchy>> {
+        &self.column_hierarchies
     }
     /// Consumes the builder and constructs a [`RadarChartVisual`](crate::types::RadarChartVisual).
     pub fn build(self) -> crate::types::RadarChartVisual {

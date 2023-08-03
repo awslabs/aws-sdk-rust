@@ -39,6 +39,10 @@ impl DeleteListInputBuilder {
         self.name = input;
         self
     }
+    /// <p> The name of the list to delete. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeleteListInput`](crate::operation::delete_list::DeleteListInput).
     pub fn build(
         self,

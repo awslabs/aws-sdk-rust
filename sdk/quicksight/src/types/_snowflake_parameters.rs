@@ -56,6 +56,10 @@ impl SnowflakeParametersBuilder {
         self.host = input;
         self
     }
+    /// <p>Host.</p>
+    pub fn get_host(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host
+    }
     /// <p>Database.</p>
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl SnowflakeParametersBuilder {
         self.database = input;
         self
     }
+    /// <p>Database.</p>
+    pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database
+    }
     /// <p>Warehouse.</p>
     pub fn warehouse(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.warehouse = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl SnowflakeParametersBuilder {
     pub fn set_warehouse(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.warehouse = input;
         self
+    }
+    /// <p>Warehouse.</p>
+    pub fn get_warehouse(&self) -> &::std::option::Option<::std::string::String> {
+        &self.warehouse
     }
     /// Consumes the builder and constructs a [`SnowflakeParameters`](crate::types::SnowflakeParameters).
     pub fn build(self) -> crate::types::SnowflakeParameters {

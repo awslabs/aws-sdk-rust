@@ -124,6 +124,15 @@ impl DefaultPushNotificationMessageBuilder {
         self.action = input;
         self
     }
+    /// <p>The default action to occur if a recipient taps the push notification. Valid values are:</p>
+    /// <ul>
+    /// <li><p>OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default action.</p></li>
+    /// <li><p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This setting uses the deep-linking features of the iOS and Android platforms.</p></li>
+    /// <li><p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li>
+    /// </ul>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::Action> {
+        &self.action
+    }
     /// <p>The default body of the notification message.</p>
     pub fn body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.body = ::std::option::Option::Some(input.into());
@@ -133,6 +142,10 @@ impl DefaultPushNotificationMessageBuilder {
     pub fn set_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.body = input;
         self
+    }
+    /// <p>The default body of the notification message.</p>
+    pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.body
     }
     /// Adds a key-value pair to `data`.
     ///
@@ -159,6 +172,14 @@ impl DefaultPushNotificationMessageBuilder {
         self.data = input;
         self
     }
+    /// <p>The JSON data payload to use for the default push notification, if the notification is a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
+    pub fn get_data(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.data
+    }
     /// <p>Specifies whether the default notification is a silent push notification, which is a push notification that doesn't display on a recipient's device. Silent push notifications can be used for cases such as updating an app's configuration or delivering messages to an in-app notification center.</p>
     pub fn silent_push(mut self, input: bool) -> Self {
         self.silent_push = ::std::option::Option::Some(input);
@@ -168,6 +189,10 @@ impl DefaultPushNotificationMessageBuilder {
     pub fn set_silent_push(mut self, input: ::std::option::Option<bool>) -> Self {
         self.silent_push = input;
         self
+    }
+    /// <p>Specifies whether the default notification is a silent push notification, which is a push notification that doesn't display on a recipient's device. Silent push notifications can be used for cases such as updating an app's configuration or delivering messages to an in-app notification center.</p>
+    pub fn get_silent_push(&self) -> &::std::option::Option<bool> {
+        &self.silent_push
     }
     /// Adds a key-value pair to `substitutions`.
     ///
@@ -197,6 +222,14 @@ impl DefaultPushNotificationMessageBuilder {
         self.substitutions = input;
         self
     }
+    /// <p>The default message variables to use in the notification message. You can override the default variables with individual address variables.</p>
+    pub fn get_substitutions(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    > {
+        &self.substitutions
+    }
     /// <p>The default title to display above the notification message on a recipient's device.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
@@ -207,6 +240,10 @@ impl DefaultPushNotificationMessageBuilder {
         self.title = input;
         self
     }
+    /// <p>The default title to display above the notification message on a recipient's device.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
+    }
     /// <p>The default URL to open in a recipient's default mobile browser, if a recipient taps the push notification and the value of the Action property is URL.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
@@ -216,6 +253,10 @@ impl DefaultPushNotificationMessageBuilder {
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
+    }
+    /// <p>The default URL to open in a recipient's default mobile browser, if a recipient taps the push notification and the value of the Action property is URL.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     /// Consumes the builder and constructs a [`DefaultPushNotificationMessage`](crate::types::DefaultPushNotificationMessage).
     pub fn build(self) -> crate::types::DefaultPushNotificationMessage {

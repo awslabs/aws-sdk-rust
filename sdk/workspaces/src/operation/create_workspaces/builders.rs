@@ -39,6 +39,12 @@ impl CreateWorkspacesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateWorkspaces as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_workspaces::builders::CreateWorkspacesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,5 +141,11 @@ impl CreateWorkspacesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_workspaces(input);
         self
+    }
+    /// <p>The WorkSpaces to create. You can specify up to 25 WorkSpaces.</p>
+    pub fn get_workspaces(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkspaceRequest>> {
+        self.inner.get_workspaces()
     }
 }

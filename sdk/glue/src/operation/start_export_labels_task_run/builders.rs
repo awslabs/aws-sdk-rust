@@ -36,6 +36,10 @@ impl StartExportLabelsTaskRunFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartExportLabelsTaskRun as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_export_labels_task_run::builders::StartExportLabelsTaskRunInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl StartExportLabelsTaskRunFluentBuilder {
         self.inner = self.inner.set_transform_id(input);
         self
     }
+    /// <p>The unique identifier of the machine learning transform.</p>
+    pub fn get_transform_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_transform_id()
+    }
     /// <p>The Amazon S3 path where you export the labels.</p>
     pub fn output_s3_path(
         mut self,
@@ -141,5 +149,9 @@ impl StartExportLabelsTaskRunFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_output_s3_path(input);
         self
+    }
+    /// <p>The Amazon S3 path where you export the labels.</p>
+    pub fn get_output_s3_path(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_output_s3_path()
     }
 }

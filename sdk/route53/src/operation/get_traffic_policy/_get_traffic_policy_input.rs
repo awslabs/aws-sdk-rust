@@ -49,6 +49,10 @@ impl GetTrafficPolicyInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the traffic policy that you want to get information about.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The version number of the traffic policy that you want to get information about.</p>
     pub fn version(mut self, input: i32) -> Self {
         self.version = ::std::option::Option::Some(input);
@@ -58,6 +62,10 @@ impl GetTrafficPolicyInputBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version number of the traffic policy that you want to get information about.</p>
+    pub fn get_version(&self) -> &::std::option::Option<i32> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`GetTrafficPolicyInput`](crate::operation::get_traffic_policy::GetTrafficPolicyInput).
     pub fn build(

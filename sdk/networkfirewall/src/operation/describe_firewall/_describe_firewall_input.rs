@@ -60,6 +60,11 @@ impl DescribeFirewallInputBuilder {
         self.firewall_name = input;
         self
     }
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn get_firewall_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.firewall_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn firewall_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -71,6 +76,11 @@ impl DescribeFirewallInputBuilder {
     pub fn set_firewall_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn get_firewall_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.firewall_arn
     }
     /// Consumes the builder and constructs a [`DescribeFirewallInput`](crate::operation::describe_firewall::DescribeFirewallInput).
     pub fn build(

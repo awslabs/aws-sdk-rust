@@ -39,6 +39,10 @@ impl DeleteListenerInputBuilder {
         self.listener_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the listener.</p>
+    pub fn get_listener_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.listener_arn
+    }
     /// Consumes the builder and constructs a [`DeleteListenerInput`](crate::operation::delete_listener::DeleteListenerInput).
     pub fn build(
         self,

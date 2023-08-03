@@ -45,6 +45,10 @@ impl GetServiceInputBuilder {
         self.service_identifier = input;
         self
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    pub fn get_service_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_identifier
+    }
     /// Consumes the builder and constructs a [`GetServiceInput`](crate::operation::get_service::GetServiceInput).
     pub fn build(
         self,

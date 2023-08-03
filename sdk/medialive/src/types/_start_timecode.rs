@@ -40,6 +40,10 @@ impl StartTimecodeBuilder {
         self.timecode = input;
         self
     }
+    /// The timecode for the frame where you want to start the clip. Optional; if not specified, the clip starts at first frame in the file. Enter the timecode as HH:MM:SS:FF or HH:MM:SS;FF.
+    pub fn get_timecode(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timecode
+    }
     /// Consumes the builder and constructs a [`StartTimecode`](crate::types::StartTimecode).
     pub fn build(self) -> crate::types::StartTimecode {
         crate::types::StartTimecode {

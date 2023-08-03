@@ -53,6 +53,13 @@ impl ConversationLevelTestResultsBuilder {
         self.items = input;
         self
     }
+    /// <p>The item list in the test set results data at the conversation level.</p>
+    pub fn get_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConversationLevelTestResultItem>>
+    {
+        &self.items
+    }
     /// Consumes the builder and constructs a [`ConversationLevelTestResults`](crate::types::ConversationLevelTestResults).
     pub fn build(self) -> crate::types::ConversationLevelTestResults {
         crate::types::ConversationLevelTestResults { items: self.items }

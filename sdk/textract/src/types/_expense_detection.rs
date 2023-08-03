@@ -56,6 +56,10 @@ impl ExpenseDetectionBuilder {
         self.text = input;
         self
     }
+    /// <p>The word or line of text recognized by Amazon Textract</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
+    }
     /// <p>Information about where the following items are located on a document page: detected page, text, key-value pairs, tables, table cells, and selection elements.</p>
     pub fn geometry(mut self, input: crate::types::Geometry) -> Self {
         self.geometry = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl ExpenseDetectionBuilder {
         self.geometry = input;
         self
     }
+    /// <p>Information about where the following items are located on a document page: detected page, text, key-value pairs, tables, table cells, and selection elements.</p>
+    pub fn get_geometry(&self) -> &::std::option::Option<crate::types::Geometry> {
+        &self.geometry
+    }
     /// <p>The confidence in detection, as a percentage</p>
     pub fn confidence(mut self, input: f32) -> Self {
         self.confidence = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl ExpenseDetectionBuilder {
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.confidence = input;
         self
+    }
+    /// <p>The confidence in detection, as a percentage</p>
+    pub fn get_confidence(&self) -> &::std::option::Option<f32> {
+        &self.confidence
     }
     /// Consumes the builder and constructs a [`ExpenseDetection`](crate::types::ExpenseDetection).
     pub fn build(self) -> crate::types::ExpenseDetection {

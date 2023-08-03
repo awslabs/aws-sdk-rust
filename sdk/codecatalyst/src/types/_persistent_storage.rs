@@ -48,6 +48,12 @@ impl PersistentStorageBuilder {
         self.size_in_gi_b = input;
         self
     }
+    /// <p>The size of the persistent storage in gigabytes (specifically GiB).</p> <note>
+    /// <p>Valid values for storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
+    /// </note>
+    pub fn get_size_in_gi_b(&self) -> &::std::option::Option<i32> {
+        &self.size_in_gi_b
+    }
     /// Consumes the builder and constructs a [`PersistentStorage`](crate::types::PersistentStorage).
     pub fn build(self) -> crate::types::PersistentStorage {
         crate::types::PersistentStorage {

@@ -57,6 +57,10 @@ impl DescribeParameterGroupsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `parameter_groups`.
     ///
     /// To override the contents of this collection use [`set_parameter_groups`](Self::set_parameter_groups).
@@ -75,6 +79,12 @@ impl DescribeParameterGroupsOutputBuilder {
     ) -> Self {
         self.parameter_groups = input;
         self
+    }
+    /// <p>An array of parameter groups. Each element in the array represents one parameter group.</p>
+    pub fn get_parameter_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterGroup>> {
+        &self.parameter_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

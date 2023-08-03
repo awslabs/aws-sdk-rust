@@ -51,6 +51,12 @@ impl CustomActionNavigationOperationBuilder {
         self.local_navigation_configuration = input;
         self
     }
+    /// <p>The configuration that chooses the navigation target.</p>
+    pub fn get_local_navigation_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::LocalNavigationConfiguration> {
+        &self.local_navigation_configuration
+    }
     /// Consumes the builder and constructs a [`CustomActionNavigationOperation`](crate::types::CustomActionNavigationOperation).
     pub fn build(self) -> crate::types::CustomActionNavigationOperation {
         crate::types::CustomActionNavigationOperation {

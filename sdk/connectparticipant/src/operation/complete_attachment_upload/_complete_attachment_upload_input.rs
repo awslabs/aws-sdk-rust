@@ -69,6 +69,12 @@ impl CompleteAttachmentUploadInputBuilder {
         self.attachment_ids = input;
         self
     }
+    /// <p>A list of unique identifiers for the attachments.</p>
+    pub fn get_attachment_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.attachment_ids
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -78,6 +84,10 @@ impl CompleteAttachmentUploadInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>The authentication token associated with the participant's connection.</p>
     pub fn connection_token(
@@ -94,6 +104,10 @@ impl CompleteAttachmentUploadInputBuilder {
     ) -> Self {
         self.connection_token = input;
         self
+    }
+    /// <p>The authentication token associated with the participant's connection.</p>
+    pub fn get_connection_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_token
     }
     /// Consumes the builder and constructs a [`CompleteAttachmentUploadInput`](crate::operation::complete_attachment_upload::CompleteAttachmentUploadInput).
     pub fn build(

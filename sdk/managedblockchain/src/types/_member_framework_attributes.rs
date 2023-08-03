@@ -43,6 +43,10 @@ impl MemberFrameworkAttributesBuilder {
         self.fabric = input;
         self
     }
+    /// <p>Attributes of Hyperledger Fabric relevant to a member on a Managed Blockchain network that uses Hyperledger Fabric.</p>
+    pub fn get_fabric(&self) -> &::std::option::Option<crate::types::MemberFabricAttributes> {
+        &self.fabric
+    }
     /// Consumes the builder and constructs a [`MemberFrameworkAttributes`](crate::types::MemberFrameworkAttributes).
     pub fn build(self) -> crate::types::MemberFrameworkAttributes {
         crate::types::MemberFrameworkAttributes {

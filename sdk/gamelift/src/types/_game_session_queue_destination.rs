@@ -46,6 +46,10 @@ impl GameSessionQueueDestinationBuilder {
         self.destination_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that is assigned to fleet or fleet alias. ARNs, which include a fleet ID or alias ID and a Region name, provide a unique identifier across all Regions.</p>
+    pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_arn
+    }
     /// Consumes the builder and constructs a [`GameSessionQueueDestination`](crate::types::GameSessionQueueDestination).
     pub fn build(self) -> crate::types::GameSessionQueueDestination {
         crate::types::GameSessionQueueDestination {

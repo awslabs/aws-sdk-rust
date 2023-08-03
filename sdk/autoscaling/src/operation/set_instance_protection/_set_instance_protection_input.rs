@@ -66,6 +66,12 @@ impl SetInstanceProtectionInputBuilder {
         self.instance_ids = input;
         self
     }
+    /// <p>One or more instance IDs. You can specify up to 50 instances.</p>
+    pub fn get_instance_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.instance_ids
+    }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn auto_scaling_group_name(
         mut self,
@@ -82,6 +88,10 @@ impl SetInstanceProtectionInputBuilder {
         self.auto_scaling_group_name = input;
         self
     }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_scaling_group_name
+    }
     /// <p>Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.</p>
     pub fn protected_from_scale_in(mut self, input: bool) -> Self {
         self.protected_from_scale_in = ::std::option::Option::Some(input);
@@ -91,6 +101,10 @@ impl SetInstanceProtectionInputBuilder {
     pub fn set_protected_from_scale_in(mut self, input: ::std::option::Option<bool>) -> Self {
         self.protected_from_scale_in = input;
         self
+    }
+    /// <p>Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.</p>
+    pub fn get_protected_from_scale_in(&self) -> &::std::option::Option<bool> {
+        &self.protected_from_scale_in
     }
     /// Consumes the builder and constructs a [`SetInstanceProtectionInput`](crate::operation::set_instance_protection::SetInstanceProtectionInput).
     pub fn build(

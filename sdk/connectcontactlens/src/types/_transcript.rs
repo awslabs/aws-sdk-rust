@@ -96,6 +96,10 @@ impl TranscriptBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the transcript.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The identifier of the participant.</p>
     pub fn participant_id(
         mut self,
@@ -111,6 +115,10 @@ impl TranscriptBuilder {
     ) -> Self {
         self.participant_id = input;
         self
+    }
+    /// <p>The identifier of the participant.</p>
+    pub fn get_participant_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.participant_id
     }
     /// <p>The role of participant. For example, is it a customer, agent, or system.</p>
     pub fn participant_role(
@@ -128,6 +136,10 @@ impl TranscriptBuilder {
         self.participant_role = input;
         self
     }
+    /// <p>The role of participant. For example, is it a customer, agent, or system.</p>
+    pub fn get_participant_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.participant_role
+    }
     /// <p>The content of the transcript.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
@@ -137,6 +149,10 @@ impl TranscriptBuilder {
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
+    }
+    /// <p>The content of the transcript.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
     }
     /// <p>The beginning offset in the contact for this transcript.</p>
     pub fn begin_offset_millis(mut self, input: i32) -> Self {
@@ -148,6 +164,10 @@ impl TranscriptBuilder {
         self.begin_offset_millis = input;
         self
     }
+    /// <p>The beginning offset in the contact for this transcript.</p>
+    pub fn get_begin_offset_millis(&self) -> &::std::option::Option<i32> {
+        &self.begin_offset_millis
+    }
     /// <p>The end offset in the contact for this transcript.</p>
     pub fn end_offset_millis(mut self, input: i32) -> Self {
         self.end_offset_millis = ::std::option::Option::Some(input);
@@ -157,6 +177,10 @@ impl TranscriptBuilder {
     pub fn set_end_offset_millis(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end_offset_millis = input;
         self
+    }
+    /// <p>The end offset in the contact for this transcript.</p>
+    pub fn get_end_offset_millis(&self) -> &::std::option::Option<i32> {
+        &self.end_offset_millis
     }
     /// <p>The sentiment of the detected for this piece of transcript.</p>
     pub fn sentiment(mut self, input: crate::types::SentimentValue) -> Self {
@@ -170,6 +194,10 @@ impl TranscriptBuilder {
     ) -> Self {
         self.sentiment = input;
         self
+    }
+    /// <p>The sentiment of the detected for this piece of transcript.</p>
+    pub fn get_sentiment(&self) -> &::std::option::Option<crate::types::SentimentValue> {
+        &self.sentiment
     }
     /// Appends an item to `issues_detected`.
     ///
@@ -189,6 +217,12 @@ impl TranscriptBuilder {
     ) -> Self {
         self.issues_detected = input;
         self
+    }
+    /// <p>List of positions where issues were detected on the transcript.</p>
+    pub fn get_issues_detected(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IssueDetected>> {
+        &self.issues_detected
     }
     /// Consumes the builder and constructs a [`Transcript`](crate::types::Transcript).
     pub fn build(self) -> crate::types::Transcript {

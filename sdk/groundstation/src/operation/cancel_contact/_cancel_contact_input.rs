@@ -40,6 +40,10 @@ impl CancelContactInputBuilder {
         self.contact_id = input;
         self
     }
+    /// <p>UUID of a contact.</p>
+    pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_id
+    }
     /// Consumes the builder and constructs a [`CancelContactInput`](crate::operation::cancel_contact::CancelContactInput).
     pub fn build(
         self,

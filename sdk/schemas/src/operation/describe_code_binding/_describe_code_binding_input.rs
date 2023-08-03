@@ -65,6 +65,10 @@ impl DescribeCodeBindingInputBuilder {
         self.language = input;
         self
     }
+    /// <p>The language of the code binding.</p>
+    pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.language
+    }
     /// <p>The name of the registry.</p>
     pub fn registry_name(
         mut self,
@@ -81,6 +85,10 @@ impl DescribeCodeBindingInputBuilder {
         self.registry_name = input;
         self
     }
+    /// <p>The name of the registry.</p>
+    pub fn get_registry_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_name
+    }
     /// <p>The name of the schema.</p>
     pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_name = ::std::option::Option::Some(input.into());
@@ -90,6 +98,10 @@ impl DescribeCodeBindingInputBuilder {
     pub fn set_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_name = input;
         self
+    }
+    /// <p>The name of the schema.</p>
+    pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_name
     }
     /// <p>Specifying this limits the results to only this schema version.</p>
     pub fn schema_version(
@@ -106,6 +118,10 @@ impl DescribeCodeBindingInputBuilder {
     ) -> Self {
         self.schema_version = input;
         self
+    }
+    /// <p>Specifying this limits the results to only this schema version.</p>
+    pub fn get_schema_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_version
     }
     /// Consumes the builder and constructs a [`DescribeCodeBindingInput`](crate::operation::describe_code_binding::DescribeCodeBindingInput).
     pub fn build(

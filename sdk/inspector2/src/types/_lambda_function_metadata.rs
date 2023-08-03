@@ -87,6 +87,14 @@ impl LambdaFunctionMetadataBuilder {
         self.function_tags = input;
         self
     }
+    /// <p>The resource tags on an AWS Lambda function.</p>
+    pub fn get_function_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.function_tags
+    }
     /// Appends an item to `layers`.
     ///
     /// To override the contents of this collection use [`set_layers`](Self::set_layers).
@@ -106,6 +114,10 @@ impl LambdaFunctionMetadataBuilder {
         self.layers = input;
         self
     }
+    /// <p>The layers for an AWS Lambda function. A Lambda function can have up to five layers.</p>
+    pub fn get_layers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.layers
+    }
     /// <p>The name of a function.</p>
     pub fn function_name(
         mut self,
@@ -122,6 +134,10 @@ impl LambdaFunctionMetadataBuilder {
         self.function_name = input;
         self
     }
+    /// <p>The name of a function.</p>
+    pub fn get_function_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_name
+    }
     /// <p>An AWS Lambda function's runtime.</p>
     pub fn runtime(mut self, input: crate::types::Runtime) -> Self {
         self.runtime = ::std::option::Option::Some(input);
@@ -131,6 +147,10 @@ impl LambdaFunctionMetadataBuilder {
     pub fn set_runtime(mut self, input: ::std::option::Option<crate::types::Runtime>) -> Self {
         self.runtime = input;
         self
+    }
+    /// <p>An AWS Lambda function's runtime.</p>
+    pub fn get_runtime(&self) -> &::std::option::Option<crate::types::Runtime> {
+        &self.runtime
     }
     /// Consumes the builder and constructs a [`LambdaFunctionMetadata`](crate::types::LambdaFunctionMetadata).
     pub fn build(self) -> crate::types::LambdaFunctionMetadata {

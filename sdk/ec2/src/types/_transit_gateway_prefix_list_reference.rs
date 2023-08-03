@@ -92,6 +92,12 @@ impl TransitGatewayPrefixListReferenceBuilder {
         self.transit_gateway_route_table_id = input;
         self
     }
+    /// <p>The ID of the transit gateway route table.</p>
+    pub fn get_transit_gateway_route_table_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_route_table_id
+    }
     /// <p>The ID of the prefix list.</p>
     pub fn prefix_list_id(
         mut self,
@@ -107,6 +113,10 @@ impl TransitGatewayPrefixListReferenceBuilder {
     ) -> Self {
         self.prefix_list_id = input;
         self
+    }
+    /// <p>The ID of the prefix list.</p>
+    pub fn get_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix_list_id
     }
     /// <p>The ID of the prefix list owner.</p>
     pub fn prefix_list_owner_id(
@@ -124,6 +134,10 @@ impl TransitGatewayPrefixListReferenceBuilder {
         self.prefix_list_owner_id = input;
         self
     }
+    /// <p>The ID of the prefix list owner.</p>
+    pub fn get_prefix_list_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix_list_owner_id
+    }
     /// <p>The state of the prefix list reference.</p>
     pub fn state(mut self, input: crate::types::TransitGatewayPrefixListReferenceState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -137,6 +151,12 @@ impl TransitGatewayPrefixListReferenceBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of the prefix list reference.</p>
+    pub fn get_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransitGatewayPrefixListReferenceState> {
+        &self.state
+    }
     /// <p>Indicates whether traffic that matches this route is dropped.</p>
     pub fn blackhole(mut self, input: bool) -> Self {
         self.blackhole = ::std::option::Option::Some(input);
@@ -146,6 +166,10 @@ impl TransitGatewayPrefixListReferenceBuilder {
     pub fn set_blackhole(mut self, input: ::std::option::Option<bool>) -> Self {
         self.blackhole = input;
         self
+    }
+    /// <p>Indicates whether traffic that matches this route is dropped.</p>
+    pub fn get_blackhole(&self) -> &::std::option::Option<bool> {
+        &self.blackhole
     }
     /// <p>Information about the transit gateway attachment.</p>
     pub fn transit_gateway_attachment(
@@ -162,6 +186,12 @@ impl TransitGatewayPrefixListReferenceBuilder {
     ) -> Self {
         self.transit_gateway_attachment = input;
         self
+    }
+    /// <p>Information about the transit gateway attachment.</p>
+    pub fn get_transit_gateway_attachment(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransitGatewayPrefixListAttachment> {
+        &self.transit_gateway_attachment
     }
     /// Consumes the builder and constructs a [`TransitGatewayPrefixListReference`](crate::types::TransitGatewayPrefixListReference).
     pub fn build(self) -> crate::types::TransitGatewayPrefixListReference {

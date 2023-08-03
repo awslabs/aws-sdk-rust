@@ -37,6 +37,13 @@ impl RemoveProfilePermissionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RemoveProfilePermission as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::remove_profile_permission::builders::RemoveProfilePermissionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl RemoveProfilePermissionFluentBuilder {
         self.inner = self.inner.set_profile_name(input);
         self
     }
+    /// <p>A human-readable name for the signing profile with permissions to be removed.</p>
+    pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_profile_name()
+    }
     /// <p>An identifier for the current revision of the signing profile permissions.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.revision_id(input.into());
@@ -137,6 +148,10 @@ impl RemoveProfilePermissionFluentBuilder {
         self.inner = self.inner.set_revision_id(input);
         self
     }
+    /// <p>An identifier for the current revision of the signing profile permissions.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_revision_id()
+    }
     /// <p>A unique identifier for the cross-account permissions statement.</p>
     pub fn statement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.statement_id(input.into());
@@ -146,5 +161,9 @@ impl RemoveProfilePermissionFluentBuilder {
     pub fn set_statement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_statement_id(input);
         self
+    }
+    /// <p>A unique identifier for the cross-account permissions statement.</p>
+    pub fn get_statement_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_statement_id()
     }
 }

@@ -36,6 +36,10 @@ impl ResendOperationAuthorizationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ResendOperationAuthorization as a reference.
+    pub fn as_input(&self) -> &crate::operation::resend_operation_authorization::builders::ResendOperationAuthorizationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +129,9 @@ impl ResendOperationAuthorizationFluentBuilder {
     pub fn set_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_operation_id(input);
         self
+    }
+    /// <p> Operation ID. </p>
+    pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_operation_id()
     }
 }

@@ -124,6 +124,10 @@ impl AwsKmsKeyDetailsBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The twelve-digit account ID of the Amazon Web Services account that owns the KMS key.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>Indicates when the KMS key was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn creation_date(mut self, input: f64) -> Self {
@@ -136,6 +140,11 @@ impl AwsKmsKeyDetailsBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>Indicates when the KMS key was created.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<f64> {
+        &self.creation_date
+    }
     /// <p>The globally unique identifier for the KMS key.</p>
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_id = ::std::option::Option::Some(input.into());
@@ -146,6 +155,10 @@ impl AwsKmsKeyDetailsBuilder {
         self.key_id = input;
         self
     }
+    /// <p>The globally unique identifier for the KMS key.</p>
+    pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_id
+    }
     /// <p>The manager of the KMS key. KMS keys in your Amazon Web Services account are either customer managed or Amazon Web Services managed.</p>
     pub fn key_manager(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_manager = ::std::option::Option::Some(input.into());
@@ -155,6 +168,10 @@ impl AwsKmsKeyDetailsBuilder {
     pub fn set_key_manager(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_manager = input;
         self
+    }
+    /// <p>The manager of the KMS key. KMS keys in your Amazon Web Services account are either customer managed or Amazon Web Services managed.</p>
+    pub fn get_key_manager(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_manager
     }
     /// <p>The state of the KMS key. Valid values are as follows:</p>
     /// <ul>
@@ -180,6 +197,17 @@ impl AwsKmsKeyDetailsBuilder {
         self.key_state = input;
         self
     }
+    /// <p>The state of the KMS key. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>Disabled</code> </p> </li>
+    /// <li> <p> <code>Enabled</code> </p> </li>
+    /// <li> <p> <code>PendingDeletion</code> </p> </li>
+    /// <li> <p> <code>PendingImport</code> </p> </li>
+    /// <li> <p> <code>Unavailable</code> </p> </li>
+    /// </ul>
+    pub fn get_key_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_state
+    }
     /// <p>The source of the KMS key material.</p>
     /// <p>When this value is <code>AWS_KMS</code>, KMS created the key material.</p>
     /// <p>When this value is <code>EXTERNAL</code>, the key material was imported from your existing key management infrastructure or the KMS key lacks key material.</p>
@@ -196,6 +224,13 @@ impl AwsKmsKeyDetailsBuilder {
         self.origin = input;
         self
     }
+    /// <p>The source of the KMS key material.</p>
+    /// <p>When this value is <code>AWS_KMS</code>, KMS created the key material.</p>
+    /// <p>When this value is <code>EXTERNAL</code>, the key material was imported from your existing key management infrastructure or the KMS key lacks key material.</p>
+    /// <p>When this value is <code>AWS_CLOUDHSM</code>, the key material was created in the CloudHSM cluster associated with a custom key store.</p>
+    pub fn get_origin(&self) -> &::std::option::Option<::std::string::String> {
+        &self.origin
+    }
     /// <p>A description of the KMS key.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -206,6 +241,10 @@ impl AwsKmsKeyDetailsBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the KMS key.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>Whether the key has key rotation enabled.</p>
     pub fn key_rotation_status(mut self, input: bool) -> Self {
         self.key_rotation_status = ::std::option::Option::Some(input);
@@ -215,6 +254,10 @@ impl AwsKmsKeyDetailsBuilder {
     pub fn set_key_rotation_status(mut self, input: ::std::option::Option<bool>) -> Self {
         self.key_rotation_status = input;
         self
+    }
+    /// <p>Whether the key has key rotation enabled.</p>
+    pub fn get_key_rotation_status(&self) -> &::std::option::Option<bool> {
+        &self.key_rotation_status
     }
     /// Consumes the builder and constructs a [`AwsKmsKeyDetails`](crate::types::AwsKmsKeyDetails).
     pub fn build(self) -> crate::types::AwsKmsKeyDetails {

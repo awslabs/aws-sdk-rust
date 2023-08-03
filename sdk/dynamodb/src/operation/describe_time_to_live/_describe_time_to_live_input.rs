@@ -40,6 +40,10 @@ impl DescribeTimeToLiveInputBuilder {
         self.table_name = input;
         self
     }
+    /// <p>The name of the table to be described.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
+    }
     /// Consumes the builder and constructs a [`DescribeTimeToLiveInput`](crate::operation::describe_time_to_live::DescribeTimeToLiveInput).
     pub fn build(
         self,

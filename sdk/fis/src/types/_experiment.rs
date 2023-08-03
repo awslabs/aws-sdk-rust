@@ -158,6 +158,10 @@ impl ExperimentBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the experiment.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The ID of the experiment template.</p>
     pub fn experiment_template_id(
         mut self,
@@ -174,6 +178,10 @@ impl ExperimentBuilder {
         self.experiment_template_id = input;
         self
     }
+    /// <p>The ID of the experiment template.</p>
+    pub fn get_experiment_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.experiment_template_id
+    }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -183,6 +191,10 @@ impl ExperimentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The state of the experiment.</p>
     pub fn state(mut self, input: crate::types::ExperimentState) -> Self {
@@ -196,6 +208,10 @@ impl ExperimentBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the experiment.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ExperimentState> {
+        &self.state
     }
     /// Adds a key-value pair to `targets`.
     ///
@@ -222,6 +238,14 @@ impl ExperimentBuilder {
         self.targets = input;
         self
     }
+    /// <p>The targets for the experiment.</p>
+    pub fn get_targets(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::ExperimentTarget>,
+    > {
+        &self.targets
+    }
     /// Adds a key-value pair to `actions`.
     ///
     /// To override the contents of this collection use [`set_actions`](Self::set_actions).
@@ -247,6 +271,14 @@ impl ExperimentBuilder {
         self.actions = input;
         self
     }
+    /// <p>The actions for the experiment.</p>
+    pub fn get_actions(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::ExperimentAction>,
+    > {
+        &self.actions
+    }
     /// Appends an item to `stop_conditions`.
     ///
     /// To override the contents of this collection use [`set_stop_conditions`](Self::set_stop_conditions).
@@ -266,6 +298,12 @@ impl ExperimentBuilder {
         self.stop_conditions = input;
         self
     }
+    /// <p>The stop conditions for the experiment.</p>
+    pub fn get_stop_conditions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExperimentStopCondition>> {
+        &self.stop_conditions
+    }
     /// <p>The time that the experiment was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -278,6 +316,10 @@ impl ExperimentBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time that the experiment was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The time that the experiment started.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -292,6 +334,10 @@ impl ExperimentBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The time that the experiment started.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The time that the experiment ended.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -304,6 +350,10 @@ impl ExperimentBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The time that the experiment ended.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -330,6 +380,14 @@ impl ExperimentBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags for the experiment.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The configuration for experiment logging.</p>
     pub fn log_configuration(mut self, input: crate::types::ExperimentLogConfiguration) -> Self {
         self.log_configuration = ::std::option::Option::Some(input);
@@ -342,6 +400,12 @@ impl ExperimentBuilder {
     ) -> Self {
         self.log_configuration = input;
         self
+    }
+    /// <p>The configuration for experiment logging.</p>
+    pub fn get_log_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExperimentLogConfiguration> {
+        &self.log_configuration
     }
     /// Consumes the builder and constructs a [`Experiment`](crate::types::Experiment).
     pub fn build(self) -> crate::types::Experiment {

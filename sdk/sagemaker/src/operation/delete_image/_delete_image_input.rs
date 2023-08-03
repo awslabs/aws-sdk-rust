@@ -39,6 +39,10 @@ impl DeleteImageInputBuilder {
         self.image_name = input;
         self
     }
+    /// <p>The name of the image to delete.</p>
+    pub fn get_image_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_name
+    }
     /// Consumes the builder and constructs a [`DeleteImageInput`](crate::operation::delete_image::DeleteImageInput).
     pub fn build(
         self,

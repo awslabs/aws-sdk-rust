@@ -57,6 +57,12 @@ impl BatchGetAggregateResourceConfigInputBuilder {
         self.configuration_aggregator_name = input;
         self
     }
+    /// <p>The name of the configuration aggregator.</p>
+    pub fn get_configuration_aggregator_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_aggregator_name
+    }
     /// Appends an item to `resource_identifiers`.
     ///
     /// To override the contents of this collection use [`set_resource_identifiers`](Self::set_resource_identifiers).
@@ -78,6 +84,12 @@ impl BatchGetAggregateResourceConfigInputBuilder {
     ) -> Self {
         self.resource_identifiers = input;
         self
+    }
+    /// <p>A list of aggregate ResourceIdentifiers objects. </p>
+    pub fn get_resource_identifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregateResourceIdentifier>> {
+        &self.resource_identifiers
     }
     /// Consumes the builder and constructs a [`BatchGetAggregateResourceConfigInput`](crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigInput).
     pub fn build(

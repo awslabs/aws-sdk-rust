@@ -74,6 +74,13 @@ impl ListThirdPartyFirewallFirewallPoliciesOutputBuilder {
         self.third_party_firewall_firewall_policies = input;
         self
     }
+    /// <p>A list that contains one <code>ThirdPartyFirewallFirewallPolicies</code> element for each third-party firewall policies that the specified third-party firewall vendor is associated with. Each <code>ThirdPartyFirewallFirewallPolicies</code> element contains the firewall policy name and ID.</p>
+    pub fn get_third_party_firewall_firewall_policies(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ThirdPartyFirewallFirewallPolicy>>
+    {
+        &self.third_party_firewall_firewall_policies
+    }
     /// <p>The value that you will use for <code>NextToken</code> in the next <code>ListThirdPartyFirewallFirewallPolicies</code> request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -83,6 +90,10 @@ impl ListThirdPartyFirewallFirewallPoliciesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The value that you will use for <code>NextToken</code> in the next <code>ListThirdPartyFirewallFirewallPolicies</code> request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

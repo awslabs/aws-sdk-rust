@@ -57,6 +57,10 @@ impl DisassociateApplicationsInputBuilder {
         self.wave_id = input;
         self
     }
+    /// <p>Wave ID.</p>
+    pub fn get_wave_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.wave_id
+    }
     /// Appends an item to `application_i_ds`.
     ///
     /// To override the contents of this collection use [`set_application_i_ds`](Self::set_application_i_ds).
@@ -79,6 +83,12 @@ impl DisassociateApplicationsInputBuilder {
         self.application_i_ds = input;
         self
     }
+    /// <p>Application IDs list.</p>
+    pub fn get_application_i_ds(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.application_i_ds
+    }
     /// <p>Account ID.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -88,6 +98,10 @@ impl DisassociateApplicationsInputBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>Account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// Consumes the builder and constructs a [`DisassociateApplicationsInput`](crate::operation::disassociate_applications::DisassociateApplicationsInput).
     pub fn build(

@@ -52,6 +52,10 @@ impl IdentityDocumentFieldBuilder {
         self
     }
     /// <p>Used to contain the information detected by an AnalyzeID operation.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::AnalyzeIdDetections> {
+        &self.r#type
+    }
+    /// <p>Used to contain the information detected by an AnalyzeID operation.</p>
     pub fn value_detection(mut self, input: crate::types::AnalyzeIdDetections) -> Self {
         self.value_detection = ::std::option::Option::Some(input);
         self
@@ -63,6 +67,10 @@ impl IdentityDocumentFieldBuilder {
     ) -> Self {
         self.value_detection = input;
         self
+    }
+    /// <p>Used to contain the information detected by an AnalyzeID operation.</p>
+    pub fn get_value_detection(&self) -> &::std::option::Option<crate::types::AnalyzeIdDetections> {
+        &self.value_detection
     }
     /// Consumes the builder and constructs a [`IdentityDocumentField`](crate::types::IdentityDocumentField).
     pub fn build(self) -> crate::types::IdentityDocumentField {

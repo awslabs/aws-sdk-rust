@@ -36,6 +36,12 @@ impl PublishMetricsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PublishMetrics as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::publish_metrics::builders::PublishMetricsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl PublishMetricsFluentBuilder {
         self.inner = self.inner.set_environment_name(input);
         self
     }
+    /// <p> <b>Internal only</b>. The name of the environment.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_name()
+    }
     /// Appends an item to `MetricData`.
     ///
     /// To override the contents of this collection use [`set_metric_data`](Self::set_metric_data).
@@ -140,5 +150,11 @@ impl PublishMetricsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_metric_data(input);
         self
+    }
+    /// <p> <b>Internal only</b>. Publishes metrics to Amazon CloudWatch. To learn more about the metrics published to Amazon CloudWatch, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon MWAA performance metrics in Amazon CloudWatch</a>.</p>
+    pub fn get_metric_data(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>> {
+        self.inner.get_metric_data()
     }
 }

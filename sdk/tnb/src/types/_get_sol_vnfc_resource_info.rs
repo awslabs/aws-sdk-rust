@@ -44,6 +44,12 @@ impl GetSolVnfcResourceInfoBuilder {
         self.metadata = input;
         self
     }
+    /// <p>The metadata of the network function compute.</p>
+    pub fn get_metadata(
+        &self,
+    ) -> &::std::option::Option<crate::types::GetSolVnfcResourceInfoMetadata> {
+        &self.metadata
+    }
     /// Consumes the builder and constructs a [`GetSolVnfcResourceInfo`](crate::types::GetSolVnfcResourceInfo).
     pub fn build(self) -> crate::types::GetSolVnfcResourceInfo {
         crate::types::GetSolVnfcResourceInfo {

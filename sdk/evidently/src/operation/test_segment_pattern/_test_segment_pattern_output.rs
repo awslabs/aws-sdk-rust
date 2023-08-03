@@ -47,6 +47,10 @@ impl TestSegmentPatternOutputBuilder {
         self.r#match = input;
         self
     }
+    /// <p>Returns <code>true</code> if the pattern matches the payload.</p>
+    pub fn get_match(&self) -> &::std::option::Option<bool> {
+        &self.r#match
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

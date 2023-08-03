@@ -36,6 +36,10 @@ impl BatchDescribeSimulationJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchDescribeSimulationJob as a reference.
+    pub fn as_input(&self) -> &crate::operation::batch_describe_simulation_job::builders::BatchDescribeSimulationJobInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +136,9 @@ impl BatchDescribeSimulationJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_jobs(input);
         self
+    }
+    /// <p>A list of Amazon Resource Names (ARNs) of simulation jobs to describe.</p>
+    pub fn get_jobs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_jobs()
     }
 }

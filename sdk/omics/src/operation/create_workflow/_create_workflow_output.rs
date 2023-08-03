@@ -78,6 +78,10 @@ impl CreateWorkflowOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The workflow's ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The workflow's ID.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -87,6 +91,10 @@ impl CreateWorkflowOutputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The workflow's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The workflow's status.</p>
     pub fn status(mut self, input: crate::types::WorkflowStatus) -> Self {
@@ -100,6 +108,10 @@ impl CreateWorkflowOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The workflow's status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::WorkflowStatus> {
+        &self.status
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -125,6 +137,14 @@ impl CreateWorkflowOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The workflow's tags.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

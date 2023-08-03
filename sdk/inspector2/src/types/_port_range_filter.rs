@@ -48,6 +48,10 @@ impl PortRangeFilterBuilder {
         self.begin_inclusive = input;
         self
     }
+    /// <p>The port number the port range begins at.</p>
+    pub fn get_begin_inclusive(&self) -> &::std::option::Option<i32> {
+        &self.begin_inclusive
+    }
     /// <p>The port number the port range ends at.</p>
     pub fn end_inclusive(mut self, input: i32) -> Self {
         self.end_inclusive = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl PortRangeFilterBuilder {
     pub fn set_end_inclusive(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end_inclusive = input;
         self
+    }
+    /// <p>The port number the port range ends at.</p>
+    pub fn get_end_inclusive(&self) -> &::std::option::Option<i32> {
+        &self.end_inclusive
     }
     /// Consumes the builder and constructs a [`PortRangeFilter`](crate::types::PortRangeFilter).
     pub fn build(self) -> crate::types::PortRangeFilter {

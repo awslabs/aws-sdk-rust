@@ -53,6 +53,10 @@ impl CreateApplicationOutputBuilder {
         self.configuration_id = input;
         self
     }
+    /// <p>Configuration ID of an application to be created.</p>
+    pub fn get_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

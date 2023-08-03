@@ -54,6 +54,10 @@ impl InstanceEventWindowStateChangeBuilder {
         self.instance_event_window_id = input;
         self
     }
+    /// <p>The ID of the event window.</p>
+    pub fn get_instance_event_window_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_event_window_id
+    }
     /// <p>The current state of the event window.</p>
     pub fn state(mut self, input: crate::types::InstanceEventWindowState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl InstanceEventWindowStateChangeBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The current state of the event window.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::InstanceEventWindowState> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`InstanceEventWindowStateChange`](crate::types::InstanceEventWindowStateChange).
     pub fn build(self) -> crate::types::InstanceEventWindowStateChange {

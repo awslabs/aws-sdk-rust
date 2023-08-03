@@ -48,6 +48,10 @@ impl DescribeProjectInputBuilder {
         self.project_id = input;
         self
     }
+    /// <p> Unique project identifier. </p>
+    pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_id
+    }
     /// <p> If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project. </p>
     pub fn sync_from_resources(mut self, input: bool) -> Self {
         self.sync_from_resources = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl DescribeProjectInputBuilder {
     pub fn set_sync_from_resources(mut self, input: ::std::option::Option<bool>) -> Self {
         self.sync_from_resources = input;
         self
+    }
+    /// <p> If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project. </p>
+    pub fn get_sync_from_resources(&self) -> &::std::option::Option<bool> {
+        &self.sync_from_resources
     }
     /// Consumes the builder and constructs a [`DescribeProjectInput`](crate::operation::describe_project::DescribeProjectInput).
     pub fn build(

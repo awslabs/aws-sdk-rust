@@ -59,6 +59,12 @@ impl VisualReferenceOutputBuilder {
         self.base_screenshots = input;
         self
     }
+    /// <p>An array of screenshots that are used as the baseline for comparisons during visual monitoring.</p>
+    pub fn get_base_screenshots(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BaseScreenshot>> {
+        &self.base_screenshots
+    }
     /// <p>The ID of the canary run that produced the baseline screenshots that are used for visual monitoring comparisons by this canary.</p>
     pub fn base_canary_run_id(
         mut self,
@@ -74,6 +80,10 @@ impl VisualReferenceOutputBuilder {
     ) -> Self {
         self.base_canary_run_id = input;
         self
+    }
+    /// <p>The ID of the canary run that produced the baseline screenshots that are used for visual monitoring comparisons by this canary.</p>
+    pub fn get_base_canary_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.base_canary_run_id
     }
     /// Consumes the builder and constructs a [`VisualReferenceOutput`](crate::types::VisualReferenceOutput).
     pub fn build(self) -> crate::types::VisualReferenceOutput {

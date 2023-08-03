@@ -59,6 +59,12 @@ impl DescribeEmergencyContactSettingsOutputBuilder {
         self.emergency_contact_list = input;
         self
     }
+    /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.</p>
+    pub fn get_emergency_contact_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EmergencyContact>> {
+        &self.emergency_contact_list
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

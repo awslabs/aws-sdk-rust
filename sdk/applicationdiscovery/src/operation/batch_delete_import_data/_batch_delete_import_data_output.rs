@@ -58,6 +58,12 @@ impl BatchDeleteImportDataOutputBuilder {
         self.errors = input;
         self
     }
+    /// <p>Error messages returned for each import task that you deleted as a response for this command.</p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteImportDataError>> {
+        &self.errors
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

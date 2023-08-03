@@ -62,6 +62,10 @@ impl DeleteLogPatternInputBuilder {
         self.resource_group_name = input;
         self
     }
+    /// <p>The name of the resource group.</p>
+    pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_group_name
+    }
     /// <p>The name of the log pattern set.</p>
     pub fn pattern_set_name(
         mut self,
@@ -78,6 +82,10 @@ impl DeleteLogPatternInputBuilder {
         self.pattern_set_name = input;
         self
     }
+    /// <p>The name of the log pattern set.</p>
+    pub fn get_pattern_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pattern_set_name
+    }
     /// <p>The name of the log pattern.</p>
     pub fn pattern_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pattern_name = ::std::option::Option::Some(input.into());
@@ -87,6 +95,10 @@ impl DeleteLogPatternInputBuilder {
     pub fn set_pattern_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pattern_name = input;
         self
+    }
+    /// <p>The name of the log pattern.</p>
+    pub fn get_pattern_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pattern_name
     }
     /// Consumes the builder and constructs a [`DeleteLogPatternInput`](crate::operation::delete_log_pattern::DeleteLogPatternInput).
     pub fn build(

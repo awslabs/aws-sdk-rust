@@ -98,6 +98,10 @@ impl CreateConferenceProviderInputBuilder {
         self.conference_provider_name = input;
         self
     }
+    /// <p>The name of the conference provider.</p>
+    pub fn get_conference_provider_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.conference_provider_name
+    }
     /// <p>Represents a type within a list of predefined types.</p>
     pub fn conference_provider_type(mut self, input: crate::types::ConferenceProviderType) -> Self {
         self.conference_provider_type = ::std::option::Option::Some(input);
@@ -111,6 +115,12 @@ impl CreateConferenceProviderInputBuilder {
         self.conference_provider_type = input;
         self
     }
+    /// <p>Represents a type within a list of predefined types.</p>
+    pub fn get_conference_provider_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConferenceProviderType> {
+        &self.conference_provider_type
+    }
     /// <p>The IP endpoint and protocol for calling.</p>
     pub fn ip_dial_in(mut self, input: crate::types::IpDialIn) -> Self {
         self.ip_dial_in = ::std::option::Option::Some(input);
@@ -120,6 +130,10 @@ impl CreateConferenceProviderInputBuilder {
     pub fn set_ip_dial_in(mut self, input: ::std::option::Option<crate::types::IpDialIn>) -> Self {
         self.ip_dial_in = input;
         self
+    }
+    /// <p>The IP endpoint and protocol for calling.</p>
+    pub fn get_ip_dial_in(&self) -> &::std::option::Option<crate::types::IpDialIn> {
+        &self.ip_dial_in
     }
     /// <p>The information for PSTN conferencing.</p>
     pub fn pstn_dial_in(mut self, input: crate::types::PstnDialIn) -> Self {
@@ -134,6 +148,10 @@ impl CreateConferenceProviderInputBuilder {
         self.pstn_dial_in = input;
         self
     }
+    /// <p>The information for PSTN conferencing.</p>
+    pub fn get_pstn_dial_in(&self) -> &::std::option::Option<crate::types::PstnDialIn> {
+        &self.pstn_dial_in
+    }
     /// <p>The meeting settings for the conference provider.</p>
     pub fn meeting_setting(mut self, input: crate::types::MeetingSetting) -> Self {
         self.meeting_setting = ::std::option::Option::Some(input);
@@ -146,6 +164,10 @@ impl CreateConferenceProviderInputBuilder {
     ) -> Self {
         self.meeting_setting = input;
         self
+    }
+    /// <p>The meeting settings for the conference provider.</p>
+    pub fn get_meeting_setting(&self) -> &::std::option::Option<crate::types::MeetingSetting> {
+        &self.meeting_setting
     }
     /// <p>The request token of the client.</p>
     pub fn client_request_token(
@@ -162,6 +184,10 @@ impl CreateConferenceProviderInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>The request token of the client.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Appends an item to `tags`.
     ///
@@ -181,6 +207,10 @@ impl CreateConferenceProviderInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateConferenceProviderInput`](crate::operation::create_conference_provider::CreateConferenceProviderInput).
     pub fn build(

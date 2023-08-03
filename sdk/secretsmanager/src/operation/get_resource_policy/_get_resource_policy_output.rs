@@ -63,6 +63,10 @@ impl GetResourcePolicyOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the secret that the resource-based policy was retrieved for.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the secret that the resource-based policy was retrieved for.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl GetResourcePolicyOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the secret that the resource-based policy was retrieved for.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>A JSON-formatted string that contains the permissions policy attached to the secret. For more information about permissions policies, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control for Secrets Manager</a>.</p>
     pub fn resource_policy(
@@ -88,6 +96,10 @@ impl GetResourcePolicyOutputBuilder {
     ) -> Self {
         self.resource_policy = input;
         self
+    }
+    /// <p>A JSON-formatted string that contains the permissions policy attached to the secret. For more information about permissions policies, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control for Secrets Manager</a>.</p>
+    pub fn get_resource_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_policy
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

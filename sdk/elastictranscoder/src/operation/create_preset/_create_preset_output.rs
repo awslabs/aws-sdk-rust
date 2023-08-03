@@ -55,6 +55,10 @@ impl CreatePresetOutputBuilder {
         self.preset = input;
         self
     }
+    /// <p>A section of the response body that provides information about the preset that is created.</p>
+    pub fn get_preset(&self) -> &::std::option::Option<crate::types::Preset> {
+        &self.preset
+    }
     /// <p>If the preset settings don't comply with the standards for the video codec but Elastic Transcoder created the preset, this message explains the reason the preset settings don't meet the standard. Elastic Transcoder created the preset because the settings might produce acceptable output.</p>
     pub fn warning(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.warning = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl CreatePresetOutputBuilder {
     pub fn set_warning(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.warning = input;
         self
+    }
+    /// <p>If the preset settings don't comply with the standards for the video codec but Elastic Transcoder created the preset, this message explains the reason the preset settings don't meet the standard. Elastic Transcoder created the preset because the settings might produce acceptable output.</p>
+    pub fn get_warning(&self) -> &::std::option::Option<::std::string::String> {
+        &self.warning
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -39,6 +39,10 @@ impl DeleteRoleAliasInputBuilder {
         self.role_alias = input;
         self
     }
+    /// <p>The role alias to delete.</p>
+    pub fn get_role_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_alias
+    }
     /// Consumes the builder and constructs a [`DeleteRoleAliasInput`](crate::operation::delete_role_alias::DeleteRoleAliasInput).
     pub fn build(
         self,

@@ -39,6 +39,10 @@ impl DeleteBackupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteBackup as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_backup::builders::DeleteBackupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +125,10 @@ impl DeleteBackupFluentBuilder {
         self.inner = self.inner.set_backup_id(input);
         self
     }
+    /// <p>The ID of the backup that you want to delete.</p>
+    pub fn get_backup_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_backup_id()
+    }
     /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This parameter is automatically filled on your behalf when using the CLI or SDK.</p>
     pub fn client_request_token(
         mut self,
@@ -136,5 +144,9 @@ impl DeleteBackupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This parameter is automatically filled on your behalf when using the CLI or SDK.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
 }

@@ -39,6 +39,10 @@ impl DeleteActivityInputBuilder {
         self.activity_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the activity to delete.</p>
+    pub fn get_activity_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.activity_arn
+    }
     /// Consumes the builder and constructs a [`DeleteActivityInput`](crate::operation::delete_activity::DeleteActivityInput).
     pub fn build(
         self,

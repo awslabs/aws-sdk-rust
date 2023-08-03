@@ -54,6 +54,10 @@ impl ListWorkersOutputBuilder {
         self.next_token = input;
         self
     }
+    /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `workers`.
     ///
     /// To override the contents of this collection use [`set_workers`](Self::set_workers).
@@ -72,6 +76,10 @@ impl ListWorkersOutputBuilder {
     ) -> Self {
         self.workers = input;
         self
+    }
+    /// List of workers.
+    pub fn get_workers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Worker>> {
+        &self.workers
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -59,6 +59,12 @@ impl CancelFlowExecutionsOutputBuilder {
         self.invalid_executions = input;
         self
     }
+    /// <p>The IDs of runs that Amazon AppFlow couldn't cancel. These runs might be ineligible for canceling because they haven't started yet or have already completed.</p>
+    pub fn get_invalid_executions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.invalid_executions
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

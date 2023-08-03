@@ -76,6 +76,10 @@ impl FunctionConfigurationEnvironmentBuilder {
         self.access_sysfs = input;
         self
     }
+    /// If true, the Lambda function is allowed to access the host's /sys folder. Use this when the Lambda function needs to read device information from /sys. This setting applies only when you run the Lambda function in a Greengrass container.
+    pub fn get_access_sysfs(&self) -> &::std::option::Option<bool> {
+        &self.access_sysfs
+    }
     /// Configuration related to executing the Lambda function
     pub fn execution(mut self, input: crate::types::FunctionExecutionConfig) -> Self {
         self.execution = ::std::option::Option::Some(input);
@@ -88,6 +92,10 @@ impl FunctionConfigurationEnvironmentBuilder {
     ) -> Self {
         self.execution = input;
         self
+    }
+    /// Configuration related to executing the Lambda function
+    pub fn get_execution(&self) -> &::std::option::Option<crate::types::FunctionExecutionConfig> {
+        &self.execution
     }
     /// Appends an item to `resource_access_policies`.
     ///
@@ -107,6 +115,12 @@ impl FunctionConfigurationEnvironmentBuilder {
     ) -> Self {
         self.resource_access_policies = input;
         self
+    }
+    /// A list of the resources, with their permissions, to which the Lambda function will be granted access. A Lambda function can have at most 10 resources. ResourceAccessPolicies apply only when you run the Lambda function in a Greengrass container.
+    pub fn get_resource_access_policies(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceAccessPolicy>> {
+        &self.resource_access_policies
     }
     /// Adds a key-value pair to `variables`.
     ///
@@ -132,6 +146,14 @@ impl FunctionConfigurationEnvironmentBuilder {
     ) -> Self {
         self.variables = input;
         self
+    }
+    /// Environment variables for the Lambda function's configuration.
+    pub fn get_variables(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.variables
     }
     /// Consumes the builder and constructs a [`FunctionConfigurationEnvironment`](crate::types::FunctionConfigurationEnvironment).
     pub fn build(self) -> crate::types::FunctionConfigurationEnvironment {

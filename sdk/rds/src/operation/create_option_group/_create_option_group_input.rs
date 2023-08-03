@@ -135,6 +135,17 @@ impl CreateOptionGroupInputBuilder {
         self.option_group_name = input;
         self
     }
+    /// <p>Specifies the name of the option group to be created.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// </ul>
+    /// <p>Example: <code>myoptiongroup</code> </p>
+    pub fn get_option_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.option_group_name
+    }
     /// <p>Specifies the name of the engine that this option group should be associated with.</p>
     /// <p>Valid Values:</p>
     /// <ul>
@@ -173,6 +184,24 @@ impl CreateOptionGroupInputBuilder {
         self.engine_name = input;
         self
     }
+    /// <p>Specifies the name of the engine that this option group should be associated with.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li> <p> <code>mariadb</code> </p> </li>
+    /// <li> <p> <code>mysql</code> </p> </li>
+    /// <li> <p> <code>oracle-ee</code> </p> </li>
+    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+    /// <li> <p> <code>oracle-se2</code> </p> </li>
+    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li>
+    /// <li> <p> <code>postgres</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ee</code> </p> </li>
+    /// <li> <p> <code>sqlserver-se</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ex</code> </p> </li>
+    /// <li> <p> <code>sqlserver-web</code> </p> </li>
+    /// </ul>
+    pub fn get_engine_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_name
+    }
     /// <p>Specifies the major version of the engine that this option group should be associated with.</p>
     pub fn major_engine_version(
         mut self,
@@ -189,6 +218,10 @@ impl CreateOptionGroupInputBuilder {
         self.major_engine_version = input;
         self
     }
+    /// <p>Specifies the major version of the engine that this option group should be associated with.</p>
+    pub fn get_major_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.major_engine_version
+    }
     /// <p>The description of the option group.</p>
     pub fn option_group_description(
         mut self,
@@ -204,6 +237,10 @@ impl CreateOptionGroupInputBuilder {
     ) -> Self {
         self.option_group_description = input;
         self
+    }
+    /// <p>The description of the option group.</p>
+    pub fn get_option_group_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.option_group_description
     }
     /// Appends an item to `tags`.
     ///
@@ -223,6 +260,10 @@ impl CreateOptionGroupInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Tags to assign to the option group.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateOptionGroupInput`](crate::operation::create_option_group::CreateOptionGroupInput).
     pub fn build(

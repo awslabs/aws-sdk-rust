@@ -36,6 +36,10 @@ impl PutFeedbackFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutFeedback as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_feedback::builders::PutFeedbackInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -120,5 +124,9 @@ impl PutFeedbackFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_insight_feedback(input);
         self
+    }
+    /// <p> The feedback from customers is about the recommendations in this insight. </p>
+    pub fn get_insight_feedback(&self) -> &::std::option::Option<crate::types::InsightFeedback> {
+        self.inner.get_insight_feedback()
     }
 }

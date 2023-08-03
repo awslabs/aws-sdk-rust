@@ -44,6 +44,11 @@ impl OpenIdConnectProviderListEntryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
+    /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`OpenIdConnectProviderListEntry`](crate::types::OpenIdConnectProviderListEntry).
     pub fn build(self) -> crate::types::OpenIdConnectProviderListEntry {
         crate::types::OpenIdConnectProviderListEntry { arn: self.arn }

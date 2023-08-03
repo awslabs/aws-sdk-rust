@@ -36,6 +36,13 @@ impl DeleteUserByPrincipalIdFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteUserByPrincipalId as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_user_by_principal_id::builders::DeleteUserByPrincipalIdInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl DeleteUserByPrincipalIdFluentBuilder {
         self.inner = self.inner.set_principal_id(input);
         self
     }
+    /// <p>The principal ID of the user.</p>
+    pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_principal_id()
+    }
     /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub fn aws_account_id(
         mut self,
@@ -142,6 +153,10 @@ impl DeleteUserByPrincipalIdFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace(input.into());
@@ -151,5 +166,9 @@ impl DeleteUserByPrincipalIdFluentBuilder {
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace(input);
         self
+    }
+    /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace()
     }
 }

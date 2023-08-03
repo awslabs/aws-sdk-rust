@@ -79,6 +79,14 @@ impl PlacementTemplateBuilder {
         self.default_attributes = input;
         self
     }
+    /// <p>The default attributes (key/value pairs) to be applied to all placements using this template.</p>
+    pub fn get_default_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.default_attributes
+    }
     /// Adds a key-value pair to `device_templates`.
     ///
     /// To override the contents of this collection use [`set_device_templates`](Self::set_device_templates).
@@ -103,6 +111,14 @@ impl PlacementTemplateBuilder {
     ) -> Self {
         self.device_templates = input;
         self
+    }
+    /// <p>An object specifying the <code>DeviceTemplate</code> for all placements using this (<code>PlacementTemplate</code>) template.</p>
+    pub fn get_device_templates(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::DeviceTemplate>,
+    > {
+        &self.device_templates
     }
     /// Consumes the builder and constructs a [`PlacementTemplate`](crate::types::PlacementTemplate).
     pub fn build(self) -> crate::types::PlacementTemplate {

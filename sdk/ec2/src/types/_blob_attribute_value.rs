@@ -39,6 +39,10 @@ impl BlobAttributeValueBuilder {
         self.value = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_value(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.value
+    }
     /// Consumes the builder and constructs a [`BlobAttributeValue`](crate::types::BlobAttributeValue).
     pub fn build(self) -> crate::types::BlobAttributeValue {
         crate::types::BlobAttributeValue { value: self.value }

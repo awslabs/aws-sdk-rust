@@ -46,6 +46,10 @@ impl DeleteConnectionInputBuilder {
         self.connection_id = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_id
+    }
     /// Consumes the builder and constructs a [`DeleteConnectionInput`](crate::operation::delete_connection::DeleteConnectionInput).
     pub fn build(
         self,

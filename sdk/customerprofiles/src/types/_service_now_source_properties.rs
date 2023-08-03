@@ -40,6 +40,10 @@ impl ServiceNowSourcePropertiesBuilder {
         self.object = input;
         self
     }
+    /// <p>The object specified in the ServiceNow flow source.</p>
+    pub fn get_object(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object
+    }
     /// Consumes the builder and constructs a [`ServiceNowSourceProperties`](crate::types::ServiceNowSourceProperties).
     pub fn build(self) -> crate::types::ServiceNowSourceProperties {
         crate::types::ServiceNowSourceProperties {

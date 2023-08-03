@@ -36,6 +36,10 @@ impl RescoreFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the Rescore as a reference.
+    pub fn as_input(&self) -> &crate::operation::rescore::builders::RescoreInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl RescoreFluentBuilder {
         self.inner = self.inner.set_rescore_execution_plan_id(input);
         self
     }
+    /// <p>The identifier of the rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the <code>Rescore</code> API.</p>
+    pub fn get_rescore_execution_plan_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rescore_execution_plan_id()
+    }
     /// <p>The input query from the search service.</p>
     pub fn search_query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.search_query(input.into());
@@ -133,6 +141,10 @@ impl RescoreFluentBuilder {
     pub fn set_search_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_search_query(input);
         self
+    }
+    /// <p>The input query from the search service.</p>
+    pub fn get_search_query(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_search_query()
     }
     /// Appends an item to `Documents`.
     ///
@@ -150,5 +162,9 @@ impl RescoreFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_documents(input);
         self
+    }
+    /// <p>The list of documents for Amazon Kendra Intelligent Ranking to rescore or rank on.</p>
+    pub fn get_documents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Document>> {
+        self.inner.get_documents()
     }
 }

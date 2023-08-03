@@ -39,6 +39,10 @@ impl DeleteRescoreExecutionPlanInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the rescore execution plan that you want to delete.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`DeleteRescoreExecutionPlanInput`](crate::operation::delete_rescore_execution_plan::DeleteRescoreExecutionPlanInput).
     pub fn build(
         self,

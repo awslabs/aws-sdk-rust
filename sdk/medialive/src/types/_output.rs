@@ -86,6 +86,12 @@ impl OutputBuilder {
         self.audio_description_names = input;
         self
     }
+    /// The names of the AudioDescriptions used as audio sources for this output.
+    pub fn get_audio_description_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.audio_description_names
+    }
     /// Appends an item to `caption_description_names`.
     ///
     /// To override the contents of this collection use [`set_caption_description_names`](Self::set_caption_description_names).
@@ -108,6 +114,12 @@ impl OutputBuilder {
         self.caption_description_names = input;
         self
     }
+    /// The names of the CaptionDescriptions used as caption sources for this output.
+    pub fn get_caption_description_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.caption_description_names
+    }
     /// The name used to identify an output.
     pub fn output_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_name = ::std::option::Option::Some(input.into());
@@ -117,6 +129,10 @@ impl OutputBuilder {
     pub fn set_output_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_name = input;
         self
+    }
+    /// The name used to identify an output.
+    pub fn get_output_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_name
     }
     /// Output type-specific settings.
     pub fn output_settings(mut self, input: crate::types::OutputSettings) -> Self {
@@ -130,6 +146,10 @@ impl OutputBuilder {
     ) -> Self {
         self.output_settings = input;
         self
+    }
+    /// Output type-specific settings.
+    pub fn get_output_settings(&self) -> &::std::option::Option<crate::types::OutputSettings> {
+        &self.output_settings
     }
     /// The name of the VideoDescription used as the source for this output.
     pub fn video_description_name(
@@ -146,6 +166,10 @@ impl OutputBuilder {
     ) -> Self {
         self.video_description_name = input;
         self
+    }
+    /// The name of the VideoDescription used as the source for this output.
+    pub fn get_video_description_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.video_description_name
     }
     /// Consumes the builder and constructs a [`Output`](crate::types::Output).
     pub fn build(self) -> crate::types::Output {

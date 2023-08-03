@@ -48,6 +48,10 @@ impl BatchDetectSyntaxItemResultBuilder {
         self.index = input;
         self
     }
+    /// <p>The zero-based index of the document in the input list.</p>
+    pub fn get_index(&self) -> &::std::option::Option<i32> {
+        &self.index
+    }
     /// Appends an item to `syntax_tokens`.
     ///
     /// To override the contents of this collection use [`set_syntax_tokens`](Self::set_syntax_tokens).
@@ -66,6 +70,12 @@ impl BatchDetectSyntaxItemResultBuilder {
     ) -> Self {
         self.syntax_tokens = input;
         self
+    }
+    /// <p>The syntax tokens for the words in the document, one token for each word.</p>
+    pub fn get_syntax_tokens(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SyntaxToken>> {
+        &self.syntax_tokens
     }
     /// Consumes the builder and constructs a [`BatchDetectSyntaxItemResult`](crate::types::BatchDetectSyntaxItemResult).
     pub fn build(self) -> crate::types::BatchDetectSyntaxItemResult {

@@ -100,6 +100,19 @@ impl InstanceFleetStatusBuilder {
         self.state = input;
         self
     }
+    /// <p>A code representing the instance fleet status.</p>
+    /// <ul>
+    /// <li> <p> <code>PROVISIONING</code>—The instance fleet is provisioning Amazon EC2 resources and is not yet ready to run jobs.</p> </li>
+    /// <li> <p> <code>BOOTSTRAPPING</code>—Amazon EC2 instances and other resources have been provisioned and the bootstrap actions specified for the instances are underway.</p> </li>
+    /// <li> <p> <code>RUNNING</code>—Amazon EC2 instances and other resources are running. They are either executing jobs or waiting to execute jobs.</p> </li>
+    /// <li> <p> <code>RESIZING</code>—A resize operation is underway. Amazon EC2 instances are either being added or removed.</p> </li>
+    /// <li> <p> <code>SUSPENDED</code>—A resize operation could not complete. Existing Amazon EC2 instances are running, but instances can't be added or removed.</p> </li>
+    /// <li> <p> <code>TERMINATING</code>—The instance fleet is terminating Amazon EC2 instances.</p> </li>
+    /// <li> <p> <code>TERMINATED</code>—The instance fleet is no longer active, and all Amazon EC2 instances have been terminated.</p> </li>
+    /// </ul>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::InstanceFleetState> {
+        &self.state
+    }
     /// <p>Provides status change reason details for the instance fleet.</p>
     pub fn state_change_reason(
         mut self,
@@ -116,6 +129,12 @@ impl InstanceFleetStatusBuilder {
         self.state_change_reason = input;
         self
     }
+    /// <p>Provides status change reason details for the instance fleet.</p>
+    pub fn get_state_change_reason(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceFleetStateChangeReason> {
+        &self.state_change_reason
+    }
     /// <p>Provides historical timestamps for the instance fleet, including the time of creation, the time it became ready to run jobs, and the time of termination.</p>
     pub fn timeline(mut self, input: crate::types::InstanceFleetTimeline) -> Self {
         self.timeline = ::std::option::Option::Some(input);
@@ -128,6 +147,10 @@ impl InstanceFleetStatusBuilder {
     ) -> Self {
         self.timeline = input;
         self
+    }
+    /// <p>Provides historical timestamps for the instance fleet, including the time of creation, the time it became ready to run jobs, and the time of termination.</p>
+    pub fn get_timeline(&self) -> &::std::option::Option<crate::types::InstanceFleetTimeline> {
+        &self.timeline
     }
     /// Consumes the builder and constructs a [`InstanceFleetStatus`](crate::types::InstanceFleetStatus).
     pub fn build(self) -> crate::types::InstanceFleetStatus {

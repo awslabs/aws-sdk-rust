@@ -96,6 +96,13 @@ impl DescribeWorkspacesInputBuilder {
         self.workspace_ids = input;
         self
     }
+    /// <p>The identifiers of the WorkSpaces. You cannot combine this parameter with any other filter.</p>
+    /// <p>Because the <code>CreateWorkspaces</code> operation is asynchronous, the identifier it returns is not immediately available. If you immediately call <code>DescribeWorkspaces</code> with this identifier, no information is returned.</p>
+    pub fn get_workspace_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.workspace_ids
+    }
     /// <p>The identifier of the directory. In addition, you can optionally specify a specific directory user (see <code>UserName</code>). You cannot combine this parameter with any other filter.</p>
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
@@ -105,6 +112,10 @@ impl DescribeWorkspacesInputBuilder {
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_id = input;
         self
+    }
+    /// <p>The identifier of the directory. In addition, you can optionally specify a specific directory user (see <code>UserName</code>). You cannot combine this parameter with any other filter.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
     }
     /// <p>The name of the directory user. You must specify this parameter with <code>DirectoryId</code>.</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -116,6 +127,10 @@ impl DescribeWorkspacesInputBuilder {
         self.user_name = input;
         self
     }
+    /// <p>The name of the directory user. You must specify this parameter with <code>DirectoryId</code>.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
+    }
     /// <p>The identifier of the bundle. All WorkSpaces that are created from this bundle are retrieved. You cannot combine this parameter with any other filter.</p>
     pub fn bundle_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bundle_id = ::std::option::Option::Some(input.into());
@@ -125,6 +140,10 @@ impl DescribeWorkspacesInputBuilder {
     pub fn set_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bundle_id = input;
         self
+    }
+    /// <p>The identifier of the bundle. All WorkSpaces that are created from this bundle are retrieved. You cannot combine this parameter with any other filter.</p>
+    pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bundle_id
     }
     /// <p>The maximum number of items to return.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -136,6 +155,10 @@ impl DescribeWorkspacesInputBuilder {
         self.limit = input;
         self
     }
+    /// <p>The maximum number of items to return.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
+    }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -145,6 +168,10 @@ impl DescribeWorkspacesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeWorkspacesInput`](crate::operation::describe_workspaces::DescribeWorkspacesInput).
     pub fn build(

@@ -48,6 +48,12 @@ impl TrainingRepositoryAuthConfigBuilder {
         self.training_repository_credentials_provider_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services Lambda function used to give SageMaker access credentials to your private Docker registry.</p>
+    pub fn get_training_repository_credentials_provider_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.training_repository_credentials_provider_arn
+    }
     /// Consumes the builder and constructs a [`TrainingRepositoryAuthConfig`](crate::types::TrainingRepositoryAuthConfig).
     pub fn build(self) -> crate::types::TrainingRepositoryAuthConfig {
         crate::types::TrainingRepositoryAuthConfig {

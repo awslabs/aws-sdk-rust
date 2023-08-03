@@ -64,6 +64,10 @@ impl SvmEndpointsBuilder {
         self.iscsi = input;
         self
     }
+    /// <p>An endpoint for connecting using the Internet Small Computer Systems Interface (iSCSI) protocol.</p>
+    pub fn get_iscsi(&self) -> &::std::option::Option<crate::types::SvmEndpoint> {
+        &self.iscsi
+    }
     /// <p>An endpoint for managing SVMs using the NetApp ONTAP CLI, NetApp ONTAP API, or NetApp CloudManager.</p>
     pub fn management(mut self, input: crate::types::SvmEndpoint) -> Self {
         self.management = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl SvmEndpointsBuilder {
         self.management = input;
         self
     }
+    /// <p>An endpoint for managing SVMs using the NetApp ONTAP CLI, NetApp ONTAP API, or NetApp CloudManager.</p>
+    pub fn get_management(&self) -> &::std::option::Option<crate::types::SvmEndpoint> {
+        &self.management
+    }
     /// <p>An endpoint for connecting using the Network File System (NFS) protocol.</p>
     pub fn nfs(mut self, input: crate::types::SvmEndpoint) -> Self {
         self.nfs = ::std::option::Option::Some(input);
@@ -87,6 +95,10 @@ impl SvmEndpointsBuilder {
         self.nfs = input;
         self
     }
+    /// <p>An endpoint for connecting using the Network File System (NFS) protocol.</p>
+    pub fn get_nfs(&self) -> &::std::option::Option<crate::types::SvmEndpoint> {
+        &self.nfs
+    }
     /// <p>An endpoint for connecting using the Server Message Block (SMB) protocol.</p>
     pub fn smb(mut self, input: crate::types::SvmEndpoint) -> Self {
         self.smb = ::std::option::Option::Some(input);
@@ -96,6 +108,10 @@ impl SvmEndpointsBuilder {
     pub fn set_smb(mut self, input: ::std::option::Option<crate::types::SvmEndpoint>) -> Self {
         self.smb = input;
         self
+    }
+    /// <p>An endpoint for connecting using the Server Message Block (SMB) protocol.</p>
+    pub fn get_smb(&self) -> &::std::option::Option<crate::types::SvmEndpoint> {
+        &self.smb
     }
     /// Consumes the builder and constructs a [`SvmEndpoints`](crate::types::SvmEndpoints).
     pub fn build(self) -> crate::types::SvmEndpoints {

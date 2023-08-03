@@ -55,6 +55,10 @@ impl PutVoiceConnectorLoggingConfigurationInputBuilder {
         self.voice_connector_id = input;
         self
     }
+    /// <p>The Amazon Chime Voice Connector ID.</p>
+    pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_connector_id
+    }
     /// <p>The logging configuration details to add.</p>
     pub fn logging_configuration(mut self, input: crate::types::LoggingConfiguration) -> Self {
         self.logging_configuration = ::std::option::Option::Some(input);
@@ -67,6 +71,12 @@ impl PutVoiceConnectorLoggingConfigurationInputBuilder {
     ) -> Self {
         self.logging_configuration = input;
         self
+    }
+    /// <p>The logging configuration details to add.</p>
+    pub fn get_logging_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::LoggingConfiguration> {
+        &self.logging_configuration
     }
     /// Consumes the builder and constructs a [`PutVoiceConnectorLoggingConfigurationInput`](crate::operation::put_voice_connector_logging_configuration::PutVoiceConnectorLoggingConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_voice_connector_logging_configuration::PutVoiceConnectorLoggingConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{

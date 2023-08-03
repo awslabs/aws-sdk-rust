@@ -136,6 +136,10 @@ impl CreateFormDataBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the form.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type of data source to use to create the form.</p>
     pub fn data_type(mut self, input: crate::types::FormDataTypeConfig) -> Self {
         self.data_type = ::std::option::Option::Some(input);
@@ -149,6 +153,10 @@ impl CreateFormDataBuilder {
         self.data_type = input;
         self
     }
+    /// <p>The type of data source to use to create the form.</p>
+    pub fn get_data_type(&self) -> &::std::option::Option<crate::types::FormDataTypeConfig> {
+        &self.data_type
+    }
     /// <p>Specifies whether to perform a create or update action on the form.</p>
     pub fn form_action_type(mut self, input: crate::types::FormActionType) -> Self {
         self.form_action_type = ::std::option::Option::Some(input);
@@ -161,6 +169,10 @@ impl CreateFormDataBuilder {
     ) -> Self {
         self.form_action_type = input;
         self
+    }
+    /// <p>Specifies whether to perform a create or update action on the form.</p>
+    pub fn get_form_action_type(&self) -> &::std::option::Option<crate::types::FormActionType> {
+        &self.form_action_type
     }
     /// Adds a key-value pair to `fields`.
     ///
@@ -187,6 +199,14 @@ impl CreateFormDataBuilder {
         self.fields = input;
         self
     }
+    /// <p>The configuration information for the form's fields.</p>
+    pub fn get_fields(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::FieldConfig>,
+    > {
+        &self.fields
+    }
     /// <p>The configuration for the form's style.</p>
     pub fn style(mut self, input: crate::types::FormStyle) -> Self {
         self.style = ::std::option::Option::Some(input);
@@ -196,6 +216,10 @@ impl CreateFormDataBuilder {
     pub fn set_style(mut self, input: ::std::option::Option<crate::types::FormStyle>) -> Self {
         self.style = input;
         self
+    }
+    /// <p>The configuration for the form's style.</p>
+    pub fn get_style(&self) -> &::std::option::Option<crate::types::FormStyle> {
+        &self.style
     }
     /// Adds a key-value pair to `sectional_elements`.
     ///
@@ -222,6 +246,14 @@ impl CreateFormDataBuilder {
         self.sectional_elements = input;
         self
     }
+    /// <p>The configuration information for the visual helper elements for the form. These elements are not associated with any data.</p>
+    pub fn get_sectional_elements(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::SectionalElement>,
+    > {
+        &self.sectional_elements
+    }
     /// <p>The schema version of the form.</p>
     pub fn schema_version(
         mut self,
@@ -238,6 +270,10 @@ impl CreateFormDataBuilder {
         self.schema_version = input;
         self
     }
+    /// <p>The schema version of the form.</p>
+    pub fn get_schema_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_version
+    }
     /// <p>The <code>FormCTA</code> object that stores the call to action configuration for the form.</p>
     pub fn cta(mut self, input: crate::types::FormCta) -> Self {
         self.cta = ::std::option::Option::Some(input);
@@ -247,6 +283,10 @@ impl CreateFormDataBuilder {
     pub fn set_cta(mut self, input: ::std::option::Option<crate::types::FormCta>) -> Self {
         self.cta = input;
         self
+    }
+    /// <p>The <code>FormCTA</code> object that stores the call to action configuration for the form.</p>
+    pub fn get_cta(&self) -> &::std::option::Option<crate::types::FormCta> {
+        &self.cta
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -273,6 +313,14 @@ impl CreateFormDataBuilder {
         self.tags = input;
         self
     }
+    /// <p>One or more key-value pairs to use when tagging the form data.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>Specifies an icon or decoration to display on the form.</p>
     pub fn label_decorator(mut self, input: crate::types::LabelDecorator) -> Self {
         self.label_decorator = ::std::option::Option::Some(input);
@@ -285,6 +333,10 @@ impl CreateFormDataBuilder {
     ) -> Self {
         self.label_decorator = input;
         self
+    }
+    /// <p>Specifies an icon or decoration to display on the form.</p>
+    pub fn get_label_decorator(&self) -> &::std::option::Option<crate::types::LabelDecorator> {
+        &self.label_decorator
     }
     /// Consumes the builder and constructs a [`CreateFormData`](crate::types::CreateFormData).
     pub fn build(self) -> crate::types::CreateFormData {

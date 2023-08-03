@@ -222,6 +222,10 @@ impl IpamPoolBuilder {
         self.owner_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID of the owner of the IPAM pool.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
+    }
     /// <p>The ID of the IPAM pool.</p>
     pub fn ipam_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_pool_id = ::std::option::Option::Some(input.into());
@@ -231,6 +235,10 @@ impl IpamPoolBuilder {
     pub fn set_ipam_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipam_pool_id = input;
         self
+    }
+    /// <p>The ID of the IPAM pool.</p>
+    pub fn get_ipam_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipam_pool_id
     }
     /// <p>The ID of the source IPAM pool. You can use this option to create an IPAM pool within an existing source pool.</p>
     pub fn source_ipam_pool_id(
@@ -248,6 +256,10 @@ impl IpamPoolBuilder {
         self.source_ipam_pool_id = input;
         self
     }
+    /// <p>The ID of the source IPAM pool. You can use this option to create an IPAM pool within an existing source pool.</p>
+    pub fn get_source_ipam_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_ipam_pool_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the IPAM pool.</p>
     pub fn ipam_pool_arn(
         mut self,
@@ -263,6 +275,10 @@ impl IpamPoolBuilder {
     ) -> Self {
         self.ipam_pool_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IPAM pool.</p>
+    pub fn get_ipam_pool_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipam_pool_arn
     }
     /// <p>The ARN of the scope of the IPAM pool.</p>
     pub fn ipam_scope_arn(
@@ -280,6 +296,10 @@ impl IpamPoolBuilder {
         self.ipam_scope_arn = input;
         self
     }
+    /// <p>The ARN of the scope of the IPAM pool.</p>
+    pub fn get_ipam_scope_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipam_scope_arn
+    }
     /// <p>In IPAM, a scope is the highest-level container within IPAM. An IPAM contains two default scopes. Each scope represents the IP space for a single network. The private scope is intended for all private IP address space. The public scope is intended for all public IP address space. Scopes enable you to reuse IP addresses across multiple unconnected networks without causing IP address overlap or conflict.</p>
     pub fn ipam_scope_type(mut self, input: crate::types::IpamScopeType) -> Self {
         self.ipam_scope_type = ::std::option::Option::Some(input);
@@ -293,6 +313,10 @@ impl IpamPoolBuilder {
         self.ipam_scope_type = input;
         self
     }
+    /// <p>In IPAM, a scope is the highest-level container within IPAM. An IPAM contains two default scopes. Each scope represents the IP space for a single network. The private scope is intended for all private IP address space. The public scope is intended for all public IP address space. Scopes enable you to reuse IP addresses across multiple unconnected networks without causing IP address overlap or conflict.</p>
+    pub fn get_ipam_scope_type(&self) -> &::std::option::Option<crate::types::IpamScopeType> {
+        &self.ipam_scope_type
+    }
     /// <p>The ARN of the IPAM.</p>
     pub fn ipam_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_arn = ::std::option::Option::Some(input.into());
@@ -302,6 +326,10 @@ impl IpamPoolBuilder {
     pub fn set_ipam_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipam_arn = input;
         self
+    }
+    /// <p>The ARN of the IPAM.</p>
+    pub fn get_ipam_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipam_arn
     }
     /// <p>The Amazon Web Services Region of the IPAM pool.</p>
     pub fn ipam_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -313,6 +341,10 @@ impl IpamPoolBuilder {
         self.ipam_region = input;
         self
     }
+    /// <p>The Amazon Web Services Region of the IPAM pool.</p>
+    pub fn get_ipam_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipam_region
+    }
     /// <p>The locale of the IPAM pool. In IPAM, the locale is the Amazon Web Services Region where you want to make an IPAM pool available for allocations. Only resources in the same Region as the locale of the pool can get IP address allocations from the pool. You can only allocate a CIDR for a VPC, for example, from an IPAM pool that shares a locale with the VPC’s Region. Note that once you choose a Locale for a pool, you cannot modify it. If you choose an Amazon Web Services Region for locale that has not been configured as an operating Region for the IPAM, you'll get an error.</p>
     pub fn locale(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale = ::std::option::Option::Some(input.into());
@@ -322,6 +354,10 @@ impl IpamPoolBuilder {
     pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.locale = input;
         self
+    }
+    /// <p>The locale of the IPAM pool. In IPAM, the locale is the Amazon Web Services Region where you want to make an IPAM pool available for allocations. Only resources in the same Region as the locale of the pool can get IP address allocations from the pool. You can only allocate a CIDR for a VPC, for example, from an IPAM pool that shares a locale with the VPC’s Region. Note that once you choose a Locale for a pool, you cannot modify it. If you choose an Amazon Web Services Region for locale that has not been configured as an operating Region for the IPAM, you'll get an error.</p>
+    pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale
     }
     /// <p>The depth of pools in your IPAM pool. The pool depth quota is 10. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
     pub fn pool_depth(mut self, input: i32) -> Self {
@@ -333,6 +369,10 @@ impl IpamPoolBuilder {
         self.pool_depth = input;
         self
     }
+    /// <p>The depth of pools in your IPAM pool. The pool depth quota is 10. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
+    pub fn get_pool_depth(&self) -> &::std::option::Option<i32> {
+        &self.pool_depth
+    }
     /// <p>The state of the IPAM pool.</p>
     pub fn state(mut self, input: crate::types::IpamPoolState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -342,6 +382,10 @@ impl IpamPoolBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::IpamPoolState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the IPAM pool.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::IpamPoolState> {
+        &self.state
     }
     /// <p>A message related to the failed creation of an IPAM pool.</p>
     pub fn state_message(
@@ -359,6 +403,10 @@ impl IpamPoolBuilder {
         self.state_message = input;
         self
     }
+    /// <p>A message related to the failed creation of an IPAM pool.</p>
+    pub fn get_state_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_message
+    }
     /// <p>The description of the IPAM pool.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -368,6 +416,10 @@ impl IpamPoolBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the IPAM pool.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>If selected, IPAM will continuously look for resources within the CIDR range of this pool and automatically import them as allocations into your IPAM. The CIDRs that will be allocated for these resources must not already be allocated to other resources in order for the import to succeed. IPAM will import a CIDR regardless of its compliance with the pool's allocation rules, so a resource might be imported and subsequently marked as noncompliant. If IPAM discovers multiple CIDRs that overlap, IPAM will import the largest CIDR only. If IPAM discovers multiple CIDRs with matching CIDRs, IPAM will randomly import one of them only. </p>
     /// <p>A locale must be set on the pool for this feature to work.</p>
@@ -381,6 +433,11 @@ impl IpamPoolBuilder {
         self.auto_import = input;
         self
     }
+    /// <p>If selected, IPAM will continuously look for resources within the CIDR range of this pool and automatically import them as allocations into your IPAM. The CIDRs that will be allocated for these resources must not already be allocated to other resources in order for the import to succeed. IPAM will import a CIDR regardless of its compliance with the pool's allocation rules, so a resource might be imported and subsequently marked as noncompliant. If IPAM discovers multiple CIDRs that overlap, IPAM will import the largest CIDR only. If IPAM discovers multiple CIDRs with matching CIDRs, IPAM will randomly import one of them only. </p>
+    /// <p>A locale must be set on the pool for this feature to work.</p>
+    pub fn get_auto_import(&self) -> &::std::option::Option<bool> {
+        &self.auto_import
+    }
     /// <p>Determines if a pool is publicly advertisable. This option is not available for pools with AddressFamily set to <code>ipv4</code>.</p>
     pub fn publicly_advertisable(mut self, input: bool) -> Self {
         self.publicly_advertisable = ::std::option::Option::Some(input);
@@ -390,6 +447,10 @@ impl IpamPoolBuilder {
     pub fn set_publicly_advertisable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.publicly_advertisable = input;
         self
+    }
+    /// <p>Determines if a pool is publicly advertisable. This option is not available for pools with AddressFamily set to <code>ipv4</code>.</p>
+    pub fn get_publicly_advertisable(&self) -> &::std::option::Option<bool> {
+        &self.publicly_advertisable
     }
     /// <p>The address family of the pool.</p>
     pub fn address_family(mut self, input: crate::types::AddressFamily) -> Self {
@@ -404,6 +465,10 @@ impl IpamPoolBuilder {
         self.address_family = input;
         self
     }
+    /// <p>The address family of the pool.</p>
+    pub fn get_address_family(&self) -> &::std::option::Option<crate::types::AddressFamily> {
+        &self.address_family
+    }
     /// <p>The minimum netmask length required for CIDR allocations in this IPAM pool to be compliant. The minimum netmask length must be less than the maximum netmask length. Possible netmask lengths for IPv4 addresses are 0 - 32. Possible netmask lengths for IPv6 addresses are 0 - 128.</p>
     pub fn allocation_min_netmask_length(mut self, input: i32) -> Self {
         self.allocation_min_netmask_length = ::std::option::Option::Some(input);
@@ -414,6 +479,10 @@ impl IpamPoolBuilder {
         self.allocation_min_netmask_length = input;
         self
     }
+    /// <p>The minimum netmask length required for CIDR allocations in this IPAM pool to be compliant. The minimum netmask length must be less than the maximum netmask length. Possible netmask lengths for IPv4 addresses are 0 - 32. Possible netmask lengths for IPv6 addresses are 0 - 128.</p>
+    pub fn get_allocation_min_netmask_length(&self) -> &::std::option::Option<i32> {
+        &self.allocation_min_netmask_length
+    }
     /// <p>The maximum netmask length possible for CIDR allocations in this IPAM pool to be compliant. The maximum netmask length must be greater than the minimum netmask length. Possible netmask lengths for IPv4 addresses are 0 - 32. Possible netmask lengths for IPv6 addresses are 0 - 128.</p>
     pub fn allocation_max_netmask_length(mut self, input: i32) -> Self {
         self.allocation_max_netmask_length = ::std::option::Option::Some(input);
@@ -423,6 +492,10 @@ impl IpamPoolBuilder {
     pub fn set_allocation_max_netmask_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.allocation_max_netmask_length = input;
         self
+    }
+    /// <p>The maximum netmask length possible for CIDR allocations in this IPAM pool to be compliant. The maximum netmask length must be greater than the minimum netmask length. Possible netmask lengths for IPv4 addresses are 0 - 32. Possible netmask lengths for IPv6 addresses are 0 - 128.</p>
+    pub fn get_allocation_max_netmask_length(&self) -> &::std::option::Option<i32> {
+        &self.allocation_max_netmask_length
     }
     /// <p>The default netmask length for allocations added to this pool. If, for example, the CIDR assigned to this pool is 10.0.0.0/8 and you enter 16 here, new allocations will default to 10.0.0.0/16.</p>
     pub fn allocation_default_netmask_length(mut self, input: i32) -> Self {
@@ -436,6 +509,10 @@ impl IpamPoolBuilder {
     ) -> Self {
         self.allocation_default_netmask_length = input;
         self
+    }
+    /// <p>The default netmask length for allocations added to this pool. If, for example, the CIDR assigned to this pool is 10.0.0.0/8 and you enter 16 here, new allocations will default to 10.0.0.0/16.</p>
+    pub fn get_allocation_default_netmask_length(&self) -> &::std::option::Option<i32> {
+        &self.allocation_default_netmask_length
     }
     /// Appends an item to `allocation_resource_tags`.
     ///
@@ -456,6 +533,12 @@ impl IpamPoolBuilder {
         self.allocation_resource_tags = input;
         self
     }
+    /// <p>Tags that are required for resources that use CIDRs from this IPAM pool. Resources that do not have these tags will not be allowed to allocate space from the pool. If the resources have their tags changed after they have allocated space or if the allocation tagging requirements are changed on the pool, the resource may be marked as noncompliant.</p>
+    pub fn get_allocation_resource_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpamResourceTag>> {
+        &self.allocation_resource_tags
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -475,6 +558,10 @@ impl IpamPoolBuilder {
         self.tags = input;
         self
     }
+    /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>Limits which service in Amazon Web Services that the pool can be used in. "ec2", for example, allows users to use space for Elastic IP addresses and VPCs.</p>
     pub fn aws_service(mut self, input: crate::types::IpamPoolAwsService) -> Self {
         self.aws_service = ::std::option::Option::Some(input);
@@ -488,6 +575,10 @@ impl IpamPoolBuilder {
         self.aws_service = input;
         self
     }
+    /// <p>Limits which service in Amazon Web Services that the pool can be used in. "ec2", for example, allows users to use space for Elastic IP addresses and VPCs.</p>
+    pub fn get_aws_service(&self) -> &::std::option::Option<crate::types::IpamPoolAwsService> {
+        &self.aws_service
+    }
     /// <p>The IP address source for pools in the public scope. Only used for provisioning IP address CIDRs to pools in the public scope. Default is <code>BYOIP</code>. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/intro-create-ipv6-pools.html">Create IPv6 pools</a> in the <i>Amazon VPC IPAM User Guide</i>. By default, you can add only one Amazon-provided IPv6 CIDR block to a top-level IPv6 pool. For information on increasing the default limit, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html"> Quotas for your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
     pub fn public_ip_source(mut self, input: crate::types::IpamPoolPublicIpSource) -> Self {
         self.public_ip_source = ::std::option::Option::Some(input);
@@ -500,6 +591,12 @@ impl IpamPoolBuilder {
     ) -> Self {
         self.public_ip_source = input;
         self
+    }
+    /// <p>The IP address source for pools in the public scope. Only used for provisioning IP address CIDRs to pools in the public scope. Default is <code>BYOIP</code>. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/intro-create-ipv6-pools.html">Create IPv6 pools</a> in the <i>Amazon VPC IPAM User Guide</i>. By default, you can add only one Amazon-provided IPv6 CIDR block to a top-level IPv6 pool. For information on increasing the default limit, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html"> Quotas for your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    pub fn get_public_ip_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::IpamPoolPublicIpSource> {
+        &self.public_ip_source
     }
     /// Consumes the builder and constructs a [`IpamPool`](crate::types::IpamPool).
     pub fn build(self) -> crate::types::IpamPool {

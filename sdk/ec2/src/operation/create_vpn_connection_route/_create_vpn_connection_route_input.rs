@@ -56,6 +56,10 @@ impl CreateVpnConnectionRouteInputBuilder {
         self.destination_cidr_block = input;
         self
     }
+    /// <p>The CIDR block associated with the local subnet of the customer network.</p>
+    pub fn get_destination_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_cidr_block
+    }
     /// <p>The ID of the VPN connection.</p>
     pub fn vpn_connection_id(
         mut self,
@@ -71,6 +75,10 @@ impl CreateVpnConnectionRouteInputBuilder {
     ) -> Self {
         self.vpn_connection_id = input;
         self
+    }
+    /// <p>The ID of the VPN connection.</p>
+    pub fn get_vpn_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpn_connection_id
     }
     /// Consumes the builder and constructs a [`CreateVpnConnectionRouteInput`](crate::operation::create_vpn_connection_route::CreateVpnConnectionRouteInput).
     pub fn build(

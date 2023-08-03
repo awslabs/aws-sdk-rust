@@ -41,6 +41,10 @@ impl GetOriginRequestPolicyInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`GetOriginRequestPolicyInput`](crate::operation::get_origin_request_policy::GetOriginRequestPolicyInput).
     pub fn build(
         self,

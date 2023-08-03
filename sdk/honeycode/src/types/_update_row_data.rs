@@ -56,6 +56,10 @@ impl UpdateRowDataBuilder {
         self.row_id = input;
         self
     }
+    /// <p> The id of the row that needs to be updated. </p>
+    pub fn get_row_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.row_id
+    }
     /// Adds a key-value pair to `cells_to_update`.
     ///
     /// To override the contents of this collection use [`set_cells_to_update`](Self::set_cells_to_update).
@@ -80,6 +84,14 @@ impl UpdateRowDataBuilder {
     ) -> Self {
         self.cells_to_update = input;
         self
+    }
+    /// <p> A map representing the cells to update in the given row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
+    pub fn get_cells_to_update(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::CellInput>,
+    > {
+        &self.cells_to_update
     }
     /// Consumes the builder and constructs a [`UpdateRowData`](crate::types::UpdateRowData).
     pub fn build(self) -> crate::types::UpdateRowData {

@@ -55,6 +55,10 @@ impl ListInstancesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>Maximum number of results to return in a single call.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>Token for the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl ListInstancesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `filters`.
     ///
@@ -83,6 +91,10 @@ impl ListInstancesInputBuilder {
     ) -> Self {
         self.filters = input;
         self
+    }
+    /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
     }
     /// Consumes the builder and constructs a [`ListInstancesInput`](crate::operation::list_instances::ListInstancesInput).
     pub fn build(

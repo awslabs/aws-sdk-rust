@@ -78,6 +78,12 @@ impl TrainingResultV2Builder {
         self.data_validation_metrics = input;
         self
     }
+    /// <p>The model training data validation metrics.</p>
+    pub fn get_data_validation_metrics(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataValidationMetrics> {
+        &self.data_validation_metrics
+    }
     /// <p> The training metric details. </p>
     pub fn training_metrics_v2(mut self, input: crate::types::TrainingMetricsV2) -> Self {
         self.training_metrics_v2 = ::std::option::Option::Some(input);
@@ -90,6 +96,12 @@ impl TrainingResultV2Builder {
     ) -> Self {
         self.training_metrics_v2 = input;
         self
+    }
+    /// <p> The training metric details. </p>
+    pub fn get_training_metrics_v2(
+        &self,
+    ) -> &::std::option::Option<crate::types::TrainingMetricsV2> {
+        &self.training_metrics_v2
     }
     /// <p>The variable importance metrics details.</p>
     pub fn variable_importance_metrics(
@@ -106,6 +118,12 @@ impl TrainingResultV2Builder {
     ) -> Self {
         self.variable_importance_metrics = input;
         self
+    }
+    /// <p>The variable importance metrics details.</p>
+    pub fn get_variable_importance_metrics(
+        &self,
+    ) -> &::std::option::Option<crate::types::VariableImportanceMetrics> {
+        &self.variable_importance_metrics
     }
     /// <p> The variable importance metrics of the aggregated variables. </p>
     /// <p>Account Takeover Insights (ATI) model uses event variables from the login data you provide to continuously calculate a set of variables (aggregated variables) based on historical events. For example, your ATI model might calculate the number of times an user has logged in using the same IP address. In this case, event variables used to derive the aggregated variables are <code>IP address</code> and <code>user</code>.</p>
@@ -124,6 +142,13 @@ impl TrainingResultV2Builder {
     ) -> Self {
         self.aggregated_variables_importance_metrics = input;
         self
+    }
+    /// <p> The variable importance metrics of the aggregated variables. </p>
+    /// <p>Account Takeover Insights (ATI) model uses event variables from the login data you provide to continuously calculate a set of variables (aggregated variables) based on historical events. For example, your ATI model might calculate the number of times an user has logged in using the same IP address. In this case, event variables used to derive the aggregated variables are <code>IP address</code> and <code>user</code>.</p>
+    pub fn get_aggregated_variables_importance_metrics(
+        &self,
+    ) -> &::std::option::Option<crate::types::AggregatedVariablesImportanceMetrics> {
+        &self.aggregated_variables_importance_metrics
     }
     /// Consumes the builder and constructs a [`TrainingResultV2`](crate::types::TrainingResultV2).
     pub fn build(self) -> crate::types::TrainingResultV2 {

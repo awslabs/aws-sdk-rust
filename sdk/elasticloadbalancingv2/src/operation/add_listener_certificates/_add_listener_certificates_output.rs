@@ -57,6 +57,12 @@ impl AddListenerCertificatesOutputBuilder {
         self.certificates = input;
         self
     }
+    /// <p>Information about the certificates in the certificate list.</p>
+    pub fn get_certificates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
+        &self.certificates
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

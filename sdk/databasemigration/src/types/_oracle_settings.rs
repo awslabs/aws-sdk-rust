@@ -506,6 +506,11 @@ impl OracleSettingsBuilder {
         self.add_supplemental_logging = input;
         self
     }
+    /// <p>Set this attribute to set up table-level supplemental logging for the Oracle database. This attribute enables PRIMARY KEY supplemental logging on all tables selected for a migration task.</p>
+    /// <p>If you use this option, you still need to enable database-level supplemental logging.</p>
+    pub fn get_add_supplemental_logging(&self) -> &::std::option::Option<bool> {
+        &self.add_supplemental_logging
+    }
     /// <p>Specifies the ID of the destination for the archived redo logs. This value should be the same as a number in the dest_id column of the v$archived_log view. If you work with an additional redo log destination, use the <code>AdditionalArchivedLogDestId</code> option to specify the additional destination ID. Doing this improves performance by ensuring that the correct logs are accessed from the outset.</p>
     pub fn archived_log_dest_id(mut self, input: i32) -> Self {
         self.archived_log_dest_id = ::std::option::Option::Some(input);
@@ -515,6 +520,10 @@ impl OracleSettingsBuilder {
     pub fn set_archived_log_dest_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.archived_log_dest_id = input;
         self
+    }
+    /// <p>Specifies the ID of the destination for the archived redo logs. This value should be the same as a number in the dest_id column of the v$archived_log view. If you work with an additional redo log destination, use the <code>AdditionalArchivedLogDestId</code> option to specify the additional destination ID. Doing this improves performance by ensuring that the correct logs are accessed from the outset.</p>
+    pub fn get_archived_log_dest_id(&self) -> &::std::option::Option<i32> {
+        &self.archived_log_dest_id
     }
     /// <p>Set this attribute with <code>ArchivedLogDestId</code> in a primary/ standby setup. This attribute is useful in the case of a switchover. In this case, DMS needs to know which destination to get archive redo logs from to read changes. This need arises because the previous primary instance is now a standby instance after switchover.</p>
     /// <p>Although DMS supports the use of the Oracle <code>RESETLOGS</code> option to open the database, never use <code>RESETLOGS</code> unless necessary. For additional information about <code>RESETLOGS</code>, see <a href="https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/rman-data-repair-concepts.html#GUID-1805CCF7-4AF2-482D-B65A-998192F89C2B">RMAN Data Repair Concepts</a> in the <i>Oracle Database Backup and Recovery User's Guide</i>.</p>
@@ -530,6 +539,11 @@ impl OracleSettingsBuilder {
     ) -> Self {
         self.additional_archived_log_dest_id = input;
         self
+    }
+    /// <p>Set this attribute with <code>ArchivedLogDestId</code> in a primary/ standby setup. This attribute is useful in the case of a switchover. In this case, DMS needs to know which destination to get archive redo logs from to read changes. This need arises because the previous primary instance is now a standby instance after switchover.</p>
+    /// <p>Although DMS supports the use of the Oracle <code>RESETLOGS</code> option to open the database, never use <code>RESETLOGS</code> unless necessary. For additional information about <code>RESETLOGS</code>, see <a href="https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/rman-data-repair-concepts.html#GUID-1805CCF7-4AF2-482D-B65A-998192F89C2B">RMAN Data Repair Concepts</a> in the <i>Oracle Database Backup and Recovery User's Guide</i>.</p>
+    pub fn get_additional_archived_log_dest_id(&self) -> &::std::option::Option<i32> {
+        &self.additional_archived_log_dest_id
     }
     /// Appends an item to `extra_archived_log_dest_ids`.
     ///
@@ -560,6 +574,15 @@ impl OracleSettingsBuilder {
         self.extra_archived_log_dest_ids = input;
         self
     }
+    /// <p>Specifies the IDs of one more destinations for one or more archived redo logs. These IDs are the values of the <code>dest_id</code> column in the <code>v$archived_log</code> view. Use this setting with the <code>archivedLogDestId</code> extra connection attribute in a primary-to-single setup or a primary-to-multiple-standby setup. </p>
+    /// <p>This setting is useful in a switchover when you use an Oracle Data Guard database as a source. In this case, DMS needs information about what destination to get archive redo logs from to read changes. DMS needs this because after the switchover the previous primary is a standby instance. For example, in a primary-to-single standby setup you might apply the following settings. </p>
+    /// <p> <code>archivedLogDestId=1; ExtraArchivedLogDestIds=[2]</code> </p>
+    /// <p>In a primary-to-multiple-standby setup, you might apply the following settings.</p>
+    /// <p> <code>archivedLogDestId=1; ExtraArchivedLogDestIds=[2,3,4]</code> </p>
+    /// <p>Although DMS supports the use of the Oracle <code>RESETLOGS</code> option to open the database, never use <code>RESETLOGS</code> unless it's necessary. For more information about <code>RESETLOGS</code>, see <a href="https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/rman-data-repair-concepts.html#GUID-1805CCF7-4AF2-482D-B65A-998192F89C2B"> RMAN Data Repair Concepts</a> in the <i>Oracle Database Backup and Recovery User's Guide</i>.</p>
+    pub fn get_extra_archived_log_dest_ids(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.extra_archived_log_dest_ids
+    }
     /// <p>Set this attribute to <code>true</code> to enable replication of Oracle tables containing columns that are nested tables or defined types.</p>
     pub fn allow_select_nested_tables(mut self, input: bool) -> Self {
         self.allow_select_nested_tables = ::std::option::Option::Some(input);
@@ -569,6 +592,10 @@ impl OracleSettingsBuilder {
     pub fn set_allow_select_nested_tables(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_select_nested_tables = input;
         self
+    }
+    /// <p>Set this attribute to <code>true</code> to enable replication of Oracle tables containing columns that are nested tables or defined types.</p>
+    pub fn get_allow_select_nested_tables(&self) -> &::std::option::Option<bool> {
+        &self.allow_select_nested_tables
     }
     /// <p>Set this attribute to change the number of threads that DMS configures to perform a change data capture (CDC) load using Oracle Automatic Storage Management (ASM). You can specify an integer value between 2 (the default) and 8 (the maximum). Use this attribute together with the <code>readAheadBlocks</code> attribute.</p>
     pub fn parallel_asm_read_threads(mut self, input: i32) -> Self {
@@ -580,6 +607,10 @@ impl OracleSettingsBuilder {
         self.parallel_asm_read_threads = input;
         self
     }
+    /// <p>Set this attribute to change the number of threads that DMS configures to perform a change data capture (CDC) load using Oracle Automatic Storage Management (ASM). You can specify an integer value between 2 (the default) and 8 (the maximum). Use this attribute together with the <code>readAheadBlocks</code> attribute.</p>
+    pub fn get_parallel_asm_read_threads(&self) -> &::std::option::Option<i32> {
+        &self.parallel_asm_read_threads
+    }
     /// <p>Set this attribute to change the number of read-ahead blocks that DMS configures to perform a change data capture (CDC) load using Oracle Automatic Storage Management (ASM). You can specify an integer value between 1000 (the default) and 200,000 (the maximum).</p>
     pub fn read_ahead_blocks(mut self, input: i32) -> Self {
         self.read_ahead_blocks = ::std::option::Option::Some(input);
@@ -590,6 +621,10 @@ impl OracleSettingsBuilder {
         self.read_ahead_blocks = input;
         self
     }
+    /// <p>Set this attribute to change the number of read-ahead blocks that DMS configures to perform a change data capture (CDC) load using Oracle Automatic Storage Management (ASM). You can specify an integer value between 1000 (the default) and 200,000 (the maximum).</p>
+    pub fn get_read_ahead_blocks(&self) -> &::std::option::Option<i32> {
+        &self.read_ahead_blocks
+    }
     /// <p>Set this attribute to <code>false</code> in order to use the Binary Reader to capture change data for an Amazon RDS for Oracle as the source. This tells the DMS instance to not access redo logs through any specified path prefix replacement using direct file access.</p>
     pub fn access_alternate_directly(mut self, input: bool) -> Self {
         self.access_alternate_directly = ::std::option::Option::Some(input);
@@ -599,6 +634,10 @@ impl OracleSettingsBuilder {
     pub fn set_access_alternate_directly(mut self, input: ::std::option::Option<bool>) -> Self {
         self.access_alternate_directly = input;
         self
+    }
+    /// <p>Set this attribute to <code>false</code> in order to use the Binary Reader to capture change data for an Amazon RDS for Oracle as the source. This tells the DMS instance to not access redo logs through any specified path prefix replacement using direct file access.</p>
+    pub fn get_access_alternate_directly(&self) -> &::std::option::Option<bool> {
+        &self.access_alternate_directly
     }
     /// <p>Set this attribute to <code>true</code> in order to use the Binary Reader to capture change data for an Amazon RDS for Oracle as the source. This tells the DMS instance to use any specified prefix replacement to access all online redo logs.</p>
     pub fn use_alternate_folder_for_online(mut self, input: bool) -> Self {
@@ -612,6 +651,10 @@ impl OracleSettingsBuilder {
     ) -> Self {
         self.use_alternate_folder_for_online = input;
         self
+    }
+    /// <p>Set this attribute to <code>true</code> in order to use the Binary Reader to capture change data for an Amazon RDS for Oracle as the source. This tells the DMS instance to use any specified prefix replacement to access all online redo logs.</p>
+    pub fn get_use_alternate_folder_for_online(&self) -> &::std::option::Option<bool> {
+        &self.use_alternate_folder_for_online
     }
     /// <p>Set this string attribute to the required value in order to use the Binary Reader to capture change data for an Amazon RDS for Oracle as the source. This value specifies the default Oracle root used to access the redo logs.</p>
     pub fn oracle_path_prefix(
@@ -629,6 +672,10 @@ impl OracleSettingsBuilder {
         self.oracle_path_prefix = input;
         self
     }
+    /// <p>Set this string attribute to the required value in order to use the Binary Reader to capture change data for an Amazon RDS for Oracle as the source. This value specifies the default Oracle root used to access the redo logs.</p>
+    pub fn get_oracle_path_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.oracle_path_prefix
+    }
     /// <p>Set this string attribute to the required value in order to use the Binary Reader to capture change data for an Amazon RDS for Oracle as the source. This value specifies the path prefix used to replace the default Oracle root to access the redo logs.</p>
     pub fn use_path_prefix(
         mut self,
@@ -645,6 +692,10 @@ impl OracleSettingsBuilder {
         self.use_path_prefix = input;
         self
     }
+    /// <p>Set this string attribute to the required value in order to use the Binary Reader to capture change data for an Amazon RDS for Oracle as the source. This value specifies the path prefix used to replace the default Oracle root to access the redo logs.</p>
+    pub fn get_use_path_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.use_path_prefix
+    }
     /// <p>Set this attribute to true in order to use the Binary Reader to capture change data for an Amazon RDS for Oracle as the source. This setting tells DMS instance to replace the default Oracle root with the specified <code>usePathPrefix</code> setting to access the redo logs.</p>
     pub fn replace_path_prefix(mut self, input: bool) -> Self {
         self.replace_path_prefix = ::std::option::Option::Some(input);
@@ -654,6 +705,10 @@ impl OracleSettingsBuilder {
     pub fn set_replace_path_prefix(mut self, input: ::std::option::Option<bool>) -> Self {
         self.replace_path_prefix = input;
         self
+    }
+    /// <p>Set this attribute to true in order to use the Binary Reader to capture change data for an Amazon RDS for Oracle as the source. This setting tells DMS instance to replace the default Oracle root with the specified <code>usePathPrefix</code> setting to access the redo logs.</p>
+    pub fn get_replace_path_prefix(&self) -> &::std::option::Option<bool> {
+        &self.replace_path_prefix
     }
     /// <p>Set this attribute to enable homogenous tablespace replication and create existing tables or indexes under the same tablespace on the target.</p>
     pub fn enable_homogenous_tablespace(mut self, input: bool) -> Self {
@@ -665,6 +720,10 @@ impl OracleSettingsBuilder {
         self.enable_homogenous_tablespace = input;
         self
     }
+    /// <p>Set this attribute to enable homogenous tablespace replication and create existing tables or indexes under the same tablespace on the target.</p>
+    pub fn get_enable_homogenous_tablespace(&self) -> &::std::option::Option<bool> {
+        &self.enable_homogenous_tablespace
+    }
     /// <p>When set to <code>true</code>, this attribute helps to increase the commit rate on the Oracle target database by writing directly to tables and not writing a trail to database logs.</p>
     pub fn direct_path_no_log(mut self, input: bool) -> Self {
         self.direct_path_no_log = ::std::option::Option::Some(input);
@@ -674,6 +733,10 @@ impl OracleSettingsBuilder {
     pub fn set_direct_path_no_log(mut self, input: ::std::option::Option<bool>) -> Self {
         self.direct_path_no_log = input;
         self
+    }
+    /// <p>When set to <code>true</code>, this attribute helps to increase the commit rate on the Oracle target database by writing directly to tables and not writing a trail to database logs.</p>
+    pub fn get_direct_path_no_log(&self) -> &::std::option::Option<bool> {
+        &self.direct_path_no_log
     }
     /// <p>When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo logs are stored on Automatic Storage Management (ASM) only, the DMS user account needs to be granted ASM privileges.</p>
     pub fn archived_logs_only(mut self, input: bool) -> Self {
@@ -685,6 +748,10 @@ impl OracleSettingsBuilder {
         self.archived_logs_only = input;
         self
     }
+    /// <p>When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo logs are stored on Automatic Storage Management (ASM) only, the DMS user account needs to be granted ASM privileges.</p>
+    pub fn get_archived_logs_only(&self) -> &::std::option::Option<bool> {
+        &self.archived_logs_only
+    }
     /// <p>For an Oracle source endpoint, your Oracle Automatic Storage Management (ASM) password. You can set this value from the <code> <i>asm_user_password</i> </code> value. You set this value as part of the comma-separated value that you set to the <code>Password</code> request parameter when you create the endpoint to access transaction logs using Binary Reader. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC.Configuration">Configuration for change data capture (CDC) on an Oracle source database</a>.</p>
     pub fn asm_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asm_password = ::std::option::Option::Some(input.into());
@@ -694,6 +761,10 @@ impl OracleSettingsBuilder {
     pub fn set_asm_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asm_password = input;
         self
+    }
+    /// <p>For an Oracle source endpoint, your Oracle Automatic Storage Management (ASM) password. You can set this value from the <code> <i>asm_user_password</i> </code> value. You set this value as part of the comma-separated value that you set to the <code>Password</code> request parameter when you create the endpoint to access transaction logs using Binary Reader. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC.Configuration">Configuration for change data capture (CDC) on an Oracle source database</a>.</p>
+    pub fn get_asm_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asm_password
     }
     /// <p>For an Oracle source endpoint, your ASM server address. You can set this value from the <code>asm_server</code> value. You set <code>asm_server</code> as part of the extra connection attribute string to access an Oracle server with Binary Reader that uses ASM. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC.Configuration">Configuration for change data capture (CDC) on an Oracle source database</a>.</p>
     pub fn asm_server(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -705,6 +776,10 @@ impl OracleSettingsBuilder {
         self.asm_server = input;
         self
     }
+    /// <p>For an Oracle source endpoint, your ASM server address. You can set this value from the <code>asm_server</code> value. You set <code>asm_server</code> as part of the extra connection attribute string to access an Oracle server with Binary Reader that uses ASM. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC.Configuration">Configuration for change data capture (CDC) on an Oracle source database</a>.</p>
+    pub fn get_asm_server(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asm_server
+    }
     /// <p>For an Oracle source endpoint, your ASM user name. You can set this value from the <code>asm_user</code> value. You set <code>asm_user</code> as part of the extra connection attribute string to access an Oracle server with Binary Reader that uses ASM. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC.Configuration">Configuration for change data capture (CDC) on an Oracle source database</a>.</p>
     pub fn asm_user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asm_user = ::std::option::Option::Some(input.into());
@@ -714,6 +789,10 @@ impl OracleSettingsBuilder {
     pub fn set_asm_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asm_user = input;
         self
+    }
+    /// <p>For an Oracle source endpoint, your ASM user name. You can set this value from the <code>asm_user</code> value. You set <code>asm_user</code> as part of the extra connection attribute string to access an Oracle server with Binary Reader that uses ASM. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC.Configuration">Configuration for change data capture (CDC) on an Oracle source database</a>.</p>
+    pub fn get_asm_user(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asm_user
     }
     /// <p>Specifies whether the length of a character column is in bytes or in characters. To indicate that the character column length is in characters, set this attribute to <code>CHAR</code>. Otherwise, the character column length is in bytes.</p>
     /// <p>Example: <code>charLengthSemantics=CHAR;</code> </p>
@@ -729,6 +808,13 @@ impl OracleSettingsBuilder {
     ) -> Self {
         self.char_length_semantics = input;
         self
+    }
+    /// <p>Specifies whether the length of a character column is in bytes or in characters. To indicate that the character column length is in characters, set this attribute to <code>CHAR</code>. Otherwise, the character column length is in bytes.</p>
+    /// <p>Example: <code>charLengthSemantics=CHAR;</code> </p>
+    pub fn get_char_length_semantics(
+        &self,
+    ) -> &::std::option::Option<crate::types::CharLengthSemantics> {
+        &self.char_length_semantics
     }
     /// <p>Database name for the endpoint.</p>
     pub fn database_name(
@@ -746,6 +832,10 @@ impl OracleSettingsBuilder {
         self.database_name = input;
         self
     }
+    /// <p>Database name for the endpoint.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>When set to <code>true</code>, this attribute specifies a parallel load when <code>useDirectPathFullLoad</code> is set to <code>Y</code>. This attribute also only applies when you use the DMS parallel load feature. Note that the target table cannot have any constraints or indexes.</p>
     pub fn direct_path_parallel_load(mut self, input: bool) -> Self {
         self.direct_path_parallel_load = ::std::option::Option::Some(input);
@@ -755,6 +845,10 @@ impl OracleSettingsBuilder {
     pub fn set_direct_path_parallel_load(mut self, input: ::std::option::Option<bool>) -> Self {
         self.direct_path_parallel_load = input;
         self
+    }
+    /// <p>When set to <code>true</code>, this attribute specifies a parallel load when <code>useDirectPathFullLoad</code> is set to <code>Y</code>. This attribute also only applies when you use the DMS parallel load feature. Note that the target table cannot have any constraints or indexes.</p>
+    pub fn get_direct_path_parallel_load(&self) -> &::std::option::Option<bool> {
+        &self.direct_path_parallel_load
     }
     /// <p>When set to <code>true</code>, this attribute causes a task to fail if the actual size of an LOB column is greater than the specified <code>LobMaxSize</code>.</p>
     /// <p>If a task is set to limited LOB mode and this option is set to <code>true</code>, the task fails instead of truncating the LOB data.</p>
@@ -768,6 +862,11 @@ impl OracleSettingsBuilder {
         self.fail_tasks_on_lob_truncation = input;
         self
     }
+    /// <p>When set to <code>true</code>, this attribute causes a task to fail if the actual size of an LOB column is greater than the specified <code>LobMaxSize</code>.</p>
+    /// <p>If a task is set to limited LOB mode and this option is set to <code>true</code>, the task fails instead of truncating the LOB data.</p>
+    pub fn get_fail_tasks_on_lob_truncation(&self) -> &::std::option::Option<bool> {
+        &self.fail_tasks_on_lob_truncation
+    }
     /// <p>Specifies the number scale. You can select a scale up to 38, or you can select FLOAT. By default, the NUMBER data type is converted to precision 38, scale 10.</p>
     /// <p>Example: <code>numberDataTypeScale=12</code> </p>
     pub fn number_datatype_scale(mut self, input: i32) -> Self {
@@ -780,6 +879,11 @@ impl OracleSettingsBuilder {
         self.number_datatype_scale = input;
         self
     }
+    /// <p>Specifies the number scale. You can select a scale up to 38, or you can select FLOAT. By default, the NUMBER data type is converted to precision 38, scale 10.</p>
+    /// <p>Example: <code>numberDataTypeScale=12</code> </p>
+    pub fn get_number_datatype_scale(&self) -> &::std::option::Option<i32> {
+        &self.number_datatype_scale
+    }
     /// <p>Endpoint connection password.</p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
@@ -789,6 +893,10 @@ impl OracleSettingsBuilder {
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.password = input;
         self
+    }
+    /// <p>Endpoint connection password.</p>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.password
     }
     /// <p>Endpoint TCP port.</p>
     pub fn port(mut self, input: i32) -> Self {
@@ -800,6 +908,10 @@ impl OracleSettingsBuilder {
         self.port = input;
         self
     }
+    /// <p>Endpoint TCP port.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
+    }
     /// <p>When set to <code>true</code>, this attribute supports tablespace replication.</p>
     pub fn read_table_space_name(mut self, input: bool) -> Self {
         self.read_table_space_name = ::std::option::Option::Some(input);
@@ -809,6 +921,10 @@ impl OracleSettingsBuilder {
     pub fn set_read_table_space_name(mut self, input: ::std::option::Option<bool>) -> Self {
         self.read_table_space_name = input;
         self
+    }
+    /// <p>When set to <code>true</code>, this attribute supports tablespace replication.</p>
+    pub fn get_read_table_space_name(&self) -> &::std::option::Option<bool> {
+        &self.read_table_space_name
     }
     /// <p>Specifies the number of seconds that the system waits before resending a query.</p>
     /// <p>Example: <code>retryInterval=6;</code> </p>
@@ -821,6 +937,11 @@ impl OracleSettingsBuilder {
     pub fn set_retry_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.retry_interval = input;
         self
+    }
+    /// <p>Specifies the number of seconds that the system waits before resending a query.</p>
+    /// <p>Example: <code>retryInterval=6;</code> </p>
+    pub fn get_retry_interval(&self) -> &::std::option::Option<i32> {
+        &self.retry_interval
     }
     /// <p>For an Oracle source endpoint, the transparent data encryption (TDE) password required by AWM DMS to access Oracle redo logs encrypted by TDE using Binary Reader. It is also the <code> <i>TDE_Password</i> </code> part of the comma-separated value you set to the <code>Password</code> request parameter when you create the endpoint. The <code>SecurityDbEncryptian</code> setting is related to this <code>SecurityDbEncryptionName</code> setting. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption"> Supported encryption methods for using Oracle as a source for DMS </a> in the <i>Database Migration Service User Guide</i>. </p>
     pub fn security_db_encryption(
@@ -838,6 +959,10 @@ impl OracleSettingsBuilder {
         self.security_db_encryption = input;
         self
     }
+    /// <p>For an Oracle source endpoint, the transparent data encryption (TDE) password required by AWM DMS to access Oracle redo logs encrypted by TDE using Binary Reader. It is also the <code> <i>TDE_Password</i> </code> part of the comma-separated value you set to the <code>Password</code> request parameter when you create the endpoint. The <code>SecurityDbEncryptian</code> setting is related to this <code>SecurityDbEncryptionName</code> setting. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption"> Supported encryption methods for using Oracle as a source for DMS </a> in the <i>Database Migration Service User Guide</i>. </p>
+    pub fn get_security_db_encryption(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_db_encryption
+    }
     /// <p>For an Oracle source endpoint, the name of a key used for the transparent data encryption (TDE) of the columns and tablespaces in an Oracle source database that is encrypted using TDE. The key value is the value of the <code>SecurityDbEncryption</code> setting. For more information on setting the key name value of <code>SecurityDbEncryptionName</code>, see the information and example for setting the <code>securityDbEncryptionName</code> extra connection attribute in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption"> Supported encryption methods for using Oracle as a source for DMS </a> in the <i>Database Migration Service User Guide</i>.</p>
     pub fn security_db_encryption_name(
         mut self,
@@ -854,6 +979,10 @@ impl OracleSettingsBuilder {
         self.security_db_encryption_name = input;
         self
     }
+    /// <p>For an Oracle source endpoint, the name of a key used for the transparent data encryption (TDE) of the columns and tablespaces in an Oracle source database that is encrypted using TDE. The key value is the value of the <code>SecurityDbEncryption</code> setting. For more information on setting the key name value of <code>SecurityDbEncryptionName</code>, see the information and example for setting the <code>securityDbEncryptionName</code> extra connection attribute in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption"> Supported encryption methods for using Oracle as a source for DMS </a> in the <i>Database Migration Service User Guide</i>.</p>
+    pub fn get_security_db_encryption_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_db_encryption_name
+    }
     /// <p>Fully qualified domain name of the endpoint.</p>
     /// <p>For an Amazon RDS Oracle instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>, in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code> field.</p>
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -865,6 +994,11 @@ impl OracleSettingsBuilder {
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_name = input;
         self
+    }
+    /// <p>Fully qualified domain name of the endpoint.</p>
+    /// <p>For an Amazon RDS Oracle instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>, in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code> field.</p>
+    pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_name
     }
     /// <p>Use this attribute to convert <code>SDO_GEOMETRY</code> to <code>GEOJSON</code> format. By default, DMS calls the <code>SDO2GEOJSON</code> custom function if present and accessible. Or you can create your own custom function that mimics the operation of <code>SDOGEOJSON</code> and set <code>SpatialDataOptionToGeoJsonFunctionName</code> to call it instead. </p>
     pub fn spatial_data_option_to_geo_json_function_name(
@@ -883,6 +1017,12 @@ impl OracleSettingsBuilder {
         self.spatial_data_option_to_geo_json_function_name = input;
         self
     }
+    /// <p>Use this attribute to convert <code>SDO_GEOMETRY</code> to <code>GEOJSON</code> format. By default, DMS calls the <code>SDO2GEOJSON</code> custom function if present and accessible. Or you can create your own custom function that mimics the operation of <code>SDOGEOJSON</code> and set <code>SpatialDataOptionToGeoJsonFunctionName</code> to call it instead. </p>
+    pub fn get_spatial_data_option_to_geo_json_function_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.spatial_data_option_to_geo_json_function_name
+    }
     /// <p>Use this attribute to specify a time in minutes for the delay in standby sync. If the source is an Oracle Active Data Guard standby database, use this attribute to specify the time lag between primary and standby databases.</p>
     /// <p>In DMS, you can create an Oracle CDC task that uses an Active Data Guard standby instance as a source for replicating ongoing changes. Doing this eliminates the need to connect to an active database that might be in production.</p>
     pub fn standby_delay_time(mut self, input: i32) -> Self {
@@ -895,6 +1035,11 @@ impl OracleSettingsBuilder {
         self.standby_delay_time = input;
         self
     }
+    /// <p>Use this attribute to specify a time in minutes for the delay in standby sync. If the source is an Oracle Active Data Guard standby database, use this attribute to specify the time lag between primary and standby databases.</p>
+    /// <p>In DMS, you can create an Oracle CDC task that uses an Active Data Guard standby instance as a source for replicating ongoing changes. Doing this eliminates the need to connect to an active database that might be in production.</p>
+    pub fn get_standby_delay_time(&self) -> &::std::option::Option<i32> {
+        &self.standby_delay_time
+    }
     /// <p>Endpoint connection user name.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
@@ -904,6 +1049,10 @@ impl OracleSettingsBuilder {
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
+    }
+    /// <p>Endpoint connection user name.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
     }
     /// <p>Set this attribute to Y to capture change data using the Binary Reader utility. Set <code>UseLogminerReader</code> to N to set this attribute to Y. To use Binary Reader with Amazon RDS for Oracle as the source, you set additional attributes. For more information about using this setting with Oracle Automatic Storage Management (ASM), see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC"> Using Oracle LogMiner or DMS Binary Reader for CDC</a>.</p>
     pub fn use_b_file(mut self, input: bool) -> Self {
@@ -915,6 +1064,10 @@ impl OracleSettingsBuilder {
         self.use_b_file = input;
         self
     }
+    /// <p>Set this attribute to Y to capture change data using the Binary Reader utility. Set <code>UseLogminerReader</code> to N to set this attribute to Y. To use Binary Reader with Amazon RDS for Oracle as the source, you set additional attributes. For more information about using this setting with Oracle Automatic Storage Management (ASM), see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC"> Using Oracle LogMiner or DMS Binary Reader for CDC</a>.</p>
+    pub fn get_use_b_file(&self) -> &::std::option::Option<bool> {
+        &self.use_b_file
+    }
     /// <p>Set this attribute to Y to have DMS use a direct path full load. Specify this value to use the direct path protocol in the Oracle Call Interface (OCI). By using this OCI protocol, you can bulk-load Oracle target tables during a full load.</p>
     pub fn use_direct_path_full_load(mut self, input: bool) -> Self {
         self.use_direct_path_full_load = ::std::option::Option::Some(input);
@@ -925,6 +1078,10 @@ impl OracleSettingsBuilder {
         self.use_direct_path_full_load = input;
         self
     }
+    /// <p>Set this attribute to Y to have DMS use a direct path full load. Specify this value to use the direct path protocol in the Oracle Call Interface (OCI). By using this OCI protocol, you can bulk-load Oracle target tables during a full load.</p>
+    pub fn get_use_direct_path_full_load(&self) -> &::std::option::Option<bool> {
+        &self.use_direct_path_full_load
+    }
     /// <p>Set this attribute to Y to capture change data using the Oracle LogMiner utility (the default). Set this attribute to N if you want to access the redo logs as a binary file. When you set <code>UseLogminerReader</code> to N, also set <code>UseBfile</code> to Y. For more information on this setting and using Oracle ASM, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC"> Using Oracle LogMiner or DMS Binary Reader for CDC</a> in the <i>DMS User Guide</i>.</p>
     pub fn use_logminer_reader(mut self, input: bool) -> Self {
         self.use_logminer_reader = ::std::option::Option::Some(input);
@@ -934,6 +1091,10 @@ impl OracleSettingsBuilder {
     pub fn set_use_logminer_reader(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_logminer_reader = input;
         self
+    }
+    /// <p>Set this attribute to Y to capture change data using the Oracle LogMiner utility (the default). Set this attribute to N if you want to access the redo logs as a binary file. When you set <code>UseLogminerReader</code> to N, also set <code>UseBfile</code> to Y. For more information on this setting and using Oracle ASM, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC"> Using Oracle LogMiner or DMS Binary Reader for CDC</a> in the <i>DMS User Guide</i>.</p>
+    pub fn get_use_logminer_reader(&self) -> &::std::option::Option<bool> {
+        &self.use_logminer_reader
     }
     /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the Oracle endpoint.</p> <note>
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
@@ -955,6 +1116,14 @@ impl OracleSettingsBuilder {
         self.secrets_manager_access_role_arn = input;
         self
     }
+    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the Oracle endpoint.</p> <note>
+    /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
+    /// </note>
+    pub fn get_secrets_manager_access_role_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.secrets_manager_access_role_arn
+    }
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the Oracle endpoint connection details.</p>
     pub fn secrets_manager_secret_id(
         mut self,
@@ -970,6 +1139,10 @@ impl OracleSettingsBuilder {
     ) -> Self {
         self.secrets_manager_secret_id = input;
         self
+    }
+    /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the Oracle endpoint connection details.</p>
+    pub fn get_secrets_manager_secret_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secrets_manager_secret_id
     }
     /// <p>Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The full ARN of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the <code>SecretsManagerOracleAsmSecret</code>. This <code>SecretsManagerOracleAsmSecret</code> has the secret value that allows access to the Oracle ASM of the endpoint.</p> <note>
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerOracleAsmSecretId</code>. Or you can specify clear-text values for <code>AsmUserName</code>, <code>AsmPassword</code>, and <code>AsmServerName</code>. You can't specify both. For more information on creating this <code>SecretsManagerOracleAsmSecret</code> and the <code>SecretsManagerOracleAsmAccessRoleArn</code> and <code>SecretsManagerOracleAsmSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
@@ -991,6 +1164,14 @@ impl OracleSettingsBuilder {
         self.secrets_manager_oracle_asm_access_role_arn = input;
         self
     }
+    /// <p>Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The full ARN of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the <code>SecretsManagerOracleAsmSecret</code>. This <code>SecretsManagerOracleAsmSecret</code> has the secret value that allows access to the Oracle ASM of the endpoint.</p> <note>
+    /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerOracleAsmSecretId</code>. Or you can specify clear-text values for <code>AsmUserName</code>, <code>AsmPassword</code>, and <code>AsmServerName</code>. You can't specify both. For more information on creating this <code>SecretsManagerOracleAsmSecret</code> and the <code>SecretsManagerOracleAsmAccessRoleArn</code> and <code>SecretsManagerOracleAsmSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
+    /// </note>
+    pub fn get_secrets_manager_oracle_asm_access_role_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.secrets_manager_oracle_asm_access_role_arn
+    }
     /// <p>Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The full ARN, partial ARN, or friendly name of the <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM connection details for the Oracle endpoint.</p>
     pub fn secrets_manager_oracle_asm_secret_id(
         mut self,
@@ -1007,6 +1188,12 @@ impl OracleSettingsBuilder {
         self.secrets_manager_oracle_asm_secret_id = input;
         self
     }
+    /// <p>Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The full ARN, partial ARN, or friendly name of the <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM connection details for the Oracle endpoint.</p>
+    pub fn get_secrets_manager_oracle_asm_secret_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.secrets_manager_oracle_asm_secret_id
+    }
     /// <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during migration. The default value is <code>true</code>.</p>
     pub fn trim_space_in_char(mut self, input: bool) -> Self {
         self.trim_space_in_char = ::std::option::Option::Some(input);
@@ -1016,6 +1203,10 @@ impl OracleSettingsBuilder {
     pub fn set_trim_space_in_char(mut self, input: ::std::option::Option<bool>) -> Self {
         self.trim_space_in_char = input;
         self
+    }
+    /// <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during migration. The default value is <code>true</code>.</p>
+    pub fn get_trim_space_in_char(&self) -> &::std::option::Option<bool> {
+        &self.trim_space_in_char
     }
     /// <p>When true, converts timestamps with the <code>timezone</code> datatype to their UTC value.</p>
     pub fn convert_timestamp_with_zone_to_utc(mut self, input: bool) -> Self {
@@ -1029,6 +1220,10 @@ impl OracleSettingsBuilder {
     ) -> Self {
         self.convert_timestamp_with_zone_to_utc = input;
         self
+    }
+    /// <p>When true, converts timestamps with the <code>timezone</code> datatype to their UTC value.</p>
+    pub fn get_convert_timestamp_with_zone_to_utc(&self) -> &::std::option::Option<bool> {
+        &self.convert_timestamp_with_zone_to_utc
     }
     /// <p>The timeframe in minutes to check for open transactions for a CDC-only task.</p>
     /// <p>You can specify an integer value between 0 (the default) and 240 (the maximum). </p> <note>
@@ -1045,6 +1240,13 @@ impl OracleSettingsBuilder {
     pub fn set_open_transaction_window(mut self, input: ::std::option::Option<i32>) -> Self {
         self.open_transaction_window = input;
         self
+    }
+    /// <p>The timeframe in minutes to check for open transactions for a CDC-only task.</p>
+    /// <p>You can specify an integer value between 0 (the default) and 240 (the maximum). </p> <note>
+    /// <p>This parameter is only valid in DMS version 3.5.0 and later. DMS supports a window of up to 9.5 hours including the value for <code>OpenTransactionWindow</code>.</p>
+    /// </note>
+    pub fn get_open_transaction_window(&self) -> &::std::option::Option<i32> {
+        &self.open_transaction_window
     }
     /// Consumes the builder and constructs a [`OracleSettings`](crate::types::OracleSettings).
     pub fn build(self) -> crate::types::OracleSettings {

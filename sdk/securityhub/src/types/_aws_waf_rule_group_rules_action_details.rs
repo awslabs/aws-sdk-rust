@@ -40,6 +40,10 @@ impl AwsWafRuleGroupRulesActionDetailsBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The action that WAF should take on a web request when it matches the rule's statement.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// Consumes the builder and constructs a [`AwsWafRuleGroupRulesActionDetails`](crate::types::AwsWafRuleGroupRulesActionDetails).
     pub fn build(self) -> crate::types::AwsWafRuleGroupRulesActionDetails {
         crate::types::AwsWafRuleGroupRulesActionDetails {

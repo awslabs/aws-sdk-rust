@@ -45,6 +45,10 @@ impl UpdateTrafficPolicyInstanceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateTrafficPolicyInstance as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_traffic_policy_instance::builders::UpdateTrafficPolicyInstanceInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +139,10 @@ impl UpdateTrafficPolicyInstanceFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The ID of the traffic policy instance that you want to update.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The TTL that you want Amazon Route 53 to assign to all of the updated resource record sets.</p>
     pub fn ttl(mut self, input: i64) -> Self {
         self.inner = self.inner.ttl(input);
@@ -144,6 +152,10 @@ impl UpdateTrafficPolicyInstanceFluentBuilder {
     pub fn set_ttl(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_ttl(input);
         self
+    }
+    /// <p>The TTL that you want Amazon Route 53 to assign to all of the updated resource record sets.</p>
+    pub fn get_ttl(&self) -> &::std::option::Option<i64> {
+        self.inner.get_ttl()
     }
     /// <p>The ID of the traffic policy that you want Amazon Route 53 to use to update resource record sets for the specified traffic policy instance.</p>
     pub fn traffic_policy_id(
@@ -161,6 +173,10 @@ impl UpdateTrafficPolicyInstanceFluentBuilder {
         self.inner = self.inner.set_traffic_policy_id(input);
         self
     }
+    /// <p>The ID of the traffic policy that you want Amazon Route 53 to use to update resource record sets for the specified traffic policy instance.</p>
+    pub fn get_traffic_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_traffic_policy_id()
+    }
     /// <p>The version of the traffic policy that you want Amazon Route 53 to use to update resource record sets for the specified traffic policy instance.</p>
     pub fn traffic_policy_version(mut self, input: i32) -> Self {
         self.inner = self.inner.traffic_policy_version(input);
@@ -170,5 +186,9 @@ impl UpdateTrafficPolicyInstanceFluentBuilder {
     pub fn set_traffic_policy_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_traffic_policy_version(input);
         self
+    }
+    /// <p>The version of the traffic policy that you want Amazon Route 53 to use to update resource record sets for the specified traffic policy instance.</p>
+    pub fn get_traffic_policy_version(&self) -> &::std::option::Option<i32> {
+        self.inner.get_traffic_policy_version()
     }
 }

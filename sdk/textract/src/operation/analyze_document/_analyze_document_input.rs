@@ -67,6 +67,11 @@ impl AnalyzeDocumentInputBuilder {
         self.document = input;
         self
     }
+    /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG, PNG, PDF, or TIFF format.</p>
+    /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are passed using the <code>Bytes</code> field. </p>
+    pub fn get_document(&self) -> &::std::option::Option<crate::types::Document> {
+        &self.document
+    }
     /// Appends an item to `feature_types`.
     ///
     /// To override the contents of this collection use [`set_feature_types`](Self::set_feature_types).
@@ -86,6 +91,12 @@ impl AnalyzeDocumentInputBuilder {
         self.feature_types = input;
         self
     }
+    /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. Add SIGNATURES to return the locations of detected signatures. To perform both forms and table analysis, add TABLES and FORMS to <code>FeatureTypes</code>. To detect signatures within form data and table data, add SIGNATURES to either TABLES or FORMS. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
+    pub fn get_feature_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureType>> {
+        &self.feature_types
+    }
     /// <p>Sets the configuration for the human in the loop workflow for analyzing documents.</p>
     pub fn human_loop_config(mut self, input: crate::types::HumanLoopConfig) -> Self {
         self.human_loop_config = ::std::option::Option::Some(input);
@@ -99,6 +110,10 @@ impl AnalyzeDocumentInputBuilder {
         self.human_loop_config = input;
         self
     }
+    /// <p>Sets the configuration for the human in the loop workflow for analyzing documents.</p>
+    pub fn get_human_loop_config(&self) -> &::std::option::Option<crate::types::HumanLoopConfig> {
+        &self.human_loop_config
+    }
     /// <p>Contains Queries and the alias for those Queries, as determined by the input. </p>
     pub fn queries_config(mut self, input: crate::types::QueriesConfig) -> Self {
         self.queries_config = ::std::option::Option::Some(input);
@@ -111,6 +126,10 @@ impl AnalyzeDocumentInputBuilder {
     ) -> Self {
         self.queries_config = input;
         self
+    }
+    /// <p>Contains Queries and the alias for those Queries, as determined by the input. </p>
+    pub fn get_queries_config(&self) -> &::std::option::Option<crate::types::QueriesConfig> {
+        &self.queries_config
     }
     /// Consumes the builder and constructs a [`AnalyzeDocumentInput`](crate::operation::analyze_document::AnalyzeDocumentInput).
     pub fn build(

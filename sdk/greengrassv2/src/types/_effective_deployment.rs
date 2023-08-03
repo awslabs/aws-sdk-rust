@@ -153,6 +153,10 @@ impl EffectiveDeploymentBuilder {
         self.deployment_id = input;
         self
     }
+    /// <p>The ID of the deployment.</p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
+    }
     /// <p>The name of the deployment.</p>
     pub fn deployment_name(
         mut self,
@@ -169,6 +173,10 @@ impl EffectiveDeploymentBuilder {
         self.deployment_name = input;
         self
     }
+    /// <p>The name of the deployment.</p>
+    pub fn get_deployment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_name
+    }
     /// <p>The ID of the IoT job that applies the deployment to target devices.</p>
     pub fn iot_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iot_job_id = ::std::option::Option::Some(input.into());
@@ -178,6 +186,10 @@ impl EffectiveDeploymentBuilder {
     pub fn set_iot_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iot_job_id = input;
         self
+    }
+    /// <p>The ID of the IoT job that applies the deployment to target devices.</p>
+    pub fn get_iot_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iot_job_id
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT job that applies the deployment to target devices.</p>
     pub fn iot_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -189,6 +201,10 @@ impl EffectiveDeploymentBuilder {
         self.iot_job_arn = input;
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT job that applies the deployment to target devices.</p>
+    pub fn get_iot_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iot_job_arn
+    }
     /// <p>The description of the deployment job.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -199,6 +215,10 @@ impl EffectiveDeploymentBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the deployment job.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
     pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_arn = ::std::option::Option::Some(input.into());
@@ -208,6 +228,10 @@ impl EffectiveDeploymentBuilder {
     pub fn set_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_arn = input;
         self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
+    pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_arn
     }
     /// <p>The status of the deployment job on the Greengrass core device.</p>
     /// <ul>
@@ -245,6 +269,22 @@ impl EffectiveDeploymentBuilder {
         self.core_device_execution_status = input;
         self
     }
+    /// <p>The status of the deployment job on the Greengrass core device.</p>
+    /// <ul>
+    /// <li> <p> <code>IN_PROGRESS</code> – The deployment job is running.</p> </li>
+    /// <li> <p> <code>QUEUED</code> – The deployment job is in the job queue and waiting to run.</p> </li>
+    /// <li> <p> <code>FAILED</code> – The deployment failed. For more information, see the <code>statusDetails</code> field.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> – The deployment to an IoT thing was completed successfully.</p> </li>
+    /// <li> <p> <code>TIMED_OUT</code> – The deployment didn't complete in the allotted time. </p> </li>
+    /// <li> <p> <code>CANCELED</code> – The deployment was canceled by the user.</p> </li>
+    /// <li> <p> <code>REJECTED</code> – The deployment was rejected. For more information, see the <code>statusDetails</code> field.</p> </li>
+    /// <li> <p> <code>SUCCEEDED</code> – The deployment to an IoT thing group was completed successfully.</p> </li>
+    /// </ul>
+    pub fn get_core_device_execution_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::EffectiveDeploymentExecutionStatus> {
+        &self.core_device_execution_status
+    }
     /// <p>The reason code for the update, if the job was updated.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
@@ -254,6 +294,10 @@ impl EffectiveDeploymentBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>The reason code for the update, if the job was updated.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
     }
     /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
     pub fn creation_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -268,6 +312,10 @@ impl EffectiveDeploymentBuilder {
         self.creation_timestamp = input;
         self
     }
+    /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
+    pub fn get_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_timestamp
+    }
     /// <p>The time at which the deployment job was last modified, expressed in ISO 8601 format.</p>
     pub fn modified_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.modified_timestamp = ::std::option::Option::Some(input);
@@ -281,6 +329,10 @@ impl EffectiveDeploymentBuilder {
         self.modified_timestamp = input;
         self
     }
+    /// <p>The time at which the deployment job was last modified, expressed in ISO 8601 format.</p>
+    pub fn get_modified_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.modified_timestamp
+    }
     /// <p>The status details that explain why a deployment has an error. This response will be null if the deployment is in a success state.</p>
     pub fn status_details(mut self, input: crate::types::EffectiveDeploymentStatusDetails) -> Self {
         self.status_details = ::std::option::Option::Some(input);
@@ -293,6 +345,12 @@ impl EffectiveDeploymentBuilder {
     ) -> Self {
         self.status_details = input;
         self
+    }
+    /// <p>The status details that explain why a deployment has an error. This response will be null if the deployment is in a success state.</p>
+    pub fn get_status_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::EffectiveDeploymentStatusDetails> {
+        &self.status_details
     }
     /// Consumes the builder and constructs a [`EffectiveDeployment`](crate::types::EffectiveDeployment).
     pub fn build(self) -> crate::types::EffectiveDeployment {

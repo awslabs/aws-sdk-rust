@@ -84,6 +84,10 @@ impl DescribePortfolioShareStatusOutputBuilder {
         self.portfolio_share_token = input;
         self
     }
+    /// <p>The token for the portfolio share operation. For example, <code>share-6v24abcdefghi</code>.</p>
+    pub fn get_portfolio_share_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portfolio_share_token
+    }
     /// <p>The portfolio identifier.</p>
     pub fn portfolio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portfolio_id = ::std::option::Option::Some(input.into());
@@ -93,6 +97,10 @@ impl DescribePortfolioShareStatusOutputBuilder {
     pub fn set_portfolio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.portfolio_id = input;
         self
+    }
+    /// <p>The portfolio identifier.</p>
+    pub fn get_portfolio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portfolio_id
     }
     /// <p>Organization node identifier. It can be either account id, organizational unit id or organization id.</p>
     pub fn organization_node_value(
@@ -110,6 +118,10 @@ impl DescribePortfolioShareStatusOutputBuilder {
         self.organization_node_value = input;
         self
     }
+    /// <p>Organization node identifier. It can be either account id, organizational unit id or organization id.</p>
+    pub fn get_organization_node_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_node_value
+    }
     /// <p>Status of the portfolio share operation.</p>
     pub fn status(mut self, input: crate::types::ShareStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -119,6 +131,10 @@ impl DescribePortfolioShareStatusOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ShareStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Status of the portfolio share operation.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ShareStatus> {
+        &self.status
     }
     /// <p>Information about the portfolio share operation.</p>
     pub fn share_details(mut self, input: crate::types::ShareDetails) -> Self {
@@ -132,6 +148,10 @@ impl DescribePortfolioShareStatusOutputBuilder {
     ) -> Self {
         self.share_details = input;
         self
+    }
+    /// <p>Information about the portfolio share operation.</p>
+    pub fn get_share_details(&self) -> &::std::option::Option<crate::types::ShareDetails> {
+        &self.share_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

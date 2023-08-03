@@ -57,6 +57,12 @@ impl BatchUpdateDevicePositionOutputBuilder {
         self.errors = input;
         self
     }
+    /// <p>Contains error details for each device that failed to update its position.</p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateDevicePositionError>> {
+        &self.errors
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

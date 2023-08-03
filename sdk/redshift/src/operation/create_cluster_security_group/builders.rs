@@ -37,6 +37,10 @@ impl CreateClusterSecurityGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateClusterSecurityGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_cluster_security_group::builders::CreateClusterSecurityGroupInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -147,6 +151,17 @@ impl CreateClusterSecurityGroupFluentBuilder {
         self.inner = self.inner.set_cluster_security_group_name(input);
         self
     }
+    /// <p>The name for the security group. Amazon Redshift stores the value as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain no more than 255 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>Must not be "Default".</p> </li>
+    /// <li> <p>Must be unique for all security groups that are created by your Amazon Web Services account.</p> </li>
+    /// </ul>
+    /// <p>Example: <code>examplesecuritygroup</code> </p>
+    pub fn get_cluster_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_security_group_name()
+    }
     /// <p>A description for the security group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -156,6 +171,10 @@ impl CreateClusterSecurityGroupFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description for the security group.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `Tags`.
     ///
@@ -173,5 +192,9 @@ impl CreateClusterSecurityGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of tag instances.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

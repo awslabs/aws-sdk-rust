@@ -72,6 +72,10 @@ impl UpdateBridgeNetworkOutputRequestBuilder {
         self.ip_address = input;
         self
     }
+    /// The network output IP Address.
+    pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address
+    }
     /// The network output's gateway network name.
     pub fn network_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_name = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl UpdateBridgeNetworkOutputRequestBuilder {
     pub fn set_network_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_name = input;
         self
+    }
+    /// The network output's gateway network name.
+    pub fn get_network_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_name
     }
     /// The network output port.
     pub fn port(mut self, input: i32) -> Self {
@@ -92,6 +100,10 @@ impl UpdateBridgeNetworkOutputRequestBuilder {
         self.port = input;
         self
     }
+    /// The network output port.
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
+    }
     /// The network output protocol.
     pub fn protocol(mut self, input: crate::types::Protocol) -> Self {
         self.protocol = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl UpdateBridgeNetworkOutputRequestBuilder {
         self.protocol = input;
         self
     }
+    /// The network output protocol.
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::Protocol> {
+        &self.protocol
+    }
     /// The network output TTL.
     pub fn ttl(mut self, input: i32) -> Self {
         self.ttl = ::std::option::Option::Some(input);
@@ -111,6 +127,10 @@ impl UpdateBridgeNetworkOutputRequestBuilder {
     pub fn set_ttl(mut self, input: ::std::option::Option<i32>) -> Self {
         self.ttl = input;
         self
+    }
+    /// The network output TTL.
+    pub fn get_ttl(&self) -> &::std::option::Option<i32> {
+        &self.ttl
     }
     /// Consumes the builder and constructs a [`UpdateBridgeNetworkOutputRequest`](crate::types::UpdateBridgeNetworkOutputRequest).
     pub fn build(self) -> crate::types::UpdateBridgeNetworkOutputRequest {

@@ -129,6 +129,11 @@ impl HandshakeBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier (ID) of a handshake. The originating account creates the ID when it initiates the handshake.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Amazon Resource Name (ARN) of a handshake.</p>
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -140,6 +145,11 @@ impl HandshakeBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a handshake.</p>
+    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Appends an item to `parties`.
     ///
@@ -159,6 +169,12 @@ impl HandshakeBuilder {
     ) -> Self {
         self.parties = input;
         self
+    }
+    /// <p>Information about the two accounts that are participating in the handshake.</p>
+    pub fn get_parties(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HandshakeParty>> {
+        &self.parties
     }
     /// <p>The current state of the handshake. Use the state to trace the flow of the handshake through the process from its creation to its acceptance. The meaning of each of the valid values is as follows:</p>
     /// <ul>
@@ -186,6 +202,18 @@ impl HandshakeBuilder {
         self.state = input;
         self
     }
+    /// <p>The current state of the handshake. Use the state to trace the flow of the handshake through the process from its creation to its acceptance. The meaning of each of the valid values is as follows:</p>
+    /// <ul>
+    /// <li> <p> <b>REQUESTED</b>: This handshake was sent to multiple recipients (applicable to only some handshake types) and not all recipients have responded yet. The request stays in this state until all recipients respond.</p> </li>
+    /// <li> <p> <b>OPEN</b>: This handshake was sent to multiple recipients (applicable to only some policy types) and all recipients have responded, allowing the originator to complete the handshake action.</p> </li>
+    /// <li> <p> <b>CANCELED</b>: This handshake is no longer active because it was canceled by the originating account.</p> </li>
+    /// <li> <p> <b>ACCEPTED</b>: This handshake is complete because it has been accepted by the recipient.</p> </li>
+    /// <li> <p> <b>DECLINED</b>: This handshake is no longer active because it was declined by the recipient account.</p> </li>
+    /// <li> <p> <b>EXPIRED</b>: This handshake is no longer active because the originator did not receive a response of any kind from the recipient before the expiration time (15 days).</p> </li>
+    /// </ul>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::HandshakeState> {
+        &self.state
+    }
     /// <p>The date and time that the handshake request was made.</p>
     pub fn requested_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.requested_timestamp = ::std::option::Option::Some(input);
@@ -199,6 +227,10 @@ impl HandshakeBuilder {
         self.requested_timestamp = input;
         self
     }
+    /// <p>The date and time that the handshake request was made.</p>
+    pub fn get_requested_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.requested_timestamp
+    }
     /// <p>The date and time that the handshake expires. If the recipient of the handshake request fails to respond before the specified date and time, the handshake becomes inactive and is no longer valid.</p>
     pub fn expiration_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expiration_timestamp = ::std::option::Option::Some(input);
@@ -211,6 +243,10 @@ impl HandshakeBuilder {
     ) -> Self {
         self.expiration_timestamp = input;
         self
+    }
+    /// <p>The date and time that the handshake expires. If the recipient of the handshake request fails to respond before the specified date and time, the handshake becomes inactive and is no longer valid.</p>
+    pub fn get_expiration_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expiration_timestamp
     }
     /// <p>The type of handshake, indicating what action occurs when the recipient accepts the handshake. The following handshake types are supported:</p>
     /// <ul>
@@ -232,6 +268,15 @@ impl HandshakeBuilder {
         self.action = input;
         self
     }
+    /// <p>The type of handshake, indicating what action occurs when the recipient accepts the handshake. The following handshake types are supported:</p>
+    /// <ul>
+    /// <li> <p> <b>INVITE</b>: This type of handshake represents a request to join an organization. It is always sent from the management account to only non-member accounts.</p> </li>
+    /// <li> <p> <b>ENABLE_ALL_FEATURES</b>: This type of handshake represents a request to enable all features in an organization. It is always sent from the management account to only <i>invited</i> member accounts. Created accounts do not receive this because those accounts were created by the organization's management account and approval is inferred.</p> </li>
+    /// <li> <p> <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the Organizations service when all member accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the management account and signals the master that it can finalize the process to enable all features.</p> </li>
+    /// </ul>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::ActionType> {
+        &self.action
+    }
     /// Appends an item to `resources`.
     ///
     /// To override the contents of this collection use [`set_resources`](Self::set_resources).
@@ -250,6 +295,12 @@ impl HandshakeBuilder {
     ) -> Self {
         self.resources = input;
         self
+    }
+    /// <p>Additional information that is needed to process the handshake.</p>
+    pub fn get_resources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HandshakeResource>> {
+        &self.resources
     }
     /// Consumes the builder and constructs a [`Handshake`](crate::types::Handshake).
     pub fn build(self) -> crate::types::Handshake {

@@ -56,6 +56,10 @@ impl FailureDetailsBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of the failure.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::FailureType> {
+        &self.r#type
+    }
     /// <p>The message about the failure.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl FailureDetailsBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The message about the failure.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// <p>The external ID of the run of the action that failed.</p>
     pub fn external_execution_id(
@@ -81,6 +89,10 @@ impl FailureDetailsBuilder {
     ) -> Self {
         self.external_execution_id = input;
         self
+    }
+    /// <p>The external ID of the run of the action that failed.</p>
+    pub fn get_external_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_execution_id
     }
     /// Consumes the builder and constructs a [`FailureDetails`](crate::types::FailureDetails).
     pub fn build(self) -> crate::types::FailureDetails {

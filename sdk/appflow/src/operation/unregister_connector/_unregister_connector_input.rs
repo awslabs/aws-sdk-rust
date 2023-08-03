@@ -54,6 +54,10 @@ impl UnregisterConnectorInputBuilder {
         self.connector_label = input;
         self
     }
+    /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
+    pub fn get_connector_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connector_label
+    }
     /// <p>Indicates whether Amazon AppFlow should unregister the connector, even if it is currently in use in one or more connector profiles. The default value is false.</p>
     pub fn force_delete(mut self, input: bool) -> Self {
         self.force_delete = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl UnregisterConnectorInputBuilder {
     pub fn set_force_delete(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force_delete = input;
         self
+    }
+    /// <p>Indicates whether Amazon AppFlow should unregister the connector, even if it is currently in use in one or more connector profiles. The default value is false.</p>
+    pub fn get_force_delete(&self) -> &::std::option::Option<bool> {
+        &self.force_delete
     }
     /// Consumes the builder and constructs a [`UnregisterConnectorInput`](crate::operation::unregister_connector::UnregisterConnectorInput).
     pub fn build(

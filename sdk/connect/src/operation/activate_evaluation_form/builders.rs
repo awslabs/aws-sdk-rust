@@ -36,6 +36,13 @@ impl ActivateEvaluationFormFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ActivateEvaluationForm as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::activate_evaluation_form::builders::ActivateEvaluationFormInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl ActivateEvaluationFormFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>The unique identifier for the evaluation form.</p>
     pub fn evaluation_form_id(
         mut self,
@@ -142,6 +153,10 @@ impl ActivateEvaluationFormFluentBuilder {
         self.inner = self.inner.set_evaluation_form_id(input);
         self
     }
+    /// <p>The unique identifier for the evaluation form.</p>
+    pub fn get_evaluation_form_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_evaluation_form_id()
+    }
     /// <p>The version of the evaluation form to activate. If the version property is not provided, the latest version of the evaluation form is activated.</p>
     pub fn evaluation_form_version(mut self, input: i32) -> Self {
         self.inner = self.inner.evaluation_form_version(input);
@@ -151,5 +166,9 @@ impl ActivateEvaluationFormFluentBuilder {
     pub fn set_evaluation_form_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_evaluation_form_version(input);
         self
+    }
+    /// <p>The version of the evaluation form to activate. If the version property is not provided, the latest version of the evaluation form is activated.</p>
+    pub fn get_evaluation_form_version(&self) -> &::std::option::Option<i32> {
+        self.inner.get_evaluation_form_version()
     }
 }

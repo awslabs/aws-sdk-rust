@@ -37,6 +37,12 @@ impl DeleteExperimentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteExperiment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_experiment::builders::DeleteExperimentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl DeleteExperimentFluentBuilder {
         self.inner = self.inner.set_project(input);
         self
     }
+    /// <p>The name or ARN of the project that contains the experiment to delete.</p>
+    pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project()
+    }
     /// <p>The name of the experiment to delete.</p>
     pub fn experiment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.experiment(input.into());
@@ -136,5 +146,9 @@ impl DeleteExperimentFluentBuilder {
     pub fn set_experiment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_experiment(input);
         self
+    }
+    /// <p>The name of the experiment to delete.</p>
+    pub fn get_experiment(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_experiment()
     }
 }

@@ -62,6 +62,10 @@ impl UpdateActionTargetInputBuilder {
         self.action_target_arn = input;
         self
     }
+    /// <p>The ARN of the custom action target to update.</p>
+    pub fn get_action_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_target_arn
+    }
     /// <p>The updated name of the custom action target.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl UpdateActionTargetInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The updated name of the custom action target.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The updated description for the custom action target.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl UpdateActionTargetInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The updated description for the custom action target.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`UpdateActionTargetInput`](crate::operation::update_action_target::UpdateActionTargetInput).
     pub fn build(

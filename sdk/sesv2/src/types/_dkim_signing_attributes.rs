@@ -76,6 +76,10 @@ impl DkimSigningAttributesBuilder {
         self.domain_signing_selector = input;
         self
     }
+    /// <p>[Bring Your Own DKIM] A string that's used to identify a public key in the DNS configuration for a domain.</p>
+    pub fn get_domain_signing_selector(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_signing_selector
+    }
     /// <p>[Bring Your Own DKIM] A private key that's used to generate a DKIM signature.</p>
     /// <p>The private key must use 1024 or 2048-bit RSA encryption, and must be encoded using base64 encoding.</p>
     pub fn domain_signing_private_key(
@@ -94,6 +98,11 @@ impl DkimSigningAttributesBuilder {
         self.domain_signing_private_key = input;
         self
     }
+    /// <p>[Bring Your Own DKIM] A private key that's used to generate a DKIM signature.</p>
+    /// <p>The private key must use 1024 or 2048-bit RSA encryption, and must be encoded using base64 encoding.</p>
+    pub fn get_domain_signing_private_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_signing_private_key
+    }
     /// <p>[Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.</p>
     pub fn next_signing_key_length(mut self, input: crate::types::DkimSigningKeyLength) -> Self {
         self.next_signing_key_length = ::std::option::Option::Some(input);
@@ -106,6 +115,12 @@ impl DkimSigningAttributesBuilder {
     ) -> Self {
         self.next_signing_key_length = input;
         self
+    }
+    /// <p>[Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.</p>
+    pub fn get_next_signing_key_length(
+        &self,
+    ) -> &::std::option::Option<crate::types::DkimSigningKeyLength> {
+        &self.next_signing_key_length
     }
     /// Consumes the builder and constructs a [`DkimSigningAttributes`](crate::types::DkimSigningAttributes).
     pub fn build(self) -> crate::types::DkimSigningAttributes {

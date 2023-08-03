@@ -52,6 +52,12 @@ impl DescribeAssessmentTargetsInputBuilder {
         self.assessment_target_arns = input;
         self
     }
+    /// <p>The ARNs that specifies the assessment targets that you want to describe.</p>
+    pub fn get_assessment_target_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.assessment_target_arns
+    }
     /// Consumes the builder and constructs a [`DescribeAssessmentTargetsInput`](crate::operation::describe_assessment_targets::DescribeAssessmentTargetsInput).
     pub fn build(
         self,

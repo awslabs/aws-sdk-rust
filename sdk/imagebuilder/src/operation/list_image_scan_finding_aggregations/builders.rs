@@ -43,6 +43,10 @@ impl ListImageScanFindingAggregationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListImageScanFindingAggregations as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_image_scan_finding_aggregations::builders::ListImageScanFindingAggregationsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -113,6 +117,10 @@ impl ListImageScanFindingAggregationsFluentBuilder {
         self.inner = self.inner.set_filter(input);
         self
     }
+    /// <p>A filter name and value pair that is used to return a more specific list of results from a list operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::Filter> {
+        self.inner.get_filter()
+    }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -122,5 +130,9 @@ impl ListImageScanFindingAggregationsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

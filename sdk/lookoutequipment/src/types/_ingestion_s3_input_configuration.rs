@@ -56,6 +56,10 @@ impl IngestionS3InputConfigurationBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The name of the S3 bucket used for the input data for the data ingestion. </p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>The prefix for the S3 location being used for the input data for the data ingestion. </p>
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl IngestionS3InputConfigurationBuilder {
         self.prefix = input;
         self
     }
+    /// <p>The prefix for the S3 location being used for the input data for the data ingestion. </p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
+    }
     /// <p> Pattern for matching the Amazon S3 files which will be used for ingestion. If no KeyPattern is provided, we will use the default hierarchy file structure, which is same as KeyPattern {prefix}/{component_name}/* </p>
     pub fn key_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_pattern = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl IngestionS3InputConfigurationBuilder {
     pub fn set_key_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_pattern = input;
         self
+    }
+    /// <p> Pattern for matching the Amazon S3 files which will be used for ingestion. If no KeyPattern is provided, we will use the default hierarchy file structure, which is same as KeyPattern {prefix}/{component_name}/* </p>
+    pub fn get_key_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_pattern
     }
     /// Consumes the builder and constructs a [`IngestionS3InputConfiguration`](crate::types::IngestionS3InputConfiguration).
     pub fn build(self) -> crate::types::IngestionS3InputConfiguration {

@@ -36,6 +36,12 @@ impl UpdateVPCConnectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateVPCConnection as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_vpc_connection::builders::UpdateVpcConnectionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateVPCConnectionFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The Amazon Web Services account ID of the account that contains the VPC connection that you want to update.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The ID of the VPC connection that you're updating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.</p>
     pub fn vpc_connection_id(
         mut self,
@@ -148,6 +158,10 @@ impl UpdateVPCConnectionFluentBuilder {
         self.inner = self.inner.set_vpc_connection_id(input);
         self
     }
+    /// <p>The ID of the VPC connection that you're updating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.</p>
+    pub fn get_vpc_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpc_connection_id()
+    }
     /// <p>The display name for the VPC connection.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -157,6 +171,10 @@ impl UpdateVPCConnectionFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The display name for the VPC connection.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// Appends an item to `SubnetIds`.
     ///
@@ -174,6 +192,10 @@ impl UpdateVPCConnectionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
+    }
+    /// <p>A list of subnet IDs for the VPC connection.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_subnet_ids()
     }
     /// Appends an item to `SecurityGroupIds`.
     ///
@@ -195,6 +217,12 @@ impl UpdateVPCConnectionFluentBuilder {
         self.inner = self.inner.set_security_group_ids(input);
         self
     }
+    /// <p>A list of security group IDs for the VPC connection.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_security_group_ids()
+    }
     /// Appends an item to `DnsResolvers`.
     ///
     /// To override the contents of this collection use [`set_dns_resolvers`](Self::set_dns_resolvers).
@@ -215,6 +243,12 @@ impl UpdateVPCConnectionFluentBuilder {
         self.inner = self.inner.set_dns_resolvers(input);
         self
     }
+    /// <p>A list of IP addresses of DNS resolver endpoints for the VPC connection.</p>
+    pub fn get_dns_resolvers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_dns_resolvers()
+    }
     /// <p>An IAM role associated with the VPC connection.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -224,5 +258,9 @@ impl UpdateVPCConnectionFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>An IAM role associated with the VPC connection.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
 }

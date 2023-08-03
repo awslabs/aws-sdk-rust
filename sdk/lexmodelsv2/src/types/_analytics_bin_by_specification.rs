@@ -59,6 +59,10 @@ impl AnalyticsBinBySpecificationBuilder {
         self.name = input;
         self
     }
+    /// <p>Specifies the time metric by which to bin the analytics data.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::AnalyticsBinByName> {
+        &self.name
+    }
     /// <p>Specifies the interval of time by which to bin the analytics data.</p>
     pub fn interval(mut self, input: crate::types::AnalyticsInterval) -> Self {
         self.interval = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl AnalyticsBinBySpecificationBuilder {
         self.interval = input;
         self
     }
+    /// <p>Specifies the interval of time by which to bin the analytics data.</p>
+    pub fn get_interval(&self) -> &::std::option::Option<crate::types::AnalyticsInterval> {
+        &self.interval
+    }
     /// <p>Specifies whether to bin the analytics data in ascending or descending order. If this field is left blank, the default order is by the key of the bin in descending order.</p>
     pub fn order(mut self, input: crate::types::AnalyticsSortOrder) -> Self {
         self.order = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl AnalyticsBinBySpecificationBuilder {
     ) -> Self {
         self.order = input;
         self
+    }
+    /// <p>Specifies whether to bin the analytics data in ascending or descending order. If this field is left blank, the default order is by the key of the bin in descending order.</p>
+    pub fn get_order(&self) -> &::std::option::Option<crate::types::AnalyticsSortOrder> {
+        &self.order
     }
     /// Consumes the builder and constructs a [`AnalyticsBinBySpecification`](crate::types::AnalyticsBinBySpecification).
     pub fn build(self) -> crate::types::AnalyticsBinBySpecification {

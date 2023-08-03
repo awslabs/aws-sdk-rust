@@ -39,6 +39,10 @@ impl DeleteAliasInputBuilder {
         self.alias_id = input;
         self
     }
+    /// <p>A unique identifier of the alias that you want to delete. You can use either the alias ID or ARN value.</p>
+    pub fn get_alias_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias_id
+    }
     /// Consumes the builder and constructs a [`DeleteAliasInput`](crate::operation::delete_alias::DeleteAliasInput).
     pub fn build(
         self,

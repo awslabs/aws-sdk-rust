@@ -36,6 +36,10 @@ impl UpdateLogLevelsByResourceTypesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateLogLevelsByResourceTypes as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_log_levels_by_resource_types::builders::UpdateLogLevelsByResourceTypesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -103,6 +107,10 @@ impl UpdateLogLevelsByResourceTypesFluentBuilder {
         self.inner = self.inner.set_default_log_level(input);
         self
     }
+    /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
+    pub fn get_default_log_level(&self) -> &::std::option::Option<crate::types::LogLevel> {
+        self.inner.get_default_log_level()
+    }
     /// Appends an item to `WirelessDeviceLogOptions`.
     ///
     /// To override the contents of this collection use [`set_wireless_device_log_options`](Self::set_wireless_device_log_options).
@@ -123,6 +131,12 @@ impl UpdateLogLevelsByResourceTypesFluentBuilder {
         self.inner = self.inner.set_wireless_device_log_options(input);
         self
     }
+    /// <p>The list of wireless device log options.</p>
+    pub fn get_wireless_device_log_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WirelessDeviceLogOption>> {
+        self.inner.get_wireless_device_log_options()
+    }
     /// Appends an item to `WirelessGatewayLogOptions`.
     ///
     /// To override the contents of this collection use [`set_wireless_gateway_log_options`](Self::set_wireless_gateway_log_options).
@@ -142,5 +156,11 @@ impl UpdateLogLevelsByResourceTypesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_wireless_gateway_log_options(input);
         self
+    }
+    /// <p>The list of wireless gateway log options.</p>
+    pub fn get_wireless_gateway_log_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WirelessGatewayLogOption>> {
+        self.inner.get_wireless_gateway_log_options()
     }
 }

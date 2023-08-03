@@ -193,6 +193,10 @@ impl StackSetBuilder {
         self.stack_set_name = input;
         self
     }
+    /// <p>The name that's associated with the stack set.</p>
+    pub fn get_stack_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_set_name
+    }
     /// <p>The ID of the stack set.</p>
     pub fn stack_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_set_id = ::std::option::Option::Some(input.into());
@@ -203,6 +207,10 @@ impl StackSetBuilder {
         self.stack_set_id = input;
         self
     }
+    /// <p>The ID of the stack set.</p>
+    pub fn get_stack_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_set_id
+    }
     /// <p>A description of the stack set that you specify when the stack set is created or updated.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -212,6 +220,10 @@ impl StackSetBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the stack set that you specify when the stack set is created or updated.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The status of the stack set.</p>
     pub fn status(mut self, input: crate::types::StackSetStatus) -> Self {
@@ -225,6 +237,10 @@ impl StackSetBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the stack set.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::StackSetStatus> {
+        &self.status
     }
     /// <p>The structure that contains the body of the template that was used to create or update the stack set.</p>
     pub fn template_body(
@@ -241,6 +257,10 @@ impl StackSetBuilder {
     ) -> Self {
         self.template_body = input;
         self
+    }
+    /// <p>The structure that contains the body of the template that was used to create or update the stack set.</p>
+    pub fn get_template_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_body
     }
     /// Appends an item to `parameters`.
     ///
@@ -261,6 +281,12 @@ impl StackSetBuilder {
         self.parameters = input;
         self
     }
+    /// <p>A list of input parameters for a stack set.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+        &self.parameters
+    }
     /// Appends an item to `capabilities`.
     ///
     /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).
@@ -279,6 +305,12 @@ impl StackSetBuilder {
     ) -> Self {
         self.capabilities = input;
         self
+    }
+    /// <p>The capabilities that are allowed in the stack set. Some stack set templates might include resources that can affect permissions in your Amazon Web Services account—for example, by creating new Identity and Access Management (IAM) users. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates.</a> </p>
+    pub fn get_capabilities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Capability>> {
+        &self.capabilities
     }
     /// Appends an item to `tags`.
     ///
@@ -299,6 +331,10 @@ impl StackSetBuilder {
         self.tags = input;
         self
     }
+    /// <p>A list of tags that specify information about the stack set. A maximum number of 50 tags can be specified.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The Amazon Resource Name (ARN) of the stack set.</p>
     pub fn stack_set_arn(
         mut self,
@@ -314,6 +350,10 @@ impl StackSetBuilder {
     ) -> Self {
         self.stack_set_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the stack set.</p>
+    pub fn get_stack_set_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_set_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to create or update the stack set.</p>
     /// <p>Use customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/stacksets-prereqs.html">Prerequisites: Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.</p>
@@ -333,6 +373,11 @@ impl StackSetBuilder {
         self.administration_role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role used to create or update the stack set.</p>
+    /// <p>Use customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/stacksets-prereqs.html">Prerequisites: Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.</p>
+    pub fn get_administration_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.administration_role_arn
+    }
     /// <p>The name of the IAM execution role used to create or update the stack set.</p>
     /// <p>Use customized execution roles to control which stack resources users and groups can include in their stack sets.</p>
     pub fn execution_role_name(
@@ -350,6 +395,11 @@ impl StackSetBuilder {
     ) -> Self {
         self.execution_role_name = input;
         self
+    }
+    /// <p>The name of the IAM execution role used to create or update the stack set.</p>
+    /// <p>Use customized execution roles to control which stack resources users and groups can include in their stack sets.</p>
+    pub fn get_execution_role_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_role_name
     }
     /// <p>Detailed information about the drift status of the stack set.</p>
     /// <p>For stack sets, contains information about the last <i>completed</i> drift operation performed on the stack set. Information about drift operations currently in progress isn't included.</p>
@@ -369,6 +419,13 @@ impl StackSetBuilder {
         self.stack_set_drift_detection_details = input;
         self
     }
+    /// <p>Detailed information about the drift status of the stack set.</p>
+    /// <p>For stack sets, contains information about the last <i>completed</i> drift operation performed on the stack set. Information about drift operations currently in progress isn't included.</p>
+    pub fn get_stack_set_drift_detection_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::StackSetDriftDetectionDetails> {
+        &self.stack_set_drift_detection_details
+    }
     /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organization or organizational unit (OU).</p>
     pub fn auto_deployment(mut self, input: crate::types::AutoDeployment) -> Self {
         self.auto_deployment = ::std::option::Option::Some(input);
@@ -381,6 +438,10 @@ impl StackSetBuilder {
     ) -> Self {
         self.auto_deployment = input;
         self
+    }
+    /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organization or organizational unit (OU).</p>
+    pub fn get_auto_deployment(&self) -> &::std::option::Option<crate::types::AutoDeployment> {
+        &self.auto_deployment
     }
     /// <p>Describes how the IAM roles required for stack set operations are created.</p>
     /// <ul>
@@ -402,6 +463,14 @@ impl StackSetBuilder {
     ) -> Self {
         self.permission_model = input;
         self
+    }
+    /// <p>Describes how the IAM roles required for stack set operations are created.</p>
+    /// <ul>
+    /// <li> <p>With <code>self-managed</code> permissions, you must create the administrator and execution roles required to deploy to target accounts. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant Self-Managed Stack Set Permissions</a>.</p> </li>
+    /// <li> <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p> </li>
+    /// </ul>
+    pub fn get_permission_model(&self) -> &::std::option::Option<crate::types::PermissionModels> {
+        &self.permission_model
     }
     /// Appends an item to `organizational_unit_ids`.
     ///
@@ -425,6 +494,12 @@ impl StackSetBuilder {
         self.organizational_unit_ids = input;
         self
     }
+    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+    pub fn get_organizational_unit_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.organizational_unit_ids
+    }
     /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.</p>
     pub fn managed_execution(mut self, input: crate::types::ManagedExecution) -> Self {
         self.managed_execution = ::std::option::Option::Some(input);
@@ -437,6 +512,10 @@ impl StackSetBuilder {
     ) -> Self {
         self.managed_execution = input;
         self
+    }
+    /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.</p>
+    pub fn get_managed_execution(&self) -> &::std::option::Option<crate::types::ManagedExecution> {
+        &self.managed_execution
     }
     /// Appends an item to `regions`.
     ///
@@ -456,6 +535,10 @@ impl StackSetBuilder {
     ) -> Self {
         self.regions = input;
         self
+    }
+    /// <p>Returns a list of all Amazon Web Services Regions the given StackSet has stack instances deployed in. The Amazon Web Services Regions list output is in no particular order.</p>
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.regions
     }
     /// Consumes the builder and constructs a [`StackSet`](crate::types::StackSet).
     pub fn build(self) -> crate::types::StackSet {

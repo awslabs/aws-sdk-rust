@@ -57,6 +57,10 @@ impl GetSolVnfcResourceInfoMetadataBuilder {
         self.node_group = input;
         self
     }
+    /// <p>Information about the node group.</p>
+    pub fn get_node_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_group
+    }
     /// <p>Information about the cluster.</p>
     pub fn cluster(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster = ::std::option::Option::Some(input.into());
@@ -67,6 +71,10 @@ impl GetSolVnfcResourceInfoMetadataBuilder {
         self.cluster = input;
         self
     }
+    /// <p>Information about the cluster.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster
+    }
     /// <p>Information about the helm chart.</p>
     pub fn helm_chart(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.helm_chart = ::std::option::Option::Some(input.into());
@@ -76,6 +84,10 @@ impl GetSolVnfcResourceInfoMetadataBuilder {
     pub fn set_helm_chart(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.helm_chart = input;
         self
+    }
+    /// <p>Information about the helm chart.</p>
+    pub fn get_helm_chart(&self) -> &::std::option::Option<::std::string::String> {
+        &self.helm_chart
     }
     /// Consumes the builder and constructs a [`GetSolVnfcResourceInfoMetadata`](crate::types::GetSolVnfcResourceInfoMetadata).
     pub fn build(self) -> crate::types::GetSolVnfcResourceInfoMetadata {

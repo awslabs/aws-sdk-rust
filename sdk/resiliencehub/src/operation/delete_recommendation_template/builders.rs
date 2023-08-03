@@ -36,6 +36,10 @@ impl DeleteRecommendationTemplateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteRecommendationTemplate as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_recommendation_template::builders::DeleteRecommendationTemplateInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl DeleteRecommendationTemplateFluentBuilder {
         self.inner = self.inner.set_recommendation_template_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
+    pub fn get_recommendation_template_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_recommendation_template_arn()
+    }
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -141,5 +149,9 @@ impl DeleteRecommendationTemplateFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

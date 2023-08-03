@@ -224,6 +224,12 @@ impl PatchBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the patch. Applies to Windows patches only.</p> <note>
+    /// <p>This ID isn't the same as the Microsoft Knowledge Base ID.</p>
+    /// </note>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The date the patch was released.</p>
     pub fn release_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.release_date = ::std::option::Option::Some(input);
@@ -237,6 +243,10 @@ impl PatchBuilder {
         self.release_date = input;
         self
     }
+    /// <p>The date the patch was released.</p>
+    pub fn get_release_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.release_date
+    }
     /// <p>The title of the patch.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
@@ -246,6 +256,10 @@ impl PatchBuilder {
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
+    }
+    /// <p>The title of the patch.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
     }
     /// <p>The description of the patch.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -257,6 +271,10 @@ impl PatchBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the patch.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The URL where more information can be obtained about the patch.</p>
     pub fn content_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_url = ::std::option::Option::Some(input.into());
@@ -267,6 +285,10 @@ impl PatchBuilder {
         self.content_url = input;
         self
     }
+    /// <p>The URL where more information can be obtained about the patch.</p>
+    pub fn get_content_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_url
+    }
     /// <p>The name of the vendor providing the patch.</p>
     pub fn vendor(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vendor = ::std::option::Option::Some(input.into());
@@ -276,6 +298,10 @@ impl PatchBuilder {
     pub fn set_vendor(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vendor = input;
         self
+    }
+    /// <p>The name of the vendor providing the patch.</p>
+    pub fn get_vendor(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vendor
     }
     /// <p>The product family the patch is applicable for. For example, <code>Windows</code> or <code>Amazon Linux 2</code>.</p>
     pub fn product_family(
@@ -293,6 +319,10 @@ impl PatchBuilder {
         self.product_family = input;
         self
     }
+    /// <p>The product family the patch is applicable for. For example, <code>Windows</code> or <code>Amazon Linux 2</code>.</p>
+    pub fn get_product_family(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_family
+    }
     /// <p>The specific product the patch is applicable for. For example, <code>WindowsServer2016</code> or <code>AmazonLinux2018.03</code>.</p>
     pub fn product(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product = ::std::option::Option::Some(input.into());
@@ -302,6 +332,10 @@ impl PatchBuilder {
     pub fn set_product(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product = input;
         self
+    }
+    /// <p>The specific product the patch is applicable for. For example, <code>WindowsServer2016</code> or <code>AmazonLinux2018.03</code>.</p>
+    pub fn get_product(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product
     }
     /// <p>The classification of the patch. For example, <code>SecurityUpdates</code>, <code>Updates</code>, or <code>CriticalUpdates</code>.</p>
     pub fn classification(
@@ -319,6 +353,10 @@ impl PatchBuilder {
         self.classification = input;
         self
     }
+    /// <p>The classification of the patch. For example, <code>SecurityUpdates</code>, <code>Updates</code>, or <code>CriticalUpdates</code>.</p>
+    pub fn get_classification(&self) -> &::std::option::Option<::std::string::String> {
+        &self.classification
+    }
     /// <p>The severity of the patch, such as <code>Critical</code>, <code>Important</code>, or <code>Moderate</code>. Applies to Windows patches only.</p>
     pub fn msrc_severity(
         mut self,
@@ -335,6 +373,10 @@ impl PatchBuilder {
         self.msrc_severity = input;
         self
     }
+    /// <p>The severity of the patch, such as <code>Critical</code>, <code>Important</code>, or <code>Moderate</code>. Applies to Windows patches only.</p>
+    pub fn get_msrc_severity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.msrc_severity
+    }
     /// <p>The Microsoft Knowledge Base ID of the patch. Applies to Windows patches only.</p>
     pub fn kb_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kb_number = ::std::option::Option::Some(input.into());
@@ -344,6 +386,10 @@ impl PatchBuilder {
     pub fn set_kb_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kb_number = input;
         self
+    }
+    /// <p>The Microsoft Knowledge Base ID of the patch. Applies to Windows patches only.</p>
+    pub fn get_kb_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kb_number
     }
     /// <p>The ID of the Microsoft Security Response Center (MSRC) bulletin the patch is related to. For example, <code>MS14-045</code>. Applies to Windows patches only.</p>
     pub fn msrc_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -355,6 +401,10 @@ impl PatchBuilder {
         self.msrc_number = input;
         self
     }
+    /// <p>The ID of the Microsoft Security Response Center (MSRC) bulletin the patch is related to. For example, <code>MS14-045</code>. Applies to Windows patches only.</p>
+    pub fn get_msrc_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.msrc_number
+    }
     /// <p>The language of the patch if it's language-specific.</p>
     pub fn language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language = ::std::option::Option::Some(input.into());
@@ -364,6 +414,10 @@ impl PatchBuilder {
     pub fn set_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.language = input;
         self
+    }
+    /// <p>The language of the patch if it's language-specific.</p>
+    pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.language
     }
     /// Appends an item to `advisory_ids`.
     ///
@@ -384,6 +438,12 @@ impl PatchBuilder {
         self.advisory_ids = input;
         self
     }
+    /// <p>The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>. Applies to Linux-based managed nodes only.</p>
+    pub fn get_advisory_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.advisory_ids
+    }
     /// Appends an item to `bugzilla_ids`.
     ///
     /// To override the contents of this collection use [`set_bugzilla_ids`](Self::set_bugzilla_ids).
@@ -402,6 +462,12 @@ impl PatchBuilder {
     ) -> Self {
         self.bugzilla_ids = input;
         self
+    }
+    /// <p>The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to Linux-based managed nodes only.</p>
+    pub fn get_bugzilla_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.bugzilla_ids
     }
     /// Appends an item to `cve_ids`.
     ///
@@ -422,6 +488,10 @@ impl PatchBuilder {
         self.cve_ids = input;
         self
     }
+    /// <p>The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-2011-3192</code>. Applies to Linux-based managed nodes only.</p>
+    pub fn get_cve_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.cve_ids
+    }
     /// <p>The name of the patch. Applies to Linux-based managed nodes only.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -431,6 +501,10 @@ impl PatchBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the patch. Applies to Linux-based managed nodes only.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The epoch of the patch. For example in <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the epoch value is <code>20180914-2</code>. Applies to Linux-based managed nodes only.</p>
     pub fn epoch(mut self, input: i32) -> Self {
@@ -442,6 +516,10 @@ impl PatchBuilder {
         self.epoch = input;
         self
     }
+    /// <p>The epoch of the patch. For example in <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the epoch value is <code>20180914-2</code>. Applies to Linux-based managed nodes only.</p>
+    pub fn get_epoch(&self) -> &::std::option::Option<i32> {
+        &self.epoch
+    }
     /// <p>The version number of the patch. For example, in <code>example-pkg-1.710.10-2.7.abcd.x86_64</code>, the version number is indicated by <code>-1</code>. Applies to Linux-based managed nodes only.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -451,6 +529,10 @@ impl PatchBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version number of the patch. For example, in <code>example-pkg-1.710.10-2.7.abcd.x86_64</code>, the version number is indicated by <code>-1</code>. Applies to Linux-based managed nodes only.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// <p>The particular release of a patch. For example, in <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the release is <code>2.amaz1</code>. Applies to Linux-based managed nodes only.</p>
     pub fn release(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -462,6 +544,10 @@ impl PatchBuilder {
         self.release = input;
         self
     }
+    /// <p>The particular release of a patch. For example, in <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the release is <code>2.amaz1</code>. Applies to Linux-based managed nodes only.</p>
+    pub fn get_release(&self) -> &::std::option::Option<::std::string::String> {
+        &self.release
+    }
     /// <p>The architecture of the patch. For example, in <code>example-pkg-0.710.10-2.7.abcd.x86_64</code>, the architecture is indicated by <code>x86_64</code>. Applies to Linux-based managed nodes only.</p>
     pub fn arch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arch = ::std::option::Option::Some(input.into());
@@ -471,6 +557,10 @@ impl PatchBuilder {
     pub fn set_arch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arch = input;
         self
+    }
+    /// <p>The architecture of the patch. For example, in <code>example-pkg-0.710.10-2.7.abcd.x86_64</code>, the architecture is indicated by <code>x86_64</code>. Applies to Linux-based managed nodes only.</p>
+    pub fn get_arch(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arch
     }
     /// <p>The severity level of the patch. For example, <code>CRITICAL</code> or <code>MODERATE</code>.</p>
     pub fn severity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -482,6 +572,10 @@ impl PatchBuilder {
         self.severity = input;
         self
     }
+    /// <p>The severity level of the patch. For example, <code>CRITICAL</code> or <code>MODERATE</code>.</p>
+    pub fn get_severity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.severity
+    }
     /// <p>The source patch repository for the operating system and version, such as <code>trusty-security</code> for Ubuntu Server 14.04 LTE and <code>focal-security</code> for Ubuntu Server 20.04 LTE. Applies to Linux-based managed nodes only.</p>
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository = ::std::option::Option::Some(input.into());
@@ -491,6 +585,10 @@ impl PatchBuilder {
     pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository = input;
         self
+    }
+    /// <p>The source patch repository for the operating system and version, such as <code>trusty-security</code> for Ubuntu Server 14.04 LTE and <code>focal-security</code> for Ubuntu Server 20.04 LTE. Applies to Linux-based managed nodes only.</p>
+    pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository
     }
     /// Consumes the builder and constructs a [`Patch`](crate::types::Patch).
     pub fn build(self) -> crate::types::Patch {

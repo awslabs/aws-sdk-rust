@@ -104,6 +104,10 @@ impl GetExportOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the bot being exported.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The version of the bot being exported.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -113,6 +117,10 @@ impl GetExportOutputBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version of the bot being exported.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// <p>The type of the exported resource.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
@@ -127,6 +135,10 @@ impl GetExportOutputBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The type of the exported resource.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
+    }
     /// <p>The format of the exported data.</p>
     pub fn export_type(mut self, input: crate::types::ExportType) -> Self {
         self.export_type = ::std::option::Option::Some(input);
@@ -139,6 +151,10 @@ impl GetExportOutputBuilder {
     ) -> Self {
         self.export_type = input;
         self
+    }
+    /// <p>The format of the exported data.</p>
+    pub fn get_export_type(&self) -> &::std::option::Option<crate::types::ExportType> {
+        &self.export_type
     }
     /// <p>The status of the export. </p>
     /// <ul>
@@ -163,6 +179,15 @@ impl GetExportOutputBuilder {
         self.export_status = input;
         self
     }
+    /// <p>The status of the export. </p>
+    /// <ul>
+    /// <li> <p> <code>IN_PROGRESS</code> - The export is in progress.</p> </li>
+    /// <li> <p> <code>READY</code> - The export is complete.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The export could not be completed.</p> </li>
+    /// </ul>
+    pub fn get_export_status(&self) -> &::std::option::Option<crate::types::ExportStatus> {
+        &self.export_status
+    }
     /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to export the resource.</p>
     pub fn failure_reason(
         mut self,
@@ -179,6 +204,10 @@ impl GetExportOutputBuilder {
         self.failure_reason = input;
         self
     }
+    /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to export the resource.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
     /// <p>An S3 pre-signed URL that provides the location of the exported resource. The exported resource is a ZIP archive that contains the exported resource in JSON format. The structure of the archive may change. Your code should not rely on the archive structure.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
@@ -188,6 +217,10 @@ impl GetExportOutputBuilder {
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
+    }
+    /// <p>An S3 pre-signed URL that provides the location of the exported resource. The exported resource is a ZIP archive that contains the exported resource in JSON format. The structure of the archive may change. Your code should not rely on the archive structure.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

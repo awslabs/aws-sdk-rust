@@ -61,6 +61,12 @@ impl EvaluationResultBuilder {
         self.compliance_status = input;
         self
     }
+    /// <p>Describes an Amazon Web Services account's compliance with the Firewall Manager policy.</p>
+    pub fn get_compliance_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::PolicyComplianceStatusType> {
+        &self.compliance_status
+    }
     /// <p>The number of resources that are noncompliant with the specified policy. For WAF and Shield Advanced policies, a resource is considered noncompliant if it is not associated with the policy. For security group policies, a resource is considered noncompliant if it doesn't comply with the rules of the policy and remediation is disabled or not possible.</p>
     pub fn violator_count(mut self, input: i64) -> Self {
         self.violator_count = ::std::option::Option::Some(input);
@@ -71,6 +77,10 @@ impl EvaluationResultBuilder {
         self.violator_count = input;
         self
     }
+    /// <p>The number of resources that are noncompliant with the specified policy. For WAF and Shield Advanced policies, a resource is considered noncompliant if it is not associated with the policy. For security group policies, a resource is considered noncompliant if it doesn't comply with the rules of the policy and remediation is disabled or not possible.</p>
+    pub fn get_violator_count(&self) -> &::std::option::Option<i64> {
+        &self.violator_count
+    }
     /// <p>Indicates that over 100 resources are noncompliant with the Firewall Manager policy.</p>
     pub fn evaluation_limit_exceeded(mut self, input: bool) -> Self {
         self.evaluation_limit_exceeded = ::std::option::Option::Some(input);
@@ -80,6 +90,10 @@ impl EvaluationResultBuilder {
     pub fn set_evaluation_limit_exceeded(mut self, input: ::std::option::Option<bool>) -> Self {
         self.evaluation_limit_exceeded = input;
         self
+    }
+    /// <p>Indicates that over 100 resources are noncompliant with the Firewall Manager policy.</p>
+    pub fn get_evaluation_limit_exceeded(&self) -> &::std::option::Option<bool> {
+        &self.evaluation_limit_exceeded
     }
     /// Consumes the builder and constructs a [`EvaluationResult`](crate::types::EvaluationResult).
     pub fn build(self) -> crate::types::EvaluationResult {

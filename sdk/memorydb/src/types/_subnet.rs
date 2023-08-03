@@ -48,6 +48,10 @@ impl SubnetBuilder {
         self.identifier = input;
         self
     }
+    /// <p>The unique identifier for the subnet.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
+    }
     /// <p>The Availability Zone where the subnet resides</p>
     pub fn availability_zone(mut self, input: crate::types::AvailabilityZone) -> Self {
         self.availability_zone = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl SubnetBuilder {
     ) -> Self {
         self.availability_zone = input;
         self
+    }
+    /// <p>The Availability Zone where the subnet resides</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<crate::types::AvailabilityZone> {
+        &self.availability_zone
     }
     /// Consumes the builder and constructs a [`Subnet`](crate::types::Subnet).
     pub fn build(self) -> crate::types::Subnet {

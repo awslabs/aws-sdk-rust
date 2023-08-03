@@ -37,6 +37,13 @@ impl ModifyClusterDbRevisionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyClusterDbRevision as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::modify_cluster_db_revision::builders::ModifyClusterDbRevisionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +142,11 @@ impl ModifyClusterDbRevisionFluentBuilder {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
+    /// <p>The unique identifier of a cluster whose database revision you want to modify. </p>
+    /// <p>Example: <code>examplecluster</code> </p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_identifier()
+    }
     /// <p>The identifier of the database revision. You can retrieve this value from the response to the <code>DescribeClusterDbRevisions</code> request.</p>
     pub fn revision_target(
         mut self,
@@ -150,5 +162,9 @@ impl ModifyClusterDbRevisionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_revision_target(input);
         self
+    }
+    /// <p>The identifier of the database revision. You can retrieve this value from the response to the <code>DescribeClusterDbRevisions</code> request.</p>
+    pub fn get_revision_target(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_revision_target()
     }
 }

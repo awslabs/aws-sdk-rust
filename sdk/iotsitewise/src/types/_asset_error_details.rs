@@ -56,6 +56,10 @@ impl AssetErrorDetailsBuilder {
         self.asset_id = input;
         self
     }
+    /// <p>The ID of the asset.</p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_id
+    }
     /// <p>The error code.</p>
     pub fn code(mut self, input: crate::types::AssetErrorCode) -> Self {
         self.code = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl AssetErrorDetailsBuilder {
         self.code = input;
         self
     }
+    /// <p>The error code.</p>
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::AssetErrorCode> {
+        &self.code
+    }
     /// <p>The error message.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl AssetErrorDetailsBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The error message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`AssetErrorDetails`](crate::types::AssetErrorDetails).
     pub fn build(self) -> crate::types::AssetErrorDetails {

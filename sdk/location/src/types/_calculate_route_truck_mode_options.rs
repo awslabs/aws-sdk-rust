@@ -76,6 +76,12 @@ impl CalculateRouteTruckModeOptionsBuilder {
         self.avoid_ferries = input;
         self
     }
+    /// <p>Avoids ferries when calculating routes.</p>
+    /// <p>Default Value: <code>false</code> </p>
+    /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
+    pub fn get_avoid_ferries(&self) -> &::std::option::Option<bool> {
+        &self.avoid_ferries
+    }
     /// <p>Avoids tolls when calculating routes.</p>
     /// <p>Default Value: <code>false</code> </p>
     /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
@@ -90,6 +96,12 @@ impl CalculateRouteTruckModeOptionsBuilder {
         self.avoid_tolls = input;
         self
     }
+    /// <p>Avoids tolls when calculating routes.</p>
+    /// <p>Default Value: <code>false</code> </p>
+    /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
+    pub fn get_avoid_tolls(&self) -> &::std::option::Option<bool> {
+        &self.avoid_tolls
+    }
     /// <p>Specifies the truck's dimension specifications including length, height, width, and unit of measurement. Used to avoid roads that can't support the truck's dimensions.</p>
     pub fn dimensions(mut self, input: crate::types::TruckDimensions) -> Self {
         self.dimensions = ::std::option::Option::Some(input);
@@ -103,6 +115,10 @@ impl CalculateRouteTruckModeOptionsBuilder {
         self.dimensions = input;
         self
     }
+    /// <p>Specifies the truck's dimension specifications including length, height, width, and unit of measurement. Used to avoid roads that can't support the truck's dimensions.</p>
+    pub fn get_dimensions(&self) -> &::std::option::Option<crate::types::TruckDimensions> {
+        &self.dimensions
+    }
     /// <p>Specifies the truck's weight specifications including total weight and unit of measurement. Used to avoid roads that can't support the truck's weight.</p>
     pub fn weight(mut self, input: crate::types::TruckWeight) -> Self {
         self.weight = ::std::option::Option::Some(input);
@@ -112,6 +128,10 @@ impl CalculateRouteTruckModeOptionsBuilder {
     pub fn set_weight(mut self, input: ::std::option::Option<crate::types::TruckWeight>) -> Self {
         self.weight = input;
         self
+    }
+    /// <p>Specifies the truck's weight specifications including total weight and unit of measurement. Used to avoid roads that can't support the truck's weight.</p>
+    pub fn get_weight(&self) -> &::std::option::Option<crate::types::TruckWeight> {
+        &self.weight
     }
     /// Consumes the builder and constructs a [`CalculateRouteTruckModeOptions`](crate::types::CalculateRouteTruckModeOptions).
     pub fn build(self) -> crate::types::CalculateRouteTruckModeOptions {

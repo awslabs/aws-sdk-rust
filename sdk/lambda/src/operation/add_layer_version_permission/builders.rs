@@ -37,6 +37,10 @@ impl AddLayerVersionPermissionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AddLayerVersionPermission as a reference.
+    pub fn as_input(&self) -> &crate::operation::add_layer_version_permission::builders::AddLayerVersionPermissionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl AddLayerVersionPermissionFluentBuilder {
         self.inner = self.inner.set_layer_name(input);
         self
     }
+    /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
+    pub fn get_layer_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_layer_name()
+    }
     /// <p>The version number.</p>
     pub fn version_number(mut self, input: i64) -> Self {
         self.inner = self.inner.version_number(input);
@@ -136,6 +144,10 @@ impl AddLayerVersionPermissionFluentBuilder {
     pub fn set_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_version_number(input);
         self
+    }
+    /// <p>The version number.</p>
+    pub fn get_version_number(&self) -> &::std::option::Option<i64> {
+        self.inner.get_version_number()
     }
     /// <p>An identifier that distinguishes the policy from others on the same layer version.</p>
     pub fn statement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -147,6 +159,10 @@ impl AddLayerVersionPermissionFluentBuilder {
         self.inner = self.inner.set_statement_id(input);
         self
     }
+    /// <p>An identifier that distinguishes the policy from others on the same layer version.</p>
+    pub fn get_statement_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_statement_id()
+    }
     /// <p>The API action that grants access to the layer. For example, <code>lambda:GetLayerVersion</code>.</p>
     pub fn action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.action(input.into());
@@ -157,6 +173,10 @@ impl AddLayerVersionPermissionFluentBuilder {
         self.inner = self.inner.set_action(input);
         self
     }
+    /// <p>The API action that grants access to the layer. For example, <code>lambda:GetLayerVersion</code>.</p>
+    pub fn get_action(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_action()
+    }
     /// <p>An account ID, or <code>*</code> to grant layer usage permission to all accounts in an organization, or all Amazon Web Services accounts (if <code>organizationId</code> is not specified). For the last case, make sure that you really do want all Amazon Web Services accounts to have usage permission to this layer. </p>
     pub fn principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.principal(input.into());
@@ -166,6 +186,10 @@ impl AddLayerVersionPermissionFluentBuilder {
     pub fn set_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_principal(input);
         self
+    }
+    /// <p>An account ID, or <code>*</code> to grant layer usage permission to all accounts in an organization, or all Amazon Web Services accounts (if <code>organizationId</code> is not specified). For the last case, make sure that you really do want all Amazon Web Services accounts to have usage permission to this layer. </p>
+    pub fn get_principal(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_principal()
     }
     /// <p>With the principal set to <code>*</code>, grant permission to all accounts in the specified organization.</p>
     pub fn organization_id(
@@ -183,6 +207,10 @@ impl AddLayerVersionPermissionFluentBuilder {
         self.inner = self.inner.set_organization_id(input);
         self
     }
+    /// <p>With the principal set to <code>*</code>, grant permission to all accounts in the specified organization.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
+    }
     /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.revision_id(input.into());
@@ -192,5 +220,9 @@ impl AddLayerVersionPermissionFluentBuilder {
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_revision_id(input);
         self
+    }
+    /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_revision_id()
     }
 }

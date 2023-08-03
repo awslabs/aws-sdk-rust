@@ -40,6 +40,10 @@ impl DataSourceBuilder {
         self.s3_config = input;
         self
     }
+    /// <p>The path to the data stored in an Amazon Simple Storage Service (Amazon S3) bucket along with the credentials to access the data.</p>
+    pub fn get_s3_config(&self) -> &::std::option::Option<crate::types::S3Config> {
+        &self.s3_config
+    }
     /// Consumes the builder and constructs a [`DataSource`](crate::types::DataSource).
     pub fn build(self) -> crate::types::DataSource {
         crate::types::DataSource {

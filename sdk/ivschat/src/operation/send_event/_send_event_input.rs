@@ -69,6 +69,10 @@ impl SendEventInputBuilder {
         self.room_identifier = input;
         self
     }
+    /// <p>Identifier of the room to which the event will be sent. Currently this must be an ARN.</p>
+    pub fn get_room_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.room_identifier
+    }
     /// <p>Application-defined name of the event to send to clients.</p>
     pub fn event_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_name = ::std::option::Option::Some(input.into());
@@ -78,6 +82,10 @@ impl SendEventInputBuilder {
     pub fn set_event_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_name = input;
         self
+    }
+    /// <p>Application-defined name of the event to send to clients.</p>
+    pub fn get_event_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_name
     }
     /// Adds a key-value pair to `attributes`.
     ///
@@ -103,6 +111,14 @@ impl SendEventInputBuilder {
     ) -> Self {
         self.attributes = input;
         self
+    }
+    /// <p>Application-defined metadata to attach to the event sent to clients. The maximum length of the metadata is 1 KB total.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.attributes
     }
     /// Consumes the builder and constructs a [`SendEventInput`](crate::operation::send_event::SendEventInput).
     pub fn build(

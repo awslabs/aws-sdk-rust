@@ -67,6 +67,14 @@ impl UtteranceDataSortByBuilder {
         self.name = input;
         self
     }
+    /// <p>The measure by which to sort the utterance analytics data.</p>
+    /// <ul>
+    /// <li> <p> <code>Count</code> – The number of utterances.</p> </li>
+    /// <li> <p> <code>UtteranceTimestamp</code> – The date and time of the utterance.</p> </li>
+    /// </ul>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::AnalyticsUtteranceSortByName> {
+        &self.name
+    }
     /// <p>Specifies whether to sort the results in ascending or descending order.</p>
     pub fn order(mut self, input: crate::types::AnalyticsSortOrder) -> Self {
         self.order = ::std::option::Option::Some(input);
@@ -79,6 +87,10 @@ impl UtteranceDataSortByBuilder {
     ) -> Self {
         self.order = input;
         self
+    }
+    /// <p>Specifies whether to sort the results in ascending or descending order.</p>
+    pub fn get_order(&self) -> &::std::option::Option<crate::types::AnalyticsSortOrder> {
+        &self.order
     }
     /// Consumes the builder and constructs a [`UtteranceDataSortBy`](crate::types::UtteranceDataSortBy).
     pub fn build(self) -> crate::types::UtteranceDataSortBy {

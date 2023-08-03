@@ -94,6 +94,10 @@ impl DescribeCacheOutputBuilder {
         self.gateway_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
+    }
     /// Appends an item to `disk_ids`.
     ///
     /// To override the contents of this collection use [`set_disk_ids`](Self::set_disk_ids).
@@ -113,6 +117,10 @@ impl DescribeCacheOutputBuilder {
         self.disk_ids = input;
         self
     }
+    /// <p>An array of strings that identify disks that are to be configured as working storage. Each string has a minimum length of 1 and maximum length of 300. You can get the disk IDs from the <code>ListLocalDisks</code> API.</p>
+    pub fn get_disk_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.disk_ids
+    }
     /// <p>The amount of cache in bytes allocated to a gateway.</p>
     pub fn cache_allocated_in_bytes(mut self, input: i64) -> Self {
         self.cache_allocated_in_bytes = ::std::option::Option::Some(input);
@@ -122,6 +130,10 @@ impl DescribeCacheOutputBuilder {
     pub fn set_cache_allocated_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.cache_allocated_in_bytes = input;
         self
+    }
+    /// <p>The amount of cache in bytes allocated to a gateway.</p>
+    pub fn get_cache_allocated_in_bytes(&self) -> &::std::option::Option<i64> {
+        &self.cache_allocated_in_bytes
     }
     /// <p>Percent use of the gateway's cache storage. This metric applies only to the gateway-cached volume setup. The sample is taken at the end of the reporting period.</p>
     pub fn cache_used_percentage(mut self, input: f64) -> Self {
@@ -133,6 +145,10 @@ impl DescribeCacheOutputBuilder {
         self.cache_used_percentage = input;
         self
     }
+    /// <p>Percent use of the gateway's cache storage. This metric applies only to the gateway-cached volume setup. The sample is taken at the end of the reporting period.</p>
+    pub fn get_cache_used_percentage(&self) -> &::std::option::Option<f64> {
+        &self.cache_used_percentage
+    }
     /// <p>The file share's contribution to the overall percentage of the gateway's cache that has not been persisted to Amazon Web Services. The sample is taken at the end of the reporting period.</p>
     pub fn cache_dirty_percentage(mut self, input: f64) -> Self {
         self.cache_dirty_percentage = ::std::option::Option::Some(input);
@@ -142,6 +158,10 @@ impl DescribeCacheOutputBuilder {
     pub fn set_cache_dirty_percentage(mut self, input: ::std::option::Option<f64>) -> Self {
         self.cache_dirty_percentage = input;
         self
+    }
+    /// <p>The file share's contribution to the overall percentage of the gateway's cache that has not been persisted to Amazon Web Services. The sample is taken at the end of the reporting period.</p>
+    pub fn get_cache_dirty_percentage(&self) -> &::std::option::Option<f64> {
+        &self.cache_dirty_percentage
     }
     /// <p>Percent of application read operations from the file shares that are served from cache. The sample is taken at the end of the reporting period.</p>
     pub fn cache_hit_percentage(mut self, input: f64) -> Self {
@@ -153,6 +173,10 @@ impl DescribeCacheOutputBuilder {
         self.cache_hit_percentage = input;
         self
     }
+    /// <p>Percent of application read operations from the file shares that are served from cache. The sample is taken at the end of the reporting period.</p>
+    pub fn get_cache_hit_percentage(&self) -> &::std::option::Option<f64> {
+        &self.cache_hit_percentage
+    }
     /// <p>Percent of application read operations from the file shares that are not served from cache. The sample is taken at the end of the reporting period.</p>
     pub fn cache_miss_percentage(mut self, input: f64) -> Self {
         self.cache_miss_percentage = ::std::option::Option::Some(input);
@@ -162,6 +186,10 @@ impl DescribeCacheOutputBuilder {
     pub fn set_cache_miss_percentage(mut self, input: ::std::option::Option<f64>) -> Self {
         self.cache_miss_percentage = input;
         self
+    }
+    /// <p>Percent of application read operations from the file shares that are not served from cache. The sample is taken at the end of the reporting period.</p>
+    pub fn get_cache_miss_percentage(&self) -> &::std::option::Option<f64> {
+        &self.cache_miss_percentage
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

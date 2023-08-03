@@ -56,6 +56,12 @@ impl DescribeValidDbInstanceModificationsOutputBuilder {
         self.valid_db_instance_modifications_message = input;
         self
     }
+    /// <p>Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action. You can use this information when you call <code>ModifyDBInstance</code>. </p>
+    pub fn get_valid_db_instance_modifications_message(
+        &self,
+    ) -> &::std::option::Option<crate::types::ValidDbInstanceModificationsMessage> {
+        &self.valid_db_instance_modifications_message
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

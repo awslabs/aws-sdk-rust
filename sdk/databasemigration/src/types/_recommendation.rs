@@ -90,6 +90,10 @@ impl RecommendationBuilder {
         self.database_id = input;
         self
     }
+    /// <p>The identifier of the source database for which Fleet Advisor provided this recommendation.</p>
+    pub fn get_database_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_id
+    }
     /// <p>The name of the target engine. Valid values include <code>"rds-aurora-mysql"</code>, <code>"rds-aurora-postgresql"</code>, <code>"rds-mysql"</code>, <code>"rds-oracle"</code>, <code>"rds-sql-server"</code>, and <code>"rds-postgresql"</code>.</p>
     pub fn engine_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_name = ::std::option::Option::Some(input.into());
@@ -99,6 +103,10 @@ impl RecommendationBuilder {
     pub fn set_engine_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_name = input;
         self
+    }
+    /// <p>The name of the target engine. Valid values include <code>"rds-aurora-mysql"</code>, <code>"rds-aurora-postgresql"</code>, <code>"rds-mysql"</code>, <code>"rds-oracle"</code>, <code>"rds-sql-server"</code>, and <code>"rds-postgresql"</code>.</p>
+    pub fn get_engine_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_name
     }
     /// <p>The date when Fleet Advisor created the target engine recommendation.</p>
     pub fn created_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -110,6 +118,10 @@ impl RecommendationBuilder {
         self.created_date = input;
         self
     }
+    /// <p>The date when Fleet Advisor created the target engine recommendation.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_date
+    }
     /// <p>The status of the target engine recommendation. Valid values include <code>"alternate"</code>, <code>"in-progress"</code>, <code>"not-viable"</code>, and <code>"recommended"</code>.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -120,6 +132,10 @@ impl RecommendationBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the target engine recommendation. Valid values include <code>"alternate"</code>, <code>"in-progress"</code>, <code>"not-viable"</code>, and <code>"recommended"</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>Indicates that this target is the rightsized migration destination.</p>
     pub fn preferred(mut self, input: bool) -> Self {
         self.preferred = ::std::option::Option::Some(input);
@@ -129,6 +145,10 @@ impl RecommendationBuilder {
     pub fn set_preferred(mut self, input: ::std::option::Option<bool>) -> Self {
         self.preferred = input;
         self
+    }
+    /// <p>Indicates that this target is the rightsized migration destination.</p>
+    pub fn get_preferred(&self) -> &::std::option::Option<bool> {
+        &self.preferred
     }
     /// <p>The settings in JSON format for the preferred target engine parameters. These parameters include capacity, resource utilization, and the usage type (production, development, or testing).</p>
     pub fn settings(mut self, input: crate::types::RecommendationSettings) -> Self {
@@ -143,6 +163,10 @@ impl RecommendationBuilder {
         self.settings = input;
         self
     }
+    /// <p>The settings in JSON format for the preferred target engine parameters. These parameters include capacity, resource utilization, and the usage type (production, development, or testing).</p>
+    pub fn get_settings(&self) -> &::std::option::Option<crate::types::RecommendationSettings> {
+        &self.settings
+    }
     /// <p>The recommendation of a target engine for the specified source database.</p>
     pub fn data(mut self, input: crate::types::RecommendationData) -> Self {
         self.data = ::std::option::Option::Some(input);
@@ -155,6 +179,10 @@ impl RecommendationBuilder {
     ) -> Self {
         self.data = input;
         self
+    }
+    /// <p>The recommendation of a target engine for the specified source database.</p>
+    pub fn get_data(&self) -> &::std::option::Option<crate::types::RecommendationData> {
+        &self.data
     }
     /// Consumes the builder and constructs a [`Recommendation`](crate::types::Recommendation).
     pub fn build(self) -> crate::types::Recommendation {

@@ -50,6 +50,10 @@ impl GetArchiveRuleOutputBuilder {
         self.archive_rule = input;
         self
     }
+    /// <p>Contains information about an archive rule.</p>
+    pub fn get_archive_rule(&self) -> &::std::option::Option<crate::types::ArchiveRuleSummary> {
+        &self.archive_rule
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

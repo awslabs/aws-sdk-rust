@@ -83,6 +83,12 @@ impl AxisDisplayOptionsBuilder {
         self.tick_label_options = input;
         self
     }
+    /// <p>The tick label options of an axis.</p>
+    pub fn get_tick_label_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::AxisTickLabelOptions> {
+        &self.tick_label_options
+    }
     /// <p>Determines whether or not the axis line is visible.</p>
     pub fn axis_line_visibility(mut self, input: crate::types::Visibility) -> Self {
         self.axis_line_visibility = ::std::option::Option::Some(input);
@@ -95,6 +101,10 @@ impl AxisDisplayOptionsBuilder {
     ) -> Self {
         self.axis_line_visibility = input;
         self
+    }
+    /// <p>Determines whether or not the axis line is visible.</p>
+    pub fn get_axis_line_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.axis_line_visibility
     }
     /// <p>Determines whether or not the grid line is visible.</p>
     pub fn grid_line_visibility(mut self, input: crate::types::Visibility) -> Self {
@@ -109,6 +119,10 @@ impl AxisDisplayOptionsBuilder {
         self.grid_line_visibility = input;
         self
     }
+    /// <p>Determines whether or not the grid line is visible.</p>
+    pub fn get_grid_line_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.grid_line_visibility
+    }
     /// <p>The data options for an axis.</p>
     pub fn data_options(mut self, input: crate::types::AxisDataOptions) -> Self {
         self.data_options = ::std::option::Option::Some(input);
@@ -121,6 +135,10 @@ impl AxisDisplayOptionsBuilder {
     ) -> Self {
         self.data_options = input;
         self
+    }
+    /// <p>The data options for an axis.</p>
+    pub fn get_data_options(&self) -> &::std::option::Option<crate::types::AxisDataOptions> {
+        &self.data_options
     }
     /// <p>The scroll bar options for an axis.</p>
     pub fn scrollbar_options(mut self, input: crate::types::ScrollBarOptions) -> Self {
@@ -135,6 +153,10 @@ impl AxisDisplayOptionsBuilder {
         self.scrollbar_options = input;
         self
     }
+    /// <p>The scroll bar options for an axis.</p>
+    pub fn get_scrollbar_options(&self) -> &::std::option::Option<crate::types::ScrollBarOptions> {
+        &self.scrollbar_options
+    }
     /// <p>The offset value that determines the starting placement of the axis within a visual's bounds.</p>
     pub fn axis_offset(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.axis_offset = ::std::option::Option::Some(input.into());
@@ -144,6 +166,10 @@ impl AxisDisplayOptionsBuilder {
     pub fn set_axis_offset(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.axis_offset = input;
         self
+    }
+    /// <p>The offset value that determines the starting placement of the axis within a visual's bounds.</p>
+    pub fn get_axis_offset(&self) -> &::std::option::Option<::std::string::String> {
+        &self.axis_offset
     }
     /// Consumes the builder and constructs a [`AxisDisplayOptions`](crate::types::AxisDisplayOptions).
     pub fn build(self) -> crate::types::AxisDisplayOptions {

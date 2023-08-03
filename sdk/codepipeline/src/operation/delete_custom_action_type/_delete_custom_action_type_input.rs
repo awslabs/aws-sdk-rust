@@ -61,6 +61,10 @@ impl DeleteCustomActionTypeInputBuilder {
         self.category = input;
         self
     }
+    /// <p>The category of the custom action that you want to delete, such as source or deploy.</p>
+    pub fn get_category(&self) -> &::std::option::Option<crate::types::ActionCategory> {
+        &self.category
+    }
     /// <p>The provider of the service used in the custom action, such as CodeDeploy.</p>
     pub fn provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl DeleteCustomActionTypeInputBuilder {
         self.provider = input;
         self
     }
+    /// <p>The provider of the service used in the custom action, such as CodeDeploy.</p>
+    pub fn get_provider(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provider
+    }
     /// <p>The version of the custom action to delete.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -80,6 +88,10 @@ impl DeleteCustomActionTypeInputBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version of the custom action to delete.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`DeleteCustomActionTypeInput`](crate::operation::delete_custom_action_type::DeleteCustomActionTypeInput).
     pub fn build(

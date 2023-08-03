@@ -36,6 +36,10 @@ impl QuerySchemaVersionMetadataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the QuerySchemaVersionMetadata as a reference.
+    pub fn as_input(&self) -> &crate::operation::query_schema_version_metadata::builders::QuerySchemaVersionMetadataInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl QuerySchemaVersionMetadataFluentBuilder {
         self.inner = self.inner.set_schema_id(input);
         self
     }
+    /// <p>A wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
+    pub fn get_schema_id(&self) -> &::std::option::Option<crate::types::SchemaId> {
+        self.inner.get_schema_id()
+    }
     /// <p>The version number of the schema.</p>
     pub fn schema_version_number(mut self, input: crate::types::SchemaVersionNumber) -> Self {
         self.inner = self.inner.schema_version_number(input);
@@ -138,6 +146,12 @@ impl QuerySchemaVersionMetadataFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_schema_version_number(input);
         self
+    }
+    /// <p>The version number of the schema.</p>
+    pub fn get_schema_version_number(
+        &self,
+    ) -> &::std::option::Option<crate::types::SchemaVersionNumber> {
+        self.inner.get_schema_version_number()
     }
     /// <p>The unique version ID of the schema version.</p>
     pub fn schema_version_id(
@@ -154,6 +168,10 @@ impl QuerySchemaVersionMetadataFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_schema_version_id(input);
         self
+    }
+    /// <p>The unique version ID of the schema version.</p>
+    pub fn get_schema_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schema_version_id()
     }
     /// Appends an item to `MetadataList`.
     ///
@@ -172,6 +190,12 @@ impl QuerySchemaVersionMetadataFluentBuilder {
         self.inner = self.inner.set_metadata_list(input);
         self
     }
+    /// <p>Search key-value pairs for metadata, if they are not provided all the metadata information will be fetched.</p>
+    pub fn get_metadata_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetadataKeyValuePair>> {
+        self.inner.get_metadata_list()
+    }
     /// <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -182,6 +206,10 @@ impl QuerySchemaVersionMetadataFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>A continuation token, if this is a continuation call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -191,5 +219,9 @@ impl QuerySchemaVersionMetadataFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A continuation token, if this is a continuation call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

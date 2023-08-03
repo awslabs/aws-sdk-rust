@@ -58,6 +58,10 @@ impl ListReadSetActivationJobsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A pagination token that's included if more results are available.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `activation_jobs`.
     ///
     /// To override the contents of this collection use [`set_activation_jobs`](Self::set_activation_jobs).
@@ -76,6 +80,12 @@ impl ListReadSetActivationJobsOutputBuilder {
     ) -> Self {
         self.activation_jobs = input;
         self
+    }
+    /// <p>A list of jobs.</p>
+    pub fn get_activation_jobs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ActivateReadSetJobItem>> {
+        &self.activation_jobs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

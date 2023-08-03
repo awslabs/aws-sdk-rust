@@ -48,6 +48,10 @@ impl EngineVersionsSummaryBuilder {
         self.engine_type = input;
         self
     }
+    /// <p>The type of target platform for the application.</p>
+    pub fn get_engine_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_type
+    }
     /// <p>The version of the engine type used by the application.</p>
     pub fn engine_version(
         mut self,
@@ -63,6 +67,10 @@ impl EngineVersionsSummaryBuilder {
     ) -> Self {
         self.engine_version = input;
         self
+    }
+    /// <p>The version of the engine type used by the application.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
     }
     /// Consumes the builder and constructs a [`EngineVersionsSummary`](crate::types::EngineVersionsSummary).
     pub fn build(self) -> crate::types::EngineVersionsSummary {

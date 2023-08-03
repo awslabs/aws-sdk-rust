@@ -49,6 +49,12 @@ impl TemplateActionsRequestFiltersBuilder {
         self.action_i_ds = input;
         self
     }
+    /// <p>Action IDs to filter template post migration custom actions by.</p>
+    pub fn get_action_i_ds(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.action_i_ds
+    }
     /// Consumes the builder and constructs a [`TemplateActionsRequestFilters`](crate::types::TemplateActionsRequestFilters).
     pub fn build(self) -> crate::types::TemplateActionsRequestFilters {
         crate::types::TemplateActionsRequestFilters {

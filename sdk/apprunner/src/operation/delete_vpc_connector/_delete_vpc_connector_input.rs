@@ -50,6 +50,11 @@ impl DeleteVpcConnectorInputBuilder {
         self.vpc_connector_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want to delete.</p>
+    /// <p>The ARN must be a full VPC connector ARN.</p>
+    pub fn get_vpc_connector_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_connector_arn
+    }
     /// Consumes the builder and constructs a [`DeleteVpcConnectorInput`](crate::operation::delete_vpc_connector::DeleteVpcConnectorInput).
     pub fn build(
         self,

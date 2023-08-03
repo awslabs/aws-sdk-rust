@@ -83,6 +83,10 @@ impl SchemaSummaryBuilder {
         self.last_modified = input;
         self
     }
+    /// <p>The date and time that schema was modified.</p>
+    pub fn get_last_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified
+    }
     /// <p>The ARN of the schema.</p>
     pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_arn = ::std::option::Option::Some(input.into());
@@ -93,6 +97,10 @@ impl SchemaSummaryBuilder {
         self.schema_arn = input;
         self
     }
+    /// <p>The ARN of the schema.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_arn
+    }
     /// <p>The name of the schema.</p>
     pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_name = ::std::option::Option::Some(input.into());
@@ -102,6 +110,10 @@ impl SchemaSummaryBuilder {
     pub fn set_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_name = input;
         self
+    }
+    /// <p>The name of the schema.</p>
+    pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_name
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -128,6 +140,14 @@ impl SchemaSummaryBuilder {
         self.tags = input;
         self
     }
+    /// <p>Tags associated with the schema.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The number of versions available for the schema.</p>
     pub fn version_count(mut self, input: i64) -> Self {
         self.version_count = ::std::option::Option::Some(input);
@@ -137,6 +157,10 @@ impl SchemaSummaryBuilder {
     pub fn set_version_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.version_count = input;
         self
+    }
+    /// <p>The number of versions available for the schema.</p>
+    pub fn get_version_count(&self) -> &::std::option::Option<i64> {
+        &self.version_count
     }
     /// Consumes the builder and constructs a [`SchemaSummary`](crate::types::SchemaSummary).
     pub fn build(self) -> crate::types::SchemaSummary {

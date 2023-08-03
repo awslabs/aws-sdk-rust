@@ -94,6 +94,10 @@ impl InvalidRequestExceptionBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
+    #[allow(missing_docs)] // documentation missing in model
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
         self
@@ -102,6 +106,10 @@ impl InvalidRequestExceptionBuilder {
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
     }
     /// Appends an item to `required_parameters`.
     ///
@@ -125,6 +133,12 @@ impl InvalidRequestExceptionBuilder {
         self.required_parameters = input;
         self
     }
+    /// <p>The request omitted one or more required parameters.</p>
+    pub fn get_required_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.required_parameters
+    }
     /// Appends an item to `mutually_exclusive_parameters`.
     ///
     /// To override the contents of this collection use [`set_mutually_exclusive_parameters`](Self::set_mutually_exclusive_parameters).
@@ -146,6 +160,12 @@ impl InvalidRequestExceptionBuilder {
     ) -> Self {
         self.mutually_exclusive_parameters = input;
         self
+    }
+    /// <p>The request included parameters that cannot be provided together.</p>
+    pub fn get_mutually_exclusive_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.mutually_exclusive_parameters
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

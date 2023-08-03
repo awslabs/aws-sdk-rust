@@ -54,6 +54,10 @@ impl UpdateConfigurationSetReputationMetricsEnabledInputBuilder {
         self.configuration_set_name = input;
         self
     }
+    /// <p>The name of the configuration set that you want to update.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set_name
+    }
     /// <p>Describes whether or not Amazon SES will publish reputation metrics for the configuration set, such as bounce and complaint rates, to Amazon CloudWatch.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl UpdateConfigurationSetReputationMetricsEnabledInputBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>Describes whether or not Amazon SES will publish reputation metrics for the configuration set, such as bounce and complaint rates, to Amazon CloudWatch.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// Consumes the builder and constructs a [`UpdateConfigurationSetReputationMetricsEnabledInput`](crate::operation::update_configuration_set_reputation_metrics_enabled::UpdateConfigurationSetReputationMetricsEnabledInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_configuration_set_reputation_metrics_enabled::UpdateConfigurationSetReputationMetricsEnabledInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -41,6 +41,10 @@ impl DeleteProtocolsListInputBuilder {
         self.list_id = input;
         self
     }
+    /// <p>The ID of the protocols list that you want to delete. You can retrieve this ID from <code>PutProtocolsList</code>, <code>ListProtocolsLists</code>, and <code>GetProtocolsLost</code>.</p>
+    pub fn get_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.list_id
+    }
     /// Consumes the builder and constructs a [`DeleteProtocolsListInput`](crate::operation::delete_protocols_list::DeleteProtocolsListInput).
     pub fn build(
         self,

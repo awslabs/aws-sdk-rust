@@ -75,6 +75,18 @@ impl GetContextKeysForCustomPolicyInputBuilder {
         self.policy_input_list = input;
         self
     }
+    /// <p>A list of policies for which you want the list of context keys referenced in those policies. Each document is specified as a string containing the complete, valid JSON text of an IAM policy.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following:</p>
+    /// <ul>
+    /// <li> <p>Any printable ASCII character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
+    /// <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>
+    /// <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>
+    /// </ul>
+    pub fn get_policy_input_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.policy_input_list
+    }
     /// Consumes the builder and constructs a [`GetContextKeysForCustomPolicyInput`](crate::operation::get_context_keys_for_custom_policy::GetContextKeysForCustomPolicyInput).
     pub fn build(
         self,

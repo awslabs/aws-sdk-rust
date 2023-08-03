@@ -112,6 +112,10 @@ impl UpdateLaunchConfigurationOutputBuilder {
         self.source_server_id = input;
         self
     }
+    /// <p>The ID of the Source Server for this launch configuration.</p>
+    pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_server_id
+    }
     /// <p>The name of the launch configuration.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -121,6 +125,10 @@ impl UpdateLaunchConfigurationOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the launch configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The EC2 launch template ID of this launch configuration.</p>
     pub fn ec2_launch_template_id(
@@ -138,6 +146,10 @@ impl UpdateLaunchConfigurationOutputBuilder {
         self.ec2_launch_template_id = input;
         self
     }
+    /// <p>The EC2 launch template ID of this launch configuration.</p>
+    pub fn get_ec2_launch_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ec2_launch_template_id
+    }
     /// <p>The state of the Recovery Instance in EC2 after the recovery operation.</p>
     pub fn launch_disposition(mut self, input: crate::types::LaunchDisposition) -> Self {
         self.launch_disposition = ::std::option::Option::Some(input);
@@ -150,6 +162,12 @@ impl UpdateLaunchConfigurationOutputBuilder {
     ) -> Self {
         self.launch_disposition = input;
         self
+    }
+    /// <p>The state of the Recovery Instance in EC2 after the recovery operation.</p>
+    pub fn get_launch_disposition(
+        &self,
+    ) -> &::std::option::Option<crate::types::LaunchDisposition> {
+        &self.launch_disposition
     }
     /// <p>Whether Elastic Disaster Recovery should try to automatically choose the instance type that best matches the OS, CPU, and RAM of your Source Server.</p>
     pub fn target_instance_type_right_sizing_method(
@@ -167,6 +185,12 @@ impl UpdateLaunchConfigurationOutputBuilder {
         self.target_instance_type_right_sizing_method = input;
         self
     }
+    /// <p>Whether Elastic Disaster Recovery should try to automatically choose the instance type that best matches the OS, CPU, and RAM of your Source Server.</p>
+    pub fn get_target_instance_type_right_sizing_method(
+        &self,
+    ) -> &::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod> {
+        &self.target_instance_type_right_sizing_method
+    }
     /// <p>Whether we should copy the Private IP of the Source Server to the Recovery Instance.</p>
     pub fn copy_private_ip(mut self, input: bool) -> Self {
         self.copy_private_ip = ::std::option::Option::Some(input);
@@ -176,6 +200,10 @@ impl UpdateLaunchConfigurationOutputBuilder {
     pub fn set_copy_private_ip(mut self, input: ::std::option::Option<bool>) -> Self {
         self.copy_private_ip = input;
         self
+    }
+    /// <p>Whether we should copy the Private IP of the Source Server to the Recovery Instance.</p>
+    pub fn get_copy_private_ip(&self) -> &::std::option::Option<bool> {
+        &self.copy_private_ip
     }
     /// <p>Whether we want to copy the tags of the Source Server to the EC2 machine of the Recovery Instance.</p>
     pub fn copy_tags(mut self, input: bool) -> Self {
@@ -187,6 +215,10 @@ impl UpdateLaunchConfigurationOutputBuilder {
         self.copy_tags = input;
         self
     }
+    /// <p>Whether we want to copy the tags of the Source Server to the EC2 machine of the Recovery Instance.</p>
+    pub fn get_copy_tags(&self) -> &::std::option::Option<bool> {
+        &self.copy_tags
+    }
     /// <p>The licensing configuration to be used for this launch configuration.</p>
     pub fn licensing(mut self, input: crate::types::Licensing) -> Self {
         self.licensing = ::std::option::Option::Some(input);
@@ -196,6 +228,10 @@ impl UpdateLaunchConfigurationOutputBuilder {
     pub fn set_licensing(mut self, input: ::std::option::Option<crate::types::Licensing>) -> Self {
         self.licensing = input;
         self
+    }
+    /// <p>The licensing configuration to be used for this launch configuration.</p>
+    pub fn get_licensing(&self) -> &::std::option::Option<crate::types::Licensing> {
+        &self.licensing
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

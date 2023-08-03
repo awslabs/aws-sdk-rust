@@ -47,6 +47,10 @@ impl DescribeNotebookInstanceInputBuilder {
         self.notebook_instance_name = input;
         self
     }
+    /// <p>The name of the notebook instance that you want information about.</p>
+    pub fn get_notebook_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notebook_instance_name
+    }
     /// Consumes the builder and constructs a [`DescribeNotebookInstanceInput`](crate::operation::describe_notebook_instance::DescribeNotebookInstanceInput).
     pub fn build(
         self,

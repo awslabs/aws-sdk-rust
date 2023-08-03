@@ -56,6 +56,10 @@ impl RetryWorkflowStepInputBuilder {
         self.workflow_id = input;
         self
     }
+    /// <p>The ID of the migration workflow.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_id
+    }
     /// <p>The ID of the step group.</p>
     pub fn step_group_id(
         mut self,
@@ -72,6 +76,10 @@ impl RetryWorkflowStepInputBuilder {
         self.step_group_id = input;
         self
     }
+    /// <p>The ID of the step group.</p>
+    pub fn get_step_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.step_group_id
+    }
     /// <p>The ID of the step.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl RetryWorkflowStepInputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The ID of the step.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`RetryWorkflowStepInput`](crate::operation::retry_workflow_step::RetryWorkflowStepInput).
     pub fn build(

@@ -54,6 +54,10 @@ impl QueryStringObjectBuilder {
         self.option = input;
         self
     }
+    /// <p>Indicates whether the distribution forwards and caches based on query strings.</p>
+    pub fn get_option(&self) -> &::std::option::Option<bool> {
+        &self.option
+    }
     /// Appends an item to `query_strings_allow_list`.
     ///
     /// To override the contents of this collection use [`set_query_strings_allow_list`](Self::set_query_strings_allow_list).
@@ -79,6 +83,14 @@ impl QueryStringObjectBuilder {
     ) -> Self {
         self.query_strings_allow_list = input;
         self
+    }
+    /// <p>The specific query strings that the distribution forwards to the origin.</p>
+    /// <p>Your distribution will cache content based on the specified query strings.</p>
+    /// <p>If the <code>option</code> parameter is true, then your distribution forwards all query strings, regardless of what you specify using the <code>queryStringsAllowList</code> parameter.</p>
+    pub fn get_query_strings_allow_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.query_strings_allow_list
     }
     /// Consumes the builder and constructs a [`QueryStringObject`](crate::types::QueryStringObject).
     pub fn build(self) -> crate::types::QueryStringObject {

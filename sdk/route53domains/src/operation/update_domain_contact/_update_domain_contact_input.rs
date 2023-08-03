@@ -83,6 +83,10 @@ impl UpdateDomainContactInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The name of the domain that you want to update contact information for.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>Provides detailed contact information.</p>
     pub fn admin_contact(mut self, input: crate::types::ContactDetail) -> Self {
         self.admin_contact = ::std::option::Option::Some(input);
@@ -95,6 +99,10 @@ impl UpdateDomainContactInputBuilder {
     ) -> Self {
         self.admin_contact = input;
         self
+    }
+    /// <p>Provides detailed contact information.</p>
+    pub fn get_admin_contact(&self) -> &::std::option::Option<crate::types::ContactDetail> {
+        &self.admin_contact
     }
     /// <p>Provides detailed contact information.</p>
     pub fn registrant_contact(mut self, input: crate::types::ContactDetail) -> Self {
@@ -110,6 +118,10 @@ impl UpdateDomainContactInputBuilder {
         self
     }
     /// <p>Provides detailed contact information.</p>
+    pub fn get_registrant_contact(&self) -> &::std::option::Option<crate::types::ContactDetail> {
+        &self.registrant_contact
+    }
+    /// <p>Provides detailed contact information.</p>
     pub fn tech_contact(mut self, input: crate::types::ContactDetail) -> Self {
         self.tech_contact = ::std::option::Option::Some(input);
         self
@@ -122,6 +134,10 @@ impl UpdateDomainContactInputBuilder {
         self.tech_contact = input;
         self
     }
+    /// <p>Provides detailed contact information.</p>
+    pub fn get_tech_contact(&self) -> &::std::option::Option<crate::types::ContactDetail> {
+        &self.tech_contact
+    }
     /// <p> Customer's consent for the owner change request. Required if the domain is not free (consent price is more than $0.00).</p>
     pub fn consent(mut self, input: crate::types::Consent) -> Self {
         self.consent = ::std::option::Option::Some(input);
@@ -131,6 +147,10 @@ impl UpdateDomainContactInputBuilder {
     pub fn set_consent(mut self, input: ::std::option::Option<crate::types::Consent>) -> Self {
         self.consent = input;
         self
+    }
+    /// <p> Customer's consent for the owner change request. Required if the domain is not free (consent price is more than $0.00).</p>
+    pub fn get_consent(&self) -> &::std::option::Option<crate::types::Consent> {
+        &self.consent
     }
     /// Consumes the builder and constructs a [`UpdateDomainContactInput`](crate::operation::update_domain_contact::UpdateDomainContactInput).
     pub fn build(

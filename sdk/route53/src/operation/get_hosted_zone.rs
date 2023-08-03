@@ -37,7 +37,7 @@ impl GetHostedZoneInput {
                 (::std::result::Result::Err(e), ::std::option::Option::None)
             }
         };
-        crate::route53_resource_id_preprocessor::trim_resource_id(&mut self.id);
+        crate::route53_resource_id_preprocessor_middleware::trim_resource_id(&mut self.id);
         let mut request = {
             fn uri_base(
                 _input: &crate::operation::get_hosted_zone::GetHostedZoneInput,

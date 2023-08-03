@@ -51,6 +51,12 @@ impl CreateApplicationOutputBuilder {
         self.application_summary = input;
         self
     }
+    /// <p>In response to your <code>CreateApplication</code> request, Amazon Kinesis Analytics returns a response with a summary of the application it created, including the application Amazon Resource Name (ARN), name, and status.</p>
+    pub fn get_application_summary(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationSummary> {
+        &self.application_summary
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

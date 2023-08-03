@@ -124,6 +124,19 @@ impl AwsCodeBuildProjectSourceBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of repository that contains the source code to be built. Valid values are:</p>
+    /// <ul>
+    /// <li> <p> <code>BITBUCKET</code> - The source code is in a Bitbucket repository.</p> </li>
+    /// <li> <p> <code>CODECOMMIT</code> - The source code is in an CodeCommit repository.</p> </li>
+    /// <li> <p> <code>CODEPIPELINE</code> - The source code settings are specified in the source action of a pipeline in CodePipeline.</p> </li>
+    /// <li> <p> <code>GITHUB</code> - The source code is in a GitHub repository.</p> </li>
+    /// <li> <p> <code>GITHUB_ENTERPRISE</code> - The source code is in a GitHub Enterprise repository.</p> </li>
+    /// <li> <p> <code>NO_SOURCE</code> - The project does not have input source code.</p> </li>
+    /// <li> <p> <code>S3</code> - The source code is in an S3 input bucket. </p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p>Information about the location of the source code to be built.</p>
     /// <p>Valid values include:</p>
     /// <ul>
@@ -158,6 +171,22 @@ impl AwsCodeBuildProjectSourceBuilder {
         self.location = input;
         self
     }
+    /// <p>Information about the location of the source code to be built.</p>
+    /// <p>Valid values include:</p>
+    /// <ul>
+    /// <li> <p>For source code settings that are specified in the source action of a pipeline in CodePipeline, location should not be specified. If it is specified, CodePipeline ignores it. This is because CodePipeline uses the settings in a pipeline's source action instead of this value.</p> </li>
+    /// <li> <p>For source code in an CodeCommit repository, the HTTPS clone URL to the repository that contains the source code and the build spec file (for example, <code>https://git-codecommit.region-ID.amazonaws.com/v1/repos/repo-name</code> ).</p> </li>
+    /// <li> <p>For source code in an S3 input bucket, one of the following.</p>
+    /// <ul>
+    /// <li> <p>The path to the ZIP file that contains the source code (for example, <code>bucket-name/path/to/object-name.zip</code>).</p> </li>
+    /// <li> <p> The path to the folder that contains the source code (for example, <code>bucket-name/path/to/source-code/folder/</code>).</p> </li>
+    /// </ul> </li>
+    /// <li> <p>For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the build spec file.</p> </li>
+    /// <li> <p>For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the build spec file. </p> </li>
+    /// </ul>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
+    }
     /// <p>Information about the Git clone depth for the build project.</p>
     pub fn git_clone_depth(mut self, input: i32) -> Self {
         self.git_clone_depth = ::std::option::Option::Some(input);
@@ -168,6 +197,10 @@ impl AwsCodeBuildProjectSourceBuilder {
         self.git_clone_depth = input;
         self
     }
+    /// <p>Information about the Git clone depth for the build project.</p>
+    pub fn get_git_clone_depth(&self) -> &::std::option::Option<i32> {
+        &self.git_clone_depth
+    }
     /// <p>Whether to ignore SSL warnings while connecting to the project source code.</p>
     pub fn insecure_ssl(mut self, input: bool) -> Self {
         self.insecure_ssl = ::std::option::Option::Some(input);
@@ -177,6 +210,10 @@ impl AwsCodeBuildProjectSourceBuilder {
     pub fn set_insecure_ssl(mut self, input: ::std::option::Option<bool>) -> Self {
         self.insecure_ssl = input;
         self
+    }
+    /// <p>Whether to ignore SSL warnings while connecting to the project source code.</p>
+    pub fn get_insecure_ssl(&self) -> &::std::option::Option<bool> {
+        &self.insecure_ssl
     }
     /// Consumes the builder and constructs a [`AwsCodeBuildProjectSource`](crate::types::AwsCodeBuildProjectSource).
     pub fn build(self) -> crate::types::AwsCodeBuildProjectSource {

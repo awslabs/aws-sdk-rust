@@ -37,6 +37,13 @@ impl DescribeConfigurationSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeConfigurationSet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_configuration_set::builders::DescribeConfigurationSetInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl DescribeConfigurationSetFluentBuilder {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }
+    /// <p>The name of the configuration set to describe.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_set_name()
+    }
     /// Appends an item to `ConfigurationSetAttributeNames`.
     ///
     /// To override the contents of this collection use [`set_configuration_set_attribute_names`](Self::set_configuration_set_attribute_names).
@@ -152,5 +163,11 @@ impl DescribeConfigurationSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_configuration_set_attribute_names(input);
         self
+    }
+    /// <p>A list of configuration set attributes to return.</p>
+    pub fn get_configuration_set_attribute_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSetAttribute>> {
+        self.inner.get_configuration_set_attribute_names()
     }
 }

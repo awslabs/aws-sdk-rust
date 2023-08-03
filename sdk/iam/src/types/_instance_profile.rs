@@ -95,6 +95,10 @@ impl InstanceProfileBuilder {
         self.path = input;
         self
     }
+    /// <p> The path to the instance profile. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
+    }
     /// <p>The name identifying the instance profile.</p>
     pub fn instance_profile_name(
         mut self,
@@ -110,6 +114,10 @@ impl InstanceProfileBuilder {
     ) -> Self {
         self.instance_profile_name = input;
         self
+    }
+    /// <p>The name identifying the instance profile.</p>
+    pub fn get_instance_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_profile_name
     }
     /// <p> The stable and unique string identifying the instance profile. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
     pub fn instance_profile_id(
@@ -127,6 +135,10 @@ impl InstanceProfileBuilder {
         self.instance_profile_id = input;
         self
     }
+    /// <p> The stable and unique string identifying the instance profile. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
+    pub fn get_instance_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_profile_id
+    }
     /// <p> The Amazon Resource Name (ARN) specifying the instance profile. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -136,6 +148,10 @@ impl InstanceProfileBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p> The Amazon Resource Name (ARN) specifying the instance profile. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The date when the instance profile was created.</p>
     pub fn create_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -149,6 +165,10 @@ impl InstanceProfileBuilder {
     ) -> Self {
         self.create_date = input;
         self
+    }
+    /// <p>The date when the instance profile was created.</p>
+    pub fn get_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_date
     }
     /// Appends an item to `roles`.
     ///
@@ -169,6 +189,10 @@ impl InstanceProfileBuilder {
         self.roles = input;
         self
     }
+    /// <p>The role associated with the instance profile.</p>
+    pub fn get_roles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Role>> {
+        &self.roles
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -187,6 +211,10 @@ impl InstanceProfileBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tags that are attached to the instance profile. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`InstanceProfile`](crate::types::InstanceProfile).
     pub fn build(self) -> crate::types::InstanceProfile {

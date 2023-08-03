@@ -70,6 +70,10 @@ impl CommitTransactionResultBuilder {
         self.transaction_id = input;
         self
     }
+    /// <p>The transaction ID of the committed transaction.</p>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transaction_id
+    }
     /// <p>The commit digest of the committed transaction.</p>
     pub fn commit_digest(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.commit_digest = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl CommitTransactionResultBuilder {
     ) -> Self {
         self.commit_digest = input;
         self
+    }
+    /// <p>The commit digest of the committed transaction.</p>
+    pub fn get_commit_digest(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.commit_digest
     }
     /// <p>Contains server-side performance information for the command.</p>
     pub fn timing_information(mut self, input: crate::types::TimingInformation) -> Self {
@@ -96,6 +104,12 @@ impl CommitTransactionResultBuilder {
         self.timing_information = input;
         self
     }
+    /// <p>Contains server-side performance information for the command.</p>
+    pub fn get_timing_information(
+        &self,
+    ) -> &::std::option::Option<crate::types::TimingInformation> {
+        &self.timing_information
+    }
     /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
     pub fn consumed_i_os(mut self, input: crate::types::IoUsage) -> Self {
         self.consumed_i_os = ::std::option::Option::Some(input);
@@ -108,6 +122,10 @@ impl CommitTransactionResultBuilder {
     ) -> Self {
         self.consumed_i_os = input;
         self
+    }
+    /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
+    pub fn get_consumed_i_os(&self) -> &::std::option::Option<crate::types::IoUsage> {
+        &self.consumed_i_os
     }
     /// Consumes the builder and constructs a [`CommitTransactionResult`](crate::types::CommitTransactionResult).
     pub fn build(self) -> crate::types::CommitTransactionResult {

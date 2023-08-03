@@ -65,6 +65,12 @@ impl ExcelOptionsBuilder {
         self.sheet_names = input;
         self
     }
+    /// <p>One or more named sheets in the Excel file that will be included in the dataset.</p>
+    pub fn get_sheet_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.sheet_names
+    }
     /// Appends an item to `sheet_indexes`.
     ///
     /// To override the contents of this collection use [`set_sheet_indexes`](Self::set_sheet_indexes).
@@ -81,6 +87,10 @@ impl ExcelOptionsBuilder {
         self.sheet_indexes = input;
         self
     }
+    /// <p>One or more sheet numbers in the Excel file that will be included in the dataset.</p>
+    pub fn get_sheet_indexes(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.sheet_indexes
+    }
     /// <p>A variable that specifies whether the first row in the file is parsed as the header. If this value is false, column names are auto-generated.</p>
     pub fn header_row(mut self, input: bool) -> Self {
         self.header_row = ::std::option::Option::Some(input);
@@ -90,6 +100,10 @@ impl ExcelOptionsBuilder {
     pub fn set_header_row(mut self, input: ::std::option::Option<bool>) -> Self {
         self.header_row = input;
         self
+    }
+    /// <p>A variable that specifies whether the first row in the file is parsed as the header. If this value is false, column names are auto-generated.</p>
+    pub fn get_header_row(&self) -> &::std::option::Option<bool> {
+        &self.header_row
     }
     /// Consumes the builder and constructs a [`ExcelOptions`](crate::types::ExcelOptions).
     pub fn build(self) -> crate::types::ExcelOptions {

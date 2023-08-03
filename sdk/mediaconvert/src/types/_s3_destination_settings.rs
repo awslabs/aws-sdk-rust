@@ -53,6 +53,12 @@ impl S3DestinationSettingsBuilder {
         self.access_control = input;
         self
     }
+    /// Optional. Have MediaConvert automatically apply Amazon S3 access control for the outputs in this output group. When you don't use this setting, S3 automatically applies the default access control list PRIVATE.
+    pub fn get_access_control(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3DestinationAccessControl> {
+        &self.access_control
+    }
     /// Settings for how your job outputs are encrypted as they are uploaded to Amazon S3.
     pub fn encryption(mut self, input: crate::types::S3EncryptionSettings) -> Self {
         self.encryption = ::std::option::Option::Some(input);
@@ -65,6 +71,10 @@ impl S3DestinationSettingsBuilder {
     ) -> Self {
         self.encryption = input;
         self
+    }
+    /// Settings for how your job outputs are encrypted as they are uploaded to Amazon S3.
+    pub fn get_encryption(&self) -> &::std::option::Option<crate::types::S3EncryptionSettings> {
+        &self.encryption
     }
     /// Consumes the builder and constructs a [`S3DestinationSettings`](crate::types::S3DestinationSettings).
     pub fn build(self) -> crate::types::S3DestinationSettings {

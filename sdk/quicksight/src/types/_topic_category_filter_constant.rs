@@ -66,6 +66,10 @@ impl TopicCategoryFilterConstantBuilder {
         self.constant_type = input;
         self
     }
+    /// <p>The type of category filter constant. This element is used to specify whether a constant is a singular or collective. Valid values are <code>SINGULAR</code> and <code>COLLECTIVE</code>.</p>
+    pub fn get_constant_type(&self) -> &::std::option::Option<crate::types::ConstantType> {
+        &self.constant_type
+    }
     /// <p>A singular constant used in a category filter. This element is used to specify a single value for the constant.</p>
     pub fn singular_constant(
         mut self,
@@ -82,6 +86,10 @@ impl TopicCategoryFilterConstantBuilder {
         self.singular_constant = input;
         self
     }
+    /// <p>A singular constant used in a category filter. This element is used to specify a single value for the constant.</p>
+    pub fn get_singular_constant(&self) -> &::std::option::Option<::std::string::String> {
+        &self.singular_constant
+    }
     /// <p>A collective constant used in a category filter. This element is used to specify a list of values for the constant.</p>
     pub fn collective_constant(mut self, input: crate::types::CollectiveConstant) -> Self {
         self.collective_constant = ::std::option::Option::Some(input);
@@ -94,6 +102,12 @@ impl TopicCategoryFilterConstantBuilder {
     ) -> Self {
         self.collective_constant = input;
         self
+    }
+    /// <p>A collective constant used in a category filter. This element is used to specify a list of values for the constant.</p>
+    pub fn get_collective_constant(
+        &self,
+    ) -> &::std::option::Option<crate::types::CollectiveConstant> {
+        &self.collective_constant
     }
     /// Consumes the builder and constructs a [`TopicCategoryFilterConstant`](crate::types::TopicCategoryFilterConstant).
     pub fn build(self) -> crate::types::TopicCategoryFilterConstant {

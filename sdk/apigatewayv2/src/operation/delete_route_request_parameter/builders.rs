@@ -36,6 +36,10 @@ impl DeleteRouteRequestParameterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteRouteRequestParameter as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_route_request_parameter::builders::DeleteRouteRequestParameterInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl DeleteRouteRequestParameterFluentBuilder {
         self.inner = self.inner.set_api_id(input);
         self
     }
+    /// <p>The API identifier.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_api_id()
+    }
     /// <p>The route request parameter key.</p>
     pub fn request_parameter_key(
         mut self,
@@ -142,6 +150,10 @@ impl DeleteRouteRequestParameterFluentBuilder {
         self.inner = self.inner.set_request_parameter_key(input);
         self
     }
+    /// <p>The route request parameter key.</p>
+    pub fn get_request_parameter_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_request_parameter_key()
+    }
     /// <p>The route ID.</p>
     pub fn route_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.route_id(input.into());
@@ -151,5 +163,9 @@ impl DeleteRouteRequestParameterFluentBuilder {
     pub fn set_route_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_route_id(input);
         self
+    }
+    /// <p>The route ID.</p>
+    pub fn get_route_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_route_id()
     }
 }

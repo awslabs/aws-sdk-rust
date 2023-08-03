@@ -53,6 +53,10 @@ impl GetAttachmentInputBuilder {
         self.attachment_id = input;
         self
     }
+    /// <p>A unique identifier for the attachment.</p>
+    pub fn get_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attachment_id
+    }
     /// <p>The authentication token associated with the participant's connection.</p>
     pub fn connection_token(
         mut self,
@@ -68,6 +72,10 @@ impl GetAttachmentInputBuilder {
     ) -> Self {
         self.connection_token = input;
         self
+    }
+    /// <p>The authentication token associated with the participant's connection.</p>
+    pub fn get_connection_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_token
     }
     /// Consumes the builder and constructs a [`GetAttachmentInput`](crate::operation::get_attachment::GetAttachmentInput).
     pub fn build(

@@ -62,6 +62,10 @@ impl CidrCollectionChangeBuilder {
         self.location_name = input;
         self
     }
+    /// <p>Name of the location that is associated with the CIDR collection.</p>
+    pub fn get_location_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_name
+    }
     /// <p>CIDR collection change action. </p>
     pub fn action(mut self, input: crate::types::CidrCollectionChangeAction) -> Self {
         self.action = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl CidrCollectionChangeBuilder {
     ) -> Self {
         self.action = input;
         self
+    }
+    /// <p>CIDR collection change action. </p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::CidrCollectionChangeAction> {
+        &self.action
     }
     /// Appends an item to `cidr_list`.
     ///
@@ -93,6 +101,10 @@ impl CidrCollectionChangeBuilder {
     ) -> Self {
         self.cidr_list = input;
         self
+    }
+    /// <p>List of CIDR blocks.</p>
+    pub fn get_cidr_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.cidr_list
     }
     /// Consumes the builder and constructs a [`CidrCollectionChange`](crate::types::CidrCollectionChange).
     pub fn build(self) -> crate::types::CidrCollectionChange {

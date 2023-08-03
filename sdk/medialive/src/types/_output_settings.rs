@@ -115,6 +115,12 @@ impl OutputSettingsBuilder {
         self.archive_output_settings = input;
         self
     }
+    /// Archive Output Settings
+    pub fn get_archive_output_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::ArchiveOutputSettings> {
+        &self.archive_output_settings
+    }
     /// Frame Capture Output Settings
     pub fn frame_capture_output_settings(
         mut self,
@@ -131,6 +137,12 @@ impl OutputSettingsBuilder {
         self.frame_capture_output_settings = input;
         self
     }
+    /// Frame Capture Output Settings
+    pub fn get_frame_capture_output_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::FrameCaptureOutputSettings> {
+        &self.frame_capture_output_settings
+    }
     /// Hls Output Settings
     pub fn hls_output_settings(mut self, input: crate::types::HlsOutputSettings) -> Self {
         self.hls_output_settings = ::std::option::Option::Some(input);
@@ -143,6 +155,12 @@ impl OutputSettingsBuilder {
     ) -> Self {
         self.hls_output_settings = input;
         self
+    }
+    /// Hls Output Settings
+    pub fn get_hls_output_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::HlsOutputSettings> {
+        &self.hls_output_settings
     }
     /// Media Package Output Settings
     pub fn media_package_output_settings(
@@ -160,6 +178,12 @@ impl OutputSettingsBuilder {
         self.media_package_output_settings = input;
         self
     }
+    /// Media Package Output Settings
+    pub fn get_media_package_output_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::MediaPackageOutputSettings> {
+        &self.media_package_output_settings
+    }
     /// Ms Smooth Output Settings
     pub fn ms_smooth_output_settings(
         mut self,
@@ -175,6 +199,12 @@ impl OutputSettingsBuilder {
     ) -> Self {
         self.ms_smooth_output_settings = input;
         self
+    }
+    /// Ms Smooth Output Settings
+    pub fn get_ms_smooth_output_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::MsSmoothOutputSettings> {
+        &self.ms_smooth_output_settings
     }
     /// Multiplex Output Settings
     pub fn multiplex_output_settings(
@@ -192,6 +222,12 @@ impl OutputSettingsBuilder {
         self.multiplex_output_settings = input;
         self
     }
+    /// Multiplex Output Settings
+    pub fn get_multiplex_output_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::MultiplexOutputSettings> {
+        &self.multiplex_output_settings
+    }
     /// Rtmp Output Settings
     pub fn rtmp_output_settings(mut self, input: crate::types::RtmpOutputSettings) -> Self {
         self.rtmp_output_settings = ::std::option::Option::Some(input);
@@ -205,6 +241,12 @@ impl OutputSettingsBuilder {
         self.rtmp_output_settings = input;
         self
     }
+    /// Rtmp Output Settings
+    pub fn get_rtmp_output_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::RtmpOutputSettings> {
+        &self.rtmp_output_settings
+    }
     /// Udp Output Settings
     pub fn udp_output_settings(mut self, input: crate::types::UdpOutputSettings) -> Self {
         self.udp_output_settings = ::std::option::Option::Some(input);
@@ -217,6 +259,12 @@ impl OutputSettingsBuilder {
     ) -> Self {
         self.udp_output_settings = input;
         self
+    }
+    /// Udp Output Settings
+    pub fn get_udp_output_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::UdpOutputSettings> {
+        &self.udp_output_settings
     }
     /// Consumes the builder and constructs a [`OutputSettings`](crate::types::OutputSettings).
     pub fn build(self) -> crate::types::OutputSettings {

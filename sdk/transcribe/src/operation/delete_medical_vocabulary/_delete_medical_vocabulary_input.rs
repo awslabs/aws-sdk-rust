@@ -47,6 +47,10 @@ impl DeleteMedicalVocabularyInputBuilder {
         self.vocabulary_name = input;
         self
     }
+    /// <p>The name of the custom medical vocabulary you want to delete. Custom medical vocabulary names are case sensitive.</p>
+    pub fn get_vocabulary_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vocabulary_name
+    }
     /// Consumes the builder and constructs a [`DeleteMedicalVocabularyInput`](crate::operation::delete_medical_vocabulary::DeleteMedicalVocabularyInput).
     pub fn build(
         self,

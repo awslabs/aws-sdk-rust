@@ -36,6 +36,10 @@ impl DeleteAggregationAuthorizationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteAggregationAuthorization as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_aggregation_authorization::builders::DeleteAggregationAuthorizationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl DeleteAggregationAuthorizationFluentBuilder {
         self.inner = self.inner.set_authorized_account_id(input);
         self
     }
+    /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
+    pub fn get_authorized_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_authorized_account_id()
+    }
     /// <p>The region authorized to collect aggregated data.</p>
     pub fn authorized_aws_region(
         mut self,
@@ -147,5 +155,9 @@ impl DeleteAggregationAuthorizationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_authorized_aws_region(input);
         self
+    }
+    /// <p>The region authorized to collect aggregated data.</p>
+    pub fn get_authorized_aws_region(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_authorized_aws_region()
     }
 }

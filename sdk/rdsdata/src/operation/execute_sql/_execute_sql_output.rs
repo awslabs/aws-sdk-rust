@@ -60,6 +60,12 @@ impl ExecuteSqlOutputBuilder {
         self.sql_statement_results = input;
         self
     }
+    /// <p>The results of the SQL statement or statements.</p>
+    pub fn get_sql_statement_results(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SqlStatementResult>> {
+        &self.sql_statement_results
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

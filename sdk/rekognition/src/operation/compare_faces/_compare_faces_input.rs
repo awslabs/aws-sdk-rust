@@ -71,6 +71,11 @@ impl CompareFacesInputBuilder {
         self.source_image = input;
         self
     }
+    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
+    pub fn get_source_image(&self) -> &::std::option::Option<crate::types::Image> {
+        &self.source_image
+    }
     /// <p>The target image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
     pub fn target_image(mut self, input: crate::types::Image) -> Self {
@@ -83,6 +88,11 @@ impl CompareFacesInputBuilder {
         self.target_image = input;
         self
     }
+    /// <p>The target image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
+    pub fn get_target_image(&self) -> &::std::option::Option<crate::types::Image> {
+        &self.target_image
+    }
     /// <p>The minimum level of confidence in the face matches that a match must meet to be included in the <code>FaceMatches</code> array.</p>
     pub fn similarity_threshold(mut self, input: f32) -> Self {
         self.similarity_threshold = ::std::option::Option::Some(input);
@@ -92,6 +102,10 @@ impl CompareFacesInputBuilder {
     pub fn set_similarity_threshold(mut self, input: ::std::option::Option<f32>) -> Self {
         self.similarity_threshold = input;
         self
+    }
+    /// <p>The minimum level of confidence in the face matches that a match must meet to be included in the <code>FaceMatches</code> array.</p>
+    pub fn get_similarity_threshold(&self) -> &::std::option::Option<f32> {
+        &self.similarity_threshold
     }
     /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't compared. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality bar. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify <code>NONE</code>, no filtering is performed. The default value is <code>NONE</code>. </p>
     /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
@@ -107,6 +121,11 @@ impl CompareFacesInputBuilder {
     ) -> Self {
         self.quality_filter = input;
         self
+    }
+    /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't compared. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality bar. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify <code>NONE</code>, no filtering is performed. The default value is <code>NONE</code>. </p>
+    /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
+    pub fn get_quality_filter(&self) -> &::std::option::Option<crate::types::QualityFilter> {
+        &self.quality_filter
     }
     /// Consumes the builder and constructs a [`CompareFacesInput`](crate::operation::compare_faces::CompareFacesInput).
     pub fn build(

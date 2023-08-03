@@ -36,6 +36,10 @@ impl InstallToRemoteAccessSessionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the InstallToRemoteAccessSession as a reference.
+    pub fn as_input(&self) -> &crate::operation::install_to_remote_access_session::builders::InstallToRemoteAccessSessionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl InstallToRemoteAccessSessionFluentBuilder {
         self.inner = self.inner.set_remote_access_session_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the remote access session about which you are requesting information.</p>
+    pub fn get_remote_access_session_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_remote_access_session_arn()
+    }
     /// <p>The ARN of the app about which you are requesting information.</p>
     pub fn app_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_arn(input.into());
@@ -141,5 +149,9 @@ impl InstallToRemoteAccessSessionFluentBuilder {
     pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_arn(input);
         self
+    }
+    /// <p>The ARN of the app about which you are requesting information.</p>
+    pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_arn()
     }
 }

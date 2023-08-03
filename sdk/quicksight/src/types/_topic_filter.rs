@@ -133,6 +133,10 @@ impl TopicFilterBuilder {
         self.filter_description = input;
         self
     }
+    /// <p>A description of the filter used to select items for a topic.</p>
+    pub fn get_filter_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter_description
+    }
     /// <p>The class of the filter. Valid values for this structure are <code>ENFORCED_VALUE_FILTER</code>, <code>CONDITIONAL_VALUE_FILTER</code>, and <code>NAMED_VALUE_FILTER</code>.</p>
     pub fn filter_class(mut self, input: crate::types::FilterClass) -> Self {
         self.filter_class = ::std::option::Option::Some(input);
@@ -146,6 +150,10 @@ impl TopicFilterBuilder {
         self.filter_class = input;
         self
     }
+    /// <p>The class of the filter. Valid values for this structure are <code>ENFORCED_VALUE_FILTER</code>, <code>CONDITIONAL_VALUE_FILTER</code>, and <code>NAMED_VALUE_FILTER</code>.</p>
+    pub fn get_filter_class(&self) -> &::std::option::Option<crate::types::FilterClass> {
+        &self.filter_class
+    }
     /// <p>The name of the filter.</p>
     pub fn filter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_name = ::std::option::Option::Some(input.into());
@@ -155,6 +163,10 @@ impl TopicFilterBuilder {
     pub fn set_filter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.filter_name = input;
         self
+    }
+    /// <p>The name of the filter.</p>
+    pub fn get_filter_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter_name
     }
     /// Appends an item to `filter_synonyms`.
     ///
@@ -178,6 +190,12 @@ impl TopicFilterBuilder {
         self.filter_synonyms = input;
         self
     }
+    /// <p>The other names or aliases for the filter.</p>
+    pub fn get_filter_synonyms(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.filter_synonyms
+    }
     /// <p>The name of the field that the filter operates on.</p>
     pub fn operand_field_name(
         mut self,
@@ -194,6 +212,10 @@ impl TopicFilterBuilder {
         self.operand_field_name = input;
         self
     }
+    /// <p>The name of the field that the filter operates on.</p>
+    pub fn get_operand_field_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operand_field_name
+    }
     /// <p>The type of the filter. Valid values for this structure are <code>CATEGORY_FILTER</code>, <code>NUMERIC_EQUALITY_FILTER</code>, <code>NUMERIC_RANGE_FILTER</code>, <code>DATE_RANGE_FILTER</code>, and <code>RELATIVE_DATE_FILTER</code>.</p>
     pub fn filter_type(mut self, input: crate::types::NamedFilterType) -> Self {
         self.filter_type = ::std::option::Option::Some(input);
@@ -207,6 +229,10 @@ impl TopicFilterBuilder {
         self.filter_type = input;
         self
     }
+    /// <p>The type of the filter. Valid values for this structure are <code>CATEGORY_FILTER</code>, <code>NUMERIC_EQUALITY_FILTER</code>, <code>NUMERIC_RANGE_FILTER</code>, <code>DATE_RANGE_FILTER</code>, and <code>RELATIVE_DATE_FILTER</code>.</p>
+    pub fn get_filter_type(&self) -> &::std::option::Option<crate::types::NamedFilterType> {
+        &self.filter_type
+    }
     /// <p>The category filter that is associated with this filter.</p>
     pub fn category_filter(mut self, input: crate::types::TopicCategoryFilter) -> Self {
         self.category_filter = ::std::option::Option::Some(input);
@@ -219,6 +245,10 @@ impl TopicFilterBuilder {
     ) -> Self {
         self.category_filter = input;
         self
+    }
+    /// <p>The category filter that is associated with this filter.</p>
+    pub fn get_category_filter(&self) -> &::std::option::Option<crate::types::TopicCategoryFilter> {
+        &self.category_filter
     }
     /// <p>The numeric equality filter.</p>
     pub fn numeric_equality_filter(
@@ -236,6 +266,12 @@ impl TopicFilterBuilder {
         self.numeric_equality_filter = input;
         self
     }
+    /// <p>The numeric equality filter.</p>
+    pub fn get_numeric_equality_filter(
+        &self,
+    ) -> &::std::option::Option<crate::types::TopicNumericEqualityFilter> {
+        &self.numeric_equality_filter
+    }
     /// <p>The numeric range filter.</p>
     pub fn numeric_range_filter(mut self, input: crate::types::TopicNumericRangeFilter) -> Self {
         self.numeric_range_filter = ::std::option::Option::Some(input);
@@ -248,6 +284,12 @@ impl TopicFilterBuilder {
     ) -> Self {
         self.numeric_range_filter = input;
         self
+    }
+    /// <p>The numeric range filter.</p>
+    pub fn get_numeric_range_filter(
+        &self,
+    ) -> &::std::option::Option<crate::types::TopicNumericRangeFilter> {
+        &self.numeric_range_filter
     }
     /// <p>The date range filter.</p>
     pub fn date_range_filter(mut self, input: crate::types::TopicDateRangeFilter) -> Self {
@@ -262,6 +304,12 @@ impl TopicFilterBuilder {
         self.date_range_filter = input;
         self
     }
+    /// <p>The date range filter.</p>
+    pub fn get_date_range_filter(
+        &self,
+    ) -> &::std::option::Option<crate::types::TopicDateRangeFilter> {
+        &self.date_range_filter
+    }
     /// <p>The relative date filter.</p>
     pub fn relative_date_filter(mut self, input: crate::types::TopicRelativeDateFilter) -> Self {
         self.relative_date_filter = ::std::option::Option::Some(input);
@@ -274,6 +322,12 @@ impl TopicFilterBuilder {
     ) -> Self {
         self.relative_date_filter = input;
         self
+    }
+    /// <p>The relative date filter.</p>
+    pub fn get_relative_date_filter(
+        &self,
+    ) -> &::std::option::Option<crate::types::TopicRelativeDateFilter> {
+        &self.relative_date_filter
     }
     /// Consumes the builder and constructs a [`TopicFilter`](crate::types::TopicFilter).
     pub fn build(self) -> crate::types::TopicFilter {

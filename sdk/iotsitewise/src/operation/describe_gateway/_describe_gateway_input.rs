@@ -39,6 +39,10 @@ impl DescribeGatewayInputBuilder {
         self.gateway_id = input;
         self
     }
+    /// <p>The ID of the gateway device.</p>
+    pub fn get_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_id
+    }
     /// Consumes the builder and constructs a [`DescribeGatewayInput`](crate::operation::describe_gateway::DescribeGatewayInput).
     pub fn build(
         self,

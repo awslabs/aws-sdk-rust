@@ -53,6 +53,10 @@ impl RegisterVolumeInputBuilder {
         self.ec2_volume_id = input;
         self
     }
+    /// <p>The Amazon EBS volume ID.</p>
+    pub fn get_ec2_volume_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ec2_volume_id
+    }
     /// <p>The stack ID.</p>
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_id = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl RegisterVolumeInputBuilder {
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_id = input;
         self
+    }
+    /// <p>The stack ID.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_id
     }
     /// Consumes the builder and constructs a [`RegisterVolumeInput`](crate::operation::register_volume::RegisterVolumeInput).
     pub fn build(

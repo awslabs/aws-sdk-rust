@@ -50,6 +50,12 @@ impl CreateStreamingDistributionWithTagsInputBuilder {
         self.streaming_distribution_config_with_tags = input;
         self
     }
+    /// <p>The streaming distribution's configuration information.</p>
+    pub fn get_streaming_distribution_config_with_tags(
+        &self,
+    ) -> &::std::option::Option<crate::types::StreamingDistributionConfigWithTags> {
+        &self.streaming_distribution_config_with_tags
+    }
     /// Consumes the builder and constructs a [`CreateStreamingDistributionWithTagsInput`](crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

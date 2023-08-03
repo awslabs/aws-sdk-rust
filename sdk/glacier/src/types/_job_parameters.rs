@@ -118,6 +118,10 @@ impl JobParametersBuilder {
         self.format = input;
         self
     }
+    /// <p>When initiating a job to retrieve a vault inventory, you can optionally add this parameter to your request to specify the output format. If you are initiating an inventory job and do not specify a Format field, JSON is the default format. Valid values are "CSV" and "JSON".</p>
+    pub fn get_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.format
+    }
     /// <p>The job type. You can initiate a job to perform a select query on an archive, retrieve an archive, or get an inventory of a vault. Valid values are "select", "archive-retrieval" and "inventory-retrieval".</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -127,6 +131,10 @@ impl JobParametersBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The job type. You can initiate a job to perform a select query on an archive, retrieve an archive, or get an inventory of a vault. Valid values are "select", "archive-retrieval" and "inventory-retrieval".</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// <p>The ID of the archive that you want to retrieve. This field is required only if <code>Type</code> is set to <code>select</code> or <code>archive-retrieval</code>code&gt;. An error occurs if you specify this request parameter for an inventory retrieval job request. </p>
     pub fn archive_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,6 +146,10 @@ impl JobParametersBuilder {
         self.archive_id = input;
         self
     }
+    /// <p>The ID of the archive that you want to retrieve. This field is required only if <code>Type</code> is set to <code>select</code> or <code>archive-retrieval</code>code&gt;. An error occurs if you specify this request parameter for an inventory retrieval job request. </p>
+    pub fn get_archive_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.archive_id
+    }
     /// <p>The optional description for the job. The description must be less than or equal to 1,024 bytes. The allowable characters are 7-bit ASCII without control codes-specifically, ASCII values 32-126 decimal or 0x20-0x7E hexadecimal.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -148,6 +160,10 @@ impl JobParametersBuilder {
         self.description = input;
         self
     }
+    /// <p>The optional description for the job. The description must be less than or equal to 1,024 bytes. The allowable characters are 7-bit ASCII without control codes-specifically, ASCII values 32-126 decimal or 0x20-0x7E hexadecimal.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The Amazon SNS topic ARN to which Amazon S3 Glacier sends a notification when the job is completed and the output is ready for you to download. The specified topic publishes the notification to its subscribers. The SNS topic must exist.</p>
     pub fn sns_topic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic = ::std::option::Option::Some(input.into());
@@ -157,6 +173,10 @@ impl JobParametersBuilder {
     pub fn set_sns_topic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sns_topic = input;
         self
+    }
+    /// <p>The Amazon SNS topic ARN to which Amazon S3 Glacier sends a notification when the job is completed and the output is ready for you to download. The specified topic publishes the notification to its subscribers. The SNS topic must exist.</p>
+    pub fn get_sns_topic(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sns_topic
     }
     /// <p>The byte range to retrieve for an archive retrieval. in the form "<i>StartByteValue</i>-<i>EndByteValue</i>" If not specified, the whole archive is retrieved. If specified, the byte range must be megabyte (1024*1024) aligned which means that <i>StartByteValue</i> must be divisible by 1 MB and <i>EndByteValue</i> plus 1 must be divisible by 1 MB or be the end of the archive specified as the archive byte size value minus 1. If RetrievalByteRange is not megabyte aligned, this operation returns a 400 response. </p>
     /// <p>An error occurs if you specify this field for an inventory retrieval job request.</p>
@@ -176,6 +196,11 @@ impl JobParametersBuilder {
         self.retrieval_byte_range = input;
         self
     }
+    /// <p>The byte range to retrieve for an archive retrieval. in the form "<i>StartByteValue</i>-<i>EndByteValue</i>" If not specified, the whole archive is retrieved. If specified, the byte range must be megabyte (1024*1024) aligned which means that <i>StartByteValue</i> must be divisible by 1 MB and <i>EndByteValue</i> plus 1 must be divisible by 1 MB or be the end of the archive specified as the archive byte size value minus 1. If RetrievalByteRange is not megabyte aligned, this operation returns a 400 response. </p>
+    /// <p>An error occurs if you specify this field for an inventory retrieval job request.</p>
+    pub fn get_retrieval_byte_range(&self) -> &::std::option::Option<::std::string::String> {
+        &self.retrieval_byte_range
+    }
     /// <p>The tier to use for a select or an archive retrieval job. Valid values are <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.</p>
     pub fn tier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tier = ::std::option::Option::Some(input.into());
@@ -185,6 +210,10 @@ impl JobParametersBuilder {
     pub fn set_tier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tier = input;
         self
+    }
+    /// <p>The tier to use for a select or an archive retrieval job. Valid values are <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.</p>
+    pub fn get_tier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tier
     }
     /// <p>Input parameters used for range inventory retrieval.</p>
     pub fn inventory_retrieval_parameters(
@@ -202,6 +231,12 @@ impl JobParametersBuilder {
         self.inventory_retrieval_parameters = input;
         self
     }
+    /// <p>Input parameters used for range inventory retrieval.</p>
+    pub fn get_inventory_retrieval_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::InventoryRetrievalJobInput> {
+        &self.inventory_retrieval_parameters
+    }
     /// <p>Contains the parameters that define a job.</p>
     pub fn select_parameters(mut self, input: crate::types::SelectParameters) -> Self {
         self.select_parameters = ::std::option::Option::Some(input);
@@ -215,6 +250,10 @@ impl JobParametersBuilder {
         self.select_parameters = input;
         self
     }
+    /// <p>Contains the parameters that define a job.</p>
+    pub fn get_select_parameters(&self) -> &::std::option::Option<crate::types::SelectParameters> {
+        &self.select_parameters
+    }
     /// <p>Contains information about the location where the select job results are stored.</p>
     pub fn output_location(mut self, input: crate::types::OutputLocation) -> Self {
         self.output_location = ::std::option::Option::Some(input);
@@ -227,6 +266,10 @@ impl JobParametersBuilder {
     ) -> Self {
         self.output_location = input;
         self
+    }
+    /// <p>Contains information about the location where the select job results are stored.</p>
+    pub fn get_output_location(&self) -> &::std::option::Option<crate::types::OutputLocation> {
+        &self.output_location
     }
     /// Consumes the builder and constructs a [`JobParameters`](crate::types::JobParameters).
     pub fn build(self) -> crate::types::JobParameters {

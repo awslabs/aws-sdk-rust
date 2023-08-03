@@ -37,6 +37,12 @@ impl CreateProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateProfile as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_profile::builders::CreateProfileInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +125,10 @@ impl CreateProfileFluentBuilder {
         self.inner = self.inner.set_profile_name(input);
         self
     }
+    /// <p>The name of a room profile.</p>
+    pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_profile_name()
+    }
     /// <p>The time zone used by a room profile.</p>
     pub fn timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.timezone(input.into());
@@ -129,6 +139,10 @@ impl CreateProfileFluentBuilder {
         self.inner = self.inner.set_timezone(input);
         self
     }
+    /// <p>The time zone used by a room profile.</p>
+    pub fn get_timezone(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_timezone()
+    }
     /// <p>The valid address for the room.</p>
     pub fn address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.address(input.into());
@@ -138,6 +152,10 @@ impl CreateProfileFluentBuilder {
     pub fn set_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_address(input);
         self
+    }
+    /// <p>The valid address for the room.</p>
+    pub fn get_address(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_address()
     }
     /// <p>The distance unit to be used by devices in the profile.</p>
     pub fn distance_unit(mut self, input: crate::types::DistanceUnit) -> Self {
@@ -152,6 +170,10 @@ impl CreateProfileFluentBuilder {
         self.inner = self.inner.set_distance_unit(input);
         self
     }
+    /// <p>The distance unit to be used by devices in the profile.</p>
+    pub fn get_distance_unit(&self) -> &::std::option::Option<crate::types::DistanceUnit> {
+        self.inner.get_distance_unit()
+    }
     /// <p>The temperature unit to be used by devices in the profile.</p>
     pub fn temperature_unit(mut self, input: crate::types::TemperatureUnit) -> Self {
         self.inner = self.inner.temperature_unit(input);
@@ -165,6 +187,10 @@ impl CreateProfileFluentBuilder {
         self.inner = self.inner.set_temperature_unit(input);
         self
     }
+    /// <p>The temperature unit to be used by devices in the profile.</p>
+    pub fn get_temperature_unit(&self) -> &::std::option::Option<crate::types::TemperatureUnit> {
+        self.inner.get_temperature_unit()
+    }
     /// <p>A wake word for Alexa, Echo, Amazon, or a computer.</p>
     pub fn wake_word(mut self, input: crate::types::WakeWord) -> Self {
         self.inner = self.inner.wake_word(input);
@@ -175,6 +201,10 @@ impl CreateProfileFluentBuilder {
         self.inner = self.inner.set_wake_word(input);
         self
     }
+    /// <p>A wake word for Alexa, Echo, Amazon, or a computer.</p>
+    pub fn get_wake_word(&self) -> &::std::option::Option<crate::types::WakeWord> {
+        self.inner.get_wake_word()
+    }
     /// <p>The locale of the room profile. (This is currently only available to a limited preview audience.)</p>
     pub fn locale(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.locale(input.into());
@@ -184,6 +214,10 @@ impl CreateProfileFluentBuilder {
     pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_locale(input);
         self
+    }
+    /// <p>The locale of the room profile. (This is currently only available to a limited preview audience.)</p>
+    pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_locale()
     }
     /// <p>The user-specified token that is used during the creation of a profile.</p>
     pub fn client_request_token(
@@ -201,6 +235,10 @@ impl CreateProfileFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>The user-specified token that is used during the creation of a profile.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// <p>Whether room profile setup is enabled.</p>
     pub fn setup_mode_disabled(mut self, input: bool) -> Self {
         self.inner = self.inner.setup_mode_disabled(input);
@@ -210,6 +248,10 @@ impl CreateProfileFluentBuilder {
     pub fn set_setup_mode_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_setup_mode_disabled(input);
         self
+    }
+    /// <p>Whether room profile setup is enabled.</p>
+    pub fn get_setup_mode_disabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_setup_mode_disabled()
     }
     /// <p>The maximum volume limit for a room profile.</p>
     pub fn max_volume_limit(mut self, input: i32) -> Self {
@@ -221,6 +263,10 @@ impl CreateProfileFluentBuilder {
         self.inner = self.inner.set_max_volume_limit(input);
         self
     }
+    /// <p>The maximum volume limit for a room profile.</p>
+    pub fn get_max_volume_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_volume_limit()
+    }
     /// <p>Whether PSTN calling is enabled.</p>
     pub fn pstn_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.pstn_enabled(input);
@@ -231,6 +277,10 @@ impl CreateProfileFluentBuilder {
         self.inner = self.inner.set_pstn_enabled(input);
         self
     }
+    /// <p>Whether PSTN calling is enabled.</p>
+    pub fn get_pstn_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_pstn_enabled()
+    }
     /// <p>Whether data retention of the profile is enabled.</p>
     pub fn data_retention_opt_in(mut self, input: bool) -> Self {
         self.inner = self.inner.data_retention_opt_in(input);
@@ -240,6 +290,10 @@ impl CreateProfileFluentBuilder {
     pub fn set_data_retention_opt_in(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_data_retention_opt_in(input);
         self
+    }
+    /// <p>Whether data retention of the profile is enabled.</p>
+    pub fn get_data_retention_opt_in(&self) -> &::std::option::Option<bool> {
+        self.inner.get_data_retention_opt_in()
     }
     /// <p>The meeting room settings of a room profile.</p>
     pub fn meeting_room_configuration(
@@ -257,6 +311,12 @@ impl CreateProfileFluentBuilder {
         self.inner = self.inner.set_meeting_room_configuration(input);
         self
     }
+    /// <p>The meeting room settings of a room profile.</p>
+    pub fn get_meeting_room_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateMeetingRoomConfiguration> {
+        self.inner.get_meeting_room_configuration()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -273,5 +333,9 @@ impl CreateProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags for the profile.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

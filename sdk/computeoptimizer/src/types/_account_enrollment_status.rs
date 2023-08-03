@@ -66,6 +66,10 @@ impl AccountEnrollmentStatusBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The account enrollment status.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl AccountEnrollmentStatusBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The account enrollment status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
     }
     /// <p>The reason for the account enrollment status.</p>
     /// <p>For example, an account might show a status of <code>Pending</code> because member accounts of an organization require more time to be enrolled in the service.</p>
@@ -94,6 +102,11 @@ impl AccountEnrollmentStatusBuilder {
         self.status_reason = input;
         self
     }
+    /// <p>The reason for the account enrollment status.</p>
+    /// <p>For example, an account might show a status of <code>Pending</code> because member accounts of an organization require more time to be enrolled in the service.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
+    }
     /// <p>The Unix epoch timestamp, in seconds, of when the account enrollment status was last updated.</p>
     pub fn last_updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_timestamp = ::std::option::Option::Some(input);
@@ -106,6 +119,12 @@ impl AccountEnrollmentStatusBuilder {
     ) -> Self {
         self.last_updated_timestamp = input;
         self
+    }
+    /// <p>The Unix epoch timestamp, in seconds, of when the account enrollment status was last updated.</p>
+    pub fn get_last_updated_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_timestamp
     }
     /// Consumes the builder and constructs a [`AccountEnrollmentStatus`](crate::types::AccountEnrollmentStatus).
     pub fn build(self) -> crate::types::AccountEnrollmentStatus {

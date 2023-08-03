@@ -72,6 +72,10 @@ impl GameSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the game.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the game.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl GameSummaryBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the game.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The state of the game.</p>
     pub fn state(mut self, input: crate::types::GameState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -91,6 +99,10 @@ impl GameSummaryBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::GameState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the game.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::GameState> {
+        &self.state
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -116,6 +128,14 @@ impl GameSummaryBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags associated with the game.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`GameSummary`](crate::types::GameSummary).
     pub fn build(self) -> crate::types::GameSummary {

@@ -77,6 +77,10 @@ impl TestWindowSummaryBuilder {
         self.test_window_start = input;
         self
     }
+    /// <p>The time at which the test began.</p>
+    pub fn get_test_window_start(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.test_window_start
+    }
     /// <p>The time at which the test ended.</p>
     pub fn test_window_end(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.test_window_end = ::std::option::Option::Some(input);
@@ -89,6 +93,10 @@ impl TestWindowSummaryBuilder {
     ) -> Self {
         self.test_window_end = input;
         self
+    }
+    /// <p>The time at which the test ended.</p>
+    pub fn get_test_window_end(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.test_window_end
     }
     /// <p>The status of the test. Possible status values are:</p>
     /// <ul>
@@ -110,6 +118,15 @@ impl TestWindowSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the test. Possible status values are:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>CREATE_FAILED</code> </p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>If the test failed, the reason why it failed.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -119,6 +136,10 @@ impl TestWindowSummaryBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>If the test failed, the reason why it failed.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`TestWindowSummary`](crate::types::TestWindowSummary).
     pub fn build(self) -> crate::types::TestWindowSummary {

@@ -56,6 +56,10 @@ impl NetworkInterfaceBuilder {
         self.mac_address = input;
         self
     }
+    /// <p>The MAC address of the network interface.</p>
+    pub fn get_mac_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mac_address
+    }
     /// Appends an item to `ips`.
     ///
     /// To override the contents of this collection use [`set_ips`](Self::set_ips).
@@ -75,6 +79,10 @@ impl NetworkInterfaceBuilder {
         self.ips = input;
         self
     }
+    /// <p>Network interface IPs.</p>
+    pub fn get_ips(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ips
+    }
     /// <p>Whether this is the primary network interface.</p>
     pub fn is_primary(mut self, input: bool) -> Self {
         self.is_primary = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl NetworkInterfaceBuilder {
     pub fn set_is_primary(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_primary = input;
         self
+    }
+    /// <p>Whether this is the primary network interface.</p>
+    pub fn get_is_primary(&self) -> &::std::option::Option<bool> {
+        &self.is_primary
     }
     /// Consumes the builder and constructs a [`NetworkInterface`](crate::types::NetworkInterface).
     pub fn build(self) -> crate::types::NetworkInterface {

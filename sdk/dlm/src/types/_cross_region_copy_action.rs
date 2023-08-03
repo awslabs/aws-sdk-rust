@@ -61,6 +61,10 @@ impl CrossRegionCopyActionBuilder {
         self.target = input;
         self
     }
+    /// <p>The target Region.</p>
+    pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target
+    }
     /// <p>The encryption settings for the copied snapshot.</p>
     pub fn encryption_configuration(
         mut self,
@@ -77,6 +81,12 @@ impl CrossRegionCopyActionBuilder {
         self.encryption_configuration = input;
         self
     }
+    /// <p>The encryption settings for the copied snapshot.</p>
+    pub fn get_encryption_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+        &self.encryption_configuration
+    }
     /// <p>Specifies a retention rule for cross-Region snapshot copies created by snapshot or event-based policies, or cross-Region AMI copies created by AMI policies. After the retention period expires, the cross-Region copy is deleted.</p>
     pub fn retain_rule(mut self, input: crate::types::CrossRegionCopyRetainRule) -> Self {
         self.retain_rule = ::std::option::Option::Some(input);
@@ -89,6 +99,12 @@ impl CrossRegionCopyActionBuilder {
     ) -> Self {
         self.retain_rule = input;
         self
+    }
+    /// <p>Specifies a retention rule for cross-Region snapshot copies created by snapshot or event-based policies, or cross-Region AMI copies created by AMI policies. After the retention period expires, the cross-Region copy is deleted.</p>
+    pub fn get_retain_rule(
+        &self,
+    ) -> &::std::option::Option<crate::types::CrossRegionCopyRetainRule> {
+        &self.retain_rule
     }
     /// Consumes the builder and constructs a [`CrossRegionCopyAction`](crate::types::CrossRegionCopyAction).
     pub fn build(self) -> crate::types::CrossRegionCopyAction {

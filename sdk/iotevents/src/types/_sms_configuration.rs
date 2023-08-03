@@ -60,6 +60,10 @@ impl SmsConfigurationBuilder {
         self.sender_id = input;
         self
     }
+    /// <p>The sender ID.</p>
+    pub fn get_sender_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sender_id
+    }
     /// <p>The message that you want to send. The message can be up to 200 characters.</p>
     pub fn additional_message(
         mut self,
@@ -75,6 +79,10 @@ impl SmsConfigurationBuilder {
     ) -> Self {
         self.additional_message = input;
         self
+    }
+    /// <p>The message that you want to send. The message can be up to 200 characters.</p>
+    pub fn get_additional_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.additional_message
     }
     /// Appends an item to `recipients`.
     ///
@@ -98,6 +106,14 @@ impl SmsConfigurationBuilder {
     ) -> Self {
         self.recipients = input;
         self
+    }
+    /// <p>Specifies one or more recipients who receive the message.</p> <important>
+    /// <p>You must <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/addusers.html">add the users that receive SMS messages to your AWS SSO store</a>.</p>
+    /// </important>
+    pub fn get_recipients(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecipientDetail>> {
+        &self.recipients
     }
     /// Consumes the builder and constructs a [`SmsConfiguration`](crate::types::SmsConfiguration).
     pub fn build(self) -> crate::types::SmsConfiguration {

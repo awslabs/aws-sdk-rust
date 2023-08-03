@@ -134,6 +134,14 @@ impl RuleGroupSourceStatelessRuleMatchAttributesBuilder {
         self.destination_ports = input;
         self
     }
+    /// <p>A list of port ranges to specify the destination ports to inspect for.</p>
+    pub fn get_destination_ports(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts>,
+    > {
+        &self.destination_ports
+    }
     /// Appends an item to `destinations`.
     ///
     /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
@@ -158,6 +166,14 @@ impl RuleGroupSourceStatelessRuleMatchAttributesBuilder {
         self.destinations = input;
         self
     }
+    /// <p>The destination IP addresses and address ranges to inspect for, in CIDR notation.</p>
+    pub fn get_destinations(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::RuleGroupSourceStatelessRuleMatchAttributesDestinations>,
+    > {
+        &self.destinations
+    }
     /// Appends an item to `protocols`.
     ///
     /// To override the contents of this collection use [`set_protocols`](Self::set_protocols).
@@ -173,6 +189,10 @@ impl RuleGroupSourceStatelessRuleMatchAttributesBuilder {
     pub fn set_protocols(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.protocols = input;
         self
+    }
+    /// <p>The protocols to inspect for.</p>
+    pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.protocols
     }
     /// Appends an item to `source_ports`.
     ///
@@ -198,6 +218,14 @@ impl RuleGroupSourceStatelessRuleMatchAttributesBuilder {
         self.source_ports = input;
         self
     }
+    /// <p>A list of port ranges to specify the source ports to inspect for.</p>
+    pub fn get_source_ports(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::RuleGroupSourceStatelessRuleMatchAttributesSourcePorts>,
+    > {
+        &self.source_ports
+    }
     /// Appends an item to `sources`.
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
@@ -222,6 +250,14 @@ impl RuleGroupSourceStatelessRuleMatchAttributesBuilder {
         self.sources = input;
         self
     }
+    /// <p>The source IP addresses and address ranges to inspect for, in CIDR notation.</p>
+    pub fn get_sources(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::RuleGroupSourceStatelessRuleMatchAttributesSources>,
+    > {
+        &self.sources
+    }
     /// Appends an item to `tcp_flags`.
     ///
     /// To override the contents of this collection use [`set_tcp_flags`](Self::set_tcp_flags).
@@ -245,6 +281,14 @@ impl RuleGroupSourceStatelessRuleMatchAttributesBuilder {
     ) -> Self {
         self.tcp_flags = input;
         self
+    }
+    /// <p>The TCP flags and masks to inspect for.</p>
+    pub fn get_tcp_flags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::RuleGroupSourceStatelessRuleMatchAttributesTcpFlags>,
+    > {
+        &self.tcp_flags
     }
     /// Consumes the builder and constructs a [`RuleGroupSourceStatelessRuleMatchAttributes`](crate::types::RuleGroupSourceStatelessRuleMatchAttributes).
     pub fn build(self) -> crate::types::RuleGroupSourceStatelessRuleMatchAttributes {

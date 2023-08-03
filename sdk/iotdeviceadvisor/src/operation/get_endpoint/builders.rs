@@ -36,6 +36,10 @@ impl GetEndpointFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetEndpoint as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_endpoint::builders::GetEndpointInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl GetEndpointFluentBuilder {
         self.inner = self.inner.set_thing_arn(input);
         self
     }
+    /// <p>The thing ARN of the device. This is an optional parameter.</p>
+    pub fn get_thing_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_thing_arn()
+    }
     /// <p>The certificate ARN of the device. This is an optional parameter.</p>
     pub fn certificate_arn(
         mut self,
@@ -133,6 +141,10 @@ impl GetEndpointFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_certificate_arn(input);
         self
+    }
+    /// <p>The certificate ARN of the device. This is an optional parameter.</p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate_arn()
     }
     /// <p>The device role ARN of the device. This is an optional parameter.</p>
     pub fn device_role_arn(
@@ -150,6 +162,10 @@ impl GetEndpointFluentBuilder {
         self.inner = self.inner.set_device_role_arn(input);
         self
     }
+    /// <p>The device role ARN of the device. This is an optional parameter.</p>
+    pub fn get_device_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_role_arn()
+    }
     /// <p>The authentication method used during the device connection.</p>
     pub fn authentication_method(mut self, input: crate::types::AuthenticationMethod) -> Self {
         self.inner = self.inner.authentication_method(input);
@@ -162,5 +178,11 @@ impl GetEndpointFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_authentication_method(input);
         self
+    }
+    /// <p>The authentication method used during the device connection.</p>
+    pub fn get_authentication_method(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthenticationMethod> {
+        self.inner.get_authentication_method()
     }
 }

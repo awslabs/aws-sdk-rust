@@ -40,6 +40,10 @@ impl DescribeCampaignInputBuilder {
         self.campaign_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
+    pub fn get_campaign_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.campaign_arn
+    }
     /// Consumes the builder and constructs a [`DescribeCampaignInput`](crate::operation::describe_campaign::DescribeCampaignInput).
     pub fn build(
         self,

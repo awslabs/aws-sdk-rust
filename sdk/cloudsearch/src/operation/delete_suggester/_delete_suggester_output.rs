@@ -50,6 +50,10 @@ impl DeleteSuggesterOutputBuilder {
         self.suggester = input;
         self
     }
+    /// <p>The status of the suggester being deleted.</p>
+    pub fn get_suggester(&self) -> &::std::option::Option<crate::types::SuggesterStatus> {
+        &self.suggester
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

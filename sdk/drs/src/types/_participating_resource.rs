@@ -57,6 +57,12 @@ impl ParticipatingResourceBuilder {
         self.participating_resource_id = input;
         self
     }
+    /// <p>The ID of a participating resource.</p>
+    pub fn get_participating_resource_id(
+        &self,
+    ) -> &::std::option::Option<crate::types::ParticipatingResourceId> {
+        &self.participating_resource_id
+    }
     /// <p>The launch status of a participating resource.</p>
     pub fn launch_status(mut self, input: crate::types::LaunchStatus) -> Self {
         self.launch_status = ::std::option::Option::Some(input);
@@ -69,6 +75,10 @@ impl ParticipatingResourceBuilder {
     ) -> Self {
         self.launch_status = input;
         self
+    }
+    /// <p>The launch status of a participating resource.</p>
+    pub fn get_launch_status(&self) -> &::std::option::Option<crate::types::LaunchStatus> {
+        &self.launch_status
     }
     /// Consumes the builder and constructs a [`ParticipatingResource`](crate::types::ParticipatingResource).
     pub fn build(self) -> crate::types::ParticipatingResource {

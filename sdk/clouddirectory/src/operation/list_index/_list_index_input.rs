@@ -89,6 +89,10 @@ impl ListIndexInputBuilder {
         self.directory_arn = input;
         self
     }
+    /// <p>The ARN of the directory that the index exists in.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_arn
+    }
     /// Appends an item to `ranges_on_indexed_values`.
     ///
     /// To override the contents of this collection use [`set_ranges_on_indexed_values`](Self::set_ranges_on_indexed_values).
@@ -108,6 +112,12 @@ impl ListIndexInputBuilder {
         self.ranges_on_indexed_values = input;
         self
     }
+    /// <p>Specifies the ranges of indexed values that you want to query.</p>
+    pub fn get_ranges_on_indexed_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeRange>> {
+        &self.ranges_on_indexed_values
+    }
     /// <p>The reference to the index to list.</p>
     pub fn index_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.index_reference = ::std::option::Option::Some(input);
@@ -121,6 +131,10 @@ impl ListIndexInputBuilder {
         self.index_reference = input;
         self
     }
+    /// <p>The reference to the index to list.</p>
+    pub fn get_index_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
+        &self.index_reference
+    }
     /// <p>The maximum number of objects in a single page to retrieve from the index during a request. For more information, see <a href="http://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Amazon Cloud Directory Limits</a>.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -131,6 +145,10 @@ impl ListIndexInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of objects in a single page to retrieve from the index during a request. For more information, see <a href="http://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Amazon Cloud Directory Limits</a>.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -140,6 +158,10 @@ impl ListIndexInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The consistency level to execute the request at.</p>
     pub fn consistency_level(mut self, input: crate::types::ConsistencyLevel) -> Self {
@@ -153,6 +175,10 @@ impl ListIndexInputBuilder {
     ) -> Self {
         self.consistency_level = input;
         self
+    }
+    /// <p>The consistency level to execute the request at.</p>
+    pub fn get_consistency_level(&self) -> &::std::option::Option<crate::types::ConsistencyLevel> {
+        &self.consistency_level
     }
     /// Consumes the builder and constructs a [`ListIndexInput`](crate::operation::list_index::ListIndexInput).
     pub fn build(

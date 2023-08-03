@@ -69,6 +69,10 @@ impl ListCustomRoutingPortMappingsInputBuilder {
         self.accelerator_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the accelerator to list the custom routing port mappings for.</p>
+    pub fn get_accelerator_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accelerator_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to list the custom routing port mappings for.</p>
     pub fn endpoint_group_arn(
         mut self,
@@ -85,6 +89,10 @@ impl ListCustomRoutingPortMappingsInputBuilder {
         self.endpoint_group_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the endpoint group to list the custom routing port mappings for.</p>
+    pub fn get_endpoint_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_group_arn
+    }
     /// <p>The number of destination port mappings that you want to return with this call. The default value is 10.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -95,6 +103,10 @@ impl ListCustomRoutingPortMappingsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The number of destination port mappings that you want to return with this call. The default value is 10.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -104,6 +116,10 @@ impl ListCustomRoutingPortMappingsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next set of results. You receive this token from a previous call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListCustomRoutingPortMappingsInput`](crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsInput).
     pub fn build(

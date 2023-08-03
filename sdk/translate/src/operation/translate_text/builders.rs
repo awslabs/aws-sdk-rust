@@ -36,6 +36,12 @@ impl TranslateTextFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the TranslateText as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::translate_text::builders::TranslateTextInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl TranslateTextFluentBuilder {
         self.inner = self.inner.set_text(input);
         self
     }
+    /// <p>The text to translate. The text string can be a maximum of 10,000 bytes long. Depending on your character set, this may be fewer than 10,000 characters.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_text()
+    }
     /// Appends an item to `TerminologyNames`.
     ///
     /// To override the contents of this collection use [`set_terminology_names`](Self::set_terminology_names).
@@ -142,6 +152,14 @@ impl TranslateTextFluentBuilder {
         self.inner = self.inner.set_terminology_names(input);
         self
     }
+    /// <p>The name of a terminology list file to add to the translation job. This file provides source terms and the desired translation for each term. A terminology list can contain a maximum of 256 terms. You can use one custom terminology resource in your translation request.</p>
+    /// <p>Use the <code>ListTerminologies</code> operation to get the available terminology lists.</p>
+    /// <p>For more information about custom terminology lists, see <a href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom terminology</a>.</p>
+    pub fn get_terminology_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_terminology_names()
+    }
     /// <p>The language code for the language of the source text. For a list of language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
     /// <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p> <note>
     /// <p>If you specify <code>auto</code>, you must send the <code>TranslateText</code> request in a region that supports Amazon Comprehend. Otherwise, the request returns an error indicating that autodetect is not supported. </p>
@@ -164,6 +182,13 @@ impl TranslateTextFluentBuilder {
         self.inner = self.inner.set_source_language_code(input);
         self
     }
+    /// <p>The language code for the language of the source text. For a list of language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
+    /// <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p> <note>
+    /// <p>If you specify <code>auto</code>, you must send the <code>TranslateText</code> request in a region that supports Amazon Comprehend. Otherwise, the request returns an error indicating that autodetect is not supported. </p>
+    /// </note>
+    pub fn get_source_language_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_language_code()
+    }
     /// <p>The language code requested for the language of the target text. For a list of language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
     pub fn target_language_code(
         mut self,
@@ -180,6 +205,10 @@ impl TranslateTextFluentBuilder {
         self.inner = self.inner.set_target_language_code(input);
         self
     }
+    /// <p>The language code requested for the language of the target text. For a list of language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
+    pub fn get_target_language_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_language_code()
+    }
     /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
     pub fn settings(mut self, input: crate::types::TranslationSettings) -> Self {
         self.inner = self.inner.settings(input);
@@ -192,5 +221,9 @@ impl TranslateTextFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_settings(input);
         self
+    }
+    /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
+    pub fn get_settings(&self) -> &::std::option::Option<crate::types::TranslationSettings> {
+        self.inner.get_settings()
     }
 }

@@ -116,6 +116,13 @@ impl AwsGuardDutyDetectorDataSourcesDetailsBuilder {
         self.cloud_trail = input;
         self
     }
+    /// <p> An object that contains information on the status of CloudTrail as a data source for the detector. </p>
+    pub fn get_cloud_trail(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsGuardDutyDetectorDataSourcesCloudTrailDetails>
+    {
+        &self.cloud_trail
+    }
     /// <p> An object that contains information on the status of DNS logs as a data source for the detector. </p>
     pub fn dns_logs(
         mut self,
@@ -132,6 +139,12 @@ impl AwsGuardDutyDetectorDataSourcesDetailsBuilder {
         self.dns_logs = input;
         self
     }
+    /// <p> An object that contains information on the status of DNS logs as a data source for the detector. </p>
+    pub fn get_dns_logs(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsGuardDutyDetectorDataSourcesDnsLogsDetails> {
+        &self.dns_logs
+    }
     /// <p> An object that contains information on the status of VPC Flow Logs as a data source for the detector. </p>
     pub fn flow_logs(
         mut self,
@@ -147,6 +160,12 @@ impl AwsGuardDutyDetectorDataSourcesDetailsBuilder {
     ) -> Self {
         self.flow_logs = input;
         self
+    }
+    /// <p> An object that contains information on the status of VPC Flow Logs as a data source for the detector. </p>
+    pub fn get_flow_logs(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsGuardDutyDetectorDataSourcesFlowLogsDetails> {
+        &self.flow_logs
     }
     /// <p> An object that contains information on the status of Kubernetes data sources for the detector. </p>
     pub fn kubernetes(
@@ -166,6 +185,13 @@ impl AwsGuardDutyDetectorDataSourcesDetailsBuilder {
         self.kubernetes = input;
         self
     }
+    /// <p> An object that contains information on the status of Kubernetes data sources for the detector. </p>
+    pub fn get_kubernetes(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsGuardDutyDetectorDataSourcesKubernetesDetails>
+    {
+        &self.kubernetes
+    }
     /// <p> An object that contains information on the status of Malware Protection as a data source for the detector. </p>
     pub fn malware_protection(
         mut self,
@@ -184,6 +210,13 @@ impl AwsGuardDutyDetectorDataSourcesDetailsBuilder {
         self.malware_protection = input;
         self
     }
+    /// <p> An object that contains information on the status of Malware Protection as a data source for the detector. </p>
+    pub fn get_malware_protection(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsGuardDutyDetectorDataSourcesMalwareProtectionDetails>
+    {
+        &self.malware_protection
+    }
     /// <p> An object that contains information on the status of S3 Data event logs as a data source for the detector. </p>
     pub fn s3_logs(
         mut self,
@@ -199,6 +232,12 @@ impl AwsGuardDutyDetectorDataSourcesDetailsBuilder {
     ) -> Self {
         self.s3_logs = input;
         self
+    }
+    /// <p> An object that contains information on the status of S3 Data event logs as a data source for the detector. </p>
+    pub fn get_s3_logs(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsGuardDutyDetectorDataSourcesS3LogsDetails> {
+        &self.s3_logs
     }
     /// Consumes the builder and constructs a [`AwsGuardDutyDetectorDataSourcesDetails`](crate::types::AwsGuardDutyDetectorDataSourcesDetails).
     pub fn build(self) -> crate::types::AwsGuardDutyDetectorDataSourcesDetails {

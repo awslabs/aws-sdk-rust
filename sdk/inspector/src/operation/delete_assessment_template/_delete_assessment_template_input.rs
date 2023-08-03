@@ -47,6 +47,10 @@ impl DeleteAssessmentTemplateInputBuilder {
         self.assessment_template_arn = input;
         self
     }
+    /// <p>The ARN that specifies the assessment template that you want to delete.</p>
+    pub fn get_assessment_template_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_template_arn
+    }
     /// Consumes the builder and constructs a [`DeleteAssessmentTemplateInput`](crate::operation::delete_assessment_template::DeleteAssessmentTemplateInput).
     pub fn build(
         self,

@@ -46,6 +46,10 @@ impl DeletePolicyStoreInputBuilder {
         self.policy_store_id = input;
         self
     }
+    /// <p>Specifies the ID of the policy store that you want to delete.</p>
+    pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_store_id
+    }
     /// Consumes the builder and constructs a [`DeletePolicyStoreInput`](crate::operation::delete_policy_store::DeletePolicyStoreInput).
     pub fn build(
         self,

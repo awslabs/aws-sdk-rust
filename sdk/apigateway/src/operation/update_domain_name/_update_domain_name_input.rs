@@ -50,6 +50,10 @@ impl UpdateDomainNameInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The name of the DomainName resource to be changed.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// Appends an item to `patch_operations`.
     ///
     /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
@@ -68,6 +72,12 @@ impl UpdateDomainNameInputBuilder {
     ) -> Self {
         self.patch_operations = input;
         self
+    }
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    pub fn get_patch_operations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
+        &self.patch_operations
     }
     /// Consumes the builder and constructs a [`UpdateDomainNameInput`](crate::operation::update_domain_name::UpdateDomainNameInput).
     pub fn build(

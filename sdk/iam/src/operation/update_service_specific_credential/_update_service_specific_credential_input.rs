@@ -61,6 +61,11 @@ impl UpdateServiceSpecificCredentialInputBuilder {
         self.user_name = input;
         self
     }
+    /// <p>The name of the IAM user associated with the service-specific credential. If you do not specify this value, then the operation assumes the user whose credentials are used to call the operation.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
+    }
     /// <p>The unique identifier of the service-specific credential.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
     pub fn service_specific_credential_id(
@@ -79,6 +84,13 @@ impl UpdateServiceSpecificCredentialInputBuilder {
         self.service_specific_credential_id = input;
         self
     }
+    /// <p>The unique identifier of the service-specific credential.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
+    pub fn get_service_specific_credential_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.service_specific_credential_id
+    }
     /// <p>The status to be assigned to the service-specific credential.</p>
     pub fn status(mut self, input: crate::types::StatusType) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -88,6 +100,10 @@ impl UpdateServiceSpecificCredentialInputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StatusType>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status to be assigned to the service-specific credential.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::StatusType> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`UpdateServiceSpecificCredentialInput`](crate::operation::update_service_specific_credential::UpdateServiceSpecificCredentialInput).
     pub fn build(

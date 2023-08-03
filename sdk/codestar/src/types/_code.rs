@@ -48,6 +48,10 @@ impl CodeBuilder {
         self.source = input;
         self
     }
+    /// <p>The location where the source code files provided with the project request are stored. AWS CodeStar retrieves the files during project creation.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::CodeSource> {
+        &self.source
+    }
     /// <p>The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the source code files provided with the project request are placed in the repository.</p>
     pub fn destination(mut self, input: crate::types::CodeDestination) -> Self {
         self.destination = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl CodeBuilder {
     ) -> Self {
         self.destination = input;
         self
+    }
+    /// <p>The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the source code files provided with the project request are placed in the repository.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::CodeDestination> {
+        &self.destination
     }
     /// Consumes the builder and constructs a [`Code`](crate::types::Code).
     pub fn build(self) -> crate::types::Code {

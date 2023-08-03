@@ -56,6 +56,10 @@ impl ConditionalFormattingIconSetBuilder {
         self.expression = input;
         self
     }
+    /// <p>The expression that determines the formatting configuration for the icon set.</p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expression
+    }
     /// <p>Determines the icon set type.</p>
     pub fn icon_set_type(mut self, input: crate::types::ConditionalFormattingIconSetType) -> Self {
         self.icon_set_type = ::std::option::Option::Some(input);
@@ -68,6 +72,12 @@ impl ConditionalFormattingIconSetBuilder {
     ) -> Self {
         self.icon_set_type = input;
         self
+    }
+    /// <p>Determines the icon set type.</p>
+    pub fn get_icon_set_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConditionalFormattingIconSetType> {
+        &self.icon_set_type
     }
     /// Consumes the builder and constructs a [`ConditionalFormattingIconSet`](crate::types::ConditionalFormattingIconSet).
     pub fn build(self) -> crate::types::ConditionalFormattingIconSet {

@@ -61,6 +61,10 @@ impl ResolveCaseOutputBuilder {
         self.initial_case_status = input;
         self
     }
+    /// <p>The status of the case when the <code>ResolveCase</code> request was sent.</p>
+    pub fn get_initial_case_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.initial_case_status
+    }
     /// <p>The status of the case after the <code>ResolveCase</code> request was processed.</p>
     pub fn final_case_status(
         mut self,
@@ -76,6 +80,10 @@ impl ResolveCaseOutputBuilder {
     ) -> Self {
         self.final_case_status = input;
         self
+    }
+    /// <p>The status of the case after the <code>ResolveCase</code> request was processed.</p>
+    pub fn get_final_case_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.final_case_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

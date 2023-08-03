@@ -48,6 +48,10 @@ impl GroupSummaryBuilder {
         self.group_id = input;
         self
     }
+    /// <p>The identifier of the group you want group summary information on.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
+    }
     /// <p>The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action.</p>
     pub fn ordering_id(mut self, input: i64) -> Self {
         self.ordering_id = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl GroupSummaryBuilder {
     pub fn set_ordering_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.ordering_id = input;
         self
+    }
+    /// <p>The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action.</p>
+    pub fn get_ordering_id(&self) -> &::std::option::Option<i64> {
+        &self.ordering_id
     }
     /// Consumes the builder and constructs a [`GroupSummary`](crate::types::GroupSummary).
     pub fn build(self) -> crate::types::GroupSummary {

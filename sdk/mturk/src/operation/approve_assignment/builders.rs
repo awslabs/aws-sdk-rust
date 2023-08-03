@@ -43,6 +43,12 @@ impl ApproveAssignmentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ApproveAssignment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::approve_assignment::builders::ApproveAssignmentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,6 +145,10 @@ impl ApproveAssignmentFluentBuilder {
         self.inner = self.inner.set_assignment_id(input);
         self
     }
+    /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
+    pub fn get_assignment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assignment_id()
+    }
     /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
     pub fn requester_feedback(
         mut self,
@@ -155,6 +165,10 @@ impl ApproveAssignmentFluentBuilder {
         self.inner = self.inner.set_requester_feedback(input);
         self
     }
+    /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
+    pub fn get_requester_feedback(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_requester_feedback()
+    }
     /// <p> A flag indicating that an assignment should be approved even if it was previously rejected. Defaults to <code>False</code>. </p>
     pub fn override_rejection(mut self, input: bool) -> Self {
         self.inner = self.inner.override_rejection(input);
@@ -164,5 +178,9 @@ impl ApproveAssignmentFluentBuilder {
     pub fn set_override_rejection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_override_rejection(input);
         self
+    }
+    /// <p> A flag indicating that an assignment should be approved even if it was previously rejected. Defaults to <code>False</code>. </p>
+    pub fn get_override_rejection(&self) -> &::std::option::Option<bool> {
+        self.inner.get_override_rejection()
     }
 }

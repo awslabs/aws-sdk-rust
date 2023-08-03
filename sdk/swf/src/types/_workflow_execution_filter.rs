@@ -40,6 +40,10 @@ impl WorkflowExecutionFilterBuilder {
         self.workflow_id = input;
         self
     }
+    /// <p>The workflowId to pass of match the criteria of this filter.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_id
+    }
     /// Consumes the builder and constructs a [`WorkflowExecutionFilter`](crate::types::WorkflowExecutionFilter).
     pub fn build(self) -> crate::types::WorkflowExecutionFilter {
         crate::types::WorkflowExecutionFilter {

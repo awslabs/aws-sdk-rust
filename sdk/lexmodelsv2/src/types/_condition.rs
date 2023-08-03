@@ -46,6 +46,10 @@ impl ConditionBuilder {
         self.expression_string = input;
         self
     }
+    /// <p>The expression string that is evaluated. </p>
+    pub fn get_expression_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expression_string
+    }
     /// Consumes the builder and constructs a [`Condition`](crate::types::Condition).
     pub fn build(self) -> crate::types::Condition {
         crate::types::Condition {

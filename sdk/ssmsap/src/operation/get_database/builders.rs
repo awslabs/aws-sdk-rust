@@ -36,6 +36,10 @@ impl GetDatabaseFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetDatabase as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_database::builders::GetDatabaseInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl GetDatabaseFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The ID of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>The ID of the component.</p>
     pub fn component_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.component_id(input.into());
@@ -133,6 +141,10 @@ impl GetDatabaseFluentBuilder {
     pub fn set_component_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_component_id(input);
         self
+    }
+    /// <p>The ID of the component.</p>
+    pub fn get_component_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_component_id()
     }
     /// <p>The ID of the database.</p>
     pub fn database_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -144,6 +156,10 @@ impl GetDatabaseFluentBuilder {
         self.inner = self.inner.set_database_id(input);
         self
     }
+    /// <p>The ID of the database.</p>
+    pub fn get_database_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_database_id()
+    }
     /// <p>The Amazon Resource Name (ARN) of the database.</p>
     pub fn database_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_arn(input.into());
@@ -153,5 +169,9 @@ impl GetDatabaseFluentBuilder {
     pub fn set_database_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the database.</p>
+    pub fn get_database_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_database_arn()
     }
 }

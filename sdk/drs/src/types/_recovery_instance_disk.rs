@@ -62,6 +62,10 @@ impl RecoveryInstanceDiskBuilder {
         self.internal_device_name = input;
         self
     }
+    /// <p>The internal device name of this disk. This is the name that is visible on the machine itself and not from the EC2 console.</p>
+    pub fn get_internal_device_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.internal_device_name
+    }
     /// <p>The amount of storage on the disk in bytes.</p>
     pub fn bytes(mut self, input: i64) -> Self {
         self.bytes = ::std::option::Option::Some(input);
@@ -71,6 +75,10 @@ impl RecoveryInstanceDiskBuilder {
     pub fn set_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.bytes = input;
         self
+    }
+    /// <p>The amount of storage on the disk in bytes.</p>
+    pub fn get_bytes(&self) -> &::std::option::Option<i64> {
+        &self.bytes
     }
     /// <p>The EBS Volume ID of this disk.</p>
     pub fn ebs_volume_id(
@@ -87,6 +95,10 @@ impl RecoveryInstanceDiskBuilder {
     ) -> Self {
         self.ebs_volume_id = input;
         self
+    }
+    /// <p>The EBS Volume ID of this disk.</p>
+    pub fn get_ebs_volume_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ebs_volume_id
     }
     /// Consumes the builder and constructs a [`RecoveryInstanceDisk`](crate::types::RecoveryInstanceDisk).
     pub fn build(self) -> crate::types::RecoveryInstanceDisk {

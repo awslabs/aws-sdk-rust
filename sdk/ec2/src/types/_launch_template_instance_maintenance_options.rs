@@ -45,6 +45,12 @@ impl LaunchTemplateInstanceMaintenanceOptionsBuilder {
         self.auto_recovery = input;
         self
     }
+    /// <p>Disables the automatic recovery behavior of your instance or sets it to default.</p>
+    pub fn get_auto_recovery(
+        &self,
+    ) -> &::std::option::Option<crate::types::LaunchTemplateAutoRecoveryState> {
+        &self.auto_recovery
+    }
     /// Consumes the builder and constructs a [`LaunchTemplateInstanceMaintenanceOptions`](crate::types::LaunchTemplateInstanceMaintenanceOptions).
     pub fn build(self) -> crate::types::LaunchTemplateInstanceMaintenanceOptions {
         crate::types::LaunchTemplateInstanceMaintenanceOptions {

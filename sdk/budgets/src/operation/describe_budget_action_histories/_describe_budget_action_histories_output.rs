@@ -64,6 +64,12 @@ impl DescribeBudgetActionHistoriesOutputBuilder {
         self.action_histories = input;
         self
     }
+    /// <p> The historical record of the budget action resource. </p>
+    pub fn get_action_histories(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionHistory>> {
+        &self.action_histories
+    }
     /// <p> A generic string.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -73,6 +79,10 @@ impl DescribeBudgetActionHistoriesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p> A generic string.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

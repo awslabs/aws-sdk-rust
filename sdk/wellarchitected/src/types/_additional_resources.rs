@@ -52,6 +52,10 @@ impl AdditionalResourcesBuilder {
         self.r#type = input;
         self
     }
+    /// <p>Type of additional resource for a custom lens.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::AdditionalResourceType> {
+        &self.r#type
+    }
     /// Appends an item to `content`.
     ///
     /// To override the contents of this collection use [`set_content`](Self::set_content).
@@ -70,6 +74,12 @@ impl AdditionalResourcesBuilder {
     ) -> Self {
         self.content = input;
         self
+    }
+    /// <p>The URLs for additional resources, either helpful resources or improvement plans, for a custom lens. Up to five additional URLs can be specified.</p>
+    pub fn get_content(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChoiceContent>> {
+        &self.content
     }
     /// Consumes the builder and constructs a [`AdditionalResources`](crate::types::AdditionalResources).
     pub fn build(self) -> crate::types::AdditionalResources {

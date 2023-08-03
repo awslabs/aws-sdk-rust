@@ -56,6 +56,10 @@ impl RuleBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The detector for which the rule is associated.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// <p>The rule ID.</p>
     pub fn rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_id = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl RuleBuilder {
         self.rule_id = input;
         self
     }
+    /// <p>The rule ID.</p>
+    pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_id
+    }
     /// <p>The rule version.</p>
     pub fn rule_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_version = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl RuleBuilder {
     pub fn set_rule_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_version = input;
         self
+    }
+    /// <p>The rule version.</p>
+    pub fn get_rule_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_version
     }
     /// Consumes the builder and constructs a [`Rule`](crate::types::Rule).
     pub fn build(self) -> crate::types::Rule {

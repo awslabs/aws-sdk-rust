@@ -48,6 +48,10 @@ impl ApplicationVersionSummaryBuilder {
         self.application_version_id = input;
         self
     }
+    /// <p>The ID of the application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update the application.</p>
+    pub fn get_application_version_id(&self) -> &::std::option::Option<i64> {
+        &self.application_version_id
+    }
     /// <p>The status of the application.</p>
     pub fn application_status(mut self, input: crate::types::ApplicationStatus) -> Self {
         self.application_status = ::std::option::Option::Some(input);
@@ -60,6 +64,12 @@ impl ApplicationVersionSummaryBuilder {
     ) -> Self {
         self.application_status = input;
         self
+    }
+    /// <p>The status of the application.</p>
+    pub fn get_application_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationStatus> {
+        &self.application_status
     }
     /// Consumes the builder and constructs a [`ApplicationVersionSummary`](crate::types::ApplicationVersionSummary).
     pub fn build(self) -> crate::types::ApplicationVersionSummary {

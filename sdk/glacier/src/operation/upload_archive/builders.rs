@@ -42,6 +42,12 @@ impl UploadArchiveFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UploadArchive as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::upload_archive::builders::UploadArchiveInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl UploadArchiveFluentBuilder {
         self.inner = self.inner.set_vault_name(input);
         self
     }
+    /// <p>The name of the vault.</p>
+    pub fn get_vault_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vault_name()
+    }
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
@@ -133,6 +143,10 @@ impl UploadArchiveFluentBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
+    }
+    /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
     }
     /// <p>The optional description of the archive you are uploading.</p>
     pub fn archive_description(
@@ -150,6 +164,10 @@ impl UploadArchiveFluentBuilder {
         self.inner = self.inner.set_archive_description(input);
         self
     }
+    /// <p>The optional description of the archive you are uploading.</p>
+    pub fn get_archive_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_archive_description()
+    }
     /// <p>The SHA256 tree hash of the data being uploaded.</p>
     pub fn checksum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.checksum(input.into());
@@ -159,6 +177,10 @@ impl UploadArchiveFluentBuilder {
     pub fn set_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_checksum(input);
         self
+    }
+    /// <p>The SHA256 tree hash of the data being uploaded.</p>
+    pub fn get_checksum(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_checksum()
     }
     /// <p>The data to upload.</p>
     pub fn body(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
@@ -172,5 +194,9 @@ impl UploadArchiveFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_body(input);
         self
+    }
+    /// <p>The data to upload.</p>
+    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+        self.inner.get_body()
     }
 }

@@ -48,6 +48,12 @@ impl DescribeActivityTypeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeActivityType as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_activity_type::builders::DescribeActivityTypeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +144,10 @@ impl DescribeActivityTypeFluentBuilder {
         self.inner = self.inner.set_domain(input);
         self
     }
+    /// <p>The name of the domain in which the activity type is registered.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain()
+    }
     /// <p>The activity type to get information about. Activity types are identified by the <code>name</code> and <code>version</code> that were supplied when the activity was registered.</p>
     pub fn activity_type(mut self, input: crate::types::ActivityType) -> Self {
         self.inner = self.inner.activity_type(input);
@@ -150,5 +160,9 @@ impl DescribeActivityTypeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_activity_type(input);
         self
+    }
+    /// <p>The activity type to get information about. Activity types are identified by the <code>name</code> and <code>version</code> that were supplied when the activity was registered.</p>
+    pub fn get_activity_type(&self) -> &::std::option::Option<crate::types::ActivityType> {
+        self.inner.get_activity_type()
     }
 }

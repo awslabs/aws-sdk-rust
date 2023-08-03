@@ -40,6 +40,10 @@ impl DescribeStackSummaryInputBuilder {
         self.stack_id = input;
         self
     }
+    /// <p>The stack ID.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_id
+    }
     /// Consumes the builder and constructs a [`DescribeStackSummaryInput`](crate::operation::describe_stack_summary::DescribeStackSummaryInput).
     pub fn build(
         self,

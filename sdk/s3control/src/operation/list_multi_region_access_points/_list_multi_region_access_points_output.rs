@@ -67,6 +67,12 @@ impl ListMultiRegionAccessPointsOutputBuilder {
         self.access_points = input;
         self
     }
+    /// <p>The list of Multi-Region Access Points associated with the user.</p>
+    pub fn get_access_points(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MultiRegionAccessPointReport>> {
+        &self.access_points
+    }
     /// <p>If the specified bucket has more Multi-Region Access Points than can be returned in one call to this action, this field contains a continuation token. You can use this token tin subsequent calls to this action to retrieve additional Multi-Region Access Points.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -76,6 +82,10 @@ impl ListMultiRegionAccessPointsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the specified bucket has more Multi-Region Access Points than can be returned in one call to this action, this field contains a continuation token. You can use this token tin subsequent calls to this action to retrieve additional Multi-Region Access Points.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -37,6 +37,10 @@ impl GetUnfilteredPartitionMetadataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetUnfilteredPartitionMetadata as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_unfiltered_partition_metadata::builders::GetUnfilteredPartitionMetadataInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -101,6 +105,10 @@ impl GetUnfilteredPartitionMetadataFluentBuilder {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
+    /// <p>The catalog ID where the partition resides.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog_id()
+    }
     /// <p>(Required) Specifies the name of a database that contains the partition.</p>
     pub fn database_name(
         mut self,
@@ -117,6 +125,10 @@ impl GetUnfilteredPartitionMetadataFluentBuilder {
         self.inner = self.inner.set_database_name(input);
         self
     }
+    /// <p>(Required) Specifies the name of a database that contains the partition.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_database_name()
+    }
     /// <p>(Required) Specifies the name of a table that contains the partition.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.table_name(input.into());
@@ -126,6 +138,10 @@ impl GetUnfilteredPartitionMetadataFluentBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_table_name(input);
         self
+    }
+    /// <p>(Required) Specifies the name of a table that contains the partition.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_table_name()
     }
     /// Appends an item to `PartitionValues`.
     ///
@@ -147,6 +163,12 @@ impl GetUnfilteredPartitionMetadataFluentBuilder {
         self.inner = self.inner.set_partition_values(input);
         self
     }
+    /// <p>(Required) A list of partition key values.</p>
+    pub fn get_partition_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_partition_values()
+    }
     /// <p>A structure containing Lake Formation audit context information.</p>
     pub fn audit_context(mut self, input: crate::types::AuditContext) -> Self {
         self.inner = self.inner.audit_context(input);
@@ -159,6 +181,10 @@ impl GetUnfilteredPartitionMetadataFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_audit_context(input);
         self
+    }
+    /// <p>A structure containing Lake Formation audit context information.</p>
+    pub fn get_audit_context(&self) -> &::std::option::Option<crate::types::AuditContext> {
+        self.inner.get_audit_context()
     }
     /// Appends an item to `SupportedPermissionTypes`.
     ///
@@ -176,5 +202,11 @@ impl GetUnfilteredPartitionMetadataFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_supported_permission_types(input);
         self
+    }
+    /// <p>(Required) A list of supported permission types. </p>
+    pub fn get_supported_permission_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionType>> {
+        self.inner.get_supported_permission_types()
     }
 }

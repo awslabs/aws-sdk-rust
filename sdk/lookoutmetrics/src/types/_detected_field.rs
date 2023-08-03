@@ -56,6 +56,10 @@ impl DetectedFieldBuilder {
         self.value = input;
         self
     }
+    /// <p>The field's value.</p>
+    pub fn get_value(&self) -> &::std::option::Option<crate::types::AttributeValue> {
+        &self.value
+    }
     /// <p>The field's confidence.</p>
     pub fn confidence(mut self, input: crate::types::Confidence) -> Self {
         self.confidence = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl DetectedFieldBuilder {
         self.confidence = input;
         self
     }
+    /// <p>The field's confidence.</p>
+    pub fn get_confidence(&self) -> &::std::option::Option<crate::types::Confidence> {
+        &self.confidence
+    }
     /// <p>The field's message.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -78,6 +86,10 @@ impl DetectedFieldBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The field's message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`DetectedField`](crate::types::DetectedField).
     pub fn build(self) -> crate::types::DetectedField {

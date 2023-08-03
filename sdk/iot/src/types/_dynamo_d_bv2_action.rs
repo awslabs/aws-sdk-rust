@@ -53,6 +53,10 @@ impl DynamoDBv2ActionBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>Specifies the DynamoDB table to which the message data will be written. For example:</p>
     /// <p> <code>{ "dynamoDBv2": { "roleArn": "aws:iam:12341251:my-role" "putItem": { "tableName": "my-table" } } }</code> </p>
     /// <p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.</p>
@@ -69,6 +73,12 @@ impl DynamoDBv2ActionBuilder {
     ) -> Self {
         self.put_item = input;
         self
+    }
+    /// <p>Specifies the DynamoDB table to which the message data will be written. For example:</p>
+    /// <p> <code>{ "dynamoDBv2": { "roleArn": "aws:iam:12341251:my-role" "putItem": { "tableName": "my-table" } } }</code> </p>
+    /// <p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.</p>
+    pub fn get_put_item(&self) -> &::std::option::Option<crate::types::PutItemInput> {
+        &self.put_item
     }
     /// Consumes the builder and constructs a [`DynamoDBv2Action`](crate::types::DynamoDBv2Action).
     pub fn build(self) -> crate::types::DynamoDBv2Action {

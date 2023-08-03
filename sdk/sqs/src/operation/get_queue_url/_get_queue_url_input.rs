@@ -52,6 +52,11 @@ impl GetQueueUrlInputBuilder {
         self.queue_name = input;
         self
     }
+    /// <p>The name of the queue whose URL must be fetched. Maximum 80 characters. Valid values: alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p>
+    /// <p>Queue URLs and names are case-sensitive.</p>
+    pub fn get_queue_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.queue_name
+    }
     /// <p>The Amazon Web Services account ID of the account that created the queue.</p>
     pub fn queue_owner_aws_account_id(
         mut self,
@@ -67,6 +72,10 @@ impl GetQueueUrlInputBuilder {
     ) -> Self {
         self.queue_owner_aws_account_id = input;
         self
+    }
+    /// <p>The Amazon Web Services account ID of the account that created the queue.</p>
+    pub fn get_queue_owner_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.queue_owner_aws_account_id
     }
     /// Consumes the builder and constructs a [`GetQueueUrlInput`](crate::operation::get_queue_url::GetQueueUrlInput).
     pub fn build(

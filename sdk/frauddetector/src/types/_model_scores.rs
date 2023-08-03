@@ -54,6 +54,10 @@ impl ModelScoresBuilder {
         self.model_version = input;
         self
     }
+    /// <p>The model version.</p>
+    pub fn get_model_version(&self) -> &::std::option::Option<crate::types::ModelVersion> {
+        &self.model_version
+    }
     /// Adds a key-value pair to `scores`.
     ///
     /// To override the contents of this collection use [`set_scores`](Self::set_scores).
@@ -72,6 +76,12 @@ impl ModelScoresBuilder {
     ) -> Self {
         self.scores = input;
         self
+    }
+    /// <p>The model's fraud prediction scores.</p>
+    pub fn get_scores(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, f32>> {
+        &self.scores
     }
     /// Consumes the builder and constructs a [`ModelScores`](crate::types::ModelScores).
     pub fn build(self) -> crate::types::ModelScores {

@@ -40,6 +40,10 @@ impl MonitoringCsvDatasetFormatBuilder {
         self.header = input;
         self
     }
+    /// <p>Indicates if the CSV data has a header.</p>
+    pub fn get_header(&self) -> &::std::option::Option<bool> {
+        &self.header
+    }
     /// Consumes the builder and constructs a [`MonitoringCsvDatasetFormat`](crate::types::MonitoringCsvDatasetFormat).
     pub fn build(self) -> crate::types::MonitoringCsvDatasetFormat {
         crate::types::MonitoringCsvDatasetFormat {

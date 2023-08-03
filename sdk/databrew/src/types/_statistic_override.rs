@@ -56,6 +56,10 @@ impl StatisticOverrideBuilder {
         self.statistic = input;
         self
     }
+    /// <p>The name of an evaluation</p>
+    pub fn get_statistic(&self) -> &::std::option::Option<::std::string::String> {
+        &self.statistic
+    }
     /// Adds a key-value pair to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
@@ -80,6 +84,14 @@ impl StatisticOverrideBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>A map that includes overrides of an evaluation’s parameters.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.parameters
     }
     /// Consumes the builder and constructs a [`StatisticOverride`](crate::types::StatisticOverride).
     pub fn build(self) -> crate::types::StatisticOverride {

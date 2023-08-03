@@ -77,6 +77,10 @@ impl UpdateKxEnvironmentNetworkInputBuilder {
         self.environment_id = input;
         self
     }
+    /// <p>A unique identifier for the kdb environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
+    }
     /// <p>Specifies the transit gateway and network configuration to connect the kdb environment to an internal network.</p>
     pub fn transit_gateway_configuration(
         mut self,
@@ -92,6 +96,12 @@ impl UpdateKxEnvironmentNetworkInputBuilder {
     ) -> Self {
         self.transit_gateway_configuration = input;
         self
+    }
+    /// <p>Specifies the transit gateway and network configuration to connect the kdb environment to an internal network.</p>
+    pub fn get_transit_gateway_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransitGatewayConfiguration> {
+        &self.transit_gateway_configuration
     }
     /// Appends an item to `custom_dns_configuration`.
     ///
@@ -112,6 +122,12 @@ impl UpdateKxEnvironmentNetworkInputBuilder {
         self.custom_dns_configuration = input;
         self
     }
+    /// <p>A list of DNS server name and server IP. This is used to set up Route-53 outbound resolvers.</p>
+    pub fn get_custom_dns_configuration(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomDnsServer>> {
+        &self.custom_dns_configuration
+    }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -121,6 +137,10 @@ impl UpdateKxEnvironmentNetworkInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateKxEnvironmentNetworkInput`](crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkInput).
     pub fn build(

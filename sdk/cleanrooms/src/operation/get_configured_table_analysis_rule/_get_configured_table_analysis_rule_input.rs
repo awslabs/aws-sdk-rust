@@ -56,6 +56,10 @@ impl GetConfiguredTableAnalysisRuleInputBuilder {
         self.configured_table_identifier = input;
         self
     }
+    /// <p>The unique identifier for the configured table to retrieve. Currently accepts the configured table ID.</p>
+    pub fn get_configured_table_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configured_table_identifier
+    }
     /// <p>The analysis rule to be retrieved. Configured table analysis rules are uniquely identified by their configured table identifier and analysis rule type.</p>
     pub fn analysis_rule_type(
         mut self,
@@ -71,6 +75,12 @@ impl GetConfiguredTableAnalysisRuleInputBuilder {
     ) -> Self {
         self.analysis_rule_type = input;
         self
+    }
+    /// <p>The analysis rule to be retrieved. Configured table analysis rules are uniquely identified by their configured table identifier and analysis rule type.</p>
+    pub fn get_analysis_rule_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfiguredTableAnalysisRuleType> {
+        &self.analysis_rule_type
     }
     /// Consumes the builder and constructs a [`GetConfiguredTableAnalysisRuleInput`](crate::operation::get_configured_table_analysis_rule::GetConfiguredTableAnalysisRuleInput).
     pub fn build(

@@ -66,6 +66,10 @@ impl IsAuthorizedOutputBuilder {
         self.decision = input;
         self
     }
+    /// <p>An authorization decision that indicates if the authorization request should be allowed or denied.</p>
+    pub fn get_decision(&self) -> &::std::option::Option<crate::types::Decision> {
+        &self.decision
+    }
     /// Appends an item to `determining_policies`.
     ///
     /// To override the contents of this collection use [`set_determining_policies`](Self::set_determining_policies).
@@ -85,6 +89,12 @@ impl IsAuthorizedOutputBuilder {
         self.determining_policies = input;
         self
     }
+    /// <p>The list of determining policies used to make the authorization decision. For example, if there are two matching policies, where one is a forbid and the other is a permit, then the forbid policy will be the determining policy. In the case of multiple matching permit policies then there would be multiple determining policies. In the case that no policies match, and hence the response is DENY, there would be no determining policies.</p>
+    pub fn get_determining_policies(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeterminingPolicyItem>> {
+        &self.determining_policies
+    }
     /// Appends an item to `errors`.
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
@@ -103,6 +113,12 @@ impl IsAuthorizedOutputBuilder {
     ) -> Self {
         self.errors = input;
         self
+    }
+    /// <p>Errors that occurred while making an authorization decision, for example, a policy references an Entity or entity Attribute that does not exist in the slice.</p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationErrorItem>> {
+        &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

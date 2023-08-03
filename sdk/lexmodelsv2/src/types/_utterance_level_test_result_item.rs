@@ -56,6 +56,10 @@ impl UtteranceLevelTestResultItemBuilder {
         self.record_number = input;
         self
     }
+    /// <p>The record number of the result.</p>
+    pub fn get_record_number(&self) -> &::std::option::Option<i64> {
+        &self.record_number
+    }
     /// <p>The unique identifier for the conversation associated with the result.</p>
     pub fn conversation_id(
         mut self,
@@ -72,6 +76,10 @@ impl UtteranceLevelTestResultItemBuilder {
         self.conversation_id = input;
         self
     }
+    /// <p>The unique identifier for the conversation associated with the result.</p>
+    pub fn get_conversation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.conversation_id
+    }
     /// <p>Contains information about the turn associated with the result.</p>
     pub fn turn_result(mut self, input: crate::types::TestSetTurnResult) -> Self {
         self.turn_result = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl UtteranceLevelTestResultItemBuilder {
     ) -> Self {
         self.turn_result = input;
         self
+    }
+    /// <p>Contains information about the turn associated with the result.</p>
+    pub fn get_turn_result(&self) -> &::std::option::Option<crate::types::TestSetTurnResult> {
+        &self.turn_result
     }
     /// Consumes the builder and constructs a [`UtteranceLevelTestResultItem`](crate::types::UtteranceLevelTestResultItem).
     pub fn build(self) -> crate::types::UtteranceLevelTestResultItem {

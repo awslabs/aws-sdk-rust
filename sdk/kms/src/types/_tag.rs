@@ -51,6 +51,10 @@ impl TagBuilder {
         self.tag_key = input;
         self
     }
+    /// <p>The key of the tag.</p>
+    pub fn get_tag_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tag_key
+    }
     /// <p>The value of the tag.</p>
     pub fn tag_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tag_value = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl TagBuilder {
     pub fn set_tag_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tag_value = input;
         self
+    }
+    /// <p>The value of the tag.</p>
+    pub fn get_tag_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tag_value
     }
     /// Consumes the builder and constructs a [`Tag`](crate::types::Tag).
     pub fn build(self) -> crate::types::Tag {

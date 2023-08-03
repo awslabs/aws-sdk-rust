@@ -36,6 +36,12 @@ impl StartDeploymentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartDeployment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_deployment::builders::StartDeploymentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl StartDeploymentFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The application ID.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>The environment ID.</p>
     pub fn environment_id(
         mut self,
@@ -147,6 +157,10 @@ impl StartDeploymentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
+    }
+    /// <p>The environment ID.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_id()
     }
     /// <p>The deployment strategy ID.</p>
     pub fn deployment_strategy_id(
@@ -164,6 +178,10 @@ impl StartDeploymentFluentBuilder {
         self.inner = self.inner.set_deployment_strategy_id(input);
         self
     }
+    /// <p>The deployment strategy ID.</p>
+    pub fn get_deployment_strategy_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_deployment_strategy_id()
+    }
     /// <p>The configuration profile ID.</p>
     pub fn configuration_profile_id(
         mut self,
@@ -179,6 +197,10 @@ impl StartDeploymentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_configuration_profile_id(input);
         self
+    }
+    /// <p>The configuration profile ID.</p>
+    pub fn get_configuration_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_profile_id()
     }
     /// <p>The configuration version to deploy. If deploying an AppConfig hosted configuration version, you can specify either the version number or version label.</p>
     pub fn configuration_version(
@@ -196,6 +218,10 @@ impl StartDeploymentFluentBuilder {
         self.inner = self.inner.set_configuration_version(input);
         self
     }
+    /// <p>The configuration version to deploy. If deploying an AppConfig hosted configuration version, you can specify either the version number or version label.</p>
+    pub fn get_configuration_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_version()
+    }
     /// <p>A description of the deployment.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -205,6 +231,10 @@ impl StartDeploymentFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the deployment.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -229,6 +259,14 @@ impl StartDeploymentFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Metadata to assign to the deployment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to encrypt the configuration data using a customer managed key. </p>
     pub fn kms_key_identifier(
         mut self,
@@ -244,5 +282,9 @@ impl StartDeploymentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_kms_key_identifier(input);
         self
+    }
+    /// <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to encrypt the configuration data using a customer managed key. </p>
+    pub fn get_kms_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_identifier()
     }
 }

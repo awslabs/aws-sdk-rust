@@ -51,6 +51,10 @@ impl LastUpdateStatusBuilder {
         self.status = input;
         self
     }
+    /// <p>A value that indicates whether the update was made successful.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::LastUpdateStatusValue> {
+        &self.status
+    }
     /// <p>If the update wasn't successful, indicates the reason why it failed.</p>
     pub fn failure_reason(
         mut self,
@@ -66,6 +70,10 @@ impl LastUpdateStatusBuilder {
     ) -> Self {
         self.failure_reason = input;
         self
+    }
+    /// <p>If the update wasn't successful, indicates the reason why it failed.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     /// Consumes the builder and constructs a [`LastUpdateStatus`](crate::types::LastUpdateStatus).
     pub fn build(self) -> crate::types::LastUpdateStatus {

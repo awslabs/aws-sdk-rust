@@ -91,6 +91,10 @@ impl ConflictExceptionBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The type of conflict which caused a ConflictException. Possible types and the corresponding error messages are as follows:</p>
     /// <ul>
     /// <li> <p> <code>DOMAIN_NOT_ACTIVE</code>: The domain is not active.</p> </li>
@@ -119,6 +123,18 @@ impl ConflictExceptionBuilder {
     ) -> Self {
         self.conflict_type = input;
         self
+    }
+    /// <p>The type of conflict which caused a ConflictException. Possible types and the corresponding error messages are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>DOMAIN_NOT_ACTIVE</code>: The domain is not active.</p> </li>
+    /// <li> <p> <code>CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT</code>: You cannot change the speaker ID after an enrollment has been requested.</p> </li>
+    /// <li> <p> <code>ENROLLMENT_ALREADY_EXISTS</code>: There is already an enrollment for this session.</p> </li>
+    /// <li> <p> <code>SPEAKER_NOT_SET</code>: You must set the speaker ID before requesting an enrollment.</p> </li>
+    /// <li> <p> <code>SPEAKER_OPTED_OUT</code>: You cannot request an enrollment for an opted out speaker.</p> </li>
+    /// <li> <p> <code>CONCURRENT_CHANGES</code>: The request could not be processed as the resource was modified by another request during execution.</p> </li>
+    /// </ul>
+    pub fn get_conflict_type(&self) -> &::std::option::Option<crate::types::ConflictType> {
+        &self.conflict_type
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

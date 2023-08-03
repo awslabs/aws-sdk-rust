@@ -45,6 +45,10 @@ impl DeleteModelQualityJobDefinitionInputBuilder {
         self.job_definition_name = input;
         self
     }
+    /// <p>The name of the model quality monitoring job definition to delete.</p>
+    pub fn get_job_definition_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_definition_name
+    }
     /// Consumes the builder and constructs a [`DeleteModelQualityJobDefinitionInput`](crate::operation::delete_model_quality_job_definition::DeleteModelQualityJobDefinitionInput).
     pub fn build(
         self,

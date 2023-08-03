@@ -57,6 +57,12 @@ impl BatchDeleteTableVersionOutputBuilder {
         self.errors = input;
         self
     }
+    /// <p>A list of errors encountered while trying to delete the specified table versions.</p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TableVersionError>> {
+        &self.errors
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

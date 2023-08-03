@@ -51,6 +51,11 @@ impl AnonymousUserDashboardEmbeddingConfigurationBuilder {
         self.initial_dashboard_id = input;
         self
     }
+    /// <p>The dashboard ID for the dashboard that you want the user to see first. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this dashboard.</p>
+    /// <p>The Amazon Resource Name (ARN) of this dashboard must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
+    pub fn get_initial_dashboard_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.initial_dashboard_id
+    }
     /// Consumes the builder and constructs a [`AnonymousUserDashboardEmbeddingConfiguration`](crate::types::AnonymousUserDashboardEmbeddingConfiguration).
     pub fn build(self) -> crate::types::AnonymousUserDashboardEmbeddingConfiguration {
         crate::types::AnonymousUserDashboardEmbeddingConfiguration {

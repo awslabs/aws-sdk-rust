@@ -61,6 +61,10 @@ impl CreateQuickConnectOutputBuilder {
         self.quick_connect_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the quick connect. </p>
+    pub fn get_quick_connect_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quick_connect_arn
+    }
     /// <p>The identifier for the quick connect. </p>
     pub fn quick_connect_id(
         mut self,
@@ -76,6 +80,10 @@ impl CreateQuickConnectOutputBuilder {
     ) -> Self {
         self.quick_connect_id = input;
         self
+    }
+    /// <p>The identifier for the quick connect. </p>
+    pub fn get_quick_connect_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quick_connect_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

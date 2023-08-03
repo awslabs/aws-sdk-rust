@@ -49,6 +49,10 @@ impl AssociateGatewayToServerInputBuilder {
         self.gateway_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the server that hosts your virtual machines.</p>
     pub fn server_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_arn = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl AssociateGatewayToServerInputBuilder {
     pub fn set_server_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the server that hosts your virtual machines.</p>
+    pub fn get_server_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_arn
     }
     /// Consumes the builder and constructs a [`AssociateGatewayToServerInput`](crate::operation::associate_gateway_to_server::AssociateGatewayToServerInput).
     pub fn build(

@@ -49,6 +49,10 @@ impl SegmentBuilder {
         self.id = input;
         self
     }
+    /// <p>The segment's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The segment document.</p>
     pub fn document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl SegmentBuilder {
     pub fn set_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document = input;
         self
+    }
+    /// <p>The segment document.</p>
+    pub fn get_document(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document
     }
     /// Consumes the builder and constructs a [`Segment`](crate::types::Segment).
     pub fn build(self) -> crate::types::Segment {

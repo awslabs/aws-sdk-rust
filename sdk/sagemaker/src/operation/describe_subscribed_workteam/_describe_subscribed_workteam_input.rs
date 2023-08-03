@@ -39,6 +39,10 @@ impl DescribeSubscribedWorkteamInputBuilder {
         self.workteam_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the subscribed work team to describe.</p>
+    pub fn get_workteam_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workteam_arn
+    }
     /// Consumes the builder and constructs a [`DescribeSubscribedWorkteamInput`](crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamInput).
     pub fn build(
         self,

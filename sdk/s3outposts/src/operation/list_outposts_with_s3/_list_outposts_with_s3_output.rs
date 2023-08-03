@@ -85,6 +85,15 @@ impl ListOutpostsWithS3OutputBuilder {
         self.outposts = input;
         self
     }
+    /// <p>Returns the list of Outposts that have the following characteristics:</p>
+    /// <ul>
+    /// <li> <p>outposts that have S3 provisioned</p> </li>
+    /// <li> <p>outposts that are <code>Active</code> (not pending any provisioning nor decommissioned)</p> </li>
+    /// <li> <p>outposts to which the the calling Amazon Web Services account has access</p> </li>
+    /// </ul>
+    pub fn get_outposts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Outpost>> {
+        &self.outposts
+    }
     /// <p>Returns a token that you can use to call <code>ListOutpostsWithS3</code> again and receive additional results, if there are any.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -94,6 +103,10 @@ impl ListOutpostsWithS3OutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Returns a token that you can use to call <code>ListOutpostsWithS3</code> again and receive additional results, if there are any.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -105,6 +105,10 @@ impl GetEventStreamOutputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The unique name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>A unique identifier for the event stream.</p>
     pub fn event_stream_arn(
         mut self,
@@ -121,6 +125,10 @@ impl GetEventStreamOutputBuilder {
         self.event_stream_arn = input;
         self
     }
+    /// <p>A unique identifier for the event stream.</p>
+    pub fn get_event_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_stream_arn
+    }
     /// <p>The timestamp of when the export was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -133,6 +141,10 @@ impl GetEventStreamOutputBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The timestamp of when the export was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>The operational state of destination stream for export.</p>
     pub fn state(mut self, input: crate::types::EventStreamState) -> Self {
@@ -147,6 +159,10 @@ impl GetEventStreamOutputBuilder {
         self.state = input;
         self
     }
+    /// <p>The operational state of destination stream for export.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::EventStreamState> {
+        &self.state
+    }
     /// <p>The timestamp when the <code>State</code> changed to <code>STOPPED</code>.</p>
     pub fn stopped_since(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.stopped_since = ::std::option::Option::Some(input);
@@ -159,6 +175,10 @@ impl GetEventStreamOutputBuilder {
     ) -> Self {
         self.stopped_since = input;
         self
+    }
+    /// <p>The timestamp when the <code>State</code> changed to <code>STOPPED</code>.</p>
+    pub fn get_stopped_since(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.stopped_since
     }
     /// <p>Details regarding the Kinesis stream.</p>
     pub fn destination_details(
@@ -175,6 +195,12 @@ impl GetEventStreamOutputBuilder {
     ) -> Self {
         self.destination_details = input;
         self
+    }
+    /// <p>Details regarding the Kinesis stream.</p>
+    pub fn get_destination_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::EventStreamDestinationDetails> {
+        &self.destination_details
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -200,6 +226,14 @@ impl GetEventStreamOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

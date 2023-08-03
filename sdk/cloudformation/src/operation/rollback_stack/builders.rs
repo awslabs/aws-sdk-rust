@@ -45,6 +45,12 @@ impl RollbackStackFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RollbackStack as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::rollback_stack::builders::RollbackStackInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl RollbackStackFluentBuilder {
         self.inner = self.inner.set_stack_name(input);
         self
     }
+    /// <p>The name that's associated with the stack.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_name()
+    }
     /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management role that CloudFormation assumes to rollback the stack.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -136,6 +146,10 @@ impl RollbackStackFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management role that CloudFormation assumes to rollback the stack.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// <p>A unique identifier for this <code>RollbackStack</code> request.</p>
     pub fn client_request_token(
@@ -152,5 +166,9 @@ impl RollbackStackFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>A unique identifier for this <code>RollbackStack</code> request.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
 }

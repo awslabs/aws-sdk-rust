@@ -36,6 +36,13 @@ impl CreateCustomLineItemFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateCustomLineItem as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_custom_line_item::builders::CreateCustomLineItemInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl CreateCustomLineItemFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p> The name of the custom line item. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -136,6 +147,10 @@ impl CreateCustomLineItemFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p> The name of the custom line item. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p> The description of the custom line item. This is shown on the Bills page in association with the charge value. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -145,6 +160,10 @@ impl CreateCustomLineItemFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p> The description of the custom line item. This is shown on the Bills page in association with the charge value. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p> The Amazon Resource Name (ARN) that references the billing group where the custom line item applies to. </p>
     pub fn billing_group_arn(
@@ -162,6 +181,10 @@ impl CreateCustomLineItemFluentBuilder {
         self.inner = self.inner.set_billing_group_arn(input);
         self
     }
+    /// <p> The Amazon Resource Name (ARN) that references the billing group where the custom line item applies to. </p>
+    pub fn get_billing_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_billing_group_arn()
+    }
     /// <p> A time range for which the custom line item is effective. </p>
     pub fn billing_period_range(
         mut self,
@@ -177,6 +200,12 @@ impl CreateCustomLineItemFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_billing_period_range(input);
         self
+    }
+    /// <p> A time range for which the custom line item is effective. </p>
+    pub fn get_billing_period_range(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomLineItemBillingPeriodRange> {
+        self.inner.get_billing_period_range()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -201,6 +230,14 @@ impl CreateCustomLineItemFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p> A map that contains tag keys and tag values that are attached to a custom line item. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p> A <code>CustomLineItemChargeDetails</code> that describes the charge details for a custom line item. </p>
     pub fn charge_details(mut self, input: crate::types::CustomLineItemChargeDetails) -> Self {
         self.inner = self.inner.charge_details(input);
@@ -213,5 +250,11 @@ impl CreateCustomLineItemFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_charge_details(input);
         self
+    }
+    /// <p> A <code>CustomLineItemChargeDetails</code> that describes the charge details for a custom line item. </p>
+    pub fn get_charge_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomLineItemChargeDetails> {
+        self.inner.get_charge_details()
     }
 }

@@ -54,6 +54,10 @@ impl TimestreamConfigBuilder {
         self.timestream_table_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Timestream table.</p>
+    pub fn get_timestream_table_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timestream_table_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the task execution role that grants Amazon Web Services IoT FleetWise permission to deliver data to the Amazon Timestream table.</p>
     pub fn execution_role_arn(
         mut self,
@@ -69,6 +73,10 @@ impl TimestreamConfigBuilder {
     ) -> Self {
         self.execution_role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the task execution role that grants Amazon Web Services IoT FleetWise permission to deliver data to the Amazon Timestream table.</p>
+    pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_role_arn
     }
     /// Consumes the builder and constructs a [`TimestreamConfig`](crate::types::TimestreamConfig).
     pub fn build(self) -> crate::types::TimestreamConfig {

@@ -50,6 +50,10 @@ impl CreateReportGroupOutputBuilder {
         self.report_group = input;
         self
     }
+    /// <p> Information about the report group that was created. </p>
+    pub fn get_report_group(&self) -> &::std::option::Option<crate::types::ReportGroup> {
+        &self.report_group
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

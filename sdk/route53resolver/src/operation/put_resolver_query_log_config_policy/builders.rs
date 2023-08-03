@@ -36,6 +36,10 @@ impl PutResolverQueryLogConfigPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutResolverQueryLogConfigPolicy as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_resolver_query_log_config_policy::builders::PutResolverQueryLogConfigPolicyInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl PutResolverQueryLogConfigPolicyFluentBuilder {
         self.inner = self.inner.set_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the account that you want to share rules with.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
+    }
     /// <p>An Identity and Access Management policy statement that lists the query logging configurations that you want to share with another Amazon Web Services account and the operations that you want the account to be able to perform. You can specify the following operations in the <code>Actions</code> section of the statement:</p>
     /// <ul>
     /// <li> <p> <code>route53resolver:AssociateResolverQueryLogConfig</code> </p> </li>
@@ -127,5 +135,17 @@ impl PutResolverQueryLogConfigPolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resolver_query_log_config_policy(input);
         self
+    }
+    /// <p>An Identity and Access Management policy statement that lists the query logging configurations that you want to share with another Amazon Web Services account and the operations that you want the account to be able to perform. You can specify the following operations in the <code>Actions</code> section of the statement:</p>
+    /// <ul>
+    /// <li> <p> <code>route53resolver:AssociateResolverQueryLogConfig</code> </p> </li>
+    /// <li> <p> <code>route53resolver:DisassociateResolverQueryLogConfig</code> </p> </li>
+    /// <li> <p> <code>route53resolver:ListResolverQueryLogConfigs</code> </p> </li>
+    /// </ul>
+    /// <p>In the <code>Resource</code> section of the statement, you specify the ARNs for the query logging configurations that you want to share with the account that you specified in <code>Arn</code>. </p>
+    pub fn get_resolver_query_log_config_policy(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resolver_query_log_config_policy()
     }
 }

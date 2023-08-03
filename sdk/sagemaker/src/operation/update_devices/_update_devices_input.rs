@@ -53,6 +53,10 @@ impl UpdateDevicesInputBuilder {
         self.device_fleet_name = input;
         self
     }
+    /// <p>The name of the fleet the devices belong to.</p>
+    pub fn get_device_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_fleet_name
+    }
     /// Appends an item to `devices`.
     ///
     /// To override the contents of this collection use [`set_devices`](Self::set_devices).
@@ -71,6 +75,10 @@ impl UpdateDevicesInputBuilder {
     ) -> Self {
         self.devices = input;
         self
+    }
+    /// <p>List of devices to register with Edge Manager agent.</p>
+    pub fn get_devices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Device>> {
+        &self.devices
     }
     /// Consumes the builder and constructs a [`UpdateDevicesInput`](crate::operation::update_devices::UpdateDevicesInput).
     pub fn build(

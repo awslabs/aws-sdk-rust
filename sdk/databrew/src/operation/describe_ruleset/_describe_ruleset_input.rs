@@ -39,6 +39,10 @@ impl DescribeRulesetInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the ruleset to be described.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DescribeRulesetInput`](crate::operation::describe_ruleset::DescribeRulesetInput).
     pub fn build(
         self,

@@ -48,6 +48,10 @@ impl SensitivityInspectionTemplatesEntryBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier for the sensitivity inspection template.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the sensitivity inspection template: automated-sensitive-data-discovery.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl SensitivityInspectionTemplatesEntryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the sensitivity inspection template: automated-sensitive-data-discovery.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`SensitivityInspectionTemplatesEntry`](crate::types::SensitivityInspectionTemplatesEntry).
     pub fn build(self) -> crate::types::SensitivityInspectionTemplatesEntry {

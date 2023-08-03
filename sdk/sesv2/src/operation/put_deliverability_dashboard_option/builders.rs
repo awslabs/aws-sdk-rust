@@ -37,6 +37,10 @@ impl PutDeliverabilityDashboardOptionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutDeliverabilityDashboardOption as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_deliverability_dashboard_option::builders::PutDeliverabilityDashboardOptionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -101,6 +105,10 @@ impl PutDeliverabilityDashboardOptionFluentBuilder {
         self.inner = self.inner.set_dashboard_enabled(input);
         self
     }
+    /// <p>Specifies whether to enable the Deliverability dashboard. To enable the dashboard, set this value to <code>true</code>.</p>
+    pub fn get_dashboard_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dashboard_enabled()
+    }
     /// Appends an item to `SubscribedDomains`.
     ///
     /// To override the contents of this collection use [`set_subscribed_domains`](Self::set_subscribed_domains).
@@ -122,5 +130,12 @@ impl PutDeliverabilityDashboardOptionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_subscribed_domains(input);
         self
+    }
+    /// <p>An array of objects, one for each verified domain that you use to send email and enabled the Deliverability dashboard for.</p>
+    pub fn get_subscribed_domains(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainDeliverabilityTrackingOption>>
+    {
+        self.inner.get_subscribed_domains()
     }
 }

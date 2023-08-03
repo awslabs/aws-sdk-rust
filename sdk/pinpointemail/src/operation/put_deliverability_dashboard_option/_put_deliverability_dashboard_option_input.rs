@@ -53,6 +53,10 @@ impl PutDeliverabilityDashboardOptionInputBuilder {
         self.dashboard_enabled = input;
         self
     }
+    /// <p>Specifies whether to enable the Deliverability dashboard for your Amazon Pinpoint account. To enable the dashboard, set this value to <code>true</code>.</p>
+    pub fn get_dashboard_enabled(&self) -> &::std::option::Option<bool> {
+        &self.dashboard_enabled
+    }
     /// Appends an item to `subscribed_domains`.
     ///
     /// To override the contents of this collection use [`set_subscribed_domains`](Self::set_subscribed_domains).
@@ -76,6 +80,13 @@ impl PutDeliverabilityDashboardOptionInputBuilder {
     ) -> Self {
         self.subscribed_domains = input;
         self
+    }
+    /// <p>An array of objects, one for each verified domain that you use to send email and enabled the Deliverability dashboard for.</p>
+    pub fn get_subscribed_domains(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainDeliverabilityTrackingOption>>
+    {
+        &self.subscribed_domains
     }
     /// Consumes the builder and constructs a [`PutDeliverabilityDashboardOptionInput`](crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionInput, ::aws_smithy_http::operation::error::BuildError>{

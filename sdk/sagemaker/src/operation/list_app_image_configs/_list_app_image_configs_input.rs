@@ -105,6 +105,10 @@ impl ListAppImageConfigsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The total number of items to return in the response. If the total number of items available is more than the value specified, a <code>NextToken</code> is provided in the response. To resume pagination, provide the <code>NextToken</code> value in the as part of a subsequent call. The default value is 10.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>If the previous call to <code>ListImages</code> didn't return the full set of AppImageConfigs, the call returns a token for getting the next set of AppImageConfigs.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -114,6 +118,10 @@ impl ListAppImageConfigsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the previous call to <code>ListImages</code> didn't return the full set of AppImageConfigs, the call returns a token for getting the next set of AppImageConfigs.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>A filter that returns only AppImageConfigs whose name contains the specified string.</p>
     pub fn name_contains(
@@ -131,6 +139,10 @@ impl ListAppImageConfigsInputBuilder {
         self.name_contains = input;
         self
     }
+    /// <p>A filter that returns only AppImageConfigs whose name contains the specified string.</p>
+    pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name_contains
+    }
     /// <p>A filter that returns only AppImageConfigs created on or before the specified time.</p>
     pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time_before = ::std::option::Option::Some(input);
@@ -143,6 +155,10 @@ impl ListAppImageConfigsInputBuilder {
     ) -> Self {
         self.creation_time_before = input;
         self
+    }
+    /// <p>A filter that returns only AppImageConfigs created on or before the specified time.</p>
+    pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_before
     }
     /// <p>A filter that returns only AppImageConfigs created on or after the specified time.</p>
     pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -157,6 +173,10 @@ impl ListAppImageConfigsInputBuilder {
         self.creation_time_after = input;
         self
     }
+    /// <p>A filter that returns only AppImageConfigs created on or after the specified time.</p>
+    pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_after
+    }
     /// <p>A filter that returns only AppImageConfigs modified on or before the specified time.</p>
     pub fn modified_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.modified_time_before = ::std::option::Option::Some(input);
@@ -169,6 +189,10 @@ impl ListAppImageConfigsInputBuilder {
     ) -> Self {
         self.modified_time_before = input;
         self
+    }
+    /// <p>A filter that returns only AppImageConfigs modified on or before the specified time.</p>
+    pub fn get_modified_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.modified_time_before
     }
     /// <p>A filter that returns only AppImageConfigs modified on or after the specified time.</p>
     pub fn modified_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -183,6 +207,10 @@ impl ListAppImageConfigsInputBuilder {
         self.modified_time_after = input;
         self
     }
+    /// <p>A filter that returns only AppImageConfigs modified on or after the specified time.</p>
+    pub fn get_modified_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.modified_time_after
+    }
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
     pub fn sort_by(mut self, input: crate::types::AppImageConfigSortKey) -> Self {
         self.sort_by = ::std::option::Option::Some(input);
@@ -196,6 +224,10 @@ impl ListAppImageConfigsInputBuilder {
         self.sort_by = input;
         self
     }
+    /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::AppImageConfigSortKey> {
+        &self.sort_by
+    }
     /// <p>The sort order. The default value is <code>Descending</code>.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -205,6 +237,10 @@ impl ListAppImageConfigsInputBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p>The sort order. The default value is <code>Descending</code>.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.sort_order
     }
     /// Consumes the builder and constructs a [`ListAppImageConfigsInput`](crate::operation::list_app_image_configs::ListAppImageConfigsInput).
     pub fn build(

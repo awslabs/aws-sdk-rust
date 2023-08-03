@@ -67,6 +67,10 @@ impl ToolchainBuilder {
         self.source = input;
         self
     }
+    /// <p>The Amazon S3 location where the toolchain template file provided with the project request is stored. AWS CodeStar retrieves the file during project creation.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::ToolchainSource> {
+        &self.source
+    }
     /// <p>The service role ARN for AWS CodeStar to use for the toolchain template during stack provisioning.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -76,6 +80,10 @@ impl ToolchainBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The service role ARN for AWS CodeStar to use for the toolchain template during stack provisioning.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Adds a key-value pair to `stack_parameters`.
     ///
@@ -101,6 +109,14 @@ impl ToolchainBuilder {
     ) -> Self {
         self.stack_parameters = input;
         self
+    }
+    /// <p>The list of parameter overrides to be passed into the toolchain template during stack provisioning, if any.</p>
+    pub fn get_stack_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.stack_parameters
     }
     /// Consumes the builder and constructs a [`Toolchain`](crate::types::Toolchain).
     pub fn build(self) -> crate::types::Toolchain {

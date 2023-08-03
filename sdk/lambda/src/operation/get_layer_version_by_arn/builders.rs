@@ -36,6 +36,13 @@ impl GetLayerVersionByArnFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetLayerVersionByArn as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_layer_version_by_arn::builders::GetLayerVersionByArnInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +132,9 @@ impl GetLayerVersionByArnFluentBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
+    }
+    /// <p>The ARN of the layer version.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
     }
 }

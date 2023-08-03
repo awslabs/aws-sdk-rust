@@ -67,6 +67,10 @@ impl MultiplexSettingsBuilder {
         self.maximum_video_buffer_delay_milliseconds = input;
         self
     }
+    /// Maximum video buffer delay in milliseconds.
+    pub fn get_maximum_video_buffer_delay_milliseconds(&self) -> &::std::option::Option<i32> {
+        &self.maximum_video_buffer_delay_milliseconds
+    }
     /// Transport stream bit rate.
     pub fn transport_stream_bitrate(mut self, input: i32) -> Self {
         self.transport_stream_bitrate = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl MultiplexSettingsBuilder {
         self.transport_stream_bitrate = input;
         self
     }
+    /// Transport stream bit rate.
+    pub fn get_transport_stream_bitrate(&self) -> &::std::option::Option<i32> {
+        &self.transport_stream_bitrate
+    }
     /// Transport stream ID.
     pub fn transport_stream_id(mut self, input: i32) -> Self {
         self.transport_stream_id = ::std::option::Option::Some(input);
@@ -86,6 +94,10 @@ impl MultiplexSettingsBuilder {
     pub fn set_transport_stream_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.transport_stream_id = input;
         self
+    }
+    /// Transport stream ID.
+    pub fn get_transport_stream_id(&self) -> &::std::option::Option<i32> {
+        &self.transport_stream_id
     }
     /// Transport stream reserved bit rate.
     pub fn transport_stream_reserved_bitrate(mut self, input: i32) -> Self {
@@ -99,6 +111,10 @@ impl MultiplexSettingsBuilder {
     ) -> Self {
         self.transport_stream_reserved_bitrate = input;
         self
+    }
+    /// Transport stream reserved bit rate.
+    pub fn get_transport_stream_reserved_bitrate(&self) -> &::std::option::Option<i32> {
+        &self.transport_stream_reserved_bitrate
     }
     /// Consumes the builder and constructs a [`MultiplexSettings`](crate::types::MultiplexSettings).
     pub fn build(self) -> crate::types::MultiplexSettings {

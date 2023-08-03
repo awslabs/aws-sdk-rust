@@ -54,6 +54,10 @@ impl EnabledServicePrincipalBuilder {
         self.service_principal = input;
         self
     }
+    /// <p>The name of the service principal. This is typically in the form of a URL, such as: <code> <i>servicename</i>.amazonaws.com</code>.</p>
+    pub fn get_service_principal(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_principal
+    }
     /// <p>The date that the service principal was enabled for integration with Organizations.</p>
     pub fn date_enabled(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.date_enabled = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl EnabledServicePrincipalBuilder {
     ) -> Self {
         self.date_enabled = input;
         self
+    }
+    /// <p>The date that the service principal was enabled for integration with Organizations.</p>
+    pub fn get_date_enabled(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.date_enabled
     }
     /// Consumes the builder and constructs a [`EnabledServicePrincipal`](crate::types::EnabledServicePrincipal).
     pub fn build(self) -> crate::types::EnabledServicePrincipal {

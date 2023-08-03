@@ -70,6 +70,10 @@ impl PeeringTgwInfoBuilder {
         self.transit_gateway_id = input;
         self
     }
+    /// <p>The ID of the transit gateway.</p>
+    pub fn get_transit_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_id
+    }
     /// <p>The ID of the core network where the transit gateway peer is located.</p>
     pub fn core_network_id(
         mut self,
@@ -86,6 +90,10 @@ impl PeeringTgwInfoBuilder {
         self.core_network_id = input;
         self
     }
+    /// <p>The ID of the core network where the transit gateway peer is located.</p>
+    pub fn get_core_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_network_id
+    }
     /// <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_id = ::std::option::Option::Some(input.into());
@@ -96,6 +104,10 @@ impl PeeringTgwInfoBuilder {
         self.owner_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
+    }
     /// <p>The Region of the transit gateway.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -105,6 +117,10 @@ impl PeeringTgwInfoBuilder {
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
+    }
+    /// <p>The Region of the transit gateway.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// Consumes the builder and constructs a [`PeeringTgwInfo`](crate::types::PeeringTgwInfo).
     pub fn build(self) -> crate::types::PeeringTgwInfo {

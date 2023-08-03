@@ -51,6 +51,10 @@ impl ImportDataSourceConfigBuilder {
         self.data_source_url = input;
         self
     }
+    /// <p> The URL from which source data will be downloaded for the import request. </p>
+    pub fn get_data_source_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_url
+    }
     /// Consumes the builder and constructs a [`ImportDataSourceConfig`](crate::types::ImportDataSourceConfig).
     pub fn build(self) -> crate::types::ImportDataSourceConfig {
         crate::types::ImportDataSourceConfig {

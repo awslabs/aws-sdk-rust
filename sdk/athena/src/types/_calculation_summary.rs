@@ -62,6 +62,10 @@ impl CalculationSummaryBuilder {
         self.calculation_execution_id = input;
         self
     }
+    /// <p>The calculation execution UUID.</p>
+    pub fn get_calculation_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.calculation_execution_id
+    }
     /// <p>A description of the calculation.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl CalculationSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the calculation.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Contains information about the status of the calculation.</p>
     pub fn status(mut self, input: crate::types::CalculationStatus) -> Self {
@@ -84,6 +92,10 @@ impl CalculationSummaryBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Contains information about the status of the calculation.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CalculationStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`CalculationSummary`](crate::types::CalculationSummary).
     pub fn build(self) -> crate::types::CalculationSummary {

@@ -110,6 +110,10 @@ impl GetDiscoverySummaryOutputBuilder {
         self.servers = input;
         self
     }
+    /// <p>The number of servers discovered.</p>
+    pub fn get_servers(&self) -> &::std::option::Option<i64> {
+        &self.servers
+    }
     /// <p>The number of applications discovered.</p>
     pub fn applications(mut self, input: i64) -> Self {
         self.applications = ::std::option::Option::Some(input);
@@ -119,6 +123,10 @@ impl GetDiscoverySummaryOutputBuilder {
     pub fn set_applications(mut self, input: ::std::option::Option<i64>) -> Self {
         self.applications = input;
         self
+    }
+    /// <p>The number of applications discovered.</p>
+    pub fn get_applications(&self) -> &::std::option::Option<i64> {
+        &self.applications
     }
     /// <p>The number of servers mapped to applications.</p>
     pub fn servers_mapped_to_applications(mut self, input: i64) -> Self {
@@ -130,6 +138,10 @@ impl GetDiscoverySummaryOutputBuilder {
         self.servers_mapped_to_applications = input;
         self
     }
+    /// <p>The number of servers mapped to applications.</p>
+    pub fn get_servers_mapped_to_applications(&self) -> &::std::option::Option<i64> {
+        &self.servers_mapped_to_applications
+    }
     /// <p>The number of servers mapped to tags.</p>
     pub fn servers_mappedto_tags(mut self, input: i64) -> Self {
         self.servers_mappedto_tags = ::std::option::Option::Some(input);
@@ -139,6 +151,10 @@ impl GetDiscoverySummaryOutputBuilder {
     pub fn set_servers_mappedto_tags(mut self, input: ::std::option::Option<i64>) -> Self {
         self.servers_mappedto_tags = input;
         self
+    }
+    /// <p>The number of servers mapped to tags.</p>
+    pub fn get_servers_mappedto_tags(&self) -> &::std::option::Option<i64> {
+        &self.servers_mappedto_tags
     }
     /// <p>Details about discovered agents, including agent status and health.</p>
     pub fn agent_summary(mut self, input: crate::types::CustomerAgentInfo) -> Self {
@@ -153,6 +169,10 @@ impl GetDiscoverySummaryOutputBuilder {
         self.agent_summary = input;
         self
     }
+    /// <p>Details about discovered agents, including agent status and health.</p>
+    pub fn get_agent_summary(&self) -> &::std::option::Option<crate::types::CustomerAgentInfo> {
+        &self.agent_summary
+    }
     /// <p>Details about discovered connectors, including connector status and health.</p>
     pub fn connector_summary(mut self, input: crate::types::CustomerConnectorInfo) -> Self {
         self.connector_summary = ::std::option::Option::Some(input);
@@ -166,6 +186,12 @@ impl GetDiscoverySummaryOutputBuilder {
         self.connector_summary = input;
         self
     }
+    /// <p>Details about discovered connectors, including connector status and health.</p>
+    pub fn get_connector_summary(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomerConnectorInfo> {
+        &self.connector_summary
+    }
     /// <p> Details about Migration Evaluator collectors, including collector status and health. </p>
     pub fn me_collector_summary(mut self, input: crate::types::CustomerMeCollectorInfo) -> Self {
         self.me_collector_summary = ::std::option::Option::Some(input);
@@ -178,6 +204,12 @@ impl GetDiscoverySummaryOutputBuilder {
     ) -> Self {
         self.me_collector_summary = input;
         self
+    }
+    /// <p> Details about Migration Evaluator collectors, including collector status and health. </p>
+    pub fn get_me_collector_summary(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomerMeCollectorInfo> {
+        &self.me_collector_summary
     }
     /// <p> Details about Agentless Collector collectors, including status. </p>
     pub fn agentless_collector_summary(
@@ -194,6 +226,12 @@ impl GetDiscoverySummaryOutputBuilder {
     ) -> Self {
         self.agentless_collector_summary = input;
         self
+    }
+    /// <p> Details about Agentless Collector collectors, including status. </p>
+    pub fn get_agentless_collector_summary(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomerAgentlessCollectorInfo> {
+        &self.agentless_collector_summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -55,6 +55,10 @@ impl ListOtaUpdatesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return at one time.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>A token used to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl ListOtaUpdatesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token used to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The OTA update job status.</p>
     pub fn ota_update_status(mut self, input: crate::types::OtaUpdateStatus) -> Self {
@@ -77,6 +85,10 @@ impl ListOtaUpdatesInputBuilder {
     ) -> Self {
         self.ota_update_status = input;
         self
+    }
+    /// <p>The OTA update job status.</p>
+    pub fn get_ota_update_status(&self) -> &::std::option::Option<crate::types::OtaUpdateStatus> {
+        &self.ota_update_status
     }
     /// Consumes the builder and constructs a [`ListOtaUpdatesInput`](crate::operation::list_ota_updates::ListOtaUpdatesInput).
     pub fn build(

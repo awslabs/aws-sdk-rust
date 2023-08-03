@@ -67,6 +67,12 @@ impl UnprocessedStandardsControlAssociationUpdateBuilder {
         self.standards_control_association_update = input;
         self
     }
+    /// <p>An array of control and standard associations for which an update failed when calling <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html">BatchUpdateStandardsControlAssociations</a>. </p>
+    pub fn get_standards_control_association_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::StandardsControlAssociationUpdate> {
+        &self.standards_control_association_update
+    }
     /// <p>The error code for the unprocessed update of the control's enablement status in the specified standard.</p>
     pub fn error_code(mut self, input: crate::types::UnprocessedErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
@@ -80,6 +86,10 @@ impl UnprocessedStandardsControlAssociationUpdateBuilder {
         self.error_code = input;
         self
     }
+    /// <p>The error code for the unprocessed update of the control's enablement status in the specified standard.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::UnprocessedErrorCode> {
+        &self.error_code
+    }
     /// <p>The reason why a control's enablement status in the specified standard couldn't be updated. </p>
     pub fn error_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_reason = ::std::option::Option::Some(input.into());
@@ -89,6 +99,10 @@ impl UnprocessedStandardsControlAssociationUpdateBuilder {
     pub fn set_error_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_reason = input;
         self
+    }
+    /// <p>The reason why a control's enablement status in the specified standard couldn't be updated. </p>
+    pub fn get_error_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_reason
     }
     /// Consumes the builder and constructs a [`UnprocessedStandardsControlAssociationUpdate`](crate::types::UnprocessedStandardsControlAssociationUpdate).
     pub fn build(self) -> crate::types::UnprocessedStandardsControlAssociationUpdate {

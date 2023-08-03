@@ -38,6 +38,10 @@ impl UpdateServerEngineAttributesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateServerEngineAttributes as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_server_engine_attributes::builders::UpdateServerEngineAttributesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +132,10 @@ impl UpdateServerEngineAttributesFluentBuilder {
         self.inner = self.inner.set_server_name(input);
         self
     }
+    /// <p>The name of the server to update. </p>
+    pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_server_name()
+    }
     /// <p>The name of the engine attribute to update. </p>
     pub fn attribute_name(
         mut self,
@@ -144,6 +152,10 @@ impl UpdateServerEngineAttributesFluentBuilder {
         self.inner = self.inner.set_attribute_name(input);
         self
     }
+    /// <p>The name of the engine attribute to update. </p>
+    pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_attribute_name()
+    }
     /// <p>The value to set for the attribute. </p>
     pub fn attribute_value(
         mut self,
@@ -159,5 +171,9 @@ impl UpdateServerEngineAttributesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_attribute_value(input);
         self
+    }
+    /// <p>The value to set for the attribute. </p>
+    pub fn get_attribute_value(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_attribute_value()
     }
 }

@@ -54,6 +54,12 @@ impl GetRemoteAccessSessionOutputBuilder {
         self.remote_access_session = input;
         self
     }
+    /// <p>A container that lists detailed information about the remote access session.</p>
+    pub fn get_remote_access_session(
+        &self,
+    ) -> &::std::option::Option<crate::types::RemoteAccessSession> {
+        &self.remote_access_session
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

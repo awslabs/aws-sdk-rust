@@ -36,6 +36,12 @@ impl GetPoliciesStatsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetPoliciesStats as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_policies_stats::builders::GetPoliciesStatsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(

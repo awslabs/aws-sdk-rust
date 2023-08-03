@@ -37,6 +37,12 @@ impl GetQuerySuggestionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetQuerySuggestions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_query_suggestions::builders::GetQuerySuggestionsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl GetQuerySuggestionsFluentBuilder {
         self.inner = self.inner.set_index_id(input);
         self
     }
+    /// <p>The identifier of the index you want to get query suggestions from.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_index_id()
+    }
     /// <p>The text of a user's query to generate query suggestions.</p>
     /// <p>A query is suggested if the query prefix matches what a user starts to type as their query.</p>
     /// <p>Amazon Kendra does not show any suggestions if a user types fewer than two characters or more than 60 characters. A query must also have at least one search result and contain at least one word of more than four characters.</p>
@@ -141,6 +151,12 @@ impl GetQuerySuggestionsFluentBuilder {
         self.inner = self.inner.set_query_text(input);
         self
     }
+    /// <p>The text of a user's query to generate query suggestions.</p>
+    /// <p>A query is suggested if the query prefix matches what a user starts to type as their query.</p>
+    /// <p>Amazon Kendra does not show any suggestions if a user types fewer than two characters or more than 60 characters. A query must also have at least one search result and contain at least one word of more than four characters.</p>
+    pub fn get_query_text(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_query_text()
+    }
     /// <p>The maximum number of query suggestions you want to show to your users.</p>
     pub fn max_suggestions_count(mut self, input: i32) -> Self {
         self.inner = self.inner.max_suggestions_count(input);
@@ -150,6 +166,10 @@ impl GetQuerySuggestionsFluentBuilder {
     pub fn set_max_suggestions_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_suggestions_count(input);
         self
+    }
+    /// <p>The maximum number of query suggestions you want to show to your users.</p>
+    pub fn get_max_suggestions_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_suggestions_count()
     }
     /// Appends an item to `SuggestionTypes`.
     ///
@@ -172,6 +192,14 @@ impl GetQuerySuggestionsFluentBuilder {
         self.inner = self.inner.set_suggestion_types(input);
         self
     }
+    /// <p>The suggestions type to base query suggestions on. The suggestion types are query history or document fields/attributes. You can set one type or the other.</p>
+    /// <p>If you set query history as your suggestions type, Amazon Kendra suggests queries relevant to your users based on popular queries in the query history.</p>
+    /// <p>If you set document fields/attributes as your suggestions type, Amazon Kendra suggests queries relevant to your users based on the contents of document fields.</p>
+    pub fn get_suggestion_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SuggestionType>> {
+        self.inner.get_suggestion_types()
+    }
     /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
     pub fn attribute_suggestions_config(
         mut self,
@@ -187,5 +215,11 @@ impl GetQuerySuggestionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_attribute_suggestions_config(input);
         self
+    }
+    /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
+    pub fn get_attribute_suggestions_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AttributeSuggestionsGetConfig> {
+        self.inner.get_attribute_suggestions_config()
     }
 }

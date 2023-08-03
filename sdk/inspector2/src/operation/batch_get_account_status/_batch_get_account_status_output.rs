@@ -65,6 +65,12 @@ impl BatchGetAccountStatusOutputBuilder {
         self.accounts = input;
         self
     }
+    /// <p>An array of objects that provide details on the status of Amazon Inspector for each of the requested accounts.</p>
+    pub fn get_accounts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountState>> {
+        &self.accounts
+    }
     /// Appends an item to `failed_accounts`.
     ///
     /// To override the contents of this collection use [`set_failed_accounts`](Self::set_failed_accounts).
@@ -83,6 +89,12 @@ impl BatchGetAccountStatusOutputBuilder {
     ) -> Self {
         self.failed_accounts = input;
         self
+    }
+    /// <p>An array of objects detailing any accounts that failed to enable Amazon Inspector and why.</p>
+    pub fn get_failed_accounts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedAccount>> {
+        &self.failed_accounts
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

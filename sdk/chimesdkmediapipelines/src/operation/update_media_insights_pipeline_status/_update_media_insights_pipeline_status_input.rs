@@ -47,6 +47,10 @@ impl UpdateMediaInsightsPipelineStatusInputBuilder {
         self.identifier = input;
         self
     }
+    /// <p>The unique identifier of the resource to be updated. Valid values include the ID and ARN of the media insights pipeline.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
+    }
     /// <p>The requested status of the media insights pipeline.</p>
     pub fn update_status(mut self, input: crate::types::MediaPipelineStatusUpdate) -> Self {
         self.update_status = ::std::option::Option::Some(input);
@@ -59,6 +63,12 @@ impl UpdateMediaInsightsPipelineStatusInputBuilder {
     ) -> Self {
         self.update_status = input;
         self
+    }
+    /// <p>The requested status of the media insights pipeline.</p>
+    pub fn get_update_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::MediaPipelineStatusUpdate> {
+        &self.update_status
     }
     /// Consumes the builder and constructs a [`UpdateMediaInsightsPipelineStatusInput`](crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusInput, ::aws_smithy_http::operation::error::BuildError>{

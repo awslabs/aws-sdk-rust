@@ -82,6 +82,12 @@ impl DescribeFleetsInstancesBuilder {
         self.launch_template_and_overrides = input;
         self
     }
+    /// <p>The launch templates and overrides that were used for launching the instances. The values that you specify in the Overrides replace the values in the launch template.</p>
+    pub fn get_launch_template_and_overrides(
+        &self,
+    ) -> &::std::option::Option<crate::types::LaunchTemplateAndOverridesResponse> {
+        &self.launch_template_and_overrides
+    }
     /// <p>Indicates if the instance that was launched is a Spot Instance or On-Demand Instance.</p>
     pub fn lifecycle(mut self, input: crate::types::InstanceLifecycle) -> Self {
         self.lifecycle = ::std::option::Option::Some(input);
@@ -94,6 +100,10 @@ impl DescribeFleetsInstancesBuilder {
     ) -> Self {
         self.lifecycle = input;
         self
+    }
+    /// <p>Indicates if the instance that was launched is a Spot Instance or On-Demand Instance.</p>
+    pub fn get_lifecycle(&self) -> &::std::option::Option<crate::types::InstanceLifecycle> {
+        &self.lifecycle
     }
     /// Appends an item to `instance_ids`.
     ///
@@ -114,6 +124,12 @@ impl DescribeFleetsInstancesBuilder {
         self.instance_ids = input;
         self
     }
+    /// <p>The IDs of the instances.</p>
+    pub fn get_instance_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.instance_ids
+    }
     /// <p>The instance type.</p>
     pub fn instance_type(mut self, input: crate::types::InstanceType) -> Self {
         self.instance_type = ::std::option::Option::Some(input);
@@ -127,6 +143,10 @@ impl DescribeFleetsInstancesBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The instance type.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
+        &self.instance_type
+    }
     /// <p>The value is <code>Windows</code> for Windows instances. Otherwise, the value is blank.</p>
     pub fn platform(mut self, input: crate::types::PlatformValues) -> Self {
         self.platform = ::std::option::Option::Some(input);
@@ -139,6 +159,10 @@ impl DescribeFleetsInstancesBuilder {
     ) -> Self {
         self.platform = input;
         self
+    }
+    /// <p>The value is <code>Windows</code> for Windows instances. Otherwise, the value is blank.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<crate::types::PlatformValues> {
+        &self.platform
     }
     /// Consumes the builder and constructs a [`DescribeFleetsInstances`](crate::types::DescribeFleetsInstances).
     pub fn build(self) -> crate::types::DescribeFleetsInstances {

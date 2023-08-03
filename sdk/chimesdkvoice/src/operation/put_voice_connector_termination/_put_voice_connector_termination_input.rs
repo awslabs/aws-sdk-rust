@@ -53,6 +53,10 @@ impl PutVoiceConnectorTerminationInputBuilder {
         self.voice_connector_id = input;
         self
     }
+    /// <p>The Voice Connector ID.</p>
+    pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_connector_id
+    }
     /// <p>The termination settings to be updated.</p>
     pub fn termination(mut self, input: crate::types::Termination) -> Self {
         self.termination = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl PutVoiceConnectorTerminationInputBuilder {
     ) -> Self {
         self.termination = input;
         self
+    }
+    /// <p>The termination settings to be updated.</p>
+    pub fn get_termination(&self) -> &::std::option::Option<crate::types::Termination> {
+        &self.termination
     }
     /// Consumes the builder and constructs a [`PutVoiceConnectorTerminationInput`](crate::operation::put_voice_connector_termination::PutVoiceConnectorTerminationInput).
     pub fn build(

@@ -49,6 +49,10 @@ impl ListFunctionsOutputBuilder {
         self.function_list = input;
         self
     }
+    /// <p>A list of CloudFront functions.</p>
+    pub fn get_function_list(&self) -> &::std::option::Option<crate::types::FunctionList> {
+        &self.function_list
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

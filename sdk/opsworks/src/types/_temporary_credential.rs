@@ -64,6 +64,10 @@ impl TemporaryCredentialBuilder {
         self.username = input;
         self
     }
+    /// <p>The user name.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
+    }
     /// <p>The password.</p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl TemporaryCredentialBuilder {
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.password = input;
         self
+    }
+    /// <p>The password.</p>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.password
     }
     /// <p>The length of time (in minutes) that the grant is valid. When the grant expires, at the end of this period, the user will no longer be able to use the credentials to log in. If they are logged in at the time, they will be automatically logged out.</p>
     pub fn valid_for_in_minutes(mut self, input: i32) -> Self {
@@ -84,6 +92,10 @@ impl TemporaryCredentialBuilder {
         self.valid_for_in_minutes = input;
         self
     }
+    /// <p>The length of time (in minutes) that the grant is valid. When the grant expires, at the end of this period, the user will no longer be able to use the credentials to log in. If they are logged in at the time, they will be automatically logged out.</p>
+    pub fn get_valid_for_in_minutes(&self) -> &::std::option::Option<i32> {
+        &self.valid_for_in_minutes
+    }
     /// <p>The instance's AWS OpsWorks Stacks ID.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl TemporaryCredentialBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
+    }
+    /// <p>The instance's AWS OpsWorks Stacks ID.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// Consumes the builder and constructs a [`TemporaryCredential`](crate::types::TemporaryCredential).
     pub fn build(self) -> crate::types::TemporaryCredential {

@@ -36,6 +36,12 @@ impl AcceptInvitationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AcceptInvitation as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::accept_invitation::builders::AcceptInvitationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl AcceptInvitationFluentBuilder {
         self.inner = self.inner.set_administrator_account_id(input);
         self
     }
+    /// <p>The Amazon Web Services account ID for the account that sent the invitation.</p>
+    pub fn get_administrator_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_administrator_account_id()
+    }
     /// <p>The unique identifier for the invitation to accept.</p>
     pub fn invitation_id(
         mut self,
@@ -148,6 +158,10 @@ impl AcceptInvitationFluentBuilder {
         self.inner = self.inner.set_invitation_id(input);
         self
     }
+    /// <p>The unique identifier for the invitation to accept.</p>
+    pub fn get_invitation_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_invitation_id()
+    }
     /// <p>(Deprecated) The Amazon Web Services account ID for the account that sent the invitation. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
     pub fn master_account(
         mut self,
@@ -163,5 +177,9 @@ impl AcceptInvitationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_master_account(input);
         self
+    }
+    /// <p>(Deprecated) The Amazon Web Services account ID for the account that sent the invitation. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
+    pub fn get_master_account(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_master_account()
     }
 }

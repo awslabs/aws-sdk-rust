@@ -162,6 +162,10 @@ impl DescribeBotAliasOutputBuilder {
         self.bot_alias_id = input;
         self
     }
+    /// <p>The identifier of the bot alias.</p>
+    pub fn get_bot_alias_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_alias_id
+    }
     /// <p>The name of the bot alias.</p>
     pub fn bot_alias_name(
         mut self,
@@ -178,6 +182,10 @@ impl DescribeBotAliasOutputBuilder {
         self.bot_alias_name = input;
         self
     }
+    /// <p>The name of the bot alias.</p>
+    pub fn get_bot_alias_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_alias_name
+    }
     /// <p>The description of the bot alias.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -188,6 +196,10 @@ impl DescribeBotAliasOutputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the bot alias.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The version of the bot associated with the bot alias.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
@@ -197,6 +209,10 @@ impl DescribeBotAliasOutputBuilder {
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_version = input;
         self
+    }
+    /// <p>The version of the bot associated with the bot alias.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_version
     }
     /// Adds a key-value pair to `bot_alias_locale_settings`.
     ///
@@ -226,6 +242,14 @@ impl DescribeBotAliasOutputBuilder {
         self.bot_alias_locale_settings = input;
         self
     }
+    /// <p>The locale settings that are unique to the alias.</p>
+    pub fn get_bot_alias_locale_settings(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::BotAliasLocaleSettings>,
+    > {
+        &self.bot_alias_locale_settings
+    }
     /// <p>Specifics of how Amazon Lex logs text and audio conversations with the bot associated with the alias.</p>
     pub fn conversation_log_settings(
         mut self,
@@ -242,6 +266,12 @@ impl DescribeBotAliasOutputBuilder {
         self.conversation_log_settings = input;
         self
     }
+    /// <p>Specifics of how Amazon Lex logs text and audio conversations with the bot associated with the alias.</p>
+    pub fn get_conversation_log_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConversationLogSettings> {
+        &self.conversation_log_settings
+    }
     /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
     pub fn sentiment_analysis_settings(
         mut self,
@@ -257,6 +287,12 @@ impl DescribeBotAliasOutputBuilder {
     ) -> Self {
         self.sentiment_analysis_settings = input;
         self
+    }
+    /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
+    pub fn get_sentiment_analysis_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::SentimentAnalysisSettings> {
+        &self.sentiment_analysis_settings
     }
     /// Appends an item to `bot_alias_history_events`.
     ///
@@ -277,6 +313,12 @@ impl DescribeBotAliasOutputBuilder {
         self.bot_alias_history_events = input;
         self
     }
+    /// <p>A list of events that affect a bot alias. For example, an event is recorded when the version that the alias points to changes.</p>
+    pub fn get_bot_alias_history_events(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BotAliasHistoryEvent>> {
+        &self.bot_alias_history_events
+    }
     /// <p>The current status of the alias. When the alias is <code>Available</code>, the alias is ready for use with your bot.</p>
     pub fn bot_alias_status(mut self, input: crate::types::BotAliasStatus) -> Self {
         self.bot_alias_status = ::std::option::Option::Some(input);
@@ -290,6 +332,10 @@ impl DescribeBotAliasOutputBuilder {
         self.bot_alias_status = input;
         self
     }
+    /// <p>The current status of the alias. When the alias is <code>Available</code>, the alias is ready for use with your bot.</p>
+    pub fn get_bot_alias_status(&self) -> &::std::option::Option<crate::types::BotAliasStatus> {
+        &self.bot_alias_status
+    }
     /// <p>The identifier of the bot associated with the bot alias.</p>
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
@@ -299,6 +345,10 @@ impl DescribeBotAliasOutputBuilder {
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_id = input;
         self
+    }
+    /// <p>The identifier of the bot associated with the bot alias.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
     }
     /// <p>A timestamp of the date and time that the alias was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -313,6 +363,10 @@ impl DescribeBotAliasOutputBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>A timestamp of the date and time that the alias was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>A timestamp of the date and time that the alias was last updated.</p>
     pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date_time = ::std::option::Option::Some(input);
@@ -325,6 +379,12 @@ impl DescribeBotAliasOutputBuilder {
     ) -> Self {
         self.last_updated_date_time = input;
         self
+    }
+    /// <p>A timestamp of the date and time that the alias was last updated.</p>
+    pub fn get_last_updated_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date_time
     }
     /// Appends an item to `parent_bot_networks`.
     ///
@@ -344,6 +404,12 @@ impl DescribeBotAliasOutputBuilder {
     ) -> Self {
         self.parent_bot_networks = input;
         self
+    }
+    /// <p>A list of the networks to which the bot alias you described belongs.</p>
+    pub fn get_parent_bot_networks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParentBotNetwork>> {
+        &self.parent_bot_networks
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

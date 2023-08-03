@@ -51,6 +51,12 @@ impl GetTransitGatewayPeeringOutputBuilder {
         self.transit_gateway_peering = input;
         self
     }
+    /// <p>Returns information about a transit gateway peering. </p>
+    pub fn get_transit_gateway_peering(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransitGatewayPeering> {
+        &self.transit_gateway_peering
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

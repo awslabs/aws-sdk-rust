@@ -142,6 +142,10 @@ impl ApplicationInstanceBuilder {
         self.name = input;
         self
     }
+    /// <p>The application instance's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The application instance's ID.</p>
     pub fn application_instance_id(
         mut self,
@@ -157,6 +161,10 @@ impl ApplicationInstanceBuilder {
     ) -> Self {
         self.application_instance_id = input;
         self
+    }
+    /// <p>The application instance's ID.</p>
+    pub fn get_application_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_instance_id
     }
     /// <p>The device's ID.</p>
     pub fn default_runtime_context_device(
@@ -174,6 +182,12 @@ impl ApplicationInstanceBuilder {
         self.default_runtime_context_device = input;
         self
     }
+    /// <p>The device's ID.</p>
+    pub fn get_default_runtime_context_device(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.default_runtime_context_device
+    }
     /// <p>The device's name.</p>
     pub fn default_runtime_context_device_name(
         mut self,
@@ -190,6 +204,12 @@ impl ApplicationInstanceBuilder {
         self.default_runtime_context_device_name = input;
         self
     }
+    /// <p>The device's name.</p>
+    pub fn get_default_runtime_context_device_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.default_runtime_context_device_name
+    }
     /// <p>The application instance's description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -199,6 +219,10 @@ impl ApplicationInstanceBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The application instance's description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The application instance's status.</p>
     pub fn status(mut self, input: crate::types::ApplicationInstanceStatus) -> Self {
@@ -213,6 +237,10 @@ impl ApplicationInstanceBuilder {
         self.status = input;
         self
     }
+    /// <p>The application instance's status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ApplicationInstanceStatus> {
+        &self.status
+    }
     /// <p>The application instance's health status.</p>
     pub fn health_status(mut self, input: crate::types::ApplicationInstanceHealthStatus) -> Self {
         self.health_status = ::std::option::Option::Some(input);
@@ -225,6 +253,12 @@ impl ApplicationInstanceBuilder {
     ) -> Self {
         self.health_status = input;
         self
+    }
+    /// <p>The application instance's health status.</p>
+    pub fn get_health_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationInstanceHealthStatus> {
+        &self.health_status
     }
     /// <p>The application instance's status description.</p>
     pub fn status_description(
@@ -242,6 +276,10 @@ impl ApplicationInstanceBuilder {
         self.status_description = input;
         self
     }
+    /// <p>The application instance's status description.</p>
+    pub fn get_status_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_description
+    }
     /// <p>When the application instance was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
@@ -255,6 +293,10 @@ impl ApplicationInstanceBuilder {
         self.created_time = input;
         self
     }
+    /// <p>When the application instance was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>The application instance's ARN.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -264,6 +306,10 @@ impl ApplicationInstanceBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The application instance's ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -290,6 +336,14 @@ impl ApplicationInstanceBuilder {
         self.tags = input;
         self
     }
+    /// <p>The application instance's tags.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// Appends an item to `runtime_context_states`.
     ///
     /// To override the contents of this collection use [`set_runtime_context_states`](Self::set_runtime_context_states).
@@ -311,6 +365,12 @@ impl ApplicationInstanceBuilder {
     ) -> Self {
         self.runtime_context_states = input;
         self
+    }
+    /// <p>The application's state.</p>
+    pub fn get_runtime_context_states(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReportedRuntimeContextState>> {
+        &self.runtime_context_states
     }
     /// Consumes the builder and constructs a [`ApplicationInstance`](crate::types::ApplicationInstance).
     pub fn build(self) -> crate::types::ApplicationInstance {

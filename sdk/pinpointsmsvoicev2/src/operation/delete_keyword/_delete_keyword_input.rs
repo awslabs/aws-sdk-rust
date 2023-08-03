@@ -53,6 +53,10 @@ impl DeleteKeywordInputBuilder {
         self.origination_identity = input;
         self
     }
+    /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, PoolId or PoolArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn and <code>DescribePools</code> to find the values of PoolId and PoolArn.</p>
+    pub fn get_origination_identity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.origination_identity
+    }
     /// <p>The keyword to delete.</p>
     pub fn keyword(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.keyword = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl DeleteKeywordInputBuilder {
     pub fn set_keyword(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.keyword = input;
         self
+    }
+    /// <p>The keyword to delete.</p>
+    pub fn get_keyword(&self) -> &::std::option::Option<::std::string::String> {
+        &self.keyword
     }
     /// Consumes the builder and constructs a [`DeleteKeywordInput`](crate::operation::delete_keyword::DeleteKeywordInput).
     pub fn build(

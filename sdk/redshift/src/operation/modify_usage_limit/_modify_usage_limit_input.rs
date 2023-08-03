@@ -62,6 +62,10 @@ impl ModifyUsageLimitInputBuilder {
         self.usage_limit_id = input;
         self
     }
+    /// <p>The identifier of the usage limit to modify.</p>
+    pub fn get_usage_limit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.usage_limit_id
+    }
     /// <p>The new limit amount. For more information about this parameter, see <code>UsageLimit</code>. </p>
     pub fn amount(mut self, input: i64) -> Self {
         self.amount = ::std::option::Option::Some(input);
@@ -71,6 +75,10 @@ impl ModifyUsageLimitInputBuilder {
     pub fn set_amount(mut self, input: ::std::option::Option<i64>) -> Self {
         self.amount = input;
         self
+    }
+    /// <p>The new limit amount. For more information about this parameter, see <code>UsageLimit</code>. </p>
+    pub fn get_amount(&self) -> &::std::option::Option<i64> {
+        &self.amount
     }
     /// <p>The new action that Amazon Redshift takes when the limit is reached. For more information about this parameter, see <code>UsageLimit</code>. </p>
     pub fn breach_action(mut self, input: crate::types::UsageLimitBreachAction) -> Self {
@@ -84,6 +92,12 @@ impl ModifyUsageLimitInputBuilder {
     ) -> Self {
         self.breach_action = input;
         self
+    }
+    /// <p>The new action that Amazon Redshift takes when the limit is reached. For more information about this parameter, see <code>UsageLimit</code>. </p>
+    pub fn get_breach_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::UsageLimitBreachAction> {
+        &self.breach_action
     }
     /// Consumes the builder and constructs a [`ModifyUsageLimitInput`](crate::operation::modify_usage_limit::ModifyUsageLimitInput).
     pub fn build(

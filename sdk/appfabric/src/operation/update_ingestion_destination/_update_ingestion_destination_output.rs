@@ -51,6 +51,12 @@ impl UpdateIngestionDestinationOutputBuilder {
         self.ingestion_destination = input;
         self
     }
+    /// <p>Contains information about an ingestion destination.</p>
+    pub fn get_ingestion_destination(
+        &self,
+    ) -> &::std::option::Option<crate::types::IngestionDestination> {
+        &self.ingestion_destination
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

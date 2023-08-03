@@ -46,6 +46,10 @@ impl DeleteEvaluationInputBuilder {
         self.evaluation_id = input;
         self
     }
+    /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code> to delete.</p>
+    pub fn get_evaluation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_id
+    }
     /// Consumes the builder and constructs a [`DeleteEvaluationInput`](crate::operation::delete_evaluation::DeleteEvaluationInput).
     pub fn build(
         self,

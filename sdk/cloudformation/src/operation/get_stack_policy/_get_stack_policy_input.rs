@@ -40,6 +40,10 @@ impl GetStackPolicyInputBuilder {
         self.stack_name = input;
         self
     }
+    /// <p>The name or unique stack ID that's associated with the stack whose policy you want to get.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_name
+    }
     /// Consumes the builder and constructs a [`GetStackPolicyInput`](crate::operation::get_stack_policy::GetStackPolicyInput).
     pub fn build(
         self,

@@ -54,6 +54,10 @@ impl DeleteMissionProfileOutputBuilder {
         self.mission_profile_id = input;
         self
     }
+    /// <p>UUID of a mission profile.</p>
+    pub fn get_mission_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mission_profile_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -63,6 +63,10 @@ impl CallbackStepMetadataBuilder {
         self.callback_token = input;
         self
     }
+    /// <p>The pipeline generated token from the Amazon SQS queue.</p>
+    pub fn get_callback_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.callback_token
+    }
     /// <p>The URL of the Amazon Simple Queue Service (Amazon SQS) queue used by the callback step.</p>
     pub fn sqs_queue_url(
         mut self,
@@ -78,6 +82,10 @@ impl CallbackStepMetadataBuilder {
     ) -> Self {
         self.sqs_queue_url = input;
         self
+    }
+    /// <p>The URL of the Amazon Simple Queue Service (Amazon SQS) queue used by the callback step.</p>
+    pub fn get_sqs_queue_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sqs_queue_url
     }
     /// Appends an item to `output_parameters`.
     ///
@@ -97,6 +105,12 @@ impl CallbackStepMetadataBuilder {
     ) -> Self {
         self.output_parameters = input;
         self
+    }
+    /// <p>A list of the output parameters of the callback step.</p>
+    pub fn get_output_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputParameter>> {
+        &self.output_parameters
     }
     /// Consumes the builder and constructs a [`CallbackStepMetadata`](crate::types::CallbackStepMetadata).
     pub fn build(self) -> crate::types::CallbackStepMetadata {

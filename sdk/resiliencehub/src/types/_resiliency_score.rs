@@ -53,6 +53,10 @@ impl ResiliencyScoreBuilder {
         self.score = input;
         self
     }
+    /// <p>The outage score for a valid key.</p>
+    pub fn get_score(&self) -> &::std::option::Option<f64> {
+        &self.score
+    }
     /// Adds a key-value pair to `disruption_score`.
     ///
     /// To override the contents of this collection use [`set_disruption_score`](Self::set_disruption_score).
@@ -73,6 +77,13 @@ impl ResiliencyScoreBuilder {
     ) -> Self {
         self.disruption_score = input;
         self
+    }
+    /// <p>The disruption score for a valid key.</p>
+    pub fn get_disruption_score(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, f64>>
+    {
+        &self.disruption_score
     }
     /// Consumes the builder and constructs a [`ResiliencyScore`](crate::types::ResiliencyScore).
     pub fn build(self) -> crate::types::ResiliencyScore {

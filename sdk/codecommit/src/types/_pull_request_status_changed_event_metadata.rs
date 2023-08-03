@@ -45,6 +45,12 @@ impl PullRequestStatusChangedEventMetadataBuilder {
         self.pull_request_status = input;
         self
     }
+    /// <p>The changed status of the pull request.</p>
+    pub fn get_pull_request_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::PullRequestStatusEnum> {
+        &self.pull_request_status
+    }
     /// Consumes the builder and constructs a [`PullRequestStatusChangedEventMetadata`](crate::types::PullRequestStatusChangedEventMetadata).
     pub fn build(self) -> crate::types::PullRequestStatusChangedEventMetadata {
         crate::types::PullRequestStatusChangedEventMetadata {

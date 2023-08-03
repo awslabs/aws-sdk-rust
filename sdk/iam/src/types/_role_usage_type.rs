@@ -49,6 +49,10 @@ impl RoleUsageTypeBuilder {
         self.region = input;
         self
     }
+    /// <p>The name of the Region where the service-linked role is being used.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
+    }
     /// Appends an item to `resources`.
     ///
     /// To override the contents of this collection use [`set_resources`](Self::set_resources).
@@ -67,6 +71,10 @@ impl RoleUsageTypeBuilder {
     ) -> Self {
         self.resources = input;
         self
+    }
+    /// <p>The name of the resource that is using the service-linked role.</p>
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resources
     }
     /// Consumes the builder and constructs a [`RoleUsageType`](crate::types::RoleUsageType).
     pub fn build(self) -> crate::types::RoleUsageType {

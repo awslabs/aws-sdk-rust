@@ -48,6 +48,10 @@ impl UpdateServerConfigInputBuilder {
         self.server_id = input;
         self
     }
+    /// <p> The ID of the server. </p>
+    pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_id
+    }
     /// <p> The preferred strategy options for the application component. See the response from <code>GetServerStrategies</code>.</p>
     pub fn strategy_option(mut self, input: crate::types::StrategyOption) -> Self {
         self.strategy_option = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl UpdateServerConfigInputBuilder {
     ) -> Self {
         self.strategy_option = input;
         self
+    }
+    /// <p> The preferred strategy options for the application component. See the response from <code>GetServerStrategies</code>.</p>
+    pub fn get_strategy_option(&self) -> &::std::option::Option<crate::types::StrategyOption> {
+        &self.strategy_option
     }
     /// Consumes the builder and constructs a [`UpdateServerConfigInput`](crate::operation::update_server_config::UpdateServerConfigInput).
     pub fn build(

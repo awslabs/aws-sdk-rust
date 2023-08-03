@@ -48,6 +48,10 @@ impl VpcPeeringConnectionStatusBuilder {
         self.code = input;
         self
     }
+    /// <p>Code indicating the status of a VPC peering connection.</p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
+    }
     /// <p>Additional messaging associated with the connection status. </p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl VpcPeeringConnectionStatusBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>Additional messaging associated with the connection status. </p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`VpcPeeringConnectionStatus`](crate::types::VpcPeeringConnectionStatus).
     pub fn build(self) -> crate::types::VpcPeeringConnectionStatus {

@@ -39,6 +39,10 @@ impl GetUploadStatusInputBuilder {
         self.upload_id = input;
         self
     }
+    /// <p>The ID of the upload. This value is returned by the <code>UploadEntityDefinitions</code> action.</p>
+    pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.upload_id
+    }
     /// Consumes the builder and constructs a [`GetUploadStatusInput`](crate::operation::get_upload_status::GetUploadStatusInput).
     pub fn build(
         self,

@@ -85,6 +85,14 @@ impl GetAggregateConformancePackComplianceSummaryOutputBuilder {
         self.aggregate_conformance_pack_compliance_summaries = input;
         self
     }
+    /// <p>Returns a list of <code>AggregateConformancePackComplianceSummary</code> object.</p>
+    pub fn get_aggregate_conformance_pack_compliance_summaries(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::AggregateConformancePackComplianceSummary>,
+    > {
+        &self.aggregate_conformance_pack_compliance_summaries
+    }
     /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
     pub fn group_by_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_by_key = ::std::option::Option::Some(input.into());
@@ -95,6 +103,10 @@ impl GetAggregateConformancePackComplianceSummaryOutputBuilder {
         self.group_by_key = input;
         self
     }
+    /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
+    pub fn get_group_by_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_by_key
+    }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -104,6 +116,10 @@ impl GetAggregateConformancePackComplianceSummaryOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

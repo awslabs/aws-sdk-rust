@@ -72,6 +72,10 @@ impl SchemaVersionListItemBuilder {
         self.schema_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the schema.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_arn
+    }
     /// <p>The unique identifier of the schema version.</p>
     pub fn schema_version_id(
         mut self,
@@ -88,6 +92,10 @@ impl SchemaVersionListItemBuilder {
         self.schema_version_id = input;
         self
     }
+    /// <p>The unique identifier of the schema version.</p>
+    pub fn get_schema_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_version_id
+    }
     /// <p>The version number of the schema.</p>
     pub fn version_number(mut self, input: i64) -> Self {
         self.version_number = ::std::option::Option::Some(input);
@@ -97,6 +105,10 @@ impl SchemaVersionListItemBuilder {
     pub fn set_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.version_number = input;
         self
+    }
+    /// <p>The version number of the schema.</p>
+    pub fn get_version_number(&self) -> &::std::option::Option<i64> {
+        &self.version_number
     }
     /// <p>The status of the schema version.</p>
     pub fn status(mut self, input: crate::types::SchemaVersionStatus) -> Self {
@@ -111,6 +123,10 @@ impl SchemaVersionListItemBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the schema version.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SchemaVersionStatus> {
+        &self.status
+    }
     /// <p>The date and time the schema version was created.</p>
     pub fn created_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_time = ::std::option::Option::Some(input.into());
@@ -120,6 +136,10 @@ impl SchemaVersionListItemBuilder {
     pub fn set_created_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_time = input;
         self
+    }
+    /// <p>The date and time the schema version was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_time
     }
     /// Consumes the builder and constructs a [`SchemaVersionListItem`](crate::types::SchemaVersionListItem).
     pub fn build(self) -> crate::types::SchemaVersionListItem {

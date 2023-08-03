@@ -49,6 +49,10 @@ impl UpdateApiKeyInputBuilder {
         self.api_key = input;
         self
     }
+    /// <p>The identifier of the ApiKey resource to be updated.</p>
+    pub fn get_api_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_key
+    }
     /// Appends an item to `patch_operations`.
     ///
     /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
@@ -67,6 +71,12 @@ impl UpdateApiKeyInputBuilder {
     ) -> Self {
         self.patch_operations = input;
         self
+    }
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    pub fn get_patch_operations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
+        &self.patch_operations
     }
     /// Consumes the builder and constructs a [`UpdateApiKeyInput`](crate::operation::update_api_key::UpdateApiKeyInput).
     pub fn build(

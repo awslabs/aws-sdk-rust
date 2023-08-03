@@ -221,6 +221,23 @@ impl InitiateAuthInputBuilder {
         self.auth_flow = input;
         self
     }
+    /// <p>The authentication flow for this call to run. The API action will depend on this value. For example:</p>
+    /// <ul>
+    /// <li> <p> <code>REFRESH_TOKEN_AUTH</code> takes in a valid refresh token and returns new tokens.</p> </li>
+    /// <li> <p> <code>USER_SRP_AUTH</code> takes in <code>USERNAME</code> and <code>SRP_A</code> and returns the SRP variables to be used for next challenge execution.</p> </li>
+    /// <li> <p> <code>USER_PASSWORD_AUTH</code> takes in <code>USERNAME</code> and <code>PASSWORD</code> and returns the next challenge or tokens.</p> </li>
+    /// </ul>
+    /// <p>Valid values include:</p>
+    /// <ul>
+    /// <li> <p> <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password (SRP) protocol.</p> </li>
+    /// <li> <p> <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication flow for refreshing the access token and ID token by supplying a valid refresh token.</p> </li>
+    /// <li> <p> <code>CUSTOM_AUTH</code>: Custom authentication flow.</p> </li>
+    /// <li> <p> <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; user name and password are passed directly. If a user migration Lambda trigger is set, this flow will invoke the user migration Lambda if it doesn't find the user name in the user pool. </p> </li>
+    /// </ul>
+    /// <p> <code>ADMIN_NO_SRP_AUTH</code> isn't a valid value.</p>
+    pub fn get_auth_flow(&self) -> &::std::option::Option<crate::types::AuthFlowType> {
+        &self.auth_flow
+    }
     /// Adds a key-value pair to `auth_parameters`.
     ///
     /// To override the contents of this collection use [`set_auth_parameters`](Self::set_auth_parameters).
@@ -255,6 +272,19 @@ impl InitiateAuthInputBuilder {
     ) -> Self {
         self.auth_parameters = input;
         self
+    }
+    /// <p>The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you're invoking. The required values depend on the value of <code>AuthFlow</code>:</p>
+    /// <ul>
+    /// <li> <p>For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p> </li>
+    /// <li> <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p> </li>
+    /// <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code> (if app client is configured with client secret), <code>DEVICE_KEY</code>. To start the authentication flow with password verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The SRP_A Value)</code>.</p> </li>
+    /// </ul>
+    pub fn get_auth_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.auth_parameters
     }
     /// Adds a key-value pair to `client_metadata`.
     ///
@@ -329,6 +359,38 @@ impl InitiateAuthInputBuilder {
         self.client_metadata = input;
         self
     }
+    /// <p>A map of custom key-value pairs that you can provide as input for certain custom workflows that this action triggers.</p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the InitiateAuth API action, Amazon Cognito invokes the Lambda functions that are specified for various triggers. The ClientMetadata value is passed as input to the functions for only the following triggers:</p>
+    /// <ul>
+    /// <li> <p>Pre signup</p> </li>
+    /// <li> <p>Pre authentication</p> </li>
+    /// <li> <p>User migration</p> </li>
+    /// </ul>
+    /// <p>When Amazon Cognito invokes the functions for these triggers, it passes a JSON payload, which the function receives as input. This payload contains a <code>validationData</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your InitiateAuth request. In your function code in Lambda, you can process the <code>validationData</code> value to enhance your workflow for your specific needs.</p>
+    /// <p>When you use the InitiateAuth API action, Amazon Cognito also invokes the functions for the following triggers, but it doesn't provide the ClientMetadata value as input:</p>
+    /// <ul>
+    /// <li> <p>Post authentication</p> </li>
+    /// <li> <p>Custom message</p> </li>
+    /// <li> <p>Pre token generation</p> </li>
+    /// <li> <p>Create auth challenge</p> </li>
+    /// <li> <p>Define auth challenge</p> </li>
+    /// <li> <p>Verify auth challenge</p> </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html"> Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+    /// <p>When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:</p>
+    /// <ul>
+    /// <li> <p>Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+    /// <li> <p>Validate the ClientMetadata value.</p> </li>
+    /// <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p> </li>
+    /// </ul>
+    /// </note>
+    pub fn get_client_metadata(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.client_metadata
+    }
     /// <p>The app client ID.</p>
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
@@ -338,6 +400,10 @@ impl InitiateAuthInputBuilder {
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_id = input;
         self
+    }
+    /// <p>The app client ID.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_id
     }
     /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>InitiateAuth</code> calls.</p>
     pub fn analytics_metadata(mut self, input: crate::types::AnalyticsMetadataType) -> Self {
@@ -352,6 +418,12 @@ impl InitiateAuthInputBuilder {
         self.analytics_metadata = input;
         self
     }
+    /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>InitiateAuth</code> calls.</p>
+    pub fn get_analytics_metadata(
+        &self,
+    ) -> &::std::option::Option<crate::types::AnalyticsMetadataType> {
+        &self.analytics_metadata
+    }
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
     pub fn user_context_data(mut self, input: crate::types::UserContextDataType) -> Self {
         self.user_context_data = ::std::option::Option::Some(input);
@@ -364,6 +436,12 @@ impl InitiateAuthInputBuilder {
     ) -> Self {
         self.user_context_data = input;
         self
+    }
+    /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
+    pub fn get_user_context_data(
+        &self,
+    ) -> &::std::option::Option<crate::types::UserContextDataType> {
+        &self.user_context_data
     }
     /// Consumes the builder and constructs a [`InitiateAuthInput`](crate::operation::initiate_auth::InitiateAuthInput).
     pub fn build(

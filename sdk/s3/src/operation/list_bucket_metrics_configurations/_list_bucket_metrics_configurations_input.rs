@@ -55,6 +55,10 @@ impl ListBucketMetricsConfigurationsInputBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The name of the bucket containing the metrics configurations to retrieve.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>The marker that is used to continue a metrics configuration listing that has been truncated. Use the <code>NextContinuationToken</code> from a previously truncated list response to continue the listing. The continuation token is an opaque value that Amazon S3 understands.</p>
     pub fn continuation_token(
         mut self,
@@ -71,6 +75,10 @@ impl ListBucketMetricsConfigurationsInputBuilder {
         self.continuation_token = input;
         self
     }
+    /// <p>The marker that is used to continue a metrics configuration listing that has been truncated. Use the <code>NextContinuationToken</code> from a previously truncated list response to continue the listing. The continuation token is an opaque value that Amazon S3 understands.</p>
+    pub fn get_continuation_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.continuation_token
+    }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(
         mut self,
@@ -86,6 +94,10 @@ impl ListBucketMetricsConfigurationsInputBuilder {
     ) -> Self {
         self.expected_bucket_owner = input;
         self
+    }
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+    pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expected_bucket_owner
     }
     /// Consumes the builder and constructs a [`ListBucketMetricsConfigurationsInput`](crate::operation::list_bucket_metrics_configurations::ListBucketMetricsConfigurationsInput).
     pub fn build(

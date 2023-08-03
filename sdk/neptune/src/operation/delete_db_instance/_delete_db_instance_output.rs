@@ -54,6 +54,11 @@ impl DeleteDbInstanceOutputBuilder {
         self.db_instance = input;
         self
     }
+    /// <p>Contains the details of an Amazon Neptune DB instance.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.</p>
+    pub fn get_db_instance(&self) -> &::std::option::Option<crate::types::DbInstance> {
+        &self.db_instance
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

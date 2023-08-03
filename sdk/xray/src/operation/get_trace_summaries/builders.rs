@@ -41,6 +41,12 @@ impl GetTraceSummariesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetTraceSummaries as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_trace_summaries::builders::GetTraceSummariesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -145,6 +151,10 @@ impl GetTraceSummariesFluentBuilder {
         self.inner = self.inner.set_start_time(input);
         self
     }
+    /// <p>The start of the time frame for which to retrieve traces.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
+    }
     /// <p>The end of the time frame for which to retrieve traces.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time(input);
@@ -157,6 +167,10 @@ impl GetTraceSummariesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
+    }
+    /// <p>The end of the time frame for which to retrieve traces.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time()
     }
     /// <p>A parameter to indicate whether to query trace summaries by TraceId or Event time.</p>
     pub fn time_range_type(mut self, input: crate::types::TimeRangeType) -> Self {
@@ -171,6 +185,10 @@ impl GetTraceSummariesFluentBuilder {
         self.inner = self.inner.set_time_range_type(input);
         self
     }
+    /// <p>A parameter to indicate whether to query trace summaries by TraceId or Event time.</p>
+    pub fn get_time_range_type(&self) -> &::std::option::Option<crate::types::TimeRangeType> {
+        self.inner.get_time_range_type()
+    }
     /// <p>Set to <code>true</code> to get summaries for only a subset of available traces.</p>
     pub fn sampling(mut self, input: bool) -> Self {
         self.inner = self.inner.sampling(input);
@@ -180,6 +198,10 @@ impl GetTraceSummariesFluentBuilder {
     pub fn set_sampling(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_sampling(input);
         self
+    }
+    /// <p>Set to <code>true</code> to get summaries for only a subset of available traces.</p>
+    pub fn get_sampling(&self) -> &::std::option::Option<bool> {
+        self.inner.get_sampling()
     }
     /// <p>A parameter to indicate whether to enable sampling on trace summaries. Input parameters are Name and Value.</p>
     pub fn sampling_strategy(mut self, input: crate::types::SamplingStrategy) -> Self {
@@ -193,6 +215,10 @@ impl GetTraceSummariesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sampling_strategy(input);
         self
+    }
+    /// <p>A parameter to indicate whether to enable sampling on trace summaries. Input parameters are Name and Value.</p>
+    pub fn get_sampling_strategy(&self) -> &::std::option::Option<crate::types::SamplingStrategy> {
+        self.inner.get_sampling_strategy()
     }
     /// <p>Specify a filter expression to retrieve trace summaries for services or requests that meet certain requirements.</p>
     pub fn filter_expression(
@@ -210,6 +236,10 @@ impl GetTraceSummariesFluentBuilder {
         self.inner = self.inner.set_filter_expression(input);
         self
     }
+    /// <p>Specify a filter expression to retrieve trace summaries for services or requests that meet certain requirements.</p>
+    pub fn get_filter_expression(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_filter_expression()
+    }
     /// <p>Specify the pagination token returned by a previous request to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -219,5 +249,9 @@ impl GetTraceSummariesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>Specify the pagination token returned by a previous request to retrieve the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

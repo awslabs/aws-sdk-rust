@@ -36,6 +36,12 @@ impl CopyBackupToRegionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CopyBackupToRegion as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::copy_backup_to_region::builders::CopyBackupToRegionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl CopyBackupToRegionFluentBuilder {
         self.inner = self.inner.set_destination_region(input);
         self
     }
+    /// <p>The AWS region that will contain your copied CloudHSM cluster backup.</p>
+    pub fn get_destination_region(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_region()
+    }
     /// <p>The ID of the backup that will be copied to the destination region. </p>
     pub fn backup_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backup_id(input.into());
@@ -141,6 +151,10 @@ impl CopyBackupToRegionFluentBuilder {
     pub fn set_backup_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backup_id(input);
         self
+    }
+    /// <p>The ID of the backup that will be copied to the destination region. </p>
+    pub fn get_backup_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_backup_id()
     }
     /// Appends an item to `TagList`.
     ///
@@ -158,5 +172,9 @@ impl CopyBackupToRegionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tag_list(input);
         self
+    }
+    /// <p>Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to the destination backup. If you do not specify tags, the service copies tags from the source backup to the destination backup.</p>
+    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tag_list()
     }
 }

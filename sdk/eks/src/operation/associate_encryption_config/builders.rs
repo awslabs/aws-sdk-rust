@@ -37,6 +37,10 @@ impl AssociateEncryptionConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateEncryptionConfig as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_encryption_config::builders::AssociateEncryptionConfigInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl AssociateEncryptionConfigFluentBuilder {
         self.inner = self.inner.set_cluster_name(input);
         self
     }
+    /// <p>The name of the cluster that you are associating with encryption configuration.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_name()
+    }
     /// Appends an item to `encryptionConfig`.
     ///
     /// To override the contents of this collection use [`set_encryption_config`](Self::set_encryption_config).
@@ -144,6 +152,12 @@ impl AssociateEncryptionConfigFluentBuilder {
         self.inner = self.inner.set_encryption_config(input);
         self
     }
+    /// <p>The configuration you are using for encryption.</p>
+    pub fn get_encryption_config(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>> {
+        self.inner.get_encryption_config()
+    }
     /// <p>The client request token you are using with the encryption configuration.</p>
     pub fn client_request_token(
         mut self,
@@ -159,5 +173,9 @@ impl AssociateEncryptionConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>The client request token you are using with the encryption configuration.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
 }

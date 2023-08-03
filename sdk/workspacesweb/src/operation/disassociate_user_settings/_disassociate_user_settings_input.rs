@@ -41,6 +41,10 @@ impl DisassociateUserSettingsInputBuilder {
         self.portal_arn = input;
         self
     }
+    /// <p>The ARN of the web portal.</p>
+    pub fn get_portal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portal_arn
+    }
     /// Consumes the builder and constructs a [`DisassociateUserSettingsInput`](crate::operation::disassociate_user_settings::DisassociateUserSettingsInput).
     pub fn build(
         self,

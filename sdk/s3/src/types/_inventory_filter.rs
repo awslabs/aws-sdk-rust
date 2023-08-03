@@ -40,6 +40,10 @@ impl InventoryFilterBuilder {
         self.prefix = input;
         self
     }
+    /// <p>The prefix that an object must have to be included in the inventory results.</p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
+    }
     /// Consumes the builder and constructs a [`InventoryFilter`](crate::types::InventoryFilter).
     pub fn build(self) -> crate::types::InventoryFilter {
         crate::types::InventoryFilter {

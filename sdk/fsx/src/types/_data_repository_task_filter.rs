@@ -67,6 +67,14 @@ impl DataRepositoryTaskFilterBuilder {
         self.name = input;
         self
     }
+    /// <p>Name of the task property to use in filtering the tasks returned in the response.</p>
+    /// <ul>
+    /// <li> <p>Use <code>file-system-id</code> to retrieve data repository tasks for specific file systems.</p> </li>
+    /// <li> <p>Use <code>task-lifecycle</code> to retrieve data repository tasks with one or more specific lifecycle states, as follows: CANCELED, EXECUTING, FAILED, PENDING, and SUCCEEDED.</p> </li>
+    /// </ul>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::DataRepositoryTaskFilterName> {
+        &self.name
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -85,6 +93,10 @@ impl DataRepositoryTaskFilterBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>Use Values to include the specific file system IDs and task lifecycle states for the filters you are using.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`DataRepositoryTaskFilter`](crate::types::DataRepositoryTaskFilter).
     pub fn build(self) -> crate::types::DataRepositoryTaskFilter {

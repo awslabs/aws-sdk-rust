@@ -72,6 +72,10 @@ impl RightsizingRecommendationMetadataBuilder {
         self.recommendation_id = input;
         self
     }
+    /// <p>The ID for this specific recommendation.</p>
+    pub fn get_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommendation_id
+    }
     /// <p>The timestamp for when Amazon Web Services made this recommendation.</p>
     pub fn generation_timestamp(
         mut self,
@@ -88,6 +92,10 @@ impl RightsizingRecommendationMetadataBuilder {
         self.generation_timestamp = input;
         self
     }
+    /// <p>The timestamp for when Amazon Web Services made this recommendation.</p>
+    pub fn get_generation_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.generation_timestamp
+    }
     /// <p>The number of days of previous usage that Amazon Web Services considers when making this recommendation.</p>
     pub fn lookback_period_in_days(mut self, input: crate::types::LookbackPeriodInDays) -> Self {
         self.lookback_period_in_days = ::std::option::Option::Some(input);
@@ -100,6 +108,12 @@ impl RightsizingRecommendationMetadataBuilder {
     ) -> Self {
         self.lookback_period_in_days = input;
         self
+    }
+    /// <p>The number of days of previous usage that Amazon Web Services considers when making this recommendation.</p>
+    pub fn get_lookback_period_in_days(
+        &self,
+    ) -> &::std::option::Option<crate::types::LookbackPeriodInDays> {
+        &self.lookback_period_in_days
     }
     /// <p>Additional metadata that might be applicable to the recommendation.</p>
     pub fn additional_metadata(
@@ -116,6 +130,10 @@ impl RightsizingRecommendationMetadataBuilder {
     ) -> Self {
         self.additional_metadata = input;
         self
+    }
+    /// <p>Additional metadata that might be applicable to the recommendation.</p>
+    pub fn get_additional_metadata(&self) -> &::std::option::Option<::std::string::String> {
+        &self.additional_metadata
     }
     /// Consumes the builder and constructs a [`RightsizingRecommendationMetadata`](crate::types::RightsizingRecommendationMetadata).
     pub fn build(self) -> crate::types::RightsizingRecommendationMetadata {

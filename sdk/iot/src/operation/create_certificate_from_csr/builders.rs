@@ -51,6 +51,10 @@ impl CreateCertificateFromCsrFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateCertificateFromCsr as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_certificate_from_csr::builders::CreateCertificateFromCsrInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -147,6 +151,10 @@ impl CreateCertificateFromCsrFluentBuilder {
         self.inner = self.inner.set_certificate_signing_request(input);
         self
     }
+    /// <p>The certificate signing request (CSR).</p>
+    pub fn get_certificate_signing_request(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate_signing_request()
+    }
     /// <p>Specifies whether the certificate is active.</p>
     pub fn set_as_active(mut self, input: bool) -> Self {
         self.inner = self.inner.set_as_active(input);
@@ -156,5 +164,9 @@ impl CreateCertificateFromCsrFluentBuilder {
     pub fn set_set_as_active(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_set_as_active(input);
         self
+    }
+    /// <p>Specifies whether the certificate is active.</p>
+    pub fn get_set_as_active(&self) -> &::std::option::Option<bool> {
+        self.inner.get_set_as_active()
     }
 }

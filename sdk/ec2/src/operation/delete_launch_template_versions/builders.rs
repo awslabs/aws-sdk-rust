@@ -36,6 +36,10 @@ impl DeleteLaunchTemplateVersionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteLaunchTemplateVersions as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_launch_template_versions::builders::DeleteLaunchTemplateVersionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl DeleteLaunchTemplateVersionsFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>The ID of the launch template.</p>
     /// <p>You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
     pub fn launch_template_id(
@@ -143,6 +151,11 @@ impl DeleteLaunchTemplateVersionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_launch_template_id(input);
         self
+    }
+    /// <p>The ID of the launch template.</p>
+    /// <p>You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
+    pub fn get_launch_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_launch_template_id()
     }
     /// <p>The name of the launch template.</p>
     /// <p>You must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
@@ -162,6 +175,11 @@ impl DeleteLaunchTemplateVersionsFluentBuilder {
         self.inner = self.inner.set_launch_template_name(input);
         self
     }
+    /// <p>The name of the launch template.</p>
+    /// <p>You must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
+    pub fn get_launch_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_launch_template_name()
+    }
     /// Appends an item to `Versions`.
     ///
     /// To override the contents of this collection use [`set_versions`](Self::set_versions).
@@ -178,5 +196,9 @@ impl DeleteLaunchTemplateVersionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_versions(input);
         self
+    }
+    /// <p>The version numbers of one or more launch template versions to delete.</p>
+    pub fn get_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_versions()
     }
 }

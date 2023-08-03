@@ -96,6 +96,10 @@ impl LicenseOperationFailureBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the resource.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p>Resource type.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -108,6 +112,10 @@ impl LicenseOperationFailureBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>Resource type.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
     }
     /// <p>Error message.</p>
     pub fn error_message(
@@ -125,6 +133,10 @@ impl LicenseOperationFailureBuilder {
         self.error_message = input;
         self
     }
+    /// <p>Error message.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// <p>Failure time.</p>
     pub fn failure_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.failure_time = ::std::option::Option::Some(input);
@@ -137,6 +149,10 @@ impl LicenseOperationFailureBuilder {
     ) -> Self {
         self.failure_time = input;
         self
+    }
+    /// <p>Failure time.</p>
+    pub fn get_failure_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.failure_time
     }
     /// <p>Name of the operation.</p>
     pub fn operation_name(
@@ -154,6 +170,10 @@ impl LicenseOperationFailureBuilder {
         self.operation_name = input;
         self
     }
+    /// <p>Name of the operation.</p>
+    pub fn get_operation_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation_name
+    }
     /// <p>ID of the Amazon Web Services account that owns the resource.</p>
     pub fn resource_owner_id(
         mut self,
@@ -170,6 +190,10 @@ impl LicenseOperationFailureBuilder {
         self.resource_owner_id = input;
         self
     }
+    /// <p>ID of the Amazon Web Services account that owns the resource.</p>
+    pub fn get_resource_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_owner_id
+    }
     /// <p>The requester is "License Manager Automated Discovery".</p>
     pub fn operation_requested_by(
         mut self,
@@ -185,6 +209,10 @@ impl LicenseOperationFailureBuilder {
     ) -> Self {
         self.operation_requested_by = input;
         self
+    }
+    /// <p>The requester is "License Manager Automated Discovery".</p>
+    pub fn get_operation_requested_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation_requested_by
     }
     /// Appends an item to `metadata_list`.
     ///
@@ -204,6 +232,12 @@ impl LicenseOperationFailureBuilder {
     ) -> Self {
         self.metadata_list = input;
         self
+    }
+    /// <p>Reserved.</p>
+    pub fn get_metadata_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Metadata>> {
+        &self.metadata_list
     }
     /// Consumes the builder and constructs a [`LicenseOperationFailure`](crate::types::LicenseOperationFailure).
     pub fn build(self) -> crate::types::LicenseOperationFailure {

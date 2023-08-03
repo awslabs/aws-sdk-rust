@@ -47,6 +47,10 @@ impl DeleteCoipPoolInputBuilder {
         self.coip_pool_id = input;
         self
     }
+    /// <p>The ID of the CoIP pool that you want to delete. </p>
+    pub fn get_coip_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.coip_pool_id
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -56,6 +60,10 @@ impl DeleteCoipPoolInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`DeleteCoipPoolInput`](crate::operation::delete_coip_pool::DeleteCoipPoolInput).
     pub fn build(

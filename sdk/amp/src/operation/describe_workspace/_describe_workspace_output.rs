@@ -51,6 +51,10 @@ impl DescribeWorkspaceOutputBuilder {
         self.workspace = input;
         self
     }
+    /// The properties of the selected workspace.
+    pub fn get_workspace(&self) -> &::std::option::Option<crate::types::WorkspaceDescription> {
+        &self.workspace
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

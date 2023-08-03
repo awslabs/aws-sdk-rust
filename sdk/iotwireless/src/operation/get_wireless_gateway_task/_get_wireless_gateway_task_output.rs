@@ -90,6 +90,10 @@ impl GetWirelessGatewayTaskOutputBuilder {
         self.wireless_gateway_id = input;
         self
     }
+    /// <p>The ID of the wireless gateway.</p>
+    pub fn get_wireless_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.wireless_gateway_id
+    }
     /// <p>The ID of the WirelessGatewayTask.</p>
     pub fn wireless_gateway_task_definition_id(
         mut self,
@@ -105,6 +109,12 @@ impl GetWirelessGatewayTaskOutputBuilder {
     ) -> Self {
         self.wireless_gateway_task_definition_id = input;
         self
+    }
+    /// <p>The ID of the WirelessGatewayTask.</p>
+    pub fn get_wireless_gateway_task_definition_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.wireless_gateway_task_definition_id
     }
     /// <p>The date and time when the most recent uplink was received.</p> <note>
     /// <p>This value is only valid for 3 months.</p>
@@ -126,6 +136,12 @@ impl GetWirelessGatewayTaskOutputBuilder {
         self.last_uplink_received_at = input;
         self
     }
+    /// <p>The date and time when the most recent uplink was received.</p> <note>
+    /// <p>This value is only valid for 3 months.</p>
+    /// </note>
+    pub fn get_last_uplink_received_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_uplink_received_at
+    }
     /// <p>The date and time when the task was created.</p>
     pub fn task_created_at(
         mut self,
@@ -142,6 +158,10 @@ impl GetWirelessGatewayTaskOutputBuilder {
         self.task_created_at = input;
         self
     }
+    /// <p>The date and time when the task was created.</p>
+    pub fn get_task_created_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_created_at
+    }
     /// <p>The status of the request.</p>
     pub fn status(mut self, input: crate::types::WirelessGatewayTaskStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -154,6 +174,10 @@ impl GetWirelessGatewayTaskOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::WirelessGatewayTaskStatus> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

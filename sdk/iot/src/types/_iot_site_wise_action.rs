@@ -64,6 +64,12 @@ impl IotSiteWiseActionBuilder {
         self.put_asset_property_value_entries = input;
         self
     }
+    /// <p>A list of asset property value entries.</p>
+    pub fn get_put_asset_property_value_entries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PutAssetPropertyValueEntry>> {
+        &self.put_asset_property_value_entries
+    }
     /// <p>The ARN of the role that grants IoT permission to send an asset property value to IoT SiteWise. (<code>"Action": "iotsitewise:BatchPutAssetPropertyValue"</code>). The trust policy can restrict access to specific asset hierarchy paths.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -73,6 +79,10 @@ impl IotSiteWiseActionBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The ARN of the role that grants IoT permission to send an asset property value to IoT SiteWise. (<code>"Action": "iotsitewise:BatchPutAssetPropertyValue"</code>). The trust policy can restrict access to specific asset hierarchy paths.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`IotSiteWiseAction`](crate::types::IotSiteWiseAction).
     pub fn build(self) -> crate::types::IotSiteWiseAction {

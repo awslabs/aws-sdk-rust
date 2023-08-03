@@ -36,6 +36,10 @@ impl DescribeOrderableClusterOptionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeOrderableClusterOptions as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_orderable_cluster_options::builders::DescribeOrderableClusterOptionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -116,6 +120,12 @@ impl DescribeOrderableClusterOptionsFluentBuilder {
         self.inner = self.inner.set_cluster_version(input);
         self
     }
+    /// <p>The version filter value. Specify this parameter to show only the available offerings matching the specified version.</p>
+    /// <p>Default: All versions.</p>
+    /// <p>Constraints: Must be one of the version returned from <code>DescribeClusterVersions</code>.</p>
+    pub fn get_cluster_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_version()
+    }
     /// <p>The node type filter value. Specify this parameter to show only the available offerings matching the specified node type.</p>
     pub fn node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.node_type(input.into());
@@ -125,6 +135,10 @@ impl DescribeOrderableClusterOptionsFluentBuilder {
     pub fn set_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_node_type(input);
         self
+    }
+    /// <p>The node type filter value. Specify this parameter to show only the available offerings matching the specified node type.</p>
+    pub fn get_node_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_node_type()
     }
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
     /// <p>Default: <code>100</code> </p>
@@ -140,6 +154,12 @@ impl DescribeOrderableClusterOptionsFluentBuilder {
         self.inner = self.inner.set_max_records(input);
         self
     }
+    /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
+    /// <p>Default: <code>100</code> </p>
+    /// <p>Constraints: minimum 20, maximum 100.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
+    }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeOrderableClusterOptions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -149,5 +169,9 @@ impl DescribeOrderableClusterOptionsFluentBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
+    }
+    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeOrderableClusterOptions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
     }
 }

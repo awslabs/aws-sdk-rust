@@ -39,6 +39,10 @@ impl GetKeyGroupInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the key group that you are getting. To get the identifier, use <code>ListKeyGroups</code>.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`GetKeyGroupInput`](crate::operation::get_key_group::GetKeyGroupInput).
     pub fn build(
         self,

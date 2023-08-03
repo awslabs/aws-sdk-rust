@@ -77,6 +77,10 @@ impl SubnetGroupBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the subnet group</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description of the subnet group</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -87,6 +91,10 @@ impl SubnetGroupBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the subnet group</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the subnet group.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -96,6 +104,10 @@ impl SubnetGroupBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the subnet group.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Appends an item to `subnets`.
     ///
@@ -116,6 +128,10 @@ impl SubnetGroupBuilder {
         self.subnets = input;
         self
     }
+    /// <p>A list of subnets associated with the subnet group.</p>
+    pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Subnet>> {
+        &self.subnets
+    }
     /// <p>The ARN (Amazon Resource Name) of the subnet group.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -125,6 +141,10 @@ impl SubnetGroupBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The ARN (Amazon Resource Name) of the subnet group.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`SubnetGroup`](crate::types::SubnetGroup).
     pub fn build(self) -> crate::types::SubnetGroup {

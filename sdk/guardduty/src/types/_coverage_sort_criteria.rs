@@ -51,6 +51,10 @@ impl CoverageSortCriteriaBuilder {
         self.attribute_name = input;
         self
     }
+    /// <p>Represents the field name used to sort the coverage details.</p>
+    pub fn get_attribute_name(&self) -> &::std::option::Option<crate::types::CoverageSortKey> {
+        &self.attribute_name
+    }
     /// <p>The order in which the sorted findings are to be displayed.</p>
     pub fn order_by(mut self, input: crate::types::OrderBy) -> Self {
         self.order_by = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl CoverageSortCriteriaBuilder {
     pub fn set_order_by(mut self, input: ::std::option::Option<crate::types::OrderBy>) -> Self {
         self.order_by = input;
         self
+    }
+    /// <p>The order in which the sorted findings are to be displayed.</p>
+    pub fn get_order_by(&self) -> &::std::option::Option<crate::types::OrderBy> {
+        &self.order_by
     }
     /// Consumes the builder and constructs a [`CoverageSortCriteria`](crate::types::CoverageSortCriteria).
     pub fn build(self) -> crate::types::CoverageSortCriteria {

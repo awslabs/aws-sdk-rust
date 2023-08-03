@@ -99,6 +99,10 @@ impl DescribeSnapshotsInputBuilder {
         self.replication_group_id = input;
         self
     }
+    /// <p>A user-supplied replication group identifier. If this parameter is specified, only snapshots associated with that specific replication group are described.</p>
+    pub fn get_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_group_id
+    }
     /// <p>A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that specific cluster are described.</p>
     pub fn cache_cluster_id(
         mut self,
@@ -114,6 +118,10 @@ impl DescribeSnapshotsInputBuilder {
     ) -> Self {
         self.cache_cluster_id = input;
         self
+    }
+    /// <p>A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that specific cluster are described.</p>
+    pub fn get_cache_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_cluster_id
     }
     /// <p>A user-supplied name of the snapshot. If this parameter is specified, only this snapshot are described.</p>
     pub fn snapshot_name(
@@ -131,6 +139,10 @@ impl DescribeSnapshotsInputBuilder {
         self.snapshot_name = input;
         self
     }
+    /// <p>A user-supplied name of the snapshot. If this parameter is specified, only this snapshot are described.</p>
+    pub fn get_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_name
+    }
     /// <p>If set to <code>system</code>, the output shows snapshots that were automatically created by ElastiCache. If set to <code>user</code> the output shows snapshots that were manually created. If omitted, the output shows both automatically and manually created snapshots.</p>
     pub fn snapshot_source(
         mut self,
@@ -147,6 +159,10 @@ impl DescribeSnapshotsInputBuilder {
         self.snapshot_source = input;
         self
     }
+    /// <p>If set to <code>system</code>, the output shows snapshots that were automatically created by ElastiCache. If set to <code>user</code> the output shows snapshots that were manually created. If omitted, the output shows both automatically and manually created snapshots.</p>
+    pub fn get_snapshot_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_source
+    }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -156,6 +172,10 @@ impl DescribeSnapshotsInputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 50</p>
@@ -171,6 +191,12 @@ impl DescribeSnapshotsInputBuilder {
         self.max_records = input;
         self
     }
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>Default: 50</p>
+    /// <p>Constraints: minimum 20; maximum 50.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        &self.max_records
+    }
     /// <p>A Boolean value which if true, the node group (shard) configuration is included in the snapshot description.</p>
     pub fn show_node_group_config(mut self, input: bool) -> Self {
         self.show_node_group_config = ::std::option::Option::Some(input);
@@ -180,6 +206,10 @@ impl DescribeSnapshotsInputBuilder {
     pub fn set_show_node_group_config(mut self, input: ::std::option::Option<bool>) -> Self {
         self.show_node_group_config = input;
         self
+    }
+    /// <p>A Boolean value which if true, the node group (shard) configuration is included in the snapshot description.</p>
+    pub fn get_show_node_group_config(&self) -> &::std::option::Option<bool> {
+        &self.show_node_group_config
     }
     /// Consumes the builder and constructs a [`DescribeSnapshotsInput`](crate::operation::describe_snapshots::DescribeSnapshotsInput).
     pub fn build(

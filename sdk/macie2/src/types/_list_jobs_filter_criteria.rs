@@ -57,6 +57,12 @@ impl ListJobsFilterCriteriaBuilder {
         self.excludes = input;
         self
     }
+    /// <p>An array of objects, one for each condition that determines which jobs to exclude from the results.</p>
+    pub fn get_excludes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListJobsFilterTerm>> {
+        &self.excludes
+    }
     /// Appends an item to `includes`.
     ///
     /// To override the contents of this collection use [`set_includes`](Self::set_includes).
@@ -75,6 +81,12 @@ impl ListJobsFilterCriteriaBuilder {
     ) -> Self {
         self.includes = input;
         self
+    }
+    /// <p>An array of objects, one for each condition that determines which jobs to include in the results.</p>
+    pub fn get_includes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListJobsFilterTerm>> {
+        &self.includes
     }
     /// Consumes the builder and constructs a [`ListJobsFilterCriteria`](crate::types::ListJobsFilterCriteria).
     pub fn build(self) -> crate::types::ListJobsFilterCriteria {

@@ -82,6 +82,10 @@ impl RouteTableAssociationBuilder {
         self.main = input;
         self
     }
+    /// <p>Indicates whether this is the main route table.</p>
+    pub fn get_main(&self) -> &::std::option::Option<bool> {
+        &self.main
+    }
     /// <p>The ID of the association.</p>
     pub fn route_table_association_id(
         mut self,
@@ -97,6 +101,10 @@ impl RouteTableAssociationBuilder {
     ) -> Self {
         self.route_table_association_id = input;
         self
+    }
+    /// <p>The ID of the association.</p>
+    pub fn get_route_table_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.route_table_association_id
     }
     /// <p>The ID of the route table.</p>
     pub fn route_table_id(
@@ -114,6 +122,10 @@ impl RouteTableAssociationBuilder {
         self.route_table_id = input;
         self
     }
+    /// <p>The ID of the route table.</p>
+    pub fn get_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.route_table_id
+    }
     /// <p>The ID of the subnet. A subnet ID is not returned for an implicit association.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
@@ -124,6 +136,10 @@ impl RouteTableAssociationBuilder {
         self.subnet_id = input;
         self
     }
+    /// <p>The ID of the subnet. A subnet ID is not returned for an implicit association.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
+    }
     /// <p>The ID of the internet gateway or virtual private gateway.</p>
     pub fn gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_id = ::std::option::Option::Some(input.into());
@@ -133,6 +149,10 @@ impl RouteTableAssociationBuilder {
     pub fn set_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_id = input;
         self
+    }
+    /// <p>The ID of the internet gateway or virtual private gateway.</p>
+    pub fn get_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_id
     }
     /// <p>The state of the association.</p>
     pub fn association_state(mut self, input: crate::types::RouteTableAssociationState) -> Self {
@@ -146,6 +166,12 @@ impl RouteTableAssociationBuilder {
     ) -> Self {
         self.association_state = input;
         self
+    }
+    /// <p>The state of the association.</p>
+    pub fn get_association_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::RouteTableAssociationState> {
+        &self.association_state
     }
     /// Consumes the builder and constructs a [`RouteTableAssociation`](crate::types::RouteTableAssociation).
     pub fn build(self) -> crate::types::RouteTableAssociation {

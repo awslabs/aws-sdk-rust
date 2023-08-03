@@ -45,6 +45,10 @@ impl DeleteCustomRoutingEndpointGroupInputBuilder {
         self.endpoint_group_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the endpoint group to delete.</p>
+    pub fn get_endpoint_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_group_arn
+    }
     /// Consumes the builder and constructs a [`DeleteCustomRoutingEndpointGroupInput`](crate::operation::delete_custom_routing_endpoint_group::DeleteCustomRoutingEndpointGroupInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_custom_routing_endpoint_group::DeleteCustomRoutingEndpointGroupInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

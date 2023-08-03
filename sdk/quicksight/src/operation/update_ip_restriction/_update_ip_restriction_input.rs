@@ -71,6 +71,10 @@ impl UpdateIpRestrictionInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// Adds a key-value pair to `ip_restriction_rule_map`.
     ///
     /// To override the contents of this collection use [`set_ip_restriction_rule_map`](Self::set_ip_restriction_rule_map).
@@ -96,6 +100,14 @@ impl UpdateIpRestrictionInputBuilder {
         self.ip_restriction_rule_map = input;
         self
     }
+    /// <p>A map that describes the updated IP rules with CIDR ranges and descriptions.</p>
+    pub fn get_ip_restriction_rule_map(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.ip_restriction_rule_map
+    }
     /// <p>A value that specifies whether IP rules are turned on.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -105,6 +117,10 @@ impl UpdateIpRestrictionInputBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>A value that specifies whether IP rules are turned on.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// Consumes the builder and constructs a [`UpdateIpRestrictionInput`](crate::operation::update_ip_restriction::UpdateIpRestrictionInput).
     pub fn build(

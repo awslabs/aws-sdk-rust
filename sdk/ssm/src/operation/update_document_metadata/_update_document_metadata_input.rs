@@ -57,6 +57,10 @@ impl UpdateDocumentMetadataInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the change template for which a version's metadata is to be updated.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The version of a change template in which to update approval metadata.</p>
     pub fn document_version(
         mut self,
@@ -73,6 +77,10 @@ impl UpdateDocumentMetadataInputBuilder {
         self.document_version = input;
         self
     }
+    /// <p>The version of a change template in which to update approval metadata.</p>
+    pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_version
+    }
     /// <p>The change template review details to update.</p>
     pub fn document_reviews(mut self, input: crate::types::DocumentReviews) -> Self {
         self.document_reviews = ::std::option::Option::Some(input);
@@ -85,6 +93,10 @@ impl UpdateDocumentMetadataInputBuilder {
     ) -> Self {
         self.document_reviews = input;
         self
+    }
+    /// <p>The change template review details to update.</p>
+    pub fn get_document_reviews(&self) -> &::std::option::Option<crate::types::DocumentReviews> {
+        &self.document_reviews
     }
     /// Consumes the builder and constructs a [`UpdateDocumentMetadataInput`](crate::operation::update_document_metadata::UpdateDocumentMetadataInput).
     pub fn build(

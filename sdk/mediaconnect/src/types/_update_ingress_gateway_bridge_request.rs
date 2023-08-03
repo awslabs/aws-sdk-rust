@@ -47,6 +47,10 @@ impl UpdateIngressGatewayBridgeRequestBuilder {
         self.max_bitrate = input;
         self
     }
+    /// The maximum expected bitrate (in bps).
+    pub fn get_max_bitrate(&self) -> &::std::option::Option<i32> {
+        &self.max_bitrate
+    }
     /// The maximum number of expected outputs.
     pub fn max_outputs(mut self, input: i32) -> Self {
         self.max_outputs = ::std::option::Option::Some(input);
@@ -56,6 +60,10 @@ impl UpdateIngressGatewayBridgeRequestBuilder {
     pub fn set_max_outputs(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_outputs = input;
         self
+    }
+    /// The maximum number of expected outputs.
+    pub fn get_max_outputs(&self) -> &::std::option::Option<i32> {
+        &self.max_outputs
     }
     /// Consumes the builder and constructs a [`UpdateIngressGatewayBridgeRequest`](crate::types::UpdateIngressGatewayBridgeRequest).
     pub fn build(self) -> crate::types::UpdateIngressGatewayBridgeRequest {

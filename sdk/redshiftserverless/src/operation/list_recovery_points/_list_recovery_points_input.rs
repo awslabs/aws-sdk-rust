@@ -80,6 +80,10 @@ impl ListRecoveryPointsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If your initial <code>ListRecoveryPoints</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListRecoveryPoints</code> operations, which returns results in the next page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -89,6 +93,10 @@ impl ListRecoveryPointsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The time when the recovery point's creation was initiated.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -103,6 +111,10 @@ impl ListRecoveryPointsInputBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The time when the recovery point's creation was initiated.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The time when creation of the recovery point finished.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -115,6 +127,10 @@ impl ListRecoveryPointsInputBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The time when creation of the recovery point finished.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// <p>The name of the namespace to list recovery points for.</p>
     pub fn namespace_name(
@@ -132,6 +148,10 @@ impl ListRecoveryPointsInputBuilder {
         self.namespace_name = input;
         self
     }
+    /// <p>The name of the namespace to list recovery points for.</p>
+    pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the namespace from which to list recovery points.</p>
     pub fn namespace_arn(
         mut self,
@@ -147,6 +167,10 @@ impl ListRecoveryPointsInputBuilder {
     ) -> Self {
         self.namespace_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the namespace from which to list recovery points.</p>
+    pub fn get_namespace_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace_arn
     }
     /// Consumes the builder and constructs a [`ListRecoveryPointsInput`](crate::operation::list_recovery_points::ListRecoveryPointsInput).
     pub fn build(

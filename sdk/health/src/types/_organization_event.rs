@@ -130,6 +130,12 @@ impl OrganizationEventBuilder {
         self.arn = input;
         self
     }
+    /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
+    /// <p>For example, an event ARN might look like the following:</p>
+    /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The Amazon Web Service that is affected by the event, such as EC2 and RDS.</p>
     pub fn service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service = ::std::option::Option::Some(input.into());
@@ -139,6 +145,10 @@ impl OrganizationEventBuilder {
     pub fn set_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service = input;
         self
+    }
+    /// <p>The Amazon Web Service that is affected by the event, such as EC2 and RDS.</p>
+    pub fn get_service(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service
     }
     /// <p>The unique identifier for the event type. The format is <code>AWS_SERVICE_DESCRIPTION</code>. For example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>
     pub fn event_type_code(
@@ -156,6 +166,10 @@ impl OrganizationEventBuilder {
         self.event_type_code = input;
         self
     }
+    /// <p>The unique identifier for the event type. The format is <code>AWS_SERVICE_DESCRIPTION</code>. For example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>
+    pub fn get_event_type_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_type_code
+    }
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
     pub fn event_type_category(mut self, input: crate::types::EventTypeCategory) -> Self {
         self.event_type_category = ::std::option::Option::Some(input);
@@ -168,6 +182,12 @@ impl OrganizationEventBuilder {
     ) -> Self {
         self.event_type_category = input;
         self
+    }
+    /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
+    pub fn get_event_type_category(
+        &self,
+    ) -> &::std::option::Option<crate::types::EventTypeCategory> {
+        &self.event_type_category
     }
     /// <p>This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.</p>
     /// <ul>
@@ -192,6 +212,15 @@ impl OrganizationEventBuilder {
         self.event_scope_code = input;
         self
     }
+    /// <p>This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.</p>
+    /// <ul>
+    /// <li> <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is always empty.</p> </li>
+    /// <li> <p>If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code> value lists the affected Amazon Web Services accounts in your organization. For example, if an event affects a service such as Amazon Elastic Compute Cloud and you have Amazon Web Services accounts that use that service, those account IDs appear in the response.</p> </li>
+    /// <li> <p>If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you specified in the request is invalid or doesn't exist.</p> </li>
+    /// </ul>
+    pub fn get_event_scope_code(&self) -> &::std::option::Option<crate::types::EventScopeCode> {
+        &self.event_scope_code
+    }
     /// <p>The Amazon Web Services Region name of the event.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -201,6 +230,10 @@ impl OrganizationEventBuilder {
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
+    }
+    /// <p>The Amazon Web Services Region name of the event.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// <p>The date and time that the event began.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -215,6 +248,10 @@ impl OrganizationEventBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The date and time that the event began.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The date and time that the event ended.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -227,6 +264,10 @@ impl OrganizationEventBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The date and time that the event ended.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// <p>The most recent date and time that the event was updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -241,6 +282,10 @@ impl OrganizationEventBuilder {
         self.last_updated_time = input;
         self
     }
+    /// <p>The most recent date and time that the event was updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
+    }
     /// <p>The most recent status of the event. Possible values are <code>open</code>, <code>closed</code>, and <code>upcoming</code>.</p>
     pub fn status_code(mut self, input: crate::types::EventStatusCode) -> Self {
         self.status_code = ::std::option::Option::Some(input);
@@ -253,6 +298,10 @@ impl OrganizationEventBuilder {
     ) -> Self {
         self.status_code = input;
         self
+    }
+    /// <p>The most recent status of the event. Possible values are <code>open</code>, <code>closed</code>, and <code>upcoming</code>.</p>
+    pub fn get_status_code(&self) -> &::std::option::Option<crate::types::EventStatusCode> {
+        &self.status_code
     }
     /// Consumes the builder and constructs a [`OrganizationEvent`](crate::types::OrganizationEvent).
     pub fn build(self) -> crate::types::OrganizationEvent {

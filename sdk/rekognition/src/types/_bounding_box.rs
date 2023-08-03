@@ -68,6 +68,10 @@ impl BoundingBoxBuilder {
         self.width = input;
         self
     }
+    /// <p>Width of the bounding box as a ratio of the overall image width.</p>
+    pub fn get_width(&self) -> &::std::option::Option<f32> {
+        &self.width
+    }
     /// <p>Height of the bounding box as a ratio of the overall image height.</p>
     pub fn height(mut self, input: f32) -> Self {
         self.height = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl BoundingBoxBuilder {
     pub fn set_height(mut self, input: ::std::option::Option<f32>) -> Self {
         self.height = input;
         self
+    }
+    /// <p>Height of the bounding box as a ratio of the overall image height.</p>
+    pub fn get_height(&self) -> &::std::option::Option<f32> {
+        &self.height
     }
     /// <p>Left coordinate of the bounding box as a ratio of overall image width.</p>
     pub fn left(mut self, input: f32) -> Self {
@@ -88,6 +96,10 @@ impl BoundingBoxBuilder {
         self.left = input;
         self
     }
+    /// <p>Left coordinate of the bounding box as a ratio of overall image width.</p>
+    pub fn get_left(&self) -> &::std::option::Option<f32> {
+        &self.left
+    }
     /// <p>Top coordinate of the bounding box as a ratio of overall image height.</p>
     pub fn top(mut self, input: f32) -> Self {
         self.top = ::std::option::Option::Some(input);
@@ -97,6 +109,10 @@ impl BoundingBoxBuilder {
     pub fn set_top(mut self, input: ::std::option::Option<f32>) -> Self {
         self.top = input;
         self
+    }
+    /// <p>Top coordinate of the bounding box as a ratio of overall image height.</p>
+    pub fn get_top(&self) -> &::std::option::Option<f32> {
+        &self.top
     }
     /// Consumes the builder and constructs a [`BoundingBox`](crate::types::BoundingBox).
     pub fn build(self) -> crate::types::BoundingBox {

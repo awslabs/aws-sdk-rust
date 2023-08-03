@@ -55,6 +55,10 @@ impl UpdateContactInputBuilder {
         self.contact_id = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan you're updating.</p>
+    pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_id
+    }
     /// <p>The full name of the contact or escalation plan.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl UpdateContactInputBuilder {
         self.display_name = input;
         self
     }
+    /// <p>The full name of the contact or escalation plan.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// <p>A list of stages. A contact has an engagement plan with stages for specified contact channels. An escalation plan uses these stages to contact specified contacts.</p>
     pub fn plan(mut self, input: crate::types::Plan) -> Self {
         self.plan = ::std::option::Option::Some(input);
@@ -74,6 +82,10 @@ impl UpdateContactInputBuilder {
     pub fn set_plan(mut self, input: ::std::option::Option<crate::types::Plan>) -> Self {
         self.plan = input;
         self
+    }
+    /// <p>A list of stages. A contact has an engagement plan with stages for specified contact channels. An escalation plan uses these stages to contact specified contacts.</p>
+    pub fn get_plan(&self) -> &::std::option::Option<crate::types::Plan> {
+        &self.plan
     }
     /// Consumes the builder and constructs a [`UpdateContactInput`](crate::operation::update_contact::UpdateContactInput).
     pub fn build(

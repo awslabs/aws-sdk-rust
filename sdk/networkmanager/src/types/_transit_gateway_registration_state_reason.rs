@@ -51,6 +51,12 @@ impl TransitGatewayRegistrationStateReasonBuilder {
         self.code = input;
         self
     }
+    /// <p>The code for the state reason.</p>
+    pub fn get_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransitGatewayRegistrationState> {
+        &self.code
+    }
     /// <p>The message for the state reason.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -60,6 +66,10 @@ impl TransitGatewayRegistrationStateReasonBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The message for the state reason.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`TransitGatewayRegistrationStateReason`](crate::types::TransitGatewayRegistrationStateReason).
     pub fn build(self) -> crate::types::TransitGatewayRegistrationStateReason {

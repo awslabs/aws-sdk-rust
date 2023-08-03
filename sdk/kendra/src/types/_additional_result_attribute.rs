@@ -58,6 +58,10 @@ impl AdditionalResultAttributeBuilder {
         self.key = input;
         self
     }
+    /// <p>The key that identifies the attribute.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>The data type of the <code>Value</code> property.</p>
     pub fn value_type(mut self, input: crate::types::AdditionalResultAttributeValueType) -> Self {
         self.value_type = ::std::option::Option::Some(input);
@@ -71,6 +75,12 @@ impl AdditionalResultAttributeBuilder {
         self.value_type = input;
         self
     }
+    /// <p>The data type of the <code>Value</code> property.</p>
+    pub fn get_value_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::AdditionalResultAttributeValueType> {
+        &self.value_type
+    }
     /// <p>An object that contains the attribute value.</p>
     pub fn value(mut self, input: crate::types::AdditionalResultAttributeValue) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -83,6 +93,12 @@ impl AdditionalResultAttributeBuilder {
     ) -> Self {
         self.value = input;
         self
+    }
+    /// <p>An object that contains the attribute value.</p>
+    pub fn get_value(
+        &self,
+    ) -> &::std::option::Option<crate::types::AdditionalResultAttributeValue> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`AdditionalResultAttribute`](crate::types::AdditionalResultAttribute).
     pub fn build(self) -> crate::types::AdditionalResultAttribute {

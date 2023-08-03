@@ -44,6 +44,13 @@ impl StartTranscriptionJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartTranscriptionJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_transcription_job::builders::StartTranscriptionJobInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -142,6 +149,11 @@ impl StartTranscriptionJobFluentBuilder {
         self.inner = self.inner.set_transcription_job_name(input);
         self
     }
+    /// <p>A unique name, chosen by you, for your transcription job. The name that you specify is also used as the default name of your transcription output file. If you want to specify a different name for your transcription output, use the <code>OutputKey</code> parameter.</p>
+    /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new job with the same name as an existing job, you get a <code>ConflictException</code> error.</p>
+    pub fn get_transcription_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_transcription_job_name()
+    }
     /// <p>The language code that represents the language spoken in the input media file.</p>
     /// <p>If you're unsure of the language spoken in your media file, consider using <code>IdentifyLanguage</code> or <code>IdentifyMultipleLanguages</code> to enable automatic language identification.</p>
     /// <p>Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or <code>IdentifyMultipleLanguages</code> in your request. If you include more than one of these parameters, your transcription job fails.</p>
@@ -165,6 +177,15 @@ impl StartTranscriptionJobFluentBuilder {
         self.inner = self.inner.set_language_code(input);
         self
     }
+    /// <p>The language code that represents the language spoken in the input media file.</p>
+    /// <p>If you're unsure of the language spoken in your media file, consider using <code>IdentifyLanguage</code> or <code>IdentifyMultipleLanguages</code> to enable automatic language identification.</p>
+    /// <p>Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or <code>IdentifyMultipleLanguages</code> in your request. If you include more than one of these parameters, your transcription job fails.</p>
+    /// <p>For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p> <note>
+    /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
+    /// </note>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
+        self.inner.get_language_code()
+    }
     /// <p>The sample rate, in hertz, of the audio track in your input media file.</p>
     /// <p>If you don't specify the media sample rate, Amazon Transcribe determines it for you. If you specify the sample rate, it must match the rate detected by Amazon Transcribe. If there's a mismatch between the value that you specify and the value detected, your job fails. In most cases, you can omit <code>MediaSampleRateHertz</code> and let Amazon Transcribe determine the sample rate.</p>
     pub fn media_sample_rate_hertz(mut self, input: i32) -> Self {
@@ -176,6 +197,11 @@ impl StartTranscriptionJobFluentBuilder {
     pub fn set_media_sample_rate_hertz(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_media_sample_rate_hertz(input);
         self
+    }
+    /// <p>The sample rate, in hertz, of the audio track in your input media file.</p>
+    /// <p>If you don't specify the media sample rate, Amazon Transcribe determines it for you. If you specify the sample rate, it must match the rate detected by Amazon Transcribe. If there's a mismatch between the value that you specify and the value detected, your job fails. In most cases, you can omit <code>MediaSampleRateHertz</code> and let Amazon Transcribe determine the sample rate.</p>
+    pub fn get_media_sample_rate_hertz(&self) -> &::std::option::Option<i32> {
+        self.inner.get_media_sample_rate_hertz()
     }
     /// <p>Specify the format of your input media file.</p>
     pub fn media_format(mut self, input: crate::types::MediaFormat) -> Self {
@@ -190,6 +216,10 @@ impl StartTranscriptionJobFluentBuilder {
         self.inner = self.inner.set_media_format(input);
         self
     }
+    /// <p>Specify the format of your input media file.</p>
+    pub fn get_media_format(&self) -> &::std::option::Option<crate::types::MediaFormat> {
+        self.inner.get_media_format()
+    }
     /// <p>Describes the Amazon S3 location of the media file you want to use in your request.</p>
     pub fn media(mut self, input: crate::types::Media) -> Self {
         self.inner = self.inner.media(input);
@@ -199,6 +229,10 @@ impl StartTranscriptionJobFluentBuilder {
     pub fn set_media(mut self, input: ::std::option::Option<crate::types::Media>) -> Self {
         self.inner = self.inner.set_media(input);
         self
+    }
+    /// <p>Describes the Amazon S3 location of the media file you want to use in your request.</p>
+    pub fn get_media(&self) -> &::std::option::Option<crate::types::Media> {
+        self.inner.get_media()
     }
     /// <p>The name of the Amazon S3 bucket where you want your transcription output stored. Do not include the <code>S3://</code> prefix of the specified bucket.</p>
     /// <p>If you want your output to go to a sub-folder of this bucket, specify it using the <code>OutputKey</code> parameter; <code>OutputBucketName</code> only accepts the name of a bucket.</p>
@@ -223,6 +257,14 @@ impl StartTranscriptionJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_output_bucket_name(input);
         self
+    }
+    /// <p>The name of the Amazon S3 bucket where you want your transcription output stored. Do not include the <code>S3://</code> prefix of the specified bucket.</p>
+    /// <p>If you want your output to go to a sub-folder of this bucket, specify it using the <code>OutputKey</code> parameter; <code>OutputBucketName</code> only accepts the name of a bucket.</p>
+    /// <p>For example, if you want your output stored in <code>S3://DOC-EXAMPLE-BUCKET</code>, set <code>OutputBucketName</code> to <code>DOC-EXAMPLE-BUCKET</code>. However, if you want your output stored in <code>S3://DOC-EXAMPLE-BUCKET/test-files/</code>, set <code>OutputBucketName</code> to <code>DOC-EXAMPLE-BUCKET</code> and <code>OutputKey</code> to <code>test-files/</code>.</p>
+    /// <p>Note that Amazon Transcribe must have permission to use the specified location. You can change Amazon S3 permissions using the <a href="https://console.aws.amazon.com/s3">Amazon Web Services Management Console</a>. See also <a href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions Required for IAM User Roles</a>.</p>
+    /// <p>If you don't specify <code>OutputBucketName</code>, your transcript is placed in a service-managed Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
+    pub fn get_output_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_output_bucket_name()
     }
     /// <p>Use in combination with <code>OutputBucketName</code> to specify the output location of your transcript and, optionally, a unique name for your output file. The default name for your transcription output is the same as the name you specified for your transcription job (<code>TranscriptionJobName</code>).</p>
     /// <p>Here are some examples of how you can use <code>OutputKey</code>:</p>
@@ -249,6 +291,18 @@ impl StartTranscriptionJobFluentBuilder {
     pub fn set_output_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_output_key(input);
         self
+    }
+    /// <p>Use in combination with <code>OutputBucketName</code> to specify the output location of your transcript and, optionally, a unique name for your output file. The default name for your transcription output is the same as the name you specified for your transcription job (<code>TranscriptionJobName</code>).</p>
+    /// <p>Here are some examples of how you can use <code>OutputKey</code>:</p>
+    /// <ul>
+    /// <li> <p>If you specify 'DOC-EXAMPLE-BUCKET' as the <code>OutputBucketName</code> and 'my-transcript.json' as the <code>OutputKey</code>, your transcription output path is <code>s3://DOC-EXAMPLE-BUCKET/my-transcript.json</code>.</p> </li>
+    /// <li> <p>If you specify 'my-first-transcription' as the <code>TranscriptionJobName</code>, 'DOC-EXAMPLE-BUCKET' as the <code>OutputBucketName</code>, and 'my-transcript' as the <code>OutputKey</code>, your transcription output path is <code>s3://DOC-EXAMPLE-BUCKET/my-transcript/my-first-transcription.json</code>.</p> </li>
+    /// <li> <p>If you specify 'DOC-EXAMPLE-BUCKET' as the <code>OutputBucketName</code> and 'test-files/my-transcript.json' as the <code>OutputKey</code>, your transcription output path is <code>s3://DOC-EXAMPLE-BUCKET/test-files/my-transcript.json</code>.</p> </li>
+    /// <li> <p>If you specify 'my-first-transcription' as the <code>TranscriptionJobName</code>, 'DOC-EXAMPLE-BUCKET' as the <code>OutputBucketName</code>, and 'test-files/my-transcript' as the <code>OutputKey</code>, your transcription output path is <code>s3://DOC-EXAMPLE-BUCKET/test-files/my-transcript/my-first-transcription.json</code>.</p> </li>
+    /// </ul>
+    /// <p>If you specify the name of an Amazon S3 bucket sub-folder that doesn't exist, one is created for you.</p>
+    pub fn get_output_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_output_key()
     }
     /// <p>The KMS key you want to use to encrypt your transcription output.</p>
     /// <p>If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of four ways:</p>
@@ -296,6 +350,27 @@ impl StartTranscriptionJobFluentBuilder {
         self.inner = self.inner.set_output_encryption_kms_key_id(input);
         self
     }
+    /// <p>The KMS key you want to use to encrypt your transcription output.</p>
+    /// <p>If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of four ways:</p>
+    /// <ol>
+    /// <li> <p>Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
+    /// <li> <p>Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.</p> </li>
+    /// <li> <p>Use the Amazon Resource Name (ARN) for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
+    /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li>
+    /// </ol>
+    /// <p>If using a key located in a <b>different</b> Amazon Web Services account than the current Amazon Web Services account, you can specify your KMS key in one of two ways:</p>
+    /// <ol>
+    /// <li> <p>Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
+    /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li>
+    /// </ol>
+    /// <p>If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
+    /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
+    /// <p>Note that the role making the request must have permission to use the specified KMS key.</p>
+    pub fn get_output_encryption_kms_key_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_output_encryption_kms_key_id()
+    }
     /// Adds a key-value pair to `KMSEncryptionContext`.
     ///
     /// To override the contents of this collection use [`set_kms_encryption_context`](Self::set_kms_encryption_context).
@@ -319,6 +394,14 @@ impl StartTranscriptionJobFluentBuilder {
         self.inner = self.inner.set_kms_encryption_context(input);
         self
     }
+    /// <p>A map of plain text, non-secret key:value pairs, known as encryption context pairs, that provide an added layer of security for your data. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/key-management.html#kms-context">KMS encryption context</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/symmetric-asymmetric.html">Asymmetric keys in KMS</a>.</p>
+    pub fn get_kms_encryption_context(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_kms_encryption_context()
+    }
     /// <p>Specify additional optional settings in your request, including channel identification, alternative transcriptions, speaker partitioning. You can use that to apply custom vocabularies and vocabulary filters.</p>
     /// <p>If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do not</b> want to use automatic language identification, use <code>Settings</code> with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both) sub-parameter.</p>
     /// <p>If you're using automatic language identification with your request and want to include a custom language model, a custom vocabulary, or a custom vocabulary filter, use instead the <code></code> parameter with the <code>LanguageModelName</code>, <code>VocabularyName</code> or <code>VocabularyFilterName</code> sub-parameters.</p>
@@ -332,6 +415,12 @@ impl StartTranscriptionJobFluentBuilder {
     pub fn set_settings(mut self, input: ::std::option::Option<crate::types::Settings>) -> Self {
         self.inner = self.inner.set_settings(input);
         self
+    }
+    /// <p>Specify additional optional settings in your request, including channel identification, alternative transcriptions, speaker partitioning. You can use that to apply custom vocabularies and vocabulary filters.</p>
+    /// <p>If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do not</b> want to use automatic language identification, use <code>Settings</code> with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both) sub-parameter.</p>
+    /// <p>If you're using automatic language identification with your request and want to include a custom language model, a custom vocabulary, or a custom vocabulary filter, use instead the <code></code> parameter with the <code>LanguageModelName</code>, <code>VocabularyName</code> or <code>VocabularyFilterName</code> sub-parameters.</p>
+    pub fn get_settings(&self) -> &::std::option::Option<crate::types::Settings> {
+        self.inner.get_settings()
     }
     /// <p>Specify the custom language model you want to include with your transcription job. If you include <code>ModelSettings</code> in your request, you must include the <code>LanguageModelName</code> sub-parameter.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-language-models.html">Custom language models</a>.</p>
@@ -348,6 +437,11 @@ impl StartTranscriptionJobFluentBuilder {
         self.inner = self.inner.set_model_settings(input);
         self
     }
+    /// <p>Specify the custom language model you want to include with your transcription job. If you include <code>ModelSettings</code> in your request, you must include the <code>LanguageModelName</code> sub-parameter.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-language-models.html">Custom language models</a>.</p>
+    pub fn get_model_settings(&self) -> &::std::option::Option<crate::types::ModelSettings> {
+        self.inner.get_model_settings()
+    }
     /// <p>Makes it possible to control how your transcription job is processed. Currently, the only <code>JobExecutionSettings</code> modification you can choose is enabling job queueing using the <code>AllowDeferredExecution</code> sub-parameter.</p>
     /// <p>If you include <code>JobExecutionSettings</code> in your request, you must also include the sub-parameters: <code>AllowDeferredExecution</code> and <code>DataAccessRoleArn</code>.</p>
     pub fn job_execution_settings(mut self, input: crate::types::JobExecutionSettings) -> Self {
@@ -363,6 +457,13 @@ impl StartTranscriptionJobFluentBuilder {
         self.inner = self.inner.set_job_execution_settings(input);
         self
     }
+    /// <p>Makes it possible to control how your transcription job is processed. Currently, the only <code>JobExecutionSettings</code> modification you can choose is enabling job queueing using the <code>AllowDeferredExecution</code> sub-parameter.</p>
+    /// <p>If you include <code>JobExecutionSettings</code> in your request, you must also include the sub-parameters: <code>AllowDeferredExecution</code> and <code>DataAccessRoleArn</code>.</p>
+    pub fn get_job_execution_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::JobExecutionSettings> {
+        self.inner.get_job_execution_settings()
+    }
     /// <p>Makes it possible to redact or flag specified personally identifiable information (PII) in your transcript. If you use <code>ContentRedaction</code>, you must also include the sub-parameters: <code>PiiEntityTypes</code>, <code>RedactionOutput</code>, and <code>RedactionType</code>.</p>
     pub fn content_redaction(mut self, input: crate::types::ContentRedaction) -> Self {
         self.inner = self.inner.content_redaction(input);
@@ -375,6 +476,10 @@ impl StartTranscriptionJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_content_redaction(input);
         self
+    }
+    /// <p>Makes it possible to redact or flag specified personally identifiable information (PII) in your transcript. If you use <code>ContentRedaction</code>, you must also include the sub-parameters: <code>PiiEntityTypes</code>, <code>RedactionOutput</code>, and <code>RedactionType</code>.</p>
+    pub fn get_content_redaction(&self) -> &::std::option::Option<crate::types::ContentRedaction> {
+        self.inner.get_content_redaction()
     }
     /// <p>Enables automatic language identification in your transcription job request. Use this parameter if your media file contains only one language. If your media contains multiple languages, use <code>IdentifyMultipleLanguages</code> instead.</p>
     /// <p>If you include <code>IdentifyLanguage</code>, you can optionally include a list of language codes, using <code>LanguageOptions</code>, that you think may be present in your media file. Including <code>LanguageOptions</code> restricts <code>IdentifyLanguage</code> to only the language options that you specify, which can improve transcription accuracy.</p>
@@ -392,6 +497,13 @@ impl StartTranscriptionJobFluentBuilder {
         self.inner = self.inner.set_identify_language(input);
         self
     }
+    /// <p>Enables automatic language identification in your transcription job request. Use this parameter if your media file contains only one language. If your media contains multiple languages, use <code>IdentifyMultipleLanguages</code> instead.</p>
+    /// <p>If you include <code>IdentifyLanguage</code>, you can optionally include a list of language codes, using <code>LanguageOptions</code>, that you think may be present in your media file. Including <code>LanguageOptions</code> restricts <code>IdentifyLanguage</code> to only the language options that you specify, which can improve transcription accuracy.</p>
+    /// <p>If you want to apply a custom language model, a custom vocabulary, or a custom vocabulary filter to your automatic language identification request, include <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>). If you include <code>LanguageIdSettings</code>, also include <code>LanguageOptions</code>.</p>
+    /// <p>Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or <code>IdentifyMultipleLanguages</code> in your request. If you include more than one of these parameters, your transcription job fails.</p>
+    pub fn get_identify_language(&self) -> &::std::option::Option<bool> {
+        self.inner.get_identify_language()
+    }
     /// <p>Enables automatic multi-language identification in your transcription job request. Use this parameter if your media file contains more than one language. If your media contains only one language, use <code>IdentifyLanguage</code> instead.</p>
     /// <p>If you include <code>IdentifyMultipleLanguages</code>, you can optionally include a list of language codes, using <code>LanguageOptions</code>, that you think may be present in your media file. Including <code>LanguageOptions</code> restricts <code>IdentifyLanguage</code> to only the language options that you specify, which can improve transcription accuracy.</p>
     /// <p>If you want to apply a custom vocabulary or a custom vocabulary filter to your automatic language identification request, include <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code> and <code>VocabularyFilterName</code>). If you include <code>LanguageIdSettings</code>, also include <code>LanguageOptions</code>.</p>
@@ -407,6 +519,13 @@ impl StartTranscriptionJobFluentBuilder {
     pub fn set_identify_multiple_languages(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_identify_multiple_languages(input);
         self
+    }
+    /// <p>Enables automatic multi-language identification in your transcription job request. Use this parameter if your media file contains more than one language. If your media contains only one language, use <code>IdentifyLanguage</code> instead.</p>
+    /// <p>If you include <code>IdentifyMultipleLanguages</code>, you can optionally include a list of language codes, using <code>LanguageOptions</code>, that you think may be present in your media file. Including <code>LanguageOptions</code> restricts <code>IdentifyLanguage</code> to only the language options that you specify, which can improve transcription accuracy.</p>
+    /// <p>If you want to apply a custom vocabulary or a custom vocabulary filter to your automatic language identification request, include <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code> and <code>VocabularyFilterName</code>). If you include <code>LanguageIdSettings</code>, also include <code>LanguageOptions</code>.</p>
+    /// <p>Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or <code>IdentifyMultipleLanguages</code> in your request. If you include more than one of these parameters, your transcription job fails.</p>
+    pub fn get_identify_multiple_languages(&self) -> &::std::option::Option<bool> {
+        self.inner.get_identify_multiple_languages()
     }
     /// Appends an item to `LanguageOptions`.
     ///
@@ -431,6 +550,15 @@ impl StartTranscriptionJobFluentBuilder {
         self.inner = self.inner.set_language_options(input);
         self
     }
+    /// <p>You can specify two or more language codes that represent the languages you think may be present in your media. Including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
+    /// <p>If you include <code>LanguageOptions</code> in your request, you must also include <code>IdentifyLanguage</code>.</p>
+    /// <p>For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>.</p>
+    /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
+    pub fn get_language_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LanguageCode>> {
+        self.inner.get_language_options()
+    }
     /// <p>Produces subtitle files for your input media. You can specify WebVTT (*.vtt) and SubRip (*.srt) formats.</p>
     pub fn subtitles(mut self, input: crate::types::Subtitles) -> Self {
         self.inner = self.inner.subtitles(input);
@@ -440,6 +568,10 @@ impl StartTranscriptionJobFluentBuilder {
     pub fn set_subtitles(mut self, input: ::std::option::Option<crate::types::Subtitles>) -> Self {
         self.inner = self.inner.set_subtitles(input);
         self
+    }
+    /// <p>Produces subtitle files for your input media. You can specify WebVTT (*.vtt) and SubRip (*.srt) formats.</p>
+    pub fn get_subtitles(&self) -> &::std::option::Option<crate::types::Subtitles> {
+        self.inner.get_subtitles()
     }
     /// Appends an item to `Tags`.
     ///
@@ -459,6 +591,11 @@ impl StartTranscriptionJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Adds one or more custom tags, each in the form of a key:value pair, to a new transcription job at the time you start this new job.</p>
+    /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
     /// Adds a key-value pair to `LanguageIdSettings`.
     ///
@@ -492,6 +629,17 @@ impl StartTranscriptionJobFluentBuilder {
         self.inner = self.inner.set_language_id_settings(input);
         self
     }
+    /// <p>If using automatic language identification in your request and you want to apply a custom language model, a custom vocabulary, or a custom vocabulary filter, include <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>). Note that multi-language identification (<code>IdentifyMultipleLanguages</code>) doesn't support custom language models.</p>
+    /// <p> <code>LanguageIdSettings</code> supports two to five language codes. Each language code you include can have an associated custom language model, custom vocabulary, and custom vocabulary filter. The language codes that you specify must match the languages of the associated custom language models, custom vocabularies, and custom vocabulary filters.</p>
+    /// <p>It's recommended that you include <code>LanguageOptions</code> when using <code>LanguageIdSettings</code> to ensure that the correct language dialect is identified. For example, if you specify a custom vocabulary that is in <code>en-US</code> but Amazon Transcribe determines that the language spoken in your media is <code>en-AU</code>, your custom vocabulary <i>is not</i> applied to your transcription. If you include <code>LanguageOptions</code> and include <code>en-US</code> as the only English language dialect, your custom vocabulary <i>is</i> applied to your transcription.</p>
+    /// <p>If you want to include a custom language model with your request but <b>do not</b> want to use automatic language identification, use instead the <code></code> parameter with the <code>LanguageModelName</code> sub-parameter. If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do not</b> want to use automatic language identification, use instead the <code></code> parameter with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both) sub-parameter.</p>
+    pub fn get_language_id_settings(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<crate::types::LanguageCode, crate::types::LanguageIdSettings>,
+    > {
+        self.inner.get_language_id_settings()
+    }
     /// Appends an item to `ToxicityDetection`.
     ///
     /// To override the contents of this collection use [`set_toxicity_detection`](Self::set_toxicity_detection).
@@ -510,5 +658,12 @@ impl StartTranscriptionJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_toxicity_detection(input);
         self
+    }
+    /// <p>Enables toxic speech detection in your transcript. If you include <code>ToxicityDetection</code> in your request, you must also include <code>ToxicityCategories</code>.</p>
+    /// <p>For information on the types of toxic speech Amazon Transcribe can detect, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/toxic-language.html">Detecting toxic speech</a>.</p>
+    pub fn get_toxicity_detection(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ToxicityDetectionSettings>> {
+        self.inner.get_toxicity_detection()
     }
 }

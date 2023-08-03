@@ -39,6 +39,10 @@ impl StartMlEvaluationTaskRunInputBuilder {
         self.transform_id = input;
         self
     }
+    /// <p>The unique identifier of the machine learning transform.</p>
+    pub fn get_transform_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transform_id
+    }
     /// Consumes the builder and constructs a [`StartMlEvaluationTaskRunInput`](crate::operation::start_ml_evaluation_task_run::StartMlEvaluationTaskRunInput).
     pub fn build(
         self,

@@ -48,6 +48,10 @@ impl DataLakeAutoEnableNewAccountConfigurationBuilder {
         self.region = input;
         self
     }
+    /// <p>The Amazon Web Services Regions where Security Lake is automatically enabled.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
+    }
     /// Appends an item to `sources`.
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
@@ -66,6 +70,12 @@ impl DataLakeAutoEnableNewAccountConfigurationBuilder {
     ) -> Self {
         self.sources = input;
         self
+    }
+    /// <p>The Amazon Web Services sources that are automatically enabled in Security Lake.</p>
+    pub fn get_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceResource>> {
+        &self.sources
     }
     /// Consumes the builder and constructs a [`DataLakeAutoEnableNewAccountConfiguration`](crate::types::DataLakeAutoEnableNewAccountConfiguration).
     pub fn build(self) -> crate::types::DataLakeAutoEnableNewAccountConfiguration {

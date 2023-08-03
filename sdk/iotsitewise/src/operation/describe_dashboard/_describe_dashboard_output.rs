@@ -107,6 +107,10 @@ impl DescribeDashboardOutputBuilder {
         self.dashboard_id = input;
         self
     }
+    /// <p>The ID of the dashboard.</p>
+    pub fn get_dashboard_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dashboard_id
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code> </p>
     pub fn dashboard_arn(
@@ -125,6 +129,11 @@ impl DescribeDashboardOutputBuilder {
         self.dashboard_arn = input;
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code> </p>
+    pub fn get_dashboard_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dashboard_arn
+    }
     /// <p>The name of the dashboard.</p>
     pub fn dashboard_name(
         mut self,
@@ -141,6 +150,10 @@ impl DescribeDashboardOutputBuilder {
         self.dashboard_name = input;
         self
     }
+    /// <p>The name of the dashboard.</p>
+    pub fn get_dashboard_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dashboard_name
+    }
     /// <p>The ID of the project that the dashboard is in.</p>
     pub fn project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_id = ::std::option::Option::Some(input.into());
@@ -150,6 +163,10 @@ impl DescribeDashboardOutputBuilder {
     pub fn set_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_id = input;
         self
+    }
+    /// <p>The ID of the project that the dashboard is in.</p>
+    pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_id
     }
     /// <p>The dashboard's description.</p>
     pub fn dashboard_description(
@@ -167,6 +184,10 @@ impl DescribeDashboardOutputBuilder {
         self.dashboard_description = input;
         self
     }
+    /// <p>The dashboard's description.</p>
+    pub fn get_dashboard_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dashboard_description
+    }
     /// <p>The dashboard's definition JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn dashboard_definition(
         mut self,
@@ -183,6 +204,10 @@ impl DescribeDashboardOutputBuilder {
         self.dashboard_definition = input;
         self
     }
+    /// <p>The dashboard's definition JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_dashboard_definition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dashboard_definition
+    }
     /// <p>The date the dashboard was created, in Unix epoch time.</p>
     pub fn dashboard_creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.dashboard_creation_date = ::std::option::Option::Some(input);
@@ -196,6 +221,12 @@ impl DescribeDashboardOutputBuilder {
         self.dashboard_creation_date = input;
         self
     }
+    /// <p>The date the dashboard was created, in Unix epoch time.</p>
+    pub fn get_dashboard_creation_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.dashboard_creation_date
+    }
     /// <p>The date the dashboard was last updated, in Unix epoch time.</p>
     pub fn dashboard_last_update_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.dashboard_last_update_date = ::std::option::Option::Some(input);
@@ -208,6 +239,12 @@ impl DescribeDashboardOutputBuilder {
     ) -> Self {
         self.dashboard_last_update_date = input;
         self
+    }
+    /// <p>The date the dashboard was last updated, in Unix epoch time.</p>
+    pub fn get_dashboard_last_update_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.dashboard_last_update_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

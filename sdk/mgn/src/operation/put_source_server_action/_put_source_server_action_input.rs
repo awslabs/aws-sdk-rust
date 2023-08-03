@@ -176,6 +176,10 @@ impl PutSourceServerActionInputBuilder {
         self.source_server_id = input;
         self
     }
+    /// <p>Source server ID.</p>
+    pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_server_id
+    }
     /// <p>Source server post migration custom action name.</p>
     pub fn action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_name = ::std::option::Option::Some(input.into());
@@ -185,6 +189,10 @@ impl PutSourceServerActionInputBuilder {
     pub fn set_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action_name = input;
         self
+    }
+    /// <p>Source server post migration custom action name.</p>
+    pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_name
     }
     /// <p>Source server post migration custom action document identifier.</p>
     pub fn document_identifier(
@@ -202,6 +210,10 @@ impl PutSourceServerActionInputBuilder {
         self.document_identifier = input;
         self
     }
+    /// <p>Source server post migration custom action document identifier.</p>
+    pub fn get_document_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_identifier
+    }
     /// <p>Source server post migration custom action order.</p>
     pub fn order(mut self, input: i32) -> Self {
         self.order = ::std::option::Option::Some(input);
@@ -212,6 +224,10 @@ impl PutSourceServerActionInputBuilder {
         self.order = input;
         self
     }
+    /// <p>Source server post migration custom action order.</p>
+    pub fn get_order(&self) -> &::std::option::Option<i32> {
+        &self.order
+    }
     /// <p>Source server post migration custom action ID.</p>
     pub fn action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_id = ::std::option::Option::Some(input.into());
@@ -221,6 +237,10 @@ impl PutSourceServerActionInputBuilder {
     pub fn set_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action_id = input;
         self
+    }
+    /// <p>Source server post migration custom action ID.</p>
+    pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_id
     }
     /// <p>Source server post migration custom action document version.</p>
     pub fn document_version(
@@ -238,6 +258,10 @@ impl PutSourceServerActionInputBuilder {
         self.document_version = input;
         self
     }
+    /// <p>Source server post migration custom action document version.</p>
+    pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_version
+    }
     /// <p>Source server post migration custom action active status.</p>
     pub fn active(mut self, input: bool) -> Self {
         self.active = ::std::option::Option::Some(input);
@@ -247,6 +271,10 @@ impl PutSourceServerActionInputBuilder {
     pub fn set_active(mut self, input: ::std::option::Option<bool>) -> Self {
         self.active = input;
         self
+    }
+    /// <p>Source server post migration custom action active status.</p>
+    pub fn get_active(&self) -> &::std::option::Option<bool> {
+        &self.active
     }
     /// <p>Source server post migration custom action timeout in seconds.</p>
     pub fn timeout_seconds(mut self, input: i32) -> Self {
@@ -258,6 +286,10 @@ impl PutSourceServerActionInputBuilder {
         self.timeout_seconds = input;
         self
     }
+    /// <p>Source server post migration custom action timeout in seconds.</p>
+    pub fn get_timeout_seconds(&self) -> &::std::option::Option<i32> {
+        &self.timeout_seconds
+    }
     /// <p>Source server post migration custom action must succeed for cutover.</p>
     pub fn must_succeed_for_cutover(mut self, input: bool) -> Self {
         self.must_succeed_for_cutover = ::std::option::Option::Some(input);
@@ -267,6 +299,10 @@ impl PutSourceServerActionInputBuilder {
     pub fn set_must_succeed_for_cutover(mut self, input: ::std::option::Option<bool>) -> Self {
         self.must_succeed_for_cutover = input;
         self
+    }
+    /// <p>Source server post migration custom action must succeed for cutover.</p>
+    pub fn get_must_succeed_for_cutover(&self) -> &::std::option::Option<bool> {
+        &self.must_succeed_for_cutover
     }
     /// Adds a key-value pair to `parameters`.
     ///
@@ -296,6 +332,17 @@ impl PutSourceServerActionInputBuilder {
         self.parameters = input;
         self
     }
+    /// <p>Source server post migration custom action parameters.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::vec::Vec<crate::types::SsmParameterStoreParameter>,
+        >,
+    > {
+        &self.parameters
+    }
     /// Adds a key-value pair to `external_parameters`.
     ///
     /// To override the contents of this collection use [`set_external_parameters`](Self::set_external_parameters).
@@ -321,6 +368,14 @@ impl PutSourceServerActionInputBuilder {
         self.external_parameters = input;
         self
     }
+    /// <p>Source server post migration custom action external parameters.</p>
+    pub fn get_external_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>,
+    > {
+        &self.external_parameters
+    }
     /// <p>Source server post migration custom action description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -330,6 +385,10 @@ impl PutSourceServerActionInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Source server post migration custom action description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Source server post migration custom action category.</p>
     pub fn category(mut self, input: crate::types::ActionCategory) -> Self {
@@ -344,6 +403,10 @@ impl PutSourceServerActionInputBuilder {
         self.category = input;
         self
     }
+    /// <p>Source server post migration custom action category.</p>
+    pub fn get_category(&self) -> &::std::option::Option<crate::types::ActionCategory> {
+        &self.category
+    }
     /// <p>Source server post migration custom account ID.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -353,6 +416,10 @@ impl PutSourceServerActionInputBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>Source server post migration custom account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// Consumes the builder and constructs a [`PutSourceServerActionInput`](crate::operation::put_source_server_action::PutSourceServerActionInput).
     pub fn build(

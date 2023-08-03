@@ -99,6 +99,10 @@ impl SopRecommendationBuilder {
         self.service_type = input;
         self
     }
+    /// <p>The service type.</p>
+    pub fn get_service_type(&self) -> &::std::option::Option<crate::types::SopServiceType> {
+        &self.service_type
+    }
     /// <p>The name of the Application Component.</p>
     pub fn app_component_name(
         mut self,
@@ -115,6 +119,10 @@ impl SopRecommendationBuilder {
         self.app_component_name = input;
         self
     }
+    /// <p>The name of the Application Component.</p>
+    pub fn get_app_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_component_name
+    }
     /// <p>The description of the SOP recommendation.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -124,6 +132,10 @@ impl SopRecommendationBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the SOP recommendation.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Identifier for the SOP recommendation.</p>
     pub fn recommendation_id(
@@ -141,6 +153,10 @@ impl SopRecommendationBuilder {
         self.recommendation_id = input;
         self
     }
+    /// <p>Identifier for the SOP recommendation.</p>
+    pub fn get_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommendation_id
+    }
     /// <p>The name of the SOP recommendation.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -150,6 +166,10 @@ impl SopRecommendationBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the SOP recommendation.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `items`.
     ///
@@ -170,6 +190,12 @@ impl SopRecommendationBuilder {
         self.items = input;
         self
     }
+    /// <p>The recommendation items.</p>
+    pub fn get_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationItem>> {
+        &self.items
+    }
     /// <p>The reference identifier for the SOP recommendation.</p>
     pub fn reference_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_id = ::std::option::Option::Some(input.into());
@@ -180,6 +206,10 @@ impl SopRecommendationBuilder {
         self.reference_id = input;
         self
     }
+    /// <p>The reference identifier for the SOP recommendation.</p>
+    pub fn get_reference_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reference_id
+    }
     /// <p>The prerequisite for the SOP recommendation.</p>
     pub fn prerequisite(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prerequisite = ::std::option::Option::Some(input.into());
@@ -189,6 +219,10 @@ impl SopRecommendationBuilder {
     pub fn set_prerequisite(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prerequisite = input;
         self
+    }
+    /// <p>The prerequisite for the SOP recommendation.</p>
+    pub fn get_prerequisite(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prerequisite
     }
     /// Consumes the builder and constructs a [`SopRecommendation`](crate::types::SopRecommendation).
     pub fn build(self) -> crate::types::SopRecommendation {

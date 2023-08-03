@@ -37,6 +37,10 @@ impl RemoveClientIDFromOpenIDConnectProviderFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RemoveClientIDFromOpenIDConnectProvider as a reference.
+    pub fn as_input(&self) -> &crate::operation::remove_client_id_from_open_id_connect_provider::builders::RemoveClientIdFromOpenIdConnectProviderInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -109,6 +113,13 @@ impl RemoveClientIDFromOpenIDConnectProviderFluentBuilder {
         self.inner = self.inner.set_open_id_connect_provider_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM OIDC provider resource to remove the client ID from. You can get a list of OIDC provider ARNs by using the <code>ListOpenIDConnectProviders</code> operation.</p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn get_open_id_connect_provider_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_open_id_connect_provider_arn()
+    }
     /// <p>The client ID (also known as audience) to remove from the IAM OIDC provider resource. For more information about client IDs, see <code>CreateOpenIDConnectProvider</code>.</p>
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_id(input.into());
@@ -118,5 +129,9 @@ impl RemoveClientIDFromOpenIDConnectProviderFluentBuilder {
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_id(input);
         self
+    }
+    /// <p>The client ID (also known as audience) to remove from the IAM OIDC provider resource. For more information about client IDs, see <code>CreateOpenIDConnectProvider</code>.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_id()
     }
 }

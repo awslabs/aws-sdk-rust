@@ -36,6 +36,10 @@ impl GetLicenseManagerReportGeneratorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetLicenseManagerReportGenerator as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_license_manager_report_generator::builders::GetLicenseManagerReportGeneratorInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -107,5 +111,11 @@ impl GetLicenseManagerReportGeneratorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_license_manager_report_generator_arn(input);
         self
+    }
+    /// <p>Amazon Resource Name (ARN) of the report generator.</p>
+    pub fn get_license_manager_report_generator_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_license_manager_report_generator_arn()
     }
 }

@@ -46,6 +46,10 @@ impl CreateTypeOutputBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The <code>Type</code> object.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
+        &self.r#type
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -82,6 +82,10 @@ impl GetCostAndUsageOutputBuilder {
         self.next_page_token = input;
         self
     }
+    /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_page_token
+    }
     /// Appends an item to `group_definitions`.
     ///
     /// To override the contents of this collection use [`set_group_definitions`](Self::set_group_definitions).
@@ -101,6 +105,12 @@ impl GetCostAndUsageOutputBuilder {
         self.group_definitions = input;
         self
     }
+    /// <p>The groups that are specified by the <code>Filter</code> or <code>GroupBy</code> parameters in the request.</p>
+    pub fn get_group_definitions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>> {
+        &self.group_definitions
+    }
     /// Appends an item to `results_by_time`.
     ///
     /// To override the contents of this collection use [`set_results_by_time`](Self::set_results_by_time).
@@ -119,6 +129,12 @@ impl GetCostAndUsageOutputBuilder {
     ) -> Self {
         self.results_by_time = input;
         self
+    }
+    /// <p>The time period that's covered by the results in the response.</p>
+    pub fn get_results_by_time(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResultByTime>> {
+        &self.results_by_time
     }
     /// Appends an item to `dimension_value_attributes`.
     ///
@@ -141,6 +157,12 @@ impl GetCostAndUsageOutputBuilder {
     ) -> Self {
         self.dimension_value_attributes = input;
         self
+    }
+    /// <p>The attributes that apply to a specific dimension value. For example, if the value is a linked account, the attribute is that account name.</p>
+    pub fn get_dimension_value_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionValuesWithAttributes>> {
+        &self.dimension_value_attributes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

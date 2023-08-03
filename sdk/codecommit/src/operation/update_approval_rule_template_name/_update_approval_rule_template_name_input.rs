@@ -53,6 +53,12 @@ impl UpdateApprovalRuleTemplateNameInputBuilder {
         self.old_approval_rule_template_name = input;
         self
     }
+    /// <p>The current name of the approval rule template.</p>
+    pub fn get_old_approval_rule_template_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.old_approval_rule_template_name
+    }
     /// <p>The new name you want to apply to the approval rule template.</p>
     pub fn new_approval_rule_template_name(
         mut self,
@@ -68,6 +74,12 @@ impl UpdateApprovalRuleTemplateNameInputBuilder {
     ) -> Self {
         self.new_approval_rule_template_name = input;
         self
+    }
+    /// <p>The new name you want to apply to the approval rule template.</p>
+    pub fn get_new_approval_rule_template_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.new_approval_rule_template_name
     }
     /// Consumes the builder and constructs a [`UpdateApprovalRuleTemplateNameInput`](crate::operation::update_approval_rule_template_name::UpdateApprovalRuleTemplateNameInput).
     pub fn build(

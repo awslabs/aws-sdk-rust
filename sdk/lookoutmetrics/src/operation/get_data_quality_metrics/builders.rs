@@ -36,6 +36,13 @@ impl GetDataQualityMetricsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetDataQualityMetrics as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_data_quality_metrics::builders::GetDataQualityMetricsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl GetDataQualityMetricsFluentBuilder {
         self.inner = self.inner.set_anomaly_detector_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the anomaly detector that you want to investigate.</p>
+    pub fn get_anomaly_detector_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_anomaly_detector_arn()
+    }
     /// <p>The Amazon Resource Name (ARN) of a specific data quality metric set.</p>
     pub fn metric_set_arn(
         mut self,
@@ -147,5 +158,9 @@ impl GetDataQualityMetricsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_metric_set_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a specific data quality metric set.</p>
+    pub fn get_metric_set_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_metric_set_arn()
     }
 }

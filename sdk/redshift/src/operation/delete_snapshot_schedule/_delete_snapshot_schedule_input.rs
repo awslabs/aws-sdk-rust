@@ -47,6 +47,10 @@ impl DeleteSnapshotScheduleInputBuilder {
         self.schedule_identifier = input;
         self
     }
+    /// <p>A unique identifier of the snapshot schedule to delete.</p>
+    pub fn get_schedule_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schedule_identifier
+    }
     /// Consumes the builder and constructs a [`DeleteSnapshotScheduleInput`](crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleInput).
     pub fn build(
         self,

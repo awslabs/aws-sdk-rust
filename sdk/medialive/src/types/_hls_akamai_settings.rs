@@ -90,6 +90,10 @@ impl HlsAkamaiSettingsBuilder {
         self.connection_retry_interval = input;
         self
     }
+    /// Number of seconds to wait before retrying connection to the CDN if the connection is lost.
+    pub fn get_connection_retry_interval(&self) -> &::std::option::Option<i32> {
+        &self.connection_retry_interval
+    }
     /// Size in seconds of file cache for streaming outputs.
     pub fn filecache_duration(mut self, input: i32) -> Self {
         self.filecache_duration = ::std::option::Option::Some(input);
@@ -99,6 +103,10 @@ impl HlsAkamaiSettingsBuilder {
     pub fn set_filecache_duration(mut self, input: ::std::option::Option<i32>) -> Self {
         self.filecache_duration = input;
         self
+    }
+    /// Size in seconds of file cache for streaming outputs.
+    pub fn get_filecache_duration(&self) -> &::std::option::Option<i32> {
+        &self.filecache_duration
     }
     /// Specify whether or not to use chunked transfer encoding to Akamai. User should contact Akamai to enable this feature.
     pub fn http_transfer_mode(mut self, input: crate::types::HlsAkamaiHttpTransferMode) -> Self {
@@ -113,6 +121,12 @@ impl HlsAkamaiSettingsBuilder {
         self.http_transfer_mode = input;
         self
     }
+    /// Specify whether or not to use chunked transfer encoding to Akamai. User should contact Akamai to enable this feature.
+    pub fn get_http_transfer_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::HlsAkamaiHttpTransferMode> {
+        &self.http_transfer_mode
+    }
     /// Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the CDN destination URI begins with "s3" or "mediastore". For other URIs, the value is always 3.
     pub fn num_retries(mut self, input: i32) -> Self {
         self.num_retries = ::std::option::Option::Some(input);
@@ -122,6 +136,10 @@ impl HlsAkamaiSettingsBuilder {
     pub fn set_num_retries(mut self, input: ::std::option::Option<i32>) -> Self {
         self.num_retries = input;
         self
+    }
+    /// Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the CDN destination URI begins with "s3" or "mediastore". For other URIs, the value is always 3.
+    pub fn get_num_retries(&self) -> &::std::option::Option<i32> {
+        &self.num_retries
     }
     /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
     pub fn restart_delay(mut self, input: i32) -> Self {
@@ -133,6 +151,10 @@ impl HlsAkamaiSettingsBuilder {
         self.restart_delay = input;
         self
     }
+    /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
+    pub fn get_restart_delay(&self) -> &::std::option::Option<i32> {
+        &self.restart_delay
+    }
     /// Salt for authenticated Akamai.
     pub fn salt(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.salt = ::std::option::Option::Some(input.into());
@@ -143,6 +165,10 @@ impl HlsAkamaiSettingsBuilder {
         self.salt = input;
         self
     }
+    /// Salt for authenticated Akamai.
+    pub fn get_salt(&self) -> &::std::option::Option<::std::string::String> {
+        &self.salt
+    }
     /// Token parameter for authenticated akamai. If not specified, _gda_ is used.
     pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token = ::std::option::Option::Some(input.into());
@@ -152,6 +178,10 @@ impl HlsAkamaiSettingsBuilder {
     pub fn set_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.token = input;
         self
+    }
+    /// Token parameter for authenticated akamai. If not specified, _gda_ is used.
+    pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token
     }
     /// Consumes the builder and constructs a [`HlsAkamaiSettings`](crate::types::HlsAkamaiSettings).
     pub fn build(self) -> crate::types::HlsAkamaiSettings {

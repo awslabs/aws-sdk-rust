@@ -42,6 +42,10 @@ impl DisassociatePhoneNumbersFromVoiceConnectorGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociatePhoneNumbersFromVoiceConnectorGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::disassociate_phone_numbers_from_voice_connector_group::builders::DisassociatePhoneNumbersFromVoiceConnectorGroupInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -112,6 +116,10 @@ impl DisassociatePhoneNumbersFromVoiceConnectorGroupFluentBuilder {
         self.inner = self.inner.set_voice_connector_group_id(input);
         self
     }
+    /// <p>The Amazon Chime Voice Connector group ID.</p>
+    pub fn get_voice_connector_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_voice_connector_group_id()
+    }
     /// Appends an item to `E164PhoneNumbers`.
     ///
     /// To override the contents of this collection use [`set_e164_phone_numbers`](Self::set_e164_phone_numbers).
@@ -131,5 +139,11 @@ impl DisassociatePhoneNumbersFromVoiceConnectorGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_e164_phone_numbers(input);
         self
+    }
+    /// <p>List of phone numbers, in E.164 format.</p>
+    pub fn get_e164_phone_numbers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_e164_phone_numbers()
     }
 }

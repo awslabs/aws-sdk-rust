@@ -107,6 +107,10 @@ impl CreateApplicationInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name to use for the application. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The unique identifier of the environment.</p>
     pub fn environment_identifier(
         mut self,
@@ -123,6 +127,10 @@ impl CreateApplicationInputBuilder {
         self.environment_identifier = input;
         self
     }
+    /// <p>The unique identifier of the environment.</p>
+    pub fn get_environment_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_identifier
+    }
     /// <p>The ID of the virtual private cloud (VPC).</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -133,6 +141,10 @@ impl CreateApplicationInputBuilder {
         self.vpc_id = input;
         self
     }
+    /// <p>The ID of the virtual private cloud (VPC).</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
+    }
     /// <p>The proxy type of the proxy created within the application. </p>
     pub fn proxy_type(mut self, input: crate::types::ProxyType) -> Self {
         self.proxy_type = ::std::option::Option::Some(input);
@@ -142,6 +154,10 @@ impl CreateApplicationInputBuilder {
     pub fn set_proxy_type(mut self, input: ::std::option::Option<crate::types::ProxyType>) -> Self {
         self.proxy_type = input;
         self
+    }
+    /// <p>The proxy type of the proxy created within the application. </p>
+    pub fn get_proxy_type(&self) -> &::std::option::Option<crate::types::ProxyType> {
+        &self.proxy_type
     }
     /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the proxy. </p>
     pub fn api_gateway_proxy(mut self, input: crate::types::ApiGatewayProxyInput) -> Self {
@@ -155,6 +171,12 @@ impl CreateApplicationInputBuilder {
     ) -> Self {
         self.api_gateway_proxy = input;
         self
+    }
+    /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the proxy. </p>
+    pub fn get_api_gateway_proxy(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApiGatewayProxyInput> {
+        &self.api_gateway_proxy
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -181,6 +203,14 @@ impl CreateApplicationInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags to assign to the application. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -190,6 +220,10 @@ impl CreateApplicationInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
     pub fn build(

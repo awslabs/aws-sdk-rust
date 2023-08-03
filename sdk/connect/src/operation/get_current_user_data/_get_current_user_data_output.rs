@@ -64,6 +64,10 @@ impl GetCurrentUserDataOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `user_data_list`.
     ///
     /// To override the contents of this collection use [`set_user_data_list`](Self::set_user_data_list).
@@ -83,6 +87,12 @@ impl GetCurrentUserDataOutputBuilder {
         self.user_data_list = input;
         self
     }
+    /// <p>A list of the user data that is returned.</p>
+    pub fn get_user_data_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserData>> {
+        &self.user_data_list
+    }
     /// <p>The total count of the result, regardless of the current page size.</p>
     pub fn approximate_total_count(mut self, input: i64) -> Self {
         self.approximate_total_count = ::std::option::Option::Some(input);
@@ -92,6 +102,10 @@ impl GetCurrentUserDataOutputBuilder {
     pub fn set_approximate_total_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.approximate_total_count = input;
         self
+    }
+    /// <p>The total count of the result, regardless of the current page size.</p>
+    pub fn get_approximate_total_count(&self) -> &::std::option::Option<i64> {
+        &self.approximate_total_count
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

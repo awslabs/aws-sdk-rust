@@ -92,6 +92,12 @@ impl DescribeProvisioningArtifactOutputBuilder {
         self.provisioning_artifact_detail = input;
         self
     }
+    /// <p>Information about the provisioning artifact.</p>
+    pub fn get_provisioning_artifact_detail(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProvisioningArtifactDetail> {
+        &self.provisioning_artifact_detail
+    }
     /// Adds a key-value pair to `info`.
     ///
     /// To override the contents of this collection use [`set_info`](Self::set_info).
@@ -117,6 +123,14 @@ impl DescribeProvisioningArtifactOutputBuilder {
         self.info = input;
         self
     }
+    /// <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
+    pub fn get_info(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.info
+    }
     /// <p>The status of the current request.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -126,6 +140,10 @@ impl DescribeProvisioningArtifactOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the current request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
     }
     /// Appends an item to `provisioning_artifact_parameters`.
     ///
@@ -148,6 +166,12 @@ impl DescribeProvisioningArtifactOutputBuilder {
     ) -> Self {
         self.provisioning_artifact_parameters = input;
         self
+    }
+    /// <p>Information about the parameters used to provision the product. </p>
+    pub fn get_provisioning_artifact_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifactParameter>> {
+        &self.provisioning_artifact_parameters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

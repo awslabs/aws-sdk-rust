@@ -36,6 +36,12 @@ impl PublishSchemaFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PublishSchema as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::publish_schema::builders::PublishSchemaInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl PublishSchemaFluentBuilder {
         self.inner = self.inner.set_development_schema_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that is associated with the development schema. For more information, see <code>arns</code>.</p>
+    pub fn get_development_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_development_schema_arn()
+    }
     /// <p>The major version under which the schema will be published. Schemas have both a major and minor version associated with them.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version(input.into());
@@ -133,6 +143,10 @@ impl PublishSchemaFluentBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version(input);
         self
+    }
+    /// <p>The major version under which the schema will be published. Schemas have both a major and minor version associated with them.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version()
     }
     /// <p>The minor version under which the schema will be published. This parameter is recommended. Schemas have both a major and minor version associated with them.</p>
     pub fn minor_version(
@@ -150,6 +164,10 @@ impl PublishSchemaFluentBuilder {
         self.inner = self.inner.set_minor_version(input);
         self
     }
+    /// <p>The minor version under which the schema will be published. This parameter is recommended. Schemas have both a major and minor version associated with them.</p>
+    pub fn get_minor_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_minor_version()
+    }
     /// <p>The new name under which the schema will be published. If this is not provided, the development schema is considered.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -159,5 +177,9 @@ impl PublishSchemaFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The new name under which the schema will be published. If this is not provided, the development schema is considered.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
 }

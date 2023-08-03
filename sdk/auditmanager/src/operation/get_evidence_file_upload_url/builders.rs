@@ -43,6 +43,10 @@ impl GetEvidenceFileUploadUrlFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetEvidenceFileUploadUrl as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_evidence_file_upload_url::builders::GetEvidenceFileUploadUrlInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +136,9 @@ impl GetEvidenceFileUploadUrlFluentBuilder {
     pub fn set_file_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_name(input);
         self
+    }
+    /// <p>The file that you want to upload. For a list of supported file formats, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files">Supported file types for manual evidence</a> in the <i>Audit Manager User Guide</i>.</p>
+    pub fn get_file_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_file_name()
     }
 }

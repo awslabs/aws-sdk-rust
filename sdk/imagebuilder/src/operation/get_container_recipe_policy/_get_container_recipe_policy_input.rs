@@ -47,6 +47,10 @@ impl GetContainerRecipePolicyInputBuilder {
         self.container_recipe_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the container recipe for the policy being requested.</p>
+    pub fn get_container_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_recipe_arn
+    }
     /// Consumes the builder and constructs a [`GetContainerRecipePolicyInput`](crate::operation::get_container_recipe_policy::GetContainerRecipePolicyInput).
     pub fn build(
         self,

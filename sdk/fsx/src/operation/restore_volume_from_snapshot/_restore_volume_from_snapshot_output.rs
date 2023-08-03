@@ -66,6 +66,10 @@ impl RestoreVolumeFromSnapshotOutputBuilder {
         self.volume_id = input;
         self
     }
+    /// <p>The ID of the volume that you restored.</p>
+    pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_id
+    }
     /// <p>The lifecycle state of the volume being restored.</p>
     pub fn lifecycle(mut self, input: crate::types::VolumeLifecycle) -> Self {
         self.lifecycle = ::std::option::Option::Some(input);
@@ -78,6 +82,10 @@ impl RestoreVolumeFromSnapshotOutputBuilder {
     ) -> Self {
         self.lifecycle = input;
         self
+    }
+    /// <p>The lifecycle state of the volume being restored.</p>
+    pub fn get_lifecycle(&self) -> &::std::option::Option<crate::types::VolumeLifecycle> {
+        &self.lifecycle
     }
     /// Appends an item to `administrative_actions`.
     ///
@@ -97,6 +105,12 @@ impl RestoreVolumeFromSnapshotOutputBuilder {
     ) -> Self {
         self.administrative_actions = input;
         self
+    }
+    /// <p>A list of administrative actions for the file system that are in process or waiting to be processed. Administrative actions describe changes to the Amazon FSx system.</p>
+    pub fn get_administrative_actions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdministrativeAction>> {
+        &self.administrative_actions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

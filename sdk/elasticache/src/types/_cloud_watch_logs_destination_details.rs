@@ -40,6 +40,10 @@ impl CloudWatchLogsDestinationDetailsBuilder {
         self.log_group = input;
         self
     }
+    /// <p>The name of the CloudWatch Logs log group.</p>
+    pub fn get_log_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group
+    }
     /// Consumes the builder and constructs a [`CloudWatchLogsDestinationDetails`](crate::types::CloudWatchLogsDestinationDetails).
     pub fn build(self) -> crate::types::CloudWatchLogsDestinationDetails {
         crate::types::CloudWatchLogsDestinationDetails {

@@ -46,6 +46,10 @@ impl ResourceDataSyncOrganizationalUnitBuilder {
         self.organizational_unit_id = input;
         self
     }
+    /// <p>The Organizations unit ID data source for the sync.</p>
+    pub fn get_organizational_unit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organizational_unit_id
+    }
     /// Consumes the builder and constructs a [`ResourceDataSyncOrganizationalUnit`](crate::types::ResourceDataSyncOrganizationalUnit).
     pub fn build(self) -> crate::types::ResourceDataSyncOrganizationalUnit {
         crate::types::ResourceDataSyncOrganizationalUnit {

@@ -36,6 +36,10 @@ impl ListRecoveryPointsByBackupVaultFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListRecoveryPointsByBackupVault as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_recovery_points_by_backup_vault::builders::ListRecoveryPointsByBackupVaultInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -116,6 +120,12 @@ impl ListRecoveryPointsByBackupVaultFluentBuilder {
         self.inner = self.inner.set_backup_vault_name(input);
         self
     }
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p> <note>
+    /// <p>Backup vault name might not be available when a supported service creates the backup.</p>
+    /// </note>
+    pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_backup_vault_name()
+    }
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -126,6 +136,10 @@ impl ListRecoveryPointsByBackupVaultFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of items to be returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -135,6 +149,10 @@ impl ListRecoveryPointsByBackupVaultFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of items to be returned.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>Returns only recovery points that match the specified resource Amazon Resource Name (ARN).</p>
     pub fn by_resource_arn(
@@ -152,6 +170,10 @@ impl ListRecoveryPointsByBackupVaultFluentBuilder {
         self.inner = self.inner.set_by_resource_arn(input);
         self
     }
+    /// <p>Returns only recovery points that match the specified resource Amazon Resource Name (ARN).</p>
+    pub fn get_by_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_by_resource_arn()
+    }
     /// <p>Returns only recovery points that match the specified resource type.</p>
     pub fn by_resource_type(
         mut self,
@@ -167,6 +189,10 @@ impl ListRecoveryPointsByBackupVaultFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_by_resource_type(input);
         self
+    }
+    /// <p>Returns only recovery points that match the specified resource type.</p>
+    pub fn get_by_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_by_resource_type()
     }
     /// <p>Returns only recovery points that match the specified backup plan ID.</p>
     pub fn by_backup_plan_id(
@@ -184,6 +210,10 @@ impl ListRecoveryPointsByBackupVaultFluentBuilder {
         self.inner = self.inner.set_by_backup_plan_id(input);
         self
     }
+    /// <p>Returns only recovery points that match the specified backup plan ID.</p>
+    pub fn get_by_backup_plan_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_by_backup_plan_id()
+    }
     /// <p>Returns only recovery points that were created before the specified timestamp.</p>
     pub fn by_created_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.by_created_before(input);
@@ -197,6 +227,10 @@ impl ListRecoveryPointsByBackupVaultFluentBuilder {
         self.inner = self.inner.set_by_created_before(input);
         self
     }
+    /// <p>Returns only recovery points that were created before the specified timestamp.</p>
+    pub fn get_by_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_by_created_before()
+    }
     /// <p>Returns only recovery points that were created after the specified timestamp.</p>
     pub fn by_created_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.by_created_after(input);
@@ -209,6 +243,10 @@ impl ListRecoveryPointsByBackupVaultFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_by_created_after(input);
         self
+    }
+    /// <p>Returns only recovery points that were created after the specified timestamp.</p>
+    pub fn get_by_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_by_created_after()
     }
     /// <p>This returns only recovery points that match the specified parent (composite) recovery point Amazon Resource Name (ARN).</p>
     pub fn by_parent_recovery_point_arn(
@@ -225,5 +263,11 @@ impl ListRecoveryPointsByBackupVaultFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_by_parent_recovery_point_arn(input);
         self
+    }
+    /// <p>This returns only recovery points that match the specified parent (composite) recovery point Amazon Resource Name (ARN).</p>
+    pub fn get_by_parent_recovery_point_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_by_parent_recovery_point_arn()
     }
 }

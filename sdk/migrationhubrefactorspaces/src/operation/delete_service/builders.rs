@@ -36,6 +36,12 @@ impl DeleteServiceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteService as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_service::builders::DeleteServiceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl DeleteServiceFluentBuilder {
         self.inner = self.inner.set_environment_identifier(input);
         self
     }
+    /// <p>The ID of the environment that the service is in.</p>
+    pub fn get_environment_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_identifier()
+    }
     /// <p>Deletes a Refactor Spaces service.</p> <note>
     /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL endpoint in a VPC.</p>
     /// </note>
@@ -144,6 +154,12 @@ impl DeleteServiceFluentBuilder {
         self.inner = self.inner.set_application_identifier(input);
         self
     }
+    /// <p>Deletes a Refactor Spaces service.</p> <note>
+    /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL endpoint in a VPC.</p>
+    /// </note>
+    pub fn get_application_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_identifier()
+    }
     /// <p>The ID of the service to delete.</p>
     pub fn service_identifier(
         mut self,
@@ -159,5 +175,9 @@ impl DeleteServiceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_service_identifier(input);
         self
+    }
+    /// <p>The ID of the service to delete.</p>
+    pub fn get_service_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_identifier()
     }
 }

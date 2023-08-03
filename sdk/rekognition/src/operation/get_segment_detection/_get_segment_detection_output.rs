@@ -127,6 +127,10 @@ impl GetSegmentDetectionOutputBuilder {
         self.job_status = input;
         self
     }
+    /// <p>Current status of the segment detection job.</p>
+    pub fn get_job_status(&self) -> &::std::option::Option<crate::types::VideoJobStatus> {
+        &self.job_status
+    }
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
     pub fn status_message(
         mut self,
@@ -142,6 +146,10 @@ impl GetSegmentDetectionOutputBuilder {
     ) -> Self {
         self.status_message = input;
         self
+    }
+    /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// Appends an item to `video_metadata`.
     ///
@@ -162,6 +170,12 @@ impl GetSegmentDetectionOutputBuilder {
         self.video_metadata = input;
         self
     }
+    /// <p>Currently, Amazon Rekognition Video returns a single object in the <code>VideoMetadata</code> array. The object contains information about the video stream in the input file that Amazon Rekognition Video chose to analyze. The <code>VideoMetadata</code> object includes the video codec, video format and other information. Video metadata is returned in each page of information returned by <code>GetSegmentDetection</code>.</p>
+    pub fn get_video_metadata(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VideoMetadata>> {
+        &self.video_metadata
+    }
     /// Appends an item to `audio_metadata`.
     ///
     /// To override the contents of this collection use [`set_audio_metadata`](Self::set_audio_metadata).
@@ -181,6 +195,12 @@ impl GetSegmentDetectionOutputBuilder {
         self.audio_metadata = input;
         self
     }
+    /// <p>An array of objects. There can be multiple audio streams. Each <code>AudioMetadata</code> object contains metadata for a single audio stream. Audio information in an <code>AudioMetadata</code> objects includes the audio codec, the number of audio channels, the duration of the audio stream, and the sample rate. Audio metadata is returned in each page of information returned by <code>GetSegmentDetection</code>.</p>
+    pub fn get_audio_metadata(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AudioMetadata>> {
+        &self.audio_metadata
+    }
     /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of text.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -190,6 +210,10 @@ impl GetSegmentDetectionOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of text.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `segments`.
     ///
@@ -210,6 +234,12 @@ impl GetSegmentDetectionOutputBuilder {
         self.segments = input;
         self
     }
+    /// <p>An array of segments detected in a video. The array is sorted by the segment types (TECHNICAL_CUE or SHOT) specified in the <code>SegmentTypes</code> input parameter of <code>StartSegmentDetection</code>. Within each segment type the array is sorted by timestamp values.</p>
+    pub fn get_segments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SegmentDetection>> {
+        &self.segments
+    }
     /// Appends an item to `selected_segment_types`.
     ///
     /// To override the contents of this collection use [`set_selected_segment_types`](Self::set_selected_segment_types).
@@ -229,6 +259,12 @@ impl GetSegmentDetectionOutputBuilder {
         self.selected_segment_types = input;
         self
     }
+    /// <p>An array containing the segment types requested in the call to <code>StartSegmentDetection</code>. </p>
+    pub fn get_selected_segment_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SegmentTypeInfo>> {
+        &self.selected_segment_types
+    }
     /// <p>Job identifier for the segment detection operation for which you want to obtain results. The job identifer is returned by an initial call to StartSegmentDetection.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
@@ -238,6 +274,10 @@ impl GetSegmentDetectionOutputBuilder {
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
+    }
+    /// <p>Job identifier for the segment detection operation for which you want to obtain results. The job identifer is returned by an initial call to StartSegmentDetection.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
     }
     /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
     pub fn video(mut self, input: crate::types::Video) -> Self {
@@ -249,6 +289,10 @@ impl GetSegmentDetectionOutputBuilder {
         self.video = input;
         self
     }
+    /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
+    pub fn get_video(&self) -> &::std::option::Option<crate::types::Video> {
+        &self.video
+    }
     /// <p>A job identifier specified in the call to StartSegmentDetection and returned in the job completion notification sent to your Amazon Simple Notification Service topic.</p>
     pub fn job_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_tag = ::std::option::Option::Some(input.into());
@@ -258,6 +302,10 @@ impl GetSegmentDetectionOutputBuilder {
     pub fn set_job_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_tag = input;
         self
+    }
+    /// <p>A job identifier specified in the call to StartSegmentDetection and returned in the job completion notification sent to your Amazon Simple Notification Service topic.</p>
+    pub fn get_job_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_tag
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -36,6 +36,12 @@ impl CreateProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateProfile as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_profile::builders::CreateProfileInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl CreateProfileFluentBuilder {
         self.inner = self.inner.set_profile_name(input);
         self
     }
+    /// <p>Name of the profile.</p>
+    pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_profile_name()
+    }
     /// <p>The profile description.</p>
     pub fn profile_description(
         mut self,
@@ -133,6 +143,10 @@ impl CreateProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_profile_description(input);
         self
+    }
+    /// <p>The profile description.</p>
+    pub fn get_profile_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_profile_description()
     }
     /// Appends an item to `ProfileQuestions`.
     ///
@@ -150,6 +164,12 @@ impl CreateProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_profile_questions(input);
         self
+    }
+    /// <p>The profile questions.</p>
+    pub fn get_profile_questions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfileQuestionUpdate>> {
+        self.inner.get_profile_questions()
     }
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
@@ -173,6 +193,13 @@ impl CreateProfileFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
+    /// </important>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -195,5 +222,13 @@ impl CreateProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags assigned to the profile.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

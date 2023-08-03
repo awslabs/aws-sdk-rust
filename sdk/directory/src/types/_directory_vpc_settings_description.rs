@@ -64,6 +64,10 @@ impl DirectoryVpcSettingsDescriptionBuilder {
         self.vpc_id = input;
         self
     }
+    /// <p>The identifier of the VPC that the directory is in.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
+    }
     /// Appends an item to `subnet_ids`.
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
@@ -83,6 +87,10 @@ impl DirectoryVpcSettingsDescriptionBuilder {
         self.subnet_ids = input;
         self
     }
+    /// <p>The identifiers of the subnets for the directory servers.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
+    }
     /// <p>The domain controller security group identifier for the directory.</p>
     pub fn security_group_id(
         mut self,
@@ -98,6 +106,10 @@ impl DirectoryVpcSettingsDescriptionBuilder {
     ) -> Self {
         self.security_group_id = input;
         self
+    }
+    /// <p>The domain controller security group identifier for the directory.</p>
+    pub fn get_security_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_group_id
     }
     /// Appends an item to `availability_zones`.
     ///
@@ -120,6 +132,12 @@ impl DirectoryVpcSettingsDescriptionBuilder {
     ) -> Self {
         self.availability_zones = input;
         self
+    }
+    /// <p>The list of Availability Zones that the directory is in.</p>
+    pub fn get_availability_zones(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.availability_zones
     }
     /// Consumes the builder and constructs a [`DirectoryVpcSettingsDescription`](crate::types::DirectoryVpcSettingsDescription).
     pub fn build(self) -> crate::types::DirectoryVpcSettingsDescription {

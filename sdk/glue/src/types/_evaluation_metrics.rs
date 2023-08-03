@@ -51,6 +51,10 @@ impl EvaluationMetricsBuilder {
         self.transform_type = input;
         self
     }
+    /// <p>The type of machine learning transform.</p>
+    pub fn get_transform_type(&self) -> &::std::option::Option<crate::types::TransformType> {
+        &self.transform_type
+    }
     /// <p>The evaluation metrics for the find matches algorithm.</p>
     pub fn find_matches_metrics(mut self, input: crate::types::FindMatchesMetrics) -> Self {
         self.find_matches_metrics = ::std::option::Option::Some(input);
@@ -63,6 +67,12 @@ impl EvaluationMetricsBuilder {
     ) -> Self {
         self.find_matches_metrics = input;
         self
+    }
+    /// <p>The evaluation metrics for the find matches algorithm.</p>
+    pub fn get_find_matches_metrics(
+        &self,
+    ) -> &::std::option::Option<crate::types::FindMatchesMetrics> {
+        &self.find_matches_metrics
     }
     /// Consumes the builder and constructs a [`EvaluationMetrics`](crate::types::EvaluationMetrics).
     pub fn build(self) -> crate::types::EvaluationMetrics {

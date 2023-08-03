@@ -145,6 +145,10 @@ impl DescribeMonitoringScheduleOutputBuilder {
         self.monitoring_schedule_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
+    pub fn get_monitoring_schedule_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitoring_schedule_arn
+    }
     /// <p>Name of the monitoring schedule.</p>
     pub fn monitoring_schedule_name(
         mut self,
@@ -161,6 +165,10 @@ impl DescribeMonitoringScheduleOutputBuilder {
         self.monitoring_schedule_name = input;
         self
     }
+    /// <p>Name of the monitoring schedule.</p>
+    pub fn get_monitoring_schedule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitoring_schedule_name
+    }
     /// <p>The status of an monitoring job.</p>
     pub fn monitoring_schedule_status(mut self, input: crate::types::ScheduleStatus) -> Self {
         self.monitoring_schedule_status = ::std::option::Option::Some(input);
@@ -173,6 +181,12 @@ impl DescribeMonitoringScheduleOutputBuilder {
     ) -> Self {
         self.monitoring_schedule_status = input;
         self
+    }
+    /// <p>The status of an monitoring job.</p>
+    pub fn get_monitoring_schedule_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScheduleStatus> {
+        &self.monitoring_schedule_status
     }
     /// <p>The type of the monitoring job that this schedule runs. This is one of the following values.</p>
     /// <ul>
@@ -199,6 +213,16 @@ impl DescribeMonitoringScheduleOutputBuilder {
         self.monitoring_type = input;
         self
     }
+    /// <p>The type of the monitoring job that this schedule runs. This is one of the following values.</p>
+    /// <ul>
+    /// <li> <p> <code>DATA_QUALITY</code> - The schedule is for a data quality monitoring job.</p> </li>
+    /// <li> <p> <code>MODEL_QUALITY</code> - The schedule is for a model quality monitoring job.</p> </li>
+    /// <li> <p> <code>MODEL_BIAS</code> - The schedule is for a bias monitoring job.</p> </li>
+    /// <li> <p> <code>MODEL_EXPLAINABILITY</code> - The schedule is for an explainability monitoring job.</p> </li>
+    /// </ul>
+    pub fn get_monitoring_type(&self) -> &::std::option::Option<crate::types::MonitoringType> {
+        &self.monitoring_type
+    }
     /// <p>A string, up to one KB in size, that contains the reason a monitoring job failed, if it failed.</p>
     pub fn failure_reason(
         mut self,
@@ -215,6 +239,10 @@ impl DescribeMonitoringScheduleOutputBuilder {
         self.failure_reason = input;
         self
     }
+    /// <p>A string, up to one KB in size, that contains the reason a monitoring job failed, if it failed.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
     /// <p>The time at which the monitoring job was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -228,6 +256,10 @@ impl DescribeMonitoringScheduleOutputBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time at which the monitoring job was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The time at which the monitoring job was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -240,6 +272,10 @@ impl DescribeMonitoringScheduleOutputBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>The time at which the monitoring job was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// <p>The configuration object that specifies the monitoring schedule and defines the monitoring job.</p>
     pub fn monitoring_schedule_config(
@@ -257,6 +293,12 @@ impl DescribeMonitoringScheduleOutputBuilder {
         self.monitoring_schedule_config = input;
         self
     }
+    /// <p>The configuration object that specifies the monitoring schedule and defines the monitoring job.</p>
+    pub fn get_monitoring_schedule_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::MonitoringScheduleConfig> {
+        &self.monitoring_schedule_config
+    }
     /// <p> The name of the endpoint for the monitoring job.</p>
     pub fn endpoint_name(
         mut self,
@@ -273,6 +315,10 @@ impl DescribeMonitoringScheduleOutputBuilder {
         self.endpoint_name = input;
         self
     }
+    /// <p> The name of the endpoint for the monitoring job.</p>
+    pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_name
+    }
     /// <p>Describes metadata on the last execution to run, if there was one.</p>
     pub fn last_monitoring_execution_summary(
         mut self,
@@ -288,6 +334,12 @@ impl DescribeMonitoringScheduleOutputBuilder {
     ) -> Self {
         self.last_monitoring_execution_summary = input;
         self
+    }
+    /// <p>Describes metadata on the last execution to run, if there was one.</p>
+    pub fn get_last_monitoring_execution_summary(
+        &self,
+    ) -> &::std::option::Option<crate::types::MonitoringExecutionSummary> {
+        &self.last_monitoring_execution_summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

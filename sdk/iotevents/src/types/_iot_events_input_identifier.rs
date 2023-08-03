@@ -40,6 +40,10 @@ impl IotEventsInputIdentifierBuilder {
         self.input_name = input;
         self
     }
+    /// <p> The name of the input routed to AWS IoT Events. </p>
+    pub fn get_input_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_name
+    }
     /// Consumes the builder and constructs a [`IotEventsInputIdentifier`](crate::types::IotEventsInputIdentifier).
     pub fn build(self) -> crate::types::IotEventsInputIdentifier {
         crate::types::IotEventsInputIdentifier {

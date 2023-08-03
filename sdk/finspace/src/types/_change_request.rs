@@ -75,6 +75,14 @@ impl ChangeRequestBuilder {
         self.change_type = input;
         self
     }
+    /// <p>Defines the type of change request. A <code>changeType</code> can have the following values:</p>
+    /// <ul>
+    /// <li> <p>PUT – Adds or updates files in a database.</p> </li>
+    /// <li> <p>DELETE – Deletes files in a database.</p> </li>
+    /// </ul>
+    pub fn get_change_type(&self) -> &::std::option::Option<crate::types::ChangeType> {
+        &self.change_type
+    }
     /// <p>Defines the S3 path of the source file that is required to add or update files in a database.</p>
     pub fn s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_path = ::std::option::Option::Some(input.into());
@@ -85,6 +93,10 @@ impl ChangeRequestBuilder {
         self.s3_path = input;
         self
     }
+    /// <p>Defines the S3 path of the source file that is required to add or update files in a database.</p>
+    pub fn get_s3_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_path
+    }
     /// <p>Defines the path within the database directory. </p>
     pub fn db_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_path = ::std::option::Option::Some(input.into());
@@ -94,6 +106,10 @@ impl ChangeRequestBuilder {
     pub fn set_db_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_path = input;
         self
+    }
+    /// <p>Defines the path within the database directory. </p>
+    pub fn get_db_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_path
     }
     /// Consumes the builder and constructs a [`ChangeRequest`](crate::types::ChangeRequest).
     pub fn build(self) -> crate::types::ChangeRequest {

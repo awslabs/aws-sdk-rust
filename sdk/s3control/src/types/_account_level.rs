@@ -88,6 +88,10 @@ impl AccountLevelBuilder {
         self.activity_metrics = input;
         self
     }
+    /// <p>A container for S3 Storage Lens activity metrics.</p>
+    pub fn get_activity_metrics(&self) -> &::std::option::Option<crate::types::ActivityMetrics> {
+        &self.activity_metrics
+    }
     /// <p>A container for the S3 Storage Lens bucket-level configuration.</p>
     pub fn bucket_level(mut self, input: crate::types::BucketLevel) -> Self {
         self.bucket_level = ::std::option::Option::Some(input);
@@ -100,6 +104,10 @@ impl AccountLevelBuilder {
     ) -> Self {
         self.bucket_level = input;
         self
+    }
+    /// <p>A container for the S3 Storage Lens bucket-level configuration.</p>
+    pub fn get_bucket_level(&self) -> &::std::option::Option<crate::types::BucketLevel> {
+        &self.bucket_level
     }
     /// <p>A container for S3 Storage Lens advanced cost-optimization metrics.</p>
     pub fn advanced_cost_optimization_metrics(
@@ -117,6 +125,12 @@ impl AccountLevelBuilder {
         self.advanced_cost_optimization_metrics = input;
         self
     }
+    /// <p>A container for S3 Storage Lens advanced cost-optimization metrics.</p>
+    pub fn get_advanced_cost_optimization_metrics(
+        &self,
+    ) -> &::std::option::Option<crate::types::AdvancedCostOptimizationMetrics> {
+        &self.advanced_cost_optimization_metrics
+    }
     /// <p>A container for S3 Storage Lens advanced data-protection metrics.</p>
     pub fn advanced_data_protection_metrics(
         mut self,
@@ -133,6 +147,12 @@ impl AccountLevelBuilder {
         self.advanced_data_protection_metrics = input;
         self
     }
+    /// <p>A container for S3 Storage Lens advanced data-protection metrics.</p>
+    pub fn get_advanced_data_protection_metrics(
+        &self,
+    ) -> &::std::option::Option<crate::types::AdvancedDataProtectionMetrics> {
+        &self.advanced_data_protection_metrics
+    }
     /// <p>A container for detailed status code metrics. </p>
     pub fn detailed_status_codes_metrics(
         mut self,
@@ -148,6 +168,12 @@ impl AccountLevelBuilder {
     ) -> Self {
         self.detailed_status_codes_metrics = input;
         self
+    }
+    /// <p>A container for detailed status code metrics. </p>
+    pub fn get_detailed_status_codes_metrics(
+        &self,
+    ) -> &::std::option::Option<crate::types::DetailedStatusCodesMetrics> {
+        &self.detailed_status_codes_metrics
     }
     /// Consumes the builder and constructs a [`AccountLevel`](crate::types::AccountLevel).
     pub fn build(self) -> crate::types::AccountLevel {

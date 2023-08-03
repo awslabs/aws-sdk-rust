@@ -180,6 +180,12 @@ impl LustreFileSystemConfigurationBuilder {
         self.weekly_maintenance_start_time = input;
         self
     }
+    /// <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Here, <code>d</code> is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
+    pub fn get_weekly_maintenance_start_time(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.weekly_maintenance_start_time
+    }
     /// <p>The data repository configuration object for Lustre file systems returned in the response of the <code>CreateFileSystem</code> operation.</p>
     /// <p>This data type is not supported on file systems with a data repository association. For file systems with a data repository association, see .</p>
     pub fn data_repository_configuration(
@@ -197,6 +203,13 @@ impl LustreFileSystemConfigurationBuilder {
     ) -> Self {
         self.data_repository_configuration = input;
         self
+    }
+    /// <p>The data repository configuration object for Lustre file systems returned in the response of the <code>CreateFileSystem</code> operation.</p>
+    /// <p>This data type is not supported on file systems with a data repository association. For file systems with a data repository association, see .</p>
+    pub fn get_data_repository_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataRepositoryConfiguration> {
+        &self.data_repository_configuration
     }
     /// <p>The deployment type of the FSx for Lustre file system. <i>Scratch deployment type</i> is designed for temporary storage and shorter-term processing of data.</p>
     /// <p> <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types are best suited for when you need temporary storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
@@ -216,6 +229,15 @@ impl LustreFileSystemConfigurationBuilder {
     ) -> Self {
         self.deployment_type = input;
         self
+    }
+    /// <p>The deployment type of the FSx for Lustre file system. <i>Scratch deployment type</i> is designed for temporary storage and shorter-term processing of data.</p>
+    /// <p> <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types are best suited for when you need temporary storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
+    /// <p>The <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment type is used for longer-term storage and workloads and encryption of data in transit. <code>PERSISTENT_2</code> is built on Lustre v2.12 and offers higher <code>PerUnitStorageThroughput</code> (up to 1000 MB/s/TiB) along with a lower minimum storage capacity requirement (600 GiB). To learn more about FSx for Lustre deployment types, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html"> FSx for Lustre deployment options</a>.</p>
+    /// <p>The default is <code>SCRATCH_1</code>.</p>
+    pub fn get_deployment_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::LustreDeploymentType> {
+        &self.deployment_type
     }
     /// <p>Per unit storage throughput represents the megabytes per second of read or write throughput per 1 tebibyte of storage provisioned. File system throughput capacity is equal to Storage capacity (TiB) * PerUnitStorageThroughput (MB/s/TiB). This option is only valid for <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types. </p>
     /// <p>Valid values:</p>
@@ -239,6 +261,16 @@ impl LustreFileSystemConfigurationBuilder {
         self.per_unit_storage_throughput = input;
         self
     }
+    /// <p>Per unit storage throughput represents the megabytes per second of read or write throughput per 1 tebibyte of storage provisioned. File system throughput capacity is equal to Storage capacity (TiB) * PerUnitStorageThroughput (MB/s/TiB). This option is only valid for <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types. </p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li> <p>For <code>PERSISTENT_1</code> SSD storage: 50, 100, 200.</p> </li>
+    /// <li> <p>For <code>PERSISTENT_1</code> HDD storage: 12, 40.</p> </li>
+    /// <li> <p>For <code>PERSISTENT_2</code> SSD storage: 125, 250, 500, 1000.</p> </li>
+    /// </ul>
+    pub fn get_per_unit_storage_throughput(&self) -> &::std::option::Option<i32> {
+        &self.per_unit_storage_throughput
+    }
     /// <p>You use the <code>MountName</code> value when mounting the file system.</p>
     /// <p>For the <code>SCRATCH_1</code> deployment type, this value is always "<code>fsx</code>". For <code>SCRATCH_2</code>, <code>PERSISTENT_1</code>, and <code>PERSISTENT_2</code> deployment types, this value is a string that is unique within an Amazon Web Services Region. </p>
     pub fn mount_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -250,6 +282,11 @@ impl LustreFileSystemConfigurationBuilder {
     pub fn set_mount_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mount_name = input;
         self
+    }
+    /// <p>You use the <code>MountName</code> value when mounting the file system.</p>
+    /// <p>For the <code>SCRATCH_1</code> deployment type, this value is always "<code>fsx</code>". For <code>SCRATCH_2</code>, <code>PERSISTENT_1</code>, and <code>PERSISTENT_2</code> deployment types, this value is a string that is unique within an Amazon Web Services Region. </p>
+    pub fn get_mount_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mount_name
     }
     /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
     pub fn daily_automatic_backup_start_time(
@@ -267,6 +304,12 @@ impl LustreFileSystemConfigurationBuilder {
         self.daily_automatic_backup_start_time = input;
         self
     }
+    /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
+    pub fn get_daily_automatic_backup_start_time(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.daily_automatic_backup_start_time
+    }
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
     pub fn automatic_backup_retention_days(mut self, input: i32) -> Self {
         self.automatic_backup_retention_days = ::std::option::Option::Some(input);
@@ -280,6 +323,10 @@ impl LustreFileSystemConfigurationBuilder {
         self.automatic_backup_retention_days = input;
         self
     }
+    /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
+    pub fn get_automatic_backup_retention_days(&self) -> &::std::option::Option<i32> {
+        &self.automatic_backup_retention_days
+    }
     /// <p>A boolean flag indicating whether tags on the file system are copied to backups. If it's set to true, all tags on the file system are copied to all automatic backups and any user-initiated backups where the user doesn't specify any tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the file system, regardless of this value. (Default = false)</p>
     pub fn copy_tags_to_backups(mut self, input: bool) -> Self {
         self.copy_tags_to_backups = ::std::option::Option::Some(input);
@@ -289,6 +336,10 @@ impl LustreFileSystemConfigurationBuilder {
     pub fn set_copy_tags_to_backups(mut self, input: ::std::option::Option<bool>) -> Self {
         self.copy_tags_to_backups = input;
         self
+    }
+    /// <p>A boolean flag indicating whether tags on the file system are copied to backups. If it's set to true, all tags on the file system are copied to all automatic backups and any user-initiated backups where the user doesn't specify any tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the file system, regardless of this value. (Default = false)</p>
+    pub fn get_copy_tags_to_backups(&self) -> &::std::option::Option<bool> {
+        &self.copy_tags_to_backups
     }
     /// <p>The type of drive cache used by <code>PERSISTENT_1</code> file systems that are provisioned with HDD storage devices. This parameter is required when <code>StorageType</code> is HDD. When set to <code>READ</code> the file system has an SSD storage cache that is sized to 20% of the file system's storage capacity. This improves the performance for frequently accessed files by caching up to 20% of the total storage capacity.</p>
     /// <p>This parameter is required when <code>StorageType</code> is set to HDD.</p>
@@ -304,6 +355,11 @@ impl LustreFileSystemConfigurationBuilder {
     ) -> Self {
         self.drive_cache_type = input;
         self
+    }
+    /// <p>The type of drive cache used by <code>PERSISTENT_1</code> file systems that are provisioned with HDD storage devices. This parameter is required when <code>StorageType</code> is HDD. When set to <code>READ</code> the file system has an SSD storage cache that is sized to 20% of the file system's storage capacity. This improves the performance for frequently accessed files by caching up to 20% of the total storage capacity.</p>
+    /// <p>This parameter is required when <code>StorageType</code> is set to HDD.</p>
+    pub fn get_drive_cache_type(&self) -> &::std::option::Option<crate::types::DriveCacheType> {
+        &self.drive_cache_type
     }
     /// <p>The data compression configuration for the file system. <code>DataCompressionType</code> can have the following values:</p>
     /// <ul>
@@ -328,6 +384,17 @@ impl LustreFileSystemConfigurationBuilder {
         self.data_compression_type = input;
         self
     }
+    /// <p>The data compression configuration for the file system. <code>DataCompressionType</code> can have the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>NONE</code> - Data compression is turned off for the file system.</p> </li>
+    /// <li> <p> <code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.</p> </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data compression</a>.</p>
+    pub fn get_data_compression_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataCompressionType> {
+        &self.data_compression_type
+    }
     /// <p>The Lustre logging configuration. Lustre logging writes the enabled log events for your file system to Amazon CloudWatch Logs.</p>
     pub fn log_configuration(mut self, input: crate::types::LustreLogConfiguration) -> Self {
         self.log_configuration = ::std::option::Option::Some(input);
@@ -340,6 +407,12 @@ impl LustreFileSystemConfigurationBuilder {
     ) -> Self {
         self.log_configuration = input;
         self
+    }
+    /// <p>The Lustre logging configuration. Lustre logging writes the enabled log events for your file system to Amazon CloudWatch Logs.</p>
+    pub fn get_log_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::LustreLogConfiguration> {
+        &self.log_configuration
     }
     /// <p>The Lustre root squash configuration for an Amazon FSx for Lustre file system. When enabled, root squash restricts root-level access from clients that try to access your file system as a root user.</p>
     pub fn root_squash_configuration(
@@ -356,6 +429,12 @@ impl LustreFileSystemConfigurationBuilder {
     ) -> Self {
         self.root_squash_configuration = input;
         self
+    }
+    /// <p>The Lustre root squash configuration for an Amazon FSx for Lustre file system. When enabled, root squash restricts root-level access from clients that try to access your file system as a root user.</p>
+    pub fn get_root_squash_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::LustreRootSquashConfiguration> {
+        &self.root_squash_configuration
     }
     /// Consumes the builder and constructs a [`LustreFileSystemConfiguration`](crate::types::LustreFileSystemConfiguration).
     pub fn build(self) -> crate::types::LustreFileSystemConfiguration {

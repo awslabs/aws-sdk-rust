@@ -54,6 +54,12 @@ impl CmafEncryptionBuilder {
         self.constant_initialization_vector = input;
         self
     }
+    /// An optional 128-bit, 16-byte hex value represented by a 32-character string, used in conjunction with the key for encrypting blocks. If you don't specify a value, then MediaPackage creates the constant initialization vector (IV).
+    pub fn get_constant_initialization_vector(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.constant_initialization_vector
+    }
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
     pub fn speke_key_provider(mut self, input: crate::types::SpekeKeyProvider) -> Self {
         self.speke_key_provider = ::std::option::Option::Some(input);
@@ -66,6 +72,10 @@ impl CmafEncryptionBuilder {
     ) -> Self {
         self.speke_key_provider = input;
         self
+    }
+    /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
+    pub fn get_speke_key_provider(&self) -> &::std::option::Option<crate::types::SpekeKeyProvider> {
+        &self.speke_key_provider
     }
     /// Consumes the builder and constructs a [`CmafEncryption`](crate::types::CmafEncryption).
     pub fn build(self) -> crate::types::CmafEncryption {

@@ -80,6 +80,10 @@ impl AnalysisAclRuleBuilder {
         self.cidr = input;
         self
     }
+    /// <p>The IPv4 address range, in CIDR notation.</p>
+    pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr
+    }
     /// <p>Indicates whether the rule is an outbound rule.</p>
     pub fn egress(mut self, input: bool) -> Self {
         self.egress = ::std::option::Option::Some(input);
@@ -89,6 +93,10 @@ impl AnalysisAclRuleBuilder {
     pub fn set_egress(mut self, input: ::std::option::Option<bool>) -> Self {
         self.egress = input;
         self
+    }
+    /// <p>Indicates whether the rule is an outbound rule.</p>
+    pub fn get_egress(&self) -> &::std::option::Option<bool> {
+        &self.egress
     }
     /// <p>The range of ports.</p>
     pub fn port_range(mut self, input: crate::types::PortRange) -> Self {
@@ -100,6 +108,10 @@ impl AnalysisAclRuleBuilder {
         self.port_range = input;
         self
     }
+    /// <p>The range of ports.</p>
+    pub fn get_port_range(&self) -> &::std::option::Option<crate::types::PortRange> {
+        &self.port_range
+    }
     /// <p>The protocol.</p>
     pub fn protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protocol = ::std::option::Option::Some(input.into());
@@ -109,6 +121,10 @@ impl AnalysisAclRuleBuilder {
     pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.protocol = input;
         self
+    }
+    /// <p>The protocol.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<::std::string::String> {
+        &self.protocol
     }
     /// <p>Indicates whether to allow or deny traffic that matches the rule.</p>
     pub fn rule_action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -120,6 +136,10 @@ impl AnalysisAclRuleBuilder {
         self.rule_action = input;
         self
     }
+    /// <p>Indicates whether to allow or deny traffic that matches the rule.</p>
+    pub fn get_rule_action(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_action
+    }
     /// <p>The rule number.</p>
     pub fn rule_number(mut self, input: i32) -> Self {
         self.rule_number = ::std::option::Option::Some(input);
@@ -129,6 +149,10 @@ impl AnalysisAclRuleBuilder {
     pub fn set_rule_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.rule_number = input;
         self
+    }
+    /// <p>The rule number.</p>
+    pub fn get_rule_number(&self) -> &::std::option::Option<i32> {
+        &self.rule_number
     }
     /// Consumes the builder and constructs a [`AnalysisAclRule`](crate::types::AnalysisAclRule).
     pub fn build(self) -> crate::types::AnalysisAclRule {

@@ -56,6 +56,10 @@ impl MetricsAndOperatorBuilder {
         self.prefix = input;
         self
     }
+    /// <p>The prefix used when evaluating an AND predicate.</p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -75,6 +79,10 @@ impl MetricsAndOperatorBuilder {
         self.tags = input;
         self
     }
+    /// <p>The list of tags used when evaluating an AND predicate.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The access point ARN used when evaluating an <code>AND</code> predicate.</p>
     pub fn access_point_arn(
         mut self,
@@ -90,6 +98,10 @@ impl MetricsAndOperatorBuilder {
     ) -> Self {
         self.access_point_arn = input;
         self
+    }
+    /// <p>The access point ARN used when evaluating an <code>AND</code> predicate.</p>
+    pub fn get_access_point_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_point_arn
     }
     /// Consumes the builder and constructs a [`MetricsAndOperator`](crate::types::MetricsAndOperator).
     pub fn build(self) -> crate::types::MetricsAndOperator {

@@ -48,6 +48,10 @@ impl EndpointItemResponseBuilder {
         self.message = input;
         self
     }
+    /// <p>The custom message that's returned in the response as a result of processing the endpoint data.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The status code that's returned in the response as a result of processing the endpoint data.</p>
     pub fn status_code(mut self, input: i32) -> Self {
         self.status_code = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl EndpointItemResponseBuilder {
     pub fn set_status_code(mut self, input: ::std::option::Option<i32>) -> Self {
         self.status_code = input;
         self
+    }
+    /// <p>The status code that's returned in the response as a result of processing the endpoint data.</p>
+    pub fn get_status_code(&self) -> &::std::option::Option<i32> {
+        &self.status_code
     }
     /// Consumes the builder and constructs a [`EndpointItemResponse`](crate::types::EndpointItemResponse).
     pub fn build(self) -> crate::types::EndpointItemResponse {

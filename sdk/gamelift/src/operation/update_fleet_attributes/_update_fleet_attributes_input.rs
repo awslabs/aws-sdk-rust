@@ -106,6 +106,10 @@ impl UpdateFleetAttributesInputBuilder {
         self.fleet_id = input;
         self
     }
+    /// <p>A unique identifier for the fleet to update attribute metadata for. You can use either the fleet ID or ARN value.</p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_id
+    }
     /// <p>A descriptive label that is associated with a fleet. Fleet names do not need to be unique.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -116,6 +120,10 @@ impl UpdateFleetAttributesInputBuilder {
         self.name = input;
         self
     }
+    /// <p>A descriptive label that is associated with a fleet. Fleet names do not need to be unique.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A human-readable description of a fleet.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -125,6 +133,10 @@ impl UpdateFleetAttributesInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A human-readable description of a fleet.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The game session protection policy to apply to all new instances created in this fleet. Instances that already exist are not affected. You can set protection for individual instances using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a> .</p>
     /// <ul>
@@ -150,6 +162,16 @@ impl UpdateFleetAttributesInputBuilder {
         self.new_game_session_protection_policy = input;
         self
     }
+    /// <p>The game session protection policy to apply to all new instances created in this fleet. Instances that already exist are not affected. You can set protection for individual instances using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a> .</p>
+    /// <ul>
+    /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
+    /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
+    /// </ul>
+    pub fn get_new_game_session_protection_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProtectionPolicy> {
+        &self.new_game_session_protection_policy
+    }
     /// <p>Policy settings that limit the number of game sessions an individual player can create over a span of time. </p>
     pub fn resource_creation_limit_policy(
         mut self,
@@ -165,6 +187,12 @@ impl UpdateFleetAttributesInputBuilder {
     ) -> Self {
         self.resource_creation_limit_policy = input;
         self
+    }
+    /// <p>Policy settings that limit the number of game sessions an individual player can create over a span of time. </p>
+    pub fn get_resource_creation_limit_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceCreationLimitPolicy> {
+        &self.resource_creation_limit_policy
     }
     /// Appends an item to `metric_groups`.
     ///
@@ -188,6 +216,12 @@ impl UpdateFleetAttributesInputBuilder {
         self.metric_groups = input;
         self
     }
+    /// <p>The name of a metric group to add this fleet to. Use a metric group in Amazon CloudWatch to aggregate the metrics from multiple fleets. Provide an existing metric group name, or create a new metric group by providing a new name. A fleet can only be in one metric group at a time.</p>
+    pub fn get_metric_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.metric_groups
+    }
     /// <p>Amazon GameLift Anywhere configuration options.</p>
     pub fn anywhere_configuration(mut self, input: crate::types::AnywhereConfiguration) -> Self {
         self.anywhere_configuration = ::std::option::Option::Some(input);
@@ -200,6 +234,12 @@ impl UpdateFleetAttributesInputBuilder {
     ) -> Self {
         self.anywhere_configuration = input;
         self
+    }
+    /// <p>Amazon GameLift Anywhere configuration options.</p>
+    pub fn get_anywhere_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AnywhereConfiguration> {
+        &self.anywhere_configuration
     }
     /// Consumes the builder and constructs a [`UpdateFleetAttributesInput`](crate::operation::update_fleet_attributes::UpdateFleetAttributesInput).
     pub fn build(

@@ -36,6 +36,10 @@ impl GetConformancePackComplianceDetailsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetConformancePackComplianceDetails as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_conformance_pack_compliance_details::builders::GetConformancePackComplianceDetailsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -112,6 +116,10 @@ impl GetConformancePackComplianceDetailsFluentBuilder {
         self.inner = self.inner.set_conformance_pack_name(input);
         self
     }
+    /// <p>Name of the conformance pack.</p>
+    pub fn get_conformance_pack_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_conformance_pack_name()
+    }
     /// <p>A <code>ConformancePackEvaluationFilters</code> object.</p>
     pub fn filters(mut self, input: crate::types::ConformancePackEvaluationFilters) -> Self {
         self.inner = self.inner.filters(input);
@@ -125,6 +133,12 @@ impl GetConformancePackComplianceDetailsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>A <code>ConformancePackEvaluationFilters</code> object.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConformancePackEvaluationFilters> {
+        self.inner.get_filters()
+    }
     /// <p>The maximum number of evaluation results returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -135,6 +149,10 @@ impl GetConformancePackComplianceDetailsFluentBuilder {
         self.inner = self.inner.set_limit(input);
         self
     }
+    /// <p>The maximum number of evaluation results returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
+    }
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -144,5 +162,9 @@ impl GetConformancePackComplianceDetailsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

@@ -56,6 +56,10 @@ impl ObjectLevelStatisticsBuilder {
         self.file_type = input;
         self
     }
+    /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects don't have a file name extension for a supported file or storage format.</p>
+    pub fn get_file_type(&self) -> &::std::option::Option<i64> {
+        &self.file_type
+    }
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects use an unsupported storage class.</p>
     pub fn storage_class(mut self, input: i64) -> Self {
         self.storage_class = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl ObjectLevelStatisticsBuilder {
         self.storage_class = input;
         self
     }
+    /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects use an unsupported storage class.</p>
+    pub fn get_storage_class(&self) -> &::std::option::Option<i64> {
+        &self.storage_class
+    }
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects use an unsupported storage class or don't have a file name extension for a supported file or storage format.</p>
     pub fn total(mut self, input: i64) -> Self {
         self.total = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl ObjectLevelStatisticsBuilder {
     pub fn set_total(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total = input;
         self
+    }
+    /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects use an unsupported storage class or don't have a file name extension for a supported file or storage format.</p>
+    pub fn get_total(&self) -> &::std::option::Option<i64> {
+        &self.total
     }
     /// Consumes the builder and constructs a [`ObjectLevelStatistics`](crate::types::ObjectLevelStatistics).
     pub fn build(self) -> crate::types::ObjectLevelStatistics {

@@ -57,6 +57,10 @@ impl TableExcerptBuilder {
         self.rows = input;
         self
     }
+    /// <p>A list of rows in the table excerpt.</p>
+    pub fn get_rows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TableRow>> {
+        &self.rows
+    }
     /// <p>A count of the number of rows in the original table within the document.</p>
     pub fn total_number_of_rows(mut self, input: i32) -> Self {
         self.total_number_of_rows = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl TableExcerptBuilder {
     pub fn set_total_number_of_rows(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_number_of_rows = input;
         self
+    }
+    /// <p>A count of the number of rows in the original table within the document.</p>
+    pub fn get_total_number_of_rows(&self) -> &::std::option::Option<i32> {
+        &self.total_number_of_rows
     }
     /// Consumes the builder and constructs a [`TableExcerpt`](crate::types::TableExcerpt).
     pub fn build(self) -> crate::types::TableExcerpt {

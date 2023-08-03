@@ -57,6 +57,10 @@ impl DeviceBuilder {
         self.host_path = input;
         self
     }
+    /// <p>The path for the device on the host container instance.</p>
+    pub fn get_host_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_path
+    }
     /// <p>The path inside the container at which to expose the host device.</p>
     pub fn container_path(
         mut self,
@@ -72,6 +76,10 @@ impl DeviceBuilder {
     ) -> Self {
         self.container_path = input;
         self
+    }
+    /// <p>The path inside the container at which to expose the host device.</p>
+    pub fn get_container_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_path
     }
     /// Appends an item to `permissions`.
     ///
@@ -91,6 +99,12 @@ impl DeviceBuilder {
     ) -> Self {
         self.permissions = input;
         self
+    }
+    /// <p>The explicit permissions to provide to the container for the device. By default, the container has permissions for <code>read</code>, <code>write</code>, and <code>mknod</code> for the device.</p>
+    pub fn get_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceCgroupPermission>> {
+        &self.permissions
     }
     /// Consumes the builder and constructs a [`Device`](crate::types::Device).
     pub fn build(self) -> crate::types::Device {

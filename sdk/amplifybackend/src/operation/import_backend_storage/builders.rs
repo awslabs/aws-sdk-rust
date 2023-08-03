@@ -36,6 +36,12 @@ impl ImportBackendStorageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ImportBackendStorage as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::import_backend_storage::builders::ImportBackendStorageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl ImportBackendStorageFluentBuilder {
         self.inner = self.inner.set_app_id(input);
         self
     }
+    /// <p>The app ID.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_id()
+    }
     /// <p>The name of the backend environment.</p>
     pub fn backend_environment_name(
         mut self,
@@ -142,6 +152,10 @@ impl ImportBackendStorageFluentBuilder {
         self.inner = self.inner.set_backend_environment_name(input);
         self
     }
+    /// <p>The name of the backend environment.</p>
+    pub fn get_backend_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_backend_environment_name()
+    }
     /// <p>The name of the S3 bucket.</p>
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bucket_name(input.into());
@@ -151,6 +165,10 @@ impl ImportBackendStorageFluentBuilder {
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bucket_name(input);
         self
+    }
+    /// <p>The name of the S3 bucket.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bucket_name()
     }
     /// <p>The name of the storage service.</p>
     pub fn service_name(mut self, input: crate::types::ServiceName) -> Self {
@@ -164,5 +182,9 @@ impl ImportBackendStorageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_service_name(input);
         self
+    }
+    /// <p>The name of the storage service.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<crate::types::ServiceName> {
+        self.inner.get_service_name()
     }
 }

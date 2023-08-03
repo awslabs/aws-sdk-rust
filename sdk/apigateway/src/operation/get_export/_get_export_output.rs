@@ -63,6 +63,10 @@ impl GetExportOutputBuilder {
         self.content_type = input;
         self
     }
+    /// <p>The content-type header value in the HTTP response. This will correspond to a valid 'accept' type in the request.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
+    }
     /// <p>The content-disposition header value in the HTTP response.</p>
     pub fn content_disposition(
         mut self,
@@ -79,6 +83,10 @@ impl GetExportOutputBuilder {
         self.content_disposition = input;
         self
     }
+    /// <p>The content-disposition header value in the HTTP response.</p>
+    pub fn get_content_disposition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_disposition
+    }
     /// <p>The binary blob response to GetExport, which contains the export.</p>
     pub fn body(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.body = ::std::option::Option::Some(input);
@@ -88,6 +96,10 @@ impl GetExportOutputBuilder {
     pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.body = input;
         self
+    }
+    /// <p>The binary blob response to GetExport, which contains the export.</p>
+    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.body
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

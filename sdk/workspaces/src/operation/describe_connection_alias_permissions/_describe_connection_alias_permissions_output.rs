@@ -66,6 +66,10 @@ impl DescribeConnectionAliasPermissionsOutputBuilder {
         self.alias_id = input;
         self
     }
+    /// <p>The identifier of the connection alias.</p>
+    pub fn get_alias_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias_id
+    }
     /// Appends an item to `connection_alias_permissions`.
     ///
     /// To override the contents of this collection use [`set_connection_alias_permissions`](Self::set_connection_alias_permissions).
@@ -88,6 +92,12 @@ impl DescribeConnectionAliasPermissionsOutputBuilder {
         self.connection_alias_permissions = input;
         self
     }
+    /// <p>The permissions associated with a connection alias.</p>
+    pub fn get_connection_alias_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectionAliasPermission>> {
+        &self.connection_alias_permissions
+    }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -97,6 +107,10 @@ impl DescribeConnectionAliasPermissionsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -36,6 +36,13 @@ impl DescribeMetricFiltersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeMetricFilters as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_metric_filters::builders::DescribeMetricFiltersInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +150,10 @@ impl DescribeMetricFiltersFluentBuilder {
         self.inner = self.inner.set_log_group_name(input);
         self
     }
+    /// <p>The name of the log group.</p>
+    pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_log_group_name()
+    }
     /// <p>The prefix to match. CloudWatch Logs uses the value that you set here only if you also include the <code>logGroupName</code> parameter in your request.</p>
     pub fn filter_name_prefix(
         mut self,
@@ -159,6 +170,10 @@ impl DescribeMetricFiltersFluentBuilder {
         self.inner = self.inner.set_filter_name_prefix(input);
         self
     }
+    /// <p>The prefix to match. CloudWatch Logs uses the value that you set here only if you also include the <code>logGroupName</code> parameter in your request.</p>
+    pub fn get_filter_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_filter_name_prefix()
+    }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -168,6 +183,10 @@ impl DescribeMetricFiltersFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -179,6 +198,10 @@ impl DescribeMetricFiltersFluentBuilder {
         self.inner = self.inner.set_limit(input);
         self
     }
+    /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
+    }
     /// <p>Filters results to include only those with the specified metric name. If you include this parameter in your request, you must also include the <code>metricNamespace</code> parameter.</p>
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metric_name(input.into());
@@ -188,6 +211,10 @@ impl DescribeMetricFiltersFluentBuilder {
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_metric_name(input);
         self
+    }
+    /// <p>Filters results to include only those with the specified metric name. If you include this parameter in your request, you must also include the <code>metricNamespace</code> parameter.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_metric_name()
     }
     /// <p>Filters results to include only those in the specified namespace. If you include this parameter in your request, you must also include the <code>metricName</code> parameter.</p>
     pub fn metric_namespace(
@@ -204,5 +231,9 @@ impl DescribeMetricFiltersFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_metric_namespace(input);
         self
+    }
+    /// <p>Filters results to include only those in the specified namespace. If you include this parameter in your request, you must also include the <code>metricName</code> parameter.</p>
+    pub fn get_metric_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_metric_namespace()
     }
 }

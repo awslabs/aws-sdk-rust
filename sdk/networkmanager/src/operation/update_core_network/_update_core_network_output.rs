@@ -50,6 +50,10 @@ impl UpdateCoreNetworkOutputBuilder {
         self.core_network = input;
         self
     }
+    /// <p>Returns information about a core network update.</p>
+    pub fn get_core_network(&self) -> &::std::option::Option<crate::types::CoreNetwork> {
+        &self.core_network
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

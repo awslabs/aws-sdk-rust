@@ -84,6 +84,12 @@ impl GaugeChartOptionsBuilder {
         self.primary_value_display_type = input;
         self
     }
+    /// <p>The options that determine the primary value display type.</p>
+    pub fn get_primary_value_display_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::PrimaryValueDisplayType> {
+        &self.primary_value_display_type
+    }
     /// <p>The comparison configuration of a <code>GaugeChartVisual</code>.</p>
     pub fn comparison(mut self, input: crate::types::ComparisonConfiguration) -> Self {
         self.comparison = ::std::option::Option::Some(input);
@@ -96,6 +102,10 @@ impl GaugeChartOptionsBuilder {
     ) -> Self {
         self.comparison = input;
         self
+    }
+    /// <p>The comparison configuration of a <code>GaugeChartVisual</code>.</p>
+    pub fn get_comparison(&self) -> &::std::option::Option<crate::types::ComparisonConfiguration> {
+        &self.comparison
     }
     /// <p>The arc axis configuration of a <code>GaugeChartVisual</code>.</p>
     pub fn arc_axis(mut self, input: crate::types::ArcAxisConfiguration) -> Self {
@@ -110,6 +120,10 @@ impl GaugeChartOptionsBuilder {
         self.arc_axis = input;
         self
     }
+    /// <p>The arc axis configuration of a <code>GaugeChartVisual</code>.</p>
+    pub fn get_arc_axis(&self) -> &::std::option::Option<crate::types::ArcAxisConfiguration> {
+        &self.arc_axis
+    }
     /// <p>The arc configuration of a <code>GaugeChartVisual</code>.</p>
     pub fn arc(mut self, input: crate::types::ArcConfiguration) -> Self {
         self.arc = ::std::option::Option::Some(input);
@@ -119,6 +133,10 @@ impl GaugeChartOptionsBuilder {
     pub fn set_arc(mut self, input: ::std::option::Option<crate::types::ArcConfiguration>) -> Self {
         self.arc = input;
         self
+    }
+    /// <p>The arc configuration of a <code>GaugeChartVisual</code>.</p>
+    pub fn get_arc(&self) -> &::std::option::Option<crate::types::ArcConfiguration> {
+        &self.arc
     }
     /// <p>The options that determine the primary value font configuration.</p>
     pub fn primary_value_font_configuration(
@@ -135,6 +153,12 @@ impl GaugeChartOptionsBuilder {
     ) -> Self {
         self.primary_value_font_configuration = input;
         self
+    }
+    /// <p>The options that determine the primary value font configuration.</p>
+    pub fn get_primary_value_font_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::FontConfiguration> {
+        &self.primary_value_font_configuration
     }
     /// Consumes the builder and constructs a [`GaugeChartOptions`](crate::types::GaugeChartOptions).
     pub fn build(self) -> crate::types::GaugeChartOptions {

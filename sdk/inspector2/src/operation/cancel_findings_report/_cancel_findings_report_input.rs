@@ -40,6 +40,10 @@ impl CancelFindingsReportInputBuilder {
         self.report_id = input;
         self
     }
+    /// <p>The ID of the report to be canceled.</p>
+    pub fn get_report_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.report_id
+    }
     /// Consumes the builder and constructs a [`CancelFindingsReportInput`](crate::operation::cancel_findings_report::CancelFindingsReportInput).
     pub fn build(
         self,

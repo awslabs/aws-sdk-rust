@@ -51,6 +51,10 @@ impl AssociateSigninDelegateGroupsWithAccountInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// Appends an item to `signin_delegate_groups`.
     ///
     /// To override the contents of this collection use [`set_signin_delegate_groups`](Self::set_signin_delegate_groups).
@@ -69,6 +73,12 @@ impl AssociateSigninDelegateGroupsWithAccountInputBuilder {
     ) -> Self {
         self.signin_delegate_groups = input;
         self
+    }
+    /// <p>The sign-in delegate groups.</p>
+    pub fn get_signin_delegate_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SigninDelegateGroup>> {
+        &self.signin_delegate_groups
     }
     /// Consumes the builder and constructs a [`AssociateSigninDelegateGroupsWithAccountInput`](crate::operation::associate_signin_delegate_groups_with_account::AssociateSigninDelegateGroupsWithAccountInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::associate_signin_delegate_groups_with_account::AssociateSigninDelegateGroupsWithAccountInput, ::aws_smithy_http::operation::error::BuildError>{

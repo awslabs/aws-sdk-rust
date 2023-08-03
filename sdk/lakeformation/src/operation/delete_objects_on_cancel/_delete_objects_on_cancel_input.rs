@@ -73,6 +73,10 @@ impl DeleteObjectsOnCancelInputBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The Glue data catalog that contains the governed table. Defaults to the current account ID.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p>The database that contains the governed table.</p>
     pub fn database_name(
         mut self,
@@ -89,6 +93,10 @@ impl DeleteObjectsOnCancelInputBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The database that contains the governed table.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>The name of the governed table.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
@@ -98,6 +106,10 @@ impl DeleteObjectsOnCancelInputBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
+    }
+    /// <p>The name of the governed table.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// <p>ID of the transaction that the writes occur in.</p>
     pub fn transaction_id(
@@ -114,6 +126,10 @@ impl DeleteObjectsOnCancelInputBuilder {
     ) -> Self {
         self.transaction_id = input;
         self
+    }
+    /// <p>ID of the transaction that the writes occur in.</p>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transaction_id
     }
     /// Appends an item to `objects`.
     ///
@@ -133,6 +149,12 @@ impl DeleteObjectsOnCancelInputBuilder {
     ) -> Self {
         self.objects = input;
         self
+    }
+    /// <p>A list of VirtualObject structures, which indicates the Amazon S3 objects to be deleted if the transaction cancels.</p>
+    pub fn get_objects(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VirtualObject>> {
+        &self.objects
     }
     /// Consumes the builder and constructs a [`DeleteObjectsOnCancelInput`](crate::operation::delete_objects_on_cancel::DeleteObjectsOnCancelInput).
     pub fn build(

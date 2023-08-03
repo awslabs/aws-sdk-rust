@@ -46,6 +46,10 @@ impl GetIdentityPoolConfigurationInputBuilder {
         self.identity_pool_id = input;
         self
     }
+    /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool for which to return a configuration.</p>
+    pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_pool_id
+    }
     /// Consumes the builder and constructs a [`GetIdentityPoolConfigurationInput`](crate::operation::get_identity_pool_configuration::GetIdentityPoolConfigurationInput).
     pub fn build(
         self,

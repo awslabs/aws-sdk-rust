@@ -47,6 +47,10 @@ impl DescribeSolutionVersionInputBuilder {
         self.solution_version_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the solution version.</p>
+    pub fn get_solution_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.solution_version_arn
+    }
     /// Consumes the builder and constructs a [`DescribeSolutionVersionInput`](crate::operation::describe_solution_version::DescribeSolutionVersionInput).
     pub fn build(
         self,

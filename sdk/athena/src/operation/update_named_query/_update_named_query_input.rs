@@ -70,6 +70,10 @@ impl UpdateNamedQueryInputBuilder {
         self.named_query_id = input;
         self
     }
+    /// <p>The unique identifier (UUID) of the query.</p>
+    pub fn get_named_query_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.named_query_id
+    }
     /// <p>The name of the query.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl UpdateNamedQueryInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the query.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The query description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -90,6 +98,10 @@ impl UpdateNamedQueryInputBuilder {
         self.description = input;
         self
     }
+    /// <p>The query description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The contents of the query with all query statements.</p>
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_string = ::std::option::Option::Some(input.into());
@@ -99,6 +111,10 @@ impl UpdateNamedQueryInputBuilder {
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_string = input;
         self
+    }
+    /// <p>The contents of the query with all query statements.</p>
+    pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_string
     }
     /// Consumes the builder and constructs a [`UpdateNamedQueryInput`](crate::operation::update_named_query::UpdateNamedQueryInput).
     pub fn build(

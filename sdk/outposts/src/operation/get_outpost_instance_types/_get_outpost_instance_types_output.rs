@@ -82,6 +82,12 @@ impl GetOutpostInstanceTypesOutputBuilder {
         self.instance_types = input;
         self
     }
+    /// <p>Information about the instance types.</p>
+    pub fn get_instance_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeItem>> {
+        &self.instance_types
+    }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -91,6 +97,10 @@ impl GetOutpostInstanceTypesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p> The ID of the Outpost. </p>
     pub fn outpost_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -102,6 +112,10 @@ impl GetOutpostInstanceTypesOutputBuilder {
         self.outpost_id = input;
         self
     }
+    /// <p> The ID of the Outpost. </p>
+    pub fn get_outpost_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.outpost_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_arn = ::std::option::Option::Some(input.into());
@@ -111,6 +125,10 @@ impl GetOutpostInstanceTypesOutputBuilder {
     pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
+    pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.outpost_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

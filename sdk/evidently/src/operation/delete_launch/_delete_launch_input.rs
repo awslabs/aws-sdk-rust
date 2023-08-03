@@ -47,6 +47,10 @@ impl DeleteLaunchInputBuilder {
         self.project = input;
         self
     }
+    /// <p>The name or ARN of the project that contains the launch to delete.</p>
+    pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project
+    }
     /// <p>The name of the launch to delete.</p>
     pub fn launch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DeleteLaunchInputBuilder {
     pub fn set_launch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launch = input;
         self
+    }
+    /// <p>The name of the launch to delete.</p>
+    pub fn get_launch(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch
     }
     /// Consumes the builder and constructs a [`DeleteLaunchInput`](crate::operation::delete_launch::DeleteLaunchInput).
     pub fn build(

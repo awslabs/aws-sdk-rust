@@ -63,6 +63,10 @@ impl PredictInputBuilder {
         self.ml_model_id = input;
         self
     }
+    /// <p>A unique identifier of the <code>MLModel</code>.</p>
+    pub fn get_ml_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ml_model_id
+    }
     /// Adds a key-value pair to `record`.
     ///
     /// To override the contents of this collection use [`set_record`](Self::set_record).
@@ -88,6 +92,14 @@ impl PredictInputBuilder {
         self.record = input;
         self
     }
+    /// <p>A map of variable name-value pairs that represent an observation.</p>
+    pub fn get_record(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.record
+    }
     #[allow(missing_docs)] // documentation missing in model
     pub fn predict_endpoint(
         mut self,
@@ -103,6 +115,10 @@ impl PredictInputBuilder {
     ) -> Self {
         self.predict_endpoint = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_predict_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.predict_endpoint
     }
     /// Consumes the builder and constructs a [`PredictInput`](crate::operation::predict::PredictInput).
     pub fn build(

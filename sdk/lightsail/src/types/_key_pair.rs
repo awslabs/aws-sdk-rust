@@ -96,6 +96,10 @@ impl KeyPairBuilder {
         self.name = input;
         self
     }
+    /// <p>The friendly name of the SSH key pair.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) of the key pair (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:KeyPair/05859e3d-331d-48ba-9034-12345EXAMPLE</code>).</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -106,6 +110,10 @@ impl KeyPairBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the key pair (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:KeyPair/05859e3d-331d-48ba-9034-12345EXAMPLE</code>).</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The support code. Include this code in your email to support when you have questions about an instance or another resource in Lightsail. This code enables our support team to look up your Lightsail information more easily.</p>
     pub fn support_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.support_code = ::std::option::Option::Some(input.into());
@@ -115,6 +123,10 @@ impl KeyPairBuilder {
     pub fn set_support_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.support_code = input;
         self
+    }
+    /// <p>The support code. Include this code in your email to support when you have questions about an instance or another resource in Lightsail. This code enables our support team to look up your Lightsail information more easily.</p>
+    pub fn get_support_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.support_code
     }
     /// <p>The timestamp when the key pair was created (e.g., <code>1479816991.349</code>).</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -129,6 +141,10 @@ impl KeyPairBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The timestamp when the key pair was created (e.g., <code>1479816991.349</code>).</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The region name and Availability Zone where the key pair was created.</p>
     pub fn location(mut self, input: crate::types::ResourceLocation) -> Self {
         self.location = ::std::option::Option::Some(input);
@@ -142,6 +158,10 @@ impl KeyPairBuilder {
         self.location = input;
         self
     }
+    /// <p>The region name and Availability Zone where the key pair was created.</p>
+    pub fn get_location(&self) -> &::std::option::Option<crate::types::ResourceLocation> {
+        &self.location
+    }
     /// <p>The resource type (usually <code>KeyPair</code>).</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -154,6 +174,10 @@ impl KeyPairBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The resource type (usually <code>KeyPair</code>).</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
     }
     /// Appends an item to `tags`.
     ///
@@ -174,6 +198,10 @@ impl KeyPairBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The RSA fingerprint of the key pair.</p>
     pub fn fingerprint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fingerprint = ::std::option::Option::Some(input.into());
@@ -183,6 +211,10 @@ impl KeyPairBuilder {
     pub fn set_fingerprint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fingerprint = input;
         self
+    }
+    /// <p>The RSA fingerprint of the key pair.</p>
+    pub fn get_fingerprint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fingerprint
     }
     /// Consumes the builder and constructs a [`KeyPair`](crate::types::KeyPair).
     pub fn build(self) -> crate::types::KeyPair {

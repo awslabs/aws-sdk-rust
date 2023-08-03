@@ -64,6 +64,10 @@ impl ListBuiltInIntentsInputBuilder {
         self.locale_id = input;
         self
     }
+    /// <p>The identifier of the language and locale of the intents to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale_id
+    }
     /// <p>Specifies sorting parameters for the list of built-in intents. You can specify that the list be sorted by the built-in intent signature in either ascending or descending order.</p>
     pub fn sort_by(mut self, input: crate::types::BuiltInIntentSortBy) -> Self {
         self.sort_by = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl ListBuiltInIntentsInputBuilder {
         self.sort_by = input;
         self
     }
+    /// <p>Specifies sorting parameters for the list of built-in intents. You can specify that the list be sorted by the built-in intent signature in either ascending or descending order.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::BuiltInIntentSortBy> {
+        &self.sort_by
+    }
     /// <p>The maximum number of built-in intents to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -87,6 +95,10 @@ impl ListBuiltInIntentsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of built-in intents to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>If the response from the <code>ListBuiltInIntents</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -96,6 +108,10 @@ impl ListBuiltInIntentsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the response from the <code>ListBuiltInIntents</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListBuiltInIntentsInput`](crate::operation::list_built_in_intents::ListBuiltInIntentsInput).
     pub fn build(

@@ -64,6 +64,10 @@ impl CreateStoreImageTaskInputBuilder {
         self.image_id = input;
         self
     }
+    /// <p>The ID of the AMI.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_id
+    }
     /// <p>The name of the Amazon S3 bucket in which the AMI object will be stored. The bucket must be in the Region in which the request is being made. The AMI object appears in the bucket only after the upload task has completed. </p>
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl CreateStoreImageTaskInputBuilder {
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket = input;
         self
+    }
+    /// <p>The name of the Amazon S3 bucket in which the AMI object will be stored. The bucket must be in the Region in which the request is being made. The AMI object appears in the bucket only after the upload task has completed. </p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
     }
     /// Appends an item to `s3_object_tags`.
     ///
@@ -93,6 +101,12 @@ impl CreateStoreImageTaskInputBuilder {
         self.s3_object_tags = input;
         self
     }
+    /// <p>The tags to apply to the AMI object that will be stored in the Amazon S3 bucket. </p>
+    pub fn get_s3_object_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::S3ObjectTag>> {
+        &self.s3_object_tags
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -102,6 +116,10 @@ impl CreateStoreImageTaskInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`CreateStoreImageTaskInput`](crate::operation::create_store_image_task::CreateStoreImageTaskInput).
     pub fn build(

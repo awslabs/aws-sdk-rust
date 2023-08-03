@@ -53,6 +53,10 @@ impl InvokeDeviceMethodOutputBuilder {
         self.device_method_response = input;
         self
     }
+    /// <p>A JSON encoded string containing the device method response.</p>
+    pub fn get_device_method_response(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_method_response
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

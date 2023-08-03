@@ -37,6 +37,10 @@ impl CreateDomainConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDomainConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_domain_configuration::builders::CreateDomainConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl CreateDomainConfigurationFluentBuilder {
         self.inner = self.inner.set_domain_configuration_name(input);
         self
     }
+    /// <p>The name of the domain configuration. This value must be unique to a region.</p>
+    pub fn get_domain_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_configuration_name()
+    }
     /// <p>The name of the domain.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
@@ -142,6 +150,10 @@ impl CreateDomainConfigurationFluentBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_name(input);
         self
+    }
+    /// <p>The name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
     }
     /// Appends an item to `serverCertificateArns`.
     ///
@@ -163,6 +175,12 @@ impl CreateDomainConfigurationFluentBuilder {
         self.inner = self.inner.set_server_certificate_arns(input);
         self
     }
+    /// <p>The ARNs of the certificates that IoT passes to the device during the TLS handshake. Currently you can specify only one certificate ARN. This value is not required for Amazon Web Services-managed domains.</p>
+    pub fn get_server_certificate_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_server_certificate_arns()
+    }
     /// <p>The certificate used to validate the server certificate and prove domain name ownership. This certificate must be signed by a public certificate authority. This value is not required for Amazon Web Services-managed domains.</p>
     pub fn validation_certificate_arn(
         mut self,
@@ -179,6 +197,10 @@ impl CreateDomainConfigurationFluentBuilder {
         self.inner = self.inner.set_validation_certificate_arn(input);
         self
     }
+    /// <p>The certificate used to validate the server certificate and prove domain name ownership. This certificate must be signed by a public certificate authority. This value is not required for Amazon Web Services-managed domains.</p>
+    pub fn get_validation_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_validation_certificate_arn()
+    }
     /// <p>An object that specifies the authorization service for a domain.</p>
     pub fn authorizer_config(mut self, input: crate::types::AuthorizerConfig) -> Self {
         self.inner = self.inner.authorizer_config(input);
@@ -191,6 +213,10 @@ impl CreateDomainConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_authorizer_config(input);
         self
+    }
+    /// <p>An object that specifies the authorization service for a domain.</p>
+    pub fn get_authorizer_config(&self) -> &::std::option::Option<crate::types::AuthorizerConfig> {
+        self.inner.get_authorizer_config()
     }
     /// <p>The type of service delivered by the endpoint.</p> <note>
     /// <p>Amazon Web Services IoT Core currently supports only the <code>DATA</code> service type.</p>
@@ -208,6 +234,12 @@ impl CreateDomainConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_service_type(input);
         self
+    }
+    /// <p>The type of service delivered by the endpoint.</p> <note>
+    /// <p>Amazon Web Services IoT Core currently supports only the <code>DATA</code> service type.</p>
+    /// </note>
+    pub fn get_service_type(&self) -> &::std::option::Option<crate::types::ServiceType> {
+        self.inner.get_service_type()
     }
     /// Appends an item to `tags`.
     ///
@@ -234,6 +266,14 @@ impl CreateDomainConfigurationFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Metadata which can be used to manage the domain configuration.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
+    /// </note>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>An object that specifies the TLS configuration for a domain.</p>
     pub fn tls_config(mut self, input: crate::types::TlsConfig) -> Self {
         self.inner = self.inner.tls_config(input);
@@ -243,5 +283,9 @@ impl CreateDomainConfigurationFluentBuilder {
     pub fn set_tls_config(mut self, input: ::std::option::Option<crate::types::TlsConfig>) -> Self {
         self.inner = self.inner.set_tls_config(input);
         self
+    }
+    /// <p>An object that specifies the TLS configuration for a domain.</p>
+    pub fn get_tls_config(&self) -> &::std::option::Option<crate::types::TlsConfig> {
+        self.inner.get_tls_config()
     }
 }

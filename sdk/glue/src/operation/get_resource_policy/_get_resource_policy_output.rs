@@ -77,6 +77,10 @@ impl GetResourcePolicyOutputBuilder {
         self.policy_in_json = input;
         self
     }
+    /// <p>Contains the requested policy document, in JSON format.</p>
+    pub fn get_policy_in_json(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_in_json
+    }
     /// <p>Contains the hash value associated with this policy.</p>
     pub fn policy_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_hash = ::std::option::Option::Some(input.into());
@@ -86,6 +90,10 @@ impl GetResourcePolicyOutputBuilder {
     pub fn set_policy_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_hash = input;
         self
+    }
+    /// <p>Contains the hash value associated with this policy.</p>
+    pub fn get_policy_hash(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_hash
     }
     /// <p>The date and time at which the policy was created.</p>
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -100,6 +108,10 @@ impl GetResourcePolicyOutputBuilder {
         self.create_time = input;
         self
     }
+    /// <p>The date and time at which the policy was created.</p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
+    }
     /// <p>The date and time at which the policy was last updated.</p>
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
@@ -112,6 +124,10 @@ impl GetResourcePolicyOutputBuilder {
     ) -> Self {
         self.update_time = input;
         self
+    }
+    /// <p>The date and time at which the policy was last updated.</p>
+    pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

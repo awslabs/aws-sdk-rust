@@ -120,6 +120,10 @@ impl AssessmentFrameworkMetadataBuilder {
         self.arn = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) of the framework. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p> The unique identifier for the framework. </p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -129,6 +133,10 @@ impl AssessmentFrameworkMetadataBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p> The unique identifier for the framework. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p> The framework type, such as a standard framework or a custom framework. </p>
     pub fn r#type(mut self, input: crate::types::FrameworkType) -> Self {
@@ -140,6 +148,10 @@ impl AssessmentFrameworkMetadataBuilder {
         self.r#type = input;
         self
     }
+    /// <p> The framework type, such as a standard framework or a custom framework. </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::FrameworkType> {
+        &self.r#type
+    }
     /// <p> The name of the framework. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -149,6 +161,10 @@ impl AssessmentFrameworkMetadataBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p> The name of the framework. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p> The description of the framework. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -160,6 +176,10 @@ impl AssessmentFrameworkMetadataBuilder {
         self.description = input;
         self
     }
+    /// <p> The description of the framework. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p> The logo that's associated with the framework. </p>
     pub fn logo(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.logo = ::std::option::Option::Some(input.into());
@@ -169,6 +189,10 @@ impl AssessmentFrameworkMetadataBuilder {
     pub fn set_logo(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.logo = input;
         self
+    }
+    /// <p> The logo that's associated with the framework. </p>
+    pub fn get_logo(&self) -> &::std::option::Option<::std::string::String> {
+        &self.logo
     }
     /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
     pub fn compliance_type(
@@ -186,6 +210,10 @@ impl AssessmentFrameworkMetadataBuilder {
         self.compliance_type = input;
         self
     }
+    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
+    pub fn get_compliance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.compliance_type
+    }
     /// <p> The number of controls that are associated with the framework. </p>
     pub fn controls_count(mut self, input: i32) -> Self {
         self.controls_count = ::std::option::Option::Some(input);
@@ -196,6 +224,10 @@ impl AssessmentFrameworkMetadataBuilder {
         self.controls_count = input;
         self
     }
+    /// <p> The number of controls that are associated with the framework. </p>
+    pub fn get_controls_count(&self) -> &::std::option::Option<i32> {
+        &self.controls_count
+    }
     /// <p> The number of control sets that are associated with the framework. </p>
     pub fn control_sets_count(mut self, input: i32) -> Self {
         self.control_sets_count = ::std::option::Option::Some(input);
@@ -205,6 +237,10 @@ impl AssessmentFrameworkMetadataBuilder {
     pub fn set_control_sets_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.control_sets_count = input;
         self
+    }
+    /// <p> The number of control sets that are associated with the framework. </p>
+    pub fn get_control_sets_count(&self) -> &::std::option::Option<i32> {
+        &self.control_sets_count
     }
     /// <p> The time when the framework was created. </p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -219,6 +255,10 @@ impl AssessmentFrameworkMetadataBuilder {
         self.created_at = input;
         self
     }
+    /// <p> The time when the framework was created. </p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p> The time when the framework was most recently updated. </p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_at = ::std::option::Option::Some(input);
@@ -231,6 +271,10 @@ impl AssessmentFrameworkMetadataBuilder {
     ) -> Self {
         self.last_updated_at = input;
         self
+    }
+    /// <p> The time when the framework was most recently updated. </p>
+    pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_at
     }
     /// Consumes the builder and constructs a [`AssessmentFrameworkMetadata`](crate::types::AssessmentFrameworkMetadata).
     pub fn build(self) -> crate::types::AssessmentFrameworkMetadata {

@@ -65,6 +65,10 @@ impl CodeContentUpdateBuilder {
         self.text_content_update = input;
         self
     }
+    /// <p>Describes an update to the text code for an application.</p>
+    pub fn get_text_content_update(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text_content_update
+    }
     /// <p>Describes an update to the zipped code for an application.</p>
     pub fn zip_file_content_update(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.zip_file_content_update = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl CodeContentUpdateBuilder {
     ) -> Self {
         self.zip_file_content_update = input;
         self
+    }
+    /// <p>Describes an update to the zipped code for an application.</p>
+    pub fn get_zip_file_content_update(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.zip_file_content_update
     }
     /// <p>Describes an update to the location of code for an application.</p>
     pub fn s3_content_location_update(
@@ -93,6 +101,12 @@ impl CodeContentUpdateBuilder {
     ) -> Self {
         self.s3_content_location_update = input;
         self
+    }
+    /// <p>Describes an update to the location of code for an application.</p>
+    pub fn get_s3_content_location_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3ContentLocationUpdate> {
+        &self.s3_content_location_update
     }
     /// Consumes the builder and constructs a [`CodeContentUpdate`](crate::types::CodeContentUpdate).
     pub fn build(self) -> crate::types::CodeContentUpdate {

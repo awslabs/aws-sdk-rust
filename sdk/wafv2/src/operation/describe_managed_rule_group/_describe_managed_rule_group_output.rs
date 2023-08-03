@@ -112,6 +112,10 @@ impl DescribeManagedRuleGroupOutputBuilder {
         self.version_name = input;
         self
     }
+    /// <p>The managed rule group's version. </p>
+    pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_name
+    }
     /// <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to provide notification of changes to the managed rule group. You can subscribe to the SNS topic to receive notifications when the managed rule group is modified, such as for new versions and for version expiration. For more information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer Guide</a>.</p>
     pub fn sns_topic_arn(
         mut self,
@@ -128,6 +132,10 @@ impl DescribeManagedRuleGroupOutputBuilder {
         self.sns_topic_arn = input;
         self
     }
+    /// <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to provide notification of changes to the managed rule group. You can subscribe to the SNS topic to receive notifications when the managed rule group is modified, such as for new versions and for version expiration. For more information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer Guide</a>.</p>
+    pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sns_topic_arn
+    }
     /// <p>The web ACL capacity units (WCUs) required for this rule group.</p>
     /// <p>WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF web ACL capacity units (WCU)</a> in the <i>WAF Developer Guide</i>. </p>
     pub fn capacity(mut self, input: i64) -> Self {
@@ -139,6 +147,11 @@ impl DescribeManagedRuleGroupOutputBuilder {
     pub fn set_capacity(mut self, input: ::std::option::Option<i64>) -> Self {
         self.capacity = input;
         self
+    }
+    /// <p>The web ACL capacity units (WCUs) required for this rule group.</p>
+    /// <p>WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF web ACL capacity units (WCU)</a> in the <i>WAF Developer Guide</i>. </p>
+    pub fn get_capacity(&self) -> &::std::option::Option<i64> {
+        &self.capacity
     }
     /// Appends an item to `rules`.
     ///
@@ -158,6 +171,10 @@ impl DescribeManagedRuleGroupOutputBuilder {
     ) -> Self {
         self.rules = input;
         self
+    }
+    /// <p></p>
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleSummary>> {
+        &self.rules
     }
     /// <p>The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix. </p>
     /// <ul>
@@ -191,6 +208,18 @@ impl DescribeManagedRuleGroupOutputBuilder {
         self.label_namespace = input;
         self
     }
+    /// <p>The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix. </p>
+    /// <ul>
+    /// <li> <p>The syntax for the label namespace prefix for a managed rule group is the following: </p> <p> <code>awswaf:managed:
+    /// <vendor>
+    /// :
+    /// <rule group name></rule>
+    /// </vendor></code>:</p> </li>
+    /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li>
+    /// </ul>
+    pub fn get_label_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label_namespace
+    }
     /// Appends an item to `available_labels`.
     ///
     /// To override the contents of this collection use [`set_available_labels`](Self::set_available_labels).
@@ -210,6 +239,12 @@ impl DescribeManagedRuleGroupOutputBuilder {
         self.available_labels = input;
         self
     }
+    /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <code>Rule</code>.</p>
+    pub fn get_available_labels(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>> {
+        &self.available_labels
+    }
     /// Appends an item to `consumed_labels`.
     ///
     /// To override the contents of this collection use [`set_consumed_labels`](Self::set_consumed_labels).
@@ -228,6 +263,12 @@ impl DescribeManagedRuleGroupOutputBuilder {
     ) -> Self {
         self.consumed_labels = input;
         self
+    }
+    /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <code>Statement</code> definition of a rule. </p>
+    pub fn get_consumed_labels(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>> {
+        &self.consumed_labels
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

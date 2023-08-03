@@ -53,6 +53,12 @@ impl GetDeploymentGroupOutputBuilder {
         self.deployment_group_info = input;
         self
     }
+    /// <p>Information about the deployment group.</p>
+    pub fn get_deployment_group_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeploymentGroupInfo> {
+        &self.deployment_group_info
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

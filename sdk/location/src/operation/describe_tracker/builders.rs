@@ -36,6 +36,12 @@ impl DescribeTrackerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeTracker as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_tracker::builders::DescribeTrackerInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +131,9 @@ impl DescribeTrackerFluentBuilder {
     pub fn set_tracker_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_tracker_name(input);
         self
+    }
+    /// <p>The name of the tracker resource.</p>
+    pub fn get_tracker_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_tracker_name()
     }
 }

@@ -130,6 +130,12 @@ impl ReplicationConfigBuilder {
         self.replication_config_identifier = input;
         self
     }
+    /// <p>The identifier for the <code>ReplicationConfig</code> associated with the replication.</p>
+    pub fn get_replication_config_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.replication_config_identifier
+    }
     /// <p>The Amazon Resource Name (ARN) of this DMS Serverless replication configuration.</p>
     pub fn replication_config_arn(
         mut self,
@@ -145,6 +151,10 @@ impl ReplicationConfigBuilder {
     ) -> Self {
         self.replication_config_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of this DMS Serverless replication configuration.</p>
+    pub fn get_replication_config_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_config_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the source endpoint for this DMS serverless replication configuration.</p>
     pub fn source_endpoint_arn(
@@ -162,6 +172,10 @@ impl ReplicationConfigBuilder {
         self.source_endpoint_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the source endpoint for this DMS serverless replication configuration.</p>
+    pub fn get_source_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_endpoint_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the target endpoint for this DMS serverless replication configuration.</p>
     pub fn target_endpoint_arn(
         mut self,
@@ -178,6 +192,10 @@ impl ReplicationConfigBuilder {
         self.target_endpoint_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the target endpoint for this DMS serverless replication configuration.</p>
+    pub fn get_target_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_endpoint_arn
+    }
     /// <p>The type of the replication.</p>
     pub fn replication_type(mut self, input: crate::types::MigrationTypeValue) -> Self {
         self.replication_type = ::std::option::Option::Some(input);
@@ -191,6 +209,10 @@ impl ReplicationConfigBuilder {
         self.replication_type = input;
         self
     }
+    /// <p>The type of the replication.</p>
+    pub fn get_replication_type(&self) -> &::std::option::Option<crate::types::MigrationTypeValue> {
+        &self.replication_type
+    }
     /// <p>Configuration parameters for provisioning an DMS serverless replication.</p>
     pub fn compute_config(mut self, input: crate::types::ComputeConfig) -> Self {
         self.compute_config = ::std::option::Option::Some(input);
@@ -203,6 +225,10 @@ impl ReplicationConfigBuilder {
     ) -> Self {
         self.compute_config = input;
         self
+    }
+    /// <p>Configuration parameters for provisioning an DMS serverless replication.</p>
+    pub fn get_compute_config(&self) -> &::std::option::Option<crate::types::ComputeConfig> {
+        &self.compute_config
     }
     /// <p>Configuration parameters for an DMS serverless replication.</p>
     pub fn replication_settings(
@@ -220,6 +246,10 @@ impl ReplicationConfigBuilder {
         self.replication_settings = input;
         self
     }
+    /// <p>Configuration parameters for an DMS serverless replication.</p>
+    pub fn get_replication_settings(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_settings
+    }
     /// <p>Additional parameters for an DMS serverless replication.</p>
     pub fn supplemental_settings(
         mut self,
@@ -235,6 +265,10 @@ impl ReplicationConfigBuilder {
     ) -> Self {
         self.supplemental_settings = input;
         self
+    }
+    /// <p>Additional parameters for an DMS serverless replication.</p>
+    pub fn get_supplemental_settings(&self) -> &::std::option::Option<::std::string::String> {
+        &self.supplemental_settings
     }
     /// <p>Table mappings specified in the replication.</p>
     pub fn table_mappings(
@@ -252,6 +286,10 @@ impl ReplicationConfigBuilder {
         self.table_mappings = input;
         self
     }
+    /// <p>Table mappings specified in the replication.</p>
+    pub fn get_table_mappings(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_mappings
+    }
     /// <p>The time the serverless replication config was created.</p>
     pub fn replication_config_create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.replication_config_create_time = ::std::option::Option::Some(input);
@@ -265,6 +303,12 @@ impl ReplicationConfigBuilder {
         self.replication_config_create_time = input;
         self
     }
+    /// <p>The time the serverless replication config was created.</p>
+    pub fn get_replication_config_create_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.replication_config_create_time
+    }
     /// <p>The time the serverless replication config was updated.</p>
     pub fn replication_config_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.replication_config_update_time = ::std::option::Option::Some(input);
@@ -277,6 +321,12 @@ impl ReplicationConfigBuilder {
     ) -> Self {
         self.replication_config_update_time = input;
         self
+    }
+    /// <p>The time the serverless replication config was updated.</p>
+    pub fn get_replication_config_update_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.replication_config_update_time
     }
     /// Consumes the builder and constructs a [`ReplicationConfig`](crate::types::ReplicationConfig).
     pub fn build(self) -> crate::types::ReplicationConfig {

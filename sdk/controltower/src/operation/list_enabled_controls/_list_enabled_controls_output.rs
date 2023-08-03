@@ -69,6 +69,12 @@ impl ListEnabledControlsOutputBuilder {
         self.enabled_controls = input;
         self
     }
+    /// <p>Lists the controls enabled by AWS Control Tower on the specified organizational unit and the accounts it contains.</p>
+    pub fn get_enabled_controls(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnabledControlSummary>> {
+        &self.enabled_controls
+    }
     /// <p>Retrieves the next page of results. If the string is empty, the current response is the end of the results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -78,6 +84,10 @@ impl ListEnabledControlsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Retrieves the next page of results. If the string is empty, the current response is the end of the results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

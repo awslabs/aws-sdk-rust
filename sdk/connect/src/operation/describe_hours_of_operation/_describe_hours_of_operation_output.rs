@@ -49,6 +49,10 @@ impl DescribeHoursOfOperationOutputBuilder {
         self.hours_of_operation = input;
         self
     }
+    /// <p>The hours of operation.</p>
+    pub fn get_hours_of_operation(&self) -> &::std::option::Option<crate::types::HoursOfOperation> {
+        &self.hours_of_operation
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

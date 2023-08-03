@@ -81,6 +81,10 @@ impl DescribeLocationNfsOutputBuilder {
         self.location_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the NFS location that was described.</p>
+    pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_arn
+    }
     /// <p>The URL of the source NFS location that was described.</p>
     pub fn location_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_uri = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl DescribeLocationNfsOutputBuilder {
     pub fn set_location_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location_uri = input;
         self
+    }
+    /// <p>The URL of the source NFS location that was described.</p>
+    pub fn get_location_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_uri
     }
     /// <p>A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS) location.</p>
     pub fn on_prem_config(mut self, input: crate::types::OnPremConfig) -> Self {
@@ -104,6 +112,10 @@ impl DescribeLocationNfsOutputBuilder {
         self.on_prem_config = input;
         self
     }
+    /// <p>A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS) location.</p>
+    pub fn get_on_prem_config(&self) -> &::std::option::Option<crate::types::OnPremConfig> {
+        &self.on_prem_config
+    }
     /// <p>The mount options that DataSync uses to mount your NFS share.</p>
     pub fn mount_options(mut self, input: crate::types::NfsMountOptions) -> Self {
         self.mount_options = ::std::option::Option::Some(input);
@@ -117,6 +129,10 @@ impl DescribeLocationNfsOutputBuilder {
         self.mount_options = input;
         self
     }
+    /// <p>The mount options that DataSync uses to mount your NFS share.</p>
+    pub fn get_mount_options(&self) -> &::std::option::Option<crate::types::NfsMountOptions> {
+        &self.mount_options
+    }
     /// <p>The time that the NFS location was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -129,6 +145,10 @@ impl DescribeLocationNfsOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time that the NFS location was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

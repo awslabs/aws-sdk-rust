@@ -36,6 +36,10 @@ impl DeleteRemoteAccessSessionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteRemoteAccessSession as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_remote_access_session::builders::DeleteRemoteAccessSessionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +129,9 @@ impl DeleteRemoteAccessSessionFluentBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the session for which you want to delete remote access.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
     }
 }

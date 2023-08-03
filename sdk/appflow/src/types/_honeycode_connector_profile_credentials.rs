@@ -63,6 +63,10 @@ impl HoneycodeConnectorProfileCredentialsBuilder {
         self.access_token = input;
         self
     }
+    /// <p> The credentials used to access protected Amazon Honeycode resources. </p>
+    pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_token
+    }
     /// <p> The credentials used to acquire new access tokens. </p>
     pub fn refresh_token(
         mut self,
@@ -79,6 +83,10 @@ impl HoneycodeConnectorProfileCredentialsBuilder {
         self.refresh_token = input;
         self
     }
+    /// <p> The credentials used to acquire new access tokens. </p>
+    pub fn get_refresh_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.refresh_token
+    }
     /// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack. </p>
     pub fn o_auth_request(mut self, input: crate::types::ConnectorOAuthRequest) -> Self {
         self.o_auth_request = ::std::option::Option::Some(input);
@@ -91,6 +99,12 @@ impl HoneycodeConnectorProfileCredentialsBuilder {
     ) -> Self {
         self.o_auth_request = input;
         self
+    }
+    /// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack. </p>
+    pub fn get_o_auth_request(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConnectorOAuthRequest> {
+        &self.o_auth_request
     }
     /// Consumes the builder and constructs a [`HoneycodeConnectorProfileCredentials`](crate::types::HoneycodeConnectorProfileCredentials).
     pub fn build(self) -> crate::types::HoneycodeConnectorProfileCredentials {

@@ -65,6 +65,10 @@ impl SyncStateBuilder {
         self.attachment = input;
         self
     }
+    /// <p>The attachment status of the firewall's association with a single VPC subnet. For each configured subnet, Network Firewall creates the attachment by instantiating the firewall endpoint in the subnet so that it's ready to take traffic. This is part of the <code>FirewallStatus</code>.</p>
+    pub fn get_attachment(&self) -> &::std::option::Option<crate::types::Attachment> {
+        &self.attachment
+    }
     /// Adds a key-value pair to `config`.
     ///
     /// To override the contents of this collection use [`set_config`](Self::set_config).
@@ -89,6 +93,14 @@ impl SyncStateBuilder {
     ) -> Self {
         self.config = input;
         self
+    }
+    /// <p>The configuration status of the firewall endpoint in a single VPC subnet. Network Firewall provides each endpoint with the rules that are configured in the firewall policy. Each time you add a subnet or modify the associated firewall policy, Network Firewall synchronizes the rules in the endpoint, so it can properly filter network traffic. This is part of the <code>FirewallStatus</code>.</p>
+    pub fn get_config(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::PerObjectStatus>,
+    > {
+        &self.config
     }
     /// Consumes the builder and constructs a [`SyncState`](crate::types::SyncState).
     pub fn build(self) -> crate::types::SyncState {

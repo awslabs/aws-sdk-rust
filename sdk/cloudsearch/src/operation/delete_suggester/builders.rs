@@ -36,6 +36,12 @@ impl DeleteSuggesterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteSuggester as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_suggester::builders::DeleteSuggesterInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DeleteSuggesterFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p>Specifies the name of the suggester you want to delete.</p>
     pub fn suggester_name(
         mut self,
@@ -141,5 +151,9 @@ impl DeleteSuggesterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_suggester_name(input);
         self
+    }
+    /// <p>Specifies the name of the suggester you want to delete.</p>
+    pub fn get_suggester_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_suggester_name()
     }
 }

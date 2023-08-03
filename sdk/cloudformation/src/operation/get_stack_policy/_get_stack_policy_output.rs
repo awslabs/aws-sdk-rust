@@ -53,6 +53,10 @@ impl GetStackPolicyOutputBuilder {
         self.stack_policy_body = input;
         self
     }
+    /// <p>Structure containing the stack policy body. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates to Stack Resources</a> in the CloudFormation User Guide.)</p>
+    pub fn get_stack_policy_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_policy_body
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

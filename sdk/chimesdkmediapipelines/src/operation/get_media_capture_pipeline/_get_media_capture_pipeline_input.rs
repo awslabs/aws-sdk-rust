@@ -47,6 +47,10 @@ impl GetMediaCapturePipelineInputBuilder {
         self.media_pipeline_id = input;
         self
     }
+    /// <p>The ID of the pipeline that you want to get.</p>
+    pub fn get_media_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.media_pipeline_id
+    }
     /// Consumes the builder and constructs a [`GetMediaCapturePipelineInput`](crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineInput).
     pub fn build(
         self,

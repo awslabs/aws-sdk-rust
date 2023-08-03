@@ -36,6 +36,13 @@ impl StartReadSetExportJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartReadSetExportJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_read_set_export_job::builders::StartReadSetExportJobInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl StartReadSetExportJobFluentBuilder {
         self.inner = self.inner.set_sequence_store_id(input);
         self
     }
+    /// <p>The read set's sequence store ID.</p>
+    pub fn get_sequence_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sequence_store_id()
+    }
     /// <p>A location for exported files in Amazon S3.</p>
     pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination(input.into());
@@ -141,6 +152,10 @@ impl StartReadSetExportJobFluentBuilder {
     pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination(input);
         self
+    }
+    /// <p>A location for exported files in Amazon S3.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination()
     }
     /// <p>A service role for the job.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -152,6 +167,10 @@ impl StartReadSetExportJobFluentBuilder {
         self.inner = self.inner.set_role_arn(input);
         self
     }
+    /// <p>A service role for the job.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
+    }
     /// <p>To ensure that jobs don't run multiple times, specify a unique token for each job.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -161,6 +180,10 @@ impl StartReadSetExportJobFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>To ensure that jobs don't run multiple times, specify a unique token for each job.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// Appends an item to `sources`.
     ///
@@ -178,5 +201,11 @@ impl StartReadSetExportJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sources(input);
         self
+    }
+    /// <p>The job's source files.</p>
+    pub fn get_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportReadSet>> {
+        self.inner.get_sources()
     }
 }

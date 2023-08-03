@@ -41,6 +41,10 @@ impl DeleteSnapshotScheduleInputBuilder {
         self.volume_arn = input;
         self
     }
+    /// <p>The volume which snapshot schedule to delete.</p>
+    pub fn get_volume_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_arn
+    }
     /// Consumes the builder and constructs a [`DeleteSnapshotScheduleInput`](crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleInput).
     pub fn build(
         self,

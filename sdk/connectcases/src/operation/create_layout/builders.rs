@@ -42,6 +42,10 @@ impl CreateLayoutFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateLayout as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_layout::builders::CreateLayoutInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl CreateLayoutFluentBuilder {
         self.inner = self.inner.set_domain_id(input);
         self
     }
+    /// <p>The unique identifier of the Cases domain. </p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_id()
+    }
     /// <p>The name of the layout. It must be unique for the Cases domain.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -133,6 +141,10 @@ impl CreateLayoutFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the layout. It must be unique for the Cases domain.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>Information about which fields will be present in the layout, and information about the order of the fields.</p>
     pub fn content(mut self, input: crate::types::LayoutContent) -> Self {
@@ -146,5 +158,9 @@ impl CreateLayoutFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_content(input);
         self
+    }
+    /// <p>Information about which fields will be present in the layout, and information about the order of the fields.</p>
+    pub fn get_content(&self) -> &::std::option::Option<crate::types::LayoutContent> {
+        self.inner.get_content()
     }
 }

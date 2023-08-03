@@ -55,6 +55,10 @@ impl CreateMonitoringSubscriptionInputBuilder {
         self.distribution_id = input;
         self
     }
+    /// <p>The ID of the distribution that you are enabling metrics for.</p>
+    pub fn get_distribution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.distribution_id
+    }
     /// <p>A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
     pub fn monitoring_subscription(mut self, input: crate::types::MonitoringSubscription) -> Self {
         self.monitoring_subscription = ::std::option::Option::Some(input);
@@ -67,6 +71,12 @@ impl CreateMonitoringSubscriptionInputBuilder {
     ) -> Self {
         self.monitoring_subscription = input;
         self
+    }
+    /// <p>A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
+    pub fn get_monitoring_subscription(
+        &self,
+    ) -> &::std::option::Option<crate::types::MonitoringSubscription> {
+        &self.monitoring_subscription
     }
     /// Consumes the builder and constructs a [`CreateMonitoringSubscriptionInput`](crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionInput).
     pub fn build(

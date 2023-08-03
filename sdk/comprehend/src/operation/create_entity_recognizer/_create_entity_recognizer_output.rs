@@ -54,6 +54,10 @@ impl CreateEntityRecognizerOutputBuilder {
         self.entity_recognizer_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
+    pub fn get_entity_recognizer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_recognizer_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

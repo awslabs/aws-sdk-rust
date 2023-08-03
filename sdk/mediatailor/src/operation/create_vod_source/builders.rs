@@ -36,6 +36,12 @@ impl CreateVodSourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateVodSource as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_vod_source::builders::CreateVodSourceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +142,12 @@ impl CreateVodSourceFluentBuilder {
         self.inner = self.inner.set_http_package_configurations(input);
         self
     }
+    /// <p>A list of HTTP package configuration parameters for this VOD source.</p>
+    pub fn get_http_package_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HttpPackageConfiguration>> {
+        self.inner.get_http_package_configurations()
+    }
     /// <p>The name of the source location for this VOD source.</p>
     pub fn source_location_name(
         mut self,
@@ -151,6 +163,10 @@ impl CreateVodSourceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source_location_name(input);
         self
+    }
+    /// <p>The name of the source location for this VOD source.</p>
+    pub fn get_source_location_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_location_name()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -175,6 +191,14 @@ impl CreateVodSourceFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags to assign to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>The name associated with the VOD source.&gt;</p>
     pub fn vod_source_name(
         mut self,
@@ -190,5 +214,9 @@ impl CreateVodSourceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_vod_source_name(input);
         self
+    }
+    /// <p>The name associated with the VOD source.&gt;</p>
+    pub fn get_vod_source_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vod_source_name()
     }
 }

@@ -61,6 +61,10 @@ impl ListControlInsightsByControlDomainInputBuilder {
         self.control_domain_id = input;
         self
     }
+    /// <p>The unique identifier for the control domain. </p>
+    pub fn get_control_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_domain_id
+    }
     /// <p>The pagination token that's used to fetch the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl ListControlInsightsByControlDomainInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The pagination token that's used to fetch the next set of results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>Represents the maximum number of results on a page or for an API request call. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -80,6 +88,10 @@ impl ListControlInsightsByControlDomainInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>Represents the maximum number of results on a page or for an API request call. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListControlInsightsByControlDomainInput`](crate::operation::list_control_insights_by_control_domain::ListControlInsightsByControlDomainInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_control_insights_by_control_domain::ListControlInsightsByControlDomainInput, ::aws_smithy_http::operation::error::BuildError>{

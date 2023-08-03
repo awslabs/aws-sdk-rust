@@ -40,6 +40,10 @@ impl GetCsvHeaderInputBuilder {
         self.user_pool_id = input;
         self
     }
+    /// <p>The user pool ID for the user pool that the users are to be imported into.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool_id
+    }
     /// Consumes the builder and constructs a [`GetCsvHeaderInput`](crate::operation::get_csv_header::GetCsvHeaderInput).
     pub fn build(
         self,

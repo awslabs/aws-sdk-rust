@@ -67,6 +67,10 @@ impl UpdateFailoverConfigBuilder {
         self.failover_mode = input;
         self
     }
+    /// The type of failover you choose for this flow. MERGE combines the source streams into a single stream, allowing graceful recovery from any single-source loss. FAILOVER allows switching between different streams.
+    pub fn get_failover_mode(&self) -> &::std::option::Option<crate::types::FailoverMode> {
+        &self.failover_mode
+    }
     /// Recovery window time to look for dash-7 packets
     pub fn recovery_window(mut self, input: i32) -> Self {
         self.recovery_window = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl UpdateFailoverConfigBuilder {
     pub fn set_recovery_window(mut self, input: ::std::option::Option<i32>) -> Self {
         self.recovery_window = input;
         self
+    }
+    /// Recovery window time to look for dash-7 packets
+    pub fn get_recovery_window(&self) -> &::std::option::Option<i32> {
+        &self.recovery_window
     }
     /// The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
     pub fn source_priority(mut self, input: crate::types::SourcePriority) -> Self {
@@ -90,6 +98,10 @@ impl UpdateFailoverConfigBuilder {
         self.source_priority = input;
         self
     }
+    /// The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
+    pub fn get_source_priority(&self) -> &::std::option::Option<crate::types::SourcePriority> {
+        &self.source_priority
+    }
     #[allow(missing_docs)] // documentation missing in model
     pub fn state(mut self, input: crate::types::State) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -99,6 +111,10 @@ impl UpdateFailoverConfigBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::State>) -> Self {
         self.state = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::State> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`UpdateFailoverConfig`](crate::types::UpdateFailoverConfig).
     pub fn build(self) -> crate::types::UpdateFailoverConfig {

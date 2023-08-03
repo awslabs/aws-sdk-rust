@@ -105,6 +105,10 @@ impl SchemaSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name for the schema object.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type of schema object. The only valid schema type is currently `TABLE`.</p>
     pub fn r#type(mut self, input: crate::types::SchemaType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -114,6 +118,10 @@ impl SchemaSummaryBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::SchemaType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of schema object. The only valid schema type is currently `TABLE`.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::SchemaType> {
+        &self.r#type
     }
     /// <p>The unique account ID for the Amazon Web Services account that owns the schema.</p>
     pub fn creator_account_id(
@@ -131,6 +139,10 @@ impl SchemaSummaryBuilder {
         self.creator_account_id = input;
         self
     }
+    /// <p>The unique account ID for the Amazon Web Services account that owns the schema.</p>
+    pub fn get_creator_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creator_account_id
+    }
     /// <p>The time the schema object was created.</p>
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
@@ -144,6 +156,10 @@ impl SchemaSummaryBuilder {
         self.create_time = input;
         self
     }
+    /// <p>The time the schema object was created.</p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
+    }
     /// <p>The time the schema object was last updated.</p>
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
@@ -156,6 +172,10 @@ impl SchemaSummaryBuilder {
     ) -> Self {
         self.update_time = input;
         self
+    }
+    /// <p>The time the schema object was last updated.</p>
+    pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_time
     }
     /// <p>The unique ID for the collaboration that the schema belongs to.</p>
     pub fn collaboration_id(
@@ -173,6 +193,10 @@ impl SchemaSummaryBuilder {
         self.collaboration_id = input;
         self
     }
+    /// <p>The unique ID for the collaboration that the schema belongs to.</p>
+    pub fn get_collaboration_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collaboration_id
+    }
     /// <p>The unique ARN for the collaboration that the schema belongs to.</p>
     pub fn collaboration_arn(
         mut self,
@@ -188,6 +212,10 @@ impl SchemaSummaryBuilder {
     ) -> Self {
         self.collaboration_arn = input;
         self
+    }
+    /// <p>The unique ARN for the collaboration that the schema belongs to.</p>
+    pub fn get_collaboration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collaboration_arn
     }
     /// Appends an item to `analysis_rule_types`.
     ///
@@ -208,6 +236,12 @@ impl SchemaSummaryBuilder {
         self.analysis_rule_types = input;
         self
     }
+    /// <p>The types of analysis rules that are associated with this schema object.</p>
+    pub fn get_analysis_rule_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisRuleType>> {
+        &self.analysis_rule_types
+    }
     /// <p>The analysis method for the associated schema. The only valid value is currently `DIRECT_QUERY`.</p>
     pub fn analysis_method(mut self, input: crate::types::AnalysisMethod) -> Self {
         self.analysis_method = ::std::option::Option::Some(input);
@@ -220,6 +254,10 @@ impl SchemaSummaryBuilder {
     ) -> Self {
         self.analysis_method = input;
         self
+    }
+    /// <p>The analysis method for the associated schema. The only valid value is currently `DIRECT_QUERY`.</p>
+    pub fn get_analysis_method(&self) -> &::std::option::Option<crate::types::AnalysisMethod> {
+        &self.analysis_method
     }
     /// Consumes the builder and constructs a [`SchemaSummary`](crate::types::SchemaSummary).
     pub fn build(self) -> crate::types::SchemaSummary {

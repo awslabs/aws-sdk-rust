@@ -36,6 +36,13 @@ impl CreateRotationOverrideFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateRotationOverride as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_rotation_override::builders::CreateRotationOverrideInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl CreateRotationOverrideFluentBuilder {
         self.inner = self.inner.set_rotation_id(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the rotation to create an override for.</p>
+    pub fn get_rotation_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rotation_id()
+    }
     /// Appends an item to `NewContactIds`.
     ///
     /// To override the contents of this collection use [`set_new_contact_ids`](Self::set_new_contact_ids).
@@ -148,6 +159,13 @@ impl CreateRotationOverrideFluentBuilder {
         self.inner = self.inner.set_new_contact_ids(input);
         self
     }
+    /// <p>The Amazon Resource Names (ARNs) of the contacts to replace those in the current on-call rotation with.</p>
+    /// <p>If you want to include any current team members in the override shift, you must include their ARNs in the new contact ID list.</p>
+    pub fn get_new_contact_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_new_contact_ids()
+    }
     /// <p>The date and time when the override goes into effect.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
@@ -161,6 +179,10 @@ impl CreateRotationOverrideFluentBuilder {
         self.inner = self.inner.set_start_time(input);
         self
     }
+    /// <p>The date and time when the override goes into effect.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
+    }
     /// <p>The date and time when the override ends.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time(input);
@@ -173,6 +195,10 @@ impl CreateRotationOverrideFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
+    }
+    /// <p>The date and time when the override ends.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time()
     }
     /// <p>A token that ensures that the operation is called only once with the specified details.</p>
     pub fn idempotency_token(
@@ -189,5 +215,9 @@ impl CreateRotationOverrideFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
+    }
+    /// <p>A token that ensures that the operation is called only once with the specified details.</p>
+    pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_idempotency_token()
     }
 }

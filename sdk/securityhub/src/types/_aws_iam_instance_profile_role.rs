@@ -82,6 +82,10 @@ impl AwsIamInstanceProfileRoleBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the role.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The policy that grants an entity permission to assume the role.</p>
     pub fn assume_role_policy_document(
         mut self,
@@ -98,6 +102,10 @@ impl AwsIamInstanceProfileRoleBuilder {
         self.assume_role_policy_document = input;
         self
     }
+    /// <p>The policy that grants an entity permission to assume the role.</p>
+    pub fn get_assume_role_policy_document(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assume_role_policy_document
+    }
     /// <p>Indicates when the role was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn create_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -110,6 +118,11 @@ impl AwsIamInstanceProfileRoleBuilder {
         self.create_date = input;
         self
     }
+    /// <p>Indicates when the role was created.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_create_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.create_date
+    }
     /// <p>The path to the role.</p>
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path = ::std::option::Option::Some(input.into());
@@ -119,6 +132,10 @@ impl AwsIamInstanceProfileRoleBuilder {
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path = input;
         self
+    }
+    /// <p>The path to the role.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
     }
     /// <p>The identifier of the role.</p>
     pub fn role_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -130,6 +147,10 @@ impl AwsIamInstanceProfileRoleBuilder {
         self.role_id = input;
         self
     }
+    /// <p>The identifier of the role.</p>
+    pub fn get_role_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_id
+    }
     /// <p>The name of the role.</p>
     pub fn role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_name = ::std::option::Option::Some(input.into());
@@ -139,6 +160,10 @@ impl AwsIamInstanceProfileRoleBuilder {
     pub fn set_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_name = input;
         self
+    }
+    /// <p>The name of the role.</p>
+    pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_name
     }
     /// Consumes the builder and constructs a [`AwsIamInstanceProfileRole`](crate::types::AwsIamInstanceProfileRole).
     pub fn build(self) -> crate::types::AwsIamInstanceProfileRole {

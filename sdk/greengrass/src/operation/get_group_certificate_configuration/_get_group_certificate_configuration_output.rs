@@ -70,6 +70,12 @@ impl GetGroupCertificateConfigurationOutputBuilder {
         self.certificate_authority_expiry_in_milliseconds = input;
         self
     }
+    /// The amount of time remaining before the certificate authority expires, in milliseconds.
+    pub fn get_certificate_authority_expiry_in_milliseconds(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_authority_expiry_in_milliseconds
+    }
     /// The amount of time remaining before the certificate expires, in milliseconds.
     pub fn certificate_expiry_in_milliseconds(
         mut self,
@@ -86,6 +92,12 @@ impl GetGroupCertificateConfigurationOutputBuilder {
         self.certificate_expiry_in_milliseconds = input;
         self
     }
+    /// The amount of time remaining before the certificate expires, in milliseconds.
+    pub fn get_certificate_expiry_in_milliseconds(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_expiry_in_milliseconds
+    }
     /// The ID of the group certificate configuration.
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
@@ -95,6 +107,10 @@ impl GetGroupCertificateConfigurationOutputBuilder {
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_id = input;
         self
+    }
+    /// The ID of the group certificate configuration.
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

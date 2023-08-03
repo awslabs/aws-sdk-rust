@@ -72,6 +72,10 @@ impl ModifyClusterIamRolesInputBuilder {
         self.cluster_identifier = input;
         self
     }
+    /// <p>The unique identifier of the cluster for which you want to associate or disassociate IAM roles.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_identifier
+    }
     /// Appends an item to `add_iam_roles`.
     ///
     /// To override the contents of this collection use [`set_add_iam_roles`](Self::set_add_iam_roles).
@@ -93,6 +97,12 @@ impl ModifyClusterIamRolesInputBuilder {
     ) -> Self {
         self.add_iam_roles = input;
         self
+    }
+    /// <p>Zero or more IAM roles to associate with the cluster. The roles must be in their Amazon Resource Name (ARN) format. </p>
+    pub fn get_add_iam_roles(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.add_iam_roles
     }
     /// Appends an item to `remove_iam_roles`.
     ///
@@ -116,6 +126,12 @@ impl ModifyClusterIamRolesInputBuilder {
         self.remove_iam_roles = input;
         self
     }
+    /// <p>Zero or more IAM roles in ARN format to disassociate from the cluster. </p>
+    pub fn get_remove_iam_roles(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.remove_iam_roles
+    }
     /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified.</p>
     pub fn default_iam_role_arn(
         mut self,
@@ -131,6 +147,10 @@ impl ModifyClusterIamRolesInputBuilder {
     ) -> Self {
         self.default_iam_role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified.</p>
+    pub fn get_default_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_iam_role_arn
     }
     /// Consumes the builder and constructs a [`ModifyClusterIamRolesInput`](crate::operation::modify_cluster_iam_roles::ModifyClusterIamRolesInput).
     pub fn build(

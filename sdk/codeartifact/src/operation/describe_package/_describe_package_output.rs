@@ -49,6 +49,10 @@ impl DescribePackageOutputBuilder {
         self.package = input;
         self
     }
+    /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html">PackageDescription</a> object that contains information about the requested package.</p>
+    pub fn get_package(&self) -> &::std::option::Option<crate::types::PackageDescription> {
+        &self.package
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -118,6 +118,10 @@ impl ActionExecutionDetailBuilder {
         self.pipeline_execution_id = input;
         self
     }
+    /// <p>The pipeline execution ID for the action execution.</p>
+    pub fn get_pipeline_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_execution_id
+    }
     /// <p>The action execution ID.</p>
     pub fn action_execution_id(
         mut self,
@@ -134,6 +138,10 @@ impl ActionExecutionDetailBuilder {
         self.action_execution_id = input;
         self
     }
+    /// <p>The action execution ID.</p>
+    pub fn get_action_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_execution_id
+    }
     /// <p>The version of the pipeline where the action was run.</p>
     pub fn pipeline_version(mut self, input: i32) -> Self {
         self.pipeline_version = ::std::option::Option::Some(input);
@@ -143,6 +151,10 @@ impl ActionExecutionDetailBuilder {
     pub fn set_pipeline_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.pipeline_version = input;
         self
+    }
+    /// <p>The version of the pipeline where the action was run.</p>
+    pub fn get_pipeline_version(&self) -> &::std::option::Option<i32> {
+        &self.pipeline_version
     }
     /// <p>The name of the stage that contains the action.</p>
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -154,6 +166,10 @@ impl ActionExecutionDetailBuilder {
         self.stage_name = input;
         self
     }
+    /// <p>The name of the stage that contains the action.</p>
+    pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stage_name
+    }
     /// <p>The name of the action.</p>
     pub fn action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_name = ::std::option::Option::Some(input.into());
@@ -163,6 +179,10 @@ impl ActionExecutionDetailBuilder {
     pub fn set_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action_name = input;
         self
+    }
+    /// <p>The name of the action.</p>
+    pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_name
     }
     /// <p>The start time of the action execution.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -177,6 +197,10 @@ impl ActionExecutionDetailBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The start time of the action execution.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The last update time of the action execution.</p>
     pub fn last_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_update_time = ::std::option::Option::Some(input);
@@ -189,6 +213,10 @@ impl ActionExecutionDetailBuilder {
     ) -> Self {
         self.last_update_time = input;
         self
+    }
+    /// <p>The last update time of the action execution.</p>
+    pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_update_time
     }
     /// <p> The status of the action execution. Status categories are <code>InProgress</code>, <code>Succeeded</code>, and <code>Failed</code>.</p>
     pub fn status(mut self, input: crate::types::ActionExecutionStatus) -> Self {
@@ -203,6 +231,10 @@ impl ActionExecutionDetailBuilder {
         self.status = input;
         self
     }
+    /// <p> The status of the action execution. Status categories are <code>InProgress</code>, <code>Succeeded</code>, and <code>Failed</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ActionExecutionStatus> {
+        &self.status
+    }
     /// <p>Input details for the action execution, such as role ARN, Region, and input artifacts.</p>
     pub fn input(mut self, input: crate::types::ActionExecutionInput) -> Self {
         self.input = ::std::option::Option::Some(input);
@@ -216,6 +248,10 @@ impl ActionExecutionDetailBuilder {
         self.input = input;
         self
     }
+    /// <p>Input details for the action execution, such as role ARN, Region, and input artifacts.</p>
+    pub fn get_input(&self) -> &::std::option::Option<crate::types::ActionExecutionInput> {
+        &self.input
+    }
     /// <p>Output details for the action execution, such as the action execution result.</p>
     pub fn output(mut self, input: crate::types::ActionExecutionOutput) -> Self {
         self.output = ::std::option::Option::Some(input);
@@ -228,6 +264,10 @@ impl ActionExecutionDetailBuilder {
     ) -> Self {
         self.output = input;
         self
+    }
+    /// <p>Output details for the action execution, such as the action execution result.</p>
+    pub fn get_output(&self) -> &::std::option::Option<crate::types::ActionExecutionOutput> {
+        &self.output
     }
     /// Consumes the builder and constructs a [`ActionExecutionDetail`](crate::types::ActionExecutionDetail).
     pub fn build(self) -> crate::types::ActionExecutionDetail {

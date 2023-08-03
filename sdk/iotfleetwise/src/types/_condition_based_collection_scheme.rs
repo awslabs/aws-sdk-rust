@@ -68,6 +68,10 @@ impl ConditionBasedCollectionSchemeBuilder {
         self.expression = input;
         self
     }
+    /// <p>The logical expression used to recognize what data to collect. For example, <code>$variable.Vehicle.OutsideAirTemperature &gt;= 105.0</code>.</p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expression
+    }
     /// <p>The minimum duration of time between two triggering events to collect data, in milliseconds.</p> <note>
     /// <p>If a signal changes often, you might want to collect data at a slower rate.</p>
     /// </note>
@@ -82,6 +86,12 @@ impl ConditionBasedCollectionSchemeBuilder {
         self.minimum_trigger_interval_ms = input;
         self
     }
+    /// <p>The minimum duration of time between two triggering events to collect data, in milliseconds.</p> <note>
+    /// <p>If a signal changes often, you might want to collect data at a slower rate.</p>
+    /// </note>
+    pub fn get_minimum_trigger_interval_ms(&self) -> &::std::option::Option<i64> {
+        &self.minimum_trigger_interval_ms
+    }
     /// <p>Whether to collect data for all triggering events (<code>ALWAYS</code>). Specify (<code>RISING_EDGE</code>), or specify only when the condition first evaluates to false. For example, triggering on "AirbagDeployed"; Users aren't interested on triggering when the airbag is already exploded; they only care about the change from not deployed =&gt; deployed.</p>
     pub fn trigger_mode(mut self, input: crate::types::TriggerMode) -> Self {
         self.trigger_mode = ::std::option::Option::Some(input);
@@ -95,6 +105,10 @@ impl ConditionBasedCollectionSchemeBuilder {
         self.trigger_mode = input;
         self
     }
+    /// <p>Whether to collect data for all triggering events (<code>ALWAYS</code>). Specify (<code>RISING_EDGE</code>), or specify only when the condition first evaluates to false. For example, triggering on "AirbagDeployed"; Users aren't interested on triggering when the airbag is already exploded; they only care about the change from not deployed =&gt; deployed.</p>
+    pub fn get_trigger_mode(&self) -> &::std::option::Option<crate::types::TriggerMode> {
+        &self.trigger_mode
+    }
     /// <p>Specifies the version of the conditional expression language.</p>
     pub fn condition_language_version(mut self, input: i32) -> Self {
         self.condition_language_version = ::std::option::Option::Some(input);
@@ -104,6 +118,10 @@ impl ConditionBasedCollectionSchemeBuilder {
     pub fn set_condition_language_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.condition_language_version = input;
         self
+    }
+    /// <p>Specifies the version of the conditional expression language.</p>
+    pub fn get_condition_language_version(&self) -> &::std::option::Option<i32> {
+        &self.condition_language_version
     }
     /// Consumes the builder and constructs a [`ConditionBasedCollectionScheme`](crate::types::ConditionBasedCollectionScheme).
     pub fn build(self) -> crate::types::ConditionBasedCollectionScheme {

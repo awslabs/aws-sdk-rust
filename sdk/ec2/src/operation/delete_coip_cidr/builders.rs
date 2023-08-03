@@ -36,6 +36,12 @@ impl DeleteCoipCidrFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteCoipCidr as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_coip_cidr::builders::DeleteCoipCidrInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DeleteCoipCidrFluentBuilder {
         self.inner = self.inner.set_cidr(input);
         self
     }
+    /// <p> A customer-owned IP address range that you want to delete. </p>
+    pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cidr()
+    }
     /// <p> The ID of the customer-owned address pool. </p>
     pub fn coip_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.coip_pool_id(input.into());
@@ -136,6 +146,10 @@ impl DeleteCoipCidrFluentBuilder {
         self.inner = self.inner.set_coip_pool_id(input);
         self
     }
+    /// <p> The ID of the customer-owned address pool. </p>
+    pub fn get_coip_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_coip_pool_id()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -145,5 +159,9 @@ impl DeleteCoipCidrFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

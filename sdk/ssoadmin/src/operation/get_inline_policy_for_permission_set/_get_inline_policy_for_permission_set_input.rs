@@ -47,6 +47,10 @@ impl GetInlinePolicyForPermissionSetInputBuilder {
         self.instance_arn = input;
         self
     }
+    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+    pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_arn
+    }
     /// <p>The ARN of the permission set.</p>
     pub fn permission_set_arn(
         mut self,
@@ -62,6 +66,10 @@ impl GetInlinePolicyForPermissionSetInputBuilder {
     ) -> Self {
         self.permission_set_arn = input;
         self
+    }
+    /// <p>The ARN of the permission set.</p>
+    pub fn get_permission_set_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.permission_set_arn
     }
     /// Consumes the builder and constructs a [`GetInlinePolicyForPermissionSetInput`](crate::operation::get_inline_policy_for_permission_set::GetInlinePolicyForPermissionSetInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_inline_policy_for_permission_set::GetInlinePolicyForPermissionSetInput, ::aws_smithy_http::operation::error::BuildError>{

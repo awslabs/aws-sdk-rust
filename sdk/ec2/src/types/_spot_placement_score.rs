@@ -56,6 +56,10 @@ impl SpotPlacementScoreBuilder {
         self.region = input;
         self
     }
+    /// <p>The Region.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
+    }
     /// <p>The Availability Zone.</p>
     pub fn availability_zone_id(
         mut self,
@@ -72,6 +76,10 @@ impl SpotPlacementScoreBuilder {
         self.availability_zone_id = input;
         self
     }
+    /// <p>The Availability Zone.</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_id
+    }
     /// <p>The placement score, on a scale from <code>1</code> to <code>10</code>. A score of <code>10</code> indicates that your Spot request is highly likely to succeed in this Region or Availability Zone. A score of <code>1</code> indicates that your Spot request is not likely to succeed. </p>
     pub fn score(mut self, input: i32) -> Self {
         self.score = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl SpotPlacementScoreBuilder {
     pub fn set_score(mut self, input: ::std::option::Option<i32>) -> Self {
         self.score = input;
         self
+    }
+    /// <p>The placement score, on a scale from <code>1</code> to <code>10</code>. A score of <code>10</code> indicates that your Spot request is highly likely to succeed in this Region or Availability Zone. A score of <code>1</code> indicates that your Spot request is not likely to succeed. </p>
+    pub fn get_score(&self) -> &::std::option::Option<i32> {
+        &self.score
     }
     /// Consumes the builder and constructs a [`SpotPlacementScore`](crate::types::SpotPlacementScore).
     pub fn build(self) -> crate::types::SpotPlacementScore {

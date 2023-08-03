@@ -37,6 +37,12 @@ impl GetUploadStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetUploadStatus as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_upload_status::builders::GetUploadStatusInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,5 +132,9 @@ impl GetUploadStatusFluentBuilder {
     pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_upload_id(input);
         self
+    }
+    /// <p>The ID of the upload. This value is returned by the <code>UploadEntityDefinitions</code> action.</p>
+    pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_upload_id()
     }
 }

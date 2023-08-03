@@ -56,6 +56,10 @@ impl GetStagesOutputBuilder {
         self.item = input;
         self
     }
+    /// <p>The current page of elements from this collection.</p>
+    pub fn get_item(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Stage>> {
+        &self.item
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

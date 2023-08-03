@@ -59,6 +59,10 @@ impl StepTimelineBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>The date and time when the cluster step was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>The date and time when the cluster step execution started.</p>
     pub fn start_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_date_time = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl StepTimelineBuilder {
         self.start_date_time = input;
         self
     }
+    /// <p>The date and time when the cluster step execution started.</p>
+    pub fn get_start_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_date_time
+    }
     /// <p>The date and time when the cluster step execution completed or failed.</p>
     pub fn end_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_date_time = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl StepTimelineBuilder {
     ) -> Self {
         self.end_date_time = input;
         self
+    }
+    /// <p>The date and time when the cluster step execution completed or failed.</p>
+    pub fn get_end_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_date_time
     }
     /// Consumes the builder and constructs a [`StepTimeline`](crate::types::StepTimeline).
     pub fn build(self) -> crate::types::StepTimeline {

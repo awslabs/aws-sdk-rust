@@ -63,6 +63,10 @@ impl CreateCollectionOutputBuilder {
         self.status_code = input;
         self
     }
+    /// <p>HTTP status code indicating the result of the operation.</p>
+    pub fn get_status_code(&self) -> &::std::option::Option<i32> {
+        &self.status_code
+    }
     /// <p>Amazon Resource Name (ARN) of the collection. You can use this to manage permissions on your resources. </p>
     pub fn collection_arn(
         mut self,
@@ -79,6 +83,10 @@ impl CreateCollectionOutputBuilder {
         self.collection_arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the collection. You can use this to manage permissions on your resources. </p>
+    pub fn get_collection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collection_arn
+    }
     /// <p>Version number of the face detection model associated with the collection you are creating.</p>
     pub fn face_model_version(
         mut self,
@@ -94,6 +102,10 @@ impl CreateCollectionOutputBuilder {
     ) -> Self {
         self.face_model_version = input;
         self
+    }
+    /// <p>Version number of the face detection model associated with the collection you are creating.</p>
+    pub fn get_face_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.face_model_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

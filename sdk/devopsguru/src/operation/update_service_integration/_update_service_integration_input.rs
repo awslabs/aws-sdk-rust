@@ -50,6 +50,12 @@ impl UpdateServiceIntegrationInputBuilder {
         self.service_integration = input;
         self
     }
+    /// <p> An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and whether you want to update it to enabled or disabled. </p>
+    pub fn get_service_integration(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateServiceIntegrationConfig> {
+        &self.service_integration
+    }
     /// Consumes the builder and constructs a [`UpdateServiceIntegrationInput`](crate::operation::update_service_integration::UpdateServiceIntegrationInput).
     pub fn build(
         self,

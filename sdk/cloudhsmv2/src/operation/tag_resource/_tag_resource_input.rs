@@ -47,6 +47,10 @@ impl TagResourceInputBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The cluster identifier (ID) for the cluster that you are tagging. To find the cluster ID, use <code>DescribeClusters</code>.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// Appends an item to `tag_list`.
     ///
     /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
@@ -65,6 +69,10 @@ impl TagResourceInputBuilder {
     ) -> Self {
         self.tag_list = input;
         self
+    }
+    /// <p>A list of one or more tags.</p>
+    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tag_list
     }
     /// Consumes the builder and constructs a [`TagResourceInput`](crate::operation::tag_resource::TagResourceInput).
     pub fn build(

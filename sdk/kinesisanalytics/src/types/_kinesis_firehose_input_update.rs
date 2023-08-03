@@ -54,6 +54,10 @@ impl KinesisFirehoseInputUpdateBuilder {
         self.resource_arn_update = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the input Amazon Kinesis Firehose delivery stream to read.</p>
+    pub fn get_resource_arn_update(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn_update
+    }
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to grant the necessary permissions to this role.</p>
     pub fn role_arn_update(
         mut self,
@@ -69,6 +73,10 @@ impl KinesisFirehoseInputUpdateBuilder {
     ) -> Self {
         self.role_arn_update = input;
         self
+    }
+    /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to grant the necessary permissions to this role.</p>
+    pub fn get_role_arn_update(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn_update
     }
     /// Consumes the builder and constructs a [`KinesisFirehoseInputUpdate`](crate::types::KinesisFirehoseInputUpdate).
     pub fn build(self) -> crate::types::KinesisFirehoseInputUpdate {

@@ -37,6 +37,12 @@ impl CreateStreamKeyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateStreamKey as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_stream_key::builders::CreateStreamKeyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl CreateStreamKeyFluentBuilder {
         self.inner = self.inner.set_channel_arn(input);
         self
     }
+    /// <p>ARN of the channel for which to create the stream key.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_arn()
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -149,5 +159,13 @@ impl CreateStreamKeyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

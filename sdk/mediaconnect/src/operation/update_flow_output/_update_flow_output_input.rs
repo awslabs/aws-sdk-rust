@@ -188,6 +188,12 @@ impl UpdateFlowOutputInputBuilder {
         self.cidr_allow_list = input;
         self
     }
+    /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+    pub fn get_cidr_allow_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.cidr_allow_list
+    }
     /// A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -198,6 +204,10 @@ impl UpdateFlowOutputInputBuilder {
         self.description = input;
         self
     }
+    /// A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user.
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// The IP address where you want to send the output.
     pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination = ::std::option::Option::Some(input.into());
@@ -207,6 +217,10 @@ impl UpdateFlowOutputInputBuilder {
     pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination = input;
         self
+    }
+    /// The IP address where you want to send the output.
+    pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination
     }
     /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key). Allowable encryption types: static-key.
     pub fn encryption(mut self, input: crate::types::UpdateEncryption) -> Self {
@@ -221,6 +235,10 @@ impl UpdateFlowOutputInputBuilder {
         self.encryption = input;
         self
     }
+    /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key). Allowable encryption types: static-key.
+    pub fn get_encryption(&self) -> &::std::option::Option<crate::types::UpdateEncryption> {
+        &self.encryption
+    }
     /// The flow that is associated with the output that you want to update.
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
@@ -231,6 +249,10 @@ impl UpdateFlowOutputInputBuilder {
         self.flow_arn = input;
         self
     }
+    /// The flow that is associated with the output that you want to update.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_arn
+    }
     /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
     pub fn max_latency(mut self, input: i32) -> Self {
         self.max_latency = ::std::option::Option::Some(input);
@@ -240,6 +262,10 @@ impl UpdateFlowOutputInputBuilder {
     pub fn set_max_latency(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_latency = input;
         self
+    }
+    /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
+    pub fn get_max_latency(&self) -> &::std::option::Option<i32> {
+        &self.max_latency
     }
     /// Appends an item to `media_stream_output_configurations`.
     ///
@@ -265,6 +291,13 @@ impl UpdateFlowOutputInputBuilder {
         self.media_stream_output_configurations = input;
         self
     }
+    /// The media streams that are associated with the output, and the parameters for those associations.
+    pub fn get_media_stream_output_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaStreamOutputConfigurationRequest>>
+    {
+        &self.media_stream_output_configurations
+    }
     /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
     pub fn min_latency(mut self, input: i32) -> Self {
         self.min_latency = ::std::option::Option::Some(input);
@@ -274,6 +307,10 @@ impl UpdateFlowOutputInputBuilder {
     pub fn set_min_latency(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_latency = input;
         self
+    }
+    /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
+    pub fn get_min_latency(&self) -> &::std::option::Option<i32> {
+        &self.min_latency
     }
     /// The ARN of the output that you want to update.
     pub fn output_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -285,6 +322,10 @@ impl UpdateFlowOutputInputBuilder {
         self.output_arn = input;
         self
     }
+    /// The ARN of the output that you want to update.
+    pub fn get_output_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_arn
+    }
     /// The port to use when content is distributed to this output.
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -294,6 +335,10 @@ impl UpdateFlowOutputInputBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
+    }
+    /// The port to use when content is distributed to this output.
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// The protocol to use for the output.
     pub fn protocol(mut self, input: crate::types::Protocol) -> Self {
@@ -305,6 +350,10 @@ impl UpdateFlowOutputInputBuilder {
         self.protocol = input;
         self
     }
+    /// The protocol to use for the output.
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::Protocol> {
+        &self.protocol
+    }
     /// The remote ID for the Zixi-pull stream.
     pub fn remote_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.remote_id = ::std::option::Option::Some(input.into());
@@ -315,6 +364,10 @@ impl UpdateFlowOutputInputBuilder {
         self.remote_id = input;
         self
     }
+    /// The remote ID for the Zixi-pull stream.
+    pub fn get_remote_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.remote_id
+    }
     /// The port that the flow uses to send outbound requests to initiate connection with the sender.
     pub fn sender_control_port(mut self, input: i32) -> Self {
         self.sender_control_port = ::std::option::Option::Some(input);
@@ -324,6 +377,10 @@ impl UpdateFlowOutputInputBuilder {
     pub fn set_sender_control_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.sender_control_port = input;
         self
+    }
+    /// The port that the flow uses to send outbound requests to initiate connection with the sender.
+    pub fn get_sender_control_port(&self) -> &::std::option::Option<i32> {
+        &self.sender_control_port
     }
     /// The IP address that the flow communicates with to initiate connection with the sender.
     pub fn sender_ip_address(
@@ -341,6 +398,10 @@ impl UpdateFlowOutputInputBuilder {
         self.sender_ip_address = input;
         self
     }
+    /// The IP address that the flow communicates with to initiate connection with the sender.
+    pub fn get_sender_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sender_ip_address
+    }
     /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
     pub fn smoothing_latency(mut self, input: i32) -> Self {
         self.smoothing_latency = ::std::option::Option::Some(input);
@@ -351,6 +412,10 @@ impl UpdateFlowOutputInputBuilder {
         self.smoothing_latency = input;
         self
     }
+    /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
+    pub fn get_smoothing_latency(&self) -> &::std::option::Option<i32> {
+        &self.smoothing_latency
+    }
     /// The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based streams.
     pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_id = ::std::option::Option::Some(input.into());
@@ -360,6 +425,10 @@ impl UpdateFlowOutputInputBuilder {
     pub fn set_stream_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_id = input;
         self
+    }
+    /// The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based streams.
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_id
     }
     /// The name of the VPC interface attachment to use for this output.
     pub fn vpc_interface_attachment(mut self, input: crate::types::VpcInterfaceAttachment) -> Self {
@@ -373,6 +442,12 @@ impl UpdateFlowOutputInputBuilder {
     ) -> Self {
         self.vpc_interface_attachment = input;
         self
+    }
+    /// The name of the VPC interface attachment to use for this output.
+    pub fn get_vpc_interface_attachment(
+        &self,
+    ) -> &::std::option::Option<crate::types::VpcInterfaceAttachment> {
+        &self.vpc_interface_attachment
     }
     /// Consumes the builder and constructs a [`UpdateFlowOutputInput`](crate::operation::update_flow_output::UpdateFlowOutputInput).
     pub fn build(

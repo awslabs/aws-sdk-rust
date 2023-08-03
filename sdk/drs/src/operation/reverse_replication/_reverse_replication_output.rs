@@ -53,6 +53,12 @@ impl ReverseReplicationOutputBuilder {
         self.reversed_direction_source_server_arn = input;
         self
     }
+    /// <p>ARN of created SourceServer.</p>
+    pub fn get_reversed_direction_source_server_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.reversed_direction_source_server_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

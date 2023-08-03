@@ -70,6 +70,10 @@ impl BatchGetRecordErrorBuilder {
         self.feature_group_name = input;
         self
     }
+    /// <p>The name of the feature group that the record belongs to.</p>
+    pub fn get_feature_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.feature_group_name
+    }
     /// <p>The value for the <code>RecordIdentifier</code> in string format of a Record from a <code>FeatureGroup</code> that is causing an error when attempting to be retrieved.</p>
     pub fn record_identifier_value_as_string(
         mut self,
@@ -86,6 +90,12 @@ impl BatchGetRecordErrorBuilder {
         self.record_identifier_value_as_string = input;
         self
     }
+    /// <p>The value for the <code>RecordIdentifier</code> in string format of a Record from a <code>FeatureGroup</code> that is causing an error when attempting to be retrieved.</p>
+    pub fn get_record_identifier_value_as_string(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.record_identifier_value_as_string
+    }
     /// <p>The error code of an error that has occurred when attempting to retrieve a batch of Records. For more information on errors, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors">Errors</a>.</p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
@@ -95,6 +105,10 @@ impl BatchGetRecordErrorBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The error code of an error that has occurred when attempting to retrieve a batch of Records. For more information on errors, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors">Errors</a>.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
     }
     /// <p>The error message of an error that has occurred when attempting to retrieve a record in the batch.</p>
     pub fn error_message(
@@ -111,6 +125,10 @@ impl BatchGetRecordErrorBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>The error message of an error that has occurred when attempting to retrieve a record in the batch.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`BatchGetRecordError`](crate::types::BatchGetRecordError).
     pub fn build(self) -> crate::types::BatchGetRecordError {

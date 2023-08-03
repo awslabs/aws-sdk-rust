@@ -55,6 +55,10 @@ impl UpdateRoutingControlInputBuilder {
         self.routing_control_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
+    pub fn get_routing_control_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.routing_control_arn
+    }
     /// <p>The name of the routing control.</p>
     pub fn routing_control_name(
         mut self,
@@ -70,6 +74,10 @@ impl UpdateRoutingControlInputBuilder {
     ) -> Self {
         self.routing_control_name = input;
         self
+    }
+    /// <p>The name of the routing control.</p>
+    pub fn get_routing_control_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.routing_control_name
     }
     /// Consumes the builder and constructs a [`UpdateRoutingControlInput`](crate::operation::update_routing_control::UpdateRoutingControlInput).
     pub fn build(

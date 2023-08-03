@@ -78,6 +78,10 @@ impl RotationOverrideBuilder {
         self.rotation_override_id = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the override to an on-call rotation.</p>
+    pub fn get_rotation_override_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rotation_override_id
+    }
     /// Appends an item to `new_contact_ids`.
     ///
     /// To override the contents of this collection use [`set_new_contact_ids`](Self::set_new_contact_ids).
@@ -100,6 +104,12 @@ impl RotationOverrideBuilder {
         self.new_contact_ids = input;
         self
     }
+    /// <p>The Amazon Resource Names (ARNs) of the contacts assigned to the override of the on-call rotation.</p>
+    pub fn get_new_contact_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.new_contact_ids
+    }
     /// <p>The time a rotation override begins.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -112,6 +122,10 @@ impl RotationOverrideBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>The time a rotation override begins.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>The time a rotation override ends.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -126,6 +140,10 @@ impl RotationOverrideBuilder {
         self.end_time = input;
         self
     }
+    /// <p>The time a rotation override ends.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>The time a rotation override was created.</p>
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
@@ -138,6 +156,10 @@ impl RotationOverrideBuilder {
     ) -> Self {
         self.create_time = input;
         self
+    }
+    /// <p>The time a rotation override was created.</p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
     }
     /// Consumes the builder and constructs a [`RotationOverride`](crate::types::RotationOverride).
     pub fn build(self) -> crate::types::RotationOverride {

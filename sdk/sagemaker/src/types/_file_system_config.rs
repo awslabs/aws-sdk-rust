@@ -56,6 +56,10 @@ impl FileSystemConfigBuilder {
         self.mount_path = input;
         self
     }
+    /// <p>The path within the image to mount the user's EFS home directory. The directory should be empty. If not specified, defaults to <i>/home/sagemaker-user</i>.</p>
+    pub fn get_mount_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mount_path
+    }
     /// <p>The default POSIX user ID (UID). If not specified, defaults to <code>1000</code>.</p>
     pub fn default_uid(mut self, input: i32) -> Self {
         self.default_uid = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl FileSystemConfigBuilder {
         self.default_uid = input;
         self
     }
+    /// <p>The default POSIX user ID (UID). If not specified, defaults to <code>1000</code>.</p>
+    pub fn get_default_uid(&self) -> &::std::option::Option<i32> {
+        &self.default_uid
+    }
     /// <p>The default POSIX group ID (GID). If not specified, defaults to <code>100</code>.</p>
     pub fn default_gid(mut self, input: i32) -> Self {
         self.default_gid = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl FileSystemConfigBuilder {
     pub fn set_default_gid(mut self, input: ::std::option::Option<i32>) -> Self {
         self.default_gid = input;
         self
+    }
+    /// <p>The default POSIX group ID (GID). If not specified, defaults to <code>100</code>.</p>
+    pub fn get_default_gid(&self) -> &::std::option::Option<i32> {
+        &self.default_gid
     }
     /// Consumes the builder and constructs a [`FileSystemConfig`](crate::types::FileSystemConfig).
     pub fn build(self) -> crate::types::FileSystemConfig {

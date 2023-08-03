@@ -49,6 +49,10 @@ impl AddonHealthBuilder {
         self.issues = input;
         self
     }
+    /// <p>An object representing the health issues for an add-on.</p>
+    pub fn get_issues(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddonIssue>> {
+        &self.issues
+    }
     /// Consumes the builder and constructs a [`AddonHealth`](crate::types::AddonHealth).
     pub fn build(self) -> crate::types::AddonHealth {
         crate::types::AddonHealth {

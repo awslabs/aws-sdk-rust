@@ -54,6 +54,10 @@ impl RebootBrokerOutputBuilder {
         self.cluster_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
     pub fn cluster_operation_arn(
         mut self,
@@ -69,6 +73,10 @@ impl RebootBrokerOutputBuilder {
     ) -> Self {
         self.cluster_operation_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
+    pub fn get_cluster_operation_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_operation_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

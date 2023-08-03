@@ -47,6 +47,10 @@ impl EvaluateSessionInputBuilder {
         self.domain_id = input;
         self
     }
+    /// <p>The identifier of the domain where the session started.</p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_id
+    }
     /// <p>The session identifier, or name of the session, that you want to evaluate. In Voice ID integration, this is the Contact-Id.</p>
     pub fn session_name_or_id(
         mut self,
@@ -62,6 +66,10 @@ impl EvaluateSessionInputBuilder {
     ) -> Self {
         self.session_name_or_id = input;
         self
+    }
+    /// <p>The session identifier, or name of the session, that you want to evaluate. In Voice ID integration, this is the Contact-Id.</p>
+    pub fn get_session_name_or_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_name_or_id
     }
     /// Consumes the builder and constructs a [`EvaluateSessionInput`](crate::operation::evaluate_session::EvaluateSessionInput).
     pub fn build(

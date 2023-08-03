@@ -38,6 +38,10 @@ impl DeleteModelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteModel as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_model::builders::DeleteModelInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -120,6 +124,10 @@ impl DeleteModelFluentBuilder {
         self.inner = self.inner.set_model_id(input);
         self
     }
+    /// <p>The model ID of the model to delete.</p>
+    pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_model_id()
+    }
     /// <p>The model type of the model to delete.</p>
     pub fn model_type(mut self, input: crate::types::ModelTypeEnum) -> Self {
         self.inner = self.inner.model_type(input);
@@ -132,5 +140,9 @@ impl DeleteModelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_model_type(input);
         self
+    }
+    /// <p>The model type of the model to delete.</p>
+    pub fn get_model_type(&self) -> &::std::option::Option<crate::types::ModelTypeEnum> {
+        self.inner.get_model_type()
     }
 }

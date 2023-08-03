@@ -56,6 +56,10 @@ impl QueryStatisticsBuilder {
         self.results_count = input;
         self
     }
+    /// <p>The number of results returned.</p>
+    pub fn get_results_count(&self) -> &::std::option::Option<i32> {
+        &self.results_count
+    }
     /// <p>The total number of results returned by a query.</p>
     pub fn total_results_count(mut self, input: i32) -> Self {
         self.total_results_count = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl QueryStatisticsBuilder {
         self.total_results_count = input;
         self
     }
+    /// <p>The total number of results returned by a query.</p>
+    pub fn get_total_results_count(&self) -> &::std::option::Option<i32> {
+        &self.total_results_count
+    }
     /// <p>The total bytes that the query scanned in the event data store. This value matches the number of bytes for which your account is billed for the query, unless the query is still running.</p>
     pub fn bytes_scanned(mut self, input: i64) -> Self {
         self.bytes_scanned = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl QueryStatisticsBuilder {
     pub fn set_bytes_scanned(mut self, input: ::std::option::Option<i64>) -> Self {
         self.bytes_scanned = input;
         self
+    }
+    /// <p>The total bytes that the query scanned in the event data store. This value matches the number of bytes for which your account is billed for the query, unless the query is still running.</p>
+    pub fn get_bytes_scanned(&self) -> &::std::option::Option<i64> {
+        &self.bytes_scanned
     }
     /// Consumes the builder and constructs a [`QueryStatistics`](crate::types::QueryStatistics).
     pub fn build(self) -> crate::types::QueryStatistics {

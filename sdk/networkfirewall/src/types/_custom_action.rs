@@ -54,6 +54,10 @@ impl CustomActionBuilder {
         self.action_name = input;
         self
     }
+    /// <p>The descriptive name of the custom action. You can't change the name of a custom action after you create it.</p>
+    pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_name
+    }
     /// <p>The custom action associated with the action name.</p>
     pub fn action_definition(mut self, input: crate::types::ActionDefinition) -> Self {
         self.action_definition = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl CustomActionBuilder {
     ) -> Self {
         self.action_definition = input;
         self
+    }
+    /// <p>The custom action associated with the action name.</p>
+    pub fn get_action_definition(&self) -> &::std::option::Option<crate::types::ActionDefinition> {
+        &self.action_definition
     }
     /// Consumes the builder and constructs a [`CustomAction`](crate::types::CustomAction).
     pub fn build(self) -> crate::types::CustomAction {

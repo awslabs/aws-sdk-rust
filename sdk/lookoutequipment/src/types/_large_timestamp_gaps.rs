@@ -59,6 +59,10 @@ impl LargeTimestampGapsBuilder {
         self.status = input;
         self
     }
+    /// <p> Indicates whether there is a potential data issue related to large gaps in timestamps. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::StatisticalIssueStatus> {
+        &self.status
+    }
     /// <p> Indicates the number of large timestamp gaps, if there are any. </p>
     pub fn number_of_large_timestamp_gaps(mut self, input: i32) -> Self {
         self.number_of_large_timestamp_gaps = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl LargeTimestampGapsBuilder {
         self.number_of_large_timestamp_gaps = input;
         self
     }
+    /// <p> Indicates the number of large timestamp gaps, if there are any. </p>
+    pub fn get_number_of_large_timestamp_gaps(&self) -> &::std::option::Option<i32> {
+        &self.number_of_large_timestamp_gaps
+    }
     /// <p> Indicates the size of the largest timestamp gap, in days. </p>
     pub fn max_timestamp_gap_in_days(mut self, input: i32) -> Self {
         self.max_timestamp_gap_in_days = ::std::option::Option::Some(input);
@@ -78,6 +86,10 @@ impl LargeTimestampGapsBuilder {
     pub fn set_max_timestamp_gap_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_timestamp_gap_in_days = input;
         self
+    }
+    /// <p> Indicates the size of the largest timestamp gap, in days. </p>
+    pub fn get_max_timestamp_gap_in_days(&self) -> &::std::option::Option<i32> {
+        &self.max_timestamp_gap_in_days
     }
     /// Consumes the builder and constructs a [`LargeTimestampGaps`](crate::types::LargeTimestampGaps).
     pub fn build(self) -> crate::types::LargeTimestampGaps {

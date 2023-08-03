@@ -64,6 +64,10 @@ impl CreateConfigurationSetEventDestinationInputBuilder {
         self.configuration_set_name = input;
         self
     }
+    /// <p>The name of the configuration set that you want to add an event destination to.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set_name
+    }
     /// <p>A name that identifies the event destination within the configuration set.</p>
     pub fn event_destination_name(
         mut self,
@@ -80,6 +84,10 @@ impl CreateConfigurationSetEventDestinationInputBuilder {
         self.event_destination_name = input;
         self
     }
+    /// <p>A name that identifies the event destination within the configuration set.</p>
+    pub fn get_event_destination_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_destination_name
+    }
     /// <p>An object that defines the event destination.</p>
     pub fn event_destination(mut self, input: crate::types::EventDestinationDefinition) -> Self {
         self.event_destination = ::std::option::Option::Some(input);
@@ -92,6 +100,12 @@ impl CreateConfigurationSetEventDestinationInputBuilder {
     ) -> Self {
         self.event_destination = input;
         self
+    }
+    /// <p>An object that defines the event destination.</p>
+    pub fn get_event_destination(
+        &self,
+    ) -> &::std::option::Option<crate::types::EventDestinationDefinition> {
+        &self.event_destination
     }
     /// Consumes the builder and constructs a [`CreateConfigurationSetEventDestinationInput`](crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationInput, ::aws_smithy_http::operation::error::BuildError>{

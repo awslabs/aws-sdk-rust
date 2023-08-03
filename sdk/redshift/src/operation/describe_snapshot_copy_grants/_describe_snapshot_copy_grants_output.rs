@@ -63,6 +63,11 @@ impl DescribeSnapshotCopyGrantsOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    /// <p>Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b> parameter, but not both. </p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// Appends an item to `snapshot_copy_grants`.
     ///
     /// To override the contents of this collection use [`set_snapshot_copy_grants`](Self::set_snapshot_copy_grants).
@@ -81,6 +86,12 @@ impl DescribeSnapshotCopyGrantsOutputBuilder {
     ) -> Self {
         self.snapshot_copy_grants = input;
         self
+    }
+    /// <p>The list of <code>SnapshotCopyGrant</code> objects.</p>
+    pub fn get_snapshot_copy_grants(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotCopyGrant>> {
+        &self.snapshot_copy_grants
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

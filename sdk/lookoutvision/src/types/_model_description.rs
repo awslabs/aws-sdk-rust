@@ -150,6 +150,10 @@ impl ModelDescriptionBuilder {
         self.model_version = input;
         self
     }
+    /// <p>The version of the model</p>
+    pub fn get_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_version
+    }
     /// <p>The Amazon Resource Name (ARN) of the model.</p>
     pub fn model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_arn = ::std::option::Option::Some(input.into());
@@ -159,6 +163,10 @@ impl ModelDescriptionBuilder {
     pub fn set_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the model.</p>
+    pub fn get_model_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_arn
     }
     /// <p>The unix timestamp for the date and time that the model was created. </p>
     pub fn creation_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -173,6 +181,10 @@ impl ModelDescriptionBuilder {
         self.creation_timestamp = input;
         self
     }
+    /// <p>The unix timestamp for the date and time that the model was created. </p>
+    pub fn get_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_timestamp
+    }
     /// <p>The description for the model.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -183,6 +195,10 @@ impl ModelDescriptionBuilder {
         self.description = input;
         self
     }
+    /// <p>The description for the model.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The status of the model.</p>
     pub fn status(mut self, input: crate::types::ModelStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -192,6 +208,10 @@ impl ModelDescriptionBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ModelStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the model.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ModelStatus> {
+        &self.status
     }
     /// <p>The status message for the model.</p>
     pub fn status_message(
@@ -209,6 +229,10 @@ impl ModelDescriptionBuilder {
         self.status_message = input;
         self
     }
+    /// <p>The status message for the model.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>Performance metrics for the model. Created during training.</p>
     pub fn performance(mut self, input: crate::types::ModelPerformance) -> Self {
         self.performance = ::std::option::Option::Some(input);
@@ -221,6 +245,10 @@ impl ModelDescriptionBuilder {
     ) -> Self {
         self.performance = input;
         self
+    }
+    /// <p>Performance metrics for the model. Created during training.</p>
+    pub fn get_performance(&self) -> &::std::option::Option<crate::types::ModelPerformance> {
+        &self.performance
     }
     /// <p>The S3 location where Amazon Lookout for Vision saves model training files.</p>
     pub fn output_config(mut self, input: crate::types::OutputConfig) -> Self {
@@ -235,6 +263,10 @@ impl ModelDescriptionBuilder {
         self.output_config = input;
         self
     }
+    /// <p>The S3 location where Amazon Lookout for Vision saves model training files.</p>
+    pub fn get_output_config(&self) -> &::std::option::Option<crate::types::OutputConfig> {
+        &self.output_config
+    }
     /// <p>The S3 location where Amazon Lookout for Vision saves the manifest file that was used to test the trained model and generate the performance scores.</p>
     pub fn evaluation_manifest(mut self, input: crate::types::OutputS3Object) -> Self {
         self.evaluation_manifest = ::std::option::Option::Some(input);
@@ -247,6 +279,10 @@ impl ModelDescriptionBuilder {
     ) -> Self {
         self.evaluation_manifest = input;
         self
+    }
+    /// <p>The S3 location where Amazon Lookout for Vision saves the manifest file that was used to test the trained model and generate the performance scores.</p>
+    pub fn get_evaluation_manifest(&self) -> &::std::option::Option<crate::types::OutputS3Object> {
+        &self.evaluation_manifest
     }
     /// <p>The S3 location where Amazon Lookout for Vision saves the performance metrics.</p>
     pub fn evaluation_result(mut self, input: crate::types::OutputS3Object) -> Self {
@@ -261,6 +297,10 @@ impl ModelDescriptionBuilder {
         self.evaluation_result = input;
         self
     }
+    /// <p>The S3 location where Amazon Lookout for Vision saves the performance metrics.</p>
+    pub fn get_evaluation_result(&self) -> &::std::option::Option<crate::types::OutputS3Object> {
+        &self.evaluation_result
+    }
     /// <p>The unix timestamp for the date and time that the evaluation ended. </p>
     pub fn evaluation_end_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.evaluation_end_timestamp = ::std::option::Option::Some(input);
@@ -274,6 +314,12 @@ impl ModelDescriptionBuilder {
         self.evaluation_end_timestamp = input;
         self
     }
+    /// <p>The unix timestamp for the date and time that the evaluation ended. </p>
+    pub fn get_evaluation_end_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.evaluation_end_timestamp
+    }
     /// <p>The identifer for the AWS Key Management Service (AWS KMS) key that was used to encrypt the model during training.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -283,6 +329,10 @@ impl ModelDescriptionBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>The identifer for the AWS Key Management Service (AWS KMS) key that was used to encrypt the model during training.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// <p>The minimum number of inference units used by the model. For more information, see <code>StartModel</code> </p>
     pub fn min_inference_units(mut self, input: i32) -> Self {
@@ -294,6 +344,10 @@ impl ModelDescriptionBuilder {
         self.min_inference_units = input;
         self
     }
+    /// <p>The minimum number of inference units used by the model. For more information, see <code>StartModel</code> </p>
+    pub fn get_min_inference_units(&self) -> &::std::option::Option<i32> {
+        &self.min_inference_units
+    }
     /// <p>The maximum number of inference units Amazon Lookout for Vision uses to auto-scale the model. For more information, see <code>StartModel</code>.</p>
     pub fn max_inference_units(mut self, input: i32) -> Self {
         self.max_inference_units = ::std::option::Option::Some(input);
@@ -303,6 +357,10 @@ impl ModelDescriptionBuilder {
     pub fn set_max_inference_units(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_inference_units = input;
         self
+    }
+    /// <p>The maximum number of inference units Amazon Lookout for Vision uses to auto-scale the model. For more information, see <code>StartModel</code>.</p>
+    pub fn get_max_inference_units(&self) -> &::std::option::Option<i32> {
+        &self.max_inference_units
     }
     /// Consumes the builder and constructs a [`ModelDescription`](crate::types::ModelDescription).
     pub fn build(self) -> crate::types::ModelDescription {

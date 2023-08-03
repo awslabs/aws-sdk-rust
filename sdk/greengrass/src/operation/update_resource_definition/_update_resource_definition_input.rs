@@ -49,6 +49,10 @@ impl UpdateResourceDefinitionInputBuilder {
         self.name = input;
         self
     }
+    /// The name of the definition.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// The ID of the resource definition.
     pub fn resource_definition_id(
         mut self,
@@ -64,6 +68,10 @@ impl UpdateResourceDefinitionInputBuilder {
     ) -> Self {
         self.resource_definition_id = input;
         self
+    }
+    /// The ID of the resource definition.
+    pub fn get_resource_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_definition_id
     }
     /// Consumes the builder and constructs a [`UpdateResourceDefinitionInput`](crate::operation::update_resource_definition::UpdateResourceDefinitionInput).
     pub fn build(

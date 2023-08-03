@@ -56,6 +56,10 @@ impl BiasBuilder {
         self.report = input;
         self
     }
+    /// <p>The bias report for a model</p>
+    pub fn get_report(&self) -> &::std::option::Option<crate::types::MetricsSource> {
+        &self.report
+    }
     /// <p>The pre-training bias report for a model.</p>
     pub fn pre_training_report(mut self, input: crate::types::MetricsSource) -> Self {
         self.pre_training_report = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl BiasBuilder {
         self.pre_training_report = input;
         self
     }
+    /// <p>The pre-training bias report for a model.</p>
+    pub fn get_pre_training_report(&self) -> &::std::option::Option<crate::types::MetricsSource> {
+        &self.pre_training_report
+    }
     /// <p>The post-training bias report for a model.</p>
     pub fn post_training_report(mut self, input: crate::types::MetricsSource) -> Self {
         self.post_training_report = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl BiasBuilder {
     ) -> Self {
         self.post_training_report = input;
         self
+    }
+    /// <p>The post-training bias report for a model.</p>
+    pub fn get_post_training_report(&self) -> &::std::option::Option<crate::types::MetricsSource> {
+        &self.post_training_report
     }
     /// Consumes the builder and constructs a [`Bias`](crate::types::Bias).
     pub fn build(self) -> crate::types::Bias {

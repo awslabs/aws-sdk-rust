@@ -63,6 +63,12 @@ impl GetBucketReplicationOutputBuilder {
         self.replication_configuration = input;
         self
     }
+    /// <p>A container for replication rules. You can add up to 1,000 rules. The maximum size of a replication configuration is 2 MB.</p>
+    pub fn get_replication_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReplicationConfiguration> {
+        &self.replication_configuration
+    }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
         self._extended_request_id = Some(extended_request_id.into());
         self

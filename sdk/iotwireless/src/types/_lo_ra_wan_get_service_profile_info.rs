@@ -184,6 +184,10 @@ impl LoRaWanGetServiceProfileInfoBuilder {
         self.ul_rate = input;
         self
     }
+    /// <p>The ULRate value.</p>
+    pub fn get_ul_rate(&self) -> &::std::option::Option<i32> {
+        &self.ul_rate
+    }
     /// <p>The ULBucketSize value.</p>
     pub fn ul_bucket_size(mut self, input: i32) -> Self {
         self.ul_bucket_size = ::std::option::Option::Some(input);
@@ -193,6 +197,10 @@ impl LoRaWanGetServiceProfileInfoBuilder {
     pub fn set_ul_bucket_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.ul_bucket_size = input;
         self
+    }
+    /// <p>The ULBucketSize value.</p>
+    pub fn get_ul_bucket_size(&self) -> &::std::option::Option<i32> {
+        &self.ul_bucket_size
     }
     /// <p>The ULRatePolicy value.</p>
     pub fn ul_rate_policy(
@@ -210,6 +218,10 @@ impl LoRaWanGetServiceProfileInfoBuilder {
         self.ul_rate_policy = input;
         self
     }
+    /// <p>The ULRatePolicy value.</p>
+    pub fn get_ul_rate_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ul_rate_policy
+    }
     /// <p>The DLRate value.</p>
     pub fn dl_rate(mut self, input: i32) -> Self {
         self.dl_rate = ::std::option::Option::Some(input);
@@ -220,6 +232,10 @@ impl LoRaWanGetServiceProfileInfoBuilder {
         self.dl_rate = input;
         self
     }
+    /// <p>The DLRate value.</p>
+    pub fn get_dl_rate(&self) -> &::std::option::Option<i32> {
+        &self.dl_rate
+    }
     /// <p>The DLBucketSize value.</p>
     pub fn dl_bucket_size(mut self, input: i32) -> Self {
         self.dl_bucket_size = ::std::option::Option::Some(input);
@@ -229,6 +245,10 @@ impl LoRaWanGetServiceProfileInfoBuilder {
     pub fn set_dl_bucket_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.dl_bucket_size = input;
         self
+    }
+    /// <p>The DLBucketSize value.</p>
+    pub fn get_dl_bucket_size(&self) -> &::std::option::Option<i32> {
+        &self.dl_bucket_size
     }
     /// <p>The DLRatePolicy value.</p>
     pub fn dl_rate_policy(
@@ -246,6 +266,10 @@ impl LoRaWanGetServiceProfileInfoBuilder {
         self.dl_rate_policy = input;
         self
     }
+    /// <p>The DLRatePolicy value.</p>
+    pub fn get_dl_rate_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dl_rate_policy
+    }
     /// <p>The AddGWMetaData value.</p>
     pub fn add_gw_metadata(mut self, input: bool) -> Self {
         self.add_gw_metadata = ::std::option::Option::Some(input);
@@ -255,6 +279,10 @@ impl LoRaWanGetServiceProfileInfoBuilder {
     pub fn set_add_gw_metadata(mut self, input: ::std::option::Option<bool>) -> Self {
         self.add_gw_metadata = input;
         self
+    }
+    /// <p>The AddGWMetaData value.</p>
+    pub fn get_add_gw_metadata(&self) -> &::std::option::Option<bool> {
+        &self.add_gw_metadata
     }
     /// <p>The DevStatusReqFreq value.</p>
     pub fn dev_status_req_freq(mut self, input: i32) -> Self {
@@ -266,6 +294,10 @@ impl LoRaWanGetServiceProfileInfoBuilder {
         self.dev_status_req_freq = input;
         self
     }
+    /// <p>The DevStatusReqFreq value.</p>
+    pub fn get_dev_status_req_freq(&self) -> &::std::option::Option<i32> {
+        &self.dev_status_req_freq
+    }
     /// <p>The ReportDevStatusBattery value.</p>
     pub fn report_dev_status_battery(mut self, input: bool) -> Self {
         self.report_dev_status_battery = ::std::option::Option::Some(input);
@@ -275,6 +307,10 @@ impl LoRaWanGetServiceProfileInfoBuilder {
     pub fn set_report_dev_status_battery(mut self, input: ::std::option::Option<bool>) -> Self {
         self.report_dev_status_battery = input;
         self
+    }
+    /// <p>The ReportDevStatusBattery value.</p>
+    pub fn get_report_dev_status_battery(&self) -> &::std::option::Option<bool> {
+        &self.report_dev_status_battery
     }
     /// <p>The ReportDevStatusMargin value.</p>
     pub fn report_dev_status_margin(mut self, input: bool) -> Self {
@@ -286,6 +322,10 @@ impl LoRaWanGetServiceProfileInfoBuilder {
         self.report_dev_status_margin = input;
         self
     }
+    /// <p>The ReportDevStatusMargin value.</p>
+    pub fn get_report_dev_status_margin(&self) -> &::std::option::Option<bool> {
+        &self.report_dev_status_margin
+    }
     /// <p>The DRMin value.</p>
     pub fn dr_min(mut self, input: i32) -> Self {
         self.dr_min = ::std::option::Option::Some(input);
@@ -295,6 +335,10 @@ impl LoRaWanGetServiceProfileInfoBuilder {
     pub fn set_dr_min(mut self, input: ::std::option::Option<i32>) -> Self {
         self.dr_min = input;
         self
+    }
+    /// <p>The DRMin value.</p>
+    pub fn get_dr_min(&self) -> &::std::option::Option<i32> {
+        &self.dr_min
     }
     /// <p>The DRMax value.</p>
     pub fn dr_max(mut self, input: i32) -> Self {
@@ -306,6 +350,10 @@ impl LoRaWanGetServiceProfileInfoBuilder {
         self.dr_max = input;
         self
     }
+    /// <p>The DRMax value.</p>
+    pub fn get_dr_max(&self) -> &::std::option::Option<i32> {
+        &self.dr_max
+    }
     /// <p>The ChannelMask value.</p>
     pub fn channel_mask(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_mask = ::std::option::Option::Some(input.into());
@@ -315,6 +363,10 @@ impl LoRaWanGetServiceProfileInfoBuilder {
     pub fn set_channel_mask(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_mask = input;
         self
+    }
+    /// <p>The ChannelMask value.</p>
+    pub fn get_channel_mask(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_mask
     }
     /// <p>The PRAllowed value that describes whether passive roaming is allowed.</p>
     pub fn pr_allowed(mut self, input: bool) -> Self {
@@ -326,6 +378,10 @@ impl LoRaWanGetServiceProfileInfoBuilder {
         self.pr_allowed = input;
         self
     }
+    /// <p>The PRAllowed value that describes whether passive roaming is allowed.</p>
+    pub fn get_pr_allowed(&self) -> &::std::option::Option<bool> {
+        &self.pr_allowed
+    }
     /// <p>The HRAllowed value that describes whether handover roaming is allowed.</p>
     pub fn hr_allowed(mut self, input: bool) -> Self {
         self.hr_allowed = ::std::option::Option::Some(input);
@@ -335,6 +391,10 @@ impl LoRaWanGetServiceProfileInfoBuilder {
     pub fn set_hr_allowed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.hr_allowed = input;
         self
+    }
+    /// <p>The HRAllowed value that describes whether handover roaming is allowed.</p>
+    pub fn get_hr_allowed(&self) -> &::std::option::Option<bool> {
+        &self.hr_allowed
     }
     /// <p>The RAAllowed value that describes whether roaming activation is allowed.</p>
     pub fn ra_allowed(mut self, input: bool) -> Self {
@@ -346,6 +406,10 @@ impl LoRaWanGetServiceProfileInfoBuilder {
         self.ra_allowed = input;
         self
     }
+    /// <p>The RAAllowed value that describes whether roaming activation is allowed.</p>
+    pub fn get_ra_allowed(&self) -> &::std::option::Option<bool> {
+        &self.ra_allowed
+    }
     /// <p>The NwkGeoLoc value.</p>
     pub fn nwk_geo_loc(mut self, input: bool) -> Self {
         self.nwk_geo_loc = ::std::option::Option::Some(input);
@@ -355,6 +419,10 @@ impl LoRaWanGetServiceProfileInfoBuilder {
     pub fn set_nwk_geo_loc(mut self, input: ::std::option::Option<bool>) -> Self {
         self.nwk_geo_loc = input;
         self
+    }
+    /// <p>The NwkGeoLoc value.</p>
+    pub fn get_nwk_geo_loc(&self) -> &::std::option::Option<bool> {
+        &self.nwk_geo_loc
     }
     /// <p>The TargetPER value.</p>
     pub fn target_per(mut self, input: i32) -> Self {
@@ -366,6 +434,10 @@ impl LoRaWanGetServiceProfileInfoBuilder {
         self.target_per = input;
         self
     }
+    /// <p>The TargetPER value.</p>
+    pub fn get_target_per(&self) -> &::std::option::Option<i32> {
+        &self.target_per
+    }
     /// <p>The MinGwDiversity value.</p>
     pub fn min_gw_diversity(mut self, input: i32) -> Self {
         self.min_gw_diversity = ::std::option::Option::Some(input);
@@ -375,6 +447,10 @@ impl LoRaWanGetServiceProfileInfoBuilder {
     pub fn set_min_gw_diversity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_gw_diversity = input;
         self
+    }
+    /// <p>The MinGwDiversity value.</p>
+    pub fn get_min_gw_diversity(&self) -> &::std::option::Option<i32> {
+        &self.min_gw_diversity
     }
     /// Consumes the builder and constructs a [`LoRaWanGetServiceProfileInfo`](crate::types::LoRaWanGetServiceProfileInfo).
     pub fn build(self) -> crate::types::LoRaWanGetServiceProfileInfo {

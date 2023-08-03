@@ -88,6 +88,12 @@ impl NotificationConfigurationBuilder {
         self.topic_configurations = input;
         self
     }
+    /// <p>The topic to which notifications are sent and the events for which notifications are generated.</p>
+    pub fn get_topic_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>> {
+        &self.topic_configurations
+    }
     /// Appends an item to `queue_configurations`.
     ///
     /// To override the contents of this collection use [`set_queue_configurations`](Self::set_queue_configurations).
@@ -106,6 +112,12 @@ impl NotificationConfigurationBuilder {
     ) -> Self {
         self.queue_configurations = input;
         self
+    }
+    /// <p>The Amazon Simple Queue Service queues to publish messages to and the events for which to publish messages.</p>
+    pub fn get_queue_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QueueConfiguration>> {
+        &self.queue_configurations
     }
     /// Appends an item to `lambda_function_configurations`.
     ///
@@ -129,6 +141,12 @@ impl NotificationConfigurationBuilder {
         self.lambda_function_configurations = input;
         self
     }
+    /// <p>Describes the Lambda functions to invoke and the events for which to invoke them.</p>
+    pub fn get_lambda_function_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionConfiguration>> {
+        &self.lambda_function_configurations
+    }
     /// <p>Enables delivery of events to Amazon EventBridge.</p>
     pub fn event_bridge_configuration(
         mut self,
@@ -144,6 +162,12 @@ impl NotificationConfigurationBuilder {
     ) -> Self {
         self.event_bridge_configuration = input;
         self
+    }
+    /// <p>Enables delivery of events to Amazon EventBridge.</p>
+    pub fn get_event_bridge_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::EventBridgeConfiguration> {
+        &self.event_bridge_configuration
     }
     /// Consumes the builder and constructs a [`NotificationConfiguration`](crate::types::NotificationConfiguration).
     pub fn build(self) -> crate::types::NotificationConfiguration {

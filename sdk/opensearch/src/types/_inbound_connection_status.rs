@@ -91,6 +91,22 @@ impl InboundConnectionStatusBuilder {
         self.status_code = input;
         self
     }
+    /// <p>The status code for the connection. Can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <b>PENDING_ACCEPTANCE</b> - Inbound connection is not yet accepted by the remote domain owner.</p> </li>
+    /// <li> <p> <b>APPROVED</b>: Inbound connection is pending acceptance by the remote domain owner.</p> </li>
+    /// <li> <p> <b>PROVISIONING</b>: Inbound connection is being provisioned.</p> </li>
+    /// <li> <p> <b>ACTIVE</b>: Inbound connection is active and ready to use.</p> </li>
+    /// <li> <p> <b>REJECTING</b>: Inbound connection rejection is in process.</p> </li>
+    /// <li> <p> <b>REJECTED</b>: Inbound connection is rejected.</p> </li>
+    /// <li> <p> <b>DELETING</b>: Inbound connection deletion is in progress.</p> </li>
+    /// <li> <p> <b>DELETED</b>: Inbound connection is deleted and can no longer be used.</p> </li>
+    /// </ul>
+    pub fn get_status_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::InboundConnectionStatusCode> {
+        &self.status_code
+    }
     /// <p>Information about the connection.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -100,6 +116,10 @@ impl InboundConnectionStatusBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>Information about the connection.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`InboundConnectionStatus`](crate::types::InboundConnectionStatus).
     pub fn build(self) -> crate::types::InboundConnectionStatus {

@@ -48,6 +48,12 @@ impl DescribeCachediScsiVolumesInputBuilder {
         self.volume_ar_ns = input;
         self
     }
+    /// <p>An array of strings where each string represents the Amazon Resource Name (ARN) of a cached volume. All of the specified cached volumes must be from the same gateway. Use <code>ListVolumes</code> to get volume ARNs for a gateway.</p>
+    pub fn get_volume_ar_ns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.volume_ar_ns
+    }
     /// Consumes the builder and constructs a [`DescribeCachediScsiVolumesInput`](crate::operation::describe_cachedi_scsi_volumes::DescribeCachediScsiVolumesInput).
     pub fn build(
         self,

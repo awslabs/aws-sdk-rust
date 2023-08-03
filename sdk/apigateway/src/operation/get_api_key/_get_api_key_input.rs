@@ -48,6 +48,10 @@ impl GetApiKeyInputBuilder {
         self.api_key = input;
         self
     }
+    /// <p>The identifier of the ApiKey resource.</p>
+    pub fn get_api_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_key
+    }
     /// <p>A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains the key value.</p>
     pub fn include_value(mut self, input: bool) -> Self {
         self.include_value = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl GetApiKeyInputBuilder {
     pub fn set_include_value(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_value = input;
         self
+    }
+    /// <p>A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains the key value.</p>
+    pub fn get_include_value(&self) -> &::std::option::Option<bool> {
+        &self.include_value
     }
     /// Consumes the builder and constructs a [`GetApiKeyInput`](crate::operation::get_api_key::GetApiKeyInput).
     pub fn build(

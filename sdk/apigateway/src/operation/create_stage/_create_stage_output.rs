@@ -205,6 +205,10 @@ impl CreateStageOutputBuilder {
         self.deployment_id = input;
         self
     }
+    /// <p>The identifier of the Deployment that the stage points to.</p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
+    }
     /// <p>The identifier of a client certificate for an API stage.</p>
     pub fn client_certificate_id(
         mut self,
@@ -221,6 +225,10 @@ impl CreateStageOutputBuilder {
         self.client_certificate_id = input;
         self
     }
+    /// <p>The identifier of a client certificate for an API stage.</p>
+    pub fn get_client_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_certificate_id
+    }
     /// <p>The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to API Gateway. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_name = ::std::option::Option::Some(input.into());
@@ -230,6 +238,10 @@ impl CreateStageOutputBuilder {
     pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stage_name = input;
         self
+    }
+    /// <p>The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to API Gateway. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
+    pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stage_name
     }
     /// <p>The stage's description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -241,6 +253,10 @@ impl CreateStageOutputBuilder {
         self.description = input;
         self
     }
+    /// <p>The stage's description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>Specifies whether a cache cluster is enabled for the stage.</p>
     pub fn cache_cluster_enabled(mut self, input: bool) -> Self {
         self.cache_cluster_enabled = ::std::option::Option::Some(input);
@@ -250,6 +266,10 @@ impl CreateStageOutputBuilder {
     pub fn set_cache_cluster_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.cache_cluster_enabled = input;
         self
+    }
+    /// <p>Specifies whether a cache cluster is enabled for the stage.</p>
+    pub fn get_cache_cluster_enabled(&self) -> &::std::option::Option<bool> {
+        &self.cache_cluster_enabled
     }
     /// <p>The stage's cache capacity in GB. For more information about choosing a cache size, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching to enhance responsiveness</a>.</p>
     pub fn cache_cluster_size(mut self, input: crate::types::CacheClusterSize) -> Self {
@@ -264,6 +284,10 @@ impl CreateStageOutputBuilder {
         self.cache_cluster_size = input;
         self
     }
+    /// <p>The stage's cache capacity in GB. For more information about choosing a cache size, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching to enhance responsiveness</a>.</p>
+    pub fn get_cache_cluster_size(&self) -> &::std::option::Option<crate::types::CacheClusterSize> {
+        &self.cache_cluster_size
+    }
     /// <p>The status of the cache cluster for the stage, if enabled.</p>
     pub fn cache_cluster_status(mut self, input: crate::types::CacheClusterStatus) -> Self {
         self.cache_cluster_status = ::std::option::Option::Some(input);
@@ -276,6 +300,12 @@ impl CreateStageOutputBuilder {
     ) -> Self {
         self.cache_cluster_status = input;
         self
+    }
+    /// <p>The status of the cache cluster for the stage, if enabled.</p>
+    pub fn get_cache_cluster_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::CacheClusterStatus> {
+        &self.cache_cluster_status
     }
     /// Adds a key-value pair to `method_settings`.
     ///
@@ -302,6 +332,14 @@ impl CreateStageOutputBuilder {
         self.method_settings = input;
         self
     }
+    /// <p>A map that defines the method settings for a Stage resource. Keys (designated as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*/\*</code> for overriding all methods in the stage. </p>
+    pub fn get_method_settings(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::MethodSetting>,
+    > {
+        &self.method_settings
+    }
     /// Adds a key-value pair to `variables`.
     ///
     /// To override the contents of this collection use [`set_variables`](Self::set_variables).
@@ -327,6 +365,14 @@ impl CreateStageOutputBuilder {
         self.variables = input;
         self
     }
+    /// <p>A map that defines the stage variables for a Stage resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
+    pub fn get_variables(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.variables
+    }
     /// <p>The version of the associated API documentation.</p>
     pub fn documentation_version(
         mut self,
@@ -343,6 +389,10 @@ impl CreateStageOutputBuilder {
         self.documentation_version = input;
         self
     }
+    /// <p>The version of the associated API documentation.</p>
+    pub fn get_documentation_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.documentation_version
+    }
     /// <p>Settings for logging access in this stage.</p>
     pub fn access_log_settings(mut self, input: crate::types::AccessLogSettings) -> Self {
         self.access_log_settings = ::std::option::Option::Some(input);
@@ -355,6 +405,12 @@ impl CreateStageOutputBuilder {
     ) -> Self {
         self.access_log_settings = input;
         self
+    }
+    /// <p>Settings for logging access in this stage.</p>
+    pub fn get_access_log_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::AccessLogSettings> {
+        &self.access_log_settings
     }
     /// <p>Settings for the canary deployment in this stage.</p>
     pub fn canary_settings(mut self, input: crate::types::CanarySettings) -> Self {
@@ -369,6 +425,10 @@ impl CreateStageOutputBuilder {
         self.canary_settings = input;
         self
     }
+    /// <p>Settings for the canary deployment in this stage.</p>
+    pub fn get_canary_settings(&self) -> &::std::option::Option<crate::types::CanarySettings> {
+        &self.canary_settings
+    }
     /// <p>Specifies whether active tracing with X-ray is enabled for the Stage.</p>
     pub fn tracing_enabled(mut self, input: bool) -> Self {
         self.tracing_enabled = ::std::option::Option::Some(input);
@@ -379,6 +439,10 @@ impl CreateStageOutputBuilder {
         self.tracing_enabled = input;
         self
     }
+    /// <p>Specifies whether active tracing with X-ray is enabled for the Stage.</p>
+    pub fn get_tracing_enabled(&self) -> &::std::option::Option<bool> {
+        &self.tracing_enabled
+    }
     /// <p>The ARN of the WebAcl associated with the Stage.</p>
     pub fn web_acl_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.web_acl_arn = ::std::option::Option::Some(input.into());
@@ -388,6 +452,10 @@ impl CreateStageOutputBuilder {
     pub fn set_web_acl_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.web_acl_arn = input;
         self
+    }
+    /// <p>The ARN of the WebAcl associated with the Stage.</p>
+    pub fn get_web_acl_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.web_acl_arn
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -414,6 +482,14 @@ impl CreateStageOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The timestamp when the stage was created.</p>
     pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_date = ::std::option::Option::Some(input);
@@ -427,6 +503,10 @@ impl CreateStageOutputBuilder {
         self.created_date = input;
         self
     }
+    /// <p>The timestamp when the stage was created.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_date
+    }
     /// <p>The timestamp when the stage last updated.</p>
     pub fn last_updated_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date = ::std::option::Option::Some(input);
@@ -439,6 +519,10 @@ impl CreateStageOutputBuilder {
     ) -> Self {
         self.last_updated_date = input;
         self
+    }
+    /// <p>The timestamp when the stage last updated.</p>
+    pub fn get_last_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

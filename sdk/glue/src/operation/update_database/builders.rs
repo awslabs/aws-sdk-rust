@@ -36,6 +36,12 @@ impl UpdateDatabaseFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDatabase as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_database::builders::UpdateDatabaseInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl UpdateDatabaseFluentBuilder {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
+    /// <p>The ID of the Data Catalog in which the metadata database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog_id()
+    }
     /// <p>The name of the database to update in the catalog. For Hive compatibility, this is folded to lowercase.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -127,6 +137,10 @@ impl UpdateDatabaseFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the database to update in the catalog. For Hive compatibility, this is folded to lowercase.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>A <code>DatabaseInput</code> object specifying the new definition of the metadata database in the catalog.</p>
     pub fn database_input(mut self, input: crate::types::DatabaseInput) -> Self {
@@ -140,5 +154,9 @@ impl UpdateDatabaseFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_database_input(input);
         self
+    }
+    /// <p>A <code>DatabaseInput</code> object specifying the new definition of the metadata database in the catalog.</p>
+    pub fn get_database_input(&self) -> &::std::option::Option<crate::types::DatabaseInput> {
+        self.inner.get_database_input()
     }
 }

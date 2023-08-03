@@ -40,6 +40,10 @@ impl DeleteFileEntryBuilder {
         self.file_path = input;
         self
     }
+    /// <p>The full path of the file to be deleted, including the name of the file.</p>
+    pub fn get_file_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_path
+    }
     /// Consumes the builder and constructs a [`DeleteFileEntry`](crate::types::DeleteFileEntry).
     pub fn build(self) -> crate::types::DeleteFileEntry {
         crate::types::DeleteFileEntry {

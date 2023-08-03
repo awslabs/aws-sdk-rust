@@ -50,6 +50,12 @@ impl ResultReuseConfigurationBuilder {
         self.result_reuse_by_age_configuration = input;
         self
     }
+    /// <p>Specifies whether previous query results are reused, and if so, their maximum age.</p>
+    pub fn get_result_reuse_by_age_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResultReuseByAgeConfiguration> {
+        &self.result_reuse_by_age_configuration
+    }
     /// Consumes the builder and constructs a [`ResultReuseConfiguration`](crate::types::ResultReuseConfiguration).
     pub fn build(self) -> crate::types::ResultReuseConfiguration {
         crate::types::ResultReuseConfiguration {

@@ -76,6 +76,17 @@ impl TestCaseFilterBuilder {
         self.status = input;
         self
     }
+    /// <p>The status used to filter test cases. A <code>TestCaseFilter</code> can have one status. Valid values are:</p>
+    /// <ul>
+    /// <li> <p> <code>SUCCEEDED</code> </p> </li>
+    /// <li> <p> <code>FAILED</code> </p> </li>
+    /// <li> <p> <code>ERROR</code> </p> </li>
+    /// <li> <p> <code>SKIPPED</code> </p> </li>
+    /// <li> <p> <code>UNKNOWN</code> </p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>A keyword that is used to filter on the <code>name</code> or the <code>prefix</code> of the test cases. Only test cases where the keyword is a substring of the <code>name</code> or the <code>prefix</code> will be returned.</p>
     pub fn keyword(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.keyword = ::std::option::Option::Some(input.into());
@@ -85,6 +96,10 @@ impl TestCaseFilterBuilder {
     pub fn set_keyword(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.keyword = input;
         self
+    }
+    /// <p>A keyword that is used to filter on the <code>name</code> or the <code>prefix</code> of the test cases. Only test cases where the keyword is a substring of the <code>name</code> or the <code>prefix</code> will be returned.</p>
+    pub fn get_keyword(&self) -> &::std::option::Option<::std::string::String> {
+        &self.keyword
     }
     /// Consumes the builder and constructs a [`TestCaseFilter`](crate::types::TestCaseFilter).
     pub fn build(self) -> crate::types::TestCaseFilter {

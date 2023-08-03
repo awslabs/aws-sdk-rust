@@ -86,6 +86,10 @@ impl GetMacieSessionOutputBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie account was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
     pub fn finding_publishing_frequency(
         mut self,
@@ -102,6 +106,12 @@ impl GetMacieSessionOutputBuilder {
         self.finding_publishing_frequency = input;
         self
     }
+    /// <p>The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
+    pub fn get_finding_publishing_frequency(
+        &self,
+    ) -> &::std::option::Option<crate::types::FindingPublishingFrequency> {
+        &self.finding_publishing_frequency
+    }
     /// <p>The Amazon Resource Name (ARN) of the service-linked role that allows Amazon Macie to monitor and analyze data in Amazon Web Services resources for the account.</p>
     pub fn service_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_role = ::std::option::Option::Some(input.into());
@@ -112,6 +122,10 @@ impl GetMacieSessionOutputBuilder {
         self.service_role = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the service-linked role that allows Amazon Macie to monitor and analyze data in Amazon Web Services resources for the account.</p>
+    pub fn get_service_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_role
+    }
     /// <p>The current status of the Amazon Macie account. Possible values are: PAUSED, the account is enabled but all Macie activities are suspended (paused) for the account; and, ENABLED, the account is enabled and all Macie activities are enabled for the account.</p>
     pub fn status(mut self, input: crate::types::MacieStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -121,6 +135,10 @@ impl GetMacieSessionOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::MacieStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the Amazon Macie account. Possible values are: PAUSED, the account is enabled but all Macie activities are suspended (paused) for the account; and, ENABLED, the account is enabled and all Macie activities are enabled for the account.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::MacieStatus> {
+        &self.status
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the Amazon Macie account.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -134,6 +152,10 @@ impl GetMacieSessionOutputBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the Amazon Macie account.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

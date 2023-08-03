@@ -36,6 +36,10 @@ impl DescribeOrganizationConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeOrganizationConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<

@@ -41,6 +41,10 @@ impl StartInferenceExperimentInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the inference experiment to start.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`StartInferenceExperimentInput`](crate::operation::start_inference_experiment::StartInferenceExperimentInput).
     pub fn build(
         self,

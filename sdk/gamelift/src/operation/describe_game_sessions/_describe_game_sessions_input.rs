@@ -88,6 +88,10 @@ impl DescribeGameSessionsInputBuilder {
         self.fleet_id = input;
         self
     }
+    /// <p>A unique identifier for the fleet to retrieve game sessions for. You can use either the fleet ID or ARN value. </p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_id
+    }
     /// <p>A unique identifier for the game session to retrieve. </p>
     pub fn game_session_id(
         mut self,
@@ -104,6 +108,10 @@ impl DescribeGameSessionsInputBuilder {
         self.game_session_id = input;
         self
     }
+    /// <p>A unique identifier for the game session to retrieve. </p>
+    pub fn get_game_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.game_session_id
+    }
     /// <p>A unique identifier for the alias associated with the fleet to retrieve game sessions for. You can use either the alias ID or ARN value.</p>
     pub fn alias_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias_id = ::std::option::Option::Some(input.into());
@@ -114,6 +122,10 @@ impl DescribeGameSessionsInputBuilder {
         self.alias_id = input;
         self
     }
+    /// <p>A unique identifier for the alias associated with the fleet to retrieve game sessions for. You can use either the alias ID or ARN value.</p>
+    pub fn get_alias_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias_id
+    }
     /// <p>A fleet location to get game sessions for. You can specify a fleet's home Region or a remote location. Use the Amazon Web Services Region code format, such as <code>us-west-2</code>. </p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
@@ -123,6 +135,10 @@ impl DescribeGameSessionsInputBuilder {
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
+    }
+    /// <p>A fleet location to get game sessions for. You can specify a fleet's home Region or a remote location. Use the Amazon Web Services Region code format, such as <code>us-west-2</code>. </p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
     }
     /// <p>Game session status to filter results on. You can filter on the following states: <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code>, and <code>TERMINATING</code>. The last two are transitory and used for only very brief periods of time. </p>
     pub fn status_filter(
@@ -140,6 +156,10 @@ impl DescribeGameSessionsInputBuilder {
         self.status_filter = input;
         self
     }
+    /// <p>Game session status to filter results on. You can filter on the following states: <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code>, and <code>TERMINATING</code>. The last two are transitory and used for only very brief periods of time. </p>
+    pub fn get_status_filter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_filter
+    }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -150,6 +170,10 @@ impl DescribeGameSessionsInputBuilder {
         self.limit = input;
         self
     }
+    /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
+    }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -159,6 +183,10 @@ impl DescribeGameSessionsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeGameSessionsInput`](crate::operation::describe_game_sessions::DescribeGameSessionsInput).
     pub fn build(

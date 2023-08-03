@@ -58,6 +58,11 @@ impl DateRangeBuilder {
         self.from_date = input;
         self
     }
+    /// <p>This value is the beginning date, inclusive.</p>
+    /// <p>The date and time are in Unix format and Coordinated Universal Time (UTC), and it is accurate to milliseconds (milliseconds are optional).</p>
+    pub fn get_from_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.from_date
+    }
     /// <p>This value is the end date, inclusive.</p>
     /// <p>The date and time are in Unix format and Coordinated Universal Time (UTC), and it is accurate to milliseconds (milliseconds are optional).</p>
     pub fn to_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -72,6 +77,11 @@ impl DateRangeBuilder {
     ) -> Self {
         self.to_date = input;
         self
+    }
+    /// <p>This value is the end date, inclusive.</p>
+    /// <p>The date and time are in Unix format and Coordinated Universal Time (UTC), and it is accurate to milliseconds (milliseconds are optional).</p>
+    pub fn get_to_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.to_date
     }
     /// Consumes the builder and constructs a [`DateRange`](crate::types::DateRange).
     pub fn build(self) -> crate::types::DateRange {

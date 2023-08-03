@@ -41,6 +41,10 @@ impl DeleteSourceCredentialsInputBuilder {
         self.arn = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) of the token.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`DeleteSourceCredentialsInput`](crate::operation::delete_source_credentials::DeleteSourceCredentialsInput).
     pub fn build(
         self,

@@ -113,6 +113,10 @@ impl FirewallDomainListBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the domain list. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Amazon Resource Name (ARN) of the firewall domain list.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -122,6 +126,10 @@ impl FirewallDomainListBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the firewall domain list.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The name of the domain list. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -133,6 +141,10 @@ impl FirewallDomainListBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the domain list. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The number of domain names that are specified in the domain list.</p>
     pub fn domain_count(mut self, input: i32) -> Self {
         self.domain_count = ::std::option::Option::Some(input);
@@ -142,6 +154,10 @@ impl FirewallDomainListBuilder {
     pub fn set_domain_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.domain_count = input;
         self
+    }
+    /// <p>The number of domain names that are specified in the domain list.</p>
+    pub fn get_domain_count(&self) -> &::std::option::Option<i32> {
+        &self.domain_count
     }
     /// <p>The status of the domain list. </p>
     pub fn status(mut self, input: crate::types::FirewallDomainListStatus) -> Self {
@@ -155,6 +171,10 @@ impl FirewallDomainListBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the domain list. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::FirewallDomainListStatus> {
+        &self.status
     }
     /// <p>Additional information about the status of the list, if available.</p>
     pub fn status_message(
@@ -172,6 +192,10 @@ impl FirewallDomainListBuilder {
         self.status_message = input;
         self
     }
+    /// <p>Additional information about the status of the list, if available.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>The owner of the list, used only for lists that are not managed by you. For example, the managed domain list <code>AWSManagedDomainsMalwareDomainList</code> has the managed owner name <code>Route 53 Resolver DNS Firewall</code>.</p>
     pub fn managed_owner_name(
         mut self,
@@ -187,6 +211,10 @@ impl FirewallDomainListBuilder {
     ) -> Self {
         self.managed_owner_name = input;
         self
+    }
+    /// <p>The owner of the list, used only for lists that are not managed by you. For example, the managed domain list <code>AWSManagedDomainsMalwareDomainList</code> has the managed owner name <code>Route 53 Resolver DNS Firewall</code>.</p>
+    pub fn get_managed_owner_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.managed_owner_name
     }
     /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp. </p>
     pub fn creator_request_id(
@@ -204,6 +232,10 @@ impl FirewallDomainListBuilder {
         self.creator_request_id = input;
         self
     }
+    /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp. </p>
+    pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creator_request_id
+    }
     /// <p>The date and time that the domain list was created, in Unix time format and Coordinated Universal Time (UTC). </p>
     pub fn creation_time(
         mut self,
@@ -220,6 +252,10 @@ impl FirewallDomainListBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The date and time that the domain list was created, in Unix time format and Coordinated Universal Time (UTC). </p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_time
+    }
     /// <p>The date and time that the domain list was last modified, in Unix time format and Coordinated Universal Time (UTC). </p>
     pub fn modification_time(
         mut self,
@@ -235,6 +271,10 @@ impl FirewallDomainListBuilder {
     ) -> Self {
         self.modification_time = input;
         self
+    }
+    /// <p>The date and time that the domain list was last modified, in Unix time format and Coordinated Universal Time (UTC). </p>
+    pub fn get_modification_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.modification_time
     }
     /// Consumes the builder and constructs a [`FirewallDomainList`](crate::types::FirewallDomainList).
     pub fn build(self) -> crate::types::FirewallDomainList {

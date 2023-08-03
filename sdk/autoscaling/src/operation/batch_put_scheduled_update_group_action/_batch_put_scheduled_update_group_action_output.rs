@@ -68,6 +68,14 @@ impl BatchPutScheduledUpdateGroupActionOutputBuilder {
         self.failed_scheduled_update_group_actions = input;
         self
     }
+    /// <p>The names of the scheduled actions that could not be created or updated, including an error message.</p>
+    pub fn get_failed_scheduled_update_group_actions(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::FailedScheduledUpdateGroupActionRequest>,
+    > {
+        &self.failed_scheduled_update_group_actions
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

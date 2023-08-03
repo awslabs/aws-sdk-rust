@@ -89,6 +89,10 @@ impl UpdateEntityInputBuilder {
         self.workspace_id = input;
         self
     }
+    /// <p>The ID of the workspace that contains the entity.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
+    }
     /// <p>The ID of the entity.</p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
@@ -98,6 +102,10 @@ impl UpdateEntityInputBuilder {
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entity_id = input;
         self
+    }
+    /// <p>The ID of the entity.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_id
     }
     /// <p>The name of the entity.</p>
     pub fn entity_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -109,6 +117,10 @@ impl UpdateEntityInputBuilder {
         self.entity_name = input;
         self
     }
+    /// <p>The name of the entity.</p>
+    pub fn get_entity_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_name
+    }
     /// <p>The description of the entity.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -118,6 +130,10 @@ impl UpdateEntityInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the entity.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `component_updates`.
     ///
@@ -147,6 +163,14 @@ impl UpdateEntityInputBuilder {
         self.component_updates = input;
         self
     }
+    /// <p>An object that maps strings to the component updates in the request. Each string in the mapping must be unique to this object.</p>
+    pub fn get_component_updates(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::ComponentUpdateRequest>,
+    > {
+        &self.component_updates
+    }
     /// <p>An object that describes the update request for a parent entity.</p>
     pub fn parent_entity_update(mut self, input: crate::types::ParentEntityUpdateRequest) -> Self {
         self.parent_entity_update = ::std::option::Option::Some(input);
@@ -159,6 +183,12 @@ impl UpdateEntityInputBuilder {
     ) -> Self {
         self.parent_entity_update = input;
         self
+    }
+    /// <p>An object that describes the update request for a parent entity.</p>
+    pub fn get_parent_entity_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::ParentEntityUpdateRequest> {
+        &self.parent_entity_update
     }
     /// Consumes the builder and constructs a [`UpdateEntityInput`](crate::operation::update_entity::UpdateEntityInput).
     pub fn build(

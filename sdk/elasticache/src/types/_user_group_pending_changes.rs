@@ -60,6 +60,12 @@ impl UserGroupPendingChangesBuilder {
         self.user_ids_to_remove = input;
         self
     }
+    /// <p>The list of user IDs to remove.</p>
+    pub fn get_user_ids_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.user_ids_to_remove
+    }
     /// Appends an item to `user_ids_to_add`.
     ///
     /// To override the contents of this collection use [`set_user_ids_to_add`](Self::set_user_ids_to_add).
@@ -81,6 +87,12 @@ impl UserGroupPendingChangesBuilder {
     ) -> Self {
         self.user_ids_to_add = input;
         self
+    }
+    /// <p>The list of user IDs to add.</p>
+    pub fn get_user_ids_to_add(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.user_ids_to_add
     }
     /// Consumes the builder and constructs a [`UserGroupPendingChanges`](crate::types::UserGroupPendingChanges).
     pub fn build(self) -> crate::types::UserGroupPendingChanges {

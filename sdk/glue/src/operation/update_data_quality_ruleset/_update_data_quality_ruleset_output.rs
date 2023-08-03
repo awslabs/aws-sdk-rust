@@ -62,6 +62,10 @@ impl UpdateDataQualityRulesetOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the data quality ruleset.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description of the ruleset.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl UpdateDataQualityRulesetOutputBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the ruleset.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
     pub fn ruleset(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ruleset = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl UpdateDataQualityRulesetOutputBuilder {
     pub fn set_ruleset(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ruleset = input;
         self
+    }
+    /// <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
+    pub fn get_ruleset(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ruleset
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

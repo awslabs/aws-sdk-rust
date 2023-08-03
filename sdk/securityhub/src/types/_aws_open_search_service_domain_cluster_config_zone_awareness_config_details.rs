@@ -40,6 +40,10 @@ impl AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetailsBuilder {
         self.availability_zone_count = input;
         self
     }
+    /// <p>The number of Availability Zones that the domain uses. Valid values are <code>2</code> or <code>3</code>. The default is <code>2</code>.</p>
+    pub fn get_availability_zone_count(&self) -> &::std::option::Option<i32> {
+        &self.availability_zone_count
+    }
     /// Consumes the builder and constructs a [`AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails`](crate::types::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails).
     pub fn build(
         self,

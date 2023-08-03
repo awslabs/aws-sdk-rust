@@ -52,6 +52,12 @@ impl DeleteVoiceChannelOutputBuilder {
         self.voice_channel_response = input;
         self
     }
+    /// <p>Provides information about the status and settings of the voice channel for an application.</p>
+    pub fn get_voice_channel_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::VoiceChannelResponse> {
+        &self.voice_channel_response
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -65,6 +65,12 @@ impl RunPipelineActivityOutputBuilder {
         self.payloads = input;
         self
     }
+    /// <p>The enriched or transformed sample message payloads as base64-encoded strings. (The results of running the pipeline activity on each input sample message payload, encoded in base64.)</p>
+    pub fn get_payloads(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>> {
+        &self.payloads
+    }
     /// <p>In case the pipeline activity fails, the log message that is generated.</p>
     pub fn log_result(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_result = ::std::option::Option::Some(input.into());
@@ -74,6 +80,10 @@ impl RunPipelineActivityOutputBuilder {
     pub fn set_log_result(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_result = input;
         self
+    }
+    /// <p>In case the pipeline activity fails, the log message that is generated.</p>
+    pub fn get_log_result(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_result
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -89,6 +89,10 @@ impl CreateAnomalyDetectorInputBuilder {
         self.anomaly_detector_name = input;
         self
     }
+    /// <p>The name of the detector.</p>
+    pub fn get_anomaly_detector_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.anomaly_detector_name
+    }
     /// <p>A description of the detector.</p>
     pub fn anomaly_detector_description(
         mut self,
@@ -105,6 +109,12 @@ impl CreateAnomalyDetectorInputBuilder {
         self.anomaly_detector_description = input;
         self
     }
+    /// <p>A description of the detector.</p>
+    pub fn get_anomaly_detector_description(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.anomaly_detector_description
+    }
     /// <p>Contains information about the configuration of the anomaly detector.</p>
     pub fn anomaly_detector_config(mut self, input: crate::types::AnomalyDetectorConfig) -> Self {
         self.anomaly_detector_config = ::std::option::Option::Some(input);
@@ -118,6 +128,12 @@ impl CreateAnomalyDetectorInputBuilder {
         self.anomaly_detector_config = input;
         self
     }
+    /// <p>Contains information about the configuration of the anomaly detector.</p>
+    pub fn get_anomaly_detector_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AnomalyDetectorConfig> {
+        &self.anomaly_detector_config
+    }
     /// <p>The ARN of the KMS key to use to encrypt your data.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_arn = ::std::option::Option::Some(input.into());
@@ -127,6 +143,10 @@ impl CreateAnomalyDetectorInputBuilder {
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_arn = input;
         self
+    }
+    /// <p>The ARN of the KMS key to use to encrypt your data.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -152,6 +172,14 @@ impl CreateAnomalyDetectorInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the anomaly detector.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateAnomalyDetectorInput`](crate::operation::create_anomaly_detector::CreateAnomalyDetectorInput).
     pub fn build(

@@ -36,6 +36,12 @@ impl DeleteServiceNetworkFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteServiceNetwork as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_service_network::builders::DeleteServiceNetworkInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl DeleteServiceNetworkFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_service_network_identifier(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) or ID of the service network.</p>
+    pub fn get_service_network_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_network_identifier()
     }
 }

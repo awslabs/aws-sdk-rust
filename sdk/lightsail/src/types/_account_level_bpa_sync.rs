@@ -118,6 +118,19 @@ impl AccountLevelBpaSyncBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the account-level BPA synchronization.</p>
+    /// <p>The following statuses are possible:</p>
+    /// <ul>
+    /// <li> <p> <code>InSync</code> - Account-level BPA is synchronized. The Amazon S3 account-level BPA configuration applies to your Lightsail buckets.</p> </li>
+    /// <li> <p> <code>NeverSynced</code> - Synchronization has not yet happened. The Amazon S3 account-level BPA configuration does not apply to your Lightsail buckets.</p> </li>
+    /// <li> <p> <code>Failed</code> - Synchronization failed. The Amazon S3 account-level BPA configuration does not apply to your Lightsail buckets.</p> </li>
+    /// <li> <p> <code>Defaulted</code> - Synchronization failed and account-level BPA for your Lightsail buckets is defaulted to <i>active</i>.</p> </li>
+    /// </ul> <note>
+    /// <p>You might need to complete further actions if the status is <code>Failed</code> or <code>Defaulted</code>. The <code>message</code> parameter provides more information for those statuses.</p>
+    /// </note>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AccountLevelBpaSyncStatus> {
+        &self.status
+    }
     /// <p>The timestamp of when the account-level BPA configuration was last synchronized. This value is null when the account-level BPA configuration has not been synchronized.</p>
     pub fn last_synced_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_synced_at = ::std::option::Option::Some(input);
@@ -130,6 +143,10 @@ impl AccountLevelBpaSyncBuilder {
     ) -> Self {
         self.last_synced_at = input;
         self
+    }
+    /// <p>The timestamp of when the account-level BPA configuration was last synchronized. This value is null when the account-level BPA configuration has not been synchronized.</p>
+    pub fn get_last_synced_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_synced_at
     }
     /// <p>A message that provides a reason for a <code>Failed</code> or <code>Defaulted</code> synchronization status.</p>
     /// <p>The following messages are possible:</p>
@@ -158,6 +175,17 @@ impl AccountLevelBpaSyncBuilder {
         self.message = input;
         self
     }
+    /// <p>A message that provides a reason for a <code>Failed</code> or <code>Defaulted</code> synchronization status.</p>
+    /// <p>The following messages are possible:</p>
+    /// <ul>
+    /// <li> <p> <code>SYNC_ON_HOLD</code> - The synchronization has not yet happened. This status message occurs immediately after you create your first Lightsail bucket. This status message should change after the first synchronization happens, approximately 1 hour after the first bucket is created.</p> </li>
+    /// <li> <p> <code>DEFAULTED_FOR_SLR_MISSING</code> - The synchronization failed because the required service-linked role is missing from your Amazon Web Services account. The account-level BPA configuration for your Lightsail buckets is defaulted to <i>active</i> until the synchronization can occur. This means that all your buckets are private and not publicly accessible. For more information about how to create the required service-linked role to allow synchronization, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-using-service-linked-roles">Using Service-Linked Roles for Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p> </li>
+    /// <li> <p> <code>DEFAULTED_FOR_SLR_MISSING_ON_HOLD</code> - The synchronization failed because the required service-linked role is missing from your Amazon Web Services account. Account-level BPA is not yet configured for your Lightsail buckets. Therefore, only the bucket access permissions and individual object access permissions apply to your Lightsail buckets. For more information about how to create the required service-linked role to allow synchronization, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-using-service-linked-roles">Using Service-Linked Roles for Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p> </li>
+    /// <li> <p> <code>Unknown</code> - The reason that synchronization failed is unknown. Contact Amazon Web Services Support for more information.</p> </li>
+    /// </ul>
+    pub fn get_message(&self) -> &::std::option::Option<crate::types::BpaStatusMessage> {
+        &self.message
+    }
     /// <p>A Boolean value that indicates whether account-level block public access is affecting your Lightsail buckets.</p>
     pub fn bpa_impacts_lightsail(mut self, input: bool) -> Self {
         self.bpa_impacts_lightsail = ::std::option::Option::Some(input);
@@ -167,6 +195,10 @@ impl AccountLevelBpaSyncBuilder {
     pub fn set_bpa_impacts_lightsail(mut self, input: ::std::option::Option<bool>) -> Self {
         self.bpa_impacts_lightsail = input;
         self
+    }
+    /// <p>A Boolean value that indicates whether account-level block public access is affecting your Lightsail buckets.</p>
+    pub fn get_bpa_impacts_lightsail(&self) -> &::std::option::Option<bool> {
+        &self.bpa_impacts_lightsail
     }
     /// Consumes the builder and constructs a [`AccountLevelBpaSync`](crate::types::AccountLevelBpaSync).
     pub fn build(self) -> crate::types::AccountLevelBpaSync {

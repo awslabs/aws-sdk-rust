@@ -50,6 +50,12 @@ impl CheckDomainTransferabilityOutputBuilder {
         self.transferability = input;
         self
     }
+    /// <p>A complex type that contains information about whether the specified domain can be transferred to Route 53.</p>
+    pub fn get_transferability(
+        &self,
+    ) -> &::std::option::Option<crate::types::DomainTransferability> {
+        &self.transferability
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

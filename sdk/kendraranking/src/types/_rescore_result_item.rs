@@ -48,6 +48,10 @@ impl RescoreResultItemBuilder {
         self.document_id = input;
         self
     }
+    /// <p>The identifier of the document from the search service.</p>
+    pub fn get_document_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_id
+    }
     /// <p>The relevancy score or rank that Amazon Kendra Intelligent Ranking gives to the result.</p>
     pub fn score(mut self, input: f32) -> Self {
         self.score = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl RescoreResultItemBuilder {
     pub fn set_score(mut self, input: ::std::option::Option<f32>) -> Self {
         self.score = input;
         self
+    }
+    /// <p>The relevancy score or rank that Amazon Kendra Intelligent Ranking gives to the result.</p>
+    pub fn get_score(&self) -> &::std::option::Option<f32> {
+        &self.score
     }
     /// Consumes the builder and constructs a [`RescoreResultItem`](crate::types::RescoreResultItem).
     pub fn build(self) -> crate::types::RescoreResultItem {

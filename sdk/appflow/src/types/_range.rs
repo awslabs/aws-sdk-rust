@@ -48,6 +48,10 @@ impl RangeBuilder {
         self.maximum = input;
         self
     }
+    /// <p>Maximum value supported by the field.</p>
+    pub fn get_maximum(&self) -> &::std::option::Option<f64> {
+        &self.maximum
+    }
     /// <p>Minimum value supported by the field.</p>
     pub fn minimum(mut self, input: f64) -> Self {
         self.minimum = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl RangeBuilder {
     pub fn set_minimum(mut self, input: ::std::option::Option<f64>) -> Self {
         self.minimum = input;
         self
+    }
+    /// <p>Minimum value supported by the field.</p>
+    pub fn get_minimum(&self) -> &::std::option::Option<f64> {
+        &self.minimum
     }
     /// Consumes the builder and constructs a [`Range`](crate::types::Range).
     pub fn build(self) -> crate::types::Range {

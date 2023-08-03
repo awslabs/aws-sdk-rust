@@ -36,6 +36,13 @@ impl CreateOutboundConnectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateOutboundConnection as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_outbound_connection::builders::CreateOutboundConnectionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +136,12 @@ impl CreateOutboundConnectionFluentBuilder {
         self.inner = self.inner.set_local_domain_info(input);
         self
     }
+    /// <p>Name and Region of the source (local) domain.</p>
+    pub fn get_local_domain_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::DomainInformationContainer> {
+        self.inner.get_local_domain_info()
+    }
     /// <p>Name and Region of the destination (remote) domain.</p>
     pub fn remote_domain_info(mut self, input: crate::types::DomainInformationContainer) -> Self {
         self.inner = self.inner.remote_domain_info(input);
@@ -141,6 +154,12 @@ impl CreateOutboundConnectionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_remote_domain_info(input);
         self
+    }
+    /// <p>Name and Region of the destination (remote) domain.</p>
+    pub fn get_remote_domain_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::DomainInformationContainer> {
+        self.inner.get_remote_domain_info()
     }
     /// <p>Name of the connection.</p>
     pub fn connection_alias(
@@ -158,6 +177,10 @@ impl CreateOutboundConnectionFluentBuilder {
         self.inner = self.inner.set_connection_alias(input);
         self
     }
+    /// <p>Name of the connection.</p>
+    pub fn get_connection_alias(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connection_alias()
+    }
     /// <p>The connection mode.</p>
     pub fn connection_mode(mut self, input: crate::types::ConnectionMode) -> Self {
         self.inner = self.inner.connection_mode(input);
@@ -171,6 +194,10 @@ impl CreateOutboundConnectionFluentBuilder {
         self.inner = self.inner.set_connection_mode(input);
         self
     }
+    /// <p>The connection mode.</p>
+    pub fn get_connection_mode(&self) -> &::std::option::Option<crate::types::ConnectionMode> {
+        self.inner.get_connection_mode()
+    }
     /// <p>The <code>ConnectionProperties</code> for the outbound connection.</p>
     pub fn connection_properties(mut self, input: crate::types::ConnectionProperties) -> Self {
         self.inner = self.inner.connection_properties(input);
@@ -183,5 +210,11 @@ impl CreateOutboundConnectionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_connection_properties(input);
         self
+    }
+    /// <p>The <code>ConnectionProperties</code> for the outbound connection.</p>
+    pub fn get_connection_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConnectionProperties> {
+        self.inner.get_connection_properties()
     }
 }

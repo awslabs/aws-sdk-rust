@@ -62,6 +62,10 @@ impl CreateAttendeeInputBuilder {
         self.meeting_id = input;
         self
     }
+    /// <p>The Amazon Chime SDK meeting ID.</p>
+    pub fn get_meeting_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.meeting_id
+    }
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
     pub fn external_user_id(
         mut self,
@@ -77,6 +81,10 @@ impl CreateAttendeeInputBuilder {
     ) -> Self {
         self.external_user_id = input;
         self
+    }
+    /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
+    pub fn get_external_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_user_id
     }
     /// Appends an item to `tags`.
     ///
@@ -96,6 +104,10 @@ impl CreateAttendeeInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tag key-value pairs.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateAttendeeInput`](crate::operation::create_attendee::CreateAttendeeInput).
     pub fn build(

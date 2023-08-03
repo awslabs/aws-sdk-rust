@@ -56,6 +56,10 @@ impl Mp2SettingsBuilder {
         self.bitrate = input;
         self
     }
+    /// Average bitrate in bits/second.
+    pub fn get_bitrate(&self) -> &::std::option::Option<f64> {
+        &self.bitrate
+    }
     /// The MPEG2 Audio coding mode. Valid values are codingMode10 (for mono) or codingMode20 (for stereo).
     pub fn coding_mode(mut self, input: crate::types::Mp2CodingMode) -> Self {
         self.coding_mode = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl Mp2SettingsBuilder {
         self.coding_mode = input;
         self
     }
+    /// The MPEG2 Audio coding mode. Valid values are codingMode10 (for mono) or codingMode20 (for stereo).
+    pub fn get_coding_mode(&self) -> &::std::option::Option<crate::types::Mp2CodingMode> {
+        &self.coding_mode
+    }
     /// Sample rate in Hz.
     pub fn sample_rate(mut self, input: f64) -> Self {
         self.sample_rate = ::std::option::Option::Some(input);
@@ -78,6 +86,10 @@ impl Mp2SettingsBuilder {
     pub fn set_sample_rate(mut self, input: ::std::option::Option<f64>) -> Self {
         self.sample_rate = input;
         self
+    }
+    /// Sample rate in Hz.
+    pub fn get_sample_rate(&self) -> &::std::option::Option<f64> {
+        &self.sample_rate
     }
     /// Consumes the builder and constructs a [`Mp2Settings`](crate::types::Mp2Settings).
     pub fn build(self) -> crate::types::Mp2Settings {

@@ -36,6 +36,13 @@ impl UpdateDeletionProtectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDeletionProtection as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_deletion_protection::builders::UpdateDeletionProtectionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl UpdateDeletionProtectionFluentBuilder {
         self.inner = self.inner.set_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the replication set to update.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
+    }
     /// <p>Specifies if deletion protection is turned on or off in your account. </p>
     pub fn deletion_protected(mut self, input: bool) -> Self {
         self.inner = self.inner.deletion_protected(input);
@@ -136,6 +147,10 @@ impl UpdateDeletionProtectionFluentBuilder {
         self.inner = self.inner.set_deletion_protected(input);
         self
     }
+    /// <p>Specifies if deletion protection is turned on or off in your account. </p>
+    pub fn get_deletion_protected(&self) -> &::std::option::Option<bool> {
+        self.inner.get_deletion_protected()
+    }
     /// <p>A token that ensures that the operation is called only once with the specified details.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -145,5 +160,9 @@ impl UpdateDeletionProtectionFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A token that ensures that the operation is called only once with the specified details.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

@@ -96,6 +96,10 @@ impl ProductUserSummaryBuilder {
         self.username = input;
         self
     }
+    /// <p>The user name from the identity provider of the user.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
+    }
     /// <p>The name of the user-based subscription product.</p>
     pub fn product(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl ProductUserSummaryBuilder {
     pub fn set_product(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product = input;
         self
+    }
+    /// <p>The name of the user-based subscription product.</p>
+    pub fn get_product(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product
     }
     /// <p>An object that specifies details for the identity provider.</p>
     pub fn identity_provider(mut self, input: crate::types::IdentityProvider) -> Self {
@@ -119,6 +127,10 @@ impl ProductUserSummaryBuilder {
         self.identity_provider = input;
         self
     }
+    /// <p>An object that specifies details for the identity provider.</p>
+    pub fn get_identity_provider(&self) -> &::std::option::Option<crate::types::IdentityProvider> {
+        &self.identity_provider
+    }
     /// <p>The status of a product for a user.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -128,6 +140,10 @@ impl ProductUserSummaryBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of a product for a user.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>The status message for a product for a user.</p>
     pub fn status_message(
@@ -145,6 +161,10 @@ impl ProductUserSummaryBuilder {
         self.status_message = input;
         self
     }
+    /// <p>The status message for a product for a user.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>The domain name of the user.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
@@ -154,6 +174,10 @@ impl ProductUserSummaryBuilder {
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
+    }
+    /// <p>The domain name of the user.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
     }
     /// <p>The start date of a subscription.</p>
     pub fn subscription_start_date(
@@ -171,6 +195,10 @@ impl ProductUserSummaryBuilder {
         self.subscription_start_date = input;
         self
     }
+    /// <p>The start date of a subscription.</p>
+    pub fn get_subscription_start_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscription_start_date
+    }
     /// <p>The end date of a subscription.</p>
     pub fn subscription_end_date(
         mut self,
@@ -186,6 +214,10 @@ impl ProductUserSummaryBuilder {
     ) -> Self {
         self.subscription_end_date = input;
         self
+    }
+    /// <p>The end date of a subscription.</p>
+    pub fn get_subscription_end_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscription_end_date
     }
     /// Consumes the builder and constructs a [`ProductUserSummary`](crate::types::ProductUserSummary).
     pub fn build(self) -> crate::types::ProductUserSummary {

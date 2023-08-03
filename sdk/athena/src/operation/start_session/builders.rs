@@ -36,6 +36,10 @@ impl StartSessionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartSession as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_session::builders::StartSessionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl StartSessionFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The session description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The workgroup to which the session belongs.</p>
     pub fn work_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.work_group(input.into());
@@ -127,6 +135,10 @@ impl StartSessionFluentBuilder {
     pub fn set_work_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_work_group(input);
         self
+    }
+    /// <p>The workgroup to which the session belongs.</p>
+    pub fn get_work_group(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_work_group()
     }
     /// <p>Contains engine data processing unit (DPU) configuration settings and parameter mappings.</p>
     pub fn engine_configuration(mut self, input: crate::types::EngineConfiguration) -> Self {
@@ -140,6 +152,12 @@ impl StartSessionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_engine_configuration(input);
         self
+    }
+    /// <p>Contains engine data processing unit (DPU) configuration settings and parameter mappings.</p>
+    pub fn get_engine_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::EngineConfiguration> {
+        self.inner.get_engine_configuration()
     }
     /// <p>The notebook version. This value is supplied automatically for notebook sessions in the Athena console and is not required for programmatic session access. The only valid notebook version is <code>Athena notebook version 1</code>. If you specify a value for <code>NotebookVersion</code>, you must also specify a value for <code>NotebookId</code>. See <code>EngineConfiguration$AdditionalConfigs</code>.</p>
     pub fn notebook_version(
@@ -157,6 +175,10 @@ impl StartSessionFluentBuilder {
         self.inner = self.inner.set_notebook_version(input);
         self
     }
+    /// <p>The notebook version. This value is supplied automatically for notebook sessions in the Athena console and is not required for programmatic session access. The only valid notebook version is <code>Athena notebook version 1</code>. If you specify a value for <code>NotebookVersion</code>, you must also specify a value for <code>NotebookId</code>. See <code>EngineConfiguration$AdditionalConfigs</code>.</p>
+    pub fn get_notebook_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_notebook_version()
+    }
     /// <p>The idle timeout in minutes for the session.</p>
     pub fn session_idle_timeout_in_minutes(mut self, input: i32) -> Self {
         self.inner = self.inner.session_idle_timeout_in_minutes(input);
@@ -169,6 +191,10 @@ impl StartSessionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_session_idle_timeout_in_minutes(input);
         self
+    }
+    /// <p>The idle timeout in minutes for the session.</p>
+    pub fn get_session_idle_timeout_in_minutes(&self) -> &::std::option::Option<i32> {
+        self.inner.get_session_idle_timeout_in_minutes()
     }
     /// <p>A unique case-sensitive string used to ensure the request to create the session is idempotent (executes only once). If another <code>StartSessionRequest</code> is received, the same response is returned and another session is not created. If a parameter has changed, an error is returned.</p> <important>
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
@@ -189,5 +215,11 @@ impl StartSessionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>A unique case-sensitive string used to ensure the request to create the session is idempotent (executes only once). If another <code>StartSessionRequest</code> is received, the same response is returned and another session is not created. If a parameter has changed, an error is returned.</p> <important>
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+    /// </important>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
 }

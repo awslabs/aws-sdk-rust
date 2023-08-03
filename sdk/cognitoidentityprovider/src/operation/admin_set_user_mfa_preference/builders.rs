@@ -36,6 +36,10 @@ impl AdminSetUserMFAPreferenceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AdminSetUserMFAPreference as a reference.
+    pub fn as_input(&self) -> &crate::operation::admin_set_user_mfa_preference::builders::AdminSetUserMfaPreferenceInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +133,10 @@ impl AdminSetUserMFAPreferenceFluentBuilder {
         self.inner = self.inner.set_sms_mfa_settings(input);
         self
     }
+    /// <p>The SMS text message MFA settings.</p>
+    pub fn get_sms_mfa_settings(&self) -> &::std::option::Option<crate::types::SmsMfaSettingsType> {
+        self.inner.get_sms_mfa_settings()
+    }
     /// <p>The time-based one-time password software token MFA settings.</p>
     pub fn software_token_mfa_settings(
         mut self,
@@ -145,6 +153,12 @@ impl AdminSetUserMFAPreferenceFluentBuilder {
         self.inner = self.inner.set_software_token_mfa_settings(input);
         self
     }
+    /// <p>The time-based one-time password software token MFA settings.</p>
+    pub fn get_software_token_mfa_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::SoftwareTokenMfaSettingsType> {
+        self.inner.get_software_token_mfa_settings()
+    }
     /// <p>The user pool username or alias.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.username(input.into());
@@ -155,6 +169,10 @@ impl AdminSetUserMFAPreferenceFluentBuilder {
         self.inner = self.inner.set_username(input);
         self
     }
+    /// <p>The user pool username or alias.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_username()
+    }
     /// <p>The user pool ID.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
@@ -164,5 +182,9 @@ impl AdminSetUserMFAPreferenceFluentBuilder {
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_pool_id(input);
         self
+    }
+    /// <p>The user pool ID.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_pool_id()
     }
 }

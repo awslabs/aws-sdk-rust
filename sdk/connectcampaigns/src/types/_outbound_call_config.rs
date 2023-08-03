@@ -74,6 +74,10 @@ impl OutboundCallConfigBuilder {
         self.connect_contact_flow_id = input;
         self
     }
+    /// The identifier of the contact flow for the outbound call.
+    pub fn get_connect_contact_flow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connect_contact_flow_id
+    }
     /// The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.
     pub fn connect_source_phone_number(
         mut self,
@@ -89,6 +93,10 @@ impl OutboundCallConfigBuilder {
     ) -> Self {
         self.connect_source_phone_number = input;
         self
+    }
+    /// The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.
+    pub fn get_connect_source_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connect_source_phone_number
     }
     /// The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number specified in the queue. If you do not specify a queue, the queue defined in the contact flow is used. If you do not specify a queue, you must specify a source phone number.
     pub fn connect_queue_id(
@@ -106,6 +114,10 @@ impl OutboundCallConfigBuilder {
         self.connect_queue_id = input;
         self
     }
+    /// The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number specified in the queue. If you do not specify a queue, the queue defined in the contact flow is used. If you do not specify a queue, you must specify a source phone number.
+    pub fn get_connect_queue_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connect_queue_id
+    }
     /// Answering Machine Detection config
     pub fn answer_machine_detection_config(
         mut self,
@@ -121,6 +133,12 @@ impl OutboundCallConfigBuilder {
     ) -> Self {
         self.answer_machine_detection_config = input;
         self
+    }
+    /// Answering Machine Detection config
+    pub fn get_answer_machine_detection_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AnswerMachineDetectionConfig> {
+        &self.answer_machine_detection_config
     }
     /// Consumes the builder and constructs a [`OutboundCallConfig`](crate::types::OutboundCallConfig).
     pub fn build(self) -> crate::types::OutboundCallConfig {

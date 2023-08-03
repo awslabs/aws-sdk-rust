@@ -98,6 +98,11 @@ impl InstanceEntryBuilder {
         self.source_name = input;
         self
     }
+    /// <p>The name of the export snapshot record, which contains the exported Lightsail instance snapshot that will be used as the source of the new Amazon EC2 instance.</p>
+    /// <p>Use the <code>get export snapshot records</code> operation to get a list of export snapshot records that you can use to create a CloudFormation stack.</p>
+    pub fn get_source_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_name
+    }
     /// <p>The instance type (e.g., <code>t2.micro</code>) to use for the new Amazon EC2 instance.</p>
     pub fn instance_type(
         mut self,
@@ -113,6 +118,10 @@ impl InstanceEntryBuilder {
     ) -> Self {
         self.instance_type = input;
         self
+    }
+    /// <p>The instance type (e.g., <code>t2.micro</code>) to use for the new Amazon EC2 instance.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
     }
     /// <p>The port configuration to use for the new Amazon EC2 instance.</p>
     /// <p>The following configuration options are available:</p>
@@ -145,6 +154,19 @@ impl InstanceEntryBuilder {
         self.port_info_source = input;
         self
     }
+    /// <p>The port configuration to use for the new Amazon EC2 instance.</p>
+    /// <p>The following configuration options are available:</p>
+    /// <ul>
+    /// <li> <p> <code>DEFAULT</code> - Use the default firewall settings from the Lightsail instance blueprint. If this is specified, then IPv4 and IPv6 will be configured for the new instance that is created in Amazon EC2.</p> </li>
+    /// <li> <p> <code>INSTANCE</code> - Use the configured firewall settings from the source Lightsail instance. If this is specified, the new instance that is created in Amazon EC2 will be configured to match the configuration of the source Lightsail instance. For example, if the source instance is configured for dual-stack (IPv4 and IPv6), then IPv4 and IPv6 will be configured for the new instance that is created in Amazon EC2. If the source instance is configured for IPv4 only, then only IPv4 will be configured for the new instance that is created in Amazon EC2.</p> </li>
+    /// <li> <p> <code>NONE</code> - Use the default Amazon EC2 security group. If this is specified, then only IPv4 will be configured for the new instance that is created in Amazon EC2.</p> </li>
+    /// <li> <p> <code>CLOSED</code> - All ports closed. If this is specified, then only IPv4 will be configured for the new instance that is created in Amazon EC2.</p> </li>
+    /// </ul> <note>
+    /// <p>If you configured <code>lightsail-connect</code> as a <code>cidrListAliases</code> on your instance, or if you chose to allow the Lightsail browser-based SSH or RDP clients to connect to your instance, that configuration is not carried over to your new Amazon EC2 instance.</p>
+    /// </note>
+    pub fn get_port_info_source(&self) -> &::std::option::Option<crate::types::PortInfoSourceType> {
+        &self.port_info_source
+    }
     /// <p>A launch script you can create that configures a server with additional user data. For example, you might want to run <code>apt-get -y update</code>.</p> <note>
     /// <p>Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>.</p>
     /// </note>
@@ -158,6 +180,12 @@ impl InstanceEntryBuilder {
     pub fn set_user_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_data = input;
         self
+    }
+    /// <p>A launch script you can create that configures a server with additional user data. For example, you might want to run <code>apt-get -y update</code>.</p> <note>
+    /// <p>Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>.</p>
+    /// </note>
+    pub fn get_user_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_data
     }
     /// <p>The Availability Zone for the new Amazon EC2 instance.</p>
     pub fn availability_zone(
@@ -174,6 +202,10 @@ impl InstanceEntryBuilder {
     ) -> Self {
         self.availability_zone = input;
         self
+    }
+    /// <p>The Availability Zone for the new Amazon EC2 instance.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
     }
     /// Consumes the builder and constructs a [`InstanceEntry`](crate::types::InstanceEntry).
     pub fn build(self) -> crate::types::InstanceEntry {

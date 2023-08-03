@@ -37,6 +37,10 @@ impl GetLambdaFunctionRecommendationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetLambdaFunctionRecommendations as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_lambda_function_recommendations::builders::GetLambdaFunctionRecommendationsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -119,6 +123,13 @@ impl GetLambdaFunctionRecommendationsFluentBuilder {
         self.inner = self.inner.set_function_arns(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the functions for which to return recommendations.</p>
+    /// <p>You can specify a qualified or unqualified ARN. If you specify an unqualified ARN without a function version suffix, Compute Optimizer will return recommendations for the latest (<code>$LATEST</code>) version of the function. If you specify a qualified ARN with a version suffix, Compute Optimizer will return recommendations for the specified function version. For more information about using function versions, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">Using versions</a> in the <i>Lambda Developer Guide</i>.</p>
+    pub fn get_function_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_function_arns()
+    }
     /// Appends an item to `accountIds`.
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
@@ -140,6 +151,14 @@ impl GetLambdaFunctionRecommendationsFluentBuilder {
         self.inner = self.inner.set_account_ids(input);
         self
     }
+    /// <p>The ID of the Amazon Web Services account for which to return function recommendations.</p>
+    /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return function recommendations.</p>
+    /// <p>Only one account ID can be specified per request.</p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_account_ids()
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -159,6 +178,13 @@ impl GetLambdaFunctionRecommendationsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>An array of objects to specify a filter that returns a more specific list of function recommendations.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionRecommendationFilter>>
+    {
+        self.inner.get_filters()
+    }
     /// <p>The token to advance to the next page of function recommendations.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -168,6 +194,10 @@ impl GetLambdaFunctionRecommendationsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token to advance to the next page of function recommendations.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The maximum number of function recommendations to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
@@ -180,5 +210,10 @@ impl GetLambdaFunctionRecommendationsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of function recommendations to return with a single request.</p>
+    /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

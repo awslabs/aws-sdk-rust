@@ -49,6 +49,10 @@ impl DescribeClusterOutputBuilder {
         self.cluster_metadata = input;
         self
     }
+    /// <p>Information about a specific cluster, including shipping information, cluster status, and other important metadata.</p>
+    pub fn get_cluster_metadata(&self) -> &::std::option::Option<crate::types::ClusterMetadata> {
+        &self.cluster_metadata
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -50,6 +50,12 @@ impl BatchGetAccountStatusInputBuilder {
         self.account_ids = input;
         self
     }
+    /// <p>The 12-digit Amazon Web Services account IDs of the accounts to retrieve Amazon Inspector status for.</p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.account_ids
+    }
     /// Consumes the builder and constructs a [`BatchGetAccountStatusInput`](crate::operation::batch_get_account_status::BatchGetAccountStatusInput).
     pub fn build(
         self,

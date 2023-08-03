@@ -65,6 +65,10 @@ impl DescribeMountTargetsOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p>If the request included the <code>Marker</code>, the response returns that value in this field.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// Appends an item to `mount_targets`.
     ///
     /// To override the contents of this collection use [`set_mount_targets`](Self::set_mount_targets).
@@ -84,6 +88,12 @@ impl DescribeMountTargetsOutputBuilder {
         self.mount_targets = input;
         self
     }
+    /// <p>Returns the file system's mount targets as an array of <code>MountTargetDescription</code> objects.</p>
+    pub fn get_mount_targets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MountTargetDescription>> {
+        &self.mount_targets
+    }
     /// <p>If a value is present, there are more mount targets to return. In a subsequent request, you can provide <code>Marker</code> in your request with this value to retrieve the next set of mount targets.</p>
     pub fn next_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_marker = ::std::option::Option::Some(input.into());
@@ -93,6 +103,10 @@ impl DescribeMountTargetsOutputBuilder {
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_marker = input;
         self
+    }
+    /// <p>If a value is present, there are more mount targets to return. In a subsequent request, you can provide <code>Marker</code> in your request with this value to retrieve the next set of mount targets.</p>
+    pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -78,6 +78,10 @@ impl EmailChannelRequestBuilder {
         self.configuration_set = input;
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon SES configuration set</a> that you want to apply to messages that you send through the channel.</p>
+    pub fn get_configuration_set(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set
+    }
     /// <p>Specifies whether to enable the email channel for the application.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -87,6 +91,10 @@ impl EmailChannelRequestBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>Specifies whether to enable the email channel for the application.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// <p>The verified email address that you want to send email from when you send email through the channel.</p>
     pub fn from_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -98,6 +106,10 @@ impl EmailChannelRequestBuilder {
         self.from_address = input;
         self
     }
+    /// <p>The verified email address that you want to send email from when you send email through the channel.</p>
+    pub fn get_from_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.from_address
+    }
     /// <p>The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple Email Service (Amazon SES), that you want to use when you send email through the channel.</p>
     pub fn identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity = ::std::option::Option::Some(input.into());
@@ -108,6 +120,10 @@ impl EmailChannelRequestBuilder {
         self.identity = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple Email Service (Amazon SES), that you want to use when you send email through the channel.</p>
+    pub fn get_identity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity
+    }
     /// <p>The ARN of the AWS Identity and Access Management (IAM) role that you want Amazon Pinpoint to use when it submits email-related event data for the channel.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -117,6 +133,10 @@ impl EmailChannelRequestBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The ARN of the AWS Identity and Access Management (IAM) role that you want Amazon Pinpoint to use when it submits email-related event data for the channel.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`EmailChannelRequest`](crate::types::EmailChannelRequest).
     pub fn build(self) -> crate::types::EmailChannelRequest {

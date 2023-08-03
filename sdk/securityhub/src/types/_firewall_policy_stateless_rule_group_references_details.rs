@@ -49,6 +49,10 @@ impl FirewallPolicyStatelessRuleGroupReferencesDetailsBuilder {
         self.priority = input;
         self
     }
+    /// <p>The order in which to run the stateless rule group.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
+    }
     /// <p>The ARN of the stateless rule group.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl FirewallPolicyStatelessRuleGroupReferencesDetailsBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p>The ARN of the stateless rule group.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// Consumes the builder and constructs a [`FirewallPolicyStatelessRuleGroupReferencesDetails`](crate::types::FirewallPolicyStatelessRuleGroupReferencesDetails).
     pub fn build(self) -> crate::types::FirewallPolicyStatelessRuleGroupReferencesDetails {

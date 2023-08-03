@@ -38,6 +38,13 @@ impl BatchDeletePhoneNumberFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchDeletePhoneNumber as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_delete_phone_number::builders::BatchDeletePhoneNumberInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,5 +144,11 @@ impl BatchDeletePhoneNumberFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_phone_number_ids(input);
         self
+    }
+    /// <p>List of phone number IDs.</p>
+    pub fn get_phone_number_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_phone_number_ids()
     }
 }

@@ -74,6 +74,10 @@ impl AddSourceIdentifierToSubscriptionInputBuilder {
         self.subscription_name = input;
         self
     }
+    /// <p>The name of the RDS event notification subscription you want to add a source identifier to.</p>
+    pub fn get_subscription_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscription_name
+    }
     /// <p>The identifier of the event source to be added.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -109,6 +113,20 @@ impl AddSourceIdentifierToSubscriptionInputBuilder {
     ) -> Self {
         self.source_identifier = input;
         self
+    }
+    /// <p>The identifier of the event source to be added.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>If the source type is a DB instance, a <code>DBInstanceIdentifier</code> value must be supplied.</p> </li>
+    /// <li> <p>If the source type is a DB cluster, a <code>DBClusterIdentifier</code> value must be supplied.</p> </li>
+    /// <li> <p>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> value must be supplied.</p> </li>
+    /// <li> <p>If the source type is a DB security group, a <code>DBSecurityGroupName</code> value must be supplied.</p> </li>
+    /// <li> <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> value must be supplied.</p> </li>
+    /// <li> <p>If the source type is a DB cluster snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p> </li>
+    /// <li> <p>If the source type is an RDS Proxy, a <code>DBProxyName</code> value must be supplied.</p> </li>
+    /// </ul>
+    pub fn get_source_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_identifier
     }
     /// Consumes the builder and constructs a [`AddSourceIdentifierToSubscriptionInput`](crate::operation::add_source_identifier_to_subscription::AddSourceIdentifierToSubscriptionInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::add_source_identifier_to_subscription::AddSourceIdentifierToSubscriptionInput, ::aws_smithy_http::operation::error::BuildError>{

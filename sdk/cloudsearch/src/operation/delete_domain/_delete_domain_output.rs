@@ -50,6 +50,10 @@ impl DeleteDomainOutputBuilder {
         self.domain_status = input;
         self
     }
+    /// <p>The current status of the search domain.</p>
+    pub fn get_domain_status(&self) -> &::std::option::Option<crate::types::DomainStatus> {
+        &self.domain_status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

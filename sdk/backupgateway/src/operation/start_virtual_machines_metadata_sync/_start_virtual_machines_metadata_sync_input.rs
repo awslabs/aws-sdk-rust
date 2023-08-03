@@ -45,6 +45,10 @@ impl StartVirtualMachinesMetadataSyncInputBuilder {
         self.hypervisor_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+    pub fn get_hypervisor_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hypervisor_arn
+    }
     /// Consumes the builder and constructs a [`StartVirtualMachinesMetadataSyncInput`](crate::operation::start_virtual_machines_metadata_sync::StartVirtualMachinesMetadataSyncInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::start_virtual_machines_metadata_sync::StartVirtualMachinesMetadataSyncInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

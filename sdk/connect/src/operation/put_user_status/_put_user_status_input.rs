@@ -55,6 +55,10 @@ impl PutUserStatusInputBuilder {
         self.user_id = input;
         self
     }
+    /// <p>The identifier of the user.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
+    }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl PutUserStatusInputBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// <p>The identifier of the agent status.</p>
     pub fn agent_status_id(
@@ -80,6 +88,10 @@ impl PutUserStatusInputBuilder {
     ) -> Self {
         self.agent_status_id = input;
         self
+    }
+    /// <p>The identifier of the agent status.</p>
+    pub fn get_agent_status_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_status_id
     }
     /// Consumes the builder and constructs a [`PutUserStatusInput`](crate::operation::put_user_status::PutUserStatusInput).
     pub fn build(

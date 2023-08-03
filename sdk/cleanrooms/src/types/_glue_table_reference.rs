@@ -48,6 +48,10 @@ impl GlueTableReferenceBuilder {
         self.table_name = input;
         self
     }
+    /// <p>The name of the Glue table.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
+    }
     /// <p>The name of the database the Glue table belongs to.</p>
     pub fn database_name(
         mut self,
@@ -63,6 +67,10 @@ impl GlueTableReferenceBuilder {
     ) -> Self {
         self.database_name = input;
         self
+    }
+    /// <p>The name of the database the Glue table belongs to.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
     }
     /// Consumes the builder and constructs a [`GlueTableReference`](crate::types::GlueTableReference).
     pub fn build(self) -> crate::types::GlueTableReference {

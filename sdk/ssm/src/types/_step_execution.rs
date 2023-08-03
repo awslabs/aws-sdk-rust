@@ -244,6 +244,10 @@ impl StepExecutionBuilder {
         self.step_name = input;
         self
     }
+    /// <p>The name of this execution step.</p>
+    pub fn get_step_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.step_name
+    }
     /// <p>The action this step performs. The action determines the behavior of the step.</p>
     pub fn action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action = ::std::option::Option::Some(input.into());
@@ -253,6 +257,10 @@ impl StepExecutionBuilder {
     pub fn set_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action = input;
         self
+    }
+    /// <p>The action this step performs. The action determines the behavior of the step.</p>
+    pub fn get_action(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action
     }
     /// <p>The timeout seconds of the step.</p>
     pub fn timeout_seconds(mut self, input: i64) -> Self {
@@ -264,6 +272,10 @@ impl StepExecutionBuilder {
         self.timeout_seconds = input;
         self
     }
+    /// <p>The timeout seconds of the step.</p>
+    pub fn get_timeout_seconds(&self) -> &::std::option::Option<i64> {
+        &self.timeout_seconds
+    }
     /// <p>The action to take if the step fails. The default value is <code>Abort</code>.</p>
     pub fn on_failure(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.on_failure = ::std::option::Option::Some(input.into());
@@ -274,6 +286,10 @@ impl StepExecutionBuilder {
         self.on_failure = input;
         self
     }
+    /// <p>The action to take if the step fails. The default value is <code>Abort</code>.</p>
+    pub fn get_on_failure(&self) -> &::std::option::Option<::std::string::String> {
+        &self.on_failure
+    }
     /// <p>The maximum number of tries to run the action of the step. The default value is <code>1</code>.</p>
     pub fn max_attempts(mut self, input: i32) -> Self {
         self.max_attempts = ::std::option::Option::Some(input);
@@ -283,6 +299,10 @@ impl StepExecutionBuilder {
     pub fn set_max_attempts(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_attempts = input;
         self
+    }
+    /// <p>The maximum number of tries to run the action of the step. The default value is <code>1</code>.</p>
+    pub fn get_max_attempts(&self) -> &::std::option::Option<i32> {
+        &self.max_attempts
     }
     /// <p>If a step has begun execution, this contains the time the step started. If the step is in Pending status, this field isn't populated.</p>
     pub fn execution_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -297,6 +317,10 @@ impl StepExecutionBuilder {
         self.execution_start_time = input;
         self
     }
+    /// <p>If a step has begun execution, this contains the time the step started. If the step is in Pending status, this field isn't populated.</p>
+    pub fn get_execution_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.execution_start_time
+    }
     /// <p>If a step has finished execution, this contains the time the execution ended. If the step hasn't yet concluded, this field isn't populated.</p>
     pub fn execution_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.execution_end_time = ::std::option::Option::Some(input);
@@ -310,6 +334,10 @@ impl StepExecutionBuilder {
         self.execution_end_time = input;
         self
     }
+    /// <p>If a step has finished execution, this contains the time the execution ended. If the step hasn't yet concluded, this field isn't populated.</p>
+    pub fn get_execution_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.execution_end_time
+    }
     /// <p>The execution status for this step.</p>
     pub fn step_status(mut self, input: crate::types::AutomationExecutionStatus) -> Self {
         self.step_status = ::std::option::Option::Some(input);
@@ -322,6 +350,12 @@ impl StepExecutionBuilder {
     ) -> Self {
         self.step_status = input;
         self
+    }
+    /// <p>The execution status for this step.</p>
+    pub fn get_step_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutomationExecutionStatus> {
+        &self.step_status
     }
     /// <p>The response code returned by the execution of the step.</p>
     pub fn response_code(
@@ -338,6 +372,10 @@ impl StepExecutionBuilder {
     ) -> Self {
         self.response_code = input;
         self
+    }
+    /// <p>The response code returned by the execution of the step.</p>
+    pub fn get_response_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.response_code
     }
     /// Adds a key-value pair to `inputs`.
     ///
@@ -363,6 +401,14 @@ impl StepExecutionBuilder {
     ) -> Self {
         self.inputs = input;
         self
+    }
+    /// <p>Fully-resolved values passed into the step before execution.</p>
+    pub fn get_inputs(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.inputs
     }
     /// Adds a key-value pair to `outputs`.
     ///
@@ -392,6 +438,14 @@ impl StepExecutionBuilder {
         self.outputs = input;
         self
     }
+    /// <p>Returned values from the execution of the step.</p>
+    pub fn get_outputs(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    > {
+        &self.outputs
+    }
     /// <p>A message associated with the response code for an execution.</p>
     pub fn response(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.response = ::std::option::Option::Some(input.into());
@@ -401,6 +455,10 @@ impl StepExecutionBuilder {
     pub fn set_response(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.response = input;
         self
+    }
+    /// <p>A message associated with the response code for an execution.</p>
+    pub fn get_response(&self) -> &::std::option::Option<::std::string::String> {
+        &self.response
     }
     /// <p>If a step failed, this message explains why the execution failed.</p>
     pub fn failure_message(
@@ -418,6 +476,10 @@ impl StepExecutionBuilder {
         self.failure_message = input;
         self
     }
+    /// <p>If a step failed, this message explains why the execution failed.</p>
+    pub fn get_failure_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_message
+    }
     /// <p>Information about the Automation failure.</p>
     pub fn failure_details(mut self, input: crate::types::FailureDetails) -> Self {
         self.failure_details = ::std::option::Option::Some(input);
@@ -430,6 +492,10 @@ impl StepExecutionBuilder {
     ) -> Self {
         self.failure_details = input;
         self
+    }
+    /// <p>Information about the Automation failure.</p>
+    pub fn get_failure_details(&self) -> &::std::option::Option<crate::types::FailureDetails> {
+        &self.failure_details
     }
     /// <p>The unique ID of a step execution.</p>
     pub fn step_execution_id(
@@ -446,6 +512,10 @@ impl StepExecutionBuilder {
     ) -> Self {
         self.step_execution_id = input;
         self
+    }
+    /// <p>The unique ID of a step execution.</p>
+    pub fn get_step_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.step_execution_id
     }
     /// Adds a key-value pair to `overridden_parameters`.
     ///
@@ -475,6 +545,14 @@ impl StepExecutionBuilder {
         self.overridden_parameters = input;
         self
     }
+    /// <p>A user-specified list of parameters to override when running a step.</p>
+    pub fn get_overridden_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    > {
+        &self.overridden_parameters
+    }
     /// <p>The flag which can be used to end automation no matter whether the step succeeds or fails.</p>
     pub fn is_end(mut self, input: bool) -> Self {
         self.is_end = ::std::option::Option::Some(input);
@@ -484,6 +562,10 @@ impl StepExecutionBuilder {
     pub fn set_is_end(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_end = input;
         self
+    }
+    /// <p>The flag which can be used to end automation no matter whether the step succeeds or fails.</p>
+    pub fn get_is_end(&self) -> &::std::option::Option<bool> {
+        &self.is_end
     }
     /// <p>The next step after the step succeeds.</p>
     pub fn next_step(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -495,6 +577,10 @@ impl StepExecutionBuilder {
         self.next_step = input;
         self
     }
+    /// <p>The next step after the step succeeds.</p>
+    pub fn get_next_step(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_step
+    }
     /// <p>The flag which can be used to help decide whether the failure of current step leads to the Automation failure.</p>
     pub fn is_critical(mut self, input: bool) -> Self {
         self.is_critical = ::std::option::Option::Some(input);
@@ -504,6 +590,10 @@ impl StepExecutionBuilder {
     pub fn set_is_critical(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_critical = input;
         self
+    }
+    /// <p>The flag which can be used to help decide whether the failure of current step leads to the Automation failure.</p>
+    pub fn get_is_critical(&self) -> &::std::option::Option<bool> {
+        &self.is_critical
     }
     /// Appends an item to `valid_next_steps`.
     ///
@@ -527,6 +617,12 @@ impl StepExecutionBuilder {
         self.valid_next_steps = input;
         self
     }
+    /// <p>Strategies used when step fails, we support Continue and Abort. Abort will fail the automation when the step fails. Continue will ignore the failure of current step and allow automation to run the next step. With conditional branching, we add step:stepName to support the automation to go to another specific step.</p>
+    pub fn get_valid_next_steps(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.valid_next_steps
+    }
     /// Appends an item to `targets`.
     ///
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).
@@ -546,6 +642,10 @@ impl StepExecutionBuilder {
         self.targets = input;
         self
     }
+    /// <p>The targets for the step execution.</p>
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
+        &self.targets
+    }
     /// <p>The combination of Amazon Web Services Regions and Amazon Web Services accounts targeted by the current Automation execution.</p>
     pub fn target_location(mut self, input: crate::types::TargetLocation) -> Self {
         self.target_location = ::std::option::Option::Some(input);
@@ -558,6 +658,10 @@ impl StepExecutionBuilder {
     ) -> Self {
         self.target_location = input;
         self
+    }
+    /// <p>The combination of Amazon Web Services Regions and Amazon Web Services accounts targeted by the current Automation execution.</p>
+    pub fn get_target_location(&self) -> &::std::option::Option<crate::types::TargetLocation> {
+        &self.target_location
     }
     /// Appends an item to `triggered_alarms`.
     ///
@@ -577,6 +681,12 @@ impl StepExecutionBuilder {
     ) -> Self {
         self.triggered_alarms = input;
         self
+    }
+    /// <p>The CloudWatch alarms that were invoked by the automation.</p>
+    pub fn get_triggered_alarms(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>> {
+        &self.triggered_alarms
     }
     /// Consumes the builder and constructs a [`StepExecution`](crate::types::StepExecution).
     pub fn build(self) -> crate::types::StepExecution {

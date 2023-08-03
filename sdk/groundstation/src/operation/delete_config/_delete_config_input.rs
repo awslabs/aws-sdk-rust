@@ -48,6 +48,10 @@ impl DeleteConfigInputBuilder {
         self.config_id = input;
         self
     }
+    /// <p>UUID of a <code>Config</code>.</p>
+    pub fn get_config_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.config_id
+    }
     /// <p>Type of a <code>Config</code>.</p>
     pub fn config_type(mut self, input: crate::types::ConfigCapabilityType) -> Self {
         self.config_type = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl DeleteConfigInputBuilder {
     ) -> Self {
         self.config_type = input;
         self
+    }
+    /// <p>Type of a <code>Config</code>.</p>
+    pub fn get_config_type(&self) -> &::std::option::Option<crate::types::ConfigCapabilityType> {
+        &self.config_type
     }
     /// Consumes the builder and constructs a [`DeleteConfigInput`](crate::operation::delete_config::DeleteConfigInput).
     pub fn build(

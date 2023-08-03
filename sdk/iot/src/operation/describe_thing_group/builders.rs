@@ -37,6 +37,12 @@ impl DescribeThingGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeThingGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_thing_group::builders::DescribeThingGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +138,9 @@ impl DescribeThingGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_thing_group_name(input);
         self
+    }
+    /// <p>The name of the thing group.</p>
+    pub fn get_thing_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_thing_group_name()
     }
 }

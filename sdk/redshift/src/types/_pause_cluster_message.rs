@@ -46,6 +46,10 @@ impl PauseClusterMessageBuilder {
         self.cluster_identifier = input;
         self
     }
+    /// <p>The identifier of the cluster to be paused.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_identifier
+    }
     /// Consumes the builder and constructs a [`PauseClusterMessage`](crate::types::PauseClusterMessage).
     pub fn build(self) -> crate::types::PauseClusterMessage {
         crate::types::PauseClusterMessage {

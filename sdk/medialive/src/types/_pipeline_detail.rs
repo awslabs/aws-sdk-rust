@@ -78,6 +78,12 @@ impl PipelineDetailBuilder {
         self.active_input_attachment_name = input;
         self
     }
+    /// The name of the active input attachment currently being ingested by this pipeline.
+    pub fn get_active_input_attachment_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.active_input_attachment_name
+    }
     /// The name of the input switch schedule action that occurred most recently and that resulted in the switch to the current input attachment for this pipeline.
     pub fn active_input_switch_action_name(
         mut self,
@@ -93,6 +99,12 @@ impl PipelineDetailBuilder {
     ) -> Self {
         self.active_input_switch_action_name = input;
         self
+    }
+    /// The name of the input switch schedule action that occurred most recently and that resulted in the switch to the current input attachment for this pipeline.
+    pub fn get_active_input_switch_action_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.active_input_switch_action_name
     }
     /// The name of the motion graphics activate action that occurred most recently and that resulted in the current graphics URI for this pipeline.
     pub fn active_motion_graphics_action_name(
@@ -110,6 +122,12 @@ impl PipelineDetailBuilder {
         self.active_motion_graphics_action_name = input;
         self
     }
+    /// The name of the motion graphics activate action that occurred most recently and that resulted in the current graphics URI for this pipeline.
+    pub fn get_active_motion_graphics_action_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.active_motion_graphics_action_name
+    }
     /// The current URI being used for HTML5 motion graphics for this pipeline.
     pub fn active_motion_graphics_uri(
         mut self,
@@ -126,6 +144,10 @@ impl PipelineDetailBuilder {
         self.active_motion_graphics_uri = input;
         self
     }
+    /// The current URI being used for HTML5 motion graphics for this pipeline.
+    pub fn get_active_motion_graphics_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.active_motion_graphics_uri
+    }
     /// Pipeline ID
     pub fn pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_id = ::std::option::Option::Some(input.into());
@@ -135,6 +157,10 @@ impl PipelineDetailBuilder {
     pub fn set_pipeline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_id = input;
         self
+    }
+    /// Pipeline ID
+    pub fn get_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_id
     }
     /// Consumes the builder and constructs a [`PipelineDetail`](crate::types::PipelineDetail).
     pub fn build(self) -> crate::types::PipelineDetail {

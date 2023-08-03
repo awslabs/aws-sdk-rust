@@ -61,6 +61,10 @@ impl CancelQuantumTaskOutputBuilder {
         self.quantum_task_arn = input;
         self
     }
+    /// <p>The ARN of the task.</p>
+    pub fn get_quantum_task_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quantum_task_arn
+    }
     /// <p>The status of the cancellation request.</p>
     pub fn cancellation_status(mut self, input: crate::types::CancellationStatus) -> Self {
         self.cancellation_status = ::std::option::Option::Some(input);
@@ -73,6 +77,12 @@ impl CancelQuantumTaskOutputBuilder {
     ) -> Self {
         self.cancellation_status = input;
         self
+    }
+    /// <p>The status of the cancellation request.</p>
+    pub fn get_cancellation_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::CancellationStatus> {
+        &self.cancellation_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

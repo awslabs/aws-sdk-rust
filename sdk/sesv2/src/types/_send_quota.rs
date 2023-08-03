@@ -56,6 +56,10 @@ impl SendQuotaBuilder {
         self.max24_hour_send = input;
         self
     }
+    /// <p>The maximum number of emails that you can send in the current Amazon Web Services Region over a 24-hour period. A value of -1 signifies an unlimited quota. (This value is also referred to as your <i>sending quota</i>.)</p>
+    pub fn get_max24_hour_send(&self) -> &::std::option::Option<f64> {
+        &self.max24_hour_send
+    }
     /// <p>The maximum number of emails that you can send per second in the current Amazon Web Services Region. This value is also called your <i>maximum sending rate</i> or your <i>maximum TPS (transactions per second) rate</i>.</p>
     pub fn max_send_rate(mut self, input: f64) -> Self {
         self.max_send_rate = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl SendQuotaBuilder {
         self.max_send_rate = input;
         self
     }
+    /// <p>The maximum number of emails that you can send per second in the current Amazon Web Services Region. This value is also called your <i>maximum sending rate</i> or your <i>maximum TPS (transactions per second) rate</i>.</p>
+    pub fn get_max_send_rate(&self) -> &::std::option::Option<f64> {
+        &self.max_send_rate
+    }
     /// <p>The number of emails sent from your Amazon SES account in the current Amazon Web Services Region over the past 24 hours.</p>
     pub fn sent_last24_hours(mut self, input: f64) -> Self {
         self.sent_last24_hours = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl SendQuotaBuilder {
     pub fn set_sent_last24_hours(mut self, input: ::std::option::Option<f64>) -> Self {
         self.sent_last24_hours = input;
         self
+    }
+    /// <p>The number of emails sent from your Amazon SES account in the current Amazon Web Services Region over the past 24 hours.</p>
+    pub fn get_sent_last24_hours(&self) -> &::std::option::Option<f64> {
+        &self.sent_last24_hours
     }
     /// Consumes the builder and constructs a [`SendQuota`](crate::types::SendQuota).
     pub fn build(self) -> crate::types::SendQuota {

@@ -61,6 +61,12 @@ impl TranscriptionConfigurationBuilder {
         self.engine_transcribe_settings = input;
         self
     }
+    /// <p>The transcription configuration settings passed to Amazon Transcribe.</p>
+    pub fn get_engine_transcribe_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::EngineTranscribeSettings> {
+        &self.engine_transcribe_settings
+    }
     /// <p>The transcription configuration settings passed to Amazon Transcribe Medical.</p>
     pub fn engine_transcribe_medical_settings(
         mut self,
@@ -76,6 +82,12 @@ impl TranscriptionConfigurationBuilder {
     ) -> Self {
         self.engine_transcribe_medical_settings = input;
         self
+    }
+    /// <p>The transcription configuration settings passed to Amazon Transcribe Medical.</p>
+    pub fn get_engine_transcribe_medical_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::EngineTranscribeMedicalSettings> {
+        &self.engine_transcribe_medical_settings
     }
     /// Consumes the builder and constructs a [`TranscriptionConfiguration`](crate::types::TranscriptionConfiguration).
     pub fn build(self) -> crate::types::TranscriptionConfiguration {

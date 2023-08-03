@@ -55,6 +55,10 @@ impl UpdateTestSetInputBuilder {
         self.test_set_id = input;
         self
     }
+    /// <p>The test set Id for which update test operation to be performed.</p>
+    pub fn get_test_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_set_id
+    }
     /// <p>The new test set name.</p>
     pub fn test_set_name(
         mut self,
@@ -71,6 +75,10 @@ impl UpdateTestSetInputBuilder {
         self.test_set_name = input;
         self
     }
+    /// <p>The new test set name.</p>
+    pub fn get_test_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_set_name
+    }
     /// <p>The new test set description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -80,6 +88,10 @@ impl UpdateTestSetInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The new test set description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`UpdateTestSetInput`](crate::operation::update_test_set::UpdateTestSetInput).
     pub fn build(

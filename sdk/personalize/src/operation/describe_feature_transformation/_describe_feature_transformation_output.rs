@@ -51,6 +51,12 @@ impl DescribeFeatureTransformationOutputBuilder {
         self.feature_transformation = input;
         self
     }
+    /// <p>A listing of the FeatureTransformation properties.</p>
+    pub fn get_feature_transformation(
+        &self,
+    ) -> &::std::option::Option<crate::types::FeatureTransformation> {
+        &self.feature_transformation
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

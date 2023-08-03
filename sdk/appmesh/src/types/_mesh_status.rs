@@ -43,6 +43,10 @@ impl MeshStatusBuilder {
         self.status = input;
         self
     }
+    /// <p>The current mesh status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::MeshStatusCode> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`MeshStatus`](crate::types::MeshStatus).
     pub fn build(self) -> crate::types::MeshStatus {
         crate::types::MeshStatus {

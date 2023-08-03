@@ -37,6 +37,13 @@ impl ListTableRestoreStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListTableRestoreStatus as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_table_restore_status::builders::ListTableRestoreStatusInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,6 +146,10 @@ impl ListTableRestoreStatusFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>If your initial <code>ListTableRestoreStatus</code> operation returns a nextToken, you can include the returned <code>nextToken</code> in following <code>ListTableRestoreStatus</code> operations. This will return results on the next page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use nextToken to display the next page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -148,6 +159,10 @@ impl ListTableRestoreStatusFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>An optional parameter that specifies the maximum number of results to return. You can use nextToken to display the next page of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The namespace from which to list all of the statuses of <code>RestoreTableFromSnapshot</code> operations .</p>
     pub fn namespace_name(
@@ -165,6 +180,10 @@ impl ListTableRestoreStatusFluentBuilder {
         self.inner = self.inner.set_namespace_name(input);
         self
     }
+    /// <p>The namespace from which to list all of the statuses of <code>RestoreTableFromSnapshot</code> operations .</p>
+    pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace_name()
+    }
     /// <p>The workgroup from which to list all of the statuses of <code>RestoreTableFromSnapshot</code> operations.</p>
     pub fn workgroup_name(
         mut self,
@@ -180,5 +199,9 @@ impl ListTableRestoreStatusFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_workgroup_name(input);
         self
+    }
+    /// <p>The workgroup from which to list all of the statuses of <code>RestoreTableFromSnapshot</code> operations.</p>
+    pub fn get_workgroup_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workgroup_name()
     }
 }

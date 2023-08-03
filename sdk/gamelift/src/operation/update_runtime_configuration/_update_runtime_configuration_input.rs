@@ -49,6 +49,10 @@ impl UpdateRuntimeConfigurationInputBuilder {
         self.fleet_id = input;
         self
     }
+    /// <p>A unique identifier for the fleet to update runtime configuration for. You can use either the fleet ID or ARN value.</p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_id
+    }
     /// <p>Instructions for launching server processes on each instance in the fleet. Server processes run either a custom game build executable or a Realtime Servers script. The runtime configuration lists the types of server processes to run on an instance, how to launch them, and the number of processes to run concurrently.</p>
     pub fn runtime_configuration(mut self, input: crate::types::RuntimeConfiguration) -> Self {
         self.runtime_configuration = ::std::option::Option::Some(input);
@@ -61,6 +65,12 @@ impl UpdateRuntimeConfigurationInputBuilder {
     ) -> Self {
         self.runtime_configuration = input;
         self
+    }
+    /// <p>Instructions for launching server processes on each instance in the fleet. Server processes run either a custom game build executable or a Realtime Servers script. The runtime configuration lists the types of server processes to run on an instance, how to launch them, and the number of processes to run concurrently.</p>
+    pub fn get_runtime_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::RuntimeConfiguration> {
+        &self.runtime_configuration
     }
     /// Consumes the builder and constructs a [`UpdateRuntimeConfigurationInput`](crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationInput).
     pub fn build(

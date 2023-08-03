@@ -36,6 +36,10 @@ impl DisableSagemakerServicecatalogPortfolioFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisableSagemakerServicecatalogPortfolio as a reference.
+    pub fn as_input(&self) -> &crate::operation::disable_sagemaker_servicecatalog_portfolio::builders::DisableSagemakerServicecatalogPortfolioInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<

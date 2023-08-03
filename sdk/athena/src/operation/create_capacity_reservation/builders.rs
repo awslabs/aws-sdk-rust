@@ -36,6 +36,10 @@ impl CreateCapacityReservationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateCapacityReservation as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_capacity_reservation::builders::CreateCapacityReservationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl CreateCapacityReservationFluentBuilder {
         self.inner = self.inner.set_target_dpus(input);
         self
     }
+    /// <p>The number of requested data processing units.</p>
+    pub fn get_target_dpus(&self) -> &::std::option::Option<i32> {
+        self.inner.get_target_dpus()
+    }
     /// <p>The name of the capacity reservation to create.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -135,6 +143,10 @@ impl CreateCapacityReservationFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the capacity reservation to create.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// Appends an item to `Tags`.
     ///
@@ -152,5 +164,9 @@ impl CreateCapacityReservationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags for the capacity reservation.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

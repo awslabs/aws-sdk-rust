@@ -63,6 +63,10 @@ impl DeletePermissionOutputBuilder {
         self.return_value = input;
         self
     }
+    /// <p>A boolean that indicates whether the delete operations succeeded.</p>
+    pub fn get_return_value(&self) -> &::std::option::Option<bool> {
+        &self.return_value
+    }
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl DeletePermissionOutputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>This operation is performed asynchronously, and this response parameter indicates the current status.</p>
     pub fn permission_status(mut self, input: crate::types::PermissionStatus) -> Self {
@@ -85,6 +93,10 @@ impl DeletePermissionOutputBuilder {
     ) -> Self {
         self.permission_status = input;
         self
+    }
+    /// <p>This operation is performed asynchronously, and this response parameter indicates the current status.</p>
+    pub fn get_permission_status(&self) -> &::std::option::Option<crate::types::PermissionStatus> {
+        &self.permission_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

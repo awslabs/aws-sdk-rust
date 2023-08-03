@@ -57,6 +57,10 @@ impl UpdateChapCredentialsOutputBuilder {
         self.target_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the target. This is the same target specified in the request.</p>
+    pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_arn
+    }
     /// <p>The iSCSI initiator that connects to the target. This is the same initiator name specified in the request.</p>
     pub fn initiator_name(
         mut self,
@@ -72,6 +76,10 @@ impl UpdateChapCredentialsOutputBuilder {
     ) -> Self {
         self.initiator_name = input;
         self
+    }
+    /// <p>The iSCSI initiator that connects to the target. This is the same initiator name specified in the request.</p>
+    pub fn get_initiator_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.initiator_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

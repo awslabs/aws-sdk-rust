@@ -74,6 +74,10 @@ impl UpdateParallelDataOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the parallel data resource being updated.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The status of the parallel data resource that you are attempting to update. Your update request is accepted only if this status is either <code>ACTIVE</code> or <code>FAILED</code>.</p>
     pub fn status(mut self, input: crate::types::ParallelDataStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -86,6 +90,10 @@ impl UpdateParallelDataOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the parallel data resource that you are attempting to update. Your update request is accepted only if this status is either <code>ACTIVE</code> or <code>FAILED</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ParallelDataStatus> {
+        &self.status
     }
     /// <p>The status of the parallel data update attempt. When the updated parallel data resource is ready for you to use, the status is <code>ACTIVE</code>.</p>
     pub fn latest_update_attempt_status(mut self, input: crate::types::ParallelDataStatus) -> Self {
@@ -100,6 +108,12 @@ impl UpdateParallelDataOutputBuilder {
         self.latest_update_attempt_status = input;
         self
     }
+    /// <p>The status of the parallel data update attempt. When the updated parallel data resource is ready for you to use, the status is <code>ACTIVE</code>.</p>
+    pub fn get_latest_update_attempt_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ParallelDataStatus> {
+        &self.latest_update_attempt_status
+    }
     /// <p>The time that the most recent update was attempted.</p>
     pub fn latest_update_attempt_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.latest_update_attempt_at = ::std::option::Option::Some(input);
@@ -112,6 +126,12 @@ impl UpdateParallelDataOutputBuilder {
     ) -> Self {
         self.latest_update_attempt_at = input;
         self
+    }
+    /// <p>The time that the most recent update was attempted.</p>
+    pub fn get_latest_update_attempt_at(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.latest_update_attempt_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

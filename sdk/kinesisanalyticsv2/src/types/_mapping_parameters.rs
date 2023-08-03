@@ -55,6 +55,12 @@ impl MappingParametersBuilder {
         self.json_mapping_parameters = input;
         self
     }
+    /// <p>Provides additional mapping information when JSON is the record format on the streaming source.</p>
+    pub fn get_json_mapping_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::JsonMappingParameters> {
+        &self.json_mapping_parameters
+    }
     /// <p>Provides additional mapping information when the record format uses delimiters (for example, CSV).</p>
     pub fn csv_mapping_parameters(mut self, input: crate::types::CsvMappingParameters) -> Self {
         self.csv_mapping_parameters = ::std::option::Option::Some(input);
@@ -67,6 +73,12 @@ impl MappingParametersBuilder {
     ) -> Self {
         self.csv_mapping_parameters = input;
         self
+    }
+    /// <p>Provides additional mapping information when the record format uses delimiters (for example, CSV).</p>
+    pub fn get_csv_mapping_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::CsvMappingParameters> {
+        &self.csv_mapping_parameters
     }
     /// Consumes the builder and constructs a [`MappingParameters`](crate::types::MappingParameters).
     pub fn build(self) -> crate::types::MappingParameters {

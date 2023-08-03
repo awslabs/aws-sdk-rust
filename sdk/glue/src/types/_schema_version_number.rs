@@ -48,6 +48,10 @@ impl SchemaVersionNumberBuilder {
         self.latest_version = input;
         self
     }
+    /// <p>The latest version available for the schema.</p>
+    pub fn get_latest_version(&self) -> &::std::option::Option<bool> {
+        &self.latest_version
+    }
     /// <p>The version number of the schema.</p>
     pub fn version_number(mut self, input: i64) -> Self {
         self.version_number = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl SchemaVersionNumberBuilder {
     pub fn set_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.version_number = input;
         self
+    }
+    /// <p>The version number of the schema.</p>
+    pub fn get_version_number(&self) -> &::std::option::Option<i64> {
+        &self.version_number
     }
     /// Consumes the builder and constructs a [`SchemaVersionNumber`](crate::types::SchemaVersionNumber).
     pub fn build(self) -> crate::types::SchemaVersionNumber {

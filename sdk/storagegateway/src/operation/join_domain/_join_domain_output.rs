@@ -75,6 +75,10 @@ impl JoinDomainOutputBuilder {
         self.gateway_arn = input;
         self
     }
+    /// <p>The unique Amazon Resource Name (ARN) of the gateway that joined the domain.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
+    }
     /// <p>Indicates the status of the gateway as a member of the Active Directory domain.</p>
     /// <ul>
     /// <li> <p> <code>ACCESS_DENIED</code>: Indicates that the <code>JoinDomain</code> operation failed due to an authentication error.</p> </li>
@@ -105,6 +109,21 @@ impl JoinDomainOutputBuilder {
     ) -> Self {
         self.active_directory_status = input;
         self
+    }
+    /// <p>Indicates the status of the gateway as a member of the Active Directory domain.</p>
+    /// <ul>
+    /// <li> <p> <code>ACCESS_DENIED</code>: Indicates that the <code>JoinDomain</code> operation failed due to an authentication error.</p> </li>
+    /// <li> <p> <code>DETACHED</code>: Indicates that gateway is not joined to a domain.</p> </li>
+    /// <li> <p> <code>JOINED</code>: Indicates that the gateway has successfully joined a domain.</p> </li>
+    /// <li> <p> <code>JOINING</code>: Indicates that a <code>JoinDomain</code> operation is in progress.</p> </li>
+    /// <li> <p> <code>NETWORK_ERROR</code>: Indicates that <code>JoinDomain</code> operation failed due to a network or connectivity error.</p> </li>
+    /// <li> <p> <code>TIMEOUT</code>: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't complete within the allotted time.</p> </li>
+    /// <li> <p> <code>UNKNOWN_ERROR</code>: Indicates that the <code>JoinDomain</code> operation failed due to another type of error.</p> </li>
+    /// </ul>
+    pub fn get_active_directory_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ActiveDirectoryStatus> {
+        &self.active_directory_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -64,6 +64,10 @@ impl DatabaseBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the database.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>An optional description of the database.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl DatabaseBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>An optional description of the database.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `parameters`.
     ///
@@ -98,6 +106,14 @@ impl DatabaseBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>A set of custom key/value pairs.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.parameters
     }
     /// Consumes the builder and constructs a [`Database`](crate::types::Database).
     pub fn build(self) -> crate::types::Database {

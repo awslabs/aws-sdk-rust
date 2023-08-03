@@ -220,6 +220,10 @@ impl TraceSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier for the request that generated the trace's segments and subsegments.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The length of time in seconds between the start time of the root segment and the end time of the last segment that completed.</p>
     pub fn duration(mut self, input: f64) -> Self {
         self.duration = ::std::option::Option::Some(input);
@@ -229,6 +233,10 @@ impl TraceSummaryBuilder {
     pub fn set_duration(mut self, input: ::std::option::Option<f64>) -> Self {
         self.duration = input;
         self
+    }
+    /// <p>The length of time in seconds between the start time of the root segment and the end time of the last segment that completed.</p>
+    pub fn get_duration(&self) -> &::std::option::Option<f64> {
+        &self.duration
     }
     /// <p>The length of time in seconds between the start and end times of the root segment. If the service performs work asynchronously, the response time measures the time before the response is sent to the user, while the duration measures the amount of time before the last traced activity completes.</p>
     pub fn response_time(mut self, input: f64) -> Self {
@@ -240,6 +248,10 @@ impl TraceSummaryBuilder {
         self.response_time = input;
         self
     }
+    /// <p>The length of time in seconds between the start and end times of the root segment. If the service performs work asynchronously, the response time measures the time before the response is sent to the user, while the duration measures the amount of time before the last traced activity completes.</p>
+    pub fn get_response_time(&self) -> &::std::option::Option<f64> {
+        &self.response_time
+    }
     /// <p>The root segment document has a 500 series error.</p>
     pub fn has_fault(mut self, input: bool) -> Self {
         self.has_fault = ::std::option::Option::Some(input);
@@ -249,6 +261,10 @@ impl TraceSummaryBuilder {
     pub fn set_has_fault(mut self, input: ::std::option::Option<bool>) -> Self {
         self.has_fault = input;
         self
+    }
+    /// <p>The root segment document has a 500 series error.</p>
+    pub fn get_has_fault(&self) -> &::std::option::Option<bool> {
+        &self.has_fault
     }
     /// <p>The root segment document has a 400 series error.</p>
     pub fn has_error(mut self, input: bool) -> Self {
@@ -260,6 +276,10 @@ impl TraceSummaryBuilder {
         self.has_error = input;
         self
     }
+    /// <p>The root segment document has a 400 series error.</p>
+    pub fn get_has_error(&self) -> &::std::option::Option<bool> {
+        &self.has_error
+    }
     /// <p>One or more of the segment documents has a 429 throttling error.</p>
     pub fn has_throttle(mut self, input: bool) -> Self {
         self.has_throttle = ::std::option::Option::Some(input);
@@ -269,6 +289,10 @@ impl TraceSummaryBuilder {
     pub fn set_has_throttle(mut self, input: ::std::option::Option<bool>) -> Self {
         self.has_throttle = input;
         self
+    }
+    /// <p>One or more of the segment documents has a 429 throttling error.</p>
+    pub fn get_has_throttle(&self) -> &::std::option::Option<bool> {
+        &self.has_throttle
     }
     /// <p>One or more of the segment documents is in progress.</p>
     pub fn is_partial(mut self, input: bool) -> Self {
@@ -280,6 +304,10 @@ impl TraceSummaryBuilder {
         self.is_partial = input;
         self
     }
+    /// <p>One or more of the segment documents is in progress.</p>
+    pub fn get_is_partial(&self) -> &::std::option::Option<bool> {
+        &self.is_partial
+    }
     /// <p>Information about the HTTP request served by the trace.</p>
     pub fn http(mut self, input: crate::types::Http) -> Self {
         self.http = ::std::option::Option::Some(input);
@@ -289,6 +317,10 @@ impl TraceSummaryBuilder {
     pub fn set_http(mut self, input: ::std::option::Option<crate::types::Http>) -> Self {
         self.http = input;
         self
+    }
+    /// <p>Information about the HTTP request served by the trace.</p>
+    pub fn get_http(&self) -> &::std::option::Option<crate::types::Http> {
+        &self.http
     }
     /// Adds a key-value pair to `annotations`.
     ///
@@ -318,6 +350,17 @@ impl TraceSummaryBuilder {
         self.annotations = input;
         self
     }
+    /// <p>Annotations from the trace's segment documents.</p>
+    pub fn get_annotations(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::vec::Vec<crate::types::ValueWithServiceIds>,
+        >,
+    > {
+        &self.annotations
+    }
     /// Appends an item to `users`.
     ///
     /// To override the contents of this collection use [`set_users`](Self::set_users).
@@ -336,6 +379,10 @@ impl TraceSummaryBuilder {
     ) -> Self {
         self.users = input;
         self
+    }
+    /// <p>Users from the trace's segment documents.</p>
+    pub fn get_users(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TraceUser>> {
+        &self.users
     }
     /// Appends an item to `service_ids`.
     ///
@@ -356,6 +403,12 @@ impl TraceSummaryBuilder {
         self.service_ids = input;
         self
     }
+    /// <p>Service IDs from the trace's segment documents.</p>
+    pub fn get_service_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceId>> {
+        &self.service_ids
+    }
     /// Appends an item to `resource_ar_ns`.
     ///
     /// To override the contents of this collection use [`set_resource_ar_ns`](Self::set_resource_ar_ns).
@@ -374,6 +427,12 @@ impl TraceSummaryBuilder {
     ) -> Self {
         self.resource_ar_ns = input;
         self
+    }
+    /// <p>A list of resource ARNs for any resource corresponding to the trace segments.</p>
+    pub fn get_resource_ar_ns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceArnDetail>> {
+        &self.resource_ar_ns
     }
     /// Appends an item to `instance_ids`.
     ///
@@ -394,6 +453,12 @@ impl TraceSummaryBuilder {
         self.instance_ids = input;
         self
     }
+    /// <p>A list of EC2 instance IDs for any instance corresponding to the trace segments.</p>
+    pub fn get_instance_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceIdDetail>> {
+        &self.instance_ids
+    }
     /// Appends an item to `availability_zones`.
     ///
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
@@ -413,6 +478,12 @@ impl TraceSummaryBuilder {
         self.availability_zones = input;
         self
     }
+    /// <p>A list of Availability Zones for any zone corresponding to the trace segments.</p>
+    pub fn get_availability_zones(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneDetail>> {
+        &self.availability_zones
+    }
     /// <p>The root of a trace.</p>
     pub fn entry_point(mut self, input: crate::types::ServiceId) -> Self {
         self.entry_point = ::std::option::Option::Some(input);
@@ -425,6 +496,10 @@ impl TraceSummaryBuilder {
     ) -> Self {
         self.entry_point = input;
         self
+    }
+    /// <p>The root of a trace.</p>
+    pub fn get_entry_point(&self) -> &::std::option::Option<crate::types::ServiceId> {
+        &self.entry_point
     }
     /// Appends an item to `fault_root_causes`.
     ///
@@ -445,6 +520,12 @@ impl TraceSummaryBuilder {
         self.fault_root_causes = input;
         self
     }
+    /// <p>A collection of FaultRootCause structures corresponding to the trace segments.</p>
+    pub fn get_fault_root_causes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FaultRootCause>> {
+        &self.fault_root_causes
+    }
     /// Appends an item to `error_root_causes`.
     ///
     /// To override the contents of this collection use [`set_error_root_causes`](Self::set_error_root_causes).
@@ -463,6 +544,12 @@ impl TraceSummaryBuilder {
     ) -> Self {
         self.error_root_causes = input;
         self
+    }
+    /// <p>A collection of ErrorRootCause structures corresponding to the trace segments.</p>
+    pub fn get_error_root_causes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ErrorRootCause>> {
+        &self.error_root_causes
     }
     /// Appends an item to `response_time_root_causes`.
     ///
@@ -483,6 +570,12 @@ impl TraceSummaryBuilder {
         self.response_time_root_causes = input;
         self
     }
+    /// <p>A collection of ResponseTimeRootCause structures corresponding to the trace segments.</p>
+    pub fn get_response_time_root_causes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResponseTimeRootCause>> {
+        &self.response_time_root_causes
+    }
     /// <p>The revision number of a trace.</p>
     pub fn revision(mut self, input: i32) -> Self {
         self.revision = ::std::option::Option::Some(input);
@@ -492,6 +585,10 @@ impl TraceSummaryBuilder {
     pub fn set_revision(mut self, input: ::std::option::Option<i32>) -> Self {
         self.revision = input;
         self
+    }
+    /// <p>The revision number of a trace.</p>
+    pub fn get_revision(&self) -> &::std::option::Option<i32> {
+        &self.revision
     }
     /// <p>The matched time stamp of a defined event.</p>
     pub fn matched_event_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -505,6 +602,10 @@ impl TraceSummaryBuilder {
     ) -> Self {
         self.matched_event_time = input;
         self
+    }
+    /// <p>The matched time stamp of a defined event.</p>
+    pub fn get_matched_event_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.matched_event_time
     }
     /// Consumes the builder and constructs a [`TraceSummary`](crate::types::TraceSummary).
     pub fn build(self) -> crate::types::TraceSummary {

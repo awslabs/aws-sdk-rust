@@ -49,6 +49,12 @@ impl CreateDataRepositoryTaskOutputBuilder {
         self.data_repository_task = input;
         self
     }
+    /// <p>The description of the data repository task that you just created.</p>
+    pub fn get_data_repository_task(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataRepositoryTask> {
+        &self.data_repository_task
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

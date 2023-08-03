@@ -37,6 +37,12 @@ impl GetCommandInvocationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetCommandInvocation as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_command_invocation::builders::GetCommandInvocationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl GetCommandInvocationFluentBuilder {
         self.inner = self.inner.set_command_id(input);
         self
     }
+    /// <p>(Required) The parent command ID of the invocation plugin.</p>
+    pub fn get_command_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_command_id()
+    }
     /// <p>(Required) The ID of the managed node targeted by the command. A <i>managed node</i> can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, and on-premises server or VM in your hybrid environment that is configured for Amazon Web Services Systems Manager.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
@@ -136,6 +146,10 @@ impl GetCommandInvocationFluentBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
+    }
+    /// <p>(Required) The ID of the managed node targeted by the command. A <i>managed node</i> can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, and on-premises server or VM in your hybrid environment that is configured for Amazon Web Services Systems Manager.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
     }
     /// <p>The name of the step for which you want detailed results. If the document contains only one step, you can omit the name and details for that step. If the document contains more than one step, you must specify the name of the step for which you want to view details. Be sure to specify the name of the step, not the name of a plugin like <code>aws:RunShellScript</code>.</p>
     /// <p>To find the <code>PluginName</code>, check the document content and find the name of the step you want details for. Alternatively, use <code>ListCommandInvocations</code> with the <code>CommandId</code> and <code>Details</code> parameters. The <code>PluginName</code> is the <code>Name</code> attribute of the <code>CommandPlugin</code> object in the <code>CommandPlugins</code> list.</p>
@@ -148,5 +162,10 @@ impl GetCommandInvocationFluentBuilder {
     pub fn set_plugin_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_plugin_name(input);
         self
+    }
+    /// <p>The name of the step for which you want detailed results. If the document contains only one step, you can omit the name and details for that step. If the document contains more than one step, you must specify the name of the step for which you want to view details. Be sure to specify the name of the step, not the name of a plugin like <code>aws:RunShellScript</code>.</p>
+    /// <p>To find the <code>PluginName</code>, check the document content and find the name of the step you want details for. Alternatively, use <code>ListCommandInvocations</code> with the <code>CommandId</code> and <code>Details</code> parameters. The <code>PluginName</code> is the <code>Name</code> attribute of the <code>CommandPlugin</code> object in the <code>CommandPlugins</code> list.</p>
+    pub fn get_plugin_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_plugin_name()
     }
 }

@@ -47,6 +47,10 @@ impl TerminateInstanceInAutoScalingGroupInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The ID of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>Indicates whether terminating the instance also decrements the size of the Auto Scaling group.</p>
     pub fn should_decrement_desired_capacity(mut self, input: bool) -> Self {
         self.should_decrement_desired_capacity = ::std::option::Option::Some(input);
@@ -59,6 +63,10 @@ impl TerminateInstanceInAutoScalingGroupInputBuilder {
     ) -> Self {
         self.should_decrement_desired_capacity = input;
         self
+    }
+    /// <p>Indicates whether terminating the instance also decrements the size of the Auto Scaling group.</p>
+    pub fn get_should_decrement_desired_capacity(&self) -> &::std::option::Option<bool> {
+        &self.should_decrement_desired_capacity
     }
     /// Consumes the builder and constructs a [`TerminateInstanceInAutoScalingGroupInput`](crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroupInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroupInput, ::aws_smithy_http::operation::error::BuildError>{

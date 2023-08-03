@@ -37,6 +37,10 @@ impl DescribeHostReservationOfferingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeHostReservationOfferings as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_host_reservation_offerings::builders::DescribeHostReservationOfferingsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -122,6 +126,14 @@ impl DescribeHostReservationOfferingsFluentBuilder {
         self.inner = self.inner.set_filter(input);
         self
     }
+    /// <p>The filters.</p>
+    /// <ul>
+    /// <li> <p> <code>instance-family</code> - The instance family of the offering (for example, <code>m4</code>).</p> </li>
+    /// <li> <p> <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li>
+    /// </ul>
+    pub fn get_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filter()
+    }
     /// <p>This is the maximum duration of the reservation to purchase, specified in seconds. Reservations are available in one-year and three-year terms. The number of seconds specified must be the number of seconds in a year (365x24x60x60) times one of the supported durations (1 or 3). For example, specify 94608000 for three years.</p>
     pub fn max_duration(mut self, input: i32) -> Self {
         self.inner = self.inner.max_duration(input);
@@ -131,6 +143,10 @@ impl DescribeHostReservationOfferingsFluentBuilder {
     pub fn set_max_duration(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_duration(input);
         self
+    }
+    /// <p>This is the maximum duration of the reservation to purchase, specified in seconds. Reservations are available in one-year and three-year terms. The number of seconds specified must be the number of seconds in a year (365x24x60x60) times one of the supported durations (1 or 3). For example, specify 94608000 for three years.</p>
+    pub fn get_max_duration(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_duration()
     }
     /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -142,6 +158,10 @@ impl DescribeHostReservationOfferingsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>This is the minimum duration of the reservation you'd like to purchase, specified in seconds. Reservations are available in one-year and three-year terms. The number of seconds specified must be the number of seconds in a year (365x24x60x60) times one of the supported durations (1 or 3). For example, specify 31536000 for one year.</p>
     pub fn min_duration(mut self, input: i32) -> Self {
         self.inner = self.inner.min_duration(input);
@@ -151,6 +171,10 @@ impl DescribeHostReservationOfferingsFluentBuilder {
     pub fn set_min_duration(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_min_duration(input);
         self
+    }
+    /// <p>This is the minimum duration of the reservation you'd like to purchase, specified in seconds. Reservations are available in one-year and three-year terms. The number of seconds specified must be the number of seconds in a year (365x24x60x60) times one of the supported durations (1 or 3). For example, specify 31536000 for one year.</p>
+    pub fn get_min_duration(&self) -> &::std::option::Option<i32> {
+        self.inner.get_min_duration()
     }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -162,6 +186,10 @@ impl DescribeHostReservationOfferingsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The ID of the reservation offering.</p>
     pub fn offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.offering_id(input.into());
@@ -171,5 +199,9 @@ impl DescribeHostReservationOfferingsFluentBuilder {
     pub fn set_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_offering_id(input);
         self
+    }
+    /// <p>The ID of the reservation offering.</p>
+    pub fn get_offering_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_offering_id()
     }
 }

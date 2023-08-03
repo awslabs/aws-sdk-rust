@@ -37,6 +37,13 @@ impl DescribeAccountSettingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeAccountSettings as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_account_settings::builders::DescribeAccountSettingsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +139,9 @@ impl DescribeAccountSettingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
+    }
+    /// <p>The ID for the Amazon Web Services account that contains the settings that you want to list.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
     }
 }

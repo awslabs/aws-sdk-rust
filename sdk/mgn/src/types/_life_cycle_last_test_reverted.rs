@@ -46,6 +46,10 @@ impl LifeCycleLastTestRevertedBuilder {
         self.api_call_date_time = input;
         self
     }
+    /// <p>Lifecycle last Test reverted API call date and time.</p>
+    pub fn get_api_call_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_call_date_time
+    }
     /// Consumes the builder and constructs a [`LifeCycleLastTestReverted`](crate::types::LifeCycleLastTestReverted).
     pub fn build(self) -> crate::types::LifeCycleLastTestReverted {
         crate::types::LifeCycleLastTestReverted {

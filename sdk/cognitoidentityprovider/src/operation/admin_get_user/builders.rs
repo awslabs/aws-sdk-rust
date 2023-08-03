@@ -37,6 +37,12 @@ impl AdminGetUserFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AdminGetUser as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::admin_get_user::builders::AdminGetUserInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +125,10 @@ impl AdminGetUserFluentBuilder {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
+    /// <p>The user pool ID for the user pool where you want to get information about the user.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_pool_id()
+    }
     /// <p>The user name of the user you want to retrieve.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.username(input.into());
@@ -128,5 +138,9 @@ impl AdminGetUserFluentBuilder {
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_username(input);
         self
+    }
+    /// <p>The user name of the user you want to retrieve.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_username()
     }
 }

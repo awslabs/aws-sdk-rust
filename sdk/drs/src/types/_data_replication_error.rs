@@ -52,6 +52,10 @@ impl DataReplicationErrorBuilder {
         self
     }
     /// <p>Error in data replication.</p>
+    pub fn get_error(&self) -> &::std::option::Option<crate::types::DataReplicationErrorString> {
+        &self.error
+    }
+    /// <p>Error in data replication.</p>
     pub fn raw_error(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.raw_error = ::std::option::Option::Some(input.into());
         self
@@ -60,6 +64,10 @@ impl DataReplicationErrorBuilder {
     pub fn set_raw_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.raw_error = input;
         self
+    }
+    /// <p>Error in data replication.</p>
+    pub fn get_raw_error(&self) -> &::std::option::Option<::std::string::String> {
+        &self.raw_error
     }
     /// Consumes the builder and constructs a [`DataReplicationError`](crate::types::DataReplicationError).
     pub fn build(self) -> crate::types::DataReplicationError {

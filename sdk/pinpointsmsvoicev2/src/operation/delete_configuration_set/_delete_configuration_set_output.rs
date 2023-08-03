@@ -95,6 +95,10 @@ impl DeleteConfigurationSetOutputBuilder {
         self.configuration_set_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the deleted configuration set.</p>
+    pub fn get_configuration_set_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set_arn
+    }
     /// <p>The name of the deleted configuration set.</p>
     pub fn configuration_set_name(
         mut self,
@@ -110,6 +114,10 @@ impl DeleteConfigurationSetOutputBuilder {
     ) -> Self {
         self.configuration_set_name = input;
         self
+    }
+    /// <p>The name of the deleted configuration set.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set_name
     }
     /// Appends an item to `event_destinations`.
     ///
@@ -130,6 +138,12 @@ impl DeleteConfigurationSetOutputBuilder {
         self.event_destinations = input;
         self
     }
+    /// <p>An array of any EventDestination objects that were associated with the deleted configuration set.</p>
+    pub fn get_event_destinations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventDestination>> {
+        &self.event_destinations
+    }
     /// <p>The default message type of the configuration set that was deleted.</p>
     pub fn default_message_type(mut self, input: crate::types::MessageType) -> Self {
         self.default_message_type = ::std::option::Option::Some(input);
@@ -142,6 +156,10 @@ impl DeleteConfigurationSetOutputBuilder {
     ) -> Self {
         self.default_message_type = input;
         self
+    }
+    /// <p>The default message type of the configuration set that was deleted.</p>
+    pub fn get_default_message_type(&self) -> &::std::option::Option<crate::types::MessageType> {
+        &self.default_message_type
     }
     /// <p>The default Sender ID of the configuration set that was deleted.</p>
     pub fn default_sender_id(
@@ -159,6 +177,10 @@ impl DeleteConfigurationSetOutputBuilder {
         self.default_sender_id = input;
         self
     }
+    /// <p>The default Sender ID of the configuration set that was deleted.</p>
+    pub fn get_default_sender_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_sender_id
+    }
     /// <p>The time that the deleted configuration set was created in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_timestamp = ::std::option::Option::Some(input);
@@ -171,6 +193,10 @@ impl DeleteConfigurationSetOutputBuilder {
     ) -> Self {
         self.created_timestamp = input;
         self
+    }
+    /// <p>The time that the deleted configuration set was created in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

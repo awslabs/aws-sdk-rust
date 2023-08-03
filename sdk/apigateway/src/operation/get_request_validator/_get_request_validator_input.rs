@@ -50,6 +50,10 @@ impl GetRequestValidatorInputBuilder {
         self.rest_api_id = input;
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
+    }
     /// <p>The identifier of the RequestValidator to be retrieved.</p>
     pub fn request_validator_id(
         mut self,
@@ -65,6 +69,10 @@ impl GetRequestValidatorInputBuilder {
     ) -> Self {
         self.request_validator_id = input;
         self
+    }
+    /// <p>The identifier of the RequestValidator to be retrieved.</p>
+    pub fn get_request_validator_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_validator_id
     }
     /// Consumes the builder and constructs a [`GetRequestValidatorInput`](crate::operation::get_request_validator::GetRequestValidatorInput).
     pub fn build(

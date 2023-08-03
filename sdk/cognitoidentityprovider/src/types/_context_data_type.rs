@@ -72,6 +72,10 @@ impl ContextDataTypeBuilder {
         self.ip_address = input;
         self
     }
+    /// <p>The source IP address of your user's device.</p>
+    pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address
+    }
     /// <p>Your server endpoint where this API is invoked.</p>
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_name = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl ContextDataTypeBuilder {
         self.server_name = input;
         self
     }
+    /// <p>Your server endpoint where this API is invoked.</p>
+    pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_name
+    }
     /// <p>Your server path where this API is invoked.</p>
     pub fn server_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_path = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl ContextDataTypeBuilder {
     pub fn set_server_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_path = input;
         self
+    }
+    /// <p>Your server path where this API is invoked.</p>
+    pub fn get_server_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_path
     }
     /// Appends an item to `http_headers`.
     ///
@@ -111,6 +123,12 @@ impl ContextDataTypeBuilder {
         self.http_headers = input;
         self
     }
+    /// <p>HttpHeaders received on your server in same order.</p>
+    pub fn get_http_headers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HttpHeader>> {
+        &self.http_headers
+    }
     /// <p>Encoded device-fingerprint details that your app collected with the Amazon Cognito context data collection library. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint">Adding user device and session data to API requests</a>.</p>
     pub fn encoded_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encoded_data = ::std::option::Option::Some(input.into());
@@ -120,6 +138,10 @@ impl ContextDataTypeBuilder {
     pub fn set_encoded_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encoded_data = input;
         self
+    }
+    /// <p>Encoded device-fingerprint details that your app collected with the Amazon Cognito context data collection library. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint">Adding user device and session data to API requests</a>.</p>
+    pub fn get_encoded_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encoded_data
     }
     /// Consumes the builder and constructs a [`ContextDataType`](crate::types::ContextDataType).
     pub fn build(self) -> crate::types::ContextDataType {

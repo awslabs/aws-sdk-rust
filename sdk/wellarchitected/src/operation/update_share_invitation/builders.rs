@@ -38,6 +38,13 @@ impl UpdateShareInvitationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateShareInvitation as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_share_invitation::builders::UpdateShareInvitationInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +141,10 @@ impl UpdateShareInvitationFluentBuilder {
         self.inner = self.inner.set_share_invitation_id(input);
         self
     }
+    /// <p>The ID assigned to the share invitation.</p>
+    pub fn get_share_invitation_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_share_invitation_id()
+    }
     /// <p>Share invitation action taken by contributor.</p>
     pub fn share_invitation_action(mut self, input: crate::types::ShareInvitationAction) -> Self {
         self.inner = self.inner.share_invitation_action(input);
@@ -146,5 +157,11 @@ impl UpdateShareInvitationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_share_invitation_action(input);
         self
+    }
+    /// <p>Share invitation action taken by contributor.</p>
+    pub fn get_share_invitation_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::ShareInvitationAction> {
+        self.inner.get_share_invitation_action()
     }
 }

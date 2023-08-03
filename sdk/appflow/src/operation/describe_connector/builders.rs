@@ -36,6 +36,12 @@ impl DescribeConnectorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeConnector as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_connector::builders::DescribeConnectorInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl DescribeConnectorFluentBuilder {
         self.inner = self.inner.set_connector_type(input);
         self
     }
+    /// <p>The connector type, such as CUSTOMCONNECTOR, Saleforce, Marketo. Please choose CUSTOMCONNECTOR for Lambda based custom connectors.</p>
+    pub fn get_connector_type(&self) -> &::std::option::Option<crate::types::ConnectorType> {
+        self.inner.get_connector_type()
+    }
     /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
     pub fn connector_label(
         mut self,
@@ -144,5 +154,9 @@ impl DescribeConnectorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_connector_label(input);
         self
+    }
+    /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
+    pub fn get_connector_label(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connector_label()
     }
 }

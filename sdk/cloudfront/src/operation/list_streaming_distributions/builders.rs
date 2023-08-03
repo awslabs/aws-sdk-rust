@@ -36,6 +36,10 @@ impl ListStreamingDistributionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListStreamingDistributions as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_streaming_distributions::builders::ListStreamingDistributionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl ListStreamingDistributionsFluentBuilder {
         self.inner = self.inner.set_marker(input);
         self
     }
+    /// <p>The value that you provided for the <code>Marker</code> request parameter.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
+    }
     /// <p>The value that you provided for the <code>MaxItems</code> request parameter.</p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.inner = self.inner.max_items(input);
@@ -141,5 +149,9 @@ impl ListStreamingDistributionsFluentBuilder {
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_items(input);
         self
+    }
+    /// <p>The value that you provided for the <code>MaxItems</code> request parameter.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_items()
     }
 }

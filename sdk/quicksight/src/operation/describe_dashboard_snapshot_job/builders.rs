@@ -37,6 +37,10 @@ impl DescribeDashboardSnapshotJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeDashboardSnapshotJob as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_dashboard_snapshot_job::builders::DescribeDashboardSnapshotJobInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl DescribeDashboardSnapshotJobFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The ID of the Amazon Web Services account that the dashboard snapshot job is executed in.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The ID of the dashboard that you have started a snapshot job for.</p>
     pub fn dashboard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dashboard_id(input.into());
@@ -142,6 +150,10 @@ impl DescribeDashboardSnapshotJobFluentBuilder {
     pub fn set_dashboard_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dashboard_id(input);
         self
+    }
+    /// <p>The ID of the dashboard that you have started a snapshot job for.</p>
+    pub fn get_dashboard_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dashboard_id()
     }
     /// <p>The ID of the job to be described. The job ID is set when you start a new job with a <code>StartDashboardSnapshotJob</code> API call.</p>
     pub fn snapshot_job_id(
@@ -158,5 +170,9 @@ impl DescribeDashboardSnapshotJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_snapshot_job_id(input);
         self
+    }
+    /// <p>The ID of the job to be described. The job ID is set when you start a new job with a <code>StartDashboardSnapshotJob</code> API call.</p>
+    pub fn get_snapshot_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_job_id()
     }
 }

@@ -74,6 +74,12 @@ impl ResourceRequestStatusFilterBuilder {
         self.operations = input;
         self
     }
+    /// <p>The operation types to include in the filter.</p>
+    pub fn get_operations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Operation>> {
+        &self.operations
+    }
     /// Appends an item to `operation_statuses`.
     ///
     /// To override the contents of this collection use [`set_operation_statuses`](Self::set_operation_statuses).
@@ -108,6 +114,20 @@ impl ResourceRequestStatusFilterBuilder {
     ) -> Self {
         self.operation_statuses = input;
         self
+    }
+    /// <p>The operation statuses to include in the filter.</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING</code>: The operation has been requested, but not yet initiated.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code>: The operation is in progress.</p> </li>
+    /// <li> <p> <code>SUCCESS</code>: The operation completed.</p> </li>
+    /// <li> <p> <code>FAILED</code>: The operation failed.</p> </li>
+    /// <li> <p> <code>CANCEL_IN_PROGRESS</code>: The operation is in the process of being canceled.</p> </li>
+    /// <li> <p> <code>CANCEL_COMPLETE</code>: The operation has been canceled.</p> </li>
+    /// </ul>
+    pub fn get_operation_statuses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OperationStatus>> {
+        &self.operation_statuses
     }
     /// Consumes the builder and constructs a [`ResourceRequestStatusFilter`](crate::types::ResourceRequestStatusFilter).
     pub fn build(self) -> crate::types::ResourceRequestStatusFilter {

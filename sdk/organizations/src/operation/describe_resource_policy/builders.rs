@@ -37,6 +37,13 @@ impl DescribeResourcePolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeResourcePolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_resource_policy::builders::DescribeResourcePolicyInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(

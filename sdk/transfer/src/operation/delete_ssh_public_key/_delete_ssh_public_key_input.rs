@@ -56,6 +56,10 @@ impl DeleteSshPublicKeyInputBuilder {
         self.server_id = input;
         self
     }
+    /// <p>A system-assigned unique identifier for a file transfer protocol-enabled server instance that has the user assigned to it.</p>
+    pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_id
+    }
     /// <p>A unique identifier used to reference your user's specific SSH key.</p>
     pub fn ssh_public_key_id(
         mut self,
@@ -72,6 +76,10 @@ impl DeleteSshPublicKeyInputBuilder {
         self.ssh_public_key_id = input;
         self
     }
+    /// <p>A unique identifier used to reference your user's specific SSH key.</p>
+    pub fn get_ssh_public_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ssh_public_key_id
+    }
     /// <p>A unique string that identifies a user whose public key is being deleted.</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl DeleteSshPublicKeyInputBuilder {
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_name = input;
         self
+    }
+    /// <p>A unique string that identifies a user whose public key is being deleted.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
     }
     /// Consumes the builder and constructs a [`DeleteSshPublicKeyInput`](crate::operation::delete_ssh_public_key::DeleteSshPublicKeyInput).
     pub fn build(

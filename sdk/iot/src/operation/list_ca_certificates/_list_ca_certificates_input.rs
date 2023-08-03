@@ -65,6 +65,10 @@ impl ListCaCertificatesInputBuilder {
         self.page_size = input;
         self
     }
+    /// <p>The result page size.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        &self.page_size
+    }
     /// <p>The marker for the next set of results.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl ListCaCertificatesInputBuilder {
         self.marker = input;
         self
     }
+    /// <p>The marker for the next set of results.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>Determines the order of the results.</p>
     pub fn ascending_order(mut self, input: bool) -> Self {
         self.ascending_order = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl ListCaCertificatesInputBuilder {
     pub fn set_ascending_order(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ascending_order = input;
         self
+    }
+    /// <p>Determines the order of the results.</p>
+    pub fn get_ascending_order(&self) -> &::std::option::Option<bool> {
+        &self.ascending_order
     }
     /// <p>The name of the provisioning template.</p>
     pub fn template_name(
@@ -100,6 +112,10 @@ impl ListCaCertificatesInputBuilder {
     ) -> Self {
         self.template_name = input;
         self
+    }
+    /// <p>The name of the provisioning template.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
     }
     /// Consumes the builder and constructs a [`ListCaCertificatesInput`](crate::operation::list_ca_certificates::ListCaCertificatesInput).
     pub fn build(

@@ -50,6 +50,12 @@ impl ActionBuilder {
         self.export_revision_to_s3 = input;
         self
     }
+    /// <p>Details for the export revision to Amazon S3 action.</p>
+    pub fn get_export_revision_to_s3(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoExportRevisionToS3RequestDetails> {
+        &self.export_revision_to_s3
+    }
     /// Consumes the builder and constructs a [`Action`](crate::types::Action).
     pub fn build(self) -> crate::types::Action {
         crate::types::Action {

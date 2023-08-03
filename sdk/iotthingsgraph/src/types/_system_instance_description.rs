@@ -97,6 +97,10 @@ impl SystemInstanceDescriptionBuilder {
         self.summary = input;
         self
     }
+    /// <p>An object that contains summary information about a system instance.</p>
+    pub fn get_summary(&self) -> &::std::option::Option<crate::types::SystemInstanceSummary> {
+        &self.summary
+    }
     /// <p>A document that defines an entity. </p>
     pub fn definition(mut self, input: crate::types::DefinitionDocument) -> Self {
         self.definition = ::std::option::Option::Some(input);
@@ -109,6 +113,10 @@ impl SystemInstanceDescriptionBuilder {
     ) -> Self {
         self.definition = input;
         self
+    }
+    /// <p>A document that defines an entity. </p>
+    pub fn get_definition(&self) -> &::std::option::Option<crate::types::DefinitionDocument> {
+        &self.definition
     }
     /// <p>The Amazon Simple Storage Service bucket where information about a system instance is stored.</p>
     pub fn s3_bucket_name(
@@ -126,6 +134,10 @@ impl SystemInstanceDescriptionBuilder {
         self.s3_bucket_name = input;
         self
     }
+    /// <p>The Amazon Simple Storage Service bucket where information about a system instance is stored.</p>
+    pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_name
+    }
     /// <p>An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics.</p>
     pub fn metrics_configuration(mut self, input: crate::types::MetricsConfiguration) -> Self {
         self.metrics_configuration = ::std::option::Option::Some(input);
@@ -139,6 +151,12 @@ impl SystemInstanceDescriptionBuilder {
         self.metrics_configuration = input;
         self
     }
+    /// <p>An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics.</p>
+    pub fn get_metrics_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::MetricsConfiguration> {
+        &self.metrics_configuration
+    }
     /// <p>The version of the user's namespace against which the system instance was validated.</p>
     pub fn validated_namespace_version(mut self, input: i64) -> Self {
         self.validated_namespace_version = ::std::option::Option::Some(input);
@@ -148,6 +166,10 @@ impl SystemInstanceDescriptionBuilder {
     pub fn set_validated_namespace_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.validated_namespace_version = input;
         self
+    }
+    /// <p>The version of the user's namespace against which the system instance was validated.</p>
+    pub fn get_validated_namespace_version(&self) -> &::std::option::Option<i64> {
+        &self.validated_namespace_version
     }
     /// Appends an item to `validated_dependency_revisions`.
     ///
@@ -171,6 +193,12 @@ impl SystemInstanceDescriptionBuilder {
         self.validated_dependency_revisions = input;
         self
     }
+    /// <p>A list of objects that contain all of the IDs and revision numbers of workflows and systems that are used in a system instance.</p>
+    pub fn get_validated_dependency_revisions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DependencyRevision>> {
+        &self.validated_dependency_revisions
+    }
     /// <p>The AWS Identity and Access Management (IAM) role that AWS IoT Things Graph assumes during flow execution in a cloud deployment. This role must have read and write permissionss to AWS Lambda and AWS IoT and to any other AWS services that the flow uses.</p>
     pub fn flow_actions_role_arn(
         mut self,
@@ -186,6 +214,10 @@ impl SystemInstanceDescriptionBuilder {
     ) -> Self {
         self.flow_actions_role_arn = input;
         self
+    }
+    /// <p>The AWS Identity and Access Management (IAM) role that AWS IoT Things Graph assumes during flow execution in a cloud deployment. This role must have read and write permissionss to AWS Lambda and AWS IoT and to any other AWS services that the flow uses.</p>
+    pub fn get_flow_actions_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_actions_role_arn
     }
     /// Consumes the builder and constructs a [`SystemInstanceDescription`](crate::types::SystemInstanceDescription).
     pub fn build(self) -> crate::types::SystemInstanceDescription {

@@ -122,6 +122,10 @@ impl GetDetectorOutputBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The timestamp of when the detector was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_at
+    }
     /// <p>The publishing frequency of the finding.</p>
     pub fn finding_publishing_frequency(
         mut self,
@@ -138,6 +142,12 @@ impl GetDetectorOutputBuilder {
         self.finding_publishing_frequency = input;
         self
     }
+    /// <p>The publishing frequency of the finding.</p>
+    pub fn get_finding_publishing_frequency(
+        &self,
+    ) -> &::std::option::Option<crate::types::FindingPublishingFrequency> {
+        &self.finding_publishing_frequency
+    }
     /// <p>The GuardDuty service role.</p>
     pub fn service_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_role = ::std::option::Option::Some(input.into());
@@ -147,6 +157,10 @@ impl GetDetectorOutputBuilder {
     pub fn set_service_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_role = input;
         self
+    }
+    /// <p>The GuardDuty service role.</p>
+    pub fn get_service_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_role
     }
     /// <p>The detector status.</p>
     pub fn status(mut self, input: crate::types::DetectorStatus) -> Self {
@@ -161,6 +175,10 @@ impl GetDetectorOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The detector status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DetectorStatus> {
+        &self.status
+    }
     /// <p>The last-updated timestamp for the detector.</p>
     pub fn updated_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.updated_at = ::std::option::Option::Some(input.into());
@@ -170,6 +188,10 @@ impl GetDetectorOutputBuilder {
     pub fn set_updated_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.updated_at = input;
         self
+    }
+    /// <p>The last-updated timestamp for the detector.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.updated_at
     }
     /// <p>Describes which data sources are enabled for the detector.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
@@ -185,6 +207,13 @@ impl GetDetectorOutputBuilder {
     ) -> Self {
         self.data_sources = input;
         self
+    }
+    /// <p>Describes which data sources are enabled for the detector.</p>
+    #[deprecated(note = "This parameter is deprecated, use Features instead")]
+    pub fn get_data_sources(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataSourceConfigurationsResult> {
+        &self.data_sources
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -211,6 +240,14 @@ impl GetDetectorOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags of the detector resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// Appends an item to `features`.
     ///
     /// To override the contents of this collection use [`set_features`](Self::set_features).
@@ -231,6 +268,13 @@ impl GetDetectorOutputBuilder {
     ) -> Self {
         self.features = input;
         self
+    }
+    /// <p>Describes the features that have been enabled for the detector.</p>
+    pub fn get_features(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DetectorFeatureConfigurationResult>>
+    {
+        &self.features
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

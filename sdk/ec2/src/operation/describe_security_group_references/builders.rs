@@ -36,6 +36,10 @@ impl DescribeSecurityGroupReferencesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeSecurityGroupReferences as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_security_group_references::builders::DescribeSecurityGroupReferencesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl DescribeSecurityGroupReferencesFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// Appends an item to `GroupId`.
     ///
     /// To override the contents of this collection use [`set_group_id`](Self::set_group_id).
@@ -116,5 +124,9 @@ impl DescribeSecurityGroupReferencesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_group_id(input);
         self
+    }
+    /// <p>The IDs of the security groups in your account.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_group_id()
     }
 }

@@ -39,6 +39,10 @@ impl GetProfileInputBuilder {
         self.profile_arn = input;
         self
     }
+    /// <p>The ARN of the room profile for which to request details. Required.</p>
+    pub fn get_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_arn
+    }
     /// Consumes the builder and constructs a [`GetProfileInput`](crate::operation::get_profile::GetProfileInput).
     pub fn build(
         self,

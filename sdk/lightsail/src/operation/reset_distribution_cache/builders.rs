@@ -37,6 +37,13 @@ impl ResetDistributionCacheFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ResetDistributionCache as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::reset_distribution_cache::builders::ResetDistributionCacheInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,5 +141,10 @@ impl ResetDistributionCacheFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_distribution_name(input);
         self
+    }
+    /// <p>The name of the distribution for which to reset cache.</p>
+    /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
+    pub fn get_distribution_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_distribution_name()
     }
 }

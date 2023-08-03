@@ -50,6 +50,10 @@ impl DescribeEC2InstanceLimitsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeEC2InstanceLimits as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_ec2_instance_limits::builders::DescribeEc2InstanceLimitsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +147,10 @@ impl DescribeEC2InstanceLimitsFluentBuilder {
         self.inner = self.inner.set_ec2_instance_type(input);
         self
     }
+    /// <p>Name of an Amazon EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Do not specify a value for this parameter to retrieve limits for all instance types.</p>
+    pub fn get_ec2_instance_type(&self) -> &::std::option::Option<crate::types::Ec2InstanceType> {
+        self.inner.get_ec2_instance_type()
+    }
     /// <p>The name of a remote location to request instance limits for, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.location(input.into());
@@ -152,5 +160,9 @@ impl DescribeEC2InstanceLimitsFluentBuilder {
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_location(input);
         self
+    }
+    /// <p>The name of a remote location to request instance limits for, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_location()
     }
 }

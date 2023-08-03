@@ -40,6 +40,10 @@ impl DeletePlaceIndexInputBuilder {
         self.index_name = input;
         self
     }
+    /// <p>The name of the place index resource to be deleted.</p>
+    pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_name
+    }
     /// Consumes the builder and constructs a [`DeletePlaceIndexInput`](crate::operation::delete_place_index::DeletePlaceIndexInput).
     pub fn build(
         self,

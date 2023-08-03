@@ -102,6 +102,10 @@ impl UpdateRouteResponseOutputBuilder {
         self.model_selection_expression = input;
         self
     }
+    /// <p>Represents the model selection expression of a route response. Supported only for WebSocket APIs.</p>
+    pub fn get_model_selection_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_selection_expression
+    }
     /// Adds a key-value pair to `response_models`.
     ///
     /// To override the contents of this collection use [`set_response_models`](Self::set_response_models).
@@ -126,6 +130,14 @@ impl UpdateRouteResponseOutputBuilder {
     ) -> Self {
         self.response_models = input;
         self
+    }
+    /// <p>Represents the response models of a route response.</p>
+    pub fn get_response_models(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.response_models
     }
     /// Adds a key-value pair to `response_parameters`.
     ///
@@ -152,6 +164,14 @@ impl UpdateRouteResponseOutputBuilder {
         self.response_parameters = input;
         self
     }
+    /// <p>Represents the response parameters of a route response.</p>
+    pub fn get_response_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::ParameterConstraints>,
+    > {
+        &self.response_parameters
+    }
     /// <p>Represents the identifier of a route response.</p>
     pub fn route_response_id(
         mut self,
@@ -168,6 +188,10 @@ impl UpdateRouteResponseOutputBuilder {
         self.route_response_id = input;
         self
     }
+    /// <p>Represents the identifier of a route response.</p>
+    pub fn get_route_response_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.route_response_id
+    }
     /// <p>Represents the route response key of a route response.</p>
     pub fn route_response_key(
         mut self,
@@ -183,6 +207,10 @@ impl UpdateRouteResponseOutputBuilder {
     ) -> Self {
         self.route_response_key = input;
         self
+    }
+    /// <p>Represents the route response key of a route response.</p>
+    pub fn get_route_response_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.route_response_key
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

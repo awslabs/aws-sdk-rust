@@ -39,6 +39,12 @@ impl StartDBInstanceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartDBInstance as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_db_instance::builders::StartDbInstanceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,5 +140,9 @@ impl StartDBInstanceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_db_instance_identifier(input);
         self
+    }
+    /// <p>The user-supplied instance identifier.</p>
+    pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_instance_identifier()
     }
 }

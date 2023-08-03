@@ -54,6 +54,10 @@ impl MediaPipelineSummaryBuilder {
         self.media_pipeline_id = input;
         self
     }
+    /// <p>The ID of the media pipeline in the summary.</p>
+    pub fn get_media_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.media_pipeline_id
+    }
     /// <p>The ARN of the media pipeline in the summary.</p>
     pub fn media_pipeline_arn(
         mut self,
@@ -69,6 +73,10 @@ impl MediaPipelineSummaryBuilder {
     ) -> Self {
         self.media_pipeline_arn = input;
         self
+    }
+    /// <p>The ARN of the media pipeline in the summary.</p>
+    pub fn get_media_pipeline_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.media_pipeline_arn
     }
     /// Consumes the builder and constructs a [`MediaPipelineSummary`](crate::types::MediaPipelineSummary).
     pub fn build(self) -> crate::types::MediaPipelineSummary {

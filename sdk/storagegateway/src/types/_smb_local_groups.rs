@@ -56,6 +56,13 @@ impl SmbLocalGroupsBuilder {
         self.gateway_admins = input;
         self
     }
+    /// <p>A list of Active Directory users and groups that have local Gateway Admin permissions. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>DOMAIN\group1</code>, and <code>group1</code>.</p>
+    /// <p>Gateway Admins can use the Shared Folders Microsoft Management Console snap-in to force-close files that are open and locked.</p>
+    pub fn get_gateway_admins(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.gateway_admins
+    }
     /// Consumes the builder and constructs a [`SmbLocalGroups`](crate::types::SmbLocalGroups).
     pub fn build(self) -> crate::types::SmbLocalGroups {
         crate::types::SmbLocalGroups {

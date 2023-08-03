@@ -36,6 +36,12 @@ impl DescribeNodegroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeNodegroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_nodegroup::builders::DescribeNodegroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DescribeNodegroupFluentBuilder {
         self.inner = self.inner.set_cluster_name(input);
         self
     }
+    /// <p>The name of the Amazon EKS cluster associated with the node group.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_name()
+    }
     /// <p>The name of the node group to describe.</p>
     pub fn nodegroup_name(
         mut self,
@@ -141,5 +151,9 @@ impl DescribeNodegroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_nodegroup_name(input);
         self
+    }
+    /// <p>The name of the node group to describe.</p>
+    pub fn get_nodegroup_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_nodegroup_name()
     }
 }

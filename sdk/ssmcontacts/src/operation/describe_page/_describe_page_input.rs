@@ -39,6 +39,10 @@ impl DescribePageInputBuilder {
         self.page_id = input;
         self
     }
+    /// <p>The ID of the engagement to a contact channel.</p>
+    pub fn get_page_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.page_id
+    }
     /// Consumes the builder and constructs a [`DescribePageInput`](crate::operation::describe_page::DescribePageInput).
     pub fn build(
         self,

@@ -36,6 +36,10 @@ impl DeleteLabelsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteLabels as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_labels::builders::DeleteLabelsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl DeleteLabelsFluentBuilder {
         self.inner = self.inner.set_resource_id(input);
         self
     }
+    /// <p>The ID of the resource.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
+    }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn authentication_token(
         mut self,
@@ -133,6 +141,10 @@ impl DeleteLabelsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_authentication_token(input);
         self
+    }
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_authentication_token()
     }
     /// Appends an item to `Labels`.
     ///
@@ -151,6 +163,10 @@ impl DeleteLabelsFluentBuilder {
         self.inner = self.inner.set_labels(input);
         self
     }
+    /// <p>List of labels to delete from the resource.</p>
+    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_labels()
+    }
     /// <p>Flag to request removal of all labels from the specified resource.</p>
     pub fn delete_all(mut self, input: bool) -> Self {
         self.inner = self.inner.delete_all(input);
@@ -160,5 +176,9 @@ impl DeleteLabelsFluentBuilder {
     pub fn set_delete_all(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_delete_all(input);
         self
+    }
+    /// <p>Flag to request removal of all labels from the specified resource.</p>
+    pub fn get_delete_all(&self) -> &::std::option::Option<bool> {
+        self.inner.get_delete_all()
     }
 }

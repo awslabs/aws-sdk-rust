@@ -36,6 +36,12 @@ impl UpdateEnvironmentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateEnvironment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_environment::builders::UpdateEnvironmentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateEnvironmentFluentBuilder {
         self.inner = self.inner.set_environment_id(input);
         self
     }
+    /// <p>The ID of the environment to change settings.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_id()
+    }
     /// <p>A replacement name for the environment.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -142,6 +152,10 @@ impl UpdateEnvironmentFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>A replacement name for the environment.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>Any new or replacement description for the environment.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -151,6 +165,10 @@ impl UpdateEnvironmentFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>Any new or replacement description for the environment.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>Allows the environment owner to turn on or turn off the Amazon Web Services managed temporary credentials for an Cloud9 environment by using one of the following values:</p>
     /// <ul>
@@ -179,5 +197,17 @@ impl UpdateEnvironmentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_managed_credentials_action(input);
         self
+    }
+    /// <p>Allows the environment owner to turn on or turn off the Amazon Web Services managed temporary credentials for an Cloud9 environment by using one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>ENABLE</code> </p> </li>
+    /// <li> <p> <code>DISABLE</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Only the environment owner can change the status of managed temporary credentials. An <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn off managed temporary credentials is made by an account that's not the environment owner.</p>
+    /// </note>
+    pub fn get_managed_credentials_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::ManagedCredentialsAction> {
+        self.inner.get_managed_credentials_action()
     }
 }

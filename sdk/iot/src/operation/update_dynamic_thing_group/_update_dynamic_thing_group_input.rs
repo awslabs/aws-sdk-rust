@@ -97,6 +97,10 @@ impl UpdateDynamicThingGroupInputBuilder {
         self.thing_group_name = input;
         self
     }
+    /// <p>The name of the dynamic thing group to update.</p>
+    pub fn get_thing_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_group_name
+    }
     /// <p>The dynamic thing group properties to update.</p>
     pub fn thing_group_properties(mut self, input: crate::types::ThingGroupProperties) -> Self {
         self.thing_group_properties = ::std::option::Option::Some(input);
@@ -110,6 +114,12 @@ impl UpdateDynamicThingGroupInputBuilder {
         self.thing_group_properties = input;
         self
     }
+    /// <p>The dynamic thing group properties to update.</p>
+    pub fn get_thing_group_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::ThingGroupProperties> {
+        &self.thing_group_properties
+    }
     /// <p>The expected version of the dynamic thing group to update.</p>
     pub fn expected_version(mut self, input: i64) -> Self {
         self.expected_version = ::std::option::Option::Some(input);
@@ -119,6 +129,10 @@ impl UpdateDynamicThingGroupInputBuilder {
     pub fn set_expected_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.expected_version = input;
         self
+    }
+    /// <p>The expected version of the dynamic thing group to update.</p>
+    pub fn get_expected_version(&self) -> &::std::option::Option<i64> {
+        &self.expected_version
     }
     /// <p>The dynamic thing group index to update.</p> <note>
     /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
@@ -134,6 +148,12 @@ impl UpdateDynamicThingGroupInputBuilder {
         self.index_name = input;
         self
     }
+    /// <p>The dynamic thing group index to update.</p> <note>
+    /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
+    /// </note>
+    pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_name
+    }
     /// <p>The dynamic thing group search query string to update.</p>
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_string = ::std::option::Option::Some(input.into());
@@ -143,6 +163,10 @@ impl UpdateDynamicThingGroupInputBuilder {
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_string = input;
         self
+    }
+    /// <p>The dynamic thing group search query string to update.</p>
+    pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_string
     }
     /// <p>The dynamic thing group query version to update.</p> <note>
     /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>
@@ -163,6 +187,12 @@ impl UpdateDynamicThingGroupInputBuilder {
     ) -> Self {
         self.query_version = input;
         self
+    }
+    /// <p>The dynamic thing group query version to update.</p> <note>
+    /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>
+    /// </note>
+    pub fn get_query_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_version
     }
     /// Consumes the builder and constructs a [`UpdateDynamicThingGroupInput`](crate::operation::update_dynamic_thing_group::UpdateDynamicThingGroupInput).
     pub fn build(

@@ -93,6 +93,10 @@ impl CreateWorkspaceBundleInputBuilder {
         self.bundle_name = input;
         self
     }
+    /// <p>The name of the bundle.</p>
+    pub fn get_bundle_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bundle_name
+    }
     /// <p>The description of the bundle.</p>
     pub fn bundle_description(
         mut self,
@@ -109,6 +113,10 @@ impl CreateWorkspaceBundleInputBuilder {
         self.bundle_description = input;
         self
     }
+    /// <p>The description of the bundle.</p>
+    pub fn get_bundle_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bundle_description
+    }
     /// <p>The identifier of the image that is used to create the bundle.</p>
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
@@ -118,6 +126,10 @@ impl CreateWorkspaceBundleInputBuilder {
     pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_id = input;
         self
+    }
+    /// <p>The identifier of the image that is used to create the bundle.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_id
     }
     /// <p>Describes the compute type of the bundle.</p>
     pub fn compute_type(mut self, input: crate::types::ComputeType) -> Self {
@@ -132,6 +144,10 @@ impl CreateWorkspaceBundleInputBuilder {
         self.compute_type = input;
         self
     }
+    /// <p>Describes the compute type of the bundle.</p>
+    pub fn get_compute_type(&self) -> &::std::option::Option<crate::types::ComputeType> {
+        &self.compute_type
+    }
     /// <p>Describes the user volume for a WorkSpace bundle.</p>
     pub fn user_storage(mut self, input: crate::types::UserStorage) -> Self {
         self.user_storage = ::std::option::Option::Some(input);
@@ -145,6 +161,10 @@ impl CreateWorkspaceBundleInputBuilder {
         self.user_storage = input;
         self
     }
+    /// <p>Describes the user volume for a WorkSpace bundle.</p>
+    pub fn get_user_storage(&self) -> &::std::option::Option<crate::types::UserStorage> {
+        &self.user_storage
+    }
     /// <p>Describes the root volume for a WorkSpace bundle.</p>
     pub fn root_storage(mut self, input: crate::types::RootStorage) -> Self {
         self.root_storage = ::std::option::Option::Some(input);
@@ -157,6 +177,10 @@ impl CreateWorkspaceBundleInputBuilder {
     ) -> Self {
         self.root_storage = input;
         self
+    }
+    /// <p>Describes the root volume for a WorkSpace bundle.</p>
+    pub fn get_root_storage(&self) -> &::std::option::Option<crate::types::RootStorage> {
+        &self.root_storage
     }
     /// Appends an item to `tags`.
     ///
@@ -180,6 +204,12 @@ impl CreateWorkspaceBundleInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags associated with the bundle.</p> <note>
+    /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
+    /// </note>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateWorkspaceBundleInput`](crate::operation::create_workspace_bundle::CreateWorkspaceBundleInput).
     pub fn build(

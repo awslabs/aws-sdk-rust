@@ -75,6 +75,11 @@ impl InferenceRecommendationsJobStepBuilder {
         self.step_type = input;
         self
     }
+    /// <p>The type of the subtask.</p>
+    /// <p> <code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
+    pub fn get_step_type(&self) -> &::std::option::Option<crate::types::RecommendationStepType> {
+        &self.step_type
+    }
     /// <p>The name of the Inference Recommender job.</p>
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
@@ -84,6 +89,10 @@ impl InferenceRecommendationsJobStepBuilder {
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_name = input;
         self
+    }
+    /// <p>The name of the Inference Recommender job.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
     }
     /// <p>The current status of the benchmark.</p>
     pub fn status(mut self, input: crate::types::RecommendationJobStatus) -> Self {
@@ -97,6 +106,10 @@ impl InferenceRecommendationsJobStepBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the benchmark.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::RecommendationJobStatus> {
+        &self.status
     }
     /// <p>The details for a specific benchmark.</p>
     pub fn inference_benchmark(
@@ -113,6 +126,12 @@ impl InferenceRecommendationsJobStepBuilder {
     ) -> Self {
         self.inference_benchmark = input;
         self
+    }
+    /// <p>The details for a specific benchmark.</p>
+    pub fn get_inference_benchmark(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecommendationJobInferenceBenchmark> {
+        &self.inference_benchmark
     }
     /// Consumes the builder and constructs a [`InferenceRecommendationsJobStep`](crate::types::InferenceRecommendationsJobStep).
     pub fn build(self) -> crate::types::InferenceRecommendationsJobStep {

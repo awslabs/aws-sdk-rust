@@ -102,6 +102,10 @@ impl DetectorModelVersionSummaryBuilder {
         self.detector_model_name = input;
         self
     }
+    /// <p>The name of the detector model.</p>
+    pub fn get_detector_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_model_name
+    }
     /// <p>The ID of the detector model version.</p>
     pub fn detector_model_version(
         mut self,
@@ -117,6 +121,10 @@ impl DetectorModelVersionSummaryBuilder {
     ) -> Self {
         self.detector_model_version = input;
         self
+    }
+    /// <p>The ID of the detector model version.</p>
+    pub fn get_detector_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_model_version
     }
     /// <p>The ARN of the detector model version.</p>
     pub fn detector_model_arn(
@@ -134,6 +142,10 @@ impl DetectorModelVersionSummaryBuilder {
         self.detector_model_arn = input;
         self
     }
+    /// <p>The ARN of the detector model version.</p>
+    pub fn get_detector_model_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_model_arn
+    }
     /// <p>The ARN of the role that grants the detector model permission to perform its tasks.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -143,6 +155,10 @@ impl DetectorModelVersionSummaryBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The ARN of the role that grants the detector model permission to perform its tasks.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The time the detector model version was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -157,6 +173,10 @@ impl DetectorModelVersionSummaryBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time the detector model version was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The last time the detector model version was updated.</p>
     pub fn last_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_update_time = ::std::option::Option::Some(input);
@@ -169,6 +189,10 @@ impl DetectorModelVersionSummaryBuilder {
     ) -> Self {
         self.last_update_time = input;
         self
+    }
+    /// <p>The last time the detector model version was updated.</p>
+    pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_update_time
     }
     /// <p>The status of the detector model version.</p>
     pub fn status(mut self, input: crate::types::DetectorModelVersionStatus) -> Self {
@@ -183,6 +207,10 @@ impl DetectorModelVersionSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the detector model version.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DetectorModelVersionStatus> {
+        &self.status
+    }
     /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
     pub fn evaluation_method(mut self, input: crate::types::EvaluationMethod) -> Self {
         self.evaluation_method = ::std::option::Option::Some(input);
@@ -195,6 +223,10 @@ impl DetectorModelVersionSummaryBuilder {
     ) -> Self {
         self.evaluation_method = input;
         self
+    }
+    /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
+    pub fn get_evaluation_method(&self) -> &::std::option::Option<crate::types::EvaluationMethod> {
+        &self.evaluation_method
     }
     /// Consumes the builder and constructs a [`DetectorModelVersionSummary`](crate::types::DetectorModelVersionSummary).
     pub fn build(self) -> crate::types::DetectorModelVersionSummary {

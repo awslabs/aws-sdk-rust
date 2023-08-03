@@ -49,6 +49,10 @@ impl AgeRangeBuilder {
         self.low = input;
         self
     }
+    /// <p>The lowest estimated age.</p>
+    pub fn get_low(&self) -> &::std::option::Option<i32> {
+        &self.low
+    }
     /// <p>The highest estimated age.</p>
     pub fn high(mut self, input: i32) -> Self {
         self.high = ::std::option::Option::Some(input);
@@ -58,6 +62,10 @@ impl AgeRangeBuilder {
     pub fn set_high(mut self, input: ::std::option::Option<i32>) -> Self {
         self.high = input;
         self
+    }
+    /// <p>The highest estimated age.</p>
+    pub fn get_high(&self) -> &::std::option::Option<i32> {
+        &self.high
     }
     /// Consumes the builder and constructs a [`AgeRange`](crate::types::AgeRange).
     pub fn build(self) -> crate::types::AgeRange {

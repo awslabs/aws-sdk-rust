@@ -46,6 +46,10 @@ impl DeleteDevEndpointInputBuilder {
         self.endpoint_name = input;
         self
     }
+    /// <p>The name of the <code>DevEndpoint</code>.</p>
+    pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_name
+    }
     /// Consumes the builder and constructs a [`DeleteDevEndpointInput`](crate::operation::delete_dev_endpoint::DeleteDevEndpointInput).
     pub fn build(
         self,

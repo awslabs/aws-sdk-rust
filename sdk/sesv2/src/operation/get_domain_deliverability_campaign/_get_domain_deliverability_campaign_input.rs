@@ -40,6 +40,10 @@ impl GetDomainDeliverabilityCampaignInputBuilder {
         self.campaign_id = input;
         self
     }
+    /// <p>The unique identifier for the campaign. The Deliverability dashboard automatically generates and assigns this identifier to a campaign.</p>
+    pub fn get_campaign_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.campaign_id
+    }
     /// Consumes the builder and constructs a [`GetDomainDeliverabilityCampaignInput`](crate::operation::get_domain_deliverability_campaign::GetDomainDeliverabilityCampaignInput).
     pub fn build(
         self,

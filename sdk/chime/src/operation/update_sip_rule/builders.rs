@@ -40,6 +40,12 @@ impl UpdateSipRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateSipRule as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_sip_rule::builders::UpdateSipRuleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -122,6 +128,10 @@ impl UpdateSipRuleFluentBuilder {
         self.inner = self.inner.set_sip_rule_id(input);
         self
     }
+    /// <p>The SIP rule ID.</p>
+    pub fn get_sip_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sip_rule_id()
+    }
     /// <p>The new name for the specified SIP rule.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -132,6 +142,10 @@ impl UpdateSipRuleFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The new name for the specified SIP rule.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The new value specified to indicate whether the rule is disabled.</p>
     pub fn disabled(mut self, input: bool) -> Self {
         self.inner = self.inner.disabled(input);
@@ -141,6 +155,10 @@ impl UpdateSipRuleFluentBuilder {
     pub fn set_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_disabled(input);
         self
+    }
+    /// <p>The new value specified to indicate whether the rule is disabled.</p>
+    pub fn get_disabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_disabled()
     }
     /// Appends an item to `TargetApplications`.
     ///
@@ -158,5 +176,11 @@ impl UpdateSipRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_target_applications(input);
         self
+    }
+    /// <p>The new value of the list of target applications.</p>
+    pub fn get_target_applications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SipRuleTargetApplication>> {
+        self.inner.get_target_applications()
     }
 }

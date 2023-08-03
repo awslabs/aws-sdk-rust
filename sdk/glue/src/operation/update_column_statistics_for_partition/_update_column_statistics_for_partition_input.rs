@@ -75,6 +75,10 @@ impl UpdateColumnStatisticsForPartitionInputBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p>The name of the catalog database where the partitions reside.</p>
     pub fn database_name(
         mut self,
@@ -91,6 +95,10 @@ impl UpdateColumnStatisticsForPartitionInputBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The name of the catalog database where the partitions reside.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>The name of the partitions' table.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
@@ -100,6 +108,10 @@ impl UpdateColumnStatisticsForPartitionInputBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
+    }
+    /// <p>The name of the partitions' table.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// Appends an item to `partition_values`.
     ///
@@ -123,6 +135,12 @@ impl UpdateColumnStatisticsForPartitionInputBuilder {
         self.partition_values = input;
         self
     }
+    /// <p>A list of partition values identifying the partition.</p>
+    pub fn get_partition_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.partition_values
+    }
     /// Appends an item to `column_statistics_list`.
     ///
     /// To override the contents of this collection use [`set_column_statistics_list`](Self::set_column_statistics_list).
@@ -141,6 +159,12 @@ impl UpdateColumnStatisticsForPartitionInputBuilder {
     ) -> Self {
         self.column_statistics_list = input;
         self
+    }
+    /// <p>A list of the column statistics.</p>
+    pub fn get_column_statistics_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnStatistics>> {
+        &self.column_statistics_list
     }
     /// Consumes the builder and constructs a [`UpdateColumnStatisticsForPartitionInput`](crate::operation::update_column_statistics_for_partition::UpdateColumnStatisticsForPartitionInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_column_statistics_for_partition::UpdateColumnStatisticsForPartitionInput, ::aws_smithy_http::operation::error::BuildError>{

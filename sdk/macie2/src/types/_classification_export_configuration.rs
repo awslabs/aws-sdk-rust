@@ -43,6 +43,10 @@ impl ClassificationExportConfigurationBuilder {
         self.s3_destination = input;
         self
     }
+    /// <p>The S3 bucket to store data classification results in, and the encryption settings to use when storing results in that bucket.</p>
+    pub fn get_s3_destination(&self) -> &::std::option::Option<crate::types::S3Destination> {
+        &self.s3_destination
+    }
     /// Consumes the builder and constructs a [`ClassificationExportConfiguration`](crate::types::ClassificationExportConfiguration).
     pub fn build(self) -> crate::types::ClassificationExportConfiguration {
         crate::types::ClassificationExportConfiguration {

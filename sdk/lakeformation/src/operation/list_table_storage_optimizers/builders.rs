@@ -36,6 +36,10 @@ impl ListTableStorageOptimizersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListTableStorageOptimizers as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_table_storage_optimizers::builders::ListTableStorageOptimizersInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl ListTableStorageOptimizersFluentBuilder {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
+    /// <p>The Catalog ID of the table.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog_id()
+    }
     /// <p>Name of the database where the table is present.</p>
     pub fn database_name(
         mut self,
@@ -148,6 +156,10 @@ impl ListTableStorageOptimizersFluentBuilder {
         self.inner = self.inner.set_database_name(input);
         self
     }
+    /// <p>Name of the database where the table is present.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_database_name()
+    }
     /// <p>Name of the table.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.table_name(input.into());
@@ -157,6 +169,10 @@ impl ListTableStorageOptimizersFluentBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_table_name(input);
         self
+    }
+    /// <p>Name of the table.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_table_name()
     }
     /// <p>The specific type of storage optimizers to list. The supported value is <code>compaction</code>.</p>
     pub fn storage_optimizer_type(mut self, input: crate::types::OptimizerType) -> Self {
@@ -171,6 +187,12 @@ impl ListTableStorageOptimizersFluentBuilder {
         self.inner = self.inner.set_storage_optimizer_type(input);
         self
     }
+    /// <p>The specific type of storage optimizers to list. The supported value is <code>compaction</code>.</p>
+    pub fn get_storage_optimizer_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::OptimizerType> {
+        self.inner.get_storage_optimizer_type()
+    }
     /// <p>The number of storage optimizers to return on each call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -181,6 +203,10 @@ impl ListTableStorageOptimizersFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The number of storage optimizers to return on each call.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>A continuation token, if this is a continuation call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -190,5 +216,9 @@ impl ListTableStorageOptimizersFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A continuation token, if this is a continuation call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

@@ -47,6 +47,10 @@ impl DescribeSecurityProfileInputBuilder {
         self.security_profile_name = input;
         self
     }
+    /// <p>The name of the security profile whose information you want to get.</p>
+    pub fn get_security_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_profile_name
+    }
     /// Consumes the builder and constructs a [`DescribeSecurityProfileInput`](crate::operation::describe_security_profile::DescribeSecurityProfileInput).
     pub fn build(
         self,

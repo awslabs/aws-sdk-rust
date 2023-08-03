@@ -43,6 +43,10 @@ impl ModelDataSourceBuilder {
         self.s3_data_source = input;
         self
     }
+    /// <p>Specifies the S3 location of ML model data to deploy.</p>
+    pub fn get_s3_data_source(&self) -> &::std::option::Option<crate::types::S3ModelDataSource> {
+        &self.s3_data_source
+    }
     /// Consumes the builder and constructs a [`ModelDataSource`](crate::types::ModelDataSource).
     pub fn build(self) -> crate::types::ModelDataSource {
         crate::types::ModelDataSource {

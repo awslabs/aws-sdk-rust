@@ -87,6 +87,10 @@ impl CreateDeploymentOutputBuilder {
         self.auto_deployed = input;
         self
     }
+    /// <p>Specifies whether a deployment was automatically released.</p>
+    pub fn get_auto_deployed(&self) -> &::std::option::Option<bool> {
+        &self.auto_deployed
+    }
     /// <p>The date and time when the Deployment resource was created.</p>
     pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_date = ::std::option::Option::Some(input);
@@ -99,6 +103,10 @@ impl CreateDeploymentOutputBuilder {
     ) -> Self {
         self.created_date = input;
         self
+    }
+    /// <p>The date and time when the Deployment resource was created.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_date
     }
     /// <p>The identifier for the deployment.</p>
     pub fn deployment_id(
@@ -116,6 +124,10 @@ impl CreateDeploymentOutputBuilder {
         self.deployment_id = input;
         self
     }
+    /// <p>The identifier for the deployment.</p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
+    }
     /// <p>The status of the deployment: PENDING, FAILED, or SUCCEEDED.</p>
     pub fn deployment_status(mut self, input: crate::types::DeploymentStatus) -> Self {
         self.deployment_status = ::std::option::Option::Some(input);
@@ -128,6 +140,10 @@ impl CreateDeploymentOutputBuilder {
     ) -> Self {
         self.deployment_status = input;
         self
+    }
+    /// <p>The status of the deployment: PENDING, FAILED, or SUCCEEDED.</p>
+    pub fn get_deployment_status(&self) -> &::std::option::Option<crate::types::DeploymentStatus> {
+        &self.deployment_status
     }
     /// <p>May contain additional feedback on the status of an API deployment.</p>
     pub fn deployment_status_message(
@@ -145,6 +161,10 @@ impl CreateDeploymentOutputBuilder {
         self.deployment_status_message = input;
         self
     }
+    /// <p>May contain additional feedback on the status of an API deployment.</p>
+    pub fn get_deployment_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_status_message
+    }
     /// <p>The description for the deployment.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -154,6 +174,10 @@ impl CreateDeploymentOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description for the deployment.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

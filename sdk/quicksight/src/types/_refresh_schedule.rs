@@ -82,6 +82,10 @@ impl RefreshScheduleBuilder {
         self.schedule_id = input;
         self
     }
+    /// <p>An identifier for the refresh schedule.</p>
+    pub fn get_schedule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schedule_id
+    }
     /// <p>The frequency for the refresh schedule.</p>
     pub fn schedule_frequency(mut self, input: crate::types::RefreshFrequency) -> Self {
         self.schedule_frequency = ::std::option::Option::Some(input);
@@ -95,6 +99,10 @@ impl RefreshScheduleBuilder {
         self.schedule_frequency = input;
         self
     }
+    /// <p>The frequency for the refresh schedule.</p>
+    pub fn get_schedule_frequency(&self) -> &::std::option::Option<crate::types::RefreshFrequency> {
+        &self.schedule_frequency
+    }
     /// <p>Time after which the refresh schedule can be started, expressed in <code>YYYY-MM-DDTHH:MM:SS</code> format.</p>
     pub fn start_after_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_after_date_time = ::std::option::Option::Some(input);
@@ -107,6 +115,12 @@ impl RefreshScheduleBuilder {
     ) -> Self {
         self.start_after_date_time = input;
         self
+    }
+    /// <p>Time after which the refresh schedule can be started, expressed in <code>YYYY-MM-DDTHH:MM:SS</code> format.</p>
+    pub fn get_start_after_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_after_date_time
     }
     /// <p>The type of refresh that a datset undergoes. Valid values are as follows:</p>
     /// <ul>
@@ -131,6 +145,15 @@ impl RefreshScheduleBuilder {
         self.refresh_type = input;
         self
     }
+    /// <p>The type of refresh that a datset undergoes. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>FULL_REFRESH</code>: A complete refresh of a dataset.</p> </li>
+    /// <li> <p> <code>INCREMENTAL_REFRESH</code>: A partial refresh of some rows of a dataset, based on the time window specified.</p> </li>
+    /// </ul>
+    /// <p>For more information on full and incremental refreshes, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/refreshing-imported-data.html">Refreshing SPICE data</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    pub fn get_refresh_type(&self) -> &::std::option::Option<crate::types::IngestionType> {
+        &self.refresh_type
+    }
     /// <p>The Amazon Resource Name (ARN) for the refresh schedule.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -140,6 +163,10 @@ impl RefreshScheduleBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the refresh schedule.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`RefreshSchedule`](crate::types::RefreshSchedule).
     pub fn build(self) -> crate::types::RefreshSchedule {

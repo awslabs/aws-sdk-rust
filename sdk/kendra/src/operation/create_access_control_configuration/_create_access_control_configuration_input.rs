@@ -83,6 +83,10 @@ impl CreateAccessControlConfigurationInputBuilder {
         self.index_id = input;
         self
     }
+    /// <p>The identifier of the index to create an access control configuration for your documents.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_id
+    }
     /// <p>A name for the access control configuration.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -93,6 +97,10 @@ impl CreateAccessControlConfigurationInputBuilder {
         self.name = input;
         self
     }
+    /// <p>A name for the access control configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description for the access control configuration.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -102,6 +110,10 @@ impl CreateAccessControlConfigurationInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description for the access control configuration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `access_control_list`.
     ///
@@ -121,6 +133,12 @@ impl CreateAccessControlConfigurationInputBuilder {
     ) -> Self {
         self.access_control_list = input;
         self
+    }
+    /// <p>Information on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
+    pub fn get_access_control_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Principal>> {
+        &self.access_control_list
     }
     /// Appends an item to `hierarchical_access_control_list`.
     ///
@@ -144,6 +162,12 @@ impl CreateAccessControlConfigurationInputBuilder {
         self.hierarchical_access_control_list = input;
         self
     }
+    /// <p>The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
+    pub fn get_hierarchical_access_control_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HierarchicalPrincipal>> {
+        &self.hierarchical_access_control_list
+    }
     /// <p>A token that you provide to identify the request to create an access control configuration. Multiple calls to the <code>CreateAccessControlConfiguration</code> API with the same client token will create only one access control configuration.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -153,6 +177,10 @@ impl CreateAccessControlConfigurationInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A token that you provide to identify the request to create an access control configuration. Multiple calls to the <code>CreateAccessControlConfiguration</code> API with the same client token will create only one access control configuration.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateAccessControlConfigurationInput`](crate::operation::create_access_control_configuration::CreateAccessControlConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_access_control_configuration::CreateAccessControlConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{

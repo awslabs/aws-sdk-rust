@@ -48,6 +48,10 @@ impl ScpActionDefinitionBuilder {
         self.policy_id = input;
         self
     }
+    /// <p>The policy ID attached. </p>
+    pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_id
+    }
     /// Appends an item to `target_ids`.
     ///
     /// To override the contents of this collection use [`set_target_ids`](Self::set_target_ids).
@@ -66,6 +70,10 @@ impl ScpActionDefinitionBuilder {
     ) -> Self {
         self.target_ids = input;
         self
+    }
+    /// <p>A list of target IDs. </p>
+    pub fn get_target_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.target_ids
     }
     /// Consumes the builder and constructs a [`ScpActionDefinition`](crate::types::ScpActionDefinition).
     pub fn build(self) -> crate::types::ScpActionDefinition {

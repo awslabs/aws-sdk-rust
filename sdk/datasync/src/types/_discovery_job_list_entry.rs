@@ -54,6 +54,10 @@ impl DiscoveryJobListEntryBuilder {
         self.discovery_job_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of a discovery job.</p>
+    pub fn get_discovery_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.discovery_job_arn
+    }
     /// <p>The status of a discovery job. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#discovery-job-statuses-table">Discovery job statuses</a>.</p>
     pub fn status(mut self, input: crate::types::DiscoveryJobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl DiscoveryJobListEntryBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of a discovery job. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#discovery-job-statuses-table">Discovery job statuses</a>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DiscoveryJobStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`DiscoveryJobListEntry`](crate::types::DiscoveryJobListEntry).
     pub fn build(self) -> crate::types::DiscoveryJobListEntry {

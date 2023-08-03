@@ -55,6 +55,10 @@ impl DescribeSupportedLanguagesInputBuilder {
         self.issue_type = input;
         self
     }
+    /// <p>The type of issue for the case. You can specify <code>customer-service</code> or <code>technical</code>.</p>
+    pub fn get_issue_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.issue_type
+    }
     /// <p>The code for the Amazon Web Services service. You can use the <code>DescribeServices</code> operation to get the possible <code>serviceCode</code> values.</p>
     pub fn service_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_code = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl DescribeSupportedLanguagesInputBuilder {
     pub fn set_service_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_code = input;
         self
+    }
+    /// <p>The code for the Amazon Web Services service. You can use the <code>DescribeServices</code> operation to get the possible <code>serviceCode</code> values.</p>
+    pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_code
     }
     /// <p>The category of problem for the support case. You also use the <code>DescribeServices</code> operation to get the category code for a service. Each Amazon Web Services service defines its own set of category codes.</p>
     pub fn category_code(
@@ -80,6 +88,10 @@ impl DescribeSupportedLanguagesInputBuilder {
     ) -> Self {
         self.category_code = input;
         self
+    }
+    /// <p>The category of problem for the support case. You also use the <code>DescribeServices</code> operation to get the category code for a service. Each Amazon Web Services service defines its own set of category codes.</p>
+    pub fn get_category_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.category_code
     }
     /// Consumes the builder and constructs a [`DescribeSupportedLanguagesInput`](crate::operation::describe_supported_languages::DescribeSupportedLanguagesInput).
     pub fn build(

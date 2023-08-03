@@ -47,6 +47,10 @@ impl GetProposalInputBuilder {
         self.network_id = input;
         self
     }
+    /// <p>The unique identifier of the network for which the proposal is made.</p>
+    pub fn get_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_id
+    }
     /// <p>The unique identifier of the proposal.</p>
     pub fn proposal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.proposal_id = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl GetProposalInputBuilder {
     pub fn set_proposal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.proposal_id = input;
         self
+    }
+    /// <p>The unique identifier of the proposal.</p>
+    pub fn get_proposal_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.proposal_id
     }
     /// Consumes the builder and constructs a [`GetProposalInput`](crate::operation::get_proposal::GetProposalInput).
     pub fn build(

@@ -56,6 +56,10 @@ impl LayoutSummaryBuilder {
         self.layout_id = input;
         self
     }
+    /// <p>The unique identifier for of the layout.</p>
+    pub fn get_layout_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.layout_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the layout.</p>
     pub fn layout_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.layout_arn = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl LayoutSummaryBuilder {
         self.layout_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the layout.</p>
+    pub fn get_layout_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.layout_arn
+    }
     /// <p>The name of the layout.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl LayoutSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the layout.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`LayoutSummary`](crate::types::LayoutSummary).
     pub fn build(self) -> crate::types::LayoutSummary {

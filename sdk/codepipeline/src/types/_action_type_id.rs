@@ -99,6 +99,18 @@ impl ActionTypeIdBuilder {
         self.category = input;
         self
     }
+    /// <p>A category defines what kind of action can be taken in the stage, and constrains the provider type for the action. Valid categories are limited to one of the following values. </p>
+    /// <ul>
+    /// <li> <p>Source</p> </li>
+    /// <li> <p>Build</p> </li>
+    /// <li> <p>Test</p> </li>
+    /// <li> <p>Deploy</p> </li>
+    /// <li> <p>Invoke</p> </li>
+    /// <li> <p>Approval</p> </li>
+    /// </ul>
+    pub fn get_category(&self) -> &::std::option::Option<crate::types::ActionCategory> {
+        &self.category
+    }
     /// <p>The creator of the action being called. There are three valid values for the <code>Owner</code> field in the action category section within your pipeline structure: <code>AWS</code>, <code>ThirdParty</code>, and <code>Custom</code>. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers">Valid Action Types and Providers in CodePipeline</a>.</p>
     pub fn owner(mut self, input: crate::types::ActionOwner) -> Self {
         self.owner = ::std::option::Option::Some(input);
@@ -108,6 +120,10 @@ impl ActionTypeIdBuilder {
     pub fn set_owner(mut self, input: ::std::option::Option<crate::types::ActionOwner>) -> Self {
         self.owner = input;
         self
+    }
+    /// <p>The creator of the action being called. There are three valid values for the <code>Owner</code> field in the action category section within your pipeline structure: <code>AWS</code>, <code>ThirdParty</code>, and <code>Custom</code>. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers">Valid Action Types and Providers in CodePipeline</a>.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<crate::types::ActionOwner> {
+        &self.owner
     }
     /// <p>The provider of the service being called by the action. Valid providers are determined by the action category. For example, an action in the Deploy category type might have a provider of CodeDeploy, which would be specified as <code>CodeDeploy</code>. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers">Valid Action Types and Providers in CodePipeline</a>.</p>
     pub fn provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -119,6 +135,10 @@ impl ActionTypeIdBuilder {
         self.provider = input;
         self
     }
+    /// <p>The provider of the service being called by the action. Valid providers are determined by the action category. For example, an action in the Deploy category type might have a provider of CodeDeploy, which would be specified as <code>CodeDeploy</code>. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers">Valid Action Types and Providers in CodePipeline</a>.</p>
+    pub fn get_provider(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provider
+    }
     /// <p>A string that describes the action version.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -128,6 +148,10 @@ impl ActionTypeIdBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>A string that describes the action version.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`ActionTypeId`](crate::types::ActionTypeId).
     pub fn build(self) -> crate::types::ActionTypeId {

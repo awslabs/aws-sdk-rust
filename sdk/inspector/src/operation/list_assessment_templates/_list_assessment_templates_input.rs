@@ -80,6 +80,12 @@ impl ListAssessmentTemplatesInputBuilder {
         self.assessment_target_arns = input;
         self
     }
+    /// <p>A list of ARNs that specifies the assessment targets whose assessment templates you want to list.</p>
+    pub fn get_assessment_target_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.assessment_target_arns
+    }
     /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
     /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
     pub fn filter(mut self, input: crate::types::AssessmentTemplateFilter) -> Self {
@@ -95,6 +101,11 @@ impl ListAssessmentTemplatesInputBuilder {
         self.filter = input;
         self
     }
+    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+    /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::AssessmentTemplateFilter> {
+        &self.filter
+    }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentTemplates</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -105,6 +116,10 @@ impl ListAssessmentTemplatesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentTemplates</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -114,6 +129,10 @@ impl ListAssessmentTemplatesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAssessmentTemplatesInput`](crate::operation::list_assessment_templates::ListAssessmentTemplatesInput).
     pub fn build(

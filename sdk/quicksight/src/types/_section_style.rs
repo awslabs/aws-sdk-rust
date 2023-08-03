@@ -54,6 +54,11 @@ impl SectionStyleBuilder {
         self.height = input;
         self
     }
+    /// <p>The height of a section.</p>
+    /// <p>Heights can only be defined for header and footer sections. The default height margin is 0.5 inches. </p>
+    pub fn get_height(&self) -> &::std::option::Option<::std::string::String> {
+        &self.height
+    }
     /// <p>The spacing between section content and its top, bottom, left, and right edges.</p>
     /// <p>There is no padding by default.</p>
     pub fn padding(mut self, input: crate::types::Spacing) -> Self {
@@ -65,6 +70,11 @@ impl SectionStyleBuilder {
     pub fn set_padding(mut self, input: ::std::option::Option<crate::types::Spacing>) -> Self {
         self.padding = input;
         self
+    }
+    /// <p>The spacing between section content and its top, bottom, left, and right edges.</p>
+    /// <p>There is no padding by default.</p>
+    pub fn get_padding(&self) -> &::std::option::Option<crate::types::Spacing> {
+        &self.padding
     }
     /// Consumes the builder and constructs a [`SectionStyle`](crate::types::SectionStyle).
     pub fn build(self) -> crate::types::SectionStyle {

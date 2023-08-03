@@ -230,6 +230,10 @@ impl GetMaintenanceWindowTaskOutputBuilder {
         self.window_id = input;
         self
     }
+    /// <p>The retrieved maintenance window ID.</p>
+    pub fn get_window_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.window_id
+    }
     /// <p>The retrieved maintenance window task ID.</p>
     pub fn window_task_id(
         mut self,
@@ -245,6 +249,10 @@ impl GetMaintenanceWindowTaskOutputBuilder {
     ) -> Self {
         self.window_task_id = input;
         self
+    }
+    /// <p>The retrieved maintenance window task ID.</p>
+    pub fn get_window_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.window_task_id
     }
     /// Appends an item to `targets`.
     ///
@@ -265,6 +273,10 @@ impl GetMaintenanceWindowTaskOutputBuilder {
         self.targets = input;
         self
     }
+    /// <p>The targets where the task should run.</p>
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
+        &self.targets
+    }
     /// <p>The resource that the task used during execution. For <code>RUN_COMMAND</code> and <code>AUTOMATION</code> task types, the value of <code>TaskArn</code> is the SSM document name/ARN. For <code>LAMBDA</code> tasks, the value is the function name/ARN. For <code>STEP_FUNCTIONS</code> tasks, the value is the state machine ARN.</p>
     pub fn task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_arn = ::std::option::Option::Some(input.into());
@@ -274,6 +286,10 @@ impl GetMaintenanceWindowTaskOutputBuilder {
     pub fn set_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_arn = input;
         self
+    }
+    /// <p>The resource that the task used during execution. For <code>RUN_COMMAND</code> and <code>AUTOMATION</code> task types, the value of <code>TaskArn</code> is the SSM document name/ARN. For <code>LAMBDA</code> tasks, the value is the function name/ARN. For <code>STEP_FUNCTIONS</code> tasks, the value is the state machine ARN.</p>
+    pub fn get_task_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
     pub fn service_role_arn(
@@ -291,6 +307,10 @@ impl GetMaintenanceWindowTaskOutputBuilder {
         self.service_role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+    pub fn get_service_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_role_arn
+    }
     /// <p>The type of task to run.</p>
     pub fn task_type(mut self, input: crate::types::MaintenanceWindowTaskType) -> Self {
         self.task_type = ::std::option::Option::Some(input);
@@ -303,6 +323,10 @@ impl GetMaintenanceWindowTaskOutputBuilder {
     ) -> Self {
         self.task_type = input;
         self
+    }
+    /// <p>The type of task to run.</p>
+    pub fn get_task_type(&self) -> &::std::option::Option<crate::types::MaintenanceWindowTaskType> {
+        &self.task_type
     }
     /// Adds a key-value pair to `task_parameters`.
     ///
@@ -336,6 +360,19 @@ impl GetMaintenanceWindowTaskOutputBuilder {
         self.task_parameters = input;
         self
     }
+    /// <p>The parameters to pass to the task when it runs.</p> <note>
+    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+    /// </note>
+    pub fn get_task_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::MaintenanceWindowTaskParameterValueExpression,
+        >,
+    > {
+        &self.task_parameters
+    }
     /// <p>The parameters to pass to the task when it runs.</p>
     pub fn task_invocation_parameters(
         mut self,
@@ -352,6 +389,12 @@ impl GetMaintenanceWindowTaskOutputBuilder {
         self.task_invocation_parameters = input;
         self
     }
+    /// <p>The parameters to pass to the task when it runs.</p>
+    pub fn get_task_invocation_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::MaintenanceWindowTaskInvocationParameters> {
+        &self.task_invocation_parameters
+    }
     /// <p>The priority of the task when it runs. The lower the number, the higher the priority. Tasks that have the same priority are scheduled in parallel.</p>
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
@@ -361,6 +404,10 @@ impl GetMaintenanceWindowTaskOutputBuilder {
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
+    }
+    /// <p>The priority of the task when it runs. The lower the number, the higher the priority. Tasks that have the same priority are scheduled in parallel.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
     }
     /// <p>The maximum number of targets allowed to run this task in parallel.</p> <note>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
@@ -382,6 +429,12 @@ impl GetMaintenanceWindowTaskOutputBuilder {
         self.max_concurrency = input;
         self
     }
+    /// <p>The maximum number of targets allowed to run this task in parallel.</p> <note>
+    /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
+    /// </note>
+    pub fn get_max_concurrency(&self) -> &::std::option::Option<::std::string::String> {
+        &self.max_concurrency
+    }
     /// <p>The maximum number of errors allowed before the task stops being scheduled.</p> <note>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
     /// </note>
@@ -395,6 +448,12 @@ impl GetMaintenanceWindowTaskOutputBuilder {
     pub fn set_max_errors(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_errors = input;
         self
+    }
+    /// <p>The maximum number of errors allowed before the task stops being scheduled.</p> <note>
+    /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
+    /// </note>
+    pub fn get_max_errors(&self) -> &::std::option::Option<::std::string::String> {
+        &self.max_errors
     }
     /// <p>The location in Amazon Simple Storage Service (Amazon S3) where the task results are logged.</p> <note>
     /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
@@ -413,6 +472,12 @@ impl GetMaintenanceWindowTaskOutputBuilder {
         self.logging_info = input;
         self
     }
+    /// <p>The location in Amazon Simple Storage Service (Amazon S3) where the task results are logged.</p> <note>
+    /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+    /// </note>
+    pub fn get_logging_info(&self) -> &::std::option::Option<crate::types::LoggingInfo> {
+        &self.logging_info
+    }
     /// <p>The retrieved task name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -423,6 +488,10 @@ impl GetMaintenanceWindowTaskOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The retrieved task name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The retrieved task description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -432,6 +501,10 @@ impl GetMaintenanceWindowTaskOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The retrieved task description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The action to take on tasks when the maintenance window cutoff time is reached. <code>CONTINUE_TASK</code> means that tasks continue to run. For Automation, Lambda, Step Functions tasks, <code>CANCEL_TASK</code> means that currently running task invocations continue, but no new task invocations are started. For Run Command tasks, <code>CANCEL_TASK</code> means the system attempts to stop the task by sending a <code>CancelCommand</code> operation.</p>
     pub fn cutoff_behavior(
@@ -449,6 +522,12 @@ impl GetMaintenanceWindowTaskOutputBuilder {
         self.cutoff_behavior = input;
         self
     }
+    /// <p>The action to take on tasks when the maintenance window cutoff time is reached. <code>CONTINUE_TASK</code> means that tasks continue to run. For Automation, Lambda, Step Functions tasks, <code>CANCEL_TASK</code> means that currently running task invocations continue, but no new task invocations are started. For Run Command tasks, <code>CANCEL_TASK</code> means the system attempts to stop the task by sending a <code>CancelCommand</code> operation.</p>
+    pub fn get_cutoff_behavior(
+        &self,
+    ) -> &::std::option::Option<crate::types::MaintenanceWindowTaskCutoffBehavior> {
+        &self.cutoff_behavior
+    }
     /// <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
     pub fn alarm_configuration(mut self, input: crate::types::AlarmConfiguration) -> Self {
         self.alarm_configuration = ::std::option::Option::Some(input);
@@ -461,6 +540,12 @@ impl GetMaintenanceWindowTaskOutputBuilder {
     ) -> Self {
         self.alarm_configuration = input;
         self
+    }
+    /// <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
+    pub fn get_alarm_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AlarmConfiguration> {
+        &self.alarm_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

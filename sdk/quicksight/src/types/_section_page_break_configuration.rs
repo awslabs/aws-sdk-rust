@@ -43,6 +43,10 @@ impl SectionPageBreakConfigurationBuilder {
         self.after = input;
         self
     }
+    /// <p>The configuration of a page break after a section.</p>
+    pub fn get_after(&self) -> &::std::option::Option<crate::types::SectionAfterPageBreak> {
+        &self.after
+    }
     /// Consumes the builder and constructs a [`SectionPageBreakConfiguration`](crate::types::SectionPageBreakConfiguration).
     pub fn build(self) -> crate::types::SectionPageBreakConfiguration {
         crate::types::SectionPageBreakConfiguration { after: self.after }

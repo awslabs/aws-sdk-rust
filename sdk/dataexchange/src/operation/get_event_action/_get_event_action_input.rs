@@ -45,6 +45,10 @@ impl GetEventActionInputBuilder {
         self.event_action_id = input;
         self
     }
+    /// <p>The unique identifier for the event action.</p>
+    pub fn get_event_action_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_action_id
+    }
     /// Consumes the builder and constructs a [`GetEventActionInput`](crate::operation::get_event_action::GetEventActionInput).
     pub fn build(
         self,

@@ -68,6 +68,10 @@ impl StreamBuilder {
         self.stream_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the stream.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_arn
+    }
     /// <p>The DynamoDB table with which the stream is associated.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
@@ -77,6 +81,10 @@ impl StreamBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
+    }
+    /// <p>The DynamoDB table with which the stream is associated.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
     /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p>
@@ -99,6 +107,16 @@ impl StreamBuilder {
     pub fn set_stream_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_label = input;
         self
+    }
+    /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
+    /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p>
+    /// <ul>
+    /// <li> <p>the Amazon Web Services customer ID.</p> </li>
+    /// <li> <p>the table name</p> </li>
+    /// <li> <p>the <code>StreamLabel</code> </p> </li>
+    /// </ul>
+    pub fn get_stream_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_label
     }
     /// Consumes the builder and constructs a [`Stream`](crate::types::Stream).
     pub fn build(self) -> crate::types::Stream {

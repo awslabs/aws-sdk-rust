@@ -81,6 +81,10 @@ impl DescribeDbProxyTargetGroupsInputBuilder {
         self.db_proxy_name = input;
         self
     }
+    /// <p>The identifier of the <code>DBProxy</code> associated with the target group.</p>
+    pub fn get_db_proxy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_proxy_name
+    }
     /// <p>The identifier of the <code>DBProxyTargetGroup</code> to describe.</p>
     pub fn target_group_name(
         mut self,
@@ -96,6 +100,10 @@ impl DescribeDbProxyTargetGroupsInputBuilder {
     ) -> Self {
         self.target_group_name = input;
         self
+    }
+    /// <p>The identifier of the <code>DBProxyTargetGroup</code> to describe.</p>
+    pub fn get_target_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_group_name
     }
     /// Appends an item to `filters`.
     ///
@@ -116,6 +124,10 @@ impl DescribeDbProxyTargetGroupsInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>This parameter is not currently supported.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
+    }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -125,6 +137,10 @@ impl DescribeDbProxyTargetGroupsInputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
@@ -139,6 +155,12 @@ impl DescribeDbProxyTargetGroupsInputBuilder {
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_records = input;
         self
+    }
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        &self.max_records
     }
     /// Consumes the builder and constructs a [`DescribeDbProxyTargetGroupsInput`](crate::operation::describe_db_proxy_target_groups::DescribeDbProxyTargetGroupsInput).
     pub fn build(

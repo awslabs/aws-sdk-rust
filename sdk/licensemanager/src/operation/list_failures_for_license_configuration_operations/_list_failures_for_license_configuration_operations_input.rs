@@ -61,6 +61,10 @@ impl ListFailuresForLicenseConfigurationOperationsInputBuilder {
         self.license_configuration_arn = input;
         self
     }
+    /// <p>Amazon Resource Name of the license configuration.</p>
+    pub fn get_license_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_configuration_arn
+    }
     /// <p>Maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -71,6 +75,10 @@ impl ListFailuresForLicenseConfigurationOperationsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>Maximum number of results to return in a single call.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>Token for the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -80,6 +88,10 @@ impl ListFailuresForLicenseConfigurationOperationsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListFailuresForLicenseConfigurationOperationsInput`](crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsInput, ::aws_smithy_http::operation::error::BuildError>{

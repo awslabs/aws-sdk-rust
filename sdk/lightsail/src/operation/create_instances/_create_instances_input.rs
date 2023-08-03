@@ -143,6 +143,12 @@ impl CreateInstancesInputBuilder {
         self.instance_names = input;
         self
     }
+    /// <p>The names to use for your new Lightsail instances. Separate multiple values using quotation marks and commas, for example: <code>["MyFirstInstance","MySecondInstance"]</code> </p>
+    pub fn get_instance_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.instance_names
+    }
     /// <p>The Availability Zone in which to create your instance. Use the following format: <code>us-east-2a</code> (case sensitive). You can get a list of Availability Zones by using the <a href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a> operation. Be sure to add the <code>include Availability Zones</code> parameter to your request.</p>
     pub fn availability_zone(
         mut self,
@@ -158,6 +164,10 @@ impl CreateInstancesInputBuilder {
     ) -> Self {
         self.availability_zone = input;
         self
+    }
+    /// <p>The Availability Zone in which to create your instance. Use the following format: <code>us-east-2a</code> (case sensitive). You can get a list of Availability Zones by using the <a href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a> operation. Be sure to add the <code>include Availability Zones</code> parameter to your request.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
     }
     /// <p>(Deprecated) The name for your custom image.</p> <note>
     /// <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.</p>
@@ -181,6 +191,13 @@ impl CreateInstancesInputBuilder {
         self.custom_image_name = input;
         self
     }
+    /// <p>(Deprecated) The name for your custom image.</p> <note>
+    /// <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.</p>
+    /// </note>
+    #[deprecated]
+    pub fn get_custom_image_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_image_name
+    }
     /// <p>The ID for a virtual private server image (e.g., <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get blueprints</code> operation to return a list of available images (or <i>blueprints</i>).</p> <note>
     /// <p>Use active blueprints when creating new instances. Inactive blueprints are listed to support customers with existing instances and are not necessarily available to create new instances. Blueprints are marked inactive when they become outdated due to operating system updates or new application releases.</p>
     /// </note>
@@ -195,6 +212,12 @@ impl CreateInstancesInputBuilder {
         self.blueprint_id = input;
         self
     }
+    /// <p>The ID for a virtual private server image (e.g., <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get blueprints</code> operation to return a list of available images (or <i>blueprints</i>).</p> <note>
+    /// <p>Use active blueprints when creating new instances. Inactive blueprints are listed to support customers with existing instances and are not necessarily available to create new instances. Blueprints are marked inactive when they become outdated due to operating system updates or new application releases.</p>
+    /// </note>
+    pub fn get_blueprint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.blueprint_id
+    }
     /// <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
     pub fn bundle_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bundle_id = ::std::option::Option::Some(input.into());
@@ -204,6 +227,10 @@ impl CreateInstancesInputBuilder {
     pub fn set_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bundle_id = input;
         self
+    }
+    /// <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
+    pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bundle_id
     }
     /// <p>A launch script you can create that configures a server with additional user data. For example, you might want to run <code>apt-get -y update</code>.</p> <note>
     /// <p>Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon Lightsail Developer Guide</a>.</p>
@@ -218,6 +245,12 @@ impl CreateInstancesInputBuilder {
     pub fn set_user_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_data = input;
         self
+    }
+    /// <p>A launch script you can create that configures a server with additional user data. For example, you might want to run <code>apt-get -y update</code>.</p> <note>
+    /// <p>Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon Lightsail Developer Guide</a>.</p>
+    /// </note>
+    pub fn get_user_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_data
     }
     /// <p>The name of your key pair.</p>
     pub fn key_pair_name(
@@ -234,6 +267,10 @@ impl CreateInstancesInputBuilder {
     ) -> Self {
         self.key_pair_name = input;
         self
+    }
+    /// <p>The name of your key pair.</p>
+    pub fn get_key_pair_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_pair_name
     }
     /// Appends an item to `tags`.
     ///
@@ -256,6 +293,11 @@ impl CreateInstancesInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tag keys and optional values to add to the resource during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Appends an item to `add_ons`.
     ///
     /// To override the contents of this collection use [`set_add_ons`](Self::set_add_ons).
@@ -275,6 +317,12 @@ impl CreateInstancesInputBuilder {
         self.add_ons = input;
         self
     }
+    /// <p>An array of objects representing the add-ons to enable for the new instance.</p>
+    pub fn get_add_ons(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddOnRequest>> {
+        &self.add_ons
+    }
     /// <p>The IP address type for the instance.</p>
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     /// <p>The default value is <code>dualstack</code>.</p>
@@ -291,6 +339,12 @@ impl CreateInstancesInputBuilder {
     ) -> Self {
         self.ip_address_type = input;
         self
+    }
+    /// <p>The IP address type for the instance.</p>
+    /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
+    /// <p>The default value is <code>dualstack</code>.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        &self.ip_address_type
     }
     /// Consumes the builder and constructs a [`CreateInstancesInput`](crate::operation::create_instances::CreateInstancesInput).
     pub fn build(

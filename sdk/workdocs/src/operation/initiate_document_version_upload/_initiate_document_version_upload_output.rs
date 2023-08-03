@@ -57,6 +57,10 @@ impl InitiateDocumentVersionUploadOutputBuilder {
         self.metadata = input;
         self
     }
+    /// <p>The document metadata.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::DocumentMetadata> {
+        &self.metadata
+    }
     /// <p>The upload metadata.</p>
     pub fn upload_metadata(mut self, input: crate::types::UploadMetadata) -> Self {
         self.upload_metadata = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl InitiateDocumentVersionUploadOutputBuilder {
     ) -> Self {
         self.upload_metadata = input;
         self
+    }
+    /// <p>The upload metadata.</p>
+    pub fn get_upload_metadata(&self) -> &::std::option::Option<crate::types::UploadMetadata> {
+        &self.upload_metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -72,6 +72,10 @@ impl FailedAccountBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The status of Amazon Inspector for the account.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl FailedAccountBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of Amazon Inspector for the account.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
     }
     /// <p>An object detailing which resources Amazon Inspector is enabled to scan for the account.</p>
     pub fn resource_status(mut self, input: crate::types::ResourceStatus) -> Self {
@@ -95,6 +103,10 @@ impl FailedAccountBuilder {
         self.resource_status = input;
         self
     }
+    /// <p>An object detailing which resources Amazon Inspector is enabled to scan for the account.</p>
+    pub fn get_resource_status(&self) -> &::std::option::Option<crate::types::ResourceStatus> {
+        &self.resource_status
+    }
     /// <p>The error code explaining why the account failed to enable Amazon Inspector.</p>
     pub fn error_code(mut self, input: crate::types::ErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
@@ -104,6 +116,10 @@ impl FailedAccountBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The error code explaining why the account failed to enable Amazon Inspector.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
+        &self.error_code
     }
     /// <p>The error message received when the account failed to enable Amazon Inspector.</p>
     pub fn error_message(
@@ -120,6 +136,10 @@ impl FailedAccountBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>The error message received when the account failed to enable Amazon Inspector.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`FailedAccount`](crate::types::FailedAccount).
     pub fn build(self) -> crate::types::FailedAccount {

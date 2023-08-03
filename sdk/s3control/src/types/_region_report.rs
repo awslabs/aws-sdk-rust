@@ -56,6 +56,10 @@ impl RegionReportBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The name of the bucket.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>The name of the Region.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl RegionReportBuilder {
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
+    }
+    /// <p>The name of the Region.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket that's associated with this Multi-Region Access Point.</p>
     pub fn bucket_account_id(
@@ -81,6 +89,10 @@ impl RegionReportBuilder {
     ) -> Self {
         self.bucket_account_id = input;
         self
+    }
+    /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket that's associated with this Multi-Region Access Point.</p>
+    pub fn get_bucket_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_account_id
     }
     /// Consumes the builder and constructs a [`RegionReport`](crate::types::RegionReport).
     pub fn build(self) -> crate::types::RegionReport {

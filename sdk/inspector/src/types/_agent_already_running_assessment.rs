@@ -48,6 +48,10 @@ impl AgentAlreadyRunningAssessmentBuilder {
         self.agent_id = input;
         self
     }
+    /// <p>ID of the agent that is running on an EC2 instance that is already participating in another started assessment run.</p>
+    pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_id
+    }
     /// <p>The ARN of the assessment run that has already been started.</p>
     pub fn assessment_run_arn(
         mut self,
@@ -63,6 +67,10 @@ impl AgentAlreadyRunningAssessmentBuilder {
     ) -> Self {
         self.assessment_run_arn = input;
         self
+    }
+    /// <p>The ARN of the assessment run that has already been started.</p>
+    pub fn get_assessment_run_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_run_arn
     }
     /// Consumes the builder and constructs a [`AgentAlreadyRunningAssessment`](crate::types::AgentAlreadyRunningAssessment).
     pub fn build(self) -> crate::types::AgentAlreadyRunningAssessment {

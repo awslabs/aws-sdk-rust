@@ -60,6 +60,10 @@ impl ListTrackerConsumersInputBuilder {
         self.tracker_name = input;
         self
     }
+    /// <p>The tracker resource whose associated geofence collections you want to list.</p>
+    pub fn get_tracker_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tracker_name
+    }
     /// <p>An optional limit for the number of resources returned in a single call. </p>
     /// <p>Default value: <code>100</code> </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -72,6 +76,11 @@ impl ListTrackerConsumersInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>An optional limit for the number of resources returned in a single call. </p>
+    /// <p>Default value: <code>100</code> </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
     /// <p>Default value: <code>null</code> </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -83,6 +92,11 @@ impl ListTrackerConsumersInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
+    /// <p>Default value: <code>null</code> </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListTrackerConsumersInput`](crate::operation::list_tracker_consumers::ListTrackerConsumersInput).
     pub fn build(

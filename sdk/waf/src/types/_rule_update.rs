@@ -52,6 +52,10 @@ impl RuleUpdateBuilder {
         self.action = input;
         self
     }
+    /// <p>Specify <code>INSERT</code> to add a <code>Predicate</code> to a <code>Rule</code>. Use <code>DELETE</code> to remove a <code>Predicate</code> from a <code>Rule</code>.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::ChangeAction> {
+        &self.action
+    }
     /// <p>The ID of the <code>Predicate</code> (such as an <code>IPSet</code>) that you want to add to a <code>Rule</code>.</p>
     pub fn predicate(mut self, input: crate::types::Predicate) -> Self {
         self.predicate = ::std::option::Option::Some(input);
@@ -61,6 +65,10 @@ impl RuleUpdateBuilder {
     pub fn set_predicate(mut self, input: ::std::option::Option<crate::types::Predicate>) -> Self {
         self.predicate = input;
         self
+    }
+    /// <p>The ID of the <code>Predicate</code> (such as an <code>IPSet</code>) that you want to add to a <code>Rule</code>.</p>
+    pub fn get_predicate(&self) -> &::std::option::Option<crate::types::Predicate> {
+        &self.predicate
     }
     /// Consumes the builder and constructs a [`RuleUpdate`](crate::types::RuleUpdate).
     pub fn build(self) -> crate::types::RuleUpdate {

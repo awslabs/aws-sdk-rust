@@ -36,6 +36,12 @@ impl CreateTimelineEventFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateTimelineEvent as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_timeline_event::builders::CreateTimelineEventInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateTimelineEventFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>A token that ensures that a client calls the action only once with the specified details.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>The Amazon Resource Name (ARN) of the incident record that the action adds the incident to.</p>
     pub fn incident_record_arn(
         mut self,
@@ -142,6 +152,10 @@ impl CreateTimelineEventFluentBuilder {
         self.inner = self.inner.set_incident_record_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the incident record that the action adds the incident to.</p>
+    pub fn get_incident_record_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_incident_record_arn()
+    }
     /// <p>The time that the event occurred.</p>
     pub fn event_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.event_time(input);
@@ -155,6 +169,10 @@ impl CreateTimelineEventFluentBuilder {
         self.inner = self.inner.set_event_time(input);
         self
     }
+    /// <p>The time that the event occurred.</p>
+    pub fn get_event_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_event_time()
+    }
     /// <p>The type of event. You can create timeline events of type <code>Custom Event</code>.</p>
     pub fn event_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_type(input.into());
@@ -165,6 +183,10 @@ impl CreateTimelineEventFluentBuilder {
         self.inner = self.inner.set_event_type(input);
         self
     }
+    /// <p>The type of event. You can create timeline events of type <code>Custom Event</code>.</p>
+    pub fn get_event_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_type()
+    }
     /// <p>A short description of the event.</p>
     pub fn event_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_data(input.into());
@@ -174,6 +196,10 @@ impl CreateTimelineEventFluentBuilder {
     pub fn set_event_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_data(input);
         self
+    }
+    /// <p>A short description of the event.</p>
+    pub fn get_event_data(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_data()
     }
     /// Appends an item to `eventReferences`.
     ///
@@ -191,5 +217,11 @@ impl CreateTimelineEventFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_event_references(input);
         self
+    }
+    /// <p>Adds one or more references to the <code>TimelineEvent</code>. A reference is an Amazon Web Services resource involved or associated with the incident. To specify a reference, enter its Amazon Resource Name (ARN). You can also specify a related item associated with a resource. For example, to specify an Amazon DynamoDB (DynamoDB) table as a resource, use the table's ARN. You can also specify an Amazon CloudWatch metric associated with the DynamoDB table as a related item.</p>
+    pub fn get_event_references(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventReference>> {
+        self.inner.get_event_references()
     }
 }

@@ -58,6 +58,10 @@ impl BatchDisassociateResourcesFromCustomLineItemInputBuilder {
         self.target_arn = input;
         self
     }
+    /// <p> A percentage custom line item ARN to disassociate the resources from. </p>
+    pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_arn
+    }
     /// Appends an item to `resource_arns`.
     ///
     /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
@@ -80,6 +84,12 @@ impl BatchDisassociateResourcesFromCustomLineItemInputBuilder {
         self.resource_arns = input;
         self
     }
+    /// <p> A list containing the ARNs of resources to be disassociated. </p>
+    pub fn get_resource_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_arns
+    }
     /// <p>The billing period range in which the custom line item request will be applied.</p>
     pub fn billing_period_range(
         mut self,
@@ -95,6 +105,12 @@ impl BatchDisassociateResourcesFromCustomLineItemInputBuilder {
     ) -> Self {
         self.billing_period_range = input;
         self
+    }
+    /// <p>The billing period range in which the custom line item request will be applied.</p>
+    pub fn get_billing_period_range(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomLineItemBillingPeriodRange> {
+        &self.billing_period_range
     }
     /// Consumes the builder and constructs a [`BatchDisassociateResourcesFromCustomLineItemInput`](crate::operation::batch_disassociate_resources_from_custom_line_item::BatchDisassociateResourcesFromCustomLineItemInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::batch_disassociate_resources_from_custom_line_item::BatchDisassociateResourcesFromCustomLineItemInput, ::aws_smithy_http::operation::error::BuildError>{

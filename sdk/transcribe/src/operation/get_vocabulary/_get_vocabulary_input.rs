@@ -45,6 +45,10 @@ impl GetVocabularyInputBuilder {
         self.vocabulary_name = input;
         self
     }
+    /// <p>The name of the custom vocabulary you want information about. Custom vocabulary names are case sensitive.</p>
+    pub fn get_vocabulary_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vocabulary_name
+    }
     /// Consumes the builder and constructs a [`GetVocabularyInput`](crate::operation::get_vocabulary::GetVocabularyInput).
     pub fn build(
         self,

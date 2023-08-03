@@ -54,6 +54,10 @@ impl SidewalkAccountInfoBuilder {
         self.amazon_id = input;
         self
     }
+    /// <p>The Sidewalk Amazon ID.</p>
+    pub fn get_amazon_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.amazon_id
+    }
     /// <p>The Sidewalk application server private key.</p>
     pub fn app_server_private_key(
         mut self,
@@ -69,6 +73,10 @@ impl SidewalkAccountInfoBuilder {
     ) -> Self {
         self.app_server_private_key = input;
         self
+    }
+    /// <p>The Sidewalk application server private key.</p>
+    pub fn get_app_server_private_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_server_private_key
     }
     /// Consumes the builder and constructs a [`SidewalkAccountInfo`](crate::types::SidewalkAccountInfo).
     pub fn build(self) -> crate::types::SidewalkAccountInfo {

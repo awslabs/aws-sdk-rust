@@ -48,6 +48,10 @@ impl UntagResourceInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>Specifies the Amazon Resource Name (ARN) of the resource to remove the tags from.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Appends an item to `keys`.
     ///
     /// To override the contents of this collection use [`set_keys`](Self::set_keys).
@@ -66,6 +70,10 @@ impl UntagResourceInputBuilder {
     ) -> Self {
         self.keys = input;
         self
+    }
+    /// <p>Specifies the keys in the tags that you want to remove.</p>
+    pub fn get_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.keys
     }
     /// Consumes the builder and constructs a [`UntagResourceInput`](crate::operation::untag_resource::UntagResourceInput).
     pub fn build(

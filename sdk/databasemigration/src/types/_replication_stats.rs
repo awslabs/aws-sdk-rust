@@ -120,6 +120,10 @@ impl ReplicationStatsBuilder {
         self.full_load_progress_percent = input;
         self
     }
+    /// <p>The percent complete for the full load serverless replication.</p>
+    pub fn get_full_load_progress_percent(&self) -> &::std::option::Option<i32> {
+        &self.full_load_progress_percent
+    }
     /// <p>The elapsed time of the replication, in milliseconds.</p>
     pub fn elapsed_time_millis(mut self, input: i64) -> Self {
         self.elapsed_time_millis = ::std::option::Option::Some(input);
@@ -129,6 +133,10 @@ impl ReplicationStatsBuilder {
     pub fn set_elapsed_time_millis(mut self, input: ::std::option::Option<i64>) -> Self {
         self.elapsed_time_millis = input;
         self
+    }
+    /// <p>The elapsed time of the replication, in milliseconds.</p>
+    pub fn get_elapsed_time_millis(&self) -> &::std::option::Option<i64> {
+        &self.elapsed_time_millis
     }
     /// <p>The number of tables loaded for this replication.</p>
     pub fn tables_loaded(mut self, input: i32) -> Self {
@@ -140,6 +148,10 @@ impl ReplicationStatsBuilder {
         self.tables_loaded = input;
         self
     }
+    /// <p>The number of tables loaded for this replication.</p>
+    pub fn get_tables_loaded(&self) -> &::std::option::Option<i32> {
+        &self.tables_loaded
+    }
     /// <p>The number of tables currently loading for this replication.</p>
     pub fn tables_loading(mut self, input: i32) -> Self {
         self.tables_loading = ::std::option::Option::Some(input);
@@ -149,6 +161,10 @@ impl ReplicationStatsBuilder {
     pub fn set_tables_loading(mut self, input: ::std::option::Option<i32>) -> Self {
         self.tables_loading = input;
         self
+    }
+    /// <p>The number of tables currently loading for this replication.</p>
+    pub fn get_tables_loading(&self) -> &::std::option::Option<i32> {
+        &self.tables_loading
     }
     /// <p>The number of tables queued for this replication.</p>
     pub fn tables_queued(mut self, input: i32) -> Self {
@@ -160,6 +176,10 @@ impl ReplicationStatsBuilder {
         self.tables_queued = input;
         self
     }
+    /// <p>The number of tables queued for this replication.</p>
+    pub fn get_tables_queued(&self) -> &::std::option::Option<i32> {
+        &self.tables_queued
+    }
     /// <p>The number of errors that have occured for this replication.</p>
     pub fn tables_errored(mut self, input: i32) -> Self {
         self.tables_errored = ::std::option::Option::Some(input);
@@ -169,6 +189,10 @@ impl ReplicationStatsBuilder {
     pub fn set_tables_errored(mut self, input: ::std::option::Option<i32>) -> Self {
         self.tables_errored = input;
         self
+    }
+    /// <p>The number of errors that have occured for this replication.</p>
+    pub fn get_tables_errored(&self) -> &::std::option::Option<i32> {
+        &self.tables_errored
     }
     /// <p>The date the replication was started either with a fresh start or a target reload.</p>
     pub fn fresh_start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -183,6 +207,10 @@ impl ReplicationStatsBuilder {
         self.fresh_start_date = input;
         self
     }
+    /// <p>The date the replication was started either with a fresh start or a target reload.</p>
+    pub fn get_fresh_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.fresh_start_date
+    }
     /// <p>The date the replication is scheduled to start.</p>
     pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_date = ::std::option::Option::Some(input);
@@ -195,6 +223,10 @@ impl ReplicationStatsBuilder {
     ) -> Self {
         self.start_date = input;
         self
+    }
+    /// <p>The date the replication is scheduled to start.</p>
+    pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_date
     }
     /// <p>The date the replication was stopped.</p>
     pub fn stop_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -209,6 +241,10 @@ impl ReplicationStatsBuilder {
         self.stop_date = input;
         self
     }
+    /// <p>The date the replication was stopped.</p>
+    pub fn get_stop_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.stop_date
+    }
     /// <p>The date the replication full load was started.</p>
     pub fn full_load_start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.full_load_start_date = ::std::option::Option::Some(input);
@@ -222,6 +258,10 @@ impl ReplicationStatsBuilder {
         self.full_load_start_date = input;
         self
     }
+    /// <p>The date the replication full load was started.</p>
+    pub fn get_full_load_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.full_load_start_date
+    }
     /// <p>The date the replication full load was finished.</p>
     pub fn full_load_finish_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.full_load_finish_date = ::std::option::Option::Some(input);
@@ -234,6 +274,12 @@ impl ReplicationStatsBuilder {
     ) -> Self {
         self.full_load_finish_date = input;
         self
+    }
+    /// <p>The date the replication full load was finished.</p>
+    pub fn get_full_load_finish_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.full_load_finish_date
     }
     /// Consumes the builder and constructs a [`ReplicationStats`](crate::types::ReplicationStats).
     pub fn build(self) -> crate::types::ReplicationStats {

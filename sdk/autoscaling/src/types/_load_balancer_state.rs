@@ -68,6 +68,10 @@ impl LoadBalancerStateBuilder {
         self.load_balancer_name = input;
         self
     }
+    /// <p>The name of the load balancer.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.load_balancer_name
+    }
     /// <p>One of the following load balancer states:</p>
     /// <ul>
     /// <li> <p> <code>Adding</code> - The Auto Scaling instances are being registered with the load balancer.</p> </li>
@@ -91,6 +95,17 @@ impl LoadBalancerStateBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>One of the following load balancer states:</p>
+    /// <ul>
+    /// <li> <p> <code>Adding</code> - The Auto Scaling instances are being registered with the load balancer.</p> </li>
+    /// <li> <p> <code>Added</code> - All Auto Scaling instances are registered with the load balancer.</p> </li>
+    /// <li> <p> <code>InService</code> - At least one Auto Scaling instance passed an <code>ELB</code> health check.</p> </li>
+    /// <li> <p> <code>Removing</code> - The Auto Scaling instances are being deregistered from the load balancer. If connection draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before deregistering the instances.</p> </li>
+    /// <li> <p> <code>Removed</code> - All Auto Scaling instances are deregistered from the load balancer.</p> </li>
+    /// </ul>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`LoadBalancerState`](crate::types::LoadBalancerState).
     pub fn build(self) -> crate::types::LoadBalancerState {

@@ -55,6 +55,13 @@ impl AwsCloudFrontDistributionOriginsBuilder {
         self.items = input;
         self
     }
+    /// <p>A complex type that contains origins or origin groups for this distribution.</p>
+    pub fn get_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsCloudFrontDistributionOriginItem>>
+    {
+        &self.items
+    }
     /// Consumes the builder and constructs a [`AwsCloudFrontDistributionOrigins`](crate::types::AwsCloudFrontDistributionOrigins).
     pub fn build(self) -> crate::types::AwsCloudFrontDistributionOrigins {
         crate::types::AwsCloudFrontDistributionOrigins { items: self.items }

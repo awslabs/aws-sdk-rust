@@ -106,6 +106,10 @@ impl GrantListEntryBuilder {
         self.key_id = input;
         self
     }
+    /// <p>The unique identifier for the KMS key to which the grant applies.</p>
+    pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_id
+    }
     /// <p>The unique identifier for the grant.</p>
     pub fn grant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grant_id = ::std::option::Option::Some(input.into());
@@ -116,6 +120,10 @@ impl GrantListEntryBuilder {
         self.grant_id = input;
         self
     }
+    /// <p>The unique identifier for the grant.</p>
+    pub fn get_grant_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grant_id
+    }
     /// <p>The friendly name that identifies the grant. If a name was provided in the <code>CreateGrant</code> request, that name is returned. Otherwise this value is null.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -125,6 +133,10 @@ impl GrantListEntryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The friendly name that identifies the grant. If a name was provided in the <code>CreateGrant</code> request, that name is returned. Otherwise this value is null.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The date and time when the grant was created.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -138,6 +150,10 @@ impl GrantListEntryBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>The date and time when the grant was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
     }
     /// <p>The identity that gets the permissions in the grant.</p>
     /// <p>The <code>GranteePrincipal</code> field in the <code>ListGrants</code> response usually contains the user or role designated as the grantee principal in the grant. However, when the grantee principal in the grant is an Amazon Web Services service, the <code>GranteePrincipal</code> field contains the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service principal</a>, which might represent several different grantee principals.</p>
@@ -157,6 +173,11 @@ impl GrantListEntryBuilder {
         self.grantee_principal = input;
         self
     }
+    /// <p>The identity that gets the permissions in the grant.</p>
+    /// <p>The <code>GranteePrincipal</code> field in the <code>ListGrants</code> response usually contains the user or role designated as the grantee principal in the grant. However, when the grantee principal in the grant is an Amazon Web Services service, the <code>GranteePrincipal</code> field contains the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service principal</a>, which might represent several different grantee principals.</p>
+    pub fn get_grantee_principal(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grantee_principal
+    }
     /// <p>The principal that can retire the grant.</p>
     pub fn retiring_principal(
         mut self,
@@ -173,6 +194,10 @@ impl GrantListEntryBuilder {
         self.retiring_principal = input;
         self
     }
+    /// <p>The principal that can retire the grant.</p>
+    pub fn get_retiring_principal(&self) -> &::std::option::Option<::std::string::String> {
+        &self.retiring_principal
+    }
     /// <p>The Amazon Web Services account under which the grant was issued.</p>
     pub fn issuing_account(
         mut self,
@@ -188,6 +213,10 @@ impl GrantListEntryBuilder {
     ) -> Self {
         self.issuing_account = input;
         self
+    }
+    /// <p>The Amazon Web Services account under which the grant was issued.</p>
+    pub fn get_issuing_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.issuing_account
     }
     /// Appends an item to `operations`.
     ///
@@ -208,6 +237,12 @@ impl GrantListEntryBuilder {
         self.operations = input;
         self
     }
+    /// <p>The list of operations permitted by the grant.</p>
+    pub fn get_operations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GrantOperation>> {
+        &self.operations
+    }
     /// <p>A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows.</p>
     pub fn constraints(mut self, input: crate::types::GrantConstraints) -> Self {
         self.constraints = ::std::option::Option::Some(input);
@@ -220,6 +255,10 @@ impl GrantListEntryBuilder {
     ) -> Self {
         self.constraints = input;
         self
+    }
+    /// <p>A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows.</p>
+    pub fn get_constraints(&self) -> &::std::option::Option<crate::types::GrantConstraints> {
+        &self.constraints
     }
     /// Consumes the builder and constructs a [`GrantListEntry`](crate::types::GrantListEntry).
     pub fn build(self) -> crate::types::GrantListEntry {

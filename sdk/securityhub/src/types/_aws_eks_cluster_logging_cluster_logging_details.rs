@@ -62,6 +62,10 @@ impl AwsEksClusterLoggingClusterLoggingDetailsBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Whether the logging types that are listed in <code>Types</code> are enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Appends an item to `types`.
     ///
     /// To override the contents of this collection use [`set_types`](Self::set_types).
@@ -94,6 +98,17 @@ impl AwsEksClusterLoggingClusterLoggingDetailsBuilder {
     ) -> Self {
         self.types = input;
         self
+    }
+    /// <p>A list of logging types. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>api</code> </p> </li>
+    /// <li> <p> <code>audit</code> </p> </li>
+    /// <li> <p> <code>authenticator</code> </p> </li>
+    /// <li> <p> <code>controllerManager</code> </p> </li>
+    /// <li> <p> <code>scheduler</code> </p> </li>
+    /// </ul>
+    pub fn get_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.types
     }
     /// Consumes the builder and constructs a [`AwsEksClusterLoggingClusterLoggingDetails`](crate::types::AwsEksClusterLoggingClusterLoggingDetails).
     pub fn build(self) -> crate::types::AwsEksClusterLoggingClusterLoggingDetails {

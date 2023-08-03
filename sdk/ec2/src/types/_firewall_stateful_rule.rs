@@ -102,6 +102,10 @@ impl FirewallStatefulRuleBuilder {
         self.rule_group_arn = input;
         self
     }
+    /// <p>The ARN of the stateful rule group.</p>
+    pub fn get_rule_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_group_arn
+    }
     /// Appends an item to `sources`.
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
@@ -120,6 +124,10 @@ impl FirewallStatefulRuleBuilder {
     ) -> Self {
         self.sources = input;
         self
+    }
+    /// <p>The source IP addresses, in CIDR notation.</p>
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.sources
     }
     /// Appends an item to `destinations`.
     ///
@@ -140,6 +148,12 @@ impl FirewallStatefulRuleBuilder {
         self.destinations = input;
         self
     }
+    /// <p>The destination IP addresses, in CIDR notation.</p>
+    pub fn get_destinations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.destinations
+    }
     /// Appends an item to `source_ports`.
     ///
     /// To override the contents of this collection use [`set_source_ports`](Self::set_source_ports).
@@ -158,6 +172,12 @@ impl FirewallStatefulRuleBuilder {
     ) -> Self {
         self.source_ports = input;
         self
+    }
+    /// <p>The source ports.</p>
+    pub fn get_source_ports(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
+        &self.source_ports
     }
     /// Appends an item to `destination_ports`.
     ///
@@ -178,6 +198,12 @@ impl FirewallStatefulRuleBuilder {
         self.destination_ports = input;
         self
     }
+    /// <p>The destination ports.</p>
+    pub fn get_destination_ports(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
+        &self.destination_ports
+    }
     /// <p>The protocol.</p>
     pub fn protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protocol = ::std::option::Option::Some(input.into());
@@ -187,6 +213,10 @@ impl FirewallStatefulRuleBuilder {
     pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.protocol = input;
         self
+    }
+    /// <p>The protocol.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<::std::string::String> {
+        &self.protocol
     }
     /// <p>The rule action. The possible values are <code>pass</code>, <code>drop</code>, and <code>alert</code>.</p>
     pub fn rule_action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -198,6 +228,10 @@ impl FirewallStatefulRuleBuilder {
         self.rule_action = input;
         self
     }
+    /// <p>The rule action. The possible values are <code>pass</code>, <code>drop</code>, and <code>alert</code>.</p>
+    pub fn get_rule_action(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_action
+    }
     /// <p>The direction. The possible values are <code>FORWARD</code> and <code>ANY</code>.</p>
     pub fn direction(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.direction = ::std::option::Option::Some(input.into());
@@ -207,6 +241,10 @@ impl FirewallStatefulRuleBuilder {
     pub fn set_direction(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.direction = input;
         self
+    }
+    /// <p>The direction. The possible values are <code>FORWARD</code> and <code>ANY</code>.</p>
+    pub fn get_direction(&self) -> &::std::option::Option<::std::string::String> {
+        &self.direction
     }
     /// Consumes the builder and constructs a [`FirewallStatefulRule`](crate::types::FirewallStatefulRule).
     pub fn build(self) -> crate::types::FirewallStatefulRule {

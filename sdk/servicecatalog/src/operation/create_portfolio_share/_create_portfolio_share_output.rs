@@ -53,6 +53,10 @@ impl CreatePortfolioShareOutputBuilder {
         self.portfolio_share_token = input;
         self
     }
+    /// <p>The portfolio shares a unique identifier that only returns if the portfolio is shared to an organization node.</p>
+    pub fn get_portfolio_share_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portfolio_share_token
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

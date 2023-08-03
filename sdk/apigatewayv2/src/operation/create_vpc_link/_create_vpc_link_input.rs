@@ -72,6 +72,10 @@ impl CreateVpcLinkInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the VPC link.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `security_group_ids`.
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
@@ -94,6 +98,12 @@ impl CreateVpcLinkInputBuilder {
         self.security_group_ids = input;
         self
     }
+    /// <p>A list of security group IDs for the VPC link.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
+    }
     /// Appends an item to `subnet_ids`.
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
@@ -112,6 +122,10 @@ impl CreateVpcLinkInputBuilder {
     ) -> Self {
         self.subnet_ids = input;
         self
+    }
+    /// <p>A list of subnet IDs to include in the VPC link.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -137,6 +151,14 @@ impl CreateVpcLinkInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tags.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateVpcLinkInput`](crate::operation::create_vpc_link::CreateVpcLinkInput).
     pub fn build(

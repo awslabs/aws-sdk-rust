@@ -36,6 +36,10 @@ impl DescribeElasticsearchInstanceTypeLimitsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeElasticsearchInstanceTypeLimits as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_elasticsearch_instance_type_limits::builders::DescribeElasticsearchInstanceTypeLimitsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl DescribeElasticsearchInstanceTypeLimitsFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p> DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for Elasticsearch <code> <code>Limits</code> </code> for existing domain. </p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p> The instance type for an Elasticsearch cluster for which Elasticsearch <code> <code>Limits</code> </code> are needed. </p>
     pub fn instance_type(mut self, input: crate::types::EsPartitionInstanceType) -> Self {
         self.inner = self.inner.instance_type(input);
@@ -112,6 +120,12 @@ impl DescribeElasticsearchInstanceTypeLimitsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_instance_type(input);
         self
+    }
+    /// <p> The instance type for an Elasticsearch cluster for which Elasticsearch <code> <code>Limits</code> </code> are needed. </p>
+    pub fn get_instance_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::EsPartitionInstanceType> {
+        self.inner.get_instance_type()
     }
     /// <p> Version of Elasticsearch for which <code> <code>Limits</code> </code> are needed. </p>
     pub fn elasticsearch_version(
@@ -128,5 +142,9 @@ impl DescribeElasticsearchInstanceTypeLimitsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_elasticsearch_version(input);
         self
+    }
+    /// <p> Version of Elasticsearch for which <code> <code>Limits</code> </code> are needed. </p>
+    pub fn get_elasticsearch_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_elasticsearch_version()
     }
 }

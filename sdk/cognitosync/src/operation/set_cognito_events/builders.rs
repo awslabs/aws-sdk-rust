@@ -37,6 +37,12 @@ impl SetCognitoEventsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SetCognitoEvents as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::set_cognito_events::builders::SetCognitoEventsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl SetCognitoEventsFluentBuilder {
         self.inner = self.inner.set_identity_pool_id(input);
         self
     }
+    /// <p>The Cognito Identity Pool to use when configuring Cognito Events</p>
+    pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_pool_id()
+    }
     /// Adds a key-value pair to `Events`.
     ///
     /// To override the contents of this collection use [`set_events`](Self::set_events).
@@ -155,5 +165,13 @@ impl SetCognitoEventsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_events(input);
         self
+    }
+    /// <p>The events to configure</p>
+    pub fn get_events(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_events()
     }
 }

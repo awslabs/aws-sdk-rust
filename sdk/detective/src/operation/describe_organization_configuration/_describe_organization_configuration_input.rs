@@ -39,6 +39,10 @@ impl DescribeOrganizationConfigurationInputBuilder {
         self.graph_arn = input;
         self
     }
+    /// <p>The ARN of the organization behavior graph.</p>
+    pub fn get_graph_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.graph_arn
+    }
     /// Consumes the builder and constructs a [`DescribeOrganizationConfigurationInput`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

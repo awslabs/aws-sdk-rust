@@ -70,6 +70,12 @@ impl UpdateConfiguredTableAssociationInputBuilder {
         self.configured_table_association_identifier = input;
         self
     }
+    /// <p>The unique identifier for the configured table association to update. Currently accepts the configured table association ID.</p>
+    pub fn get_configured_table_association_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.configured_table_association_identifier
+    }
     /// <p>The unique ID for the membership that the configured table association belongs to.</p>
     pub fn membership_identifier(
         mut self,
@@ -86,6 +92,10 @@ impl UpdateConfiguredTableAssociationInputBuilder {
         self.membership_identifier = input;
         self
     }
+    /// <p>The unique ID for the membership that the configured table association belongs to.</p>
+    pub fn get_membership_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.membership_identifier
+    }
     /// <p>A new description for the configured table association.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -96,6 +106,10 @@ impl UpdateConfiguredTableAssociationInputBuilder {
         self.description = input;
         self
     }
+    /// <p>A new description for the configured table association.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The service will assume this role to access catalog metadata and query the table.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -105,6 +119,10 @@ impl UpdateConfiguredTableAssociationInputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The service will assume this role to access catalog metadata and query the table.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`UpdateConfiguredTableAssociationInput`](crate::operation::update_configured_table_association::UpdateConfiguredTableAssociationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_configured_table_association::UpdateConfiguredTableAssociationInput, ::aws_smithy_http::operation::error::BuildError>{

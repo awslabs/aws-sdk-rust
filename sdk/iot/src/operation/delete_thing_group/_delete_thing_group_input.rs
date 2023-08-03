@@ -54,6 +54,10 @@ impl DeleteThingGroupInputBuilder {
         self.thing_group_name = input;
         self
     }
+    /// <p>The name of the thing group to delete.</p>
+    pub fn get_thing_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_group_name
+    }
     /// <p>The expected version of the thing group to delete.</p>
     pub fn expected_version(mut self, input: i64) -> Self {
         self.expected_version = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl DeleteThingGroupInputBuilder {
     pub fn set_expected_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.expected_version = input;
         self
+    }
+    /// <p>The expected version of the thing group to delete.</p>
+    pub fn get_expected_version(&self) -> &::std::option::Option<i64> {
+        &self.expected_version
     }
     /// Consumes the builder and constructs a [`DeleteThingGroupInput`](crate::operation::delete_thing_group::DeleteThingGroupInput).
     pub fn build(

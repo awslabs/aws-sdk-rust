@@ -41,6 +41,13 @@ impl GetGroupConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetGroupConfiguration as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_group_configuration::builders::GetGroupConfigurationInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,5 +137,9 @@ impl GetGroupConfigurationFluentBuilder {
     pub fn set_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group(input);
         self
+    }
+    /// <p>The name or the ARN of the resource group for which you want to retrive the service configuration.</p>
+    pub fn get_group(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group()
     }
 }

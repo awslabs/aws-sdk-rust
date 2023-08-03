@@ -36,6 +36,12 @@ impl UpdatePermissionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdatePermissions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_permissions::builders::UpdatePermissionsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,12 @@ impl UpdatePermissionsFluentBuilder {
         self.inner = self.inner.set_update_instruction_batch(input);
         self
     }
+    /// <p>An array of structures that contain the permission updates to make.</p>
+    pub fn get_update_instruction_batch(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateInstruction>> {
+        self.inner.get_update_instruction_batch()
+    }
     /// <p>The ID of the workspace to update.</p>
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workspace_id(input.into());
@@ -142,5 +154,9 @@ impl UpdatePermissionsFluentBuilder {
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workspace_id(input);
         self
+    }
+    /// <p>The ID of the workspace to update.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workspace_id()
     }
 }

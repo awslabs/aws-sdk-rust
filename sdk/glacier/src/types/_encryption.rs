@@ -59,6 +59,10 @@ impl EncryptionBuilder {
         self.encryption_type = input;
         self
     }
+    /// <p>The server-side encryption algorithm used when storing job results in Amazon S3, for example <code>AES256</code> or <code>aws:kms</code>.</p>
+    pub fn get_encryption_type(&self) -> &::std::option::Option<crate::types::EncryptionType> {
+        &self.encryption_type
+    }
     /// <p>The AWS KMS key ID to use for object encryption. All GET and PUT requests for an object protected by AWS KMS fail if not made by using Secure Sockets Layer (SSL) or Signature Version 4. </p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -69,6 +73,10 @@ impl EncryptionBuilder {
         self.kms_key_id = input;
         self
     }
+    /// <p>The AWS KMS key ID to use for object encryption. All GET and PUT requests for an object protected by AWS KMS fail if not made by using Secure Sockets Layer (SSL) or Signature Version 4. </p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// <p>Optional. If the encryption type is <code>aws:kms</code>, you can use this value to specify the encryption context for the job results.</p>
     pub fn kms_context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_context = ::std::option::Option::Some(input.into());
@@ -78,6 +86,10 @@ impl EncryptionBuilder {
     pub fn set_kms_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_context = input;
         self
+    }
+    /// <p>Optional. If the encryption type is <code>aws:kms</code>, you can use this value to specify the encryption context for the job results.</p>
+    pub fn get_kms_context(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_context
     }
     /// Consumes the builder and constructs a [`Encryption`](crate::types::Encryption).
     pub fn build(self) -> crate::types::Encryption {

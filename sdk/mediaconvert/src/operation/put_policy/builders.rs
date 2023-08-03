@@ -36,6 +36,10 @@ impl PutPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutPolicy as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_policy::builders::PutPolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -117,5 +121,9 @@ impl PutPolicyFluentBuilder {
     pub fn set_policy(mut self, input: ::std::option::Option<crate::types::Policy>) -> Self {
         self.inner = self.inner.set_policy(input);
         self
+    }
+    /// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+    pub fn get_policy(&self) -> &::std::option::Option<crate::types::Policy> {
+        self.inner.get_policy()
     }
 }

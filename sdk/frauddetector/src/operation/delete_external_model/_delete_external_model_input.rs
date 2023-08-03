@@ -47,6 +47,10 @@ impl DeleteExternalModelInputBuilder {
         self.model_endpoint = input;
         self
     }
+    /// <p>The endpoint of the Amazon Sagemaker model to delete.</p>
+    pub fn get_model_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_endpoint
+    }
     /// Consumes the builder and constructs a [`DeleteExternalModelInput`](crate::operation::delete_external_model::DeleteExternalModelInput).
     pub fn build(
         self,

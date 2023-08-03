@@ -75,6 +75,10 @@ impl PhoneNumberSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the phone number.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -85,6 +89,10 @@ impl PhoneNumberSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The phone number.</p>
     pub fn phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number = ::std::option::Option::Some(input.into());
@@ -94,6 +102,10 @@ impl PhoneNumberSummaryBuilder {
     pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.phone_number = input;
         self
+    }
+    /// <p>The phone number.</p>
+    pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number
     }
     /// <p>The type of phone number.</p>
     pub fn phone_number_type(mut self, input: crate::types::PhoneNumberType) -> Self {
@@ -107,6 +119,10 @@ impl PhoneNumberSummaryBuilder {
     ) -> Self {
         self.phone_number_type = input;
         self
+    }
+    /// <p>The type of phone number.</p>
+    pub fn get_phone_number_type(&self) -> &::std::option::Option<crate::types::PhoneNumberType> {
+        &self.phone_number_type
     }
     /// <p>The ISO country code.</p>
     pub fn phone_number_country_code(
@@ -123,6 +139,12 @@ impl PhoneNumberSummaryBuilder {
     ) -> Self {
         self.phone_number_country_code = input;
         self
+    }
+    /// <p>The ISO country code.</p>
+    pub fn get_phone_number_country_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::PhoneNumberCountryCode> {
+        &self.phone_number_country_code
     }
     /// Consumes the builder and constructs a [`PhoneNumberSummary`](crate::types::PhoneNumberSummary).
     pub fn build(self) -> crate::types::PhoneNumberSummary {

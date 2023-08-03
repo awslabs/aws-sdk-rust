@@ -72,6 +72,10 @@ impl WcdmaNmrObjBuilder {
         self.uarfcndl = input;
         self
     }
+    /// <p>WCDMA UTRA Absolute RF Channel Number downlink.</p>
+    pub fn get_uarfcndl(&self) -> &::std::option::Option<i32> {
+        &self.uarfcndl
+    }
     /// <p>Primary Scrambling Code.</p>
     pub fn psc(mut self, input: i32) -> Self {
         self.psc = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl WcdmaNmrObjBuilder {
     pub fn set_psc(mut self, input: ::std::option::Option<i32>) -> Self {
         self.psc = input;
         self
+    }
+    /// <p>Primary Scrambling Code.</p>
+    pub fn get_psc(&self) -> &::std::option::Option<i32> {
+        &self.psc
     }
     /// <p>UTRAN (UMTS Terrestrial Radio Access Network) Cell Global Identifier.</p>
     pub fn utran_cid(mut self, input: i32) -> Self {
@@ -92,6 +100,10 @@ impl WcdmaNmrObjBuilder {
         self.utran_cid = input;
         self
     }
+    /// <p>UTRAN (UMTS Terrestrial Radio Access Network) Cell Global Identifier.</p>
+    pub fn get_utran_cid(&self) -> &::std::option::Option<i32> {
+        &self.utran_cid
+    }
     /// <p>Received Signal Code Power (signal power) (dBm)</p>
     pub fn rscp(mut self, input: i32) -> Self {
         self.rscp = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl WcdmaNmrObjBuilder {
         self.rscp = input;
         self
     }
+    /// <p>Received Signal Code Power (signal power) (dBm)</p>
+    pub fn get_rscp(&self) -> &::std::option::Option<i32> {
+        &self.rscp
+    }
     /// <p>Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space.</p>
     pub fn path_loss(mut self, input: i32) -> Self {
         self.path_loss = ::std::option::Option::Some(input);
@@ -111,6 +127,10 @@ impl WcdmaNmrObjBuilder {
     pub fn set_path_loss(mut self, input: ::std::option::Option<i32>) -> Self {
         self.path_loss = input;
         self
+    }
+    /// <p>Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space.</p>
+    pub fn get_path_loss(&self) -> &::std::option::Option<i32> {
+        &self.path_loss
     }
     /// Consumes the builder and constructs a [`WcdmaNmrObj`](crate::types::WcdmaNmrObj).
     pub fn build(self) -> crate::types::WcdmaNmrObj {

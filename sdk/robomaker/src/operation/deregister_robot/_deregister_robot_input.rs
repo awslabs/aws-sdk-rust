@@ -50,6 +50,10 @@ impl DeregisterRobotInputBuilder {
         self.fleet = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    pub fn get_fleet(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet
+    }
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
     pub fn robot(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.robot = ::std::option::Option::Some(input.into());
@@ -59,6 +63,10 @@ impl DeregisterRobotInputBuilder {
     pub fn set_robot(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.robot = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the robot.</p>
+    pub fn get_robot(&self) -> &::std::option::Option<::std::string::String> {
+        &self.robot
     }
     /// Consumes the builder and constructs a [`DeregisterRobotInput`](crate::operation::deregister_robot::DeregisterRobotInput).
     pub fn build(

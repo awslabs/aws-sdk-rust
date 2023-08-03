@@ -65,6 +65,10 @@ impl GetParameterHistoryInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the parameter for which you want to review history.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Return decrypted values for secure string parameters. This flag is ignored for <code>String</code> and <code>StringList</code> parameter types.</p>
     pub fn with_decryption(mut self, input: bool) -> Self {
         self.with_decryption = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl GetParameterHistoryInputBuilder {
     pub fn set_with_decryption(mut self, input: ::std::option::Option<bool>) -> Self {
         self.with_decryption = input;
         self
+    }
+    /// <p>Return decrypted values for secure string parameters. This flag is ignored for <code>String</code> and <code>StringList</code> parameter types.</p>
+    pub fn get_with_decryption(&self) -> &::std::option::Option<bool> {
+        &self.with_decryption
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -85,6 +93,10 @@ impl GetParameterHistoryInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -94,6 +106,10 @@ impl GetParameterHistoryInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`GetParameterHistoryInput`](crate::operation::get_parameter_history::GetParameterHistoryInput).
     pub fn build(

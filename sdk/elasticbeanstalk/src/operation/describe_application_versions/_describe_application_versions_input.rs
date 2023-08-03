@@ -74,6 +74,10 @@ impl DescribeApplicationVersionsInputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>Specify an application name to show only application versions for that application.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// Appends an item to `version_labels`.
     ///
     /// To override the contents of this collection use [`set_version_labels`](Self::set_version_labels).
@@ -96,6 +100,12 @@ impl DescribeApplicationVersionsInputBuilder {
         self.version_labels = input;
         self
     }
+    /// <p>Specify a version label to show a specific application version.</p>
+    pub fn get_version_labels(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.version_labels
+    }
     /// <p>For a paginated request. Specify a maximum number of application versions to include in each response.</p>
     /// <p>If no <code>MaxRecords</code> is specified, all available application versions are retrieved in a single response.</p>
     pub fn max_records(mut self, input: i32) -> Self {
@@ -108,6 +118,11 @@ impl DescribeApplicationVersionsInputBuilder {
         self.max_records = input;
         self
     }
+    /// <p>For a paginated request. Specify a maximum number of application versions to include in each response.</p>
+    /// <p>If no <code>MaxRecords</code> is specified, all available application versions are retrieved in a single response.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        &self.max_records
+    }
     /// <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other parameter values must be identical to the ones specified in the initial request.</p>
     /// <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -119,6 +134,11 @@ impl DescribeApplicationVersionsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other parameter values must be identical to the ones specified in the initial request.</p>
+    /// <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeApplicationVersionsInput`](crate::operation::describe_application_versions::DescribeApplicationVersionsInput).
     pub fn build(

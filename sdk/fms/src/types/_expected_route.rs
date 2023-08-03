@@ -80,6 +80,10 @@ impl ExpectedRouteBuilder {
         self.ip_v4_cidr = input;
         self
     }
+    /// <p>Information about the IPv4 CIDR block.</p>
+    pub fn get_ip_v4_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_v4_cidr
+    }
     /// <p>Information about the ID of the prefix list for the route.</p>
     pub fn prefix_list_id(
         mut self,
@@ -96,6 +100,10 @@ impl ExpectedRouteBuilder {
         self.prefix_list_id = input;
         self
     }
+    /// <p>Information about the ID of the prefix list for the route.</p>
+    pub fn get_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix_list_id
+    }
     /// <p>Information about the IPv6 CIDR block.</p>
     pub fn ip_v6_cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_v6_cidr = ::std::option::Option::Some(input.into());
@@ -105,6 +113,10 @@ impl ExpectedRouteBuilder {
     pub fn set_ip_v6_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_v6_cidr = input;
         self
+    }
+    /// <p>Information about the IPv6 CIDR block.</p>
+    pub fn get_ip_v6_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_v6_cidr
     }
     /// Appends an item to `contributing_subnets`.
     ///
@@ -128,6 +140,12 @@ impl ExpectedRouteBuilder {
         self.contributing_subnets = input;
         self
     }
+    /// <p>Information about the contributing subnets.</p>
+    pub fn get_contributing_subnets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.contributing_subnets
+    }
     /// Appends an item to `allowed_targets`.
     ///
     /// To override the contents of this collection use [`set_allowed_targets`](Self::set_allowed_targets).
@@ -150,6 +168,12 @@ impl ExpectedRouteBuilder {
         self.allowed_targets = input;
         self
     }
+    /// <p>Information about the allowed targets.</p>
+    pub fn get_allowed_targets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.allowed_targets
+    }
     /// <p>Information about the route table ID.</p>
     pub fn route_table_id(
         mut self,
@@ -165,6 +189,10 @@ impl ExpectedRouteBuilder {
     ) -> Self {
         self.route_table_id = input;
         self
+    }
+    /// <p>Information about the route table ID.</p>
+    pub fn get_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.route_table_id
     }
     /// Consumes the builder and constructs a [`ExpectedRoute`](crate::types::ExpectedRoute).
     pub fn build(self) -> crate::types::ExpectedRoute {

@@ -49,6 +49,10 @@ impl DescribeIdentityProviderInputBuilder {
         self.user_pool_id = input;
         self
     }
+    /// <p>The user pool ID.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool_id
+    }
     /// <p>The IdP name.</p>
     pub fn provider_name(
         mut self,
@@ -64,6 +68,10 @@ impl DescribeIdentityProviderInputBuilder {
     ) -> Self {
         self.provider_name = input;
         self
+    }
+    /// <p>The IdP name.</p>
+    pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provider_name
     }
     /// Consumes the builder and constructs a [`DescribeIdentityProviderInput`](crate::operation::describe_identity_provider::DescribeIdentityProviderInput).
     pub fn build(

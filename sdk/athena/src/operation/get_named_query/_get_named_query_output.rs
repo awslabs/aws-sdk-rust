@@ -49,6 +49,10 @@ impl GetNamedQueryOutputBuilder {
         self.named_query = input;
         self
     }
+    /// <p>Information about the query.</p>
+    pub fn get_named_query(&self) -> &::std::option::Option<crate::types::NamedQuery> {
+        &self.named_query
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -64,6 +64,10 @@ impl CognitoOptionsBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Specifies the option to enable Cognito for Kibana authentication.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>Specifies the Cognito user pool ID for Kibana authentication.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl CognitoOptionsBuilder {
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
+    }
+    /// <p>Specifies the Cognito user pool ID for Kibana authentication.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool_id
     }
     /// <p>Specifies the Cognito identity pool ID for Kibana authentication.</p>
     pub fn identity_pool_id(
@@ -90,6 +98,10 @@ impl CognitoOptionsBuilder {
         self.identity_pool_id = input;
         self
     }
+    /// <p>Specifies the Cognito identity pool ID for Kibana authentication.</p>
+    pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_pool_id
+    }
     /// <p>Specifies the role ARN that provides Elasticsearch permissions for accessing Cognito resources.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -99,6 +111,10 @@ impl CognitoOptionsBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>Specifies the role ARN that provides Elasticsearch permissions for accessing Cognito resources.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`CognitoOptions`](crate::types::CognitoOptions).
     pub fn build(self) -> crate::types::CognitoOptions {

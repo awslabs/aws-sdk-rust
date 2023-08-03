@@ -56,6 +56,10 @@ impl RouteMatrixEntryBuilder {
         self.distance = input;
         self
     }
+    /// <p>The total distance of travel for the route.</p>
+    pub fn get_distance(&self) -> &::std::option::Option<f64> {
+        &self.distance
+    }
     /// <p>The expected duration of travel for the route.</p>
     pub fn duration_seconds(mut self, input: f64) -> Self {
         self.duration_seconds = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl RouteMatrixEntryBuilder {
     pub fn set_duration_seconds(mut self, input: ::std::option::Option<f64>) -> Self {
         self.duration_seconds = input;
         self
+    }
+    /// <p>The expected duration of travel for the route.</p>
+    pub fn get_duration_seconds(&self) -> &::std::option::Option<f64> {
+        &self.duration_seconds
     }
     /// <p>An error corresponding to the calculation of a route between the <code>DeparturePosition</code> and <code>DestinationPosition</code>.</p>
     pub fn error(mut self, input: crate::types::RouteMatrixEntryError) -> Self {
@@ -78,6 +86,10 @@ impl RouteMatrixEntryBuilder {
     ) -> Self {
         self.error = input;
         self
+    }
+    /// <p>An error corresponding to the calculation of a route between the <code>DeparturePosition</code> and <code>DestinationPosition</code>.</p>
+    pub fn get_error(&self) -> &::std::option::Option<crate::types::RouteMatrixEntryError> {
+        &self.error
     }
     /// Consumes the builder and constructs a [`RouteMatrixEntry`](crate::types::RouteMatrixEntry).
     pub fn build(self) -> crate::types::RouteMatrixEntry {

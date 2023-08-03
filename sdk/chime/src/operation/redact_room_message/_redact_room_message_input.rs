@@ -56,6 +56,10 @@ impl RedactRoomMessageInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The room ID.</p>
     pub fn room_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.room_id = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl RedactRoomMessageInputBuilder {
         self.room_id = input;
         self
     }
+    /// <p>The room ID.</p>
+    pub fn get_room_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.room_id
+    }
     /// <p>The message ID.</p>
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_id = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl RedactRoomMessageInputBuilder {
     pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_id = input;
         self
+    }
+    /// <p>The message ID.</p>
+    pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_id
     }
     /// Consumes the builder and constructs a [`RedactRoomMessageInput`](crate::operation::redact_room_message::RedactRoomMessageInput).
     pub fn build(

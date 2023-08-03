@@ -64,6 +64,10 @@ impl ResilienceBuilder {
         self.hsr_tier = input;
         self
     }
+    /// <p>The tier of the component.</p>
+    pub fn get_hsr_tier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hsr_tier
+    }
     /// <p>The replication mode of the component.</p>
     pub fn hsr_replication_mode(mut self, input: crate::types::ReplicationMode) -> Self {
         self.hsr_replication_mode = ::std::option::Option::Some(input);
@@ -76,6 +80,12 @@ impl ResilienceBuilder {
     ) -> Self {
         self.hsr_replication_mode = input;
         self
+    }
+    /// <p>The replication mode of the component.</p>
+    pub fn get_hsr_replication_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReplicationMode> {
+        &self.hsr_replication_mode
     }
     /// <p>The operation mode of the component.</p>
     pub fn hsr_operation_mode(mut self, input: crate::types::OperationMode) -> Self {
@@ -90,6 +100,10 @@ impl ResilienceBuilder {
         self.hsr_operation_mode = input;
         self
     }
+    /// <p>The operation mode of the component.</p>
+    pub fn get_hsr_operation_mode(&self) -> &::std::option::Option<crate::types::OperationMode> {
+        &self.hsr_operation_mode
+    }
     /// <p>The cluster status of the component.</p>
     pub fn cluster_status(mut self, input: crate::types::ClusterStatus) -> Self {
         self.cluster_status = ::std::option::Option::Some(input);
@@ -102,6 +116,10 @@ impl ResilienceBuilder {
     ) -> Self {
         self.cluster_status = input;
         self
+    }
+    /// <p>The cluster status of the component.</p>
+    pub fn get_cluster_status(&self) -> &::std::option::Option<crate::types::ClusterStatus> {
+        &self.cluster_status
     }
     /// Consumes the builder and constructs a [`Resilience`](crate::types::Resilience).
     pub fn build(self) -> crate::types::Resilience {

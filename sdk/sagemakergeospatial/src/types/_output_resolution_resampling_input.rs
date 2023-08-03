@@ -43,6 +43,10 @@ impl OutputResolutionResamplingInputBuilder {
         self.user_defined = input;
         self
     }
+    /// <p>User Defined Resolution for the output of Resampling operation defined by value and unit.</p>
+    pub fn get_user_defined(&self) -> &::std::option::Option<crate::types::UserDefined> {
+        &self.user_defined
+    }
     /// Consumes the builder and constructs a [`OutputResolutionResamplingInput`](crate::types::OutputResolutionResamplingInput).
     pub fn build(self) -> crate::types::OutputResolutionResamplingInput {
         crate::types::OutputResolutionResamplingInput {

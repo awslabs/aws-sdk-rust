@@ -37,6 +37,10 @@ impl UpdateAppFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateApp as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_app::builders::UpdateAppInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl UpdateAppFluentBuilder {
         self.inner = self.inner.set_app_id(input);
         self
     }
+    /// <p>The app ID.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_id()
+    }
     /// <p>The app name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -129,6 +137,10 @@ impl UpdateAppFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The app name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A description of the app.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -138,6 +150,10 @@ impl UpdateAppFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the app.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `DataSources`.
     ///
@@ -156,6 +172,12 @@ impl UpdateAppFluentBuilder {
         self.inner = self.inner.set_data_sources(input);
         self
     }
+    /// <p>The app's data sources.</p>
+    pub fn get_data_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSource>> {
+        self.inner.get_data_sources()
+    }
     /// <p>The app type.</p>
     pub fn r#type(mut self, input: crate::types::AppType) -> Self {
         self.inner = self.inner.r#type(input);
@@ -166,6 +188,10 @@ impl UpdateAppFluentBuilder {
         self.inner = self.inner.set_type(input);
         self
     }
+    /// <p>The app type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::AppType> {
+        self.inner.get_type()
+    }
     /// <p>A <code>Source</code> object that specifies the app repository.</p>
     pub fn app_source(mut self, input: crate::types::Source) -> Self {
         self.inner = self.inner.app_source(input);
@@ -175,6 +201,10 @@ impl UpdateAppFluentBuilder {
     pub fn set_app_source(mut self, input: ::std::option::Option<crate::types::Source>) -> Self {
         self.inner = self.inner.set_app_source(input);
         self
+    }
+    /// <p>A <code>Source</code> object that specifies the app repository.</p>
+    pub fn get_app_source(&self) -> &::std::option::Option<crate::types::Source> {
+        self.inner.get_app_source()
     }
     /// Appends an item to `Domains`.
     ///
@@ -193,6 +223,10 @@ impl UpdateAppFluentBuilder {
         self.inner = self.inner.set_domains(input);
         self
     }
+    /// <p>The app's virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
+    pub fn get_domains(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_domains()
+    }
     /// <p>Whether SSL is enabled for the app.</p>
     pub fn enable_ssl(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_ssl(input);
@@ -202,6 +236,10 @@ impl UpdateAppFluentBuilder {
     pub fn set_enable_ssl(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_ssl(input);
         self
+    }
+    /// <p>Whether SSL is enabled for the app.</p>
+    pub fn get_enable_ssl(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_ssl()
     }
     /// <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
     pub fn ssl_configuration(mut self, input: crate::types::SslConfiguration) -> Self {
@@ -215,6 +253,10 @@ impl UpdateAppFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ssl_configuration(input);
         self
+    }
+    /// <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
+    pub fn get_ssl_configuration(&self) -> &::std::option::Option<crate::types::SslConfiguration> {
+        self.inner.get_ssl_configuration()
     }
     /// Adds a key-value pair to `Attributes`.
     ///
@@ -239,6 +281,14 @@ impl UpdateAppFluentBuilder {
         self.inner = self.inner.set_attributes(input);
         self
     }
+    /// <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<crate::types::AppAttributesKeys, ::std::string::String>,
+    > {
+        self.inner.get_attributes()
+    }
     /// Appends an item to `Environment`.
     ///
     /// To override the contents of this collection use [`set_environment`](Self::set_environment).
@@ -261,5 +311,14 @@ impl UpdateAppFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_environment(input);
         self
+    }
+    /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instances.For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p>
+    /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20 KB)."</p> <note>
+    /// <p>If you have specified one or more environment variables, you cannot modify the stack's Chef version.</p>
+    /// </note>
+    pub fn get_environment(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>> {
+        self.inner.get_environment()
     }
 }

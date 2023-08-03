@@ -36,6 +36,12 @@ impl CreateInvitationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateInvitations as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_invitations::builders::CreateInvitationsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,12 @@ impl CreateInvitationsFluentBuilder {
         self.inner = self.inner.set_account_ids(input);
         self
     }
+    /// <p>An array that lists Amazon Web Services account IDs, one for each account to send the invitation to.</p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_account_ids()
+    }
     /// <p>Specifies whether to send the invitation as an email message. If this value is false, Amazon Macie sends the invitation (as an email message) to the email address that you specified for the recipient's account when you associated the account with your account. The default value is false.</p>
     pub fn disable_email_notification(mut self, input: bool) -> Self {
         self.inner = self.inner.disable_email_notification(input);
@@ -143,6 +155,10 @@ impl CreateInvitationsFluentBuilder {
         self.inner = self.inner.set_disable_email_notification(input);
         self
     }
+    /// <p>Specifies whether to send the invitation as an email message. If this value is false, Amazon Macie sends the invitation (as an email message) to the email address that you specified for the recipient's account when you associated the account with your account. The default value is false.</p>
+    pub fn get_disable_email_notification(&self) -> &::std::option::Option<bool> {
+        self.inner.get_disable_email_notification()
+    }
     /// <p>Custom text to include in the email message that contains the invitation. The text can contain as many as 80 alphanumeric characters.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.message(input.into());
@@ -152,5 +168,9 @@ impl CreateInvitationsFluentBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_message(input);
         self
+    }
+    /// <p>Custom text to include in the email message that contains the invitation. The text can contain as many as 80 alphanumeric characters.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_message()
     }
 }

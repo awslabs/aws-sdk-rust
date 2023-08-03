@@ -36,6 +36,10 @@ impl BatchPutScheduledUpdateGroupActionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchPutScheduledUpdateGroupAction as a reference.
+    pub fn as_input(&self) -> &crate::operation::batch_put_scheduled_update_group_action::builders::BatchPutScheduledUpdateGroupActionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl BatchPutScheduledUpdateGroupActionFluentBuilder {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_auto_scaling_group_name()
+    }
     /// Appends an item to `ScheduledUpdateGroupActions`.
     ///
     /// To override the contents of this collection use [`set_scheduled_update_group_actions`](Self::set_scheduled_update_group_actions).
@@ -127,5 +135,12 @@ impl BatchPutScheduledUpdateGroupActionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_scheduled_update_group_actions(input);
         self
+    }
+    /// <p>One or more scheduled actions. The maximum number allowed is 50.</p>
+    pub fn get_scheduled_update_group_actions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledUpdateGroupActionRequest>>
+    {
+        self.inner.get_scheduled_update_group_actions()
     }
 }

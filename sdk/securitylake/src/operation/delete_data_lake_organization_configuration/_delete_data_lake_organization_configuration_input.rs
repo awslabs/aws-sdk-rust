@@ -59,6 +59,14 @@ impl DeleteDataLakeOrganizationConfigurationInputBuilder {
         self.auto_enable_new_account = input;
         self
     }
+    /// <p>Turns off automatic enablement of Security Lake for member accounts that are added to an organization.</p>
+    pub fn get_auto_enable_new_account(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::DataLakeAutoEnableNewAccountConfiguration>,
+    > {
+        &self.auto_enable_new_account
+    }
     /// Consumes the builder and constructs a [`DeleteDataLakeOrganizationConfigurationInput`](crate::operation::delete_data_lake_organization_configuration::DeleteDataLakeOrganizationConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_data_lake_organization_configuration::DeleteDataLakeOrganizationConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

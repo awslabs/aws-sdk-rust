@@ -57,6 +57,12 @@ impl GaugeChartFieldWellsBuilder {
         self.values = input;
         self
     }
+    /// <p>The value field wells of a <code>GaugeChartVisual</code>.</p>
+    pub fn get_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
+        &self.values
+    }
     /// Appends an item to `target_values`.
     ///
     /// To override the contents of this collection use [`set_target_values`](Self::set_target_values).
@@ -75,6 +81,12 @@ impl GaugeChartFieldWellsBuilder {
     ) -> Self {
         self.target_values = input;
         self
+    }
+    /// <p>The target value field wells of a <code>GaugeChartVisual</code>.</p>
+    pub fn get_target_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
+        &self.target_values
     }
     /// Consumes the builder and constructs a [`GaugeChartFieldWells`](crate::types::GaugeChartFieldWells).
     pub fn build(self) -> crate::types::GaugeChartFieldWells {

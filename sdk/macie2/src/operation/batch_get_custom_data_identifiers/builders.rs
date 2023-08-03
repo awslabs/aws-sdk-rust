@@ -36,6 +36,10 @@ impl BatchGetCustomDataIdentifiersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchGetCustomDataIdentifiers as a reference.
+    pub fn as_input(&self) -> &crate::operation::batch_get_custom_data_identifiers::builders::BatchGetCustomDataIdentifiersInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +136,9 @@ impl BatchGetCustomDataIdentifiersFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ids(input);
         self
+    }
+    /// <p>An array of custom data identifier IDs, one for each custom data identifier to retrieve information about.</p>
+    pub fn get_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_ids()
     }
 }

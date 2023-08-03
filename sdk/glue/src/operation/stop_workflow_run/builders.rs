@@ -36,6 +36,12 @@ impl StopWorkflowRunFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopWorkflowRun as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::stop_workflow_run::builders::StopWorkflowRunInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl StopWorkflowRunFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the workflow to stop.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The ID of the workflow run to stop.</p>
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.run_id(input.into());
@@ -135,5 +145,9 @@ impl StopWorkflowRunFluentBuilder {
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_run_id(input);
         self
+    }
+    /// <p>The ID of the workflow run to stop.</p>
+    pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_run_id()
     }
 }

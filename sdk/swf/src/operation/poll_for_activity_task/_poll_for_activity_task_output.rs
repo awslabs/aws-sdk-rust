@@ -88,6 +88,10 @@ impl PollForActivityTaskOutputBuilder {
         self.task_token = input;
         self
     }
+    /// <p>The opaque string used as a handle on the task. This token is used by workers to communicate progress and response information back to the system about the task.</p>
+    pub fn get_task_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_token
+    }
     /// <p>The unique ID of the task.</p>
     pub fn activity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.activity_id = ::std::option::Option::Some(input.into());
@@ -98,6 +102,10 @@ impl PollForActivityTaskOutputBuilder {
         self.activity_id = input;
         self
     }
+    /// <p>The unique ID of the task.</p>
+    pub fn get_activity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.activity_id
+    }
     /// <p>The ID of the <code>ActivityTaskStarted</code> event recorded in the history.</p>
     pub fn started_event_id(mut self, input: i64) -> Self {
         self.started_event_id = ::std::option::Option::Some(input);
@@ -107,6 +115,10 @@ impl PollForActivityTaskOutputBuilder {
     pub fn set_started_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.started_event_id = input;
         self
+    }
+    /// <p>The ID of the <code>ActivityTaskStarted</code> event recorded in the history.</p>
+    pub fn get_started_event_id(&self) -> &::std::option::Option<i64> {
+        &self.started_event_id
     }
     /// <p>The workflow execution that started this activity task.</p>
     pub fn workflow_execution(mut self, input: crate::types::WorkflowExecution) -> Self {
@@ -121,6 +133,12 @@ impl PollForActivityTaskOutputBuilder {
         self.workflow_execution = input;
         self
     }
+    /// <p>The workflow execution that started this activity task.</p>
+    pub fn get_workflow_execution(
+        &self,
+    ) -> &::std::option::Option<crate::types::WorkflowExecution> {
+        &self.workflow_execution
+    }
     /// <p>The type of this activity task.</p>
     pub fn activity_type(mut self, input: crate::types::ActivityType) -> Self {
         self.activity_type = ::std::option::Option::Some(input);
@@ -134,6 +152,10 @@ impl PollForActivityTaskOutputBuilder {
         self.activity_type = input;
         self
     }
+    /// <p>The type of this activity task.</p>
+    pub fn get_activity_type(&self) -> &::std::option::Option<crate::types::ActivityType> {
+        &self.activity_type
+    }
     /// <p>The inputs provided when the activity task was scheduled. The form of the input is user defined and should be meaningful to the activity implementation.</p>
     pub fn input(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input = ::std::option::Option::Some(input.into());
@@ -143,6 +165,10 @@ impl PollForActivityTaskOutputBuilder {
     pub fn set_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input = input;
         self
+    }
+    /// <p>The inputs provided when the activity task was scheduled. The form of the input is user defined and should be meaningful to the activity implementation.</p>
+    pub fn get_input(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

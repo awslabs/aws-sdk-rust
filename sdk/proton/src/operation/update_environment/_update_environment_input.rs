@@ -190,6 +190,10 @@ impl UpdateEnvironmentInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the environment to update.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description of the environment update.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -200,6 +204,10 @@ impl UpdateEnvironmentInputBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the environment update.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The formatted specification that defines the update.</p>
     pub fn spec(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.spec = ::std::option::Option::Some(input.into());
@@ -209,6 +217,10 @@ impl UpdateEnvironmentInputBuilder {
     pub fn set_spec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.spec = input;
         self
+    }
+    /// <p>The formatted specification that defines the update.</p>
+    pub fn get_spec(&self) -> &::std::option::Option<::std::string::String> {
+        &self.spec
     }
     /// <p>The major version of the environment to update.</p>
     pub fn template_major_version(
@@ -226,6 +238,10 @@ impl UpdateEnvironmentInputBuilder {
         self.template_major_version = input;
         self
     }
+    /// <p>The major version of the environment to update.</p>
+    pub fn get_template_major_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_major_version
+    }
     /// <p>The minor version of the environment to update.</p>
     pub fn template_minor_version(
         mut self,
@@ -242,6 +258,10 @@ impl UpdateEnvironmentInputBuilder {
         self.template_minor_version = input;
         self
     }
+    /// <p>The minor version of the environment to update.</p>
+    pub fn get_template_minor_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_minor_version
+    }
     /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make API calls to other services your behalf.</p>
     pub fn proton_service_role_arn(
         mut self,
@@ -257,6 +277,10 @@ impl UpdateEnvironmentInputBuilder {
     ) -> Self {
         self.proton_service_role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make API calls to other services your behalf.</p>
+    pub fn get_proton_service_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.proton_service_role_arn
     }
     /// <p>There are four modes for updating an environment. The <code>deploymentType</code> field defines the mode.</p>
     /// <dl>
@@ -315,6 +339,34 @@ impl UpdateEnvironmentInputBuilder {
         self.deployment_type = input;
         self
     }
+    /// <p>There are four modes for updating an environment. The <code>deploymentType</code> field defines the mode.</p>
+    /// <dl>
+    /// <dt></dt>
+    /// <dd>
+    /// <p> <code>NONE</code> </p>
+    /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
+    /// </dd>
+    /// <dt></dt>
+    /// <dd>
+    /// <p> <code>CURRENT_VERSION</code> </p>
+    /// <p>In this mode, the environment is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include major or minor version parameters when you use this <code>deployment-type</code>.</p>
+    /// </dd>
+    /// <dt></dt>
+    /// <dd>
+    /// <p> <code>MINOR_VERSION</code> </p>
+    /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
+    /// </dd>
+    /// <dt></dt>
+    /// <dd>
+    /// <p> <code>MAJOR_VERSION</code> </p>
+    /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_deployment_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeploymentUpdateType> {
+        &self.deployment_type
+    }
     /// <p>The ID of the environment account connection.</p>
     /// <p>You can only update to a new environment account connection if it was created in the same environment account that the current environment account connection was created in and is associated with the current environment.</p>
     pub fn environment_account_connection_id(
@@ -333,6 +385,13 @@ impl UpdateEnvironmentInputBuilder {
         self.environment_account_connection_id = input;
         self
     }
+    /// <p>The ID of the environment account connection.</p>
+    /// <p>You can only update to a new environment account connection if it was created in the same environment account that the current environment account connection was created in and is associated with the current environment.</p>
+    pub fn get_environment_account_connection_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.environment_account_connection_id
+    }
     /// <p>The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
     pub fn provisioning_repository(mut self, input: crate::types::RepositoryBranchInput) -> Self {
         self.provisioning_repository = ::std::option::Option::Some(input);
@@ -345,6 +404,12 @@ impl UpdateEnvironmentInputBuilder {
     ) -> Self {
         self.provisioning_repository = input;
         self
+    }
+    /// <p>The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
+    pub fn get_provisioning_repository(
+        &self,
+    ) -> &::std::option::Option<crate::types::RepositoryBranchInput> {
+        &self.provisioning_repository
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
     /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
@@ -366,6 +431,12 @@ impl UpdateEnvironmentInputBuilder {
         self.component_role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
+    /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
+    pub fn get_component_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_role_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure using CodeBuild-based provisioning on your behalf.</p>
     pub fn codebuild_role_arn(
         mut self,
@@ -381,6 +452,10 @@ impl UpdateEnvironmentInputBuilder {
     ) -> Self {
         self.codebuild_role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure using CodeBuild-based provisioning on your behalf.</p>
+    pub fn get_codebuild_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.codebuild_role_arn
     }
     /// Consumes the builder and constructs a [`UpdateEnvironmentInput`](crate::operation::update_environment::UpdateEnvironmentInput).
     pub fn build(

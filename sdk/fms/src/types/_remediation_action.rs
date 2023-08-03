@@ -130,6 +130,10 @@ impl RemediationActionBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of a remediation action.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>Information about the CreateRoute action in the Amazon EC2 API.</p>
     pub fn ec2_create_route_action(mut self, input: crate::types::Ec2CreateRouteAction) -> Self {
         self.ec2_create_route_action = ::std::option::Option::Some(input);
@@ -142,6 +146,12 @@ impl RemediationActionBuilder {
     ) -> Self {
         self.ec2_create_route_action = input;
         self
+    }
+    /// <p>Information about the CreateRoute action in the Amazon EC2 API.</p>
+    pub fn get_ec2_create_route_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::Ec2CreateRouteAction> {
+        &self.ec2_create_route_action
     }
     /// <p>Information about the ReplaceRoute action in the Amazon EC2 API.</p>
     pub fn ec2_replace_route_action(mut self, input: crate::types::Ec2ReplaceRouteAction) -> Self {
@@ -156,6 +166,12 @@ impl RemediationActionBuilder {
         self.ec2_replace_route_action = input;
         self
     }
+    /// <p>Information about the ReplaceRoute action in the Amazon EC2 API.</p>
+    pub fn get_ec2_replace_route_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::Ec2ReplaceRouteAction> {
+        &self.ec2_replace_route_action
+    }
     /// <p>Information about the DeleteRoute action in the Amazon EC2 API.</p>
     pub fn ec2_delete_route_action(mut self, input: crate::types::Ec2DeleteRouteAction) -> Self {
         self.ec2_delete_route_action = ::std::option::Option::Some(input);
@@ -168,6 +184,12 @@ impl RemediationActionBuilder {
     ) -> Self {
         self.ec2_delete_route_action = input;
         self
+    }
+    /// <p>Information about the DeleteRoute action in the Amazon EC2 API.</p>
+    pub fn get_ec2_delete_route_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::Ec2DeleteRouteAction> {
+        &self.ec2_delete_route_action
     }
     /// <p>Information about the CopyRouteTable action in the Amazon EC2 API.</p>
     pub fn ec2_copy_route_table_action(
@@ -185,6 +207,12 @@ impl RemediationActionBuilder {
         self.ec2_copy_route_table_action = input;
         self
     }
+    /// <p>Information about the CopyRouteTable action in the Amazon EC2 API.</p>
+    pub fn get_ec2_copy_route_table_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::Ec2CopyRouteTableAction> {
+        &self.ec2_copy_route_table_action
+    }
     /// <p>Information about the ReplaceRouteTableAssociation action in the Amazon EC2 API.</p>
     pub fn ec2_replace_route_table_association_action(
         mut self,
@@ -200,6 +228,12 @@ impl RemediationActionBuilder {
     ) -> Self {
         self.ec2_replace_route_table_association_action = input;
         self
+    }
+    /// <p>Information about the ReplaceRouteTableAssociation action in the Amazon EC2 API.</p>
+    pub fn get_ec2_replace_route_table_association_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::Ec2ReplaceRouteTableAssociationAction> {
+        &self.ec2_replace_route_table_association_action
     }
     /// <p>Information about the AssociateRouteTable action in the Amazon EC2 API.</p>
     pub fn ec2_associate_route_table_action(
@@ -217,6 +251,12 @@ impl RemediationActionBuilder {
         self.ec2_associate_route_table_action = input;
         self
     }
+    /// <p>Information about the AssociateRouteTable action in the Amazon EC2 API.</p>
+    pub fn get_ec2_associate_route_table_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::Ec2AssociateRouteTableAction> {
+        &self.ec2_associate_route_table_action
+    }
     /// <p>Information about the CreateRouteTable action in the Amazon EC2 API.</p>
     pub fn ec2_create_route_table_action(
         mut self,
@@ -233,6 +273,12 @@ impl RemediationActionBuilder {
         self.ec2_create_route_table_action = input;
         self
     }
+    /// <p>Information about the CreateRouteTable action in the Amazon EC2 API.</p>
+    pub fn get_ec2_create_route_table_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::Ec2CreateRouteTableAction> {
+        &self.ec2_create_route_table_action
+    }
     /// <p>The remedial action to take when updating a firewall configuration.</p>
     pub fn fms_policy_update_firewall_creation_config_action(
         mut self,
@@ -248,6 +294,12 @@ impl RemediationActionBuilder {
     ) -> Self {
         self.fms_policy_update_firewall_creation_config_action = input;
         self
+    }
+    /// <p>The remedial action to take when updating a firewall configuration.</p>
+    pub fn get_fms_policy_update_firewall_creation_config_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::FmsPolicyUpdateFirewallCreationConfigAction> {
+        &self.fms_policy_update_firewall_creation_config_action
     }
     /// Consumes the builder and constructs a [`RemediationAction`](crate::types::RemediationAction).
     pub fn build(self) -> crate::types::RemediationAction {

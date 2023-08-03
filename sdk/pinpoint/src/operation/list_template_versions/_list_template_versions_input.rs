@@ -64,6 +64,10 @@ impl ListTemplateVersionsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     pub fn page_size(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.page_size = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl ListTemplateVersionsInputBuilder {
     pub fn set_page_size(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.page_size = input;
         self
+    }
+    /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<::std::string::String> {
+        &self.page_size
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     pub fn template_name(
@@ -90,6 +98,10 @@ impl ListTemplateVersionsInputBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// <p>The type of channel that the message template is designed for. Valid values are: EMAIL, PUSH, SMS, and VOICE.</p>
     pub fn template_type(
         mut self,
@@ -105,6 +117,10 @@ impl ListTemplateVersionsInputBuilder {
     ) -> Self {
         self.template_type = input;
         self
+    }
+    /// <p>The type of channel that the message template is designed for. Valid values are: EMAIL, PUSH, SMS, and VOICE.</p>
+    pub fn get_template_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_type
     }
     /// Consumes the builder and constructs a [`ListTemplateVersionsInput`](crate::operation::list_template_versions::ListTemplateVersionsInput).
     pub fn build(

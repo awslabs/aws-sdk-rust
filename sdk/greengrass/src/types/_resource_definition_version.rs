@@ -49,6 +49,10 @@ impl ResourceDefinitionVersionBuilder {
         self.resources = input;
         self
     }
+    /// A list of resources.
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
+        &self.resources
+    }
     /// Consumes the builder and constructs a [`ResourceDefinitionVersion`](crate::types::ResourceDefinitionVersion).
     pub fn build(self) -> crate::types::ResourceDefinitionVersion {
         crate::types::ResourceDefinitionVersion {

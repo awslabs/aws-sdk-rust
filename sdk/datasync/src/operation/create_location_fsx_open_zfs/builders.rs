@@ -38,6 +38,10 @@ impl CreateLocationFsxOpenZfsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateLocationFsxOpenZfs as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_location_fsx_open_zfs::builders::CreateLocationFsxOpenZfsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +138,10 @@ impl CreateLocationFsxOpenZfsFluentBuilder {
         self.inner = self.inner.set_fsx_filesystem_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the FSx for OpenZFS file system.</p>
+    pub fn get_fsx_filesystem_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fsx_filesystem_arn()
+    }
     /// <p>The type of protocol that DataSync uses to access your file system.</p>
     pub fn protocol(mut self, input: crate::types::FsxProtocol) -> Self {
         self.inner = self.inner.protocol(input);
@@ -143,6 +151,10 @@ impl CreateLocationFsxOpenZfsFluentBuilder {
     pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::FsxProtocol>) -> Self {
         self.inner = self.inner.set_protocol(input);
         self
+    }
+    /// <p>The type of protocol that DataSync uses to access your file system.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::FsxProtocol> {
+        self.inner.get_protocol()
     }
     /// Appends an item to `SecurityGroupArns`.
     ///
@@ -164,6 +176,12 @@ impl CreateLocationFsxOpenZfsFluentBuilder {
         self.inner = self.inner.set_security_group_arns(input);
         self
     }
+    /// <p>The ARNs of the security groups that are used to configure the FSx for OpenZFS file system.</p>
+    pub fn get_security_group_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_security_group_arns()
+    }
     /// <p>A subdirectory in the location's path that must begin with <code>/fsx</code>. DataSync uses this subdirectory to read or write data (depending on whether the file system is a source or destination location).</p>
     pub fn subdirectory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subdirectory(input.into());
@@ -173,6 +191,10 @@ impl CreateLocationFsxOpenZfsFluentBuilder {
     pub fn set_subdirectory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subdirectory(input);
         self
+    }
+    /// <p>A subdirectory in the location's path that must begin with <code>/fsx</code>. DataSync uses this subdirectory to read or write data (depending on whether the file system is a source or destination location).</p>
+    pub fn get_subdirectory(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_subdirectory()
     }
     /// Appends an item to `Tags`.
     ///
@@ -190,5 +212,9 @@ impl CreateLocationFsxOpenZfsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>> {
+        self.inner.get_tags()
     }
 }

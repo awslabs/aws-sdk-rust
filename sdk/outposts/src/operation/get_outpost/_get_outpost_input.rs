@@ -39,6 +39,10 @@ impl GetOutpostInputBuilder {
         self.outpost_id = input;
         self
     }
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
+    pub fn get_outpost_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.outpost_id
+    }
     /// Consumes the builder and constructs a [`GetOutpostInput`](crate::operation::get_outpost::GetOutpostInput).
     pub fn build(
         self,

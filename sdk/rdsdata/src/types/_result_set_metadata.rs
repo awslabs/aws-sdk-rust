@@ -49,6 +49,10 @@ impl ResultSetMetadataBuilder {
         self.column_count = input;
         self
     }
+    /// <p>The number of columns in the result set.</p>
+    pub fn get_column_count(&self) -> &::std::option::Option<i64> {
+        &self.column_count
+    }
     /// Appends an item to `column_metadata`.
     ///
     /// To override the contents of this collection use [`set_column_metadata`](Self::set_column_metadata).
@@ -67,6 +71,12 @@ impl ResultSetMetadataBuilder {
     ) -> Self {
         self.column_metadata = input;
         self
+    }
+    /// <p>The metadata of the columns in the result set.</p>
+    pub fn get_column_metadata(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>> {
+        &self.column_metadata
     }
     /// Consumes the builder and constructs a [`ResultSetMetadata`](crate::types::ResultSetMetadata).
     pub fn build(self) -> crate::types::ResultSetMetadata {

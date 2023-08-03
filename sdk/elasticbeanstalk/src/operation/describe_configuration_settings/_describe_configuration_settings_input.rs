@@ -66,6 +66,10 @@ impl DescribeConfigurationSettingsInputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The application for the environment or configuration template.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>The name of the configuration template to describe.</p>
     /// <p> Conditional: You must specify either this parameter or an EnvironmentName, but not both. If you specify both, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If you do not specify either, AWS Elastic Beanstalk returns a <code>MissingRequiredParameter</code> error. </p>
     pub fn template_name(
@@ -84,6 +88,11 @@ impl DescribeConfigurationSettingsInputBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The name of the configuration template to describe.</p>
+    /// <p> Conditional: You must specify either this parameter or an EnvironmentName, but not both. If you specify both, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If you do not specify either, AWS Elastic Beanstalk returns a <code>MissingRequiredParameter</code> error. </p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// <p>The name of the environment to describe.</p>
     /// <p> Condition: You must specify either this or a TemplateName, but not both. If you specify both, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
     pub fn environment_name(
@@ -101,6 +110,11 @@ impl DescribeConfigurationSettingsInputBuilder {
     ) -> Self {
         self.environment_name = input;
         self
+    }
+    /// <p>The name of the environment to describe.</p>
+    /// <p> Condition: You must specify either this or a TemplateName, but not both. If you specify both, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
     }
     /// Consumes the builder and constructs a [`DescribeConfigurationSettingsInput`](crate::operation::describe_configuration_settings::DescribeConfigurationSettingsInput).
     pub fn build(

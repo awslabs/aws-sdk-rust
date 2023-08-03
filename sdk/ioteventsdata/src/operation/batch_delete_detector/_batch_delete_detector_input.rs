@@ -51,6 +51,12 @@ impl BatchDeleteDetectorInputBuilder {
         self.detectors = input;
         self
     }
+    /// <p>The list of one or more detectors to be deleted.</p>
+    pub fn get_detectors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteDetectorRequest>> {
+        &self.detectors
+    }
     /// Consumes the builder and constructs a [`BatchDeleteDetectorInput`](crate::operation::batch_delete_detector::BatchDeleteDetectorInput).
     pub fn build(
         self,

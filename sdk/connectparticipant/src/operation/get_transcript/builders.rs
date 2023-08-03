@@ -39,6 +39,12 @@ impl GetTranscriptFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetTranscript as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_transcript::builders::GetTranscriptInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl GetTranscriptFluentBuilder {
         self.inner = self.inner.set_contact_id(input);
         self
     }
+    /// <p>The contactId from the current contact chain for which transcript is needed.</p>
+    pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_contact_id()
+    }
     /// <p>The maximum number of results to return in the page. Default: 10. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -142,6 +152,10 @@ impl GetTranscriptFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return in the page. Default: 10. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -151,6 +165,10 @@ impl GetTranscriptFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The direction from StartPosition from which to retrieve message. Default: BACKWARD when no StartPosition is provided, FORWARD with StartPosition. </p>
     pub fn scan_direction(mut self, input: crate::types::ScanDirection) -> Self {
@@ -165,6 +183,10 @@ impl GetTranscriptFluentBuilder {
         self.inner = self.inner.set_scan_direction(input);
         self
     }
+    /// <p>The direction from StartPosition from which to retrieve message. Default: BACKWARD when no StartPosition is provided, FORWARD with StartPosition. </p>
+    pub fn get_scan_direction(&self) -> &::std::option::Option<crate::types::ScanDirection> {
+        self.inner.get_scan_direction()
+    }
     /// <p>The sort order for the records. Default: DESCENDING.</p>
     pub fn sort_order(mut self, input: crate::types::SortKey) -> Self {
         self.inner = self.inner.sort_order(input);
@@ -174,6 +196,10 @@ impl GetTranscriptFluentBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortKey>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
+    }
+    /// <p>The sort order for the records. Default: DESCENDING.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortKey> {
+        self.inner.get_sort_order()
     }
     /// <p>A filtering option for where to start.</p>
     pub fn start_position(mut self, input: crate::types::StartPosition) -> Self {
@@ -187,6 +213,10 @@ impl GetTranscriptFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_start_position(input);
         self
+    }
+    /// <p>A filtering option for where to start.</p>
+    pub fn get_start_position(&self) -> &::std::option::Option<crate::types::StartPosition> {
+        self.inner.get_start_position()
     }
     /// <p>The authentication token associated with the participant's connection.</p>
     pub fn connection_token(
@@ -203,5 +233,9 @@ impl GetTranscriptFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_connection_token(input);
         self
+    }
+    /// <p>The authentication token associated with the participant's connection.</p>
+    pub fn get_connection_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connection_token()
     }
 }

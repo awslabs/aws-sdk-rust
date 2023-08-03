@@ -72,6 +72,10 @@ impl WorkloadShareSummaryBuilder {
         self.share_id = input;
         self
     }
+    /// <p>The ID associated with the share.</p>
+    pub fn get_share_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.share_id
+    }
     /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.</p>
     pub fn shared_with(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shared_with = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl WorkloadShareSummaryBuilder {
     pub fn set_shared_with(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.shared_with = input;
         self
+    }
+    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.</p>
+    pub fn get_shared_with(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shared_with
     }
     /// <p>Permission granted on a share request.</p>
     pub fn permission_type(mut self, input: crate::types::PermissionType) -> Self {
@@ -95,6 +103,10 @@ impl WorkloadShareSummaryBuilder {
         self.permission_type = input;
         self
     }
+    /// <p>Permission granted on a share request.</p>
+    pub fn get_permission_type(&self) -> &::std::option::Option<crate::types::PermissionType> {
+        &self.permission_type
+    }
     /// <p>The status of the share request.</p>
     pub fn status(mut self, input: crate::types::ShareStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -104,6 +116,10 @@ impl WorkloadShareSummaryBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ShareStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the share request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ShareStatus> {
+        &self.status
     }
     /// <p>Optional message to compliment the Status field.</p>
     pub fn status_message(
@@ -120,6 +136,10 @@ impl WorkloadShareSummaryBuilder {
     ) -> Self {
         self.status_message = input;
         self
+    }
+    /// <p>Optional message to compliment the Status field.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// Consumes the builder and constructs a [`WorkloadShareSummary`](crate::types::WorkloadShareSummary).
     pub fn build(self) -> crate::types::WorkloadShareSummary {

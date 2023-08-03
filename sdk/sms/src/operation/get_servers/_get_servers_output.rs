@@ -75,6 +75,10 @@ impl GetServersOutputBuilder {
         self.last_modified_on = input;
         self
     }
+    /// <p>The time when the server was last modified.</p>
+    pub fn get_last_modified_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_on
+    }
     /// <p>The status of the server catalog.</p>
     pub fn server_catalog_status(mut self, input: crate::types::ServerCatalogStatus) -> Self {
         self.server_catalog_status = ::std::option::Option::Some(input);
@@ -87,6 +91,12 @@ impl GetServersOutputBuilder {
     ) -> Self {
         self.server_catalog_status = input;
         self
+    }
+    /// <p>The status of the server catalog.</p>
+    pub fn get_server_catalog_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServerCatalogStatus> {
+        &self.server_catalog_status
     }
     /// Appends an item to `server_list`.
     ///
@@ -107,6 +117,10 @@ impl GetServersOutputBuilder {
         self.server_list = input;
         self
     }
+    /// <p>Information about the servers.</p>
+    pub fn get_server_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Server>> {
+        &self.server_list
+    }
     /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -116,6 +130,10 @@ impl GetServersOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

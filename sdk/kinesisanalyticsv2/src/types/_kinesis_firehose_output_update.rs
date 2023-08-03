@@ -46,6 +46,10 @@ impl KinesisFirehoseOutputUpdateBuilder {
         self.resource_arn_update = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the delivery stream to write to. </p>
+    pub fn get_resource_arn_update(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn_update
+    }
     /// Consumes the builder and constructs a [`KinesisFirehoseOutputUpdate`](crate::types::KinesisFirehoseOutputUpdate).
     pub fn build(self) -> crate::types::KinesisFirehoseOutputUpdate {
         crate::types::KinesisFirehoseOutputUpdate {

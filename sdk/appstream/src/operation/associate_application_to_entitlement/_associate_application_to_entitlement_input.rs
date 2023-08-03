@@ -55,6 +55,10 @@ impl AssociateApplicationToEntitlementInputBuilder {
         self.stack_name = input;
         self
     }
+    /// <p>The name of the stack.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_name
+    }
     /// <p>The name of the entitlement.</p>
     pub fn entitlement_name(
         mut self,
@@ -71,6 +75,10 @@ impl AssociateApplicationToEntitlementInputBuilder {
         self.entitlement_name = input;
         self
     }
+    /// <p>The name of the entitlement.</p>
+    pub fn get_entitlement_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entitlement_name
+    }
     /// <p>The identifier of the application.</p>
     pub fn application_identifier(
         mut self,
@@ -86,6 +94,10 @@ impl AssociateApplicationToEntitlementInputBuilder {
     ) -> Self {
         self.application_identifier = input;
         self
+    }
+    /// <p>The identifier of the application.</p>
+    pub fn get_application_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_identifier
     }
     /// Consumes the builder and constructs a [`AssociateApplicationToEntitlementInput`](crate::operation::associate_application_to_entitlement::AssociateApplicationToEntitlementInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::associate_application_to_entitlement::AssociateApplicationToEntitlementInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -37,6 +37,10 @@ impl CancelReplicationTaskAssessmentRunFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CancelReplicationTaskAssessmentRun as a reference.
+    pub fn as_input(&self) -> &crate::operation::cancel_replication_task_assessment_run::builders::CancelReplicationTaskAssessmentRunInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,5 +110,11 @@ impl CancelReplicationTaskAssessmentRunFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_replication_task_assessment_run_arn(input);
         self
+    }
+    /// <p>Amazon Resource Name (ARN) of the premigration assessment run to be canceled.</p>
+    pub fn get_replication_task_assessment_run_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_replication_task_assessment_run_arn()
     }
 }

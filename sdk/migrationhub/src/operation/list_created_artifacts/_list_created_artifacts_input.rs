@@ -70,6 +70,10 @@ impl ListCreatedArtifactsInputBuilder {
         self.progress_update_stream = input;
         self
     }
+    /// <p>The name of the ProgressUpdateStream. </p>
+    pub fn get_progress_update_stream(&self) -> &::std::option::Option<::std::string::String> {
+        &self.progress_update_stream
+    }
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
     pub fn migration_task_name(
         mut self,
@@ -86,6 +90,10 @@ impl ListCreatedArtifactsInputBuilder {
         self.migration_task_name = input;
         self
     }
+    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
+    pub fn get_migration_task_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.migration_task_name
+    }
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -96,6 +104,10 @@ impl ListCreatedArtifactsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>Maximum number of results to be returned per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -105,6 +117,10 @@ impl ListCreatedArtifactsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>Maximum number of results to be returned per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListCreatedArtifactsInput`](crate::operation::list_created_artifacts::ListCreatedArtifactsInput).
     pub fn build(

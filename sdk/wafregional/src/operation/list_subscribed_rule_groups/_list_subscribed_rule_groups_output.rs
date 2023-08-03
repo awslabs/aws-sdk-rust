@@ -58,6 +58,10 @@ impl ListSubscribedRuleGroupsOutputBuilder {
         self.next_marker = input;
         self
     }
+    /// <p>If you have more objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more objects, submit another <code>ListSubscribedRuleGroups</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
+    pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_marker
+    }
     /// Appends an item to `rule_groups`.
     ///
     /// To override the contents of this collection use [`set_rule_groups`](Self::set_rule_groups).
@@ -76,6 +80,12 @@ impl ListSubscribedRuleGroupsOutputBuilder {
     ) -> Self {
         self.rule_groups = input;
         self
+    }
+    /// <p>An array of <code>RuleGroup</code> objects.</p>
+    pub fn get_rule_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SubscribedRuleGroupSummary>> {
+        &self.rule_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

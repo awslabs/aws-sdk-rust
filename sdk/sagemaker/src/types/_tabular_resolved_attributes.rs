@@ -43,6 +43,10 @@ impl TabularResolvedAttributesBuilder {
         self.problem_type = input;
         self
     }
+    /// <p>The type of supervised learning problem available for the model candidates of the AutoML job V2 (Binary Classification, Multiclass Classification, Regression). For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types"> Amazon SageMaker Autopilot problem types</a>.</p>
+    pub fn get_problem_type(&self) -> &::std::option::Option<crate::types::ProblemType> {
+        &self.problem_type
+    }
     /// Consumes the builder and constructs a [`TabularResolvedAttributes`](crate::types::TabularResolvedAttributes).
     pub fn build(self) -> crate::types::TabularResolvedAttributes {
         crate::types::TabularResolvedAttributes {

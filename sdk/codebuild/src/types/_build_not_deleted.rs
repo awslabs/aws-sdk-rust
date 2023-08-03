@@ -48,6 +48,10 @@ impl BuildNotDeletedBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the build that could not be successfully deleted.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>Additional information about the build that could not be successfully deleted.</p>
     pub fn status_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_code = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl BuildNotDeletedBuilder {
     pub fn set_status_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_code = input;
         self
+    }
+    /// <p>Additional information about the build that could not be successfully deleted.</p>
+    pub fn get_status_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_code
     }
     /// Consumes the builder and constructs a [`BuildNotDeleted`](crate::types::BuildNotDeleted).
     pub fn build(self) -> crate::types::BuildNotDeleted {

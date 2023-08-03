@@ -88,6 +88,10 @@ impl RobotDeploymentBuilder {
         self.arn = input;
         self
     }
+    /// <p>The robot deployment Amazon Resource Name (ARN).</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The time, in milliseconds since the epoch, when the deployment was started.</p>
     pub fn deployment_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.deployment_start_time = ::std::option::Option::Some(input);
@@ -100,6 +104,12 @@ impl RobotDeploymentBuilder {
     ) -> Self {
         self.deployment_start_time = input;
         self
+    }
+    /// <p>The time, in milliseconds since the epoch, when the deployment was started.</p>
+    pub fn get_deployment_start_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.deployment_start_time
     }
     /// <p>The time, in milliseconds since the epoch, when the deployment finished.</p>
     pub fn deployment_finish_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -114,6 +124,12 @@ impl RobotDeploymentBuilder {
         self.deployment_finish_time = input;
         self
     }
+    /// <p>The time, in milliseconds since the epoch, when the deployment finished.</p>
+    pub fn get_deployment_finish_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.deployment_finish_time
+    }
     /// <p>The status of the robot deployment.</p>
     pub fn status(mut self, input: crate::types::RobotStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -123,6 +139,10 @@ impl RobotDeploymentBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RobotStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the robot deployment.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::RobotStatus> {
+        &self.status
     }
     /// <p>Information about how the deployment is progressing.</p>
     pub fn progress_detail(mut self, input: crate::types::ProgressDetail) -> Self {
@@ -136,6 +156,10 @@ impl RobotDeploymentBuilder {
     ) -> Self {
         self.progress_detail = input;
         self
+    }
+    /// <p>Information about how the deployment is progressing.</p>
+    pub fn get_progress_detail(&self) -> &::std::option::Option<crate::types::ProgressDetail> {
+        &self.progress_detail
     }
     /// <p>A short description of the reason why the robot deployment failed.</p>
     pub fn failure_reason(
@@ -153,6 +177,10 @@ impl RobotDeploymentBuilder {
         self.failure_reason = input;
         self
     }
+    /// <p>A short description of the reason why the robot deployment failed.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
     /// <p>The robot deployment failure code.</p>
     pub fn failure_code(mut self, input: crate::types::DeploymentJobErrorCode) -> Self {
         self.failure_code = ::std::option::Option::Some(input);
@@ -165,6 +193,10 @@ impl RobotDeploymentBuilder {
     ) -> Self {
         self.failure_code = input;
         self
+    }
+    /// <p>The robot deployment failure code.</p>
+    pub fn get_failure_code(&self) -> &::std::option::Option<crate::types::DeploymentJobErrorCode> {
+        &self.failure_code
     }
     /// Consumes the builder and constructs a [`RobotDeployment`](crate::types::RobotDeployment).
     pub fn build(self) -> crate::types::RobotDeployment {

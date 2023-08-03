@@ -53,6 +53,13 @@ impl GetContactMethodsInputBuilder {
         self.protocols = input;
         self
     }
+    /// <p>The protocols used to send notifications, such as <code>Email</code>, or <code>SMS</code> (text messaging).</p>
+    /// <p>Specify a protocol in your request to return information about a specific contact method protocol.</p>
+    pub fn get_protocols(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactProtocol>> {
+        &self.protocols
+    }
     /// Consumes the builder and constructs a [`GetContactMethodsInput`](crate::operation::get_contact_methods::GetContactMethodsInput).
     pub fn build(
         self,

@@ -45,6 +45,12 @@ impl SheetControlLayoutBuilder {
         self.configuration = input;
         self
     }
+    /// <p>The configuration that determines the elements and canvas size options of sheet control.</p>
+    pub fn get_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SheetControlLayoutConfiguration> {
+        &self.configuration
+    }
     /// Consumes the builder and constructs a [`SheetControlLayout`](crate::types::SheetControlLayout).
     pub fn build(self) -> crate::types::SheetControlLayout {
         crate::types::SheetControlLayout {

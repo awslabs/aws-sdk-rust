@@ -126,6 +126,10 @@ impl CreateTriggerInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the trigger.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The name of the workflow associated with the trigger.</p>
     pub fn workflow_name(
         mut self,
@@ -142,6 +146,10 @@ impl CreateTriggerInputBuilder {
         self.workflow_name = input;
         self
     }
+    /// <p>The name of the workflow associated with the trigger.</p>
+    pub fn get_workflow_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_name
+    }
     /// <p>The type of the new trigger.</p>
     pub fn r#type(mut self, input: crate::types::TriggerType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -151,6 +159,10 @@ impl CreateTriggerInputBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::TriggerType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the new trigger.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::TriggerType> {
+        &self.r#type
     }
     /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
     /// <p>This field is required when the trigger type is SCHEDULED.</p>
@@ -164,6 +176,11 @@ impl CreateTriggerInputBuilder {
         self.schedule = input;
         self
     }
+    /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
+    /// <p>This field is required when the trigger type is SCHEDULED.</p>
+    pub fn get_schedule(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schedule
+    }
     /// <p>A predicate to specify when the new trigger should fire.</p>
     /// <p>This field is required when the trigger type is <code>CONDITIONAL</code>.</p>
     pub fn predicate(mut self, input: crate::types::Predicate) -> Self {
@@ -175,6 +192,11 @@ impl CreateTriggerInputBuilder {
     pub fn set_predicate(mut self, input: ::std::option::Option<crate::types::Predicate>) -> Self {
         self.predicate = input;
         self
+    }
+    /// <p>A predicate to specify when the new trigger should fire.</p>
+    /// <p>This field is required when the trigger type is <code>CONDITIONAL</code>.</p>
+    pub fn get_predicate(&self) -> &::std::option::Option<crate::types::Predicate> {
+        &self.predicate
     }
     /// Appends an item to `actions`.
     ///
@@ -195,6 +217,10 @@ impl CreateTriggerInputBuilder {
         self.actions = input;
         self
     }
+    /// <p>The actions initiated by this trigger when it fires.</p>
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Action>> {
+        &self.actions
+    }
     /// <p>A description of the new trigger.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -205,6 +231,10 @@ impl CreateTriggerInputBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the new trigger.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>Set to <code>true</code> to start <code>SCHEDULED</code> and <code>CONDITIONAL</code> triggers when created. True is not supported for <code>ON_DEMAND</code> triggers.</p>
     pub fn start_on_creation(mut self, input: bool) -> Self {
         self.start_on_creation = ::std::option::Option::Some(input);
@@ -214,6 +244,10 @@ impl CreateTriggerInputBuilder {
     pub fn set_start_on_creation(mut self, input: ::std::option::Option<bool>) -> Self {
         self.start_on_creation = input;
         self
+    }
+    /// <p>Set to <code>true</code> to start <code>SCHEDULED</code> and <code>CONDITIONAL</code> triggers when created. True is not supported for <code>ON_DEMAND</code> triggers.</p>
+    pub fn get_start_on_creation(&self) -> &::std::option::Option<bool> {
+        &self.start_on_creation
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -240,6 +274,14 @@ impl CreateTriggerInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags to use with this trigger. You may use tags to limit access to the trigger. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
     pub fn event_batching_condition(mut self, input: crate::types::EventBatchingCondition) -> Self {
         self.event_batching_condition = ::std::option::Option::Some(input);
@@ -252,6 +294,12 @@ impl CreateTriggerInputBuilder {
     ) -> Self {
         self.event_batching_condition = input;
         self
+    }
+    /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
+    pub fn get_event_batching_condition(
+        &self,
+    ) -> &::std::option::Option<crate::types::EventBatchingCondition> {
+        &self.event_batching_condition
     }
     /// Consumes the builder and constructs a [`CreateTriggerInput`](crate::operation::create_trigger::CreateTriggerInput).
     pub fn build(

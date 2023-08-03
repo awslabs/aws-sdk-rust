@@ -120,6 +120,10 @@ impl UpdateChangesetInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The unique identifier for the FinSpace Dataset in which the Changeset is created.</p>
     pub fn dataset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_id = ::std::option::Option::Some(input.into());
@@ -130,6 +134,10 @@ impl UpdateChangesetInputBuilder {
         self.dataset_id = input;
         self
     }
+    /// <p>The unique identifier for the FinSpace Dataset in which the Changeset is created.</p>
+    pub fn get_dataset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_id
+    }
     /// <p>The unique identifier for the Changeset to update.</p>
     pub fn changeset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.changeset_id = ::std::option::Option::Some(input.into());
@@ -139,6 +147,10 @@ impl UpdateChangesetInputBuilder {
     pub fn set_changeset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.changeset_id = input;
         self
+    }
+    /// <p>The unique identifier for the Changeset to update.</p>
+    pub fn get_changeset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.changeset_id
     }
     /// Adds a key-value pair to `source_params`.
     ///
@@ -172,6 +184,18 @@ impl UpdateChangesetInputBuilder {
     ) -> Self {
         self.source_params = input;
         self
+    }
+    /// <p>Options that define the location of the data being ingested (<code>s3SourcePath</code>) and the source of the changeset (<code>sourceType</code>).</p>
+    /// <p>Both <code>s3SourcePath</code> and <code>sourceType</code> are required attributes.</p>
+    /// <p>Here is an example of how you could specify the <code>sourceParams</code>:</p>
+    /// <p> <code> "sourceParams": { "s3SourcePath": "s3://finspace-landing-us-east-2-bk7gcfvitndqa6ebnvys4d/scratch/wr5hh8pwkpqqkxa4sxrmcw/ingestion/equity.csv", "sourceType": "S3" } </code> </p>
+    /// <p>The S3 path that you specify must allow the FinSpace role access. To do that, you first need to configure the IAM policy on S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
+    pub fn get_source_params(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.source_params
     }
     /// Adds a key-value pair to `format_params`.
     ///
@@ -221,6 +245,26 @@ impl UpdateChangesetInputBuilder {
     ) -> Self {
         self.format_params = input;
         self
+    }
+    /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>). </p>
+    /// <p> <code>formatType</code> is a required attribute and can have the following values: </p>
+    /// <ul>
+    /// <li> <p> <code>PARQUET</code> – Parquet source file format.</p> </li>
+    /// <li> <p> <code>CSV</code> – CSV source file format.</p> </li>
+    /// <li> <p> <code>JSON</code> – JSON source file format.</p> </li>
+    /// <li> <p> <code>XML</code> – XML source file format.</p> </li>
+    /// </ul>
+    /// <p>Here is an example of how you could specify the <code>formatParams</code>:</p>
+    /// <p> <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
+    /// <p>Note that if you only provide <code>formatType</code> as <code>CSV</code>, the rest of the attributes will automatically default to CSV values as following:</p>
+    /// <p> <code> { "withHeader": "true", "separator": "," } </code> </p>
+    /// <p> For more information about supported file formats, see <a href="https://docs.aws.amazon.com/finspace/latest/userguide/supported-data-types.html">Supported Data Types and File Formats</a> in the FinSpace User Guide.</p>
+    pub fn get_format_params(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.format_params
     }
     /// Consumes the builder and constructs a [`UpdateChangesetInput`](crate::operation::update_changeset::UpdateChangesetInput).
     pub fn build(

@@ -53,6 +53,10 @@ impl DeletePullThroughCacheRuleInputBuilder {
         self.ecr_repository_prefix = input;
         self
     }
+    /// <p>The Amazon ECR repository prefix associated with the pull through cache rule to delete.</p>
+    pub fn get_ecr_repository_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ecr_repository_prefix
+    }
     /// <p>The Amazon Web Services account ID associated with the registry that contains the pull through cache rule. If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_id = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl DeletePullThroughCacheRuleInputBuilder {
     pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registry_id = input;
         self
+    }
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the pull through cache rule. If you do not specify a registry, the default registry is assumed.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
     }
     /// Consumes the builder and constructs a [`DeletePullThroughCacheRuleInput`](crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleInput).
     pub fn build(

@@ -49,6 +49,10 @@ impl GetOtaUpdateOutputBuilder {
         self.ota_update_info = input;
         self
     }
+    /// <p>The OTA update info.</p>
+    pub fn get_ota_update_info(&self) -> &::std::option::Option<crate::types::OtaUpdateInfo> {
+        &self.ota_update_info
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

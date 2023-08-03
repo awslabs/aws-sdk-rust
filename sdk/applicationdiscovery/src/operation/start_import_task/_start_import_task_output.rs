@@ -47,6 +47,10 @@ impl StartImportTaskOutputBuilder {
         self.task = input;
         self
     }
+    /// <p>An array of information related to the import task request including status information, times, IDs, the Amazon S3 Object URL for the import file, and more. </p>
+    pub fn get_task(&self) -> &::std::option::Option<crate::types::ImportTask> {
+        &self.task
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

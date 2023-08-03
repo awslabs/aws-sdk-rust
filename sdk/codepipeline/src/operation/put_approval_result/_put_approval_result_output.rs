@@ -51,6 +51,10 @@ impl PutApprovalResultOutputBuilder {
         self.approved_at = input;
         self
     }
+    /// <p>The timestamp showing when the approval or rejection was submitted.</p>
+    pub fn get_approved_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.approved_at
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

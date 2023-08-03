@@ -62,6 +62,10 @@ impl UpdateSubnetGroupInputBuilder {
         self.subnet_group_name = input;
         self
     }
+    /// <p>The name of the subnet group.</p>
+    pub fn get_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_group_name
+    }
     /// <p>A description of the subnet group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl UpdateSubnetGroupInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the subnet group.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -90,6 +98,10 @@ impl UpdateSubnetGroupInputBuilder {
     ) -> Self {
         self.subnet_ids = input;
         self
+    }
+    /// <p>A list of subnet IDs in the subnet group.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
     }
     /// Consumes the builder and constructs a [`UpdateSubnetGroupInput`](crate::operation::update_subnet_group::UpdateSubnetGroupInput).
     pub fn build(

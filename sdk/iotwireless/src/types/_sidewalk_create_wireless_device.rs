@@ -46,6 +46,10 @@ impl SidewalkCreateWirelessDeviceBuilder {
         self.device_profile_id = input;
         self
     }
+    /// <p>The ID of the Sidewalk device profile.</p>
+    pub fn get_device_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_profile_id
+    }
     /// Consumes the builder and constructs a [`SidewalkCreateWirelessDevice`](crate::types::SidewalkCreateWirelessDevice).
     pub fn build(self) -> crate::types::SidewalkCreateWirelessDevice {
         crate::types::SidewalkCreateWirelessDevice {

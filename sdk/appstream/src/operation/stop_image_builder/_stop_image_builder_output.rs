@@ -50,6 +50,10 @@ impl StopImageBuilderOutputBuilder {
         self.image_builder = input;
         self
     }
+    /// <p>Information about the image builder.</p>
+    pub fn get_image_builder(&self) -> &::std::option::Option<crate::types::ImageBuilder> {
+        &self.image_builder
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

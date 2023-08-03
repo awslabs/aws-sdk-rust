@@ -62,6 +62,10 @@ impl RegisterApplicationRevisionInputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>A comment about the revision.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl RegisterApplicationRevisionInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A comment about the revision.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Information about the application revision to register, including type and location.</p>
     pub fn revision(mut self, input: crate::types::RevisionLocation) -> Self {
@@ -84,6 +92,10 @@ impl RegisterApplicationRevisionInputBuilder {
     ) -> Self {
         self.revision = input;
         self
+    }
+    /// <p>Information about the application revision to register, including type and location.</p>
+    pub fn get_revision(&self) -> &::std::option::Option<crate::types::RevisionLocation> {
+        &self.revision
     }
     /// Consumes the builder and constructs a [`RegisterApplicationRevisionInput`](crate::operation::register_application_revision::RegisterApplicationRevisionInput).
     pub fn build(

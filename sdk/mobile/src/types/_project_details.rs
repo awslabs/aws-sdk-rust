@@ -96,6 +96,10 @@ impl ProjectDetailsBuilder {
         self.name = input;
         self
     }
+    /// <p> Name of the project. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p> Unique project identifier. </p>
     pub fn project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_id = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl ProjectDetailsBuilder {
     pub fn set_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_id = input;
         self
+    }
+    /// <p> Unique project identifier. </p>
+    pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_id
     }
     /// <p> Default region to use for AWS resource creation in the AWS Mobile Hub project. </p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -116,6 +124,10 @@ impl ProjectDetailsBuilder {
         self.region = input;
         self
     }
+    /// <p> Default region to use for AWS resource creation in the AWS Mobile Hub project. </p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
+    }
     /// <p> Synchronization state for a project. </p>
     pub fn state(mut self, input: crate::types::ProjectState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -125,6 +137,10 @@ impl ProjectDetailsBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ProjectState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p> Synchronization state for a project. </p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ProjectState> {
+        &self.state
     }
     /// <p> Date the project was created. </p>
     pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -139,6 +155,10 @@ impl ProjectDetailsBuilder {
         self.created_date = input;
         self
     }
+    /// <p> Date the project was created. </p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_date
+    }
     /// <p> Date of the last modification of the project. </p>
     pub fn last_updated_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date = ::std::option::Option::Some(input);
@@ -152,6 +172,10 @@ impl ProjectDetailsBuilder {
         self.last_updated_date = input;
         self
     }
+    /// <p> Date of the last modification of the project. </p>
+    pub fn get_last_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date
+    }
     /// <p> Website URL for this project in the AWS Mobile Hub console. </p>
     pub fn console_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.console_url = ::std::option::Option::Some(input.into());
@@ -161,6 +185,10 @@ impl ProjectDetailsBuilder {
     pub fn set_console_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.console_url = input;
         self
+    }
+    /// <p> Website URL for this project in the AWS Mobile Hub console. </p>
+    pub fn get_console_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.console_url
     }
     /// Appends an item to `resources`.
     ///
@@ -180,6 +208,10 @@ impl ProjectDetailsBuilder {
     ) -> Self {
         self.resources = input;
         self
+    }
+    /// <p> List of AWS resources associated with a project. </p>
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
+        &self.resources
     }
     /// Consumes the builder and constructs a [`ProjectDetails`](crate::types::ProjectDetails).
     pub fn build(self) -> crate::types::ProjectDetails {

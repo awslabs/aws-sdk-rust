@@ -57,6 +57,10 @@ impl InventoryAggregatorBuilder {
         self.expression = input;
         self
     }
+    /// <p>The inventory type and attribute name for aggregation.</p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expression
+    }
     /// Appends an item to `aggregators`.
     ///
     /// To override the contents of this collection use [`set_aggregators`](Self::set_aggregators).
@@ -76,6 +80,12 @@ impl InventoryAggregatorBuilder {
         self.aggregators = input;
         self
     }
+    /// <p>Nested aggregators to further refine aggregation for an inventory type.</p>
+    pub fn get_aggregators(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryAggregator>> {
+        &self.aggregators
+    }
     /// Appends an item to `groups`.
     ///
     /// To override the contents of this collection use [`set_groups`](Self::set_groups).
@@ -94,6 +104,12 @@ impl InventoryAggregatorBuilder {
     ) -> Self {
         self.groups = input;
         self
+    }
+    /// <p>A user-defined set of one or more filters on which to aggregate inventory data. Groups return a count of resources that match and don't match the specified criteria.</p>
+    pub fn get_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryGroup>> {
+        &self.groups
     }
     /// Consumes the builder and constructs a [`InventoryAggregator`](crate::types::InventoryAggregator).
     pub fn build(self) -> crate::types::InventoryAggregator {

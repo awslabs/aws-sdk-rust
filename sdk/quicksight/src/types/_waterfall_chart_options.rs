@@ -46,6 +46,10 @@ impl WaterfallChartOptionsBuilder {
         self.total_bar_label = input;
         self
     }
+    /// <p>This option determines the total bar label of a waterfall visual.</p>
+    pub fn get_total_bar_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.total_bar_label
+    }
     /// Consumes the builder and constructs a [`WaterfallChartOptions`](crate::types::WaterfallChartOptions).
     pub fn build(self) -> crate::types::WaterfallChartOptions {
         crate::types::WaterfallChartOptions {

@@ -43,6 +43,10 @@ impl DeleteStreamFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteStream as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_stream::builders::DeleteStreamInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +129,10 @@ impl DeleteStreamFluentBuilder {
         self.inner = self.inner.set_stream_name(input);
         self
     }
+    /// <p>The name of the stream to delete.</p>
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_name()
+    }
     /// <p>If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>, and the stream has registered consumers, the call to <code>DeleteStream</code> fails with a <code>ResourceInUseException</code>. </p>
     pub fn enforce_consumer_deletion(mut self, input: bool) -> Self {
         self.inner = self.inner.enforce_consumer_deletion(input);
@@ -135,6 +143,10 @@ impl DeleteStreamFluentBuilder {
         self.inner = self.inner.set_enforce_consumer_deletion(input);
         self
     }
+    /// <p>If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>, and the stream has registered consumers, the call to <code>DeleteStream</code> fails with a <code>ResourceInUseException</code>. </p>
+    pub fn get_enforce_consumer_deletion(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enforce_consumer_deletion()
+    }
     /// <p>The ARN of the stream.</p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stream_arn(input.into());
@@ -144,5 +156,9 @@ impl DeleteStreamFluentBuilder {
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stream_arn(input);
         self
+    }
+    /// <p>The ARN of the stream.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_arn()
     }
 }

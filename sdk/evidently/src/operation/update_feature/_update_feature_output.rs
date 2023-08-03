@@ -46,6 +46,10 @@ impl UpdateFeatureOutputBuilder {
         self.feature = input;
         self
     }
+    /// <p>A structure that contains information about the updated feature.</p>
+    pub fn get_feature(&self) -> &::std::option::Option<crate::types::Feature> {
+        &self.feature
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

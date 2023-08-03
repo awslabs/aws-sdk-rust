@@ -71,6 +71,12 @@ impl HttpEndpointConfigurationBuilder {
         self.url = input;
         self
     }
+    /// <p>The URL of the HTTP endpoint selected as the destination.</p> <important>
+    /// <p>If you choose an HTTP endpoint as your destination, review and follow the instructions in the <a href="https://docs.aws.amazon.com/firehose/latest/dev/httpdeliveryrequestresponse.html">Appendix - HTTP Endpoint Delivery Request and Response Specifications</a>.</p>
+    /// </important>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
+    }
     /// <p>The name of the HTTP endpoint selected as the destination.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -81,6 +87,10 @@ impl HttpEndpointConfigurationBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the HTTP endpoint selected as the destination.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The access key required for Kinesis Firehose to authenticate with the HTTP endpoint selected as the destination.</p>
     pub fn access_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_key = ::std::option::Option::Some(input.into());
@@ -90,6 +100,10 @@ impl HttpEndpointConfigurationBuilder {
     pub fn set_access_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_key = input;
         self
+    }
+    /// <p>The access key required for Kinesis Firehose to authenticate with the HTTP endpoint selected as the destination.</p>
+    pub fn get_access_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_key
     }
     /// Consumes the builder and constructs a [`HttpEndpointConfiguration`](crate::types::HttpEndpointConfiguration).
     pub fn build(self) -> crate::types::HttpEndpointConfiguration {

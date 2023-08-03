@@ -70,6 +70,12 @@ impl ListChangeSetsOutputBuilder {
         self.change_set_summary_list = input;
         self
     }
+    /// <p> Array of <code>ChangeSetSummaryListItem</code> objects.</p>
+    pub fn get_change_set_summary_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangeSetSummaryListItem>> {
+        &self.change_set_summary_list
+    }
     /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -79,6 +85,10 @@ impl ListChangeSetsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

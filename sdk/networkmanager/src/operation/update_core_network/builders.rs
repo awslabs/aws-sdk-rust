@@ -36,6 +36,12 @@ impl UpdateCoreNetworkFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateCoreNetwork as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_core_network::builders::UpdateCoreNetworkInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateCoreNetworkFluentBuilder {
         self.inner = self.inner.set_core_network_id(input);
         self
     }
+    /// <p>The ID of a core network.</p>
+    pub fn get_core_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_core_network_id()
+    }
     /// <p>The description of the update.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -141,5 +151,9 @@ impl UpdateCoreNetworkFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the update.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
 }

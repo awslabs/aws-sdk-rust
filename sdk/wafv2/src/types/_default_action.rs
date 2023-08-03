@@ -48,6 +48,10 @@ impl DefaultActionBuilder {
         self.block = input;
         self
     }
+    /// <p>Specifies that WAF should block requests by default. </p>
+    pub fn get_block(&self) -> &::std::option::Option<crate::types::BlockAction> {
+        &self.block
+    }
     /// <p>Specifies that WAF should allow requests by default.</p>
     pub fn allow(mut self, input: crate::types::AllowAction) -> Self {
         self.allow = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl DefaultActionBuilder {
     pub fn set_allow(mut self, input: ::std::option::Option<crate::types::AllowAction>) -> Self {
         self.allow = input;
         self
+    }
+    /// <p>Specifies that WAF should allow requests by default.</p>
+    pub fn get_allow(&self) -> &::std::option::Option<crate::types::AllowAction> {
+        &self.allow
     }
     /// Consumes the builder and constructs a [`DefaultAction`](crate::types::DefaultAction).
     pub fn build(self) -> crate::types::DefaultAction {

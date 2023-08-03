@@ -40,6 +40,10 @@ impl CalculationConfigurationBuilder {
         self.code_block = input;
         self
     }
+    /// <p>A string that contains the code for the calculation.</p>
+    pub fn get_code_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code_block
+    }
     /// Consumes the builder and constructs a [`CalculationConfiguration`](crate::types::CalculationConfiguration).
     pub fn build(self) -> crate::types::CalculationConfiguration {
         crate::types::CalculationConfiguration {

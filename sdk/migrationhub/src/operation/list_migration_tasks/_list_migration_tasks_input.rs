@@ -56,6 +56,10 @@ impl ListMigrationTasksInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>Value to specify how many results are returned per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl ListMigrationTasksInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>Value to specify how many results are returned per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>Filter migration tasks by discovered resource name.</p>
     pub fn resource_name(
@@ -81,6 +89,10 @@ impl ListMigrationTasksInputBuilder {
     ) -> Self {
         self.resource_name = input;
         self
+    }
+    /// <p>Filter migration tasks by discovered resource name.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_name
     }
     /// Consumes the builder and constructs a [`ListMigrationTasksInput`](crate::operation::list_migration_tasks::ListMigrationTasksInput).
     pub fn build(

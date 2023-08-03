@@ -61,6 +61,10 @@ impl CreateCustomDomainAssociationInputBuilder {
         self.custom_domain_name = input;
         self
     }
+    /// <p>The custom domain name for a custom domain association.</p>
+    pub fn get_custom_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_domain_name
+    }
     /// <p>The certificate Amazon Resource Name (ARN) for the custom domain name association.</p>
     pub fn custom_domain_certificate_arn(
         mut self,
@@ -77,6 +81,12 @@ impl CreateCustomDomainAssociationInputBuilder {
         self.custom_domain_certificate_arn = input;
         self
     }
+    /// <p>The certificate Amazon Resource Name (ARN) for the custom domain name association.</p>
+    pub fn get_custom_domain_certificate_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.custom_domain_certificate_arn
+    }
     /// <p>The cluster identifier that the custom domain is associated with.</p>
     pub fn cluster_identifier(
         mut self,
@@ -92,6 +102,10 @@ impl CreateCustomDomainAssociationInputBuilder {
     ) -> Self {
         self.cluster_identifier = input;
         self
+    }
+    /// <p>The cluster identifier that the custom domain is associated with.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_identifier
     }
     /// Consumes the builder and constructs a [`CreateCustomDomainAssociationInput`](crate::operation::create_custom_domain_association::CreateCustomDomainAssociationInput).
     pub fn build(

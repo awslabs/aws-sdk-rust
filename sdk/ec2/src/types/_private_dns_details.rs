@@ -46,6 +46,10 @@ impl PrivateDnsDetailsBuilder {
         self.private_dns_name = input;
         self
     }
+    /// <p>The private DNS name assigned to the VPC endpoint service.</p>
+    pub fn get_private_dns_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_dns_name
+    }
     /// Consumes the builder and constructs a [`PrivateDnsDetails`](crate::types::PrivateDnsDetails).
     pub fn build(self) -> crate::types::PrivateDnsDetails {
         crate::types::PrivateDnsDetails {

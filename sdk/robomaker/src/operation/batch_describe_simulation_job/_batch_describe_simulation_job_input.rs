@@ -48,6 +48,10 @@ impl BatchDescribeSimulationJobInputBuilder {
         self.jobs = input;
         self
     }
+    /// <p>A list of Amazon Resource Names (ARNs) of simulation jobs to describe.</p>
+    pub fn get_jobs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.jobs
+    }
     /// Consumes the builder and constructs a [`BatchDescribeSimulationJobInput`](crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobInput).
     pub fn build(
         self,

@@ -36,6 +36,12 @@ impl ImportHostKeyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ImportHostKey as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::import_host_key::builders::ImportHostKeyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl ImportHostKeyFluentBuilder {
         self.inner = self.inner.set_server_id(input);
         self
     }
+    /// <p>The identifier of the server that contains the host key that you are importing.</p>
+    pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_server_id()
+    }
     /// <p>The private key portion of an SSH key pair.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
     pub fn host_key_body(
@@ -136,6 +146,11 @@ impl ImportHostKeyFluentBuilder {
         self.inner = self.inner.set_host_key_body(input);
         self
     }
+    /// <p>The private key portion of an SSH key pair.</p>
+    /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
+    pub fn get_host_key_body(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_host_key_body()
+    }
     /// <p>The text description that identifies this host key.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -145,6 +160,10 @@ impl ImportHostKeyFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The text description that identifies this host key.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `Tags`.
     ///
@@ -162,5 +181,9 @@ impl ImportHostKeyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Key-value pairs that can be used to group and search for host keys.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

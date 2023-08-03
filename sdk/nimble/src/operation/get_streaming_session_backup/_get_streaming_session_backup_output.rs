@@ -52,6 +52,12 @@ impl GetStreamingSessionBackupOutputBuilder {
         self.streaming_session_backup = input;
         self
     }
+    /// <p>Information about the streaming session backup.</p>
+    pub fn get_streaming_session_backup(
+        &self,
+    ) -> &::std::option::Option<crate::types::StreamingSessionBackup> {
+        &self.streaming_session_backup
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

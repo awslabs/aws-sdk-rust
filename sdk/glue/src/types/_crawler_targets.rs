@@ -107,6 +107,12 @@ impl CrawlerTargetsBuilder {
         self.s3_targets = input;
         self
     }
+    /// <p>Specifies Amazon Simple Storage Service (Amazon S3) targets.</p>
+    pub fn get_s3_targets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::S3Target>> {
+        &self.s3_targets
+    }
     /// Appends an item to `jdbc_targets`.
     ///
     /// To override the contents of this collection use [`set_jdbc_targets`](Self::set_jdbc_targets).
@@ -125,6 +131,12 @@ impl CrawlerTargetsBuilder {
     ) -> Self {
         self.jdbc_targets = input;
         self
+    }
+    /// <p>Specifies JDBC targets.</p>
+    pub fn get_jdbc_targets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JdbcTarget>> {
+        &self.jdbc_targets
     }
     /// Appends an item to `mongo_db_targets`.
     ///
@@ -145,6 +157,12 @@ impl CrawlerTargetsBuilder {
         self.mongo_db_targets = input;
         self
     }
+    /// <p>Specifies Amazon DocumentDB or MongoDB targets.</p>
+    pub fn get_mongo_db_targets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MongoDbTarget>> {
+        &self.mongo_db_targets
+    }
     /// Appends an item to `dynamo_db_targets`.
     ///
     /// To override the contents of this collection use [`set_dynamo_db_targets`](Self::set_dynamo_db_targets).
@@ -163,6 +181,12 @@ impl CrawlerTargetsBuilder {
     ) -> Self {
         self.dynamo_db_targets = input;
         self
+    }
+    /// <p>Specifies Amazon DynamoDB targets.</p>
+    pub fn get_dynamo_db_targets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DynamoDbTarget>> {
+        &self.dynamo_db_targets
     }
     /// Appends an item to `catalog_targets`.
     ///
@@ -183,6 +207,12 @@ impl CrawlerTargetsBuilder {
         self.catalog_targets = input;
         self
     }
+    /// <p>Specifies Glue Data Catalog targets.</p>
+    pub fn get_catalog_targets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CatalogTarget>> {
+        &self.catalog_targets
+    }
     /// Appends an item to `delta_targets`.
     ///
     /// To override the contents of this collection use [`set_delta_targets`](Self::set_delta_targets).
@@ -201,6 +231,12 @@ impl CrawlerTargetsBuilder {
     ) -> Self {
         self.delta_targets = input;
         self
+    }
+    /// <p>Specifies Delta data store targets.</p>
+    pub fn get_delta_targets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeltaTarget>> {
+        &self.delta_targets
     }
     /// Appends an item to `iceberg_targets`.
     ///
@@ -221,6 +257,12 @@ impl CrawlerTargetsBuilder {
         self.iceberg_targets = input;
         self
     }
+    /// <p>Specifies Apache Iceberg data store targets.</p>
+    pub fn get_iceberg_targets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IcebergTarget>> {
+        &self.iceberg_targets
+    }
     /// Appends an item to `hudi_targets`.
     ///
     /// To override the contents of this collection use [`set_hudi_targets`](Self::set_hudi_targets).
@@ -239,6 +281,12 @@ impl CrawlerTargetsBuilder {
     ) -> Self {
         self.hudi_targets = input;
         self
+    }
+    /// <p>Specifies Apache Hudi data store targets.</p>
+    pub fn get_hudi_targets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HudiTarget>> {
+        &self.hudi_targets
     }
     /// Consumes the builder and constructs a [`CrawlerTargets`](crate::types::CrawlerTargets).
     pub fn build(self) -> crate::types::CrawlerTargets {

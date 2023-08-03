@@ -47,6 +47,10 @@ impl GetIntentInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the intent. The name is case sensitive. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The version of the intent.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl GetIntentInputBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version of the intent.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`GetIntentInput`](crate::operation::get_intent::GetIntentInput).
     pub fn build(

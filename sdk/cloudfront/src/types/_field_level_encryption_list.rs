@@ -65,6 +65,10 @@ impl FieldLevelEncryptionListBuilder {
         self.next_marker = input;
         self
     }
+    /// <p>If there are more elements to be listed, this element is present and contains the value that you can use for the <code>Marker</code> request parameter to continue listing your configurations where you left off.</p>
+    pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_marker
+    }
     /// <p>The maximum number of elements you want in the response body.</p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.max_items = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl FieldLevelEncryptionListBuilder {
         self.max_items = input;
         self
     }
+    /// <p>The maximum number of elements you want in the response body.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        &self.max_items
+    }
     /// <p>The number of field-level encryption items.</p>
     pub fn quantity(mut self, input: i32) -> Self {
         self.quantity = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl FieldLevelEncryptionListBuilder {
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.quantity = input;
         self
+    }
+    /// <p>The number of field-level encryption items.</p>
+    pub fn get_quantity(&self) -> &::std::option::Option<i32> {
+        &self.quantity
     }
     /// Appends an item to `items`.
     ///
@@ -103,6 +115,12 @@ impl FieldLevelEncryptionListBuilder {
     ) -> Self {
         self.items = input;
         self
+    }
+    /// <p>An array of field-level encryption items.</p>
+    pub fn get_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldLevelEncryptionSummary>> {
+        &self.items
     }
     /// Consumes the builder and constructs a [`FieldLevelEncryptionList`](crate::types::FieldLevelEncryptionList).
     pub fn build(self) -> crate::types::FieldLevelEncryptionList {

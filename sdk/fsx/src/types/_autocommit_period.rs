@@ -66,6 +66,10 @@ impl AutocommitPeriodBuilder {
         self.r#type = input;
         self
     }
+    /// <p>Defines the type of time for the autocommit period of a file in an FSx for ONTAP SnapLock volume. Setting this value to <code>NONE</code> disables autocommit. The default value is <code>NONE</code>. </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::AutocommitPeriodType> {
+        &self.r#type
+    }
     /// <p>Defines the amount of time for the autocommit period of a file in an FSx for ONTAP SnapLock volume. The following ranges are valid: </p>
     /// <ul>
     /// <li> <p> <code>Minutes</code>: 5 - 65,535</p> </li>
@@ -89,6 +93,17 @@ impl AutocommitPeriodBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>Defines the amount of time for the autocommit period of a file in an FSx for ONTAP SnapLock volume. The following ranges are valid: </p>
+    /// <ul>
+    /// <li> <p> <code>Minutes</code>: 5 - 65,535</p> </li>
+    /// <li> <p> <code>Hours</code>: 1 - 65,535</p> </li>
+    /// <li> <p> <code>Days</code>: 1 - 3,650</p> </li>
+    /// <li> <p> <code>Months</code>: 1 - 120</p> </li>
+    /// <li> <p> <code>Years</code>: 1 - 10</p> </li>
+    /// </ul>
+    pub fn get_value(&self) -> &::std::option::Option<i32> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`AutocommitPeriod`](crate::types::AutocommitPeriod).
     pub fn build(self) -> crate::types::AutocommitPeriod {

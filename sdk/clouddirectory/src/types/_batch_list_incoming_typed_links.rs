@@ -81,6 +81,10 @@ impl BatchListIncomingTypedLinksBuilder {
         self.object_reference = input;
         self
     }
+    /// <p>The reference that identifies the object whose attributes will be listed.</p>
+    pub fn get_object_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
+        &self.object_reference
+    }
     /// Appends an item to `filter_attribute_ranges`.
     ///
     /// To override the contents of this collection use [`set_filter_attribute_ranges`](Self::set_filter_attribute_ranges).
@@ -100,6 +104,12 @@ impl BatchListIncomingTypedLinksBuilder {
         self.filter_attribute_ranges = input;
         self
     }
+    /// <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
+    pub fn get_filter_attribute_ranges(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TypedLinkAttributeRange>> {
+        &self.filter_attribute_ranges
+    }
     /// <p>Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls.</p>
     pub fn filter_typed_link(mut self, input: crate::types::TypedLinkSchemaAndFacetName) -> Self {
         self.filter_typed_link = ::std::option::Option::Some(input);
@@ -113,6 +123,12 @@ impl BatchListIncomingTypedLinksBuilder {
         self.filter_typed_link = input;
         self
     }
+    /// <p>Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls.</p>
+    pub fn get_filter_typed_link(
+        &self,
+    ) -> &::std::option::Option<crate::types::TypedLinkSchemaAndFacetName> {
+        &self.filter_typed_link
+    }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -123,6 +139,10 @@ impl BatchListIncomingTypedLinksBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to retrieve.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -132,6 +152,10 @@ impl BatchListIncomingTypedLinksBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to retrieve.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`BatchListIncomingTypedLinks`](crate::types::BatchListIncomingTypedLinks).
     pub fn build(self) -> crate::types::BatchListIncomingTypedLinks {

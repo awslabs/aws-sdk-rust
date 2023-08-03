@@ -104,6 +104,10 @@ impl MailboxExportJobBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The identifier of the mailbox export job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>The identifier of the user or resource associated with the mailbox.</p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
@@ -114,6 +118,10 @@ impl MailboxExportJobBuilder {
         self.entity_id = input;
         self
     }
+    /// <p>The identifier of the user or resource associated with the mailbox.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_id
+    }
     /// <p>The mailbox export job description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -123,6 +131,10 @@ impl MailboxExportJobBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The mailbox export job description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The name of the S3 bucket.</p>
     pub fn s3_bucket_name(
@@ -140,6 +152,10 @@ impl MailboxExportJobBuilder {
         self.s3_bucket_name = input;
         self
     }
+    /// <p>The name of the S3 bucket.</p>
+    pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_name
+    }
     /// <p>The path to the S3 bucket and file that the mailbox export job exports to.</p>
     pub fn s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_path = ::std::option::Option::Some(input.into());
@@ -150,6 +166,10 @@ impl MailboxExportJobBuilder {
         self.s3_path = input;
         self
     }
+    /// <p>The path to the S3 bucket and file that the mailbox export job exports to.</p>
+    pub fn get_s3_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_path
+    }
     /// <p>The estimated progress of the mailbox export job, in percentage points.</p>
     pub fn estimated_progress(mut self, input: i32) -> Self {
         self.estimated_progress = ::std::option::Option::Some(input);
@@ -159,6 +179,10 @@ impl MailboxExportJobBuilder {
     pub fn set_estimated_progress(mut self, input: ::std::option::Option<i32>) -> Self {
         self.estimated_progress = input;
         self
+    }
+    /// <p>The estimated progress of the mailbox export job, in percentage points.</p>
+    pub fn get_estimated_progress(&self) -> &::std::option::Option<i32> {
+        &self.estimated_progress
     }
     /// <p>The state of the mailbox export job.</p>
     pub fn state(mut self, input: crate::types::MailboxExportJobState) -> Self {
@@ -173,6 +197,10 @@ impl MailboxExportJobBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of the mailbox export job.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::MailboxExportJobState> {
+        &self.state
+    }
     /// <p>The mailbox export job start timestamp.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -186,6 +214,10 @@ impl MailboxExportJobBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The mailbox export job start timestamp.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The mailbox export job end timestamp.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -198,6 +230,10 @@ impl MailboxExportJobBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The mailbox export job end timestamp.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// Consumes the builder and constructs a [`MailboxExportJob`](crate::types::MailboxExportJob).
     pub fn build(self) -> crate::types::MailboxExportJob {

@@ -36,6 +36,10 @@ impl DescribeDocumentPermissionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeDocumentPermission as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_document_permission::builders::DescribeDocumentPermissionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl DescribeDocumentPermissionFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the document for which you are the owner.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The permission type for the document. The permission type can be <i>Share</i>.</p>
     pub fn permission_type(mut self, input: crate::types::DocumentPermissionType) -> Self {
         self.inner = self.inner.permission_type(input);
@@ -139,6 +147,12 @@ impl DescribeDocumentPermissionFluentBuilder {
         self.inner = self.inner.set_permission_type(input);
         self
     }
+    /// <p>The permission type for the document. The permission type can be <i>Share</i>.</p>
+    pub fn get_permission_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::DocumentPermissionType> {
+        self.inner.get_permission_type()
+    }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -149,6 +163,10 @@ impl DescribeDocumentPermissionFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -158,5 +176,9 @@ impl DescribeDocumentPermissionFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

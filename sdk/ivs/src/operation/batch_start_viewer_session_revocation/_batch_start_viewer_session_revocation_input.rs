@@ -60,6 +60,14 @@ impl BatchStartViewerSessionRevocationInputBuilder {
         self.viewer_sessions = input;
         self
     }
+    /// <p>Array of viewer sessions, one per channel-ARN and viewer-ID pair.</p>
+    pub fn get_viewer_sessions(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::BatchStartViewerSessionRevocationViewerSession>,
+    > {
+        &self.viewer_sessions
+    }
     /// Consumes the builder and constructs a [`BatchStartViewerSessionRevocationInput`](crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

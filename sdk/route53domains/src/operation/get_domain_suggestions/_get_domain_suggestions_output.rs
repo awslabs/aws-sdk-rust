@@ -57,6 +57,12 @@ impl GetDomainSuggestionsOutputBuilder {
         self.suggestions_list = input;
         self
     }
+    /// <p>A list of possible domain names. If you specified <code>true</code> for <code>OnlyAvailable</code> in the request, the list contains only domains that are available for registration.</p>
+    pub fn get_suggestions_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainSuggestion>> {
+        &self.suggestions_list
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

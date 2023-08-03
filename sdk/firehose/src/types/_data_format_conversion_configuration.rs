@@ -75,6 +75,12 @@ impl DataFormatConversionConfigurationBuilder {
         self.schema_configuration = input;
         self
     }
+    /// <p>Specifies the Amazon Web Services Glue Data Catalog table that contains the column information. This parameter is required if <code>Enabled</code> is set to true.</p>
+    pub fn get_schema_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SchemaConfiguration> {
+        &self.schema_configuration
+    }
     /// <p>Specifies the deserializer that you want Kinesis Data Firehose to use to convert the format of your data from JSON. This parameter is required if <code>Enabled</code> is set to true.</p>
     pub fn input_format_configuration(
         mut self,
@@ -90,6 +96,12 @@ impl DataFormatConversionConfigurationBuilder {
     ) -> Self {
         self.input_format_configuration = input;
         self
+    }
+    /// <p>Specifies the deserializer that you want Kinesis Data Firehose to use to convert the format of your data from JSON. This parameter is required if <code>Enabled</code> is set to true.</p>
+    pub fn get_input_format_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::InputFormatConfiguration> {
+        &self.input_format_configuration
     }
     /// <p>Specifies the serializer that you want Kinesis Data Firehose to use to convert the format of your data to the Parquet or ORC format. This parameter is required if <code>Enabled</code> is set to true.</p>
     pub fn output_format_configuration(
@@ -107,6 +119,12 @@ impl DataFormatConversionConfigurationBuilder {
         self.output_format_configuration = input;
         self
     }
+    /// <p>Specifies the serializer that you want Kinesis Data Firehose to use to convert the format of your data to the Parquet or ORC format. This parameter is required if <code>Enabled</code> is set to true.</p>
+    pub fn get_output_format_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::OutputFormatConfiguration> {
+        &self.output_format_configuration
+    }
     /// <p>Defaults to <code>true</code>. Set it to <code>false</code> if you want to disable format conversion while preserving the configuration details.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -116,6 +134,10 @@ impl DataFormatConversionConfigurationBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>Defaults to <code>true</code>. Set it to <code>false</code> if you want to disable format conversion while preserving the configuration details.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// Consumes the builder and constructs a [`DataFormatConversionConfiguration`](crate::types::DataFormatConversionConfiguration).
     pub fn build(self) -> crate::types::DataFormatConversionConfiguration {

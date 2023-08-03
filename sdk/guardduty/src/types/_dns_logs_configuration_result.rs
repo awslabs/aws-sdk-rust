@@ -43,6 +43,10 @@ impl DnsLogsConfigurationResultBuilder {
         self.status = input;
         self
     }
+    /// <p>Denotes whether DNS logs is enabled as a data source.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DataSourceStatus> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`DnsLogsConfigurationResult`](crate::types::DnsLogsConfigurationResult).
     pub fn build(self) -> crate::types::DnsLogsConfigurationResult {
         crate::types::DnsLogsConfigurationResult {

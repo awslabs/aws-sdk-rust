@@ -92,6 +92,12 @@ impl SearchProductsOutputBuilder {
         self.product_view_summaries = input;
         self
     }
+    /// <p>Information about the product views.</p>
+    pub fn get_product_view_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductViewSummary>> {
+        &self.product_view_summaries
+    }
     /// Adds a key-value pair to `product_view_aggregations`.
     ///
     /// To override the contents of this collection use [`set_product_view_aggregations`](Self::set_product_view_aggregations).
@@ -120,6 +126,17 @@ impl SearchProductsOutputBuilder {
         self.product_view_aggregations = input;
         self
     }
+    /// <p>The product view aggregations.</p>
+    pub fn get_product_view_aggregations(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::vec::Vec<crate::types::ProductViewAggregationValue>,
+        >,
+    > {
+        &self.product_view_aggregations
+    }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub fn next_page_token(
         mut self,
@@ -135,6 +152,10 @@ impl SearchProductsOutputBuilder {
     ) -> Self {
         self.next_page_token = input;
         self
+    }
+    /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_page_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -40,6 +40,10 @@ impl InvokedIntentSampleBuilder {
         self.intent_name = input;
         self
     }
+    /// <p>The name of an intent that was invoked.</p>
+    pub fn get_intent_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.intent_name
+    }
     /// Consumes the builder and constructs a [`InvokedIntentSample`](crate::types::InvokedIntentSample).
     pub fn build(self) -> crate::types::InvokedIntentSample {
         crate::types::InvokedIntentSample {

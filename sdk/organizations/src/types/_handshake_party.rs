@@ -58,6 +58,11 @@ impl HandshakePartyBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier (ID) for the party.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The type of party.</p>
     pub fn r#type(mut self, input: crate::types::HandshakePartyType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -70,6 +75,10 @@ impl HandshakePartyBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of party.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::HandshakePartyType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`HandshakeParty`](crate::types::HandshakeParty).
     pub fn build(self) -> crate::types::HandshakeParty {

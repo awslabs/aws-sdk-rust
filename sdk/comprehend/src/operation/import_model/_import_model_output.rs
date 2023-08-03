@@ -46,6 +46,10 @@ impl ImportModelOutputBuilder {
         self.model_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the custom model being imported.</p>
+    pub fn get_model_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

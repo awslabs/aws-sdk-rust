@@ -36,6 +36,10 @@ impl ListMobileDeviceAccessRulesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListMobileDeviceAccessRules as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_mobile_device_access_rules::builders::ListMobileDeviceAccessRulesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +135,9 @@ impl ListMobileDeviceAccessRulesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
+    }
+    /// <p>The WorkMail organization for which to list the rules.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
     }
 }

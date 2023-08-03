@@ -72,6 +72,11 @@ impl DescribeEnvironmentHealthInputBuilder {
         self.environment_name = input;
         self
     }
+    /// <p>Specify the environment by name.</p>
+    /// <p>You must specify either this or an EnvironmentName, or both.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
+    }
     /// <p>Specify the environment by ID.</p>
     /// <p>You must specify either this or an EnvironmentName, or both.</p>
     pub fn environment_id(
@@ -89,6 +94,11 @@ impl DescribeEnvironmentHealthInputBuilder {
     ) -> Self {
         self.environment_id = input;
         self
+    }
+    /// <p>Specify the environment by ID.</p>
+    /// <p>You must specify either this or an EnvironmentName, or both.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
     }
     /// Appends an item to `attribute_names`.
     ///
@@ -108,6 +118,12 @@ impl DescribeEnvironmentHealthInputBuilder {
     ) -> Self {
         self.attribute_names = input;
         self
+    }
+    /// <p>Specify the response elements to return. To retrieve all attributes, set to <code>All</code>. If no attribute names are specified, returns the name of the environment.</p>
+    pub fn get_attribute_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentHealthAttribute>> {
+        &self.attribute_names
     }
     /// Consumes the builder and constructs a [`DescribeEnvironmentHealthInput`](crate::operation::describe_environment_health::DescribeEnvironmentHealthInput).
     pub fn build(

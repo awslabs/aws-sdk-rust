@@ -55,6 +55,10 @@ impl PutAccessPointPolicyForObjectLambdaInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The name of the Object Lambda Access Point.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl PutAccessPointPolicyForObjectLambdaInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the Object Lambda Access Point.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Object Lambda Access Point resource policy document.</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
@@ -74,6 +82,10 @@ impl PutAccessPointPolicyForObjectLambdaInputBuilder {
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy = input;
         self
+    }
+    /// <p>Object Lambda Access Point resource policy document.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy
     }
     /// Consumes the builder and constructs a [`PutAccessPointPolicyForObjectLambdaInput`](crate::operation::put_access_point_policy_for_object_lambda::PutAccessPointPolicyForObjectLambdaInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_access_point_policy_for_object_lambda::PutAccessPointPolicyForObjectLambdaInput, ::aws_smithy_http::operation::error::BuildError>{

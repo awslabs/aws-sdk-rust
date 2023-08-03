@@ -36,6 +36,10 @@ impl AcceptReservedNodeExchangeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AcceptReservedNodeExchange as a reference.
+    pub fn as_input(&self) -> &crate::operation::accept_reserved_node_exchange::builders::AcceptReservedNodeExchangeInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl AcceptReservedNodeExchangeFluentBuilder {
         self.inner = self.inner.set_reserved_node_id(input);
         self
     }
+    /// <p>A string representing the node identifier of the DC1 Reserved Node to be exchanged.</p>
+    pub fn get_reserved_node_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reserved_node_id()
+    }
     /// <p>The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the value for the parameter by calling <code>GetReservedNodeExchangeOfferings</code> </p>
     pub fn target_reserved_node_offering_id(
         mut self,
@@ -147,5 +155,11 @@ impl AcceptReservedNodeExchangeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_target_reserved_node_offering_id(input);
         self
+    }
+    /// <p>The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the value for the parameter by calling <code>GetReservedNodeExchangeOfferings</code> </p>
+    pub fn get_target_reserved_node_offering_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_reserved_node_offering_id()
     }
 }

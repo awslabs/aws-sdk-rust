@@ -53,6 +53,12 @@ impl StackConfigInputBuilder {
         self.output_resolution = input;
         self
     }
+    /// <p>The structure representing output resolution (in target georeferenced units) of the result of stacking operation.</p>
+    pub fn get_output_resolution(
+        &self,
+    ) -> &::std::option::Option<crate::types::OutputResolutionStackInput> {
+        &self.output_resolution
+    }
     /// Appends an item to `target_bands`.
     ///
     /// To override the contents of this collection use [`set_target_bands`](Self::set_target_bands).
@@ -71,6 +77,12 @@ impl StackConfigInputBuilder {
     ) -> Self {
         self.target_bands = input;
         self
+    }
+    /// <p>A list of bands to be stacked in the specified order. When the parameter is not provided, all the available bands in the data collection are stacked in the alphabetical order of their asset names.</p>
+    pub fn get_target_bands(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.target_bands
     }
     /// Consumes the builder and constructs a [`StackConfigInput`](crate::types::StackConfigInput).
     pub fn build(self) -> crate::types::StackConfigInput {

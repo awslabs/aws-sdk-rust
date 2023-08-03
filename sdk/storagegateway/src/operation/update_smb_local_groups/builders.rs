@@ -36,6 +36,13 @@ impl UpdateSMBLocalGroupsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateSMBLocalGroups as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_smb_local_groups::builders::UpdateSmbLocalGroupsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl UpdateSMBLocalGroupsFluentBuilder {
         self.inner = self.inner.set_gateway_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gateway_arn()
+    }
     /// <p>A list of Active Directory users and groups that you want to grant special permissions for SMB file shares on the gateway.</p>
     pub fn smb_local_groups(mut self, input: crate::types::SmbLocalGroups) -> Self {
         self.inner = self.inner.smb_local_groups(input);
@@ -138,5 +149,9 @@ impl UpdateSMBLocalGroupsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_smb_local_groups(input);
         self
+    }
+    /// <p>A list of Active Directory users and groups that you want to grant special permissions for SMB file shares on the gateway.</p>
+    pub fn get_smb_local_groups(&self) -> &::std::option::Option<crate::types::SmbLocalGroups> {
+        self.inner.get_smb_local_groups()
     }
 }

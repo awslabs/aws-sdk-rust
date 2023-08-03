@@ -36,6 +36,12 @@ impl ListUserAssociationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListUserAssociations as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_user_associations::builders::ListUserAssociationsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListUserAssociationsFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>An object that specifies details for the identity provider.</p>
     pub fn identity_provider(mut self, input: crate::types::IdentityProvider) -> Self {
         self.inner = self.inner.identity_provider(input);
@@ -150,6 +160,10 @@ impl ListUserAssociationsFluentBuilder {
         self.inner = self.inner.set_identity_provider(input);
         self
     }
+    /// <p>An object that specifies details for the identity provider.</p>
+    pub fn get_identity_provider(&self) -> &::std::option::Option<crate::types::IdentityProvider> {
+        self.inner.get_identity_provider()
+    }
     /// <p>Maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -159,6 +173,10 @@ impl ListUserAssociationsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>Maximum number of results to return in a single call.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// Appends an item to `Filters`.
     ///
@@ -177,6 +195,10 @@ impl ListUserAssociationsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// <p>Token for the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -186,5 +208,9 @@ impl ListUserAssociationsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>Token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

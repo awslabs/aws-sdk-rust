@@ -52,6 +52,12 @@ impl ListBillingGroupCostReportsFilterBuilder {
         self.billing_group_arns = input;
         self
     }
+    /// <p>The list of Amazon Resource Names (ARNs) used to filter billing groups to retrieve reports. </p>
+    pub fn get_billing_group_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.billing_group_arns
+    }
     /// Consumes the builder and constructs a [`ListBillingGroupCostReportsFilter`](crate::types::ListBillingGroupCostReportsFilter).
     pub fn build(self) -> crate::types::ListBillingGroupCostReportsFilter {
         crate::types::ListBillingGroupCostReportsFilter {

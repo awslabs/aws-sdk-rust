@@ -55,6 +55,10 @@ impl GetWorkflowRunInputBuilder {
         self.name = input;
         self
     }
+    /// <p>Name of the workflow being run.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The ID of the workflow run.</p>
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.run_id = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl GetWorkflowRunInputBuilder {
         self.run_id = input;
         self
     }
+    /// <p>The ID of the workflow run.</p>
+    pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.run_id
+    }
     /// <p>Specifies whether to include the workflow graph in response or not.</p>
     pub fn include_graph(mut self, input: bool) -> Self {
         self.include_graph = ::std::option::Option::Some(input);
@@ -74,6 +82,10 @@ impl GetWorkflowRunInputBuilder {
     pub fn set_include_graph(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_graph = input;
         self
+    }
+    /// <p>Specifies whether to include the workflow graph in response or not.</p>
+    pub fn get_include_graph(&self) -> &::std::option::Option<bool> {
+        &self.include_graph
     }
     /// Consumes the builder and constructs a [`GetWorkflowRunInput`](crate::operation::get_workflow_run::GetWorkflowRunInput).
     pub fn build(

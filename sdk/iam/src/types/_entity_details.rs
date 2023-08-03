@@ -54,6 +54,10 @@ impl EntityDetailsBuilder {
         self.entity_info = input;
         self
     }
+    /// <p>The&nbsp;<code>EntityInfo</code> object that contains details about the entity (user or role).</p>
+    pub fn get_entity_info(&self) -> &::std::option::Option<crate::types::EntityInfo> {
+        &self.entity_info
+    }
     /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the authenticated entity last attempted to access Amazon Web Services. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no IAM entities attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking period</a>.</p>
     pub fn last_authenticated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -68,6 +72,11 @@ impl EntityDetailsBuilder {
     ) -> Self {
         self.last_authenticated = input;
         self
+    }
+    /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the authenticated entity last attempted to access Amazon Web Services. Amazon Web Services does not report unauthenticated requests.</p>
+    /// <p>This field is null if no IAM entities attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking period</a>.</p>
+    pub fn get_last_authenticated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_authenticated
     }
     /// Consumes the builder and constructs a [`EntityDetails`](crate::types::EntityDetails).
     pub fn build(self) -> crate::types::EntityDetails {

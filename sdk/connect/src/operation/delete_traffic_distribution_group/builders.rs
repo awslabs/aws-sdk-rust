@@ -37,6 +37,10 @@ impl DeleteTrafficDistributionGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteTrafficDistributionGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_traffic_distribution_group::builders::DeleteTrafficDistributionGroupInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,5 +110,11 @@ impl DeleteTrafficDistributionGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_traffic_distribution_group_id(input);
         self
+    }
+    /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
+    pub fn get_traffic_distribution_group_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_traffic_distribution_group_id()
     }
 }

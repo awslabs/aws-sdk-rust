@@ -63,6 +63,10 @@ impl PhoneNumberBuilder {
         self.value = input;
         self
     }
+    /// <p>A string containing a phone number. For example, "8675309" or "+1 (800) 123-4567".</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// <p>A string representing the type of a phone number. For example, "Mobile."</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl PhoneNumberBuilder {
         self.r#type = input;
         self
     }
+    /// <p>A string representing the type of a phone number. For example, "Mobile."</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p>A Boolean value representing whether this is the primary phone number for the associated resource.</p>
     pub fn primary(mut self, input: bool) -> Self {
         self.primary = ::std::option::Option::Some(input);
@@ -82,6 +90,10 @@ impl PhoneNumberBuilder {
     pub fn set_primary(mut self, input: ::std::option::Option<bool>) -> Self {
         self.primary = input;
         self
+    }
+    /// <p>A Boolean value representing whether this is the primary phone number for the associated resource.</p>
+    pub fn get_primary(&self) -> &::std::option::Option<bool> {
+        &self.primary
     }
     /// Consumes the builder and constructs a [`PhoneNumber`](crate::types::PhoneNumber).
     pub fn build(self) -> crate::types::PhoneNumber {

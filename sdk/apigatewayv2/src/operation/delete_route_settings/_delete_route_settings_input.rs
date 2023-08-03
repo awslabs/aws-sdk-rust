@@ -57,6 +57,10 @@ impl DeleteRouteSettingsInputBuilder {
         self.api_id = input;
         self
     }
+    /// <p>The API identifier.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
+    }
     /// <p>The route key.</p>
     pub fn route_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_key = ::std::option::Option::Some(input.into());
@@ -67,6 +71,10 @@ impl DeleteRouteSettingsInputBuilder {
         self.route_key = input;
         self
     }
+    /// <p>The route key.</p>
+    pub fn get_route_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.route_key
+    }
     /// <p>The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_name = ::std::option::Option::Some(input.into());
@@ -76,6 +84,10 @@ impl DeleteRouteSettingsInputBuilder {
     pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stage_name = input;
         self
+    }
+    /// <p>The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
+    pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stage_name
     }
     /// Consumes the builder and constructs a [`DeleteRouteSettingsInput`](crate::operation::delete_route_settings::DeleteRouteSettingsInput).
     pub fn build(

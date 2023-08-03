@@ -38,6 +38,12 @@ impl CreateDBClusterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDBCluster as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_db_cluster::builders::CreateDbClusterInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +144,12 @@ impl CreateDBClusterFluentBuilder {
         self.inner = self.inner.set_availability_zones(input);
         self
     }
+    /// <p>A list of EC2 Availability Zones that instances in the DB cluster can be created in.</p>
+    pub fn get_availability_zones(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_availability_zones()
+    }
     /// <p>The number of days for which automated backups are retained. You must specify a minimum value of 1.</p>
     /// <p>Default: 1</p>
     /// <p>Constraints:</p>
@@ -158,6 +170,15 @@ impl CreateDBClusterFluentBuilder {
         self.inner = self.inner.set_backup_retention_period(input);
         self
     }
+    /// <p>The number of days for which automated backups are retained. You must specify a minimum value of 1.</p>
+    /// <p>Default: 1</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be a value from 1 to 35</p> </li>
+    /// </ul>
+    pub fn get_backup_retention_period(&self) -> &::std::option::Option<i32> {
+        self.inner.get_backup_retention_period()
+    }
     /// <p> <i>(Not supported by Neptune)</i> </p>
     pub fn character_set_name(
         mut self,
@@ -174,6 +195,10 @@ impl CreateDBClusterFluentBuilder {
         self.inner = self.inner.set_character_set_name(input);
         self
     }
+    /// <p> <i>(Not supported by Neptune)</i> </p>
+    pub fn get_character_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_character_set_name()
+    }
     /// <p> <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i> </p>
     pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
         self.inner = self.inner.copy_tags_to_snapshot(input);
@@ -183,6 +208,10 @@ impl CreateDBClusterFluentBuilder {
     pub fn set_copy_tags_to_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_copy_tags_to_snapshot(input);
         self
+    }
+    /// <p> <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i> </p>
+    pub fn get_copy_tags_to_snapshot(&self) -> &::std::option::Option<bool> {
+        self.inner.get_copy_tags_to_snapshot()
     }
     /// <p>The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon Neptune will not create a database in the DB cluster you are creating.</p>
     pub fn database_name(
@@ -199,6 +228,10 @@ impl CreateDBClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
+    }
+    /// <p>The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon Neptune will not create a database in the DB cluster you are creating.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_database_name()
     }
     /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
@@ -230,6 +263,17 @@ impl CreateDBClusterFluentBuilder {
         self.inner = self.inner.set_db_cluster_identifier(input);
         self
     }
+    /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// </ul>
+    /// <p>Example: <code>my-cluster1</code> </p>
+    pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_cluster_identifier()
+    }
     /// <p> The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted, the default is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -254,6 +298,16 @@ impl CreateDBClusterFluentBuilder {
         self.inner = self.inner.set_db_cluster_parameter_group_name(input);
         self
     }
+    /// <p> The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted, the default is used.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
+    /// </ul>
+    pub fn get_db_cluster_parameter_group_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_cluster_parameter_group_name()
+    }
     /// Appends an item to `VpcSecurityGroupIds`.
     ///
     /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
@@ -273,6 +327,12 @@ impl CreateDBClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_vpc_security_group_ids(input);
         self
+    }
+    /// <p>A list of EC2 VPC security groups to associate with this DB cluster.</p>
+    pub fn get_vpc_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_vpc_security_group_ids()
     }
     /// <p>A DB subnet group to associate with this DB cluster.</p>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
@@ -294,6 +354,12 @@ impl CreateDBClusterFluentBuilder {
         self.inner = self.inner.set_db_subnet_group_name(input);
         self
     }
+    /// <p>A DB subnet group to associate with this DB cluster.</p>
+    /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
+    /// <p>Example: <code>mySubnetgroup</code> </p>
+    pub fn get_db_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_subnet_group_name()
+    }
     /// <p>The name of the database engine to be used for this DB cluster.</p>
     /// <p>Valid Values: <code>neptune</code> </p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -305,6 +371,11 @@ impl CreateDBClusterFluentBuilder {
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine(input);
         self
+    }
+    /// <p>The name of the database engine to be used for this DB cluster.</p>
+    /// <p>Valid Values: <code>neptune</code> </p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_engine()
     }
     /// <p>The version number of the database engine to use for the new DB cluster.</p>
     /// <p>Example: <code>1.0.2.1</code> </p>
@@ -324,6 +395,11 @@ impl CreateDBClusterFluentBuilder {
         self.inner = self.inner.set_engine_version(input);
         self
     }
+    /// <p>The version number of the database engine to use for the new DB cluster.</p>
+    /// <p>Example: <code>1.0.2.1</code> </p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_engine_version()
+    }
     /// <p>The port number on which the instances in the DB cluster accept connections.</p>
     /// <p> Default: <code>8182</code> </p>
     pub fn port(mut self, input: i32) -> Self {
@@ -335,6 +411,11 @@ impl CreateDBClusterFluentBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_port(input);
         self
+    }
+    /// <p>The port number on which the instances in the DB cluster accept connections.</p>
+    /// <p> Default: <code>8182</code> </p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        self.inner.get_port()
     }
     /// <p>Not supported by Neptune.</p>
     pub fn master_username(
@@ -353,6 +434,10 @@ impl CreateDBClusterFluentBuilder {
         self
     }
     /// <p>Not supported by Neptune.</p>
+    pub fn get_master_username(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_master_username()
+    }
+    /// <p>Not supported by Neptune.</p>
     pub fn master_user_password(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -367,6 +452,10 @@ impl CreateDBClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_master_user_password(input);
         self
+    }
+    /// <p>Not supported by Neptune.</p>
+    pub fn get_master_user_password(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_master_user_password()
     }
     /// <p> <i>(Not supported by Neptune)</i> </p>
     pub fn option_group_name(
@@ -383,6 +472,10 @@ impl CreateDBClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_option_group_name(input);
         self
+    }
+    /// <p> <i>(Not supported by Neptune)</i> </p>
+    pub fn get_option_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_option_group_name()
     }
     /// <p>The daily time range during which automated backups are created if automated backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p>
@@ -416,6 +509,18 @@ impl CreateDBClusterFluentBuilder {
         self.inner = self.inner.set_preferred_backup_window(input);
         self
     }
+    /// <p>The daily time range during which automated backups are created if automated backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>
+    /// <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>
+    /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
+    /// <li> <p>Must be at least 30 minutes.</p> </li>
+    /// </ul>
+    pub fn get_preferred_backup_window(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_preferred_backup_window()
+    }
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region, occurring on a random day of the week. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p>
@@ -440,6 +545,16 @@ impl CreateDBClusterFluentBuilder {
         self.inner = self.inner.set_preferred_maintenance_window(input);
         self
     }
+    /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
+    /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region, occurring on a random day of the week. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p>
+    /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
+    /// <p>Constraints: Minimum 30-minute window.</p>
+    pub fn get_preferred_maintenance_window(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_preferred_maintenance_window()
+    }
     /// <p>The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB cluster is created as a Read Replica.</p>
     pub fn replication_source_identifier(
         mut self,
@@ -455,6 +570,12 @@ impl CreateDBClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_replication_source_identifier(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB cluster is created as a Read Replica.</p>
+    pub fn get_replication_source_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_replication_source_identifier()
     }
     /// Appends an item to `Tags`.
     ///
@@ -473,6 +594,10 @@ impl CreateDBClusterFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags to assign to the new DB cluster.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>Specifies whether the DB cluster is encrypted.</p>
     pub fn storage_encrypted(mut self, input: bool) -> Self {
         self.inner = self.inner.storage_encrypted(input);
@@ -482,6 +607,10 @@ impl CreateDBClusterFluentBuilder {
     pub fn set_storage_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_storage_encrypted(input);
         self
+    }
+    /// <p>Specifies whether the DB cluster is encrypted.</p>
+    pub fn get_storage_encrypted(&self) -> &::std::option::Option<bool> {
+        self.inner.get_storage_encrypted()
     }
     /// <p>The Amazon KMS key identifier for an encrypted DB cluster.</p>
     /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
@@ -509,6 +638,18 @@ impl CreateDBClusterFluentBuilder {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }
+    /// <p>The Amazon KMS key identifier for an encrypted DB cluster.</p>
+    /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
+    /// <p>If an encryption key is not specified in <code>KmsKeyId</code>:</p>
+    /// <ul>
+    /// <li> <p>If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then Amazon Neptune will use the encryption key used to encrypt the source. Otherwise, Amazon Neptune will use your default encryption key.</p> </li>
+    /// <li> <p>If the <code>StorageEncrypted</code> parameter is true and <code>ReplicationSourceIdentifier</code> is not specified, then Amazon Neptune will use your default encryption key.</p> </li>
+    /// </ul>
+    /// <p>Amazon KMS creates the default encryption key for your Amazon account. Your Amazon account has a different default encryption key for each Amazon Region.</p>
+    /// <p>If you create a Read Replica of an encrypted DB cluster in another Amazon Region, you must set <code>KmsKeyId</code> to a KMS key ID that is valid in the destination Amazon Region. This key is used to encrypt the Read Replica in that Amazon Region.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_id()
+    }
     /// <p>This parameter is not currently supported.</p>
     pub fn pre_signed_url(
         mut self,
@@ -525,6 +666,10 @@ impl CreateDBClusterFluentBuilder {
         self.inner = self.inner.set_pre_signed_url(input);
         self
     }
+    /// <p>This parameter is not currently supported.</p>
+    pub fn get_pre_signed_url(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pre_signed_url()
+    }
     /// <p>If set to <code>true</code>, enables Amazon Identity and Access Management (IAM) authentication for the entire DB cluster (this cannot be set at an instance level).</p>
     /// <p>Default: <code>false</code>.</p>
     pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
@@ -539,6 +684,11 @@ impl CreateDBClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_enable_iam_database_authentication(input);
         self
+    }
+    /// <p>If set to <code>true</code>, enables Amazon Identity and Access Management (IAM) authentication for the entire DB cluster (this cannot be set at an instance level).</p>
+    /// <p>Default: <code>false</code>.</p>
+    pub fn get_enable_iam_database_authentication(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_iam_database_authentication()
     }
     /// Appends an item to `EnableCloudwatchLogsExports`.
     ///
@@ -560,6 +710,12 @@ impl CreateDBClusterFluentBuilder {
         self.inner = self.inner.set_enable_cloudwatch_logs_exports(input);
         self
     }
+    /// <p>The list of log types that need to be enabled for exporting to CloudWatch Logs.</p>
+    pub fn get_enable_cloudwatch_logs_exports(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_enable_cloudwatch_logs_exports()
+    }
     /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is enabled.</p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
         self.inner = self.inner.deletion_protection(input);
@@ -569,6 +725,10 @@ impl CreateDBClusterFluentBuilder {
     pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_deletion_protection(input);
         self
+    }
+    /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is enabled.</p>
+    pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
+        self.inner.get_deletion_protection()
     }
     /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
@@ -588,6 +748,13 @@ impl CreateDBClusterFluentBuilder {
         self.inner = self.inner.set_serverless_v2_scaling_configuration(input);
         self
     }
+    /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+    pub fn get_serverless_v2_scaling_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServerlessV2ScalingConfiguration> {
+        self.inner.get_serverless_v2_scaling_configuration()
+    }
     /// <p>The ID of the Neptune global database to which this new DB cluster should be added.</p>
     pub fn global_cluster_identifier(
         mut self,
@@ -603,5 +770,9 @@ impl CreateDBClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_global_cluster_identifier(input);
         self
+    }
+    /// <p>The ID of the Neptune global database to which this new DB cluster should be added.</p>
+    pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_global_cluster_identifier()
     }
 }

@@ -40,6 +40,10 @@ impl ElasticGpuSpecificationResponseBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The elastic GPU type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// Consumes the builder and constructs a [`ElasticGpuSpecificationResponse`](crate::types::ElasticGpuSpecificationResponse).
     pub fn build(self) -> crate::types::ElasticGpuSpecificationResponse {
         crate::types::ElasticGpuSpecificationResponse {

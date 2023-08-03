@@ -57,6 +57,10 @@ impl DeactivateEvaluationFormInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The unique identifier for the evaluation form.</p>
     pub fn evaluation_form_id(
         mut self,
@@ -73,6 +77,10 @@ impl DeactivateEvaluationFormInputBuilder {
         self.evaluation_form_id = input;
         self
     }
+    /// <p>The unique identifier for the evaluation form.</p>
+    pub fn get_evaluation_form_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_form_id
+    }
     /// <p>A version of the evaluation form. If the version property is not provided, the latest version of the evaluation form is deactivated.</p>
     pub fn evaluation_form_version(mut self, input: i32) -> Self {
         self.evaluation_form_version = ::std::option::Option::Some(input);
@@ -82,6 +90,10 @@ impl DeactivateEvaluationFormInputBuilder {
     pub fn set_evaluation_form_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.evaluation_form_version = input;
         self
+    }
+    /// <p>A version of the evaluation form. If the version property is not provided, the latest version of the evaluation form is deactivated.</p>
+    pub fn get_evaluation_form_version(&self) -> &::std::option::Option<i32> {
+        &self.evaluation_form_version
     }
     /// Consumes the builder and constructs a [`DeactivateEvaluationFormInput`](crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormInput).
     pub fn build(

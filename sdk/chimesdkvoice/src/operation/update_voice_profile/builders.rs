@@ -39,6 +39,12 @@ impl UpdateVoiceProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateVoiceProfile as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_voice_profile::builders::UpdateVoiceProfileInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +141,10 @@ impl UpdateVoiceProfileFluentBuilder {
         self.inner = self.inner.set_voice_profile_id(input);
         self
     }
+    /// <p>The profile ID.</p>
+    pub fn get_voice_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_voice_profile_id()
+    }
     /// <p>The ID of the speaker search task.</p>
     pub fn speaker_search_task_id(
         mut self,
@@ -150,5 +160,9 @@ impl UpdateVoiceProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_speaker_search_task_id(input);
         self
+    }
+    /// <p>The ID of the speaker search task.</p>
+    pub fn get_speaker_search_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_speaker_search_task_id()
     }
 }

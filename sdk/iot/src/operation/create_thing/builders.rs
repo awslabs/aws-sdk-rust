@@ -39,6 +39,10 @@ impl CreateThingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateThing as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_thing::builders::CreateThingInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -123,6 +127,11 @@ impl CreateThingFluentBuilder {
         self.inner = self.inner.set_thing_name(input);
         self
     }
+    /// <p>The name of the thing to create.</p>
+    /// <p>You can't change a thing's name after you create it. To change a thing's name, you must create a new thing, give it the new name, and then delete the old thing.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_thing_name()
+    }
     /// <p>The name of the thing type associated with the new thing.</p>
     pub fn thing_type_name(
         mut self,
@@ -139,6 +148,10 @@ impl CreateThingFluentBuilder {
         self.inner = self.inner.set_thing_type_name(input);
         self
     }
+    /// <p>The name of the thing type associated with the new thing.</p>
+    pub fn get_thing_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_thing_type_name()
+    }
     /// <p>The attribute payload, which consists of up to three name/value pairs in a JSON document. For example:</p>
     /// <p> <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
     pub fn attribute_payload(mut self, input: crate::types::AttributePayload) -> Self {
@@ -153,6 +166,11 @@ impl CreateThingFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_attribute_payload(input);
         self
+    }
+    /// <p>The attribute payload, which consists of up to three name/value pairs in a JSON document. For example:</p>
+    /// <p> <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
+    pub fn get_attribute_payload(&self) -> &::std::option::Option<crate::types::AttributePayload> {
+        self.inner.get_attribute_payload()
     }
     /// <p>The name of the billing group the thing will be added to.</p>
     pub fn billing_group_name(
@@ -169,5 +187,9 @@ impl CreateThingFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_billing_group_name(input);
         self
+    }
+    /// <p>The name of the billing group the thing will be added to.</p>
+    pub fn get_billing_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_billing_group_name()
     }
 }

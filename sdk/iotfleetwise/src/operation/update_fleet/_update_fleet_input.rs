@@ -47,6 +47,10 @@ impl UpdateFleetInputBuilder {
         self.fleet_id = input;
         self
     }
+    /// <p> The ID of the fleet to update. </p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_id
+    }
     /// <p> An updated description of the fleet. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl UpdateFleetInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p> An updated description of the fleet. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`UpdateFleetInput`](crate::operation::update_fleet::UpdateFleetInput).
     pub fn build(

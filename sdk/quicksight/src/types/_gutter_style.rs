@@ -40,6 +40,10 @@ impl GutterStyleBuilder {
         self.show = input;
         self
     }
+    /// <p>This Boolean value controls whether to display a gutter space between sheet tiles. </p>
+    pub fn get_show(&self) -> &::std::option::Option<bool> {
+        &self.show
+    }
     /// Consumes the builder and constructs a [`GutterStyle`](crate::types::GutterStyle).
     pub fn build(self) -> crate::types::GutterStyle {
         crate::types::GutterStyle { show: self.show }

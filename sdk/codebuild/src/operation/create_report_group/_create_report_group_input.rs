@@ -66,6 +66,10 @@ impl CreateReportGroupInputBuilder {
         self.name = input;
         self
     }
+    /// <p> The name of the report group. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p> The type of report group. </p>
     pub fn r#type(mut self, input: crate::types::ReportType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl CreateReportGroupInputBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ReportType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p> The type of report group. </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ReportType> {
+        &self.r#type
     }
     /// <p> A <code>ReportExportConfig</code> object that contains information about where the report group test results are exported. </p>
     pub fn export_config(mut self, input: crate::types::ReportExportConfig) -> Self {
@@ -88,6 +96,10 @@ impl CreateReportGroupInputBuilder {
     ) -> Self {
         self.export_config = input;
         self
+    }
+    /// <p> A <code>ReportExportConfig</code> object that contains information about where the report group test results are exported. </p>
+    pub fn get_export_config(&self) -> &::std::option::Option<crate::types::ReportExportConfig> {
+        &self.export_config
     }
     /// Appends an item to `tags`.
     ///
@@ -109,6 +121,11 @@ impl CreateReportGroupInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p> A list of tag key and value pairs associated with this report group. </p>
+    /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateReportGroupInput`](crate::operation::create_report_group::CreateReportGroupInput).
     pub fn build(

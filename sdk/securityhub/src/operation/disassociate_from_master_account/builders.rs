@@ -42,6 +42,10 @@ impl DisassociateFromMasterAccountFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateFromMasterAccount as a reference.
+    pub fn as_input(&self) -> &crate::operation::disassociate_from_master_account::builders::DisassociateFromMasterAccountInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(

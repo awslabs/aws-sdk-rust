@@ -51,6 +51,10 @@ impl ChallengeResponseTypeBuilder {
         self.challenge_name = input;
         self
     }
+    /// <p>The challenge name.</p>
+    pub fn get_challenge_name(&self) -> &::std::option::Option<crate::types::ChallengeName> {
+        &self.challenge_name
+    }
     /// <p>The challenge response.</p>
     pub fn challenge_response(mut self, input: crate::types::ChallengeResponse) -> Self {
         self.challenge_response = ::std::option::Option::Some(input);
@@ -63,6 +67,12 @@ impl ChallengeResponseTypeBuilder {
     ) -> Self {
         self.challenge_response = input;
         self
+    }
+    /// <p>The challenge response.</p>
+    pub fn get_challenge_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::ChallengeResponse> {
+        &self.challenge_response
     }
     /// Consumes the builder and constructs a [`ChallengeResponseType`](crate::types::ChallengeResponseType).
     pub fn build(self) -> crate::types::ChallengeResponseType {

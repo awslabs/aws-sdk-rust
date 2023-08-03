@@ -48,6 +48,10 @@ impl GetPackageVersionInputBuilder {
         self.package_name = input;
         self
     }
+    /// <p>The name of the associated package.</p>
+    pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_name
+    }
     /// <p>The name of the target package version.</p>
     pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl GetPackageVersionInputBuilder {
     pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_name = input;
         self
+    }
+    /// <p>The name of the target package version.</p>
+    pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_name
     }
     /// Consumes the builder and constructs a [`GetPackageVersionInput`](crate::operation::get_package_version::GetPackageVersionInput).
     pub fn build(

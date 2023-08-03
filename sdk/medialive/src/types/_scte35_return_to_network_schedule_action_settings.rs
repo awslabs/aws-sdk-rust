@@ -40,6 +40,10 @@ impl Scte35ReturnToNetworkScheduleActionSettingsBuilder {
         self.splice_event_id = input;
         self
     }
+    /// The splice_event_id for the SCTE-35 splice_insert, as defined in SCTE-35.
+    pub fn get_splice_event_id(&self) -> &::std::option::Option<i64> {
+        &self.splice_event_id
+    }
     /// Consumes the builder and constructs a [`Scte35ReturnToNetworkScheduleActionSettings`](crate::types::Scte35ReturnToNetworkScheduleActionSettings).
     pub fn build(self) -> crate::types::Scte35ReturnToNetworkScheduleActionSettings {
         crate::types::Scte35ReturnToNetworkScheduleActionSettings {

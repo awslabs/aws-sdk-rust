@@ -36,6 +36,12 @@ impl RestoreFromSnapshotFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RestoreFromSnapshot as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::restore_from_snapshot::builders::RestoreFromSnapshotInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl RestoreFromSnapshotFluentBuilder {
         self.inner = self.inner.set_namespace_name(input);
         self
     }
+    /// <p>The name of the namespace to restore the snapshot to.</p>
+    pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace_name()
+    }
     /// <p>The name of the workgroup used to restore the snapshot.</p>
     pub fn workgroup_name(
         mut self,
@@ -147,6 +157,10 @@ impl RestoreFromSnapshotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_workgroup_name(input);
         self
+    }
+    /// <p>The name of the workgroup used to restore the snapshot.</p>
+    pub fn get_workgroup_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workgroup_name()
     }
     /// <p>The name of the snapshot to restore from. Must not be specified at the same time as <code>snapshotArn</code>.</p>
     pub fn snapshot_name(
@@ -164,6 +178,10 @@ impl RestoreFromSnapshotFluentBuilder {
         self.inner = self.inner.set_snapshot_name(input);
         self
     }
+    /// <p>The name of the snapshot to restore from. Must not be specified at the same time as <code>snapshotArn</code>.</p>
+    pub fn get_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_name()
+    }
     /// <p>The Amazon Resource Name (ARN) of the snapshot to restore from. Required if restoring from Amazon Redshift Serverless to a provisioned cluster. Must not be specified at the same time as <code>snapshotName</code>.</p>
     /// <p>The format of the ARN is arn:aws:redshift:&lt;region&gt;:&lt;account_id&gt;:snapshot:&lt;cluster_identifier&gt;/&lt;snapshot_identifier&gt;.</p>
     pub fn snapshot_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -175,6 +193,11 @@ impl RestoreFromSnapshotFluentBuilder {
     pub fn set_snapshot_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the snapshot to restore from. Required if restoring from Amazon Redshift Serverless to a provisioned cluster. Must not be specified at the same time as <code>snapshotName</code>.</p>
+    /// <p>The format of the ARN is arn:aws:redshift:&lt;region&gt;:&lt;account_id&gt;:snapshot:&lt;cluster_identifier&gt;/&lt;snapshot_identifier&gt;.</p>
+    pub fn get_snapshot_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_arn()
     }
     /// <p>The Amazon Web Services account that owns the snapshot.</p>
     pub fn owner_account(
@@ -191,5 +214,9 @@ impl RestoreFromSnapshotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_owner_account(input);
         self
+    }
+    /// <p>The Amazon Web Services account that owns the snapshot.</p>
+    pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_owner_account()
     }
 }

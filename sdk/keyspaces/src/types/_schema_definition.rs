@@ -73,6 +73,12 @@ impl SchemaDefinitionBuilder {
         self.all_columns = input;
         self
     }
+    /// <p>The regular columns of the table.</p>
+    pub fn get_all_columns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnDefinition>> {
+        &self.all_columns
+    }
     /// Appends an item to `partition_keys`.
     ///
     /// To override the contents of this collection use [`set_partition_keys`](Self::set_partition_keys).
@@ -91,6 +97,12 @@ impl SchemaDefinitionBuilder {
     ) -> Self {
         self.partition_keys = input;
         self
+    }
+    /// <p>The columns that are part of the partition key of the table .</p>
+    pub fn get_partition_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PartitionKey>> {
+        &self.partition_keys
     }
     /// Appends an item to `clustering_keys`.
     ///
@@ -111,6 +123,12 @@ impl SchemaDefinitionBuilder {
         self.clustering_keys = input;
         self
     }
+    /// <p>The columns that are part of the clustering key of the table.</p>
+    pub fn get_clustering_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusteringKey>> {
+        &self.clustering_keys
+    }
     /// Appends an item to `static_columns`.
     ///
     /// To override the contents of this collection use [`set_static_columns`](Self::set_static_columns).
@@ -129,6 +147,12 @@ impl SchemaDefinitionBuilder {
     ) -> Self {
         self.static_columns = input;
         self
+    }
+    /// <p>The columns that have been defined as <code>STATIC</code>. Static columns store values that are shared by all rows in the same partition.</p>
+    pub fn get_static_columns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StaticColumn>> {
+        &self.static_columns
     }
     /// Consumes the builder and constructs a [`SchemaDefinition`](crate::types::SchemaDefinition).
     pub fn build(self) -> crate::types::SchemaDefinition {

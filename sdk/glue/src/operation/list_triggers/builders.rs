@@ -37,6 +37,10 @@ impl ListTriggersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListTriggers as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_triggers::builders::ListTriggersInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +134,10 @@ impl ListTriggersFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A continuation token, if this is a continuation request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p> The name of the job for which to retrieve triggers. The trigger that can start this job is returned. If there is no such trigger, all triggers are returned.</p>
     pub fn dependent_job_name(
         mut self,
@@ -146,6 +154,10 @@ impl ListTriggersFluentBuilder {
         self.inner = self.inner.set_dependent_job_name(input);
         self
     }
+    /// <p> The name of the job for which to retrieve triggers. The trigger that can start this job is returned. If there is no such trigger, all triggers are returned.</p>
+    pub fn get_dependent_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dependent_job_name()
+    }
     /// <p>The maximum size of a list to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -155,6 +167,10 @@ impl ListTriggersFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum size of a list to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -178,5 +194,13 @@ impl ListTriggersFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Specifies to return only these tagged resources.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

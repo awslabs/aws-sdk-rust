@@ -36,6 +36,10 @@ impl GetRelationalDatabaseEventsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetRelationalDatabaseEvents as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_relational_database_events::builders::GetRelationalDatabaseEventsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl GetRelationalDatabaseEventsFluentBuilder {
         self.inner = self.inner.set_relational_database_name(input);
         self
     }
+    /// <p>The name of the database from which to get events.</p>
+    pub fn get_relational_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_relational_database_name()
+    }
     /// <p>The number of minutes in the past from which to retrieve events. For example, to get all events from the past 2 hours, enter 120.</p>
     /// <p>Default: <code>60</code> </p>
     /// <p>The minimum is 1 and the maximum is 14 days (20160 minutes).</p>
@@ -146,6 +154,12 @@ impl GetRelationalDatabaseEventsFluentBuilder {
         self.inner = self.inner.set_duration_in_minutes(input);
         self
     }
+    /// <p>The number of minutes in the past from which to retrieve events. For example, to get all events from the past 2 hours, enter 120.</p>
+    /// <p>Default: <code>60</code> </p>
+    /// <p>The minimum is 1 and the maximum is 14 days (20160 minutes).</p>
+    pub fn get_duration_in_minutes(&self) -> &::std::option::Option<i32> {
+        self.inner.get_duration_in_minutes()
+    }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseEvents</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     pub fn page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -157,5 +171,10 @@ impl GetRelationalDatabaseEventsFluentBuilder {
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_page_token(input);
         self
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseEvents</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_page_token()
     }
 }

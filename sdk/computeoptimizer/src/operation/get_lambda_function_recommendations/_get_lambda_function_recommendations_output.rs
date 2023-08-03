@@ -62,6 +62,11 @@ impl GetLambdaFunctionRecommendationsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to use to advance to the next page of function recommendations.</p>
+    /// <p>This value is null when there are no more pages of function recommendations to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `lambda_function_recommendations`.
     ///
     /// To override the contents of this collection use [`set_lambda_function_recommendations`](Self::set_lambda_function_recommendations).
@@ -83,6 +88,12 @@ impl GetLambdaFunctionRecommendationsOutputBuilder {
     ) -> Self {
         self.lambda_function_recommendations = input;
         self
+    }
+    /// <p>An array of objects that describe function recommendations.</p>
+    pub fn get_lambda_function_recommendations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionRecommendation>> {
+        &self.lambda_function_recommendations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

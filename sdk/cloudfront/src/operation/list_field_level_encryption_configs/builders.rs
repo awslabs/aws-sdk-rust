@@ -36,6 +36,10 @@ impl ListFieldLevelEncryptionConfigsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListFieldLevelEncryptionConfigs as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_field_level_encryption_configs::builders::ListFieldLevelEncryptionConfigsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl ListFieldLevelEncryptionConfigsFluentBuilder {
         self.inner = self.inner.set_marker(input);
         self
     }
+    /// <p>Use this when paginating results to indicate where to begin in your list of configurations. The results include configurations in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last configuration on that page).</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
+    }
     /// <p>The maximum number of field-level encryption configurations you want in the response body.</p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.inner = self.inner.max_items(input);
@@ -109,5 +117,9 @@ impl ListFieldLevelEncryptionConfigsFluentBuilder {
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_items(input);
         self
+    }
+    /// <p>The maximum number of field-level encryption configurations you want in the response body.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_items()
     }
 }

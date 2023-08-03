@@ -77,6 +77,12 @@ impl ListAggregateDiscoveredResourcesInputBuilder {
         self.configuration_aggregator_name = input;
         self
     }
+    /// <p>The name of the configuration aggregator. </p>
+    pub fn get_configuration_aggregator_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_aggregator_name
+    }
     /// <p>The type of resources that you want Config to list in the response.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -89,6 +95,10 @@ impl ListAggregateDiscoveredResourcesInputBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The type of resources that you want Config to list in the response.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
     }
     /// <p>Filters the results based on the <code>ResourceFilters</code> object.</p>
     pub fn filters(mut self, input: crate::types::ResourceFilters) -> Self {
@@ -103,6 +113,10 @@ impl ListAggregateDiscoveredResourcesInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>Filters the results based on the <code>ResourceFilters</code> object.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::ResourceFilters> {
+        &self.filters
+    }
     /// <p>The maximum number of resource identifiers returned on each page. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -113,6 +127,10 @@ impl ListAggregateDiscoveredResourcesInputBuilder {
         self.limit = input;
         self
     }
+    /// <p>The maximum number of resource identifiers returned on each page. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
+    }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -122,6 +140,10 @@ impl ListAggregateDiscoveredResourcesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListAggregateDiscoveredResourcesInput`](crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -49,6 +49,12 @@ impl MultiLayerStorageBuilder {
         self.customer_managed_s3_storage = input;
         self
     }
+    /// <p>Contains information about a customer managed Amazon S3 bucket.</p>
+    pub fn get_customer_managed_s3_storage(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomerManagedS3Storage> {
+        &self.customer_managed_s3_storage
+    }
     /// Consumes the builder and constructs a [`MultiLayerStorage`](crate::types::MultiLayerStorage).
     pub fn build(self) -> crate::types::MultiLayerStorage {
         crate::types::MultiLayerStorage {

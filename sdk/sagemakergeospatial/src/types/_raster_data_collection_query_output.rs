@@ -93,6 +93,10 @@ impl RasterDataCollectionQueryOutputBuilder {
         self.raster_data_collection_arn = input;
         self
     }
+    /// <p>The ARN of the Raster Data Collection against which the search is done.</p>
+    pub fn get_raster_data_collection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.raster_data_collection_arn
+    }
     /// <p>The name of the raster data collection.</p>
     pub fn raster_data_collection_name(
         mut self,
@@ -109,6 +113,10 @@ impl RasterDataCollectionQueryOutputBuilder {
         self.raster_data_collection_name = input;
         self
     }
+    /// <p>The name of the raster data collection.</p>
+    pub fn get_raster_data_collection_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.raster_data_collection_name
+    }
     /// <p>The TimeRange filter used in the search.</p>
     pub fn time_range_filter(mut self, input: crate::types::TimeRangeFilterOutput) -> Self {
         self.time_range_filter = ::std::option::Option::Some(input);
@@ -121,6 +129,12 @@ impl RasterDataCollectionQueryOutputBuilder {
     ) -> Self {
         self.time_range_filter = input;
         self
+    }
+    /// <p>The TimeRange filter used in the search.</p>
+    pub fn get_time_range_filter(
+        &self,
+    ) -> &::std::option::Option<crate::types::TimeRangeFilterOutput> {
+        &self.time_range_filter
     }
     /// <p>The Area of Interest used in the search.</p>
     pub fn area_of_interest(mut self, input: crate::types::AreaOfInterest) -> Self {
@@ -135,6 +149,10 @@ impl RasterDataCollectionQueryOutputBuilder {
         self.area_of_interest = input;
         self
     }
+    /// <p>The Area of Interest used in the search.</p>
+    pub fn get_area_of_interest(&self) -> &::std::option::Option<crate::types::AreaOfInterest> {
+        &self.area_of_interest
+    }
     /// <p>Property filters used in the search.</p>
     pub fn property_filters(mut self, input: crate::types::PropertyFilters) -> Self {
         self.property_filters = ::std::option::Option::Some(input);
@@ -147,6 +165,10 @@ impl RasterDataCollectionQueryOutputBuilder {
     ) -> Self {
         self.property_filters = input;
         self
+    }
+    /// <p>Property filters used in the search.</p>
+    pub fn get_property_filters(&self) -> &::std::option::Option<crate::types::PropertyFilters> {
+        &self.property_filters
     }
     /// Consumes the builder and constructs a [`RasterDataCollectionQueryOutput`](crate::types::RasterDataCollectionQueryOutput).
     pub fn build(self) -> crate::types::RasterDataCollectionQueryOutput {

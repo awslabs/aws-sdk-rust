@@ -55,6 +55,10 @@ impl CreateChannelBanOutputBuilder {
         self.channel_arn = input;
         self
     }
+    /// <p>The ARN of the response to the ban request.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
+    }
     /// <p>The <code>ChannelArn</code> and <code>BannedIdentity</code> of the member in the ban response.</p>
     pub fn member(mut self, input: crate::types::Identity) -> Self {
         self.member = ::std::option::Option::Some(input);
@@ -64,6 +68,10 @@ impl CreateChannelBanOutputBuilder {
     pub fn set_member(mut self, input: ::std::option::Option<crate::types::Identity>) -> Self {
         self.member = input;
         self
+    }
+    /// <p>The <code>ChannelArn</code> and <code>BannedIdentity</code> of the member in the ban response.</p>
+    pub fn get_member(&self) -> &::std::option::Option<crate::types::Identity> {
+        &self.member
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

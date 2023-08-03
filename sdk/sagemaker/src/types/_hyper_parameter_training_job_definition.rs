@@ -223,6 +223,10 @@ impl HyperParameterTrainingJobDefinitionBuilder {
         self.definition_name = input;
         self
     }
+    /// <p>The job definition name.</p>
+    pub fn get_definition_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.definition_name
+    }
     /// <p>Defines the objective metric for a hyperparameter tuning job. Hyperparameter tuning uses the value of this metric to evaluate the training jobs it launches, and returns the training job that results in either the highest or lowest value for this metric, depending on the value you specify for the <code>Type</code> parameter.</p>
     pub fn tuning_objective(
         mut self,
@@ -238,6 +242,12 @@ impl HyperParameterTrainingJobDefinitionBuilder {
     ) -> Self {
         self.tuning_objective = input;
         self
+    }
+    /// <p>Defines the objective metric for a hyperparameter tuning job. Hyperparameter tuning uses the value of this metric to evaluate the training jobs it launches, and returns the training job that results in either the highest or lowest value for this metric, depending on the value you specify for the <code>Type</code> parameter.</p>
+    pub fn get_tuning_objective(
+        &self,
+    ) -> &::std::option::Option<crate::types::HyperParameterTuningJobObjective> {
+        &self.tuning_objective
     }
     /// <p>Specifies ranges of integer, continuous, and categorical hyperparameters that a hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs with hyperparameter values within these ranges to find the combination of values that result in the training job with the best performance as measured by the objective metric of the hyperparameter tuning job.</p> <note>
     /// <p>The maximum number of items specified for <code>Array Members</code> refers to the maximum number of hyperparameters for each range and also the maximum for the hyperparameter tuning job itself. That is, the sum of the number of hyperparameters for all the ranges can't exceed the maximum number specified.</p>
@@ -255,6 +265,14 @@ impl HyperParameterTrainingJobDefinitionBuilder {
     ) -> Self {
         self.hyper_parameter_ranges = input;
         self
+    }
+    /// <p>Specifies ranges of integer, continuous, and categorical hyperparameters that a hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs with hyperparameter values within these ranges to find the combination of values that result in the training job with the best performance as measured by the objective metric of the hyperparameter tuning job.</p> <note>
+    /// <p>The maximum number of items specified for <code>Array Members</code> refers to the maximum number of hyperparameters for each range and also the maximum for the hyperparameter tuning job itself. That is, the sum of the number of hyperparameters for all the ranges can't exceed the maximum number specified.</p>
+    /// </note>
+    pub fn get_hyper_parameter_ranges(
+        &self,
+    ) -> &::std::option::Option<crate::types::ParameterRanges> {
+        &self.hyper_parameter_ranges
     }
     /// Adds a key-value pair to `static_hyper_parameters`.
     ///
@@ -281,6 +299,14 @@ impl HyperParameterTrainingJobDefinitionBuilder {
         self.static_hyper_parameters = input;
         self
     }
+    /// <p>Specifies the values of hyperparameters that do not change for the tuning job.</p>
+    pub fn get_static_hyper_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.static_hyper_parameters
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterAlgorithmSpecification.html">HyperParameterAlgorithmSpecification</a> object that specifies the resource algorithm to use for the training jobs that the tuning job launches.</p>
     pub fn algorithm_specification(
         mut self,
@@ -297,6 +323,12 @@ impl HyperParameterTrainingJobDefinitionBuilder {
         self.algorithm_specification = input;
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterAlgorithmSpecification.html">HyperParameterAlgorithmSpecification</a> object that specifies the resource algorithm to use for the training jobs that the tuning job launches.</p>
+    pub fn get_algorithm_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::HyperParameterAlgorithmSpecification> {
+        &self.algorithm_specification
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the training jobs that the tuning job launches.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -306,6 +338,10 @@ impl HyperParameterTrainingJobDefinitionBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the training jobs that the tuning job launches.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Appends an item to `input_data_config`.
     ///
@@ -326,6 +362,12 @@ impl HyperParameterTrainingJobDefinitionBuilder {
         self.input_data_config = input;
         self
     }
+    /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Channel.html">Channel</a> objects that specify the input for the training jobs that the tuning job launches.</p>
+    pub fn get_input_data_config(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Channel>> {
+        &self.input_data_config
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object that specifies the VPC that you want the training jobs that this hyperparameter tuning job launches to connect to. Control access to and from your training container by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
         self.vpc_config = ::std::option::Option::Some(input);
@@ -335,6 +377,10 @@ impl HyperParameterTrainingJobDefinitionBuilder {
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
         self.vpc_config = input;
         self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object that specifies the VPC that you want the training jobs that this hyperparameter tuning job launches to connect to. Control access to and from your training container by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+    pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
+        &self.vpc_config
     }
     /// <p>Specifies the path to the Amazon S3 bucket where you store model artifacts from the training jobs that the tuning job launches.</p>
     pub fn output_data_config(mut self, input: crate::types::OutputDataConfig) -> Self {
@@ -348,6 +394,10 @@ impl HyperParameterTrainingJobDefinitionBuilder {
     ) -> Self {
         self.output_data_config = input;
         self
+    }
+    /// <p>Specifies the path to the Amazon S3 bucket where you store model artifacts from the training jobs that the tuning job launches.</p>
+    pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::OutputDataConfig> {
+        &self.output_data_config
     }
     /// <p>The resources, including the compute instances and storage volumes, to use for the training jobs that the tuning job launches.</p>
     /// <p>Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes for scratch space. If you want SageMaker to use the storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p> <note>
@@ -368,6 +418,13 @@ impl HyperParameterTrainingJobDefinitionBuilder {
         self.resource_config = input;
         self
     }
+    /// <p>The resources, including the compute instances and storage volumes, to use for the training jobs that the tuning job launches.</p>
+    /// <p>Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes for scratch space. If you want SageMaker to use the storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p> <note>
+    /// <p>If you want to use hyperparameter optimization with instance type flexibility, use <code>HyperParameterTuningResourceConfig</code> instead.</p>
+    /// </note>
+    pub fn get_resource_config(&self) -> &::std::option::Option<crate::types::ResourceConfig> {
+        &self.resource_config
+    }
     /// <p>Specifies a limit to how long a model hyperparameter training job can run. It also specifies how long a managed spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
     pub fn stopping_condition(mut self, input: crate::types::StoppingCondition) -> Self {
         self.stopping_condition = ::std::option::Option::Some(input);
@@ -381,6 +438,12 @@ impl HyperParameterTrainingJobDefinitionBuilder {
         self.stopping_condition = input;
         self
     }
+    /// <p>Specifies a limit to how long a model hyperparameter training job can run. It also specifies how long a managed spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
+    pub fn get_stopping_condition(
+        &self,
+    ) -> &::std::option::Option<crate::types::StoppingCondition> {
+        &self.stopping_condition
+    }
     /// <p>Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers within a training cluster for distributed training. If network isolation is used for training jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
     pub fn enable_network_isolation(mut self, input: bool) -> Self {
         self.enable_network_isolation = ::std::option::Option::Some(input);
@@ -390,6 +453,10 @@ impl HyperParameterTrainingJobDefinitionBuilder {
     pub fn set_enable_network_isolation(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_network_isolation = input;
         self
+    }
+    /// <p>Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers within a training cluster for distributed training. If network isolation is used for training jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
+    pub fn get_enable_network_isolation(&self) -> &::std::option::Option<bool> {
+        &self.enable_network_isolation
     }
     /// <p>To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>. Encryption provides greater security for distributed training, but training might take longer. How long it takes depends on the amount of communication between compute instances, especially if you use a deep learning algorithm in distributed training.</p>
     pub fn enable_inter_container_traffic_encryption(mut self, input: bool) -> Self {
@@ -404,6 +471,10 @@ impl HyperParameterTrainingJobDefinitionBuilder {
         self.enable_inter_container_traffic_encryption = input;
         self
     }
+    /// <p>To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>. Encryption provides greater security for distributed training, but training might take longer. How long it takes depends on the amount of communication between compute instances, especially if you use a deep learning algorithm in distributed training.</p>
+    pub fn get_enable_inter_container_traffic_encryption(&self) -> &::std::option::Option<bool> {
+        &self.enable_inter_container_traffic_encryption
+    }
     /// <p>A Boolean indicating whether managed spot training is enabled (<code>True</code>) or not (<code>False</code>).</p>
     pub fn enable_managed_spot_training(mut self, input: bool) -> Self {
         self.enable_managed_spot_training = ::std::option::Option::Some(input);
@@ -413,6 +484,10 @@ impl HyperParameterTrainingJobDefinitionBuilder {
     pub fn set_enable_managed_spot_training(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_managed_spot_training = input;
         self
+    }
+    /// <p>A Boolean indicating whether managed spot training is enabled (<code>True</code>) or not (<code>False</code>).</p>
+    pub fn get_enable_managed_spot_training(&self) -> &::std::option::Option<bool> {
+        &self.enable_managed_spot_training
     }
     /// <p>Contains information about the output location for managed spot training checkpoint data. </p>
     pub fn checkpoint_config(mut self, input: crate::types::CheckpointConfig) -> Self {
@@ -427,6 +502,10 @@ impl HyperParameterTrainingJobDefinitionBuilder {
         self.checkpoint_config = input;
         self
     }
+    /// <p>Contains information about the output location for managed spot training checkpoint data. </p>
+    pub fn get_checkpoint_config(&self) -> &::std::option::Option<crate::types::CheckpointConfig> {
+        &self.checkpoint_config
+    }
     /// <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
     pub fn retry_strategy(mut self, input: crate::types::RetryStrategy) -> Self {
         self.retry_strategy = ::std::option::Option::Some(input);
@@ -439,6 +518,10 @@ impl HyperParameterTrainingJobDefinitionBuilder {
     ) -> Self {
         self.retry_strategy = input;
         self
+    }
+    /// <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
+    pub fn get_retry_strategy(&self) -> &::std::option::Option<crate::types::RetryStrategy> {
+        &self.retry_strategy
     }
     /// <p>The configuration for the hyperparameter tuning resources, including the compute instances and storage volumes, used for training jobs launched by the tuning job. By default, storage volumes hold model artifacts and incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the <code>AlgorithmSpecification</code> parameter to additionally store training data in the storage volume (optional).</p>
     pub fn hyper_parameter_tuning_resource_config(
@@ -455,6 +538,12 @@ impl HyperParameterTrainingJobDefinitionBuilder {
     ) -> Self {
         self.hyper_parameter_tuning_resource_config = input;
         self
+    }
+    /// <p>The configuration for the hyperparameter tuning resources, including the compute instances and storage volumes, used for training jobs launched by the tuning job. By default, storage volumes hold model artifacts and incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the <code>AlgorithmSpecification</code> parameter to additionally store training data in the storage volume (optional).</p>
+    pub fn get_hyper_parameter_tuning_resource_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::HyperParameterTuningResourceConfig> {
+        &self.hyper_parameter_tuning_resource_config
     }
     /// Adds a key-value pair to `environment`.
     ///
@@ -484,6 +573,16 @@ impl HyperParameterTrainingJobDefinitionBuilder {
     ) -> Self {
         self.environment = input;
         self
+    }
+    /// <p>An environment variable that you can pass into the SageMaker <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> API. You can use an existing <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html#sagemaker-CreateTrainingJob-request-Environment">environment variable from the training container</a> or use your own. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">Define metrics and variables</a> for more information.</p> <note>
+    /// <p>The maximum number of items specified for <code>Map Entries</code> refers to the maximum number of environment variables for each <code>TrainingJobDefinition</code> and also the maximum for the hyperparameter tuning job itself. That is, the sum of the number of environment variables for all the training job definitions can't exceed the maximum number specified.</p>
+    /// </note>
+    pub fn get_environment(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.environment
     }
     /// Consumes the builder and constructs a [`HyperParameterTrainingJobDefinition`](crate::types::HyperParameterTrainingJobDefinition).
     pub fn build(self) -> crate::types::HyperParameterTrainingJobDefinition {

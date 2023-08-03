@@ -54,6 +54,10 @@ impl TimestreamResourcesBuilder {
         self.timestream_database_name = input;
         self
     }
+    /// <p>The name of the registered Amazon Timestream database.</p>
+    pub fn get_timestream_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timestream_database_name
+    }
     /// <p>The name of the registered Amazon Timestream database table.</p>
     pub fn timestream_table_name(
         mut self,
@@ -69,6 +73,10 @@ impl TimestreamResourcesBuilder {
     ) -> Self {
         self.timestream_table_name = input;
         self
+    }
+    /// <p>The name of the registered Amazon Timestream database table.</p>
+    pub fn get_timestream_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timestream_table_name
     }
     /// Consumes the builder and constructs a [`TimestreamResources`](crate::types::TimestreamResources).
     pub fn build(self) -> crate::types::TimestreamResources {

@@ -68,6 +68,13 @@ impl BundleInstanceInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The ID of the instance to bundle.</p>
+    /// <p>Type: String</p>
+    /// <p>Default: None</p>
+    /// <p>Required: Yes</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The bucket in which to store the AMI. You can specify a bucket that you already own or a new bucket that Amazon EC2 creates on your behalf. If you specify a bucket that belongs to someone else, Amazon EC2 returns an error.</p>
     pub fn storage(mut self, input: crate::types::Storage) -> Self {
         self.storage = ::std::option::Option::Some(input);
@@ -78,6 +85,10 @@ impl BundleInstanceInputBuilder {
         self.storage = input;
         self
     }
+    /// <p>The bucket in which to store the AMI. You can specify a bucket that you already own or a new bucket that Amazon EC2 creates on your behalf. If you specify a bucket that belongs to someone else, Amazon EC2 returns an error.</p>
+    pub fn get_storage(&self) -> &::std::option::Option<crate::types::Storage> {
+        &self.storage
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -87,6 +98,10 @@ impl BundleInstanceInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`BundleInstanceInput`](crate::operation::bundle_instance::BundleInstanceInput).
     pub fn build(

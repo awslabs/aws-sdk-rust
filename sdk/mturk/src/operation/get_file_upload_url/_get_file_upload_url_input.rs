@@ -54,6 +54,10 @@ impl GetFileUploadUrlInputBuilder {
         self.assignment_id = input;
         self
     }
+    /// <p>The ID of the assignment that contains the question with a FileUploadAnswer.</p>
+    pub fn get_assignment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assignment_id
+    }
     /// <p>The identifier of the question with a FileUploadAnswer, as specified in the QuestionForm of the HIT.</p>
     pub fn question_identifier(
         mut self,
@@ -69,6 +73,10 @@ impl GetFileUploadUrlInputBuilder {
     ) -> Self {
         self.question_identifier = input;
         self
+    }
+    /// <p>The identifier of the question with a FileUploadAnswer, as specified in the QuestionForm of the HIT.</p>
+    pub fn get_question_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.question_identifier
     }
     /// Consumes the builder and constructs a [`GetFileUploadUrlInput`](crate::operation::get_file_upload_url::GetFileUploadUrlInput).
     pub fn build(

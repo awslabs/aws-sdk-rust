@@ -39,6 +39,10 @@ impl DeleteProjectInputBuilder {
         self.project_name = input;
         self
     }
+    /// <p>The name of the empty project to delete.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
+    }
     /// Consumes the builder and constructs a [`DeleteProjectInput`](crate::operation::delete_project::DeleteProjectInput).
     pub fn build(
         self,

@@ -36,6 +36,12 @@ impl RegisterCertificateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RegisterCertificate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::register_certificate::builders::RegisterCertificateInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl RegisterCertificateFluentBuilder {
         self.inner = self.inner.set_directory_id(input);
         self
     }
+    /// <p>The identifier of the directory.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_id()
+    }
     /// <p>The certificate PEM string that needs to be registered.</p>
     pub fn certificate_data(
         mut self,
@@ -142,6 +152,10 @@ impl RegisterCertificateFluentBuilder {
         self.inner = self.inner.set_certificate_data(input);
         self
     }
+    /// <p>The certificate PEM string that needs to be registered.</p>
+    pub fn get_certificate_data(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate_data()
+    }
     /// <p>The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.</p>
     pub fn r#type(mut self, input: crate::types::CertificateType) -> Self {
         self.inner = self.inner.r#type(input);
@@ -151,6 +165,10 @@ impl RegisterCertificateFluentBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::CertificateType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
+    }
+    /// <p>The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::CertificateType> {
+        self.inner.get_type()
     }
     /// <p>A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.</p>
     pub fn client_cert_auth_settings(
@@ -167,5 +185,11 @@ impl RegisterCertificateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_cert_auth_settings(input);
         self
+    }
+    /// <p>A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.</p>
+    pub fn get_client_cert_auth_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::ClientCertAuthSettings> {
+        self.inner.get_client_cert_auth_settings()
     }
 }

@@ -36,6 +36,12 @@ impl CreateUsageLimitFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateUsageLimit as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_usage_limit::builders::CreateUsageLimitInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateUsageLimitFluentBuilder {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Redshift Serverless resource to create the usage limit for.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
+    }
     /// <p>The type of Amazon Redshift Serverless usage to create a usage limit for.</p>
     pub fn usage_type(mut self, input: crate::types::UsageLimitUsageType) -> Self {
         self.inner = self.inner.usage_type(input);
@@ -139,6 +149,10 @@ impl CreateUsageLimitFluentBuilder {
         self.inner = self.inner.set_usage_type(input);
         self
     }
+    /// <p>The type of Amazon Redshift Serverless usage to create a usage limit for.</p>
+    pub fn get_usage_type(&self) -> &::std::option::Option<crate::types::UsageLimitUsageType> {
+        self.inner.get_usage_type()
+    }
     /// <p>The limit amount. If time-based, this amount is in Redshift Processing Units (RPU) consumed per hour. If data-based, this amount is in terabytes (TB) of data transferred between Regions in cross-account sharing. The value must be a positive number.</p>
     pub fn amount(mut self, input: i64) -> Self {
         self.inner = self.inner.amount(input);
@@ -148,6 +162,10 @@ impl CreateUsageLimitFluentBuilder {
     pub fn set_amount(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_amount(input);
         self
+    }
+    /// <p>The limit amount. If time-based, this amount is in Redshift Processing Units (RPU) consumed per hour. If data-based, this amount is in terabytes (TB) of data transferred between Regions in cross-account sharing. The value must be a positive number.</p>
+    pub fn get_amount(&self) -> &::std::option::Option<i64> {
+        self.inner.get_amount()
     }
     /// <p>The time period that the amount applies to. A weekly period begins on Sunday. The default is monthly.</p>
     pub fn period(mut self, input: crate::types::UsageLimitPeriod) -> Self {
@@ -162,6 +180,10 @@ impl CreateUsageLimitFluentBuilder {
         self.inner = self.inner.set_period(input);
         self
     }
+    /// <p>The time period that the amount applies to. A weekly period begins on Sunday. The default is monthly.</p>
+    pub fn get_period(&self) -> &::std::option::Option<crate::types::UsageLimitPeriod> {
+        self.inner.get_period()
+    }
     /// <p>The action that Amazon Redshift Serverless takes when the limit is reached. The default is log.</p>
     pub fn breach_action(mut self, input: crate::types::UsageLimitBreachAction) -> Self {
         self.inner = self.inner.breach_action(input);
@@ -174,5 +196,11 @@ impl CreateUsageLimitFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_breach_action(input);
         self
+    }
+    /// <p>The action that Amazon Redshift Serverless takes when the limit is reached. The default is log.</p>
+    pub fn get_breach_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::UsageLimitBreachAction> {
+        self.inner.get_breach_action()
     }
 }

@@ -51,6 +51,10 @@ impl GetMlModelInputBuilder {
         self.ml_model_id = input;
         self
     }
+    /// <p>The ID assigned to the <code>MLModel</code> at creation.</p>
+    pub fn get_ml_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ml_model_id
+    }
     /// <p>Specifies whether the <code>GetMLModel</code> operation should return <code>Recipe</code>.</p>
     /// <p>If true, <code>Recipe</code> is returned.</p>
     /// <p>If false, <code>Recipe</code> is not returned.</p>
@@ -64,6 +68,12 @@ impl GetMlModelInputBuilder {
     pub fn set_verbose(mut self, input: ::std::option::Option<bool>) -> Self {
         self.verbose = input;
         self
+    }
+    /// <p>Specifies whether the <code>GetMLModel</code> operation should return <code>Recipe</code>.</p>
+    /// <p>If true, <code>Recipe</code> is returned.</p>
+    /// <p>If false, <code>Recipe</code> is not returned.</p>
+    pub fn get_verbose(&self) -> &::std::option::Option<bool> {
+        &self.verbose
     }
     /// Consumes the builder and constructs a [`GetMlModelInput`](crate::operation::get_ml_model::GetMlModelInput).
     pub fn build(

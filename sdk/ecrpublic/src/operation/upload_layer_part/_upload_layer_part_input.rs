@@ -79,6 +79,10 @@ impl UploadLayerPartInputBuilder {
         self.registry_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID, or registry alias, that's associated with the registry that you're uploading layer parts to. If you do not specify a registry, the default public registry is assumed.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
+    }
     /// <p>The name of the repository that you're uploading layer parts to.</p>
     pub fn repository_name(
         mut self,
@@ -95,6 +99,10 @@ impl UploadLayerPartInputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository that you're uploading layer parts to.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the layer part upload.</p>
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upload_id = ::std::option::Option::Some(input.into());
@@ -104,6 +112,10 @@ impl UploadLayerPartInputBuilder {
     pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.upload_id = input;
         self
+    }
+    /// <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the layer part upload.</p>
+    pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.upload_id
     }
     /// <p>The position of the first byte of the layer part witin the overall image layer.</p>
     pub fn part_first_byte(mut self, input: i64) -> Self {
@@ -115,6 +127,10 @@ impl UploadLayerPartInputBuilder {
         self.part_first_byte = input;
         self
     }
+    /// <p>The position of the first byte of the layer part witin the overall image layer.</p>
+    pub fn get_part_first_byte(&self) -> &::std::option::Option<i64> {
+        &self.part_first_byte
+    }
     /// <p>The position of the last byte of the layer part within the overall image layer.</p>
     pub fn part_last_byte(mut self, input: i64) -> Self {
         self.part_last_byte = ::std::option::Option::Some(input);
@@ -124,6 +140,10 @@ impl UploadLayerPartInputBuilder {
     pub fn set_part_last_byte(mut self, input: ::std::option::Option<i64>) -> Self {
         self.part_last_byte = input;
         self
+    }
+    /// <p>The position of the last byte of the layer part within the overall image layer.</p>
+    pub fn get_part_last_byte(&self) -> &::std::option::Option<i64> {
+        &self.part_last_byte
     }
     /// <p>The base64-encoded layer part payload.</p>
     pub fn layer_part_blob(mut self, input: ::aws_smithy_types::Blob) -> Self {
@@ -137,6 +157,10 @@ impl UploadLayerPartInputBuilder {
     ) -> Self {
         self.layer_part_blob = input;
         self
+    }
+    /// <p>The base64-encoded layer part payload.</p>
+    pub fn get_layer_part_blob(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.layer_part_blob
     }
     /// Consumes the builder and constructs a [`UploadLayerPartInput`](crate::operation::upload_layer_part::UploadLayerPartInput).
     pub fn build(

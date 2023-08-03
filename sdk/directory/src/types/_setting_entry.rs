@@ -141,6 +141,10 @@ impl SettingEntryBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type, or category, of a directory setting. Similar settings have the same type. For example, <code>Protocol</code>, <code>Cipher</code>, or <code>Certificate-Based Authentication</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p>The name of the directory setting. For example:</p>
     /// <p> <code>TLS_1_0</code> </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -152,6 +156,11 @@ impl SettingEntryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the directory setting. For example:</p>
+    /// <p> <code>TLS_1_0</code> </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The valid range of values for the directory setting. These values depend on the <code>DataType</code> of your directory.</p>
     pub fn allowed_values(
@@ -169,6 +178,10 @@ impl SettingEntryBuilder {
         self.allowed_values = input;
         self
     }
+    /// <p>The valid range of values for the directory setting. These values depend on the <code>DataType</code> of your directory.</p>
+    pub fn get_allowed_values(&self) -> &::std::option::Option<::std::string::String> {
+        &self.allowed_values
+    }
     /// <p>The value of the directory setting that is applied to the directory.</p>
     pub fn applied_value(
         mut self,
@@ -184,6 +197,10 @@ impl SettingEntryBuilder {
     ) -> Self {
         self.applied_value = input;
         self
+    }
+    /// <p>The value of the directory setting that is applied to the directory.</p>
+    pub fn get_applied_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.applied_value
     }
     /// <p>The value that was last requested for the directory setting.</p>
     pub fn requested_value(
@@ -201,6 +218,10 @@ impl SettingEntryBuilder {
         self.requested_value = input;
         self
     }
+    /// <p>The value that was last requested for the directory setting.</p>
+    pub fn get_requested_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.requested_value
+    }
     /// <p>The overall status of the request to update the directory setting request. If the directory setting is deployed in more than one region, and the request fails in any region, the overall status is <code>Failed</code>.</p>
     pub fn request_status(mut self, input: crate::types::DirectoryConfigurationStatus) -> Self {
         self.request_status = ::std::option::Option::Some(input);
@@ -213,6 +234,12 @@ impl SettingEntryBuilder {
     ) -> Self {
         self.request_status = input;
         self
+    }
+    /// <p>The overall status of the request to update the directory setting request. If the directory setting is deployed in more than one region, and the request fails in any region, the overall status is <code>Failed</code>.</p>
+    pub fn get_request_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::DirectoryConfigurationStatus> {
+        &self.request_status
     }
     /// Adds a key-value pair to `request_detailed_status`.
     ///
@@ -242,6 +269,17 @@ impl SettingEntryBuilder {
         self.request_detailed_status = input;
         self
     }
+    /// <p>Details about the status of the request to update the directory setting. If the directory setting is deployed in more than one region, status is returned for the request in each region where the setting is deployed.</p>
+    pub fn get_request_detailed_status(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::DirectoryConfigurationStatus,
+        >,
+    > {
+        &self.request_detailed_status
+    }
     /// <p>The last status message for the directory status request.</p>
     pub fn request_status_message(
         mut self,
@@ -258,6 +296,10 @@ impl SettingEntryBuilder {
         self.request_status_message = input;
         self
     }
+    /// <p>The last status message for the directory status request.</p>
+    pub fn get_request_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_status_message
+    }
     /// <p>The date and time when the directory setting was last updated.</p>
     pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date_time = ::std::option::Option::Some(input);
@@ -270,6 +312,12 @@ impl SettingEntryBuilder {
     ) -> Self {
         self.last_updated_date_time = input;
         self
+    }
+    /// <p>The date and time when the directory setting was last updated.</p>
+    pub fn get_last_updated_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date_time
     }
     /// <p>The date and time when the request to update a directory setting was last submitted.</p>
     pub fn last_requested_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -284,6 +332,12 @@ impl SettingEntryBuilder {
         self.last_requested_date_time = input;
         self
     }
+    /// <p>The date and time when the request to update a directory setting was last submitted.</p>
+    pub fn get_last_requested_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_requested_date_time
+    }
     /// <p>The data type of a directory setting. This is used to define the <code>AllowedValues</code> of a setting. For example a data type can be <code>Boolean</code>, <code>DurationInSeconds</code>, or <code>Enum</code>.</p>
     pub fn data_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_type = ::std::option::Option::Some(input.into());
@@ -293,6 +347,10 @@ impl SettingEntryBuilder {
     pub fn set_data_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_type = input;
         self
+    }
+    /// <p>The data type of a directory setting. This is used to define the <code>AllowedValues</code> of a setting. For example a data type can be <code>Boolean</code>, <code>DurationInSeconds</code>, or <code>Enum</code>.</p>
+    pub fn get_data_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_type
     }
     /// Consumes the builder and constructs a [`SettingEntry`](crate::types::SettingEntry).
     pub fn build(self) -> crate::types::SettingEntry {

@@ -56,6 +56,10 @@ impl DeviceUnderTestBuilder {
         self.thing_arn = input;
         self
     }
+    /// <p>Lists device's thing ARN.</p>
+    pub fn get_thing_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_arn
+    }
     /// <p>Lists device's certificate ARN.</p>
     pub fn certificate_arn(
         mut self,
@@ -72,6 +76,10 @@ impl DeviceUnderTestBuilder {
         self.certificate_arn = input;
         self
     }
+    /// <p>Lists device's certificate ARN.</p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_arn
+    }
     /// <p>Lists device's role ARN.</p>
     pub fn device_role_arn(
         mut self,
@@ -87,6 +95,10 @@ impl DeviceUnderTestBuilder {
     ) -> Self {
         self.device_role_arn = input;
         self
+    }
+    /// <p>Lists device's role ARN.</p>
+    pub fn get_device_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_role_arn
     }
     /// Consumes the builder and constructs a [`DeviceUnderTest`](crate::types::DeviceUnderTest).
     pub fn build(self) -> crate::types::DeviceUnderTest {

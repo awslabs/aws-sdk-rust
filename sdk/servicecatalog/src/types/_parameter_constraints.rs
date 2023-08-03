@@ -106,6 +106,12 @@ impl ParameterConstraintsBuilder {
         self.allowed_values = input;
         self
     }
+    /// <p>The values that the administrator has allowed for the parameter.</p>
+    pub fn get_allowed_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.allowed_values
+    }
     /// <p>A regular expression that represents the patterns that allow for <code>String</code> types. The pattern must match the entire parameter value provided.</p>
     pub fn allowed_pattern(
         mut self,
@@ -121,6 +127,10 @@ impl ParameterConstraintsBuilder {
     ) -> Self {
         self.allowed_pattern = input;
         self
+    }
+    /// <p>A regular expression that represents the patterns that allow for <code>String</code> types. The pattern must match the entire parameter value provided.</p>
+    pub fn get_allowed_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        &self.allowed_pattern
     }
     /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of <code>[A-Za-z0-9]+</code> displays the following error message when the user specifies an invalid value:</p>
     /// <p> <code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code> </p>
@@ -144,6 +154,13 @@ impl ParameterConstraintsBuilder {
         self.constraint_description = input;
         self
     }
+    /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of <code>[A-Za-z0-9]+</code> displays the following error message when the user specifies an invalid value:</p>
+    /// <p> <code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code> </p>
+    /// <p>By adding a constraint description, such as must only contain letters (uppercase and lowercase) and numbers, you can display the following customized error message:</p>
+    /// <p> <code>Malformed input-Parameter MyParameter must only contain uppercase and lowercase letters and numbers.</code> </p>
+    pub fn get_constraint_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.constraint_description
+    }
     /// <p>An integer value that determines the largest number of characters you want to allow for <code>String</code> types. </p>
     pub fn max_length(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_length = ::std::option::Option::Some(input.into());
@@ -153,6 +170,10 @@ impl ParameterConstraintsBuilder {
     pub fn set_max_length(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_length = input;
         self
+    }
+    /// <p>An integer value that determines the largest number of characters you want to allow for <code>String</code> types. </p>
+    pub fn get_max_length(&self) -> &::std::option::Option<::std::string::String> {
+        &self.max_length
     }
     /// <p>An integer value that determines the smallest number of characters you want to allow for <code>String</code> types.</p>
     pub fn min_length(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -164,6 +185,10 @@ impl ParameterConstraintsBuilder {
         self.min_length = input;
         self
     }
+    /// <p>An integer value that determines the smallest number of characters you want to allow for <code>String</code> types.</p>
+    pub fn get_min_length(&self) -> &::std::option::Option<::std::string::String> {
+        &self.min_length
+    }
     /// <p>A numeric value that determines the largest numeric value you want to allow for <code>Number</code> types.</p>
     pub fn max_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_value = ::std::option::Option::Some(input.into());
@@ -174,6 +199,10 @@ impl ParameterConstraintsBuilder {
         self.max_value = input;
         self
     }
+    /// <p>A numeric value that determines the largest numeric value you want to allow for <code>Number</code> types.</p>
+    pub fn get_max_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.max_value
+    }
     /// <p>A numeric value that determines the smallest numeric value you want to allow for <code>Number</code> types. </p>
     pub fn min_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.min_value = ::std::option::Option::Some(input.into());
@@ -183,6 +212,10 @@ impl ParameterConstraintsBuilder {
     pub fn set_min_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.min_value = input;
         self
+    }
+    /// <p>A numeric value that determines the smallest numeric value you want to allow for <code>Number</code> types. </p>
+    pub fn get_min_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.min_value
     }
     /// Consumes the builder and constructs a [`ParameterConstraints`](crate::types::ParameterConstraints).
     pub fn build(self) -> crate::types::ParameterConstraints {

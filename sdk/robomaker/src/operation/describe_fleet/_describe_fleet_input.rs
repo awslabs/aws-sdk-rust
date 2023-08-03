@@ -42,6 +42,10 @@ impl DescribeFleetInputBuilder {
         self.fleet = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    pub fn get_fleet(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet
+    }
     /// Consumes the builder and constructs a [`DescribeFleetInput`](crate::operation::describe_fleet::DescribeFleetInput).
     pub fn build(
         self,

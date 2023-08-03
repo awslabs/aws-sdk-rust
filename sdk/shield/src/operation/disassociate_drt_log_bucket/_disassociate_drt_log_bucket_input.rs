@@ -41,6 +41,10 @@ impl DisassociateDrtLogBucketInputBuilder {
         self.log_bucket = input;
         self
     }
+    /// <p>The Amazon S3 bucket that contains the logs that you want to share.</p>
+    pub fn get_log_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_bucket
+    }
     /// Consumes the builder and constructs a [`DisassociateDrtLogBucketInput`](crate::operation::disassociate_drt_log_bucket::DisassociateDrtLogBucketInput).
     pub fn build(
         self,

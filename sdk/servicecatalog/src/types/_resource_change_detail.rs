@@ -59,6 +59,10 @@ impl ResourceChangeDetailBuilder {
         self.target = input;
         self
     }
+    /// <p>Information about the resource attribute to be modified.</p>
+    pub fn get_target(&self) -> &::std::option::Option<crate::types::ResourceTargetDefinition> {
+        &self.target
+    }
     /// <p>For static evaluations, the value of the resource attribute will change and the new value is known. For dynamic evaluations, the value might change, and any new value will be determined when the plan is updated.</p>
     pub fn evaluation(mut self, input: crate::types::EvaluationType) -> Self {
         self.evaluation = ::std::option::Option::Some(input);
@@ -71,6 +75,10 @@ impl ResourceChangeDetailBuilder {
     ) -> Self {
         self.evaluation = input;
         self
+    }
+    /// <p>For static evaluations, the value of the resource attribute will change and the new value is known. For dynamic evaluations, the value might change, and any new value will be determined when the plan is updated.</p>
+    pub fn get_evaluation(&self) -> &::std::option::Option<crate::types::EvaluationType> {
+        &self.evaluation
     }
     /// <p>The ID of the entity that caused the change.</p>
     pub fn causing_entity(
@@ -87,6 +95,10 @@ impl ResourceChangeDetailBuilder {
     ) -> Self {
         self.causing_entity = input;
         self
+    }
+    /// <p>The ID of the entity that caused the change.</p>
+    pub fn get_causing_entity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.causing_entity
     }
     /// Consumes the builder and constructs a [`ResourceChangeDetail`](crate::types::ResourceChangeDetail).
     pub fn build(self) -> crate::types::ResourceChangeDetail {

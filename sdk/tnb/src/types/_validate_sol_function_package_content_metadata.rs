@@ -48,6 +48,11 @@ impl ValidateSolFunctionPackageContentMetadataBuilder {
         self.vnfd = input;
         self
     }
+    /// <p>Metadata for function package artifacts.</p>
+    /// <p>Artifacts are the contents of the package descriptor file and the state of the package.</p>
+    pub fn get_vnfd(&self) -> &::std::option::Option<crate::types::FunctionArtifactMeta> {
+        &self.vnfd
+    }
     /// Consumes the builder and constructs a [`ValidateSolFunctionPackageContentMetadata`](crate::types::ValidateSolFunctionPackageContentMetadata).
     pub fn build(self) -> crate::types::ValidateSolFunctionPackageContentMetadata {
         crate::types::ValidateSolFunctionPackageContentMetadata { vnfd: self.vnfd }

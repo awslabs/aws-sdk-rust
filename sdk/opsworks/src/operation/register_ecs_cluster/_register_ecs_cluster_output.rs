@@ -54,6 +54,10 @@ impl RegisterEcsClusterOutputBuilder {
         self.ecs_cluster_arn = input;
         self
     }
+    /// <p>The cluster's ARN.</p>
+    pub fn get_ecs_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ecs_cluster_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

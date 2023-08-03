@@ -47,6 +47,10 @@ impl DeleteDirectoryConfigInputBuilder {
         self.directory_name = input;
         self
     }
+    /// <p>The name of the directory configuration.</p>
+    pub fn get_directory_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_name
+    }
     /// Consumes the builder and constructs a [`DeleteDirectoryConfigInput`](crate::operation::delete_directory_config::DeleteDirectoryConfigInput).
     pub fn build(
         self,

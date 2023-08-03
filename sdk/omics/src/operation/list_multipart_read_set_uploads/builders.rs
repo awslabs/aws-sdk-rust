@@ -36,6 +36,10 @@ impl ListMultipartReadSetUploadsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListMultipartReadSetUploads as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_multipart_read_set_uploads::builders::ListMultipartReadSetUploadsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +142,10 @@ impl ListMultipartReadSetUploadsFluentBuilder {
         self.inner = self.inner.set_sequence_store_id(input);
         self
     }
+    /// <p> The Sequence Store ID used for the multipart uploads. </p>
+    pub fn get_sequence_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sequence_store_id()
+    }
     /// <p> The maximum number of multipart uploads returned in a page. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -148,6 +156,10 @@ impl ListMultipartReadSetUploadsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p> The maximum number of multipart uploads returned in a page. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p> Next token returned in the response of a previous ListMultipartReadSetUploads call. Used to get the next page of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -157,5 +169,9 @@ impl ListMultipartReadSetUploadsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p> Next token returned in the response of a previous ListMultipartReadSetUploads call. Used to get the next page of results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

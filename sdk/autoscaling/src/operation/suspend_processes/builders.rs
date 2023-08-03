@@ -38,6 +38,12 @@ impl SuspendProcessesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SuspendProcesses as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::suspend_processes::builders::SuspendProcessesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,10 @@ impl SuspendProcessesFluentBuilder {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_auto_scaling_group_name()
+    }
     /// Appends an item to `ScalingProcesses`.
     ///
     /// To override the contents of this collection use [`set_scaling_processes`](Self::set_scaling_processes).
@@ -177,5 +187,23 @@ impl SuspendProcessesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_scaling_processes(input);
         self
+    }
+    /// <p>One or more of the following processes:</p>
+    /// <ul>
+    /// <li> <p> <code>Launch</code> </p> </li>
+    /// <li> <p> <code>Terminate</code> </p> </li>
+    /// <li> <p> <code>AddToLoadBalancer</code> </p> </li>
+    /// <li> <p> <code>AlarmNotification</code> </p> </li>
+    /// <li> <p> <code>AZRebalance</code> </p> </li>
+    /// <li> <p> <code>HealthCheck</code> </p> </li>
+    /// <li> <p> <code>InstanceRefresh</code> </p> </li>
+    /// <li> <p> <code>ReplaceUnhealthy</code> </p> </li>
+    /// <li> <p> <code>ScheduledActions</code> </p> </li>
+    /// </ul>
+    /// <p>If you omit this property, all processes are specified.</p>
+    pub fn get_scaling_processes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_scaling_processes()
     }
 }

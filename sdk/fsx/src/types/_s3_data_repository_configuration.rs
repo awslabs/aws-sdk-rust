@@ -53,6 +53,10 @@ impl S3DataRepositoryConfigurationBuilder {
         self.auto_import_policy = input;
         self
     }
+    /// <p>Specifies the type of updated objects (new, changed, deleted) that will be automatically imported from the linked S3 bucket to your file system.</p>
+    pub fn get_auto_import_policy(&self) -> &::std::option::Option<crate::types::AutoImportPolicy> {
+        &self.auto_import_policy
+    }
     /// <p>Specifies the type of updated objects (new, changed, deleted) that will be automatically exported from your file system to the linked S3 bucket.</p>
     pub fn auto_export_policy(mut self, input: crate::types::AutoExportPolicy) -> Self {
         self.auto_export_policy = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl S3DataRepositoryConfigurationBuilder {
     ) -> Self {
         self.auto_export_policy = input;
         self
+    }
+    /// <p>Specifies the type of updated objects (new, changed, deleted) that will be automatically exported from your file system to the linked S3 bucket.</p>
+    pub fn get_auto_export_policy(&self) -> &::std::option::Option<crate::types::AutoExportPolicy> {
+        &self.auto_export_policy
     }
     /// Consumes the builder and constructs a [`S3DataRepositoryConfiguration`](crate::types::S3DataRepositoryConfiguration).
     pub fn build(self) -> crate::types::S3DataRepositoryConfiguration {

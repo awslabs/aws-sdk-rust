@@ -64,6 +64,10 @@ impl BotRecommendationResultsBuilder {
         self.bot_locale_export_url = input;
         self
     }
+    /// <p>The presigned URL link of the recommended bot definition.</p>
+    pub fn get_bot_locale_export_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_locale_export_url
+    }
     /// <p>The presigned url link of the associated transcript.</p>
     pub fn associated_transcripts_url(
         mut self,
@@ -80,6 +84,10 @@ impl BotRecommendationResultsBuilder {
         self.associated_transcripts_url = input;
         self
     }
+    /// <p>The presigned url link of the associated transcript.</p>
+    pub fn get_associated_transcripts_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.associated_transcripts_url
+    }
     /// <p>The statistical summary of the bot recommendation results.</p>
     pub fn statistics(mut self, input: crate::types::BotRecommendationResultStatistics) -> Self {
         self.statistics = ::std::option::Option::Some(input);
@@ -92,6 +100,12 @@ impl BotRecommendationResultsBuilder {
     ) -> Self {
         self.statistics = input;
         self
+    }
+    /// <p>The statistical summary of the bot recommendation results.</p>
+    pub fn get_statistics(
+        &self,
+    ) -> &::std::option::Option<crate::types::BotRecommendationResultStatistics> {
+        &self.statistics
     }
     /// Consumes the builder and constructs a [`BotRecommendationResults`](crate::types::BotRecommendationResults).
     pub fn build(self) -> crate::types::BotRecommendationResults {

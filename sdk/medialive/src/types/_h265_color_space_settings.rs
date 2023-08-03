@@ -84,6 +84,12 @@ impl H265ColorSpaceSettingsBuilder {
         self.color_space_passthrough_settings = input;
         self
     }
+    /// Passthrough applies no color space conversion to the output
+    pub fn get_color_space_passthrough_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::ColorSpacePassthroughSettings> {
+        &self.color_space_passthrough_settings
+    }
     /// Dolby Vision81 Settings
     pub fn dolby_vision81_settings(mut self, input: crate::types::DolbyVision81Settings) -> Self {
         self.dolby_vision81_settings = ::std::option::Option::Some(input);
@@ -96,6 +102,12 @@ impl H265ColorSpaceSettingsBuilder {
     ) -> Self {
         self.dolby_vision81_settings = input;
         self
+    }
+    /// Dolby Vision81 Settings
+    pub fn get_dolby_vision81_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::DolbyVision81Settings> {
+        &self.dolby_vision81_settings
     }
     /// Hdr10 Settings
     pub fn hdr10_settings(mut self, input: crate::types::Hdr10Settings) -> Self {
@@ -110,6 +122,10 @@ impl H265ColorSpaceSettingsBuilder {
         self.hdr10_settings = input;
         self
     }
+    /// Hdr10 Settings
+    pub fn get_hdr10_settings(&self) -> &::std::option::Option<crate::types::Hdr10Settings> {
+        &self.hdr10_settings
+    }
     /// Rec601 Settings
     pub fn rec601_settings(mut self, input: crate::types::Rec601Settings) -> Self {
         self.rec601_settings = ::std::option::Option::Some(input);
@@ -123,6 +139,10 @@ impl H265ColorSpaceSettingsBuilder {
         self.rec601_settings = input;
         self
     }
+    /// Rec601 Settings
+    pub fn get_rec601_settings(&self) -> &::std::option::Option<crate::types::Rec601Settings> {
+        &self.rec601_settings
+    }
     /// Rec709 Settings
     pub fn rec709_settings(mut self, input: crate::types::Rec709Settings) -> Self {
         self.rec709_settings = ::std::option::Option::Some(input);
@@ -135,6 +155,10 @@ impl H265ColorSpaceSettingsBuilder {
     ) -> Self {
         self.rec709_settings = input;
         self
+    }
+    /// Rec709 Settings
+    pub fn get_rec709_settings(&self) -> &::std::option::Option<crate::types::Rec709Settings> {
+        &self.rec709_settings
     }
     /// Consumes the builder and constructs a [`H265ColorSpaceSettings`](crate::types::H265ColorSpaceSettings).
     pub fn build(self) -> crate::types::H265ColorSpaceSettings {

@@ -79,6 +79,10 @@ impl InternalServerExceptionBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// A header that defines the error encountered while processing the request.
     pub fn x_amz_error_type(
         mut self,
@@ -94,6 +98,10 @@ impl InternalServerExceptionBuilder {
     ) -> Self {
         self.x_amz_error_type = input;
         self
+    }
+    /// A header that defines the error encountered while processing the request.
+    pub fn get_x_amz_error_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.x_amz_error_type
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

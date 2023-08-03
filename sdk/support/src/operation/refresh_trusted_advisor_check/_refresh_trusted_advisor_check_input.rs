@@ -48,6 +48,12 @@ impl RefreshTrustedAdvisorCheckInputBuilder {
         self.check_id = input;
         self
     }
+    /// <p>The unique identifier for the Trusted Advisor check to refresh.</p> <note>
+    /// <p>Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.</p>
+    /// </note>
+    pub fn get_check_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.check_id
+    }
     /// Consumes the builder and constructs a [`RefreshTrustedAdvisorCheckInput`](crate::operation::refresh_trusted_advisor_check::RefreshTrustedAdvisorCheckInput).
     pub fn build(
         self,

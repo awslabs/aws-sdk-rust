@@ -56,6 +56,10 @@ impl ServiceBuilder {
         self.code = input;
         self
     }
+    /// <p>The code for an Amazon Web Services service returned by the <code>DescribeServices</code> response. The <code>name</code> element contains the corresponding friendly name.</p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
+    }
     /// <p>The friendly name for an Amazon Web Services service. The <code>code</code> element contains the corresponding code.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl ServiceBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The friendly name for an Amazon Web Services service. The <code>code</code> element contains the corresponding code.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `categories`.
     ///
@@ -84,6 +92,12 @@ impl ServiceBuilder {
     ) -> Self {
         self.categories = input;
         self
+    }
+    /// <p>A list of categories that describe the type of support issue a case describes. Categories consist of a category name and a category code. Category names and codes are passed to Amazon Web Services Support when you call <code>CreateCase</code>.</p>
+    pub fn get_categories(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Category>> {
+        &self.categories
     }
     /// Consumes the builder and constructs a [`Service`](crate::types::Service).
     pub fn build(self) -> crate::types::Service {

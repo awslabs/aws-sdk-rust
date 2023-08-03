@@ -67,6 +67,12 @@ impl ListStudioSessionMappingsOutputBuilder {
         self.session_mappings = input;
         self
     }
+    /// <p>A list of session mapping summary objects. Each object includes session mapping details such as creation time, identity type (user or group), and Amazon EMR Studio ID.</p>
+    pub fn get_session_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SessionMappingSummary>> {
+        &self.session_mappings
+    }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -76,6 +82,10 @@ impl ListStudioSessionMappingsOutputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -40,6 +40,10 @@ impl RegexBuilder {
         self.regex_string = input;
         self
     }
+    /// <p>The string representing the regular expression.</p>
+    pub fn get_regex_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.regex_string
+    }
     /// Consumes the builder and constructs a [`Regex`](crate::types::Regex).
     pub fn build(self) -> crate::types::Regex {
         crate::types::Regex {

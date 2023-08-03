@@ -65,6 +65,12 @@ impl TraceContentBuilder {
         self.wireless_device_frame_info = input;
         self
     }
+    /// <p> <code>FrameInfo</code> of your wireless device resources for the trace content. Use FrameInfo to debug the communication between your LoRaWAN end devices and the network server.</p>
+    pub fn get_wireless_device_frame_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::WirelessDeviceFrameInfo> {
+        &self.wireless_device_frame_info
+    }
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
     pub fn log_level(mut self, input: crate::types::LogLevel) -> Self {
         self.log_level = ::std::option::Option::Some(input);
@@ -74,6 +80,10 @@ impl TraceContentBuilder {
     pub fn set_log_level(mut self, input: ::std::option::Option<crate::types::LogLevel>) -> Self {
         self.log_level = input;
         self
+    }
+    /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
+    pub fn get_log_level(&self) -> &::std::option::Option<crate::types::LogLevel> {
+        &self.log_level
     }
     /// <p> <code>FrameInfo</code> of your multicast group resources for the trace content. Use FrameInfo to debug the multicast communication between your LoRaWAN end devices and the network server.</p>
     pub fn multicast_frame_info(mut self, input: crate::types::MulticastFrameInfo) -> Self {
@@ -87,6 +97,12 @@ impl TraceContentBuilder {
     ) -> Self {
         self.multicast_frame_info = input;
         self
+    }
+    /// <p> <code>FrameInfo</code> of your multicast group resources for the trace content. Use FrameInfo to debug the multicast communication between your LoRaWAN end devices and the network server.</p>
+    pub fn get_multicast_frame_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::MulticastFrameInfo> {
+        &self.multicast_frame_info
     }
     /// Consumes the builder and constructs a [`TraceContent`](crate::types::TraceContent).
     pub fn build(self) -> crate::types::TraceContent {

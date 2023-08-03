@@ -38,6 +38,12 @@ impl CreateSnapshotsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSnapshots as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_snapshots::builders::CreateSnapshotsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +134,10 @@ impl CreateSnapshotsFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p> A description propagated to every snapshot specified by the instance.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The instance to specify which volumes should be included in the snapshots.</p>
     pub fn instance_specification(mut self, input: crate::types::InstanceSpecification) -> Self {
         self.inner = self.inner.instance_specification(input);
@@ -140,6 +150,12 @@ impl CreateSnapshotsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_instance_specification(input);
         self
+    }
+    /// <p>The instance to specify which volumes should be included in the snapshots.</p>
+    pub fn get_instance_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceSpecification> {
+        self.inner.get_instance_specification()
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost on which to create the local snapshots.</p>
     /// <ul>
@@ -163,6 +179,16 @@ impl CreateSnapshotsFluentBuilder {
         self.inner = self.inner.set_outpost_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Outpost on which to create the local snapshots.</p>
+    /// <ul>
+    /// <li> <p>To create snapshots from an instance in a Region, omit this parameter. The snapshots are created in the same Region as the instance.</p> </li>
+    /// <li> <p>To create snapshots from an instance on an Outpost and store the snapshots in the Region, omit this parameter. The snapshots are created in the Region for the Outpost.</p> </li>
+    /// <li> <p>To create snapshots from an instance on an Outpost and store the snapshots on an Outpost, specify the ARN of the destination Outpost. The snapshots must be created on the same Outpost as the instance.</p> </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-multivol-snapshot"> Create multi-volume local snapshots from instances on an Outpost</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_outpost_arn()
+    }
     /// Appends an item to `TagSpecifications`.
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
@@ -180,6 +206,12 @@ impl CreateSnapshotsFluentBuilder {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
+    /// <p>Tags to apply to every snapshot specified by the instance.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        self.inner.get_tag_specifications()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -189,6 +221,10 @@ impl CreateSnapshotsFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
     /// <p>Copies the tags from the specified volume to corresponding snapshot.</p>
     pub fn copy_tags_from_source(mut self, input: crate::types::CopyTagsFromSource) -> Self {
@@ -202,5 +238,11 @@ impl CreateSnapshotsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_copy_tags_from_source(input);
         self
+    }
+    /// <p>Copies the tags from the specified volume to corresponding snapshot.</p>
+    pub fn get_copy_tags_from_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::CopyTagsFromSource> {
+        self.inner.get_copy_tags_from_source()
     }
 }

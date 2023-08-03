@@ -76,6 +76,10 @@ impl ZonalStatisticsConfigInputBuilder {
         self.zone_s3_path = input;
         self
     }
+    /// <p>The Amazon S3 path pointing to the GeoJSON containing the polygonal zones.</p>
+    pub fn get_zone_s3_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.zone_s3_path
+    }
     /// Appends an item to `statistics`.
     ///
     /// To override the contents of this collection use [`set_statistics`](Self::set_statistics).
@@ -95,6 +99,12 @@ impl ZonalStatisticsConfigInputBuilder {
         self.statistics = input;
         self
     }
+    /// <p>List of zonal statistics to compute.</p>
+    pub fn get_statistics(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ZonalStatistics>> {
+        &self.statistics
+    }
     /// Appends an item to `target_bands`.
     ///
     /// To override the contents of this collection use [`set_target_bands`](Self::set_target_bands).
@@ -113,6 +123,12 @@ impl ZonalStatisticsConfigInputBuilder {
     ) -> Self {
         self.target_bands = input;
         self
+    }
+    /// <p>Bands used in the operation. If no target bands are specified, it uses all bands available input.</p>
+    pub fn get_target_bands(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.target_bands
     }
     /// <p>The Amazon Resource Name (ARN) or an ID of a Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to decrypt your output artifacts with Amazon S3 server-side encryption. The SageMaker execution role must have <code>kms:GenerateDataKey</code> permission.</p>
     /// <p>The <code>KmsKeyId</code> can be any of the following formats:</p>
@@ -141,6 +157,16 @@ impl ZonalStatisticsConfigInputBuilder {
     ) -> Self {
         self.zone_s3_path_kms_key_id = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) or an ID of a Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to decrypt your output artifacts with Amazon S3 server-side encryption. The SageMaker execution role must have <code>kms:GenerateDataKey</code> permission.</p>
+    /// <p>The <code>KmsKeyId</code> can be any of the following formats:</p>
+    /// <ul>
+    /// <li> <p>// KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p> <code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:key/&lt;key-id-12ab-34cd-56ef-1234567890ab&gt;"</code> </p> </li>
+    /// </ul>
+    /// <p>For more information about key identifiers, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">Key identifiers (KeyID)</a> in the Amazon Web Services Key Management Service (Amazon Web Services KMS) documentation.</p>
+    pub fn get_zone_s3_path_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.zone_s3_path_kms_key_id
     }
     /// Consumes the builder and constructs a [`ZonalStatisticsConfigInput`](crate::types::ZonalStatisticsConfigInput).
     pub fn build(self) -> crate::types::ZonalStatisticsConfigInput {

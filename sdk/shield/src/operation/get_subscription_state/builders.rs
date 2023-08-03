@@ -36,6 +36,12 @@ impl GetSubscriptionStateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetSubscriptionState as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_subscription_state::builders::GetSubscriptionStateInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(

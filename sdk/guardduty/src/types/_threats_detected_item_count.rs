@@ -40,6 +40,10 @@ impl ThreatsDetectedItemCountBuilder {
         self.files = input;
         self
     }
+    /// <p>Total number of infected files.</p>
+    pub fn get_files(&self) -> &::std::option::Option<i32> {
+        &self.files
+    }
     /// Consumes the builder and constructs a [`ThreatsDetectedItemCount`](crate::types::ThreatsDetectedItemCount).
     pub fn build(self) -> crate::types::ThreatsDetectedItemCount {
         crate::types::ThreatsDetectedItemCount {

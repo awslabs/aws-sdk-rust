@@ -42,6 +42,10 @@ impl DescribeTargetGroupAttributesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeTargetGroupAttributes as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_target_group_attributes::builders::DescribeTargetGroupAttributesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,5 +141,9 @@ impl DescribeTargetGroupAttributesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_target_group_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the target group.</p>
+    pub fn get_target_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_group_arn()
     }
 }

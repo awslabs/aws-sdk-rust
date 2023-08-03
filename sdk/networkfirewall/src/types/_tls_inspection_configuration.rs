@@ -58,6 +58,12 @@ impl TlsInspectionConfigurationBuilder {
         self.server_certificate_configurations = input;
         self
     }
+    /// <p>Lists the server certificate configurations that are associated with the TLS configuration.</p>
+    pub fn get_server_certificate_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerCertificateConfiguration>> {
+        &self.server_certificate_configurations
+    }
     /// Consumes the builder and constructs a [`TlsInspectionConfiguration`](crate::types::TlsInspectionConfiguration).
     pub fn build(self) -> crate::types::TlsInspectionConfiguration {
         crate::types::TlsInspectionConfiguration {

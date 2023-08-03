@@ -36,6 +36,10 @@ impl CreateUserFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateUser as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_user::builders::CreateUserInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl CreateUserFluentBuilder {
         self.inner = self.inner.set_user_id(input);
         self
     }
+    /// <p>The ID of the user.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_id()
+    }
     /// <p>The username of the user.</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_name(input.into());
@@ -128,6 +136,10 @@ impl CreateUserFluentBuilder {
         self.inner = self.inner.set_user_name(input);
         self
     }
+    /// <p>The username of the user.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_name()
+    }
     /// <p>The current supported value is Redis. </p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine(input.into());
@@ -137,6 +149,10 @@ impl CreateUserFluentBuilder {
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine(input);
         self
+    }
+    /// <p>The current supported value is Redis. </p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_engine()
     }
     /// Appends an item to `Passwords`.
     ///
@@ -155,6 +171,10 @@ impl CreateUserFluentBuilder {
         self.inner = self.inner.set_passwords(input);
         self
     }
+    /// <p>Passwords used for this user. You can create up to two passwords for each user.</p>
+    pub fn get_passwords(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_passwords()
+    }
     /// <p>Access permissions string used for this user.</p>
     pub fn access_string(
         mut self,
@@ -171,6 +191,10 @@ impl CreateUserFluentBuilder {
         self.inner = self.inner.set_access_string(input);
         self
     }
+    /// <p>Access permissions string used for this user.</p>
+    pub fn get_access_string(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_access_string()
+    }
     /// <p>Indicates a password is not required for this user.</p>
     pub fn no_password_required(mut self, input: bool) -> Self {
         self.inner = self.inner.no_password_required(input);
@@ -180,6 +204,10 @@ impl CreateUserFluentBuilder {
     pub fn set_no_password_required(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_no_password_required(input);
         self
+    }
+    /// <p>Indicates a password is not required for this user.</p>
+    pub fn get_no_password_required(&self) -> &::std::option::Option<bool> {
+        self.inner.get_no_password_required()
     }
     /// Appends an item to `Tags`.
     ///
@@ -198,6 +226,10 @@ impl CreateUserFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>Specifies how to authenticate the user.</p>
     pub fn authentication_mode(mut self, input: crate::types::AuthenticationMode) -> Self {
         self.inner = self.inner.authentication_mode(input);
@@ -210,5 +242,11 @@ impl CreateUserFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_authentication_mode(input);
         self
+    }
+    /// <p>Specifies how to authenticate the user.</p>
+    pub fn get_authentication_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthenticationMode> {
+        self.inner.get_authentication_mode()
     }
 }

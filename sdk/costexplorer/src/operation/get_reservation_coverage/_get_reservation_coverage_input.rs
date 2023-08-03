@@ -195,6 +195,10 @@ impl GetReservationCoverageInputBuilder {
         self.time_period = input;
         self
     }
+    /// <p>The start and end dates of the period that you want to retrieve data about reservation coverage for. You can retrieve data for a maximum of 13 months: the last 12 months and the current month. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. </p>
+    pub fn get_time_period(&self) -> &::std::option::Option<crate::types::DateInterval> {
+        &self.time_period
+    }
     /// Appends an item to `group_by`.
     ///
     /// To override the contents of this collection use [`set_group_by`](Self::set_group_by).
@@ -240,6 +244,25 @@ impl GetReservationCoverageInputBuilder {
         self.group_by = input;
         self
     }
+    /// <p>You can group the data by the following attributes:</p>
+    /// <ul>
+    /// <li> <p>AZ</p> </li>
+    /// <li> <p>CACHE_ENGINE</p> </li>
+    /// <li> <p>DATABASE_ENGINE</p> </li>
+    /// <li> <p>DEPLOYMENT_OPTION</p> </li>
+    /// <li> <p>INSTANCE_TYPE</p> </li>
+    /// <li> <p>INVOICING_ENTITY</p> </li>
+    /// <li> <p>LINKED_ACCOUNT</p> </li>
+    /// <li> <p>OPERATING_SYSTEM</p> </li>
+    /// <li> <p>PLATFORM</p> </li>
+    /// <li> <p>REGION</p> </li>
+    /// <li> <p>TENANCY</p> </li>
+    /// </ul>
+    pub fn get_group_by(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>> {
+        &self.group_by
+    }
     /// <p>The granularity of the Amazon Web Services cost data for the reservation. Valid values are <code>MONTHLY</code> and <code>DAILY</code>.</p>
     /// <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.</p>
     /// <p>The <code>GetReservationCoverage</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
@@ -256,6 +279,12 @@ impl GetReservationCoverageInputBuilder {
     ) -> Self {
         self.granularity = input;
         self
+    }
+    /// <p>The granularity of the Amazon Web Services cost data for the reservation. Valid values are <code>MONTHLY</code> and <code>DAILY</code>.</p>
+    /// <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.</p>
+    /// <p>The <code>GetReservationCoverage</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
+    pub fn get_granularity(&self) -> &::std::option::Option<crate::types::Granularity> {
+        &self.granularity
     }
     /// <p>Filters utilization data by dimensions. You can filter by the following dimensions:</p>
     /// <ul>
@@ -301,6 +330,27 @@ impl GetReservationCoverageInputBuilder {
         self.filter = input;
         self
     }
+    /// <p>Filters utilization data by dimensions. You can filter by the following dimensions:</p>
+    /// <ul>
+    /// <li> <p>AZ</p> </li>
+    /// <li> <p>CACHE_ENGINE</p> </li>
+    /// <li> <p>DATABASE_ENGINE</p> </li>
+    /// <li> <p>DEPLOYMENT_OPTION</p> </li>
+    /// <li> <p>INSTANCE_TYPE</p> </li>
+    /// <li> <p>LINKED_ACCOUNT</p> </li>
+    /// <li> <p>OPERATING_SYSTEM</p> </li>
+    /// <li> <p>PLATFORM</p> </li>
+    /// <li> <p>REGION</p> </li>
+    /// <li> <p>SERVICE</p> </li>
+    /// <li> <p>TAG</p> </li>
+    /// <li> <p>TENANCY</p> </li>
+    /// </ul>
+    /// <p> <code>GetReservationCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension. You can nest only one level deep. If there are multiple values for a dimension, they are OR'd together.</p>
+    /// <p>If you don't provide a <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p>
+    /// <p>Cost category is also supported.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::Expression> {
+        &self.filter
+    }
     /// Appends an item to `metrics`.
     ///
     /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
@@ -322,6 +372,11 @@ impl GetReservationCoverageInputBuilder {
         self.metrics = input;
         self
     }
+    /// <p>The measurement that you want your reservation coverage reported in.</p>
+    /// <p>Valid values are <code>Hour</code>, <code>Unit</code>, and <code>Cost</code>. You can use multiple values in a request.</p>
+    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.metrics
+    }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn next_page_token(
         mut self,
@@ -337,6 +392,10 @@ impl GetReservationCoverageInputBuilder {
     ) -> Self {
         self.next_page_token = input;
         self
+    }
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_page_token
     }
     /// <p>The value by which you want to sort the data.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
@@ -379,6 +438,24 @@ impl GetReservationCoverageInputBuilder {
         self.sort_by = input;
         self
     }
+    /// <p>The value by which you want to sort the data.</p>
+    /// <p>The following values are supported for <code>Key</code>:</p>
+    /// <ul>
+    /// <li> <p> <code>OnDemandCost</code> </p> </li>
+    /// <li> <p> <code>CoverageHoursPercentage</code> </p> </li>
+    /// <li> <p> <code>OnDemandHours</code> </p> </li>
+    /// <li> <p> <code>ReservedHours</code> </p> </li>
+    /// <li> <p> <code>TotalRunningHours</code> </p> </li>
+    /// <li> <p> <code>CoverageNormalizedUnitsPercentage</code> </p> </li>
+    /// <li> <p> <code>OnDemandNormalizedUnits</code> </p> </li>
+    /// <li> <p> <code>ReservedNormalizedUnits</code> </p> </li>
+    /// <li> <p> <code>TotalRunningNormalizedUnits</code> </p> </li>
+    /// <li> <p> <code>Time</code> </p> </li>
+    /// </ul>
+    /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SortDefinition> {
+        &self.sort_by
+    }
     /// <p>The maximum number of objects that you returned for this request. If more objects are available, in the response, Amazon Web Services provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -388,6 +465,10 @@ impl GetReservationCoverageInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of objects that you returned for this request. If more objects are available, in the response, Amazon Web Services provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`GetReservationCoverageInput`](crate::operation::get_reservation_coverage::GetReservationCoverageInput).
     pub fn build(

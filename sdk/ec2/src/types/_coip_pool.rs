@@ -72,6 +72,10 @@ impl CoipPoolBuilder {
         self.pool_id = input;
         self
     }
+    /// <p>The ID of the address pool.</p>
+    pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pool_id
+    }
     /// Appends an item to `pool_cidrs`.
     ///
     /// To override the contents of this collection use [`set_pool_cidrs`](Self::set_pool_cidrs).
@@ -91,6 +95,10 @@ impl CoipPoolBuilder {
         self.pool_cidrs = input;
         self
     }
+    /// <p>The address ranges of the address pool.</p>
+    pub fn get_pool_cidrs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.pool_cidrs
+    }
     /// <p>The ID of the local gateway route table.</p>
     pub fn local_gateway_route_table_id(
         mut self,
@@ -106,6 +114,12 @@ impl CoipPoolBuilder {
     ) -> Self {
         self.local_gateway_route_table_id = input;
         self
+    }
+    /// <p>The ID of the local gateway route table.</p>
+    pub fn get_local_gateway_route_table_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.local_gateway_route_table_id
     }
     /// Appends an item to `tags`.
     ///
@@ -126,6 +140,10 @@ impl CoipPoolBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The ARN of the address pool.</p>
     pub fn pool_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pool_arn = ::std::option::Option::Some(input.into());
@@ -135,6 +153,10 @@ impl CoipPoolBuilder {
     pub fn set_pool_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pool_arn = input;
         self
+    }
+    /// <p>The ARN of the address pool.</p>
+    pub fn get_pool_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pool_arn
     }
     /// Consumes the builder and constructs a [`CoipPool`](crate::types::CoipPool).
     pub fn build(self) -> crate::types::CoipPool {

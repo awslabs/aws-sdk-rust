@@ -58,6 +58,10 @@ impl ListAccessControlConfigurationsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in the subsequent request to retrieve the next set of access control configurations.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `access_control_configurations`.
     ///
     /// To override the contents of this collection use [`set_access_control_configurations`](Self::set_access_control_configurations).
@@ -81,6 +85,13 @@ impl ListAccessControlConfigurationsOutputBuilder {
     ) -> Self {
         self.access_control_configurations = input;
         self
+    }
+    /// <p>The details of your access control configurations.</p>
+    pub fn get_access_control_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessControlConfigurationSummary>>
+    {
+        &self.access_control_configurations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

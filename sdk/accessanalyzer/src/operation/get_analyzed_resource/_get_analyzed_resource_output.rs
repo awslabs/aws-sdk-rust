@@ -52,6 +52,10 @@ impl GetAnalyzedResourceOutputBuilder {
         self.resource = input;
         self
     }
+    /// <p>An <code>AnalyzedResource</code> object that contains information that IAM Access Analyzer found when it analyzed the resource.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<crate::types::AnalyzedResource> {
+        &self.resource
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

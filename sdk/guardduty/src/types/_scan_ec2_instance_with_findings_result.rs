@@ -43,6 +43,10 @@ impl ScanEc2InstanceWithFindingsResultBuilder {
         self.ebs_volumes = input;
         self
     }
+    /// <p>Describes the configuration of scanning EBS volumes as a data source.</p>
+    pub fn get_ebs_volumes(&self) -> &::std::option::Option<crate::types::EbsVolumesResult> {
+        &self.ebs_volumes
+    }
     /// Consumes the builder and constructs a [`ScanEc2InstanceWithFindingsResult`](crate::types::ScanEc2InstanceWithFindingsResult).
     pub fn build(self) -> crate::types::ScanEc2InstanceWithFindingsResult {
         crate::types::ScanEc2InstanceWithFindingsResult {

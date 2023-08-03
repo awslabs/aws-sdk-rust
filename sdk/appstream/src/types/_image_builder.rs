@@ -257,6 +257,10 @@ impl ImageBuilderBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the image builder.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The ARN for the image builder.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -266,6 +270,10 @@ impl ImageBuilderBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The ARN for the image builder.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The ARN of the image from which this builder was created.</p>
     pub fn image_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -277,6 +285,10 @@ impl ImageBuilderBuilder {
         self.image_arn = input;
         self
     }
+    /// <p>The ARN of the image from which this builder was created.</p>
+    pub fn get_image_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_arn
+    }
     /// <p>The description to display.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -286,6 +298,10 @@ impl ImageBuilderBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description to display.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The image builder name to display.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -297,6 +313,10 @@ impl ImageBuilderBuilder {
         self.display_name = input;
         self
     }
+    /// <p>The image builder name to display.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// <p>The VPC configuration of the image builder.</p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
         self.vpc_config = ::std::option::Option::Some(input);
@@ -306,6 +326,10 @@ impl ImageBuilderBuilder {
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
         self.vpc_config = input;
         self
+    }
+    /// <p>The VPC configuration of the image builder.</p>
+    pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
+        &self.vpc_config
     }
     /// <p>The instance type for the image builder. The following instance types are available:</p>
     /// <ul>
@@ -393,6 +417,45 @@ impl ImageBuilderBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The instance type for the image builder. The following instance types are available:</p>
+    /// <ul>
+    /// <li> <p>stream.standard.small</p> </li>
+    /// <li> <p>stream.standard.medium</p> </li>
+    /// <li> <p>stream.standard.large</p> </li>
+    /// <li> <p>stream.compute.large</p> </li>
+    /// <li> <p>stream.compute.xlarge</p> </li>
+    /// <li> <p>stream.compute.2xlarge</p> </li>
+    /// <li> <p>stream.compute.4xlarge</p> </li>
+    /// <li> <p>stream.compute.8xlarge</p> </li>
+    /// <li> <p>stream.memory.large</p> </li>
+    /// <li> <p>stream.memory.xlarge</p> </li>
+    /// <li> <p>stream.memory.2xlarge</p> </li>
+    /// <li> <p>stream.memory.4xlarge</p> </li>
+    /// <li> <p>stream.memory.8xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.large</p> </li>
+    /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.large</p> </li>
+    /// <li> <p>stream.graphics-design.xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
+    /// </ul>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
+    }
     /// <p>The operating system platform of the image builder.</p>
     pub fn platform(mut self, input: crate::types::PlatformType) -> Self {
         self.platform = ::std::option::Option::Some(input);
@@ -406,6 +469,10 @@ impl ImageBuilderBuilder {
         self.platform = input;
         self
     }
+    /// <p>The operating system platform of the image builder.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<crate::types::PlatformType> {
+        &self.platform
+    }
     /// <p>The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -417,6 +484,11 @@ impl ImageBuilderBuilder {
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_role_arn = input;
         self
+    }
+    /// <p>The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_role_arn
     }
     /// <p>The state of the image builder.</p>
     pub fn state(mut self, input: crate::types::ImageBuilderState) -> Self {
@@ -430,6 +502,10 @@ impl ImageBuilderBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the image builder.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ImageBuilderState> {
+        &self.state
     }
     /// <p>The reason why the last state change occurred.</p>
     pub fn state_change_reason(
@@ -447,6 +523,12 @@ impl ImageBuilderBuilder {
         self.state_change_reason = input;
         self
     }
+    /// <p>The reason why the last state change occurred.</p>
+    pub fn get_state_change_reason(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImageBuilderStateChangeReason> {
+        &self.state_change_reason
+    }
     /// <p>The time stamp when the image builder was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
@@ -459,6 +541,10 @@ impl ImageBuilderBuilder {
     ) -> Self {
         self.created_time = input;
         self
+    }
+    /// <p>The time stamp when the image builder was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
     }
     /// <p>Enables or disables default internet access for the image builder.</p>
     pub fn enable_default_internet_access(mut self, input: bool) -> Self {
@@ -473,6 +559,10 @@ impl ImageBuilderBuilder {
         self.enable_default_internet_access = input;
         self
     }
+    /// <p>Enables or disables default internet access for the image builder.</p>
+    pub fn get_enable_default_internet_access(&self) -> &::std::option::Option<bool> {
+        &self.enable_default_internet_access
+    }
     /// <p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain. </p>
     pub fn domain_join_info(mut self, input: crate::types::DomainJoinInfo) -> Self {
         self.domain_join_info = ::std::option::Option::Some(input);
@@ -485,6 +575,10 @@ impl ImageBuilderBuilder {
     ) -> Self {
         self.domain_join_info = input;
         self
+    }
+    /// <p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain. </p>
+    pub fn get_domain_join_info(&self) -> &::std::option::Option<crate::types::DomainJoinInfo> {
+        &self.domain_join_info
     }
     /// <p>Describes the network details of the fleet or image builder instance.</p>
     pub fn network_access_configuration(
@@ -501,6 +595,12 @@ impl ImageBuilderBuilder {
     ) -> Self {
         self.network_access_configuration = input;
         self
+    }
+    /// <p>Describes the network details of the fleet or image builder instance.</p>
+    pub fn get_network_access_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkAccessConfiguration> {
+        &self.network_access_configuration
     }
     /// Appends an item to `image_builder_errors`.
     ///
@@ -521,6 +621,12 @@ impl ImageBuilderBuilder {
         self.image_builder_errors = input;
         self
     }
+    /// <p>The image builder errors.</p>
+    pub fn get_image_builder_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceError>> {
+        &self.image_builder_errors
+    }
     /// <p>The version of the AppStream 2.0 agent that is currently being used by the image builder. </p>
     pub fn appstream_agent_version(
         mut self,
@@ -536,6 +642,10 @@ impl ImageBuilderBuilder {
     ) -> Self {
         self.appstream_agent_version = input;
         self
+    }
+    /// <p>The version of the AppStream 2.0 agent that is currently being used by the image builder. </p>
+    pub fn get_appstream_agent_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.appstream_agent_version
     }
     /// Appends an item to `access_endpoints`.
     ///
@@ -555,6 +665,12 @@ impl ImageBuilderBuilder {
     ) -> Self {
         self.access_endpoints = input;
         self
+    }
+    /// <p>The list of virtual private cloud (VPC) interface endpoint objects. Administrators can connect to the image builder only through the specified endpoints.</p>
+    pub fn get_access_endpoints(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>> {
+        &self.access_endpoints
     }
     /// Consumes the builder and constructs a [`ImageBuilder`](crate::types::ImageBuilder).
     pub fn build(self) -> crate::types::ImageBuilder {

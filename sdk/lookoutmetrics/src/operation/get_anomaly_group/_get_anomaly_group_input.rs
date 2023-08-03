@@ -53,6 +53,10 @@ impl GetAnomalyGroupInputBuilder {
         self.anomaly_group_id = input;
         self
     }
+    /// <p>The ID of the anomaly group.</p>
+    pub fn get_anomaly_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.anomaly_group_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
     pub fn anomaly_detector_arn(
         mut self,
@@ -68,6 +72,10 @@ impl GetAnomalyGroupInputBuilder {
     ) -> Self {
         self.anomaly_detector_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    pub fn get_anomaly_detector_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.anomaly_detector_arn
     }
     /// Consumes the builder and constructs a [`GetAnomalyGroupInput`](crate::operation::get_anomaly_group::GetAnomalyGroupInput).
     pub fn build(

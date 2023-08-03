@@ -40,6 +40,10 @@ impl FaqStatisticsBuilder {
         self.indexed_question_answers_count = input;
         self
     }
+    /// <p>The total number of FAQ questions and answers contained in the index.</p>
+    pub fn get_indexed_question_answers_count(&self) -> &::std::option::Option<i32> {
+        &self.indexed_question_answers_count
+    }
     /// Consumes the builder and constructs a [`FaqStatistics`](crate::types::FaqStatistics).
     pub fn build(self) -> crate::types::FaqStatistics {
         crate::types::FaqStatistics {

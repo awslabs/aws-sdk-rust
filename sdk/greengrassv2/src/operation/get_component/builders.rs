@@ -36,6 +36,10 @@ impl GetComponentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetComponent as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_component::builders::GetComponentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +125,12 @@ impl GetComponentFluentBuilder {
         self.inner = self.inner.set_recipe_output_format(input);
         self
     }
+    /// <p>The format of the recipe.</p>
+    pub fn get_recipe_output_format(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecipeOutputFormat> {
+        self.inner.get_recipe_output_format()
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.arn(input.into());
@@ -130,5 +140,9 @@ impl GetComponentFluentBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
     }
 }

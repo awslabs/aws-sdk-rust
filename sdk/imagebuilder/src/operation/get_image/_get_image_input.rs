@@ -45,6 +45,10 @@ impl GetImageInputBuilder {
         self.image_build_version_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the image that you want to get.</p>
+    pub fn get_image_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_build_version_arn
+    }
     /// Consumes the builder and constructs a [`GetImageInput`](crate::operation::get_image::GetImageInput).
     pub fn build(
         self,

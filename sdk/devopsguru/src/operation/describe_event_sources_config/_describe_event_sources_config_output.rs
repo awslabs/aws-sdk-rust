@@ -49,6 +49,10 @@ impl DescribeEventSourcesConfigOutputBuilder {
         self.event_sources = input;
         self
     }
+    /// <p>Lists the event sources in the configuration.</p>
+    pub fn get_event_sources(&self) -> &::std::option::Option<crate::types::EventSourcesConfig> {
+        &self.event_sources
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

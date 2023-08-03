@@ -56,6 +56,10 @@ impl ListWorkerFleetsInputBuilder {
         self.site = input;
         self
     }
+    /// Site ARN.
+    pub fn get_site(&self) -> &::std::option::Option<::std::string::String> {
+        &self.site
+    }
     /// Maximum number of results to retrieve in a single ListWorkerFleets call.
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl ListWorkerFleetsInputBuilder {
         self.max_results = input;
         self
     }
+    /// Maximum number of results to retrieve in a single ListWorkerFleets call.
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl ListWorkerFleetsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListWorkerFleetsInput`](crate::operation::list_worker_fleets::ListWorkerFleetsInput).
     pub fn build(

@@ -64,6 +64,10 @@ impl CreateServiceProfileInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the new resource.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The service profile information to use to create the service profile.</p>
     pub fn lo_ra_wan(mut self, input: crate::types::LoRaWanServiceProfile) -> Self {
         self.lo_ra_wan = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl CreateServiceProfileInputBuilder {
     ) -> Self {
         self.lo_ra_wan = input;
         self
+    }
+    /// <p>The service profile information to use to create the service profile.</p>
+    pub fn get_lo_ra_wan(&self) -> &::std::option::Option<crate::types::LoRaWanServiceProfile> {
+        &self.lo_ra_wan
     }
     /// Appends an item to `tags`.
     ///
@@ -96,6 +104,10 @@ impl CreateServiceProfileInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags to attach to the new service profile. Tags are metadata that you can use to manage a resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
     pub fn client_request_token(
         mut self,
@@ -111,6 +123,10 @@ impl CreateServiceProfileInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Consumes the builder and constructs a [`CreateServiceProfileInput`](crate::operation::create_service_profile::CreateServiceProfileInput).
     pub fn build(

@@ -98,6 +98,10 @@ impl ConfigurationRecorderStatusBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the configuration recorder.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The time the recorder was last started.</p>
     pub fn last_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_start_time = ::std::option::Option::Some(input);
@@ -110,6 +114,10 @@ impl ConfigurationRecorderStatusBuilder {
     ) -> Self {
         self.last_start_time = input;
         self
+    }
+    /// <p>The time the recorder was last started.</p>
+    pub fn get_last_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_start_time
     }
     /// <p>The time the recorder was last stopped.</p>
     pub fn last_stop_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -124,6 +132,10 @@ impl ConfigurationRecorderStatusBuilder {
         self.last_stop_time = input;
         self
     }
+    /// <p>The time the recorder was last stopped.</p>
+    pub fn get_last_stop_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_stop_time
+    }
     /// <p>Specifies whether or not the recorder is currently recording.</p>
     pub fn recording(mut self, input: bool) -> Self {
         self.recording = ::std::option::Option::Some(input);
@@ -133,6 +145,10 @@ impl ConfigurationRecorderStatusBuilder {
     pub fn set_recording(mut self, input: ::std::option::Option<bool>) -> Self {
         self.recording = input;
         self
+    }
+    /// <p>Specifies whether or not the recorder is currently recording.</p>
+    pub fn get_recording(&self) -> &::std::option::Option<bool> {
+        &self.recording
     }
     /// <p>The status of the latest recording event processed by the recorder.</p>
     pub fn last_status(mut self, input: crate::types::RecorderStatus) -> Self {
@@ -146,6 +162,10 @@ impl ConfigurationRecorderStatusBuilder {
     ) -> Self {
         self.last_status = input;
         self
+    }
+    /// <p>The status of the latest recording event processed by the recorder.</p>
+    pub fn get_last_status(&self) -> &::std::option::Option<crate::types::RecorderStatus> {
+        &self.last_status
     }
     /// <p>The latest error code from when the recorder last failed.</p>
     pub fn last_error_code(
@@ -163,6 +183,10 @@ impl ConfigurationRecorderStatusBuilder {
         self.last_error_code = input;
         self
     }
+    /// <p>The latest error code from when the recorder last failed.</p>
+    pub fn get_last_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_error_code
+    }
     /// <p>The latest error message from when the recorder last failed.</p>
     pub fn last_error_message(
         mut self,
@@ -179,6 +203,10 @@ impl ConfigurationRecorderStatusBuilder {
         self.last_error_message = input;
         self
     }
+    /// <p>The latest error message from when the recorder last failed.</p>
+    pub fn get_last_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_error_message
+    }
     /// <p>The time of the latest change in status of an recording event processed by the recorder.</p>
     pub fn last_status_change_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_status_change_time = ::std::option::Option::Some(input);
@@ -191,6 +219,12 @@ impl ConfigurationRecorderStatusBuilder {
     ) -> Self {
         self.last_status_change_time = input;
         self
+    }
+    /// <p>The time of the latest change in status of an recording event processed by the recorder.</p>
+    pub fn get_last_status_change_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_status_change_time
     }
     /// Consumes the builder and constructs a [`ConfigurationRecorderStatus`](crate::types::ConfigurationRecorderStatus).
     pub fn build(self) -> crate::types::ConfigurationRecorderStatus {

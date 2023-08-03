@@ -40,6 +40,10 @@ impl CustomerContentEncryptionConfigurationBuilder {
         self.kms_key = input;
         self
     }
+    /// <p>The KMS key that is used to encrypt the user's data stores in Athena.</p>
+    pub fn get_kms_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key
+    }
     /// Consumes the builder and constructs a [`CustomerContentEncryptionConfiguration`](crate::types::CustomerContentEncryptionConfiguration).
     pub fn build(self) -> crate::types::CustomerContentEncryptionConfiguration {
         crate::types::CustomerContentEncryptionConfiguration {

@@ -51,6 +51,10 @@ impl ImscDestinationSettingsBuilder {
         self.accessibility = input;
         self
     }
+    /// If the IMSC captions track is intended to provide accessibility for people who are deaf or hard of hearing: Set Accessibility subtitles to Enabled. When you do, MediaConvert adds accessibility attributes to your output HLS or DASH manifest. For HLS manifests, MediaConvert adds the following accessibility attributes under EXT-X-MEDIA for this track: CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES". For DASH manifests, MediaConvert adds the following in the adaptation set for this track: <accessibility schemeiduri="urn:mpeg:dash:role:2011" value="caption" />. If the captions track is not intended to provide such accessibility: Keep the default value, Disabled. When you do, for DASH manifests, MediaConvert instead adds the following in the adaptation set for this track: <role schemeiduri="urn:mpeg:dash:role:2011" value="subtitle" />.
+    pub fn get_accessibility(&self) -> &::std::option::Option<crate::types::ImscAccessibilitySubs> {
+        &self.accessibility
+    }
     /// Keep this setting enabled to have MediaConvert use the font style and position information from the captions source in the output. This option is available only when your input captions are IMSC, SMPTE-TT, or TTML. Disable this setting for simplified output captions.
     pub fn style_passthrough(mut self, input: crate::types::ImscStylePassthrough) -> Self {
         self.style_passthrough = ::std::option::Option::Some(input);
@@ -63,6 +67,12 @@ impl ImscDestinationSettingsBuilder {
     ) -> Self {
         self.style_passthrough = input;
         self
+    }
+    /// Keep this setting enabled to have MediaConvert use the font style and position information from the captions source in the output. This option is available only when your input captions are IMSC, SMPTE-TT, or TTML. Disable this setting for simplified output captions.
+    pub fn get_style_passthrough(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImscStylePassthrough> {
+        &self.style_passthrough
     }
     /// Consumes the builder and constructs a [`ImscDestinationSettings`](crate::types::ImscDestinationSettings).
     pub fn build(self) -> crate::types::ImscDestinationSettings {

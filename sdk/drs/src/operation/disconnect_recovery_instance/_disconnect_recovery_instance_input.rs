@@ -45,6 +45,10 @@ impl DisconnectRecoveryInstanceInputBuilder {
         self.recovery_instance_id = input;
         self
     }
+    /// <p>The ID of the Recovery Instance to disconnect.</p>
+    pub fn get_recovery_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recovery_instance_id
+    }
     /// Consumes the builder and constructs a [`DisconnectRecoveryInstanceInput`](crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstanceInput).
     pub fn build(
         self,

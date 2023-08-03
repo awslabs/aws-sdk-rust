@@ -36,6 +36,12 @@ impl UpdateConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateConfiguration as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_configuration::builders::UpdateConfigurationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateConfigurationFluentBuilder {
         self.inner = self.inner.set_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
+    }
     /// <p>The description of the configuration revision.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -135,6 +145,10 @@ impl UpdateConfigurationFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the configuration revision.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>Contents of the <filename>
     /// server.properties
@@ -156,5 +170,13 @@ impl UpdateConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_server_properties(input);
         self
+    }
+    /// <p>Contents of the <filename>
+    /// server.properties
+    /// </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>
+    /// server.properties
+    /// </filename> can be in plaintext.</p>
+    pub fn get_server_properties(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        self.inner.get_server_properties()
     }
 }

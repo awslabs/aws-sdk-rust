@@ -88,6 +88,12 @@ impl SendHeartbeatInputBuilder {
         self.agent_metrics = input;
         self
     }
+    /// <p>For internal use. Returns a list of SageMaker Edge Manager agent operating metrics.</p>
+    pub fn get_agent_metrics(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EdgeMetric>> {
+        &self.agent_metrics
+    }
     /// Appends an item to `models`.
     ///
     /// To override the contents of this collection use [`set_models`](Self::set_models).
@@ -107,6 +113,10 @@ impl SendHeartbeatInputBuilder {
         self.models = input;
         self
     }
+    /// <p>Returns a list of models deployed on the the device.</p>
+    pub fn get_models(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Model>> {
+        &self.models
+    }
     /// <p>Returns the version of the agent.</p>
     pub fn agent_version(
         mut self,
@@ -123,6 +133,10 @@ impl SendHeartbeatInputBuilder {
         self.agent_version = input;
         self
     }
+    /// <p>Returns the version of the agent.</p>
+    pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_version
+    }
     /// <p>The unique name of the device.</p>
     pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_name = ::std::option::Option::Some(input.into());
@@ -132,6 +146,10 @@ impl SendHeartbeatInputBuilder {
     pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_name = input;
         self
+    }
+    /// <p>The unique name of the device.</p>
+    pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_name
     }
     /// <p>The name of the fleet that the device belongs to.</p>
     pub fn device_fleet_name(
@@ -149,6 +167,10 @@ impl SendHeartbeatInputBuilder {
         self.device_fleet_name = input;
         self
     }
+    /// <p>The name of the fleet that the device belongs to.</p>
+    pub fn get_device_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_fleet_name
+    }
     /// <p>Returns the result of a deployment on the device.</p>
     pub fn deployment_result(mut self, input: crate::types::DeploymentResult) -> Self {
         self.deployment_result = ::std::option::Option::Some(input);
@@ -161,6 +183,10 @@ impl SendHeartbeatInputBuilder {
     ) -> Self {
         self.deployment_result = input;
         self
+    }
+    /// <p>Returns the result of a deployment on the device.</p>
+    pub fn get_deployment_result(&self) -> &::std::option::Option<crate::types::DeploymentResult> {
+        &self.deployment_result
     }
     /// Consumes the builder and constructs a [`SendHeartbeatInput`](crate::operation::send_heartbeat::SendHeartbeatInput).
     pub fn build(

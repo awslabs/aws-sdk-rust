@@ -36,6 +36,12 @@ impl DisableAddOnFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisableAddOn as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::disable_add_on::builders::DisableAddOnInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +127,10 @@ impl DisableAddOnFluentBuilder {
         self.inner = self.inner.set_add_on_type(input);
         self
     }
+    /// <p>The add-on type to disable.</p>
+    pub fn get_add_on_type(&self) -> &::std::option::Option<crate::types::AddOnType> {
+        self.inner.get_add_on_type()
+    }
     /// <p>The name of the source resource for which to disable the add-on.</p>
     pub fn resource_name(
         mut self,
@@ -136,5 +146,9 @@ impl DisableAddOnFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_name(input);
         self
+    }
+    /// <p>The name of the source resource for which to disable the add-on.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_name()
     }
 }

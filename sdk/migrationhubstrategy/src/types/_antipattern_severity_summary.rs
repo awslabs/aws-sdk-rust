@@ -48,6 +48,10 @@ impl AntipatternSeveritySummaryBuilder {
         self.severity = input;
         self
     }
+    /// <p> Contains the severity of anti-patterns. </p>
+    pub fn get_severity(&self) -> &::std::option::Option<crate::types::Severity> {
+        &self.severity
+    }
     /// <p> Contains the count of anti-patterns. </p>
     pub fn count(mut self, input: i32) -> Self {
         self.count = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl AntipatternSeveritySummaryBuilder {
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
+    }
+    /// <p> Contains the count of anti-patterns. </p>
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        &self.count
     }
     /// Consumes the builder and constructs a [`AntipatternSeveritySummary`](crate::types::AntipatternSeveritySummary).
     pub fn build(self) -> crate::types::AntipatternSeveritySummary {

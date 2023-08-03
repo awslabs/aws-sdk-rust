@@ -88,6 +88,10 @@ impl VocabularySummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>A unique name of the custom vocabulary.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The identifier of the custom vocabulary.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -98,6 +102,10 @@ impl VocabularySummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the custom vocabulary.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Amazon Resource Name (ARN) of the custom vocabulary.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -107,6 +115,10 @@ impl VocabularySummaryBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the custom vocabulary.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
     pub fn language_code(mut self, input: crate::types::VocabularyLanguageCode) -> Self {
@@ -121,6 +133,12 @@ impl VocabularySummaryBuilder {
         self.language_code = input;
         self
     }
+    /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
+    pub fn get_language_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::VocabularyLanguageCode> {
+        &self.language_code
+    }
     /// <p>The current state of the custom vocabulary.</p>
     pub fn state(mut self, input: crate::types::VocabularyState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -134,6 +152,10 @@ impl VocabularySummaryBuilder {
         self.state = input;
         self
     }
+    /// <p>The current state of the custom vocabulary.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::VocabularyState> {
+        &self.state
+    }
     /// <p>The timestamp when the custom vocabulary was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -146,6 +168,10 @@ impl VocabularySummaryBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>The timestamp when the custom vocabulary was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// <p>The reason why the custom vocabulary was not created.</p>
     pub fn failure_reason(
@@ -162,6 +188,10 @@ impl VocabularySummaryBuilder {
     ) -> Self {
         self.failure_reason = input;
         self
+    }
+    /// <p>The reason why the custom vocabulary was not created.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     /// Consumes the builder and constructs a [`VocabularySummary`](crate::types::VocabularySummary).
     pub fn build(self) -> crate::types::VocabularySummary {

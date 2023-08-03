@@ -66,6 +66,10 @@ impl DocumentAttributeValueBuilder {
         self.string_value = input;
         self
     }
+    /// <p>A string, such as "department".</p>
+    pub fn get_string_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.string_value
+    }
     /// Appends an item to `string_list_value`.
     ///
     /// To override the contents of this collection use [`set_string_list_value`](Self::set_string_list_value).
@@ -88,6 +92,12 @@ impl DocumentAttributeValueBuilder {
         self.string_list_value = input;
         self
     }
+    /// <p>A list of strings. The default maximum length or number of strings is 10.</p>
+    pub fn get_string_list_value(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.string_list_value
+    }
     /// <p>A long integer value.</p>
     pub fn long_value(mut self, input: i64) -> Self {
         self.long_value = ::std::option::Option::Some(input);
@@ -97,6 +107,10 @@ impl DocumentAttributeValueBuilder {
     pub fn set_long_value(mut self, input: ::std::option::Option<i64>) -> Self {
         self.long_value = input;
         self
+    }
+    /// <p>A long integer value.</p>
+    pub fn get_long_value(&self) -> &::std::option::Option<i64> {
+        &self.long_value
     }
     /// <p>A date expressed as an ISO 8601 string.</p>
     /// <p>It is important for the time zone to be included in the ISO 8601 date-time format. For example, 2012-03-25T12:30:10+01:00 is the ISO 8601 date-time format for March 25th 2012 at 12:30PM (plus 10 seconds) in Central European Time.</p>
@@ -112,6 +126,11 @@ impl DocumentAttributeValueBuilder {
     ) -> Self {
         self.date_value = input;
         self
+    }
+    /// <p>A date expressed as an ISO 8601 string.</p>
+    /// <p>It is important for the time zone to be included in the ISO 8601 date-time format. For example, 2012-03-25T12:30:10+01:00 is the ISO 8601 date-time format for March 25th 2012 at 12:30PM (plus 10 seconds) in Central European Time.</p>
+    pub fn get_date_value(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.date_value
     }
     /// Consumes the builder and constructs a [`DocumentAttributeValue`](crate::types::DocumentAttributeValue).
     pub fn build(self) -> crate::types::DocumentAttributeValue {

@@ -78,6 +78,10 @@ impl UpdateSubscriberInputBuilder {
         self.subscriber_id = input;
         self
     }
+    /// <p>A value created by Security Lake that uniquely identifies your subscription.</p>
+    pub fn get_subscriber_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscriber_id
+    }
     /// <p>The AWS identity used to access your data.</p>
     pub fn subscriber_identity(mut self, input: crate::types::AwsIdentity) -> Self {
         self.subscriber_identity = ::std::option::Option::Some(input);
@@ -90,6 +94,10 @@ impl UpdateSubscriberInputBuilder {
     ) -> Self {
         self.subscriber_identity = input;
         self
+    }
+    /// <p>The AWS identity used to access your data.</p>
+    pub fn get_subscriber_identity(&self) -> &::std::option::Option<crate::types::AwsIdentity> {
+        &self.subscriber_identity
     }
     /// <p>The name of the Security Lake account subscriber.</p>
     pub fn subscriber_name(
@@ -107,6 +115,10 @@ impl UpdateSubscriberInputBuilder {
         self.subscriber_name = input;
         self
     }
+    /// <p>The name of the Security Lake account subscriber.</p>
+    pub fn get_subscriber_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscriber_name
+    }
     /// <p>The description of the Security Lake account subscriber.</p>
     pub fn subscriber_description(
         mut self,
@@ -122,6 +134,10 @@ impl UpdateSubscriberInputBuilder {
     ) -> Self {
         self.subscriber_description = input;
         self
+    }
+    /// <p>The description of the Security Lake account subscriber.</p>
+    pub fn get_subscriber_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscriber_description
     }
     /// Appends an item to `sources`.
     ///
@@ -141,6 +157,12 @@ impl UpdateSubscriberInputBuilder {
     ) -> Self {
         self.sources = input;
         self
+    }
+    /// <p>The supported Amazon Web Services from which logs and events are collected. For the list of supported Amazon Web Services, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security Lake User Guide</a>.</p>
+    pub fn get_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>> {
+        &self.sources
     }
     /// Consumes the builder and constructs a [`UpdateSubscriberInput`](crate::operation::update_subscriber::UpdateSubscriberInput).
     pub fn build(

@@ -160,6 +160,10 @@ impl FormBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The unique ID of the Amplify app associated with the form.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
     pub fn environment_name(
         mut self,
@@ -176,6 +180,10 @@ impl FormBuilder {
         self.environment_name = input;
         self
     }
+    /// <p>The name of the backend environment that is a part of the Amplify app.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
+    }
     /// <p>The unique ID of the form.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -186,6 +194,10 @@ impl FormBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique ID of the form.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the form.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -195,6 +207,10 @@ impl FormBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the form.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The operation to perform on the specified form.</p>
     pub fn form_action_type(mut self, input: crate::types::FormActionType) -> Self {
@@ -209,6 +225,10 @@ impl FormBuilder {
         self.form_action_type = input;
         self
     }
+    /// <p>The operation to perform on the specified form.</p>
+    pub fn get_form_action_type(&self) -> &::std::option::Option<crate::types::FormActionType> {
+        &self.form_action_type
+    }
     /// <p>Stores the configuration for the form's style.</p>
     pub fn style(mut self, input: crate::types::FormStyle) -> Self {
         self.style = ::std::option::Option::Some(input);
@@ -218,6 +238,10 @@ impl FormBuilder {
     pub fn set_style(mut self, input: ::std::option::Option<crate::types::FormStyle>) -> Self {
         self.style = input;
         self
+    }
+    /// <p>Stores the configuration for the form's style.</p>
+    pub fn get_style(&self) -> &::std::option::Option<crate::types::FormStyle> {
+        &self.style
     }
     /// <p>The type of data source to use to create the form.</p>
     pub fn data_type(mut self, input: crate::types::FormDataTypeConfig) -> Self {
@@ -231,6 +255,10 @@ impl FormBuilder {
     ) -> Self {
         self.data_type = input;
         self
+    }
+    /// <p>The type of data source to use to create the form.</p>
+    pub fn get_data_type(&self) -> &::std::option::Option<crate::types::FormDataTypeConfig> {
+        &self.data_type
     }
     /// Adds a key-value pair to `fields`.
     ///
@@ -257,6 +285,14 @@ impl FormBuilder {
         self.fields = input;
         self
     }
+    /// <p>Stores the information about the form's fields.</p>
+    pub fn get_fields(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::FieldConfig>,
+    > {
+        &self.fields
+    }
     /// Adds a key-value pair to `sectional_elements`.
     ///
     /// To override the contents of this collection use [`set_sectional_elements`](Self::set_sectional_elements).
@@ -282,6 +318,14 @@ impl FormBuilder {
         self.sectional_elements = input;
         self
     }
+    /// <p>Stores the visual helper elements for the form that are not associated with any data.</p>
+    pub fn get_sectional_elements(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::SectionalElement>,
+    > {
+        &self.sectional_elements
+    }
     /// <p>The schema version of the form when it was imported.</p>
     pub fn schema_version(
         mut self,
@@ -297,6 +341,10 @@ impl FormBuilder {
     ) -> Self {
         self.schema_version = input;
         self
+    }
+    /// <p>The schema version of the form when it was imported.</p>
+    pub fn get_schema_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_version
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -323,6 +371,14 @@ impl FormBuilder {
         self.tags = input;
         self
     }
+    /// <p>One or more key-value pairs to use when tagging the form.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>Stores the call to action configuration for the form.</p>
     pub fn cta(mut self, input: crate::types::FormCta) -> Self {
         self.cta = ::std::option::Option::Some(input);
@@ -332,6 +388,10 @@ impl FormBuilder {
     pub fn set_cta(mut self, input: ::std::option::Option<crate::types::FormCta>) -> Self {
         self.cta = input;
         self
+    }
+    /// <p>Stores the call to action configuration for the form.</p>
+    pub fn get_cta(&self) -> &::std::option::Option<crate::types::FormCta> {
+        &self.cta
     }
     /// <p>Specifies an icon or decoration to display on the form.</p>
     pub fn label_decorator(mut self, input: crate::types::LabelDecorator) -> Self {
@@ -345,6 +405,10 @@ impl FormBuilder {
     ) -> Self {
         self.label_decorator = input;
         self
+    }
+    /// <p>Specifies an icon or decoration to display on the form.</p>
+    pub fn get_label_decorator(&self) -> &::std::option::Option<crate::types::LabelDecorator> {
+        &self.label_decorator
     }
     /// Consumes the builder and constructs a [`Form`](crate::types::Form).
     pub fn build(self) -> crate::types::Form {

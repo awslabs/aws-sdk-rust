@@ -48,6 +48,10 @@ impl MessageGroupBuilder {
         self.message = input;
         self
     }
+    /// <p>The primary message that Amazon Lex should send to the user.</p>
+    pub fn get_message(&self) -> &::std::option::Option<crate::types::Message> {
+        &self.message
+    }
     /// Appends an item to `variations`.
     ///
     /// To override the contents of this collection use [`set_variations`](Self::set_variations).
@@ -66,6 +70,10 @@ impl MessageGroupBuilder {
     ) -> Self {
         self.variations = input;
         self
+    }
+    /// <p>Message variations to send to the user. When variations are defined, Amazon Lex chooses the primary message or one of the variations to send to the user.</p>
+    pub fn get_variations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Message>> {
+        &self.variations
     }
     /// Consumes the builder and constructs a [`MessageGroup`](crate::types::MessageGroup).
     pub fn build(self) -> crate::types::MessageGroup {

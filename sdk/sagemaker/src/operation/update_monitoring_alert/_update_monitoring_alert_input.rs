@@ -71,6 +71,10 @@ impl UpdateMonitoringAlertInputBuilder {
         self.monitoring_schedule_name = input;
         self
     }
+    /// <p>The name of a monitoring schedule.</p>
+    pub fn get_monitoring_schedule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitoring_schedule_name
+    }
     /// <p>The name of a monitoring alert.</p>
     pub fn monitoring_alert_name(
         mut self,
@@ -87,6 +91,10 @@ impl UpdateMonitoringAlertInputBuilder {
         self.monitoring_alert_name = input;
         self
     }
+    /// <p>The name of a monitoring alert.</p>
+    pub fn get_monitoring_alert_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitoring_alert_name
+    }
     /// <p>Within <code>EvaluationPeriod</code>, how many execution failures will raise an alert.</p>
     pub fn datapoints_to_alert(mut self, input: i32) -> Self {
         self.datapoints_to_alert = ::std::option::Option::Some(input);
@@ -97,6 +105,10 @@ impl UpdateMonitoringAlertInputBuilder {
         self.datapoints_to_alert = input;
         self
     }
+    /// <p>Within <code>EvaluationPeriod</code>, how many execution failures will raise an alert.</p>
+    pub fn get_datapoints_to_alert(&self) -> &::std::option::Option<i32> {
+        &self.datapoints_to_alert
+    }
     /// <p>The number of most recent monitoring executions to consider when evaluating alert status.</p>
     pub fn evaluation_period(mut self, input: i32) -> Self {
         self.evaluation_period = ::std::option::Option::Some(input);
@@ -106,6 +118,10 @@ impl UpdateMonitoringAlertInputBuilder {
     pub fn set_evaluation_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.evaluation_period = input;
         self
+    }
+    /// <p>The number of most recent monitoring executions to consider when evaluating alert status.</p>
+    pub fn get_evaluation_period(&self) -> &::std::option::Option<i32> {
+        &self.evaluation_period
     }
     /// Consumes the builder and constructs a [`UpdateMonitoringAlertInput`](crate::operation::update_monitoring_alert::UpdateMonitoringAlertInput).
     pub fn build(

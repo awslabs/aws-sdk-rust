@@ -64,6 +64,10 @@ impl ActivityTaskCanceledEventAttributesBuilder {
         self.details = input;
         self
     }
+    /// <p>Details of the cancellation.</p>
+    pub fn get_details(&self) -> &::std::option::Option<::std::string::String> {
+        &self.details
+    }
     /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn scheduled_event_id(mut self, input: i64) -> Self {
         self.scheduled_event_id = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl ActivityTaskCanceledEventAttributesBuilder {
         self.scheduled_event_id = input;
         self
     }
+    /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    pub fn get_scheduled_event_id(&self) -> &::std::option::Option<i64> {
+        &self.scheduled_event_id
+    }
     /// <p>The ID of the <code>ActivityTaskStarted</code> event recorded when this activity task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn started_event_id(mut self, input: i64) -> Self {
         self.started_event_id = ::std::option::Option::Some(input);
@@ -83,6 +91,10 @@ impl ActivityTaskCanceledEventAttributesBuilder {
     pub fn set_started_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.started_event_id = input;
         self
+    }
+    /// <p>The ID of the <code>ActivityTaskStarted</code> event recorded when this activity task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    pub fn get_started_event_id(&self) -> &::std::option::Option<i64> {
+        &self.started_event_id
     }
     /// <p>If set, contains the ID of the last <code>ActivityTaskCancelRequested</code> event recorded for this activity task. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn latest_cancel_requested_event_id(mut self, input: i64) -> Self {
@@ -96,6 +108,10 @@ impl ActivityTaskCanceledEventAttributesBuilder {
     ) -> Self {
         self.latest_cancel_requested_event_id = input;
         self
+    }
+    /// <p>If set, contains the ID of the last <code>ActivityTaskCancelRequested</code> event recorded for this activity task. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    pub fn get_latest_cancel_requested_event_id(&self) -> &::std::option::Option<i64> {
+        &self.latest_cancel_requested_event_id
     }
     /// Consumes the builder and constructs a [`ActivityTaskCanceledEventAttributes`](crate::types::ActivityTaskCanceledEventAttributes).
     pub fn build(self) -> crate::types::ActivityTaskCanceledEventAttributes {

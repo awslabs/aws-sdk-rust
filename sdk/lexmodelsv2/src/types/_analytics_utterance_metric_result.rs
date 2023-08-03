@@ -93,6 +93,16 @@ impl AnalyticsUtteranceMetricResultBuilder {
         self.name = input;
         self
     }
+    /// <p>The metric that you requested.</p>
+    /// <ul>
+    /// <li> <p> <code>Count</code> – The number of utterances.</p> </li>
+    /// <li> <p> <code>Missed</code> – The number of utterances that Amazon Lex failed to recognize.</p> </li>
+    /// <li> <p> <code>Detected</code> – The number of utterances that Amazon Lex managed to detect.</p> </li>
+    /// <li> <p> <code>UtteranceTimestamp</code> – The date and time of the utterance.</p> </li>
+    /// </ul>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::AnalyticsUtteranceMetricName> {
+        &self.name
+    }
     /// <p>The summary statistic that you requested to calculate.</p>
     /// <ul>
     /// <li> <p> <code>Sum</code> – The total count for the category you provide in <code>name</code>.</p> </li>
@@ -116,6 +126,15 @@ impl AnalyticsUtteranceMetricResultBuilder {
         self.statistic = input;
         self
     }
+    /// <p>The summary statistic that you requested to calculate.</p>
+    /// <ul>
+    /// <li> <p> <code>Sum</code> – The total count for the category you provide in <code>name</code>.</p> </li>
+    /// <li> <p> <code>Average</code> – The total count divided by the number of utterances in the category you provide in <code>name</code>.</p> </li>
+    /// <li> <p> <code>Max</code> – The highest count in the category you provide in <code>name</code>.</p> </li>
+    /// </ul>
+    pub fn get_statistic(&self) -> &::std::option::Option<crate::types::AnalyticsMetricStatistic> {
+        &self.statistic
+    }
     /// <p>The value of the summary statistic for the metric that you requested.</p>
     pub fn value(mut self, input: f64) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -125,6 +144,10 @@ impl AnalyticsUtteranceMetricResultBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of the summary statistic for the metric that you requested.</p>
+    pub fn get_value(&self) -> &::std::option::Option<f64> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`AnalyticsUtteranceMetricResult`](crate::types::AnalyticsUtteranceMetricResult).
     pub fn build(self) -> crate::types::AnalyticsUtteranceMetricResult {

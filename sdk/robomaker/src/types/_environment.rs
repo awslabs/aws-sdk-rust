@@ -40,6 +40,10 @@ impl EnvironmentBuilder {
         self.uri = input;
         self
     }
+    /// <p>The Docker image URI for either your robot or simulation applications.</p>
+    pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uri
+    }
     /// Consumes the builder and constructs a [`Environment`](crate::types::Environment).
     pub fn build(self) -> crate::types::Environment {
         crate::types::Environment { uri: self.uri }

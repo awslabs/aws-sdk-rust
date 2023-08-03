@@ -51,6 +51,10 @@ impl VdmOptionsBuilder {
         self.dashboard_options = input;
         self
     }
+    /// <p>Specifies additional settings for your VDM configuration as applicable to the Dashboard.</p>
+    pub fn get_dashboard_options(&self) -> &::std::option::Option<crate::types::DashboardOptions> {
+        &self.dashboard_options
+    }
     /// <p>Specifies additional settings for your VDM configuration as applicable to the Guardian.</p>
     pub fn guardian_options(mut self, input: crate::types::GuardianOptions) -> Self {
         self.guardian_options = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl VdmOptionsBuilder {
     ) -> Self {
         self.guardian_options = input;
         self
+    }
+    /// <p>Specifies additional settings for your VDM configuration as applicable to the Guardian.</p>
+    pub fn get_guardian_options(&self) -> &::std::option::Option<crate::types::GuardianOptions> {
+        &self.guardian_options
     }
     /// Consumes the builder and constructs a [`VdmOptions`](crate::types::VdmOptions).
     pub fn build(self) -> crate::types::VdmOptions {

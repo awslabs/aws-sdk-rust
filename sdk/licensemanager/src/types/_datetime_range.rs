@@ -48,6 +48,10 @@ impl DatetimeRangeBuilder {
         self.begin = input;
         self
     }
+    /// <p>Start of the time range.</p>
+    pub fn get_begin(&self) -> &::std::option::Option<::std::string::String> {
+        &self.begin
+    }
     /// <p>End of the time range.</p>
     pub fn end(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.end = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl DatetimeRangeBuilder {
     pub fn set_end(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.end = input;
         self
+    }
+    /// <p>End of the time range.</p>
+    pub fn get_end(&self) -> &::std::option::Option<::std::string::String> {
+        &self.end
     }
     /// Consumes the builder and constructs a [`DatetimeRange`](crate::types::DatetimeRange).
     pub fn build(self) -> crate::types::DatetimeRange {

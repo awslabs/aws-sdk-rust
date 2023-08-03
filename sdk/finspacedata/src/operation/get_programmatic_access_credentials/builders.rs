@@ -36,6 +36,10 @@ impl GetProgrammaticAccessCredentialsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetProgrammaticAccessCredentials as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_programmatic_access_credentials::builders::GetProgrammaticAccessCredentialsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl GetProgrammaticAccessCredentialsFluentBuilder {
         self.inner = self.inner.set_duration_in_minutes(input);
         self
     }
+    /// <p>The time duration in which the credentials remain valid. </p>
+    pub fn get_duration_in_minutes(&self) -> &::std::option::Option<i64> {
+        self.inner.get_duration_in_minutes()
+    }
     /// <p>The FinSpace environment identifier.</p>
     pub fn environment_id(
         mut self,
@@ -115,5 +123,9 @@ impl GetProgrammaticAccessCredentialsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
+    }
+    /// <p>The FinSpace environment identifier.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_id()
     }
 }

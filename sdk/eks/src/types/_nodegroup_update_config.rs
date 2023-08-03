@@ -48,6 +48,10 @@ impl NodegroupUpdateConfigBuilder {
         self.max_unavailable = input;
         self
     }
+    /// <p>The maximum number of nodes unavailable at once during a version update. Nodes will be updated in parallel. This value or <code>maxUnavailablePercentage</code> is required to have a value.The maximum number is 100.</p>
+    pub fn get_max_unavailable(&self) -> &::std::option::Option<i32> {
+        &self.max_unavailable
+    }
     /// <p>The maximum percentage of nodes unavailable during a version update. This percentage of nodes will be updated in parallel, up to 100 nodes at once. This value or <code>maxUnavailable</code> is required to have a value.</p>
     pub fn max_unavailable_percentage(mut self, input: i32) -> Self {
         self.max_unavailable_percentage = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl NodegroupUpdateConfigBuilder {
     pub fn set_max_unavailable_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_unavailable_percentage = input;
         self
+    }
+    /// <p>The maximum percentage of nodes unavailable during a version update. This percentage of nodes will be updated in parallel, up to 100 nodes at once. This value or <code>maxUnavailable</code> is required to have a value.</p>
+    pub fn get_max_unavailable_percentage(&self) -> &::std::option::Option<i32> {
+        &self.max_unavailable_percentage
     }
     /// Consumes the builder and constructs a [`NodegroupUpdateConfig`](crate::types::NodegroupUpdateConfig).
     pub fn build(self) -> crate::types::NodegroupUpdateConfig {

@@ -63,6 +63,14 @@ impl SwitchoverReadReplicaInputBuilder {
         self.db_instance_identifier = input;
         self
     }
+    /// <p>The DB instance identifier of the current standby database. This value is stored as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the identiﬁer of an existing Oracle read replica DB instance.</p> </li>
+    /// </ul>
+    pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_identifier
+    }
     /// Consumes the builder and constructs a [`SwitchoverReadReplicaInput`](crate::operation::switchover_read_replica::SwitchoverReadReplicaInput).
     pub fn build(
         self,

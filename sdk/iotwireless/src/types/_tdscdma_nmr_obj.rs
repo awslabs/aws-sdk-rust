@@ -72,6 +72,10 @@ impl TdscdmaNmrObjBuilder {
         self.uarfcn = input;
         self
     }
+    /// <p>TD-SCDMA UTRA (Universal Terrestrial Radio Access Network) absolute RF channel number.</p>
+    pub fn get_uarfcn(&self) -> &::std::option::Option<i32> {
+        &self.uarfcn
+    }
     /// <p>Cell parameters for TD-SCDMA network measurement reports object.</p>
     pub fn cell_params(mut self, input: i32) -> Self {
         self.cell_params = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl TdscdmaNmrObjBuilder {
     pub fn set_cell_params(mut self, input: ::std::option::Option<i32>) -> Self {
         self.cell_params = input;
         self
+    }
+    /// <p>Cell parameters for TD-SCDMA network measurement reports object.</p>
+    pub fn get_cell_params(&self) -> &::std::option::Option<i32> {
+        &self.cell_params
     }
     /// <p>UTRAN (UMTS Terrestrial Radio Access Network) cell global identifier.</p>
     pub fn utran_cid(mut self, input: i32) -> Self {
@@ -92,6 +100,10 @@ impl TdscdmaNmrObjBuilder {
         self.utran_cid = input;
         self
     }
+    /// <p>UTRAN (UMTS Terrestrial Radio Access Network) cell global identifier.</p>
+    pub fn get_utran_cid(&self) -> &::std::option::Option<i32> {
+        &self.utran_cid
+    }
     /// <p>Code power of the received signal, measured in decibel-milliwatts (dBm).</p>
     pub fn rscp(mut self, input: i32) -> Self {
         self.rscp = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl TdscdmaNmrObjBuilder {
         self.rscp = input;
         self
     }
+    /// <p>Code power of the received signal, measured in decibel-milliwatts (dBm).</p>
+    pub fn get_rscp(&self) -> &::std::option::Option<i32> {
+        &self.rscp
+    }
     /// <p>Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space.</p>
     pub fn path_loss(mut self, input: i32) -> Self {
         self.path_loss = ::std::option::Option::Some(input);
@@ -111,6 +127,10 @@ impl TdscdmaNmrObjBuilder {
     pub fn set_path_loss(mut self, input: ::std::option::Option<i32>) -> Self {
         self.path_loss = input;
         self
+    }
+    /// <p>Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space.</p>
+    pub fn get_path_loss(&self) -> &::std::option::Option<i32> {
+        &self.path_loss
     }
     /// Consumes the builder and constructs a [`TdscdmaNmrObj`](crate::types::TdscdmaNmrObj).
     pub fn build(self) -> crate::types::TdscdmaNmrObj {

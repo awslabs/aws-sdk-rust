@@ -36,6 +36,10 @@ impl GetBlobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetBlob as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_blob::builders::GetBlobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl GetBlobFluentBuilder {
         self.inner = self.inner.set_repository_name(input);
         self
     }
+    /// <p>The name of the repository that contains the blob.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository_name()
+    }
     /// <p>The ID of the blob, which is its SHA-1 pointer.</p>
     pub fn blob_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.blob_id(input.into());
@@ -133,5 +141,9 @@ impl GetBlobFluentBuilder {
     pub fn set_blob_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_blob_id(input);
         self
+    }
+    /// <p>The ID of the blob, which is its SHA-1 pointer.</p>
+    pub fn get_blob_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_blob_id()
     }
 }

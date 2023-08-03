@@ -40,6 +40,10 @@ impl UiTemplateBuilder {
         self.content = input;
         self
     }
+    /// <p>The content of the Liquid template for the worker user interface.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
+    }
     /// Consumes the builder and constructs a [`UiTemplate`](crate::types::UiTemplate).
     pub fn build(self) -> crate::types::UiTemplate {
         crate::types::UiTemplate {

@@ -36,6 +36,13 @@ impl DeleteRotationOverrideFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteRotationOverride as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_rotation_override::builders::DeleteRotationOverrideInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl DeleteRotationOverrideFluentBuilder {
         self.inner = self.inner.set_rotation_id(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the rotation that was overridden.</p>
+    pub fn get_rotation_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rotation_id()
+    }
     /// <p>The Amazon Resource Name (ARN) of the on-call rotation override to delete.</p>
     pub fn rotation_override_id(
         mut self,
@@ -141,5 +152,9 @@ impl DeleteRotationOverrideFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_rotation_override_id(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the on-call rotation override to delete.</p>
+    pub fn get_rotation_override_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rotation_override_id()
     }
 }

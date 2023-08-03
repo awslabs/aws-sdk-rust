@@ -154,6 +154,10 @@ impl AddonBuilder {
         self.addon_name = input;
         self
     }
+    /// <p>The name of the add-on.</p>
+    pub fn get_addon_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.addon_name
+    }
     /// <p>The name of the cluster.</p>
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
@@ -164,6 +168,10 @@ impl AddonBuilder {
         self.cluster_name = input;
         self
     }
+    /// <p>The name of the cluster.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_name
+    }
     /// <p>The status of the add-on.</p>
     pub fn status(mut self, input: crate::types::AddonStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -173,6 +181,10 @@ impl AddonBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AddonStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the add-on.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AddonStatus> {
+        &self.status
     }
     /// <p>The version of the add-on.</p>
     pub fn addon_version(
@@ -190,6 +202,10 @@ impl AddonBuilder {
         self.addon_version = input;
         self
     }
+    /// <p>The version of the add-on.</p>
+    pub fn get_addon_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.addon_version
+    }
     /// <p>An object that represents the health of the add-on.</p>
     pub fn health(mut self, input: crate::types::AddonHealth) -> Self {
         self.health = ::std::option::Option::Some(input);
@@ -200,6 +216,10 @@ impl AddonBuilder {
         self.health = input;
         self
     }
+    /// <p>An object that represents the health of the add-on.</p>
+    pub fn get_health(&self) -> &::std::option::Option<crate::types::AddonHealth> {
+        &self.health
+    }
     /// <p>The Amazon Resource Name (ARN) of the add-on.</p>
     pub fn addon_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.addon_arn = ::std::option::Option::Some(input.into());
@@ -209,6 +229,10 @@ impl AddonBuilder {
     pub fn set_addon_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.addon_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the add-on.</p>
+    pub fn get_addon_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.addon_arn
     }
     /// <p>The date and time that the add-on was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -223,6 +247,10 @@ impl AddonBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The date and time that the add-on was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The date and time that the add-on was last modified.</p>
     pub fn modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.modified_at = ::std::option::Option::Some(input);
@@ -235,6 +263,10 @@ impl AddonBuilder {
     ) -> Self {
         self.modified_at = input;
         self
+    }
+    /// <p>The date and time that the add-on was last modified.</p>
+    pub fn get_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.modified_at
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes service account that the add-on uses.</p>
     pub fn service_account_role_arn(
@@ -251,6 +283,10 @@ impl AddonBuilder {
     ) -> Self {
         self.service_account_role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes service account that the add-on uses.</p>
+    pub fn get_service_account_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_account_role_arn
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -277,6 +313,14 @@ impl AddonBuilder {
         self.tags = input;
         self
     }
+    /// <p>The metadata that you apply to the add-on to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Add-on tags do not propagate to any other resources associated with the cluster. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The publisher of the add-on.</p>
     pub fn publisher(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.publisher = ::std::option::Option::Some(input.into());
@@ -287,6 +331,10 @@ impl AddonBuilder {
         self.publisher = input;
         self
     }
+    /// <p>The publisher of the add-on.</p>
+    pub fn get_publisher(&self) -> &::std::option::Option<::std::string::String> {
+        &self.publisher
+    }
     /// <p>The owner of the add-on.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner = ::std::option::Option::Some(input.into());
@@ -296,6 +344,10 @@ impl AddonBuilder {
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner = input;
         self
+    }
+    /// <p>The owner of the add-on.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
     }
     /// <p>Information about an Amazon EKS add-on from the Amazon Web Services Marketplace.</p>
     pub fn marketplace_information(mut self, input: crate::types::MarketplaceInformation) -> Self {
@@ -309,6 +361,12 @@ impl AddonBuilder {
     ) -> Self {
         self.marketplace_information = input;
         self
+    }
+    /// <p>Information about an Amazon EKS add-on from the Amazon Web Services Marketplace.</p>
+    pub fn get_marketplace_information(
+        &self,
+    ) -> &::std::option::Option<crate::types::MarketplaceInformation> {
+        &self.marketplace_information
     }
     /// <p>The configuration values that you provided.</p>
     pub fn configuration_values(
@@ -325,6 +383,10 @@ impl AddonBuilder {
     ) -> Self {
         self.configuration_values = input;
         self
+    }
+    /// <p>The configuration values that you provided.</p>
+    pub fn get_configuration_values(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_values
     }
     /// Consumes the builder and constructs a [`Addon`](crate::types::Addon).
     pub fn build(self) -> crate::types::Addon {

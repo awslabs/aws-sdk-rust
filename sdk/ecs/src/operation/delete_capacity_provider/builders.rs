@@ -39,6 +39,13 @@ impl DeleteCapacityProviderFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteCapacityProvider as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_capacity_provider::builders::DeleteCapacityProviderInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,5 +141,9 @@ impl DeleteCapacityProviderFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_capacity_provider(input);
         self
+    }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the capacity provider to delete.</p>
+    pub fn get_capacity_provider(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_capacity_provider()
     }
 }

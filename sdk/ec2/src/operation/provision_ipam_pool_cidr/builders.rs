@@ -37,6 +37,13 @@ impl ProvisionIpamPoolCidrFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ProvisionIpamPoolCidr as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::provision_ipam_pool_cidr::builders::ProvisionIpamPoolCidrInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl ProvisionIpamPoolCidrFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>The ID of the IPAM pool to which you want to assign a CIDR.</p>
     pub fn ipam_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ipam_pool_id(input.into());
@@ -137,6 +148,10 @@ impl ProvisionIpamPoolCidrFluentBuilder {
         self.inner = self.inner.set_ipam_pool_id(input);
         self
     }
+    /// <p>The ID of the IPAM pool to which you want to assign a CIDR.</p>
+    pub fn get_ipam_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ipam_pool_id()
+    }
     /// <p>The CIDR you want to assign to the IPAM pool. Either "NetmaskLength" or "Cidr" is required. This value will be null if you specify "NetmaskLength" and will be filled in during the provisioning process.</p>
     pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cidr(input.into());
@@ -146,6 +161,10 @@ impl ProvisionIpamPoolCidrFluentBuilder {
     pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cidr(input);
         self
+    }
+    /// <p>The CIDR you want to assign to the IPAM pool. Either "NetmaskLength" or "Cidr" is required. This value will be null if you specify "NetmaskLength" and will be filled in during the provisioning process.</p>
+    pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cidr()
     }
     /// <p>A signed document that proves that you are authorized to bring a specified IP address range to Amazon using BYOIP. This option applies to public pools only.</p>
     pub fn cidr_authorization_context(
@@ -163,6 +182,12 @@ impl ProvisionIpamPoolCidrFluentBuilder {
         self.inner = self.inner.set_cidr_authorization_context(input);
         self
     }
+    /// <p>A signed document that proves that you are authorized to bring a specified IP address range to Amazon using BYOIP. This option applies to public pools only.</p>
+    pub fn get_cidr_authorization_context(
+        &self,
+    ) -> &::std::option::Option<crate::types::IpamCidrAuthorizationContext> {
+        self.inner.get_cidr_authorization_context()
+    }
     /// <p>The netmask length of the CIDR you'd like to provision to a pool. Can be used for provisioning Amazon-provided IPv6 CIDRs to top-level pools and for provisioning CIDRs to pools with source pools. Cannot be used to provision BYOIP CIDRs to top-level pools. Either "NetmaskLength" or "Cidr" is required.</p>
     pub fn netmask_length(mut self, input: i32) -> Self {
         self.inner = self.inner.netmask_length(input);
@@ -173,6 +198,10 @@ impl ProvisionIpamPoolCidrFluentBuilder {
         self.inner = self.inner.set_netmask_length(input);
         self
     }
+    /// <p>The netmask length of the CIDR you'd like to provision to a pool. Can be used for provisioning Amazon-provided IPv6 CIDRs to top-level pools and for provisioning CIDRs to pools with source pools. Cannot be used to provision BYOIP CIDRs to top-level pools. Either "NetmaskLength" or "Cidr" is required.</p>
+    pub fn get_netmask_length(&self) -> &::std::option::Option<i32> {
+        self.inner.get_netmask_length()
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -182,5 +211,9 @@ impl ProvisionIpamPoolCidrFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

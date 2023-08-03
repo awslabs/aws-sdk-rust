@@ -37,6 +37,12 @@ impl DeactivateTypeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeactivateType as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::deactivate_type::builders::DeactivateTypeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +127,11 @@ impl DeactivateTypeFluentBuilder {
         self.inner = self.inner.set_type_name(input);
         self
     }
+    /// <p>The type name of the extension, in this account and Region. If you specified a type name alias when enabling the extension, use the type name alias.</p>
+    /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
+    pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_type_name()
+    }
     /// <p>The extension type.</p>
     /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
     pub fn r#type(mut self, input: crate::types::ThirdPartyType) -> Self {
@@ -133,6 +144,11 @@ impl DeactivateTypeFluentBuilder {
         self.inner = self.inner.set_type(input);
         self
     }
+    /// <p>The extension type.</p>
+    /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ThirdPartyType> {
+        self.inner.get_type()
+    }
     /// <p>The Amazon Resource Name (ARN) for the extension, in this account and Region.</p>
     /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -144,5 +160,10 @@ impl DeactivateTypeFluentBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the extension, in this account and Region.</p>
+    /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
     }
 }

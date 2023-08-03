@@ -36,6 +36,12 @@ impl ListGeofencesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListGeofences as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_geofences::builders::ListGeofencesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +141,10 @@ impl ListGeofencesFluentBuilder {
         self.inner = self.inner.set_collection_name(input);
         self
     }
+    /// <p>The name of the geofence collection storing the list of geofences.</p>
+    pub fn get_collection_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_collection_name()
+    }
     /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
     /// <p>Default value: <code>null</code> </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -147,6 +157,11 @@ impl ListGeofencesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
+    /// <p>Default value: <code>null</code> </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>An optional limit for the number of geofences returned in a single call. </p>
     /// <p>Default value: <code>100</code> </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -158,5 +173,10 @@ impl ListGeofencesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>An optional limit for the number of geofences returned in a single call. </p>
+    /// <p>Default value: <code>100</code> </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

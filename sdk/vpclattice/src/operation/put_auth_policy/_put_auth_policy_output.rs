@@ -54,6 +54,10 @@ impl PutAuthPolicyOutputBuilder {
         self.policy = input;
         self
     }
+    /// <p>The auth policy. The policy string in JSON must not contain newlines or blank lines.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy
+    }
     /// <p>The state of the auth policy. The auth policy is only active when the auth type is set to <code>AWS_IAM</code>. If you provide a policy, then authentication and authorization decisions are made based on this policy and the client's IAM policy. If the Auth type is <code>NONE</code>, then, any auth policy you provide will remain inactive. For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-networks.html#create-service-network">Create a service network</a> in the <i>Amazon VPC Lattice User Guide</i>.</p>
     pub fn state(mut self, input: crate::types::AuthPolicyState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl PutAuthPolicyOutputBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the auth policy. The auth policy is only active when the auth type is set to <code>AWS_IAM</code>. If you provide a policy, then authentication and authorization decisions are made based on this policy and the client's IAM policy. If the Auth type is <code>NONE</code>, then, any auth policy you provide will remain inactive. For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-networks.html#create-service-network">Create a service network</a> in the <i>Amazon VPC Lattice User Guide</i>.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::AuthPolicyState> {
+        &self.state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

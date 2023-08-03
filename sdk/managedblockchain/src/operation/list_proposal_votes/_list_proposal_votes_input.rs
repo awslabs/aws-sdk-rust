@@ -64,6 +64,10 @@ impl ListProposalVotesInputBuilder {
         self.network_id = input;
         self
     }
+    /// <p> The unique identifier of the network. </p>
+    pub fn get_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_id
+    }
     /// <p> The unique identifier of the proposal. </p>
     pub fn proposal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.proposal_id = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl ListProposalVotesInputBuilder {
     pub fn set_proposal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.proposal_id = input;
         self
+    }
+    /// <p> The unique identifier of the proposal. </p>
+    pub fn get_proposal_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.proposal_id
     }
     /// <p> The maximum number of votes to return. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -84,6 +92,10 @@ impl ListProposalVotesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p> The maximum number of votes to return. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p> The pagination token that indicates the next set of results to retrieve. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl ListProposalVotesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p> The pagination token that indicates the next set of results to retrieve. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListProposalVotesInput`](crate::operation::list_proposal_votes::ListProposalVotesInput).
     pub fn build(

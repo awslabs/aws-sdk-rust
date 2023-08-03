@@ -72,6 +72,10 @@ impl CreateFhirDatastoreOutputBuilder {
         self.datastore_id = input;
         self
     }
+    /// <p>The AWS-generated data store id. This id is in the output from the initial data store creation call.</p>
+    pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.datastore_id
+    }
     /// <p>The data store ARN is generated during the creation of the data store and can be found in the output from the initial data store creation call.</p>
     pub fn datastore_arn(
         mut self,
@@ -88,6 +92,10 @@ impl CreateFhirDatastoreOutputBuilder {
         self.datastore_arn = input;
         self
     }
+    /// <p>The data store ARN is generated during the creation of the data store and can be found in the output from the initial data store creation call.</p>
+    pub fn get_datastore_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.datastore_arn
+    }
     /// <p>The status of the FHIR data store.</p>
     pub fn datastore_status(mut self, input: crate::types::DatastoreStatus) -> Self {
         self.datastore_status = ::std::option::Option::Some(input);
@@ -100,6 +108,10 @@ impl CreateFhirDatastoreOutputBuilder {
     ) -> Self {
         self.datastore_status = input;
         self
+    }
+    /// <p>The status of the FHIR data store.</p>
+    pub fn get_datastore_status(&self) -> &::std::option::Option<crate::types::DatastoreStatus> {
+        &self.datastore_status
     }
     /// <p>The AWS endpoint for the created data store.</p>
     pub fn datastore_endpoint(
@@ -116,6 +128,10 @@ impl CreateFhirDatastoreOutputBuilder {
     ) -> Self {
         self.datastore_endpoint = input;
         self
+    }
+    /// <p>The AWS endpoint for the created data store.</p>
+    pub fn get_datastore_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.datastore_endpoint
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

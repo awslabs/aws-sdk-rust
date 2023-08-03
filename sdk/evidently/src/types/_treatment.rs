@@ -64,6 +64,10 @@ impl TreatmentBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of this treatment.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the treatment.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl TreatmentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the treatment.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `feature_variations`.
     ///
@@ -98,6 +106,14 @@ impl TreatmentBuilder {
     ) -> Self {
         self.feature_variations = input;
         self
+    }
+    /// <p>The feature variation used for this treatment. This is a key-value pair. The key is the feature name, and the value is the variation name.</p>
+    pub fn get_feature_variations(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.feature_variations
     }
     /// Consumes the builder and constructs a [`Treatment`](crate::types::Treatment).
     pub fn build(self) -> crate::types::Treatment {

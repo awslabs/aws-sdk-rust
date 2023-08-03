@@ -51,6 +51,12 @@ impl DescribeGameSessionPlacementOutputBuilder {
         self.game_session_placement = input;
         self
     }
+    /// <p>Object that describes the requested game session placement.</p>
+    pub fn get_game_session_placement(
+        &self,
+    ) -> &::std::option::Option<crate::types::GameSessionPlacement> {
+        &self.game_session_placement
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

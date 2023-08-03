@@ -36,6 +36,13 @@ impl UpdateConnectorProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateConnectorProfile as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_connector_profile::builders::UpdateConnectorProfileInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl UpdateConnectorProfileFluentBuilder {
         self.inner = self.inner.set_connector_profile_name(input);
         self
     }
+    /// <p> The name of the connector profile and is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
+    pub fn get_connector_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connector_profile_name()
+    }
     /// <p> Indicates the connection mode and if it is public or private. </p>
     pub fn connection_mode(mut self, input: crate::types::ConnectionMode) -> Self {
         self.inner = self.inner.connection_mode(input);
@@ -144,6 +155,10 @@ impl UpdateConnectorProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_connection_mode(input);
         self
+    }
+    /// <p> Indicates the connection mode and if it is public or private. </p>
+    pub fn get_connection_mode(&self) -> &::std::option::Option<crate::types::ConnectionMode> {
+        self.inner.get_connection_mode()
     }
     /// <p> Defines the connector-specific profile configuration and credentials. </p>
     pub fn connector_profile_config(mut self, input: crate::types::ConnectorProfileConfig) -> Self {
@@ -158,6 +173,12 @@ impl UpdateConnectorProfileFluentBuilder {
         self.inner = self.inner.set_connector_profile_config(input);
         self
     }
+    /// <p> Defines the connector-specific profile configuration and credentials. </p>
+    pub fn get_connector_profile_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConnectorProfileConfig> {
+        self.inner.get_connector_profile_config()
+    }
     /// <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>UpdateConnectorProfile</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p>
     /// <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p>
     /// <p>If you specify input parameters that differ from your first request, an error occurs. If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>UpdateConnectorProfile</code>. The token is active for 8 hours.</p>
@@ -171,5 +192,11 @@ impl UpdateConnectorProfileFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>UpdateConnectorProfile</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p>
+    /// <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p>
+    /// <p>If you specify input parameters that differ from your first request, an error occurs. If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>UpdateConnectorProfile</code>. The token is active for 8 hours.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

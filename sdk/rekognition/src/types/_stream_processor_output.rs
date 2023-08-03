@@ -51,6 +51,12 @@ impl StreamProcessorOutputBuilder {
         self.kinesis_data_stream = input;
         self
     }
+    /// <p>The Amazon Kinesis Data Streams stream to which the Amazon Rekognition stream processor streams the analysis results.</p>
+    pub fn get_kinesis_data_stream(
+        &self,
+    ) -> &::std::option::Option<crate::types::KinesisDataStream> {
+        &self.kinesis_data_stream
+    }
     /// <p> The Amazon S3 bucket location to which Amazon Rekognition publishes the detailed inference results of a video analysis operation. </p>
     pub fn s3_destination(mut self, input: crate::types::S3Destination) -> Self {
         self.s3_destination = ::std::option::Option::Some(input);
@@ -63,6 +69,10 @@ impl StreamProcessorOutputBuilder {
     ) -> Self {
         self.s3_destination = input;
         self
+    }
+    /// <p> The Amazon S3 bucket location to which Amazon Rekognition publishes the detailed inference results of a video analysis operation. </p>
+    pub fn get_s3_destination(&self) -> &::std::option::Option<crate::types::S3Destination> {
+        &self.s3_destination
     }
     /// Consumes the builder and constructs a [`StreamProcessorOutput`](crate::types::StreamProcessorOutput).
     pub fn build(self) -> crate::types::StreamProcessorOutput {

@@ -55,6 +55,10 @@ impl HttpEndpointRequestConfigurationBuilder {
         self.content_encoding = input;
         self
     }
+    /// <p>Kinesis Data Firehose uses the content encoding to compress the body of a request before sending the request to the destination. For more information, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding">Content-Encoding</a> in MDN Web Docs, the official Mozilla documentation.</p>
+    pub fn get_content_encoding(&self) -> &::std::option::Option<crate::types::ContentEncoding> {
+        &self.content_encoding
+    }
     /// Appends an item to `common_attributes`.
     ///
     /// To override the contents of this collection use [`set_common_attributes`](Self::set_common_attributes).
@@ -73,6 +77,12 @@ impl HttpEndpointRequestConfigurationBuilder {
     ) -> Self {
         self.common_attributes = input;
         self
+    }
+    /// <p>Describes the metadata sent to the HTTP endpoint destination.</p>
+    pub fn get_common_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HttpEndpointCommonAttribute>> {
+        &self.common_attributes
     }
     /// Consumes the builder and constructs a [`HttpEndpointRequestConfiguration`](crate::types::HttpEndpointRequestConfiguration).
     pub fn build(self) -> crate::types::HttpEndpointRequestConfiguration {

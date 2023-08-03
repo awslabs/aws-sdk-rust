@@ -55,6 +55,10 @@ impl AutoScalingPolicyStatusBuilder {
         self.state = input;
         self
     }
+    /// <p>Indicates the status of the automatic scaling policy.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::AutoScalingPolicyState> {
+        &self.state
+    }
     /// <p>The reason for a change in status.</p>
     pub fn state_change_reason(
         mut self,
@@ -70,6 +74,12 @@ impl AutoScalingPolicyStatusBuilder {
     ) -> Self {
         self.state_change_reason = input;
         self
+    }
+    /// <p>The reason for a change in status.</p>
+    pub fn get_state_change_reason(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoScalingPolicyStateChangeReason> {
+        &self.state_change_reason
     }
     /// Consumes the builder and constructs a [`AutoScalingPolicyStatus`](crate::types::AutoScalingPolicyStatus).
     pub fn build(self) -> crate::types::AutoScalingPolicyStatus {

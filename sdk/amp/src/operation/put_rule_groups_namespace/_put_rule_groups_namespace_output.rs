@@ -81,6 +81,10 @@ impl PutRuleGroupsNamespaceOutputBuilder {
         self.name = input;
         self
     }
+    /// The rule groups namespace name.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// The Amazon Resource Name (ARN) of this rule groups namespace.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl PutRuleGroupsNamespaceOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// The Amazon Resource Name (ARN) of this rule groups namespace.
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// The status of rule groups namespace.
     pub fn status(mut self, input: crate::types::RuleGroupsNamespaceStatus) -> Self {
@@ -103,6 +111,10 @@ impl PutRuleGroupsNamespaceOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// The status of rule groups namespace.
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::RuleGroupsNamespaceStatus> {
+        &self.status
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -128,6 +140,14 @@ impl PutRuleGroupsNamespaceOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// The tags of this rule groups namespace.
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

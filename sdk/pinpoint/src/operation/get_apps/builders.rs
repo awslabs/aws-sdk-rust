@@ -36,6 +36,10 @@ impl GetAppsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetApps as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_apps::builders::GetAppsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl GetAppsFluentBuilder {
         self.inner = self.inner.set_page_size(input);
         self
     }
+    /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_page_size()
+    }
     /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
     pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.token(input.into());
@@ -127,5 +135,9 @@ impl GetAppsFluentBuilder {
     pub fn set_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_token(input);
         self
+    }
+    /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_token()
     }
 }

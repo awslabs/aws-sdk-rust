@@ -36,6 +36,12 @@ impl DeleteResourcePolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteResourcePolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_resource_policy::builders::DeleteResourcePolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DeleteResourcePolicyFluentBuilder {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that has the resource policy attached.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
+    }
     /// <p>The identifier of the revision to edit. If this ID doesn't match the current revision number, Amazon Lex returns an exception</p>
     /// <p>If you don't specify a revision ID, Amazon Lex will delete the current policy.</p>
     pub fn expected_revision_id(
@@ -143,5 +153,10 @@ impl DeleteResourcePolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_expected_revision_id(input);
         self
+    }
+    /// <p>The identifier of the revision to edit. If this ID doesn't match the current revision number, Amazon Lex returns an exception</p>
+    /// <p>If you don't specify a revision ID, Amazon Lex will delete the current policy.</p>
+    pub fn get_expected_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_expected_revision_id()
     }
 }

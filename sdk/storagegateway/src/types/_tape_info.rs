@@ -96,6 +96,10 @@ impl TapeInfoBuilder {
         self.tape_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of a virtual tape.</p>
+    pub fn get_tape_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tape_arn
+    }
     /// <p>The barcode that identifies a specific virtual tape.</p>
     pub fn tape_barcode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tape_barcode = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl TapeInfoBuilder {
     pub fn set_tape_barcode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tape_barcode = input;
         self
+    }
+    /// <p>The barcode that identifies a specific virtual tape.</p>
+    pub fn get_tape_barcode(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tape_barcode
     }
     /// <p>The size, in bytes, of a virtual tape.</p>
     pub fn tape_size_in_bytes(mut self, input: i64) -> Self {
@@ -116,6 +124,10 @@ impl TapeInfoBuilder {
         self.tape_size_in_bytes = input;
         self
     }
+    /// <p>The size, in bytes, of a virtual tape.</p>
+    pub fn get_tape_size_in_bytes(&self) -> &::std::option::Option<i64> {
+        &self.tape_size_in_bytes
+    }
     /// <p>The status of the tape.</p>
     pub fn tape_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tape_status = ::std::option::Option::Some(input.into());
@@ -125,6 +137,10 @@ impl TapeInfoBuilder {
     pub fn set_tape_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tape_status = input;
         self
+    }
+    /// <p>The status of the tape.</p>
+    pub fn get_tape_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tape_status
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -136,6 +152,10 @@ impl TapeInfoBuilder {
         self.gateway_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
+    }
     /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pool_id = ::std::option::Option::Some(input.into());
@@ -145,6 +165,10 @@ impl TapeInfoBuilder {
     pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pool_id = input;
         self
+    }
+    /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
+    pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pool_id
     }
     /// <p>The date that the tape became subject to tape retention lock.</p>
     pub fn retention_start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -159,6 +183,10 @@ impl TapeInfoBuilder {
         self.retention_start_date = input;
         self
     }
+    /// <p>The date that the tape became subject to tape retention lock.</p>
+    pub fn get_retention_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.retention_start_date
+    }
     /// <p>The date that the tape entered the custom tape pool with tape retention lock enabled.</p>
     pub fn pool_entry_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.pool_entry_date = ::std::option::Option::Some(input);
@@ -171,6 +199,10 @@ impl TapeInfoBuilder {
     ) -> Self {
         self.pool_entry_date = input;
         self
+    }
+    /// <p>The date that the tape entered the custom tape pool with tape retention lock enabled.</p>
+    pub fn get_pool_entry_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.pool_entry_date
     }
     /// Consumes the builder and constructs a [`TapeInfo`](crate::types::TapeInfo).
     pub fn build(self) -> crate::types::TapeInfo {

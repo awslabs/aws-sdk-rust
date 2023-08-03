@@ -106,6 +106,10 @@ impl AuditMitigationActionExecutionMetadataBuilder {
         self.task_id = input;
         self
     }
+    /// <p>The unique identifier for the task that applies the mitigation action.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
+    }
     /// <p>The unique identifier for the findings to which the task and associated mitigation action are applied.</p>
     pub fn finding_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.finding_id = ::std::option::Option::Some(input.into());
@@ -115,6 +119,10 @@ impl AuditMitigationActionExecutionMetadataBuilder {
     pub fn set_finding_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.finding_id = input;
         self
+    }
+    /// <p>The unique identifier for the findings to which the task and associated mitigation action are applied.</p>
+    pub fn get_finding_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.finding_id
     }
     /// <p>The friendly name of the mitigation action being applied by the task.</p>
     pub fn action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -126,6 +134,10 @@ impl AuditMitigationActionExecutionMetadataBuilder {
         self.action_name = input;
         self
     }
+    /// <p>The friendly name of the mitigation action being applied by the task.</p>
+    pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_name
+    }
     /// <p>The unique identifier for the mitigation action being applied by the task.</p>
     pub fn action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_id = ::std::option::Option::Some(input.into());
@@ -135,6 +147,10 @@ impl AuditMitigationActionExecutionMetadataBuilder {
     pub fn set_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action_id = input;
         self
+    }
+    /// <p>The unique identifier for the mitigation action being applied by the task.</p>
+    pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_id
     }
     /// <p>The current status of the task being executed.</p>
     pub fn status(mut self, input: crate::types::AuditMitigationActionsExecutionStatus) -> Self {
@@ -149,6 +165,12 @@ impl AuditMitigationActionExecutionMetadataBuilder {
         self.status = input;
         self
     }
+    /// <p>The current status of the task being executed.</p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuditMitigationActionsExecutionStatus> {
+        &self.status
+    }
     /// <p>The date and time when the task was started.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -161,6 +183,10 @@ impl AuditMitigationActionExecutionMetadataBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>The date and time when the task was started.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>The date and time when the task was completed or canceled. Blank if the task is still running.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -175,6 +201,10 @@ impl AuditMitigationActionExecutionMetadataBuilder {
         self.end_time = input;
         self
     }
+    /// <p>The date and time when the task was completed or canceled. Blank if the task is still running.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>If an error occurred, the code that indicates which type of error occurred.</p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
@@ -185,6 +215,10 @@ impl AuditMitigationActionExecutionMetadataBuilder {
         self.error_code = input;
         self
     }
+    /// <p>If an error occurred, the code that indicates which type of error occurred.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
+    }
     /// <p>If an error occurred, a message that describes the error.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -194,6 +228,10 @@ impl AuditMitigationActionExecutionMetadataBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>If an error occurred, a message that describes the error.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`AuditMitigationActionExecutionMetadata`](crate::types::AuditMitigationActionExecutionMetadata).
     pub fn build(self) -> crate::types::AuditMitigationActionExecutionMetadata {

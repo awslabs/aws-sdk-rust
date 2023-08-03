@@ -64,6 +64,10 @@ impl FieldValidationConfigurationBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The validation to perform on an object type.<code></code> </p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// Appends an item to `str_values`.
     ///
     /// To override the contents of this collection use [`set_str_values`](Self::set_str_values).
@@ -83,6 +87,10 @@ impl FieldValidationConfigurationBuilder {
         self.str_values = input;
         self
     }
+    /// <p>The validation to perform on a string value.</p>
+    pub fn get_str_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.str_values
+    }
     /// Appends an item to `num_values`.
     ///
     /// To override the contents of this collection use [`set_num_values`](Self::set_num_values).
@@ -99,6 +107,10 @@ impl FieldValidationConfigurationBuilder {
         self.num_values = input;
         self
     }
+    /// <p>The validation to perform on a number value.</p>
+    pub fn get_num_values(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.num_values
+    }
     /// <p>The validation message to display.</p>
     pub fn validation_message(
         mut self,
@@ -114,6 +126,10 @@ impl FieldValidationConfigurationBuilder {
     ) -> Self {
         self.validation_message = input;
         self
+    }
+    /// <p>The validation message to display.</p>
+    pub fn get_validation_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.validation_message
     }
     /// Consumes the builder and constructs a [`FieldValidationConfiguration`](crate::types::FieldValidationConfiguration).
     pub fn build(self) -> crate::types::FieldValidationConfiguration {

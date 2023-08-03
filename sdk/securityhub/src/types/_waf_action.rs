@@ -64,6 +64,16 @@ impl WafActionBuilder {
         self.r#type = input;
         self
     }
+    /// <p>Specifies how you want WAF to respond to requests that match the settings in a rule.</p>
+    /// <p>Valid settings include the following:</p>
+    /// <ul>
+    /// <li> <p> <code>ALLOW</code> - WAF allows requests</p> </li>
+    /// <li> <p> <code>BLOCK</code> - WAF blocks requests</p> </li>
+    /// <li> <p> <code>COUNT</code> - WAF increments a counter of the requests that match all of the conditions in the rule. WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default action for a web ACL.</p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// Consumes the builder and constructs a [`WafAction`](crate::types::WafAction).
     pub fn build(self) -> crate::types::WafAction {
         crate::types::WafAction {

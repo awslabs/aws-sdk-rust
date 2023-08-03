@@ -89,6 +89,10 @@ impl TargetedSentimentMentionBuilder {
         self.score = input;
         self
     }
+    /// <p>Model confidence that the entity is relevant. Value range is zero to one, where one is highest confidence.</p>
+    pub fn get_score(&self) -> &::std::option::Option<f32> {
+        &self.score
+    }
     /// <p>The confidence that all the entities mentioned in the group relate to the same entity.</p>
     pub fn group_score(mut self, input: f32) -> Self {
         self.group_score = ::std::option::Option::Some(input);
@@ -99,6 +103,10 @@ impl TargetedSentimentMentionBuilder {
         self.group_score = input;
         self
     }
+    /// <p>The confidence that all the entities mentioned in the group relate to the same entity.</p>
+    pub fn get_group_score(&self) -> &::std::option::Option<f32> {
+        &self.group_score
+    }
     /// <p>The text in the document that identifies the entity.</p>
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
@@ -108,6 +116,10 @@ impl TargetedSentimentMentionBuilder {
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.text = input;
         self
+    }
+    /// <p>The text in the document that identifies the entity.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
     }
     /// <p>The type of the entity. Amazon Comprehend supports a variety of <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html#how-targeted-sentiment-entities">entity types</a>.</p>
     pub fn r#type(mut self, input: crate::types::TargetedSentimentEntityType) -> Self {
@@ -122,6 +134,10 @@ impl TargetedSentimentMentionBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of the entity. Amazon Comprehend supports a variety of <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html#how-targeted-sentiment-entities">entity types</a>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::TargetedSentimentEntityType> {
+        &self.r#type
+    }
     /// <p>Contains the sentiment and sentiment score for the mention.</p>
     pub fn mention_sentiment(mut self, input: crate::types::MentionSentiment) -> Self {
         self.mention_sentiment = ::std::option::Option::Some(input);
@@ -135,6 +151,10 @@ impl TargetedSentimentMentionBuilder {
         self.mention_sentiment = input;
         self
     }
+    /// <p>Contains the sentiment and sentiment score for the mention.</p>
+    pub fn get_mention_sentiment(&self) -> &::std::option::Option<crate::types::MentionSentiment> {
+        &self.mention_sentiment
+    }
     /// <p>The offset into the document text where the mention begins.</p>
     pub fn begin_offset(mut self, input: i32) -> Self {
         self.begin_offset = ::std::option::Option::Some(input);
@@ -145,6 +165,10 @@ impl TargetedSentimentMentionBuilder {
         self.begin_offset = input;
         self
     }
+    /// <p>The offset into the document text where the mention begins.</p>
+    pub fn get_begin_offset(&self) -> &::std::option::Option<i32> {
+        &self.begin_offset
+    }
     /// <p>The offset into the document text where the mention ends.</p>
     pub fn end_offset(mut self, input: i32) -> Self {
         self.end_offset = ::std::option::Option::Some(input);
@@ -154,6 +178,10 @@ impl TargetedSentimentMentionBuilder {
     pub fn set_end_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end_offset = input;
         self
+    }
+    /// <p>The offset into the document text where the mention ends.</p>
+    pub fn get_end_offset(&self) -> &::std::option::Option<i32> {
+        &self.end_offset
     }
     /// Consumes the builder and constructs a [`TargetedSentimentMention`](crate::types::TargetedSentimentMention).
     pub fn build(self) -> crate::types::TargetedSentimentMention {

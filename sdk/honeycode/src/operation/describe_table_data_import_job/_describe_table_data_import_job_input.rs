@@ -63,6 +63,11 @@ impl DescribeTableDataImportJobInputBuilder {
         self.workbook_id = input;
         self
     }
+    /// <p>The ID of the workbook into which data was imported.</p>
+    /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    pub fn get_workbook_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workbook_id
+    }
     /// <p>The ID of the table into which data was imported.</p>
     /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
     pub fn table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -75,6 +80,11 @@ impl DescribeTableDataImportJobInputBuilder {
         self.table_id = input;
         self
     }
+    /// <p>The ID of the table into which data was imported.</p>
+    /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    pub fn get_table_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_id
+    }
     /// <p>The ID of the job that was returned by the StartTableDataImportJob request.</p>
     /// <p> If a job with the specified id could not be found, this API throws ResourceNotFoundException. </p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -86,6 +96,11 @@ impl DescribeTableDataImportJobInputBuilder {
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
+    }
+    /// <p>The ID of the job that was returned by the StartTableDataImportJob request.</p>
+    /// <p> If a job with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
     }
     /// Consumes the builder and constructs a [`DescribeTableDataImportJobInput`](crate::operation::describe_table_data_import_job::DescribeTableDataImportJobInput).
     pub fn build(

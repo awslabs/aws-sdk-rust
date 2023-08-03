@@ -58,6 +58,10 @@ impl ResourceDataSyncAwsOrganizationsSourceBuilder {
         self.organization_source_type = input;
         self
     }
+    /// <p>If an Amazon Web Services organization is present, this is either <code>OrganizationalUnits</code> or <code>EntireOrganization</code>. For <code>OrganizationalUnits</code>, the data is aggregated from a set of organization units. For <code>EntireOrganization</code>, the data is aggregated from the entire Amazon Web Services organization.</p>
+    pub fn get_organization_source_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_source_type
+    }
     /// Appends an item to `organizational_units`.
     ///
     /// To override the contents of this collection use [`set_organizational_units`](Self::set_organizational_units).
@@ -81,6 +85,13 @@ impl ResourceDataSyncAwsOrganizationsSourceBuilder {
     ) -> Self {
         self.organizational_units = input;
         self
+    }
+    /// <p>The Organizations organization units included in the sync.</p>
+    pub fn get_organizational_units(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceDataSyncOrganizationalUnit>>
+    {
+        &self.organizational_units
     }
     /// Consumes the builder and constructs a [`ResourceDataSyncAwsOrganizationsSource`](crate::types::ResourceDataSyncAwsOrganizationsSource).
     pub fn build(self) -> crate::types::ResourceDataSyncAwsOrganizationsSource {

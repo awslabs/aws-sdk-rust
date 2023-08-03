@@ -51,6 +51,10 @@ impl LoRaWanMulticastBuilder {
         self.rf_region = input;
         self
     }
+    /// <p>Supported RfRegions</p>
+    pub fn get_rf_region(&self) -> &::std::option::Option<crate::types::SupportedRfRegion> {
+        &self.rf_region
+    }
     /// <p>DlClass for LoRaWAM, valid values are ClassB and ClassC.</p>
     pub fn dl_class(mut self, input: crate::types::DlClass) -> Self {
         self.dl_class = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl LoRaWanMulticastBuilder {
     pub fn set_dl_class(mut self, input: ::std::option::Option<crate::types::DlClass>) -> Self {
         self.dl_class = input;
         self
+    }
+    /// <p>DlClass for LoRaWAM, valid values are ClassB and ClassC.</p>
+    pub fn get_dl_class(&self) -> &::std::option::Option<crate::types::DlClass> {
+        &self.dl_class
     }
     /// Consumes the builder and constructs a [`LoRaWanMulticast`](crate::types::LoRaWanMulticast).
     pub fn build(self) -> crate::types::LoRaWanMulticast {

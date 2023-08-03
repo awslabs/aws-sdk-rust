@@ -77,6 +77,10 @@ impl VerifyMacInputBuilder {
         self.key_identifier = input;
         self
     }
+    /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses to verify MAC data.</p>
+    pub fn get_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_identifier
+    }
     /// <p>The data on for which MAC is under verification.</p>
     pub fn message_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_data = ::std::option::Option::Some(input.into());
@@ -87,6 +91,10 @@ impl VerifyMacInputBuilder {
         self.message_data = input;
         self
     }
+    /// <p>The data on for which MAC is under verification.</p>
+    pub fn get_message_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_data
+    }
     /// <p>The MAC being verified.</p>
     pub fn mac(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mac = ::std::option::Option::Some(input.into());
@@ -96,6 +104,10 @@ impl VerifyMacInputBuilder {
     pub fn set_mac(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mac = input;
         self
+    }
+    /// <p>The MAC being verified.</p>
+    pub fn get_mac(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mac
     }
     /// <p>The attributes and data values to use for MAC verification within Amazon Web Services Payment Cryptography.</p>
     pub fn verification_attributes(mut self, input: crate::types::MacAttributes) -> Self {
@@ -110,6 +122,12 @@ impl VerifyMacInputBuilder {
         self.verification_attributes = input;
         self
     }
+    /// <p>The attributes and data values to use for MAC verification within Amazon Web Services Payment Cryptography.</p>
+    pub fn get_verification_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::MacAttributes> {
+        &self.verification_attributes
+    }
     /// <p>The length of the MAC.</p>
     pub fn mac_length(mut self, input: i32) -> Self {
         self.mac_length = ::std::option::Option::Some(input);
@@ -119,6 +137,10 @@ impl VerifyMacInputBuilder {
     pub fn set_mac_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.mac_length = input;
         self
+    }
+    /// <p>The length of the MAC.</p>
+    pub fn get_mac_length(&self) -> &::std::option::Option<i32> {
+        &self.mac_length
     }
     /// Consumes the builder and constructs a [`VerifyMacInput`](crate::operation::verify_mac::VerifyMacInput).
     pub fn build(

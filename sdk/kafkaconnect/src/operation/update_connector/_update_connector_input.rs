@@ -58,6 +58,10 @@ impl UpdateConnectorInputBuilder {
         self.capacity = input;
         self
     }
+    /// <p>The target capacity.</p>
+    pub fn get_capacity(&self) -> &::std::option::Option<crate::types::CapacityUpdate> {
+        &self.capacity
+    }
     /// <p>The Amazon Resource Name (ARN) of the connector that you want to update.</p>
     pub fn connector_arn(
         mut self,
@@ -74,6 +78,10 @@ impl UpdateConnectorInputBuilder {
         self.connector_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the connector that you want to update.</p>
+    pub fn get_connector_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connector_arn
+    }
     /// <p>The current version of the connector that you want to update.</p>
     pub fn current_version(
         mut self,
@@ -89,6 +97,10 @@ impl UpdateConnectorInputBuilder {
     ) -> Self {
         self.current_version = input;
         self
+    }
+    /// <p>The current version of the connector that you want to update.</p>
+    pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.current_version
     }
     /// Consumes the builder and constructs a [`UpdateConnectorInput`](crate::operation::update_connector::UpdateConnectorInput).
     pub fn build(

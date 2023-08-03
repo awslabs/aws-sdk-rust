@@ -36,6 +36,13 @@ impl RevokeFlowEntitlementFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RevokeFlowEntitlement as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::revoke_flow_entitlement::builders::RevokeFlowEntitlementInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl RevokeFlowEntitlementFluentBuilder {
         self.inner = self.inner.set_entitlement_arn(input);
         self
     }
+    /// The ARN of the entitlement that you want to revoke.
+    pub fn get_entitlement_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_entitlement_arn()
+    }
     /// The flow that you want to revoke an entitlement from.
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_arn(input.into());
@@ -141,5 +152,9 @@ impl RevokeFlowEntitlementFluentBuilder {
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_arn(input);
         self
+    }
+    /// The flow that you want to revoke an entitlement from.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_flow_arn()
     }
 }

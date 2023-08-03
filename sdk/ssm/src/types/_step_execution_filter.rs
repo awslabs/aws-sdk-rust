@@ -51,6 +51,10 @@ impl StepExecutionFilterBuilder {
         self.key = input;
         self
     }
+    /// <p>One or more keys to limit the results. Valid filter keys include the following: StepName, Action, StepExecutionId, StepExecutionStatus, StartTimeBefore, StartTimeAfter.</p>
+    pub fn get_key(&self) -> &::std::option::Option<crate::types::StepExecutionFilterKey> {
+        &self.key
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -69,6 +73,10 @@ impl StepExecutionFilterBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>The values of the filter key.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`StepExecutionFilter`](crate::types::StepExecutionFilter).
     pub fn build(self) -> crate::types::StepExecutionFilter {

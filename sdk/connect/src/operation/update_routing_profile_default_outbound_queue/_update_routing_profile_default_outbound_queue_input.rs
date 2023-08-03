@@ -55,6 +55,10 @@ impl UpdateRoutingProfileDefaultOutboundQueueInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The identifier of the routing profile.</p>
     pub fn routing_profile_id(
         mut self,
@@ -71,6 +75,10 @@ impl UpdateRoutingProfileDefaultOutboundQueueInputBuilder {
         self.routing_profile_id = input;
         self
     }
+    /// <p>The identifier of the routing profile.</p>
+    pub fn get_routing_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.routing_profile_id
+    }
     /// <p>The identifier for the default outbound queue.</p>
     pub fn default_outbound_queue_id(
         mut self,
@@ -86,6 +94,10 @@ impl UpdateRoutingProfileDefaultOutboundQueueInputBuilder {
     ) -> Self {
         self.default_outbound_queue_id = input;
         self
+    }
+    /// <p>The identifier for the default outbound queue.</p>
+    pub fn get_default_outbound_queue_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_outbound_queue_id
     }
     /// Consumes the builder and constructs a [`UpdateRoutingProfileDefaultOutboundQueueInput`](crate::operation::update_routing_profile_default_outbound_queue::UpdateRoutingProfileDefaultOutboundQueueInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_routing_profile_default_outbound_queue::UpdateRoutingProfileDefaultOutboundQueueInput, ::aws_smithy_http::operation::error::BuildError>{

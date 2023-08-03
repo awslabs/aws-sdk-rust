@@ -46,6 +46,10 @@ impl StopReplicationInputBuilder {
         self.replication_config_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name of the replication to stop.</p>
+    pub fn get_replication_config_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_config_arn
+    }
     /// Consumes the builder and constructs a [`StopReplicationInput`](crate::operation::stop_replication::StopReplicationInput).
     pub fn build(
         self,

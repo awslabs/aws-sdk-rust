@@ -64,6 +64,12 @@ impl GetComplianceSummaryOutputBuilder {
         self.summary_list = input;
         self
     }
+    /// <p>A table that shows counts of noncompliant resources.</p>
+    pub fn get_summary_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Summary>> {
+        &self.summary_list
+    }
     /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
     pub fn pagination_token(
         mut self,
@@ -79,6 +85,10 @@ impl GetComplianceSummaryOutputBuilder {
     ) -> Self {
         self.pagination_token = input;
         self
+    }
+    /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
+    pub fn get_pagination_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pagination_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

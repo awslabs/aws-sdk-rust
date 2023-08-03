@@ -36,6 +36,10 @@ impl PutDedicatedIpWarmupAttributesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutDedicatedIpWarmupAttributes as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_dedicated_ip_warmup_attributes::builders::PutDedicatedIpWarmupAttributesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl PutDedicatedIpWarmupAttributesFluentBuilder {
         self.inner = self.inner.set_ip(input);
         self
     }
+    /// <p>The dedicated IP address that you want to update the warm-up attributes for.</p>
+    pub fn get_ip(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ip()
+    }
     /// <p>The warm-up percentage that you want to associate with the dedicated IP address.</p>
     pub fn warmup_percentage(mut self, input: i32) -> Self {
         self.inner = self.inner.warmup_percentage(input);
@@ -109,5 +117,9 @@ impl PutDedicatedIpWarmupAttributesFluentBuilder {
     pub fn set_warmup_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_warmup_percentage(input);
         self
+    }
+    /// <p>The warm-up percentage that you want to associate with the dedicated IP address.</p>
+    pub fn get_warmup_percentage(&self) -> &::std::option::Option<i32> {
+        self.inner.get_warmup_percentage()
     }
 }

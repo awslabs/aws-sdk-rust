@@ -55,6 +55,10 @@ impl GetTemplateStepInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the step.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The ID of the template.</p>
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_id = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl GetTemplateStepInputBuilder {
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_id = input;
         self
+    }
+    /// <p>The ID of the template.</p>
+    pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_id
     }
     /// <p>The ID of the step group.</p>
     pub fn step_group_id(
@@ -80,6 +88,10 @@ impl GetTemplateStepInputBuilder {
     ) -> Self {
         self.step_group_id = input;
         self
+    }
+    /// <p>The ID of the step group.</p>
+    pub fn get_step_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.step_group_id
     }
     /// Consumes the builder and constructs a [`GetTemplateStepInput`](crate::operation::get_template_step::GetTemplateStepInput).
     pub fn build(

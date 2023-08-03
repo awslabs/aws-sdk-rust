@@ -52,6 +52,10 @@ impl CopyImageOutputBuilder {
         self.destination_image_name = input;
         self
     }
+    /// <p>The name of the destination image.</p>
+    pub fn get_destination_image_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_image_name
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -53,6 +53,10 @@ impl CustomErrorResponsesBuilder {
         self.quantity = input;
         self
     }
+    /// <p>The number of HTTP status codes for which you want to specify a custom error page and/or a caching duration. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
+    pub fn get_quantity(&self) -> &::std::option::Option<i32> {
+        &self.quantity
+    }
     /// Appends an item to `items`.
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
@@ -71,6 +75,12 @@ impl CustomErrorResponsesBuilder {
     ) -> Self {
         self.items = input;
         self
+    }
+    /// <p>A complex type that contains a <code>CustomErrorResponse</code> element for each HTTP status code for which you want to specify a custom error page and/or a caching duration. </p>
+    pub fn get_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomErrorResponse>> {
+        &self.items
     }
     /// Consumes the builder and constructs a [`CustomErrorResponses`](crate::types::CustomErrorResponses).
     pub fn build(self) -> crate::types::CustomErrorResponses {

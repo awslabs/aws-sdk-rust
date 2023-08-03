@@ -111,6 +111,10 @@ impl GetUsagePlanOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of a UsagePlan resource.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of a usage plan.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -121,6 +125,10 @@ impl GetUsagePlanOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of a usage plan.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of a usage plan.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -130,6 +138,10 @@ impl GetUsagePlanOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of a usage plan.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `api_stages`.
     ///
@@ -150,6 +162,12 @@ impl GetUsagePlanOutputBuilder {
         self.api_stages = input;
         self
     }
+    /// <p>The associated API stages of a usage plan.</p>
+    pub fn get_api_stages(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApiStage>> {
+        &self.api_stages
+    }
     /// <p>A map containing method level throttling information for API stage in a usage plan.</p>
     pub fn throttle(mut self, input: crate::types::ThrottleSettings) -> Self {
         self.throttle = ::std::option::Option::Some(input);
@@ -163,6 +181,10 @@ impl GetUsagePlanOutputBuilder {
         self.throttle = input;
         self
     }
+    /// <p>A map containing method level throttling information for API stage in a usage plan.</p>
+    pub fn get_throttle(&self) -> &::std::option::Option<crate::types::ThrottleSettings> {
+        &self.throttle
+    }
     /// <p>The target maximum number of permitted requests per a given unit time interval.</p>
     pub fn quota(mut self, input: crate::types::QuotaSettings) -> Self {
         self.quota = ::std::option::Option::Some(input);
@@ -173,6 +195,10 @@ impl GetUsagePlanOutputBuilder {
         self.quota = input;
         self
     }
+    /// <p>The target maximum number of permitted requests per a given unit time interval.</p>
+    pub fn get_quota(&self) -> &::std::option::Option<crate::types::QuotaSettings> {
+        &self.quota
+    }
     /// <p>The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS Marketplace.</p>
     pub fn product_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_code = ::std::option::Option::Some(input.into());
@@ -182,6 +208,10 @@ impl GetUsagePlanOutputBuilder {
     pub fn set_product_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product_code = input;
         self
+    }
+    /// <p>The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS Marketplace.</p>
+    pub fn get_product_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_code
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -207,6 +237,14 @@ impl GetUsagePlanOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -48,6 +48,10 @@ impl DatasourcePackageUsageInfoBuilder {
         self.volume_usage_in_bytes = input;
         self
     }
+    /// <p>Total volume of data in bytes per day ingested for a given data source package.</p>
+    pub fn get_volume_usage_in_bytes(&self) -> &::std::option::Option<i64> {
+        &self.volume_usage_in_bytes
+    }
     /// <p>The data and time when the member account data volume was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
     pub fn volume_usage_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.volume_usage_update_time = ::std::option::Option::Some(input);
@@ -60,6 +64,12 @@ impl DatasourcePackageUsageInfoBuilder {
     ) -> Self {
         self.volume_usage_update_time = input;
         self
+    }
+    /// <p>The data and time when the member account data volume was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
+    pub fn get_volume_usage_update_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.volume_usage_update_time
     }
     /// Consumes the builder and constructs a [`DatasourcePackageUsageInfo`](crate::types::DatasourcePackageUsageInfo).
     pub fn build(self) -> crate::types::DatasourcePackageUsageInfo {

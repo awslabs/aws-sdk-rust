@@ -73,6 +73,10 @@ impl ReleaseAddressInputBuilder {
         self.allocation_id = input;
         self
     }
+    /// <p>The allocation ID. This parameter is required.</p>
+    pub fn get_allocation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.allocation_id
+    }
     /// <p>Deprecated.</p>
     pub fn public_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_ip = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl ReleaseAddressInputBuilder {
     pub fn set_public_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_ip = input;
         self
+    }
+    /// <p>Deprecated.</p>
+    pub fn get_public_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_ip
     }
     /// <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises IP addresses.</p>
     /// <p>If you provide an incorrect network border group, you receive an <code>InvalidAddress.NotFound</code> error.</p>
@@ -103,6 +111,12 @@ impl ReleaseAddressInputBuilder {
         self.network_border_group = input;
         self
     }
+    /// <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises IP addresses.</p>
+    /// <p>If you provide an incorrect network border group, you receive an <code>InvalidAddress.NotFound</code> error.</p>
+    /// <p>You cannot use a network border group with EC2 Classic. If you attempt this operation on EC2 classic, you receive an <code>InvalidParameterCombination</code> error.</p>
+    pub fn get_network_border_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_border_group
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -112,6 +126,10 @@ impl ReleaseAddressInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`ReleaseAddressInput`](crate::operation::release_address::ReleaseAddressInput).
     pub fn build(

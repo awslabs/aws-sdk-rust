@@ -36,6 +36,12 @@ impl CreateProjectFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateProject as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_project::builders::CreateProjectInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl CreateProjectFluentBuilder {
         self.inner = self.inner.set_dataset_name(input);
         self
     }
+    /// <p>The name of an existing dataset to associate this project with.</p>
+    pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dataset_name()
+    }
     /// <p>A unique name for the new project. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -127,6 +137,10 @@ impl CreateProjectFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>A unique name for the new project. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The name of an existing recipe to associate with the project.</p>
     pub fn recipe_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,6 +152,10 @@ impl CreateProjectFluentBuilder {
         self.inner = self.inner.set_recipe_name(input);
         self
     }
+    /// <p>The name of an existing recipe to associate with the project.</p>
+    pub fn get_recipe_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_recipe_name()
+    }
     /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
     pub fn sample(mut self, input: crate::types::Sample) -> Self {
         self.inner = self.inner.sample(input);
@@ -148,6 +166,10 @@ impl CreateProjectFluentBuilder {
         self.inner = self.inner.set_sample(input);
         self
     }
+    /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
+    pub fn get_sample(&self) -> &::std::option::Option<crate::types::Sample> {
+        self.inner.get_sample()
+    }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed for this request.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -157,6 +179,10 @@ impl CreateProjectFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed for this request.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -180,5 +206,13 @@ impl CreateProjectFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Metadata tags to apply to this project.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

@@ -41,6 +41,10 @@ impl DescribeWorldExportJobInputBuilder {
         self.job = input;
         self
     }
+    /// <p>The Amazon Resource Name (arn) of the world export job to describe.</p>
+    pub fn get_job(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job
+    }
     /// Consumes the builder and constructs a [`DescribeWorldExportJobInput`](crate::operation::describe_world_export_job::DescribeWorldExportJobInput).
     pub fn build(
         self,

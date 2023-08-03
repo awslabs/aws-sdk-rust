@@ -67,6 +67,10 @@ impl MaintenanceStatusBuilder {
         self.maintenance_day = input;
         self
     }
+    /// The currently selected maintenance day.
+    pub fn get_maintenance_day(&self) -> &::std::option::Option<crate::types::MaintenanceDay> {
+        &self.maintenance_day
+    }
     /// Maintenance is required by the displayed date and time. Date and time is in ISO.
     pub fn maintenance_deadline(
         mut self,
@@ -82,6 +86,10 @@ impl MaintenanceStatusBuilder {
     ) -> Self {
         self.maintenance_deadline = input;
         self
+    }
+    /// Maintenance is required by the displayed date and time. Date and time is in ISO.
+    pub fn get_maintenance_deadline(&self) -> &::std::option::Option<::std::string::String> {
+        &self.maintenance_deadline
     }
     /// The currently scheduled maintenance date and time. Date and time is in ISO.
     pub fn maintenance_scheduled_date(
@@ -99,6 +107,10 @@ impl MaintenanceStatusBuilder {
         self.maintenance_scheduled_date = input;
         self
     }
+    /// The currently scheduled maintenance date and time. Date and time is in ISO.
+    pub fn get_maintenance_scheduled_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.maintenance_scheduled_date
+    }
     /// The currently selected maintenance start time. Time is in UTC.
     pub fn maintenance_start_time(
         mut self,
@@ -114,6 +126,10 @@ impl MaintenanceStatusBuilder {
     ) -> Self {
         self.maintenance_start_time = input;
         self
+    }
+    /// The currently selected maintenance start time. Time is in UTC.
+    pub fn get_maintenance_start_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.maintenance_start_time
     }
     /// Consumes the builder and constructs a [`MaintenanceStatus`](crate::types::MaintenanceStatus).
     pub fn build(self) -> crate::types::MaintenanceStatus {

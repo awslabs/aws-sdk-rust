@@ -36,6 +36,12 @@ impl CreateLabelGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateLabelGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_label_group::builders::CreateLabelGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,11 @@ impl CreateLabelGroupFluentBuilder {
         self.inner = self.inner.set_label_group_name(input);
         self
     }
+    /// <p> Names a group of labels.</p>
+    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+    pub fn get_label_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_label_group_name()
+    }
     /// Appends an item to `FaultCodes`.
     ///
     /// To override the contents of this collection use [`set_fault_codes`](Self::set_fault_codes).
@@ -153,6 +164,13 @@ impl CreateLabelGroupFluentBuilder {
         self.inner = self.inner.set_fault_codes(input);
         self
     }
+    /// <p> The acceptable fault codes (indicating the type of anomaly associated with the label) that can be used with this label group.</p>
+    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+    pub fn get_fault_codes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_fault_codes()
+    }
     /// <p> A unique identifier for the request to create a label group. If you do not set the client request token, Lookout for Equipment generates one. </p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -162,6 +180,10 @@ impl CreateLabelGroupFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p> A unique identifier for the request to create a label group. If you do not set the client request token, Lookout for Equipment generates one. </p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// Appends an item to `Tags`.
     ///
@@ -181,5 +203,10 @@ impl CreateLabelGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p> Tags that provide metadata about the label group you are creating. </p>
+    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

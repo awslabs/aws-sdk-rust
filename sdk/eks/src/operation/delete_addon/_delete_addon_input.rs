@@ -55,6 +55,10 @@ impl DeleteAddonInputBuilder {
         self.cluster_name = input;
         self
     }
+    /// <p>The name of the cluster to delete the add-on from.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_name
+    }
     /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
     pub fn addon_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.addon_name = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl DeleteAddonInputBuilder {
         self.addon_name = input;
         self
     }
+    /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
+    pub fn get_addon_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.addon_name
+    }
     /// <p>Specifying this option preserves the add-on software on your cluster but Amazon EKS stops managing any settings for the add-on. If an IAM account is associated with the add-on, it isn't removed.</p>
     pub fn preserve(mut self, input: bool) -> Self {
         self.preserve = ::std::option::Option::Some(input);
@@ -74,6 +82,10 @@ impl DeleteAddonInputBuilder {
     pub fn set_preserve(mut self, input: ::std::option::Option<bool>) -> Self {
         self.preserve = input;
         self
+    }
+    /// <p>Specifying this option preserves the add-on software on your cluster but Amazon EKS stops managing any settings for the add-on. If an IAM account is associated with the add-on, it isn't removed.</p>
+    pub fn get_preserve(&self) -> &::std::option::Option<bool> {
+        &self.preserve
     }
     /// Consumes the builder and constructs a [`DeleteAddonInput`](crate::operation::delete_addon::DeleteAddonInput).
     pub fn build(

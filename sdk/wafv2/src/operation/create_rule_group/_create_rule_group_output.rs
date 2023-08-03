@@ -50,6 +50,10 @@ impl CreateRuleGroupOutputBuilder {
         self.summary = input;
         self
     }
+    /// <p>High-level information about a <code>RuleGroup</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RuleGroup</code>, and the ARN, that you provide to the <code>RuleGroupReferenceStatement</code> to use the rule group in a <code>Rule</code>.</p>
+    pub fn get_summary(&self) -> &::std::option::Option<crate::types::RuleGroupSummary> {
+        &self.summary
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

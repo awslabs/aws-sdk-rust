@@ -73,6 +73,10 @@ impl FirewallDomainListMetadataBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the domain list. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Amazon Resource Name (ARN) of the firewall domain list metadata.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -83,6 +87,10 @@ impl FirewallDomainListMetadataBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the firewall domain list metadata.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the domain list. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -92,6 +100,10 @@ impl FirewallDomainListMetadataBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the domain list. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp. </p>
     pub fn creator_request_id(
@@ -109,6 +121,10 @@ impl FirewallDomainListMetadataBuilder {
         self.creator_request_id = input;
         self
     }
+    /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp. </p>
+    pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creator_request_id
+    }
     /// <p>The owner of the list, used only for lists that are not managed by you. For example, the managed domain list <code>AWSManagedDomainsMalwareDomainList</code> has the managed owner name <code>Route 53 Resolver DNS Firewall</code>.</p>
     pub fn managed_owner_name(
         mut self,
@@ -124,6 +140,10 @@ impl FirewallDomainListMetadataBuilder {
     ) -> Self {
         self.managed_owner_name = input;
         self
+    }
+    /// <p>The owner of the list, used only for lists that are not managed by you. For example, the managed domain list <code>AWSManagedDomainsMalwareDomainList</code> has the managed owner name <code>Route 53 Resolver DNS Firewall</code>.</p>
+    pub fn get_managed_owner_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.managed_owner_name
     }
     /// Consumes the builder and constructs a [`FirewallDomainListMetadata`](crate::types::FirewallDomainListMetadata).
     pub fn build(self) -> crate::types::FirewallDomainListMetadata {

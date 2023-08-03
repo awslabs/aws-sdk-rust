@@ -56,6 +56,10 @@ impl KeywordMatchConfigurationBuilder {
         self.rule_name = input;
         self
     }
+    /// <p>The name of the keyword match rule.</p>
+    pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_name
+    }
     /// Appends an item to `keywords`.
     ///
     /// To override the contents of this collection use [`set_keywords`](Self::set_keywords).
@@ -75,6 +79,10 @@ impl KeywordMatchConfigurationBuilder {
         self.keywords = input;
         self
     }
+    /// <p>The keywords or phrases that you want to match.</p>
+    pub fn get_keywords(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.keywords
+    }
     /// <p>Matches keywords or phrases on their presence or absence. If set to <code>TRUE</code>, the rule matches when all the specified keywords or phrases are absent. Default: <code>FALSE</code>.</p>
     pub fn negate(mut self, input: bool) -> Self {
         self.negate = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl KeywordMatchConfigurationBuilder {
     pub fn set_negate(mut self, input: ::std::option::Option<bool>) -> Self {
         self.negate = input;
         self
+    }
+    /// <p>Matches keywords or phrases on their presence or absence. If set to <code>TRUE</code>, the rule matches when all the specified keywords or phrases are absent. Default: <code>FALSE</code>.</p>
+    pub fn get_negate(&self) -> &::std::option::Option<bool> {
+        &self.negate
     }
     /// Consumes the builder and constructs a [`KeywordMatchConfiguration`](crate::types::KeywordMatchConfiguration).
     pub fn build(self) -> crate::types::KeywordMatchConfiguration {

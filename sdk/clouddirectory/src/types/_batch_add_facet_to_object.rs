@@ -63,6 +63,10 @@ impl BatchAddFacetToObjectBuilder {
         self.schema_facet = input;
         self
     }
+    /// <p>Represents the facet being added to the object.</p>
+    pub fn get_schema_facet(&self) -> &::std::option::Option<crate::types::SchemaFacet> {
+        &self.schema_facet
+    }
     /// Appends an item to `object_attribute_list`.
     ///
     /// To override the contents of this collection use [`set_object_attribute_list`](Self::set_object_attribute_list).
@@ -82,6 +86,12 @@ impl BatchAddFacetToObjectBuilder {
         self.object_attribute_list = input;
         self
     }
+    /// <p>The attributes to set on the object.</p>
+    pub fn get_object_attribute_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>> {
+        &self.object_attribute_list
+    }
     /// <p>A reference to the object being mutated.</p>
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.object_reference = ::std::option::Option::Some(input);
@@ -94,6 +104,10 @@ impl BatchAddFacetToObjectBuilder {
     ) -> Self {
         self.object_reference = input;
         self
+    }
+    /// <p>A reference to the object being mutated.</p>
+    pub fn get_object_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
+        &self.object_reference
     }
     /// Consumes the builder and constructs a [`BatchAddFacetToObject`](crate::types::BatchAddFacetToObject).
     pub fn build(self) -> crate::types::BatchAddFacetToObject {

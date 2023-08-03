@@ -37,6 +37,10 @@ impl StartBulkDisassociateWirelessDeviceFromMulticastGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartBulkDisassociateWirelessDeviceFromMulticastGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_bulk_disassociate_wireless_device_from_multicast_group::builders::StartBulkDisassociateWirelessDeviceFromMulticastGroupInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -101,6 +105,10 @@ impl StartBulkDisassociateWirelessDeviceFromMulticastGroupFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The ID of the multicast group.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>Query string used to search for wireless devices as part of the bulk associate and disassociate process.</p>
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_string(input.into());
@@ -110,6 +118,10 @@ impl StartBulkDisassociateWirelessDeviceFromMulticastGroupFluentBuilder {
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_string(input);
         self
+    }
+    /// <p>Query string used to search for wireless devices as part of the bulk associate and disassociate process.</p>
+    pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_query_string()
     }
     /// Appends an item to `Tags`.
     ///
@@ -127,5 +139,9 @@ impl StartBulkDisassociateWirelessDeviceFromMulticastGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

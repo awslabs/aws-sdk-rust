@@ -56,6 +56,10 @@ impl AssetBundleExportJobErrorBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the resource whose processing caused an error.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The specific error type of the error that occurred.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl AssetBundleExportJobErrorBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The specific error type of the error that occurred.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p>A description of the error.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl AssetBundleExportJobErrorBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>A description of the error.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`AssetBundleExportJobError`](crate::types::AssetBundleExportJobError).
     pub fn build(self) -> crate::types::AssetBundleExportJobError {

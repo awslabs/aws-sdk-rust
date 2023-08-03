@@ -37,6 +37,13 @@ impl PutRegistryCatalogDataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutRegistryCatalogData as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_registry_catalog_data::builders::PutRegistryCatalogDataInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,5 +137,11 @@ impl PutRegistryCatalogDataFluentBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_display_name(input);
         self
+    }
+    /// <p>The display name for a public registry. The display name is shown as the repository author in the Amazon ECR Public Gallery.</p> <note>
+    /// <p>The registry display name is only publicly visible in the Amazon ECR Public Gallery for verified accounts.</p>
+    /// </note>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_display_name()
     }
 }

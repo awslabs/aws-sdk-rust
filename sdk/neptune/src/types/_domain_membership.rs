@@ -64,6 +64,10 @@ impl DomainMembershipBuilder {
         self.domain = input;
         self
     }
+    /// <p>The identifier of the Active Directory Domain.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
+    }
     /// <p>The status of the DB instance's Active Directory Domain membership, such as joined, pending-join, failed etc).</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl DomainMembershipBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the DB instance's Active Directory Domain membership, such as joined, pending-join, failed etc).</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The fully qualified domain name of the Active Directory Domain.</p>
     pub fn fqdn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fqdn = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl DomainMembershipBuilder {
     pub fn set_fqdn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fqdn = input;
         self
+    }
+    /// <p>The fully qualified domain name of the Active Directory Domain.</p>
+    pub fn get_fqdn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fqdn
     }
     /// <p>The name of the IAM role to be used when making API calls to the Directory Service.</p>
     pub fn iam_role_name(
@@ -99,6 +111,10 @@ impl DomainMembershipBuilder {
     ) -> Self {
         self.iam_role_name = input;
         self
+    }
+    /// <p>The name of the IAM role to be used when making API calls to the Directory Service.</p>
+    pub fn get_iam_role_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_role_name
     }
     /// Consumes the builder and constructs a [`DomainMembership`](crate::types::DomainMembership).
     pub fn build(self) -> crate::types::DomainMembership {

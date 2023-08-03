@@ -56,6 +56,10 @@ impl AllocateHostsOutputBuilder {
         self.host_ids = input;
         self
     }
+    /// <p>The ID of the allocated Dedicated Host. This is used to launch an instance onto a specific host.</p>
+    pub fn get_host_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.host_ids
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

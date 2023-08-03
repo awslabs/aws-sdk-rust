@@ -83,6 +83,10 @@ impl CsvInputBuilder {
         self.file_header_info = input;
         self
     }
+    /// <p>Describes the first line of input. Valid values are <code>None</code>, <code>Ignore</code>, and <code>Use</code>.</p>
+    pub fn get_file_header_info(&self) -> &::std::option::Option<crate::types::FileHeaderInfo> {
+        &self.file_header_info
+    }
     /// <p>A single character used to indicate that a row should be ignored when the character is present at the start of that row.</p>
     pub fn comments(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comments = ::std::option::Option::Some(input.into());
@@ -92,6 +96,10 @@ impl CsvInputBuilder {
     pub fn set_comments(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comments = input;
         self
+    }
+    /// <p>A single character used to indicate that a row should be ignored when the character is present at the start of that row.</p>
+    pub fn get_comments(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comments
     }
     /// <p>A single character used for escaping the quotation-mark character inside an already escaped value.</p>
     pub fn quote_escape_character(
@@ -109,6 +117,10 @@ impl CsvInputBuilder {
         self.quote_escape_character = input;
         self
     }
+    /// <p>A single character used for escaping the quotation-mark character inside an already escaped value.</p>
+    pub fn get_quote_escape_character(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quote_escape_character
+    }
     /// <p>A value used to separate individual records from each other.</p>
     pub fn record_delimiter(
         mut self,
@@ -124,6 +136,10 @@ impl CsvInputBuilder {
     ) -> Self {
         self.record_delimiter = input;
         self
+    }
+    /// <p>A value used to separate individual records from each other.</p>
+    pub fn get_record_delimiter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.record_delimiter
     }
     /// <p>A value used to separate individual fields from each other within a record.</p>
     pub fn field_delimiter(
@@ -141,6 +157,10 @@ impl CsvInputBuilder {
         self.field_delimiter = input;
         self
     }
+    /// <p>A value used to separate individual fields from each other within a record.</p>
+    pub fn get_field_delimiter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_delimiter
+    }
     /// <p>A value used as an escape character where the field delimiter is part of the value.</p>
     pub fn quote_character(
         mut self,
@@ -156,6 +176,10 @@ impl CsvInputBuilder {
     ) -> Self {
         self.quote_character = input;
         self
+    }
+    /// <p>A value used as an escape character where the field delimiter is part of the value.</p>
+    pub fn get_quote_character(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quote_character
     }
     /// Consumes the builder and constructs a [`CsvInput`](crate::types::CsvInput).
     pub fn build(self) -> crate::types::CsvInput {

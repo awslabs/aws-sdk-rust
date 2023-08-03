@@ -39,6 +39,10 @@ impl DeleteIpGroupInputBuilder {
         self.group_id = input;
         self
     }
+    /// <p>The identifier of the IP access control group.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
+    }
     /// Consumes the builder and constructs a [`DeleteIpGroupInput`](crate::operation::delete_ip_group::DeleteIpGroupInput).
     pub fn build(
         self,

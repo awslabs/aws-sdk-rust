@@ -48,6 +48,10 @@ impl ShotSegmentBuilder {
         self.index = input;
         self
     }
+    /// <p>An Identifier for a shot detection segment detected in a video. </p>
+    pub fn get_index(&self) -> &::std::option::Option<i64> {
+        &self.index
+    }
     /// <p>The confidence that Amazon Rekognition Video has in the accuracy of the detected segment.</p>
     pub fn confidence(mut self, input: f32) -> Self {
         self.confidence = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ShotSegmentBuilder {
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.confidence = input;
         self
+    }
+    /// <p>The confidence that Amazon Rekognition Video has in the accuracy of the detected segment.</p>
+    pub fn get_confidence(&self) -> &::std::option::Option<f32> {
+        &self.confidence
     }
     /// Consumes the builder and constructs a [`ShotSegment`](crate::types::ShotSegment).
     pub fn build(self) -> crate::types::ShotSegment {

@@ -53,6 +53,10 @@ impl AssociateHostedConnectionInputBuilder {
         self.connection_id = input;
         self
     }
+    /// <p>The ID of the hosted connection.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_id
+    }
     /// <p>The ID of the interconnect or the LAG.</p>
     pub fn parent_connection_id(
         mut self,
@@ -68,6 +72,10 @@ impl AssociateHostedConnectionInputBuilder {
     ) -> Self {
         self.parent_connection_id = input;
         self
+    }
+    /// <p>The ID of the interconnect or the LAG.</p>
+    pub fn get_parent_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_connection_id
     }
     /// Consumes the builder and constructs a [`AssociateHostedConnectionInput`](crate::operation::associate_hosted_connection::AssociateHostedConnectionInput).
     pub fn build(

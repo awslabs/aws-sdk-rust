@@ -71,6 +71,10 @@ impl StartSigningJobInputBuilder {
         self.source = input;
         self
     }
+    /// <p>The S3 bucket that contains the object to sign or a BLOB that contains your raw code.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::Source> {
+        &self.source
+    }
     /// <p>The S3 bucket in which to save your signed object. The destination contains the name of your bucket and an optional prefix.</p>
     pub fn destination(mut self, input: crate::types::Destination) -> Self {
         self.destination = ::std::option::Option::Some(input);
@@ -84,6 +88,10 @@ impl StartSigningJobInputBuilder {
         self.destination = input;
         self
     }
+    /// <p>The S3 bucket in which to save your signed object. The destination contains the name of your bucket and an optional prefix.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::Destination> {
+        &self.destination
+    }
     /// <p>The name of the signing profile.</p>
     pub fn profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_name = ::std::option::Option::Some(input.into());
@@ -93,6 +101,10 @@ impl StartSigningJobInputBuilder {
     pub fn set_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_name = input;
         self
+    }
+    /// <p>The name of the signing profile.</p>
+    pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_name
     }
     /// <p>String that identifies the signing request. All calls after the first that use this token return the same response as the first call.</p>
     pub fn client_request_token(
@@ -110,6 +122,10 @@ impl StartSigningJobInputBuilder {
         self.client_request_token = input;
         self
     }
+    /// <p>String that identifies the signing request. All calls after the first that use this token return the same response as the first call.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
+    }
     /// <p>The AWS account ID of the signing profile owner.</p>
     pub fn profile_owner(
         mut self,
@@ -125,6 +141,10 @@ impl StartSigningJobInputBuilder {
     ) -> Self {
         self.profile_owner = input;
         self
+    }
+    /// <p>The AWS account ID of the signing profile owner.</p>
+    pub fn get_profile_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_owner
     }
     /// Consumes the builder and constructs a [`StartSigningJobInput`](crate::operation::start_signing_job::StartSigningJobInput).
     pub fn build(

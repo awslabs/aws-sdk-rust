@@ -125,6 +125,11 @@ impl DescribeThingOutputBuilder {
         self.default_client_id = input;
         self
     }
+    /// <p>The default MQTT client ID. For a typical device, the thing name is also used as the default MQTT client ID. Although we don’t require a mapping between a thing's registry name and its use of MQTT client IDs, certificates, or shadow state, we recommend that you choose a thing name and use it as the MQTT client ID for the registry and the Device Shadow service.</p>
+    /// <p>This lets you better organize your IoT fleet without removing the flexibility of the underlying device certificate model or shadows.</p>
+    pub fn get_default_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_client_id
+    }
     /// <p>The name of the thing.</p>
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_name = ::std::option::Option::Some(input.into());
@@ -134,6 +139,10 @@ impl DescribeThingOutputBuilder {
     pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_name = input;
         self
+    }
+    /// <p>The name of the thing.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_name
     }
     /// <p>The ID of the thing to describe.</p>
     pub fn thing_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -145,6 +154,10 @@ impl DescribeThingOutputBuilder {
         self.thing_id = input;
         self
     }
+    /// <p>The ID of the thing to describe.</p>
+    pub fn get_thing_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_id
+    }
     /// <p>The ARN of the thing to describe.</p>
     pub fn thing_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_arn = ::std::option::Option::Some(input.into());
@@ -154,6 +167,10 @@ impl DescribeThingOutputBuilder {
     pub fn set_thing_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_arn = input;
         self
+    }
+    /// <p>The ARN of the thing to describe.</p>
+    pub fn get_thing_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_arn
     }
     /// <p>The thing type name.</p>
     pub fn thing_type_name(
@@ -170,6 +187,10 @@ impl DescribeThingOutputBuilder {
     ) -> Self {
         self.thing_type_name = input;
         self
+    }
+    /// <p>The thing type name.</p>
+    pub fn get_thing_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_type_name
     }
     /// Adds a key-value pair to `attributes`.
     ///
@@ -196,6 +217,14 @@ impl DescribeThingOutputBuilder {
         self.attributes = input;
         self
     }
+    /// <p>The thing attributes.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.attributes
+    }
     /// <p>The current version of the thing record in the registry.</p> <note>
     /// <p>To avoid unintentional changes to the information in the registry, you can pass the version information in the <code>expectedVersion</code> parameter of the <code>UpdateThing</code> and <code>DeleteThing</code> calls.</p>
     /// </note>
@@ -209,6 +238,12 @@ impl DescribeThingOutputBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The current version of the thing record in the registry.</p> <note>
+    /// <p>To avoid unintentional changes to the information in the registry, you can pass the version information in the <code>expectedVersion</code> parameter of the <code>UpdateThing</code> and <code>DeleteThing</code> calls.</p>
+    /// </note>
+    pub fn get_version(&self) -> &::std::option::Option<i64> {
+        &self.version
     }
     /// <p>The name of the billing group the thing belongs to.</p>
     pub fn billing_group_name(
@@ -225,6 +260,10 @@ impl DescribeThingOutputBuilder {
     ) -> Self {
         self.billing_group_name = input;
         self
+    }
+    /// <p>The name of the billing group the thing belongs to.</p>
+    pub fn get_billing_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.billing_group_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

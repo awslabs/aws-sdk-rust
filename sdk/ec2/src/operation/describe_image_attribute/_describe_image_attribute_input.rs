@@ -65,6 +65,11 @@ impl DescribeImageAttributeInputBuilder {
         self.attribute = input;
         self
     }
+    /// <p>The AMI attribute.</p>
+    /// <p> <b>Note</b>: The <code>blockDeviceMapping</code> attribute is deprecated. Using this attribute returns the <code>Client.AuthFailure</code> error. To get information about the block device mappings for an AMI, use the <code>DescribeImages</code> action.</p>
+    pub fn get_attribute(&self) -> &::std::option::Option<crate::types::ImageAttributeName> {
+        &self.attribute
+    }
     /// <p>The ID of the AMI.</p>
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
@@ -75,6 +80,10 @@ impl DescribeImageAttributeInputBuilder {
         self.image_id = input;
         self
     }
+    /// <p>The ID of the AMI.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_id
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -84,6 +93,10 @@ impl DescribeImageAttributeInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`DescribeImageAttributeInput`](crate::operation::describe_image_attribute::DescribeImageAttributeInput).
     pub fn build(

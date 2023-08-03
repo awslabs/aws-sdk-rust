@@ -49,6 +49,10 @@ impl AssociateBrowserSettingsInputBuilder {
         self.portal_arn = input;
         self
     }
+    /// <p>The ARN of the web portal.</p>
+    pub fn get_portal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portal_arn
+    }
     /// <p>The ARN of the browser settings.</p>
     pub fn browser_settings_arn(
         mut self,
@@ -64,6 +68,10 @@ impl AssociateBrowserSettingsInputBuilder {
     ) -> Self {
         self.browser_settings_arn = input;
         self
+    }
+    /// <p>The ARN of the browser settings.</p>
+    pub fn get_browser_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.browser_settings_arn
     }
     /// Consumes the builder and constructs a [`AssociateBrowserSettingsInput`](crate::operation::associate_browser_settings::AssociateBrowserSettingsInput).
     pub fn build(

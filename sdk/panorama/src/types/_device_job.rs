@@ -72,6 +72,10 @@ impl DeviceJobBuilder {
         self.device_name = input;
         self
     }
+    /// <p>The name of the target device</p>
+    pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_name
+    }
     /// <p>The ID of the target device.</p>
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_id = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl DeviceJobBuilder {
         self.device_id = input;
         self
     }
+    /// <p>The ID of the target device.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_id
+    }
     /// <p>The job's ID.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl DeviceJobBuilder {
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
+    }
+    /// <p>The job's ID.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
     }
     /// <p>When the job was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -105,6 +117,10 @@ impl DeviceJobBuilder {
         self.created_time = input;
         self
     }
+    /// <p>When the job was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>The job's type.</p>
     pub fn job_type(mut self, input: crate::types::JobType) -> Self {
         self.job_type = ::std::option::Option::Some(input);
@@ -114,6 +130,10 @@ impl DeviceJobBuilder {
     pub fn set_job_type(mut self, input: ::std::option::Option<crate::types::JobType>) -> Self {
         self.job_type = input;
         self
+    }
+    /// <p>The job's type.</p>
+    pub fn get_job_type(&self) -> &::std::option::Option<crate::types::JobType> {
+        &self.job_type
     }
     /// Consumes the builder and constructs a [`DeviceJob`](crate::types::DeviceJob).
     pub fn build(self) -> crate::types::DeviceJob {

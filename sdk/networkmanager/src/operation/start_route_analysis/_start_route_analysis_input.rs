@@ -84,6 +84,10 @@ impl StartRouteAnalysisInputBuilder {
         self.global_network_id = input;
         self
     }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_network_id
+    }
     /// <p>The source from which traffic originates.</p>
     pub fn source(
         mut self,
@@ -99,6 +103,12 @@ impl StartRouteAnalysisInputBuilder {
     ) -> Self {
         self.source = input;
         self
+    }
+    /// <p>The source from which traffic originates.</p>
+    pub fn get_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::RouteAnalysisEndpointOptionsSpecification> {
+        &self.source
     }
     /// <p>The destination.</p>
     pub fn destination(
@@ -116,6 +126,12 @@ impl StartRouteAnalysisInputBuilder {
         self.destination = input;
         self
     }
+    /// <p>The destination.</p>
+    pub fn get_destination(
+        &self,
+    ) -> &::std::option::Option<crate::types::RouteAnalysisEndpointOptionsSpecification> {
+        &self.destination
+    }
     /// <p>Indicates whether to analyze the return path. The default is <code>false</code>.</p>
     pub fn include_return_path(mut self, input: bool) -> Self {
         self.include_return_path = ::std::option::Option::Some(input);
@@ -126,6 +142,10 @@ impl StartRouteAnalysisInputBuilder {
         self.include_return_path = input;
         self
     }
+    /// <p>Indicates whether to analyze the return path. The default is <code>false</code>.</p>
+    pub fn get_include_return_path(&self) -> &::std::option::Option<bool> {
+        &self.include_return_path
+    }
     /// <p>Indicates whether to include the location of middlebox appliances in the route analysis. The default is <code>false</code>.</p>
     pub fn use_middleboxes(mut self, input: bool) -> Self {
         self.use_middleboxes = ::std::option::Option::Some(input);
@@ -135,6 +155,10 @@ impl StartRouteAnalysisInputBuilder {
     pub fn set_use_middleboxes(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_middleboxes = input;
         self
+    }
+    /// <p>Indicates whether to include the location of middlebox appliances in the route analysis. The default is <code>false</code>.</p>
+    pub fn get_use_middleboxes(&self) -> &::std::option::Option<bool> {
+        &self.use_middleboxes
     }
     /// Consumes the builder and constructs a [`StartRouteAnalysisInput`](crate::operation::start_route_analysis::StartRouteAnalysisInput).
     pub fn build(

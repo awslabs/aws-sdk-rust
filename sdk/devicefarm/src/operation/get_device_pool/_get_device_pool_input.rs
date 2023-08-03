@@ -40,6 +40,10 @@ impl GetDevicePoolInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The device pool's ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`GetDevicePoolInput`](crate::operation::get_device_pool::GetDevicePoolInput).
     pub fn build(
         self,

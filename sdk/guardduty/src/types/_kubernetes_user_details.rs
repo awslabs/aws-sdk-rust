@@ -64,6 +64,10 @@ impl KubernetesUserDetailsBuilder {
         self.username = input;
         self
     }
+    /// <p>The username of the user who called the Kubernetes API.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
+    }
     /// <p>The user ID of the user who called the Kubernetes API.</p>
     pub fn uid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.uid = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl KubernetesUserDetailsBuilder {
     pub fn set_uid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.uid = input;
         self
+    }
+    /// <p>The user ID of the user who called the Kubernetes API.</p>
+    pub fn get_uid(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uid
     }
     /// Appends an item to `groups`.
     ///
@@ -93,6 +101,10 @@ impl KubernetesUserDetailsBuilder {
         self.groups = input;
         self
     }
+    /// <p>The groups that include the user who called the Kubernetes API.</p>
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.groups
+    }
     /// Appends an item to `session_name`.
     ///
     /// To override the contents of this collection use [`set_session_name`](Self::set_session_name).
@@ -111,6 +123,12 @@ impl KubernetesUserDetailsBuilder {
     ) -> Self {
         self.session_name = input;
         self
+    }
+    /// <p>Entity that assumes the IAM role when Kubernetes RBAC permissions are assigned to that role.</p>
+    pub fn get_session_name(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.session_name
     }
     /// Consumes the builder and constructs a [`KubernetesUserDetails`](crate::types::KubernetesUserDetails).
     pub fn build(self) -> crate::types::KubernetesUserDetails {

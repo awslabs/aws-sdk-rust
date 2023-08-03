@@ -37,6 +37,12 @@ impl DescribeAuditTaskFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeAuditTask as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_audit_task::builders::DescribeAuditTaskInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,5 +132,9 @@ impl DescribeAuditTaskFluentBuilder {
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_task_id(input);
         self
+    }
+    /// <p>The ID of the audit whose information you want to get.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_task_id()
     }
 }

@@ -64,6 +64,10 @@ impl MathActivityBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the math activity.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The name of the attribute that contains the result of the math operation.</p>
     pub fn attribute(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl MathActivityBuilder {
     pub fn set_attribute(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute = input;
         self
+    }
+    /// <p>The name of the attribute that contains the result of the math operation.</p>
+    pub fn get_attribute(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute
     }
     /// <p>An expression that uses one or more existing attributes and must return an integer value.</p>
     pub fn math(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl MathActivityBuilder {
         self.math = input;
         self
     }
+    /// <p>An expression that uses one or more existing attributes and must return an integer value.</p>
+    pub fn get_math(&self) -> &::std::option::Option<::std::string::String> {
+        &self.math
+    }
     /// <p>The next activity in the pipeline.</p>
     pub fn next(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl MathActivityBuilder {
     pub fn set_next(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next = input;
         self
+    }
+    /// <p>The next activity in the pipeline.</p>
+    pub fn get_next(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next
     }
     /// Consumes the builder and constructs a [`MathActivity`](crate::types::MathActivity).
     pub fn build(self) -> crate::types::MathActivity {

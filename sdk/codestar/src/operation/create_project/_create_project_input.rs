@@ -106,6 +106,10 @@ impl CreateProjectInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The display name for the project to be created in AWS CodeStar.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The ID of the project to be created in AWS CodeStar.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -116,6 +120,10 @@ impl CreateProjectInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the project to be created in AWS CodeStar.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The description of the project, if any.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -125,6 +133,10 @@ impl CreateProjectInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the project, if any.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>A user- or system-generated token that identifies the entity that requested project creation. This token can be used to repeat the request.</p>
     pub fn client_request_token(
@@ -141,6 +153,10 @@ impl CreateProjectInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>A user- or system-generated token that identifies the entity that requested project creation. This token can be used to repeat the request.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Appends an item to `source_code`.
     ///
@@ -161,6 +177,10 @@ impl CreateProjectInputBuilder {
         self.source_code = input;
         self
     }
+    /// <p>A list of the Code objects submitted with the project request. If this parameter is specified, the request must also include the toolchain parameter.</p>
+    pub fn get_source_code(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Code>> {
+        &self.source_code
+    }
     /// <p>The name of the toolchain template file submitted with the project request. If this parameter is specified, the request must also include the sourceCode parameter.</p>
     pub fn toolchain(mut self, input: crate::types::Toolchain) -> Self {
         self.toolchain = ::std::option::Option::Some(input);
@@ -170,6 +190,10 @@ impl CreateProjectInputBuilder {
     pub fn set_toolchain(mut self, input: ::std::option::Option<crate::types::Toolchain>) -> Self {
         self.toolchain = input;
         self
+    }
+    /// <p>The name of the toolchain template file submitted with the project request. If this parameter is specified, the request must also include the sourceCode parameter.</p>
+    pub fn get_toolchain(&self) -> &::std::option::Option<crate::types::Toolchain> {
+        &self.toolchain
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -195,6 +219,14 @@ impl CreateProjectInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags created for the project.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateProjectInput`](crate::operation::create_project::CreateProjectInput).
     pub fn build(

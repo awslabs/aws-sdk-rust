@@ -37,6 +37,12 @@ impl CreateSkillGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSkillGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_skill_group::builders::CreateSkillGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl CreateSkillGroupFluentBuilder {
         self.inner = self.inner.set_skill_group_name(input);
         self
     }
+    /// <p>The name for the skill group.</p>
+    pub fn get_skill_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_skill_group_name()
+    }
     /// <p>The description for the skill group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -142,6 +152,10 @@ impl CreateSkillGroupFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description for the skill group.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
     pub fn client_request_token(
@@ -159,6 +173,10 @@ impl CreateSkillGroupFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -175,5 +193,9 @@ impl CreateSkillGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags for the skill group.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

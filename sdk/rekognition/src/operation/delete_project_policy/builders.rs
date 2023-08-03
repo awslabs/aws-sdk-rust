@@ -38,6 +38,12 @@ impl DeleteProjectPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteProjectPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_project_policy::builders::DeleteProjectPolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +134,10 @@ impl DeleteProjectPolicyFluentBuilder {
         self.inner = self.inner.set_project_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the project that the project policy you want to delete is attached to.</p>
+    pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_arn()
+    }
     /// <p>The name of the policy that you want to delete.</p>
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_name(input.into());
@@ -137,6 +147,10 @@ impl DeleteProjectPolicyFluentBuilder {
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_name(input);
         self
+    }
+    /// <p>The name of the policy that you want to delete.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_name()
     }
     /// <p>The ID of the project policy revision that you want to delete.</p>
     pub fn policy_revision_id(
@@ -153,5 +167,9 @@ impl DeleteProjectPolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_policy_revision_id(input);
         self
+    }
+    /// <p>The ID of the project policy revision that you want to delete.</p>
+    pub fn get_policy_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_revision_id()
     }
 }

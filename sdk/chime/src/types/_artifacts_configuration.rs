@@ -59,6 +59,10 @@ impl ArtifactsConfigurationBuilder {
         self.audio = input;
         self
     }
+    /// <p>The configuration for the audio artifacts.</p>
+    pub fn get_audio(&self) -> &::std::option::Option<crate::types::AudioArtifactsConfiguration> {
+        &self.audio
+    }
     /// <p>The configuration for the video artifacts.</p>
     pub fn video(mut self, input: crate::types::VideoArtifactsConfiguration) -> Self {
         self.video = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl ArtifactsConfigurationBuilder {
         self.video = input;
         self
     }
+    /// <p>The configuration for the video artifacts.</p>
+    pub fn get_video(&self) -> &::std::option::Option<crate::types::VideoArtifactsConfiguration> {
+        &self.video
+    }
     /// <p>The configuration for the content artifacts.</p>
     pub fn content(mut self, input: crate::types::ContentArtifactsConfiguration) -> Self {
         self.content = ::std::option::Option::Some(input);
@@ -84,6 +92,12 @@ impl ArtifactsConfigurationBuilder {
     ) -> Self {
         self.content = input;
         self
+    }
+    /// <p>The configuration for the content artifacts.</p>
+    pub fn get_content(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContentArtifactsConfiguration> {
+        &self.content
     }
     /// Consumes the builder and constructs a [`ArtifactsConfiguration`](crate::types::ArtifactsConfiguration).
     pub fn build(self) -> crate::types::ArtifactsConfiguration {

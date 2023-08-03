@@ -78,6 +78,10 @@ impl HumanLoopSummaryBuilder {
         self.human_loop_name = input;
         self
     }
+    /// <p>The name of the human loop.</p>
+    pub fn get_human_loop_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.human_loop_name
+    }
     /// <p>The status of the human loop. </p>
     pub fn human_loop_status(mut self, input: crate::types::HumanLoopStatus) -> Self {
         self.human_loop_status = ::std::option::Option::Some(input);
@@ -91,6 +95,10 @@ impl HumanLoopSummaryBuilder {
         self.human_loop_status = input;
         self
     }
+    /// <p>The status of the human loop. </p>
+    pub fn get_human_loop_status(&self) -> &::std::option::Option<crate::types::HumanLoopStatus> {
+        &self.human_loop_status
+    }
     /// <p>When Amazon Augmented AI created the human loop.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -103,6 +111,10 @@ impl HumanLoopSummaryBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>When Amazon Augmented AI created the human loop.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The reason why the human loop failed. A failure reason is returned when the status of the human loop is <code>Failed</code>.</p>
     pub fn failure_reason(
@@ -120,6 +132,10 @@ impl HumanLoopSummaryBuilder {
         self.failure_reason = input;
         self
     }
+    /// <p>The reason why the human loop failed. A failure reason is returned when the status of the human loop is <code>Failed</code>.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
     /// <p>The Amazon Resource Name (ARN) of the flow definition used to configure the human loop.</p>
     pub fn flow_definition_arn(
         mut self,
@@ -135,6 +151,10 @@ impl HumanLoopSummaryBuilder {
     ) -> Self {
         self.flow_definition_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the flow definition used to configure the human loop.</p>
+    pub fn get_flow_definition_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_definition_arn
     }
     /// Consumes the builder and constructs a [`HumanLoopSummary`](crate::types::HumanLoopSummary).
     pub fn build(self) -> crate::types::HumanLoopSummary {

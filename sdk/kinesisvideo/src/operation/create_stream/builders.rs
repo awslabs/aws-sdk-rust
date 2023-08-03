@@ -40,6 +40,10 @@ impl CreateStreamFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateStream as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_stream::builders::CreateStreamInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,12 @@ impl CreateStreamFluentBuilder {
         self.inner = self.inner.set_device_name(input);
         self
     }
+    /// <p>The name of the device that is writing to the stream. </p> <note>
+    /// <p>In the current implementation, Kinesis Video Streams does not use this name.</p>
+    /// </note>
+    pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_name()
+    }
     /// <p>A name for the stream that you are creating.</p>
     /// <p>The stream name is an identifier for the stream, and must be unique for each account and region.</p>
     pub fn stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -137,6 +147,11 @@ impl CreateStreamFluentBuilder {
     pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stream_name(input);
         self
+    }
+    /// <p>A name for the stream that you are creating.</p>
+    /// <p>The stream name is an identifier for the stream, and must be unique for each account and region.</p>
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_name()
     }
     /// <p>The media type of the stream. Consumers of the stream can use this information when processing the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a> for guidelines.</p>
     /// <p>Example valid values include "video/h264" and "video/h264,audio/aac".</p>
@@ -152,6 +167,12 @@ impl CreateStreamFluentBuilder {
         self.inner = self.inner.set_media_type(input);
         self
     }
+    /// <p>The media type of the stream. Consumers of the stream can use this information when processing the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a> for guidelines.</p>
+    /// <p>Example valid values include "video/h264" and "video/h264,audio/aac".</p>
+    /// <p>This parameter is optional; the default value is <code>null</code> (or empty in JSON).</p>
+    pub fn get_media_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_media_type()
+    }
     /// <p>The ID of the Key Management Service (KMS) key that you want Kinesis Video Streams to use to encrypt stream data.</p>
     /// <p>If no key ID is specified, the default, Kinesis Video-managed key (<code>Amazon Web Services/kinesisvideo</code>) is used.</p>
     /// <p> For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>. </p>
@@ -166,6 +187,12 @@ impl CreateStreamFluentBuilder {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }
+    /// <p>The ID of the Key Management Service (KMS) key that you want Kinesis Video Streams to use to encrypt stream data.</p>
+    /// <p>If no key ID is specified, the default, Kinesis Video-managed key (<code>Amazon Web Services/kinesisvideo</code>) is used.</p>
+    /// <p> For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>. </p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_id()
+    }
     /// <p>The number of hours that you want to retain the data in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p>
     /// <p>The default value is 0, indicating that the stream does not persist data.</p>
     /// <p>When the <code>DataRetentionInHours</code> value is 0, consumers can still consume the fragments that remain in the service host buffer, which has a retention time limit of 5 minutes and a retention memory limit of 200 MB. Fragments are removed from the buffer when either limit is reached.</p>
@@ -179,6 +206,12 @@ impl CreateStreamFluentBuilder {
     pub fn set_data_retention_in_hours(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_data_retention_in_hours(input);
         self
+    }
+    /// <p>The number of hours that you want to retain the data in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p>
+    /// <p>The default value is 0, indicating that the stream does not persist data.</p>
+    /// <p>When the <code>DataRetentionInHours</code> value is 0, consumers can still consume the fragments that remain in the service host buffer, which has a retention time limit of 5 minutes and a retention memory limit of 200 MB. Fragments are removed from the buffer when either limit is reached.</p>
+    pub fn get_data_retention_in_hours(&self) -> &::std::option::Option<i32> {
+        self.inner.get_data_retention_in_hours()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -202,5 +235,13 @@ impl CreateStreamFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

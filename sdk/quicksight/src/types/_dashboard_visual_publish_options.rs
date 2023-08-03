@@ -49,6 +49,12 @@ impl DashboardVisualPublishOptionsBuilder {
         self.export_hidden_fields_option = input;
         self
     }
+    /// <p>Determines if hidden fields are included in an exported dashboard.</p>
+    pub fn get_export_hidden_fields_option(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExportHiddenFieldsOption> {
+        &self.export_hidden_fields_option
+    }
     /// Consumes the builder and constructs a [`DashboardVisualPublishOptions`](crate::types::DashboardVisualPublishOptions).
     pub fn build(self) -> crate::types::DashboardVisualPublishOptions {
         crate::types::DashboardVisualPublishOptions {

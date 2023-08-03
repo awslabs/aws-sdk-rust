@@ -47,6 +47,10 @@ impl DeleteSlackChannelConfigurationInputBuilder {
         self.team_id = input;
         self
     }
+    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
+    pub fn get_team_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.team_id
+    }
     /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
     pub fn channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_id = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DeleteSlackChannelConfigurationInputBuilder {
     pub fn set_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_id = input;
         self
+    }
+    /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
+    pub fn get_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_id
     }
     /// Consumes the builder and constructs a [`DeleteSlackChannelConfigurationInput`](crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationInput).
     pub fn build(

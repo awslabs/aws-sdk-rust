@@ -62,6 +62,12 @@ impl UserTokenConfigurationBuilder {
         self.jwt_token_type_configuration = input;
         self
     }
+    /// <p>Information about the JWT token type configuration.</p>
+    pub fn get_jwt_token_type_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::JwtTokenTypeConfiguration> {
+        &self.jwt_token_type_configuration
+    }
     /// <p>Information about the JSON token type configuration.</p>
     pub fn json_token_type_configuration(
         mut self,
@@ -77,6 +83,12 @@ impl UserTokenConfigurationBuilder {
     ) -> Self {
         self.json_token_type_configuration = input;
         self
+    }
+    /// <p>Information about the JSON token type configuration.</p>
+    pub fn get_json_token_type_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::JsonTokenTypeConfiguration> {
+        &self.json_token_type_configuration
     }
     /// Consumes the builder and constructs a [`UserTokenConfiguration`](crate::types::UserTokenConfiguration).
     pub fn build(self) -> crate::types::UserTokenConfiguration {

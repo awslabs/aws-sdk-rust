@@ -98,6 +98,12 @@ impl GetInsightSummariesInputBuilder {
         self.states = input;
         self
     }
+    /// <p>The list of insight states. </p>
+    pub fn get_states(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightState>> {
+        &self.states
+    }
     /// <p>The Amazon Resource Name (ARN) of the group. Required if the GroupName isn't provided.</p>
     pub fn group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_arn = ::std::option::Option::Some(input.into());
@@ -108,6 +114,10 @@ impl GetInsightSummariesInputBuilder {
         self.group_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the group. Required if the GroupName isn't provided.</p>
+    pub fn get_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_arn
+    }
     /// <p>The name of the group. Required if the GroupARN isn't provided.</p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
@@ -117,6 +127,10 @@ impl GetInsightSummariesInputBuilder {
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_name = input;
         self
+    }
+    /// <p>The name of the group. Required if the GroupARN isn't provided.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
     }
     /// <p>The beginning of the time frame in which the insights started. The start time can't be more than 30 days old.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -131,6 +145,10 @@ impl GetInsightSummariesInputBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The beginning of the time frame in which the insights started. The start time can't be more than 30 days old.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The end of the time frame in which the insights ended. The end time can't be more than 30 days old.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -144,6 +162,10 @@ impl GetInsightSummariesInputBuilder {
         self.end_time = input;
         self
     }
+    /// <p>The end of the time frame in which the insights ended. The end time can't be more than 30 days old.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>The maximum number of results to display.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -154,6 +176,10 @@ impl GetInsightSummariesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to display.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>Pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -163,6 +189,10 @@ impl GetInsightSummariesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`GetInsightSummariesInput`](crate::operation::get_insight_summaries::GetInsightSummariesInput).
     pub fn build(

@@ -79,6 +79,10 @@ impl PutApprovalResultInputBuilder {
         self.pipeline_name = input;
         self
     }
+    /// <p>The name of the pipeline that contains the action. </p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_name
+    }
     /// <p>The name of the stage that contains the action.</p>
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_name = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl PutApprovalResultInputBuilder {
         self.stage_name = input;
         self
     }
+    /// <p>The name of the stage that contains the action.</p>
+    pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stage_name
+    }
     /// <p>The name of the action for which approval is requested.</p>
     pub fn action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_name = ::std::option::Option::Some(input.into());
@@ -98,6 +106,10 @@ impl PutApprovalResultInputBuilder {
     pub fn set_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action_name = input;
         self
+    }
+    /// <p>The name of the action for which approval is requested.</p>
+    pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_name
     }
     /// <p>Represents information about the result of the approval request.</p>
     pub fn result(mut self, input: crate::types::ApprovalResult) -> Self {
@@ -112,6 +124,10 @@ impl PutApprovalResultInputBuilder {
         self.result = input;
         self
     }
+    /// <p>Represents information about the result of the approval request.</p>
+    pub fn get_result(&self) -> &::std::option::Option<crate::types::ApprovalResult> {
+        &self.result
+    }
     /// <p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <code>GetPipelineState</code> action. It is used to validate that the approval request corresponding to this token is still valid.</p>
     pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token = ::std::option::Option::Some(input.into());
@@ -121,6 +137,10 @@ impl PutApprovalResultInputBuilder {
     pub fn set_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.token = input;
         self
+    }
+    /// <p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <code>GetPipelineState</code> action. It is used to validate that the approval request corresponding to this token is still valid.</p>
+    pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token
     }
     /// Consumes the builder and constructs a [`PutApprovalResultInput`](crate::operation::put_approval_result::PutApprovalResultInput).
     pub fn build(

@@ -81,6 +81,12 @@ impl ClosedDaysBuilder {
         self.email = input;
         self
     }
+    /// <p>Rules for the Email channel.</p>
+    pub fn get_email(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClosedDaysRule>> {
+        &self.email
+    }
     /// Appends an item to `sms`.
     ///
     /// To override the contents of this collection use [`set_sms`](Self::set_sms).
@@ -99,6 +105,10 @@ impl ClosedDaysBuilder {
     ) -> Self {
         self.sms = input;
         self
+    }
+    /// <p>Rules for the SMS channel.</p>
+    pub fn get_sms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClosedDaysRule>> {
+        &self.sms
     }
     /// Appends an item to `push`.
     ///
@@ -119,6 +129,12 @@ impl ClosedDaysBuilder {
         self.push = input;
         self
     }
+    /// <p>Rules for the Push channel.</p>
+    pub fn get_push(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClosedDaysRule>> {
+        &self.push
+    }
     /// Appends an item to `voice`.
     ///
     /// To override the contents of this collection use [`set_voice`](Self::set_voice).
@@ -138,6 +154,12 @@ impl ClosedDaysBuilder {
         self.voice = input;
         self
     }
+    /// <p>Rules for the Voice channel.</p>
+    pub fn get_voice(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClosedDaysRule>> {
+        &self.voice
+    }
     /// Appends an item to `custom`.
     ///
     /// To override the contents of this collection use [`set_custom`](Self::set_custom).
@@ -156,6 +178,12 @@ impl ClosedDaysBuilder {
     ) -> Self {
         self.custom = input;
         self
+    }
+    /// <p>Rules for the Custom channel.</p>
+    pub fn get_custom(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClosedDaysRule>> {
+        &self.custom
     }
     /// Consumes the builder and constructs a [`ClosedDays`](crate::types::ClosedDays).
     pub fn build(self) -> crate::types::ClosedDays {

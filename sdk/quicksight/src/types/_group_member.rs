@@ -48,6 +48,10 @@ impl GroupMemberBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the group member (user).</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the group member (user).</p>
     pub fn member_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl GroupMemberBuilder {
     pub fn set_member_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.member_name = input;
         self
+    }
+    /// <p>The name of the group member (user).</p>
+    pub fn get_member_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_name
     }
     /// Consumes the builder and constructs a [`GroupMember`](crate::types::GroupMember).
     pub fn build(self) -> crate::types::GroupMember {

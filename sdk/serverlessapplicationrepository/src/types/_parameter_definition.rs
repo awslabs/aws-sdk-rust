@@ -167,6 +167,10 @@ impl ParameterDefinitionBuilder {
         self.allowed_pattern = input;
         self
     }
+    /// <p>A regular expression that represents the patterns to allow for String types.</p>
+    pub fn get_allowed_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        &self.allowed_pattern
+    }
     /// Appends an item to `allowed_values`.
     ///
     /// To override the contents of this collection use [`set_allowed_values`](Self::set_allowed_values).
@@ -188,6 +192,12 @@ impl ParameterDefinitionBuilder {
     ) -> Self {
         self.allowed_values = input;
         self
+    }
+    /// <p>An array containing the list of values allowed for the parameter.</p>
+    pub fn get_allowed_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.allowed_values
     }
     /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of [A-Za-z0-9]+ displays the following error message when the user specifies an invalid value:</p>
     /// <p> Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+ </p>
@@ -211,6 +221,13 @@ impl ParameterDefinitionBuilder {
         self.constraint_description = input;
         self
     }
+    /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of [A-Za-z0-9]+ displays the following error message when the user specifies an invalid value:</p>
+    /// <p> Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+ </p>
+    /// <p>By adding a constraint description, such as "must contain only uppercase and lowercase letters and numbers," you can display the following customized error message:</p>
+    /// <p> Malformed input-Parameter MyParameter must contain only uppercase and lowercase letters and numbers. </p>
+    pub fn get_constraint_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.constraint_description
+    }
     /// <p>A value of the appropriate type for the template to use if no value is specified when a stack is created. If you define constraints for the parameter, you must specify a value that adheres to those constraints.</p>
     pub fn default_value(
         mut self,
@@ -227,6 +244,10 @@ impl ParameterDefinitionBuilder {
         self.default_value = input;
         self
     }
+    /// <p>A value of the appropriate type for the template to use if no value is specified when a stack is created. If you define constraints for the parameter, you must specify a value that adheres to those constraints.</p>
+    pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_value
+    }
     /// <p>A string of up to 4,000 characters that describes the parameter.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -236,6 +257,10 @@ impl ParameterDefinitionBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A string of up to 4,000 characters that describes the parameter.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>An integer value that determines the largest number of characters that you want to allow for String types.</p>
     pub fn max_length(mut self, input: i32) -> Self {
@@ -247,6 +272,10 @@ impl ParameterDefinitionBuilder {
         self.max_length = input;
         self
     }
+    /// <p>An integer value that determines the largest number of characters that you want to allow for String types.</p>
+    pub fn get_max_length(&self) -> &::std::option::Option<i32> {
+        &self.max_length
+    }
     /// <p>A numeric value that determines the largest numeric value that you want to allow for Number types.</p>
     pub fn max_value(mut self, input: i32) -> Self {
         self.max_value = ::std::option::Option::Some(input);
@@ -256,6 +285,10 @@ impl ParameterDefinitionBuilder {
     pub fn set_max_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_value = input;
         self
+    }
+    /// <p>A numeric value that determines the largest numeric value that you want to allow for Number types.</p>
+    pub fn get_max_value(&self) -> &::std::option::Option<i32> {
+        &self.max_value
     }
     /// <p>An integer value that determines the smallest number of characters that you want to allow for String types.</p>
     pub fn min_length(mut self, input: i32) -> Self {
@@ -267,6 +300,10 @@ impl ParameterDefinitionBuilder {
         self.min_length = input;
         self
     }
+    /// <p>An integer value that determines the smallest number of characters that you want to allow for String types.</p>
+    pub fn get_min_length(&self) -> &::std::option::Option<i32> {
+        &self.min_length
+    }
     /// <p>A numeric value that determines the smallest numeric value that you want to allow for Number types.</p>
     pub fn min_value(mut self, input: i32) -> Self {
         self.min_value = ::std::option::Option::Some(input);
@@ -276,6 +313,10 @@ impl ParameterDefinitionBuilder {
     pub fn set_min_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_value = input;
         self
+    }
+    /// <p>A numeric value that determines the smallest numeric value that you want to allow for Number types.</p>
+    pub fn get_min_value(&self) -> &::std::option::Option<i32> {
+        &self.min_value
     }
     /// <p>The name of the parameter.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -287,6 +328,10 @@ impl ParameterDefinitionBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the parameter.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Whether to mask the parameter value whenever anyone makes a call that describes the stack. If you set the value to true, the parameter value is masked with asterisks (*****).</p>
     pub fn no_echo(mut self, input: bool) -> Self {
         self.no_echo = ::std::option::Option::Some(input);
@@ -296,6 +341,10 @@ impl ParameterDefinitionBuilder {
     pub fn set_no_echo(mut self, input: ::std::option::Option<bool>) -> Self {
         self.no_echo = input;
         self
+    }
+    /// <p>Whether to mask the parameter value whenever anyone makes a call that describes the stack. If you set the value to true, the parameter value is masked with asterisks (*****).</p>
+    pub fn get_no_echo(&self) -> &::std::option::Option<bool> {
+        &self.no_echo
     }
     /// Appends an item to `referenced_by_resources`.
     ///
@@ -318,6 +367,12 @@ impl ParameterDefinitionBuilder {
     ) -> Self {
         self.referenced_by_resources = input;
         self
+    }
+    /// <p>A list of AWS SAM resources that use this parameter.</p>
+    pub fn get_referenced_by_resources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.referenced_by_resources
     }
     /// <p>The type of the parameter.</p>
     /// <p>Valid values: String | Number | List&lt;Number&gt; | CommaDelimitedList </p>
@@ -346,6 +401,19 @@ impl ParameterDefinitionBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the parameter.</p>
+    /// <p>Valid values: String | Number | List&lt;Number&gt; | CommaDelimitedList </p>
+    /// <p> String: A literal string.</p>
+    /// <p>For example, users can specify "MyUserName".</p>
+    /// <p> Number: An integer or float. AWS CloudFormation validates the parameter value as a number. However, when you use the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value becomes a string.</p>
+    /// <p>For example, users might specify "8888".</p>
+    /// <p> List&lt;Number&gt;: An array of integers or floats that are separated by commas. AWS CloudFormation validates the parameter value as numbers. However, when you use the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value becomes a list of strings.</p>
+    /// <p>For example, users might specify "80,20", and then Ref results in ["80","20"].</p>
+    /// <p> CommaDelimitedList: An array of literal strings that are separated by commas. The total number of strings should be one more than the total number of commas. Also, each member string is space-trimmed.</p>
+    /// <p>For example, users might specify "test,dev,prod", and then Ref results in ["test","dev","prod"].</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`ParameterDefinition`](crate::types::ParameterDefinition).
     pub fn build(self) -> crate::types::ParameterDefinition {

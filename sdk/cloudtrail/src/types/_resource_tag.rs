@@ -48,6 +48,10 @@ impl ResourceTagBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>Specifies the ARN of the resource.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// Appends an item to `tags_list`.
     ///
     /// To override the contents of this collection use [`set_tags_list`](Self::set_tags_list).
@@ -66,6 +70,10 @@ impl ResourceTagBuilder {
     ) -> Self {
         self.tags_list = input;
         self
+    }
+    /// <p>A list of tags.</p>
+    pub fn get_tags_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags_list
     }
     /// Consumes the builder and constructs a [`ResourceTag`](crate::types::ResourceTag).
     pub fn build(self) -> crate::types::ResourceTag {

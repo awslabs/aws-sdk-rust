@@ -36,6 +36,13 @@ impl CreateBackendEnvironmentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateBackendEnvironment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_backend_environment::builders::CreateBackendEnvironmentInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl CreateBackendEnvironmentFluentBuilder {
         self.inner = self.inner.set_app_id(input);
         self
     }
+    /// <p> The unique ID for an Amplify app. </p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_id()
+    }
     /// <p> The name for the backend environment. </p>
     pub fn environment_name(
         mut self,
@@ -142,6 +153,10 @@ impl CreateBackendEnvironmentFluentBuilder {
         self.inner = self.inner.set_environment_name(input);
         self
     }
+    /// <p> The name for the backend environment. </p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_name()
+    }
     /// <p> The AWS CloudFormation stack name of a backend environment. </p>
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_name(input.into());
@@ -151,6 +166,10 @@ impl CreateBackendEnvironmentFluentBuilder {
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_name(input);
         self
+    }
+    /// <p> The AWS CloudFormation stack name of a backend environment. </p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_name()
     }
     /// <p> The name of deployment artifacts. </p>
     pub fn deployment_artifacts(
@@ -167,5 +186,9 @@ impl CreateBackendEnvironmentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_deployment_artifacts(input);
         self
+    }
+    /// <p> The name of deployment artifacts. </p>
+    pub fn get_deployment_artifacts(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_deployment_artifacts()
     }
 }

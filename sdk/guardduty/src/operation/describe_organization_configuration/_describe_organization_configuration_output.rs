@@ -119,6 +119,12 @@ impl DescribeOrganizationConfigurationOutputBuilder {
         self.auto_enable = input;
         self
     }
+    /// <p>Indicates whether GuardDuty is automatically enabled for accounts added to the organization.</p>
+    /// <p>Even though this is still supported, we recommend using <code>AutoEnableOrganizationMembers</code> to achieve the similar results.</p>
+    #[deprecated(note = "This field is deprecated, use AutoEnableOrganizationMembers instead")]
+    pub fn get_auto_enable(&self) -> &::std::option::Option<bool> {
+        &self.auto_enable
+    }
     /// <p>Indicates whether the maximum number of allowed member accounts are already associated with the delegated administrator account for your organization.</p>
     pub fn member_account_limit_reached(mut self, input: bool) -> Self {
         self.member_account_limit_reached = ::std::option::Option::Some(input);
@@ -128,6 +134,10 @@ impl DescribeOrganizationConfigurationOutputBuilder {
     pub fn set_member_account_limit_reached(mut self, input: ::std::option::Option<bool>) -> Self {
         self.member_account_limit_reached = input;
         self
+    }
+    /// <p>Indicates whether the maximum number of allowed member accounts are already associated with the delegated administrator account for your organization.</p>
+    pub fn get_member_account_limit_reached(&self) -> &::std::option::Option<bool> {
+        &self.member_account_limit_reached
     }
     /// <p>Describes which data sources are enabled automatically for member accounts.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
@@ -146,6 +156,13 @@ impl DescribeOrganizationConfigurationOutputBuilder {
     ) -> Self {
         self.data_sources = input;
         self
+    }
+    /// <p>Describes which data sources are enabled automatically for member accounts.</p>
+    #[deprecated(note = "This parameter is deprecated, use Features instead")]
+    pub fn get_data_sources(
+        &self,
+    ) -> &::std::option::Option<crate::types::OrganizationDataSourceConfigurationsResult> {
+        &self.data_sources
     }
     /// Appends an item to `features`.
     ///
@@ -168,6 +185,13 @@ impl DescribeOrganizationConfigurationOutputBuilder {
         self.features = input;
         self
     }
+    /// <p>A list of features that are configured for this organization.</p>
+    pub fn get_features(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OrganizationFeatureConfigurationResult>>
+    {
+        &self.features
+    }
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -177,6 +201,10 @@ impl DescribeOrganizationConfigurationOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>Indicates the auto-enablement configuration of GuardDuty for the member accounts in the organization.</p>
     /// <ul>
@@ -203,6 +231,17 @@ impl DescribeOrganizationConfigurationOutputBuilder {
     ) -> Self {
         self.auto_enable_organization_members = input;
         self
+    }
+    /// <p>Indicates the auto-enablement configuration of GuardDuty for the member accounts in the organization.</p>
+    /// <ul>
+    /// <li> <p> <code>NEW</code>: Indicates that when a new account joins the organization, they will have GuardDuty enabled automatically. </p> </li>
+    /// <li> <p> <code>ALL</code>: Indicates that all accounts in the Amazon Web Services Organization have GuardDuty enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.</p> </li>
+    /// <li> <p> <code>NONE</code>: Indicates that GuardDuty will not be automatically enabled for any accounts in the organization. GuardDuty must be managed for each account individually by the administrator.</p> </li>
+    /// </ul>
+    pub fn get_auto_enable_organization_members(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoEnableMembers> {
+        &self.auto_enable_organization_members
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -47,6 +47,10 @@ impl ListFlowsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p> Specifies the maximum number of items that should be returned in the result set. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p> The pagination token for next page of data. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl ListFlowsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p> The pagination token for next page of data. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListFlowsInput`](crate::operation::list_flows::ListFlowsInput).
     pub fn build(

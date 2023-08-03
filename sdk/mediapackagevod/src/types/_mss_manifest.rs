@@ -54,6 +54,10 @@ impl MssManifestBuilder {
         self.manifest_name = input;
         self
     }
+    /// An optional string to include in the name of the manifest.
+    pub fn get_manifest_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.manifest_name
+    }
     /// A StreamSelection configuration.
     pub fn stream_selection(mut self, input: crate::types::StreamSelection) -> Self {
         self.stream_selection = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl MssManifestBuilder {
     ) -> Self {
         self.stream_selection = input;
         self
+    }
+    /// A StreamSelection configuration.
+    pub fn get_stream_selection(&self) -> &::std::option::Option<crate::types::StreamSelection> {
+        &self.stream_selection
     }
     /// Consumes the builder and constructs a [`MssManifest`](crate::types::MssManifest).
     pub fn build(self) -> crate::types::MssManifest {

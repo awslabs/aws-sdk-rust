@@ -66,6 +66,10 @@ impl ImportDocumentationPartsOutputBuilder {
         self.ids = input;
         self
     }
+    /// <p>A list of the returned documentation part identifiers.</p>
+    pub fn get_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ids
+    }
     /// Appends an item to `warnings`.
     ///
     /// To override the contents of this collection use [`set_warnings`](Self::set_warnings).
@@ -84,6 +88,10 @@ impl ImportDocumentationPartsOutputBuilder {
     ) -> Self {
         self.warnings = input;
         self
+    }
+    /// <p>A list of warning messages reported during import of documentation parts.</p>
+    pub fn get_warnings(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.warnings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

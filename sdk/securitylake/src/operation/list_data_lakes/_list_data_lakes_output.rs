@@ -55,6 +55,12 @@ impl ListDataLakesOutputBuilder {
         self.data_lakes = input;
         self
     }
+    /// <p>Retrieves the Security Lake configuration object.</p>
+    pub fn get_data_lakes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakeResource>> {
+        &self.data_lakes
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

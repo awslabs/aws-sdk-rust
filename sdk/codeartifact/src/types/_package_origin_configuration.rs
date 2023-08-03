@@ -43,6 +43,12 @@ impl PackageOriginConfigurationBuilder {
         self.restrictions = input;
         self
     }
+    /// <p>A <code>PackageOriginRestrictions</code> object that contains information about the upstream and publish package origin configuration for the package.</p>
+    pub fn get_restrictions(
+        &self,
+    ) -> &::std::option::Option<crate::types::PackageOriginRestrictions> {
+        &self.restrictions
+    }
     /// Consumes the builder and constructs a [`PackageOriginConfiguration`](crate::types::PackageOriginConfiguration).
     pub fn build(self) -> crate::types::PackageOriginConfiguration {
         crate::types::PackageOriginConfiguration {

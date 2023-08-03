@@ -39,6 +39,10 @@ impl GetDetectorInputBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The unique ID of the detector that you want to get.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// Consumes the builder and constructs a [`GetDetectorInput`](crate::operation::get_detector::GetDetectorInput).
     pub fn build(
         self,

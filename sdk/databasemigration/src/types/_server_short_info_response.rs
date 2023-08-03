@@ -56,6 +56,10 @@ impl ServerShortInfoResponseBuilder {
         self.server_id = input;
         self
     }
+    /// <p>The ID of a server in a Fleet Advisor collector inventory.</p>
+    pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_id
+    }
     /// <p>The IP address of a server in a Fleet Advisor collector inventory.</p>
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_address = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl ServerShortInfoResponseBuilder {
         self.ip_address = input;
         self
     }
+    /// <p>The IP address of a server in a Fleet Advisor collector inventory.</p>
+    pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address
+    }
     /// <p>The name address of a server in a Fleet Advisor collector inventory.</p>
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_name = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl ServerShortInfoResponseBuilder {
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_name = input;
         self
+    }
+    /// <p>The name address of a server in a Fleet Advisor collector inventory.</p>
+    pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_name
     }
     /// Consumes the builder and constructs a [`ServerShortInfoResponse`](crate::types::ServerShortInfoResponse).
     pub fn build(self) -> crate::types::ServerShortInfoResponse {

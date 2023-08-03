@@ -58,6 +58,12 @@ impl ProposalActionsBuilder {
         self.invitations = input;
         self
     }
+    /// <p> The actions to perform for an <code>APPROVED</code> proposal to invite an Amazon Web Services account to create a member and join the network. </p>
+    pub fn get_invitations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InviteAction>> {
+        &self.invitations
+    }
     /// Appends an item to `removals`.
     ///
     /// To override the contents of this collection use [`set_removals`](Self::set_removals).
@@ -76,6 +82,12 @@ impl ProposalActionsBuilder {
     ) -> Self {
         self.removals = input;
         self
+    }
+    /// <p> The actions to perform for an <code>APPROVED</code> proposal to remove a member from the network, which deletes the member and all associated member resources from the network. </p>
+    pub fn get_removals(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RemoveAction>> {
+        &self.removals
     }
     /// Consumes the builder and constructs a [`ProposalActions`](crate::types::ProposalActions).
     pub fn build(self) -> crate::types::ProposalActions {

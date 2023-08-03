@@ -127,6 +127,11 @@ impl AwsCodeBuildProjectDetailsBuilder {
         self.encryption_key = input;
         self
     }
+    /// <p>The KMS key used to encrypt the build output artifacts.</p>
+    /// <p>You can specify either the ARN of the KMS key or, if available, the KMS key alias (using the format alias/alias-name). </p>
+    pub fn get_encryption_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encryption_key
+    }
     /// Appends an item to `artifacts`.
     ///
     /// To override the contents of this collection use [`set_artifacts`](Self::set_artifacts).
@@ -148,6 +153,13 @@ impl AwsCodeBuildProjectDetailsBuilder {
         self.artifacts = input;
         self
     }
+    /// <p>Information about the build artifacts for the CodeBuild project.</p>
+    pub fn get_artifacts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsCodeBuildProjectArtifactsDetails>>
+    {
+        &self.artifacts
+    }
     /// <p>Information about the build environment for this build project.</p>
     pub fn environment(mut self, input: crate::types::AwsCodeBuildProjectEnvironment) -> Self {
         self.environment = ::std::option::Option::Some(input);
@@ -161,6 +173,12 @@ impl AwsCodeBuildProjectDetailsBuilder {
         self.environment = input;
         self
     }
+    /// <p>Information about the build environment for this build project.</p>
+    pub fn get_environment(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsCodeBuildProjectEnvironment> {
+        &self.environment
+    }
     /// <p>The name of the build project.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -170,6 +188,10 @@ impl AwsCodeBuildProjectDetailsBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the build project.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Information about the build input source code for this build project.</p>
     pub fn source(mut self, input: crate::types::AwsCodeBuildProjectSource) -> Self {
@@ -184,6 +206,10 @@ impl AwsCodeBuildProjectDetailsBuilder {
         self.source = input;
         self
     }
+    /// <p>Information about the build input source code for this build project.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::AwsCodeBuildProjectSource> {
+        &self.source
+    }
     /// <p>The ARN of the IAM role that enables CodeBuild to interact with dependent Amazon Web Services services on behalf of the Amazon Web Services account.</p>
     pub fn service_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_role = ::std::option::Option::Some(input.into());
@@ -193,6 +219,10 @@ impl AwsCodeBuildProjectDetailsBuilder {
     pub fn set_service_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_role = input;
         self
+    }
+    /// <p>The ARN of the IAM role that enables CodeBuild to interact with dependent Amazon Web Services services on behalf of the Amazon Web Services account.</p>
+    pub fn get_service_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_role
     }
     /// <p>Information about logs for the build project.</p>
     pub fn logs_config(
@@ -210,6 +240,12 @@ impl AwsCodeBuildProjectDetailsBuilder {
         self.logs_config = input;
         self
     }
+    /// <p>Information about logs for the build project.</p>
+    pub fn get_logs_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsCodeBuildProjectLogsConfigDetails> {
+        &self.logs_config
+    }
     /// <p>Information about the VPC configuration that CodeBuild accesses.</p>
     pub fn vpc_config(mut self, input: crate::types::AwsCodeBuildProjectVpcConfig) -> Self {
         self.vpc_config = ::std::option::Option::Some(input);
@@ -222,6 +258,12 @@ impl AwsCodeBuildProjectDetailsBuilder {
     ) -> Self {
         self.vpc_config = input;
         self
+    }
+    /// <p>Information about the VPC configuration that CodeBuild accesses.</p>
+    pub fn get_vpc_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsCodeBuildProjectVpcConfig> {
+        &self.vpc_config
     }
     /// Appends an item to `secondary_artifacts`.
     ///
@@ -246,6 +288,13 @@ impl AwsCodeBuildProjectDetailsBuilder {
     ) -> Self {
         self.secondary_artifacts = input;
         self
+    }
+    /// <p>Information about the secondary artifacts for the CodeBuild project.</p>
+    pub fn get_secondary_artifacts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsCodeBuildProjectArtifactsDetails>>
+    {
+        &self.secondary_artifacts
     }
     /// Consumes the builder and constructs a [`AwsCodeBuildProjectDetails`](crate::types::AwsCodeBuildProjectDetails).
     pub fn build(self) -> crate::types::AwsCodeBuildProjectDetails {

@@ -69,6 +69,10 @@ impl DescribeStackProvisioningParametersOutputBuilder {
         self.agent_installer_url = input;
         self
     }
+    /// <p>The AWS OpsWorks Stacks agent installer's URL.</p>
+    pub fn get_agent_installer_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_installer_url
+    }
     /// Adds a key-value pair to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
@@ -93,6 +97,14 @@ impl DescribeStackProvisioningParametersOutputBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>An embedded object that contains the provisioning parameters.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.parameters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -88,6 +88,10 @@ impl TranslateTextOutputBuilder {
         self.translated_text = input;
         self
     }
+    /// <p>The translated text.</p>
+    pub fn get_translated_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.translated_text
+    }
     /// <p>The language code for the language of the source text.</p>
     pub fn source_language_code(
         mut self,
@@ -104,6 +108,10 @@ impl TranslateTextOutputBuilder {
         self.source_language_code = input;
         self
     }
+    /// <p>The language code for the language of the source text.</p>
+    pub fn get_source_language_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_language_code
+    }
     /// <p>The language code for the language of the target text. </p>
     pub fn target_language_code(
         mut self,
@@ -119,6 +127,10 @@ impl TranslateTextOutputBuilder {
     ) -> Self {
         self.target_language_code = input;
         self
+    }
+    /// <p>The language code for the language of the target text. </p>
+    pub fn get_target_language_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_language_code
     }
     /// Appends an item to `applied_terminologies`.
     ///
@@ -139,6 +151,12 @@ impl TranslateTextOutputBuilder {
         self.applied_terminologies = input;
         self
     }
+    /// <p>The names of the custom terminologies applied to the input text by Amazon Translate for the translated text response.</p>
+    pub fn get_applied_terminologies(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppliedTerminology>> {
+        &self.applied_terminologies
+    }
     /// <p>Optional settings that modify the translation output.</p>
     pub fn applied_settings(mut self, input: crate::types::TranslationSettings) -> Self {
         self.applied_settings = ::std::option::Option::Some(input);
@@ -151,6 +169,12 @@ impl TranslateTextOutputBuilder {
     ) -> Self {
         self.applied_settings = input;
         self
+    }
+    /// <p>Optional settings that modify the translation output.</p>
+    pub fn get_applied_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::TranslationSettings> {
+        &self.applied_settings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

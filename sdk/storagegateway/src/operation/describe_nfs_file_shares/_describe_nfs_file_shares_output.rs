@@ -62,6 +62,12 @@ impl DescribeNfsFileSharesOutputBuilder {
         self.nfs_file_share_info_list = input;
         self
     }
+    /// <p>An array containing a description for each requested file share.</p>
+    pub fn get_nfs_file_share_info_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NfsFileShareInfo>> {
+        &self.nfs_file_share_info_list
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

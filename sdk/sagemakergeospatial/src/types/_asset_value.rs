@@ -40,6 +40,10 @@ impl AssetValueBuilder {
         self.href = input;
         self
     }
+    /// <p>Link to the asset object.</p>
+    pub fn get_href(&self) -> &::std::option::Option<::std::string::String> {
+        &self.href
+    }
     /// Consumes the builder and constructs a [`AssetValue`](crate::types::AssetValue).
     pub fn build(self) -> crate::types::AssetValue {
         crate::types::AssetValue { href: self.href }

@@ -46,6 +46,10 @@ impl AwsEc2NetworkInterfaceIpV6AddressDetailBuilder {
         self.ip_v6_address = input;
         self
     }
+    /// <p>The IPV6 address.</p>
+    pub fn get_ip_v6_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_v6_address
+    }
     /// Consumes the builder and constructs a [`AwsEc2NetworkInterfaceIpV6AddressDetail`](crate::types::AwsEc2NetworkInterfaceIpV6AddressDetail).
     pub fn build(self) -> crate::types::AwsEc2NetworkInterfaceIpV6AddressDetail {
         crate::types::AwsEc2NetworkInterfaceIpV6AddressDetail {

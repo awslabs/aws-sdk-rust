@@ -65,6 +65,10 @@ impl DataConfigBuilder {
         self.dataset_group_arn = input;
         self
     }
+    /// <p>The ARN of the dataset group used to train the predictor.</p>
+    pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_group_arn
+    }
     /// Appends an item to `attribute_configs`.
     ///
     /// To override the contents of this collection use [`set_attribute_configs`](Self::set_attribute_configs).
@@ -84,6 +88,12 @@ impl DataConfigBuilder {
         self.attribute_configs = input;
         self
     }
+    /// <p>Aggregation and filling options for attributes in your dataset group.</p>
+    pub fn get_attribute_configs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeConfig>> {
+        &self.attribute_configs
+    }
     /// Appends an item to `additional_datasets`.
     ///
     /// To override the contents of this collection use [`set_additional_datasets`](Self::set_additional_datasets).
@@ -102,6 +112,12 @@ impl DataConfigBuilder {
     ) -> Self {
         self.additional_datasets = input;
         self
+    }
+    /// <p>Additional built-in datasets like Holidays and the Weather Index.</p>
+    pub fn get_additional_datasets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalDataset>> {
+        &self.additional_datasets
     }
     /// Consumes the builder and constructs a [`DataConfig`](crate::types::DataConfig).
     pub fn build(self) -> crate::types::DataConfig {

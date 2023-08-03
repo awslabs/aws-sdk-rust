@@ -74,6 +74,10 @@ impl AwsEcsServiceLoadBalancersDetailsBuilder {
         self.container_name = input;
         self
     }
+    /// <p>The name of the container to associate with the load balancer.</p>
+    pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_name
+    }
     /// <p>The port on the container to associate with the load balancer. This port must correspond to a <code>containerPort</code> in the task definition the tasks in the service are using. For tasks that use the EC2 launch type, the container instance they are launched on must allow ingress traffic on the <code>hostPort</code> of the port mapping.</p>
     pub fn container_port(mut self, input: i32) -> Self {
         self.container_port = ::std::option::Option::Some(input);
@@ -83,6 +87,10 @@ impl AwsEcsServiceLoadBalancersDetailsBuilder {
     pub fn set_container_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.container_port = input;
         self
+    }
+    /// <p>The port on the container to associate with the load balancer. This port must correspond to a <code>containerPort</code> in the task definition the tasks in the service are using. For tasks that use the EC2 launch type, the container instance they are launched on must allow ingress traffic on the <code>hostPort</code> of the port mapping.</p>
+    pub fn get_container_port(&self) -> &::std::option::Option<i32> {
+        &self.container_port
     }
     /// <p>The name of the load balancer to associate with the Amazon ECS service or task set.</p>
     /// <p>Only specified when using a Classic Load Balancer. For an Application Load Balancer or a Network Load Balancer, the load balancer name is omitted.</p>
@@ -102,6 +110,11 @@ impl AwsEcsServiceLoadBalancersDetailsBuilder {
         self.load_balancer_name = input;
         self
     }
+    /// <p>The name of the load balancer to associate with the Amazon ECS service or task set.</p>
+    /// <p>Only specified when using a Classic Load Balancer. For an Application Load Balancer or a Network Load Balancer, the load balancer name is omitted.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.load_balancer_name
+    }
     /// <p>The ARN of the Elastic Load Balancing target group or groups associated with a service or task set.</p>
     /// <p>Only specified when using an Application Load Balancer or a Network Load Balancer. For a Classic Load Balancer, the target group ARN is omitted.</p>
     pub fn target_group_arn(
@@ -119,6 +132,11 @@ impl AwsEcsServiceLoadBalancersDetailsBuilder {
     ) -> Self {
         self.target_group_arn = input;
         self
+    }
+    /// <p>The ARN of the Elastic Load Balancing target group or groups associated with a service or task set.</p>
+    /// <p>Only specified when using an Application Load Balancer or a Network Load Balancer. For a Classic Load Balancer, the target group ARN is omitted.</p>
+    pub fn get_target_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_group_arn
     }
     /// Consumes the builder and constructs a [`AwsEcsServiceLoadBalancersDetails`](crate::types::AwsEcsServiceLoadBalancersDetails).
     pub fn build(self) -> crate::types::AwsEcsServiceLoadBalancersDetails {

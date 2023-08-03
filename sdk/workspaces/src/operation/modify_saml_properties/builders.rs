@@ -36,6 +36,12 @@ impl ModifySamlPropertiesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifySamlProperties as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::modify_saml_properties::builders::ModifySamlPropertiesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl ModifySamlPropertiesFluentBuilder {
         self.inner = self.inner.set_resource_id(input);
         self
     }
+    /// <p>The directory identifier for which you want to configure SAML properties.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
+    }
     /// <p>The properties for configuring SAML 2.0 authentication.</p>
     pub fn saml_properties(mut self, input: crate::types::SamlProperties) -> Self {
         self.inner = self.inner.saml_properties(input);
@@ -138,6 +148,10 @@ impl ModifySamlPropertiesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_saml_properties(input);
         self
+    }
+    /// <p>The properties for configuring SAML 2.0 authentication.</p>
+    pub fn get_saml_properties(&self) -> &::std::option::Option<crate::types::SamlProperties> {
+        self.inner.get_saml_properties()
     }
     /// Appends an item to `PropertiesToDelete`.
     ///
@@ -165,5 +179,16 @@ impl ModifySamlPropertiesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_properties_to_delete(input);
         self
+    }
+    /// <p>The SAML properties to delete as part of your request.</p>
+    /// <p>Specify one of the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>SAML_PROPERTIES_USER_ACCESS_URL</code> to delete the user access URL.</p> </li>
+    /// <li> <p> <code>SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME</code> to delete the relay state parameter name.</p> </li>
+    /// </ul>
+    pub fn get_properties_to_delete(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeletableSamlProperty>> {
+        self.inner.get_properties_to_delete()
     }
 }

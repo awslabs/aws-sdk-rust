@@ -36,6 +36,12 @@ impl RegisterAccountFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RegisterAccount as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::register_account::builders::RegisterAccountInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl RegisterAccountFluentBuilder {
         self.inner = self.inner.set_kms_key(input);
         self
     }
+    /// <p> The KMS key details. </p>
+    pub fn get_kms_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key()
+    }
     /// <p> The delegated administrator account for Audit Manager. </p>
     pub fn delegated_admin_account(
         mut self,
@@ -141,5 +151,9 @@ impl RegisterAccountFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_delegated_admin_account(input);
         self
+    }
+    /// <p> The delegated administrator account for Audit Manager. </p>
+    pub fn get_delegated_admin_account(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_delegated_admin_account()
     }
 }

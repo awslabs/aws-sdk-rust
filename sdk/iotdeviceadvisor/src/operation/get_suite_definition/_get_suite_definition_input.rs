@@ -54,6 +54,10 @@ impl GetSuiteDefinitionInputBuilder {
         self.suite_definition_id = input;
         self
     }
+    /// <p>Suite definition ID of the test suite to get.</p>
+    pub fn get_suite_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.suite_definition_id
+    }
     /// <p>Suite definition version of the test suite to get.</p>
     pub fn suite_definition_version(
         mut self,
@@ -69,6 +73,10 @@ impl GetSuiteDefinitionInputBuilder {
     ) -> Self {
         self.suite_definition_version = input;
         self
+    }
+    /// <p>Suite definition version of the test suite to get.</p>
+    pub fn get_suite_definition_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.suite_definition_version
     }
     /// Consumes the builder and constructs a [`GetSuiteDefinitionInput`](crate::operation::get_suite_definition::GetSuiteDefinitionInput).
     pub fn build(

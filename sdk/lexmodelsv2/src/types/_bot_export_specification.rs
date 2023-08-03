@@ -48,6 +48,10 @@ impl BotExportSpecificationBuilder {
         self.bot_id = input;
         self
     }
+    /// <p>The identifier of the bot assigned by Amazon Lex.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
     /// <p>The version of the bot that was exported. This will be either <code>DRAFT</code> or the version number.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl BotExportSpecificationBuilder {
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_version = input;
         self
+    }
+    /// <p>The version of the bot that was exported. This will be either <code>DRAFT</code> or the version number.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_version
     }
     /// Consumes the builder and constructs a [`BotExportSpecification`](crate::types::BotExportSpecification).
     pub fn build(self) -> crate::types::BotExportSpecification {

@@ -38,6 +38,13 @@ impl UpdateAssociationStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAssociationStatus as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_association_status::builders::UpdateAssociationStatusInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +135,10 @@ impl UpdateAssociationStatusFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the SSM document.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The managed node ID.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
@@ -137,6 +148,10 @@ impl UpdateAssociationStatusFluentBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
+    }
+    /// <p>The managed node ID.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
     }
     /// <p>The association status.</p>
     pub fn association_status(mut self, input: crate::types::AssociationStatus) -> Self {
@@ -150,5 +165,11 @@ impl UpdateAssociationStatusFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_association_status(input);
         self
+    }
+    /// <p>The association status.</p>
+    pub fn get_association_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssociationStatus> {
+        self.inner.get_association_status()
     }
 }

@@ -51,6 +51,10 @@ impl DateRangeTypeBuilder {
         self.start_value = input;
         self
     }
+    /// <p>Timestamp range start value (in epochs)</p>
+    pub fn get_start_value(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_value
+    }
     /// <p>Timestamp range end value (in epochs).</p>
     pub fn end_value(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_value = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl DateRangeTypeBuilder {
     ) -> Self {
         self.end_value = input;
         self
+    }
+    /// <p>Timestamp range end value (in epochs).</p>
+    pub fn get_end_value(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_value
     }
     /// Consumes the builder and constructs a [`DateRangeType`](crate::types::DateRangeType).
     pub fn build(self) -> crate::types::DateRangeType {

@@ -55,6 +55,12 @@ impl AwsOpenSearchServiceDomainLogPublishingOptionBuilder {
         self.cloud_watch_logs_log_group_arn = input;
         self
     }
+    /// <p>The ARN of the CloudWatch Logs group to publish the logs to.</p>
+    pub fn get_cloud_watch_logs_log_group_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.cloud_watch_logs_log_group_arn
+    }
     /// <p>Whether the log publishing is enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -64,6 +70,10 @@ impl AwsOpenSearchServiceDomainLogPublishingOptionBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>Whether the log publishing is enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// Consumes the builder and constructs a [`AwsOpenSearchServiceDomainLogPublishingOption`](crate::types::AwsOpenSearchServiceDomainLogPublishingOption).
     pub fn build(self) -> crate::types::AwsOpenSearchServiceDomainLogPublishingOption {

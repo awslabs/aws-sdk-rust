@@ -144,6 +144,10 @@ impl CollectorResponseBuilder {
         self.collector_referenced_id = input;
         self
     }
+    /// <p>The reference ID of the Fleet Advisor collector.</p>
+    pub fn get_collector_referenced_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collector_referenced_id
+    }
     /// <p>The name of the Fleet Advisor collector .</p>
     pub fn collector_name(
         mut self,
@@ -159,6 +163,10 @@ impl CollectorResponseBuilder {
     ) -> Self {
         self.collector_name = input;
         self
+    }
+    /// <p>The name of the Fleet Advisor collector .</p>
+    pub fn get_collector_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collector_name
     }
     /// <p>The version of your Fleet Advisor collector, in semantic versioning format, for example <code>1.0.2</code> </p>
     pub fn collector_version(
@@ -176,6 +184,10 @@ impl CollectorResponseBuilder {
         self.collector_version = input;
         self
     }
+    /// <p>The version of your Fleet Advisor collector, in semantic versioning format, for example <code>1.0.2</code> </p>
+    pub fn get_collector_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collector_version
+    }
     /// <p>Whether the collector version is up to date.</p>
     pub fn version_status(mut self, input: crate::types::VersionStatus) -> Self {
         self.version_status = ::std::option::Option::Some(input);
@@ -189,6 +201,10 @@ impl CollectorResponseBuilder {
         self.version_status = input;
         self
     }
+    /// <p>Whether the collector version is up to date.</p>
+    pub fn get_version_status(&self) -> &::std::option::Option<crate::types::VersionStatus> {
+        &self.version_status
+    }
     /// <p>A summary description of the Fleet Advisor collector.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -198,6 +214,10 @@ impl CollectorResponseBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A summary description of the Fleet Advisor collector.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The Amazon S3 bucket that the Fleet Advisor collector uses to store inventory metadata.</p>
     pub fn s3_bucket_name(
@@ -215,6 +235,10 @@ impl CollectorResponseBuilder {
         self.s3_bucket_name = input;
         self
     }
+    /// <p>The Amazon S3 bucket that the Fleet Advisor collector uses to store inventory metadata.</p>
+    pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_name
+    }
     /// <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
     pub fn service_access_role_arn(
         mut self,
@@ -231,6 +255,10 @@ impl CollectorResponseBuilder {
         self.service_access_role_arn = input;
         self
     }
+    /// <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
+    pub fn get_service_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_access_role_arn
+    }
     /// <p>Describes the last Fleet Advisor collector health check.</p>
     pub fn collector_health_check(mut self, input: crate::types::CollectorHealthCheck) -> Self {
         self.collector_health_check = ::std::option::Option::Some(input);
@@ -243,6 +271,12 @@ impl CollectorResponseBuilder {
     ) -> Self {
         self.collector_health_check = input;
         self
+    }
+    /// <p>Describes the last Fleet Advisor collector health check.</p>
+    pub fn get_collector_health_check(
+        &self,
+    ) -> &::std::option::Option<crate::types::CollectorHealthCheck> {
+        &self.collector_health_check
     }
     /// <p>The timestamp of the last time the collector received data, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
     pub fn last_data_received(
@@ -260,6 +294,10 @@ impl CollectorResponseBuilder {
         self.last_data_received = input;
         self
     }
+    /// <p>The timestamp of the last time the collector received data, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
+    pub fn get_last_data_received(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_data_received
+    }
     /// <p>The timestamp when DMS registered the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
     pub fn registered_date(
         mut self,
@@ -276,6 +314,10 @@ impl CollectorResponseBuilder {
         self.registered_date = input;
         self
     }
+    /// <p>The timestamp when DMS registered the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
+    pub fn get_registered_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registered_date
+    }
     /// <p>The timestamp when you created the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
     pub fn created_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_date = ::std::option::Option::Some(input.into());
@@ -285,6 +327,10 @@ impl CollectorResponseBuilder {
     pub fn set_created_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_date = input;
         self
+    }
+    /// <p>The timestamp when you created the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_date
     }
     /// <p>The timestamp when DMS last modified the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
     pub fn modified_date(
@@ -302,6 +348,10 @@ impl CollectorResponseBuilder {
         self.modified_date = input;
         self
     }
+    /// <p>The timestamp when DMS last modified the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
+    pub fn get_modified_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.modified_date
+    }
     /// <p>Describes a Fleet Advisor collector inventory.</p>
     pub fn inventory_data(mut self, input: crate::types::InventoryData) -> Self {
         self.inventory_data = ::std::option::Option::Some(input);
@@ -314,6 +364,10 @@ impl CollectorResponseBuilder {
     ) -> Self {
         self.inventory_data = input;
         self
+    }
+    /// <p>Describes a Fleet Advisor collector inventory.</p>
+    pub fn get_inventory_data(&self) -> &::std::option::Option<crate::types::InventoryData> {
+        &self.inventory_data
     }
     /// Consumes the builder and constructs a [`CollectorResponse`](crate::types::CollectorResponse).
     pub fn build(self) -> crate::types::CollectorResponse {

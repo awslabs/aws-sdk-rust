@@ -37,6 +37,13 @@ impl UpdateOrganizationalUnitFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateOrganizationalUnit as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_organizational_unit::builders::UpdateOrganizationalUnitInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +142,11 @@ impl UpdateOrganizationalUnitFluentBuilder {
         self.inner = self.inner.set_organizational_unit_id(input);
         self
     }
+    /// <p>The unique identifier (ID) of the OU that you want to rename. You can get the ID from the <code>ListOrganizationalUnitsForParent</code> operation.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
+    pub fn get_organizational_unit_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organizational_unit_id()
+    }
     /// <p>The new name that you want to assign to the OU.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -146,5 +158,10 @@ impl UpdateOrganizationalUnitFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The new name that you want to assign to the OU.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
 }

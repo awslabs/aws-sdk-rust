@@ -37,6 +37,10 @@ impl DescribeInstanceAttributeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeInstanceAttribute as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_instance_attribute::builders::DescribeInstanceAttributeInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl DescribeInstanceAttributeFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>The type of attribute.</p>
     pub fn attribute_type(mut self, input: crate::types::InstanceAttributeType) -> Self {
         self.inner = self.inner.attribute_type(input);
@@ -139,5 +147,11 @@ impl DescribeInstanceAttributeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_attribute_type(input);
         self
+    }
+    /// <p>The type of attribute.</p>
+    pub fn get_attribute_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceAttributeType> {
+        self.inner.get_attribute_type()
     }
 }

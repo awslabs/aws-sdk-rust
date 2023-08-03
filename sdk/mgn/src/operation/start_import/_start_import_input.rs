@@ -48,6 +48,10 @@ impl StartImportInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>Start import request client token.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>Start import request s3 bucket source.</p>
     pub fn s3_bucket_source(mut self, input: crate::types::S3BucketSource) -> Self {
         self.s3_bucket_source = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl StartImportInputBuilder {
     ) -> Self {
         self.s3_bucket_source = input;
         self
+    }
+    /// <p>Start import request s3 bucket source.</p>
+    pub fn get_s3_bucket_source(&self) -> &::std::option::Option<crate::types::S3BucketSource> {
+        &self.s3_bucket_source
     }
     /// Consumes the builder and constructs a [`StartImportInput`](crate::operation::start_import::StartImportInput).
     pub fn build(

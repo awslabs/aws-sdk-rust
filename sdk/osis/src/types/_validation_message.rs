@@ -40,6 +40,10 @@ impl ValidationMessageBuilder {
         self.message = input;
         self
     }
+    /// <p>The validation message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Consumes the builder and constructs a [`ValidationMessage`](crate::types::ValidationMessage).
     pub fn build(self) -> crate::types::ValidationMessage {
         crate::types::ValidationMessage {

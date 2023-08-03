@@ -48,6 +48,10 @@ impl SupportedHourBuilder {
         self.start_time = input;
         self
     }
+    /// <p> Start Time. RFC 3339 format <code>'HH:mm:ss.SSS'</code>. </p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_time
+    }
     /// <p> End Time. RFC 3339 format <code>'HH:mm:ss.SSS'</code>. </p>
     pub fn end_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.end_time = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl SupportedHourBuilder {
     pub fn set_end_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p> End Time. RFC 3339 format <code>'HH:mm:ss.SSS'</code>. </p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.end_time
     }
     /// Consumes the builder and constructs a [`SupportedHour`](crate::types::SupportedHour).
     pub fn build(self) -> crate::types::SupportedHour {

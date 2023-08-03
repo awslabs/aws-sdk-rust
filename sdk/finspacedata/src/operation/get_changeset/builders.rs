@@ -36,6 +36,10 @@ impl GetChangesetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetChangeset as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_changeset::builders::GetChangesetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl GetChangesetFluentBuilder {
         self.inner = self.inner.set_dataset_id(input);
         self
     }
+    /// <p>The unique identifier for the FinSpace Dataset where the Changeset is created.</p>
+    pub fn get_dataset_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dataset_id()
+    }
     /// <p>The unique identifier of the Changeset for which to get data.</p>
     pub fn changeset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.changeset_id(input.into());
@@ -127,5 +135,9 @@ impl GetChangesetFluentBuilder {
     pub fn set_changeset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_changeset_id(input);
         self
+    }
+    /// <p>The unique identifier of the Changeset for which to get data.</p>
+    pub fn get_changeset_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_changeset_id()
     }
 }

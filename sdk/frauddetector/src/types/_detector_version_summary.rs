@@ -70,6 +70,10 @@ impl DetectorVersionSummaryBuilder {
         self.detector_version_id = input;
         self
     }
+    /// <p>The detector version ID. </p>
+    pub fn get_detector_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_version_id
+    }
     /// <p>The detector version status. </p>
     pub fn status(mut self, input: crate::types::DetectorVersionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -83,6 +87,10 @@ impl DetectorVersionSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The detector version status. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DetectorVersionStatus> {
+        &self.status
+    }
     /// <p>The detector version description. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -92,6 +100,10 @@ impl DetectorVersionSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The detector version description. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Timestamp of when the detector version was last updated.</p>
     pub fn last_updated_time(
@@ -108,6 +120,10 @@ impl DetectorVersionSummaryBuilder {
     ) -> Self {
         self.last_updated_time = input;
         self
+    }
+    /// <p>Timestamp of when the detector version was last updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_updated_time
     }
     /// Consumes the builder and constructs a [`DetectorVersionSummary`](crate::types::DetectorVersionSummary).
     pub fn build(self) -> crate::types::DetectorVersionSummary {

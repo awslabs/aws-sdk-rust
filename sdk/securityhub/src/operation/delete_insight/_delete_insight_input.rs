@@ -39,6 +39,10 @@ impl DeleteInsightInputBuilder {
         self.insight_arn = input;
         self
     }
+    /// <p>The ARN of the insight to delete.</p>
+    pub fn get_insight_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.insight_arn
+    }
     /// Consumes the builder and constructs a [`DeleteInsightInput`](crate::operation::delete_insight::DeleteInsightInput).
     pub fn build(
         self,

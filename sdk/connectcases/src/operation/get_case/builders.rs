@@ -36,6 +36,10 @@ impl GetCaseFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetCase as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_case::builders::GetCaseInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl GetCaseFluentBuilder {
         self.inner = self.inner.set_case_id(input);
         self
     }
+    /// <p>A unique identifier of the case.</p>
+    pub fn get_case_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_case_id()
+    }
     /// <p>The unique identifier of the Cases domain. </p>
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_id(input.into());
@@ -133,6 +141,10 @@ impl GetCaseFluentBuilder {
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_id(input);
         self
+    }
+    /// <p>The unique identifier of the Cases domain. </p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_id()
     }
     /// Appends an item to `fields`.
     ///
@@ -151,6 +163,12 @@ impl GetCaseFluentBuilder {
         self.inner = self.inner.set_fields(input);
         self
     }
+    /// <p>A list of unique field identifiers. </p>
+    pub fn get_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>> {
+        self.inner.get_fields()
+    }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -160,5 +178,9 @@ impl GetCaseFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

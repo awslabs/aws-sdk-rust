@@ -71,6 +71,10 @@ impl UpdateWorkflowInputBuilder {
         self.name = input;
         self
     }
+    /// <p>Name of the workflow to be updated.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the workflow.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl UpdateWorkflowInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the workflow.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `default_run_properties`.
     ///
@@ -106,6 +114,14 @@ impl UpdateWorkflowInputBuilder {
         self.default_run_properties = input;
         self
     }
+    /// <p>A collection of properties to be used as part of each execution of the workflow.</p>
+    pub fn get_default_run_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.default_run_properties
+    }
     /// <p>You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter blank, there is no limit to the number of concurrent workflow runs.</p>
     pub fn max_concurrent_runs(mut self, input: i32) -> Self {
         self.max_concurrent_runs = ::std::option::Option::Some(input);
@@ -115,6 +131,10 @@ impl UpdateWorkflowInputBuilder {
     pub fn set_max_concurrent_runs(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_concurrent_runs = input;
         self
+    }
+    /// <p>You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter blank, there is no limit to the number of concurrent workflow runs.</p>
+    pub fn get_max_concurrent_runs(&self) -> &::std::option::Option<i32> {
+        &self.max_concurrent_runs
     }
     /// Consumes the builder and constructs a [`UpdateWorkflowInput`](crate::operation::update_workflow::UpdateWorkflowInput).
     pub fn build(

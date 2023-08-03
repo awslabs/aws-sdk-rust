@@ -48,6 +48,10 @@ impl OutputDetailBuilder {
         self.duration_in_ms = input;
         self
     }
+    /// Duration in milliseconds
+    pub fn get_duration_in_ms(&self) -> &::std::option::Option<i32> {
+        &self.duration_in_ms
+    }
     /// Contains details about the output's video stream
     pub fn video_details(mut self, input: crate::types::VideoDetail) -> Self {
         self.video_details = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl OutputDetailBuilder {
     ) -> Self {
         self.video_details = input;
         self
+    }
+    /// Contains details about the output's video stream
+    pub fn get_video_details(&self) -> &::std::option::Option<crate::types::VideoDetail> {
+        &self.video_details
     }
     /// Consumes the builder and constructs a [`OutputDetail`](crate::types::OutputDetail).
     pub fn build(self) -> crate::types::OutputDetail {

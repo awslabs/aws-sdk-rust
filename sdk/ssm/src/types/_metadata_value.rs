@@ -40,6 +40,10 @@ impl MetadataValueBuilder {
         self.value = input;
         self
     }
+    /// <p>Metadata value to assign to an Application Manager application.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// Consumes the builder and constructs a [`MetadataValue`](crate::types::MetadataValue).
     pub fn build(self) -> crate::types::MetadataValue {
         crate::types::MetadataValue { value: self.value }

@@ -48,6 +48,10 @@ impl ThirdPartyJobBuilder {
         self.client_id = input;
         self
     }
+    /// <p>The <code>clientToken</code> portion of the <code>clientId</code> and <code>clientToken</code> pair used to verify that the calling entity is allowed access to the job and its details.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_id
+    }
     /// <p>The identifier used to identify the job in CodePipeline.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ThirdPartyJobBuilder {
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
+    }
+    /// <p>The identifier used to identify the job in CodePipeline.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
     }
     /// Consumes the builder and constructs a [`ThirdPartyJob`](crate::types::ThirdPartyJob).
     pub fn build(self) -> crate::types::ThirdPartyJob {

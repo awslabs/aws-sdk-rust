@@ -51,6 +51,12 @@ impl CreateAssistantAssociationOutputBuilder {
         self.assistant_association = input;
         self
     }
+    /// <p>The assistant association.</p>
+    pub fn get_assistant_association(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssistantAssociationData> {
+        &self.assistant_association
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

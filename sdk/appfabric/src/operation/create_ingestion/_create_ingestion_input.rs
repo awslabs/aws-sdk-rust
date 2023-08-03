@@ -119,6 +119,10 @@ impl CreateIngestionInputBuilder {
         self.app_bundle_identifier = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
+    pub fn get_app_bundle_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_bundle_identifier
+    }
     /// <p>The name of the application.</p>
     /// <p>Valid values are:</p>
     /// <ul>
@@ -159,6 +163,25 @@ impl CreateIngestionInputBuilder {
         self.app = input;
         self
     }
+    /// <p>The name of the application.</p>
+    /// <p>Valid values are:</p>
+    /// <ul>
+    /// <li> <p> <code>SLACK</code> </p> </li>
+    /// <li> <p> <code>ASANA</code> </p> </li>
+    /// <li> <p> <code>JIRA</code> </p> </li>
+    /// <li> <p> <code>M365</code> </p> </li>
+    /// <li> <p> <code>M365AUDITLOGS</code> </p> </li>
+    /// <li> <p> <code>ZOOM</code> </p> </li>
+    /// <li> <p> <code>ZENDESK</code> </p> </li>
+    /// <li> <p> <code>OKTA</code> </p> </li>
+    /// <li> <p> <code>GOOGLE</code> </p> </li>
+    /// <li> <p> <code>DROPBOX</code> </p> </li>
+    /// <li> <p> <code>SMARTSHEET</code> </p> </li>
+    /// <li> <p> <code>CISCO</code> </p> </li>
+    /// </ul>
+    pub fn get_app(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app
+    }
     /// <p>The ID of the application tenant.</p>
     pub fn tenant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tenant_id = ::std::option::Option::Some(input.into());
@@ -168,6 +191,10 @@ impl CreateIngestionInputBuilder {
     pub fn set_tenant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tenant_id = input;
         self
+    }
+    /// <p>The ID of the application tenant.</p>
+    pub fn get_tenant_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tenant_id
     }
     /// <p>The ingestion type.</p>
     pub fn ingestion_type(mut self, input: crate::types::IngestionType) -> Self {
@@ -182,6 +209,10 @@ impl CreateIngestionInputBuilder {
         self.ingestion_type = input;
         self
     }
+    /// <p>The ingestion type.</p>
+    pub fn get_ingestion_type(&self) -> &::std::option::Option<crate::types::IngestionType> {
+        &self.ingestion_type
+    }
     /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value</a>.</p>
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
@@ -195,6 +226,12 @@ impl CreateIngestionInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value</a>.</p>
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
+    /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Appends an item to `tags`.
     ///
@@ -214,6 +251,10 @@ impl CreateIngestionInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A map of the key-value pairs of the tag or tags to assign to the resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateIngestionInput`](crate::operation::create_ingestion::CreateIngestionInput).
     pub fn build(

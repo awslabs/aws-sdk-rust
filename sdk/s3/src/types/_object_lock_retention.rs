@@ -51,6 +51,10 @@ impl ObjectLockRetentionBuilder {
         self.mode = input;
         self
     }
+    /// <p>Indicates the Retention mode for the specified object.</p>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::ObjectLockRetentionMode> {
+        &self.mode
+    }
     /// <p>The date on which this Object Lock Retention will expire.</p>
     pub fn retain_until_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.retain_until_date = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl ObjectLockRetentionBuilder {
     ) -> Self {
         self.retain_until_date = input;
         self
+    }
+    /// <p>The date on which this Object Lock Retention will expire.</p>
+    pub fn get_retain_until_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.retain_until_date
     }
     /// Consumes the builder and constructs a [`ObjectLockRetention`](crate::types::ObjectLockRetention).
     pub fn build(self) -> crate::types::ObjectLockRetention {

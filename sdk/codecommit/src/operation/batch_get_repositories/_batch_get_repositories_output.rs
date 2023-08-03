@@ -67,6 +67,12 @@ impl BatchGetRepositoriesOutputBuilder {
         self.repositories = input;
         self
     }
+    /// <p>A list of repositories returned by the batch get repositories operation.</p>
+    pub fn get_repositories(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryMetadata>> {
+        &self.repositories
+    }
     /// Appends an item to `repositories_not_found`.
     ///
     /// To override the contents of this collection use [`set_repositories_not_found`](Self::set_repositories_not_found).
@@ -88,6 +94,12 @@ impl BatchGetRepositoriesOutputBuilder {
     ) -> Self {
         self.repositories_not_found = input;
         self
+    }
+    /// <p>Returns a list of repository names for which information could not be found.</p>
+    pub fn get_repositories_not_found(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.repositories_not_found
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

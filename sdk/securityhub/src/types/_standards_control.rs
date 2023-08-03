@@ -122,6 +122,10 @@ impl StandardsControlBuilder {
         self.standards_control_arn = input;
         self
     }
+    /// <p>The ARN of the security standard control.</p>
+    pub fn get_standards_control_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.standards_control_arn
+    }
     /// <p>The current status of the security standard control. Indicates whether the control is enabled or disabled. Security Hub does not check against disabled controls.</p>
     pub fn control_status(mut self, input: crate::types::ControlStatus) -> Self {
         self.control_status = ::std::option::Option::Some(input);
@@ -134,6 +138,10 @@ impl StandardsControlBuilder {
     ) -> Self {
         self.control_status = input;
         self
+    }
+    /// <p>The current status of the security standard control. Indicates whether the control is enabled or disabled. Security Hub does not check against disabled controls.</p>
+    pub fn get_control_status(&self) -> &::std::option::Option<crate::types::ControlStatus> {
+        &self.control_status
     }
     /// <p>The reason provided for the most recent change in status for the control.</p>
     pub fn disabled_reason(
@@ -151,6 +159,10 @@ impl StandardsControlBuilder {
         self.disabled_reason = input;
         self
     }
+    /// <p>The reason provided for the most recent change in status for the control.</p>
+    pub fn get_disabled_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.disabled_reason
+    }
     /// <p>The date and time that the status of the security standard control was most recently updated.</p>
     pub fn control_status_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.control_status_updated_at = ::std::option::Option::Some(input);
@@ -164,6 +176,12 @@ impl StandardsControlBuilder {
         self.control_status_updated_at = input;
         self
     }
+    /// <p>The date and time that the status of the security standard control was most recently updated.</p>
+    pub fn get_control_status_updated_at(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.control_status_updated_at
+    }
     /// <p>The identifier of the security standard control.</p>
     pub fn control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_id = ::std::option::Option::Some(input.into());
@@ -173,6 +191,10 @@ impl StandardsControlBuilder {
     pub fn set_control_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.control_id = input;
         self
+    }
+    /// <p>The identifier of the security standard control.</p>
+    pub fn get_control_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_id
     }
     /// <p>The title of the security standard control.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -184,6 +206,10 @@ impl StandardsControlBuilder {
         self.title = input;
         self
     }
+    /// <p>The title of the security standard control.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
+    }
     /// <p>The longer description of the security standard control. Provides information about what the control is checking for.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -193,6 +219,10 @@ impl StandardsControlBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The longer description of the security standard control. Provides information about what the control is checking for.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>A link to remediation information for the control in the Security Hub user documentation.</p>
     pub fn remediation_url(
@@ -210,6 +240,10 @@ impl StandardsControlBuilder {
         self.remediation_url = input;
         self
     }
+    /// <p>A link to remediation information for the control in the Security Hub user documentation.</p>
+    pub fn get_remediation_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.remediation_url
+    }
     /// <p>The severity of findings generated from this security standard control.</p>
     /// <p>The finding severity is based on an assessment of how easy it would be to compromise Amazon Web Services resources if the issue is detected.</p>
     pub fn severity_rating(mut self, input: crate::types::SeverityRating) -> Self {
@@ -224,6 +258,11 @@ impl StandardsControlBuilder {
     ) -> Self {
         self.severity_rating = input;
         self
+    }
+    /// <p>The severity of findings generated from this security standard control.</p>
+    /// <p>The finding severity is based on an assessment of how easy it would be to compromise Amazon Web Services resources if the issue is detected.</p>
+    pub fn get_severity_rating(&self) -> &::std::option::Option<crate::types::SeverityRating> {
+        &self.severity_rating
     }
     /// Appends an item to `related_requirements`.
     ///
@@ -246,6 +285,12 @@ impl StandardsControlBuilder {
     ) -> Self {
         self.related_requirements = input;
         self
+    }
+    /// <p>The list of requirements that are related to this control.</p>
+    pub fn get_related_requirements(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.related_requirements
     }
     /// Consumes the builder and constructs a [`StandardsControl`](crate::types::StandardsControl).
     pub fn build(self) -> crate::types::StandardsControl {

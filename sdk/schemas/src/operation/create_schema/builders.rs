@@ -38,6 +38,10 @@ impl CreateSchemaFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSchema as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_schema::builders::CreateSchemaInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -120,6 +124,10 @@ impl CreateSchemaFluentBuilder {
         self.inner = self.inner.set_content(input);
         self
     }
+    /// <p>The source of the schema definition.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_content()
+    }
     /// <p>A description of the schema.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -129,6 +137,10 @@ impl CreateSchemaFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the schema.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The name of the registry.</p>
     pub fn registry_name(
@@ -146,6 +158,10 @@ impl CreateSchemaFluentBuilder {
         self.inner = self.inner.set_registry_name(input);
         self
     }
+    /// <p>The name of the registry.</p>
+    pub fn get_registry_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_registry_name()
+    }
     /// <p>The name of the schema.</p>
     pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schema_name(input.into());
@@ -155,6 +171,10 @@ impl CreateSchemaFluentBuilder {
     pub fn set_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schema_name(input);
         self
+    }
+    /// <p>The name of the schema.</p>
+    pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schema_name()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -179,6 +199,14 @@ impl CreateSchemaFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Tags associated with the schema.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>The type of schema.</p>
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
         self.inner = self.inner.r#type(input);
@@ -188,5 +216,9 @@ impl CreateSchemaFluentBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
         self.inner = self.inner.set_type(input);
         self
+    }
+    /// <p>The type of schema.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
+        self.inner.get_type()
     }
 }

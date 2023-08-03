@@ -46,6 +46,10 @@ impl CreateGroupOutputBuilder {
         self.group = input;
         self
     }
+    /// <p>The group that was created. Contains the name of the group that was created, the Amazon Resource Name (ARN) of the group that was generated based on the group name, the filter expression, and the insight configuration that was assigned to the group.</p>
+    pub fn get_group(&self) -> &::std::option::Option<crate::types::Group> {
+        &self.group
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

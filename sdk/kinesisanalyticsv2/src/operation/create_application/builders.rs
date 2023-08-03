@@ -36,6 +36,12 @@ impl CreateApplicationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateApplication as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_application::builders::CreateApplicationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl CreateApplicationFluentBuilder {
         self.inner = self.inner.set_application_name(input);
         self
     }
+    /// <p>The name of your application (for example, <code>sample-app</code>).</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_name()
+    }
     /// <p>A summary description of the application.</p>
     pub fn application_description(
         mut self,
@@ -148,6 +158,10 @@ impl CreateApplicationFluentBuilder {
         self.inner = self.inner.set_application_description(input);
         self
     }
+    /// <p>A summary description of the application.</p>
+    pub fn get_application_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_description()
+    }
     /// <p>The runtime environment for the application.</p>
     pub fn runtime_environment(mut self, input: crate::types::RuntimeEnvironment) -> Self {
         self.inner = self.inner.runtime_environment(input);
@@ -160,6 +174,12 @@ impl CreateApplicationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_runtime_environment(input);
         self
+    }
+    /// <p>The runtime environment for the application.</p>
+    pub fn get_runtime_environment(
+        &self,
+    ) -> &::std::option::Option<crate::types::RuntimeEnvironment> {
+        self.inner.get_runtime_environment()
     }
     /// <p>The IAM role used by the application to access Kinesis data streams, Kinesis Data Firehose delivery streams, Amazon S3 objects, and other external resources.</p>
     pub fn service_execution_role(
@@ -177,6 +197,10 @@ impl CreateApplicationFluentBuilder {
         self.inner = self.inner.set_service_execution_role(input);
         self
     }
+    /// <p>The IAM role used by the application to access Kinesis data streams, Kinesis Data Firehose delivery streams, Amazon S3 objects, and other external resources.</p>
+    pub fn get_service_execution_role(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_execution_role()
+    }
     /// <p>Use this parameter to configure the application.</p>
     pub fn application_configuration(
         mut self,
@@ -192,6 +216,12 @@ impl CreateApplicationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_application_configuration(input);
         self
+    }
+    /// <p>Use this parameter to configure the application.</p>
+    pub fn get_application_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationConfiguration> {
+        self.inner.get_application_configuration()
     }
     /// Appends an item to `CloudWatchLoggingOptions`.
     ///
@@ -213,6 +243,12 @@ impl CreateApplicationFluentBuilder {
         self.inner = self.inner.set_cloud_watch_logging_options(input);
         self
     }
+    /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application configuration errors. </p>
+    pub fn get_cloud_watch_logging_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOption>> {
+        self.inner.get_cloud_watch_logging_options()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -230,6 +266,10 @@ impl CreateApplicationFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics For Flink application. To create a Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.</p>
     pub fn application_mode(mut self, input: crate::types::ApplicationMode) -> Self {
         self.inner = self.inner.application_mode(input);
@@ -242,5 +282,9 @@ impl CreateApplicationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_application_mode(input);
         self
+    }
+    /// <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics For Flink application. To create a Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.</p>
+    pub fn get_application_mode(&self) -> &::std::option::Option<crate::types::ApplicationMode> {
+        self.inner.get_application_mode()
     }
 }

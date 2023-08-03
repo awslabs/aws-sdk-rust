@@ -36,6 +36,10 @@ impl PutEmailIdentityConfigurationSetAttributesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutEmailIdentityConfigurationSetAttributes as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_email_identity_configuration_set_attributes::builders::PutEmailIdentityConfigurationSetAttributesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl PutEmailIdentityConfigurationSetAttributesFluentBuilder {
         self.inner = self.inner.set_email_identity(input);
         self
     }
+    /// <p>The email address or domain to associate with a configuration set.</p>
+    pub fn get_email_identity(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_email_identity()
+    }
     /// <p>The configuration set to associate with an email identity.</p>
     pub fn configuration_set_name(
         mut self,
@@ -121,5 +129,9 @@ impl PutEmailIdentityConfigurationSetAttributesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_configuration_set_name(input);
         self
+    }
+    /// <p>The configuration set to associate with an email identity.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_set_name()
     }
 }

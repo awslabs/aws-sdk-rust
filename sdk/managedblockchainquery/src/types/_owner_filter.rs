@@ -40,6 +40,10 @@ impl OwnerFilterBuilder {
         self.address = input;
         self
     }
+    /// <p>The contract or wallet address.</p>
+    pub fn get_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address
+    }
     /// Consumes the builder and constructs a [`OwnerFilter`](crate::types::OwnerFilter).
     pub fn build(self) -> crate::types::OwnerFilter {
         crate::types::OwnerFilter {

@@ -55,6 +55,10 @@ impl DescribeSnapshotsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `snapshots`.
     ///
     /// To override the contents of this collection use [`set_snapshots`](Self::set_snapshots).
@@ -73,6 +77,10 @@ impl DescribeSnapshotsOutputBuilder {
     ) -> Self {
         self.snapshots = input;
         self
+    }
+    /// <p>A list of snapshots. Each item in the list contains detailed information about one snapshot.</p>
+    pub fn get_snapshots(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Snapshot>> {
+        &self.snapshots
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

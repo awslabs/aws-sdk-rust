@@ -49,6 +49,10 @@ impl WriteRecordsOutputBuilder {
         self.records_ingested = input;
         self
     }
+    /// <p>Information on the records ingested by this request.</p>
+    pub fn get_records_ingested(&self) -> &::std::option::Option<crate::types::RecordsIngested> {
+        &self.records_ingested
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

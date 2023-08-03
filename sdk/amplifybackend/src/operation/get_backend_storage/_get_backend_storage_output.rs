@@ -74,6 +74,10 @@ impl GetBackendStorageOutputBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The app ID.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p>The name of the backend environment.</p>
     pub fn backend_environment_name(
         mut self,
@@ -90,6 +94,10 @@ impl GetBackendStorageOutputBuilder {
         self.backend_environment_name = input;
         self
     }
+    /// <p>The name of the backend environment.</p>
+    pub fn get_backend_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backend_environment_name
+    }
     /// <p>The resource configuration for the backend storage resource.</p>
     pub fn resource_config(mut self, input: crate::types::GetBackendStorageResourceConfig) -> Self {
         self.resource_config = ::std::option::Option::Some(input);
@@ -102,6 +110,12 @@ impl GetBackendStorageOutputBuilder {
     ) -> Self {
         self.resource_config = input;
         self
+    }
+    /// <p>The resource configuration for the backend storage resource.</p>
+    pub fn get_resource_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::GetBackendStorageResourceConfig> {
+        &self.resource_config
     }
     /// <p>The name of the storage resource.</p>
     pub fn resource_name(
@@ -118,6 +132,10 @@ impl GetBackendStorageOutputBuilder {
     ) -> Self {
         self.resource_name = input;
         self
+    }
+    /// <p>The name of the storage resource.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

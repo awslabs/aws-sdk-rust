@@ -59,6 +59,10 @@ impl FinalizeDeviceClaimInputBuilder {
         self.device_id = input;
         self
     }
+    /// <p>The unique identifier of the device.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_id
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -85,6 +89,15 @@ impl FinalizeDeviceClaimInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
+    /// <p> </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`FinalizeDeviceClaimInput`](crate::operation::finalize_device_claim::FinalizeDeviceClaimInput).
     pub fn build(

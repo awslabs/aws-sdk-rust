@@ -48,6 +48,10 @@ impl RulePriorityPairBuilder {
         self.rule_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the rule.</p>
+    pub fn get_rule_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_arn
+    }
     /// <p>The rule priority.</p>
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl RulePriorityPairBuilder {
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
+    }
+    /// <p>The rule priority.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
     }
     /// Consumes the builder and constructs a [`RulePriorityPair`](crate::types::RulePriorityPair).
     pub fn build(self) -> crate::types::RulePriorityPair {

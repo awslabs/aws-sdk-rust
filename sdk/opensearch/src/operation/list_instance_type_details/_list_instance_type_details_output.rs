@@ -69,6 +69,12 @@ impl ListInstanceTypeDetailsOutputBuilder {
         self.instance_type_details = input;
         self
     }
+    /// <p>Lists all supported instance types and features for the given OpenSearch or Elasticsearch version.</p>
+    pub fn get_instance_type_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeDetails>> {
+        &self.instance_type_details
+    }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -78,6 +84,10 @@ impl ListInstanceTypeDetailsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

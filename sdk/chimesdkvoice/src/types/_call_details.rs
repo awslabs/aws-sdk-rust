@@ -62,6 +62,10 @@ impl CallDetailsBuilder {
         self.voice_connector_id = input;
         self
     }
+    /// <p>The Voice Connector ID.</p>
+    pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_connector_id
+    }
     /// <p>The transaction ID of a Voice Connector call.</p>
     pub fn transaction_id(
         mut self,
@@ -78,6 +82,10 @@ impl CallDetailsBuilder {
         self.transaction_id = input;
         self
     }
+    /// <p>The transaction ID of a Voice Connector call.</p>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transaction_id
+    }
     /// <p>Identifies a person as the caller or the callee.</p>
     pub fn is_caller(mut self, input: bool) -> Self {
         self.is_caller = ::std::option::Option::Some(input);
@@ -87,6 +95,10 @@ impl CallDetailsBuilder {
     pub fn set_is_caller(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_caller = input;
         self
+    }
+    /// <p>Identifies a person as the caller or the callee.</p>
+    pub fn get_is_caller(&self) -> &::std::option::Option<bool> {
+        &self.is_caller
     }
     /// Consumes the builder and constructs a [`CallDetails`](crate::types::CallDetails).
     pub fn build(self) -> crate::types::CallDetails {

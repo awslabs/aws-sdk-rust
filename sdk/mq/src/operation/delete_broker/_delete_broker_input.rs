@@ -39,6 +39,10 @@ impl DeleteBrokerInputBuilder {
         self.broker_id = input;
         self
     }
+    /// <p>The unique ID that Amazon MQ generates for the broker.</p>
+    pub fn get_broker_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.broker_id
+    }
     /// Consumes the builder and constructs a [`DeleteBrokerInput`](crate::operation::delete_broker::DeleteBrokerInput).
     pub fn build(
         self,

@@ -36,6 +36,10 @@ impl ListChunksFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListChunks as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_chunks::builders::ListChunksInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +134,10 @@ impl ListChunksFluentBuilder {
         self.inner = self.inner.set_storage_job_id(input);
         self
     }
+    /// Storage job id
+    pub fn get_storage_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_storage_job_id()
+    }
     /// Object token
     pub fn object_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.object_token(input.into());
@@ -139,6 +147,10 @@ impl ListChunksFluentBuilder {
     pub fn set_object_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_object_token(input);
         self
+    }
+    /// Object token
+    pub fn get_object_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_object_token()
     }
     /// Maximum number of chunks
     pub fn max_results(mut self, input: i32) -> Self {
@@ -150,6 +162,10 @@ impl ListChunksFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// Maximum number of chunks
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// Pagination token
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -159,5 +175,9 @@ impl ListChunksFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// Pagination token
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

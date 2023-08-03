@@ -61,6 +61,10 @@ impl ImportTaskSummaryBuilder {
         self.waves = input;
         self
     }
+    /// <p>Import task summary waves.</p>
+    pub fn get_waves(&self) -> &::std::option::Option<crate::types::ImportTaskSummaryWaves> {
+        &self.waves
+    }
     /// <p>Import task summary applications.</p>
     pub fn applications(mut self, input: crate::types::ImportTaskSummaryApplications) -> Self {
         self.applications = ::std::option::Option::Some(input);
@@ -74,6 +78,12 @@ impl ImportTaskSummaryBuilder {
         self.applications = input;
         self
     }
+    /// <p>Import task summary applications.</p>
+    pub fn get_applications(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImportTaskSummaryApplications> {
+        &self.applications
+    }
     /// <p>Import task summary servers.</p>
     pub fn servers(mut self, input: crate::types::ImportTaskSummaryServers) -> Self {
         self.servers = ::std::option::Option::Some(input);
@@ -86,6 +96,10 @@ impl ImportTaskSummaryBuilder {
     ) -> Self {
         self.servers = input;
         self
+    }
+    /// <p>Import task summary servers.</p>
+    pub fn get_servers(&self) -> &::std::option::Option<crate::types::ImportTaskSummaryServers> {
+        &self.servers
     }
     /// Consumes the builder and constructs a [`ImportTaskSummary`](crate::types::ImportTaskSummary).
     pub fn build(self) -> crate::types::ImportTaskSummary {

@@ -100,6 +100,10 @@ impl TypeVersionSummaryBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The kind of extension.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::RegistryType> {
+        &self.r#type
+    }
     /// <p>The name of the extension.</p>
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_name = ::std::option::Option::Some(input.into());
@@ -110,6 +114,10 @@ impl TypeVersionSummaryBuilder {
         self.type_name = input;
         self
     }
+    /// <p>The name of the extension.</p>
+    pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.type_name
+    }
     /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the extension version when it's registered.</p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_id = ::std::option::Option::Some(input.into());
@@ -119,6 +127,10 @@ impl TypeVersionSummaryBuilder {
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_id = input;
         self
+    }
+    /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the extension version when it's registered.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
     }
     /// <p>Whether the specified extension version is set as the default version.</p>
     /// <p>This applies only to private extensions you have registered in your account, and extensions published by Amazon. For public third-party extensions, CloudFormation returns <code>null</code>.</p>
@@ -132,6 +144,11 @@ impl TypeVersionSummaryBuilder {
         self.is_default_version = input;
         self
     }
+    /// <p>Whether the specified extension version is set as the default version.</p>
+    /// <p>This applies only to private extensions you have registered in your account, and extensions published by Amazon. For public third-party extensions, CloudFormation returns <code>null</code>.</p>
+    pub fn get_is_default_version(&self) -> &::std::option::Option<bool> {
+        &self.is_default_version
+    }
     /// <p>The Amazon Resource Name (ARN) of the extension version.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -141,6 +158,10 @@ impl TypeVersionSummaryBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the extension version.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>When the version was registered.</p>
     pub fn time_created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -155,6 +176,10 @@ impl TypeVersionSummaryBuilder {
         self.time_created = input;
         self
     }
+    /// <p>When the version was registered.</p>
+    pub fn get_time_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.time_created
+    }
     /// <p>The description of the extension version.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -164,6 +189,10 @@ impl TypeVersionSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the extension version.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>For public extensions that have been activated for this account and Region, the version of the public extension to be used for CloudFormation operations in this account and Region. For any extensions other than activated third-arty extensions, CloudFormation returns <code>null</code>.</p>
     /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extension in this account and Region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
@@ -182,6 +211,11 @@ impl TypeVersionSummaryBuilder {
     ) -> Self {
         self.public_version_number = input;
         self
+    }
+    /// <p>For public extensions that have been activated for this account and Region, the version of the public extension to be used for CloudFormation operations in this account and Region. For any extensions other than activated third-arty extensions, CloudFormation returns <code>null</code>.</p>
+    /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extension in this account and Region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+    pub fn get_public_version_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_version_number
     }
     /// Consumes the builder and constructs a [`TypeVersionSummary`](crate::types::TypeVersionSummary).
     pub fn build(self) -> crate::types::TypeVersionSummary {

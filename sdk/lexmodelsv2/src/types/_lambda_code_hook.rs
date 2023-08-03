@@ -48,6 +48,10 @@ impl LambdaCodeHookBuilder {
         self.lambda_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
+    pub fn get_lambda_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lambda_arn
+    }
     /// <p>The version of the request-response that you want Amazon Lex to use to invoke your Lambda function.</p>
     pub fn code_hook_interface_version(
         mut self,
@@ -63,6 +67,10 @@ impl LambdaCodeHookBuilder {
     ) -> Self {
         self.code_hook_interface_version = input;
         self
+    }
+    /// <p>The version of the request-response that you want Amazon Lex to use to invoke your Lambda function.</p>
+    pub fn get_code_hook_interface_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code_hook_interface_version
     }
     /// Consumes the builder and constructs a [`LambdaCodeHook`](crate::types::LambdaCodeHook).
     pub fn build(self) -> crate::types::LambdaCodeHook {

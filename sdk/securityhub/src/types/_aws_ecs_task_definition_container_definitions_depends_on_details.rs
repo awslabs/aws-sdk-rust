@@ -74,6 +74,16 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetailsBuilder {
         self.condition = input;
         self
     }
+    /// <p>The dependency condition of the dependent container. Indicates the required status of the dependent container before the current container can start. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>COMPLETE</code> </p> </li>
+    /// <li> <p> <code>HEALTHY</code> </p> </li>
+    /// <li> <p> <code>SUCCESS</code> </p> </li>
+    /// <li> <p> <code>START</code> </p> </li>
+    /// </ul>
+    pub fn get_condition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.condition
+    }
     /// <p>The name of the dependent container.</p>
     pub fn container_name(
         mut self,
@@ -89,6 +99,10 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetailsBuilder {
     ) -> Self {
         self.container_name = input;
         self
+    }
+    /// <p>The name of the dependent container.</p>
+    pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_name
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails).
     pub fn build(self) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails {

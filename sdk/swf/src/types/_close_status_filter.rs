@@ -40,6 +40,10 @@ impl CloseStatusFilterBuilder {
         self.status = input;
         self
     }
+    /// <p> The close status that must match the close status of an execution for it to meet the criteria of this filter.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CloseStatus> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`CloseStatusFilter`](crate::types::CloseStatusFilter).
     pub fn build(self) -> crate::types::CloseStatusFilter {
         crate::types::CloseStatusFilter {

@@ -56,6 +56,10 @@ impl PublicKeyBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the public key.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The date and time when the public key was uploaded.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl PublicKeyBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The date and time when the public key was uploaded.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>Configuration information about a public key that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p>
     pub fn public_key_config(mut self, input: crate::types::PublicKeyConfig) -> Self {
         self.public_key_config = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl PublicKeyBuilder {
     ) -> Self {
         self.public_key_config = input;
         self
+    }
+    /// <p>Configuration information about a public key that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p>
+    pub fn get_public_key_config(&self) -> &::std::option::Option<crate::types::PublicKeyConfig> {
+        &self.public_key_config
     }
     /// Consumes the builder and constructs a [`PublicKey`](crate::types::PublicKey).
     pub fn build(self) -> crate::types::PublicKey {

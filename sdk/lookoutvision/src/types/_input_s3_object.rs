@@ -56,6 +56,10 @@ impl InputS3ObjectBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The Amazon S3 bucket that contains the manifest.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>The name and location of the manifest file withiin the bucket.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl InputS3ObjectBuilder {
         self.key = input;
         self
     }
+    /// <p>The name and location of the manifest file withiin the bucket.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>The version ID of the bucket.</p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_id = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl InputS3ObjectBuilder {
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_id = input;
         self
+    }
+    /// <p>The version ID of the bucket.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
     }
     /// Consumes the builder and constructs a [`InputS3Object`](crate::types::InputS3Object).
     pub fn build(self) -> crate::types::InputS3Object {

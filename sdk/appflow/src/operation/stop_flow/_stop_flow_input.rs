@@ -39,6 +39,10 @@ impl StopFlowInputBuilder {
         self.flow_name = input;
         self
     }
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
+    pub fn get_flow_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_name
+    }
     /// Consumes the builder and constructs a [`StopFlowInput`](crate::operation::stop_flow::StopFlowInput).
     pub fn build(
         self,

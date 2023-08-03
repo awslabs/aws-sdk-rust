@@ -158,6 +158,10 @@ impl ActivityResponseBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The unique identifier for the application that the campaign applies to.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The unique identifier for the campaign that the activity applies to.</p>
     pub fn campaign_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.campaign_id = ::std::option::Option::Some(input.into());
@@ -167,6 +171,10 @@ impl ActivityResponseBuilder {
     pub fn set_campaign_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.campaign_id = input;
         self
+    }
+    /// <p>The unique identifier for the campaign that the activity applies to.</p>
+    pub fn get_campaign_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.campaign_id
     }
     /// <p>The actual time, in ISO 8601 format, when the activity was marked CANCELLED or COMPLETED.</p>
     pub fn end(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -178,6 +186,10 @@ impl ActivityResponseBuilder {
         self.end = input;
         self
     }
+    /// <p>The actual time, in ISO 8601 format, when the activity was marked CANCELLED or COMPLETED.</p>
+    pub fn get_end(&self) -> &::std::option::Option<::std::string::String> {
+        &self.end
+    }
     /// <p>The unique identifier for the activity.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -188,6 +200,10 @@ impl ActivityResponseBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier for the activity.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>Specifies whether the activity succeeded. Possible values are SUCCESS and FAIL.</p>
     pub fn result(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.result = ::std::option::Option::Some(input.into());
@@ -197,6 +213,10 @@ impl ActivityResponseBuilder {
     pub fn set_result(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.result = input;
         self
+    }
+    /// <p>Specifies whether the activity succeeded. Possible values are SUCCESS and FAIL.</p>
+    pub fn get_result(&self) -> &::std::option::Option<::std::string::String> {
+        &self.result
     }
     /// <p>The scheduled start time, in ISO 8601 format, for the activity.</p>
     pub fn scheduled_start(
@@ -214,6 +234,10 @@ impl ActivityResponseBuilder {
         self.scheduled_start = input;
         self
     }
+    /// <p>The scheduled start time, in ISO 8601 format, for the activity.</p>
+    pub fn get_scheduled_start(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scheduled_start
+    }
     /// <p>The actual start time, in ISO 8601 format, of the activity.</p>
     pub fn start(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start = ::std::option::Option::Some(input.into());
@@ -223,6 +247,10 @@ impl ActivityResponseBuilder {
     pub fn set_start(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start = input;
         self
+    }
+    /// <p>The actual start time, in ISO 8601 format, of the activity.</p>
+    pub fn get_start(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start
     }
     /// <p>The current status of the activity. Possible values are: PENDING, INITIALIZING, RUNNING, PAUSED, CANCELLED, and COMPLETED.</p>
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -234,6 +262,10 @@ impl ActivityResponseBuilder {
         self.state = input;
         self
     }
+    /// <p>The current status of the activity. Possible values are: PENDING, INITIALIZING, RUNNING, PAUSED, CANCELLED, and COMPLETED.</p>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
+    }
     /// <p>The total number of endpoints that the campaign successfully delivered messages to.</p>
     pub fn successful_endpoint_count(mut self, input: i32) -> Self {
         self.successful_endpoint_count = ::std::option::Option::Some(input);
@@ -243,6 +275,10 @@ impl ActivityResponseBuilder {
     pub fn set_successful_endpoint_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.successful_endpoint_count = input;
         self
+    }
+    /// <p>The total number of endpoints that the campaign successfully delivered messages to.</p>
+    pub fn get_successful_endpoint_count(&self) -> &::std::option::Option<i32> {
+        &self.successful_endpoint_count
     }
     /// <p>The total number of time zones that were completed.</p>
     pub fn timezones_completed_count(mut self, input: i32) -> Self {
@@ -254,6 +290,10 @@ impl ActivityResponseBuilder {
         self.timezones_completed_count = input;
         self
     }
+    /// <p>The total number of time zones that were completed.</p>
+    pub fn get_timezones_completed_count(&self) -> &::std::option::Option<i32> {
+        &self.timezones_completed_count
+    }
     /// <p>The total number of unique time zones that are in the segment for the campaign.</p>
     pub fn timezones_total_count(mut self, input: i32) -> Self {
         self.timezones_total_count = ::std::option::Option::Some(input);
@@ -263,6 +303,10 @@ impl ActivityResponseBuilder {
     pub fn set_timezones_total_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timezones_total_count = input;
         self
+    }
+    /// <p>The total number of unique time zones that are in the segment for the campaign.</p>
+    pub fn get_timezones_total_count(&self) -> &::std::option::Option<i32> {
+        &self.timezones_total_count
     }
     /// <p>The total number of endpoints that the campaign attempted to deliver messages to.</p>
     pub fn total_endpoint_count(mut self, input: i32) -> Self {
@@ -274,6 +318,10 @@ impl ActivityResponseBuilder {
         self.total_endpoint_count = input;
         self
     }
+    /// <p>The total number of endpoints that the campaign attempted to deliver messages to.</p>
+    pub fn get_total_endpoint_count(&self) -> &::std::option::Option<i32> {
+        &self.total_endpoint_count
+    }
     /// <p>The unique identifier for the campaign treatment that the activity applies to. A treatment is a variation of a campaign that's used for A/B testing of a campaign.</p>
     pub fn treatment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.treatment_id = ::std::option::Option::Some(input.into());
@@ -283,6 +331,10 @@ impl ActivityResponseBuilder {
     pub fn set_treatment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.treatment_id = input;
         self
+    }
+    /// <p>The unique identifier for the campaign treatment that the activity applies to. A treatment is a variation of a campaign that's used for A/B testing of a campaign.</p>
+    pub fn get_treatment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.treatment_id
     }
     /// Adds a key-value pair to `execution_metrics`.
     ///
@@ -308,6 +360,14 @@ impl ActivityResponseBuilder {
     ) -> Self {
         self.execution_metrics = input;
         self
+    }
+    /// <p>A JSON object that contains metrics relating to the campaign execution for this campaign activity. For information about the structure and contents of the results, see <a href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Standard Amazon Pinpoint analytics metrics</a> in the <i>Amazon Pinpoint Developer Guide</i>.</p>
+    pub fn get_execution_metrics(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.execution_metrics
     }
     /// Consumes the builder and constructs a [`ActivityResponse`](crate::types::ActivityResponse).
     pub fn build(self) -> crate::types::ActivityResponse {

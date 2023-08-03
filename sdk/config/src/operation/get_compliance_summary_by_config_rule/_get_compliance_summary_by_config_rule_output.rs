@@ -50,6 +50,12 @@ impl GetComplianceSummaryByConfigRuleOutputBuilder {
         self.compliance_summary = input;
         self
     }
+    /// <p>The number of Config rules that are compliant and the number that are noncompliant, up to a maximum of 25 for each.</p>
+    pub fn get_compliance_summary(
+        &self,
+    ) -> &::std::option::Option<crate::types::ComplianceSummary> {
+        &self.compliance_summary
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -36,6 +36,10 @@ impl CreateAssessmentFrameworkFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateAssessmentFramework as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_assessment_framework::builders::CreateAssessmentFrameworkInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl CreateAssessmentFrameworkFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p> The name of the new custom framework. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p> An optional description for the new custom framework. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -135,6 +143,10 @@ impl CreateAssessmentFrameworkFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p> An optional description for the new custom framework. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
     pub fn compliance_type(
@@ -151,6 +163,10 @@ impl CreateAssessmentFrameworkFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_compliance_type(input);
         self
+    }
+    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
+    pub fn get_compliance_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_compliance_type()
     }
     /// Appends an item to `controlSets`.
     ///
@@ -174,6 +190,13 @@ impl CreateAssessmentFrameworkFluentBuilder {
         self.inner = self.inner.set_control_sets(input);
         self
     }
+    /// <p> The control sets that are associated with the framework. </p>
+    pub fn get_control_sets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAssessmentFrameworkControlSet>>
+    {
+        self.inner.get_control_sets()
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -196,5 +219,13 @@ impl CreateAssessmentFrameworkFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p> The tags that are associated with the framework. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

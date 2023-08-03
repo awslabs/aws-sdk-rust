@@ -46,6 +46,10 @@ impl DeleteStateMachineInputBuilder {
         self.state_machine_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the state machine to delete.</p>
+    pub fn get_state_machine_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_machine_arn
+    }
     /// Consumes the builder and constructs a [`DeleteStateMachineInput`](crate::operation::delete_state_machine::DeleteStateMachineInput).
     pub fn build(
         self,

@@ -48,6 +48,10 @@ impl DnsEntryBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The domain name of the service.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The ID of the hosted zone.</p>
     pub fn hosted_zone_id(
         mut self,
@@ -63,6 +67,10 @@ impl DnsEntryBuilder {
     ) -> Self {
         self.hosted_zone_id = input;
         self
+    }
+    /// <p>The ID of the hosted zone.</p>
+    pub fn get_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hosted_zone_id
     }
     /// Consumes the builder and constructs a [`DnsEntry`](crate::types::DnsEntry).
     pub fn build(self) -> crate::types::DnsEntry {

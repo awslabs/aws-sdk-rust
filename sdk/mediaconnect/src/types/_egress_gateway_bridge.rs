@@ -47,6 +47,10 @@ impl EgressGatewayBridgeBuilder {
         self.instance_id = input;
         self
     }
+    /// The ID of the instance running this bridge.
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// The maximum expected bitrate (in bps) of the egress bridge.
     pub fn max_bitrate(mut self, input: i32) -> Self {
         self.max_bitrate = ::std::option::Option::Some(input);
@@ -56,6 +60,10 @@ impl EgressGatewayBridgeBuilder {
     pub fn set_max_bitrate(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_bitrate = input;
         self
+    }
+    /// The maximum expected bitrate (in bps) of the egress bridge.
+    pub fn get_max_bitrate(&self) -> &::std::option::Option<i32> {
+        &self.max_bitrate
     }
     /// Consumes the builder and constructs a [`EgressGatewayBridge`](crate::types::EgressGatewayBridge).
     pub fn build(self) -> crate::types::EgressGatewayBridge {

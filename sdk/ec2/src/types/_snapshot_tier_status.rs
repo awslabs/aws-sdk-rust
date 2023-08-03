@@ -131,6 +131,10 @@ impl SnapshotTierStatusBuilder {
         self.snapshot_id = input;
         self
     }
+    /// <p>The ID of the snapshot.</p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_id
+    }
     /// <p>The ID of the volume from which the snapshot was created.</p>
     pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_id = ::std::option::Option::Some(input.into());
@@ -140,6 +144,10 @@ impl SnapshotTierStatusBuilder {
     pub fn set_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_id = input;
         self
+    }
+    /// <p>The ID of the volume from which the snapshot was created.</p>
+    pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_id
     }
     /// <p>The state of the snapshot.</p>
     pub fn status(mut self, input: crate::types::SnapshotState) -> Self {
@@ -151,6 +159,10 @@ impl SnapshotTierStatusBuilder {
         self.status = input;
         self
     }
+    /// <p>The state of the snapshot.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SnapshotState> {
+        &self.status
+    }
     /// <p>The ID of the Amazon Web Services account that owns the snapshot.</p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_id = ::std::option::Option::Some(input.into());
@@ -160,6 +172,10 @@ impl SnapshotTierStatusBuilder {
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_id = input;
         self
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the snapshot.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
     }
     /// Appends an item to `tags`.
     ///
@@ -180,6 +196,10 @@ impl SnapshotTierStatusBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags that are assigned to the snapshot.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The storage tier in which the snapshot is stored. <code>standard</code> indicates that the snapshot is stored in the standard snapshot storage tier and that it is ready for use. <code>archive</code> indicates that the snapshot is currently archived and that it must be restored before it can be used.</p>
     pub fn storage_tier(mut self, input: crate::types::StorageTier) -> Self {
         self.storage_tier = ::std::option::Option::Some(input);
@@ -192,6 +212,10 @@ impl SnapshotTierStatusBuilder {
     ) -> Self {
         self.storage_tier = input;
         self
+    }
+    /// <p>The storage tier in which the snapshot is stored. <code>standard</code> indicates that the snapshot is stored in the standard snapshot storage tier and that it is ready for use. <code>archive</code> indicates that the snapshot is currently archived and that it must be restored before it can be used.</p>
+    pub fn get_storage_tier(&self) -> &::std::option::Option<crate::types::StorageTier> {
+        &self.storage_tier
     }
     /// <p>The date and time when the last archive or restore process was started.</p>
     pub fn last_tiering_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -206,6 +230,12 @@ impl SnapshotTierStatusBuilder {
         self.last_tiering_start_time = input;
         self
     }
+    /// <p>The date and time when the last archive or restore process was started.</p>
+    pub fn get_last_tiering_start_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_tiering_start_time
+    }
     /// <p>The progress of the last archive or restore process, as a percentage.</p>
     pub fn last_tiering_progress(mut self, input: i32) -> Self {
         self.last_tiering_progress = ::std::option::Option::Some(input);
@@ -215,6 +245,10 @@ impl SnapshotTierStatusBuilder {
     pub fn set_last_tiering_progress(mut self, input: ::std::option::Option<i32>) -> Self {
         self.last_tiering_progress = input;
         self
+    }
+    /// <p>The progress of the last archive or restore process, as a percentage.</p>
+    pub fn get_last_tiering_progress(&self) -> &::std::option::Option<i32> {
+        &self.last_tiering_progress
     }
     /// <p>The status of the last archive or restore process.</p>
     pub fn last_tiering_operation_status(
@@ -232,6 +266,12 @@ impl SnapshotTierStatusBuilder {
         self.last_tiering_operation_status = input;
         self
     }
+    /// <p>The status of the last archive or restore process.</p>
+    pub fn get_last_tiering_operation_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::TieringOperationStatus> {
+        &self.last_tiering_operation_status
+    }
     /// <p>A message describing the status of the last archive or restore process.</p>
     pub fn last_tiering_operation_status_detail(
         mut self,
@@ -248,6 +288,12 @@ impl SnapshotTierStatusBuilder {
         self.last_tiering_operation_status_detail = input;
         self
     }
+    /// <p>A message describing the status of the last archive or restore process.</p>
+    pub fn get_last_tiering_operation_status_detail(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.last_tiering_operation_status_detail
+    }
     /// <p>The date and time when the last archive process was completed.</p>
     pub fn archival_complete_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.archival_complete_time = ::std::option::Option::Some(input);
@@ -261,6 +307,12 @@ impl SnapshotTierStatusBuilder {
         self.archival_complete_time = input;
         self
     }
+    /// <p>The date and time when the last archive process was completed.</p>
+    pub fn get_archival_complete_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.archival_complete_time
+    }
     /// <p>Only for archived snapshots that are temporarily restored. Indicates the date and time when a temporarily restored snapshot will be automatically re-archived.</p>
     pub fn restore_expiry_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.restore_expiry_time = ::std::option::Option::Some(input);
@@ -273,6 +325,10 @@ impl SnapshotTierStatusBuilder {
     ) -> Self {
         self.restore_expiry_time = input;
         self
+    }
+    /// <p>Only for archived snapshots that are temporarily restored. Indicates the date and time when a temporarily restored snapshot will be automatically re-archived.</p>
+    pub fn get_restore_expiry_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.restore_expiry_time
     }
     /// Consumes the builder and constructs a [`SnapshotTierStatus`](crate::types::SnapshotTierStatus).
     pub fn build(self) -> crate::types::SnapshotTierStatus {

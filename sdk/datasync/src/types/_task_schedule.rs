@@ -46,6 +46,10 @@ impl TaskScheduleBuilder {
         self.schedule_expression = input;
         self
     }
+    /// <p>A cron expression that specifies when DataSync initiates a scheduled transfer from a source to a destination location. </p>
+    pub fn get_schedule_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schedule_expression
+    }
     /// Consumes the builder and constructs a [`TaskSchedule`](crate::types::TaskSchedule).
     pub fn build(self) -> crate::types::TaskSchedule {
         crate::types::TaskSchedule {

@@ -36,6 +36,10 @@ impl UpdateDeviceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDevice as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_device::builders::UpdateDeviceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl UpdateDeviceFluentBuilder {
         self.inner = self.inner.set_global_network_id(input);
         self
     }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_global_network_id()
+    }
     /// <p>The ID of the device.</p>
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_id(input.into());
@@ -133,6 +141,10 @@ impl UpdateDeviceFluentBuilder {
     pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_id(input);
         self
+    }
+    /// <p>The ID of the device.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_id()
     }
     /// <p>The Amazon Web Services location of the device, if applicable. For an on-premises device, you can omit this parameter.</p>
     pub fn aws_location(mut self, input: crate::types::AwsLocation) -> Self {
@@ -147,6 +159,10 @@ impl UpdateDeviceFluentBuilder {
         self.inner = self.inner.set_aws_location(input);
         self
     }
+    /// <p>The Amazon Web Services location of the device, if applicable. For an on-premises device, you can omit this parameter.</p>
+    pub fn get_aws_location(&self) -> &::std::option::Option<crate::types::AwsLocation> {
+        self.inner.get_aws_location()
+    }
     /// <p>A description of the device.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -159,6 +175,11 @@ impl UpdateDeviceFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>A description of the device.</p>
+    /// <p>Constraints: Maximum length of 256 characters.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The type of the device.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.r#type(input.into());
@@ -168,6 +189,10 @@ impl UpdateDeviceFluentBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_type(input);
         self
+    }
+    /// <p>The type of the device.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_type()
     }
     /// <p>The vendor of the device.</p>
     /// <p>Constraints: Maximum length of 128 characters.</p>
@@ -181,6 +206,11 @@ impl UpdateDeviceFluentBuilder {
         self.inner = self.inner.set_vendor(input);
         self
     }
+    /// <p>The vendor of the device.</p>
+    /// <p>Constraints: Maximum length of 128 characters.</p>
+    pub fn get_vendor(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vendor()
+    }
     /// <p>The model of the device.</p>
     /// <p>Constraints: Maximum length of 128 characters.</p>
     pub fn model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -192,6 +222,11 @@ impl UpdateDeviceFluentBuilder {
     pub fn set_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model(input);
         self
+    }
+    /// <p>The model of the device.</p>
+    /// <p>Constraints: Maximum length of 128 characters.</p>
+    pub fn get_model(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_model()
     }
     /// <p>The serial number of the device.</p>
     /// <p>Constraints: Maximum length of 128 characters.</p>
@@ -211,6 +246,11 @@ impl UpdateDeviceFluentBuilder {
         self.inner = self.inner.set_serial_number(input);
         self
     }
+    /// <p>The serial number of the device.</p>
+    /// <p>Constraints: Maximum length of 128 characters.</p>
+    pub fn get_serial_number(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_serial_number()
+    }
     /// <p>Describes a location.</p>
     pub fn location(mut self, input: crate::types::Location) -> Self {
         self.inner = self.inner.location(input);
@@ -221,6 +261,10 @@ impl UpdateDeviceFluentBuilder {
         self.inner = self.inner.set_location(input);
         self
     }
+    /// <p>Describes a location.</p>
+    pub fn get_location(&self) -> &::std::option::Option<crate::types::Location> {
+        self.inner.get_location()
+    }
     /// <p>The ID of the site.</p>
     pub fn site_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.site_id(input.into());
@@ -230,5 +274,9 @@ impl UpdateDeviceFluentBuilder {
     pub fn set_site_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_site_id(input);
         self
+    }
+    /// <p>The ID of the site.</p>
+    pub fn get_site_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_site_id()
     }
 }

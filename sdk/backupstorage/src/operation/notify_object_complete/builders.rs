@@ -36,6 +36,12 @@ impl NotifyObjectCompleteFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the NotifyObjectComplete as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::notify_object_complete::builders::NotifyObjectCompleteInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl NotifyObjectCompleteFluentBuilder {
         self.inner = self.inner.set_backup_job_id(input);
         self
     }
+    /// Backup job Id for the in-progress backup
+    pub fn get_backup_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_backup_job_id()
+    }
     /// Upload Id for the in-progress upload
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.upload_id(input.into());
@@ -141,6 +151,10 @@ impl NotifyObjectCompleteFluentBuilder {
     pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_upload_id(input);
         self
+    }
+    /// Upload Id for the in-progress upload
+    pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_upload_id()
     }
     /// Object checksum
     pub fn object_checksum(
@@ -158,6 +172,10 @@ impl NotifyObjectCompleteFluentBuilder {
         self.inner = self.inner.set_object_checksum(input);
         self
     }
+    /// Object checksum
+    pub fn get_object_checksum(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_object_checksum()
+    }
     /// Checksum algorithm
     pub fn object_checksum_algorithm(
         mut self,
@@ -173,6 +191,12 @@ impl NotifyObjectCompleteFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_object_checksum_algorithm(input);
         self
+    }
+    /// Checksum algorithm
+    pub fn get_object_checksum_algorithm(
+        &self,
+    ) -> &::std::option::Option<crate::types::SummaryChecksumAlgorithm> {
+        self.inner.get_object_checksum_algorithm()
     }
     /// Optional metadata associated with an Object. Maximum string length is 256 bytes.
     pub fn metadata_string(
@@ -190,6 +214,10 @@ impl NotifyObjectCompleteFluentBuilder {
         self.inner = self.inner.set_metadata_string(input);
         self
     }
+    /// Optional metadata associated with an Object. Maximum string length is 256 bytes.
+    pub fn get_metadata_string(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_metadata_string()
+    }
     /// Optional metadata associated with an Object. Maximum length is 4MB.
     pub fn metadata_blob(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
         self.inner = self.inner.metadata_blob(input);
@@ -203,6 +231,12 @@ impl NotifyObjectCompleteFluentBuilder {
         self.inner = self.inner.set_metadata_blob(input);
         self
     }
+    /// Optional metadata associated with an Object. Maximum length is 4MB.
+    pub fn get_metadata_blob(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+        self.inner.get_metadata_blob()
+    }
     /// The size of MetadataBlob.
     pub fn metadata_blob_length(mut self, input: i64) -> Self {
         self.inner = self.inner.metadata_blob_length(input);
@@ -212,6 +246,10 @@ impl NotifyObjectCompleteFluentBuilder {
     pub fn set_metadata_blob_length(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_metadata_blob_length(input);
         self
+    }
+    /// The size of MetadataBlob.
+    pub fn get_metadata_blob_length(&self) -> &::std::option::Option<i64> {
+        self.inner.get_metadata_blob_length()
     }
     /// Checksum of MetadataBlob.
     pub fn metadata_blob_checksum(
@@ -229,6 +267,10 @@ impl NotifyObjectCompleteFluentBuilder {
         self.inner = self.inner.set_metadata_blob_checksum(input);
         self
     }
+    /// Checksum of MetadataBlob.
+    pub fn get_metadata_blob_checksum(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_metadata_blob_checksum()
+    }
     /// Checksum algorithm.
     pub fn metadata_blob_checksum_algorithm(
         mut self,
@@ -244,5 +286,11 @@ impl NotifyObjectCompleteFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_metadata_blob_checksum_algorithm(input);
         self
+    }
+    /// Checksum algorithm.
+    pub fn get_metadata_blob_checksum_algorithm(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataChecksumAlgorithm> {
+        self.inner.get_metadata_blob_checksum_algorithm()
     }
 }

@@ -40,6 +40,10 @@ impl ExportReadSetBuilder {
         self.read_set_id = input;
         self
     }
+    /// <p>The set's ID.</p>
+    pub fn get_read_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.read_set_id
+    }
     /// Consumes the builder and constructs a [`ExportReadSet`](crate::types::ExportReadSet).
     pub fn build(self) -> crate::types::ExportReadSet {
         crate::types::ExportReadSet {

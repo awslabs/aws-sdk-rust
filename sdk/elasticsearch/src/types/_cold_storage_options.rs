@@ -40,6 +40,10 @@ impl ColdStorageOptionsBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Enable cold storage option. Accepted values true or false</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Consumes the builder and constructs a [`ColdStorageOptions`](crate::types::ColdStorageOptions).
     pub fn build(self) -> crate::types::ColdStorageOptions {
         crate::types::ColdStorageOptions {

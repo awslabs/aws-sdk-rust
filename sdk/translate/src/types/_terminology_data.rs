@@ -93,6 +93,10 @@ impl TerminologyDataBuilder {
         self.file = input;
         self
     }
+    /// <p>The file containing the custom terminology data. Your version of the AWS SDK performs a Base64-encoding on this field before sending a request to the AWS service. Users of the SDK should not perform Base64-encoding themselves.</p>
+    pub fn get_file(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.file
+    }
     /// <p>The data format of the custom terminology.</p>
     pub fn format(mut self, input: crate::types::TerminologyDataFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
@@ -105,6 +109,10 @@ impl TerminologyDataBuilder {
     ) -> Self {
         self.format = input;
         self
+    }
+    /// <p>The data format of the custom terminology.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::TerminologyDataFormat> {
+        &self.format
     }
     /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional).</p>
     /// <dl>
@@ -148,6 +156,25 @@ impl TerminologyDataBuilder {
     ) -> Self {
         self.directionality = input;
         self
+    }
+    /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional).</p>
+    /// <dl>
+    /// <dt>
+    /// UNI
+    /// </dt>
+    /// <dd>
+    /// <p>The terminology resource has one source language (for example, the first column in a CSV file), and all of its other languages are target languages. </p>
+    /// </dd>
+    /// <dt>
+    /// MULTI
+    /// </dt>
+    /// <dd>
+    /// <p>Any language in the terminology resource can be the source language or a target language. A single multi-directional terminology resource can be used for jobs that translate different language pairs. For example, if the terminology contains English and Spanish terms, it can be used for jobs that translate English to Spanish and Spanish to English.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>When you create a custom terminology resource without specifying the directionality, it behaves as uni-directional terminology, although this parameter will have a null value.</p>
+    pub fn get_directionality(&self) -> &::std::option::Option<crate::types::Directionality> {
+        &self.directionality
     }
     /// Consumes the builder and constructs a [`TerminologyData`](crate::types::TerminologyData).
     pub fn build(self) -> crate::types::TerminologyData {

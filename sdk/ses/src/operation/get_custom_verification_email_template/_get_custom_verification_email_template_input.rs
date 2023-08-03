@@ -46,6 +46,10 @@ impl GetCustomVerificationEmailTemplateInputBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The name of the custom verification email template that you want to retrieve.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// Consumes the builder and constructs a [`GetCustomVerificationEmailTemplateInput`](crate::operation::get_custom_verification_email_template::GetCustomVerificationEmailTemplateInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_custom_verification_email_template::GetCustomVerificationEmailTemplateInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

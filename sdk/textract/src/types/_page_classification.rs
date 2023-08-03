@@ -57,6 +57,12 @@ impl PageClassificationBuilder {
         self.page_type = input;
         self
     }
+    /// <p>The class, or document type, assigned to a detected Page object. The class, or document type, assigned to a detected Page object.</p>
+    pub fn get_page_type(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Prediction>> {
+        &self.page_type
+    }
     /// Appends an item to `page_number`.
     ///
     /// To override the contents of this collection use [`set_page_number`](Self::set_page_number).
@@ -75,6 +81,12 @@ impl PageClassificationBuilder {
     ) -> Self {
         self.page_number = input;
         self
+    }
+    /// <p> The page number the value was detected on, relative to Amazon Textract's starting position.</p>
+    pub fn get_page_number(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Prediction>> {
+        &self.page_number
     }
     /// Consumes the builder and constructs a [`PageClassification`](crate::types::PageClassification).
     pub fn build(self) -> crate::types::PageClassification {

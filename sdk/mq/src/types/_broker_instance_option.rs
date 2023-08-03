@@ -95,6 +95,12 @@ impl BrokerInstanceOptionBuilder {
         self.availability_zones = input;
         self
     }
+    /// <p>The list of available az.</p>
+    pub fn get_availability_zones(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>> {
+        &self.availability_zones
+    }
     /// <p>The broker's engine type.</p>
     pub fn engine_type(mut self, input: crate::types::EngineType) -> Self {
         self.engine_type = ::std::option::Option::Some(input);
@@ -107,6 +113,10 @@ impl BrokerInstanceOptionBuilder {
     ) -> Self {
         self.engine_type = input;
         self
+    }
+    /// <p>The broker's engine type.</p>
+    pub fn get_engine_type(&self) -> &::std::option::Option<crate::types::EngineType> {
+        &self.engine_type
     }
     /// <p>The broker's instance type.</p>
     pub fn host_instance_type(
@@ -124,6 +134,10 @@ impl BrokerInstanceOptionBuilder {
         self.host_instance_type = input;
         self
     }
+    /// <p>The broker's instance type.</p>
+    pub fn get_host_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_instance_type
+    }
     /// <p>The broker's storage type.</p>
     pub fn storage_type(mut self, input: crate::types::BrokerStorageType) -> Self {
         self.storage_type = ::std::option::Option::Some(input);
@@ -136,6 +150,10 @@ impl BrokerInstanceOptionBuilder {
     ) -> Self {
         self.storage_type = input;
         self
+    }
+    /// <p>The broker's storage type.</p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<crate::types::BrokerStorageType> {
+        &self.storage_type
     }
     /// Appends an item to `supported_deployment_modes`.
     ///
@@ -155,6 +173,12 @@ impl BrokerInstanceOptionBuilder {
     ) -> Self {
         self.supported_deployment_modes = input;
         self
+    }
+    /// <p>The list of supported deployment modes.</p>
+    pub fn get_supported_deployment_modes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentMode>> {
+        &self.supported_deployment_modes
     }
     /// Appends an item to `supported_engine_versions`.
     ///
@@ -177,6 +201,12 @@ impl BrokerInstanceOptionBuilder {
     ) -> Self {
         self.supported_engine_versions = input;
         self
+    }
+    /// <p>The list of supported engine versions.</p>
+    pub fn get_supported_engine_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.supported_engine_versions
     }
     /// Consumes the builder and constructs a [`BrokerInstanceOption`](crate::types::BrokerInstanceOption).
     pub fn build(self) -> crate::types::BrokerInstanceOption {

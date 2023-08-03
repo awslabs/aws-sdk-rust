@@ -48,6 +48,10 @@ impl CsvOptionsBuilder {
         self.delimiter = input;
         self
     }
+    /// <p> The delimiter used for separating items in the CSV file being imported. </p>
+    pub fn get_delimiter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delimiter
+    }
     /// Appends an item to `header_list`.
     ///
     /// To override the contents of this collection use [`set_header_list`](Self::set_header_list).
@@ -66,6 +70,12 @@ impl CsvOptionsBuilder {
     ) -> Self {
         self.header_list = input;
         self
+    }
+    /// <p> List of the headers used to specify a common header for all source CSV files being imported. If this field is specified then the first line of each CSV file is treated as data instead of the header. If this field is not specified the the first line of each CSV file is treated as the header. </p>
+    pub fn get_header_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.header_list
     }
     /// Consumes the builder and constructs a [`CsvOptions`](crate::types::CsvOptions).
     pub fn build(self) -> crate::types::CsvOptions {

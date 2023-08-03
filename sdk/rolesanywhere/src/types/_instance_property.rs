@@ -67,6 +67,10 @@ impl InstancePropertyBuilder {
         self.seen_at = input;
         self
     }
+    /// <p>The ISO-8601 time stamp of when the certificate was last used in a temporary credential request.</p>
+    pub fn get_seen_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.seen_at
+    }
     /// Adds a key-value pair to `properties`.
     ///
     /// To override the contents of this collection use [`set_properties`](Self::set_properties).
@@ -92,6 +96,14 @@ impl InstancePropertyBuilder {
         self.properties = input;
         self
     }
+    /// <p>A list of instanceProperty objects. </p>
+    pub fn get_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.properties
+    }
     /// <p>Indicates whether the temporary credential request was successful. </p>
     pub fn failed(mut self, input: bool) -> Self {
         self.failed = ::std::option::Option::Some(input);
@@ -101,6 +113,10 @@ impl InstancePropertyBuilder {
     pub fn set_failed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.failed = input;
         self
+    }
+    /// <p>Indicates whether the temporary credential request was successful. </p>
+    pub fn get_failed(&self) -> &::std::option::Option<bool> {
+        &self.failed
     }
     /// Consumes the builder and constructs a [`InstanceProperty`](crate::types::InstanceProperty).
     pub fn build(self) -> crate::types::InstanceProperty {

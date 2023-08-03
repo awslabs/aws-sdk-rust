@@ -54,6 +54,10 @@ impl RejectCertificateTransferInputBuilder {
         self.certificate_id = input;
         self
     }
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
+    pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_id
+    }
     /// <p>The reason the certificate transfer was rejected.</p>
     pub fn reject_reason(
         mut self,
@@ -69,6 +73,10 @@ impl RejectCertificateTransferInputBuilder {
     ) -> Self {
         self.reject_reason = input;
         self
+    }
+    /// <p>The reason the certificate transfer was rejected.</p>
+    pub fn get_reject_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reject_reason
     }
     /// Consumes the builder and constructs a [`RejectCertificateTransferInput`](crate::operation::reject_certificate_transfer::RejectCertificateTransferInput).
     pub fn build(

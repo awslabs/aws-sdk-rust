@@ -36,6 +36,13 @@ impl UpdateServiceIntegrationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateServiceIntegration as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_service_integration::builders::UpdateServiceIntegrationInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +138,11 @@ impl UpdateServiceIntegrationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_service_integration(input);
         self
+    }
+    /// <p> An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and whether you want to update it to enabled or disabled. </p>
+    pub fn get_service_integration(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateServiceIntegrationConfig> {
+        self.inner.get_service_integration()
     }
 }

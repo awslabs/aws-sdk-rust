@@ -40,6 +40,10 @@ impl DataLakeLifecycleExpirationBuilder {
         self.days = input;
         self
     }
+    /// <p>Number of days before data expires in the Amazon Security Lake object.</p>
+    pub fn get_days(&self) -> &::std::option::Option<i32> {
+        &self.days
+    }
     /// Consumes the builder and constructs a [`DataLakeLifecycleExpiration`](crate::types::DataLakeLifecycleExpiration).
     pub fn build(self) -> crate::types::DataLakeLifecycleExpiration {
         crate::types::DataLakeLifecycleExpiration { days: self.days }

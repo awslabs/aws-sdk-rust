@@ -40,6 +40,10 @@ impl GroupIdentityBuilder {
         self.id = input;
         self
     }
+    /// <p>The IAM Identity Center ID of the group.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`GroupIdentity`](crate::types::GroupIdentity).
     pub fn build(self) -> crate::types::GroupIdentity {
         crate::types::GroupIdentity { id: self.id }

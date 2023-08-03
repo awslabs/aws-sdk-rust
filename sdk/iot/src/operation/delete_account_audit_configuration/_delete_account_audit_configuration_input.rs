@@ -39,6 +39,10 @@ impl DeleteAccountAuditConfigurationInputBuilder {
         self.delete_scheduled_audits = input;
         self
     }
+    /// <p>If true, all scheduled audits are deleted.</p>
+    pub fn get_delete_scheduled_audits(&self) -> &::std::option::Option<bool> {
+        &self.delete_scheduled_audits
+    }
     /// Consumes the builder and constructs a [`DeleteAccountAuditConfigurationInput`](crate::operation::delete_account_audit_configuration::DeleteAccountAuditConfigurationInput).
     pub fn build(
         self,

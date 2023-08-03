@@ -50,6 +50,10 @@ impl DeleteDomainAssociationInputBuilder {
         self.app_id = input;
         self
     }
+    /// <p> The unique id for an Amplify app. </p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p> The name of the domain. </p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
@@ -59,6 +63,10 @@ impl DeleteDomainAssociationInputBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
+    }
+    /// <p> The name of the domain. </p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// Consumes the builder and constructs a [`DeleteDomainAssociationInput`](crate::operation::delete_domain_association::DeleteDomainAssociationInput).
     pub fn build(

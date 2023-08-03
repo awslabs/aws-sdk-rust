@@ -80,6 +80,10 @@ impl EntitySummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name for the entity. This value is not unique. It is defined by the seller.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type of the entity.</p>
     pub fn entity_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_type = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl EntitySummaryBuilder {
     pub fn set_entity_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entity_type = input;
         self
+    }
+    /// <p>The type of the entity.</p>
+    pub fn get_entity_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_type
     }
     /// <p>The unique identifier for the entity.</p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -100,6 +108,10 @@ impl EntitySummaryBuilder {
         self.entity_id = input;
         self
     }
+    /// <p>The unique identifier for the entity.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_id
+    }
     /// <p>The ARN associated with the unique identifier for the entity.</p>
     pub fn entity_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_arn = ::std::option::Option::Some(input.into());
@@ -109,6 +121,10 @@ impl EntitySummaryBuilder {
     pub fn set_entity_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entity_arn = input;
         self
+    }
+    /// <p>The ARN associated with the unique identifier for the entity.</p>
+    pub fn get_entity_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_arn
     }
     /// <p>The last time the entity was published, using ISO 8601 format (2018-02-27T13:45:22Z).</p>
     pub fn last_modified_date(
@@ -126,6 +142,10 @@ impl EntitySummaryBuilder {
         self.last_modified_date = input;
         self
     }
+    /// <p>The last time the entity was published, using ISO 8601 format (2018-02-27T13:45:22Z).</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_date
+    }
     /// <p>The visibility status of the entity to buyers. This value can be <code>Public</code> (everyone can view the entity), <code>Limited</code> (the entity is visible to limited accounts only), or <code>Restricted</code> (the entity was published and then unpublished and only existing buyers can view it). </p>
     pub fn visibility(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.visibility = ::std::option::Option::Some(input.into());
@@ -135,6 +155,10 @@ impl EntitySummaryBuilder {
     pub fn set_visibility(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.visibility = input;
         self
+    }
+    /// <p>The visibility status of the entity to buyers. This value can be <code>Public</code> (everyone can view the entity), <code>Limited</code> (the entity is visible to limited accounts only), or <code>Restricted</code> (the entity was published and then unpublished and only existing buyers can view it). </p>
+    pub fn get_visibility(&self) -> &::std::option::Option<::std::string::String> {
+        &self.visibility
     }
     /// Consumes the builder and constructs a [`EntitySummary`](crate::types::EntitySummary).
     pub fn build(self) -> crate::types::EntitySummary {

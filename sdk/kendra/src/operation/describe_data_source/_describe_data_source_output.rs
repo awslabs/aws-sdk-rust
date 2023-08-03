@@ -167,6 +167,10 @@ impl DescribeDataSourceOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the data source connector.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The identifier of the index used with the data source connector.</p>
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
@@ -176,6 +180,10 @@ impl DescribeDataSourceOutputBuilder {
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.index_id = input;
         self
+    }
+    /// <p>The identifier of the index used with the data source connector.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_id
     }
     /// <p>The name for the data source connector.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -187,6 +195,10 @@ impl DescribeDataSourceOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name for the data source connector.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type of the data source. For example, <code>SHAREPOINT</code>.</p>
     pub fn r#type(mut self, input: crate::types::DataSourceType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -196,6 +208,10 @@ impl DescribeDataSourceOutputBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DataSourceType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the data source. For example, <code>SHAREPOINT</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::DataSourceType> {
+        &self.r#type
     }
     /// <p>Configuration details for the data source connector. This shows how the data source is configured. The configuration options for a data source depend on the data source provider.</p>
     pub fn configuration(mut self, input: crate::types::DataSourceConfiguration) -> Self {
@@ -210,6 +226,12 @@ impl DescribeDataSourceOutputBuilder {
         self.configuration = input;
         self
     }
+    /// <p>Configuration details for the data source connector. This shows how the data source is configured. The configuration options for a data source depend on the data source provider.</p>
+    pub fn get_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataSourceConfiguration> {
+        &self.configuration
+    }
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
     pub fn vpc_configuration(mut self, input: crate::types::DataSourceVpcConfiguration) -> Self {
         self.vpc_configuration = ::std::option::Option::Some(input);
@@ -222,6 +244,12 @@ impl DescribeDataSourceOutputBuilder {
     ) -> Self {
         self.vpc_configuration = input;
         self
+    }
+    /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+    pub fn get_vpc_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataSourceVpcConfiguration> {
+        &self.vpc_configuration
     }
     /// <p>The Unix timestamp when the data source connector was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -236,6 +264,10 @@ impl DescribeDataSourceOutputBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The Unix timestamp when the data source connector was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The Unix timestamp when the data source connector was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -249,6 +281,10 @@ impl DescribeDataSourceOutputBuilder {
         self.updated_at = input;
         self
     }
+    /// <p>The Unix timestamp when the data source connector was last updated.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
+    }
     /// <p>The description for the data source connector.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -258,6 +294,10 @@ impl DescribeDataSourceOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description for the data source connector.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The current status of the data source connector. When the status is <code>ACTIVE</code> the data source is ready to use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that the data source failed.</p>
     pub fn status(mut self, input: crate::types::DataSourceStatus) -> Self {
@@ -272,6 +312,10 @@ impl DescribeDataSourceOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The current status of the data source connector. When the status is <code>ACTIVE</code> the data source is ready to use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that the data source failed.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DataSourceStatus> {
+        &self.status
+    }
     /// <p>The schedule for Amazon Kendra to update the index.</p>
     pub fn schedule(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule = ::std::option::Option::Some(input.into());
@@ -282,6 +326,10 @@ impl DescribeDataSourceOutputBuilder {
         self.schedule = input;
         self
     }
+    /// <p>The schedule for Amazon Kendra to update the index.</p>
+    pub fn get_schedule(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schedule
+    }
     /// <p>The Amazon Resource Name (ARN) of the role with permission to access the data source and required resources.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -291,6 +339,10 @@ impl DescribeDataSourceOutputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the role with permission to access the data source and required resources.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the data source to fail.</p>
     pub fn error_message(
@@ -308,6 +360,10 @@ impl DescribeDataSourceOutputBuilder {
         self.error_message = input;
         self
     }
+    /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the data source to fail.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// <p>The code for a language. This shows a supported language for all documents in the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
     pub fn language_code(
         mut self,
@@ -323,6 +379,10 @@ impl DescribeDataSourceOutputBuilder {
     ) -> Self {
         self.language_code = input;
         self
+    }
+    /// <p>The code for a language. This shows a supported language for all documents in the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.language_code
     }
     /// <p>Configuration information for altering document metadata and content during the document ingestion process when you describe a data source.</p>
     /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
@@ -341,6 +401,13 @@ impl DescribeDataSourceOutputBuilder {
     ) -> Self {
         self.custom_document_enrichment_configuration = input;
         self
+    }
+    /// <p>Configuration information for altering document metadata and content during the document ingestion process when you describe a data source.</p>
+    /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
+    pub fn get_custom_document_enrichment_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomDocumentEnrichmentConfiguration> {
+        &self.custom_document_enrichment_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

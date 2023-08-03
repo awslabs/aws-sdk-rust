@@ -61,6 +61,10 @@ impl AssociatePhoneNumbersWithVoiceConnectorInputBuilder {
         self.voice_connector_id = input;
         self
     }
+    /// <p>The Amazon Chime Voice Connector ID.</p>
+    pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_connector_id
+    }
     /// Appends an item to `e164_phone_numbers`.
     ///
     /// To override the contents of this collection use [`set_e164_phone_numbers`](Self::set_e164_phone_numbers).
@@ -83,6 +87,12 @@ impl AssociatePhoneNumbersWithVoiceConnectorInputBuilder {
         self.e164_phone_numbers = input;
         self
     }
+    /// <p>List of phone numbers, in E.164 format.</p>
+    pub fn get_e164_phone_numbers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.e164_phone_numbers
+    }
     /// <p>If true, associates the provided phone numbers with the provided Amazon Chime Voice Connector and removes any previously existing associations. If false, does not associate any phone numbers that have previously existing associations.</p>
     pub fn force_associate(mut self, input: bool) -> Self {
         self.force_associate = ::std::option::Option::Some(input);
@@ -92,6 +102,10 @@ impl AssociatePhoneNumbersWithVoiceConnectorInputBuilder {
     pub fn set_force_associate(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force_associate = input;
         self
+    }
+    /// <p>If true, associates the provided phone numbers with the provided Amazon Chime Voice Connector and removes any previously existing associations. If false, does not associate any phone numbers that have previously existing associations.</p>
+    pub fn get_force_associate(&self) -> &::std::option::Option<bool> {
+        &self.force_associate
     }
     /// Consumes the builder and constructs a [`AssociatePhoneNumbersWithVoiceConnectorInput`](crate::operation::associate_phone_numbers_with_voice_connector::AssociatePhoneNumbersWithVoiceConnectorInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::associate_phone_numbers_with_voice_connector::AssociatePhoneNumbersWithVoiceConnectorInput, ::aws_smithy_http::operation::error::BuildError>{

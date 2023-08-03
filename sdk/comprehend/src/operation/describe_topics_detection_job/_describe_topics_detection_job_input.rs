@@ -39,6 +39,10 @@ impl DescribeTopicsDetectionJobInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The identifier assigned by the user to the detection job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// Consumes the builder and constructs a [`DescribeTopicsDetectionJobInput`](crate::operation::describe_topics_detection_job::DescribeTopicsDetectionJobInput).
     pub fn build(
         self,

@@ -56,6 +56,10 @@ impl ContentTypeProfileBuilder {
         self.format = input;
         self
     }
+    /// <p>The format for a field-level encryption content type-profile mapping.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::Format> {
+        &self.format
+    }
     /// <p>The profile ID for a field-level encryption content type-profile mapping.</p>
     pub fn profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_id = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl ContentTypeProfileBuilder {
         self.profile_id = input;
         self
     }
+    /// <p>The profile ID for a field-level encryption content type-profile mapping.</p>
+    pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_id
+    }
     /// <p>The content type for a field-level encryption content type-profile mapping.</p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl ContentTypeProfileBuilder {
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
+    }
+    /// <p>The content type for a field-level encryption content type-profile mapping.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
     }
     /// Consumes the builder and constructs a [`ContentTypeProfile`](crate::types::ContentTypeProfile).
     pub fn build(self) -> crate::types::ContentTypeProfile {

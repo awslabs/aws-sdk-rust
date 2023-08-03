@@ -63,6 +63,10 @@ impl DeleteBudgetActionOutputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The account ID of the user. It's a 12-digit number.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.budget_name = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl DeleteBudgetActionOutputBuilder {
         self.budget_name = input;
         self
     }
+    /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.budget_name
+    }
     /// <p>A budget action resource. </p>
     pub fn action(mut self, input: crate::types::Action) -> Self {
         self.action = ::std::option::Option::Some(input);
@@ -82,6 +90,10 @@ impl DeleteBudgetActionOutputBuilder {
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::Action>) -> Self {
         self.action = input;
         self
+    }
+    /// <p>A budget action resource. </p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::Action> {
+        &self.action
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

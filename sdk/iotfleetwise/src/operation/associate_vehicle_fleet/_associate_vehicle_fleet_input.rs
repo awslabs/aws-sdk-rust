@@ -49,6 +49,10 @@ impl AssociateVehicleFleetInputBuilder {
         self.vehicle_name = input;
         self
     }
+    /// <p> The unique ID of the vehicle to associate with the fleet. </p>
+    pub fn get_vehicle_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vehicle_name
+    }
     /// <p> The ID of a fleet. </p>
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl AssociateVehicleFleetInputBuilder {
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet_id = input;
         self
+    }
+    /// <p> The ID of a fleet. </p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_id
     }
     /// Consumes the builder and constructs a [`AssociateVehicleFleetInput`](crate::operation::associate_vehicle_fleet::AssociateVehicleFleetInput).
     pub fn build(

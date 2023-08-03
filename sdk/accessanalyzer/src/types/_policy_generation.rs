@@ -72,6 +72,10 @@ impl PolicyGenerationBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
     pub fn principal_arn(
         mut self,
@@ -88,6 +92,10 @@ impl PolicyGenerationBuilder {
         self.principal_arn = input;
         self
     }
+    /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
+    pub fn get_principal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal_arn
+    }
     /// <p>The status of the policy generation request.</p>
     pub fn status(mut self, input: crate::types::JobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -97,6 +105,10 @@ impl PolicyGenerationBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the policy generation request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
+        &self.status
     }
     /// <p>A timestamp of when the policy generation started.</p>
     pub fn started_on(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -111,6 +123,10 @@ impl PolicyGenerationBuilder {
         self.started_on = input;
         self
     }
+    /// <p>A timestamp of when the policy generation started.</p>
+    pub fn get_started_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.started_on
+    }
     /// <p>A timestamp of when the policy generation was completed.</p>
     pub fn completed_on(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.completed_on = ::std::option::Option::Some(input);
@@ -123,6 +139,10 @@ impl PolicyGenerationBuilder {
     ) -> Self {
         self.completed_on = input;
         self
+    }
+    /// <p>A timestamp of when the policy generation was completed.</p>
+    pub fn get_completed_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.completed_on
     }
     /// Consumes the builder and constructs a [`PolicyGeneration`](crate::types::PolicyGeneration).
     pub fn build(self) -> crate::types::PolicyGeneration {

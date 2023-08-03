@@ -62,6 +62,11 @@ impl GetRecommendationPreferencesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to use to advance to the next page of recommendation preferences.</p>
+    /// <p>This value is null when there are no more pages of recommendation preferences to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `recommendation_preferences_details`.
     ///
     /// To override the contents of this collection use [`set_recommendation_preferences_details`](Self::set_recommendation_preferences_details).
@@ -85,6 +90,13 @@ impl GetRecommendationPreferencesOutputBuilder {
     ) -> Self {
         self.recommendation_preferences_details = input;
         self
+    }
+    /// <p>An array of objects that describe recommendation preferences.</p>
+    pub fn get_recommendation_preferences_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationPreferencesDetail>>
+    {
+        &self.recommendation_preferences_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -39,6 +39,10 @@ impl RegisterCrossAccountAccessRoleInputBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security assessments. </p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// Consumes the builder and constructs a [`RegisterCrossAccountAccessRoleInput`](crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleInput).
     pub fn build(
         self,

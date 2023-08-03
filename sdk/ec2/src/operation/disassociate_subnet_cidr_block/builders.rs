@@ -36,6 +36,10 @@ impl DisassociateSubnetCidrBlockFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateSubnetCidrBlock as a reference.
+    pub fn as_input(&self) -> &crate::operation::disassociate_subnet_cidr_block::builders::DisassociateSubnetCidrBlockInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +135,9 @@ impl DisassociateSubnetCidrBlockFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_association_id(input);
         self
+    }
+    /// <p>The association ID for the CIDR block.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_association_id()
     }
 }

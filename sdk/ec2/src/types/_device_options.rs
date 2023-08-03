@@ -40,6 +40,10 @@ impl DeviceOptionsBuilder {
         self.tenant_id = input;
         self
     }
+    /// <p>The ID of the tenant application with the device-identity provider.</p>
+    pub fn get_tenant_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tenant_id
+    }
     /// Consumes the builder and constructs a [`DeviceOptions`](crate::types::DeviceOptions).
     pub fn build(self) -> crate::types::DeviceOptions {
         crate::types::DeviceOptions {

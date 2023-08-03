@@ -40,6 +40,10 @@ impl GetIncidentRecordInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the incident record.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`GetIncidentRecordInput`](crate::operation::get_incident_record::GetIncidentRecordInput).
     pub fn build(
         self,

@@ -82,6 +82,10 @@ impl GetEnrollmentStatusOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The enrollment status of the account.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
+    }
     /// <p>The reason for the enrollment status of the account.</p>
     /// <p>For example, an account might show a status of <code>Pending</code> because member accounts of an organization require more time to be enrolled in the service.</p>
     pub fn status_reason(
@@ -100,6 +104,11 @@ impl GetEnrollmentStatusOutputBuilder {
         self.status_reason = input;
         self
     }
+    /// <p>The reason for the enrollment status of the account.</p>
+    /// <p>For example, an account might show a status of <code>Pending</code> because member accounts of an organization require more time to be enrolled in the service.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
+    }
     /// <p>Confirms the enrollment status of member accounts of the organization, if the account is a management account of an organization.</p>
     pub fn member_accounts_enrolled(mut self, input: bool) -> Self {
         self.member_accounts_enrolled = ::std::option::Option::Some(input);
@@ -109,6 +118,10 @@ impl GetEnrollmentStatusOutputBuilder {
     pub fn set_member_accounts_enrolled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.member_accounts_enrolled = input;
         self
+    }
+    /// <p>Confirms the enrollment status of member accounts of the organization, if the account is a management account of an organization.</p>
+    pub fn get_member_accounts_enrolled(&self) -> &::std::option::Option<bool> {
+        &self.member_accounts_enrolled
     }
     /// <p>The Unix epoch timestamp, in seconds, of when the account enrollment status was last updated.</p>
     pub fn last_updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -123,6 +136,12 @@ impl GetEnrollmentStatusOutputBuilder {
         self.last_updated_timestamp = input;
         self
     }
+    /// <p>The Unix epoch timestamp, in seconds, of when the account enrollment status was last updated.</p>
+    pub fn get_last_updated_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_timestamp
+    }
     /// <p>The count of organization member accounts that are opted in to the service, if your account is an organization management account.</p>
     pub fn number_of_member_accounts_opted_in(mut self, input: i32) -> Self {
         self.number_of_member_accounts_opted_in = ::std::option::Option::Some(input);
@@ -135,6 +154,10 @@ impl GetEnrollmentStatusOutputBuilder {
     ) -> Self {
         self.number_of_member_accounts_opted_in = input;
         self
+    }
+    /// <p>The count of organization member accounts that are opted in to the service, if your account is an organization management account.</p>
+    pub fn get_number_of_member_accounts_opted_in(&self) -> &::std::option::Option<i32> {
+        &self.number_of_member_accounts_opted_in
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

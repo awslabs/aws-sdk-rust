@@ -72,6 +72,10 @@ impl GetRoutingControlStateOutputBuilder {
         self.routing_control_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the response.</p>
+    pub fn get_routing_control_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.routing_control_arn
+    }
     /// <p>The state of the routing control.</p>
     pub fn routing_control_state(mut self, input: crate::types::RoutingControlState) -> Self {
         self.routing_control_state = ::std::option::Option::Some(input);
@@ -84,6 +88,12 @@ impl GetRoutingControlStateOutputBuilder {
     ) -> Self {
         self.routing_control_state = input;
         self
+    }
+    /// <p>The state of the routing control.</p>
+    pub fn get_routing_control_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::RoutingControlState> {
+        &self.routing_control_state
     }
     /// <p>The routing control name.</p>
     pub fn routing_control_name(
@@ -100,6 +110,10 @@ impl GetRoutingControlStateOutputBuilder {
     ) -> Self {
         self.routing_control_name = input;
         self
+    }
+    /// <p>The routing control name.</p>
+    pub fn get_routing_control_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.routing_control_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

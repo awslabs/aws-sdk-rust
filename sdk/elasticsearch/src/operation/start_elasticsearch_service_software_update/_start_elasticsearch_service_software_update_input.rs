@@ -40,6 +40,10 @@ impl StartElasticsearchServiceSoftwareUpdateInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The name of the domain that you want to update to the latest service software.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// Consumes the builder and constructs a [`StartElasticsearchServiceSoftwareUpdateInput`](crate::operation::start_elasticsearch_service_software_update::StartElasticsearchServiceSoftwareUpdateInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::start_elasticsearch_service_software_update::StartElasticsearchServiceSoftwareUpdateInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

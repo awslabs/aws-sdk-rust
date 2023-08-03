@@ -45,6 +45,10 @@ impl DescribeAuthenticationProfilesInputBuilder {
         self.authentication_profile_name = input;
         self
     }
+    /// <p>The name of the authentication profile to describe. If not specified then all authentication profiles owned by the account are listed.</p>
+    pub fn get_authentication_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication_profile_name
+    }
     /// Consumes the builder and constructs a [`DescribeAuthenticationProfilesInput`](crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesInput).
     pub fn build(
         self,

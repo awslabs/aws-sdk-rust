@@ -43,6 +43,10 @@ impl SetStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SetStatus as a reference.
+    pub fn as_input(&self) -> &crate::operation::set_status::builders::SetStatusInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +129,10 @@ impl SetStatusFluentBuilder {
         self.inner = self.inner.set_pipeline_id(input);
         self
     }
+    /// <p>The ID of the pipeline that contains the objects.</p>
+    pub fn get_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pipeline_id()
+    }
     /// Appends an item to `objectIds`.
     ///
     /// To override the contents of this collection use [`set_object_ids`](Self::set_object_ids).
@@ -142,6 +150,10 @@ impl SetStatusFluentBuilder {
         self.inner = self.inner.set_object_ids(input);
         self
     }
+    /// <p>The IDs of the objects. The corresponding objects can be either physical or components, but not a mix of both types.</p>
+    pub fn get_object_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_object_ids()
+    }
     /// <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.status(input.into());
@@ -151,5 +163,9 @@ impl SetStatusFluentBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_status()
     }
 }

@@ -41,6 +41,10 @@ impl DescribeMountTargetSecurityGroupsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeMountTargetSecurityGroups as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_mount_target_security_groups::builders::DescribeMountTargetSecurityGroupsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -110,5 +114,9 @@ impl DescribeMountTargetSecurityGroupsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_mount_target_id(input);
         self
+    }
+    /// <p>The ID of the mount target whose security groups you want to retrieve.</p>
+    pub fn get_mount_target_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_mount_target_id()
     }
 }

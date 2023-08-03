@@ -64,6 +64,10 @@ impl ResetDistributionCacheOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the reset cache request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The timestamp of the reset cache request (e.g., <code>1479734909.17</code>) in Unix time format.</p>
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl ResetDistributionCacheOutputBuilder {
         self.create_time = input;
         self
     }
+    /// <p>The timestamp of the reset cache request (e.g., <code>1479734909.17</code>) in Unix time format.</p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
+    }
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operation(mut self, input: crate::types::Operation) -> Self {
         self.operation = ::std::option::Option::Some(input);
@@ -86,6 +94,10 @@ impl ResetDistributionCacheOutputBuilder {
     pub fn set_operation(mut self, input: ::std::option::Option<crate::types::Operation>) -> Self {
         self.operation = input;
         self
+    }
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn get_operation(&self) -> &::std::option::Option<crate::types::Operation> {
+        &self.operation
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

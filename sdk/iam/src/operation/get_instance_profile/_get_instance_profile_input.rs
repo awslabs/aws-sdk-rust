@@ -50,6 +50,11 @@ impl GetInstanceProfileInputBuilder {
         self.instance_profile_name = input;
         self
     }
+    /// <p>The name of the instance profile to get information about.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn get_instance_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_profile_name
+    }
     /// Consumes the builder and constructs a [`GetInstanceProfileInput`](crate::operation::get_instance_profile::GetInstanceProfileInput).
     pub fn build(
         self,

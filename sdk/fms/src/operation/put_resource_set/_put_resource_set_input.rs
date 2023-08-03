@@ -50,6 +50,10 @@ impl PutResourceSetInputBuilder {
         self.resource_set = input;
         self
     }
+    /// <p>Details about the resource set to be created or updated.&gt;</p>
+    pub fn get_resource_set(&self) -> &::std::option::Option<crate::types::ResourceSet> {
+        &self.resource_set
+    }
     /// Appends an item to `tag_list`.
     ///
     /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
@@ -68,6 +72,10 @@ impl PutResourceSetInputBuilder {
     ) -> Self {
         self.tag_list = input;
         self
+    }
+    /// <p>Retrieves the tags associated with the specified resource set. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource.</p>
+    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tag_list
     }
     /// Consumes the builder and constructs a [`PutResourceSetInput`](crate::operation::put_resource_set::PutResourceSetInput).
     pub fn build(

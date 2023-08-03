@@ -47,6 +47,10 @@ impl DeleteMissionProfileInputBuilder {
         self.mission_profile_id = input;
         self
     }
+    /// <p>UUID of a mission profile.</p>
+    pub fn get_mission_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mission_profile_id
+    }
     /// Consumes the builder and constructs a [`DeleteMissionProfileInput`](crate::operation::delete_mission_profile::DeleteMissionProfileInput).
     pub fn build(
         self,

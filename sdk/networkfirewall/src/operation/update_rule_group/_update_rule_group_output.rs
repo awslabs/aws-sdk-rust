@@ -59,6 +59,11 @@ impl UpdateRuleGroupOutputBuilder {
         self.update_token = input;
         self
     }
+    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p>
+    /// <p>To make changes to the rule group, you provide the token in your request. Network Firewall uses the token to ensure that the rule group hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the rule group again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token. </p>
+    pub fn get_update_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.update_token
+    }
     /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
     pub fn rule_group_response(mut self, input: crate::types::RuleGroupResponse) -> Self {
         self.rule_group_response = ::std::option::Option::Some(input);
@@ -71,6 +76,12 @@ impl UpdateRuleGroupOutputBuilder {
     ) -> Self {
         self.rule_group_response = input;
         self
+    }
+    /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
+    pub fn get_rule_group_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::RuleGroupResponse> {
+        &self.rule_group_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -49,6 +49,10 @@ impl BatchDeleteConnectionInputBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// Appends an item to `connection_name_list`.
     ///
     /// To override the contents of this collection use [`set_connection_name_list`](Self::set_connection_name_list).
@@ -70,6 +74,12 @@ impl BatchDeleteConnectionInputBuilder {
     ) -> Self {
         self.connection_name_list = input;
         self
+    }
+    /// <p>A list of names of the connections to delete.</p>
+    pub fn get_connection_name_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.connection_name_list
     }
     /// Consumes the builder and constructs a [`BatchDeleteConnectionInput`](crate::operation::batch_delete_connection::BatchDeleteConnectionInput).
     pub fn build(

@@ -123,6 +123,10 @@ impl SnapshotBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p>The ID of the snapshot.</p>
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_id = ::std::option::Option::Some(input.into());
@@ -132,6 +136,10 @@ impl SnapshotBuilder {
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_id = input;
         self
+    }
+    /// <p>The ID of the snapshot.</p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_id
     }
     /// <p>The name of the snapshot.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -143,6 +151,10 @@ impl SnapshotBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the snapshot.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The ID of the volume that the snapshot is of.</p>
     pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_id = ::std::option::Option::Some(input.into());
@@ -152,6 +164,10 @@ impl SnapshotBuilder {
     pub fn set_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_id = input;
         self
+    }
+    /// <p>The ID of the volume that the snapshot is of.</p>
+    pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_id
     }
     /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -165,6 +181,10 @@ impl SnapshotBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The lifecycle status of the snapshot.</p>
     /// <ul>
@@ -191,6 +211,16 @@ impl SnapshotBuilder {
         self.lifecycle = input;
         self
     }
+    /// <p>The lifecycle status of the snapshot.</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING</code> - Amazon FSx hasn't started creating the snapshot.</p> </li>
+    /// <li> <p> <code>CREATING</code> - Amazon FSx is creating the snapshot.</p> </li>
+    /// <li> <p> <code>DELETING</code> - Amazon FSx is deleting the snapshot.</p> </li>
+    /// <li> <p> <code>AVAILABLE</code> - The snapshot is fully available.</p> </li>
+    /// </ul>
+    pub fn get_lifecycle(&self) -> &::std::option::Option<crate::types::SnapshotLifecycle> {
+        &self.lifecycle
+    }
     /// <p>Describes why a resource lifecycle state changed.</p>
     pub fn lifecycle_transition_reason(
         mut self,
@@ -206,6 +236,12 @@ impl SnapshotBuilder {
     ) -> Self {
         self.lifecycle_transition_reason = input;
         self
+    }
+    /// <p>Describes why a resource lifecycle state changed.</p>
+    pub fn get_lifecycle_transition_reason(
+        &self,
+    ) -> &::std::option::Option<crate::types::LifecycleTransitionReason> {
+        &self.lifecycle_transition_reason
     }
     /// Appends an item to `tags`.
     ///
@@ -226,6 +262,10 @@ impl SnapshotBuilder {
         self.tags = input;
         self
     }
+    /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Appends an item to `administrative_actions`.
     ///
     /// To override the contents of this collection use [`set_administrative_actions`](Self::set_administrative_actions).
@@ -244,6 +284,12 @@ impl SnapshotBuilder {
     ) -> Self {
         self.administrative_actions = input;
         self
+    }
+    /// <p>A list of administrative actions for the file system that are in process or waiting to be processed. Administrative actions describe changes to the Amazon FSx system.</p>
+    pub fn get_administrative_actions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdministrativeAction>> {
+        &self.administrative_actions
     }
     /// Consumes the builder and constructs a [`Snapshot`](crate::types::Snapshot).
     pub fn build(self) -> crate::types::Snapshot {

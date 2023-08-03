@@ -48,6 +48,10 @@ impl FaceRecordBuilder {
         self.face = input;
         self
     }
+    /// <p>Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image ID that you assigned. </p>
+    pub fn get_face(&self) -> &::std::option::Option<crate::types::Face> {
+        &self.face
+    }
     /// <p>Structure containing attributes of the face that the algorithm detected.</p>
     pub fn face_detail(mut self, input: crate::types::FaceDetail) -> Self {
         self.face_detail = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl FaceRecordBuilder {
     ) -> Self {
         self.face_detail = input;
         self
+    }
+    /// <p>Structure containing attributes of the face that the algorithm detected.</p>
+    pub fn get_face_detail(&self) -> &::std::option::Option<crate::types::FaceDetail> {
+        &self.face_detail
     }
     /// Consumes the builder and constructs a [`FaceRecord`](crate::types::FaceRecord).
     pub fn build(self) -> crate::types::FaceRecord {

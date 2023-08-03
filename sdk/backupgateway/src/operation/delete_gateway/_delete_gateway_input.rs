@@ -39,6 +39,10 @@ impl DeleteGatewayInputBuilder {
         self.gateway_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway to delete.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
+    }
     /// Consumes the builder and constructs a [`DeleteGatewayInput`](crate::operation::delete_gateway::DeleteGatewayInput).
     pub fn build(
         self,

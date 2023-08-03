@@ -46,6 +46,10 @@ impl ModelCardExportOutputConfigBuilder {
         self.s3_output_path = input;
         self
     }
+    /// <p>The Amazon S3 output path to export your model card PDF.</p>
+    pub fn get_s3_output_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_output_path
+    }
     /// Consumes the builder and constructs a [`ModelCardExportOutputConfig`](crate::types::ModelCardExportOutputConfig).
     pub fn build(self) -> crate::types::ModelCardExportOutputConfig {
         crate::types::ModelCardExportOutputConfig {

@@ -48,6 +48,10 @@ impl BusinessReportS3LocationBuilder {
         self.path = input;
         self
     }
+    /// <p>The path of the business report.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
+    }
     /// <p>The S3 bucket name of the output reports.</p>
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl BusinessReportS3LocationBuilder {
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_name = input;
         self
+    }
+    /// <p>The S3 bucket name of the output reports.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
     }
     /// Consumes the builder and constructs a [`BusinessReportS3Location`](crate::types::BusinessReportS3Location).
     pub fn build(self) -> crate::types::BusinessReportS3Location {

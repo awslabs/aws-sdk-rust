@@ -37,6 +37,13 @@ impl BatchDisableStandardsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchDisableStandards as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_disable_standards::builders::BatchDisableStandardsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,5 +143,11 @@ impl BatchDisableStandardsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_standards_subscription_arns(input);
         self
+    }
+    /// <p>The ARNs of the standards subscriptions to disable.</p>
+    pub fn get_standards_subscription_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_standards_subscription_arns()
     }
 }

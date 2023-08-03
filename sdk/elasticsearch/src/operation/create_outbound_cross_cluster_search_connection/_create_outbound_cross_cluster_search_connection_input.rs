@@ -61,6 +61,12 @@ impl CreateOutboundCrossClusterSearchConnectionInputBuilder {
         self.source_domain_info = input;
         self
     }
+    /// <p>Specifies the <code><code>DomainInformation</code></code> for the source Elasticsearch domain.</p>
+    pub fn get_source_domain_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::DomainInformation> {
+        &self.source_domain_info
+    }
     /// <p>Specifies the <code><code>DomainInformation</code></code> for the destination Elasticsearch domain.</p>
     pub fn destination_domain_info(mut self, input: crate::types::DomainInformation) -> Self {
         self.destination_domain_info = ::std::option::Option::Some(input);
@@ -73,6 +79,12 @@ impl CreateOutboundCrossClusterSearchConnectionInputBuilder {
     ) -> Self {
         self.destination_domain_info = input;
         self
+    }
+    /// <p>Specifies the <code><code>DomainInformation</code></code> for the destination Elasticsearch domain.</p>
+    pub fn get_destination_domain_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::DomainInformation> {
+        &self.destination_domain_info
     }
     /// <p>Specifies the connection alias that will be used by the customer for this connection.</p>
     pub fn connection_alias(
@@ -89,6 +101,10 @@ impl CreateOutboundCrossClusterSearchConnectionInputBuilder {
     ) -> Self {
         self.connection_alias = input;
         self
+    }
+    /// <p>Specifies the connection alias that will be used by the customer for this connection.</p>
+    pub fn get_connection_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_alias
     }
     /// Consumes the builder and constructs a [`CreateOutboundCrossClusterSearchConnectionInput`](crate::operation::create_outbound_cross_cluster_search_connection::CreateOutboundCrossClusterSearchConnectionInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_outbound_cross_cluster_search_connection::CreateOutboundCrossClusterSearchConnectionInput, ::aws_smithy_http::operation::error::BuildError>{

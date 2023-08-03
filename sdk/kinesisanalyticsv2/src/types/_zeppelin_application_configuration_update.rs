@@ -86,6 +86,12 @@ impl ZeppelinApplicationConfigurationUpdateBuilder {
         self.monitoring_configuration_update = input;
         self
     }
+    /// <p>Updates to the monitoring configuration of a Kinesis Data Analytics Studio notebook.</p>
+    pub fn get_monitoring_configuration_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::ZeppelinMonitoringConfigurationUpdate> {
+        &self.monitoring_configuration_update
+    }
     /// <p>Updates to the configuration of the Amazon Glue Data Catalog that is associated with the Kinesis Data Analytics Studio notebook.</p>
     pub fn catalog_configuration_update(
         mut self,
@@ -102,6 +108,12 @@ impl ZeppelinApplicationConfigurationUpdateBuilder {
         self.catalog_configuration_update = input;
         self
     }
+    /// <p>Updates to the configuration of the Amazon Glue Data Catalog that is associated with the Kinesis Data Analytics Studio notebook.</p>
+    pub fn get_catalog_configuration_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::CatalogConfigurationUpdate> {
+        &self.catalog_configuration_update
+    }
     /// <p>Updates to the configuration information required to deploy an Amazon Data Analytics Studio notebook as an application with durable state.</p>
     pub fn deploy_as_application_configuration_update(
         mut self,
@@ -117,6 +129,12 @@ impl ZeppelinApplicationConfigurationUpdateBuilder {
     ) -> Self {
         self.deploy_as_application_configuration_update = input;
         self
+    }
+    /// <p>Updates to the configuration information required to deploy an Amazon Data Analytics Studio notebook as an application with durable state.</p>
+    pub fn get_deploy_as_application_configuration_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeployAsApplicationConfigurationUpdate> {
+        &self.deploy_as_application_configuration_update
     }
     /// Appends an item to `custom_artifacts_configuration_update`.
     ///
@@ -141,6 +159,12 @@ impl ZeppelinApplicationConfigurationUpdateBuilder {
     ) -> Self {
         self.custom_artifacts_configuration_update = input;
         self
+    }
+    /// <p>Updates to the customer artifacts. Custom artifacts are dependency JAR files and user-defined functions (UDF).</p>
+    pub fn get_custom_artifacts_configuration_update(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomArtifactConfiguration>> {
+        &self.custom_artifacts_configuration_update
     }
     /// Consumes the builder and constructs a [`ZeppelinApplicationConfigurationUpdate`](crate::types::ZeppelinApplicationConfigurationUpdate).
     pub fn build(self) -> crate::types::ZeppelinApplicationConfigurationUpdate {

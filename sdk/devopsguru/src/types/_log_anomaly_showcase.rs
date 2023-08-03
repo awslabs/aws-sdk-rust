@@ -50,6 +50,12 @@ impl LogAnomalyShowcaseBuilder {
         self.log_anomaly_classes = input;
         self
     }
+    /// <p> A list of anomalous log events that may be related. </p>
+    pub fn get_log_anomaly_classes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LogAnomalyClass>> {
+        &self.log_anomaly_classes
+    }
     /// Consumes the builder and constructs a [`LogAnomalyShowcase`](crate::types::LogAnomalyShowcase).
     pub fn build(self) -> crate::types::LogAnomalyShowcase {
         crate::types::LogAnomalyShowcase {

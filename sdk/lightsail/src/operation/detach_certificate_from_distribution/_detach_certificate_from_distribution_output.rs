@@ -46,6 +46,10 @@ impl DetachCertificateFromDistributionOutputBuilder {
         self.operation = input;
         self
     }
+    /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn get_operation(&self) -> &::std::option::Option<crate::types::Operation> {
+        &self.operation
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

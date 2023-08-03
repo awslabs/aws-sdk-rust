@@ -39,6 +39,10 @@ impl UpdateEgressGatewayBridgeRequestBuilder {
         self.max_bitrate = input;
         self
     }
+    /// Update an existing egress-type bridge.
+    pub fn get_max_bitrate(&self) -> &::std::option::Option<i32> {
+        &self.max_bitrate
+    }
     /// Consumes the builder and constructs a [`UpdateEgressGatewayBridgeRequest`](crate::types::UpdateEgressGatewayBridgeRequest).
     pub fn build(self) -> crate::types::UpdateEgressGatewayBridgeRequest {
         crate::types::UpdateEgressGatewayBridgeRequest {

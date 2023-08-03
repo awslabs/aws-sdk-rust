@@ -56,6 +56,10 @@ impl ListCertificatesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Returns the next token, which you can use to list the next certificate.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `certificates`.
     ///
     /// To override the contents of this collection use [`set_certificates`](Self::set_certificates).
@@ -74,6 +78,12 @@ impl ListCertificatesOutputBuilder {
     ) -> Self {
         self.certificates = input;
         self
+    }
+    /// <p>Returns an array of the certificates that are specified in the <code>ListCertificates</code> call.</p>
+    pub fn get_certificates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedCertificate>> {
+        &self.certificates
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

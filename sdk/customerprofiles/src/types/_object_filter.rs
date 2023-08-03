@@ -48,6 +48,10 @@ impl ObjectFilterBuilder {
         self.key_name = input;
         self
     }
+    /// <p>A searchable identifier of a profile object. The predefined keys you can use to search for <code>_asset</code> include: <code>_assetId</code>, <code>_assetName</code>, and <code>_serialNumber</code>. The predefined keys you can use to search for <code>_case</code> include: <code>_caseId</code>. The predefined keys you can use to search for <code>_order</code> include: <code>_orderId</code>.</p>
+    pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_name
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -66,6 +70,10 @@ impl ObjectFilterBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>A list of key values.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`ObjectFilter`](crate::types::ObjectFilter).
     pub fn build(self) -> crate::types::ObjectFilter {

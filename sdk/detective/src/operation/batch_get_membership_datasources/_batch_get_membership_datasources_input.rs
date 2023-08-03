@@ -48,6 +48,10 @@ impl BatchGetMembershipDatasourcesInputBuilder {
         self.graph_arns = input;
         self
     }
+    /// <p>The ARN of the behavior graph.</p>
+    pub fn get_graph_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.graph_arns
+    }
     /// Consumes the builder and constructs a [`BatchGetMembershipDatasourcesInput`](crate::operation::batch_get_membership_datasources::BatchGetMembershipDatasourcesInput).
     pub fn build(
         self,

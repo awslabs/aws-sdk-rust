@@ -36,6 +36,12 @@ impl DeleteApplicationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteApplication as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_application::builders::DeleteApplicationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl DeleteApplicationFluentBuilder {
         self.inner = self.inner.set_environment_identifier(input);
         self
     }
+    /// <p>The ID of the environment. </p>
+    pub fn get_environment_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_identifier()
+    }
     /// <p>The ID of the application.</p>
     pub fn application_identifier(
         mut self,
@@ -147,5 +157,9 @@ impl DeleteApplicationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_application_identifier(input);
         self
+    }
+    /// <p>The ID of the application.</p>
+    pub fn get_application_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_identifier()
     }
 }

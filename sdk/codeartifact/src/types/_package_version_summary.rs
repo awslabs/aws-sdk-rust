@@ -64,6 +64,10 @@ impl PackageVersionSummaryBuilder {
         self.version = input;
         self
     }
+    /// <p> Information about a package version. </p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
+    }
     /// <p> The revision associated with a package version. </p>
     pub fn revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl PackageVersionSummaryBuilder {
     pub fn set_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision = input;
         self
+    }
+    /// <p> The revision associated with a package version. </p>
+    pub fn get_revision(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision
     }
     /// <p> A string that contains the status of the package version. It can be one of the following: </p>
     pub fn status(mut self, input: crate::types::PackageVersionStatus) -> Self {
@@ -87,6 +95,10 @@ impl PackageVersionSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p> A string that contains the status of the package version. It can be one of the following: </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::PackageVersionStatus> {
+        &self.status
+    }
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a> object that contains information about how the package version was added to the repository.</p>
     pub fn origin(mut self, input: crate::types::PackageVersionOrigin) -> Self {
         self.origin = ::std::option::Option::Some(input);
@@ -99,6 +111,10 @@ impl PackageVersionSummaryBuilder {
     ) -> Self {
         self.origin = input;
         self
+    }
+    /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a> object that contains information about how the package version was added to the repository.</p>
+    pub fn get_origin(&self) -> &::std::option::Option<crate::types::PackageVersionOrigin> {
+        &self.origin
     }
     /// Consumes the builder and constructs a [`PackageVersionSummary`](crate::types::PackageVersionSummary).
     pub fn build(self) -> crate::types::PackageVersionSummary {

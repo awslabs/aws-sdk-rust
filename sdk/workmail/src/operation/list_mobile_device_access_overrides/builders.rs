@@ -36,6 +36,10 @@ impl ListMobileDeviceAccessOverridesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListMobileDeviceAccessOverrides as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_mobile_device_access_overrides::builders::ListMobileDeviceAccessOverridesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -112,6 +116,10 @@ impl ListMobileDeviceAccessOverridesFluentBuilder {
         self.inner = self.inner.set_organization_id(input);
         self
     }
+    /// <p>The WorkMail organization under which to list mobile device access overrides.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
+    }
     /// <p>The WorkMail user under which you list the mobile device access overrides. Accepts the following types of user identities:</p>
     /// <ul>
     /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
@@ -132,6 +140,15 @@ impl ListMobileDeviceAccessOverridesFluentBuilder {
         self.inner = self.inner.set_user_id(input);
         self
     }
+    /// <p>The WorkMail user under which you list the mobile device access overrides. Accepts the following types of user identities:</p>
+    /// <ul>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
+    /// </ul>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_id()
+    }
     /// <p>The mobile device to which the access override applies.</p>
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_id(input.into());
@@ -141,6 +158,10 @@ impl ListMobileDeviceAccessOverridesFluentBuilder {
     pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_id(input);
         self
+    }
+    /// <p>The mobile device to which the access override applies.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_id()
     }
     /// <p>The token to use to retrieve the next page of results. The first call does not require a token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -152,6 +173,10 @@ impl ListMobileDeviceAccessOverridesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token to use to retrieve the next page of results. The first call does not require a token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -161,5 +186,9 @@ impl ListMobileDeviceAccessOverridesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return in a single call.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

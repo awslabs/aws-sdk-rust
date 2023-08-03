@@ -37,6 +37,10 @@ impl BatchDescribeTypeConfigurationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchDescribeTypeConfigurations as a reference.
+    pub fn as_input(&self) -> &crate::operation::batch_describe_type_configurations::builders::BatchDescribeTypeConfigurationsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -110,5 +114,11 @@ impl BatchDescribeTypeConfigurationsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_type_configuration_identifiers(input);
         self
+    }
+    /// <p>The list of identifiers for the desired extension configurations.</p>
+    pub fn get_type_configuration_identifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TypeConfigurationIdentifier>> {
+        self.inner.get_type_configuration_identifiers()
     }
 }

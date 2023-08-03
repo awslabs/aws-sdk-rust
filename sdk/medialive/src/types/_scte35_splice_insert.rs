@@ -64,6 +64,10 @@ impl Scte35SpliceInsertBuilder {
         self.ad_avail_offset = input;
         self
     }
+    /// When specified, this offset (in milliseconds) is added to the input Ad Avail PTS time. This only applies to embedded SCTE 104/35 messages and does not apply to OOB messages.
+    pub fn get_ad_avail_offset(&self) -> &::std::option::Option<i32> {
+        &self.ad_avail_offset
+    }
     /// When set to ignore, Segment Descriptors with noRegionalBlackoutFlag set to 0 will no longer trigger blackouts or Ad Avail slates
     pub fn no_regional_blackout_flag(
         mut self,
@@ -80,6 +84,12 @@ impl Scte35SpliceInsertBuilder {
         self.no_regional_blackout_flag = input;
         self
     }
+    /// When set to ignore, Segment Descriptors with noRegionalBlackoutFlag set to 0 will no longer trigger blackouts or Ad Avail slates
+    pub fn get_no_regional_blackout_flag(
+        &self,
+    ) -> &::std::option::Option<crate::types::Scte35SpliceInsertNoRegionalBlackoutBehavior> {
+        &self.no_regional_blackout_flag
+    }
     /// When set to ignore, Segment Descriptors with webDeliveryAllowedFlag set to 0 will no longer trigger blackouts or Ad Avail slates
     pub fn web_delivery_allowed_flag(
         mut self,
@@ -95,6 +105,12 @@ impl Scte35SpliceInsertBuilder {
     ) -> Self {
         self.web_delivery_allowed_flag = input;
         self
+    }
+    /// When set to ignore, Segment Descriptors with webDeliveryAllowedFlag set to 0 will no longer trigger blackouts or Ad Avail slates
+    pub fn get_web_delivery_allowed_flag(
+        &self,
+    ) -> &::std::option::Option<crate::types::Scte35SpliceInsertWebDeliveryAllowedBehavior> {
+        &self.web_delivery_allowed_flag
     }
     /// Consumes the builder and constructs a [`Scte35SpliceInsert`](crate::types::Scte35SpliceInsert).
     pub fn build(self) -> crate::types::Scte35SpliceInsert {

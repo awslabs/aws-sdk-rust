@@ -64,6 +64,10 @@ impl ScalingRuleBuilder {
         self.name = input;
         self
     }
+    /// <p>The name used to identify an automatic scaling rule. Rule names must be unique within a scaling policy.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A friendly, more verbose description of the automatic scaling rule.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl ScalingRuleBuilder {
         self.description = input;
         self
     }
+    /// <p>A friendly, more verbose description of the automatic scaling rule.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The conditions that trigger an automatic scaling activity.</p>
     pub fn action(mut self, input: crate::types::ScalingAction) -> Self {
         self.action = ::std::option::Option::Some(input);
@@ -83,6 +91,10 @@ impl ScalingRuleBuilder {
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::ScalingAction>) -> Self {
         self.action = input;
         self
+    }
+    /// <p>The conditions that trigger an automatic scaling activity.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::ScalingAction> {
+        &self.action
     }
     /// <p>The CloudWatch alarm definition that determines when automatic scaling activity is triggered.</p>
     pub fn trigger(mut self, input: crate::types::ScalingTrigger) -> Self {
@@ -96,6 +108,10 @@ impl ScalingRuleBuilder {
     ) -> Self {
         self.trigger = input;
         self
+    }
+    /// <p>The CloudWatch alarm definition that determines when automatic scaling activity is triggered.</p>
+    pub fn get_trigger(&self) -> &::std::option::Option<crate::types::ScalingTrigger> {
+        &self.trigger
     }
     /// Consumes the builder and constructs a [`ScalingRule`](crate::types::ScalingRule).
     pub fn build(self) -> crate::types::ScalingRule {

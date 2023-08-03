@@ -40,6 +40,10 @@ impl DeleteGitHubAccountTokenInputBuilder {
         self.token_name = input;
         self
     }
+    /// <p>The name of the GitHub account connection to delete.</p>
+    pub fn get_token_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token_name
+    }
     /// Consumes the builder and constructs a [`DeleteGitHubAccountTokenInput`](crate::operation::delete_git_hub_account_token::DeleteGitHubAccountTokenInput).
     pub fn build(
         self,

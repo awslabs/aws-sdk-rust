@@ -46,6 +46,10 @@ impl CancelInputDeviceTransferInputBuilder {
         self.input_device_id = input;
         self
     }
+    /// The unique ID of the input device to cancel. For example, hd-123456789abcdef.
+    pub fn get_input_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_device_id
+    }
     /// Consumes the builder and constructs a [`CancelInputDeviceTransferInput`](crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferInput).
     pub fn build(
         self,

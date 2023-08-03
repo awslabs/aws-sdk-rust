@@ -80,6 +80,10 @@ impl DeviceInstanceBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the device instance.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The ARN of the device.</p>
     pub fn device_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_arn = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl DeviceInstanceBuilder {
     pub fn set_device_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_arn = input;
         self
+    }
+    /// <p>The ARN of the device.</p>
+    pub fn get_device_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_arn
     }
     /// Appends an item to `labels`.
     ///
@@ -109,6 +117,10 @@ impl DeviceInstanceBuilder {
         self.labels = input;
         self
     }
+    /// <p>An array of strings that describe the device instance.</p>
+    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.labels
+    }
     /// <p>The status of the device instance. Valid values are listed here.</p>
     pub fn status(mut self, input: crate::types::InstanceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -122,6 +134,10 @@ impl DeviceInstanceBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the device instance. Valid values are listed here.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::InstanceStatus> {
+        &self.status
+    }
     /// <p>Unique device identifier for the device instance.</p>
     pub fn udid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.udid = ::std::option::Option::Some(input.into());
@@ -131,6 +147,10 @@ impl DeviceInstanceBuilder {
     pub fn set_udid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.udid = input;
         self
+    }
+    /// <p>Unique device identifier for the device instance.</p>
+    pub fn get_udid(&self) -> &::std::option::Option<::std::string::String> {
+        &self.udid
     }
     /// <p>A object that contains information about the instance profile.</p>
     pub fn instance_profile(mut self, input: crate::types::InstanceProfile) -> Self {
@@ -144,6 +164,10 @@ impl DeviceInstanceBuilder {
     ) -> Self {
         self.instance_profile = input;
         self
+    }
+    /// <p>A object that contains information about the instance profile.</p>
+    pub fn get_instance_profile(&self) -> &::std::option::Option<crate::types::InstanceProfile> {
+        &self.instance_profile
     }
     /// Consumes the builder and constructs a [`DeviceInstance`](crate::types::DeviceInstance).
     pub fn build(self) -> crate::types::DeviceInstance {

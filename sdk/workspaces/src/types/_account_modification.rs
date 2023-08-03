@@ -95,6 +95,12 @@ impl AccountModificationBuilder {
         self.modification_state = input;
         self
     }
+    /// <p>The state of the modification to the configuration of BYOL.</p>
+    pub fn get_modification_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::DedicatedTenancyModificationStateEnum> {
+        &self.modification_state
+    }
     /// <p>The status of BYOL (whether BYOL is being enabled or disabled).</p>
     pub fn dedicated_tenancy_support(
         mut self,
@@ -110,6 +116,12 @@ impl AccountModificationBuilder {
     ) -> Self {
         self.dedicated_tenancy_support = input;
         self
+    }
+    /// <p>The status of BYOL (whether BYOL is being enabled or disabled).</p>
+    pub fn get_dedicated_tenancy_support(
+        &self,
+    ) -> &::std::option::Option<crate::types::DedicatedTenancySupportResultEnum> {
+        &self.dedicated_tenancy_support
     }
     /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network interface used for the account.</p>
     pub fn dedicated_tenancy_management_cidr_range(
@@ -127,6 +139,12 @@ impl AccountModificationBuilder {
         self.dedicated_tenancy_management_cidr_range = input;
         self
     }
+    /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network interface used for the account.</p>
+    pub fn get_dedicated_tenancy_management_cidr_range(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.dedicated_tenancy_management_cidr_range
+    }
     /// <p>The timestamp when the modification of the BYOL configuration was started.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -140,6 +158,10 @@ impl AccountModificationBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The timestamp when the modification of the BYOL configuration was started.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The error code that is returned if the configuration of BYOL cannot be modified.</p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
@@ -149,6 +171,10 @@ impl AccountModificationBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The error code that is returned if the configuration of BYOL cannot be modified.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
     }
     /// <p>The text of the error message that is returned if the configuration of BYOL cannot be modified.</p>
     pub fn error_message(
@@ -165,6 +191,10 @@ impl AccountModificationBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>The text of the error message that is returned if the configuration of BYOL cannot be modified.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`AccountModification`](crate::types::AccountModification).
     pub fn build(self) -> crate::types::AccountModification {

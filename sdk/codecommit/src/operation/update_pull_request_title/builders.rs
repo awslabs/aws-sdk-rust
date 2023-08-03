@@ -37,6 +37,13 @@ impl UpdatePullRequestTitleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdatePullRequestTitle as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_pull_request_title::builders::UpdatePullRequestTitleInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl UpdatePullRequestTitleFluentBuilder {
         self.inner = self.inner.set_pull_request_id(input);
         self
     }
+    /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+    pub fn get_pull_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pull_request_id()
+    }
     /// <p>The updated title of the pull request. This replaces the existing title.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.title(input.into());
@@ -142,5 +153,9 @@ impl UpdatePullRequestTitleFluentBuilder {
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_title(input);
         self
+    }
+    /// <p>The updated title of the pull request. This replaces the existing title.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_title()
     }
 }

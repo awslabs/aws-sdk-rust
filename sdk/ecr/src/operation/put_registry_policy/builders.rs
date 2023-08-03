@@ -37,6 +37,12 @@ impl PutRegistryPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutRegistryPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_registry_policy::builders::PutRegistryPolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,5 +132,9 @@ impl PutRegistryPolicyFluentBuilder {
     pub fn set_policy_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_text(input);
         self
+    }
+    /// <p>The JSON policy text to apply to your registry. The policy text follows the same format as IAM policy text. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry-permissions.html">Registry permissions</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
+    pub fn get_policy_text(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_text()
     }
 }

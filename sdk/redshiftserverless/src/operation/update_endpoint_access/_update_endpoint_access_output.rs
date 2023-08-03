@@ -50,6 +50,10 @@ impl UpdateEndpointAccessOutputBuilder {
         self.endpoint = input;
         self
     }
+    /// <p>The updated VPC endpoint.</p>
+    pub fn get_endpoint(&self) -> &::std::option::Option<crate::types::EndpointAccess> {
+        &self.endpoint
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

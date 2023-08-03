@@ -56,6 +56,10 @@ impl UseCaseBuilder {
         self.use_case_id = input;
         self
     }
+    /// <p>The identifier for the use case.</p>
+    pub fn get_use_case_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.use_case_id
+    }
     /// <p>The Amazon Resource Name (ARN) for the use case.</p>
     pub fn use_case_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.use_case_arn = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl UseCaseBuilder {
     pub fn set_use_case_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.use_case_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the use case.</p>
+    pub fn get_use_case_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.use_case_arn
     }
     /// <p>The type of use case to associate to the integration association. Each integration association can have only one of each use case type.</p>
     pub fn use_case_type(mut self, input: crate::types::UseCaseType) -> Self {
@@ -78,6 +86,10 @@ impl UseCaseBuilder {
     ) -> Self {
         self.use_case_type = input;
         self
+    }
+    /// <p>The type of use case to associate to the integration association. Each integration association can have only one of each use case type.</p>
+    pub fn get_use_case_type(&self) -> &::std::option::Option<crate::types::UseCaseType> {
+        &self.use_case_type
     }
     /// Consumes the builder and constructs a [`UseCase`](crate::types::UseCase).
     pub fn build(self) -> crate::types::UseCase {

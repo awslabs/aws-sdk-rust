@@ -64,6 +64,10 @@ impl InvitationBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The account ID of the Security Hub administrator account that the invitation was sent from.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The ID of the invitation sent to the member account.</p>
     pub fn invitation_id(
         mut self,
@@ -80,6 +84,10 @@ impl InvitationBuilder {
         self.invitation_id = input;
         self
     }
+    /// <p>The ID of the invitation sent to the member account.</p>
+    pub fn get_invitation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.invitation_id
+    }
     /// <p>The timestamp of when the invitation was sent.</p>
     pub fn invited_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.invited_at = ::std::option::Option::Some(input);
@@ -92,6 +100,10 @@ impl InvitationBuilder {
     ) -> Self {
         self.invited_at = input;
         self
+    }
+    /// <p>The timestamp of when the invitation was sent.</p>
+    pub fn get_invited_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.invited_at
     }
     /// <p>The current status of the association between the member and administrator accounts.</p>
     pub fn member_status(
@@ -108,6 +120,10 @@ impl InvitationBuilder {
     ) -> Self {
         self.member_status = input;
         self
+    }
+    /// <p>The current status of the association between the member and administrator accounts.</p>
+    pub fn get_member_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_status
     }
     /// Consumes the builder and constructs a [`Invitation`](crate::types::Invitation).
     pub fn build(self) -> crate::types::Invitation {

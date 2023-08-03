@@ -36,6 +36,10 @@ impl ReadPresetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ReadPreset as a reference.
+    pub fn as_input(&self) -> &crate::operation::read_preset::builders::ReadPresetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -117,5 +121,9 @@ impl ReadPresetFluentBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
+    }
+    /// <p>The identifier of the preset for which you want to get detailed information.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
     }
 }

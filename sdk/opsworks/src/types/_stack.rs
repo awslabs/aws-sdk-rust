@@ -223,6 +223,10 @@ impl StackBuilder {
         self.stack_id = input;
         self
     }
+    /// <p>The stack ID.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_id
+    }
     /// <p>The stack name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -232,6 +236,10 @@ impl StackBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The stack name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The stack's ARN.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -243,6 +251,10 @@ impl StackBuilder {
         self.arn = input;
         self
     }
+    /// <p>The stack's ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -253,6 +265,10 @@ impl StackBuilder {
         self.region = input;
         self
     }
+    /// <p>The stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
+    }
     /// <p>The VPC ID; applicable only if the stack is running in a VPC.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -262,6 +278,10 @@ impl StackBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The VPC ID; applicable only if the stack is running in a VPC.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Adds a key-value pair to `attributes`.
     ///
@@ -288,6 +308,14 @@ impl StackBuilder {
         self.attributes = input;
         self
     }
+    /// <p>The stack's attributes.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<crate::types::StackAttributesKeys, ::std::string::String>,
+    > {
+        &self.attributes
+    }
     /// <p>The stack AWS Identity and Access Management (IAM) role.</p>
     pub fn service_role_arn(
         mut self,
@@ -303,6 +331,10 @@ impl StackBuilder {
     ) -> Self {
         self.service_role_arn = input;
         self
+    }
+    /// <p>The stack AWS Identity and Access Management (IAM) role.</p>
+    pub fn get_service_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_role_arn
     }
     /// <p>The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub fn default_instance_profile_arn(
@@ -320,6 +352,12 @@ impl StackBuilder {
         self.default_instance_profile_arn = input;
         self
     }
+    /// <p>The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+    pub fn get_default_instance_profile_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.default_instance_profile_arn
+    }
     /// <p>The stack's default operating system.</p>
     pub fn default_os(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_os = ::std::option::Option::Some(input.into());
@@ -329,6 +367,10 @@ impl StackBuilder {
     pub fn set_default_os(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_os = input;
         self
+    }
+    /// <p>The stack's default operating system.</p>
+    pub fn get_default_os(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_os
     }
     /// <p>The stack host name theme, with spaces replaced by underscores.</p>
     pub fn hostname_theme(
@@ -346,6 +388,10 @@ impl StackBuilder {
         self.hostname_theme = input;
         self
     }
+    /// <p>The stack host name theme, with spaces replaced by underscores.</p>
+    pub fn get_hostname_theme(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hostname_theme
+    }
     /// <p>The stack's default Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     pub fn default_availability_zone(
         mut self,
@@ -361,6 +407,10 @@ impl StackBuilder {
     ) -> Self {
         self.default_availability_zone = input;
         self
+    }
+    /// <p>The stack's default Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    pub fn get_default_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_availability_zone
     }
     /// <p>The default subnet ID; applicable only if the stack is running in a VPC.</p>
     pub fn default_subnet_id(
@@ -378,6 +428,10 @@ impl StackBuilder {
         self.default_subnet_id = input;
         self
     }
+    /// <p>The default subnet ID; applicable only if the stack is running in a VPC.</p>
+    pub fn get_default_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_subnet_id
+    }
     /// <p>A JSON object that contains user-defined attributes to be added to the stack configuration and deployment attributes. You can use custom JSON to override the corresponding default stack configuration attribute values or to pass data to recipes. The string should be in the following format:</p>
     /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
     /// <p>For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
@@ -392,6 +446,12 @@ impl StackBuilder {
         self.custom_json = input;
         self
     }
+    /// <p>A JSON object that contains user-defined attributes to be added to the stack configuration and deployment attributes. You can use custom JSON to override the corresponding default stack configuration attribute values or to pass data to recipes. The string should be in the following format:</p>
+    /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+    /// <p>For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
+    pub fn get_custom_json(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_json
+    }
     /// <p>The configuration manager.</p>
     pub fn configuration_manager(mut self, input: crate::types::StackConfigurationManager) -> Self {
         self.configuration_manager = ::std::option::Option::Some(input);
@@ -404,6 +464,12 @@ impl StackBuilder {
     ) -> Self {
         self.configuration_manager = input;
         self
+    }
+    /// <p>The configuration manager.</p>
+    pub fn get_configuration_manager(
+        &self,
+    ) -> &::std::option::Option<crate::types::StackConfigurationManager> {
+        &self.configuration_manager
     }
     /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
     pub fn chef_configuration(mut self, input: crate::types::ChefConfiguration) -> Self {
@@ -418,6 +484,12 @@ impl StackBuilder {
         self.chef_configuration = input;
         self
     }
+    /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+    pub fn get_chef_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ChefConfiguration> {
+        &self.chef_configuration
+    }
     /// <p>Whether the stack uses custom cookbooks.</p>
     pub fn use_custom_cookbooks(mut self, input: bool) -> Self {
         self.use_custom_cookbooks = ::std::option::Option::Some(input);
@@ -428,6 +500,10 @@ impl StackBuilder {
         self.use_custom_cookbooks = input;
         self
     }
+    /// <p>Whether the stack uses custom cookbooks.</p>
+    pub fn get_use_custom_cookbooks(&self) -> &::std::option::Option<bool> {
+        &self.use_custom_cookbooks
+    }
     /// <p>Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
     pub fn use_opsworks_security_groups(mut self, input: bool) -> Self {
         self.use_opsworks_security_groups = ::std::option::Option::Some(input);
@@ -437,6 +513,10 @@ impl StackBuilder {
     pub fn set_use_opsworks_security_groups(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_opsworks_security_groups = input;
         self
+    }
+    /// <p>Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
+    pub fn get_use_opsworks_security_groups(&self) -> &::std::option::Option<bool> {
+        &self.use_opsworks_security_groups
     }
     /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
     pub fn custom_cookbooks_source(mut self, input: crate::types::Source) -> Self {
@@ -450,6 +530,10 @@ impl StackBuilder {
     ) -> Self {
         self.custom_cookbooks_source = input;
         self
+    }
+    /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
+    pub fn get_custom_cookbooks_source(&self) -> &::std::option::Option<crate::types::Source> {
+        &self.custom_cookbooks_source
     }
     /// <p>A default Amazon EC2 key pair for the stack's instances. You can override this value when you create or update an instance.</p>
     pub fn default_ssh_key_name(
@@ -467,6 +551,10 @@ impl StackBuilder {
         self.default_ssh_key_name = input;
         self
     }
+    /// <p>A default Amazon EC2 key pair for the stack's instances. You can override this value when you create or update an instance.</p>
+    pub fn get_default_ssh_key_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_ssh_key_name
+    }
     /// <p>The date when the stack was created.</p>
     pub fn created_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_at = ::std::option::Option::Some(input.into());
@@ -476,6 +564,10 @@ impl StackBuilder {
     pub fn set_created_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The date when the stack was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_at
     }
     /// <p>The default root device type. This value is used by default for all instances in the stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
     pub fn default_root_device_type(mut self, input: crate::types::RootDeviceType) -> Self {
@@ -489,6 +581,12 @@ impl StackBuilder {
     ) -> Self {
         self.default_root_device_type = input;
         self
+    }
+    /// <p>The default root device type. This value is used by default for all instances in the stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+    pub fn get_default_root_device_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::RootDeviceType> {
+        &self.default_root_device_type
     }
     /// <p>The agent version. This parameter is set to <code>LATEST</code> for auto-update. or a version number for a fixed agent version.</p>
     pub fn agent_version(
@@ -505,6 +603,10 @@ impl StackBuilder {
     ) -> Self {
         self.agent_version = input;
         self
+    }
+    /// <p>The agent version. This parameter is set to <code>LATEST</code> for auto-update. or a version number for a fixed agent version.</p>
+    pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_version
     }
     /// Consumes the builder and constructs a [`Stack`](crate::types::Stack).
     pub fn build(self) -> crate::types::Stack {

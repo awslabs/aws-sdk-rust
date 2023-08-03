@@ -36,6 +36,10 @@ impl UpdateDataQualityRulesetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDataQualityRuleset as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_data_quality_ruleset::builders::UpdateDataQualityRulesetInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl UpdateDataQualityRulesetFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the data quality ruleset.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A description of the ruleset.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -136,6 +144,10 @@ impl UpdateDataQualityRulesetFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>A description of the ruleset.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
     pub fn ruleset(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ruleset(input.into());
@@ -145,5 +157,9 @@ impl UpdateDataQualityRulesetFluentBuilder {
     pub fn set_ruleset(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ruleset(input);
         self
+    }
+    /// <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
+    pub fn get_ruleset(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ruleset()
     }
 }

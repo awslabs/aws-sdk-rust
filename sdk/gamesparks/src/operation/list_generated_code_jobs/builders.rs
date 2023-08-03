@@ -36,6 +36,13 @@ impl ListGeneratedCodeJobsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListGeneratedCodeJobs as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_generated_code_jobs::builders::ListGeneratedCodeJobsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +144,10 @@ impl ListGeneratedCodeJobsFluentBuilder {
         self.inner = self.inner.set_game_name(input);
         self
     }
+    /// <p>The name of the game.</p>
+    pub fn get_game_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_game_name()
+    }
     /// <p>The identifier of the snapshot.</p>
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_id(input.into());
@@ -146,6 +157,10 @@ impl ListGeneratedCodeJobsFluentBuilder {
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_id(input);
         self
+    }
+    /// <p>The identifier of the snapshot.</p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_id()
     }
     /// <p>The maximum number of results to return.</p>
     /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
@@ -159,6 +174,11 @@ impl ListGeneratedCodeJobsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return.</p>
+    /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token that indicates the start of the next sequential page of results.</p>
     /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -170,5 +190,10 @@ impl ListGeneratedCodeJobsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token that indicates the start of the next sequential page of results.</p>
+    /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

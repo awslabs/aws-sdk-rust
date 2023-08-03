@@ -95,6 +95,10 @@ impl CloudFormationTargetBuilder {
         self.deployment_id = input;
         self
     }
+    /// <p>The unique ID of an CloudFormation blue/green deployment.</p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
+    }
     /// <p> The unique ID of a deployment target that has a type of&nbsp;<code>CloudFormationTarget</code>. </p>
     pub fn target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_id = ::std::option::Option::Some(input.into());
@@ -104,6 +108,10 @@ impl CloudFormationTargetBuilder {
     pub fn set_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_id = input;
         self
+    }
+    /// <p> The unique ID of a deployment target that has a type of&nbsp;<code>CloudFormationTarget</code>. </p>
+    pub fn get_target_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_id
     }
     /// <p> The date and time when the target application was updated by an CloudFormation blue/green deployment. </p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -117,6 +125,10 @@ impl CloudFormationTargetBuilder {
     ) -> Self {
         self.last_updated_at = input;
         self
+    }
+    /// <p> The date and time when the target application was updated by an CloudFormation blue/green deployment. </p>
+    pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_at
     }
     /// Appends an item to `lifecycle_events`.
     ///
@@ -137,6 +149,12 @@ impl CloudFormationTargetBuilder {
         self.lifecycle_events = input;
         self
     }
+    /// <p> The lifecycle events of the CloudFormation blue/green deployment to this target application. </p>
+    pub fn get_lifecycle_events(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecycleEvent>> {
+        &self.lifecycle_events
+    }
     /// <p> The status of an CloudFormation blue/green deployment's target application. </p>
     pub fn status(mut self, input: crate::types::TargetStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -146,6 +164,10 @@ impl CloudFormationTargetBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TargetStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p> The status of an CloudFormation blue/green deployment's target application. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TargetStatus> {
+        &self.status
     }
     /// <p>The resource type for the CloudFormation blue/green deployment.</p>
     pub fn resource_type(
@@ -163,6 +185,10 @@ impl CloudFormationTargetBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The resource type for the CloudFormation blue/green deployment.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
+    }
     /// <p>The percentage of production traffic that the target version of an CloudFormation blue/green deployment receives.</p>
     pub fn target_version_weight(mut self, input: f64) -> Self {
         self.target_version_weight = ::std::option::Option::Some(input);
@@ -172,6 +198,10 @@ impl CloudFormationTargetBuilder {
     pub fn set_target_version_weight(mut self, input: ::std::option::Option<f64>) -> Self {
         self.target_version_weight = input;
         self
+    }
+    /// <p>The percentage of production traffic that the target version of an CloudFormation blue/green deployment receives.</p>
+    pub fn get_target_version_weight(&self) -> &::std::option::Option<f64> {
+        &self.target_version_weight
     }
     /// Consumes the builder and constructs a [`CloudFormationTarget`](crate::types::CloudFormationTarget).
     pub fn build(self) -> crate::types::CloudFormationTarget {

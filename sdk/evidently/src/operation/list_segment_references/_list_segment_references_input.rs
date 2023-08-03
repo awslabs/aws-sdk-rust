@@ -65,6 +65,10 @@ impl ListSegmentReferencesInputBuilder {
         self.segment = input;
         self
     }
+    /// <p>The ARN of the segment that you want to view information for.</p>
+    pub fn get_segment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.segment
+    }
     /// <p>The maximum number of results to include in the response. If you omit this, the default of 50 is used.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl ListSegmentReferencesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to include in the response. If you omit this, the default of 50 is used.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListSegmentReferences</code> operation.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -84,6 +92,10 @@ impl ListSegmentReferencesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListSegmentReferences</code> operation.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>Specifies whether to return information about launches or experiments that use this segment.</p>
     pub fn r#type(mut self, input: crate::types::SegmentReferenceResourceType) -> Self {
@@ -97,6 +109,10 @@ impl ListSegmentReferencesInputBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>Specifies whether to return information about launches or experiments that use this segment.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::SegmentReferenceResourceType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`ListSegmentReferencesInput`](crate::operation::list_segment_references::ListSegmentReferencesInput).
     pub fn build(

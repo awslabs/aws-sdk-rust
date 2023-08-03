@@ -86,6 +86,10 @@ impl DbSubnetGroupBuilder {
         self.db_subnet_group_name = input;
         self
     }
+    /// <p>The name of the subnet group.</p>
+    pub fn get_db_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_subnet_group_name
+    }
     /// <p>Provides the description of the subnet group.</p>
     pub fn db_subnet_group_description(
         mut self,
@@ -102,6 +106,10 @@ impl DbSubnetGroupBuilder {
         self.db_subnet_group_description = input;
         self
     }
+    /// <p>Provides the description of the subnet group.</p>
+    pub fn get_db_subnet_group_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_subnet_group_description
+    }
     /// <p>Provides the virtual private cloud (VPC) ID of the subnet group.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -111,6 +119,10 @@ impl DbSubnetGroupBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>Provides the virtual private cloud (VPC) ID of the subnet group.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// <p>Provides the status of the subnet group.</p>
     pub fn subnet_group_status(
@@ -127,6 +139,10 @@ impl DbSubnetGroupBuilder {
     ) -> Self {
         self.subnet_group_status = input;
         self
+    }
+    /// <p>Provides the status of the subnet group.</p>
+    pub fn get_subnet_group_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_group_status
     }
     /// Appends an item to `subnets`.
     ///
@@ -147,6 +163,10 @@ impl DbSubnetGroupBuilder {
         self.subnets = input;
         self
     }
+    /// <p>Detailed information about one or more subnets within a subnet group.</p>
+    pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Subnet>> {
+        &self.subnets
+    }
     /// <p>The Amazon Resource Name (ARN) for the DB subnet group.</p>
     pub fn db_subnet_group_arn(
         mut self,
@@ -162,6 +182,10 @@ impl DbSubnetGroupBuilder {
     ) -> Self {
         self.db_subnet_group_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the DB subnet group.</p>
+    pub fn get_db_subnet_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_subnet_group_arn
     }
     /// Consumes the builder and constructs a [`DbSubnetGroup`](crate::types::DbSubnetGroup).
     pub fn build(self) -> crate::types::DbSubnetGroup {

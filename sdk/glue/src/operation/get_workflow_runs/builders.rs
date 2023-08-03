@@ -36,6 +36,12 @@ impl GetWorkflowRunsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetWorkflowRuns as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_workflow_runs::builders::GetWorkflowRunsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl GetWorkflowRunsFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>Name of the workflow whose metadata of runs should be returned.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>Specifies whether to include the workflow graph in response or not.</p>
     pub fn include_graph(mut self, input: bool) -> Self {
         self.inner = self.inner.include_graph(input);
@@ -146,6 +156,10 @@ impl GetWorkflowRunsFluentBuilder {
     pub fn set_include_graph(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_graph(input);
         self
+    }
+    /// <p>Specifies whether to include the workflow graph in response or not.</p>
+    pub fn get_include_graph(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_graph()
     }
     /// <p>The maximum size of the response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -157,6 +171,10 @@ impl GetWorkflowRunsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The maximum size of the response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of workflow runs to be included in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -166,5 +184,9 @@ impl GetWorkflowRunsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of workflow runs to be included in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

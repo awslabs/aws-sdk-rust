@@ -85,6 +85,10 @@ impl PostCommentForComparedCommitInputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository where you want to post a comment on the comparison between commits.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>To establish the directionality of the comparison, the full commit ID of the before commit. Required for commenting on any commit unless that commit is the initial commit.</p>
     pub fn before_commit_id(
         mut self,
@@ -100,6 +104,10 @@ impl PostCommentForComparedCommitInputBuilder {
     ) -> Self {
         self.before_commit_id = input;
         self
+    }
+    /// <p>To establish the directionality of the comparison, the full commit ID of the before commit. Required for commenting on any commit unless that commit is the initial commit.</p>
+    pub fn get_before_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.before_commit_id
     }
     /// <p>To establish the directionality of the comparison, the full commit ID of the after commit.</p>
     pub fn after_commit_id(
@@ -117,6 +125,10 @@ impl PostCommentForComparedCommitInputBuilder {
         self.after_commit_id = input;
         self
     }
+    /// <p>To establish the directionality of the comparison, the full commit ID of the after commit.</p>
+    pub fn get_after_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.after_commit_id
+    }
     /// <p>The location of the comparison where you want to comment.</p>
     pub fn location(mut self, input: crate::types::Location) -> Self {
         self.location = ::std::option::Option::Some(input);
@@ -127,6 +139,10 @@ impl PostCommentForComparedCommitInputBuilder {
         self.location = input;
         self
     }
+    /// <p>The location of the comparison where you want to comment.</p>
+    pub fn get_location(&self) -> &::std::option::Option<crate::types::Location> {
+        &self.location
+    }
     /// <p>The content of the comment you want to make.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
@@ -136,6 +152,10 @@ impl PostCommentForComparedCommitInputBuilder {
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
+    }
+    /// <p>The content of the comment you want to make.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
     }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
     pub fn client_request_token(
@@ -152,6 +172,10 @@ impl PostCommentForComparedCommitInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Consumes the builder and constructs a [`PostCommentForComparedCommitInput`](crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitInput).
     pub fn build(

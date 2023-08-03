@@ -45,6 +45,10 @@ impl SsekmsBuilder {
         self.key_id = input;
         self
     }
+    /// <p>Specifies the ID of the Key Management Service (KMS) symmetric encryption customer managed key to use for encrypting inventory reports.</p>
+    pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_id
+    }
     /// Consumes the builder and constructs a [`Ssekms`](crate::types::Ssekms).
     pub fn build(self) -> crate::types::Ssekms {
         crate::types::Ssekms {

@@ -53,6 +53,12 @@ impl PutAccountPreferencesOutputBuilder {
         self.resource_id_preference = input;
         self
     }
+    /// <p>Describes the resource type and its ID preference for the user's Amazon Web Services account, in the current Amazon Web Services Region.</p>
+    pub fn get_resource_id_preference(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceIdPreference> {
+        &self.resource_id_preference
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

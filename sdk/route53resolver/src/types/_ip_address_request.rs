@@ -56,6 +56,10 @@ impl IpAddressRequestBuilder {
         self.subnet_id = input;
         self
     }
+    /// <p>The ID of the subnet that contains the IP address. </p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
+    }
     /// <p>The IPv4 address that you want to use for DNS queries.</p>
     pub fn ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl IpAddressRequestBuilder {
         self.ip = input;
         self
     }
+    /// <p>The IPv4 address that you want to use for DNS queries.</p>
+    pub fn get_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip
+    }
     /// <p> The IPv6 address that you want to use for DNS queries. </p>
     pub fn ipv6(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipv6 = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl IpAddressRequestBuilder {
     pub fn set_ipv6(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipv6 = input;
         self
+    }
+    /// <p> The IPv6 address that you want to use for DNS queries. </p>
+    pub fn get_ipv6(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv6
     }
     /// Consumes the builder and constructs a [`IpAddressRequest`](crate::types::IpAddressRequest).
     pub fn build(self) -> crate::types::IpAddressRequest {

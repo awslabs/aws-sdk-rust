@@ -60,6 +60,10 @@ impl DescribeFileSystemPolicyOutputBuilder {
         self.file_system_id = input;
         self
     }
+    /// <p>Specifies the EFS file system to which the <code>FileSystemPolicy</code> applies.</p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_system_id
+    }
     /// <p>The JSON formatted <code>FileSystemPolicy</code> for the EFS file system.</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
@@ -69,6 +73,10 @@ impl DescribeFileSystemPolicyOutputBuilder {
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy = input;
         self
+    }
+    /// <p>The JSON formatted <code>FileSystemPolicy</code> for the EFS file system.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

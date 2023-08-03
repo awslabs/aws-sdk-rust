@@ -56,6 +56,10 @@ impl LambdaFunctionCompletedEventAttributesBuilder {
         self.scheduled_event_id = input;
         self
     }
+    /// <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this Lambda task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
+    pub fn get_scheduled_event_id(&self) -> &::std::option::Option<i64> {
+        &self.scheduled_event_id
+    }
     /// <p>The ID of the <code>LambdaFunctionStarted</code> event recorded when this activity task started. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
     pub fn started_event_id(mut self, input: i64) -> Self {
         self.started_event_id = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl LambdaFunctionCompletedEventAttributesBuilder {
         self.started_event_id = input;
         self
     }
+    /// <p>The ID of the <code>LambdaFunctionStarted</code> event recorded when this activity task started. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
+    pub fn get_started_event_id(&self) -> &::std::option::Option<i64> {
+        &self.started_event_id
+    }
     /// <p>The results of the Lambda task.</p>
     pub fn result(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.result = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl LambdaFunctionCompletedEventAttributesBuilder {
     pub fn set_result(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.result = input;
         self
+    }
+    /// <p>The results of the Lambda task.</p>
+    pub fn get_result(&self) -> &::std::option::Option<::std::string::String> {
+        &self.result
     }
     /// Consumes the builder and constructs a [`LambdaFunctionCompletedEventAttributes`](crate::types::LambdaFunctionCompletedEventAttributes).
     pub fn build(self) -> crate::types::LambdaFunctionCompletedEventAttributes {

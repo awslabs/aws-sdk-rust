@@ -135,6 +135,10 @@ impl DescribeActivitiesInputBuilder {
         self.authentication_token = input;
         self
     }
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication_token
+    }
     /// <p>The timestamp that determines the starting time of the activities. The response includes the activities performed after the specified timestamp.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -148,6 +152,10 @@ impl DescribeActivitiesInputBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The timestamp that determines the starting time of the activities. The response includes the activities performed after the specified timestamp.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The timestamp that determines the end time of the activities. The response includes the activities performed before the specified timestamp.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -160,6 +168,10 @@ impl DescribeActivitiesInputBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The timestamp that determines the end time of the activities. The response includes the activities performed before the specified timestamp.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// <p>The ID of the organization. This is a mandatory parameter when using administrative API (SigV4) requests.</p>
     pub fn organization_id(
@@ -177,6 +189,10 @@ impl DescribeActivitiesInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The ID of the organization. This is a mandatory parameter when using administrative API (SigV4) requests.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.</p>
     pub fn activity_types(
         mut self,
@@ -193,6 +209,10 @@ impl DescribeActivitiesInputBuilder {
         self.activity_types = input;
         self
     }
+    /// <p>Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.</p>
+    pub fn get_activity_types(&self) -> &::std::option::Option<::std::string::String> {
+        &self.activity_types
+    }
     /// <p>The document or folder ID for which to describe activity types.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -202,6 +222,10 @@ impl DescribeActivitiesInputBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The document or folder ID for which to describe activity types.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>The ID of the user who performed the action. The response includes activities pertaining to this user. This is an optional parameter and is only applicable for administrative API (SigV4) requests.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -213,6 +237,10 @@ impl DescribeActivitiesInputBuilder {
         self.user_id = input;
         self
     }
+    /// <p>The ID of the user who performed the action. The response includes activities pertaining to this user. This is an optional parameter and is only applicable for administrative API (SigV4) requests.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
+    }
     /// <p>Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>
     pub fn include_indirect_activities(mut self, input: bool) -> Self {
         self.include_indirect_activities = ::std::option::Option::Some(input);
@@ -222,6 +250,10 @@ impl DescribeActivitiesInputBuilder {
     pub fn set_include_indirect_activities(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_indirect_activities = input;
         self
+    }
+    /// <p>Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>
+    pub fn get_include_indirect_activities(&self) -> &::std::option::Option<bool> {
+        &self.include_indirect_activities
     }
     /// <p>The maximum number of items to return.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -233,6 +265,10 @@ impl DescribeActivitiesInputBuilder {
         self.limit = input;
         self
     }
+    /// <p>The maximum number of items to return.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
+    }
     /// <p>The marker for the next set of results.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -242,6 +278,10 @@ impl DescribeActivitiesInputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>The marker for the next set of results.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeActivitiesInput`](crate::operation::describe_activities::DescribeActivitiesInput).
     pub fn build(

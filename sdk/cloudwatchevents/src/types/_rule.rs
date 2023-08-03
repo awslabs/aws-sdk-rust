@@ -106,6 +106,10 @@ impl RuleBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the rule.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -115,6 +119,10 @@ impl RuleBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the rule.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The event pattern of the rule. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn event_pattern(
@@ -132,6 +140,10 @@ impl RuleBuilder {
         self.event_pattern = input;
         self
     }
+    /// <p>The event pattern of the rule. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    pub fn get_event_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_pattern
+    }
     /// <p>The state of the rule.</p>
     pub fn state(mut self, input: crate::types::RuleState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -142,6 +154,10 @@ impl RuleBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of the rule.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::RuleState> {
+        &self.state
+    }
     /// <p>The description of the rule.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -151,6 +167,10 @@ impl RuleBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the rule.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)". For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-rule-schedule.html">Creating an Amazon EventBridge rule that runs on a schedule</a>.</p>
     pub fn schedule_expression(
@@ -168,6 +188,10 @@ impl RuleBuilder {
         self.schedule_expression = input;
         self
     }
+    /// <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)". For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-rule-schedule.html">Creating an Amazon EventBridge rule that runs on a schedule</a>.</p>
+    pub fn get_schedule_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schedule_expression
+    }
     /// <p>The Amazon Resource Name (ARN) of the role that is used for target invocation.</p>
     /// <p>If you're setting an event bus in another account as the target and that account granted permission to your account through an organization instead of directly by the account ID, you must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code> structure, instead of here in this parameter.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -180,6 +204,11 @@ impl RuleBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the role that is used for target invocation.</p>
+    /// <p>If you're setting an event bus in another account as the target and that account granted permission to your account through an organization instead of directly by the account ID, you must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code> structure, instead of here in this parameter.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>If the rule was created on behalf of your account by an Amazon Web Services service, this field displays the principal name of the service that created the rule.</p>
     pub fn managed_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.managed_by = ::std::option::Option::Some(input.into());
@@ -189,6 +218,10 @@ impl RuleBuilder {
     pub fn set_managed_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.managed_by = input;
         self
+    }
+    /// <p>If the rule was created on behalf of your account by an Amazon Web Services service, this field displays the principal name of the service that created the rule.</p>
+    pub fn get_managed_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.managed_by
     }
     /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
     pub fn event_bus_name(
@@ -205,6 +238,10 @@ impl RuleBuilder {
     ) -> Self {
         self.event_bus_name = input;
         self
+    }
+    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
+    pub fn get_event_bus_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_bus_name
     }
     /// Consumes the builder and constructs a [`Rule`](crate::types::Rule).
     pub fn build(self) -> crate::types::Rule {

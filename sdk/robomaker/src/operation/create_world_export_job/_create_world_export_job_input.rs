@@ -86,6 +86,10 @@ impl CreateWorldExportJobInputBuilder {
         self.client_request_token = input;
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
+    }
     /// Appends an item to `worlds`.
     ///
     /// To override the contents of this collection use [`set_worlds`](Self::set_worlds).
@@ -105,6 +109,10 @@ impl CreateWorldExportJobInputBuilder {
         self.worlds = input;
         self
     }
+    /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to export.</p>
+    pub fn get_worlds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.worlds
+    }
     /// <p>The output location.</p>
     pub fn output_location(mut self, input: crate::types::OutputLocation) -> Self {
         self.output_location = ::std::option::Option::Some(input);
@@ -118,6 +126,10 @@ impl CreateWorldExportJobInputBuilder {
         self.output_location = input;
         self
     }
+    /// <p>The output location.</p>
+    pub fn get_output_location(&self) -> &::std::option::Option<crate::types::OutputLocation> {
+        &self.output_location
+    }
     /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>
     pub fn iam_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role = ::std::option::Option::Some(input.into());
@@ -127,6 +139,10 @@ impl CreateWorldExportJobInputBuilder {
     pub fn set_iam_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_role = input;
         self
+    }
+    /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>
+    pub fn get_iam_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_role
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -152,6 +168,14 @@ impl CreateWorldExportJobInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateWorldExportJobInput`](crate::operation::create_world_export_job::CreateWorldExportJobInput).
     pub fn build(

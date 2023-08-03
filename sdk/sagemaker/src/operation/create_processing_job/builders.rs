@@ -36,6 +36,12 @@ impl CreateProcessingJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateProcessingJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_processing_job::builders::CreateProcessingJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,12 @@ impl CreateProcessingJobFluentBuilder {
         self.inner = self.inner.set_processing_inputs(input);
         self
     }
+    /// <p>An array of inputs configuring the data to download into the processing container.</p>
+    pub fn get_processing_inputs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProcessingInput>> {
+        self.inner.get_processing_inputs()
+    }
     /// <p>Output configuration for the processing job.</p>
     pub fn processing_output_config(mut self, input: crate::types::ProcessingOutputConfig) -> Self {
         self.inner = self.inner.processing_output_config(input);
@@ -145,6 +157,12 @@ impl CreateProcessingJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_processing_output_config(input);
         self
+    }
+    /// <p>Output configuration for the processing job.</p>
+    pub fn get_processing_output_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProcessingOutputConfig> {
+        self.inner.get_processing_output_config()
     }
     /// <p> The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
     pub fn processing_job_name(
@@ -162,6 +180,10 @@ impl CreateProcessingJobFluentBuilder {
         self.inner = self.inner.set_processing_job_name(input);
         self
     }
+    /// <p> The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+    pub fn get_processing_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_processing_job_name()
+    }
     /// <p>Identifies the resources, ML compute instances, and ML storage volumes to deploy for a processing job. In distributed training, you specify more than one instance.</p>
     pub fn processing_resources(mut self, input: crate::types::ProcessingResources) -> Self {
         self.inner = self.inner.processing_resources(input);
@@ -174,6 +196,12 @@ impl CreateProcessingJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_processing_resources(input);
         self
+    }
+    /// <p>Identifies the resources, ML compute instances, and ML storage volumes to deploy for a processing job. In distributed training, you specify more than one instance.</p>
+    pub fn get_processing_resources(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProcessingResources> {
+        self.inner.get_processing_resources()
     }
     /// <p>The time limit for how long the processing job is allowed to run.</p>
     pub fn stopping_condition(mut self, input: crate::types::ProcessingStoppingCondition) -> Self {
@@ -188,6 +216,12 @@ impl CreateProcessingJobFluentBuilder {
         self.inner = self.inner.set_stopping_condition(input);
         self
     }
+    /// <p>The time limit for how long the processing job is allowed to run.</p>
+    pub fn get_stopping_condition(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProcessingStoppingCondition> {
+        self.inner.get_stopping_condition()
+    }
     /// <p>Configures the processing job to run a specified Docker container image.</p>
     pub fn app_specification(mut self, input: crate::types::AppSpecification) -> Self {
         self.inner = self.inner.app_specification(input);
@@ -200,6 +234,10 @@ impl CreateProcessingJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_app_specification(input);
         self
+    }
+    /// <p>Configures the processing job to run a specified Docker container image.</p>
+    pub fn get_app_specification(&self) -> &::std::option::Option<crate::types::AppSpecification> {
+        self.inner.get_app_specification()
     }
     /// Adds a key-value pair to `Environment`.
     ///
@@ -224,6 +262,14 @@ impl CreateProcessingJobFluentBuilder {
         self.inner = self.inner.set_environment(input);
         self
     }
+    /// <p>The environment variables to set in the Docker container. Up to 100 key and values entries in the map are supported.</p>
+    pub fn get_environment(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_environment()
+    }
     /// <p>Networking options for a processing job, such as whether to allow inbound and outbound network calls to and from processing containers, and the VPC subnets and security groups to use for VPC-enabled processing jobs.</p>
     pub fn network_config(mut self, input: crate::types::NetworkConfig) -> Self {
         self.inner = self.inner.network_config(input);
@@ -237,6 +283,10 @@ impl CreateProcessingJobFluentBuilder {
         self.inner = self.inner.set_network_config(input);
         self
     }
+    /// <p>Networking options for a processing job, such as whether to allow inbound and outbound network calls to and from processing containers, and the VPC subnets and security groups to use for VPC-enabled processing jobs.</p>
+    pub fn get_network_config(&self) -> &::std::option::Option<crate::types::NetworkConfig> {
+        self.inner.get_network_config()
+    }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -246,6 +296,10 @@ impl CreateProcessingJobFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// Appends an item to `Tags`.
     ///
@@ -263,6 +317,10 @@ impl CreateProcessingJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
     /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
     /// <ul>
@@ -286,5 +344,14 @@ impl CreateProcessingJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_experiment_config(input);
         self
+    }
+    /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
+    /// <ul>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a> </p> </li>
+    /// </ul>
+    pub fn get_experiment_config(&self) -> &::std::option::Option<crate::types::ExperimentConfig> {
+        self.inner.get_experiment_config()
     }
 }

@@ -39,6 +39,13 @@ impl UpdateContactAttributesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateContactAttributes as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_contact_attributes::builders::UpdateContactAttributesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +142,10 @@ impl UpdateContactAttributesFluentBuilder {
         self.inner = self.inner.set_initial_contact_id(input);
         self
     }
+    /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
+    pub fn get_initial_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_initial_contact_id()
+    }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
@@ -144,6 +155,10 @@ impl UpdateContactAttributesFluentBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
     }
     /// Adds a key-value pair to `Attributes`.
     ///
@@ -169,5 +184,14 @@ impl UpdateContactAttributesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
+    }
+    /// <p>The Amazon Connect attributes. These attributes can be accessed in flows just like any other contact attributes.</p>
+    /// <p>You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_attributes()
     }
 }

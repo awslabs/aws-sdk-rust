@@ -64,6 +64,10 @@ impl S3LocationBuilder {
         self.s3_bucket = input;
         self
     }
+    /// <p>The S3 bucket of the S3 object.</p>
+    pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket
+    }
     /// <p>The S3 key of the S3 object.</p>
     /// <p>This is required when used for the following:</p>
     /// <ul>
@@ -89,6 +93,18 @@ impl S3LocationBuilder {
     pub fn set_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_key = input;
         self
+    }
+    /// <p>The S3 key of the S3 object.</p>
+    /// <p>This is required when used for the following:</p>
+    /// <ul>
+    /// <li> <p>IconS3Location (Actions: CreateApplication and UpdateApplication)</p> </li>
+    /// <li> <p>SessionScriptS3Location (Actions: CreateFleet and UpdateFleet)</p> </li>
+    /// <li> <p>ScriptDetails (Actions: CreateAppBlock)</p> </li>
+    /// <li> <p>SourceS3Location when creating an app block with <code>CUSTOM</code> PackagingType (Actions: CreateAppBlock)</p> </li>
+    /// <li> <p>SourceS3Location when creating an app block with <code>APPSTREAM2</code> PackagingType, and using an existing application package (VHD file). In this case, <code>S3Key</code> refers to the VHD file. If a new application package is required, then <code>S3Key</code> is not required. (Actions: CreateAppBlock)</p> </li>
+    /// </ul>
+    pub fn get_s3_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_key
     }
     /// Consumes the builder and constructs a [`S3Location`](crate::types::S3Location).
     pub fn build(self) -> crate::types::S3Location {

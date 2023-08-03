@@ -80,6 +80,10 @@ impl GetWirelessDeviceStatisticsOutputBuilder {
         self.wireless_device_id = input;
         self
     }
+    /// <p>The ID of the wireless device.</p>
+    pub fn get_wireless_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.wireless_device_id
+    }
     /// <p>The date and time when the most recent uplink was received.</p> <note>
     /// <p>This value is only valid for 3 months.</p>
     /// </note>
@@ -100,6 +104,12 @@ impl GetWirelessDeviceStatisticsOutputBuilder {
         self.last_uplink_received_at = input;
         self
     }
+    /// <p>The date and time when the most recent uplink was received.</p> <note>
+    /// <p>This value is only valid for 3 months.</p>
+    /// </note>
+    pub fn get_last_uplink_received_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_uplink_received_at
+    }
     /// <p>Information about the wireless device's operations.</p>
     pub fn lo_ra_wan(mut self, input: crate::types::LoRaWanDeviceMetadata) -> Self {
         self.lo_ra_wan = ::std::option::Option::Some(input);
@@ -113,6 +123,10 @@ impl GetWirelessDeviceStatisticsOutputBuilder {
         self.lo_ra_wan = input;
         self
     }
+    /// <p>Information about the wireless device's operations.</p>
+    pub fn get_lo_ra_wan(&self) -> &::std::option::Option<crate::types::LoRaWanDeviceMetadata> {
+        &self.lo_ra_wan
+    }
     /// <p>MetaData for Sidewalk device.</p>
     pub fn sidewalk(mut self, input: crate::types::SidewalkDeviceMetadata) -> Self {
         self.sidewalk = ::std::option::Option::Some(input);
@@ -125,6 +139,10 @@ impl GetWirelessDeviceStatisticsOutputBuilder {
     ) -> Self {
         self.sidewalk = input;
         self
+    }
+    /// <p>MetaData for Sidewalk device.</p>
+    pub fn get_sidewalk(&self) -> &::std::option::Option<crate::types::SidewalkDeviceMetadata> {
+        &self.sidewalk
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

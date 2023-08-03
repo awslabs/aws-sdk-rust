@@ -40,6 +40,10 @@ impl TargetBuilder {
         self.member_arn = input;
         self
     }
+    /// <p>The ARN of the target channel member.</p>
+    pub fn get_member_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_arn
+    }
     /// Consumes the builder and constructs a [`Target`](crate::types::Target).
     pub fn build(self) -> crate::types::Target {
         crate::types::Target {

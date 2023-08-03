@@ -39,6 +39,10 @@ impl DeleteAlarmInputBuilder {
         self.alarm_name = input;
         self
     }
+    /// <p>The name of the alarm to delete.</p>
+    pub fn get_alarm_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alarm_name
+    }
     /// Consumes the builder and constructs a [`DeleteAlarmInput`](crate::operation::delete_alarm::DeleteAlarmInput).
     pub fn build(
         self,

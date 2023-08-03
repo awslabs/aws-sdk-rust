@@ -51,6 +51,10 @@ impl S3GeneratedManifestDescriptorBuilder {
         self.format = input;
         self
     }
+    /// <p>The format of the generated manifest.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::GeneratedManifestFormat> {
+        &self.format
+    }
     /// <p>Contains the information required to locate a manifest object.</p>
     pub fn location(mut self, input: crate::types::JobManifestLocation) -> Self {
         self.location = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl S3GeneratedManifestDescriptorBuilder {
     ) -> Self {
         self.location = input;
         self
+    }
+    /// <p>Contains the information required to locate a manifest object.</p>
+    pub fn get_location(&self) -> &::std::option::Option<crate::types::JobManifestLocation> {
+        &self.location
     }
     /// Consumes the builder and constructs a [`S3GeneratedManifestDescriptor`](crate::types::S3GeneratedManifestDescriptor).
     pub fn build(self) -> crate::types::S3GeneratedManifestDescriptor {

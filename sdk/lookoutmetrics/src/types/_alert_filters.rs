@@ -59,6 +59,12 @@ impl AlertFiltersBuilder {
         self.metric_list = input;
         self
     }
+    /// <p>The list of measures that you want to get alerts for.</p>
+    pub fn get_metric_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.metric_list
+    }
     /// Appends an item to `dimension_filter_list`.
     ///
     /// To override the contents of this collection use [`set_dimension_filter_list`](Self::set_dimension_filter_list).
@@ -77,6 +83,12 @@ impl AlertFiltersBuilder {
     ) -> Self {
         self.dimension_filter_list = input;
         self
+    }
+    /// <p>The list of DimensionFilter objects that are used for dimension-based filtering.</p>
+    pub fn get_dimension_filter_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionFilter>> {
+        &self.dimension_filter_list
     }
     /// Consumes the builder and constructs a [`AlertFilters`](crate::types::AlertFilters).
     pub fn build(self) -> crate::types::AlertFilters {

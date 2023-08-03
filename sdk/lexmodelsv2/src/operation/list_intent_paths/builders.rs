@@ -41,6 +41,12 @@ impl ListIntentPathsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListIntentPaths as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_intent_paths::builders::ListIntentPathsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +137,10 @@ impl ListIntentPathsFluentBuilder {
         self.inner = self.inner.set_bot_id(input);
         self
     }
+    /// <p>The identifier for the bot for which you want to retrieve intent path metrics.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_id()
+    }
     /// <p>The date and time that marks the beginning of the range of time for which you want to see intent path metrics.</p>
     pub fn start_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_date_time(input);
@@ -144,6 +154,10 @@ impl ListIntentPathsFluentBuilder {
         self.inner = self.inner.set_start_date_time(input);
         self
     }
+    /// <p>The date and time that marks the beginning of the range of time for which you want to see intent path metrics.</p>
+    pub fn get_start_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_date_time()
+    }
     /// <p>The date and time that marks the end of the range of time for which you want to see intent path metrics.</p>
     pub fn end_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_date_time(input);
@@ -156,6 +170,10 @@ impl ListIntentPathsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_end_date_time(input);
         self
+    }
+    /// <p>The date and time that marks the end of the range of time for which you want to see intent path metrics.</p>
+    pub fn get_end_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_date_time()
     }
     /// <p>The intent path for which you want to retrieve metrics. Use a forward slash to separate intents in the path. For example:</p>
     /// <ul>
@@ -177,6 +195,15 @@ impl ListIntentPathsFluentBuilder {
         self.inner = self.inner.set_intent_path(input);
         self
     }
+    /// <p>The intent path for which you want to retrieve metrics. Use a forward slash to separate intents in the path. For example:</p>
+    /// <ul>
+    /// <li> <p>/BookCar</p> </li>
+    /// <li> <p>/BookCar/BookHotel</p> </li>
+    /// <li> <p>/BookHotel/BookCar</p> </li>
+    /// </ul>
+    pub fn get_intent_path(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_intent_path()
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -193,5 +220,11 @@ impl ListIntentPathsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
+    }
+    /// <p>A list of objects, each describes a condition by which you want to filter the results.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsPathFilter>> {
+        self.inner.get_filters()
     }
 }

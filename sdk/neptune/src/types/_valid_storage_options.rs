@@ -66,6 +66,10 @@ impl ValidStorageOptionsBuilder {
         self.storage_type = input;
         self
     }
+    /// <p>The valid storage types for your DB instance. For example, gp2, io1.</p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_type
+    }
     /// Appends an item to `storage_size`.
     ///
     /// To override the contents of this collection use [`set_storage_size`](Self::set_storage_size).
@@ -84,6 +88,10 @@ impl ValidStorageOptionsBuilder {
     ) -> Self {
         self.storage_size = input;
         self
+    }
+    /// <p>The valid range of storage in gibibytes. For example, 100 to 16384.</p>
+    pub fn get_storage_size(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Range>> {
+        &self.storage_size
     }
     /// Appends an item to `provisioned_iops`.
     ///
@@ -104,6 +112,12 @@ impl ValidStorageOptionsBuilder {
         self.provisioned_iops = input;
         self
     }
+    /// <p>The valid range of provisioned IOPS. For example, 1000-20000.</p>
+    pub fn get_provisioned_iops(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Range>> {
+        &self.provisioned_iops
+    }
     /// Appends an item to `iops_to_storage_ratio`.
     ///
     /// To override the contents of this collection use [`set_iops_to_storage_ratio`](Self::set_iops_to_storage_ratio).
@@ -122,6 +136,12 @@ impl ValidStorageOptionsBuilder {
     ) -> Self {
         self.iops_to_storage_ratio = input;
         self
+    }
+    /// <p>The valid range of Provisioned IOPS to gibibytes of storage multiplier. For example, 3-10, which means that provisioned IOPS can be between 3 and 10 times storage.</p>
+    pub fn get_iops_to_storage_ratio(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DoubleRange>> {
+        &self.iops_to_storage_ratio
     }
     /// Consumes the builder and constructs a [`ValidStorageOptions`](crate::types::ValidStorageOptions).
     pub fn build(self) -> crate::types::ValidStorageOptions {

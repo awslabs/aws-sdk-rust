@@ -37,6 +37,12 @@ impl StopAppBlockBuilderFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopAppBlockBuilder as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::stop_app_block_builder::builders::StopAppBlockBuilderInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,5 +132,9 @@ impl StopAppBlockBuilderFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the app block builder.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
 }

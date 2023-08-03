@@ -50,6 +50,10 @@ impl CreateConnectPeerOutputBuilder {
         self.connect_peer = input;
         self
     }
+    /// <p>The response to the request.</p>
+    pub fn get_connect_peer(&self) -> &::std::option::Option<crate::types::ConnectPeer> {
+        &self.connect_peer
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

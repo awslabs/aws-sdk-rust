@@ -104,6 +104,10 @@ impl ConsolidatedReportMetricBuilder {
         self.metric_type = input;
         self
     }
+    /// <p>The metric type of a metric in the consolidated report. Currently only WORKLOAD metric types are supported.</p>
+    pub fn get_metric_type(&self) -> &::std::option::Option<crate::types::MetricType> {
+        &self.metric_type
+    }
     /// Adds a key-value pair to `risk_counts`.
     ///
     /// To override the contents of this collection use [`set_risk_counts`](Self::set_risk_counts).
@@ -123,6 +127,12 @@ impl ConsolidatedReportMetricBuilder {
         self.risk_counts = input;
         self
     }
+    /// <p>A map from risk names to the count of how many questions have that rating.</p>
+    pub fn get_risk_counts(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>> {
+        &self.risk_counts
+    }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn workload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workload_id = ::std::option::Option::Some(input.into());
@@ -132,6 +142,10 @@ impl ConsolidatedReportMetricBuilder {
     pub fn set_workload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workload_id = input;
         self
+    }
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workload_id
     }
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
@@ -151,6 +165,11 @@ impl ConsolidatedReportMetricBuilder {
         self.workload_name = input;
         self
     }
+    /// <p>The name of the workload.</p>
+    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
+    pub fn get_workload_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workload_name
+    }
     /// <p>The ARN for the workload.</p>
     pub fn workload_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workload_arn = ::std::option::Option::Some(input.into());
@@ -160,6 +179,10 @@ impl ConsolidatedReportMetricBuilder {
     pub fn set_workload_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workload_arn = input;
         self
+    }
+    /// <p>The ARN for the workload.</p>
+    pub fn get_workload_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workload_arn
     }
     /// <p>The date and time recorded.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -173,6 +196,10 @@ impl ConsolidatedReportMetricBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// <p>The date and time recorded.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     /// Appends an item to `lenses`.
     ///
@@ -193,6 +220,10 @@ impl ConsolidatedReportMetricBuilder {
         self.lenses = input;
         self
     }
+    /// <p>The metrics for the lenses in the workload.</p>
+    pub fn get_lenses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LensMetric>> {
+        &self.lenses
+    }
     /// <p>The total number of lenses applied to the workload.</p>
     pub fn lenses_applied_count(mut self, input: i32) -> Self {
         self.lenses_applied_count = ::std::option::Option::Some(input);
@@ -202,6 +233,10 @@ impl ConsolidatedReportMetricBuilder {
     pub fn set_lenses_applied_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.lenses_applied_count = input;
         self
+    }
+    /// <p>The total number of lenses applied to the workload.</p>
+    pub fn get_lenses_applied_count(&self) -> &::std::option::Option<i32> {
+        &self.lenses_applied_count
     }
     /// Consumes the builder and constructs a [`ConsolidatedReportMetric`](crate::types::ConsolidatedReportMetric).
     pub fn build(self) -> crate::types::ConsolidatedReportMetric {

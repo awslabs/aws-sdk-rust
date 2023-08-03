@@ -71,6 +71,10 @@ impl DescribeConformancePackComplianceInputBuilder {
         self.conformance_pack_name = input;
         self
     }
+    /// <p>Name of the conformance pack.</p>
+    pub fn get_conformance_pack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.conformance_pack_name
+    }
     /// <p>A <code>ConformancePackComplianceFilters</code> object.</p>
     pub fn filters(mut self, input: crate::types::ConformancePackComplianceFilters) -> Self {
         self.filters = ::std::option::Option::Some(input);
@@ -84,6 +88,12 @@ impl DescribeConformancePackComplianceInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>A <code>ConformancePackComplianceFilters</code> object.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConformancePackComplianceFilters> {
+        &self.filters
+    }
     /// <p>The maximum number of Config rules within a conformance pack are returned on each page.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -94,6 +104,10 @@ impl DescribeConformancePackComplianceInputBuilder {
         self.limit = input;
         self
     }
+    /// <p>The maximum number of Config rules within a conformance pack are returned on each page.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
+    }
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -103,6 +117,10 @@ impl DescribeConformancePackComplianceInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeConformancePackComplianceInput`](crate::operation::describe_conformance_pack_compliance::DescribeConformancePackComplianceInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_conformance_pack_compliance::DescribeConformancePackComplianceInput, ::aws_smithy_http::operation::error::BuildError>{

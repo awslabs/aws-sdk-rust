@@ -63,6 +63,10 @@ impl AssociateDeviceWithPlacementInputBuilder {
         self.project_name = input;
         self
     }
+    /// <p>The name of the project containing the placement in which to associate the device.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
+    }
     /// <p>The name of the placement in which to associate the device.</p>
     pub fn placement_name(
         mut self,
@@ -79,6 +83,10 @@ impl AssociateDeviceWithPlacementInputBuilder {
         self.placement_name = input;
         self
     }
+    /// <p>The name of the placement in which to associate the device.</p>
+    pub fn get_placement_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.placement_name
+    }
     /// <p>The ID of the physical device to be associated with the given placement in the project. Note that a mandatory 4 character prefix is required for all <code>deviceId</code> values.</p>
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_id = ::std::option::Option::Some(input.into());
@@ -88,6 +96,10 @@ impl AssociateDeviceWithPlacementInputBuilder {
     pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_id = input;
         self
+    }
+    /// <p>The ID of the physical device to be associated with the given placement in the project. Note that a mandatory 4 character prefix is required for all <code>deviceId</code> values.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_id
     }
     /// <p>The device template name to associate with the device ID.</p>
     pub fn device_template_name(
@@ -104,6 +116,10 @@ impl AssociateDeviceWithPlacementInputBuilder {
     ) -> Self {
         self.device_template_name = input;
         self
+    }
+    /// <p>The device template name to associate with the device ID.</p>
+    pub fn get_device_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_template_name
     }
     /// Consumes the builder and constructs a [`AssociateDeviceWithPlacementInput`](crate::operation::associate_device_with_placement::AssociateDeviceWithPlacementInput).
     pub fn build(

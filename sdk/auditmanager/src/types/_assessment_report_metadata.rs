@@ -96,6 +96,10 @@ impl AssessmentReportMetadataBuilder {
         self.id = input;
         self
     }
+    /// <p> The unique identifier for the assessment report. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p> The name of the assessment report. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -106,6 +110,10 @@ impl AssessmentReportMetadataBuilder {
         self.name = input;
         self
     }
+    /// <p> The name of the assessment report. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p> The description of the assessment report. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -115,6 +123,10 @@ impl AssessmentReportMetadataBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p> The description of the assessment report. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p> The unique identifier for the associated assessment. </p>
     pub fn assessment_id(
@@ -132,6 +144,10 @@ impl AssessmentReportMetadataBuilder {
         self.assessment_id = input;
         self
     }
+    /// <p> The unique identifier for the associated assessment. </p>
+    pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_id
+    }
     /// <p>The name of the associated assessment. </p>
     pub fn assessment_name(
         mut self,
@@ -148,6 +164,10 @@ impl AssessmentReportMetadataBuilder {
         self.assessment_name = input;
         self
     }
+    /// <p>The name of the associated assessment. </p>
+    pub fn get_assessment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_name
+    }
     /// <p> The name of the user who created the assessment report. </p>
     pub fn author(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.author = ::std::option::Option::Some(input.into());
@@ -157,6 +177,10 @@ impl AssessmentReportMetadataBuilder {
     pub fn set_author(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.author = input;
         self
+    }
+    /// <p> The name of the user who created the assessment report. </p>
+    pub fn get_author(&self) -> &::std::option::Option<::std::string::String> {
+        &self.author
     }
     /// <p> The current status of the assessment report. </p>
     pub fn status(mut self, input: crate::types::AssessmentReportStatus) -> Self {
@@ -171,6 +195,10 @@ impl AssessmentReportMetadataBuilder {
         self.status = input;
         self
     }
+    /// <p> The current status of the assessment report. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AssessmentReportStatus> {
+        &self.status
+    }
     /// <p> Specifies when the assessment report was created. </p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -183,6 +211,10 @@ impl AssessmentReportMetadataBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p> Specifies when the assessment report was created. </p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// Consumes the builder and constructs a [`AssessmentReportMetadata`](crate::types::AssessmentReportMetadata).
     pub fn build(self) -> crate::types::AssessmentReportMetadata {

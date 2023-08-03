@@ -51,6 +51,10 @@ impl HistoricalMetricDataBuilder {
         self.metric = input;
         self
     }
+    /// <p>Information about the metric.</p>
+    pub fn get_metric(&self) -> &::std::option::Option<crate::types::HistoricalMetric> {
+        &self.metric
+    }
     /// <p>The value of the metric.</p>
     pub fn value(mut self, input: f64) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl HistoricalMetricDataBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of the metric.</p>
+    pub fn get_value(&self) -> &::std::option::Option<f64> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`HistoricalMetricData`](crate::types::HistoricalMetricData).
     pub fn build(self) -> crate::types::HistoricalMetricData {

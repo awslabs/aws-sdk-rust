@@ -56,6 +56,10 @@ impl CastColumnTypeOperationBuilder {
         self.column_name = input;
         self
     }
+    /// <p>Column name.</p>
+    pub fn get_column_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.column_name
+    }
     /// <p>New column data type.</p>
     pub fn new_column_type(mut self, input: crate::types::ColumnDataType) -> Self {
         self.new_column_type = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl CastColumnTypeOperationBuilder {
         self.new_column_type = input;
         self
     }
+    /// <p>New column data type.</p>
+    pub fn get_new_column_type(&self) -> &::std::option::Option<crate::types::ColumnDataType> {
+        &self.new_column_type
+    }
     /// <p>When casting a column from string to datetime type, you can supply a string in a format supported by Amazon QuickSight to denote the source data format.</p>
     pub fn format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.format = ::std::option::Option::Some(input.into());
@@ -78,6 +86,10 @@ impl CastColumnTypeOperationBuilder {
     pub fn set_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.format = input;
         self
+    }
+    /// <p>When casting a column from string to datetime type, you can supply a string in a format supported by Amazon QuickSight to denote the source data format.</p>
+    pub fn get_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.format
     }
     /// Consumes the builder and constructs a [`CastColumnTypeOperation`](crate::types::CastColumnTypeOperation).
     pub fn build(self) -> crate::types::CastColumnTypeOperation {

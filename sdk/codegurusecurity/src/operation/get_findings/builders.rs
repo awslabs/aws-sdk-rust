@@ -36,6 +36,10 @@ impl GetFindingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetFindings as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_findings::builders::GetFindingsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl GetFindingsFluentBuilder {
         self.inner = self.inner.set_scan_name(input);
         self
     }
+    /// <p>The name of the scan you want to retrieve findings from.</p>
+    pub fn get_scan_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_scan_name()
+    }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -136,6 +144,10 @@ impl GetFindingsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The maximum number of results to return in the response. Use this parameter when paginating results. If additional results exist beyond the number you specify, the <code>nextToken</code> element is returned in the response. Use <code>nextToken</code> in a subsequent request to retrieve additional results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -147,6 +159,10 @@ impl GetFindingsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return in the response. Use this parameter when paginating results. If additional results exist beyond the number you specify, the <code>nextToken</code> element is returned in the response. Use <code>nextToken</code> in a subsequent request to retrieve additional results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The status of the findings you want to get. Pass either <code>Open</code>, <code>Closed</code>, or <code>All</code>.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.inner = self.inner.status(input);
@@ -156,5 +172,9 @@ impl GetFindingsFluentBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p>The status of the findings you want to get. Pass either <code>Open</code>, <code>Closed</code>, or <code>All</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        self.inner.get_status()
     }
 }

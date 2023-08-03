@@ -43,6 +43,10 @@ impl AnalyticsUtteranceGroupBySpecificationBuilder {
         self.name = input;
         self
     }
+    /// <p>Specifies whether to group the utterances by their text or their state.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::AnalyticsUtteranceField> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`AnalyticsUtteranceGroupBySpecification`](crate::types::AnalyticsUtteranceGroupBySpecification).
     pub fn build(self) -> crate::types::AnalyticsUtteranceGroupBySpecification {
         crate::types::AnalyticsUtteranceGroupBySpecification { name: self.name }

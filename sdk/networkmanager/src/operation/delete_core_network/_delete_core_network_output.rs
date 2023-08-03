@@ -50,6 +50,10 @@ impl DeleteCoreNetworkOutputBuilder {
         self.core_network = input;
         self
     }
+    /// <p>Information about the deleted core network.</p>
+    pub fn get_core_network(&self) -> &::std::option::Option<crate::types::CoreNetwork> {
+        &self.core_network
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -47,6 +47,10 @@ impl GetBulkDeploymentStatusInputBuilder {
         self.bulk_deployment_id = input;
         self
     }
+    /// The ID of the bulk deployment.
+    pub fn get_bulk_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bulk_deployment_id
+    }
     /// Consumes the builder and constructs a [`GetBulkDeploymentStatusInput`](crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusInput).
     pub fn build(
         self,

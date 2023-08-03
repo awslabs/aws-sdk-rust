@@ -112,6 +112,10 @@ impl GetPropertyValueInputBuilder {
         self.component_name = input;
         self
     }
+    /// <p>The name of the component whose property values the operation returns.</p>
+    pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_name
+    }
     /// <p>The ID of the component type whose property values the operation returns.</p>
     pub fn component_type_id(
         mut self,
@@ -128,6 +132,10 @@ impl GetPropertyValueInputBuilder {
         self.component_type_id = input;
         self
     }
+    /// <p>The ID of the component type whose property values the operation returns.</p>
+    pub fn get_component_type_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_type_id
+    }
     /// <p>The ID of the entity whose property values the operation returns.</p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
@@ -137,6 +145,10 @@ impl GetPropertyValueInputBuilder {
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entity_id = input;
         self
+    }
+    /// <p>The ID of the entity whose property values the operation returns.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_id
     }
     /// Appends an item to `selected_properties`.
     ///
@@ -160,6 +172,12 @@ impl GetPropertyValueInputBuilder {
         self.selected_properties = input;
         self
     }
+    /// <p>The properties whose values the operation returns.</p>
+    pub fn get_selected_properties(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.selected_properties
+    }
     /// <p>The ID of the workspace whose values the operation returns.</p>
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
@@ -169,6 +187,10 @@ impl GetPropertyValueInputBuilder {
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workspace_id = input;
         self
+    }
+    /// <p>The ID of the workspace whose values the operation returns.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
     }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
@@ -182,6 +204,11 @@ impl GetPropertyValueInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The string that specifies the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -191,6 +218,10 @@ impl GetPropertyValueInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The string that specifies the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The property group name.</p>
     pub fn property_group_name(
@@ -208,6 +239,10 @@ impl GetPropertyValueInputBuilder {
         self.property_group_name = input;
         self
     }
+    /// <p>The property group name.</p>
+    pub fn get_property_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.property_group_name
+    }
     /// <p>The tabular conditions.</p>
     pub fn tabular_conditions(mut self, input: crate::types::TabularConditions) -> Self {
         self.tabular_conditions = ::std::option::Option::Some(input);
@@ -220,6 +255,12 @@ impl GetPropertyValueInputBuilder {
     ) -> Self {
         self.tabular_conditions = input;
         self
+    }
+    /// <p>The tabular conditions.</p>
+    pub fn get_tabular_conditions(
+        &self,
+    ) -> &::std::option::Option<crate::types::TabularConditions> {
+        &self.tabular_conditions
     }
     /// Consumes the builder and constructs a [`GetPropertyValueInput`](crate::operation::get_property_value::GetPropertyValueInput).
     pub fn build(

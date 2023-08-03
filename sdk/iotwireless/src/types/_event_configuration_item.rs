@@ -68,6 +68,10 @@ impl EventConfigurationItemBuilder {
         self.identifier = input;
         self
     }
+    /// <p>Resource identifier opted in for event messaging.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
+    }
     /// <p>Identifier type of the particular resource identifier for event configuration.</p>
     pub fn identifier_type(mut self, input: crate::types::IdentifierType) -> Self {
         self.identifier_type = ::std::option::Option::Some(input);
@@ -80,6 +84,10 @@ impl EventConfigurationItemBuilder {
     ) -> Self {
         self.identifier_type = input;
         self
+    }
+    /// <p>Identifier type of the particular resource identifier for event configuration.</p>
+    pub fn get_identifier_type(&self) -> &::std::option::Option<crate::types::IdentifierType> {
+        &self.identifier_type
     }
     /// <p>Partner type of the resource if the identifier type is PartnerAccountId.</p>
     pub fn partner_type(mut self, input: crate::types::EventNotificationPartnerType) -> Self {
@@ -94,6 +102,12 @@ impl EventConfigurationItemBuilder {
         self.partner_type = input;
         self
     }
+    /// <p>Partner type of the resource if the identifier type is PartnerAccountId.</p>
+    pub fn get_partner_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::EventNotificationPartnerType> {
+        &self.partner_type
+    }
     /// <p>Object of all event configurations and the status of the event topics.</p>
     pub fn events(mut self, input: crate::types::EventNotificationItemConfigurations) -> Self {
         self.events = ::std::option::Option::Some(input);
@@ -106,6 +120,12 @@ impl EventConfigurationItemBuilder {
     ) -> Self {
         self.events = input;
         self
+    }
+    /// <p>Object of all event configurations and the status of the event topics.</p>
+    pub fn get_events(
+        &self,
+    ) -> &::std::option::Option<crate::types::EventNotificationItemConfigurations> {
+        &self.events
     }
     /// Consumes the builder and constructs a [`EventConfigurationItem`](crate::types::EventConfigurationItem).
     pub fn build(self) -> crate::types::EventConfigurationItem {

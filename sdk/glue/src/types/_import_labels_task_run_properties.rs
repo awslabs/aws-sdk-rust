@@ -54,6 +54,10 @@ impl ImportLabelsTaskRunPropertiesBuilder {
         self.input_s3_path = input;
         self
     }
+    /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you will import the labels.</p>
+    pub fn get_input_s3_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_s3_path
+    }
     /// <p>Indicates whether to overwrite your existing labels.</p>
     pub fn replace(mut self, input: bool) -> Self {
         self.replace = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl ImportLabelsTaskRunPropertiesBuilder {
     pub fn set_replace(mut self, input: ::std::option::Option<bool>) -> Self {
         self.replace = input;
         self
+    }
+    /// <p>Indicates whether to overwrite your existing labels.</p>
+    pub fn get_replace(&self) -> &::std::option::Option<bool> {
+        &self.replace
     }
     /// Consumes the builder and constructs a [`ImportLabelsTaskRunProperties`](crate::types::ImportLabelsTaskRunProperties).
     pub fn build(self) -> crate::types::ImportLabelsTaskRunProperties {

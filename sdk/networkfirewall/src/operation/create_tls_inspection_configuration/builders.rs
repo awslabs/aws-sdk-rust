@@ -41,6 +41,10 @@ impl CreateTLSInspectionConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateTLSInspectionConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_tls_inspection_configuration::builders::CreateTlsInspectionConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -111,6 +115,12 @@ impl CreateTLSInspectionConfigurationFluentBuilder {
         self.inner = self.inner.set_tls_inspection_configuration_name(input);
         self
     }
+    /// <p>The descriptive name of the TLS inspection configuration. You can't change the name of a TLS inspection configuration after you create it.</p>
+    pub fn get_tls_inspection_configuration_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_tls_inspection_configuration_name()
+    }
     /// <p>The object that defines a TLS inspection configuration. This, along with <code>TLSInspectionConfigurationResponse</code>, define the TLS inspection configuration. You can retrieve all objects for a TLS inspection configuration by calling <code>DescribeTLSInspectionConfiguration</code>. </p>
     /// <p>Network Firewall uses a TLS inspection configuration to decrypt traffic. Network Firewall re-encrypts the traffic before sending it to its destination.</p>
     /// <p>To use a TLS inspection configuration, you add it to a Network Firewall firewall policy, then you apply the firewall policy to a firewall. Network Firewall acts as a proxy service to decrypt and inspect inbound traffic. You can reference a TLS inspection configuration from more than one firewall policy, and you can use a firewall policy in more than one firewall. For more information about using TLS inspection configurations, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection.html">Decrypting SSL/TLS traffic with TLS inspection configurations</a> in the <i>Network Firewall Developer Guide</i>.</p>
@@ -131,6 +141,14 @@ impl CreateTLSInspectionConfigurationFluentBuilder {
         self.inner = self.inner.set_tls_inspection_configuration(input);
         self
     }
+    /// <p>The object that defines a TLS inspection configuration. This, along with <code>TLSInspectionConfigurationResponse</code>, define the TLS inspection configuration. You can retrieve all objects for a TLS inspection configuration by calling <code>DescribeTLSInspectionConfiguration</code>. </p>
+    /// <p>Network Firewall uses a TLS inspection configuration to decrypt traffic. Network Firewall re-encrypts the traffic before sending it to its destination.</p>
+    /// <p>To use a TLS inspection configuration, you add it to a Network Firewall firewall policy, then you apply the firewall policy to a firewall. Network Firewall acts as a proxy service to decrypt and inspect inbound traffic. You can reference a TLS inspection configuration from more than one firewall policy, and you can use a firewall policy in more than one firewall. For more information about using TLS inspection configurations, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection.html">Decrypting SSL/TLS traffic with TLS inspection configurations</a> in the <i>Network Firewall Developer Guide</i>.</p>
+    pub fn get_tls_inspection_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::TlsInspectionConfiguration> {
+        self.inner.get_tls_inspection_configuration()
+    }
     /// <p>A description of the TLS inspection configuration. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -140,6 +158,10 @@ impl CreateTLSInspectionConfigurationFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the TLS inspection configuration. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `Tags`.
     ///
@@ -158,6 +180,10 @@ impl CreateTLSInspectionConfigurationFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The key:value pairs to associate with the resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>A complex type that contains optional Amazon Web Services Key Management Service (KMS) encryption settings for your Network Firewall resources. Your data is encrypted by default with an Amazon Web Services owned key that Amazon Web Services owns and manages for you. You can use either the Amazon Web Services owned key, or provide your own customer managed key. To learn more about KMS encryption of your Network Firewall resources, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-encryption-at-rest.html">Encryption at rest with Amazon Web Services Key Managment Service</a> in the <i>Network Firewall Developer Guide</i>.</p>
     pub fn encryption_configuration(
         mut self,
@@ -173,5 +199,11 @@ impl CreateTLSInspectionConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_encryption_configuration(input);
         self
+    }
+    /// <p>A complex type that contains optional Amazon Web Services Key Management Service (KMS) encryption settings for your Network Firewall resources. Your data is encrypted by default with an Amazon Web Services owned key that Amazon Web Services owns and manages for you. You can use either the Amazon Web Services owned key, or provide your own customer managed key. To learn more about KMS encryption of your Network Firewall resources, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-encryption-at-rest.html">Encryption at rest with Amazon Web Services Key Managment Service</a> in the <i>Network Firewall Developer Guide</i>.</p>
+    pub fn get_encryption_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+        self.inner.get_encryption_configuration()
     }
 }

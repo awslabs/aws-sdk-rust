@@ -80,6 +80,10 @@ impl GetMapSpritesInputBuilder {
         self.map_name = input;
         self
     }
+    /// <p>The map resource associated with the sprite ﬁle.</p>
+    pub fn get_map_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.map_name
+    }
     /// <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p>
     /// <ul>
     /// <li> <p> <code>sprites.png</code> </p> </li>
@@ -108,6 +112,19 @@ impl GetMapSpritesInputBuilder {
         self.file_name = input;
         self
     }
+    /// <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p>
+    /// <ul>
+    /// <li> <p> <code>sprites.png</code> </p> </li>
+    /// <li> <p> <code>sprites@2x.png</code> for high pixel density displays</p> </li>
+    /// </ul>
+    /// <p>For the JSON document containing image offsets. Use the following ﬁle names:</p>
+    /// <ul>
+    /// <li> <p> <code>sprites.json</code> </p> </li>
+    /// <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li>
+    /// </ul>
+    pub fn get_file_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_name
+    }
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
@@ -117,6 +134,10 @@ impl GetMapSpritesInputBuilder {
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
+    }
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
     }
     /// Consumes the builder and constructs a [`GetMapSpritesInput`](crate::operation::get_map_sprites::GetMapSpritesInput).
     pub fn build(

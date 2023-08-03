@@ -164,6 +164,10 @@ impl CreateJobTemplateInputBuilder {
         self.job_template_id = input;
         self
     }
+    /// <p>A unique identifier for the job template. We recommend using a UUID. Alpha-numeric characters, "-", and "_" are valid for use here.</p>
+    pub fn get_job_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_template_id
+    }
     /// <p>The ARN of the job to use as the basis for the job template.</p>
     pub fn job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_arn = ::std::option::Option::Some(input.into());
@@ -173,6 +177,10 @@ impl CreateJobTemplateInputBuilder {
     pub fn set_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_arn = input;
         self
+    }
+    /// <p>The ARN of the job to use as the basis for the job template.</p>
+    pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_arn
     }
     /// <p>An S3 link to the job document to use in the template. Required if you don't specify a value for <code>document</code>.</p> <note>
     /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p>
@@ -200,6 +208,15 @@ impl CreateJobTemplateInputBuilder {
         self.document_source = input;
         self
     }
+    /// <p>An S3 link to the job document to use in the template. Required if you don't specify a value for <code>document</code>.</p> <note>
+    /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p>
+    /// <p>The placeholder link is of the following form:</p>
+    /// <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p>
+    /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p>
+    /// </note>
+    pub fn get_document_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_source
+    }
     /// <p>The job document. Required if you don't specify a value for <code>documentSource</code>.</p>
     pub fn document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document = ::std::option::Option::Some(input.into());
@@ -210,6 +227,10 @@ impl CreateJobTemplateInputBuilder {
         self.document = input;
         self
     }
+    /// <p>The job document. Required if you don't specify a value for <code>documentSource</code>.</p>
+    pub fn get_document(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document
+    }
     /// <p>A description of the job document.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -219,6 +240,10 @@ impl CreateJobTemplateInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the job document.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Configuration for pre-signed S3 URLs.</p>
     pub fn presigned_url_config(mut self, input: crate::types::PresignedUrlConfig) -> Self {
@@ -232,6 +257,12 @@ impl CreateJobTemplateInputBuilder {
     ) -> Self {
         self.presigned_url_config = input;
         self
+    }
+    /// <p>Configuration for pre-signed S3 URLs.</p>
+    pub fn get_presigned_url_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::PresignedUrlConfig> {
+        &self.presigned_url_config
     }
     /// <p>Allows you to create a staged rollout of a job.</p>
     pub fn job_executions_rollout_config(
@@ -249,6 +280,12 @@ impl CreateJobTemplateInputBuilder {
         self.job_executions_rollout_config = input;
         self
     }
+    /// <p>Allows you to create a staged rollout of a job.</p>
+    pub fn get_job_executions_rollout_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::JobExecutionsRolloutConfig> {
+        &self.job_executions_rollout_config
+    }
     /// <p>The criteria that determine when and how a job abort takes place.</p>
     pub fn abort_config(mut self, input: crate::types::AbortConfig) -> Self {
         self.abort_config = ::std::option::Option::Some(input);
@@ -262,6 +299,10 @@ impl CreateJobTemplateInputBuilder {
         self.abort_config = input;
         self
     }
+    /// <p>The criteria that determine when and how a job abort takes place.</p>
+    pub fn get_abort_config(&self) -> &::std::option::Option<crate::types::AbortConfig> {
+        &self.abort_config
+    }
     /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
     pub fn timeout_config(mut self, input: crate::types::TimeoutConfig) -> Self {
         self.timeout_config = ::std::option::Option::Some(input);
@@ -274,6 +315,10 @@ impl CreateJobTemplateInputBuilder {
     ) -> Self {
         self.timeout_config = input;
         self
+    }
+    /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
+    pub fn get_timeout_config(&self) -> &::std::option::Option<crate::types::TimeoutConfig> {
+        &self.timeout_config
     }
     /// Appends an item to `tags`.
     ///
@@ -294,6 +339,10 @@ impl CreateJobTemplateInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Metadata that can be used to manage the job template.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>Allows you to create the criteria to retry a job.</p>
     pub fn job_executions_retry_config(
         mut self,
@@ -309,6 +358,12 @@ impl CreateJobTemplateInputBuilder {
     ) -> Self {
         self.job_executions_retry_config = input;
         self
+    }
+    /// <p>Allows you to create the criteria to retry a job.</p>
+    pub fn get_job_executions_retry_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::JobExecutionsRetryConfig> {
+        &self.job_executions_retry_config
     }
     /// Appends an item to `maintenance_windows`.
     ///
@@ -328,6 +383,12 @@ impl CreateJobTemplateInputBuilder {
     ) -> Self {
         self.maintenance_windows = input;
         self
+    }
+    /// <p>Allows you to configure an optional maintenance window for the rollout of a job document to all devices in the target group for a job.</p>
+    pub fn get_maintenance_windows(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindow>> {
+        &self.maintenance_windows
     }
     /// Appends an item to `destination_package_versions`.
     ///
@@ -352,6 +413,13 @@ impl CreateJobTemplateInputBuilder {
     ) -> Self {
         self.destination_package_versions = input;
         self
+    }
+    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
+    /// <p> <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.</p>
+    pub fn get_destination_package_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.destination_package_versions
     }
     /// Consumes the builder and constructs a [`CreateJobTemplateInput`](crate::operation::create_job_template::CreateJobTemplateInput).
     pub fn build(

@@ -48,6 +48,10 @@ impl MetricDataV2Builder {
         self.metric = input;
         self
     }
+    /// <p>The metric name, thresholds, and metric filters of the returned metric.</p>
+    pub fn get_metric(&self) -> &::std::option::Option<crate::types::MetricV2> {
+        &self.metric
+    }
     /// <p>The corresponding value of the metric returned in the response.</p>
     pub fn value(mut self, input: f64) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl MetricDataV2Builder {
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The corresponding value of the metric returned in the response.</p>
+    pub fn get_value(&self) -> &::std::option::Option<f64> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`MetricDataV2`](crate::types::MetricDataV2).
     pub fn build(self) -> crate::types::MetricDataV2 {

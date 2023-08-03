@@ -38,6 +38,13 @@ impl DescribeDeliveryChannelsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeDeliveryChannels as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_delivery_channels::builders::DescribeDeliveryChannelsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,5 +144,11 @@ impl DescribeDeliveryChannelsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_delivery_channel_names(input);
         self
+    }
+    /// <p>A list of delivery channel names.</p>
+    pub fn get_delivery_channel_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_delivery_channel_names()
     }
 }

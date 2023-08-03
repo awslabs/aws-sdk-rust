@@ -39,6 +39,10 @@ impl DescribeCustomRoutingListenerInputBuilder {
         self.listener_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the listener to describe.</p>
+    pub fn get_listener_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.listener_arn
+    }
     /// Consumes the builder and constructs a [`DescribeCustomRoutingListenerInput`](crate::operation::describe_custom_routing_listener::DescribeCustomRoutingListenerInput).
     pub fn build(
         self,

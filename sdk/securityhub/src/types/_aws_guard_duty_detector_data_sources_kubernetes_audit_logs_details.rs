@@ -42,6 +42,10 @@ impl AwsGuardDutyDetectorDataSourcesKubernetesAuditLogsDetailsBuilder {
         self.status = input;
         self
     }
+    /// <p> Describes whether Kubernetes audit logs are activated as a data source for the detector. </p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`AwsGuardDutyDetectorDataSourcesKubernetesAuditLogsDetails`](crate::types::AwsGuardDutyDetectorDataSourcesKubernetesAuditLogsDetails).
     pub fn build(self) -> crate::types::AwsGuardDutyDetectorDataSourcesKubernetesAuditLogsDetails {
         crate::types::AwsGuardDutyDetectorDataSourcesKubernetesAuditLogsDetails {

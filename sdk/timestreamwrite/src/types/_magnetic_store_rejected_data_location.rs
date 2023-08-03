@@ -43,6 +43,10 @@ impl MagneticStoreRejectedDataLocationBuilder {
         self.s3_configuration = input;
         self
     }
+    /// <p>Configuration of an S3 location to write error reports for records rejected, asynchronously, during magnetic store writes.</p>
+    pub fn get_s3_configuration(&self) -> &::std::option::Option<crate::types::S3Configuration> {
+        &self.s3_configuration
+    }
     /// Consumes the builder and constructs a [`MagneticStoreRejectedDataLocation`](crate::types::MagneticStoreRejectedDataLocation).
     pub fn build(self) -> crate::types::MagneticStoreRejectedDataLocation {
         crate::types::MagneticStoreRejectedDataLocation {

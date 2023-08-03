@@ -37,6 +37,12 @@ impl UpdateAgentStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAgentStatus as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_agent_status::builders::UpdateAgentStatusInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl UpdateAgentStatusFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>The identifier of the agent status.</p>
     pub fn agent_status_id(
         mut self,
@@ -143,6 +153,10 @@ impl UpdateAgentStatusFluentBuilder {
         self.inner = self.inner.set_agent_status_id(input);
         self
     }
+    /// <p>The identifier of the agent status.</p>
+    pub fn get_agent_status_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_agent_status_id()
+    }
     /// <p>The name of the agent status.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -153,6 +167,10 @@ impl UpdateAgentStatusFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the agent status.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The description of the agent status.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -162,6 +180,10 @@ impl UpdateAgentStatusFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the agent status.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The state of the agent status.</p>
     pub fn state(mut self, input: crate::types::AgentStatusState) -> Self {
@@ -176,6 +198,10 @@ impl UpdateAgentStatusFluentBuilder {
         self.inner = self.inner.set_state(input);
         self
     }
+    /// <p>The state of the agent status.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::AgentStatusState> {
+        self.inner.get_state()
+    }
     /// <p>The display order of the agent status.</p>
     pub fn display_order(mut self, input: i32) -> Self {
         self.inner = self.inner.display_order(input);
@@ -186,6 +212,10 @@ impl UpdateAgentStatusFluentBuilder {
         self.inner = self.inner.set_display_order(input);
         self
     }
+    /// <p>The display order of the agent status.</p>
+    pub fn get_display_order(&self) -> &::std::option::Option<i32> {
+        self.inner.get_display_order()
+    }
     /// <p>A number indicating the reset order of the agent status.</p>
     pub fn reset_order_number(mut self, input: bool) -> Self {
         self.inner = self.inner.reset_order_number(input);
@@ -195,5 +225,9 @@ impl UpdateAgentStatusFluentBuilder {
     pub fn set_reset_order_number(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_reset_order_number(input);
         self
+    }
+    /// <p>A number indicating the reset order of the agent status.</p>
+    pub fn get_reset_order_number(&self) -> &::std::option::Option<bool> {
+        self.inner.get_reset_order_number()
     }
 }

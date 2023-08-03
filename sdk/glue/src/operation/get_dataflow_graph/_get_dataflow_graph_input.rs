@@ -46,6 +46,10 @@ impl GetDataflowGraphInputBuilder {
         self.python_script = input;
         self
     }
+    /// <p>The Python script to transform.</p>
+    pub fn get_python_script(&self) -> &::std::option::Option<::std::string::String> {
+        &self.python_script
+    }
     /// Consumes the builder and constructs a [`GetDataflowGraphInput`](crate::operation::get_dataflow_graph::GetDataflowGraphInput).
     pub fn build(
         self,

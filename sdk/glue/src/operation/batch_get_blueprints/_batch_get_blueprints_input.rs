@@ -65,6 +65,10 @@ impl BatchGetBlueprintsInputBuilder {
         self.names = input;
         self
     }
+    /// <p>A list of blueprint names.</p>
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.names
+    }
     /// <p>Specifies whether or not to include the blueprint in the response.</p>
     pub fn include_blueprint(mut self, input: bool) -> Self {
         self.include_blueprint = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl BatchGetBlueprintsInputBuilder {
         self.include_blueprint = input;
         self
     }
+    /// <p>Specifies whether or not to include the blueprint in the response.</p>
+    pub fn get_include_blueprint(&self) -> &::std::option::Option<bool> {
+        &self.include_blueprint
+    }
     /// <p>Specifies whether or not to include the parameters, as a JSON string, for the blueprint in the response.</p>
     pub fn include_parameter_spec(mut self, input: bool) -> Self {
         self.include_parameter_spec = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl BatchGetBlueprintsInputBuilder {
     pub fn set_include_parameter_spec(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_parameter_spec = input;
         self
+    }
+    /// <p>Specifies whether or not to include the parameters, as a JSON string, for the blueprint in the response.</p>
+    pub fn get_include_parameter_spec(&self) -> &::std::option::Option<bool> {
+        &self.include_parameter_spec
     }
     /// Consumes the builder and constructs a [`BatchGetBlueprintsInput`](crate::operation::batch_get_blueprints::BatchGetBlueprintsInput).
     pub fn build(

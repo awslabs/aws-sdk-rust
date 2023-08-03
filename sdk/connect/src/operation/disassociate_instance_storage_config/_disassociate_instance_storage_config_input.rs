@@ -57,6 +57,10 @@ impl DisassociateInstanceStorageConfigInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
     pub fn association_id(
         mut self,
@@ -73,6 +77,10 @@ impl DisassociateInstanceStorageConfigInputBuilder {
         self.association_id = input;
         self
     }
+    /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_id
+    }
     /// <p>A valid resource type.</p>
     pub fn resource_type(mut self, input: crate::types::InstanceStorageResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -85,6 +93,12 @@ impl DisassociateInstanceStorageConfigInputBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>A valid resource type.</p>
+    pub fn get_resource_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceStorageResourceType> {
+        &self.resource_type
     }
     /// Consumes the builder and constructs a [`DisassociateInstanceStorageConfigInput`](crate::operation::disassociate_instance_storage_config::DisassociateInstanceStorageConfigInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_instance_storage_config::DisassociateInstanceStorageConfigInput, ::aws_smithy_http::operation::error::BuildError>{

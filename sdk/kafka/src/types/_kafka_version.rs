@@ -48,6 +48,10 @@ impl KafkaVersionBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
+    }
+    #[allow(missing_docs)] // documentation missing in model
     pub fn status(mut self, input: crate::types::KafkaVersionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -59,6 +63,10 @@ impl KafkaVersionBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::KafkaVersionStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`KafkaVersion`](crate::types::KafkaVersion).
     pub fn build(self) -> crate::types::KafkaVersion {

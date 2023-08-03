@@ -70,6 +70,10 @@ impl BrowserSettingsBuilder {
         self.browser_settings_arn = input;
         self
     }
+    /// <p>The ARN of the browser settings.</p>
+    pub fn get_browser_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.browser_settings_arn
+    }
     /// Appends an item to `associated_portal_arns`.
     ///
     /// To override the contents of this collection use [`set_associated_portal_arns`](Self::set_associated_portal_arns).
@@ -92,6 +96,12 @@ impl BrowserSettingsBuilder {
         self.associated_portal_arns = input;
         self
     }
+    /// <p>A list of web portal ARNs that this browser settings is associated with.</p>
+    pub fn get_associated_portal_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.associated_portal_arns
+    }
     /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions.</p>
     pub fn browser_policy(
         mut self,
@@ -107,6 +117,10 @@ impl BrowserSettingsBuilder {
     ) -> Self {
         self.browser_policy = input;
         self
+    }
+    /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions.</p>
+    pub fn get_browser_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.browser_policy
     }
     /// Consumes the builder and constructs a [`BrowserSettings`](crate::types::BrowserSettings).
     pub fn build(self) -> crate::types::BrowserSettings {

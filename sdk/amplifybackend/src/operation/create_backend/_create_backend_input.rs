@@ -72,6 +72,10 @@ impl CreateBackendInputBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The app ID.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p>The name of the app.</p>
     pub fn app_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_name = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl CreateBackendInputBuilder {
     pub fn set_app_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_name = input;
         self
+    }
+    /// <p>The name of the app.</p>
+    pub fn get_app_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_name
     }
     /// <p>The name of the backend environment.</p>
     pub fn backend_environment_name(
@@ -98,6 +106,10 @@ impl CreateBackendInputBuilder {
         self.backend_environment_name = input;
         self
     }
+    /// <p>The name of the backend environment.</p>
+    pub fn get_backend_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backend_environment_name
+    }
     /// <p>The resource configuration for creating a backend.</p>
     pub fn resource_config(mut self, input: crate::types::ResourceConfig) -> Self {
         self.resource_config = ::std::option::Option::Some(input);
@@ -110,6 +122,10 @@ impl CreateBackendInputBuilder {
     ) -> Self {
         self.resource_config = input;
         self
+    }
+    /// <p>The resource configuration for creating a backend.</p>
+    pub fn get_resource_config(&self) -> &::std::option::Option<crate::types::ResourceConfig> {
+        &self.resource_config
     }
     /// <p>The name of the resource.</p>
     pub fn resource_name(
@@ -126,6 +142,10 @@ impl CreateBackendInputBuilder {
     ) -> Self {
         self.resource_name = input;
         self
+    }
+    /// <p>The name of the resource.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_name
     }
     /// Consumes the builder and constructs a [`CreateBackendInput`](crate::operation::create_backend::CreateBackendInput).
     pub fn build(

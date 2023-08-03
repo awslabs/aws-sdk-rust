@@ -88,6 +88,10 @@ impl ImportTaskBuilder {
         self.import_id = input;
         self
     }
+    /// <p>Import task id.</p>
+    pub fn get_import_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.import_id
+    }
     /// <p>Import task s3 bucket source.</p>
     pub fn s3_bucket_source(mut self, input: crate::types::S3BucketSource) -> Self {
         self.s3_bucket_source = ::std::option::Option::Some(input);
@@ -100,6 +104,10 @@ impl ImportTaskBuilder {
     ) -> Self {
         self.s3_bucket_source = input;
         self
+    }
+    /// <p>Import task s3 bucket source.</p>
+    pub fn get_s3_bucket_source(&self) -> &::std::option::Option<crate::types::S3BucketSource> {
+        &self.s3_bucket_source
     }
     /// <p>Import task creation datetime.</p>
     pub fn creation_date_time(
@@ -117,6 +125,10 @@ impl ImportTaskBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>Import task creation datetime.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_date_time
+    }
     /// <p>Import task end datetime.</p>
     pub fn end_date_time(
         mut self,
@@ -133,6 +145,10 @@ impl ImportTaskBuilder {
         self.end_date_time = input;
         self
     }
+    /// <p>Import task end datetime.</p>
+    pub fn get_end_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.end_date_time
+    }
     /// <p>Import task status.</p>
     pub fn status(mut self, input: crate::types::ImportStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -143,6 +159,10 @@ impl ImportTaskBuilder {
         self.status = input;
         self
     }
+    /// <p>Import task status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ImportStatus> {
+        &self.status
+    }
     /// <p>Import task progress percentage.</p>
     pub fn progress_percentage(mut self, input: f32) -> Self {
         self.progress_percentage = ::std::option::Option::Some(input);
@@ -152,6 +172,10 @@ impl ImportTaskBuilder {
     pub fn set_progress_percentage(mut self, input: ::std::option::Option<f32>) -> Self {
         self.progress_percentage = input;
         self
+    }
+    /// <p>Import task progress percentage.</p>
+    pub fn get_progress_percentage(&self) -> &::std::option::Option<f32> {
+        &self.progress_percentage
     }
     /// <p>Import task summary.</p>
     pub fn summary(mut self, input: crate::types::ImportTaskSummary) -> Self {
@@ -165,6 +189,10 @@ impl ImportTaskBuilder {
     ) -> Self {
         self.summary = input;
         self
+    }
+    /// <p>Import task summary.</p>
+    pub fn get_summary(&self) -> &::std::option::Option<crate::types::ImportTaskSummary> {
+        &self.summary
     }
     /// Consumes the builder and constructs a [`ImportTask`](crate::types::ImportTask).
     pub fn build(self) -> crate::types::ImportTask {

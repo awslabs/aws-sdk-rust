@@ -56,6 +56,10 @@ impl SubSlotSettingBuilder {
         self.expression = input;
         self
     }
+    /// <p>The expression text for defining the constituent sub slots in the composite slot using logical AND and OR operators.</p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expression
+    }
     /// Adds a key-value pair to `slot_specifications`.
     ///
     /// To override the contents of this collection use [`set_slot_specifications`](Self::set_slot_specifications).
@@ -80,6 +84,14 @@ impl SubSlotSettingBuilder {
     ) -> Self {
         self.slot_specifications = input;
         self
+    }
+    /// <p>Specifications for the constituent sub slots of a composite slot.</p>
+    pub fn get_slot_specifications(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::Specifications>,
+    > {
+        &self.slot_specifications
     }
     /// Consumes the builder and constructs a [`SubSlotSetting`](crate::types::SubSlotSetting).
     pub fn build(self) -> crate::types::SubSlotSetting {

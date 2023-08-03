@@ -49,6 +49,10 @@ impl CollectiveConstantBuilder {
         self.value_list = input;
         self
     }
+    /// <p>A list of values for the collective constant.</p>
+    pub fn get_value_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.value_list
+    }
     /// Consumes the builder and constructs a [`CollectiveConstant`](crate::types::CollectiveConstant).
     pub fn build(self) -> crate::types::CollectiveConstant {
         crate::types::CollectiveConstant {

@@ -38,6 +38,10 @@ impl AddTagsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AddTags as a reference.
+    pub fn as_input(&self) -> &crate::operation::add_tags::builders::AddTagsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +134,12 @@ impl AddTagsFluentBuilder {
         self.inner = self.inner.set_load_balancer_names(input);
         self
     }
+    /// <p>The name of the load balancer. You can specify one load balancer only.</p>
+    pub fn get_load_balancer_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_load_balancer_names()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -146,5 +156,9 @@ impl AddTagsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

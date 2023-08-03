@@ -57,6 +57,10 @@ impl DescribeEndpointsInputBuilder {
         self.max_results = input;
         self
     }
+    /// Optional. Max number of endpoints, up to twenty, that will be returned at one time.
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// Optional field, defaults to DEFAULT. Specify DEFAULT for this operation to return your endpoints if any exist, or to create an endpoint for you and return it if one doesn't already exist. Specify GET_ONLY to return your endpoints if any exist, or an empty list if none exist.
     pub fn mode(mut self, input: crate::types::DescribeEndpointsMode) -> Self {
         self.mode = ::std::option::Option::Some(input);
@@ -70,6 +74,10 @@ impl DescribeEndpointsInputBuilder {
         self.mode = input;
         self
     }
+    /// Optional field, defaults to DEFAULT. Specify DEFAULT for this operation to return your endpoints if any exist, or to create an endpoint for you and return it if one doesn't already exist. Specify GET_ONLY to return your endpoints if any exist, or an empty list if none exist.
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::DescribeEndpointsMode> {
+        &self.mode
+    }
     /// Use this string, provided with the response to a previous request, to request the next batch of endpoints.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -79,6 +87,10 @@ impl DescribeEndpointsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// Use this string, provided with the response to a previous request, to request the next batch of endpoints.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeEndpointsInput`](crate::operation::describe_endpoints::DescribeEndpointsInput).
     pub fn build(

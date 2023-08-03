@@ -61,6 +61,10 @@ impl DeleteIngestionDestinationInputBuilder {
         self.app_bundle_identifier = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
+    pub fn get_app_bundle_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_bundle_identifier
+    }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</p>
     pub fn ingestion_identifier(
         mut self,
@@ -77,6 +81,10 @@ impl DeleteIngestionDestinationInputBuilder {
         self.ingestion_identifier = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</p>
+    pub fn get_ingestion_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ingestion_identifier
+    }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion destination to use for the request.</p>
     pub fn ingestion_destination_identifier(
         mut self,
@@ -92,6 +100,12 @@ impl DeleteIngestionDestinationInputBuilder {
     ) -> Self {
         self.ingestion_destination_identifier = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion destination to use for the request.</p>
+    pub fn get_ingestion_destination_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.ingestion_destination_identifier
     }
     /// Consumes the builder and constructs a [`DeleteIngestionDestinationInput`](crate::operation::delete_ingestion_destination::DeleteIngestionDestinationInput).
     pub fn build(

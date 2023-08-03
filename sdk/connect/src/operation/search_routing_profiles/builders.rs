@@ -36,6 +36,13 @@ impl SearchRoutingProfilesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SearchRoutingProfiles as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::search_routing_profiles::builders::SearchRoutingProfilesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +144,10 @@ impl SearchRoutingProfilesFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -147,6 +158,10 @@ impl SearchRoutingProfilesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -156,6 +171,10 @@ impl SearchRoutingProfilesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>Filters to be applied to search results.</p>
     pub fn search_filter(mut self, input: crate::types::RoutingProfileSearchFilter) -> Self {
@@ -169,6 +188,12 @@ impl SearchRoutingProfilesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_search_filter(input);
         self
+    }
+    /// <p>Filters to be applied to search results.</p>
+    pub fn get_search_filter(
+        &self,
+    ) -> &::std::option::Option<crate::types::RoutingProfileSearchFilter> {
+        self.inner.get_search_filter()
     }
     /// <p>The search criteria to be used to return routing profiles.</p> <note>
     /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results. </p>
@@ -186,5 +211,13 @@ impl SearchRoutingProfilesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_search_criteria(input);
         self
+    }
+    /// <p>The search criteria to be used to return routing profiles.</p> <note>
+    /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results. </p>
+    /// </note>
+    pub fn get_search_criteria(
+        &self,
+    ) -> &::std::option::Option<crate::types::RoutingProfileSearchCriteria> {
+        self.inner.get_search_criteria()
     }
 }

@@ -61,6 +61,10 @@ impl SearchCasesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `cases`.
     ///
     /// To override the contents of this collection use [`set_cases`](Self::set_cases).
@@ -84,6 +88,14 @@ impl SearchCasesOutputBuilder {
     ) -> Self {
         self.cases = input;
         self
+    }
+    /// <p>A list of case documents where each case contains the properties <code>CaseId</code> and <code>Fields</code> where each field is a complex union structure. </p>
+    pub fn get_cases(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<::std::option::Option<crate::types::SearchCasesResponseItem>>,
+    > {
+        &self.cases
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

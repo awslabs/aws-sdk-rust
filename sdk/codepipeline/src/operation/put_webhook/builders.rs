@@ -36,6 +36,10 @@ impl PutWebhookFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutWebhook as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_webhook::builders::PutWebhookInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +125,10 @@ impl PutWebhookFluentBuilder {
         self.inner = self.inner.set_webhook(input);
         self
     }
+    /// <p>The detail provided in an input file to create the webhook, such as the webhook name, the pipeline name, and the action name. Give the webhook a unique name that helps you identify it. You might name the webhook after the pipeline and action it targets so that you can easily recognize what it's used for later.</p>
+    pub fn get_webhook(&self) -> &::std::option::Option<crate::types::WebhookDefinition> {
+        self.inner.get_webhook()
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -137,5 +145,9 @@ impl PutWebhookFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags for the webhook.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

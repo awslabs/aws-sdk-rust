@@ -60,6 +60,12 @@ impl RemoveTagsInputBuilder {
         self.load_balancer_names = input;
         self
     }
+    /// <p>The name of the load balancer. You can specify a maximum of one load balancer name.</p>
+    pub fn get_load_balancer_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.load_balancer_names
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -78,6 +84,10 @@ impl RemoveTagsInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The list of tag keys to remove.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagKeyOnly>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`RemoveTagsInput`](crate::operation::remove_tags::RemoveTagsInput).
     pub fn build(

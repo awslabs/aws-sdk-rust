@@ -46,6 +46,10 @@ impl GetApplicationInputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// Consumes the builder and constructs a [`GetApplicationInput`](crate::operation::get_application::GetApplicationInput).
     pub fn build(
         self,

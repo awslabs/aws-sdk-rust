@@ -72,6 +72,10 @@ impl CustomCodeBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the transform node.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `inputs`.
     ///
     /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
@@ -91,6 +95,10 @@ impl CustomCodeBuilder {
         self.inputs = input;
         self
     }
+    /// <p>The data inputs identified by their node names.</p>
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inputs
+    }
     /// <p>The custom code that is used to perform the data transformation.</p>
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
@@ -101,6 +109,10 @@ impl CustomCodeBuilder {
         self.code = input;
         self
     }
+    /// <p>The custom code that is used to perform the data transformation.</p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
+    }
     /// <p>The name defined for the custom code node class.</p>
     pub fn class_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.class_name = ::std::option::Option::Some(input.into());
@@ -110,6 +122,10 @@ impl CustomCodeBuilder {
     pub fn set_class_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.class_name = input;
         self
+    }
+    /// <p>The name defined for the custom code node class.</p>
+    pub fn get_class_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.class_name
     }
     /// Appends an item to `output_schemas`.
     ///
@@ -129,6 +145,12 @@ impl CustomCodeBuilder {
     ) -> Self {
         self.output_schemas = input;
         self
+    }
+    /// <p>Specifies the data schema for the custom code transform.</p>
+    pub fn get_output_schemas(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>> {
+        &self.output_schemas
     }
     /// Consumes the builder and constructs a [`CustomCode`](crate::types::CustomCode).
     pub fn build(self) -> crate::types::CustomCode {

@@ -39,6 +39,10 @@ impl DeleteStudioInputBuilder {
         self.studio_id = input;
         self
     }
+    /// <p>The ID of the Amazon EMR Studio.</p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_id
+    }
     /// Consumes the builder and constructs a [`DeleteStudioInput`](crate::operation::delete_studio::DeleteStudioInput).
     pub fn build(
         self,

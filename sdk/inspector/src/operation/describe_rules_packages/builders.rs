@@ -36,6 +36,13 @@ impl DescribeRulesPackagesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeRulesPackages as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_rules_packages::builders::DescribeRulesPackagesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +143,12 @@ impl DescribeRulesPackagesFluentBuilder {
         self.inner = self.inner.set_rules_package_arns(input);
         self
     }
+    /// <p>The ARN that specifies the rules package that you want to describe.</p>
+    pub fn get_rules_package_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_rules_package_arns()
+    }
     /// <p>The locale that you want to translate a rules package description into.</p>
     pub fn locale(mut self, input: crate::types::Locale) -> Self {
         self.inner = self.inner.locale(input);
@@ -145,5 +158,9 @@ impl DescribeRulesPackagesFluentBuilder {
     pub fn set_locale(mut self, input: ::std::option::Option<crate::types::Locale>) -> Self {
         self.inner = self.inner.set_locale(input);
         self
+    }
+    /// <p>The locale that you want to translate a rules package description into.</p>
+    pub fn get_locale(&self) -> &::std::option::Option<crate::types::Locale> {
+        self.inner.get_locale()
     }
 }

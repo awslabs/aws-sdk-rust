@@ -51,6 +51,12 @@ impl CreateImportJobInputBuilder {
         self.import_destination = input;
         self
     }
+    /// <p>The destination for the import job.</p>
+    pub fn get_import_destination(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImportDestination> {
+        &self.import_destination
+    }
     /// <p>The data source for the import job.</p>
     pub fn import_data_source(mut self, input: crate::types::ImportDataSource) -> Self {
         self.import_data_source = ::std::option::Option::Some(input);
@@ -63,6 +69,10 @@ impl CreateImportJobInputBuilder {
     ) -> Self {
         self.import_data_source = input;
         self
+    }
+    /// <p>The data source for the import job.</p>
+    pub fn get_import_data_source(&self) -> &::std::option::Option<crate::types::ImportDataSource> {
+        &self.import_data_source
     }
     /// Consumes the builder and constructs a [`CreateImportJobInput`](crate::operation::create_import_job::CreateImportJobInput).
     pub fn build(

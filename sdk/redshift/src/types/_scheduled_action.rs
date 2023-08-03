@@ -117,6 +117,10 @@ impl ScheduledActionBuilder {
         self.scheduled_action_name = input;
         self
     }
+    /// <p>The name of the scheduled action. </p>
+    pub fn get_scheduled_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scheduled_action_name
+    }
     /// <p>A JSON format string of the Amazon Redshift API operation with input parameters. </p>
     /// <p>"<code>{\"ResizeCluster\":{\"NodeType\":\"ds2.8xlarge\",\"ClusterIdentifier\":\"my-test-cluster\",\"NumberOfNodes\":3}}</code>". </p>
     pub fn target_action(mut self, input: crate::types::ScheduledActionType) -> Self {
@@ -132,6 +136,11 @@ impl ScheduledActionBuilder {
         self.target_action = input;
         self
     }
+    /// <p>A JSON format string of the Amazon Redshift API operation with input parameters. </p>
+    /// <p>"<code>{\"ResizeCluster\":{\"NodeType\":\"ds2.8xlarge\",\"ClusterIdentifier\":\"my-test-cluster\",\"NumberOfNodes\":3}}</code>". </p>
+    pub fn get_target_action(&self) -> &::std::option::Option<crate::types::ScheduledActionType> {
+        &self.target_action
+    }
     /// <p>The schedule for a one-time (at format) or recurring (cron format) scheduled action. Schedule invocations must be separated by at least one hour.</p>
     /// <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For example, "<code>at(2016-03-04T17:27:00)</code>".</p>
     /// <p>Format of cron expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week Year)</code>". For example, "<code>cron(0 10 ? * MON *)</code>". For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
@@ -146,6 +155,12 @@ impl ScheduledActionBuilder {
         self.schedule = input;
         self
     }
+    /// <p>The schedule for a one-time (at format) or recurring (cron format) scheduled action. Schedule invocations must be separated by at least one hour.</p>
+    /// <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For example, "<code>at(2016-03-04T17:27:00)</code>".</p>
+    /// <p>Format of cron expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week Year)</code>". For example, "<code>cron(0 10 ? * MON *)</code>". For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+    pub fn get_schedule(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schedule
+    }
     /// <p>The IAM role to assume to run the scheduled action. This IAM role must have permission to run the Amazon Redshift API operation in the scheduled action. This IAM role must allow the Amazon Redshift scheduler (Principal scheduler.redshift.amazonaws.com) to assume permissions on your behalf. For more information about the IAM role to use with the Amazon Redshift scheduler, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using Identity-Based Policies for Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     pub fn iam_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role = ::std::option::Option::Some(input.into());
@@ -155,6 +170,10 @@ impl ScheduledActionBuilder {
     pub fn set_iam_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_role = input;
         self
+    }
+    /// <p>The IAM role to assume to run the scheduled action. This IAM role must have permission to run the Amazon Redshift API operation in the scheduled action. This IAM role must allow the Amazon Redshift scheduler (Principal scheduler.redshift.amazonaws.com) to assume permissions on your behalf. For more information about the IAM role to use with the Amazon Redshift scheduler, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using Identity-Based Policies for Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
+    pub fn get_iam_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_role
     }
     /// <p>The description of the scheduled action. </p>
     pub fn scheduled_action_description(
@@ -172,6 +191,12 @@ impl ScheduledActionBuilder {
         self.scheduled_action_description = input;
         self
     }
+    /// <p>The description of the scheduled action. </p>
+    pub fn get_scheduled_action_description(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.scheduled_action_description
+    }
     /// <p>The state of the scheduled action. For example, <code>DISABLED</code>. </p>
     pub fn state(mut self, input: crate::types::ScheduledActionState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -184,6 +209,10 @@ impl ScheduledActionBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the scheduled action. For example, <code>DISABLED</code>. </p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ScheduledActionState> {
+        &self.state
     }
     /// Appends an item to `next_invocations`.
     ///
@@ -204,6 +233,12 @@ impl ScheduledActionBuilder {
         self.next_invocations = input;
         self
     }
+    /// <p>List of times when the scheduled action will run. </p>
+    pub fn get_next_invocations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>> {
+        &self.next_invocations
+    }
     /// <p>The start time in UTC when the schedule is active. Before this time, the scheduled action does not trigger. </p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -217,6 +252,10 @@ impl ScheduledActionBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The start time in UTC when the schedule is active. Before this time, the scheduled action does not trigger. </p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The end time in UTC when the schedule is no longer active. After this time, the scheduled action does not trigger. </p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -229,6 +268,10 @@ impl ScheduledActionBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The end time in UTC when the schedule is no longer active. After this time, the scheduled action does not trigger. </p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// Consumes the builder and constructs a [`ScheduledAction`](crate::types::ScheduledAction).
     pub fn build(self) -> crate::types::ScheduledAction {

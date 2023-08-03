@@ -76,6 +76,10 @@ impl VehicleStatusBuilder {
         self.campaign_name = input;
         self
     }
+    /// <p>The name of a campaign.</p>
+    pub fn get_campaign_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.campaign_name
+    }
     /// <p>The unique ID of the vehicle.</p>
     pub fn vehicle_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vehicle_name = ::std::option::Option::Some(input.into());
@@ -85,6 +89,10 @@ impl VehicleStatusBuilder {
     pub fn set_vehicle_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vehicle_name = input;
         self
+    }
+    /// <p>The unique ID of the vehicle.</p>
+    pub fn get_vehicle_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vehicle_name
     }
     /// <p>The state of a vehicle, which can be one of the following:</p>
     /// <ul>
@@ -109,6 +117,17 @@ impl VehicleStatusBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::VehicleState>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The state of a vehicle, which can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATED</code> - Amazon Web Services IoT FleetWise sucessfully created the vehicle. </p> </li>
+    /// <li> <p> <code>READY</code> - The vehicle is ready to receive a campaign deployment. </p> </li>
+    /// <li> <p> <code>HEALTHY</code> - A campaign deployment was delivered to the vehicle. </p> </li>
+    /// <li> <p> <code>SUSPENDED</code> - A campaign associated with the vehicle was suspended and data collection was paused. </p> </li>
+    /// <li> <p> <code>DELETING</code> - Amazon Web Services IoT FleetWise is removing a campaign from the vehicle. </p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::VehicleState> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`VehicleStatus`](crate::types::VehicleStatus).
     pub fn build(self) -> crate::types::VehicleStatus {

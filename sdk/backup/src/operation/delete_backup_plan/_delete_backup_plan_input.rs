@@ -46,6 +46,10 @@ impl DeleteBackupPlanInputBuilder {
         self.backup_plan_id = input;
         self
     }
+    /// <p>Uniquely identifies a backup plan.</p>
+    pub fn get_backup_plan_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_plan_id
+    }
     /// Consumes the builder and constructs a [`DeleteBackupPlanInput`](crate::operation::delete_backup_plan::DeleteBackupPlanInput).
     pub fn build(
         self,

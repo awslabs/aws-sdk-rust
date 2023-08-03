@@ -55,6 +55,10 @@ impl DeleteRouteRequestParameterInputBuilder {
         self.api_id = input;
         self
     }
+    /// <p>The API identifier.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
+    }
     /// <p>The route request parameter key.</p>
     pub fn request_parameter_key(
         mut self,
@@ -71,6 +75,10 @@ impl DeleteRouteRequestParameterInputBuilder {
         self.request_parameter_key = input;
         self
     }
+    /// <p>The route request parameter key.</p>
+    pub fn get_request_parameter_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_parameter_key
+    }
     /// <p>The route ID.</p>
     pub fn route_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_id = ::std::option::Option::Some(input.into());
@@ -80,6 +88,10 @@ impl DeleteRouteRequestParameterInputBuilder {
     pub fn set_route_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.route_id = input;
         self
+    }
+    /// <p>The route ID.</p>
+    pub fn get_route_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.route_id
     }
     /// Consumes the builder and constructs a [`DeleteRouteRequestParameterInput`](crate::operation::delete_route_request_parameter::DeleteRouteRequestParameterInput).
     pub fn build(

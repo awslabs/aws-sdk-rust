@@ -51,6 +51,12 @@ impl CreateCacheParameterGroupOutputBuilder {
         self.cache_parameter_group = input;
         self
     }
+    /// <p>Represents the output of a <code>CreateCacheParameterGroup</code> operation.</p>
+    pub fn get_cache_parameter_group(
+        &self,
+    ) -> &::std::option::Option<crate::types::CacheParameterGroup> {
+        &self.cache_parameter_group
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

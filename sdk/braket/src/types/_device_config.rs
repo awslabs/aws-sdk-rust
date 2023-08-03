@@ -40,6 +40,10 @@ impl DeviceConfigBuilder {
         self.device = input;
         self
     }
+    /// <p>The primary quantum processing unit (QPU) or simulator used to create and run an Amazon Braket job.</p>
+    pub fn get_device(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device
+    }
     /// Consumes the builder and constructs a [`DeviceConfig`](crate::types::DeviceConfig).
     pub fn build(self) -> crate::types::DeviceConfig {
         crate::types::DeviceConfig {

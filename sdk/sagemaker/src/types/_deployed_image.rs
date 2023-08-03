@@ -63,6 +63,10 @@ impl DeployedImageBuilder {
         self.specified_image = input;
         self
     }
+    /// <p>The image path you specified when you created the model.</p>
+    pub fn get_specified_image(&self) -> &::std::option::Option<::std::string::String> {
+        &self.specified_image
+    }
     /// <p>The specific digest path of the image hosted in this <code>ProductionVariant</code>.</p>
     pub fn resolved_image(
         mut self,
@@ -79,6 +83,10 @@ impl DeployedImageBuilder {
         self.resolved_image = input;
         self
     }
+    /// <p>The specific digest path of the image hosted in this <code>ProductionVariant</code>.</p>
+    pub fn get_resolved_image(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resolved_image
+    }
     /// <p>The date and time when the image path for the model resolved to the <code>ResolvedImage</code> </p>
     pub fn resolution_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.resolution_time = ::std::option::Option::Some(input);
@@ -91,6 +99,10 @@ impl DeployedImageBuilder {
     ) -> Self {
         self.resolution_time = input;
         self
+    }
+    /// <p>The date and time when the image path for the model resolved to the <code>ResolvedImage</code> </p>
+    pub fn get_resolution_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.resolution_time
     }
     /// Consumes the builder and constructs a [`DeployedImage`](crate::types::DeployedImage).
     pub fn build(self) -> crate::types::DeployedImage {

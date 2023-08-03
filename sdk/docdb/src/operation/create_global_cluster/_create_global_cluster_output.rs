@@ -51,6 +51,10 @@ impl CreateGlobalClusterOutputBuilder {
         self.global_cluster = input;
         self
     }
+    /// <p>A data type representing an Amazon DocumentDB global cluster.</p>
+    pub fn get_global_cluster(&self) -> &::std::option::Option<crate::types::GlobalCluster> {
+        &self.global_cluster
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

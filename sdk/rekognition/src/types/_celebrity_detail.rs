@@ -97,6 +97,10 @@ impl CelebrityDetailBuilder {
         self.urls = input;
         self
     }
+    /// <p>An array of URLs pointing to additional celebrity information. </p>
+    pub fn get_urls(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.urls
+    }
     /// <p>The name of the celebrity.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -106,6 +110,10 @@ impl CelebrityDetailBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the celebrity.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The unique identifier for the celebrity. </p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -117,6 +125,10 @@ impl CelebrityDetailBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier for the celebrity. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity. </p>
     pub fn confidence(mut self, input: f32) -> Self {
         self.confidence = ::std::option::Option::Some(input);
@@ -126,6 +138,10 @@ impl CelebrityDetailBuilder {
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.confidence = input;
         self
+    }
+    /// <p>The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity. </p>
+    pub fn get_confidence(&self) -> &::std::option::Option<f32> {
+        &self.confidence
     }
     /// <p>Bounding box around the body of a celebrity.</p>
     pub fn bounding_box(mut self, input: crate::types::BoundingBox) -> Self {
@@ -140,6 +156,10 @@ impl CelebrityDetailBuilder {
         self.bounding_box = input;
         self
     }
+    /// <p>Bounding box around the body of a celebrity.</p>
+    pub fn get_bounding_box(&self) -> &::std::option::Option<crate::types::BoundingBox> {
+        &self.bounding_box
+    }
     /// <p>Face details for the recognized celebrity.</p>
     pub fn face(mut self, input: crate::types::FaceDetail) -> Self {
         self.face = ::std::option::Option::Some(input);
@@ -149,6 +169,10 @@ impl CelebrityDetailBuilder {
     pub fn set_face(mut self, input: ::std::option::Option<crate::types::FaceDetail>) -> Self {
         self.face = input;
         self
+    }
+    /// <p>Face details for the recognized celebrity.</p>
+    pub fn get_face(&self) -> &::std::option::Option<crate::types::FaceDetail> {
+        &self.face
     }
     /// <p>Retrieves the known gender for the celebrity.</p>
     pub fn known_gender(mut self, input: crate::types::KnownGender) -> Self {
@@ -162,6 +186,10 @@ impl CelebrityDetailBuilder {
     ) -> Self {
         self.known_gender = input;
         self
+    }
+    /// <p>Retrieves the known gender for the celebrity.</p>
+    pub fn get_known_gender(&self) -> &::std::option::Option<crate::types::KnownGender> {
+        &self.known_gender
     }
     /// Consumes the builder and constructs a [`CelebrityDetail`](crate::types::CelebrityDetail).
     pub fn build(self) -> crate::types::CelebrityDetail {

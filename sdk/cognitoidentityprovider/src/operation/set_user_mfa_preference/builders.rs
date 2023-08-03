@@ -36,6 +36,13 @@ impl SetUserMFAPreferenceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SetUserMFAPreference as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::set_user_mfa_preference::builders::SetUserMfaPreferenceInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +136,10 @@ impl SetUserMFAPreferenceFluentBuilder {
         self.inner = self.inner.set_sms_mfa_settings(input);
         self
     }
+    /// <p>The SMS text message multi-factor authentication (MFA) settings.</p>
+    pub fn get_sms_mfa_settings(&self) -> &::std::option::Option<crate::types::SmsMfaSettingsType> {
+        self.inner.get_sms_mfa_settings()
+    }
     /// <p>The time-based one-time password (TOTP) software token MFA settings.</p>
     pub fn software_token_mfa_settings(
         mut self,
@@ -145,6 +156,12 @@ impl SetUserMFAPreferenceFluentBuilder {
         self.inner = self.inner.set_software_token_mfa_settings(input);
         self
     }
+    /// <p>The time-based one-time password (TOTP) software token MFA settings.</p>
+    pub fn get_software_token_mfa_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::SoftwareTokenMfaSettingsType> {
+        self.inner.get_software_token_mfa_settings()
+    }
     /// <p>A valid access token that Amazon Cognito issued to the user whose MFA preference you want to set.</p>
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.access_token(input.into());
@@ -154,5 +171,9 @@ impl SetUserMFAPreferenceFluentBuilder {
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_access_token(input);
         self
+    }
+    /// <p>A valid access token that Amazon Cognito issued to the user whose MFA preference you want to set.</p>
+    pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_access_token()
     }
 }

@@ -36,6 +36,10 @@ impl UpdateLoggingConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateLoggingConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_logging_configuration::builders::UpdateLoggingConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl UpdateLoggingConfigurationFluentBuilder {
         self.inner = self.inner.set_identifier(input);
         self
     }
+    /// <p>Identifier of the logging configuration to be updated.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identifier()
+    }
     /// <p>Logging-configuration name. The value does not need to be unique.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -135,6 +143,10 @@ impl UpdateLoggingConfigurationFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>Logging-configuration name. The value does not need to be unique.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>A complex type that contains a destination configuration for where chat content will be logged. There can be only one type of destination (<code>cloudWatchLogs</code>, <code>firehose</code>, or <code>s3</code>) in a <code>destinationConfiguration</code>.</p>
     pub fn destination_configuration(
@@ -151,5 +163,11 @@ impl UpdateLoggingConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destination_configuration(input);
         self
+    }
+    /// <p>A complex type that contains a destination configuration for where chat content will be logged. There can be only one type of destination (<code>cloudWatchLogs</code>, <code>firehose</code>, or <code>s3</code>) in a <code>destinationConfiguration</code>.</p>
+    pub fn get_destination_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DestinationConfiguration> {
+        self.inner.get_destination_configuration()
     }
 }

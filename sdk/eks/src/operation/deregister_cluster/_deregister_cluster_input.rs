@@ -40,6 +40,10 @@ impl DeregisterClusterInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the connected cluster to deregister.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeregisterClusterInput`](crate::operation::deregister_cluster::DeregisterClusterInput).
     pub fn build(
         self,

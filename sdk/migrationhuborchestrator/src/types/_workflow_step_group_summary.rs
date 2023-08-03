@@ -80,6 +80,10 @@ impl WorkflowStepGroupSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the step group.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the step group.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl WorkflowStepGroupSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the step group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The owner of the step group.</p>
     pub fn owner(mut self, input: crate::types::Owner) -> Self {
         self.owner = ::std::option::Option::Some(input);
@@ -99,6 +107,10 @@ impl WorkflowStepGroupSummaryBuilder {
     pub fn set_owner(mut self, input: ::std::option::Option<crate::types::Owner>) -> Self {
         self.owner = input;
         self
+    }
+    /// <p>The owner of the step group.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<crate::types::Owner> {
+        &self.owner
     }
     /// <p>The status of the step group.</p>
     pub fn status(mut self, input: crate::types::StepGroupStatus) -> Self {
@@ -112,6 +124,10 @@ impl WorkflowStepGroupSummaryBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the step group.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::StepGroupStatus> {
+        &self.status
     }
     /// Appends an item to `previous`.
     ///
@@ -132,6 +148,10 @@ impl WorkflowStepGroupSummaryBuilder {
         self.previous = input;
         self
     }
+    /// <p>The previous step group.</p>
+    pub fn get_previous(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.previous
+    }
     /// Appends an item to `next`.
     ///
     /// To override the contents of this collection use [`set_next`](Self::set_next).
@@ -150,6 +170,10 @@ impl WorkflowStepGroupSummaryBuilder {
     ) -> Self {
         self.next = input;
         self
+    }
+    /// <p>The next step group.</p>
+    pub fn get_next(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.next
     }
     /// Consumes the builder and constructs a [`WorkflowStepGroupSummary`](crate::types::WorkflowStepGroupSummary).
     pub fn build(self) -> crate::types::WorkflowStepGroupSummary {

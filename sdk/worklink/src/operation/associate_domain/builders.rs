@@ -39,6 +39,12 @@ impl AssociateDomainFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateDomain as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::associate_domain::builders::AssociateDomainInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl AssociateDomainFluentBuilder {
         self.inner = self.inner.set_fleet_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fleet_arn()
+    }
     /// <p>The fully qualified domain name (FQDN).</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
@@ -139,6 +149,10 @@ impl AssociateDomainFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>The fully qualified domain name (FQDN).</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p>The name to display.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
@@ -148,6 +162,10 @@ impl AssociateDomainFluentBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_display_name(input);
         self
+    }
+    /// <p>The name to display.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_display_name()
     }
     /// <p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>
     pub fn acm_certificate_arn(
@@ -164,5 +182,9 @@ impl AssociateDomainFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_acm_certificate_arn(input);
         self
+    }
+    /// <p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>
+    pub fn get_acm_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_acm_certificate_arn()
     }
 }

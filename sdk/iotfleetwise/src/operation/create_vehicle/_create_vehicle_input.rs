@@ -94,6 +94,10 @@ impl CreateVehicleInputBuilder {
         self.vehicle_name = input;
         self
     }
+    /// <p> The unique ID of the vehicle to create. </p>
+    pub fn get_vehicle_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vehicle_name
+    }
     /// <p> The Amazon Resource Name ARN of a vehicle model. </p>
     pub fn model_manifest_arn(
         mut self,
@@ -110,6 +114,10 @@ impl CreateVehicleInputBuilder {
         self.model_manifest_arn = input;
         self
     }
+    /// <p> The Amazon Resource Name ARN of a vehicle model. </p>
+    pub fn get_model_manifest_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_manifest_arn
+    }
     /// <p> The ARN of a decoder manifest. </p>
     pub fn decoder_manifest_arn(
         mut self,
@@ -125,6 +133,10 @@ impl CreateVehicleInputBuilder {
     ) -> Self {
         self.decoder_manifest_arn = input;
         self
+    }
+    /// <p> The ARN of a decoder manifest. </p>
+    pub fn get_decoder_manifest_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.decoder_manifest_arn
     }
     /// Adds a key-value pair to `attributes`.
     ///
@@ -153,6 +165,15 @@ impl CreateVehicleInputBuilder {
         self.attributes = input;
         self
     }
+    /// <p>Static information about a vehicle in a key-value pair. For example: <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
+    /// <p>A campaign must include the keys (attribute names) in <code>dataExtraDimensions</code> for them to display in Amazon Timestream.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.attributes
+    }
     /// <p> An option to create a new Amazon Web Services IoT thing when creating a vehicle, or to validate an existing Amazon Web Services IoT thing as a vehicle. </p>
     /// <p>Default: <code></code> </p>
     pub fn association_behavior(mut self, input: crate::types::VehicleAssociationBehavior) -> Self {
@@ -167,6 +188,13 @@ impl CreateVehicleInputBuilder {
     ) -> Self {
         self.association_behavior = input;
         self
+    }
+    /// <p> An option to create a new Amazon Web Services IoT thing when creating a vehicle, or to validate an existing Amazon Web Services IoT thing as a vehicle. </p>
+    /// <p>Default: <code></code> </p>
+    pub fn get_association_behavior(
+        &self,
+    ) -> &::std::option::Option<crate::types::VehicleAssociationBehavior> {
+        &self.association_behavior
     }
     /// Appends an item to `tags`.
     ///
@@ -186,6 +214,10 @@ impl CreateVehicleInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Metadata that can be used to manage the vehicle.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateVehicleInput`](crate::operation::create_vehicle::CreateVehicleInput).
     pub fn build(

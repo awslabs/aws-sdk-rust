@@ -56,6 +56,10 @@ impl TaintBuilder {
         self.key = input;
         self
     }
+    /// <p>The key of the taint.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>The value of the taint.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl TaintBuilder {
         self.value = input;
         self
     }
+    /// <p>The value of the taint.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// <p>The effect of the taint.</p>
     pub fn effect(mut self, input: crate::types::TaintEffect) -> Self {
         self.effect = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl TaintBuilder {
     pub fn set_effect(mut self, input: ::std::option::Option<crate::types::TaintEffect>) -> Self {
         self.effect = input;
         self
+    }
+    /// <p>The effect of the taint.</p>
+    pub fn get_effect(&self) -> &::std::option::Option<crate::types::TaintEffect> {
+        &self.effect
     }
     /// Consumes the builder and constructs a [`Taint`](crate::types::Taint).
     pub fn build(self) -> crate::types::Taint {

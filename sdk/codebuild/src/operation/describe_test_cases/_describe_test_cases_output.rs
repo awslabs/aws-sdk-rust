@@ -55,6 +55,10 @@ impl DescribeTestCasesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `test_cases`.
     ///
     /// To override the contents of this collection use [`set_test_cases`](Self::set_test_cases).
@@ -73,6 +77,12 @@ impl DescribeTestCasesOutputBuilder {
     ) -> Self {
         self.test_cases = input;
         self
+    }
+    /// <p> The returned list of test cases. </p>
+    pub fn get_test_cases(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TestCase>> {
+        &self.test_cases
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

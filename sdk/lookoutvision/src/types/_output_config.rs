@@ -43,6 +43,10 @@ impl OutputConfigBuilder {
         self.s3_location = input;
         self
     }
+    /// <p>The S3 location for the output.</p>
+    pub fn get_s3_location(&self) -> &::std::option::Option<crate::types::S3Location> {
+        &self.s3_location
+    }
     /// Consumes the builder and constructs a [`OutputConfig`](crate::types::OutputConfig).
     pub fn build(self) -> crate::types::OutputConfig {
         crate::types::OutputConfig {

@@ -150,6 +150,10 @@ impl ResolverRuleBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID that Resolver assigned to the Resolver rule when you created it.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>A unique string that you specified when you created the Resolver rule. <code>CreatorRequestId</code> identifies the request and allows failed requests to be retried without the risk of running the operation twice. </p>
     pub fn creator_request_id(
         mut self,
@@ -166,6 +170,10 @@ impl ResolverRuleBuilder {
         self.creator_request_id = input;
         self
     }
+    /// <p>A unique string that you specified when you created the Resolver rule. <code>CreatorRequestId</code> identifies the request and allows failed requests to be retried without the risk of running the operation twice. </p>
+    pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creator_request_id
+    }
     /// <p>The ARN (Amazon Resource Name) for the Resolver rule specified by <code>Id</code>.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -176,6 +184,10 @@ impl ResolverRuleBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN (Amazon Resource Name) for the Resolver rule specified by <code>Id</code>.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>DNS queries for this domain name are forwarded to the IP addresses that are specified in <code>TargetIps</code>. If a query matches multiple Resolver rules (example.com and www.example.com), the query is routed using the Resolver rule that contains the most specific domain name (www.example.com).</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
@@ -185,6 +197,10 @@ impl ResolverRuleBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
+    }
+    /// <p>DNS queries for this domain name are forwarded to the IP addresses that are specified in <code>TargetIps</code>. If a query matches multiple Resolver rules (example.com and www.example.com), the query is routed using the Resolver rule that contains the most specific domain name (www.example.com).</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// <p>A code that specifies the current status of the Resolver rule.</p>
     pub fn status(mut self, input: crate::types::ResolverRuleStatus) -> Self {
@@ -198,6 +214,10 @@ impl ResolverRuleBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>A code that specifies the current status of the Resolver rule.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ResolverRuleStatus> {
+        &self.status
     }
     /// <p>A detailed description of the status of a Resolver rule.</p>
     pub fn status_message(
@@ -214,6 +234,10 @@ impl ResolverRuleBuilder {
     ) -> Self {
         self.status_message = input;
         self
+    }
+    /// <p>A detailed description of the status of a Resolver rule.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// <p>When you want to forward DNS queries for specified domain name to resolvers on your network, specify <code>FORWARD</code>.</p>
     /// <p>When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver to process queries for a subdomain of that domain, specify <code>SYSTEM</code>.</p>
@@ -234,6 +258,13 @@ impl ResolverRuleBuilder {
         self.rule_type = input;
         self
     }
+    /// <p>When you want to forward DNS queries for specified domain name to resolvers on your network, specify <code>FORWARD</code>.</p>
+    /// <p>When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver to process queries for a subdomain of that domain, specify <code>SYSTEM</code>.</p>
+    /// <p>For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and specify <code>FORWARD</code> for <code>RuleType</code>. To then have Resolver process queries for apex.example.com, you create a rule and specify <code>SYSTEM</code> for <code>RuleType</code>.</p>
+    /// <p>Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for <code>RuleType</code>.</p>
+    pub fn get_rule_type(&self) -> &::std::option::Option<crate::types::RuleTypeOption> {
+        &self.rule_type
+    }
     /// <p>The name for the Resolver rule, which you specified when you created the Resolver rule.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -243,6 +274,10 @@ impl ResolverRuleBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name for the Resolver rule, which you specified when you created the Resolver rule.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `target_ips`.
     ///
@@ -263,6 +298,12 @@ impl ResolverRuleBuilder {
         self.target_ips = input;
         self
     }
+    /// <p>An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to. Typically, these are the IP addresses of DNS resolvers on your network. </p>
+    pub fn get_target_ips(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetAddress>> {
+        &self.target_ips
+    }
     /// <p>The ID of the endpoint that the rule is associated with.</p>
     pub fn resolver_endpoint_id(
         mut self,
@@ -279,6 +320,10 @@ impl ResolverRuleBuilder {
         self.resolver_endpoint_id = input;
         self
     }
+    /// <p>The ID of the endpoint that the rule is associated with.</p>
+    pub fn get_resolver_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resolver_endpoint_id
+    }
     /// <p>When a rule is shared with another Amazon Web Services account, the account ID of the account that the rule is shared with.</p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_id = ::std::option::Option::Some(input.into());
@@ -288,6 +333,10 @@ impl ResolverRuleBuilder {
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_id = input;
         self
+    }
+    /// <p>When a rule is shared with another Amazon Web Services account, the account ID of the account that the rule is shared with.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
     }
     /// <p>Whether the rule is shared and, if so, whether the current account is sharing the rule with another account, or another account is sharing the rule with the current account.</p>
     pub fn share_status(mut self, input: crate::types::ShareStatus) -> Self {
@@ -301,6 +350,10 @@ impl ResolverRuleBuilder {
     ) -> Self {
         self.share_status = input;
         self
+    }
+    /// <p>Whether the rule is shared and, if so, whether the current account is sharing the rule with another account, or another account is sharing the rule with the current account.</p>
+    pub fn get_share_status(&self) -> &::std::option::Option<crate::types::ShareStatus> {
+        &self.share_status
     }
     /// <p>The date and time that the Resolver rule was created, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub fn creation_time(
@@ -318,6 +371,10 @@ impl ResolverRuleBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The date and time that the Resolver rule was created, in Unix time format and Coordinated Universal Time (UTC).</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_time
+    }
     /// <p>The date and time that the Resolver rule was last updated, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub fn modification_time(
         mut self,
@@ -333,6 +390,10 @@ impl ResolverRuleBuilder {
     ) -> Self {
         self.modification_time = input;
         self
+    }
+    /// <p>The date and time that the Resolver rule was last updated, in Unix time format and Coordinated Universal Time (UTC).</p>
+    pub fn get_modification_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.modification_time
     }
     /// Consumes the builder and constructs a [`ResolverRule`](crate::types::ResolverRule).
     pub fn build(self) -> crate::types::ResolverRule {

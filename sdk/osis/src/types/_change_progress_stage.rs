@@ -64,6 +64,10 @@ impl ChangeProgressStageBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the stage.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The current status of the stage that the change is in.</p>
     pub fn status(mut self, input: crate::types::ChangeProgressStageStatuses) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl ChangeProgressStageBuilder {
         self.status = input;
         self
     }
+    /// <p>The current status of the stage that the change is in.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ChangeProgressStageStatuses> {
+        &self.status
+    }
     /// <p>A description of the stage.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -86,6 +94,10 @@ impl ChangeProgressStageBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the stage.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The most recent updated timestamp of the stage.</p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -99,6 +111,10 @@ impl ChangeProgressStageBuilder {
     ) -> Self {
         self.last_updated_at = input;
         self
+    }
+    /// <p>The most recent updated timestamp of the stage.</p>
+    pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_at
     }
     /// Consumes the builder and constructs a [`ChangeProgressStage`](crate::types::ChangeProgressStage).
     pub fn build(self) -> crate::types::ChangeProgressStage {

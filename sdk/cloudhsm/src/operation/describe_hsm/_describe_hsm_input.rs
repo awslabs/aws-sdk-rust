@@ -48,6 +48,10 @@ impl DescribeHsmInputBuilder {
         self.hsm_arn = input;
         self
     }
+    /// <p>The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code> parameter must be specified.</p>
+    pub fn get_hsm_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hsm_arn
+    }
     /// <p>The serial number of the HSM. Either the <code>HsmArn</code> or the <code>HsmSerialNumber</code> parameter must be specified.</p>
     pub fn hsm_serial_number(
         mut self,
@@ -63,6 +67,10 @@ impl DescribeHsmInputBuilder {
     ) -> Self {
         self.hsm_serial_number = input;
         self
+    }
+    /// <p>The serial number of the HSM. Either the <code>HsmArn</code> or the <code>HsmSerialNumber</code> parameter must be specified.</p>
+    pub fn get_hsm_serial_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hsm_serial_number
     }
     /// Consumes the builder and constructs a [`DescribeHsmInput`](crate::operation::describe_hsm::DescribeHsmInput).
     pub fn build(

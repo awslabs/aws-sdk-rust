@@ -53,6 +53,10 @@ impl DeleteConfigurationSetEventDestinationInputBuilder {
         self.configuration_set_name = input;
         self
     }
+    /// ConfigurationSetName
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set_name
+    }
     /// EventDestinationName
     pub fn event_destination_name(
         mut self,
@@ -68,6 +72,10 @@ impl DeleteConfigurationSetEventDestinationInputBuilder {
     ) -> Self {
         self.event_destination_name = input;
         self
+    }
+    /// EventDestinationName
+    pub fn get_event_destination_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_destination_name
     }
     /// Consumes the builder and constructs a [`DeleteConfigurationSetEventDestinationInput`](crate::operation::delete_configuration_set_event_destination::DeleteConfigurationSetEventDestinationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_configuration_set_event_destination::DeleteConfigurationSetEventDestinationInput, ::aws_smithy_http::operation::error::BuildError>{

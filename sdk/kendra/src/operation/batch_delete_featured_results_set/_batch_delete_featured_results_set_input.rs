@@ -48,6 +48,10 @@ impl BatchDeleteFeaturedResultsSetInputBuilder {
         self.index_id = input;
         self
     }
+    /// <p>The identifier of the index used for featuring results.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_id
+    }
     /// Appends an item to `featured_results_set_ids`.
     ///
     /// To override the contents of this collection use [`set_featured_results_set_ids`](Self::set_featured_results_set_ids).
@@ -69,6 +73,12 @@ impl BatchDeleteFeaturedResultsSetInputBuilder {
     ) -> Self {
         self.featured_results_set_ids = input;
         self
+    }
+    /// <p>The identifiers of the featured results sets that you want to delete.</p>
+    pub fn get_featured_results_set_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.featured_results_set_ids
     }
     /// Consumes the builder and constructs a [`BatchDeleteFeaturedResultsSetInput`](crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetInput).
     pub fn build(

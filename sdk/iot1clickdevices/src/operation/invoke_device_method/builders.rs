@@ -36,6 +36,12 @@ impl InvokeDeviceMethodFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the InvokeDeviceMethod as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::invoke_device_method::builders::InvokeDeviceMethodInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl InvokeDeviceMethodFluentBuilder {
         self.inner = self.inner.set_device_id(input);
         self
     }
+    /// <p>The unique identifier of the device.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_id()
+    }
     /// <p>The device method to invoke.</p>
     pub fn device_method(mut self, input: crate::types::DeviceMethod) -> Self {
         self.inner = self.inner.device_method(input);
@@ -138,6 +148,10 @@ impl InvokeDeviceMethodFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_device_method(input);
         self
+    }
+    /// <p>The device method to invoke.</p>
+    pub fn get_device_method(&self) -> &::std::option::Option<crate::types::DeviceMethod> {
+        self.inner.get_device_method()
     }
     /// <p>A JSON encoded string containing the device method request parameters.</p>
     pub fn device_method_parameters(
@@ -154,5 +168,9 @@ impl InvokeDeviceMethodFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_device_method_parameters(input);
         self
+    }
+    /// <p>A JSON encoded string containing the device method request parameters.</p>
+    pub fn get_device_method_parameters(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_method_parameters()
     }
 }

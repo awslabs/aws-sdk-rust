@@ -39,6 +39,10 @@ impl GetCrawlerInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the crawler to retrieve metadata for.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`GetCrawlerInput`](crate::operation::get_crawler::GetCrawlerInput).
     pub fn build(
         self,

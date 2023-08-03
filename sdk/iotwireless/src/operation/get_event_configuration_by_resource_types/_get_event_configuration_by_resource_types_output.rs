@@ -103,6 +103,13 @@ impl GetEventConfigurationByResourceTypesOutputBuilder {
         self.device_registration_state = input;
         self
     }
+    /// <p>Resource type event configuration for the device registration state event.</p>
+    pub fn get_device_registration_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeviceRegistrationStateResourceTypeEventConfiguration>
+    {
+        &self.device_registration_state
+    }
     /// <p>Resource type event configuration for the proximity event.</p>
     pub fn proximity(
         mut self,
@@ -119,6 +126,12 @@ impl GetEventConfigurationByResourceTypesOutputBuilder {
         self.proximity = input;
         self
     }
+    /// <p>Resource type event configuration for the proximity event.</p>
+    pub fn get_proximity(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProximityResourceTypeEventConfiguration> {
+        &self.proximity
+    }
     /// <p>Resource type event configuration for the join event.</p>
     pub fn join(mut self, input: crate::types::JoinResourceTypeEventConfiguration) -> Self {
         self.join = ::std::option::Option::Some(input);
@@ -131,6 +144,12 @@ impl GetEventConfigurationByResourceTypesOutputBuilder {
     ) -> Self {
         self.join = input;
         self
+    }
+    /// <p>Resource type event configuration for the join event.</p>
+    pub fn get_join(
+        &self,
+    ) -> &::std::option::Option<crate::types::JoinResourceTypeEventConfiguration> {
+        &self.join
     }
     /// <p>Resource type event configuration for the connection status event.</p>
     pub fn connection_status(
@@ -147,6 +166,12 @@ impl GetEventConfigurationByResourceTypesOutputBuilder {
     ) -> Self {
         self.connection_status = input;
         self
+    }
+    /// <p>Resource type event configuration for the connection status event.</p>
+    pub fn get_connection_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConnectionStatusResourceTypeEventConfiguration> {
+        &self.connection_status
     }
     /// <p>Resource type event configuration object for the message delivery status event.</p>
     pub fn message_delivery_status(
@@ -165,6 +190,13 @@ impl GetEventConfigurationByResourceTypesOutputBuilder {
     ) -> Self {
         self.message_delivery_status = input;
         self
+    }
+    /// <p>Resource type event configuration object for the message delivery status event.</p>
+    pub fn get_message_delivery_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::MessageDeliveryStatusResourceTypeEventConfiguration>
+    {
+        &self.message_delivery_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

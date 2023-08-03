@@ -49,6 +49,12 @@ impl DescribeDeviceOutputBuilder {
         self.device_description = input;
         self
     }
+    /// <p>Device details.</p>
+    pub fn get_device_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeviceDescription> {
+        &self.device_description
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

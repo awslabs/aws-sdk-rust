@@ -81,6 +81,10 @@ impl CreateDatasetExportJobInputBuilder {
         self.job_name = input;
         self
     }
+    /// <p>The name for the dataset export job.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the dataset that contains the data to export.</p>
     pub fn dataset_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_arn = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl CreateDatasetExportJobInputBuilder {
     pub fn set_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the dataset that contains the data to export.</p>
+    pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_arn
     }
     /// <p>The data to export, based on how you imported the data. You can choose to export only <code>BULK</code> data that you imported using a dataset import job, only <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>. </p>
     pub fn ingestion_mode(mut self, input: crate::types::IngestionMode) -> Self {
@@ -104,6 +112,10 @@ impl CreateDatasetExportJobInputBuilder {
         self.ingestion_mode = input;
         self
     }
+    /// <p>The data to export, based on how you imported the data. You can choose to export only <code>BULK</code> data that you imported using a dataset import job, only <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>. </p>
+    pub fn get_ingestion_mode(&self) -> &::std::option::Option<crate::types::IngestionMode> {
+        &self.ingestion_mode
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -113,6 +125,10 @@ impl CreateDatasetExportJobInputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The path to the Amazon S3 bucket where the job's output is stored.</p>
     pub fn job_output(mut self, input: crate::types::DatasetExportJobOutput) -> Self {
@@ -126,6 +142,10 @@ impl CreateDatasetExportJobInputBuilder {
     ) -> Self {
         self.job_output = input;
         self
+    }
+    /// <p>The path to the Amazon S3 bucket where the job's output is stored.</p>
+    pub fn get_job_output(&self) -> &::std::option::Option<crate::types::DatasetExportJobOutput> {
+        &self.job_output
     }
     /// Appends an item to `tags`.
     ///
@@ -145,6 +165,10 @@ impl CreateDatasetExportJobInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the dataset export job.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDatasetExportJobInput`](crate::operation::create_dataset_export_job::CreateDatasetExportJobInput).
     pub fn build(

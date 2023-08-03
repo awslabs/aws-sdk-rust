@@ -48,6 +48,10 @@ impl EmailAddressBuilder {
         self.email = input;
         self
     }
+    /// <p>The email address.</p>
+    pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email
+    }
     /// <p>Whether the email address has been verified.</p>
     pub fn verified(mut self, input: bool) -> Self {
         self.verified = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl EmailAddressBuilder {
     pub fn set_verified(mut self, input: ::std::option::Option<bool>) -> Self {
         self.verified = input;
         self
+    }
+    /// <p>Whether the email address has been verified.</p>
+    pub fn get_verified(&self) -> &::std::option::Option<bool> {
+        &self.verified
     }
     /// Consumes the builder and constructs a [`EmailAddress`](crate::types::EmailAddress).
     pub fn build(self) -> crate::types::EmailAddress {

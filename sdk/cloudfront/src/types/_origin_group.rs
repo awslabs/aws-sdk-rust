@@ -58,6 +58,10 @@ impl OriginGroupBuilder {
         self.id = input;
         self
     }
+    /// <p>The origin group's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>A complex type that contains information about the failover criteria for an origin group.</p>
     pub fn failover_criteria(mut self, input: crate::types::OriginGroupFailoverCriteria) -> Self {
         self.failover_criteria = ::std::option::Option::Some(input);
@@ -71,6 +75,12 @@ impl OriginGroupBuilder {
         self.failover_criteria = input;
         self
     }
+    /// <p>A complex type that contains information about the failover criteria for an origin group.</p>
+    pub fn get_failover_criteria(
+        &self,
+    ) -> &::std::option::Option<crate::types::OriginGroupFailoverCriteria> {
+        &self.failover_criteria
+    }
     /// <p>A complex type that contains information about the origins in an origin group.</p>
     pub fn members(mut self, input: crate::types::OriginGroupMembers) -> Self {
         self.members = ::std::option::Option::Some(input);
@@ -83,6 +93,10 @@ impl OriginGroupBuilder {
     ) -> Self {
         self.members = input;
         self
+    }
+    /// <p>A complex type that contains information about the origins in an origin group.</p>
+    pub fn get_members(&self) -> &::std::option::Option<crate::types::OriginGroupMembers> {
+        &self.members
     }
     /// Consumes the builder and constructs a [`OriginGroup`](crate::types::OriginGroup).
     pub fn build(self) -> crate::types::OriginGroup {

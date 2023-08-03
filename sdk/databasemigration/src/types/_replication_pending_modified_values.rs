@@ -82,6 +82,11 @@ impl ReplicationPendingModifiedValuesBuilder {
         self.replication_instance_class = input;
         self
     }
+    /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class.</p>
+    /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
+    pub fn get_replication_instance_class(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_instance_class
+    }
     /// <p>The amount of storage (in gigabytes) that is allocated for the replication instance.</p>
     pub fn allocated_storage(mut self, input: i32) -> Self {
         self.allocated_storage = ::std::option::Option::Some(input);
@@ -92,6 +97,10 @@ impl ReplicationPendingModifiedValuesBuilder {
         self.allocated_storage = input;
         self
     }
+    /// <p>The amount of storage (in gigabytes) that is allocated for the replication instance.</p>
+    pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {
+        &self.allocated_storage
+    }
     /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>. </p>
     pub fn multi_az(mut self, input: bool) -> Self {
         self.multi_az = ::std::option::Option::Some(input);
@@ -101,6 +110,10 @@ impl ReplicationPendingModifiedValuesBuilder {
     pub fn set_multi_az(mut self, input: ::std::option::Option<bool>) -> Self {
         self.multi_az = input;
         self
+    }
+    /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>. </p>
+    pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
+        &self.multi_az
     }
     /// <p>The engine version number of the replication instance.</p>
     pub fn engine_version(
@@ -118,6 +131,10 @@ impl ReplicationPendingModifiedValuesBuilder {
         self.engine_version = input;
         self
     }
+    /// <p>The engine version number of the replication instance.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
+    }
     /// <p>The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.</p>
     pub fn network_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_type = ::std::option::Option::Some(input.into());
@@ -127,6 +144,10 @@ impl ReplicationPendingModifiedValuesBuilder {
     pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_type = input;
         self
+    }
+    /// <p>The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.</p>
+    pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_type
     }
     /// Consumes the builder and constructs a [`ReplicationPendingModifiedValues`](crate::types::ReplicationPendingModifiedValues).
     pub fn build(self) -> crate::types::ReplicationPendingModifiedValues {

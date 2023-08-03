@@ -62,6 +62,10 @@ impl ApproveAssignmentInputBuilder {
         self.assignment_id = input;
         self
     }
+    /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
+    pub fn get_assignment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assignment_id
+    }
     /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
     pub fn requester_feedback(
         mut self,
@@ -78,6 +82,10 @@ impl ApproveAssignmentInputBuilder {
         self.requester_feedback = input;
         self
     }
+    /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
+    pub fn get_requester_feedback(&self) -> &::std::option::Option<::std::string::String> {
+        &self.requester_feedback
+    }
     /// <p> A flag indicating that an assignment should be approved even if it was previously rejected. Defaults to <code>False</code>. </p>
     pub fn override_rejection(mut self, input: bool) -> Self {
         self.override_rejection = ::std::option::Option::Some(input);
@@ -87,6 +95,10 @@ impl ApproveAssignmentInputBuilder {
     pub fn set_override_rejection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.override_rejection = input;
         self
+    }
+    /// <p> A flag indicating that an assignment should be approved even if it was previously rejected. Defaults to <code>False</code>. </p>
+    pub fn get_override_rejection(&self) -> &::std::option::Option<bool> {
+        &self.override_rejection
     }
     /// Consumes the builder and constructs a [`ApproveAssignmentInput`](crate::operation::approve_assignment::ApproveAssignmentInput).
     pub fn build(

@@ -36,6 +36,10 @@ impl DescribeFeaturedResultsSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeFeaturedResultsSet as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_featured_results_set::builders::DescribeFeaturedResultsSetInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl DescribeFeaturedResultsSetFluentBuilder {
         self.inner = self.inner.set_index_id(input);
         self
     }
+    /// <p>The identifier of the index used for featuring results.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_index_id()
+    }
     /// <p>The identifier of the set of featured results that you want to get information on.</p>
     pub fn featured_results_set_id(
         mut self,
@@ -141,5 +149,9 @@ impl DescribeFeaturedResultsSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_featured_results_set_id(input);
         self
+    }
+    /// <p>The identifier of the set of featured results that you want to get information on.</p>
+    pub fn get_featured_results_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_featured_results_set_id()
     }
 }

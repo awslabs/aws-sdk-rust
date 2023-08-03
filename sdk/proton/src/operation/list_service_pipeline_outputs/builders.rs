@@ -36,6 +36,10 @@ impl ListServicePipelineOutputsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListServicePipelineOutputs as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_service_pipeline_outputs::builders::ListServicePipelineOutputsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl ListServicePipelineOutputsFluentBuilder {
         self.inner = self.inner.set_service_name(input);
         self
     }
+    /// <p>The name of the service whose pipeline's outputs you want.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_name()
+    }
     /// <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -141,6 +149,10 @@ impl ListServicePipelineOutputsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The ID of the deployment you want the outputs for.</p>
     pub fn deployment_id(
@@ -157,5 +169,9 @@ impl ListServicePipelineOutputsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_deployment_id(input);
         self
+    }
+    /// <p>The ID of the deployment you want the outputs for.</p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_deployment_id()
     }
 }

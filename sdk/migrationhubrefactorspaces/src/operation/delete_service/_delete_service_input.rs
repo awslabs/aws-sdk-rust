@@ -65,6 +65,10 @@ impl DeleteServiceInputBuilder {
         self.environment_identifier = input;
         self
     }
+    /// <p>The ID of the environment that the service is in.</p>
+    pub fn get_environment_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_identifier
+    }
     /// <p>Deletes a Refactor Spaces service.</p> <note>
     /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL endpoint in a VPC.</p>
     /// </note>
@@ -85,6 +89,12 @@ impl DeleteServiceInputBuilder {
         self.application_identifier = input;
         self
     }
+    /// <p>Deletes a Refactor Spaces service.</p> <note>
+    /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL endpoint in a VPC.</p>
+    /// </note>
+    pub fn get_application_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_identifier
+    }
     /// <p>The ID of the service to delete.</p>
     pub fn service_identifier(
         mut self,
@@ -100,6 +110,10 @@ impl DeleteServiceInputBuilder {
     ) -> Self {
         self.service_identifier = input;
         self
+    }
+    /// <p>The ID of the service to delete.</p>
+    pub fn get_service_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_identifier
     }
     /// Consumes the builder and constructs a [`DeleteServiceInput`](crate::operation::delete_service::DeleteServiceInput).
     pub fn build(

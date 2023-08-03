@@ -113,6 +113,10 @@ impl SnomedctEntityBuilder {
         self.id = input;
         self
     }
+    /// <p> The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>
+    pub fn get_id(&self) -> &::std::option::Option<i32> {
+        &self.id
+    }
     /// <p> The segment of input text extracted as this entity. </p>
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
@@ -122,6 +126,10 @@ impl SnomedctEntityBuilder {
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.text = input;
         self
+    }
+    /// <p> The segment of input text extracted as this entity. </p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
     }
     /// <p> The category of the detected entity. Possible categories are MEDICAL_CONDITION, ANATOMY, or TEST_TREATMENT_PROCEDURE. </p>
     pub fn category(mut self, input: crate::types::SnomedctEntityCategory) -> Self {
@@ -136,6 +144,10 @@ impl SnomedctEntityBuilder {
         self.category = input;
         self
     }
+    /// <p> The category of the detected entity. Possible categories are MEDICAL_CONDITION, ANATOMY, or TEST_TREATMENT_PROCEDURE. </p>
+    pub fn get_category(&self) -> &::std::option::Option<crate::types::SnomedctEntityCategory> {
+        &self.category
+    }
     /// <p> Describes the specific type of entity with category of entities. Possible types include DX_NAME, ACUITY, DIRECTION, SYSTEM_ORGAN_SITE, TEST_NAME, TEST_VALUE, TEST_UNIT, PROCEDURE_NAME, or TREATMENT_NAME. </p>
     pub fn r#type(mut self, input: crate::types::SnomedctEntityType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -149,6 +161,10 @@ impl SnomedctEntityBuilder {
         self.r#type = input;
         self
     }
+    /// <p> Describes the specific type of entity with category of entities. Possible types include DX_NAME, ACUITY, DIRECTION, SYSTEM_ORGAN_SITE, TEST_NAME, TEST_VALUE, TEST_UNIT, PROCEDURE_NAME, or TREATMENT_NAME. </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::SnomedctEntityType> {
+        &self.r#type
+    }
     /// <p> The level of confidence that Amazon Comprehend Medical has in the accuracy of the detected entity. </p>
     pub fn score(mut self, input: f32) -> Self {
         self.score = ::std::option::Option::Some(input);
@@ -158,6 +174,10 @@ impl SnomedctEntityBuilder {
     pub fn set_score(mut self, input: ::std::option::Option<f32>) -> Self {
         self.score = input;
         self
+    }
+    /// <p> The level of confidence that Amazon Comprehend Medical has in the accuracy of the detected entity. </p>
+    pub fn get_score(&self) -> &::std::option::Option<f32> {
+        &self.score
     }
     /// <p> The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string. </p>
     pub fn begin_offset(mut self, input: i32) -> Self {
@@ -169,6 +189,10 @@ impl SnomedctEntityBuilder {
         self.begin_offset = input;
         self
     }
+    /// <p> The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string. </p>
+    pub fn get_begin_offset(&self) -> &::std::option::Option<i32> {
+        &self.begin_offset
+    }
     /// <p> The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string. </p>
     pub fn end_offset(mut self, input: i32) -> Self {
         self.end_offset = ::std::option::Option::Some(input);
@@ -178,6 +202,10 @@ impl SnomedctEntityBuilder {
     pub fn set_end_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end_offset = input;
         self
+    }
+    /// <p> The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string. </p>
+    pub fn get_end_offset(&self) -> &::std::option::Option<i32> {
+        &self.end_offset
     }
     /// Appends an item to `attributes`.
     ///
@@ -198,6 +226,12 @@ impl SnomedctEntityBuilder {
         self.attributes = input;
         self
     }
+    /// <p> An extracted segment of the text that is an attribute of an entity, or otherwise related to an entity, such as the dosage of a medication taken. </p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SnomedctAttribute>> {
+        &self.attributes
+    }
     /// Appends an item to `traits`.
     ///
     /// To override the contents of this collection use [`set_traits`](Self::set_traits).
@@ -217,6 +251,12 @@ impl SnomedctEntityBuilder {
         self.traits = input;
         self
     }
+    /// <p> Contextual information for the entity. </p>
+    pub fn get_traits(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SnomedctTrait>> {
+        &self.traits
+    }
     /// Appends an item to `snomedct_concepts`.
     ///
     /// To override the contents of this collection use [`set_snomedct_concepts`](Self::set_snomedct_concepts).
@@ -235,6 +275,12 @@ impl SnomedctEntityBuilder {
     ) -> Self {
         self.snomedct_concepts = input;
         self
+    }
+    /// <p> The SNOMED concepts that the entity could refer to, along with a score indicating the likelihood of the match. </p>
+    pub fn get_snomedct_concepts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SnomedctConcept>> {
+        &self.snomedct_concepts
     }
     /// Consumes the builder and constructs a [`SnomedctEntity`](crate::types::SnomedctEntity).
     pub fn build(self) -> crate::types::SnomedctEntity {

@@ -45,6 +45,10 @@ impl TranslatedDocumentBuilder {
         self.content = input;
         self
     }
+    /// <p>The document containing the translated content.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.content
+    }
     /// Consumes the builder and constructs a [`TranslatedDocument`](crate::types::TranslatedDocument).
     pub fn build(self) -> crate::types::TranslatedDocument {
         crate::types::TranslatedDocument {

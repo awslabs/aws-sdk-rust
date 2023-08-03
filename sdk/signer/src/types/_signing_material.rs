@@ -46,6 +46,10 @@ impl SigningMaterialBuilder {
         self.certificate_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the certificates that is used to sign your code.</p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_arn
+    }
     /// Consumes the builder and constructs a [`SigningMaterial`](crate::types::SigningMaterial).
     pub fn build(self) -> crate::types::SigningMaterial {
         crate::types::SigningMaterial {

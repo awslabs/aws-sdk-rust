@@ -50,6 +50,10 @@ impl DatasetContentDeliveryRuleBuilder {
         self.entry_name = input;
         self
     }
+    /// <p>The name of the dataset content delivery rules entry.</p>
+    pub fn get_entry_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entry_name
+    }
     /// <p>The destination to which dataset contents are delivered.</p>
     pub fn destination(mut self, input: crate::types::DatasetContentDeliveryDestination) -> Self {
         self.destination = ::std::option::Option::Some(input);
@@ -62,6 +66,12 @@ impl DatasetContentDeliveryRuleBuilder {
     ) -> Self {
         self.destination = input;
         self
+    }
+    /// <p>The destination to which dataset contents are delivered.</p>
+    pub fn get_destination(
+        &self,
+    ) -> &::std::option::Option<crate::types::DatasetContentDeliveryDestination> {
+        &self.destination
     }
     /// Consumes the builder and constructs a [`DatasetContentDeliveryRule`](crate::types::DatasetContentDeliveryRule).
     pub fn build(self) -> crate::types::DatasetContentDeliveryRule {

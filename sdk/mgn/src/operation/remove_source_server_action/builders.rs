@@ -36,6 +36,10 @@ impl RemoveSourceServerActionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RemoveSourceServerAction as a reference.
+    pub fn as_input(&self) -> &crate::operation::remove_source_server_action::builders::RemoveSourceServerActionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl RemoveSourceServerActionFluentBuilder {
         self.inner = self.inner.set_source_server_id(input);
         self
     }
+    /// <p>Source server ID of the post migration custom action to remove.</p>
+    pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_server_id()
+    }
     /// <p>Source server post migration custom action ID to remove.</p>
     pub fn action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.action_id(input.into());
@@ -142,6 +150,10 @@ impl RemoveSourceServerActionFluentBuilder {
         self.inner = self.inner.set_action_id(input);
         self
     }
+    /// <p>Source server post migration custom action ID to remove.</p>
+    pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_action_id()
+    }
     /// <p>Source server post migration account ID.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
@@ -151,5 +163,9 @@ impl RemoveSourceServerActionFluentBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
+    }
+    /// <p>Source server post migration account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
     }
 }

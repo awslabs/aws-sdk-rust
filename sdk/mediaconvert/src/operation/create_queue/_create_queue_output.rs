@@ -46,6 +46,10 @@ impl CreateQueueOutputBuilder {
         self.queue = input;
         self
     }
+    /// You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
+    pub fn get_queue(&self) -> &::std::option::Option<crate::types::Queue> {
+        &self.queue
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

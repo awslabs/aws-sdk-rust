@@ -40,6 +40,10 @@ impl AutoTerminationPolicyBuilder {
         self.idle_timeout = input;
         self
     }
+    /// <p>Specifies the amount of idle time in seconds after which the cluster automatically terminates. You can specify a minimum of 60 seconds and a maximum of 604800 seconds (seven days).</p>
+    pub fn get_idle_timeout(&self) -> &::std::option::Option<i64> {
+        &self.idle_timeout
+    }
     /// Consumes the builder and constructs a [`AutoTerminationPolicy`](crate::types::AutoTerminationPolicy).
     pub fn build(self) -> crate::types::AutoTerminationPolicy {
         crate::types::AutoTerminationPolicy {

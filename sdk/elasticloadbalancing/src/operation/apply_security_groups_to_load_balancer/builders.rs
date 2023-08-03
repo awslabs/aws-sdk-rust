@@ -37,6 +37,10 @@ impl ApplySecurityGroupsToLoadBalancerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ApplySecurityGroupsToLoadBalancer as a reference.
+    pub fn as_input(&self) -> &crate::operation::apply_security_groups_to_load_balancer::builders::ApplySecurityGroupsToLoadBalancerInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -107,6 +111,10 @@ impl ApplySecurityGroupsToLoadBalancerFluentBuilder {
         self.inner = self.inner.set_load_balancer_name(input);
         self
     }
+    /// <p>The name of the load balancer.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_load_balancer_name()
+    }
     /// Appends an item to `SecurityGroups`.
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
@@ -126,5 +134,11 @@ impl ApplySecurityGroupsToLoadBalancerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_security_groups(input);
         self
+    }
+    /// <p>The IDs of the security groups to associate with the load balancer. Note that you cannot specify the name of the security group.</p>
+    pub fn get_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_security_groups()
     }
 }

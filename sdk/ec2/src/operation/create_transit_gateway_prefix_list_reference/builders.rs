@@ -36,6 +36,10 @@ impl CreateTransitGatewayPrefixListReferenceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateTransitGatewayPrefixListReference as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_transit_gateway_prefix_list_reference::builders::CreateTransitGatewayPrefixListReferenceInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,12 @@ impl CreateTransitGatewayPrefixListReferenceFluentBuilder {
         self.inner = self.inner.set_transit_gateway_route_table_id(input);
         self
     }
+    /// <p>The ID of the transit gateway route table.</p>
+    pub fn get_transit_gateway_route_table_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_transit_gateway_route_table_id()
+    }
     /// <p>The ID of the prefix list that is used for destination matches.</p>
     pub fn prefix_list_id(
         mut self,
@@ -121,6 +131,10 @@ impl CreateTransitGatewayPrefixListReferenceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_prefix_list_id(input);
         self
+    }
+    /// <p>The ID of the prefix list that is used for destination matches.</p>
+    pub fn get_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_prefix_list_id()
     }
     /// <p>The ID of the attachment to which traffic is routed.</p>
     pub fn transit_gateway_attachment_id(
@@ -138,6 +152,12 @@ impl CreateTransitGatewayPrefixListReferenceFluentBuilder {
         self.inner = self.inner.set_transit_gateway_attachment_id(input);
         self
     }
+    /// <p>The ID of the attachment to which traffic is routed.</p>
+    pub fn get_transit_gateway_attachment_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_transit_gateway_attachment_id()
+    }
     /// <p>Indicates whether to drop traffic that matches this route.</p>
     pub fn blackhole(mut self, input: bool) -> Self {
         self.inner = self.inner.blackhole(input);
@@ -148,6 +168,10 @@ impl CreateTransitGatewayPrefixListReferenceFluentBuilder {
         self.inner = self.inner.set_blackhole(input);
         self
     }
+    /// <p>Indicates whether to drop traffic that matches this route.</p>
+    pub fn get_blackhole(&self) -> &::std::option::Option<bool> {
+        self.inner.get_blackhole()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -157,5 +181,9 @@ impl CreateTransitGatewayPrefixListReferenceFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

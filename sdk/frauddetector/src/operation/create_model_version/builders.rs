@@ -36,6 +36,12 @@ impl CreateModelVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateModelVersion as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_model_version::builders::CreateModelVersionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateModelVersionFluentBuilder {
         self.inner = self.inner.set_model_id(input);
         self
     }
+    /// <p>The model ID. </p>
+    pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_model_id()
+    }
     /// <p>The model type.</p>
     pub fn model_type(mut self, input: crate::types::ModelTypeEnum) -> Self {
         self.inner = self.inner.model_type(input);
@@ -138,6 +148,10 @@ impl CreateModelVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_model_type(input);
         self
+    }
+    /// <p>The model type.</p>
+    pub fn get_model_type(&self) -> &::std::option::Option<crate::types::ModelTypeEnum> {
+        self.inner.get_model_type()
     }
     /// <p>The training data source location in Amazon S3. </p>
     pub fn training_data_source(mut self, input: crate::types::TrainingDataSourceEnum) -> Self {
@@ -152,6 +166,12 @@ impl CreateModelVersionFluentBuilder {
         self.inner = self.inner.set_training_data_source(input);
         self
     }
+    /// <p>The training data source location in Amazon S3. </p>
+    pub fn get_training_data_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::TrainingDataSourceEnum> {
+        self.inner.get_training_data_source()
+    }
     /// <p>The training data schema.</p>
     pub fn training_data_schema(mut self, input: crate::types::TrainingDataSchema) -> Self {
         self.inner = self.inner.training_data_schema(input);
@@ -164,6 +184,12 @@ impl CreateModelVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_training_data_schema(input);
         self
+    }
+    /// <p>The training data schema.</p>
+    pub fn get_training_data_schema(
+        &self,
+    ) -> &::std::option::Option<crate::types::TrainingDataSchema> {
+        self.inner.get_training_data_schema()
     }
     /// <p>Details of the external events data used for model version training. Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
     pub fn external_events_detail(mut self, input: crate::types::ExternalEventsDetail) -> Self {
@@ -178,6 +204,12 @@ impl CreateModelVersionFluentBuilder {
         self.inner = self.inner.set_external_events_detail(input);
         self
     }
+    /// <p>Details of the external events data used for model version training. Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
+    pub fn get_external_events_detail(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExternalEventsDetail> {
+        self.inner.get_external_events_detail()
+    }
     /// <p>Details of the ingested events data used for model version training. Required if <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
     pub fn ingested_events_detail(mut self, input: crate::types::IngestedEventsDetail) -> Self {
         self.inner = self.inner.ingested_events_detail(input);
@@ -190,6 +222,12 @@ impl CreateModelVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ingested_events_detail(input);
         self
+    }
+    /// <p>Details of the ingested events data used for model version training. Required if <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
+    pub fn get_ingested_events_detail(
+        &self,
+    ) -> &::std::option::Option<crate::types::IngestedEventsDetail> {
+        self.inner.get_ingested_events_detail()
     }
     /// Appends an item to `tags`.
     ///
@@ -207,5 +245,9 @@ impl CreateModelVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A collection of key and value pairs.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

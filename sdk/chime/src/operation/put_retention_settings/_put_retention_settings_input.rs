@@ -48,6 +48,10 @@ impl PutRetentionSettingsInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The retention settings.</p>
     pub fn retention_settings(mut self, input: crate::types::RetentionSettings) -> Self {
         self.retention_settings = ::std::option::Option::Some(input);
@@ -60,6 +64,12 @@ impl PutRetentionSettingsInputBuilder {
     ) -> Self {
         self.retention_settings = input;
         self
+    }
+    /// <p>The retention settings.</p>
+    pub fn get_retention_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::RetentionSettings> {
+        &self.retention_settings
     }
     /// Consumes the builder and constructs a [`PutRetentionSettingsInput`](crate::operation::put_retention_settings::PutRetentionSettingsInput).
     pub fn build(

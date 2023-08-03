@@ -71,6 +71,10 @@ impl ListConflictingAliasesInputBuilder {
         self.distribution_id = input;
         self
     }
+    /// <p>The ID of a distribution in your account that has an attached SSL/TLS certificate that includes the provided alias.</p>
+    pub fn get_distribution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.distribution_id
+    }
     /// <p>The alias (also called a CNAME) to search for conflicting aliases.</p>
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl ListConflictingAliasesInputBuilder {
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alias = input;
         self
+    }
+    /// <p>The alias (also called a CNAME) to search for conflicting aliases.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias
     }
     /// <p>Use this field when paginating results to indicate where to begin in the list of conflicting aliases. The response includes conflicting aliases in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -91,6 +99,10 @@ impl ListConflictingAliasesInputBuilder {
         self.marker = input;
         self
     }
+    /// <p>Use this field when paginating results to indicate where to begin in the list of conflicting aliases. The response includes conflicting aliases in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>The maximum number of conflicting aliases that you want in the response.</p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.max_items = ::std::option::Option::Some(input);
@@ -100,6 +112,10 @@ impl ListConflictingAliasesInputBuilder {
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_items = input;
         self
+    }
+    /// <p>The maximum number of conflicting aliases that you want in the response.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        &self.max_items
     }
     /// Consumes the builder and constructs a [`ListConflictingAliasesInput`](crate::operation::list_conflicting_aliases::ListConflictingAliasesInput).
     pub fn build(

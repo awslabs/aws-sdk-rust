@@ -69,6 +69,12 @@ impl ListPartnerEventSourcesOutputBuilder {
         self.partner_event_sources = input;
         self
     }
+    /// <p>The list of partner event sources returned by the operation.</p>
+    pub fn get_partner_event_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PartnerEventSource>> {
+        &self.partner_event_sources
+    }
     /// <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -78,6 +84,10 @@ impl ListPartnerEventSourcesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

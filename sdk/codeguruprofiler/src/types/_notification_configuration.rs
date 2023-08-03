@@ -49,6 +49,10 @@ impl NotificationConfigurationBuilder {
         self.channels = input;
         self
     }
+    /// <p>List of up to two channels to be used for sending notifications for events detected from the application profile.</p>
+    pub fn get_channels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Channel>> {
+        &self.channels
+    }
     /// Consumes the builder and constructs a [`NotificationConfiguration`](crate::types::NotificationConfiguration).
     pub fn build(self) -> crate::types::NotificationConfiguration {
         crate::types::NotificationConfiguration {

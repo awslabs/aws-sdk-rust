@@ -50,6 +50,12 @@ impl CatalogConfigurationDescriptionBuilder {
         self.glue_data_catalog_configuration_description = input;
         self
     }
+    /// <p>The configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.</p>
+    pub fn get_glue_data_catalog_configuration_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::GlueDataCatalogConfigurationDescription> {
+        &self.glue_data_catalog_configuration_description
+    }
     /// Consumes the builder and constructs a [`CatalogConfigurationDescription`](crate::types::CatalogConfigurationDescription).
     pub fn build(self) -> crate::types::CatalogConfigurationDescription {
         crate::types::CatalogConfigurationDescription {

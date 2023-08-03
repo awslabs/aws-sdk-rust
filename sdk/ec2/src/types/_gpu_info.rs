@@ -57,6 +57,10 @@ impl GpuInfoBuilder {
         self.gpus = input;
         self
     }
+    /// <p>Describes the GPU accelerators for the instance type.</p>
+    pub fn get_gpus(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GpuDeviceInfo>> {
+        &self.gpus
+    }
     /// <p>The total size of the memory for the GPU accelerators for the instance type, in MiB.</p>
     pub fn total_gpu_memory_in_mi_b(mut self, input: i32) -> Self {
         self.total_gpu_memory_in_mi_b = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl GpuInfoBuilder {
     pub fn set_total_gpu_memory_in_mi_b(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_gpu_memory_in_mi_b = input;
         self
+    }
+    /// <p>The total size of the memory for the GPU accelerators for the instance type, in MiB.</p>
+    pub fn get_total_gpu_memory_in_mi_b(&self) -> &::std::option::Option<i32> {
+        &self.total_gpu_memory_in_mi_b
     }
     /// Consumes the builder and constructs a [`GpuInfo`](crate::types::GpuInfo).
     pub fn build(self) -> crate::types::GpuInfo {

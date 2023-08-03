@@ -75,6 +75,10 @@ impl DeliveryChannelStatusBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the delivery channel.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A list containing the status of the delivery of the snapshot to the specified Amazon S3 bucket.</p>
     pub fn config_snapshot_delivery_info(
         mut self,
@@ -90,6 +94,12 @@ impl DeliveryChannelStatusBuilder {
     ) -> Self {
         self.config_snapshot_delivery_info = input;
         self
+    }
+    /// <p>A list containing the status of the delivery of the snapshot to the specified Amazon S3 bucket.</p>
+    pub fn get_config_snapshot_delivery_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfigExportDeliveryInfo> {
+        &self.config_snapshot_delivery_info
     }
     /// <p>A list that contains the status of the delivery of the configuration history to the specified Amazon S3 bucket.</p>
     pub fn config_history_delivery_info(
@@ -107,6 +117,12 @@ impl DeliveryChannelStatusBuilder {
         self.config_history_delivery_info = input;
         self
     }
+    /// <p>A list that contains the status of the delivery of the configuration history to the specified Amazon S3 bucket.</p>
+    pub fn get_config_history_delivery_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfigExportDeliveryInfo> {
+        &self.config_history_delivery_info
+    }
     /// <p>A list containing the status of the delivery of the configuration stream notification to the specified Amazon SNS topic.</p>
     pub fn config_stream_delivery_info(
         mut self,
@@ -122,6 +138,12 @@ impl DeliveryChannelStatusBuilder {
     ) -> Self {
         self.config_stream_delivery_info = input;
         self
+    }
+    /// <p>A list containing the status of the delivery of the configuration stream notification to the specified Amazon SNS topic.</p>
+    pub fn get_config_stream_delivery_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfigStreamDeliveryInfo> {
+        &self.config_stream_delivery_info
     }
     /// Consumes the builder and constructs a [`DeliveryChannelStatus`](crate::types::DeliveryChannelStatus).
     pub fn build(self) -> crate::types::DeliveryChannelStatus {

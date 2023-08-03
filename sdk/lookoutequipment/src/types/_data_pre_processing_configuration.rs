@@ -48,6 +48,13 @@ impl DataPreProcessingConfigurationBuilder {
         self.target_sampling_rate = input;
         self
     }
+    /// <p>The sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
+    /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
+    pub fn get_target_sampling_rate(
+        &self,
+    ) -> &::std::option::Option<crate::types::TargetSamplingRate> {
+        &self.target_sampling_rate
+    }
     /// Consumes the builder and constructs a [`DataPreProcessingConfiguration`](crate::types::DataPreProcessingConfiguration).
     pub fn build(self) -> crate::types::DataPreProcessingConfiguration {
         crate::types::DataPreProcessingConfiguration {

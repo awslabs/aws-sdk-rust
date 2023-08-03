@@ -51,6 +51,10 @@ impl ValueWithServiceIdsBuilder {
         self.annotation_value = input;
         self
     }
+    /// <p>Values of the annotation.</p>
+    pub fn get_annotation_value(&self) -> &::std::option::Option<crate::types::AnnotationValue> {
+        &self.annotation_value
+    }
     /// Appends an item to `service_ids`.
     ///
     /// To override the contents of this collection use [`set_service_ids`](Self::set_service_ids).
@@ -69,6 +73,12 @@ impl ValueWithServiceIdsBuilder {
     ) -> Self {
         self.service_ids = input;
         self
+    }
+    /// <p>Services to which the annotation applies.</p>
+    pub fn get_service_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceId>> {
+        &self.service_ids
     }
     /// Consumes the builder and constructs a [`ValueWithServiceIds`](crate::types::ValueWithServiceIds).
     pub fn build(self) -> crate::types::ValueWithServiceIds {

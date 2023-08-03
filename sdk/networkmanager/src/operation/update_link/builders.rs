@@ -36,6 +36,10 @@ impl UpdateLinkFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateLink as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_link::builders::UpdateLinkInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl UpdateLinkFluentBuilder {
         self.inner = self.inner.set_global_network_id(input);
         self
     }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_global_network_id()
+    }
     /// <p>The ID of the link.</p>
     pub fn link_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.link_id(input.into());
@@ -133,6 +141,10 @@ impl UpdateLinkFluentBuilder {
     pub fn set_link_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_link_id(input);
         self
+    }
+    /// <p>The ID of the link.</p>
+    pub fn get_link_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_link_id()
     }
     /// <p>A description of the link.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
@@ -146,6 +158,11 @@ impl UpdateLinkFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>A description of the link.</p>
+    /// <p>Constraints: Maximum length of 256 characters.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The type of the link.</p>
     /// <p>Constraints: Maximum length of 128 characters.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -158,6 +175,11 @@ impl UpdateLinkFluentBuilder {
         self.inner = self.inner.set_type(input);
         self
     }
+    /// <p>The type of the link.</p>
+    /// <p>Constraints: Maximum length of 128 characters.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_type()
+    }
     /// <p>The upload and download speed in Mbps. </p>
     pub fn bandwidth(mut self, input: crate::types::Bandwidth) -> Self {
         self.inner = self.inner.bandwidth(input);
@@ -167,6 +189,10 @@ impl UpdateLinkFluentBuilder {
     pub fn set_bandwidth(mut self, input: ::std::option::Option<crate::types::Bandwidth>) -> Self {
         self.inner = self.inner.set_bandwidth(input);
         self
+    }
+    /// <p>The upload and download speed in Mbps. </p>
+    pub fn get_bandwidth(&self) -> &::std::option::Option<crate::types::Bandwidth> {
+        self.inner.get_bandwidth()
     }
     /// <p>The provider of the link.</p>
     /// <p>Constraints: Maximum length of 128 characters.</p>
@@ -179,5 +205,10 @@ impl UpdateLinkFluentBuilder {
     pub fn set_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_provider(input);
         self
+    }
+    /// <p>The provider of the link.</p>
+    /// <p>Constraints: Maximum length of 128 characters.</p>
+    pub fn get_provider(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_provider()
     }
 }

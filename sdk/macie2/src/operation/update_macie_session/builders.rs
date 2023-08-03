@@ -36,6 +36,12 @@ impl UpdateMacieSessionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateMacieSession as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_macie_session::builders::UpdateMacieSessionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,12 @@ impl UpdateMacieSessionFluentBuilder {
         self.inner = self.inner.set_finding_publishing_frequency(input);
         self
     }
+    /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
+    pub fn get_finding_publishing_frequency(
+        &self,
+    ) -> &::std::option::Option<crate::types::FindingPublishingFrequency> {
+        self.inner.get_finding_publishing_frequency()
+    }
     /// <p>Specifies a new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the account; and, PAUSED, suspend all Macie activities for the account.</p>
     pub fn status(mut self, input: crate::types::MacieStatus) -> Self {
         self.inner = self.inner.status(input);
@@ -141,5 +153,9 @@ impl UpdateMacieSessionFluentBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::MacieStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p>Specifies a new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the account; and, PAUSED, suspend all Macie activities for the account.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::MacieStatus> {
+        self.inner.get_status()
     }
 }

@@ -36,6 +36,12 @@ impl ListDataLakesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListDataLakes as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_data_lakes::builders::ListDataLakesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,5 +130,9 @@ impl ListDataLakesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_regions(input);
         self
+    }
+    /// <p>The list of regions where Security Lake is enabled.</p>
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_regions()
     }
 }

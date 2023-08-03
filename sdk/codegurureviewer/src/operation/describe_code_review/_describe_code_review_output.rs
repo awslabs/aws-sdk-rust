@@ -50,6 +50,10 @@ impl DescribeCodeReviewOutputBuilder {
         self.code_review = input;
         self
     }
+    /// <p>Information about the code review.</p>
+    pub fn get_code_review(&self) -> &::std::option::Option<crate::types::CodeReview> {
+        &self.code_review
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

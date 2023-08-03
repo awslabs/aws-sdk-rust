@@ -72,6 +72,10 @@ impl ReplicationStatusTypeBuilder {
         self.region = input;
         self
     }
+    /// <p>The Region where replication occurs.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
+    }
     /// <p>Can be an <code>ARN</code>, <code>Key ID</code>, or <code>Alias</code>. </p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl ReplicationStatusTypeBuilder {
         self.kms_key_id = input;
         self
     }
+    /// <p>Can be an <code>ARN</code>, <code>Key ID</code>, or <code>Alias</code>. </p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// <p>The status can be <code>InProgress</code>, <code>Failed</code>, or <code>InSync</code>.</p>
     pub fn status(mut self, input: crate::types::StatusType) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -91,6 +99,10 @@ impl ReplicationStatusTypeBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StatusType>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status can be <code>InProgress</code>, <code>Failed</code>, or <code>InSync</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::StatusType> {
+        &self.status
     }
     /// <p>Status message such as "<i>Secret with this name already exists in this region</i>".</p>
     pub fn status_message(
@@ -108,6 +120,10 @@ impl ReplicationStatusTypeBuilder {
         self.status_message = input;
         self
     }
+    /// <p>Status message such as "<i>Secret with this name already exists in this region</i>".</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>The date that the secret was last accessed in the Region. This field is omitted if the secret has never been retrieved in the Region.</p>
     pub fn last_accessed_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_accessed_date = ::std::option::Option::Some(input);
@@ -120,6 +136,10 @@ impl ReplicationStatusTypeBuilder {
     ) -> Self {
         self.last_accessed_date = input;
         self
+    }
+    /// <p>The date that the secret was last accessed in the Region. This field is omitted if the secret has never been retrieved in the Region.</p>
+    pub fn get_last_accessed_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_accessed_date
     }
     /// Consumes the builder and constructs a [`ReplicationStatusType`](crate::types::ReplicationStatusType).
     pub fn build(self) -> crate::types::ReplicationStatusType {

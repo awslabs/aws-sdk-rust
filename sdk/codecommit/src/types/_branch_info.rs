@@ -48,6 +48,10 @@ impl BranchInfoBuilder {
         self.branch_name = input;
         self
     }
+    /// <p>The name of the branch.</p>
+    pub fn get_branch_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.branch_name
+    }
     /// <p>The ID of the last commit made to the branch.</p>
     pub fn commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.commit_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl BranchInfoBuilder {
     pub fn set_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.commit_id = input;
         self
+    }
+    /// <p>The ID of the last commit made to the branch.</p>
+    pub fn get_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.commit_id
     }
     /// Consumes the builder and constructs a [`BranchInfo`](crate::types::BranchInfo).
     pub fn build(self) -> crate::types::BranchInfo {

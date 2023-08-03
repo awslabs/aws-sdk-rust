@@ -51,6 +51,10 @@ impl S3BucketAclGrantConfigurationBuilder {
         self.permission = input;
         self
     }
+    /// <p>The permissions being granted.</p>
+    pub fn get_permission(&self) -> &::std::option::Option<crate::types::AclPermission> {
+        &self.permission
+    }
     /// <p>The grantee to whom you’re assigning access rights.</p>
     pub fn grantee(mut self, input: crate::types::AclGrantee) -> Self {
         self.grantee = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl S3BucketAclGrantConfigurationBuilder {
     pub fn set_grantee(mut self, input: ::std::option::Option<crate::types::AclGrantee>) -> Self {
         self.grantee = input;
         self
+    }
+    /// <p>The grantee to whom you’re assigning access rights.</p>
+    pub fn get_grantee(&self) -> &::std::option::Option<crate::types::AclGrantee> {
+        &self.grantee
     }
     /// Consumes the builder and constructs a [`S3BucketAclGrantConfiguration`](crate::types::S3BucketAclGrantConfiguration).
     pub fn build(self) -> crate::types::S3BucketAclGrantConfiguration {

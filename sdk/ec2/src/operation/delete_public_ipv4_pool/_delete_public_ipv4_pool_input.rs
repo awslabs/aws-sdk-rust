@@ -48,6 +48,10 @@ impl DeletePublicIpv4PoolInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The ID of the public IPv4 pool you want to delete.</p>
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pool_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl DeletePublicIpv4PoolInputBuilder {
     pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pool_id = input;
         self
+    }
+    /// <p>The ID of the public IPv4 pool you want to delete.</p>
+    pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pool_id
     }
     /// Consumes the builder and constructs a [`DeletePublicIpv4PoolInput`](crate::operation::delete_public_ipv4_pool::DeletePublicIpv4PoolInput).
     pub fn build(

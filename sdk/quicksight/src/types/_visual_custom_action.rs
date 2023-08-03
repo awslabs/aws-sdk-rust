@@ -94,6 +94,10 @@ impl VisualCustomActionBuilder {
         self.custom_action_id = input;
         self
     }
+    /// <p>The ID of the <code>VisualCustomAction</code>.</p>
+    pub fn get_custom_action_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_action_id
+    }
     /// <p>The name of the <code>VisualCustomAction</code>.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -104,6 +108,10 @@ impl VisualCustomActionBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the <code>VisualCustomAction</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The status of the <code>VisualCustomAction</code>.</p>
     pub fn status(mut self, input: crate::types::WidgetStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -113,6 +121,10 @@ impl VisualCustomActionBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::WidgetStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the <code>VisualCustomAction</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::WidgetStatus> {
+        &self.status
     }
     /// <p>The trigger of the <code>VisualCustomAction</code>.</p>
     /// <p>Valid values are defined as follows:</p>
@@ -137,6 +149,15 @@ impl VisualCustomActionBuilder {
         self.trigger = input;
         self
     }
+    /// <p>The trigger of the <code>VisualCustomAction</code>.</p>
+    /// <p>Valid values are defined as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>DATA_POINT_CLICK</code>: Initiates a custom action by a left pointer click on a data point.</p> </li>
+    /// <li> <p> <code>DATA_POINT_MENU</code>: Initiates a custom action by right pointer click from the menu.</p> </li>
+    /// </ul>
+    pub fn get_trigger(&self) -> &::std::option::Option<crate::types::VisualCustomActionTrigger> {
+        &self.trigger
+    }
     /// Appends an item to `action_operations`.
     ///
     /// To override the contents of this collection use [`set_action_operations`](Self::set_action_operations).
@@ -157,6 +178,13 @@ impl VisualCustomActionBuilder {
     ) -> Self {
         self.action_operations = input;
         self
+    }
+    /// <p>A list of <code>VisualCustomActionOperations</code>.</p>
+    /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
+    pub fn get_action_operations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VisualCustomActionOperation>> {
+        &self.action_operations
     }
     /// Consumes the builder and constructs a [`VisualCustomAction`](crate::types::VisualCustomAction).
     pub fn build(self) -> crate::types::VisualCustomAction {

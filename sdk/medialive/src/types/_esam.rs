@@ -86,6 +86,10 @@ impl EsamBuilder {
         self.acquisition_point_id = input;
         self
     }
+    /// Sent as acquisitionPointIdentity to identify the MediaLive channel to the POIS.
+    pub fn get_acquisition_point_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.acquisition_point_id
+    }
     /// When specified, this offset (in milliseconds) is added to the input Ad Avail PTS time. This only applies to embedded SCTE 104/35 messages and does not apply to OOB messages.
     pub fn ad_avail_offset(mut self, input: i32) -> Self {
         self.ad_avail_offset = ::std::option::Option::Some(input);
@@ -95,6 +99,10 @@ impl EsamBuilder {
     pub fn set_ad_avail_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.ad_avail_offset = input;
         self
+    }
+    /// When specified, this offset (in milliseconds) is added to the input Ad Avail PTS time. This only applies to embedded SCTE 104/35 messages and does not apply to OOB messages.
+    pub fn get_ad_avail_offset(&self) -> &::std::option::Option<i32> {
+        &self.ad_avail_offset
     }
     /// Documentation update needed
     pub fn password_param(
@@ -112,6 +120,10 @@ impl EsamBuilder {
         self.password_param = input;
         self
     }
+    /// Documentation update needed
+    pub fn get_password_param(&self) -> &::std::option::Option<::std::string::String> {
+        &self.password_param
+    }
     /// The URL of the signal conditioner endpoint on the Placement Opportunity Information System (POIS). MediaLive sends SignalProcessingEvents here when SCTE-35 messages are read.
     pub fn pois_endpoint(
         mut self,
@@ -128,6 +140,10 @@ impl EsamBuilder {
         self.pois_endpoint = input;
         self
     }
+    /// The URL of the signal conditioner endpoint on the Placement Opportunity Information System (POIS). MediaLive sends SignalProcessingEvents here when SCTE-35 messages are read.
+    pub fn get_pois_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pois_endpoint
+    }
     /// Documentation update needed
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
@@ -137,6 +153,10 @@ impl EsamBuilder {
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
+    }
+    /// Documentation update needed
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
     }
     /// Optional data sent as zoneIdentity to identify the MediaLive channel to the POIS.
     pub fn zone_identity(
@@ -153,6 +173,10 @@ impl EsamBuilder {
     ) -> Self {
         self.zone_identity = input;
         self
+    }
+    /// Optional data sent as zoneIdentity to identify the MediaLive channel to the POIS.
+    pub fn get_zone_identity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.zone_identity
     }
     /// Consumes the builder and constructs a [`Esam`](crate::types::Esam).
     pub fn build(self) -> crate::types::Esam {

@@ -48,6 +48,10 @@ impl SeverityLevelBuilder {
         self.occurrences_threshold = input;
         self
     }
+    /// <p>The minimum number of occurrences of text that must match the custom data identifier's detection criteria in order to produce a finding with the specified severity (severity).</p>
+    pub fn get_occurrences_threshold(&self) -> &::std::option::Option<i64> {
+        &self.occurrences_threshold
+    }
     /// <p>The severity to assign to a finding: if the number of occurrences is greater than or equal to the specified threshold (occurrencesThreshold); and, if applicable, the number of occurrences is less than the threshold for the next consecutive severity level for the custom data identifier, moving from LOW to HIGH.</p>
     pub fn severity(mut self, input: crate::types::DataIdentifierSeverity) -> Self {
         self.severity = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl SeverityLevelBuilder {
     ) -> Self {
         self.severity = input;
         self
+    }
+    /// <p>The severity to assign to a finding: if the number of occurrences is greater than or equal to the specified threshold (occurrencesThreshold); and, if applicable, the number of occurrences is less than the threshold for the next consecutive severity level for the custom data identifier, moving from LOW to HIGH.</p>
+    pub fn get_severity(&self) -> &::std::option::Option<crate::types::DataIdentifierSeverity> {
+        &self.severity
     }
     /// Consumes the builder and constructs a [`SeverityLevel`](crate::types::SeverityLevel).
     pub fn build(self) -> crate::types::SeverityLevel {

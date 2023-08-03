@@ -51,6 +51,10 @@ impl RuleTriggerEventSourceBuilder {
         self.event_source_name = input;
         self
     }
+    /// <p>The name of the event source.</p>
+    pub fn get_event_source_name(&self) -> &::std::option::Option<crate::types::EventSourceName> {
+        &self.event_source_name
+    }
     /// <p>The identifier for the integration association.</p>
     pub fn integration_association_id(
         mut self,
@@ -66,6 +70,10 @@ impl RuleTriggerEventSourceBuilder {
     ) -> Self {
         self.integration_association_id = input;
         self
+    }
+    /// <p>The identifier for the integration association.</p>
+    pub fn get_integration_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.integration_association_id
     }
     /// Consumes the builder and constructs a [`RuleTriggerEventSource`](crate::types::RuleTriggerEventSource).
     pub fn build(self) -> crate::types::RuleTriggerEventSource {

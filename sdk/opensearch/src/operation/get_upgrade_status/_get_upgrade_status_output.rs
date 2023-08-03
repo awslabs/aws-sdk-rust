@@ -67,6 +67,10 @@ impl GetUpgradeStatusOutputBuilder {
         self.upgrade_step = input;
         self
     }
+    /// <p>One of three steps that an upgrade or upgrade eligibility check goes through.</p>
+    pub fn get_upgrade_step(&self) -> &::std::option::Option<crate::types::UpgradeStep> {
+        &self.upgrade_step
+    }
     /// <p>The status of the current step that an upgrade is on.</p>
     pub fn step_status(mut self, input: crate::types::UpgradeStatus) -> Self {
         self.step_status = ::std::option::Option::Some(input);
@@ -80,6 +84,10 @@ impl GetUpgradeStatusOutputBuilder {
         self.step_status = input;
         self
     }
+    /// <p>The status of the current step that an upgrade is on.</p>
+    pub fn get_step_status(&self) -> &::std::option::Option<crate::types::UpgradeStatus> {
+        &self.step_status
+    }
     /// <p>A string that describes the update.</p>
     pub fn upgrade_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upgrade_name = ::std::option::Option::Some(input.into());
@@ -89,6 +97,10 @@ impl GetUpgradeStatusOutputBuilder {
     pub fn set_upgrade_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.upgrade_name = input;
         self
+    }
+    /// <p>A string that describes the update.</p>
+    pub fn get_upgrade_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.upgrade_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

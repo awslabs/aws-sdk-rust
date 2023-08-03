@@ -82,6 +82,10 @@ impl ApiKeyBuilder {
         self.id = input;
         self
     }
+    /// <p>The API key ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>A description of the purpose of the API key.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -91,6 +95,10 @@ impl ApiKeyBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the purpose of the API key.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the nearest hour.</p>
     pub fn expires(mut self, input: i64) -> Self {
@@ -102,6 +110,10 @@ impl ApiKeyBuilder {
         self.expires = input;
         self
     }
+    /// <p>The time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the nearest hour.</p>
+    pub fn get_expires(&self) -> &::std::option::Option<i64> {
+        &self.expires
+    }
     /// <p>The time after which the API key is deleted. The date is represented as seconds since the epoch, rounded down to the nearest hour.</p>
     pub fn deletes(mut self, input: i64) -> Self {
         self.deletes = ::std::option::Option::Some(input);
@@ -111,6 +123,10 @@ impl ApiKeyBuilder {
     pub fn set_deletes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.deletes = input;
         self
+    }
+    /// <p>The time after which the API key is deleted. The date is represented as seconds since the epoch, rounded down to the nearest hour.</p>
+    pub fn get_deletes(&self) -> &::std::option::Option<i64> {
+        &self.deletes
     }
     /// Consumes the builder and constructs a [`ApiKey`](crate::types::ApiKey).
     pub fn build(self) -> crate::types::ApiKey {

@@ -94,6 +94,10 @@ impl GetWorkerFleetOutputBuilder {
         self.id = input;
         self
     }
+    /// Filters access by the worker fleet's identifier
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Full ARN of the worker fleet.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -103,6 +107,10 @@ impl GetWorkerFleetOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// Full ARN of the worker fleet.
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Human friendly name of the resource.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -114,6 +122,10 @@ impl GetWorkerFleetOutputBuilder {
         self.name = input;
         self
     }
+    /// Human friendly name of the resource.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Site ARN.
     pub fn site(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.site = ::std::option::Option::Some(input.into());
@@ -123,6 +135,10 @@ impl GetWorkerFleetOutputBuilder {
     pub fn set_site(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.site = input;
         self
+    }
+    /// Site ARN.
+    pub fn get_site(&self) -> &::std::option::Option<::std::string::String> {
+        &self.site
     }
     /// Timestamp at which the resource was created.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -137,6 +153,10 @@ impl GetWorkerFleetOutputBuilder {
         self.created_at = input;
         self
     }
+    /// Timestamp at which the resource was created.
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// Timestamp at which the resource was last updated.
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -149,6 +169,10 @@ impl GetWorkerFleetOutputBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// Timestamp at which the resource was last updated.
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     /// JSON blob containing additional fixed properties regarding the worker fleet
     pub fn additional_fixed_properties(
@@ -165,6 +189,10 @@ impl GetWorkerFleetOutputBuilder {
     ) -> Self {
         self.additional_fixed_properties = input;
         self
+    }
+    /// JSON blob containing additional fixed properties regarding the worker fleet
+    pub fn get_additional_fixed_properties(&self) -> &::std::option::Option<::std::string::String> {
+        &self.additional_fixed_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

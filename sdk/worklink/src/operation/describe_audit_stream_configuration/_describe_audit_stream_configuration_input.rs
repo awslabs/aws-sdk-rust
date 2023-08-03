@@ -39,6 +39,10 @@ impl DescribeAuditStreamConfigurationInputBuilder {
         self.fleet_arn = input;
         self
     }
+    /// <p>The ARN of the fleet.</p>
+    pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_arn
+    }
     /// Consumes the builder and constructs a [`DescribeAuditStreamConfigurationInput`](crate::operation::describe_audit_stream_configuration::DescribeAuditStreamConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_audit_stream_configuration::DescribeAuditStreamConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

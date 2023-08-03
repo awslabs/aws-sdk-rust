@@ -47,6 +47,10 @@ impl DescribePublishingDestinationInputBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The unique ID of the detector associated with the publishing destination to retrieve.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// <p>The ID of the publishing destination to retrieve.</p>
     pub fn destination_id(
         mut self,
@@ -62,6 +66,10 @@ impl DescribePublishingDestinationInputBuilder {
     ) -> Self {
         self.destination_id = input;
         self
+    }
+    /// <p>The ID of the publishing destination to retrieve.</p>
+    pub fn get_destination_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_id
     }
     /// Consumes the builder and constructs a [`DescribePublishingDestinationInput`](crate::operation::describe_publishing_destination::DescribePublishingDestinationInput).
     pub fn build(

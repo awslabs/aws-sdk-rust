@@ -48,6 +48,12 @@ impl JobTimeoutBuilder {
         self.attempt_duration_seconds = input;
         self
     }
+    /// <p>The job timeout time (in seconds) that's measured from the job attempt's <code>startedAt</code> timestamp. After this time passes, Batch terminates your jobs if they aren't finished. The minimum value for the timeout is 60 seconds.</p>
+    /// <p>For array jobs, the timeout applies to the child jobs, not to the parent array job.</p>
+    /// <p>For multi-node parallel (MNP) jobs, the timeout applies to the whole job, not to the individual nodes.</p>
+    pub fn get_attempt_duration_seconds(&self) -> &::std::option::Option<i32> {
+        &self.attempt_duration_seconds
+    }
     /// Consumes the builder and constructs a [`JobTimeout`](crate::types::JobTimeout).
     pub fn build(self) -> crate::types::JobTimeout {
         crate::types::JobTimeout {

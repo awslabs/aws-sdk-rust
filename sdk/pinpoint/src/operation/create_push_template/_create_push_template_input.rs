@@ -58,6 +58,12 @@ impl CreatePushTemplateInputBuilder {
         self.push_notification_template_request = input;
         self
     }
+    /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
+    pub fn get_push_notification_template_request(
+        &self,
+    ) -> &::std::option::Option<crate::types::PushNotificationTemplateRequest> {
+        &self.push_notification_template_request
+    }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     pub fn template_name(
         mut self,
@@ -73,6 +79,10 @@ impl CreatePushTemplateInputBuilder {
     ) -> Self {
         self.template_name = input;
         self
+    }
+    /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
     }
     /// Consumes the builder and constructs a [`CreatePushTemplateInput`](crate::operation::create_push_template::CreatePushTemplateInput).
     pub fn build(

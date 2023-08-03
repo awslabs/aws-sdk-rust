@@ -58,6 +58,12 @@ impl DescribeAgentVersionsOutputBuilder {
         self.agent_versions = input;
         self
     }
+    /// <p>The agent versions for the specified stack or configuration manager. Note that this value is the complete version number, not the abbreviated number used by the console.</p>
+    pub fn get_agent_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentVersion>> {
+        &self.agent_versions
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

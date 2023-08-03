@@ -78,6 +78,12 @@ impl ListGroupsOutputBuilder {
         self.group_identifiers = input;
         self
     }
+    /// <p>A list of <code>GroupIdentifier</code> objects. Each identifier is an object that contains both the <code>Name</code> and the <code>GroupArn</code>.</p>
+    pub fn get_group_identifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>> {
+        &self.group_identifiers
+    }
     /// Appends an item to `groups`.
     ///
     /// To override the contents of this collection use [`set_groups`](Self::set_groups).
@@ -103,6 +109,13 @@ impl ListGroupsOutputBuilder {
         self.groups = input;
         self
     }
+    /// <important>
+    /// <p> <i> <b>Deprecated - don't use this field. Use the <code>GroupIdentifiers</code> response field instead.</b> </i> </p>
+    /// </important>
+    #[deprecated(note = "This field is deprecated, use GroupIdentifiers instead.")]
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Group>> {
+        &self.groups
+    }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -112,6 +125,10 @@ impl ListGroupsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -71,6 +71,10 @@ impl SendChannelMessageOutputBuilder {
         self.channel_arn = input;
         self
     }
+    /// <p>The ARN of the channel.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
+    }
     /// <p>The ID string assigned to each message.</p>
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_id = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl SendChannelMessageOutputBuilder {
     pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_id = input;
         self
+    }
+    /// <p>The ID string assigned to each message.</p>
+    pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_id
     }
     /// <p>The status of the channel message.</p>
     pub fn status(mut self, input: crate::types::ChannelMessageStatusStructure) -> Self {
@@ -93,6 +101,12 @@ impl SendChannelMessageOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the channel message.</p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ChannelMessageStatusStructure> {
+        &self.status
     }
     /// <p>The ID of the SubChannel in the response.</p>
     pub fn sub_channel_id(
@@ -109,6 +123,10 @@ impl SendChannelMessageOutputBuilder {
     ) -> Self {
         self.sub_channel_id = input;
         self
+    }
+    /// <p>The ID of the SubChannel in the response.</p>
+    pub fn get_sub_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sub_channel_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -94,6 +94,10 @@ impl DescribeWorldOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (arn) of the world.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The Amazon Resource Name (arn) of the world generation job that generated the world.</p>
     pub fn generation_job(
         mut self,
@@ -110,6 +114,10 @@ impl DescribeWorldOutputBuilder {
         self.generation_job = input;
         self
     }
+    /// <p>The Amazon Resource Name (arn) of the world generation job that generated the world.</p>
+    pub fn get_generation_job(&self) -> &::std::option::Option<::std::string::String> {
+        &self.generation_job
+    }
     /// <p>The world template.</p>
     pub fn template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template = ::std::option::Option::Some(input.into());
@@ -119,6 +127,10 @@ impl DescribeWorldOutputBuilder {
     pub fn set_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template = input;
         self
+    }
+    /// <p>The world template.</p>
+    pub fn get_template(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template
     }
     /// <p>The time, in milliseconds since the epoch, when the world was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -132,6 +144,10 @@ impl DescribeWorldOutputBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The time, in milliseconds since the epoch, when the world was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -158,6 +174,14 @@ impl DescribeWorldOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>A map that contains tag keys and tag values that are attached to the world.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>Returns the JSON formatted string that describes the contents of your world.</p>
     pub fn world_description_body(
         mut self,
@@ -173,6 +197,10 @@ impl DescribeWorldOutputBuilder {
     ) -> Self {
         self.world_description_body = input;
         self
+    }
+    /// <p>Returns the JSON formatted string that describes the contents of your world.</p>
+    pub fn get_world_description_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.world_description_body
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

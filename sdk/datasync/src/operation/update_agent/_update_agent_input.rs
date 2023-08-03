@@ -48,6 +48,10 @@ impl UpdateAgentInputBuilder {
         self.agent_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the agent to update.</p>
+    pub fn get_agent_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_arn
+    }
     /// <p>The name that you want to use to configure the agent.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl UpdateAgentInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name that you want to use to configure the agent.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`UpdateAgentInput`](crate::operation::update_agent::UpdateAgentInput).
     pub fn build(

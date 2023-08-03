@@ -50,6 +50,10 @@ impl DescribeIdentityProviderConfigInputBuilder {
         self.cluster_name = input;
         self
     }
+    /// <p>The cluster name that the identity provider configuration is associated to.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_name
+    }
     /// <p>An object representing an identity provider configuration.</p>
     pub fn identity_provider_config(mut self, input: crate::types::IdentityProviderConfig) -> Self {
         self.identity_provider_config = ::std::option::Option::Some(input);
@@ -62,6 +66,12 @@ impl DescribeIdentityProviderConfigInputBuilder {
     ) -> Self {
         self.identity_provider_config = input;
         self
+    }
+    /// <p>An object representing an identity provider configuration.</p>
+    pub fn get_identity_provider_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::IdentityProviderConfig> {
+        &self.identity_provider_config
     }
     /// Consumes the builder and constructs a [`DescribeIdentityProviderConfigInput`](crate::operation::describe_identity_provider_config::DescribeIdentityProviderConfigInput).
     pub fn build(

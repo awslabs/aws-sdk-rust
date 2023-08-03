@@ -83,6 +83,11 @@ impl PillarReviewSummaryBuilder {
         self.pillar_id = input;
         self
     }
+    /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+    /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+    pub fn get_pillar_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pillar_id
+    }
     /// <p>The name of the pillar.</p>
     pub fn pillar_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pillar_name = ::std::option::Option::Some(input.into());
@@ -93,6 +98,10 @@ impl PillarReviewSummaryBuilder {
         self.pillar_name = input;
         self
     }
+    /// <p>The name of the pillar.</p>
+    pub fn get_pillar_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pillar_name
+    }
     /// <p>The notes associated with the workload.</p>
     pub fn notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notes = ::std::option::Option::Some(input.into());
@@ -102,6 +111,10 @@ impl PillarReviewSummaryBuilder {
     pub fn set_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notes = input;
         self
+    }
+    /// <p>The notes associated with the workload.</p>
+    pub fn get_notes(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notes
     }
     /// Adds a key-value pair to `risk_counts`.
     ///
@@ -122,6 +135,12 @@ impl PillarReviewSummaryBuilder {
         self.risk_counts = input;
         self
     }
+    /// <p>A map from risk names to the count of how many questions have that rating.</p>
+    pub fn get_risk_counts(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>> {
+        &self.risk_counts
+    }
     /// Adds a key-value pair to `prioritized_risk_counts`.
     ///
     /// To override the contents of this collection use [`set_prioritized_risk_counts`](Self::set_prioritized_risk_counts).
@@ -140,6 +159,12 @@ impl PillarReviewSummaryBuilder {
     ) -> Self {
         self.prioritized_risk_counts = input;
         self
+    }
+    /// <p>A map from risk names to the count of how many questions have that rating.</p>
+    pub fn get_prioritized_risk_counts(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>> {
+        &self.prioritized_risk_counts
     }
     /// Consumes the builder and constructs a [`PillarReviewSummary`](crate::types::PillarReviewSummary).
     pub fn build(self) -> crate::types::PillarReviewSummary {

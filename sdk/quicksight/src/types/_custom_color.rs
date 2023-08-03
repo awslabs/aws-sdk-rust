@@ -63,6 +63,10 @@ impl CustomColorBuilder {
         self.field_value = input;
         self
     }
+    /// <p>The data value that the color is applied to.</p>
+    pub fn get_field_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_value
+    }
     /// <p>The color that is applied to the data value.</p>
     pub fn color(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.color = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl CustomColorBuilder {
     pub fn set_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.color = input;
         self
+    }
+    /// <p>The color that is applied to the data value.</p>
+    pub fn get_color(&self) -> &::std::option::Option<::std::string::String> {
+        &self.color
     }
     /// <p>The value of a special data value.</p>
     pub fn special_value(mut self, input: crate::types::SpecialValue) -> Self {
@@ -85,6 +93,10 @@ impl CustomColorBuilder {
     ) -> Self {
         self.special_value = input;
         self
+    }
+    /// <p>The value of a special data value.</p>
+    pub fn get_special_value(&self) -> &::std::option::Option<crate::types::SpecialValue> {
+        &self.special_value
     }
     /// Consumes the builder and constructs a [`CustomColor`](crate::types::CustomColor).
     pub fn build(self) -> crate::types::CustomColor {

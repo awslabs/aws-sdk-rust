@@ -55,6 +55,10 @@ impl AttachSecurityProfileInputBuilder {
         self.security_profile_name = input;
         self
     }
+    /// <p>The security profile that is attached.</p>
+    pub fn get_security_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_profile_name
+    }
     /// <p>The ARN of the target (thing group) to which the security profile is attached.</p>
     pub fn security_profile_target_arn(
         mut self,
@@ -70,6 +74,10 @@ impl AttachSecurityProfileInputBuilder {
     ) -> Self {
         self.security_profile_target_arn = input;
         self
+    }
+    /// <p>The ARN of the target (thing group) to which the security profile is attached.</p>
+    pub fn get_security_profile_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_profile_target_arn
     }
     /// Consumes the builder and constructs a [`AttachSecurityProfileInput`](crate::operation::attach_security_profile::AttachSecurityProfileInput).
     pub fn build(

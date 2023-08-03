@@ -53,6 +53,12 @@ impl GetEnvironmentTemplateOutputBuilder {
         self.environment_template = input;
         self
     }
+    /// <p>The detailed data of the requested environment template.</p>
+    pub fn get_environment_template(
+        &self,
+    ) -> &::std::option::Option<crate::types::EnvironmentTemplate> {
+        &self.environment_template
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

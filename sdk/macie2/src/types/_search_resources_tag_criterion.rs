@@ -55,6 +55,12 @@ impl SearchResourcesTagCriterionBuilder {
         self.comparator = input;
         self
     }
+    /// <p>The operator to use in the condition. Valid values are EQ (equals) and NE (not equals).</p>
+    pub fn get_comparator(
+        &self,
+    ) -> &::std::option::Option<crate::types::SearchResourcesComparator> {
+        &self.comparator
+    }
     /// Appends an item to `tag_values`.
     ///
     /// To override the contents of this collection use [`set_tag_values`](Self::set_tag_values).
@@ -75,6 +81,13 @@ impl SearchResourcesTagCriterionBuilder {
     ) -> Self {
         self.tag_values = input;
         self
+    }
+    /// <p>The tag keys, tag values, or tag key and value pairs to use in the condition.</p>
+    pub fn get_tag_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchResourcesTagCriterionPair>>
+    {
+        &self.tag_values
     }
     /// Consumes the builder and constructs a [`SearchResourcesTagCriterion`](crate::types::SearchResourcesTagCriterion).
     pub fn build(self) -> crate::types::SearchResourcesTagCriterion {

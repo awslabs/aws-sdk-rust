@@ -41,6 +41,10 @@ impl GetResolverDnssecConfigInputBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The ID of the virtual private cloud (VPC) for the DNSSEC validation status.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// Consumes the builder and constructs a [`GetResolverDnssecConfigInput`](crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigInput).
     pub fn build(
         self,

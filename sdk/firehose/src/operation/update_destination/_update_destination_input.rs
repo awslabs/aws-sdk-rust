@@ -157,6 +157,10 @@ impl UpdateDestinationInputBuilder {
         self.delivery_stream_name = input;
         self
     }
+    /// <p>The name of the delivery stream.</p>
+    pub fn get_delivery_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delivery_stream_name
+    }
     /// <p>Obtain this value from the <code>VersionId</code> result of <code>DeliveryStreamDescription</code>. This value is required, and helps the service perform conditional operations. For example, if there is an interleaving update and this value is null, then the update destination fails. After the update is successful, the <code>VersionId</code> value is updated. The service then performs a merge of the old configuration with the new configuration.</p>
     pub fn current_delivery_stream_version_id(
         mut self,
@@ -172,6 +176,12 @@ impl UpdateDestinationInputBuilder {
     ) -> Self {
         self.current_delivery_stream_version_id = input;
         self
+    }
+    /// <p>Obtain this value from the <code>VersionId</code> result of <code>DeliveryStreamDescription</code>. This value is required, and helps the service perform conditional operations. For example, if there is an interleaving update and this value is null, then the update destination fails. After the update is successful, the <code>VersionId</code> value is updated. The service then performs a merge of the old configuration with the new configuration.</p>
+    pub fn get_current_delivery_stream_version_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.current_delivery_stream_version_id
     }
     /// <p>The ID of the destination.</p>
     pub fn destination_id(
@@ -189,6 +199,10 @@ impl UpdateDestinationInputBuilder {
         self.destination_id = input;
         self
     }
+    /// <p>The ID of the destination.</p>
+    pub fn get_destination_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_id
+    }
     /// <p>[Deprecated] Describes an update for a destination in Amazon S3.</p>
     #[deprecated]
     pub fn s3_destination_update(mut self, input: crate::types::S3DestinationUpdate) -> Self {
@@ -203,6 +217,13 @@ impl UpdateDestinationInputBuilder {
     ) -> Self {
         self.s3_destination_update = input;
         self
+    }
+    /// <p>[Deprecated] Describes an update for a destination in Amazon S3.</p>
+    #[deprecated]
+    pub fn get_s3_destination_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3DestinationUpdate> {
+        &self.s3_destination_update
     }
     /// <p>Describes an update for a destination in Amazon S3.</p>
     pub fn extended_s3_destination_update(
@@ -220,6 +241,12 @@ impl UpdateDestinationInputBuilder {
         self.extended_s3_destination_update = input;
         self
     }
+    /// <p>Describes an update for a destination in Amazon S3.</p>
+    pub fn get_extended_s3_destination_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExtendedS3DestinationUpdate> {
+        &self.extended_s3_destination_update
+    }
     /// <p>Describes an update for a destination in Amazon Redshift.</p>
     pub fn redshift_destination_update(
         mut self,
@@ -235,6 +262,12 @@ impl UpdateDestinationInputBuilder {
     ) -> Self {
         self.redshift_destination_update = input;
         self
+    }
+    /// <p>Describes an update for a destination in Amazon Redshift.</p>
+    pub fn get_redshift_destination_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::RedshiftDestinationUpdate> {
+        &self.redshift_destination_update
     }
     /// <p>Describes an update for a destination in Amazon ES.</p>
     pub fn elasticsearch_destination_update(
@@ -252,6 +285,12 @@ impl UpdateDestinationInputBuilder {
         self.elasticsearch_destination_update = input;
         self
     }
+    /// <p>Describes an update for a destination in Amazon ES.</p>
+    pub fn get_elasticsearch_destination_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::ElasticsearchDestinationUpdate> {
+        &self.elasticsearch_destination_update
+    }
     /// <p>Describes an update for a destination in Amazon OpenSearch Service.</p>
     pub fn amazonopensearchservice_destination_update(
         mut self,
@@ -267,6 +306,12 @@ impl UpdateDestinationInputBuilder {
     ) -> Self {
         self.amazonopensearchservice_destination_update = input;
         self
+    }
+    /// <p>Describes an update for a destination in Amazon OpenSearch Service.</p>
+    pub fn get_amazonopensearchservice_destination_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::AmazonopensearchserviceDestinationUpdate> {
+        &self.amazonopensearchservice_destination_update
     }
     /// <p>Describes an update for a destination in Splunk.</p>
     pub fn splunk_destination_update(
@@ -284,6 +329,12 @@ impl UpdateDestinationInputBuilder {
         self.splunk_destination_update = input;
         self
     }
+    /// <p>Describes an update for a destination in Splunk.</p>
+    pub fn get_splunk_destination_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::SplunkDestinationUpdate> {
+        &self.splunk_destination_update
+    }
     /// <p>Describes an update to the specified HTTP endpoint destination.</p>
     pub fn http_endpoint_destination_update(
         mut self,
@@ -300,6 +351,12 @@ impl UpdateDestinationInputBuilder {
         self.http_endpoint_destination_update = input;
         self
     }
+    /// <p>Describes an update to the specified HTTP endpoint destination.</p>
+    pub fn get_http_endpoint_destination_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::HttpEndpointDestinationUpdate> {
+        &self.http_endpoint_destination_update
+    }
     /// <p>Describes an update for a destination in the Serverless offering for Amazon OpenSearch Service.</p>
     pub fn amazon_open_search_serverless_destination_update(
         mut self,
@@ -315,6 +372,12 @@ impl UpdateDestinationInputBuilder {
     ) -> Self {
         self.amazon_open_search_serverless_destination_update = input;
         self
+    }
+    /// <p>Describes an update for a destination in the Serverless offering for Amazon OpenSearch Service.</p>
+    pub fn get_amazon_open_search_serverless_destination_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationUpdate> {
+        &self.amazon_open_search_serverless_destination_update
     }
     /// Consumes the builder and constructs a [`UpdateDestinationInput`](crate::operation::update_destination::UpdateDestinationInput).
     pub fn build(

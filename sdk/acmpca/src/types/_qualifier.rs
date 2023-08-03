@@ -40,6 +40,10 @@ impl QualifierBuilder {
         self.cps_uri = input;
         self
     }
+    /// <p>Contains a pointer to a certification practice statement (CPS) published by the CA.</p>
+    pub fn get_cps_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cps_uri
+    }
     /// Consumes the builder and constructs a [`Qualifier`](crate::types::Qualifier).
     pub fn build(self) -> crate::types::Qualifier {
         crate::types::Qualifier {

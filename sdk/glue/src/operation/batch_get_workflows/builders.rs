@@ -36,6 +36,12 @@ impl BatchGetWorkflowsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchGetWorkflows as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_get_workflows::builders::BatchGetWorkflowsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl BatchGetWorkflowsFluentBuilder {
         self.inner = self.inner.set_names(input);
         self
     }
+    /// <p>A list of workflow names, which may be the names returned from the <code>ListWorkflows</code> operation.</p>
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_names()
+    }
     /// <p>Specifies whether to include a graph when returning the workflow resource metadata.</p>
     pub fn include_graph(mut self, input: bool) -> Self {
         self.inner = self.inner.include_graph(input);
@@ -142,5 +152,9 @@ impl BatchGetWorkflowsFluentBuilder {
     pub fn set_include_graph(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_graph(input);
         self
+    }
+    /// <p>Specifies whether to include a graph when returning the workflow resource metadata.</p>
+    pub fn get_include_graph(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_graph()
     }
 }

@@ -67,6 +67,10 @@ impl EncryptOutputBuilder {
         self.ciphertext_blob = input;
         self
     }
+    /// <p>The encrypted plaintext. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    pub fn get_ciphertext_blob(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.ciphertext_blob
+    }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that was used to encrypt the plaintext.</p>
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_id = ::std::option::Option::Some(input.into());
@@ -76,6 +80,10 @@ impl EncryptOutputBuilder {
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_id = input;
         self
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that was used to encrypt the plaintext.</p>
+    pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_id
     }
     /// <p>The encryption algorithm that was used to encrypt the plaintext.</p>
     pub fn encryption_algorithm(mut self, input: crate::types::EncryptionAlgorithmSpec) -> Self {
@@ -89,6 +97,12 @@ impl EncryptOutputBuilder {
     ) -> Self {
         self.encryption_algorithm = input;
         self
+    }
+    /// <p>The encryption algorithm that was used to encrypt the plaintext.</p>
+    pub fn get_encryption_algorithm(
+        &self,
+    ) -> &::std::option::Option<crate::types::EncryptionAlgorithmSpec> {
+        &self.encryption_algorithm
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

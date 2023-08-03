@@ -36,6 +36,12 @@ impl DeleteWorkerBlockFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteWorkerBlock as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_worker_block::builders::DeleteWorkerBlockInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DeleteWorkerBlockFluentBuilder {
         self.inner = self.inner.set_worker_id(input);
         self
     }
+    /// <p>The ID of the Worker to unblock.</p>
+    pub fn get_worker_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_worker_id()
+    }
     /// <p>A message that explains the reason for unblocking the Worker. The Worker does not see this message.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reason(input.into());
@@ -135,5 +145,9 @@ impl DeleteWorkerBlockFluentBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reason(input);
         self
+    }
+    /// <p>A message that explains the reason for unblocking the Worker. The Worker does not see this message.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reason()
     }
 }

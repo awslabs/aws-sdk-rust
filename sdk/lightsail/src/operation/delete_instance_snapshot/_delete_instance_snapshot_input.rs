@@ -47,6 +47,10 @@ impl DeleteInstanceSnapshotInputBuilder {
         self.instance_snapshot_name = input;
         self
     }
+    /// <p>The name of the snapshot to delete.</p>
+    pub fn get_instance_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_snapshot_name
+    }
     /// Consumes the builder and constructs a [`DeleteInstanceSnapshotInput`](crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotInput).
     pub fn build(
         self,

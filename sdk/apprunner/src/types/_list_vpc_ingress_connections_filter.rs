@@ -48,6 +48,10 @@ impl ListVpcIngressConnectionsFilterBuilder {
         self.service_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of a service to filter by. </p>
+    pub fn get_service_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_arn
+    }
     /// <p>The ID of a VPC Endpoint to filter by. </p>
     pub fn vpc_endpoint_id(
         mut self,
@@ -63,6 +67,10 @@ impl ListVpcIngressConnectionsFilterBuilder {
     ) -> Self {
         self.vpc_endpoint_id = input;
         self
+    }
+    /// <p>The ID of a VPC Endpoint to filter by. </p>
+    pub fn get_vpc_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_endpoint_id
     }
     /// Consumes the builder and constructs a [`ListVpcIngressConnectionsFilter`](crate::types::ListVpcIngressConnectionsFilter).
     pub fn build(self) -> crate::types::ListVpcIngressConnectionsFilter {

@@ -62,6 +62,10 @@ impl InstanceGroupStatusBuilder {
         self.state = input;
         self
     }
+    /// <p>The current state of the instance group.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::InstanceGroupState> {
+        &self.state
+    }
     /// <p>The status change reason details for the instance group.</p>
     pub fn state_change_reason(
         mut self,
@@ -78,6 +82,12 @@ impl InstanceGroupStatusBuilder {
         self.state_change_reason = input;
         self
     }
+    /// <p>The status change reason details for the instance group.</p>
+    pub fn get_state_change_reason(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceGroupStateChangeReason> {
+        &self.state_change_reason
+    }
     /// <p>The timeline of the instance group status over time.</p>
     pub fn timeline(mut self, input: crate::types::InstanceGroupTimeline) -> Self {
         self.timeline = ::std::option::Option::Some(input);
@@ -90,6 +100,10 @@ impl InstanceGroupStatusBuilder {
     ) -> Self {
         self.timeline = input;
         self
+    }
+    /// <p>The timeline of the instance group status over time.</p>
+    pub fn get_timeline(&self) -> &::std::option::Option<crate::types::InstanceGroupTimeline> {
+        &self.timeline
     }
     /// Consumes the builder and constructs a [`InstanceGroupStatus`](crate::types::InstanceGroupStatus).
     pub fn build(self) -> crate::types::InstanceGroupStatus {

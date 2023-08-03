@@ -48,6 +48,10 @@ impl ForecastStatisticsBuilder {
         self.fault_count_high = input;
         self
     }
+    /// <p>The upper limit of fault counts for a service.</p>
+    pub fn get_fault_count_high(&self) -> &::std::option::Option<i64> {
+        &self.fault_count_high
+    }
     /// <p>The lower limit of fault counts for a service.</p>
     pub fn fault_count_low(mut self, input: i64) -> Self {
         self.fault_count_low = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ForecastStatisticsBuilder {
     pub fn set_fault_count_low(mut self, input: ::std::option::Option<i64>) -> Self {
         self.fault_count_low = input;
         self
+    }
+    /// <p>The lower limit of fault counts for a service.</p>
+    pub fn get_fault_count_low(&self) -> &::std::option::Option<i64> {
+        &self.fault_count_low
     }
     /// Consumes the builder and constructs a [`ForecastStatistics`](crate::types::ForecastStatistics).
     pub fn build(self) -> crate::types::ForecastStatistics {

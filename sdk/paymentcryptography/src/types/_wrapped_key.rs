@@ -75,6 +75,10 @@ impl WrappedKeyBuilder {
         self.wrapping_key_arn = input;
         self
     }
+    /// <p>The <code>KeyARN</code> of the wrapped key.</p>
+    pub fn get_wrapping_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.wrapping_key_arn
+    }
     /// <p>The key block format of a wrapped key.</p>
     pub fn wrapped_key_material_format(
         mut self,
@@ -91,6 +95,12 @@ impl WrappedKeyBuilder {
         self.wrapped_key_material_format = input;
         self
     }
+    /// <p>The key block format of a wrapped key.</p>
+    pub fn get_wrapped_key_material_format(
+        &self,
+    ) -> &::std::option::Option<crate::types::WrappedKeyMaterialFormat> {
+        &self.wrapped_key_material_format
+    }
     /// <p>Parameter information for generating a wrapped key using TR-31 or TR-34 standard.</p>
     pub fn key_material(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_material = ::std::option::Option::Some(input.into());
@@ -100,6 +110,10 @@ impl WrappedKeyBuilder {
     pub fn set_key_material(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_material = input;
         self
+    }
+    /// <p>Parameter information for generating a wrapped key using TR-31 or TR-34 standard.</p>
+    pub fn get_key_material(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_material
     }
     /// Consumes the builder and constructs a [`WrappedKey`](crate::types::WrappedKey).
     pub fn build(self) -> crate::types::WrappedKey {

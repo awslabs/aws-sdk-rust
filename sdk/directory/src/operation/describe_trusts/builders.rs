@@ -37,6 +37,12 @@ impl DescribeTrustsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeTrusts as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_trusts::builders::DescribeTrustsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +136,10 @@ impl DescribeTrustsFluentBuilder {
         self.inner = self.inner.set_directory_id(input);
         self
     }
+    /// <p>The Directory ID of the Amazon Web Services directory that is a part of the requested trust relationship.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_id()
+    }
     /// Appends an item to `TrustIds`.
     ///
     /// To override the contents of this collection use [`set_trust_ids`](Self::set_trust_ids).
@@ -149,6 +159,11 @@ impl DescribeTrustsFluentBuilder {
         self.inner = self.inner.set_trust_ids(input);
         self
     }
+    /// <p>A list of identifiers of the trust relationships for which to obtain the information. If this member is null, all trust relationships that belong to the current account are returned.</p>
+    /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
+    pub fn get_trust_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_trust_ids()
+    }
     /// <p>The <i>DescribeTrustsResult.NextToken</i> value from a previous call to <code>DescribeTrusts</code>. Pass null if this is the first call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -159,6 +174,10 @@ impl DescribeTrustsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The <i>DescribeTrustsResult.NextToken</i> value from a previous call to <code>DescribeTrusts</code>. Pass null if this is the first call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of objects to return.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -168,5 +187,9 @@ impl DescribeTrustsFluentBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
+    }
+    /// <p>The maximum number of objects to return.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
     }
 }

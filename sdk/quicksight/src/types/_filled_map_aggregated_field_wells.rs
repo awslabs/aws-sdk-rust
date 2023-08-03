@@ -57,6 +57,12 @@ impl FilledMapAggregatedFieldWellsBuilder {
         self.geospatial = input;
         self
     }
+    /// <p>The aggregated location field well of the filled map. Values are grouped by location fields.</p>
+    pub fn get_geospatial(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+        &self.geospatial
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -75,6 +81,12 @@ impl FilledMapAggregatedFieldWellsBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>The aggregated color field well of a filled map. Values are aggregated based on location fields.</p>
+    pub fn get_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`FilledMapAggregatedFieldWells`](crate::types::FilledMapAggregatedFieldWells).
     pub fn build(self) -> crate::types::FilledMapAggregatedFieldWells {

@@ -39,6 +39,10 @@ impl UpdateConfigurationSetEventDestinationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateConfigurationSetEventDestination as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_configuration_set_event_destination::builders::UpdateConfigurationSetEventDestinationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -109,6 +113,10 @@ impl UpdateConfigurationSetEventDestinationFluentBuilder {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }
+    /// <p>The name of the configuration set that contains the event destination that you want to update.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_set_name()
+    }
     /// <p>The event destination object that you want to apply to the specified configuration set.</p>
     pub fn event_destination(mut self, input: crate::types::EventDestination) -> Self {
         self.inner = self.inner.event_destination(input);
@@ -121,5 +129,9 @@ impl UpdateConfigurationSetEventDestinationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_event_destination(input);
         self
+    }
+    /// <p>The event destination object that you want to apply to the specified configuration set.</p>
+    pub fn get_event_destination(&self) -> &::std::option::Option<crate::types::EventDestination> {
+        self.inner.get_event_destination()
     }
 }

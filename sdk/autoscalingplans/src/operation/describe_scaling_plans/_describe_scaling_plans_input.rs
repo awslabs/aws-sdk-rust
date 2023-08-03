@@ -90,6 +90,12 @@ impl DescribeScalingPlansInputBuilder {
         self.scaling_plan_names = input;
         self
     }
+    /// <p>The names of the scaling plans (up to 10). If you specify application sources, you cannot specify scaling plan names.</p>
+    pub fn get_scaling_plan_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.scaling_plan_names
+    }
     /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p> <note>
     /// <p>If you specify a scaling plan version, you must also specify a scaling plan name.</p>
     /// </note>
@@ -103,6 +109,12 @@ impl DescribeScalingPlansInputBuilder {
     pub fn set_scaling_plan_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.scaling_plan_version = input;
         self
+    }
+    /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p> <note>
+    /// <p>If you specify a scaling plan version, you must also specify a scaling plan name.</p>
+    /// </note>
+    pub fn get_scaling_plan_version(&self) -> &::std::option::Option<i64> {
+        &self.scaling_plan_version
     }
     /// Appends an item to `application_sources`.
     ///
@@ -123,6 +135,12 @@ impl DescribeScalingPlansInputBuilder {
         self.application_sources = input;
         self
     }
+    /// <p>The sources for the applications (up to 10). If you specify scaling plan names, you cannot specify application sources.</p>
+    pub fn get_application_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationSource>> {
+        &self.application_sources
+    }
     /// <p>The maximum number of scalable resources to return. This value can be between 1 and 50. The default value is 50.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -133,6 +151,10 @@ impl DescribeScalingPlansInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of scalable resources to return. This value can be between 1 and 50. The default value is 50.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token for the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -142,6 +164,10 @@ impl DescribeScalingPlansInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeScalingPlansInput`](crate::operation::describe_scaling_plans::DescribeScalingPlansInput).
     pub fn build(

@@ -48,6 +48,10 @@ impl BucketBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the bucket.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Date the bucket was created. This date can change when making changes to your bucket, such as editing its bucket policy.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl BucketBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>Date the bucket was created. This date can change when making changes to your bucket, such as editing its bucket policy.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
     }
     /// Consumes the builder and constructs a [`Bucket`](crate::types::Bucket).
     pub fn build(self) -> crate::types::Bucket {

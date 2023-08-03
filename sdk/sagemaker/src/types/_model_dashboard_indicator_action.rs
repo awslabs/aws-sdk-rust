@@ -40,6 +40,10 @@ impl ModelDashboardIndicatorActionBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Indicates whether the alert action is turned on.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Consumes the builder and constructs a [`ModelDashboardIndicatorAction`](crate::types::ModelDashboardIndicatorAction).
     pub fn build(self) -> crate::types::ModelDashboardIndicatorAction {
         crate::types::ModelDashboardIndicatorAction {

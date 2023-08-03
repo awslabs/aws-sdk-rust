@@ -36,6 +36,12 @@ impl ListApplicationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListApplications as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_applications::builders::ListApplicationsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListApplicationsFluentBuilder {
         self.inner = self.inner.set_max_items(input);
         self
     }
+    /// <p>The total number of items to return.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_items()
+    }
     /// <p>A token to specify where to start paginating.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -146,5 +156,9 @@ impl ListApplicationsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A token to specify where to start paginating.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

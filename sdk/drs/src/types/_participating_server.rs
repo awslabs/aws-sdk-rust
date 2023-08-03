@@ -62,6 +62,10 @@ impl ParticipatingServerBuilder {
         self.source_server_id = input;
         self
     }
+    /// <p>The Source Server ID of a participating server.</p>
+    pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_server_id
+    }
     /// <p>The Recovery Instance ID of a participating server.</p>
     pub fn recovery_instance_id(
         mut self,
@@ -78,6 +82,10 @@ impl ParticipatingServerBuilder {
         self.recovery_instance_id = input;
         self
     }
+    /// <p>The Recovery Instance ID of a participating server.</p>
+    pub fn get_recovery_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recovery_instance_id
+    }
     /// <p>The launch status of a participating server.</p>
     pub fn launch_status(mut self, input: crate::types::LaunchStatus) -> Self {
         self.launch_status = ::std::option::Option::Some(input);
@@ -90,6 +98,10 @@ impl ParticipatingServerBuilder {
     ) -> Self {
         self.launch_status = input;
         self
+    }
+    /// <p>The launch status of a participating server.</p>
+    pub fn get_launch_status(&self) -> &::std::option::Option<crate::types::LaunchStatus> {
+        &self.launch_status
     }
     /// Consumes the builder and constructs a [`ParticipatingServer`](crate::types::ParticipatingServer).
     pub fn build(self) -> crate::types::ParticipatingServer {

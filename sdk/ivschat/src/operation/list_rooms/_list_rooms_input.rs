@@ -71,6 +71,10 @@ impl ListRoomsInputBuilder {
         self.name = input;
         self
     }
+    /// <p>Filters the list to match the specified room name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The first room to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl ListRoomsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The first room to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>Maximum number of rooms to return. Default: 50.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -90,6 +98,10 @@ impl ListRoomsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>Maximum number of rooms to return. Default: 50.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>Filters the list to match the specified message review handler URI.</p>
     pub fn message_review_handler_uri(
@@ -107,6 +119,10 @@ impl ListRoomsInputBuilder {
         self.message_review_handler_uri = input;
         self
     }
+    /// <p>Filters the list to match the specified message review handler URI.</p>
+    pub fn get_message_review_handler_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_review_handler_uri
+    }
     /// <p>Logging-configuration identifier.</p>
     pub fn logging_configuration_identifier(
         mut self,
@@ -122,6 +138,12 @@ impl ListRoomsInputBuilder {
     ) -> Self {
         self.logging_configuration_identifier = input;
         self
+    }
+    /// <p>Logging-configuration identifier.</p>
+    pub fn get_logging_configuration_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.logging_configuration_identifier
     }
     /// Consumes the builder and constructs a [`ListRoomsInput`](crate::operation::list_rooms::ListRoomsInput).
     pub fn build(

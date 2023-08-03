@@ -36,6 +36,12 @@ impl CreateAddressFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateAddress as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_address::builders::CreateAddressInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -117,5 +123,9 @@ impl CreateAddressFluentBuilder {
     pub fn set_address(mut self, input: ::std::option::Option<crate::types::Address>) -> Self {
         self.inner = self.inner.set_address(input);
         self
+    }
+    /// <p>The address that you want the Snow device shipped to.</p>
+    pub fn get_address(&self) -> &::std::option::Option<crate::types::Address> {
+        self.inner.get_address()
     }
 }

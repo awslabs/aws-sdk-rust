@@ -62,6 +62,12 @@ impl MultiRegionConfigurationBuilder {
         self.multi_region_key_type = input;
         self
     }
+    /// <p>Indicates whether the KMS key is a <code>PRIMARY</code> or <code>REPLICA</code> key.</p>
+    pub fn get_multi_region_key_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::MultiRegionKeyType> {
+        &self.multi_region_key_type
+    }
     /// <p>Displays the key ARN and Region of the primary key. This field includes the current KMS key if it is the primary key.</p>
     pub fn primary_key(mut self, input: crate::types::MultiRegionKey) -> Self {
         self.primary_key = ::std::option::Option::Some(input);
@@ -74,6 +80,10 @@ impl MultiRegionConfigurationBuilder {
     ) -> Self {
         self.primary_key = input;
         self
+    }
+    /// <p>Displays the key ARN and Region of the primary key. This field includes the current KMS key if it is the primary key.</p>
+    pub fn get_primary_key(&self) -> &::std::option::Option<crate::types::MultiRegionKey> {
+        &self.primary_key
     }
     /// Appends an item to `replica_keys`.
     ///
@@ -93,6 +103,12 @@ impl MultiRegionConfigurationBuilder {
     ) -> Self {
         self.replica_keys = input;
         self
+    }
+    /// <p>displays the key ARNs and Regions of all replica keys. This field includes the current KMS key if it is a replica key.</p>
+    pub fn get_replica_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MultiRegionKey>> {
+        &self.replica_keys
     }
     /// Consumes the builder and constructs a [`MultiRegionConfiguration`](crate::types::MultiRegionConfiguration).
     pub fn build(self) -> crate::types::MultiRegionConfiguration {

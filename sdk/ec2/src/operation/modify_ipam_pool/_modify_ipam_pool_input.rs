@@ -121,6 +121,10 @@ impl ModifyIpamPoolInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The ID of the IPAM pool you want to modify.</p>
     pub fn ipam_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_pool_id = ::std::option::Option::Some(input.into());
@@ -131,6 +135,10 @@ impl ModifyIpamPoolInputBuilder {
         self.ipam_pool_id = input;
         self
     }
+    /// <p>The ID of the IPAM pool you want to modify.</p>
+    pub fn get_ipam_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipam_pool_id
+    }
     /// <p>The description of the IPAM pool you want to modify.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -140,6 +148,10 @@ impl ModifyIpamPoolInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the IPAM pool you want to modify.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>If true, IPAM will continuously look for resources within the CIDR range of this pool and automatically import them as allocations into your IPAM. The CIDRs that will be allocated for these resources must not already be allocated to other resources in order for the import to succeed. IPAM will import a CIDR regardless of its compliance with the pool's allocation rules, so a resource might be imported and subsequently marked as noncompliant. If IPAM discovers multiple CIDRs that overlap, IPAM will import the largest CIDR only. If IPAM discovers multiple CIDRs with matching CIDRs, IPAM will randomly import one of them only. </p>
     /// <p>A locale must be set on the pool for this feature to work.</p>
@@ -153,6 +165,11 @@ impl ModifyIpamPoolInputBuilder {
         self.auto_import = input;
         self
     }
+    /// <p>If true, IPAM will continuously look for resources within the CIDR range of this pool and automatically import them as allocations into your IPAM. The CIDRs that will be allocated for these resources must not already be allocated to other resources in order for the import to succeed. IPAM will import a CIDR regardless of its compliance with the pool's allocation rules, so a resource might be imported and subsequently marked as noncompliant. If IPAM discovers multiple CIDRs that overlap, IPAM will import the largest CIDR only. If IPAM discovers multiple CIDRs with matching CIDRs, IPAM will randomly import one of them only. </p>
+    /// <p>A locale must be set on the pool for this feature to work.</p>
+    pub fn get_auto_import(&self) -> &::std::option::Option<bool> {
+        &self.auto_import
+    }
     /// <p>The minimum netmask length required for CIDR allocations in this IPAM pool to be compliant. Possible netmask lengths for IPv4 addresses are 0 - 32. Possible netmask lengths for IPv6 addresses are 0 - 128. The minimum netmask length must be less than the maximum netmask length.</p>
     pub fn allocation_min_netmask_length(mut self, input: i32) -> Self {
         self.allocation_min_netmask_length = ::std::option::Option::Some(input);
@@ -163,6 +180,10 @@ impl ModifyIpamPoolInputBuilder {
         self.allocation_min_netmask_length = input;
         self
     }
+    /// <p>The minimum netmask length required for CIDR allocations in this IPAM pool to be compliant. Possible netmask lengths for IPv4 addresses are 0 - 32. Possible netmask lengths for IPv6 addresses are 0 - 128. The minimum netmask length must be less than the maximum netmask length.</p>
+    pub fn get_allocation_min_netmask_length(&self) -> &::std::option::Option<i32> {
+        &self.allocation_min_netmask_length
+    }
     /// <p>The maximum netmask length possible for CIDR allocations in this IPAM pool to be compliant. Possible netmask lengths for IPv4 addresses are 0 - 32. Possible netmask lengths for IPv6 addresses are 0 - 128.The maximum netmask length must be greater than the minimum netmask length.</p>
     pub fn allocation_max_netmask_length(mut self, input: i32) -> Self {
         self.allocation_max_netmask_length = ::std::option::Option::Some(input);
@@ -172,6 +193,10 @@ impl ModifyIpamPoolInputBuilder {
     pub fn set_allocation_max_netmask_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.allocation_max_netmask_length = input;
         self
+    }
+    /// <p>The maximum netmask length possible for CIDR allocations in this IPAM pool to be compliant. Possible netmask lengths for IPv4 addresses are 0 - 32. Possible netmask lengths for IPv6 addresses are 0 - 128.The maximum netmask length must be greater than the minimum netmask length.</p>
+    pub fn get_allocation_max_netmask_length(&self) -> &::std::option::Option<i32> {
+        &self.allocation_max_netmask_length
     }
     /// <p>The default netmask length for allocations added to this pool. If, for example, the CIDR assigned to this pool is 10.0.0.0/8 and you enter 16 here, new allocations will default to 10.0.0.0/16.</p>
     pub fn allocation_default_netmask_length(mut self, input: i32) -> Self {
@@ -186,6 +211,10 @@ impl ModifyIpamPoolInputBuilder {
         self.allocation_default_netmask_length = input;
         self
     }
+    /// <p>The default netmask length for allocations added to this pool. If, for example, the CIDR assigned to this pool is 10.0.0.0/8 and you enter 16 here, new allocations will default to 10.0.0.0/16.</p>
+    pub fn get_allocation_default_netmask_length(&self) -> &::std::option::Option<i32> {
+        &self.allocation_default_netmask_length
+    }
     /// <p>Clear the default netmask length allocation rule for this pool.</p>
     pub fn clear_allocation_default_netmask_length(mut self, input: bool) -> Self {
         self.clear_allocation_default_netmask_length = ::std::option::Option::Some(input);
@@ -198,6 +227,10 @@ impl ModifyIpamPoolInputBuilder {
     ) -> Self {
         self.clear_allocation_default_netmask_length = input;
         self
+    }
+    /// <p>Clear the default netmask length allocation rule for this pool.</p>
+    pub fn get_clear_allocation_default_netmask_length(&self) -> &::std::option::Option<bool> {
+        &self.clear_allocation_default_netmask_length
     }
     /// Appends an item to `add_allocation_resource_tags`.
     ///
@@ -221,6 +254,12 @@ impl ModifyIpamPoolInputBuilder {
         self.add_allocation_resource_tags = input;
         self
     }
+    /// <p>Add tag allocation rules to a pool. For more information about allocation rules, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-top-ipam.html">Create a top-level pool</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    pub fn get_add_allocation_resource_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RequestIpamResourceTag>> {
+        &self.add_allocation_resource_tags
+    }
     /// Appends an item to `remove_allocation_resource_tags`.
     ///
     /// To override the contents of this collection use [`set_remove_allocation_resource_tags`](Self::set_remove_allocation_resource_tags).
@@ -242,6 +281,12 @@ impl ModifyIpamPoolInputBuilder {
     ) -> Self {
         self.remove_allocation_resource_tags = input;
         self
+    }
+    /// <p>Remove tag allocation rules from a pool.</p>
+    pub fn get_remove_allocation_resource_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RequestIpamResourceTag>> {
+        &self.remove_allocation_resource_tags
     }
     /// Consumes the builder and constructs a [`ModifyIpamPoolInput`](crate::operation::modify_ipam_pool::ModifyIpamPoolInput).
     pub fn build(

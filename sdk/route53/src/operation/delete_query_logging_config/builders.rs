@@ -37,6 +37,10 @@ impl DeleteQueryLoggingConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteQueryLoggingConfig as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_query_logging_config::builders::DeleteQueryLoggingConfigInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,5 +130,9 @@ impl DeleteQueryLoggingConfigFluentBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
+    }
+    /// <p>The ID of the configuration that you want to delete. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
     }
 }

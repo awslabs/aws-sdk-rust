@@ -46,6 +46,10 @@ impl EphemeralStorageBuilder {
         self.size_in_gi_b = input;
         self
     }
+    /// <p>The total amount, in GiB, of ephemeral storage to set for the task. The minimum supported value is <code>21</code> GiB and the maximum supported value is <code>200</code> GiB.</p>
+    pub fn get_size_in_gi_b(&self) -> &::std::option::Option<i32> {
+        &self.size_in_gi_b
+    }
     /// Consumes the builder and constructs a [`EphemeralStorage`](crate::types::EphemeralStorage).
     pub fn build(self) -> crate::types::EphemeralStorage {
         crate::types::EphemeralStorage {

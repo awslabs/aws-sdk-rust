@@ -40,6 +40,10 @@ impl BatchArrayPropertiesBuilder {
         self.size = input;
         self
     }
+    /// <p>The size of the array, if this is an array batch job.</p>
+    pub fn get_size(&self) -> &::std::option::Option<i32> {
+        &self.size
+    }
     /// Consumes the builder and constructs a [`BatchArrayProperties`](crate::types::BatchArrayProperties).
     pub fn build(self) -> crate::types::BatchArrayProperties {
         crate::types::BatchArrayProperties {

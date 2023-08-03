@@ -52,6 +52,12 @@ impl GetQueryRuntimeStatisticsOutputBuilder {
         self.query_runtime_statistics = input;
         self
     }
+    /// <p>Runtime statistics about the query execution.</p>
+    pub fn get_query_runtime_statistics(
+        &self,
+    ) -> &::std::option::Option<crate::types::QueryRuntimeStatistics> {
+        &self.query_runtime_statistics
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

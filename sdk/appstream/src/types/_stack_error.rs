@@ -51,6 +51,10 @@ impl StackErrorBuilder {
         self.error_code = input;
         self
     }
+    /// <p>The error code.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::StackErrorCode> {
+        &self.error_code
+    }
     /// <p>The error message.</p>
     pub fn error_message(
         mut self,
@@ -66,6 +70,10 @@ impl StackErrorBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>The error message.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`StackError`](crate::types::StackError).
     pub fn build(self) -> crate::types::StackError {

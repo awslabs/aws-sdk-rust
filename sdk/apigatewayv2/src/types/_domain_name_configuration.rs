@@ -118,6 +118,10 @@ impl DomainNameConfigurationBuilder {
         self.api_gateway_domain_name = input;
         self
     }
+    /// <p>A domain name for the API.</p>
+    pub fn get_api_gateway_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_gateway_domain_name
+    }
     /// <p>An AWS-managed certificate that will be used by the edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
     pub fn certificate_arn(
         mut self,
@@ -133,6 +137,10 @@ impl DomainNameConfigurationBuilder {
     ) -> Self {
         self.certificate_arn = input;
         self
+    }
+    /// <p>An AWS-managed certificate that will be used by the edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_arn
     }
     /// <p>The user-friendly name of the certificate that will be used by the edge-optimized endpoint for this domain name.</p>
     pub fn certificate_name(
@@ -150,6 +158,10 @@ impl DomainNameConfigurationBuilder {
         self.certificate_name = input;
         self
     }
+    /// <p>The user-friendly name of the certificate that will be used by the edge-optimized endpoint for this domain name.</p>
+    pub fn get_certificate_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_name
+    }
     /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded.</p>
     pub fn certificate_upload_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.certificate_upload_date = ::std::option::Option::Some(input);
@@ -163,6 +175,12 @@ impl DomainNameConfigurationBuilder {
         self.certificate_upload_date = input;
         self
     }
+    /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded.</p>
+    pub fn get_certificate_upload_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.certificate_upload_date
+    }
     /// <p>The status of the domain name migration. The valid values are AVAILABLE, UPDATING, PENDING_CERTIFICATE_REIMPORT, and PENDING_OWNERSHIP_VERIFICATION. If the status is UPDATING, the domain cannot be modified further until the existing operation is complete. If it is AVAILABLE, the domain can be updated.</p>
     pub fn domain_name_status(mut self, input: crate::types::DomainNameStatus) -> Self {
         self.domain_name_status = ::std::option::Option::Some(input);
@@ -175,6 +193,10 @@ impl DomainNameConfigurationBuilder {
     ) -> Self {
         self.domain_name_status = input;
         self
+    }
+    /// <p>The status of the domain name migration. The valid values are AVAILABLE, UPDATING, PENDING_CERTIFICATE_REIMPORT, and PENDING_OWNERSHIP_VERIFICATION. If the status is UPDATING, the domain cannot be modified further until the existing operation is complete. If it is AVAILABLE, the domain can be updated.</p>
+    pub fn get_domain_name_status(&self) -> &::std::option::Option<crate::types::DomainNameStatus> {
+        &self.domain_name_status
     }
     /// <p>An optional text message containing detailed information about status of the domain name migration.</p>
     pub fn domain_name_status_message(
@@ -192,6 +214,10 @@ impl DomainNameConfigurationBuilder {
         self.domain_name_status_message = input;
         self
     }
+    /// <p>An optional text message containing detailed information about status of the domain name migration.</p>
+    pub fn get_domain_name_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name_status_message
+    }
     /// <p>The endpoint type.</p>
     pub fn endpoint_type(mut self, input: crate::types::EndpointType) -> Self {
         self.endpoint_type = ::std::option::Option::Some(input);
@@ -204,6 +230,10 @@ impl DomainNameConfigurationBuilder {
     ) -> Self {
         self.endpoint_type = input;
         self
+    }
+    /// <p>The endpoint type.</p>
+    pub fn get_endpoint_type(&self) -> &::std::option::Option<crate::types::EndpointType> {
+        &self.endpoint_type
     }
     /// <p>The Amazon Route 53 Hosted Zone ID of the endpoint.</p>
     pub fn hosted_zone_id(
@@ -221,6 +251,10 @@ impl DomainNameConfigurationBuilder {
         self.hosted_zone_id = input;
         self
     }
+    /// <p>The Amazon Route 53 Hosted Zone ID of the endpoint.</p>
+    pub fn get_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hosted_zone_id
+    }
     /// <p>The Transport Layer Security (TLS) version of the security policy for this domain name. The valid values are TLS_1_0 and TLS_1_2.</p>
     pub fn security_policy(mut self, input: crate::types::SecurityPolicy) -> Self {
         self.security_policy = ::std::option::Option::Some(input);
@@ -233,6 +267,10 @@ impl DomainNameConfigurationBuilder {
     ) -> Self {
         self.security_policy = input;
         self
+    }
+    /// <p>The Transport Layer Security (TLS) version of the security policy for this domain name. The valid values are TLS_1_0 and TLS_1_2.</p>
+    pub fn get_security_policy(&self) -> &::std::option::Option<crate::types::SecurityPolicy> {
+        &self.security_policy
     }
     /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn</p>
     pub fn ownership_verification_certificate_arn(
@@ -249,6 +287,12 @@ impl DomainNameConfigurationBuilder {
     ) -> Self {
         self.ownership_verification_certificate_arn = input;
         self
+    }
+    /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn</p>
+    pub fn get_ownership_verification_certificate_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.ownership_verification_certificate_arn
     }
     /// Consumes the builder and constructs a [`DomainNameConfiguration`](crate::types::DomainNameConfiguration).
     pub fn build(self) -> crate::types::DomainNameConfiguration {

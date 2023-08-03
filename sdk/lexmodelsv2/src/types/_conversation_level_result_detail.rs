@@ -54,6 +54,12 @@ impl ConversationLevelResultDetailBuilder {
         self.end_to_end_result = input;
         self
     }
+    /// <p>The success or failure of the streaming of the conversation.</p>
+    pub fn get_end_to_end_result(
+        &self,
+    ) -> &::std::option::Option<crate::types::TestResultMatchStatus> {
+        &self.end_to_end_result
+    }
     /// <p>The speech transcription success or failure details of the conversation.</p>
     pub fn speech_transcription_result(
         mut self,
@@ -69,6 +75,12 @@ impl ConversationLevelResultDetailBuilder {
     ) -> Self {
         self.speech_transcription_result = input;
         self
+    }
+    /// <p>The speech transcription success or failure details of the conversation.</p>
+    pub fn get_speech_transcription_result(
+        &self,
+    ) -> &::std::option::Option<crate::types::TestResultMatchStatus> {
+        &self.speech_transcription_result
     }
     /// Consumes the builder and constructs a [`ConversationLevelResultDetail`](crate::types::ConversationLevelResultDetail).
     pub fn build(self) -> crate::types::ConversationLevelResultDetail {

@@ -39,6 +39,10 @@ impl CancelAuditMitigationActionsTaskInputBuilder {
         self.task_id = input;
         self
     }
+    /// <p>The unique identifier for the task that you want to cancel. </p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
+    }
     /// Consumes the builder and constructs a [`CancelAuditMitigationActionsTaskInput`](crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

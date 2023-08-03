@@ -36,6 +36,12 @@ impl ModifyDBSubnetGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyDBSubnetGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::modify_db_subnet_group::builders::ModifyDbSubnetGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +142,12 @@ impl ModifyDBSubnetGroupFluentBuilder {
         self.inner = self.inner.set_db_subnet_group_name(input);
         self
     }
+    /// <p>The name for the DB subnet group. This value is stored as a lowercase string. You can't modify the default subnet group.</p>
+    /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
+    /// <p>Example: <code>mySubnetgroup</code> </p>
+    pub fn get_db_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_subnet_group_name()
+    }
     /// <p>The description for the DB subnet group.</p>
     pub fn db_subnet_group_description(
         mut self,
@@ -151,6 +163,10 @@ impl ModifyDBSubnetGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_db_subnet_group_description(input);
         self
+    }
+    /// <p>The description for the DB subnet group.</p>
+    pub fn get_db_subnet_group_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_subnet_group_description()
     }
     /// Appends an item to `SubnetIds`.
     ///
@@ -168,5 +184,9 @@ impl ModifyDBSubnetGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
+    }
+    /// <p>The EC2 subnet IDs for the DB subnet group.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_subnet_ids()
     }
 }

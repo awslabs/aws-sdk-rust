@@ -60,6 +60,10 @@ impl DescribeWorkspaceConfigurationOutputBuilder {
         self.configuration = input;
         self
     }
+    /// <p>The configuration string for the workspace that you requested. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration
+    }
     /// <p>The supported Grafana version for the workspace.</p>
     pub fn grafana_version(
         mut self,
@@ -75,6 +79,10 @@ impl DescribeWorkspaceConfigurationOutputBuilder {
     ) -> Self {
         self.grafana_version = input;
         self
+    }
+    /// <p>The supported Grafana version for the workspace.</p>
+    pub fn get_grafana_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grafana_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

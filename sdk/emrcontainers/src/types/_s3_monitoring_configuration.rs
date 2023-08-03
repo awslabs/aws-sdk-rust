@@ -40,6 +40,10 @@ impl S3MonitoringConfigurationBuilder {
         self.log_uri = input;
         self
     }
+    /// <p>Amazon S3 destination URI for log publishing.</p>
+    pub fn get_log_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_uri
+    }
     /// Consumes the builder and constructs a [`S3MonitoringConfiguration`](crate::types::S3MonitoringConfiguration).
     pub fn build(self) -> crate::types::S3MonitoringConfiguration {
         crate::types::S3MonitoringConfiguration {

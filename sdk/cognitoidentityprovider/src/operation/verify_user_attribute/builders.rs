@@ -37,6 +37,12 @@ impl VerifyUserAttributeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the VerifyUserAttribute as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::verify_user_attribute::builders::VerifyUserAttributeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl VerifyUserAttributeFluentBuilder {
         self.inner = self.inner.set_access_token(input);
         self
     }
+    /// <p>A valid access token that Amazon Cognito issued to the user whose user attributes you want to verify.</p>
+    pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_access_token()
+    }
     /// <p>The attribute name in the request to verify user attributes.</p>
     pub fn attribute_name(
         mut self,
@@ -143,6 +153,10 @@ impl VerifyUserAttributeFluentBuilder {
         self.inner = self.inner.set_attribute_name(input);
         self
     }
+    /// <p>The attribute name in the request to verify user attributes.</p>
+    pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_attribute_name()
+    }
     /// <p>The verification code in the request to verify user attributes.</p>
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.code(input.into());
@@ -152,5 +166,9 @@ impl VerifyUserAttributeFluentBuilder {
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_code(input);
         self
+    }
+    /// <p>The verification code in the request to verify user attributes.</p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_code()
     }
 }

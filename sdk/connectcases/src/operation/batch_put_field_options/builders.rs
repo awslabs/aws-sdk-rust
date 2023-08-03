@@ -36,6 +36,13 @@ impl BatchPutFieldOptionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchPutFieldOptions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_put_field_options::builders::BatchPutFieldOptionsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl BatchPutFieldOptionsFluentBuilder {
         self.inner = self.inner.set_domain_id(input);
         self
     }
+    /// <p>The unique identifier of the Cases domain. </p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_id()
+    }
     /// <p>The unique identifier of a field.</p>
     pub fn field_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.field_id(input.into());
@@ -135,6 +146,10 @@ impl BatchPutFieldOptionsFluentBuilder {
     pub fn set_field_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_field_id(input);
         self
+    }
+    /// <p>The unique identifier of a field.</p>
+    pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_field_id()
     }
     /// Appends an item to `options`.
     ///
@@ -152,5 +167,11 @@ impl BatchPutFieldOptionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_options(input);
         self
+    }
+    /// <p>A list of <code>FieldOption</code> objects.</p>
+    pub fn get_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldOption>> {
+        self.inner.get_options()
     }
 }

@@ -73,6 +73,10 @@ impl SearchAddressBooksInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>The filters to use to list a specified set of address books. The supported filter key is AddressBookName.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
+    }
     /// Appends an item to `sort_criteria`.
     ///
     /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
@@ -92,6 +96,10 @@ impl SearchAddressBooksInputBuilder {
         self.sort_criteria = input;
         self
     }
+    /// <p>The sort order to use in listing the specified set of address books. The supported sort key is AddressBookName.</p>
+    pub fn get_sort_criteria(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Sort>> {
+        &self.sort_criteria
+    }
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -102,6 +110,10 @@ impl SearchAddressBooksInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -111,6 +123,10 @@ impl SearchAddressBooksInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`SearchAddressBooksInput`](crate::operation::search_address_books::SearchAddressBooksInput).
     pub fn build(

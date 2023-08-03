@@ -59,6 +59,10 @@ impl NetworkResourceDefinitionBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type in the network resource definition.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::NetworkResourceDefinitionType> {
+        &self.r#type
+    }
     /// Appends an item to `options`.
     ///
     /// To override the contents of this collection use [`set_options`](Self::set_options).
@@ -78,6 +82,12 @@ impl NetworkResourceDefinitionBuilder {
         self.options = input;
         self
     }
+    /// <p>The options in the network resource definition.</p>
+    pub fn get_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NameValuePair>> {
+        &self.options
+    }
     /// <p>The count in the network resource definition.</p>
     pub fn count(mut self, input: i32) -> Self {
         self.count = ::std::option::Option::Some(input);
@@ -87,6 +97,10 @@ impl NetworkResourceDefinitionBuilder {
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
+    }
+    /// <p>The count in the network resource definition.</p>
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        &self.count
     }
     /// Consumes the builder and constructs a [`NetworkResourceDefinition`](crate::types::NetworkResourceDefinition).
     pub fn build(self) -> crate::types::NetworkResourceDefinition {

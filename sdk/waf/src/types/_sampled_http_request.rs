@@ -76,6 +76,10 @@ impl SampledHttpRequestBuilder {
         self.request = input;
         self
     }
+    /// <p>A complex type that contains detailed information about the request.</p>
+    pub fn get_request(&self) -> &::std::option::Option<crate::types::HttpRequest> {
+        &self.request
+    }
     /// <p>A value that indicates how one result in the response relates proportionally to other results in the response. A result that has a weight of <code>2</code> represents roughly twice as many CloudFront web requests as a result that has a weight of <code>1</code>.</p>
     pub fn weight(mut self, input: i64) -> Self {
         self.weight = ::std::option::Option::Some(input);
@@ -85,6 +89,10 @@ impl SampledHttpRequestBuilder {
     pub fn set_weight(mut self, input: ::std::option::Option<i64>) -> Self {
         self.weight = input;
         self
+    }
+    /// <p>A value that indicates how one result in the response relates proportionally to other results in the response. A result that has a weight of <code>2</code> represents roughly twice as many CloudFront web requests as a result that has a weight of <code>1</code>.</p>
+    pub fn get_weight(&self) -> &::std::option::Option<i64> {
+        &self.weight
     }
     /// <p>The time at which AWS WAF received the request from your AWS resource, in Unix time format (in seconds).</p>
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -99,6 +107,10 @@ impl SampledHttpRequestBuilder {
         self.timestamp = input;
         self
     }
+    /// <p>The time at which AWS WAF received the request from your AWS resource, in Unix time format (in seconds).</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
+    }
     /// <p>The action for the <code>Rule</code> that the request matched: <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
     pub fn action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action = ::std::option::Option::Some(input.into());
@@ -108,6 +120,10 @@ impl SampledHttpRequestBuilder {
     pub fn set_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action = input;
         self
+    }
+    /// <p>The action for the <code>Rule</code> that the request matched: <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
+    pub fn get_action(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action
     }
     /// <p>This value is returned if the <code>GetSampledRequests</code> request specifies the ID of a <code>RuleGroup</code> rather than the ID of an individual rule. <code>RuleWithinRuleGroup</code> is the rule within the specified <code>RuleGroup</code> that matched the request listed in the response.</p>
     pub fn rule_within_rule_group(
@@ -124,6 +140,10 @@ impl SampledHttpRequestBuilder {
     ) -> Self {
         self.rule_within_rule_group = input;
         self
+    }
+    /// <p>This value is returned if the <code>GetSampledRequests</code> request specifies the ID of a <code>RuleGroup</code> rather than the ID of an individual rule. <code>RuleWithinRuleGroup</code> is the rule within the specified <code>RuleGroup</code> that matched the request listed in the response.</p>
+    pub fn get_rule_within_rule_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_within_rule_group
     }
     /// Consumes the builder and constructs a [`SampledHttpRequest`](crate::types::SampledHttpRequest).
     pub fn build(self) -> crate::types::SampledHttpRequest {

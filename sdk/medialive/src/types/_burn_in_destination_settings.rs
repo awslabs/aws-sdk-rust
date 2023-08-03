@@ -174,6 +174,10 @@ impl BurnInDestinationSettingsBuilder {
         self.alignment = input;
         self
     }
+    /// If no explicit xPosition or yPosition is provided, setting alignment to centered will place the captions at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. Selecting "smart" justification will left-justify live subtitles and center-justify pre-recorded subtitles. All burn-in and DVB-Sub font settings must match.
+    pub fn get_alignment(&self) -> &::std::option::Option<crate::types::BurnInAlignment> {
+        &self.alignment
+    }
     /// Specifies the color of the rectangle behind the captions. All burn-in and DVB-Sub font settings must match.
     pub fn background_color(mut self, input: crate::types::BurnInBackgroundColor) -> Self {
         self.background_color = ::std::option::Option::Some(input);
@@ -187,6 +191,12 @@ impl BurnInDestinationSettingsBuilder {
         self.background_color = input;
         self
     }
+    /// Specifies the color of the rectangle behind the captions. All burn-in and DVB-Sub font settings must match.
+    pub fn get_background_color(
+        &self,
+    ) -> &::std::option::Option<crate::types::BurnInBackgroundColor> {
+        &self.background_color
+    }
     /// Specifies the opacity of the background rectangle. 255 is opaque; 0 is transparent. Leaving this parameter out is equivalent to setting it to 0 (transparent). All burn-in and DVB-Sub font settings must match.
     pub fn background_opacity(mut self, input: i32) -> Self {
         self.background_opacity = ::std::option::Option::Some(input);
@@ -197,6 +207,10 @@ impl BurnInDestinationSettingsBuilder {
         self.background_opacity = input;
         self
     }
+    /// Specifies the opacity of the background rectangle. 255 is opaque; 0 is transparent. Leaving this parameter out is equivalent to setting it to 0 (transparent). All burn-in and DVB-Sub font settings must match.
+    pub fn get_background_opacity(&self) -> &::std::option::Option<i32> {
+        &self.background_opacity
+    }
     /// External font file used for caption burn-in. File extension must be 'ttf' or 'tte'. Although the user can select output fonts for many different types of input captions, embedded, STL and teletext sources use a strict grid system. Using external fonts with these caption sources could cause unexpected display of proportional fonts. All burn-in and DVB-Sub font settings must match.
     pub fn font(mut self, input: crate::types::InputLocation) -> Self {
         self.font = ::std::option::Option::Some(input);
@@ -206,6 +220,10 @@ impl BurnInDestinationSettingsBuilder {
     pub fn set_font(mut self, input: ::std::option::Option<crate::types::InputLocation>) -> Self {
         self.font = input;
         self
+    }
+    /// External font file used for caption burn-in. File extension must be 'ttf' or 'tte'. Although the user can select output fonts for many different types of input captions, embedded, STL and teletext sources use a strict grid system. Using external fonts with these caption sources could cause unexpected display of proportional fonts. All burn-in and DVB-Sub font settings must match.
+    pub fn get_font(&self) -> &::std::option::Option<crate::types::InputLocation> {
+        &self.font
     }
     /// Specifies the color of the burned-in captions. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
     pub fn font_color(mut self, input: crate::types::BurnInFontColor) -> Self {
@@ -220,6 +238,10 @@ impl BurnInDestinationSettingsBuilder {
         self.font_color = input;
         self
     }
+    /// Specifies the color of the burned-in captions. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
+    pub fn get_font_color(&self) -> &::std::option::Option<crate::types::BurnInFontColor> {
+        &self.font_color
+    }
     /// Specifies the opacity of the burned-in captions. 255 is opaque; 0 is transparent. All burn-in and DVB-Sub font settings must match.
     pub fn font_opacity(mut self, input: i32) -> Self {
         self.font_opacity = ::std::option::Option::Some(input);
@@ -229,6 +251,10 @@ impl BurnInDestinationSettingsBuilder {
     pub fn set_font_opacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.font_opacity = input;
         self
+    }
+    /// Specifies the opacity of the burned-in captions. 255 is opaque; 0 is transparent. All burn-in and DVB-Sub font settings must match.
+    pub fn get_font_opacity(&self) -> &::std::option::Option<i32> {
+        &self.font_opacity
     }
     /// Font resolution in DPI (dots per inch); default is 96 dpi. All burn-in and DVB-Sub font settings must match.
     pub fn font_resolution(mut self, input: i32) -> Self {
@@ -240,6 +266,10 @@ impl BurnInDestinationSettingsBuilder {
         self.font_resolution = input;
         self
     }
+    /// Font resolution in DPI (dots per inch); default is 96 dpi. All burn-in and DVB-Sub font settings must match.
+    pub fn get_font_resolution(&self) -> &::std::option::Option<i32> {
+        &self.font_resolution
+    }
     /// When set to 'auto' fontSize will scale depending on the size of the output. Giving a positive integer will specify the exact font size in points. All burn-in and DVB-Sub font settings must match.
     pub fn font_size(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.font_size = ::std::option::Option::Some(input.into());
@@ -249,6 +279,10 @@ impl BurnInDestinationSettingsBuilder {
     pub fn set_font_size(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.font_size = input;
         self
+    }
+    /// When set to 'auto' fontSize will scale depending on the size of the output. Giving a positive integer will specify the exact font size in points. All burn-in and DVB-Sub font settings must match.
+    pub fn get_font_size(&self) -> &::std::option::Option<::std::string::String> {
+        &self.font_size
     }
     /// Specifies font outline color. This option is not valid for source captions that are either 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
     pub fn outline_color(mut self, input: crate::types::BurnInOutlineColor) -> Self {
@@ -263,6 +297,10 @@ impl BurnInDestinationSettingsBuilder {
         self.outline_color = input;
         self
     }
+    /// Specifies font outline color. This option is not valid for source captions that are either 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
+    pub fn get_outline_color(&self) -> &::std::option::Option<crate::types::BurnInOutlineColor> {
+        &self.outline_color
+    }
     /// Specifies font outline size in pixels. This option is not valid for source captions that are either 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
     pub fn outline_size(mut self, input: i32) -> Self {
         self.outline_size = ::std::option::Option::Some(input);
@@ -272,6 +310,10 @@ impl BurnInDestinationSettingsBuilder {
     pub fn set_outline_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.outline_size = input;
         self
+    }
+    /// Specifies font outline size in pixels. This option is not valid for source captions that are either 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
+    pub fn get_outline_size(&self) -> &::std::option::Option<i32> {
+        &self.outline_size
     }
     /// Specifies the color of the shadow cast by the captions. All burn-in and DVB-Sub font settings must match.
     pub fn shadow_color(mut self, input: crate::types::BurnInShadowColor) -> Self {
@@ -286,6 +328,10 @@ impl BurnInDestinationSettingsBuilder {
         self.shadow_color = input;
         self
     }
+    /// Specifies the color of the shadow cast by the captions. All burn-in and DVB-Sub font settings must match.
+    pub fn get_shadow_color(&self) -> &::std::option::Option<crate::types::BurnInShadowColor> {
+        &self.shadow_color
+    }
     /// Specifies the opacity of the shadow. 255 is opaque; 0 is transparent. Leaving this parameter out is equivalent to setting it to 0 (transparent). All burn-in and DVB-Sub font settings must match.
     pub fn shadow_opacity(mut self, input: i32) -> Self {
         self.shadow_opacity = ::std::option::Option::Some(input);
@@ -295,6 +341,10 @@ impl BurnInDestinationSettingsBuilder {
     pub fn set_shadow_opacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.shadow_opacity = input;
         self
+    }
+    /// Specifies the opacity of the shadow. 255 is opaque; 0 is transparent. Leaving this parameter out is equivalent to setting it to 0 (transparent). All burn-in and DVB-Sub font settings must match.
+    pub fn get_shadow_opacity(&self) -> &::std::option::Option<i32> {
+        &self.shadow_opacity
     }
     /// Specifies the horizontal offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels to the left. All burn-in and DVB-Sub font settings must match.
     pub fn shadow_x_offset(mut self, input: i32) -> Self {
@@ -306,6 +356,10 @@ impl BurnInDestinationSettingsBuilder {
         self.shadow_x_offset = input;
         self
     }
+    /// Specifies the horizontal offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels to the left. All burn-in and DVB-Sub font settings must match.
+    pub fn get_shadow_x_offset(&self) -> &::std::option::Option<i32> {
+        &self.shadow_x_offset
+    }
     /// Specifies the vertical offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels above the text. All burn-in and DVB-Sub font settings must match.
     pub fn shadow_y_offset(mut self, input: i32) -> Self {
         self.shadow_y_offset = ::std::option::Option::Some(input);
@@ -315,6 +369,10 @@ impl BurnInDestinationSettingsBuilder {
     pub fn set_shadow_y_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.shadow_y_offset = input;
         self
+    }
+    /// Specifies the vertical offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels above the text. All burn-in and DVB-Sub font settings must match.
+    pub fn get_shadow_y_offset(&self) -> &::std::option::Option<i32> {
+        &self.shadow_y_offset
     }
     /// Controls whether a fixed grid size will be used to generate the output subtitles bitmap. Only applicable for Teletext inputs and DVB-Sub/Burn-in outputs.
     pub fn teletext_grid_control(mut self, input: crate::types::BurnInTeletextGridControl) -> Self {
@@ -329,6 +387,12 @@ impl BurnInDestinationSettingsBuilder {
         self.teletext_grid_control = input;
         self
     }
+    /// Controls whether a fixed grid size will be used to generate the output subtitles bitmap. Only applicable for Teletext inputs and DVB-Sub/Burn-in outputs.
+    pub fn get_teletext_grid_control(
+        &self,
+    ) -> &::std::option::Option<crate::types::BurnInTeletextGridControl> {
+        &self.teletext_grid_control
+    }
     /// Specifies the horizontal position of the caption relative to the left side of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the left of the output. If no explicit xPosition is provided, the horizontal caption position will be determined by the alignment parameter. All burn-in and DVB-Sub font settings must match.
     pub fn x_position(mut self, input: i32) -> Self {
         self.x_position = ::std::option::Option::Some(input);
@@ -339,6 +403,10 @@ impl BurnInDestinationSettingsBuilder {
         self.x_position = input;
         self
     }
+    /// Specifies the horizontal position of the caption relative to the left side of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the left of the output. If no explicit xPosition is provided, the horizontal caption position will be determined by the alignment parameter. All burn-in and DVB-Sub font settings must match.
+    pub fn get_x_position(&self) -> &::std::option::Option<i32> {
+        &self.x_position
+    }
     /// Specifies the vertical position of the caption relative to the top of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit yPosition is provided, the caption will be positioned towards the bottom of the output. All burn-in and DVB-Sub font settings must match.
     pub fn y_position(mut self, input: i32) -> Self {
         self.y_position = ::std::option::Option::Some(input);
@@ -348,6 +416,10 @@ impl BurnInDestinationSettingsBuilder {
     pub fn set_y_position(mut self, input: ::std::option::Option<i32>) -> Self {
         self.y_position = input;
         self
+    }
+    /// Specifies the vertical position of the caption relative to the top of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit yPosition is provided, the caption will be positioned towards the bottom of the output. All burn-in and DVB-Sub font settings must match.
+    pub fn get_y_position(&self) -> &::std::option::Option<i32> {
+        &self.y_position
     }
     /// Consumes the builder and constructs a [`BurnInDestinationSettings`](crate::types::BurnInDestinationSettings).
     pub fn build(self) -> crate::types::BurnInDestinationSettings {

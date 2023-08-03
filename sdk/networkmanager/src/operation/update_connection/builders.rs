@@ -36,6 +36,12 @@ impl UpdateConnectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateConnection as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_connection::builders::UpdateConnectionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateConnectionFluentBuilder {
         self.inner = self.inner.set_global_network_id(input);
         self
     }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_global_network_id()
+    }
     /// <p>The ID of the connection.</p>
     pub fn connection_id(
         mut self,
@@ -148,6 +158,10 @@ impl UpdateConnectionFluentBuilder {
         self.inner = self.inner.set_connection_id(input);
         self
     }
+    /// <p>The ID of the connection.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connection_id()
+    }
     /// <p>The ID of the link for the first device in the connection.</p>
     pub fn link_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.link_id(input.into());
@@ -157,6 +171,10 @@ impl UpdateConnectionFluentBuilder {
     pub fn set_link_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_link_id(input);
         self
+    }
+    /// <p>The ID of the link for the first device in the connection.</p>
+    pub fn get_link_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_link_id()
     }
     /// <p>The ID of the link for the second device in the connection.</p>
     pub fn connected_link_id(
@@ -174,6 +192,10 @@ impl UpdateConnectionFluentBuilder {
         self.inner = self.inner.set_connected_link_id(input);
         self
     }
+    /// <p>The ID of the link for the second device in the connection.</p>
+    pub fn get_connected_link_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connected_link_id()
+    }
     /// <p>A description of the connection.</p>
     /// <p>Length Constraints: Maximum length of 256 characters.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -185,5 +207,10 @@ impl UpdateConnectionFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the connection.</p>
+    /// <p>Length Constraints: Maximum length of 256 characters.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
 }

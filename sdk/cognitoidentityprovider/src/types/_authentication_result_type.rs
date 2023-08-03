@@ -92,6 +92,10 @@ impl AuthenticationResultTypeBuilder {
         self.access_token = input;
         self
     }
+    /// <p>A valid access token that Amazon Cognito issued to the user who you want to authenticate.</p>
+    pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_token
+    }
     /// <p>The expiration period of the authentication result in seconds.</p>
     pub fn expires_in(mut self, input: i32) -> Self {
         self.expires_in = ::std::option::Option::Some(input);
@@ -102,6 +106,10 @@ impl AuthenticationResultTypeBuilder {
         self.expires_in = input;
         self
     }
+    /// <p>The expiration period of the authentication result in seconds.</p>
+    pub fn get_expires_in(&self) -> &::std::option::Option<i32> {
+        &self.expires_in
+    }
     /// <p>The token type.</p>
     pub fn token_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token_type = ::std::option::Option::Some(input.into());
@@ -111,6 +119,10 @@ impl AuthenticationResultTypeBuilder {
     pub fn set_token_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.token_type = input;
         self
+    }
+    /// <p>The token type.</p>
+    pub fn get_token_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token_type
     }
     /// <p>The refresh token.</p>
     pub fn refresh_token(
@@ -128,6 +140,10 @@ impl AuthenticationResultTypeBuilder {
         self.refresh_token = input;
         self
     }
+    /// <p>The refresh token.</p>
+    pub fn get_refresh_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.refresh_token
+    }
     /// <p>The ID token.</p>
     pub fn id_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id_token = ::std::option::Option::Some(input.into());
@@ -137,6 +153,10 @@ impl AuthenticationResultTypeBuilder {
     pub fn set_id_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id_token = input;
         self
+    }
+    /// <p>The ID token.</p>
+    pub fn get_id_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id_token
     }
     /// <p>The new device metadata from an authentication result.</p>
     pub fn new_device_metadata(mut self, input: crate::types::NewDeviceMetadataType) -> Self {
@@ -150,6 +170,12 @@ impl AuthenticationResultTypeBuilder {
     ) -> Self {
         self.new_device_metadata = input;
         self
+    }
+    /// <p>The new device metadata from an authentication result.</p>
+    pub fn get_new_device_metadata(
+        &self,
+    ) -> &::std::option::Option<crate::types::NewDeviceMetadataType> {
+        &self.new_device_metadata
     }
     /// Consumes the builder and constructs a [`AuthenticationResultType`](crate::types::AuthenticationResultType).
     pub fn build(self) -> crate::types::AuthenticationResultType {

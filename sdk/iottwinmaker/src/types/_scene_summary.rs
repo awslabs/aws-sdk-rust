@@ -80,6 +80,10 @@ impl SceneSummaryBuilder {
         self.scene_id = input;
         self
     }
+    /// <p>The ID of the scene.</p>
+    pub fn get_scene_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scene_id
+    }
     /// <p>The relative path that specifies the location of the content definition file.</p>
     pub fn content_location(
         mut self,
@@ -96,6 +100,10 @@ impl SceneSummaryBuilder {
         self.content_location = input;
         self
     }
+    /// <p>The relative path that specifies the location of the content definition file.</p>
+    pub fn get_content_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_location
+    }
     /// <p>The ARN of the scene.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -105,6 +113,10 @@ impl SceneSummaryBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The ARN of the scene.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The date and time when the scene was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -119,6 +131,10 @@ impl SceneSummaryBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>The date and time when the scene was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>The date and time when the scene was last updated.</p>
     pub fn update_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_date_time = ::std::option::Option::Some(input);
@@ -132,6 +148,10 @@ impl SceneSummaryBuilder {
         self.update_date_time = input;
         self
     }
+    /// <p>The date and time when the scene was last updated.</p>
+    pub fn get_update_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_date_time
+    }
     /// <p>The scene description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -141,6 +161,10 @@ impl SceneSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The scene description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`SceneSummary`](crate::types::SceneSummary).
     pub fn build(self) -> crate::types::SceneSummary {

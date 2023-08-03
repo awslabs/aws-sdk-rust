@@ -60,6 +60,12 @@ impl BatchUpdateClusterInputBuilder {
         self.cluster_names = input;
         self
     }
+    /// <p>The cluster names to apply the updates.</p>
+    pub fn get_cluster_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.cluster_names
+    }
     /// <p>The unique ID of the service update</p>
     pub fn service_update(mut self, input: crate::types::ServiceUpdateRequest) -> Self {
         self.service_update = ::std::option::Option::Some(input);
@@ -72,6 +78,10 @@ impl BatchUpdateClusterInputBuilder {
     ) -> Self {
         self.service_update = input;
         self
+    }
+    /// <p>The unique ID of the service update</p>
+    pub fn get_service_update(&self) -> &::std::option::Option<crate::types::ServiceUpdateRequest> {
+        &self.service_update
     }
     /// Consumes the builder and constructs a [`BatchUpdateClusterInput`](crate::operation::batch_update_cluster::BatchUpdateClusterInput).
     pub fn build(

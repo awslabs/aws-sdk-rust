@@ -96,6 +96,18 @@ impl NotScaledReasonBuilder {
         self.code = input;
         self
     }
+    /// <p>A code that represents the reason for not scaling.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li> <p>AutoScalingAnticipatedFlapping</p> </li>
+    /// <li> <p>TargetServicePutResourceAsUnscalable</p> </li>
+    /// <li> <p>AlreadyAtMaxCapacity</p> </li>
+    /// <li> <p>AlreadyAtMinCapacity</p> </li>
+    /// <li> <p>AlreadyAtDesiredCapacity</p> </li>
+    /// </ul>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
+    }
     /// <p>The maximum capacity.</p>
     pub fn max_capacity(mut self, input: i32) -> Self {
         self.max_capacity = ::std::option::Option::Some(input);
@@ -105,6 +117,10 @@ impl NotScaledReasonBuilder {
     pub fn set_max_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_capacity = input;
         self
+    }
+    /// <p>The maximum capacity.</p>
+    pub fn get_max_capacity(&self) -> &::std::option::Option<i32> {
+        &self.max_capacity
     }
     /// <p>The minimum capacity.</p>
     pub fn min_capacity(mut self, input: i32) -> Self {
@@ -116,6 +132,10 @@ impl NotScaledReasonBuilder {
         self.min_capacity = input;
         self
     }
+    /// <p>The minimum capacity.</p>
+    pub fn get_min_capacity(&self) -> &::std::option::Option<i32> {
+        &self.min_capacity
+    }
     /// <p>The current capacity.</p>
     pub fn current_capacity(mut self, input: i32) -> Self {
         self.current_capacity = ::std::option::Option::Some(input);
@@ -125,6 +145,10 @@ impl NotScaledReasonBuilder {
     pub fn set_current_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.current_capacity = input;
         self
+    }
+    /// <p>The current capacity.</p>
+    pub fn get_current_capacity(&self) -> &::std::option::Option<i32> {
+        &self.current_capacity
     }
     /// Consumes the builder and constructs a [`NotScaledReason`](crate::types::NotScaledReason).
     pub fn build(self) -> crate::types::NotScaledReason {
